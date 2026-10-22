@@ -31,7 +31,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.ssysConsistentBChar
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.ssysCanonicalCode
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.ssysInterEqChar
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.IsPartiallyEffectivelyGiven
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.PartiallyEffectivelyGiven
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.SsysPres
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.boolNat_eq_one_iff
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.boolNat_zero_one
@@ -338,7 +338,7 @@ recursively decidable — with nothing deferred. What remains unbuilt is only th
 *stronger* `ComputablePresentation` (`Definition71.lean`), which the rest of Lecture VII's
 formalisation relies on but which is not part of Definition 7.1's text; see the section docstring
 above. -/
-theorem Ssys_partially_effectively_given : IsPartiallyEffectivelyGiven Ssys := ⟨SsysPres⟩
+theorem Ssys_partially_effectively_given : PartiallyEffectivelyGiven Ssys := ⟨⟨SsysPres⟩⟩
 
 end Exercise722
 

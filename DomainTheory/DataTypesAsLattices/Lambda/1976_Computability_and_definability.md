@@ -93,7 +93,7 @@ We say that a LAMBDA-term $\tau$ defines a function of its free variables (at le
 
 **Lean 4**
 
-- [DataTypesAsLattices/Computability/IsLambdaDefinable.lean](../Computability/IsLambdaDefinable.lean)
+- [DataTypesAsLattices/Computability/LambdaDefinable.lean](../Computability/LambdaDefinable.lean)
 - [DataTypesAsLattices/Computability/IsRE.lean](../Computability/IsRE.lean)
 - [DataTypesAsLattices/Computability/IsComputable.lean](../Computability/IsComputable.lean)
 - [DataTypesAsLattices/Computability/IsComputableFin.lean](../Computability/IsComputableFin.lean)

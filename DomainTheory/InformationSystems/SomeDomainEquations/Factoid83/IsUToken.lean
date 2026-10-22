@@ -19,7 +19,8 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 /-- Tokens of `U`: `D_V` without `∇` (Scott (7)). -/
-def IsUToken (t : VToken) : Prop := t ≠ .top
+class IsUToken (t : VToken) : Prop where
+  out : t ≠ .top
 
 end InfoSys
 

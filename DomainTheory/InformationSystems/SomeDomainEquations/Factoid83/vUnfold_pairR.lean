@@ -18,7 +18,7 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 theorem vUnfold_pairR (y : VToken) :
-    vUnfold (.pairR y) = ⟨(.bot, y), Or.inl rfl⟩ := rfl
+    vUnfold (.pairR y) = ⟨(.bot, y), ⟨Or.inl rfl⟩⟩ := rfl
 
 end InfoSys
 end DomainTheory.InformationSystems

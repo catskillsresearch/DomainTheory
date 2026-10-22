@@ -19,8 +19,9 @@ namespace DomainTheory.DataTypesAsLattices
 conversely every `a(e n)` is a typed point. -/
 theorem theorem_5_1_isolated {a : Pomega} (_ha : IsClosure a) {x : Pomega}
     (hx : typed x a) :
-    IsIsolated x → ∃ n, x = funOf a (e n) := by
-  intro ⟨n, hn⟩
+    Isolated x → ∃ n, x = funOf a (e n) := by
+  intro h
+  obtain ⟨n, hn⟩ := h.out
   refine ⟨n, ?_⟩
   rw [hn] at hx ⊢
   exact hx

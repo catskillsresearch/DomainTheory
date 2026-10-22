@@ -55,10 +55,10 @@ def approxMap_toStrictElement (f : ApproximableMap A B) (hf : IsStrict A B f) :
           fun x hx => emptyEntails_mem_botElement A (hE x (Finset.mem_coe.1 hx))
         exact A.botElement.consistent _ hsub
       have hIO := rel_input_output_union A B f (toFunFinset A B s) hrel hin
-      exact IsStrictToken_of_IsStrict A B f hf
+      exact (IsStrictToken_of_IsStrict A B f hf
         (p := mkFunToken A B (funInputUnion A B (toFunFinset A B s))
           (funOutputUnion A B (toFunFinset A B s)) hin (f.rel_cod hIO))
-        hIO hE
+        hIO).out hE
   closed := by
     intro Y p hY hEnt
     obtain ⟨_, hFunEnt⟩ := hEnt

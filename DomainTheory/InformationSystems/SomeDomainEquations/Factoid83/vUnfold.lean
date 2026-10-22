@@ -24,9 +24,9 @@ image (it generates the top *element*); we send it to `(∇, Δ)` as a left witn
 def vUnfold (t : VToken) : ProdToken vSystem vSystem :=
   match t with
   | .bot => prodBot vSystem vSystem
-  | .top => ⟨(.top, .bot), Or.inr rfl⟩
-  | .pairL x => ⟨(x, .bot), Or.inr rfl⟩
-  | .pairR y => ⟨(.bot, y), Or.inl rfl⟩
+  | .top => ⟨(.top, .bot), ⟨Or.inr rfl⟩⟩
+  | .pairL x => ⟨(x, .bot), ⟨Or.inr rfl⟩⟩
+  | .pairR y => ⟨(.bot, y), ⟨Or.inl rfl⟩⟩
 
 end InfoSys
 

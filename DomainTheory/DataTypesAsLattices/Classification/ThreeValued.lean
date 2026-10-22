@@ -13,7 +13,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-def IsThreeValued (x : Pomega) : Prop :=
-  x = botElem ∨ x = ofNat 0 ∨ x = topElem
+class ThreeValued (x : Pomega) : Prop where
+  out : x = botElem ∨ x = ofNat 0 ∨ x = topElem
 
 end DomainTheory.DataTypesAsLattices

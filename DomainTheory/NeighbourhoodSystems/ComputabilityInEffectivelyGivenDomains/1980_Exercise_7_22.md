@@ -409,7 +409,7 @@ and $\vec{01}\,\vec{01}\,\vec{01}\,\vec{01} = \vec{01}\,\vec{01}$ ?
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Recursive/interEqChar_le_one.lean](Recursive/interEqChar_le_one.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Recursive.lean](Recursive.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise722PresentationInst47.lean](Exercise722PresentationInst47.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/IsPartiallyEffectivelyGiven.lean](IsPartiallyEffectivelyGiven.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/PartiallyEffectivelyGiven.lean](PartiallyEffectivelyGiven.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/c9b5_encodeListBool_eq.lean](c9b5_encodeListBool_eq.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/c9b5_sexprDepth_eq.lean](c9b5_sexprDepth_eq.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/c9b5_sexprGodelEncode_eq.lean](c9b5_sexprGodelEncode_eq.lean)

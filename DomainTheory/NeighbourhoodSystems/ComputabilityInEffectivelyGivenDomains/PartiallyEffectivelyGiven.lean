@@ -23,8 +23,8 @@ carrying relation (ii) (but not necessarily (i)). Named at top level (not `Neigh
 since `Definition71.lean` — where `NeighborhoodSystem`/`ComputablePresentation` live — is outside
 this session's edit scope; a future session may hoist `ConsistencyPresentation` there alongside
 them for dot-notation parity with `IsEffectivelyGiven`. -/
-def IsPartiallyEffectivelyGiven (V : NeighborhoodSystem α) : Prop :=
-  Nonempty (ConsistencyPresentation V)
+class PartiallyEffectivelyGiven (V : NeighborhoodSystem α) : Prop where
+  out : Nonempty (ConsistencyPresentation V)
 
 end Exercise722
 

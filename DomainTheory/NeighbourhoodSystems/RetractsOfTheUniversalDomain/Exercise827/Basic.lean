@@ -90,7 +90,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.subU
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.subUFixIso
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.subUFixIsoSubFixed
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.IsPolymorphicType
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.PolymorphicType
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piDUncurried
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piD
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piDApply
@@ -140,7 +140,7 @@ self-map `subApprox : (𝒰→𝒰) → (𝒰→𝒰)`. To get "`sub` regarded a
 (`subUFixIso`, composed with Theorem 8.6(a)'s own `{f ∣ sub f=f} = ` finitary projections
 characterization) — a direct formalization of the exercise's opening sentence.
 
-**Step 2 — polymorphic types.** `IsPolymorphicType d := subU∘d∘subU = d`, Scott's `d = sub∘d∘sub`.
+**Step 2 — polymorphic types.** `PolymorphicType d` holds when `subU∘d∘subU = d`, Scott's `d = sub∘d∘sub`.
 The exercise's own justification ("whenever `t` is a finitary projection, then so is `d(t)`") is
 `polymorphicType_apply_mem_fix`: for `d` polymorphic and *any* `z` (not just a "type" `t`),
 `d(z) ∈ Fix(subU)`.
@@ -242,10 +242,10 @@ theorem toElementMap_mem_fix_of_isRetraction_sandwich {a g : ApproximableMap U U
 /-- **The exercise's own justification, formalized**: "whenever `t` is a finitary projection, then
 so is `d(t)`" — in fact, for `d` a polymorphic type, `d(z) ∈ Fix(subU)` for *every* `z`, not just
 for `z` a "type". -/
-theorem polymorphicType_apply_mem_fix {d : ApproximableMap U U} (hd : IsPolymorphicType d)
+theorem polymorphicType_apply_mem_fix {d : ApproximableMap U U} (hd : PolymorphicType d)
     (z : U.Element) : subU.toElementMap (d.toElementMap z) = d.toElementMap z := by
   have h := toElementMap_mem_fix_of_isRetraction_sandwich isProjection_subU.1 (g := d) z
-  rwa [hd] at h
+  rwa [hd.out] at h
 
 /-! ## Step 4 (prerequisite): decoding `Fix(subU)` always yields a genuine finitary projection
 
@@ -409,7 +409,7 @@ hard direction (`exists_principal_eq_of_isRetraction_le_idMap`'s compactness-ref
 `T_i` as a directed limit that becomes self-consistent *in the limit*, using algebraicity
 (`eq_iSupDirected_principal`) to show the descent stabilizes at a genuine finite/principal nbhd —
 a comparably-sized undertaking to Theorem 8.5's hard direction, not a quick corollary of it. `d`'s
-polymorphism (`IsPolymorphicType`, unused so far) is expected to enter here, but exactly how is not
+polymorphism (`PolymorphicType`, unused so far) is expected to enter here, but exactly how is not
 yet worked out. -/
 
 /-- **Exercise 8.27(b)(3)(a).** `hii`'s LHS, reduced to a literal membership test: no abstract

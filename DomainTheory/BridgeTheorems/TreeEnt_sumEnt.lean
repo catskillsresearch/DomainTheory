@@ -59,7 +59,7 @@ theorem TreeEnt_sumEnt {u : Finset (TreeToken α)} {p : TreeToken α}
             (rhtFinset (unfoldFinset A u)) := by
         intro s hs
         exact (mem_fstFinset (treeSystem A) (treeSystem A)).2
-          ⟨⟨(s, treeBot), Or.inr rfl⟩,
+          ⟨⟨(s, treeBot), ⟨Or.inr rfl⟩⟩,
             (rhtFinset_image_unfold_mem A u _).2 (Or.inl ⟨s, mem_pairLFinset.1 hs, rfl⟩),
             rfl, rfl⟩
       have hFstCon : fstFinset (treeSystem A) (treeSystem A)
@@ -99,7 +99,7 @@ theorem TreeEnt_sumEnt {u : Finset (TreeToken α)} {p : TreeToken α}
             (rhtFinset (unfoldFinset A u)) := by
         intro s hs
         exact (mem_sndFinset (treeSystem A) (treeSystem A)).2
-          ⟨⟨(treeBot, s), Or.inl rfl⟩,
+          ⟨⟨(treeBot, s), ⟨Or.inl rfl⟩⟩,
             (rhtFinset_image_unfold_mem A u _).2 (Or.inr ⟨s, mem_pairRFinset.1 hs, rfl⟩),
             rfl, rfl⟩
       have hSndCon : sndFinset (treeSystem A) (treeSystem A)

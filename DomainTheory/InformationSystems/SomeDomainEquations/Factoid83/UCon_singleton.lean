@@ -29,7 +29,7 @@ namespace InfoSys
 
 theorem UCon_singleton (p : UToken) : UCon {p} := by
   rw [UCon, uForgetFinset_singleton]
-  exact not_VEnt_singleton_ne_top p.property
+  exact not_VEnt_singleton_ne_top p.property.out
 
 end InfoSys
 

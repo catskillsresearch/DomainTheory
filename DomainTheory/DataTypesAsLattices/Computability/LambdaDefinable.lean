@@ -13,7 +13,7 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Closed LAMBDA-definable elements (empty environment). -/
-def IsLambdaDefinable (u : Pomega) : Prop :=
-  ∃ t : Term, interp t (fun _ => botElem) = u
+class LambdaDefinable (u : Pomega) : Prop where
+  out : ∃ t : Term, interp t (fun _ => botElem) = u
 
 end DomainTheory.DataTypesAsLattices

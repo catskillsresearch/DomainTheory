@@ -103,7 +103,7 @@ The approximability has to be checked, of course. But once a number of the more 
 - [InformationSystems/FunctionSpaceAsADomain/Factoid75/BoolToken.lean](../Factoid75/BoolToken.lean)
 - [InformationSystems/FunctionSpaceAsADomain/Factoid75/EmptyEntails.lean](../Factoid75/EmptyEntails.lean)
 - [InformationSystems/FunctionSpaceAsADomain/Factoid75/IsStrict.lean](../Factoid75/IsStrict.lean)
-- [InformationSystems/FunctionSpaceAsADomain/Factoid75/IsStrictToken.lean](../Factoid75/IsStrictToken.lean)
+- [InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictToken.lean](../Factoid75/StrictToken.lean)
 - [InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictFunToken.lean](../Factoid75/StrictFunToken.lean)
 - [InformationSystems/FunctionSpaceAsADomain/Factoid75/BasicInst22.lean](../Factoid75/BasicInst22.lean)
 - [InformationSystems/FunctionSpaceAsADomain/Factoid75/boolSat.lean](../Factoid75/boolSat.lean)

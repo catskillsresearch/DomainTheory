@@ -7,7 +7,7 @@ public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsComputable
-public import DomainTheory.DataTypesAsLattices.Computability.IsLambdaDefinable
+public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Computability.pack4_proj1
 public import DomainTheory.DataTypesAsLattices.Computability.pack4_proj2

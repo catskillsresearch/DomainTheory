@@ -20,7 +20,7 @@ Show that for $d$ a polymorphic type, $\Pi(d)$ is a type. (Hint: It is easy to c
 
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise827/jArrow_comp_iArrow_apply.lean](jArrow_comp_iArrow_apply.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise827/subU.lean](subU.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise827/IsPolymorphicType.lean](IsPolymorphicType.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise827/PolymorphicType.lean](PolymorphicType.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise827/piDApply.lean](piDApply.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise827/piDUncurried.lean](piDUncurried.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise827/piD.lean](piD.lean)

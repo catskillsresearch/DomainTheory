@@ -41,7 +41,7 @@ theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
       subst this
       exact hp
     have hCon : ProdCon A B {p} := z.consistent {p} hpz
-    rcases p.property with h1 | h2
+    rcases p.property.out with h1 | h2
     · -- right-tagged (or bottom): use `snd`
       have hy : p.val.2 ∈ ((sndMap A B).toElement z).carrier := by
         refine ⟨{p}, hpz, ?_⟩
@@ -87,7 +87,7 @@ theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
       subst this
       exact hp
     have hCon : ProdCon A B {p} := z'.consistent {p} hpz
-    rcases p.property with h1 | h2
+    rcases p.property.out with h1 | h2
     · have hy : p.val.2 ∈ ((sndMap A B).toElement z').carrier := by
         refine ⟨{p}, hpz, ?_⟩
         refine ⟨hCon, B.con_sing p.val.2, ?_⟩

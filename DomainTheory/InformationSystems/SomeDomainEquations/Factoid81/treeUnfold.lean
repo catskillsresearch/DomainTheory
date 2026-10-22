@@ -33,8 +33,8 @@ def treeUnfold (t : TreeToken α) :
   match t with
   | .bot => .bot
   | .atom x => .left x
-  | .pairL t => .right ⟨(t, treeBot), Or.inr rfl⟩
-  | .pairR t => .right ⟨(treeBot, t), Or.inl rfl⟩
+  | .pairL t => .right ⟨(t, treeBot), ⟨Or.inr rfl⟩⟩
+  | .pairR t => .right ⟨(treeBot, t), ⟨Or.inl rfl⟩⟩
 
 end InfoSys
 

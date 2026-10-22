@@ -32,7 +32,7 @@ theorem UCon_insert_of_ent {u : Finset UToken} {p : UToken}
     (h : UEnt u p) : UCon (insert p u) := by
   rcases h with ⟨hCon, hEnt⟩
   rw [UCon, uForgetFinset_insert]
-  exact not_VEnt_insert_top_of_ent p.property hEnt hCon
+  exact not_VEnt_insert_top_of_ent p.property.out hEnt hCon
 
 end InfoSys
 

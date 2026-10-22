@@ -19,7 +19,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- Combinatory elements are generated from the six constants, matching
 the LAMBDA-definable closed terms of Theorem 2.4. -/
-theorem theorem_2_6_combinatory_zero : IsLambdaDefinable zeroC :=
-  ⟨Term.zero, rfl⟩
+theorem theorem_2_6_combinatory_zero : LambdaDefinable zeroC :=
+  ⟨⟨Term.zero, rfl⟩⟩
 
 end DomainTheory.DataTypesAsLattices

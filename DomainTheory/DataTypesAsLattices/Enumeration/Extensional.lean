@@ -16,7 +16,7 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, before Theorem 3.5.** Extensionality of a Gödel-number map. -/
-def IsExtensional (val : ℕ → Pomega) (p : ℕ → ℕ) : Prop :=
-  ∀ n m, val n = val m → val (p n) = val (p m)
+class Extensional (val : ℕ → Pomega) (p : ℕ → ℕ) : Prop where
+  out : ∀ n m, val n = val m → val (p n) = val (p m)
 
 end DomainTheory.DataTypesAsLattices

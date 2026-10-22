@@ -12,7 +12,7 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolPoint
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.IsStrictToken
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.StrictToken
 
 @[expose] public section
 
@@ -27,7 +27,7 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
 def StrictFunToken : Type _ :=
-  {p : FunToken A B // IsStrictToken A B p}
+  {p : FunToken A B // StrictToken A B p}
 
 end InfoSys
 

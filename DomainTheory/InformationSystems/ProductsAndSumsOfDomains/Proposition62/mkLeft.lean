@@ -21,7 +21,7 @@ variable (A : InfoSys α) (B : InfoSys β)
 
 /-- Left-tagged product token `(X, Δ_B)`. -/
 def mkLeft (x : α) : ProdToken A B :=
-  ⟨(x, B.bot), Or.inr rfl⟩
+  ⟨(x, B.bot), ⟨Or.inr rfl⟩⟩
 
 end InfoSys
 

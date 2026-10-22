@@ -34,7 +34,7 @@ If a total extensional mapping `p` is LAMBDA-definable, then there is a
 LAMBDA-definable `q` with `val(p n) = q(val n)`. -/
 theorem theorem_3_5 {p : ℕ → ℕ}
     (hp : ∃ u, IsCombinatory u ∧ Realizes u p)
-    (hext : IsExtensional valNat p) :
+    (hext : Extensional valNat p) :
     ∃ q, IsCombinatory q ∧ ∀ n, valNat (p n) = funOf q (valNat n) := by
   obtain ⟨u, hu, hr⟩ := hp
   refine ⟨myhillQ valNat p, IsRE.combinatory (myhillQ_isRE hu hr), fun n => ?_⟩
@@ -46,7 +46,7 @@ theorem theorem_3_5 {p : ℕ → ℕ}
     have hinf : ∀ j, e j = valNat n → False := by
       intro j hj
       have : k ∈ valNat (p (fin j)) := by
-        have := hext n (fin j) (by simp [valNat_fin, hj])
+        have := hext.out n (fin j) (by simp [valNat_fin, hj])
         simpa [this, valNat_fin] using hk
       exact hnin (Set.mem_iUnion.mpr ⟨j,
         Set.mem_iUnion.mpr ⟨by simp [hj], this⟩⟩)
@@ -65,7 +65,7 @@ theorem theorem_3_5 {p : ℕ → ℕ}
     by_contra hnin
     have hne : e j ≠ valNat n := by
       intro hj'
-      have := hext n (fin j) (by simp [valNat_fin, hj'])
+      have := hext.out n (fin j) (by simp [valNat_fin, hj'])
       exact hnin (by simpa [this, valNat_fin] using hk)
     exact theorem_3_5_case2 hu hr hext hj hne hk hnin
 

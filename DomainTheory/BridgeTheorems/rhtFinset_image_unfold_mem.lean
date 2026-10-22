@@ -27,8 +27,8 @@ variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 theorem rhtFinset_image_unfold_mem (u : Finset (TreeToken α))
     (y : ProdToken (treeSystem A) (treeSystem A)) :
     y ∈ rhtFinset (unfoldFinset A u) ↔
-      (∃ t, .pairL t ∈ u ∧ y = ⟨(t, treeBot), Or.inr rfl⟩) ∨
-        (∃ t, .pairR t ∈ u ∧ y = ⟨(treeBot, t), Or.inl rfl⟩) := by
+      (∃ t, .pairL t ∈ u ∧ y = ⟨(t, treeBot), ⟨Or.inr rfl⟩⟩) ∨
+        (∃ t, .pairR t ∈ u ∧ y = ⟨(treeBot, t), ⟨Or.inl rfl⟩⟩) := by
   constructor
   · intro hy
     have : SumToken.right y ∈ unfoldFinset A u := (mem_rhtFinset).1 hy

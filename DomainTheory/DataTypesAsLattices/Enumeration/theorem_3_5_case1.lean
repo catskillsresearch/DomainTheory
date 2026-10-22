@@ -32,7 +32,7 @@ open Nat.Partrec.Code
 
 theorem theorem_3_5_case1 {u : Pomega} {p : ℕ → ℕ} {n k : ℕ}
     (hu : IsCombinatory u) (hr : Realizes u p)
-    (hext : IsExtensional valNat p)
+    (hext : Extensional valNat p)
     (hk : k ∈ valNat (p n))
     (hnin : ¬∃ j, e j ⊆ valNat n ∧ k ∈ valNat (p (fin j)))
     (_hinf : ¬(valNat n).Finite) : False := by
@@ -51,7 +51,7 @@ theorem theorem_3_5_case1 {u : Pomega} {p : ℕ → ℕ} {n k : ℕ}
         rw [hj, valNat_myhillCase1Code]
         exact Set.inter_subset_left
       have : k ∉ valNat (p (fin j)) := fun h => hnin ⟨j, hje, h⟩
-      have heq := hext (myhillCase1Code n m) (fin j) (by simp [hj, valNat_fin])
+      have heq := hext.out (myhillCase1Code n m) (fin j) (by simp [hj, valNat_fin])
       simp [heq, this, hex]
     · have hall : {j | ∀ i ≤ j, haltEnum i ≠ m} = Set.univ := by
         ext j
@@ -62,7 +62,7 @@ theorem theorem_3_5_case1 {u : Pomega} {p : ℕ → ℕ} {n k : ℕ}
       have : valNat (myhillCase1Code n m) = valNat n := by
         rw [valNat_myhillCase1Code, hall]
         simp
-      have heq := hext (myhillCase1Code n m) n this
+      have heq := hext.out (myhillCase1Code n m) n this
       simp [heq, hk, hex]
   have hre : REPred fun m => ¬∃ t, haltEnum t = m :=
     _root_.REPred.of_eq

@@ -28,7 +28,7 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
 def strictBot : StrictFunToken A B :=
-  ⟨funBot A B, fun _ => emptyEntails_empty B⟩
+  ⟨funBot A B, ⟨fun _ => emptyEntails_empty B⟩⟩
 
 end InfoSys
 

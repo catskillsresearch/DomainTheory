@@ -7,7 +7,7 @@ module
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts
 public import DomainTheory.DataTypesAsLattices.Closures.IsClosure
-public import DomainTheory.DataTypesAsLattices.Closures.IsIsolated
+public import DomainTheory.DataTypesAsLattices.Closures.Isolated
 public import DomainTheory.DataTypesAsLattices.Closures.squarePair
 public import DomainTheory.DataTypesAsLattices.Closures.squareFst
 public import DomainTheory.DataTypesAsLattices.Closures.squareSnd

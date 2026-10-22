@@ -23,7 +23,7 @@ variable (A : InfoSys α) (B : InfoSys β)
 
 /-- Product bottom `Δ_{A×B} = (Δ_A, Δ_B)`. -/
 def prodBot : ProdToken A B :=
-  ⟨(A.bot, B.bot), Or.inl rfl⟩
+  ⟨(A.bot, B.bot), ⟨Or.inl rfl⟩⟩
 
 end InfoSys
 

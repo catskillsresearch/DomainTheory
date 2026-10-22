@@ -33,10 +33,12 @@ combinatory definability, and closed LAMBDA-definability agree. -/
 theorem theorem_2_6 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     (IsComputable f ↔ IsRE (graph f)) ∧
       (IsRE (graph f) ↔ IsCombinatory (graph f)) ∧
-      (IsLambdaDefinable (graph f) ↔ IsCombinatory (graph f)) := by
+      (LambdaDefinable (graph f) ↔ IsCombinatory (graph f)) := by
   refine ⟨?_, IsRE.iff_combinatory, ?_⟩
   · exact ⟨fun h => h.2, fun h => ⟨hf, h⟩⟩
-  · exact ⟨fun ⟨t, ht⟩ => by simpa [ht] using theorem_2_4_closed t,
+  · exact ⟨fun h => by
+      obtain ⟨t, ht⟩ := h.out
+      simpa [ht] using theorem_2_4_closed t,
       combinatory_isLambdaDefinable⟩
 
 end DomainTheory.DataTypesAsLattices

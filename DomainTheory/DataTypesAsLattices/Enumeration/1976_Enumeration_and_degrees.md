@@ -69,7 +69,7 @@ We can then readily prove:
 - [DataTypesAsLattices/Enumeration/Gpack_ne_bot.lean](Gpack_ne_bot.lean)
 - [DataTypesAsLattices/Enumeration/Gpack_one.lean](Gpack_one.lean)
 - [DataTypesAsLattices/Enumeration/Gpack_zero.lean](Gpack_zero.lean)
-- [DataTypesAsLattices/Enumeration/IsExtensional.lean](IsExtensional.lean)
+- [DataTypesAsLattices/Enumeration/Extensional.lean](Extensional.lean)
 - [DataTypesAsLattices/Enumeration/Kcomb_from_G.lean](Kcomb_from_G.lean)
 - [DataTypesAsLattices/Enumeration/RE.lean](RE.lean)
 - [DataTypesAsLattices/Enumeration/Scomb_from_G.lean](Scomb_from_G.lean)

@@ -27,8 +27,8 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
 /-- Token of `A →ₛ B`: a function-space token that itself respects empty input. -/
-def IsStrictToken (p : FunToken A B) : Prop :=
-  EmptyEntails A p.val.1 → EmptyEntails B p.val.2
+class StrictToken (p : FunToken A B) : Prop where
+  out : EmptyEntails A p.val.1 → EmptyEntails B p.val.2
 
 end InfoSys
 

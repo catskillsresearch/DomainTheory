@@ -28,7 +28,7 @@ public import DomainTheory.DataTypesAsLattices.Classification.closedToZero
 public import DomainTheory.DataTypesAsLattices.Classification.zeroPrime
 public import DomainTheory.DataTypesAsLattices.Classification.uvU
 public import DomainTheory.DataTypesAsLattices.Classification.uvV
-public import DomainTheory.DataTypesAsLattices.Classification.IsThreeValued
+public import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
 public import DomainTheory.DataTypesAsLattices.Classification.typicalG
 public import DomainTheory.DataTypesAsLattices.Classification.typicalF
 public import DomainTheory.DataTypesAsLattices.Classification.typicalGdelta
@@ -944,9 +944,9 @@ theorem uvV_top_top : uvV topElem topElem = topElem := by
     exact Or.inr (Or.inr ⟨Set.mem_univ 0, top_pos, Set.mem_univ 0, top_pos⟩)
 
 /-- On `{⊥, 0, ⊤}`, `u(x)(y) = v(x)(y)` iff `x = 0` or `y = 0`. -/
-theorem uv_eq_iff {x y : Pomega} (hx : IsThreeValued x) (hy : IsThreeValued y) :
+theorem uv_eq_iff {x y : Pomega} (hx : ThreeValued x) (hy : ThreeValued y) :
     uvU x y = uvV x y ↔ x = ofNat 0 ∨ y = ofNat 0 := by
-  rcases hx with rfl | rfl | rfl <;> rcases hy with rfl | rfl | rfl
+  rcases hx.out with rfl | rfl | rfl <;> rcases hy.out with rfl | rfl | rfl
   · simp [uvU_bot_bot, uvV_bot_bot, bot_ne_ofNat_zero]
   · simp [uvU_bot_zero, uvV_bot_zero]
   · constructor
@@ -977,7 +977,8 @@ theorem uv_eq_iff {x y : Pomega} (hx : IsThreeValued x) (hy : IsThreeValued y) :
       rcases h with h | h <;> exact (top_ne_ofNat_zero h).elim
 
 theorem charOpen_three (U : Set Pomega) (x : Pomega) :
-    IsThreeValued (charOpen U x) := by
+    ThreeValued (charOpen U x) := by
+  constructor
   by_cases h : 0 ∈ charOpen U x
   · refine Or.inr (Or.inl ?_)
     ext k
@@ -994,7 +995,8 @@ theorem charOpen_three (U : Set Pomega) (x : Pomega) :
       exact ((mem_botElem k).mp hk).elim
 
 theorem closedToZero_three {C : Set Pomega} (hC : IsScottOpen Cᶜ) (x : Pomega) :
-    IsThreeValued (closedToZero C x) := by
+    ThreeValued (closedToZero C x) := by
+  constructor
   by_cases hx : x ∈ C
   · refine Or.inr (Or.inl ?_)
     have : charTop Cᶜ x = botElem := (charTop_eq_bot_of_closed hC x).mpr hx

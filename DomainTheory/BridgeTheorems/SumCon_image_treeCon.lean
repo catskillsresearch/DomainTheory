@@ -33,7 +33,7 @@ theorem SumCon_image_treeCon {u : Finset (TreeToken α)}
     · ext t
       constructor
       · intro ht
-        have : (⟨(t, treeBot), Or.inr rfl⟩ : ProdToken (treeSystem A) (treeSystem A)) ∈
+        have : (⟨(t, treeBot), ⟨Or.inr rfl⟩⟩ : ProdToken (treeSystem A) (treeSystem A)) ∈
             rhtFinset (unfoldFinset A u) :=
           (rhtFinset_image_unfold_mem A u _).2 (Or.inl ⟨t, mem_pairLFinset.1 ht, rfl⟩)
         rw [hr] at this
@@ -43,7 +43,7 @@ theorem SumCon_image_treeCon {u : Finset (TreeToken α)}
     · ext t
       constructor
       · intro ht
-        have : (⟨(treeBot, t), Or.inl rfl⟩ : ProdToken (treeSystem A) (treeSystem A)) ∈
+        have : (⟨(treeBot, t), ⟨Or.inl rfl⟩⟩ : ProdToken (treeSystem A) (treeSystem A)) ∈
             rhtFinset (unfoldFinset A u) :=
           (rhtFinset_image_unfold_mem A u _).2 (Or.inr ⟨t, mem_pairRFinset.1 ht, rfl⟩)
         rw [hr] at this
@@ -56,7 +56,7 @@ theorem SumCon_image_treeCon {u : Finset (TreeToken α)}
             (rhtFinset (unfoldFinset A u)) := by
         intro t ht
         exact (mem_fstFinset (treeSystem A) (treeSystem A)).2
-          ⟨⟨(t, treeBot), Or.inr rfl⟩,
+          ⟨⟨(t, treeBot), ⟨Or.inr rfl⟩⟩,
             (rhtFinset_image_unfold_mem A u _).2 (Or.inl ⟨t, mem_pairLFinset.1 ht, rfl⟩),
             rfl, rfl⟩
       exact (treeSystem A).con_subset hR.1 hsub
@@ -65,7 +65,7 @@ theorem SumCon_image_treeCon {u : Finset (TreeToken α)}
             (rhtFinset (unfoldFinset A u)) := by
         intro t ht
         exact (mem_sndFinset (treeSystem A) (treeSystem A)).2
-          ⟨⟨(treeBot, t), Or.inl rfl⟩,
+          ⟨⟨(treeBot, t), ⟨Or.inl rfl⟩⟩,
             (rhtFinset_image_unfold_mem A u _).2 (Or.inr ⟨t, mem_pairRFinset.1 ht, rfl⟩),
             rfl, rfl⟩
       exact (treeSystem A).con_subset hR.2 hsub

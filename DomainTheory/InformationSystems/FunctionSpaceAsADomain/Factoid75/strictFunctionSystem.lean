@@ -73,7 +73,7 @@ def strictFunctionSystem : InfoSys (StrictFunToken A B) where
         intro x hx
         exact hE x ((mem_funInputUnion A B).2
           ⟨p.val, (mem_toFunFinset A B).2 ⟨p, hr, rfl⟩, hx⟩)
-      exact p.property hEp y hy'
+      exact p.property.out hEp y hy'
   ent_con := by
     intro w p ⟨⟨hwFun, hwE⟩, hFunEnt⟩
     have hFunInsert : FunCon A B (insert p.val (toFunFinset A B w)) :=
@@ -89,7 +89,7 @@ def strictFunctionSystem : InfoSys (StrictFunToken A B) where
       have hE' : EmptyEntails A (p.val.val.1 ∪' funInputUnion A B (toFunFinset A B t')) := by
         rwa [← ht_eq, toFunFinset_insert, funInputUnion_insert] at hE
       have ⟨hEp, hEt'⟩ := (emptyEntails_funion A).1 hE'
-      have hOutp : EmptyEntails B p.val.val.2 := p.property hEp
+      have hOutp : EmptyEntails B p.val.val.2 := p.property.out hEp
       have hOutt' : EmptyEntails B (funOutputUnion A B (toFunFinset A B t')) :=
         hwE t' ht'sub hEt'
       have : EmptyEntails B (p.val.val.2 ∪' funOutputUnion A B (toFunFinset A B t')) :=

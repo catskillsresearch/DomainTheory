@@ -20,8 +20,8 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 instance : DecidablePred IsUToken := fun t =>
-  if h : t = .top then isFalse fun ht => ht h
-  else isTrue h
+  if h : t = .top then isFalse fun ht => ht.out h
+  else isTrue ⟨h⟩
 
 end InfoSys
 

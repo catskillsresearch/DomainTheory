@@ -20,7 +20,7 @@ namespace InfoSys
 theorem not_mem_uForget_top (u : Finset UToken) : .top ∉ uForgetFinset u := by
   intro ht
   rcases (mem_uForgetFinset).1 ht with ⟨p, _, hp⟩
-  exact p.property hp
+  exact p.property.out hp
 
 end InfoSys
 end DomainTheory.InformationSystems

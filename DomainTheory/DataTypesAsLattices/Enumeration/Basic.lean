@@ -39,7 +39,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.botCode
 public import DomainTheory.DataTypesAsLattices.Enumeration.finAux
 public import DomainTheory.DataTypesAsLattices.Enumeration.fin
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ
-public import DomainTheory.DataTypesAsLattices.Enumeration.IsExtensional
+public import DomainTheory.DataTypesAsLattices.Enumeration.Extensional
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillRealizer
 public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas

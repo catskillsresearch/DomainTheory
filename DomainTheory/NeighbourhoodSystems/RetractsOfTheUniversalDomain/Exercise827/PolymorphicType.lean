@@ -15,7 +15,7 @@ open NeighborhoodSystem ApproximableMap
 
 /-- **A polymorphic type** (Scott 1981, PRG-19, Exercise 8.27): `d = sub∘d∘sub`, `sub` here being
 `subU` (Step 1's "`sub` regarded as a combinator on `𝒰`"). -/
-def IsPolymorphicType (d : ApproximableMap U U) : Prop :=
-  subU.comp (d.comp subU) = d
+class PolymorphicType (d : ApproximableMap U U) : Prop where
+  out : subU.comp (d.comp subU) = d
 
 end DomainTheory.NeighbourhoodSystems

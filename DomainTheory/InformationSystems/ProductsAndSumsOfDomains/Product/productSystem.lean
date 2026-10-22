@@ -50,7 +50,7 @@ def productSystem : InfoSys (ProdToken A B) where
   con_sing := by
     intro p
     refine ⟨?_, ?_⟩
-    · rcases p.property with h1 | h2
+    · rcases p.property.out with h1 | h2
       · by_cases h2 : p.val.2 = B.bot
         · have hpeq : p = prodBot A B := Subtype.ext (Prod.ext h1 h2)
           subst hpeq
@@ -70,7 +70,7 @@ def productSystem : InfoSys (ProdToken A B) where
           exact A.con_empty
       · rw [fstFinset_singleton_left A B p h2]
         exact A.con_sing p.val.1
-    · rcases p.property with h1 | h2
+    · rcases p.property.out with h1 | h2
       · rw [sndFinset_singleton_right A B p h1]
         exact B.con_sing p.val.2
       · by_cases h1 : p.val.1 = A.bot

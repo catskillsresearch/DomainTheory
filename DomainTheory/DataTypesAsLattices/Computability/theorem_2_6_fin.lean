@@ -35,10 +35,12 @@ theorem theorem_2_6_fin {n : ℕ} {f : (Fin n → Pomega) → Pomega}
     (hf : IsScottContinuousFin f) :
     (IsComputableFin f ↔ IsRE (curryFin f)) ∧
       (IsRE (curryFin f) ↔ IsCombinatory (curryFin f)) ∧
-      (IsLambdaDefinable (curryFin f) ↔ IsCombinatory (curryFin f)) := by
+      (LambdaDefinable (curryFin f) ↔ IsCombinatory (curryFin f)) := by
   refine ⟨?_, IsRE.iff_combinatory, ?_⟩
   · exact ⟨fun h => h.2, fun h => ⟨hf, h⟩⟩
-  · exact ⟨fun ⟨t, ht⟩ => by simpa [ht] using theorem_2_4_closed t,
+  · exact ⟨fun h => by
+      obtain ⟨t, ht⟩ := h.out
+      simpa [ht] using theorem_2_4_closed t,
       combinatory_isLambdaDefinable⟩
 
 end DomainTheory.DataTypesAsLattices

@@ -17,7 +17,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.B
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.emptyEntails_mem_botElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.mem_botElement_emptyEntails
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.IsStrict
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.IsStrictToken
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.StrictToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BasicInst22
 
 @[expose] public section
@@ -33,7 +33,8 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
 theorem IsStrictToken_of_IsStrict (f : ApproximableMap A B) (hf : IsStrict A B f)
-    {p : FunToken A B} (hrel : f.rel p.val.1 p.val.2) : IsStrictToken A B p := by
+    {p : FunToken A B} (hrel : f.rel p.val.1 p.val.2) : StrictToken A B p := by
+  constructor
   intro hE
   have hsub : ↑p.val.1 ⊆ A.botElement.carrier := fun x hx =>
     emptyEntails_mem_botElement A (hE x (Finset.mem_coe.1 hx))

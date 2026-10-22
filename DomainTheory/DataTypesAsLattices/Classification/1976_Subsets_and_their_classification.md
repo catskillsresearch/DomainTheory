@@ -51,7 +51,7 @@ when $x, y : \mathbf{tree}$. Every tree, aside from $\top$ or $\bot$, is either 
 - [DataTypesAsLattices/Classification/IsScottGdelta.lean](IsScottGdelta.lean)
 - [DataTypesAsLattices/Classification/IsFcapGdelta.lean](IsFcapGdelta.lean)
 - [DataTypesAsLattices/Classification/IsSigma11.lean](IsSigma11.lean)
-- [DataTypesAsLattices/Classification/IsThreeValued.lean](IsThreeValued.lean)
+- [DataTypesAsLattices/Classification/ThreeValued.lean](ThreeValued.lean)
 - [DataTypesAsLattices/Classification/ScottB.lean](ScottB.lean)
 - [DataTypesAsLattices/Classification/ScottF.lean](ScottF.lean)
 - [DataTypesAsLattices/Classification/ScottG.lean](ScottG.lean)

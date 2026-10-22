@@ -26,7 +26,7 @@ variable (A : InfoSys α)
 
 
 theorem treeUnfold_pairL (t : TreeToken α) :
-    treeUnfold A (.pairL t) = .right ⟨(t, treeBot), Or.inr rfl⟩ := rfl
+    treeUnfold A (.pairL t) = .right ⟨(t, treeBot), ⟨Or.inr rfl⟩⟩ := rfl
 
 end InfoSys
 end DomainTheory.InformationSystems

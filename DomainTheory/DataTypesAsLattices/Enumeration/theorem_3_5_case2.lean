@@ -32,7 +32,7 @@ open Nat.Partrec.Code
 
 theorem theorem_3_5_case2 {u : Pomega} {p : ℕ → ℕ} {n j k : ℕ}
     (hu : IsCombinatory u) (hr : Realizes u p)
-    (hext : IsExtensional valNat p)
+    (hext : Extensional valNat p)
     (hj : e j ⊆ valNat n)
     (_hne : e j ≠ valNat n)
     (hkfin : k ∈ valNat (p (fin j)))
@@ -43,11 +43,11 @@ theorem theorem_3_5_case2 {u : Pomega} {p : ℕ → ℕ} {n j k : ℕ}
     · have : valNat (myhillCase2Code j n m) = e j := by
         rw [valNat_myhillCase2Code, hm, eq_2_7_bot]
         simp [botElem]
-      have := hext (myhillCase2Code j n m) (fin j) (by simp [this, valNat_fin])
+      have := hext.out (myhillCase2Code j n m) (fin j) (by simp [this, valNat_fin])
       simp [this, hkfin, hm]
     · have : valNat (myhillCase2Code j n m) = valNat n :=
         valNat_myhillCase2Code_ne_bot j n m hj hm
-      have := hext (myhillCase2Code j n m) n this
+      have := hext.out (myhillCase2Code j n m) n this
       simp [this, hkn, hm]
   have hre : REPred fun m => valNat m = botElem :=
     _root_.REPred.of_eq
