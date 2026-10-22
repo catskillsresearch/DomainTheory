@@ -6,83 +6,83 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/Tok.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/Tok.lean](Tok.lean)**
 
 @import "Tok.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/a.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/a.lean](a.lean)**
 
 @import "a.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/a_inter_b.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/a_inter_b.lean](a_inter_b.lean)**
 
 @import "a_inter_b.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/b.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/b.lean](b.lean)**
 
 @import "b.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/master.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/master.lean](master.lean)**
 
 @import "master.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/memSet.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/memSet.lean](memSet.lean)**
 
 @import "memSet.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/mem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/mem.lean](mem.lean)**
 
 @import "mem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/mem_iff.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/mem_iff.lean](mem_iff.lean)**
 
 @import "mem_iff.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/inter_eq.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/inter_eq.lean](inter_eq.lean)**
 
 @import "inter_eq.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/mem_a.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/mem_a.lean](mem_a.lean)**
 
 @import "mem_a.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/mem_b.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/mem_b.lean](mem_b.lean)**
 
 @import "mem_b.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/mem_master.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/mem_master.lean](mem_master.lean)**
 
 @import "mem_master.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/not_mem_sub_one.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/not_mem_sub_one.lean](not_mem_sub_one.lean)**
 
 @import "not_mem_sub_one.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/notPositiveSystem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/notPositiveSystem.lean](notPositiveSystem.lean)**
 
 @import "notPositiveSystem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/one_not_mem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/one_not_mem.lean](one_not_mem.lean)**
 
 @import "one_not_mem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/not_isPositive.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/not_isPositive.lean](not_isPositive.lean)**
 
 @import "not_isPositive.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119.lean](../Exercise119.lean)**
 
 @import "../Exercise119.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/positiveExample.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/positiveExample.lean](positiveExample.lean)**
 
 @import "positiveExample.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/Basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/positiveExample_isPositive.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/positiveExample_isPositive.lean](positiveExample_isPositive.lean)**
 
 @import "positiveExample_isPositive.lean"
 

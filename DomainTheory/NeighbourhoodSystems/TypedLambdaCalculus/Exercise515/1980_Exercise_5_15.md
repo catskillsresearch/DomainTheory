@@ -6,111 +6,111 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow.lean](kpow.lean)**
 
 @import "kpow.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow_zero.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow_zero.lean](kpow_zero.lean)**
 
 @import "kpow_zero.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow_succ.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow_succ.lean](kpow_succ.lean)**
 
 @import "kpow_succ.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/G.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/G.lean](G.lean)**
 
 @import "G.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_kpow_singleton.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_kpow_singleton.lean](mem_kpow_singleton.lean)**
 
 @import "mem_kpow_singleton.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_star.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_star.lean](mem_star.lean)**
 
 @import "mem_star.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_star_singleton.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_star_singleton.lean](mem_star_singleton.lean)**
 
 @import "mem_star_singleton.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/smul_assoc.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/smul_assoc.lean](smul_assoc.lean)**
 
 @import "smul_assoc.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/smul_union.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/smul_union.lean](smul_union.lean)**
 
 @import "smul_union.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star.lean](star.lean)**
 
 @import "star.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkA.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkA.lean](parkA.lean)**
 
 @import "parkA.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkC.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkC.lean](parkC.lean)**
 
 @import "parkC.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkX.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkX.lean](parkX.lean)**
 
 @import "parkX.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkY.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkY.lean](parkY.lean)**
 
 @import "parkY.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/Basic.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_eq.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_eq.lean](star_eq.lean)**
 
 @import "star_eq.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_mul_subset_prefixed.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_mul_subset_prefixed.lean](star_mul_subset_prefixed.lean)**
 
 @import "star_mul_subset_prefixed.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/sunion_mul.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/sunion_mul.lean](sunion_mul.lean)**
 
 @import "sunion_mul.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_mul_isFixed.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_mul_isFixed.lean](star_mul_isFixed.lean)**
 
 @import "star_mul_isFixed.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/arden.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/arden.lean](arden.lean)**
 
 @import "arden.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkX_eq.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkX_eq.lean](parkX_eq.lean)**
 
 @import "parkX_eq.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkY_eq.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkY_eq.lean](parkY_eq.lean)**
 
 @import "parkY_eq.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/park_least.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/park_least.lean](park_least.lean)**
 
 @import "park_least.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/park_solves.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/park_solves.lean](park_solves.lean)**
 
 @import "park_solves.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/part1.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/part1.lean](part1.lean)**
 
 @import "part1.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515.lean](../Exercise515.lean)**
 
 @import "../Exercise515.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/part1_freeMonoid.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/part1_freeMonoid.lean](part1_freeMonoid.lean)**
 
 @import "part1_freeMonoid.lean"
 

@@ -6,43 +6,43 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Graphu2eswap.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Graphu2eswap.lean](Graphu2eswap.lean)**
 
 @import "Graphu2eswap.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/PeanoModel.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/PeanoModel.lean](PeanoModel.lean)**
 
 @import "PeanoModel.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Graph.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Graph.lean](Graph.lean)**
 
 @import "Graph.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Basic.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/graph_succ_right.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/graph_succ_right.lean](graph_succ_right.lean)**
 
 @import "graph_succ_right.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/graph_zero_right.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/graph_zero_right.lean](graph_zero_right.lean)**
 
 @import "graph_zero_right.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/exists_unique_right.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/exists_unique_right.lean](exists_unique_right.lean)**
 
 @import "exists_unique_right.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/exists_unique_left.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/exists_unique_left.lean](exists_unique_left.lean)**
 
 @import "exists_unique_left.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/peano_models_isomorphic.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/peano_models_isomorphic.lean](peano_models_isomorphic.lean)**
 
 @import "peano_models_isomorphic.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46.lean](../Theorem46.lean)**
 
 @import "../Theorem46.lean"
 

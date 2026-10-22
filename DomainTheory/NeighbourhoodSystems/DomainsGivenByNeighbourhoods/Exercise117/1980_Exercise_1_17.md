@@ -6,39 +6,39 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem.lean](ratIntervalMem.lean)**
 
 @import "ratIntervalMem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/inter_mem'.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/inter_mem'.lean](inter_mem'.lean)**
 
 @import "inter_mem'.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem_nonempty.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem_nonempty.lean](ratIntervalMem_nonempty.lean)**
 
 @import "ratIntervalMem_nonempty.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem.lean](ratIntervalSystem.lean)**
 
 @import "ratIntervalSystem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem_mem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem_mem.lean](ratIntervalSystem_mem.lean)**
 
 @import "ratIntervalSystem_mem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt.lean](filterAt.lean)**
 
 @import "filterAt.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/Basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt_injective.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt_injective.lean](filterAt_injective.lean)**
 
 @import "filterAt_injective.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117.lean](../Exercise117.lean)**
 
 @import "../Exercise117.lean"
 

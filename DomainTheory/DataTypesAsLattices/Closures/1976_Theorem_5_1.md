@@ -6,11 +6,11 @@
 
 ## AI: Human-English to AI-Lean
 
-**DataTypesAsLattices/Closures/theorem_5_1.lean**
+**[DataTypesAsLattices/Closures/theorem_5_1.lean](theorem_5_1.lean)**
 
 @import "theorem_5_1.lean"
 
-**DataTypesAsLattices/Closures/theorem_5_1_isolated.lean**
+**[DataTypesAsLattices/Closures/theorem_5_1_isolated.lean](theorem_5_1_isolated.lean)**
 
 @import "theorem_5_1_isolated.lean"
 

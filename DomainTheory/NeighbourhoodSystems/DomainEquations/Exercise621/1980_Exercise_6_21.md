@@ -6,223 +6,223 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/GExpr.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/GExpr.lean](GExpr.lean)**
 
 @import "GExpr.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/inter_ne_of_ne_left.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/inter_ne_of_ne_left.lean](inter_ne_of_ne_left.lean)**
 
 @import "inter_ne_of_ne_left.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/naryOp.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/naryOp.lean](naryOp.lean)**
 
 @import "naryOp.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/naryProd.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/naryProd.lean](naryProd.lean)**
 
 @import "naryProd.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/narySum.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/narySum.lean](narySum.lean)**
 
 @import "narySum.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok.lean](oplusTok.lean)**
 
 @import "oplusTok.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_mem_embF.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_mem_embF.lean](oplusTok_mem_embF.lean)**
 
 @import "oplusTok_mem_embF.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_mem_embT.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_mem_embT.lean](oplusTok_mem_embT.lean)**
 
 @import "oplusTok_mem_embT.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_nonempty.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_nonempty.lean](oplusTok_nonempty.lean)**
 
 @import "oplusTok_nonempty.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplus.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplus.lean](oplus.lean)**
 
 @import "oplus.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/naryOplus.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/naryOplus.lean](naryOplus.lean)**
 
 @import "naryOplus.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusMapTok.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusMapTok.lean](oplusMapTok.lean)**
 
 @import "oplusMapTok.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok.lean](otimesTok.lean)**
 
 @import "otimesTok.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok_mem_master.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok_mem_master.lean](otimesTok_mem_master.lean)**
 
 @import "otimesTok_mem_master.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok_mem_prod.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok_mem_prod.lean](otimesTok_mem_prod.lean)**
 
 @import "otimesTok_mem_prod.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok_nonempty.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok_nonempty.lean](otimesTok_nonempty.lean)**
 
 @import "otimesTok_nonempty.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimes.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimes.lean](otimes.lean)**
 
 @import "otimes.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/RootedConst.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/RootedConst.lean](RootedConst.lean)**
 
 @import "RootedConst.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/gFun.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/gFun.lean](gFun.lean)**
 
 @import "gFun.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/gIter.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/gIter.lean](gIter.lean)**
 
 @import "gIter.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/naryOtimes.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/naryOtimes.lean](naryOtimes.lean)**
 
 @import "naryOtimes.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/obj.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/obj.lean](obj.lean)**
 
 @import "obj.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimesMapTok.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimesMapTok.lean](otimesMapTok.lean)**
 
 @import "otimesMapTok.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/map.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/map.lean](map.lean)**
 
 @import "map.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/Basic.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621.lean](../Exercise621.lean)**
 
 @import "../Exercise621.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2enaryOp_rootedConst.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2enaryOp_rootedConst.lean](GExpru2enaryOp_rootedConst.lean)**
 
 @import "GExpru2enaryOp_rootedConst.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/inter_ne_of_ne_right.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/inter_ne_of_ne_right.lean](inter_ne_of_ne_right.lean)**
 
 @import "inter_ne_of_ne_right.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/naryOplus_singleton_subsystem.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/naryOplus_singleton_subsystem.lean](naryOplus_singleton_subsystem.lean)**
 
 @import "naryOplus_singleton_subsystem.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/naryOtimes_singleton_subsystem.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/naryOtimes_singleton_subsystem.lean](naryOtimes_singleton_subsystem.lean)**
 
 @import "naryOtimes_singleton_subsystem.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/naryProd_singleton_subsystem.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/naryProd_singleton_subsystem.lean](naryProd_singleton_subsystem.lean)**
 
 @import "naryProd_singleton_subsystem.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/narySum_singleton_subsystem.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/narySum_singleton_subsystem.lean](narySum_singleton_subsystem.lean)**
 
 @import "narySum_singleton_subsystem.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusMapTok_comp.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusMapTok_comp.lean](oplusMapTok_comp.lean)**
 
 @import "oplusMapTok_comp.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusMapTok_id.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusMapTok_id.lean](oplusMapTok_id.lean)**
 
 @import "oplusMapTok_id.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusMapTok_isStrict.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusMapTok_isStrict.lean](oplusMapTok_isStrict.lean)**
 
 @import "oplusMapTok_isStrict.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusMapTok_mono.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusMapTok_mono.lean](oplusMapTok_mono.lean)**
 
 @import "oplusMapTok_mono.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_mem_embF_inv.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_mem_embF_inv.lean](oplusTok_mem_embF_inv.lean)**
 
 @import "oplusTok_mem_embF_inv.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_mem_embT_inv.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_mem_embT_inv.lean](oplusTok_mem_embT_inv.lean)**
 
 @import "oplusTok_mem_embT_inv.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_mem_master.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_mem_master.lean](oplusTok_mem_master.lean)**
 
 @import "oplusTok_mem_master.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_subsystem.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/oplusTok_subsystem.lean](oplusTok_subsystem.lean)**
 
 @import "oplusTok_subsystem.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimesMapTok_comp.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimesMapTok_comp.lean](otimesMapTok_comp.lean)**
 
 @import "otimesMapTok_comp.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimesMapTok_id.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimesMapTok_id.lean](otimesMapTok_id.lean)**
 
 @import "otimesMapTok_id.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_id.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_id.lean](GExpru2emap_id.lean)**
 
 @import "GExpru2emap_id.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimesMapTok_isStrict.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimesMapTok_isStrict.lean](otimesMapTok_isStrict.lean)**
 
 @import "otimesMapTok_isStrict.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_isStrict.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_isStrict.lean](GExpru2emap_isStrict.lean)**
 
 @import "GExpru2emap_isStrict.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_comp.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_comp.lean](GExpru2emap_comp.lean)**
 
 @import "GExpru2emap_comp.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimesMapTok_mono.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimesMapTok_mono.lean](otimesMapTok_mono.lean)**
 
 @import "otimesMapTok_mono.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_mono.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_mono.lean](GExpru2emap_mono.lean)**
 
 @import "GExpru2emap_mono.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_continuous_mp.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_continuous_mp.lean](GExpru2emap_continuous_mp.lean)**
 
 @import "GExpru2emap_continuous_mp.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_continuous.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2emap_continuous.lean](GExpru2emap_continuous.lean)**
 
 @import "GExpru2emap_continuous.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok_mem_prod_inv.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok_mem_prod_inv.lean](otimesTok_mem_prod_inv.lean)**
 
 @import "otimesTok_mem_prod_inv.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok_subsystem.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/otimesTok_subsystem.lean](otimesTok_subsystem.lean)**
 
 @import "otimesTok_subsystem.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2eobj_subsystem.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2eobj_subsystem.lean](GExpru2eobj_subsystem.lean)**
 
 @import "GExpru2eobj_subsystem.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2eobj_continuous_mp.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2eobj_continuous_mp.lean](GExpru2eobj_continuous_mp.lean)**
 
 @import "GExpru2eobj_continuous_mp.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2eobj_continuous.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise621/GExpru2eobj_continuous.lean](GExpru2eobj_continuous.lean)**
 
 @import "GExpru2eobj_continuous.lean"
 

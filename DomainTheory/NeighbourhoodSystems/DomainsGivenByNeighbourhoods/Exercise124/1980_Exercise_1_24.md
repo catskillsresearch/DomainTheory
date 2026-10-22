@@ -6,23 +6,23 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124/chainUnion.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124/chainUnion.lean](chainUnion.lean)**
 
 @import "chainUnion.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124/Basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124/le_chainUnion.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124/le_chainUnion.lean](le_chainUnion.lean)**
 
 @import "le_chainUnion.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124/exists_total_ge.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124/exists_total_ge.lean](exists_total_ge.lean)**
 
 @import "exists_total_ge.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124.lean](../Exercise124.lean)**
 
 @import "../Exercise124.lean"
 

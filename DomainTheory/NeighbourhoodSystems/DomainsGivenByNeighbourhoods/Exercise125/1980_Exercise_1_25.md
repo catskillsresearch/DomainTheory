@@ -6,71 +6,71 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/upperSet_subset_or.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/upperSet_subset_or.lean](upperSet_subset_or.lean)**
 
 @import "upperSet_subset_or.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/finalSegmentSystem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/finalSegmentSystem.lean](finalSegmentSystem.lean)**
 
 @import "finalSegmentSystem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/mem_def.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/mem_def.lean](mem_def.lean)**
 
 @import "mem_def.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/master_eq.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/master_eq.lean](master_eq.lean)**
 
 @import "master_eq.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/Ici_mem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/Ici_mem.lean](Ici_mem.lean)**
 
 @import "Ici_mem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/exists_Ici_of_mem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/exists_Ici_of_mem.lean](exists_Ici_of_mem.lean)**
 
 @import "exists_Ici_of_mem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/lowerSetOf.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/lowerSetOf.lean](lowerSetOf.lean)**
 
 @import "lowerSetOf.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/lowerSetOf_isLowerSet.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/lowerSetOf_isLowerSet.lean](lowerSetOf_isLowerSet.lean)**
 
 @import "lowerSetOf_isLowerSet.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/lowerSetOf_nonempty.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/lowerSetOf_nonempty.lean](lowerSetOf_nonempty.lean)**
 
 @import "lowerSetOf_nonempty.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/ofLowerSet.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/ofLowerSet.lean](ofLowerSet.lean)**
 
 @import "ofLowerSet.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/lowerSetOf_ofLowerSet.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/lowerSetOf_ofLowerSet.lean](lowerSetOf_ofLowerSet.lean)**
 
 @import "lowerSetOf_ofLowerSet.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/ofLowerSet_lowerSetOf.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/ofLowerSet_lowerSetOf.lean](ofLowerSet_lowerSetOf.lean)**
 
 @import "ofLowerSet_lowerSetOf.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/finalSegmentClassify.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/finalSegmentClassify.lean](finalSegmentClassify.lean)**
 
 @import "finalSegmentClassify.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/topElement.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/topElement.lean](topElement.lean)**
 
 @import "topElement.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/Basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125.lean](../Exercise125.lean)**
 
 @import "../Exercise125.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/principal_Ici_le_iff.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise125/principal_Ici_le_iff.lean](principal_Ici_le_iff.lean)**
 
 @import "principal_Ici_le_iff.lean"
 

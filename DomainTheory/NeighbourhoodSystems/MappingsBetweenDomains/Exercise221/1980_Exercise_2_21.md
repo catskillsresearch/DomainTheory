@@ -6,115 +6,115 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/bot_lt_Lambda.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/bot_lt_Lambda.lean](bot_lt_Lambda.lean)**
 
 @import "bot_lt_Lambda.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/cone_not_subset_singleton.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/cone_not_subset_singleton.lean](cone_not_subset_singleton.lean)**
 
 @import "cone_not_subset_singleton.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/cone_ne_singleton.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/cone_ne_singleton.lean](cone_ne_singleton.lean)**
 
 @import "cone_ne_singleton.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/cone_singleton_nd.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/cone_singleton_nd.lean](cone_singleton_nd.lean)**
 
 @import "cone_singleton_nd.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/isTotal_singletonElt.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/isTotal_singletonElt.lean](isTotal_singletonElt.lean)**
 
 @import "isTotal_singletonElt.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/juxtapose_cone.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/juxtapose_cone.lean](juxtapose_cone.lean)**
 
 @import "juxtapose_cone.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/juxtapose_singleton_mem.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/juxtapose_singleton_mem.lean](juxtapose_singleton_mem.lean)**
 
 @import "juxtapose_singleton_mem.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221.lean](../Exercise221.lean)**
 
 @import "../Exercise221.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memB_imp_memC.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memB_imp_memC.lean](memB_imp_memC.lean)**
 
 @import "memB_imp_memC.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memC.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memC.lean](memC.lean)**
 
 @import "memC.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memC_nonempty.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memC_nonempty.lean](memC_nonempty.lean)**
 
 @import "memC_nonempty.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/singleton_cone_nd.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/singleton_cone_nd.lean](singleton_cone_nd.lean)**
 
 @import "singleton_cone_nd.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/singleton_singleton_nd.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/singleton_singleton_nd.lean](singleton_singleton_nd.lean)**
 
 @import "singleton_singleton_nd.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/nestedOrDisjoint_C.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/nestedOrDisjoint_C.lean](nestedOrDisjoint_C.lean)**
 
 @import "nestedOrDisjoint_C.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/C.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/C.lean](C.lean)**
 
 @import "C.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/C_mem.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/C_mem.lean](C_mem.lean)**
 
 @import "C_mem.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/C_master.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/C_master.lean](C_master.lean)**
 
 @import "C_master.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memC_cone.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memC_cone.lean](memC_cone.lean)**
 
 @import "memC_cone.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memC_singleton.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memC_singleton.lean](memC_singleton.lean)**
 
 @import "memC_singleton.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/prepend_mono.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/prepend_mono.lean](prepend_mono.lean)**
 
 @import "prepend_mono.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/prepend_singleton.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/prepend_singleton.lean](prepend_singleton.lean)**
 
 @import "prepend_singleton.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memC_prepend.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/memC_prepend.lean](memC_prepend.lean)**
 
 @import "memC_prepend.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/prepend_subset_cone.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/prepend_subset_cone.lean](prepend_subset_cone.lean)**
 
 @import "prepend_subset_cone.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/singletonElt.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/singletonElt.lean](singletonElt.lean)**
 
 @import "singletonElt.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/Lambda.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/Lambda.lean](Lambda.lean)**
 
 @import "Lambda.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/subset_singleton_eq.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/subset_singleton_eq.lean](subset_singleton_eq.lean)**
 
 @import "subset_singleton_eq.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/juxtapose.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/juxtapose.lean](juxtapose.lean)**
 
 @import "juxtapose.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/Basic.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise221/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 

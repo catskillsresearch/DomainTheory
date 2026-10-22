@@ -6,43 +6,43 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix.lean](pfix.lean)**
 
 @import "pfix.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_apply.lean](pfix_apply.lean)**
 
 @import "pfix_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/recOp.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/recOp.lean](recOp.lean)**
 
 @import "recOp.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/recOp_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/recOp_apply.lean](recOp_apply.lean)**
 
 @import "recOp_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/sectionu2082_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/sectionu2082_apply.lean](sectionu2082_apply.lean)**
 
 @import "sectionu2082_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_isFixed.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_isFixed.lean](pfix_isFixed.lean)**
 
 @import "pfix_isFixed.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_eq_fixElement_recOp.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_eq_fixElement_recOp.lean](pfix_eq_fixElement_recOp.lean)**
 
 @import "pfix_eq_fixElement_recOp.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition54.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition54.lean](../Proposition54.lean)**
 
 @import "../Proposition54.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/section₂.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/section₂.lean](section₂.lean)**
 
 @import "section₂.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/Basic.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 

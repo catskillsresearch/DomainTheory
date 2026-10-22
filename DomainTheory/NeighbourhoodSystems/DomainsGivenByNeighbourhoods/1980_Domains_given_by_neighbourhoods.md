@@ -6,307 +6,307 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/NeighborhoodSystem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/NeighborhoodSystem.lean](NeighborhoodSystem.lean)**
 
 @import "NeighborhoodSystem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Element.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Element.lean](Element.lean)**
 
 @import "Element.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/IsPositive.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/IsPositive.lean](IsPositive.lean)**
 
 @import "IsPositive.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/NestedOrDisjoint.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/NestedOrDisjoint.lean](NestedOrDisjoint.lean)**
 
 @import "NestedOrDisjoint.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/interUpTo.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/interUpTo.lean](interUpTo.lean)**
 
 @import "interUpTo.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/interUpTo_zero.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/interUpTo_zero.lean](interUpTo_zero.lean)**
 
 @import "interUpTo_zero.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/interUpTo_succ.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/interUpTo_succ.lean](interUpTo_succ.lean)**
 
 @import "interUpTo_succ.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Consistent.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Consistent.lean](Consistent.lean)**
 
 @import "Consistent.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/element_le.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/element_le.lean](element_le.lean)**
 
 @import "element_le.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/element_le_refl.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/element_le_refl.lean](element_le_refl.lean)**
 
 @import "element_le_refl.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/element_le_trans.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/element_le_trans.lean](element_le_trans.lean)**
 
 @import "element_le_trans.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ext.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ext.lean](ext.lean)**
 
 @import "ext.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/element_le_antisymm.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/element_le_antisymm.lean](element_le_antisymm.lean)**
 
 @import "element_le_antisymm.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/BasicInst22.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/BasicInst22.lean](BasicInst22.lean)**
 
 @import "BasicInst22.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/SeqEquiv.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/SeqEquiv.lean](SeqEquiv.lean)**
 
 @import "SeqEquiv.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/limitFamily.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/limitFamily.lean](limitFamily.lean)**
 
 @import "limitFamily.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ofNestedOrDisjoint.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ofNestedOrDisjoint.lean](ofNestedOrDisjoint.lean)**
 
 @import "ofNestedOrDisjoint.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ofPositive.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ofPositive.lean](ofPositive.lean)**
 
 @import "ofPositive.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/principal.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/principal.lean](principal.lean)**
 
 @import "principal.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/mem_principal.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/mem_principal.lean](mem_principal.lean)**
 
 @import "mem_principal.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/bot.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/bot.lean](bot.lean)**
 
 @import "bot.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/mem_bot.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/mem_bot.lean](mem_bot.lean)**
 
 @import "mem_bot.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/bot_le.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/bot_le.lean](bot_le.lean)**
 
 @import "bot_le.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/BasicInst34.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/BasicInst34.lean](BasicInst34.lean)**
 
 @import "BasicInst34.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/DomainIso.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/DomainIso.lean](DomainIso.lean)**
 
 @import "DomainIso.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/IsTotal.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/IsTotal.lean](IsTotal.lean)**
 
 @import "IsTotal.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Isomorphic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Isomorphic.lean](Isomorphic.lean)**
 
 @import "Isomorphic.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Basic/notation40.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Basic/notation40.lean](Basic/notation40.lean)**
 
 @import "Basic/notation40.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/Str.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/Str.lean](ExampleB/Str.lean)**
 
 @import "ExampleB/Str.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/cone.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/cone.lean](ExampleB/cone.lean)**
 
 @import "ExampleB/cone.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/cone_injective.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/cone_injective.lean](ExampleB/cone_injective.lean)**
 
 @import "ExampleB/cone_injective.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/bot_mem_cone_iff.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/bot_mem_cone_iff.lean](ExampleB/bot_mem_cone_iff.lean)**
 
 @import "ExampleB/bot_mem_cone_iff.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/mem_cone.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/mem_cone.lean](ExampleB/mem_cone.lean)**
 
 @import "ExampleB/mem_cone.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/cone_nil.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/cone_nil.lean](ExampleB/cone_nil.lean)**
 
 @import "ExampleB/cone_nil.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/cone_subset_cone.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/cone_subset_cone.lean](ExampleB/cone_subset_cone.lean)**
 
 @import "ExampleB/cone_subset_cone.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/cone_trichotomy.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/cone_trichotomy.lean](ExampleB/cone_trichotomy.lean)**
 
 @import "ExampleB/cone_trichotomy.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/memB.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/memB.lean](ExampleB/memB.lean)**
 
 @import "ExampleB/memB.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/mem_iff_exists_sigmaBot.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/mem_iff_exists_sigmaBot.lean](ExampleB/mem_iff_exists_sigmaBot.lean)**
 
 @import "ExampleB/mem_iff_exists_sigmaBot.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/nestedOrDisjoint.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/nestedOrDisjoint.lean](ExampleB/nestedOrDisjoint.lean)**
 
 @import "ExampleB/nestedOrDisjoint.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/B.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/B.lean](ExampleB/B.lean)**
 
 @import "ExampleB/B.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/B_mem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/B_mem.lean](ExampleB/B_mem.lean)**
 
 @import "ExampleB/B_mem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/B_master.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/B_master.lean](ExampleB/B_master.lean)**
 
 @import "ExampleB/B_master.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/memB_cone.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/memB_cone.lean](ExampleB/memB_cone.lean)**
 
 @import "ExampleB/memB_cone.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend.lean](ExampleB/prepend.lean)**
 
 @import "ExampleB/prepend.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/mem_prepend.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/mem_prepend.lean](ExampleB/mem_prepend.lean)**
 
 @import "ExampleB/mem_prepend.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend_append.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend_append.lean](ExampleB/prepend_append.lean)**
 
 @import "ExampleB/prepend_append.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend_cone.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend_cone.lean](ExampleB/prepend_cone.lean)**
 
 @import "ExampleB/prepend_cone.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/memB_prepend.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/memB_prepend.lean](ExampleB/memB_prepend.lean)**
 
 @import "ExampleB/memB_prepend.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend_mono.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend_mono.lean](ExampleB/prepend_mono.lean)**
 
 @import "ExampleB/prepend_mono.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend_nil.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend_nil.lean](ExampleB/prepend_nil.lean)**
 
 @import "ExampleB/prepend_nil.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend_univ.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/prepend_univ.lean](ExampleB/prepend_univ.lean)**
 
 @import "ExampleB/prepend_univ.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaBot.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaBot.lean](ExampleB/sigmaBot.lean)**
 
 @import "ExampleB/sigmaBot.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaBot_le_iff.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaBot_le_iff.lean](ExampleB/sigmaBot_le_iff.lean)**
 
 @import "ExampleB/sigmaBot_le_iff.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaElt.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaElt.lean](ExampleB/sigmaElt.lean)**
 
 @import "ExampleB/sigmaElt.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/Basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/Basic.lean](ExampleB/Basic.lean)**
 
 @import "ExampleB/Basic.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaElt_append.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaElt_append.lean](ExampleB/sigmaElt_append.lean)**
 
 @import "ExampleB/sigmaElt_append.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaElt_bot.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaElt_bot.lean](ExampleB/sigmaElt_bot.lean)**
 
 @import "ExampleB/sigmaElt_bot.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaElt_nil.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaElt_nil.lean](ExampleB/sigmaElt_nil.lean)**
 
 @import "ExampleB/sigmaElt_nil.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB.lean](ExampleB.lean)**
 
 @import "ExampleB.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/interUpTo_antitone.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/interUpTo_antitone.lean](interUpTo_antitone.lean)**
 
 @import "interUpTo_antitone.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/state.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/state.lean](state.lean)**
 
 @import "state.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Y.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Y.lean](Y.lean)**
 
 @import "Y.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Y_zero.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Y_zero.lean](Y_zero.lean)**
 
 @import "Y_zero.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc.lean](acc.lean)**
 
 @import "acc.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc_zero.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc_zero.lean](acc_zero.lean)**
 
 @import "acc_zero.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/cond.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/cond.lean](cond.lean)**
 
 @import "cond.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/state_succ.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/state_succ.lean](state_succ.lean)**
 
 @import "state_succ.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Y_succ_neg.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Y_succ_neg.lean](Y_succ_neg.lean)**
 
 @import "Y_succ_neg.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Y_succ_pos.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Y_succ_pos.lean](Y_succ_pos.lean)**
 
 @import "Y_succ_pos.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc_succ_neg.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc_succ_neg.lean](acc_succ_neg.lean)**
 
 @import "acc_succ_neg.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc_succ_pos.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc_succ_pos.lean](acc_succ_pos.lean)**
 
 @import "acc_succ_pos.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc_eq_interUpTo.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc_eq_interUpTo.lean](acc_eq_interUpTo.lean)**
 
 @import "acc_eq_interUpTo.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc_mem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/acc_mem.lean](acc_mem.lean)**
 
 @import "acc_mem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/mem_interUpTo_Y.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/mem_interUpTo_Y.lean](mem_interUpTo_Y.lean)**
 
 @import "mem_interUpTo_Y.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/greedyElement.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/greedyElement.lean](greedyElement.lean)**
 
 @import "greedyElement.lean"
 

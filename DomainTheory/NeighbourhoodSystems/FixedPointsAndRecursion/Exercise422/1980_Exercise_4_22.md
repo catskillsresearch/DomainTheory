@@ -6,63 +6,63 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/exists_peano_submodel.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/exists_peano_submodel.lean](exists_peano_submodel.lean)**
 
 @import "exists_peano_submodel.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422.lean](../Exercise422.lean)**
 
 @import "../Exercise422.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp.lean](genOp.lean)**
 
 @import "genOp.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp_monotone.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp_monotone.lean](genOp_monotone.lean)**
 
 @import "genOp_monotone.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp_nats.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp_nats.lean](genOp_nats.lean)**
 
 @import "genOp_nats.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/natPeano.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/natPeano.lean](natPeano.lean)**
 
 @import "natPeano.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/nats.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/nats.lean](nats.lean)**
 
 @import "nats.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/Nat'.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/Nat'.lean](Nat'.lean)**
 
 @import "Nat'.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/nats_induction.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/nats_induction.lean](nats_induction.lean)**
 
 @import "nats_induction.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/succ_mem_nats.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/succ_mem_nats.lean](succ_mem_nats.lean)**
 
 @import "succ_mem_nats.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/subSucc.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/subSucc.lean](subSucc.lean)**
 
 @import "subSucc.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/zero_mem_nats.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/zero_mem_nats.lean](zero_mem_nats.lean)**
 
 @import "zero_mem_nats.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/subZero.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/subZero.lean](subZero.lean)**
 
 @import "subZero.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/peanoSub.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/peanoSub.lean](peanoSub.lean)**
 
 @import "peanoSub.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/Basic.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 

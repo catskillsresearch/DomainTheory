@@ -6,31 +6,31 @@
 
 ## AI: Human-English to AI-Lean
 
-**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean](constMap.lean)**
 
 @import "constMap.lean"
 
-**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/Basic.lean**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_toElement.lean**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_toElement.lean](constMap_toElement.lean)**
 
 @import "constMap_toElement.lean"
 
-**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean](comp_constMap.lean)**
 
 @import "comp_constMap.lean"
 
-**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_comp.lean**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_comp.lean](constMap_comp.lean)**
 
 @import "constMap_comp.lean"
 
-**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean](../Proposition56.lean)**
 
 @import "../Proposition56.lean"
 
-**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_unique.lean**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_unique.lean](constMap_unique.lean)**
 
 @import "constMap_unique.lean"
 

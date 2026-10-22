@@ -33,7 +33,7 @@ theorem isContinuousLattice_iff_isLUB_sInf_nhds :
       have hxle : x ≤ sInf U := le_sInf fun _ hz => Set.mem_Ici.1 (hsub hz)
       exact hxle.trans (hb ⟨U, hU, hyU, rfl⟩)
   · intro h
-    constructor
+    refine { out := ?_ }
     intro y
     refine ⟨fun x hx => hx.le, ?_⟩
     intro b hb

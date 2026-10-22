@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**DataTypesAsLattices/Lambda/theorem_2_1.lean**
+**[DataTypesAsLattices/Lambda/theorem_2_1.lean](theorem_2_1.lean)**
 
 @import "theorem_2_1.lean"
 

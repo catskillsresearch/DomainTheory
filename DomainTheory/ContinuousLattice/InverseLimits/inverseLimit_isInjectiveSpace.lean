@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
-public import DomainTheory.ContinuousLattice.Theorem212.lemma_3_9
+public import DomainTheory.ContinuousLattice.ContinuousLattices.lemma_3_9
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_coordinate_continuous
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous

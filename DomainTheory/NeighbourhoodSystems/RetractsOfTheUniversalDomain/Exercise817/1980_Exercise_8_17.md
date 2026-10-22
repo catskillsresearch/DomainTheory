@@ -6,55 +6,55 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/ProjPair.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/ProjPair.lean](ProjPair.lean)**
 
 @import "ProjPair.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/IsUniversal.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/IsUniversal.lean](IsUniversal.lean)**
 
 @import "IsUniversal.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/comp.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/comp.lean](comp.lean)**
 
 @import "comp.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/ofIso.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/ofIso.lean](ofIso.lean)**
 
 @import "ofIso.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/ofSubsystem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/ofSubsystem.lean](ofSubsystem.lean)**
 
 @import "ofSubsystem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/U_isUniversal.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/U_isUniversal.lean](U_isUniversal.lean)**
 
 @import "U_isUniversal.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/funSpaceUU_trianglelefteq_U.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/funSpaceUU_trianglelefteq_U.lean](funSpaceUU_trianglelefteq_U.lean)**
 
 @import "funSpaceUU_trianglelefteq_U.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/isUniversal_of_isomorphic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/isUniversal_of_isomorphic.lean](isUniversal_of_isomorphic.lean)**
 
 @import "isUniversal_of_isomorphic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/V_isUniversal.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/V_isUniversal.lean](V_isUniversal.lean)**
 
 @import "V_isUniversal.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/prodUU_trianglelefteq_U.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/prodUU_trianglelefteq_U.lean](prodUU_trianglelefteq_U.lean)**
 
 @import "prodUU_trianglelefteq_U.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/sumUU_trianglelefteq_U.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817/sumUU_trianglelefteq_U.lean](sumUU_trianglelefteq_U.lean)**
 
 @import "sumUU_trianglelefteq_U.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise817.lean](../Exercise817.lean)**
 
 @import "../Exercise817.lean"
 

@@ -6,35 +6,35 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainEquations/Definition613/MonotoneAt.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition613/MonotoneAt.lean](MonotoneAt.lean)**
 
 @import "MonotoneAt.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition613/MonotoneOnDomains.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition613/MonotoneOnDomains.lean](MonotoneOnDomains.lean)**
 
 @import "MonotoneOnDomains.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition613/monotoneOnDomains_id.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition613/monotoneOnDomains_id.lean](monotoneOnDomains_id.lean)**
 
 @import "monotoneOnDomains_id.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition613/continuousOnDomains_id.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition613/continuousOnDomains_id.lean](continuousOnDomains_id.lean)**
 
 @import "continuousOnDomains_id.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition613/targetFam.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition613/targetFam.lean](targetFam.lean)**
 
 @import "targetFam.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition613/ContinuousOnDomains.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition613/ContinuousOnDomains.lean](ContinuousOnDomains.lean)**
 
 @import "ContinuousOnDomains.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition613/Basic.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition613/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition613.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition613.lean](../Definition613.lean)**
 
 @import "../Definition613.lean"
 

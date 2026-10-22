@@ -6,39 +6,39 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply.lean](Uapply.lean)**
 
 @import "Uapply.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply_Ulam.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply_Ulam.lean](Uapply_Ulam.lean)**
 
 @import "Uapply_Ulam.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Ulam.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Ulam.lean](Ulam.lean)**
 
 @import "Ulam.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs.lean](translateAbs.lean)**
 
 @import "translateAbs.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_idMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_idMap.lean](translateAbs_idMap.lean)**
 
 @import "translateAbs_idMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826.lean](../Exercise826.lean)**
 
 @import "../Exercise826.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_sandwich.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_sandwich.lean](translateAbs_sandwich.lean)**
 
 @import "translateAbs_sandwich.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateApp_hasType.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateApp_hasType.lean](translateApp_hasType.lean)**
 
 @import "translateApp_hasType.lean"
 

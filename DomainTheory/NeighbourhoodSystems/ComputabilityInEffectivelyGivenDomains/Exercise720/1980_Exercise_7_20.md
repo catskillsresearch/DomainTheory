@@ -6,27 +6,27 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap.lean](unionMap.lean)**
 
 @import "unionMap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/Basic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_Ypd_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_Ypd_iff.lean](unionMap_rel_Ypd_iff.lean)**
 
 @import "unionMap_rel_Ypd_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_isComputable.lean](unionMap_isComputable.lean)**
 
 @import "unionMap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_fin.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_fin.lean](unionMap_rel_fin.lean)**
 
 @import "unionMap_rel_fin.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720.lean](../Exercise720.lean)**
 
 @import "../Exercise720.lean"
 

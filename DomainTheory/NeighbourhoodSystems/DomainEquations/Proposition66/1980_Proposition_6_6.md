@@ -6,23 +6,23 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainEquations/Proposition66/comp_desc_eq_id.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition66/comp_desc_eq_id.lean](comp_desc_eq_id.lean)**
 
 @import "comp_desc_eq_id.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition66/initialIso.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition66/initialIso.lean](initialIso.lean)**
 
 @import "initialIso.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition66/Basic.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition66/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition66/iso_hom_unique.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition66/iso_hom_unique.lean](iso_hom_unique.lean)**
 
 @import "iso_hom_unique.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition66.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition66.lean](../Proposition66.lean)**
 
 @import "../Proposition66.lean"
 

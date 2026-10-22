@@ -6,63 +6,63 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbOp.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbOp.lean](sbOp.lean)**
 
 @import "sbOp.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbOp_monotone.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbOp_monotone.lean](sbOp_monotone.lean)**
 
 @import "sbOp_monotone.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbSet.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbSet.lean](sbSet.lean)**
 
 @import "sbSet.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbSet_isFixed.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbSet_isFixed.lean](sbSet_isFixed.lean)**
 
 @import "sbSet_isFixed.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/g_f_mem_of_mem.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/g_f_mem_of_mem.lean](g_f_mem_of_mem.lean)**
 
 @import "g_f_mem_of_mem.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/mem_range_of_not_mem.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/mem_range_of_not_mem.lean](mem_range_of_not_mem.lean)**
 
 @import "mem_range_of_not_mem.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbFun.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbFun.lean](sbFun.lean)**
 
 @import "sbFun.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/g_sbFun_not_mem.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/g_sbFun_not_mem.lean](g_sbFun_not_mem.lean)**
 
 @import "g_sbFun_not_mem.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbFun_mem.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbFun_mem.lean](sbFun_mem.lean)**
 
 @import "sbFun_mem.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbFun_injective.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbFun_injective.lean](sbFun_injective.lean)**
 
 @import "sbFun_injective.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbFun_surjective.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/sbFun_surjective.lean](sbFun_surjective.lean)**
 
 @import "sbFun_surjective.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/schroeder_bernstein.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/schroeder_bernstein.lean](schroeder_bernstein.lean)**
 
 @import "schroeder_bernstein.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424.lean](../Exercise424.lean)**
 
 @import "../Exercise424.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/schroeder_bernstein_equiv.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/schroeder_bernstein_equiv.lean](schroeder_bernstein_equiv.lean)**
 
 @import "schroeder_bernstein_equiv.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/Basic.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 

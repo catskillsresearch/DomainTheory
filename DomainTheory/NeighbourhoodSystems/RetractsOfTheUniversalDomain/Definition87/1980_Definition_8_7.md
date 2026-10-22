@@ -6,91 +6,91 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/presentedIntervals.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/presentedIntervals.lean](presentedIntervals.lean)**
 
 @import "presentedIntervals.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/mem_presentedIntervals.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/mem_presentedIntervals.lean](mem_presentedIntervals.lean)**
 
 @import "mem_presentedIntervals.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/presentedIntervals_nil.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/presentedIntervals_nil.lean](presentedIntervals_nil.lean)**
 
 @import "presentedIntervals_nil.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/UMaster.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/UMaster.lean](UMaster.lean)**
 
 @import "UMaster.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/UMaster_nonempty.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/UMaster_nonempty.lean](UMaster_nonempty.lean)**
 
 @import "UMaster_nonempty.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/UMem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/UMem.lean](UMem.lean)**
 
 @import "UMem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_sub_master.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_sub_master.lean](U_sub_master.lean)**
 
 @import "U_sub_master.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/clip.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/clip.lean](clip.lean)**
 
 @import "clip.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/clipGe.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/clipGe.lean](clipGe.lean)**
 
 @import "clipGe.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/clipLt.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/clipLt.lean](clipLt.lean)**
 
 @import "clipLt.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/combineIntervals.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/combineIntervals.lean](combineIntervals.lean)**
 
 @import "combineIntervals.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/presentedIntervals_cons.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/presentedIntervals_cons.lean](presentedIntervals_cons.lean)**
 
 @import "presentedIntervals_cons.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_master_mem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_master_mem.lean](U_master_mem.lean)**
 
 @import "U_master_mem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/presentedIntervals_inter.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/presentedIntervals_inter.lean](presentedIntervals_inter.lean)**
 
 @import "presentedIntervals_inter.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_inter_mem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_inter_mem.lean](U_inter_mem.lean)**
 
 @import "U_inter_mem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U.lean](U.lean)**
 
 @import "U.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_no_minimal.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_no_minimal.lean](U_no_minimal.lean)**
 
 @import "U_no_minimal.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/presentedIntervals_append.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/presentedIntervals_append.lean](presentedIntervals_append.lean)**
 
 @import "presentedIntervals_append.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_union_mem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_union_mem.lean](U_union_mem.lean)**
 
 @import "U_union_mem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_iUnion_mem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87/U_iUnion_mem.lean](U_iUnion_mem.lean)**
 
 @import "U_iUnion_mem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition87.lean](../Definition87.lean)**
 
 @import "../Definition87.lean"
 

@@ -6,47 +6,47 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/BasicInst8.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/BasicInst8.lean](BasicInst8.lean)**
 
 @import "BasicInst8.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_monotone.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_monotone.lean](continuous_monotone.lean)**
 
 @import "continuous_monotone.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_toElementMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_toElementMap.lean](continuous_toElementMap.lean)**
 
 @import "continuous_toElementMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/mem_iff_principal_of_continuous.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/mem_iff_principal_of_continuous.lean](mem_iff_principal_of_continuous.lean)**
 
 @import "mem_iff_principal_of_continuous.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/ofContinuous.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/ofContinuous.lean](ofContinuous.lean)**
 
 @import "ofContinuous.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/Basic.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/principalFamily_directed.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/principalFamily_directed.lean](principalFamily_directed.lean)**
 
 @import "principalFamily_directed.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/eq_iSupDirected_principal.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/eq_iSupDirected_principal.lean](eq_iSupDirected_principal.lean)**
 
 @import "eq_iSupDirected_principal.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_of_monotone_iSupDirected.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_of_monotone_iSupDirected.lean](continuous_of_monotone_iSupDirected.lean)**
 
 @import "continuous_of_monotone_iSupDirected.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/toElementMap_ofContinuous.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/toElementMap_ofContinuous.lean](toElementMap_ofContinuous.lean)**
 
 @import "toElementMap_ofContinuous.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213.lean](../Exercise213.lean)**
 
 @import "../Exercise213.lean"
 

@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**DomainTheory/ContinuousLattice/Constructions/proposition_2_9.lean**
+**[DomainTheory/ContinuousLattice/Constructions/proposition_2_9.lean](proposition_2_9.lean)**
 
 @import "proposition_2_9.lean"
 

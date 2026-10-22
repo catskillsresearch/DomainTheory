@@ -4,7 +4,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend
 public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
-public import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic

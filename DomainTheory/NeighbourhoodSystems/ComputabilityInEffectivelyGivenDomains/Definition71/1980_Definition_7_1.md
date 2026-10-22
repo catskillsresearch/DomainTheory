@@ -6,39 +6,39 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/ComputablePresentation.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/ComputablePresentation.lean](ComputablePresentation.lean)**
 
 @import "ComputablePresentation.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/IsEffectivelyGiven.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/IsEffectivelyGiven.lean](IsEffectivelyGiven.lean)**
 
 @import "IsEffectivelyGiven.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/inclShuffle.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/inclShuffle.lean](inclShuffle.lean)**
 
 @import "inclShuffle.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/reindexInvolutive.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/reindexInvolutive.lean](reindexInvolutive.lean)**
 
 @import "reindexInvolutive.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/swapPair.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/swapPair.lean](swapPair.lean)**
 
 @import "swapPair.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitPresentation.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitPresentation.lean](unitPresentation.lean)**
 
 @import "unitPresentation.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/Basic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitSys_isEffectivelyGiven.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitSys_isEffectivelyGiven.lean](unitSys_isEffectivelyGiven.lean)**
 
 @import "unitSys_isEffectivelyGiven.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71.lean](../Definition71.lean)**
 
 @import "../Definition71.lean"
 

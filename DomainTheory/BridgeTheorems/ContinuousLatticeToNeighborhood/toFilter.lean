@@ -22,7 +22,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele_trans
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_self_iff_scottOpen_Ici
 public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
-public import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_interpolate
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset

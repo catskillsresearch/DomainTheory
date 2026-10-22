@@ -6,35 +6,35 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/ComputableElement.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/ComputableElement.lean](ComputableElement.lean)**
 
 @import "ComputableElement.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/ComputableMap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/ComputableMap.lean](ComputableMap.lean)**
 
 @import "ComputableMap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/Basic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/apply_isComputableElement.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/apply_isComputableElement.lean](apply_isComputableElement.lean)**
 
 @import "apply_isComputableElement.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/comp_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/comp_isComputable.lean](comp_isComputable.lean)**
 
 @import "comp_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/idMap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/idMap_isComputable.lean](idMap_isComputable.lean)**
 
 @import "idMap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/principal_isComputableElement.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/principal_isComputableElement.lean](principal_isComputableElement.lean)**
 
 @import "principal_isComputableElement.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72.lean](../Definition72.lean)**
 
 @import "../Definition72.lean"
 

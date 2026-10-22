@@ -6,11 +6,11 @@
 
 ## AI: Human-English to AI-Lean
 
-**InformationSystems/InformationSystems/lowerBoundEnt.lean**
+**[InformationSystems/InformationSystems/lowerBoundEnt.lean](lowerBoundEnt.lean)**
 
 @import "lowerBoundEnt.lean"
 
-**InformationSystems/InformationSystems/Factoid24.lean**
+**[InformationSystems/InformationSystems/Factoid24.lean](Factoid24.lean)**
 
 @import "Factoid24.lean"
 

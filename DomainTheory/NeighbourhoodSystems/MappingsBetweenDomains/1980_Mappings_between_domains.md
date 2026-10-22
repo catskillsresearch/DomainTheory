@@ -6,283 +6,283 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/ApproximableMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/ApproximableMap.lean](Approximable/ApproximableMap.lean)**
 
 @import "Approximable/ApproximableMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/comp_assoc.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/comp_assoc.lean](Approximable/comp_assoc.lean)**
 
 @import "Approximable/comp_assoc.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/comp_idMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/comp_idMap.lean](Approximable/comp_idMap.lean)**
 
 @import "Approximable/comp_idMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/ext.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/ext.lean](Approximable/ext.lean)**
 
 @import "Approximable/ext.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/idMap_comp.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/idMap_comp.lean](Approximable/idMap_comp.lean)**
 
 @import "Approximable/idMap_comp.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/le_sSupDirected.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/le_sSupDirected.lean](Approximable/le_sSupDirected.lean)**
 
 @import "Approximable/le_sSupDirected.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/rel_iff_mem_principal.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/rel_iff_mem_principal.lean](Approximable/rel_iff_mem_principal.lean)**
 
 @import "Approximable/rel_iff_mem_principal.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/ext_of_toElementMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/ext_of_toElementMap.lean](Approximable/ext_of_toElementMap.lean)**
 
 @import "Approximable/ext_of_toElementMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/sSupDirected.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/sSupDirected.lean](Approximable/sSupDirected.lean)**
 
 @import "Approximable/sSupDirected.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/sSupDirected_le.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/sSupDirected_le.lean](Approximable/sSupDirected_le.lean)**
 
 @import "Approximable/sSupDirected_le.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/exists_principal_eq_apply_principal.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/exists_principal_eq_apply_principal.lean](Approximable/exists_principal_eq_apply_principal.lean)**
 
 @import "Approximable/exists_principal_eq_apply_principal.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/toElementMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/toElementMap.lean](Approximable/toElementMap.lean)**
 
 @import "Approximable/toElementMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/mem_toElementMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/mem_toElementMap.lean](Approximable/mem_toElementMap.lean)**
 
 @import "Approximable/mem_toElementMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/idMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/idMap.lean](Approximable/idMap.lean)**
 
 @import "Approximable/idMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/idMap_rel.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/idMap_rel.lean](Approximable/idMap_rel.lean)**
 
 @import "Approximable/idMap_rel.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/comp.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/comp.lean](Approximable/comp.lean)**
 
 @import "Approximable/comp.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/comp_rel.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/comp_rel.lean](Approximable/comp_rel.lean)**
 
 @import "Approximable/comp_rel.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/toElementMap_comp.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/toElementMap_comp.lean](Approximable/toElementMap_comp.lean)**
 
 @import "Approximable/toElementMap_comp.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/toElementMap_idMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/toElementMap_idMap.lean](Approximable/toElementMap_idMap.lean)**
 
 @import "Approximable/toElementMap_idMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/ofIso.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/ofIso.lean](Approximable/ofIso.lean)**
 
 @import "Approximable/ofIso.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/Basic.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/Basic.lean](Approximable/Basic.lean)**
 
 @import "Approximable/Basic.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/toElementMap_mono.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/toElementMap_mono.lean](Approximable/toElementMap_mono.lean)**
 
 @import "Approximable/toElementMap_mono.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/toElementMap_ofIso.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/toElementMap_ofIso.lean](Approximable/toElementMap_ofIso.lean)**
 
 @import "Approximable/toElementMap_ofIso.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable/exists_approximable_of_iso.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/exists_approximable_of_iso.lean](Approximable/exists_approximable_of_iso.lean)**
 
 @import "Approximable/exists_approximable_of_iso.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Approximable.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable.lean](Approximable.lean)**
 
 @import "Approximable.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/ApproximableMap₂.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/ApproximableMap₂.lean](ApproximableExercises/ApproximableMap₂.lean)**
 
 @import "ApproximableExercises/ApproximableMap₂.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/iSupDirected.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/iSupDirected.lean](ApproximableExercises/iSupDirected.lean)**
 
 @import "ApproximableExercises/iSupDirected.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/iSupMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/iSupMap.lean](ApproximableExercises/iSupMap.lean)**
 
 @import "ApproximableExercises/iSupMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/interMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/interMap.lean](ApproximableExercises/interMap.lean)**
 
 @import "ApproximableExercises/interMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/ofMono.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/ofMono.lean](ApproximableExercises/ofMono.lean)**
 
 @import "ApproximableExercises/ofMono.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/toElementMap₂.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/toElementMap₂.lean](ApproximableExercises/toElementMap₂.lean)**
 
 @import "ApproximableExercises/toElementMap₂.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/Basic.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/Basic.lean](ApproximableExercises/Basic.lean)**
 
 @import "ApproximableExercises/Basic.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/eq_of_toElementMap_principal.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/eq_of_toElementMap_principal.lean](ApproximableExercises/eq_of_toElementMap_principal.lean)**
 
 @import "ApproximableExercises/eq_of_toElementMap_principal.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/mem_iSupDirected.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/mem_iSupDirected.lean](ApproximableExercises/mem_iSupDirected.lean)**
 
 @import "ApproximableExercises/mem_iSupDirected.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/iSupDirected_le.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/iSupDirected_le.lean](ApproximableExercises/iSupDirected_le.lean)**
 
 @import "ApproximableExercises/iSupDirected_le.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/le_iSupDirected.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/le_iSupDirected.lean](ApproximableExercises/le_iSupDirected.lean)**
 
 @import "ApproximableExercises/le_iSupDirected.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/mem_toElementMap_iSupMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/mem_toElementMap_iSupMap.lean](ApproximableExercises/mem_toElementMap_iSupMap.lean)**
 
 @import "ApproximableExercises/mem_toElementMap_iSupMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/mem_toElementMap_interMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/mem_toElementMap_interMap.lean](ApproximableExercises/mem_toElementMap_interMap.lean)**
 
 @import "ApproximableExercises/mem_toElementMap_interMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/relu2082_iff_mem_principal.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/relu2082_iff_mem_principal.lean](ApproximableExercises/relu2082_iff_mem_principal.lean)**
 
 @import "ApproximableExercises/relu2082_iff_mem_principal.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/toElementMap_iSupDirected.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/toElementMap_iSupDirected.lean](ApproximableExercises/toElementMap_iSupDirected.lean)**
 
 @import "ApproximableExercises/toElementMap_iSupDirected.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/toElementMap_mem_iff_principal.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/toElementMap_mem_iff_principal.lean](ApproximableExercises/toElementMap_mem_iff_principal.lean)**
 
 @import "ApproximableExercises/toElementMap_mem_iff_principal.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/toElementMap_ofMono_principal.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/toElementMap_ofMono_principal.lean](ApproximableExercises/toElementMap_ofMono_principal.lean)**
 
 @import "ApproximableExercises/toElementMap_ofMono_principal.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/toElementMapu2082_mono.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises/toElementMapu2082_mono.lean](ApproximableExercises/toElementMapu2082_mono.lean)**
 
 @import "ApproximableExercises/toElementMapu2082_mono.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ApproximableExercises.lean](ApproximableExercises.lean)**
 
 @import "ApproximableExercises.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Cl.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Cl.lean](Cl.lean)**
 
 @import "Cl.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Cl_mem.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Cl_mem.lean](Cl_mem.lean)**
 
 @import "Cl_mem.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Cl_subset.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Cl_subset.lean](Cl_subset.lean)**
 
 @import "Cl_subset.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/IsTok.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/IsTok.lean](IsTok.lean)**
 
 @import "IsTok.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Tok.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Tok.lean](Tok.lean)**
 
 @import "Tok.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/nbhd.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/nbhd.lean](nbhd.lean)**
 
 @import "nbhd.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/mem_nbhd.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/mem_nbhd.lean](mem_nbhd.lean)**
 
 @import "mem_nbhd.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/botTok.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/botTok.lean](botTok.lean)**
 
 @import "botTok.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/nbhd_empty.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/nbhd_empty.lean](nbhd_empty.lean)**
 
 @import "nbhd_empty.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/subset_Cl.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/subset_Cl.lean](subset_Cl.lean)**
 
 @import "subset_Cl.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/nbhd_subset_iff.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/nbhd_subset_iff.lean](nbhd_subset_iff.lean)**
 
 @import "nbhd_subset_iff.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/reprSystem.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/reprSystem.lean](reprSystem.lean)**
 
 @import "reprSystem.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/mem_reprSystem.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/mem_reprSystem.lean](mem_reprSystem.lean)**
 
 @import "mem_reprSystem.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/reprSystem_master.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/reprSystem_master.lean](reprSystem_master.lean)**
 
 @import "reprSystem_master.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/directed_step.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/directed_step.lean](directed_step.lean)**
 
 @import "directed_step.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/famC.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/famC.lean](famC.lean)**
 
 @import "famC.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/mem_nbhd_bot.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/mem_nbhd_bot.lean](mem_nbhd_bot.lean)**
 
 @import "mem_nbhd_bot.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ofC.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ofC.lean](ofC.lean)**
 
 @import "ofC.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/toC.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/toC.lean](toC.lean)**
 
 @import "toC.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/mem_toC.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/mem_toC.lean](mem_toC.lean)**
 
 @import "mem_toC.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/exists_tok_of_finite_subset.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/exists_tok_of_finite_subset.lean](exists_tok_of_finite_subset.lean)**
 
 @import "exists_tok_of_finite_subset.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/mem_nbhd_iff.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/mem_nbhd_iff.lean](mem_nbhd_iff.lean)**
 
 @import "mem_nbhd_iff.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/toC_mem.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/toC_mem.lean](toC_mem.lean)**
 
 @import "toC_mem.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/ofC_toC.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/ofC_toC.lean](ofC_toC.lean)**
 
 @import "ofC_toC.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/toC_ofC.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/toC_ofC.lean](toC_ofC.lean)**
 
 @import "toC_ofC.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/reprIso.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/reprIso.lean](reprIso.lean)**
 
 @import "reprIso.lean"
 

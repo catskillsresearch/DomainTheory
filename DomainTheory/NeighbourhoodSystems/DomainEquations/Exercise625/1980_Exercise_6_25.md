@@ -6,63 +6,63 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/lowerSet.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/lowerSet.lean](lowerSet.lean)**
 
 @import "lowerSet.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/mem_lowerSet.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/mem_lowerSet.lean](mem_lowerSet.lean)**
 
 @import "mem_lowerSet.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/upperSet.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/upperSet.lean](upperSet.lean)**
 
 @import "upperSet.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/Basic.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/inj_bounded.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/inj_bounded.lean](inj_bounded.lean)**
 
 @import "inj_bounded.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/inj_proj_apply_le.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/inj_proj_apply_le.lean](inj_proj_apply_le.lean)**
 
 @import "inj_proj_apply_le.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/proj_inj_apply.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/proj_inj_apply.lean](proj_inj_apply.lean)**
 
 @import "proj_inj_apply.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/galois.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/galois.lean](galois.lean)**
 
 @import "galois.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/inj_sSup.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/inj_sSup.lean](inj_sSup.lean)**
 
 @import "inj_sSup.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/lowerSet_bounded.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/lowerSet_bounded.lean](lowerSet_bounded.lean)**
 
 @import "lowerSet_bounded.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/lowerSet_directed.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/lowerSet_directed.lean](lowerSet_directed.lean)**
 
 @import "lowerSet_directed.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/proj_eq_sSup.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/proj_eq_sSup.lean](proj_eq_sSup.lean)**
 
 @import "proj_eq_sSup.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/upperSet_nonempty.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/upperSet_nonempty.lean](upperSet_nonempty.lean)**
 
 @import "upperSet_nonempty.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625/inj_eq_sInf.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625/inj_eq_sInf.lean](inj_eq_sInf.lean)**
 
 @import "inj_eq_sInf.lean"
 
-**NeighbourhoodSystems/DomainEquations/Exercise625.lean**
+**[NeighbourhoodSystems/DomainEquations/Exercise625.lean](../Exercise625.lean)**
 
 @import "../Exercise625.lean"
 

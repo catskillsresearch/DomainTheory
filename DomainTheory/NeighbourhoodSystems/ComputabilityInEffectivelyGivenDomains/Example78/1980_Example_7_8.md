@@ -6,47 +6,47 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PN_consistent.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PN_consistent.lean](PN_consistent.lean)**
 
 @import "PN_consistent.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PN_isEffectivelyGiven.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PN_isEffectivelyGiven.lean](PN_isEffectivelyGiven.lean)**
 
 @import "PN_isEffectivelyGiven.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd.lean](nbhd.lean)**
 
 @import "nbhd.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/mem_nbhd.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/mem_nbhd.lean](mem_nbhd.lean)**
 
 @import "mem_nbhd.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd_injective.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd_injective.lean](nbhd_injective.lean)**
 
 @import "nbhd_injective.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd_inter.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd_inter.lean](nbhd_inter.lean)**
 
 @import "nbhd_inter.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd_zero.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd_zero.lean](nbhd_zero.lean)**
 
 @import "nbhd_zero.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PN.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PN.lean](PN.lean)**
 
 @import "PN.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PNpres.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PNpres.lean](PNpres.lean)**
 
 @import "PNpres.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/Basic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78.lean](../Example78.lean)**
 
 @import "../Example78.lean"
 

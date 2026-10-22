@@ -6,19 +6,19 @@
 
 ## AI: Human-English to AI-Lean
 
-**InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean](comp.lean)**
 
 @import "comp.lean"
 
-**InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/Basic.lean**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp_toElement.lean**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp_toElement.lean](comp_toElement.lean)**
 
 @import "comp_toElement.lean"
 
-**InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean](../Proposition55.lean)**
 
 @import "../Proposition55.lean"
 

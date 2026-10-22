@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition81.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition81.lean](Definition81.lean)**
 
 @import "Definition81.lean"
 

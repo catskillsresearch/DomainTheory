@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**DomainTheory/ContinuousLattice/Injective/InjectiveSpace.lean**
+**[DomainTheory/ContinuousLattice/Injective/InjectiveSpace.lean](InjectiveSpace.lean)**
 
 @import "InjectiveSpace.lean"
 

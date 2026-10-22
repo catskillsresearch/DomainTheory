@@ -6,7 +6,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
 public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
-public import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -35,7 +34,7 @@ theorem scottMap_eq_sSup_openInfs (hD : ContinuousLattice D) (f' : ScottMap Y D)
       sSup { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧
         d = sInf (Set.image (f' : Y → D) U) } := by
   apply le_antisymm
-  · rw [← ContinuousLattice.sSup_wayBelow hD (f' y)]
+  · rw [← hD.sSup_wayBelow (f' y)]
     apply sSup_le
     intro a ha
     obtain ⟨V, hV, hf'V, hVsub⟩ := ha

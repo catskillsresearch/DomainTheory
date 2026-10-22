@@ -22,7 +22,7 @@ variable {D : Type*} [CompleteLattice D]
 lattice every principal up-set `Set.Ici y` is Scott-open (a non-empty directed set is finite,
 so it attains its supremum), hence `y ≪ y`; therefore `y` is the supremum of `{x | x ≪ y}`. -/
 theorem proposition_2_8 [Finite D] : ContinuousLattice D := by
-  constructor
+  refine { out := ?_ }
   intro y
   have hopen : ScottOpen (Set.Ici y) := by
     refine ⟨isUpperSet_Ici y, fun S hSne hSdir hmem => ?_⟩

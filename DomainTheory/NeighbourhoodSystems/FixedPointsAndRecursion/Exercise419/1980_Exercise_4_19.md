@@ -6,131 +6,131 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic/notation14.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic/notation14.lean](Basic/notation14.lean)**
 
 @import "Basic/notation14.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic/notation15.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic/notation15.lean](Basic/notation15.lean)**
 
 @import "Basic/notation15.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/condT_bot.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/condT_bot.lean](condT_bot.lean)**
 
 @import "condT_bot.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC.lean](headValC.lean)**
 
 @import "headValC.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_nil.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_nil.lean](headValC_nil.lean)**
 
 @import "headValC_nil.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_false.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_false.lean](headValC_false.lean)**
 
 @import "headValC_false.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_true.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_true.lean](headValC_true.lean)**
 
 @import "headValC_true.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/T.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/T.lean](T.lean)**
 
 @import "T.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_bot_le.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_bot_le.lean](headValC_bot_le.lean)**
 
 @import "headValC_bot_le.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/not_cone_subset_singleton.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/not_cone_subset_singleton.lean](not_cone_subset_singleton.lean)**
 
 @import "not_cone_subset_singleton.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/cone_ne_singleton.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/cone_ne_singleton.lean](cone_ne_singleton.lean)**
 
 @import "cone_ne_singleton.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC.lean](liftC.lean)**
 
 @import "liftC.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap.lean](emptyMap.lean)**
 
 @import "emptyMap.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC_strBot.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC_strBot.lean](liftC_strBot.lean)**
 
 @import "liftC_strBot.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC_strElem.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC_strElem.lean](liftC_strElem.lean)**
 
 @import "liftC_strElem.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap_strElem.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap_strElem.lean](emptyMap_strElem.lean)**
 
 @import "emptyMap_strElem.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap_strBot.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap_strBot.lean](emptyMap_strBot.lean)**
 
 @import "emptyMap_strBot.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap.lean](oneMap.lean)**
 
 @import "oneMap.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/one_def_strBot.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/one_def_strBot.lean](one_def_strBot.lean)**
 
 @import "one_def_strBot.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/one_def_strElem.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/one_def_strElem.lean](one_def_strElem.lean)**
 
 @import "one_def_strElem.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_cons_disjoint.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_cons_disjoint.lean](peano_cons_disjoint.lean)**
 
 @import "peano_cons_disjoint.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_cons_injective.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_cons_injective.lean](peano_cons_injective.lean)**
 
 @import "peano_cons_injective.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_induction.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_induction.lean](peano_induction.lean)**
 
 @import "peano_induction.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_nil_ne_cons.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_nil_ne_cons.lean](peano_nil_ne_cons.lean)**
 
 @import "peano_nil_ne_cons.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419.lean](../Exercise419.lean)**
 
 @import "../Exercise419.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap.lean](zeroMap.lean)**
 
 @import "zeroMap.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap_strElem.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap_strElem.lean](zeroMap_strElem.lean)**
 
 @import "zeroMap_strElem.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap_strBot.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap_strBot.lean](zeroMap_strBot.lean)**
 
 @import "zeroMap_strBot.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap_strElem.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap_strElem.lean](oneMap_strElem.lean)**
 
 @import "oneMap_strElem.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap_strBot.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap_strBot.lean](oneMap_strBot.lean)**
 
 @import "oneMap_strBot.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneDef.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneDef.lean](oneDef.lean)**
 
 @import "oneDef.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 

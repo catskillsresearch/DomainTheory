@@ -6,79 +6,79 @@
 
 ## AI: Human-English to AI-Lean
 
-**ContinuousLattice/Specialization/SpecializationLe.lean**
+**[ContinuousLattice/Specialization/SpecializationLe.lean](SpecializationLe.lean)**
 
 @import "SpecializationLe.lean"
 
-**ContinuousLattice/Specialization/specializationLe_iff_specializes.lean**
+**[ContinuousLattice/Specialization/specializationLe_iff_specializes.lean](specializationLe_iff_specializes.lean)**
 
 @import "specializationLe_iff_specializes.lean"
 
-**ContinuousLattice/Specialization/specializationLe_antisymm.lean**
+**[ContinuousLattice/Specialization/specializationLe_antisymm.lean](specializationLe_antisymm.lean)**
 
 @import "specializationLe_antisymm.lean"
 
-**ContinuousLattice/Specialization/SpecializationLeu2emap.lean**
+**[ContinuousLattice/Specialization/SpecializationLeu2emap.lean](SpecializationLeu2emap.lean)**
 
 @import "SpecializationLeu2emap.lean"
 
-**ContinuousLattice/Specialization/specializationPreorder.lean**
+**[ContinuousLattice/Specialization/specializationPreorder.lean](specializationPreorder.lean)**
 
 @import "specializationPreorder.lean"
 
-**ContinuousLattice/Specialization/MonotoneNet.lean**
+**[ContinuousLattice/Specialization/MonotoneNet.lean](MonotoneNet.lean)**
 
 @import "MonotoneNet.lean"
 
-**ContinuousLattice/Specialization/ScottConvergesTo.lean**
+**[ContinuousLattice/Specialization/ScottConvergesTo.lean](ScottConvergesTo.lean)**
 
 @import "ScottConvergesTo.lean"
 
-**ContinuousLattice/Specialization/scottTopologicalSpace.lean**
+**[ContinuousLattice/Specialization/scottTopologicalSpace.lean](scottTopologicalSpace.lean)**
 
 @import "scottTopologicalSpace.lean"
 
-**ContinuousLattice/Specialization/scottOpen_not_le.lean**
+**[ContinuousLattice/Specialization/scottOpen_not_le.lean](scottOpen_not_le.lean)**
 
 @import "scottOpen_not_le.lean"
 
-**ContinuousLattice/Specialization/ScottOpen_iff_dirSupInacc.lean**
+**[ContinuousLattice/Specialization/ScottOpen_iff_dirSupInacc.lean](ScottOpen_iff_dirSupInacc.lean)**
 
 @import "ScottOpen_iff_dirSupInacc.lean"
 
-**ContinuousLattice/Specialization/isOpen_iff_scottOpen.lean**
+**[ContinuousLattice/Specialization/isOpen_iff_scottOpen.lean](isOpen_iff_scottOpen.lean)**
 
 @import "isOpen_iff_scottOpen.lean"
 
-**ContinuousLattice/Specialization/specializationLe_scott_iff.lean**
+**[ContinuousLattice/Specialization/specializationLe_scott_iff.lean](specializationLe_scott_iff.lean)**
 
 @import "specializationLe_scott_iff.lean"
 
-**ContinuousLattice/Specialization/scottTopology_t0Space.lean**
+**[ContinuousLattice/Specialization/scottTopology_t0Space.lean](scottTopology_t0Space.lean)**
 
 @import "scottTopology_t0Space.lean"
 
-**ContinuousLattice/Specialization/isOpen_scott_iff_scottOpen.lean**
+**[ContinuousLattice/Specialization/isOpen_scott_iff_scottOpen.lean](isOpen_scott_iff_scottOpen.lean)**
 
 @import "isOpen_scott_iff_scottOpen.lean"
 
-**ContinuousLattice/WayBelow/ScottOpen.lean**
+**[ContinuousLattice/WayBelow/ScottOpen.lean](../WayBelow/ScottOpen.lean)**
 
 @import "../WayBelow/ScottOpen.lean"
 
-**ContinuousLattice/WayBelow/ScottOpenu2eisUpperSet.lean**
+**[ContinuousLattice/WayBelow/ScottOpenu2eisUpperSet.lean](../WayBelow/ScottOpenu2eisUpperSet.lean)**
 
 @import "../WayBelow/ScottOpenu2eisUpperSet.lean"
 
-**ContinuousLattice/WayBelow/scottOpen_univ.lean**
+**[ContinuousLattice/WayBelow/scottOpen_univ.lean](../WayBelow/scottOpen_univ.lean)**
 
 @import "../WayBelow/scottOpen_univ.lean"
 
-**ContinuousLattice/WayBelow/scottOpen_inter.lean**
+**[ContinuousLattice/WayBelow/scottOpen_inter.lean](../WayBelow/scottOpen_inter.lean)**
 
 @import "../WayBelow/scottOpen_inter.lean"
 
-**ContinuousLattice/WayBelow/scottOpen_sUnion.lean**
+**[ContinuousLattice/WayBelow/scottOpen_sUnion.lean](../WayBelow/scottOpen_sUnion.lean)**
 
 @import "../WayBelow/scottOpen_sUnion.lean"
 

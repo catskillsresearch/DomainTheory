@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
 import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
 import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow

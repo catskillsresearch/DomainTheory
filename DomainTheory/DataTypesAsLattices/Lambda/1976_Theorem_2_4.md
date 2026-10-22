@@ -6,19 +6,19 @@
 
 ## AI: Human-English to AI-Lean
 
-**DataTypesAsLattices/Lambda/theorem_2_4.lean**
+**[DataTypesAsLattices/Lambda/theorem_2_4.lean](theorem_2_4.lean)**
 
 @import "theorem_2_4.lean"
 
-**DataTypesAsLattices/Lambda/theorem_2_4_complete.lean**
+**[DataTypesAsLattices/Lambda/theorem_2_4_complete.lean](theorem_2_4_complete.lean)**
 
 @import "theorem_2_4_complete.lean"
 
-**DataTypesAsLattices/Lambda/theorem_2_4_closed.lean**
+**[DataTypesAsLattices/Lambda/theorem_2_4_closed.lean](theorem_2_4_closed.lean)**
 
 @import "theorem_2_4_closed.lean"
 
-**DataTypesAsLattices/Lambda/Ycomb_combinatory.lean**
+**[DataTypesAsLattices/Lambda/Ycomb_combinatory.lean](Ycomb_combinatory.lean)**
 
 @import "Ycomb_combinatory.lean"
 

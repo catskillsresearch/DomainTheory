@@ -6,135 +6,135 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodEnum.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodEnum.lean](prodEnum.lean)**
 
 @import "prodEnum.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodEnum_apply.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodEnum_apply.lean](prodEnum_apply.lean)**
 
 @import "prodEnum_apply.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodNbhd_eq_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodNbhd_eq_iff.lean](prodNbhd_eq_iff.lean)**
 
 @import "prodNbhd_eq_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodPresentation.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodPresentation.lean](prodPresentation.lean)**
 
 @import "prodPresentation.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodPresentation_X.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodPresentation_X.lean](prodPresentation_X.lean)**
 
 @import "prodPresentation_X.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum.lean](sumEnum.lean)**
 
 @import "sumEnum.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_zero.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_zero.lean](sumEnum_zero.lean)**
 
 @import "sumEnum_zero.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_one.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_one.lean](sumEnum_one.lean)**
 
 @import "sumEnum_one.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₀_eq_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₀_eq_iff.lean](inj₀_eq_iff.lean)**
 
 @import "inj₀_eq_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₀_eq_inj₁_elim.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₀_eq_inj₁_elim.lean](inj₀_eq_inj₁_elim.lean)**
 
 @import "inj₀_eq_inj₁_elim.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₀_ne_inj₁_of_nonempty.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₀_ne_inj₁_of_nonempty.lean](inj₀_ne_inj₁_of_nonempty.lean)**
 
 @import "inj₀_ne_inj₁_of_nonempty.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₀_ne_sumMaster.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₀_ne_sumMaster.lean](inj₀_ne_sumMaster.lean)**
 
 @import "inj₀_ne_sumMaster.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₁_eq_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₁_eq_iff.lean](inj₁_eq_iff.lean)**
 
 @import "inj₁_eq_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₁_ne_sumMaster.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/inj₁_ne_sumMaster.lean](inj₁_ne_sumMaster.lean)**
 
 @import "inj₁_ne_sumMaster.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/recDec_setEq₀.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/recDec_setEq₀.lean](recDec_setEq₀.lean)**
 
 @import "recDec_setEq₀.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/recDec_setEq₁.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/recDec_setEq₁.lean](recDec_setEq₁.lean)**
 
 @import "recDec_setEq₁.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_master.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_master.lean](sumEnum_master.lean)**
 
 @import "sumEnum_master.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_mem.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_mem.lean](sumEnum_mem.lean)**
 
 @import "sumEnum_mem.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_nonempty.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_nonempty.lean](sumEnum_nonempty.lean)**
 
 @import "sumEnum_nonempty.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_subset_sumMaster.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_subset_sumMaster.lean](sumEnum_subset_sumMaster.lean)**
 
 @import "sumEnum_subset_sumMaster.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_inter_sumMaster.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_inter_sumMaster.lean](sumEnum_inter_sumMaster.lean)**
 
 @import "sumEnum_inter_sumMaster.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumMaster_inter_sumEnum.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumMaster_inter_sumEnum.lean](sumMaster_inter_sumEnum.lean)**
 
 @import "sumMaster_inter_sumEnum.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/tag_trichotomy.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/tag_trichotomy.lean](tag_trichotomy.lean)**
 
 @import "tag_trichotomy.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_eq_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumEnum_eq_iff.lean](sumEnum_eq_iff.lean)**
 
 @import "sumEnum_eq_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/eqSEdec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/eqSEdec.lean](eqSEdec.lean)**
 
 @import "eqSEdec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumPresentation.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/sumPresentation.lean](sumPresentation.lean)**
 
 @import "sumPresentation.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/Basic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/paired_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/paired_isComputable.lean](paired_isComputable.lean)**
 
 @import "paired_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prod_isEffectivelyGiven.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prod_isEffectivelyGiven.lean](prod_isEffectivelyGiven.lean)**
 
 @import "prod_isEffectivelyGiven.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/proju2080_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/proju2080_isComputable.lean](proju2080_isComputable.lean)**
 
 @import "proju2080_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/proju2081_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/proju2081_isComputable.lean](proju2081_isComputable.lean)**
 
 @import "proju2081_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodMap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74/prodMap_isComputable.lean](prodMap_isComputable.lean)**
 
 @import "prodMap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem74.lean](../Theorem74.lean)**
 
 @import "../Theorem74.lean"
 

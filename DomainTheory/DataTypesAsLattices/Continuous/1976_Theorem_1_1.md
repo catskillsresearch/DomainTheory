@@ -6,19 +6,19 @@
 
 ## AI: Human-English to AI-Lean
 
-**DataTypesAsLattices/Continuous/theorem_1_1.lean**
+**[DataTypesAsLattices/Continuous/theorem_1_1.lean](theorem_1_1.lean)**
 
 @import "theorem_1_1.lean"
 
-**DataTypesAsLattices/Continuous.lean**
+**[DataTypesAsLattices/Continuous.lean](../Continuous.lean)**
 
 @import "../Continuous.lean"
 
-**DataTypesAsLattices/Graph/Basic/notation3.lean**
+**[DataTypesAsLattices/Graph/Basic/notation3.lean](../Graph/Basic/notation3.lean)**
 
 @import "../Graph/Basic/notation3.lean"
 
-**DataTypesAsLattices/Graph/Basic.lean**
+**[DataTypesAsLattices/Graph/Basic.lean](../Graph/Basic.lean)**
 
 @import "../Graph/Basic.lean"
 

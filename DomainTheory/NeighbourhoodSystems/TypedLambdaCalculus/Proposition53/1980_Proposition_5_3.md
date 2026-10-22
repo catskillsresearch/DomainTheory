@@ -6,43 +6,43 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/outerOp_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/outerOp_apply.lean](outerOp_apply.lean)**
 
 @import "outerOp_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX.lean](secFixX.lean)**
 
 @import "secFixX.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/outerOp.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/outerOp.lean](outerOp.lean)**
 
 @import "outerOp.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX_apply.lean](secFixX_apply.lean)**
 
 @import "secFixX_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/sectionX.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/sectionX.lean](sectionX.lean)**
 
 @import "sectionX.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/Basic.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/sectionX_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/sectionX_apply.lean](sectionX_apply.lean)**
 
 @import "sectionX_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX_isFixed.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX_isFixed.lean](secFixX_isFixed.lean)**
 
 @import "secFixX_isFixed.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/fixElement_paired_eq.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/fixElement_paired_eq.lean](fixElement_paired_eq.lean)**
 
 @import "fixElement_paired_eq.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53.lean](../Proposition53.lean)**
 
 @import "../Proposition53.lean"
 

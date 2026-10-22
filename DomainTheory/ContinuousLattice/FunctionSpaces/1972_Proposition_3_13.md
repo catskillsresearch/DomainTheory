@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**ContinuousLattice/FunctionSpaces/proposition_3_13.lean**
+**[ContinuousLattice/FunctionSpaces/proposition_3_13.lean](proposition_3_13.lean)**
 
 @import "proposition_3_13.lean"
 

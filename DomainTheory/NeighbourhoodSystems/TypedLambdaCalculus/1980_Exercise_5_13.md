@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise513.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise513.lean](Exercise513.lean)**
 
 @import "Exercise513.lean"
 

@@ -6,71 +6,71 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Dom.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Dom.lean](Dom.lean)**
 
 @import "Dom.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/CL.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/CL.lean](CL.lean)**
 
 @import "CL.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Poly.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Poly.lean](Poly.lean)**
 
 @import "Poly.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Ielem.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Ielem.lean](Ielem.lean)**
 
 @import "Ielem.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Kelem.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Kelem.lean](Kelem.lean)**
 
 @import "Kelem.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Sbody.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Sbody.lean](Sbody.lean)**
 
 @import "Sbody.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Smap.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Smap.lean](Smap.lean)**
 
 @import "Smap.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Selem.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Selem.lean](Selem.lean)**
 
 @import "Selem.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Smap_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Smap_apply.lean](Smap_apply.lean)**
 
 @import "Smap_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/bracket.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/bracket.lean](bracket.lean)**
 
 @import "bracket.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Basic.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/toApproxMap_toFilter.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/toApproxMap_toFilter.lean](toApproxMap_toFilter.lean)**
 
 @import "toApproxMap_toFilter.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Ielem_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Ielem_apply.lean](Ielem_apply.lean)**
 
 @import "Ielem_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Kelem_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Kelem_apply.lean](Kelem_apply.lean)**
 
 @import "Kelem_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Selem_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Selem_apply.lean](Selem_apply.lean)**
 
 @import "Selem_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/bracket_spec.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/bracket_spec.lean](bracket_spec.lean)**
 
 @import "bracket_spec.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise508.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508.lean](../Exercise508.lean)**
 
 @import "../Exercise508.lean"
 

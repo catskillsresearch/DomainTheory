@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
-public import DomainTheory.ContinuousLattice.Theorem212.theorem_2_12_backward_exact
+public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12_backward_exact
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_isInjectiveSpace
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_specializationLe_iff
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_t0Space

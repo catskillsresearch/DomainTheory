@@ -6,35 +6,35 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/SatisfiesParityEquations.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/SatisfiesParityEquations.lean](SatisfiesParityEquations.lean)**
 
 @import "SatisfiesParityEquations.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/key.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/key.lean](key.lean)**
 
 @import "key.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/eq_parityMap_of_satisfies.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/eq_parityMap_of_satisfies.lean](eq_parityMap_of_satisfies.lean)**
 
 @import "eq_parityMap_of_satisfies.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/parityMap_satisfies.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/parityMap_satisfies.lean](parityMap_satisfies.lean)**
 
 @import "parityMap_satisfies.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/sigmaMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/sigmaMap.lean](sigmaMap.lean)**
 
 @import "sigmaMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/Basic.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/toElementMap_sigmaMap.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/toElementMap_sigmaMap.lean](toElementMap_sigmaMap.lean)**
 
 @import "toElementMap_sigmaMap.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise216.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise216.lean](../Exercise216.lean)**
 
 @import "../Exercise216.lean"
 

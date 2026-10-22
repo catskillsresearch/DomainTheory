@@ -4,7 +4,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.mem_wayBelowUp_toFilter
-public import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.UpperLower.Basic

@@ -6,51 +6,51 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainEquations/Proposition612/ProjectionPair.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612/ProjectionPair.lean](ProjectionPair.lean)**
 
 @import "ProjectionPair.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition612/inj.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612/inj.lean](inj.lean)**
 
 @import "inj.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition612/inj_rel.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612/inj_rel.lean](inj_rel.lean)**
 
 @import "inj_rel.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition612/proj.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612/proj.lean](proj.lean)**
 
 @import "proj.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition612/proj_rel.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612/proj_rel.lean](proj_rel.lean)**
 
 @import "proj_rel.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition612/inj_comp_proj_le.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612/inj_comp_proj_le.lean](inj_comp_proj_le.lean)**
 
 @import "inj_comp_proj_le.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition612/proj_comp_inj.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612/proj_comp_inj.lean](proj_comp_inj.lean)**
 
 @import "proj_comp_inj.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition612.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612.lean](../Proposition612.lean)**
 
 @import "../Proposition612.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition612/projectionPair.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612/projectionPair.lean](projectionPair.lean)**
 
 @import "projectionPair.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition612/Basic.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition612/toElementMap_inj.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612/toElementMap_inj.lean](toElementMap_inj.lean)**
 
 @import "toElementMap_inj.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition612/toElementMap_proj.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition612/toElementMap_proj.lean](toElementMap_proj.lean)**
 
 @import "toElementMap_proj.lean"
 

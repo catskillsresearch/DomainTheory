@@ -6,15 +6,15 @@
 
 ## AI: Human-English to AI-Lean
 
-**InformationSystems/InformationSystems/Definition22/EntSet.lean**
+**[InformationSystems/InformationSystems/Definition22/EntSet.lean](EntSet.lean)**
 
 @import "EntSet.lean"
 
-**InformationSystems/InformationSystems/Definition22/entSet_empty.lean**
+**[InformationSystems/InformationSystems/Definition22/entSet_empty.lean](entSet_empty.lean)**
 
 @import "entSet_empty.lean"
 
-**InformationSystems/InformationSystems/Definition22/entSet_singleton.lean**
+**[InformationSystems/InformationSystems/Definition22/entSet_singleton.lean](entSet_singleton.lean)**
 
 @import "entSet_singleton.lean"
 

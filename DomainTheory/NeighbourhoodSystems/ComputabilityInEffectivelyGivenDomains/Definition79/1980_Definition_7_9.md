@@ -6,51 +6,51 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem.lean](PDmem.lean)**
 
 @import "PDmem.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/Basic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem_union.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem_union.lean](PDmem_union.lean)**
 
 @import "PDmem_union.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/dagger_isomorphic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/dagger_isomorphic.lean](dagger_isomorphic.lean)**
 
 @import "dagger_isomorphic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/dagger_upSet_inter.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/dagger_upSet_inter.lean](dagger_upSet_inter.lean)**
 
 @import "dagger_upSet_inter.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/mem_PDunion.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/mem_PDunion.lean](mem_PDunion.lean)**
 
 @import "mem_PDunion.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem_empty.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem_empty.lean](PDmem_empty.lean)**
 
 @import "PDmem_empty.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem_iff_fin.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem_iff_fin.lean](PDmem_iff_fin.lean)**
 
 @import "PDmem_iff_fin.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem_upSet.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem_upSet.lean](PDmem_upSet.lean)**
 
 @import "PDmem_upSet.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem_master.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/PDmem_master.lean](PDmem_master.lean)**
 
 @import "PDmem_master.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/upSet_inter_nonempty_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79/upSet_inter_nonempty_iff.lean](upSet_inter_nonempty_iff.lean)**
 
 @import "upSet_inter_nonempty_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition79.lean](../Definition79.lean)**
 
 @import "../Definition79.lean"
 

@@ -6,31 +6,31 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi.lean](phi.lean)**
 
 @import "phi.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/Basic.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_mem.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_mem.lean](phi_mem.lean)**
 
 @import "phi_mem.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_spec.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_spec.lean](phi_spec.lean)**
 
 @import "phi_spec.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_inter.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_inter.lean](phi_inter.lean)**
 
 @import "phi_inter.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/rel_ofIso_iff.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/rel_ofIso_iff.lean](rel_ofIso_iff.lean)**
 
 @import "rel_ofIso_iff.lean"
 
-**NeighbourhoodSystems/MappingsBetweenDomains/Exercise214.lean**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise214.lean](../Exercise214.lean)**
 
 @import "../Exercise214.lean"
 

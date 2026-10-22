@@ -6,39 +6,39 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainEquations/Definition610/Subsystem.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition610/Subsystem.lean](Subsystem.lean)**
 
 @import "Subsystem.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition610/Basic/notation2.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition610/Basic/notation2.lean](Basic/notation2.lean)**
 
 @import "Basic/notation2.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition610/Basic.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition610/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition610/_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition610/_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.lean](_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.lean)**
 
 @import "_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition610/antisymm.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition610/antisymm.lean](antisymm.lean)**
 
 @import "antisymm.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition610/refl.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition610/refl.lean](refl.lean)**
 
 @import "refl.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition610/trans.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition610/trans.lean](trans.lean)**
 
 @import "trans.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition610/subsystem_iff_subset_of_common.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition610/subsystem_iff_subset_of_common.lean](subsystem_iff_subset_of_common.lean)**
 
 @import "subsystem_iff_subset_of_common.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition610.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition610.lean](../Definition610.lean)**
 
 @import "../Definition610.lean"
 

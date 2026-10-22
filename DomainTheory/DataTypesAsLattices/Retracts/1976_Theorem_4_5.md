@@ -6,11 +6,11 @@
 
 ## AI: Human-English to AI-Lean
 
-**DataTypesAsLattices/Retracts/theorem_4_5_strict.lean**
+**[DataTypesAsLattices/Retracts/theorem_4_5_strict.lean](theorem_4_5_strict.lean)**
 
 @import "theorem_4_5_strict.lean"
 
-**DataTypesAsLattices/Retracts/theorem_4_5.lean**
+**[DataTypesAsLattices/Retracts/theorem_4_5.lean](theorem_4_5.lean)**
 
 @import "theorem_4_5.lean"
 

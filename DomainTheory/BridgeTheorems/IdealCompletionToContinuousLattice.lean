@@ -19,7 +19,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2esup
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_self_iff_scottOpen_Ici
 public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
-public import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_interpolate
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
@@ -55,7 +54,7 @@ theorem compact_wayBelow {k y : D} (hk : IsCompactElement k) (hky : k ≤ y) : k
 /-- **Blueprint:** algebraic complete lattice ⇒ continuous lattice (Scott Def. 2.3). -/
 theorem isContinuousLattice_of_algebraic (hA : AlgebraicLattice D) :
     ContinuousLattice D := by
-  constructor
+  refine { out := ?_ }
   intro y
   obtain ⟨hne, hdir, hsup⟩ := hA.out y
   refine ⟨?_, fun z hz => ?_⟩

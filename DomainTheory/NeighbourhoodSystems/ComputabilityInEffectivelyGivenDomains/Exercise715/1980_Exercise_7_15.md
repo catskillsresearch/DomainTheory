@@ -6,451 +6,451 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/ScottPresentation.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/ScottPresentation.lean](ScottPresentation.lean)**
 
 @import "ScottPresentation.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/ComputableMapS.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/ComputableMapS.lean](ComputableMapS.lean)**
 
 @import "ComputableMapS.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/IsEffectivelyGivenS.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/IsEffectivelyGivenS.lean](IsEffectivelyGivenS.lean)**
 
 @import "IsEffectivelyGivenS.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/inclShuffle.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/inclShuffle.lean](inclShuffle.lean)**
 
 @import "inclShuffle.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/primrec_inclShuffle.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/primrec_inclShuffle.lean](primrec_inclShuffle.lean)**
 
 @import "primrec_inclShuffle.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/incl_computable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/incl_computable.lean](incl_computable.lean)**
 
 @import "incl_computable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum.lean](smashEnum.lean)**
 
 @import "smashEnum.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_master.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_master.lean](smashEnum_master.lean)**
 
 @import "smashEnum_master.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_proper.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_proper.lean](smashEnum_proper.lean)**
 
 @import "smashEnum_proper.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_eq_eff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_eq_eff.lean](smashEnum_eq_eff.lean)**
 
 @import "smashEnum_eq_eff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_eq_prodNbhd_mem.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_eq_prodNbhd_mem.lean](smashEnum_eq_prodNbhd_mem.lean)**
 
 @import "smashEnum_eq_prodNbhd_mem.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_mem.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_mem.lean](smashEnum_mem.lean)**
 
 @import "smashEnum_mem.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_subset_master.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashEnum_subset_master.lean](smashEnum_subset_master.lean)**
 
 @import "smashEnum_subset_master.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/swapPair.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/swapPair.lean](swapPair.lean)**
 
 @import "swapPair.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/primrec_swapPair.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/primrec_swapPair.lean](primrec_swapPair.lean)**
 
 @import "primrec_swapPair.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/eq_computable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/eq_computable.lean](eq_computable.lean)**
 
 @import "eq_computable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/proper₀_dec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/proper₀_dec.lean](proper₀_dec.lean)**
 
 @import "proper₀_dec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/proper₁_dec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/proper₁_dec.lean](proper₁_dec.lean)**
 
 @import "proper₁_dec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashPresentation.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashPresentation.lean](smashPresentation.lean)**
 
 @import "smashPresentation.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashPresentation_X.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashPresentation_X.lean](smashPresentation_X.lean)**
 
 @import "smashPresentation_X.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProj₀.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProj₀.lean](smashProj₀.lean)**
 
 @import "smashProj₀.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProj₀_rel.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProj₀_rel.lean](smashProj₀_rel.lean)**
 
 @import "smashProj₀_rel.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProj₁.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProj₁.lean](smashProj₁.lean)**
 
 @import "smashProj₁.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProj₁_rel.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProj₁_rel.lean](smashProj₁_rel.lean)**
 
 @import "smashProj₁_rel.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashPaired.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashPaired.lean](smashPaired.lean)**
 
 @import "smashPaired.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashPaired_rel.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashPaired_rel.lean](smashPaired_rel.lean)**
 
 @import "smashPaired_rel.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum.lean](osum.lean)**
 
 @import "osum.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_master.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_master.lean](osum_master.lean)**
 
 @import "osum_master.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum.lean](osumEnum.lean)**
 
 @import "osumEnum.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_left.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_left.lean](osumEnum_left.lean)**
 
 @import "osumEnum_left.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_master.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_master.lean](osumEnum_master.lean)**
 
 @import "osumEnum_master.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_right.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_right.lean](osumEnum_right.lean)**
 
 @import "osumEnum_right.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_mem.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_mem.lean](osumEnum_mem.lean)**
 
 @import "osumEnum_mem.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_nonempty.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_nonempty.lean](osumEnum_nonempty.lean)**
 
 @import "osumEnum_nonempty.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_subset_master.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumEnum_subset_master.lean](osumEnum_subset_master.lean)**
 
 @import "osumEnum_subset_master.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumOutMap₀.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumOutMap₀.lean](osumOutMap₀.lean)**
 
 @import "osumOutMap₀.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumOutMap₁.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumOutMap₁.lean](osumOutMap₁.lean)**
 
 @import "osumOutMap₁.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumPresentation.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumPresentation.lean](osumPresentation.lean)**
 
 @import "osumPresentation.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumPresentation_X.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumPresentation_X.lean](osumPresentation_X.lean)**
 
 @import "osumPresentation_X.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterIdx.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterIdx.lean](iterIdx.lean)**
 
 @import "iterIdx.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterEnum.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterEnum.lean](iterEnum.lean)**
 
 @import "iterEnum.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/fiber_iterEnum.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/fiber_iterEnum.lean](fiber_iterEnum.lean)**
 
 @import "fiber_iterEnum.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/exists_list_fiber.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/exists_list_fiber.lean](exists_list_fiber.lean)**
 
 @import "exists_list_fiber.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/interG.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/interG.lean](interG.lean)**
 
 @import "interG.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterIdx_ge.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterIdx_ge.lean](iterIdx_ge.lean)**
 
 @import "iterIdx_ge.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterEnum_inter_eq_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterEnum_inter_eq_iff.lean](iterEnum_inter_eq_iff.lean)**
 
 @import "iterEnum_inter_eq_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterEnum_mem.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterEnum_mem.lean](iterEnum_mem.lean)**
 
 @import "iterEnum_mem.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterInter.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterInter.lean](iterInter.lean)**
 
 @import "iterInter.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterInter_idx_ge.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterInter_idx_ge.lean](iterInter_idx_ge.lean)**
 
 @import "iterInter_idx_ge.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterInter_idx_lt.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterInter_idx_lt.lean](iterInter_idx_lt.lean)**
 
 @import "iterInter_idx_lt.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterEnum_cons_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterEnum_cons_iff.lean](iterEnum_cons_iff.lean)**
 
 @import "iterEnum_cons_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_eq_master_of_inj₀master.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_eq_master_of_inj₀master.lean](osum_eq_master_of_inj₀master.lean)**
 
 @import "osum_eq_master_of_inj₀master.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumInMap₀.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumInMap₀.lean](osumInMap₀.lean)**
 
 @import "osumInMap₀.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_eq_master_of_inj₁master.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_eq_master_of_inj₁master.lean](osum_eq_master_of_inj₁master.lean)**
 
 @import "osum_eq_master_of_inj₁master.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumInMap₁.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumInMap₁.lean](osumInMap₁.lean)**
 
 @import "osumInMap₁.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_mem_subset_inj₀.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_mem_subset_inj₀.lean](osum_mem_subset_inj₀.lean)**
 
 @import "osum_mem_subset_inj₀.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_mem_subset_inj₁.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_mem_subset_inj₁.lean](osum_mem_subset_inj₁.lean)**
 
 @import "osum_mem_subset_inj₁.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumMap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumMap.lean](osumMap.lean)**
 
 @import "osumMap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/primrec_iterIdx_proj.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/primrec_iterIdx_proj.lean](primrec_iterIdx_proj.lean)**
 
 @import "primrec_iterIdx_proj.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/primrec_interG.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/primrec_interG.lean](primrec_interG.lean)**
 
 @import "primrec_interG.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterPresentation.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterPresentation.lean](iterPresentation.lean)**
 
 @import "iterPresentation.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashMap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashMap.lean](smashMap.lean)**
 
 @import "smashMap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/toScott.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/toScott.lean](toScott.lean)**
 
 @import "toScott.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/Basic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/NeighborhoodSystemu2eIsEffectivelyGivenu2etoS.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/NeighborhoodSystemu2eIsEffectivelyGivenu2etoS.lean](NeighborhoodSystemu2eIsEffectivelyGivenu2etoS.lean)**
 
 @import "NeighborhoodSystemu2eIsEffectivelyGivenu2etoS.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterSys_isEffectivelyGiven.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/iterSys_isEffectivelyGiven.lean](iterSys_isEffectivelyGiven.lean)**
 
 @import "iterSys_isEffectivelyGiven.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumInMapu2080_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumInMapu2080_isComputable.lean](osumInMapu2080_isComputable.lean)**
 
 @import "osumInMapu2080_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumInMapu2081_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumInMapu2081_isComputable.lean](osumInMapu2081_isComputable.lean)**
 
 @import "osumInMapu2081_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumMap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumMap_isComputable.lean](osumMap_isComputable.lean)**
 
 @import "osumMap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumOutMapu2080_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumOutMapu2080_isComputable.lean](osumOutMapu2080_isComputable.lean)**
 
 @import "osumOutMapu2080_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumOutMapu2081_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osumOutMapu2081_isComputable.lean](osumOutMapu2081_isComputable.lean)**
 
 @import "osumOutMapu2081_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_isEffectivelyGivenS.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_isEffectivelyGivenS.lean](osum_isEffectivelyGivenS.lean)**
 
 @import "osum_isEffectivelyGivenS.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_mem_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/osum_mem_iff.lean](osum_mem_iff.lean)**
 
 @import "osum_mem_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/projN_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/projN_isComputable.lean](projN_isComputable.lean)**
 
 @import "projN_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashMap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashMap_isComputable.lean](smashMap_isComputable.lean)**
 
 @import "smashMap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashPaired_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashPaired_isComputable.lean](smashPaired_isComputable.lean)**
 
 @import "smashPaired_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProju2080_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProju2080_isComputable.lean](smashProju2080_isComputable.lean)**
 
 @import "smashProju2080_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProju2081_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smashProju2081_isComputable.lean](smashProju2081_isComputable.lean)**
 
 @import "smashProju2081_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smash_isEffectivelyGivenS.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/smash_isEffectivelyGivenS.lean](smash_isEffectivelyGivenS.lean)**
 
 @import "smash_isEffectivelyGivenS.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715.lean](../Exercise715.lean)**
 
 @import "../Exercise715.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/EffectiveIso.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/EffectiveIso.lean](../EffectiveIso.lean)**
 
 @import "../EffectiveIso.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/EffectivelyIsomorphic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/EffectivelyIsomorphic.lean](../EffectivelyIsomorphic.lean)**
 
 @import "../EffectivelyIsomorphic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2.lean](../fiber2.lean)**
 
 @import "../fiber2.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/mem_fiber2.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/mem_fiber2.lean](../mem_fiber2.lean)**
 
 @import "../mem_fiber2.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2_inter.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2_inter.lean](../fiber2_inter.lean)**
 
 @import "../fiber2_inter.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2_master.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2_master.lean](../fiber2_master.lean)**
 
 @import "../fiber2_master.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2_mono.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2_mono.lean](../fiber2_mono.lean)**
 
 @import "../fiber2_mono.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/mem_fiber2_of_mem.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/mem_fiber2_of_mem.lean](../mem_fiber2_of_mem.lean)**
 
 @import "../mem_fiber2_of_mem.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexF.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexF.lean](../reindexF.lean)**
 
 @import "../reindexF.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2_reindexF.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2_reindexF.lean](../fiber2_reindexF.lean)**
 
 @import "../fiber2_reindexF.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexG.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexG.lean](../reindexG.lean)**
 
 @import "../reindexG.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber_reindexG.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber_reindexG.lean](../fiber_reindexG.lean)**
 
 @import "../fiber_reindexG.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/exists_inner_bound.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/exists_inner_bound.lean](../exists_inner_bound.lean)**
 
 @import "../exists_inner_bound.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/pair_lt_pair_of_lt.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/pair_lt_pair_of_lt.lean](../pair_lt_pair_of_lt.lean)**
 
 @import "../pair_lt_pair_of_lt.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexF_mem.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexF_mem.lean](../reindexF_mem.lean)**
 
 @import "../reindexF_mem.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexF_subset_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexF_subset_iff.lean](../reindexF_subset_iff.lean)**
 
 @import "../reindexF_subset_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Fmap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Fmap.lean](../Fmap.lean)**
 
 @import "../Fmap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Fmap_rel.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Fmap_rel.lean](../Fmap_rel.lean)**
 
 @import "../Fmap_rel.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexG_mem.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexG_mem.lean](../reindexG_mem.lean)**
 
 @import "../reindexG_mem.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexG_subset_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/reindexG_subset_iff.lean](../reindexG_subset_iff.lean)**
 
 @import "../reindexG_subset_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Gmap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Gmap.lean](../Gmap.lean)**
 
 @import "../Gmap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Gmap_rel.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Gmap_rel.lean](../Gmap_rel.lean)**
 
 @import "../Gmap_rel.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Fmap_comp_Gmap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Fmap_comp_Gmap.lean](../Fmap_comp_Gmap.lean)**
 
 @import "../Fmap_comp_Gmap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Gmap_comp_Fmap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Gmap_comp_Fmap.lean](../Gmap_comp_Fmap.lean)**
 
 @import "../Gmap_comp_Fmap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2_iterEnum_iter.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/fiber2_iterEnum_iter.lean](../fiber2_iterEnum_iter.lean)**
 
 @import "../fiber2_iterEnum_iter.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Gmap_rel_enum_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Gmap_rel_enum_iff.lean](../Gmap_rel_enum_iff.lean)**
 
 @import "../Gmap_rel_enum_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Gmap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Gmap_isComputable.lean](../Gmap_isComputable.lean)**
 
 @import "../Gmap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/masterIdx_iterPresentation.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/masterIdx_iterPresentation.lean](../masterIdx_iterPresentation.lean)**
 
 @import "../masterIdx_iterPresentation.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Fmap_rel_enum_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Fmap_rel_enum_iff.lean](../Fmap_rel_enum_iff.lean)**
 
 @import "../Fmap_rel_enum_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Fmap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Fmap_isComputable.lean](../Fmap_isComputable.lean)**
 
 @import "../Fmap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/iterIterEffectiveIso.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/iterIterEffectiveIso.lean](../iterIterEffectiveIso.lean)**
 
 @import "../iterIterEffectiveIso.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/toDomainIso.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/toDomainIso.lean](../toDomainIso.lean)**
 
 @import "../toDomainIso.lean"
 

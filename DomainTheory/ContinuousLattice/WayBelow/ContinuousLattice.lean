@@ -12,11 +12,11 @@ universe u
 
 variable {D : Type u} [CompleteLattice D]
 
-/-- **Scott 1972, Definition 2.3.** A complete lattice `D` is a *continuous lattice* when every
-element is the supremum of the elements way below it: `y = ⊔ {x | x ≪ y}`. -/
 class ContinuousLattice (D : Type u) [CompleteLattice D] : Prop where
   out : letI : LE D :=
     (CompleteLattice.toCompleteSemilatticeInf (α := D)).toPartialOrder.toPreorder.toLE
     ∀ y : D, IsLUB {x | x ≪ y} y
+  /-- In a continuous lattice, `y` is the supremum of `{x | x ≪ y}`. -/
+  sSup_wayBelow : ∀ y : D, sSup {x | x ≪ y} = y := fun y => (out y).sSup_eq
 
 end DomainTheory

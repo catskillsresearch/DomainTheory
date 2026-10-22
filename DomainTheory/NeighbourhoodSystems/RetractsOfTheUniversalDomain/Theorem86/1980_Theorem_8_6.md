@@ -6,183 +6,183 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub.lean](sub.lean)**
 
 @import "sub.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_rel.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_rel.lean](sub_rel.lean)**
 
 @import "sub_rel.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/fixedNbhd_retractionOfSubsystem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/fixedNbhd_retractionOfSubsystem.lean](fixedNbhd_retractionOfSubsystem.lean)**
 
 @import "fixedNbhd_retractionOfSubsystem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subFilter.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subFilter.lean](subFilter.lean)**
 
 @import "subFilter.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_mono.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_mono.lean](sub_mono.lean)**
 
 @import "sub_mono.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_retractionOfSubsystem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_retractionOfSubsystem.lean](sub_retractionOfSubsystem.lean)**
 
 @import "sub_retractionOfSubsystem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/finitaryProjectionSubsystemEquiv.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/finitaryProjectionSubsystemEquiv.lean](finitaryProjectionSubsystemEquiv.lean)**
 
 @import "finitaryProjectionSubsystemEquiv.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toApproxMap_monotone.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toApproxMap_monotone.lean](toApproxMap_monotone.lean)**
 
 @import "toApproxMap_monotone.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subFilter_mono.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subFilter_mono.lean](subFilter_mono.lean)**
 
 @import "subFilter_mono.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subFilter_monotone.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subFilter_monotone.lean](subFilter_monotone.lean)**
 
 @import "subFilter_monotone.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toApproxMap_rel_iSupDirected.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toApproxMap_rel_iSupDirected.lean](toApproxMap_rel_iSupDirected.lean)**
 
 @import "toApproxMap_rel_iSupDirected.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_toApproxMap_iSupDirected.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_toApproxMap_iSupDirected.lean](sub_toApproxMap_iSupDirected.lean)**
 
 @import "sub_toApproxMap_iSupDirected.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toApproxMap_toFilter.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toApproxMap_toFilter.lean](toApproxMap_toFilter.lean)**
 
 @import "toApproxMap_toFilter.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toApproxMap_subFilter.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toApproxMap_subFilter.lean](toApproxMap_subFilter.lean)**
 
 @import "toApproxMap_subFilter.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toFilter_toApproxMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toFilter_toApproxMap.lean](toFilter_toApproxMap.lean)**
 
 @import "toFilter_toApproxMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toApproxMap_injective.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toApproxMap_injective.lean](toApproxMap_injective.lean)**
 
 @import "toApproxMap_injective.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subFilter_iSupDirected.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subFilter_iSupDirected.lean](subFilter_iSupDirected.lean)**
 
 @import "subFilter_iSupDirected.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/continuous_subFilter.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/continuous_subFilter.lean](continuous_subFilter.lean)**
 
 @import "continuous_subFilter.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subApprox.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subApprox.lean](subApprox.lean)**
 
 @import "subApprox.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toElementMap_subApprox.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toElementMap_subApprox.lean](toElementMap_subApprox.lean)**
 
 @import "toElementMap_subApprox.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subApproxFixIso.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subApproxFixIso.lean](subApproxFixIso.lean)**
 
 @import "subApproxFixIso.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/fixedNbhd_sub.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/fixedNbhd_sub.lean](fixedNbhd_sub.lean)**
 
 @import "fixedNbhd_sub.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/isFinitaryProjection_of_sub_eq_self.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/isFinitaryProjection_of_sub_eq_self.lean](isFinitaryProjection_of_sub_eq_self.lean)**
 
 @import "isFinitaryProjection_of_sub_eq_self.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_le.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_le.lean](sub_le.lean)**
 
 @import "sub_le.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subApprox_le_idMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subApprox_le_idMap.lean](subApprox_le_idMap.lean)**
 
 @import "subApprox_le_idMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_eq_self_of_isFinitaryProjection.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_eq_self_of_isFinitaryProjection.lean](sub_eq_self_of_isFinitaryProjection.lean)**
 
 @import "sub_eq_self_of_isFinitaryProjection.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_eq_self_iff_isFinitaryProjection.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_eq_self_iff_isFinitaryProjection.lean](sub_eq_self_iff_isFinitaryProjection.lean)**
 
 @import "sub_eq_self_iff_isFinitaryProjection.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_sub.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/sub_sub.lean](sub_sub.lean)**
 
 @import "sub_sub.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/isFinitaryProjection_sub.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/isFinitaryProjection_sub.lean](isFinitaryProjection_sub.lean)**
 
 @import "isFinitaryProjection_sub.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subFilter_subFilter.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/subFilter_subFilter.lean](subFilter_subFilter.lean)**
 
 @import "subFilter_subFilter.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toElementMap_subApprox_comp.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/toElementMap_subApprox_comp.lean](toElementMap_subApprox_comp.lean)**
 
 @import "toElementMap_subApprox_comp.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/isRetraction_subApprox.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/isRetraction_subApprox.lean](isRetraction_subApprox.lean)**
 
 @import "isRetraction_subApprox.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/isProjection_subApprox.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/isProjection_subApprox.lean](isProjection_subApprox.lean)**
 
 @import "isProjection_subApprox.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/isFinitaryProjection_subApprox.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86/isFinitaryProjection_subApprox.lean](isFinitaryProjection_subApprox.lean)**
 
 @import "isFinitaryProjection_subApprox.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86.lean](../Theorem86.lean)**
 
 @import "../Theorem86.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/Basic.lean](../Theorem86c/Basic.lean)**
 
 @import "../Theorem86c/Basic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/subApprox_rel_iff.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/subApprox_rel_iff.lean](../Theorem86c/subApprox_rel_iff.lean)**
 
 @import "../Theorem86c/subApprox_rel_iff.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/subApprox_rel_Xenum_iff.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/subApprox_rel_Xenum_iff.lean](../Theorem86c/subApprox_rel_Xenum_iff.lean)**
 
 @import "../Theorem86c/subApprox_rel_Xenum_iff.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/subStep_recDecidable.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/subStep_recDecidable.lean](../Theorem86c/subStep_recDecidable.lean)**
 
 @import "../Theorem86c/subStep_recDecidable.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/sub_rel_iff_exists_index.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/sub_rel_iff_exists_index.lean](../Theorem86c/sub_rel_iff_exists_index.lean)**
 
 @import "../Theorem86c/sub_rel_iff_exists_index.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/sub_leastMap_rel_iff.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/sub_leastMap_rel_iff.lean](../Theorem86c/sub_leastMap_rel_iff.lean)**
 
 @import "../Theorem86c/sub_leastMap_rel_iff.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/subApprox_isComputable.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/subApprox_isComputable.lean](../Theorem86c/subApprox_isComputable.lean)**
 
 @import "../Theorem86c/subApprox_isComputable.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/sub_isComputable_of_isEffectivelyGiven.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/sub_isComputable_of_isEffectivelyGiven.lean](../Theorem86c/sub_isComputable_of_isEffectivelyGiven.lean)**
 
 @import "../Theorem86c/sub_isComputable_of_isEffectivelyGiven.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c.lean](../Theorem86c.lean)**
 
 @import "../Theorem86c.lean"
 

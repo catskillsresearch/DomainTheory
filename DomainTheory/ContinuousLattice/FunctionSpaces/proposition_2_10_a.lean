@@ -29,7 +29,7 @@ the retraction `j` (which preserves this directed supremum) gives `d = ⊔{j(x')
 `{x | x ≪ d}` dominates `d`, so `d = ⊔{x | x ≪ d}`. -/
 theorem proposition_2_10_a (R : IsContinuousLatticeRetraction D D')
     (hD' : ContinuousLattice D') : ContinuousLattice D := by
-  constructor
+  refine { out := ?_ }
   intro d
   refine ⟨fun x hx => hx.le, fun b hb => ?_⟩
   rw [← R.sSup_image_retr_wayBelow hD' d]

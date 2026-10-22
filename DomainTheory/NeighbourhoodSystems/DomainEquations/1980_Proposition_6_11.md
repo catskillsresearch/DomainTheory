@@ -6,27 +6,27 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainEquations/Proposition611Inst16.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition611Inst16.lean](Proposition611Inst16.lean)**
 
 @import "Proposition611Inst16.lean"
 
-**NeighbourhoodSystems/DomainEquations/ofMem.lean**
+**[NeighbourhoodSystems/DomainEquations/ofMem.lean](ofMem.lean)**
 
 @import "ofMem.lean"
 
-**NeighbourhoodSystems/DomainEquations/ofMem_subsystem.lean**
+**[NeighbourhoodSystems/DomainEquations/ofMem_subsystem.lean](ofMem_subsystem.lean)**
 
 @import "ofMem_subsystem.lean"
 
-**NeighbourhoodSystems/DomainEquations/subIso.lean**
+**[NeighbourhoodSystems/DomainEquations/subIso.lean](subIso.lean)**
 
 @import "subIso.lean"
 
-**NeighbourhoodSystems/DomainEquations/subsystemReprIso.lean**
+**[NeighbourhoodSystems/DomainEquations/subsystemReprIso.lean](subsystemReprIso.lean)**
 
 @import "subsystemReprIso.lean"
 
-**NeighbourhoodSystems/DomainEquations/Proposition611.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition611.lean](Proposition611.lean)**
 
 @import "Proposition611.lean"
 

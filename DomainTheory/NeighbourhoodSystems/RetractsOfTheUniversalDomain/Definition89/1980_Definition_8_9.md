@@ -6,127 +6,127 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/U_mem_nonempty.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/U_mem_nonempty.lean](U_mem_nonempty.lean)**
 
 @import "U_mem_nonempty.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/funSpaceUU_isEffectivelyGiven.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/funSpaceUU_isEffectivelyGiven.lean](funSpaceUU_isEffectivelyGiven.lean)**
 
 @import "funSpaceUU_isEffectivelyGiven.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/funSpaceUUPresentation.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/funSpaceUUPresentation.lean](funSpaceUUPresentation.lean)**
 
 @import "funSpaceUUPresentation.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow.lean](iArrow.lean)**
 
 @import "iArrow.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow_comp_jArrow_le.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow_comp_jArrow_le.lean](iArrow_comp_jArrow_le.lean)**
 
 @import "iArrow_comp_jArrow_le.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow_isComputableMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow_isComputableMap.lean](iArrow_isComputableMap.lean)**
 
 @import "iArrow_isComputableMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus_comp_jPlus_le.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus_comp_jPlus_le.lean](iPlus_comp_jPlus_le.lean)**
 
 @import "iPlus_comp_jPlus_le.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus_isComputableMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus_isComputableMap.lean](iPlus_isComputableMap.lean)**
 
 @import "iPlus_isComputableMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes_comp_jTimes_le.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes_comp_jTimes_le.lean](iTimes_comp_jTimes_le.lean)**
 
 @import "iTimes_comp_jTimes_le.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes_isComputableMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes_isComputableMap.lean](iTimes_isComputableMap.lean)**
 
 @import "iTimes_isComputableMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow.lean](jArrow.lean)**
 
 @import "jArrow.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow_comp_iArrow.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow_comp_iArrow.lean](jArrow_comp_iArrow.lean)**
 
 @import "jArrow_comp_iArrow.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow_isComputableMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow_isComputableMap.lean](jArrow_isComputableMap.lean)**
 
 @import "jArrow_isComputableMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus_comp_iPlus.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus_comp_iPlus.lean](jPlus_comp_iPlus.lean)**
 
 @import "jPlus_comp_iPlus.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus_isComputableMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus_isComputableMap.lean](jPlus_isComputableMap.lean)**
 
 @import "jPlus_isComputableMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes_comp_iTimes.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes_comp_iTimes.lean](jTimes_comp_iTimes.lean)**
 
 @import "jTimes_comp_iTimes.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes_isComputableMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes_isComputableMap.lean](jTimes_isComputableMap.lean)**
 
 @import "jTimes_isComputableMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/lamComb.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/lamComb.lean](lamComb.lean)**
 
 @import "lamComb.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/arrowComb.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/arrowComb.lean](arrowComb.lean)**
 
 @import "arrowComb.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodUU_isEffectivelyGiven.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodUU_isEffectivelyGiven.lean](prodUU_isEffectivelyGiven.lean)**
 
 @import "prodUU_isEffectivelyGiven.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodUUPresentation.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodUUPresentation.lean](prodUUPresentation.lean)**
 
 @import "prodUUPresentation.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes.lean](iTimes.lean)**
 
 @import "iTimes.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes.lean](jTimes.lean)**
 
 @import "jTimes.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodComb.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodComb.lean](prodComb.lean)**
 
 @import "prodComb.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumUU_isEffectivelyGiven.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumUU_isEffectivelyGiven.lean](sumUU_isEffectivelyGiven.lean)**
 
 @import "sumUU_isEffectivelyGiven.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumUUPresentation.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumUUPresentation.lean](sumUUPresentation.lean)**
 
 @import "sumUUPresentation.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus.lean](iPlus.lean)**
 
 @import "iPlus.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus.lean](jPlus.lean)**
 
 @import "jPlus.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumComb.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumComb.lean](sumComb.lean)**
 
 @import "sumComb.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89.lean](../Definition89.lean)**
 
 @import "../Definition89.lean"
 

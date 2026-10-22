@@ -6,27 +6,27 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412/Basic.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412/elemOne_not_le_elemZero.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412/elemOne_not_le_elemZero.lean](elemOne_not_le_elemZero.lean)**
 
 @import "elemOne_not_le_elemZero.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412/elemZero_not_le_elemOne.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412/elemZero_not_le_elemOne.lean](elemZero_not_le_elemOne.lean)**
 
 @import "elemZero_not_le_elemOne.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412/idMap_fixed.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412/idMap_fixed.lean](idMap_fixed.lean)**
 
 @import "idMap_fixed.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412/no_greatest_fixedPoint.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412/no_greatest_fixedPoint.lean](no_greatest_fixedPoint.lean)**
 
 @import "no_greatest_fixedPoint.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise412.lean](../Exercise412.lean)**
 
 @import "../Exercise412.lean"
 

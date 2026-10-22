@@ -6,11 +6,11 @@
 
 ## AI: Human-English to AI-Lean
 
-**DataTypesAsLattices/Embedding/theorem_1_5.lean**
+**[DataTypesAsLattices/Embedding/theorem_1_5.lean](theorem_1_5.lean)**
 
 @import "theorem_1_5.lean"
 
-**DataTypesAsLattices/Embedding/theorem_1_5_extends.lean**
+**[DataTypesAsLattices/Embedding/theorem_1_5_extends.lean](theorem_1_5_extends.lean)**
 
 @import "theorem_1_5_extends.lean"
 

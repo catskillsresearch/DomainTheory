@@ -6,15 +6,15 @@
 
 ## AI: Human-English to AI-Lean
 
-**ContinuousLattice/FunctionSpaces/ScottMap.lean**
+**[ContinuousLattice/FunctionSpaces/ScottMap.lean](ScottMap.lean)**
 
 @import "ScottMap.lean"
 
-**ContinuousLattice/FunctionSpaces/comp.lean**
+**[ContinuousLattice/FunctionSpaces/comp.lean](comp.lean)**
 
 @import "comp.lean"
 
-**ContinuousLattice/FunctionSpaces/monotone.lean**
+**[ContinuousLattice/FunctionSpaces/monotone.lean](monotone.lean)**
 
 @import "monotone.lean"
 

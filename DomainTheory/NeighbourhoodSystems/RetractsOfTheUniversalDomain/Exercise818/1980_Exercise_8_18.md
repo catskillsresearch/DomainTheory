@@ -6,15 +6,15 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise818/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise818/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise818/exercise_8_18.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise818/exercise_8_18.lean](exercise_8_18.lean)**
 
 @import "exercise_8_18.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise818.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise818.lean](../Exercise818.lean)**
 
 @import "../Exercise818.lean"
 

@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**InformationSystems/InformationSystems/InfoSys/InfoSys.lean**
+**[InformationSystems/InformationSystems/InfoSys/InfoSys.lean](InfoSys.lean)**
 
 @import "InfoSys.lean"
 

@@ -29,7 +29,7 @@ is `[D → D']` under the pointwise order. Every `f` is the supremum of the step
 it: `f = ⊔ {ē[e,e'] | e' ≪ f e}`, and each such step function is way below `f`. -/
 theorem theorem_3_3_isContinuousLattice (hD : ContinuousLattice D)
     (hD' : ContinuousLattice D') : ContinuousLattice (ScottMap D D') := by
-  constructor
+  refine { out := ?_ }
   intro f
   refine ⟨fun h hh => hh.le, fun g hg => ?_⟩
   rw [ScottMap.le_def]

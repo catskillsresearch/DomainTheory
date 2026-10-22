@@ -6,43 +6,43 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval.lean](papplyEval.lean)**
 
 @import "papplyEval.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_rel.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_rel.lean](papplyEval_rel.lean)**
 
 @import "papplyEval_rel.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyB.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyB.lean](papplyB.lean)**
 
 @import "papplyB.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papply.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papply.lean](papply.lean)**
 
 @import "papply.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/Basic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_rel_Ypd_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_rel_Ypd_iff.lean](papplyEval_rel_Ypd_iff.lean)**
 
 @import "papplyEval_rel_Ypd_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_step_witness.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_step_witness.lean](papplyEval_step_witness.lean)**
 
 @import "papplyEval_step_witness.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/re_forallG_forallX_existsY.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/re_forallG_forallX_existsY.lean](re_forallG_forallX_existsY.lean)**
 
 @import "re_forallG_forallX_existsY.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_isComputable.lean](papplyEval_isComputable.lean)**
 
 @import "papplyEval_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721.lean](../Exercise721.lean)**
 
 @import "../Exercise721.lean"
 

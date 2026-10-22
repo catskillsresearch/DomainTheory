@@ -6,39 +6,39 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainEquations/Definition68/ContinuousOnMapsu2eisStrict_map.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition68/ContinuousOnMapsu2eisStrict_map.lean](ContinuousOnMapsu2eisStrict_map.lean)**
 
 @import "ContinuousOnMapsu2eisStrict_map.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor.lean](idEndofunctor.lean)**
 
 @import "idEndofunctor.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor_obj.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor_obj.lean](idEndofunctor_obj.lean)**
 
 @import "idEndofunctor_obj.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor_map.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor_map.lean](idEndofunctor_map.lean)**
 
 @import "idEndofunctor_map.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition68/ContinuousOnMaps.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition68/ContinuousOnMaps.lean](ContinuousOnMaps.lean)**
 
 @import "ContinuousOnMaps.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition68/Basic.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition68/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition68/toStrictMap_toStrictFilter.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition68/toStrictMap_toStrictFilter.lean](toStrictMap_toStrictFilter.lean)**
 
 @import "toStrictMap_toStrictFilter.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition68/continuousOnMaps_id.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition68/continuousOnMaps_id.lean](continuousOnMaps_id.lean)**
 
 @import "continuousOnMaps_id.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition68.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition68.lean](../Definition68.lean)**
 
 @import "../Definition68.lean"
 

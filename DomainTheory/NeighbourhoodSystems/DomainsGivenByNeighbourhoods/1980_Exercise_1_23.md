@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise123.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise123.lean](Exercise123.lean)**
 
 @import "Exercise123.lean"
 

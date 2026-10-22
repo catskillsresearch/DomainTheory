@@ -6,35 +6,35 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/f_sInf_le.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/f_sInf_le.lean](f_sInf_le.lean)**
 
 @import "f_sInf_le.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix.lean](optimalFix.lean)**
 
 @import "optimalFix.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/Basic.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_isFixed.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_isFixed.lean](optimalFix_isFixed.lean)**
 
 @import "optimalFix_isFixed.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_le_sInf.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_le_sInf.lean](optimalFix_le_sInf.lean)**
 
 @import "optimalFix_le_sInf.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_le.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_le.lean](optimalFix_le.lean)**
 
 @import "optimalFix_le.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_consistent.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_consistent.lean](optimalFix_consistent.lean)**
 
 @import "optimalFix_consistent.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416.lean](../Exercise416.lean)**
 
 @import "../Exercise416.lean"
 

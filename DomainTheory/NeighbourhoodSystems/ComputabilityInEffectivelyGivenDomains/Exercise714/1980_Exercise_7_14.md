@@ -6,23 +6,23 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/tFun.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/tFun.lean](tFun.lean)**
 
 @import "tFun.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/Basic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714.lean](../Exercise714.lean)**
 
 @import "../Exercise714.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/repred_range_primrec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/repred_range_primrec.lean](repred_range_primrec.lean)**
 
 @import "repred_range_primrec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/repredu2082_exists_primrec_enum.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/repredu2082_exists_primrec_enum.lean](repredu2082_exists_primrec_enum.lean)**
 
 @import "repredu2082_exists_primrec_enum.lean"
 

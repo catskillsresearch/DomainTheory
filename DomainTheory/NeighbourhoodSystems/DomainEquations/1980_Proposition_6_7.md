@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainEquations/Proposition67.lean**
+**[NeighbourhoodSystems/DomainEquations/Proposition67.lean](Proposition67.lean)**
 
 @import "Proposition67.lean"
 

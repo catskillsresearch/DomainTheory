@@ -6,447 +6,447 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/capMap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/capMap.lean](capMap.lean)**
 
 @import "capMap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/halfIter.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/halfIter.lean](halfIter.lean)**
 
 @import "halfIter.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/halfIter_zero.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/halfIter_zero.lean](halfIter_zero.lean)**
 
 @import "halfIter_zero.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/bitAt.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/bitAt.lean](bitAt.lean)**
 
 @import "bitAt.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/compl_inter_nbhd.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/compl_inter_nbhd.lean](compl_inter_nbhd.lean)**
 
 @import "compl_inter_nbhd.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/compl_subset_compl_of_subset.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/compl_subset_compl_of_subset.lean](compl_subset_compl_of_subset.lean)**
 
 @import "compl_subset_compl_of_subset.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/cupMap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/cupMap.lean](cupMap.lean)**
 
 @import "cupMap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/elemSet.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/elemSet.lean](elemSet.lean)**
 
 @import "elemSet.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_elemSet.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_elemSet.lean](mem_elemSet.lean)**
 
 @import "mem_elemSet.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/bitsCode.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/bitsCode.lean](bitsCode.lean)**
 
 @import "bitsCode.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/bitsList.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/bitsList.lean](bitsList.lean)**
 
 @import "bitsList.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/bitsStep.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/bitsStep.lean](bitsStep.lean)**
 
 @import "bitsStep.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/gMap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/gMap.lean](gMap.lean)**
 
 @import "gMap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/funMap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/funMap.lean](funMap.lean)**
 
 @import "funMap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/nextCellStep.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/nextCellStep.lean](nextCellStep.lean)**
 
 @import "nextCellStep.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/orUpTo.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/orUpTo.lean](orUpTo.lean)**
 
 @import "orUpTo.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusIdx.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusIdx.lean](plusIdx.lean)**
 
 @import "plusIdx.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep.lean](plusStep.lean)**
 
 @import "plusStep.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/sumSet.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/sumSet.lean](sumSet.lean)**
 
 @import "sumSet.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/Basic/notation16.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/Basic/notation16.lean](Basic/notation16.lean)**
 
 @import "Basic/notation16.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/sumSet_mono.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/sumSet_mono.lean](sumSet_mono.lean)**
 
 @import "sumSet_mono.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusMap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusMap.lean](plusMap.lean)**
 
 @import "plusMap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tagStep.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tagStep.lean](tagStep.lean)**
 
 @import "tagStep.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tagCode.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tagCode.lean](tagCode.lean)**
 
 @import "tagCode.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tagOfBits.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tagOfBits.lean](tagOfBits.lean)**
 
 @import "tagOfBits.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/GraphIdx.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/GraphIdx.lean](GraphIdx.lean)**
 
 @import "GraphIdx.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/GraphIdx_mono.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/GraphIdx_mono.lean](GraphIdx_mono.lean)**
 
 @import "GraphIdx_mono.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/graphMap.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/graphMap.lean](graphMap.lean)**
 
 @import "graphMap.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnumPair.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnumPair.lean](unnumPair.lean)**
 
 @import "unnumPair.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnum1.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnum1.lean](unnum1.lean)**
 
 @import "unnum1.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnum2.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnum2.lean](unnum2.lean)**
 
 @import "unnum2.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagRef.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagRef.lean](untagRef.lean)**
 
 @import "untagRef.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep.lean](untagStep.lean)**
 
 @import "untagStep.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagState.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagState.lean](untagState.lean)**
 
 @import "untagState.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagList.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagList.lean](untagList.lean)**
 
 @import "untagList.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagVal.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagVal.lean](untagVal.lean)**
 
 @import "untagVal.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/Basic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/bitAt_swap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/bitAt_swap_isComputable.lean](bitAt_swap_isComputable.lean)**
 
 @import "bitAt_swap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/capMap_rel_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/capMap_rel_iff.lean](capMap_rel_iff.lean)**
 
 @import "capMap_rel_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/capMap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/capMap_isComputable.lean](capMap_isComputable.lean)**
 
 @import "capMap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/cupMap_rel_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/cupMap_rel_iff.lean](cupMap_rel_iff.lean)**
 
 @import "cupMap_rel_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/cupMap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/cupMap_isComputable.lean](cupMap_isComputable.lean)**
 
 @import "cupMap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/decodeList_injective.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/decodeList_injective.lean](decodeList_injective.lean)**
 
 @import "decodeList_injective.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/forall_rel_iff_subset_step.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/forall_rel_iff_subset_step.lean](forall_rel_iff_subset_step.lean)**
 
 @import "forall_rel_iff_subset_step.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/gMap_rel_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/gMap_rel_iff.lean](gMap_rel_iff.lean)**
 
 @import "gMap_rel_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/graphMap_rel_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/graphMap_rel_iff.lean](graphMap_rel_iff.lean)**
 
 @import "graphMap_rel_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_bitsCodeList.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_bitsCodeList.lean](mem_bitsCodeList.lean)**
 
 @import "mem_bitsCodeList.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_compl_nbhd.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_compl_nbhd.lean](mem_compl_nbhd.lean)**
 
 @import "mem_compl_nbhd.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/compl_nbhd_subset_Fun_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/compl_nbhd_subset_Fun_iff.lean](compl_nbhd_subset_Fun_iff.lean)**
 
 @import "compl_nbhd_subset_Fun_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/compl_nbhd_subset_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/compl_nbhd_subset_iff.lean](compl_nbhd_subset_iff.lean)**
 
 @import "compl_nbhd_subset_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_sumSet.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_sumSet.lean](mem_sumSet.lean)**
 
 @import "mem_sumSet.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/nbhd_subset_iff_compl_subset_compl.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/nbhd_subset_iff_compl_subset_compl.lean](nbhd_subset_iff_compl_subset_compl.lean)**
 
 @import "nbhd_subset_iff_compl_subset_compl.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/nbhd_subset_iff_myLor_eq.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/nbhd_subset_iff_myLor_eq.lean](nbhd_subset_iff_myLor_eq.lean)**
 
 @import "nbhd_subset_iff_myLor_eq.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/nextCellStep_eq.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/nextCellStep_eq.lean](nextCellStep_eq.lean)**
 
 @import "nextCellStep_eq.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep_unpair11.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep_unpair11.lean](plusStep_unpair11.lean)**
 
 @import "plusStep_unpair11.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep_unpair12.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep_unpair12.lean](plusStep_unpair12.lean)**
 
 @import "plusStep_unpair12.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep_unpair21.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep_unpair21.lean](plusStep_unpair21.lean)**
 
 @import "plusStep_unpair21.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep_unpair22.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep_unpair22.lean](plusStep_unpair22.lean)**
 
 @import "plusStep_unpair22.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep_iter_spec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusStep_iter_spec.lean](plusStep_iter_spec.lean)**
 
 @import "plusStep_iter_spec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_nextCellStep.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_nextCellStep.lean](primrec_nextCellStep.lean)**
 
 @import "primrec_nextCellStep.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_plusStep.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_plusStep.lean](primrec_plusStep.lean)**
 
 @import "primrec_plusStep.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_plusIdx.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_plusIdx.lean](primrec_plusIdx.lean)**
 
 @import "primrec_plusIdx.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_tri.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_tri.lean](primrec_tri.lean)**
 
 @import "primrec_tri.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_num.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_num.lean](primrec_num.lean)**
 
 @import "primrec_num.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_tagStep.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_tagStep.lean](primrec_tagStep.lean)**
 
 @import "primrec_tagStep.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_tagCode.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_tagCode.lean](primrec_tagCode.lean)**
 
 @import "primrec_tagCode.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_tagOfBits.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_tagOfBits.lean](primrec_tagOfBits.lean)**
 
 @import "primrec_tagOfBits.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_unnumPair.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_unnumPair.lean](primrec_unnumPair.lean)**
 
 @import "primrec_unnumPair.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_unnum1.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_unnum1.lean](primrec_unnum1.lean)**
 
 @import "primrec_unnum1.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_unnum2.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_unnum2.lean](primrec_unnum2.lean)**
 
 @import "primrec_unnum2.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_untagStep.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_untagStep.lean](primrec_untagStep.lean)**
 
 @import "primrec_untagStep.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_untagState.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_untagState.lean](primrec_untagState.lean)**
 
 @import "primrec_untagState.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_untagList.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_untagList.lean](primrec_untagList.lean)**
 
 @import "primrec_untagList.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_untagVal.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/primrec_untagVal.lean](primrec_untagVal.lean)**
 
 @import "primrec_untagVal.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tag_eq_foldr.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tag_eq_foldr.lean](tag_eq_foldr.lean)**
 
 @import "tag_eq_foldr.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tag_eq_foldl_reverse.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tag_eq_foldl_reverse.lean](tag_eq_foldl_reverse.lean)**
 
 @import "tag_eq_foldl_reverse.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tagCode_spec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tagCode_spec.lean](tagCode_spec.lean)**
 
 @import "tagCode_spec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tagOfBits_spec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tagOfBits_spec.lean](tagOfBits_spec.lean)**
 
 @import "tagOfBits_spec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/testBit_orUpTo.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/testBit_orUpTo.lean](testBit_orUpTo.lean)**
 
 @import "testBit_orUpTo.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/testBit_orUpTo_self.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/testBit_orUpTo_self.lean](testBit_orUpTo_self.lean)**
 
 @import "testBit_orUpTo_self.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusIdx_testBit.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusIdx_testBit.lean](plusIdx_testBit.lean)**
 
 @import "plusIdx_testBit.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/compl_nbhd_plusIdx.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/compl_nbhd_plusIdx.lean](compl_nbhd_plusIdx.lean)**
 
 @import "compl_nbhd_plusIdx.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusMap_rel_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusMap_rel_iff.lean](plusMap_rel_iff.lean)**
 
 @import "plusMap_rel_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusMap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/plusMap_isComputable.lean](plusMap_isComputable.lean)**
 
 @import "plusMap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnumPair_spec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnumPair_spec.lean](unnumPair_spec.lean)**
 
 @import "unnumPair_spec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnum1_spec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnum1_spec.lean](unnum1_spec.lean)**
 
 @import "unnum1_spec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnum2_spec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/unnum2_spec.lean](unnum2_spec.lean)**
 
 @import "unnum2_spec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagList_bitAt_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagList_bitAt_isComputable.lean](untagList_bitAt_isComputable.lean)**
 
 @import "untagList_bitAt_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagRef_succ_case.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagRef_succ_case.lean](untagRef_succ_case.lean)**
 
 @import "untagRef_succ_case.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagRef_zero_case.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagRef_zero_case.lean](untagRef_zero_case.lean)**
 
 @import "untagRef_zero_case.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tag_untagRef.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tag_untagRef.lean](tag_untagRef.lean)**
 
 @import "tag_untagRef.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep_cont.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep_cont.lean](untagStep_cont.lean)**
 
 @import "untagStep_cont.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep_done.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep_done.lean](untagStep_done.lean)**
 
 @import "untagStep_done.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep_halt.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep_halt.lean](untagStep_halt.lean)**
 
 @import "untagStep_halt.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep_of_done_iterate.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep_of_done_iterate.lean](untagStep_of_done_iterate.lean)**
 
 @import "untagStep_of_done_iterate.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep_iter_spec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagStep_iter_spec.lean](untagStep_iter_spec.lean)**
 
 @import "untagStep_iter_spec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagState_spec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagState_spec.lean](untagState_spec.lean)**
 
 @import "untagState_spec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/decodeList_untagList.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/decodeList_untagList.lean](decodeList_untagList.lean)**
 
 @import "decodeList_untagList.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagVal_and_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagVal_and_isComputable.lean](untagVal_and_isComputable.lean)**
 
 @import "untagVal_and_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagVal_spec.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/untagVal_spec.lean](untagVal_spec.lean)**
 
 @import "untagVal_spec.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tag_untagList_untagVal.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/tag_untagList_untagVal.lean](tag_untagList_untagVal.lean)**
 
 @import "tag_untagList_untagVal.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_Fun_compl_nbhd_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_Fun_compl_nbhd_iff.lean](mem_Fun_compl_nbhd_iff.lean)**
 
 @import "mem_Fun_compl_nbhd_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_Fun_compl_nbhd_iffu27.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_Fun_compl_nbhd_iffu27.lean](mem_Fun_compl_nbhd_iffu27.lean)**
 
 @import "mem_Fun_compl_nbhd_iffu27.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_Fun_compl_nbhd_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_Fun_compl_nbhd_isComputable.lean](mem_Fun_compl_nbhd_isComputable.lean)**
 
 @import "mem_Fun_compl_nbhd_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_GraphIdx_iff.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/mem_GraphIdx_iff.lean](mem_GraphIdx_iff.lean)**
 
 @import "mem_GraphIdx_iff.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/graphIdx_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/graphIdx_isComputable.lean](graphIdx_isComputable.lean)**
 
 @import "graphIdx_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/graphMap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/graphMap_isComputable.lean](graphMap_isComputable.lean)**
 
 @import "graphMap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723.lean](../Exercise723.lean)**
 
 @import "../Exercise723.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/testBit_imp_mem_Fun_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/testBit_imp_mem_Fun_isComputable.lean](testBit_imp_mem_Fun_isComputable.lean)**
 
 @import "testBit_imp_mem_Fun_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/gMap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/gMap_isComputable.lean](gMap_isComputable.lean)**
 
 @import "gMap_isComputable.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/funMap_isComputable.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise723/funMap_isComputable.lean](funMap_isComputable.lean)**
 
 @import "funMap_isComputable.lean"
 

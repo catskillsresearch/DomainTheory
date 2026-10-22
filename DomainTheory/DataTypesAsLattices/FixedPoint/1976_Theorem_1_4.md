@@ -6,15 +6,15 @@
 
 ## AI: Human-English to AI-Lean
 
-**DataTypesAsLattices/FixedPoint/theorem_1_4.lean**
+**[DataTypesAsLattices/FixedPoint/theorem_1_4.lean](theorem_1_4.lean)**
 
 @import "theorem_1_4.lean"
 
-**DataTypesAsLattices/FixedPoint.lean**
+**[DataTypesAsLattices/FixedPoint.lean](../FixedPoint.lean)**
 
 @import "../FixedPoint.lean"
 
-**DataTypesAsLattices/Embedding/Basic.lean**
+**[DataTypesAsLattices/Embedding/Basic.lean](../Embedding/Basic.lean)**
 
 @import "../Embedding/Basic.lean"
 

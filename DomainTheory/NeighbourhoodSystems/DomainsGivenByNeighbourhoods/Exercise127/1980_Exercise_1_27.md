@@ -6,51 +6,51 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/Bounded.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/Bounded.lean](Bounded.lean)**
 
 @import "Bounded.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/bounded_iff_finite_bounded.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/bounded_iff_finite_bounded.lean](bounded_iff_finite_bounded.lean)**
 
 @import "bounded_iff_finite_bounded.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/interUpTo_pairSeq.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/interUpTo_pairSeq.lean](interUpTo_pairSeq.lean)**
 
 @import "interUpTo_pairSeq.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/consistent_pair_iff_bounded.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/consistent_pair_iff_bounded.lean](consistent_pair_iff_bounded.lean)**
 
 @import "consistent_pair_iff_bounded.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/le_sSup.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/le_sSup.lean](le_sSup.lean)**
 
 @import "le_sSup.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/pairSeq.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/pairSeq.lean](pairSeq.lean)**
 
 @import "pairSeq.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/sSup_le.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/sSup_le.lean](sSup_le.lean)**
 
 @import "sSup_le.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127.lean](../Exercise127.lean)**
 
 @import "../Exercise127.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/upperBounds.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/upperBounds.lean](upperBounds.lean)**
 
 @import "upperBounds.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/upperBounds_nonempty.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/upperBounds_nonempty.lean](upperBounds_nonempty.lean)**
 
 @import "upperBounds_nonempty.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/sSup.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/sSup.lean](sSup.lean)**
 
 @import "sSup.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/Basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 

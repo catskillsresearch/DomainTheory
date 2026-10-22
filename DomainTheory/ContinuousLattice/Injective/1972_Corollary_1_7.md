@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**ContinuousLattice/Injective/corollary_1_7.lean**
+**[ContinuousLattice/Injective/corollary_1_7.lean](corollary_1_7.lean)**
 
 @import "corollary_1_7.lean"
 

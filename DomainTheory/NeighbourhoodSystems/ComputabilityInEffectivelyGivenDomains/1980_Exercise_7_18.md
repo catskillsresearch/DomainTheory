@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise718.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise718.lean](Exercise718.lean)**
 
 @import "Exercise718.lean"
 

@@ -6,39 +6,39 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap.lean](inclMap.lean)**
 
 @import "inclMap.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/Basic.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_toElementMap.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_toElementMap.lean](inclMap_toElementMap.lean)**
 
 @import "inclMap_toElementMap.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_bot.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_bot.lean](inclMap_bot.lean)**
 
 @import "inclMap_bot.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_intertwine.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_intertwine.lean](inclMap_intertwine.lean)**
 
 @import "inclMap_intertwine.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/fix_unique_of_uniform.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/fix_unique_of_uniform.lean](fix_unique_of_uniform.lean)**
 
 @import "fix_unique_of_uniform.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/iterElem_le_fixElement.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/iterElem_le_fixElement.lean](iterElem_le_fixElement.lean)**
 
 @import "iterElem_le_fixElement.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/fixElement_uniform.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/fixElement_uniform.lean](fixElement_uniform.lean)**
 
 @import "fixElement_uniform.lean"
 
-**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411.lean**
+**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411.lean](../Exercise411.lean)**
 
 @import "../Exercise411.lean"
 

@@ -6,19 +6,19 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/isFinitaryProjection_le_iff_fixedNbhd_subsystem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/isFinitaryProjection_le_iff_fixedNbhd_subsystem.lean](isFinitaryProjection_le_iff_fixedNbhd_subsystem.lean)**
 
 @import "isFinitaryProjection_le_iff_fixedNbhd_subsystem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/exercise_8_16.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/exercise_8_16.lean](exercise_8_16.lean)**
 
 @import "exercise_8_16.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816.lean](../Exercise816.lean)**
 
 @import "../Exercise816.lean"
 

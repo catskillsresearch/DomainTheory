@@ -6,63 +6,63 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/isomorphic_powerSystem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/isomorphic_powerSystem.lean](isomorphic_powerSystem.lean)**
 
 @import "isomorphic_powerSystem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/powerSystem_isPositive.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/powerSystem_isPositive.lean](powerSystem_isPositive.lean)**
 
 @import "powerSystem_isPositive.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/toPower_principal.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/toPower_principal.lean](toPower_principal.lean)**
 
 @import "toPower_principal.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120.lean](../Exercise120.lean)**
 
 @import "../Exercise120.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/upSet.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/upSet.lean](upSet.lean)**
 
 @import "upSet.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/mem_upSet.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/mem_upSet.lean](mem_upSet.lean)**
 
 @import "mem_upSet.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/upSet_inter.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/upSet_inter.lean](upSet_inter.lean)**
 
 @import "upSet_inter.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/upSet_subset_iff.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/upSet_subset_iff.lean](upSet_subset_iff.lean)**
 
 @import "upSet_subset_iff.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/powerSystem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/powerSystem.lean](powerSystem.lean)**
 
 @import "powerSystem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/powerSystem_mem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/powerSystem_mem.lean](powerSystem_mem.lean)**
 
 @import "powerSystem_mem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/ofPower.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/ofPower.lean](ofPower.lean)**
 
 @import "ofPower.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/toPower.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/toPower.lean](toPower.lean)**
 
 @import "toPower.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/upSet_injective.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/upSet_injective.lean](upSet_injective.lean)**
 
 @import "upSet_injective.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/powerIso.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/powerIso.lean](powerIso.lean)**
 
 @import "powerIso.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/Basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 

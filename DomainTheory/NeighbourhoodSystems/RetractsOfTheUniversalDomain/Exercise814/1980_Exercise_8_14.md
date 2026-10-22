@@ -6,155 +6,155 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/ClosureOperator.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/ClosureOperator.lean](ClosureOperator.lean)**
 
 @import "ClosureOperator.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/IsCompactFix.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/IsCompactFix.lean](IsCompactFix.lean)**
 
 @import "IsCompactFix.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/CompactFix.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/CompactFix.lean](CompactFix.lean)**
 
 @import "CompactFix.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/botFix.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/botFix.lean](botFix.lean)**
 
 @import "botFix.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/botFix_le.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/botFix_le.lean](botFix_le.lean)**
 
 @import "botFix_le.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/isCompactFix_botFix.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/isCompactFix_botFix.lean](isCompactFix_botFix.lean)**
 
 @import "isCompactFix_botFix.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/botK.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/botK.lean](botK.lean)**
 
 @import "botK.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/isCompactFix_iff.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/isCompactFix_iff.lean](isCompactFix_iff.lean)**
 
 @import "isCompactFix_iff.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/isFinitary_of_isClosureOperator.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/isFinitary_of_isClosureOperator.lean](isFinitary_of_isClosureOperator.lean)**
 
 @import "isFinitary_of_isClosureOperator.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814.lean](../Exercise814.lean)**
 
 @import "../Exercise814.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/le_toElementMap_of_isClosureOperator.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/le_toElementMap_of_isClosureOperator.lean](le_toElementMap_of_isClosureOperator.lean)**
 
 @import "le_toElementMap_of_isClosureOperator.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/isCompactFix_sup.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/isCompactFix_sup.lean](isCompactFix_sup.lean)**
 
 @import "isCompactFix_sup.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/isCompactFix_toElementMap_principal.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/isCompactFix_toElementMap_principal.lean](isCompactFix_toElementMap_principal.lean)**
 
 @import "isCompactFix_toElementMap_principal.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/genK.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/genK.lean](genK.lean)**
 
 @import "genK.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/joinCompactFix.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/joinCompactFix.lean](joinCompactFix.lean)**
 
 @import "joinCompactFix.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/joinCompactFix_le.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/joinCompactFix_le.lean](joinCompactFix_le.lean)**
 
 @import "joinCompactFix_le.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/upFix.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/upFix.lean](upFix.lean)**
 
 @import "upFix.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/mem_upFix.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/mem_upFix.lean](mem_upFix.lean)**
 
 @import "mem_upFix.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/self_mem_upFix.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/self_mem_upFix.lean](self_mem_upFix.lean)**
 
 @import "self_mem_upFix.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/upFix_antitone.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/upFix_antitone.lean](upFix_antitone.lean)**
 
 @import "upFix_antitone.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/upFix_injOn.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/upFix_injOn.lean](upFix_injOn.lean)**
 
 @import "upFix_injOn.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/upFix_inter.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/upFix_inter.lean](upFix_inter.lean)**
 
 @import "upFix_inter.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/upFix_subset_upFix_botK.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/upFix_subset_upFix_botK.lean](upFix_subset_upFix_botK.lean)**
 
 @import "upFix_subset_upFix_botK.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/domainOfClosure.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/domainOfClosure.lean](domainOfClosure.lean)**
 
 @import "domainOfClosure.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/confirmedIdx.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/confirmedIdx.lean](confirmedIdx.lean)**
 
 @import "confirmedIdx.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/BasicInst34.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/BasicInst34.lean](BasicInst34.lean)**
 
 @import "BasicInst34.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/confirmedIdx_directed.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/confirmedIdx_directed.lean](confirmedIdx_directed.lean)**
 
 @import "confirmedIdx_directed.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/fromElementFilter.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/fromElementFilter.lean](fromElementFilter.lean)**
 
 @import "fromElementFilter.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/genFamily.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/genFamily.lean](genFamily.lean)**
 
 @import "genFamily.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/genFamily_directed.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/genFamily_directed.lean](genFamily_directed.lean)**
 
 @import "genFamily_directed.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/toElementFilter.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/toElementFilter.lean](toElementFilter.lean)**
 
 @import "toElementFilter.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/le_of_toElementFilter_le.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/le_of_toElementFilter_le.lean](le_of_toElementFilter_le.lean)**
 
 @import "le_of_toElementFilter_le.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/toElementFilter_fromElementFilter.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/toElementFilter_fromElementFilter.lean](toElementFilter_fromElementFilter.lean)**
 
 @import "toElementFilter_fromElementFilter.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/toElementFilter_mono.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/toElementFilter_mono.lean](toElementFilter_mono.lean)**
 
 @import "toElementFilter_mono.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/toElementMap_eq_iSupDirected_genFamily.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/toElementMap_eq_iSupDirected_genFamily.lean](toElementMap_eq_iSupDirected_genFamily.lean)**
 
 @import "toElementMap_eq_iSupDirected_genFamily.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/fromElementFilter_toElementFilter.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/fromElementFilter_toElementFilter.lean](fromElementFilter_toElementFilter.lean)**
 
 @import "fromElementFilter_toElementFilter.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/fixSetOrderIso.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/fixSetOrderIso.lean](fixSetOrderIso.lean)**
 
 @import "fixSetOrderIso.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 

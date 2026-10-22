@@ -6,83 +6,83 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/constFunMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/constFunMap.lean](constFunMap.lean)**
 
 @import "constFunMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst.lean](embedFst.lean)**
 
 @import "embedFst.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedSnd.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedSnd.lean](embedSnd.lean)**
 
 @import "embedSnd.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/evalBotMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/evalBotMap.lean](evalBotMap.lean)**
 
 @import "evalBotMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst_comp_proju2080_le.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst_comp_proju2080_le.lean](embedFst_comp_proju2080_le.lean)**
 
 @import "embedFst_comp_proju2080_le.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst_ne_embedSnd_of_ne_bot.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst_ne_embedSnd_of_ne_bot.lean](embedFst_ne_embedSnd_of_ne_bot.lean)**
 
 @import "embedFst_ne_embedSnd_of_ne_bot.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedSnd_comp_proju2081_le.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedSnd_comp_proju2081_le.lean](embedSnd_comp_proju2081_le.lean)**
 
 @import "embedSnd_comp_proju2081_le.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/proju2080_comp_embedFst.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/proju2080_comp_embedFst.lean](proju2080_comp_embedFst.lean)**
 
 @import "proju2080_comp_embedFst.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/proju2081_comp_embedSnd.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/proju2081_comp_embedSnd.lean](proju2081_comp_embedSnd.lean)**
 
 @import "proju2081_comp_embedSnd.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/toElementMap_evalBotMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/toElementMap_evalBotMap.lean](toElementMap_evalBotMap.lean)**
 
 @import "toElementMap_evalBotMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/constFunMap_comp_evalBotMap_le.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/constFunMap_comp_evalBotMap_le.lean](constFunMap_comp_evalBotMap_le.lean)**
 
 @import "constFunMap_comp_evalBotMap_le.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/evalBotMap_comp_constFunMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/evalBotMap_comp_constFunMap.lean](evalBotMap_comp_constFunMap.lean)**
 
 @import "evalBotMap_comp_constFunMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_funSpace_const.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_funSpace_const.lean](trianglelefteq_funSpace_const.lean)**
 
 @import "trianglelefteq_funSpace_const.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/D_trianglelefteq_funSpace.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/D_trianglelefteq_funSpace.lean](D_trianglelefteq_funSpace.lean)**
 
 @import "D_trianglelefteq_funSpace.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_prod_fst.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_prod_fst.lean](trianglelefteq_prod_fst.lean)**
 
 @import "trianglelefteq_prod_fst.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/D_trianglelefteq_prod.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/D_trianglelefteq_prod.lean](D_trianglelefteq_prod.lean)**
 
 @import "D_trianglelefteq_prod.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/exercise_8_20.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/exercise_8_20.lean](exercise_8_20.lean)**
 
 @import "exercise_8_20.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820.lean](../Exercise820.lean)**
 
 @import "../Exercise820.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_prod_snd.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_prod_snd.lean](trianglelefteq_prod_snd.lean)**
 
 @import "trianglelefteq_prod_snd.lean"
 

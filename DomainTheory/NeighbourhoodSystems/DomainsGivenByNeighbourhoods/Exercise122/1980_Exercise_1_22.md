@@ -6,47 +6,47 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/basicOpen.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/basicOpen.lean](basicOpen.lean)**
 
 @import "basicOpen.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/mem_basicOpen.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/mem_basicOpen.lean](mem_basicOpen.lean)**
 
 @import "mem_basicOpen.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/OpenFilter.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/OpenFilter.lean](OpenFilter.lean)**
 
 @import "OpenFilter.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/Basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_basicOpen.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_basicOpen.lean](isOpen_basicOpen.lean)**
 
 @import "isOpen_basicOpen.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_isOpenFilter.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_isOpenFilter.lean](isOpen_iff_isOpenFilter.lean)**
 
 @import "isOpen_iff_isOpenFilter.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_isUpperSet.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_isUpperSet.lean](isOpen_isUpperSet.lean)**
 
 @import "isOpen_isUpperSet.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_upper_basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_upper_basic.lean](isOpen_iff_upper_basic.lean)**
 
 @import "isOpen_iff_upper_basic.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/le_iff_isOpen_imp.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/le_iff_isOpen_imp.lean](le_iff_isOpen_imp.lean)**
 
 @import "le_iff_isOpen_imp.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122.lean](../Exercise122.lean)**
 
 @import "../Exercise122.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/specializes_iff_le.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/specializes_iff_le.lean](specializes_iff_le.lean)**
 
 @import "specializes_iff_le.lean"
 

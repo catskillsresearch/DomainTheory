@@ -6,35 +6,35 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainEquations/Definition63Inst2.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition63Inst2.lean](Definition63Inst2.lean)**
 
 @import "Definition63Inst2.lean"
 
-**NeighbourhoodSystems/DomainEquations/comp.lean**
+**[NeighbourhoodSystems/DomainEquations/comp.lean](comp.lean)**
 
 @import "comp.lean"
 
-**NeighbourhoodSystems/DomainEquations/id.lean**
+**[NeighbourhoodSystems/DomainEquations/id.lean](id.lean)**
 
 @import "id.lean"
 
-**NeighbourhoodSystems/DomainEquations/Definition63.lean**
+**[NeighbourhoodSystems/DomainEquations/Definition63.lean](Definition63.lean)**
 
 @import "Definition63.lean"
 
-**NeighbourhoodSystems/DomainEquations/tStr.lean**
+**[NeighbourhoodSystems/DomainEquations/tStr.lean](tStr.lean)**
 
 @import "tStr.lean"
 
-**NeighbourhoodSystems/DomainEquations/strHom.lean**
+**[NeighbourhoodSystems/DomainEquations/strHom.lean](strHom.lean)**
 
 @import "strHom.lean"
 
-**NeighbourhoodSystems/DomainEquations/str_comp_desc.lean**
+**[NeighbourhoodSystems/DomainEquations/str_comp_desc.lean](str_comp_desc.lean)**
 
 @import "str_comp_desc.lean"
 
-**NeighbourhoodSystems/DomainEquations/lambek.lean**
+**[NeighbourhoodSystems/DomainEquations/lambek.lean](lambek.lean)**
 
 @import "lambek.lean"
 

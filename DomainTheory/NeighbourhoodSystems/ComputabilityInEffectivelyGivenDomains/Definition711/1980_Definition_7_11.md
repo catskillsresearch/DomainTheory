@@ -6,43 +6,43 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDfinJoinZero.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDfinJoinZero.lean](PDfinJoinZero.lean)**
 
 @import "PDfinJoinZero.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmemFinJoin.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmemFinJoin.lean](PDmemFinJoin.lean)**
 
 @import "PDmemFinJoin.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDfinJoinSucc.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDfinJoinSucc.lean](PDfinJoinSucc.lean)**
 
 @import "PDfinJoinSucc.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDfinJoin.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDfinJoin.lean](PDfinJoin.lean)**
 
 @import "PDfinJoin.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmem_finJoinZero.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmem_finJoinZero.lean](PDmem_finJoinZero.lean)**
 
 @import "PDmem_finJoinZero.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDsingleton.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDsingleton.lean](PDsingleton.lean)**
 
 @import "PDsingleton.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/Basic.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmem_finJoin.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmem_finJoin.lean](PDmem_finJoin.lean)**
 
 @import "PDmem_finJoin.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmem_finJoin_iUnion.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmem_finJoin_iUnion.lean](PDmem_finJoin_iUnion.lean)**
 
 @import "PDmem_finJoin_iUnion.lean"
 
-**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711.lean**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711.lean](../Definition711.lean)**
 
 @import "../Definition711.lean"
 

@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**ContinuousLattice/Constructions/proposition_2_8.lean**
+**[ContinuousLattice/Constructions/proposition_2_8.lean](proposition_2_8.lean)**
 
 @import "proposition_2_8.lean"
 

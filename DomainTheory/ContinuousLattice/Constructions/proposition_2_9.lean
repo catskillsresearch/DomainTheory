@@ -6,7 +6,6 @@ public import DomainTheory.ContinuousLattice.Constructions.Basic
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
-public import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic
 
@@ -26,7 +25,7 @@ theorem proposition_2_9 {ι : Type*} (E : ι → Type*) [∀ i, CompleteLattice 
         @Pi.topologicalSpace ι E (fun _ => scottTopologicalSpace) := by
   classical
   have hprod : ContinuousLattice (∀ i, E i) := by
-    constructor
+    refine { out := ?_ }
     intro y
     refine ⟨fun x hx => hx.le, fun b hb => ?_⟩
     rw [Pi.le_def]

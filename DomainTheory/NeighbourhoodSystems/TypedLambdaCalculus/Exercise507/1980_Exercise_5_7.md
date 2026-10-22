@@ -6,39 +6,39 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/app_two_args.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/app_two_args.lean](app_two_args.lean)**
 
 @import "app_two_args.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/curryu2083_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/curryu2083_apply.lean](curryu2083_apply.lean)**
 
 @import "curryu2083_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/curry₃.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/curry₃.lean](curry₃.lean)**
 
 @import "curry₃.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/Basic.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/lam_two_vars.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/lam_two_vars.lean](lam_two_vars.lean)**
 
 @import "lam_two_vars.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/surjective_pairing.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/surjective_pairing.lean](surjective_pairing.lean)**
 
 @import "surjective_pairing.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/uncurry_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/uncurry_apply.lean](uncurry_apply.lean)**
 
 @import "uncurry_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/uncurry_lam_two_vars.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/uncurry_lam_two_vars.lean](uncurry_lam_two_vars.lean)**
 
 @import "uncurry_lam_two_vars.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Exercise507.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise507.lean](../Exercise507.lean)**
 
 @import "../Exercise507.lean"
 

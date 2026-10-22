@@ -6,495 +6,495 @@
 
 ## AI: Human-English to AI-Lean
 
-**ContinuousLattice/FunctionSpaceTower/CLat.lean**
+**[ContinuousLattice/FunctionSpaceTower/CLat.lean](../FunctionSpaceTower/CLat.lean)**
 
 @import "../FunctionSpaceTower/CLat.lean"
 
-**ContinuousLattice/FunctionSpaceTower/conjMapFun_apply.lean**
+**[ContinuousLattice/FunctionSpaceTower/conjMapFun_apply.lean](../FunctionSpaceTower/conjMapFun_apply.lean)**
 
 @import "../FunctionSpaceTower/conjMapFun_apply.lean"
 
-**ContinuousLattice/FunctionSpaceTower/embInfInf_le_iff.lean**
+**[ContinuousLattice/FunctionSpaceTower/embInfInf_le_iff.lean](../FunctionSpaceTower/embInfInf_le_iff.lean)**
 
 @import "../FunctionSpaceTower/embInfInf_le_iff.lean"
 
-**ContinuousLattice/FunctionSpaceTower/embInfInf_preservesDirectedSup.lean**
+**[ContinuousLattice/FunctionSpaceTower/embInfInf_preservesDirectedSup.lean](../FunctionSpaceTower/embInfInf_preservesDirectedSup.lean)**
 
 @import "../FunctionSpaceTower/embInfInf_preservesDirectedSup.lean"
 
-**ContinuousLattice/FunctionSpaceTower/projInfInf_preservesDirectedSup.lean**
+**[ContinuousLattice/FunctionSpaceTower/projInfInf_preservesDirectedSup.lean](../FunctionSpaceTower/projInfInf_preservesDirectedSup.lean)**
 
 @import "../FunctionSpaceTower/projInfInf_preservesDirectedSup.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerCLat.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerCLat.lean](../FunctionSpaceTower/towerCLat.lean)**
 
 @import "../FunctionSpaceTower/towerCLat.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerProj_succ.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerProj_succ.lean](../FunctionSpaceTower/towerProj_succ.lean)**
 
 @import "../FunctionSpaceTower/towerProj_succ.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerProj_succ_incl_apply.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerProj_succ_incl_apply.lean](../FunctionSpaceTower/towerProj_succ_incl_apply.lean)**
 
 @import "../FunctionSpaceTower/towerProj_succ_incl_apply.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerProj_incl_apply.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerProj_incl_apply.lean](../FunctionSpaceTower/towerProj_incl_apply.lean)**
 
 @import "../FunctionSpaceTower/towerProj_incl_apply.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerType.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerType.lean](../FunctionSpaceTower/towerType.lean)**
 
 @import "../FunctionSpaceTower/towerType.lean"
 
-**ContinuousLattice/FunctionSpaceTower/BasicInst5.lean**
+**[ContinuousLattice/FunctionSpaceTower/BasicInst5.lean](../FunctionSpaceTower/BasicInst5.lean)**
 
 @import "../FunctionSpaceTower/BasicInst5.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerType_succ.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerType_succ.lean](../FunctionSpaceTower/towerType_succ.lean)**
 
 @import "../FunctionSpaceTower/towerType_succ.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerType_zero.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerType_zero.lean](../FunctionSpaceTower/towerType_zero.lean)**
 
 @import "../FunctionSpaceTower/towerType_zero.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerToMap.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerToMap.lean](../FunctionSpaceTower/towerToMap.lean)**
 
 @import "../FunctionSpaceTower/towerToMap.lean"
 
-**ContinuousLattice/FunctionSpaceTower/BasicInst8.lean**
+**[ContinuousLattice/FunctionSpaceTower/BasicInst8.lean](../FunctionSpaceTower/BasicInst8.lean)**
 
 @import "../FunctionSpaceTower/BasicInst8.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerToMap_coe.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerToMap_coe.lean](../FunctionSpaceTower/towerToMap_coe.lean)**
 
 @import "../FunctionSpaceTower/towerToMap_coe.lean"
 
-**ContinuousLattice/FunctionSpaceTower/conjMapFun.lean**
+**[ContinuousLattice/FunctionSpaceTower/conjMapFun.lean](../FunctionSpaceTower/conjMapFun.lean)**
 
 @import "../FunctionSpaceTower/conjMapFun.lean"
 
-**ContinuousLattice/FunctionSpaceTower/conjMap_preservesDirectedSup.lean**
+**[ContinuousLattice/FunctionSpaceTower/conjMap_preservesDirectedSup.lean](../FunctionSpaceTower/conjMap_preservesDirectedSup.lean)**
 
 @import "../FunctionSpaceTower/conjMap_preservesDirectedSup.lean"
 
-**ContinuousLattice/FunctionSpaceTower/conjMap.lean**
+**[ContinuousLattice/FunctionSpaceTower/conjMap.lean](../FunctionSpaceTower/conjMap.lean)**
 
 @import "../FunctionSpaceTower/conjMap.lean"
 
-**ContinuousLattice/FunctionSpaceTower/conjMap_apply.lean**
+**[ContinuousLattice/FunctionSpaceTower/conjMap_apply.lean](../FunctionSpaceTower/conjMap_apply.lean)**
 
 @import "../FunctionSpaceTower/conjMap_apply.lean"
 
-**ContinuousLattice/FunctionSpaceTower/functionSpaceInclFun_continuous.lean**
+**[ContinuousLattice/FunctionSpaceTower/functionSpaceInclFun_continuous.lean](../FunctionSpaceTower/functionSpaceInclFun_continuous.lean)**
 
 @import "../FunctionSpaceTower/functionSpaceInclFun_continuous.lean"
 
-**ContinuousLattice/FunctionSpaceTower/functionSpaceInclFun.lean**
+**[ContinuousLattice/FunctionSpaceTower/functionSpaceInclFun.lean](../FunctionSpaceTower/functionSpaceInclFun.lean)**
 
 @import "../FunctionSpaceTower/functionSpaceInclFun.lean"
 
-**ContinuousLattice/FunctionSpaceTower/functionSpaceInclFun_outer_continuous.lean**
+**[ContinuousLattice/FunctionSpaceTower/functionSpaceInclFun_outer_continuous.lean](../FunctionSpaceTower/functionSpaceInclFun_outer_continuous.lean)**
 
 @import "../FunctionSpaceTower/functionSpaceInclFun_outer_continuous.lean"
 
-**ContinuousLattice/FunctionSpaceTower/functionSpaceRetrFun_continuous.lean**
+**[ContinuousLattice/FunctionSpaceTower/functionSpaceRetrFun_continuous.lean](../FunctionSpaceTower/functionSpaceRetrFun_continuous.lean)**
 
 @import "../FunctionSpaceTower/functionSpaceRetrFun_continuous.lean"
 
-**ContinuousLattice/FunctionSpaceTower/functionSpaceRetrFun.lean**
+**[ContinuousLattice/FunctionSpaceTower/functionSpaceRetrFun.lean](../FunctionSpaceTower/functionSpaceRetrFun.lean)**
 
 @import "../FunctionSpaceTower/functionSpaceRetrFun.lean"
 
-**ContinuousLattice/FunctionSpaceTower/functionSpaceInclRetrLe.lean**
+**[ContinuousLattice/FunctionSpaceTower/functionSpaceInclRetrLe.lean](../FunctionSpaceTower/functionSpaceInclRetrLe.lean)**
 
 @import "../FunctionSpaceTower/functionSpaceInclRetrLe.lean"
 
-**ContinuousLattice/FunctionSpaceTower/functionSpaceRetrFun_outer_continuous.lean**
+**[ContinuousLattice/FunctionSpaceTower/functionSpaceRetrFun_outer_continuous.lean](../FunctionSpaceTower/functionSpaceRetrFun_outer_continuous.lean)**
 
 @import "../FunctionSpaceTower/functionSpaceRetrFun_outer_continuous.lean"
 
-**ContinuousLattice/FunctionSpaceTower/functionSpaceRetrIncl.lean**
+**[ContinuousLattice/FunctionSpaceTower/functionSpaceRetrIncl.lean](../FunctionSpaceTower/functionSpaceRetrIncl.lean)**
 
 @import "../FunctionSpaceTower/functionSpaceRetrIncl.lean"
 
-**ContinuousLattice/FunctionSpaceTower/functionSpaceProjection.lean**
+**[ContinuousLattice/FunctionSpaceTower/functionSpaceProjection.lean](../FunctionSpaceTower/functionSpaceProjection.lean)**
 
 @import "../FunctionSpaceTower/functionSpaceProjection.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerProj.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerProj.lean](../FunctionSpaceTower/towerProj.lean)**
 
 @import "../FunctionSpaceTower/towerProj.lean"
 
-**ContinuousLattice/FunctionSpaceTower/DInf.lean**
+**[ContinuousLattice/FunctionSpaceTower/DInf.lean](../FunctionSpaceTower/DInf.lean)**
 
 @import "../FunctionSpaceTower/DInf.lean"
 
-**ContinuousLattice/FunctionSpaceTower/DInfFn.lean**
+**[ContinuousLattice/FunctionSpaceTower/DInfFn.lean](../FunctionSpaceTower/DInfFn.lean)**
 
 @import "../FunctionSpaceTower/DInfFn.lean"
 
-**ContinuousLattice/FunctionSpaceTower/iInfTerm.lean**
+**[ContinuousLattice/FunctionSpaceTower/iInfTerm.lean](../FunctionSpaceTower/iInfTerm.lean)**
 
 @import "../FunctionSpaceTower/iInfTerm.lean"
 
-**ContinuousLattice/FunctionSpaceTower/iInfTerm_apply.lean**
+**[ContinuousLattice/FunctionSpaceTower/iInfTerm_apply.lean](../FunctionSpaceTower/iInfTerm_apply.lean)**
 
 @import "../FunctionSpaceTower/iInfTerm_apply.lean"
 
-**ContinuousLattice/FunctionSpaceTower/embInfInf.lean**
+**[ContinuousLattice/FunctionSpaceTower/embInfInf.lean](../FunctionSpaceTower/embInfInf.lean)**
 
 @import "../FunctionSpaceTower/embInfInf.lean"
 
-**ContinuousLattice/FunctionSpaceTower/embInfInf_apply.lean**
+**[ContinuousLattice/FunctionSpaceTower/embInfInf_apply.lean](../FunctionSpaceTower/embInfInf_apply.lean)**
 
 @import "../FunctionSpaceTower/embInfInf_apply.lean"
 
-**ContinuousLattice/FunctionSpaceTower/jInfTerm.lean**
+**[ContinuousLattice/FunctionSpaceTower/jInfTerm.lean](../FunctionSpaceTower/jInfTerm.lean)**
 
 @import "../FunctionSpaceTower/jInfTerm.lean"
 
-**ContinuousLattice/FunctionSpaceTower/jInfTerm_apply.lean**
+**[ContinuousLattice/FunctionSpaceTower/jInfTerm_apply.lean](../FunctionSpaceTower/jInfTerm_apply.lean)**
 
 @import "../FunctionSpaceTower/jInfTerm_apply.lean"
 
-**ContinuousLattice/FunctionSpaceTower/conjMap_iSup.lean**
+**[ContinuousLattice/FunctionSpaceTower/conjMap_iSup.lean](../FunctionSpaceTower/conjMap_iSup.lean)**
 
 @import "../FunctionSpaceTower/conjMap_iSup.lean"
 
-**ContinuousLattice/FunctionSpaceTower/conj_iInfTerm_eq.lean**
+**[ContinuousLattice/FunctionSpaceTower/conj_iInfTerm_eq.lean](../FunctionSpaceTower/conj_iInfTerm_eq.lean)**
 
 @import "../FunctionSpaceTower/conj_iInfTerm_eq.lean"
 
-**ContinuousLattice/FunctionSpaceTower/embInf_succ_iSup.lean**
+**[ContinuousLattice/FunctionSpaceTower/embInf_succ_iSup.lean](../FunctionSpaceTower/embInf_succ_iSup.lean)**
 
 @import "../FunctionSpaceTower/embInf_succ_iSup.lean"
 
-**ContinuousLattice/FunctionSpaceTower/iSup₂_monotone_eq_diagonal.lean**
+**[ContinuousLattice/FunctionSpaceTower/iSup₂_monotone_eq_diagonal.lean](../FunctionSpaceTower/iSup₂_monotone_eq_diagonal.lean)**
 
 @import "../FunctionSpaceTower/iSup₂_monotone_eq_diagonal.lean"
 
-**ContinuousLattice/FunctionSpaceTower/incl_projInf_le_projInf_succ.lean**
+**[ContinuousLattice/FunctionSpaceTower/incl_projInf_le_projInf_succ.lean](../FunctionSpaceTower/incl_projInf_le_projInf_succ.lean)**
 
 @import "../FunctionSpaceTower/incl_projInf_le_projInf_succ.lean"
 
-**ContinuousLattice/FunctionSpaceTower/conjMap_incl_le_conjMap_succ.lean**
+**[ContinuousLattice/FunctionSpaceTower/conjMap_incl_le_conjMap_succ.lean](../FunctionSpaceTower/conjMap_incl_le_conjMap_succ.lean)**
 
 @import "../FunctionSpaceTower/conjMap_incl_le_conjMap_succ.lean"
 
-**ContinuousLattice/FunctionSpaceTower/projInfInf.lean**
+**[ContinuousLattice/FunctionSpaceTower/projInfInf.lean](../FunctionSpaceTower/projInfInf.lean)**
 
 @import "../FunctionSpaceTower/projInfInf.lean"
 
-**ContinuousLattice/FunctionSpaceTower/projInfInf_apply.lean**
+**[ContinuousLattice/FunctionSpaceTower/projInfInf_apply.lean](../FunctionSpaceTower/projInfInf_apply.lean)**
 
 @import "../FunctionSpaceTower/projInfInf_apply.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerProj_retr_conjMap_succ.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerProj_retr_conjMap_succ.lean](../FunctionSpaceTower/towerProj_retr_conjMap_succ.lean)**
 
 @import "../FunctionSpaceTower/towerProj_retr_conjMap_succ.lean"
 
-**ContinuousLattice/FunctionSpaceTower/embInfInf_comp_projInfInf.lean**
+**[ContinuousLattice/FunctionSpaceTower/embInfInf_comp_projInfInf.lean](../FunctionSpaceTower/embInfInf_comp_projInfInf.lean)**
 
 @import "../FunctionSpaceTower/embInfInf_comp_projInfInf.lean"
 
-**ContinuousLattice/FunctionSpaceTower/embInfInf_projInfInf.lean**
+**[ContinuousLattice/FunctionSpaceTower/embInfInf_projInfInf.lean](../FunctionSpaceTower/embInfInf_projInfInf.lean)**
 
 @import "../FunctionSpaceTower/embInfInf_projInfInf.lean"
 
-**ContinuousLattice/FunctionSpaceTower/towerProj_succ_retr_apply.lean**
+**[ContinuousLattice/FunctionSpaceTower/towerProj_succ_retr_apply.lean](../FunctionSpaceTower/towerProj_succ_retr_apply.lean)**
 
 @import "../FunctionSpaceTower/towerProj_succ_retr_apply.lean"
 
-**ContinuousLattice/FunctionSpaceTower/iInfTerm_le_succ.lean**
+**[ContinuousLattice/FunctionSpaceTower/iInfTerm_le_succ.lean](../FunctionSpaceTower/iInfTerm_le_succ.lean)**
 
 @import "../FunctionSpaceTower/iInfTerm_le_succ.lean"
 
-**ContinuousLattice/FunctionSpaceTower/iInfTerm_monotone.lean**
+**[ContinuousLattice/FunctionSpaceTower/iInfTerm_monotone.lean](../FunctionSpaceTower/iInfTerm_monotone.lean)**
 
 @import "../FunctionSpaceTower/iInfTerm_monotone.lean"
 
-**ContinuousLattice/FunctionSpaceTower/projInfInf_embInfInf_eq.lean**
+**[ContinuousLattice/FunctionSpaceTower/projInfInf_embInfInf_eq.lean](../FunctionSpaceTower/projInfInf_embInfInf_eq.lean)**
 
 @import "../FunctionSpaceTower/projInfInf_embInfInf_eq.lean"
 
-**ContinuousLattice/FunctionSpaceTower/projInfInf_comp_embInfInf.lean**
+**[ContinuousLattice/FunctionSpaceTower/projInfInf_comp_embInfInf.lean](../FunctionSpaceTower/projInfInf_comp_embInfInf.lean)**
 
 @import "../FunctionSpaceTower/projInfInf_comp_embInfInf.lean"
 
-**ContinuousLattice/FunctionSpaceTower/projInfInf_embInfInf.lean**
+**[ContinuousLattice/FunctionSpaceTower/projInfInf_embInfInf.lean](../FunctionSpaceTower/projInfInf_embInfInf.lean)**
 
 @import "../FunctionSpaceTower/projInfInf_embInfInf.lean"
 
-**ContinuousLattice/InverseLimits/Compatible.lean**
+**[ContinuousLattice/InverseLimits/Compatible.lean](Compatible.lean)**
 
 @import "Compatible.lean"
 
-**ContinuousLattice/InverseLimits/InverseLimit.lean**
+**[ContinuousLattice/InverseLimits/InverseLimit.lean](InverseLimit.lean)**
 
 @import "InverseLimit.lean"
 
-**ContinuousLattice/InverseLimits/coconeInf_apply.lean**
+**[ContinuousLattice/InverseLimits/coconeInf_apply.lean](coconeInf_apply.lean)**
 
 @import "coconeInf_apply.lean"
 
-**ContinuousLattice/InverseLimits/coconeInf_climb.lean**
+**[ContinuousLattice/InverseLimits/coconeInf_climb.lean](coconeInf_climb.lean)**
 
 @import "coconeInf_climb.lean"
 
-**ContinuousLattice/InverseLimits/coconeInf_descend.lean**
+**[ContinuousLattice/InverseLimits/coconeInf_descend.lean](coconeInf_descend.lean)**
 
 @import "coconeInf_descend.lean"
 
-**ContinuousLattice/InverseLimits/coconeInf_comp_embInf.lean**
+**[ContinuousLattice/InverseLimits/coconeInf_comp_embInf.lean](coconeInf_comp_embInf.lean)**
 
 @import "coconeInf_comp_embInf.lean"
 
-**ContinuousLattice/InverseLimits/coconeInf_preservesDirectedSup.lean**
+**[ContinuousLattice/InverseLimits/coconeInf_preservesDirectedSup.lean](coconeInf_preservesDirectedSup.lean)**
 
 @import "coconeInf_preservesDirectedSup.lean"
 
-**ContinuousLattice/InverseLimits/coe_sInf.lean**
+**[ContinuousLattice/InverseLimits/coe_sInf.lean](coe_sInf.lean)**
 
 @import "coe_sInf.lean"
 
-**ContinuousLattice/InverseLimits/embLE_mono.lean**
+**[ContinuousLattice/InverseLimits/embLE_mono.lean](embLE_mono.lean)**
 
 @import "embLE_mono.lean"
 
-**ContinuousLattice/InverseLimits/embLE_succ_left.lean**
+**[ContinuousLattice/InverseLimits/embLE_succ_left.lean](embLE_succ_left.lean)**
 
 @import "embLE_succ_left.lean"
 
-**ContinuousLattice/InverseLimits/embInf_succ.lean**
+**[ContinuousLattice/InverseLimits/embInf_succ.lean](embInf_succ.lean)**
 
 @import "embInf_succ.lean"
 
-**ContinuousLattice/InverseLimits/embInf_le_succ.lean**
+**[ContinuousLattice/InverseLimits/embInf_le_succ.lean](embInf_le_succ.lean)**
 
 @import "embInf_le_succ.lean"
 
-**ContinuousLattice/InverseLimits/embInf_family_directed.lean**
+**[ContinuousLattice/InverseLimits/embInf_family_directed.lean](embInf_family_directed.lean)**
 
 @import "embInf_family_directed.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimitLE.lean**
+**[ContinuousLattice/InverseLimits/inverseLimitLE.lean](inverseLimitLE.lean)**
 
 @import "inverseLimitLE.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimitLE_antisymm.lean**
+**[ContinuousLattice/InverseLimits/inverseLimitLE_antisymm.lean](inverseLimitLE_antisymm.lean)**
 
 @import "inverseLimitLE_antisymm.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimitLE_refl.lean**
+**[ContinuousLattice/InverseLimits/inverseLimitLE_refl.lean](inverseLimitLE_refl.lean)**
 
 @import "inverseLimitLE_refl.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimitLE_trans.lean**
+**[ContinuousLattice/InverseLimits/inverseLimitLE_trans.lean](inverseLimitLE_trans.lean)**
 
 @import "inverseLimitLE_trans.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimitLT.lean**
+**[ContinuousLattice/InverseLimits/inverseLimitLT.lean](inverseLimitLT.lean)**
 
 @import "inverseLimitLT.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimitLT_iff_LE_not_GE.lean**
+**[ContinuousLattice/InverseLimits/inverseLimitLT_iff_LE_not_GE.lean](inverseLimitLT_iff_LE_not_GE.lean)**
 
 @import "inverseLimitLT_iff_LE_not_GE.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimitPartialOrder.lean**
+**[ContinuousLattice/InverseLimits/inverseLimitPartialOrder.lean](inverseLimitPartialOrder.lean)**
 
 @import "inverseLimitPartialOrder.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimitSInfCoe.lean**
+**[ContinuousLattice/InverseLimits/inverseLimitSInfCoe.lean](inverseLimitSInfCoe.lean)**
 
 @import "inverseLimitSInfCoe.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimitTopology.lean**
+**[ContinuousLattice/InverseLimits/inverseLimitTopology.lean](inverseLimitTopology.lean)**
 
 @import "inverseLimitTopology.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimit_coordinate_continuous.lean**
+**[ContinuousLattice/InverseLimits/inverseLimit_coordinate_continuous.lean](inverseLimit_coordinate_continuous.lean)**
 
 @import "inverseLimit_coordinate_continuous.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimit_eq_iSup.lean**
+**[ContinuousLattice/InverseLimits/inverseLimit_eq_iSup.lean](inverseLimit_eq_iSup.lean)**
 
 @import "inverseLimit_eq_iSup.lean"
 
-**ContinuousLattice/InverseLimits/idInf_eq_iSup.lean**
+**[ContinuousLattice/InverseLimits/idInf_eq_iSup.lean](idInf_eq_iSup.lean)**
 
 @import "idInf_eq_iSup.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimit_isInjectiveSpace.lean**
+**[ContinuousLattice/InverseLimits/inverseLimit_isInjectiveSpace.lean](inverseLimit_isInjectiveSpace.lean)**
 
 @import "inverseLimit_isInjectiveSpace.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimit_specializationLe_iff.lean**
+**[ContinuousLattice/InverseLimits/inverseLimit_specializationLe_iff.lean](inverseLimit_specializationLe_iff.lean)**
 
 @import "inverseLimit_specializationLe_iff.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimit_t0Space.lean**
+**[ContinuousLattice/InverseLimits/inverseLimit_t0Space.lean](inverseLimit_t0Space.lean)**
 
 @import "inverseLimit_t0Space.lean"
 
-**ContinuousLattice/InverseLimits/inverseLimit_scottTopology_eq_induced_pi.lean**
+**[ContinuousLattice/InverseLimits/inverseLimit_scottTopology_eq_induced_pi.lean](inverseLimit_scottTopology_eq_induced_pi.lean)**
 
 @import "inverseLimit_scottTopology_eq_induced_pi.lean"
 
-**ContinuousLattice/InverseLimits/coconeInf_inverseLimitTopology_continuous.lean**
+**[ContinuousLattice/InverseLimits/coconeInf_inverseLimitTopology_continuous.lean](coconeInf_inverseLimitTopology_continuous.lean)**
 
 @import "coconeInf_inverseLimitTopology_continuous.lean"
 
-**ContinuousLattice/InverseLimits/embInf_inverseLimitTopology_continuous.lean**
+**[ContinuousLattice/InverseLimits/embInf_inverseLimitTopology_continuous.lean](embInf_inverseLimitTopology_continuous.lean)**
 
 @import "embInf_inverseLimitTopology_continuous.lean"
 
-**ContinuousLattice/InverseLimits/projInf_inverseLimitTopology_continuous.lean**
+**[ContinuousLattice/InverseLimits/projInf_inverseLimitTopology_continuous.lean](projInf_inverseLimitTopology_continuous.lean)**
 
 @import "projInf_inverseLimitTopology_continuous.lean"
 
-**ContinuousLattice/InverseLimits/projLE_mono.lean**
+**[ContinuousLattice/InverseLimits/projLE_mono.lean](projLE_mono.lean)**
 
 @import "projLE_mono.lean"
 
-**ContinuousLattice/InverseLimits/projection_galoisConnection.lean**
+**[ContinuousLattice/InverseLimits/projection_galoisConnection.lean](projection_galoisConnection.lean)**
 
 @import "projection_galoisConnection.lean"
 
-**ContinuousLattice/InverseLimits/retr_sInf.lean**
+**[ContinuousLattice/InverseLimits/retr_sInf.lean](retr_sInf.lean)**
 
 @import "retr_sInf.lean"
 
-**ContinuousLattice/InverseLimits/compatible_sInf.lean**
+**[ContinuousLattice/InverseLimits/compatible_sInf.lean](compatible_sInf.lean)**
 
 @import "compatible_sInf.lean"
 
-**ContinuousLattice/InverseLimits/BasicInst20.lean**
+**[ContinuousLattice/InverseLimits/BasicInst20.lean](BasicInst20.lean)**
 
 @import "BasicInst20.lean"
 
-**ContinuousLattice/InverseLimits/isGLB_sInf'.lean**
+**[ContinuousLattice/InverseLimits/isGLB_sInf'.lean](isGLB_sInf'.lean)**
 
 @import "isGLB_sInf'.lean"
 
-**ContinuousLattice/InverseLimits/instCompleteLattice.lean**
+**[ContinuousLattice/InverseLimits/instCompleteLattice.lean](instCompleteLattice.lean)**
 
 @import "instCompleteLattice.lean"
 
-**ContinuousLattice/InverseLimits/coe_sSup_of_directed.lean**
+**[ContinuousLattice/InverseLimits/coe_sSup_of_directed.lean](coe_sSup_of_directed.lean)**
 
 @import "coe_sSup_of_directed.lean"
 
-**ContinuousLattice/InverseLimits/embLE.lean**
+**[ContinuousLattice/InverseLimits/embLE.lean](embLE.lean)**
 
 @import "embLE.lean"
 
-**ContinuousLattice/InverseLimits/embLE_self.lean**
+**[ContinuousLattice/InverseLimits/embLE_self.lean](embLE_self.lean)**
 
 @import "embLE_self.lean"
 
-**ContinuousLattice/InverseLimits/embLE_succ.lean**
+**[ContinuousLattice/InverseLimits/embLE_succ.lean](embLE_succ.lean)**
 
 @import "embLE_succ.lean"
 
-**ContinuousLattice/InverseLimits/embLE_le.lean**
+**[ContinuousLattice/InverseLimits/embLE_le.lean](embLE_le.lean)**
 
 @import "embLE_le.lean"
 
-**ContinuousLattice/InverseLimits/embLE_preservesDirectedSup.lean**
+**[ContinuousLattice/InverseLimits/embLE_preservesDirectedSup.lean](embLE_preservesDirectedSup.lean)**
 
 @import "embLE_preservesDirectedSup.lean"
 
-**ContinuousLattice/InverseLimits/projLE.lean**
+**[ContinuousLattice/InverseLimits/projLE.lean](projLE.lean)**
 
 @import "projLE.lean"
 
-**ContinuousLattice/InverseLimits/iComp.lean**
+**[ContinuousLattice/InverseLimits/iComp.lean](iComp.lean)**
 
 @import "iComp.lean"
 
-**ContinuousLattice/InverseLimits/iComp_of_ge.lean**
+**[ContinuousLattice/InverseLimits/iComp_of_ge.lean](iComp_of_ge.lean)**
 
 @import "iComp_of_ge.lean"
 
-**ContinuousLattice/InverseLimits/iComp_of_le.lean**
+**[ContinuousLattice/InverseLimits/iComp_of_le.lean](iComp_of_le.lean)**
 
 @import "iComp_of_le.lean"
 
-**ContinuousLattice/InverseLimits/iComp_self.lean**
+**[ContinuousLattice/InverseLimits/iComp_self.lean](iComp_self.lean)**
 
 @import "iComp_self.lean"
 
-**ContinuousLattice/InverseLimits/projLE_self.lean**
+**[ContinuousLattice/InverseLimits/projLE_self.lean](projLE_self.lean)**
 
 @import "projLE_self.lean"
 
-**ContinuousLattice/InverseLimits/projLE_succ.lean**
+**[ContinuousLattice/InverseLimits/projLE_succ.lean](projLE_succ.lean)**
 
 @import "projLE_succ.lean"
 
-**ContinuousLattice/InverseLimits/projLE_compatible.lean**
+**[ContinuousLattice/InverseLimits/projLE_compatible.lean](projLE_compatible.lean)**
 
 @import "projLE_compatible.lean"
 
-**ContinuousLattice/InverseLimits/iComp_incl_le.lean**
+**[ContinuousLattice/InverseLimits/iComp_incl_le.lean](iComp_incl_le.lean)**
 
 @import "iComp_incl_le.lean"
 
-**ContinuousLattice/InverseLimits/projLE_preservesDirectedSup.lean**
+**[ContinuousLattice/InverseLimits/projLE_preservesDirectedSup.lean](projLE_preservesDirectedSup.lean)**
 
 @import "projLE_preservesDirectedSup.lean"
 
-**ContinuousLattice/InverseLimits/iComp_preservesDirectedSup.lean**
+**[ContinuousLattice/InverseLimits/iComp_preservesDirectedSup.lean](iComp_preservesDirectedSup.lean)**
 
 @import "iComp_preservesDirectedSup.lean"
 
-**ContinuousLattice/InverseLimits/iComp_monotone.lean**
+**[ContinuousLattice/InverseLimits/iComp_monotone.lean](iComp_monotone.lean)**
 
 @import "iComp_monotone.lean"
 
-**ContinuousLattice/InverseLimits/projLE_retr.lean**
+**[ContinuousLattice/InverseLimits/projLE_retr.lean](projLE_retr.lean)**
 
 @import "projLE_retr.lean"
 
-**ContinuousLattice/InverseLimits/iComp_compatible.lean**
+**[ContinuousLattice/InverseLimits/iComp_compatible.lean](iComp_compatible.lean)**
 
 @import "iComp_compatible.lean"
 
-**ContinuousLattice/InverseLimits/embInfFun.lean**
+**[ContinuousLattice/InverseLimits/embInfFun.lean](embInfFun.lean)**
 
 @import "embInfFun.lean"
 
-**ContinuousLattice/InverseLimits/embInfFun_coe.lean**
+**[ContinuousLattice/InverseLimits/embInfFun_coe.lean](embInfFun_coe.lean)**
 
 @import "embInfFun_coe.lean"
 
-**ContinuousLattice/InverseLimits/coconeInf.lean**
+**[ContinuousLattice/InverseLimits/coconeInf.lean](coconeInf.lean)**
 
 @import "coconeInf.lean"
 
-**ContinuousLattice/InverseLimits/embInf_monotone.lean**
+**[ContinuousLattice/InverseLimits/embInf_monotone.lean](embInf_monotone.lean)**
 
 @import "embInf_monotone.lean"
 
-**ContinuousLattice/InverseLimits/embInf_preservesDirectedSup.lean**
+**[ContinuousLattice/InverseLimits/embInf_preservesDirectedSup.lean](embInf_preservesDirectedSup.lean)**
 
 @import "embInf_preservesDirectedSup.lean"
 
-**ContinuousLattice/InverseLimits/embInf.lean**
+**[ContinuousLattice/InverseLimits/embInf.lean](embInf.lean)**
 
 @import "embInf.lean"
 
-**ContinuousLattice/InverseLimits/projInfFun.lean**
+**[ContinuousLattice/InverseLimits/projInfFun.lean](projInfFun.lean)**
 
 @import "projInfFun.lean"
 
-**ContinuousLattice/InverseLimits/eval_preservesDirectedSup.lean**
+**[ContinuousLattice/InverseLimits/eval_preservesDirectedSup.lean](eval_preservesDirectedSup.lean)**
 
 @import "eval_preservesDirectedSup.lean"
 
-**ContinuousLattice/InverseLimits/projInf.lean**
+**[ContinuousLattice/InverseLimits/projInf.lean](projInf.lean)**
 
 @import "projInf.lean"
 

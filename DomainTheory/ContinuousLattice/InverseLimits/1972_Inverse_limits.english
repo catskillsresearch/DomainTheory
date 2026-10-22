@@ -43,7 +43,6 @@ holds. So much for a review of inverse limits. In this paper our interest will c
 - [Proposition 4.1](1972_Proposition_4_1.md)
 - [Proposition 4.2](1972_Proposition_4_2.md)
 - [Corollary 4.3](1972_Corollary_4_3.md)
-- [Theorem 4.4](../FunctionSpaceTower/1972_Theorem_4_4.md)
 - [Lemma 4.5](1972_Lemma_4_5.md)
 
 We can explain the idea of this proof in other terms using a suggestion made to me by F. W. Lawvere. Consider the category of

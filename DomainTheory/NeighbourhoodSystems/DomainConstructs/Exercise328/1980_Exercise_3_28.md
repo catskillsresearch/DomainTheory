@@ -6,35 +6,35 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainConstructs/Exercise328/Elementu2emem_interYs_of.lean**
+**[NeighbourhoodSystems/DomainConstructs/Exercise328/Elementu2emem_interYs_of.lean](Elementu2emem_interYs_of.lean)**
 
 @import "Elementu2emem_interYs_of.lean"
 
-**NeighbourhoodSystems/DomainConstructs/Exercise328/leastMapVals.lean**
+**[NeighbourhoodSystems/DomainConstructs/Exercise328/leastMapVals.lean](leastMapVals.lean)**
 
 @import "leastMapVals.lean"
 
-**NeighbourhoodSystems/DomainConstructs/Exercise328/Basic.lean**
+**[NeighbourhoodSystems/DomainConstructs/Exercise328/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainConstructs/Exercise328/leastMap_toElementMap_le_of_ub.lean**
+**[NeighbourhoodSystems/DomainConstructs/Exercise328/leastMap_toElementMap_le_of_ub.lean](leastMap_toElementMap_le_of_ub.lean)**
 
 @import "leastMap_toElementMap_le_of_ub.lean"
 
-**NeighbourhoodSystems/DomainConstructs/Exercise328/val_le_leastMap_toElementMap.lean**
+**[NeighbourhoodSystems/DomainConstructs/Exercise328/val_le_leastMap_toElementMap.lean](val_le_leastMap_toElementMap.lean)**
 
 @import "val_le_leastMap_toElementMap.lean"
 
-**NeighbourhoodSystems/DomainConstructs/Exercise328/leastMapVals_bounded.lean**
+**[NeighbourhoodSystems/DomainConstructs/Exercise328/leastMapVals_bounded.lean](leastMapVals_bounded.lean)**
 
 @import "leastMapVals_bounded.lean"
 
-**NeighbourhoodSystems/DomainConstructs/Exercise328/toElementMap_leastMap_eq_sSup.lean**
+**[NeighbourhoodSystems/DomainConstructs/Exercise328/toElementMap_leastMap_eq_sSup.lean](toElementMap_leastMap_eq_sSup.lean)**
 
 @import "toElementMap_leastMap_eq_sSup.lean"
 
-**NeighbourhoodSystems/DomainConstructs/Exercise328.lean**
+**[NeighbourhoodSystems/DomainConstructs/Exercise328.lean](../Exercise328.lean)**
 
 @import "../Exercise328.lean"
 

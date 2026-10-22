@@ -6,27 +6,27 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/Basic.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta.lean](beta.lean)**
 
 @import "beta.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_abs.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_abs.lean](beta_abs.lean)**
 
 @import "beta_abs.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_tuple.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_tuple.lean](beta_tuple.lean)**
 
 @import "beta_tuple.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/subst_value.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/subst_value.lean](subst_value.lean)**
 
 @import "subst_value.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem52.lean](../Theorem52.lean)**
 
 @import "../Theorem52.lean"
 

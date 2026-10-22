@@ -6,35 +6,35 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/isRetraction_retractionOfSubsystem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/isRetraction_retractionOfSubsystem.lean](isRetraction_retractionOfSubsystem.lean)**
 
 @import "isRetraction_retractionOfSubsystem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem.lean](retractionOfSubsystem.lean)**
 
 @import "retractionOfSubsystem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem_rel.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem_rel.lean](retractionOfSubsystem_rel.lean)**
 
 @import "retractionOfSubsystem_rel.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem_toElementMap_inj.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem_toElementMap_inj.lean](retractionOfSubsystem_toElementMap_inj.lean)**
 
 @import "retractionOfSubsystem_toElementMap_inj.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/elementIso.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/elementIso.lean](elementIso.lean)**
 
 @import "elementIso.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retraction_of_subsystem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retraction_of_subsystem.lean](retraction_of_subsystem.lean)**
 
 @import "retraction_of_subsystem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82.lean](../Proposition82.lean)**
 
 @import "../Proposition82.lean"
 

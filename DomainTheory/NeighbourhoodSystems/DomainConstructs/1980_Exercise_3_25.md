@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainConstructs/Exercise325.lean**
+**[NeighbourhoodSystems/DomainConstructs/Exercise325.lean](Exercise325.lean)**
 
 @import "Exercise325.lean"
 

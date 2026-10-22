@@ -6,11 +6,11 @@
 
 ## AI: Human-English to AI-Lean
 
-**ContinuousLattice/FunctionSpaces/proposition_3_10_converse.lean**
+**[ContinuousLattice/FunctionSpaces/proposition_3_10_converse.lean](proposition_3_10_converse.lean)**
 
 @import "proposition_3_10_converse.lean"
 
-**ContinuousLattice/FunctionSpaces/proposition_3_10_forward.lean**
+**[ContinuousLattice/FunctionSpaces/proposition_3_10_forward.lean](proposition_3_10_forward.lean)**
 
 @import "proposition_3_10_forward.lean"
 

@@ -6,79 +6,79 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/FixSet.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/FixSet.lean](FixSet.lean)**
 
 @import "FixSet.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd.lean](fixedNbhd.lean)**
 
 @import "fixedNbhd.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd_mem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd_mem.lean](fixedNbhd_mem.lean)**
 
 @import "fixedNbhd_mem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/BasicInst8.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/BasicInst8.lean](BasicInst8.lean)**
 
 @import "BasicInst8.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/IsCompactElt.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/IsCompactElt.lean](IsCompactElt.lean)**
 
 @import "IsCompactElt.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/sectionMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/sectionMap.lean](sectionMap.lean)**
 
 @import "sectionMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/Basic.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/e_apply_iSupDirected_fixed.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/e_apply_iSupDirected_fixed.lean](e_apply_iSupDirected_fixed.lean)**
 
 @import "e_apply_iSupDirected_fixed.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/eq_principal_of_isCompactElt.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/eq_principal_of_isCompactElt.lean](eq_principal_of_isCompactElt.lean)**
 
 @import "eq_principal_of_isCompactElt.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd_subsystem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd_subsystem.lean](fixedNbhd_subsystem.lean)**
 
 @import "fixedNbhd_subsystem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/mem_of_exists_rel_self.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/mem_of_exists_rel_self.lean](mem_of_exists_rel_self.lean)**
 
 @import "mem_of_exists_rel_self.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/isFinitaryProjection_of_formula.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/isFinitaryProjection_of_formula.lean](isFinitaryProjection_of_formula.lean)**
 
 @import "isFinitaryProjection_of_formula.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/principal_compact.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/principal_compact.lean](principal_compact.lean)**
 
 @import "principal_compact.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/principal_isCompactElt.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/principal_isCompactElt.lean](principal_isCompactElt.lean)**
 
 @import "principal_isCompactElt.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/toElementMap_idem.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/toElementMap_idem.lean](toElementMap_idem.lean)**
 
 @import "toElementMap_idem.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/exists_principal_eq_of_isRetraction_le_idMap.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/exists_principal_eq_of_isRetraction_le_idMap.lean](exists_principal_eq_of_isRetraction_le_idMap.lean)**
 
 @import "exists_principal_eq_of_isRetraction_le_idMap.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/formula_of_isFinitaryProjection.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/formula_of_isFinitaryProjection.lean](formula_of_isFinitaryProjection.lean)**
 
 @import "formula_of_isFinitaryProjection.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/finitaryProjection_iff_formula.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/finitaryProjection_iff_formula.lean](finitaryProjection_iff_formula.lean)**
 
 @import "finitaryProjection_iff_formula.lean"
 
-**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85.lean**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85.lean](../Theorem85.lean)**
 
 @import "../Theorem85.lean"
 

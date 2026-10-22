@@ -4,7 +4,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
-public import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2esup
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele_trans
@@ -43,7 +42,7 @@ theorem incl_wayBelow (P : IsContinuousLatticeProjection D D') (hD' : Continuous
     intro p hp q hq
     exact ⟨p ⊔ q, @WayBelow.sup D' _ p q (P.incl y) hp hq, le_sup_left, le_sup_right⟩
   have hy : y = sSup (Set.image (P.retr : D' → D) W) := by
-    rw [← P.retr.preservesDirectedSup_coe W hWne hWdir, @ContinuousLattice.sSup_wayBelow D' _ hD' (P.incl y),
+    rw [← P.retr.preservesDirectedSup_coe W hWne hWdir, hD'.sSup_wayBelow (P.incl y),
       P.retr_incl y]
   have hImgne : (Set.image (P.retr : D' → D) W).Nonempty := by
     obtain ⟨z', hz'⟩ := hWne

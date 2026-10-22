@@ -6,35 +6,35 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/Basic.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/abs_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/abs_apply.lean](abs_apply.lean)**
 
 @import "abs_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/app_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/app_apply.lean](app_apply.lean)**
 
 @import "app_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/const_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/const_apply.lean](const_apply.lean)**
 
 @import "const_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/tuple_apply.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/tuple_apply.lean](tuple_apply.lean)**
 
 @import "tuple_apply.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/var_fst.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/var_fst.lean](var_fst.lean)**
 
 @import "var_fst.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem51.lean](../Theorem51.lean)**
 
 @import "../Theorem51.lean"
 
-**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/var_snd.lean**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/var_snd.lean](var_snd.lean)**
 
 @import "var_snd.lean"
 

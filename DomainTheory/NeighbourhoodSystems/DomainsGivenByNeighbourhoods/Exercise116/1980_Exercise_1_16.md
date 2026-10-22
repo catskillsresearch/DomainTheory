@@ -6,71 +6,71 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/cofiniteSystem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/cofiniteSystem.lean](cofiniteSystem.lean)**
 
 @import "cofiniteSystem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/cofiniteSystem_mem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/cofiniteSystem_mem.lean](cofiniteSystem_mem.lean)**
 
 @import "cofiniteSystem_mem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/ofExcluded.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/ofExcluded.lean](ofExcluded.lean)**
 
 @import "ofExcluded.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/mem_ofExcluded.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/mem_ofExcluded.lean](mem_ofExcluded.lean)**
 
 @import "mem_ofExcluded.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/toExcluded.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/toExcluded.lean](toExcluded.lean)**
 
 @import "toExcluded.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/mem_toExcluded.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/mem_toExcluded.lean](mem_toExcluded.lean)**
 
 @import "mem_toExcluded.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/fullSystem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/fullSystem.lean](fullSystem.lean)**
 
 @import "fullSystem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/mem_compl_of_finite.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/mem_compl_of_finite.lean](mem_compl_of_finite.lean)**
 
 @import "mem_compl_of_finite.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/mem_compl_singleton.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/mem_compl_singleton.lean](mem_compl_singleton.lean)**
 
 @import "mem_compl_singleton.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/subset_compl_singleton.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/subset_compl_singleton.lean](subset_compl_singleton.lean)**
 
 @import "subset_compl_singleton.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/ofExcluded_toExcluded.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/ofExcluded_toExcluded.lean](ofExcluded_toExcluded.lean)**
 
 @import "ofExcluded_toExcluded.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/toExcluded_ofExcluded.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/toExcluded_ofExcluded.lean](toExcluded_ofExcluded.lean)**
 
 @import "toExcluded_ofExcluded.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/cofiniteIso.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/cofiniteIso.lean](cofiniteIso.lean)**
 
 @import "cofiniteIso.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/Basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/le_ofExcluded_univ.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/le_ofExcluded_univ.lean](le_ofExcluded_univ.lean)**
 
 @import "le_ofExcluded_univ.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/ofExcluded_univ_isTotal.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/ofExcluded_univ_isTotal.lean](ofExcluded_univ_isTotal.lean)**
 
 @import "ofExcluded_univ_isTotal.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116.lean](../Exercise116.lean)**
 
 @import "../Exercise116.lean"
 

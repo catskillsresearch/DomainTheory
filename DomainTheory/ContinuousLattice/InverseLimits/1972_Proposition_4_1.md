@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**ContinuousLattice/InverseLimits/proposition_4_1.lean**
+**[ContinuousLattice/InverseLimits/proposition_4_1.lean](proposition_4_1.lean)**
 
 @import "proposition_4_1.lean"
 

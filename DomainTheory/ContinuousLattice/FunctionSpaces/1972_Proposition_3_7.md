@@ -6,11 +6,11 @@
 
 ## AI: Human-English to AI-Lean
 
-**ContinuousLattice/FunctionSpaces/proposition_3_7_projection.lean**
+**[ContinuousLattice/FunctionSpaces/proposition_3_7_projection.lean](proposition_3_7_projection.lean)**
 
 @import "proposition_3_7_projection.lean"
 
-**ContinuousLattice/FunctionSpaces/proposition_3_7_retraction.lean**
+**[ContinuousLattice/FunctionSpaces/proposition_3_7_retraction.lean](proposition_3_7_retraction.lean)**
 
 @import "proposition_3_7_retraction.lean"
 

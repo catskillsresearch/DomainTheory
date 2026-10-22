@@ -6,79 +6,79 @@
 
 ## AI: Human-English to AI-Lean
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/tail.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/tail.lean](tail.lean)**
 
 @import "tail.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/mem_tail.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/mem_tail.lean](mem_tail.lean)**
 
 @import "mem_tail.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/mem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/mem.lean](mem.lean)**
 
 @import "mem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/tail_inter.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/tail_inter.lean](tail_inter.lean)**
 
 @import "tail_inter.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/tail_subset_iff.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/tail_subset_iff.lean](tail_subset_iff.lean)**
 
 @import "tail_subset_iff.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/nestedOrDisjoint.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/nestedOrDisjoint.lean](nestedOrDisjoint.lean)**
 
 @import "nestedOrDisjoint.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/neighborhoodSystem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/neighborhoodSystem.lean](neighborhoodSystem.lean)**
 
 @import "neighborhoodSystem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/ns_mem.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/ns_mem.lean](ns_mem.lean)**
 
 @import "ns_mem.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/mem_tail_nbhd.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/mem_tail_nbhd.lean](mem_tail_nbhd.lean)**
 
 @import "mem_tail_nbhd.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/fin.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/fin.lean](fin.lean)**
 
 @import "fin.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/top.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/top.lean](top.lean)**
 
 @import "top.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/Basic.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/Basic.lean](Basic.lean)**
 
 @import "Basic.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/element_eq.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/element_eq.lean](element_eq.lean)**
 
 @import "element_eq.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112.lean](../Exercise112.lean)**
 
 @import "../Exercise112.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/fin_le_iff.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/fin_le_iff.lean](fin_le_iff.lean)**
 
 @import "fin_le_iff.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/fin_strictMono.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/fin_strictMono.lean](fin_strictMono.lean)**
 
 @import "fin_strictMono.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/le_top.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/le_top.lean](le_top.lean)**
 
 @import "le_top.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/top_isTotal.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/top_isTotal.lean](top_isTotal.lean)**
 
 @import "top_isTotal.lean"
 
-**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/isTotal_iff_top.lean**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise112/isTotal_iff_top.lean](isTotal_iff_top.lean)**
 
 @import "isTotal_iff_top.lean"
 

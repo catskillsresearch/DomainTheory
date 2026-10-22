@@ -16,4 +16,4 @@ $$
 
 to show that $D'$ is injective. $\square$
 
-**Retract.** `IsRetractSubspace` is a subspace with a continuous retraction, and this proposition uses it to show a retract of an injective space is injective. The continuous-lattice form of the same idea is [Definition 3.6](../FunctionSpaces/1972_Definition_3_6.md). The representation by an idempotent on a power of $\mathbb{O}$ is [Theorem 2.12](../Theorem212/1972_Theorem_2_12.md).
+**Retract.** `IsRetractSubspace` is a subspace with a continuous retraction, and this proposition uses it to show a retract of an injective space is injective. The continuous-lattice form of the same idea is [Definition 3.6](../FunctionSpaces/1972_Definition_3_6.md). The representation by an idempotent on a power of $\mathbb{O}$ is [Theorem 2.12](../ContinuousLattices/1972_Theorem_2_12.md).

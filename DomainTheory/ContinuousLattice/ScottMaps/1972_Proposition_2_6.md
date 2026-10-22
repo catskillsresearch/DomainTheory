@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**ContinuousLattice/ScottMaps/proposition_2_6.lean**
+**[ContinuousLattice/ScottMaps/proposition_2_6.lean](proposition_2_6.lean)**
 
 @import "proposition_2_6.lean"
 

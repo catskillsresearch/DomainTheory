@@ -6,7 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**ContinuousLattice/InverseLimits/corollary_4_3.lean**
+**[ContinuousLattice/InverseLimits/corollary_4_3.lean](corollary_4_3.lean)**
 
 @import "corollary_4_3.lean"
 
