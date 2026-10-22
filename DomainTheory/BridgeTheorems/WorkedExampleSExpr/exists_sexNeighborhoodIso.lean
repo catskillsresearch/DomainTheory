@@ -6,13 +6,9 @@ ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
-import all Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Hom.WithTopBot
-import all Mathlib.Order.Hom.WithTopBot
 public import Mathlib.Order.Sum.Order
-import all Mathlib.Order.Sum.Order
 public import Mathlib.Order.Ideal
-import all Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.InformationSystems.Factoid24
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54

@@ -7,7 +7,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.Basic
 
 @[expose] public section

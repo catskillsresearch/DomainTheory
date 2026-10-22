@@ -7,7 +7,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.le_top
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.top_isTotal

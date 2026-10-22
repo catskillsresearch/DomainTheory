@@ -5,7 +5,6 @@ module
 
 
 public import Mathlib.Order.Hom.Basic
-import all Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36

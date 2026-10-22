@@ -6,7 +6,6 @@ ai-/
 module
 
 public import Mathlib.Data.Finset.Basic
-import all Mathlib.Data.Finset.Basic
 
 @[expose] public section
 

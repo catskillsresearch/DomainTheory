@@ -48,10 +48,8 @@ then $x \sqsubseteq z$ for some $z \in Z$.
 
 **Lean 4**
 
-- [ContinuousLattice/WayBelow.lean](../WayBelow.lean)
-- [ContinuousLattice/WayBelow/Basic.lean](Basic.lean)
-- [ContinuousLattice/WayBelow/Basic/notation5.lean](Basic/notation5.lean)
 - [ContinuousLattice/WayBelow/WayBelow.lean](WayBelow.lean)
+- [ContinuousLattice/WayBelow/Basic/notation5.lean](Basic/notation5.lean)
 - [ContinuousLattice/WayBelow/bot_wayBelow.lean](bot_wayBelow.lean)
 - [ContinuousLattice/WayBelow/WayBelowu2esup.lean](WayBelowu2esup.lean)
 - [ContinuousLattice/WayBelow/WayBelowu2etrans_le.lean](WayBelowu2etrans_le.lean)

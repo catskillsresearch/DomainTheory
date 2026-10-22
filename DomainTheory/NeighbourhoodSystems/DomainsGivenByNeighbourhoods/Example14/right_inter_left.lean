@@ -7,11 +7,10 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.Token
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.left
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.right
-import all DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.left_inter_right
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.left_inter_right
 
 @[expose] public section
 

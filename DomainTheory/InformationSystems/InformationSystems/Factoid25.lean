@@ -6,11 +6,8 @@ ai-/
 module
 
 public import Mathlib.Algebra.Order.Field.Rat
-import all Mathlib.Algebra.Order.Field.Rat
 public import Mathlib.Tactic.Linarith
-import all Mathlib.Tactic.Linarith
 public import Mathlib.Tactic.NormNum
-import all Mathlib.Tactic.NormNum
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys
 
 public import DomainTheory.InformationSystems.InformationSystems.Factoid25.Token

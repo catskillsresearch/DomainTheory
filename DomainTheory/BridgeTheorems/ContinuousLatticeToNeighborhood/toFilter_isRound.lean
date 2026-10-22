@@ -6,7 +6,6 @@ ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
-import all Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.WayBelow
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter

@@ -14,7 +14,6 @@ module
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 public import Mathlib.Data.Finset.Card
-import all Mathlib.Data.Finset.Card
 
 @[expose] public section
 

@@ -5,11 +5,8 @@ module
 
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski
-import all Mathlib.Topology.ContinuousMap.T0Sierpinski
 public import Mathlib.Topology.ContinuousMap.Basic
-import all Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Sets.Opens
-import all Mathlib.Topology.Sets.Opens
 
 @[expose] public section
 

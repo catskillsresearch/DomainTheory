@@ -7,11 +7,11 @@ The numbered name example_513 is that statement.
 ai-/
 module
 
-import all Mathlib.Logic.Equiv.Nat
-import all Mathlib.Order.Hom.Set
-import all Mathlib.Data.Set.Image
-import all Mathlib.Algebra.Ring.Parity
-import all Mathlib.Tactic.Ring
+public import Mathlib.Logic.Equiv.Nat
+public import Mathlib.Order.Hom.Set
+public import Mathlib.Data.Set.Image
+public import Mathlib.Algebra.Ring.Parity
+public import Mathlib.Tactic.Ring
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.unnum_numP
 
 @[expose] public section

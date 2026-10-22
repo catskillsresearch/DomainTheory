@@ -21,5 +21,6 @@ $$(2.8) \quad \mathbf{Y} = \lambda u.\, (\lambda x.\, u(x(x)))(\lambda x.\, u(x(
 **Lean 4**
 
 - [DataTypesAsLattices/Lambda/theorem_2_4.lean](theorem_2_4.lean)
-- [DataTypesAsLattices/Lambda/theorem_2_4_closed.lean](theorem_2_4_closed.lean)
 - [DataTypesAsLattices/Lambda/theorem_2_4_complete.lean](theorem_2_4_complete.lean)
+- [DataTypesAsLattices/Lambda/theorem_2_4_closed.lean](theorem_2_4_closed.lean)
+- [DataTypesAsLattices/Lambda/Ycomb_combinatory.lean](Ycomb_combinatory.lean)

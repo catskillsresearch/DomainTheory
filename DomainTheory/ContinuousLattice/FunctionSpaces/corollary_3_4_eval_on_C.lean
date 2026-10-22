@@ -7,15 +7,10 @@ module
 
 public import DomainTheory.ContinuousLattice.ScottMaps
 public import Mathlib.Data.Finset.Lattice.Fold
-import all Mathlib.Data.Finset.Lattice.Fold
 public import Mathlib.Topology.ContinuousMap.Basic
-import all Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Order
-import all Mathlib.Topology.Order
 public import Mathlib.Order.CompleteLattice.Basic
-import all Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.FixedPoints
-import all Mathlib.Order.FixedPoints
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottFunctionSubbasis_isOpen_scott
 

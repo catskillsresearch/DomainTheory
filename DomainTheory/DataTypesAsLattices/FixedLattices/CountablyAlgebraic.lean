@@ -5,9 +5,7 @@ module
 
 
 public import Mathlib.Order.CompleteLattice.Defs
-import all Mathlib.Order.CompleteLattice.Defs
 public import Mathlib.Data.Finset.Basic
-import all Mathlib.Data.Finset.Basic
 public import DomainTheory.DataTypesAsLattices.FixedLattices.IsDirectedSet
 public import DomainTheory.DataTypesAsLattices.FixedLattices.WayBelow
 public import DomainTheory.DataTypesAsLattices.FixedLattices.IsCompact

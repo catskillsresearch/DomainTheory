@@ -7,9 +7,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-import all Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.FreeMonoid.Basic
-import all Mathlib.Algebra.FreeMonoid.Basic
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.Basic
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.smul_assoc
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.sunion_mul

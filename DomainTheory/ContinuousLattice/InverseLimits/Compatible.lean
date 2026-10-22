@@ -5,7 +5,6 @@ module
 
 public import DomainTheory.ContinuousLattice.Theorem212
 public import Mathlib.Order.GaloisConnection.Basic
-import all Mathlib.Order.GaloisConnection.Basic
 
 @[expose] public section
 

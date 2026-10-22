@@ -7,13 +7,12 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.Token
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.master
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.mem
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.mem_iff
-import all DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.master_not_subset_twelve
-import all DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.master_not_subset_two
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.master_not_subset_twelve
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.master_not_subset_two
 
 @[expose] public section
 

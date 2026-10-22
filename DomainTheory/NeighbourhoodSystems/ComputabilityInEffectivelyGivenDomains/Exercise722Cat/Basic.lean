@@ -9,7 +9,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
 public import Mathlib.Computability.EpsilonNFA
-import all Mathlib.Computability.EpsilonNFA
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat.catEps
 
 @[expose] public section

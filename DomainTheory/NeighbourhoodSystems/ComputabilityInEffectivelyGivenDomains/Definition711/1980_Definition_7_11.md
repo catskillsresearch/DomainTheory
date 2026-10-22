@@ -10,13 +10,13 @@ $$\{x_0, \dots, x_{n-1}\} = \{z \in \mathbb{P} D \mid \exists X_0 \in x_0 \dots 
 
 **Lean 4**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711.lean](../Definition711.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDfinJoin.lean](PDfinJoin.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDfinJoinSucc.lean](PDfinJoinSucc.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDfinJoinZero.lean](PDfinJoinZero.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmemFinJoin.lean](PDmemFinJoin.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmem_finJoin.lean](PDmem_finJoin.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDfinJoinSucc.lean](PDfinJoinSucc.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDfinJoin.lean](PDfinJoin.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmem_finJoinZero.lean](PDmem_finJoinZero.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmem_finJoin_iUnion.lean](PDmem_finJoin_iUnion.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDsingleton.lean](PDsingleton.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmem_finJoin.lean](PDmem_finJoin.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711/PDmem_finJoin_iUnion.lean](PDmem_finJoin_iUnion.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition711.lean](../Definition711.lean)

@@ -5,7 +5,6 @@ ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold
-import all Mathlib.Data.Multiset.MapFold
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.InformationSystems.Factoid25

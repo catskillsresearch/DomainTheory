@@ -4,10 +4,10 @@
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainConstructs/Exercise323.lean](../Exercise323.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise323/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise323/BasicInst4.lean](BasicInst4.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise323/BasicInst5.lean](BasicInst5.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise323/homAdjunction.lean](homAdjunction.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise323/toUnit.lean](toUnit.lean)
+- [NeighbourhoodSystems/DomainConstructs/Exercise323/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise323/toUnit_unique.lean](toUnit_unique.lean)
+- [NeighbourhoodSystems/DomainConstructs/Exercise323.lean](../Exercise323.lean)

@@ -18,14 +18,14 @@ We end this chapter with an example of another kind of domain construct. This co
 
 **Lean 4**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78.lean](../Example78.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PN.lean](PN.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PN_consistent.lean](PN_consistent.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PN_isEffectivelyGiven.lean](PN_isEffectivelyGiven.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PNpres.lean](PNpres.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/mem_nbhd.lean](mem_nbhd.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd.lean](nbhd.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/mem_nbhd.lean](mem_nbhd.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd_injective.lean](nbhd_injective.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd_inter.lean](nbhd_inter.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/nbhd_zero.lean](nbhd_zero.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PN.lean](PN.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/PNpres.lean](PNpres.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78.lean](../Example78.lean)

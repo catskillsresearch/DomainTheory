@@ -7,7 +7,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722
 public import Mathlib.Logic.Encodable.Basic
-import all Mathlib.Logic.Encodable.Basic
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.SExpr
 
 @[expose] public section

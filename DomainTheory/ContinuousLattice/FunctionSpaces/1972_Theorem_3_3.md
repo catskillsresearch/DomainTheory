@@ -41,12 +41,3 @@ $$
 $$
 
 With the equation for $f$ proved, note next that for all $g \in [D \to D']$, $e' \ll g(e)$ implies $\overrightarrow{e}[e, e'] \sqsubseteq g$ by an easy pointwise argument. If we let $V =  g : e' \ll g(e) $, we see then that $V$ is open in the product topology and that $\overrightarrow{e}[e, e'] \sqsubseteq \sqcap V$. We may then conclude that $f = \bigsqcup  \sqcap V : f \in V $, which proves both that $[D \to D']$ is a continuous lattice and that the two topologies agree by the remark following 2.4. $\square$
-
-**Lean 4**
-
-- [ContinuousLattice/FunctionSpaces/theorem_3_3.lean](theorem_3_3.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_isContinuousLattice.lean](theorem_3_3_isContinuousLattice.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_sSup.lean](theorem_3_3_sSup.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_sup.lean](theorem_3_3_sup.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_topology.lean](theorem_3_3_topology.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_topology_induced_pi.lean](theorem_3_3_topology_induced_pi.lean)

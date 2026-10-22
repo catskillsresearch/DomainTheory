@@ -5,7 +5,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516
 public import Mathlib.Data.Nat.Bits
-import all Mathlib.Data.Nat.Bits
 
 @[expose] public section
 

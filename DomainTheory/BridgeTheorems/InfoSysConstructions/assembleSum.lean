@@ -4,11 +4,8 @@ ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
-import all Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
-import all Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
-import all Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 

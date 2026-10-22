@@ -4,7 +4,6 @@ ai-/
 module
 
 public import Mathlib.Data.Finset.Basic
-import all Mathlib.Data.Finset.Basic
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.instLeftCommutativeInsert
 
 @[expose] public section

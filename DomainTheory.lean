@@ -1,3 +1,5 @@
+module -- shake: keep-all
+
 import DomainTheory.ContinuousLattice
 import DomainTheory.DataTypesAsLattices
 import DomainTheory.NeighbourhoodSystems

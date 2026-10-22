@@ -5,9 +5,7 @@ module
 
 
 public import Mathlib.Data.Finset.Fold
-import all Mathlib.Data.Finset.Fold
 public import Mathlib.Order.Hom.Basic
-import all Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23

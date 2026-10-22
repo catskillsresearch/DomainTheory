@@ -7,7 +7,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Y
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Y_zero
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.acc_zero

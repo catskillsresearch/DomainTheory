@@ -8,7 +8,6 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Retracts
 public import Mathlib.Data.Set.Finite.Powerset
-import all Mathlib.Data.Set.Finite.Powerset
 public import DomainTheory.DataTypesAsLattices.Classification.Basic
 public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_5
 

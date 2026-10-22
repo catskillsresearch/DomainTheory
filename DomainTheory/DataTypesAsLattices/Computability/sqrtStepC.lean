@@ -4,7 +4,6 @@ ai-/
 module
 
 public import Mathlib.Computability.RE
-import all Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtEnv
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtStepTerm

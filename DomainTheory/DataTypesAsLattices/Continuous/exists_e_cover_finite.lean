@@ -6,9 +6,7 @@ ai-/
 module
 
 public import Mathlib.Topology.Bases
-import all Mathlib.Topology.Bases
 public import Mathlib.Topology.Order
-import all Mathlib.Topology.Order
 public import DomainTheory.DataTypesAsLattices.Pomega
 public import DomainTheory.DataTypesAsLattices.Continuous.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.isScottContinuous_monotone

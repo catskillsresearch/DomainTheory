@@ -44,8 +44,6 @@ By a directed subset of $X$ we of course mean that it is directed in the sense o
 
 **Lean 4**
 
-- [ContinuousLattice/Specialization.lean](../Specialization.lean)
-- [ContinuousLattice/Specialization/Basic.lean](Basic.lean)
 - [ContinuousLattice/Specialization/SpecializationLe.lean](SpecializationLe.lean)
 - [ContinuousLattice/Specialization/specializationLe_iff_specializes.lean](specializationLe_iff_specializes.lean)
 - [ContinuousLattice/Specialization/specializationLe_antisymm.lean](specializationLe_antisymm.lean)
@@ -54,10 +52,11 @@ By a directed subset of $X$ we of course mean that it is directed in the sense o
 - [ContinuousLattice/Specialization/IsMonotoneNet.lean](IsMonotoneNet.lean)
 - [ContinuousLattice/Specialization/ScottConvergesTo.lean](ScottConvergesTo.lean)
 - [ContinuousLattice/Specialization/scottTopologicalSpace.lean](scottTopologicalSpace.lean)
-- [ContinuousLattice/Specialization/specializationLe_scott_iff.lean](specializationLe_scott_iff.lean)
 - [ContinuousLattice/Specialization/scottOpen_not_le.lean](scottOpen_not_le.lean)
 - [ContinuousLattice/Specialization/ScottOpen_iff_dirSupInacc.lean](ScottOpen_iff_dirSupInacc.lean)
 - [ContinuousLattice/Specialization/isOpen_iff_scottOpen.lean](isOpen_iff_scottOpen.lean)
+- [ContinuousLattice/Specialization/specializationLe_scott_iff.lean](specializationLe_scott_iff.lean)
+- [ContinuousLattice/Specialization/scottTopology_t0Space.lean](scottTopology_t0Space.lean)
 - [ContinuousLattice/Specialization/isOpen_scott_iff_scottOpen.lean](isOpen_scott_iff_scottOpen.lean)
 - [ContinuousLattice/WayBelow/ScottOpen.lean](../WayBelow/ScottOpen.lean)
 - [ContinuousLattice/WayBelow/ScottOpenu2eisUpperSet.lean](../WayBelow/ScottOpenu2eisUpperSet.lean)

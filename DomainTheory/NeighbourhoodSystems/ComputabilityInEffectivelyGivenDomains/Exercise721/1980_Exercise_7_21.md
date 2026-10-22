@@ -18,13 +18,13 @@ $$\mathbb{P}\mathbf{N} \text{ and } P\mathbf{N}\ ????$$
 
 **Lean 4**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721.lean](../Exercise721.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papply.lean](papply.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyB.lean](papplyB.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval.lean](papplyEval.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_isComputable.lean](papplyEval_isComputable.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_rel.lean](papplyEval_rel.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyB.lean](papplyB.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papply.lean](papply.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_rel_Ypd_iff.lean](papplyEval_rel_Ypd_iff.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_step_witness.lean](papplyEval_step_witness.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/re_forallG_forallX_existsY.lean](re_forallG_forallX_existsY.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_isComputable.lean](papplyEval_isComputable.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721.lean](../Exercise721.lean)

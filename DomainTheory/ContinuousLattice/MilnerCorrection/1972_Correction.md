@@ -36,9 +36,9 @@ Turning now to the proof of theorem 2.3 we note that the topology on the functio
 
 **Lean 4**
 
-- [ContinuousLattice/MilnerCorrection.lean](../MilnerCorrection.lean)
-- [ContinuousLattice/MilnerCorrection/Basic.lean](Basic.lean)
 - [ContinuousLattice/MilnerCorrection/CoarserThanScottTopology.lean](CoarserThanScottTopology.lean)
 - [ContinuousLattice/MilnerCorrection/scottLowerSubbasisSet.lean](scottLowerSubbasisSet.lean)
 - [ContinuousLattice/MilnerCorrection/scottOpen_of_coarserThanScott.lean](scottOpen_of_coarserThanScott.lean)
 - [ContinuousLattice/MilnerCorrection/scottPrincipalUpSet.lean](scottPrincipalUpSet.lean)
+- [ContinuousLattice/MilnerCorrection/Basic.lean](Basic.lean)
+- [ContinuousLattice/MilnerCorrection.lean](../MilnerCorrection.lean)

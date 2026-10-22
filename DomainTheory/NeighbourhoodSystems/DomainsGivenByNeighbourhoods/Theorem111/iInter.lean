@@ -5,7 +5,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Order.Monotone.Basic
-import all Mathlib.Order.Monotone.Basic
 
 @[expose] public section
 

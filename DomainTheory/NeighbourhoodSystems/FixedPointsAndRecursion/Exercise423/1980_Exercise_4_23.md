@@ -14,6 +14,6 @@ Prove that $f$ has a unique fixed point. (Hint: Show that if $x = f(x)$, then $a
 
 **Lean 4**
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423.lean](../Exercise423.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423/f_unique_fixedPoint.lean](f_unique_fixedPoint.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423.lean](../Exercise423.lean)

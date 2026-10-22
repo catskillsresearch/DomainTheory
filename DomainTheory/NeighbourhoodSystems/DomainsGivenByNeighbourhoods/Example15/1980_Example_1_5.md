@@ -31,15 +31,15 @@ It is easy to prove that if we form the analogous class for $\langle Y_n \rangle
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15.lean](../Example15.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/Token.lean](Token.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4Mem.lean](P4Mem.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_inter_mem.lean](P4_inter_mem.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/master.lean](master.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_master_mem.lean](P4_master_mem.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_master_nonempty.lean](P4_master_nonempty.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_sub_master.lean](P4_sub_master.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/Token.lean](Token.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/consistent_iff_inter_nonempty.lean](consistent_iff_inter_nonempty.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/master.lean](master.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/mem_iff_nonempty.lean](mem_iff_nonempty.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/neighborhoodSystem.lean](neighborhoodSystem.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/consistent_iff_inter_nonempty.lean](consistent_iff_inter_nonempty.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/mem_iff_nonempty.lean](mem_iff_nonempty.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15.lean](../Example15.lean)

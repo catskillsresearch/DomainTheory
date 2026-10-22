@@ -7,7 +7,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Order.Monotone.Basic
-import all Mathlib.Order.Monotone.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111.iInter
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111.iUnion
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111.mem_iInter

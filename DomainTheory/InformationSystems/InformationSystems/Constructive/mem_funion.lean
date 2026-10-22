@@ -6,7 +6,6 @@ ai-/
 module
 
 public import Mathlib.Data.Finset.Basic
-import all Mathlib.Data.Finset.Basic
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.instLeftCommutativeInsert
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.mem_foldr_insert
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.Basic.notation5

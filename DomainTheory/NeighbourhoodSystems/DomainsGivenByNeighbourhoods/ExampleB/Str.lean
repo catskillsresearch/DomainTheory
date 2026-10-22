@@ -5,7 +5,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Data.List.Infix
-import all Mathlib.Data.List.Infix
 
 @[expose] public section
 

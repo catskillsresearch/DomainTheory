@@ -6,11 +6,8 @@ ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic
-import all Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.UpperLower.Basic
-import all Mathlib.Order.UpperLower.Basic
 public import Mathlib.Order.Directed
-import all Mathlib.Order.Directed
 public import DomainTheory.ContinuousLattice.WayBelow.Basic
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_univ
 

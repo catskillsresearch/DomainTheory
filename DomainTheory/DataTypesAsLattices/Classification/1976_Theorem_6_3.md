@@ -29,3 +29,5 @@ We let $\mathfrak{F} \dot{\cap} \mathfrak{G}$ denote the class of all sets of th
 **Lean 4**
 
 - [DataTypesAsLattices/Classification/theorem_6_3.lean](theorem_6_3.lean)
+- [DataTypesAsLattices/Classification/typicalGdelta_isScottGdelta.lean](typicalGdelta_isScottGdelta.lean)
+- [DataTypesAsLattices/Classification/typicalGdelta_universal.lean](typicalGdelta_universal.lean)

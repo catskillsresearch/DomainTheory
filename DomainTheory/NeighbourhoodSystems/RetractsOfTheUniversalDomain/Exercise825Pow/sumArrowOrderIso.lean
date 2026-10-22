@@ -5,7 +5,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
 public import Mathlib.Logic.Equiv.Nat
-import all Mathlib.Logic.Equiv.Nat
 
 @[expose] public section
 

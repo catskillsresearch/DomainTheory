@@ -42,8 +42,3 @@ $$
 $$
 
 because the lubs of functions are computed pointwise. $\square$
-
-**Lean 4**
-
-- [ContinuousLattice/FunctionSpaces/proposition_3_5.lean](proposition_3_5.lean)
-- [ContinuousLattice/FunctionSpaces/proposition_3_5_preservesDirectedSup.lean](proposition_3_5_preservesDirectedSup.lean)

@@ -16,8 +16,6 @@ Need the fixed point be unique?
 
 **Lean 4**
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417.lean](../Exercise417.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/F.lean](F.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/F_monotone.lean](F_monotone.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/F_one_one_singleton.lean](F_one_one_singleton.lean)
@@ -28,6 +26,8 @@ Need the fixed point be unique?
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/fixedPoint_not_unique.lean](fixedPoint_not_unique.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/leastSolution_eq.lean](leastSolution_eq.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/lfpSet_eq_closure.lean](lfpSet_eq_closure.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417.lean](../Exercise417.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/one_mem_F.lean](one_mem_F.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/preFixSubmonoid.lean](preFixSubmonoid.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/self_mul_subset_F.lean](self_mul_subset_F.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/preFixSubmonoid.lean](preFixSubmonoid.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise417/Basic.lean](Basic.lean)

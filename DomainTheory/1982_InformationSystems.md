@@ -10,7 +10,3 @@ The purpose of the theory of domains is to give models for spaces on which to de
 - [Products and sums of domains](InformationSystems/ProductsAndSumsOfDomains/Sum/1982_Products_and_sums_of_domains.md)
 - [The function space as a domain](InformationSystems/FunctionSpaceAsADomain/1982_The_function_space_as_a_domain.md)
 - [Some domain equations](InformationSystems/SomeDomainEquations/1982_Some_domain_equations.md)
-
-**Lean 4**
-
-- [InformationSystems.lean](InformationSystems.lean)

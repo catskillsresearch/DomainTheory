@@ -4,9 +4,7 @@ ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
-import all Mathlib.Order.CompleteLattice.Defs
 public import Mathlib.Data.Finset.Basic
-import all Mathlib.Data.Finset.Basic
 public import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraic
 
 @[expose] public section

@@ -8,7 +8,5 @@ In Lean, **`Sierpinski`** is that space: `Prop` with the Sierpiński topology (`
 
 **Proof:** As is obvious, the continuous maps $f: X \to \mathbb{O}$ are in a one-one correspondence with the open subsets of $X$ (consider $f^{-1}(\top)$). If $X \subseteq Y$ as a subspace, then an open subset of $X$ is the restriction of some open subset of $Y$. Thus any $f: X \to \mathbb{O}$ can be extended to $\bar{f}: Y \to \mathbb{O}$. $\square$
 
-**Lean 4**
-
 - [ContinuousLattice/Injective/isInjectiveSpace_sierpinski.lean](isInjectiveSpace_sierpinski.lean)
 - [ContinuousLattice/Injective/proposition_1_2.lean](proposition_1_2.lean)

@@ -37,7 +37,4 @@ and say that $\mathbf{A}$ is an information system—with its parts as indicated
 
 **Lean 4**
 
-- [InformationSystems/InformationSystems/InfoSys.lean](../InfoSys.lean)
-- [InformationSystems/InformationSystems/InfoSys/Basic.lean](Basic.lean)
 - [InformationSystems/InformationSystems/InfoSys/InfoSys.lean](InfoSys.lean)
-- [InformationSystems/InformationSystems/InfoSys/con_empty.lean](con_empty.lean)

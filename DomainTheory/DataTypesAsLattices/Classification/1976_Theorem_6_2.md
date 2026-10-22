@@ -15,3 +15,5 @@ Thus $\{\top\}$ is a countable intersection of open sets, otherwise called a $\m
 **Lean 4**
 
 - [DataTypesAsLattices/Classification/theorem_6_2.lean](theorem_6_2.lean)
+- [DataTypesAsLattices/Classification/typicalF_mem_ScottF.lean](typicalF_mem_ScottF.lean)
+- [DataTypesAsLattices/Classification/typicalF_universal.lean](typicalF_universal.lean)

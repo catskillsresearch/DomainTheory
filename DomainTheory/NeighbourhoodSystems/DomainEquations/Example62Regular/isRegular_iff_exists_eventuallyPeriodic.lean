@@ -6,7 +6,6 @@ ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode
-import all Mathlib.Computability.MyhillNerode
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.eventuallyPeriodic_iff_isRegular
 

@@ -9,7 +9,3 @@
 - [Domain equations](NeighbourhoodSystems/DomainEquations/1980_Introduction_to_domain_equations.md)
 - [Computability in effectively given domains](NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Recursive/1980_Computability_in_effectively_given_domains.md)
 - [Retracts of the universal domain](NeighbourhoodSystems/RetractsOfTheUniversalDomain/1980_Retracts_of_the_universal_domain.md)
-
-**Lean 4**
-
-- [NeighbourhoodSystems.lean](NeighbourhoodSystems.lean)

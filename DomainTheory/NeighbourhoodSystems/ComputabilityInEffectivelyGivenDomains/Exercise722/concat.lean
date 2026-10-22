@@ -6,7 +6,6 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import Mathlib.Data.Set.Insert
-import all Mathlib.Data.Set.Insert
 
 @[expose] public section
 

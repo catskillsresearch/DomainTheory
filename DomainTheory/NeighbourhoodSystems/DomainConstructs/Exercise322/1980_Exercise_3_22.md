@@ -24,10 +24,10 @@ The maps are of course not uniquely determined, but the shifting of brackets oug
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainConstructs/Exercise322.lean](../Exercise322.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise322/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise322/compApp.lean](compApp.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise322/compMap.lean](compMap.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise322/toApproxMap_compMap.lean](toApproxMap_compMap.lean)
+- [NeighbourhoodSystems/DomainConstructs/Exercise322/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise322/toElementMap_compApp.lean](toElementMap_compApp.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise322/toElementMap_compMap_apply.lean](toElementMap_compMap_apply.lean)
+- [NeighbourhoodSystems/DomainConstructs/Exercise322/toApproxMap_compMap.lean](toApproxMap_compMap.lean)
+- [NeighbourhoodSystems/DomainConstructs/Exercise322.lean](../Exercise322.lean)

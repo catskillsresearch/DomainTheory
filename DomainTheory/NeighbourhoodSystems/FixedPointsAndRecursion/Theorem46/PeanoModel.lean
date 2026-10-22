@@ -5,7 +5,6 @@ module
 
 
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 
 @[expose] public section
 

@@ -6,7 +6,7 @@ ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode
-import all Mathlib.Computability.MyhillNerode
+public import Mathlib.Data.Set.Finite.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.treeLang_select
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.treeLang_injective

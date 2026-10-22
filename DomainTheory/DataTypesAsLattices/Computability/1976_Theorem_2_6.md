@@ -29,3 +29,4 @@ Call the left side $f'$ and the right $f''$. Now $f'' = \lambda x.\, g(x)(\mathb
 - [DataTypesAsLattices/Computability/theorem_2_6_fin.lean](theorem_2_6_fin.lean)
 - [DataTypesAsLattices/Computability/theorem_2_6_lambda_continuous.lean](theorem_2_6_lambda_continuous.lean)
 - [DataTypesAsLattices/Computability/theorem_2_6_ofNat_isRE.lean](theorem_2_6_ofNat_isRE.lean)
+- [DataTypesAsLattices/Computability.lean](../Computability.lean)

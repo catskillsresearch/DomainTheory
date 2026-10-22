@@ -27,11 +27,11 @@ Thus, $i(x)$ belongs to the fixed-point set of $a$. In the other direction, if $
 
 **Lean 4**
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82.lean](../Proposition82.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/elementIso.lean](elementIso.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/isRetraction_retractionOfSubsystem.lean](isRetraction_retractionOfSubsystem.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem.lean](retractionOfSubsystem.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem_rel.lean](retractionOfSubsystem_rel.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem_toElementMap_inj.lean](retractionOfSubsystem_toElementMap_inj.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/elementIso.lean](elementIso.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retraction_of_subsystem.lean](retraction_of_subsystem.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82.lean](../Proposition82.lean)

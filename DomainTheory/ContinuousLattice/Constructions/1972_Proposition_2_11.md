@@ -55,7 +55,18 @@ Furthermore, as we have seen, the injective property can be exhibited, as in the
 **Lean 4**
 
 - [ContinuousLattice/WayBelow/wayBelow_interpolate.lean](../WayBelow/wayBelow_interpolate.lean)
+- [ContinuousLattice/WayBelow.lean](../WayBelow.lean)
+- [ContinuousLattice/Specialization/Basic.lean](../Specialization/Basic.lean)
+- [ContinuousLattice/Specialization.lean](../Specialization.lean)
+- [ContinuousLattice/ScottMaps/Basic.lean](../ScottMaps/Basic.lean)
+- [ContinuousLattice/ScottMaps.lean](../ScottMaps.lean)
 - [ContinuousLattice/Constructions/scottExtend.lean](scottExtend.lean)
+- [ContinuousLattice/Constructions/Basic.lean](Basic.lean)
+- [ContinuousLattice/Constructions/directedOn_finite_sSup_mem.lean](directedOn_finite_sSup_mem.lean)
+- [ContinuousLattice/Constructions/proposition_2_8.lean](proposition_2_8.lean)
+- [ContinuousLattice/Constructions/proposition_2_9_a.lean](proposition_2_9_a.lean)
+- [ContinuousLattice/Constructions/proposition_2_9_b.lean](proposition_2_9_b.lean)
+- [ContinuousLattice/Constructions/proposition_2_9.lean](proposition_2_9.lean)
 - [ContinuousLattice/Constructions/scottExtend_aux_nonempty.lean](scottExtend_aux_nonempty.lean)
 - [ContinuousLattice/Constructions/scottExtend_aux_directed.lean](scottExtend_aux_directed.lean)
 - [ContinuousLattice/Constructions/scottExtend_continuous.lean](scottExtend_continuous.lean)

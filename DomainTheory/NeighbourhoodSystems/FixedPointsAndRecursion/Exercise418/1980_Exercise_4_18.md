@@ -4,11 +4,11 @@
 
 **Lean 4**
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise418.lean](../Exercise418.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise418/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise418/element_classification.lean](element_classification.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise418/natElem_injective.lean](natElem_injective.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise418/natElem_zero_ne_succ.lean](natElem_zero_ne_succ.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise418/not_N_mem_empty.lean](not_N_mem_empty.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise418/element_classification.lean](element_classification.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise418/succMap_injective.lean](succMap_injective.lean)
 - [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise418/zero_ne_succMap.lean](zero_ne_succMap.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise418.lean](../Exercise418.lean)

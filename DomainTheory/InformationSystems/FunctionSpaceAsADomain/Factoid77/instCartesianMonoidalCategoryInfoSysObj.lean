@@ -4,7 +4,6 @@ ai-/
 module
 
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
-import all Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.InfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCategoryInfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.terminalLimitCone

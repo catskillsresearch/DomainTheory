@@ -6,7 +6,6 @@ ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
-import all Mathlib.Order.Hom.Basic
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81
 public import DomainTheory.BridgeTheorems.treeFold
 

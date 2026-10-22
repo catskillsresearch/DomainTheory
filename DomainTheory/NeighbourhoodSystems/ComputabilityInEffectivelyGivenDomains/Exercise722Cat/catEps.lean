@@ -5,7 +5,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
 public import Mathlib.Computability.EpsilonNFA
-import all Mathlib.Computability.EpsilonNFA
 
 @[expose] public section
 

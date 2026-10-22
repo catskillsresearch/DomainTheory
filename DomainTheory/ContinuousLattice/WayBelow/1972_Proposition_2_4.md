@@ -20,5 +20,5 @@ In the converse direction we have only to note that if $U$ is open and $y \in U$
 
 **Lean 4**
 
-- [ContinuousLattice/WayBelow/isContinuousLattice_iff_isLUB_sInf_nhds.lean](isContinuousLattice_iff_isLUB_sInf_nhds.lean)
 - [ContinuousLattice/WayBelow/sInf_wayBelow.lean](sInf_wayBelow.lean)
+- [ContinuousLattice/WayBelow/isContinuousLattice_iff_isLUB_sInf_nhds.lean](isContinuousLattice_iff_isLUB_sInf_nhds.lean)

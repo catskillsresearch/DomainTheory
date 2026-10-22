@@ -5,9 +5,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 public import Mathlib.Data.Set.Finite.Basic
-import all Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Data.Finset.Basic
-import all Mathlib.Data.Finset.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.mem_iprodNbhd
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.updTuple_apply_self
 

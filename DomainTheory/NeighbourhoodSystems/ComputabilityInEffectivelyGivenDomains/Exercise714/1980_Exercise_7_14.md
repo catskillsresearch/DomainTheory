@@ -11,8 +11,8 @@ for all $i \in \mathbf{N}$.
 
 **Lean 4**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714.lean](../Exercise714.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/tFun.lean](tFun.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714.lean](../Exercise714.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/repred_range_primrec.lean](repred_range_primrec.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/repredu2082_exists_primrec_enum.lean](repredu2082_exists_primrec_enum.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/tFun.lean](tFun.lean)

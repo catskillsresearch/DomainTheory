@@ -12,6 +12,6 @@ Certainly the word problem for $\mathbf{RE} \cap \mathbf{FUN}$ is unsolvable, in
 
 **Lean 4**
 
-- [DataTypesAsLattices/Enumeration/theorem_3_7.lean](theorem_3_7.lean)
 - [DataTypesAsLattices/Enumeration/theorem_3_7_equations.lean](theorem_3_7_equations.lean)
 - [DataTypesAsLattices/Enumeration/theorem_3_7_generation.lean](theorem_3_7_generation.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_7.lean](theorem_3_7.lean)

@@ -16,7 +16,10 @@ Besides functions of one variable we need to consider also functions of several 
 
 **Lean 4**
 
-- [DataTypesAsLattices/Graph/theorem_1_2.lean](theorem_1_2.lean)
 - [DataTypesAsLattices/Graph/theorem_1_2_i.lean](theorem_1_2_i.lean)
+- [DataTypesAsLattices/Graph/beta.lean](beta.lean)
 - [DataTypesAsLattices/Graph/theorem_1_2_ii.lean](theorem_1_2_ii.lean)
 - [DataTypesAsLattices/Graph/theorem_1_2_iii.lean](theorem_1_2_iii.lean)
+- [DataTypesAsLattices/Graph/theorem_1_2.lean](theorem_1_2.lean)
+- [DataTypesAsLattices/Graph.lean](../Graph.lean)
+- [DataTypesAsLattices/FixedPoint/Basic.lean](../FixedPoint/Basic.lean)

@@ -8,7 +8,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon
-import all DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.atomFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.pairLFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.pairRFinset

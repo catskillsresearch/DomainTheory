@@ -4,7 +4,6 @@ ai-/
 module
 
 public import Mathlib.Computability.Halting
-import all Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Computability
 public import DomainTheory.DataTypesAsLattices.Functionality
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack

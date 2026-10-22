@@ -6,7 +6,6 @@ ai-/
 module
 
 public import Mathlib.Data.Finset.Basic
-import all Mathlib.Data.Finset.Basic
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.Basic
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.subset_funion_left
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.subset_funion_right

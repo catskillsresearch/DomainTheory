@@ -7,7 +7,3 @@ $$f \sqsubseteq g \quad \text{iff} \quad f(x) \sqsubseteq g(x) \text{ for all } 
 where $f, g \in [X \to Y]$. $\square$
 
 where $f, g \in [X \to Y]$. $\square$
-
-**Lean 4**
-
-- [ContinuousLattice/FunctionSpaces/proposition_3_2.lean](proposition_3_2.lean)

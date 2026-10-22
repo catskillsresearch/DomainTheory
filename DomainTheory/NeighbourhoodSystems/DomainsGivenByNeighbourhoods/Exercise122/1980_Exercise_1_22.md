@@ -25,14 +25,14 @@ is not only in $|D|$ but is a topological limit point of the sequence. Show that
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122.lean](../Exercise122.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/IsOpenFilter.lean](IsOpenFilter.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/basicOpen.lean](basicOpen.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/mem_basicOpen.lean](mem_basicOpen.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/IsOpenFilter.lean](IsOpenFilter.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_basicOpen.lean](isOpen_basicOpen.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_isOpenFilter.lean](isOpen_iff_isOpenFilter.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_upper_basic.lean](isOpen_iff_upper_basic.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_isUpperSet.lean](isOpen_isUpperSet.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_upper_basic.lean](isOpen_iff_upper_basic.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/le_iff_isOpen_imp.lean](le_iff_isOpen_imp.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/mem_basicOpen.lean](mem_basicOpen.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122.lean](../Exercise122.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/specializes_iff_le.lean](specializes_iff_le.lean)

@@ -8,7 +8,6 @@ module
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition79
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 
 @[expose] public section
 

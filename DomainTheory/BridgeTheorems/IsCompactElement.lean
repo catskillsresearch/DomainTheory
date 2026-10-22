@@ -4,9 +4,7 @@ ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic
-import all Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.Directed
-import all Mathlib.Order.Directed
 public import DomainTheory.ContinuousLattice.WayBelow
 
 @[expose] public section

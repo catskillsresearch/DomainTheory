@@ -6,7 +6,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
 public import Mathlib.Data.Set.Image
-import all Mathlib.Data.Set.Image
 
 @[expose] public section
 

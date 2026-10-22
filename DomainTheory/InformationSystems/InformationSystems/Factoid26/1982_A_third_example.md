@@ -14,12 +14,11 @@ These examples show that sometimes the main part of the structure is in $\mathrm
 
 **Lean 4**
 
-- [InformationSystems/InformationSystems/Factoid26.lean](../Factoid26.lean)
-- [InformationSystems/InformationSystems/Factoid26/Basic.lean](Basic.lean)
+- [InformationSystems/InformationSystems/Factoid26/Token.lean](Token.lean)
 - [InformationSystems/InformationSystems/Factoid26/Consistent.lean](Consistent.lean)
 - [InformationSystems/InformationSystems/Factoid26/Ent.lean](Ent.lean)
-- [InformationSystems/InformationSystems/Factoid26/Token.lean](Token.lean)
 - [InformationSystems/InformationSystems/Factoid26/consistent_empty.lean](consistent_empty.lean)
+- [InformationSystems/InformationSystems/Factoid26.lean](../Factoid26.lean)
 - [InformationSystems/InformationSystems/Factoid26/consistent_insert_bot.lean](consistent_insert_bot.lean)
 - [InformationSystems/InformationSystems/Factoid26/consistent_insert_mem.lean](consistent_insert_mem.lean)
 - [InformationSystems/InformationSystems/Factoid26/consistent_singleton.lean](consistent_singleton.lean)

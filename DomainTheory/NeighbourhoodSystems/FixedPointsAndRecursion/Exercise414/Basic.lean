@@ -4,9 +4,7 @@ ai-/
 module
 
 public import Mathlib.Data.Set.Basic
-import all Mathlib.Data.Set.Basic
 public import Mathlib.Order.Monotone.Basic
-import all Mathlib.Order.Monotone.Basic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.gfpSet
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet
 

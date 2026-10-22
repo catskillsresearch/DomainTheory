@@ -10,6 +10,6 @@ $\square$
 
 **Lean 4**
 
-- [ContinuousLattice/Specialization/proposition_2_1.lean](proposition_2_1.lean)
 - [ContinuousLattice/Specialization/proposition_2_1_le_of_converges.lean](proposition_2_1_le_of_converges.lean)
 - [ContinuousLattice/Specialization/proposition_2_1_of_le.lean](proposition_2_1_of_le.lean)
+- [ContinuousLattice/Specialization/proposition_2_1.lean](proposition_2_1.lean)

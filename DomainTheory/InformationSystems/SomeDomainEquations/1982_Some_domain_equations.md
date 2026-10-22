@@ -6,7 +6,3 @@ Having outlined the theory of several domain constructs, the final topic for thi
 - [Factoid 8.2](Factoid82/1982_Factoid_8_2.md)
 - [Factoid 8.3](Factoid83/1982_Factoid_8_3.md)
 - [Factoid 8.4](Factoid84/1982_Factoid_8_4.md)
-
-**Lean 4**
-
-- [InformationSystems/SomeDomainEquations/DomainEquation.lean](DomainEquation.lean)

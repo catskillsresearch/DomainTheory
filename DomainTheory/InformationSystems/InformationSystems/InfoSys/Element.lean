@@ -5,9 +5,7 @@ module
 
 
 public import Mathlib.Data.Finset.Basic
-import all Mathlib.Data.Finset.Basic
 public import Mathlib.Data.Set.Basic
-import all Mathlib.Data.Set.Basic
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.InfoSys
 
 @[expose] public section

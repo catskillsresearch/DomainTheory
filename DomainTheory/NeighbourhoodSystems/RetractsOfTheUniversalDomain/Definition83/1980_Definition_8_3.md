@@ -54,12 +54,16 @@ for $x \in |D|$ and $y \in |E|$. $\square$
 
 **Lean 4**
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83.lean](../Definition83.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/IsFinitary.lean](IsFinitary.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/IsFinitaryProjection.lean](IsFinitaryProjection.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/IsProjection.lean](IsProjection.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isFinitaryProjection_retractionOfSubsystem.lean](isFinitaryProjection_retractionOfSubsystem.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/IsFinitaryProjection.lean](IsFinitaryProjection.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isFinitary_retractionOfSubsystem.lean](isFinitary_retractionOfSubsystem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isProjection_retractionOfSubsystem.lean](isProjection_retractionOfSubsystem.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/retractionOfSubsystem_le_idMap.lean](retractionOfSubsystem_le_idMap.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isProjection_retractionOfSubsystem.lean](isProjection_retractionOfSubsystem.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isFinitaryProjection_retractionOfSubsystem.lean](isFinitaryProjection_retractionOfSubsystem.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83.lean](../Definition83.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84/Basic.lean](../Example84/Basic.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84.lean](../Example84.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84b/Basic.lean](../Example84b/Basic.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84b.lean](../Example84b.lean)

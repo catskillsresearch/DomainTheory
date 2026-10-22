@@ -7,7 +7,6 @@ public import DomainTheory.ContinuousLattice.MilnerCorrection
 public import DomainTheory.ContinuousLattice.ScottMaps
 public import DomainTheory.ContinuousLattice.Injective
 public import Mathlib.Order.Preorder.Finite
-import all Mathlib.Order.Preorder.Finite
 
 @[expose] public section
 

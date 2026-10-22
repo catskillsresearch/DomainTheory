@@ -5,7 +5,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Topology.Inseparable
-import all Mathlib.Topology.Inseparable
 
 @[expose] public section
 

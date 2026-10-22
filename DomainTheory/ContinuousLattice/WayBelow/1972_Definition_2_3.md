@@ -15,5 +15,6 @@ As an alternate definition we find [Proposition 2.4](1972_Proposition_2_4.md).
 **Lean 4**
 
 - [ContinuousLattice/WayBelow/IsContinuousLattice.lean](IsContinuousLattice.lean)
+- [ContinuousLattice/WayBelow/Basic.lean](Basic.lean)
 - [ContinuousLattice/WayBelow/IsContinuousLatticeu2esSup_wayBelow.lean](IsContinuousLatticeu2esSup_wayBelow.lean)
 - [ContinuousLattice/WayBelow/directedOn_wayBelow.lean](directedOn_wayBelow.lean)

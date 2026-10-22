@@ -11,6 +11,13 @@ $$
 **Lean 4**
 
 - [NeighbourhoodSystems/DomainEquations/Exercise618.lean](../Exercise618.lean)
-- [NeighbourhoodSystems/DomainEquations/Exercise618/descAlgHom.lean](descAlgHom.lean)
 - [NeighbourhoodSystems/DomainEquations/Exercise618/descMap.lean](descMap.lean)
+- [NeighbourhoodSystems/DomainEquations/descMap_toElementMap.lean](../descMap_toElementMap.lean)
+- [NeighbourhoodSystems/DomainEquations/descMap_eq.lean](../descMap_eq.lean)
+- [NeighbourhoodSystems/DomainEquations/descMap_fix.lean](../descMap_fix.lean)
+- [NeighbourhoodSystems/DomainEquations/descMap_comm.lean](../descMap_comm.lean)
+- [NeighbourhoodSystems/DomainEquations/iSupRho_eq_id.lean](../iSupRho_eq_id.lean)
+- [NeighbourhoodSystems/DomainEquations/comm_unique.lean](../comm_unique.lean)
 - [NeighbourhoodSystems/DomainEquations/Exercise618/descMap_strict.lean](descMap_strict.lean)
+- [NeighbourhoodSystems/DomainEquations/Exercise618/descAlgHom.lean](descAlgHom.lean)
+- [NeighbourhoodSystems/DomainEquations/iterIsInitial.lean](../iterIsInitial.lean)

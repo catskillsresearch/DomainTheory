@@ -6,7 +6,6 @@ ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode
-import all Mathlib.Computability.MyhillNerode
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.Basic
 
 @[expose] public section

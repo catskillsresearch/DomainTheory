@@ -4,7 +4,6 @@ ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
-import all Mathlib.Order.Hom.Basic
 public import DomainTheory.BridgeTheorems.InfoSysToNeighborhood
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion
 public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys

@@ -4,7 +4,6 @@ ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode
-import all Mathlib.Computability.MyhillNerode
 
 @[expose] public section
 

@@ -5,7 +5,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.shift
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.mem_tail
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.shift_mono

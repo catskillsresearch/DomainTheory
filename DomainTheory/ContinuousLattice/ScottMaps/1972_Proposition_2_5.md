@@ -70,8 +70,6 @@ so $f(x) \sqsubseteq f(y)$. Thus $f$ is monotonic and so $U$ satisfies condition
 
 **Lean 4**
 
-- [ContinuousLattice/ScottMaps.lean](../ScottMaps.lean)
-- [ContinuousLattice/ScottMaps/Basic.lean](Basic.lean)
 - [ContinuousLattice/ScottMaps/PreservesDirectedSup.lean](PreservesDirectedSup.lean)
 - [ContinuousLattice/ScottMaps/preservesDirectedSup_monotone.lean](preservesDirectedSup_monotone.lean)
 - [ContinuousLattice/ScottMaps/scottOpen_preimage.lean](scottOpen_preimage.lean)

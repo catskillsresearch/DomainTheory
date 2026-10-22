@@ -81,4 +81,6 @@ We have discussed the category of retracts and continuous maps, but if they are 
 
 - [DataTypesAsLattices/Retracts/theorem_4_6.lean](theorem_4_6.lean)
 - [DataTypesAsLattices/Retracts/theorem_4_6_inverseLimit.lean](theorem_4_6_inverseLimit.lean)
+- [DataTypesAsLattices/Retracts/Basic.lean](Basic.lean)
 - [DataTypesAsLattices/Retracts/theorem_4_6_limit.lean](theorem_4_6_limit.lean)
+- [DataTypesAsLattices/Retracts.lean](../Retracts.lean)

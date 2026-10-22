@@ -5,13 +5,9 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
 public import Mathlib.Data.Rat.Cast.Order
-import all Mathlib.Data.Rat.Cast.Order
 public import Mathlib.Algebra.Order.Archimedean.Basic
-import all Mathlib.Algebra.Order.Archimedean.Basic
 public import Mathlib.Order.Bounds.OrderIso
-import all Mathlib.Order.Bounds.OrderIso
 public import Mathlib.Order.ConditionallyCompleteLattice.Basic
-import all Mathlib.Order.ConditionallyCompleteLattice.Basic
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise811.R_mem_iff
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise811.R_master
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise811.a_rel

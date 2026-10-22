@@ -4,7 +4,6 @@ ai-/
 module
 
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.PeanoModel
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Graph

@@ -13,3 +13,6 @@ There is no single subset of $\mathbf{P}\omega$ typical for $\mathfrak{B}$, whic
 **Lean 4**
 
 - [DataTypesAsLattices/Classification/theorem_6_5.lean](theorem_6_5.lean)
+- [DataTypesAsLattices/Classification/typicalFcapGdelta_isFcapGdelta.lean](typicalFcapGdelta_isFcapGdelta.lean)
+- [DataTypesAsLattices/Classification/typicalFcapGdelta_universal.lean](typicalFcapGdelta_universal.lean)
+- [DataTypesAsLattices/Classification.lean](../Classification.lean)

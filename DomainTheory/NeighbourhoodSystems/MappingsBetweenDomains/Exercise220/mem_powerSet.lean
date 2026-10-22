@@ -7,7 +7,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import Mathlib.Data.Set.Finite.Basic
-import all Mathlib.Data.Set.Finite.Basic
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise220.powerSet
 
 @[expose] public section

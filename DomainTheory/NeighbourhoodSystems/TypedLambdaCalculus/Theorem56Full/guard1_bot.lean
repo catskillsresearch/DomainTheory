@@ -11,7 +11,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import Mathlib.Computability.PartrecBasis
-import all Mathlib.Computability.PartrecBasis
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.Basic
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.T_bot_eq
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.guard1_apply

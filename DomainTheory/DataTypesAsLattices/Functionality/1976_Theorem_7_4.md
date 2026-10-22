@@ -92,9 +92,14 @@ These results bring up many questions which we leave unanswered here. For exampl
 
 **Lean 4**
 
-- [DataTypesAsLattices/Functionality/theorem_7_4.lean](theorem_7_4.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_4_finite.lean](theorem_7_4_finite.lean)
 - [DataTypesAsLattices/Functionality/theorem_7_4_i.lean](theorem_7_4_i.lean)
 - [DataTypesAsLattices/Functionality/theorem_7_4_plotkin.lean](theorem_7_4_plotkin.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4_finite.lean](theorem_7_4_finite.lean)
 - [DataTypesAsLattices/Functionality/theorem_7_4_sigma_index.lean](theorem_7_4_sigma_index.lean)
 - [DataTypesAsLattices/Functionality/theorem_7_4_unique.lean](theorem_7_4_unique.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4.lean](theorem_7_4.lean)
+- [DataTypesAsLattices/Functionality.lean](../Functionality.lean)
+- [DataTypesAsLattices/Enumeration/Basic.lean](../Enumeration/Basic.lean)
+- [DataTypesAsLattices/Enumeration.lean](../Enumeration.lean)
+- [DataTypesAsLattices.lean](../../DataTypesAsLattices.lean)
+- [DataTypesAsLattices/Basic.lean](../Basic.lean)

@@ -5,7 +5,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513
 public import Mathlib.Data.List.Basic
-import all Mathlib.Data.List.Basic
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.tag
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.entries
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Fun

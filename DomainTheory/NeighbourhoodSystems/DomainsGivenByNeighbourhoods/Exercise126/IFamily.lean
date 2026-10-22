@@ -5,9 +5,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.RingTheory.Ideal.Span
-import all Mathlib.RingTheory.Ideal.Span
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 
 @[expose] public section
 

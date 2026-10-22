@@ -30,8 +30,8 @@ Note that for a 2-termed product we simplify $10\Delta_1$ to $1\Delta_1$.
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainConstructs/Exercise314.lean](../Exercise314.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise314/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise314/diag.lean](diag.lean)
+- [NeighbourhoodSystems/DomainConstructs/Exercise314/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise314/proju2080_comp_diag.lean](proju2080_comp_diag.lean)
+- [NeighbourhoodSystems/DomainConstructs/Exercise314.lean](../Exercise314.lean)
 - [NeighbourhoodSystems/DomainConstructs/Exercise314/proju2081_comp_diag.lean](proju2081_comp_diag.lean)

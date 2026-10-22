@@ -53,10 +53,3 @@ y = \bigsqcup  \bigcap U : y \in U ,
 $$
 
 where $U$ ranges now over the open subsets of the product topology on $D^*$. By the remark following 2.4 we conclude that $D^*$ is continuous with the lattice-induced topology being the product topology. $\square$
-
-**Lean 4**
-
-- [ContinuousLattice/Constructions/Basic.lean](Basic.lean)
-- [ContinuousLattice/Constructions/proposition_2_9.lean](proposition_2_9.lean)
-- [ContinuousLattice/Constructions/proposition_2_9_a.lean](proposition_2_9_a.lean)
-- [ContinuousLattice/Constructions/proposition_2_9_b.lean](proposition_2_9_b.lean)

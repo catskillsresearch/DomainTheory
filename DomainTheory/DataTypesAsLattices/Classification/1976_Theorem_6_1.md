@@ -13,3 +13,6 @@ We can say that $\{x \mid 0 \in x\}$ is the *typical* open set, and that every o
 **Lean 4**
 
 - [DataTypesAsLattices/Classification/theorem_6_1.lean](theorem_6_1.lean)
+- [DataTypesAsLattices/Classification/typicalG_isScottOpen.lean](typicalG_isScottOpen.lean)
+- [DataTypesAsLattices/Classification/typicalG_mem_ScottG.lean](typicalG_mem_ScottG.lean)
+- [DataTypesAsLattices/Classification/typicalG_universal.lean](typicalG_universal.lean)

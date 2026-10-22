@@ -8,5 +8,5 @@ $$\{n_0, \dots, n_{k-1}\} \vdash m \quad\text{iff either } m = 0 \text{ or } m \
 
 **Lean 4**
 
-- [InformationSystems/InformationSystems/Factoid24.lean](Factoid24.lean)
 - [InformationSystems/InformationSystems/lowerBoundEnt.lean](lowerBoundEnt.lean)
+- [InformationSystems/InformationSystems/Factoid24.lean](Factoid24.lean)

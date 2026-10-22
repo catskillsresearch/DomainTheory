@@ -12,7 +12,7 @@ $$a \sqsubseteq b \quad \text{iff} \quad D_a \triangleleft D_b.$$
 
 **Lean 4**
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816.lean](../Exercise816.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/exercise_8_16.lean](exercise_8_16.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/isFinitaryProjection_le_iff_fixedNbhd_subsystem.lean](isFinitaryProjection_le_iff_fixedNbhd_subsystem.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/exercise_8_16.lean](exercise_8_16.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816.lean](../Exercise816.lean)

@@ -20,3 +20,4 @@ We note in conclusion that most constructions by fixed points give algebraic lat
 - [DataTypesAsLattices/Closures/theorem_5_6.lean](theorem_5_6.lean)
 - [DataTypesAsLattices/Closures/theorem_5_6_combinator.lean](theorem_5_6_combinator.lean)
 - [DataTypesAsLattices/Closures/theorem_5_6_iterates.lean](theorem_5_6_iterates.lean)
+- [DataTypesAsLattices/Closures.lean](../Closures.lean)

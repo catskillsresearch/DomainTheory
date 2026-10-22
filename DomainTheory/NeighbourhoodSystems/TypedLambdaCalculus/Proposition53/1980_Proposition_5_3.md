@@ -45,13 +45,13 @@ So also $x_* = x_0$. $\square$ We have the right formula for $y_0$, and a simila
 
 **Lean 4**
 
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53.lean](../Proposition53.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/fixElement_paired_eq.lean](fixElement_paired_eq.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/outerOp.lean](outerOp.lean)
 - [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/outerOp_apply.lean](outerOp_apply.lean)
 - [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX.lean](secFixX.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/outerOp.lean](outerOp.lean)
 - [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX_apply.lean](secFixX_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX_isFixed.lean](secFixX_isFixed.lean)
 - [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/sectionX.lean](sectionX.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/sectionX_apply.lean](sectionX_apply.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX_isFixed.lean](secFixX_isFixed.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/fixElement_paired_eq.lean](fixElement_paired_eq.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53.lean](../Proposition53.lean)

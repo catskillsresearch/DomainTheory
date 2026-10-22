@@ -6,7 +6,6 @@ ai-/
 module
 
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Basic
 
 @[expose] public section

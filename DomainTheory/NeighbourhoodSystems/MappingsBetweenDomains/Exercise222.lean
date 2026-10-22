@@ -7,10 +7,10 @@ The numbered name example_222 is that statement.
 ai-/
 module
 
-import all Mathlib.Data.Set.Finite.Basic
-import all Mathlib.Data.Set.Lattice.Bounded
-import all Mathlib.Data.Set.Lattice.Disjoint
-import all Mathlib.Order.Directed
+public import Mathlib.Data.Set.Finite.Basic
+public import Mathlib.Data.Set.Lattice.Bounded
+public import Mathlib.Data.Set.Lattice.Disjoint
+public import Mathlib.Order.Directed
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofC_toC
 
 @[expose] public section

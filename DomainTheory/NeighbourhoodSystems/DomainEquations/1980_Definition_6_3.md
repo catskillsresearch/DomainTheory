@@ -41,5 +41,11 @@ One good reason for a little of the category-theoretic language is that the next
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainEquations/Definition63.lean](Definition63.lean)
 - [NeighbourhoodSystems/DomainEquations/Definition63Inst2.lean](Definition63Inst2.lean)
+- [NeighbourhoodSystems/DomainEquations/comp.lean](comp.lean)
+- [NeighbourhoodSystems/DomainEquations/id.lean](id.lean)
+- [NeighbourhoodSystems/DomainEquations/Definition63.lean](Definition63.lean)
+- [NeighbourhoodSystems/DomainEquations/tStr.lean](tStr.lean)
+- [NeighbourhoodSystems/DomainEquations/strHom.lean](strHom.lean)
+- [NeighbourhoodSystems/DomainEquations/str_comp_desc.lean](str_comp_desc.lean)
+- [NeighbourhoodSystems/DomainEquations/lambek.lean](lambek.lean)

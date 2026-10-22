@@ -8,8 +8,8 @@ workspace-root path (`/build/DomainTheory/...`) so Cursor/VS Code preview
 way (leading `/` = workspace folder). Labels that contain `(` use
 reference-style links so the preview parser accepts them. Each Lean link is
 bold link text only, then an AI blockquote and a fenced copy of that file. The
-copy omits `module`, imports, `public section`, and `open` commands, omits
-`/-!` Scott extracts, and omits comments/docstrings that contain `**Scott`.
+copy keeps `module`, imports, and `public section`; it omits `open` commands,
+`/-!` Scott extracts, and comments/docstrings that contain `**Scott`.
 The build drops the `**Lean 4**` heading and list bullets before each inlined
 file (only the bold library path remains).
 A leading `/-ai` comment is shown above the code as a blockquote that begins
@@ -31,8 +31,6 @@ LEGACY = ROOT / "arxiv.md"
 
 LINK = re.compile(r"\[([^\]]*)\]\(([^)]+)\)")
 FENCE = re.compile(r"^\s*(`{3,})")
-IMPORT_LINE = re.compile(r"^(?:public\s+|private\s+|meta\s+)?import\b")
-PUBLIC_SECTION = re.compile(r"^(?:@\[[^\]]*\]\s*)?public\s+section\s*$")
 OPEN_LINE = re.compile(r"^open\b")
 LEAN_LIST_LINE = re.compile(r"^\s*-\s+\[([^\]]*)\]\(([^)]+)\)\s*$")
 SCOTT_IN_COMMENT = re.compile(r"\*\*Scott")
@@ -157,12 +155,8 @@ def elide_declarations(text: str) -> str:
     blank = False
     for line in text.splitlines():
         stripped = line.strip()
-        if (
-            stripped == "module"
-            or IMPORT_LINE.match(stripped)
-            or PUBLIC_SECTION.match(stripped)
-            or OPEN_LINE.match(stripped)
-            or (stripped.startswith("--") and SCOTT_IN_COMMENT.search(stripped))
+        if OPEN_LINE.match(stripped) or (
+            stripped.startswith("--") and SCOTT_IN_COMMENT.search(stripped)
         ):
             continue
         if not stripped:

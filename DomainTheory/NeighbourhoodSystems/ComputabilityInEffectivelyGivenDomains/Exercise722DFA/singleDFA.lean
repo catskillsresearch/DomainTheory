@@ -5,9 +5,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
 public import Mathlib.Computability.DFA
-import all Mathlib.Computability.DFA
 public import Mathlib.Data.Fintype.Option
-import all Mathlib.Data.Fintype.Option
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.sigmaDFA_accepts
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.SingleState
 

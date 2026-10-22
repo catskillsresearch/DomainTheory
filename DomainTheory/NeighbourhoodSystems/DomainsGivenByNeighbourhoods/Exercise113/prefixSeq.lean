@@ -6,7 +6,6 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 
 @[expose] public section
 

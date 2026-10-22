@@ -25,3 +25,6 @@ Note that $n \leq (n, m)$ and $m \leq (n, m)$ with equality possible only in the
 **Lean 4**
 
 - [DataTypesAsLattices/Continuous/theorem_1_1.lean](theorem_1_1.lean)
+- [DataTypesAsLattices/Continuous.lean](../Continuous.lean)
+- [DataTypesAsLattices/Graph/Basic/notation3.lean](../Graph/Basic/notation3.lean)
+- [DataTypesAsLattices/Graph/Basic.lean](../Graph/Basic.lean)

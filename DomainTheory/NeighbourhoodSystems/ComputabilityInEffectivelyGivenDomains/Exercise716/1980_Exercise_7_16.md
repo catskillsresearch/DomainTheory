@@ -4,12 +4,12 @@
 
 **Lean 4**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716.lean](../Exercise716.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_isComputable.lean](curryComb_isComputable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_rel.lean](curryComb_rel.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_rel_recDecidable.lean](curryComb_rel_recDecidable.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryIso_apply.lean](curryIso_apply.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryStepCode.lean](curryStepCode.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/primrec_curryStepCode.lean](primrec_curryStepCode.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_rel_recDecidable.lean](curryComb_rel_recDecidable.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_isComputable.lean](curryComb_isComputable.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/toApproxMap_principal_mem.lean](toApproxMap_principal_mem.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_rel.lean](curryComb_rel.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716.lean](../Exercise716.lean)

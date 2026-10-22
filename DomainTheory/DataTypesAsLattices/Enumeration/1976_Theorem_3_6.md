@@ -20,8 +20,9 @@ $$(3.15) \quad \bar{u} = \lambda x.\, x_0 \supset \langle 1, u, x_1 \rangle,\, \
 
 **Lean 4**
 
-- [DataTypesAsLattices/Enumeration/theorem_3_6.lean](theorem_3_6.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_6_converse.lean](theorem_3_6_converse.lean)
 - [DataTypesAsLattices/Enumeration/theorem_3_6_degree.lean](theorem_3_6_degree.lean)
 - [DataTypesAsLattices/Enumeration/theorem_3_6_finite.lean](theorem_3_6_finite.lean)
+- [DataTypesAsLattices/Enumeration/generators_mem_singleGenerator_degree.lean](generators_mem_singleGenerator_degree.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_6_converse.lean](theorem_3_6_converse.lean)
 - [DataTypesAsLattices/Enumeration/theorem_3_6_generated.lean](theorem_3_6_generated.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_6.lean](theorem_3_6.lean)

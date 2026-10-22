@@ -7,7 +7,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.Token
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.master
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.zero
@@ -17,7 +16,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.master_inter
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.inter_master
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.zero_inter_one
-import all DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.one_inter_zero
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.one_inter_zero
 
 @[expose] public section
 

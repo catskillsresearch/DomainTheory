@@ -6,7 +6,6 @@ module
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 public import Mathlib.Data.Finset.Card
-import all Mathlib.Data.Finset.Card
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.RawLamToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.listToFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamAtomInsert

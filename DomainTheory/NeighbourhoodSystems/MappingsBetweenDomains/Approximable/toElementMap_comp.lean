@@ -7,7 +7,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic.Set
-import all Mathlib.Tactic.Set
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable.Basic
 
 @[expose] public section

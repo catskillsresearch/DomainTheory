@@ -9,7 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import Mathlib.Computability.PartrecBasis
-import all Mathlib.Computability.PartrecBasis
 
 @[expose] public section
 

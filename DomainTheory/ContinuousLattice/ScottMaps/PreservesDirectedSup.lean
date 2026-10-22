@@ -5,9 +5,7 @@ module
 
 public import DomainTheory.ContinuousLattice.Specialization
 public import Mathlib.Order.ScottContinuity
-import all Mathlib.Order.ScottContinuity
 public import Mathlib.Topology.Order.ScottTopology
-import all Mathlib.Topology.Order.ScottTopology
 
 @[expose] public section
 

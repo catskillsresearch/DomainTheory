@@ -89,3 +89,7 @@ This already shows that a large part of the definitions of recursion theory can 
 **Lean 4**
 
 - [DataTypesAsLattices/Lambda/theorem_2_5.lean](theorem_2_5.lean)
+- [DataTypesAsLattices/Lambda/dollarC_combinatory.lean](dollarC_combinatory.lean)
+- [DataTypesAsLattices/Lambda/eq_2_24_Ycomb.lean](eq_2_24_Ycomb.lean)
+- [DataTypesAsLattices/Lambda.lean](../Lambda.lean)
+- [DataTypesAsLattices/Computability/Basic.lean](../Computability/Basic.lean)

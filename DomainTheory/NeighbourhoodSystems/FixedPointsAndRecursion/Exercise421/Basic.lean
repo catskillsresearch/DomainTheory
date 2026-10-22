@@ -5,7 +5,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Tactic
-import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.leOp
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.leRel
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.succImage

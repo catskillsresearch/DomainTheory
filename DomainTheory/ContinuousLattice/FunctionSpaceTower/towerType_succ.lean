@@ -7,9 +7,7 @@ module
 
 public import DomainTheory.ContinuousLattice.InverseLimits
 public import Mathlib.Order.Hom.Basic
-import all Mathlib.Order.Hom.Basic
 public import Mathlib.Topology.Homeomorph.Defs
-import all Mathlib.Topology.Homeomorph.Defs
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.Basic
 
 @[expose] public section

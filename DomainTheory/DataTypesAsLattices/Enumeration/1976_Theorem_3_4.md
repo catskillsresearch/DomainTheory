@@ -38,6 +38,6 @@ The Myhill–Shepherdson theorem shows that extensional, syntactical mappings re
 
 **Lean 4**
 
-- [DataTypesAsLattices/Enumeration/theorem_3_4.lean](theorem_3_4.lean)
 - [DataTypesAsLattices/Enumeration/theorem_3_4_diagonal.lean](theorem_3_4_diagonal.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_4.lean](theorem_3_4.lean)
 - [DataTypesAsLattices/Enumeration/theorem_3_4_re_diagonal.lean](theorem_3_4_re_diagonal.lean)

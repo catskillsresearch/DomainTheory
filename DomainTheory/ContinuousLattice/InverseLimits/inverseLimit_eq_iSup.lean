@@ -7,7 +7,6 @@ module
 
 public import DomainTheory.ContinuousLattice.Theorem212
 public import Mathlib.Order.GaloisConnection.Basic
-import all Mathlib.Order.GaloisConnection.Basic
 public import DomainTheory.ContinuousLattice.InverseLimits.Basic
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf_family_directed
 

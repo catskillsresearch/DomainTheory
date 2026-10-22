@@ -4,7 +4,6 @@ ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode
-import all Mathlib.Computability.MyhillNerode
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.pos
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.select
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.child

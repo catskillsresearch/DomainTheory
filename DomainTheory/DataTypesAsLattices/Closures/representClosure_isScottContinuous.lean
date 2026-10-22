@@ -6,7 +6,6 @@ ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity
-import all Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts
 public import DomainTheory.DataTypesAsLattices.Closures.representClosure
 public import DomainTheory.DataTypesAsLattices.Closures.representClosure_mono
