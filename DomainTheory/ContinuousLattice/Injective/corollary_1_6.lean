@@ -23,11 +23,11 @@ universe u
 
 /-- **Scott 1972, Corollary 1.6.** Injective spaces are exactly retracts of powers of 𝕆. -/
 theorem corollary_1_6 (D : Type u) [TopologicalSpace D] [T0Space D] :
-    IsInjectiveSpace.{u,u} D ↔ ∃ (ι : Type u), Nonempty (IsRetractSubspace D (ι → Prop)) := by
+    InjectiveSpace.{u,u} D ↔ ∃ (ι : Type u), Nonempty (IsRetractSubspace D (ι → Prop)) := by
   constructor
   · intro hD
-    obtain ⟨r, hr⟩ := hD (productOfMemOpens D) (proposition_1_5 D).2 (ContinuousMap.id D)
+    obtain ⟨r, hr⟩ := hD.extension (productOfMemOpens D) (proposition_1_5 D).2 (ContinuousMap.id D)
     refine ⟨Opens D, ⟨⟨productOfMemOpens D, (proposition_1_5 D).2, r, hr⟩⟩⟩
   · rintro ⟨ι, ⟨R⟩⟩
-    exact IsInjectiveSpace.of_retract (isInjectiveSpace_sierpinski_power ι) R.section' R.retraction
+    exact InjectiveSpace.of_retract (isInjectiveSpace_sierpinski_power ι) R.section' R.retraction
       R.retraction_section

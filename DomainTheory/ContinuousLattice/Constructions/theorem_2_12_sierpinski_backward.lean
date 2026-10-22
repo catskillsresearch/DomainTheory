@@ -24,7 +24,7 @@ variable {D : Type*} [CompleteLattice D]
 /-- **Scott 1972, Theorem 2.12 (backward, Sierpiński base case).** `Prop` is a continuous
 lattice (`isContinuousLattice_prop`), so its injectivity (Proposition 1.2) is an instance of the
 equivalence. -/
-theorem theorem_2_12_sierpinski_backward (_h : IsContinuousLattice Prop) : IsInjectiveSpace Prop :=
+theorem theorem_2_12_sierpinski_backward (_h : IsContinuousLattice Prop) : InjectiveSpace Prop :=
   proposition_1_2
 
 end DomainTheory.ContinuousLattice

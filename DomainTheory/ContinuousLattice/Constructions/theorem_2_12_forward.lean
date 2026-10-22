@@ -26,7 +26,7 @@ variable {D : Type*} [CompleteLattice D]
 space under its Scott topology. This is the substantial half of the equivalence "injective
 spaces = continuous lattices", and is exactly Proposition 2.11. -/
 theorem theorem_2_12_forward {E : Type*} [CompleteLattice E] (hE : IsContinuousLattice E) :
-    @IsInjectiveSpace E scottTopologicalSpace :=
+    @InjectiveSpace E scottTopologicalSpace :=
   proposition_2_11 hE
 
 end DomainTheory.ContinuousLattice

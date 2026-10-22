@@ -24,14 +24,14 @@ universe u
 /-- **Scott 1972, Corollary 1.7.** A space is injective iff it is a retract of every
 super-space of which it is a subspace. -/
 theorem corollary_1_7 (D : Type u) [TopologicalSpace D] [T0Space D] :
-    IsInjectiveSpace.{u,u} D ↔
+    InjectiveSpace.{u,u} D ↔
       ∀ {Y : Type u} [TopologicalSpace Y] (e : D → Y), IsEmbedding e →
         ∃ r : C(Y, D), ∀ d, r (e d) = d := by
   constructor
   · intro hD Y _ e he
-    obtain ⟨r, hr⟩ := hD e he (ContinuousMap.id D)
+    obtain ⟨r, hr⟩ := hD.extension e he (ContinuousMap.id D)
     exact ⟨r, hr⟩
   · intro hD
     obtain ⟨r, hr⟩ := hD (productOfMemOpens D) (proposition_1_5 D).2
-    exact IsInjectiveSpace.of_retract (isInjectiveSpace_sierpinski_power (Opens D))
+    exact InjectiveSpace.of_retract (isInjectiveSpace_sierpinski_power (Opens D))
       (productOfMemOpens D) r hr

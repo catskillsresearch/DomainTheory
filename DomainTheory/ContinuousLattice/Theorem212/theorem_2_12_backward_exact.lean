@@ -31,7 +31,7 @@ variable {A B : Type u} [latticeA : CompleteLattice A] [latticeB : CompleteLatti
 already specified complete lattice has that lattice order as its specialization order, then the
 specified lattice is continuous and the given topology is exactly its Scott topology. -/
 theorem theorem_2_12_backward_exact [τA : TopologicalSpace A] [T0Space A]
-    (hA : IsInjectiveSpace.{u, u} A)
+    (hA : InjectiveSpace.{u, u} A)
     (hspec : ∀ x y : A, SpecializationLe x y ↔ @LE.le A latticeA.toLE x y) :
     IsContinuousLattice A ∧
       (@scottTopologicalSpace A latticeA) = τA := by

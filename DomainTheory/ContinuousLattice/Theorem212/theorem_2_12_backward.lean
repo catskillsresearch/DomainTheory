@@ -31,7 +31,7 @@ The injective space `D` is a retract of a power `𝕆^I = (I → Prop)` of the S
 (`idemFix_isContinuousLattice`, via Proposition 2.10), and `d ↦ s d` is a homeomorphism `D ≃ₜ
 IdemFix e` with inverse the retraction. -/
 theorem theorem_2_12_backward {D : Type u} [TopologicalSpace D] [T0Space D]
-    (hD : IsInjectiveSpace.{u, u} D) :
+    (hD : InjectiveSpace.{u, u} D) :
     ∃ (E : Type u) (inst : CompleteLattice E),
       @IsContinuousLattice E inst ∧
         Nonempty (@Homeomorph D E _ (@scottTopologicalSpace E inst)) := by

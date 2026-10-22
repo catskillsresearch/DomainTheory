@@ -31,14 +31,15 @@ variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 assemble to an extension into the inverse limit. Lemma 3.9 is exactly what supplies compatibility
 of adjacent coordinates. -/
 theorem inverseLimit_isInjectiveSpace (hD : ∀ n, IsContinuousLattice (D n)) :
-    @IsInjectiveSpace.{u, u} (InverseLimit D P) (inverseLimitTopology D P) := by
-  intro X Y _ _ e he f
+    @InjectiveSpace.{u, u} (InverseLimit D P) (inverseLimitTopology D P) := by
   let stageOrder : ∀ n, Preorder (D n) := fun _ => inferInstance
   let limitOrder : Preorder (InverseLimit D P) := inferInstance
   let : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
   let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
   let : ∀ n, Preorder (D n) := stageOrder
   let : Preorder (InverseLimit D P) := limitOrder
+  constructor
+  intro X Y _ _ e he f
   let fcoord (n : ℕ) (x : X) : D n := (f x).1 n
   have hfcoord (n : ℕ) : @Continuous X (D n) _ scottTopologicalSpace (fcoord n) :=
     (inverseLimit_coordinate_continuous D P n).comp f.continuous

@@ -24,14 +24,14 @@ universe u
 continuous lattice under its Scott topology. The forward direction is Proposition 2.11; the
 backward direction is `theorem_2_12_backward`. -/
 theorem theorem_2_12 {D : Type u} [TopologicalSpace D] [T0Space D] :
-    IsInjectiveSpace.{u, u} D ↔
+    InjectiveSpace.{u, u} D ↔
       ∃ (E : Type u) (inst : CompleteLattice E),
         @IsContinuousLattice E inst ∧
           Nonempty (@Homeomorph D E _ (@scottTopologicalSpace E inst)) := by
   refine ⟨theorem_2_12_backward, ?_⟩
   rintro ⟨E, inst, hE, ⟨h⟩⟩
   let τE : TopologicalSpace E := @scottTopologicalSpace E inst
-  exact @IsInjectiveSpace.of_retract E D τE _ (theorem_2_12_forward hE)
+  exact @InjectiveSpace.of_retract E D τE _ (theorem_2_12_forward hE)
     ⟨⇑h, h.continuous⟩ ⟨⇑h.symm, h.symm.continuous⟩ (fun d => h.left_inv d)
 
 end DomainTheory.ContinuousLattice

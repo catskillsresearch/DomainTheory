@@ -8,7 +8,7 @@ module
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski
 public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Sets.Opens
-public import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpace
+public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
 
 @[expose] public section
 
@@ -20,7 +20,8 @@ open Topology TopologicalSpace
 abbrev Sierpinski := Prop
 
 /-- **Scott 1972, Proposition 1.2.** The Sierpiński space is injective. -/
-theorem isInjectiveSpace_sierpinski : IsInjectiveSpace.{u} Sierpinski := by
+theorem isInjectiveSpace_sierpinski : InjectiveSpace.{u} Sierpinski := by
+  constructor
   intro X Y _ _ e he f
   have hfopen : IsOpen {x | f x} := continuous_Prop.1 f.continuous
   rw [he.isInducing.isOpen_iff] at hfopen

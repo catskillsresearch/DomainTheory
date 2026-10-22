@@ -12,6 +12,6 @@ $$
 
 Some people will object to this terminology because we use the subspace relationship rather than a monomorphism in the category of $T_0$-spaces and continuous maps. However, only the trivial 1-point space is injective in the sense of monomorphisms in that category, and so the notion is uninteresting.  As we shall see these spaces have very strong retraction properties.
 
-**Injective space.** `IsInjectiveSpace` is this definition: every continuous map into the space extends along every topological embedding. [Proposition 2.11](../Constructions/1972_Proposition_2_11.md) proves a continuous lattice is injective, and [Theorem 2.12](../Theorem212/1972_Theorem_2_12.md) proves the two notions coincide.
+**Injective space.** `InjectiveSpace` is this definition: every continuous map into the space extends along every topological embedding. [Proposition 2.11](../Constructions/1972_Proposition_2_11.md) proves a continuous lattice is injective, and [Theorem 2.12](../Theorem212/1972_Theorem_2_12.md) proves the two notions coincide.
 
-- [ContinuousLattice/Injective/IsInjectiveSpace.lean](IsInjectiveSpace.lean)
+- [ContinuousLattice/Injective/InjectiveSpace.lean](InjectiveSpace.lean)

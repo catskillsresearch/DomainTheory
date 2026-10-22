@@ -19,11 +19,12 @@ universe v w
 
 
 /-- **Scott 1972, Proposition 1.3.** Products of injective spaces are injective. -/
-theorem IsInjectiveSpace.pi {ι : Type w} (D : ι → Type v) [∀ i, TopologicalSpace (D i)]
-    (h : ∀ i, IsInjectiveSpace.{u} (D i)) : IsInjectiveSpace.{u} (∀ i, D i) := by
+theorem InjectiveSpace.pi {ι : Type w} (D : ι → Type v) [∀ i, TopologicalSpace (D i)]
+    (h : ∀ i, InjectiveSpace.{u} (D i)) :     InjectiveSpace.{u} (∀ i, D i) := by
+  constructor
   intro X Y _ _ e he f
   choose g hg using fun i =>
-    h i e he ⟨fun x => f x i, (continuous_apply i).comp f.continuous⟩
+    (h i).extension e he ⟨fun x => f x i, (continuous_apply i).comp f.continuous⟩
   refine ⟨⟨fun y i => g i y, continuous_pi fun i => (g i).continuous⟩, fun x => ?_⟩
   funext i
   exact hg i x

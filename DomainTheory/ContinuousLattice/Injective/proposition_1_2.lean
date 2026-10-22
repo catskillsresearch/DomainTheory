@@ -10,5 +10,5 @@ public import DomainTheory.ContinuousLattice.Injective.isInjectiveSpace_sierpins
 @[expose] public section
 
 
-theorem proposition_1_2 : IsInjectiveSpace.{u} Sierpinski :=
+theorem proposition_1_2 : InjectiveSpace.{u} Sierpinski :=
   isInjectiveSpace_sierpinski
