@@ -52,53 +52,29 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-
 namespace Exercise618
 
 /-! ## `∅`-freeness is preserved by `prod` and `iterSys` -/
-
 
 /-! ## The "cons" description of the Exercise 3.16 isomorphism -/
 
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-
 /-! ## Bottom-element computations -/
-
 
 /-! ## The structure isomorphism `i, j` as approximable maps -/
 
-
 /-! ## Monotonicity of the product action -/
-
 
 /-! ## The homomorphism operator and the descent chain -/
 
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
-
-
-end Target
-
 /-! ## Generic chain helpers -/
-
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
-
 
 /-! ## The fixed-point equation `h = k ∘ T(h) ∘ j` -/
 
-
 /-! ## Strictness of the descent map -/
 
-
 /-! ## The homomorphism square `h ∘ i = k ∘ T(h)` -/
-
-
-end Target
 
 /-! ## The truncation chain `ρₙ` and `⋃ₙ ρₙ = I`
 
@@ -106,22 +82,13 @@ The descent chain for the structure map `i` itself, `ρₙ = (descSeq i)ₙ : �
 sequence to its first `n` coordinates. Its supremum is the identity (`iSupRho_eq_id`), the key fact
 behind uniqueness: every strict homomorphism is determined on the finite truncations. -/
 
-
 /-! ## Uniqueness of strict homomorphisms -/
-
-section Uniq
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
-
-
-end Uniq
 
 /-! ## The endofunctor `T(X) = 𝒟 × X` and `𝒟^∞` as its initial algebra
 
 We package the analysis into the bespoke category `StrictDomainObj` of `∅`-free domains and strict
 maps (Exercise 6.17), exactly the setting in which `IsInitial` expresses Scott's universal property.
 The fixed domain `𝒟` is an arbitrary `StrictDomainObj`. -/
-
 
 end Exercise618
 

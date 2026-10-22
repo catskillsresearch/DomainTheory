@@ -176,90 +176,40 @@ variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-! ## Subgoal 1 — `Fin(js)`, the finitely generated subsystem -/
 
-section FinGen
-
-variable (P : ComputablePresentation D)
-
-
 /-! ### `Fin(js)` is a genuine subsystem of `D`. -/
-
-section Combine
-
-variable (js sub1 sub2 : List ℕ)
-
-
-variable {js sub1 sub2}
-
-
-end Combine
-
 
 /-! ### The workhorse lemma: `Fin(js) ⊆ D'.mem ↔ ∀ i ∈ js, D'.mem (P.X i)`. -/
 
-
-end FinGen
-
 /-! ## Subgoal 2 — the reconstructed system `SubD` -/
-
-section SubD
-
-variable (P : ComputablePresentation D)
-
-
-end SubD
 
 /-! ## Subgoal 3 — the order isomorphism `SubD.Element ≃o {D' ∣ D' ◁ D}` -/
 
-section OrderIso
-
-variable (P : ComputablePresentation D)
-
-
 /-! ### Round trip 1: `toSubsystem ∘ ofSubsystem = id` -/
-
 
 /-! ### Round trip 2: `ofSubsystem ∘ toSubsystem = id` -/
 
-
 /-! ### The order isomorphism -/
-
-
-end OrderIso
 
 /-! ## Subgoal 4 — `ComputablePresentation (SubD P)` -/
 
-section Computability
-
-variable (P : ComputablePresentation D)
-
 /-! ### 4a — the enumeration `X n := nbhd(decodeList n)` -/
-
 
 /-! ### 4b — `idxCharAt`: primitive-recursive extraction of `idxchain (bitSelect L b)`
 
 Reuses `Theorem75.consStp`'s fold (the same one powering `consCharAt`) but projects the *index*
 component (`.unpair.2.unpair.1`) instead of the consistency flag (`.unpair.2.unpair.2`). -/
 
-
 /-! ### 4c — singleton membership: `P.X m ∈ Fin(decodeList c)` is recursively decidable -/
-
 
 /-! ### 4d — subset decidability: `Fin(decodeList c1) ⊆ Fin(decodeList c2)` -/
 
-
 /-! ### 4e — `interEq_computable`: `SubDX n ∩ SubDX m = SubDX k` is decidable -/
-
 
 /-! ### 4f — `cons_computable`/`inter`/`inter_primrec`/`inter_spec` are free -/
 
-
 /-! ### 4g — `masterIdx`/`masterIdx_spec` -/
 
-
 /-! ### Assembling `ComputablePresentation (SubD P)` -/
-
-
-end Computability
 
 /-! ## Subgoal 5 — main theorem: `D.IsEffectivelyGiven → {D' ∣ D' ◁ D}` is (isomorphic to) an
 effectively given domain -/
@@ -341,7 +291,6 @@ Generic `D`/`P` is not enough here: the branch needed to keep `Q'x.X` safe requi
 
 section UniversalSubsystem
 
-
 /-- **The safe-fold invariant.** Folding `Uinter` from a starting point already in `D'x.mem` along a
 list all of whose `UX`-images are also in `D'x.mem` stays in `D'x.mem`: `x`'s own *unconditional*
 filter closure (`Element.inter_mem`, via `nbhdGen_inter`) combines the two generators' witnessing
@@ -376,7 +325,6 @@ Given `r` (from `subsystemU_element_computable_iff`, i.e. `x` computable relativ
 reusing the *existing, generic* `Theorem75.idxchain`/`foldCode` machinery (`Recursive.lean`) rather
 than reproving fold-primitive-recursiveness from scratch. -/
 
-
 /-- **`mem_X` for `Q'X r`.** Every `Q'X r n` is a `D'x`-neighbourhood — no consistency hypothesis on
 `n` needed, since (a) every entry `r j` of the folded list is *unconditionally* `D'x.mem (UX (r j))`
 by `hspec` (taking the trivial witness `j`), and (b) `toSubsystemSys_mem_foldl_Uinter` safely folds
@@ -395,7 +343,6 @@ theorem Q'x_mem_X (r : ℕ → ℕ) (x : (SubD UComputablePresentation).Element)
   · intro i hi
     obtain ⟨j, -, rfl⟩ := List.mem_map.mp hi
     exact (hspec (r j)).mpr ⟨j, rfl⟩
-
 
 /-! ### The remaining gap: `inter`/`cons_computable` need a term-algebra encoding (resolved below)
 
@@ -444,26 +391,13 @@ Evaluating a code needs **course-of-values recursion** (a `node`'s two children 
 `Recursive.lean` (built there for `decodeFuelOkChar`/`autStateCardFuelChar`) rather than
 re-deriving course-of-values primitive recursiveness from scratch. -/
 
-section TermAlgebra
-
-
-end TermAlgebra
-
 /-! ### `TreeVal r`: evaluating a term-algebra code, via course-of-values fuel recursion -/
-
-section TreeVal
-
-variable (r : ℕ → ℕ)
-
-
-end TreeVal
 
 /-! ### `Q2X` — the term-algebra-indexed enumeration of `D'x`'s neighbourhoods -/
 
 section TreeVal2
 
 variable (r : ℕ → ℕ) (x : (SubD UComputablePresentation).Element)
-
 
 /-! ### `inter`/`interEq_computable`/`cons_computable` — resolved by the term algebra
 
@@ -472,7 +406,6 @@ neighbourhoods by term-algebra codes instead of lists: combining two already-bui
 *literally* `nodeCode n m`, no search for a witness code needed, and `Uinter_spec` — applicable
 precisely when the consistency hypothesis holds — guarantees the dichotomy's fallback branch of
 `UX_Uinter_dichotomy` provably never fires on that witness. -/
-
 
 /-- **Subgoal 6f, main corollary.** If `x` is a computable element of `SubD UComputablePresentation`,
 then `D'x := toSubsystemSys UComputablePresentation x` is effectively given — completing, for

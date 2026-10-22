@@ -57,7 +57,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 /-! ### Element builders. -/
 
-
 /-! ### Components through `push`. -/
 
 /-! ### The strictifier `guard1`/`strictGuardN` (Scott's `cond(zero(x),·,·)` device).
@@ -65,12 +64,9 @@ open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 `guard1 j φ z = cond(zero(zⱼ), φ z, φ z)`: equals `φ z` when `zⱼ` is total, `⊥` when `zⱼ = ⊥`.
 Composing the guards for `j = 0..n-1` makes a map *very strict* in its first `n` coordinates. -/
 
-
 /-! ### `tupleMap`: assemble `n` scalar maps into the first `n` coordinates of `𝒩`. -/
 
-
 /-! ### The λ-definability specification. -/
-
 
 /-! ### Primitive recursive base cases: `zero`, `succ`, `get`. -/
 
@@ -83,13 +79,6 @@ Composing the guards for `j = 0..n-1` makes a map *very strict* in its first `n`
 The recursion lives over `prod (funSpace 𝒩 N) 𝒩`: `k` is the unknown, `z` the argument stack whose
 head is the recursion variable and whose tail carries the parameters. The body is
 `M(k, z) = cond(zero(head z), f(tail z), g(⟨pred(head z), ⟨k(⟨pred(head z), tail z⟩), tail z⟩⟩))`. -/
-
-section Prec
-
-variable (φf φg : ApproximableMap 𝒩 N)
-
-
-end Prec
 
 /-! ### Closure of the primitive recursive functions. -/
 
@@ -105,15 +94,7 @@ bumped by one. `searchMap` is the least fixed point, and `findMap` kicks the sea
 The hard direction is **divergence**: when no `k` zeroes `f`, every finite approximant `Sⁿ(⊥)` returns
 `⊥` along the search trace, so the directed sup (Theorem 4.2(iii)) is `⊥` too. -/
 
-section Rfind
-
-variable (φf : ApproximableMap 𝒩 N)
-
-
 /-! #### Divergence via the directed sup of approximants. -/
-
-
-end Rfind
 
 /-! ### Closure of the partial recursive functions — the full meta-theorem. -/
 

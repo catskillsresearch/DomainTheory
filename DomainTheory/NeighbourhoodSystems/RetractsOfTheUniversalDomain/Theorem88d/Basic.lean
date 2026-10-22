@@ -231,7 +231,6 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-! ## Union of two `U`-codes via `appendCode` (list concatenation, up to order) -/
 
-
 /-! ## The code-native atom recursion
 
 Fix `P : ComputablePresentation D` and work relative to `P0 P` (Part 6b's re-pointed presentation,
@@ -247,17 +246,9 @@ of appending — harmless, since `DAtom`/`IPos` only ever care about list *membe
 is the `U`-code of the matching `U`-side atom (meaningful only when the `D`-side atom is
 non-empty). -/
 
-section AtomCode
-
-variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
-
-
-end AtomCode
-
 /-! ## Instantiating at `datomDec := DAtom_recDecidable (P0 P)`'s extracted decider -/
 
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem datomDec_spec (posC negC : ℕ) :
     datomDec P (Nat.pair posC negC) = 1 ↔ DAtom (P0 P) (decodeList posC) (decodeList negC) = ∅ := by
@@ -269,7 +260,6 @@ theorem datomDec_spec (posC negC : ℕ) :
   exact h.symm
 
 theorem datomDec_le_one (n : ℕ) : datomDec P n ≤ 1 := by unfold datomDec; exact isOne_le_one _
-
 
 /-! ## Per-step correctness: the `D`-side atom is tracked exactly -/
 
@@ -289,7 +279,6 @@ theorem DAtom_cons_neg (Q : ComputablePresentation D) (j : ℕ) (pos neg : List 
     exact ⟨hneg j (Or.inl rfl), hpos, fun i hi => hneg i (Or.inr hi)⟩
   · rintro ⟨hj, hpos, hneg⟩
     exact ⟨hpos, fun i hi => hi.elim (fun h => h ▸ hj) (hneg i)⟩
-
 
 /-- **Unfolding `atomUCodeState` one step.** -/
 theorem atomUCodeState_succ (k n : ℕ) :
@@ -377,7 +366,6 @@ verbatim; instead:
   same `UX 0`, so disjointness genuinely fails between two junk atoms (or junk vs. non-junk) and must
   be excluded; `(vii)(2)`'s `YseqCode` filters junk `k`'s out of its union, so this restricted
   disjointness is exactly what is needed downstream. -/
-
 
 theorem atomUEmpty_eq_one_iff (n k : ℕ) :
     atomUEmpty P n k = 1 ↔ DAtom (P0 P) (decodeList (atomUPos P n k)) (decodeList (atomUNeg P n k)) = ∅ :=
@@ -641,7 +629,6 @@ Purely a `Prop`-level existence tool (never claimed `Nat.Primrec`): given *any* 
 the *abstract* nonemptiness fact "every index's own atom is nonempty" into a concrete witness
 bit-source for `yFold`'s search range. -/
 
-
 private theorem encodeBits_lt (δ : ℕ → Bool) : ∀ n, encodeBits δ n < 2 ^ n
   | 0 => by simp [encodeBits]
   | n + 1 => by
@@ -712,11 +699,9 @@ theorem exists_atomUEmpty_zero (n : ℕ) : ∃ i < 2 ^ n, atomUEmpty P (n + 1) (
 (mirroring `atomStep`'s own convention), so that feeding it directly into `Nat.Primrec.prec` needs
 no further unpair/pair bookkeeping. -/
 
-
 /-! ### Correctness: `yFold`'s "found" flag and running union, by induction on `N` -/
 
 /-! ### `YseqCode`: assembling the fold at `N = 2ⁿ` -/
-
 
 /-! ### The closed form: `YseqCode` recovers the "+"-piece of the atom recursion
 

@@ -82,18 +82,8 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-! ## A shared closed form for `fade` at a general codomain. -/
 
-
 /-! ## `smash : D × E → D × E`. -/
-
-section Smash
-
-
-end Smash
 
 /-! ## `strict : (D → E) → (D → E)`. -/
 
-section Strict
-
-
-end Strict
 end DomainTheory.NeighbourhoodSystems

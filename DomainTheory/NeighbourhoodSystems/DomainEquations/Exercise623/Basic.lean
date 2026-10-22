@@ -152,18 +152,13 @@ namespace Exercise619
 
 /-! ## The generator `Γ = ⋃ₙ gFunⁿ({Λ})` (the Exercise 6.20/6.21 fixed point, as data) -/
 
-
 /-! ## The iterated-functor tower `Tⁿ({Γ})` -/
-
 
 /-! ## The colimit `𝒟 = ⋃ₙ Tⁿ({Γ})` -/
 
-
 /-! ## The structure isomorphism `T(𝒟) = 𝒟` -/
 
-
 /-! ## The functor of Exercise 6.23 and the syntactic domain `Exp` -/
-
 
 /-! ## Phase 2 — the strict-map category, the endofunctor `T`, and the algebra `Exp`
 
@@ -173,7 +168,6 @@ Because every object lives over `Str`, all carrier equalities are `rfl` and ther
 transport (the obstruction that made the abstract Theorem 6.14 unusable). The functor `Texp N` then
 becomes a genuine `Endofunctor` of this category, and the colimit `Exp` of Phase 1 — together with the
 structure equality `T(Exp) = Exp` — is a `T`-algebra. -/
-
 
 /-! ## Phase 3 — the evaluation homomorphism `val(s)` (existence)
 
@@ -188,14 +182,6 @@ homomorphism equation `val ∘ i = k ∘ T(val)` is the fixed-point equation `va
 `valₙ₊₁ = k ∘ T(valₙ) ∘ j`) and take `val = ⋃ₙ valₙ`. The fixed-point property uses *continuity on
 maps* (`GExpr.map_continuous`: `T(⋃ valₙ) = ⋃ T(valₙ)`); no projection machinery is needed for
 existence. (Uniqueness — initiality — is the remaining Phase 4.) -/
-
-
-section Existence
-
-variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))
-
-
-end Existence
 
 /-! ## Phase 4 — uniqueness of `val(s)` and initiality of `Exp`
 
@@ -212,11 +198,9 @@ functor constructors), then mirrors Theorem 6.14's uniqueness argument concretel
 
 /-! ### Proposition 6.12 helpers: the projection pair is strict, and trivial on `D ◁ D` -/
 
-
 /-! ### The functor carries projection pairs: the token-level lemmas -/
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
-
 
 /-! ### The crux (Definition 6.13, concrete): `T` carries the 6.12 projection pair
 
@@ -225,25 +209,12 @@ over the single token type `Str` (no `HEq` carrier transport): the functor `T = 
 injection/projection of `D ◁ E` to the injection/projection of `T(D) ◁ T(E)`. Proved by induction
 over the six constructors using the token-level lemmas just established. -/
 
-
 /-! ### The identity structure isomorphism, relationally -/
-
 
 /-! ### The projection chain `ρₙ = iₙ ∘ jₙ` and `⋃ₙ ρₙ = I_Exp` -/
 
-section Uniqueness
-
-variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master)
-
-
 /-! ### The crux equation `ρₙ₊₁ = i ∘ T(ρₙ) ∘ j` -/
 
-
 /-! ### `g`-independence of `g ∘ ρₙ` and uniqueness -/
-
-variable (B : TAlgebra (TexpF N))
-
-
-end Uniqueness
 end Exercise619
 end DomainTheory.NeighbourhoodSystems

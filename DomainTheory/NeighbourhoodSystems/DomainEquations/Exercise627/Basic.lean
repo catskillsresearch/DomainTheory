@@ -89,7 +89,6 @@ embeds via the projection pair `i(X) = (X, ⊥)`, `j(W) = fst W`. Concretely we 
 product neighbourhood `prodTokNbhd X Δ₁` (pair `X` with all of `ℰ`); the embedding/projection are the
 two refinement relations against that neighbourhood, exactly as in Proposition 6.12. -/
 
-
 /-! ## (3) `(𝒟 ⊕ ℰ) ◁ (𝒟 + ℰ)` — the coalesced sum is literally a subsystem of the sum
 
 `oplusTok` drops the improper copies `0Δ₀`, `1Δ₁` of `sumTok`; what remains is a sub-family, and
@@ -108,7 +107,6 @@ neighbourhood; consequently the single lemma `oplus_mem_leftN` — and only it �
 This is genuinely unavoidable at this level of generality (Scott's tokens are concrete and decidable,
 but we work over arbitrary `NeighborhoodSystem`s), so `inl_trianglelefteq_oplus` depends on
 `Classical.choice` (called out in the axiom audit). Every other part of Exercise 6.27 is choice-free. -/
-
 
 theorem inlProj_comp_inlInj :
     (inlProj (D₀ := D₀) (D₁ := D₁) (h₀ := h₀) (h₁ := h₁)).comp inlInj = idMap D₀ := by
@@ -144,20 +142,12 @@ choice-free. We realise `i, j` on principal inputs via `ofMono` of the element-l
 strictification, then identify their element maps using the representations `funSpaceEquiv`
 (`|𝒟→ℰ| ≃ ApproximableMap`) and `strictFunEquiv` (`|𝒟→⊥ℰ| ≃ StrictMap`). -/
 
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-
-end Part5
-
 /-! ## (6) `𝒟 ⊴ 𝒟 ⊗ ℰ` is **false** in general
 
 The smash product sends `(x, ⊥)` and `(⊥, y)` to the single bottom, so if `ℰ` contributes no proper
 neighbourhood the whole product collapses to its bottom. Concretely, for the one-point unit `ℰ = 𝟙`
 the system `𝒟 ⊗ 𝟙` has *only* its master as a neighbourhood, hence a one-point element lattice; a
 `𝒟` with two distinct points therefore cannot embed. This refutes the universal claim. -/
-
 
 end Exercise627
 end DomainTheory.NeighbourhoodSystems

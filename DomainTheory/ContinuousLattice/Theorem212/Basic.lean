@@ -45,24 +45,7 @@ namespace DomainTheory.ContinuousLattice
 
 open Topology Set
 
-section FixedPoints
-
-variable {L : Type*} [CompleteLattice L]
-
-
-namespace IdemFix
-
-variable {e : L → L}
-
-
-end IdemFix
-
 /-! ### The fixed-point set of a Scott-continuous idempotent is a continuous lattice -/
-
-variable {e : L → L}
-
-
-end FixedPoints
 
 /-! ### Theorem 2.12, backward direction -/
 
@@ -75,18 +58,6 @@ specialization order of the given topology is already a specified complete-latti
 homeomorphism is automatically an order isomorphism.  The following transport lemmas recover that
 exact lattice structure and its Scott topology. -/
 
-section Theorem212Transfer
-
-variable {A B : Type u} [latticeA : CompleteLattice A] [latticeB : CompleteLattice B]
-
-
-end Theorem212Transfer
-
 /-! ### Lemma 3.9: compatibility of maximal extensions with a projection on the range -/
 
-section Lemma39
-
-variable {X Y D D' : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-  [CompleteLattice D] [CompleteLattice D']
-end Lemma39
 end DomainTheory.ContinuousLattice

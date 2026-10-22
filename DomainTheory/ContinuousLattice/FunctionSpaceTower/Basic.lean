@@ -77,33 +77,13 @@ namespace DomainTheory.ContinuousLattice
 
 universe u
 
-
 attribute [instance] CLat.str
-
 
 /-! ### Conjugation used in Scott's §4 limit formulas
 
 Theorem 4.4 uses maps of the form `f ↦ post ∘ f ∘ pre`.  We bundle this operation as a Scott map;
 its continuity follows because directed suprema in function spaces are computed pointwise
 (Theorem 3.3). -/
-
-section Conj
-
-open Set
-
-variable {Y Z W : Type u} [CompleteLattice Y] [CompleteLattice Z] [CompleteLattice W]
-
-
-end Conj
-
-
-section Tower
-
-variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
-
-
-end Tower
 
 /-! ### Theorem 4.4(a): the limit maps `i_∞` and `j_∞`
 
@@ -119,23 +99,11 @@ Each summand is itself a Scott map (a composite of `conjMap`, `embInf`, `projInf
 Theorem 3.3 the function space `[A → B]` is a complete lattice in which suprema are computed
 pointwise. No bespoke continuity argument is needed. -/
 
-section LimitMaps
-
-variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
-
-
 /-! ### Theorem 4.4(b): `j_∞ ∘ i_∞ = id` on `D_∞`
 
 Scott's calculation (~lines 1290–1294): expand `j_∞(i_∞(x))` as a double sup, collapse the monotone
 double limit to the diagonal using `projInf ∘ embInf = id` on each summand, then recognize `x` via
 `inverseLimit_eq_iSup` (with a one-step index shift). -/
-
-section Thm44b
-
-variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
-
 
 /-! ### Theorem 4.4(c): `i_∞ ∘ j_∞ = id` on `[D_∞ → D_∞]`
 
@@ -146,20 +114,8 @@ This is the converse half (Scott ~lines 1322–1335). The restrictions
 functional equation `id = ⨆ₙ rₙ` (via `inverseLimit_eq_iSup`) plus continuity of `f` collapse this
 to `f`. -/
 
-
-end Thm44b
-
 /-! ### Theorem 4.4(d): `D_∞` is homeomorphic to `[D_∞ → D_∞]`
 
 Scott's statement of Theorem 4.4 is the homeomorphism. The maps `i_∞` and `j_∞` from (b) and (c)
 are mutually inverse and Scott-continuous (bundled `ScottMap`s), so they are that homeomorphism. -/
-
-section Thm44d
-
-variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
-
-
-end Thm44d
-end LimitMaps
 end DomainTheory.ContinuousLattice

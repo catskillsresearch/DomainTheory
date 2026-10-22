@@ -315,13 +315,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 Direct analogues of `Exercise812c.lean`'s `xStep`/`yStep`, taking the split function itself as an
 explicit argument instead of deriving it from a `NoMinimal` witness via `splitChoice'`. -/
 
-section StepGen
-
-variable {α β : Type*}
-
-
-end StepGen
-
 /-! ### `atomPair`, generalized over an abstract split pair
 
 Direct analogue of `Exercise812c.lean`'s `section AtomPair` (lines 552–757: the recursive
@@ -329,34 +322,10 @@ definition through `atomPair_fst_subset_master`/`atomPair_snd_subset_master`), w
 `hD₁nomin` replaced throughout by `(splitY, hySplit)`/`(splitX, hxSplit)`. `NoMinimal` itself is no
 longer needed anywhere in this generalized layer — only `SplitSpec'` is ever used. -/
 
-section AtomPairGen
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hySplit : SplitSpec' D₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hxSplit : SplitSpec' D₁ splitX)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
-
-
-end AtomPairGen
-
 /-! ### Sanity check: instantiating with the classical split recovers `Exercise812c.lean`'s `atomPair`
 
 Confirms the generalization is not vacuous: `atomPair` (from 8.12(c)) is exactly `atomPairG`
 instantiated at `splitX := splitChoice' D₁ hD₁nomin`, `splitY := splitChoice' D₀ hD₀nomin`. -/
-
-section Recover
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀nomin : D₀.NoMinimal) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β)
-
-end Recover
 
 /-! ## 8.12(d)(2): computable splits relative to two presentations
 
@@ -371,7 +340,6 @@ a **primitive-recursive** function of the three input indices — mirroring `Com
 This one structure serves **both** `splitX : Set α → Set β → Set α → Set β × Set β` (as
 `IsComputableSplit P₀ P₁ splitX`) and `splitY : Set β → Set α → Set β → Set α × Set α` (as
 `IsComputableSplit P₁ P₀ splitY`, roles swapped) — no separate `X`/`Y`-flavoured structure needed. -/
-
 
 namespace IsComputableSplit
 
@@ -399,11 +367,9 @@ coincide propositionally; `diff_computable` is phrased as the *existence* form (
 is free to read it as an emptiness decider via that coincidence. One structure serves **both**
 `P₀` and `P₁` symmetrically — no separate hypothesis needed per side. -/
 
-
 namespace IsComputableDiff
 
 variable {α : Type*} {V : NeighborhoodSystem α} {P : ComputablePresentation V}
-
 
 end IsComputableDiff
 
@@ -429,34 +395,13 @@ Two deciders, mirroring `Theorem88d.lean`'s `datomDec` extraction pattern (`Clas
 `RecDecidable`'s bare existential, then `isOne`-wrapped so the result is *literally* `{0,1}`-valued,
 not just "`= 1` iff …"): whether `X n ∩ X m` (resp. `X n \ X m`) is empty. -/
 
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-
-variable (hDiff : IsComputableDiff P)
-
-
-end DirectDec
-
 /-! ### The two-sided packed state `(idx0, idx1, junk)` -/
-
 
 /-! ### The `X`-sub-step
 
 Packed-argument convention `w = pair n (pair b1 s)` (mirroring `Theorem88d.lean`'s `atomStep`
 convention `w = pair k (pair y state)`): `n` is the current depth, `b1` is `(δ n).1` coded as
 `0`/`1`, `s` is the incoming two-sided state. -/
-
-section XSubStep
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-
-
-end XSubStep
 
 /-! ## 8.12(d)(3)(c): the `Y`-sub-step, composed into the full `atomPairCodeState`
 
@@ -470,29 +415,7 @@ wrapping. The bit-source `k` supplies **two** bits per depth (`(δ n).1`, `(δ n
 persistent `rem` field (divided by `4` each full step, mirroring `atomStep`'s `remK / 2`) carried
 alongside the two-sided `packState2` triple in a fresh outer pairing, `packStateC`. -/
 
-section YSubStep
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff1 : IsComputableDiff P₁)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
-
-end YSubStep
-
 /-! ### The outer `(bit-source, depth, state)` wrapping and the full recursion -/
-
-
-section AtomPairCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
-
-end AtomPairCode
 
 /-! ## 8.12(d)(3)(d): per-step correctness against `atomPairG`
 
@@ -504,7 +427,6 @@ account (where `UX` is a *total* surjection and the code is always meaningful), 
 codes are only meaningful when non-junk, so the statement is conditioned on `atomPairJunk = 0`
 throughout. -/
 
-
 /-! ### `deltaPair` is `Nat.testBit` in disguise, two bits per depth
 
 Mirrors `Theorem88d.lean`'s `deltaOf_eq_testBit` (`deltaOf k i = k.testBit i`), but reading *two*
@@ -512,7 +434,6 @@ Mirrors `Theorem88d.lean`'s `deltaOf_eq_testBit` (`deltaOf k i = k.testBit i`), 
 analogue, needed below to reuse `Nat.eq_of_testBit_eq`/`Nat.testBit_lt_two_pow` verbatim for the
 "distinct bounded bit-sources disagree somewhere" fact (`(d)(5)(b)`'s key combinatorial input,
 avoiding a bespoke induction on `4 ^ n`). -/
-
 
 /-! ### `encodeDeltaPair`: realizing a prescribed finite `Bool × Bool` sign-prefix as a bit-source
 
@@ -524,29 +445,6 @@ packing `(δ n).1`/`(δ n).2` into that digit's two bits exactly as `atomPairSte
 (`rem % 2`, `(rem / 2) % 2`). Purely a `Prop`-level existence tool, never claimed `Nat.Primrec` —
 same status as `encodeBits`. -/
 
-
-section AtomPairGenDelta
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hySplit : SplitSpec' D₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hxSplit : SplitSpec' D₁ splitX)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-
-end AtomPairGenDelta
-
-section AtomPairCorrect
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
-
 /-! ### Unconditional per-step algebra for `xSubStep`/`ySubStep`
 
 Both sub-steps' code-level behaviour matches `xyStep` (hence `xStepG`/`yStepG`) **unconditionally**
@@ -555,10 +453,6 @@ hypotheses needed at all: `IsComputableSplit`'s `posIdx_spec`/`negIdx_spec` are 
 equalities, and the direct-refinement side only ever needs the corresponding emptiness-decider
 readout to be `0`, which is connected to genuine set (in)equality unconditionally too (via
 `existsInterDec_spec`/`existsDiffDec_spec` + `P.inter_spec`/`hDiff.diffIdx_spec`). -/
-
-
-end AtomPairCorrect
-
 
 section AtomPairCorrect2
 
@@ -573,11 +467,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hySplit : SplitSpec' D₀ splitY)
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
-
 /-! ## 8.12(d)(3)(e): the junk invariant and validity
 
 Mirrors `Theorem88d.lean`'s `atomUEmpty_mono`/`atomUCode_mem`. -/
-
 
 /-- **Validity**: `atomPairIdx0`/`atomPairIdx1`'s recorded indices are always genuine `D₀`-side/
 `D₁`-side neighbourhoods — junk or not — since `ComputablePresentation.mem_X` holds unconditionally
@@ -603,22 +495,6 @@ transfer along `(d)(3)(d)`'s `atomPairCodeState_correct`, so needs `(d)(1)`'s fu
 (`SplitSpec'` for `splitX`/`splitY`, `IsPositive`/`DiffClosed`/`Nonempty` for `D₀`/`D₁`) in addition
 to `(d)(3)`'s own computability hypotheses. -/
 
-section AtomPairCorrect3
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-
-end AtomPairCorrect3
-
 /-! ## 8.12(d)(4)(a): `IsComputableUnion` — the missing "union index" prerequisite
 
 `ComputablePresentation` (Definition 7.1) only makes **intersection** effective (`inter`/
@@ -631,7 +507,6 @@ inside `D₁.mem`/`D₀.mem` — but only as a `Prop`-level existential (via `P.
 *compute* the resulting index. `IsComputableUnion` supplies exactly that missing effective witness,
 mirroring `IsComputableDiff` (`(d)(3)(a)`)'s shape verbatim but for `∪` instead of `\`. One
 structure again serves **both** `P₀` and `P₁` symmetrically. -/
-
 
 namespace IsComputableUnion
 
@@ -664,7 +539,6 @@ total, regardless of any code-level "junk" bookkeeping — cf. `atomPairIdx0_mem
 via this lemma, with **no** need to first relate any of it back to `XPseq`/`YPseq` or to redo any
 part of `(d)(1)`'s already-completed abstraction over `splitX`/`splitY`. -/
 
-
 /-! ## 8.12(d)(4)(c): `XPseqCode` — the code-level `X`-side union fold
 
 Mirrors `Theorem88d.lean`'s `yFoldStep`/`yFold`/`YseqCode` (the union fold over non-junk atoms),
@@ -675,63 +549,6 @@ why that classical detour turned out unnecessary). Correctness (`XFold_found_iff
 throughout, exactly mirroring `yFold_found_iff`/`yFold_mem_iff`'s own phrasing; see the closing
 docstring below for why the *unconditional* form at `N = 4ⁿ` is a flagged, deferred gap rather than
 forced through today. -/
-
-section XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
-
-
-end XPseqCode
-
-section AtomPairCorrect4
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hD₀nomin : D₀.NoMinimal)
-
-
-end AtomPairCorrect4
-
-section AtomPairCorrect4Snd
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hD₁nomin : D₁.NoMinimal)
-
-
-end AtomPairCorrect4Snd
-
-section AtomPairCorrect5
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-
-end AtomPairCorrect5
 
 /-! ### 8.12(d)(4)(c)(vi): assembling the unconditional "found" fact
 
@@ -764,22 +581,6 @@ transports it through `XFold_found_iff` to the fold's own found flag at `N = 4�
 unconditional witness, dropping the `hfound` hypothesis entirely. This closes `(d)(4)(c)` in full
 (all of `(c)(i)`–`(c)(vi)` now `Pass`, unconditionally). -/
 
-section XPseqCodeUnconditional
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion1 : IsComputableUnion P₁)
-
-
-end XPseqCodeUnconditional
-
 /-! ## 8.12(d)(4)(d): `YPseqCode`, the code-level `Y`-side union fold
 
 Symmetric to `(d)(4)(c)`'s `XPseqCode`, but genuinely harder in one respect (matching
@@ -792,20 +593,6 @@ into a single `2·4ⁿ`-element fold, this is built as an **outer `2`-way union 
 `Nat.Primrec.prec` already needs `n` held fixed as its own outer parameter, and pairing `bx`
 alongside it costs nothing. -/
 
-
-section YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
-
-
-end YPseqCode
-
 /-! ## 8.12(d)(4)(d)(vi): `YPseqCode`'s "found" flag is unconditionally `1`
 
 Mirrors `XPseqCodeUnconditional`, but doubled over `bx`. The extra wrinkle beyond `(c)(vi)`'s
@@ -817,22 +604,6 @@ intersection of `B`'s **half-step-`bx` split piece** `(xStepG splitX A B (P₀.X
 `false`) reunion to exactly `B`, so `B ∩ P₁.X n ≠ ∅` forces *at least one* of them to meet `P₁.X n`
 non-trivially (a `Set.union_inter_distrib_right` chase) — no need to know *which* `bx` in advance,
 matching `arxiv.md`'s own scoping prediction exactly. -/
-
-section YPseqCodeUnconditional
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion0 : IsComputableUnion P₀)
-
-
-end YPseqCodeUnconditional
 
 /-! ## 8.12(d)(5)(a): zero/master facts for `XPseqCode`/`YPseqCode`
 
@@ -858,24 +629,6 @@ value already computed for `XPseqCode`'s zero fact doubles as the "`B`"-input th
 own split (`hSplitY`) needs — only the `D₀`-direct-refine companion value (`xPseqAtomIdx0_eq`, the
 `stateIdx0` twin of `xPseqAtomIdx_eq`) is new content. -/
 
-section XYPseqCodeZero
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-  (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
-
-end XYPseqCodeZero
-
 /-! ## 8.12(d)(5)(b)(i): the `X`-side I-formula for `XPseqCode`
 
 **Design decision (resolved, after a bounded search per `(d)(5)`'s own flagged decision):** `(d)(5)(b)`'s
@@ -900,45 +653,12 @@ assembles the generalized `combinedXCode`/`combinedYCode`/`hcore` machinery thes
 `Theorem88.lean`'s `transfer_dir`/`genAtom` apparatus (already fully generic, no changes needed) for
 the final headline theorems. -/
 
-section XPseqCodeIFormula
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion1 : IsComputableUnion P₁)
-
-end XPseqCodeIFormula
-
 /-! ## 8.12(d)(5)(b)(ii): the `Y`-side I-formula for `YPseqCode`
 
 The code-level analogue of `Exercise812c.lean`'s `yStep_fst_eq_inter_YPseq`, needed to seed
 `(b)(iii)`'s `combinedXCode`'s odd-depth half-step. Structurally harder than `(b)(i)` exactly as
 anticipated: `yPseqAtomIdx n i bx` carries a *free* extra bit `bx`, so both the closed form and the
 disjointness argument need an extra case split on `bx` in addition to `i`. -/
-
-section YPseqCodeIFormula
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀)
-
-
-end YPseqCodeIFormula
 
 /-! ## 8.12(d)(5)(b)(iii): `combinedXCode`/`combinedYCode`/`combinedδ`, and `hcore`
 
@@ -962,23 +682,6 @@ half-step atom itself (`xPseqAtomJunk`/`yPseqAtomJunk`) may independently be jun
 "junk-mismatch" trick: `mem_XPseqCode_iff_unconditional`/`mem_YPseqCode_iff_unconditional`'s
 existential witnesses are *guaranteed* non-junk, so a junk target automatically differs from every
 witness, collapsing straight to the same disjointness apparatus `(b)(i)`/`(b)(ii)` already built. -/
-
-section CombinedCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-
-
-end CombinedCode
 
 /-! ### Exercise 8.12(d)(5)(b)(iv): the headline transfer theorems
 
@@ -1009,14 +712,12 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
 
-
 /-! ### The headline facts: specializing `transfer_*_combinedCode` to even/even and odd/odd
 indices
 
 The actual deliverable of Exercise 8.12(d)(5)(b): plain statements about `P₀.X`/`XPseqCode` (from
 the even-index specialization) and `YPseqCode`/`P₁.X` (from the odd-index specialization), needed
 for `(d)(5)(c)`–`(e)`'s `DomainIsoCode` assembly. -/
-
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 in
@@ -1034,7 +735,6 @@ theorem YPseqCode_subset_iff_Y_subset (i j : ℕ) :
     Set.inter_eq_self_of_subset_right (D₁.sub_master (P₁.mem_X i))] at key
   exact key
 
-
 end CombinedCodeTransfer
 
 /-! ### Exercise 8.12(d)(5)(c): cross-family order and equality facts
@@ -1045,151 +745,11 @@ level. Needs no new proof machinery beyond `(d)(5)(b)`'s transfer facts — each
 specialization of `transfer_subset_combinedCode` at *mixed* even/odd (resp. odd/even) index
 pairs. -/
 
-section CombinedCodeCrossFamily
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-
-
-end CombinedCodeCrossFamily
-
 /-! ### Exercise 8.12(d)(5)(d): `toD1Code`/`toD0Code`, the generalized elementwise maps
 
 Generalizes `Exercise812c.lean`'s `toD1`/`toD0` ((c)(vii)(4)/(5)) to the code level. Split into the
 `up_mem` helper lemmas (the only genuinely two-sided step) and the full assembly `def`s, one pair
 per direction. -/
-
-section ToD1CodeUpMem
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-
-
-end ToD1CodeUpMem
-
-section ToD1Code
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-  (hX0 : P₀.X 0 = D₀.master)
-
-
-end ToD1Code
-
-section ToD0CodeUpMem
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-
-
-end ToD0CodeUpMem
-
-section ToD0Code
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-  (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
-
-end ToD0Code
-
-section XEqIffXPseqCodeEq
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-
-
-end XEqIffXPseqCodeEq
-
-section ToD0CodeToD1Code
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-  (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
-
-end ToD0CodeToD1Code
-
-section ToD1CodeToD0Code
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-  (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
-
-end ToD1CodeToD0Code
 
 section DomainIsoCode812d
 
@@ -1206,7 +766,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
   (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
 
-
 include hDiff0 hDiff1 hSplitX hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin
   hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0 in
 /-- **Exercise 8.12(d)(5)(e)(iv), headline.** `D₀ ≅ᴰ D₁`, generalizing `isomorphic_812c` to the
@@ -1216,114 +775,6 @@ theorem isomorphic_812d : D₀ ≅ᴰ D₁ :=
     hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0⟩
 
 end DomainIsoCode812d
-
-section ToD1CodeRelIff
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-  (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
-
-end ToD1CodeRelIff
-
-section DomainIsoCode812dIsComputableMap
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-  (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
-
-end DomainIsoCode812dIsComputableMap
-
-section ToD0CodeRelIff
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-  (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
-
-end ToD0CodeRelIff
-
-section DomainIsoCode812dSymmIsComputableMap
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-  (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
-
-end DomainIsoCode812dSymmIsComputableMap
-
-section InvMapComp812d
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-  (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
-
-end InvMapComp812d
-
-section ToMapComp812d
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-  (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
-
-end ToMapComp812d
 
 section EffectiveIso812d
 
@@ -1339,7 +790,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
   (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
 
 include hDiff0 hDiff1 hSplitX hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin
   hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0 in

@@ -59,79 +59,21 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-
 /-! ## The category of `∅`-free domains and strict maps -/
-
 
 /-! ## The functor `T(X) = 𝟙 + X + X` on objects -/
 
-
 /-! ### Membership-shape lemmas for `sum3` (no nesting through the wrong tag) -/
-
-section ShapeLemmas
-
-open Example62C
-
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  {V₂ : NeighborhoodSystem γ} {h₀ : ∀ X, V₀.mem X → X.Nonempty}
-  {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty} {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
-
-end ShapeLemmas
 
 /-! ### The three-way sum map `f₀ + f₁ + f₂` -/
 
-section SumMap3
-
-open Example62C
-
-variable {α β γ α' β' γ' : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'} {V₂' : NeighborhoodSystem γ'}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-  {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
-  {h₂' : ∀ Z, V₂'.mem Z → Z.Nonempty}
-
-
-end SumMap3
-
 /-! ### The canonical injections `D_i ↪ D₀+D₁+D₂` -/
-
-section SumInj
-
-open Example62C
-
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
-
-end SumInj
 
 /-! ### Monotonicity of the injections, and the action of `f₀+f₁+f₂` on them -/
 
-section SumInjMap
-
-open Example62C
-
-variable {α β γ α' β' γ' : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'} {V₂' : NeighborhoodSystem γ'}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-  {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
-  {h₂' : ∀ Z, V₂'.mem Z → Z.Nonempty}
-
-
-end SumInjMap
-
 /-! ## The functor `T(X) = 𝟙 + X + X` -/
 
-
 /-! ## `C` as a `T`-algebra -/
-
 
 /-! ## Initiality of `(C, i)`: the unique homomorphism into any `T`-algebra
 
@@ -143,23 +85,11 @@ namespace Example62C
 
 open Example44 ExampleB Example62
 
-
 end Example62C
 
 /-! ### The homomorphism `desc : C → E` for a `T`-algebra `B = (E, k)` -/
 
-section Initial
-
-open Example44 Example62C ExampleB Exercise419 Exercise516
-
-variable (B : TAlgebra Tc)
-
-
 /-! ### The homomorphism square and uniqueness -/
-
-
-end Initial
-
 
 end DomainTheory.NeighbourhoodSystems
 

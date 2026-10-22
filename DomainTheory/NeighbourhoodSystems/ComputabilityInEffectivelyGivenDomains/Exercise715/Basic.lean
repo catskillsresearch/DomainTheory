@@ -127,14 +127,11 @@ variable {α β γ : Type*}
 This is the literal content of Definition 7.1: an enumeration with the two relations recursively
 decidable. It is exactly `ComputablePresentation` minus the `inter`/`masterIdx` data fields. -/
 
-
 namespace ScottPresentation
 
 variable {V : NeighborhoodSystem α} (P : ScottPresentation V)
 
-
 end ScottPresentation
-
 
 /-! ## The smash product `𝒟₀ ⊗ 𝒟₁` is effectively given (Scott's Definition 7.1)
 
@@ -146,18 +143,6 @@ recursively decidable. -/
 
 open Exercise510
 
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-variable {P₀ P₁}
-
-
-variable (P₀ P₁)
-
-
 /-! ### Projections and the strict pairing for `⊗` (the `×`-analogue combinators).
 
 The smash product carries the same *projections* `proj₀`/`proj₁` as the separated product (a smash
@@ -167,7 +152,6 @@ pairing forces *proper* image factors and otherwise lands on the master. All thr
 the projections by `smashEnum_eq_eff` + `incl_computable`, the pairing by `a`,`b`'s r.e. relations on
 the (raw) codomain coordinate indices together with the codomain properness tests. -/
 
-
 /-! ### The appropriate combinator for `⊗`: the functorial action `f ⊗ g`.
 
 The smash product is a (bi)functor; `smashMap f g : 𝒟₀ ⊗ 𝒟₁ → 𝒟₀' ⊗ 𝒟₁'` is the coalesced analogue
@@ -176,33 +160,12 @@ of Theorem 7.4's `f × g` (`prodMap`). Because the smash collapses bottoms, the 
 collapse). It is a genuine `ApproximableMap` and is **computable**: on the effective product indices
 its relation decodes to `f`'s and `g`'s r.e. relations together with the codomain properness tests. -/
 
-section SmashFunctor
-
-variable {α' β' : Type*} {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
-
-
-end SmashFunctor
-
-end Smash
-
 /-! ## The coalesced sum `𝒟₀ ⊕ 𝒟₁` is effectively given (Scott's Definition 7.1)
 
 `𝒟₀ ⊕ 𝒟₁` (Exercise 6.21, here over `Option (α ⊕ β)`) is the separated sum `+` with the *improper*
 tagged copies `0Δ₀`, `1Δ₁` deleted (the two bottoms identified). As with `⊗`, the enumeration must
 re-route improper copies to the master (the sole classical input), while the relations (i),(ii) are
 choice-free recursively decidable. -/
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-variable {P₀ P₁}
-
 
 /-! ### The appropriate combinators for `⊕`: injections `in₀`/`in₁` and projections `out₀`/`out₁`.
 
@@ -212,27 +175,11 @@ Each is a genuine `ApproximableMap` and is **computable** (`ComputableMapS`): th
 relations decode, tag-by-tag, to slices of the components' `incl_computable` together with the
 recursively-decidable properness tests `proper₀_dec`/`proper₁_dec`. -/
 
-variable {h₀ h₁}
-
-
-variable (P₀ P₁)
-
-
 /-! ### The appropriate combinator for `⊕`: the functorial action `f ⊕ g`.
 
 `osumMap f g : 𝒟₀ ⊕ 𝒟₁ → 𝒟₀' ⊕ 𝒟₁'` is the coalesced analogue of Theorem 7.4's `f + g` (`sumMap`).
 The coalesced relation additionally forces the image copy to be *proper* (`Y' ≠ Δ'`); otherwise the
 strict collapse routes to the master. It is a genuine `ApproximableMap` and is **computable**. -/
-
-section CoalescedFunctor
-
-variable {α' β' : Type*} {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
-  (h₀' : ∀ X, V₀'.mem X → X.Nonempty) (h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty)
-
-
-end CoalescedFunctor
-
-end Coalesced
 
 /-! ## The infinite iterate `D^∞` is effectively given (full `ComputablePresentation`)
 
@@ -253,9 +200,7 @@ open Domain.Recursive
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-
 variable {P}
-
 
 @[simp] theorem iterPresentation_X (t : ℕ) : (iterPresentation P).X t = iterEnum P t := rfl
 

@@ -72,28 +72,17 @@ open Sum Set
 
 variable {σ₁ σ₂ : Type}
 
-section NFAinterLemmas
-
 /-! ## NFA intersection (product) -/
-
-
-variable (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂)
-
-
-end NFAinterLemmas
 
 /-! ## Choice-free DFA → NFA recognition
 
 mathlib's `DFA.toNFA_correct` depends on `Classical.choice`; we reprove it choice-free (the leaf
 automata are DFAs, so the uniform `toNFA` must convert them without pulling choice). -/
 
-
 /-! ## The uniform recogniser `toNFA` -/
-
 
 example : DecidableEq (autState (.sigma : SExpr)) := inferInstance
 example : DecidableEq (autState (.single [true, false] : SExpr)) := inferInstance
-
 
 /-! ## Emptiness reduces to reachability of an accept state
 
@@ -110,21 +99,12 @@ If an `n`-state NFA accepts some word, it accepts one of length `< n` (pigeonhol
 accepting path). This is tighter than mathlib's `NFA.pumping_lemma`, which bounds via `card (Set σ)`.
 -/
 
-section ShortWord
-
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
-
-
-end ShortWord
-
 /-! ## Emptiness decider (Session C5) -/
-
 
 /-! ## Consistency decider (Session C6) — Definition 7.1 relation (ii)
 
 For `X, Y ∈ S`, Scott's consistency `∃ Z ∈ S, Z ⊆ X ∩ Y` is equivalent to `(X ∩ Y).Nonempty`
 by positivity (`Ssys_isPositive`). On syntax, this is non-emptiness of `denote (cap a b)`. -/
-
 
 @[simp] theorem consistentB_iff (a b : SExpr) :
     consistentB a b = true ↔ (denote (.cap a b)).Nonempty := by

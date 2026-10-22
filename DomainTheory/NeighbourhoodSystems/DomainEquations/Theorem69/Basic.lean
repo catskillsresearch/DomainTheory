@@ -64,24 +64,12 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-
 variable {α β γ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 /-! ### General helper lemmas (strictness and monotonicity of composition). -/
 
-
 /-! ### The post/pre-composition operator on strict function spaces. -/
-
-section HomOp
-
-variable (T : Endofunctor DomainObj) (D E : DomainObj)
-  (j : ApproximableMap D.sys (T.obj D).sys)
-  (k : ApproximableMap (T.obj E).sys E.sys)
-  (hj : IsStrict j) (hk : IsStrict k)
-
-
-end HomOp
 
 /-! ### Theorem 6.9. -/
 end DomainTheory.NeighbourhoodSystems

@@ -146,14 +146,12 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
 /-! ### Definition 3.1 -/
-
 
 /-- Scott's notation `[X → Y]`: continuous maps with the pointwise (product) topology. -/
 abbrev ScottFunctionSpace (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y] :=
@@ -167,13 +165,11 @@ abbrev ScottFunctionSpace (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y
 abbrev ScottC (D D' : Type*) [CompleteLattice D] [CompleteLattice D'] :=
   @ContinuousMap D D' scottTopologicalSpace scottTopologicalSpace
 
-
 namespace ScottMap
 
 theorem continuous (f : ScottMap D D') :
     @Continuous D D' scottTopologicalSpace scottTopologicalSpace f :=
   f.2
-
 
 /-! ### The complete lattice `[D → D']` (Theorem 3.3, order content)
 
@@ -182,11 +178,9 @@ since directed *and* arbitrary suprema of Scott maps are computed pointwise — 
 `completeLatticeOfSup` this is a complete lattice. Note infima are *not* pointwise (Scott's
 warning); `completeLatticeOfSup` derives them as `sSup` of lower bounds. -/
 
-
 end ScottMap
 
 /-! ### Theorem 3.3 (core) -/
-
 
 /-! ### Theorem 3.3 (`[D → D']` is a continuous lattice)
 
@@ -195,7 +189,6 @@ Scott's *step functions* `ē[e, e']` are the building blocks: `ē[e,e'](x) = e'`
 otherwise), avoiding any decidability assumption. Each step function is Scott-continuous (the
 way-above set `{x | e ≪ x}` is Scott-open), is way below `f` whenever `e' ≪ f e`, and `f` is the
 supremum of the step functions below it — whence `[D → D']` is a continuous lattice. -/
-
 
 /-! ### Theorem 3.3(b): the lattice topology = the topology of pointwise convergence
 
@@ -206,24 +199,19 @@ pointwise). The other (Scott ⊆ pointwise) is Scott's argument via the `↟φ` 
 lattice: `φ ≪ g` forces `φ ≤ ⊔ᵢ ē[eᵢ,eᵢ']` for finitely many pairs with `eᵢ' ≪ g eᵢ`, and the
 finite intersection `⋂ᵢ {h | eᵢ' ≪ h eᵢ}` is a pointwise-open neighbourhood of `g` inside `↟φ`. -/
 
-
 /-! ### Corollary 3.4 -/
 
 /-! ### Proposition 3.5 (currying) -/
 
-
 /-! ### Definition 3.6 -/
 
-
 namespace IsContinuousLatticeRetraction
-
 
 end IsContinuousLatticeRetraction
 
 /-! ### Proposition 2.10: a retract of a continuous lattice is a continuous lattice -/
 
 /-! ### Proposition 3.7 -/
-
 
 /-! ### Proposition 3.10 -/
 
@@ -232,7 +220,6 @@ section Proposition310
 open Finset
 
 namespace IsContinuousLatticeProjection
-
 
 theorem directedOn_wayBelow (a : D) : DirectedOn (· ≤ ·) { z | z ≪ a } := by
   intro p hp q hq
@@ -247,41 +234,21 @@ Given a map `i : D → D'` satisfying (i)–(iii), Scott's formula (iv)
 
 variable {i : D → D'}
 
-
 end Proposition310
 
 /-! ### Proposition 3.8 -/
 
-section SubspaceExtension
-
-variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y]
-
-
-end SubspaceExtension
-
 /-! ### Definition 3.11 / Proposition 3.12: the lattice of projections `J_D` -/
-
-section Projections
-
-
-namespace Projections
-
-
-end Projections
-
-end Projections
 
 /-! ### Proposition 3.13: `D` is a projection of `[D → D]` -/
 
 namespace Proposition313
-
 
 end Proposition313
 
 /-! ### Proposition 3.14: the fixed-point operator `fix : [D → D] → D` -/
 
 namespace Proposition314
-
 
 @[simp] theorem fixMap_apply (f : ScottMap D D) : (fixMap f : D) = fix f := rfl
 end Proposition314

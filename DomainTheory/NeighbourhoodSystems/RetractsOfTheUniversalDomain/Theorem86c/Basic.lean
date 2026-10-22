@@ -52,12 +52,5 @@ variable {α : Type*} {E : NeighborhoodSystem α}
 
 /-! ### Unfolding `subApprox`'s neighbourhood relation -/
 
-section SubComputable
-
-variable (P : ComputablePresentation E) (gN : ℕ → ℕ)
-  (hgN : ∀ c, gN c = 1 ↔
-    (stepFun (funListOf P P (decodeList c)) : Set (ApproximableMap E E)).Nonempty)
-
 /-! ### The per-witness decidable predicate and its recursive decidability -/
-end SubComputable
 end DomainTheory.NeighbourhoodSystems

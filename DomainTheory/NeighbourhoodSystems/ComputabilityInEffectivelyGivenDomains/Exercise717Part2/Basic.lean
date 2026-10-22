@@ -73,12 +73,9 @@ namespace Exercise717
 
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
-
 /-! ### Shape inversion lemmas. -/
 
-
 /-! ### The `ApproximableMap` laws. -/
-
 
 /-! ### The two defining equations and strictness. -/
 
@@ -99,13 +96,6 @@ it with the `Proposition77` memo `gOf`/`rtbl` over `w = ⟨v, cert⟩`: at each 
 results (`okBit`, `outIdx`) are read from the memo table by `listGet`. The step is fed the four
 primitive-recursive `{0,1}`/index functions `fe` (`Q`-equality-to-`Δ`), `fU`/`fV` (the deciders of
 `u`/`v`'s r.e. relations), and `mIdx` (`Q`'s master index). -/
-
-section Computability
-
-variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
-
-end Computability
 
 /-! ### Computability of `g`. -/
 end Exercise717

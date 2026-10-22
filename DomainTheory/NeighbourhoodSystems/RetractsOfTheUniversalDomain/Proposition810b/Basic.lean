@@ -100,39 +100,17 @@ universe u
 
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
-
 /-! ## Setup: `D_a := fixedNbhd a`, the concrete witnessing domain of a finitary projection `a` -/
 
 variable {a b : ApproximableMap U U}
 
-
 /-! ## The `×` case -/
-
-section ProdCase
-
-variable (a b : ApproximableMap U U)
-
-
-end ProdCase
 
 /-! ## `sumMap` infrastructure: elementwise formulas and functoriality
 
 Exercise 3.19's sum functor `sumMap` is not literally built from `cond`/`which` (unlike
 `prodMap`), so its elementwise behaviour and functor laws (`sumMap_id`/`sumMap_comp`) are
 established here directly, mirroring `Proposition810.lean`'s treatment of `sumComb` itself. -/
-
-section SumMapLemmas
-
-variable {γ δ γ' δ' γ'' δ'' : Type u}
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-variable {h0 : ∀ X, V0.mem X → X.Nonempty} {h1 : ∀ Y, V1.mem Y → Y.Nonempty}
-variable {h0' : ∀ X, V0'.mem X → X.Nonempty} {h1' : ∀ Y, V1'.mem Y → Y.Nonempty}
-variable {h0'' : ∀ X, V0''.mem X → X.Nonempty} {h1'' : ∀ Y, V1''.mem Y → Y.Nonempty}
-
-
-end SumMapLemmas
 
 /-! ## The `+` case
 
@@ -142,13 +120,6 @@ elementwise (`sumComb_eq_iPlus_sumMap_jPlus` below), by the exact same case-spli
 for `isRetraction_sumComb`/`le_idMap_sumComb` in `Proposition810.lean`. Given that bridge, the
 rest is verbatim the `×` case's algebra, now powered by `sumMap_id`/`sumMap_comp`. -/
 
-section SumCase
-
-variable (a b : ApproximableMap U U)
-
-
-end SumCase
-
 /-! ## `expMap`: the Hom-bifunctor `(𝒟₀→𝒟₁) → (𝒟₀'→𝒟₁')`, for `h : 𝒟₀'→𝒟₀`, `k : 𝒟₁→𝒟₁'`
 
 Generalizes `lamComb`'s construction (`Definition89.lean`) — the Hom-functor's action on maps,
@@ -156,24 +127,7 @@ Generalizes `lamComb`'s construction (`Definition89.lean`) — the Hom-functor's
 to a genuine bifunctor on approximable maps between arbitrary neighbourhood systems, contravariant
 in `h` and covariant in `k`. -/
 
-section ExpMap
-
-variable {γ δ γ' δ' γ'' δ'' : Type*}
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
-
-end ExpMap
-
 /-! ## The `→` case -/
-
-section ArrowCase
-
-variable (a b : ApproximableMap U U)
-
-
-end ArrowCase
 
 /-! ## Proposition 8.10(b) — assembled -/
 end DomainTheory.NeighbourhoodSystems

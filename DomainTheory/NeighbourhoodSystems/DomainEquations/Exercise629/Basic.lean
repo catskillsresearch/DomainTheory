@@ -105,27 +105,12 @@ variable {ι : Type u} {α : ι → Type v}
 
 /-! ## The product neighbourhood and its algebra -/
 
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
-
-section IndexedProduct
-
-variable [Nonempty ι]
 
 /-! ## The element isomorphism `|∏_i D_i| ≃o ∀ i, |D_i|`
 
 Throughout we use the *slices* `slice i U` — the cylinder that is `U` at coordinate `i` and the
 master elsewhere. -/
-
-section Iso
-
-variable [DecidableEq ι]
-
-
-end Iso
-
-end IndexedProduct
 
 /-! ## `+` generalizes to `∑`: the indexed separated sum
 
@@ -134,12 +119,10 @@ summands. A neighbourhood constrains only a single coordinate, so — unlike the
 finite-support condition is needed. We need `∅ ∉ 𝒟ᵢ` (`hne`) to keep distinct tagged copies
 disjoint. -/
 
-
 /-! ## `⊕` generalizes: the indexed coalesced sum
 
 As `∑`, but the *improper* tagged copies `inj i Δᵢ` are deleted (the per-summand bottoms are
 identified with the basepoint). Single-coordinate, so it generalizes with no finite-support issue. -/
-
 
 /-! ## `⊗` does **not** generalize: the infinite smash degenerates
 

@@ -187,9 +187,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Domain
 
 variable {A : Type} [DecidableEq A]
 
-
 /-! ### Prepending a letter: the successors `x ↦ a·x`. -/
-
 
 /-! ## Stage 2: the `A`-indexed separated sum `Tsig(X) = 𝟙 + Σ_{a:A} X`
 
@@ -198,45 +196,13 @@ fresh basepoint `Λ = none`, the lone `𝟙`-token `tu = some (inl ())`, and the
 tagged copies `tc a t = some (inr (a, t))`. This is the alphabet-generic analogue of `Example62C`'s
 three-way `sum3 unitSys C C` (`= 𝟙 + C + C`), the index `Bool` being replaced by `A`. -/
 
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-
-variable (V : NeighborhoodSystem β)
-
-
-variable {V}
-
-
 /-! ### Shape lemmas: no nesting through the wrong tag. -/
-
-variable {h : ∀ X, V.mem X → X.Nonempty}
-
 
 /-! ### The canonical injections `𝟙 ↪ 𝟙+Σ_a V` and `V ↪ 𝟙+Σ_a V` (the `a`-th copy). -/
 
-
-end SumSig
-
 /-! ### The sum map `Σ f = I_𝟙 + Σ_a f` and its functoriality. -/
 
-section SumMapSig
-
-universe v
-
-variable {β₀ β₁ β₂ : Type v}
-  {V₀ : NeighborhoodSystem β₀} {V₁ : NeighborhoodSystem β₁} {V₂ : NeighborhoodSystem β₂}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
-
-end SumMapSig
-
 /-! ## The endofunctor `Tsig(X) = 𝟙 + Σ_a X` on the `∅`-free category. -/
-
 
 /-! ## Stage 3: the domain equation `Cₐ ≅ 𝟙 + Σ_a Cₐ`.
 
@@ -244,58 +210,23 @@ The alphabet-generic analogue of `Example62C` (`C ≅ 𝟙 + C + C`). Prepending
 neighbourhood gives `embA a X`; a `Cₐ`-neighbourhood is the master, the terminator `{Λ}`, or some
 `a`-copy `aX`, exactly the shapes of the `A`-indexed sum `𝟙 + Σ_a Cₐ`. -/
 
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
-
 /-! ### The sum target `𝟙 + Σ_a Cₐ` and its inversion lemmas. -/
-
 
 /-! ### The forward half `toCC : |Cₐ| → |𝟙 + Σ_a Cₐ|`. -/
 
-
 /-! ### The inverse half `fromCC : |𝟙 + Σ_a Cₐ| → |Cₐ|`. -/
-
 
 /-! ### The two halves are mutually inverse. -/
 
-
 /-! ### Bridging the isomorphism to the successors `consMapN`. -/
-
-
-end Iso
 
 /-! ## `Cₐ` as a `Tsig`-algebra. -/
 
-section Algebra
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
-
-end Algebra
-
 /-! ## The `liftCn` combinator: an approximable map out of `Cₐ` (generic `Exercise419.liftC`). -/
-
-section Lift
-
-variable {A : Type} [DecidableEq A] [Inhabited A] {β : Type}
-
-
-end Lift
 
 /-! ## Initiality of `(Cₐ, i)`: the unique homomorphism into any `Tsig`-algebra. -/
 
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
-
-
 /-! ### The homomorphism square and uniqueness. -/
-
-
-end Initial
-
 
 /-! ## Instantiation: `Cₙ ≅ 𝟙 + n·Cₙ` over the `n`-letter alphabet `Fin (n+1)`.
 

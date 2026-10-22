@@ -70,7 +70,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 
 /-! ### Strict starting functions (`λx. cond(zero x, x, x)`). -/
 
-
 /-! ### Primitive recursion.
 
 Given `f : N → N` and `g : N × N × N → N` (with `N³` modelled as `N × (N × N)`), the primitive
@@ -82,23 +81,9 @@ recursion `h̄` with `h̄(0, m) = f(m)`, `h̄(n+1, m) = g(n, m, h̄(n, m))` is t
 The recursion bodies live over `prod F Q` with `F = funSpace (N×N) N` (the unknown) and `Q = N × N`
 (the argument pair). We name the four selectors once to keep the body terms readable. -/
 
-
-section PrimRec
-
-variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)
-
-
-end PrimRec
-
 /-! ### The μ-scheme (least-number operator).
 
 Given `f : N × N → N`, the minimization `h̄(m) = μn. f(n, m) = 0` is obtained from
 `ḡ = !g λx,y. cond(zero(f(x,y)), x, g(succ(x), y))` by `h̄ = λy. ḡ(0̂, y)`. -/
 
-section Mu
-
-variable (f : ApproximableMap (prod N N) N)
-
-
-end Mu
 end DomainTheory.NeighbourhoodSystems.Theorem56

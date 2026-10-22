@@ -58,38 +58,11 @@ universe u
 
 /-! ## General-purpose lemmas -/
 
-section General
-
-variable {α β γ δ : Type*}
-
-end General
-
 /-! ## Cross round-trips for the sum injections (companions of Exercise 3.18) -/
-
-section SumHelpers
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-end SumHelpers
 
 /-! ## Goal 1: `T ⊴ E` and `E → E ⊴ E` give `E × E ⊴ E` -/
 
-section Prod
-
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-
-end Prod
-
 /-! ## Goal 2: `T ⊴ E` and `E → E ⊴ E` give `E + E ⊴ E` -/
-
-section Sum
-
-variable {α : Type u} {E : NeighborhoodSystem α} (hE : ∀ X, E.mem X → X.Nonempty)
-
-
-end Sum
 
 /-! ## Exercise 8.19, assembled -/
 end DomainTheory.NeighbourhoodSystems

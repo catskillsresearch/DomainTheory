@@ -90,19 +90,11 @@ universe u v
 
 /-! ## `A ⊴ prod A B` and `B ⊴ prod A B`, for any `A`, `B` -/
 
-section Prod
-
-variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
-
-end Prod
-
 /-! ## `B ⊴ funSpace A B`, for any `A`, `B` -/
 
 section FunSpace
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
 
 @[simp] theorem toApproxMap_constFunMap (b : B.Element) (a : A.Element) :
     (toApproxMap ((constFunMap A B).toElementMap b)).toElementMap a = b := by

@@ -80,12 +80,6 @@ open Set
 
 universe u
 
-section InverseLimit
-
-variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
-variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
-
-
 /-! ### Proposition 4.2: the maps `j_{∞n}` are projections
 
 We construct Scott's embeddings `i_{n∞} : Dₙ → D_∞` and show that `⟨i_{n∞}, j_{∞n}⟩` is a
@@ -93,13 +87,8 @@ projection, where `j_{∞n}(x) = xₙ`. The component `i_{n∞}(x)_m` climbs the
 `iₖ = (P k).incl` for `m ≥ n` (`embLE`) and descends the tower of projections `jₖ = (P k).retr`
 for `m < n` (`projLE`). -/
 
-
 /-! ### Corollary 4.3: `D_∞` is also the *direct* limit
 
 Given continuous `fₙ : Dₙ → D'` into any complete lattice with `fₙ = f_{n+1} ∘ iₙ`, the map
 `f∞(x) = ⨆ₙ fₙ(xₙ)` is the unique continuous mediating map with `fₙ = f∞ ∘ i_{n∞}`. -/
-
-variable {D' : Type*} [CompleteLattice D']
-
-end InverseLimit
 end DomainTheory.ContinuousLattice
