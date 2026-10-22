@@ -18,8 +18,9 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxShift_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem boxShift_isRetract {a : Pomega} (ha : IsRetract a) :
-    IsRetract (boxShift a) := by
+theorem boxShift_isRetract {a : Pomega} (ha : Retract a) :
+    Retract (boxShift a) := by
+  constructor
   change boxShift a =
     graph (fun x => funOf (boxShift a) (funOf (boxShift a) x))
   apply graph_ext

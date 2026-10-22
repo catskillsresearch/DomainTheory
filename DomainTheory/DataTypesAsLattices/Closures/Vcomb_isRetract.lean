@@ -18,7 +18,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_19
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem Vcomb_isRetract : IsRetract Vcomb := by
+theorem Vcomb_isRetract : Retract Vcomb := by
+  constructor
   change Vcomb = graph (fun a => funOf Vcomb (funOf Vcomb a))
   apply graph_ext
   intro a

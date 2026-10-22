@@ -38,12 +38,13 @@ noncomputable def roundFilter_infoSys_iso :
   toFun := fun f =>
     ⟨(wayBelowNbhdBasis (D := D)).domainOrderIso f.1, by
       let f' : (wayBelowNbhdBasis (D := D)).system.Element := f.1
-      change IsRound ((wayBelowNbhdBasis (D := D)).domainOrderIso.symm
+      refine ⟨?_⟩
+      change Round ((wayBelowNbhdBasis (D := D)).domainOrderIso.symm
         ((wayBelowNbhdBasis (D := D)).domainOrderIso f'))
       rw [OrderIso.symm_apply_apply]
       exact f.2⟩
   invFun := fun e =>
-    ⟨(wayBelowNbhdBasis (D := D)).domainOrderIso.symm e.1, e.2⟩
+    ⟨(wayBelowNbhdBasis (D := D)).domainOrderIso.symm e.1, e.2.out⟩
   left_inv := fun f => Subtype.ext <|
     (wayBelowNbhdBasis (D := D)).domainOrderIso.left_inv f.1
   right_inv := fun e => Subtype.ext <|

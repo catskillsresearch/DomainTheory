@@ -121,7 +121,7 @@ Having realized this, it is a short step to giving an algebraic axiomatization o
 - [InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_right.lean](Factoid43/le_join_right.lean)
 - [InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_join_iff.lean](Factoid43/exists_join_iff.lean)
 - [InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43.lean](Factoid43.lean)
-- [InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/IsChain.lean](Factoid44/IsChain.lean)
+- [InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/Chain.lean](Factoid44/Chain.lean)
 - [InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/IsDirected.lean](Factoid44/IsDirected.lean)
 - [InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/IsDirected_of_IsChain.lean](Factoid44/IsDirected_of_IsChain.lean)
 - [InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/directedSup_carrier_eq_union.lean](Factoid44/directedSup_carrier_eq_union.lean)

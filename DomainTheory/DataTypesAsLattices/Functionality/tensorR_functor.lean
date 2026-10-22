@@ -18,8 +18,8 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 4.4 (iv).** `⊗` is a functor on maps. -/
 theorem tensorR_functor {a b a' b' f f' : Pomega}
-    (_ha : IsRetract a) (_hb : IsRetract b)
-    (_ha' : IsRetract a') (_hb' : IsRetract b')
+    (_ha : Retract a) (_hb : Retract b)
+    (_ha' : Retract a') (_hb' : Retract b')
     (hf : typed f (arrowR a b)) (hf' : typed f' (arrowR a' b')) :
     typed (tensorR f f') (arrowR (tensorR a a') (tensorR b b')) := by
   change tensorR f f' =

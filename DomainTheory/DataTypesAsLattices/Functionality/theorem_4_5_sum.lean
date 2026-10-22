@@ -19,8 +19,8 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 4.5 (The sum theorem).** -/
-theorem theorem_4_5_sum {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
-    IsRetract (plusR a b) ∧ IsStrict (plusR a b) ∧
+theorem theorem_4_5_sum {a b : Pomega} (ha : Retract a) (hb : Retract b) :
+    Retract (plusR a b) ∧ IsStrict (plusR a b) ∧
       (∀ u, typed u (plusR a b) ↔
         u = botElem ∨ u = topElem ∨
           (∃ x, u = pairSeq (ofNat 0) x ∧ typed x a) ∨

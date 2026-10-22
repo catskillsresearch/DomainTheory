@@ -54,7 +54,7 @@ which has the property that if $z$ is both zero and positive, then it takes the 
 - [DataTypesAsLattices/Retracts/IsCompactSubset.lean](IsCompactSubset.lean)
 - [DataTypesAsLattices/Retracts/boolR_app.lean](boolR_app.lean)
 - [DataTypesAsLattices/Retracts/comp.lean](comp.lean)
-- [DataTypesAsLattices/Retracts/IsRetract.lean](IsRetract.lean)
+- [DataTypesAsLattices/Retracts/Retract.lean](Retract.lean)
 - [DataTypesAsLattices/Retracts/arrowR.lean](arrowR.lean)
 - [DataTypesAsLattices/Retracts/comp_app.lean](comp_app.lean)
 - [DataTypesAsLattices/Retracts/comp_isScottContinuous_right.lean](comp_isScottContinuous_right.lean)

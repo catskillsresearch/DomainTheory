@@ -18,7 +18,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.intR_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem intR_isRetract : IsRetract intR := by
+theorem intR_isRetract : Retract intR := by
+  constructor
   change intR = graph (fun x => funOf intR (funOf intR x))
   refine intR_isGraph.trans ?_
   apply graph_ext

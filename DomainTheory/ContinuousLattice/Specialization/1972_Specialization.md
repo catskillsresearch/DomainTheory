@@ -49,7 +49,7 @@ By a directed subset of $X$ we of course mean that it is directed in the sense o
 - [ContinuousLattice/Specialization/specializationLe_antisymm.lean](specializationLe_antisymm.lean)
 - [ContinuousLattice/Specialization/SpecializationLeu2emap.lean](SpecializationLeu2emap.lean)
 - [ContinuousLattice/Specialization/specializationPreorder.lean](specializationPreorder.lean)
-- [ContinuousLattice/Specialization/IsMonotoneNet.lean](IsMonotoneNet.lean)
+- [ContinuousLattice/Specialization/MonotoneNet.lean](MonotoneNet.lean)
 - [ContinuousLattice/Specialization/ScottConvergesTo.lean](ScottConvergesTo.lean)
 - [ContinuousLattice/Specialization/scottTopologicalSpace.lean](scottTopologicalSpace.lean)
 - [ContinuousLattice/Specialization/scottOpen_not_le.lean](scottOpen_not_le.lean)

@@ -18,7 +18,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_bool_idem
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem boolR_isRetract : IsRetract boolR := by
+theorem boolR_isRetract : Retract boolR := by
+  constructor
   apply graph_ext
   intro u
   rw [boolR_app, boolR_app, dcondSet_bool_idem]

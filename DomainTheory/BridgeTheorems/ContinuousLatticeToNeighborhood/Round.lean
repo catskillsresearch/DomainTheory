@@ -24,8 +24,8 @@ namespace ContinuousLatticeToNeighborhood
 variable {D : Type*} [CompleteLattice D]
 
 /-- Roundness: `↟a ∈ f` is witnessed by a finer code `b` with `a ≪ b`. -/
-def IsRound (f : Filter (D := D)) : Prop :=
-  ∀ {a : D}, f.mem (wayBelowUp a) → ∃ b : D, a ≪ b ∧ f.mem (wayBelowUp b)
+class Round (f : Filter (D := D)) : Prop where
+  out : ∀ {a : D}, f.mem (wayBelowUp a) → ∃ b : D, a ≪ b ∧ f.mem (wayBelowUp b)
 
 end ContinuousLatticeToNeighborhood
 

@@ -21,7 +21,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem typed_comp {a b c f f' : Pomega}
-    (ha : IsRetract a) (hb : IsRetract b) (_hc : IsRetract c)
+    (ha : Retract a) (hb : Retract b) (_hc : Retract c)
     (hf : typed f (arrowR a b)) (hf' : typed f' (arrowR b c)) :
     typed (comp f' f) (arrowR a c) := by
   have hf1 := typed_of_arrowR hf

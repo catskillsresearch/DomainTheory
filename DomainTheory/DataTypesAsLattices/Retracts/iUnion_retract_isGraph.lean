@@ -16,7 +16,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retract_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem iUnion_retract_isGraph {xs : ℕ → Pomega} (h : ∀ n, IsRetract (xs n)) :
+theorem iUnion_retract_isGraph {xs : ℕ → Pomega} (h : ∀ n, Retract (xs n)) :
     IsGraph (⋃ n, xs n) := by
   intro k m n hkm hkn
   obtain ⟨i, hi⟩ := Set.mem_iUnion.mp hkm

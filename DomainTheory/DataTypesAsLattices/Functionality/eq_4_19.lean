@@ -19,7 +19,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, (4.19).** `diag ∘ a : a ∘→ a ⊗ a`. -/
-theorem eq_4_19 {a : Pomega} (ha : IsRetract a) :
+theorem eq_4_19 {a : Pomega} (ha : Retract a) :
     typed (comp diagC a) (arrowR a (tensorR a a)) := by
   change comp diagC a = funOf (arrowR a (tensorR a a)) (comp diagC a)
   rw [arrowR_app]

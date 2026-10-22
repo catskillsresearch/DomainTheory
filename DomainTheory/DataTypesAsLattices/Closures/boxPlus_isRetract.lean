@@ -18,8 +18,9 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 5.4 (sum half), idempotence.** -/
-theorem boxPlus_isRetract {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
-    IsRetract (boxPlus a b) := by
+theorem boxPlus_isRetract {a b : Pomega} (ha : Retract a) (hb : Retract b) :
+    Retract (boxPlus a b) := by
+  constructor
   change boxPlus a b =
     graph (fun u => funOf (boxPlus a b) (funOf (boxPlus a b) u))
   apply graph_ext

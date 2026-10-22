@@ -7,7 +7,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices
 public import DomainTheory.DataTypesAsLattices.Lambda
-public import DomainTheory.DataTypesAsLattices.Retracts.IsRetract
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
@@ -24,10 +24,10 @@ namespace DomainTheory.DataTypesAsLattices
 point retract. -/
 theorem inverseLimit_iUnion_typed {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
-    (hret : ∀ a, IsRetract a → IsRetract (F a))
-    (hstrict : ∀ a, IsRetract a → IsStrict a → IsStrict (F a))
-    (hmono : ∀ {a b}, IsRetract a → IsStrict a →
-      IsRetract b → IsStrict b → retractLe a b → retractLe (F a) (F b))
+    (hret : ∀ a, Retract a → Retract (F a))
+    (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))
+    (hmono : ∀ {a b}, Retract a → IsStrict a →
+      Retract b → IsStrict b → retractLe a b → retractLe (F a) (F b))
     (v : RetractInverseLimit F) :
     typed (⋃ n, v.1 n) (fix F) := by
   change (⋃ n, v.1 n) = funOf (fix F) (⋃ n, v.1 n)

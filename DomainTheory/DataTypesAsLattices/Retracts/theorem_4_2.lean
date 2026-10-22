@@ -17,7 +17,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 4.2 (The partial ordering theorem).** -/
 theorem theorem_4_2 {a b c : Pomega} :
-    (IsRetract a → retractLe a a) ∧
+    (Retract a → retractLe a a) ∧
       (retractLe a b → retractLe b a → a = b) ∧
       (retractLe a b → retractLe b c → retractLe a c) := by
   refine ⟨retractLe_refl, ?_, ?_⟩

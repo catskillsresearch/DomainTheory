@@ -16,7 +16,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem funOf_fix_idem {F : Pomega → Pomega} (hf : IsScottContinuous F)
-    (hret : ∀ a, IsRetract a → IsRetract (F a)) (x : Pomega) :
+    (hret : ∀ a, Retract a → Retract (F a)) (x : Pomega) :
     funOf (fix F) (funOf (fix F) x) = funOf (fix F) x := by
   have hchain : ∀ n m, n ≤ m → iterateBot F n ⊆ iterateBot F m :=
     chain_mono (iterateBot F) (iterateBot_mono hf)

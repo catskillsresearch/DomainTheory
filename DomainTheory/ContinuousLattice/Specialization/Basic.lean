@@ -10,7 +10,7 @@ public import Mathlib.Topology.Order.ScottTopology
 public import Mathlib.Order.DirSupClosed
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.Specialization.IsMonotoneNet
+public import DomainTheory.ContinuousLattice.Specialization.MonotoneNet
 public import DomainTheory.ContinuousLattice.Specialization.ScottConvergesTo
 public import DomainTheory.ContinuousLattice.Specialization.specializationPreorder
 

@@ -25,7 +25,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_top
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem boxPlus_app_app {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b)
+theorem boxPlus_app_app {a b : Pomega} (ha : Retract a) (hb : Retract b)
     (u : Pomega) :
     funOf (boxPlus a b) (funOf (boxPlus a b) u) = funOf (boxPlus a b) u := by
   by_cases hx : squareFst u = botElem <;> by_cases hy : squareSnd u = botElem

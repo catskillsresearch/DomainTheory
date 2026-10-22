@@ -18,8 +18,9 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxTensor_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem boxTensor_isRetract {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
-    IsRetract (boxTensor a b) := by
+theorem boxTensor_isRetract {a b : Pomega} (ha : Retract a) (hb : Retract b) :
+    Retract (boxTensor a b) := by
+  constructor
   change boxTensor a b =
     graph (fun u => funOf (boxTensor a b) (funOf (boxTensor a b) u))
   apply graph_ext

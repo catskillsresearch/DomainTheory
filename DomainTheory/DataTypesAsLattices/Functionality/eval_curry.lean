@@ -24,7 +24,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, after (4.25).** `eval ∘ (curry(f) ⊗ b) = f`. -/
 theorem eval_curry {a b c f : Pomega}
-    (_ha : IsRetract a) (hb : IsRetract b) (_hc : IsRetract c)
+    (_ha : Retract a) (hb : Retract b) (_hc : Retract c)
     (hf : typed f (arrowR (tensorR a b) c)) :
     comp evalC (tensorR (funOf curryC f) b) = f := by
   have hf' := typed_of_arrowR hf

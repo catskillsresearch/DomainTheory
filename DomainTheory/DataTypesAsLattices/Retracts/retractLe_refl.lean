@@ -7,14 +7,14 @@ module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices
 public import DomainTheory.DataTypesAsLattices.Lambda
-public import DomainTheory.DataTypesAsLattices.Retracts.IsRetract
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
 
-theorem retractLe_refl {a : Pomega} (ha : IsRetract a) : retractLe a a :=
-  ⟨ha, ha⟩
+theorem retractLe_refl {a : Pomega} (ha : Retract a) : retractLe a a :=
+  ⟨ha.out, ha.out⟩
 
 end DomainTheory.DataTypesAsLattices

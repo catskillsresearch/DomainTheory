@@ -21,8 +21,9 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 4.5 (i).** `a ⊕ b` is a retract when `a` and `b` are. -/
-theorem plusR_isRetract {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
-    IsRetract (plusR a b) := by
+theorem plusR_isRetract {a b : Pomega} (ha : Retract a) (hb : Retract b) :
+    Retract (plusR a b) := by
+  constructor
   change plusR a b =
     graph (fun u => funOf (plusR a b) (funOf (plusR a b) u))
   apply graph_ext

@@ -7,7 +7,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices
 public import DomainTheory.DataTypesAsLattices.Lambda
-public import DomainTheory.DataTypesAsLattices.Retracts.IsRetract
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_botElem
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
@@ -20,8 +20,8 @@ namespace DomainTheory.DataTypesAsLattices
 /-- Strictness of all Kleene approximants of a strictness-preserving
 retract functor. -/
 theorem iterateBot_isStrict {F : Pomega → Pomega}
-    (hret : ∀ a, IsRetract a → IsRetract (F a))
-    (hstrict : ∀ a, IsRetract a → IsStrict a → IsStrict (F a)) :
+    (hret : ∀ a, Retract a → Retract (F a))
+    (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a)) :
     ∀ n, IsStrict (iterateBot F n)
   | 0 => by simp [iterateBot, IsStrict, funOf_botElem]
   | n + 1 =>

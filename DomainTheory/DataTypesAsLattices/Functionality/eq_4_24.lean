@@ -20,7 +20,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, (4.24).** `eval ∘ ((b ∘→ c) ⊗ b) : ((b ∘→ c) ⊗ b) ∘→ c`. -/
-theorem eq_4_24 {b c : Pomega} (hb : IsRetract b) (hc : IsRetract c) :
+theorem eq_4_24 {b c : Pomega} (hb : Retract b) (hc : Retract c) :
     typed (comp evalC (tensorR (arrowR b c) b))
       (arrowR (tensorR (arrowR b c) b) c) := by
   change comp evalC (tensorR (arrowR b c) b) =

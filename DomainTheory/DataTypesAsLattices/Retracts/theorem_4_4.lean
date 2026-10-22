@@ -20,7 +20,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem theorem_4_4 :
     (∀ x y, funOf (pairSeq x y) (ofNat 0) = x ∧
       funOf (pairSeq x y) (ofNat 1) = y) ∧
-      IsRetract botElem :=
+      Retract botElem :=
   ⟨fun x y => theorem_4_4_ii x y, bot_isRetract⟩
 
 end DomainTheory.DataTypesAsLattices

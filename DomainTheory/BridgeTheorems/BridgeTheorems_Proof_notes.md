@@ -138,7 +138,7 @@ with `ScottMap D E` (needs roundness preservation of approximable maps), and rel
 - [BridgeTheorems/ContinuousLatticeToNeighborhood/wayBelowUp_inter.lean](ContinuousLatticeToNeighborhood/wayBelowUp_inter.lean)
 - [BridgeTheorems/ContinuousLatticeToNeighborhood/toNeighborhoodSystem.lean](ContinuousLatticeToNeighborhood/toNeighborhoodSystem.lean)
 - [BridgeTheorems/ContinuousLatticeToNeighborhood/Filter.lean](ContinuousLatticeToNeighborhood/Filter.lean)
-- [BridgeTheorems/ContinuousLatticeToNeighborhood/IsRound.lean](ContinuousLatticeToNeighborhood/IsRound.lean)
+- [BridgeTheorems/ContinuousLatticeToNeighborhood/Round.lean](ContinuousLatticeToNeighborhood/Round.lean)
 - [BridgeTheorems/ContinuousLatticeToNeighborhood/RoundFilter.lean](ContinuousLatticeToNeighborhood/RoundFilter.lean)
 - [BridgeTheorems/ContinuousLatticeToNeighborhood/codes.lean](ContinuousLatticeToNeighborhood/codes.lean)
 - [BridgeTheorems/ContinuousLatticeToNeighborhood/bot_mem_codes.lean](ContinuousLatticeToNeighborhood/bot_mem_codes.lean)

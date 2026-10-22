@@ -16,7 +16,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- Continuous-lattice interpolation: `x = ⋃ { a(e n) | e n ⊆ x }`. -/
-theorem retract_interpolation {a x : Pomega} (_ha : IsRetract a) (hx : typed x a) :
+theorem retract_interpolation {a x : Pomega} (_ha : Retract a) (hx : typed x a) :
     x = ⋃ n, {k | e n ⊆ x ∧ k ∈ funOf a (e n)} := by
   have hx' : funOf a x = x := hx.symm
   have hsc := funOf_isScottContinuous a x

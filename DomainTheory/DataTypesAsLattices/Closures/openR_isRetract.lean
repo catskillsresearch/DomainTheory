@@ -17,7 +17,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.openR_idem
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem openR_isRetract : IsRetract openR := by
+theorem openR_isRetract : Retract openR := by
+  constructor
   change openR = graph (fun x => funOf openR (funOf openR x))
   apply graph_ext
   intro u

@@ -18,7 +18,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 4.6 applied to (4.39).** -/
-theorem lambR_isRetract : IsRetract lambR :=
+theorem lambR_isRetract : Retract lambR :=
   (theorem_4_6 lambF_isScottContinuous (fun _a ha =>
     plusR_isRetract intR_isRetract (arrowR_isRetract ha ha))).2
 

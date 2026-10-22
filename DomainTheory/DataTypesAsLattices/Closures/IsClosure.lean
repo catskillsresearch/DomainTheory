@@ -13,6 +13,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, §5, Definition.** `a` is a closure operation iff `I ⊆ a = a ∘ a`. -/
 def IsClosure (a : Pomega) : Prop :=
-  Icomb ⊆ a ∧ IsRetract a
+  Icomb ⊆ a ∧ Retract a
 
 end DomainTheory.DataTypesAsLattices

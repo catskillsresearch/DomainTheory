@@ -23,12 +23,12 @@ limit of the ranges of `Fⁿ(⊥)`. Stated without `≃o` so the compared
 type does not mention a `CompleteLattice` instance. -/
 theorem theorem_4_6_limit {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
-    (hret : ∀ a, IsRetract a → IsRetract (F a))
-    (hstrict : ∀ a, IsRetract a → IsStrict a → IsStrict (F a))
-    (hmono : ∀ {a b}, IsRetract a → IsStrict a →
-      IsRetract b → IsStrict b → retractLe a b → retractLe (F a) (F b)) :
-    (∀ n, IsRetract (iterateBot F n)) ∧
-      IsRetract (funOf Ycomb (graph F)) ∧
+    (hret : ∀ a, Retract a → Retract (F a))
+    (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))
+    (hmono : ∀ {a b}, Retract a → IsStrict a →
+      Retract b → IsStrict b → retractLe a b → retractLe (F a) (F b)) :
+    (∀ n, Retract (iterateBot F n)) ∧
+      Retract (funOf Ycomb (graph F)) ∧
         ∃ φ : Fixpoints (funOf (fix F)) → RetractInverseLimit F,
           Function.Bijective φ ∧
             ∀ x y : Fixpoints (funOf (fix F)),

@@ -18,7 +18,7 @@ def closureCompact (a : Pomega) (ha : IsClosure a) (n : ℕ) :
     have hcont : IsScottContinuous (fun y => funOf a (funOf a y)) :=
       theorem_1_3 (funOf_isScottContinuous a) (funOf_isScottContinuous a)
     have hbeta := (theorem_1_2 hcont (comp a a)).1
-    have h := congrArg (fun u => funOf u (e n)) ha.2
+    have h := congrArg (fun u => funOf u (e n)) ha.2.out
     have hcomp : funOf (comp a a) (e n) = funOf a (funOf a (e n)) :=
       congrArg (fun f => f (e n)) hbeta
     exact hcomp.symm.trans h.symm⟩

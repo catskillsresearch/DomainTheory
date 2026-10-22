@@ -18,8 +18,9 @@ public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_i
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem arrowR_isRetract {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
-    IsRetract (arrowR a b) := by
+theorem arrowR_isRetract {a b : Pomega} (ha : Retract a) (hb : Retract b) :
+    Retract (arrowR a b) := by
+  constructor
   change arrowR a b =
     graph (fun x => funOf (arrowR a b) (funOf (arrowR a b) x))
   apply graph_ext

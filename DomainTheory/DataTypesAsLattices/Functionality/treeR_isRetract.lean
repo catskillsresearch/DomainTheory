@@ -19,7 +19,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 4.6 applied to (4.38).** -/
-theorem treeR_isRetract : IsRetract treeR :=
+theorem treeR_isRetract : Retract treeR :=
   (theorem_4_6 treeF_isScottContinuous (fun _a ha =>
     plusR_isRetract bot_isRetract (tensorR_isRetract ha ha))).2
 

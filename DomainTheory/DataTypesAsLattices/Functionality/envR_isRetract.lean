@@ -16,7 +16,8 @@ public import DomainTheory.DataTypesAsLattices.Functionality.envR_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem envR_isRetract : IsRetract envR := by
+theorem envR_isRetract : Retract envR := by
+  constructor
   change envR = graph (fun t => funOf envR (funOf envR t))
   apply graph_ext
   intro t

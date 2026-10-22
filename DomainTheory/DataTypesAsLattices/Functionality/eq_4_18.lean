@@ -18,7 +18,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, (4.18).** `snd ∘ (a ⊗ b) : (a ⊗ b) ∘→ b`. -/
-theorem eq_4_18 {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
+theorem eq_4_18 {a b : Pomega} (ha : Retract a) (hb : Retract b) :
     typed (comp sndC (tensorR a b)) (arrowR (tensorR a b) b) := by
   change comp sndC (tensorR a b) =
     funOf (arrowR (tensorR a b) b) (comp sndC (tensorR a b))

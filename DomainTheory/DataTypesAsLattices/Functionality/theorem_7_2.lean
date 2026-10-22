@@ -20,7 +20,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 7.2 (The isomorphism theorem).** -/
-theorem theorem_7_2 {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
+theorem theorem_7_2 {a b : Pomega} (ha : Retract a) (hb : Retract b) :
     (∀ x y, funOf a x = funOf a y ↔ (Ea a).rel (funOf a x) (funOf a y)) ∧
       (∀ f g, (typed f (arrowR a b) → (arrowE (Ea a) (Ea b)).mem f) ∧
         ((arrowE (Ea a) (Ea b)).rel f g →

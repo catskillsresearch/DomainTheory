@@ -18,7 +18,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 7.2 (ii).** Maps in `E_{a ∘→ b}` are graphs of
 maps from `a` to `b`, corresponding to `E_a → E_b`. -/
-theorem theorem_7_2_ii {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b)
+theorem theorem_7_2_ii {a b : Pomega} (ha : Retract a) (hb : Retract b)
     (f g : Pomega) :
     (typed f (arrowR a b) → (arrowE (Ea a) (Ea b)).mem f) ∧
       ((arrowE (Ea a) (Ea b)).rel f g →

@@ -25,7 +25,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 5.4 / analogue of 4.5.** Range of the paper sum. -/
-theorem boxPlus_typed_iff {a b u : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
+theorem boxPlus_typed_iff {a b u : Pomega} (ha : Retract a) (hb : Retract b) :
     typed u (boxPlus a b) ↔
       u = botElem ∨ u = topElem ∨
         (∃ x, u = squarePair x botElem ∧ typed x (boxShift a)) ∨

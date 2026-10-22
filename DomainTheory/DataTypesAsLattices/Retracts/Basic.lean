@@ -6,7 +6,7 @@ module
 public import DomainTheory.DataTypesAsLattices.FixedLattices
 public import DomainTheory.DataTypesAsLattices.Lambda
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
-public import DomainTheory.DataTypesAsLattices.Retracts.IsRetract
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.IsDirectedSubset
 public import DomainTheory.DataTypesAsLattices.Retracts.IsCompactSubset

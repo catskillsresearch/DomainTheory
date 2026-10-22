@@ -18,7 +18,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem typed_arrowR_restrict {a b u : Pomega}
-    (ha : IsRetract a) (hu : typed u (arrowR a b)) :
+    (ha : Retract a) (hu : typed u (arrowR a b)) :
     u = comp u a := by
   have hu' := typed_of_arrowR hu
   have h : comp (comp b (comp u a)) a = comp b (comp u a) := by

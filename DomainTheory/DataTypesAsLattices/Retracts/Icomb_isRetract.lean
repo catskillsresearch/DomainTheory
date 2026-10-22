@@ -16,7 +16,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Icomb_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem Icomb_isRetract : IsRetract Icomb := by
+theorem Icomb_isRetract : Retract Icomb := by
+  constructor
   change Icomb = graph (fun x => funOf Icomb (funOf Icomb x))
   have : (fun x => funOf Icomb (funOf Icomb x)) = fun x => x := by
     funext x

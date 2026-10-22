@@ -17,7 +17,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.boool_idem
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem boool_isRetract : IsRetract boool := by
+theorem boool_isRetract : Retract boool := by
+  constructor
   apply graph_ext
   intro u
   rw [boool_app, boool_app, boool_idem]

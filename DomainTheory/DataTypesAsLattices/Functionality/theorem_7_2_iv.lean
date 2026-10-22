@@ -25,7 +25,7 @@ namespace DomainTheory.DataTypesAsLattices
 /-- **Scott 1976, Theorem 7.2 (iv).**
 The exact identity
 `E_{a ⊕ b} = E_a + E_b ∪ {⟨⊥,⊥⟩, ⟨⊤,⊤⟩}`. -/
-theorem theorem_7_2_iv {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b)
+theorem theorem_7_2_iv {a b : Pomega} (ha : Retract a) (hb : Retract b)
     (u v : Pomega) :
     (Ea (plusR a b)).rel u v ↔
       (sumE (Ea a) (Ea b)).rel u v ∨

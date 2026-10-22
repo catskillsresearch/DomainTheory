@@ -32,7 +32,7 @@ universe u
 variable {D : Type u} [CompleteLattice D] [DecidableEq D]
 
 /-- Roundness transported to InfoSys elements of the `↟`-basis. -/
-def IsRoundInfoSysElement (e : (wayBelowNbhdBasis (D := D)).toInfoSys.Element) : Prop :=
-  IsRound ((wayBelowNbhdBasis (D := D)).domainOrderIso.symm e)
+class IsRoundInfoSysElement (e : (wayBelowNbhdBasis (D := D)).toInfoSys.Element) : Prop where
+  out : Round ((wayBelowNbhdBasis (D := D)).domainOrderIso.symm e)
 
 end DomainTheory.BridgeTheorems

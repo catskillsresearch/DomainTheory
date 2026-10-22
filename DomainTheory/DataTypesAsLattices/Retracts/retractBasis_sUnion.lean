@@ -18,7 +18,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_sSup
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem retractBasis_sUnion {a : Pomega} (ha : IsRetract a)
+theorem retractBasis_sUnion {a : Pomega} (ha : Retract a)
     (x : Fixpoints (funOf a)) :
     (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) := by
   have h := retractBasis_sSup ha x

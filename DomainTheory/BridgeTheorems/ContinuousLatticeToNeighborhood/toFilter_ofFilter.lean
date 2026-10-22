@@ -11,7 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Bas
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toNeighborhoodSystem
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Filter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.IsRound
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Round
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.mem_wayBelowUp_ofFilter_of_round
 
@@ -29,7 +29,7 @@ namespace ContinuousLatticeToNeighborhood
 
 variable {D : Type*} [CompleteLattice D]
 
-theorem toFilter_ofFilter {f : Filter (D := D)} (hr : IsRound f) :
+theorem toFilter_ofFilter {f : Filter (D := D)} (hr : Round f) :
     toFilter (ofFilter f) = f := by
   refine NeighborhoodSystem.Element.ext (V := toNeighborhoodSystem) fun U => ?_
   constructor

@@ -26,7 +26,8 @@ theorem Vapply_graph_isClosure (a : Pomega) :
   · intro p hp
     rcases hp with ⟨n, m, rfl, hm⟩
     exact ⟨n, m, rfl, eq_5_16 a (e n) hm⟩
-  · change graph (fun x => Vapply a x) =
+  · constructor
+    change graph (fun x => Vapply a x) =
         graph (fun x =>
           funOf (graph (fun z => Vapply a z))
             (funOf (graph (fun z => Vapply a z)) x))

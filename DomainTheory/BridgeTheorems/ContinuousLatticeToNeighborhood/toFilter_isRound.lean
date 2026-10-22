@@ -10,7 +10,7 @@ public import DomainTheory.ContinuousLattice.WayBelow
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.mem_wayBelowUp_toFilter
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.IsRound
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Round
 
 @[expose] public section
 
@@ -32,7 +32,8 @@ variable (hD : IsContinuousLattice D)
 
 include hD
 
-theorem toFilter_isRound (x : D) : IsRound (toFilter x) := by
+theorem toFilter_isRound (x : D) : Round (toFilter x) := by
+  constructor
   intro a ha
   have ha' : a ≪ x := mem_wayBelowUp_toFilter.mp ha
   obtain ⟨b, hab, hbx⟩ := wayBelow_interpolate hD ha'

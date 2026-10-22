@@ -16,7 +16,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, (4.35).** `b ∘ outright ∘ (a ⊕ b) : (a ⊕ b) ∘→ b`. -/
-theorem eq_4_35 {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
+theorem eq_4_35 {a b : Pomega} (ha : Retract a) (hb : Retract b) :
     typed (comp b (comp outrightC (plusR a b))) (arrowR (plusR a b) b) := by
   change comp b (comp outrightC (plusR a b)) =
     funOf (arrowR (plusR a b) b) (comp b (comp outrightC (plusR a b)))

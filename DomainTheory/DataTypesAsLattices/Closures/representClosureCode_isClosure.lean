@@ -24,7 +24,8 @@ theorem representClosureCode_isClosure
   · intro p hp
     rcases hp with ⟨n, m, rfl, hm⟩
     exact ⟨n, m, rfl, representClosure_expansive D (e n) hm⟩
-  · change representClosureCode D =
+  · constructor
+    change representClosureCode D =
       graph (fun x => funOf (representClosureCode D)
         (funOf (representClosureCode D) x))
     apply graph_ext

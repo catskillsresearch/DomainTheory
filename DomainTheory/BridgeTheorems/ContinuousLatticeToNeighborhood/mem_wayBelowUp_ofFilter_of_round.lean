@@ -11,7 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Bas
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp_anti
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Filter
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.IsRound
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Round
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.codes_nonempty
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.codes_directed
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter
@@ -30,11 +30,11 @@ namespace ContinuousLatticeToNeighborhood
 
 variable {D : Type*} [CompleteLattice D]
 
-theorem mem_wayBelowUp_ofFilter_of_round {f : Filter (D := D)} (hr : IsRound f) {a : D} :
+theorem mem_wayBelowUp_ofFilter_of_round {f : Filter (D := D)} (hr : Round f) {a : D} :
     f.mem (wayBelowUp a) ↔ a ≪ ofFilter f := by
   constructor
   · intro ha
-    obtain ⟨b, hab, hb⟩ := hr ha
+    obtain ⟨b, hab, hb⟩ := hr.out ha
     exact (wayBelow_sSup_iff (codes_nonempty f) (codes_directed f)).2 ⟨b, hb, hab⟩
   · intro ha
     obtain ⟨b, hbS, hab⟩ := (wayBelow_sSup_iff (codes_nonempty f) (codes_directed f)).1 ha

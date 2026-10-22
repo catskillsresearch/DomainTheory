@@ -24,7 +24,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 4.4.** The product mediator is unique. -/
 theorem theorem_4_4_med_unique {a b c f g h : Pomega}
-    (ha : IsRetract a) (hb : IsRetract b) (hc : IsRetract c)
+    (ha : Retract a) (hb : Retract b) (hc : Retract c)
     (hf : typed f (arrowR c a)) (hg : typed g (arrowR c b))
     (hh : typed h (arrowR c (tensorR a b)))
     (hfst : comp fstC h = f) (hsnd : comp sndC h = g) :

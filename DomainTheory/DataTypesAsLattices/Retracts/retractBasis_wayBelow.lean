@@ -17,7 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.sSup_fixed_eq_sUnion
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem retractBasis_wayBelow {a : Pomega} (_ha : IsRetract a)
+theorem retractBasis_wayBelow {a : Pomega} (_ha : Retract a)
     {x y : Fixpoints (funOf a)} (hy : y ∈ retractBasis a x) :
     WayBelow y x := by
   intro A hA hxA

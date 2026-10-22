@@ -5,7 +5,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices
 public import DomainTheory.DataTypesAsLattices.Lambda
-public import DomainTheory.DataTypesAsLattices.Retracts.IsRetract
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
@@ -24,10 +24,10 @@ namespace DomainTheory.DataTypesAsLattices
 `u ↦ (Fⁿ(⊥)(u))ₙ` and `(vₙ) ↦ ⋃ₙ vₙ` are inverse order isomorphisms. -/
 def theorem_4_6_inverseLimit {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
-    (hret : ∀ a, IsRetract a → IsRetract (F a))
-    (hstrict : ∀ a, IsRetract a → IsStrict a → IsStrict (F a))
-    (hmono : ∀ {a b}, IsRetract a → IsStrict a →
-      IsRetract b → IsStrict b → retractLe a b → retractLe (F a) (F b)) :
+    (hret : ∀ a, Retract a → Retract (F a))
+    (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))
+    (hmono : ∀ {a b}, Retract a → IsStrict a →
+      Retract b → IsStrict b → retractLe a b → retractLe (F a) (F b)) :
     Fixpoints (funOf (fix F)) ≃o RetractInverseLimit F where
   toFun := fixedToInverseLimit hf hret hstrict hmono
   invFun := inverseLimitToFixed hf hret hstrict hmono

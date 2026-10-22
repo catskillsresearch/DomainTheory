@@ -22,7 +22,7 @@ variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 
 variable {ι : Type u} [Preorder ι] [IsDirected ι (· ≤ ·)]
 
-def IsMonotoneNet (x : ι → D) : Prop :=
-  Monotone x
+class MonotoneNet (x : ι → D) : Prop where
+  out : Monotone x
 
 end DomainTheory.ContinuousLattice

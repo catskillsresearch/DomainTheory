@@ -23,12 +23,13 @@ Kleene iterates of a retract-preserving continuous `F` are retracts, and
 `Y(F)` is a retract by the chain-union calculation. -/
 theorem theorem_4_6 {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
-    (hret : ∀ a, IsRetract a → IsRetract (F a)) :
-    (∀ n, IsRetract (iterateBot F n)) ∧
-      IsRetract (funOf Ycomb (graph F)) := by
+    (hret : ∀ a, Retract a → Retract (F a)) :
+    (∀ n, Retract (iterateBot F n)) ∧
+      Retract (funOf Ycomb (graph F)) := by
   refine ⟨iterates_areRetracts hret, ?_⟩
   have hY : funOf Ycomb (graph F) = fix F := theorem_2_5 hf
   rw [hY]
+  constructor
   change fix F = graph (fun x => funOf (fix F) (funOf (fix F) x))
   have hG : IsGraph (fix F) :=
     iUnion_retract_isGraph (iterates_areRetracts hret)

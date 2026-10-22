@@ -22,7 +22,7 @@ namespace DomainTheory.DataTypesAsLattices
 The finite-image points form a directed way-below basis for every point in
 the range of a retract. Stated with subset directedness so the compared
 type does not mention a `CompleteLattice` instance. -/
-theorem theorem_4_1_continuous {a : Pomega} (ha : IsRetract a) :
+theorem theorem_4_1_continuous {a : Pomega} (ha : Retract a) :
     ∀ x : Fixpoints (funOf a),
       IsDirectedSubset (retractBasis a x) ∧
         (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) ∧

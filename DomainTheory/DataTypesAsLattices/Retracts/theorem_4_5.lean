@@ -21,7 +21,7 @@ theorem theorem_4_5 :
     dcondSet botElem
         (pairSeq (ofNat 0) (funOf a botElem))
         (pairSeq (ofNat 1) (funOf b botElem)) = botElem ∧
-      IsRetract botElem :=
+      Retract botElem :=
   ⟨theorem_4_5_strict a b, bot_isRetract⟩
 
 end DomainTheory.DataTypesAsLattices

@@ -24,7 +24,7 @@ namespace DomainTheory.DataTypesAsLattices
 /-- **Scott 1976, (4.25).**
 `curry ∘ ((a ⊗ b) ∘→ c) : ((a ⊗ b) ∘→ c) ∘→ (a ∘→ (b ∘→ c))`. -/
 theorem eq_4_25 {a b c : Pomega}
-    (ha : IsRetract a) (hb : IsRetract b) (hc : IsRetract c) :
+    (ha : Retract a) (hb : Retract b) (hc : Retract c) :
     typed (comp curryC (arrowR (tensorR a b) c))
       (arrowR (arrowR (tensorR a b) c) (arrowR a (arrowR b c))) := by
   change comp curryC (arrowR (tensorR a b) c) =

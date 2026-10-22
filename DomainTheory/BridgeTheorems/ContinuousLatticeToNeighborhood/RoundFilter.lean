@@ -7,7 +7,7 @@ public import Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.WayBelow
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Filter
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.IsRound
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Round
 
 @[expose] public section
 
@@ -31,7 +31,7 @@ include hD
 
 /-- Round filters of the `↟`-system. -/
 abbrev RoundFilter : Type _ :=
-  { f : Filter (D := D) // IsRound f }
+  { f : Filter (D := D) // Round f }
 
 end Continuous
 

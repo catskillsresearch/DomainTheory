@@ -33,7 +33,7 @@ variable {x : ι → D} {L y : D}
 
 /-- **Scott 1972, Proposition 2.1.** A monotone net with least upper bound `L` converges to
 `y` in the Scott topology iff `y ⊑ L = ⊔ {xᵢ}`. -/
-theorem proposition_2_1 [Nonempty ι] (hx : IsMonotoneNet x) (hL : IsLUB (range x) L) :
+theorem proposition_2_1 [Nonempty ι] (hx : MonotoneNet x) (hL : IsLUB (range x) L) :
     ScottConvergesTo x y ↔ y ≤ L :=
   ⟨fun hconv => proposition_2_1_le_of_converges hL hconv, proposition_2_1_of_le hx hL⟩
 

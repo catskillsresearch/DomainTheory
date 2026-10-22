@@ -49,6 +49,6 @@ theorem theorem_5_5_iff (a : Pomega) :
               = Vapply a (Vapply a x) := (eq_5_17 a x).symm
             _ = funOf a (Vapply a x) := (happ (Vapply a x)).symm
             _ = funOf a (funOf a x) := by rw [← happ x]
-      exact ha.trans this
+      exact ⟨ha.trans this⟩
 
 end DomainTheory.DataTypesAsLattices

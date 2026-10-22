@@ -19,8 +19,9 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 4.4.** Products of retracts are retracts. -/
-theorem tensorR_isRetract {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
-    IsRetract (tensorR a b) := by
+theorem tensorR_isRetract {a b : Pomega} (ha : Retract a) (hb : Retract b) :
+    Retract (tensorR a b) := by
+  constructor
   change tensorR a b =
     graph (fun u => funOf (tensorR a b) (funOf (tensorR a b) u))
   apply graph_ext

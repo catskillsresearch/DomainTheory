@@ -23,9 +23,9 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 4.3 (The function space theorem).** -/
 theorem theorem_4_3 {a b a' b' c : Pomega}
-    (ha : IsRetract a) (hb : IsRetract b) (_ha' : IsRetract a')
-    (_hb' : IsRetract b') (hc : IsRetract c) :
-    IsRetract (arrowR a b) ∧
+    (ha : Retract a) (hb : Retract b) (_ha' : Retract a')
+    (_hb' : Retract b') (hc : Retract c) :
+    Retract (arrowR a b) ∧
       (IsStrict b → IsStrict (arrowR a b)) ∧
       (∀ u, typed u (arrowR a b) ↔
         u = comp u a ∧ ∀ x, typed x a → typed (funOf u x) b) ∧

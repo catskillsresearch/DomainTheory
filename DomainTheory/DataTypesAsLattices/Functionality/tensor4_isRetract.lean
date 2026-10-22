@@ -21,8 +21,9 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem tensor4_isRetract {a b c d : Pomega}
-    (ha : IsRetract a) (hb : IsRetract b) (hc : IsRetract c) (hd : IsRetract d) :
-    IsRetract (tensor4 a b c d) := by
+    (ha : Retract a) (hb : Retract b) (hc : Retract c) (hd : Retract d) :
+    Retract (tensor4 a b c d) := by
+  constructor
   change tensor4 a b c d =
     graph (fun u => funOf (tensor4 a b c d) (funOf (tensor4 a b c d) u))
   apply graph_ext

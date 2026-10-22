@@ -17,7 +17,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem funRetract_isRetract : IsRetract funRetract := by
+theorem funRetract_isRetract : Retract funRetract := by
+  constructor
   apply graph_ext
   intro u
   rw [funRetract_app, funRetract_app]
