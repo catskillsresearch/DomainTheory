@@ -1,4 +1,4 @@
-# Continuous lattices and the way-below relation \(x \ll y\)
+# Continuous lattices and the way-below relation
 
 ## Human-English
 

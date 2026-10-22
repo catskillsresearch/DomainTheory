@@ -1,5 +1,9 @@
 # Retracts of the universal domain
 
+**Dependencies.** Inside RetractsOfTheUniversalDomain, each box is one subfolder, or one Lean file sitting directly in the folder. A box named as another folder in this chapter is that whole folder. A box named as another chapter is that whole chapter. The arrowhead points at the file or folder that imports, and the number is how many direct imports.
+
+@import "RetractsOfTheUniversalDomain.mermaid"
+
 ## Human-English
 
 @import "1980_Retracts_of_the_universal_domain.english" {code_block=false}

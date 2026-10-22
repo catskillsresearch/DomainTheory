@@ -1,0 +1,235 @@
+%% Inside TypedLambdaCalculus. A box is one Lean file in this folder, or one subfolder.
+%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
+%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+flowchart TB
+  N0["DomainConstructs"]
+  N1["FixedPointsAndRecursion"]
+  N2["MappingsBetweenDomains"]
+  N3["Exercise507/"]
+  N4["Exercise507"]
+  N5["Exercise508/"]
+  N6["Exercise508"]
+  N7["Exercise509/"]
+  N8["Exercise509"]
+  N9["Exercise510/"]
+  N10["Exercise510"]
+  N11["Exercise511/"]
+  N12["Exercise511"]
+  N13["Exercise512/"]
+  N14["Exercise512"]
+  N15["Exercise515/"]
+  N16["Exercise515"]
+  N17["Exercise516/"]
+  N18["Exercise516"]
+  N19["Exercise516ThueMorse/"]
+  N20["Exercise516ThueMorse"]
+  N21["Exercise516Overlap/"]
+  N22["Exercise516Overlap"]
+  N23["Proposition54/"]
+  N24["Proposition54"]
+  N25["Table55/"]
+  N26["Table55"]
+  N27["Proposition53/"]
+  N28["Proposition53"]
+  N29["Theorem51/"]
+  N30["Theorem51"]
+  N31["Theorem52/"]
+  N32["Theorem52"]
+  N33["Theorem56/"]
+  N34["Theorem56"]
+  N35["Theorem56Full/"]
+  N36["Theorem56Full"]
+  N37["nextCell"]
+  N38["tri"]
+  N39["num"]
+  N40["numP"]
+  N41["num_succ_right"]
+  N42["num_zero_zero"]
+  N43["two_dvd_mul_succ"]
+  N44["tri_mul_two"]
+  N45["tri_succ"]
+  N46["num_lt_tri_succ"]
+  N47["num_succ_left"]
+  N48["numP_nextCell"]
+  N49["tri_le_succ"]
+  N50["tri_mono"]
+  N51["num_injective"]
+  N52["unnum"]
+  N53["numP_unnum"]
+  N54["unnum_numP"]
+  N55["Exercise513"]
+  N56["Exercise514/"]
+  N57["Exercise514"]
+  N58["numEquiv"]
+  N59["numEquiv_apply"]
+  N60["setCongr"]
+  N61["PN_orderIso_PNN"]
+  N62["PN_orderIso_prod"]
+  N63["PNN_orderIso_prod"]
+
+  N0 -->|"8"| N3
+  N3 -->|"1"| N4
+  N0 -->|"16"| N5
+  N5 -->|"1"| N6
+  N1 -->|"20"| N7
+  N2 -->|"2"| N7
+  N7 -->|"3"| N8
+  N0 -->|"62"| N9
+  N9 -->|"1"| N10
+  N0 -->|"25"| N11
+  N1 -->|"27"| N11
+  N11 -->|"4"| N12
+  N0 -->|"14"| N13
+  N1 -->|"13"| N13
+  N13 -->|"1"| N14
+  N1 -->|"28"| N15
+  N15 -->|"3"| N16
+  N0 -->|"66"| N17
+  N1 -->|"66"| N17
+  N17 -->|"6"| N18
+  N1 -->|"4"| N19
+  N18 -->|"34"| N19
+  N19 -->|"2"| N20
+  N19 -->|"6"| N21
+  N20 -->|"12"| N21
+  N21 -->|"1"| N22
+  N1 -->|"12"| N23
+  N23 -->|"1"| N24
+  N1 -->|"33"| N25
+  N25 -->|"13"| N26
+  N26 -->|"9"| N27
+  N27 -->|"1"| N28
+  N26 -->|"7"| N29
+  N29 -->|"5"| N30
+  N26 -->|"5"| N31
+  N31 -->|"4"| N32
+  N0 -->|"77"| N33
+  N1 -->|"34"| N33
+  N33 -->|"1"| N34
+  N0 -->|"84"| N35
+  N1 -->|"159"| N35
+  N2 -->|"78"| N35
+  N12 -->|"78"| N35
+  N35 -->|"1"| N36
+  N38 -->|"1"| N39
+  N39 -->|"1"| N40
+  N39 -->|"1"| N41
+  N39 -->|"1"| N42
+  N38 -->|"1"| N44
+  N43 -->|"1"| N44
+  N38 -->|"1"| N45
+  N44 -->|"1"| N45
+  N38 -->|"1"| N46
+  N39 -->|"1"| N46
+  N45 -->|"1"| N46
+  N39 -->|"1"| N47
+  N45 -->|"1"| N47
+  N37 -->|"1"| N48
+  N40 -->|"1"| N48
+  N41 -->|"1"| N48
+  N47 -->|"1"| N48
+  N38 -->|"1"| N49
+  N45 -->|"1"| N49
+  N38 -->|"1"| N50
+  N49 -->|"1"| N50
+  N38 -->|"1"| N51
+  N39 -->|"1"| N51
+  N40 -->|"1"| N51
+  N46 -->|"1"| N51
+  N50 -->|"1"| N51
+  N37 -->|"1"| N52
+  N37 -->|"1"| N53
+  N40 -->|"1"| N53
+  N42 -->|"1"| N53
+  N48 -->|"1"| N53
+  N52 -->|"1"| N53
+  N40 -->|"1"| N54
+  N51 -->|"1"| N54
+  N52 -->|"1"| N54
+  N53 -->|"1"| N54
+  N54 -->|"1"| N55
+  N55 -->|"16"| N56
+  N56 -->|"1"| N57
+  N40 -->|"1"| N58
+  N52 -->|"1"| N58
+  N53 -->|"1"| N58
+  N54 -->|"1"| N58
+  N39 -->|"1"| N59
+  N58 -->|"1"| N59
+  N59 -->|"1"| N60
+  N58 -->|"1"| N61
+  N59 -->|"1"| N61
+  N60 -->|"1"| N61
+  N59 -->|"1"| N62
+  N60 -->|"1"| N62
+  N59 -->|"1"| N63
+  N61 -->|"1"| N63
+  N62 -->|"1"| N63
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
+
+  class N0 ext
+  class N1 ext
+  class N2 ext
+  class N3 file
+  class N4 file
+  class N5 file
+  class N6 file
+  class N7 file
+  class N8 file
+  class N9 file
+  class N10 file
+  class N11 file
+  class N12 file
+  class N13 file
+  class N14 file
+  class N15 file
+  class N16 file
+  class N17 file
+  class N18 file
+  class N19 file
+  class N20 file
+  class N21 file
+  class N22 file
+  class N23 file
+  class N24 file
+  class N25 file
+  class N26 file
+  class N27 file
+  class N28 file
+  class N29 file
+  class N30 file
+  class N31 file
+  class N32 file
+  class N33 file
+  class N34 file
+  class N35 file
+  class N36 file
+  class N37 file
+  class N38 file
+  class N39 file
+  class N40 file
+  class N41 file
+  class N42 file
+  class N43 file
+  class N44 file
+  class N45 file
+  class N46 file
+  class N47 file
+  class N48 file
+  class N49 file
+  class N50 file
+  class N51 file
+  class N52 file
+  class N53 file
+  class N54 file
+  class N55 file
+  class N56 file
+  class N57 file
+  class N58 file
+  class N59 file
+  class N60 file
+  class N61 file
+  class N62 file
+  class N63 file

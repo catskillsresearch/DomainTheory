@@ -1,5 +1,9 @@
 # Fixed points and recursion
 
+**Dependencies.** Inside FixedPointsAndRecursion, each box is one subfolder, or one Lean file sitting directly in the folder. A box named as another folder in this chapter is that whole folder. A box named as another chapter is that whole chapter. The arrowhead points at the file or folder that imports, and the number is how many direct imports.
+
+@import "FixedPointsAndRecursion.mermaid"
+
 Having at this point a large supply of examples of domains (and further constructs of new domains), we now have to consider some other ways of defining functions — other than by explicit compositions of the very basic functions already mentioned. One of the most fruitful techniques is an infinitely iterated composition that is at the back of the idea of recursion. We will use the process over and over again in these lectures, not only to define new functions but also to define new domains. The heart of the matter lies in the so-called "Fixed-point Theorem":
 
 - [Theorem 4.1](Theorem41/1980_Theorem_4_1.md)

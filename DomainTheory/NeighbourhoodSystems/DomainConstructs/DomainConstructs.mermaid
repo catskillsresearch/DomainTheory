@@ -1,0 +1,280 @@
+%% Inside DomainConstructs. A box is one Lean file in this folder, or one subfolder.
+%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
+%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+flowchart TB
+  N0["DomainsGivenByNeighbourhoods"]
+  N1["MappingsBetweenDomains"]
+  N2["Exercise318/"]
+  N3["Exercise318"]
+  N4["Exercise319Sum/"]
+  N5["Exercise319Sum"]
+  N6["Product/"]
+  N7["Product"]
+  N8["Exercise314/"]
+  N9["Exercise314"]
+  N10["Exercise315/"]
+  N11["Exercise315"]
+  N12["Exercise316/"]
+  N13["Exercise316"]
+  N14["Exercise319/"]
+  N15["Exercise319"]
+  N16["Exercise324Distrib/"]
+  N17["Exercise324Distrib"]
+  N18["Exercise326/"]
+  N19["Exercise326"]
+  N20["Exercise326Sum/"]
+  N21["Exercise326Sum"]
+  N22["FunctionSpace/"]
+  N23["FunctionSpace"]
+  N24["Exercise317/"]
+  N25["Exercise317"]
+  N26["Exercise321/"]
+  N27["Exercise321"]
+  N28["Exercise322/"]
+  N29["Exercise322"]
+  N30["Exercise323/"]
+  N31["Exercise323"]
+  N32["Exercise324/"]
+  N33["Exercise324"]
+  N34["Exercise324Iter/"]
+  N35["Exercise324Iter"]
+  N36["Exercise328/"]
+  N37["Exercise328"]
+  N38["graph"]
+  N39["mem_graph"]
+  N40["C"]
+  N41["C_nonempty"]
+  N42["graph_injective"]
+  N43["graphEquiv"]
+  N44["joinMap"]
+  N45["meetMap"]
+  N46["sInter_eq_graph_meetMap"]
+  N47["C_inter"]
+  N48["sUnion_eq_graph_joinMap"]
+  N49["C_dir"]
+  N50["Exercise327"]
+  N51["funSpaceReprIso"]
+  N52["sierpinski"]
+  N53["mapOfOpen"]
+  N54["mapOfOpen_rel"]
+  N55["mapOfOpen_rel_empty"]
+  N56["openOfMap"]
+  N57["openOfMap_isOpen"]
+  N58["Exercise325"]
+  N59["openIso"]
+  N60["opensReprIso"]
+
+  N1 -->|"51"| N2
+  N2 -->|"2"| N3
+  N2 -->|"2"| N4
+  N3 -->|"9"| N4
+  N4 -->|"2"| N5
+  N1 -->|"108"| N6
+  N6 -->|"9"| N7
+  N7 -->|"4"| N8
+  N8 -->|"1"| N9
+  N7 -->|"17"| N10
+  N10 -->|"3"| N11
+  N11 -->|"33"| N12
+  N12 -->|"1"| N13
+  N7 -->|"8"| N14
+  N14 -->|"2"| N15
+  N5 -->|"9"| N16
+  N7 -->|"9"| N16
+  N16 -->|"3"| N17
+  N1 -->|"17"| N18
+  N7 -->|"17"| N18
+  N18 -->|"3"| N19
+  N5 -->|"24"| N20
+  N18 -->|"3"| N20
+  N19 -->|"24"| N20
+  N20 -->|"4"| N21
+  N0 -->|"85"| N22
+  N7 -->|"78"| N22
+  N22 -->|"22"| N23
+  N1 -->|"22"| N24
+  N13 -->|"22"| N24
+  N23 -->|"22"| N24
+  N24 -->|"2"| N25
+  N23 -->|"13"| N26
+  N26 -->|"3"| N27
+  N23 -->|"6"| N28
+  N28 -->|"2"| N29
+  N11 -->|"6"| N30
+  N23 -->|"6"| N30
+  N30 -->|"1"| N31
+  N11 -->|"4"| N32
+  N23 -->|"4"| N32
+  N32 -->|"1"| N33
+  N13 -->|"10"| N34
+  N23 -->|"10"| N34
+  N34 -->|"1"| N35
+  N0 -->|"9"| N36
+  N23 -->|"7"| N36
+  N36 -->|"1"| N37
+  N1 -->|"1"| N38
+  N23 -->|"1"| N38
+  N1 -->|"1"| N39
+  N23 -->|"1"| N39
+  N38 -->|"1"| N39
+  N1 -->|"1"| N40
+  N23 -->|"1"| N40
+  N38 -->|"1"| N40
+  N39 -->|"1"| N40
+  N1 -->|"1"| N41
+  N23 -->|"1"| N41
+  N38 -->|"1"| N41
+  N39 -->|"1"| N41
+  N40 -->|"1"| N41
+  N1 -->|"1"| N42
+  N23 -->|"1"| N42
+  N38 -->|"1"| N42
+  N39 -->|"1"| N42
+  N1 -->|"1"| N43
+  N23 -->|"1"| N43
+  N38 -->|"1"| N43
+  N39 -->|"1"| N43
+  N40 -->|"1"| N43
+  N42 -->|"1"| N43
+  N1 -->|"1"| N44
+  N23 -->|"1"| N44
+  N38 -->|"1"| N44
+  N39 -->|"1"| N44
+  N40 -->|"1"| N44
+  N1 -->|"1"| N45
+  N23 -->|"1"| N45
+  N39 -->|"1"| N45
+  N40 -->|"1"| N45
+  N1 -->|"1"| N46
+  N23 -->|"1"| N46
+  N38 -->|"1"| N46
+  N39 -->|"1"| N46
+  N40 -->|"1"| N46
+  N45 -->|"1"| N46
+  N1 -->|"1"| N47
+  N23 -->|"1"| N47
+  N39 -->|"1"| N47
+  N40 -->|"1"| N47
+  N45 -->|"1"| N47
+  N46 -->|"1"| N47
+  N1 -->|"1"| N48
+  N23 -->|"1"| N48
+  N38 -->|"1"| N48
+  N39 -->|"1"| N48
+  N40 -->|"1"| N48
+  N44 -->|"1"| N48
+  N1 -->|"1"| N49
+  N23 -->|"1"| N49
+  N39 -->|"1"| N49
+  N40 -->|"1"| N49
+  N44 -->|"1"| N49
+  N48 -->|"1"| N49
+  N49 -->|"1"| N50
+  N1 -->|"2"| N51
+  N23 -->|"1"| N51
+  N39 -->|"1"| N51
+  N40 -->|"1"| N51
+  N41 -->|"1"| N51
+  N43 -->|"1"| N51
+  N47 -->|"1"| N51
+  N49 -->|"1"| N51
+  N0 -->|"1"| N52
+  N23 -->|"1"| N52
+  N0 -->|"1"| N53
+  N23 -->|"1"| N53
+  N52 -->|"1"| N53
+  N0 -->|"1"| N54
+  N23 -->|"1"| N54
+  N53 -->|"1"| N54
+  N0 -->|"1"| N55
+  N23 -->|"1"| N55
+  N53 -->|"1"| N55
+  N54 -->|"1"| N55
+  N0 -->|"1"| N56
+  N23 -->|"1"| N56
+  N52 -->|"1"| N56
+  N54 -->|"1"| N56
+  N0 -->|"1"| N57
+  N23 -->|"1"| N57
+  N52 -->|"1"| N57
+  N54 -->|"1"| N57
+  N56 -->|"1"| N57
+  N57 -->|"1"| N58
+  N0 -->|"1"| N59
+  N23 -->|"1"| N59
+  N52 -->|"1"| N59
+  N53 -->|"1"| N59
+  N54 -->|"1"| N59
+  N55 -->|"1"| N59
+  N56 -->|"1"| N59
+  N57 -->|"1"| N59
+  N0 -->|"1"| N60
+  N23 -->|"1"| N60
+  N52 -->|"1"| N60
+  N54 -->|"1"| N60
+  N59 -->|"1"| N60
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
+
+  class N0 ext
+  class N1 ext
+  class N2 file
+  class N3 file
+  class N4 file
+  class N5 file
+  class N6 file
+  class N7 file
+  class N8 file
+  class N9 file
+  class N10 file
+  class N11 file
+  class N12 file
+  class N13 file
+  class N14 file
+  class N15 file
+  class N16 file
+  class N17 file
+  class N18 file
+  class N19 file
+  class N20 file
+  class N21 file
+  class N22 file
+  class N23 file
+  class N24 file
+  class N25 file
+  class N26 file
+  class N27 file
+  class N28 file
+  class N29 file
+  class N30 file
+  class N31 file
+  class N32 file
+  class N33 file
+  class N34 file
+  class N35 file
+  class N36 file
+  class N37 file
+  class N38 file
+  class N39 file
+  class N40 file
+  class N41 file
+  class N42 file
+  class N43 file
+  class N44 file
+  class N45 file
+  class N46 file
+  class N47 file
+  class N48 file
+  class N49 file
+  class N50 file
+  class N51 file
+  class N52 file
+  class N53 file
+  class N54 file
+  class N55 file
+  class N56 file
+  class N57 file
+  class N58 file
+  class N59 file
+  class N60 file

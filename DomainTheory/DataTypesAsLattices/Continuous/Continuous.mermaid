@@ -1,0 +1,121 @@
+%% Inside Continuous. A box is one Lean file in this folder, or one subfolder.
+%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
+%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+flowchart TB
+  N0["Pomega"]
+  N1["basicNhhd"]
+  N2["IsScottOpen"]
+  N3["memOpen"]
+  N4["scottPiece"]
+  N5["scottUnion"]
+  N6["IsScottContinuous"]
+  N7["Basic"]
+  N8["basicNhhd_eq_iInter"]
+  N9["basicNhhd_inter"]
+  N10["basicNhhd_zero"]
+  N11["isOpen_memOpen"]
+  N12["isOpen_basicNhhd"]
+  N13["isScottContinuous_determined"]
+  N14["isScottOpen_basic"]
+  N15["isScottOpen_isUpper"]
+  N16["memOpen_eq_basicNhhd"]
+  N17["exists_basicNhhd_subset_of_generateOpen"]
+  N18["isScottOpen_iff_isOpen"]
+  N19["mem_scottUnion"]
+  N20["isScottContinuous_monotone"]
+  N21["exists_e_cover_finite"]
+  N22["isScottContinuous_iff_continuous"]
+  N23["theorem_1_1"]
+
+  N0 -->|"1"| N1
+  N0 -->|"1"| N2
+  N1 -->|"1"| N2
+  N0 -->|"1"| N3
+  N0 -->|"1"| N4
+  N0 -->|"1"| N5
+  N4 -->|"1"| N5
+  N0 -->|"1"| N6
+  N5 -->|"1"| N6
+  N0 -->|"1"| N7
+  N1 -->|"1"| N7
+  N2 -->|"1"| N7
+  N3 -->|"1"| N7
+  N4 -->|"1"| N7
+  N5 -->|"1"| N7
+  N6 -->|"1"| N7
+  N0 -->|"1"| N8
+  N7 -->|"1"| N8
+  N0 -->|"1"| N9
+  N7 -->|"1"| N9
+  N0 -->|"1"| N10
+  N7 -->|"1"| N10
+  N0 -->|"1"| N11
+  N7 -->|"1"| N11
+  N0 -->|"1"| N12
+  N7 -->|"1"| N12
+  N11 -->|"1"| N12
+  N0 -->|"1"| N13
+  N7 -->|"1"| N13
+  N0 -->|"1"| N14
+  N7 -->|"1"| N14
+  N0 -->|"1"| N15
+  N7 -->|"1"| N15
+  N0 -->|"1"| N16
+  N7 -->|"1"| N16
+  N0 -->|"1"| N17
+  N7 -->|"1"| N17
+  N9 -->|"1"| N17
+  N10 -->|"1"| N17
+  N16 -->|"1"| N17
+  N0 -->|"1"| N18
+  N7 -->|"1"| N18
+  N12 -->|"1"| N18
+  N17 -->|"1"| N18
+  N0 -->|"1"| N19
+  N7 -->|"1"| N19
+  N0 -->|"1"| N20
+  N7 -->|"1"| N20
+  N19 -->|"1"| N20
+  N0 -->|"1"| N21
+  N7 -->|"1"| N21
+  N20 -->|"1"| N21
+  N0 -->|"1"| N22
+  N7 -->|"1"| N22
+  N11 -->|"1"| N22
+  N15 -->|"1"| N22
+  N18 -->|"1"| N22
+  N19 -->|"1"| N22
+  N20 -->|"1"| N22
+  N0 -->|"1"| N23
+  N7 -->|"1"| N23
+  N19 -->|"1"| N23
+  N20 -->|"1"| N23
+  N21 -->|"1"| N23
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
+
+  class N0 ext
+  class N1 file
+  class N2 file
+  class N3 file
+  class N4 file
+  class N5 file
+  class N6 file
+  class N7 file
+  class N8 file
+  class N9 file
+  class N10 file
+  class N11 file
+  class N12 file
+  class N13 file
+  class N14 file
+  class N15 file
+  class N16 file
+  class N17 file
+  class N18 file
+  class N19 file
+  class N20 file
+  class N21 file
+  class N22 file
+  class N23 file

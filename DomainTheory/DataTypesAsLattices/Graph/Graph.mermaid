@@ -1,0 +1,94 @@
+%% Inside Graph. A box is one Lean file in this folder, or one subfolder.
+%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
+%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+flowchart TB
+  N0["Continuous"]
+  N1["funOf"]
+  N2["Basic/"]
+  N3["IsGraph"]
+  N4["graph"]
+  N5["lam"]
+  N6["Basic"]
+  N7["funOf_isScottContinuous"]
+  N8["funOf_monotone_left"]
+  N9["funOf_monotone_right"]
+  N10["lam_eq_graph"]
+  N11["mem_funOf"]
+  N12["mem_graph"]
+  N13["mu_law"]
+  N14["theorem_1_2_i"]
+  N15["beta"]
+  N16["theorem_1_2_ii"]
+  N17["theorem_1_2_iii"]
+  N18["theorem_1_2"]
+
+  N0 -->|"1"| N1
+  N0 -->|"1"| N2
+  N1 -->|"1"| N2
+  N0 -->|"1"| N3
+  N2 -->|"1"| N3
+  N0 -->|"1"| N4
+  N0 -->|"1"| N5
+  N2 -->|"1"| N5
+  N4 -->|"1"| N5
+  N0 -->|"1"| N6
+  N1 -->|"1"| N6
+  N2 -->|"1"| N6
+  N3 -->|"1"| N6
+  N4 -->|"1"| N6
+  N5 -->|"1"| N6
+  N0 -->|"1"| N7
+  N6 -->|"1"| N7
+  N0 -->|"1"| N8
+  N6 -->|"1"| N8
+  N0 -->|"1"| N9
+  N6 -->|"1"| N9
+  N0 -->|"1"| N10
+  N6 -->|"1"| N10
+  N0 -->|"1"| N11
+  N6 -->|"1"| N11
+  N0 -->|"1"| N12
+  N6 -->|"1"| N12
+  N0 -->|"1"| N13
+  N6 -->|"1"| N13
+  N8 -->|"1"| N13
+  N9 -->|"1"| N13
+  N0 -->|"1"| N14
+  N6 -->|"1"| N14
+  N0 -->|"1"| N15
+  N6 -->|"1"| N15
+  N14 -->|"1"| N15
+  N0 -->|"1"| N16
+  N6 -->|"1"| N16
+  N0 -->|"1"| N17
+  N6 -->|"1"| N17
+  N12 -->|"1"| N17
+  N16 -->|"1"| N17
+  N0 -->|"1"| N18
+  N6 -->|"1"| N18
+  N14 -->|"1"| N18
+  N16 -->|"1"| N18
+  N17 -->|"1"| N18
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
+
+  class N0 ext
+  class N1 file
+  class N2 file
+  class N3 file
+  class N4 file
+  class N5 file
+  class N6 file
+  class N7 file
+  class N8 file
+  class N9 file
+  class N10 file
+  class N11 file
+  class N12 file
+  class N13 file
+  class N14 file
+  class N15 file
+  class N16 file
+  class N17 file
+  class N18 file

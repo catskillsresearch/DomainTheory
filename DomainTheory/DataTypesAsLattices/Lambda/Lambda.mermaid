@@ -1,0 +1,1430 @@
+%% Inside Lambda. A box is one Lean file in this folder, or one subfolder.
+%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
+%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+flowchart TB
+  N0["Embedding"]
+  N1["Comb"]
+  N2["Kcomb"]
+  N3["Scomb"]
+  N4["Term"]
+  N5["condSet"]
+  N6["condC"]
+  N7["ofNat"]
+  N8["predSet"]
+  N9["predC"]
+  N10["succSet"]
+  N11["sucC"]
+  N12["zeroC"]
+  N13["IsCombinatory"]
+  N14["mem_ofNat"]
+  N15["FUN"]
+  N16["Fofg"]
+  N17["Occurs"]
+  N18["ScottContinuousFin"]
+  N19["Ymap"]
+  N20["Yterm"]
+  N21["abs"]
+  N22["curry2"]
+  N23["curry3"]
+  N24["curryFin"]
+  N25["dcondSet"]
+  N26["dollarStepTerm"]
+  N27["envSet"]
+  N28["erase"]
+  N29["interStep"]
+  N30["interC"]
+  N31["interp"]
+  N32["maxExtend"]
+  N33["minExtend"]
+  N34["nestApplyFin"]
+  N35["ofComb"]
+  N36["omegaComb"]
+  N37["Ycomb"]
+  N38["primRecStep"]
+  N39["primRecStepTerm"]
+  N40["primRecVal"]
+  N41["primRecHat"]
+  N42["relComp"]
+  N43["rename"]
+  N44["seq0"]
+  N45["seq1"]
+  N46["seq2"]
+  N47["seqCons"]
+  N48["seqFun"]
+  N49["dollarC"]
+  N50["lamOmega"]
+  N51["seqFunLt"]
+  N52["seqShift"]
+  N53["dollarStepBody"]
+  N54["dollarStep"]
+  N55["setSum"]
+  N56["termShift"]
+  N57["termDollarStepBody"]
+  N58["termDollarStep"]
+  N59["topRec"]
+  N60["Basic"]
+  N61["Yterm_interp"]
+  N62["condSet_isScottContinuous_mid"]
+  N63["condSet_isScottContinuous_right"]
+  N64["const_isScottContinuous"]
+  N65["dcondSet_bot"]
+  N66["dcondSet_cases"]
+  N67["dcondSet_isScottContinuous_mid"]
+  N68["dcondSet_isScottContinuous_right"]
+  N69["dcondSet_ofNat_one"]
+  N70["dcondSet_ofNat_zero"]
+  N71["dcondSet_of_empty"]
+  N72["dcondSet_of_mixed"]
+  N73["dcondSet_of_pos_not_zero"]
+  N74["dcondSet_ofNat_succ"]
+  N75["dcondSet_of_zero_not_pos"]
+  N76["dcondSet_top"]
+  N77["dollarStepTerm_interp"]
+  N78["e_one"]
+  N79["condSet_isScottContinuous_left"]
+  N80["envSet_comm"]
+  N81["eq_2_10"]
+  N82["eq_2_11"]
+  N83["eq_2_11_graphs"]
+  N84["eq_2_12"]
+  N85["eq_2_13"]
+  N86["eq_2_16"]
+  N87["eq_2_17_step"]
+  N88["eq_2_18_bot"]
+  N89["eq_2_18_top"]
+  N90["eq_2_1_else"]
+  N91["eq_2_1_empty"]
+  N92["eq_2_1_singleton"]
+  N93["eq_2_28"]
+  N94["eq_2_5"]
+  N95["eq_2_6"]
+  N96["eq_2_7_bot"]
+  N97["eq_2_7_mix"]
+  N98["eq_2_7_pos"]
+  N99["eq_2_7_succ"]
+  N100["eq_2_7_zero"]
+  N101["eq_2_9"]
+  N102["eta_fails"]
+  N103["exists_least_mem"]
+  N104["exists_least_not_mem"]
+  N105["funOf_bot"]
+  N106["funOf_iUnion"]
+  N107["funOf_isScottContinuous_left"]
+  N108["Scomb_inner_cont"]
+  N109["diagApp_isScottContinuous"]
+  N110["dollarStepBody_isScottContinuous_s"]
+  N111["funOf_diag_iUnion"]
+  N112["graph_const_isScottContinuous"]
+  N113["Scomb_map_cont"]
+  N114["Scomb_beta"]
+  N115["Scomb_mid_cont"]
+  N116["Scomb_beta2"]
+  N117["Scomb_beta3"]
+  N118["condC_map_cont"]
+  N119["condC_beta"]
+  N120["condC_beta2"]
+  N121["condC_beta3"]
+  N122["curry2_app"]
+  N123["curry3_app"]
+  N124["curryFin_isScottContinuous"]
+  N125["curryFin_app"]
+  N126["dollarStep_isScottContinuous"]
+  N127["id_isScottContinuous"]
+  N128["Kcomb_beta"]
+  N129["Kcomb_beta2"]
+  N130["SKK_eq_I"]
+  N131["dcondSet_isScottContinuous_left"]
+  N132["iterateBot_param_isScottContinuous"]
+  N133["fix_param_isScottContinuous"]
+  N134["Ymap_app"]
+  N135["eq_2_28_commute"]
+  N136["mem_seqFunLt"]
+  N137["minExtend_bot"]
+  N138["minExtend_isScottContinuous"]
+  N139["minExtend_union"]
+  N140["ofComb_combinatory"]
+  N141["ofComb_update_isScottContinuous"]
+  N142["abs_correct"]
+  N143["omegaComb_app"]
+  N144["omegaComb_isScottContinuous"]
+  N145["Ycomb_app"]
+  N146["Ycomb_unfold"]
+  N147["omega_first_recursion"]
+  N148["eq_2_14"]
+  N149["pair_one_zero"]
+  N150["pair_zero_zero"]
+  N151["eq_2_15"]
+  N152["predSet_isScottContinuous"]
+  N153["dollarStepBody_isScottContinuous_z"]
+  N154["predC_app"]
+  N155["predSet_ofNat_succ"]
+  N156["primRecHat_zero"]
+  N157["primRecHat_ofNat"]
+  N158["primRecStep_body_isScottContinuous_n"]
+  N159["primRecStep_app"]
+  N160["primRecStep_isScottContinuous"]
+  N161["primRecVal_fix"]
+  N162["seq2_body_isScottContinuous"]
+  N163["seq2_app"]
+  N164["eq_2_23_ge"]
+  N165["seq2_app_one"]
+  N166["eq_2_23_one"]
+  N167["seq2_app_zero"]
+  N168["eq_2_23_zero"]
+  N169["seq2_tag_ne"]
+  N170["seqCons_body"]
+  N171["eq_2_22"]
+  N172["seqFunLt_zero"]
+  N173["seqFun_eq_iUnion_lt"]
+  N174["seqFun_left_isScottContinuous"]
+  N175["dollarC_app"]
+  N176["seqFun_right_isScottContinuous"]
+  N177["eq_2_25"]
+  N178["eq_2_27"]
+  N179["seqShift_left_isScottContinuous"]
+  N180["dollarStepBody_isScottContinuous_u"]
+  N181["dollarStep_app"]
+  N182["dollarStep_app2"]
+  N183["succSet_isScottContinuous"]
+  N184["interC_else_isScottContinuous"]
+  N185["interC_body_isScottContinuous"]
+  N186["interC_then_else_isScottContinuous"]
+  N187["interStep_isScottContinuous"]
+  N188["interC_unfold"]
+  N189["interC_app_graph"]
+  N190["interC_app"]
+  N191["eq_2_17"]
+  N192["interp_var_isScottContinuous"]
+  N193["seqShift_isScottContinuous"]
+  N194["seqShift_app"]
+  N195["eq_2_24"]
+  N196["seqShift_ofNat"]
+  N197["seqFunLt_succ"]
+  N198["dollarStep_iterate"]
+  N199["dollarStep_fix_app"]
+  N200["eq_2_24_Y"]
+  N201["sucC_app"]
+  N202["erase_correct"]
+  N203["succSet_ofNat"]
+  N204["ofNat_combinatory"]
+  N205["table1_mu"]
+  N206["termDollarStepBody_isScottContinuous_s"]
+  N207["termDollarStepBody_isScottContinuous_z"]
+  N208["termDollarStep_isScottContinuous"]
+  N209["termShift_isScottContinuous"]
+  N210["termShift_app"]
+  N211["termShift_left_isScottContinuous"]
+  N212["termDollarStepBody_isScottContinuous_u"]
+  N213["termDollarStep_app"]
+  N214["termDollarStep_app2"]
+  N215["termShift_ofNat"]
+  N216["seqFunLt_succ_term"]
+  N217["termDollarStep_iterate"]
+  N218["termDollarStep_fix_app"]
+  N219["dollarC_eq_fix_termDollarStep"]
+  N220["theorem_2_1"]
+  N221["theorem_2_2_alpha"]
+  N222["theorem_2_2_beta"]
+  N223["primRecStepTerm_interp"]
+  N224["primRecStep_graph_of"]
+  N225["theorem_2_2_xi"]
+  N226["theorem_2_2"]
+  N227["theorem_2_3"]
+  N228["theorem_2_3_binary"]
+  N229["theorem_2_3_ternary"]
+  N230["theorem_2_3_unary"]
+  N231["theorem_2_4"]
+  N232["theorem_2_4_complete"]
+  N233["theorem_2_4_closed"]
+  N234["Ycomb_combinatory"]
+  N235["theorem_2_5"]
+  N236["dollarC_combinatory"]
+  N237["eq_2_24_Ycomb"]
+  N238["topRec_isScottContinuous"]
+  N239["triangle_eq_zero"]
+  N240["pair_eq_right"]
+  N241["eq_2_18"]
+  N242["union_via_cond"]
+  N243["xi_star"]
+
+  N0 -->|"1"| N1
+  N0 -->|"1"| N2
+  N0 -->|"1"| N3
+  N0 -->|"1"| N4
+  N0 -->|"1"| N5
+  N0 -->|"1"| N6
+  N5 -->|"1"| N6
+  N0 -->|"1"| N7
+  N0 -->|"1"| N8
+  N0 -->|"1"| N9
+  N8 -->|"1"| N9
+  N0 -->|"1"| N10
+  N0 -->|"1"| N11
+  N10 -->|"1"| N11
+  N0 -->|"1"| N12
+  N7 -->|"1"| N12
+  N0 -->|"1"| N13
+  N2 -->|"1"| N13
+  N3 -->|"1"| N13
+  N5 -->|"1"| N13
+  N6 -->|"1"| N13
+  N7 -->|"1"| N13
+  N8 -->|"1"| N13
+  N9 -->|"1"| N13
+  N10 -->|"1"| N13
+  N11 -->|"1"| N13
+  N12 -->|"1"| N13
+  N0 -->|"1"| N14
+  N1 -->|"1"| N14
+  N4 -->|"1"| N14
+  N13 -->|"1"| N14
+  N0 -->|"1"| N15
+  N1 -->|"1"| N15
+  N4 -->|"1"| N15
+  N13 -->|"1"| N15
+  N14 -->|"1"| N15
+  N0 -->|"1"| N16
+  N1 -->|"1"| N16
+  N4 -->|"1"| N16
+  N13 -->|"1"| N16
+  N14 -->|"1"| N16
+  N0 -->|"1"| N17
+  N1 -->|"1"| N17
+  N4 -->|"1"| N17
+  N13 -->|"1"| N17
+  N14 -->|"1"| N17
+  N0 -->|"1"| N18
+  N1 -->|"1"| N18
+  N4 -->|"1"| N18
+  N13 -->|"1"| N18
+  N14 -->|"1"| N18
+  N0 -->|"1"| N19
+  N1 -->|"1"| N19
+  N4 -->|"1"| N19
+  N13 -->|"1"| N19
+  N14 -->|"1"| N19
+  N0 -->|"1"| N20
+  N1 -->|"1"| N20
+  N4 -->|"1"| N20
+  N13 -->|"1"| N20
+  N14 -->|"1"| N20
+  N0 -->|"1"| N21
+  N1 -->|"1"| N21
+  N4 -->|"1"| N21
+  N13 -->|"1"| N21
+  N14 -->|"1"| N21
+  N0 -->|"1"| N22
+  N1 -->|"1"| N22
+  N4 -->|"1"| N22
+  N13 -->|"1"| N22
+  N14 -->|"1"| N22
+  N0 -->|"1"| N23
+  N1 -->|"1"| N23
+  N4 -->|"1"| N23
+  N13 -->|"1"| N23
+  N14 -->|"1"| N23
+  N0 -->|"1"| N24
+  N1 -->|"1"| N24
+  N4 -->|"1"| N24
+  N13 -->|"1"| N24
+  N14 -->|"1"| N24
+  N0 -->|"1"| N25
+  N1 -->|"1"| N25
+  N4 -->|"1"| N25
+  N13 -->|"1"| N25
+  N14 -->|"1"| N25
+  N0 -->|"1"| N26
+  N1 -->|"1"| N26
+  N4 -->|"1"| N26
+  N13 -->|"1"| N26
+  N14 -->|"1"| N26
+  N0 -->|"1"| N27
+  N1 -->|"1"| N27
+  N4 -->|"1"| N27
+  N13 -->|"1"| N27
+  N14 -->|"1"| N27
+  N0 -->|"1"| N28
+  N1 -->|"1"| N28
+  N4 -->|"1"| N28
+  N13 -->|"1"| N28
+  N14 -->|"1"| N28
+  N21 -->|"1"| N28
+  N0 -->|"1"| N29
+  N1 -->|"1"| N29
+  N4 -->|"1"| N29
+  N13 -->|"1"| N29
+  N14 -->|"1"| N29
+  N0 -->|"1"| N30
+  N1 -->|"1"| N30
+  N4 -->|"1"| N30
+  N13 -->|"1"| N30
+  N14 -->|"1"| N30
+  N29 -->|"1"| N30
+  N0 -->|"1"| N31
+  N1 -->|"1"| N31
+  N4 -->|"1"| N31
+  N13 -->|"1"| N31
+  N14 -->|"1"| N31
+  N27 -->|"1"| N31
+  N0 -->|"1"| N32
+  N1 -->|"1"| N32
+  N4 -->|"1"| N32
+  N13 -->|"1"| N32
+  N14 -->|"1"| N32
+  N0 -->|"1"| N33
+  N1 -->|"1"| N33
+  N4 -->|"1"| N33
+  N13 -->|"1"| N33
+  N14 -->|"1"| N33
+  N0 -->|"1"| N34
+  N1 -->|"1"| N34
+  N4 -->|"1"| N34
+  N13 -->|"1"| N34
+  N14 -->|"1"| N34
+  N0 -->|"1"| N35
+  N1 -->|"1"| N35
+  N4 -->|"1"| N35
+  N13 -->|"1"| N35
+  N14 -->|"1"| N35
+  N0 -->|"1"| N36
+  N1 -->|"1"| N36
+  N4 -->|"1"| N36
+  N13 -->|"1"| N36
+  N14 -->|"1"| N36
+  N0 -->|"1"| N37
+  N1 -->|"1"| N37
+  N4 -->|"1"| N37
+  N13 -->|"1"| N37
+  N14 -->|"1"| N37
+  N36 -->|"1"| N37
+  N0 -->|"1"| N38
+  N1 -->|"1"| N38
+  N4 -->|"1"| N38
+  N13 -->|"1"| N38
+  N14 -->|"1"| N38
+  N0 -->|"1"| N39
+  N1 -->|"1"| N39
+  N4 -->|"1"| N39
+  N13 -->|"1"| N39
+  N14 -->|"1"| N39
+  N0 -->|"1"| N40
+  N1 -->|"1"| N40
+  N4 -->|"1"| N40
+  N13 -->|"1"| N40
+  N14 -->|"1"| N40
+  N0 -->|"1"| N41
+  N1 -->|"1"| N41
+  N4 -->|"1"| N41
+  N13 -->|"1"| N41
+  N14 -->|"1"| N41
+  N40 -->|"1"| N41
+  N0 -->|"1"| N42
+  N1 -->|"1"| N42
+  N4 -->|"1"| N42
+  N13 -->|"1"| N42
+  N14 -->|"1"| N42
+  N0 -->|"1"| N43
+  N1 -->|"1"| N43
+  N4 -->|"1"| N43
+  N13 -->|"1"| N43
+  N14 -->|"1"| N43
+  N0 -->|"1"| N44
+  N1 -->|"1"| N44
+  N4 -->|"1"| N44
+  N13 -->|"1"| N44
+  N14 -->|"1"| N44
+  N0 -->|"1"| N45
+  N1 -->|"1"| N45
+  N4 -->|"1"| N45
+  N13 -->|"1"| N45
+  N14 -->|"1"| N45
+  N0 -->|"1"| N46
+  N1 -->|"1"| N46
+  N4 -->|"1"| N46
+  N13 -->|"1"| N46
+  N14 -->|"1"| N46
+  N0 -->|"1"| N47
+  N1 -->|"1"| N47
+  N4 -->|"1"| N47
+  N13 -->|"1"| N47
+  N14 -->|"1"| N47
+  N0 -->|"1"| N48
+  N1 -->|"1"| N48
+  N4 -->|"1"| N48
+  N13 -->|"1"| N48
+  N14 -->|"1"| N48
+  N0 -->|"1"| N49
+  N1 -->|"1"| N49
+  N4 -->|"1"| N49
+  N13 -->|"1"| N49
+  N14 -->|"1"| N49
+  N48 -->|"1"| N49
+  N0 -->|"1"| N50
+  N1 -->|"1"| N50
+  N4 -->|"1"| N50
+  N13 -->|"1"| N50
+  N14 -->|"1"| N50
+  N49 -->|"1"| N50
+  N0 -->|"1"| N51
+  N1 -->|"1"| N51
+  N4 -->|"1"| N51
+  N13 -->|"1"| N51
+  N14 -->|"1"| N51
+  N0 -->|"1"| N52
+  N1 -->|"1"| N52
+  N4 -->|"1"| N52
+  N13 -->|"1"| N52
+  N14 -->|"1"| N52
+  N48 -->|"1"| N52
+  N0 -->|"1"| N53
+  N1 -->|"1"| N53
+  N4 -->|"1"| N53
+  N13 -->|"1"| N53
+  N14 -->|"1"| N53
+  N52 -->|"1"| N53
+  N0 -->|"1"| N54
+  N1 -->|"1"| N54
+  N4 -->|"1"| N54
+  N13 -->|"1"| N54
+  N14 -->|"1"| N54
+  N53 -->|"1"| N54
+  N0 -->|"1"| N55
+  N1 -->|"1"| N55
+  N4 -->|"1"| N55
+  N13 -->|"1"| N55
+  N14 -->|"1"| N55
+  N0 -->|"1"| N56
+  N1 -->|"1"| N56
+  N4 -->|"1"| N56
+  N13 -->|"1"| N56
+  N14 -->|"1"| N56
+  N0 -->|"1"| N57
+  N1 -->|"1"| N57
+  N4 -->|"1"| N57
+  N13 -->|"1"| N57
+  N14 -->|"1"| N57
+  N56 -->|"1"| N57
+  N0 -->|"1"| N58
+  N1 -->|"1"| N58
+  N4 -->|"1"| N58
+  N13 -->|"1"| N58
+  N14 -->|"1"| N58
+  N57 -->|"1"| N58
+  N0 -->|"1"| N59
+  N1 -->|"1"| N59
+  N4 -->|"1"| N59
+  N13 -->|"1"| N59
+  N14 -->|"1"| N59
+  N0 -->|"1"| N60
+  N1 -->|"1"| N60
+  N4 -->|"1"| N60
+  N13 -->|"1"| N60
+  N14 -->|"1"| N60
+  N15 -->|"1"| N60
+  N16 -->|"1"| N60
+  N17 -->|"1"| N60
+  N18 -->|"1"| N60
+  N19 -->|"1"| N60
+  N20 -->|"1"| N60
+  N21 -->|"1"| N60
+  N22 -->|"1"| N60
+  N23 -->|"1"| N60
+  N24 -->|"1"| N60
+  N25 -->|"1"| N60
+  N26 -->|"1"| N60
+  N27 -->|"1"| N60
+  N28 -->|"1"| N60
+  N29 -->|"1"| N60
+  N30 -->|"1"| N60
+  N31 -->|"1"| N60
+  N32 -->|"1"| N60
+  N33 -->|"1"| N60
+  N34 -->|"1"| N60
+  N35 -->|"1"| N60
+  N36 -->|"1"| N60
+  N37 -->|"1"| N60
+  N38 -->|"1"| N60
+  N39 -->|"1"| N60
+  N40 -->|"1"| N60
+  N41 -->|"1"| N60
+  N42 -->|"1"| N60
+  N43 -->|"1"| N60
+  N44 -->|"1"| N60
+  N45 -->|"1"| N60
+  N46 -->|"1"| N60
+  N47 -->|"1"| N60
+  N48 -->|"1"| N60
+  N49 -->|"1"| N60
+  N50 -->|"1"| N60
+  N51 -->|"1"| N60
+  N52 -->|"1"| N60
+  N53 -->|"1"| N60
+  N54 -->|"1"| N60
+  N55 -->|"1"| N60
+  N56 -->|"1"| N60
+  N57 -->|"1"| N60
+  N58 -->|"1"| N60
+  N59 -->|"1"| N60
+  N0 -->|"1"| N61
+  N60 -->|"1"| N61
+  N0 -->|"1"| N62
+  N60 -->|"1"| N62
+  N0 -->|"1"| N63
+  N60 -->|"1"| N63
+  N0 -->|"1"| N64
+  N60 -->|"1"| N64
+  N0 -->|"1"| N65
+  N60 -->|"1"| N65
+  N0 -->|"1"| N66
+  N60 -->|"1"| N66
+  N0 -->|"1"| N67
+  N60 -->|"1"| N67
+  N62 -->|"1"| N67
+  N0 -->|"1"| N68
+  N60 -->|"1"| N68
+  N63 -->|"1"| N68
+  N0 -->|"1"| N69
+  N60 -->|"1"| N69
+  N0 -->|"1"| N70
+  N60 -->|"1"| N70
+  N0 -->|"1"| N71
+  N60 -->|"1"| N71
+  N0 -->|"1"| N72
+  N60 -->|"1"| N72
+  N0 -->|"1"| N73
+  N60 -->|"1"| N73
+  N0 -->|"1"| N74
+  N60 -->|"1"| N74
+  N73 -->|"1"| N74
+  N0 -->|"1"| N75
+  N60 -->|"1"| N75
+  N0 -->|"1"| N76
+  N60 -->|"1"| N76
+  N0 -->|"1"| N77
+  N60 -->|"1"| N77
+  N0 -->|"1"| N78
+  N60 -->|"1"| N78
+  N0 -->|"1"| N79
+  N60 -->|"1"| N79
+  N78 -->|"1"| N79
+  N0 -->|"1"| N80
+  N60 -->|"1"| N80
+  N0 -->|"1"| N81
+  N60 -->|"1"| N81
+  N0 -->|"1"| N82
+  N60 -->|"1"| N82
+  N0 -->|"1"| N83
+  N60 -->|"1"| N83
+  N82 -->|"1"| N83
+  N0 -->|"1"| N84
+  N60 -->|"1"| N84
+  N0 -->|"1"| N85
+  N60 -->|"1"| N85
+  N0 -->|"1"| N86
+  N60 -->|"1"| N86
+  N0 -->|"1"| N87
+  N60 -->|"1"| N87
+  N0 -->|"1"| N88
+  N60 -->|"1"| N88
+  N0 -->|"1"| N89
+  N60 -->|"1"| N89
+  N0 -->|"1"| N90
+  N60 -->|"1"| N90
+  N0 -->|"1"| N91
+  N60 -->|"1"| N91
+  N0 -->|"1"| N92
+  N60 -->|"1"| N92
+  N0 -->|"1"| N93
+  N60 -->|"1"| N93
+  N0 -->|"1"| N94
+  N60 -->|"1"| N94
+  N0 -->|"1"| N95
+  N60 -->|"1"| N95
+  N0 -->|"1"| N96
+  N60 -->|"1"| N96
+  N0 -->|"1"| N97
+  N60 -->|"1"| N97
+  N0 -->|"1"| N98
+  N60 -->|"1"| N98
+  N0 -->|"1"| N99
+  N60 -->|"1"| N99
+  N0 -->|"1"| N100
+  N60 -->|"1"| N100
+  N0 -->|"1"| N101
+  N60 -->|"1"| N101
+  N0 -->|"1"| N102
+  N60 -->|"1"| N102
+  N78 -->|"1"| N102
+  N0 -->|"1"| N103
+  N60 -->|"1"| N103
+  N0 -->|"1"| N104
+  N60 -->|"1"| N104
+  N0 -->|"1"| N105
+  N60 -->|"1"| N105
+  N0 -->|"1"| N106
+  N60 -->|"1"| N106
+  N0 -->|"1"| N107
+  N60 -->|"1"| N107
+  N0 -->|"1"| N108
+  N60 -->|"1"| N108
+  N107 -->|"1"| N108
+  N0 -->|"1"| N109
+  N60 -->|"1"| N109
+  N107 -->|"1"| N109
+  N0 -->|"1"| N110
+  N60 -->|"1"| N110
+  N63 -->|"1"| N110
+  N107 -->|"1"| N110
+  N0 -->|"1"| N111
+  N60 -->|"1"| N111
+  N107 -->|"1"| N111
+  N0 -->|"1"| N112
+  N60 -->|"1"| N112
+  N0 -->|"1"| N113
+  N60 -->|"1"| N113
+  N107 -->|"1"| N113
+  N112 -->|"1"| N113
+  N0 -->|"1"| N114
+  N60 -->|"1"| N114
+  N113 -->|"1"| N114
+  N0 -->|"1"| N115
+  N60 -->|"1"| N115
+  N107 -->|"1"| N115
+  N112 -->|"1"| N115
+  N0 -->|"1"| N116
+  N60 -->|"1"| N116
+  N114 -->|"1"| N116
+  N115 -->|"1"| N116
+  N0 -->|"1"| N117
+  N60 -->|"1"| N117
+  N108 -->|"1"| N117
+  N116 -->|"1"| N117
+  N0 -->|"1"| N118
+  N60 -->|"1"| N118
+  N62 -->|"1"| N118
+  N112 -->|"1"| N118
+  N0 -->|"1"| N119
+  N60 -->|"1"| N119
+  N118 -->|"1"| N119
+  N0 -->|"1"| N120
+  N60 -->|"1"| N120
+  N63 -->|"1"| N120
+  N112 -->|"1"| N120
+  N119 -->|"1"| N120
+  N0 -->|"1"| N121
+  N60 -->|"1"| N121
+  N79 -->|"1"| N121
+  N120 -->|"1"| N121
+  N0 -->|"1"| N122
+  N60 -->|"1"| N122
+  N112 -->|"1"| N122
+  N0 -->|"1"| N123
+  N60 -->|"1"| N123
+  N112 -->|"1"| N123
+  N0 -->|"1"| N124
+  N60 -->|"1"| N124
+  N112 -->|"1"| N124
+  N0 -->|"1"| N125
+  N60 -->|"1"| N125
+  N124 -->|"1"| N125
+  N0 -->|"1"| N126
+  N60 -->|"1"| N126
+  N110 -->|"1"| N126
+  N112 -->|"1"| N126
+  N0 -->|"1"| N127
+  N60 -->|"1"| N127
+  N0 -->|"1"| N128
+  N60 -->|"1"| N128
+  N112 -->|"1"| N128
+  N127 -->|"1"| N128
+  N0 -->|"1"| N129
+  N60 -->|"1"| N129
+  N64 -->|"1"| N129
+  N128 -->|"1"| N129
+  N0 -->|"1"| N130
+  N60 -->|"1"| N130
+  N116 -->|"1"| N130
+  N129 -->|"1"| N130
+  N0 -->|"1"| N131
+  N60 -->|"1"| N131
+  N62 -->|"1"| N131
+  N63 -->|"1"| N131
+  N79 -->|"1"| N131
+  N127 -->|"1"| N131
+  N0 -->|"1"| N132
+  N60 -->|"1"| N132
+  N64 -->|"1"| N132
+  N127 -->|"1"| N132
+  N0 -->|"1"| N133
+  N60 -->|"1"| N133
+  N132 -->|"1"| N133
+  N0 -->|"1"| N134
+  N60 -->|"1"| N134
+  N133 -->|"1"| N134
+  N0 -->|"1"| N135
+  N60 -->|"1"| N135
+  N107 -->|"1"| N135
+  N112 -->|"1"| N135
+  N127 -->|"1"| N135
+  N134 -->|"1"| N135
+  N0 -->|"1"| N136
+  N60 -->|"1"| N136
+  N0 -->|"1"| N137
+  N60 -->|"1"| N137
+  N0 -->|"1"| N138
+  N60 -->|"1"| N138
+  N0 -->|"1"| N139
+  N60 -->|"1"| N139
+  N0 -->|"1"| N140
+  N60 -->|"1"| N140
+  N0 -->|"1"| N141
+  N60 -->|"1"| N141
+  N64 -->|"1"| N141
+  N107 -->|"1"| N141
+  N127 -->|"1"| N141
+  N0 -->|"1"| N142
+  N60 -->|"1"| N142
+  N116 -->|"1"| N142
+  N128 -->|"1"| N142
+  N130 -->|"1"| N142
+  N141 -->|"1"| N142
+  N0 -->|"1"| N143
+  N60 -->|"1"| N143
+  N109 -->|"1"| N143
+  N0 -->|"1"| N144
+  N60 -->|"1"| N144
+  N107 -->|"1"| N144
+  N112 -->|"1"| N144
+  N0 -->|"1"| N145
+  N60 -->|"1"| N145
+  N109 -->|"1"| N145
+  N144 -->|"1"| N145
+  N0 -->|"1"| N146
+  N60 -->|"1"| N146
+  N143 -->|"1"| N146
+  N145 -->|"1"| N146
+  N0 -->|"1"| N147
+  N60 -->|"1"| N147
+  N111 -->|"1"| N147
+  N143 -->|"1"| N147
+  N0 -->|"1"| N148
+  N60 -->|"1"| N148
+  N127 -->|"1"| N148
+  N147 -->|"1"| N148
+  N0 -->|"1"| N149
+  N60 -->|"1"| N149
+  N0 -->|"1"| N150
+  N60 -->|"1"| N150
+  N0 -->|"1"| N151
+  N60 -->|"1"| N151
+  N149 -->|"1"| N151
+  N150 -->|"1"| N151
+  N0 -->|"1"| N152
+  N60 -->|"1"| N152
+  N0 -->|"1"| N153
+  N60 -->|"1"| N153
+  N63 -->|"1"| N153
+  N79 -->|"1"| N153
+  N127 -->|"1"| N153
+  N152 -->|"1"| N153
+  N0 -->|"1"| N154
+  N60 -->|"1"| N154
+  N152 -->|"1"| N154
+  N0 -->|"1"| N155
+  N60 -->|"1"| N155
+  N0 -->|"1"| N156
+  N60 -->|"1"| N156
+  N0 -->|"1"| N157
+  N60 -->|"1"| N157
+  N156 -->|"1"| N157
+  N0 -->|"1"| N158
+  N60 -->|"1"| N158
+  N63 -->|"1"| N158
+  N79 -->|"1"| N158
+  N107 -->|"1"| N158
+  N127 -->|"1"| N158
+  N152 -->|"1"| N158
+  N0 -->|"1"| N159
+  N60 -->|"1"| N159
+  N158 -->|"1"| N159
+  N0 -->|"1"| N160
+  N60 -->|"1"| N160
+  N63 -->|"1"| N160
+  N107 -->|"1"| N160
+  N112 -->|"1"| N160
+  N0 -->|"1"| N161
+  N60 -->|"1"| N161
+  N99 -->|"1"| N161
+  N100 -->|"1"| N161
+  N155 -->|"1"| N161
+  N159 -->|"1"| N161
+  N160 -->|"1"| N161
+  N0 -->|"1"| N162
+  N60 -->|"1"| N162
+  N63 -->|"1"| N162
+  N79 -->|"1"| N162
+  N152 -->|"1"| N162
+  N0 -->|"1"| N163
+  N60 -->|"1"| N163
+  N162 -->|"1"| N163
+  N0 -->|"1"| N164
+  N60 -->|"1"| N164
+  N163 -->|"1"| N164
+  N0 -->|"1"| N165
+  N60 -->|"1"| N165
+  N163 -->|"1"| N165
+  N0 -->|"1"| N166
+  N60 -->|"1"| N166
+  N165 -->|"1"| N166
+  N0 -->|"1"| N167
+  N60 -->|"1"| N167
+  N163 -->|"1"| N167
+  N0 -->|"1"| N168
+  N60 -->|"1"| N168
+  N167 -->|"1"| N168
+  N0 -->|"1"| N169
+  N60 -->|"1"| N169
+  N0 -->|"1"| N170
+  N60 -->|"1"| N170
+  N63 -->|"1"| N170
+  N79 -->|"1"| N170
+  N127 -->|"1"| N170
+  N152 -->|"1"| N170
+  N0 -->|"1"| N171
+  N60 -->|"1"| N171
+  N170 -->|"1"| N171
+  N0 -->|"1"| N172
+  N60 -->|"1"| N172
+  N136 -->|"1"| N172
+  N0 -->|"1"| N173
+  N60 -->|"1"| N173
+  N136 -->|"1"| N173
+  N0 -->|"1"| N174
+  N60 -->|"1"| N174
+  N107 -->|"1"| N174
+  N0 -->|"1"| N175
+  N60 -->|"1"| N175
+  N112 -->|"1"| N175
+  N174 -->|"1"| N175
+  N0 -->|"1"| N176
+  N60 -->|"1"| N176
+  N0 -->|"1"| N177
+  N60 -->|"1"| N177
+  N175 -->|"1"| N177
+  N176 -->|"1"| N177
+  N0 -->|"1"| N178
+  N60 -->|"1"| N178
+  N161 -->|"1"| N178
+  N177 -->|"1"| N178
+  N0 -->|"1"| N179
+  N60 -->|"1"| N179
+  N112 -->|"1"| N179
+  N174 -->|"1"| N179
+  N0 -->|"1"| N180
+  N60 -->|"1"| N180
+  N62 -->|"1"| N180
+  N63 -->|"1"| N180
+  N107 -->|"1"| N180
+  N179 -->|"1"| N180
+  N0 -->|"1"| N181
+  N60 -->|"1"| N181
+  N112 -->|"1"| N181
+  N180 -->|"1"| N181
+  N0 -->|"1"| N182
+  N60 -->|"1"| N182
+  N153 -->|"1"| N182
+  N181 -->|"1"| N182
+  N0 -->|"1"| N183
+  N60 -->|"1"| N183
+  N0 -->|"1"| N184
+  N60 -->|"1"| N184
+  N107 -->|"1"| N184
+  N152 -->|"1"| N184
+  N183 -->|"1"| N184
+  N0 -->|"1"| N185
+  N60 -->|"1"| N185
+  N63 -->|"1"| N185
+  N79 -->|"1"| N185
+  N112 -->|"1"| N185
+  N127 -->|"1"| N185
+  N184 -->|"1"| N185
+  N0 -->|"1"| N186
+  N60 -->|"1"| N186
+  N62 -->|"1"| N186
+  N63 -->|"1"| N186
+  N79 -->|"1"| N186
+  N152 -->|"1"| N186
+  N183 -->|"1"| N186
+  N0 -->|"1"| N187
+  N60 -->|"1"| N187
+  N63 -->|"1"| N187
+  N107 -->|"1"| N187
+  N112 -->|"1"| N187
+  N183 -->|"1"| N187
+  N0 -->|"1"| N188
+  N60 -->|"1"| N188
+  N187 -->|"1"| N188
+  N0 -->|"1"| N189
+  N60 -->|"1"| N189
+  N185 -->|"1"| N189
+  N188 -->|"1"| N189
+  N0 -->|"1"| N190
+  N60 -->|"1"| N190
+  N186 -->|"1"| N190
+  N189 -->|"1"| N190
+  N0 -->|"1"| N191
+  N60 -->|"1"| N191
+  N190 -->|"1"| N191
+  N0 -->|"1"| N192
+  N60 -->|"1"| N192
+  N64 -->|"1"| N192
+  N80 -->|"1"| N192
+  N112 -->|"1"| N192
+  N127 -->|"1"| N192
+  N152 -->|"1"| N192
+  N183 -->|"1"| N192
+  N0 -->|"1"| N193
+  N60 -->|"1"| N193
+  N176 -->|"1"| N193
+  N183 -->|"1"| N193
+  N0 -->|"1"| N194
+  N60 -->|"1"| N194
+  N193 -->|"1"| N194
+  N0 -->|"1"| N195
+  N60 -->|"1"| N195
+  N194 -->|"1"| N195
+  N0 -->|"1"| N196
+  N60 -->|"1"| N196
+  N194 -->|"1"| N196
+  N0 -->|"1"| N197
+  N60 -->|"1"| N197
+  N136 -->|"1"| N197
+  N196 -->|"1"| N197
+  N0 -->|"1"| N198
+  N60 -->|"1"| N198
+  N105 -->|"1"| N198
+  N172 -->|"1"| N198
+  N182 -->|"1"| N198
+  N197 -->|"1"| N198
+  N0 -->|"1"| N199
+  N60 -->|"1"| N199
+  N106 -->|"1"| N199
+  N173 -->|"1"| N199
+  N198 -->|"1"| N199
+  N0 -->|"1"| N200
+  N60 -->|"1"| N200
+  N126 -->|"1"| N200
+  N182 -->|"1"| N200
+  N199 -->|"1"| N200
+  N0 -->|"1"| N201
+  N60 -->|"1"| N201
+  N183 -->|"1"| N201
+  N0 -->|"1"| N202
+  N60 -->|"1"| N202
+  N121 -->|"1"| N202
+  N142 -->|"1"| N202
+  N154 -->|"1"| N202
+  N201 -->|"1"| N202
+  N0 -->|"1"| N203
+  N60 -->|"1"| N203
+  N0 -->|"1"| N204
+  N60 -->|"1"| N204
+  N201 -->|"1"| N204
+  N203 -->|"1"| N204
+  N0 -->|"1"| N205
+  N60 -->|"1"| N205
+  N0 -->|"1"| N206
+  N60 -->|"1"| N206
+  N63 -->|"1"| N206
+  N107 -->|"1"| N206
+  N0 -->|"1"| N207
+  N60 -->|"1"| N207
+  N63 -->|"1"| N207
+  N79 -->|"1"| N207
+  N127 -->|"1"| N207
+  N152 -->|"1"| N207
+  N0 -->|"1"| N208
+  N60 -->|"1"| N208
+  N112 -->|"1"| N208
+  N206 -->|"1"| N208
+  N0 -->|"1"| N209
+  N60 -->|"1"| N209
+  N183 -->|"1"| N209
+  N0 -->|"1"| N210
+  N60 -->|"1"| N210
+  N209 -->|"1"| N210
+  N0 -->|"1"| N211
+  N60 -->|"1"| N211
+  N107 -->|"1"| N211
+  N112 -->|"1"| N211
+  N0 -->|"1"| N212
+  N60 -->|"1"| N212
+  N62 -->|"1"| N212
+  N63 -->|"1"| N212
+  N107 -->|"1"| N212
+  N211 -->|"1"| N212
+  N0 -->|"1"| N213
+  N60 -->|"1"| N213
+  N112 -->|"1"| N213
+  N212 -->|"1"| N213
+  N0 -->|"1"| N214
+  N60 -->|"1"| N214
+  N207 -->|"1"| N214
+  N213 -->|"1"| N214
+  N0 -->|"1"| N215
+  N60 -->|"1"| N215
+  N203 -->|"1"| N215
+  N210 -->|"1"| N215
+  N0 -->|"1"| N216
+  N60 -->|"1"| N216
+  N136 -->|"1"| N216
+  N215 -->|"1"| N216
+  N0 -->|"1"| N217
+  N60 -->|"1"| N217
+  N105 -->|"1"| N217
+  N172 -->|"1"| N217
+  N214 -->|"1"| N217
+  N216 -->|"1"| N217
+  N0 -->|"1"| N218
+  N60 -->|"1"| N218
+  N106 -->|"1"| N218
+  N173 -->|"1"| N218
+  N217 -->|"1"| N218
+  N0 -->|"1"| N219
+  N60 -->|"1"| N219
+  N208 -->|"1"| N219
+  N214 -->|"1"| N219
+  N218 -->|"1"| N219
+  N0 -->|"1"| N220
+  N60 -->|"1"| N220
+  N192 -->|"1"| N220
+  N0 -->|"1"| N221
+  N60 -->|"1"| N221
+  N0 -->|"1"| N222
+  N60 -->|"1"| N222
+  N220 -->|"1"| N222
+  N0 -->|"1"| N223
+  N60 -->|"1"| N223
+  N222 -->|"1"| N223
+  N0 -->|"1"| N224
+  N60 -->|"1"| N224
+  N222 -->|"1"| N224
+  N0 -->|"1"| N225
+  N60 -->|"1"| N225
+  N0 -->|"1"| N226
+  N60 -->|"1"| N226
+  N221 -->|"1"| N226
+  N222 -->|"1"| N226
+  N225 -->|"1"| N226
+  N0 -->|"1"| N227
+  N60 -->|"1"| N227
+  N125 -->|"1"| N227
+  N0 -->|"1"| N228
+  N60 -->|"1"| N228
+  N122 -->|"1"| N228
+  N0 -->|"1"| N229
+  N60 -->|"1"| N229
+  N123 -->|"1"| N229
+  N0 -->|"1"| N230
+  N60 -->|"1"| N230
+  N0 -->|"1"| N231
+  N60 -->|"1"| N231
+  N0 -->|"1"| N232
+  N60 -->|"1"| N232
+  N202 -->|"1"| N232
+  N0 -->|"1"| N233
+  N60 -->|"1"| N233
+  N95 -->|"1"| N233
+  N140 -->|"1"| N233
+  N154 -->|"1"| N233
+  N232 -->|"1"| N233
+  N0 -->|"1"| N234
+  N60 -->|"1"| N234
+  N61 -->|"1"| N234
+  N233 -->|"1"| N234
+  N0 -->|"1"| N235
+  N60 -->|"1"| N235
+  N145 -->|"1"| N235
+  N147 -->|"1"| N235
+  N0 -->|"1"| N236
+  N60 -->|"1"| N236
+  N77 -->|"1"| N236
+  N208 -->|"1"| N236
+  N219 -->|"1"| N236
+  N233 -->|"1"| N236
+  N234 -->|"1"| N236
+  N235 -->|"1"| N236
+  N0 -->|"1"| N237
+  N60 -->|"1"| N237
+  N126 -->|"1"| N237
+  N200 -->|"1"| N237
+  N235 -->|"1"| N237
+  N0 -->|"1"| N238
+  N60 -->|"1"| N238
+  N0 -->|"1"| N239
+  N60 -->|"1"| N239
+  N0 -->|"1"| N240
+  N60 -->|"1"| N240
+  N239 -->|"1"| N240
+  N0 -->|"1"| N241
+  N60 -->|"1"| N241
+  N88 -->|"1"| N241
+  N89 -->|"1"| N241
+  N103 -->|"1"| N241
+  N104 -->|"1"| N241
+  N240 -->|"1"| N241
+  N0 -->|"1"| N242
+  N60 -->|"1"| N242
+  N121 -->|"1"| N242
+  N128 -->|"1"| N242
+  N151 -->|"1"| N242
+  N0 -->|"1"| N243
+  N60 -->|"1"| N243
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
+
+  class N0 ext
+  class N1 file
+  class N2 file
+  class N3 file
+  class N4 file
+  class N5 file
+  class N6 file
+  class N7 file
+  class N8 file
+  class N9 file
+  class N10 file
+  class N11 file
+  class N12 file
+  class N13 file
+  class N14 file
+  class N15 file
+  class N16 file
+  class N17 file
+  class N18 file
+  class N19 file
+  class N20 file
+  class N21 file
+  class N22 file
+  class N23 file
+  class N24 file
+  class N25 file
+  class N26 file
+  class N27 file
+  class N28 file
+  class N29 file
+  class N30 file
+  class N31 file
+  class N32 file
+  class N33 file
+  class N34 file
+  class N35 file
+  class N36 file
+  class N37 file
+  class N38 file
+  class N39 file
+  class N40 file
+  class N41 file
+  class N42 file
+  class N43 file
+  class N44 file
+  class N45 file
+  class N46 file
+  class N47 file
+  class N48 file
+  class N49 file
+  class N50 file
+  class N51 file
+  class N52 file
+  class N53 file
+  class N54 file
+  class N55 file
+  class N56 file
+  class N57 file
+  class N58 file
+  class N59 file
+  class N60 file
+  class N61 file
+  class N62 file
+  class N63 file
+  class N64 file
+  class N65 file
+  class N66 file
+  class N67 file
+  class N68 file
+  class N69 file
+  class N70 file
+  class N71 file
+  class N72 file
+  class N73 file
+  class N74 file
+  class N75 file
+  class N76 file
+  class N77 file
+  class N78 file
+  class N79 file
+  class N80 file
+  class N81 file
+  class N82 file
+  class N83 file
+  class N84 file
+  class N85 file
+  class N86 file
+  class N87 file
+  class N88 file
+  class N89 file
+  class N90 file
+  class N91 file
+  class N92 file
+  class N93 file
+  class N94 file
+  class N95 file
+  class N96 file
+  class N97 file
+  class N98 file
+  class N99 file
+  class N100 file
+  class N101 file
+  class N102 file
+  class N103 file
+  class N104 file
+  class N105 file
+  class N106 file
+  class N107 file
+  class N108 file
+  class N109 file
+  class N110 file
+  class N111 file
+  class N112 file
+  class N113 file
+  class N114 file
+  class N115 file
+  class N116 file
+  class N117 file
+  class N118 file
+  class N119 file
+  class N120 file
+  class N121 file
+  class N122 file
+  class N123 file
+  class N124 file
+  class N125 file
+  class N126 file
+  class N127 file
+  class N128 file
+  class N129 file
+  class N130 file
+  class N131 file
+  class N132 file
+  class N133 file
+  class N134 file
+  class N135 file
+  class N136 file
+  class N137 file
+  class N138 file
+  class N139 file
+  class N140 file
+  class N141 file
+  class N142 file
+  class N143 file
+  class N144 file
+  class N145 file
+  class N146 file
+  class N147 file
+  class N148 file
+  class N149 file
+  class N150 file
+  class N151 file
+  class N152 file
+  class N153 file
+  class N154 file
+  class N155 file
+  class N156 file
+  class N157 file
+  class N158 file
+  class N159 file
+  class N160 file
+  class N161 file
+  class N162 file
+  class N163 file
+  class N164 file
+  class N165 file
+  class N166 file
+  class N167 file
+  class N168 file
+  class N169 file
+  class N170 file
+  class N171 file
+  class N172 file
+  class N173 file
+  class N174 file
+  class N175 file
+  class N176 file
+  class N177 file
+  class N178 file
+  class N179 file
+  class N180 file
+  class N181 file
+  class N182 file
+  class N183 file
+  class N184 file
+  class N185 file
+  class N186 file
+  class N187 file
+  class N188 file
+  class N189 file
+  class N190 file
+  class N191 file
+  class N192 file
+  class N193 file
+  class N194 file
+  class N195 file
+  class N196 file
+  class N197 file
+  class N198 file
+  class N199 file
+  class N200 file
+  class N201 file
+  class N202 file
+  class N203 file
+  class N204 file
+  class N205 file
+  class N206 file
+  class N207 file
+  class N208 file
+  class N209 file
+  class N210 file
+  class N211 file
+  class N212 file
+  class N213 file
+  class N214 file
+  class N215 file
+  class N216 file
+  class N217 file
+  class N218 file
+  class N219 file
+  class N220 file
+  class N221 file
+  class N222 file
+  class N223 file
+  class N224 file
+  class N225 file
+  class N226 file
+  class N227 file
+  class N228 file
+  class N229 file
+  class N230 file
+  class N231 file
+  class N232 file
+  class N233 file
+  class N234 file
+  class N235 file
+  class N236 file
+  class N237 file
+  class N238 file
+  class N239 file
+  class N240 file
+  class N241 file
+  class N242 file
+  class N243 file

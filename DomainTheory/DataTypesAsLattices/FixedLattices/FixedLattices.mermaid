@@ -1,0 +1,56 @@
+%% Inside FixedLattices. A box is one Lean file in this folder, or one subfolder.
+%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
+%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+flowchart TB
+  N0["DirectedSet"]
+  N1["completeLatticeLE"]
+  N2["completeLatticePreorder"]
+  N3["completeLatticeSupSet"]
+  N4["WayBelow"]
+  N5["IsCompact"]
+  N6["CountablyAlgebraic"]
+  N7["ContinuousBasis"]
+  N8["finiteBasisSups"]
+  N9["Basic"]
+  N10["finiteBasisSups_directed"]
+  N11["sSup_finiteBasisSups"]
+  N12["CountablyAlgebraicu2ecompact_finite_support"]
+
+  N0 -->|"1"| N4
+  N1 -->|"1"| N4
+  N2 -->|"1"| N4
+  N3 -->|"1"| N4
+  N4 -->|"1"| N5
+  N0 -->|"1"| N6
+  N1 -->|"1"| N6
+  N2 -->|"1"| N6
+  N3 -->|"1"| N6
+  N4 -->|"1"| N6
+  N5 -->|"1"| N6
+  N6 -->|"1"| N7
+  N6 -->|"1"| N8
+  N6 -->|"1"| N9
+  N7 -->|"1"| N9
+  N8 -->|"1"| N9
+  N9 -->|"1"| N10
+  N9 -->|"1"| N11
+  N9 -->|"1"| N12
+  N10 -->|"1"| N12
+  N11 -->|"1"| N12
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
+
+  class N0 file
+  class N1 file
+  class N2 file
+  class N3 file
+  class N4 file
+  class N5 file
+  class N6 file
+  class N7 file
+  class N8 file
+  class N9 file
+  class N10 file
+  class N11 file
+  class N12 file

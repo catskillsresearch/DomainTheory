@@ -1,0 +1,20 @@
+%% Inside InfoSysToNeighborhood. A box is one Lean file in this folder, or one subfolder.
+%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
+%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+flowchart TB
+  N0["BridgeTheorems"]
+  N1["InformationSystems"]
+  N2["NeighbourhoodSystems"]
+  N3["domainOrderIso"]
+
+  N0 -->|"6"| N3
+  N1 -->|"5"| N3
+  N2 -->|"2"| N3
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
+
+  class N0 ext
+  class N1 ext
+  class N2 ext
+  class N3 file

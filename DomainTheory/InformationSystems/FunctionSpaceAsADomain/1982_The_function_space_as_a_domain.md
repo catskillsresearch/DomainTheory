@@ -1,5 +1,9 @@
 # The function space as a domain
 
+**Dependencies.** Inside FunctionSpaceAsADomain, each box is one subfolder, or one Lean file sitting directly in the folder. A box named as another folder in this chapter is that whole folder. A box named as another chapter is that whole chapter. The arrowhead points at the file or folder that imports, and the number is how many direct imports.
+
+@import "FunctionSpaceAsADomain.mermaid"
+
 ## Human-English
 
 @import "1982_The_function_space_as_a_domain.english" {code_block=false}

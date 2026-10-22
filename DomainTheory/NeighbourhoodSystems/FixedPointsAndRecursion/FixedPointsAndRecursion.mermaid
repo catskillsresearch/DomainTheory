@@ -1,0 +1,177 @@
+%% Inside FixedPointsAndRecursion. A box is one Lean file in this folder, or one subfolder.
+%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
+%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+flowchart TB
+  N0["DomainConstructs"]
+  N1["DomainsGivenByNeighbourhoods"]
+  N2["MappingsBetweenDomains"]
+  N3["Exercise412/"]
+  N4["Exercise412"]
+  N5["Exercise414/"]
+  N6["Exercise414"]
+  N7["Exercise417/"]
+  N8["Exercise417"]
+  N9["Exercise421/"]
+  N10["Exercise421"]
+  N11["Exercise424/"]
+  N12["Exercise424"]
+  N13["Theorem41/"]
+  N14["Theorem41"]
+  N15["Example43/"]
+  N16["Example43"]
+  N17["Example44/"]
+  N18["Example44"]
+  N19["Exercise407/"]
+  N20["Exercise407"]
+  N21["Exercise408/"]
+  N22["Exercise408"]
+  N23["Exercise409/"]
+  N24["Exercise409"]
+  N25["Exercise410/"]
+  N26["Exercise410"]
+  N27["Exercise411/"]
+  N28["Exercise411"]
+  N29["Exercise413/"]
+  N30["Exercise413"]
+  N31["Exercise415/"]
+  N32["Exercise415"]
+  N33["Exercise416/"]
+  N34["Exercise416"]
+  N35["Exercise418/"]
+  N36["Exercise418"]
+  N37["Exercise419/"]
+  N38["Exercise419"]
+  N39["Exercise420/"]
+  N40["Exercise420"]
+  N41["Exercise423/"]
+  N42["Exercise423"]
+  N43["Exercise425/"]
+  N44["Exercise425"]
+  N45["Theorem46/"]
+  N46["Theorem46"]
+  N47["Exercise422/"]
+  N48["Exercise422"]
+
+  N1 -->|"5"| N3
+  N2 -->|"5"| N3
+  N3 -->|"2"| N4
+  N5 -->|"2"| N6
+  N5 -->|"2"| N7
+  N6 -->|"14"| N7
+  N7 -->|"2"| N8
+  N5 -->|"2"| N9
+  N6 -->|"19"| N9
+  N9 -->|"4"| N10
+  N5 -->|"1"| N11
+  N6 -->|"14"| N11
+  N11 -->|"1"| N12
+  N0 -->|"28"| N13
+  N2 -->|"28"| N13
+  N13 -->|"2"| N14
+  N2 -->|"33"| N15
+  N14 -->|"33"| N15
+  N15 -->|"14"| N16
+  N2 -->|"21"| N17
+  N13 -->|"1"| N17
+  N14 -->|"21"| N17
+  N17 -->|"5"| N18
+  N2 -->|"10"| N19
+  N14 -->|"10"| N19
+  N19 -->|"2"| N20
+  N2 -->|"9"| N21
+  N13 -->|"2"| N21
+  N14 -->|"9"| N21
+  N21 -->|"2"| N22
+  N13 -->|"4"| N23
+  N14 -->|"7"| N23
+  N23 -->|"4"| N24
+  N14 -->|"16"| N25
+  N25 -->|"2"| N26
+  N2 -->|"1"| N27
+  N13 -->|"5"| N27
+  N20 -->|"8"| N27
+  N25 -->|"2"| N27
+  N26 -->|"8"| N27
+  N27 -->|"2"| N28
+  N1 -->|"13"| N29
+  N14 -->|"11"| N29
+  N29 -->|"4"| N30
+  N1 -->|"4"| N31
+  N29 -->|"1"| N31
+  N30 -->|"4"| N31
+  N31 -->|"2"| N32
+  N29 -->|"1"| N33
+  N30 -->|"7"| N33
+  N32 -->|"7"| N33
+  N33 -->|"3"| N34
+  N16 -->|"7"| N35
+  N35 -->|"5"| N36
+  N0 -->|"34"| N37
+  N18 -->|"31"| N37
+  N37 -->|"6"| N38
+  N13 -->|"2"| N39
+  N14 -->|"3"| N39
+  N39 -->|"1"| N40
+  N13 -->|"1"| N41
+  N14 -->|"2"| N41
+  N41 -->|"1"| N42
+  N16 -->|"28"| N43
+  N43 -->|"1"| N44
+  N45 -->|"1"| N46
+  N5 -->|"2"| N47
+  N6 -->|"14"| N47
+  N46 -->|"14"| N47
+  N47 -->|"1"| N48
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
+
+  class N0 ext
+  class N1 ext
+  class N2 ext
+  class N3 file
+  class N4 file
+  class N5 file
+  class N6 file
+  class N7 file
+  class N8 file
+  class N9 file
+  class N10 file
+  class N11 file
+  class N12 file
+  class N13 file
+  class N14 file
+  class N15 file
+  class N16 file
+  class N17 file
+  class N18 file
+  class N19 file
+  class N20 file
+  class N21 file
+  class N22 file
+  class N23 file
+  class N24 file
+  class N25 file
+  class N26 file
+  class N27 file
+  class N28 file
+  class N29 file
+  class N30 file
+  class N31 file
+  class N32 file
+  class N33 file
+  class N34 file
+  class N35 file
+  class N36 file
+  class N37 file
+  class N38 file
+  class N39 file
+  class N40 file
+  class N41 file
+  class N42 file
+  class N43 file
+  class N44 file
+  class N45 file
+  class N46 file
+  class N47 file
+  class N48 file
