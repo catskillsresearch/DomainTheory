@@ -1,0 +1,58 @@
+%% Each box is one folder under DataTypesAsLattices.
+%% The arrowhead points at the folder that imports. The label is how many direct imports.
+flowchart TB
+  N0["FixedLattices"]
+  N1["Pomega"]
+  N2["Continuous"]
+  N3["Graph"]
+  N4["FixedPoint"]
+  N5["Embedding"]
+  N6["Lambda"]
+  N7["Computability"]
+  N8["Retracts"]
+  N9["Classification"]
+  N10["Closures"]
+  N11["Functionality"]
+  N12["Enumeration"]
+
+  N1 -->|"23"| N2
+  N2 -->|"18"| N3
+  N3 -->|"13"| N4
+  N4 -->|"12"| N5
+  N5 -->|"243"| N6
+  N6 -->|"183"| N7
+  N0 -->|"147"| N8
+  N6 -->|"147"| N8
+  N8 -->|"61"| N9
+  N8 -->|"168"| N10
+  N8 -->|"328"| N11
+  N7 -->|"350"| N12
+  N11 -->|"350"| N12
+
+  classDef c0 fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
+  classDef c2 fill:#fef3c7,stroke:#b45309,color:#78350f
+  classDef c3 fill:#fce7f3,stroke:#be185d,color:#831843
+  classDef c4 fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
+  classDef c5 fill:#e0e7ff,stroke:#4338ca,color:#312e81
+  classDef c6 fill:#cffafe,stroke:#0e7490,color:#164e63
+  classDef c7 fill:#fae8ff,stroke:#a21caf,color:#701a75
+  classDef c8 fill:#ffedd5,stroke:#c2410c,color:#7c2d12
+  classDef c9 fill:#f3e8ff,stroke:#7e22ce,color:#581c87
+  classDef c10 fill:#ecfccb,stroke:#4d7c0f,color:#365314
+  classDef c11 fill:#fde68a,stroke:#a16207,color:#713f12
+  classDef c12 fill:#e2e8f0,stroke:#334155,color:#0f172a
+
+  class N0 c0
+  class N1 c1
+  class N2 c2
+  class N3 c3
+  class N4 c4
+  class N5 c5
+  class N6 c6
+  class N7 c7
+  class N8 c8
+  class N9 c9
+  class N10 c10
+  class N11 c11
+  class N12 c12

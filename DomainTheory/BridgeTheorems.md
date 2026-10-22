@@ -15,6 +15,10 @@ even when the proof term extracts no witness. Genuine classical frontiers remain
 Scott’s 1972 topological definition of `≪` (algebraic ⇒ continuous; ScottMap
 conjugation) and trichotomy for separated sums.
 
+**Dependencies.** Each box is one folder. BridgeTheorems is the Lean files in that folder, not in a subfolder. The arrowhead points at the folder that imports, and the number is how many direct imports. A pair of arrows between the same boxes is a cycle.
+
+@import "BridgeTheorems.mermaid"
+
 - [Introduction](BridgeTheorems/BridgeTheorems_Introduction.md)
 - [Catalog of bridge theorems](BridgeTheorems/BridgeTheorems_Catalog_of_bridge_theorems.md)
 - [Proof notes](BridgeTheorems/BridgeTheorems_Proof_notes.md)

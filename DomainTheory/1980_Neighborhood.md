@@ -1,5 +1,9 @@
 # Neighbourhood systems
 
+**Dependencies.** Each box is one folder. The arrowhead points at the folder that imports, and the number is how many direct imports.
+
+@import "1980_Neighborhood.mermaid"
+
 - [Introduction](1980_Introduction.md)
 - [Domains given by neighbourhoods](NeighbourhoodSystems/DomainsGivenByNeighbourhoods/1980_Domains_given_by_neighbourhoods.md)
 - [Mappings between domains](NeighbourhoodSystems/MappingsBetweenDomains/1980_Mappings_between_domains.md)

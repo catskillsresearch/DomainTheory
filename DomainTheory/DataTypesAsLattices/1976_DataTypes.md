@@ -1,5 +1,9 @@
 # Data types as lattices
 
+**Dependencies.** Each box is one folder. The arrowhead points at the folder that imports, and the number is how many direct imports.
+
+@import "1976_DataTypes.mermaid"
+
 - [Introduction](1976_Introduction.md)
 - [Continuous functions](1976_Continuous_functions.md)
 - [Computability and definability](Lambda/1976_Computability_and_definability.md)
