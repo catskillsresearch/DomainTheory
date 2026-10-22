@@ -38,7 +38,7 @@ theorem mem_iff_principal_of_continuous {c : V₀.Element → V₁.Element} (hc 
   · intro hY
     have hxpre : x ∈ c ⁻¹' V₁.basicOpen Y := hY
     have hopen : IsOpen (c ⁻¹' V₁.basicOpen Y) := (V₁.isOpen_basicOpen Y).preimage hc
-    obtain ⟨X, hxX, hXU⟩ := hopen x hxpre
+    obtain ⟨X, hxX, hXU⟩ := hopen.out x hxpre
     refine ⟨X, hxX, ?_⟩
     exact hXU (show V₀.principal (x.sub hxX) ∈ V₀.basicOpen X from ⟨x.sub hxX, subset_rfl⟩)
   · rintro ⟨X, hxX, hY⟩

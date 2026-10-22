@@ -26,7 +26,7 @@ variable (A : InfoSys α)
 
 
 theorem lamUnfold_atom (x : α) :
-    lamUnfold A ⟨.atom x, trivial⟩ = SumToken.left x := rfl
+    lamUnfold A ⟨.atom x, ⟨trivial⟩⟩ = SumToken.left x := rfl
 
 end InfoSys
 end DomainTheory.InformationSystems

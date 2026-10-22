@@ -3,7 +3,7 @@
 ### 3.1 Continuous lattices → neighbourhood systems
 
 **Claim.** For a continuous lattice `D`, the sets `↟a = {z | a ≪ z}` form a
-`NeighborhoodSystem` on token type `D`, and under `IsContinuousLattice` one has an order
+`NeighborhoodSystem` on token type `D`, and under `ContinuousLattice` one has an order
 isomorphism `D ≃o RoundFilter`.
 
 **Construction.** `wayBelowUp a` is upward closed; `↟⊥ = univ`;
@@ -60,7 +60,7 @@ extract no witnesses; the kernel audit inherits `Classical.choice` through
 ### 3.5 Algebraic complete lattices → continuous lattices
 
 **Claim.** If every element of a complete lattice is the directed supremum of compact
-elements below it (`IsAlgebraicLattice`), then `IsContinuousLattice` holds.
+elements below it (`AlgebraicLattice`), then `ContinuousLattice` holds.
 
 **Proof note.** Order-theoretic compactness implies `Set.Ici k` is Scott-open, hence
 `k ≪ y` whenever `k ≤ y`. Algebraicity then yields `y = ⊔{k compact | k ≤ y} ⊆ ⊔{x | x ≪ y}`.
@@ -69,7 +69,7 @@ so the footprint inherits that classicality even though the order argument is el
 
 ### 3.6 Three-presentation equivalence (`presentation_domains_equiv`)
 
-**Claim.** Under `IsContinuousLattice D` and `DecidableEq D`,
+**Claim.** Under `ContinuousLattice D` and `DecidableEq D`,
 ```
 D ≃o RoundFilter ≃o RoundInfoSysElement
 ```
@@ -216,7 +216,7 @@ with `ScottMap D E` (needs roundness preservation of approximable maps), and rel
 - [BridgeTheorems/InfoSysToIdealCompletion/mem_toIdeal_iff.lean](InfoSysToIdealCompletion/mem_toIdeal_iff.lean)
 - [BridgeTheorems/InfoSysToIdealCompletion.lean](InfoSysToIdealCompletion.lean)
 - [BridgeTheorems/IsCompactElement.lean](IsCompactElement.lean)
-- [BridgeTheorems/IsAlgebraicLattice.lean](IsAlgebraicLattice.lean)
+- [BridgeTheorems/AlgebraicLattice.lean](AlgebraicLattice.lean)
 - [BridgeTheorems/IdealCompletionToContinuousLattice.lean](IdealCompletionToContinuousLattice.lean)
 - [BridgeTheorems/NbhdBasis.lean](NbhdBasis.lean)
 - [BridgeTheorems/basicOpen_empty.lean](basicOpen_empty.lean)

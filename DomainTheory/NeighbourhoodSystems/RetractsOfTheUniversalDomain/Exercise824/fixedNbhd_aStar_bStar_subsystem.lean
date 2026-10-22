@@ -30,9 +30,9 @@ pair of finitary projections that is a pre-fixed point of the same pair of opera
 `D_{aStar s t} ◁ D_a`, `D_{bStar s t} ◁ D_b` — Scott's "the initial solution... with respect to
 projections", for both components simultaneously. -/
 theorem fixedNbhd_aStar_bStar_subsystem (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))
-    (hst : ∀ a b, IsFinitaryProjection a → IsFinitaryProjection b →
-      IsFinitaryProjection (binOp s a b) ∧ IsFinitaryProjection (binOp t a b))
-    {a b : ApproximableMap E E} (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b)
+    (hst : ∀ a b, FinitaryProjection a → FinitaryProjection b →
+      FinitaryProjection (binOp s a b) ∧ FinitaryProjection (binOp t a b))
+    {a b : ApproximableMap E E} (ha : FinitaryProjection a) (hb : FinitaryProjection b)
     (hpreA : binOp s a b ≤ a) (hpreB : binOp t a b ≤ b) :
     fixedNbhd (aStar s t) ◁ fixedNbhd a ∧ fixedNbhd (bStar s t) ◁ fixedNbhd b := by
   have h1 : s.toElementMap (pair (toFilter a) (toFilter b)) ≤ toFilter a := by

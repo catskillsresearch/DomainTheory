@@ -23,7 +23,8 @@ open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
 
-theorem Deg_isSubalgebra (a : Pomega) : IsSubalgebra (Deg a) := by
+theorem Deg_isSubalgebra (a : Pomega) : Subalgebra (Deg a) := by
+  constructor
   constructor
   · refine ⟨funOf Kcomb Gcomb, IsCombinatory.app .K Gcomb_combinatory, ?_⟩
     rw [Kcomb_beta2]

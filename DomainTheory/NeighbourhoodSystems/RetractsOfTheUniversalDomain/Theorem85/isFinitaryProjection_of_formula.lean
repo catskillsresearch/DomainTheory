@@ -33,7 +33,7 @@ the proof — no further work needed. -/
 theorem isFinitaryProjection_of_formula (a : ApproximableMap E E)
     (hii : ∀ (x : E.Element) {Y : Set α}, (a.toElementMap x).mem Y ↔
       E.mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ a.rel X X) :
-    IsFinitaryProjection a := by
+    FinitaryProjection a := by
   have heq : a = Subsystem.retractionOfSubsystem (fixedNbhd_subsystem a) := by
     apply ApproximableMap.ext
     intro X Z

@@ -32,8 +32,8 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 /-- **Scott 1972, Theorem 3.3 (full statement).** For continuous lattices `D`, `D'`, the function
 space `[D → D']` is a continuous lattice (`theorem_3_3_isContinuousLattice`) whose Scott topology
 agrees with the topology of pointwise convergence (`theorem_3_3_topology`). -/
-theorem theorem_3_3 (hD : IsContinuousLattice D) (hD' : IsContinuousLattice D') :
-    IsContinuousLattice (ScottMap D D') ∧
+theorem theorem_3_3 (hD : ContinuousLattice D) (hD' : ContinuousLattice D') :
+    ContinuousLattice (ScottMap D D') ∧
       (scottTopologicalSpace : TopologicalSpace (ScottMap D D')) = scottMapPointwiseTopology D D' :=
   ⟨theorem_3_3_isContinuousLattice hD hD', theorem_3_3_topology hD hD'⟩
 

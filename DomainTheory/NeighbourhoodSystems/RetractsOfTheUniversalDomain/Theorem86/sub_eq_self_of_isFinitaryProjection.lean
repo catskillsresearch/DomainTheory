@@ -29,7 +29,7 @@ finitary projection is a fixed point of `sub`: `⊇` is `sub_le`; `⊆` unwinds 
 `rel_iff_mem_principal` into `Z ∈ f(↑X)`, and Theorem 8.5's formula
 (`formula_of_isFinitaryProjection`) rewrites this as exactly `sub_rel`'s defining formula. -/
 theorem sub_eq_self_of_isFinitaryProjection {f : ApproximableMap E E}
-    (h : IsFinitaryProjection f) : sub f = f := by
+    (h : FinitaryProjection f) : sub f = f := by
   apply ApproximableMap.ext
   intro X Z
   constructor

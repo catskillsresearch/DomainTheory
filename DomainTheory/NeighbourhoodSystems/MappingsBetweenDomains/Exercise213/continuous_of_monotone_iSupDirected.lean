@@ -40,7 +40,9 @@ theorem continuous_of_monotone_iSupDirected {c : V₀.Element → V₁.Element} 
       c (iSupDirected d hdir) = iSupDirected (fun i => c (d i)) hdir') :
     Continuous c := by
   rw [continuous_def]
-  intro U hU x hx
+  intro U hU
+  constructor
+  intro x hx
   rw [Set.mem_preimage] at hx
   set fam : {X : Set α // x.mem X} → V₀.Element := fun i => V₀.principal (x.sub i.2) with hfam
   have hdir : ∀ i j : {X : Set α // x.mem X}, ∃ k, fam i ≤ fam k ∧ fam j ≤ fam k :=
@@ -51,7 +53,7 @@ theorem continuous_of_monotone_iSupDirected {c : V₀.Element → V₁.Element} 
     (congrArg c (eq_iSupDirected_principal x)).trans
       (hsup (I := {X : Set α // x.mem X}) fam hdir hdir')
   rw [hxeq] at hx
-  obtain ⟨Y, hY, hYU⟩ := hU _ hx
+  obtain ⟨Y, hY, hYU⟩ := hU.out _ hx
   obtain ⟨i, hi⟩ := (mem_iSupDirected _ hdir').mp hY
   refine ⟨i.1, i.2, fun x' hx' => hYU ?_⟩
   have hple : fam i ≤ x' := fun Z hZ => x'.up_mem hx' hZ.1 hZ.2

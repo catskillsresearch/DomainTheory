@@ -31,16 +31,16 @@ theorem theorem_810_b : And
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                     And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.sumComb a b))
                       (And
-                        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                           (DomainTheory.NeighbourhoodSystems.prodComb a b))
                         (And
-                          (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat
+                          (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat
                             DomainTheory.NeighbourhoodSystems.U (DomainTheory.NeighbourhoodSystems.arrowComb a b))
                           (And
                             (Nonempty
@@ -271,62 +271,62 @@ theorem theorem_810_b : And
                 (a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U),
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
             (∀
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                   And
-                    (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                    (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.sumComb a b))
                     (And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.prodComb a b))
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
           (∀
             (a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U),
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.prodComb a b)))
         (∀
           (a b :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                 (DomainTheory.NeighbourhoodSystems.sumComb a b)))
       (∀
         (a b :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
             DomainTheory.NeighbourhoodSystems.U),
-        @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+        @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
             @DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.U
               (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
     (∀
       (a b :
         @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
           DomainTheory.NeighbourhoodSystems.U),
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-        @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+        @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
           @DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.U
             (DomainTheory.NeighbourhoodSystems.prodComb a b)))
   (∀
     (a b :
       @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
         DomainTheory.NeighbourhoodSystems.U),
-    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
         @DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.U
           (DomainTheory.NeighbourhoodSystems.sumComb a b)) :=
   @And.intro
@@ -340,16 +340,16 @@ theorem theorem_810_b : And
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                     And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.sumComb a b))
                       (And
-                        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                           (DomainTheory.NeighbourhoodSystems.prodComb a b))
                         (And
-                          (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat
+                          (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat
                             DomainTheory.NeighbourhoodSystems.U (DomainTheory.NeighbourhoodSystems.arrowComb a b))
                           (And
                             (Nonempty
@@ -580,62 +580,62 @@ theorem theorem_810_b : And
                 (a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U),
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
             (∀
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                   And
-                    (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                    (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.sumComb a b))
                     (And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.prodComb a b))
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
           (∀
             (a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U),
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.prodComb a b)))
         (∀
           (a b :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                 (DomainTheory.NeighbourhoodSystems.sumComb a b)))
       (∀
         (a b :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
             DomainTheory.NeighbourhoodSystems.U),
-        @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+        @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
             @DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.U
               (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
     (∀
       (a b :
         @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
           DomainTheory.NeighbourhoodSystems.U),
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-        @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+        @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
           @DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.U
             (DomainTheory.NeighbourhoodSystems.prodComb a b)))
   (∀
     (a b :
       @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
         DomainTheory.NeighbourhoodSystems.U),
-    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
         @DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.U
           (DomainTheory.NeighbourhoodSystems.sumComb a b))
   (@And.intro
@@ -648,16 +648,16 @@ theorem theorem_810_b : And
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                     And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.sumComb a b))
                       (And
-                        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                           (DomainTheory.NeighbourhoodSystems.prodComb a b))
                         (And
-                          (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat
+                          (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat
                             DomainTheory.NeighbourhoodSystems.U (DomainTheory.NeighbourhoodSystems.arrowComb a b))
                           (And
                             (Nonempty
@@ -888,54 +888,54 @@ theorem theorem_810_b : And
                 (a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U),
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
             (∀
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                   And
-                    (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                    (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.sumComb a b))
                     (And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.prodComb a b))
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
           (∀
             (a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U),
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.prodComb a b)))
         (∀
           (a b :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                 (DomainTheory.NeighbourhoodSystems.sumComb a b)))
       (∀
         (a b :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
             DomainTheory.NeighbourhoodSystems.U),
-        @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+        @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
             @DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.U
               (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
     (∀
       (a b :
         @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
           DomainTheory.NeighbourhoodSystems.U),
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-        @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+        @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
           @DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.U
             (DomainTheory.NeighbourhoodSystems.prodComb a b))
     (@And.intro
@@ -947,16 +947,16 @@ theorem theorem_810_b : And
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                     And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.sumComb a b))
                       (And
-                        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                           (DomainTheory.NeighbourhoodSystems.prodComb a b))
                         (And
-                          (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat
+                          (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat
                             DomainTheory.NeighbourhoodSystems.U (DomainTheory.NeighbourhoodSystems.arrowComb a b))
                           (And
                             (Nonempty
@@ -1187,46 +1187,46 @@ theorem theorem_810_b : And
                 (a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U),
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
             (∀
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                   And
-                    (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                    (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.sumComb a b))
                     (And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.prodComb a b))
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
           (∀
             (a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U),
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.prodComb a b)))
         (∀
           (a b :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                 (DomainTheory.NeighbourhoodSystems.sumComb a b)))
       (∀
         (a b :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
             DomainTheory.NeighbourhoodSystems.U),
-        @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+        @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
             @DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.U
               (DomainTheory.NeighbourhoodSystems.arrowComb a b))
       (@And.intro
@@ -1237,16 +1237,16 @@ theorem theorem_810_b : And
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                     And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.sumComb a b))
                       (And
-                        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                           (DomainTheory.NeighbourhoodSystems.prodComb a b))
                         (And
-                          (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat
+                          (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat
                             DomainTheory.NeighbourhoodSystems.U (DomainTheory.NeighbourhoodSystems.arrowComb a b))
                           (And
                             (Nonempty
@@ -1477,39 +1477,39 @@ theorem theorem_810_b : And
                 (a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U),
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
             (∀
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                   And
-                    (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                    (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.sumComb a b))
                     (And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.prodComb a b))
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
           (∀
             (a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U),
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.prodComb a b)))
         (∀
           (a b :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                 (DomainTheory.NeighbourhoodSystems.sumComb a b))
         (@And.intro
           (And
@@ -1518,16 +1518,16 @@ theorem theorem_810_b : And
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                     And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.sumComb a b))
                       (And
-                        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                           (DomainTheory.NeighbourhoodSystems.prodComb a b))
                         (And
-                          (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat
+                          (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat
                             DomainTheory.NeighbourhoodSystems.U (DomainTheory.NeighbourhoodSystems.arrowComb a b))
                           (And
                             (Nonempty
@@ -1758,31 +1758,31 @@ theorem theorem_810_b : And
                 (a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U),
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
             (∀
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                   And
-                    (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                    (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.sumComb a b))
                     (And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.prodComb a b))
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
           (∀
             (a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U),
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.prodComb a b))
           (@And.intro
             (And
@@ -1790,16 +1790,16 @@ theorem theorem_810_b : And
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                     And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.sumComb a b))
                       (And
-                        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                           (DomainTheory.NeighbourhoodSystems.prodComb a b))
                         (And
-                          (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat
+                          (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat
                             DomainTheory.NeighbourhoodSystems.U (DomainTheory.NeighbourhoodSystems.arrowComb a b))
                           (And
                             (Nonempty
@@ -2030,39 +2030,39 @@ theorem theorem_810_b : And
                 (a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U),
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
             (∀
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                   And
-                    (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                    (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.sumComb a b))
                     (And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.prodComb a b))
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b))))
             (@And.intro
               (∀
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
                     And
-                      (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                      (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.sumComb a b))
                       (And
-                        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                           (DomainTheory.NeighbourhoodSystems.prodComb a b))
                         (And
-                          (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat
+                          (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat
                             DomainTheory.NeighbourhoodSystems.U (DomainTheory.NeighbourhoodSystems.arrowComb a b))
                           (And
                             (Nonempty
@@ -2293,9 +2293,9 @@ theorem theorem_810_b : And
                 (a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U),
-                @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                       (DomainTheory.NeighbourhoodSystems.arrowComb a b))
               (@DomainTheory.NeighbourhoodSystems.proposition_8_10)
               DomainTheory.NeighbourhoodSystems.finitaryProjection_arrowComb)

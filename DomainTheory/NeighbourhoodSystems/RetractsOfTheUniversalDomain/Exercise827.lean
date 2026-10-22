@@ -499,7 +499,7 @@ theorem example_827 : And
               (d :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U),
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -574,7 +574,7 @@ theorem example_827 : And
                             (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
                               DomainTheory.NeighbourhoodSystems.U)
                             (DomainTheory.NeighbourhoodSystems.piD d) X X))))) →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -584,7 +584,7 @@ theorem example_827 : And
           (d :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
             (DomainTheory.NeighbourhoodSystems.piU d)))
       (∀
         {d :
@@ -1189,7 +1189,7 @@ theorem example_827 : And
               (d :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U),
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -1264,7 +1264,7 @@ theorem example_827 : And
                             (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
                               DomainTheory.NeighbourhoodSystems.U)
                             (DomainTheory.NeighbourhoodSystems.piD d) X X))))) →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -1274,7 +1274,7 @@ theorem example_827 : And
           (d :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
             (DomainTheory.NeighbourhoodSystems.piU d)))
       (∀
         {d :
@@ -1878,7 +1878,7 @@ theorem example_827 : And
               (d :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U),
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -1953,7 +1953,7 @@ theorem example_827 : And
                             (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
                               DomainTheory.NeighbourhoodSystems.U)
                             (DomainTheory.NeighbourhoodSystems.piD d) X X))))) →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -1963,7 +1963,7 @@ theorem example_827 : And
           (d :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
             (DomainTheory.NeighbourhoodSystems.piU d)))
       (∀
         {d :
@@ -2522,7 +2522,7 @@ theorem example_827 : And
               (d :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U),
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -2597,7 +2597,7 @@ theorem example_827 : And
                             (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
                               DomainTheory.NeighbourhoodSystems.U)
                             (DomainTheory.NeighbourhoodSystems.piD d) X X))))) →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -2607,7 +2607,7 @@ theorem example_827 : And
           (d :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
             (DomainTheory.NeighbourhoodSystems.piU d)))
       (∀
         {d :
@@ -3153,7 +3153,7 @@ theorem example_827 : And
               (d :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U),
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -3228,7 +3228,7 @@ theorem example_827 : And
                             (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
                               DomainTheory.NeighbourhoodSystems.U)
                             (DomainTheory.NeighbourhoodSystems.piD d) X X))))) →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -3238,7 +3238,7 @@ theorem example_827 : And
           (d :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
             (DomainTheory.NeighbourhoodSystems.piU d))
         (@And.intro
           (And
@@ -3712,7 +3712,7 @@ theorem example_827 : And
               (d :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U),
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -3787,7 +3787,7 @@ theorem example_827 : And
                             (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
                               DomainTheory.NeighbourhoodSystems.U)
                             (DomainTheory.NeighbourhoodSystems.piD d) X X))))) →
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -4264,7 +4264,7 @@ theorem example_827 : And
               (d :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U),
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection
                 (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U)
                 (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U

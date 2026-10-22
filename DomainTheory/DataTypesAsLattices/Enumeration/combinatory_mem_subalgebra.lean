@@ -23,12 +23,12 @@ open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
 
-theorem combinatory_mem_subalgebra {A : Set Pomega} (hA : IsSubalgebra A)
+theorem combinatory_mem_subalgebra {A : Set Pomega} (hA : Subalgebra A)
     {u : Pomega} (hu : IsCombinatory u) : u ∈ A := by
   have hgen : GeneratedFromG u := (theorem_3_1 (u := u)).mp hu
   clear hu
   induction hgen with
-  | G => exact hA.1
-  | app _ _ ih ih' => exact hA.2 ih ih'
+  | G => exact hA.out.1
+  | app _ _ ih ih' => exact hA.out.2 ih ih'
 
 end DomainTheory.DataTypesAsLattices

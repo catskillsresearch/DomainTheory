@@ -34,7 +34,7 @@ theorem theorem_1_1 (f : Pomega → Pomega) :
       have : ∀ k ∈ e m, ∃ n, e n ⊆ x ∧ k ∈ f (e n) := by
         intro k hk
         have : k ∈ scottUnion f x := by
-          rw [← hf x]; exact hmf hk
+          rw [← hf.out x]; exact hmf hk
         exact mem_scottUnion.mp this
       obtain ⟨s, hs⟩ := (e_finite m).exists_finset_coe
       obtain ⟨N, hN, hsf⟩ := exists_e_cover_finite hf s (fun k hk =>
@@ -44,7 +44,9 @@ theorem theorem_1_1 (f : Pomega → Pomega) :
       exact ⟨N, hN, by simpa [hs] using hsf⟩
     · intro ⟨n, hn, hmf⟩
       exact subset_trans hmf (isScottContinuous_monotone hf hn)
-  · intro h x
+  · intro h
+    constructor
+    intro x
     ext k
     constructor
     · intro hk

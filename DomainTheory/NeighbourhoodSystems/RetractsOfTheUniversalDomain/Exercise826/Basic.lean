@@ -58,7 +58,7 @@ clauses of Theorem 8.6/Exercise 8.23/Exercise 8.25: this project's convention is
 mathematical content precisely (here: the two checkable claims 1–2, plus citing 3) while leaving
 genuinely open-ended "build a term language and induct over it" scaffolding as prose discussion,
 since the payoff — the induction is a routine unfolding of 1–3 at each syntax constructor, with
-`+`/`×` cases following `→`'s pattern exactly (`sumComb`/`prodComb`'s own `IsRetraction`/sandwich
+`+`/`×` cases following `→`'s pattern exactly (`sumComb`/`prodComb`'s own `Retraction`/sandwich
 facts are already in `Proposition810.lean`/`Proposition810b.lean`, so `translateAbs_sandwich`
 applies to *any* of the three combinators, not just `→`) — is not itself a new mathematical
 question. Scott's own hint stops at exactly this level of detail ("whenever you want to..."),

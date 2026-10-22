@@ -29,8 +29,9 @@ open Nat.Partrec.Code
 theorem IsRE.predC : IsRE predC := by
   have hp : PrimrecRel fun n m : ℕ => n.testBit (m + 1) = true :=
     primrecPred_bool (Primrec₂.comp primrec_testBit Primrec.fst (Primrec.succ.comp Primrec.snd))
+  constructor
   refine (IsRE.graph_of_primrecRel (f := DataTypesAsLattices.predSet)
-      (hp.of_eq fun n m => ?_)).of_eq ?_
+      (hp.of_eq fun n m => ?_)).out.of_eq ?_
   · constructor
     · intro h; exact mem_e.mpr h
     · intro h; exact mem_e.mp h

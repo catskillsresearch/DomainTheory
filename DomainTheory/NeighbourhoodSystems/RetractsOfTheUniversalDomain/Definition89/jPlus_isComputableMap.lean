@@ -22,7 +22,7 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap Exercise326
 
 
-theorem jPlus_isComputableMap : IsComputableMap UComputablePresentation sumUUPresentation jPlus :=
+theorem jPlus_isComputableMap : ComputableMap UComputablePresentation sumUUPresentation jPlus :=
   (theorem_8_8_b_strong sumUUPresentation).choose_spec.choose_spec.2.2.2
 
 end DomainTheory.NeighbourhoodSystems

@@ -29,8 +29,9 @@ Its index relation is exactly `V_{2·⟨a,b⟩+2} ⊆ V_k`, a recursive slice of
 (`dsharpPresentation.incl_computable`) reindexed by the primitive-recursive node map
 `s ↦ ⟨2·(p s)+2, q s⟩`, hence r.e. -/
 theorem pairSharp_isComputable (P : ComputablePresentation D) :
-    IsComputableMap (prodPresentation (dsharpPresentation P hD) (dsharpPresentation P hD))
+    ComputableMap (prodPresentation (dsharpPresentation P hD) (dsharpPresentation P hD))
       (dsharpPresentation P hD) (pairSharpMap hD) := by
+  constructor
   show REPred (fun s => (pairSharpMap hD).rel
     ((prodPresentation (dsharpPresentation P hD) (dsharpPresentation P hD)).X s.unpair.1)
     ((dsharpPresentation P hD).X s.unpair.2))

@@ -27,7 +27,7 @@ variable {D : Type*} [CompleteLattice D]
 lattice (`isContinuousLattice_prop`) and products of continuous lattices are continuous
 (Proposition 2.9(a)). This is the order-theoretic content of "a Cartesian power of `𝕆` is a
 continuous lattice", the construction Theorem 2.12 retracts onto. -/
-theorem sierpinskiPower_isContinuousLattice (ι : Type*) : IsContinuousLattice (ι → Prop) :=
+theorem sierpinskiPower_isContinuousLattice (ι : Type*) : ContinuousLattice (ι → Prop) :=
   proposition_2_9_a (fun _ => Prop) (fun _ => isContinuousLattice_prop)
 
 end DomainTheory.ContinuousLattice

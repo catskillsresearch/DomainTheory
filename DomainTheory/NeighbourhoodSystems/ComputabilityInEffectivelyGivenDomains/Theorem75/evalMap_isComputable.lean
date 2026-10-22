@@ -36,9 +36,10 @@ theorem evalMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hincl0 : ∀ s, incl0 s = 1 ↔ P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2) (hincl0p : Nat.Primrec incl0)
     (hincl1 : ∀ s, incl1 s = 1 ↔ P₁.X s.unpair.1 ⊆ P₁.X s.unpair.2) (hincl1p : Nat.Primrec incl1)
     (heq1 : ∀ s, eq1 s = 1 ↔ P₁.X s.unpair.1 = P₁.X s.unpair.2) (heq1p : Nat.Primrec eq1) :
-    IsComputableMap
+    ComputableMap
       (prodPresentation (funPresentation P₀ P₁ gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p
         hincl1 hincl1p heq1 heq1p) P₀) P₁ (evalMap V₀ V₁) := by
+  constructor
   -- The function-space inclusion is recursively decidable (`funPresentation.incl_computable`);
   -- `funPresentation.X` is definitionally `Xenum`, so we read it off directly.
   have hsub : RecDecidable (fun s => Xenum P₀ P₁ gN s.unpair.1 ⊆ Xenum P₀ P₁ gN s.unpair.2) :=

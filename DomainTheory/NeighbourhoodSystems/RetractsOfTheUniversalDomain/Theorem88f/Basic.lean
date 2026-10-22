@@ -18,7 +18,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
 `D'' ◁ U`, with `D''`'s own `ComputablePresentation` (`DprimeUCodePresentation`, master index `0`,
 `X n := Yc P n = UX (YseqCode P n)`). This file supplies the actual headline claim of Theorem
 8.8(b)(vii): the projection pair `i := (D'' ◁ U).inj`/`j := (D'' ◁ U).proj` (Proposition 6.12) is
-**computable** (Definition 7.2, `IsComputableMap`) relative to `DprimeUCodePresentation`/
+**computable** (Definition 7.2, `ComputableMap`) relative to `DprimeUCodePresentation`/
 `UComputablePresentation`.
 
 ## Why this is now easy

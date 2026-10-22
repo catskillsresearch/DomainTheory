@@ -27,7 +27,7 @@ theorem theorem_1_2_i {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     exact isScottContinuous_monotone hf hn hm'
   · intro hm
     have : m ∈ scottUnion f x := by
-      rw [← hf x]; exact hm
+      rw [← hf.out x]; exact hm
     obtain ⟨n, hn, hmn⟩ := mem_scottUnion.mp this
     exact ⟨n, hn, ⟨n, m, rfl, hmn⟩⟩
 

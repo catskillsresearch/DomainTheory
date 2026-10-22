@@ -35,12 +35,13 @@ relation is in fact recursively *decidable* (a nested bounded `∀∀∃` over `
 theorem unionMap_isComputable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
     (consV : ℕ → ℕ) (hconsVp : Nat.Primrec consV)
     (hconsVs : ∀ a b, consV (Nat.pair a b) = 1 ↔ ∃ k, P.X k ⊆ P.X a ∩ P.X b) :
-    IsComputableMap
+    ComputableMap
       (V.PowerDomain.PDPresentation (V.PDPresentation P consV hconsVp hconsVs)
         (fun _ => 1) (Nat.Primrec.const 1)
         (fun a b => ⟨fun _ => ⟨0, ypd_zero_subset_inter P a b⟩, fun _ => rfl⟩))
       (V.PDPresentation P consV hconsVp hconsVs)
       (unionMap V) := by
+  constructor
   have hrd : RecDecidable₂ (fun n m => ∀ c ∈ decodeList n, ∀ a ∈ decodeList c,
       ∃ b ∈ decodeList m, P.X a ⊆ P.X b) := (V.subCode_computable P).bForallList
   have key : RecDecidable₂ (fun n m => (unionMap V).rel

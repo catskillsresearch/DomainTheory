@@ -21,7 +21,8 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (5.19).** `V(a)` is always a closure, so `V(V(a)) = V(a)`. -/
 theorem Vapply_graph_isClosure (a : Pomega) :
-    IsClosure (graph (fun x => Vapply a x)) := by
+    Closure (graph (fun x => Vapply a x)) := by
+  constructor
   constructor
   · intro p hp
     rcases hp with ⟨n, m, rfl, hm⟩

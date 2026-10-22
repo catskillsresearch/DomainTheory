@@ -16,7 +16,7 @@ set_option linter.unusedVariables false
 theorem example_714.{u_1} : ∀ {β : Type u_1} {W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
   (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W)
   {y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β W},
-  @DomainTheory.NeighbourhoodSystems.IsComputableElement β W Q y →
+  @DomainTheory.NeighbourhoodSystems.ComputableElement β W Q y →
     ∃ (t : Nat → Nat),
       And (Nat.Primrec t)
         (And

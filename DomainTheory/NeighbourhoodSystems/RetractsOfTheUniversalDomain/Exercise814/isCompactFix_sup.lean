@@ -7,7 +7,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.ClosureOperator
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.le_toElementMap_of_isClosureOperator
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsCompactFix
 
@@ -32,10 +32,10 @@ variable {a : ApproximableMap E E}
 a directed union, so do `y₁` and `y₂` individually (they are `⊑ a(⊔{y₁,y₂})` since `⊔ ⊑ a(⊔)` by
 inflation), compactness places each below some member of the family, directedness finds a common
 one, and the join being *least* upper bound of `{y₁,y₂}` (composed with `a`) transfers the bound. -/
-theorem isCompactFix_sup (h : IsClosureOperator a) {y1 y2 : FixSet a}
+theorem isCompactFix_sup (h : ClosureOperator a) {y1 y2 : FixSet a}
     (hc1 : IsCompactFix h y1) (hc2 : IsCompactFix h y2)
     (hb : E.Bounded ({y1.1, y2.1} : Set E.Element)) :
-    IsCompactFix h ⟨a.toElementMap (E.sSup {y1.1, y2.1} hb), toElementMap_idem h.1 _⟩ := by
+    IsCompactFix h ⟨a.toElementMap (E.sSup {y1.1, y2.1} hb), toElementMap_idem h.out.1 _⟩ := by
   intro I _ d hdir hle
   have hs_le : E.sSup {y1.1, y2.1} hb ≤ iSupDirected (fun i => (d i).1) hdir :=
     (le_toElementMap_of_isClosureOperator h _).trans hle

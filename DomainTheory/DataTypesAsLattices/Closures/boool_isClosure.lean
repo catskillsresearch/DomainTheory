@@ -18,7 +18,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, (5.3).** `boool` is a closure. -/
-theorem boool_isClosure : IsClosure boool :=
-  ⟨Icomb_subset_boool, boool_isRetract⟩
+theorem boool_isClosure : Closure boool :=
+  ⟨⟨Icomb_subset_boool, boool_isRetract⟩⟩
 
 end DomainTheory.DataTypesAsLattices

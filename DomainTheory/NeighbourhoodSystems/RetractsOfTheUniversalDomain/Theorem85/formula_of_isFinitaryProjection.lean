@@ -41,10 +41,10 @@ decomposes (Exercise 2.9, via `sectionMap`'s `Claim′`) as a union of `sectionM
 `(e.symm ↑W).1` into a genuine `E`-principal `↑X`. `X ⊆ Y` and `X a X` both come from `X`'s defining
 equation `a(↑X) = ↑X` (inherited from `FixSet`); `x.mem X` comes from `↑X ≤ w = a(x) ≤ x` (the last
 step using `a ≤ I_E`). -/
-theorem formula_of_isFinitaryProjection {a : ApproximableMap E E} (h : IsFinitaryProjection a) :
+theorem formula_of_isFinitaryProjection {a : ApproximableMap E E} (h : FinitaryProjection a) :
     ∀ (x : E.Element) {Y : Set α}, (a.toElementMap x).mem Y ↔
       E.mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ a.rel X X := by
-  obtain ⟨⟨ha_ret, ha_proj⟩, β, F, ⟨e⟩⟩ := h
+  obtain ⟨⟨ha_ret, ha_proj⟩, β, F, ⟨e⟩⟩ := h.out
   intro x Y
   constructor
   · intro hY

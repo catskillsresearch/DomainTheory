@@ -33,8 +33,9 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 /-- **Scott 1972, Theorem 3.3 (order content).** If `D` and `D'` are continuous lattices, then so
 is `[D → D']` under the pointwise order. Every `f` is the supremum of the step functions way below
 it: `f = ⊔ {ē[e,e'] | e' ≪ f e}`, and each such step function is way below `f`. -/
-theorem theorem_3_3_isContinuousLattice (hD : IsContinuousLattice D)
-    (hD' : IsContinuousLattice D') : IsContinuousLattice (ScottMap D D') := by
+theorem theorem_3_3_isContinuousLattice (hD : ContinuousLattice D)
+    (hD' : ContinuousLattice D') : ContinuousLattice (ScottMap D D') := by
+  constructor
   intro f
   refine ⟨fun h hh => hh.le, fun g hg => ?_⟩
   rw [ScottMap.le_def]

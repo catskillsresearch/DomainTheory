@@ -62,7 +62,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.filterOp
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillFilterCode
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillCase1Code
 public import DomainTheory.DataTypesAsLattices.Enumeration.Deg
-public import DomainTheory.DataTypesAsLattices.Enumeration.IsSubalgebra
+public import DomainTheory.DataTypesAsLattices.Enumeration.Subalgebra
 public import DomainTheory.DataTypesAsLattices.Enumeration.Icomb_SK
 public import DomainTheory.DataTypesAsLattices.Enumeration.packList
 public import DomainTheory.DataTypesAsLattices.Enumeration.singleGenerator

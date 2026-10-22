@@ -30,9 +30,10 @@ theorem continuous_toElementMap (f : ApproximableMap V₀ V₁) :
     Continuous (fun x => f.toElementMap x) := by
   rw [continuous_def]
   intro U hU
-  show V₀.IsOpenFilter _
+  show V₀.OpenFilter _
+  constructor
   intro x hx
-  obtain ⟨Y, hY, hYU⟩ := hU (f.toElementMap x) hx
+  obtain ⟨Y, hY, hYU⟩ := hU.out (f.toElementMap x) hx
   obtain ⟨X, hxX, hrel⟩ := hY
   exact ⟨X, hxX, fun x' hx' => hYU ⟨X, hx', hrel⟩⟩
 

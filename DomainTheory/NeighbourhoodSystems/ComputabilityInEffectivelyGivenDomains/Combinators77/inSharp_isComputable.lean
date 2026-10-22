@@ -26,7 +26,8 @@ variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 `Xₙ (λx.x^§) V_k ↔ V_{2n+1} ⊆ V_k` (`embZero Xₙ ⊆ V_k`), a recursive slice of the inclusion
 decider for `D^§`, hence r.e. -/
 theorem inSharp_isComputable (P : ComputablePresentation D) :
-    IsComputableMap P (dsharpPresentation P hD) (inSharpMap hD) := by
+    ComputableMap P (dsharpPresentation P hD) (inSharpMap hD) := by
+  constructor
   show REPred (fun s => (inSharpMap hD).rel (P.X s.unpair.1) (Vsharp D P s.unpair.2))
   have hincl : RecDecidable (fun s => Vsharp D P s.unpair.1 ⊆ Vsharp D P s.unpair.2) :=
     (dsharpPresentation P hD).incl_computable

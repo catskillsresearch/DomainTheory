@@ -22,6 +22,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem secondRecVal_isScottContinuous (u : Pomega) :
     IsScottContinuous (fun x =>
       ⋃ m ∈ x, funOf u (ofNat (applyNat m (num m)))) := by
+  constructor
   intro x
   ext k
   constructor

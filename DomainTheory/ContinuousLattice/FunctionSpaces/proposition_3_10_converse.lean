@@ -41,7 +41,7 @@ then there is a continuous `j` making `D` a projection of `D'` via `i`, with `j`
 formula (iv) `j(x') = ⊔ { x | i(x) ⊑ x' }`. -/
 theorem proposition_3_10_converse
     (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S)) (hinj : Function.Injective i)
-    (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : IsContinuousLattice D) :
+    (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : ContinuousLattice D) :
     ∃ P : IsContinuousLatticeProjection D D',
       (∀ d, (P.incl : D → D') d = i d)
         ∧ (∀ x', (P.retr : D' → D) x' = sSup {x | i x ≤ x'}) :=

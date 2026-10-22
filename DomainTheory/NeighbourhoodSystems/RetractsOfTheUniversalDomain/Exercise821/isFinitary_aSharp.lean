@@ -29,7 +29,7 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 
 /-- **`a§` is finitary whenever `a` is a finitary projection.** -/
-theorem isFinitary_aSharp {a : ApproximableMap U U} (ha : IsFinitaryProjection a) :
+theorem isFinitary_aSharp {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     IsFinitary (aSharp a) :=
   isFinitary_of_projectionPair (ISharpComb a) (JSharpComb a) (JSharpComb_comp_ISharpComb a)
     (ISharpComb_comp_JSharpComb ha).symm

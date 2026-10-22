@@ -32,8 +32,8 @@ solution... with respect to projections". The proof is Theorem 4.1's minimality
 (`fixElement_le_of_toElementMap_le`) transported through Exercise 8.16's order-isomorphism
 `a ≤ b ↔ D_a ◁ D_b`. -/
 theorem fixedNbhd_fixOp_subsystem (t : ApproximableMap (funSpace E E) (funSpace E E))
-    (ht : ∀ a, IsFinitaryProjection a → IsFinitaryProjection (tOp t a))
-    {a : ApproximableMap E E} (ha : IsFinitaryProjection a) (hpre : tOp t a ≤ a) :
+    (ht : ∀ a, FinitaryProjection a → FinitaryProjection (tOp t a))
+    {a : ApproximableMap E E} (ha : FinitaryProjection a) (hpre : tOp t a ≤ a) :
     fixedNbhd (fixOp t) ◁ fixedNbhd a := by
   have hpre' : toApproxMap (t.toElementMap (toFilter a)) ≤ toApproxMap (toFilter a) := by
     show tOp t a ≤ toApproxMap (toFilter a)

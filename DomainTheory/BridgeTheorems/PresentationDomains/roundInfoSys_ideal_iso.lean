@@ -35,7 +35,7 @@ variable {D : Type u} [CompleteLattice D] [DecidableEq D]
 
 section Continuous
 
-variable (hD : IsContinuousLattice D)
+variable (hD : ContinuousLattice D)
 
 include hD
 

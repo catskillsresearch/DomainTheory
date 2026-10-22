@@ -23,15 +23,15 @@ theorem example_823 : And
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)),
       (∀ (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E
               (@DomainTheory.NeighbourhoodSystems.Exercise823.tOp α E t a)) →
         ∀
           (T :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E →
               @Sigma Type fun (β : Type) => DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β),
           (∀ (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
                 Nonempty
                   (@OrderIso
                     (@DomainTheory.NeighbourhoodSystems.Exercise823.Fix α E
@@ -107,11 +107,11 @@ theorem example_823 : And
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)),
       (∀ (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E
               (@DomainTheory.NeighbourhoodSystems.Exercise823.tOp α E t a)) →
         ∀ {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
             @LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
                 (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
                   (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
@@ -127,10 +127,10 @@ theorem example_823 : And
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
         (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)),
     (∀ (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-        @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E
+        @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E
             (@DomainTheory.NeighbourhoodSystems.Exercise823.tOp α E t a)) →
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E
         (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp α E t)) :=
   @And.intro
   (And
@@ -140,15 +140,15 @@ theorem example_823 : And
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)),
       (∀ (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E
               (@DomainTheory.NeighbourhoodSystems.Exercise823.tOp α E t a)) →
         ∀
           (T :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E →
               @Sigma Type fun (β : Type) => DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β),
           (∀ (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
                 Nonempty
                   (@OrderIso
                     (@DomainTheory.NeighbourhoodSystems.Exercise823.Fix α E
@@ -224,11 +224,11 @@ theorem example_823 : And
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)),
       (∀ (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E
               (@DomainTheory.NeighbourhoodSystems.Exercise823.tOp α E t a)) →
         ∀ {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
             @LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
                 (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
                   (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
@@ -244,10 +244,10 @@ theorem example_823 : And
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
         (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)),
     (∀ (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-        @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E
+        @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E
             (@DomainTheory.NeighbourhoodSystems.Exercise823.tOp α E t a)) →
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E
         (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp α E t))
   (@And.intro
     (∀ {α : Type} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
@@ -256,15 +256,15 @@ theorem example_823 : And
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)),
       (∀ (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E
               (@DomainTheory.NeighbourhoodSystems.Exercise823.tOp α E t a)) →
         ∀
           (T :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E →
               @Sigma Type fun (β : Type) => DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β),
           (∀ (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-              @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
+              @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
                 Nonempty
                   (@OrderIso
                     (@DomainTheory.NeighbourhoodSystems.Exercise823.Fix α E
@@ -340,11 +340,11 @@ theorem example_823 : And
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)),
       (∀ (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E
               (@DomainTheory.NeighbourhoodSystems.Exercise823.tOp α E t a)) →
         ∀ {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
             @LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
                 (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
                   (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)

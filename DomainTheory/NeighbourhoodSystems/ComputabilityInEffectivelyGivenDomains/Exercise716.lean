@@ -64,7 +64,7 @@ theorem example_716.{u_1, u_2, u_3} : And
                   (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) V₀
                   (@DomainTheory.NeighbourhoodSystems.funSpace β γ V₁ V₂))
                 PB m))
-          (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+          (@DomainTheory.NeighbourhoodSystems.ComputableMap
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap (Sum α β) γ
               (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) V₂)
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap α
@@ -295,7 +295,7 @@ theorem example_716.{u_1, u_2, u_3} : And
                   (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) V₀
                   (@DomainTheory.NeighbourhoodSystems.funSpace β γ V₁ V₂))
                 PB m))
-          (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+          (@DomainTheory.NeighbourhoodSystems.ComputableMap
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap (Sum α β) γ
               (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) V₂)
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap α
@@ -525,7 +525,7 @@ theorem example_716.{u_1, u_2, u_3} : And
                   (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) V₀
                   (@DomainTheory.NeighbourhoodSystems.funSpace β γ V₁ V₂))
                 PB m))
-          (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+          (@DomainTheory.NeighbourhoodSystems.ComputableMap
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap (Sum α β) γ
               (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) V₂)
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap α

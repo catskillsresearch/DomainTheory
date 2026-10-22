@@ -24,7 +24,8 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`isoInj` is computable** relative to `P`/`DprimeUCodePresentation P`: its raw-index relation is
 `incl_computable` reindexed by the primitive-recursive `eIdx P` in the second argument. -/
-theorem isoInj_isComputableMap : IsComputableMap P (DprimeUCodePresentation P) (isoInj P) := by
+theorem isoInj_isComputableMap : ComputableMap P (DprimeUCodePresentation P) (isoInj P) := by
+  constructor
   have hg : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1 (eIdx P t.unpair.2)) :=
     Nat.Primrec.pair Nat.Primrec.left ((eIdx_primrec P).comp Nat.Primrec.right)
   have hp : RecDecidable (fun t : ℕ => P.X t.unpair.1 ⊆ P.X (eIdx P t.unpair.2)) := by

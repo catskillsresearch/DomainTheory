@@ -30,7 +30,7 @@ theorem theorem_6_1 :
     ext x
     constructor
     · intro hx
-      have : 0 ∈ scottUnion f x := by rwa [← hf x]
+      have : 0 ∈ scottUnion f x := by rwa [← hf.out x]
       obtain ⟨n, hn, h0⟩ := mem_scottUnion.mp this
       exact Set.mem_iUnion₂.mpr ⟨n, h0, hn⟩
     · intro hx

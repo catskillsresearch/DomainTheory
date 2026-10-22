@@ -7,7 +7,7 @@ module
 
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts
-public import DomainTheory.DataTypesAsLattices.Closures.IsClosure
+public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.Closures.closure_expansive
 public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
 
@@ -15,7 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
 
 namespace DomainTheory.DataTypesAsLattices
 
-theorem retractBasis_eq_compactFixedBelow {a : Pomega} (ha : IsClosure a)
+theorem retractBasis_eq_compactFixedBelow {a : Pomega} (ha : Closure a)
     (x : Fixpoints (funOf a)) :
     retractBasis a x = compactFixedBelow a x := by
   ext k

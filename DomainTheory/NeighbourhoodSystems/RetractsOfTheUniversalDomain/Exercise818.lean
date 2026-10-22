@@ -28,15 +28,15 @@ theorem example_818 : ∀
               (DomainTheory.NeighbourhoodSystems.prodComb a b))
             (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
               (DomainTheory.NeighbourhoodSystems.arrowComb a b))))
-        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U b →
             And
-              (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+              (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                 (DomainTheory.NeighbourhoodSystems.sumComb a b))
               (And
-                (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.prodComb a b))
-                (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+                (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.arrowComb a b)))) :=
   @DomainTheory.NeighbourhoodSystems.exercise_8_18
 

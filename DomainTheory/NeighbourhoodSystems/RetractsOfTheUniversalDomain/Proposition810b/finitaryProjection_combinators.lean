@@ -32,9 +32,9 @@ variable {a b : ApproximableMap U U}
 projections, then so are `a+b`, `a×b`, `a→b`, with `D_{a+b} ≅ D_a+D_b`, `D_{a×b} ≅ D_a×D_b`,
 `D_{a→b} ≅ (D_a→D_b)`. -/
 theorem finitaryProjection_combinators {a b : ApproximableMap U U}
-    (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b) :
-    IsFinitaryProjection (sumComb a b) ∧ IsFinitaryProjection (prodComb a b) ∧
-      IsFinitaryProjection (arrowComb a b) :=
+    (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    FinitaryProjection (sumComb a b) ∧ FinitaryProjection (prodComb a b) ∧
+      FinitaryProjection (arrowComb a b) :=
   ⟨finitaryProjection_sumComb a b ha hb, finitaryProjection_prodComb a b ha hb,
     finitaryProjection_arrowComb a b ha hb⟩
 

@@ -38,6 +38,6 @@ theorem nbhd_subset_iff {F G : Set τ} (hF : IsTok C F) :
     have hmem : (⟨F, hF⟩ : Tok C) ∈ nbhd C F := subset_Cl C F
     exact h hmem
   · intro hG H hH
-    exact hG.trans (Cl_subset C (Cl_mem C hInter H.2.2) hH)
+    exact hG.trans (Cl_subset C (Cl_mem C hInter H.2.out.2) hH)
 
 end DomainTheory.NeighbourhoodSystems.Exercise222

@@ -40,7 +40,7 @@ theorem LamDCon_singleton (p : LamDToken A) : LamDCon A {p} := by
   match p.val, p.property with
   | .bot, _ => exact LamConDepth_singleton_bot A
   | .atom x, _ => exact LamConDepth_singleton_atom A x
-  | .funTok xs ys, ⟨hxs, hys⟩ => exact LamConDepth_singleton_funTok A xs ys hxs hys
+  | .funTok xs ys, ⟨⟨hxs, hys⟩⟩ => exact LamConDepth_singleton_funTok A xs ys hxs hys
 
 end InfoSys
 

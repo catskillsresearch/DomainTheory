@@ -25,9 +25,10 @@ variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
 
 /-- Well-formed tokens (Scott (1)–(3)). -/
-def IsLamToken : RawLamToken α → Prop
-  | .bot | .atom _ => True
-  | .funTok u v => LamCon A (listToFinset u) ∧ LamCon A (listToFinset v)
+class IsLamToken (t : RawLamToken α) : Prop where
+  out : match t with
+    | .bot | .atom _ => True
+    | .funTok u v => LamCon A (listToFinset u) ∧ LamCon A (listToFinset v)
 
 end InfoSys
 

@@ -26,7 +26,8 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
 /-- **`λx,y. x∪y` is computable.** Reduces to `PNpres.incl_computable` against the primitive
 recursive reindexing `myLor`. -/
 theorem cupMap_isComputable :
-    IsComputableMap (prodPresentation PNpres PNpres) PNpres cupMap := by
+    ComputableMap (prodPresentation PNpres PNpres) PNpres cupMap := by
+  constructor
   have hincl : RecDecidable (fun s => nbhd s.unpair.1 ⊆ nbhd s.unpair.2) := PNpres.incl_computable
   have hlor : Nat.Primrec (fun t : ℕ => myLor t.unpair.1.unpair.1 t.unpair.1.unpair.2) :=
     (primrec_myLor.comp ((Nat.Primrec.left.comp Nat.Primrec.left).pair

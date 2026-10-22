@@ -29,9 +29,9 @@ satisfies the defining sandwich equation `f = b∘f∘a` of Scott's `D_a → D_b
 Definition 8.3). Pure associativity + idempotence, mirroring the book's own one-line proof
 ("`(a×b)∘(a×b) = ... = a×b`," `Proposition 8.10`'s proof) transplanted to the abstraction case. -/
 theorem translateAbs_sandwich {a b body : ApproximableMap E E}
-    (ha : IsRetraction a) (hb : IsRetraction b) :
+    (ha : Retraction a) (hb : Retraction b) :
     b.comp ((translateAbs a b body).comp a) = translateAbs a b body := by
   show b.comp ((b.comp (body.comp a)).comp a) = b.comp (body.comp a)
-  rw [comp_assoc b (body.comp a) a, comp_assoc body a a, ha, ← comp_assoc b b (body.comp a), hb]
+  rw [comp_assoc b (body.comp a) a, comp_assoc body a a, ha.out, ← comp_assoc b b (body.comp a), hb.out]
 
 end DomainTheory.NeighbourhoodSystems

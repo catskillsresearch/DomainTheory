@@ -29,7 +29,7 @@ itself stated "all the combinators of Example 6.1", so we read it as 6.1.)
 `Proposition77.dsharp_isEffectivelyGiven` already gives the first clause (`D^§` effectively given), and
 `Combinators77.lean` did **a selection** of the combinators (`inSharp = λx. x^§`, and the pair-part
 first projection `proj₀`). **This file finishes Part 1** — the *full* set of Example 6.1's algebra
-combinators, each as an `ApproximableMap` that is `IsComputableMap` w.r.t. the canonical
+combinators, each as an `ApproximableMap` that is `ComputableMap` w.r.t. the canonical
 presentation(s):
 
 * **`proj1Map`** — the second projection of the pair part, `proj₁ : D^§ → D^§`
@@ -47,7 +47,7 @@ The **second clause** of 7.17 (the universal strict catamorphism `g : D^§ → E
 is a separate, larger development handled subsequently.
 
 As in `Combinators77.lean`, all `ApproximableMap` **data** and the **faithfulness** theorems are
-choice-free `⊆ {propext, Quot.sound}`; only the `IsComputableMap` proofs route through `Classical`
+choice-free `⊆ {propext, Quot.sound}`; only the `ComputableMap` proofs route through `Classical`
 (set reasoning over the arbitrary carrier `α`, inherited from `incl_computable`).
 -/
 

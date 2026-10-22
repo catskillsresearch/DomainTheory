@@ -8,7 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.genK
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.mem_upFix
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.BasicInst34
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.ClosureOperator
 
 @[expose] public section
 
@@ -22,7 +22,7 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
 
-variable {a : ApproximableMap E E} (h : IsClosureOperator a)
+variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 /-- The family `a(↑X)`, for `X` ranging over the (principal-approximant) neighbourhoods of `y.1`. -/
 def genFamily (y : FixSet a) (i : {X : Set α // y.1.mem X}) : FixSet a :=

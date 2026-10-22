@@ -19,10 +19,10 @@ namespace DomainTheory.DataTypesAsLattices
 /-- Kleene iterates of `I` under a closure-preserving operator stay closures. -/
 theorem theorem_5_6_iterates {F : Pomega → Pomega}
     (_hF : IsScottContinuous F)
-    (hcl : ∀ a, IsClosure a → IsClosure (F a)) :
-    (∀ n, IsClosure (iterateFrom F Icomb n)) ∧
+    (hcl : ∀ a, Closure a → Closure (F a)) :
+    (∀ n, Closure (iterateFrom F Icomb n)) ∧
       Icomb ⊆ lfpAbove F Icomb := by
-  have hiter : ∀ n, IsClosure (iterateFrom F Icomb n) := by
+  have hiter : ∀ n, Closure (iterateFrom F Icomb n) := by
     intro n
     induction n with
     | zero => exact Icomb_isClosure

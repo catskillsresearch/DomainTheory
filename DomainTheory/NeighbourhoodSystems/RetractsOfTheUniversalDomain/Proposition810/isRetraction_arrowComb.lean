@@ -26,8 +26,9 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
 /-- **Proposition 8.10, `→`-case, retraction half.** -/
-theorem isRetraction_arrowComb {a b : ApproximableMap U U} (ha : IsRetraction a)
-    (hb : IsRetraction b) : IsRetraction (arrowComb a b) := by
+theorem isRetraction_arrowComb {a b : ApproximableMap U U} (ha : Retraction a)
+    (hb : Retraction b) : Retraction (arrowComb a b) := by
+  constructor
   apply ext_of_toElementMap
   intro x
   rw [toElementMap_comp, toElementMap_arrowComb a b ((arrowComb a b).toElementMap x),

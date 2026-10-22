@@ -38,7 +38,8 @@ def ofC (X : Set τ) (hX : X ∈ C) : (reprSystem C hInter hne).Element where
     ⟨(reprSystem C hInter hne).master_mem, botTok C hne, Set.empty_subset X, Set.subset_univ _⟩
   inter_mem := by
     rintro N M ⟨hN, F, hFX, hFN⟩ ⟨hM, F', hF'X, hF'M⟩
-    have htok : IsTok C (F.1 ∪ F'.1) := ⟨F.2.1.union F'.2.1, X, hX, Set.union_subset hFX hF'X⟩
+    have htok : IsTok C (F.1 ∪ F'.1) :=
+      ⟨⟨F.2.out.1.union F'.2.out.1, X, hX, Set.union_subset hFX hF'X⟩⟩
     have hsub : nbhd C (F.1 ∪ F'.1) ⊆ N ∩ M := by
       intro G hG
       rw [mem_nbhd, Set.union_subset_iff] at hG

@@ -33,10 +33,11 @@ variable (P : ComputablePresentation V)
 /-- **Proposition 7.12 — the binary join map is computable.** Two independent singleton tests. -/
 theorem PDfinJoinApproxMap₂_isComputable (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons)
     (hcons : ∀ a b, cons (Nat.pair a b) = 1 ↔ ∃ k, P.X k ⊆ P.X a ∩ P.X b) :
-    IsComputableMap (prodPresentation P P)
+    ComputableMap (prodPresentation P P)
       (V.PDPresentation P cons hconsp hcons) (finJoinMap_prod (V := V)) := by
+  constructor
   have hs : REPred (fun s => (PDsingletonApproxMap (V := V)).rel (P.X s.unpair.1) (V.Ypd P s.unpair.2)) :=
-    singleton_isComputable (V := V) P cons hconsp hcons
+    (singleton_isComputable (V := V) P cons hconsp hcons).out
   have hra : Nat.Primrec (fun t => Nat.pair t.unpair.1.unpair.1 t.unpair.2) :=
     (Nat.Primrec.left.comp Nat.Primrec.left).pair Nat.Primrec.right
   have hrb : Nat.Primrec (fun t => Nat.pair t.unpair.1.unpair.2 t.unpair.2) :=

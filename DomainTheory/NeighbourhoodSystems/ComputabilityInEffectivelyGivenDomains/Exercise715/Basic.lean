@@ -15,7 +15,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.swapPair
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.IsEffectivelyGivenS
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.toScott
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.IsComputableMapS
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.ComputableMapS
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.smashEnum
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.smashPresentation
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.smashProj₀
@@ -208,7 +208,7 @@ variable {P₀ P₁}
 
 These are the coalesced analogues of Theorem 7.4's separated-sum combinators (`Exercise318`'s
 `inMap₀`/`outMap₀`), re-housed over `osum` (whose members are the *proper* tagged copies + master).
-Each is a genuine `ApproximableMap` and is **computable** (`IsComputableMapS`): the neighbourhood
+Each is a genuine `ApproximableMap` and is **computable** (`ComputableMapS`): the neighbourhood
 relations decode, tag-by-tag, to slices of the components' `incl_computable` together with the
 recursively-decidable properness tests `proper₀_dec`/`proper₁_dec`. -/
 

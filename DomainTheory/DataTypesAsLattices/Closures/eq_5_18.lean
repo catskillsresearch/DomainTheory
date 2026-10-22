@@ -16,14 +16,14 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, (5.18).** If `a` is already a closure, then `V(a)(x) ⊆ a(x)`. -/
-theorem eq_5_18 {a : Pomega} (ha : IsClosure a) (x : Pomega) :
+theorem eq_5_18 {a : Pomega} (ha : Closure a) (x : Pomega) :
     Vapply a x ⊆ funOf a x := by
   intro k hk
   have hx : x ⊆ funOf a x := by
-    have := funOf_monotone_left ha.1 x
+    have := funOf_monotone_left ha.out.1 x
     rwa [Icomb_app] at this
   have haa : funOf a (funOf a x) ⊆ funOf a x := by
-    simp [retract_app ha.2]
+    simp [retract_app ha.out.2]
   exact hk (funOf a x) ⟨hx, haa⟩
 
 end DomainTheory.DataTypesAsLattices

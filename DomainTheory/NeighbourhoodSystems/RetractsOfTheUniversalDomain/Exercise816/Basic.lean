@@ -32,7 +32,7 @@ assembly layer:
   `OrderIso.symm_apply_apply`, which is robust to Mathlib's internal naming.
 * **Part 2** (`exercise_8_16`'s second conjunct): already proved in full generality as
   `Theorem88m.lean`'s `fixedNbhd_isEffectivelyGiven` — "`a` computable relative to a
-  `ComputablePresentation P` of `E`" (`IsComputableMap P P a`) already packages "`E` effectively
+  `ComputablePresentation P` of `E`" (`ComputableMap P P a`) already packages "`E` effectively
   given (via `P`) and `a` computable (relative to `P`)"; no new proof is needed, only restating it
   under this exercise's name.
 

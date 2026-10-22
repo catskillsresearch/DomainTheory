@@ -16,7 +16,7 @@ open TopologicalSpace
 
 /-- **Scott 1976, §1, Definition.** `f : Pω → Pω` is continuous iff
 `f(x) = ⋃ {f(e n) | e n ⊆ x}`. -/
-def IsScottContinuous (f : Pomega → Pomega) : Prop :=
-  ∀ x, f x = scottUnion f x
+class IsScottContinuous (f : Pomega → Pomega) : Prop where
+  out : ∀ x, f x = scottUnion f x
 
 end DomainTheory.DataTypesAsLattices

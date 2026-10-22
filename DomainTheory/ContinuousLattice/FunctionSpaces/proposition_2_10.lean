@@ -33,8 +33,8 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 continuous lattice (`proposition_2_10_a`) whose Scott topology agrees with the subspace topology
 (`proposition_2_10_b`). -/
 theorem proposition_2_10 (R : IsContinuousLatticeRetraction D D')
-    (hD' : IsContinuousLattice D') :
-    IsContinuousLattice D ∧
+    (hD' : ContinuousLattice D') :
+    ContinuousLattice D ∧
       (scottTopologicalSpace : TopologicalSpace D) =
         TopologicalSpace.induced (R.incl : D → D') scottTopologicalSpace :=
   ⟨proposition_2_10_a R hD', proposition_2_10_b R hD'⟩

@@ -351,7 +351,8 @@ theorem notFn_Tenum (n : ℕ) : notFn (Tenum n) = Tenum (notCode (min n 2)) := b
 /-- **`notT` is a computable map** (relative to `Tpres` on both sides): its neighbourhood relation
 `notFn (Xₙ) ⊆ Xₘ` reduces, via `notFn_Tenum`, to the *decidable* `Tpres`-inclusion relation
 `X_{notCode (min n 2)} ⊆ Xₘ`, hence is recursively decidable — a fortiori r.e. -/
-theorem notT_isComputable : IsComputableMap Tpres Tpres notT := by
+theorem notT_isComputable : ComputableMap Tpres Tpres notT := by
+  constructor
   have hcomp : Nat.Primrec (fun t : ℕ => Nat.pair (notCode (min t.unpair.1 2)) t.unpair.2) :=
     (primrec_notCode (primrec_min Nat.Primrec.left (Nat.Primrec.const 2))).pair Nat.Primrec.right
   have hdec : RecDecidable₂ (fun n m => Tenum (notCode (min n 2)) ⊆ Tenum m) :=
@@ -398,7 +399,8 @@ theorem andFn_Tenum (n m : ℕ) :
 `Tpres` on the output side): its neighbourhood relation reduces, via `ofMap₂`'s unfolding and
 `andFn_Tenum`, to the *decidable* `Tpres`-inclusion relation `X_{andCode (min n 2) (min m 2)} ⊆ Xₖ`,
 hence is recursively decidable — a fortiori r.e. -/
-theorem andT_isComputable : IsComputableMap (prodPresentation Tpres Tpres) Tpres andT := by
+theorem andT_isComputable : ComputableMap (prodPresentation Tpres Tpres) Tpres andT := by
+  constructor
   have hcomp : Nat.Primrec (fun s : ℕ => Nat.pair
       (andCode (min s.unpair.1.unpair.1 2) (min s.unpair.1.unpair.2 2)) s.unpair.2) :=
     (primrec_andCode (primrec_min (Nat.Primrec.left.comp Nat.Primrec.left) (Nat.Primrec.const 2))
@@ -454,9 +456,9 @@ from `LFunData` bundles: `eval` is computable (Theorem 7.5), composing with `h` 
 theorem postcompose_isComputable {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
     {P₁ : ComputablePresentation V₁} {P₂ : ComputablePresentation V₂}
     (d₁ : LFunData P₁) (d₂ : LFunData P₂) {h : ApproximableMap V₁ V₂}
-    (hh : IsComputableMap P₁ P₂ h) :
-    IsComputableMap d₁.pres d₂.pres (postcompose h) := by
-  have heval : IsComputableMap (prodPresentation d₁.pres Lpres) P₁ (evalMap L V₁) :=
+    (hh : ComputableMap P₁ P₂ h) :
+    ComputableMap d₁.pres d₂.pres (postcompose h) := by
+  have heval : ComputableMap (prodPresentation d₁.pres Lpres) P₁ (evalMap L V₁) :=
     evalMap_isComputable Lpres P₁ d₁.gN d₁.incl0 d₁.incl1 d₁.eq1
       d₁.hgN d₁.hgNp d₁.hincl0 d₁.hincl0p d₁.hincl1 d₁.hincl1p d₁.heq1 d₁.heq1p
   exact curry_isComputable d₁.pres Lpres P₂ d₂.gN d₂.incl0 d₂.incl1 d₂.eq1
@@ -470,24 +472,24 @@ theorem postcompose_isComputable {V₁ : NeighborhoodSystem β} {V₂ : Neighbor
 theorem pointwiseBin_isComputable {V₀ : NeighborhoodSystem β} {V₁ : NeighborhoodSystem γ}
     {V₂ : NeighborhoodSystem δ} {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
     {P₂ : ComputablePresentation V₂} (d₀ : LFunData P₀) (d₁ : LFunData P₁) (d₂ : LFunData P₂)
-    {h : ApproximableMap (prod V₀ V₁) V₂} (hh : IsComputableMap (prodPresentation P₀ P₁) P₂ h) :
-    IsComputableMap (prodPresentation d₀.pres d₁.pres) d₂.pres (pointwiseBin h) := by
-  have hπAB : IsComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres)
+    {h : ApproximableMap (prod V₀ V₁) V₂} (hh : ComputableMap (prodPresentation P₀ P₁) P₂ h) :
+    ComputableMap (prodPresentation d₀.pres d₁.pres) d₂.pres (pointwiseBin h) := by
+  have hπAB : ComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres)
       (prodPresentation d₀.pres d₁.pres) (proj₀ (prod (funSpace L V₀) (funSpace L V₁)) L) :=
     proj₀_isComputable (prodPresentation d₀.pres d₁.pres) Lpres
-  have hπL : IsComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres) Lpres
+  have hπL : ComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres) Lpres
       (proj₁ (prod (funSpace L V₀) (funSpace L V₁)) L) :=
     proj₁_isComputable (prodPresentation d₀.pres d₁.pres) Lpres
-  have hp0 : IsComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres) d₀.pres
+  have hp0 : ComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres) d₀.pres
       (pwFst V₀ V₁) := comp_isComputable hπAB (proj₀_isComputable d₀.pres d₁.pres)
-  have hp1 : IsComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres) d₁.pres
+  have hp1 : ComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres) d₁.pres
       (pwSnd V₀ V₁) := comp_isComputable hπAB (proj₁_isComputable d₀.pres d₁.pres)
-  have heval0 : IsComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres) P₀
+  have heval0 : ComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres) P₀
       ((evalMap L V₀).comp (paired (pwFst V₀ V₁) (pwArg V₀ V₁))) :=
     comp_isComputable (paired_isComputable hp0 hπL)
       (evalMap_isComputable Lpres P₀ d₀.gN d₀.incl0 d₀.incl1 d₀.eq1
         d₀.hgN d₀.hgNp d₀.hincl0 d₀.hincl0p d₀.hincl1 d₀.hincl1p d₀.heq1 d₀.heq1p)
-  have heval1 : IsComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres) P₁
+  have heval1 : ComputableMap (prodPresentation (prodPresentation d₀.pres d₁.pres) Lpres) P₁
       ((evalMap L V₁).comp (paired (pwSnd V₀ V₁) (pwArg V₀ V₁))) :=
     comp_isComputable (paired_isComputable hp1 hπL)
       (evalMap_isComputable Lpres P₁ d₁.gN d₁.incl0 d₁.incl1 d₁.eq1
@@ -511,13 +513,13 @@ closure. -/
 
 /-- **Exercise 7.24, fourth claim, `notT` case.** LUCID's pointwise negation lifts to a computable
 map of type `(L→T) → (L→T)`. -/
-theorem notT_lifted_isComputable : IsComputableMap LTpres LTpres (postcompose notT) :=
+theorem notT_lifted_isComputable : ComputableMap LTpres LTpres (postcompose notT) :=
   postcompose_isComputable LTdata LTdata notT_isComputable
 
 /-- **Exercise 7.24, fourth claim, `andT` case.** LUCID's pointwise (sequential) conjunction lifts to
 a computable map of type `(L→T) × (L→T) → (L→T)`. -/
 theorem andT_lifted_isComputable :
-    IsComputableMap (prodPresentation LTpres LTpres) LTpres (pointwiseBin andT) :=
+    ComputableMap (prodPresentation LTpres LTpres) LTpres (pointwiseBin andT) :=
   pointwiseBin_isComputable LTdata LTdata LTdata andT_isComputable
 
 /-- **A deeper LUCID program is still computable.** `deMorganT f g := ¬(¬f ∧ ¬g)` on `(L→T)`,
@@ -526,7 +528,7 @@ built by composing/pairing the two lifted combinators above (De Morgan's law for
 **with no fresh recursion-theoretic argument needed** — exactly Scott's "conclude that programs in
 LUCID define computable maps." -/
 theorem deMorganT_isComputable :
-    IsComputableMap (prodPresentation LTpres LTpres) LTpres
+    ComputableMap (prodPresentation LTpres LTpres) LTpres
       ((postcompose notT).comp (pointwiseBin andT)
         |>.comp (paired
           (postcompose notT |>.comp (proj₀ (funSpace L Example23.T) (funSpace L Example23.T)))

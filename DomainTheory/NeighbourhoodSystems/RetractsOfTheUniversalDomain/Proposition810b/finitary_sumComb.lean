@@ -33,7 +33,7 @@ variable (a b : ApproximableMap U U)
 
 /-- **Proposition 8.10(b), `+`-case.** `a, b` finitary projections `⟹` `a + b` is finitary, with
 witnessing domain `D_a + D_b`. -/
-theorem finitary_sumComb (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b) :
+theorem finitary_sumComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     IsFinitary (sumComb a b) :=
   isFinitary_of_projectionPair (ISumComb a b) (JSumComb a b) (JSumComb_comp_ISumComb a b)
     (ISumComb_comp_JSumComb a b ha hb).symm

@@ -27,8 +27,8 @@ open NeighborhoodSystem ApproximableMap
 
 /-- **`t` sends finitary projections to finitary projections** (Exercise 8.23's hypothesis `ht`),
 via `tOp_tOpMap` and Proposition 8.10(b)'s `finitaryProjection_arrowComb`. -/
-theorem ht_tOpMap (c : ApproximableMap U U) (hc : IsFinitaryProjection c) :
-    ∀ a, IsFinitaryProjection a → IsFinitaryProjection (Exercise823.tOp (tOpMap c) a) := by
+theorem ht_tOpMap (c : ApproximableMap U U) (hc : FinitaryProjection c) :
+    ∀ a, FinitaryProjection a → FinitaryProjection (Exercise823.tOp (tOpMap c) a) := by
   intro a ha
   rw [tOp_tOpMap]
   exact finitaryProjection_arrowComb a c ha hc

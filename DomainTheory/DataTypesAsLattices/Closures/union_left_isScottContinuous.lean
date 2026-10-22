@@ -17,13 +17,14 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem union_left_isScottContinuous (c : Pomega) :
     IsScottContinuous (fun x => x ∪ c) := by
+  constructor
   intro x
   ext k
   constructor
   · intro hk
     rcases hk with hk | hk
     · have : k ∈ scottUnion (fun z => z) x := by
-        rw [← id_isScottContinuous x]; exact hk
+        rw [← id_isScottContinuous.out x]; exact hk
       obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp this
       exact mem_scottUnion.mpr ⟨n, hn, Or.inl hkn⟩
     · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inr hk⟩

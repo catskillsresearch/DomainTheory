@@ -32,7 +32,7 @@ variable {D' : Type*} [CompleteLattice D']
 
 /-- Corollary 4.3's formula `f∞(x) = ⨆ₙ fₙ(xₙ)` is continuous not only for the reconstructed Scott
 topology on `D∞`, but explicitly for Scott's product/subspace inverse-limit topology. -/
-theorem coconeInf_inverseLimitTopology_continuous (hD : ∀ n, IsContinuousLattice (D n))
+theorem coconeInf_inverseLimitTopology_continuous (hD : ∀ n, ContinuousLattice (D n))
     (f : ∀ n, ScottMap (D n) D') :
     @Continuous (InverseLimit D P) D' (inverseLimitTopology D P)
       scottTopologicalSpace (coconeInf D P f) := by

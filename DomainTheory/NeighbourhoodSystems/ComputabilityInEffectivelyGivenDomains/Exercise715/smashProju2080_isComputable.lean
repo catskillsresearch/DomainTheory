@@ -38,7 +38,8 @@ variable (P₀ P₁)
 (`smashEnum_eq_eff` rewrites `Sum.inl ⁻¹' (smashEnum n)` to the effective left factor), a recursive
 slice of `incl_computable`. -/
 theorem smashProj₀_isComputable :
-    IsComputableMapS (smashPresentation P₀ P₁) P₀.toScott (smashProj₀ V₀ V₁) := by
+    ComputableMapS (smashPresentation P₀ P₁) P₀.toScott (smashProj₀ V₀ V₁) := by
+  constructor
   obtain ⟨f₀, hf₀p, hf₀e⟩ := proper₀_dec P₀
   obtain ⟨f₁, hf₁p, hf₁e⟩ := proper₁_dec P₁
   set c₀ := fun n => isOne (f₀ n) with hc₀def

@@ -46,7 +46,7 @@ theorem directed_step (x : (reprSystem C hInter hne).Element) {F F' : Tok C}
   have hF₃self : (F₃ : Tok C) ∈ nbhd C F₃.1 := subset_Cl C F₃.1
   rw [← hF₃eq] at hF₃self
   refine ⟨F₃, hinter, ?_, ?_⟩
-  · exact Cl_subset C (Cl_mem C hInter F₃.2.2) hF₃self.1
-  · exact Cl_subset C (Cl_mem C hInter F₃.2.2) hF₃self.2
+  · exact Cl_subset C (Cl_mem C hInter F₃.2.out.2) hF₃self.1
+  · exact Cl_subset C (Cl_mem C hInter F₃.2.out.2) hF₃self.2
 
 end DomainTheory.NeighbourhoodSystems.Exercise222

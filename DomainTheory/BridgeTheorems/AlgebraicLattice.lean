@@ -21,8 +21,8 @@ namespace IdealCompletionToContinuousLattice
 variable {D : Type*} [CompleteLattice D]
 
 /-- Algebraicity: every element is the directed lub of compact elements below it. -/
-def IsAlgebraicLattice (D : Type*) [CompleteLattice D] : Prop :=
-  ∀ y : D,
+class AlgebraicLattice (D : Type*) [CompleteLattice D] : Prop where
+  out : ∀ y : D,
     let S := {x : D | IsCompactElement x ∧ x ≤ y}
     S.Nonempty ∧ DirectedOn (· ≤ ·) S ∧ sSup S = y
 

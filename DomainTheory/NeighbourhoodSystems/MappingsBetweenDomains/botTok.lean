@@ -25,6 +25,6 @@ variable (hne : C.Nonempty)
 
 include hne in
 /-- The empty token `∅ ∈ Δ` (needs `C` non-empty for `∅` to lie in some member). -/
-def botTok : Tok C := ⟨∅, Set.finite_empty, hne.choose, hne.choose_spec, Set.empty_subset _⟩
+def botTok : Tok C := ⟨∅, ⟨⟨Set.finite_empty, hne.choose, hne.choose_spec, Set.empty_subset _⟩⟩⟩
 
 end DomainTheory.NeighbourhoodSystems.Exercise222

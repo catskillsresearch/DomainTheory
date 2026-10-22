@@ -27,7 +27,7 @@ theorem le_idMap_piD (d : ApproximableMap U U) : piD d ≤ idMap (funSpace U U) 
     funSpaceEquiv_apply, toApproxMap_toElementMap_piD, le_iff_toElementMap_le]
   intro t
   rw [toElementMap_piDApply]
-  have hP := (isFinitaryProjection_decode_subU (d.toElementMap (subU.toElementMap t))).1.2
+  have hP := (isFinitaryProjection_decode_subU (d.toElementMap (subU.toElementMap t))).out.1.2
   calc (toApproxMap (jArrow.toElementMap (subU.toElementMap
         (d.toElementMap (subU.toElementMap t))))).toElementMap
         ((toApproxMap φ).toElementMap (subU.toElementMap t))

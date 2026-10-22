@@ -25,7 +25,8 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 section Smash
 
 
-theorem isRetraction_smashRetraction : IsRetraction (smashRetraction (D := D) (E := E)) := by
+theorem isRetraction_smashRetraction : Retraction (smashRetraction (D := D) (E := E)) := by
+  constructor
   apply ext_of_toElementMap
   intro z
   rw [toElementMap_comp]

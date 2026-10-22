@@ -25,13 +25,13 @@ theorem example_821.{u_1} : And
           {a :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U},
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
               (DomainTheory.NeighbourhoodSystems.aSharp a))
         (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
           {hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X}
           {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D},
-          @DomainTheory.NeighbourhoodSystems.IsRetraction α D a →
+          @DomainTheory.NeighbourhoodSystems.Retraction α D a →
             @Eq
               (@DomainTheory.NeighbourhoodSystems.ApproximableMap (Prod (List Bool) α) (Prod (List Bool) α)
                 (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
@@ -62,8 +62,8 @@ theorem example_821.{u_1} : And
         {a :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
             DomainTheory.NeighbourhoodSystems.U},
-        @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-          @DomainTheory.NeighbourhoodSystems.IsRetraction (Prod (List Bool) Rat)
+        @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+          @DomainTheory.NeighbourhoodSystems.Retraction (Prod (List Bool) Rat)
             (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U_mem_nonempty)
             (DomainTheory.NeighbourhoodSystems.aSharpInner a)))
@@ -78,11 +78,11 @@ theorem example_821.{u_1} : And
     {a :
       @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
         DomainTheory.NeighbourhoodSystems.U},
-    @DomainTheory.NeighbourhoodSystems.IsRetraction (Prod (List Bool) Rat)
+    @DomainTheory.NeighbourhoodSystems.Retraction (Prod (List Bool) Rat)
         (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp Rat DomainTheory.NeighbourhoodSystems.U
           DomainTheory.NeighbourhoodSystems.U_mem_nonempty)
         (DomainTheory.NeighbourhoodSystems.aSharpInner a) →
-      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+      @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
         (DomainTheory.NeighbourhoodSystems.aSharp a)) :=
   @And.intro
   (And
@@ -92,13 +92,13 @@ theorem example_821.{u_1} : And
           {a :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U},
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
               (DomainTheory.NeighbourhoodSystems.aSharp a))
         (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
           {hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X}
           {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D},
-          @DomainTheory.NeighbourhoodSystems.IsRetraction α D a →
+          @DomainTheory.NeighbourhoodSystems.Retraction α D a →
             @Eq
               (@DomainTheory.NeighbourhoodSystems.ApproximableMap (Prod (List Bool) α) (Prod (List Bool) α)
                 (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
@@ -129,8 +129,8 @@ theorem example_821.{u_1} : And
         {a :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
             DomainTheory.NeighbourhoodSystems.U},
-        @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-          @DomainTheory.NeighbourhoodSystems.IsRetraction (Prod (List Bool) Rat)
+        @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+          @DomainTheory.NeighbourhoodSystems.Retraction (Prod (List Bool) Rat)
             (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U_mem_nonempty)
             (DomainTheory.NeighbourhoodSystems.aSharpInner a)))
@@ -145,11 +145,11 @@ theorem example_821.{u_1} : And
     {a :
       @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
         DomainTheory.NeighbourhoodSystems.U},
-    @DomainTheory.NeighbourhoodSystems.IsRetraction (Prod (List Bool) Rat)
+    @DomainTheory.NeighbourhoodSystems.Retraction (Prod (List Bool) Rat)
         (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp Rat DomainTheory.NeighbourhoodSystems.U
           DomainTheory.NeighbourhoodSystems.U_mem_nonempty)
         (DomainTheory.NeighbourhoodSystems.aSharpInner a) →
-      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+      @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
         (DomainTheory.NeighbourhoodSystems.aSharp a))
   (@And.intro
     (And
@@ -158,13 +158,13 @@ theorem example_821.{u_1} : And
           {a :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U},
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
               (DomainTheory.NeighbourhoodSystems.aSharp a))
         (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
           {hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X}
           {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D},
-          @DomainTheory.NeighbourhoodSystems.IsRetraction α D a →
+          @DomainTheory.NeighbourhoodSystems.Retraction α D a →
             @Eq
               (@DomainTheory.NeighbourhoodSystems.ApproximableMap (Prod (List Bool) α) (Prod (List Bool) α)
                 (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
@@ -195,8 +195,8 @@ theorem example_821.{u_1} : And
         {a :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
             DomainTheory.NeighbourhoodSystems.U},
-        @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-          @DomainTheory.NeighbourhoodSystems.IsRetraction (Prod (List Bool) Rat)
+        @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+          @DomainTheory.NeighbourhoodSystems.Retraction (Prod (List Bool) Rat)
             (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U_mem_nonempty)
             (DomainTheory.NeighbourhoodSystems.aSharpInner a)))
@@ -213,13 +213,13 @@ theorem example_821.{u_1} : And
           {a :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U},
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
               (DomainTheory.NeighbourhoodSystems.aSharp a))
         (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
           {hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X}
           {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D},
-          @DomainTheory.NeighbourhoodSystems.IsRetraction α D a →
+          @DomainTheory.NeighbourhoodSystems.Retraction α D a →
             @Eq
               (@DomainTheory.NeighbourhoodSystems.ApproximableMap (Prod (List Bool) α) (Prod (List Bool) α)
                 (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
@@ -250,8 +250,8 @@ theorem example_821.{u_1} : And
         {a :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
             DomainTheory.NeighbourhoodSystems.U},
-        @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-          @DomainTheory.NeighbourhoodSystems.IsRetraction (Prod (List Bool) Rat)
+        @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+          @DomainTheory.NeighbourhoodSystems.Retraction (Prod (List Bool) Rat)
             (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U_mem_nonempty)
             (DomainTheory.NeighbourhoodSystems.aSharpInner a))
@@ -260,13 +260,13 @@ theorem example_821.{u_1} : And
           {a :
             @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
               DomainTheory.NeighbourhoodSystems.U},
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-            @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+            @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
               (DomainTheory.NeighbourhoodSystems.aSharp a))
         (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
           {hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X}
           {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D},
-          @DomainTheory.NeighbourhoodSystems.IsRetraction α D a →
+          @DomainTheory.NeighbourhoodSystems.Retraction α D a →
             @Eq
               (@DomainTheory.NeighbourhoodSystems.ApproximableMap (Prod (List Bool) α) (Prod (List Bool) α)
                 (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)

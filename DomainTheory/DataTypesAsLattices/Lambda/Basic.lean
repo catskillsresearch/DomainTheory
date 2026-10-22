@@ -18,7 +18,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Occurs
 public import DomainTheory.DataTypesAsLattices.Lambda.rename
 public import DomainTheory.DataTypesAsLattices.Lambda.curry2
 public import DomainTheory.DataTypesAsLattices.Lambda.curry3
-public import DomainTheory.DataTypesAsLattices.Lambda.IsScottContinuousFin
+public import DomainTheory.DataTypesAsLattices.Lambda.ScottContinuousFin
 public import DomainTheory.DataTypesAsLattices.Lambda.curryFin
 public import DomainTheory.DataTypesAsLattices.Lambda.nestApplyFin
 public import DomainTheory.DataTypesAsLattices.Lambda.omegaComb

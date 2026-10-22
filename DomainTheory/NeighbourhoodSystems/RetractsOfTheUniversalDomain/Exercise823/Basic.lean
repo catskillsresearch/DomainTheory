@@ -48,7 +48,7 @@ proved here). The induced operator on actual maps is `tOp t a := toApproxMap (t.
 This is the crux, and is proved by an elegant chase through **Theorem 8.6's `sub` combinator**
 rather than by re-deriving any of Theorem 6.16's heavy ω-colimit-of-domains machinery:
 
-* `sub f = f ↔ IsFinitaryProjection f` (Theorem 8.6(a)) turns "is a finitary projection" into a
+* `sub f = f ↔ FinitaryProjection f` (Theorem 8.6(a)) turns "is a finitary projection" into a
   purely equational condition.
 * By induction on `n`, every approximant `t.iterElem n` (Theorem 4.1(iii)'s chain `tⁿ(⊥)`) is,
   under `toApproxMap`, a finitary projection: the base case `n = 0` is the constant-bottom map
@@ -61,7 +61,7 @@ rather than by re-deriving any of Theorem 6.16's heavy ω-colimit-of-domains mac
   (`Sub8_6.subFilter_iSupDirected`), because `sub`'s defining formula is a *positive existential*
   in the map's relation. Since `‖t‖`'s underlying element `t.fixElement = ⊔ₙ t.iterElem n`
   (Theorem 4.2(iii)) and `subFilter` fixes every term of this directed union, `subFilter` fixes the
-  union itself — i.e. `sub ‖t‖ = ‖t‖`, giving `IsFinitaryProjection ‖t‖` right back out of Theorem
+  union itself — i.e. `sub ‖t‖ = ‖t‖`, giving `FinitaryProjection ‖t‖` right back out of Theorem
   8.6(a).
 
 This sidesteps entirely the delicate "colimit of finitary domains is finitary" argument Theorem

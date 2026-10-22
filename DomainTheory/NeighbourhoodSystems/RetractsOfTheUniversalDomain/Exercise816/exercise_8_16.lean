@@ -12,7 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71.ComputablePresentation
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71.IsEffectivelyGiven
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.IsComputableMap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.ComputableMap
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88m.fixedNbhd_isEffectivelyGiven
 @[expose] public section
 
@@ -35,10 +35,10 @@ effectively given (via `P`) and `a` is computable (relative to `P`) — then `D_
 given (finishes off Theorem 8.8's proof). This is `Theorem88m.lean`'s `fixedNbhd_isEffectivelyGiven`,
 cited here under the exercise's name. -/
 theorem exercise_8_16 :
-    (∀ {a b : ApproximableMap E E}, IsFinitaryProjection a → IsFinitaryProjection b →
+    (∀ {a b : ApproximableMap E E}, FinitaryProjection a → FinitaryProjection b →
         (a ≤ b ↔ fixedNbhd a ◁ fixedNbhd b)) ∧
       (∀ {P : ComputablePresentation E} {a : ApproximableMap E E},
-        IsComputableMap P P a → (fixedNbhd a).IsEffectivelyGiven) :=
+        ComputableMap P P a → (fixedNbhd a).IsEffectivelyGiven) :=
   ⟨fun ha hb => isFinitaryProjection_le_iff_fixedNbhd_subsystem ha hb,
     fun hcomp => fixedNbhd_isEffectivelyGiven hcomp⟩
 

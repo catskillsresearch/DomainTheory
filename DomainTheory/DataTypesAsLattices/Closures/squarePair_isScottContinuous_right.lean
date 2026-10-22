@@ -17,6 +17,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem squarePair_isScottContinuous_right (x : Pomega) :
     IsScottContinuous (fun y => squarePair x y) := by
+  constructor
   intro y
   ext k
   constructor

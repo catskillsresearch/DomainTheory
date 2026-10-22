@@ -29,7 +29,8 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
 `compl_nbhd_subset_Fun_iff`) to a bounded `∀j < k`, primitive recursive by
 `testBit_imp_mem_Fun_isComputable`/`RecDecidable.bForall`. -/
 theorem gMap_isComputable :
-    IsComputableMap (prodPresentation PNpres PNpres) PNpres gMap := by
+    ComputableMap (prodPresentation PNpres PNpres) PNpres gMap := by
+  constructor
   have hall : RecDecidable (fun u : ℕ => ∀ j, j < u.unpair.2 →
       u.unpair.2.testBit j = true →
         j ∈ Fun (nbhd u.unpair.1.unpair.1)ᶜ (nbhd u.unpair.1.unpair.2)ᶜ) :=

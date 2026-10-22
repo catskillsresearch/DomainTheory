@@ -14,11 +14,15 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Continuity of an n-ary map, taken one argument at a time from the left. -/
-def IsScottContinuousFin : ∀ {n : ℕ}, ((Fin n → Pomega) → Pomega) → Prop
+/-- The recursive content of finite Scott continuity, one argument at a time. -/
+def ScottContinuousFin.Body : ∀ {n : ℕ}, ((Fin n → Pomega) → Pomega) → Prop
   | 0, _ => True
   | n + 1, f =>
       (∀ xs : Fin n → Pomega, IsScottContinuous (fun x => f (Fin.cons x xs))) ∧
-      (∀ x : Pomega, IsScottContinuousFin (fun xs : Fin n → Pomega => f (Fin.cons x xs)))
+      (∀ x : Pomega, ScottContinuousFin.Body (fun xs : Fin n → Pomega => f (Fin.cons x xs)))
+
+/-- Continuity of an n-ary map, taken one argument at a time from the left. -/
+class ScottContinuousFin {n : ℕ} (f : (Fin n → Pomega) → Pomega) : Prop where
+  out : ScottContinuousFin.Body f
 
 end DomainTheory.DataTypesAsLattices

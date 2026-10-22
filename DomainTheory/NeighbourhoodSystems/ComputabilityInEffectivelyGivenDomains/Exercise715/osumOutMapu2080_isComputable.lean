@@ -45,7 +45,8 @@ variable (P₀ P₁)
 part is `X⁰_{n.2}` on a proper left copy and `Δ₀` on a right copy / the master, so the relation is
 `incl` against either `n.2` or the master index `k₀` (`X⁰_{k₀} = Δ₀`). -/
 theorem osumOutMap₀_isComputable :
-    IsComputableMapS (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) P₀.toScott osumOutMap₀ := by
+    ComputableMapS (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) P₀.toScott osumOutMap₀ := by
+  constructor
   obtain ⟨k0, hk0⟩ := P₀.surj V₀.master_mem
   have hT0 : RecDecidable (fun t => t.unpair.1.unpair.1 = 0) :=
     RecDecidable.natEq (Nat.Primrec.left.comp Nat.Primrec.left) (Nat.Primrec.const 0)

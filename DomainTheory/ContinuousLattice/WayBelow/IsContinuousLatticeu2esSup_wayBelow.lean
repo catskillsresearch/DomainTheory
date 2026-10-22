@@ -21,8 +21,8 @@ variable {D : Type u} [CompleteLattice D]
 
 
 /-- In a continuous lattice, `y` is the actual supremum of `{x | x ≪ y}`. -/
-theorem IsContinuousLattice.sSup_wayBelow (h : IsContinuousLattice D) (y : D) :
+theorem sSup_wayBelow (h : ContinuousLattice D) (y : D) :
     sSup {x | x ≪ y} = y :=
-  (h y).sSup_eq
+  (h.out y).sSup_eq
 
 end DomainTheory.ContinuousLattice

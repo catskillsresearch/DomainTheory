@@ -19,6 +19,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem IsRE.top : IsRE topElem :=
-  REPred.true.of_eq fun n => by simp [topElem]
+  ⟨REPred.true.of_eq fun n => by simp [topElem]⟩
 
 end DomainTheory.DataTypesAsLattices

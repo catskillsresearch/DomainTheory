@@ -23,7 +23,7 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
 
-variable {a : ApproximableMap E E} (h : IsClosureOperator a)
+variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 
 /-- **Exercise 8.14, the final question, answered exactly.** `y ∈ Fix(a)` is compact (i.e. is a

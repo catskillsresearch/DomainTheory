@@ -5,7 +5,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.ClosureOperator
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.CompactFix
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.botK
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.joinCompactFix
@@ -27,11 +27,11 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
 
-variable {a : ApproximableMap E E} (h : IsClosureOperator a)
+variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 /-- **The reconstructed neighbourhood system.** Tokens are the compact fixed points of `a`;
 neighbourhoods are their principal up-sets. -/
-def domainOfClosure (h : IsClosureOperator a) : NeighborhoodSystem (CompactFix h) where
+def domainOfClosure (h : ClosureOperator a) : NeighborhoodSystem (CompactFix h) where
   mem S := ∃ k : CompactFix h, S = upFix h k
   master := upFix h (botK h)
   master_nonempty := ⟨botK h, self_mem_upFix h (botK h)⟩

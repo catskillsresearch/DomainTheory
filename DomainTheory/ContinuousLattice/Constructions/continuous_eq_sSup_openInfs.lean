@@ -31,7 +31,7 @@ value `f' y` is reconstructed as the supremum over open neighbourhoods `U ∋ y`
 `⊓ f''(U)`. This is the order-theoretic content behind the maximality clause of Proposition 3.8:
 the `≤` direction interpolates from below using `f' y = ⊔ {a | a ≪ f' y}` and the openness of each
 `f'⁻¹(↟a)`; the `≥` direction is immediate since `f' y ∈ f''(U)` whenever `y ∈ U`. -/
-theorem continuous_eq_sSup_openInfs (hE : IsContinuousLattice E) {f' : Y → E}
+theorem continuous_eq_sSup_openInfs (hE : ContinuousLattice E) {f' : Y → E}
     (hf' : @Continuous Y E _ scottTopologicalSpace f') (y : Y) :
     f' y = sSup {d | ∃ U : Set Y, IsOpen U ∧ y ∈ U ∧ d = sInf (f' '' U)} := by
   apply le_antisymm

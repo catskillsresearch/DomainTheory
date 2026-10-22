@@ -23,7 +23,7 @@ open NeighborhoodSystem ApproximableMap Exercise326
 
 
 theorem iTimes_isComputableMap :
-    IsComputableMap prodUUPresentation UComputablePresentation iTimes :=
+    ComputableMap prodUUPresentation UComputablePresentation iTimes :=
   (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose_spec.2.2.1
 
 end DomainTheory.NeighbourhoodSystems

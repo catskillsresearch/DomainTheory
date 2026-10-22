@@ -37,7 +37,8 @@ variable (P₀ P₁)
 /-- **The smash projection `p₁` is computable.** Symmetric to `smashProj₀_isComputable`, using the
 effective right factor `Sum.inr ⁻¹' (smashEnum n) = X¹_{effR n}`. -/
 theorem smashProj₁_isComputable :
-    IsComputableMapS (smashPresentation P₀ P₁) P₁.toScott (smashProj₁ V₀ V₁) := by
+    ComputableMapS (smashPresentation P₀ P₁) P₁.toScott (smashProj₁ V₀ V₁) := by
+  constructor
   obtain ⟨f₀, hf₀p, hf₀e⟩ := proper₀_dec P₀
   obtain ⟨f₁, hf₁p, hf₁e⟩ := proper₁_dec P₁
   set c₀ := fun n => isOne (f₀ n) with hc₀def

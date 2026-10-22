@@ -25,7 +25,8 @@ namespace Subsystem
 /-- **Proposition 8.2, first half.** `retractionOfSubsystem h` is a retraction: `a ∘ a = a`, via
 `a ∘ a = i∘(j∘i)∘j = i∘I_D∘j = i∘j = a`. -/
 theorem isRetraction_retractionOfSubsystem (h : D ◁ E) :
-    IsRetraction (retractionOfSubsystem h) := by
+    Retraction (retractionOfSubsystem h) := by
+  constructor
   show (h.inj.comp h.proj).comp (h.inj.comp h.proj) = h.inj.comp h.proj
   rw [comp_assoc, ← comp_assoc h.proj h.inj h.proj, h.proj_comp_inj, idMap_comp]
 

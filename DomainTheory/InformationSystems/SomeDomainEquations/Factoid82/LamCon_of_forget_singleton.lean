@@ -35,7 +35,7 @@ theorem LamCon_of_forget_singleton (p : LamToken A) :
   match p with
   | ⟨.bot, _⟩ => exact LamCon_singleton_bot A
   | ⟨.atom x, _⟩ => exact LamCon_singleton_atom A x
-  | ⟨.funTok u v, hWF⟩ => exact LamCon_singleton_funTok A u v hWF.1 hWF.2
+  | ⟨.funTok u v, hWF⟩ => exact LamCon_singleton_funTok A u v hWF.out.1 hWF.out.2
 
 end InfoSys
 end DomainTheory.InformationSystems

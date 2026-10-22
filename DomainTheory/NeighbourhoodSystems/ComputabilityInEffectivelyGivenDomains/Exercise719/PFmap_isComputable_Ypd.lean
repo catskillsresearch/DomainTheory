@@ -29,9 +29,9 @@ variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : Neighborho
 of the `ℙ𝒟`-codes of Proposition 7.10 (`Y_c = ⋃_{a∈dl c} ↓Xₐ`): the relation `(ℙf).rel (Y_c) (Y_d)`
 is recursively enumerable in `(c, d)`. -/
 theorem PFmap_isComputable_Ypd (P : ComputablePresentation V) (Q : ComputablePresentation W)
-    {f : ApproximableMap V W} (hf : IsComputableMap P Q f) :
+    {f : ApproximableMap V W} (hf : ComputableMap P Q f) :
     REPred₂ (fun c d => (PFmap f).rel (V.Ypd P c) (W.Ypd Q d)) := by
-  have hR : REPred₂ (fun a b => f.rel (P.X a) (Q.X b)) := hf
+  have hR : REPred₂ (fun a b => f.rel (P.X a) (Q.X b)) := hf.out
   have hInner : REPred₂ (fun d a => ∃ b ∈ decodeList d, f.rel (P.X a) (Q.X b)) :=
     bExists_decodeList_re hR
   have hForall := REPred.forall_mem_decodeList₂ hInner

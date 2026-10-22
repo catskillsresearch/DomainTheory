@@ -135,16 +135,4 @@ theorem wayBelow_finite_support {ι : Type*} {E : ι → Type*} [∀ i, Complete
   simp only [hZ, ite_eq_right hjF] at hj
   exact le_bot_iff.1 hj
 
-/-! ### Proposition 2.11: continuous lattices are injective
-
-The substance of Scott's Theorem 2.12. We give the explicit extension operator
-`g(y) = ⊔_{V ∋ y open} ⊓ f''(e⁻¹V)` and prove (a) it extends `f` along an embedding `e`
-(using continuity of `D` to interpolate from below) and (b) it is Scott-continuous (using the
-`↟a` basis of the Scott topology). -/
-
-section InjectiveExtension
-
-variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] {E : Type*} [CompleteLattice E]
-
-end InjectiveExtension
 end DomainTheory.ContinuousLattice

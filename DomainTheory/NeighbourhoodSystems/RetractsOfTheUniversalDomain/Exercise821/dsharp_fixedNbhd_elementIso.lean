@@ -30,7 +30,7 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 algebra `(D_a)§` of `D_a := fixedNbhd a` is order-isomorphic to `a§`'s own fixed-point domain —
 Scott's headline isomorphism `D_{a§} ≅ (D_a)§`. -/
 noncomputable def dsharp_fixedNbhd_elementIso {a : ApproximableMap U U}
-    (ha : IsFinitaryProjection a) :
+    (ha : FinitaryProjection a) :
     (Dsharp (fixedNbhd a) (fixedNbhd_mem_nonempty a)).Element ≃o
       {y : U.Element // (aSharp a).toElementMap y = y} :=
   elementIsoOfProjectionPair (ISharpComb a) (JSharpComb a) (JSharpComb_comp_ISharpComb a)

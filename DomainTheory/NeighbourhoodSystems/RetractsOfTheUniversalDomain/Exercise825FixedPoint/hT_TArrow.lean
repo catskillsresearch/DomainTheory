@@ -26,7 +26,7 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-theorem hT_TArrow (a : ApproximableMap U U) (ha : IsFinitaryProjection a) :
+theorem hT_TArrow (a : ApproximableMap U U) (ha : FinitaryProjection a) :
     Nonempty (Exercise823.Fix (Exercise823.tOp (tOpMap cCombinator) a) ≃o
       (TArrow a).2.Element) := by
   rw [tOp_tOpMap]

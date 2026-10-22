@@ -326,7 +326,7 @@ theorem example_812_d.{u_1, u_2} : And
                           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                             (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D₀ D₁ P₀ P₁
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap α β D₀ D₁ P₀ P₁
                         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso α β D₀ D₁
                           (@DomainTheory.NeighbourhoodSystems.domainIsoCode812d α β D₀ D₁ P₀ P₁ hDiff0 hDiff1 splitX
                             hSplitX splitY hSplitY hD₀pos (fun {X Y : Set α} => @hD₀diff X Y)
@@ -365,7 +365,7 @@ theorem example_812_d.{u_1, u_2} : And
                         (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                           (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                    @DomainTheory.NeighbourhoodSystems.IsComputableMap β α D₁ D₀ P₁ P₀
+                    @DomainTheory.NeighbourhoodSystems.ComputableMap β α D₁ D₀ P₁ P₀
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso β α D₁ D₀
                         (@OrderIso.symm (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D₀)
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β D₁)
@@ -1077,7 +1077,7 @@ theorem example_812_d.{u_1, u_2} : And
                           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                             (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D₀ D₁ P₀ P₁
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap α β D₀ D₁ P₀ P₁
                         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso α β D₀ D₁
                           (@DomainTheory.NeighbourhoodSystems.domainIsoCode812d α β D₀ D₁ P₀ P₁ hDiff0 hDiff1 splitX
                             hSplitX splitY hSplitY hD₀pos (fun {X Y : Set α} => @hD₀diff X Y)
@@ -1116,7 +1116,7 @@ theorem example_812_d.{u_1, u_2} : And
                         (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                           (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                    @DomainTheory.NeighbourhoodSystems.IsComputableMap β α D₁ D₀ P₁ P₀
+                    @DomainTheory.NeighbourhoodSystems.ComputableMap β α D₁ D₀ P₁ P₀
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso β α D₁ D₀
                         (@OrderIso.symm (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D₀)
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β D₁)
@@ -1827,7 +1827,7 @@ theorem example_812_d.{u_1, u_2} : And
                           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                             (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D₀ D₁ P₀ P₁
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap α β D₀ D₁ P₀ P₁
                         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso α β D₀ D₁
                           (@DomainTheory.NeighbourhoodSystems.domainIsoCode812d α β D₀ D₁ P₀ P₁ hDiff0 hDiff1 splitX
                             hSplitX splitY hSplitY hD₀pos (fun {X Y : Set α} => @hD₀diff X Y)
@@ -1866,7 +1866,7 @@ theorem example_812_d.{u_1, u_2} : And
                         (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                           (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                    @DomainTheory.NeighbourhoodSystems.IsComputableMap β α D₁ D₀ P₁ P₀
+                    @DomainTheory.NeighbourhoodSystems.ComputableMap β α D₁ D₀ P₁ P₀
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso β α D₁ D₀
                         (@OrderIso.symm (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D₀)
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β D₁)
@@ -2521,7 +2521,7 @@ theorem example_812_d.{u_1, u_2} : And
                           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                             (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D₀ D₁ P₀ P₁
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap α β D₀ D₁ P₀ P₁
                         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso α β D₀ D₁
                           (@DomainTheory.NeighbourhoodSystems.domainIsoCode812d α β D₀ D₁ P₀ P₁ hDiff0 hDiff1 splitX
                             hSplitX splitY hSplitY hD₀pos (fun {X Y : Set α} => @hD₀diff X Y)
@@ -2560,7 +2560,7 @@ theorem example_812_d.{u_1, u_2} : And
                         (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                           (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                    @DomainTheory.NeighbourhoodSystems.IsComputableMap β α D₁ D₀ P₁ P₀
+                    @DomainTheory.NeighbourhoodSystems.ComputableMap β α D₁ D₀ P₁ P₀
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso β α D₁ D₀
                         (@OrderIso.symm (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D₀)
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β D₁)
@@ -3173,7 +3173,7 @@ theorem example_812_d.{u_1, u_2} : And
                           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                             (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D₀ D₁ P₀ P₁
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap α β D₀ D₁ P₀ P₁
                         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso α β D₀ D₁
                           (@DomainTheory.NeighbourhoodSystems.domainIsoCode812d α β D₀ D₁ P₀ P₁ hDiff0 hDiff1 splitX
                             hSplitX splitY hSplitY hD₀pos (fun {X Y : Set α} => @hD₀diff X Y)
@@ -3212,7 +3212,7 @@ theorem example_812_d.{u_1, u_2} : And
                         (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                           (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                    @DomainTheory.NeighbourhoodSystems.IsComputableMap β α D₁ D₀ P₁ P₀
+                    @DomainTheory.NeighbourhoodSystems.ComputableMap β α D₁ D₀ P₁ P₀
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso β α D₁ D₀
                         (@OrderIso.symm (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D₀)
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β D₁)
@@ -3779,7 +3779,7 @@ theorem example_812_d.{u_1, u_2} : And
                           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                             (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D₀ D₁ P₀ P₁
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap α β D₀ D₁ P₀ P₁
                         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso α β D₀ D₁
                           (@DomainTheory.NeighbourhoodSystems.domainIsoCode812d α β D₀ D₁ P₀ P₁ hDiff0 hDiff1 splitX
                             hSplitX splitY hSplitY hD₀pos (fun {X Y : Set α} => @hD₀diff X Y)
@@ -3818,7 +3818,7 @@ theorem example_812_d.{u_1, u_2} : And
                         (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                           (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                    @DomainTheory.NeighbourhoodSystems.IsComputableMap β α D₁ D₀ P₁ P₀
+                    @DomainTheory.NeighbourhoodSystems.ComputableMap β α D₁ D₀ P₁ P₀
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso β α D₁ D₀
                         (@OrderIso.symm (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D₀)
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β D₁)
@@ -4333,7 +4333,7 @@ theorem example_812_d.{u_1, u_2} : And
                           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                             (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D₀ D₁ P₀ P₁
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap α β D₀ D₁ P₀ P₁
                         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso α β D₀ D₁
                           (@DomainTheory.NeighbourhoodSystems.domainIsoCode812d α β D₀ D₁ P₀ P₁ hDiff0 hDiff1 splitX
                             hSplitX splitY hSplitY hD₀pos (fun {X Y : Set α} => @hD₀diff X Y)
@@ -4372,7 +4372,7 @@ theorem example_812_d.{u_1, u_2} : And
                         (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                           (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                    @DomainTheory.NeighbourhoodSystems.IsComputableMap β α D₁ D₀ P₁ P₀
+                    @DomainTheory.NeighbourhoodSystems.ComputableMap β α D₁ D₀ P₁ P₀
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso β α D₁ D₀
                         (@OrderIso.symm (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D₀)
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β D₁)
@@ -4844,7 +4844,7 @@ theorem example_812_d.{u_1, u_2} : And
                           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                             (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D₀ D₁ P₀ P₁
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap α β D₀ D₁ P₀ P₁
                         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso α β D₀ D₁
                           (@DomainTheory.NeighbourhoodSystems.domainIsoCode812d α β D₀ D₁ P₀ P₁ hDiff0 hDiff1 splitX
                             hSplitX splitY hSplitY hD₀pos (fun {X Y : Set α} => @hD₀diff X Y)
@@ -4883,7 +4883,7 @@ theorem example_812_d.{u_1, u_2} : And
                         (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                           (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                    @DomainTheory.NeighbourhoodSystems.IsComputableMap β α D₁ D₀ P₁ P₀
+                    @DomainTheory.NeighbourhoodSystems.ComputableMap β α D₁ D₀ P₁ P₀
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso β α D₁ D₀
                         (@OrderIso.symm (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D₀)
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β D₁)
@@ -5309,7 +5309,7 @@ theorem example_812_d.{u_1, u_2} : And
                           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                             (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D₀ D₁ P₀ P₁
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap α β D₀ D₁ P₀ P₁
                         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso α β D₀ D₁
                           (@DomainTheory.NeighbourhoodSystems.domainIsoCode812d α β D₀ D₁ P₀ P₁ hDiff0 hDiff1 splitX
                             hSplitX splitY hSplitY hD₀pos (fun {X Y : Set α} => @hD₀diff X Y)
@@ -5348,7 +5348,7 @@ theorem example_812_d.{u_1, u_2} : And
                         (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                           (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                    @DomainTheory.NeighbourhoodSystems.IsComputableMap β α D₁ D₀ P₁ P₀
+                    @DomainTheory.NeighbourhoodSystems.ComputableMap β α D₁ D₀ P₁ P₀
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso β α D₁ D₀
                         (@OrderIso.symm (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D₀)
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β D₁)
@@ -5713,7 +5713,7 @@ theorem example_812_d.{u_1, u_2} : And
                           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                             (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D₀ D₁ P₀ P₁
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap α β D₀ D₁ P₀ P₁
                         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso α β D₀ D₁
                           (@DomainTheory.NeighbourhoodSystems.domainIsoCode812d α β D₀ D₁ P₀ P₁ hDiff0 hDiff1 splitX
                             hSplitX splitY hSplitY hD₀pos (fun {X Y : Set α} => @hD₀diff X Y)
@@ -5752,7 +5752,7 @@ theorem example_812_d.{u_1, u_2} : And
                         (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                           (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                    @DomainTheory.NeighbourhoodSystems.IsComputableMap β α D₁ D₀ P₁ P₀
+                    @DomainTheory.NeighbourhoodSystems.ComputableMap β α D₁ D₀ P₁ P₀
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso β α D₁ D₀
                         (@OrderIso.symm (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D₀)
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β D₁)
@@ -6059,7 +6059,7 @@ theorem example_812_d.{u_1, u_2} : And
                           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β D₁ P₁
                             (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
                           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master β D₁)),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D₀ D₁ P₀ P₁
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap α β D₀ D₁ P₀ P₁
                         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.ofIso α β D₀ D₁
                           (@DomainTheory.NeighbourhoodSystems.domainIsoCode812d α β D₀ D₁ P₀ P₁ hDiff0 hDiff1 splitX
                             hSplitX splitY hSplitY hD₀pos (fun {X Y : Set α} => @hD₀diff X Y)

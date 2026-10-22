@@ -7,7 +7,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.ClosureOperator
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.botFix
 
 @[expose] public section
@@ -26,7 +26,7 @@ variable {a : ApproximableMap E E}
 
 /-- **`a(⊥)` is the least element of `Fix(a)`**: `a(⊥) ⊑ y` for every `y ∈ Fix(a)`. Since `⊥ ⊑ y`
 always, monotonicity gives `a(⊥) ⊑ a(y) = y`. -/
-theorem botFix_le (h : IsClosureOperator a) (y : FixSet a) : (botFix h).1 ≤ y.1 := by
+theorem botFix_le (h : ClosureOperator a) (y : FixSet a) : (botFix h).1 ≤ y.1 := by
   have h1 : a.toElementMap ⊥ ≤ a.toElementMap y.1 := a.toElementMap_mono bot_le
   rwa [y.2] at h1
 

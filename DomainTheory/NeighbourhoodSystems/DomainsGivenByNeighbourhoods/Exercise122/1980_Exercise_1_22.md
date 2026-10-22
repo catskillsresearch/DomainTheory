@@ -27,7 +27,7 @@ is not only in $|D|$ but is a topological limit point of the sequence. Show that
 
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/basicOpen.lean](basicOpen.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/mem_basicOpen.lean](mem_basicOpen.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/IsOpenFilter.lean](IsOpenFilter.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/OpenFilter.lean](OpenFilter.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_basicOpen.lean](isOpen_basicOpen.lean)
 - [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_isOpenFilter.lean](isOpen_iff_isOpenFilter.lean)

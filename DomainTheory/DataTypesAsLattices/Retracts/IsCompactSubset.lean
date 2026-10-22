@@ -6,7 +6,7 @@ module
 public import DomainTheory.DataTypesAsLattices.FixedLattices
 public import DomainTheory.DataTypesAsLattices.Lambda
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
-public import DomainTheory.DataTypesAsLattices.Retracts.IsDirectedSubset
+public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
 
 @[expose] public section
 
@@ -15,7 +15,7 @@ namespace DomainTheory.DataTypesAsLattices
 /-- Compactness of a fixed point under subset, without a lattice instance. -/
 def IsCompactSubset {f : Pomega → Pomega} (x : Fixpoints f) : Prop :=
   ∀ s : Set (Fixpoints f),
-    IsDirectedSubset s →
+    DirectedSubset s →
       (x : Pomega) ⊆ ⋃₀ (Subtype.val '' s) →
       ∃ z ∈ s, (x : Pomega) ⊆ z
 

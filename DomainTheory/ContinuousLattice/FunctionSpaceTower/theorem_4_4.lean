@@ -38,13 +38,13 @@ continuous lattice, but it is also homeomorphic to its own function space
 \([D_\infty \to D_\infty]\).*  Here “inverse limit” carries Scott's subspace
 topology from the Pi product, while the function space carries Definition 3.1's
 pointwise/Pi-induced topology. -/
-theorem theorem_4_4 (h₀ : IsContinuousLattice D₀.carrier) :
-    @IsContinuousLattice (DInf D₀ j₀) inferInstance ∧
+theorem theorem_4_4 (h₀ : ContinuousLattice D₀.carrier) :
+    @ContinuousLattice (DInf D₀ j₀) inferInstance ∧
       Nonempty
         (@Homeomorph (DInf D₀ j₀) (DInfFn D₀ j₀)
           (inverseLimitTopology (towerType D₀) (towerProj D₀ j₀))
           (scottMapInducedPiTopology (DInf D₀ j₀) (DInf D₀ j₀))) := by
-  have hTower : ∀ n, IsContinuousLattice (towerType D₀ n) := by
+  have hTower : ∀ n, ContinuousLattice (towerType D₀ n) := by
     intro n
     induction n with
     | zero => exact h₀

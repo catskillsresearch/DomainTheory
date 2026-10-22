@@ -31,7 +31,7 @@ projections): applying `sub` twice is the same as once (`sub_sub`), and every `s
 fixed point of `sub` (feed `isFinitaryProjection_of_sub_eq_self (sub_sub f)` back through
 `sub_eq_self_iff_isFinitaryProjection`) — i.e. `sub f` is *always* a finitary projection, for any
 `f`, needing no hypothesis on `f` at all. -/
-theorem isFinitaryProjection_sub (f : ApproximableMap E E) : IsFinitaryProjection (sub f) :=
+theorem isFinitaryProjection_sub (f : ApproximableMap E E) : FinitaryProjection (sub f) :=
   isFinitaryProjection_of_sub_eq_self (sub_sub f)
 
 end DomainTheory.NeighbourhoodSystems

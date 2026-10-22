@@ -44,11 +44,11 @@ pointwise (equivalently Pi-induced) topology on `[D∞ → D∞]`.
 The topology changes are the mathematical identifications supplied by Proposition 4.1 and
 Theorem 3.3; the underlying maps remain Scott's displayed `i∞` and `j∞` formulas above. -/
 noncomputable def theorem_4_4_sourceTopology_homeomorph
-    (hTower : ∀ n, IsContinuousLattice (towerType D₀ n)) :
+    (hTower : ∀ n, ContinuousLattice (towerType D₀ n)) :
     @Homeomorph (DInf D₀ j₀) (DInfFn D₀ j₀)
       (inverseLimitTopology (towerType D₀) (towerProj D₀ j₀))
       (scottMapInducedPiTopology (DInf D₀ j₀) (DInf D₀ j₀)) := by
-  have hDInf : IsContinuousLattice (DInf D₀ j₀) :=
+  have hDInf : ContinuousLattice (DInf D₀ j₀) :=
     proposition_4_1 (towerType D₀) (towerProj D₀ j₀) hTower
   rw [← inverseLimit_scottTopology_eq_induced_pi
         (towerType D₀) (towerProj D₀ j₀) hTower,

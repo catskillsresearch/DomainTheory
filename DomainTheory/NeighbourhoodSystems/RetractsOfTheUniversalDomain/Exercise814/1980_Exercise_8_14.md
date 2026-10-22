@@ -4,7 +4,7 @@
 
 **Lean 4**
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/IsClosureOperator.lean](IsClosureOperator.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/ClosureOperator.lean](ClosureOperator.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/IsCompactFix.lean](IsCompactFix.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/CompactFix.lean](CompactFix.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/botFix.lean](botFix.lean)

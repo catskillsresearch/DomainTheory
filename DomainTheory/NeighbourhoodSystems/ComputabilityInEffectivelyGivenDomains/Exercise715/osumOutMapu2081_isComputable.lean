@@ -43,7 +43,8 @@ variable (P₀ P₁)
 
 /-- **`out₁` is computable.** Symmetric to `out₀` via `rightPart`. -/
 theorem osumOutMap₁_isComputable :
-    IsComputableMapS (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) P₁.toScott osumOutMap₁ := by
+    ComputableMapS (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) P₁.toScott osumOutMap₁ := by
+  constructor
   obtain ⟨k1, hk1⟩ := P₁.surj V₁.master_mem
   have hT1 : RecDecidable (fun t => t.unpair.1.unpair.1 = 1) :=
     RecDecidable.natEq (Nat.Primrec.left.comp Nat.Primrec.left) (Nat.Primrec.const 1)

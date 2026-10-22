@@ -26,7 +26,8 @@ variable (u : D.Element) (hu : u ≠ D.bot)
 
 
 /-- **Example 8.4(a) (Scott 1981, PRG-19).** `a` is a retraction. -/
-theorem isRetraction_a (hu : u ≠ D.bot) : IsRetraction (a u) := by
+theorem isRetraction_a (hu : u ≠ D.bot) : Retraction (a u) := by
+  constructor
   apply ext_of_toElementMap
   intro x
   rw [toElementMap_comp]

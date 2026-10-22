@@ -165,7 +165,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 
 Part 6 (`Theorem88c.lean`) showed Theorem 8.8(a)'s *classical* subsystem `D' = DprimeU` (built via
 `splitChoice`) is effectively given as an abstract domain in its own right. That is **not** enough
-for Part 7: `IsComputableMap` needs the *cross*-relation between `D'` and `U` — concretely,
+for Part 7: `ComputableMap` needs the *cross*-relation between `D'` and `U` — concretely,
 `Yidx e n ⊆ UX m` — to be recursively enumerable, and `Yidx e n`'s actual position among `U`'s
 rational intervals is, by construction, whatever `Classical.choice` happened to pick. There is no
 effective handle on it at all, so no relation mentioning it can be shown r.e.
@@ -218,7 +218,7 @@ needed downstream.
 
 The remaining assembly (Part 7b: a `Yseq`-analogue as a *union* over `2ⁿ` such atoms, disjointness,
 subset/intersection transfer, `D''`'s `NeighborhoodSystem`/`ComputablePresentation`,
-`D ≅ᴰ D''`/`D'' ◁ U`; Part 7c: `IsComputableMap` itself) is **not yet done** — see `HANDOFF.md` for
+`D ≅ᴰ D''`/`D'' ◁ U`; Part 7c: `ComputableMap` itself) is **not yet done** — see `HANDOFF.md` for
 the detailed continuation plan. Nothing in this file is a placeholder or `sorry`; everything proved
 here is a real, checked, reusable building block for that continuation.
 -/

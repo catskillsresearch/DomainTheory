@@ -15,6 +15,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem predSet_isScottContinuous : IsScottContinuous predSet := by
+  constructor
   intro x
   ext k
   constructor

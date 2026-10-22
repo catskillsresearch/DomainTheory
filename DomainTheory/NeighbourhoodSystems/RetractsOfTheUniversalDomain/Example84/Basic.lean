@@ -65,7 +65,7 @@ two-element system `O = {{0},{0,1}}` arises from a retraction on `D`. Scott's co
   `toElementMap_comp`/`toElementMap_paired`/`toElementMap_constMap`/the `ApproximableMap₂` bridge
   gives the clean closed form `mem_toElementMap_a`: `a(x) ∋ Z ↔ Z = Δ_D ∨ (x ≠ ⊥_D ∧ u ∋ Z)` — i.e.
   literally "`a(x) = ⊥_D` if `x = ⊥_D`, else `u`" (`a_bot`, `a_of_ne_bot`).
-* From the closed form, `IsRetraction a` is immediate case analysis (`x = ⊥` is fixed at `⊥`;
+* From the closed form, `Retraction a` is immediate case analysis (`x = ⊥` is fixed at `⊥`;
   `x ≠ ⊥` lands on `u ≠ ⊥`, itself fixed).
 * The fixed-point set is exactly `{⊥_D, u}`. Rather than characterizing it abstractly, the
   isomorphism to `O` is built *directly* and choice-freely from the same closed-form data:

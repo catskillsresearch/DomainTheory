@@ -31,7 +31,7 @@ variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 /-- The Scott lattice topology constructed on `D∞` agrees with Scott's literal inverse-limit
 topology: the subspace topology inherited from the Pi product of the stage Scott topologies. -/
-theorem inverseLimit_scottTopology_eq_induced_pi (hD : ∀ n, IsContinuousLattice (D n)) :
+theorem inverseLimit_scottTopology_eq_induced_pi (hD : ∀ n, ContinuousLattice (D n)) :
     (scottTopologicalSpace : TopologicalSpace (InverseLimit D P)) =
       inverseLimitTopology D P := by
   let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P

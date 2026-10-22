@@ -27,7 +27,7 @@ theorem eta_fails : ∃ u, graph (funOf u) ≠ u := by
     subst this
     decide
   have : pair 3 0 ∈ ({pair 1 0} : Pomega) :=
-    hG (by simp) hsub
+    hG.out (by simp) hsub
   have : pair 3 0 = pair 1 0 := this
   exact (by simp [pair] : pair 3 0 ≠ pair 1 0) this
 

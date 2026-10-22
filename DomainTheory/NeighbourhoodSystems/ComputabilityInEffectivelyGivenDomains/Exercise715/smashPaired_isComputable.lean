@@ -40,15 +40,16 @@ variable (P₀ P₁)
 No effective-index bridge is needed: the proper branch reads `smashEnum`'s raw factors directly. -/
 theorem smashPaired_isComputable {V₂ : NeighborhoodSystem γ} (P₂ : ComputablePresentation V₂)
     {a : ApproximableMap V₂ V₀} {b : ApproximableMap V₂ V₁}
-    (ha : IsComputableMapS P₂.toScott P₀.toScott a)
-    (hb : IsComputableMapS P₂.toScott P₁.toScott b) :
-    IsComputableMapS P₂.toScott (smashPresentation P₀ P₁) (smashPaired a b) := by
+    (ha : ComputableMapS P₂.toScott P₀.toScott a)
+    (hb : ComputableMapS P₂.toScott P₁.toScott b) :
+    ComputableMapS P₂.toScott (smashPresentation P₀ P₁) (smashPaired a b) := by
+  constructor
   have Ha : REPred (fun t => a.rel (P₂.toScott.X t.unpair.1) (P₀.toScott.X t.unpair.2.unpair.1)) :=
     REPred.of_iff (fun t => by simp only [unpair_pair_fst, unpair_pair_snd])
-      (ha.comp (Nat.Primrec.left.pair (Nat.Primrec.left.comp Nat.Primrec.right)))
+      (ha.out.comp (Nat.Primrec.left.pair (Nat.Primrec.left.comp Nat.Primrec.right)))
   have Hb : REPred (fun t => b.rel (P₂.toScott.X t.unpair.1) (P₁.toScott.X t.unpair.2.unpair.2)) :=
     REPred.of_iff (fun t => by simp only [unpair_pair_fst, unpair_pair_snd])
-      (hb.comp (Nat.Primrec.left.pair (Nat.Primrec.right.comp Nat.Primrec.right)))
+      (hb.out.comp (Nat.Primrec.left.pair (Nat.Primrec.right.comp Nat.Primrec.right)))
   have hJP : RecDecidable (fun t => P₀.X t.unpair.2.unpair.1 ≠ V₀.master ∧
       P₁.X t.unpair.2.unpair.2 ≠ V₁.master) :=
     ((proper₀_dec P₀).comp (Nat.Primrec.left.comp Nat.Primrec.right)).and

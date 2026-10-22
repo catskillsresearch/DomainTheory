@@ -25,8 +25,9 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 the raw code-level subset test `UX m ⊆ UX (YseqCode P n)`, decidable by reindexing
 `UComputablePresentation.incl_computable` along `YseqCode P` in the second argument. -/
 theorem DprimeUCode_proj_isComputableMap :
-    IsComputableMap UComputablePresentation (DprimeUCodePresentation P)
+    ComputableMap UComputablePresentation (DprimeUCodePresentation P)
       (DprimeUCode_subsystem P).proj := by
+  constructor
   have hg : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1 (YseqCode P t.unpair.2)) :=
     Nat.Primrec.pair Nat.Primrec.left ((primrec_YseqCode P).comp Nat.Primrec.right)
   have hp : RecDecidable (fun t : ℕ => UX t.unpair.1 ⊆ UX (YseqCode P t.unpair.2)) := by

@@ -5,7 +5,7 @@
 **Lean 4**
 
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/ScottPresentation.lean](ScottPresentation.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/IsComputableMapS.lean](IsComputableMapS.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/ComputableMapS.lean](ComputableMapS.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/IsEffectivelyGivenS.lean](IsEffectivelyGivenS.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/inclShuffle.lean](inclShuffle.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise715/primrec_inclShuffle.lean](primrec_inclShuffle.lean)

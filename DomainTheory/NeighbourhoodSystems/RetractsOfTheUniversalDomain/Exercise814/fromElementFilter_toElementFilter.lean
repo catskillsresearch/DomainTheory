@@ -17,7 +17,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.confirmedIdx_directed
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.fromElementFilter
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.toElementMap_eq_iSupDirected_genFamily
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.ClosureOperator
 
 @[expose] public section
 
@@ -31,7 +31,7 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
 
-variable {a : ApproximableMap E E} (h : IsClosureOperator a)
+variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 theorem fromElementFilter_toElementFilter (y : FixSet a) :
     fromElementFilter h (toElementFilter h y) = y := by

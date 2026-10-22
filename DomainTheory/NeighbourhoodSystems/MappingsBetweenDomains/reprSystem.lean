@@ -41,9 +41,9 @@ def reprSystem : NeighborhoodSystem (Tok C) where
     rintro X Y Z ⟨F, rfl⟩ ⟨F', rfl⟩ ⟨F'', rfl⟩ hZsub
     have hF''mem : (F'' : Tok C) ∈ nbhd C F''.1 := subset_Cl C F''.1
     have h := hZsub hF''mem
-    have hClF'' : Cl C F''.1 ∈ C := Cl_mem C hInter F''.2.2
+    have hClF'' : Cl C F''.1 ∈ C := Cl_mem C hInter F''.2.out.2
     have hunionsub : F.1 ∪ F'.1 ⊆ Cl C F''.1 := Set.union_subset h.1 h.2
-    refine ⟨⟨F.1 ∪ F'.1, F.2.1.union F'.2.1, Cl C F''.1, hClF'', hunionsub⟩, ?_⟩
+    refine ⟨⟨F.1 ∪ F'.1, ⟨⟨F.2.out.1.union F'.2.out.1, Cl C F''.1, hClF'', hunionsub⟩⟩⟩, ?_⟩
     ext G
     simp only [mem_nbhd, Set.mem_inter_iff, Set.union_subset_iff]
   sub_master := fun _ => Set.subset_univ _

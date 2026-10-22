@@ -23,6 +23,7 @@ theorem theorem_1_3_tuple {f : Pomega → Pomega → Pomega}
     (hfy : ∀ x, IsScottContinuous (fun y => f x y))
     {g h : Pomega → Pomega} (hg : IsScottContinuous g) (hh : IsScottContinuous h) :
     IsScottContinuous (fun x => f (g x) (h x)) := by
+  constructor
   intro x
   have H := theorem_1_3_diag (x := x)
     (f := fun u v => f (g u) (h v))

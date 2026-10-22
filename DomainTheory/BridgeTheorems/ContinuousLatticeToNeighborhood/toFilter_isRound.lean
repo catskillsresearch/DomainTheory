@@ -28,7 +28,7 @@ variable {D : Type*} [CompleteLattice D]
 
 section Continuous
 
-variable (hD : IsContinuousLattice D)
+variable (hD : ContinuousLattice D)
 
 include hD
 

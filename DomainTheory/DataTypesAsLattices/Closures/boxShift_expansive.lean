@@ -16,7 +16,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxShift_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem boxShift_expansive {a : Pomega} (ha : IsClosure a) (x : Pomega) :
+theorem boxShift_expansive {a : Pomega} (ha : Closure a) (x : Pomega) :
     x ⊆ funOf (boxShift a) x := by
   rw [boxShift_app]
   intro k hk
@@ -25,7 +25,7 @@ theorem boxShift_expansive {a : Pomega} (ha : IsClosure a) (x : Pomega) :
   | succ k =>
     refine Or.inr ⟨k, ?_, rfl⟩
     have hx : predSet x ⊆ funOf a (predSet x) := by
-      have := funOf_monotone_left ha.1 (predSet x)
+      have := funOf_monotone_left ha.out.1 (predSet x)
       rwa [Icomb_app] at this
     exact hx hk
 

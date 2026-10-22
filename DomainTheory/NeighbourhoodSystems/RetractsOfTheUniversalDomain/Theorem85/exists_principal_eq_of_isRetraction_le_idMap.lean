@@ -40,7 +40,7 @@ principal element of `E`.** The key step lifts compactness across the retraction
 family bounding `(e.symm(↑Y)).1` from above can be replaced (applying the continuous, idempotent
 `a`) by an `a`-fixed directed family with the same sup-relationship, and `a ≤ idMap E` (`a` is a
 *projection*, not just a retraction) is exactly what lets the bound transfer back down. -/
-theorem exists_principal_eq_of_isRetraction_le_idMap (ha_ret : IsRetraction a)
+theorem exists_principal_eq_of_isRetraction_le_idMap (ha_ret : Retraction a)
     (ha_proj : a ≤ idMap E) {Y : Set β} (hY : F.mem Y) :
     ∃ (X : Set α) (hX : E.mem X), (e.symm (F.principal hY)).1 = E.principal hX := by
   apply eq_principal_of_isCompactElt

@@ -18,8 +18,9 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem selfArrowStep_isScottContinuous :
     IsScottContinuous selfArrowStep := by
+  constructor
   intro a
-  have h := arrowR_diag_isScottContinuous a
+  have h := arrowR_diag_isScottContinuous.out a
   ext k
   constructor
   · intro hk

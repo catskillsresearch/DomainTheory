@@ -17,7 +17,8 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem finiteBasisSups_directed {α : Type u} [CompleteLattice α]
     (d : ℕ → α) (x : Set ℕ) :
-    IsDirectedSet (finiteBasisSups d x) := by
+    DirectedSet (finiteBasisSups d x) := by
+  constructor
   constructor
   · exact ⟨sSup (d '' ((∅ : Finset ℕ) : Set ℕ)), ∅, by simp, rfl⟩
   · rintro y ⟨t, htx, rfl⟩ z ⟨u, hux, rfl⟩

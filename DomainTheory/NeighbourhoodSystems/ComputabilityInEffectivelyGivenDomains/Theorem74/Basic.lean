@@ -137,7 +137,8 @@ theorem sum_isEffectivelyGiven (g₀ : V₀.IsEffectivelyGiven) (g₁ : V₁.IsE
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — `in₀` is computable.** `X⁰ₙ (in₀) Z_m ↔ 0X⁰ₙ ⊆ Z_m`, which
 tag-decodes to `(m = 0X⁰ ∧ X⁰ₙ ⊆ X⁰_{m.2}) ∨ (m = master)` (`m = 1X¹` is impossible as `X⁰ₙ ≠ ∅`). -/
 theorem inMap₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
-    IsComputableMap P₀ (sumPresentation P₀ P₁) (inMap₀ (h₀ := h₀) (h₁ := h₁)) := by
+    ComputableMap P₀ (sumPresentation P₀ P₁) (inMap₀ (h₀ := h₀) (h₁ := h₁)) := by
+  constructor
   have hincl : RecDecidable (fun s => P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2) := P₀.incl_computable
   have hmtag0 : RecDecidable (fun s => s.unpair.2.unpair.1 = 0) :=
     RecDecidable.natEq (Nat.Primrec.left.comp Nat.Primrec.right) (Nat.Primrec.const 0)
@@ -171,7 +172,8 @@ theorem inMap₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : Compu
 
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — `in₁` is computable.** Symmetric to `in₀`. -/
 theorem inMap₁_isComputable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
-    IsComputableMap P₁ (sumPresentation P₀ P₁) (inMap₁ (h₀ := h₀) (h₁ := h₁)) := by
+    ComputableMap P₁ (sumPresentation P₀ P₁) (inMap₁ (h₀ := h₀) (h₁ := h₁)) := by
+  constructor
   have hincl : RecDecidable (fun s => P₁.X s.unpair.1 ⊆ P₁.X s.unpair.2) := P₁.incl_computable
   have hmtag0 : RecDecidable (fun s => s.unpair.2.unpair.1 = 0) :=
     RecDecidable.natEq (Nat.Primrec.left.comp Nat.Primrec.right) (Nat.Primrec.const 0)
@@ -207,7 +209,8 @@ theorem inMap₁_isComputable (P₀ : ComputablePresentation V₀) (P₁ : Compu
 X⁰_m`; tag-decoded, `leftPart` is `X⁰_{n.2}` on a left copy and `Δ₀` on a right copy/master, so the
 relation is `incl` against either `n.2` or the master index `k₀` (`X⁰_{k₀} = Δ₀`). -/
 theorem outMap₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
-    IsComputableMap (sumPresentation P₀ P₁) P₀ (outMap₀ (h₀ := h₀) (h₁ := h₁)) := by
+    ComputableMap (sumPresentation P₀ P₁) P₀ (outMap₀ (h₀ := h₀) (h₁ := h₁)) := by
+  constructor
   obtain ⟨k0, hk0⟩ := P₀.surj V₀.master_mem
   have hincl : RecDecidable (fun s => P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2) := P₀.incl_computable
   have hntag0 : RecDecidable (fun s => s.unpair.1.unpair.1 = 0) :=
@@ -251,7 +254,8 @@ theorem outMap₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : Comp
 
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — `out₁` is computable.** Symmetric to `out₀` via `rightPart`. -/
 theorem outMap₁_isComputable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
-    IsComputableMap (sumPresentation P₀ P₁) P₁ (outMap₁ (h₀ := h₀) (h₁ := h₁)) := by
+    ComputableMap (sumPresentation P₀ P₁) P₁ (outMap₁ (h₀ := h₀) (h₁ := h₁)) := by
+  constructor
   obtain ⟨k1, hk1⟩ := P₁.surj V₁.master_mem
   have hincl : RecDecidable (fun s => P₁.X s.unpair.1 ⊆ P₁.X s.unpair.2) := P₁.incl_computable
   have hntag1 : RecDecidable (fun s => s.unpair.1.unpair.1 = 1) :=
@@ -302,12 +306,13 @@ theorem sumMap_isComputable {V₀' : NeighborhoodSystem α'} {V₁' : Neighborho
     {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
     (Q₀ : ComputablePresentation V₀') (Q₁ : ComputablePresentation V₁')
     {f : ApproximableMap V₀ V₀'} {g : ApproximableMap V₁ V₁'}
-    (hf : IsComputableMap P₀ Q₀ f) (hg : IsComputableMap P₁ Q₁ g) :
-    IsComputableMap (sumPresentation P₀ P₁ (h₀ := h₀) (h₁ := h₁))
+    (hf : ComputableMap P₀ Q₀ f) (hg : ComputableMap P₁ Q₁ g) :
+    ComputableMap (sumPresentation P₀ P₁ (h₀ := h₀) (h₁ := h₁))
       (sumPresentation Q₀ Q₁ (h₀ := h₀') (h₁ := h₁'))
       (sumMap (h₀ := h₀) (h₁ := h₁) (h₀' := h₀') (h₁' := h₁') f g) := by
-  have hf' : REPred (fun u => f.rel (P₀.X u.unpair.1) (Q₀.X u.unpair.2)) := hf
-  have hg' : REPred (fun u => g.rel (P₁.X u.unpair.1) (Q₁.X u.unpair.2)) := hg
+  constructor
+  have hf' : REPred (fun u => f.rel (P₀.X u.unpair.1) (Q₀.X u.unpair.2)) := hf.out
+  have hg' : REPred (fun u => g.rel (P₁.X u.unpair.1) (Q₁.X u.unpair.2)) := hg.out
   have hNtag0 : RecDecidable (fun s => s.unpair.1.unpair.1 = 0) :=
     RecDecidable.natEq (Nat.Primrec.left.comp Nat.Primrec.left) (Nat.Primrec.const 0)
   have hNtag1 : RecDecidable (fun s => s.unpair.1.unpair.1 = 1) :=

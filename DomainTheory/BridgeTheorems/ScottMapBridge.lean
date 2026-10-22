@@ -64,7 +64,7 @@ end ConjScottMap
 
 section ContinuousRoundFilter
 
-variable (hD : IsContinuousLattice D) (hE : IsContinuousLattice E)
+variable (hD : ContinuousLattice D) (hE : ContinuousLattice E)
 include hD hE
 
 /-- Conjugation along round `↟`-filters (no `DecidableEq` needed). -/
@@ -79,7 +79,7 @@ end ContinuousRoundFilter
 
 section ContinuousRoundInfoSys
 
-variable (hD : IsContinuousLattice D) (hE : IsContinuousLattice E)
+variable (hD : ContinuousLattice D) (hE : ContinuousLattice E)
 variable [DecidableEq D] [DecidableEq E]
 include hD hE
 

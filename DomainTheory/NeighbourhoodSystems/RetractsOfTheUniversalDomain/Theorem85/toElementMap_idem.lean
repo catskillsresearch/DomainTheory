@@ -26,9 +26,9 @@ section HardDirection
 variable {a : ApproximableMap E E}
 
 /-- Idempotency of a retraction at the element level: `a(a(z)) = a(z)`. -/
-theorem toElementMap_idem {a : ApproximableMap E E} (ha : IsRetraction a) (z : E.Element) :
+theorem toElementMap_idem {a : ApproximableMap E E} (ha : Retraction a) (z : E.Element) :
     a.toElementMap (a.toElementMap z) = a.toElementMap z := by
-  rw [← toElementMap_comp a a z, ha]
+  rw [← toElementMap_comp a a z, ha.out]
 
 end HardDirection
 end DomainTheory.NeighbourhoodSystems

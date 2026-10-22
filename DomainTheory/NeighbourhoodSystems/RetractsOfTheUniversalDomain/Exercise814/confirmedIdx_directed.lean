@@ -13,7 +13,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.domainOfClosure
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.confirmedIdx
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.BasicInst34
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.ClosureOperator
 
 @[expose] public section
 
@@ -27,7 +27,7 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
 
-variable {a : ApproximableMap E E} (h : IsClosureOperator a)
+variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 theorem confirmedIdx_directed (g : (domainOfClosure h).Element) :
     ∀ i j : confirmedIdx h g, ∃ k : confirmedIdx h g,

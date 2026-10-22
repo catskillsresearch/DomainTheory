@@ -29,7 +29,7 @@ effectively given `V` (via `P`) makes `fixedNbhd a` effectively given: package P
 `D_inter` enumeration, instantiated at concrete witnesses `qChar` (Part 1) and `cons` (`P`'s own
 `cons_computable`), into a `ComputablePresentation (fixedNbhd a)`. -/
 theorem fixedNbhd_isEffectivelyGiven {P : ComputablePresentation V} {a : ApproximableMap V V}
-    (hcomp : IsComputableMap P P a) : (fixedNbhd a).IsEffectivelyGiven := by
+    (hcomp : ComputableMap P P a) : (fixedNbhd a).IsEffectivelyGiven := by
   obtain ⟨qChar, hqCharp, hqChar⟩ := diagFixed_exists_qChar hcomp
   obtain ⟨cons, hconsp, hconse⟩ := P.cons_computable
   have hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m := by

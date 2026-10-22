@@ -33,7 +33,8 @@ variable (P : ComputablePresentation V)
 /-- **Proposition 7.12 — `λ x. {x}` is computable when `D` is effectively given.** -/
 theorem singleton_isComputable (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons)
     (hcons : ∀ a b, cons (Nat.pair a b) = 1 ↔ ∃ k, P.X k ⊆ P.X a ∩ P.X b) :
-    IsComputableMap P (V.PDPresentation P cons hconsp hcons) ((PDsingletonApproxMap (V := V))) := by
+    ComputableMap P (V.PDPresentation P cons hconsp hcons) ((PDsingletonApproxMap (V := V))) := by
+  constructor
   have h := P.incl_computable.swap.bExistsList.swap
   refine (RecDecidable.of_iff (fun s => ?_) h).re
   show PDsingletonApproxMap (V := V).rel (P.X s.unpair.1) ((V.PDPresentation P cons hconsp hcons).X s.unpair.2) ↔

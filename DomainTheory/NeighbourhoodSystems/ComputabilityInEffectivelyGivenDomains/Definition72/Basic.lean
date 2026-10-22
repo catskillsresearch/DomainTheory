@@ -5,8 +5,8 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.IsComputableMap
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.IsComputableElement
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.ComputableMap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.ComputableElement
 
 @[expose] public section
 
@@ -25,9 +25,9 @@ Why r.e. (and not recursive)? Scott answers by degenerating `𝒟` to the one-po
 `{m ∣ Yₘ ∈ y}` being r.e. A *finite* element has a recursive index set, but an infinite element can
 only be approximated "a little at a time" — its approximations can be *listed* (r.e.) but membership
 need not be decidable. So 7.2 already incorporates the notion of a **computable element**
-(`IsComputableElement`).
+(`ComputableElement`).
 
-We model `IsComputableMap` as `REPred₂ (fun n m ↦ Xₙ f Yₘ)` over the choice-free recursion theory of
+We model `ComputableMap` as `REPred₂ (fun n m ↦ Xₙ f Yₘ)` over the choice-free recursion theory of
 `Recursive.lean` (`REPred` = projection of a recursively decidable relation; see that file for why we
 roll our own and reject Mathlib's classical recursion theory).
 

@@ -29,7 +29,7 @@ variable (P : ComputablePresentation E) (gN : ℕ → ℕ)
     (stepFun (funListOf P P (decodeList c)) : Set (ApproximableMap E E)).Nonempty)
 
 
-/-- **Theorem 8.6(c) (Scott 1981, PRG-19), as an `IsComputableMap` statement.** Relative to the
+/-- **Theorem 8.6(c) (Scott 1981, PRG-19), as an `ComputableMap` statement.** Relative to the
 function-space presentation `funPresentation P P …` (Theorem 7.5) built from any presentation `P` of
 `E`, `subApprox` is computable: its neighbourhood relation is the recursively enumerable
 `¬(consistent m) ∨ ∀ e ∈ decodeList m, ∃ y, …` (a bounded `∀` of an unbounded `∃` of a decidable
@@ -39,10 +39,11 @@ theorem subApprox_isComputable
     (hgNp : Nat.Primrec gN)
     (hincl : ∀ s, incl s = 1 ↔ P.X s.unpair.1 ⊆ P.X s.unpair.2) (hinclp : Nat.Primrec incl)
     (heq : ∀ s, eq s = 1 ↔ P.X s.unpair.1 = P.X s.unpair.2) (heqp : Nat.Primrec eq) :
-    IsComputableMap
+    ComputableMap
       (funPresentation P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp heq heqp)
       (funPresentation P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp heq heqp)
       (subApprox (E := E)) := by
+  constructor
   obtain ⟨fincl, hfinclp, hfincls⟩ :=
     (funPresentation P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp heq heqp).incl_computable
   have hfincl : ∀ s, fincl s = 1 ↔ Xenum P P gN s.unpair.1 ⊆ Xenum P P gN s.unpair.2 :=

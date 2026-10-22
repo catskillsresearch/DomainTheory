@@ -27,9 +27,9 @@ variable {α : Type} {E : NeighborhoodSystem α}
 projections, the simultaneous fixed point `(aStar s t, bStar s t)` really consists of finitary
 projections. -/
 theorem isFinitaryProjection_aStar_bStar (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))
-    (hst : ∀ a b, IsFinitaryProjection a → IsFinitaryProjection b →
-      IsFinitaryProjection (binOp s a b) ∧ IsFinitaryProjection (binOp t a b)) :
-    IsFinitaryProjection (aStar s t) ∧ IsFinitaryProjection (bStar s t) := by
+    (hst : ∀ a b, FinitaryProjection a → FinitaryProjection b →
+      FinitaryProjection (binOp s a b) ∧ FinitaryProjection (binOp t a b)) :
+    FinitaryProjection (aStar s t) ∧ FinitaryProjection (bStar s t) := by
   have hchain := isFinitaryProjection_chain s t hst
   have hsubA : ∀ n, subFilter (((paired s t).iterElem n).fst) = ((paired s t).iterElem n).fst := by
     intro n
@@ -98,10 +98,10 @@ theorem isFinitaryProjection_aStar_bStar (s t : ApproximableMap (PairSpace (E :=
     rw [mem_iSupDirected, mem_iSupDirected]
     simp_rw [hsubB]
   refine ⟨?_, ?_⟩
-  · show IsFinitaryProjection (toApproxMap (paired s t).fixElement.fst)
+  · show FinitaryProjection (toApproxMap (paired s t).fixElement.fst)
     apply isFinitaryProjection_of_sub_eq_self
     rw [← toApproxMap_subFilter, hkeyA]
-  · show IsFinitaryProjection (toApproxMap (paired s t).fixElement.snd)
+  · show FinitaryProjection (toApproxMap (paired s t).fixElement.snd)
     apply isFinitaryProjection_of_sub_eq_self
     rw [← toApproxMap_subFilter, hkeyB]
 

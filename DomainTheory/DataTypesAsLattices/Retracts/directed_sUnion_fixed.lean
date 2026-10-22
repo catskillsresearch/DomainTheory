@@ -17,12 +17,12 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem directed_sUnion_fixed {f : Pomega → Pomega} (hf : IsScottContinuous f)
-    {A : Set (Fixpoints f)} (hA : IsDirectedSet A) :
+    {A : Set (Fixpoints f)} (hA : DirectedSet A) :
     ⋃₀ (Fixpoints.vals A) ∈ Fixpoints f := by
   apply subset_antisymm
   · intro k hk
     have hk' : k ∈ scottUnion f (⋃₀ (Fixpoints.vals A)) := by
-      rwa [← hf (⋃₀ (Fixpoints.vals A))]
+      rwa [← hf.out (⋃₀ (Fixpoints.vals A))]
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk'
     obtain ⟨z, hzA, hnz⟩ :=
       directed_finite_cover hA (e_finite n) hn

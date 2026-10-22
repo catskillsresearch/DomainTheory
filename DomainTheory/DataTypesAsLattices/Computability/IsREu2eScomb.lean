@@ -43,6 +43,7 @@ theorem IsRE.Scomb : IsRE Scomb := by
           (e (pack4_proj1 t) ⬝ e (pack4_proj3 t)) ⬝
             (e (pack4_proj2 t) ⬝ e (pack4_proj3 t)) :=
     REPred.exists (REPred.and primrecPred_Scomb_eq.computablePred.to_re hmem)
+  constructor
   refine hex.of_eq fun p => ?_
   constructor
   · intro ⟨t, ht, hm⟩

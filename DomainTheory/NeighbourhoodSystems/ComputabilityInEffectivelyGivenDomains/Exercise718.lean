@@ -68,7 +68,7 @@ Scott's Definition 1.9 says `D ≅ E` means there is a one-one, inclusion-preser
 inverse computable approximable maps:
 
 * `EffectiveIso P Q` — relative to computable presentations `P` of `D` and `Q` of `E`, a pair
-  `toMap : D → E`, `invMap : E → D` of approximable maps, **both computable** (`IsComputableMap`),
+  `toMap : D → E`, `invMap : E → D` of approximable maps, **both computable** (`ComputableMap`),
   that are mutually inverse (`invMap ∘ toMap = I_D` and `toMap ∘ invMap = I_E`).
 * `EffectivelyIsomorphic P Q := Nonempty (EffectiveIso P Q)`.
 

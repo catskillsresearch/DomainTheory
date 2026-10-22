@@ -34,9 +34,9 @@ variable (a b : ApproximableMap U U)
 
 /-- **Proposition 8.10(b), `+`-case, in full.** `a, b` finitary projections `⟹` `a + b` is a
 finitary projection, and its fixed-point set is order-isomorphic to `D_a + D_b`. -/
-theorem finitaryProjection_sumComb (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b) :
-    IsFinitaryProjection (sumComb a b) :=
-  ⟨isProjection_sumComb ha.1 hb.1, finitary_sumComb a b ha hb⟩
+theorem finitaryProjection_sumComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    FinitaryProjection (sumComb a b) :=
+  ⟨⟨isProjection_sumComb ha.out.1 hb.out.1, finitary_sumComb a b ha hb⟩⟩
 
 end SumCase
 end DomainTheory.NeighbourhoodSystems

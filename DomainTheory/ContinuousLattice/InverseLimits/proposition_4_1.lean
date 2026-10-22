@@ -32,8 +32,8 @@ variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 /-- **Scott 1972, Proposition 4.1.** The inverse limit is injective by the coordinatewise
 Proposition 3.8/Lemma 3.9 construction; Theorem 2.12 then gives the continuous-lattice structure
 on the existing componentwise complete lattice. -/
-theorem proposition_4_1 (hD : ∀ n, IsContinuousLattice (D n)) :
-    IsContinuousLattice (InverseLimit D P) := by
+theorem proposition_4_1 (hD : ∀ n, ContinuousLattice (D n)) :
+    ContinuousLattice (InverseLimit D P) := by
   let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
   let : T0Space (InverseLimit D P) := inverseLimit_t0Space D P
   exact (theorem_2_12_backward_exact (inverseLimit_isInjectiveSpace D P hD)

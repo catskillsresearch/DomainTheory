@@ -28,8 +28,8 @@ variable {h : D ◁ E}
 
 /-- **Every `retractionOfSubsystem h` is a finitary projection** (Definition 8.3, both clauses). -/
 theorem isFinitaryProjection_retractionOfSubsystem (h : D ◁ E) :
-    IsFinitaryProjection (retractionOfSubsystem h) :=
-  ⟨isProjection_retractionOfSubsystem h, isFinitary_retractionOfSubsystem h⟩
+    FinitaryProjection (retractionOfSubsystem h) :=
+  ⟨⟨isProjection_retractionOfSubsystem h, isFinitary_retractionOfSubsystem h⟩⟩
 
 end Subsystem
 end DomainTheory.NeighbourhoodSystems

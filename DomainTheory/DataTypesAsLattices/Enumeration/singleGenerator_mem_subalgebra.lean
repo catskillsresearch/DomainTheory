@@ -26,10 +26,10 @@ open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
 
-theorem singleGenerator_mem_subalgebra {A : Set Pomega} (hA : IsSubalgebra A)
+theorem singleGenerator_mem_subalgebra {A : Set Pomega} (hA : Subalgebra A)
     {xs : List Pomega} (hxs : ∀ x, x ∈ xs → x ∈ A) :
     singleGenerator xs ∈ A := by
   have hc := combinatory_mem_subalgebra hA IsCombinatory.cond
-  exact hA.2 (hA.2 hc (packList_mem_subalgebra hA hxs)) hA.1
+  exact hA.out.2 (hA.out.2 hc (packList_mem_subalgebra hA hxs)) hA.out.1
 
 end DomainTheory.DataTypesAsLattices

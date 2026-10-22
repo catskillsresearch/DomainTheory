@@ -25,7 +25,7 @@ variable {D D' D'' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLa
 /-- **Scott 1972, Proposition 2.7 (meet, separate).** On a continuous lattice, `x ↦ x ⊓ y`
 and `y ↦ x ⊓ y` are Scott-continuous; Scott's full 2.7 also covers joint continuity on the
 product via Proposition 2.6. -/
-theorem proposition_2_7_inf_left (hD : IsContinuousLattice D) (y : D) :
+theorem proposition_2_7_inf_left (hD : ContinuousLattice D) (y : D) :
     @Continuous D D scottTopologicalSpace scottTopologicalSpace (fun x => x ⊓ y) :=
   continuous_of_preservesDirectedSup <| by
     intro S' hS' hSdir'

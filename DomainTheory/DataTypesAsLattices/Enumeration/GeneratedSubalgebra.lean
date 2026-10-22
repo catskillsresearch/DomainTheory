@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.BasicInst85
-public import DomainTheory.DataTypesAsLattices.Enumeration.IsSubalgebra
+public import DomainTheory.DataTypesAsLattices.Enumeration.Subalgebra
 
 @[expose] public section
 
@@ -25,7 +25,7 @@ open Nat.Partrec.Code
 
 /-- The least combinatory subalgebra containing every member of `xs`. -/
 def GeneratedSubalgebra (xs : List Pomega) : Set Pomega :=
-  {u | ∀ A : Set Pomega, IsSubalgebra A →
+  {u | ∀ A : Set Pomega, Subalgebra A →
     (∀ x, x ∈ xs → x ∈ A) → u ∈ A}
 
 end DomainTheory.DataTypesAsLattices

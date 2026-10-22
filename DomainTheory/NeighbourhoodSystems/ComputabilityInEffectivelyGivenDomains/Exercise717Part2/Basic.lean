@@ -56,7 +56,7 @@ push/pop instructions verified by a single primitive-recursive `foldCode`, exact
 `R` is a genuine relation: the same sub-neighbourhood may be folded to *different* outputs in different
 parts of the tree, so the certificate must mirror the derivation tree.)
 
-Data and the two equations are choice-free `⊆ {propext, Quot.sound}`; the `IsComputableMap` proof and
+Data and the two equations are choice-free `⊆ {propext, Quot.sound}`; the `ComputableMap` proof and
 the inversion lemmas route through `Classical` (`Set` reasoning over the arbitrary carriers `α`, `β`),
 as everywhere in this layer.
 -/

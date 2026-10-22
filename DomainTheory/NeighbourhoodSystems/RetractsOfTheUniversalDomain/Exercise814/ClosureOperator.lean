@@ -18,6 +18,7 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **Exercise 8.14 (Scott 1981, PRG-19), the definition.** A retraction `a : E → E` is a
 *closure operator* iff `I_E ⊑ a`, i.e. `a` is inflationary. -/
-def IsClosureOperator (a : ApproximableMap E E) : Prop := IsRetraction a ∧ idMap E ≤ a
+class ClosureOperator (a : ApproximableMap E E) : Prop where
+  out : Retraction a ∧ idMap E ≤ a
 
 end DomainTheory.NeighbourhoodSystems

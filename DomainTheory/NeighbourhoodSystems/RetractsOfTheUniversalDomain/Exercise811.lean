@@ -19,7 +19,7 @@ theorem example_811 : And
   (And
     (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
       DomainTheory.NeighbourhoodSystems.Exercise811.a)
-    (@DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
+    (@DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
       DomainTheory.NeighbourhoodSystems.Exercise811.a))
   (Not
     (@DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
@@ -28,7 +28,7 @@ theorem example_811 : And
   (And
     (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
       DomainTheory.NeighbourhoodSystems.Exercise811.a)
-    (@DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
+    (@DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
       DomainTheory.NeighbourhoodSystems.Exercise811.a))
   (Not
     (@DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
@@ -36,7 +36,7 @@ theorem example_811 : And
   (@And.intro
     (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
       DomainTheory.NeighbourhoodSystems.Exercise811.a)
-    (@DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
+    (@DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
       DomainTheory.NeighbourhoodSystems.Exercise811.a)
     DomainTheory.NeighbourhoodSystems.Exercise811.isProjection_a
     DomainTheory.NeighbourhoodSystems.Exercise811.isRetraction_a)

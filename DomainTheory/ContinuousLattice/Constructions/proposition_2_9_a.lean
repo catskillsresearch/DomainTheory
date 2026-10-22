@@ -32,7 +32,8 @@ preimage `{z | zᵢ ∈ U}` of a Scott-open witness `U ⊆ Dᵢ` is Scott-open i
 dominates every `[a]ⁱ`, so `a = ([a]ⁱ)ᵢ ≤ bᵢ`; ranging over `a ≪ yᵢ` and using continuity of
 `Dᵢ` gives `yᵢ ≤ bᵢ` for all `i`, i.e. `y ≤ b`. -/
 theorem proposition_2_9_a {ι : Type*} (E : ι → Type*) [∀ i, CompleteLattice (E i)]
-    (hE : ∀ i, IsContinuousLattice (E i)) : IsContinuousLattice (∀ i, E i) := by
+    (hE : ∀ i, ContinuousLattice (E i)) : ContinuousLattice (∀ i, E i) := by
+  constructor
   classical
   intro y
   refine ⟨fun x hx => hx.le, fun b hb => ?_⟩

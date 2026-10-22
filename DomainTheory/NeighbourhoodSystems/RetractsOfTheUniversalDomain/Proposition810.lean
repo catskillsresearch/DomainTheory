@@ -77,17 +77,17 @@ theorem theorem_810 : And
                   {a b :
                     @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                       DomainTheory.NeighbourhoodSystems.U},
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
               (∀
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.Retraction
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                         DomainTheory.NeighbourhoodSystems.U)
                       (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -97,17 +97,17 @@ theorem theorem_810 : And
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                     (DomainTheory.NeighbourhoodSystems.prodComb a b)))
           (∀
             {a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U},
-            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.sumComb a b)))
         (∀
           {a b :
@@ -358,17 +358,17 @@ theorem theorem_810 : And
                   {a b :
                     @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                       DomainTheory.NeighbourhoodSystems.U},
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
               (∀
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.Retraction
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                         DomainTheory.NeighbourhoodSystems.U)
                       (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -378,17 +378,17 @@ theorem theorem_810 : And
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                     (DomainTheory.NeighbourhoodSystems.prodComb a b)))
           (∀
             {a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U},
-            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.sumComb a b)))
         (∀
           {a b :
@@ -638,17 +638,17 @@ theorem theorem_810 : And
                   {a b :
                     @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                       DomainTheory.NeighbourhoodSystems.U},
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
               (∀
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.Retraction
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                         DomainTheory.NeighbourhoodSystems.U)
                       (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -658,17 +658,17 @@ theorem theorem_810 : And
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                     (DomainTheory.NeighbourhoodSystems.prodComb a b)))
           (∀
             {a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U},
-            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.sumComb a b)))
         (∀
           {a b :
@@ -876,17 +876,17 @@ theorem theorem_810 : And
                   {a b :
                     @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                       DomainTheory.NeighbourhoodSystems.U},
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
               (∀
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.Retraction
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                         DomainTheory.NeighbourhoodSystems.U)
                       (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -896,17 +896,17 @@ theorem theorem_810 : And
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                     (DomainTheory.NeighbourhoodSystems.prodComb a b)))
           (∀
             {a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U},
-            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.sumComb a b)))
         (∀
           {a b :
@@ -1072,17 +1072,17 @@ theorem theorem_810 : And
                   {a b :
                     @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                       DomainTheory.NeighbourhoodSystems.U},
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
               (∀
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.Retraction
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                         DomainTheory.NeighbourhoodSystems.U)
                       (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -1092,17 +1092,17 @@ theorem theorem_810 : And
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                     (DomainTheory.NeighbourhoodSystems.prodComb a b)))
           (∀
             {a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U},
-            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.sumComb a b)))
         (∀
           {a b :
@@ -1194,17 +1194,17 @@ theorem theorem_810 : And
                   {a b :
                     @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                       DomainTheory.NeighbourhoodSystems.U},
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
               (∀
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.Retraction
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                         DomainTheory.NeighbourhoodSystems.U)
                       (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -1214,17 +1214,17 @@ theorem theorem_810 : And
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                     (DomainTheory.NeighbourhoodSystems.prodComb a b)))
           (∀
             {a b :
               @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                 DomainTheory.NeighbourhoodSystems.U},
-            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+            @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.sumComb a b))
           (@And.intro
             (And
@@ -1274,17 +1274,17 @@ theorem theorem_810 : And
                   {a b :
                     @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                       DomainTheory.NeighbourhoodSystems.U},
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
               (∀
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.Retraction
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                         DomainTheory.NeighbourhoodSystems.U)
                       (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -1294,9 +1294,9 @@ theorem theorem_810 : And
               {a b :
                 @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                   DomainTheory.NeighbourhoodSystems.U},
-              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+              @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                     (DomainTheory.NeighbourhoodSystems.prodComb a b))
             (@And.intro
               (And
@@ -1345,17 +1345,17 @@ theorem theorem_810 : And
                   {a b :
                     @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                       DomainTheory.NeighbourhoodSystems.U},
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
               (∀
                 {a b :
                   @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                     DomainTheory.NeighbourhoodSystems.U},
-                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.Retraction
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                         DomainTheory.NeighbourhoodSystems.U)
                       (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
@@ -1407,9 +1407,9 @@ theorem theorem_810 : And
                   {a b :
                     @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
                       DomainTheory.NeighbourhoodSystems.U},
-                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
-                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
-                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.U
                         (DomainTheory.NeighbourhoodSystems.arrowComb a b))
                 (@And.intro
                   (And

@@ -44,6 +44,7 @@ theorem IsRE.graph_of_primrecRel {f : Pomega → Pomega}
         p = pair (Nat.unpair t).1 (Nat.unpair t).2 ∧
           (Nat.unpair t).2 ∈ f (e (Nat.unpair t).1))
       hinner.computablePred.to_re
+  constructor
   refine hex.of_eq fun p => ?_
   constructor
   · intro ⟨t, ht, hm⟩

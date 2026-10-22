@@ -19,7 +19,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem retract_interpolation {a x : Pomega} (_ha : Retract a) (hx : typed x a) :
     x = ⋃ n, {k | e n ⊆ x ∧ k ∈ funOf a (e n)} := by
   have hx' : funOf a x = x := hx.symm
-  have hsc := funOf_isScottContinuous a x
+  have hsc := (funOf_isScottContinuous a).out x
   apply subset_antisymm
   · intro k hk
     have : k ∈ funOf a x := by rwa [hx']

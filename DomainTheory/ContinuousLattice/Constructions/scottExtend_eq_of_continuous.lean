@@ -30,7 +30,7 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] {E : Type*} [Co
 (`f x₀` is one of the values being met); the `≥` direction uses continuity of `E`: for each
 `a ≪ f x₀` the Scott-open `↟a` pulls back along the continuous `f` and, by the embedding, to an
 open `V ⊆ Y` on whose `e`-preimage `f ≥ a`, so `a ≤ ⊓ f''(e⁻¹V) ≤ g(e x₀)`. -/
-theorem scottExtend_eq_of_continuous (hE : IsContinuousLattice E) (e : X → Y)
+theorem scottExtend_eq_of_continuous (hE : ContinuousLattice E) (e : X → Y)
     (he : IsEmbedding e) (f : X → E) (hf : @Continuous X E _ scottTopologicalSpace f) (x₀ : X) :
     scottExtend e f (e x₀) = f x₀ := by
   apply le_antisymm

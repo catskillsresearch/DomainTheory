@@ -15,7 +15,7 @@ Given any family of (finitary) operations on a set (say, $\omega$) there is a cl
 - [DataTypesAsLattices/Closures/Icomb_isClosure.lean](Icomb_isClosure.lean)
 - [DataTypesAsLattices/Closures/Icomb_subset_graph.lean](Icomb_subset_graph.lean)
 - [DataTypesAsLattices/Closures/Icomb_subset_intR.lean](Icomb_subset_intR.lean)
-- [DataTypesAsLattices/Closures/IsClosure.lean](IsClosure.lean)
+- [DataTypesAsLattices/Closures/Closure.lean](Closure.lean)
 - [DataTypesAsLattices/Closures/Isolated.lean](Isolated.lean)
 - [DataTypesAsLattices/Closures/Vapply.lean](Vapply.lean)
 - [DataTypesAsLattices/Closures/Vcomb.lean](Vcomb.lean)

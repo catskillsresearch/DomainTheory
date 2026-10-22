@@ -32,8 +32,9 @@ theorem IsRE.sucC : IsRE sucC := by
     (PrimrecPred.not (Primrec.eq.comp Primrec.snd (Primrec.const 0))).and
       (primrecPred_bool
         (Primrec₂.comp primrec_testBit Primrec.fst (Primrec.pred.comp Primrec.snd)))
+  constructor
   refine (IsRE.graph_of_primrecRel (f := DataTypesAsLattices.succSet)
-      (hp.of_eq fun n m => ?_)).of_eq ?_
+      (hp.of_eq fun n m => ?_)).out.of_eq ?_
   · constructor
     · intro ⟨hm0, hbit⟩
       exact ⟨m.pred, mem_e.mpr hbit, (Nat.succ_pred_eq_of_ne_zero hm0).symm⟩

@@ -11,7 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.BasicInst34
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.genFamily
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.genFamily_directed
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.ClosureOperator
 
 @[expose] public section
 
@@ -25,7 +25,7 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
 
-variable {a : ApproximableMap E E} (h : IsClosureOperator a)
+variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 /-- **`y` is the directed union of `a(↑X)` for `X ∈ y`.** Apply `a` (continuous, `toElementMap_
 iSupDirected`) to `E`'s own algebraicity decomposition (`eq_iSupDirected_principal`) of `y.1`, then

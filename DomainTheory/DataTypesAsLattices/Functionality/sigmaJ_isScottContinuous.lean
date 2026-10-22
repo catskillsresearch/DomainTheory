@@ -16,6 +16,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem sigmaJ_isScottContinuous (j : ℕ) : IsScottContinuous (sigmaJ j) := by
+  constructor
   intro x
   ext p
   constructor

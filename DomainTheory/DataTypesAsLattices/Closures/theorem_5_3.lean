@@ -17,12 +17,12 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 5.3 (The function space theorem for algebraic
 lattices).** The function-space retract of two closures is a retract. -/
-theorem theorem_5_3 {a b : Pomega} (ha : IsClosure a) (hb : IsClosure b) :
+theorem theorem_5_3 {a b : Pomega} (ha : Closure a) (hb : Closure b) :
     Retract (arrowR a b) := by
   constructor
   change arrowR a b = graph (fun x => funOf (arrowR a b) (funOf (arrowR a b) x))
   apply graph_ext
   intro u
-  rw [theorem_4_3_i ha.2 hb.2, arrowR_app]
+  rw [theorem_4_3_i ha.out.2 hb.out.2, arrowR_app]
 
 end DomainTheory.DataTypesAsLattices

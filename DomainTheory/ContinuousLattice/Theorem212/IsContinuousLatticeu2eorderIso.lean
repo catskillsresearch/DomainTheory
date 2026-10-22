@@ -27,12 +27,13 @@ variable {A B : Type u} [latticeA : CompleteLattice A] [latticeB : CompleteLatti
 
 
 /-- Continuous-lattice structure transfers across an order isomorphism. -/
-theorem IsContinuousLattice.orderIso (e : A ≃o B) (hB : IsContinuousLattice B) :
-    IsContinuousLattice A := by
+theorem orderIso (e : A ≃o B) (hB : ContinuousLattice B) :
+    ContinuousLattice A := by
+  constructor
   intro y
   refine ⟨fun x hx => hx.le, fun b hb => ?_⟩
   apply e.le_iff_le.mp
-  exact (hB (e y)).2 fun z hz => by
+  exact (hB.out (e y)).2 fun z hz => by
     have hz' : e.symm z ≪ y := by
       simpa using orderIso_wayBelow e.symm hz
     have := hb hz'

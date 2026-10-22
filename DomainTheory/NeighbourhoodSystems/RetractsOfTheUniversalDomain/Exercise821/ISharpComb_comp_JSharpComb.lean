@@ -32,7 +32,7 @@ variable {hD : ∀ X, D.mem X → X.Nonempty}
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`I ∘ J = a§`**, when `a` is a finitary projection. -/
-theorem ISharpComb_comp_JSharpComb {a : ApproximableMap U U} (ha : IsFinitaryProjection a) :
+theorem ISharpComb_comp_JSharpComb {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     (ISharpComb a).comp (JSharpComb a) = aSharp a := by
   unfold ISharpComb JSharpComb
   rw [comp_assoc, ← comp_assoc (dsharpMap _ _ _) (dsharpMap _ _ _) jSharp, ← dsharpMap_comp,

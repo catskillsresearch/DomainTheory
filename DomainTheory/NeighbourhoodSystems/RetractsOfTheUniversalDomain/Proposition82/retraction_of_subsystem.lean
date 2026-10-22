@@ -25,7 +25,7 @@ namespace Subsystem
 /-- **Proposition 8.2 (Scott 1981, PRG-19), packaged.** `D ◁ E` induces a retraction `a` on `E`
 whose fixed-point set is (order-isomorphic to) `|D|`. -/
 theorem retraction_of_subsystem (h : D ◁ E) :
-    IsRetraction (retractionOfSubsystem h) ∧
+    Retraction (retractionOfSubsystem h) ∧
       Nonempty (D.Element ≃o {y : E.Element // (retractionOfSubsystem h).toElementMap y = y}) :=
   ⟨isRetraction_retractionOfSubsystem h, ⟨elementIso h⟩⟩
 

@@ -22,7 +22,7 @@ range is order-isomorphic to the source lattice. -/
 theorem theorem_5_2 {α : Type u} [CompleteLattice α]
     (D : CountablyAlgebraic α) :
     IsScottContinuous (representClosure D) ∧
-      IsClosure (representClosureCode D) ∧
+      Closure (representClosureCode D) ∧
       ∃ φ : α → Fixpoints (funOf (representClosureCode D)),
         Function.Bijective φ ∧
           ∀ x y, x ≤ y ↔ (φ x : Pomega) ⊆ φ y :=

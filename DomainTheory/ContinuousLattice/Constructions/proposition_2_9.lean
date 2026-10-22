@@ -27,8 +27,8 @@ variable {D : Type*} [CompleteLattice D]
 is again a continuous lattice (`proposition_2_9_a`) whose Scott topology agrees with the product
 topology (`proposition_2_9_b`). -/
 theorem proposition_2_9 {ι : Type*} (E : ι → Type*) [∀ i, CompleteLattice (E i)]
-    (hE : ∀ i, IsContinuousLattice (E i)) :
-    IsContinuousLattice (∀ i, E i) ∧
+    (hE : ∀ i, ContinuousLattice (E i)) :
+    ContinuousLattice (∀ i, E i) ∧
       (scottTopologicalSpace : TopologicalSpace (∀ i, E i)) =
         @Pi.topologicalSpace ι E (fun _ => scottTopologicalSpace) :=
   ⟨proposition_2_9_a E hE, proposition_2_9_b E hE⟩

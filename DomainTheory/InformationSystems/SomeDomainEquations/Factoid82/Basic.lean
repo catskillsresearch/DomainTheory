@@ -31,7 +31,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamT
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntN
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEnt
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamTokenEnt
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.IsLamWF
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamWF
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDBot
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDForget

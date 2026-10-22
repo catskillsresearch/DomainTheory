@@ -15,10 +15,10 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem compactFixedBelow_directedSubset {a : Pomega} (ha : IsClosure a)
+theorem compactFixedBelow_directedSubset {a : Pomega} (ha : Closure a)
     (x : Fixpoints (funOf a)) :
-    IsDirectedSubset (compactFixedBelow a x) := by
+    DirectedSubset (compactFixedBelow a x) := by
   rw [← retractBasis_eq_compactFixedBelow ha x]
-  exact retractBasis_directedSubset ha.2 x
+  exact retractBasis_directedSubset ha.out.2 x
 
 end DomainTheory.DataTypesAsLattices

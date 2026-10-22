@@ -40,7 +40,7 @@ theorem theorem_3_6 (A : Set Pomega) :
     ext u
     constructor
     · rintro ⟨r, hr, rfl⟩
-      exact (GeneratedSubalgebra_isSubalgebra [a]).2
+      exact (GeneratedSubalgebra_isSubalgebra [a]).out.2
         (combinatory_mem_subalgebra (GeneratedSubalgebra_isSubalgebra [a]) hr)
         (GeneratedSubalgebra_generator (by simp))
     · intro hu

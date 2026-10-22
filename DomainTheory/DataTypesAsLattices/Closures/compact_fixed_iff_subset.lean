@@ -18,7 +18,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.closureCompact_isCompact
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem compact_fixed_iff_subset {a : Pomega} (ha : IsClosure a)
+theorem compact_fixed_iff_subset {a : Pomega} (ha : Closure a)
     (x : Fixpoints (funOf a)) :
     IsCompactSubset x ↔ ∃ n, x = closureCompact a ha n := by
   constructor

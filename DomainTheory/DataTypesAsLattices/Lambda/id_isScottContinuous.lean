@@ -15,6 +15,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem id_isScottContinuous : IsScottContinuous (fun x : Pomega => x) := by
+  constructor
   intro x
   ext k
   constructor

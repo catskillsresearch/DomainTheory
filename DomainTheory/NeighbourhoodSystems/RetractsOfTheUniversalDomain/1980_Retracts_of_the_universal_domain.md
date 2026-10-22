@@ -142,7 +142,7 @@ In order to be able to have a fully flexible method of solving domain equations 
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/IntervalPrimrec/recDecidableu2082_presentedIntervals_subset.lean](IntervalPrimrec/recDecidableu2082_presentedIntervals_subset.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/IntervalPrimrec/recDecidableu2082_presentedIntervals_eq.lean](IntervalPrimrec/recDecidableu2082_presentedIntervals_eq.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/IntervalPrimrec.lean](IntervalPrimrec.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsRetraction.lean](IsRetraction.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Retraction.lean](Retraction.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/MinLevel/isPeriodicMask.lean](MinLevel/isPeriodicMask.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/MinLevel/minLevel.lean](MinLevel/minLevel.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/MinLevel/minLevelFold.lean](MinLevel/minLevelFold.lean)

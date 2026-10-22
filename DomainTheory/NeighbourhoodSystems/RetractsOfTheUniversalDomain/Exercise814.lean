@@ -17,7 +17,7 @@ set_option linter.unusedVariables false
 theorem example_814.{u} : And
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E}
-    (h : @DomainTheory.NeighbourhoodSystems.IsClosureOperator α E a)
+    (h : @DomainTheory.NeighbourhoodSystems.ClosureOperator α E a)
     (y : @DomainTheory.NeighbourhoodSystems.FixSet α E a),
     Iff (@DomainTheory.NeighbourhoodSystems.IsCompactFix α E a h y)
       (∃ (X : Set α) (hX : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α E X),
@@ -31,11 +31,11 @@ theorem example_814.{u} : And
             (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal α E X hX))))
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-    @DomainTheory.NeighbourhoodSystems.IsClosureOperator α E a → @DomainTheory.NeighbourhoodSystems.IsFinitary α E a) :=
+    @DomainTheory.NeighbourhoodSystems.ClosureOperator α E a → @DomainTheory.NeighbourhoodSystems.IsFinitary α E a) :=
   @And.intro
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E}
-    (h : @DomainTheory.NeighbourhoodSystems.IsClosureOperator α E a)
+    (h : @DomainTheory.NeighbourhoodSystems.ClosureOperator α E a)
     (y : @DomainTheory.NeighbourhoodSystems.FixSet α E a),
     Iff (@DomainTheory.NeighbourhoodSystems.IsCompactFix α E a h y)
       (∃ (X : Set α) (hX : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α E X),
@@ -49,7 +49,7 @@ theorem example_814.{u} : And
             (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal α E X hX))))
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-    @DomainTheory.NeighbourhoodSystems.IsClosureOperator α E a → @DomainTheory.NeighbourhoodSystems.IsFinitary α E a)
+    @DomainTheory.NeighbourhoodSystems.ClosureOperator α E a → @DomainTheory.NeighbourhoodSystems.IsFinitary α E a)
   @DomainTheory.NeighbourhoodSystems.isCompactFix_iff @DomainTheory.NeighbourhoodSystems.isFinitary_of_isClosureOperator
 
 end DomainTheory.NeighbourhoodSystems

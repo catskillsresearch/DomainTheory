@@ -36,7 +36,7 @@ theorem theorem_76.{u_1} : ∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSy
           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P (@Prod.fst Nat Nat (Nat.unpair s)))
           (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P (@Prod.snd Nat Nat (Nat.unpair s)))))
   (heqp : Nat.Primrec eq),
-  @DomainTheory.NeighbourhoodSystems.IsComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+  @DomainTheory.NeighbourhoodSystems.ComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
     (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
     (@DomainTheory.NeighbourhoodSystems.funPresentation α α V V P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp
       heq heqp)

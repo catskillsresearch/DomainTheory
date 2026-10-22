@@ -56,7 +56,7 @@ so `i z ⊑ x'` for some `x' ∈ S'` (directedness), whence `z ⊑ j(x') ⊑ ⊔
 then gives `x ⊑ ⊔ j''S'`. -/
 theorem converseRetr_preservesDirectedSup
     (_hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
-    (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : IsContinuousLattice D) :
+    (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : ContinuousLattice D) :
     PreservesDirectedSup (converseRetr i) := by
   intro S' hS'ne hS'dir
   apply le_antisymm

@@ -52,7 +52,7 @@ variable {i : D → D'}
 /-- The projection assembled from a map `i` satisfying 3.10(i)–(iii). -/
 noncomputable def converseProjection
     (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S)) (hinj : Function.Injective i)
-    (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : IsContinuousLattice D) :
+    (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : ContinuousLattice D) :
     IsContinuousLatticeProjection D D' where
   incl := ⟨i, continuous_of_preservesDirectedSup (fun _ _ _ => hi _)⟩
   retr := ⟨converseRetr i, continuous_of_preservesDirectedSup

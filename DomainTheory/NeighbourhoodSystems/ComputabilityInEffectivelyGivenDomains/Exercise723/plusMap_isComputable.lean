@@ -27,7 +27,8 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
 /-- **`λx,y. x+y` is computable.** Reduces to `PNpres.incl_computable` against the primitive
 recursive reindexing `plusIdx`. -/
 theorem plusMap_isComputable :
-    IsComputableMap (prodPresentation PNpres PNpres) PNpres plusMap := by
+    ComputableMap (prodPresentation PNpres PNpres) PNpres plusMap := by
+  constructor
   have hincl : RecDecidable (fun s => nbhd s.unpair.1 ⊆ nbhd s.unpair.2) := PNpres.incl_computable
   have hpair : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1.unpair.1 t.unpair.1.unpair.2) :=
     (Nat.Primrec.left.comp Nat.Primrec.left).pair (Nat.Primrec.right.comp Nat.Primrec.left)

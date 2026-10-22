@@ -31,8 +31,8 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 /-- The literal product/subspace form of Theorem 3.3: the Scott lattice topology on `[D → D']`
 is induced from Mathlib's Pi topology on the underlying functions. -/
-theorem theorem_3_3_topology_induced_pi (hD : IsContinuousLattice D)
-    (hD' : IsContinuousLattice D') :
+theorem theorem_3_3_topology_induced_pi (hD : ContinuousLattice D)
+    (hD' : ContinuousLattice D') :
     (scottTopologicalSpace : TopologicalSpace (ScottMap D D')) =
       scottMapInducedPiTopology D D' := by
   rw [theorem_3_3_topology hD hD', scottMapPointwiseTopology_eq_induced_pi]

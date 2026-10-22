@@ -33,9 +33,9 @@ variable (a b : ApproximableMap U U)
 
 /-- **Proposition 8.10(b), `→`-case, in full.** `a, b` finitary projections `⟹` `a → b` is a
 finitary projection, and its fixed-point set is order-isomorphic to `D_a → D_b`. -/
-theorem finitaryProjection_arrowComb (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b) :
-    IsFinitaryProjection (arrowComb a b) :=
-  ⟨isProjection_arrowComb ha.1 hb.1, finitary_arrowComb a b ha hb⟩
+theorem finitaryProjection_arrowComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    FinitaryProjection (arrowComb a b) :=
+  ⟨⟨isProjection_arrowComb ha.out.1 hb.out.1, finitary_arrowComb a b ha hb⟩⟩
 
 end ArrowCase
 end DomainTheory.NeighbourhoodSystems

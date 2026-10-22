@@ -19,13 +19,14 @@ theorem graph_const_isScottContinuous
     (g : Pomega → Pomega → Pomega)
     (hg : ∀ y, IsScottContinuous (fun x => g x y)) :
     IsScottContinuous (fun x => graph (fun y => g x y)) := by
+  constructor
   intro x
   ext k
   constructor
   · intro hk
     rcases hk with ⟨n, m, rfl, hm⟩
     have : m ∈ scottUnion (fun z => g z (e n)) x := by
-      rw [← hg (e n) x]; exact hm
+      rw [← (hg (e n)).out x]; exact hm
     obtain ⟨p, hp, hmp⟩ := mem_scottUnion.mp this
     exact mem_scottUnion.mpr ⟨p, hp, n, m, rfl, hmp⟩
   · intro hk

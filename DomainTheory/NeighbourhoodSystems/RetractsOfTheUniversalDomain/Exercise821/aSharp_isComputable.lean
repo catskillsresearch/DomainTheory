@@ -32,13 +32,13 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`a§` is computable whenever `a` is.** -/
 theorem aSharp_isComputable {a : ApproximableMap U U}
-    (ha : IsComputableMap UComputablePresentation UComputablePresentation a) :
-    IsComputableMap UComputablePresentation UComputablePresentation (aSharp a) := by
-  have hu : IsComputableMap UComputablePresentation
+    (ha : ComputableMap UComputablePresentation UComputablePresentation a) :
+    ComputableMap UComputablePresentation UComputablePresentation (aSharp a) := by
+  have hu : ComputableMap UComputablePresentation
       (dsharpPresentation UComputablePresentation U_mem_nonempty)
       ((inSharpMap U_mem_nonempty).comp a) :=
     comp_isComputable ha (inSharp_isComputable U_mem_nonempty UComputablePresentation)
-  have hInner : IsComputableMap (dsharpPresentation UComputablePresentation U_mem_nonempty)
+  have hInner : ComputableMap (dsharpPresentation UComputablePresentation U_mem_nonempty)
       (dsharpPresentation UComputablePresentation U_mem_nonempty) (aSharpInner a) :=
     gMap_isComputable U_mem_nonempty UComputablePresentation
       (dsharpPresentation UComputablePresentation U_mem_nonempty) hu

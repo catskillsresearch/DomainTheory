@@ -5,7 +5,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.ClosureOperator
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.botFix
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsCompactFix
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.CompactFix
@@ -62,7 +62,7 @@ imperative and is left as an optional, non-blocking follow-up (see `HANDOFF.md`)
 
 ## The mathematical content
 
-A **closure operator** is a retraction `a : E → E` with `I_E ⊑ a` (`IsClosureOperator`), i.e. `a`
+A **closure operator** is a retraction `a : E → E` with `I_E ⊑ a` (`ClosureOperator`), i.e. `a`
 is *inflationary*: `y ⊑ a(y)` for every `y ∈ |E|` (`le_toElementMap_of_isClosureOperator`). Since
 `a` is also idempotent (`toElementMap_idem`) and monotone, its fixed-point set `Fix(a)` (`FixSet a`,
 already defined in `Theorem85.lean`) is:
@@ -122,7 +122,7 @@ end ClosureOperator
 
 section FiniteDomain
 
-variable {a : ApproximableMap E E} (h : IsClosureOperator a)
+variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 
 /-! ### The backward map, via directed unions of "confirmed" compacts -/

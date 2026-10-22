@@ -9,7 +9,7 @@ public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.Directed
 public import DomainTheory.ContinuousLattice.WayBelow
 public import DomainTheory.BridgeTheorems.IsCompactElement
-public import DomainTheory.BridgeTheorems.IsAlgebraicLattice
+public import DomainTheory.BridgeTheorems.AlgebraicLattice
 
 @[expose] public section
 
@@ -18,7 +18,7 @@ public import DomainTheory.BridgeTheorems.IsAlgebraicLattice
 
 An **algebraic** complete lattice — every element is the directed supremum of the
 compact elements below it — is a continuous lattice in Scott's sense
-(`IsContinuousLattice`). Compact elements are way-below anything they lie under,
+(`ContinuousLattice`). Compact elements are way-below anything they lie under,
 via Scott-openness of `Set.Ici k`.
 
 This is the classical frontier of this article’s blueprint
@@ -48,10 +48,11 @@ theorem compact_wayBelow {k y : D} (hk : IsCompactElement k) (hky : k ≤ y) : k
 
 
 /-- **Blueprint:** algebraic complete lattice ⇒ continuous lattice (Scott Def. 2.3). -/
-theorem isContinuousLattice_of_algebraic (hA : IsAlgebraicLattice D) :
-    IsContinuousLattice D := by
+theorem isContinuousLattice_of_algebraic (hA : AlgebraicLattice D) :
+    ContinuousLattice D := by
+  constructor
   intro y
-  obtain ⟨hne, hdir, hsup⟩ := hA y
+  obtain ⟨hne, hdir, hsup⟩ := hA.out y
   refine ⟨?_, fun z hz => ?_⟩
   · -- y is an upper bound of `{x | x ≪ y}`
     intro x hx
@@ -67,8 +68,8 @@ end IdealCompletionToContinuousLattice
 
 /-- Blueprint name. -/
 abbrev idealCompletion_to_continuousLattice {D : Type*} [CompleteLattice D]
-    (hA : IdealCompletionToContinuousLattice.IsAlgebraicLattice D) :
-    IsContinuousLattice D :=
+    (hA : IdealCompletionToContinuousLattice.AlgebraicLattice D) :
+    ContinuousLattice D :=
   IdealCompletionToContinuousLattice.isContinuousLattice_of_algebraic hA
 
 end DomainTheory.BridgeTheorems

@@ -27,8 +27,8 @@ own presentation `UComputablePresentation`. -/
 theorem theorem_8_8_b {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D) :
     ∃ (D' : NeighborhoodSystem ℚ) (P' : ComputablePresentation D') (h : D' ◁ U),
       (D ≅ᴰ D') ∧
-        IsComputableMap P' UComputablePresentation h.inj ∧
-        IsComputableMap UComputablePresentation P' h.proj :=
+        ComputableMap P' UComputablePresentation h.inj ∧
+        ComputableMap UComputablePresentation P' h.proj :=
   ⟨DprimeUCode P, DprimeUCodePresentation P, DprimeUCode_subsystem P,
     isomorphic_DprimeUCode P, DprimeUCode_inj_isComputableMap P, DprimeUCode_proj_isComputableMap P⟩
 

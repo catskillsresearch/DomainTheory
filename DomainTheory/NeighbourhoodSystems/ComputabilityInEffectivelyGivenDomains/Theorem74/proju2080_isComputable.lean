@@ -26,7 +26,8 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — `proj₀` is computable.** `(Xₙ⁰ ∪ Xₘ¹) p₀ X⁰_k ↔ Xₙ⁰ ⊆ X⁰_k`,
 a recursive slice of `incl_computable`, hence r.e. -/
 theorem proj₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
-    IsComputableMap (prodPresentation P₀ P₁) P₀ (proj₀ V₀ V₁) := by
+    ComputableMap (prodPresentation P₀ P₁) P₀ (proj₀ V₀ V₁) := by
+  constructor
   have hincl : RecDecidable (fun s => P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2) := P₀.incl_computable
   have hr : Nat.Primrec (fun t => Nat.pair t.unpair.1.unpair.1 t.unpair.2) :=
     (Nat.Primrec.left.comp Nat.Primrec.left).pair Nat.Primrec.right

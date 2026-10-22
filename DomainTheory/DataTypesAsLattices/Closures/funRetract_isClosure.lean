@@ -16,7 +16,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_funRetract
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem funRetract_isClosure : IsClosure funRetract :=
-  ⟨Icomb_subset_funRetract, funRetract_isRetract⟩
+theorem funRetract_isClosure : Closure funRetract :=
+  ⟨⟨Icomb_subset_funRetract, funRetract_isRetract⟩⟩
 
 end DomainTheory.DataTypesAsLattices

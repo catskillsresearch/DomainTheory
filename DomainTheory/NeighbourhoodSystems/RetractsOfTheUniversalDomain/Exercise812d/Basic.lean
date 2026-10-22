@@ -362,7 +362,7 @@ end Recover
 
 A split function `split : Set α → Set γ → Set α → Set γ × Set γ` is *computable relative to*
 presentations `P` (of the `α`-side) and `Q` (of the `γ`-side) when both of its outputs are given by
-a **primitive-recursive** function of the three input indices — mirroring `IsComputableMap`'s
+a **primitive-recursive** function of the three input indices — mirroring `ComputableMap`'s
 "transport the semantic relation to the integer indices" idea (Definition 7.2), but for a genuine
 *function* rather than a relation, so we ask for `Nat.Primrec` index functions with an exact
 (rather than merely r.e.) correctness spec, matching `ComputablePresentation.inter`'s own shape

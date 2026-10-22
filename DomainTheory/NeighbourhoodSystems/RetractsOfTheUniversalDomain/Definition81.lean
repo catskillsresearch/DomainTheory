@@ -6,7 +6,7 @@ ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsRetraction
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Retraction
 
 @[expose] public section
 
@@ -37,7 +37,7 @@ variable {α : Type*} {E : NeighborhoodSystem α}
 
 
 /-- The identity mapping `I_E` is (trivially) a retraction. -/
-@[simp] theorem isRetraction_idMap : IsRetraction (idMap E) :=
-  idMap_comp (idMap E)
+@[simp] theorem isRetraction_idMap : Retraction (idMap E) :=
+  ⟨idMap_comp (idMap E)⟩
 
 end DomainTheory.NeighbourhoodSystems

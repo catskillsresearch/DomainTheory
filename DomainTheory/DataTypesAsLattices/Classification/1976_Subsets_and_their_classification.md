@@ -47,7 +47,7 @@ when $x, y : \mathbf{tree}$. Every tree, aside from $\top$ or $\bot$, is either 
 - [DataTypesAsLattices/Classification/BooleanMemE.lean](BooleanMemE.lean)
 - [DataTypesAsLattices/Classification/IsBdelta.lean](IsBdelta.lean)
 - [DataTypesAsLattices/Classification/IsFcapG.lean](IsFcapG.lean)
-- [DataTypesAsLattices/Classification/IsPi11.lean](IsPi11.lean)
+- [DataTypesAsLattices/Classification/Pi11.lean](Pi11.lean)
 - [DataTypesAsLattices/Classification/IsScottGdelta.lean](IsScottGdelta.lean)
 - [DataTypesAsLattices/Classification/IsFcapGdelta.lean](IsFcapGdelta.lean)
 - [DataTypesAsLattices/Classification/IsSigma11.lean](IsSigma11.lean)

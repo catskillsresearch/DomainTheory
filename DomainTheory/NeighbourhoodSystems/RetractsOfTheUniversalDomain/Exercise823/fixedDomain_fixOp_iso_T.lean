@@ -31,9 +31,9 @@ each map, a type and a domain over it) with `Fix(t(a)) ≅ T(a)` for every finit
 `tOp_fixOp` gives `Fix(‖t‖) ≅ T(‖t‖)` unconditionally — no colimit/continuity argument needed,
 since `‖t‖` solves the equation on the nose rather than merely in the limit. -/
 theorem fixedDomain_fixOp_iso_T (t : ApproximableMap (funSpace E E) (funSpace E E))
-    (ht : ∀ a, IsFinitaryProjection a → IsFinitaryProjection (tOp t a))
+    (ht : ∀ a, FinitaryProjection a → FinitaryProjection (tOp t a))
     (T : ApproximableMap E E → Σ β : Type, NeighborhoodSystem β)
-    (hT : ∀ a, IsFinitaryProjection a → Nonempty (Fix (tOp t a) ≃o (T a).2.Element)) :
+    (hT : ∀ a, FinitaryProjection a → Nonempty (Fix (tOp t a) ≃o (T a).2.Element)) :
     Nonempty (Fix (fixOp t) ≃o (T (fixOp t)).2.Element) := by
   have h := hT (fixOp t) (isFinitaryProjection_fixOp t ht)
   rwa [tOp_fixOp] at h

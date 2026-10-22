@@ -188,13 +188,14 @@ projection of `𝒰`. Used for both `subU` (from `subApprox`) and, later, `piU d
 /-- **Conjugating a retraction of `(𝒰→𝒰)` through `i_→, j_→` gives a retraction of `𝒰`.** Pure
 associativity plus `j_→∘i_→ = I` (`jArrow_comp_iArrow`) and `H∘H=H`. -/
 theorem isRetraction_conjArrow {H : ApproximableMap (funSpace U U) (funSpace U U)}
-    (hH : IsRetraction H) : IsRetraction (iArrow.comp (H.comp jArrow)) := by
+    (hH : Retraction H) : Retraction (iArrow.comp (H.comp jArrow)) := by
+  constructor
   show (iArrow.comp (H.comp jArrow)).comp (iArrow.comp (H.comp jArrow)) =
     iArrow.comp (H.comp jArrow)
   rw [comp_assoc iArrow (H.comp jArrow) (iArrow.comp (H.comp jArrow)),
     comp_assoc H jArrow (iArrow.comp (H.comp jArrow)),
     ← comp_assoc jArrow iArrow (H.comp jArrow), jArrow_comp_iArrow, idMap_comp,
-    ← comp_assoc H H jArrow, hH]
+    ← comp_assoc H H jArrow, hH.out]
 
 /-- **Conjugating a `≤ I`-map of `(𝒰→𝒰)` through `i_→, j_→` gives a `≤ I`-map of `𝒰`.** Chains
 `comp_mono_gen` with `i_→∘j_→ ≤ I` (`iArrow_comp_jArrow_le`, Definition 8.9). -/
@@ -223,8 +224,8 @@ theorem isFinitary_subU : IsFinitary subU := by
 
 /-- **`sub`, regarded as a combinator on `𝒰` itself, is a finitary projection** (Exercise 8.27's
 opening sentence, in full). -/
-theorem isFinitaryProjection_subU : IsFinitaryProjection subU :=
-  ⟨isProjection_subU, isFinitary_subU⟩
+theorem isFinitaryProjection_subU : FinitaryProjection subU :=
+  ⟨⟨isProjection_subU, isFinitary_subU⟩⟩
 
 
 /-! ## Step 2: polymorphic types -/
@@ -235,9 +236,9 @@ i.e. any map "sandwiched" between two copies of an idempotent `a` always lands i
 regardless of what `g` is. (General form of the pattern behind Exercise 8.26's
 `translateApp_hasType`, but derived automatically rather than assumed as a hypothesis.) -/
 theorem toElementMap_mem_fix_of_isRetraction_sandwich {a g : ApproximableMap U U}
-    (ha : IsRetraction a) (z : U.Element) :
+    (ha : Retraction a) (z : U.Element) :
     a.toElementMap ((a.comp (g.comp a)).toElementMap z) = (a.comp (g.comp a)).toElementMap z := by
-  rw [toElementMap_comp, ← toElementMap_comp a a, ha]
+  rw [toElementMap_comp, ← toElementMap_comp a a, ha.out]
 
 /-- **The exercise's own justification, formalized**: "whenever `t` is a finitary projection, then
 so is `d(t)`" — in fact, for `d` a polymorphic type, `d(z) ∈ Fix(subU)` for *every* `z`, not just
@@ -259,7 +260,7 @@ regardless of whether `d` itself is a polymorphic type. -/
 /-- **Any `j_→`-decoded fixed point of `subU` is a finitary projection of `𝒰`.** -/
 theorem isFinitaryProjection_toApproxMap_jArrow_of_fix {w : U.Element}
     (hw : subU.toElementMap w = w) :
-    IsFinitaryProjection (toApproxMap (jArrow.toElementMap w)) := by
+    FinitaryProjection (toApproxMap (jArrow.toElementMap w)) := by
   apply isFinitaryProjection_of_sub_eq_self
   have hfix := subApprox_fix_of_subU_fix hw
   have hstep := congrArg toApproxMap hfix
@@ -267,7 +268,7 @@ theorem isFinitaryProjection_toApproxMap_jArrow_of_fix {w : U.Element}
 
 /-- **The key lemma: `j_→(subU(z))` is always a finitary projection of `𝒰`, for any `z`.** -/
 theorem isFinitaryProjection_decode_subU (z : U.Element) :
-    IsFinitaryProjection (toApproxMap (jArrow.toElementMap (subU.toElementMap z))) :=
+    FinitaryProjection (toApproxMap (jArrow.toElementMap (subU.toElementMap z))) :=
   isFinitaryProjection_toApproxMap_jArrow_of_fix
     (toElementMap_idem_of_isRetraction isProjection_subU.1 z)
 
@@ -326,7 +327,7 @@ on *any* neighbourhood system `E`, that Scott's step-closure formula (ii) —
 
   `a(x) = {Y ∈ E ∣ ∃X∈x, X⊆Y ∧ X a X}`, for every `x ∈ |E|`
 
-— by itself (no other hypothesis on `a`) implies `IsFinitaryProjection a`, with the witness domain
+— by itself (no other hypothesis on `a`) implies `FinitaryProjection a`, with the witness domain
 `fixedNbhd a` built automatically from `a`'s own relation. Specializing `E := funSpace U U`,
 `a := piD d` turns "prove `piD d` is finitary" into "prove `piD d` satisfies formula (ii)" — no
 external witness system to invent. This is exactly the reduction Exercise 8.27(b)(2)–(b)(3) target;

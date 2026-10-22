@@ -21,9 +21,9 @@ open NeighborhoodSystem ApproximableMap
 so are `a+b`, `a×b`, and `a→b`, and `D_{a+b} ≅ D_a + D_b`, `D_{a×b} ≅ D_a × D_b`,
 `D_{a→b} ≅ (D_a → D_b)`, where `D_a = fixedNbhd a` and `D_b = fixedNbhd b`. -/
 theorem proposition_8_10 {a b : ApproximableMap U U}
-    (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b) :
-    IsFinitaryProjection (sumComb a b) ∧ IsFinitaryProjection (prodComb a b) ∧
-      IsFinitaryProjection (arrowComb a b) ∧
+    (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    FinitaryProjection (sumComb a b) ∧ FinitaryProjection (prodComb a b) ∧
+      FinitaryProjection (arrowComb a b) ∧
       Nonempty
         ((sum (fixedNbhd a) (fixedNbhd b) (fixedNbhd_mem_nonempty a)
             (fixedNbhd_mem_nonempty b)).Element ≃o

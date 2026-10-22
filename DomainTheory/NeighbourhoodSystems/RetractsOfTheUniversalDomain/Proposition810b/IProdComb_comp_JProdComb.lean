@@ -29,7 +29,7 @@ section ProdCase
 
 variable (a b : ApproximableMap U U)
 
-theorem IProdComb_comp_JProdComb (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b) :
+theorem IProdComb_comp_JProdComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (IProdComb a b).comp (JProdComb a b) = prodComb a b := by
   unfold IProdComb JProdComb
   rw [comp_assoc, ← comp_assoc (prodMap _ _) (prodMap _ _) jTimes, ← prodMap_comp,

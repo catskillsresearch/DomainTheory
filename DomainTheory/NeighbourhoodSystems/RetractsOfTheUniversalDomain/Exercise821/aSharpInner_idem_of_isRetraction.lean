@@ -31,8 +31,9 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Exercise 8.21(b)(2).** If `a` is a retraction (`a∘a = a`), so is its recursive extension
 `aSharpInner a`: the specialization of `gMap_selfComp_eq_of_isRetraction` to `D := U`. -/
-theorem aSharpInner_idem_of_isRetraction {a : ApproximableMap U U} (ha : IsRetraction a) :
-    IsRetraction (aSharpInner a) := by
+theorem aSharpInner_idem_of_isRetraction {a : ApproximableMap U U} (ha : Retraction a) :
+    Retraction (aSharpInner a) := by
+  constructor
   show (aSharpInner a).comp (aSharpInner a) = aSharpInner a
   rw [aSharpInner_eq]
   exact gMap_selfComp_eq_of_isRetraction ha

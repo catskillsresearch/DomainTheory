@@ -32,7 +32,7 @@ omit [TopologicalSpace X] in
 continuous `f'` with `f' ∘ e ⊑ g` satisfies `f' ⊑ scottExtend e g`. Same proof as
 `scottExtend_maximal`, replacing the final equality `f' (e x) = f x` by the inequality
 `f' (e x) ≤ g x`. -/
-theorem scottExtend_maximal_le (hE : IsContinuousLattice E) (e : X → Y) {g : X → E} {f' : Y → E}
+theorem scottExtend_maximal_le (hE : ContinuousLattice E) (e : X → Y) {g : X → E} {f' : Y → E}
     (hf' : @Continuous Y E _ scottTopologicalSpace f') (h_le : ∀ x, f' (e x) ≤ g x) (y : Y) :
     f' y ≤ scottExtend e g y := by
   rw [continuous_eq_sSup_openInfs hE hf' y]

@@ -20,6 +20,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem enumerationUnion_right_isScottContinuous (x : Pomega) :
     IsScottContinuous (fun y => x ∪ y) := by
+  constructor
   intro y
   ext n
   constructor

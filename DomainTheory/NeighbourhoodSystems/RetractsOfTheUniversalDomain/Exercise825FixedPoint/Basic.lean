@@ -49,7 +49,7 @@ finitary projections to finitary projections, with `Fix(t(a)) ≅ T(a)`" into a 
 `𝒰^∞ = iterSys 𝒰` is effectively given (`Exercise715.iterSys_isEffectivelyGiven`), so Theorem
 8.8(b)'s `theorem_8_8_b_strong` gives a projection pair `i : 𝒰^∞ → 𝒰`, `j : 𝒰 → 𝒰^∞` with
 `j∘i = I` and `i∘j ≤ I`. Setting `c := i∘j`, Proposition 8.10(b)'s generic
-`elementIsoOfProjectionPair`/`isFinitary_of_projectionPair` machinery gives `IsFinitaryProjection c`
+`elementIsoOfProjectionPair`/`isFinitary_of_projectionPair` machinery gives `FinitaryProjection c`
 and `𝒰^∞ ≅ Fix(c)` directly (`cElementIso`), and combined with `Proposition82.elementIso` applied
 to `fixedNbhd c ◁ 𝒰` (Theorem 8.5/8.6's usual bridge, `inj_comp_proj_eq_self`) gives
 `fixedNbhd c ≅ 𝒰^∞` (`fixedNbhd_cCombinator_isomorphic`).

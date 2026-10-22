@@ -19,6 +19,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem IsRE.bot : IsRE botElem :=
-  REPred.empty.of_eq fun n => by simp [botElem]
+  ⟨REPred.empty.of_eq fun n => by simp [botElem]⟩
 
 end DomainTheory.DataTypesAsLattices

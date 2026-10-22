@@ -28,7 +28,7 @@ theorem theorem_3_4 :
     ¬ IsRE {n | valNat n = botElem} := by
   intro hb
   have hpre : IsRE {i | diagonalInterCode i ∈ {n | valNat n = botElem}} :=
-    hb.comp primrec_diagonalInterCode.to_comp
+    ⟨hb.out.comp primrec_diagonalInterCode.to_comp⟩
   obtain ⟨k, hk⟩ :=
     theorem_3_2_surjective (IsRE.combinatory hpre)
   exact theorem_3_4_diagonal (val := valNat) (v := diagonalInterCode)

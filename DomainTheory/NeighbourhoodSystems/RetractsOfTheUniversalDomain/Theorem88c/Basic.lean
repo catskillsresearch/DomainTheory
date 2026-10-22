@@ -63,7 +63,7 @@ new splitting operation, no canonical forms, and no exponential atom-union machi
 This packages into `DprimeUPresentation`, a genuine `ComputablePresentation (DprimeU D (e P) …)` —
 i.e. **Theorem 8.8(a)'s own `D'` (no new construction!) is effectively given whenever `D` is**. This
 completes Part 6 of Theorem 8.8(b): the recursive `Yₙ`-chain now has a certified effective
-witness/verifier (its index relations are decidable), ready for Part 7's `IsComputableMap` work on
+witness/verifier (its index relations are decidable), ready for Part 7's `ComputableMap` work on
 the embedding/projection pair `Subsystem.inj`/`Subsystem.proj` (`D' ◁ U`, via `DprimeU_subsystem`).
 
 Everything here is **choice-free at the `Nat.Primrec` core** (the deciders extracted from

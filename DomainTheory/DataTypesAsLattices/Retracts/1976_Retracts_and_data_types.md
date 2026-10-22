@@ -32,14 +32,14 @@ which has the property that if $z$ is both zero and positive, then it takes the 
 
 **Lean 4**
 
-- [DataTypesAsLattices/FixedLattices/IsDirectedSet.lean](../FixedLattices/IsDirectedSet.lean)
+- [DataTypesAsLattices/FixedLattices/DirectedSet.lean](../FixedLattices/DirectedSet.lean)
 - [DataTypesAsLattices/FixedLattices/completeLatticeLE.lean](../FixedLattices/completeLatticeLE.lean)
 - [DataTypesAsLattices/FixedLattices/completeLatticePreorder.lean](../FixedLattices/completeLatticePreorder.lean)
 - [DataTypesAsLattices/FixedLattices/completeLatticeSupSet.lean](../FixedLattices/completeLatticeSupSet.lean)
 - [DataTypesAsLattices/FixedLattices/WayBelow.lean](../FixedLattices/WayBelow.lean)
 - [DataTypesAsLattices/FixedLattices/IsCompact.lean](../FixedLattices/IsCompact.lean)
 - [DataTypesAsLattices/FixedLattices/CountablyAlgebraic.lean](../FixedLattices/CountablyAlgebraic.lean)
-- [DataTypesAsLattices/FixedLattices/IsContinuousBasis.lean](../FixedLattices/IsContinuousBasis.lean)
+- [DataTypesAsLattices/FixedLattices/ContinuousBasis.lean](../FixedLattices/ContinuousBasis.lean)
 - [DataTypesAsLattices/FixedLattices/finiteBasisSups.lean](../FixedLattices/finiteBasisSups.lean)
 - [DataTypesAsLattices/FixedLattices/Basic.lean](../FixedLattices/Basic.lean)
 - [DataTypesAsLattices/FixedLattices/finiteBasisSups_directed.lean](../FixedLattices/finiteBasisSups_directed.lean)
@@ -50,7 +50,7 @@ which has the property that if $z$ is both zero and positive, then it takes the 
 - [DataTypesAsLattices/Retracts/Icomb.lean](Icomb.lean)
 - [DataTypesAsLattices/Retracts/Icomb_app.lean](Icomb_app.lean)
 - [DataTypesAsLattices/Retracts/Icomb_isRetract.lean](Icomb_isRetract.lean)
-- [DataTypesAsLattices/Retracts/IsDirectedSubset.lean](IsDirectedSubset.lean)
+- [DataTypesAsLattices/Retracts/DirectedSubset.lean](DirectedSubset.lean)
 - [DataTypesAsLattices/Retracts/IsCompactSubset.lean](IsCompactSubset.lean)
 - [DataTypesAsLattices/Retracts/boolR_app.lean](boolR_app.lean)
 - [DataTypesAsLattices/Retracts/comp.lean](comp.lean)

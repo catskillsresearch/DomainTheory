@@ -38,7 +38,7 @@ public import DomainTheory.DataTypesAsLattices.Classification.typicalBdelta
 public import DomainTheory.DataTypesAsLattices.Classification.typicalSigma11
 public import DomainTheory.DataTypesAsLattices.Classification.typicalPi11
 public import DomainTheory.DataTypesAsLattices.Classification.IsSigma11
-public import DomainTheory.DataTypesAsLattices.Classification.IsPi11
+public import DomainTheory.DataTypesAsLattices.Classification.Pi11
 
 @[expose] public section
 
@@ -55,6 +55,7 @@ open TopologicalSpace
 
 theorem charOpen_isScottContinuous (U : Set Pomega) :
     IsScottContinuous (charOpen U) := by
+  constructor
   intro x
   ext k
   constructor
@@ -104,6 +105,7 @@ theorem mem_isScottOpen_iff {U : Set Pomega} (hU : IsScottOpen U) {x : Pomega} :
 
 theorem charTop_isScottContinuous (U : Set Pomega) :
     IsScottContinuous (charTop U) := by
+  constructor
   intro x
   ext k
   constructor
@@ -153,11 +155,12 @@ theorem charTop_eq_bot_of_closed {C : Set Pomega} (hC : IsScottOpen Cᶜ) (x : P
 theorem pairIndexed_isScottContinuous (fs : ℕ → Pomega → Pomega)
     (hfs : ∀ n, IsScottContinuous (fs n)) :
     IsScottContinuous (pairIndexed fs) := by
+  constructor
   intro x
   ext k
   constructor
   · intro ⟨n, m, hk, hm⟩
-    have : m ∈ scottUnion (fs n) x := by rw [← hfs n x]; exact hm
+    have : m ∈ scottUnion (fs n) x := by rw [← (hfs n).out x]; exact hm
     obtain ⟨p, hp, hmp⟩ := mem_scottUnion.mp this
     exact mem_scottUnion.mpr ⟨p, hp, n, m, hk, hmp⟩
   · intro hk
@@ -168,15 +171,16 @@ theorem pairIndexed_isScottContinuous (fs : ℕ → Pomega → Pomega)
 theorem oddEvenPack_isScottContinuous {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
     IsScottContinuous (oddEvenPack f g) := by
+  constructor
   intro x
   ext k
   constructor
   · intro hk
     rcases hk with ⟨n, hk, hn⟩ | ⟨n, hk, hn⟩
-    · have : n ∈ scottUnion f x := by rw [← hf x]; exact hn
+    · have : n ∈ scottUnion f x := by rw [← hf.out x]; exact hn
       obtain ⟨p, hp, hnp⟩ := mem_scottUnion.mp this
       exact mem_scottUnion.mpr ⟨p, hp, Or.inl ⟨n, hk, hnp⟩⟩
-    · have : n ∈ scottUnion g x := by rw [← hg x]; exact hn
+    · have : n ∈ scottUnion g x := by rw [← hg.out x]; exact hn
       obtain ⟨p, hp, hnp⟩ := mem_scottUnion.mp this
       exact mem_scottUnion.mpr ⟨p, hp, Or.inr ⟨n, hk, hnp⟩⟩
   · intro hk
@@ -538,6 +542,7 @@ theorem theorem_6_7_converse_of_equalizers (f g : ℕ → Pomega → Pomega)
 /-- Union is Scott-continuous in the left argument. -/
 theorem union_isScottContinuous_left (y : Pomega) :
     IsScottContinuous (fun x => (x ∪ y : Pomega)) := by
+  constructor
   intro x
   ext k
   constructor
@@ -555,6 +560,7 @@ theorem union_isScottContinuous_left (y : Pomega) :
 /-- Union is Scott-continuous in the right argument. -/
 theorem union_isScottContinuous_right (x : Pomega) :
     IsScottContinuous (fun y => (x ∪ y : Pomega)) := by
+  constructor
   intro y
   ext k
   constructor
@@ -609,6 +615,7 @@ theorem uvV_mono_right {x y y' : Pomega} (h : y ⊆ y') : uvV x y ⊆ uvV x y' :
 
 theorem uvU_isScottContinuous_left (y : Pomega) :
     IsScottContinuous (fun x => uvU x y) := by
+  constructor
   intro x
   ext k
   constructor
@@ -629,6 +636,7 @@ theorem uvU_isScottContinuous_left (y : Pomega) :
 
 theorem uvU_isScottContinuous_right (x : Pomega) :
     IsScottContinuous (fun y => uvU x y) := by
+  constructor
   intro y
   ext k
   constructor
@@ -649,6 +657,7 @@ theorem uvU_isScottContinuous_right (x : Pomega) :
 
 theorem uvV_isScottContinuous_left (y : Pomega) :
     IsScottContinuous (fun x => uvV x y) := by
+  constructor
   intro x
   ext k
   constructor
@@ -672,6 +681,7 @@ theorem uvV_isScottContinuous_left (y : Pomega) :
 
 theorem uvV_isScottContinuous_right (x : Pomega) :
     IsScottContinuous (fun y => uvV x y) := by
+  constructor
   intro y
   ext k
   constructor

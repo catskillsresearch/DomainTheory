@@ -25,7 +25,7 @@ their values on finite sets. -/
 theorem theorem_3_5_unique {q q' : Pomega → Pomega}
     (hq : IsScottContinuous q) (hq' : IsScottContinuous q')
     (h : ∀ n, q (e n) = q' (e n)) (x : Pomega) : q x = q' x := by
-  rw [hq, hq']
+  rw [hq.out, hq'.out]
   ext k
   simp [scottUnion, scottPiece, h]
 

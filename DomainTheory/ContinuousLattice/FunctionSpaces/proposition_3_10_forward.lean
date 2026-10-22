@@ -40,7 +40,7 @@ namespace IsContinuousLatticeProjection
 /-- **Scott 1972, Proposition 3.10(i)–(iii), bundled.** The inclusion `i` of a projection preserves
 arbitrary suprema, is injective, and preserves the way-below relation. -/
 theorem proposition_3_10_forward (P : IsContinuousLatticeProjection D D')
-    (hD' : IsContinuousLattice D') :
+    (hD' : ContinuousLattice D') :
     (∀ S : Set D, (P.incl : D → D') (sSup S) = sSup (Set.image (P.incl : D → D') S))
       ∧ Function.Injective (P.incl : D → D')
       ∧ (∀ x y : D, x ≪ y → (P.incl : D → D') x ≪ (P.incl : D → D') y) :=

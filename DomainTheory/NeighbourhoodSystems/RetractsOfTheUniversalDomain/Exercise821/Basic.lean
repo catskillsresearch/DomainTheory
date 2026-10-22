@@ -167,7 +167,7 @@ extension `gMap ((inSharpMap hD).comp a) (pairSharpMap hD) hD` of `a`'s tree alg
 specializes this at `D := U`). Applies `gMap_eq_of_satisfies` to `k := g.comp g` (`g` the catamorphism
 itself): both defining equations of `k` reduce, via `gMap_in`/`gMap_pair` applied twice, to the
 corresponding equation for `g` composed with `a`'s own idempotence. -/
-theorem gMap_selfComp_eq_of_isRetraction {a : ApproximableMap D D} (ha : IsRetraction a) :
+theorem gMap_selfComp_eq_of_isRetraction {a : ApproximableMap D D} (ha : Retraction a) :
     (gMap ((inSharpMap hD).comp a) (pairSharpMap hD) hD).comp
         (gMap ((inSharpMap hD).comp a) (pairSharpMap hD) hD)
       = gMap ((inSharpMap hD).comp a) (pairSharpMap hD) hD := by

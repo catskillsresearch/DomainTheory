@@ -26,7 +26,7 @@ open Nat.Partrec.Code
 theorem IsRE.hasPos {z : Pomega} (hz : IsRE z) : REPred fun _ : ℕ => ∃ k, k + 1 ∈ z :=
   _root_.REPred.of_eq
     (REPred.exists (p := fun _ k => k + 1 ∈ z)
-      (hz.comp (Primrec.succ.to_comp.comp Computable.snd)))
+      (hz.out.comp (Primrec.succ.to_comp.comp Computable.snd)))
     fun _ => Iff.rfl
 
 end DomainTheory.DataTypesAsLattices

@@ -37,9 +37,10 @@ theorem fixMap_isComputable
       : Set (ApproximableMap V V)).Nonempty) (hgNp : Nat.Primrec gN)
     (hincl : ∀ s, incl s = 1 ↔ P.X s.unpair.1 ⊆ P.X s.unpair.2) (hinclp : Nat.Primrec incl)
     (heq : ∀ s, eq s = 1 ↔ P.X s.unpair.1 = P.X s.unpair.2) (heqp : Nat.Primrec eq) :
-    IsComputableMap
+    ComputableMap
       (funPresentation P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp heq heqp) P
       (fixMap V) := by
+  constructor
   obtain ⟨fincl, hfinclp, hfincls⟩ :=
     (funPresentation P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp heq heqp).incl_computable
   have hfincl : ∀ s, fincl s = 1 ↔ Xenum P P gN s.unpair.1 ⊆ Xenum P P gN s.unpair.2 :=

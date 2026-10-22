@@ -15,7 +15,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.self_mem_upFix
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.upFix_inter
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.domainOfClosure
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.ClosureOperator
 
 @[expose] public section
 
@@ -29,7 +29,7 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
 
-variable {a : ApproximableMap E E} (h : IsClosureOperator a)
+variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 /-- **The forward map `Fix(a) → |domainOfClosure h|`**: `y ↦ {S ∣ S = ↑k ∧ k ⊑ y}`. -/
 def toElementFilter (y : FixSet a) : (domainOfClosure h).Element where

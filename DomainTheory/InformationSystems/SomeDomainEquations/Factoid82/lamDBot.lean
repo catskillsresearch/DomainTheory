@@ -27,7 +27,7 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-def lamDBot : LamDToken A := ⟨.bot, trivial⟩
+def lamDBot : LamDToken A := ⟨.bot, ⟨trivial⟩⟩
 
 end InfoSys
 

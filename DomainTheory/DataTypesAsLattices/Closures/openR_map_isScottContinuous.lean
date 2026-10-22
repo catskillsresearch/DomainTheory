@@ -17,6 +17,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem openR_map_isScottContinuous :
     IsScottContinuous (fun u => {m | ∃ n, e n ⊆ e m ∧ n ∈ u}) := by
+  constructor
   intro u
   ext m
   constructor

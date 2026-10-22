@@ -27,9 +27,9 @@ structure EffectiveIso {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
   /-- The inverse map `E → D`. -/
   invMap : ApproximableMap W V
   /-- The forward map is computable. -/
-  toMap_computable : IsComputableMap P Q toMap
+  toMap_computable : ComputableMap P Q toMap
   /-- The inverse map is computable. -/
-  invMap_computable : IsComputableMap Q P invMap
+  invMap_computable : ComputableMap Q P invMap
   /-- `invMap ∘ toMap = I_D`. -/
   left_inv : invMap.comp toMap = idMap V
   /-- `toMap ∘ invMap = I_E`. -/

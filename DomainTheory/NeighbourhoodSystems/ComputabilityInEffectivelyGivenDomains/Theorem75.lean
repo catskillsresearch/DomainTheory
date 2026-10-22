@@ -43,7 +43,7 @@ theorem theorem_75.{u_1, u_2, u_3} : And
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁)
                       (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁) φ
                       (@DomainTheory.NeighbourhoodSystems.Xenum α β V₀ V₁ P₀ P₁ gN c))
-                  (@DomainTheory.NeighbourhoodSystems.IsComputableMap α β V₀ V₁ P₀ P₁
+                  (@DomainTheory.NeighbourhoodSystems.ComputableMap α β V₀ V₁ P₀ P₁
                     (@DomainTheory.NeighbourhoodSystems.toApproxMap α β V₀ V₁ φ)))
         (∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
           {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β},
@@ -92,10 +92,10 @@ theorem theorem_75.{u_1, u_2, u_3} : And
         {g :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap (Sum α β) γ
             (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) V₂},
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α β) γ
+        @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α β) γ
             (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) V₂
             (@DomainTheory.NeighbourhoodSystems.prodPresentation α β V₀ V₁ P₀ P₁) P₂ g →
-          @DomainTheory.NeighbourhoodSystems.IsComputableMap α
+          @DomainTheory.NeighbourhoodSystems.ComputableMap α
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) V₀
             (@DomainTheory.NeighbourhoodSystems.funSpace β γ V₁ V₂) P₀
             (@DomainTheory.NeighbourhoodSystems.funPresentation β γ V₁ V₂ P₁ P₂ gN incl0 incl1 eq1 hgN hgNp hincl0
@@ -133,7 +133,7 @@ theorem theorem_75.{u_1, u_2, u_3} : And
               (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β V₁ P₁ (@Prod.fst Nat Nat (Nat.unpair s)))
               (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β V₁ P₁ (@Prod.snd Nat Nat (Nat.unpair s)))))
       (heq1p : Nat.Primrec eq1),
-      @DomainTheory.NeighbourhoodSystems.IsComputableMap
+      @DomainTheory.NeighbourhoodSystems.ComputableMap
         (Sum (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁) α) β
         (@DomainTheory.NeighbourhoodSystems.prod (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁) α
           (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁) V₀)
@@ -182,13 +182,13 @@ theorem theorem_75.{u_1, u_2, u_3} : And
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁)
         (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁)),
     Iff
-      (@DomainTheory.NeighbourhoodSystems.IsComputableElement
+      (@DomainTheory.NeighbourhoodSystems.ComputableElement
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁)
         (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁)
         (@DomainTheory.NeighbourhoodSystems.funPresentation α β V₀ V₁ P₀ P₁ gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p
           hincl1 hincl1p heq1 heq1p)
         φ)
-      (@DomainTheory.NeighbourhoodSystems.IsComputableMap α β V₀ V₁ P₀ P₁
+      (@DomainTheory.NeighbourhoodSystems.ComputableMap α β V₀ V₁ P₀ P₁
         (@DomainTheory.NeighbourhoodSystems.toApproxMap α β V₀ V₁ φ))) :=
   @And.intro
   (And
@@ -216,7 +216,7 @@ theorem theorem_75.{u_1, u_2, u_3} : And
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁)
                       (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁) φ
                       (@DomainTheory.NeighbourhoodSystems.Xenum α β V₀ V₁ P₀ P₁ gN c))
-                  (@DomainTheory.NeighbourhoodSystems.IsComputableMap α β V₀ V₁ P₀ P₁
+                  (@DomainTheory.NeighbourhoodSystems.ComputableMap α β V₀ V₁ P₀ P₁
                     (@DomainTheory.NeighbourhoodSystems.toApproxMap α β V₀ V₁ φ)))
         (∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
           {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β},
@@ -265,10 +265,10 @@ theorem theorem_75.{u_1, u_2, u_3} : And
         {g :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap (Sum α β) γ
             (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) V₂},
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α β) γ
+        @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α β) γ
             (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) V₂
             (@DomainTheory.NeighbourhoodSystems.prodPresentation α β V₀ V₁ P₀ P₁) P₂ g →
-          @DomainTheory.NeighbourhoodSystems.IsComputableMap α
+          @DomainTheory.NeighbourhoodSystems.ComputableMap α
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) V₀
             (@DomainTheory.NeighbourhoodSystems.funSpace β γ V₁ V₂) P₀
             (@DomainTheory.NeighbourhoodSystems.funPresentation β γ V₁ V₂ P₁ P₂ gN incl0 incl1 eq1 hgN hgNp hincl0
@@ -306,7 +306,7 @@ theorem theorem_75.{u_1, u_2, u_3} : And
               (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β V₁ P₁ (@Prod.fst Nat Nat (Nat.unpair s)))
               (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β V₁ P₁ (@Prod.snd Nat Nat (Nat.unpair s)))))
       (heq1p : Nat.Primrec eq1),
-      @DomainTheory.NeighbourhoodSystems.IsComputableMap
+      @DomainTheory.NeighbourhoodSystems.ComputableMap
         (Sum (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁) α) β
         (@DomainTheory.NeighbourhoodSystems.prod (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁) α
           (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁) V₀)
@@ -355,13 +355,13 @@ theorem theorem_75.{u_1, u_2, u_3} : And
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁)
         (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁)),
     Iff
-      (@DomainTheory.NeighbourhoodSystems.IsComputableElement
+      (@DomainTheory.NeighbourhoodSystems.ComputableElement
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁)
         (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁)
         (@DomainTheory.NeighbourhoodSystems.funPresentation α β V₀ V₁ P₀ P₁ gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p
           hincl1 hincl1p heq1 heq1p)
         φ)
-      (@DomainTheory.NeighbourhoodSystems.IsComputableMap α β V₀ V₁ P₀ P₁
+      (@DomainTheory.NeighbourhoodSystems.ComputableMap α β V₀ V₁ P₀ P₁
         (@DomainTheory.NeighbourhoodSystems.toApproxMap α β V₀ V₁ φ)))
   (@And.intro
     (And
@@ -388,7 +388,7 @@ theorem theorem_75.{u_1, u_2, u_3} : And
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁)
                       (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁) φ
                       (@DomainTheory.NeighbourhoodSystems.Xenum α β V₀ V₁ P₀ P₁ gN c))
-                  (@DomainTheory.NeighbourhoodSystems.IsComputableMap α β V₀ V₁ P₀ P₁
+                  (@DomainTheory.NeighbourhoodSystems.ComputableMap α β V₀ V₁ P₀ P₁
                     (@DomainTheory.NeighbourhoodSystems.toApproxMap α β V₀ V₁ φ)))
         (∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
           {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β},
@@ -437,10 +437,10 @@ theorem theorem_75.{u_1, u_2, u_3} : And
         {g :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap (Sum α β) γ
             (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) V₂},
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α β) γ
+        @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α β) γ
             (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) V₂
             (@DomainTheory.NeighbourhoodSystems.prodPresentation α β V₀ V₁ P₀ P₁) P₂ g →
-          @DomainTheory.NeighbourhoodSystems.IsComputableMap α
+          @DomainTheory.NeighbourhoodSystems.ComputableMap α
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) V₀
             (@DomainTheory.NeighbourhoodSystems.funSpace β γ V₁ V₂) P₀
             (@DomainTheory.NeighbourhoodSystems.funPresentation β γ V₁ V₂ P₁ P₂ gN incl0 incl1 eq1 hgN hgNp hincl0
@@ -478,7 +478,7 @@ theorem theorem_75.{u_1, u_2, u_3} : And
               (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β V₁ P₁ (@Prod.fst Nat Nat (Nat.unpair s)))
               (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β V₁ P₁ (@Prod.snd Nat Nat (Nat.unpair s)))))
       (heq1p : Nat.Primrec eq1),
-      @DomainTheory.NeighbourhoodSystems.IsComputableMap
+      @DomainTheory.NeighbourhoodSystems.ComputableMap
         (Sum (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁) α) β
         (@DomainTheory.NeighbourhoodSystems.prod (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁) α
           (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁) V₀)
@@ -514,7 +514,7 @@ theorem theorem_75.{u_1, u_2, u_3} : And
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁)
                       (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁) φ
                       (@DomainTheory.NeighbourhoodSystems.Xenum α β V₀ V₁ P₀ P₁ gN c))
-                  (@DomainTheory.NeighbourhoodSystems.IsComputableMap α β V₀ V₁ P₀ P₁
+                  (@DomainTheory.NeighbourhoodSystems.ComputableMap α β V₀ V₁ P₀ P₁
                     (@DomainTheory.NeighbourhoodSystems.toApproxMap α β V₀ V₁ φ)))
         (∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
           {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β},
@@ -563,10 +563,10 @@ theorem theorem_75.{u_1, u_2, u_3} : And
         {g :
           @DomainTheory.NeighbourhoodSystems.ApproximableMap (Sum α β) γ
             (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) V₂},
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α β) γ
+        @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α β) γ
             (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) V₂
             (@DomainTheory.NeighbourhoodSystems.prodPresentation α β V₀ V₁ P₀ P₁) P₂ g →
-          @DomainTheory.NeighbourhoodSystems.IsComputableMap α
+          @DomainTheory.NeighbourhoodSystems.ComputableMap α
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) V₀
             (@DomainTheory.NeighbourhoodSystems.funSpace β γ V₁ V₂) P₀
             (@DomainTheory.NeighbourhoodSystems.funPresentation β γ V₁ V₂ P₁ P₂ gN incl0 incl1 eq1 hgN hgNp hincl0
@@ -595,7 +595,7 @@ theorem theorem_75.{u_1, u_2, u_3} : And
                       (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁)
                       (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁) φ
                       (@DomainTheory.NeighbourhoodSystems.Xenum α β V₀ V₁ P₀ P₁ gN c))
-                  (@DomainTheory.NeighbourhoodSystems.IsComputableMap α β V₀ V₁ P₀ P₁
+                  (@DomainTheory.NeighbourhoodSystems.ComputableMap α β V₀ V₁ P₀ P₁
                     (@DomainTheory.NeighbourhoodSystems.toApproxMap α β V₀ V₁ φ)))
         (∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
           {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β},

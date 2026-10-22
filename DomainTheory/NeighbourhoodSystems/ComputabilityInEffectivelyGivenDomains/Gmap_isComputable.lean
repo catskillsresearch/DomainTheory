@@ -37,7 +37,8 @@ variable {P}
 
 /-- **`G` is computable** (in fact recursively decidable): a single bounded `∀` of `incl_computable`. -/
 theorem Gmap_isComputable :
-    IsComputableMap (iterPresentation (iterPresentation P)) (iterPresentation P) (Gmap V) := by
+    ComputableMap (iterPresentation (iterPresentation P)) (iterPresentation P) (Gmap V) := by
+  constructor
   -- inner predicate `p₂ u`, with `u = ⟨k, ⟨s, n⟩⟩`
   have hLHS : Nat.Primrec (fun u : ℕ =>
       iterIdx P (iterIdx (iterPresentation P) u.unpair.2.unpair.1 u.unpair.1.unpair.1)

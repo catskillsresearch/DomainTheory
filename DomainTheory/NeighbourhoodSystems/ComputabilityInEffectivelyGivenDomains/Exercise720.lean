@@ -28,7 +28,7 @@ theorem example_720.{u_1} : And
                 (@Inter.inter (Set α) (@Set.instInter α)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Set (Set α)) (Set α)
+      @DomainTheory.NeighbourhoodSystems.ComputableMap (Set (Set α)) (Set α)
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain (Set α)
           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V))
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
@@ -175,7 +175,7 @@ theorem example_720.{u_1} : And
                 (@Inter.inter (Set α) (@Set.instInter α)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Set (Set α)) (Set α)
+      @DomainTheory.NeighbourhoodSystems.ComputableMap (Set (Set α)) (Set α)
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain (Set α)
           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V))
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
@@ -321,7 +321,7 @@ theorem example_720.{u_1} : And
                 (@Inter.inter (Set α) (@Set.instInter α)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Set (Set α)) (Set α)
+      @DomainTheory.NeighbourhoodSystems.ComputableMap (Set (Set α)) (Set α)
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain (Set α)
           (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V))
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)

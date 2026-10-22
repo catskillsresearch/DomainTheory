@@ -62,7 +62,7 @@ docstring, Claim 3). The expected argument, informally:
 
 * `𝒰` and `𝒰^∞` are both effectively given (`U_isEffectivelyGiven`, `iterSys_isEffectivelyGiven`),
   so Theorem 8.8(b)'s back-and-forth pair `i, j` witnessing `c := i∘j` is *computable*
-  (`theorem_8_8_b_strong`'s `IsComputableMap` clauses, already proved).
+  (`theorem_8_8_b_strong`'s `ComputableMap` clauses, already proved).
 * Definition 8.9's `arrowComb` is built from `iArrow`/`jArrow`/`curry`/`evalMap`/`prodMap`, all
   computable when their inputs are (routine, and already implicit in how `Definition89.lean`
   builds these combinators from `theorem_8_8_b_strong`'s computable witnesses); hence `a ↦ a → c`

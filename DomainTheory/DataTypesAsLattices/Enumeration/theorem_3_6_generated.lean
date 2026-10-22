@@ -37,7 +37,7 @@ theorem theorem_3_6_generated (xs : List Pomega) :
   · intro hu
     exact hu _ (Deg_isSubalgebra _) (generators_mem_singleGenerator_degree xs)
   · rintro ⟨r, hr, rfl⟩ A hA hxs
-    exact hA.2 (combinatory_mem_subalgebra hA hr)
+    exact hA.out.2 (combinatory_mem_subalgebra hA hr)
       (singleGenerator_mem_subalgebra hA hxs)
 
 end DomainTheory.DataTypesAsLattices

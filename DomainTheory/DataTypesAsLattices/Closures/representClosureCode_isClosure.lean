@@ -19,7 +19,8 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem representClosureCode_isClosure
     {α : Type u} [CompleteLattice α] (D : CountablyAlgebraic α) :
-    IsClosure (representClosureCode D) := by
+    Closure (representClosureCode D) := by
+  constructor
   constructor
   · intro p hp
     rcases hp with ⟨n, m, rfl, hm⟩

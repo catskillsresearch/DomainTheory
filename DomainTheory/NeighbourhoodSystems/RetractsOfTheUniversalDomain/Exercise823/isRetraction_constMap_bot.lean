@@ -24,7 +24,8 @@ variable {α : Type} {E : NeighborhoodSystem α}
 
 
 theorem isRetraction_constMap_bot (E : NeighborhoodSystem α) :
-    IsRetraction (constMap E E.bot) := by
+    Retraction (constMap E E.bot) := by
+  constructor
   show (constMap E E.bot).comp (constMap E E.bot) = constMap E E.bot
   apply ApproximableMap.ext
   intro X Z

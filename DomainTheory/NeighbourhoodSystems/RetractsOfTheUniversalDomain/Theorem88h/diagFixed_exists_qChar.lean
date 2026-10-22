@@ -26,7 +26,7 @@ primitive-recursive `qChar`) exposes `qChar` directly: `DiagFixed P a n ↔ ∃ 
 This is the "genuinely decidable, no unbounded search" ingredient that Theorem 8.8(c) Parts 2–4 gate
 their primitive-recursive fold on. -/
 theorem diagFixed_exists_qChar {P : ComputablePresentation V} {a : ApproximableMap V V}
-    (ha : IsComputableMap P P a) :
+    (ha : ComputableMap P P a) :
     ∃ qChar : ℕ → ℕ, Nat.Primrec qChar ∧
       ∀ n, DiagFixed P a n ↔ ∃ i, qChar (Nat.pair i n) = 1 := by
   obtain ⟨q, hq, hqe⟩ := diagFixed_isREPred ha

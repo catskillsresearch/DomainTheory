@@ -16,7 +16,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem directed_finite_cover {A : Set (Fixpoints f)}
-    (hA : IsDirectedSet A) {t : Pomega} (ht : t.Finite)
+    (hA : DirectedSet A) {t : Pomega} (ht : t.Finite)
     (hsub : t ⊆ ⋃₀ (Fixpoints.vals A)) :
     ∃ z ∈ A, t ⊆ z := by
   classical
@@ -27,7 +27,7 @@ theorem directed_finite_cover {A : Set (Fixpoints f)}
     induction s using Finset.induction with
     | empty =>
         intro _
-        obtain ⟨z, hz⟩ := hA.1
+        obtain ⟨z, hz⟩ := hA.out.1
         exact ⟨z, hz, by simp⟩
     | insert k s hks ih =>
         intro hs
@@ -37,7 +37,7 @@ theorem directed_finite_cover {A : Set (Fixpoints f)}
           Set.mem_sUnion.mp
             (hs (show k ∈ (insert k s : Finset ℕ) by simp))
         obtain ⟨v', hv'A, rfl⟩ := hv
-        obtain ⟨z, hz, huz, hvz⟩ := hA.2 hu hv'A
+        obtain ⟨z, hz, huz, hvz⟩ := hA.out.2 hu hv'A
         refine ⟨z, hz, ?_⟩
         intro m hm
         simp only [Finset.coe_insert, Set.mem_insert_iff] at hm

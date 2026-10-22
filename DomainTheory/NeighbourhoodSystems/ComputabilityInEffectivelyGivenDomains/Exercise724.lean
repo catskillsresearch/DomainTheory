@@ -20,7 +20,7 @@ theorem example_724 : And
     (And
       (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven
         DomainTheory.NeighbourhoodSystems.Exercise724.Gamma DomainTheory.NeighbourhoodSystems.Exercise724.L)
-      (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+      (@DomainTheory.NeighbourhoodSystems.ComputableMap
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
           DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
           DomainTheory.NeighbourhoodSystems.Example23.T)
@@ -37,7 +37,7 @@ theorem example_724 : And
         (@DomainTheory.NeighbourhoodSystems.Exercise724.postcompose DomainTheory.NeighbourhoodSystems.Example12.Token
           DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example23.T
           DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Exercise724.notT)))
-    (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+    (@DomainTheory.NeighbourhoodSystems.ComputableMap
       (Sum
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
           DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
@@ -92,7 +92,7 @@ theorem example_724 : And
     (And
       (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven
         DomainTheory.NeighbourhoodSystems.Exercise724.Gamma DomainTheory.NeighbourhoodSystems.Exercise724.L)
-      (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+      (@DomainTheory.NeighbourhoodSystems.ComputableMap
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
           DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
           DomainTheory.NeighbourhoodSystems.Example23.T)
@@ -109,7 +109,7 @@ theorem example_724 : And
         (@DomainTheory.NeighbourhoodSystems.Exercise724.postcompose DomainTheory.NeighbourhoodSystems.Example12.Token
           DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example23.T
           DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Exercise724.notT)))
-    (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+    (@DomainTheory.NeighbourhoodSystems.ComputableMap
       (Sum
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
           DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
@@ -163,7 +163,7 @@ theorem example_724 : And
     (And
       (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven
         DomainTheory.NeighbourhoodSystems.Exercise724.Gamma DomainTheory.NeighbourhoodSystems.Exercise724.L)
-      (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+      (@DomainTheory.NeighbourhoodSystems.ComputableMap
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
           DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
           DomainTheory.NeighbourhoodSystems.Example23.T)
@@ -180,7 +180,7 @@ theorem example_724 : And
         (@DomainTheory.NeighbourhoodSystems.Exercise724.postcompose DomainTheory.NeighbourhoodSystems.Example12.Token
           DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example23.T
           DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Exercise724.notT)))
-    (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+    (@DomainTheory.NeighbourhoodSystems.ComputableMap
       (Sum
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
           DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
@@ -229,7 +229,7 @@ theorem example_724 : And
     (@And.intro
       (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven
         DomainTheory.NeighbourhoodSystems.Exercise724.Gamma DomainTheory.NeighbourhoodSystems.Exercise724.L)
-      (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+      (@DomainTheory.NeighbourhoodSystems.ComputableMap
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
           DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
           DomainTheory.NeighbourhoodSystems.Example23.T)

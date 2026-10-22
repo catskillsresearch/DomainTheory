@@ -21,7 +21,8 @@ open NeighborhoodSystem ApproximableMap
 
 
 /-- **Exercise 8.11 (second part, retraction).** `a ∘ a = a`. -/
-theorem isRetraction_a : IsRetraction a := by
+theorem isRetraction_a : Retraction a := by
+  constructor
   apply ApproximableMap.ext
   intro X Z
   constructor

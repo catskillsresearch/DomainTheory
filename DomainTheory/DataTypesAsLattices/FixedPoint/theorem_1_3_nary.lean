@@ -24,6 +24,7 @@ theorem theorem_1_3_nary {f : Pomega → Pomega → Pomega → Pomega}
     {g h i : Pomega → Pomega}
     (hg : IsScottContinuous g) (hh : IsScottContinuous h) (hi : IsScottContinuous i) :
     IsScottContinuous (fun x => f (g x) (h x) (i x)) := by
+  constructor
   intro x
   have H := theorem_1_3_diag (x := x)
     (f := fun u v => f (g u) (h u) (i v))

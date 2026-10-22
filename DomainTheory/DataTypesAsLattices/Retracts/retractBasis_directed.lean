@@ -17,7 +17,8 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem retractBasis_directed {a : Pomega} (ha : Retract a)
     (x : Fixpoints (funOf a)) :
-    IsDirectedSet (retractBasis a x) := by
+    DirectedSet (retractBasis a x) := by
+  constructor
   constructor
   · let y : Fixpoints (funOf a) :=
       ⟨funOf a (e 0), retract_app ha (e 0)⟩

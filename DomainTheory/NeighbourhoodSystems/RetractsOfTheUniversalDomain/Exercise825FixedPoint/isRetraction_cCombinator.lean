@@ -24,7 +24,8 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-theorem isRetraction_cCombinator : IsRetraction cCombinator := by
+theorem isRetraction_cCombinator : Retraction cCombinator := by
+  constructor
   show (cInj.comp cProj).comp (cInj.comp cProj) = cInj.comp cProj
   rw [comp_assoc, ← comp_assoc cProj cInj cProj, cProj_comp_cInj, idMap_comp]
 

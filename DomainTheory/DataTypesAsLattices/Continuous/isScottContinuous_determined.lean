@@ -23,7 +23,7 @@ theorem isScottContinuous_determined {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g)
     (hfin : ∀ n, f (e n) = g (e n)) : f = g := by
   funext x
-  rw [hf x, hg x]
+  rw [hf.out x, hg.out x]
   simp [scottUnion, scottPiece, hfin]
 
 end DomainTheory.DataTypesAsLattices

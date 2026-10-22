@@ -53,8 +53,8 @@ The approximants `(paired s t).iterElem n` similarly split into chains `aOp s t 
 
 ## Claim 1 — `aStar s t`, `bStar s t` really are finitary projections (`isFinitaryProjection_aStar_bStar`)
 
-Given `hst : ∀ a b, IsFinitaryProjection a → IsFinitaryProjection b → IsFinitaryProjection (binOp s
-a b) ∧ IsFinitaryProjection (binOp t a b)` (Scott's hypothesis that `s`/`t` send pairs of
+Given `hst : ∀ a b, FinitaryProjection a → FinitaryProjection b → FinitaryProjection (binOp s
+a b) ∧ FinitaryProjection (binOp t a b)` (Scott's hypothesis that `s`/`t` send pairs of
 projections to projections), an induction using `aOp_succ`/`bOp_succ` shows every approximant pair
 `(aOp s t n, bOp s t n)` consists of finitary projections, exactly as in Exercise 8.23's Claim 1.
 The genuinely new step is transporting Theorem 8.6's `sub`/`subFilter` continuity-with-directed-sups

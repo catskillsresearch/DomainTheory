@@ -29,18 +29,18 @@ theorem theorem_88.{u, u_1} : And
         @DomainTheory.NeighbourhoodSystems.Subsystem Rat D' DomainTheory.NeighbourhoodSystems.U),
         And (@DomainTheory.NeighbourhoodSystems.Isomorphic α Rat D D')
           (And
-            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat D' DomainTheory.NeighbourhoodSystems.U P'
+            (@DomainTheory.NeighbourhoodSystems.ComputableMap Rat Rat D' DomainTheory.NeighbourhoodSystems.U P'
               DomainTheory.NeighbourhoodSystems.UComputablePresentation
               (@DomainTheory.NeighbourhoodSystems.Subsystem.inj Rat D' DomainTheory.NeighbourhoodSystems.U h))
-            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U D'
+            (@DomainTheory.NeighbourhoodSystems.ComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U D'
               DomainTheory.NeighbourhoodSystems.UComputablePresentation P'
               (@DomainTheory.NeighbourhoodSystems.Subsystem.proj Rat D' DomainTheory.NeighbourhoodSystems.U h)))))
   (∀
     {a :
       @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
         DomainTheory.NeighbourhoodSystems.U},
-    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-      @DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+      @DomainTheory.NeighbourhoodSystems.ComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
           DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.UComputablePresentation
           DomainTheory.NeighbourhoodSystems.UComputablePresentation a →
         And
@@ -63,18 +63,18 @@ theorem theorem_88.{u, u_1} : And
         @DomainTheory.NeighbourhoodSystems.Subsystem Rat D' DomainTheory.NeighbourhoodSystems.U),
         And (@DomainTheory.NeighbourhoodSystems.Isomorphic α Rat D D')
           (And
-            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat D' DomainTheory.NeighbourhoodSystems.U P'
+            (@DomainTheory.NeighbourhoodSystems.ComputableMap Rat Rat D' DomainTheory.NeighbourhoodSystems.U P'
               DomainTheory.NeighbourhoodSystems.UComputablePresentation
               (@DomainTheory.NeighbourhoodSystems.Subsystem.inj Rat D' DomainTheory.NeighbourhoodSystems.U h))
-            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U D'
+            (@DomainTheory.NeighbourhoodSystems.ComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U D'
               DomainTheory.NeighbourhoodSystems.UComputablePresentation P'
               (@DomainTheory.NeighbourhoodSystems.Subsystem.proj Rat D' DomainTheory.NeighbourhoodSystems.U h)))))
   (∀
     {a :
       @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
         DomainTheory.NeighbourhoodSystems.U},
-    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
-      @DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+    @DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+      @DomainTheory.NeighbourhoodSystems.ComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
           DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.UComputablePresentation
           DomainTheory.NeighbourhoodSystems.UComputablePresentation a →
         And
@@ -96,10 +96,10 @@ theorem theorem_88.{u, u_1} : And
         @DomainTheory.NeighbourhoodSystems.Subsystem Rat D' DomainTheory.NeighbourhoodSystems.U),
         And (@DomainTheory.NeighbourhoodSystems.Isomorphic α Rat D D')
           (And
-            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat D' DomainTheory.NeighbourhoodSystems.U P'
+            (@DomainTheory.NeighbourhoodSystems.ComputableMap Rat Rat D' DomainTheory.NeighbourhoodSystems.U P'
               DomainTheory.NeighbourhoodSystems.UComputablePresentation
               (@DomainTheory.NeighbourhoodSystems.Subsystem.inj Rat D' DomainTheory.NeighbourhoodSystems.U h))
-            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U D'
+            (@DomainTheory.NeighbourhoodSystems.ComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U D'
               DomainTheory.NeighbourhoodSystems.UComputablePresentation P'
               (@DomainTheory.NeighbourhoodSystems.Subsystem.proj Rat D' DomainTheory.NeighbourhoodSystems.U h))))
     @DomainTheory.NeighbourhoodSystems.theorem_8_8_a @DomainTheory.NeighbourhoodSystems.theorem_8_8_b)

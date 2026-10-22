@@ -29,9 +29,9 @@ theorem isOpen_iff_upper_basic (U : Set V.Element) :
         (∀ x ∈ U, ∃ X, x.mem X ∧ V.basicOpen X ⊆ U) := by
   constructor
   · intro hU
-    exact ⟨V.isOpen_isUpperSet hU, hU⟩
+    exact ⟨V.isOpen_isUpperSet hU, hU.out⟩
   · rintro ⟨_, h2⟩
-    exact h2
+    exact ⟨h2⟩
 
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems

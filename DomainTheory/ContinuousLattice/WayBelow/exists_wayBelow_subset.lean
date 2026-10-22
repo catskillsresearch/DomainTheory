@@ -28,7 +28,7 @@ variable {D : Type u} [CompleteLattice D]
 every Scott-open `U` containing `z` contains some basic neighbourhood `↟a` of `z`. Indeed
 `z = ⊔{a | a ≪ z}` is a directed supremum lying in the open set `U`, so some `a ≪ z` already
 lies in `U`, and then `↟a ⊆ ↑a ⊆ U`. -/
-theorem exists_wayBelow_subset (hD : IsContinuousLattice D) {U : Set D} (hU : ScottOpen U)
+theorem exists_wayBelow_subset (hD : ContinuousLattice D) {U : Set D} (hU : ScottOpen U)
     {z : D} (hz : z ∈ U) : ∃ a, a ≪ z ∧ {w | a ≪ w} ⊆ U := by
   have hne : {a | a ≪ z}.Nonempty := ⟨⊥, bot_wayBelow z⟩
   have hsup : sSup {a | a ≪ z} ∈ U := by rw [hD.sSup_wayBelow z]; exact hz

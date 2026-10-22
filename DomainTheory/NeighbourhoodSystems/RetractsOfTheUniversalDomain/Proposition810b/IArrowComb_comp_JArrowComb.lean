@@ -30,7 +30,7 @@ section ArrowCase
 
 variable (a b : ApproximableMap U U)
 
-theorem IArrowComb_comp_JArrowComb (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b) :
+theorem IArrowComb_comp_JArrowComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (IArrowComb a b).comp (JArrowComb a b) = arrowComb a b := by
   unfold IArrowComb JArrowComb
   rw [comp_assoc, ← comp_assoc (expMap _ _) (expMap _ _) jArrow, ← expMap_comp,

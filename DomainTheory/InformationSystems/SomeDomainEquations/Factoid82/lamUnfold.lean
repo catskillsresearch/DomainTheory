@@ -38,7 +38,7 @@ def lamUnfold (t : LamDToken A) :
   match t with
   | ⟨.bot, _⟩ => .bot
   | ⟨.atom x, _⟩ => .left x
-  | ⟨.funTok xs ys, ⟨hxs, hys⟩⟩ =>
+  | ⟨.funTok xs ys, ⟨⟨hxs, hys⟩⟩⟩ =>
       let u := listToLamDFinset A xs fun _w hw =>
         IsLamWF_of_mem A hxs ((mem_listToFinset).2 hw)
       let v := listToLamDFinset A ys fun _w hw =>

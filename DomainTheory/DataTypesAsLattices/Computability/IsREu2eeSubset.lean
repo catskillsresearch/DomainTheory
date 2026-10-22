@@ -29,7 +29,7 @@ theorem IsRE.eSubset {x : Pomega} (hx : IsRE x) :
     REPred fun n => e n ⊆ x := by
   have hf : Partrec fun k : ℕ =>
       (Part.assert (k ∈ x) fun _ => Part.some (0 : ℕ)) :=
-    hx.map (Computable.const (0 : ℕ)).to₂
+    hx.out.map (Computable.const (0 : ℕ)).to₂
   obtain ⟨c, hc⟩ := Code.exists_code.1 (Partrec.nat_iff.1 hf)
   have hex : REPred fun n =>
       ∃ s, ∀ k < n, n.testBit k = false ∨ (evaln s c k).isSome = true :=

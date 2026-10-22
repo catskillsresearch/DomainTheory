@@ -28,7 +28,7 @@ variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 /-- Proposition 4.2's embedding `i_{n∞}` is also continuous for Scott's literal inverse-limit
 topology, namely the subspace topology inherited from the product `∏ₘ Dₘ`. -/
-theorem embInf_inverseLimitTopology_continuous (hD : ∀ n, IsContinuousLattice (D n)) (n : ℕ) :
+theorem embInf_inverseLimitTopology_continuous (hD : ∀ n, ContinuousLattice (D n)) (n : ℕ) :
     @Continuous (D n) (InverseLimit D P) scottTopologicalSpace
       (inverseLimitTopology D P) (embInf D P n) := by
   rw [← inverseLimit_scottTopology_eq_induced_pi D P hD]

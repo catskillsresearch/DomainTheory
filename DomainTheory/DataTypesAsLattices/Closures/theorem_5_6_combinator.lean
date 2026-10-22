@@ -26,7 +26,7 @@ theorem theorem_5_6_combinator :
   rw [typed, arrowR_app]
   apply graph_ext
   intro f
-  have hV : IsClosure Vcomb := theorem_5_5_universe.1
+  have hV : Closure Vcomb := theorem_5_5_universe.1
   have harr : Retract (arrowR Vcomb Vcomb) := theorem_5_3 hV hV
   have hf' : typed (funOf (arrowR Vcomb Vcomb) f) (arrowR Vcomb Vcomb) :=
     (retract_app harr f).symm

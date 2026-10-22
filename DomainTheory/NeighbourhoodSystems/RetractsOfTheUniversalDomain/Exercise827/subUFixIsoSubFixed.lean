@@ -17,7 +17,7 @@ open NeighborhoodSystem ApproximableMap
 /-- **`subU`'s fixed points are exactly the finitary projections of `𝒰`** (Exercise 8.27's
 opening sentence, precisely): composing `subUFixIso` with Theorem 8.6(b)(ii)'s `subApproxFixIso`
 identifies `Fix(subU)` with `{f : 𝒰→𝒰 ∣ sub f = f}`, which by Theorem 8.6(a)'s
-`sub_eq_self_iff_isFinitaryProjection` is exactly `{f ∣ IsFinitaryProjection f}`. -/
+`sub_eq_self_iff_isFinitaryProjection` is exactly `{f ∣ FinitaryProjection f}`. -/
 noncomputable def subUFixIsoSubFixed :
     {w : U.Element // subU.toElementMap w = w} ≃o
       {f : ApproximableMap U U // sub f = f} :=

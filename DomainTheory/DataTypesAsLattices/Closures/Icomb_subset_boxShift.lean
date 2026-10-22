@@ -19,7 +19,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxShift_expansive
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem Icomb_subset_boxShift {a : Pomega} (ha : IsClosure a) :
+theorem Icomb_subset_boxShift {a : Pomega} (ha : Closure a) :
     Icomb ⊆ boxShift a :=
   Icomb_subset_graph.mpr fun n => by
     rw [← boxShift_app]

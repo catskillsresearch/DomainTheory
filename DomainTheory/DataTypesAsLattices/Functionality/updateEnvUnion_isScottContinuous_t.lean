@@ -18,13 +18,14 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem updateEnvUnion_isScottContinuous_t (x idx : Pomega) :
     IsScottContinuous (fun t => updateEnvUnion t x idx) := by
+  constructor
   intro t
   ext k
   constructor
   · intro hk
     obtain ⟨n, hn, hkn⟩ := Set.mem_iUnion₂.mp hk
     have : k ∈ scottUnion (fun t => updateEnv t x n) t := by
-      rw [← updateEnv_isScottContinuous_t x n t]; exact hkn
+      rw [← (updateEnv_isScottContinuous_t x n).out t]; exact hkn
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp this
     exact mem_scottUnion.mpr ⟨m, hm, Set.mem_iUnion₂.mpr ⟨n, hn, hkm⟩⟩
   · intro hk

@@ -34,7 +34,8 @@ variable {P}
 
 
 theorem projN_isComputable (P : ComputablePresentation V) (n : ℕ) :
-    IsComputableMap (iterPresentation P) P (projN V n) := by
+    ComputableMap (iterPresentation P) P (projN V n) := by
+  constructor
   have hincl : RecDecidable (fun s => P.X s.unpair.1 ⊆ P.X s.unpair.2) := P.incl_computable
   have hr : Nat.Primrec (fun t => Nat.pair (nthCode t.unpair.1 n P.masterIdx) t.unpair.2) :=
     ((primrec_nthCode.comp (Nat.Primrec.left.pair

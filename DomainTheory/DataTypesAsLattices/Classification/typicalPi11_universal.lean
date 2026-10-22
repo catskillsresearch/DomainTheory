@@ -21,11 +21,11 @@ open TopologicalSpace
 /-- **Scott 1976, Table 3.** `Π₁¹` is the class of continuous preimages of
 `{u | ∀ y ∃ z. u(y)(z) = 0}`. -/
 theorem typicalPi11_universal (U : Set Pomega) :
-    IsPi11 U ↔ ∃ f, IsScottContinuous f ∧ U = {x | f x ∈ typicalPi11} := by
+    Pi11 U ↔ ∃ f, IsScottContinuous f ∧ U = {x | f x ∈ typicalPi11} := by
   constructor
-  · rintro ⟨h, hh, rfl⟩
+  · rintro ⟨⟨h, hh, rfl⟩⟩
     exact ⟨h, hh, rfl⟩
   · rintro ⟨f, hf, rfl⟩
-    exact ⟨f, hf, rfl⟩
+    exact ⟨⟨f, hf, rfl⟩⟩
 
 end DomainTheory.DataTypesAsLattices

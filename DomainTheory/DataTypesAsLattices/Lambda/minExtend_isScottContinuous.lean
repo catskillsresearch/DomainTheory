@@ -16,6 +16,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem minExtend_isScottContinuous (p : ℕ → Pomega) :
     IsScottContinuous (minExtend p) := by
+  constructor
   intro x
   ext k
   constructor

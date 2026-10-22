@@ -45,7 +45,7 @@ theorem toC_ofC (X : Set τ) (hX : X ∈ C) : toC C hInter hne (ofC C hInter hne
     have hFX : F.1 ⊆ X := h1.trans (Cl_subset C hX hF'X)
     exact Cl_subset C hX hFX htCl
   · intro t ht
-    have hst : IsTok C {t} := ⟨Set.finite_singleton t, X, hX, Set.singleton_subset_iff.mpr ht⟩
+    have hst : IsTok C {t} := ⟨⟨Set.finite_singleton t, X, hX, Set.singleton_subset_iff.mpr ht⟩⟩
     rw [mem_toC]
     refine ⟨⟨{t}, hst⟩, ?_, subset_Cl C {t} rfl⟩
     exact ⟨⟨⟨{t}, hst⟩, rfl⟩, ⟨{t}, hst⟩, Set.singleton_subset_iff.mpr ht, subset_rfl⟩

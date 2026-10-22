@@ -102,6 +102,7 @@ theorem IsRE.condC : IsRE condC := by
               (Nat.unpair (Nat.unpair (Nat.unpair t).2).2).2 = true ∧
             2 ≤ (Nat.unpair (Nat.unpair (Nat.unpair t).2).2).1)) :=
     REPred.exists hinner.computablePred.to_re
+  constructor
   refine hex.of_eq fun p => ?_
   constructor
   · intro ⟨t, ht, hm⟩

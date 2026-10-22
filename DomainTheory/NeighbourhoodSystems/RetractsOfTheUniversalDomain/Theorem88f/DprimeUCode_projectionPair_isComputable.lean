@@ -28,9 +28,9 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 relative to `D''`'s own presentation (`DprimeUCodePresentation`) and `U`'s presentation
 (`UComputablePresentation`) — the headline claim of Theorem 8.8(b)(vii). -/
 theorem DprimeUCode_projectionPair_isComputable :
-    IsComputableMap (DprimeUCodePresentation P) UComputablePresentation
+    ComputableMap (DprimeUCodePresentation P) UComputablePresentation
         (DprimeUCode_subsystem P).inj ∧
-      IsComputableMap UComputablePresentation (DprimeUCodePresentation P)
+      ComputableMap UComputablePresentation (DprimeUCodePresentation P)
         (DprimeUCode_subsystem P).proj :=
   ⟨DprimeUCode_inj_isComputableMap P, DprimeUCode_proj_isComputableMap P⟩
 

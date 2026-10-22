@@ -36,7 +36,7 @@ combinatory closure. -/
 theorem IsRE.combinatory {u : Pomega} (hu : IsRE u) : IsCombinatory u := by
   have hpart : Partrec fun k : ℕ =>
       Part.assert (k ∈ u) fun _ => Part.some (0 : ℕ) :=
-    hu.map (Computable.const (0 : ℕ)).to₂
+    hu.out.map (Computable.const (0 : ℕ)).to₂
   obtain ⟨c, hc⟩ := Code.exists_code.1 (Partrec.nat_iff.1 hpart)
   obtain ⟨r, hr, hreal⟩ := primrec_realized (primrec_enumFun c)
   have hrange := enumRangeC_eq hreal

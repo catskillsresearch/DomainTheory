@@ -36,6 +36,6 @@ theorem theorem_3_6_finite (xs : List Pomega) :
   · refine ⟨funOf (funOf Scomb Icomb_SK) (funOf Kcomb zeroC),
       .app (.app .S (.app (.app .S .K) .K)) (.app .K .zero), ?_⟩
     rw [Scomb_beta3, Icomb_SK_app, Kcomb_beta2, singleGenerator_app_zero]
-  · exact (Deg_isSubalgebra (singleGenerator xs)).1
+  · exact (Deg_isSubalgebra (singleGenerator xs)).out.1
 
 end DomainTheory.DataTypesAsLattices

@@ -23,7 +23,7 @@ Following Dana Scott, *Lectures on a Mathematical Theory of Computation*, PRG-19
 
 The "`D^§` is effectively given" half is `Proposition77.dsharp_isEffectivelyGiven`. Here we treat,
 as Scott does, *a selection* of the Example 6.1 combinators and exhibit them as
-`ApproximableMap`s that are `IsComputableMap` with respect to the canonical presentation
+`ApproximableMap`s that are `ComputableMap` with respect to the canonical presentation
 `dsharpPresentation P hD`:
 
 * **`inSharpMap`** — Scott's injection `λx. x^§ : D → D^§` (Example 6.1's `inSharp`). Its

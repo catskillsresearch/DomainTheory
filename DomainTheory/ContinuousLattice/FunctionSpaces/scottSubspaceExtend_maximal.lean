@@ -38,7 +38,7 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattic
 /-- **Scott 1972, Proposition 3.8 (subspace variant).** `f̄` (with the Scott topology on `Y`) is
 the maximal extension along a subspace embedding. The faithful statement (arbitrary topology on
 `Y`) is `proposition_3_8` in `Constructions.lean`. -/
-theorem scottSubspaceExtend_maximal (hD : IsContinuousLattice D) (e : X → Y) (_he : IsEmbedding e)
+theorem scottSubspaceExtend_maximal (hD : ContinuousLattice D) (e : X → Y) (_he : IsEmbedding e)
     (f : X → D) (f' : ScottMap Y D) (h_ext : ∀ x, f' (e x) = f x) (y : Y) :
     (f' : Y → D) y ≤ scottSubspaceExtend e f y := by
   have hEq := scottMap_eq_sSup_openInfs hD f' y

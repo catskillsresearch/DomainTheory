@@ -61,9 +61,9 @@ Theorem 8.5's subdomain `D = fixedNbhd f = {Y ∈ E ∣ Y f Y}` (which, recall, 
   built from literally the same subsystem and hence are equal, not just related by `≤`.
 * **`sub` is monotone** (`sub_mono`) — immediate from `fixedNbhd`'s definition.
 * **`range(sub) = finitary projections`, both directions** (`sub_eq_self_iff_isFinitaryProjection`):
-  the easy half `sub f = f → IsFinitaryProjection f` (`isFinitaryProjection_of_sub_eq_self`) is
+  the easy half `sub f = f → FinitaryProjection f` (`isFinitaryProjection_of_sub_eq_self`) is
   immediate substitution into `Subsystem.isFinitaryProjection_retractionOfSubsystem`; the converse
-  `IsFinitaryProjection f → sub f = f` (`sub_eq_self_of_isFinitaryProjection`) is now unblocked by
+  `FinitaryProjection f → sub f = f` (`sub_eq_self_of_isFinitaryProjection`) is now unblocked by
   Theorem 8.5's hard direction (`formula_of_isFinitaryProjection`): `sub_le` gives `⊇` for free, and
   `⊆` unwinds `X f Z` via `rel_iff_mem_principal` into `Z ∈ f(↑X)`, then rewrites via Theorem 8.5's
   formula into exactly `sub_rel`'s defining shape.
@@ -83,7 +83,7 @@ transported along `funSpaceEquiv`. `subFilter`'s directed-sup-preservation
 correspond, under `toApproxMap`, to the raw union of the underlying maps' *relations*
 (`toApproxMap_rel_iSupDirected`, immediate from `mem_iSupDirected`), and `sub`'s formula is a
 *positive* existential in `f`'s relation, hence commutes with such unions by pure logic
-(`sub_toApproxMap_iSupDirected`). `IsRetraction subApprox`/`subApprox ≤ idMap` then drop out of
+(`sub_toApproxMap_iSupDirected`). `Retraction subApprox`/`subApprox ≤ idMap` then drop out of
 `sub_sub`/`sub_le` respectively (`isProjection_subApprox`).
 
 **`IsFinitary subApprox`** (`isFinitary_subApprox`) turned out *not* to need the universal-domain

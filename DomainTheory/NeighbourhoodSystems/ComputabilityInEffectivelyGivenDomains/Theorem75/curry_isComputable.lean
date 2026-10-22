@@ -36,10 +36,11 @@ theorem curry_isComputable {V₂ : NeighborhoodSystem γ} (P₂ : ComputablePres
     (hincl1 : ∀ s, incl1 s = 1 ↔ P₂.X s.unpair.1 ⊆ P₂.X s.unpair.2) (hincl1p : Nat.Primrec incl1)
     (heq1 : ∀ s, eq1 s = 1 ↔ P₂.X s.unpair.1 = P₂.X s.unpair.2) (heq1p : Nat.Primrec eq1)
     {g : ApproximableMap (prod V₀ V₁) V₂}
-    (hg : IsComputableMap (prodPresentation P₀ P₁) P₂ g) :
-    IsComputableMap P₀ (funPresentation P₁ P₂ gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p
+    (hg : ComputableMap (prodPresentation P₀ P₁) P₂ g) :
+    ComputableMap P₀ (funPresentation P₁ P₂ gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p
       hincl1 hincl1p heq1 heq1p) (curry g) := by
-  have hg' : REPred (fun s => g.rel ((prodPresentation P₀ P₁).X s.unpair.1) (P₂.X s.unpair.2)) := hg
+  constructor
+  have hg' : REPred (fun s => g.rel ((prodPresentation P₀ P₁).X s.unpair.1) (P₂.X s.unpair.2)) := hg.out
   have hre : Nat.Primrec (fun s => Nat.pair (Nat.pair s.unpair.1 s.unpair.2.unpair.1)
       s.unpair.2.unpair.2) :=
     (Nat.Primrec.left.pair (Nat.Primrec.left.comp Nat.Primrec.right)).pair

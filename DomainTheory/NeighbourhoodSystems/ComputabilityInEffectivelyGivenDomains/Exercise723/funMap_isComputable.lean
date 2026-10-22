@@ -37,7 +37,7 @@ theorem funMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hincl1 : ∀ s, incl1 s = 1 ↔ PNpres.X s.unpair.1 ⊆ PNpres.X s.unpair.2)
     (hincl1p : Nat.Primrec incl1)
     (heq1 : ∀ s, eq1 s = 1 ↔ PNpres.X s.unpair.1 = PNpres.X s.unpair.2) (heq1p : Nat.Primrec eq1) :
-    IsComputableMap PNpres
+    ComputableMap PNpres
       (funPresentation PNpres PNpres gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p hincl1 hincl1p
         heq1 heq1p)
       funMap :=

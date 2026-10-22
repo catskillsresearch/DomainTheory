@@ -18,7 +18,7 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-theorem typicalPi11_isPi11 : IsPi11 typicalPi11 :=
-  ⟨fun u => u, id_isScottContinuous, rfl⟩
+theorem typicalPi11_isPi11 : Pi11 typicalPi11 :=
+  ⟨⟨fun u => u, id_isScottContinuous, rfl⟩⟩
 
 end DomainTheory.DataTypesAsLattices

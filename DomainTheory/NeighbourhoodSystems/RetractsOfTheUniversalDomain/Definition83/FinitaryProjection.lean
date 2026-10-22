@@ -17,7 +17,8 @@ universe u
 
 variable {α : Type u} {D E : NeighborhoodSystem α}
 
-/-- A **finitary projection**: both clauses of Definition 8.3 together with `IsRetraction`. -/
-def IsFinitaryProjection (a : ApproximableMap E E) : Prop := IsProjection a ∧ IsFinitary a
+/-- A **finitary projection**: both clauses of Definition 8.3 together with `Retraction`. -/
+class FinitaryProjection (a : ApproximableMap E E) : Prop where
+  out : IsProjection a ∧ IsFinitary a
 
 end DomainTheory.NeighbourhoodSystems

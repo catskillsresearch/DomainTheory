@@ -30,8 +30,9 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
 /-- **Proposition 8.10, `+`-case, retraction half.** -/
-theorem isRetraction_sumComb {a b : ApproximableMap U U} (ha : IsRetraction a)
-    (hb : IsRetraction b) : IsRetraction (sumComb a b) := by
+theorem isRetraction_sumComb {a b : ApproximableMap U U} (ha : Retraction a)
+    (hb : Retraction b) : Retraction (sumComb a b) := by
+  constructor
   apply ext_of_toElementMap
   intro x
   rw [toElementMap_comp]

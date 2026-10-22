@@ -26,7 +26,8 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
 /-- **`λx,y. x∩y` is computable.** Reduces to `PNpres.incl_computable`, tested twice and
 conjoined. -/
 theorem capMap_isComputable :
-    IsComputableMap (prodPresentation PNpres PNpres) PNpres capMap := by
+    ComputableMap (prodPresentation PNpres PNpres) PNpres capMap := by
+  constructor
   have hincl : RecDecidable (fun s => nbhd s.unpair.1 ⊆ nbhd s.unpair.2) := PNpres.incl_computable
   have hr0 : Nat.Primrec (fun t => Nat.pair t.unpair.1.unpair.1 t.unpair.2) :=
     (Nat.Primrec.left.comp Nat.Primrec.left).pair Nat.Primrec.right

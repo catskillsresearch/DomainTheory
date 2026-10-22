@@ -28,7 +28,7 @@ variable {e : L → L}
 to `idemFixRetraction`: the Scott topology of `IdemFix e` is the topology induced by the inclusion
 from the Scott topology of `L`. -/
 theorem idemFix_scottTopology (hidem : ∀ x, e (e x) = e x) (hsc : PreservesDirectedSup e)
-    (hL : IsContinuousLattice L) :
+    (hL : ContinuousLattice L) :
     @scottTopologicalSpace (IdemFix e)
         (IdemFix.completeLattice hidem (preservesDirectedSup_monotone hsc)) =
       TopologicalSpace.induced (Subtype.val : IdemFix e → L) scottTopologicalSpace := by

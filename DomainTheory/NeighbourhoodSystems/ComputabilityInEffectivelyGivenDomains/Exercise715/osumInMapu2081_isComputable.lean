@@ -43,7 +43,8 @@ variable (P₀ P₁)
 
 /-- **`in₁` is computable.** Symmetric to `in₀`. -/
 theorem osumInMap₁_isComputable :
-    IsComputableMapS P₁.toScott (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) osumInMap₁ := by
+    ComputableMapS P₁.toScott (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) osumInMap₁ := by
+  constructor
   have hT0 : RecDecidable (fun t => t.unpair.2.unpair.1 = 0) :=
     RecDecidable.natEq (Nat.Primrec.left.comp Nat.Primrec.right) (Nat.Primrec.const 0)
   have hT1 : RecDecidable (fun t => t.unpair.2.unpair.1 = 1) :=

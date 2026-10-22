@@ -38,7 +38,8 @@ variable {P}
 /-- **`F` is computable** (in fact recursively decidable): its index relation reduces to a nested
 bounded `∀` of `incl_computable`. -/
 theorem Fmap_isComputable :
-    IsComputableMap (iterPresentation P) (iterPresentation (iterPresentation P)) (Fmap V) := by
+    ComputableMap (iterPresentation P) (iterPresentation (iterPresentation P)) (Fmap V) := by
+  constructor
   -- inner predicate `p₂ u`, with `u = ⟨j, ⟨i, ⟨n, m⟩⟩⟩`
   have hLHS : Nat.Primrec (fun u : ℕ =>
       iterIdx P u.unpair.2.unpair.2.unpair.1 (Nat.pair u.unpair.2.unpair.1 u.unpair.1)) := by

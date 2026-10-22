@@ -25,7 +25,7 @@ open NeighborhoodSystem ApproximableMap
 /-- **`fixedNbhd a ≅ Fix(a)`, for any finitary projection `a : 𝒰 → 𝒰`.** Theorem 8.6(a)'s
 `inj_comp_proj_eq_self` identifies `retractionOfSubsystem (fixedNbhd_subsystem a)` with `a` itself,
 transporting Proposition 8.2's `elementIso` along the identification. -/
-noncomputable def fixedNbhd_elementIso_fix {a : ApproximableMap U U} (ha : IsFinitaryProjection a) :
+noncomputable def fixedNbhd_elementIso_fix {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     (fixedNbhd a).Element ≃o {y : U.Element // a.toElementMap y = y} := by
   have h := Subsystem.elementIso (fixedNbhd_subsystem a)
   unfold Subsystem.retractionOfSubsystem at h

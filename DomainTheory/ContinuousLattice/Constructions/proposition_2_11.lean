@@ -27,7 +27,7 @@ variable {D : Type*} [CompleteLattice D]
 induced (Scott) topology. The witness is `scottExtend`, which extends any continuous `f` along
 any embedding `e` (`scottExtend_eq_of_continuous`) and is itself continuous
 (`scottExtend_continuous`). -/
-theorem proposition_2_11 {E : Type*} [CompleteLattice E] (hE : IsContinuousLattice E) :
+theorem proposition_2_11 {E : Type*} [CompleteLattice E] (hE : ContinuousLattice E) :
     @InjectiveSpace E scottTopologicalSpace := by
   let : TopologicalSpace E := scottTopologicalSpace
   constructor

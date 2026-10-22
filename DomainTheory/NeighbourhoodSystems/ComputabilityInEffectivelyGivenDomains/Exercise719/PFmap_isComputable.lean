@@ -31,9 +31,9 @@ theorem PFmap_isComputable (P : ComputablePresentation V) (Q : ComputablePresent
     (hconsVs : ∀ a b, consV (Nat.pair a b) = 1 ↔ ∃ k, P.X k ⊆ P.X a ∩ P.X b)
     (consW : ℕ → ℕ) (hconsWp : Nat.Primrec consW)
     (hconsWs : ∀ a b, consW (Nat.pair a b) = 1 ↔ ∃ k, Q.X k ⊆ Q.X a ∩ Q.X b)
-    {f : ApproximableMap V W} (hf : IsComputableMap P Q f) :
-    IsComputableMap (V.PDPresentation P consV hconsVp hconsVs)
+    {f : ApproximableMap V W} (hf : ComputableMap P Q f) :
+    ComputableMap (V.PDPresentation P consV hconsVp hconsVs)
       (W.PDPresentation Q consW hconsWp hconsWs) (PFmap f) := by
-  exact PFmap_isComputable_Ypd P Q hf
+  exact ⟨PFmap_isComputable_Ypd P Q hf⟩
 
 end DomainTheory.NeighbourhoodSystems

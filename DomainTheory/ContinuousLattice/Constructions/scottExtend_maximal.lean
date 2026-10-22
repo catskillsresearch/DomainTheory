@@ -32,7 +32,7 @@ omit [TopologicalSpace X] in
 `f' ∘ e = f` lies below `scottExtend e f`. Following Scott: expand `f'` via
 `continuous_eq_sSup_openInfs`, restrict each meet from `U` to the embedded subspace `e(X) ∩ U`
 (only enlarging the meet), and recognize the result as a defining term of `scottExtend`. -/
-theorem scottExtend_maximal (hE : IsContinuousLattice E) (e : X → Y) {f : X → E} {f' : Y → E}
+theorem scottExtend_maximal (hE : ContinuousLattice E) (e : X → Y) {f : X → E} {f' : Y → E}
     (hf' : @Continuous Y E _ scottTopologicalSpace f') (h_ext : ∀ x, f' (e x) = f x) (y : Y) :
     f' y ≤ scottExtend e f y := by
   rw [continuous_eq_sSup_openInfs hE hf' y]

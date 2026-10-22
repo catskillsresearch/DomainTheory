@@ -17,7 +17,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- Isolated points of a closure are its values on finite sets, and
 conversely every `a(e n)` is a typed point. -/
-theorem theorem_5_1_isolated {a : Pomega} (_ha : IsClosure a) {x : Pomega}
+theorem theorem_5_1_isolated {a : Pomega} (_ha : Closure a) {x : Pomega}
     (hx : typed x a) :
     Isolated x → ∃ n, x = funOf a (e n) := by
   intro h

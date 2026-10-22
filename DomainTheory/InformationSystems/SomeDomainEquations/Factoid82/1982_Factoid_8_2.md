@@ -88,7 +88,7 @@ It is clear that these definitions are constructive, and that, with a suitable G
 - [InformationSystems/SomeDomainEquations/Factoid82/lamForget.lean](lamForget.lean)
 - [InformationSystems/SomeDomainEquations/Factoid82/lamForgetInsert.lean](lamForgetInsert.lean)
 - [InformationSystems/SomeDomainEquations/Factoid82/BasicInst27.lean](BasicInst27.lean)
-- [InformationSystems/SomeDomainEquations/Factoid82/IsLamWF.lean](IsLamWF.lean)
+- [InformationSystems/SomeDomainEquations/Factoid82/LamWF.lean](LamWF.lean)
 - [InformationSystems/SomeDomainEquations/Factoid82/LamConDepth_of_fun_empty.lean](LamConDepth_of_fun_empty.lean)
 - [InformationSystems/SomeDomainEquations/Factoid82/LamConDepth_of_fun_nonempty.lean](LamConDepth_of_fun_nonempty.lean)
 - [InformationSystems/SomeDomainEquations/Factoid82/LamDToken.lean](LamDToken.lean)

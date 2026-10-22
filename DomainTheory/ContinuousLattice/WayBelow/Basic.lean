@@ -8,7 +8,7 @@ public import Mathlib.Order.UpperLower.Basic
 public import Mathlib.Order.Directed
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLattice
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.WayBelow.Basic.notation5
 
 @[expose] public section

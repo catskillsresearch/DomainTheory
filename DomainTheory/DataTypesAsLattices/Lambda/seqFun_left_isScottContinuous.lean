@@ -17,13 +17,14 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem seqFun_left_isScottContinuous (x : Pomega) :
     IsScottContinuous (fun u => seqFun u x) := by
+  constructor
   intro u
   ext k
   constructor
   · intro hk
     obtain ⟨i, hi, hki⟩ := Set.mem_iUnion₂.mp hk
     have : k ∈ scottUnion (fun v => funOf v (ofNat i)) u := by
-      rw [← funOf_isScottContinuous_left (ofNat i) u]; exact hki
+      rw [← (funOf_isScottContinuous_left (ofNat i)).out u]; exact hki
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp this
     exact mem_scottUnion.mpr ⟨n, hn, Set.mem_iUnion₂.mpr ⟨i, hi, hkn⟩⟩
   · intro hk

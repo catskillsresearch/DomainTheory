@@ -18,6 +18,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set
 variable {τ : Type*} (C : Set (Set τ))
 
 /-- A token: a finite set included in some member of `C`. -/
-def IsTok (F : Set τ) : Prop := F.Finite ∧ ∃ X ∈ C, F ⊆ X
+class IsTok (F : Set τ) : Prop where
+  out : F.Finite ∧ ∃ X ∈ C, F ⊆ X
 
 end DomainTheory.NeighbourhoodSystems.Exercise222

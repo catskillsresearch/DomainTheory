@@ -53,6 +53,6 @@ theorem theorem_3_5_case2 {u : Pomega} {p : ℕ → ℕ} {n j k : ℕ}
     _root_.REPred.of_eq
       (valNat_mem_comp_primrec (k := k) hu hr (primrec_myhillCase2Code j n))
       fun m => hiff m
-  exact theorem_3_4 hre
+  exact theorem_3_4 ⟨hre⟩
 
 end DomainTheory.DataTypesAsLattices

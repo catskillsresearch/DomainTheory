@@ -38,7 +38,7 @@ theorem theorem_86_c.{u_1} : And
             (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α E P (@Prod.fst Nat Nat (Nat.unpair s)))
             (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α E P (@Prod.snd Nat Nat (Nat.unpair s)))))
     (heqp : Nat.Primrec eq),
-    @DomainTheory.NeighbourhoodSystems.IsComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
+    @DomainTheory.NeighbourhoodSystems.ComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
       (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
       (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
       (@DomainTheory.NeighbourhoodSystems.funPresentation α α E E P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp
@@ -52,7 +52,7 @@ theorem theorem_86_c.{u_1} : And
         @DomainTheory.NeighbourhoodSystems.ComputablePresentation
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)),
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
+        @DomainTheory.NeighbourhoodSystems.ComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
           Pfun Pfun (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E)) :=
@@ -80,7 +80,7 @@ theorem theorem_86_c.{u_1} : And
             (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α E P (@Prod.fst Nat Nat (Nat.unpair s)))
             (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α E P (@Prod.snd Nat Nat (Nat.unpair s)))))
     (heqp : Nat.Primrec eq),
-    @DomainTheory.NeighbourhoodSystems.IsComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
+    @DomainTheory.NeighbourhoodSystems.ComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
       (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
       (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
       (@DomainTheory.NeighbourhoodSystems.funPresentation α α E E P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp
@@ -94,7 +94,7 @@ theorem theorem_86_c.{u_1} : And
         @DomainTheory.NeighbourhoodSystems.ComputablePresentation
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)),
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
+        @DomainTheory.NeighbourhoodSystems.ComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
           Pfun Pfun (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E))

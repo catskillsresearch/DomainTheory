@@ -48,7 +48,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
 /-- **Exercise 8.12(d)(5)(f)(ii).** `ofIso domainIsoCode812d` is computable relative to `P₀`/`P₁`:
-via `(f)(i)`'s `toD1Code_rel_iff`, `IsComputableMap P₀ P₁ (ofIso domainIsoCode812d)` reduces to
+via `(f)(i)`'s `toD1Code_rel_iff`, `ComputableMap P₀ P₁ (ofIso domainIsoCode812d)` reduces to
 `REPred₂ (fun n m => ∃ k, P₁.X m = P₁.X (XPseqCode … k) ∧ P₀.X n ⊆ P₀.X k)`. Unlike
 `Theorem88n.lean`'s `isoInj_isComputableMap` (whose `eIdx` supplies a *unique* witness, no genuine
 existential), the `∃ k` here is unbounded, so this mirrors `Definition72.lean`'s
@@ -57,9 +57,10 @@ conjuncts are separately `RecDecidable` (`P₁.eq_computable` reindexed along th
 `XPseqCode` in the first coordinate; `P₀.incl_computable` reindexed directly), conjoined
 (`RecDecidable.and`), lifted to `REPred` (`.re`), and closed by `REPred.proj` over the outer `∃ k`. -/
 theorem domainIsoCode812d_isComputableMap :
-    IsComputableMap P₀ P₁ (ofIso (domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
+    ComputableMap P₀ P₁ (ofIso (domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
       hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
       hUnion1 hX0 hY0)) := by
+  constructor
   have hg : Nat.Primrec (fun w : ℕ => Nat.pair w.unpair.2.unpair.2
       (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 w.unpair.1)) :=
     Nat.Primrec.pair (Nat.Primrec.right.comp Nat.Primrec.right)

@@ -12,7 +12,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamE
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepth
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst23
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst27
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.IsLamWF
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamWF
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst70
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst74
@@ -32,7 +32,7 @@ variable (A : InfoSys α)
 /-- Lift a raw Con set to a finset of depth-WF tokens. -/
 def listToLamDFinset :
     (xs : List (RawLamToken α)) →
-      (∀ t ∈ xs, IsLamWF A t) → Finset (LamDToken A)
+      (∀ t ∈ xs, LamWF A t) → Finset (LamDToken A)
   | [], _ => ∅
   | t :: ts, h =>
       insert ⟨t, h t List.mem_cons_self⟩

@@ -33,7 +33,7 @@ exactly Theorem 8.6(a)'s order-isomorphism `finitaryProjectionSubsystemEquiv`, r
 `sub`-fixed points to finitary projections via `sub_eq_self_iff_isFinitaryProjection`, and fills the
 gap Scott leaves at the end of the proof of Theorem 8.6. -/
 theorem isFinitaryProjection_le_iff_fixedNbhd_subsystem {a b : ApproximableMap E E}
-    (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b) :
+    (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     a ≤ b ↔ fixedNbhd a ◁ fixedNbhd b := by
   have hsa : sub a = a := sub_eq_self_iff_isFinitaryProjection.mpr ha
   have hsb : sub b = b := sub_eq_self_iff_isFinitaryProjection.mpr hb

@@ -19,7 +19,8 @@ open NeighborhoodSystem ApproximableMap
 
 
 /-- **`Π(d)` is a retraction, for any `d`.** -/
-theorem isRetraction_piD (d : ApproximableMap U U) : IsRetraction (piD d) := by
+theorem isRetraction_piD (d : ApproximableMap U U) : Retraction (piD d) := by
+  constructor
   apply ApproximableMap.ext_of_toElementMap
   intro φ
   apply (funSpaceEquiv U U).injective
@@ -32,6 +33,6 @@ theorem isRetraction_piD (d : ApproximableMap U U) : IsRetraction (piD d) := by
     piDApply_toElementMap_eq d (toApproxMap φ) t,
     toElementMap_piDApply d (toApproxMap φ) t]
   exact toElementMap_idem_of_isRetraction
-    (isFinitaryProjection_decode_subU (d.toElementMap (subU.toElementMap t))).1.1 _
+    (isFinitaryProjection_decode_subU (d.toElementMap (subU.toElementMap t))).out.1.1 _
 
 end DomainTheory.NeighbourhoodSystems

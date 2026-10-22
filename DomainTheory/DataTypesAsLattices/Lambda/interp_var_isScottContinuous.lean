@@ -25,19 +25,22 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
     IsScottContinuous (fun v => interp t (envSet ρ i v)) := by
   induction t generalizing ρ i with
   | var j =>
+    constructor
     intro x
     by_cases hj : j = i
     · subst hj
-      simpa [interp, envSet, Function.update] using id_isScottContinuous x
-    · simpa [interp, envSet, Function.update, hj] using const_isScottContinuous (ρ j) x
+      simpa [interp, envSet, Function.update] using id_isScottContinuous.out x
+    · simpa [interp, envSet, Function.update, hj] using (const_isScottContinuous (ρ j)).out x
   | zero =>
+    constructor
     intro x
-    simpa [interp] using const_isScottContinuous (ofNat 0) x
+    simpa [interp] using (const_isScottContinuous (ofNat 0)).out x
   | succ t ih =>
     exact theorem_1_3 succSet_isScottContinuous (ih ρ i)
   | pred t ih =>
     exact theorem_1_3 predSet_isScottContinuous (ih ρ i)
   | cond z x y iz ix iy =>
+    constructor
     intro w
     ext n
     simp only [interp]
@@ -45,10 +48,10 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
     · intro hn
       rcases hn with ⟨hnx, h0⟩ | ⟨hny, t, ht⟩
       · have : n ∈ scottUnion (fun v => interp x (envSet ρ i v)) w := by
-          rw [← ix ρ i w]; exact hnx
+          rw [← (ix ρ i).out w]; exact hnx
         obtain ⟨m, hm, hnm⟩ := mem_scottUnion.mp this
         have : 0 ∈ scottUnion (fun v => interp z (envSet ρ i v)) w := by
-          rw [← iz ρ i w]; exact h0
+          rw [← (iz ρ i).out w]; exact h0
         obtain ⟨m', hm', h0m⟩ := mem_scottUnion.mp this
         refine mem_scottUnion.mpr ⟨m ||| m', e_or_of_subset hm hm', Or.inl ⟨?_, ?_⟩⟩
         · exact isScottContinuous_monotone (ix ρ i)
@@ -56,10 +59,10 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
         · exact isScottContinuous_monotone (iz ρ i)
             (by rw [e_or]; exact Set.subset_union_right) h0m
       · have : n ∈ scottUnion (fun v => interp y (envSet ρ i v)) w := by
-          rw [← iy ρ i w]; exact hny
+          rw [← (iy ρ i).out w]; exact hny
         obtain ⟨m, hm, hnm⟩ := mem_scottUnion.mp this
         have : t + 1 ∈ scottUnion (fun v => interp z (envSet ρ i v)) w := by
-          rw [← iz ρ i w]; exact ht
+          rw [← (iz ρ i).out w]; exact ht
         obtain ⟨m', hm', htm⟩ := mem_scottUnion.mp this
         refine mem_scottUnion.mpr ⟨m ||| m', e_or_of_subset hm hm', Or.inr ⟨?_, t, ?_⟩⟩
         · exact isScottContinuous_monotone (iy ρ i)
@@ -74,13 +77,14 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
       · exact Or.inr ⟨isScottContinuous_monotone (iy ρ i) hm hny, t,
           isScottContinuous_monotone (iz ρ i) hm ht⟩
   | app u x iu ix =>
+    constructor
     intro w
     ext n
     simp only [interp]
     constructor
     · intro ⟨p, hp, hpair⟩
       have : pair p n ∈ scottUnion (fun v => interp u (envSet ρ i v)) w := by
-        rw [← iu ρ i w]; exact hpair
+        rw [← (iu ρ i).out w]; exact hpair
       obtain ⟨m, hm, hpm⟩ := mem_scottUnion.mp this
       obtain ⟨s, hs⟩ := (e_finite p).exists_finset_coe
       have hall : ∀ t ∈ s, ∃ q, e q ⊆ w ∧ t ∈ interp x (envSet ρ i (e q)) := by
@@ -90,7 +94,7 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
           rwa [hs] at this
         have : t ∈ interp x (envSet ρ i w) := hp ht'
         have : t ∈ scottUnion (fun v => interp x (envSet ρ i v)) w := by
-          rwa [← ix ρ i w]
+          rwa [← (ix ρ i).out w]
         exact mem_scottUnion.mp this
       obtain ⟨N, hN, hsN⟩ := exists_e_cover_finite (ix ρ i) s hall
       refine mem_scottUnion.mpr ⟨m ||| N, e_or_of_subset hm hN, p, ?_, ?_⟩
@@ -109,9 +113,10 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
   | lam j body ih =>
     by_cases hj : j = i
     · subst hj
+      constructor
       intro w
       simpa [interp, envSet, Function.update] using
-        const_isScottContinuous (graph (fun v => interp body (envSet ρ j v))) w
+        (const_isScottContinuous (graph (fun v => interp body (envSet ρ j v)))).out w
     · have hmap : IsScottContinuous (fun w =>
           graph (fun v => interp body (envSet (envSet ρ i w) j v))) := by
         refine graph_const_isScottContinuous
@@ -122,7 +127,8 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
           funext w; rw [envSet_comm hj]
         rw [this]
         exact ih (envSet ρ j v) i
+      constructor
       intro w
-      simpa [interp] using hmap w
+      simpa [interp] using hmap.out w
 
 end DomainTheory.DataTypesAsLattices

@@ -23,8 +23,9 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
 /-- **Proposition 8.10, `→`-case (the `lamComb` half), retraction.** -/
-theorem isRetraction_lamComb {a b : ApproximableMap U U} (ha : IsRetraction a)
-    (hb : IsRetraction b) : IsRetraction (lamComb a b) := by
+theorem isRetraction_lamComb {a b : ApproximableMap U U} (ha : Retraction a)
+    (hb : Retraction b) : Retraction (lamComb a b) := by
+  constructor
   apply ext_of_toElementMap
   intro φ
   apply (funSpaceEquiv U U).injective
@@ -32,7 +33,7 @@ theorem isRetraction_lamComb {a b : ApproximableMap U U} (ha : IsRetraction a)
     toApproxMap_toElementMap_lamComb a b ((lamComb a b).toElementMap φ),
     toApproxMap_toElementMap_lamComb a b φ,
     comp_assoc b ((toApproxMap φ).comp a) a,
-    ← comp_assoc b b (((toApproxMap φ).comp a).comp a), hb,
-    comp_assoc (toApproxMap φ) a a, ha]
+    ← comp_assoc b b (((toApproxMap φ).comp a).comp a), hb.out,
+    comp_assoc (toApproxMap φ) a a, ha.out]
 
 end DomainTheory.NeighbourhoodSystems

@@ -56,7 +56,7 @@ for $x \in |D|$ and $y \in |E|$. $\square$
 
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/IsFinitary.lean](IsFinitary.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/IsProjection.lean](IsProjection.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/IsFinitaryProjection.lean](IsFinitaryProjection.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/FinitaryProjection.lean](FinitaryProjection.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isFinitary_retractionOfSubsystem.lean](isFinitary_retractionOfSubsystem.lean)
 - [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/retractionOfSubsystem_le_idMap.lean](retractionOfSubsystem_le_idMap.lean)

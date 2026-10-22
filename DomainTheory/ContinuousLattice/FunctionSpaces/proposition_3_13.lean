@@ -29,7 +29,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 /-- **Scott 1972, Proposition 3.13.** Every continuous lattice `D` is a projection of its function
 space `[D → D]`, via `con`/`min` (`Proposition313.projection`). -/
-theorem proposition_3_13 (_hD : IsContinuousLattice D) :
+theorem proposition_3_13 (_hD : ContinuousLattice D) :
     Nonempty (IsContinuousLatticeProjection D (ScottMap D D)) :=
   ⟨Proposition313.projection⟩
 

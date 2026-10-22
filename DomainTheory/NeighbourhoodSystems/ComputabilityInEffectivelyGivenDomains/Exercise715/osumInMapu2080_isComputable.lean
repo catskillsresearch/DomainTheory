@@ -45,7 +45,8 @@ variable (P₀ P₁)
 `X⁰ₙ ⊆ X⁰_{m.2}`, or `m` the master (`inj₀` of a proper neighbourhood always sits under the master);
 the proper-right case is impossible (`inj₀` of a nonempty set is not `⊆ inj₁`). -/
 theorem osumInMap₀_isComputable :
-    IsComputableMapS P₀.toScott (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) osumInMap₀ := by
+    ComputableMapS P₀.toScott (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) osumInMap₀ := by
+  constructor
   have hT0 : RecDecidable (fun t => t.unpair.2.unpair.1 = 0) :=
     RecDecidable.natEq (Nat.Primrec.left.comp Nat.Primrec.right) (Nat.Primrec.const 0)
   have hT1 : RecDecidable (fun t => t.unpair.2.unpair.1 = 1) :=

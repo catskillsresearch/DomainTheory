@@ -30,7 +30,7 @@ the cross-presentation maps. See `arxiv.md` / `HANDOFF.md`.
 * `infoSys_to_idealCompletion` — **done** (`InfoSysToIdealCompletion.lean`;
   `|A| ≃o Ideal (FiniteElement A)`)
 * `idealCompletion_to_continuousLattice` — **done** (`IdealCompletionToContinuousLattice.lean`;
-  algebraic complete lattice ⇒ `IsContinuousLattice`; classical `≪`)
+  algebraic complete lattice ⇒ `ContinuousLattice`; classical `≪`)
 * `presentation_domains_equiv` — **done** (`PresentationDomains.lean`;
   `D ≃o RoundFilter ≃o RoundInfoSysElement` via `wayBelowNbhdBasis`)
 * `infoSys_constructions_equiv` — **done** (`InfoSysConstructions.lean` +

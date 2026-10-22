@@ -22,6 +22,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem IsRE.numeral (k : ℕ) : IsRE (ofNat k) := by
   have : ComputablePred fun n : ℕ => n = k :=
     ⟨inferInstance, (Primrec.beq.comp Primrec.id (Primrec.const k)).to_comp⟩
+  constructor
   exact REPred.of_eq this.to_re fun n => by simp [ofNat]
 
 end DomainTheory.DataTypesAsLattices

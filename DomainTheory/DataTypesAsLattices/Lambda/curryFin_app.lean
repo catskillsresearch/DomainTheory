@@ -16,7 +16,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem curryFin_app {n : ℕ} {f : (Fin n → Pomega) → Pomega}
-    (hf : IsScottContinuousFin f) (xs : Fin n → Pomega) :
+    (hf : ScottContinuousFin f) (xs : Fin n → Pomega) :
     nestApplyFin (curryFin f) xs = f xs := by
   induction n with
   | zero =>
@@ -27,7 +27,7 @@ theorem curryFin_app {n : ℕ} {f : (Fin n → Pomega) → Pomega}
         curryFin (fun ys => f (Fin.cons (xs 0) ys)) :=
       beta (curryFin_isScottContinuous hf) (xs 0)
     change nestApplyFin (funOf (curryFin f) (xs 0)) (Fin.tail xs) = f xs
-    rw [hβ, ih (hf.2 (xs 0)) (Fin.tail xs)]
+    rw [hβ, ih ⟨hf.out.2 (xs 0)⟩ (Fin.tail xs)]
     exact congrArg f (Fin.cons_self_tail xs)
 
 end DomainTheory.DataTypesAsLattices

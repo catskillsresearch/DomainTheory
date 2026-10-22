@@ -29,7 +29,7 @@ section SumCase
 
 variable (a b : ApproximableMap U U)
 
-theorem ISumComb_comp_JSumComb (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b) :
+theorem ISumComb_comp_JSumComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (ISumComb a b).comp (JSumComb a b) = sumComb a b := by
   unfold ISumComb JSumComb
   rw [comp_assoc, ← comp_assoc (sumMap _ _) (sumMap _ _) jPlus, ← sumMap_comp,

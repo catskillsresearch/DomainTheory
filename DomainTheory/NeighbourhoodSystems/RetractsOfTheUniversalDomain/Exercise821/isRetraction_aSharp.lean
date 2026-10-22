@@ -34,8 +34,9 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 `isRetraction_prodComb`/`isRetraction_arrowComb` recipe (`toElementMap_of_comp_eq_idMap` +
 `toElementMap_idem_of_isRetraction`), conjugated through `jSharp_comp_iSharp` instead of
 `jTimes_comp_iTimes`/`jArrow_comp_iArrow`. -/
-theorem isRetraction_aSharp {a : ApproximableMap U U} (ha2 : IsRetraction (aSharpInner a)) :
-    IsRetraction (aSharp a) := by
+theorem isRetraction_aSharp {a : ApproximableMap U U} (ha2 : Retraction (aSharpInner a)) :
+    Retraction (aSharp a) := by
+  constructor
   apply ext_of_toElementMap
   intro x
   rw [toElementMap_comp, toElementMap_aSharp a ((aSharp a).toElementMap x),

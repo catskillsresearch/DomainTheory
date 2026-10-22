@@ -17,6 +17,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem representClosure_isScottContinuous
     {α : Type u} [CompleteLattice α] (D : CountablyAlgebraic α) :
     IsScottContinuous (representClosure D) := by
+  constructor
   intro x
   ext m
   constructor

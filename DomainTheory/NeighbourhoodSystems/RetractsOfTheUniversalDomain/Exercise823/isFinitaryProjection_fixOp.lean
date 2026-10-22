@@ -33,9 +33,9 @@ variable {α : Type} {E : NeighborhoodSystem α}
 /-- **Exercise 8.23, Claim 1.** Provided `t` maps finitary projections to finitary projections,
 `‖t‖ = fix(t)` really is a finitary projection. -/
 theorem isFinitaryProjection_fixOp (t : ApproximableMap (funSpace E E) (funSpace E E))
-    (ht : ∀ a, IsFinitaryProjection a → IsFinitaryProjection (tOp t a)) :
-    IsFinitaryProjection (fixOp t) := by
-  have hchain : ∀ n, IsFinitaryProjection (toApproxMap (t.iterElem n)) := by
+    (ht : ∀ a, FinitaryProjection a → FinitaryProjection (tOp t a)) :
+    FinitaryProjection (fixOp t) := by
+  have hchain : ∀ n, FinitaryProjection (toApproxMap (t.iterElem n)) := by
     intro n
     induction n with
     | zero =>
@@ -69,7 +69,7 @@ theorem isFinitaryProjection_fixOp (t : ApproximableMap (funSpace E E) (funSpace
     intro Z
     rw [mem_iSupDirected, mem_iSupDirected]
     simp_rw [hsub]
-  show IsFinitaryProjection (toApproxMap t.fixElement)
+  show FinitaryProjection (toApproxMap t.fixElement)
   apply isFinitaryProjection_of_sub_eq_self
   rw [← toApproxMap_subFilter, hkey]
 

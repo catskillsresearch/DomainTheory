@@ -30,7 +30,7 @@ variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 /-- **Scott 1972, Proposition 4.1 (injectivity step).** Coordinatewise maximal extensions
 assemble to an extension into the inverse limit. Lemma 3.9 is exactly what supplies compatibility
 of adjacent coordinates. -/
-theorem inverseLimit_isInjectiveSpace (hD : ∀ n, IsContinuousLattice (D n)) :
+theorem inverseLimit_isInjectiveSpace (hD : ∀ n, ContinuousLattice (D n)) :
     @InjectiveSpace.{u, u} (InverseLimit D P) (inverseLimitTopology D P) := by
   let stageOrder : ∀ n, Preorder (D n) := fun _ => inferInstance
   let limitOrder : Preorder (InverseLimit D P) := inferInstance

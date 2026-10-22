@@ -30,7 +30,7 @@ then `f` is a finitary projection: `sub f = f` says exactly that `f` *is*
 finishes immediately. (The converse — every finitary projection is a fixed point of `sub` — is
 Theorem 8.5's harder direction; see the module docstring.) -/
 theorem isFinitaryProjection_of_sub_eq_self {f : ApproximableMap E E} (h : sub f = f) :
-    IsFinitaryProjection f := by
+    FinitaryProjection f := by
   rw [← h]
   exact Subsystem.isFinitaryProjection_retractionOfSubsystem (fixedNbhd_subsystem f)
 

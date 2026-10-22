@@ -23,7 +23,7 @@ and `a→b`.
 
 ## What is formalized in this file
 
-Both halves of Proposition 8.10 — **`IsRetraction`- and `≤ idMap U`-closure** — for all three
+Both halves of Proposition 8.10 — **`Retraction`- and `≤ idMap U`-closure** — for all three
 combinators, i.e. `IsProjection a → IsProjection b → IsProjection (a*b)` for `* ∈ {+,×,→}`.
 
 * **`×` (cleanest).** `prodComb a b` is *literally* `iTimes.comp ((prodMap a b).comp jTimes)`

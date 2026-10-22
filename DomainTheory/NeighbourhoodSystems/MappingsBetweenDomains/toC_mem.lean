@@ -43,7 +43,7 @@ theorem toC_mem (x : (reprSystem C hInter hne).Element) : toC C hInter hne x ∈
   apply hDir (famC C hInter hne x)
   · exact ⟨Cl C (botTok C hne).1, botTok C hne, mem_nbhd_bot C hInter hne x, rfl⟩
   · rintro Y ⟨F, _, rfl⟩
-    exact Cl_mem C hInter F.2.2
+    exact Cl_mem C hInter F.2.out.2
   · rintro Y ⟨F, hF, rfl⟩ Y' ⟨F', hF', rfl⟩
     obtain ⟨F₃, hF₃, hFF₃, hF'F₃⟩ := directed_step C hInter hne x hF hF'
     exact ⟨Cl C F₃.1, ⟨F₃, hF₃, rfl⟩, hFF₃, hF'F₃⟩

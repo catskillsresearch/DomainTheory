@@ -23,7 +23,7 @@ open NeighborhoodSystem ApproximableMap Exercise326
 
 
 theorem iArrow_isComputableMap :
-    IsComputableMap funSpaceUUPresentation UComputablePresentation iArrow :=
+    ComputableMap funSpaceUUPresentation UComputablePresentation iArrow :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose_spec.choose_spec.2.2.1
 
 end DomainTheory.NeighbourhoodSystems

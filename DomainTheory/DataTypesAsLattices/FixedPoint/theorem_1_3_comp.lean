@@ -17,6 +17,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem theorem_1_3_comp {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
     IsScottContinuous (f ∘ g) := by
+  constructor
   intro x
   ext k
   constructor

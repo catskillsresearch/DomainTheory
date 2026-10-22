@@ -46,9 +46,10 @@ on the effective coordinate indices. R.e.-ness then follows from `hf`, `hg`, the
 deciders, and closure of r.e. predicates under `∨`/`∧`/primitive-recursive substitution. -/
 theorem smashMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : ComputablePresentation V₁')
     {f : ApproximableMap V₀ V₀'} {g : ApproximableMap V₁ V₁'}
-    (hf : IsComputableMapS P₀.toScott P₀'.toScott f)
-    (hg : IsComputableMapS P₁.toScott P₁'.toScott g) :
-    IsComputableMapS (smashPresentation P₀ P₁) (smashPresentation P₀' P₁') (smashMap f g) := by
+    (hf : ComputableMapS P₀.toScott P₀'.toScott f)
+    (hg : ComputableMapS P₁.toScott P₁'.toScott g) :
+    ComputableMapS (smashPresentation P₀ P₁) (smashPresentation P₀' P₁') (smashMap f g) := by
+  constructor
   obtain ⟨f₀, hf₀p, hf₀e⟩ := proper₀_dec P₀
   obtain ⟨f₁, hf₁p, hf₁e⟩ := proper₁_dec P₁
   set c₀ := fun n => isOne (f₀ n) with hc₀def
@@ -75,13 +76,13 @@ theorem smashMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : Co
       (selectFn (c₀ t.unpair.1.unpair.1 * c₁ t.unpair.1.unpair.2)
         t.unpair.1.unpair.1 P₀.masterIdx)) (P₀'.toScott.X t.unpair.2.unpair.1)) :=
     REPred.of_iff (fun t => by simp only [unpair_pair_fst, unpair_pair_snd])
-      (hf.comp ((heffLp.comp Nat.Primrec.left).pair
+      (hf.out.comp ((heffLp.comp Nat.Primrec.left).pair
         (Nat.Primrec.left.comp Nat.Primrec.right)))
   have Hg : REPred (fun t => g.rel (P₁.toScott.X
       (selectFn (c₀ t.unpair.1.unpair.1 * c₁ t.unpair.1.unpair.2)
         t.unpair.1.unpair.2 P₁.masterIdx)) (P₁'.toScott.X t.unpair.2.unpair.2)) :=
     REPred.of_iff (fun t => by simp only [unpair_pair_fst, unpair_pair_snd])
-      (hg.comp ((heffRp.comp Nat.Primrec.left).pair
+      (hg.out.comp ((heffRp.comp Nat.Primrec.left).pair
         (Nat.Primrec.right.comp Nat.Primrec.right)))
   have hJP : RecDecidable (fun t => P₀'.X t.unpair.2.unpair.1 ≠ V₀'.master ∧
       P₁'.X t.unpair.2.unpair.2 ≠ V₁'.master) :=

@@ -24,11 +24,11 @@ the range of a retract. Stated with subset directedness so the compared
 type does not mention a `CompleteLattice` instance. -/
 theorem theorem_4_1_continuous {a : Pomega} (ha : Retract a) :
     ∀ x : Fixpoints (funOf a),
-      IsDirectedSubset (retractBasis a x) ∧
+      DirectedSubset (retractBasis a x) ∧
         (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) ∧
         ∀ y ∈ retractBasis a x,
           ∀ s : Set (Fixpoints (funOf a)),
-            IsDirectedSubset s →
+            DirectedSubset s →
               (x : Pomega) ⊆ ⋃₀ (Subtype.val '' s) →
               ∃ z ∈ s, (y : Pomega) ⊆ z := by
   intro x
@@ -36,10 +36,10 @@ theorem theorem_4_1_continuous {a : Pomega} (ha : Retract a) :
   intro y hy s hs hxs
   obtain ⟨n, hnx, hyn⟩ := hy
   have hen : e n ⊆ ⋃₀ (Subtype.val '' s) := hnx.trans hxs
-  have hs' : IsDirectedSet s :=
-    ⟨hs.1, fun u hu v hv => by
-      obtain ⟨w, hw, huw, hvw⟩ := hs.2 hu hv
-      exact ⟨w, hw, huw, hvw⟩⟩
+  have hs' : DirectedSet s :=
+    ⟨⟨hs.out.1, fun u hu v hv => by
+      obtain ⟨w, hw, huw, hvw⟩ := hs.out.2 hu hv
+      exact ⟨w, hw, huw, hvw⟩⟩⟩
   obtain ⟨z, hz, hnz⟩ :=
     directed_finite_cover hs' (e_finite n) (by simpa [Fixpoints.vals] using hen)
   refine ⟨z, hz, ?_⟩

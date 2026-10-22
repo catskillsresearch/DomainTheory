@@ -60,7 +60,7 @@ theorem theorem_712.{u_1} : And
                                 (@Inter.inter (Set α) (@Set.instInter α)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α α) (Set α)
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α α) (Set α)
                         (@DomainTheory.NeighbourhoodSystems.prod α α V V)
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
                         (@DomainTheory.NeighbourhoodSystems.prodPresentation α α V V P P)
@@ -178,7 +178,7 @@ theorem theorem_712.{u_1} : And
                 (@Inter.inter (Set α) (@Set.instInter α)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-      @DomainTheory.NeighbourhoodSystems.IsComputableMap α (Set α) V
+      @DomainTheory.NeighbourhoodSystems.ComputableMap α (Set α) V
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V) P
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PDPresentation α V P cons hconsp hcons)
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PDsingletonApproxMap α V)))
@@ -224,7 +224,7 @@ theorem theorem_712.{u_1} : And
                                 (@Inter.inter (Set α) (@Set.instInter α)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α α) (Set α)
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α α) (Set α)
                         (@DomainTheory.NeighbourhoodSystems.prod α α V V)
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
                         (@DomainTheory.NeighbourhoodSystems.prodPresentation α α V V P P)
@@ -342,7 +342,7 @@ theorem theorem_712.{u_1} : And
                 (@Inter.inter (Set α) (@Set.instInter α)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-      @DomainTheory.NeighbourhoodSystems.IsComputableMap α (Set α) V
+      @DomainTheory.NeighbourhoodSystems.ComputableMap α (Set α) V
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V) P
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PDPresentation α V P cons hconsp hcons)
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PDsingletonApproxMap α V)))
@@ -387,7 +387,7 @@ theorem theorem_712.{u_1} : And
                                 (@Inter.inter (Set α) (@Set.instInter α)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α α) (Set α)
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α α) (Set α)
                         (@DomainTheory.NeighbourhoodSystems.prod α α V V)
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
                         (@DomainTheory.NeighbourhoodSystems.prodPresentation α α V V P P)
@@ -505,7 +505,7 @@ theorem theorem_712.{u_1} : And
                 (@Inter.inter (Set α) (@Set.instInter α)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-      @DomainTheory.NeighbourhoodSystems.IsComputableMap α (Set α) V
+      @DomainTheory.NeighbourhoodSystems.ComputableMap α (Set α) V
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V) P
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PDPresentation α V P cons hconsp hcons)
         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PDsingletonApproxMap α V))
@@ -544,7 +544,7 @@ theorem theorem_712.{u_1} : And
                                 (@Inter.inter (Set α) (@Set.instInter α)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α α) (Set α)
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α α) (Set α)
                         (@DomainTheory.NeighbourhoodSystems.prod α α V V)
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
                         (@DomainTheory.NeighbourhoodSystems.prodPresentation α α V V P P)
@@ -686,7 +686,7 @@ theorem theorem_712.{u_1} : And
                                 (@Inter.inter (Set α) (@Set.instInter α)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α α) (Set α)
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α α) (Set α)
                         (@DomainTheory.NeighbourhoodSystems.prod α α V V)
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
                         (@DomainTheory.NeighbourhoodSystems.prodPresentation α α V V P P)
@@ -816,7 +816,7 @@ theorem theorem_712.{u_1} : And
                                 (@Inter.inter (Set α) (@Set.instInter α)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α α) (Set α)
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α α) (Set α)
                         (@DomainTheory.NeighbourhoodSystems.prod α α V V)
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
                         (@DomainTheory.NeighbourhoodSystems.prodPresentation α α V V P P)
@@ -926,7 +926,7 @@ theorem theorem_712.{u_1} : And
                                 (@Inter.inter (Set α) (@Set.instInter α)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α α) (Set α)
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α α) (Set α)
                         (@DomainTheory.NeighbourhoodSystems.prod α α V V)
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
                         (@DomainTheory.NeighbourhoodSystems.prodPresentation α α V V P P)
@@ -1026,7 +1026,7 @@ theorem theorem_712.{u_1} : And
                                 (@Inter.inter (Set α) (@Set.instInter α)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α α) (Set α)
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α α) (Set α)
                         (@DomainTheory.NeighbourhoodSystems.prod α α V V)
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
                         (@DomainTheory.NeighbourhoodSystems.prodPresentation α α V V P P)
@@ -1112,7 +1112,7 @@ theorem theorem_712.{u_1} : And
                                 (@Inter.inter (Set α) (@Set.instInter α)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α α) (Set α)
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α α) (Set α)
                         (@DomainTheory.NeighbourhoodSystems.prod α α V V)
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
                         (@DomainTheory.NeighbourhoodSystems.prodPresentation α α V V P P)
@@ -1182,7 +1182,7 @@ theorem theorem_712.{u_1} : And
                                 (@Inter.inter (Set α) (@Set.instInter α)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α α) (Set α)
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α α) (Set α)
                         (@DomainTheory.NeighbourhoodSystems.prod α α V V)
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
                         (@DomainTheory.NeighbourhoodSystems.prodPresentation α α V V P P)
@@ -1231,7 +1231,7 @@ theorem theorem_712.{u_1} : And
                                 (@Inter.inter (Set α) (@Set.instInter α)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P a)
                                   (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P b)))),
-                      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum α α) (Set α)
+                      @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum α α) (Set α)
                         (@DomainTheory.NeighbourhoodSystems.prod α α V V)
                         (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
                         (@DomainTheory.NeighbourhoodSystems.prodPresentation α α V V P P)

@@ -22,7 +22,7 @@ open Set Topology
 variable {D D' D'' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 
-theorem proposition_2_7_inf_right (hD : IsContinuousLattice D) (x : D) :
+theorem proposition_2_7_inf_right (hD : ContinuousLattice D) (x : D) :
     @Continuous D D scottTopologicalSpace scottTopologicalSpace (fun y => x ⊓ y) :=
   continuous_of_preservesDirectedSup (meet_preservesDirectedSup x hD)
 

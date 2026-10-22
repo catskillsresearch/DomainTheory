@@ -33,10 +33,10 @@ theorem packList_components_mem_Deg {a : Pomega} :
       have h0 := combinatory_mem_Deg a (ofNat_combinatory 0)
       have h1 := combinatory_mem_Deg a (ofNat_combinatory 1)
       have hy : y ∈ Deg a := by
-        have := (Deg_isSubalgebra a).2 hp h0
+        have := (Deg_isSubalgebra a).out.2 hp h0
         simpa [packList, seq2_app_zero] using this
       have htail : packList ys ∈ Deg a := by
-        have := (Deg_isSubalgebra a).2 hp h1
+        have := (Deg_isSubalgebra a).out.2 hp h1
         simpa [packList, seq2_app_one] using this
       rcases List.mem_cons.mp hx with rfl | hx
       · exact hy

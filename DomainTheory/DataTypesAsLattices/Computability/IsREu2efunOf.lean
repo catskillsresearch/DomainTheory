@@ -33,6 +33,7 @@ theorem IsRE.funOf {u x : Pomega} (hu : IsRE u) (hx : IsRE x) : IsRE (u ⬝ x) :
   have hex : REPred fun m => ∃ n, e n ⊆ x ∧ pair n m ∈ u :=
     REPred.exists (p := fun m n => e n ⊆ x ∧ pair n m ∈ u)
       (hand.comp (Primrec.pair Primrec.snd Primrec.fst).to_comp)
+  constructor
   exact hex.of_eq fun _ => Iff.rfl
 
 end DomainTheory.DataTypesAsLattices

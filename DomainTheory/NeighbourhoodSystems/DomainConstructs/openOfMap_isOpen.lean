@@ -21,6 +21,7 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `openOfMap f` is open: it is a union of basic opens `[X]`. -/
 theorem openOfMap_isOpen (f : ApproximableMap V sierpinski) : IsOpen (openOfMap V f) := by
+  constructor
   intro x hx
   obtain ⟨X, hxX, hf⟩ := hx
   exact ⟨X, hxX, fun z hz => ⟨X, hz, hf⟩⟩

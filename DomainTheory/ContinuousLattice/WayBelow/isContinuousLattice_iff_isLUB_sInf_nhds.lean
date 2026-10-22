@@ -26,7 +26,7 @@ variable {D : Type u} [CompleteLattice D]
 supremum of the infima of its open neighbourhoods: `y = ⊔ {⊓U : y ∈ U open}`. This is Scott's
 alternate form of Definition 2.3. -/
 theorem isContinuousLattice_iff_isLUB_sInf_nhds :
-    IsContinuousLattice D ↔
+    ContinuousLattice D ↔
       ∀ y : D, IsLUB {a : D | ∃ U, ScottOpen U ∧ y ∈ U ∧ a = sInf U} y := by
   constructor
   · intro h y
@@ -34,12 +34,14 @@ theorem isContinuousLattice_iff_isLUB_sInf_nhds :
     · rintro a ⟨U, hU, hyU, rfl⟩
       exact (sInf_wayBelow hU hyU).le
     · intro b hb
-      refine (h y).2 ?_
+      refine (h.out y).2 ?_
       intro x hx
       obtain ⟨U, hU, hyU, hsub⟩ := hx
       have hxle : x ≤ sInf U := le_sInf fun _ hz => Set.mem_Ici.1 (hsub hz)
       exact hxle.trans (hb ⟨U, hU, hyU, rfl⟩)
-  · intro h y
+  · intro h
+    constructor
+    intro y
     refine ⟨fun x hx => hx.le, ?_⟩
     intro b hb
     refine (h y).2 ?_

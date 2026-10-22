@@ -25,7 +25,7 @@ open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
 
-theorem packList_mem_subalgebra {A : Set Pomega} (hA : IsSubalgebra A) :
+theorem packList_mem_subalgebra {A : Set Pomega} (hA : Subalgebra A) :
     ∀ {xs : List Pomega}, (∀ x, x ∈ xs → x ∈ A) → packList xs ∈ A
   | [], _ => combinatory_mem_subalgebra hA bot_combinatory
   | x :: xs, hxs =>

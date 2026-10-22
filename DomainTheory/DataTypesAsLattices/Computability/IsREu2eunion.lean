@@ -19,6 +19,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem IsRE.union {u v : Pomega} (hu : IsRE u) (hv : IsRE v) : IsRE (u ∪ v) :=
-  REPred.of_eq (REPred.or hu hv) fun _ => Iff.rfl
+  ⟨REPred.of_eq (REPred.or hu.out hv.out) fun _ => Iff.rfl⟩
 
 end DomainTheory.DataTypesAsLattices

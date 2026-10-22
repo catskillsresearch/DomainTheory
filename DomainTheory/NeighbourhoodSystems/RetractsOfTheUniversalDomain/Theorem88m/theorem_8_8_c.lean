@@ -31,8 +31,8 @@ by Theorem 8.5, a subsystem of `U`). As in Theorem 8.6(c)'s converse, `hfin` is 
 signature to match Scott's stated hypothesis on `a`, but is **not** actually needed by this
 implication — only `hcomp` drives the effectiveness argument; this is called out here rather than
 silently dropping the hypothesis. -/
-theorem theorem_8_8_c {a : ApproximableMap U U} (_hfin : IsFinitaryProjection a)
-    (hcomp : IsComputableMap UComputablePresentation UComputablePresentation a) :
+theorem theorem_8_8_c {a : ApproximableMap U U} (_hfin : FinitaryProjection a)
+    (hcomp : ComputableMap UComputablePresentation UComputablePresentation a) :
     (fixedNbhd a).IsEffectivelyGiven ∧ fixedNbhd a ◁ U :=
   ⟨fixedNbhd_isEffectivelyGiven hcomp, fixedNbhd_subsystem a⟩
 

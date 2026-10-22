@@ -19,7 +19,7 @@ theorem theorem_85.{u} : And
   (And
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
       {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
         ∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E) {Y : Set α},
           Iff
             (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem α E
@@ -31,7 +31,7 @@ theorem theorem_85.{u} : And
                     (@DomainTheory.NeighbourhoodSystems.ApproximableMap.rel α α E E a X X)))))
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
       (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-      Iff (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a)
+      Iff (@DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a)
         (∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E) {Y : Set α},
           Iff
             (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem α E
@@ -52,12 +52,12 @@ theorem theorem_85.{u} : And
               And (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem α E x X)
                 (And (@LE.le (Set α) (@Set.instLE α) X Y)
                   (@DomainTheory.NeighbourhoodSystems.ApproximableMap.rel α α E E a X X))))) →
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a) :=
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a) :=
   @And.intro
   (And
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
       {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
         ∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E) {Y : Set α},
           Iff
             (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem α E
@@ -69,7 +69,7 @@ theorem theorem_85.{u} : And
                     (@DomainTheory.NeighbourhoodSystems.ApproximableMap.rel α α E E a X X)))))
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
       (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-      Iff (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a)
+      Iff (@DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a)
         (∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E) {Y : Set α},
           Iff
             (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem α E
@@ -90,11 +90,11 @@ theorem theorem_85.{u} : And
               And (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem α E x X)
                 (And (@LE.le (Set α) (@Set.instLE α) X Y)
                   (@DomainTheory.NeighbourhoodSystems.ApproximableMap.rel α α E E a X X))))) →
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a)
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a)
   (@And.intro
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
       {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
         ∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E) {Y : Set α},
           Iff
             (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem α E
@@ -106,7 +106,7 @@ theorem theorem_85.{u} : And
                     (@DomainTheory.NeighbourhoodSystems.ApproximableMap.rel α α E E a X X)))))
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
       (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E),
-      Iff (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a)
+      Iff (@DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a)
         (∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E) {Y : Set α},
           Iff
             (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem α E

@@ -29,7 +29,7 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 
 theorem jSharp_isComputableMap :
-    IsComputableMap UComputablePresentation
+    ComputableMap UComputablePresentation
       (dsharpPresentation UComputablePresentation U_mem_nonempty) jSharp :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.2.2.2
 

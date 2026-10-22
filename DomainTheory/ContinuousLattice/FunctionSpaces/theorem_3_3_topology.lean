@@ -35,9 +35,9 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 /-- **Scott 1972, Theorem 3.3(b).** The Scott (lattice) topology on `[D → D']` agrees with the
 topology of pointwise convergence. -/
-theorem theorem_3_3_topology (hD : IsContinuousLattice D) (hD' : IsContinuousLattice D') :
+theorem theorem_3_3_topology (hD : ContinuousLattice D) (hD' : ContinuousLattice D') :
     (scottTopologicalSpace : TopologicalSpace (ScottMap D D')) = scottMapPointwiseTopology D D' := by
-  have hL : IsContinuousLattice (ScottMap D D') := theorem_3_3_isContinuousLattice hD hD'
+  have hL : ContinuousLattice (ScottMap D D') := theorem_3_3_isContinuousLattice hD hD'
   apply le_antisymm
   · -- pointwise ⊆ Scott: each subbasic set is Scott-open in the lattice
     apply le_generateFrom_iff_subset_isOpen.2

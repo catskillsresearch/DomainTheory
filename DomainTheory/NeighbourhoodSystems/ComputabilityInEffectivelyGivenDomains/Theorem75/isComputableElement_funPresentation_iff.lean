@@ -33,8 +33,9 @@ theorem isComputableElement_funPresentation_iff (gN incl0 incl1 eq1 : ℕ → �
     (hincl1 : ∀ s, incl1 s = 1 ↔ P₁.X s.unpair.1 ⊆ P₁.X s.unpair.2) (hincl1p : Nat.Primrec incl1)
     (heq1 : ∀ s, eq1 s = 1 ↔ P₁.X s.unpair.1 = P₁.X s.unpair.2) (heq1p : Nat.Primrec eq1)
     (φ : (funSpace V₀ V₁).Element) :
-    IsComputableElement (funPresentation P₀ P₁ gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p
-        hincl1 hincl1p heq1 heq1p) φ ↔ IsComputableMap P₀ P₁ (toApproxMap φ) :=
-  Xenum_isComputableElement_iff P₀ P₁ gN hgNp hgN φ
+    ComputableElement (funPresentation P₀ P₁ gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p
+        hincl1 hincl1p heq1 heq1p) φ ↔ ComputableMap P₀ P₁ (toApproxMap φ) :=
+  ⟨fun h => (Xenum_isComputableElement_iff P₀ P₁ gN hgNp hgN φ).mp h.out,
+    fun h => ⟨(Xenum_isComputableElement_iff P₀ P₁ gN hgNp hgN φ).mpr h⟩⟩
 
 end DomainTheory.NeighbourhoodSystems

@@ -43,6 +43,7 @@ theorem myhillQ_isRE {u : Pomega} {p : ℕ → ℕ}
         (valNat_mem_re.comp (Primrec.pair Primrec.snd (Primrec.snd.comp Primrec.fst)).to_comp)
     exact _root_.REPred.of_eq (REPred.exists_param (α := ℕ × ℕ) hinner) fun q =>
       (realizes_valNat_mem hr (fin q.1) q.2).symm
+  constructor
   exact _root_.REPred.of_eq
     (hmem.comp (primrec_unpairComp.to_comp))
     fun k => (mem_myhillQ p k).symm

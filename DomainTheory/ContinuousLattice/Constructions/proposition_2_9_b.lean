@@ -25,11 +25,11 @@ variable {D : Type*} [CompleteLattice D]
 /-- **Scott 1972, Proposition 2.9(b).** For a family of continuous lattices, the Scott topology of
 the product coincides with the product of the Scott topologies of the factors. -/
 theorem proposition_2_9_b {ι : Type*} (E : ι → Type*) [∀ i, CompleteLattice (E i)]
-    (hE : ∀ i, IsContinuousLattice (E i)) :
+    (hE : ∀ i, ContinuousLattice (E i)) :
     (scottTopologicalSpace : TopologicalSpace (∀ i, E i)) =
       @Pi.topologicalSpace ι E (fun _ => scottTopologicalSpace) := by
   classical
-  have hprod : IsContinuousLattice (∀ i, E i) := proposition_2_9_a E hE
+  have hprod : ContinuousLattice (∀ i, E i) := proposition_2_9_a E hE
   apply le_antisymm
   · -- Product ⊆ Scott: projections preserve directed suprema, hence are Scott-continuous.
     refine le_iInf fun i => ?_

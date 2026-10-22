@@ -8,7 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
-public import DomainTheory.DataTypesAsLattices.Retracts.IsDirectedSubset
+public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
 public import DomainTheory.DataTypesAsLattices.Retracts.IsCompactSubset
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.funRetract

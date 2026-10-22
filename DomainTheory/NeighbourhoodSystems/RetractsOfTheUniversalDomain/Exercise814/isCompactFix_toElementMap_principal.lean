@@ -7,7 +7,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.ClosureOperator
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.le_toElementMap_of_isClosureOperator
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsCompactFix
 
@@ -30,8 +30,8 @@ variable {a : ApproximableMap E E}
 `a(↑X) ⊑ ⋃ᵢ d(i)` then (since `↑X ⊑ a(↑X)` by inflation) `↑X ⊑ ⋃ᵢ d(i)`, so by compactness of `↑X`
 in `E` (`principal_isCompactElt`), `↑X ⊑ d(i)` for some `i`; applying `a` (monotone) and using that
 `d(i)` is already fixed gives `a(↑X) ⊑ d(i)`. -/
-theorem isCompactFix_toElementMap_principal (h : IsClosureOperator a) {X : Set α} (hX : E.mem X) :
-    IsCompactFix h ⟨a.toElementMap (E.principal hX), toElementMap_idem h.1 _⟩ := by
+theorem isCompactFix_toElementMap_principal (h : ClosureOperator a) {X : Set α} (hX : E.mem X) :
+    IsCompactFix h ⟨a.toElementMap (E.principal hX), toElementMap_idem h.out.1 _⟩ := by
   intro I _ d hdir hle
   have hle' : E.principal hX ≤ iSupDirected (fun i => (d i).1) hdir :=
     (le_toElementMap_of_isClosureOperator h (E.principal hX)).trans hle

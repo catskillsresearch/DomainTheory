@@ -20,12 +20,13 @@ theorem fix_param_isScottContinuous
     (hgx : ∀ y, IsScottContinuous (fun x => g x y))
     (hgy : ∀ x, IsScottContinuous (fun y => g x y)) :
     IsScottContinuous (fun x => fix (g x)) := by
+  constructor
   intro x
   ext k
   constructor
   · intro hk
     obtain ⟨n, hkn⟩ := Set.mem_iUnion.mp hk
-    have := iterateBot_param_isScottContinuous hgx hgy n x
+    have := (iterateBot_param_isScottContinuous hgx hgy n).out x
     have : k ∈ scottUnion (fun z => iterateBot (g z) n) x := by
       rwa [← this]
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp this

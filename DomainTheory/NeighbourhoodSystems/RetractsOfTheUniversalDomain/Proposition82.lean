@@ -17,12 +17,12 @@ set_option linter.unusedVariables false
 theorem theorem_82.{u_1} : And
   (∀ {α : Type u_1} {D E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     (h : @DomainTheory.NeighbourhoodSystems.Subsystem α D E),
-    @DomainTheory.NeighbourhoodSystems.IsRetraction α E
+    @DomainTheory.NeighbourhoodSystems.Retraction α E
       (@DomainTheory.NeighbourhoodSystems.Subsystem.retractionOfSubsystem α D E h))
   (∀ {α : Type u_1} {D E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     (h : @DomainTheory.NeighbourhoodSystems.Subsystem α D E),
     And
-      (@DomainTheory.NeighbourhoodSystems.IsRetraction α E
+      (@DomainTheory.NeighbourhoodSystems.Retraction α E
         (@DomainTheory.NeighbourhoodSystems.Subsystem.retractionOfSubsystem α D E h))
       (Nonempty
         (@OrderIso (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D)
@@ -47,12 +47,12 @@ theorem theorem_82.{u_1} : And
   @And.intro
   (∀ {α : Type u_1} {D E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     (h : @DomainTheory.NeighbourhoodSystems.Subsystem α D E),
-    @DomainTheory.NeighbourhoodSystems.IsRetraction α E
+    @DomainTheory.NeighbourhoodSystems.Retraction α E
       (@DomainTheory.NeighbourhoodSystems.Subsystem.retractionOfSubsystem α D E h))
   (∀ {α : Type u_1} {D E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     (h : @DomainTheory.NeighbourhoodSystems.Subsystem α D E),
     And
-      (@DomainTheory.NeighbourhoodSystems.IsRetraction α E
+      (@DomainTheory.NeighbourhoodSystems.Retraction α E
         (@DomainTheory.NeighbourhoodSystems.Subsystem.retractionOfSubsystem α D E h))
       (Nonempty
         (@OrderIso (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D)

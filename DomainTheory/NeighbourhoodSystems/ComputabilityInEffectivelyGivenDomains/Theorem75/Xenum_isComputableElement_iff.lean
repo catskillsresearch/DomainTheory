@@ -30,8 +30,8 @@ index set iff the corresponding approximable map `toApproxMap φ` is computable.
 theorem Xenum_isComputableElement_iff (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
       : Set (ApproximableMap V₀ V₁)).Nonempty) (φ : (funSpace V₀ V₁).Element) :
-    REPred (fun c => φ.mem (Xenum P₀ P₁ gN c)) ↔ IsComputableMap P₀ P₁ (toApproxMap φ) := by
-  -- `IsComputableMap` unfolds (def-eq) to r.e.-ness of `R' s = φ ∋ [X₀_{s.1}, X₁_{s.2}]`.
+    REPred (fun c => φ.mem (Xenum P₀ P₁ gN c)) ↔ ComputableMap P₀ P₁ (toApproxMap φ) := by
+  -- `ComputableMap` unfolds (def-eq) to r.e.-ness of `R' s = φ ∋ [X₀_{s.1}, X₁_{s.2}]`.
   have hbridge := mem_Xenum_iff P₀ P₁ gN φ
   constructor
   · -- element computable ⟹ map computable: reindex by the single-step code `pair s 0 + 1`.
@@ -39,6 +39,7 @@ theorem Xenum_isComputableElement_iff (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN)
     have hc0p : Nat.Primrec (fun s => Nat.pair s 0 + 1) :=
       Nat.Primrec.succ.comp (primrec_id.pair (Nat.Primrec.const 0))
     have key : REPred (fun s => φ.mem (Xenum P₀ P₁ gN (Nat.pair s 0 + 1))) := helem.comp hc0p
+    constructor
     show REPred (fun s => φ.mem (step (P₀.X s.unpair.1) (P₁.X s.unpair.2)))
     refine REPred.of_iff (fun s => ?_) key
     have hdec : decodeList (Nat.pair s 0 + 1) = [s] := by
@@ -55,7 +56,7 @@ theorem Xenum_isComputableElement_iff (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN)
     · intro h; exact h hcons s (List.mem_singleton.mpr rfl)
   · -- map computable ⟹ element computable: guard the bounded-`∀` by the decidable `gN c = 1`.
     intro hmap
-    have hR' : REPred (fun s => φ.mem (step (P₀.X s.unpair.1) (P₁.X s.unpair.2))) := hmap
+    have hR' : REPred (fun s => φ.mem (step (P₀.X s.unpair.1) (P₁.X s.unpair.2))) := hmap.out
     have hforall : REPred (fun c => ∀ e ∈ decodeList c,
         φ.mem (step (P₀.X e.unpair.1) (P₁.X e.unpair.2))) := hR'.forall_mem_decodeList
     have hne1 : REPred (fun c => ¬ gN c = 1) :=

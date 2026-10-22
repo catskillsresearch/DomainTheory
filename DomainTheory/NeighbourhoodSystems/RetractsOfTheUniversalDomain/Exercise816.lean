@@ -18,8 +18,8 @@ theorem example_816.{u} : And
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
     And
       (∀ {a b : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-        @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E b →
+        @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E b →
             Iff
               (@LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
                 (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
@@ -30,13 +30,13 @@ theorem example_816.{u} : And
                 (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E b)))
       (∀ {P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α E}
         {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap α α E E P P a →
+        @DomainTheory.NeighbourhoodSystems.ComputableMap α α E E P P a →
           @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α
             (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E a)))
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     {a b : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E b →
+    @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E b →
         Iff
           (@LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
             (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
@@ -49,8 +49,8 @@ theorem example_816.{u} : And
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
     And
       (∀ {a b : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-        @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-          @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E b →
+        @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E b →
             Iff
               (@LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
                 (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
@@ -61,13 +61,13 @@ theorem example_816.{u} : And
                 (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E b)))
       (∀ {P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α E}
         {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap α α E E P P a →
+        @DomainTheory.NeighbourhoodSystems.ComputableMap α α E E P P a →
           @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α
             (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E a)))
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     {a b : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E a →
-      @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E b →
+    @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
+      @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E b →
         Iff
           (@LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
             (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)

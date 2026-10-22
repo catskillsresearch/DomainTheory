@@ -15,6 +15,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem topRec_isScottContinuous : IsScottContinuous topRec := by
+  constructor
   intro x
   ext k
   constructor

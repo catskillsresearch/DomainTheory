@@ -23,7 +23,7 @@ theorem eq_2_11_graphs {f g : Pomega} (hf : IsGraph f) (hg : IsGraph g)
   obtain ⟨k, hk, hfk⟩ := hf'
   obtain ⟨l, hl, hgl⟩ := hg'
   refine ⟨k ||| l, e_or_of_subset hk hl, ⟨?_, ?_⟩⟩
-  · exact hf hfk (by rw [e_or]; exact Set.subset_union_left)
-  · exact hg hgl (by rw [e_or]; exact Set.subset_union_right)
+  · exact hf.out hfk (by rw [e_or]; exact Set.subset_union_left)
+  · exact hg.out hgl (by rw [e_or]; exact Set.subset_union_right)
 
 end DomainTheory.DataTypesAsLattices

@@ -40,7 +40,7 @@ For a continuous lattice `D`, Scott’s way-below neighbourhoods
 Arbitrary filters need not be principal (`{ ↟a | a ≤ x }` is a filter with
 `ofFilter = x` but properly contains `toFilter x`). The correct domain is the
 **round** filters: `↟a ∈ f` implies `∃ b, a ≪ b ∧ ↟b ∈ f`. Under
-`IsContinuousLattice`, `D ≃o` round filters via `toFilter` / `ofFilter`.
+`ContinuousLattice`, `D ≃o` round filters via `toFilter` / `ofFilter`.
 -/
 
 namespace DomainTheory.BridgeTheorems
@@ -56,7 +56,7 @@ variable {D : Type*} [CompleteLattice D]
 
 section Continuous
 
-variable (hD : IsContinuousLattice D)
+variable (hD : ContinuousLattice D)
 include hD
 
 
@@ -66,6 +66,6 @@ end ContinuousLatticeToNeighborhood
 
 /-- Blueprint name. -/
 abbrev continuousLattice_to_neighborhoodSystem {D : Type*} [CompleteLattice D]
-    (_hD : IsContinuousLattice D) : NeighborhoodSystem D :=
+    (_hD : ContinuousLattice D) : NeighborhoodSystem D :=
   ContinuousLatticeToNeighborhood.toNeighborhoodSystem
 end DomainTheory.BridgeTheorems

@@ -24,7 +24,8 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 section Strict
 
 
-theorem isRetraction_strictRetraction : IsRetraction (strictRetraction (D := D) (E := E)) := by
+theorem isRetraction_strictRetraction : Retraction (strictRetraction (D := D) (E := E)) := by
+  constructor
   apply ext_of_toElementMap
   intro φ
   rw [toElementMap_comp]

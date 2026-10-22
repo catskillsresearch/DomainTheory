@@ -16,6 +16,7 @@ variable {α : Type*} {E : NeighborhoodSystem α}
 
 /-- **Definition 8.1 (Scott 1981, PRG-19).** A *retraction* of `E` is an approximable mapping
 `a : E → E` with `a ∘ a = a`. -/
-def IsRetraction (a : ApproximableMap E E) : Prop := a.comp a = a
+class Retraction (a : ApproximableMap E E) : Prop where
+  out : a.comp a = a
 
 end DomainTheory.NeighbourhoodSystems

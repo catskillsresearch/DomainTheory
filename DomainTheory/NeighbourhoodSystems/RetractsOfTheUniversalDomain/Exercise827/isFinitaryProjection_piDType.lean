@@ -19,7 +19,7 @@ open NeighborhoodSystem ApproximableMap
 
 
 theorem isFinitaryProjection_piDType (d : ApproximableMap U U) (s : U.Element) :
-    IsFinitaryProjection (piDType d s) := by
+    FinitaryProjection (piDType d s) := by
   unfold piDType
   rw [toElementMap_piDTypeMap]
   exact isFinitaryProjection_decode_subU (d.toElementMap s)

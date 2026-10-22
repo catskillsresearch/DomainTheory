@@ -26,10 +26,11 @@ variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
 (`toElementMap`); surjectivity of `P` lets the witness `X` range over indices `n`, and the resulting
 `∃ n, Xₙ ∈ x ∧ Xₙ f Yₘ` is r.e. by `REPred.and`/`REPred.proj`. -/
 theorem apply_isComputableElement {P : ComputablePresentation V} {Q : ComputablePresentation W}
-    {f : ApproximableMap V W} (hf : IsComputableMap P Q f) {x : V.Element}
-    (hx : IsComputableElement P x) : IsComputableElement Q (f.toElementMap x) := by
-  have hf' : REPred (fun s => f.rel (P.X s.unpair.1) (Q.X s.unpair.2)) := hf
-  have hx' : REPred (fun n => x.mem (P.X n)) := hx
+    {f : ApproximableMap V W} (hf : ComputableMap P Q f) {x : V.Element}
+    (hx : ComputableElement P x) : ComputableElement Q (f.toElementMap x) := by
+  have hf' : REPred (fun s => f.rel (P.X s.unpair.1) (Q.X s.unpair.2)) := hf.out
+  have hx' : REPred (fun n => x.mem (P.X n)) := hx.out
+  constructor
   refine REPred.of_iff (fun m => ?_) ((hx'.comp Nat.Primrec.left).and hf').proj
   simp only [mem_toElementMap, unpair_pair_fst, unpair_pair_snd]
   constructor

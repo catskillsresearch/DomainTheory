@@ -59,7 +59,7 @@ theorem example_723 : ∀ (gN incl0 incl1 eq1 : Nat → Nat)
             DomainTheory.NeighbourhoodSystems.Example78.PN DomainTheory.NeighbourhoodSystems.Example78.PNpres
             (@Prod.snd Nat Nat (Nat.unpair s)))))
   (heq1p : Nat.Primrec eq1),
-  @DomainTheory.NeighbourhoodSystems.IsComputableMap
+  @DomainTheory.NeighbourhoodSystems.ComputableMap
     (@DomainTheory.NeighbourhoodSystems.ApproximableMap Nat Nat DomainTheory.NeighbourhoodSystems.Example78.PN
       DomainTheory.NeighbourhoodSystems.Example78.PN)
     Nat

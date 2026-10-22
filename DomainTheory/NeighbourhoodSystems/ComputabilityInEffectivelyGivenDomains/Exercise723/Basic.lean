@@ -290,9 +290,9 @@ theorem nbhd_mem_iff_subset_elemSet (x : PN.Element) (n : ℕ) :
 /-- **`elemSet x` is r.e. when `x` is a computable element.** Direct: `k ∈ elemSet x ↔ ∃ n,
 x.mem (nbhd n) ∧ n.testBit k`, an r.e. projection of the conjunction of an r.e. predicate and a
 (`bitAt`-)decidable one. -/
-theorem elemSet_re_of_isComputableElement {x : PN.Element} (hx : IsComputableElement PNpres x) :
+theorem elemSet_re_of_isComputableElement {x : PN.Element} (hx : ComputableElement PNpres x) :
     REPred (fun k => k ∈ elemSet x) := by
-  have hx' : REPred (fun n => x.mem (nbhd n)) := hx
+  have hx' : REPred (fun n => x.mem (nbhd n)) := hx.out
   have hbit : RecDecidable (fun t : ℕ => t.unpair.1.testBit t.unpair.2 = true) :=
     ⟨fun t => bitAt t.unpair.1 t.unpair.2, primrec_bitAt, fun t => (bitAt_eq_one_iff _ _).symm⟩
   have hand : REPred (fun t : ℕ => x.mem (nbhd t.unpair.1) ∧ t.unpair.1.testBit t.unpair.2 = true) :=
@@ -396,11 +396,12 @@ theorem primrec_bitsCode : Nat.Primrec (fun t => bitsCode t.unpair.1 t.unpair.2)
 phrased over the coded list `bitsCode n n`, is r.e. by `REPred.forall_mem_decodeList`; by
 `nbhd_mem_iff_subset_elemSet` this containment is exactly `x.mem (nbhd n)`. -/
 theorem isComputableElement_of_elemSet_re {x : PN.Element} (hA : REPred (fun k => k ∈ elemSet x)) :
-    IsComputableElement PNpres x := by
+    ComputableElement PNpres x := by
   have hforall : REPred (fun c => ∀ e ∈ decodeList c, e ∈ elemSet x) := hA.forall_mem_decodeList
   have hcode : Nat.Primrec (fun n : ℕ => bitsCode n n) :=
     (primrec_bitsCode.comp (primrec_id.pair primrec_id)).of_eq fun n => by
       simp only [unpair_pair_fst, unpair_pair_snd, id_eq]
+  constructor
   refine REPred.of_iff (fun n => ?_) (hforall.comp hcode)
   show x.mem (nbhd n) ↔ _
   rw [nbhd_mem_iff_subset_elemSet, compl_nbhd]
@@ -414,7 +415,7 @@ theorem isComputableElement_of_elemSet_re {x : PN.Element} (hA : REPred (fun k =
 recursively enumerable subsets of `ℕ`, via the identification `x ↦ elemSet x` of `PN` with the
 classical powerset domain `(Set ℕ, ⊆)`. -/
 theorem isComputableElement_iff_elemSet_re (x : PN.Element) :
-    IsComputableElement PNpres x ↔ REPred (fun k => k ∈ elemSet x) :=
+    ComputableElement PNpres x ↔ REPred (fun k => k ∈ elemSet x) :=
   ⟨elemSet_re_of_isComputableElement, isComputableElement_of_elemSet_re⟩
 
 /-! ## `fun` and `graph` (Exercise 5.14) are computable

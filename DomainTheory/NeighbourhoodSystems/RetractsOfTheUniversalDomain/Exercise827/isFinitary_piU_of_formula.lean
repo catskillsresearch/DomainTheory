@@ -26,6 +26,6 @@ theorem isFinitary_piU_of_formula {d : ApproximableMap U U}
     (hii : ∀ (x : (funSpace U U).Element) {Y}, ((piD d).toElementMap x).mem Y ↔
       (funSpace U U).mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ (piD d).rel X X) :
     IsFinitary (piU d) :=
-  isFinitary_piU_of_isFinitary_piD (isFinitaryProjection_piD_of_formula d hii).2
+  isFinitary_piU_of_isFinitary_piD (isFinitaryProjection_piD_of_formula d hii).out.2
 
 end DomainTheory.NeighbourhoodSystems

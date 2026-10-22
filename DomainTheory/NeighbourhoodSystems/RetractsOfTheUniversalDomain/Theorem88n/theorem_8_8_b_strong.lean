@@ -32,8 +32,8 @@ into `U` (Theorem 8.8(b)(vii), computable). -/
 theorem theorem_8_8_b_strong :
     ∃ (i : ApproximableMap D U) (j : ApproximableMap U D),
       j.comp i = idMap D ∧ i.comp j ≤ idMap U ∧
-        IsComputableMap P UComputablePresentation i ∧
-        IsComputableMap UComputablePresentation P j := by
+        ComputableMap P UComputablePresentation i ∧
+        ComputableMap UComputablePresentation P j := by
   set h := DprimeUCode_subsystem P with hh
   refine ⟨h.inj.comp (isoInj P), (isoProj P).comp h.proj, ?_, ?_, ?_, ?_⟩
   · rw [comp_assoc, ← comp_assoc h.proj h.inj (isoInj P), h.proj_comp_inj, idMap_comp]

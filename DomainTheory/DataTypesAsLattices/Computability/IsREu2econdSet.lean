@@ -28,9 +28,10 @@ open Nat.Partrec.Code
 theorem IsRE.condSet {z x y : Pomega} (hz : IsRE z) (hx : IsRE x) (hy : IsRE y) :
     IsRE (condSet z x y) := by
   have hleft : REPred fun n => n ∈ x ∧ 0 ∈ z :=
-    REPred.and hx (IsRE.hasZero hz)
+    REPred.and hx.out (IsRE.hasZero hz)
   have hright : REPred fun n => n ∈ y ∧ ∃ k, k + 1 ∈ z :=
-    REPred.and hy (IsRE.hasPos hz)
+    REPred.and hy.out (IsRE.hasPos hz)
+  constructor
   exact _root_.REPred.of_eq (REPred.or hleft hright) fun n => Iff.rfl
 
 end DomainTheory.DataTypesAsLattices

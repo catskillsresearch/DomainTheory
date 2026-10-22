@@ -100,8 +100,8 @@ theorem example_719.{u_1, u_2, u_3} : And
                       (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q a)
                       (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q b))))
           {f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W},
-          @DomainTheory.NeighbourhoodSystems.IsComputableMap α β V W P Q f →
-            @DomainTheory.NeighbourhoodSystems.IsComputableMap (Set α) (Set β)
+          @DomainTheory.NeighbourhoodSystems.ComputableMap α β V W P Q f →
+            @DomainTheory.NeighbourhoodSystems.ComputableMap (Set α) (Set β)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PDPresentation α V P consV hconsVp hconsVs)
@@ -112,7 +112,7 @@ theorem example_719.{u_1, u_2, u_3} : And
         (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V)
         (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W)
         {f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W},
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap α β V W P Q f →
+        @DomainTheory.NeighbourhoodSystems.ComputableMap α β V W P Q f →
           Domain.Recursive.REPred₂ fun (c d : Nat) =>
             @DomainTheory.NeighbourhoodSystems.ApproximableMap.rel (Set α) (Set β)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
@@ -245,8 +245,8 @@ theorem example_719.{u_1, u_2, u_3} : And
                       (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q a)
                       (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q b))))
           {f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W},
-          @DomainTheory.NeighbourhoodSystems.IsComputableMap α β V W P Q f →
-            @DomainTheory.NeighbourhoodSystems.IsComputableMap (Set α) (Set β)
+          @DomainTheory.NeighbourhoodSystems.ComputableMap α β V W P Q f →
+            @DomainTheory.NeighbourhoodSystems.ComputableMap (Set α) (Set β)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PDPresentation α V P consV hconsVp hconsVs)
@@ -257,7 +257,7 @@ theorem example_719.{u_1, u_2, u_3} : And
         (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V)
         (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W)
         {f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W},
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap α β V W P Q f →
+        @DomainTheory.NeighbourhoodSystems.ComputableMap α β V W P Q f →
           Domain.Recursive.REPred₂ fun (c d : Nat) =>
             @DomainTheory.NeighbourhoodSystems.ApproximableMap.rel (Set α) (Set β)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
@@ -389,8 +389,8 @@ theorem example_719.{u_1, u_2, u_3} : And
                       (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q a)
                       (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q b))))
           {f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W},
-          @DomainTheory.NeighbourhoodSystems.IsComputableMap α β V W P Q f →
-            @DomainTheory.NeighbourhoodSystems.IsComputableMap (Set α) (Set β)
+          @DomainTheory.NeighbourhoodSystems.ComputableMap α β V W P Q f →
+            @DomainTheory.NeighbourhoodSystems.ComputableMap (Set α) (Set β)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PDPresentation α V P consV hconsVp hconsVs)
@@ -401,7 +401,7 @@ theorem example_719.{u_1, u_2, u_3} : And
         (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V)
         (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W)
         {f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W},
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap α β V W P Q f →
+        @DomainTheory.NeighbourhoodSystems.ComputableMap α β V W P Q f →
           Domain.Recursive.REPred₂ fun (c d : Nat) =>
             @DomainTheory.NeighbourhoodSystems.ApproximableMap.rel (Set α) (Set β)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
@@ -507,8 +507,8 @@ theorem example_719.{u_1, u_2, u_3} : And
                       (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q a)
                       (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q b))))
           {f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W},
-          @DomainTheory.NeighbourhoodSystems.IsComputableMap α β V W P Q f →
-            @DomainTheory.NeighbourhoodSystems.IsComputableMap (Set α) (Set β)
+          @DomainTheory.NeighbourhoodSystems.ComputableMap α β V W P Q f →
+            @DomainTheory.NeighbourhoodSystems.ComputableMap (Set α) (Set β)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PDPresentation α V P consV hconsVp hconsVs)
@@ -519,7 +519,7 @@ theorem example_719.{u_1, u_2, u_3} : And
         (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V)
         (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W)
         {f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W},
-        @DomainTheory.NeighbourhoodSystems.IsComputableMap α β V W P Q f →
+        @DomainTheory.NeighbourhoodSystems.ComputableMap α β V W P Q f →
           Domain.Recursive.REPred₂ fun (c d : Nat) =>
             @DomainTheory.NeighbourhoodSystems.ApproximableMap.rel (Set α) (Set β)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
@@ -605,8 +605,8 @@ theorem example_719.{u_1, u_2, u_3} : And
                       (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q a)
                       (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q b))))
           {f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W},
-          @DomainTheory.NeighbourhoodSystems.IsComputableMap α β V W P Q f →
-            @DomainTheory.NeighbourhoodSystems.IsComputableMap (Set α) (Set β)
+          @DomainTheory.NeighbourhoodSystems.ComputableMap α β V W P Q f →
+            @DomainTheory.NeighbourhoodSystems.ComputableMap (Set α) (Set β)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
               (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PDPresentation α V P consV hconsVp hconsVs)

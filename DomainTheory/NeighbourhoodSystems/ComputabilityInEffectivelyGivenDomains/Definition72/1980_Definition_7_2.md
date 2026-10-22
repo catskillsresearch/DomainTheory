@@ -33,8 +33,8 @@ Definitions 7.1 and 7.2 may very well irritate the person hearing them for the f
 
 **Lean 4**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/IsComputableElement.lean](IsComputableElement.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/IsComputableMap.lean](IsComputableMap.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/ComputableElement.lean](ComputableElement.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/ComputableMap.lean](ComputableMap.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/Basic.lean](Basic.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/apply_isComputableElement.lean](apply_isComputableElement.lean)
 - [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/comp_isComputable.lean](comp_isComputable.lean)

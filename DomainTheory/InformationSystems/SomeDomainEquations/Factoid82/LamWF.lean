@@ -27,9 +27,10 @@ variable (A : InfoSys α)
 
 /-- Well-formed tokens under depth Con (Scott (1)–(3) for the InfoSys instance).
 Early staged `IsLamToken` / `LamToken` remain scaffolding only. -/
-def IsLamWF : RawLamToken α → Prop
-  | .bot | .atom _ => True
-  | .funTok xs ys => LamConDepth A (listToFinset xs) ∧ LamConDepth A (listToFinset ys)
+class LamWF (t : RawLamToken α) : Prop where
+  out : match t with
+    | .bot | .atom _ => True
+    | .funTok xs ys => LamConDepth A (listToFinset xs) ∧ LamConDepth A (listToFinset ys)
 
 end InfoSys
 

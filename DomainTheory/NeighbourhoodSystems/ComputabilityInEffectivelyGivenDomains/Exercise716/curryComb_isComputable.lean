@@ -24,7 +24,7 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
 /-- **Exercise 7.16 — `curry` is computable, and in fact a recursive set.** If `𝒟₀, 𝒟₁, 𝒟₂` are
 effectively given, then there are computable presentations of `(𝒟₀×𝒟₁→𝒟₂)` and `(𝒟₀→(𝒟₁→𝒟₂))`
 relative to which the `curry` combinator's neighbourhood relation is **recursively decidable**
-(`RecDecidable₂`) — hence `curry` is a computable map (`IsComputableMap`, the r.e. condition of
+(`RecDecidable₂`) — hence `curry` is a computable map (`ComputableMap`, the r.e. condition of
 Definition 7.2). The answer to Scott's question: `curry` is a *recursive* set, not merely r.e. -/
 theorem curryComb_isComputable
     (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
@@ -32,7 +32,7 @@ theorem curryComb_isComputable
     ∃ (PA : ComputablePresentation (funSpace (prod V₀ V₁) V₂))
       (PB : ComputablePresentation (funSpace V₀ (funSpace V₁ V₂))),
       RecDecidable₂ (fun n m => (curryC V₀ V₁ V₂).rel (PA.X n) (PB.X m)) ∧
-        IsComputableMap PA PB (curryC V₀ V₁ V₂) := by
+        ComputableMap PA PB (curryC V₀ V₁ V₂) := by
   obtain ⟨incl0, hincl0p, hincl0s⟩ := P₀.incl_computable
   obtain ⟨fc0, hfc0p, hfc0s⟩ := P₀.cons_computable
   obtain ⟨incl1, hincl1p, hincl1s⟩ := P₁.incl_computable
@@ -77,6 +77,6 @@ theorem curryComb_isComputable
       (funConsChar_spec P₁ P₂ fc1 fc2 (fun s => (hfc1s s).symm) (fun s => (hfc2s s).symm))
       (primrec_funConsChar P₀ Pc fc0 fcc hfc0p hfccp)
       (primrec_funConsChar P₁ P₂ fc1 fc2 hfc1p hfc2p)
-  exact ⟨PA, PB, hRec, hRec.re⟩
+  exact ⟨PA, PB, hRec, ⟨hRec.re⟩⟩
 
 end DomainTheory.NeighbourhoodSystems

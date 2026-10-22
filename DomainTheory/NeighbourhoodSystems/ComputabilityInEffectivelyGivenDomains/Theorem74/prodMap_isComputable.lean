@@ -33,8 +33,8 @@ theorem prodMap_isComputable {V₀' : NeighborhoodSystem α'} {V₁' : Neighborh
     {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
     {P₀' : ComputablePresentation V₀'} {P₁' : ComputablePresentation V₁'}
     {f : ApproximableMap V₀ V₀'} {g : ApproximableMap V₁ V₁'}
-    (hf : IsComputableMap P₀ P₀' f) (hg : IsComputableMap P₁ P₁' g) :
-    IsComputableMap (prodPresentation P₀ P₁) (prodPresentation P₀' P₁') (prodMap f g) := by
+    (hf : ComputableMap P₀ P₀' f) (hg : ComputableMap P₁ P₁' g) :
+    ComputableMap (prodPresentation P₀ P₁) (prodPresentation P₀' P₁') (prodMap f g) := by
   rw [prodMap]
   exact paired_isComputable (comp_isComputable (proj₀_isComputable P₀ P₁) hf)
     (comp_isComputable (proj₁_isComputable P₀ P₁) hg)

@@ -27,8 +27,8 @@ variable {e : L → L}
 /-- **Fixed points of a Scott-continuous idempotent form a continuous lattice.** Combine the
 retraction `idemFixRetraction` with Proposition 2.10(a). -/
 theorem idemFix_isContinuousLattice (hidem : ∀ x, e (e x) = e x) (hsc : PreservesDirectedSup e)
-    (hL : IsContinuousLattice L) :
-    @IsContinuousLattice (IdemFix e)
+    (hL : ContinuousLattice L) :
+    @ContinuousLattice (IdemFix e)
       (IdemFix.completeLattice hidem (preservesDirectedSup_monotone hsc)) := by
   let := IdemFix.completeLattice hidem (preservesDirectedSup_monotone hsc)
   exact proposition_2_10_a (idemFixRetraction hidem hsc) hL

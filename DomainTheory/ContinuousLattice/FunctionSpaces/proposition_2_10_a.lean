@@ -35,7 +35,8 @@ the retraction `j` (which preserves this directed supremum) gives `d = ⊔{j(x')
 `D`, and each `j(x') ≪ d` by `retr_wayBelow_of_wayBelow_incl`. Hence any upper bound of
 `{x | x ≪ d}` dominates `d`, so `d = ⊔{x | x ≪ d}`. -/
 theorem proposition_2_10_a (R : IsContinuousLatticeRetraction D D')
-    (hD' : IsContinuousLattice D') : IsContinuousLattice D := by
+    (hD' : ContinuousLattice D') : ContinuousLattice D := by
+  constructor
   intro d
   refine ⟨fun x hx => hx.le, fun b hb => ?_⟩
   rw [← R.sSup_image_retr_wayBelow hD' d]

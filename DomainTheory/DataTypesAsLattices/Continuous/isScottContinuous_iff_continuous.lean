@@ -35,13 +35,15 @@ theorem isScottContinuous_iff_continuous (f : Pomega → Pomega) :
     ext x
     constructor
     · intro hx
-      have : k ∈ scottUnion f x := by rwa [← hf x]
+      have : k ∈ scottUnion f x := by rwa [← hf.out x]
       obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp this
       exact Set.mem_iUnion₂.mpr ⟨n, hkn, hn⟩
     · intro hx
       obtain ⟨n, hkn, hn⟩ := Set.mem_iUnion₂.mp hx
       exact isScottContinuous_monotone hf hn hkn
-  · intro hfcont x
+  · intro hfcont
+    constructor
+    intro x
     ext k
     have hopen : IsScottOpen (f ⁻¹' memOpen k) :=
       (isScottOpen_iff_isOpen _).mpr (IsOpen.preimage hfcont (isOpen_memOpen k))

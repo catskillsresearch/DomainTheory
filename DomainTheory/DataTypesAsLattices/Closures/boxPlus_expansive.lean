@@ -27,7 +27,7 @@ namespace DomainTheory.DataTypesAsLattices
 occupancy cases of (5.13) is expansive: on a one-sided `u` the shift `a'`
 is expansive by `boxShift_expansive` and (5.8) rebuilds `u`, while mixed
 `u` goes to `⊤` and empty `u` is `⊥`. -/
-theorem boxPlus_expansive {a b : Pomega} (ha : IsClosure a) (hb : IsClosure b)
+theorem boxPlus_expansive {a b : Pomega} (ha : Closure a) (hb : Closure b)
     (u : Pomega) : u ⊆ funOf (boxPlus a b) u := by
   have h8 : squarePair (squareFst u) (squareSnd u) = u := eq_5_8 u
   by_cases hx : squareFst u = botElem <;> by_cases hy : squareSnd u = botElem

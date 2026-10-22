@@ -53,12 +53,13 @@ domainIsoCode812d.symm` is computable relative to `P₁`/`P₀`, the exact mirro
 `XPseqCode`↔`YPseqCode`/`primrec_YPseqCode` throughout: `P₀.eq_computable` reindexed along the
 primitive-recursive `YPseqCode` supplies the equality conjunct, `P₁.incl_computable` reindexed
 directly supplies the inclusion conjunct, `RecDecidable.and`/`.re`/`REPred.proj` close the outer
-`∃ k`, and `REPred.of_iff` matches the exact `IsComputableMap P₁ P₀` shape via `toD0Code_rel_iff`.
+`∃ k`, and `REPred.of_iff` matches the exact `ComputableMap P₁ P₀` shape via `toD0Code_rel_iff`.
 Completes `8.12(d)(5)(f)` — hence `8.12(d)(5)` — in full. -/
 theorem domainIsoCode812d_symm_isComputableMap :
-    IsComputableMap P₁ P₀ (ofIso (domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
+    ComputableMap P₁ P₀ (ofIso (domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
       hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
       hUnion1 hX0 hY0).symm) := by
+  constructor
   have hg : Nat.Primrec (fun w : ℕ => Nat.pair w.unpair.2.unpair.2
       (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 w.unpair.1)) :=
     Nat.Primrec.pair (Nat.Primrec.right.comp Nat.Primrec.right)

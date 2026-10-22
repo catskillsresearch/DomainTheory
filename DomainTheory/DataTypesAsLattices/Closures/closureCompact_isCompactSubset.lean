@@ -16,7 +16,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.directed_finite_cover_su
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem closureCompact_isCompactSubset {a : Pomega} (ha : IsClosure a)
+theorem closureCompact_isCompactSubset {a : Pomega} (ha : Closure a)
     (n : ℕ) : IsCompactSubset (closureCompact a ha n) := by
   intro s hs hsub
   have hen : e n ⊆ ⋃₀ (Subtype.val '' s) :=

@@ -14,7 +14,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamE
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepth
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst23
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst27
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.IsLamWF
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamWF
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst70
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst74
@@ -33,7 +33,7 @@ variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
 
 theorem mem_listToLamDFinset {xs : List (RawLamToken α)}
-    {h : ∀ t ∈ xs, IsLamWF A t} {p : LamDToken A} :
+    {h : ∀ t ∈ xs, LamWF A t} {p : LamDToken A} :
     p ∈ listToLamDFinset A xs h ↔ p.val ∈ xs := by
   induction xs with
   | nil =>

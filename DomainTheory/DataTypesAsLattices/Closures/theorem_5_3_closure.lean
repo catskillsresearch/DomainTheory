@@ -17,8 +17,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_arrowR
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem theorem_5_3_closure {a b : Pomega} (ha : IsClosure a) (hb : IsClosure b) :
-    IsClosure (arrowR a b) :=
-  ⟨Icomb_subset_arrowR ha hb, theorem_5_3 ha hb⟩
+theorem theorem_5_3_closure {a b : Pomega} (ha : Closure a) (hb : Closure b) :
+    Closure (arrowR a b) :=
+  ⟨⟨Icomb_subset_arrowR ha hb, theorem_5_3 ha hb⟩⟩
 
 end DomainTheory.DataTypesAsLattices

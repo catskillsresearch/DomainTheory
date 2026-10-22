@@ -21,16 +21,17 @@ theorem ofComb_update_isScottContinuous (c : Comb) (ρ : ℕ → Pomega) (i : �
     IsScottContinuous (fun v => ofComb c (envSet ρ i v)) := by
   induction c generalizing ρ i with
   | var j =>
+    constructor
     intro x
     by_cases hj : j = i
-    · subst hj; simpa [ofComb, envSet, Function.update] using id_isScottContinuous x
-    · simpa [ofComb, envSet, Function.update, hj] using const_isScottContinuous (ρ j) x
-  | zero => intro x; simpa [ofComb] using const_isScottContinuous zeroC x
-  | suc => intro x; simpa [ofComb] using const_isScottContinuous sucC x
-  | pred => intro x; simpa [ofComb] using const_isScottContinuous predC x
-  | cond => intro x; simpa [ofComb] using const_isScottContinuous condC x
-  | K => intro x; simpa [ofComb] using const_isScottContinuous Kcomb x
-  | S => intro x; simpa [ofComb] using const_isScottContinuous Scomb x
+    · subst hj; simpa [ofComb, envSet, Function.update] using id_isScottContinuous.out x
+    · simpa [ofComb, envSet, Function.update, hj] using (const_isScottContinuous (ρ j)).out x
+  | zero => constructor; intro x; simpa [ofComb] using (const_isScottContinuous zeroC).out x
+  | suc => constructor; intro x; simpa [ofComb] using (const_isScottContinuous sucC).out x
+  | pred => constructor; intro x; simpa [ofComb] using (const_isScottContinuous predC).out x
+  | cond => constructor; intro x; simpa [ofComb] using (const_isScottContinuous condC).out x
+  | K => constructor; intro x; simpa [ofComb] using (const_isScottContinuous Kcomb).out x
+  | S => constructor; intro x; simpa [ofComb] using (const_isScottContinuous Scomb).out x
   | app u v iu iv =>
     exact theorem_1_3_tuple
       (fun y => funOf_isScottContinuous_left y)

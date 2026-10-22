@@ -60,7 +60,7 @@ model of r.e. is `Domain.Recursive.REPred p := ∃ q, RecDecidable q ∧ ∀ n, 
 ## Half 2 — every computable element is a decreasing union of finite (principal) elements
 
 `computableElement_eq_decreasing_iUnion_principal`: for a computable element `y` of an effectively
-given `W` (`IsComputableElement Q y`, i.e. the index set `{m ∣ Yₘ ∈ y}` is r.e.), there is a
+given `W` (`ComputableElement Q y`, i.e. the index set `{m ∣ Yₘ ∈ y}` is r.e.), there is a
 **primitive recursive** `t : ℕ → ℕ` with
 
 * (decreasing)   `Q.X (t (i+1)) ⊆ Q.X (t i)` for all `i`;
@@ -150,17 +150,17 @@ private theorem primrec_tFun {W : NeighborhoodSystem β} (Q : ComputablePresenta
 written `y = ⋃ {↑Y_{t(i)} ∣ i ∈ ℕ}` with `t : ℕ → ℕ` primitive recursive and the approximations
 *decreasing*, `Y_{t(i+1)} ⊆ Y_{t(i)}`.
 
-The index set `{m ∣ Yₘ ∈ y}` is r.e. (`IsComputableElement`) and non-empty (it contains the master
+The index set `{m ∣ Yₘ ∈ y}` is r.e. (`ComputableElement`) and non-empty (it contains the master
 `Δ`, by `y.master_mem`), so Half 1's `repred_exists_primrec_range` lists it as the range of a
 primitive recursive `r₀`. Running intersections (`tFun Q r₀`) turn this into a decreasing chain whose
 members are still in `y` (a filter is closed under `∩`) and still cofinal in `y` (each
 `Y_{t(i)} ⊆ Y_{r₀(i)}`), so the principal-filter union is unchanged. -/
 theorem computableElement_eq_decreasing_iUnion_principal {W : NeighborhoodSystem β}
-    (Q : ComputablePresentation W) {y : W.Element} (hy : IsComputableElement Q y) :
+    (Q : ComputablePresentation W) {y : W.Element} (hy : ComputableElement Q y) :
     ∃ t : ℕ → ℕ, Nat.Primrec t ∧
       (∀ i, Q.X (t (i + 1)) ⊆ Q.X (t i)) ∧
       (∀ Z, y.mem Z ↔ ∃ i, (W.principal (Q.mem_X (t i))).mem Z) := by
-  have hy' : REPred (fun m => y.mem (Q.X m)) := hy
+  have hy' : REPred (fun m => y.mem (Q.X m)) := hy.out
   -- The index set is non-empty: it contains the master neighbourhood `Δ`.
   obtain ⟨m₀, hm₀⟩ := Q.surj W.master_mem
   have hwit : y.mem (Q.X m₀) := by rw [hm₀]; exact y.master_mem

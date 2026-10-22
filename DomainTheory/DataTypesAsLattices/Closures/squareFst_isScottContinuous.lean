@@ -16,6 +16,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem squareFst_isScottContinuous : IsScottContinuous squareFst := by
+  constructor
   intro x
   ext n
   constructor

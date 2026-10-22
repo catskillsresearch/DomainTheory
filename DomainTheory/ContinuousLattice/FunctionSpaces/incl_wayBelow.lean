@@ -35,7 +35,7 @@ namespace IsContinuousLatticeProjection
 
 
 /-- **Scott 1972, Proposition 3.10(iii).** Projections preserve the way-below relation. -/
-theorem incl_wayBelow (P : IsContinuousLatticeProjection D D') (hD' : IsContinuousLattice D')
+theorem incl_wayBelow (P : IsContinuousLatticeProjection D D') (hD' : ContinuousLattice D')
     {x y : D} (h : x ≪ y) : @WayBelow D' _ (P.incl x) (P.incl y) := by
   set W : Set D' := { z' | @WayBelow D' _ z' (P.incl y) }
   have hWne : W.Nonempty := ⟨(⊥ : D'), @bot_wayBelow D' _ (P.incl y)⟩
@@ -43,7 +43,7 @@ theorem incl_wayBelow (P : IsContinuousLatticeProjection D D') (hD' : IsContinuo
     intro p hp q hq
     exact ⟨p ⊔ q, @WayBelow.sup D' _ p q (P.incl y) hp hq, le_sup_left, le_sup_right⟩
   have hy : y = sSup (Set.image (P.retr : D' → D) W) := by
-    rw [← P.retr.preservesDirectedSup_coe W hWne hWdir, @IsContinuousLattice.sSup_wayBelow D' _ hD' (P.incl y),
+    rw [← P.retr.preservesDirectedSup_coe W hWne hWdir, @ContinuousLattice.sSup_wayBelow D' _ hD' (P.incl y),
       P.retr_incl y]
   have hImgne : (Set.image (P.retr : D' → D) W).Nonempty := by
     obtain ⟨z', hz'⟩ := hWne

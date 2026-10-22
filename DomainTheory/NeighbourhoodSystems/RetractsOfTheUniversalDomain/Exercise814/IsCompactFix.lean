@@ -5,7 +5,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.IsClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.ClosureOperator
 
 @[expose] public section
 
@@ -24,7 +24,7 @@ variable {a : ApproximableMap E E}
 /-- **Compactness of a fixed point w.r.t. directed unions of `Fix(a)`.** Phrased via the ambient
 `E.Element` order and `iSupDirected` (since `Fix(a)` is not itself a `NeighborhoodSystem.Element`
 type), mirroring `Theorem85.lean`'s `IsCompactElt`. -/
-def IsCompactFix (_h : IsClosureOperator a) (y : FixSet a) : Prop :=
+def IsCompactFix (_h : ClosureOperator a) (y : FixSet a) : Prop :=
   ∀ {I : Type u} [Nonempty I] (d : I → FixSet a)
     (hdir : ∀ i j, ∃ k, (d i).1 ≤ (d k).1 ∧ (d j).1 ≤ (d k).1),
     y.1 ≤ iSupDirected (fun i => (d i).1) hdir → ∃ i, y.1 ≤ (d i).1

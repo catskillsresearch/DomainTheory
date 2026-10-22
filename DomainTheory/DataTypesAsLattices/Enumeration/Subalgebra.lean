@@ -23,7 +23,7 @@ open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
 /-- Combinatory subalgebra: contains `G` and is closed under application. -/
-def IsSubalgebra (A : Set Pomega) : Prop :=
-  Gcomb ∈ A ∧ ∀ ⦃u v⦄, u ∈ A → v ∈ A → funOf u v ∈ A
+class Subalgebra (A : Set Pomega) : Prop where
+  out : Gcomb ∈ A ∧ ∀ ⦃u v⦄, u ∈ A → v ∈ A → funOf u v ∈ A
 
 end DomainTheory.DataTypesAsLattices

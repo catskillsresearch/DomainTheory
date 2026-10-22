@@ -23,6 +23,6 @@ open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
 theorem IsRE.hasZero {z : Pomega} (hz : IsRE z) : REPred fun _ : ℕ => 0 ∈ z :=
-  hz.comp (Computable.const 0)
+  hz.out.comp (Computable.const 0)
 
 end DomainTheory.DataTypesAsLattices

@@ -26,7 +26,7 @@ computable."** Packages `subApprox_isComputable` with the function-space present
 presentation of `E`. -/
 theorem sub_isComputable_of_isEffectivelyGiven (h : E.IsEffectivelyGiven) :
     ∃ Pfun : ComputablePresentation (funSpace E E),
-      IsComputableMap Pfun Pfun (subApprox (E := E)) := by
+      ComputableMap Pfun Pfun (subApprox (E := E)) := by
   obtain ⟨P⟩ := h
   obtain ⟨incl, hinclp, hincls⟩ := P.incl_computable
   obtain ⟨eq, heqp, heqs⟩ := P.eq_computable

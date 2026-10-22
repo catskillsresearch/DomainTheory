@@ -27,9 +27,9 @@ variable {α : Type} {E : NeighborhoodSystem α}
 /-- Every approximant pair `(aOp s t n, bOp s t n)` consists of finitary projections, provided
 `s`/`t` send pairs of finitary projections to finitary projections. -/
 theorem isFinitaryProjection_chain (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))
-    (hst : ∀ a b, IsFinitaryProjection a → IsFinitaryProjection b →
-      IsFinitaryProjection (binOp s a b) ∧ IsFinitaryProjection (binOp t a b)) :
-    ∀ n, IsFinitaryProjection (aOp s t n) ∧ IsFinitaryProjection (bOp s t n) := by
+    (hst : ∀ a b, FinitaryProjection a → FinitaryProjection b →
+      FinitaryProjection (binOp s a b) ∧ FinitaryProjection (binOp t a b)) :
+    ∀ n, FinitaryProjection (aOp s t n) ∧ FinitaryProjection (bOp s t n) := by
   intro n
   induction n with
   | zero =>

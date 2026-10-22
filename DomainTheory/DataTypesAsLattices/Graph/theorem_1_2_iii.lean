@@ -20,7 +20,9 @@ namespace DomainTheory.DataTypesAsLattices
 theorem theorem_1_2_iii (u : Pomega) :
     graph (funOf u) = u ↔ IsGraph u := by
   constructor
-  · intro heqGraph k m n hkm hkn
+  · intro heqGraph
+    constructor
+    intro k m n hkm hkn
     have hmem : pair k m ∈ graph (funOf u) := heqGraph.symm ▸ hkm
     rcases mem_graph.mp hmem with ⟨k', m', hp, hmfun⟩
     have hk : k = k' := (pair_inj hp).1
@@ -35,7 +37,7 @@ theorem theorem_1_2_iii (u : Pomega) :
     apply subset_antisymm
     · intro p hp
       rcases hp with ⟨n, m, rfl, ⟨k, hk, hkm⟩⟩
-      exact hu hkm hk
+      exact hu.out hkm hk
     · exact theorem_1_2_ii u
 
 end DomainTheory.DataTypesAsLattices

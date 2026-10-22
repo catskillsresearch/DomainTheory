@@ -27,7 +27,7 @@ theorem theorem_4_1 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
       ∀ {a} (_ha : Retract a),
         Fixpoints (funOf a) = {x | typed x a} ∧
           ∀ x : Fixpoints (funOf a),
-            IsDirectedSubset (retractBasis a x) ∧
+            DirectedSubset (retractBasis a x) ∧
               (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) := by
   constructor
   · intro A hA

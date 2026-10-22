@@ -20,7 +20,8 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 
 
 /-- `IsOpen` for `|𝒟|` is exactly Scott's condition (ii). -/
-theorem isOpen_iff_isOpenFilter (U : Set V.Element) : IsOpen U ↔ V.IsOpenFilter U := Iff.rfl
+theorem isOpen_iff_isOpenFilter (U : Set V.Element) : IsOpen U ↔ V.OpenFilter U :=
+  ⟨fun h => h, fun h => h⟩
 
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems

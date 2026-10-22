@@ -30,7 +30,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 /-- **Pointwise reconstruction.** For a Scott map `f`, the supremum of the values of the step
 functions below `f` recovers `f x`: `f x = ⊔ {e' | ∃ e ≪ x, e' ≪ f e}`. Uses continuity of `D`
 (`x = ⊔{e | e ≪ x}`), Scott-continuity of `f`, and continuity of `D'`. -/
-theorem stepMap_pointwise_sSup (hD : IsContinuousLattice D) (hD' : IsContinuousLattice D')
+theorem stepMap_pointwise_sSup (hD : ContinuousLattice D) (hD' : ContinuousLattice D')
     (f : ScottMap D D') (x : D) :
     sSup {e' : D' | ∃ e, e ≪ x ∧ e' ≪ (f : D → D') e} = (f : D → D') x := by
   apply le_antisymm

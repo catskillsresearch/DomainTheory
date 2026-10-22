@@ -18,6 +18,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem condSet_isScottContinuous_left (x y : Pomega) :
     IsScottContinuous (fun z => condSet z x y) := by
+  constructor
   intro z
   ext k
   constructor

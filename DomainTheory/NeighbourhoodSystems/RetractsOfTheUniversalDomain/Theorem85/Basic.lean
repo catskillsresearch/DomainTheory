@@ -55,7 +55,7 @@ subsystem `D ◁ E` **for any approximable map `a`** (`fixedNbhd_subsystem`), no
 needed for the neighbourhood-system axioms themselves. Formula (ii), unwound at principal elements
 via `rel_iff_mem_principal`, says exactly that `a`'s relation matches Proposition 8.2's formula for
 `D`: `a = retractionOfSubsystem (fixedNbhd_subsystem a)`. Proposition 8.2 (via Definition 8.3's
-corollaries) then hands us `IsFinitaryProjection a` for free.
+corollaries) then hands us `FinitaryProjection a` for free.
 
 **The `(i) ⟹ (ii)` direction is *not* formalized in this file.** Scott's own proof needs a fact not
 yet in the codebase: a section/retraction pair `i ⊣ j` (`j∘i = I_D`) built from the abstract
@@ -126,7 +126,7 @@ end Algebraic
 
 /-! ## Theorem 8.5, `(i) ⟹ (ii)`: the hard direction
 
-Setup: `a : E → E` is a retraction (`IsRetraction a`) and a projection (`a ≤ idMap E`), and its
+Setup: `a : E → E` is a retraction (`Retraction a`) and a projection (`a ≤ idMap E`), and its
 fixed-point set is order-isomorphic to `F.Element` for some neighbourhood system `F` (`IsFinitary
 a`, witnessed by `e`). We build the "section" `i : F → E` induced by `e` directly via `ofMono`
 (Exercise 2.8), show it realizes `e.symm` at *every* element of `F` (not just principal ones,

@@ -33,7 +33,7 @@ variable (a b : ApproximableMap U U)
 
 /-- **Proposition 8.10(b), `→`-case.** `a, b` finitary projections `⟹` `a → b` is finitary, with
 witnessing domain `D_a → D_b`. -/
-theorem finitary_arrowComb (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b) :
+theorem finitary_arrowComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     IsFinitary (arrowComb a b) :=
   isFinitary_of_projectionPair (IArrowComb a b) (JArrowComb a b) (JArrowComb_comp_IArrowComb a b)
     (IArrowComb_comp_JArrowComb a b ha hb).symm

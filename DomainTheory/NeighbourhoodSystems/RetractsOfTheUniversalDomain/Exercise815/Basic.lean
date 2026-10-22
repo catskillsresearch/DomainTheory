@@ -276,7 +276,7 @@ section ComputableElements
 
 variable (P : ComputablePresentation D)
 
-/-! ### 6a — reduce `IsComputableElement` to the index set `{i ∣ D'x.mem (P.X i)}` -/
+/-! ### 6a — reduce `ComputableElement` to the index set `{i ∣ D'x.mem (P.X i)}` -/
 
 /-- The singleton-list code `i ↦ encodeList [i]` is primitive recursive. -/
 theorem primrec_encodeList_singleton : Nat.Primrec (fun i => encodeList [i]) := by
@@ -291,14 +291,14 @@ the set of `P`-indices `i` with `(toSubsystemSys P x).mem (P.X i)` — is recurs
 `→`: reindex along `decodeList` (`mem_nbhdGen_iff`) then along the singleton-list code. `←`:
 `REPred.forall_mem_decodeList` directly. -/
 theorem subsystemU_computable_iff_index_set_re (x : (SubD P).Element) :
-    IsComputableElement (SubDPresentation P) x ↔
+    ComputableElement (SubDPresentation P) x ↔
       REPred (fun i => (toSubsystemSys P x).mem (P.X i)) := by
   have hiff : ∀ n, x.mem (SubDX P n) ↔ ∀ i ∈ decodeList n, (toSubsystemSys P x).mem (P.X i) := by
     intro n; unfold SubDX; exact mem_nbhdGen_iff P x (decodeList n)
   constructor
   · intro hx
     have hx' : REPred (fun n => ∀ i ∈ decodeList n, (toSubsystemSys P x).mem (P.X i)) :=
-      REPred.of_iff (fun n => (hiff n).symm) hx
+      REPred.of_iff (fun n => (hiff n).symm) hx.out
     refine REPred.of_iff (fun i => ?_) (hx'.comp primrec_encodeList_singleton)
     rw [decodeList_encodeList]
     simp only [List.mem_singleton]
@@ -306,6 +306,7 @@ theorem subsystemU_computable_iff_index_set_re (x : (SubD P).Element) :
     · intro h j hj; rw [hj]; exact h
     · intro h; exact h i rfl
   · intro hx
+    constructor
     exact REPred.of_iff hiff hx.forall_mem_decodeList
 
 /-! ### 6b–6d — the main biconditional, via a `P`-relative primitive recursive enumeration -/
@@ -317,7 +318,7 @@ recursive function — Scott's "index set r.e." reduced (Exercise 7.14) to an ex
 (`D'x.mem (P.X P.masterIdx) = D'x.mem D.master`, always true). `←` (6c):
 `Exercise714.repred_range_primrec`. -/
 theorem subsystemU_element_computable_iff (x : (SubD P).Element) :
-    IsComputableElement (SubDPresentation P) x ↔
+    ComputableElement (SubDPresentation P) x ↔
       ∃ r : ℕ → ℕ, Nat.Primrec r ∧
         ∀ i, (toSubsystemSys P x).mem (P.X i) ↔ ∃ n, r n = i := by
   rw [subsystemU_computable_iff_index_set_re P x]
@@ -480,7 +481,7 @@ correspond to effectively presented domains, presented *relative to* `UComputabl
 enumeration (see the 6g note in `arxiv.md` for why the fully general "arbitrary presentation"
 converse — genuine "uniqueness of computable numberings" — is out of scope). -/
 theorem subsystemU_effectivelyGiven_of_isComputableElement
-    (hx : IsComputableElement (SubDPresentation UComputablePresentation) x) :
+    (hx : ComputableElement (SubDPresentation UComputablePresentation) x) :
     (toSubsystemSys UComputablePresentation x).IsEffectivelyGiven := by
   obtain ⟨r, hr, hspec⟩ := (subsystemU_element_computable_iff UComputablePresentation x).mp hx
   exact ⟨Q'xPresentation r x hr hspec⟩

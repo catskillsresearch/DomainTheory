@@ -109,7 +109,7 @@ We can then readily prove:
 - [DataTypesAsLattices/Enumeration/Avoids.lean](Avoids.lean)
 - [DataTypesAsLattices/Enumeration/Deg.lean](Deg.lean)
 - [DataTypesAsLattices/Enumeration/Icomb_SK.lean](Icomb_SK.lean)
-- [DataTypesAsLattices/Enumeration/IsSubalgebra.lean](IsSubalgebra.lean)
+- [DataTypesAsLattices/Enumeration/Subalgebra.lean](Subalgebra.lean)
 - [DataTypesAsLattices/Enumeration/GeneratedSubalgebra.lean](GeneratedSubalgebra.lean)
 - [DataTypesAsLattices/Enumeration/Lterm.lean](Lterm.lean)
 - [DataTypesAsLattices/Enumeration/TOT.lean](TOT.lean)

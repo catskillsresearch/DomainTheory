@@ -24,10 +24,10 @@ theorem theorem_1_3_diag {f : Pomega → Pomega → Pomega}
   apply subset_antisymm
   · intro k hk
     have : k ∈ scottUnion (fun z => f z x) x := by
-      rw [← hfx x x]; exact hk
+      rw [← (hfx x).out x]; exact hk
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp this
     have : k ∈ scottUnion (fun y => f (e n) y) x := by
-      rw [← hfy (e n) x]; exact hkn
+      rw [← (hfy (e n)).out x]; exact hkn
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp this
     refine Set.mem_iUnion.mpr ⟨n ||| m, ?_⟩
     refine ⟨e_or_of_subset hn hm, ?_⟩

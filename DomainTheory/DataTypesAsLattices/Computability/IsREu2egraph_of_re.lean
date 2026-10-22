@@ -41,6 +41,7 @@ theorem IsRE.graph_of_re {f : Pomega → Pomega}
       ∃ t, p = pair (Nat.unpair t).1 (Nat.unpair t).2 ∧
         (Nat.unpair t).2 ∈ f (e (Nat.unpair t).1) :=
     REPred.exists (REPred.and heq.computablePred.to_re hmem)
+  constructor
   refine hex.of_eq fun p => ?_
   constructor
   · intro ⟨t, ht, hm⟩

@@ -39,9 +39,10 @@ equivalence; the deciders `fe`/`fU`/`fV` are read off `Q.eq_computable` and the 
 `u`/`v`. -/
 theorem gMap_isComputable (hD : ∀ X, D.mem X → X.Nonempty)
     (P : ComputablePresentation D) (Q : ComputablePresentation E)
-    (hu : IsComputableMap P Q u)
-    (hv : IsComputableMap (prodPresentation Q Q) Q v) :
-    IsComputableMap (dsharpPresentation P hD) Q (gMap u v hD) := by
+    (hu : ComputableMap P Q u)
+    (hv : ComputableMap (prodPresentation Q Q) Q v) :
+    ComputableMap (dsharpPresentation P hD) Q (gMap u v hD) := by
+  constructor
   obtain ⟨qU, hqU, hqUe⟩ := hu
   obtain ⟨fU, hfUp, hfUe⟩ := hqU
   obtain ⟨qV, hqV, hqVe⟩ := hv
@@ -80,7 +81,7 @@ theorem gMap_isComputable (hD : ∀ X, D.mem X → X.Nonempty)
   have hbase : REPred (fun s : ℕ =>
       (gEval fe fU fV Q.masterIdx (Nat.pair s.unpair.2.unpair.1 s.unpair.1)).unpair.1 = 1
         ∧ Q.X s.unpair.1.unpair.1 = Q.X s.unpair.2.unpair.2) := (hp1.and hp2).re
-  unfold IsComputableMap REPred₂
+  unfold REPred₂
   refine REPred.of_iff (fun t => ?_) (REPred.proj hbase)
   simp only [unpair_pair_fst, unpair_pair_snd]
   constructor

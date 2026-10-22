@@ -5,7 +5,7 @@ module
 
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts
-public import DomainTheory.DataTypesAsLattices.Closures.IsClosure
+public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.Closures.closureCompact
 public import DomainTheory.DataTypesAsLattices.Closures.closureCompact_isCompact
 public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff
@@ -17,7 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.fixed_eq_sSup_compacts
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Theorem 5.1 packaged as a concrete countably algebraic lattice. -/
-def closureRangeCountablyAlgebraic (a : Pomega) (ha : IsClosure a) :
+def closureRangeCountablyAlgebraic (a : Pomega) (ha : Closure a) :
     CountablyAlgebraic (Fixpoints (funOf a)) where
   compact := closureCompact a ha
   compact_isCompact := closureCompact_isCompact ha

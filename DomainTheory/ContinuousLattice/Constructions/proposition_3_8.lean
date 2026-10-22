@@ -34,7 +34,7 @@ embedding, then for each continuous `f : X → E` the explicit formula `scottExt
 *maximal extension* of `f` to `[Y → E]`: it is Scott-continuous (`scottExtend_continuous`), it
 restricts to `f` along `e` (`scottExtend_eq_of_continuous`), and it dominates every continuous
 solution of `f' ∘ e = f` (`scottExtend_maximal`). -/
-theorem proposition_3_8 (hE : IsContinuousLattice E) (e : X → Y) (he : IsEmbedding e)
+theorem proposition_3_8 (hE : ContinuousLattice E) (e : X → Y) (he : IsEmbedding e)
     (f : X → E) (hf : @Continuous X E _ scottTopologicalSpace f) :
     @Continuous Y E _ scottTopologicalSpace (scottExtend e f)
       ∧ (∀ x, scottExtend e f (e x) = f x)

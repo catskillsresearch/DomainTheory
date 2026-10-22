@@ -13,8 +13,8 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-def IsPi11 (U : Set Pomega) : Prop :=
-  ∃ h, IsScottContinuous h ∧
+class Pi11 (U : Set Pomega) : Prop where
+  out : ∃ h, IsScottContinuous h ∧
     U = {x | ∀ y, ∃ z, funOf (funOf (h x) y) z = ofNat 0}
 
 end DomainTheory.DataTypesAsLattices

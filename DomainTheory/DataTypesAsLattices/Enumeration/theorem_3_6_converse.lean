@@ -35,7 +35,7 @@ theorem theorem_3_6_converse (x : Pomega) :
   have hp := (theorem_3_6_finite [x]).1
   have h0 := combinatory_mem_Deg (singleGenerator [x]) (ofNat_combinatory 0)
   have : funOf (packList [x]) (ofNat 0) ∈ Deg (singleGenerator [x]) :=
-    (Deg_isSubalgebra _).2 hp h0
+    (Deg_isSubalgebra _).out.2 hp h0
   simpa [packList_cons_zero] using this
 
 end DomainTheory.DataTypesAsLattices

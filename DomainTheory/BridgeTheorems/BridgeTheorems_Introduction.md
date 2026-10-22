@@ -13,7 +13,7 @@ packages and build cross-presentation maps:
 
 | Presentation | Lean package | Characteristic object |
 | --- | --- | --- |
-| Continuous lattices **[Sco72]** | `scott1972` | `IsContinuousLattice D`, way-below `≪`, `ScottMap` |
+| Continuous lattices **[Sco72]** | `scott1972` | `ContinuousLattice D`, way-below `≪`, `ScottMap` |
 | Neighbourhood systems **[Sco81]** | `scott1980` | `NeighborhoodSystem`, filters as domain elements |
 | Information systems **[Sco82]** | `scott1982` | `InfoSys`, elements as consistent closed token sets |
 
@@ -24,7 +24,7 @@ overstates the continuous-lattice corner: for a continuous lattice `D`, the filt
 
 ```mermaid
 flowchart LR
-  CL["1972<br/>IsContinuousLattice"]
+  CL["1972<br/>ContinuousLattice"]
   NB["1980<br/>NeighborhoodSystem"]
   INF["1982<br/>InfoSys"]
   ALG["Ideal completion<br/>algebraic dcpo"]

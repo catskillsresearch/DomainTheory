@@ -18,7 +18,7 @@ theorem example_717.{u_1} : And
   (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     (hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X)
     (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D),
-    @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum (Prod (List Bool) α) (Prod (List Bool) α))
+    @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum (Prod (List Bool) α) (Prod (List Bool) α))
       (Prod (List Bool) α)
       (@DomainTheory.NeighbourhoodSystems.prod (Prod (List Bool) α) (Prod (List Bool) α)
         (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
@@ -34,7 +34,7 @@ theorem example_717.{u_1} : And
   (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     (hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X)
     (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D),
-    @DomainTheory.NeighbourhoodSystems.IsComputableMap (Prod (List Bool) α) (Prod (List Bool) α)
+    @DomainTheory.NeighbourhoodSystems.ComputableMap (Prod (List Bool) α) (Prod (List Bool) α)
       (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
       (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
       (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD)
@@ -44,7 +44,7 @@ theorem example_717.{u_1} : And
   (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     (hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X)
     (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D),
-    @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum (Prod (List Bool) α) (Prod (List Bool) α))
+    @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum (Prod (List Bool) α) (Prod (List Bool) α))
       (Prod (List Bool) α)
       (@DomainTheory.NeighbourhoodSystems.prod (Prod (List Bool) α) (Prod (List Bool) α)
         (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
@@ -60,7 +60,7 @@ theorem example_717.{u_1} : And
   (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     (hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X)
     (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D),
-    @DomainTheory.NeighbourhoodSystems.IsComputableMap (Prod (List Bool) α) (Prod (List Bool) α)
+    @DomainTheory.NeighbourhoodSystems.ComputableMap (Prod (List Bool) α) (Prod (List Bool) α)
       (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
       (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
       (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD)

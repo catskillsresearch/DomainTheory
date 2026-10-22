@@ -31,7 +31,7 @@ recursively **decidable** witness relation that Parts 2–4 will gate a primitiv
 `(fixedNbhd a).mem (P.X n)`, i.e. `P.X n` (already a `V`-neighbourhood) is a neighbourhood of Theorem
 8.5's subsystem `fixedNbhd a = {X ∈ V ∣ X a X}`.
 
-`diagFixed_isREPred` restricts `IsComputableMap P P a`'s two-variable r.e. relation `Xₙ a Xₘ` to the
+`diagFixed_isREPred` restricts `ComputableMap P P a`'s two-variable r.e. relation `Xₙ a Xₘ` to the
 diagonal `n = m` via `REPred.comp` against the primitive-recursive pairing `n ↦ ⟨n, n⟩` — no new
 mathematical content, purely a reindexing of Definition 7.2's hypothesis.
 
@@ -45,7 +45,7 @@ already-produced index against `qChar` (rather than searching for a fresh witnes
 All of this is stated for a general neighbourhood system `V` and computable presentation `P` (not
 just `𝒰`), since none of the mathematics is specific to the universal domain; Theorem 8.8(c) itself
 will specialize `V := 𝒰`, `P := UComputablePresentation`. Everything here is **choice-free**
-(`⊆ {propext, Quot.sound}`): built only from `Definition72.lean`'s choice-free `IsComputableMap` and
+(`⊆ {propext, Quot.sound}`): built only from `Definition72.lean`'s choice-free `ComputableMap` and
 `Recursive.lean`'s choice-free `REPred`/`RecDecidable` closure lemmas.
 -/
 

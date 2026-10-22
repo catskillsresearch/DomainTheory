@@ -14,7 +14,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Topology.Inseparable
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122.basicOpen
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122.IsOpenFilter
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122.OpenFilter
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122.mem_basicOpen
 
 @[expose] public section
@@ -81,20 +81,24 @@ theorem basicOpen_inter_subset_right {X Y : Set α} (hY : V.mem Y) :
 base is closed under finite intersection (`basicOpen_inter_subset_left/right`, using that filters
 are `∩`-closed and upward closed) with `[Δ] = |𝒟|` covering the space. -/
 instance instTopologicalSpaceElement : TopologicalSpace V.Element where
-  IsOpen := V.IsOpenFilter
-  isOpen_univ := fun x _ => ⟨V.master, x.master_mem, Set.subset_univ _⟩
+  IsOpen := V.OpenFilter
+  isOpen_univ := ⟨fun x _ => ⟨V.master, x.master_mem, Set.subset_univ _⟩⟩
   isOpen_inter := by
-    intro U W hU hW x hx
+    intro U W hU hW
+    constructor
+    intro x hx
     obtain ⟨hxU, hxW⟩ := hx
-    obtain ⟨X, hX, hXU⟩ := hU x hxU
-    obtain ⟨Y, hY, hYW⟩ := hW x hxW
+    obtain ⟨X, hX, hXU⟩ := hU.out x hxU
+    obtain ⟨Y, hY, hYW⟩ := hW.out x hxW
     refine ⟨X ∩ Y, x.inter_mem hX hY, fun z hz => ⟨hXU ?_, hYW ?_⟩⟩
     · exact V.basicOpen_inter_subset_left (x.sub hX) hz
     · exact V.basicOpen_inter_subset_right (x.sub hY) hz
   isOpen_sUnion := by
-    intro S hS x hx
+    intro S hS
+    constructor
+    intro x hx
     obtain ⟨t, htS, hxt⟩ := hx
-    obtain ⟨X, hX, hXt⟩ := hS t htS x hxt
+    obtain ⟨X, hX, hXt⟩ := (hS t htS).out x hxt
     exact ⟨X, hX, hXt.trans fun _ ha => ⟨t, htS, ha⟩⟩
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems

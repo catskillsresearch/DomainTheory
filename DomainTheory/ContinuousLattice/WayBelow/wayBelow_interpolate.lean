@@ -33,7 +33,7 @@ The proof runs Scott's standard argument: the set `M = {m | ∃ x, m ≪ x ∧ x
 (using directedness of `{· ≪ x}` twice) and has supremum `c` (using continuity twice). Hence
 `a ≪ c = ⊔M` with `M` directed forces `a ≪ m` for some `m ∈ M`, say `m ≪ x ≪ c`; then
 `a ≪ m ≤ x` gives `a ≪ x ≪ c`, so `b := x` works. -/
-theorem wayBelow_interpolate (hD : IsContinuousLattice D) {a c : D} (hac : a ≪ c) :
+theorem wayBelow_interpolate (hD : ContinuousLattice D) {a c : D} (hac : a ≪ c) :
     ∃ b, a ≪ b ∧ b ≪ c := by
   set M : Set D := {m | ∃ x, m ≪ x ∧ x ≪ c} with hM
   have hMdir : DirectedOn (· ≤ ·) M := by

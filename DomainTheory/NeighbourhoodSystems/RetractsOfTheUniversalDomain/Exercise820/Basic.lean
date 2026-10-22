@@ -65,7 +65,7 @@ claim — but record it as the answer to Scott's question.
 
 **On computability:** every combinator used (`⊥`, `paired`, `proj₀`/`proj₁`, `curry`, `evalMap`,
 `constMap`) already has (or, for `constMap` at a fixed computable index such as `⊥`'s, trivially
-would have) an `IsComputableMap` closure lemma elsewhere in the project (`proj₀_isComputable`/
+would have) an `ComputableMap` closure lemma elsewhere in the project (`proj₀_isComputable`/
 `proj₁_isComputable`/`paired_isComputable`, `Theorem74.lean`; `curry_isComputable`/
 `evalMap_isComputable`, `Theorem75.lean`) — so **yes**, both projection pairs are computable
 whenever `D` is effectively given. Assembling the precise numerical parameters these lemmas expect

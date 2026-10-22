@@ -28,8 +28,8 @@ namespace Sub8_6
 
 
 /-- **Theorem 8.6(b), in full.** `subApprox` is a finitary projection on `(E → E)`. -/
-theorem isFinitaryProjection_subApprox : IsFinitaryProjection (subApprox (E := E)) :=
-  ⟨isProjection_subApprox, isFinitary_subApprox⟩
+theorem isFinitaryProjection_subApprox : FinitaryProjection (subApprox (E := E)) :=
+  ⟨⟨isProjection_subApprox, isFinitary_subApprox⟩⟩
 
 end Sub8_6
 end DomainTheory.NeighbourhoodSystems

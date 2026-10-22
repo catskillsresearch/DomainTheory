@@ -18,8 +18,8 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- A set `𝒰 ⊆ |𝒟|` is *open* (Exercise 1.22, condition (ii)) when every point `x ∈ 𝒰` has a
 basic neighbourhood `[X]` with `X ∈ x` contained in `𝒰`. -/
-def IsOpenFilter (U : Set V.Element) : Prop :=
-  ∀ x ∈ U, ∃ X, x.mem X ∧ V.basicOpen X ⊆ U
+class OpenFilter (U : Set V.Element) : Prop where
+  out : ∀ x ∈ U, ∃ X, x.mem X ∧ V.basicOpen X ⊆ U
 
 end NeighborhoodSystem
 

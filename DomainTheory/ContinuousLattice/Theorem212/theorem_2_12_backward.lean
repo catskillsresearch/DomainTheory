@@ -33,14 +33,14 @@ IdemFix e` with inverse the retraction. -/
 theorem theorem_2_12_backward {D : Type u} [TopologicalSpace D] [T0Space D]
     (hD : InjectiveSpace.{u, u} D) :
     ∃ (E : Type u) (inst : CompleteLattice E),
-      @IsContinuousLattice E inst ∧
+      @ContinuousLattice E inst ∧
         Nonempty (@Homeomorph D E _ (@scottTopologicalSpace E inst)) := by
   obtain ⟨ι, ⟨R⟩⟩ := (corollary_1_6 D).1 hD
   -- `e = s ∘ r` on the Sierpiński power `L = ι → Prop`.
   have hidem : ∀ x, R.section' (R.retraction (R.section' (R.retraction x)))
       = R.section' (R.retraction x) :=
     fun x => congrArg R.section' (R.retraction_section (R.retraction x))
-  have hL : IsContinuousLattice (ι → Prop) := sierpinskiPower_isContinuousLattice ι
+  have hL : ContinuousLattice (ι → Prop) := sierpinskiPower_isContinuousLattice ι
   -- `e` is Scott-continuous: it is product-continuous (`s ∘ r`), and the Scott topology of the
   -- Sierpiński power is its product topology.
   have hcont_e : @Continuous (ι → Prop) (ι → Prop) scottTopologicalSpace scottTopologicalSpace

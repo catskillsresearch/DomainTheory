@@ -16,6 +16,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem funOf_isScottContinuous_left (y : Pomega) :
     IsScottContinuous (fun u => funOf u y) := by
+  constructor
   intro u
   ext m
   constructor

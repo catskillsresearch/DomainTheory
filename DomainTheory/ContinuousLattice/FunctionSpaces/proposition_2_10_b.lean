@@ -40,7 +40,7 @@ retract `D` coincides with the subspace topology induced from the ambient `D'` a
   `U` at some `j(x')`, and `i⁻¹(↟x') ⊆ U` since `x' ≪ i(z) ⟹ j(x') ⊑ z` with `U` upper. Each such
   basic set is induced-open by construction, so every Scott-open of `D` is induced-open. -/
 theorem proposition_2_10_b (R : IsContinuousLatticeRetraction D D')
-    (hD' : IsContinuousLattice D') :
+    (hD' : ContinuousLattice D') :
     (scottTopologicalSpace : TopologicalSpace D) =
       TopologicalSpace.induced (R.incl : D → D') scottTopologicalSpace := by
   apply le_antisymm

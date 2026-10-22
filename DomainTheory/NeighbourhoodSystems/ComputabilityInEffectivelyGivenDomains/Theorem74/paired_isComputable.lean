@@ -28,10 +28,11 @@ X¹_l) ↔ Zₙ f X⁰_k ∧ Zₙ g X¹_l`, the conjunction of two r.e. relation
 theorem paired_isComputable {V₂ : NeighborhoodSystem γ}
     {P₂ : ComputablePresentation V₂} {P₀ : ComputablePresentation V₀}
     {P₁ : ComputablePresentation V₁} {a : ApproximableMap V₂ V₀} {b : ApproximableMap V₂ V₁}
-    (ha : IsComputableMap P₂ P₀ a) (hb : IsComputableMap P₂ P₁ b) :
-    IsComputableMap P₂ (prodPresentation P₀ P₁) (paired a b) := by
-  have ha' : REPred (fun s => a.rel (P₂.X s.unpair.1) (P₀.X s.unpair.2)) := ha
-  have hb' : REPred (fun s => b.rel (P₂.X s.unpair.1) (P₁.X s.unpair.2)) := hb
+    (ha : ComputableMap P₂ P₀ a) (hb : ComputableMap P₂ P₁ b) :
+    ComputableMap P₂ (prodPresentation P₀ P₁) (paired a b) := by
+  constructor
+  have ha' : REPred (fun s => a.rel (P₂.X s.unpair.1) (P₀.X s.unpair.2)) := ha.out
+  have hb' : REPred (fun s => b.rel (P₂.X s.unpair.1) (P₁.X s.unpair.2)) := hb.out
   have hra : Nat.Primrec (fun t => Nat.pair t.unpair.1 t.unpair.2.unpair.1) :=
     Nat.Primrec.left.pair (Nat.Primrec.left.comp Nat.Primrec.right)
   have hrb : Nat.Primrec (fun t => Nat.pair t.unpair.1 t.unpair.2.unpair.2) :=

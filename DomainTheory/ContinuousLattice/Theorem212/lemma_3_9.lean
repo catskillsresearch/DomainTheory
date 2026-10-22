@@ -32,7 +32,7 @@ The proof is Scott's, recast through the faithful `scottExtend`:
 * `i ∘ f̄ ⊑ ḡ`: `(i ∘ f̄) ∘ e = i ∘ f = i ∘ j ∘ g ⊑ g` (since `i ∘ j ⊑ id`), so the *sub*-solution
   maximality of `ḡ` (`scottExtend_maximal_le`, the remark after 3.8) gives the bound;
 * combining: `f̄ = j ∘ i ∘ f̄ ⊑ j ∘ ḡ ⊑ f̄` (using `j ∘ i = id` and monotonicity of `j`). -/
-theorem lemma_3_9 (hD : IsContinuousLattice D) (hD' : IsContinuousLattice D')
+theorem lemma_3_9 (hD : ContinuousLattice D) (hD' : ContinuousLattice D')
     (P : IsContinuousLatticeProjection D D') (e : X → Y) (he : IsEmbedding e)
     {f : X → D} {g : X → D'} (hf : @Continuous X D _ scottTopologicalSpace f)
     (hg : @Continuous X D' _ scottTopologicalSpace g)

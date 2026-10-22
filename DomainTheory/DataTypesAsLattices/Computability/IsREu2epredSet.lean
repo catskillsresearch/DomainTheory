@@ -19,6 +19,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem IsRE.predSet {x : Pomega} (hx : IsRE x) : IsRE (predSet x) :=
-  REPred.of_eq (hx.comp Primrec.succ.to_comp) fun _ => Iff.rfl
+  ⟨REPred.of_eq (hx.out.comp Primrec.succ.to_comp) fun _ => Iff.rfl⟩
 
 end DomainTheory.DataTypesAsLattices

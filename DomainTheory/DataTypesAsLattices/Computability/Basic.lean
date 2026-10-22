@@ -54,7 +54,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.precTerm
 public import DomainTheory.DataTypesAsLattices.Computability.precC
 public import DomainTheory.DataTypesAsLattices.Computability.enumFun
 public import DomainTheory.DataTypesAsLattices.Computability.enumRangeC
-public import DomainTheory.DataTypesAsLattices.Computability.IsComputableFin
+public import DomainTheory.DataTypesAsLattices.Computability.ComputableFin
 
 @[expose] public section
 

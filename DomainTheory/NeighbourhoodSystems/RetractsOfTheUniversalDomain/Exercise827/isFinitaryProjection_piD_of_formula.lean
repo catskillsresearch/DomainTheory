@@ -23,7 +23,7 @@ finitary projection — a direct specialization of `Theorem85.lean`'s general
 theorem isFinitaryProjection_piD_of_formula (d : ApproximableMap U U)
     (hii : ∀ (x : (funSpace U U).Element) {Y}, ((piD d).toElementMap x).mem Y ↔
       (funSpace U U).mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ (piD d).rel X X) :
-    IsFinitaryProjection (piD d) :=
+    FinitaryProjection (piD d) :=
   isFinitaryProjection_of_formula (piD d) hii
 
 end DomainTheory.NeighbourhoodSystems

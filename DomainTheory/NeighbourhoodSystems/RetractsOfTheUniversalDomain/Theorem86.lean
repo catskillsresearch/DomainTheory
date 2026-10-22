@@ -22,13 +22,13 @@ theorem theorem_86.{u} : And
       Iff
         (@Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E) (@DomainTheory.NeighbourhoodSystems.sub α E f)
           f)
-        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E f))
+        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection α E f))
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
       @DomainTheory.NeighbourhoodSystems.IsFinitary (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
         (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
         (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E)))
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
-    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
+    @DomainTheory.NeighbourhoodSystems.FinitaryProjection (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
       (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E)) :=
   @And.intro
   (And
@@ -37,13 +37,13 @@ theorem theorem_86.{u} : And
       Iff
         (@Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E) (@DomainTheory.NeighbourhoodSystems.sub α E f)
           f)
-        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E f))
+        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection α E f))
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
       @DomainTheory.NeighbourhoodSystems.IsFinitary (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
         (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
         (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E)))
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
-    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
+    @DomainTheory.NeighbourhoodSystems.FinitaryProjection (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
       (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E))
   (@And.intro
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
@@ -51,7 +51,7 @@ theorem theorem_86.{u} : And
       Iff
         (@Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E) (@DomainTheory.NeighbourhoodSystems.sub α E f)
           f)
-        (@DomainTheory.NeighbourhoodSystems.IsFinitaryProjection α E f))
+        (@DomainTheory.NeighbourhoodSystems.FinitaryProjection α E f))
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
       @DomainTheory.NeighbourhoodSystems.IsFinitary (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
         (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E))

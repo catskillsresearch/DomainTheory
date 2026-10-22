@@ -8,7 +8,7 @@ $$
 
 gives the definition.
 
-**Complete lattice.** There is no local definition. `WayBelow`, defined below, and `IsContinuousLattice` in [Definition 2.3](1972_Definition_2_3.md) assume Mathlib’s `CompleteLattice` typeclass, as do the propositions of this section. That is the “lattices are complete” sentence.
+**Complete lattice.** There is no local definition. `WayBelow`, defined below, and `ContinuousLattice` in [Definition 2.3](1972_Definition_2_3.md) assume Mathlib’s `CompleteLattice` typeclass, as do the propositions of this section. That is the “lattices are complete” sentence.
 
 Given a complete lattice $D$ we define
 

@@ -33,7 +33,7 @@ continuous mapping `fix : [D → D] → D` such that `f (fix f) = fix f` for all
 whenever `f x ⊑ x`. Existence and continuity are `Proposition314.fixMap`; the defining equations are
 `fix_eq`/`fix_le`; uniqueness (any operator with these two properties agrees with `fix`) is
 `fix_unique`. -/
-theorem proposition_3_14 (_hD : IsContinuousLattice D) :
+theorem proposition_3_14 (_hD : ContinuousLattice D) :
     ∃ Fix : ScottMap (ScottMap D D) D,
       (∀ f : ScottMap D D, (f : D → D) (Fix f) = Fix f)
         ∧ (∀ (f : ScottMap D D) (x : D), (f : D → D) x ≤ x → (Fix f : D) ≤ x)

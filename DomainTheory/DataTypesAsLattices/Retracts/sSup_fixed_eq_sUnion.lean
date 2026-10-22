@@ -17,7 +17,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem sSup_fixed_eq_sUnion {f : Pomega → Pomega} (hf : IsScottContinuous f)
-    {A : Set (Fixpoints f)} (hA : IsDirectedSet A) :
+    {A : Set (Fixpoints f)} (hA : DirectedSet A) :
     ((@sSup (Fixpoints f) (fixpointsCompleteLattice hf).toSupSet A :
         Fixpoints f) : Pomega) =
       ⋃₀ (Fixpoints.vals A) := by

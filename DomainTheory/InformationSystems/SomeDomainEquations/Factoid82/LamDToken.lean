@@ -12,7 +12,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamE
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepth
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst23
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst27
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.IsLamWF
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamWF
 
 @[expose] public section
 
@@ -27,7 +27,7 @@ variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
 
 /-- Carrier of `lambdaSystem`. -/
-def LamDToken : Type _ := { t : RawLamToken α // IsLamWF A t }
+def LamDToken : Type _ := { t : RawLamToken α // LamWF A t }
 
 end InfoSys
 

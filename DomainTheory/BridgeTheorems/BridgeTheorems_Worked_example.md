@@ -66,7 +66,7 @@ exactly “read each token-element as its filter of basic opens.”
 Finite elements `K(T)` are the closures of consistent finsets. In the algebraic style
 that feeds Scott’s 1972 theory, a domain element is an **ideal** of `K(T)` — the ideal
 completion of the compact basis. That poset of ideals is an algebraic complete lattice,
-hence a continuous lattice (`IsAlgebraicLattice ⇒ IsContinuousLattice`, §3.5). This is
+hence a continuous lattice (`AlgebraicLattice ⇒ ContinuousLattice`, §3.5). This is
 the 1972 presentation of the same S-expression domain: points ordered by inclusion of
 ideals, with way-below recovered from the compact basis.
 

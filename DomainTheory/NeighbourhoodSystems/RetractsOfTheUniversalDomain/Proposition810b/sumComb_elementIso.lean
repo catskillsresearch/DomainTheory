@@ -29,7 +29,7 @@ section SumCase
 variable (a b : ApproximableMap U U)
 
 /-- **Proposition 8.10(b), `+`-case, the isomorphism `D_{a+b} ≅ D_a + D_b`.** -/
-noncomputable def sumComb_elementIso (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b) :
+noncomputable def sumComb_elementIso (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (sum (fixedNbhd a) (fixedNbhd b) (fixedNbhd_mem_nonempty a) (fixedNbhd_mem_nonempty b)).Element
       ≃o {y : U.Element // (sumComb a b).toElementMap y = y} :=
   elementIsoOfProjectionPair (ISumComb a b) (JSumComb a b) (JSumComb_comp_ISumComb a b)

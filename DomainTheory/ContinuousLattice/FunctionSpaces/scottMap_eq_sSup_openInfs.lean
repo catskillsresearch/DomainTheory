@@ -34,12 +34,12 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattic
 
 
 omit [TopologicalSpace Y] in
-theorem scottMap_eq_sSup_openInfs (hD : IsContinuousLattice D) (f' : ScottMap Y D) (y : Y) :
+theorem scottMap_eq_sSup_openInfs (hD : ContinuousLattice D) (f' : ScottMap Y D) (y : Y) :
     (f' : Y → D) y =
       sSup { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧
         d = sInf (Set.image (f' : Y → D) U) } := by
   apply le_antisymm
-  · rw [← IsContinuousLattice.sSup_wayBelow hD (f' y)]
+  · rw [← ContinuousLattice.sSup_wayBelow hD (f' y)]
     apply sSup_le
     intro a ha
     obtain ⟨V, hV, hf'V, hVsub⟩ := ha

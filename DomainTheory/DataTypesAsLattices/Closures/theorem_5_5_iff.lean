@@ -22,13 +22,13 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (5.18).** `a = V(a)` iff `a` is a closure. -/
 theorem theorem_5_5_iff (a : Pomega) :
-    IsClosure a ↔ funOf Vcomb a = a := by
+    Closure a ↔ funOf Vcomb a = a := by
   constructor
   · intro ha
     rw [Vcomb_app]
     have : graph (fun x => Vapply a x) = graph (funOf a) :=
       graph_ext fun x => eq_5_18_eq ha x
-    exact this.trans (retract_isGraph ha.2)
+    exact this.trans (retract_isGraph ha.out.2)
   · intro h
     have ha : a = graph (fun x => Vapply a x) :=
       h.symm.trans (Vcomb_app a)
@@ -36,6 +36,7 @@ theorem theorem_5_5_iff (a : Pomega) :
       intro x
       conv_lhs => rw [ha]
       exact beta (Vapply_right_isScottContinuous a) x
+    constructor
     constructor
     · intro p hp
       rcases hp with ⟨n, m, rfl, hm⟩

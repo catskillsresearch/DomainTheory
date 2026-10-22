@@ -21,15 +21,16 @@ open TopologicalSpace
 theorem fcapGdeltaPack_isScottContinuous {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
     IsScottContinuous (fcapGdeltaPack f g) := by
+  constructor
   intro x
   ext k
   constructor
   · intro hk
     rcases hk with ⟨hk0, h0⟩ | ⟨n, hk, hn⟩
-    · have : 0 ∈ scottUnion f x := by rw [← hf x]; exact h0
+    · have : 0 ∈ scottUnion f x := by rw [← hf.out x]; exact h0
       obtain ⟨p, hp, hp0⟩ := mem_scottUnion.mp this
       exact mem_scottUnion.mpr ⟨p, hp, Or.inl ⟨hk0, hp0⟩⟩
-    · have : n ∈ scottUnion g x := by rw [← hg x]; exact hn
+    · have : n ∈ scottUnion g x := by rw [← hg.out x]; exact hn
       obtain ⟨p, hp, hnp⟩ := mem_scottUnion.mp this
       exact mem_scottUnion.mpr ⟨p, hp, Or.inr ⟨n, hk, hnp⟩⟩
   · intro hk

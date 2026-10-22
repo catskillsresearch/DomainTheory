@@ -70,7 +70,7 @@ which composed with `Exercise510.strictFunEquiv.symm` gives the isomorphism to
 `Exercise510.strictFun D E` announced by Scott.
 
 Everything is **choice-free** in the *data* (`smashRetraction`, `strictRetraction`); the packaged
-`OrderIso`s and the `IsRetraction`/`IsProjection` *proofs* pick up `Classical.choice` only through
+`OrderIso`s and the `Retraction`/`IsProjection` *proofs* pick up `Classical.choice` only through
 `by_contra`/`by_cases` case splits, exactly mirroring 8.4(a)'s discipline.
 -/
 

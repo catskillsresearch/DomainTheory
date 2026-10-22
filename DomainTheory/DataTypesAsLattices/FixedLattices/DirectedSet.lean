@@ -11,8 +11,8 @@ public import Mathlib.Data.Finset.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 /-- A nonempty directed subset of a preorder. -/
-def IsDirectedSet {α : Type u} [Preorder α] (s : Set α) : Prop :=
-  s.Nonempty ∧
+class DirectedSet {α : Type u} [Preorder α] (s : Set α) : Prop where
+  out : s.Nonempty ∧
     ∀ ⦃x⦄, x ∈ s → ∀ ⦃y⦄, y ∈ s →
       ∃ z ∈ s, x ≤ z ∧ y ≤ z
 

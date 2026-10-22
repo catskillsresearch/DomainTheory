@@ -21,8 +21,8 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- `a ∘ a = a` unwound at the element level: `a(a(x)) = a(x)` for every `x`. -/
-theorem toElementMap_idem_of_isRetraction {a : ApproximableMap E E} (ha : IsRetraction a)
+theorem toElementMap_idem_of_isRetraction {a : ApproximableMap E E} (ha : Retraction a)
     (x : E.Element) : a.toElementMap (a.toElementMap x) = a.toElementMap x := by
-  rw [← toElementMap_comp, ha]
+  rw [← toElementMap_comp, ha.out]
 
 end DomainTheory.NeighbourhoodSystems

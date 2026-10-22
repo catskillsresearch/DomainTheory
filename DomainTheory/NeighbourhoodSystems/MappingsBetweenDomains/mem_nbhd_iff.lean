@@ -44,7 +44,7 @@ theorem mem_nbhd_iff (x : (reprSystem C hInter hne).Element) (G : Tok C) :
     rw [mem_toC]
     exact ⟨G, hx, subset_Cl C G.1 ht⟩
   · intro hsub
-    obtain ⟨F, hF, hGF⟩ := exists_tok_of_finite_subset C hInter hne x G.2.1 hsub
+    obtain ⟨F, hF, hGF⟩ := exists_tok_of_finite_subset C hInter hne x G.2.out.1 hsub
     have hnsub : nbhd C F.1 ⊆ nbhd C G.1 := (nbhd_subset_iff C hInter F.2).mpr hGF
     exact x.up_mem hF ⟨G, rfl⟩ hnsub
 

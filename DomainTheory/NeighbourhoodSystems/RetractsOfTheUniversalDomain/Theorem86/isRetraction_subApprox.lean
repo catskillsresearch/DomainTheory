@@ -30,9 +30,9 @@ namespace Sub8_6
 /-- **`subApprox` is a retraction**: `subApprox ∘ subApprox = subApprox`, from `subFilter`'s own
 idempotency (`subFilter_subFilter`), itself inherited from `sub_sub`. Proved via `le_antisymm` on
 `le_iff_toElementMap_le` (choice-free), rather than the classical `ext_of_toElementMap`. -/
-theorem isRetraction_subApprox : IsRetraction (subApprox (E := E)) :=
-  le_antisymm (le_iff_toElementMap_le.mpr fun φ => (toElementMap_subApprox_comp φ).le)
-    (le_iff_toElementMap_le.mpr fun φ => (toElementMap_subApprox_comp φ).ge)
+theorem isRetraction_subApprox : Retraction (subApprox (E := E)) :=
+  ⟨le_antisymm (le_iff_toElementMap_le.mpr fun φ => (toElementMap_subApprox_comp φ).le)
+    (le_iff_toElementMap_le.mpr fun φ => (toElementMap_subApprox_comp φ).ge)⟩
 
 end Sub8_6
 end DomainTheory.NeighbourhoodSystems

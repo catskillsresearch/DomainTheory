@@ -33,7 +33,7 @@ specified lattice is continuous and the given topology is exactly its Scott topo
 theorem theorem_2_12_backward_exact [τA : TopologicalSpace A] [T0Space A]
     (hA : InjectiveSpace.{u, u} A)
     (hspec : ∀ x y : A, SpecializationLe x y ↔ @LE.le A latticeA.toLE x y) :
-    IsContinuousLattice A ∧
+    ContinuousLattice A ∧
       (@scottTopologicalSpace A latticeA) = τA := by
   obtain ⟨E, instE, hE, ⟨h⟩⟩ := theorem_2_12_backward hA
   let : CompleteLattice E := instE
@@ -47,7 +47,7 @@ theorem theorem_2_12_backward_exact [τA : TopologicalSpace A] [T0Space A]
     (fun x y hxy => by
       exact (hspec (h.symm x) (h.symm y)).mp
         (SpecializationLe.map (specializationLe_scott_iff.mpr hxy) h.symm.continuous))
-  have hcont : IsContinuousLattice A := IsContinuousLattice.orderIso e hE
+  have hcont : ContinuousLattice A := ContinuousLattice.orderIso e hE
   refine ⟨hcont, ?_⟩
   have heqOrder :
       (@scottTopologicalSpace A latticeA) =

@@ -34,7 +34,7 @@ def openIso (V : NeighborhoodSystem α) :
       rw [mapOfOpen_rel_empty] at hrel
       exact hrel.2 hxX
     · intro hx
-      obtain ⟨X, hxX, hsub⟩ := U.2 x hx
+      obtain ⟨X, hxX, hsub⟩ := U.2.out x hx
       exact ⟨X, hxX, (mapOfOpen_rel_empty V U.1 X).mpr ⟨x.sub hxX, hsub⟩⟩
   right_inv f := by
     apply ApproximableMap.ext
@@ -58,7 +58,7 @@ def openIso (V : NeighborhoodSystem α) :
     rw [ApproximableMap.le_iff]
     constructor
     · intro h x hx
-      obtain ⟨X, hxX, hsub⟩ := a.2 x hx
+      obtain ⟨X, hxX, hsub⟩ := a.2.out x hx
       have hrelB := h X ∅ ((mapOfOpen_rel_empty V a.1 X).mpr ⟨x.sub hxX, hsub⟩)
       rw [mapOfOpen_rel_empty] at hrelB
       exact hrelB.2 hxX

@@ -32,7 +32,7 @@ theorem mem_mapToOpen_openToMap (U : Set V.Element) (hU : IsOpen U) (x : V.Eleme
     have hple : V.principal (x.sub hxX) ≤ x := fun Z hZ => x.up_mem hxX hZ.1 hZ.2
     exact V.isOpen_isUpperSet hU hmem hple
   · intro hxU
-    obtain ⟨X, hxX, hXU⟩ := hU x hxU
+    obtain ⟨X, hxX, hXU⟩ := hU.out x hxU
     refine ⟨X, hxX, ?_⟩
     rw [toElementMap_openToMap_principal_mem_empty]
     exact hXU (show V.principal (x.sub hxX) ∈ V.basicOpen X from ⟨x.sub hxX, subset_rfl⟩)

@@ -25,7 +25,7 @@ neighbourhood `[X] ⊆ 𝒰` witnessing `x ∈ 𝒰` also contains every `y ⊒ 
 theorem isOpen_isUpperSet {U : Set V.Element} (hU : IsOpen U) :
     ∀ ⦃x y : V.Element⦄, x ∈ U → x ≤ y → y ∈ U := by
   intro x y hxU hxy
-  obtain ⟨X, hX, hXU⟩ := hU x hxU
+  obtain ⟨X, hX, hXU⟩ := hU.out x hxU
   exact hXU (hxy X hX)
 
 end NeighborhoodSystem

@@ -31,7 +31,7 @@ theorem combinatory_mem_Deg (a : Pomega) {u : Pomega}
   have huG : GeneratedFromG u := (theorem_3_1 (u := u)).mp hu
   clear hu
   induction huG with
-  | G => exact (Deg_isSubalgebra a).1
-  | app _ _ ih ih' => exact (Deg_isSubalgebra a).2 ih ih'
+  | G => exact (Deg_isSubalgebra a).out.1
+  | app _ _ ih ih' => exact (Deg_isSubalgebra a).out.2 ih ih'
 
 end DomainTheory.DataTypesAsLattices

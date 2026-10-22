@@ -52,10 +52,11 @@ improper (master absorbs), or `m`/`n` both proper left copies with `f`'s r.e. re
 proper right copies with `g`'s. -/
 theorem osumMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : ComputablePresentation V₁')
     {f : ApproximableMap V₀ V₀'} {g : ApproximableMap V₁ V₁'}
-    (hf : IsComputableMapS P₀.toScott P₀'.toScott f)
-    (hg : IsComputableMapS P₁.toScott P₁'.toScott g) :
-    IsComputableMapS (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁))
+    (hf : ComputableMapS P₀.toScott P₀'.toScott f)
+    (hg : ComputableMapS P₁.toScott P₁'.toScott g) :
+    ComputableMapS (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁))
       (osumPresentation h₀' h₁' (P₀ := P₀') (P₁ := P₁')) (osumMap h₀' h₁' f g) := by
+  constructor
   have mT0 : RecDecidable (fun t => t.unpair.2.unpair.1 = 0) :=
     RecDecidable.natEq (Nat.Primrec.left.comp Nat.Primrec.right) (Nat.Primrec.const 0)
   have mT1 : RecDecidable (fun t => t.unpair.2.unpair.1 = 1) :=
@@ -75,12 +76,12 @@ theorem osumMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : Com
   have Hf : REPred (fun t => f.rel (P₀.toScott.X t.unpair.1.unpair.2)
       (P₀'.toScott.X t.unpair.2.unpair.2)) :=
     REPred.of_iff (fun t => by simp only [unpair_pair_fst, unpair_pair_snd])
-      (hf.comp ((Nat.Primrec.right.comp Nat.Primrec.left).pair
+      (hf.out.comp ((Nat.Primrec.right.comp Nat.Primrec.left).pair
         (Nat.Primrec.right.comp Nat.Primrec.right)))
   have Hg : REPred (fun t => g.rel (P₁.toScott.X t.unpair.1.unpair.2)
       (P₁'.toScott.X t.unpair.2.unpair.2)) :=
     REPred.of_iff (fun t => by simp only [unpair_pair_fst, unpair_pair_snd])
-      (hg.comp ((Nat.Primrec.right.comp Nat.Primrec.left).pair
+      (hg.out.comp ((Nat.Primrec.right.comp Nat.Primrec.left).pair
         (Nat.Primrec.right.comp Nat.Primrec.right)))
   have hImp : RecDecidable (fun t => ¬(t.unpair.2.unpair.1 = 0 ∧ P₀'.X t.unpair.2.unpair.2 ≠ V₀'.master)
       ∧ ¬(t.unpair.2.unpair.1 = 1 ∧ P₁'.X t.unpair.2.unpair.2 ≠ V₁'.master)) :=

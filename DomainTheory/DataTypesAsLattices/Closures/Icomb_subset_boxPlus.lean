@@ -19,7 +19,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_expansive
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem Icomb_subset_boxPlus {a b : Pomega} (ha : IsClosure a) (hb : IsClosure b) :
+theorem Icomb_subset_boxPlus {a b : Pomega} (ha : Closure a) (hb : Closure b) :
     Icomb ⊆ boxPlus a b :=
   Icomb_subset_graph.mpr fun n => by
     rw [← boxPlus_app]

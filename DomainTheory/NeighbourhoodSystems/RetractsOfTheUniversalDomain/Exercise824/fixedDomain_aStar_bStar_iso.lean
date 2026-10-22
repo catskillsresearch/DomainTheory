@@ -31,12 +31,12 @@ point `a := aStar s t`, `b := bStar s t` and using `binOp_aStar_bStar_left/right
 `Fix(aStar s t) ≅ S(aStar s t, bStar s t)` and `Fix(bStar s t) ≅ T(aStar s t, bStar s t)`
 unconditionally — Scott's `D ≅ S(D,E)`, `E ≅ T(D,E)`. -/
 theorem fixedDomain_aStar_bStar_iso (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))
-    (hst : ∀ a b, IsFinitaryProjection a → IsFinitaryProjection b →
-      IsFinitaryProjection (binOp s a b) ∧ IsFinitaryProjection (binOp t a b))
+    (hst : ∀ a b, FinitaryProjection a → FinitaryProjection b →
+      FinitaryProjection (binOp s a b) ∧ FinitaryProjection (binOp t a b))
     (S T : ApproximableMap E E → ApproximableMap E E → Σ β : Type, NeighborhoodSystem β)
-    (hS : ∀ a b, IsFinitaryProjection a → IsFinitaryProjection b →
+    (hS : ∀ a b, FinitaryProjection a → FinitaryProjection b →
       Nonempty (Fix (binOp s a b) ≃o (S a b).2.Element))
-    (hT : ∀ a b, IsFinitaryProjection a → IsFinitaryProjection b →
+    (hT : ∀ a b, FinitaryProjection a → FinitaryProjection b →
       Nonempty (Fix (binOp t a b) ≃o (T a b).2.Element)) :
     Nonempty (Fix (aStar s t) ≃o (S (aStar s t) (bStar s t)).2.Element) ∧
       Nonempty (Fix (bStar s t) ≃o (T (aStar s t) (bStar s t)).2.Element) := by

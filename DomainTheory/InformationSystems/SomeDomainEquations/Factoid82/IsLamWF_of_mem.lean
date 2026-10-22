@@ -15,7 +15,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamE
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst23
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst27
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConDepth_of_fun_nonempty
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.IsLamWF
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamWF
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst70
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst74
 
@@ -32,16 +32,16 @@ variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
 
 theorem IsLamWF_of_mem {u : Finset (RawLamToken α)} (hu : LamConDepth A u)
-    {t : RawLamToken α} (ht : t ∈ u) : IsLamWF A t := by
+    {t : RawLamToken α} (ht : t ∈ u) : LamWF A t := by
   have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   match t with
-  | .bot | .atom _ => trivial
+  | .bot | .atom _ => exact ⟨trivial⟩
   | .funTok xs ys =>
     have hmem : (xs, ys) ∈ lamFunFinset u := mem_lamFunFinset.2 ht
     by_cases hF : lamFunFinset u = ∅
     · exact False.elim (Finset.notMem_empty _ (hF ▸ hmem))
-    · exact ((LamConDepth_of_fun_nonempty A hF).1 hu).2.1 _ hmem
+    · exact ⟨((LamConDepth_of_fun_nonempty A hF).1 hu).2.1 _ hmem⟩
 
 end InfoSys
 

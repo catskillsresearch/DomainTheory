@@ -22,7 +22,7 @@ open Nat.Partrec.Code
 /-- **Scott 1976, §2, Definition.** A `k`-ary continuous map is computable
 when its nested graph (the pairing encoding of
 `m ∈ f(e n₀)⋯(e n_{k-1})`) is r.e. -/
-def IsComputableFin {n : ℕ} (f : (Fin n → Pomega) → Pomega) : Prop :=
-  IsScottContinuousFin f ∧ IsRE (curryFin f)
+class ComputableFin {n : ℕ} (f : (Fin n → Pomega) → Pomega) : Prop where
+  out : ScottContinuousFin f ∧ IsRE (curryFin f)
 
 end DomainTheory.DataTypesAsLattices

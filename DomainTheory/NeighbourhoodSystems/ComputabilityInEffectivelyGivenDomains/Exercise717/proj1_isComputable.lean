@@ -28,7 +28,8 @@ variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 `V_m proj₁ V_k ↔ k = 0 ∨ (m even, m ≠ 0, V_{q(m/2-1)} ⊆ V_k)`: a disjunction of the equality and
 inclusion deciders with primitive-recursive parity/right-child reindexings, hence r.e. -/
 theorem proj1_isComputable (P : ComputablePresentation D) :
-    IsComputableMap (dsharpPresentation P hD) (dsharpPresentation P hD) (proj1Map hD) := by
+    ComputableMap (dsharpPresentation P hD) (dsharpPresentation P hD) (proj1Map hD) := by
+  constructor
   show REPred (fun s => (proj1Map hD).rel (Vsharp D P s.unpair.1) (Vsharp D P s.unpair.2))
   have hk0 : RecDecidable (fun s => s.unpair.2 = 0) :=
     RecDecidable.natEq Nat.Primrec.right (Nat.Primrec.const 0)

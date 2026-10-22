@@ -20,7 +20,7 @@ open Set Topology
 variable {D D' D'' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 
-theorem meet_preservesDirectedSup (x : D) (hD : IsContinuousLattice D) :
+theorem meet_preservesDirectedSup (x : D) (hD : ContinuousLattice D) :
     PreservesDirectedSup (fun z => x ⊓ z) := by
   intro S hS hSdir
   apply le_antisymm

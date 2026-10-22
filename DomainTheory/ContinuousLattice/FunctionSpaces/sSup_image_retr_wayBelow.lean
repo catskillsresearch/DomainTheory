@@ -34,7 +34,7 @@ namespace IsContinuousLatticeRetraction
 family whose supremum (computed in `D`) is `d`. This is the identity `j(⊔S′) = ⊔S` applied to
 `S = {j(x') : x' ≪ i(d)}`, combined with continuity of `D'`. -/
 theorem sSup_image_retr_wayBelow (R : IsContinuousLatticeRetraction D D')
-    (hD' : IsContinuousLattice D') (d : D) :
+    (hD' : ContinuousLattice D') (d : D) :
     sSup (Set.image (R.retr : D' → D) {x' | x' ≪ R.incl d}) = d := by
   have hne : ({x' : D' | x' ≪ R.incl d}).Nonempty := ⟨⊥, bot_wayBelow _⟩
   have hdir : DirectedOn (· ≤ ·) {x' : D' | x' ≪ R.incl d} := directedOn_wayBelow _
