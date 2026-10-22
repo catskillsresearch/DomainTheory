@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.WayBelow.Basic.notation5
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 
 @[expose] public section
 

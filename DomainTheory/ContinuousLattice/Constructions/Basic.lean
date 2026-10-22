@@ -7,7 +7,7 @@ public import Mathlib.Data.Finset.Insert
 public import Mathlib.Data.Finset.Defs
 public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
-public import DomainTheory.ContinuousLattice.WayBelow.Basic.notation5
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section

@@ -1,5 +1,4 @@
 module
-public import DomainTheory.ContinuousLattice.WayBelow.Basic.notation5
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.UpperLower.Basic

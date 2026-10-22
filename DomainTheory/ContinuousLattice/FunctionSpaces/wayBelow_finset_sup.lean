@@ -4,7 +4,7 @@ public import Mathlib.Data.Finset.Lattice.Fold
 public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2esup
 public import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.Basic.notation5
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.UpperLower.Basic
 public import Mathlib.Order.Directed
