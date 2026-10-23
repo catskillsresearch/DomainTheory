@@ -1,10 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.embLE
-public import DomainTheory.ContinuousLattice.InverseLimits.embLE_self
-public import DomainTheory.ContinuousLattice.InverseLimits.embLE_le
-public import DomainTheory.ContinuousLattice.InverseLimits.embLE_succ
-public import DomainTheory.ContinuousLattice.InverseLimits.embLE_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
 public import DomainTheory.ContinuousLattice.InverseLimits.Compatible

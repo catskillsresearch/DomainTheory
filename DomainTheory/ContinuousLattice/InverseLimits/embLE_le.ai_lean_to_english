@@ -1,3 +1,0 @@
-For a compatible sequence y and n at most m, climbing the n-th coordinate up to level m stays below the m-th coordinate.
-
-The comparison is by induction along n at most m. At the base, climbing does nothing. At a successor, one inclusion is peeled off. Monotonicity of that inclusion uses the inductive bound, compatibility rewrites the inclusion of the current coordinate as the inclusion of a retraction, and an inclusion after a retraction lies below the next coordinate.

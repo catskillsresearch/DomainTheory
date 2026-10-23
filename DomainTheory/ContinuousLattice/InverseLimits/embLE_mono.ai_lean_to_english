@@ -1,3 +1,0 @@
-Climbing the tower of inclusions from stage n to stage m is monotone.
-
-The comparison is by induction along n at most m. At the base, climbing is the identity, so the inequality is the given one. At a successor, one inclusion is peeled off and monotonicity of that inclusion applies the inductive hypothesis.

@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
-public import DomainTheory.ContinuousLattice.InverseLimits.embLE_succ_left
+public import DomainTheory.ContinuousLattice.InverseLimits.embLE
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
