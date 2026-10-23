@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerToMap_coe
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.CLat
 public import DomainTheory.ContinuousLattice.FunctionSpaces.comp
 public import Mathlib.Data.Set.Basic
 

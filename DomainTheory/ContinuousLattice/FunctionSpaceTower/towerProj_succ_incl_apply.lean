@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerType
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.CLat
 
 @[expose] public section
 
