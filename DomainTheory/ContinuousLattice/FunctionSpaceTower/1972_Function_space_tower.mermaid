@@ -1,0 +1,27 @@
+%% Notes of the function space tower.
+%% Arrowhead on the importer. The number is a direct-import count.
+%% An arrow already implied by a longer path is omitted.
+flowchart TB
+  LAT["The tower of lattices"]
+  CONJ["Conjugation"]
+  FSP["The projection on a function space"]
+  PROJ["Projections of the tower"]
+  LIM["The limit of the tower"]
+  EINF["embInfInf"]
+  PINF["projInfInf"]
+  SCOTT["scottTopology"]
+  SOURCE["sourceTopology"]
+  THM["theorem_4_4"]
+  LAT -->|"1"| CONJ
+  CONJ -->|"2"| FSP
+  FSP -->|"1"| PROJ
+  PROJ -->|"2"| LIM
+  LIM -->|"1"| EINF
+  EINF -->|"2"| PINF
+  PINF -->|"2"| SCOTT
+  SCOTT -->|"1"| SOURCE
+  SOURCE -->|"1"| THM
+  classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
+  classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  class LAT,CONJ,FSP,PROJ,LIM,EINF,PINF,SCOTT,SOURCE concept
+  class THM numbered

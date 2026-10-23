@@ -1,8 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.theorem_4_4_orderIso
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.theorem_4_4_sourceTopology_homeomorph
-public import Mathlib.Data.Set.Basic
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMapFun
 
 @[expose] public section
 

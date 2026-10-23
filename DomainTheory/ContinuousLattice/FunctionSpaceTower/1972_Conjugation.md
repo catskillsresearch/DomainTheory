@@ -24,19 +24,6 @@
 
 @import "conjMap_preservesDirectedSup.lean"
 
-**[ContinuousLattice/FunctionSpaceTower/conjMap_iSup.lean](conjMap_iSup.lean)**
-
-@import "conjMap_iSup.lean"
-
-**[ContinuousLattice/FunctionSpaceTower/conjMap_incl_le_conjMap_succ.lean](conjMap_incl_le_conjMap_succ.lean)**
-
-@import "conjMap_incl_le_conjMap_succ.lean"
-
-**[ContinuousLattice/FunctionSpaceTower/conj_iInfTerm_eq.lean](conj_iInfTerm_eq.lean)**
-
-@import "conj_iInfTerm_eq.lean"
-
-
 ## AI: AI-Lean to AI-English
 
 @import "conjMap.ai_lean_to_english" {code_block=false}
@@ -48,10 +35,4 @@
 @import "conjMap_apply.ai_lean_to_english" {code_block=false}
 
 @import "conjMap_preservesDirectedSup.ai_lean_to_english" {code_block=false}
-
-@import "conjMap_iSup.ai_lean_to_english" {code_block=false}
-
-@import "conjMap_incl_le_conjMap_succ.ai_lean_to_english" {code_block=false}
-
-@import "conj_iInfTerm_eq.ai_lean_to_english" {code_block=false}
 

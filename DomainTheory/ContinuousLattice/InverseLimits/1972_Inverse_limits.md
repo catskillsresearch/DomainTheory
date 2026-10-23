@@ -23,7 +23,7 @@ Scott's section begins with an arbitrary inverse system and then specializes to 
 - [Proposition 4.1](1972_Proposition_4_1.md)
 - [Proposition 4.2](1972_Proposition_4_2.md)
 - [Corollary 4.3](1972_Corollary_4_3.md)
-- [Theorem 4.4](../FunctionSpaceTower/1972_Theorem_4_4.md)
+- [Theorem 4.4](../FunctionSpaceTower/1972_Function_space_tower.md)
 - [Lemma 4.5](1972_Lemma_4_5.md)
 - [The functorial form](1972_Functorial_form.md)
 - [Application](1972_Application.md)

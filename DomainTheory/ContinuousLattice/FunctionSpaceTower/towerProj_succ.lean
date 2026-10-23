@@ -1,7 +1,7 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.theorem_4_4_orderIso
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.theorem_4_4_sourceTopology_homeomorph
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap
 
 @[expose] public section
 
