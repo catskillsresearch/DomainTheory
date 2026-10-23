@@ -6,23 +6,12 @@
 
 @import "1972_Inverse_system.english" {code_block=false}
 
-## AI: Human-English to AI-Lean
+**Dependency diagram.** Each box is one of these notes. The arrowhead is on the note that imports. The number is how many direct imports. An arrow already implied by a longer path is left out.
 
-**[ContinuousLattice/InverseLimits/Compatible.lean](Compatible.lean)**
+@import "1972_Inverse_system.mermaid"
 
-@import "Compatible.lean"
-
-**[ContinuousLattice/InverseLimits/InverseLimit.lean](InverseLimit.lean)**
-
-@import "InverseLimit.lean"
-
-
-## AI: AI-Lean to AI-English
-
-@import "Compatible.ai_lean_to_english" {code_block=false}
-
-@import "InverseLimit.ai_lean_to_english" {code_block=false}
-
+- [Compatible](1972_Compatible.md)
+- [InverseLimit](1972_InverseLimit.md)
 
 ## AI: AI-English to Human-English Concordance
 
