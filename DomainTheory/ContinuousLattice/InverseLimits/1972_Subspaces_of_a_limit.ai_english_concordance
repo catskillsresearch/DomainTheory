@@ -1,0 +1,1 @@
+The Human-English says that by Proposition 1.5 every \(T_0\)-space embeds in a \(D_\infty\), and that continuous functions on it extend and become elements of \(D_\infty\). That embedding of an arbitrary space is not formalized. **Theorem:** no — the embedding of an arbitrary \(T_0\)-space into a limit is absent. **Proof:** no.

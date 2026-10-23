@@ -23,3 +23,7 @@
 
 @import "InverseLimit.ai_lean_to_english" {code_block=false}
 
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Inverse_system.ai_english_concordance" {code_block=false}

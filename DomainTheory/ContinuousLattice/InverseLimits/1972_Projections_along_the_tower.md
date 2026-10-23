@@ -55,3 +55,7 @@ The bonding maps of the system are the projections $j_n : X_{n+1} \to X_n$. `pro
 
 @import "projection_galoisConnection.ai_lean_to_english" {code_block=false}
 
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Projections_along_the_tower.ai_english_concordance" {code_block=false}

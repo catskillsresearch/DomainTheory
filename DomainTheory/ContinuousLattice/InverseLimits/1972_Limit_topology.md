@@ -61,3 +61,7 @@ The opening of the section gives $X_\infty$ the product topology. These definiti
 
 @import "coconeInf_inverseLimitTopology_continuous.ai_lean_to_english" {code_block=false}
 
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Limit_topology.ai_english_concordance" {code_block=false}

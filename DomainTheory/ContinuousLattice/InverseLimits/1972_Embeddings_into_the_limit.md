@@ -53,3 +53,7 @@
 @import "embInf_le_succ.ai_lean_to_english" {code_block=false}
 
 @import "embInf_family_directed.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Embeddings_into_the_limit.ai_english_concordance" {code_block=false}

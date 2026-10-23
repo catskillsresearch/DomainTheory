@@ -29,3 +29,7 @@
 
 @import "eval_preservesDirectedSup.ai_lean_to_english" {code_block=false}
 
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Projections_from_the_limit.ai_english_concordance" {code_block=false}
