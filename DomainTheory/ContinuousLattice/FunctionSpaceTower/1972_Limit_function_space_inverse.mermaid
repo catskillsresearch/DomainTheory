@@ -1,0 +1,35 @@
+%% The proof that the limit and its function space are inverse.
+%% Arrowhead on the importer. The number is a direct-import count.
+%% An arrow already implied by a longer path is omitted.
+flowchart TB
+  IINF["iInfTerm"]
+  EINF["embInfInf"]
+  JINF["jInfTerm"]
+  INCL["incl_projInf"]
+  IMONO["iInfTerm_monotone"]
+  ESUP["embInf_succ_iSup"]
+  ISUP["iSup₂"]
+  CMAP["conjMap"]
+  CONJX["conj"]
+  TPROJ["towerProj"]
+  PINF["projInfInf"]
+  ECOMP["embInfInf_projInfInf"]
+  IINF -->|"1"| EINF
+  IINF -->|"1"| JINF
+  EINF -->|"1"| PINF
+  JINF -->|"1"| INCL
+  JINF -->|"1"| ESUP
+  JINF -->|"1"| ISUP
+  JINF -->|"1"| CONJX
+  JINF -->|"1"| TPROJ
+  INCL -->|"1"| IMONO
+  INCL -->|"1"| CMAP
+  IMONO -->|"1"| PINF
+  ESUP -->|"1"| PINF
+  ISUP -->|"1"| PINF
+  CMAP -->|"1"| PINF
+  CONJX -->|"1"| PINF
+  TPROJ -->|"1"| ECOMP
+  PINF -->|"1"| ECOMP
+  classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
+  class IINF,EINF,JINF,INCL,IMONO,ESUP,ISUP,CMAP,CONJX,TPROJ,PINF,ECOMP concept

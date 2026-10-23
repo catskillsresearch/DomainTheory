@@ -8,18 +8,7 @@ flowchart TB
   PROJ["Projections of the tower"]
   DINF["DInf"]
   DFN["DInfFn"]
-  IINF["iInfTerm"]
-  EINF["embInfInf"]
-  JINF["jInfTerm"]
-  INCL["incl_projInf"]
-  IMONO["iInfTerm_monotone"]
-  ESUP["embInf_succ_iSup"]
-  ISUP["iSup₂"]
-  CMAP["conjMap"]
-  CONJX["conj"]
-  TPROJ["towerProj"]
-  PINF["projInfInf"]
-  ECOMP["embInfInf_projInfInf"]
+  INV["Proof that the limit and its function space are inverse"]
   SCOTT["scottTopology"]
   SOURCE["sourceTopology"]
   THM["theorem_4_4"]
@@ -28,28 +17,11 @@ flowchart TB
   FSP -->|"1"| PROJ
   PROJ -->|"1"| DINF
   DINF -->|"1"| DFN
-  DFN -->|"1"| IINF
-  IINF -->|"1"| EINF
-  IINF -->|"1"| JINF
-  EINF -->|"1"| PINF
-  JINF -->|"1"| INCL
-  JINF -->|"1"| ESUP
-  JINF -->|"1"| ISUP
-  JINF -->|"1"| CONJX
-  JINF -->|"1"| TPROJ
-  INCL -->|"1"| IMONO
-  INCL -->|"1"| CMAP
-  IMONO -->|"1"| PINF
-  ESUP -->|"1"| PINF
-  ISUP -->|"1"| PINF
-  CMAP -->|"1"| PINF
-  CONJX -->|"1"| PINF
-  TPROJ -->|"1"| ECOMP
-  PINF -->|"1"| ECOMP
-  ECOMP -->|"1"| SCOTT
+  DFN -->|"1"| INV
+  INV -->|"2"| SCOTT
   SCOTT -->|"1"| SOURCE
   SOURCE -->|"1"| THM
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
-  class LAT,CONJ,FSP,PROJ,DINF,DFN,IINF,EINF,JINF,INCL,IMONO,ESUP,ISUP,CMAP,CONJX,TPROJ,PINF,ECOMP,SCOTT,SOURCE concept
+  class LAT,CONJ,FSP,PROJ,DINF,DFN,INV,SCOTT,SOURCE concept
   class THM numbered
