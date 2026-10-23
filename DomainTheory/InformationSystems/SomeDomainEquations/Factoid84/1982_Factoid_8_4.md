@@ -66,10 +66,6 @@
 
 @import "../Factoid84.lean"
 
-**[InformationSystems.lean](../../../InformationSystems.lean)**
-
-@import "../../../InformationSystems.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid84/scottCon_empty_iff_consistent.lean](scottCon_empty_iff_consistent.lean)**
 
 @import "scottCon_empty_iff_consistent.lean"
@@ -181,8 +177,6 @@
 @import "not_RogueApprox_idMap.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid84.ai_lean_to_english" {code_block=false}
-
-@import "../../../InformationSystems.ai_lean_to_english" {code_block=false}
 
 @import "scottCon_empty_iff_consistent.ai_lean_to_english" {code_block=false}
 

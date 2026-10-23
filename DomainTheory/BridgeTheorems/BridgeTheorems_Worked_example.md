@@ -202,10 +202,6 @@
 
 @import "SexDomainEquation.lean"
 
-**[BridgeTheorems.lean](../BridgeTheorems.lean)**
-
-@import "../BridgeTheorems.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "TreeProd.ai_lean_to_english" {code_block=false}
@@ -303,8 +299,6 @@
 @import "treeDomainIso.ai_lean_to_english" {code_block=false}
 
 @import "SexDomainEquation.ai_lean_to_english" {code_block=false}
-
-@import "../BridgeTheorems.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

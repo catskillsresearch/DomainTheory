@@ -174,10 +174,6 @@
 
 @import "../Exercise827.lean"
 
-**[NeighbourhoodSystems.lean](../../../NeighbourhoodSystems.lean)**
-
-@import "../../../NeighbourhoodSystems.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "jArrow_comp_iArrow_apply.ai_lean_to_english" {code_block=false}
@@ -263,8 +259,6 @@
 @import "isFinitaryProjection_piU.ai_lean_to_english" {code_block=false}
 
 @import "../Exercise827.ai_lean_to_english" {code_block=false}
-
-@import "../../../NeighbourhoodSystems.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 
