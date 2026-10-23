@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm
 
 @[expose] public section
 
@@ -21,6 +21,16 @@ noncomputable def jInfTerm (n : ℕ) : ScottMap (DInfFn D₀ j₀) (DInf D₀ j�
   (embInf (towerType D₀) (towerProj D₀ j₀) (n + 1)).comp
     (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
              (embInf (towerType D₀) (towerProj D₀ j₀) n))
+
+namespace jInfTerm
+
+@[simp] theorem apply (n : ℕ) (f : DInfFn D₀ j₀) :
+    jInfTerm D₀ j₀ n f
+      = embInf (towerType D₀) (towerProj D₀ j₀) (n + 1)
+          (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
+                   (embInf (towerType D₀) (towerProj D₀ j₀) n) f) := rfl
+
+end jInfTerm
 
 end LimitMaps
 

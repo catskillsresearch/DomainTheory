@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf_embInfInf
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.embInfInf_projInfInf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.theorem_4_4_sourceTopology_homeomorph
@@ -34,13 +34,13 @@ variable (D₀ : CLat.{u})
 theorem theorem_4_4_inverses :
     (projInfInf D₀ j₀).comp (embInfInf D₀ j₀) = ScottMap.idMap ∧
     (embInfInf D₀ j₀).comp (projInfInf D₀ j₀) = ScottMap.idMap :=
-  ⟨projInfInf_comp_embInfInf D₀ j₀, embInfInf_comp_projInfInf D₀ j₀⟩
+  ⟨projInfInf.comp_embInfInf D₀ j₀, embInfInf_comp_projInfInf D₀ j₀⟩
 
 /-- Lattice isomorphism along the same pair `i_∞`, `j_∞`. Scott's abstract also says the spaces
 are isomorphic; this is not the statement of Theorem 4.4 (that statement is the homeomorphism). -/
 noncomputable def theorem_4_4_orderIso : OrderIso (DInf D₀ j₀) (DInfFn D₀ j₀) :=
   (Equiv.mk (embInfInf D₀ j₀) (projInfInf D₀ j₀)
-      (projInfInf_embInfInf D₀ j₀) (embInfInf_projInfInf D₀ j₀)).toOrderIso
+      (projInfInf.embInfInf D₀ j₀) (embInfInf_projInfInf D₀ j₀)).toOrderIso
     (embInfInf D₀ j₀).monotone (projInfInf D₀ j₀).monotone
 
 /-- **Scott 1972, Theorem 4.4** (`sources/ScottContinLatt1972.md`):

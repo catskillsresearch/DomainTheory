@@ -16,10 +16,6 @@
 
 @import "iInfTerm.lean"
 
-**[ContinuousLattice/FunctionSpaceTower/iInfTerm_apply.lean](iInfTerm_apply.lean)**
-
-@import "iInfTerm_apply.lean"
-
 **[ContinuousLattice/FunctionSpaceTower/iInfTerm_le_succ.lean](iInfTerm_le_succ.lean)**
 
 @import "iInfTerm_le_succ.lean"
@@ -31,10 +27,6 @@
 **[ContinuousLattice/FunctionSpaceTower/jInfTerm.lean](jInfTerm.lean)**
 
 @import "jInfTerm.lean"
-
-**[ContinuousLattice/FunctionSpaceTower/jInfTerm_apply.lean](jInfTerm_apply.lean)**
-
-@import "jInfTerm_apply.lean"
 
 **[ContinuousLattice/FunctionSpaceTower/embInf_succ_iSup.lean](embInf_succ_iSup.lean)**
 
@@ -57,15 +49,11 @@
 
 @import "iInfTerm.ai_lean_to_english" {code_block=false}
 
-@import "iInfTerm_apply.ai_lean_to_english" {code_block=false}
-
 @import "iInfTerm_le_succ.ai_lean_to_english" {code_block=false}
 
 @import "iInfTerm_monotone.ai_lean_to_english" {code_block=false}
 
 @import "jInfTerm.ai_lean_to_english" {code_block=false}
-
-@import "jInfTerm_apply.ai_lean_to_english" {code_block=false}
 
 @import "embInf_succ_iSup.ai_lean_to_english" {code_block=false}
 

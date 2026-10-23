@@ -8,7 +8,11 @@ flowchart TB
   PROJ["Projections of the tower"]
   LIM["The limit of the tower"]
   EINF["embInfInf"]
+  CMAP["conjMap"]
+  CONJX["conj"]
+  TPROJ["towerProj"]
   PINF["projInfInf"]
+  ECOMP["embInfInf_projInfInf"]
   SCOTT["scottTopology"]
   SOURCE["sourceTopology"]
   THM["theorem_4_4"]
@@ -17,11 +21,18 @@ flowchart TB
   FSP -->|"1"| PROJ
   PROJ -->|"2"| LIM
   LIM -->|"1"| EINF
-  EINF -->|"2"| PINF
-  PINF -->|"2"| SCOTT
+  LIM -->|"2"| CMAP
+  LIM -->|"1"| CONJX
+  LIM -->|"1"| TPROJ
+  EINF -->|"1"| PINF
+  CMAP -->|"1"| PINF
+  CONJX -->|"1"| PINF
+  TPROJ -->|"1"| ECOMP
+  PINF -->|"1"| ECOMP
+  ECOMP -->|"1"| SCOTT
   SCOTT -->|"1"| SOURCE
   SOURCE -->|"1"| THM
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
-  class LAT,CONJ,FSP,PROJ,LIM,EINF,PINF,SCOTT,SOURCE concept
+  class LAT,CONJ,FSP,PROJ,LIM,EINF,CMAP,CONJX,TPROJ,PINF,ECOMP,SCOTT,SOURCE concept
   class THM numbered

@@ -1,3 +1,0 @@
-Evaluating the projection j_∞ at a Scott map f returns the supremum over n of the values of the summands jInfTerm n at f.
-
-The indexed supremum is the supremum of the range of jInfTerm. Evaluating a supremum of Scott maps is pointwise, the image of that range is the range of the composite which applies each summand to f, and the supremum of that range is the indexed supremum of the values.

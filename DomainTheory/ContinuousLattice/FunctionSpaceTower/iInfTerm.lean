@@ -24,6 +24,15 @@ noncomputable def iInfTerm (n : ℕ) : ScottMap (DInf D₀ j₀) (DInfFn D₀ j�
            (projInf (towerType D₀) (towerProj D₀ j₀) n)).comp
     (projInf (towerType D₀) (towerProj D₀ j₀) (n + 1))
 
+namespace iInfTerm
+
+@[simp] theorem apply (n : ℕ) (x z : DInf D₀ j₀) :
+    (iInfTerm D₀ j₀ n x) z
+      = embInf (towerType D₀) (towerProj D₀ j₀) n
+          ((x.1 (n + 1)) ((projInf (towerType D₀) (towerProj D₀ j₀) n) z)) := rfl
+
+end iInfTerm
+
 end LimitMaps
 
 end DomainTheory.ContinuousLattice

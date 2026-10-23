@@ -1,6 +1,8 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm
+public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
@@ -19,6 +21,17 @@ variable (D₀ : CLat.{u})
 Scott maps `iInfTerm n` (suprema in `[D_∞ → [D_∞ → D_∞]]` are computed pointwise). -/
 noncomputable def embInfInf : ScottMap (DInf D₀ j₀) (DInfFn D₀ j₀) :=
   ⨆ n, iInfTerm D₀ j₀ n
+
+namespace embInfInf
+
+/-- `i_∞` evaluated at `x` is the pointwise supremum of the summands `iInfTerm n x`. -/
+theorem apply (x : DInf D₀ j₀) :
+    embInfInf D₀ j₀ x = ⨆ n, iInfTerm D₀ j₀ n x := by
+  show (sSup (Set.range (iInfTerm D₀ j₀)) : ScottMap _ _) x = _
+  rw [ScottMap.sSup_apply, ← Set.range_comp, sSup_range]
+  rfl
+
+end embInfInf
 
 end LimitMaps
 

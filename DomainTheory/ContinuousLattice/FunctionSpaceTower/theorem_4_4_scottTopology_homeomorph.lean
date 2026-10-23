@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf_embInfInf
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.embInfInf_projInfInf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 
@@ -34,7 +34,7 @@ noncomputable def theorem_4_4_scottTopology_homeomorph :
     @Homeomorph (DInf D₀ j₀) (DInfFn D₀ j₀) scottTopologicalSpace scottTopologicalSpace :=
   @Homeomorph.mk (DInf D₀ j₀) (DInfFn D₀ j₀) scottTopologicalSpace scottTopologicalSpace
     (Equiv.mk (embInfInf D₀ j₀) (projInfInf D₀ j₀)
-      (projInfInf_embInfInf D₀ j₀) (embInfInf_projInfInf D₀ j₀))
+      (projInfInf.embInfInf D₀ j₀) (embInfInf_projInfInf D₀ j₀))
     (embInfInf D₀ j₀).continuous (projInfInf D₀ j₀).continuous
 
 end Thm44d

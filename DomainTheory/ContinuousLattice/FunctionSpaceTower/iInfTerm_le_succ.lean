@@ -29,7 +29,7 @@ theorem iInfTerm_le_succ (x : DInf D₀ j₀) (m : ℕ) :
     iInfTerm D₀ j₀ m x ≤ iInfTerm D₀ j₀ (m + 1) x := by
   rw [ScottMap.le_def]
   intro z
-  rw [iInfTerm_apply, iInfTerm_apply,
+  rw [iInfTerm.apply, iInfTerm.apply,
     ← embInf_succ (towerType D₀) (towerProj D₀ j₀) m
       (x.1 (m + 1) (projInf (towerType D₀) (towerProj D₀ j₀) m z))]
   refine embInf_monotone (towerType D₀) (towerProj D₀ j₀) (m + 1) ?_

@@ -1,3 +1,0 @@
-For elements x and y of the inverse limit D_∞, the embedding i_∞ satisfies i_∞(x) ≤ i_∞(y) if and only if x ≤ y.
-
-If i_∞(x) ≤ i_∞(y), monotonicity of the projection j_∞ and the identity j_∞ ∘ i_∞ = id return x ≤ y. In the other direction, monotonicity of i_∞ sends x ≤ y to i_∞(x) ≤ i_∞(y).

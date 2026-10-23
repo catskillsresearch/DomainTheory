@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 
 @[expose] public section

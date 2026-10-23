@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm
 public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import Mathlib.Data.Set.Basic
 
