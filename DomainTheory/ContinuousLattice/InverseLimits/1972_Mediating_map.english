@@ -1,0 +1,21 @@
+Besides this we have the expected extension property for any system of continuous maps
+
+$$f_n : Y \to X_n$$
+
+where for each $n$
+
+$$f_n = j_n \circ f_{n+1}.$$
+
+Because, we can define
+
+$$f_{\infty} : Y \to X_{\infty}$$
+
+by the equation
+
+$$f_{\infty}(y) = \langle f_n(y) \rangle_{n=0}^{\infty}$$
+
+for all $y \in Y$; whence
+
+$$f_n = j_{\infty n} \circ f_{\infty}$$
+
+holds. So much for a review of inverse limits. In this paper our interest will center on rather special inverse systems and their limits.

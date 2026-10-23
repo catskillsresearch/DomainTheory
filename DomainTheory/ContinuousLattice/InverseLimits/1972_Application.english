@@ -1,0 +1,9 @@
+Since we have shown $[D_\infty \to D_\infty]$ to be homeomorphic to $D_\infty$, we can begin to regard them as the same. In particular there ought to be some function space structure to transfer to $D_\infty$. This can be done by defining functional application for any elements $x, y \in D_\infty$ by the equation:
+
+$$x(y) = \bigsqcup_{n=0}^{\infty} i_{n\infty}(x_{n+1}(y_n)).$$
+
+Similarly we can define $\lambda$-abstraction on continuous expressions:
+
+$$\lambda x.[\ldots x \ldots] = j_\infty(\lambda x : D_\infty.[\ldots x \ldots]),$$
+
+and in this way $D_\infty$ becomes a model for the $\lambda$-calculus of Church and Curry. The model-theoretic and proof-theoretic aspects of this result will be explained in another paper (Scott (1972)).

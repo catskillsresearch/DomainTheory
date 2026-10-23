@@ -1,0 +1,43 @@
+The idea of forming the limit space can also be applied to *other* functors besides $[D \to D]$. Thus instead of solving the “equation”
+
+$$D = [D \to D]$$
+
+as we have done with the $D_\infty$ construction, we could also solve:
+
+$$V = T + [V \times V] + [V + V] + [V \to V],$$
+
+for example. Here $T = \bot, 0, 1, \top$ is the four-element lattice with $0$ and $1$ as incomparable elements. By $[V \times V]$ and $[V \to V]$ we understand the usual Cartesian product and function space construction. The $+$ operator, on the other hand works only in the category of lattices with $\top$ as an isolated element. It is defined so as to make:
+
+$$
+\begin{array}{ccc}
+D + D' & \longleftarrow & D' 
+\uparrow & & \uparrow 
+D & \longleftarrow & 0
+\end{array}
+$$
+
+a push-out diagram, where the maps from $0$ are meant to match $\bot$ with $\bot$ and $\top$ with $\top$. The point of requiring $\top$ to be isolated is that both $D$ and $D'$ become projections of $D + D'$. This construction, though not quite a disjoint union, has many properties in common with that operation on spaces. In particular, if we consider the category with projections as maps, the construction
+
+$$\mathbb{F}(D) = T + [D \times D] + [D + D] + [D \to D]$$
+
+is a *functor*. Furthermore, we can project $\mathbb{F}(T)$ onto $T$ in an obvious way, thereby setting things up for an inverse limit construction:
+
+$$V = \varprojlim \langle \mathbb{F}^n(T), j_n \rangle_{n=0}^{\infty}.$$
+
+The resulting continuous lattice satisfies the desired equation up to isomorphism.
+
+The space $V$ constructed in the way just indicated is very rich in subspaces. To see this, consider the space $\mathcal{J}_V$ of proper projections $j$ where $j(\top) = \top$. As in 3.12 this is a complete lattice. Now that $[V \times V]$ and $[V + V]$ and $[V \to V]$ are regarded as *subspaces* of this “universe” $V$ itself, we can easily define *continuous operations*
+
+$$(j \times k)\ ,\ (j + k)\ ,\ \text{and}\ (j \to k)$$
+
+on the projections obtaining again elements of $\mathcal{J}_V$. The projections so obtained correspond to the indicated constructions of subspaces, of course. (Indeed, if we had the time and space, we could show that $\mathcal{J}_V$ becomes a very interesting category). There will be a particular
+
+projection $t$ corresponding to $T$, and reason for doing all this is to show that the existence of subspaces of $V$ can now be established by solving equations in $\mathcal{J}_V$. For example, by the fixed-point construction we could find a $j \in \mathcal{J}_V$ such that
+
+$$j = t + (t \times j) + ((j \times j) \to j).$$
+
+The range of $j$ would then be a subspace $W \subseteq V$ such that $W$ solves the equation:
+
+$$W = T + [T \times W] + [[W \times W] \to W].$$
+
+And these are only a few examples: simultaneous equations are possible, and many other operators are waiting for discovery and application.

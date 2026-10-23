@@ -1,0 +1,26 @@
+%% Notes of the inverse-limit construction.
+%% Arrowhead on the importer. The number is a direct-import count.
+%% An arrow already implied by a longer path is omitted.
+flowchart TB
+  SYS["Inverse system"]
+  PLE["Projections along the tower"]
+  ELE["Embeddings along the tower"]
+  ICOMP["Coordinates of an embedding"]
+  PINF["Projections from the limit"]
+  EINF["Embeddings into the limit"]
+  LAT["Limit lattice"]
+  COC["Mediating map"]
+  TOP["Limit topology"]
+  SYS -->|"1"| PLE
+  SYS -->|"1"| ELE
+  PLE -->|"6"| ICOMP
+  ELE -->|"6"| ICOMP
+  ICOMP -->|"6"| EINF
+  EINF -->|"3"| LAT
+  LAT -->|"3"| EINF
+  PINF -->|"1"| LAT
+  LAT -->|"3"| PINF
+  EINF -->|"1"| COC
+  COC -->|"2"| TOP
+  classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
+  class SYS,PLE,ELE,ICOMP,PINF,EINF,LAT,COC,TOP concept

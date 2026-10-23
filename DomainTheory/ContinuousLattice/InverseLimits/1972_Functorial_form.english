@@ -1,0 +1,28 @@
+We can explain the idea of this proof in other terms using a suggestion made to me by F. W. Lawvere. Consider the category of continuous lattices and projections. In that category our $D_\infty$ is, as we have remarked, both a *direct* and an *inverse* limit. Note too that with regard to projections $[D \to D']$ is a *functor*, for we can also define $[j \to j']$ when the maps are projections. In this language our particular inverse system is defined by the recursion:
+
+$$D_{n+1} = [D_n \to D_n] \quad \text{and} \quad j_{n+1} = [j_n \to j_n],$$
+
+where $D_0$ and $j_0$ are given in advance. Now the function space construction is continuous in its two arguments, turning an inverse limit on the right into an inverse limit and a direct limit on the *left* also into an *inverse* limit. A repeated limit can be made into a simple limit, so we can write:
+
+$$
+\begin{aligned}
+D_\infty &= \varprojlim \langle D_n, j_n \rangle_{n=0}^{\infty} 
+&= \varinjlim \langle D_n, i_n \rangle_{n=0}^{\infty}
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+[D_\infty \to D_\infty] &= \varprojlim \langle [D_n \to D_n], [j_n \to j_n] \rangle_{n=0}^{\infty} 
+&= \varprojlim \langle D_{n+1}, j_{n+1} \rangle_{n=0}^{\infty} 
+&= D_\infty \quad \textit{(up to isomorphism).}
+\end{aligned}
+$$
+
+A full checking of the details involved would not make the argument appreciably simpler over the more "element-by-element" argument I have presented. In fact, the proofs are actually the same. But thinking of the result in terms of properties of functors does seem to isolate very well the essential idea and to show how simple it is.
+
+One must only add here a note of caution: the proper choice of category must be done with care. Thus it seems to me that the use of projections rather than arbitrary continuous maps is necessary.
+
+Inasmuch as I have not checked all details in this form, I hope what I say is correct.

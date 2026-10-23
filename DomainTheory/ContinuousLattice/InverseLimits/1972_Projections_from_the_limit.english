@@ -1,0 +1,7 @@
+The space $X_{\infty}$ is given the product topology, and the maps $j_{\infty n} : X_{\infty} \to X_n$ such that
+
+$$j_{\infty n}(x) = x_n$$
+
+are of course continous and satisfy the recursion equation:
+
+$$j_{\infty n} = j_n \circ j_{\infty(n+1)}.$$

@@ -1,12 +1,8 @@
 # Continuous Lattices
 
-Dana Scott, "Continuous Lattices", 1972.
-
-The contents runs from the introduction through four sections. The introduction has no Lean code. The code begins with injective spaces.
+**Dependency diagram.** Each box is one section. The arrowhead is on the section that imports. The number is how many direct imports. An arrow already implied by a longer path is left out. Section 0 has no arrow.
 
 @import "1972_ContinuousLattices.mermaid"
-
-Each box is one section. The arrowhead is on the section that imports. The number is how many direct imports. An arrow already implied by a longer path is left out. Section 0 has no arrow.
 
 0. [Introduction](1972_Introduction.md)
 1. [Injective spaces](ContinuousLattice/Injective/1972_Injective_spaces.md)
