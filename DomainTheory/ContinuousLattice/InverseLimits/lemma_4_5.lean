@@ -6,8 +6,7 @@ public import DomainTheory.ContinuousLattice.InverseLimits.iComp_self
 public import DomainTheory.ContinuousLattice.InverseLimits.projInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf_monotone
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_ge
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE_succ
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE_self
+public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import Mathlib.Data.Set.Basic
 
@@ -34,7 +33,7 @@ The proof follows Scott's argument at source lines 1316–1320.  First the defin
 monotone.  Continuity of `j_{∞(n+1)}` therefore moves the projection through its directed
 supremum.  Finally, for every `m ≥ n`, the identity
 `j_{∞(n+1)}(i_{(m+1)∞}(u_m)) = u_n` is proved by induction on `m - n`, peeling one projection with
-`projLE_succ` and then applying the recursion hypothesis `j_{m+1}(u_{m+1}) = u_m`. -/
+`projLE.succ` and then applying the recursion hypothesis `j_{m+1}(u_{m+1}) = u_m`. -/
 theorem lemma_4_5 (u : ∀ n, D (n + 1))
     (hu : ∀ n, (P (n + 1)).retr (u (n + 1)) = u n) (n : ℕ) :
     (⨆ k, embInf D P (k + 1) (u k) : InverseLimit D P).1 (n + 1) = u n := by
@@ -55,11 +54,11 @@ theorem lemma_4_5 (u : ∀ n, D (n + 1))
     | zero =>
         intro n
         simpa only [Nat.add_zero] using
-          (projLE_self D P (le_refl (n + 1)) (u n))
+          (projLE.self D P (le_refl (n + 1)) (u n))
     | succ d ih =>
         intro n
         simp only [Nat.add_succ]
-        rw [projLE_succ D P
+        rw [projLE.succ D P
           (show n + 1 ≤ n + d + 1 by omega)
           (show n + 1 ≤ (n + d + 1) + 1 by omega)]
         rw [hu (n + d)]

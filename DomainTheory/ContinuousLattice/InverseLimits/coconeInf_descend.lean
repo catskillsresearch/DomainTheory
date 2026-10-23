@@ -1,8 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.projLE
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE_succ
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE_self
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Data.Set.Basic
 
@@ -30,10 +28,10 @@ theorem coconeInf_descend (f : ∀ n, ScottMap (D n) D')
     ∀ {n : ℕ} (h : m ≤ n) (x : D n), f m (projLE D P h x) ≤ f n x := by
   intro n h
   induction n, h using Nat.le_induction with
-  | base => intro x; exact le_of_eq (congrArg (f m) (projLE_self D P (le_refl m) x))
+  | base => intro x; exact le_of_eq (congrArg (f m) (projLE.self D P (le_refl m) x))
   | succ k hk ih =>
       intro x
-      rw [projLE_succ D P hk (Nat.le_succ_of_le hk)]
+      rw [projLE.succ D P hk (Nat.le_succ_of_le hk)]
       calc f m (projLE D P hk ((P k).retr x)) ≤ f k ((P k).retr x) := ih ((P k).retr x)
         _ = f (k + 1) ((P k).incl ((P k).retr x)) := hf k _
         _ ≤ f (k + 1) x := (f (k + 1)).monotone ((P k).incl_retr_le x)

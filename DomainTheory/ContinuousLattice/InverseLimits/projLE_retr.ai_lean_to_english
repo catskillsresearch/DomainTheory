@@ -1,3 +1,0 @@
-Peeling the retraction at stage m off a descent from a stage n at least m+1 equals the descent from that same stage down to m.
-
-The argument is by induction along m+1 at most n. At the base, one retraction peels off and the remaining descent is the identity. At a successor, the outer retraction peels off, the inductive hypothesis applies to the retracted element, and one further successor step reassembles the shorter descent.

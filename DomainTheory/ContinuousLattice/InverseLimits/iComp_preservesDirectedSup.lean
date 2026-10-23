@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE_preservesDirectedSup
+public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import DomainTheory.ContinuousLattice.InverseLimits.embLE_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_ge
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_le
@@ -30,7 +30,7 @@ theorem iComp_preservesDirectedSup (n m : ℕ) :
     rw [hfun]; exact embLE_preservesDirectedSup D P h
   · have hfun : (fun x : D n => iComp D P n x m) = projLE D P (le_of_lt (not_le.mp h)) :=
       funext (fun x => iComp_of_ge D P h x)
-    rw [hfun]; exact projLE_preservesDirectedSup D P _
+    rw [hfun]; exact projLE.preservesDirectedSup D P _
 
 end InverseLimit
 

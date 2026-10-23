@@ -5,8 +5,7 @@ public import DomainTheory.ContinuousLattice.InverseLimits.embLE_succ_left
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp_self
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_ge
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_le
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE_succ
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE_self
+public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
@@ -36,11 +35,11 @@ theorem embInf_succ (n : ℕ) (x : D n) :
     · have hmn : m = n := le_antisymm (Nat.lt_succ_iff.mp (not_le.mp h2)) h1
       subst hmn
       rw [iComp_self, iComp_of_ge D P h2,
-        projLE_succ D P (le_refl m) (le_of_lt (not_le.mp h2)) ((P m).incl x),
-        projLE_self, (P m).retr_incl]
+        projLE.succ D P (le_refl m) (le_of_lt (not_le.mp h2)) ((P m).incl x),
+        projLE.self, (P m).retr_incl]
   · have h2 : ¬ n + 1 ≤ m := fun h => h1 (le_trans (Nat.le_succ n) h)
     rw [iComp_of_ge D P h2, iComp_of_ge D P h1,
-      projLE_succ D P (le_of_lt (not_le.mp h1)) (le_of_lt (not_le.mp h2)) ((P n).incl x),
+      projLE.succ D P (le_of_lt (not_le.mp h1)) (le_of_lt (not_le.mp h2)) ((P n).incl x),
       (P n).retr_incl]
 
 end InverseLimit

@@ -4,10 +4,6 @@ Each thread is the directed supremum of its embeddings from the stages, $x = \bi
 
 ## AI: Human-English to AI-Lean
 
-**[ContinuousLattice/InverseLimits/coe_sSup_of_directed.lean](coe_sSup_of_directed.lean)**
-
-@import "coe_sSup_of_directed.lean"
-
 **[ContinuousLattice/InverseLimits/inverseLimit_eq_iSup.lean](inverseLimit_eq_iSup.lean)**
 
 @import "inverseLimit_eq_iSup.lean"
@@ -17,8 +13,6 @@ Each thread is the directed supremum of its embeddings from the stages, $x = \bi
 @import "idInf_eq_iSup.lean"
 
 ## AI: AI-Lean to AI-English
-
-@import "coe_sSup_of_directed.ai_lean_to_english" {code_block=false}
 
 @import "inverseLimit_eq_iSup.ai_lean_to_english" {code_block=false}
 

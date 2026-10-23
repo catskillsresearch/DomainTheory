@@ -7,7 +7,8 @@ Scott's section begins with an arbitrary inverse system and then specializes to 
 @import "1972_Inverse_limits.mermaid"
 
 - [The inverse system](1972_Inverse_system.md)
-- [Projections along the tower](1972_Projections_along_the_tower.md)
+- [projLE](1972_projLE.md)
+- [projection](1972_projection.md)
 - [Projections from the limit](1972_Projections_from_the_limit.md)
 - [Embeddings along the tower](1972_Embeddings_along_the_tower.md)
 - [Coordinates of an embedding](1972_Embedding_coordinates.md)

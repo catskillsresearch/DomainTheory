@@ -4,9 +4,7 @@ public import DomainTheory.ContinuousLattice.InverseLimits.Compatible
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_ge
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_le
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE_retr
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE_succ
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE_self
+public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import DomainTheory.ContinuousLattice.InverseLimits.embLE_succ
 public import DomainTheory.ContinuousLattice.InverseLimits.embLE_self
 public import Mathlib.Data.Set.Basic
@@ -35,9 +33,9 @@ theorem iComp_compatible (n : ℕ) (x : D n) : Compatible D P (iComp D P n x) :=
     · have hn : n = m + 1 := le_antisymm h2 (not_le.mp h1)
       subst hn
       rw [iComp_of_le D P (le_refl (m + 1)), embLE_self, iComp_of_ge D P h1,
-        projLE_succ D P (le_refl m) (le_of_lt (not_le.mp h1)) x, projLE_self]
+        projLE.succ D P (le_refl m) (le_of_lt (not_le.mp h1)) x, projLE.self]
     · rw [iComp_of_ge D P h2, iComp_of_ge D P h1,
-        projLE_retr D P (le_of_lt (not_le.mp h2)) x]
+        projLE.retr D P (le_of_lt (not_le.mp h2)) x]
 
 end InverseLimit
 

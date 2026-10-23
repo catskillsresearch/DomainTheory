@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.embLE_le
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE_compatible
+public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_ge
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_le
 public import Mathlib.Data.Set.Basic
@@ -28,7 +28,7 @@ theorem iComp_incl_le (n : ℕ) (y : InverseLimit D P) (m : ℕ) :
   by_cases h : n ≤ m
   · rw [iComp_of_le D P h]; exact embLE_le D P y h
   · rw [iComp_of_ge D P h]
-    exact le_of_eq (projLE_compatible D P y (le_of_lt (not_le.mp h)))
+    exact le_of_eq (projLE.compatible D P y (le_of_lt (not_le.mp h)))
 
 end InverseLimit
 

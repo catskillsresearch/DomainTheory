@@ -1,3 +1,0 @@
-Descending the tower of retractions from stage n down to stage m is monotone.
-
-The comparison is by induction along m at most n. At the base, descent is the identity, so the inequality is the given one. At a successor, one retraction is peeled off and the inductive hypothesis applies to the image under that monotone retraction.

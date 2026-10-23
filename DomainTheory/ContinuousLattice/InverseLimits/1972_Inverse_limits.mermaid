@@ -3,32 +3,33 @@
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
   SYS["Inverse system"]
-  PLE["Projections along the tower"]
+  PLE["projLE"]
   ELE["Embeddings along the tower"]
+  LE["inverseLimitLE"]
   ICOMP["Coordinates of an embedding"]
+  LT["inverseLimitLT"]
+  PROJ["projection"]
+  LAT["Limit lattice"]
   PINF["Projections from the limit"]
   EINF["Embeddings into the limit"]
-  LE["inverseLimitLE"]
-  LT["inverseLimitLT"]
-  LAT["Limit lattice"]
-  SUP["Directed suprema"]
   COC["Mediating map"]
+  SUP["Directed suprema"]
   ITOP["inverseLimitTopology"]
   SYS -->|"1"| PLE
   SYS -->|"1"| ELE
   SYS -->|"1"| LE
-  PLE -->|"6"| ICOMP
+  PLE -->|"4"| ICOMP
   ELE -->|"6"| ICOMP
   ICOMP -->|"6"| EINF
   LE -->|"1"| LT
   LT -->|"1"| LAT
-  PLE -->|"1"| LAT
-  LAT -->|"1"| SUP
-  EINF -->|"3"| SUP
-  PINF -->|"1"| SUP
-  SUP -->|"1"| EINF
-  SUP -->|"1"| PINF
+  PROJ -->|"1"| LAT
+  LAT -->|"3"| PINF
+  LAT -->|"3"| EINF
+  PINF -->|"1"| COC
   EINF -->|"1"| COC
+  PINF -->|"1"| SUP
+  EINF -->|"3"| SUP
   COC -->|"2"| ITOP
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
-  class SYS,PLE,ELE,ICOMP,PINF,EINF,LE,LT,LAT,SUP,COC,ITOP concept
+  class SYS,PLE,PROJ,ELE,ICOMP,PINF,EINF,LE,LT,LAT,SUP,COC,ITOP concept

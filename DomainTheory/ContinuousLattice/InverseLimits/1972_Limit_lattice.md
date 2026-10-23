@@ -1,6 +1,6 @@
 # The limit lattice
 
-`inverseLimitPartialOrder` is the partial order whose `le` is [inverseLimitLE](1972_inverseLimitLE.md) and whose `lt` is [inverseLimitLT](1972_inverseLimitLT.md). The remaining declarations are the coordinatewise infima of threads and the complete lattice they determine.
+`inverseLimitPartialOrder` is the partial order whose `le` is [inverseLimitLE](1972_inverseLimitLE.md) and whose `lt` is [inverseLimitLT](1972_inverseLimitLT.md). The remaining declarations are the coordinatewise infima of threads, the complete lattice they determine, and the pointwise formula for a directed supremum.
 
 ## AI: Human-English to AI-Lean
 
@@ -36,6 +36,10 @@
 
 @import "instCompleteLattice.lean"
 
+**[ContinuousLattice/InverseLimits/coe_sSup_of_directed.lean](coe_sSup_of_directed.lean)**
+
+@import "coe_sSup_of_directed.lean"
+
 ## AI: AI-Lean to AI-English
 
 @import "inverseLimitPartialOrder.ai_lean_to_english" {code_block=false}
@@ -53,6 +57,8 @@
 @import "isGLB_sInf'.ai_lean_to_english" {code_block=false}
 
 @import "instCompleteLattice.ai_lean_to_english" {code_block=false}
+
+@import "coe_sSup_of_directed.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 
