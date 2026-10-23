@@ -2,6 +2,8 @@ module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
+public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
@@ -30,6 +32,11 @@ theorem apply (x : DInf D₀ j₀) :
   show (sSup (Set.range (iInfTerm D₀ j₀)) : ScottMap _ _) x = _
   rw [ScottMap.sSup_apply, ← Set.range_comp, sSup_range]
   rfl
+
+/-- `i_∞` is Scott-continuous (it is a bundled `ScottMap`). -/
+theorem preservesDirectedSup :
+    PreservesDirectedSup (embInfInf D₀ j₀ : DInf D₀ j₀ → DInfFn D₀ j₀) :=
+  (proposition_2_5 _).mp (embInfInf D₀ j₀).continuous
 
 end embInfInf
 
