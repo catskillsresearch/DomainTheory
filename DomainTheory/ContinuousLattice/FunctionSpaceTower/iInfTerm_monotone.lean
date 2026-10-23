@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj_succ_retr_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.incl_projInf_le_projInf_succ
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
@@ -46,7 +46,7 @@ theorem iInfTerm_le_succ (x : DInf D₀ j₀) (m : ℕ) :
           ((towerProj D₀ j₀ m).retr
             (x.1 (m + 2) ((towerProj D₀ j₀ m).incl
               (projInf (towerType D₀) (towerProj D₀ j₀) m z)))) := by
-        rw [towerProj_succ_retr_apply]
+        rw [towerProj.succ_retr_apply]
     _ ≤ x.1 (m + 2) ((towerProj D₀ j₀ m).incl
           (projInf (towerType D₀) (towerProj D₀ j₀) m z)) :=
         (towerProj D₀ j₀ m).incl_retr_le _
