@@ -6,7 +6,10 @@
 
 **Topics**
 - [Introduction](1972_Introduction.md)
-- [Continuous lattices and the way-below relation](ContinuousLattice/WayBelow/1972_Way_below.md)
+- [Way below](ContinuousLattice/WayBelow/1972_Way_below.md)
+- [The way-below relation](ContinuousLattice/WayBelow/1972_WayBelow.md)
+- [Scott open](ContinuousLattice/WayBelow/1972_ScottOpen.md)
+- [Continuous lattices](ContinuousLattice/WayBelow/1972_ContinuousLattice.md)
 - [Specialization](ContinuousLattice/Specialization/1972_Specialization_order.md)
 - [Scott Maps](ContinuousLattice/ScottMaps/1972_Scott_maps.md)
 - [Milner Correction](ContinuousLattice/MilnerCorrection/1972_Correction.md)

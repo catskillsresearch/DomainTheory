@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
-import DomainTheory.ContinuousLattice.WayBelow.scottOpen_univ
+import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
@@ -16,6 +16,6 @@ variable {D : Type u} [CompleteLattice D]
 
 /-- **Scott 1972, Proposition 2.2(i).** `⊥ ≪ x` for every `x`. -/
 theorem bot_wayBelow (x : D) : (⊥ : D) ≪ x :=
-  ⟨Set.univ, scottOpen_univ, Set.mem_univ x, fun _ _ => bot_le⟩
+  ⟨Set.univ, ScottOpen.univ, Set.mem_univ x, fun _ _ => bot_le⟩
 
 end DomainTheory.ContinuousLattice

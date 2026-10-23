@@ -6,37 +6,7 @@
 
 ## AI: Human-English to AI-Lean
 
-**[ContinuousLattice/WayBelow/bot_wayBelow.lean](bot_wayBelow.lean)**
-
-@import "bot_wayBelow.lean"
-
-**[ContinuousLattice/WayBelow/WayBelowu2esup.lean](WayBelowu2esup.lean)**
-
-@import "WayBelowu2esup.lean"
-
-**[ContinuousLattice/WayBelow/WayBelowu2etrans_le.lean](WayBelowu2etrans_le.lean)**
-
-@import "WayBelowu2etrans_le.lean"
-
-**[ContinuousLattice/WayBelow/WayBelowu2ele_trans.lean](WayBelowu2ele_trans.lean)**
-
-@import "WayBelowu2ele_trans.lean"
-
-**[ContinuousLattice/WayBelow/WayBelowu2ele.lean](WayBelowu2ele.lean)**
-
-@import "WayBelowu2ele.lean"
-
-## AI: AI-Lean to AI-English
-
-@import "bot_wayBelow.ai_lean_to_english" {code_block=false}
-
-@import "WayBelowu2esup.ai_lean_to_english" {code_block=false}
-
-@import "WayBelowu2etrans_le.ai_lean_to_english" {code_block=false}
-
-@import "WayBelowu2ele_trans.ai_lean_to_english" {code_block=false}
-
-@import "WayBelowu2ele.ai_lean_to_english" {code_block=false}
+Clauses (i)–(v) are filed with [the way-below relation](1972_WayBelow.md): `bot_wayBelow`, `WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, and `WayBelow.le`. Clauses (vi) and (vii) are `WayBelow.self_iff_scottOpen_Ici` and `WayBelow.sSup_iff` in `WayBelow.lean` on that page.
 
 ## AI: AI-English to Human-English Concordance
 

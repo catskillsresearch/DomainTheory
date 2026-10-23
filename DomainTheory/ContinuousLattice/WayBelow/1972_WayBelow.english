@@ -20,7 +20,7 @@ The relation $x \ll y$ behaves somewhat like a strict ordering relation; at leas
 
 Following subsequent historical usage, we call this the "way below" relation.
 
-Such a relation has many pleasant properties.
+Such a relation has many pleasant properties. Proposition 2.2(i)–(v) are `bot_wayBelow`, `WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, and `WayBelow.le`. The statement is [Proposition 2.2](1972_Proposition_2_2.md).
 
 Proposition 2.2(vi). WayBelow.self_iff_scottOpen_Ici. `x ≪ x` iff the principal up-set `{z | x ⊑ z}` (i.e.
 `Set.Ici x`) is Scott-open. This characterizes the *compact* (finite, isolated) elements:

@@ -11,11 +11,8 @@ flowchart TB
   N7["WayBelowu2etrans_le"]
   N8["sInf_wayBelow"]
   N9["isContinuousLattice_iff_isLUB_sInf_nhds"]
-  N10["scottOpen_inter"]
   N11["WayBelowu2esup"]
   N12["directedOn_wayBelow"]
-  N13["scottOpen_sUnion"]
-  N14["scottOpen_univ"]
   N15["bot_wayBelow"]
   N16["exists_wayBelow_Ici_subset"]
   N17["exists_wayBelow_subset"]
@@ -35,15 +32,12 @@ flowchart TB
   N4 -->|"1"| N9
   N5 -->|"1"| N9
   N8 -->|"1"| N9
-  N0 -->|"1"| N10
+  N0 -->|"1"| N11
   N2 -->|"1"| N11
-  N10 -->|"1"| N11
   N2 -->|"1"| N12
   N11 -->|"1"| N12
-  N0 -->|"1"| N13
-  N0 -->|"1"| N14
+  N0 -->|"1"| N15
   N2 -->|"1"| N15
-  N14 -->|"1"| N15
   N2 -->|"1"| N16
   N4 -->|"1"| N16
   N12 -->|"1"| N16
@@ -68,11 +62,8 @@ flowchart TB
   class N7 file
   class N8 file
   class N9 file
-  class N10 file
   class N11 file
   class N12 file
-  class N13 file
-  class N14 file
   class N15 file
   class N16 file
   class N17 file

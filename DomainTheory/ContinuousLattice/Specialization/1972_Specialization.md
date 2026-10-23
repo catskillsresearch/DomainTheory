@@ -62,26 +62,6 @@
 
 @import "isOpen_scott_iff_scottOpen.lean"
 
-**[ContinuousLattice/WayBelow/ScottOpen.lean](../WayBelow/ScottOpen.lean)**
-
-@import "../WayBelow/ScottOpen.lean"
-
-**[ContinuousLattice/WayBelow/ScottOpenu2eisUpperSet.lean](../WayBelow/ScottOpenu2eisUpperSet.lean)**
-
-@import "../WayBelow/ScottOpenu2eisUpperSet.lean"
-
-**[ContinuousLattice/WayBelow/scottOpen_univ.lean](../WayBelow/scottOpen_univ.lean)**
-
-@import "../WayBelow/scottOpen_univ.lean"
-
-**[ContinuousLattice/WayBelow/scottOpen_inter.lean](../WayBelow/scottOpen_inter.lean)**
-
-@import "../WayBelow/scottOpen_inter.lean"
-
-**[ContinuousLattice/WayBelow/scottOpen_sUnion.lean](../WayBelow/scottOpen_sUnion.lean)**
-
-@import "../WayBelow/scottOpen_sUnion.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "SpecializationLe.ai_lean_to_english" {code_block=false}
@@ -111,16 +91,6 @@
 @import "scottTopology_t0Space.ai_lean_to_english" {code_block=false}
 
 @import "isOpen_scott_iff_scottOpen.ai_lean_to_english" {code_block=false}
-
-@import "../WayBelow/ScottOpen.ai_lean_to_english" {code_block=false}
-
-@import "../WayBelow/ScottOpenu2eisUpperSet.ai_lean_to_english" {code_block=false}
-
-@import "../WayBelow/scottOpen_univ.ai_lean_to_english" {code_block=false}
-
-@import "../WayBelow/scottOpen_inter.ai_lean_to_english" {code_block=false}
-
-@import "../WayBelow/scottOpen_sUnion.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

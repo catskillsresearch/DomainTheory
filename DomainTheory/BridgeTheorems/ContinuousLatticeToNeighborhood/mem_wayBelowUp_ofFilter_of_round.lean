@@ -13,9 +13,6 @@ public import Mathlib.Order.Directed
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpenu2eisUpperSet
-public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_univ
-public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_inter
-public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_sUnion
 public import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele_trans

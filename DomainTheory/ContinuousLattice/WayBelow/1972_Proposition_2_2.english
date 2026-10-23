@@ -24,4 +24,4 @@ $$
 
 then $x \sqsubseteq z$ for some $z \in Z$.
 
-There is no `proposition_2_2` module. Clauses (i)–(v) are separate files: (i) `bot_wayBelow`, (ii) `WayBelow.sup`, (iii) `WayBelow.trans_le`, (iv) `WayBelow.le_trans`, and (v) `WayBelow.le`. Clauses (vi) `WayBelow.self_iff_scottOpen_Ici` and (vii) `WayBelow.sSup_iff` are declared with the relation in [WayBelow.lean](WayBelow.lean). The directed-supremum characterization just above is not one of those clauses. The equation that turns this relation into a continuous lattice is [Definition 2.3](1972_ContinuousLattice.md).
+There is no `proposition_2_2` module. Clauses (i)–(v) are separate files shown with [the way-below relation](1972_WayBelow.md): (i) `bot_wayBelow`, (ii) `WayBelow.sup`, (iii) `WayBelow.trans_le`, (iv) `WayBelow.le_trans`, and (v) `WayBelow.le`. Clauses (vi) `WayBelow.self_iff_scottOpen_Ici` and (vii) `WayBelow.sSup_iff` are declared with the relation in [WayBelow.lean](WayBelow.lean). The directed-supremum characterization just above is not one of those clauses. The equation that turns this relation into a continuous lattice is [Definition 2.3](1972_ContinuousLattice.md).

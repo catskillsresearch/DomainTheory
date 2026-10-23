@@ -1,3 +1,0 @@
-The intersection of two Scott-open sets is Scott-open.
-
-The intersection of upper sets is an upper set. If a nonempty directed set has supremum in the intersection, each factor supplies a member lying in that factor. A common upper bound of those two members lies in the directed set, and the upper-set property puts it in both factors.
