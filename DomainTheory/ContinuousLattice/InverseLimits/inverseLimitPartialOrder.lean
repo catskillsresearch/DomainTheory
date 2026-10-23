@@ -1,8 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE_refl
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE_trans
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE_antisymm
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLT_iff_LE_not_GE
 public import Mathlib.Data.Set.Basic
 
@@ -26,10 +24,10 @@ leaving typeclass search to choose an equivalent route. -/
 instance inverseLimitPartialOrder : PartialOrder (InverseLimit D P) where
   le := inverseLimitLE D P
   lt := inverseLimitLT D P
-  le_refl := inverseLimitLE_refl D P
-  le_trans := inverseLimitLE_trans D P
+  le_refl := inverseLimitLE.refl D P
+  le_trans := inverseLimitLE.trans D P
   lt_iff_le_not_ge := inverseLimitLT_iff_LE_not_GE D P
-  le_antisymm := inverseLimitLE_antisymm D P
+  le_antisymm := inverseLimitLE.antisymm D P
 
 end InverseLimit
 
