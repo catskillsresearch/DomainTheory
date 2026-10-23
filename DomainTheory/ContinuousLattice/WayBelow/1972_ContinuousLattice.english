@@ -1,4 +1,4 @@
-**Definition.** A *continuous lattice* is a complete lattice $D$ in which for every $y \in D$ we have:
+**Definition 2.3.** A *continuous lattice* is a complete lattice $D$ in which for every $y \in D$ we have:
 
 $$
 y = \bigsqcup x \in D : x \ll y.

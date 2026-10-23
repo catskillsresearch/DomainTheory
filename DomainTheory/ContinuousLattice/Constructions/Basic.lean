@@ -5,7 +5,6 @@ public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 public import Mathlib.Data.Finset.Lattice.Basic
 public import Mathlib.Data.Finset.Insert
 public import Mathlib.Data.Finset.Defs
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import Mathlib.Topology.Defs.Basic
 

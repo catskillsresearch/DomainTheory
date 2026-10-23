@@ -5,7 +5,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.Constructions.directedOn_finite_sSup_mem
 public import Mathlib.Data.Fintype.EquivFin
 public import Mathlib.Basic.Finite.Defs
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

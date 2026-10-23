@@ -4,7 +4,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_le_of_wayBel
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

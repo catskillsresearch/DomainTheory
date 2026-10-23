@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fixMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic.isLUB_sSup
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2esup
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic

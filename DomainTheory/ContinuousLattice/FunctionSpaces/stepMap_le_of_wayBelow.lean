@@ -1,11 +1,11 @@
 module
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_apply_of_wayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_of_not_wayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
 public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst28
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

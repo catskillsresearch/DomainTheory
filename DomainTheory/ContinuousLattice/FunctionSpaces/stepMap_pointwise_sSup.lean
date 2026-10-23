@@ -6,8 +6,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

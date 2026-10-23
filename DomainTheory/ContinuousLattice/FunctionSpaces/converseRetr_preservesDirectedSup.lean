@@ -5,8 +5,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.converseRetr
 public import DomainTheory.ContinuousLattice.FunctionSpaces.converseRetr_mono
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 

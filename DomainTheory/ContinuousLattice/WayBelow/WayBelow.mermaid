@@ -6,49 +6,30 @@ flowchart TB
   N1["ScottOpenu2eisUpperSet"]
   N2["WayBelow"]
   N4["ContinuousLattice"]
-  N5["WayBelowu2ele"]
-  N6["WayBelowu2ele_trans"]
-  N7["WayBelowu2etrans_le"]
   N8["sInf_wayBelow"]
   N9["isContinuousLattice_iff_isLUB_sInf_nhds"]
-  N11["WayBelowu2esup"]
   N12["directedOn_wayBelow"]
-  N15["bot_wayBelow"]
   N16["exists_wayBelow_Ici_subset"]
   N17["exists_wayBelow_subset"]
   N18["scottOpen_wayBelow"]
+  N19["proposition_2_2"]
 
   N0 -->|"1"| N1
   N0 -->|"1"| N2
   N2 -->|"1"| N4
-  N5 -->|"1"| N4
-  N7 -->|"1"| N4
   N12 -->|"1"| N4
-  N15 -->|"1"| N4
-  N2 -->|"1"| N5
-  N2 -->|"1"| N6
-  N2 -->|"1"| N7
   N2 -->|"1"| N8
   N4 -->|"1"| N9
-  N5 -->|"1"| N9
   N8 -->|"1"| N9
-  N0 -->|"1"| N11
-  N2 -->|"1"| N11
   N2 -->|"1"| N12
-  N11 -->|"1"| N12
-  N0 -->|"1"| N15
-  N2 -->|"1"| N15
   N2 -->|"1"| N16
   N4 -->|"1"| N16
   N12 -->|"1"| N16
-  N15 -->|"1"| N16
   N2 -->|"1"| N17
   N4 -->|"1"| N17
-  N5 -->|"1"| N17
   N12 -->|"1"| N17
-  N15 -->|"1"| N17
   N2 -->|"1"| N18
-  N7 -->|"1"| N18
+  N2 -->|"1"| N19
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
@@ -57,14 +38,10 @@ flowchart TB
   class N1 file
   class N2 file
   class N4 file
-  class N5 file
-  class N6 file
-  class N7 file
   class N8 file
   class N9 file
-  class N11 file
   class N12 file
-  class N15 file
   class N16 file
   class N17 file
   class N18 file
+  class N19 file

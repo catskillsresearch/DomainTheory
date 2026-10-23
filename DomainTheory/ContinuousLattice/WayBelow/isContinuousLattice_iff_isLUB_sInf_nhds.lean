@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 import DomainTheory.ContinuousLattice.WayBelow.sInf_wayBelow
 public import Mathlib.Data.Set.Basic
 

@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
 import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
 public import Mathlib.Data.Set.Basic
 

@@ -13,7 +13,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele_trans
 public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section

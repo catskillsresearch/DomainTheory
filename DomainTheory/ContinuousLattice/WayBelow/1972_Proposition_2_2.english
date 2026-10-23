@@ -1,5 +1,3 @@
-The primary purpose of introducing [the way-below relation](1972_WayBelow.md) is to provide a simple definition for the kind of spaces that are most useful to us. We first mention the most elementary features of this relation.
-
 **2.2 Proposition.** In a complete lattice $D$ we have:
 
 (i) $\bot \ll x$;
@@ -16,12 +14,6 @@ The primary purpose of introducing [the way-below relation](1972_WayBelow.md) is
 
 (vii) if $S \subseteq D$ is directed, then $x \ll \bigsqcup S$ iff $x \ll y$ for some $y \in S$. $\square$
 
-The lattice approach to injective spaces gives a completely "internal" characterization of them: in the first place the lattices are complete. Next we can define lattice theoretically:
+The proofs of these statements can be safely left to the reader.
 
-$$
-x \ll y \quad \text{iff} \quad \text{whenever } y \sqsubseteq \bigsqcup Z \text{ and } Z \subseteq D \text{ is directed,}
-$$
-
-then $x \sqsubseteq z$ for some $z \in Z$.
-
-There is no `proposition_2_2` module. Clauses (i)–(v) are separate files shown with [the way-below relation](1972_WayBelow.md): (i) `bot_wayBelow`, (ii) `WayBelow.sup`, (iii) `WayBelow.trans_le`, (iv) `WayBelow.le_trans`, and (v) `WayBelow.le`. Clauses (vi) `WayBelow.self_iff_scottOpen_Ici` and (vii) `WayBelow.sSup_iff` are declared with the relation in [WayBelow.lean](WayBelow.lean). The directed-supremum characterization just above is not one of those clauses. The equation that turns this relation into a continuous lattice is [Definition 2.3](1972_ContinuousLattice.md).
+The relation is [the way-below relation](1972_WayBelow.md). `proposition_2_2` is this statement. Its proof calls `bot_wayBelow`, `WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, `WayBelow.le`, `WayBelow.self_iff_scottOpen_Ici`, and `WayBelow.sSup_iff`, which are in `WayBelow.lean`.

@@ -1,4 +1,4 @@
-# Continuous lattices
+# Definition 2.3: Continuous Lattice
 
 ## Human-English
 

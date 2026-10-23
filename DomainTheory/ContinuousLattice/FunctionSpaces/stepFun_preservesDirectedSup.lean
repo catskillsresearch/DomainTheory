@@ -1,12 +1,12 @@
 module
 
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_of_not_wayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_of_wayBelow
 public import Mathlib.Order.BourbakiWitt
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

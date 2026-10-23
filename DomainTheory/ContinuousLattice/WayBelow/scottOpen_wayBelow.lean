@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
-import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
 
 @[expose] public section
 

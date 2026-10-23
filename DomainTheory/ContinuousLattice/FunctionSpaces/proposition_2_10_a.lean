@@ -5,7 +5,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_image_retr_wayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.retr_wayBelow_of_wayBelow_incl
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

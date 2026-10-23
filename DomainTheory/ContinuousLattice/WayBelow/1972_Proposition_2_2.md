@@ -6,7 +6,13 @@
 
 ## AI: Human-English to AI-Lean
 
-Clauses (i)–(v) are filed with [the way-below relation](1972_WayBelow.md): `bot_wayBelow`, `WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, and `WayBelow.le`. Clauses (vi) and (vii) are `WayBelow.self_iff_scottOpen_Ici` and `WayBelow.sSup_iff` in `WayBelow.lean` on that page.
+**[ContinuousLattice/WayBelow/proposition_2_2.lean](proposition_2_2.lean)**
+
+@import "proposition_2_2.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "proposition_2_2.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

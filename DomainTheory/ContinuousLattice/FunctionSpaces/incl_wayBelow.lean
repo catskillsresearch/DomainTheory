@@ -5,10 +5,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2esup
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele_trans
-public import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 

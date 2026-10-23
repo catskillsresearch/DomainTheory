@@ -1,9 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
-import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
-import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
-import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
 import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
 
 @[expose] public section

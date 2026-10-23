@@ -1,7 +1,6 @@
 module
 public import DomainTheory.ContinuousLattice.ContinuousLattices.orderIso_wayBelow
 public import Mathlib.Order.BourbakiWitt
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import Mathlib.Topology.Defs.Basic

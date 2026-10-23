@@ -1,0 +1,13 @@
+---
+description: How this revision of the Scott formalization is organized
+alwaysApply: true
+---
+
+# Revision ethos
+
+The vendored formalizations were brute force: a paper statement and its proof lived together, often under a name taken from the paper. This revision separates the library from the historical statement.
+
+- Give each mathematical fact a Mathlib-style name that says what it asserts (`WayBelow.sup`, `WayBelow.trans_le`, `bot_wayBelow`). That lemma is the library tool.
+- Keep Scott's prose in his order. A proposition, definition, or theorem from the paper is then one statement, verbatim, whose proof calls those tools and does not redo their arguments.
+- Proposition 2.2 is the pattern. Clauses (i)–(vii) are `bot_wayBelow`, `WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, `WayBelow.le`, `WayBelow.self_iff_scottOpen_Ici`, and `WayBelow.sSup_iff`. `proposition_2_2` is Scott's statement, proved by calling those seven lemmas.
+- Notes show the same two layers: the human-English is the source passage, and the formalization shows the named tools and the short proof that assembles them.
