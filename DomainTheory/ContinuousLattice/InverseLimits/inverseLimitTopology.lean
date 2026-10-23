@@ -5,7 +5,6 @@ public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.projInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
-public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.Specialization.scottTopology_t0Space
 public import DomainTheory.ContinuousLattice.Specialization.specializationLe_scott_iff
 public import DomainTheory.ContinuousLattice.Specialization.specializationLe_iff_specializes
