@@ -1,4 +1,4 @@
-# Definition 3.11
+# Definition 3.11: Projection space
 
 As a corollary of 3.10 we can easily see which *subspaces* of a continuous lattice $D'$ are projections of it. Such a subspace $D \subseteq D'$ must first be closed under $\bigsqcup$. That is, if $S \subseteq D$, then $\bigsqcup S \in D$ for
 

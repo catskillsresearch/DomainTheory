@@ -15,3 +15,20 @@ The outcome of this development was that Scott found he could describe the work 
 For example, in understanding the connections of this kind of spaces with other topologies, one should consider the remarks on the topology of lattices in Birkhoff's paper in Abbott (1970). Some older papers such as Strother (1955) or Michael (1951) might also give some leads. It is curious how little there is of interest in the literature on $T_0$-spaces. Concerning function spaces there ought to be some connections with the *limit spaces* of Cook and Fischer (see especially Binz and Keller (1966)) and possibly with the notion of *quasi-topology* of Spanier (1963), but these are rather vague ideas.
 
 In a different direction note that the *algebraic lattices* of Grätzer (1968) are in fact continuous lattices in which isolated points are dense. The continuous lattices may be "higher dimensional" while algebraic lattices are "zero dimensional" - in some suitable sense. Every continuous lattice is a retract of an algebraic lattice. But does this mean anything?
+
+The rest of this section is the injective-space discussion: the $T_0$ remarks, injectivity, Definition 1.1 through Corollary 1.7, and absolute retracts.
+
+@import "1972_Introduction.mermaid"
+
+The arrowhead is on the note that imports. The number is how many direct imports. An arrow already implied by a longer path is left out. $T_0$ spaces, the injective-spaces page, and absolute retracts have no Lean files of their own.
+
+- [Injective spaces](ContinuousLattice/Injective/1972_Injective_spaces.md)
+- [$T_0$ spaces](ContinuousLattice/Injective/1972_T0_spaces.md)
+- [Definition 1.1](ContinuousLattice/Injective/1972_Definition_1_1.md)
+- [Proposition 1.2](ContinuousLattice/Injective/1972_Proposition_1_2.md)
+- [Proposition 1.3](ContinuousLattice/Injective/1972_Proposition_1_3.md)
+- [Proposition 1.4](ContinuousLattice/Injective/1972_Proposition_1_4.md)
+- [Proposition 1.5](ContinuousLattice/Injective/1972_Proposition_1_5.md)
+- [Corollary 1.6](ContinuousLattice/Injective/1972_Corollary_1_6.md)
+- [Corollary 1.7](ContinuousLattice/Injective/1972_Corollary_1_7.md)
+- [Absolute retracts](ContinuousLattice/Injective/1972_Absolute_retracts.md)

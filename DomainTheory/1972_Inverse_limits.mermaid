@@ -1,0 +1,21 @@
+%% Notes of the inverse-limits section.
+%% Arrowhead on the importer. The number is a direct-import count.
+%% An arrow already implied by a longer path is omitted.
+flowchart TB
+  IL["Inverse limits"]
+  P41["Proposition 4.1"]
+  P42["Proposition 4.2"]
+  C43["Corollary 4.3"]
+  T44["Theorem 4.4"]
+  L45["Lemma 4.5"]
+  IL -->|"4"| P41
+  IL -->|"4"| P42
+  IL -->|"5"| C43
+  IL -->|"8"| L45
+  P41 -->|"2"| T44
+  P42 -->|"1"| T44
+  L45 -->|"1"| T44
+  classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
+  classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  class IL concept
+  class P41,P42,C43,T44,L45 numbered

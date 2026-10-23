@@ -1,4 +1,4 @@
-# Proposition 2.10
+# Proposition 2.10 (failing proof)
 
 **2.10 Proposition.** A retract of a continuous lattice is a continuous lattice with the subspace topology agreeing with the induced topology.
 
@@ -63,30 +63,6 @@ in $D$. We can then write in $D$:
 
 $$y = \bigsqcup \sqcap U : y \in U $$
 
-where $U$ ranges over the open subsets of $D$, and so the lattice is continuous by 2.4. Inasmuch as the open sets $U$ just used were open in the subspace topology, it follows by the remark after 2.4 that the subspace and the lattice-induced topologies coincide. $\square$
+where $U$ ranges over the open subsets of $D$, and so the lattice is continuous by 2.4. **Inasmuch as the open sets $U$ just used were open in the subspace topology, it follows by the remark after 2.4 that the subspace and the lattice-induced topologies coincide.** $\square$
 
-## AI: Human-English to AI-Lean
-
-**[ContinuousLattice/FunctionSpaces/proposition_2_10_a.lean](proposition_2_10_a.lean)**
-
-@import "proposition_2_10_a.lean"
-
-**[ContinuousLattice/FunctionSpaces/proposition_2_10_b.lean](proposition_2_10_b.lean)**
-
-@import "proposition_2_10_b.lean"
-
-**[ContinuousLattice/FunctionSpaces/proposition_2_10.lean](proposition_2_10.lean)**
-
-@import "proposition_2_10.lean"
-
-## AI: AI-Lean to AI-English
-
-@import "proposition_2_10_a.ai_lean_to_english" {code_block=false}
-
-@import "proposition_2_10_b.ai_lean_to_english" {code_block=false}
-
-@import "proposition_2_10.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1972_Proposition_2_10.ai_english_concordance" {code_block=false}
+**This appeal fails.** The remark before Proposition 2.5 is false, and this proof is one of the three that use it. The discussion and the repair are in the [Milner correction](../MilnerCorrection/1972_Correction.md).

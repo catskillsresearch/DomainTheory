@@ -1,59 +1,16 @@
-%% Direct imports that are not implied by a longer path.
-%% The page displays 1972_ContinuousLattices.svg from this edge list.
-%% The arrowhead points at the item that imports. The label is how many direct imports.
-%% Propositions sit along the bottom.
+%% Arrowhead on the importer. The number is a direct-import count.
+%% An arrow already implied by a longer path is omitted.
+%% Introduction has no Lean code, so it has no arrow.
 flowchart TB
-  SO["Scott open"]
-  INJ["Injective spaces"]
-  WB["Way-below relation"]
-  SP["Specialization"]
-  D23["Definition 2.3<br>Continuous Lattice"]
-  MC["Milner Correction"]
-  SM["Scott Maps"]
-  FS["Function spaces"]
-  IL["Inverse limits"]
-  FST["Function Space Tower"]
-  P21["Proposition 2.1"]
-  P22["Proposition 2.2"]
-  P24["Proposition 2.4"]
-  P25["Proposition 2.5"]
-  P26["Proposition 2.6"]
-  P27["Proposition 2.7"]
-  P28["Proposition 2.8"]
-  P29["Proposition 2.9"]
-  P210["Proposition 2.10"]
-  P211["Proposition 2.11"]
-  T212["Theorem 2.12"]
-
-  SO -->|"1"| WB
-  SO -->|"5"| SP
-  WB -->|"2"| D23
-  WB -->|"1"| P22
-  D23 -->|"1"| SM
-  D23 -->|"2"| P24
-  D23 -->|"1"| P28
-  SP -->|"3"| SM
-  SP -->|"2"| MC
-  SP -->|"6"| P21
-  SM -->|"3"| P25
-  SM -->|"2"| P26
-  SM -->|"5"| P27
-  INJ -->|"1"| P211
-  FS -->|"10"| P210
-  P25 -->|"6"| FS
-  P26 -->|"1"| FS
-  P25 -->|"1"| P29
-  P25 -->|"1"| P211
-  P28 -->|"1"| T212
-  P29 -->|"2"| T212
-  P211 -->|"6"| T212
-  P210 -->|"2"| T212
-  T212 -->|"3"| IL
-  IL -->|"21"| FST
-
-  classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
-  classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
-  classDef both fill:#fae8ff,stroke:#a21caf,color:#701a75
-  class WB,SO,SP,SM,MC,INJ,FS,IL,FST concept
-  class P21,P22,P24,P25,P26,P27,P28,P29,P210,P211,T212 numbered
-  class D23 both
+  INTRO["1. Introduction"]
+  INJ["2. Injective spaces"]
+  CL["3. Continuous lattices"]
+  FS["4. Function spaces"]
+  LIM["5. Inverse limits"]
+  INTRO ~~~ INJ
+  INJ -->|"13"| CL
+  CL -->|"107"| FS
+  FS -->|"20"| CL
+  FS -->|"71"| LIM
+  classDef section fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  class INTRO,INJ,CL,FS,LIM section
