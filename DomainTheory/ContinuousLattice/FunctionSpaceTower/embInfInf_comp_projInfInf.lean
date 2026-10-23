@@ -6,7 +6,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iSup₂_monotone
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj_retr_conjMap_succ
 public import DomainTheory.ContinuousLattice.InverseLimits.lemma_4_5
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_eq_iSup
-public import DomainTheory.ContinuousLattice.InverseLimits.embInf_le_succ
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.comp_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply

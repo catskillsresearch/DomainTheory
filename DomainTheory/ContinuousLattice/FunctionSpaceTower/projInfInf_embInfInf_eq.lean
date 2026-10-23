@@ -8,8 +8,8 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conj_iInfTerm_eq
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm_monotone
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iSup₂_monotone_eq_diagonal
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap_incl_le_conjMap_succ
-public import DomainTheory.ContinuousLattice.InverseLimits.embInf_succ
-public import DomainTheory.ContinuousLattice.InverseLimits.embInf_monotone
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
+public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
 public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 

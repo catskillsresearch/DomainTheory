@@ -1,8 +1,8 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.incl_projInf_le_projInf_succ
-public import DomainTheory.ContinuousLattice.InverseLimits.embInf_succ
-public import DomainTheory.ContinuousLattice.InverseLimits.embInf_monotone
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
+public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
 public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 

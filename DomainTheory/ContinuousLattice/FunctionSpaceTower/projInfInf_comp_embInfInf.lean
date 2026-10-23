@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf_embInfInf_eq
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_eq_iSup
-public import DomainTheory.ContinuousLattice.InverseLimits.embInf_le_succ
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.comp_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap

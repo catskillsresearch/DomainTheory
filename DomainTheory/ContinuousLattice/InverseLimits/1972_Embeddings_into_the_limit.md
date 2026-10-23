@@ -1,59 +1,10 @@
 # Embeddings into the limit
 
-`embInfFun` is the thread $i_{n\infty}(x)$, and `embInf` is that map as a Scott map. The application formula in the [application](1972_Application.md) note is the supremum of these embeddings.
+`embInfFun` is the thread \(i_{n\infty}(x)\), and `embInf` is that map as a Scott map. The application formula in the [application](1972_Application.md) note is the supremum of these embeddings.
 
-## AI: Human-English to AI-Lean
+**Dependency diagram.** Each box is one of these notes. The arrowhead is on the note that imports. The number is how many direct imports. An arrow already implied by a longer path is left out.
 
-**[ContinuousLattice/InverseLimits/embInfFun.lean](embInfFun.lean)**
+@import "1972_Embeddings_into_the_limit.mermaid"
 
-@import "embInfFun.lean"
-
-**[ContinuousLattice/InverseLimits/embInfFun_coe.lean](embInfFun_coe.lean)**
-
-@import "embInfFun_coe.lean"
-
-**[ContinuousLattice/InverseLimits/embInf.lean](embInf.lean)**
-
-@import "embInf.lean"
-
-**[ContinuousLattice/InverseLimits/embInf_monotone.lean](embInf_monotone.lean)**
-
-@import "embInf_monotone.lean"
-
-**[ContinuousLattice/InverseLimits/embInf_preservesDirectedSup.lean](embInf_preservesDirectedSup.lean)**
-
-@import "embInf_preservesDirectedSup.lean"
-
-**[ContinuousLattice/InverseLimits/embInf_succ.lean](embInf_succ.lean)**
-
-@import "embInf_succ.lean"
-
-**[ContinuousLattice/InverseLimits/embInf_le_succ.lean](embInf_le_succ.lean)**
-
-@import "embInf_le_succ.lean"
-
-**[ContinuousLattice/InverseLimits/embInf_family_directed.lean](embInf_family_directed.lean)**
-
-@import "embInf_family_directed.lean"
-
-## AI: AI-Lean to AI-English
-
-@import "embInfFun.ai_lean_to_english" {code_block=false}
-
-@import "embInfFun_coe.ai_lean_to_english" {code_block=false}
-
-@import "embInf.ai_lean_to_english" {code_block=false}
-
-@import "embInf_monotone.ai_lean_to_english" {code_block=false}
-
-@import "embInf_preservesDirectedSup.ai_lean_to_english" {code_block=false}
-
-@import "embInf_succ.ai_lean_to_english" {code_block=false}
-
-@import "embInf_le_succ.ai_lean_to_english" {code_block=false}
-
-@import "embInf_family_directed.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1972_Embeddings_into_the_limit.ai_english_concordance" {code_block=false}
+- [embInfFun](1972_embInfFun.md)
+- [embInf](1972_embInf.md)
