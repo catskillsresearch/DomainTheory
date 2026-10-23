@@ -4,7 +4,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.atomInsert
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.atomInsert
 
 @[expose] public section
 

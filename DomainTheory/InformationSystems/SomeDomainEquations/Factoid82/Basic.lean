@@ -5,8 +5,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 public import Mathlib.Data.Finset.Card
 
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.RawLamToken
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.RawLamToken
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepth
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepth
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamCon
@@ -98,7 +96,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamD
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.mem_listToLamDFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDForget_listToLamDFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon_listToLamDFinset
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamForgetInsert
 
 @[expose] public section
 

@@ -25,7 +25,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.twelve_inter_two
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.two_inter_twelve
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.inter_eq
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.twelve_inter_two
 
 @[expose] public section
 

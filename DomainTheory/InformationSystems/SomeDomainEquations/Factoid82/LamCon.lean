@@ -4,8 +4,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 public import Mathlib.Data.Finset.Card
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.RawLamToken
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.RawLamToken
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepth
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepth
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN
 

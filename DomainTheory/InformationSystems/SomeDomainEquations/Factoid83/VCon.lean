@@ -3,7 +3,6 @@ module
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VEnt
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VEnt
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPairLFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPairRFinset
 
