@@ -1,0 +1,13 @@
+The $\cup$- and set-notation is not part of LAMBDA. We are forced into a recursive definition:
+
+$$(2.24) \quad \mathbf{\$} = \mathbf{Y}(\lambda s \lambda u \lambda z.\, z \supset u_0,\, s(\lambda t.\, u_{t+1})(z - 1)).$$
+
+This equation generalizes (2.22) and we have:
+
+$$(2.25) \quad \mathbf{\$}(u) = \lambda x.\, \bigcup \{ u_i \mid i \in x \}.$$
+
+Thus the combinator $\mathbf{\$}$ “revalues” an element as a distributive function. This suggests introducing the $\lambda$-notation for such functions by the equation:
+
+$$(2.26) \quad \lambda n \in \omega.\, \tau = \mathbf{\$}(\lambda z.\, \tau[z/n]).$$
+
+With all these conventions LAMBDA-notation becomes very much like ordinary mathematical notation without too much strain.

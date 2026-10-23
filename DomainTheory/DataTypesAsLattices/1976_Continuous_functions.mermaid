@@ -1,0 +1,27 @@
+%% Continuous functions on Pω.
+%% Arrowhead on the importer. The number is a direct-import count.
+%% An arrow already implied by a longer path is omitted.
+flowchart TB
+  E["e"]
+  PAIR["pair"]
+  CONT["Continuous"]
+  GRA["Graph"]
+  FIX["FixedPoint"]
+  EMB["Embedding"]
+  E -->|"1"| PAIR
+  PAIR -->|"23"| CONT
+  CONT -->|"18"| GRA
+  GRA -->|"13"| FIX
+  FIX -->|"12"| EMB
+  classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
+  classDef c6 fill:#ccfbf1,stroke:#0f766e,color:#134e4a
+  classDef c2 fill:#fef3c7,stroke:#b45309,color:#78350f
+  classDef c3 fill:#fce7f3,stroke:#be185d,color:#831843
+  classDef c4 fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
+  classDef c5 fill:#e0e7ff,stroke:#4338ca,color:#312e81
+  class E c1
+  class PAIR c6
+  class CONT c2
+  class GRA c3
+  class FIX c4
+  class EMB c5

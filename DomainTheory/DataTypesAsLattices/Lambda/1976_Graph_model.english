@@ -1,0 +1,21 @@
+From this point on we see no need to distinguish continuous functions from elements of $\mathbf{P}\omega$; a continuous function will be *identified* with its graph. Note that $u$ is a graph iff $u = \lambda x.\, u(x)$, which is equivalent to Theorem 1.2 (iii). For this reason (functions are graphs) we propose the name *Graph Model* for this model of the $\lambda$-calculus. (There is more to LAMBDA than just $\lambda$, however.)
+
+The identification of functions with graphs entails that the function space of all continuous functions from $\mathbf{P}\omega$ into $\mathbf{P}\omega$ is to be identified (one-to-one) with the subspace
+
+$$\mathbf{FUN} = \{u \mid u = \lambda x.\, u(x)\} \subseteq \mathbf{P}\omega.$$
+
+The identification is *topological* in that the subspace topology agree with the product topology on the function space. This is the topology of pointwise convergence and is closely connected with the lattice structure on the function space which is also defined pointwise (that is, argumentwise). In the notation of $\lambda$-abstraction we can express this as the extension of the axiom of extensionality called $(\xi^*)$ in Table 1 of the Introduction. The laws in Table 1 are not the only ones valid in the model, however. We may also note such argumentwise distribution laws as:
+
+$$(2.9) \quad (f \cup g)(x) = f(x) \cup g(x);$$
+
+$$(2.10) \quad (\lambda x.\, \tau) \cup (\lambda x.\, \sigma) = \lambda x.\, (\tau \cup \sigma);$$
+
+$$(2.11) \quad (f \cap g)(x) = f(x) \cap g(x);$$
+
+$$(2.12) \quad (\lambda x.\, \tau) \cap (\lambda x.\, \sigma) = \lambda x.\, (\tau \cap \sigma).$$
+
+In the above $f$ and $g$ must be graphs. It is also true that if $\mathscr{F} \subseteq \mathbf{P}\omega$, then
+
+$$(2.13) \quad \bigcup \{f \mid f \in \mathscr{F}\}(x) = \bigcup \{f(x) \mid f \in \mathscr{F}\},$$
+
+but the same does not hold for $\cap$.

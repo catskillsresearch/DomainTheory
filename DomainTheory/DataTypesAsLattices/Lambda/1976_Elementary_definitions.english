@@ -1,0 +1,13 @@
+We state now a sequence of minor results which show why some simple functions and constants are LAMBDA-definable.
+
+$$(2.14) \quad \bot = (\lambda x.\, x(x))(\lambda x.\, x(x));$$
+
+$$(2.15) \quad x \cup y = (\lambda z.\, 0) \supset x, y; \quad \text{(Hint: } 0, 1 \in \lambda z.\, 0\text{)}$$
+
+$$(2.16) \quad \top = \mathbf{Y}(\lambda x.\, 0 \cup (x + 1));$$
+
+$$(2.17) \quad x \cap y = \mathbf{Y}(\lambda f \lambda x \lambda y.\, x \supset (y \supset 0, \bot), f(x - 1)(y - 1) + 1)(x)(y).$$
+
+The elements $\bot$ and $\top$ are graphs, by the way, and we can characterize them as the only fixed points of the combinator $\mathbf{K}$:
+
+$$(2.18) \quad a = \lambda x.\, a \quad \text{iff} \quad a = \bot \quad \text{or} \quad a = \top.$$

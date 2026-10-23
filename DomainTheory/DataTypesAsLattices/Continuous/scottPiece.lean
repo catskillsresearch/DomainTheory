@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Order
-public import DomainTheory.DataTypesAsLattices.Pomega
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
 
 @[expose] public section
 

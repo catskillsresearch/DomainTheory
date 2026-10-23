@@ -1,0 +1,19 @@
+Next we use the notation $\langle x_0, x_1, \dots, x_{n-1} \rangle$ for the function $\hat{p}$ where $p : \omega \to \mathbf{P}\omega$ is defined by:
+
+$$p(i) = \begin{cases} x_i & \text{if } i < n; \\ \bot & \text{if } i \ge n. \end{cases}$$
+
+$$(2.19) \quad \langle \rangle = \bot$$
+
+$$(2.20) \quad \langle x \rangle = \lambda z.\, z \supset x, \bot$$
+
+$$(2.21) \quad \langle x, y \rangle = \lambda z.\, z \supset x, (z - 1 \supset y, \bot)$$
+
+$$(2.22) \quad \langle x_0, x_1, \dots, x_n \rangle = \lambda z.\, z \supset x_0, \langle x_1, \dots, x_n \rangle(z - 1).$$
+
+Obviously we should formalize the subscript notation so that $u_x = u(x)$; then we find:
+
+$$(2.23) \quad \langle x_0, x_1, \dots, x_n \rangle_i = \begin{cases} x_i & \text{if } i < n; \\ \bot & \text{if } i \ge n. \end{cases}$$
+
+This gives us the method of LAMBDA-defining *finite sequences* (in a quite natural way), and the next step is to consider *infinite sequences*. But these are just the functions $\hat{p}$ where $p : \omega \to \mathbf{P}\omega$ is arbitrary. What we need then is a condition expressible in the language equivalent to saying $u = \hat{p}$ for some $p$. This is the same as
+
+$$u = \lambda x.\, \bigcup \{ u_i \mid i \in x \}.$$

@@ -1,0 +1,11 @@
+Suppose that $f$ is any continuous function and $a \in \mathbf{P}\omega$. We can define $p : \omega \to \mathbf{P}\omega$ in the ordinary way by primitive recursion where:
+
+$$p(0) = a;$$
+
+$$p(n + 1) = f(n)(p(n)).$$
+
+The question is: can we give a LAMBDA-definition for $\hat{p}$ (in terms of $f$ and $a$ as constants, say)? The answer is clear, for we can prove:
+
+$$(2.27) \quad \hat{p} = \mathbf{Y}(\lambda u \lambda n \in \omega.\, n \supset a,\, f(n - 1)(u(n - 1))).$$
+
+This already shows that a large part of the definitions of recursion theory can be given in this special language. Of course, simultaneous (primitive) recursions can be transcribed into LAMBDA with the aid of the ordered tuples of (2.22), (2.23) above. But we can go further and connect with partial (and general) recursive functions. We state first a definition.

@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Order
-public import DomainTheory.DataTypesAsLattices.Pomega
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Continuous.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.isOpen_basicNhhd
 public import DomainTheory.DataTypesAsLattices.Continuous.exists_basicNhhd_subset_of_generateOpen

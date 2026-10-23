@@ -1,0 +1,33 @@
+The syntax and semantics of the language LAMBDA are set out in Table 2. The syntax is indicated on the left, and the meanings of the combinations are shown on the right as subsets of $\mathbf{P}\omega$. This is the basic language and could have been given (less understandably) in terms of combinators (see Theorem 2.4). It is, however, a very primitive language, and we shall require many definitions before we can see why such functions as in (2.3) and (2.4) are themselves definable.
+
+**TABLE 2**
+
+*The language LAMBDA*
+
+$$0 = \{0\}$$
+
+$$x + 1 = \{n + 1 \mid n \in x\}$$
+
+$$x - 1 = \{n \mid n + 1 \in x\}$$
+
+$$z \supset x, y = \{n \in x \mid 0 \in z\} \cup \{m \in y \mid \exists k.\, k + 1 \in z\}$$
+
+$$u(x) = \{m \mid \exists e_n \subseteq x.\, (n, m) \in u\}$$
+
+$$\lambda x.\, \tau = \{(n, m) \mid m \in \tau[e_n / x]\}$$
+
+The definition has been left somewhat informal in hopes that it will be more understandable. In the above, $\tau$ is any term of the language. LAMBDA is type-free and allows any combination to be made by substitution into the given functions. There is one primitive constant $(0)$; there are two unary functions $(x + 1,\, x - 1)$; there is one binary function $(u(x))$ and one ternary function $(z \supset x, y)$; finally there is one variable binding operator $(\lambda x.\, \tau)$. The first three equations have obvious sense. In the fourth, $z \supset x, y$ is McCarthy's conditional expression (a test for zero). Next $u(x)$ defines *application* ($u$ is treated as a graph and $x$ as a set), and $\lambda x.\, \tau$ is *functional abstraction* (compare the definition of **fun**). In defining $\lambda x.\, \tau$, we use $\tau[e_n/x]$ as a shorthand for evaluating the term $\tau$ when the variable $x$ is given the value $e_n$.
+
+Note that the functions are all multiple-valued. Thus we have such a result as:
+
+$$(2.5) \quad (6 \cup 10) + 1 = 7 \cup 11.$$
+
+The partial character of subtraction has expression as:
+
+$$(2.6) \quad 0 - 1 = \bot.$$
+
+We shall see how to define $+$ and $-$ in LAMBDA later. The conditional could also have been defined by cases:
+
+$$(2.7) \quad z \supset x, y = \begin{cases} \bot & \text{if } z = \bot; \\ x & \text{if } z = 0; \\ y & \text{if } 0 \notin z \neq \bot; \\ x \cup y & \text{if } 0 \in z \neq 0. \end{cases}$$
+
+We say that a LAMBDA-term $\tau$ defines a function of its free variables (at least).
