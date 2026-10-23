@@ -1,9 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_compatible
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_monotone
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_preservesDirectedSup
+public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.coe_sSup_of_directed
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup

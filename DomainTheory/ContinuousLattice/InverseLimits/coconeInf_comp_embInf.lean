@@ -4,9 +4,7 @@ public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf_descend
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf_climb
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_self
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_ge
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_le
+public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section

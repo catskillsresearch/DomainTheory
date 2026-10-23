@@ -3,9 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
 public import DomainTheory.ContinuousLattice.InverseLimits.embLE_succ_left
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_self
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_ge
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_le
+public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Data.Set.Basic

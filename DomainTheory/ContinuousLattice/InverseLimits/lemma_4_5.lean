@@ -2,9 +2,8 @@ module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_self
+public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.projInf
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_ge
 public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import Mathlib.Data.Set.Basic
