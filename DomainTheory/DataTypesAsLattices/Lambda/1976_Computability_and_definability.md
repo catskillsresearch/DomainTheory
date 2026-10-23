@@ -1,5 +1,9 @@
 # Computability and definability
 
+## Historical note
+
+The language LAMBDA is Scott's. Plotkin and Rogers already used graphs, application, and conversion, and the combinators they had would have defined abstraction if anyone had asked; the abstraction operation is what this section supplies. The reduction theorem and the combinator theorem are the classical ones from combinatory logic. The first recursion theorem is classical as well. The argument that Curry's combinator $\mathbf{Y}$ is the least fixed point in this model is David Park's, from an unpublished note of 1970, and it is recorded with Theorem 2.5. The equation $\mathbf{Y}(u) = u(\mathbf{Y}(u))$ is the usual calculation from (2.8). Leastness uses the pairing $(n, m)$ and the finite sets $e_l$, and does not appeal to Theorem 1.4. The definition of computability and Theorem 2.6 identify the LAMBDA-definable functions with the enumeration operators.
+
 **Dependency diagram.** Each box is one note that contains Lean. The arrowhead is on the note that imports. The number is how many direct imports. An arrow already implied by a longer path is left out.
 
 @import "1976_Computability_and_definability.mermaid"

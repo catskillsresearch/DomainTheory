@@ -80,7 +80,6 @@ follows from Theorem 7.1(ii) and Theorem 7.3(ii) and (iii) in view of the identi
 
 $$(7.14) \quad \lambda f \lambda g.\, f \circ g = \mathbf{S}(\mathbf{K}(\mathbf{S}))(\mathbf{K})$$
 
-(see Appendix A).
 
 A more interesting result concerns the *iterators* defined as follows:
 

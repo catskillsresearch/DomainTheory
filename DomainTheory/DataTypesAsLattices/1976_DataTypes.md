@@ -12,5 +12,3 @@
 - [Subsets and their classification](Classification/1976_Subsets_and_their_classification.md)
 - [Total functions and functionality](Functionality/1976_Total_functions_and_functionality.md)
 - [Enumeration and degrees](Enumeration/1976_Enumeration_and_degrees.md)
-- [Appendix A. Proofs and technical remarks](1976_Proofs_and_technical_remarks.md)
-- [Appendix B. Acknowledgments and references](1976_Acknowledgments_and_references.md)
