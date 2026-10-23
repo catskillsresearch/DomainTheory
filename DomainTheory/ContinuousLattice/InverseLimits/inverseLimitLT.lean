@@ -21,6 +21,16 @@ variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 abbrev inverseLimitLT (x y : InverseLimit D P) : Prop :=
   inverseLimitLE D P x y ∧ ¬ inverseLimitLE D P y x
 
+namespace inverseLimitLT
+
+/-- The chosen strict inverse-limit order is `≤ ∧ ¬ ≥`. -/
+theorem iff_LE_not_GE (x y : InverseLimit D P) :
+    inverseLimitLT D P x y ↔
+      inverseLimitLE D P x y ∧ ¬ inverseLimitLE D P y x :=
+  Iff.rfl
+
+end inverseLimitLT
+
 end InverseLimit
 
 end DomainTheory.ContinuousLattice

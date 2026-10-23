@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLT_iff_LE_not_GE
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLT
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
@@ -26,7 +26,7 @@ instance inverseLimitPartialOrder : PartialOrder (InverseLimit D P) where
   lt := inverseLimitLT D P
   le_refl := inverseLimitLE.refl D P
   le_trans := inverseLimitLE.trans D P
-  lt_iff_le_not_ge := inverseLimitLT_iff_LE_not_GE D P
+  lt_iff_le_not_ge := inverseLimitLT.iff_LE_not_GE D P
   le_antisymm := inverseLimitLE.antisymm D P
 
 end InverseLimit
