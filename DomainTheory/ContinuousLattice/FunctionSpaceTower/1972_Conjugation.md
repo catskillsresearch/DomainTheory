@@ -1,6 +1,6 @@
 # Conjugation
 
-`conjMap` sends a map $f$ to $j' \circ f \circ i$, the conjugate of $f$ along a projection.
+`conjMap` sends a map $f$ to $j' \circ f \circ i$, the conjugate of $f$ along a projection. `conjMapFun` is the underlying function, `conjMap.fun_apply` and `conjMap.apply` are the two evaluations, and `conjMap.preservesDirectedSup` is preservation of directed suprema.
 
 ## AI: Human-English to AI-Lean
 
@@ -8,31 +8,6 @@
 
 @import "conjMap.lean"
 
-**[ContinuousLattice/FunctionSpaceTower/conjMapFun.lean](conjMapFun.lean)**
-
-@import "conjMapFun.lean"
-
-**[ContinuousLattice/FunctionSpaceTower/conjMapFun_apply.lean](conjMapFun_apply.lean)**
-
-@import "conjMapFun_apply.lean"
-
-**[ContinuousLattice/FunctionSpaceTower/conjMap_apply.lean](conjMap_apply.lean)**
-
-@import "conjMap_apply.lean"
-
-**[ContinuousLattice/FunctionSpaceTower/conjMap_preservesDirectedSup.lean](conjMap_preservesDirectedSup.lean)**
-
-@import "conjMap_preservesDirectedSup.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "conjMap.ai_lean_to_english" {code_block=false}
-
-@import "conjMapFun.ai_lean_to_english" {code_block=false}
-
-@import "conjMapFun_apply.ai_lean_to_english" {code_block=false}
-
-@import "conjMap_apply.ai_lean_to_english" {code_block=false}
-
-@import "conjMap_preservesDirectedSup.ai_lean_to_english" {code_block=false}
-
