@@ -13,7 +13,7 @@ flowchart TB
   LAT["Limit lattice"]
   SUP["Directed suprema"]
   COC["Mediating map"]
-  TOP["Limit topology"]
+  ITOP["inverseLimitTopology"]
   SYS -->|"1"| PLE
   SYS -->|"1"| ELE
   SYS -->|"1"| LE
@@ -29,6 +29,6 @@ flowchart TB
   SUP -->|"1"| EINF
   SUP -->|"1"| PINF
   EINF -->|"1"| COC
-  COC -->|"2"| TOP
+  COC -->|"2"| ITOP
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
-  class SYS,PLE,ELE,ICOMP,PINF,EINF,LE,LT,LAT,SUP,COC,TOP concept
+  class SYS,PLE,ELE,ICOMP,PINF,EINF,LE,LT,LAT,SUP,COC,ITOP concept

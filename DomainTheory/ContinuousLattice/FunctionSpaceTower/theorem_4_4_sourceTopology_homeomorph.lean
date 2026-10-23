@@ -3,7 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.theorem_4_4_scottTopology_homeomorph
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_scottTopology_eq_induced_pi
 public import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_1
 public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3_topology_induced_pi
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
@@ -38,7 +37,7 @@ noncomputable def theorem_4_4_sourceTopology_homeomorph
       (scottMapInducedPiTopology (DInf D₀ j₀) (DInf D₀ j₀)) := by
   have hDInf : ContinuousLattice (DInf D₀ j₀) :=
     proposition_4_1 (towerType D₀) (towerProj D₀ j₀) hTower
-  rw [← inverseLimit_scottTopology_eq_induced_pi
+  rw [← inverseLimit.scottTopology_eq_induced_pi
         (towerType D₀) (towerProj D₀ j₀) hTower,
       ← theorem_3_3_topology_induced_pi hDInf hDInf]
   exact theorem_4_4_scottTopology_homeomorph D₀ j₀
