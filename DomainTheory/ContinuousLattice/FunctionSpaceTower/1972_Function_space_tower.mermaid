@@ -6,8 +6,15 @@ flowchart TB
   CONJ["Conjugation"]
   FSP["The projection on a function space"]
   PROJ["Projections of the tower"]
-  LIM["The limit of the tower"]
+  DINF["DInf"]
+  DFN["DInfFn"]
+  IINF["iInfTerm"]
   EINF["embInfInf"]
+  JINF["jInfTerm"]
+  INCL["incl_projInf"]
+  IMONO["iInfTerm_monotone"]
+  ESUP["embInf_succ_iSup"]
+  ISUP["iSup₂"]
   CMAP["conjMap"]
   CONJX["conj"]
   TPROJ["towerProj"]
@@ -19,12 +26,22 @@ flowchart TB
   LAT -->|"1"| CONJ
   CONJ -->|"2"| FSP
   FSP -->|"1"| PROJ
-  PROJ -->|"2"| LIM
-  LIM -->|"1"| EINF
-  LIM -->|"2"| CMAP
-  LIM -->|"1"| CONJX
-  LIM -->|"1"| TPROJ
+  PROJ -->|"1"| DINF
+  DINF -->|"1"| DFN
+  DFN -->|"1"| IINF
+  IINF -->|"1"| EINF
+  IINF -->|"1"| JINF
   EINF -->|"1"| PINF
+  JINF -->|"1"| INCL
+  JINF -->|"1"| ESUP
+  JINF -->|"1"| ISUP
+  JINF -->|"1"| CONJX
+  JINF -->|"1"| TPROJ
+  INCL -->|"1"| IMONO
+  INCL -->|"1"| CMAP
+  IMONO -->|"1"| PINF
+  ESUP -->|"1"| PINF
+  ISUP -->|"1"| PINF
   CMAP -->|"1"| PINF
   CONJX -->|"1"| PINF
   TPROJ -->|"1"| ECOMP
@@ -34,5 +51,5 @@ flowchart TB
   SOURCE -->|"1"| THM
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
-  class LAT,CONJ,FSP,PROJ,LIM,EINF,CMAP,CONJX,TPROJ,PINF,ECOMP,SCOTT,SOURCE concept
+  class LAT,CONJ,FSP,PROJ,DINF,DFN,IINF,EINF,JINF,INCL,IMONO,ESUP,ISUP,CMAP,CONJX,TPROJ,PINF,ECOMP,SCOTT,SOURCE concept
   class THM numbered
