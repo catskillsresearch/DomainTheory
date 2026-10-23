@@ -1,10 +1,10 @@
 # 2. Continuous lattices
 
-The section follows the paper. Specialization and Scott-open sets come first, then Proposition 2.1, the way-below relation, Proposition 2.2, and Definition 2.3. Proposition 2.4, the continuous maps, and Milner's correction of the remark before Proposition 2.5 come next, then Propositions 2.5 through 2.9. The printed proof of Proposition 2.10 is flawed. Propositions 2.11 and Theorem 2.12 close the section. The corrected proof is in [section 3](1972_3_Function_spaces.md), after the retraction it imports.
+The section follows the paper from specialization through Proposition 2.11. The printed proof of Proposition 2.10 is flawed. Its corrected proof and Theorem 2.12, which calls that proof, are in [section 3](1972_3_Function_spaces.md) with their original numbers.
 
 @import "1972_Continuous_lattices.mermaid"
 
-The arrowhead is on the note that imports. The number is how many direct imports. An arrow already implied by a longer path is left out. The flawed proof has no Lean files, so it is not on the diagram. Theorem 2.12 imports the revisited proof in section 3.
+The arrowhead is on the note that imports. The number is how many direct imports. An arrow already implied by a longer path is left out. The flawed proof has no Lean files, so it is not on the diagram. Theorem 2.12 is on the section 3 diagram.
 
 - [Specialization](ContinuousLattice/Specialization/1972_Specialization_order.md)
 - [Scott open](ContinuousLattice/WayBelow/1972_ScottOpen.md)
@@ -22,4 +22,3 @@ The arrowhead is on the note that imports. The number is how many direct imports
 - [Proposition 2.9](ContinuousLattice/Constructions/1972_Proposition_2_9.md)
 - [Proposition 2.10 (flawed)](ContinuousLattice/FunctionSpaces/1972_Proposition_2_10.md)
 - [Proposition 2.11](ContinuousLattice/Constructions/1972_Proposition_2_11.md)
-- [Theorem 2.12](ContinuousLattice/ContinuousLattices/1972_Theorem_2_12.md)

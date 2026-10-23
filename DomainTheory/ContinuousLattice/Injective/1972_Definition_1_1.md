@@ -1,4 +1,4 @@
-# Definition 1.1
+# Definition 1.1: Injective Space
 
 ## Human-English
 

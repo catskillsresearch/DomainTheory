@@ -35,3 +35,5 @@ $$D =  X \in \mathcal{P}I : j(X) = X $$
 is a continuous lattice (under $\subseteq$ in this case), and *every* continuous lattice is isomorphic to one obtained in this way. This provides a representation theorem of sorts for continuous lattices, but it does not seem to be of too much help in proving theorems.
 
 The idempotent map on a power of $\mathbb{O}$ in this paragraph is `IdemFix`, the fixed-point set used in the proof. A retract of an injective space, in the subspace sense, is [Proposition 1.4](../Injective/1972_Proposition_1_4.md). A retraction and a projection of continuous lattices are [Definition 3.6](../FunctionSpaces/1972_Definition_3_6.md).
+
+**Note.** The paper states this theorem in section 2, before function spaces, as a consequence of Propositions 2.9–2.11. The formalized proof depends on the corrected [Proposition 2.10](../FunctionSpaces/1972_Proposition_2_10_revisited.md). That dependence on the retraction filed with section 3 was observed after the paper. The statement keeps the number 2.12 and is placed immediately after that corrected proof.

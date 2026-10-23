@@ -2,9 +2,9 @@ A $T_0$-space $D$ is *injective* iff for arbitrary spaces $X$ and $Y$ if $X \sub
 
 $$
 \begin{gathered}
-X \subseteq Y 
-X \xrightarrow{f} D 
-Y \xrightarrow{\bar{f}} D
+X \subseteq Y \\
+X \xrightarrow{f} D \\
+Y \xrightarrow{\bar{f}} D \\
 \end{gathered}
 $$
 

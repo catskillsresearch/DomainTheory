@@ -1,6 +1,6 @@
 # 3. Function spaces
 
-The section follows the paper from Definition 3.1 through Proposition 3.14. Proposition 2.10 revisited is the corrected proof. It stands after Definition 3.6, which supplies the retraction and the directed-supremum coercion the proof imports.
+The section follows the paper from Definition 3.1 through Proposition 3.14. Proposition 2.10 revisited is the corrected proof, placed after Definition 3.6. Theorem 2.12 keeps its number and follows that proof.
 
 @import "1972_Function_spaces.mermaid"
 
@@ -13,6 +13,7 @@ The arrowhead is on the note that imports. The number is how many direct imports
 - [Proposition 3.5](ContinuousLattice/FunctionSpaces/1972_Proposition_3_5.md)
 - [Definition 3.6](ContinuousLattice/FunctionSpaces/1972_Definition_3_6.md)
 - [Proposition 2.10 revisited](ContinuousLattice/FunctionSpaces/1972_Proposition_2_10_revisited.md)
+- [Theorem 2.12](ContinuousLattice/ContinuousLattices/1972_Theorem_2_12.md)
 - [Proposition 3.7](ContinuousLattice/FunctionSpaces/1972_Proposition_3_7.md)
 - [Proposition 3.8](ContinuousLattice/Constructions/1972_Proposition_3_8.md)
 - [Lemma 3.9](ContinuousLattice/FunctionSpaces/1972_Lemma_3_9.md)

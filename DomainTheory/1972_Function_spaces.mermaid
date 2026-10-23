@@ -1,5 +1,6 @@
 %% Notes of section 3, function spaces.
 %% Proposition 2.10 revisited stands after Definition 3.6, which it imports.
+%% Theorem 2.12 keeps its number and stands after that corrected proof.
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
@@ -10,6 +11,7 @@ flowchart TB
   P35["Proposition 3.5"]
   D36["Definition 3.6"]
   R210["Proposition 2.10\nrevisited"]
+  T212["Theorem 2.12"]
   P37["Proposition 3.7"]
   P38["Proposition 3.8"]
   L39["Lemma 3.9"]
@@ -25,6 +27,7 @@ flowchart TB
   D36 -->|"49"| P38
   D36 -->|"4"| P312
   D36 -->|"3"| P313
+  R210 -->|"2"| T212
   P38 -->|"1"| P32
   P38 -->|"9"| T33
   P38 -->|"4"| C34
@@ -32,6 +35,6 @@ flowchart TB
   P38 -->|"3"| P310
   P38 -->|"1"| P314
   classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
-  classDef revisited fill:#fef3c7,stroke:#b45309,color:#78350f
+  classDef relocated fill:#fef3c7,stroke:#b45309,color:#78350f
   class D31,P32,T33,C34,P35,D36,P37,P38,L39,P310,D311,P312,P313,P314 numbered
-  class R210 revisited
+  class R210,T212 relocated
