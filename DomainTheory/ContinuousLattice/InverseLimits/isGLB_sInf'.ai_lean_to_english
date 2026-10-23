@@ -1,3 +1,0 @@
-The infimum of a set of compatible sequences is a greatest lower bound for the coordinatewise order.
-
-A member of the set lies below the infimum at each stage, because that coordinate of the infimum is the infimum of the corresponding coordinates. A lower bound lies below the infimum at each stage, because it is a lower bound of those coordinates.

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.InverseLimits.isGLB_sInf'
+public import DomainTheory.ContinuousLattice.InverseLimits.instInfSet
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section

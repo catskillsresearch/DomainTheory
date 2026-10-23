@@ -1,0 +1,1 @@
+`inverseLimitSInfCoe` sends a set of threads to the function whose value at stage \(n\) is the infimum of the \(n\)-th coordinates. Compatibility of that function is `compatible_sInf` on [InfSet](1972_InfSet.md). Scott's construction does not name this intermediate function. **Theorem:** no — this is a definition. **Proof:** no.

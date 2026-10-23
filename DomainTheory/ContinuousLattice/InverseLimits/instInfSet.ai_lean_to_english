@@ -1,0 +1,5 @@
+`retr_sInf` says the retraction of one bonding projection preserves arbitrary infima, because it is the upper adjoint. The Galois connection sends an infimum to the infimum of the image.
+
+`compatible_sInf` says the pointwise infimum of a set of threads is a thread. At each level the retraction preserves the infimum of the next coordinates, and compatibility of each thread identifies those coordinates with the current ones.
+
+`instInfSet` packages that thread as the infimum of the set. `coe_sInf` says the underlying sequence of an infimum is the pointwise infimum, by that definition. `isGLB_sInf'` says this infimum is a greatest lower bound for the coordinatewise order: a member of the set lies below it at each stage, and a lower bound lies below it at each stage because it is a lower bound of those coordinates.

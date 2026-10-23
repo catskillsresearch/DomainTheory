@@ -1,0 +1,15 @@
+%% Notes of the limit lattice.
+%% Arrowhead on the importer. The number is a direct-import count.
+%% An arrow already implied by a longer path is omitted.
+flowchart TB
+  PO["inverseLimitPartialOrder"]
+  SINFCOE["inverseLimitSInfCoe"]
+  INF["InfSet"]
+  CLAT["instCompleteLattice"]
+  SSUP["coe_sSup_of_directed"]
+  PO -->|"1"| INF
+  SINFCOE -->|"1"| INF
+  INF -->|"1"| CLAT
+  CLAT -->|"1"| SSUP
+  classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
+  class PO,SINFCOE,INF,CLAT,SSUP concept
