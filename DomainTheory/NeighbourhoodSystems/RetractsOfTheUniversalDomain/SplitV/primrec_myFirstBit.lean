@@ -21,7 +21,7 @@ theorem primrec_myFirstBit : Nat.Primrec (fun t => myFirstBit t.unpair.1 t.unpai
   have hsub : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1 - w.unpair.2.unpair.2) :=
     primrec_sub₂ hi hih
   have htb : Nat.Primrec (fun w : ℕ => myTestBit w.unpair.1 w.unpair.2.unpair.1) :=
-    (primrec_myTestBit.comp (hm.pair hi)).of_eq fun w => by
+    (primrec.myTestBit.comp (hm.pair hi)).of_eq fun w => by
       simp only [unpair_pair_fst, unpair_pair_snd]
   have hsucc : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1 + 1) := Nat.Primrec.succ.comp hi
   have hGfn : Nat.Primrec (fun w =>

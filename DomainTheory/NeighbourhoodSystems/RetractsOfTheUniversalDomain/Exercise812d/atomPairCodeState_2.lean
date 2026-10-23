@@ -1,0 +1,152 @@
+module
+
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise718
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.other_2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.atomPairG
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.xStepG_2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.other
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.xSubStep
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.stateRemC
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.other_3
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.atomPairCodeState
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.other_4
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.atomPairJunk
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.deltaPair
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.stateRemC_2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.ySubStep
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.part_c_2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.union
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.atomPairG_2
+
+@[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+namespace atomPairCodeState
+
+open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+
+section AtomPairCorrect2
+
+variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
+  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
+  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
+  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
+  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
+  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
+  (hxSplit : SplitSpec' D₁ splitX)
+  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
+  (hySplit : SplitSpec' D₀ splitY)
+  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
+
+include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
+/-- **Per-step correctness against `atomPairG`** (the two-sided analogue of `Theorem88d.lean`'s
+`genAtom_atomUCode`): whenever depth `n`'s recorded state (for bit-source `k`) is non-junk, its
+packed `D₀`-side/`D₁`-side indices literally index `atomPairG`'s depth-`n` component,
+instantiated at `X := P₀.X`, `Y := P₁.X`, `δ := deltaPair k`. -/
+theorem correct (k n : ℕ)
+    (hjunk : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k = 0) :
+    P₀.X (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k) =
+        (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair k) n).1 ∧
+      P₁.X (atomPairIdx1 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k) =
+        (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair k) n).2 := by
+  induction n with
+  | zero =>
+    unfold atomPairIdx0 atomPairIdx1
+    simp [atomPairCodeState, atomPairBase, stateBase2]
+    exact ⟨P₀.masterIdx_spec, P₁.masterIdx_spec⟩
+  | succ n ih =>
+    have hjunk_n := atomPairJunk.eq_zero_of_succ (h := hjunk)
+    obtain ⟨hidx0, hidx1⟩ := ih hjunk_n
+    unfold atomPairJunk at hjunk
+    unfold atomPairIdx0 at hidx0
+    unfold atomPairIdx1 at hidx1
+    unfold atomPairIdx0 atomPairIdx1
+    rw [atomPairCodeState.succ] at hjunk ⊢
+    unfold atomPairStep pcN pcT xwB1 xwS at hjunk ⊢
+    simp only [unpair_pair_fst, unpair_pair_snd, stateInnerC_packStateC] at hjunk hidx0 hidx1 ⊢
+    set T := atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY (Nat.pair k n)
+      with hTdef
+    have hrem : stateRemC T = k / 4 ^ n := stateRemC.atomPairCodeState P₀ P₁ hDiff0 hDiff1
+      splitX hSplitX splitY hSplitY k n
+    have hb1 : stateRemC T % 2 = if (deltaPair k n).1 then 1 else 0 := by
+      rw [hrem]
+      rcases Nat.mod_two_eq_zero_or_one (k / 4 ^ n) with h0 | h1
+      · have hδ : (deltaPair k n).1 = false := by unfold deltaPair; simp [h0]
+        simp [hδ, h0]
+      · have hδ : (deltaPair k n).1 = true := by unfold deltaPair; simp [h1]
+        simp [hδ, h1]
+    have hb2 : stateRemC T / 2 % 2 = if (deltaPair k n).2 then 1 else 0 := by
+      rw [hrem]
+      rcases Nat.mod_two_eq_zero_or_one (k / 4 ^ n / 2) with h0 | h1
+      · have hδ : (deltaPair k n).2 = false := by unfold deltaPair; simp [h0]
+        simp [hδ, h0]
+      · have hδ : (deltaPair k n).2 = true := by unfold deltaPair; simp [h1]
+        simp [hδ, h1]
+    rw [hb1] at hjunk ⊢
+    rw [hb2] at hjunk ⊢
+    have hxjunk : stateJunk (xSubStep P₀ P₁ hDiff0 splitX hSplitX
+        (Nat.pair n (Nat.pair (if (deltaPair k n).1 then 1 else 0) (stateInnerC T)))) = 0 := by
+      have hj2 := hjunk
+      rw [ySubStep.junk_eq] at hj2
+      exact junk_eq_zero_of_selectFn_eq_zero hj2
+    obtain ⟨hAB, -, hBmem⟩ := atomPairG.invariant D₀ D₁ hD₀pos hD₀diff splitY hySplit hD₁pos hD₁diff
+      splitX hxSplit P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deltaPair k) n
+    obtain ⟨hx0, hx1⟩ := xSubStep.correct P₀ P₁ hDiff0 splitX hSplitX hD₀pos hD₀diff hD₀nomin
+      hxSplit hidx0 hidx1 hAB hBmem (deltaPair k n).1 hxjunk
+    have hxspec := xStepG.spec D₀ D₁ hD₀pos hD₀diff splitY hySplit hD₁pos hD₁diff splitX hxSplit
+      P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deltaPair k) n
+    rw [atomPairG.succ_eq]
+    exact ySubStep.correct P₀ P₁ hDiff1 splitY hSplitY hD₁pos hD₁diff hD₁nomin hySplit hx0 hx1
+      hxspec.1 hxspec.2 (deltaPair k n).2 hjunk
+
+end AtomPairCorrect2
+
+end atomPairCodeState
+end DomainTheory.NeighbourhoodSystems
+
+namespace DomainTheory.NeighbourhoodSystems
+namespace atomPairCodeState
+
+open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+
+section AtomPairCorrect3
+
+variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
+  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
+  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
+  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
+  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
+  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
+  (hxSplit : SplitSpec' D₁ splitX)
+  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
+  (hySplit : SplitSpec' D₀ splitY)
+  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
+
+include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
+/-- **Disjointness at the code level**: two bit-sources `k`/`k'` disagreeing (via `deltaPair`)
+somewhere below depth `n`, with *both* recorded states still non-junk at `n`, index disjoint sets
+on both the `D₀`-side and the `D₁`-side. Immediate from `atomPairCodeState.correct` (rewriting both
+sides' indexed sets as `atomPairG` components) plus `atomPairG.disjoint` (from `(d)(1)`). -/
+theorem disjoint {n k k' : ℕ}
+    (hk : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k = 0)
+    (hk' : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k' = 0)
+    (hne : ∃ i < n, deltaPair k i ≠ deltaPair k' i) :
+    P₀.X (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k) ∩
+        P₀.X (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k') = ∅ ∧
+      P₁.X (atomPairIdx1 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k) ∩
+        P₁.X (atomPairIdx1 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k') = ∅ := by
+  obtain ⟨h0, h1⟩ := atomPairCodeState.correct P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
+    hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne k n hk
+  obtain ⟨h0', h1'⟩ := atomPairCodeState.correct P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
+    hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne k' n hk'
+  rw [h0, h0', h1, h1']
+  exact atomPairG.disjoint D₀ D₁ hD₀pos hD₀diff splitY hySplit hD₁pos hD₁diff splitX hxSplit
+    P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deltaPair k) (deltaPair k') n hne
+
+end AtomPairCorrect3
+
+end atomPairCodeState
+end DomainTheory.NeighbourhoodSystems

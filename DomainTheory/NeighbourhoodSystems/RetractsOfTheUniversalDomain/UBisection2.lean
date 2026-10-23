@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.listMinFst_le_one
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.zero_le_listMaxSnd
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.listMinFst_2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.bisection
 
 @[expose] public section

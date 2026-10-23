@@ -1,11 +1,6 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812eD
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812f
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1a
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g2
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.effectiveIso812_UV
 
 @[expose] public section
 

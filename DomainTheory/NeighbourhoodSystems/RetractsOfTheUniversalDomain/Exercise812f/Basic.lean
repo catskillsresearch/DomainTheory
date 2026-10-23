@@ -3,8 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.VDiff
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812f.splitX812f
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812f.isComputableSplit_812f
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812f.isComputableSplit
 
 @[expose] public section
 

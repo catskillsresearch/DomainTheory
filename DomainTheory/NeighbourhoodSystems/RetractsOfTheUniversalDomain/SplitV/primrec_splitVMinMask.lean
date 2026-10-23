@@ -14,9 +14,9 @@ open Domain.Recursive
 
 theorem primrec_splitVMinMask : Nat.Primrec splitVMinMask := by
   have hk : Nat.Primrec (fun n : ℕ => (canonIdx n).unpair.1) :=
-    Nat.Primrec.left.comp primrec_canonIdx
+    Nat.Primrec.left.comp primrec.canonIdx
   have hm : Nat.Primrec (fun n : ℕ => (canonIdx n).unpair.2) :=
-    Nat.Primrec.right.comp primrec_canonIdx
+    Nat.Primrec.right.comp primrec.canonIdx
   exact (primrec_minMask.comp (hk.pair hm)).of_eq fun n => by
     simp only [unpair_pair_fst, unpair_pair_snd]; rfl
 

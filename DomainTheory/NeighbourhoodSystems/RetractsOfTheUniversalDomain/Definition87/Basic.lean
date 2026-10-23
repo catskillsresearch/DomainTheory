@@ -26,9 +26,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Def
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.UMaster_nonempty
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.U_inter_mem
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.U_sub_master
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.clip
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.clipLt
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.clipGe
 
 @[expose] public section
 

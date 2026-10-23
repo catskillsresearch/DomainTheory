@@ -17,7 +17,7 @@ theorem primrec_minMask : Nat.Primrec (fun t => minMask t.unpair.1 t.unpair.2) :
   have hlvl : Nat.Primrec (fun t : ℕ => minLevel t.unpair.1 t.unpair.2) := primrec_minLevel
   have hpow : Nat.Primrec (fun t : ℕ => (2:ℕ) ^ minLevel t.unpair.1 t.unpair.2) :=
     primrec_two_pow hlvl
-  exact (primrec_myModPow2.comp (hm.pair hpow)).of_eq fun t => by
+  exact (primrec.myModPow2.comp (hm.pair hpow)).of_eq fun t => by
     simp only [unpair_pair_fst, unpair_pair_snd, minMask]
 
 end DomainTheory.NeighbourhoodSystems

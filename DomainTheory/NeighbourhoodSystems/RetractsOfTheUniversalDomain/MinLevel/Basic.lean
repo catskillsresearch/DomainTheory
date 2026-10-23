@@ -5,7 +5,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Min
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.minLevel
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.minMask
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.minLevelFold
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.minLevelFold
 
 @[expose] public section
 
@@ -32,11 +31,11 @@ theorem isPeriodicMask_iff {k j m : ℕ} (hj : j ≤ k) :
     have h1 :
         levelSet k (myUpsample j k (myModPow2 m (2 ^ j))) = levelSet k (myModPow2 m (2 ^ k)) := by
       rw [h]
-    rw [levelSet_myUpsample hj, levelSet_myModPow2, levelSet_myModPow2] at h1
+    rw [levelSet.myUpsample hj, levelSet.myModPow2, levelSet.myModPow2] at h1
     exact h1.symm
   · intro h
-    apply levelSet_inj_of_lt (myUpsample_lt _ _ _) (myModPow2_lt _ _)
-    rw [levelSet_myUpsample hj, levelSet_myModPow2, levelSet_myModPow2]
+    apply levelSet.inj_of_lt (myUpsample_lt _ _ _) (myModPow2.lt _ _)
+    rw [levelSet.myUpsample hj, levelSet.myModPow2, levelSet.myModPow2]
     exact h.symm
 
 /-- `levelSet k m` is trivially presentable at its own level `k` (the search's base case: the
@@ -45,7 +44,7 @@ theorem isPeriodicMask_self (k m : ℕ) : isPeriodicMask k k m = 1 := by
   rw [isPeriodicMask_eq_one_iff]
   unfold myUpsample
   simp only [Nat.sub_self, Function.iterate_zero, id_eq, unpair_pair_snd]
-  rw [myModPow2_eq, myModPow2_eq, Nat.mod_eq_of_lt (Nat.mod_lt m (Nat.two_pow_pos (2 ^ k)))]
+  rw [myModPow2.eq, myModPow2.eq, Nat.mod_eq_of_lt (Nat.mod_lt m (Nat.two_pow_pos (2 ^ k)))]
 
 
 theorem minLevel_eq_fold (k m : ℕ) : minLevel k m = minLevelFold k m (k + 1) := rfl
@@ -113,7 +112,7 @@ theorem minLevel_min {k m j : ℕ} (hj : j < minLevel k m) : isPeriodicMask k j 
 theorem levelSet_minLevel (k m : ℕ) : levelSet (minLevel k m) (minMask k m) = levelSet k m := by
   have h := (isPeriodicMask_iff (minLevel_le k m)).1 (minLevel_isPeriodicMask k m)
   show levelSet (minLevel k m) (myModPow2 m (2 ^ minLevel k m)) = levelSet k m
-  rw [levelSet_myModPow2, h]
+  rw [levelSet.myModPow2, h]
 
 /-- **If `levelSet k m` is presentable at level `j ≤ k` via *any* mask `m'` at all, it is already
 presentable there via the canonical witness `myModPow2 m (2 ^ j)` built from `m` alone.** The
@@ -176,9 +175,9 @@ theorem minMask_eq {k₁ m₁ k₂ m₂ : ℕ} (h : levelSet k₁ m₁ = levelSe
   have hlvl := minLevel_eq h
   have hsets : levelSet (minLevel k₁ m₁) (minMask k₁ m₁) = levelSet (minLevel k₁ m₁) (minMask k₂ m₂) := by
     rw [levelSet_minLevel, hlvl, levelSet_minLevel, h]
-  have hb1 : minMask k₁ m₁ < 2 ^ (2 ^ minLevel k₁ m₁) := myModPow2_lt _ _
-  have hb2 : minMask k₂ m₂ < 2 ^ (2 ^ minLevel k₁ m₁) := hlvl ▸ myModPow2_lt _ _
-  exact levelSet_inj_of_lt hb1 hb2 hsets
+  have hb1 : minMask k₁ m₁ < 2 ^ (2 ^ minLevel k₁ m₁) := myModPow2.lt _ _
+  have hb2 : minMask k₂ m₂ < 2 ^ (2 ^ minLevel k₁ m₁) := hlvl ▸ myModPow2.lt _ _
+  exact levelSet.inj_of_lt hb1 hb2 hsets
 
 /-- **`minLevel_unique`**: the packaged crux fact — presentation-independence of both the minimal
 level and the minimal mask. -/

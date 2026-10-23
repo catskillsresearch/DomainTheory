@@ -28,7 +28,7 @@ theorem generatedBy_generator_imp {X : Set ℕ} (h : GeneratedBy generator X) :
     · exact Or.inl (Set.inter_empty X)
     obtain ⟨k₁, m₁, rfl, -⟩ := hX
     obtain ⟨k₂, m₂, rfl, -⟩ := hY
-    rw [levelSet_inter]
+    rw [levelSet.inter]
     rcases (levelSet _ _).eq_empty_or_nonempty with h | h
     · exact Or.inl h
     · exact Or.inr ⟨_, _, rfl, h⟩
