@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_eq_iSup
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Data.Set.Basic
@@ -38,7 +38,7 @@ theorem corollary_4_3 (f : ∀ n, ScottMap (D n) D')
   · intro g hg
     ext x
     -- `g x = f∞ x`, since `x = ⨆ₙ i_{n∞}(xₙ)` and `g` is continuous on this directed family
-    calc g x = g (⨆ n, embInf D P n (x.1 n)) := by rw [← inverseLimit_eq_iSup D P x]
+    calc g x = g (⨆ n, embInf D P n (x.1 n)) := by rw [← inverseLimit.eq_iSup D P x]
       _ = g (sSup (Set.range fun n => embInf D P n (x.1 n))) := by rw [sSup_range]
       _ = sSup (g '' Set.range fun n => embInf D P n (x.1 n)) :=
           g.preservesDirectedSup_coe _ (Set.range_nonempty _) (embInf_family_directed D P x)

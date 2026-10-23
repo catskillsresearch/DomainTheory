@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.projInf
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_eq_iSup
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst30
@@ -36,7 +36,7 @@ theorem idInf_eq_iSup :
   rw [show (⨆ n, (embInf D P n).comp (projInf D P n))
         = sSup (Set.range fun n => (embInf D P n).comp (projInf D P n)) from sSup_range.symm,
     ScottMap.sSup_apply, ScottMap.idMap_apply, ← Set.range_comp, sSup_range]
-  exact inverseLimit_eq_iSup D P x
+  exact inverseLimit.eq_iSup D P x
 
 end InverseLimit
 end DomainTheory.ContinuousLattice

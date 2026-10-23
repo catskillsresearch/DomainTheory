@@ -5,7 +5,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iSup₂_monotone_eq_diagonal
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj_retr_conjMap_succ
 public import DomainTheory.ContinuousLattice.InverseLimits.lemma_4_5
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_eq_iSup
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.comp_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap_apply
@@ -58,7 +58,7 @@ theorem embInfInf_comp_projInfInf :
                 (projInf (towerType D₀) (towerProj D₀ j₀) m w) :=
       iSup_congr (fun m => hrw m w)
     rw [h1]
-    exact inverseLimit_eq_iSup (towerType D₀) (towerProj D₀ j₀) w
+    exact inverseLimit.eq_iSup (towerType D₀) (towerProj D₀ j₀) w
   -- Evaluating a supremum of Scott maps `D_∞ → D_∞` at a point is pointwise.
   have hsup_apply : ∀ (g : ℕ → ScottMap (DInf D₀ j₀) (DInf D₀ j₀)) (w : DInf D₀ j₀),
       (⨆ n, g n) w = ⨆ n, g n w := by

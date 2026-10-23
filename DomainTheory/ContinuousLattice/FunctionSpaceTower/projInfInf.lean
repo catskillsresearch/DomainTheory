@@ -7,7 +7,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.embInf_succ_iSup
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conj_iInfTerm_eq
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm_monotone
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iSup₂_monotone_eq_diagonal
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_eq_iSup
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
@@ -123,7 +123,7 @@ theorem comp_embInfInf :
     monotone_nat_of_le_succ (embInf_le_succ (towerType D₀) (towerProj D₀ j₀) x)
   rw [ScottMap.comp_apply, ScottMap.idMap_apply, embInfInf_eq D₀ j₀ x,
     Monotone.iSup_nat_add hmono 1]
-  exact (inverseLimit_eq_iSup (towerType D₀) (towerProj D₀ j₀) x).symm
+  exact (inverseLimit.eq_iSup (towerType D₀) (towerProj D₀ j₀) x).symm
 
 theorem embInfInf (x : DInf D₀ j₀) :
     projInfInf D₀ j₀ (embInfInf D₀ j₀ x) = x := by
