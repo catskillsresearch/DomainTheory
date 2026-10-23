@@ -18,17 +18,17 @@ Starting from the topological point of view a certain wide class of $T_0$-spaces
 
 ## CONTENTS
 
-1. Introduction
-2. Injective Spaces
-3. Continuous Lattices
-4. Function Spaces
-5. Inverse Limits
+0. Introduction
+1. Injective Spaces
+2. Continuous Lattices
+3. Function Spaces
+4. Inverse Limits
 
 References
 
 98
 
-## 1. Introduction
+## 0. Introduction
 
 Through a roundabout chain of mathematical events I have become interested in $T_0$-spaces, those topological spaces satisfying the weakest separation axiom to the effect that two distinct points cannot share the same system of open neighborhoods. These spaces seem to have been originally suggested by Kolmogoroff and were introduced first in Alexandroff and Hopf (1935). Subsequent topology textbooks have dutifully recorded the definition but without much enthusiasm: mainly the idea is introduced to provide exercises. In the book Čech (1966) for example, $T_0$-spaces are called *feebly semi-separated spaces*, which surely is a term expressing mild contempt. Some interest has been shown in finite $T_0$-spaces (finite $T_1$-spaces are necessarily discrete), but generally topology seems to go better under at least the Hausdorff separation axiom. The reason for this is no doubt the strong motivation we get from geometry, where points *are* points and where distinct points *can* be separated.
 

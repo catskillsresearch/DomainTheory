@@ -1,16 +1,15 @@
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
-%% Introduction has no Lean code, so it has no arrow.
+%% Section 0 has no Lean code, so it has no arrow.
 flowchart TB
-  INTRO["1. Introduction"]
-  INJ["2. Injective spaces"]
-  CL["3. Continuous lattices"]
-  FS["4. Function spaces"]
-  LIM["5. Inverse limits"]
-  INTRO ~~~ INJ
+  INTRO["0. Introduction"]
+  INJ["1. Injective spaces"]
+  CL["2. Continuous lattices"]
+  FS["3. Function spaces"]
+  LIM["4. Inverse limits"]
   INJ -->|"13"| CL
-  CL -->|"107"| FS
-  FS -->|"20"| CL
-  FS -->|"71"| LIM
+  CL -->|"106"| FS
+  FS -->|"3"| CL
+  FS -->|"70"| LIM
   classDef section fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   class INTRO,INJ,CL,FS,LIM section

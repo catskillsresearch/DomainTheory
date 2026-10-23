@@ -1,6 +1,7 @@
-%% Notes of the continuous-lattices section, in the paper's order.
+%% Notes of section 2, continuous lattices, in the paper's order.
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
+%% The flawed proof of Proposition 2.10 has no Lean files.
 flowchart TB
   SP["Specialization"]
   SO["Scott open"]
@@ -16,7 +17,6 @@ flowchart TB
   P27["Proposition 2.7"]
   P28["Proposition 2.8"]
   P29["Proposition 2.9"]
-  P210["Proposition 2.10"]
   P211["Proposition 2.11"]
   T212["Theorem 2.12"]
   SO -->|"5"| SP
@@ -32,16 +32,14 @@ flowchart TB
   SM -->|"3"| P25
   SM -->|"2"| P26
   SM -->|"5"| P27
-  SM -->|"3"| P210
   P25 -->|"1"| P29
   P25 -->|"1"| P211
   P28 -->|"1"| T212
   P29 -->|"2"| T212
-  P210 -->|"3"| T212
   P211 -->|"1"| T212
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef definition fill:#fae8ff,stroke:#a21caf,color:#701a75
   class SP,SO,WB,SM,MC concept
   class D23 definition
-  class P21,P22,P24,P25,P26,P27,P28,P29,P210,P211,T212 numbered
+  class P21,P22,P24,P25,P26,P27,P28,P29,P211,T212 numbered

@@ -26,21 +26,9 @@
 
 @import "../FunctionSpaces/fix_unique.lean"
 
-**[ContinuousLattice/FunctionSpaces/image_retr_wayBelow_directed.lean](../FunctionSpaces/image_retr_wayBelow_directed.lean)**
-
-@import "../FunctionSpaces/image_retr_wayBelow_directed.lean"
-
-**[ContinuousLattice/FunctionSpaces/image_retr_wayBelow_nonempty.lean](../FunctionSpaces/image_retr_wayBelow_nonempty.lean)**
-
-@import "../FunctionSpaces/image_retr_wayBelow_nonempty.lean"
-
 **[ContinuousLattice/FunctionSpaces/incl_injective.lean](../FunctionSpaces/incl_injective.lean)**
 
 @import "../FunctionSpaces/incl_injective.lean"
-
-**[ContinuousLattice/FunctionSpaces/incl_preservesDirectedSup.lean](../FunctionSpaces/incl_preservesDirectedSup.lean)**
-
-@import "../FunctionSpaces/incl_preservesDirectedSup.lean"
 
 **[ContinuousLattice/FunctionSpaces/incl_sup.lean](../FunctionSpaces/incl_sup.lean)**
 
@@ -82,10 +70,6 @@
 
 @import "../FunctionSpaces/retr_eq_sSup.lean"
 
-**[ContinuousLattice/FunctionSpaces/retr_wayBelow_of_wayBelow_incl.lean](../FunctionSpaces/retr_wayBelow_of_wayBelow_incl.lean)**
-
-@import "../FunctionSpaces/retr_wayBelow_of_wayBelow_incl.lean"
-
 **[ContinuousLattice/FunctionSpaces/sInf_image_le_sInf_image_of_subset.lean](../FunctionSpaces/sInf_image_le_sInf_image_of_subset.lean)**
 
 @import "../FunctionSpaces/sInf_image_le_sInf_image_of_subset.lean"
@@ -93,22 +77,6 @@
 **[ContinuousLattice/FunctionSpaces/sSupMaps_apply.lean](../FunctionSpaces/sSupMaps_apply.lean)**
 
 @import "../FunctionSpaces/sSupMaps_apply.lean"
-
-**[ContinuousLattice/FunctionSpaces/sSup_image_retr_wayBelow.lean](../FunctionSpaces/sSup_image_retr_wayBelow.lean)**
-
-@import "../FunctionSpaces/sSup_image_retr_wayBelow.lean"
-
-**[ContinuousLattice/FunctionSpaces/proposition_2_10_a.lean](../FunctionSpaces/proposition_2_10_a.lean)**
-
-@import "../FunctionSpaces/proposition_2_10_a.lean"
-
-**[ContinuousLattice/FunctionSpaces/proposition_2_10_b.lean](../FunctionSpaces/proposition_2_10_b.lean)**
-
-@import "../FunctionSpaces/proposition_2_10_b.lean"
-
-**[ContinuousLattice/FunctionSpaces/proposition_2_10.lean](../FunctionSpaces/proposition_2_10.lean)**
-
-@import "../FunctionSpaces/proposition_2_10.lean"
 
 **[ContinuousLattice/FunctionSpaces/scottFunctionSubbasis_isOpen.lean](../FunctionSpaces/scottFunctionSubbasis_isOpen.lean)**
 
@@ -258,13 +226,7 @@
 
 @import "../FunctionSpaces/fix_unique.ai_lean_to_english" {code_block=false}
 
-@import "../FunctionSpaces/image_retr_wayBelow_directed.ai_lean_to_english" {code_block=false}
-
-@import "../FunctionSpaces/image_retr_wayBelow_nonempty.ai_lean_to_english" {code_block=false}
-
 @import "../FunctionSpaces/incl_injective.ai_lean_to_english" {code_block=false}
-
-@import "../FunctionSpaces/incl_preservesDirectedSup.ai_lean_to_english" {code_block=false}
 
 @import "../FunctionSpaces/incl_sup.ai_lean_to_english" {code_block=false}
 
@@ -286,19 +248,9 @@
 
 @import "../FunctionSpaces/retr_eq_sSup.ai_lean_to_english" {code_block=false}
 
-@import "../FunctionSpaces/retr_wayBelow_of_wayBelow_incl.ai_lean_to_english" {code_block=false}
-
 @import "../FunctionSpaces/sInf_image_le_sInf_image_of_subset.ai_lean_to_english" {code_block=false}
 
 @import "../FunctionSpaces/sSupMaps_apply.ai_lean_to_english" {code_block=false}
-
-@import "../FunctionSpaces/sSup_image_retr_wayBelow.ai_lean_to_english" {code_block=false}
-
-@import "../FunctionSpaces/proposition_2_10_a.ai_lean_to_english" {code_block=false}
-
-@import "../FunctionSpaces/proposition_2_10_b.ai_lean_to_english" {code_block=false}
-
-@import "../FunctionSpaces/proposition_2_10.ai_lean_to_english" {code_block=false}
 
 @import "../FunctionSpaces/scottFunctionSubbasis_isOpen.ai_lean_to_english" {code_block=false}
 

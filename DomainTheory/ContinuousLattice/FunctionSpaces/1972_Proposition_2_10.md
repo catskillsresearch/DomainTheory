@@ -1,4 +1,4 @@
-# Proposition 2.10 (failing proof)
+# Proposition 2.10 (flawed)
 
 **2.10 Proposition.** A retract of a continuous lattice is a continuous lattice with the subspace topology agreeing with the induced topology.
 
@@ -65,4 +65,4 @@ $$y = \bigsqcup \sqcap U : y \in U $$
 
 where $U$ ranges over the open subsets of $D$, and so the lattice is continuous by 2.4. **Inasmuch as the open sets $U$ just used were open in the subspace topology, it follows by the remark after 2.4 that the subspace and the lattice-induced topologies coincide.** $\square$
 
-**This appeal fails.** The remark before Proposition 2.5 is false, and this proof is one of the three that use it. The discussion and the repair are in the [Milner correction](../MilnerCorrection/1972_Correction.md).
+**This appeal is flawed.** The remark before Proposition 2.5 is false, and this proof is one of the three that use it. The discussion and the repair are in the [Milner correction](../MilnerCorrection/1972_Correction.md). The corrected proof is [Proposition 2.10 revisited](1972_Proposition_2_10_revisited.md).

@@ -1,4 +1,6 @@
-# 5. Inverse limits
+# 4. Inverse limits
+
+The section runs from the inverse-limit construction through Lemma 4.5. Theorem 4.4 is the function-space tower.
 
 - [Inverse limits](ContinuousLattice/InverseLimits/1972_Inverse_limits.md)
 - [Proposition 4.1](ContinuousLattice/InverseLimits/1972_Proposition_4_1.md)
