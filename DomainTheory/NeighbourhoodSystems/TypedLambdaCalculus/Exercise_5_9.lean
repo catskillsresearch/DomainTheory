@@ -4,7 +4,6 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_8
 
 @[expose] public section

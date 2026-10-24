@@ -2,32 +2,33 @@
 %% An arrow already implied by a longer path is omitted.
 %% The introduction has no Lean file, so it is not shown.
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
-flowchart TB
+flowchart LR
 
-  Theorem_5_1["Theorem 5.1<br>terms as maps"]
-  Theorem_5_2["Theorem 5.2<br>beta conversion"]
-  Proposition_5_3["Prop 5.3<br>simultaneous fixes"]
-  Proposition_5_4["Prop 5.4<br>fixed under parameter"]
-  Table_5_5["Table 5.5<br>combinator table"]
-  Theorem_5_6["Theorem 5.6<br>partial recursive"]
-  Exercise_5_7["Exercise 5.7<br>curried lambda"]
-  Exercise_5_8["Exercise 5.8<br>combinatory complete"]
-  Exercise_5_9["Exercise 5.9<br>common fixed points"]
-  Exercise_5_10["Exercise 5.10<br>smash product"]
-  Exercise_5_11["Exercise 5.11<br>stack combinators"]
-  Exercise_5_12["Exercise 5.12<br>while combinator"]
-  Exercise_5_13["Exercise 5.13<br>pairing function"]
-  Exercise_5_13b["Exercise 5.13<br>powerset isos"]
-  Exercise_5_14["Exercise 5.14<br>functions as graphs"]
-  Exercise_5_15["Exercise 5.15<br>star of a word"]
-  Exercise_5_16["Exercise 5.16<br>negated sequences"]
+  Theorem_5_1["Theorem 5.1: terms as maps"]
+  Theorem_5_2["Theorem 5.2: beta conversion"]
+  Proposition_5_3["Prop 5.3: simultaneous fixes"]
+  Proposition_5_4["Prop 5.4: fixed under parameter"]
+  Table_5_5["Table 5.5: combinator table"]
+  Theorem_5_6["Theorem 5.6: partial recursive"]
+  Exercise_5_7["Exercise 5.7: curried lambda"]
+  Exercise_5_8["Exercise 5.8: combinatory complete"]
+  Exercise_5_9["Exercise 5.9: common fixed points"]
+  Exercise_5_10["Exercise 5.10: smash product"]
+  Exercise_5_11["Exercise 5.11: stack combinators"]
+  Exercise_5_12["Exercise 5.12: while combinator"]
+  Exercise_5_13["Exercise 5.13: pairing function"]
+  Exercise_5_13b["Exercise 5.13: powerset isos"]
+  Exercise_5_14["Exercise 5.14: functions as graphs"]
+  Exercise_5_15["Exercise 5.15: star of a word"]
+  Exercise_5_16["Exercise 5.16: negated sequences"]
 
+  Table_5_5 --> Proposition_5_3
+  Exercise_5_16 --> Proposition_5_4
   Exercise_5_11 --> Theorem_5_6
+  Exercise_5_8 --> Exercise_5_9
   Exercise_5_13 --> Exercise_5_13b
   Exercise_5_13 --> Exercise_5_14
-  Exercise_5_16 --> Proposition_5_4
-  Exercise_5_8 --> Exercise_5_9
-  Table_5_5 --> Proposition_5_3
+
   classDef cprop fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef cexs fill:#fef3c7,stroke:#b45309,color:#78350f
   classDef cex fill:#e0e7ff,stroke:#4338ca,color:#312e81
