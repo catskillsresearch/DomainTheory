@@ -62,10 +62,6 @@
 
 @import "schroeder_bernstein_equiv.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise424/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "sbOp.ai_lean_to_english" {code_block=false}
@@ -95,8 +91,6 @@
 @import "../Exercise424.ai_lean_to_english" {code_block=false}
 
 @import "schroeder_bernstein_equiv.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

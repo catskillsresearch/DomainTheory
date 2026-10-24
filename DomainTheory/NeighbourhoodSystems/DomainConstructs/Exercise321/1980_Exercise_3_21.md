@@ -38,10 +38,6 @@
 
 @import "leastStep.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Exercise321/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainConstructs/Exercise321/step_master_right.lean](step_master_right.lean)**
 
 @import "step_master_right.lean"
@@ -79,8 +75,6 @@
 @import "stepCons.ai_lean_to_english" {code_block=false}
 
 @import "leastStep.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "step_master_right.ai_lean_to_english" {code_block=false}
 

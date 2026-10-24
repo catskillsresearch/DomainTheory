@@ -1,1 +1,0 @@
-This file gathers and re-exports the difference index on U, the proof that U has a computable difference, V's canonical bisection, the concrete split of U against V and its computable-split structure, and the primitive recursiveness, raw correctness, presentability criterion, specification, and decidability of that difference.

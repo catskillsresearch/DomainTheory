@@ -130,10 +130,6 @@
 
 @import "uncurryMap.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[InformationSystems/FunctionSpaceAsADomain/Theorem72/uncurry_curryMap.lean](uncurry_curryMap.lean)**
 
 @import "uncurry_curryMap.lean"
@@ -286,10 +282,6 @@
 
 @import "../Factoid75/strictifyElement.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/Basic.lean](../Factoid75/Basic.lean)**
-
-@import "../Factoid75/Basic.lean"
-
 **[InformationSystems/FunctionSpaceAsADomain/Factoid76/compOpUncurry.lean](../Factoid76/compOpUncurry.lean)**
 
 @import "../Factoid76/compOpUncurry.lean"
@@ -317,10 +309,6 @@
 **[InformationSystems/FunctionSpaceAsADomain/Factoid76/pairOp.lean](../Factoid76/pairOp.lean)**
 
 @import "../Factoid76/pairOp.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/Basic.lean](../Factoid76/Basic.lean)**
-
-@import "../Factoid76/Basic.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/InfoSysObj.lean](../Factoid77/InfoSysObj.lean)**
 
@@ -638,8 +626,6 @@
 
 @import "uncurryMap.ai_lean_to_english" {code_block=false}
 
-@import "Basic.ai_lean_to_english" {code_block=false}
-
 @import "uncurry_curryMap.ai_lean_to_english" {code_block=false}
 
 @import "curryMap_unique.ai_lean_to_english" {code_block=false}
@@ -730,8 +716,6 @@
 
 @import "../Factoid75/strictifyElement.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/Basic.ai_lean_to_english" {code_block=false}
-
 @import "../Factoid76/compOpUncurry.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid76/compOp.ai_lean_to_english" {code_block=false}
@@ -747,8 +731,6 @@
 @import "../Factoid76/pairOpUncurry.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid76/pairOp.ai_lean_to_english" {code_block=false}
-
-@import "../Factoid76/Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/InfoSysObj.ai_lean_to_english" {code_block=false}
 

@@ -10,15 +10,9 @@
 
 @import "../Exercise812f/isComputableSplit.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise812f/Basic.lean](../Exercise812f/Basic.lean)**
-
-@import "../Exercise812f/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "../Exercise812f/hySplit812f.ai_lean_to_english" {code_block=false}
 
 @import "../Exercise812f/splitX812f.ai_lean_to_english" {code_block=false}
-
-@import "../Exercise812f/Basic.ai_lean_to_english" {code_block=false}
 

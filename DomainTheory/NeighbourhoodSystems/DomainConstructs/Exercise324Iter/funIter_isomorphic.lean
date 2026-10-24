@@ -2,7 +2,14 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter.mapOfSeq
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter.funIterEquiv
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter.piCongrOrderIso
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter.funIterIso
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter.exists_forall_swap
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter.toElementMap_mapOfSeq
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter.projComp_mono
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter.le_of_projComp_le
 
 @[expose] public section
 

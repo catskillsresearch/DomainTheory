@@ -118,10 +118,6 @@
 
 @import "relateNToC1.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise425/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "consMap_oneBot.ai_lean_to_english" {code_block=false}
@@ -179,8 +175,6 @@
 @import "oneElem.ai_lean_to_english" {code_block=false}
 
 @import "relateNToC1.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

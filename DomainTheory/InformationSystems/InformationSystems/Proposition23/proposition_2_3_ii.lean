@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
 public import DomainTheory.InformationSystems.InformationSystems.Definition22
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23.Basic
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23.funion_insert
 
 @[expose] public section

@@ -26,10 +26,6 @@
 
 @import "filterFixedBy.lean"
 
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise121/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise121/tokenSystem_complete.lean](tokenSystem_complete.lean)**
 
 @import "tokenSystem_complete.lean"
@@ -57,8 +53,6 @@
 @import "consistent_iff_iInter_bracket_nonempty.ai_lean_to_english" {code_block=false}
 
 @import "filterFixedBy.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "tokenSystem_complete.ai_lean_to_english" {code_block=false}
 

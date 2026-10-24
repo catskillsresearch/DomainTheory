@@ -2,7 +2,19 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.unfold
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.fold
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.head
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.tail
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.push
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.diag
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.mapBody
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.mapOp
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.mapMap
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.iterProdIso_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.head_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.tail_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.Arg
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.unfold_fold
 
 @[expose] public section

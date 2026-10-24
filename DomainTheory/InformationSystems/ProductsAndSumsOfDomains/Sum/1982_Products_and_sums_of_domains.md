@@ -34,10 +34,6 @@
 
 @import "../Factoid65/unitSystem.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Factoid65/Basic.lean](../Factoid65/Basic.lean)**
-
-@import "../Factoid65/Basic.lean"
-
 **[InformationSystems/ProductsAndSumsOfDomains/Product/IsProdToken.lean](../Product/IsProdToken.lean)**
 
 @import "../Product/IsProdToken.lean"
@@ -93,10 +89,6 @@
 **[InformationSystems/ProductsAndSumsOfDomains/Product/productSystem.lean](../Product/productSystem.lean)**
 
 @import "../Product/productSystem.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Product/Basic.lean](../Product/Basic.lean)**
-
-@import "../Product/Basic.lean"
 
 **[InformationSystems/ProductsAndSumsOfDomains/Product.lean](../Product.lean)**
 
@@ -162,10 +154,6 @@
 
 @import "sumSystem.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[InformationSystems/ProductsAndSumsOfDomains/Sum.lean](../Sum.lean)**
 
 @import "../Sum.lean"
@@ -183,8 +171,6 @@
 @import "../Factoid65/approxMap_to_unit_eq_const.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid65/unitSystem.ai_lean_to_english" {code_block=false}
-
-@import "../Factoid65/Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Product/IsProdToken.ai_lean_to_english" {code_block=false}
 
@@ -217,8 +203,6 @@
 @import "../Product/mem_sndFinset.ai_lean_to_english" {code_block=false}
 
 @import "../Product/productSystem.ai_lean_to_english" {code_block=false}
-
-@import "../Product/Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Product.ai_lean_to_english" {code_block=false}
 
@@ -255,8 +239,6 @@
 @import "sumBot.ai_lean_to_english" {code_block=false}
 
 @import "sumSystem.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Sum.ai_lean_to_english" {code_block=false}
 

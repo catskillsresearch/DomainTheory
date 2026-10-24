@@ -5,7 +5,8 @@ public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.FixedPoint
-public import DomainTheory.DataTypesAsLattices.Embedding.Basic
+public import DomainTheory.DataTypesAsLattices.Embedding.extend
+public import DomainTheory.DataTypesAsLattices.Embedding.embed
 public import DomainTheory.DataTypesAsLattices.Embedding.embed_injective
 public import DomainTheory.DataTypesAsLattices.Embedding.embed_continuous
 

@@ -1,8 +1,21 @@
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.Basic
+public import DomainTheory.InformationSystems.InformationSystems.Constructive
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumToken
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumBot
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftInsert
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtInsert
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumCon
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumEnt
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumSystem
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.instDecidableEqSumToken
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.instLeftCommutativeLftInsert
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.instLeftCommutativeRhtInsert
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.mem_foldr_lft
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.mem_foldr_rht
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumCon_empty
 
 @[expose] public section

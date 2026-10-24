@@ -2,7 +2,22 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Trianglelefteq
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.IsGen
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Dprime
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.toEl
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.ofEl
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.dprimeEquiv
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Basic.notation4
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.isGen_master
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.isGen_exists
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.isGen_mono
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.isGen_mono'
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.isGen_fst_unique
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.isGen_snd_unique
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.isGen_inter
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.mem_Dprime
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Dprime_subsystem
 
 @[expose] public section
 

@@ -14,10 +14,6 @@
 
 @import "ComputableMap.lean"
 
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition72/apply_isComputableElement.lean](apply_isComputableElement.lean)**
 
 @import "apply_isComputableElement.lean"
@@ -43,8 +39,6 @@
 @import "ComputableElement.ai_lean_to_english" {code_block=false}
 
 @import "ComputableMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "apply_isComputableElement.ai_lean_to_english" {code_block=false}
 

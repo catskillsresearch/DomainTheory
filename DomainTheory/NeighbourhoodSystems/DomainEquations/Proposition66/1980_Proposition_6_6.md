@@ -14,10 +14,6 @@
 
 @import "initialIso.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Proposition66/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainEquations/Proposition66/iso_hom_unique.lean](iso_hom_unique.lean)**
 
 @import "iso_hom_unique.lean"
@@ -31,8 +27,6 @@
 @import "comp_desc_eq_id.ai_lean_to_english" {code_block=false}
 
 @import "initialIso.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "iso_hom_unique.ai_lean_to_english" {code_block=false}
 

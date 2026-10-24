@@ -6,10 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423/f_unique_fixedPoint.lean](f_unique_fixedPoint.lean)**
 
 @import "f_unique_fixedPoint.lean"
@@ -19,8 +15,6 @@
 @import "../Exercise423.lean"
 
 ## AI: AI-Lean to AI-English
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "f_unique_fixedPoint.ai_lean_to_english" {code_block=false}
 

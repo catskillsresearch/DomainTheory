@@ -26,10 +26,6 @@
 
 @import "ofContinuous.lean"
 
-**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/principalFamily_directed.lean](principalFamily_directed.lean)**
 
 @import "principalFamily_directed.lean"
@@ -61,8 +57,6 @@
 @import "mem_iff_principal_of_continuous.ai_lean_to_english" {code_block=false}
 
 @import "ofContinuous.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "principalFamily_directed.ai_lean_to_english" {code_block=false}
 

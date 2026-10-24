@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.Overlap
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.no_overlap
 
 @[expose] public section

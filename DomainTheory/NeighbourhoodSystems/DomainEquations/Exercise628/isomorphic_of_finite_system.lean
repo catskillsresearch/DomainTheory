@@ -2,7 +2,8 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.projElementEmbedding
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.IsFinite
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.isomorphic_of_trianglelefteq_both
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.finite_element_of_isFinite
 

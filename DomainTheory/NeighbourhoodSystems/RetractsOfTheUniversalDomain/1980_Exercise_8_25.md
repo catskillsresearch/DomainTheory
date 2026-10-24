@@ -14,10 +14,6 @@
 
 @import "Exercise825Congr.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825Closing/Basic.lean](Exercise825Closing/Basic.lean)**
-
-@import "Exercise825Closing/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825Congr/funSpace_congr.lean](Exercise825Congr/funSpace_congr.lean)**
 
 @import "Exercise825Congr/funSpace_congr.lean"
@@ -66,17 +62,9 @@
 
 @import "Exercise825Congr/funSpaceCongrOrderIso.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825Congr/Basic.lean](Exercise825Congr/Basic.lean)**
-
-@import "Exercise825Congr/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825Embed/embedIntoPow.lean](Exercise825Embed/embedIntoPow.lean)**
 
 @import "Exercise825Embed/embedIntoPow.lean"
-
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825Embed/Basic.lean](Exercise825Embed/Basic.lean)**
-
-@import "Exercise825Embed/Basic.lean"
 
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825Embed/toElementMap_embedIntoPow.lean](Exercise825Embed/toElementMap_embedIntoPow.lean)**
 
@@ -198,10 +186,6 @@
 
 @import "Exercise825FixedPoint/tOpMap.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825FixedPoint/Basic.lean](Exercise825FixedPoint/Basic.lean)**
-
-@import "Exercise825FixedPoint/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825FixedPoint/toElementMap_RMap.lean](Exercise825FixedPoint/toElementMap_RMap.lean)**
 
 @import "Exercise825FixedPoint/toElementMap_RMap.lean"
@@ -250,10 +234,6 @@
 
 @import "Exercise825Pow/powProdOrderIso.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825Pow/Basic.lean](Exercise825Pow/Basic.lean)**
-
-@import "Exercise825Pow/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825Unit/isoOfUnique.lean](Exercise825Unit/isoOfUnique.lean)**
 
 @import "Exercise825Unit/isoOfUnique.lean"
@@ -274,10 +254,6 @@
 
 @import "Exercise825Unit.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825/Basic.lean](Exercise825/Basic.lean)**
-
-@import "Exercise825/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825/exercise_8_25.lean](Exercise825/exercise_8_25.lean)**
 
 @import "Exercise825/exercise_8_25.lean"
@@ -295,8 +271,6 @@
 @import "Exercise825Congr/curry_isomorphic.ai_lean_to_english" {code_block=false}
 
 @import "Exercise825Congr.ai_lean_to_english" {code_block=false}
-
-@import "Exercise825Closing/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Exercise825Congr/funSpace_congr.ai_lean_to_english" {code_block=false}
 
@@ -322,11 +296,7 @@
 
 @import "Exercise825Congr/funSpaceCongrOrderIso.ai_lean_to_english" {code_block=false}
 
-@import "Exercise825Congr/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Exercise825Embed/embedIntoPow.ai_lean_to_english" {code_block=false}
-
-@import "Exercise825Embed/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Exercise825Embed/toElementMap_embedIntoPow.ai_lean_to_english" {code_block=false}
 
@@ -388,8 +358,6 @@
 
 @import "Exercise825FixedPoint/tOpMap.ai_lean_to_english" {code_block=false}
 
-@import "Exercise825FixedPoint/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Exercise825FixedPoint/toElementMap_RMap.ai_lean_to_english" {code_block=false}
 
 @import "Exercise825FixedPoint/toApproxMap_lamOp.ai_lean_to_english" {code_block=false}
@@ -414,8 +382,6 @@
 
 @import "Exercise825Pow/powProdOrderIso.ai_lean_to_english" {code_block=false}
 
-@import "Exercise825Pow/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Exercise825Unit/isoOfUnique.ai_lean_to_english" {code_block=false}
 
 @import "Exercise825Unit/Basic.ai_lean_to_english" {code_block=false}
@@ -425,8 +391,6 @@
 @import "Exercise825Unit/funSpace_unitSys_isomorphic.ai_lean_to_english" {code_block=false}
 
 @import "Exercise825Unit.ai_lean_to_english" {code_block=false}
-
-@import "Exercise825/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Exercise825/exercise_8_25.ai_lean_to_english" {code_block=false}
 

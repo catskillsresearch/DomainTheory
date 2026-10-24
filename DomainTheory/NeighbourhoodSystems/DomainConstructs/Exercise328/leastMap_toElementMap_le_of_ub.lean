@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.leastMapVals
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.Elementu2emem_interYs_of
 
 @[expose] public section

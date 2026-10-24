@@ -58,10 +58,6 @@
 
 @import "pairToFun.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise819/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise819/toElementMap_bot_le.lean](toElementMap_bot_le.lean)**
 
 @import "toElementMap_bot_le.lean"
@@ -169,8 +165,6 @@
 @import "swapProdT.ai_lean_to_english" {code_block=false}
 
 @import "pairToFun.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "toElementMap_bot_le.ai_lean_to_english" {code_block=false}
 

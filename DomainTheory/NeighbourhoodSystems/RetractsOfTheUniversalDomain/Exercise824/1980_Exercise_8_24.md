@@ -30,10 +30,6 @@
 
 @import "binOp.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/fst_mono.lean](fst_mono.lean)**
 
 @import "fst_mono.lean"
@@ -131,8 +127,6 @@
 @import "bStar.ai_lean_to_english" {code_block=false}
 
 @import "binOp.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "fst_mono.ai_lean_to_english" {code_block=false}
 

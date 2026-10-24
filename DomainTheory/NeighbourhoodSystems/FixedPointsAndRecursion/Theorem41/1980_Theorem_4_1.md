@@ -102,10 +102,6 @@
 
 @import "iterElem.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem41/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem41/toElementMap_fixElement.lean](toElementMap_fixElement.lean)**
 
 @import "toElementMap_fixElement.lean"
@@ -171,8 +167,6 @@
 @import "fixMap.ai_lean_to_english" {code_block=false}
 
 @import "iterElem.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "toElementMap_fixElement.ai_lean_to_english" {code_block=false}
 

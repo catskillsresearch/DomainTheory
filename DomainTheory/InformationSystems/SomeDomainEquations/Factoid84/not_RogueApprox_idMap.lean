@@ -3,7 +3,15 @@ module
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid34
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.Basic
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.IsDomainApprox
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.DomainApprox
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.scottCon
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatRel
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatMap
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatDomainApprox
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.mem_barElement
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.mem_topElement
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.BotApprox_any
 
 @[expose] public section
 

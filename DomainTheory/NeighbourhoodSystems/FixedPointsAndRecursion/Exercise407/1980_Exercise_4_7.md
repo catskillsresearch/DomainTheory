@@ -42,10 +42,6 @@
 
 @import "fixAbove.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise407/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise407/le_fixAbove.lean](le_fixAbove.lean)**
 
 @import "le_fixAbove.lean"
@@ -69,8 +65,6 @@
 @import "iterFrom_mono.ai_lean_to_english" {code_block=false}
 
 @import "fixAbove.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "le_fixAbove.ai_lean_to_english" {code_block=false}
 

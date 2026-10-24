@@ -126,10 +126,6 @@
 
 @import "Example62/bbEquiv.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Example62/Basic.lean](Example62/Basic.lean)**
-
-@import "Example62/Basic.lean"
-
 **[NeighbourhoodSystems/DomainEquations/Example62.lean](Example62.lean)**
 
 @import "Example62.lean"
@@ -329,10 +325,6 @@
 **[NeighbourhoodSystems/DomainEquations/Example62A/aaEquiv.lean](Example62A/aaEquiv.lean)**
 
 @import "Example62A/aaEquiv.lean"
-
-**[NeighbourhoodSystems/DomainEquations/Example62A/Basic.lean](Example62A/Basic.lean)**
-
-@import "Example62A/Basic.lean"
 
 **[NeighbourhoodSystems/DomainEquations/Example62A.lean](Example62A.lean)**
 
@@ -610,10 +602,6 @@
 
 @import "Example62C/ccEquiv.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Example62C/Basic.lean](Example62C/Basic.lean)**
-
-@import "Example62C/Basic.lean"
-
 **[NeighbourhoodSystems/DomainEquations/Example62C.lean](Example62C.lean)**
 
 @import "Example62C.lean"
@@ -665,10 +653,6 @@
 **[NeighbourhoodSystems/DomainEquations/Example62Regular/EventuallyPeriodic.lean](Example62Regular/EventuallyPeriodic.lean)**
 
 @import "Example62Regular/EventuallyPeriodic.lean"
-
-**[NeighbourhoodSystems/DomainEquations/Example62Regular/Basic.lean](Example62Regular/Basic.lean)**
-
-@import "Example62Regular/Basic.lean"
 
 **[NeighbourhoodSystems/DomainEquations/Example62Regular/treeLang_eq_pos.lean](Example62Regular/treeLang_eq_pos.lean)**
 
@@ -755,8 +739,6 @@
 @import "Example62/toBB_fromBB.ai_lean_to_english" {code_block=false}
 
 @import "Example62/bbEquiv.ai_lean_to_english" {code_block=false}
-
-@import "Example62/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Example62.ai_lean_to_english" {code_block=false}
 
@@ -857,8 +839,6 @@
 @import "Example62A/toAA_fromAA.ai_lean_to_english" {code_block=false}
 
 @import "Example62A/aaEquiv.ai_lean_to_english" {code_block=false}
-
-@import "Example62A/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Example62A.ai_lean_to_english" {code_block=false}
 
@@ -998,8 +978,6 @@
 
 @import "Example62C/ccEquiv.ai_lean_to_english" {code_block=false}
 
-@import "Example62C/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Example62C.ai_lean_to_english" {code_block=false}
 
 @import "Example62Regular/Tree.ai_lean_to_english" {code_block=false}
@@ -1025,8 +1003,6 @@
 @import "Example62Regular/mem_treeLang.ai_lean_to_english" {code_block=false}
 
 @import "Example62Regular/EventuallyPeriodic.ai_lean_to_english" {code_block=false}
-
-@import "Example62Regular/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Example62Regular/treeLang_eq_pos.ai_lean_to_english" {code_block=false}
 

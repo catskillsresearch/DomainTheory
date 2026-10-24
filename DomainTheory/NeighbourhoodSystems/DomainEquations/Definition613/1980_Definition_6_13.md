@@ -30,10 +30,6 @@
 
 @import "ContinuousOnDomains.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Definition613/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainEquations/Definition613.lean](../Definition613.lean)**
 
 @import "../Definition613.lean"
@@ -51,8 +47,6 @@
 @import "targetFam.ai_lean_to_english" {code_block=false}
 
 @import "ContinuousOnDomains.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Definition613.ai_lean_to_english" {code_block=false}
 

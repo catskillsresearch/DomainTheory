@@ -22,10 +22,6 @@
 
 @import "toUnit.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Exercise323/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainConstructs/Exercise323/toUnit_unique.lean](toUnit_unique.lean)**
 
 @import "toUnit_unique.lean"
@@ -43,8 +39,6 @@
 @import "homAdjunction.ai_lean_to_english" {code_block=false}
 
 @import "toUnit.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "toUnit_unique.ai_lean_to_english" {code_block=false}
 

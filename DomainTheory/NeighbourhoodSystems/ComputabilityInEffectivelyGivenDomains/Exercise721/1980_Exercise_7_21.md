@@ -22,10 +22,6 @@
 
 @import "papply.lean"
 
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise721/papplyEval_rel_Ypd_iff.lean](papplyEval_rel_Ypd_iff.lean)**
 
 @import "papplyEval_rel_Ypd_iff.lean"
@@ -55,8 +51,6 @@
 @import "papplyB.ai_lean_to_english" {code_block=false}
 
 @import "papply.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "papplyEval_rel_Ypd_iff.ai_lean_to_english" {code_block=false}
 

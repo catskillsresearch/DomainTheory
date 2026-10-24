@@ -18,10 +18,6 @@
 
 @import "FinitaryProjection.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isFinitary_retractionOfSubsystem.lean](isFinitary_retractionOfSubsystem.lean)**
 
 @import "isFinitary_retractionOfSubsystem.lean"
@@ -42,17 +38,9 @@
 
 @import "../Definition83.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84/Basic.lean](../Example84/Basic.lean)**
-
-@import "../Example84/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84.lean](../Example84.lean)**
 
 @import "../Example84.lean"
-
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84b/Basic.lean](../Example84b/Basic.lean)**
-
-@import "../Example84b/Basic.lean"
 
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84b.lean](../Example84b.lean)**
 
@@ -66,8 +54,6 @@
 
 @import "FinitaryProjection.ai_lean_to_english" {code_block=false}
 
-@import "Basic.ai_lean_to_english" {code_block=false}
-
 @import "isFinitary_retractionOfSubsystem.ai_lean_to_english" {code_block=false}
 
 @import "retractionOfSubsystem_le_idMap.ai_lean_to_english" {code_block=false}
@@ -78,11 +64,7 @@
 
 @import "../Definition83.ai_lean_to_english" {code_block=false}
 
-@import "../Example84/Basic.ai_lean_to_english" {code_block=false}
-
 @import "../Example84.ai_lean_to_english" {code_block=false}
-
-@import "../Example84b/Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Example84b.ai_lean_to_english" {code_block=false}
 

@@ -118,10 +118,6 @@
 
 @import "openSet_equiv_map.lean"
 
-**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise215/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "O_mem_univ.ai_lean_to_english" {code_block=false}
@@ -179,8 +175,6 @@
 @import "../Exercise215.ai_lean_to_english" {code_block=false}
 
 @import "openSet_equiv_map.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

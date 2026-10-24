@@ -1,6 +1,12 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Embedding.Basic
+public import Mathlib.Topology.Bases
+public import Mathlib.Topology.Defs.Induced
+public import Mathlib.Topology.Order
+public import Mathlib.Topology.Separation.Basic
+public import DomainTheory.DataTypesAsLattices.FixedPoint
+public import DomainTheory.DataTypesAsLattices.Embedding.extend
+public import DomainTheory.DataTypesAsLattices.Embedding.embed
 public import DomainTheory.DataTypesAsLattices.Embedding.mem_extend
 public import DomainTheory.DataTypesAsLattices.Embedding.isOpen_extend_mem
 public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_5

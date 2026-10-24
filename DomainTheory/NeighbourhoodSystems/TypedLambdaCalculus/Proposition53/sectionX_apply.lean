@@ -1,7 +1,9 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.sectionX
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.secFixX
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.outerOp
 
 @[expose] public section
 

@@ -86,10 +86,6 @@
 
 @import "strElem.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Example44/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Example44.lean](../Example44.lean)**
 
 @import "../Example44.lean"
@@ -135,8 +131,6 @@
 @import "strBot.ai_lean_to_english" {code_block=false}
 
 @import "strElem.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Example44.ai_lean_to_english" {code_block=false}
 

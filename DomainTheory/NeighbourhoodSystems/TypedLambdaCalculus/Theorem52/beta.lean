@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem52.Basic
 
 @[expose] public section
 

@@ -134,10 +134,6 @@
 
 @import "zeroMap.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Example43/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Example43.lean](../Example43.lean)**
 
 @import "../Example43.lean"
@@ -207,8 +203,6 @@
 @import "zeroVal.ai_lean_to_english" {code_block=false}
 
 @import "zeroMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Example43.ai_lean_to_english" {code_block=false}
 

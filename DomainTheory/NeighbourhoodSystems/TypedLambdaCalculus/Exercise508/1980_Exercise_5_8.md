@@ -46,10 +46,6 @@
 
 @import "bracket.lean"
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/TypedLambdaCalculus/Exercise508/toApproxMap_toFilter.lean](toApproxMap_toFilter.lean)**
 
 @import "toApproxMap_toFilter.lean"
@@ -95,8 +91,6 @@
 @import "Smap_apply.ai_lean_to_english" {code_block=false}
 
 @import "bracket.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "toApproxMap_toFilter.ai_lean_to_english" {code_block=false}
 

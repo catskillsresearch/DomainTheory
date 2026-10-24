@@ -62,10 +62,6 @@
 
 @import "parkY.lean"
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_eq.lean](star_eq.lean)**
 
 @import "star_eq.lean"
@@ -143,8 +139,6 @@
 @import "parkX.ai_lean_to_english" {code_block=false}
 
 @import "parkY.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "star_eq.ai_lean_to_english" {code_block=false}
 

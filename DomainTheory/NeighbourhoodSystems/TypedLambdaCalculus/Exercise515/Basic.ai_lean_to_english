@@ -1,1 +1,0 @@
-This file gathers and re-exports the iterated pointwise powers, with their zero and successor equations, the star, and the operator sending a set w to the product of z with w united with v. It also re-exports the feedback coefficient and the feedback constant of David Park's system, together with the two components of the proposed solution.

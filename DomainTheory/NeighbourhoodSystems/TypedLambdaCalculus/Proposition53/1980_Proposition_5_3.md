@@ -26,10 +26,6 @@
 
 @import "sectionX.lean"
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/sectionX_apply.lean](sectionX_apply.lean)**
 
 @import "sectionX_apply.lean"
@@ -57,8 +53,6 @@
 @import "secFixX_apply.ai_lean_to_english" {code_block=false}
 
 @import "sectionX.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "sectionX_apply.ai_lean_to_english" {code_block=false}
 

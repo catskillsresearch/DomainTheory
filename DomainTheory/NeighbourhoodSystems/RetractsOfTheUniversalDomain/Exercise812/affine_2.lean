@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import Mathlib.Data.Nat.BitIndices
 public import Mathlib.Data.Nat.Bitwise
 public import Mathlib.Combinatorics.Colex
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
 
 @[expose] public section
 

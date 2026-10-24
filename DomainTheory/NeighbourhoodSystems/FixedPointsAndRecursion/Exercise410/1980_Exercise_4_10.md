@@ -70,10 +70,6 @@
 
 @import "relIso.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "fixElement_below_unique.ai_lean_to_english" {code_block=false}
@@ -107,8 +103,6 @@
 @import "restrict_embed.ai_lean_to_english" {code_block=false}
 
 @import "relIso.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

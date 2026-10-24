@@ -178,10 +178,6 @@
 
 @import "vUnfold.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid83/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "VToken.ai_lean_to_english" {code_block=false}
@@ -271,8 +267,6 @@
 @import "vTop.ai_lean_to_english" {code_block=false}
 
 @import "vUnfold.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

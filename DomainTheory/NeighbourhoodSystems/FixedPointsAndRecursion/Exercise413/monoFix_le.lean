@@ -2,7 +2,9 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.preFix
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.monoFix
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.mem_preFix
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.monoFix_le_preFix
 
 @[expose] public section

@@ -86,10 +86,6 @@
 
 @import "triple.lean"
 
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise118/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise118/triple_interUpTo_empty.lean](triple_interUpTo_empty.lean)**
 
 @import "triple_interUpTo_empty.lean"
@@ -147,8 +143,6 @@
 @import "triSys_master.ai_lean_to_english" {code_block=false}
 
 @import "triple.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "triple_interUpTo_empty.ai_lean_to_english" {code_block=false}
 

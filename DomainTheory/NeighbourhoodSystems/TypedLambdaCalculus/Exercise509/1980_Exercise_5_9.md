@@ -6,10 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise509/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/TypedLambdaCalculus/Exercise509/commute_apply.lean](commute_apply.lean)**
 
 @import "commute_apply.lean"
@@ -47,8 +43,6 @@
 @import "../Exercise509.lean"
 
 ## AI: AI-Lean to AI-English
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "commute_apply.ai_lean_to_english" {code_block=false}
 

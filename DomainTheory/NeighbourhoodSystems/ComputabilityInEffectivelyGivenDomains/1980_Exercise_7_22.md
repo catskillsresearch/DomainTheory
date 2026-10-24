@@ -378,10 +378,6 @@
 
 @import "Exercise722Regular/containsZero.lean"
 
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise722Regular/Basic.lean](Exercise722Regular/Basic.lean)**
-
-@import "Exercise722Regular/Basic.lean"
-
 **[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise722Words/anyMatchesB.lean](Exercise722Words/anyMatchesB.lean)**
 
 @import "Exercise722Words/anyMatchesB.lean"
@@ -1682,10 +1678,6 @@
 
 @import "Exercise722Words/wordsUpTo.lean"
 
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise722Words/Basic.lean](Exercise722Words/Basic.lean)**
-
-@import "Exercise722Words/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "Exercise722/concat.ai_lean_to_english" {code_block=false}
@@ -1873,8 +1865,6 @@
 @import "Exercise722Regular/denote_emptyExpr.ai_lean_to_english" {code_block=false}
 
 @import "Exercise722Regular/containsZero.ai_lean_to_english" {code_block=false}
-
-@import "Exercise722Regular/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Exercise722Words/anyMatchesB.ai_lean_to_english" {code_block=false}
 
@@ -2525,8 +2515,6 @@
 @import "Exercise722Presentation.ai_lean_to_english" {code_block=false}
 
 @import "Exercise722Words/wordsUpTo.ai_lean_to_english" {code_block=false}
-
-@import "Exercise722Words/Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

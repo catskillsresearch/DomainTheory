@@ -42,10 +42,6 @@
 
 @import "PNpres.lean"
 
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example78.lean](../Example78.lean)**
 
 @import "../Example78.lean"
@@ -69,8 +65,6 @@
 @import "PN.ai_lean_to_english" {code_block=false}
 
 @import "PNpres.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Example78.ai_lean_to_english" {code_block=false}
 

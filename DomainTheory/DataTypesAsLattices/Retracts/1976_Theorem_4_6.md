@@ -14,10 +14,6 @@
 
 @import "theorem_4_6_inverseLimit.lean"
 
-**[DataTypesAsLattices/Retracts/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[DataTypesAsLattices/Retracts/theorem_4_6_limit.lean](theorem_4_6_limit.lean)**
 
 @import "theorem_4_6_limit.lean"
@@ -31,8 +27,6 @@
 @import "theorem_4_6.ai_lean_to_english" {code_block=false}
 
 @import "theorem_4_6_inverseLimit.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "theorem_4_6_limit.ai_lean_to_english" {code_block=false}
 

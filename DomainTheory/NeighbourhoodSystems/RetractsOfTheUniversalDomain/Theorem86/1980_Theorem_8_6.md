@@ -150,10 +150,6 @@
 
 @import "../Theorem86.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/Basic.lean](../Theorem86c/Basic.lean)**
-
-@import "../Theorem86c/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem86c/subApprox_rel_iff.lean](../Theorem86c/subApprox_rel_iff.lean)**
 
 @import "../Theorem86c/subApprox_rel_iff.lean"
@@ -259,8 +255,6 @@
 @import "isFinitaryProjection_subApprox.ai_lean_to_english" {code_block=false}
 
 @import "../Theorem86.ai_lean_to_english" {code_block=false}
-
-@import "../Theorem86c/Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Theorem86c/subApprox_rel_iff.ai_lean_to_english" {code_block=false}
 

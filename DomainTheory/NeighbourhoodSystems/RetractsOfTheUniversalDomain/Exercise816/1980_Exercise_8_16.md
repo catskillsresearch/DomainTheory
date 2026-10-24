@@ -6,10 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816/isFinitaryProjection_le_iff_fixedNbhd_subsystem.lean](isFinitaryProjection_le_iff_fixedNbhd_subsystem.lean)**
 
 @import "isFinitaryProjection_le_iff_fixedNbhd_subsystem.lean"
@@ -23,8 +19,6 @@
 @import "../Exercise816.lean"
 
 ## AI: AI-Lean to AI-English
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "isFinitaryProjection_le_iff_fixedNbhd_subsystem.ai_lean_to_english" {code_block=false}
 

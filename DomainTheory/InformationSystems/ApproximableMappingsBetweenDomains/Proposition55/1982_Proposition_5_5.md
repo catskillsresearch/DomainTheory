@@ -10,10 +10,6 @@
 
 @import "comp.lean"
 
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean](../Proposition55.lean)**
 
 @import "../Proposition55.lean"
@@ -21,8 +17,6 @@
 ## AI: AI-Lean to AI-English
 
 @import "comp.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Proposition55.ai_lean_to_english" {code_block=false}
 

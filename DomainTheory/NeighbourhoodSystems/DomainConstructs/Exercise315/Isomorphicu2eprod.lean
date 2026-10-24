@@ -1,7 +1,17 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.prodCongrOrderIso
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.prodUniqueOrderIso
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.uniqueProdOrderIso
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.prodCommD
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.prodAssocD
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.unitSys
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.prodUnitD
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.unitProdD
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.prodCongrD
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.unitSys_element_eq
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.BasicInst12
 
 @[expose] public section
 

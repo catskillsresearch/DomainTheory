@@ -1,6 +1,8 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.Subsystem
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.Basic.notation2
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.refl
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.trans
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610._root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext

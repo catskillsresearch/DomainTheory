@@ -4,7 +4,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition67
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.Basic
 
 @[expose] public section
 

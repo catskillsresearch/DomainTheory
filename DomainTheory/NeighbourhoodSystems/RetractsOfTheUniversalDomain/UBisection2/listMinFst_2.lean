@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.bisection
 
 @[expose] public section
 

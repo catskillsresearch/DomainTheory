@@ -1,7 +1,8 @@
 module
 
 public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.PeanoModel
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Graph
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Graphu2eswap
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.exists_unique_right
 

@@ -42,10 +42,6 @@
 
 @import "branch.lean"
 
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise113/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise113/prefix_comparable_of_mem.lean](prefix_comparable_of_mem.lean)**
 
 @import "prefix_comparable_of_mem.lean"
@@ -77,8 +73,6 @@
 @import "branchSeq_mono.ai_lean_to_english" {code_block=false}
 
 @import "branch.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "prefix_comparable_of_mem.ai_lean_to_english" {code_block=false}
 

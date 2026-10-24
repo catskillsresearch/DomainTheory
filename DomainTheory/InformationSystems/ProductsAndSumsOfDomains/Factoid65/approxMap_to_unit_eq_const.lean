@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65.Basic
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65.unitSystem
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65.unitElement_eq_bot
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.constMap

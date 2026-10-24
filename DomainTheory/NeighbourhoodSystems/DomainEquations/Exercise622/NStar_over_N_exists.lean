@@ -1,7 +1,11 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.Cnat
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.Cone
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NExpr
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.MExpr
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NStarExpr
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NExpr_rooted
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NStar_eq_solution
 

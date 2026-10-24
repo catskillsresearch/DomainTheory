@@ -82,10 +82,6 @@
 
 @import "Esol.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Exercise624/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainEquations/Exercise624/pIter_fst_subset_GammaD.lean](pIter_fst_subset_GammaD.lean)**
 
 @import "pIter_fst_subset_GammaD.lean"
@@ -161,8 +157,6 @@
 @import "nil_mem_GammaE.ai_lean_to_english" {code_block=false}
 
 @import "Esol.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "pIter_fst_subset_GammaD.ai_lean_to_english" {code_block=false}
 

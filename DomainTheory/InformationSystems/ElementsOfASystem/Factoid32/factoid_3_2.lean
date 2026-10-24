@@ -2,7 +2,6 @@
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32.Basic
 
 @[expose] public section
 

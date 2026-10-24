@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixElement_eq_iSupDirected
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.Basic
 
 @[expose] public section
 

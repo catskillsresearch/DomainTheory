@@ -3,7 +3,8 @@ module
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise216.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise216.SatisfiesParityEquations
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise216.sigmaMap
 
 @[expose] public section
 

@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise415.Basic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise415.exists_maximal_fixedPoint
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.monoFix_least

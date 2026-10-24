@@ -10,10 +10,6 @@
 
 @import "inclMap.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_toElementMap.lean](inclMap_toElementMap.lean)**
 
 @import "inclMap_toElementMap.lean"
@@ -45,8 +41,6 @@
 ## AI: AI-Lean to AI-English
 
 @import "inclMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "inclMap_toElementMap.ai_lean_to_english" {code_block=false}
 

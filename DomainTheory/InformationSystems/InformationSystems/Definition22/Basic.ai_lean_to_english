@@ -1,1 +1,0 @@
-This file gathers and re-exports the information system and the set-level entailment predicate. Scott's Definition 2.2 writes that a consistent finite set u entails a consistent finite set v when u entails every token of v.

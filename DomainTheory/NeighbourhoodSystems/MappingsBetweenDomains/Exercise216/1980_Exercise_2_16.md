@@ -26,10 +26,6 @@
 
 @import "sigmaMap.lean"
 
-**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/toElementMap_sigmaMap.lean](toElementMap_sigmaMap.lean)**
 
 @import "toElementMap_sigmaMap.lean"
@@ -49,8 +45,6 @@
 @import "parityMap_satisfies.ai_lean_to_english" {code_block=false}
 
 @import "sigmaMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "toElementMap_sigmaMap.ai_lean_to_english" {code_block=false}
 

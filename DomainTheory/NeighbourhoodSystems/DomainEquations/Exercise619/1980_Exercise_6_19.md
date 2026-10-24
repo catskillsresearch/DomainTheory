@@ -226,10 +226,6 @@
 
 @import "sumTokEquiv.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Exercise619/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainEquations/Exercise619PartB/ScottSys.lean](../Exercise619PartB/ScottSys.lean)**
 
 @import "../Exercise619PartB/ScottSys.lean"
@@ -481,8 +477,6 @@
 @import "toSum_fromSum.ai_lean_to_english" {code_block=false}
 
 @import "sumTokEquiv.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Exercise619PartB/ScottSys.ai_lean_to_english" {code_block=false}
 

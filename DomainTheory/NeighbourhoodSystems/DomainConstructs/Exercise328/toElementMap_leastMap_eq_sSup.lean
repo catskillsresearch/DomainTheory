@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.leastMapVals
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.val_le_leastMap_toElementMap
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.leastMapVals_bounded
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.leastMap_toElementMap_le_of_ub

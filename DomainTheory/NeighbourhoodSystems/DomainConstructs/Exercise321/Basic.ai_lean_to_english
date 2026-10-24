@@ -1,1 +1,0 @@
-This file gathers and re-exports the function space and the single-step ingredients of Scott's Exercise 3.21: the least map of one step, the output intersection for an input contained in the step input and for an input not contained in it, and consistency of a single step.

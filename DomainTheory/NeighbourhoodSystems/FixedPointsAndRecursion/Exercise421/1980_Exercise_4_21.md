@@ -30,10 +30,6 @@
 
 @import "addIso.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/addIso_apply.lean](addIso_apply.lean)**
 
 @import "addIso_apply.lean"
@@ -99,8 +95,6 @@
 @import "upSet.ai_lean_to_english" {code_block=false}
 
 @import "addIso.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "addIso_apply.ai_lean_to_english" {code_block=false}
 

@@ -10,10 +10,6 @@
 
 @import "../Exercise812eD.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise812eD/Basic.lean](../Exercise812eD/Basic.lean)**
-
-@import "../Exercise812eD/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "../Exercise812eD/B812e.ai_lean_to_english" {code_block=false}
@@ -27,6 +23,4 @@
 @import "../Exercise812eD/hxSplit812e.ai_lean_to_english" {code_block=false}
 
 @import "../Exercise812eD/splitX812e.ai_lean_to_english" {code_block=false}
-
-@import "../Exercise812eD/Basic.ai_lean_to_english" {code_block=false}
 

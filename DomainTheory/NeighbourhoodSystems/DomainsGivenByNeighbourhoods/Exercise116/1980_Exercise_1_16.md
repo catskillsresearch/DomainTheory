@@ -58,10 +58,6 @@
 
 @import "cofiniteIso.lean"
 
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise116/le_ofExcluded_univ.lean](le_ofExcluded_univ.lean)**
 
 @import "le_ofExcluded_univ.lean"
@@ -101,8 +97,6 @@
 @import "toExcluded_ofExcluded.ai_lean_to_english" {code_block=false}
 
 @import "cofiniteIso.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "le_ofExcluded_univ.ai_lean_to_english" {code_block=false}
 

@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.Basic
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.commute_apply
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407.le_fixAbove

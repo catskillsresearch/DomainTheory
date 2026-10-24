@@ -86,10 +86,6 @@
 
 @import "parityMap.lean"
 
-**[NeighbourhoodSystems/MappingsBetweenDomains/Example23/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/MappingsBetweenDomains/Example23.lean](../Example23.lean)**
 
 @import "../Example23.lean"
@@ -135,8 +131,6 @@
 @import "valElt_scan_mono.ai_lean_to_english" {code_block=false}
 
 @import "parityMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Example23.ai_lean_to_english" {code_block=false}
 

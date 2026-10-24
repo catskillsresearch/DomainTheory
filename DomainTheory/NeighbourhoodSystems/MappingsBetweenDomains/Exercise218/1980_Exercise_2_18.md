@@ -66,10 +66,6 @@
 
 @import "kMap.lean"
 
-**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise218/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/MappingsBetweenDomains/Exercise218/toElementMap_hMap_cone.lean](toElementMap_hMap_cone.lean)**
 
 @import "toElementMap_hMap_cone.lean"
@@ -121,8 +117,6 @@
 @import "kOut_mono.ai_lean_to_english" {code_block=false}
 
 @import "kMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "toElementMap_hMap_cone.ai_lean_to_english" {code_block=false}
 

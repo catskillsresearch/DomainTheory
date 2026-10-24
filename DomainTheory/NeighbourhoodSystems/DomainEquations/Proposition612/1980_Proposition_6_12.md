@@ -42,10 +42,6 @@
 
 @import "projectionPair.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Proposition612/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainEquations/Proposition612/toElementMap_inj.lean](toElementMap_inj.lean)**
 
 @import "toElementMap_inj.lean"
@@ -73,8 +69,6 @@
 @import "../Proposition612.ai_lean_to_english" {code_block=false}
 
 @import "projectionPair.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "toElementMap_inj.ai_lean_to_english" {code_block=false}
 

@@ -10,10 +10,6 @@
 
 @import "Le.lean"
 
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_closure_le.lean](rel_iff_closure_le.lean)**
 
 @import "rel_iff_closure_le.lean"
@@ -37,8 +33,6 @@
 ## AI: AI-Lean to AI-English
 
 @import "Le.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "rel_iff_closure_le.ai_lean_to_english" {code_block=false}
 

@@ -62,10 +62,6 @@
 
 @import "powerIso.lean"
 
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise120/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "isomorphic_powerSystem.ai_lean_to_english" {code_block=false}
@@ -95,8 +91,6 @@
 @import "upSet_injective.ai_lean_to_english" {code_block=false}
 
 @import "powerIso.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

@@ -2,7 +2,14 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513
 public import Mathlib.Data.List.Basic
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.tag
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.entries
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Fun
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Graph
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.IsApprox
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.tag_nil
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.tag_cons
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.mem_entries
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.num_succ_left_gt
 
 @[expose] public section

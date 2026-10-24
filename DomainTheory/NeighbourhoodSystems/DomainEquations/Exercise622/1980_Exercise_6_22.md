@@ -26,10 +26,6 @@
 
 @import "NStarExpr.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Exercise622/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainEquations/Exercise622/NStarExpr_rooted.lean](NStarExpr_rooted.lean)**
 
 @import "NStarExpr_rooted.lean"
@@ -81,8 +77,6 @@
 @import "NExpr.ai_lean_to_english" {code_block=false}
 
 @import "NStarExpr.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "NStarExpr_rooted.ai_lean_to_english" {code_block=false}
 

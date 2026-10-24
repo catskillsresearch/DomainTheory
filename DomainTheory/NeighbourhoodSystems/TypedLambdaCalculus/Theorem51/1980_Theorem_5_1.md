@@ -6,10 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/abs_apply.lean](abs_apply.lean)**
 
 @import "abs_apply.lean"
@@ -39,8 +35,6 @@
 @import "var_snd.lean"
 
 ## AI: AI-Lean to AI-English
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "abs_apply.ai_lean_to_english" {code_block=false}
 

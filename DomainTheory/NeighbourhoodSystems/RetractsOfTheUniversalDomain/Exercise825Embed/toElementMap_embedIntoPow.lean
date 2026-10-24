@@ -3,7 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise618
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.embedIntoPow
 
 @[expose] public section
 

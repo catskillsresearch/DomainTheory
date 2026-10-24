@@ -1,7 +1,8 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.compApp
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.compMap
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.toElementMap_compMap_apply
 
 @[expose] public section

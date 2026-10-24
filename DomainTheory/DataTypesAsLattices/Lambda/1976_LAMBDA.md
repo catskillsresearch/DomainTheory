@@ -402,10 +402,6 @@
 
 @import "termShift.lean"
 
-**[DataTypesAsLattices/Lambda/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "../Computability/combinatory_isLambdaDefinable.ai_lean_to_english" {code_block=false}
@@ -606,4 +602,3 @@
 
 @import "termShift.ai_lean_to_english" {code_block=false}
 
-@import "Basic.ai_lean_to_english" {code_block=false}

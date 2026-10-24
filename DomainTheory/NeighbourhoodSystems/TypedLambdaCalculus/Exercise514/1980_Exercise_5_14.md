@@ -62,10 +62,6 @@
 
 @import "IsApprox.lean"
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/tag_surjective.lean](tag_surjective.lean)**
 
 @import "tag_surjective.lean"
@@ -103,8 +99,6 @@
 @import "Graph.ai_lean_to_english" {code_block=false}
 
 @import "IsApprox.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "tag_surjective.ai_lean_to_english" {code_block=false}
 

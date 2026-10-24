@@ -6,10 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition810/Basic.lean](../Proposition810/Basic.lean)**
-
-@import "../Proposition810/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition810/arrowComb_eq.lean](../Proposition810/arrowComb_eq.lean)**
 
 @import "../Proposition810/arrowComb_eq.lean"
@@ -326,13 +322,7 @@
 
 @import "sumComb_elementIso.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition810b/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
-
-@import "../Proposition810/Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Proposition810/arrowComb_eq.ai_lean_to_english" {code_block=false}
 
@@ -491,8 +481,6 @@
 @import "JSumComb_comp_ISumComb.ai_lean_to_english" {code_block=false}
 
 @import "sumComb_elementIso.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

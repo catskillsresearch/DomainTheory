@@ -178,10 +178,6 @@
 
 @import "cdEquiv.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise822/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "B_subsystem_C.ai_lean_to_english" {code_block=false}
@@ -269,8 +265,6 @@
 @import "toD'_fromD'.ai_lean_to_english" {code_block=false}
 
 @import "cdEquiv.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

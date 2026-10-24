@@ -78,10 +78,6 @@
 
 @import "g.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Exercise317/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainConstructs/Exercise317/prefix_of_encSet_subset.lean](prefix_of_encSet_subset.lean)**
 
 @import "prefix_of_encSet_subset.lean"
@@ -135,8 +131,6 @@
 @import "f.ai_lean_to_english" {code_block=false}
 
 @import "g.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "prefix_of_encSet_subset.ai_lean_to_english" {code_block=false}
 

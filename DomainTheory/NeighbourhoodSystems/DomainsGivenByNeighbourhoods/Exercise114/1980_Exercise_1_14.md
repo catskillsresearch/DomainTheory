@@ -38,10 +38,6 @@
 
 @import "fin.lean"
 
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise114/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise114/singleton_isTotal.lean](singleton_isTotal.lean)**
 
 @import "singleton_isTotal.lean"
@@ -67,8 +63,6 @@
 @import "bot.ai_lean_to_english" {code_block=false}
 
 @import "fin.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "singleton_isTotal.ai_lean_to_english" {code_block=false}
 

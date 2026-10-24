@@ -10,10 +10,6 @@
 
 @import "chainUnion.lean"
 
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise124/le_chainUnion.lean](le_chainUnion.lean)**
 
 @import "le_chainUnion.lean"
@@ -29,8 +25,6 @@
 ## AI: AI-Lean to AI-English
 
 @import "chainUnion.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "le_chainUnion.ai_lean_to_english" {code_block=false}
 

@@ -130,10 +130,6 @@
 
 @import "funpairC.lean"
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Table55/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/TypedLambdaCalculus/Table55.lean](../Table55.lean)**
 
 @import "../Table55.lean"
@@ -295,8 +291,6 @@
 @import "funpairMapTbl.ai_lean_to_english" {code_block=false}
 
 @import "funpairC.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Table55.ai_lean_to_english" {code_block=false}
 

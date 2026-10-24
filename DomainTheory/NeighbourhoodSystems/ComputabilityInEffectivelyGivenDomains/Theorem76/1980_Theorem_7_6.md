@@ -58,10 +58,6 @@
 
 @import "gStepsOK.lean"
 
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem76/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem76/gStepsOK_complete.lean](gStepsOK_complete.lean)**
 
 @import "gStepsOK_complete.lean"
@@ -129,8 +125,6 @@
 @import "gLastOf.ai_lean_to_english" {code_block=false}
 
 @import "gStepsOK.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "gStepsOK_complete.ai_lean_to_english" {code_block=false}
 

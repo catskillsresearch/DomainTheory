@@ -170,10 +170,6 @@
 
 @import "../Exercise813b/Entails.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise813b/Basic.lean](../Exercise813b/Basic.lean)**
-
-@import "../Exercise813b/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise813c/genPoint.lean](genPoint.lean)**
 
 @import "genPoint.lean"
@@ -445,8 +441,6 @@
 @import "../Exercise813b/toSet_mk.ai_lean_to_english" {code_block=false}
 
 @import "../Exercise813b/Entails.ai_lean_to_english" {code_block=false}
-
-@import "../Exercise813b/Basic.ai_lean_to_english" {code_block=false}
 
 @import "genPoint.ai_lean_to_english" {code_block=false}
 

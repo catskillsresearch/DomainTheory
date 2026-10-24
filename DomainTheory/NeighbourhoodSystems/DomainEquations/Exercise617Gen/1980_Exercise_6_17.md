@@ -1050,10 +1050,6 @@
 
 @import "CfinIsInitial.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Exercise617Gen/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "../Exercise617Inst3.ai_lean_to_english" {code_block=false}
@@ -1577,8 +1573,6 @@
 @import "CnisInitial.ai_lean_to_english" {code_block=false}
 
 @import "CfinIsInitial.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

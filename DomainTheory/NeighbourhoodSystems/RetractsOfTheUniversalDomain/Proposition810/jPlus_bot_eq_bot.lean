@@ -3,7 +3,6 @@ module
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.Basic
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_bot_eq_bot_of_comp_eq_idMap
 
 @[expose] public section

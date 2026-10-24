@@ -10,10 +10,6 @@
 
 @import "idMap.lean"
 
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition54/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition54.lean](../Proposition54.lean)**
 
 @import "../Proposition54.lean"
@@ -21,8 +17,6 @@
 ## AI: AI-Lean to AI-English
 
 @import "idMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Proposition54.ai_lean_to_english" {code_block=false}
 

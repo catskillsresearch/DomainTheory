@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e.part_e
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.other_8
 
 @[expose] public section

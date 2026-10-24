@@ -18,10 +18,6 @@
 
 @import "Graph.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/graph_succ_right.lean](graph_succ_right.lean)**
 
 @import "graph_succ_right.lean"
@@ -53,8 +49,6 @@
 @import "PeanoModel.ai_lean_to_english" {code_block=false}
 
 @import "Graph.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "graph_succ_right.ai_lean_to_english" {code_block=false}
 

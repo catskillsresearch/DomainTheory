@@ -1,7 +1,8 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise121.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise121.IsComplete
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise121.filterFixedBy
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise121.bracket_nonempty_iff
 
 @[expose] public section

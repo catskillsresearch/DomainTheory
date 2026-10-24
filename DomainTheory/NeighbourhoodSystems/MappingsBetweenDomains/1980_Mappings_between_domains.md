@@ -90,10 +90,6 @@
 
 @import "Approximable/ofIso.lean"
 
-**[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/Basic.lean](Approximable/Basic.lean)**
-
-@import "Approximable/Basic.lean"
-
 **[NeighbourhoodSystems/MappingsBetweenDomains/Approximable/toElementMap_mono.lean](Approximable/toElementMap_mono.lean)**
 
 @import "Approximable/toElementMap_mono.lean"
@@ -331,8 +327,6 @@
 @import "Approximable/toElementMap_idMap.ai_lean_to_english" {code_block=false}
 
 @import "Approximable/ofIso.ai_lean_to_english" {code_block=false}
-
-@import "Approximable/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Approximable/toElementMap_mono.ai_lean_to_english" {code_block=false}
 

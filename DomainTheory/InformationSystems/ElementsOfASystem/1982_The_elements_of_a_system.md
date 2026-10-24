@@ -10,10 +10,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[InformationSystems/ElementsOfASystem/Factoid32/Basic.lean](Factoid32/Basic.lean)**
-
-@import "Factoid32/Basic.lean"
-
 **[InformationSystems/ElementsOfASystem/Factoid32/factoid_3_2.lean](Factoid32/factoid_3_2.lean)**
 
 @import "Factoid32/factoid_3_2.lean"
@@ -25,10 +21,6 @@
 **[InformationSystems/ElementsOfASystem/Factoid33/botElement.lean](Factoid33/botElement.lean)**
 
 @import "Factoid33/botElement.lean"
-
-**[InformationSystems/ElementsOfASystem/Factoid33/Basic.lean](Factoid33/Basic.lean)**
-
-@import "Factoid33/Basic.lean"
 
 **[InformationSystems/ElementsOfASystem/Factoid33.lean](Factoid33.lean)**
 
@@ -86,10 +78,6 @@
 
 @import "Factoid35/closure.lean"
 
-**[InformationSystems/ElementsOfASystem/Factoid35/Basic.lean](Factoid35/Basic.lean)**
-
-@import "Factoid35/Basic.lean"
-
 **[InformationSystems/ElementsOfASystem/Factoid35/mem_closure_iff.lean](Factoid35/mem_closure_iff.lean)**
 
 @import "Factoid35/mem_closure_iff.lean"
@@ -105,10 +93,6 @@
 **[InformationSystems/ElementsOfASystem/Factoid36/approxUnion.lean](Factoid36/approxUnion.lean)**
 
 @import "Factoid36/approxUnion.lean"
-
-**[InformationSystems/ElementsOfASystem/Factoid36/Basic.lean](Factoid36/Basic.lean)**
-
-@import "Factoid36/Basic.lean"
 
 **[InformationSystems/ElementsOfASystem/Factoid36/closure_le_element.lean](Factoid36/closure_le_element.lean)**
 
@@ -158,33 +142,17 @@
 
 @import "../InformationSystems/Factoid26/Basic.lean"
 
-**[InformationSystems/InformationSystems/Definition22/Basic.lean](../InformationSystems/Definition22/Basic.lean)**
-
-@import "../InformationSystems/Definition22/Basic.lean"
-
 **[InformationSystems/InformationSystems/Definition22.lean](../InformationSystems/Definition22.lean)**
 
 @import "../InformationSystems/Definition22.lean"
 
-**[InformationSystems/InformationSystems/Proposition23/Basic.lean](../InformationSystems/Proposition23/Basic.lean)**
-
-@import "../InformationSystems/Proposition23/Basic.lean"
-
-**[InformationSystems/ElementsOfASystem/Factoid34/Basic.lean](Factoid34/Basic.lean)**
-
-@import "Factoid34/Basic.lean"
-
 ## AI: AI-Lean to AI-English
-
-@import "Factoid32/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Factoid32/factoid_3_2.ai_lean_to_english" {code_block=false}
 
 @import "Factoid32.ai_lean_to_english" {code_block=false}
 
 @import "Factoid33/botElement.ai_lean_to_english" {code_block=false}
-
-@import "Factoid33/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Factoid33.ai_lean_to_english" {code_block=false}
 
@@ -214,8 +182,6 @@
 
 @import "Factoid35/closure.ai_lean_to_english" {code_block=false}
 
-@import "Factoid35/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Factoid35/mem_closure_iff.ai_lean_to_english" {code_block=false}
 
 @import "Factoid35/subset_closure.ai_lean_to_english" {code_block=false}
@@ -223,8 +189,6 @@
 @import "Factoid35.ai_lean_to_english" {code_block=false}
 
 @import "Factoid36/approxUnion.ai_lean_to_english" {code_block=false}
-
-@import "Factoid36/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Factoid36/closure_le_element.ai_lean_to_english" {code_block=false}
 
@@ -250,13 +214,7 @@
 
 @import "../InformationSystems/Factoid26/Basic.ai_lean_to_english" {code_block=false}
 
-@import "../InformationSystems/Definition22/Basic.ai_lean_to_english" {code_block=false}
-
 @import "../InformationSystems/Definition22.ai_lean_to_english" {code_block=false}
-
-@import "../InformationSystems/Proposition23/Basic.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

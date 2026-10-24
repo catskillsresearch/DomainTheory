@@ -6,10 +6,6 @@
 
 @import "../UBisection2/bisection.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/UBisection2/Basic.lean](../UBisection2/Basic.lean)**
-
-@import "../UBisection2/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "../UBisection2/forall_bounds_decodeQPairList_canonCode.ai_lean_to_english" {code_block=false}
@@ -35,8 +31,6 @@
 @import "../UBisection2/splitU2Left_congr.ai_lean_to_english" {code_block=false}
 
 @import "../UBisection2/UBisection2.ai_lean_to_english" {code_block=false}
-
-@import "../UBisection2/Basic.ai_lean_to_english" {code_block=false}
 
 @import "../UBisection2/zero_le_listMaxSnd.ai_lean_to_english" {code_block=false}
 

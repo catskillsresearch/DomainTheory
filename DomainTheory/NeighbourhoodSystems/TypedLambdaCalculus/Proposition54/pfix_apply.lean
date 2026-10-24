@@ -1,7 +1,9 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.section₂
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.pfix
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.recOp
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixMap_toElementMap
 @[expose] public section

@@ -1,6 +1,12 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.MonotoneAt
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.MonotoneOnDomains
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.targetFam
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.ContinuousOnDomains
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.monotoneOnDomains_id
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.continuousOnDomains_id
 

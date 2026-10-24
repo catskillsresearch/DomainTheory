@@ -1,7 +1,15 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Dom
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Poly
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.CL
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Sbody
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Smap
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Ielem
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Kelem
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Selem
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.bracket
 
 @[expose] public section
 

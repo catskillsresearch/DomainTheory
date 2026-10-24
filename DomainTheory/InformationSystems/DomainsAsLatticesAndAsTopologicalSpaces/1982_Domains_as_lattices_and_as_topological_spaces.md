@@ -14,10 +14,6 @@
 
 @import "Factoid41/inf.lean"
 
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/Basic.lean](Factoid41/Basic.lean)**
-
-@import "Factoid41/Basic.lean"
-
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/le_iff_inf_eq.lean](Factoid41/le_iff_inf_eq.lean)**
 
 @import "Factoid41/le_iff_inf_eq.lean"
@@ -66,10 +62,6 @@
 
 @import "Factoid42/familyInf.lean"
 
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/Basic.lean](Factoid42/Basic.lean)**
-
-@import "Factoid42/Basic.lean"
-
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/le_familyInf.lean](Factoid42/le_familyInf.lean)**
 
 @import "Factoid42/le_familyInf.lean"
@@ -111,10 +103,6 @@
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/join.lean](Factoid43/join.lean)**
 
 @import "Factoid43/join.lean"
-
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/Basic.lean](Factoid43/Basic.lean)**
-
-@import "Factoid43/Basic.lean"
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/subset_deductiveClosure.lean](Factoid43/subset_deductiveClosure.lean)**
 
@@ -172,10 +160,6 @@
 
 @import "Factoid44/chainSup.lean"
 
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/Basic.lean](Factoid44/Basic.lean)**
-
-@import "Factoid44/Basic.lean"
-
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/le_directedSup.lean](Factoid44/le_directedSup.lean)**
 
 @import "Factoid44/le_directedSup.lean"
@@ -195,10 +179,6 @@
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/finiteApproximants.lean](Factoid45/finiteApproximants.lean)**
 
 @import "Factoid45/finiteApproximants.lean"
-
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/Basic.lean](Factoid45/Basic.lean)**
-
-@import "Factoid45/Basic.lean"
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/nonempty_finiteApproximants.lean](Factoid45/nonempty_finiteApproximants.lean)**
 
@@ -256,8 +236,6 @@
 
 @import "Factoid41/inf.ai_lean_to_english" {code_block=false}
 
-@import "Factoid41/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Factoid41/le_iff_inf_eq.ai_lean_to_english" {code_block=false}
 
 @import "Factoid41.ai_lean_to_english" {code_block=false}
@@ -282,8 +260,6 @@
 
 @import "Factoid42/familyInf.ai_lean_to_english" {code_block=false}
 
-@import "Factoid42/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Factoid42/le_familyInf.ai_lean_to_english" {code_block=false}
 
 @import "Factoid42/familyInf_le_iff.ai_lean_to_english" {code_block=false}
@@ -305,8 +281,6 @@
 @import "Factoid43/finitelyConsistent_of_upperBound.ai_lean_to_english" {code_block=false}
 
 @import "Factoid43/join.ai_lean_to_english" {code_block=false}
-
-@import "Factoid43/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Factoid43/subset_deductiveClosure.ai_lean_to_english" {code_block=false}
 
@@ -336,8 +310,6 @@
 
 @import "Factoid44/chainSup.ai_lean_to_english" {code_block=false}
 
-@import "Factoid44/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Factoid44/le_directedSup.ai_lean_to_english" {code_block=false}
 
 @import "Factoid45/botElement_eq_closure_empty.ai_lean_to_english" {code_block=false}
@@ -347,8 +319,6 @@
 @import "Factoid45/directed_finiteApproximants.ai_lean_to_english" {code_block=false}
 
 @import "Factoid45/finiteApproximants.ai_lean_to_english" {code_block=false}
-
-@import "Factoid45/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Factoid45/nonempty_finiteApproximants.ai_lean_to_english" {code_block=false}
 

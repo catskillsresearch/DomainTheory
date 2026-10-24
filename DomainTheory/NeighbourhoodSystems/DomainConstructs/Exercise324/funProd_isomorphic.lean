@@ -2,7 +2,8 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324.funProdEquiv
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324.funProdIso
 
 @[expose] public section
 

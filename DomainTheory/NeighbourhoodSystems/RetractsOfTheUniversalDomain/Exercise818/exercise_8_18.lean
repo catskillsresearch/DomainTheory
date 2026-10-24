@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise818.Basic
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b.finitaryProjection_combinators
 @[expose] public section

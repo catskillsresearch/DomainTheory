@@ -154,10 +154,6 @@
 
 @import "fixSetOrderIso.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise814/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "ClosureOperator.ai_lean_to_english" {code_block=false}
@@ -233,8 +229,6 @@
 @import "fromElementFilter_toElementFilter.ai_lean_to_english" {code_block=false}
 
 @import "fixSetOrderIso.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

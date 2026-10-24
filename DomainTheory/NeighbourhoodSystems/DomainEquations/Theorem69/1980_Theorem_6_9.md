@@ -62,10 +62,6 @@
 
 @import "homOp.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Theorem69/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "comp_mono_gen.ai_lean_to_english" {code_block=false}
@@ -95,8 +91,6 @@
 @import "toStrictMap_mono.ai_lean_to_english" {code_block=false}
 
 @import "homOp.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

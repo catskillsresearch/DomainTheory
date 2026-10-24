@@ -70,10 +70,6 @@
 
 @import "unitProdD.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Exercise315/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainConstructs/Exercise315/unit_prod_isomorphic.lean](unit_prod_isomorphic.lean)**
 
 @import "unit_prod_isomorphic.lean"
@@ -111,8 +107,6 @@
 @import "prodUnitD.ai_lean_to_english" {code_block=false}
 
 @import "unitProdD.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "unit_prod_isomorphic.ai_lean_to_english" {code_block=false}
 

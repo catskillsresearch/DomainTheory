@@ -418,10 +418,6 @@ Algebraic lattices and closure operations predate the paper: Grätzer (1968) for
 
 @import "boxTensor.lean"
 
-**[DataTypesAsLattices/Closures/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[DataTypesAsLattices/Closures/squareSnd_bot.lean](squareSnd_bot.lean)**
 
 @import "squareSnd_bot.lean"
@@ -813,8 +809,6 @@ Algebraic lattices and closure operations predate the paper: Grätzer (1968) for
 @import "boxPlus.ai_lean_to_english" {code_block=false}
 
 @import "boxTensor.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "squareSnd_bot.ai_lean_to_english" {code_block=false}
 

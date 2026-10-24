@@ -10,10 +10,6 @@
 
 @import "bigPsi.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise409/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise409/bigPsi_apply.lean](bigPsi_apply.lean)**
 
 @import "bigPsi_apply.lean"
@@ -41,8 +37,6 @@
 ## AI: AI-Lean to AI-English
 
 @import "bigPsi.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "bigPsi_apply.ai_lean_to_english" {code_block=false}
 

@@ -142,10 +142,6 @@
 
 @import "../Theorem56/strictProj₀.lean"
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem56/Basic.lean](../Theorem56/Basic.lean)**
-
-@import "../Theorem56/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "../Theorem56/T_bot_eq.ai_lean_to_english" {code_block=false}
@@ -215,8 +211,6 @@
 @import "../Theorem56/strictProju2080_natElem.ai_lean_to_english" {code_block=false}
 
 @import "../Theorem56/strictProj₀.ai_lean_to_english" {code_block=false}
-
-@import "../Theorem56/Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

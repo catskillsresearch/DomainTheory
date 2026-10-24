@@ -150,10 +150,6 @@
 
 @import "Theorem88a/domainIso.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88a/Basic.lean](Theorem88a/Basic.lean)**
-
-@import "Theorem88a/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88a/idxSet_eq_iff.lean](Theorem88a/idxSet_eq_iff.lean)**
 
 @import "Theorem88a/idxSet_eq_iff.lean"
@@ -225,10 +221,6 @@
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/DAtomDecidable/DAtomEmptyChar.lean](DAtomDecidable/DAtomEmptyChar.lean)**
 
 @import "DAtomDecidable/DAtomEmptyChar.lean"
-
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/DAtomDecidable/Basic.lean](DAtomDecidable/Basic.lean)**
-
-@import "DAtomDecidable/Basic.lean"
 
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/DAtomDecidable/meetStep_ok_le_one.lean](DAtomDecidable/meetStep_ok_le_one.lean)**
 
@@ -385,10 +377,6 @@
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88c/DprimeUPresentation.lean](Theorem88c/DprimeUPresentation.lean)**
 
 @import "Theorem88c/DprimeUPresentation.lean"
-
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88c/Basic.lean](Theorem88c/Basic.lean)**
-
-@import "Theorem88c/Basic.lean"
 
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88d/packState.lean](Theorem88d/packState.lean)**
 
@@ -798,14 +786,6 @@
 
 @import "Theorem88e/domainIsoCode.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88e/Basic.lean](Theorem88e/Basic.lean)**
-
-@import "Theorem88e/Basic.lean"
-
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88f/Basic.lean](Theorem88f/Basic.lean)**
-
-@import "Theorem88f/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88f/DprimeUCode_inj_isComputableMap.lean](Theorem88f/DprimeUCode_inj_isComputableMap.lean)**
 
 @import "Theorem88f/DprimeUCode_inj_isComputableMap.lean"
@@ -818,10 +798,6 @@
 
 @import "Theorem88f/DprimeUCode_projectionPair_isComputable.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88g/Basic.lean](Theorem88g/Basic.lean)**
-
-@import "Theorem88g/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88g/theorem_8_8_b.lean](Theorem88g/theorem_8_8_b.lean)**
 
 @import "Theorem88g/theorem_8_8_b.lean"
@@ -829,10 +805,6 @@
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88h/DiagFixed.lean](Theorem88h/DiagFixed.lean)**
 
 @import "Theorem88h/DiagFixed.lean"
-
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88h/Basic.lean](Theorem88h/Basic.lean)**
-
-@import "Theorem88h/Basic.lean"
 
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88h/diagFixed_iff_fixedNbhd_mem.lean](Theorem88h/diagFixed_iff_fixedNbhd_mem.lean)**
 
@@ -878,10 +850,6 @@
 
 @import "Theorem88i/myFoldCode.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88i/Basic.lean](Theorem88i/Basic.lean)**
-
-@import "Theorem88i/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88i/myStep_diagFixed_of_diagFixed.lean](Theorem88i/myStep_diagFixed_of_diagFixed.lean)**
 
 @import "Theorem88i/myStep_diagFixed_of_diagFixed.lean"
@@ -910,10 +878,6 @@
 
 @import "Theorem88j/D_X.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88j/Basic.lean](Theorem88j/Basic.lean)**
-
-@import "Theorem88j/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88j/D_X_mem.lean](Theorem88j/D_X_mem.lean)**
 
 @import "Theorem88j/D_X_mem.lean"
@@ -925,10 +889,6 @@
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88j/D_X_surj.lean](Theorem88j/D_X_surj.lean)**
 
 @import "Theorem88j/D_X_surj.lean"
-
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88k/Basic.lean](Theorem88k/Basic.lean)**
-
-@import "Theorem88k/Basic.lean"
 
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88k/D_X_cons_iff.lean](Theorem88k/D_X_cons_iff.lean)**
 
@@ -950,10 +910,6 @@
 
 @import "Theorem88l/D_inter.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88l/Basic.lean](Theorem88l/Basic.lean)**
-
-@import "Theorem88l/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88l/D_inter_primrec.lean](Theorem88l/D_inter_primrec.lean)**
 
 @import "Theorem88l/D_inter_primrec.lean"
@@ -973,10 +929,6 @@
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88l/D_X_inter_spec.lean](Theorem88l/D_X_inter_spec.lean)**
 
 @import "Theorem88l/D_X_inter_spec.lean"
-
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88m/Basic.lean](Theorem88m/Basic.lean)**
-
-@import "Theorem88m/Basic.lean"
 
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88m/fixedNbhd_isEffectivelyGiven.lean](Theorem88m/fixedNbhd_isEffectivelyGiven.lean)**
 
@@ -1025,10 +977,6 @@
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88n/isoProj.lean](Theorem88n/isoProj.lean)**
 
 @import "Theorem88n/isoProj.lean"
-
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88n/Basic.lean](Theorem88n/Basic.lean)**
-
-@import "Theorem88n/Basic.lean"
 
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem88n/isoProj_comp_isoInj.lean](Theorem88n/isoProj_comp_isoInj.lean)**
 
@@ -1120,8 +1068,6 @@
 
 @import "Theorem88a/domainIso.ai_lean_to_english" {code_block=false}
 
-@import "Theorem88a/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Theorem88a/idxSet_eq_iff.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88a/idxSet_nonempty.ai_lean_to_english" {code_block=false}
@@ -1157,8 +1103,6 @@
 @import "DAtomDecidable/meetFoldCode.ai_lean_to_english" {code_block=false}
 
 @import "DAtomDecidable/DAtomEmptyChar.ai_lean_to_english" {code_block=false}
-
-@import "DAtomDecidable/Basic.ai_lean_to_english" {code_block=false}
 
 @import "DAtomDecidable/meetStep_ok_le_one.ai_lean_to_english" {code_block=false}
 
@@ -1237,8 +1181,6 @@
 @import "Theorem88c/DprimeU_interEq_computable.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88c/DprimeUPresentation.ai_lean_to_english" {code_block=false}
-
-@import "Theorem88c/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88d/packState.ai_lean_to_english" {code_block=false}
 
@@ -1444,23 +1386,15 @@
 
 @import "Theorem88e/domainIsoCode.ai_lean_to_english" {code_block=false}
 
-@import "Theorem88e/Basic.ai_lean_to_english" {code_block=false}
-
-@import "Theorem88f/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Theorem88f/DprimeUCode_inj_isComputableMap.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88f/DprimeUCode_proj_isComputableMap.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88f/DprimeUCode_projectionPair_isComputable.ai_lean_to_english" {code_block=false}
 
-@import "Theorem88g/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Theorem88g/theorem_8_8_b.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88h/DiagFixed.ai_lean_to_english" {code_block=false}
-
-@import "Theorem88h/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88h/diagFixed_iff_fixedNbhd_mem.ai_lean_to_english" {code_block=false}
 
@@ -1484,8 +1418,6 @@
 
 @import "Theorem88i/myFoldCode.ai_lean_to_english" {code_block=false}
 
-@import "Theorem88i/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Theorem88i/myStep_diagFixed_of_diagFixed.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88i/myFold_diagFixed_of_diagFixed.ai_lean_to_english" {code_block=false}
@@ -1500,15 +1432,11 @@
 
 @import "Theorem88j/D_X.ai_lean_to_english" {code_block=false}
 
-@import "Theorem88j/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Theorem88j/D_X_mem.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88j/D_X_of_diagFixed.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88j/D_X_surj.ai_lean_to_english" {code_block=false}
-
-@import "Theorem88k/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88k/D_X_cons_iff.ai_lean_to_english" {code_block=false}
 
@@ -1520,8 +1448,6 @@
 
 @import "Theorem88l/D_inter.ai_lean_to_english" {code_block=false}
 
-@import "Theorem88l/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Theorem88l/D_inter_primrec.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88l/myStep_subset.ai_lean_to_english" {code_block=false}
@@ -1531,8 +1457,6 @@
 @import "Theorem88l/myFoldl_inter_of_le.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88l/D_X_inter_spec.ai_lean_to_english" {code_block=false}
-
-@import "Theorem88m/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88m/fixedNbhd_isEffectivelyGiven.ai_lean_to_english" {code_block=false}
 
@@ -1557,8 +1481,6 @@
 @import "Theorem88n/isoInj_isComputableMap.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88n/isoProj.ai_lean_to_english" {code_block=false}
-
-@import "Theorem88n/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Theorem88n/isoProj_comp_isoInj.ai_lean_to_english" {code_block=false}
 

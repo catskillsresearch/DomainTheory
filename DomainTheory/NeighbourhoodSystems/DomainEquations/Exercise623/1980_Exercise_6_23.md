@@ -358,10 +358,6 @@
 
 @import "ExpInitial.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Exercise623/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainEquations/Exercise623/Subsystemu2eproj_isStrict.lean](Subsystemu2eproj_isStrict.lean)**
 
 @import "Subsystemu2eproj_isStrict.lean"
@@ -563,8 +559,6 @@
 @import "descMap_eq_algHom.ai_lean_to_english" {code_block=false}
 
 @import "ExpInitial.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "Subsystemu2eproj_isStrict.ai_lean_to_english" {code_block=false}
 

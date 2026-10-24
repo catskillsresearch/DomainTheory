@@ -2,7 +2,10 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise323.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise323.toUnit
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise323.homAdjunction
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise323.BasicInst4
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise323.BasicInst5
 
 @[expose] public section
 

@@ -50,10 +50,6 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 
 @import "../FixedLattices/finiteBasisSups.lean"
 
-**[DataTypesAsLattices/FixedLattices/Basic.lean](../FixedLattices/Basic.lean)**
-
-@import "../FixedLattices/Basic.lean"
-
 **[DataTypesAsLattices/FixedLattices/finiteBasisSups_directed.lean](../FixedLattices/finiteBasisSups_directed.lean)**
 
 @import "../FixedLattices/finiteBasisSups_directed.lean"
@@ -437,8 +433,6 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 @import "../FixedLattices/ContinuousBasis.ai_lean_to_english" {code_block=false}
 
 @import "../FixedLattices/finiteBasisSups.ai_lean_to_english" {code_block=false}
-
-@import "../FixedLattices/Basic.ai_lean_to_english" {code_block=false}
 
 @import "../FixedLattices/finiteBasisSups_directed.ai_lean_to_english" {code_block=false}
 

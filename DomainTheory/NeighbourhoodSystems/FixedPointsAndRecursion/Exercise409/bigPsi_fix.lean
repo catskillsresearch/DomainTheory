@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise409.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise409.bigPsi
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise409.bigPsi_apply
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise409.toApproxMap_toFilter_fixMap
 

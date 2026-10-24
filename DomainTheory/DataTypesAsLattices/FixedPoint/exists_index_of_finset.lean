@@ -1,7 +1,8 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph
-public import DomainTheory.DataTypesAsLattices.FixedPoint.Basic
+public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
+public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
 public import DomainTheory.DataTypesAsLattices.FixedPoint.chain_mono
 
 @[expose] public section

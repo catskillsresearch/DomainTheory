@@ -1,6 +1,7 @@
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Definition22.Basic
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys
+public import DomainTheory.InformationSystems.InformationSystems.Definition22.EntSet
 public import DomainTheory.InformationSystems.InformationSystems.Definition22.entSet_empty
 public import DomainTheory.InformationSystems.InformationSystems.Definition22.entSet_singleton
 

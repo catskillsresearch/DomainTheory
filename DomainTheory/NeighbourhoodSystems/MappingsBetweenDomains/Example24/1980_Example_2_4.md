@@ -82,10 +82,6 @@
 
 @import "runMap.lean"
 
-**[NeighbourhoodSystems/MappingsBetweenDomains/Example24/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/MappingsBetweenDomains/Example24/runMap_rel_cone.lean](runMap_rel_cone.lean)**
 
 @import "runMap_rel_cone.lean"
@@ -153,8 +149,6 @@
 @import "key.ai_lean_to_english" {code_block=false}
 
 @import "runMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "runMap_rel_cone.ai_lean_to_english" {code_block=false}
 

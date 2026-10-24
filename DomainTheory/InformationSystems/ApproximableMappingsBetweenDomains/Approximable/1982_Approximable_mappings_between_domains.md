@@ -42,10 +42,6 @@
 
 @import "../Approximable.lean"
 
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/Basic.lean](../../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/Basic.lean)**
-
-@import "../../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "ApproximableMap.ai_lean_to_english" {code_block=false}
@@ -63,8 +59,6 @@
 @import "toElement_mono.ai_lean_to_english" {code_block=false}
 
 @import "../Approximable.ai_lean_to_english" {code_block=false}
-
-@import "../../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

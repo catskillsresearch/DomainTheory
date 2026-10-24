@@ -22,10 +22,6 @@
 
 @import "../Lambda.lean"
 
-**[DataTypesAsLattices/Computability/Basic.lean](../Computability/Basic.lean)**
-
-@import "../Computability/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "theorem_2_5.ai_lean_to_english" {code_block=false}
@@ -35,8 +31,6 @@
 @import "eq_2_24_Ycomb.ai_lean_to_english" {code_block=false}
 
 @import "../Lambda.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

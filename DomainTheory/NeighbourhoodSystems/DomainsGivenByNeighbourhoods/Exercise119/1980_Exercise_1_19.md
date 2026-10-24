@@ -78,10 +78,6 @@
 
 @import "positiveExample.lean"
 
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise119/positiveExample_isPositive.lean](positiveExample_isPositive.lean)**
 
 @import "positiveExample_isPositive.lean"
@@ -123,8 +119,6 @@
 @import "../Exercise119.ai_lean_to_english" {code_block=false}
 
 @import "positiveExample.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "positiveExample_isPositive.ai_lean_to_english" {code_block=false}
 

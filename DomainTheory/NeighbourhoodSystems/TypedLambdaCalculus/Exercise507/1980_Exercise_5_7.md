@@ -18,10 +18,6 @@
 
 @import "curry₃.lean"
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/lam_two_vars.lean](lam_two_vars.lean)**
 
 @import "lam_two_vars.lean"
@@ -49,8 +45,6 @@
 @import "curryu2083_apply.ai_lean_to_english" {code_block=false}
 
 @import "curry₃.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "lam_two_vars.ai_lean_to_english" {code_block=false}
 

@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.prodMap
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.toElementMap_prodMap
 
 @[expose] public section

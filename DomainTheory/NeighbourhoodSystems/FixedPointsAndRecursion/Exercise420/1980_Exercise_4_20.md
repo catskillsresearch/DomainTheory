@@ -6,10 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise420/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise420/comp_fixElement_isFixed.lean](comp_fixElement_isFixed.lean)**
 
 @import "comp_fixElement_isFixed.lean"
@@ -23,8 +19,6 @@
 @import "../Exercise420.lean"
 
 ## AI: AI-Lean to AI-English
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "comp_fixElement_isFixed.ai_lean_to_english" {code_block=false}
 

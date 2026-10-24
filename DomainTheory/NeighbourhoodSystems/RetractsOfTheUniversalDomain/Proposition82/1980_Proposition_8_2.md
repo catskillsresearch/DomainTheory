@@ -26,10 +26,6 @@
 
 @import "elementIso.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retraction_of_subsystem.lean](retraction_of_subsystem.lean)**
 
 @import "retraction_of_subsystem.lean"
@@ -49,8 +45,6 @@
 @import "retractionOfSubsystem_toElementMap_inj.ai_lean_to_english" {code_block=false}
 
 @import "elementIso.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "retraction_of_subsystem.ai_lean_to_english" {code_block=false}
 

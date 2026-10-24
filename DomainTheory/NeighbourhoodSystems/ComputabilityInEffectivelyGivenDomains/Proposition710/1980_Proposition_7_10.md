@@ -198,10 +198,6 @@
 
 @import "PDPresentation.lean"
 
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "NeighborhoodSystemu2ePowerDomain_isEffectivelyGiven.ai_lean_to_english" {code_block=false}
@@ -299,8 +295,6 @@
 @import "Ypd_interEq_computable.ai_lean_to_english" {code_block=false}
 
 @import "PDPresentation.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

@@ -10,10 +10,6 @@
 
 @import "phi.lean"
 
-**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_mem.lean](phi_mem.lean)**
 
 @import "phi_mem.lean"
@@ -37,8 +33,6 @@
 ## AI: AI-Lean to AI-English
 
 @import "phi.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "phi_mem.ai_lean_to_english" {code_block=false}
 

@@ -158,10 +158,6 @@
 
 @import "whichMap.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Exercise326Sum/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainConstructs/Exercise326Sum/which_mem_one.lean](which_mem_one.lean)**
 
 @import "which_mem_one.lean"
@@ -255,8 +251,6 @@
 @import "whichGuard_right.ai_lean_to_english" {code_block=false}
 
 @import "whichMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "which_mem_one.ai_lean_to_english" {code_block=false}
 

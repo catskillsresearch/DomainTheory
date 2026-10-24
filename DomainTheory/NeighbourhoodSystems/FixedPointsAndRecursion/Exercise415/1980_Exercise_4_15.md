@@ -6,10 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/chainUnion_le.lean](chainUnion_le.lean)**
 
 @import "chainUnion_le.lean"
@@ -27,8 +23,6 @@
 @import "../Exercise415.lean"
 
 ## AI: AI-Lean to AI-English
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "chainUnion_le.ai_lean_to_english" {code_block=false}
 

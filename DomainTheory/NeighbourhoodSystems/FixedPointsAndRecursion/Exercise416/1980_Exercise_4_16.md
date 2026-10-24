@@ -14,10 +14,6 @@
 
 @import "optimalFix.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_isFixed.lean](optimalFix_isFixed.lean)**
 
 @import "optimalFix_isFixed.lean"
@@ -43,8 +39,6 @@
 @import "f_sInf_le.ai_lean_to_english" {code_block=false}
 
 @import "optimalFix.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "optimalFix_isFixed.ai_lean_to_english" {code_block=false}
 

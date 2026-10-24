@@ -22,10 +22,6 @@
 
 @import "translateAbs.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_idMap.lean](translateAbs_idMap.lean)**
 
 @import "translateAbs_idMap.lean"
@@ -51,8 +47,6 @@
 @import "Ulam.ai_lean_to_english" {code_block=false}
 
 @import "translateAbs.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "translateAbs_idMap.ai_lean_to_english" {code_block=false}
 

@@ -2,7 +2,13 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.homOpComp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.homOp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.isStrict_comp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.comp_mono_gen
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.toStrictMap_mono
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.toStrictFilter_mono
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.homOpComp_mono
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.toStrictFilter_toStrictMap
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.homOp_rel
 

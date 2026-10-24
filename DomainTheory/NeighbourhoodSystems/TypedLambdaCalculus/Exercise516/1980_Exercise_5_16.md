@@ -382,10 +382,6 @@
 
 @import "../Exercise516ThueMorse/tElt.lean"
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise516ThueMorse/Basic.lean](../Exercise516ThueMorse/Basic.lean)**
-
-@import "../Exercise516ThueMorse/Basic.lean"
-
 **[NeighbourhoodSystems/TypedLambdaCalculus/Exercise516ThueMorse/weave_head.lean](../Exercise516ThueMorse/weave_head.lean)**
 
 @import "../Exercise516ThueMorse/weave_head.lean"
@@ -405,10 +401,6 @@
 **[NeighbourhoodSystems/TypedLambdaCalculus/Exercise516Overlap/Overlap.lean](../Exercise516Overlap/Overlap.lean)**
 
 @import "../Exercise516Overlap/Overlap.lean"
-
-**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise516Overlap/Basic.lean](../Exercise516Overlap/Basic.lean)**
-
-@import "../Exercise516Overlap/Basic.lean"
 
 **[NeighbourhoodSystems/TypedLambdaCalculus/Exercise516Overlap/append_three_period.lean](../Exercise516Overlap/append_three_period.lean)**
 
@@ -656,8 +648,6 @@
 
 @import "../Exercise516ThueMorse/tElt.ai_lean_to_english" {code_block=false}
 
-@import "../Exercise516ThueMorse/Basic.ai_lean_to_english" {code_block=false}
-
 @import "../Exercise516ThueMorse/weave_head.ai_lean_to_english" {code_block=false}
 
 @import "../Exercise516ThueMorse/tmOp_strBot_expand.ai_lean_to_english" {code_block=false}
@@ -667,8 +657,6 @@
 @import "../Exercise516ThueMorse.ai_lean_to_english" {code_block=false}
 
 @import "../Exercise516Overlap/Overlap.ai_lean_to_english" {code_block=false}
-
-@import "../Exercise516Overlap/Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Exercise516Overlap/append_three_period.ai_lean_to_english" {code_block=false}
 

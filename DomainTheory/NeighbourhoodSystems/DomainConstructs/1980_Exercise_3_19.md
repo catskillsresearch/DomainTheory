@@ -14,10 +14,6 @@
 
 @import "Exercise319/prodMap.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Exercise319/Basic.lean](Exercise319/Basic.lean)**
-
-@import "Exercise319/Basic.lean"
-
 **[NeighbourhoodSystems/DomainConstructs/Exercise319/proj_paired.lean](Exercise319/proj_paired.lean)**
 
 @import "Exercise319/proj_paired.lean"
@@ -78,17 +74,11 @@
 
 @import "Exercise319Sum/sumMap.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Exercise319Sum/Basic.lean](Exercise319Sum/Basic.lean)**
-
-@import "Exercise319Sum/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "Exercise319/paired_unique.ai_lean_to_english" {code_block=false}
 
 @import "Exercise319/prodMap.ai_lean_to_english" {code_block=false}
-
-@import "Exercise319/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Exercise319/proj_paired.ai_lean_to_english" {code_block=false}
 
@@ -119,8 +109,6 @@
 @import "Exercise319Sum.ai_lean_to_english" {code_block=false}
 
 @import "Exercise319Sum/sumMap.ai_lean_to_english" {code_block=false}
-
-@import "Exercise319Sum/Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

@@ -30,10 +30,6 @@
 
 @import "../Graph.lean"
 
-**[DataTypesAsLattices/FixedPoint/Basic.lean](../FixedPoint/Basic.lean)**
-
-@import "../FixedPoint/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "theorem_1_2_i.ai_lean_to_english" {code_block=false}
@@ -47,8 +43,6 @@
 @import "theorem_1_2.ai_lean_to_english" {code_block=false}
 
 @import "../Graph.ai_lean_to_english" {code_block=false}
-
-@import "../FixedPoint/Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

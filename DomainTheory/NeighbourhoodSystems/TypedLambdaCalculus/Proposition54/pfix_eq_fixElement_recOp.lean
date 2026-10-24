@@ -1,7 +1,9 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.section₂
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.pfix
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.recOp
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.sectionu2082_apply
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.pfix_apply
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.recOp_apply

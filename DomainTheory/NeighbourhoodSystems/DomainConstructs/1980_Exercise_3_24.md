@@ -14,10 +14,6 @@
 
 @import "Exercise324/funProdIso.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Exercise324/Basic.lean](Exercise324/Basic.lean)**
-
-@import "Exercise324/Basic.lean"
-
 **[NeighbourhoodSystems/DomainConstructs/Exercise324/funProd_isomorphic.lean](Exercise324/funProd_isomorphic.lean)**
 
 @import "Exercise324/funProd_isomorphic.lean"
@@ -62,10 +58,6 @@
 
 @import "Exercise324Distrib/distribMap.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/Basic.lean](Exercise324Distrib/Basic.lean)**
-
-@import "Exercise324Distrib/Basic.lean"
-
 **[NeighbourhoodSystems/DomainConstructs/Exercise324Iter/exists_forall_swap.lean](Exercise324Iter/exists_forall_swap.lean)**
 
 @import "Exercise324Iter/exists_forall_swap.lean"
@@ -106,17 +98,11 @@
 
 @import "Exercise324Iter/funIterIso.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Exercise324Iter/Basic.lean](Exercise324Iter/Basic.lean)**
-
-@import "Exercise324Iter/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "Exercise324/funProdEquiv.ai_lean_to_english" {code_block=false}
 
 @import "Exercise324/funProdIso.ai_lean_to_english" {code_block=false}
-
-@import "Exercise324/Basic.ai_lean_to_english" {code_block=false}
 
 @import "Exercise324/funProd_isomorphic.ai_lean_to_english" {code_block=false}
 
@@ -140,8 +126,6 @@
 
 @import "Exercise324Distrib/distribMap.ai_lean_to_english" {code_block=false}
 
-@import "Exercise324Distrib/Basic.ai_lean_to_english" {code_block=false}
-
 @import "Exercise324Iter/exists_forall_swap.ai_lean_to_english" {code_block=false}
 
 @import "Exercise324Iter/funIter_isomorphic.ai_lean_to_english" {code_block=false}
@@ -161,8 +145,6 @@
 @import "Exercise324Iter/funIterEquiv.ai_lean_to_english" {code_block=false}
 
 @import "Exercise324Iter/funIterIso.ai_lean_to_english" {code_block=false}
-
-@import "Exercise324Iter/Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

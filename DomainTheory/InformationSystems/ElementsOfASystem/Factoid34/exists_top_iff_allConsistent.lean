@@ -2,7 +2,9 @@
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid34.Basic
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid34.IsTotal
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid34.AllConsistent
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid34.topElement
 
 @[expose] public section
 

@@ -1,7 +1,14 @@
 module
 
 public import Mathlib.Data.Finset.Basic
-public import DomainTheory.InformationSystems.InformationSystems.Constructive.Basic
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.funion
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.decidableEq_finset
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.insert_comm'
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.instLeftCommutativeInsert
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.Basic.notation5
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.mem_foldr_insert
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.mem_funion
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.funion_empty_right
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.subset_funion_left
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.subset_funion_right
 

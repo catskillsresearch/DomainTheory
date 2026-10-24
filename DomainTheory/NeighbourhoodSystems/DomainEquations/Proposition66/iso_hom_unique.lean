@@ -1,7 +1,8 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition66.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition66.initialIso
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition66.comp_desc_eq_id
 
 @[expose] public section
 

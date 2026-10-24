@@ -2,7 +2,11 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.copair
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.copairProj
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.distribMap
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.copair_rel
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.prod_mem_nonempty
 
 @[expose] public section
 

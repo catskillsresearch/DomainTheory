@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.Basic
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.constMap
 
 @[expose] public section

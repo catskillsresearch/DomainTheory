@@ -94,10 +94,6 @@
 
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/functionSystem.lean](FunctionSpace/functionSystem.lean)**
 
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/Basic.lean](FunctionSpace/Basic.lean)**
-
-@import "FunctionSpace/Basic.lean"
-
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace.lean](FunctionSpace.lean)**
 
 @import "FunctionSpace.lean"
@@ -151,8 +147,6 @@
 @import "FunctionSpace/exists_combined_witness.ai_lean_to_english" {code_block=false}
 
 @import "FunctionSpace/functionSystem.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/Basic.ai_lean_to_english" {code_block=false}
 
 @import "FunctionSpace.ai_lean_to_english" {code_block=false}
 

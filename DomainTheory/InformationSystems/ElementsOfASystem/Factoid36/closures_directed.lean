@@ -3,7 +3,7 @@ module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.Basic
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.approxUnion
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closure_le_of_subset
 
 @[expose] public section

@@ -1,7 +1,17 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.gTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.fTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.pIter
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.GammaD
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.GammaE
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Dsol
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Esol
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Fsol
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Gsol
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.nil_mem_GammaD
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.nil_mem_GammaE
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.fTok_GammaD_GammaE
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.gTok_GammaD_GammaE
 

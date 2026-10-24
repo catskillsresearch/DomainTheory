@@ -1,9 +1,0 @@
-module
-
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Unit
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint
-
-@[expose] public section
-
-namespace DomainTheory.NeighbourhoodSystems
-end DomainTheory.NeighbourhoodSystems

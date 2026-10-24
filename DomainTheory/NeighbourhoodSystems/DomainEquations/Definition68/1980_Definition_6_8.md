@@ -26,10 +26,6 @@
 
 @import "ContinuousOnMaps.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Definition68/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainEquations/Definition68/toStrictMap_toStrictFilter.lean](toStrictMap_toStrictFilter.lean)**
 
 @import "toStrictMap_toStrictFilter.lean"
@@ -53,8 +49,6 @@
 @import "idEndofunctor_map.ai_lean_to_english" {code_block=false}
 
 @import "ContinuousOnMaps.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "toStrictMap_toStrictFilter.ai_lean_to_english" {code_block=false}
 

@@ -530,17 +530,9 @@
 
 @import "../Product/map₂Equiv.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Product/Basic.lean](../Product/Basic.lean)**
-
-@import "../Product/Basic.lean"
-
 **[NeighbourhoodSystems/DomainConstructs/Product.lean](../Product.lean)**
 
 @import "../Product.lean"
-
-**[NeighbourhoodSystems/DomainConstructs/FunctionSpace/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
 
 **[NeighbourhoodSystems/DomainConstructs/FunctionSpace.lean](../FunctionSpace.lean)**
 
@@ -892,11 +884,7 @@
 
 @import "../Product/map₂Equiv.ai_lean_to_english" {code_block=false}
 
-@import "../Product/Basic.ai_lean_to_english" {code_block=false}
-
 @import "../Product.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../FunctionSpace.ai_lean_to_english" {code_block=false}
 

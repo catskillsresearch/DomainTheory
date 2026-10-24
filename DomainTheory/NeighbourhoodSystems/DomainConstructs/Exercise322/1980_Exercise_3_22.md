@@ -14,10 +14,6 @@
 
 @import "compMap.lean"
 
-**[NeighbourhoodSystems/DomainConstructs/Exercise322/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainConstructs/Exercise322/toElementMap_compApp.lean](toElementMap_compApp.lean)**
 
 @import "toElementMap_compApp.lean"
@@ -39,8 +35,6 @@
 @import "compApp.ai_lean_to_english" {code_block=false}
 
 @import "compMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "toElementMap_compApp.ai_lean_to_english" {code_block=false}
 

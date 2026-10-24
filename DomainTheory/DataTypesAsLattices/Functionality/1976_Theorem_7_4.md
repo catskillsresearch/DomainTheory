@@ -34,10 +34,6 @@
 
 @import "../Functionality.lean"
 
-**[DataTypesAsLattices/Enumeration/Basic.lean](../Enumeration/Basic.lean)**
-
-@import "../Enumeration/Basic.lean"
-
 **[DataTypesAsLattices/Enumeration.lean](../Enumeration.lean)**
 
 @import "../Enumeration.lean"
@@ -57,8 +53,6 @@
 @import "theorem_7_4.ai_lean_to_english" {code_block=false}
 
 @import "../Functionality.ai_lean_to_english" {code_block=false}
-
-@import "../Enumeration/Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Enumeration.ai_lean_to_english" {code_block=false}
 

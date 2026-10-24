@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Unit
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825.Basic
 
 @[expose] public section
 

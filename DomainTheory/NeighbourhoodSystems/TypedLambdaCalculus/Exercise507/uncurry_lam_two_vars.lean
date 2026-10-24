@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.curry₃
 
 @[expose] public section
 

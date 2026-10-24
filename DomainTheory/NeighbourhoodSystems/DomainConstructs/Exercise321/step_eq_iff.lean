@@ -1,7 +1,10 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.leastStep
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.interYs_single_subset_eq
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.interYs_single_not_subset_eq
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.stepCons
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_master_right
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_eq_univ_iff
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_eq_of_ne_master

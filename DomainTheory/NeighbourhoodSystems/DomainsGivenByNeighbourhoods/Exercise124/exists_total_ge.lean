@@ -3,7 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Order.Zorn
 public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124.chainUnion
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124.le_chainUnion
 
 @[expose] public section

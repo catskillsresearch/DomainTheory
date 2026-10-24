@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.supChain
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.iterElem_succ
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.iterElem_zero
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.iterElem_monotone

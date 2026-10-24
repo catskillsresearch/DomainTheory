@@ -230,10 +230,6 @@
 
 @import "ExampleB/sigmaElt.lean"
 
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/Basic.lean](ExampleB/Basic.lean)**
-
-@import "ExampleB/Basic.lean"
-
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/ExampleB/sigmaElt_append.lean](ExampleB/sigmaElt_append.lean)**
 
 @import "ExampleB/sigmaElt_append.lean"
@@ -425,8 +421,6 @@
 @import "ExampleB/sigmaBot_le_iff.ai_lean_to_english" {code_block=false}
 
 @import "ExampleB/sigmaElt.ai_lean_to_english" {code_block=false}
-
-@import "ExampleB/Basic.ai_lean_to_english" {code_block=false}
 
 @import "ExampleB/sigmaElt_append.ai_lean_to_english" {code_block=false}
 

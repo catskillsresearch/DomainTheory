@@ -2,7 +2,10 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.idEndofunctor
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.ContinuousOnMaps
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.idEndofunctor_obj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.idEndofunctor_map
 
 @[expose] public section
 

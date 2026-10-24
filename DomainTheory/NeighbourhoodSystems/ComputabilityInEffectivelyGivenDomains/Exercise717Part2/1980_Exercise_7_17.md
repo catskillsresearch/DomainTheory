@@ -122,10 +122,6 @@
 
 @import "gEval.lean"
 
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise717Part2/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise717Part2/gStep_gamma.lean](gStep_gamma.lean)**
 
 @import "gStep_gamma.lean"
@@ -245,8 +241,6 @@
 @import "gStep.ai_lean_to_english" {code_block=false}
 
 @import "gEval.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "gStep_gamma.ai_lean_to_english" {code_block=false}
 

@@ -1,1 +1,0 @@
-This file gathers and re-exports the bit tagging of sets of binary strings, the two directions of the correspondence between the binary-sequence domain and the sum of that domain with itself, and the lemmas on cones, intersections, injectivity, and neighbourhood shapes used to prove that the two domains are isomorphic.

@@ -122,10 +122,6 @@
 
 @import "sumComb.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89.lean](../Definition89.lean)**
 
 @import "../Definition89.lean"
@@ -189,8 +185,6 @@
 @import "jPlus.ai_lean_to_english" {code_block=false}
 
 @import "sumComb.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "../Definition89.ai_lean_to_english" {code_block=false}
 

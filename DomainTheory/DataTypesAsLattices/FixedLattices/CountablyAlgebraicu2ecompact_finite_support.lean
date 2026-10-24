@@ -2,7 +2,9 @@ module
 
 public import Mathlib.Order.CompleteLattice.Defs
 public import Mathlib.Data.Finset.Basic
-public import DomainTheory.DataTypesAsLattices.FixedLattices.Basic
+public import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraic
+public import DomainTheory.DataTypesAsLattices.FixedLattices.ContinuousBasis
+public import DomainTheory.DataTypesAsLattices.FixedLattices.finiteBasisSups
 public import DomainTheory.DataTypesAsLattices.FixedLattices.finiteBasisSups_directed
 public import DomainTheory.DataTypesAsLattices.FixedLattices.sSup_finiteBasisSups
 

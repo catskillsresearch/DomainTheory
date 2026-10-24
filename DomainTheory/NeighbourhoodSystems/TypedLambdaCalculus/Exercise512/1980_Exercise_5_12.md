@@ -30,10 +30,6 @@
 
 @import "whileMap.lean"
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap_least.lean](whileMap_least.lean)**
 
 @import "whileMap_least.lean"
@@ -71,8 +67,6 @@
 @import "whileFix.ai_lean_to_english" {code_block=false}
 
 @import "whileMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "whileMap_least.ai_lean_to_english" {code_block=false}
 

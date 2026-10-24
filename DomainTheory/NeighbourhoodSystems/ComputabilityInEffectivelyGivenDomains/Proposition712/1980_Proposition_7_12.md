@@ -146,10 +146,6 @@
 
 @import "Vshape.lean"
 
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition712/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition712/vshape_not_trianglelefteq_powerDomain.lean](vshape_not_trianglelefteq_powerDomain.lean)**
 
 @import "vshape_not_trianglelefteq_powerDomain.lean"
@@ -229,8 +225,6 @@
 @import "tf_inter.ai_lean_to_english" {code_block=false}
 
 @import "Vshape.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "vshape_not_trianglelefteq_powerDomain.ai_lean_to_english" {code_block=false}
 

@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86c.Basic
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86c.sub_rel_iff_exists_index
 
 @[expose] public section

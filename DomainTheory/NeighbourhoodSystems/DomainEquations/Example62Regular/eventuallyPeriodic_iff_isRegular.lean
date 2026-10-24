@@ -2,7 +2,16 @@ module
 
 public import Mathlib.Computability.MyhillNerode
 public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.pos
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.select
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.child
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.treeLang
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.EventuallyPeriodic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.Tree
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.select_apply
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.select_nil
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.pos_select
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.mem_treeLang
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.treeLang_select
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.treeLang_injective
 

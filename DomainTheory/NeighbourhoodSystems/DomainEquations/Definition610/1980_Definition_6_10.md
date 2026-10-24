@@ -14,10 +14,6 @@
 
 @import "Basic/notation2.lean"
 
-**[NeighbourhoodSystems/DomainEquations/Definition610/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/DomainEquations/Definition610/_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.lean](_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.lean)**
 
 @import "_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.lean"
@@ -47,8 +43,6 @@
 @import "Subsystem.ai_lean_to_english" {code_block=false}
 
 @import "Basic/notation2.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.ai_lean_to_english" {code_block=false}
 

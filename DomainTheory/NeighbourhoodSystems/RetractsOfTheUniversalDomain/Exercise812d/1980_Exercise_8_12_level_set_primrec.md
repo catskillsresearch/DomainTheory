@@ -6,10 +6,6 @@
 
 @import "../LevelSetPrimrec/level_set_primrec.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/LevelSetPrimrec/Basic.lean](../LevelSetPrimrec/Basic.lean)**
-
-@import "../LevelSetPrimrec/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "../LevelSetPrimrec/V_isEffectivelyGiven.ai_lean_to_english" {code_block=false}
@@ -69,6 +65,4 @@
 @import "../LevelSetPrimrec/V_interEq_computable.ai_lean_to_english" {code_block=false}
 
 @import "../LevelSetPrimrec/VComputablePresentation.ai_lean_to_english" {code_block=false}
-
-@import "../LevelSetPrimrec/Basic.ai_lean_to_english" {code_block=false}
 

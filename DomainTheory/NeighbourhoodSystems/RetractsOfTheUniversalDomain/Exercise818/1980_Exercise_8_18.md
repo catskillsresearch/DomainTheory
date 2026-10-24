@@ -6,10 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise818/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise818/exercise_8_18.lean](exercise_8_18.lean)**
 
 @import "exercise_8_18.lean"
@@ -19,8 +15,6 @@
 @import "../Exercise818.lean"
 
 ## AI: AI-Lean to AI-English
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "exercise_8_18.ai_lean_to_english" {code_block=false}
 

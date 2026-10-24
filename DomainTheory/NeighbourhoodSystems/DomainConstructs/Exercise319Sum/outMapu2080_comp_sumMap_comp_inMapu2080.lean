@@ -1,7 +1,12 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.sumMap
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.mem_subset_inj₀
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.mem_subset_inj₁
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.eq_sumMaster_of_subset
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.not_inj₀_subset_inj₁
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.not_inj₁_subset_inj₀
 
 @[expose] public section
 

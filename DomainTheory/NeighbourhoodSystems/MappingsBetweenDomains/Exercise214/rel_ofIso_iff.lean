@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.phi
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.phi_spec
 
 @[expose] public section

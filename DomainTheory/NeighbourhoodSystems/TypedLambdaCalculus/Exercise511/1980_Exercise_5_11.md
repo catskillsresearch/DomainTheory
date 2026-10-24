@@ -82,10 +82,6 @@
 
 @import "mapMap.lean"
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Exercise511/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 **[NeighbourhoodSystems/TypedLambdaCalculus/Exercise511/unfold_fold.lean](unfold_fold.lean)**
 
 @import "unfold_fold.lean"
@@ -422,10 +418,6 @@
 
 @import "../Theorem56Full/tupleMap.lean"
 
-**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem56Full/Basic.lean](../Theorem56Full/Basic.lean)**
-
-@import "../Theorem56Full/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "component_tail.ai_lean_to_english" {code_block=false}
@@ -465,8 +457,6 @@
 @import "mapOp.ai_lean_to_english" {code_block=false}
 
 @import "mapMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "unfold_fold.ai_lean_to_english" {code_block=false}
 
@@ -635,8 +625,6 @@
 @import "../Theorem56Full/strictGuardN.ai_lean_to_english" {code_block=false}
 
 @import "../Theorem56Full/tupleMap.ai_lean_to_english" {code_block=false}
-
-@import "../Theorem56Full/Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

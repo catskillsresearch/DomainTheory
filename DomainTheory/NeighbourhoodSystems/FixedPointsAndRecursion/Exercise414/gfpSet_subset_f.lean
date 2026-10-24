@@ -2,7 +2,8 @@ module
 
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Order.Monotone.Basic
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.gfpSet
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.subset_gfpSet
 
 @[expose] public section

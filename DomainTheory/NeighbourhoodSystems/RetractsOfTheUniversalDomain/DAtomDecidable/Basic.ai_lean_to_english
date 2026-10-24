@@ -1,1 +1,0 @@
-This file gathers and re-exports the definitions used to decide emptiness of a D-side atom in an effectively presented neighbourhood system: the positive index set and the atom, the meet step and the meet-fold together with their code-level versions, the emptiness characteristic, and the empty-list cases of the positive index set and the meet-fold.

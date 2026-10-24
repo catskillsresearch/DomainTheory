@@ -62,10 +62,6 @@
 
 @import "peanoSub.lean"
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/Basic.lean](Basic.lean)**
-
-@import "Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "exists_peano_submodel.ai_lean_to_english" {code_block=false}
@@ -95,8 +91,6 @@
 @import "subZero.ai_lean_to_english" {code_block=false}
 
 @import "peanoSub.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

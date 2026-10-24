@@ -1,1 +1,0 @@
-This module gathers the bounded word enumeration used for the emptiness search of Exercise 7.22. It re-exports the regular-expression development, the list wordsUpTo of Boolean words of length at most n, and the test anyMatchesB, and it meta-imports the basic regular-expression setup. The commentary records that these are the ingredients of the later short-word search.

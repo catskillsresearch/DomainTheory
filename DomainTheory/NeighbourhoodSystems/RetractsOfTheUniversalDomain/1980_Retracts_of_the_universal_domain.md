@@ -650,10 +650,6 @@
 
 @import "RationalPrimrec/ratMidCode.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/RationalPrimrec/Basic.lean](RationalPrimrec/Basic.lean)**
-
-@import "RationalPrimrec/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/RationalPrimrec.lean](RationalPrimrec.lean)**
 
 @import "RationalPrimrec.lean"
@@ -1150,17 +1146,9 @@
 
 @import "UComputablePresentation/UComputablePresentation.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/UComputablePresentation/Basic.lean](UComputablePresentation/Basic.lean)**
-
-@import "UComputablePresentation/Basic.lean"
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/UComputablePresentation.lean](UComputablePresentation.lean)**
 
 @import "UComputablePresentation.lean"
-
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/SplitU/Basic.lean](SplitU/Basic.lean)**
-
-@import "SplitU/Basic.lean"
 
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/SplitU.lean](SplitU.lean)**
 
@@ -1488,8 +1476,6 @@
 
 @import "RationalPrimrec/ratMidCode.ai_lean_to_english" {code_block=false}
 
-@import "RationalPrimrec/Basic.ai_lean_to_english" {code_block=false}
-
 @import "RationalPrimrec.ai_lean_to_english" {code_block=false}
 
 @import "RecursiveCross/consStep2.ai_lean_to_english" {code_block=false}
@@ -1738,11 +1724,7 @@
 
 @import "UComputablePresentation/UComputablePresentation.ai_lean_to_english" {code_block=false}
 
-@import "UComputablePresentation/Basic.ai_lean_to_english" {code_block=false}
-
 @import "UComputablePresentation.ai_lean_to_english" {code_block=false}
-
-@import "SplitU/Basic.ai_lean_to_english" {code_block=false}
 
 @import "SplitU.ai_lean_to_english" {code_block=false}
 
