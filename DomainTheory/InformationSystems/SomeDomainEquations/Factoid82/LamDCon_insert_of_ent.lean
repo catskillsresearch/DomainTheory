@@ -11,7 +11,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamC
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst70
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst74
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDForgetFinset_insert
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDForgetFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDEnt
 
@@ -29,7 +29,7 @@ variable (A : InfoSys α)
 
 theorem LamDCon_insert_of_ent {u : Finset (LamDToken A)} {p : LamDToken A}
     (ht : LamDEnt A u p) : LamDCon A (insert p u) := by
-  rw [LamDCon, lamDForgetFinset_insert]
+  rw [LamDCon, lamDForgetFinset.insert]
   exact LamConDepth_insert_of_ent A ht
 
 end InfoSys

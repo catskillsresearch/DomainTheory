@@ -7,8 +7,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPai
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPairRFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vBot
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VCon
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VEnt_of_mem
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VEnt_trans
 
 @[expose] public section
 
@@ -27,8 +25,8 @@ def vSystem : InfoSys VToken where
   con_sing := fun _ => trivial
   ent_con := fun _ => trivial
   ent_bot := fun _ => VEnt.bot
-  ent_refl := fun _ hp => VEnt_of_mem hp
-  ent_trans := fun _ _ hEnts h => VEnt_trans hEnts h
+  ent_refl := fun _ hp => VEnt.of_mem hp
+  ent_trans := fun _ _ hEnts h => VEnt.trans hEnts h
 
 end InfoSys
 

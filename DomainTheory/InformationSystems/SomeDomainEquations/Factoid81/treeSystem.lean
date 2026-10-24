@@ -10,7 +10,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.pair
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.treeBot
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeEnt
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_singleton
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeEnt_of_mem
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_insert_of_ent
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeEnt_trans
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_subset
@@ -37,7 +36,7 @@ def treeSystem : InfoSys (TreeToken α) where
   con_sing := TreeCon_singleton A
   ent_con := fun h => TreeCon_insert_of_ent A h
   ent_bot := fun hu => ⟨hu, trivial⟩
-  ent_refl := fun hu hp => TreeEnt_of_mem A hu hp
+  ent_refl := fun hu hp => TreeEnt.of_mem A hu hp
   ent_trans := fun hv hu hEnts hEntc => TreeEnt_trans A hv hu hEnts hEntc
 
 end InfoSys

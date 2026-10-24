@@ -1,3 +1,0 @@
-Forgetting the insertion of a depth token inserts the underlying raw token into the forget of the remaining set.
-
-By extensionality, a raw token lies in the forget exactly when it is the underlying token of some depth token of the set. In both directions that depth token is the inserted token or a member of the remaining set, which is the membership rule for insertion of the underlying token.

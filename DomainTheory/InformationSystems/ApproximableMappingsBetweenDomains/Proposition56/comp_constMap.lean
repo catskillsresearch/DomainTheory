@@ -3,7 +3,7 @@ module
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.Basic
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.constMap_toElement
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.constMap
 
 @[expose] public section
 
@@ -23,7 +23,7 @@ variable {A : InfoSys α} {B : InfoSys β} {C : InfoSys γ} {D : InfoSys δ}
 theorem comp_constMap (f : ApproximableMap B C) (b : B.Element) :
     comp f (constMap (A := A) b) = constMap (A := A) (f.toElement b) :=
   (ext_iff_toElement _ _).2 fun x => by
-    rw [comp_toElement, constMap_toElement, constMap_toElement]
+    rw [comp.toElement, constMap.toElement, constMap.toElement]
 
 end ApproximableMap
 end InfoSys

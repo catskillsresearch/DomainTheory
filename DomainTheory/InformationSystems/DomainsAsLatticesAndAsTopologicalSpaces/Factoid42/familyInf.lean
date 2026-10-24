@@ -27,3 +27,17 @@ def familyInf (S : Set sys.Element) (hne : S.Nonempty) : sys.Element where
 end InfoSys
 
 end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+namespace InfoSys
+
+variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
+
+
+theorem familyInf.le (S : Set sys.Element) (hne : S.Nonempty) {x : sys.Element}
+    (hx : x ∈ S) : sys.familyInf S hne ≤ x :=
+  fun _a ha => ha x hx
+
+end InfoSys
+end DomainTheory.InformationSystems

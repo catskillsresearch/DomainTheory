@@ -132,12 +132,12 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
         {tok} ∪' fstFinset (functionSystem B C) B
           (liftRight (functionSystem B C) B (sndFinset A B s)) := by
       change fstFinset _ _ (liftLeft _ _ {tok} ∪' liftRight _ _ _) = _
-      rw [fstFinset_funion, fstFinset_liftLeft]
+      rw [fstFinset.funion, fstFinset_liftLeft]
     have hsnd_m : sndFinset (functionSystem B C) B m =
         sndFinset (functionSystem B C) B (liftLeft (functionSystem B C) B {tok}) ∪'
           sndFinset A B s := by
       change sndFinset _ _ (liftLeft _ _ {tok} ∪' liftRight _ _ _) = _
-      rw [sndFinset_funion, sndFinset_liftRight]
+      rw [sndFinset.funion, sndFinset_liftRight]
     have hcurry_fst : (curryMap A B C h).rel (fstFinset A B s)
         (fstFinset (functionSystem B C) B m) := by
       refine ⟨hs.1, ?_⟩
@@ -192,7 +192,7 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
           rw [hsnd_m]
           exact subset_funion_right _ _ hb
         exact B.ent_refl hmCon.2 this
-      · rw [funOutputUnion_singleton]
+      · rw [funOutputUnion.singleton]
         exact proposition_2_3_iii C hw
 
 end InfoSys

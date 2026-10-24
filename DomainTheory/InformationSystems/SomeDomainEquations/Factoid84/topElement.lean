@@ -4,7 +4,6 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid34
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.P
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.P_AllConsistent
 
 @[expose] public section
 
@@ -20,7 +19,7 @@ open ApproximableMap
 
 /-- Top element `⊤` of `|P|` (all tokens). -/
 def topElement : P.Element :=
-  P.topElement P_AllConsistent
+  P.topElement P.AllConsistent
 
 end Factoid84
 

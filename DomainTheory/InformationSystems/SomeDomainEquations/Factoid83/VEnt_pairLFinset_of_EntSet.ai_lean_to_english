@@ -1,3 +1,0 @@
-If every member of u is V-entailed by v, then either top belongs to v, or every member of the left pair projection of u is V-entailed by the left pair projection of v. This pushes an entailment set through the left projection, or absorbs it through top.
-
-If top belongs to v, take the first alternative. Otherwise a member of the left projection of u comes from a left pair in u, which v entails. Inverting that entailment, top cannot belong to v, so the left projection of v entails the member.

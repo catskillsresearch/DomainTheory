@@ -28,7 +28,7 @@ theorem fstFinset_liftPair (u : Finset α) (v : Finset β) :
     fstFinset A B (liftPair A B u v) =
       u ∪' fstFinset A B (liftRight A B v) := by
   unfold liftPair
-  rw [fstFinset_funion, fstFinset_liftLeft]
+  rw [fstFinset.funion, fstFinset_liftLeft]
 
 end InfoSys
 

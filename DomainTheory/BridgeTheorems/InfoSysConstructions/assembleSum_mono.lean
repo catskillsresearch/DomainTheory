@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Order.Sum.Order
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.assembleSum
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement_le
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement_mono
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
 public import Mathlib.Order.Hom.Basic
@@ -29,7 +29,7 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B :
 theorem assembleSum_mono {w₁ w₂ : WithBot (A.Element ⊕ B.Element)} (h : w₁ ≤ w₂) :
     assembleSum A B w₁ ≤ assembleSum A B w₂ := by
   cases w₁ with
-  | bot => exact botElement_le _ _
+  | bot => exact botElement.le _ _
   | coe s₁ =>
     cases w₂ with
     | bot => exact (WithBot.not_coe_le_bot _ h).elim

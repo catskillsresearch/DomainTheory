@@ -1,3 +1,0 @@
-The relation recovered from a function-space element is monotone for entailment: a related pair may be replaced by an entailing input and an entailed output, provided the new sets are consistent.
-
-The singleton of the original token lies in the element. It entails the new token, by the given input entailment and, after the output union of a singleton, the given output entailment. Closure of the element puts the new token in the carrier.

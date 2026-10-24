@@ -17,7 +17,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.pair
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.pairRFinset_insert_atom
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.pairRFinset_insert_pairL
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeEnt
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_pairs_empty_of_left
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_insert_bot
 
 @[expose] public section
@@ -40,7 +39,7 @@ theorem TreeCon_insert_of_ent {u : Finset (TreeToken α)} {p : TreeToken α}
     exact TreeCon_insert_bot A h.1
   | atom x =>
     rcases h with ⟨hu, hne, hA⟩
-    have hLR := TreeCon_pairs_empty_of_left A hu hne
+    have hLR := TreeCon.pairs_empty_of_left A hu hne
     exact TreeCon.left _
       (by rw [atomFinset_insert_atom]; exact A.ent_con hA)
       (by rw [pairLFinset_insert_atom]; exact hLR.1)

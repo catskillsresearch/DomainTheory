@@ -45,9 +45,9 @@ theorem pair_after_swap_toElement (A Y Z : InfoSysObj.{u})
         (φ.toElement ((fstMap Y.sys A.sys).toElement ((swapMap A.sys Y.sys).toElement p)))
         ((sndMap Y.sys A.sys).toElement ((swapMap A.sys Y.sys).toElement p)) := by
   refine element_eq_of_fst_snd _ _ _ _ ?_ ?_
-  · rw [← comp_toElement, comp_fstMap_pairMap, comp_toElement]
+  · rw [← comp.toElement, comp_fstMap_pairMap, comp.toElement]
     exact (fstMap_pairElements _ _ _ _).symm
-  · rw [← comp_toElement, comp_sndMap_pairMap]
+  · rw [← comp.toElement, comp_sndMap_pairMap]
     exact (sndMap_pairElements _ _ _ _).symm
 
 end InfoSys

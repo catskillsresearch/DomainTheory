@@ -6,7 +6,6 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.IsDomainApprox
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.DomainApprox
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatMap
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatMap_isDomain
 
 @[expose] public section
 
@@ -22,7 +21,7 @@ namespace Factoid84
 
 /-- Witness that Scott’s (1)–(5) are inhabited. -/
 def flatDomainApprox : DomainApprox :=
-  ⟨flatMap, flatMap_isDomain⟩
+  ⟨flatMap, flatMap.isDomain⟩
 
 end Factoid84
 

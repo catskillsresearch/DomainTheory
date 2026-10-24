@@ -6,7 +6,7 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.Basic
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mkFunToken_eq
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mkFunToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mem_fst_of_subset_pairElements
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mem_snd_of_subset_pairElements
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.subset_pairElements_liftPair
@@ -83,13 +83,13 @@ theorem applyMap_toElement (g : (functionSystem B C).Element) (y : B.Element) :
         exact mem_fst_of_subset_pairElements (functionSystem B C) B hs_sub (ht hq)
       exact (funCon_of_approxMap B C (element_toApproxMap B C g) t
         (fun q hq => ⟨q.property.1, q.property.2, by
-          simpa [mkFunToken_eq] using ht_sub (Finset.mem_coe.2 hq)⟩)) t (Finset.Subset.refl _) hin
+          simpa [mkFunToken.eq] using ht_sub (Finset.mem_coe.2 hq)⟩)) t (Finset.Subset.refl _) hin
     · -- {p} ⊆ fst s
       intro q hq
       have : q = p := Finset.mem_singleton.mp hq
       subst this
       rw [show s = liftLeft (functionSystem B C) B {p} ∪' liftRight (functionSystem B C) B v from rfl]
-      rw [fstFinset_funion, fstFinset_liftLeft]
+      rw [fstFinset.funion, fstFinset_liftLeft]
       exact subset_funion_left _ _ (Finset.mem_singleton_self _)
     · -- snd s ⊢ v = p.input
       intro q hq
@@ -103,7 +103,7 @@ theorem applyMap_toElement (g : (functionSystem B C).Element) (y : B.Element) :
         exact subset_funion_right _ _ hb'
       exact B.ent_refl hsCon.2 this
     · -- output {Z} ⊢ {Z}
-      rw [funOutputUnion_singleton]
+      rw [funOutputUnion.singleton]
       exact proposition_2_3_iii C (C.con_sing Z)
 
 end InfoSys

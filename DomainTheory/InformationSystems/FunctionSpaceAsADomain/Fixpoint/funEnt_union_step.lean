@@ -27,7 +27,7 @@ theorem funEnt_union_step {w : Finset (FunToken A A)}
   obtain ⟨_, s2, hs2, hIn2, hOut2⟩ := hEnt'
   have hsub : s1 ∪' s2 ⊆ w := funion_subset_iff.mpr ⟨hs1, hs2⟩
   have hin : funInputUnion A A (s1 ∪' s2) ∈ A.Con := by
-    rw [funInputUnion_funion]
+    rw [funInputUnion.funion]
     have hEntU : A.EntSet (u ∪' u')
         (funInputUnion A A s1 ∪' funInputUnion A A s2) :=
       proposition_2_3_vi A
@@ -38,7 +38,7 @@ theorem funEnt_union_step {w : Finset (FunToken A A)}
     exact A.con_subset (proposition_2_3_ii A huU hEntU) (subset_funion_right _ _)
   have hout : funOutputUnion A A s1 ∪' funOutputUnion A A s2 ∈ A.Con := by
     have := hw _ hsub hin
-    rwa [funOutputUnion_funion] at this
+    rwa [funOutputUnion.funion] at this
   have hvU : v ∪' v' ∈ A.Con := by
     have hEntO : A.EntSet (funOutputUnion A A s1 ∪' funOutputUnion A A s2) (v ∪' v') :=
       proposition_2_3_vi A
@@ -56,7 +56,7 @@ theorem funEnt_union_step {w : Finset (FunToken A A)}
         (Finset.Subset.refl _)
     · exact proposition_2_3_v A hu' huU (subset_funion_right _ _) (hIn2 q hq)
         (Finset.Subset.refl _)
-  · rw [funOutputUnion_funion]
+  · rw [funOutputUnion.funion]
     exact proposition_2_3_vi A
       (proposition_2_3_v A
         (A.con_subset hout (subset_funion_left _ _)) hout

@@ -22,3 +22,14 @@ def vRhs : InfoSys (ProdToken vSystem vSystem) :=
 end InfoSys
 
 end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+theorem vRhs.eq_product : vRhs = productSystem vSystem vSystem := rfl
+
+end InfoSys
+end DomainTheory.InformationSystems

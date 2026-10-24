@@ -3,6 +3,7 @@ module
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81
 public import DomainTheory.BridgeTheorems.treeFold
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.treeUnfold
 
 @[expose] public section
 

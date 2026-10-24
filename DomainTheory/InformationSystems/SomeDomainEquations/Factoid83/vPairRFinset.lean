@@ -57,3 +57,30 @@ theorem mem_vPairRFinset {u : Finset VToken} {t : VToken} :
 
 end InfoSys
 end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+theorem vPairRFinset.empty : vPairRFinset (∅ : Finset VToken) = ∅ := rfl
+
+end InfoSys
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+theorem vPairRFinset.insert_top (u : Finset VToken) :
+    vPairRFinset (insert (.top : VToken) u) = vPairRFinset u := by
+  ext t; simp only [mem_vPairRFinset, Finset.mem_insert]
+  constructor
+  · rintro (h | h); exacts [False.elim (nomatch h), h]
+  · exact Or.inr
+
+end InfoSys
+end DomainTheory.InformationSystems

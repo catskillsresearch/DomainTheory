@@ -1,9 +1,8 @@
 module
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen_inter
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen
 public import DomainTheory.BridgeTheorems.con_of_basicOpen_subset
 public import DomainTheory.BridgeTheorems.basicOpen_empty
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NeighborhoodSystem
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.closure
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 public import Mathlib.Order.Hom.Basic
@@ -43,9 +42,9 @@ def toNeighborhoodSystem : NeighborhoodSystem A.Element where
     have hsub : A.basicOpen w ⊆ A.basicOpen (u ∪' v) := by
       intro x hx
       have hx' : x ∈ A.basicOpen u ∩ A.basicOpen v := hZsub hx
-      rwa [basicOpen_inter A] at hx'
+      rwa [basicOpen.inter A] at hx'
     have huv : u ∪' v ∈ A.Con := con_of_basicOpen_subset A hw hsub
-    exact ⟨u ∪' v, huv, basicOpen_inter A u v⟩
+    exact ⟨u ∪' v, huv, basicOpen.inter A u v⟩
   sub_master := fun {_} _ => Set.subset_univ _
 
 end InfoSysToNeighborhood

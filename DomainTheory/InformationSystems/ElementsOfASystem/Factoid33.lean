@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement_le
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
 
 @[expose] public section
 
@@ -15,6 +15,6 @@ theorem theorem_33.{u_1} : ∀ {α : Type u_1} [inst : DecidableEq α] (sys : @D
       (@PartialOrder.toPreorder (@DomainTheory.InformationSystems.InfoSys.Element α inst sys)
         (@DomainTheory.InformationSystems.InfoSys.instPartialOrderElement α inst sys)))
     (@DomainTheory.InformationSystems.InfoSys.botElement α inst sys) x :=
-  @DomainTheory.InformationSystems.InfoSys.botElement_le
+  @DomainTheory.InformationSystems.InfoSys.botElement.le
 
 end DomainTheory.InformationSystems.InfoSys

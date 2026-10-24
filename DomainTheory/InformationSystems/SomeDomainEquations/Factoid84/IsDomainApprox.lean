@@ -15,7 +15,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.Idem
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.BotApprox
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.RogueApprox
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.ConsistentApprox
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.P_AllConsistent
 
 @[expose] public section
 

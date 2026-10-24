@@ -35,7 +35,7 @@ theorem eq_botElement_of_no_injections (z : (sumSystem A B).Element)
       exact (sumSystem A B).ent_refl ((sumSystem A B).con_sing _) (Finset.mem_singleton_self _)
     | left x => exact False.elim (hL x hp)
     | right y => exact False.elim (hR y hp)
-  · exact botElement_le (sumSystem A B) z
+  · exact botElement.le (sumSystem A B) z
 
 end ApproximableMap
 end InfoSys

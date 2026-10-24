@@ -19,8 +19,8 @@ variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
 
 theorem ProdCon_empty : ProdCon A B (∅ : Finset (ProdToken A B)) :=
-  ⟨by rw [fstFinset_empty]; exact A.con_empty,
-    by rw [sndFinset_empty]; exact B.con_empty⟩
+  ⟨by rw [fstFinset.empty]; exact A.con_empty,
+    by rw [sndFinset.empty]; exact B.con_empty⟩
 
 end InfoSys
 

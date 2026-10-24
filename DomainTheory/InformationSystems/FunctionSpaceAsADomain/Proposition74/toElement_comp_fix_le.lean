@@ -27,7 +27,7 @@ theorem toElement_comp_fix_le (f : ApproximableMap A A) (g : ApproximableMap B B
     g.toElement (h.toElement (fixElement A f)) ≤ h.toElement (fixElement A f) := by
   have h1 : g.toElement (h.toElement (fixElement A f)) =
       h.toElement (f.toElement (fixElement A f)) := by
-    rw [← comp_toElement, ← hcomm, comp_toElement]
+    rw [← comp.toElement, ← hcomm, comp.toElement]
   rw [h1, proposition_7_4_ii A f]
 
 end ApproximableMap

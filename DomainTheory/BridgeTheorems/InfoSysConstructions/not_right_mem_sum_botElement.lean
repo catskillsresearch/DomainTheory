@@ -1,6 +1,6 @@
 module
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumSystem
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset_singleton_bot
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
@@ -30,7 +30,7 @@ theorem not_right_mem_sum_botElement {y : β} :
   intro hy
   have hEnt : (sumSystem A B).Ent {sumBot} (.right y) := hy
   rcases hEnt with ⟨_, ⟨hne, _⟩⟩
-  exact hne rhtFinset_singleton_bot
+  exact hne rhtFinset.singleton_bot
 
 end InfoSysConstructions
 

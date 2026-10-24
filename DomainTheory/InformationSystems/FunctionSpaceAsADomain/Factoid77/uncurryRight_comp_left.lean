@@ -9,13 +9,11 @@ public import Mathlib.CategoryTheory.Adjunction.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.InfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.exp
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_toElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.swap_fst_toElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.swap_snd_toElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.tensorElementToProdElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.prodElementToTensorElement
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.tensorElementToProdElement_prodElementToTensorElement
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.productMapToTensorMap_comp_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.productMapToTensorMap
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.uncurryRight
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.tensorLeft_map_eq
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.lift_snd_toElement
@@ -60,16 +58,16 @@ theorem uncurryRight_comp_left (A : InfoSysObj.{u}) {Y Y' Z : InfoSysObj.{u}}
         (uncurryRight A Y Z g).toElement q := by
     rw [uncurryRight_toElement A Y' Z (f ≫ g) p,
       uncurryRight_toElement A Y Z g q]
-    simp only [q, tensorElementToProdElement_prodElementToTensorElement]
+    simp only [q, tensorElementToProdElement.prodElementToTensorElement]
     rw [swap_fst_toElement, swap_snd_toElement, swap_fst_toElement, swap_snd_toElement,
       lift_snd_toElement A f p', lift_fst_toElement A f p']
-    simp only [CategoryStruct.comp, acomp_toElement]
+    simp only [CategoryStruct.comp, acomp.toElement]
     rfl
   calc
     (uncurryRight A Y' Z (f ≫ g)).toElement p =
         (uncurryRight A Y Z g).toElement q := hgoal
     _ = ((tensorLeft A).map f ≫ uncurryRight A Y Z g).toElement p := by
-      rw [tensorLeft_map_eq, productMapToTensorMap_comp_toElement]
+      rw [tensorLeft_map_eq, productMapToTensorMap.comp.toElement]
 
 end InfoSys
 

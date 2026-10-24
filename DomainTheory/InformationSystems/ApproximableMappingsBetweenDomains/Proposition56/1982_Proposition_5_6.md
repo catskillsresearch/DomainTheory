@@ -14,25 +14,13 @@
 
 @import "Basic.lean"
 
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_toElement.lean](constMap_toElement.lean)**
-
-@import "constMap_toElement.lean"
-
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean](comp_constMap.lean)**
 
 @import "comp_constMap.lean"
 
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_comp.lean](constMap_comp.lean)**
-
-@import "constMap_comp.lean"
-
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean](../Proposition56.lean)**
 
 @import "../Proposition56.lean"
-
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_unique.lean](constMap_unique.lean)**
-
-@import "constMap_unique.lean"
 
 ## AI: AI-Lean to AI-English
 
@@ -40,15 +28,9 @@
 
 @import "Basic.ai_lean_to_english" {code_block=false}
 
-@import "constMap_toElement.ai_lean_to_english" {code_block=false}
-
 @import "comp_constMap.ai_lean_to_english" {code_block=false}
 
-@import "constMap_comp.ai_lean_to_english" {code_block=false}
-
 @import "../Proposition56.ai_lean_to_english" {code_block=false}
-
-@import "constMap_unique.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

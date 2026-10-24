@@ -22,10 +22,6 @@
 
 @import "comp_copairMap_inrMap.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/copairMap_botElement.lean](copairMap_botElement.lean)**
-
-@import "copairMap_botElement.lean"
-
 **[InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_liftLft_of_left_only.lean](entSet_liftLft_of_left_only.lean)**
 
 @import "entSet_liftLft_of_left_only.lean"
@@ -114,17 +110,13 @@
 
 @import "lftFinset_liftSumRight.lean"
 
+**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/inrMap.lean](inrMap.lean)**
+
+@import "inrMap.lean"
+
 **[InformationSystems/ProductsAndSumsOfDomains/Proposition64/not_mem_right_of_mem_left.lean](not_mem_right_of_mem_left.lean)**
 
 @import "not_mem_right_of_mem_left.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/inlMap_toElement_sumElementLft.lean](inlMap_toElement_sumElementLft.lean)**
-
-@import "inlMap_toElement_sumElementLft.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/inrMap_toElement_sumElementRht.lean](inrMap_toElement_sumElementRht.lean)**
-
-@import "inrMap_toElement_sumElementRht.lean"
 
 **[InformationSystems/ProductsAndSumsOfDomains/Proposition64/rhtFinset_eq_empty_or_mem.lean](rhtFinset_eq_empty_or_mem.lean)**
 
@@ -149,10 +141,6 @@
 **[InformationSystems/ProductsAndSumsOfDomains/Proposition64/rht_mem_Con_of_SumCon_lft_empty.lean](rht_mem_Con_of_SumCon_lft_empty.lean)**
 
 @import "rht_mem_Con_of_SumCon_lft_empty.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/inrMap.lean](inrMap.lean)**
-
-@import "inrMap.lean"
 
 **[InformationSystems/ProductsAndSumsOfDomains/Proposition64/subset_botElement_of_projections_empty.lean](subset_botElement_of_projections_empty.lean)**
 
@@ -200,8 +188,6 @@
 
 @import "comp_copairMap_inrMap.ai_lean_to_english" {code_block=false}
 
-@import "copairMap_botElement.ai_lean_to_english" {code_block=false}
-
 @import "entSet_liftLft_of_left_only.ai_lean_to_english" {code_block=false}
 
 @import "entSet_liftRht_of_right_only.ai_lean_to_english" {code_block=false}
@@ -247,10 +233,6 @@
 @import "lftFinset_liftSumRight.ai_lean_to_english" {code_block=false}
 
 @import "not_mem_right_of_mem_left.ai_lean_to_english" {code_block=false}
-
-@import "inlMap_toElement_sumElementLft.ai_lean_to_english" {code_block=false}
-
-@import "inrMap_toElement_sumElementRht.ai_lean_to_english" {code_block=false}
 
 @import "rhtFinset_eq_empty_or_mem.ai_lean_to_english" {code_block=false}
 

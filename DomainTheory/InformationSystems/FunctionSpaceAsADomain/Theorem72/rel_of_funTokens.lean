@@ -34,7 +34,7 @@ theorem rel_of_funTokens (h : ApproximableMap (productSystem A B) C)
     h.rel (liftPair A B u (funInputUnion B C t)) (funOutputUnion B C t) := by
   induction t using Finset.induction_on with
   | empty =>
-    rw [funInputUnion_empty, funOutputUnion_empty]
+    rw [funInputUnion.empty, funOutputUnion.empty]
     have hdom : liftPair A B u ∅ ∈ (productSystem A B).Con :=
       ProdCon_liftPair A B hu B.con_empty
     exact h.mono h.empty_rel
@@ -45,13 +45,13 @@ theorem rel_of_funTokens (h : ApproximableMap (productSystem A B) C)
       fun q hq => hps q (Finset.mem_insert_of_mem hq)
     have hin' : funInputUnion B C t' ∈ B.Con :=
       B.con_subset hin (by
-        rw [funInputUnion_insert]
+        rw [funInputUnion.insert]
         exact subset_funion_right _ _)
     have ih' := ih hps' hin'
     have hp : h.rel (liftPair A B u p.val.1) p.val.2 :=
       hps p (Finset.mem_insert_self p t')
     have hinU : p.val.1 ∪' funInputUnion B C t' ∈ B.Con := by
-      rwa [funInputUnion_insert] at hin
+      rwa [funInputUnion.insert] at hin
     have hEnt_p : B.EntSet (p.val.1 ∪' funInputUnion B C t') p.val.1 :=
       fun y hy => B.ent_refl hinU (subset_funion_left _ _ hy)
     have hEnt_t : B.EntSet (p.val.1 ∪' funInputUnion B C t') (funInputUnion B C t') :=
@@ -68,7 +68,7 @@ theorem rel_of_funTokens (h : ApproximableMap (productSystem A B) C)
       h.mono ih'
         (entSet_liftPair A B hu hinU (proposition_2_3_iii A hu) hEnt_t)
         (proposition_2_3_iii C (h.rel_cod ih')) hdomU (h.rel_cod ih')
-    rw [funInputUnion_insert, funOutputUnion_insert]
+    rw [funInputUnion.insert, funOutputUnion.insert]
     exact h.union_right h1 h2
 
 end InfoSys

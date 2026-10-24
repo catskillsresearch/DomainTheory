@@ -63,7 +63,7 @@ theorem copairMap_unique (f : ApproximableMap A C) (g : ApproximableMap B C)
           simpa [hinr] using hinr'
         exact Or.inr (Or.inr ⟨Finset.ne_empty_of_mem hy0, hg⟩)
     · have hne : lftFinset u ≠ ∅ := Finset.ne_empty_of_mem hx0
-      have hr : rhtFinset u = ∅ := SumCon_rht_empty_of_lft_nonempty A B hu hne
+      have hr : rhtFinset u = ∅ := SumCon.rht_empty_of_lft_nonempty A B hu hne
       have hf : f.rel (lftFinset u) s := by
         have hinl' : (comp h (inlMap A B)).rel (lftFinset u) s := by
           refine ⟨liftSumLeft (β := β) (lftFinset u), ?_, ?_⟩
@@ -87,14 +87,14 @@ theorem copairMap_unique (f : ApproximableMap A C) (g : ApproximableMap B C)
       exact h.mono hb ((sumSystem A B).entSet_empty _) (proposition_2_3_iii C hs) hu hs
     · have : (comp h (inlMap A B)).rel (lftFinset u) s := by simpa [hinl] using hf
       rcases this with ⟨u', hinl', hh'⟩
-      have hr : rhtFinset u = ∅ := SumCon_rht_empty_of_lft_nonempty A B hu hne
+      have hr : rhtFinset u = ∅ := SumCon.rht_empty_of_lft_nonempty A B hu hne
       have hEnt : (sumSystem A B).EntSet u u' :=
         entSet_u_of_inl_witness A B hne hinl'
           (proposition_2_3_iii A (lft_mem_Con_of_SumCon_rht_empty A B hu hr)) hu hr
       exact h.mono hh' hEnt (proposition_2_3_iii C hs) hu hs
     · have : (comp h (inrMap A B)).rel (rhtFinset u) s := by simpa [hinr] using hg
       rcases this with ⟨u', hinr', hh'⟩
-      have hl : lftFinset u = ∅ := SumCon_lft_empty_of_rht_nonempty A B hu hne
+      have hl : lftFinset u = ∅ := SumCon.lft_empty_of_rht_nonempty A B hu hne
       have hEnt : (sumSystem A B).EntSet u u' :=
         entSet_u_of_inr_witness A B hne hinr'
           (proposition_2_3_iii B (rht_mem_Con_of_SumCon_lft_empty A B hu hl)) hu hl

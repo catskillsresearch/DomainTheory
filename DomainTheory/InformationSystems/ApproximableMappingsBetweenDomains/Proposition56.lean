@@ -1,8 +1,7 @@
 module
 
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.constMap_toElement
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.constMap
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.comp_constMap
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.constMap_comp
 
 @[expose] public section
 
@@ -87,8 +86,8 @@ theorem theorem_56.{u_1, u_2, u_3, u_4} : And
           (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.constMap α β inst inst_1 A B b))
         (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.constMap α γ inst inst_2 A C
           (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.toElement β γ inst_1 inst_2 B C f b)))
-    @DomainTheory.InformationSystems.InfoSys.ApproximableMap.constMap_toElement
+    @DomainTheory.InformationSystems.InfoSys.ApproximableMap.constMap.toElement
     @DomainTheory.InformationSystems.InfoSys.ApproximableMap.comp_constMap)
-  @DomainTheory.InformationSystems.InfoSys.ApproximableMap.constMap_comp
+  @DomainTheory.InformationSystems.InfoSys.ApproximableMap.constMap.comp
 
 end DomainTheory.InformationSystems.InfoSys.ApproximableMap

@@ -10,8 +10,6 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolPoint
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.boolSat
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.boolSat_bot
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.boolSat_sing
 
 @[expose] public section
 
@@ -27,7 +25,7 @@ variable (A : InfoSys α) (B : InfoSys β)
 
 /-- **Factoid 7.5.** Flat BOOL information system. -/
 def boolSystem : InfoSys BoolToken :=
-  Factoid25.ofSatisfaction boolSat .bot boolSat_bot boolSat_sing
+  Factoid25.ofSatisfaction boolSat .bot boolSat.bot boolSat.sing
 
 end InfoSys
 

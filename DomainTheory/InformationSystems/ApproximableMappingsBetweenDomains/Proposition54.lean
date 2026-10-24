@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54.idMap_toElement
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54.idMap
 
 @[expose] public section
 
@@ -14,6 +14,6 @@ theorem theorem_54.{u_1} : ∀ {α : Type u_1} [inst : DecidableEq α] (A : @Dom
     (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.toElement α α inst inst A A
       (@DomainTheory.InformationSystems.InfoSys.idMap α inst A) x)
     x :=
-  @DomainTheory.InformationSystems.InfoSys.idMap_toElement
+  @DomainTheory.InformationSystems.InfoSys.idMap.toElement
 
 end DomainTheory.InformationSystems.InfoSys

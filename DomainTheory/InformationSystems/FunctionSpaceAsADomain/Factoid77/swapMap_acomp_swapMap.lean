@@ -9,10 +9,7 @@ public import Mathlib.CategoryTheory.Adjunction.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.InfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.id_acomp
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_assoc
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.swapMap
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_swap_fst
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_swap_snd
 
 @[expose] public section
 
@@ -39,15 +36,15 @@ theorem swapMap_acomp_swapMap {α β : Type*} [DecidableEq α] [DecidableEq β]
   have hfst : acomp (acomp (swapMap A B) (swapMap B A)) (fstMap A B) = fstMap A B := by
     calc
       acomp (acomp (swapMap A B) (swapMap B A)) (fstMap A B)
-          = acomp (swapMap A B) (acomp (swapMap B A) (fstMap A B)) := acomp_assoc _ _ _
-      _ = acomp (swapMap A B) (sndMap B A) := by rw [acomp_swap_fst]
-      _ = fstMap A B := acomp_swap_snd A B
+          = acomp (swapMap A B) (acomp (swapMap B A) (fstMap A B)) := acomp.assoc _ _ _
+      _ = acomp (swapMap A B) (sndMap B A) := by rw [acomp.swap_fst]
+      _ = fstMap A B := acomp.swap_snd A B
   have hsnd : acomp (acomp (swapMap A B) (swapMap B A)) (sndMap A B) = sndMap A B := by
     calc
       acomp (acomp (swapMap A B) (swapMap B A)) (sndMap A B)
-          = acomp (swapMap A B) (acomp (swapMap B A) (sndMap A B)) := acomp_assoc _ _ _
-      _ = acomp (swapMap A B) (fstMap B A) := by rw [acomp_swap_snd]
-      _ = sndMap A B := acomp_swap_fst A B
+          = acomp (swapMap A B) (acomp (swapMap B A) (sndMap A B)) := acomp.assoc _ _ _
+      _ = acomp (swapMap A B) (fstMap B A) := by rw [acomp.swap_snd]
+      _ = sndMap A B := acomp.swap_fst A B
   exact (pairMap_unique A B (fstMap A B) (sndMap A B) _ hfst hsnd).trans
     (pairMap_unique A B (fstMap A B) (sndMap A B) (idMap _)
       (id_acomp _) (id_acomp _)).symm

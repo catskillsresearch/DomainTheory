@@ -1,7 +1,7 @@
 module
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.lftFinset_singleton_right
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inrMap
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset_singleton_right
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32.factoid_3_2
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_iii
@@ -37,8 +37,8 @@ theorem right_bot_mem_inrMap_toElement (y : B.Element) :
     exact factoid_3_2 B y
   · refine ⟨B.con_sing B.bot, ?_, lftFinset_singleton_right (α := α) B.bot, ?_⟩
     · exact Or.inr ⟨lftFinset_singleton_right (α := α) B.bot,
-        by rw [rhtFinset_singleton_right]; exact B.con_sing B.bot⟩
-    · rw [rhtFinset_singleton_right]
+        by rw [rhtFinset.singleton_right]; exact B.con_sing B.bot⟩
+    · rw [rhtFinset.singleton_right]
       exact proposition_2_3_iii B (B.con_sing B.bot)
 
 end InfoSysConstructions

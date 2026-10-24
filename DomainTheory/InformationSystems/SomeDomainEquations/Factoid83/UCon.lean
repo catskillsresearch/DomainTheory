@@ -10,6 +10,8 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UTok
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.BasicInst35
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.BasicInst39
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.uForgetFinset
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VEnt_mono
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.not_VEnt_singleton_ne_top
 
 @[expose] public section
 
@@ -22,6 +24,34 @@ namespace InfoSys
 /-- Consistency for `U`: finite `u ⊆ D_U` with `u ⊬_V ∇` (Scott (9)). -/
 def UCon (u : Finset UToken) : Prop :=
   ¬ VEnt (uForgetFinset u) .top
+
+end InfoSys
+
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+theorem UCon.singleton (p : UToken) : UCon {p} := by
+  rw [UCon, uForgetFinset.singleton]
+  exact not_VEnt_singleton_ne_top p.property.out
+
+end InfoSys
+
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+theorem UCon.subset {u v : Finset UToken}
+    (hu : UCon u) (hv : v ⊆ u) : UCon v :=
+  fun h => hu (VEnt_mono (uForgetFinset.mono hv) h)
 
 end InfoSys
 

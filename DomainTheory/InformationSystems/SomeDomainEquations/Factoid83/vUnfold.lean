@@ -27,3 +27,38 @@ def vUnfold (t : VToken) : ProdToken vSystem vSystem :=
 end InfoSys
 
 end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+theorem vUnfold.bot : vUnfold .bot = prodBot vSystem vSystem := rfl
+
+end InfoSys
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+theorem vUnfold.pairL (x : VToken) :
+    vUnfold (.pairL x) = ⟨(x, .bot), ⟨Or.inr rfl⟩⟩ := rfl
+
+end InfoSys
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+theorem vUnfold.pairR (y : VToken) :
+    vUnfold (.pairR y) = ⟨(.bot, y), ⟨Or.inl rfl⟩⟩ := rfl
+
+end InfoSys
+end DomainTheory.InformationSystems

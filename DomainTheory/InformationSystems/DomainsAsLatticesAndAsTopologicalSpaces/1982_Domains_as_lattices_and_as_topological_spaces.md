@@ -18,13 +18,7 @@
 
 @import "Factoid41/Basic.lean"
 
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_le_left.lean](Factoid41/inf_le_left.lean)**
 
-@import "Factoid41/inf_le_left.lean"
-
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_le_right.lean](Factoid41/inf_le_right.lean)**
-
-@import "Factoid41/inf_le_right.lean"
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/le_iff_inf_eq.lean](Factoid41/le_iff_inf_eq.lean)**
 
@@ -78,15 +72,10 @@
 
 @import "Factoid42/Basic.lean"
 
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_le.lean](Factoid42/familyInf_le.lean)**
-
-@import "Factoid42/familyInf_le.lean"
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/le_familyInf.lean](Factoid42/le_familyInf.lean)**
 
 @import "Factoid42/le_familyInf.lean"
-
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_le_iff.lean](Factoid42/familyInf_le_iff.lean)**
 
 @import "Factoid42/familyInf_le_iff.lean"
 
@@ -110,9 +99,7 @@
 
 @import "Factoid43/deductiveClosure.lean"
 
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familySup_le.lean](Factoid43/familySup_le.lean)**
-
-@import "Factoid43/familySup_le.lean"
+@import "Factoid43/familySup.lean"
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familyUnionCarrier.lean](Factoid43/familyUnionCarrier.lean)**
 
@@ -120,7 +107,6 @@
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familySup.lean](Factoid43/familySup.lean)**
 
-@import "Factoid43/familySup.lean"
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/finitelyConsistent_of_upperBound.lean](Factoid43/finitelyConsistent_of_upperBound.lean)**
 
@@ -134,9 +120,6 @@
 
 @import "Factoid43/Basic.lean"
 
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/join_le.lean](Factoid43/join_le.lean)**
-
-@import "Factoid43/join_le.lean"
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/subset_deductiveClosure.lean](Factoid43/subset_deductiveClosure.lean)**
 
@@ -174,21 +157,13 @@
 
 @import "Factoid44/IsDirected.lean"
 
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/IsDirected_of_IsChain.lean](Factoid44/IsDirected_of_IsChain.lean)**
 
-@import "Factoid44/IsDirected_of_IsChain.lean"
-
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/directedSup_carrier_eq_union.lean](Factoid44/directedSup_carrier_eq_union.lean)**
-
-@import "Factoid44/directedSup_carrier_eq_union.lean"
+@import "Factoid44/directedSup.lean"
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44.lean](Factoid44.lean)**
 
 @import "Factoid44.lean"
 
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/directedSup_le.lean](Factoid44/directedSup_le.lean)**
-
-@import "Factoid44/directedSup_le.lean"
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/exists_mem_of_subset_directedUnion.lean](Factoid44/exists_mem_of_subset_directedUnion.lean)**
 
@@ -200,7 +175,6 @@
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/directedSup.lean](Factoid44/directedSup.lean)**
 
-@import "Factoid44/directedSup.lean"
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/chainSup.lean](Factoid44/chainSup.lean)**
 
@@ -254,9 +228,6 @@
 
 @import "Factoid46/basicOpen.lean"
 
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/basicOpen_inter.lean](Factoid46/basicOpen_inter.lean)**
-
-@import "Factoid46/basicOpen_inter.lean"
 
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/eq_of_basicOpen_eq.lean](Factoid46/eq_of_basicOpen_eq.lean)**
 
@@ -296,9 +267,7 @@
 
 @import "Factoid41/Basic.ai_lean_to_english" {code_block=false}
 
-@import "Factoid41/inf_le_left.ai_lean_to_english" {code_block=false}
 
-@import "Factoid41/inf_le_right.ai_lean_to_english" {code_block=false}
 
 @import "Factoid41/le_iff_inf_eq.ai_lean_to_english" {code_block=false}
 
@@ -326,7 +295,6 @@
 
 @import "Factoid42/Basic.ai_lean_to_english" {code_block=false}
 
-@import "Factoid42/familyInf_le.ai_lean_to_english" {code_block=false}
 
 @import "Factoid42/le_familyInf.ai_lean_to_english" {code_block=false}
 
@@ -342,7 +310,6 @@
 
 @import "Factoid43/deductiveClosure.ai_lean_to_english" {code_block=false}
 
-@import "Factoid43/familySup_le.ai_lean_to_english" {code_block=false}
 
 @import "Factoid43/familyUnionCarrier.ai_lean_to_english" {code_block=false}
 
@@ -354,7 +321,6 @@
 
 @import "Factoid43/Basic.ai_lean_to_english" {code_block=false}
 
-@import "Factoid43/join_le.ai_lean_to_english" {code_block=false}
 
 @import "Factoid43/subset_deductiveClosure.ai_lean_to_english" {code_block=false}
 
@@ -374,13 +340,10 @@
 
 @import "Factoid44/IsDirected.ai_lean_to_english" {code_block=false}
 
-@import "Factoid44/IsDirected_of_IsChain.ai_lean_to_english" {code_block=false}
 
-@import "Factoid44/directedSup_carrier_eq_union.ai_lean_to_english" {code_block=false}
 
 @import "Factoid44.ai_lean_to_english" {code_block=false}
 
-@import "Factoid44/directedSup_le.ai_lean_to_english" {code_block=false}
 
 @import "Factoid44/exists_mem_of_subset_directedUnion.ai_lean_to_english" {code_block=false}
 
@@ -414,7 +377,6 @@
 
 @import "Factoid46/basicOpen.ai_lean_to_english" {code_block=false}
 
-@import "Factoid46/basicOpen_inter.ai_lean_to_english" {code_block=false}
 
 @import "Factoid46/eq_of_basicOpen_eq.ai_lean_to_english" {code_block=false}
 

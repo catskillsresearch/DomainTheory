@@ -5,7 +5,7 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43.Basic
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43.le_familySup
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43.familySup_le
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43.familySup
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43.finitelyConsistent_of_upperBound
 
 @[expose] public section
@@ -29,7 +29,7 @@ theorem exists_isLUB_iff (S : Set sys.Element) :
     exact ⟨sys.finitelyConsistent_of_upperBound S hub⟩
   · rintro ⟨hU⟩
     refine ⟨sys.familySup S hU, fun x hx => sys.le_familySup S hU hx,
-      fun w hw => sys.familySup_le S hU hw⟩
+      fun w hw => familySup.le sys S hU hw⟩
 
 end InfoSys
 end DomainTheory.InformationSystems

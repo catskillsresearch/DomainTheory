@@ -54,9 +54,7 @@
 
 @import "../Product/BasicInst7.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Product/fstFinset_funion.lean](../Product/fstFinset_funion.lean)**
-
-@import "../Product/fstFinset_funion.lean"
+@import "../Product/fstFinset.lean"
 
 **[InformationSystems/ProductsAndSumsOfDomains/Product/instLeftCommutativeFstInsert.lean](../Product/instLeftCommutativeFstInsert.lean)**
 
@@ -68,7 +66,6 @@
 
 **[InformationSystems/ProductsAndSumsOfDomains/Product/fstFinset.lean](../Product/fstFinset.lean)**
 
-@import "../Product/fstFinset.lean"
 
 **[InformationSystems/ProductsAndSumsOfDomains/Product/mem_foldr_fst.lean](../Product/mem_foldr_fst.lean)**
 
@@ -78,29 +75,12 @@
 
 @import "../Product/mem_foldr_snd.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Product/mem_fstFinset.lean](../Product/mem_fstFinset.lean)**
 
-@import "../Product/mem_fstFinset.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Product/fstFinset_empty.lean](../Product/fstFinset_empty.lean)**
 
-@import "../Product/fstFinset_empty.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Product/fstFinset_insert_left.lean](../Product/fstFinset_insert_left.lean)**
 
-@import "../Product/fstFinset_insert_left.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Product/fstFinset_insert_not_left.lean](../Product/fstFinset_insert_not_left.lean)**
-
-@import "../Product/fstFinset_insert_not_left.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Product/fstFinset_mono.lean](../Product/fstFinset_mono.lean)**
-
-@import "../Product/fstFinset_mono.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Product/fstFinset_singleton_left.lean](../Product/fstFinset_singleton_left.lean)**
-
-@import "../Product/fstFinset_singleton_left.lean"
 
 **[InformationSystems/ProductsAndSumsOfDomains/Product/prodBot.lean](../Product/prodBot.lean)**
 
@@ -118,33 +98,13 @@
 
 @import "../Product/ProdEnt.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Product/mem_sndFinset.lean](../Product/mem_sndFinset.lean)**
 
-@import "../Product/mem_sndFinset.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Product/sndFinset_empty.lean](../Product/sndFinset_empty.lean)**
 
-@import "../Product/sndFinset_empty.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Product/sndFinset_funion.lean](../Product/sndFinset_funion.lean)**
 
-@import "../Product/sndFinset_funion.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Product/sndFinset_insert_not_right.lean](../Product/sndFinset_insert_not_right.lean)**
 
-@import "../Product/sndFinset_insert_not_right.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Product/sndFinset_insert_right.lean](../Product/sndFinset_insert_right.lean)**
-
-@import "../Product/sndFinset_insert_right.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Product/sndFinset_mono.lean](../Product/sndFinset_mono.lean)**
-
-@import "../Product/sndFinset_mono.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Product/sndFinset_singleton_right.lean](../Product/sndFinset_singleton_right.lean)**
-
-@import "../Product/sndFinset_singleton_right.lean"
 
 **[InformationSystems/ProductsAndSumsOfDomains/Product/productSystem.lean](../Product/productSystem.lean)**
 
@@ -166,14 +126,6 @@
 
 @import "instDecidableEqSumToken.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_empty.lean](lftFinset_empty.lean)**
-
-@import "lftFinset_empty.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_funion.lean](lftFinset_funion.lean)**
-
-@import "lftFinset_funion.lean"
-
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/lftInsert.lean](lftInsert.lean)**
 
 @import "lftInsert.lean"
@@ -182,17 +134,9 @@
 
 @import "instLeftCommutativeLftInsert.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_empty.lean](rhtFinset_empty.lean)**
-
-@import "rhtFinset_empty.lean"
-
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_empty.lean](SumCon_empty.lean)**
 
 @import "SumCon_empty.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_funion.lean](rhtFinset_funion.lean)**
-
-@import "rhtFinset_funion.lean"
 
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtInsert.lean](rhtInsert.lean)**
 
@@ -214,34 +158,6 @@
 
 @import "mem_foldr_rht.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/mem_lftFinset.lean](mem_lftFinset.lean)**
-
-@import "mem_lftFinset.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_insert_bot.lean](lftFinset_insert_bot.lean)**
-
-@import "lftFinset_insert_bot.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_insert_left.lean](lftFinset_insert_left.lean)**
-
-@import "lftFinset_insert_left.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_insert_right.lean](lftFinset_insert_right.lean)**
-
-@import "lftFinset_insert_right.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_mono.lean](lftFinset_mono.lean)**
-
-@import "lftFinset_mono.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_singleton_bot.lean](lftFinset_singleton_bot.lean)**
-
-@import "lftFinset_singleton_bot.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_singleton_left.lean](lftFinset_singleton_left.lean)**
-
-@import "lftFinset_singleton_left.lean"
-
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset.lean](rhtFinset.lean)**
 
 @import "rhtFinset.lean"
@@ -250,53 +166,9 @@
 
 @import "SumCon.lean"
 
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_lft_con_of_lft_nonempty.lean](SumCon_lft_con_of_lft_nonempty.lean)**
-
-@import "SumCon_lft_con_of_lft_nonempty.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_lft_empty_of_rht_nonempty.lean](SumCon_lft_empty_of_rht_nonempty.lean)**
-
-@import "SumCon_lft_empty_of_rht_nonempty.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_rht_con_of_rht_nonempty.lean](SumCon_rht_con_of_rht_nonempty.lean)**
-
-@import "SumCon_rht_con_of_rht_nonempty.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_rht_empty_of_lft_nonempty.lean](SumCon_rht_empty_of_lft_nonempty.lean)**
-
-@import "SumCon_rht_empty_of_lft_nonempty.lean"
-
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/SumEnt.lean](SumEnt.lean)**
 
 @import "SumEnt.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/mem_rhtFinset.lean](mem_rhtFinset.lean)**
-
-@import "mem_rhtFinset.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_insert_bot.lean](rhtFinset_insert_bot.lean)**
-
-@import "rhtFinset_insert_bot.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_insert_left.lean](rhtFinset_insert_left.lean)**
-
-@import "rhtFinset_insert_left.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_insert_right.lean](rhtFinset_insert_right.lean)**
-
-@import "rhtFinset_insert_right.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_mono.lean](rhtFinset_mono.lean)**
-
-@import "rhtFinset_mono.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_singleton_bot.lean](rhtFinset_singleton_bot.lean)**
-
-@import "rhtFinset_singleton_bot.lean"
-
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_singleton_right.lean](rhtFinset_singleton_right.lean)**
-
-@import "rhtFinset_singleton_right.lean"
 
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/sumBot.lean](sumBot.lean)**
 
@@ -338,7 +210,6 @@
 
 @import "../Product/BasicInst7.ai_lean_to_english" {code_block=false}
 
-@import "../Product/fstFinset_funion.ai_lean_to_english" {code_block=false}
 
 @import "../Product/instLeftCommutativeFstInsert.ai_lean_to_english" {code_block=false}
 
@@ -352,15 +223,10 @@
 
 @import "../Product/mem_fstFinset.ai_lean_to_english" {code_block=false}
 
-@import "../Product/fstFinset_empty.ai_lean_to_english" {code_block=false}
 
-@import "../Product/fstFinset_insert_left.ai_lean_to_english" {code_block=false}
 
-@import "../Product/fstFinset_insert_not_left.ai_lean_to_english" {code_block=false}
 
-@import "../Product/fstFinset_mono.ai_lean_to_english" {code_block=false}
 
-@import "../Product/fstFinset_singleton_left.ai_lean_to_english" {code_block=false}
 
 @import "../Product/prodBot.ai_lean_to_english" {code_block=false}
 
@@ -372,17 +238,11 @@
 
 @import "../Product/mem_sndFinset.ai_lean_to_english" {code_block=false}
 
-@import "../Product/sndFinset_empty.ai_lean_to_english" {code_block=false}
 
-@import "../Product/sndFinset_funion.ai_lean_to_english" {code_block=false}
 
-@import "../Product/sndFinset_insert_not_right.ai_lean_to_english" {code_block=false}
 
-@import "../Product/sndFinset_insert_right.ai_lean_to_english" {code_block=false}
 
-@import "../Product/sndFinset_mono.ai_lean_to_english" {code_block=false}
 
-@import "../Product/sndFinset_singleton_right.ai_lean_to_english" {code_block=false}
 
 @import "../Product/productSystem.ai_lean_to_english" {code_block=false}
 
@@ -394,19 +254,11 @@
 
 @import "instDecidableEqSumToken.ai_lean_to_english" {code_block=false}
 
-@import "lftFinset_empty.ai_lean_to_english" {code_block=false}
-
-@import "lftFinset_funion.ai_lean_to_english" {code_block=false}
-
 @import "lftInsert.ai_lean_to_english" {code_block=false}
 
 @import "instLeftCommutativeLftInsert.ai_lean_to_english" {code_block=false}
 
-@import "rhtFinset_empty.ai_lean_to_english" {code_block=false}
-
 @import "SumCon_empty.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset_funion.ai_lean_to_english" {code_block=false}
 
 @import "rhtInsert.ai_lean_to_english" {code_block=false}
 
@@ -420,45 +272,13 @@
 
 @import "mem_lftFinset.ai_lean_to_english" {code_block=false}
 
-@import "lftFinset_insert_bot.ai_lean_to_english" {code_block=false}
-
-@import "lftFinset_insert_left.ai_lean_to_english" {code_block=false}
-
-@import "lftFinset_insert_right.ai_lean_to_english" {code_block=false}
-
-@import "lftFinset_mono.ai_lean_to_english" {code_block=false}
-
-@import "lftFinset_singleton_bot.ai_lean_to_english" {code_block=false}
-
-@import "lftFinset_singleton_left.ai_lean_to_english" {code_block=false}
-
 @import "rhtFinset.ai_lean_to_english" {code_block=false}
 
 @import "SumCon.ai_lean_to_english" {code_block=false}
 
-@import "SumCon_lft_con_of_lft_nonempty.ai_lean_to_english" {code_block=false}
-
-@import "SumCon_lft_empty_of_rht_nonempty.ai_lean_to_english" {code_block=false}
-
-@import "SumCon_rht_con_of_rht_nonempty.ai_lean_to_english" {code_block=false}
-
-@import "SumCon_rht_empty_of_lft_nonempty.ai_lean_to_english" {code_block=false}
-
 @import "SumEnt.ai_lean_to_english" {code_block=false}
 
 @import "mem_rhtFinset.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset_insert_bot.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset_insert_left.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset_insert_right.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset_mono.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset_singleton_bot.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset_singleton_right.ai_lean_to_english" {code_block=false}
 
 @import "sumBot.ai_lean_to_english" {code_block=false}
 

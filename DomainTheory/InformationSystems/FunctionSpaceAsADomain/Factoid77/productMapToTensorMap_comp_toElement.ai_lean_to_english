@@ -1,3 +1,0 @@
-The composite of the tensor form of a product map f from A times Y to A times Y' with a morphism g from the tensor of A and Y' to Z, evaluated at an element p of the tensor of A and Y, equals g evaluated at the tensor image of f applied to the product image of p.
-
-Unfold the category structure and the two transports, and replace the tensor map and the two tensor element types by the corresponding product data. After those equalities are discharged, the claim is the elementwise law for composition of approximable maps.

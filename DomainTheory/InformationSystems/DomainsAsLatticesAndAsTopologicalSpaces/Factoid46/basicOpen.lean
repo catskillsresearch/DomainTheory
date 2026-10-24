@@ -1,4 +1,3 @@
-
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable
@@ -21,4 +20,32 @@ def basicOpen (A : InfoSys α) (u : Finset α) : Set A.Element :=
 
 end InfoSys
 
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+
+
+/-- Intersection of basic opens: `[u] ∩ [v] = [u ∪' v]`. -/
+theorem basicOpen.inter (A : InfoSys α) (u v : Finset α) :
+    A.basicOpen u ∩ A.basicOpen v = A.basicOpen (u ∪' v) := by
+  ext x
+  constructor
+  · intro ⟨hu, hv⟩ a ha
+    rcases mem_funion.mp (Finset.mem_coe.1 ha) with h | h
+    · exact hu (Finset.mem_coe.2 h)
+    · exact hv (Finset.mem_coe.2 h)
+  · intro huv
+    refine ⟨?_, ?_⟩
+    · intro a ha
+      exact huv (Finset.mem_coe.2 (mem_funion.mpr (Or.inl (Finset.mem_coe.1 ha))))
+    · intro a ha
+      exact huv (Finset.mem_coe.2 (mem_funion.mpr (Or.inr (Finset.mem_coe.1 ha))))
+
+end InfoSys
 end DomainTheory.InformationSystems

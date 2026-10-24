@@ -13,7 +13,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.B
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.strictFunctionSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.approxMap_toStrictElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.condMap
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.IsStrict_condMap
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.IsStrict
 
 @[expose] public section
 
@@ -34,7 +34,7 @@ def condElement (z : (productSystem A A).Element) :
     (strictFunctionSystem boolSystem A).Element :=
   approxMap_toStrictElement boolSystem A
     (condMap A ((fstMap A A).toElement z) ((sndMap A A).toElement z))
-    (IsStrict_condMap A _ _)
+    (IsStrict.condMap A _ _)
 
 end InfoSys
 

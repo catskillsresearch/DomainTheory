@@ -12,12 +12,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.uBot
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.BasicInst39
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UCon
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UEnt
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UCon_singleton
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UCon_subset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UCon_insert_of_ent
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UEnt_bot
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UEnt_of_mem
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UEnt_trans
 
 @[expose] public section
 
@@ -32,12 +27,12 @@ def uSystem : InfoSys UToken where
   bot := uBot
   Con := {u | UCon u}
   Ent := UEnt
-  con_subset := fun hu hv => UCon_subset hu hv
-  con_sing := UCon_singleton
+  con_subset := fun hu hv => UCon.subset hu hv
+  con_sing := UCon.singleton
   ent_con := fun h => UCon_insert_of_ent h
-  ent_bot := fun hu => UEnt_bot hu
-  ent_refl := fun hu hp => UEnt_of_mem hu hp
-  ent_trans := fun hv hu hEnts h => UEnt_trans hv hu hEnts h
+  ent_bot := fun hu => UEnt.bot hu
+  ent_refl := fun hu hp => UEnt.of_mem hu hp
+  ent_trans := fun hv hu hEnts h => UEnt.trans hv hu hEnts h
 
 end InfoSys
 

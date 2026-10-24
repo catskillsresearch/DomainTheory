@@ -7,8 +7,7 @@ public import DomainTheory.InformationSystems.InformationSystems.Factoid25
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.Basic
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.condMap_toElement_boolTrue
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.condMap_toElement_boolFalse
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.condMap
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.condMap_unique
 
 @[expose] public section
@@ -35,8 +34,8 @@ theorem conditional_iso (x y : A.Element) :
     (condMap A x y).toElement boolFalse = y ∧
     ∀ (f : ApproximableMap boolSystem A), IsStrict boolSystem A f →
       f = condMap A (f.toElement boolTrue) (f.toElement boolFalse) :=
-  ⟨condMap_toElement_boolTrue A x y, condMap_toElement_boolFalse A x y,
-    fun f hf => condMap_unique A f hf⟩
+  ⟨condMap.toElement_boolTrue A x y, condMap.toElement_boolFalse A x y,
+    fun f hf => condMap.unique A f hf⟩
 
 end InfoSys
 end DomainTheory.InformationSystems

@@ -8,8 +8,6 @@ public import Mathlib.CategoryTheory.Adjunction.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.InfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.id_acomp
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_id
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_assoc
 
 @[expose] public section
 
@@ -36,8 +34,8 @@ abbrev instCategoryInfoSysObj : Category.{u, u + 1} InfoSysObj.{u} where
   id A := idMap A.sys
   comp f g := acomp f g
   id_comp := id_acomp
-  comp_id := acomp_id
-  assoc := acomp_assoc
+  comp_id := acomp.id
+  assoc := acomp.assoc
 
 end InfoSys
 

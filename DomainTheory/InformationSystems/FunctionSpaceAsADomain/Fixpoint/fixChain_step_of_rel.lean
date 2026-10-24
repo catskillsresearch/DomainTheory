@@ -53,7 +53,7 @@ theorem fixChain_step_of_rel (f : ApproximableMap A A)
   · intro q hq
     cases Finset.mem_singleton.mp hq
     exact proposition_2_3_iii A (f.rel_dom hrel)
-  · rw [funOutputUnion_singleton]
+  · rw [funOutputUnion.singleton]
     exact proposition_2_3_iii A (f.rel_cod hrel)
 
 end ApproximableMap

@@ -9,6 +9,10 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.I
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.tensorMap_eq_productMap
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCategoryInfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCartesianMonoidalCategoryInfoSysObj
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.prodElementToTensorElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.tensorElementToProdElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.tensorElement_eq_productElement
 
 @[expose] public section
 
@@ -37,6 +41,46 @@ def productMapToTensorMap (A Y Y' : InfoSysObj.{u})
     (f : ApproximableMap (productSystem A.sys Y.sys) (productSystem A.sys Y'.sys)) :
     A ⊗ Y ⟶ A ⊗ Y' :=
   cast (tensorMap_eq_productMap A Y Y').symm f
+
+end InfoSys
+
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+open CategoryTheory
+
+open CategoryTheory.Limits
+
+open CategoryTheory.MonoidalCategory
+
+namespace InfoSys
+
+attribute [instance] InfoSysObj.decEq
+
+open ApproximableMap
+
+attribute [instance] instCategoryInfoSysObj
+
+attribute [instance] instCartesianMonoidalCategoryInfoSysObj
+
+theorem productMapToTensorMap.comp.toElement (A Y Y' Z : InfoSysObj.{u})
+    (f : ApproximableMap (productSystem A.sys Y.sys) (productSystem A.sys Y'.sys))
+    (g : A ⊗ Y' ⟶ Z) (p : (A ⊗ Y).sys.Element) :
+    (productMapToTensorMap A Y Y' f ≫ g).toElement p =
+      g.toElement (prodElementToTensorElement A Y'
+        (f.toElement (tensorElementToProdElement A Y p))) := by
+  unfold instCategoryInfoSysObj productMapToTensorMap
+    prodElementToTensorElement tensorElementToProdElement
+  generalize tensorMap_eq_productMap A Y Y' = eh
+  generalize tensorElement_eq_productElement A Y = es
+  generalize tensorElement_eq_productElement A Y' = et
+  cases eh
+  cases es
+  cases et
+  exact acomp.toElement _ _ _
 
 end InfoSys
 

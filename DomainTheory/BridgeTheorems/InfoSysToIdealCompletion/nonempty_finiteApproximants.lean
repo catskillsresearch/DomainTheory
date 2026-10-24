@@ -3,7 +3,7 @@ module
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_of_le
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.botFinite
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement_le
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
@@ -24,7 +24,7 @@ variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 theorem nonempty_finiteApproximants (x : A.Element) :
     (finiteApproximants A x).Nonempty :=
-  ⟨botFinite A, mem_finiteApproximants_of_le A (A.botElement_le x)⟩
+  ⟨botFinite A, mem_finiteApproximants_of_le A (InfoSys.botElement.le A x)⟩
 
 end InfoSysToIdealCompletion
 

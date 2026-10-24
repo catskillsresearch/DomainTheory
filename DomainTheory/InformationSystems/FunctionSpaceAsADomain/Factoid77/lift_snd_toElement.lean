@@ -7,7 +7,6 @@ public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 public import Mathlib.CategoryTheory.Adjunction.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.InfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_toElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCategoryInfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCartesianMonoidalCategoryInfoSysObj
 
@@ -51,9 +50,9 @@ theorem lift_snd_toElement (A : InfoSysObj.{u}) {Y Y' : InfoSysObj.{u}}
           (acomp (sndMap A.sys Y'.sys) f)).toElement p) =
       (acomp (pairMap A.sys Y.sys (fstMap A.sys Y'.sys)
         (acomp (sndMap A.sys Y'.sys) f)) (sndMap A.sys Y.sys)).toElement p :=
-      (acomp_toElement _ _ _).symm
+      (acomp.toElement _ _ _).symm
     _ = (acomp (sndMap A.sys Y'.sys) f).toElement p := congrArg (fun φ => φ.toElement p) e
-    _ = f.toElement ((sndMap A.sys Y'.sys).toElement p) := acomp_toElement _ _ _
+    _ = f.toElement ((sndMap A.sys Y'.sys).toElement p) := acomp.toElement _ _ _
 
 end InfoSys
 

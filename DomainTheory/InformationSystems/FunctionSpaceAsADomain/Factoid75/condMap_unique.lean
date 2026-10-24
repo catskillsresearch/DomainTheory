@@ -7,11 +7,10 @@ public import DomainTheory.InformationSystems.InformationSystems.Factoid25
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.Basic
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.entSet_singleton_tru_of_ent_tru
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.entSet_singleton_fls_of_ent_fls
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.IsStrict
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.condMap
 
 @[expose] public section
-
 
 namespace DomainTheory.InformationSystems
 
@@ -29,7 +28,7 @@ open ApproximableMap
 
 
 /-- Every strict BOOL-map is `cond` of its values at true and false. -/
-theorem condMap_unique (f : ApproximableMap boolSystem A) (hf : IsStrict boolSystem A f) :
+theorem condMap.unique (f : ApproximableMap boolSystem A) (hf : IsStrict boolSystem A f) :
     f = condMap A (f.toElement boolTrue) (f.toElement boolFalse) := by
   refine ApproximableMap.ext fun u v => ?_
   constructor

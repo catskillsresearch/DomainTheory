@@ -6,10 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/element_toApproxMap_approxMap_toElement.lean](element_toApproxMap_approxMap_toElement.lean)**
-
-@import "element_toApproxMap_approxMap_toElement.lean"
-
 **[InformationSystems/FunctionSpaceAsADomain/Theorem72/fstMap_pairElements.lean](fstMap_pairElements.lean)**
 
 @import "fstMap_pairElements.lean"
@@ -50,17 +46,9 @@
 
 @import "mem_fst_of_subset_pairElements.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/mkFunToken_eq.lean](mkFunToken_eq.lean)**
-
-@import "mkFunToken_eq.lean"
-
 **[InformationSystems/FunctionSpaceAsADomain/Theorem72/approxMap_toElement_element_toApproxMap.lean](approxMap_toElement_element_toApproxMap.lean)**
 
 @import "approxMap_toElement_element_toApproxMap.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/mkFunToken_property.lean](mkFunToken_property.lean)**
-
-@import "mkFunToken_property.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Theorem72/mkFunToken.lean](mkFunToken.lean)**
 
@@ -69,26 +57,6 @@
 **[InformationSystems/FunctionSpaceAsADomain/Theorem72/applyMap.lean](applyMap.lean)**
 
 @import "applyMap.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/element_toApproxMap_empty_rel.lean](element_toApproxMap_empty_rel.lean)**
-
-@import "element_toApproxMap_empty_rel.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/element_toApproxMap_mono.lean](element_toApproxMap_mono.lean)**
-
-@import "element_toApproxMap_mono.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/element_toApproxMap_rel_cod.lean](element_toApproxMap_rel_cod.lean)**
-
-@import "element_toApproxMap_rel_cod.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/element_toApproxMap_rel_dom.lean](element_toApproxMap_rel_dom.lean)**
-
-@import "element_toApproxMap_rel_dom.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/element_toApproxMap_union_right.lean](element_toApproxMap_union_right.lean)**
-
-@import "element_toApproxMap_union_right.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Theorem72/element_toApproxMap.lean](element_toApproxMap.lean)**
 
@@ -102,17 +70,9 @@
 
 @import "rel_input_output_union.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/approxMap_toElement_closed.lean](approxMap_toElement_closed.lean)**
-
-@import "approxMap_toElement_closed.lean"
-
 **[InformationSystems/FunctionSpaceAsADomain/Theorem72/funCon_of_approxMap.lean](funCon_of_approxMap.lean)**
 
 @import "funCon_of_approxMap.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/approxMap_toElement_consistent.lean](approxMap_toElement_consistent.lean)**
-
-@import "approxMap_toElement_consistent.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Theorem72/approxMap_toElement.lean](approxMap_toElement.lean)**
 
@@ -218,13 +178,7 @@
 
 @import "../Factoid75/boolSat.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/boolSat_bot.lean](../Factoid75/boolSat_bot.lean)**
 
-@import "../Factoid75/boolSat_bot.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/boolSat_sing.lean](../Factoid75/boolSat_sing.lean)**
-
-@import "../Factoid75/boolSat_sing.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/boolSystem.lean](../Factoid75/boolSystem.lean)**
 
@@ -254,17 +208,16 @@
 
 @import "../Factoid75/emptyEntails_mem_botElement.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/entSet_singleton_fls_of_ent_fls.lean](../Factoid75/entSet_singleton_fls_of_ent_fls.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap.lean](../Factoid75/condMap.lean)**
 
-@import "../Factoid75/entSet_singleton_fls_of_ent_fls.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/entSet_singleton_tru_of_ent_tru.lean](../Factoid75/entSet_singleton_tru_of_ent_tru.lean)**
-
-@import "../Factoid75/entSet_singleton_tru_of_ent_tru.lean"
+@import "../Factoid75/condMap.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap_unique.lean](../Factoid75/condMap_unique.lean)**
 
 @import "../Factoid75/condMap_unique.lean"
+
+
+
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/filter_ne_subset_of_subset_insert_strict.lean](../Factoid75/filter_ne_subset_of_subset_insert_strict.lean)**
 
@@ -282,13 +235,9 @@
 
 @import "../Factoid75/IsStrictToken_of_IsStrict.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/not_emptyEntails_singleton_fls.lean](../Factoid75/not_emptyEntails_singleton_fls.lean)**
 
-@import "../Factoid75/not_emptyEntails_singleton_fls.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/not_emptyEntails_singleton_tru.lean](../Factoid75/not_emptyEntails_singleton_tru.lean)**
 
-@import "../Factoid75/not_emptyEntails_singleton_tru.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/not_ent_empty_fls.lean](../Factoid75/not_ent_empty_fls.lean)**
 
@@ -298,25 +247,12 @@
 
 @import "../Factoid75/not_ent_empty_tru.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/not_ent_fls_tru.lean](../Factoid75/not_ent_fls_tru.lean)**
 
-@import "../Factoid75/not_ent_fls_tru.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap_toElement_boolFalse.lean](../Factoid75/condMap_toElement_boolFalse.lean)**
 
-@import "../Factoid75/condMap_toElement_boolFalse.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/not_ent_tru_fls.lean](../Factoid75/not_ent_tru_fls.lean)**
 
-@import "../Factoid75/not_ent_tru_fls.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap_toElement_boolTrue.lean](../Factoid75/condMap_toElement_boolTrue.lean)**
-
-@import "../Factoid75/condMap_toElement_boolTrue.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap_pair_roundtrip.lean](../Factoid75/condMap_pair_roundtrip.lean)**
-
-@import "../Factoid75/condMap_pair_roundtrip.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/conditional_iso.lean](../Factoid75/conditional_iso.lean)**
 
@@ -334,25 +270,14 @@
 
 @import "../Factoid75/strictify.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/IsStrict_strictify.lean](../Factoid75/IsStrict_strictify.lean)**
 
-@import "../Factoid75/IsStrict_strictify.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/strictify_toElement_le.lean](../Factoid75/strictify_toElement_le.lean)**
-
-@import "../Factoid75/strictify_toElement_le.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/subset_of_entSet_mem.lean](../Factoid75/subset_of_entSet_mem.lean)**
 
 @import "../Factoid75/subset_of_entSet_mem.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap.lean](../Factoid75/condMap.lean)**
 
-@import "../Factoid75/condMap.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/IsStrict_condMap.lean](../Factoid75/IsStrict_condMap.lean)**
-
-@import "../Factoid75/IsStrict_condMap.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/toFunFinset.lean](../Factoid75/toFunFinset.lean)**
 
@@ -366,25 +291,11 @@
 
 @import "../Factoid75/StrictFunEnt.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/mem_toFunFinset.lean](../Factoid75/mem_toFunFinset.lean)**
 
-@import "../Factoid75/mem_toFunFinset.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/toFunFinset_empty.lean](../Factoid75/toFunFinset_empty.lean)**
 
-@import "../Factoid75/toFunFinset_empty.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/toFunFinset_insert.lean](../Factoid75/toFunFinset_insert.lean)**
 
-@import "../Factoid75/toFunFinset_insert.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/toFunFinset_singleton.lean](../Factoid75/toFunFinset_singleton.lean)**
-
-@import "../Factoid75/toFunFinset_singleton.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/toFunFinset_subset.lean](../Factoid75/toFunFinset_subset.lean)**
-
-@import "../Factoid75/toFunFinset_subset.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/strictFunctionSystem.lean](../Factoid75/strictFunctionSystem.lean)**
 
@@ -414,25 +325,14 @@
 
 @import "../Factoid76/compOp.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/compOpUncurry_toElement.lean](../Factoid76/compOpUncurry_toElement.lean)**
 
-@import "../Factoid76/compOpUncurry_toElement.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/compOp_uncurry.lean](../Factoid76/compOp_uncurry.lean)**
-
-@import "../Factoid76/compOp_uncurry.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid76/constOp.lean](../Factoid76/constOp.lean)**
 
 @import "../Factoid76/constOp.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/constOp_uncurry.lean](../Factoid76/constOp_uncurry.lean)**
 
-@import "../Factoid76/constOp_uncurry.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/pairMap_comp_fst_snd_toElement.lean](../Factoid76/pairMap_comp_fst_snd_toElement.lean)**
-
-@import "../Factoid76/pairMap_comp_fst_snd_toElement.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid76/compOp_toElement.lean](../Factoid76/compOp_toElement.lean)**
 
@@ -442,9 +342,6 @@
 
 @import "../Factoid76.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/constOp_toElement.lean](../Factoid76/constOp_toElement.lean)**
-
-@import "../Factoid76/constOp_toElement.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid76/pairMap_toElement_pairElements.lean](../Factoid76/pairMap_toElement_pairElements.lean)**
 
@@ -462,13 +359,7 @@
 
 @import "../Factoid76/Basic.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/pairOpUncurry_toElement.lean](../Factoid76/pairOpUncurry_toElement.lean)**
 
-@import "../Factoid76/pairOpUncurry_toElement.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/pairOp_uncurry.lean](../Factoid76/pairOp_uncurry.lean)**
-
-@import "../Factoid76/pairOp_uncurry.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid76/pairOp_toElement.lean](../Factoid76/pairOp_toElement.lean)**
 
@@ -482,17 +373,8 @@
 
 @import "../Factoid77/acomp.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/acomp_toElement.lean](../Factoid77/acomp_toElement.lean)**
 
-@import "../Factoid77/acomp_toElement.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/acomp_assoc.lean](../Factoid77/acomp_assoc.lean)**
-
-@import "../Factoid77/acomp_assoc.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/acomp_id.lean](../Factoid77/acomp_id.lean)**
-
-@import "../Factoid77/acomp_id.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/curry_uncurry.lean](../Factoid77/curry_uncurry.lean)**
 
@@ -522,13 +404,7 @@
 
 @import "../Factoid77/swapMap.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/acomp_swap_fst.lean](../Factoid77/acomp_swap_fst.lean)**
 
-@import "../Factoid77/acomp_swap_fst.lean"
-
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/acomp_swap_snd.lean](../Factoid77/acomp_swap_snd.lean)**
-
-@import "../Factoid77/acomp_swap_snd.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/swapMap_acomp_swapMap.lean](../Factoid77/swapMap_acomp_swapMap.lean)**
 
@@ -582,9 +458,6 @@
 
 @import "../Factoid77/tensorElementToProdElement.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorElementToProdElement_prodElementToTensorElement.lean](../Factoid77/tensorElementToProdElement_prodElementToTensorElement.lean)**
-
-@import "../Factoid77/tensorElementToProdElement_prodElementToTensorElement.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorHom_eq_productMap.lean](../Factoid77/tensorHom_eq_productMap.lean)**
 
@@ -594,9 +467,6 @@
 
 @import "../Factoid77/prodHomToTensorHom.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/prodHomToTensorHom_toElement.lean](../Factoid77/prodHomToTensorHom_toElement.lean)**
-
-@import "../Factoid77/prodHomToTensorHom_toElement.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorHomToProdHom.lean](../Factoid77/tensorHomToProdHom.lean)**
 
@@ -614,9 +484,6 @@
 
 @import "../Factoid77/productMapToTensorMap.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/productMapToTensorMap_comp_toElement.lean](../Factoid77/productMapToTensorMap_comp_toElement.lean)**
-
-@import "../Factoid77/productMapToTensorMap_comp_toElement.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorLeft_map_eq.lean](../Factoid77/tensorLeft_map_eq.lean)**
 
@@ -650,9 +517,6 @@
 
 @import "../Factoid77/uncurryRight_comp_left.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorExpEquiv_natural.lean](../Factoid77/tensorExpEquiv_natural.lean)**
-
-@import "../Factoid77/tensorExpEquiv_natural.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/expFunctor.lean](../Factoid77/expFunctor.lean)**
 
@@ -702,13 +566,10 @@
 
 @import "../Fixpoint/fixChain_mono_w.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_pad_front.lean](../Fixpoint/fixChain_pad_front.lean)**
-
-@import "../Fixpoint/fixChain_pad_front.lean"
+@import "../Fixpoint/fixChain_pad.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_pad.lean](../Fixpoint/fixChain_pad.lean)**
 
-@import "../Fixpoint/fixChain_pad.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixReach_con.lean](../Fixpoint/fixReach_con.lean)**
 
@@ -780,8 +641,6 @@
 
 ## AI: AI-Lean to AI-English
 
-@import "element_toApproxMap_approxMap_toElement.ai_lean_to_english" {code_block=false}
-
 @import "fstMap_pairElements.ai_lean_to_english" {code_block=false}
 
 @import "funion_comm_β.ai_lean_to_english" {code_block=false}
@@ -802,25 +661,11 @@
 
 @import "mem_fst_of_subset_pairElements.ai_lean_to_english" {code_block=false}
 
-@import "mkFunToken_eq.ai_lean_to_english" {code_block=false}
-
 @import "approxMap_toElement_element_toApproxMap.ai_lean_to_english" {code_block=false}
-
-@import "mkFunToken_property.ai_lean_to_english" {code_block=false}
 
 @import "mkFunToken.ai_lean_to_english" {code_block=false}
 
 @import "applyMap.ai_lean_to_english" {code_block=false}
-
-@import "element_toApproxMap_empty_rel.ai_lean_to_english" {code_block=false}
-
-@import "element_toApproxMap_mono.ai_lean_to_english" {code_block=false}
-
-@import "element_toApproxMap_rel_cod.ai_lean_to_english" {code_block=false}
-
-@import "element_toApproxMap_rel_dom.ai_lean_to_english" {code_block=false}
-
-@import "element_toApproxMap_union_right.ai_lean_to_english" {code_block=false}
 
 @import "element_toApproxMap.ai_lean_to_english" {code_block=false}
 
@@ -828,11 +673,7 @@
 
 @import "rel_input_output_union.ai_lean_to_english" {code_block=false}
 
-@import "approxMap_toElement_closed.ai_lean_to_english" {code_block=false}
-
 @import "funCon_of_approxMap.ai_lean_to_english" {code_block=false}
-
-@import "approxMap_toElement_consistent.ai_lean_to_english" {code_block=false}
 
 @import "approxMap_toElement.ai_lean_to_english" {code_block=false}
 
@@ -886,9 +727,7 @@
 
 @import "../Factoid75/boolSat.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/boolSat_bot.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/boolSat_sing.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/boolSystem.ai_lean_to_english" {code_block=false}
 
@@ -908,7 +747,6 @@
 
 @import "../Factoid75/entSet_singleton_tru_of_ent_tru.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/condMap_unique.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/filter_ne_subset_of_subset_insert_strict.ai_lean_to_english" {code_block=false}
 
@@ -928,13 +766,10 @@
 
 @import "../Factoid75/not_ent_fls_tru.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/condMap_toElement_boolFalse.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/not_ent_tru_fls.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/condMap_toElement_boolTrue.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/condMap_pair_roundtrip.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/conditional_iso.ai_lean_to_english" {code_block=false}
 
@@ -944,15 +779,14 @@
 
 @import "../Factoid75/strictify.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/IsStrict_strictify.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/strictify_toElement_le.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/subset_of_entSet_mem.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/condMap.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/IsStrict_condMap.ai_lean_to_english" {code_block=false}
+@import "../Factoid75/condMap_unique.ai_lean_to_english" {code_block=false}
+
 
 @import "../Factoid75/toFunFinset.ai_lean_to_english" {code_block=false}
 
@@ -962,13 +796,9 @@
 
 @import "../Factoid75/mem_toFunFinset.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/toFunFinset_empty.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/toFunFinset_insert.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/toFunFinset_singleton.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid75/toFunFinset_subset.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/strictFunctionSystem.ai_lean_to_english" {code_block=false}
 
@@ -984,13 +814,10 @@
 
 @import "../Factoid76/compOp.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid76/compOpUncurry_toElement.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid76/compOp_uncurry.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid76/constOp.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid76/constOp_uncurry.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid76/pairMap_comp_fst_snd_toElement.ai_lean_to_english" {code_block=false}
 
@@ -998,7 +825,6 @@
 
 @import "../Factoid76.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid76/constOp_toElement.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid76/pairMap_toElement_pairElements.ai_lean_to_english" {code_block=false}
 
@@ -1008,9 +834,7 @@
 
 @import "../Factoid76/Basic.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid76/pairOpUncurry_toElement.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid76/pairOp_uncurry.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid76/pairOp_toElement.ai_lean_to_english" {code_block=false}
 
@@ -1018,11 +842,8 @@
 
 @import "../Factoid77/acomp.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/acomp_toElement.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/acomp_assoc.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/acomp_id.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/curry_uncurry.ai_lean_to_english" {code_block=false}
 
@@ -1038,9 +859,7 @@
 
 @import "../Factoid77/swapMap.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/acomp_swap_fst.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/acomp_swap_snd.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/swapMap_acomp_swapMap.ai_lean_to_english" {code_block=false}
 
@@ -1068,13 +887,11 @@
 
 @import "../Factoid77/tensorElementToProdElement.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/tensorElementToProdElement_prodElementToTensorElement.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/tensorHom_eq_productMap.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/prodHomToTensorHom.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/prodHomToTensorHom_toElement.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/tensorHomToProdHom.ai_lean_to_english" {code_block=false}
 
@@ -1084,7 +901,6 @@
 
 @import "../Factoid77/productMapToTensorMap.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/productMapToTensorMap_comp_toElement.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/tensorLeft_map_eq.ai_lean_to_english" {code_block=false}
 
@@ -1102,7 +918,6 @@
 
 @import "../Factoid77/uncurryRight_comp_left.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/tensorExpEquiv_natural.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/expFunctor.ai_lean_to_english" {code_block=false}
 
@@ -1128,7 +943,6 @@
 
 @import "../Fixpoint/fixChain_mono_w.ai_lean_to_english" {code_block=false}
 
-@import "../Fixpoint/fixChain_pad_front.ai_lean_to_english" {code_block=false}
 
 @import "../Fixpoint/fixChain_pad.ai_lean_to_english" {code_block=false}
 

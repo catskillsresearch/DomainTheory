@@ -31,11 +31,11 @@ def pairMap (f : ApproximableMap C A) (g : ApproximableMap C B) :
   rel_dom h := f.rel_dom h.1
   rel_cod h := ⟨f.rel_cod h.1, g.rel_cod h.2⟩
   empty_rel := by
-    rw [fstFinset_empty, sndFinset_empty]
+    rw [fstFinset.empty, sndFinset.empty]
     exact ⟨f.empty_rel, g.empty_rel⟩
   union_right := by
     rintro s u u' ⟨hf, hg⟩ ⟨hf', hg'⟩
-    rw [fstFinset_funion A B u u', sndFinset_funion A B u u']
+    rw [fstFinset.funion A B u u', sndFinset.funion A B u u']
     exact ⟨f.union_right hf hf', g.union_right hg hg'⟩
   mono := by
     rintro s s' u u' ⟨hf, hg⟩ hEnts hEntu hs' hu'

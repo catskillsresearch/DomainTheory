@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.Basic
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf_le_left
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf
 
 @[expose] public section
 
@@ -18,7 +18,7 @@ variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 theorem le_iff_inf_eq {x y : sys.Element} : x ≤ y ↔ sys.inf x y = x := by
   constructor
   · intro h
-    refine le_antisymm (sys.inf_le_left x y) ?_
+    refine le_antisymm (inf.le_left sys x y) ?_
     intro a ha
     exact ⟨ha, h ha⟩
   · intro heq

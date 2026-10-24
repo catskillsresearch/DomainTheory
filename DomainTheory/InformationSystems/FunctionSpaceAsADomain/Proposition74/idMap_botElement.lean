@@ -23,7 +23,7 @@ variable (A : InfoSys α) (B : InfoSys β)
 
 /-- Identity is strict, so 7.4(iii) specializes to a tautology on `fix` itself. -/
 theorem idMap_botElement : (idMap A).toElement A.botElement = A.botElement :=
-  idMap_toElement A A.botElement
+  idMap.toElement A A.botElement
 
 end ApproximableMap
 end InfoSys

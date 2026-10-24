@@ -1,3 +1,0 @@
-Evaluating the strictification of an approximable map at an element lies below evaluating the map itself at that element.
-
-A token of the strictified image comes from a related set that is either empty-entailing, in which case the token lies in the bottom element and hence below the original image, or is related by the original map, in which case the token lies in that image.

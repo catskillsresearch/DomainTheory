@@ -34,11 +34,11 @@ def applyMap : ApproximableMap (productSystem (functionSystem B C) B) C where
   rel_cod := fun ⟨_, ht, _⟩ => ht
   empty_rel := by
     have hs : ProdCon (functionSystem B C) B ∅ :=
-      ⟨by rw [fstFinset_empty]; exact (functionSystem B C).con_empty,
-        by rw [sndFinset_empty]; exact B.con_empty⟩
+      ⟨by rw [fstFinset.empty]; exact (functionSystem B C).con_empty,
+        by rw [sndFinset.empty]; exact B.con_empty⟩
     refine ⟨hs, C.con_empty, ?_⟩
-    have hfst : fstFinset (functionSystem B C) B (∅ : Finset _) = ∅ := fstFinset_empty _ _
-    have hsnd : sndFinset (functionSystem B C) B (∅ : Finset _) = ∅ := sndFinset_empty _ _
+    have hfst : fstFinset (functionSystem B C) B (∅ : Finset _) = ∅ := fstFinset.empty _ _
+    have hsnd : sndFinset (functionSystem B C) B (∅ : Finset _) = ∅ := sndFinset.empty _ _
     simp only [hfst, hsnd]
     exact (functionSystem B C).ent_bot (functionSystem B C).con_empty
   union_right := by
@@ -48,7 +48,7 @@ def applyMap : ApproximableMap (productSystem (functionSystem B C) B) C where
     have hsub : s1 ∪' s2 ⊆ fstFinset (functionSystem B C) B s :=
       funion_subset_iff.mpr ⟨hs1, hs2⟩
     have hin : funInputUnion B C (s1 ∪' s2) ∈ B.Con := by
-      rw [funInputUnion_funion]
+      rw [funInputUnion.funion]
       have hEntU : B.EntSet (sndFinset (functionSystem B C) B s)
           (funInputUnion B C s1 ∪' funInputUnion B C s2) :=
         proposition_2_3_vi B
@@ -57,7 +57,7 @@ def applyMap : ApproximableMap (productSystem (functionSystem B C) B) C where
       exact B.con_subset (proposition_2_3_ii B hs.2 hEntU) (subset_funion_right _ _)
     have hout : funOutputUnion B C s1 ∪' funOutputUnion B C s2 ∈ C.Con := by
       have := hw _ hsub hin
-      rwa [funOutputUnion_funion] at this
+      rwa [funOutputUnion.funion] at this
     have htt' : t ∪' t' ∈ C.Con := by
       have hEntt2 : C.EntSet (funOutputUnion B C s1 ∪' funOutputUnion B C s2) (t ∪' t') :=
         proposition_2_3_vi C
@@ -71,7 +71,7 @@ def applyMap : ApproximableMap (productSystem (functionSystem B C) B) C where
       rcases mem_funion.mp hq with hq | hq
       · exact hIn1 q hq
       · exact hIn2 q hq
-    · rw [funOutputUnion_funion]
+    · rw [funOutputUnion.funion]
       exact proposition_2_3_vi C
         (proposition_2_3_v C (C.con_subset hout (subset_funion_left _ _)) hout
           (subset_funion_left _ _) hOut1 (Finset.Subset.refl _))

@@ -1,3 +1,0 @@
-The intersection of the basic opens of two finite token sets is the basic open of their union.
-
-An element contains the union exactly when it contains each summand, because every token of the union lies in one summand and each summand is included in the union.

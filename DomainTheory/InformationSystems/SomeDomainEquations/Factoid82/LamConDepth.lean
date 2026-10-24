@@ -17,8 +17,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamO
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepthInst31
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_of_mem_funTok
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_inputUnion_lt
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_outputUnion_lt
 
 @[expose] public section
 
@@ -49,8 +47,8 @@ termination_by finsetMaxDepth u
 decreasing_by
   · exact (finsetMaxDepth_of_mem_funTok (mem_lamFunFinset.1 ‹_›)).1
   · exact (finsetMaxDepth_of_mem_funTok (mem_lamFunFinset.1 ‹_›)).2
-  · exact finsetMaxDepth_inputUnion_lt ‹_› ‹_›
-  · exact finsetMaxDepth_outputUnion_lt ‹_› ‹_›
+  · exact finsetMaxDepth.inputUnion_lt ‹_› ‹_›
+  · exact finsetMaxDepth.outputUnion_lt ‹_› ‹_›
 
 end InfoSys
 

@@ -7,7 +7,7 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.nonempty_finiteApproximants
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.directed_finiteApproximants
 
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.directedSup_le
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.directedSup
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closure_le_element
 @[expose] public section
 
@@ -30,10 +30,10 @@ theorem eq_directedSup_finiteApproximants (x : sys.Element) :
     intro a ha
     have : a ∈ sys.approxUnion x := (sys.mem_element_iff_mem_closure x a).1 ha
     obtain ⟨u, hu, huX, ha'⟩ := this
-    rw [sys.directedSup_carrier_eq_union]
+    rw [directedSup.carrier_eq_union sys]
     exact ⟨sys.closure u hu, ⟨u, hu, huX, rfl⟩, ha'⟩
   · -- directedSup ≤ x: each approximant is ≤ x
-    apply sys.directedSup_le
+    apply directedSup.le sys
     intro y hy
     obtain ⟨u, hu, huX, rfl⟩ := hy
     exact sys.closure_le_element x hu huX

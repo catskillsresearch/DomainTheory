@@ -11,9 +11,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamE
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepthInst18
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepthInst31
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.le_finsetMaxDepth_of_mem
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_list_lt_funTok
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_list_lt_funTok_out
 
 @[expose] public section
 
@@ -31,8 +28,8 @@ theorem finsetMaxDepth_of_mem_funTok {u : Finset (RawLamToken α)}
     {xs ys : List (RawLamToken α)} (h : .funTok xs ys ∈ u) :
     finsetMaxDepth (listToFinset xs) < finsetMaxDepth u ∧
       finsetMaxDepth (listToFinset ys) < finsetMaxDepth u :=
-  ⟨Nat.lt_of_lt_of_le (finsetMaxDepth_list_lt_funTok xs ys) (le_finsetMaxDepth_of_mem h),
-    Nat.lt_of_lt_of_le (finsetMaxDepth_list_lt_funTok_out xs ys) (le_finsetMaxDepth_of_mem h)⟩
+  ⟨Nat.lt_of_lt_of_le (finsetMaxDepth.list_lt_funTok xs ys) (le_finsetMaxDepth_of_mem h),
+    Nat.lt_of_lt_of_le (finsetMaxDepth.list_lt_funTok_out xs ys) (le_finsetMaxDepth_of_mem h)⟩
 
 end InfoSys
 

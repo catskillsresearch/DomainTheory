@@ -1,3 +1,0 @@
-For a nonempty directed family of elements, the carrier of the directed supremum equals the union of the carriers.
-
-Finite consistency of that union is the directed-family lemma. The union is contained in its deductive closure. A token of the deductive closure is entailed by some finite subset of the union, that subset lies in a single member of the family, and that member is closed under the entailment.

@@ -55,7 +55,7 @@ def sumElementLft (z : (sumSystem A B).Element)
         subst this; exact hx0
       have hSum : (sumSystem A B).Ent {SumToken.left x0} (.left a) := by
         refine ⟨z.consistent _ hsub, ⟨Finset.singleton_ne_empty _, ?_⟩⟩
-        rw [lftFinset_singleton_left]; exact hEnt'
+        rw [lftFinset.singleton_left]; exact hEnt'
       exact z.closed _ _ hsub hSum
     else
       have hsub : (↑(liftSumLeft (β := β) Y) : Set _) ⊆ z.carrier := by

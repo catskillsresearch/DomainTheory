@@ -46,7 +46,7 @@ theorem toElement_ofScottContinuous (g : ScottContinuous A B) (x : A.Element) :
     have hY' : Y ∈ (B.directedSup (g.toFun '' S) hneImg hdirImg).carrier := by
       rw [← hg]; exact hY
     have hY'' : Y ∈ B.familyUnionCarrier (g.toFun '' S) := by
-      rwa [← B.directedSup_carrier_eq_union (g.toFun '' S) hneImg hdirImg]
+      rwa [← directedSup.carrier_eq_union B (g.toFun '' S) hneImg hdirImg]
     obtain ⟨z, hz, hYz⟩ := hY''
     obtain ⟨y, hy, rfl⟩ := hz
     obtain ⟨u, hu, huX, rfl⟩ := hy

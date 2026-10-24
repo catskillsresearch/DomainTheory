@@ -37,3 +37,19 @@ def P : InfoSys ℕ where
 end Factoid84
 
 end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+namespace Factoid84
+
+open DomainTheory.InformationSystems.Constructive
+
+open InfoSys
+
+open ApproximableMap
+
+theorem P.AllConsistent : P.AllConsistent := fun _ => trivial
+
+end Factoid84
+
+end DomainTheory.InformationSystems

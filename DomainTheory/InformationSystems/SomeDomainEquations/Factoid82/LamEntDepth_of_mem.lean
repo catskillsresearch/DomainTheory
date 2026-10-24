@@ -12,7 +12,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamI
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamOutputUnion_singleton
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConDepth_of_fun_empty
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConDepth_of_fun_nonempty
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepth_bot
 
 @[expose] public section
 
@@ -75,7 +74,7 @@ theorem LamEntDepth_of_mem {u : Finset (RawLamToken α)} {t : RawLamToken α}
             Nat.lt_of_lt_of_le (rawDepth_funTok_gt_left ((mem_listToFinset).1 hz))
               (le_finsetMaxDepth_of_mem htok)
           have hxs_lt : finsetMaxDepth (listToFinset xs) < rawDepth (.funTok xs ys) :=
-            finsetMaxDepth_list_lt_funTok xs ys
+            finsetMaxDepth.list_lt_funTok xs ys
           rw [← hM]
           refine Nat.max_lt.2 ⟨
             Nat.lt_of_lt_of_le hxs_lt (Nat.le_max_right _ _),
@@ -87,7 +86,7 @@ theorem LamEntDepth_of_mem {u : Finset (RawLamToken α)} {t : RawLamToken α}
           have ht_lt : rawDepth z < rawDepth (.funTok xs ys) :=
             rawDepth_funTok_gt_right ((mem_listToFinset).1 hz)
           have hys_lt : finsetMaxDepth (listToFinset ys) < rawDepth (.funTok xs ys) :=
-            finsetMaxDepth_list_lt_funTok_out xs ys
+            finsetMaxDepth.list_lt_funTok_out xs ys
           rw [← hM]
           refine Nat.max_lt.2 ⟨
             Nat.lt_of_lt_of_le hys_lt (Nat.le_max_right _ _),

@@ -7,11 +7,10 @@ public import DomainTheory.InformationSystems.InformationSystems.lowerBoundEnt
 
 namespace DomainTheory.InformationSystems
 
-namespace Factoid24
 
 
 /-- **Factoid 2.4.** The ℕ lower-bound information system of Scott 1982, §2. -/
-def example_24 : InfoSys ℕ where
+def Factoid24.example_24 : InfoSys ℕ where
   bot := 0
   Con := Set.univ
   Ent := lowerBoundEnt
@@ -40,6 +39,5 @@ def example_24 : InfoSys ℕ where
         exact Or.inl (Nat.le_zero.mp hcn)
       · exact Or.inr ⟨k, hk, le_trans hcn hnk⟩
 
-end Factoid24
 
 end DomainTheory.InformationSystems

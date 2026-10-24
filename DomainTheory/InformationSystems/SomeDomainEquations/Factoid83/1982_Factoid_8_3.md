@@ -6,10 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[InformationSystems/SomeDomainEquations/Factoid83/VCon_any.lean](VCon_any.lean)**
-
-@import "VCon_any.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid83/VToken.lean](VToken.lean)**
 
 @import "VToken.lean"
@@ -17,10 +13,6 @@
 **[InformationSystems/SomeDomainEquations/Factoid83/not_mem_uForget_top.lean](not_mem_uForget_top.lean)**
 
 @import "not_mem_uForget_top.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/uForgetFinset_empty.lean](uForgetFinset_empty.lean)**
-
-@import "uForgetFinset_empty.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid83/UCon_empty.lean](UCon_empty.lean)**
 
@@ -37,10 +29,6 @@
 **[InformationSystems/SomeDomainEquations/Factoid83/mem_vPairLFinset.lean](mem_vPairLFinset.lean)**
 
 @import "mem_vPairLFinset.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_insert_top.lean](vPairLFinset_insert_top.lean)**
-
-@import "vPairLFinset_insert_top.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset.lean](vPairRFinset.lean)**
 
@@ -69,34 +57,6 @@
 **[InformationSystems/SomeDomainEquations/Factoid83/VCon.lean](VCon.lean)**
 
 @import "VCon.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/VEnt_of_ent_top.lean](VEnt_of_ent_top.lean)**
-
-@import "VEnt_of_ent_top.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/VEnt_of_mem.lean](VEnt_of_mem.lean)**
-
-@import "VEnt_of_mem.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/VEnt_pairL_inv.lean](VEnt_pairL_inv.lean)**
-
-@import "VEnt_pairL_inv.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/VEnt_pairLFinset_of_EntSet.lean](VEnt_pairLFinset_of_EntSet.lean)**
-
-@import "VEnt_pairLFinset_of_EntSet.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/VEnt_pairR_inv.lean](VEnt_pairR_inv.lean)**
-
-@import "VEnt_pairR_inv.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/VEnt_pairRFinset_of_EntSet.lean](VEnt_pairRFinset_of_EntSet.lean)**
-
-@import "VEnt_pairRFinset_of_EntSet.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/VEnt_trans.lean](VEnt_trans.lean)**
-
-@import "VEnt_trans.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid83/mem_vPairRFinset.lean](mem_vPairRFinset.lean)**
 
@@ -134,34 +94,6 @@
 
 @import "UEnt.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid83/UEnt_bot.lean](UEnt_bot.lean)**
-
-@import "UEnt_bot.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/mem_uForgetFinset.lean](mem_uForgetFinset.lean)**
-
-@import "mem_uForgetFinset.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/UEnt_of_mem.lean](UEnt_of_mem.lean)**
-
-@import "UEnt_of_mem.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/UEnt_trans.lean](UEnt_trans.lean)**
-
-@import "UEnt_trans.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/uForgetFinset_insert.lean](uForgetFinset_insert.lean)**
-
-@import "uForgetFinset_insert.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/uForgetFinset_mono.lean](uForgetFinset_mono.lean)**
-
-@import "uForgetFinset_mono.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/uForgetFinset_singleton.lean](uForgetFinset_singleton.lean)**
-
-@import "uForgetFinset_singleton.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid83/vBot.lean](vBot.lean)**
 
 @import "vBot.lean"
@@ -178,10 +110,6 @@
 
 @import "not_VEnt_singleton_ne_top.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid83/UCon_singleton.lean](UCon_singleton.lean)**
-
-@import "UCon_singleton.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_insert_bot.lean](vPairLFinset_insert_bot.lean)**
 
 @import "vPairLFinset_insert_bot.lean"
@@ -197,10 +125,6 @@
 **[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_mono.lean](vPairLFinset_mono.lean)**
 
 @import "vPairLFinset_mono.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset_empty.lean](vPairRFinset_empty.lean)**
-
-@import "vPairRFinset_empty.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset_insert_bot.lean](vPairRFinset_insert_bot.lean)**
 
@@ -226,10 +150,6 @@
 
 @import "UCon_insert_of_ent.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset_insert_top.lean](vPairRFinset_insert_top.lean)**
-
-@import "vPairRFinset_insert_top.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset_mono.lean](vPairRFinset_mono.lean)**
 
 @import "vPairRFinset_mono.lean"
@@ -238,17 +158,9 @@
 
 @import "VEnt_mono.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid83/UCon_subset.lean](UCon_subset.lean)**
-
-@import "UCon_subset.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid83/uSystem.lean](uSystem.lean)**
 
 @import "uSystem.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/vRhs_eq_product.lean](vRhs_eq_product.lean)**
-
-@import "vRhs_eq_product.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid83/vSystem.lean](vSystem.lean)**
 
@@ -270,27 +182,11 @@
 
 @import "Basic.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid83/vUnfold_bot.lean](vUnfold_bot.lean)**
-
-@import "vUnfold_bot.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/vUnfold_pairL.lean](vUnfold_pairL.lean)**
-
-@import "vUnfold_pairL.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid83/vUnfold_pairR.lean](vUnfold_pairR.lean)**
-
-@import "vUnfold_pairR.lean"
-
 ## AI: AI-Lean to AI-English
-
-@import "VCon_any.ai_lean_to_english" {code_block=false}
 
 @import "VToken.ai_lean_to_english" {code_block=false}
 
 @import "not_mem_uForget_top.ai_lean_to_english" {code_block=false}
-
-@import "uForgetFinset_empty.ai_lean_to_english" {code_block=false}
 
 @import "UCon_empty.ai_lean_to_english" {code_block=false}
 
@@ -299,8 +195,6 @@
 @import "vPairLFinset.ai_lean_to_english" {code_block=false}
 
 @import "mem_vPairLFinset.ai_lean_to_english" {code_block=false}
-
-@import "vPairLFinset_insert_top.ai_lean_to_english" {code_block=false}
 
 @import "vPairRFinset.ai_lean_to_english" {code_block=false}
 
@@ -315,20 +209,6 @@
 @import "BasicInst35.ai_lean_to_english" {code_block=false}
 
 @import "VCon.ai_lean_to_english" {code_block=false}
-
-@import "VEnt_of_ent_top.ai_lean_to_english" {code_block=false}
-
-@import "VEnt_of_mem.ai_lean_to_english" {code_block=false}
-
-@import "VEnt_pairL_inv.ai_lean_to_english" {code_block=false}
-
-@import "VEnt_pairLFinset_of_EntSet.ai_lean_to_english" {code_block=false}
-
-@import "VEnt_pairR_inv.ai_lean_to_english" {code_block=false}
-
-@import "VEnt_pairRFinset_of_EntSet.ai_lean_to_english" {code_block=false}
-
-@import "VEnt_trans.ai_lean_to_english" {code_block=false}
 
 @import "mem_vPairRFinset.ai_lean_to_english" {code_block=false}
 
@@ -348,19 +228,7 @@
 
 @import "UEnt.ai_lean_to_english" {code_block=false}
 
-@import "UEnt_bot.ai_lean_to_english" {code_block=false}
-
 @import "mem_uForgetFinset.ai_lean_to_english" {code_block=false}
-
-@import "UEnt_of_mem.ai_lean_to_english" {code_block=false}
-
-@import "UEnt_trans.ai_lean_to_english" {code_block=false}
-
-@import "uForgetFinset_insert.ai_lean_to_english" {code_block=false}
-
-@import "uForgetFinset_mono.ai_lean_to_english" {code_block=false}
-
-@import "uForgetFinset_singleton.ai_lean_to_english" {code_block=false}
 
 @import "vBot.ai_lean_to_english" {code_block=false}
 
@@ -370,8 +238,6 @@
 
 @import "not_VEnt_singleton_ne_top.ai_lean_to_english" {code_block=false}
 
-@import "UCon_singleton.ai_lean_to_english" {code_block=false}
-
 @import "vPairLFinset_insert_bot.ai_lean_to_english" {code_block=false}
 
 @import "vPairLFinset_insert_pairL.ai_lean_to_english" {code_block=false}
@@ -379,8 +245,6 @@
 @import "vPairLFinset_insert_pairR.ai_lean_to_english" {code_block=false}
 
 @import "vPairLFinset_mono.ai_lean_to_english" {code_block=false}
-
-@import "vPairRFinset_empty.ai_lean_to_english" {code_block=false}
 
 @import "vPairRFinset_insert_bot.ai_lean_to_english" {code_block=false}
 
@@ -394,17 +258,11 @@
 
 @import "UCon_insert_of_ent.ai_lean_to_english" {code_block=false}
 
-@import "vPairRFinset_insert_top.ai_lean_to_english" {code_block=false}
-
 @import "vPairRFinset_mono.ai_lean_to_english" {code_block=false}
 
 @import "VEnt_mono.ai_lean_to_english" {code_block=false}
 
-@import "UCon_subset.ai_lean_to_english" {code_block=false}
-
 @import "uSystem.ai_lean_to_english" {code_block=false}
-
-@import "vRhs_eq_product.ai_lean_to_english" {code_block=false}
 
 @import "vSystem.ai_lean_to_english" {code_block=false}
 
@@ -415,12 +273,6 @@
 @import "vUnfold.ai_lean_to_english" {code_block=false}
 
 @import "Basic.ai_lean_to_english" {code_block=false}
-
-@import "vUnfold_bot.ai_lean_to_english" {code_block=false}
-
-@import "vUnfold_pairL.ai_lean_to_english" {code_block=false}
-
-@import "vUnfold_pairR.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

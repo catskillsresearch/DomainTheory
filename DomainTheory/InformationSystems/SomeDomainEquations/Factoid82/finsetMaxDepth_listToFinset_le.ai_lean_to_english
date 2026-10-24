@@ -1,3 +1,0 @@
-The finset depth of the finite set of tokens in a list is at most the left fold, starting from zero, that accumulates the maximum of the accumulator and the raw depth of each token.
-
-Unfolding the finset depth, every element of the underlying multiset belongs to the list, and the list-membership bound supplies a raw depth at most that left fold. The right-fold bound then applies.

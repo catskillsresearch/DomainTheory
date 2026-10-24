@@ -28,15 +28,15 @@ theorem rhtFinset_eq_empty_or_mem (u : Finset (SumToken α β)) :
     rhtFinset u = ∅ ∨ ∃ y, y ∈ rhtFinset u := by
   induction u using Finset.induction_on with
   | empty =>
-    exact Or.inl rhtFinset_empty
+    exact Or.inl rhtFinset.empty
   | insert p s _hp ih =>
     cases p with
     | right y =>
-      exact Or.inr ⟨y, by rw [rhtFinset_insert_right]; exact Finset.mem_insert_self _ _⟩
+      exact Or.inr ⟨y, by rw [rhtFinset.insert_right]; exact Finset.mem_insert_self _ _⟩
     | left x =>
-      rw [rhtFinset_insert_left]; exact ih
+      rw [rhtFinset.insert_left]; exact ih
     | bot =>
-      rw [rhtFinset_insert_bot]; exact ih
+      rw [rhtFinset.insert_bot]; exact ih
 
 end ApproximableMap
 end InfoSys

@@ -13,10 +13,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.e
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.StrictFunToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BasicInst22
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.toFunFinset
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.mem_toFunFinset
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.toFunFinset_subset
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.toFunFinset_insert
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.toFunFinset_singleton
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.StrictFunCon
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.StrictFunEnt
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.strictBot
@@ -43,7 +39,7 @@ def strictFunctionSystem : InfoSys (StrictFunToken A B) where
   con_subset := by
     intro w w' ⟨hwFun, hwE⟩ hw'
     refine ⟨fun s hs hin =>
-      hwFun s (fun q hq => (toFunFinset_subset A B hw') (hs hq)) hin, ?_⟩
+      hwFun s (fun q hq => (toFunFinset.subset A B hw') (hs hq)) hin, ?_⟩
     intro s hs hE
     exact hwE s (fun q hq => hw' (hs hq)) hE
   con_sing := by
@@ -53,7 +49,7 @@ def strictFunctionSystem : InfoSys (StrictFunToken A B) where
       have hs' : s ⊆ {p.val} := by
         intro q hq
         have : q ∈ toFunFinset A B ({p} : Finset (StrictFunToken A B)) := hs hq
-        rwa [toFunFinset_singleton] at this
+        rwa [toFunFinset.singleton] at this
       have hsub : funOutputUnion A B s ⊆ p.val.val.2 := by
         intro y hy
         rcases (mem_funOutputUnion A B).1 hy with ⟨q, hq, hy'⟩
@@ -76,7 +72,7 @@ def strictFunctionSystem : InfoSys (StrictFunToken A B) where
     have hFunInsert : FunCon A B (insert p.val (toFunFinset A B w)) :=
       (functionSystem A B).ent_con hFunEnt
     have hFunInsert' : FunCon A B (toFunFinset A B (insert p w)) :=
-      (toFunFinset_insert A B w p).symm ▸ hFunInsert
+      (toFunFinset.insert A B w p).symm ▸ hFunInsert
     refine ⟨hFunInsert', ?_⟩
     intro t ht hE
     if hp : p ∈ t then
@@ -84,14 +80,14 @@ def strictFunctionSystem : InfoSys (StrictFunToken A B) where
       have ht_eq : insert p t' = t := insert_filter_ne_strict A B hp
       have ht'sub : t' ⊆ w := filter_ne_subset_of_subset_insert_strict A B ht
       have hE' : EmptyEntails A (p.val.val.1 ∪' funInputUnion A B (toFunFinset A B t')) := by
-        rwa [← ht_eq, toFunFinset_insert, funInputUnion_insert] at hE
+        rwa [← ht_eq, toFunFinset.insert, funInputUnion.insert] at hE
       have ⟨hEp, hEt'⟩ := (emptyEntails_funion A).1 hE'
       have hOutp : EmptyEntails B p.val.val.2 := p.property.out hEp
       have hOutt' : EmptyEntails B (funOutputUnion A B (toFunFinset A B t')) :=
         hwE t' ht'sub hEt'
       have : EmptyEntails B (p.val.val.2 ∪' funOutputUnion A B (toFunFinset A B t')) :=
         (emptyEntails_funion B).2 ⟨hOutp, hOutt'⟩
-      rwa [← ht_eq, toFunFinset_insert, funOutputUnion_insert]
+      rwa [← ht_eq, toFunFinset.insert, funOutputUnion.insert]
     else
       have ht' : t ⊆ w := by
         intro q hq

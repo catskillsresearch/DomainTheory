@@ -9,8 +9,6 @@ public import DomainTheory.InformationSystems.InformationSystems.Constructive.Ba
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.mem_foldr_insert
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.mem_funion
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.funion_empty_right
-public import DomainTheory.InformationSystems.InformationSystems.Constructive.decidableEq_finset_eq_of_subset
-public import DomainTheory.InformationSystems.InformationSystems.Constructive.decidableEq_finset_false_of_ne
 
 @[expose] public section
 

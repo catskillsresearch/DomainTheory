@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42.Basic
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42.familyInf_le
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42.familyInf
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42.le_familyInf
 
 @[expose] public section
@@ -16,9 +16,9 @@ variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
 /-- `familyInf` is the greatest lower bound of the family. -/
-theorem familyInf_le_iff (S : Set sys.Element) (hne : S.Nonempty) {z : sys.Element} :
+theorem familyInf.le_iff (S : Set sys.Element) (hne : S.Nonempty) {z : sys.Element} :
     z ≤ sys.familyInf S hne ↔ ∀ x ∈ S, z ≤ x :=
-  ⟨fun hz _x hx => le_trans hz (sys.familyInf_le S hne hx), sys.le_familyInf S hne⟩
+  ⟨fun hz _x hx => le_trans hz (familyInf.le sys S hne hx), sys.le_familyInf S hne⟩
 
 end InfoSys
 end DomainTheory.InformationSystems

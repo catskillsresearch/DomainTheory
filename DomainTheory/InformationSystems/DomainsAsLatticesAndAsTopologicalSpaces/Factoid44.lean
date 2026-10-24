@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.directedSup_carrier_eq_union
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.directedSup
 
 @[expose] public section
 
@@ -16,6 +16,6 @@ theorem theorem_44.{u_1} : ∀ {α : Type u_1} [inst : DecidableEq α] (sys : @D
     (@DomainTheory.InformationSystems.InfoSys.Element.carrier α inst sys
       (@DomainTheory.InformationSystems.InfoSys.directedSup α inst sys S hne hdir))
     (@DomainTheory.InformationSystems.InfoSys.familyUnionCarrier α inst sys S) :=
-  @DomainTheory.InformationSystems.InfoSys.directedSup_carrier_eq_union
+  @DomainTheory.InformationSystems.InfoSys.directedSup.carrier_eq_union
 
 end DomainTheory.InformationSystems.InfoSys

@@ -7,7 +7,7 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions.not_right_mem_sum
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.not_left_mem_sum_botElement
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.right_bot_mem_inrMap_toElement
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.left_bot_mem_inlMap_toElement
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.not_mem_right_of_mem_left
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inrMap
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot

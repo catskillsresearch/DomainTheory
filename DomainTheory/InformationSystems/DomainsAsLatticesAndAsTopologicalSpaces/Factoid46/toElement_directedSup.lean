@@ -31,12 +31,12 @@ theorem toElement_directedSup (f : ApproximableMap A B)
     have huU : (u : Set α) ⊆ A.familyUnionCarrier S := by
       intro a ha
       have : a ∈ (A.directedSup S hne hdir).carrier := hu ha
-      rwa [A.directedSup_carrier_eq_union S hne hdir] at this
+      rwa [directedSup.carrier_eq_union A S hne hdir] at this
     obtain ⟨z, hz, huZ⟩ := A.exists_mem_of_subset_directedUnion S hne hdir u huU
     have : Y ∈ (f.toElement z).carrier := ⟨u, huZ, hrel⟩
-    rw [B.directedSup_carrier_eq_union]
+    rw [directedSup.carrier_eq_union B]
     exact ⟨f.toElement z, ⟨z, hz, rfl⟩, this⟩
-  · apply B.directedSup_le
+  · apply directedSup.le B
     intro y hy
     obtain ⟨x, hx, rfl⟩ := hy
     exact f.toElement_mono (A.le_directedSup S hne hdir hx)

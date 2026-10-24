@@ -20,7 +20,7 @@ theorem unitElement_eq_bot (x : unitSystem.Element) : x = unitSystem.botElement 
   · intro a ha
     cases a
     exact trivial
-  · exact botElement_le unitSystem x
+  · exact botElement.le unitSystem x
 
 end InfoSys
 end DomainTheory.InformationSystems

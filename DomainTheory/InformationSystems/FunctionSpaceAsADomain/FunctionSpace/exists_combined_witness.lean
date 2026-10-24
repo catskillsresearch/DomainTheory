@@ -9,12 +9,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.instLeftCommutativeFunOutput
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funInputUnion
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funOutputUnion
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funInputUnion_funion
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funOutputUnion_funion
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funOutputUnion_insert
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.FunCon
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.entSet_inputUnion_of_ent
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funInputUnion_con_of_ent
 
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_ii
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_iv
@@ -65,15 +60,15 @@ theorem exists_combined_witness {u' : Finset α} {s : Finset (FunToken A B)}
       · have hEnt_q : A.EntSet u' q.val.1 := hEntIn q (Finset.mem_insert_self q s')
         have hEnt_r : A.EntSet q.val.1 r.val.1 := hSqin r hr
         exact proposition_2_3_iv A hu' q.property.1 hEnt_q hEnt_r
-    · rw [funOutputUnion_funion, funOutputUnion_insert]
+    · rw [funOutputUnion.funion, funOutputUnion.insert]
       have hinS' : funInputUnion A B S' ∈ A.Con :=
-        funInputUnion_con_of_ent A B hu' hS'in
+        funInputUnion.con_of_ent A B hu' hS'in
       have houtS' : funOutputUnion A B S' ∈ B.Con := hv S' hS'sub hinS'
       have hinSq : funInputUnion A B Sq ∈ A.Con :=
-        funInputUnion_con_of_ent A B q.property.1 hSqin
+        funInputUnion.con_of_ent A B q.property.1 hSqin
       have houtSq : funOutputUnion A B Sq ∈ B.Con := hv Sq hSqsub hinSq
       have hinUnion : funInputUnion A B (S' ∪' Sq) ∈ A.Con := by
-        rw [funInputUnion_funion]
+        rw [funInputUnion.funion]
         have hEnt : A.EntSet u' (funInputUnion A B S' ∪' funInputUnion A B Sq) :=
           proposition_2_3_vi A
             (entSet_inputUnion_of_ent A B hS'in)
@@ -83,7 +78,7 @@ theorem exists_combined_witness {u' : Finset α} {s : Finset (FunToken A B)}
         exact A.con_subset (proposition_2_3_ii A hu' hEnt) (subset_funion_right _ _)
       have houtUnion : funOutputUnion A B S' ∪' funOutputUnion A B Sq ∈ B.Con := by
         have : funOutputUnion A B (S' ∪' Sq) ∈ B.Con := hv _ (funion_subset_iff.mpr ⟨hS'sub, hSqsub⟩) hinUnion
-        rwa [funOutputUnion_funion] at this
+        rwa [funOutputUnion.funion] at this
       have hEnt1 : B.EntSet (funOutputUnion A B S' ∪' funOutputUnion A B Sq)
           (funOutputUnion A B s') :=
         proposition_2_3_v B houtS' houtUnion (subset_funion_left _ _) hS'out

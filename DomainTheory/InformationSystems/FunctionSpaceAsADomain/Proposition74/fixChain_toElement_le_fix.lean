@@ -35,7 +35,7 @@ theorem fixChain_toElement_le_fix (f : ApproximableMap A A) (g : ApproximableMap
     have hu : u = ∅ := hchain
     subst hu
     simpa [closure_empty_eq_bot A, hstrict] using
-      (botElement_le B (fixElement B g))
+      (botElement.le B (fixElement B g))
   | succ n ih =>
     obtain ⟨u0, hu0, hu0C, huC, hEnt⟩ := hchain
     have ih' := ih hu0
@@ -70,7 +70,7 @@ theorem fixChain_toElement_le_fix (f : ApproximableMap A A) (g : ApproximableMap
       toElement_mono h huf
     have hcomm' : h.toElement (f.toElement (A.closure u0 hu0C)) =
         g.toElement (h.toElement (A.closure u0 hu0C)) := by
-      rw [← comp_toElement, hcomm, comp_toElement]
+      rw [← comp.toElement, hcomm, comp.toElement]
     have hgle : g.toElement (h.toElement (A.closure u0 hu0C)) ≤
         g.toElement (fixElement B g) :=
       toElement_mono g ih'

@@ -29,6 +29,6 @@ open Order
 
 theorem sexRhs_eq_sum_product :
     SexRhs = sumSystem lowerBoundSystem (productSystem SexSys SexSys) :=
-  treeRhs_eq_sum_product lowerBoundSystem
+  treeRhs.eq_sum_product lowerBoundSystem
 
 end DomainTheory.BridgeTheorems

@@ -114,25 +114,9 @@
 
 @import "foldr_max_le_of_forall.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/finsetMaxDepth_listToFinset_le.lean](finsetMaxDepth_listToFinset_le.lean)**
-
-@import "finsetMaxDepth_listToFinset_le.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid82/finsetMaxDepth_list_lt_funTok.lean](finsetMaxDepth_list_lt_funTok.lean)**
-
-@import "finsetMaxDepth_list_lt_funTok.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid82/finsetMaxDepth_list_lt_funTok_out.lean](finsetMaxDepth_list_lt_funTok_out.lean)**
-
-@import "finsetMaxDepth_list_lt_funTok_out.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid82/foldr_max_lt_of_forall.lean](foldr_max_lt_of_forall.lean)**
 
 @import "foldr_max_lt_of_forall.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid82/le_finsetMaxDepth_of_mem.lean](le_finsetMaxDepth_of_mem.lean)**
-
-@import "le_finsetMaxDepth_of_mem.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid82/finsetMaxDepth_of_mem_funTok.lean](finsetMaxDepth_of_mem_funTok.lean)**
 
@@ -142,17 +126,9 @@
 
 @import "rawDepth_funTok_gt_left.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/finsetMaxDepth_inputUnion_lt.lean](finsetMaxDepth_inputUnion_lt.lean)**
-
-@import "finsetMaxDepth_inputUnion_lt.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid82/rawDepth_funTok_gt_right.lean](rawDepth_funTok_gt_right.lean)**
 
 @import "rawDepth_funTok_gt_right.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid82/finsetMaxDepth_outputUnion_lt.lean](finsetMaxDepth_outputUnion_lt.lean)**
-
-@import "finsetMaxDepth_outputUnion_lt.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid82/LamConDepth.lean](LamConDepth.lean)**
 
@@ -221,14 +197,6 @@
 **[InformationSystems/SomeDomainEquations/Factoid82/BasicInst70.lean](BasicInst70.lean)**
 
 @import "BasicInst70.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid82/LamEntDepth_bot.lean](LamEntDepth_bot.lean)**
-
-@import "LamEntDepth_bot.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid82/LamEntDepth_con.lean](LamEntDepth_con.lean)**
-
-@import "LamEntDepth_con.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid82/LamEntN.lean](LamEntN.lean)**
 
@@ -462,10 +430,6 @@
 
 @import "LamConDepth_singleton_funTok.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/mem_lamDForgetFinset.lean](mem_lamDForgetFinset.lean)**
-
-@import "mem_lamDForgetFinset.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid82/LamDEnt_of_mem.lean](LamDEnt_of_mem.lean)**
 
 @import "LamDEnt_of_mem.lean"
@@ -474,25 +438,13 @@
 
 @import "LamDEnt_trans.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/lamDForgetFinset_insert.lean](lamDForgetFinset_insert.lean)**
-
-@import "lamDForgetFinset_insert.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid82/LamDCon_insert_of_ent.lean](LamDCon_insert_of_ent.lean)**
 
 @import "LamDCon_insert_of_ent.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/lamDForgetFinset_mono.lean](lamDForgetFinset_mono.lean)**
-
-@import "lamDForgetFinset_mono.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid82/LamDCon_subset.lean](LamDCon_subset.lean)**
 
 @import "LamDCon_subset.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid82/lamDForgetFinset_singleton.lean](lamDForgetFinset_singleton.lean)**
-
-@import "lamDForgetFinset_singleton.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid82/LamDCon_singleton.lean](LamDCon_singleton.lean)**
 
@@ -758,12 +710,6 @@
 
 @import "foldr_max_le_of_forall.ai_lean_to_english" {code_block=false}
 
-@import "finsetMaxDepth_listToFinset_le.ai_lean_to_english" {code_block=false}
-
-@import "finsetMaxDepth_list_lt_funTok.ai_lean_to_english" {code_block=false}
-
-@import "finsetMaxDepth_list_lt_funTok_out.ai_lean_to_english" {code_block=false}
-
 @import "foldr_max_lt_of_forall.ai_lean_to_english" {code_block=false}
 
 @import "le_finsetMaxDepth_of_mem.ai_lean_to_english" {code_block=false}
@@ -772,11 +718,7 @@
 
 @import "rawDepth_funTok_gt_left.ai_lean_to_english" {code_block=false}
 
-@import "finsetMaxDepth_inputUnion_lt.ai_lean_to_english" {code_block=false}
-
 @import "rawDepth_funTok_gt_right.ai_lean_to_english" {code_block=false}
-
-@import "finsetMaxDepth_outputUnion_lt.ai_lean_to_english" {code_block=false}
 
 @import "LamConDepth.ai_lean_to_english" {code_block=false}
 
@@ -811,10 +753,6 @@
 @import "LamDToken.ai_lean_to_english" {code_block=false}
 
 @import "BasicInst70.ai_lean_to_english" {code_block=false}
-
-@import "LamEntDepth_bot.ai_lean_to_english" {code_block=false}
-
-@import "LamEntDepth_con.ai_lean_to_english" {code_block=false}
 
 @import "LamEntN.ai_lean_to_english" {code_block=false}
 
@@ -938,15 +876,9 @@
 
 @import "LamDEnt_trans.ai_lean_to_english" {code_block=false}
 
-@import "lamDForgetFinset_insert.ai_lean_to_english" {code_block=false}
-
 @import "LamDCon_insert_of_ent.ai_lean_to_english" {code_block=false}
 
-@import "lamDForgetFinset_mono.ai_lean_to_english" {code_block=false}
-
 @import "LamDCon_subset.ai_lean_to_english" {code_block=false}
-
-@import "lamDForgetFinset_singleton.ai_lean_to_english" {code_block=false}
 
 @import "LamDCon_singleton.ai_lean_to_english" {code_block=false}
 

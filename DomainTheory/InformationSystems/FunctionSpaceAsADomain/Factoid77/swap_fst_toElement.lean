@@ -7,9 +7,8 @@ public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
 public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 public import Mathlib.CategoryTheory.Adjunction.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.InfoSysObj
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.swapMap
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_swap_fst
 
 @[expose] public section
 
@@ -33,7 +32,7 @@ namespace ApproximableMap
 theorem swap_fst_toElement {α β : Type*} [DecidableEq α] [DecidableEq β]
     (A : InfoSys α) (B : InfoSys β) (p : (productSystem A B).Element) :
     (fstMap B A).toElement ((swapMap A B).toElement p) = (sndMap A B).toElement p := by
-  rw [← acomp_toElement, acomp_swap_fst]
+  rw [← acomp.toElement, acomp.swap_fst]
 
 end ApproximableMap
 

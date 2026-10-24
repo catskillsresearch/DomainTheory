@@ -1,3 +1,0 @@
-If a product token does not have least first component, inserting it leaves the right projection unchanged.
-
-A witness in the projection of the inserted set cannot be the inserted token, since that token fails the least-first-component test, so the witness already belongs to the original set. A witness for the original projection remains one after insertion.

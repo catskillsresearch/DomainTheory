@@ -17,7 +17,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamI
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamOutputUnion_funion
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConDepth_of_fun_nonempty
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConDepth_mono
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepth_con
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConDepth_insert_bot
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConDepth_insert_atom
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepth_weaken_fun
@@ -58,7 +57,7 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
         LamEntDepth A u' t' → LamConDepth A (insert t' u') :=
       fun u' t' hlt hEnt => ih _ hlt u' t' rfl hEnt
     match t with
-    | .bot => exact LamConDepth_insert_bot A (LamEntDepth_con A ht)
+    | .bot => exact LamConDepth_insert_bot A (LamEntDepth.con A ht)
     | .atom x => exact LamConDepth_insert_atom A ht
     | .funTok xs ys =>
       cases ht with
@@ -133,9 +132,9 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
             have hDu : finsetMaxDepth u ≤ M := by
               rw [← hM]; exact Nat.le_max_left _ _
             have hxs_lt : finsetMaxDepth (listToFinset xs) < M :=
-              Nat.lt_of_lt_of_le (finsetMaxDepth_list_lt_funTok xs ys) hDt
+              Nat.lt_of_lt_of_le (finsetMaxDepth.list_lt_funTok xs ys) hDt
             have hys_lt : finsetMaxDepth (listToFinset ys) < M :=
-              Nat.lt_of_lt_of_le (finsetMaxDepth_list_lt_funTok_out xs ys) hDt
+              Nat.lt_of_lt_of_le (finsetMaxDepth.list_lt_funTok_out xs ys) hDt
             have bound_in : ∀ z ∈ lamInputUnion s,
                 Nat.max (finsetMaxDepth (listToFinset xs ∪' lamInputUnion t'))
                   (rawDepth z) < M := by
@@ -148,7 +147,7 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
                   exact Nat.lt_of_le_of_lt (Nat.zero_le _) hxs_lt
                 · obtain ⟨q, hq⟩ := Finset.nonempty_of_ne_empty ht'e
                   exact Nat.lt_of_lt_of_le
-                    (finsetMaxDepth_inputUnion_lt ht'sub hWorld) hDu
+                    (finsetMaxDepth.inputUnion_lt ht'sub hWorld) hDu
               have hz_lt : rawDepth z < M := by
                 rcases (mem_lamInputUnion).1 hz with ⟨p, hp', hz'⟩
                 have htok : .funTok p.1 p.2 ∈ u := mem_lamFunFinset.1 (hs hp')
@@ -220,12 +219,12 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
                   · rw [hs0, lamOutputUnion_empty]
                     exact Nat.lt_of_le_of_lt (Nat.zero_le _) hys_lt
                   · exact Nat.lt_of_lt_of_le
-                      (finsetMaxDepth_outputUnion_lt hs hWorld) hDu
+                      (finsetMaxDepth.outputUnion_lt hs hWorld) hDu
                 · by_cases ht'e : t' = ∅
                   · rw [ht'e, lamOutputUnion_empty]
                     exact Nat.lt_of_le_of_lt (Nat.zero_le _) hys_lt
                   · exact Nat.lt_of_lt_of_le
-                      (finsetMaxDepth_outputUnion_lt ht'sub hWorld) hDu
+                      (finsetMaxDepth.outputUnion_lt ht'sub hWorld) hDu
               have hz_lt : rawDepth z < M :=
                 Nat.lt_of_lt_of_le
                   (rawDepth_funTok_gt_right ((mem_listToFinset).1 hz)) hDt

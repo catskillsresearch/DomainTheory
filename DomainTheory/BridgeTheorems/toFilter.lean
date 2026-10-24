@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.BridgeTheorems.toNeighborhoodSystem
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen_inter
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen
 public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
 public import DomainTheory.BridgeTheorems.basicOpen_empty
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Element
@@ -42,7 +42,7 @@ def toFilter (x : A.Element) : (toNeighborhoodSystem A).Element where
     intro U V hU hV
     obtain ⟨u, hu, rfl, huX⟩ := hU
     obtain ⟨v, hv, rfl, hvX⟩ := hV
-    refine ⟨u ∪' v, ?_, basicOpen_inter A u v, ?_⟩
+    refine ⟨u ∪' v, ?_, basicOpen.inter A u v, ?_⟩
     · have hsub : ↑(u ∪' v) ⊆ x.carrier := by
         intro a ha
         rcases mem_funion.mp (Finset.mem_coe.1 ha) with h | h

@@ -1,3 +1,0 @@
-The left projection of the union of two finite sets of sum tokens is the union of their left projections.
-
-By extensionality, an element of the left projection of the union has its left token in the union, hence in one of the two sets, and so lies in the corresponding left projection. Conversely, an element of either left projection has its left token in that set, hence in the union, and so lies in the left projection of the union.

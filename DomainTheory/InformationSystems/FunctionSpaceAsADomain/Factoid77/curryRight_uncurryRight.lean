@@ -9,7 +9,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.I
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.exp
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.id_acomp
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_assoc
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.swapMap
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.swapMap_acomp_swapMap
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.curry_uncurry
@@ -62,7 +61,7 @@ theorem curryRight_uncurryRight (A Y Z : InfoSysObj.{u}) (k : Y ⟶ InfoSysObj.e
       acomp (swapMap Y.sys A.sys)
             (acomp (swapMap A.sys Y.sys) (uncurryMap Y.sys A.sys Z.sys k))
           = acomp (acomp (swapMap Y.sys A.sys) (swapMap A.sys Y.sys))
-              (uncurryMap Y.sys A.sys Z.sys k) := (acomp_assoc _ _ _).symm
+              (uncurryMap Y.sys A.sys Z.sys k) := (acomp.assoc _ _ _).symm
       _ = acomp (idMap (productSystem Y.sys A.sys))
               (uncurryMap Y.sys A.sys Z.sys k) := by rw [swapMap_acomp_swapMap]
       _ = uncurryMap Y.sys A.sys Z.sys k := id_acomp _

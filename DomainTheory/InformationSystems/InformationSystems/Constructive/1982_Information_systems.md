@@ -42,14 +42,6 @@
 
 @import "funion_empty_right.lean"
 
-**[InformationSystems/InformationSystems/Constructive/decidableEq_finset_eq_of_subset.lean](decidableEq_finset_eq_of_subset.lean)**
-
-@import "decidableEq_finset_eq_of_subset.lean"
-
-**[InformationSystems/InformationSystems/Constructive/decidableEq_finset_false_of_ne.lean](decidableEq_finset_false_of_ne.lean)**
-
-@import "decidableEq_finset_false_of_ne.lean"
-
 **[InformationSystems/InformationSystems/Constructive/decidableEq_finset.lean](decidableEq_finset.lean)**
 
 @import "decidableEq_finset.lean"
@@ -91,10 +83,6 @@
 @import "mem_funion.ai_lean_to_english" {code_block=false}
 
 @import "funion_empty_right.ai_lean_to_english" {code_block=false}
-
-@import "decidableEq_finset_eq_of_subset.ai_lean_to_english" {code_block=false}
-
-@import "decidableEq_finset_false_of_ne.ai_lean_to_english" {code_block=false}
 
 @import "decidableEq_finset.ai_lean_to_english" {code_block=false}
 

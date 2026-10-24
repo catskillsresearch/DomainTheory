@@ -11,7 +11,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamC
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst70
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst74
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDForgetFinset_mono
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDForgetFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon
 
 @[expose] public section
@@ -28,7 +28,7 @@ variable (A : InfoSys α)
 
 theorem LamDCon_subset {u v : Finset (LamDToken A)}
     (hu : LamDCon A u) (hv : v ⊆ u) : LamDCon A v :=
-  LamConDepth_mono A (lamDForgetFinset_mono A hv) hu
+  LamConDepth_mono A (lamDForgetFinset.mono A hv) hu
 
 end InfoSys
 

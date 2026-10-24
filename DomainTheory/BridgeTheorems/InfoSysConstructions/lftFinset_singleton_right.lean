@@ -1,5 +1,4 @@
 module
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.mem_lftFinset
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order

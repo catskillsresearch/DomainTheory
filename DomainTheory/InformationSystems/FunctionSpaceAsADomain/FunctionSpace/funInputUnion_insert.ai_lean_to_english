@@ -1,3 +1,0 @@
-The input union of the insertion of a function-space token p into a finite set s is the finitary union of the input of p with the input union of s.
-
-Insertion of p is the finitary union of the singleton of p with s. The input union splits across that union, and the input union of a singleton is the input of the token.

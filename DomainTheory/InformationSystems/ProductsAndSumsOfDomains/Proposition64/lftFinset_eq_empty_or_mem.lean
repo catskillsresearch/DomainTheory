@@ -28,15 +28,15 @@ theorem lftFinset_eq_empty_or_mem (u : Finset (SumToken α β)) :
     lftFinset u = ∅ ∨ ∃ x, x ∈ lftFinset u := by
   induction u using Finset.induction_on with
   | empty =>
-    exact Or.inl lftFinset_empty
+    exact Or.inl lftFinset.empty
   | insert p s _hp ih =>
     cases p with
     | left x =>
-      exact Or.inr ⟨x, by rw [lftFinset_insert_left]; exact Finset.mem_insert_self _ _⟩
+      exact Or.inr ⟨x, by rw [lftFinset.insert_left]; exact Finset.mem_insert_self _ _⟩
     | right y =>
-      rw [lftFinset_insert_right]; exact ih
+      rw [lftFinset.insert_right]; exact ih
     | bot =>
-      rw [lftFinset_insert_bot]; exact ih
+      rw [lftFinset.insert_bot]; exact ih
 
 end ApproximableMap
 end InfoSys

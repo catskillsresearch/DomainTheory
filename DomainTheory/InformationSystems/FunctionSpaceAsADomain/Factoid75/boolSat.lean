@@ -1,4 +1,3 @@
-
 module
 
 public import Mathlib.Data.Multiset.MapFold
@@ -31,6 +30,43 @@ def boolSat : BoolPoint → BoolToken → Prop
   | .isFalse, .bot => True
   | .isFalse, .fls => True
   | .isFalse, .tru => False
+
+end InfoSys
+
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+
+variable (A : InfoSys α) (B : InfoSys β)
+
+theorem boolSat.bot (p : BoolPoint) : boolSat p .bot := by
+  cases p <;> trivial
+
+end InfoSys
+
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+
+variable (A : InfoSys α) (B : InfoSys β)
+
+theorem boolSat.sing (t : BoolToken) : ∃ p, boolSat p t := by
+  cases t with
+  | bot => exact ⟨.undef, trivial⟩
+  | tru => exact ⟨.isTrue, trivial⟩
+  | fls => exact ⟨.isFalse, trivial⟩
 
 end InfoSys
 

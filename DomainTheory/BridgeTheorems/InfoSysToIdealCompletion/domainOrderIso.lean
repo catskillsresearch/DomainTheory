@@ -4,7 +4,7 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.ofIdeal_toIde
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal_ofIdeal
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal_mono
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.le_ofIdeal_of_mem
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.directedSup_le
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.directedSup
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
@@ -38,7 +38,7 @@ noncomputable def domainOrderIso : A.Element ≃o Ideal (FiniteElement A) where
     · intro h
       -- x ≤ y from toIdeal x ≤ toIdeal y via algebraicity
       rw [← ofIdeal_toIdeal A x, ← ofIdeal_toIdeal A y]
-      refine A.directedSup_le _ _ _ ?_
+      refine InfoSys.directedSup.le A _ _ _ ?_
       intro z hz
       obtain ⟨z', hz', rfl⟩ := hz
       exact le_ofIdeal_of_mem A (h hz')

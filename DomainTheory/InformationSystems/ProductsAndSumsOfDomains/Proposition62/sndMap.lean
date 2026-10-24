@@ -30,7 +30,7 @@ def sndMap : ApproximableMap (productSystem A B) B where
   rel_dom h := h.1
   rel_cod h := h.2.1
   empty_rel := ⟨ProdCon_empty A B, B.con_empty, by
-    rw [sndFinset_empty]; exact B.entSet_empty ∅⟩
+    rw [sndFinset.empty]; exact B.entSet_empty ∅⟩
   union_right := by
     rintro u w w' ⟨hu, hw, huw⟩ ⟨_, hw', huw'⟩
     have hEnt : B.EntSet (sndFinset A B u) (w ∪' w') :=

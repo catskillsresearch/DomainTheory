@@ -10,16 +10,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.i
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.instLeftCommutativeSndInsert
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.fstFinset
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.sndFinset
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.mem_fstFinset
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.mem_sndFinset
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.fstFinset_mono
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.sndFinset_mono
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.fstFinset_insert_left
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.fstFinset_insert_not_left
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.sndFinset_insert_right
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.sndFinset_insert_not_right
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.fstFinset_singleton_left
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.sndFinset_singleton_right
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.ProdCon
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.ProdEnt
 
@@ -42,8 +32,8 @@ def productSystem : InfoSys (ProdToken A B) where
   Ent := ProdEnt A B
   con_subset := by
     intro u v hu hv
-    exact ⟨A.con_subset hu.1 (fstFinset_mono A B hv),
-      B.con_subset hu.2 (sndFinset_mono A B hv)⟩
+    exact ⟨A.con_subset hu.1 (fstFinset.mono A B hv),
+      B.con_subset hu.2 (sndFinset.mono A B hv)⟩
   con_sing := by
     intro p
     refine ⟨?_, ?_⟩
@@ -51,7 +41,7 @@ def productSystem : InfoSys (ProdToken A B) where
       · by_cases h2 : p.val.2 = B.bot
         · have hpeq : p = prodBot A B := Subtype.ext (Prod.ext h1 h2)
           subst hpeq
-          rw [fstFinset_singleton_left A B (prodBot A B) rfl]
+          rw [fstFinset.singleton_left A B (prodBot A B) rfl]
           exact A.con_sing A.bot
         · have hfst : fstFinset A B {p} = ∅ := by
             ext x
@@ -65,15 +55,15 @@ def productSystem : InfoSys (ProdToken A B) where
               exact False.elim (Finset.notMem_empty x hx)
           rw [hfst]
           exact A.con_empty
-      · rw [fstFinset_singleton_left A B p h2]
+      · rw [fstFinset.singleton_left A B p h2]
         exact A.con_sing p.val.1
     · rcases p.property.out with h1 | h2
-      · rw [sndFinset_singleton_right A B p h1]
+      · rw [sndFinset.singleton_right A B p h1]
         exact B.con_sing p.val.2
       · by_cases h1 : p.val.1 = A.bot
         · have hpeq : p = prodBot A B := Subtype.ext (Prod.ext h1 h2)
           subst hpeq
-          rw [sndFinset_singleton_right A B (prodBot A B) rfl]
+          rw [sndFinset.singleton_right A B (prodBot A B) rfl]
           exact B.con_sing B.bot
         · have hsnd : sndFinset A B {p} = ∅ := by
             ext y
@@ -91,14 +81,14 @@ def productSystem : InfoSys (ProdToken A B) where
     intro u p ⟨⟨hfst, hsnd⟩, hL, hR⟩
     refine ⟨?_, ?_⟩
     · by_cases hp2 : p.val.2 = B.bot
-      · rw [fstFinset_insert_left A B u p hp2]
+      · rw [fstFinset.insert_left A B u p hp2]
         exact A.ent_con (hL hp2)
-      · rw [fstFinset_insert_not_left A B u p hp2]
+      · rw [fstFinset.insert_not_left A B u p hp2]
         exact hfst
     · by_cases hp1 : p.val.1 = A.bot
-      · rw [sndFinset_insert_right A B u p hp1]
+      · rw [sndFinset.insert_right A B u p hp1]
         exact B.ent_con (hR hp1)
-      · rw [sndFinset_insert_not_right A B u p hp1]
+      · rw [sndFinset.insert_not_right A B u p hp1]
         exact hsnd
   ent_bot := by
     intro u hu

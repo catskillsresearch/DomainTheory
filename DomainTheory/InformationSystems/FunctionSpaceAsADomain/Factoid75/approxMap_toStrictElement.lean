@@ -14,7 +14,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.I
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.StrictFunToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BasicInst22
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.toFunFinset
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.mem_toFunFinset
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.strictFunctionSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.IsStrictToken_of_IsStrict
 

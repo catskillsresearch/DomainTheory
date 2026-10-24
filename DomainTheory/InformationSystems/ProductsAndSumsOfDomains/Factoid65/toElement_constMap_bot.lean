@@ -21,7 +21,7 @@ variable {α : Type*} [DecidableEq α] {A : InfoSys α}
 /-- Elements of `|A|` are in bijection with approximable maps `1 → A` via `const`. -/
 theorem toElement_constMap_bot (b : A.Element) :
     (constMap (A := unitSystem) b).toElement unitSystem.botElement = b :=
-  constMap_toElement b unitSystem.botElement
+  constMap.toElement b unitSystem.botElement
 
 end ApproximableMap
 end InfoSys

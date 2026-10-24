@@ -30,7 +30,7 @@ def fstMap : ApproximableMap (productSystem A B) A where
   rel_dom h := h.1
   rel_cod h := h.2.1
   empty_rel := ⟨ProdCon_empty A B, A.con_empty, by
-    rw [fstFinset_empty]; exact A.entSet_empty ∅⟩
+    rw [fstFinset.empty]; exact A.entSet_empty ∅⟩
   union_right := by
     rintro u v v' ⟨hu, hv, huv⟩ ⟨_, hv', huv'⟩
     have hEnt : A.EntSet (fstFinset A B u) (v ∪' v') :=

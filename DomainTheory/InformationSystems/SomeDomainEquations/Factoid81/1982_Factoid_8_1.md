@@ -34,17 +34,13 @@
 
 @import "TreeCon.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid81/TreeCon_atom_con_of_atoms.lean](TreeCon_atom_con_of_atoms.lean)**
+**[InformationSystems/SomeDomainEquations/Factoid81/TreeCon_pairL_of_right.lean](TreeCon_pairL_of_right.lean)**
 
-@import "TreeCon_atom_con_of_atoms.lean"
+@import "TreeCon_pairL_of_right.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid81/TreeCon_atoms_empty_of_right.lean](TreeCon_atoms_empty_of_right.lean)**
+**[InformationSystems/SomeDomainEquations/Factoid81/TreeCon_pairR_of_right.lean](TreeCon_pairR_of_right.lean)**
 
-@import "TreeCon_atoms_empty_of_right.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid81/TreeCon_pairs_empty_of_left.lean](TreeCon_pairs_empty_of_left.lean)**
-
-@import "TreeCon_pairs_empty_of_left.lean"
+@import "TreeCon_pairR_of_right.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid81/TreeEntPayload.lean](TreeEntPayload.lean)**
 
@@ -53,10 +49,6 @@
 **[InformationSystems/SomeDomainEquations/Factoid81/TreeEnt.lean](TreeEnt.lean)**
 
 @import "TreeEnt.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid81/TreeEntPayload_of_no_atoms_no_pairs.lean](TreeEntPayload_of_no_atoms_no_pairs.lean)**
-
-@import "TreeEntPayload_of_no_atoms_no_pairs.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid81/atomFinset_empty.lean](atomFinset_empty.lean)**
 
@@ -166,22 +158,6 @@
 
 @import "TreeCon_empty.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid81/TreeCon_pairL_of_right.lean](TreeCon_pairL_of_right.lean)**
-
-@import "TreeCon_pairL_of_right.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid81/TreeCon_pairR_of_right.lean](TreeCon_pairR_of_right.lean)**
-
-@import "TreeCon_pairR_of_right.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid81/TreeEntPayload_of_mem.lean](TreeEntPayload_of_mem.lean)**
-
-@import "TreeEntPayload_of_mem.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid81/TreeEnt_of_mem.lean](TreeEnt_of_mem.lean)**
-
-@import "TreeEnt_of_mem.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid81/pairRFinset_insert_atom.lean](pairRFinset_insert_atom.lean)**
 
 @import "pairRFinset_insert_atom.lean"
@@ -250,10 +226,6 @@
 
 @import "treeBot.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid81/treeRhs_eq_sum_product.lean](treeRhs_eq_sum_product.lean)**
-
-@import "treeRhs_eq_sum_product.lean"
-
 **[InformationSystems/SomeDomainEquations/Factoid81.lean](../Factoid81.lean)**
 
 @import "../Factoid81.lean"
@@ -274,26 +246,6 @@
 
 @import "Basic.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid81/treeUnfold_atom.lean](treeUnfold_atom.lean)**
-
-@import "treeUnfold_atom.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid81/treeUnfold_bot.lean](treeUnfold_bot.lean)**
-
-@import "treeUnfold_bot.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid81/treeUnfold_pairL.lean](treeUnfold_pairL.lean)**
-
-@import "treeUnfold_pairL.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid81/treeUnfold_pairL_bot_eq_pairR_bot.lean](treeUnfold_pairL_bot_eq_pairR_bot.lean)**
-
-@import "treeUnfold_pairL_bot_eq_pairR_bot.lean"
-
-**[InformationSystems/SomeDomainEquations/Factoid81/treeUnfold_pairR.lean](treeUnfold_pairR.lean)**
-
-@import "treeUnfold_pairR.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "TreeToken.ai_lean_to_english" {code_block=false}
@@ -310,17 +262,13 @@
 
 @import "TreeCon.ai_lean_to_english" {code_block=false}
 
-@import "TreeCon_atom_con_of_atoms.ai_lean_to_english" {code_block=false}
+@import "TreeCon_pairL_of_right.ai_lean_to_english" {code_block=false}
 
-@import "TreeCon_atoms_empty_of_right.ai_lean_to_english" {code_block=false}
-
-@import "TreeCon_pairs_empty_of_left.ai_lean_to_english" {code_block=false}
+@import "TreeCon_pairR_of_right.ai_lean_to_english" {code_block=false}
 
 @import "TreeEntPayload.ai_lean_to_english" {code_block=false}
 
 @import "TreeEnt.ai_lean_to_english" {code_block=false}
-
-@import "TreeEntPayload_of_no_atoms_no_pairs.ai_lean_to_english" {code_block=false}
 
 @import "atomFinset_empty.ai_lean_to_english" {code_block=false}
 
@@ -376,14 +324,6 @@
 
 @import "TreeCon_empty.ai_lean_to_english" {code_block=false}
 
-@import "TreeCon_pairL_of_right.ai_lean_to_english" {code_block=false}
-
-@import "TreeCon_pairR_of_right.ai_lean_to_english" {code_block=false}
-
-@import "TreeEntPayload_of_mem.ai_lean_to_english" {code_block=false}
-
-@import "TreeEnt_of_mem.ai_lean_to_english" {code_block=false}
-
 @import "pairRFinset_insert_atom.ai_lean_to_english" {code_block=false}
 
 @import "pairRFinset_insert_bot.ai_lean_to_english" {code_block=false}
@@ -418,8 +358,6 @@
 
 @import "treeBot.ai_lean_to_english" {code_block=false}
 
-@import "treeRhs_eq_sum_product.ai_lean_to_english" {code_block=false}
-
 @import "../Factoid81.ai_lean_to_english" {code_block=false}
 
 @import "treeSystem.ai_lean_to_english" {code_block=false}
@@ -429,16 +367,6 @@
 @import "treeUnfold.ai_lean_to_english" {code_block=false}
 
 @import "Basic.ai_lean_to_english" {code_block=false}
-
-@import "treeUnfold_atom.ai_lean_to_english" {code_block=false}
-
-@import "treeUnfold_bot.ai_lean_to_english" {code_block=false}
-
-@import "treeUnfold_pairL.ai_lean_to_english" {code_block=false}
-
-@import "treeUnfold_pairL_bot_eq_pairR_bot.ai_lean_to_english" {code_block=false}
-
-@import "treeUnfold_pairR.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

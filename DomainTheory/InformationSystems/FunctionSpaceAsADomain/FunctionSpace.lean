@@ -2,7 +2,7 @@
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.Basic
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funInputUnion_empty
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funOutputUnion_empty
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funInputUnion
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funOutputUnion
 
 @[expose] public section

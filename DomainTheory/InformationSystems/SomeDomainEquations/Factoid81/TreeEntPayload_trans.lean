@@ -15,13 +15,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.pair
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.pairRFinset_singleton_bot
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeEntPayload
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeEnt
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_atom_con_of_atoms
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_pairL_of_right
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_pairR_of_right
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeEntPayload_of_no_atoms_no_pairs
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.pairL_ne_or_subset_bot
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.pairR_ne_or_subset_bot
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.eq_singleton_bot_of_subset
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_pairL_of_right
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_pairR_of_right
 
 @[expose] public section
 
@@ -50,15 +48,15 @@ theorem TreeEntPayload_trans {u v : Finset (TreeToken α)} {c : TreeToken α}
     have hne' : atomFinset v ≠ ∅ := by
       obtain ⟨y, hy⟩ := Finset.nonempty_of_ne_empty hne
       exact (hEnts _ (mem_atomFinset.1 hy)).2.1
-    exact ⟨hne', A.ent_trans (TreeCon_atom_con_of_atoms A hv hne')
-      (TreeCon_atom_con_of_atoms A hu hne) hlft hA⟩
+    exact ⟨hne', A.ent_trans (TreeCon.atom_con_of_atoms A hv hne')
+      (TreeCon.atom_con_of_atoms A hu hne) hlft hA⟩
   | pairL t ih =>
     rcases hPay with ⟨hAt, hConL, hConR, hOr⟩
     rcases hOr with ⟨hne, hPayL⟩ | ⟨rfl, hRne⟩
     · obtain ⟨s, hs⟩ := Finset.nonempty_of_ne_empty hne
       have hEy := hEnts _ (mem_pairLFinset.1 hs)
       have hAtv : atomFinset v = ∅ := hEy.2.1
-      have hConLv : TreeCon A (pairLFinset v) := TreeCon_pairL_of_right A hv hAtv
+      have hConLv : TreeCon A (pairLFinset v) := TreeCon.pairL_of_right A hv hAtv
       have hConRv : TreeCon A (pairRFinset v) := hEy.2.2.2.1
       have hEntsL : ∀ y ∈ pairLFinset u, TreeEnt A (pairLFinset v) y := by
         intro y hy
@@ -74,7 +72,7 @@ theorem TreeEntPayload_trans {u v : Finset (TreeToken α)} {c : TreeToken α}
       · have huBot : pairLFinset u = {.bot} :=
           eq_singleton_bot_of_subset hne hsub
         have ht : t = .bot :=
-          TreeEntPayload_of_no_atoms_no_pairs A
+          TreeEntPayload.of_no_atoms_no_pairs A
             atomFinset_singleton_bot pairLFinset_singleton_bot
             pairRFinset_singleton_bot (huBot ▸ hPayL)
         rcases hEy.2.2.2.2 with ⟨hneV, _⟩ | ⟨_, hR⟩
@@ -83,7 +81,7 @@ theorem TreeEntPayload_trans {u v : Finset (TreeToken α)} {c : TreeToken α}
     · obtain ⟨s, hs⟩ := Finset.nonempty_of_ne_empty hRne
       have hEy := hEnts _ (mem_pairRFinset.1 hs)
       have hAtv : atomFinset v = ∅ := hEy.2.1
-      refine ⟨hAtv, TreeCon_pairL_of_right A hv hAtv, hEy.2.2.1, ?_⟩
+      refine ⟨hAtv, TreeCon.pairL_of_right A hv hAtv, hEy.2.2.1, ?_⟩
       rcases hEy.2.2.2.2 with ⟨hneR, _⟩ | ⟨_, hneL⟩
       · exact Or.inr ⟨rfl, hneR⟩
       · exact Or.inl ⟨hneL, trivial⟩
@@ -93,7 +91,7 @@ theorem TreeEntPayload_trans {u v : Finset (TreeToken α)} {c : TreeToken α}
     · obtain ⟨s, hs⟩ := Finset.nonempty_of_ne_empty hne
       have hEy := hEnts _ (mem_pairRFinset.1 hs)
       have hAtv : atomFinset v = ∅ := hEy.2.1
-      have hConRv : TreeCon A (pairRFinset v) := TreeCon_pairR_of_right A hv hAtv
+      have hConRv : TreeCon A (pairRFinset v) := TreeCon.pairR_of_right A hv hAtv
       have hConLv : TreeCon A (pairLFinset v) := hEy.2.2.2.1
       have hEntsR : ∀ y ∈ pairRFinset u, TreeEnt A (pairRFinset v) y := by
         intro y hy
@@ -109,7 +107,7 @@ theorem TreeEntPayload_trans {u v : Finset (TreeToken α)} {c : TreeToken α}
       · have huBot : pairRFinset u = {.bot} :=
           eq_singleton_bot_of_subset hne hsub
         have ht : t = .bot :=
-          TreeEntPayload_of_no_atoms_no_pairs A
+          TreeEntPayload.of_no_atoms_no_pairs A
             atomFinset_singleton_bot pairLFinset_singleton_bot
             pairRFinset_singleton_bot (huBot ▸ hPayR)
         rcases hEy.2.2.2.2 with ⟨hneV, _⟩ | ⟨_, hL⟩
@@ -118,7 +116,7 @@ theorem TreeEntPayload_trans {u v : Finset (TreeToken α)} {c : TreeToken α}
     · obtain ⟨s, hs⟩ := Finset.nonempty_of_ne_empty hLne
       have hEy := hEnts _ (mem_pairLFinset.1 hs)
       have hAtv : atomFinset v = ∅ := hEy.2.1
-      refine ⟨hAtv, TreeCon_pairR_of_right A hv hAtv, hEy.2.2.1, ?_⟩
+      refine ⟨hAtv, TreeCon.pairR_of_right A hv hAtv, hEy.2.2.1, ?_⟩
       rcases hEy.2.2.2.2 with ⟨hneL, _⟩ | ⟨_, hneR⟩
       · exact Or.inr ⟨rfl, hneL⟩
       · exact Or.inl ⟨hneR, trivial⟩

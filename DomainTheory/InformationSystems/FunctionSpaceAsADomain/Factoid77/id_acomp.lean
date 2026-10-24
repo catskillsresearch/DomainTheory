@@ -7,7 +7,6 @@ public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 public import Mathlib.CategoryTheory.Adjunction.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.InfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_toElement
 
 @[expose] public section
 
@@ -31,7 +30,7 @@ namespace ApproximableMap
 theorem id_acomp {α β : Type*} [DecidableEq α] [DecidableEq β]
     {A : InfoSys α} {B : InfoSys β} (f : ApproximableMap A B) :
     acomp (idMap A) f = f :=
-  (ext_iff_toElement _ _).2 fun x => by rw [acomp_toElement, idMap_toElement]
+  (ext_iff_toElement _ _).2 fun x => by rw [acomp.toElement, idMap.toElement]
 
 end ApproximableMap
 

@@ -6,7 +6,7 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.Basic
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mkFunToken_eq
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mkFunToken
 
 @[expose] public section
 
@@ -33,11 +33,11 @@ theorem approxMap_toElement_element_toApproxMap (x : (functionSystem A B).Elemen
   · intro p hp
     change (element_toApproxMap A B x).rel p.val.1 p.val.2 at hp
     obtain ⟨_, _, hmem⟩ := hp
-    simpa [mkFunToken_eq A B p] using hmem
+    simpa [mkFunToken.eq A B p] using hmem
   · intro p hp
     change (element_toApproxMap A B x).rel p.val.1 p.val.2
     refine ⟨p.property.1, p.property.2, ?_⟩
-    simpa [mkFunToken_eq A B p] using hp
+    simpa [mkFunToken.eq A B p] using hp
 
 end InfoSys
 end DomainTheory.InformationSystems

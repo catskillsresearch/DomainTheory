@@ -1,3 +1,0 @@
-If v is consistent, every member of a set u is U-entailed by v, and u U-entails c, then v U-entails c. Consistency of u is hypothesized alongside consistency of v.
-
-The first component is consistency of v. Transitivity of V-entailment supplies the second: each token in the forget-image of u is the value of a member of u, and that member contributes a V-entailment from the forget-image of v, while the forget-image of u V-entails the value of c.

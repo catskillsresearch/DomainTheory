@@ -32,15 +32,9 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.fold
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.rawDepth_funTok_gt_left
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.rawDepth_funTok_gt_right
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepthInst31
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.le_finsetMaxDepth_of_mem
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.foldr_max_le_of_forall
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.foldr_max_lt_of_forall
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_listToFinset_le
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_list_lt_funTok
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_list_lt_funTok_out
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_of_mem_funTok
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_inputUnion_lt
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_outputUnion_lt
 
 @[expose] public section
 
@@ -83,4 +77,43 @@ inductive LamEntDepth : Finset (RawLamToken α) → RawLamToken α → Prop wher
       LamEntDepth u (.funTok xs ys)
 
 end InfoSys
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α : Type*} [DecidableEq α]
+
+variable (A : InfoSys α)
+
+theorem LamEntDepth_bot {u : Finset (RawLamToken α)} (hu : LamConDepth A u) :
+    LamEntDepth A u .bot :=
+  LamEntDepth.bot hu
+
+end InfoSys
+
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α : Type*} [DecidableEq α]
+
+variable (A : InfoSys α)
+
+theorem LamEntDepth.con {u : Finset (RawLamToken α)} {t : RawLamToken α}
+    (ht : LamEntDepth A u t) : LamConDepth A u := by
+  cases ht with
+  | bot hu => exact hu
+  | atom hu _ _ _ => exact hu
+  | funTok hu _ _ _ _ _ _ _ _ => exact hu
+
+end InfoSys
+
 end DomainTheory.InformationSystems

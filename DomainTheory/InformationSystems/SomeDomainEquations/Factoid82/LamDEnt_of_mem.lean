@@ -11,7 +11,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamE
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst70
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst74
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.mem_lamDForgetFinset
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDForgetFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDEnt
 

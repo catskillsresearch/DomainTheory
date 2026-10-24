@@ -2,10 +2,10 @@ module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42.Basic
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42.familyInf_le
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42.familyInf
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42.le_familyInf
 
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf_le_right
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.le_inf
 @[expose] public section
 
@@ -22,15 +22,15 @@ theorem familyInf_pair (x y : sys.Element) :
     sys.familyInf ({x, y} : Set sys.Element) ⟨x, Set.mem_insert x {y}⟩ = sys.inf x y := by
   refine le_antisymm ?_ ?_
   · exact sys.le_inf
-      (sys.familyInf_le _ _ (Set.mem_insert x {y}))
-      (sys.familyInf_le _ _ (Set.mem_insert_of_mem _ rfl))
+      (familyInf.le sys _ _ (Set.mem_insert x {y}))
+      (familyInf.le sys _ _ (Set.mem_insert_of_mem _ rfl))
   · apply sys.le_familyInf
     intro z hz
     rcases Set.mem_insert_iff.mp hz with rfl | hy
-    · exact sys.inf_le_left _ _
+    · exact inf.le_left sys _ _
     · have : z = y := hy
       subst this
-      exact sys.inf_le_right _ _
+      exact inf.le_right sys _ _
 
 end InfoSys
 end DomainTheory.InformationSystems

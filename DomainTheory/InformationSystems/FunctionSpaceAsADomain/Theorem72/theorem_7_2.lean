@@ -6,7 +6,7 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.Basic
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.element_toApproxMap_approxMap_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.element_toApproxMap
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.approxMap_toElement_element_toApproxMap
 
 @[expose] public section
@@ -38,7 +38,7 @@ theorem theorem_7_2 {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β
       element_toApproxMap A B (approxMap_toElement A B f) = f) ∧
     (∀ x : (functionSystem A B).Element,
       approxMap_toElement A B (element_toApproxMap A B x) = x) :=
-  ⟨element_toApproxMap_approxMap_toElement A B,
+  ⟨element_toApproxMap.approxMap_toElement A B,
     approxMap_toElement_element_toApproxMap A B⟩
 
 end InfoSys

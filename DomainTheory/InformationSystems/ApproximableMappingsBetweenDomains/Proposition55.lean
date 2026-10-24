@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55.comp_toElement
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55.comp
 
 @[expose] public section
 
@@ -19,6 +19,6 @@ theorem theorem_55.{u_1, u_2, u_3} : ∀ {α : Type u_1} {β : Type u_2} {γ : T
       (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.comp α β γ inst inst_1 inst_2 A B C g f) x)
     (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.toElement β γ inst_1 inst_2 B C g
       (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.toElement α β inst inst_1 A B f x)) :=
-  @DomainTheory.InformationSystems.InfoSys.ApproximableMap.comp_toElement
+  @DomainTheory.InformationSystems.InfoSys.ApproximableMap.comp.toElement
 
 end DomainTheory.InformationSystems.InfoSys.ApproximableMap

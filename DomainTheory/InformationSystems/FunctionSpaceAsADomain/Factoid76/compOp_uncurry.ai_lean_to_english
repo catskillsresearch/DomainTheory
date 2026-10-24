@@ -1,3 +1,0 @@
-Uncurrying the composition operator recovers the uncurried composition map.
-
-This is the definition of the operator as a currying, together with the identity that uncurrying a currying returns the original map.

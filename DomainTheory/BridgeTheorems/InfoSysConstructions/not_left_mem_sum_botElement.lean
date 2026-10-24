@@ -1,6 +1,6 @@
 module
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumSystem
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset_singleton_bot
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
@@ -31,7 +31,7 @@ theorem not_left_mem_sum_botElement {x : α} :
   have hEnt : (sumSystem A B).Ent {sumBot} (.left x) := hx
   -- Ent {bot} (left x) requires lftFinset {bot} ≠ ∅
   rcases hEnt with ⟨_, ⟨hne, _⟩⟩
-  exact hne lftFinset_singleton_bot
+  exact hne lftFinset.singleton_bot
 
 end InfoSysConstructions
 

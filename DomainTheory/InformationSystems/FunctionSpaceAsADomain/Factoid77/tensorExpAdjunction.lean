@@ -8,7 +8,6 @@ public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 public import Mathlib.CategoryTheory.Adjunction.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.InfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.tensorExpEquiv
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.tensorExpEquiv_natural
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.expFunctor
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCategoryInfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCartesianMonoidalCategoryInfoSysObj
@@ -40,7 +39,7 @@ noncomputable def tensorExpAdjunction (A : InfoSysObj.{u}) :
     tensorLeft A ⊣ expFunctor A :=
   Adjunction.adjunctionOfEquivRight (F := tensorLeft A) (tensorExpEquiv A)
     fun _Y' _Y _Z f g => by
-      simpa using tensorExpEquiv_natural A f g
+      simpa using tensorExpEquiv.natural A f g
 
 end InfoSys
 

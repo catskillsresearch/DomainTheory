@@ -11,8 +11,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPai
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPairRFinset_insert_bot
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPairLFinset_insert_pairR
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPairRFinset_insert_pairL
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VEnt_pairL_inv
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VEnt_pairR_inv
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.BasicInst33
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.BasicInst35
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.BasicInst39
@@ -50,7 +48,7 @@ theorem VEnt_insert_top_imp {u : Finset VToken} {y : VToken}
     | top_both hL hR =>
       rw [vPairLFinset_insert_pairL] at hL
       rw [vPairRFinset_insert_pairL] at hR
-      rcases VEnt_pairL_inv hEnt with htop | hx
+      rcases VEnt.pairL_inv hEnt with htop | hx
       · exact VEnt.top_mem htop
       · by_cases hxTop : x = .top
         · subst hxTop; exact VEnt.top_both hx hR
@@ -64,7 +62,7 @@ theorem VEnt_insert_top_imp {u : Finset VToken} {y : VToken}
     | top_both hL hR =>
       rw [vPairLFinset_insert_pairR] at hL
       rw [vPairRFinset_insert_pairR] at hR
-      rcases VEnt_pairR_inv hEnt with htop | hz
+      rcases VEnt.pairR_inv hEnt with htop | hz
       · exact VEnt.top_mem htop
       · by_cases hzTop : z = .top
         · subst hzTop; exact VEnt.top_both hL hz

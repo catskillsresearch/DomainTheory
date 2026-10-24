@@ -137,7 +137,7 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
                   mem_lamFunFinset.1 (hSsub (mem_funion.2 (Or.inr hr)))
                 have hzt := rawDepth_funTok_gt_left (v := r.2) ((mem_listToFinset).1 ht')
                 have hDq := (finsetMaxDepth_of_mem_funTok htok).1
-                have hDxs := finsetMaxDepth_list_lt_funTok xs ys
+                have hDxs := finsetMaxDepth.list_lt_funTok xs ys
                 exact Nat.max_lt.2 ⟨Nat.lt_of_lt_of_le hDxs hleC,
                   Nat.max_lt.2 ⟨Nat.lt_of_lt_of_le hDq hleU,
                     Nat.lt_of_lt_of_le
@@ -149,7 +149,7 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
                   (fun _ _ _ hE => LamConDepth_insert_of_ent A hE)
                   hConIn hEntAll (fun t ht => by
                     rcases (mem_lamInputUnion).1 ht with ⟨r, hr, ht'⟩
-                    have hDxs := finsetMaxDepth_list_lt_funTok xs ys
+                    have hDxs := finsetMaxDepth.list_lt_funTok xs ys
                     have htok : .funTok r.1 r.2 ∈ v := mem_lamFunFinset.1 (hSsub hr)
                     exact Nat.max_lt.2 ⟨Nat.lt_of_lt_of_le hDxs hleC,
                       Nat.lt_of_lt_of_le
@@ -229,7 +229,7 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
                   exact hEntIn p hp t ht')
                 (fun t ht => by
                   rcases (mem_lamInputUnion).1 ht with ⟨p, hp, ht'⟩
-                  have hDxs := finsetMaxDepth_list_lt_funTok xs ys
+                  have hDxs := finsetMaxDepth.list_lt_funTok xs ys
                   have htok : .funTok p.1 p.2 ∈ u := mem_lamFunFinset.1 (hs hp)
                   exact Nat.max_lt.2 ⟨Nat.lt_of_lt_of_le hDxs hleC,
                     Nat.lt_of_lt_of_le
@@ -241,9 +241,9 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
           refine ih _ ?_ (lamOutputUnion s) (lamOutputUnion S) z rfl
             hConS hConOutS (fun t ht => hSoutS t ht) (hEntOut z hz)
           exact Nat.max_lt.2 ⟨
-            Nat.lt_of_lt_of_le (finsetMaxDepth_outputUnion_lt hSsub hFv) hleV,
+            Nat.lt_of_lt_of_le (finsetMaxDepth.outputUnion_lt hSsub hFv) hleV,
             Nat.max_lt.2 ⟨
-              Nat.lt_of_lt_of_le (finsetMaxDepth_outputUnion_lt hs hWorld) hleU,
+              Nat.lt_of_lt_of_le (finsetMaxDepth.outputUnion_lt hs hWorld) hleU,
               Nat.lt_of_lt_of_le
                 (rawDepth_funTok_gt_right ((mem_listToFinset).1 hz)) hleC⟩⟩
         have hInCompat' : lamFunFinset (listToFinset xs) = ∅ →

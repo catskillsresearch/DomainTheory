@@ -22,7 +22,7 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-theorem TreeCon_pairL_of_right {u : Finset (TreeToken α)}
+theorem TreeCon.pairL_of_right {u : Finset (TreeToken α)}
     (hu : TreeCon A u) (_hA : atomFinset u = ∅) : TreeCon A (pairLFinset u) := by
   cases hu with
   | left _ _ hL _ => rw [hL]; exact TreeCon_empty A

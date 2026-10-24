@@ -28,7 +28,7 @@ theorem sndFinset_liftPair (u : Finset α) (v : Finset β) :
     sndFinset A B (liftPair A B u v) =
       sndFinset A B (liftLeft A B u) ∪' v := by
   unfold liftPair
-  rw [sndFinset_funion, sndFinset_liftRight]
+  rw [sndFinset.funion, sndFinset_liftRight]
 
 end InfoSys
 

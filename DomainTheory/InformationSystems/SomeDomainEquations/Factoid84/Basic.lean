@@ -12,13 +12,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flat
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.mem_barElement
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.mem_topElement
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.BotApprox_any
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatRel_empty
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatMap_refl
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatMap_toElement_of_mem_one
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatMap_rogue
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatMap_consistent
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatMap_idem
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flatMap_isDomain
 
 @[expose] public section
 

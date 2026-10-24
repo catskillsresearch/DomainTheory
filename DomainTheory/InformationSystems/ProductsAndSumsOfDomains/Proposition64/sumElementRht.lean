@@ -55,7 +55,7 @@ def sumElementRht (z : (sumSystem A B).Element)
         subst this; exact hy0
       have hSum : (sumSystem A B).Ent {SumToken.right y0} (.right b) := by
         refine ⟨z.consistent _ hsub, ⟨Finset.singleton_ne_empty _, ?_⟩⟩
-        rw [rhtFinset_singleton_right]; exact hEnt'
+        rw [rhtFinset.singleton_right]; exact hEnt'
       exact z.closed _ _ hsub hSum
     else
       have hsub : (↑(liftSumRight (α := α) W) : Set _) ⊆ z.carrier := by

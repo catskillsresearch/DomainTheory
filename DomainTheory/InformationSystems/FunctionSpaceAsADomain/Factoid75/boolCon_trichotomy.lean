@@ -10,7 +10,7 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolPoint
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.EmptyEntails
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.boolSat_bot
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.boolSat
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.boolSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BasicInst22
 
@@ -38,7 +38,7 @@ theorem boolCon_trichotomy {u : Finset BoolToken} (hu : u ∈ boolSystem.Con) :
     cases t with
     | bot =>
       exact ⟨⟨.undef, fun _ h => False.elim (Finset.notMem_empty _ h)⟩,
-        fun _ _ => boolSat_bot _⟩
+        fun _ _ => boolSat.bot _⟩
     | tru => exact False.elim hsat
     | fls => exact False.elim hsat
   | isTrue =>
@@ -50,7 +50,7 @@ theorem boolCon_trichotomy {u : Finset BoolToken} (hu : u ∈ boolSystem.Con) :
       cases t with
       | bot =>
         exact ⟨⟨.undef, fun _ h => False.elim (Finset.notMem_empty _ h)⟩,
-          fun _ _ => boolSat_bot _⟩
+          fun _ _ => boolSat.bot _⟩
       | tru => exact False.elim (htru ht)
       | fls => exact False.elim hsat
   | isFalse =>
@@ -62,7 +62,7 @@ theorem boolCon_trichotomy {u : Finset BoolToken} (hu : u ∈ boolSystem.Con) :
       cases t with
       | bot =>
         exact ⟨⟨.undef, fun _ h => False.elim (Finset.notMem_empty _ h)⟩,
-          fun _ _ => boolSat_bot _⟩
+          fun _ _ => boolSat.bot _⟩
       | tru => exact False.elim hsat
       | fls => exact False.elim (hfls ht)
 

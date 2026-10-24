@@ -8,10 +8,10 @@ public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 public import Mathlib.CategoryTheory.Adjunction.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.InfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.exp
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.acomp
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.swapMap
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.tensorElementToProdElement
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.prodHomToTensorHom_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.prodHomToTensorHom
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.uncurryProduct
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.uncurryRight
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.pair_after_swap_toElement
@@ -55,11 +55,11 @@ theorem uncurryRight_toElement (A Y Z : InfoSysObj.{u})
   rw [show (uncurryRight A Y Z φ).toElement q =
       (uncurryProduct A Y Z φ).toElement
         (tensorElementToProdElement A Y q) by
-    exact prodHomToTensorHom_toElement A Y Z (uncurryProduct A Y Z φ) q]
+    exact prodHomToTensorHom.toElement A Y Z (uncurryProduct A Y Z φ) q]
   unfold uncurryProduct
-  rw [acomp_toElement]
+  rw [acomp.toElement]
   unfold uncurryMap
-  rw [comp_toElement,
+  rw [comp.toElement,
     pair_after_swap_toElement A Y Z φ (tensorElementToProdElement A Y q),
     applyMap_toElement]
 

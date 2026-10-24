@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.treeRhs_eq_sum_product
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.treeRhs
 
 @[expose] public section
 
@@ -78,6 +78,6 @@ theorem theorem_81.{u_1} : ∀ {α : Type u_1} [inst : DecidableEq α] (A : @Dom
           @DomainTheory.InformationSystems.InfoSys.instDecidableEqTreeToken α inst a b)
         (@DomainTheory.InformationSystems.InfoSys.treeSystem α inst A)
         (@DomainTheory.InformationSystems.InfoSys.treeSystem α inst A))) :=
-  @DomainTheory.InformationSystems.InfoSys.treeRhs_eq_sum_product
+  @DomainTheory.InformationSystems.InfoSys.treeRhs.eq_sum_product
 
 end DomainTheory.InformationSystems.InfoSys

@@ -9,26 +9,8 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.instL
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.instLeftCommutativeRhtInsert
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.mem_lftFinset
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.mem_rhtFinset
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset_mono
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset_mono
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset_insert_left
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset_insert_right
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset_insert_bot
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset_insert_right
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset_insert_left
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset_insert_bot
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset_singleton_left
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset_singleton_right
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset_singleton_bot
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset_singleton_bot
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumCon
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumEnt
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumCon_rht_empty_of_lft_nonempty
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumCon_lft_empty_of_rht_nonempty
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumCon_lft_con_of_lft_nonempty
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumCon_rht_con_of_rht_nonempty
 
 @[expose] public section
 
@@ -50,25 +32,25 @@ def sumSystem : InfoSys (SumToken α β) where
   con_subset := by
     intro u v hu hv
     rcases hu with ⟨hl, hr⟩ | ⟨hl, hr⟩
-    · exact Or.inl ⟨A.con_subset hl (lftFinset_mono hv),
+    · exact Or.inl ⟨A.con_subset hl (lftFinset.mono hv),
         Finset.Subset.antisymm (by
           intro y hy
-          have : y ∈ rhtFinset u := rhtFinset_mono hv hy
+          have : y ∈ rhtFinset u := rhtFinset.mono hv hy
           rw [hr] at this
           exact False.elim (Finset.notMem_empty y this))
           (Finset.empty_subset _)⟩
     · exact Or.inr ⟨Finset.Subset.antisymm (by
           intro x hx
-          have : x ∈ lftFinset u := lftFinset_mono hv hx
+          have : x ∈ lftFinset u := lftFinset.mono hv hx
           rw [hl] at this
           exact False.elim (Finset.notMem_empty x this))
           (Finset.empty_subset _),
-        B.con_subset hr (rhtFinset_mono hv)⟩
+        B.con_subset hr (rhtFinset.mono hv)⟩
   con_sing := by
     intro p
     cases p with
     | left x =>
-      exact Or.inl ⟨by rw [lftFinset_singleton_left]; exact A.con_sing x,
+      exact Or.inl ⟨by rw [lftFinset.singleton_left]; exact A.con_sing x,
         by
           ext y
           constructor
@@ -86,32 +68,32 @@ def sumSystem : InfoSys (SumToken α β) where
             exact False.elim (nomatch Finset.mem_singleton.mp this)
           · intro hx
             exact False.elim (Finset.notMem_empty x hx),
-        by rw [rhtFinset_singleton_right]; exact B.con_sing y⟩
+        by rw [rhtFinset.singleton_right]; exact B.con_sing y⟩
     | bot =>
-      exact Or.inl ⟨by rw [lftFinset_singleton_bot]; exact A.con_empty,
-        rhtFinset_singleton_bot⟩
+      exact Or.inl ⟨by rw [lftFinset.singleton_bot]; exact A.con_empty,
+        rhtFinset.singleton_bot⟩
   ent_con := by
     intro u p ⟨hu, hEnt⟩
     cases p with
     | bot =>
       rcases hu with ⟨hl, hr⟩ | ⟨hl, hr⟩
-      · exact Or.inl ⟨by rw [lftFinset_insert_bot]; exact hl,
-          by rw [rhtFinset_insert_bot]; exact hr⟩
-      · exact Or.inr ⟨by rw [lftFinset_insert_bot]; exact hl,
-          by rw [rhtFinset_insert_bot]; exact hr⟩
+      · exact Or.inl ⟨by rw [lftFinset.insert_bot]; exact hl,
+          by rw [rhtFinset.insert_bot]; exact hr⟩
+      · exact Or.inr ⟨by rw [lftFinset.insert_bot]; exact hl,
+          by rw [rhtFinset.insert_bot]; exact hr⟩
     | left x =>
       rcases hEnt with ⟨hne, hA⟩
-      have hr : rhtFinset u = ∅ := SumCon_rht_empty_of_lft_nonempty A B hu hne
+      have hr : rhtFinset u = ∅ := SumCon.rht_empty_of_lft_nonempty A B hu hne
       exact Or.inl ⟨by
-          rw [lftFinset_insert_left]
+          rw [lftFinset.insert_left]
           exact A.ent_con hA,
-        by rw [rhtFinset_insert_left]; exact hr⟩
+        by rw [rhtFinset.insert_left]; exact hr⟩
     | right y =>
       rcases hEnt with ⟨hne, hB⟩
-      have hl : lftFinset u = ∅ := SumCon_lft_empty_of_rht_nonempty A B hu hne
-      exact Or.inr ⟨by rw [lftFinset_insert_right]; exact hl,
+      have hl : lftFinset u = ∅ := SumCon.lft_empty_of_rht_nonempty A B hu hne
+      exact Or.inr ⟨by rw [lftFinset.insert_right]; exact hl,
         by
-          rw [rhtFinset_insert_right]
+          rw [rhtFinset.insert_right]
           exact B.ent_con hB⟩
   ent_bot := by
     intro u hu
@@ -124,11 +106,11 @@ def sumSystem : InfoSys (SumToken α β) where
     | left x =>
       have hx : x ∈ lftFinset u := (mem_lftFinset).2 hp
       have hne : lftFinset u ≠ ∅ := Finset.ne_empty_of_mem hx
-      exact ⟨hne, A.ent_refl (SumCon_lft_con_of_lft_nonempty A B hu hne) hx⟩
+      exact ⟨hne, A.ent_refl (SumCon.lft_con_of_lft_nonempty A B hu hne) hx⟩
     | right y =>
       have hy : y ∈ rhtFinset u := (mem_rhtFinset).2 hp
       have hne : rhtFinset u ≠ ∅ := Finset.ne_empty_of_mem hy
-      exact ⟨hne, B.ent_refl (SumCon_rht_con_of_rht_nonempty A B hu hne) hy⟩
+      exact ⟨hne, B.ent_refl (SumCon.rht_con_of_rht_nonempty A B hu hne) hy⟩
   ent_trans := by
     intro u v c hv hu hEnts hEntc
     refine ⟨hv, ?_⟩
@@ -146,8 +128,8 @@ def sumSystem : InfoSys (SumToken α β) where
         have hp : SumToken.left y ∈ u := (mem_lftFinset).1 hy
         exact (hEnts _ hp).2.1
       refine ⟨hne', ?_⟩
-      exact A.ent_trans (SumCon_lft_con_of_lft_nonempty A B hv hne')
-        (SumCon_lft_con_of_lft_nonempty A B hu hne) hlft hA
+      exact A.ent_trans (SumCon.lft_con_of_lft_nonempty A B hv hne')
+        (SumCon.lft_con_of_lft_nonempty A B hu hne) hlft hA
     | right y =>
       rcases hEntc with ⟨_, ⟨hne, hB⟩⟩
       have hrht : ∀ z ∈ rhtFinset u, B.Ent (rhtFinset v) z := by
@@ -160,8 +142,8 @@ def sumSystem : InfoSys (SumToken α β) where
         have hp : SumToken.right z ∈ u := (mem_rhtFinset).1 hz
         exact (hEnts _ hp).2.1
       refine ⟨hne', ?_⟩
-      exact B.ent_trans (SumCon_rht_con_of_rht_nonempty A B hv hne')
-        (SumCon_rht_con_of_rht_nonempty A B hu hne) hrht hB
+      exact B.ent_trans (SumCon.rht_con_of_rht_nonempty A B hv hne')
+        (SumCon.rht_con_of_rht_nonempty A B hu hne) hrht hB
 
 end InfoSys
 

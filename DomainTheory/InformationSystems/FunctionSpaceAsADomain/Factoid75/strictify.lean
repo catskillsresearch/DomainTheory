@@ -10,6 +10,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.B
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolPoint
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.EmptyEntails
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.emptyEntails_empty
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.emptyEntails_mem_botElement
 
 @[expose] public section
 
@@ -69,4 +70,30 @@ end ApproximableMap
 
 end InfoSys
 
+end DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+
+
+variable (A : InfoSys α) (B : InfoSys β)
+
+namespace ApproximableMap
+
+
+theorem strictify.toElement_le (f : ApproximableMap A B) (x : A.Element) :
+    (strictify A B f).toElement x ≤ f.toElement x := by
+  intro Z ⟨u, hu, ⟨_, _, hcase⟩⟩
+  rcases hcase with hE | ⟨hf, _⟩
+  · exact (botElement.le B (f.toElement x))
+      (emptyEntails_mem_botElement B (hE Z (Finset.mem_singleton_self _)))
+  · exact ⟨u, hu, hf⟩
+
+end ApproximableMap
+end InfoSys
 end DomainTheory.InformationSystems

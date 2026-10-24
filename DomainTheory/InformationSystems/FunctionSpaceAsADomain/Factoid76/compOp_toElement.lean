@@ -3,9 +3,9 @@ module
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.Basic
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.pairMap_comp_fst_snd_toElement
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.compOp_uncurry
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.compOpUncurry_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.constOp
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.compOp
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.compOpUncurry
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.applyMap_toElement
 @[expose] public section
@@ -38,11 +38,11 @@ theorem compOp_toElement (g : ApproximableMap B C) (f : ApproximableMap A B) :
     calc
       (element_toApproxMap A C ((compOp A B C).toElement gf)).toElement x
           = (uncurryMap Q A C (compOp A B C)).toElement (pairElements Q A gf x) := by
-              simp only [uncurryMap, comp_toElement]
+              simp only [uncurryMap, comp.toElement]
               rw [hpair, applyMap_toElement]
           _ = (compOpUncurry A B C).toElement (pairElements Q A gf x) := by
-              rw [compOp_uncurry]
-          _ = (comp g f).toElement x := compOpUncurry_toElement A B C g f x
+              rw [compOp.uncurry]
+          _ = (comp g f).toElement x := compOpUncurry.toElement A B C g f x
   rw [← huniq, approxMap_toElement_element_toApproxMap]
 
 end InfoSys

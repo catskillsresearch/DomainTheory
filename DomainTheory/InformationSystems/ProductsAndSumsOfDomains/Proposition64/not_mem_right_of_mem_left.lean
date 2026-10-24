@@ -4,7 +4,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.Basic
 
 @[expose] public section
 

@@ -9,7 +9,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.Basi
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.BasicInst35
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.BasicInst39
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.uForgetFinset_insert
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.uForgetFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UCon
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UEnt
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.not_VEnt_insert_top_of_ent
@@ -25,7 +25,7 @@ namespace InfoSys
 theorem UCon_insert_of_ent {u : Finset UToken} {p : UToken}
     (h : UEnt u p) : UCon (insert p u) := by
   rcases h with ⟨hCon, hEnt⟩
-  rw [UCon, uForgetFinset_insert]
+  rw [UCon, uForgetFinset.insert]
   exact not_VEnt_insert_top_of_ent p.property.out hEnt hCon
 
 end InfoSys

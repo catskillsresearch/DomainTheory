@@ -9,7 +9,7 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolPoint
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.strictify
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.IsStrict_strictify
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.IsStrict
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BasicInst22
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.strictFunctionSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.approxMap_toStrictElement
@@ -32,7 +32,7 @@ open ApproximableMap
 def strictifyElement (x : (functionSystem A B).Element) :
     (strictFunctionSystem A B).Element :=
   approxMap_toStrictElement A B (strictify A B (element_toApproxMap A B x))
-    (IsStrict_strictify A B _)
+    (IsStrict.strictify A B _)
 
 end InfoSys
 

@@ -12,7 +12,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamC
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDToken
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst70
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst74
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDForgetFinset_singleton
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDForgetFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConDepth_singleton_funTok
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon
 
@@ -29,7 +29,7 @@ variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
 
 theorem LamDCon_singleton (p : LamDToken A) : LamDCon A {p} := by
-  rw [LamDCon, lamDForgetFinset_singleton]
+  rw [LamDCon, lamDForgetFinset.singleton]
   match p.val, p.property with
   | .bot, _ => exact LamConDepth_singleton_bot A
   | .atom x, _ => exact LamConDepth_singleton_atom A x

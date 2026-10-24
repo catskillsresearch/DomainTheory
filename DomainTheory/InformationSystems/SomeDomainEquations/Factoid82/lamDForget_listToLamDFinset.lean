@@ -12,7 +12,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamD
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst70
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst74
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDForgetFinset
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.mem_lamDForgetFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.listToLamDFinset
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.mem_listToLamDFinset
 
