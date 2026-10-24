@@ -169,6 +169,13 @@ theorem toElementMap₂_eval (φ : (funSpace V₁ V₂).Element) (x : V₁.Eleme
 theorem evalMap_apply (φ : (funSpace V₁ V₂).Element) (x : V₁.Element) :
     (evalMap V₁ V₂).toElementMap (pair φ x) = (toApproxMap φ).toElementMap x := by
   rw [evalMap, ← toElementMap₂_toMap₂, toMap₂_ofMap₂, toElementMap₂_eval]
+
+/-- `(eval ∘ ⟨F, G⟩)(w) = F(w)(G(w))`. -/
+theorem toElementMap_evalMap_comp_paired (F : ApproximableMap V₀ (funSpace V₁ V₂))
+    (G : ApproximableMap V₀ V₁) (w : V₀.Element) :
+    ((evalMap V₁ V₂).comp (paired F G)).toElementMap w =
+      (toApproxMap (F.toElementMap w)).toElementMap (G.toElementMap w) := by
+  rw [toElementMap_comp, toElementMap_paired, evalMap_apply]
 end
 
 theorem toFilter_le_iff {f g : ApproximableMap V₀ V₁} : toFilter f ≤ toFilter g ↔ f ≤ g :=

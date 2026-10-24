@@ -117,6 +117,14 @@ def proj₁ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
   · rintro ⟨hY', hz⟩
     exact ⟨prodNbhd V₀.master Y', hz, prod_mem_prodNbhd V₀.master_mem hY', hY', by simp⟩
 
+theorem toElementMap_proj₀_pair (x : V₀.Element) (y : V₁.Element) :
+    (proj₀ V₀ V₁).toElementMap (pair x y) = x := by
+  rw [toElementMap_proj₀, fst_pair]
+
+theorem toElementMap_proj₁_pair (x : V₀.Element) (y : V₁.Element) :
+    (proj₁ V₀ V₁).toElementMap (pair x y) = y := by
+  rw [toElementMap_proj₁, snd_pair]
+
 end
 end DomainTheory.NeighbourhoodSystems
 end

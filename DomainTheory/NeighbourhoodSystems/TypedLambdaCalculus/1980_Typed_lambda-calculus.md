@@ -11,7 +11,6 @@
 - [Proposition 5.4 — fixed point under a parameter](1980_Proposition_5_4.md)
 - [Table 5.5 — table of combinators](1980_Table_5_5.md)
 - [Theorem 5.6 — partial recursive functions](1980_Theorem_5_6.md)
-- [Lecture V exercises](1980_Lecture_V_exercises.md)
 - [Exercise 5.7 — currying the lambda notation](1980_Exercise_5_7.md)
 - [Exercise 5.8 — combinatory completeness](1980_Exercise_5_8.md)
 - [Exercise 5.9 — common fixed points](1980_Exercise_5_9.md)
