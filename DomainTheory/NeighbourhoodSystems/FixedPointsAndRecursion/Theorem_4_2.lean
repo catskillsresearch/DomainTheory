@@ -41,10 +41,7 @@ namespace ApproximableMap
 def iterElem (f : ApproximableMap V V) (n : ℕ) : V.Element := (f.iterMap n).toElementMap V.bot
 
 end ApproximableMap
-end
 
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
 open ApproximableMap
 
 /-- **Theorem 4.2 (Scott 1981, PRG-19) — Scott's equation (∗), hard half.** A finite `f`-chain
@@ -80,6 +77,7 @@ theorem exists_principal_iterMap (V : NeighborhoodSystem α) (φ : (funSpace V V
       show ((funSpace V V).principal (φ.sub hwInter)).mem (step Y X)
       exact ⟨step_mem hVY hVX, Set.inter_subset_right⟩
     exact ⟨Y, hYg, hgYX⟩
+
 end
 
 section
@@ -109,10 +107,7 @@ theorem fixElement_le_of_toElementMap_le (f : ApproximableMap V V) {z : V.Elemen
   exact key n X hn
 
 end ApproximableMap
-end
 
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
 open ApproximableMap
 
 /-- On a finite element `↑F`, `fix` returns `fix(↑F)` (the least fixed point of the least map of
@@ -122,11 +117,6 @@ theorem fixMap_toElementMap_principal (V : NeighborhoodSystem α)
     (fixMap V).toElementMap ((funSpace V V).principal hW) =
       (toApproxMap ((funSpace V V).principal hW)).fixElement :=
   toElementMap_ofMono_principal _ _ W hW
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-open ApproximableMap
 
 /-- **Theorem 4.2 (Scott 1981, PRG-19) — Scott's equation (∗).** The elementwise action of `fix` is
 the least fixed point of the corresponding map: `fix.toElementMap φ = fix(toApproxMap φ)`. The
@@ -148,11 +138,6 @@ theorem fixMap_toElementMap (V : NeighborhoodSystem α) (φ : (funSpace V V).Ele
     refine ⟨W, hw, ?_⟩
     rw [fixMap_toElementMap_principal]
     exact ⟨n, hWn⟩
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-open ApproximableMap
 
 /-- **Theorem 4.2(ii) (Scott 1981, PRG-19).** `f(x) ⊆ x ⟹ fix(f) ⊆ x`: `fix` lands in the least
 pre-fixed point. -/
@@ -160,11 +145,6 @@ theorem fixMap_least (V : NeighborhoodSystem α) (φ : (funSpace V V).Element) {
     (hz : (toApproxMap φ).toElementMap z ≤ z) : (fixMap V).toElementMap φ ≤ z := by
   rw [fixMap_toElementMap]
   exact fixElement_le_of_toElementMap_le (toApproxMap φ) hz
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-open ApproximableMap
 
 /-- `fix` applied to (the filter of) an approximable map `f` returns the least fixed point of `f`.
 This is the bridge to the "for any `f : 𝒟 → 𝒟`" form of Theorem 4.2, using the Theorem 3.10
@@ -176,6 +156,7 @@ theorem fixMap_toElementMap_toFilter (V : NeighborhoodSystem α) (f : Approximab
     have he := (funSpaceEquiv V V).apply_symm_apply f
     rwa [funSpaceEquiv_apply, funSpaceEquiv_symm_apply] at he
   rw [h]
+
 end
 
 section
@@ -197,14 +178,6 @@ theorem iterElem_eq_iterate (f : ApproximableMap V V) (n : ℕ) :
       rw [toElementMap_comp]
     rw [hstep, ih, Function.iterate_succ', Function.comp_apply]
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- `Y ∈ fⁿ(⊥) ↔ Δ fⁿ Y`: the `n`-th approximant is the family of neighbourhoods reachable from
 `Δ` in exactly the `n` steps recorded by `fⁿ`. -/
 theorem mem_iterElem (f : ApproximableMap V V) (n : ℕ) {X : Set α} :
@@ -214,28 +187,12 @@ theorem mem_iterElem (f : ApproximableMap V V) (n : ℕ) {X : Set α} :
     rw [mem_bot] at hW; subst hW; exact hWX
   · intro h; exact ⟨V.master, by rw [mem_bot], h⟩
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- The approximants form an increasing chain: `n ≤ m ⟹ fⁿ(⊥) ⊑ fᵐ(⊥)`. -/
 theorem iterElem_mono (f : ApproximableMap V V) {n m : ℕ} (hnm : n ≤ m) :
     f.iterElem n ≤ f.iterElem m := by
   intro X hX
   rw [mem_iterElem] at hX ⊢
   exact rel_master_mono f hnm hX
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- **Theorem 4.2(iii) (Scott 1981, PRG-19).** `fix(f) = ⊔ₙ fⁿ(⊥)`, here as the directed union of
 the increasing chain of approximants. -/
@@ -252,10 +209,7 @@ theorem fixElement_eq_iSupDirected (f : ApproximableMap V V) :
   · rintro ⟨n, hn⟩; exact ⟨n, (mem_iterElem f n).mp hn⟩
 
 end ApproximableMap
-end
 
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
 open ApproximableMap
 
 /-- **Theorem 4.2(iii) (Scott 1981, PRG-19).** `fix(f) = ⊔ₙ fⁿ(⊥)` (as a directed union). -/
@@ -266,6 +220,7 @@ theorem fixMap_eq_iSup (V : NeighborhoodSystem α) (φ : (funSpace V V).Element)
           iterElem_mono _ (le_max_right i j)⟩) := by
   rw [fixMap_toElementMap]
   exact fixElement_eq_iSupDirected (toApproxMap φ)
+
 end
 
 section

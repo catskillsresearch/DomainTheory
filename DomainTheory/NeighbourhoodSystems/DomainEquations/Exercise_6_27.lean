@@ -18,21 +18,12 @@ section
 namespace Exercise627
 variable {D₀ D₁ : NeighborhoodSystem Str}
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
+
 /- concordance: source L4199 EXERCISE 6.27 which embeddings hold -/
 /-- **Exercise 6.27 (4).** `𝒟 ⊴ 𝒟 ⊕ ℰ`. (Uses `Classical.choice` via `oplus_mem_leftN`.) -/
 theorem inl_trianglelefteq_oplus :
     D₀ ⊴ oplusTok D₀ D₁ h₀ h₁ :=
   trianglelefteq_of_projectionPair inlInj inlProj inlProj_comp_inlInj inlInj_comp_inlProj_le
-
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 section Part5
 
@@ -56,6 +47,7 @@ theorem ext_of_principal {γ δ : Type*} {W₀ : NeighborhoodSystem γ} {W₁ : 
     rw [f.rel_iff_mem_principal hX, h X hX, ← g.rel_iff_mem_principal hX]; exact hr
 
 end Part5
+
 end Exercise627
 end
 
@@ -70,14 +62,6 @@ theorem fstInj_comp_fstProj_le (D₀ D₁ : NeighborhoodSystem Str) :
   obtain ⟨X, ⟨hW, _, hsub⟩, _, hW', hsub'⟩ := hr
   exact ⟨hW, hW', hsub.trans hsub'⟩
 
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
 theorem fstProj_comp_fstInj (D₀ D₁ : NeighborhoodSystem Str) :
     (fstProj D₀ D₁).comp (fstInj D₀ D₁) = idMap D₀ := by
   apply ApproximableMap.ext
@@ -91,14 +75,6 @@ theorem fstProj_comp_fstInj (D₀ D₁ : NeighborhoodSystem Str) :
       ⟨hX, prodTok_mem_prodTokNbhd hZ D₁.master_mem,
         prodTokNbhd_subset_iff.mpr ⟨hXZ, subset_rfl⟩⟩,
       prodTok_mem_prodTokNbhd hZ D₁.master_mem, hZ, subset_rfl⟩
-
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
 
 /-- **Exercise 6.27 (2).** `𝒟 ⊴ 𝒟 × ℰ`. -/
 theorem fst_trianglelefteq_prod (D₀ D₁ : NeighborhoodSystem Str) :
@@ -144,16 +120,6 @@ theorem oplusTok_subsystem_sumTok (h₀ : ∀ X, D₀.mem X → X.Nonempty)
       exact oplusTok_mem_embT (sumTok_mem_embT_inv hInt)
         (inter_ne_of_ne_left (D₁.sub_master hY) hYne)
 
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 /-- **Exercise 6.27 (3).** `(𝒟 ⊕ ℰ) ⊴ (𝒟 + ℰ)`. -/
 theorem oplus_trianglelefteq_sum (h₀ : ∀ X, D₀.mem X → X.Nonempty)
     (h₁ : ∀ Y, D₁.mem Y → Y.Nonempty) :
@@ -192,14 +158,6 @@ theorem otimesTok_subsystem_prodTok (D₀ D₁ : NeighborhoodSystem Str) :
         inter_ne_of_ne_left (D₀.sub_master hX) hXne,
         inter_ne_of_ne_left (D₁.sub_master hY) hYne, rfl⟩
 
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
 /-- **Exercise 6.27 (1).** `(𝒟 ⊗ ℰ) ⊴ (𝒟 × ℰ)`. -/
 theorem otimes_trianglelefteq_prod (D₀ D₁ : NeighborhoodSystem Str) :
     otimesTok D₀ D₁ ⊴ prodTok D₀ D₁ :=
@@ -222,36 +180,11 @@ theorem otimes_unitPt_collapse :
   · rfl
   · exact absurd hY hYne
 
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 theorem strictifyMap_le (g : ApproximableMap V₀ V₁) : strictifyMap g ≤ g := fun _ _ h => h.1
-
-end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 theorem strictifyMap_of_isStrict {f : ApproximableMap V₀ V₁} (hf : IsStrict f) :
     strictifyMap f = f := by
@@ -260,15 +193,6 @@ theorem strictifyMap_of_isStrict {f : ApproximableMap V₀ V₁} (hf : IsStrict 
   exact ⟨fun h => h.1, fun h => ⟨h, fun hXm => hf (hXm ▸ h)⟩⟩
 
 end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- If a system's only neighbourhood is its master, its element lattice is a single point (`⊥`). -/
 theorem subsingleton_element_of_only_master {γ : Type*} {V : NeighborhoodSystem γ}
@@ -279,16 +203,6 @@ theorem subsingleton_element_of_only_master {γ : Type*} {V : NeighborhoodSystem
   constructor
   · intro hx; have hXm := h X (x.sub hx); rw [hXm]; exact y.master_mem
   · intro hy; have hXm := h X (y.sub hy); rw [hXm]; exact x.master_mem
-
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- **Exercise 6.27 (6).** `𝒟 ⊴ 𝒟 ⊗ ℰ` does **not** hold for all `𝒟, ℰ`: take `𝒟` two-point and
 `ℰ = 𝟙`. Then `𝒟 ⊗ 𝟙` has a one-point element lattice while `𝒟` has two, so no isomorphism onto a
@@ -311,16 +225,6 @@ theorem not_trianglelefteq_otimes :
   exact hne (e.injective (hss.allEq (e (twoPt.principal hPmem))
     (e (twoPt.principal twoPt.master_mem))))
 
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
@@ -328,21 +232,6 @@ variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSyst
 /-- The four inverse identities of the two representation equivalences (defeq unfoldings). -/
 theorem toApproxMap_toFilter (g : ApproximableMap V₀ V₁) : toApproxMap (toFilter g) = g :=
   (funSpaceEquiv V₀ V₁).apply_symm_apply g
-
-end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 theorem toElementMap_inclMap (φ : (strictFun V₀ V₁).Element) :
     inclMap.toElementMap φ = incl φ := by
@@ -364,21 +253,6 @@ theorem toElementMap_inclMap (φ : (strictFun V₀ V₁).Element) :
     intro p hp
     exact ⟨φ.sub (toStrictMap_rel.mp (hgφ p hp)), fun f hf => hf p hp⟩
 
-end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 theorem toElementMap_strctMap (ψ : (funSpace V₀ V₁).Element) :
     strctMap.toElementMap ψ = strct ψ := by
   apply Element.ext
@@ -399,57 +273,12 @@ theorem toElementMap_strctMap (ψ : (funSpace V₀ V₁).Element) :
     intro p hp
     exact ⟨⟨ψ.sub (hgψ p hp).1, fun f hf => hf p hp⟩, (hgψ p hp).2⟩
 
-end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 theorem toFilter_toApproxMap (ψ : (funSpace V₀ V₁).Element) : toFilter (toApproxMap ψ) = ψ :=
   (funSpaceEquiv V₀ V₁).symm_apply_apply ψ
-
-end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 theorem toStrictFilter_toStrictMap (φ : (strictFun V₀ V₁).Element) :
     toStrictFilter (toStrictMap φ) = φ :=
   (strictFunEquiv V₀ V₁).symm_apply_apply φ
-
-end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 theorem strct_incl (φ : (strictFun V₀ V₁).Element) : strct (incl φ) = φ := by
   show toStrictFilter (strictify (toApproxMap (toFilter (toStrictMap φ).1))) = φ
@@ -458,59 +287,14 @@ theorem strct_incl (φ : (strictFun V₀ V₁).Element) : strct (incl φ) = φ :
       Subtype.ext (strictifyMap_of_isStrict (toStrictMap φ).2)]
   exact toStrictFilter_toStrictMap φ
 
-end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 theorem strctMap_comp_inclMap :
     (strctMap (V₀ := V₀) (V₁ := V₁)).comp inclMap = idMap (strictFun V₀ V₁) := by
   apply ext_of_principal
   intro X hX
   rw [toElementMap_comp, toElementMap_inclMap, toElementMap_strctMap, strct_incl, toElementMap_idMap]
 
-end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 theorem toStrictMap_toStrictFilter (g : StrictMap V₀ V₁) : toStrictMap (toStrictFilter g) = g :=
   (strictFunEquiv V₀ V₁).apply_symm_apply g
-
-end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 theorem incl_strct_le (ψ : (funSpace V₀ V₁).Element) : incl (strct ψ) ≤ ψ := by
   have key : incl (strct ψ) = toFilter (strictifyMap (toApproxMap ψ)) := by
@@ -521,21 +305,6 @@ theorem incl_strct_le (ψ : (funSpace V₀ V₁).Element) : incl (strct ψ) ≤ 
   conv_rhs => rw [← toFilter_toApproxMap ψ]
   exact (funSpaceEquiv V₀ V₁).symm.monotone (strictifyMap_le (toApproxMap ψ))
 
-end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 theorem inclMap_comp_strctMap_le :
     (inclMap (V₀ := V₀) (V₁ := V₁)).comp strctMap ≤ idMap (funSpace V₀ V₁) := by
   rw [le_iff_toElementMap_le]
@@ -543,27 +312,13 @@ theorem inclMap_comp_strctMap_le :
   rw [toElementMap_comp, toElementMap_strctMap, toElementMap_inclMap, toElementMap_idMap]
   exact incl_strct_le ψ
 
-end Part5
-end Exercise627
-end
-
-section
-namespace Exercise627
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-section Part5
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 /-- **Exercise 6.27 (5).** `(𝒟 →⊥ ℰ) ⊴ (𝒟 → ℰ)` for all `𝒟, ℰ` (choice-free). -/
 theorem strictFun_trianglelefteq_funSpace (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     strictFun V₀ V₁ ⊴ funSpace V₀ V₁ :=
   trianglelefteq_of_projectionPair inclMap strctMap strctMap_comp_inclMap inclMap_comp_strctMap_le
 
 end Part5
+
 end Exercise627
 end
 
@@ -897,60 +652,20 @@ theorem mem_cast {β : Type w} (e : β = α) (V : NeighborhoodSystem β) (X : Se
     (e ▸ V : NeighborhoodSystem α).mem X ↔ V.mem (e.symm ▸ X : Set β) := by
   cases e; rfl
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- Transport composition for neighbourhood systems: `e' ▸ (e ▸ x) = (e.trans e') ▸ x`. -/
 theorem rec_trans {β γ : Type w} (e : β = γ) (e' : γ = α) (x : NeighborhoodSystem β) :
     (e' ▸ (e ▸ x : NeighborhoodSystem γ) : NeighborhoodSystem α) = (e.trans e') ▸ x := by
   cases e; cases e'; rfl
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- Transport composition for sets: `e' ▸ (e ▸ X) = (e.trans e') ▸ X`. -/
 theorem set_rec_trans {β γ : Type w} (e : β = γ) (e' : γ = α) (X : Set β) :
     (e' ▸ (e ▸ X : Set γ) : Set α) = (e.trans e') ▸ X := by
   cases e; cases e'; rfl
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- Transport a subsystem relation `D ◁ E` along a carrier-type equality `β = α`. Choice-free. -/
 theorem subsystem_cast {β : Type w} (e : β = α) {D E : NeighborhoodSystem β} (h : D ◁ E) :
     (e ▸ D : NeighborhoodSystem α) ◁ (e ▸ E : NeighborhoodSystem α) := by
   cases e; exact h
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- The iterated tower, as data: at level `n`, the system `Tⁿ({Γ})` over `Tok`, the carrier
 identification `(T.obj Tⁿ({Γ})).carrier = Tok`, and the subdomain relation `Tⁿ({Γ}) ◁ Tⁿ⁺¹({Γ})`
@@ -969,54 +684,14 @@ def iter (s : Setup.{w}) : (n : ℕ) →
           have hsub := subsystem_cast p.2.1 (s.hmono p.2.2).sub
           rwa [rec_trans] at hsub⟩
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- `Tⁿ({Γ})`, the `n`-th system in the tower (over `Tok`). -/
 def Dsys (s : Setup.{w}) (n : ℕ) : NeighborhoodSystem s.Tok := (iter s n).1
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- The carrier identification `(T.obj Tⁿ({Γ})).carrier = Tok`. -/
 theorem Dceq (s : Setup.{w}) (n : ℕ) : (s.T.obj ⟨s.Tok, Dsys s n⟩).carrier = s.Tok := (iter s n).2.1
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- The basic subdomain step `Tⁿ({Γ}) ◁ Tⁿ⁺¹({Γ})`. -/
 theorem Dchain (s : Setup.{w}) (n : ℕ) : Dsys s n ◁ Dsys s (n + 1) := (iter s n).2.2
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- Every system in the tower has the same master `Δ = Γ`. -/
 theorem Dsys_master (s : Setup.{w}) (n : ℕ) : (Dsys s n).master = s.Γ.master := by
@@ -1024,46 +699,16 @@ theorem Dsys_master (s : Setup.{w}) (n : ℕ) : (Dsys s n).master = s.Γ.master 
   | zero => rfl
   | succ k ih => rw [← (Dchain s k).master_eq]; exact ih
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- `Tⁿ⁺¹({Γ})` is the carrier-transport of `T(Tⁿ({Γ}))`. -/
 theorem Dsys_succ (s : Setup.{w}) (n : ℕ) :
     Dsys s (n + 1) = (Dceq s n ▸ (s.T.obj ⟨s.Tok, Dsys s n⟩).sys : NeighborhoodSystem s.Tok) :=
   rfl
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- The tower is a `◁`-chain: `Tⁿ({Γ}) ◁ Tᵐ({Γ})` whenever `n ≤ m`. -/
 theorem chain_le (s : Setup.{w}) {n m : ℕ} (h : n ≤ m) : Dsys s n ◁ Dsys s m := by
   induction h with
   | refl => exact Subsystem.refl _
   | step _ ih => exact ih.trans (Dchain s _)
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- **The colimit `𝒟 = ⋃ₙ Tⁿ({Γ})`** as a neighbourhood system over `Tok`: a set is a neighbourhood
 of `𝒟` exactly when it is a neighbourhood of some `Tⁿ({Γ})`. Closure under consistent intersection
@@ -1088,40 +733,10 @@ def colim (s : Setup.{w}) : NeighborhoodSystem s.Tok where
     rw [← Dsys_master s n]
     exact (Dsys s n).sub_master hX
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 @[simp] theorem mem_colim (s : Setup.{w}) {X : Set s.Tok} :
     (colim s).mem X ↔ ∃ n, (Dsys s n).mem X := Iff.rfl
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 @[simp] theorem colim_master (s : Setup.{w}) : (colim s).master = s.Γ.master := rfl
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- Each level of the tower is a subdomain of the colimit: `Tⁿ({Γ}) ◁ 𝒟`. -/
 theorem Dsys_sub_colim (s : Setup.{w}) (n : ℕ) : Dsys s n ◁ colim s where
@@ -1135,43 +750,13 @@ theorem Dsys_sub_colim (s : Setup.{w}) (n : ℕ) : Dsys s n ◁ colim s where
     -- pull `X ∩ Y` back into `Tⁿ({Γ})` using consistency-in-the-bigger-level
     exact (chain_le s (le_max_left n m)).inter_closed hX hY hN
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- The carrier identification `(T.obj 𝒟).carrier = Tok`, from `MonotoneAt` of `T⁰({Γ}) ◁ 𝒟`. -/
 theorem colimCeq (s : Setup.{w}) : (s.T.obj ⟨s.Tok, colim s⟩).carrier = s.Tok :=
   (s.hmono (Dsys_sub_colim s 0)).carrier_eq.trans (Dceq s 0)
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- `T(𝒟)`, the image of the colimit, as a system over `Tok` (via `colimCeq`). -/
 def Tcolim (s : Setup.{w}) : NeighborhoodSystem s.Tok :=
   colimCeq s ▸ (s.T.obj ⟨s.Tok, colim s⟩).sys
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- `Tⁿ⁺¹({Γ}) ◁ T(𝒟)`: applying *monotone on domains* to `Tⁿ({Γ}) ◁ 𝒟` and transporting. -/
 theorem Dsys_sub_Tcolim (s : Setup.{w}) (n : ℕ) : Dsys s (n + 1) ◁ Tcolim s := by
@@ -1179,29 +764,9 @@ theorem Dsys_sub_Tcolim (s : Setup.{w}) (n : ℕ) : Dsys s (n + 1) ◁ Tcolim s 
   rw [rec_trans] at h
   exact h
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- `T(𝒟)` and `𝒟` share the master `Δ = Γ`. -/
 theorem Tcolim_master (s : Setup.{w}) : (Tcolim s).master = s.Γ.master := by
   rw [← (Dsys_sub_Tcolim s 0).master_eq, Dsys_master]
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- **The continuity step (the hard half of `T(𝒟) = 𝒟`).** Every neighbourhood of `T(𝒟)` is a
 neighbourhood of `𝒟`. This is exactly Scott's `T(𝒟) = T(⋃ₙ Tⁿ({Γ})) = ⋃ₙ Tⁿ⁺¹({Γ}) = 𝒟`,
@@ -1240,32 +805,12 @@ theorem Tcolim_sub_colim (s : Setup.{w}) {X : Set s.Tok} (hX : (Tcolim s).mem X)
   rw [key]
   exact hmemD
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- The easy half of `T(𝒟) = 𝒟`: every neighbourhood of `𝒟` is a neighbourhood of `T(𝒟)`
 (`𝒟 ⊆ T(𝒟)`), since `Tⁿ({Γ}) ◁ Tⁿ⁺¹({Γ}) ◁ T(𝒟)`. -/
 theorem colim_sub_Tcolim (s : Setup.{w}) {X : Set s.Tok} (hX : (colim s).mem X) :
     (Tcolim s).mem X := by
   obtain ⟨n, hn⟩ := hX
   exact (Dsys_sub_Tcolim s n).sub ((Dchain s n).sub hn)
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- **`T(𝒟) = 𝒟`** (Scott's `𝒟 = T(𝒟)`): the two systems have the same neighbourhoods (mutual
 inclusion via `colim_sub_Tcolim`/`Tcolim_sub_colim`) and the same master. -/
@@ -1274,90 +819,30 @@ theorem Tcolim_eq_colim (s : Setup.{w}) : Tcolim s = colim s :=
     (fun _ => ⟨fun h => Tcolim_sub_colim s h, fun h => colim_sub_Tcolim s h⟩)
     (by rw [Tcolim_master, colim_master])
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- A `DomainObj` equality from a carrier equality and a transported-system equality. -/
 theorem domainObj_ext {c : Type w} (σ : NeighborhoodSystem c) (e : c = α)
     {V : NeighborhoodSystem α} (h : (e ▸ σ : NeighborhoodSystem α) = V) :
     (⟨c, σ⟩ : DomainObj) = ⟨α, V⟩ := by
   cases e; cases h; rfl
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- **`T(𝒟) ≅ 𝒟` is the identity**, packaged as a `DomainObj` equality `T(𝒟) = 𝒟`. -/
 theorem colimObj_eq (s : Setup.{w}) :
     s.T.obj ⟨s.Tok, colim s⟩ = (⟨s.Tok, colim s⟩ : DomainObj) :=
   domainObj_ext (s.T.obj ⟨s.Tok, colim s⟩).sys (colimCeq s) (Tcolim_eq_colim s)
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- The identity isomorphism induced by an object equality in any category. -/
 def isoOfEq {Obj : Type*} [Category Obj] {X Y : Obj} (h : X = Y) : Iso X Y := by
   cases h
   exact ⟨(𝟙 X), (𝟙 X), CategoryTheory.Category.id_comp _, CategoryTheory.Category.id_comp _⟩
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- The isomorphism `T(𝒟) ≅ 𝒟` making `𝒟` a `T`-algebra (the identity, since `T(𝒟) = 𝒟`). -/
 def colimIso (s : Setup.{w}) : Iso (s.T.obj ⟨s.Tok, colim s⟩) (⟨s.Tok, colim s⟩ : DomainObj) :=
   isoOfEq (colimObj_eq s)
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- `ρₙ = iₙ ∘ jₙ : 𝒟 → 𝒟`, the retraction onto `Tⁿ({Γ})` (Proposition 6.12's projection pair for
 `Tⁿ({Γ}) ◁ 𝒟`). -/
 def rho (s : Setup.{w}) (n : ℕ) : ApproximableMap (colim s) (colim s) :=
   (Dsys_sub_colim s n).inj.comp (Dsys_sub_colim s n).proj
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- Scott's relational description `X ρₙ Y ↔ ∃ z ∈ Tⁿ({Γ}), X ⊆ z ⊆ Y`. -/
 theorem rho_rel (s : Setup.{w}) (n : ℕ) {X Y : Set s.Tok} :
@@ -1371,16 +856,6 @@ theorem rho_rel (s : Setup.{w}) (n : ℕ) {X Y : Set s.Tok} :
   · rintro ⟨hcX, hcY, z, hDz, hXz, hzY⟩
     exact ⟨z, ⟨hcX, hDz, hXz⟩, hDz, hcY, hzY⟩
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- `ρₙ ⊆ ρₘ` for `n ≤ m` (the projection chain is increasing). -/
 theorem rho_mono (s : Setup.{w}) {n m : ℕ} (h : n ≤ m) {X Y : Set s.Tok}
     (hr : (rho s n).rel X Y) : (rho s m).rel X Y := by
@@ -1388,31 +863,11 @@ theorem rho_mono (s : Setup.{w}) {n m : ℕ} (h : n ≤ m) {X Y : Set s.Tok}
   obtain ⟨hcX, hcY, z, hDz, hXz, hzY⟩ := hr
   exact ⟨hcX, hcY, z, (chain_le s h).sub hDz, hXz, hzY⟩
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- The pointwise union `⋃ₙ ρₙ` (directed, since the chain is increasing). -/
 def iSupRho (s : Setup.{w}) : ApproximableMap (colim s) (colim s) :=
   iSupMap (rho s) (fun i j => ⟨max i j,
     fun _ _ h => rho_mono s (le_max_left i j) h,
     fun _ _ h => rho_mono s (le_max_right i j) h⟩)
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- The colimit `𝒟` as a `T`-algebra, with structure map the iso `T(𝒟) → 𝒟`. -/
 abbrev colimAlg (s : Setup.{w}) : TAlgebra s.T :=
@@ -1432,45 +887,15 @@ abbrev Tmap_rho (s : Setup.{w}) (n : ℕ) :
 
 @[simp] theorem Dsys_zero (s : Setup.{w}) : Dsys s 0 = s.Γ := rfl
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- Two algebra homomorphisms with equal underlying maps are equal (the commuting square is a
 `Prop`). -/
 theorem algHom_ext {Obj : Type*} [Category Obj] {T : Endofunctor Obj} {A B : TAlgebra T}
     {g g' : AlgHom A B} (h : g.hom = g'.hom) : g = g' := by
   cases g; cases g'; cases h; rfl
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- In the category of domains, `⊚` (categorical composition) is `ApproximableMap.comp`. -/
 theorem cat_comp_eq {X Y Z : DomainObj} (g : (Y ⟶ Z)) (f : (X ⟶ Y)) :
     g ⊚ f = g.comp f := rfl
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- **`⋃ₙ ρₙ = I_𝒟`** (Scott's key identity for uniqueness). The forward inclusion uses
 `X ⊆ z ⊆ Y ⟹ X ⊆ Y`; the reverse factors the identity step `X ⊆ X ⊆ Y` through the level
@@ -1488,16 +913,6 @@ theorem iSupRho_eq_id (s : Setup.{w}) : iSupRho s = idMap (colim s) := by
     obtain ⟨n, hX⟩ := hcX
     exact ⟨n, (rho_rel s n).mpr ⟨⟨n, hX⟩, hcY, X, hX, subset_rfl, hXY⟩⟩
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- Conjugation by the identity isomorphism `isoOfEq e` is the object-transport along `e`. -/
 theorem isoOfEq_conj {Obj : Type*} [Category Obj] {X Y : Obj} (e : X = Y)
     (f : (X ⟶ X)) :
@@ -1506,16 +921,6 @@ theorem isoOfEq_conj {Obj : Type*} [Category Obj] {X Y : Obj} (e : X = Y)
   change (𝟙 X) ⊚ f ⊚ (𝟙 X) = f
   dsimp only [compAfter]
   rw [CategoryTheory.Category.comp_id, CategoryTheory.Category.id_comp]
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- **The carrier-transport core of `T(ρₙ) = ρₙ₊₁`.** Given the *monotone-on-domains* data for a
 subsystem (its injection `Tmi`/projection `Tmj` are heterogeneously equal to the canonical 6.12 pair
@@ -1541,16 +946,6 @@ theorem map_comp_proj_heq {Tok : Type w} {Pc Qc : Type w} (cn : Pc = Tok) (cc : 
   have e2 : Tmj = sub.proj := eq_of_heq hj
   rw [e1, e2]
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- **`T(ρₙ) = ρₙ₊₁`, heterogeneously.** The image `T(ρₙ)` of the `n`-th projection, living over
 `T(𝒟)`'s carrier, is heterogeneously equal to the `(n+1)`-st projection `ρₙ₊₁` over `Tok`. -/
 theorem map_rho_heq (s : Setup.{w}) (n : ℕ) :
@@ -1567,43 +962,13 @@ theorem map_rho_heq (s : Setup.{w}) (n : ℕ) :
     (s.T.map (X := objColim s) (Y := objDsys s n) (Dsys_sub_colim s n).proj)
     (s.hmono (Dsys_sub_colim s n)).inj_heq (s.hmono (Dsys_sub_colim s n)).proj_heq
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 theorem nonempty_strict_algHom (s : Setup.{w}) (B : TAlgebra s.T) (hk : IsStrict B.str) :
     Nonempty {g : AlgHom (colimAlg s) B // IsStrict g.hom} :=
   nonempty_algHom_of_continuousOnMaps s.T s.hmaps (colimIso s) B hk
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 theorem nonempty_algHom (s : Setup.{w}) (B : TAlgebra s.T) (hk : IsStrict B.str) :
     Nonempty (AlgHom (colimAlg s) B) :=
   (nonempty_strict_algHom s B hk).map (·.1)
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 end Theorem614
 end

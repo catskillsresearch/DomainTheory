@@ -171,8 +171,6 @@ theorem L_nestedOrDisjoint : NestedOrDisjoint Lmem := by
       · exact Or.inr (Or.inr (by rw [nbhd_cons, nbhd_cons]; exact consSet_inter_ne hij _ _))
 end
 
-section
-end
 end DomainTheory.NeighbourhoodSystems.Exercise724
 
 section
@@ -697,28 +695,12 @@ def Tenum (n : ℕ) : Set Token :=
   | 0 => Example12.master
   | 1 => zero
   | _ => one
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 @[simp] theorem Tenum_zero : Tenum 0 = Example12.master := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 @[simp] theorem Tenum_one : Tenum 1 = zero := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 @[simp] theorem Tenum_two : Tenum 2 = one := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- `Tenum` only depends on `n` through `min n 2`. -/
 theorem Tenum_eq_canon (n : ℕ) : Tenum n = Tenum (min n 2) := by
@@ -728,64 +710,36 @@ theorem Tenum_eq_canon (n : ℕ) : Tenum n = Tenum (min n 2) := by
   · show one = Tenum (min (n + 2) 2)
     rw [show min (n + 2) 2 = 2 from by omega]
     rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem Tenum_mem (n : ℕ) : Example23.T.mem (Tenum n) := by
   rcases n with _ | _ | n
   · exact Example12.mem_master
   · exact Example12.mem_zero
   · exact Example12.mem_one
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- `Tenum` never hits `∅` (it always lands on a genuine `T`-neighbourhood, and `∅` is not one). -/
 theorem Tenum_ne_empty (n : ℕ) : Tenum n ≠ (∅ : Set Token) := by
   intro h
   exact Example12.not_mem_empty (h ▸ Tenum_mem n)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem Tenum_surj {Y : Set Token} (hY : Example23.T.mem Y) : ∃ n, Tenum n = Y := by
   rcases (Example12.mem_iff Y).mp hY with rfl | rfl | rfl
   · exact ⟨0, rfl⟩
   · exact ⟨1, rfl⟩
   · exact ⟨2, rfl⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- `TeqChar a b = 1` decides `a = b` (truncated-subtraction trick, primitive recursive). -/
 def TeqChar (a b : ℕ) : ℕ := isZero ((a - b) + (b - a))
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- **The intersection code.** `TinterCode a b` names the intersection `Tenum a ∩ Tenum b` when it
 is a `T`-neighbourhood (`a = 0`, `b = 0`, or `a = b`), and is the junk value `3` (never `≤ 2`, hence
 never named by `Tenum`'s canonical range) exactly when the intersection is inconsistent
 (`{0} ∩ {1} = ∅`). -/
 def TinterCode (a b : ℕ) : ℕ := if a = 0 then b else if b = 0 then a else if a = b then a else 3
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- `andCode a b` names `andFn (Tenum a) (Tenum b)` when `a, b ≤ 2`: `andCode 0 b = 0`,
 `andCode 1 b = b`, `andCode 2 b = 2`. -/
 def andCode (a b : ℕ) : ℕ := if a = 1 then b else if a = 2 then 2 else 0
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- **Sequential conjunction** on `T`'s neighbourhoods: `andFn X Y` is `Y` when `X` names `true`
 (`zero`), the constant `false` (`one`) when `X` names `false` — regardless of `Y` — and `Δ` (no
@@ -793,19 +747,12 @@ information yet) otherwise. This is the standard *left-strict* `and`, matching `
 `true`/`false` (`Example23.trueElt = elemZero`, `Example23.falseElt = elemOne`). -/
 noncomputable def andFn (X Y : Set Token) : Set Token :=
   if X = zero then Y else if X = one then one else Example12.master
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem andFn_zero (Y : Set Token) : andFn zero Y = Y := by unfold andFn; rw [ite_eq_left rfl]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem eq_master_of_master_subset {Y : Set Token} (h : Example12.master ⊆ Y) :
     Y = Example12.master := (Set.univ_subset_iff.mp h : Y = Set.univ)
+
 end
 
 section
@@ -900,22 +847,15 @@ theorem master_ne_one_T : Example12.master ≠ one := by
   intro h
   have h1 : (0 : Token) ∈ Example12.master := by simp [Example12.master]
   rw [h] at h1; simp [one] at h1
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem master_ne_zero_T : Example12.master ≠ zero := by
   intro h
   have h1 : (1 : Token) ∈ Example12.master := by simp [Example12.master]
   rw [h] at h1; simp [zero] at h1
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem andFn_master (Y : Set Token) : andFn Example12.master Y = Example12.master := by
   unfold andFn; rw [ite_eq_right master_ne_zero_T, ite_eq_right master_ne_one_T]
+
 end
 
 section
@@ -930,27 +870,16 @@ open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- `notCode c` names `notFn (Tenum c)` when `c ≤ 2`: `0 ↦ 0`, `1 ↦ 2`, `2 ↦ 1`. -/
 def notCode (c : ℕ) : ℕ := if c = 1 then 2 else if c = 2 then 1 else 0
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- The pointwise negation function on `T`'s three neighbourhoods: swaps `{0}`/`{1}`, fixes `Δ`. -/
 noncomputable def notFn (X : Set Token) : Set Token :=
   if X = zero then one else if X = one then zero else Example12.master
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem notFn_master : notFn Example12.master = Example12.master := by
   unfold notFn; rw [ite_eq_right master_ne_zero_T, ite_eq_right master_ne_one_T]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem notFn_zero : notFn zero = one := by unfold notFn; rw [ite_eq_left rfl]
+
 end
 
 section
@@ -995,17 +924,13 @@ variable {β γ δ : Type*}
 def postcompose {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
     (h : ApproximableMap V₁ V₂) : ApproximableMap (funSpace L V₁) (funSpace L V₂) :=
   curry (h.comp (evalMap L V₁))
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
-variable {β γ δ : Type*}
 
 /-- The concrete `ComputablePresentation (L → V)` assembled from an `LFunData` bundle. -/
 def LFunData.pres {V : NeighborhoodSystem β} {P : ComputablePresentation V} (d : LFunData P) :
     ComputablePresentation (funSpace L V) :=
   funPresentation Lpres P d.gN d.incl0 d.incl1 d.eq1 d.hgN d.hgNp d.hincl0 d.hincl0p
     d.hincl1 d.hincl1p d.heq1 d.heq1p
+
 end
 
 section
@@ -1015,10 +940,6 @@ theorem primrec_TeqChar {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primr
     Nat.Primrec (fun n => TeqChar (f n) (g n)) :=
   (primrec_isZero.comp (primrec_add₂ (primrec_sub₂ hf hg) (primrec_sub₂ hg hf))).of_eq
     fun _ => rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem primrec_TinterCode {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => TinterCode (f n) (g n)) := by
@@ -1042,6 +963,7 @@ theorem primrec_TinterCode {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Pr
         rw [ite_eq_left h2, this, selectFn_one]
       · have : isZero ((f n - g n) + (g n - f n)) = 0 := by unfold isZero; omega
         rw [ite_eq_right h2, this, selectFn_zero]
+
 end
 
 section
@@ -1057,31 +979,16 @@ variable {β γ δ : Type*}
 def pwArg (V₀ : NeighborhoodSystem β) (V₁ : NeighborhoodSystem γ) :
     ApproximableMap (prod (prod (funSpace L V₀) (funSpace L V₁)) L) L :=
   proj₁ (prod (funSpace L V₀) (funSpace L V₁)) L
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
-variable {β γ δ : Type*}
 
 /-- The "extract `f`" projection out of the pointwise-binary domain `(L→V₀) × (L→V₁) × L`. -/
 def pwFst (V₀ : NeighborhoodSystem β) (V₁ : NeighborhoodSystem γ) :
     ApproximableMap (prod (prod (funSpace L V₀) (funSpace L V₁)) L) (funSpace L V₀) :=
   (proj₀ (funSpace L V₀) (funSpace L V₁)).comp (proj₀ (prod (funSpace L V₀) (funSpace L V₁)) L)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
-variable {β γ δ : Type*}
 
 /-- The "extract `g`" projection out of the pointwise-binary domain. -/
 def pwSnd (V₀ : NeighborhoodSystem β) (V₁ : NeighborhoodSystem γ) :
     ApproximableMap (prod (prod (funSpace L V₀) (funSpace L V₁)) L) (funSpace L V₁) :=
   (proj₁ (funSpace L V₀) (funSpace L V₁)).comp (proj₀ (prod (funSpace L V₀) (funSpace L V₁)) L)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
-variable {β γ δ : Type*}
 
 /-- **`pointwiseBin h`**: given `f : L → V₀`, `g : L → V₁`, produce the `L`-sequence
 `x ↦ h(f x, g x)`. Built by evaluating both factors at the shared argument and applying `h`, then
@@ -1092,6 +999,7 @@ def pointwiseBin {V₀ : NeighborhoodSystem β} {V₁ : NeighborhoodSystem γ} {
   curry (h.comp (paired
     ((evalMap L V₀).comp (paired (pwFst V₀ V₁) (pwArg V₀ V₁)))
     ((evalMap L V₁).comp (paired (pwSnd V₀ V₁) (pwArg V₀ V₁)))))
+
 end
 
 section
@@ -1293,10 +1201,6 @@ open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem zero_inter_one_T : zero ∩ one = (∅ : Set Token) := by
   ext t; fin_cases t <;> simp [zero, one]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem Tenum_inter_eq {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) :
     Tenum a ∩ Tenum b = if a = 0 then Tenum b else if b = 0 then Tenum a
@@ -1304,10 +1208,6 @@ theorem Tenum_inter_eq {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) :
   interval_cases a <;> interval_cases b <;>
     simp [Tenum, Example12.master, Set.univ_inter, Set.inter_univ, Set.inter_self,
       zero_inter_one_T, one_inter_zero_T]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- `Tenum n ∩ Tenum m` is `Tenum (TinterCode ·)` when consistent, and `∅` exactly when
 `TinterCode` hits the junk value `3`. -/
@@ -1316,20 +1216,12 @@ theorem Tenum_inter_eq_TinterCode' {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) :
   interval_cases a <;> interval_cases b <;>
     simp [Tenum, TinterCode, Example12.master, Set.univ_inter, Set.inter_univ, Set.inter_self,
       zero_inter_one_T, one_inter_zero_T]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem Tenum_inter_eq_TinterCode (n m : ℕ) :
     Tenum n ∩ Tenum m = if TinterCode (min n 2) (min m 2) = 3 then (∅ : Set Token)
       else Tenum (TinterCode (min n 2) (min m 2)) := by
   rw [Tenum_eq_canon n, Tenum_eq_canon m]
   exact Tenum_inter_eq_TinterCode' (Nat.min_le_right n 2) (Nat.min_le_right m 2)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem Tpres_cons_iff (n m : ℕ) :
     (∃ k, Tenum k ⊆ Tenum n ∩ Tenum m) ↔ TinterCode (min n 2) (min m 2) ≠ 3 := by
@@ -1341,10 +1233,6 @@ theorem Tpres_cons_iff (n m : ℕ) :
   · intro hne
     rw [ite_eq_right hne]
     exact ⟨TinterCode (min n 2) (min m 2), subset_rfl⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- **The `{0,1}` consistency characteristic for `T`** (Scott's relation (ii)): `∃ k, Xₖ ⊆ Xₙ ∩ Xₘ`
 holds iff `Xₙ ∩ Xₘ` is itself a `T`-neighbourhood, i.e. `TinterCode` did not hit the junk value `3`. -/
@@ -1355,19 +1243,11 @@ theorem Tpres_cons_computable : RecDecidable₂ (fun n m => ∃ k, Tenum k ⊆ T
   have hne : RecDecidable (fun t : ℕ => TinterCode (min t.unpair.1 2) (min t.unpair.2 2) ≠ 3) :=
     (RecDecidable.natEq ha (Nat.Primrec.const 3)).not
   exact RecDecidable.of_iff (fun t => Tpres_cons_iff t.unpair.1 t.unpair.2) hne
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem zero_ne_one_T : zero ≠ one := by
   intro h
   have h1 : (0 : Token) ∈ zero := by simp [zero]
   rw [h] at h1; simp [one] at h1
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- `Tenum` is injective on its "canonical" range `{0, 1, 2}`. -/
 theorem Tenum_injOn {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) (h : Tenum a = Tenum b) : a = b := by
@@ -1381,10 +1261,6 @@ theorem Tenum_injOn {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) (h : Tenum a = Ten
       | exact absurd h.symm master_ne_one_T
       | exact absurd h zero_ne_one_T
       | exact absurd h.symm zero_ne_one_T
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem Tenum_interEq_iff {a b c : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) (hc : c ≤ 2) :
     Tenum a ∩ Tenum b = Tenum c ↔ TinterCode a b = c := by
@@ -1395,20 +1271,12 @@ theorem Tenum_interEq_iff {a b c : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) (hc : c �
   · exact ⟨fun h => (Tenum_injOn ha hc h).symm ▸ rfl, fun h => h ▸ rfl⟩
   · exact ⟨fun h => (Tenum_injOn ha hc h).symm ▸ rfl, fun h => h ▸ rfl⟩
   · exact ⟨fun h => absurd h.symm (Tenum_ne_empty c), fun h => absurd h.symm (by omega)⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- Same characterization, restated for arbitrary `n, m, k` via the `min · 2` canonicalization. -/
 theorem Tenum_interEq_iff' (n m k : ℕ) :
     Tenum n ∩ Tenum m = Tenum k ↔ TinterCode (min n 2) (min m 2) = min k 2 := by
   rw [Tenum_eq_canon n, Tenum_eq_canon m, Tenum_eq_canon k,
     Tenum_interEq_iff (Nat.min_le_right n 2) (Nat.min_le_right m 2) (Nat.min_le_right k 2)]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- **The `{0,1}` intersection-equality characteristic for `T`** (Scott's relation (i)). -/
 theorem Tpres_interEq_computable : RecDecidable₃ (fun n m k => Tenum n ∩ Tenum m = Tenum k) := by
@@ -1420,10 +1288,6 @@ theorem Tpres_interEq_computable : RecDecidable₃ (fun n m k => Tenum n ∩ Ten
   exact RecDecidable.of_iff
     (fun t => Tenum_interEq_iff' t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2)
     (RecDecidable.natEq ha hb)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- **`T` is effectively given**, via the hand-built enumeration `Tenum`. The presentation's
 `inter`/`masterIdx` fields reuse `TinterCode`/`0` (both concrete, no search required, since `T`'s
@@ -1442,6 +1306,7 @@ def Tpres : ComputablePresentation Example23.T where
     rw [Tenum_inter_eq_TinterCode n m, ite_eq_right ((Tpres_cons_iff n m).mp h)]
   masterIdx := 0
   masterIdx_spec := rfl
+
 end
 
 section
@@ -1450,14 +1315,10 @@ variable {β γ δ : Type*}
 
 /-- The one concrete presentation of `(L → T)` used to state the LUCID combinators' computability. -/
 noncomputable def LTdata : LFunData Tpres := LFunData.ofPresentation Tpres
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
-variable {β γ δ : Type*}
 
 /-- **The computable presentation of `(L → T)`.** -/
 noncomputable def LTpres : ComputablePresentation (funSpace L Example23.T) := LTdata.pres
+
 end
 
 section
@@ -1465,10 +1326,6 @@ open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem andFn_one (Y : Set Token) : andFn one Y = one := by
   unfold andFn; rw [ite_eq_right (Ne.symm zero_ne_one_T), ite_eq_left rfl]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem andFn_mem {X Y : Set Token} (hX : Example23.T.mem X) (hY : Example23.T.mem Y) :
     Example23.T.mem (andFn X Y) := by
@@ -1476,10 +1333,6 @@ theorem andFn_mem {X Y : Set Token} (hX : Example23.T.mem X) (hY : Example23.T.m
   · rw [andFn_master]; exact Example12.mem_master
   · rw [andFn_zero]; exact hY
   · rw [andFn_one]; exact Example12.mem_one
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- **Pointwise (sequential) conjunction on `T`**, as a two-variable approximable mapping:
 `X, Y f Z ↔ mem X ∧ mem Y ∧ mem Z ∧ andFn X Y ⊆ Z` (Scott's "step" pattern again). -/
@@ -1514,36 +1367,20 @@ noncomputable def andMap2 : ApproximableMap₂ Example23.T Example23.T Example23
           master_ne_one_T.symm
       rw [hX'eq, andFn_one]
       exact hsub.trans hZZ'
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- **`andT`**, the joint approximable mapping `T × T → T` corresponding to `andMap2`
 (Theorem 3.5's `ofMap₂`). -/
 noncomputable def andT : ApproximableMap (prod Example23.T Example23.T) Example23.T :=
   ofMap₂ andMap2
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem notFn_one : notFn one = zero := by
   unfold notFn; rw [ite_eq_right (Ne.symm zero_ne_one_T), ite_eq_left rfl]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem notFn_mem {X : Set Token} (hX : Example23.T.mem X) : Example23.T.mem (notFn X) := by
   rcases (Example12.mem_iff X).mp hX with rfl | rfl | rfl
   · rw [notFn_master]; exact Example12.mem_master
   · rw [notFn_zero]; exact Example12.mem_one
   · rw [notFn_one]; exact Example12.mem_zero
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-- **Pointwise negation on `T`**, as an approximable map: `X f Y ↔ mem X ∧ mem Y ∧ notFn X ⊆ Y`
 (Scott's "step" pattern, turning the pointwise function `notFn` into a neighbourhood relation). -/
@@ -1565,6 +1402,7 @@ noncomputable def notT : ApproximableMap Example23.T Example23.T where
     · rw [heq, notFn_master] at hsub
       have hY'master : Y' = Example12.master := eq_master_of_master_subset (hsub.trans hYY')
       rw [hY'master, Example12.master]; exact Set.subset_univ _
+
 end
 
 section
@@ -2073,13 +1911,10 @@ section
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem T_isEffectivelyGiven : Example23.T.IsEffectivelyGiven := ⟨Tpres⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 theorem TeqChar_eq_one_iff (a b : ℕ) : TeqChar a b = 1 ↔ a = b := by
   unfold TeqChar isZero; omega
+
 end
 
 section
@@ -2120,21 +1955,11 @@ variable (P : ComputablePresentation V)
 def chainDec (fincl : ℕ → ℕ) (c : ℕ) : ℕ → List ℕ → Prop
   | _, [] => True
   | a, (b :: rest) => fincl (Nat.pair c (codePair a b)) = 1 ∧ chainDec fincl c b rest
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 /-- The pure left-fold step corresponding to `fixStp` (parameter `c`, accumulator `acc = pair prev
 flag`, current element `x`). -/
 def fixPStep (fincl : ℕ → ℕ) (c acc x : ℕ) : ℕ :=
   Nat.pair x (selectFn acc.unpair.2 (isOne (fincl (Nat.pair c (codePair acc.unpair.1 x)))) 0)
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 /-- One packed `foldCode` step: state `pair acc params` with `acc = pair prev flag`, current element
 `x`. Updates the flag with the one-step consistency test and advances `prev` to `x`. -/
@@ -2143,16 +1968,12 @@ def fixStp (fincl : ℕ → ℕ) (w : ℕ) : ℕ :=
     (selectFn w.unpair.2.unpair.1.unpair.2
       (isOne (fincl (Nat.pair w.unpair.2.unpair.2
         (codePair w.unpair.2.unpair.1.unpair.1 w.unpair.1)))) 0)
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 /-- The chain `foldCode`: starts from `pair masterIdx 1`, threads the parameter `c`, over the list
 coded by `i`. Returns `pair lastIdx flag`. -/
 def fixChainChar (fincl : ℕ → ℕ) (c i : ℕ) : ℕ :=
   foldCode (fixStp fincl) c (Nat.pair P.masterIdx 1) i
+
 end
 
 section
@@ -2162,15 +1983,12 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 def gLastOf : ℕ → List ℕ → ℕ
   | a, [] => a
   | _, (b :: rest) => gLastOf b rest
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- The consecutive `g`-steps `g.rel (X_a) (X_{full₀})`, `g.rel (X_{full₀}) (X_{full₁})`, … all hold. -/
 def gStepsOK (g : ApproximableMap V V) (P : ComputablePresentation V) : ℕ → List ℕ → Prop
   | _, [] => True
   | a, (b :: rest) => g.rel (P.X a) (P.X b) ∧ gStepsOK g P b rest
+
 end
 
 section
@@ -2184,11 +2002,6 @@ theorem Xenum_codePair (gN : ℕ → ℕ)
       : Set (ApproximableMap V V)).Nonempty) (a b : ℕ) :
     Xenum P P gN (codePair a b) = step (P.X a) (P.X b) :=
   Xenum_singleton P P gN hgN a b
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 /-- The `foldCode` tracks the last index reached. -/
 theorem fixPStep_foldl_fst (fincl : ℕ → ℕ) (c : ℕ) :
@@ -2208,11 +2021,6 @@ theorem fixPStep_foldl_fst (fincl : ℕ → ℕ) (c : ℕ) :
       unfold fixPStep; simp only [unpair_pair_fst, unpair_pair_snd]
     rw [hstep, ih b (selectFn fl (isOne (fincl (Nat.pair c (codePair prev b)))) 0)]
     rfl
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 /-- The `foldCode` flag is `1` iff the start flag is `1` and the whole chain is consistent. -/
 theorem fixPStep_foldl_snd (fincl : ℕ → ℕ) (c : ℕ) :
@@ -2249,21 +2057,11 @@ theorem fixPStep_foldl_snd (fincl : ℕ → ℕ) (c : ℕ) :
     constructor
     · rintro ⟨⟨hfl1, hfincl1⟩, hrest⟩; exact ⟨hfl1, hfincl1, hrest⟩
     · rintro ⟨hfl1, hfincl1, hrest⟩; exact ⟨⟨hfl1, hfincl1⟩, hrest⟩
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 theorem fixStp_eq (fincl : ℕ → ℕ) (c acc x : ℕ) :
     fixStp fincl (Nat.pair x (Nat.pair acc c)) = fixPStep fincl c acc x := by
   unfold fixStp fixPStep
   simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 theorem fixChainChar_eq (fincl : ℕ → ℕ) (c i : ℕ) :
     fixChainChar P fincl c i
@@ -2273,11 +2071,6 @@ theorem fixChainChar_eq (fincl : ℕ → ℕ) (c i : ℕ) :
   have hstep : (fun acc x => fixStp fincl (Nat.pair x (Nat.pair acc c))) = fixPStep fincl c := by
     funext acc x; exact fixStp_eq fincl c acc x
   rw [hstep]
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 /-- Read-off of the `foldCode`: its `.1` is the last index of `decodeList i`, and its `.2 = 1` iff
 the decoded chain is consistent. -/
@@ -2288,6 +2081,7 @@ theorem fixChainChar_spec (fincl : ℕ → ℕ) (c i : ℕ) :
   refine ⟨fixPStep_foldl_fst fincl c (decodeList i) P.masterIdx 1, ?_⟩
   rw [fixPStep_foldl_snd fincl c (decodeList i) P.masterIdx 1 (le_refl 1)]
   simp
+
 end
 
 section
@@ -2315,10 +2109,6 @@ theorem gStepsOK_complete (g : ApproximableMap V V) (P : ComputablePresentation 
     rw [← hk] at h1 h2
     obtain ⟨full', hs', hl'⟩ := ih k ℓ h2
     exact ⟨k :: full', ⟨h1, hs'⟩, hl'⟩
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **Soundness of a chain.** A valid `g`-chain from `a` realises the iterate relation
 `(gᵏ).rel (X_a) (X_{last})` with `k` the chain length. -/
@@ -2340,10 +2130,6 @@ theorem gStepsOK_sound (g : ApproximableMap V V) (P : ComputablePresentation V) 
     show (g.iterMap (b :: rest).length).rel (P.X a) (P.X (gLastOf b rest))
     rw [List.length_cons, hcomm, comp_rel]
     exact ⟨P.X b, h1, ih b hrest⟩
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **Chain characterisation of `g`'s least fixed point.** A neighbourhood `X_ℓ` is in `fix(g)` iff a
 valid `g`-chain (from a master index `a₀` with `X_{a₀} = Δ`) reaches a final neighbourhood inside
@@ -2362,6 +2148,7 @@ theorem fixElement_mem_iff_chain (g : ApproximableMap V V) (P : ComputablePresen
     have hsound := gStepsOK_sound g P full a0 hsteps
     have hmono := (g.iterMap full.length).mono hsound subset_rfl hlast (P.mem_X a0) (P.mem_X ℓ)
     rwa [ha0] at hmono
+
 end
 
 section
@@ -2380,11 +2167,6 @@ theorem fixMap_rel_iff (gN : ℕ → ℕ)
         ∧ P.X (gLastOf P.masterIdx full) ⊆ P.X ℓ := by
   rw [(fixMap V).rel_iff_mem_principal (Xenum_mem P P gN hgN c), fixMap_toElementMap]
   exact fixElement_mem_iff_chain _ P P.masterIdx P.masterIdx_spec ℓ
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 /-- The least map `ĝ` of the function-space neighbourhood `Xenum c` relates `X_a` to `X_b` exactly
 when `Xenum c ⊆ [X_a, X_b]` (Scott's `⋂{X_{mᵢ} ∣ X_a ⊆ X_{nᵢ}} ⊆ X_b`). -/
@@ -2395,11 +2177,6 @@ theorem leastMap_Xenum_rel (gN : ℕ → ℕ)
       ↔ Xenum P P gN c ⊆ step (P.X a) (P.X b) := by
   rw [toApproxMap_rel, mem_principal]
   exact ⟨fun h => h.2, fun h => ⟨step_mem (P.mem_X a) (P.mem_X b), h⟩⟩
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 /-- `chainDec` is equivalent to `gStepsOK` of the least map, via the inclusion char's spec and
 `Xenum (codePair a b) = [X_a, X_b]`. -/
@@ -2426,11 +2203,6 @@ theorem chainDec_iff_gStepsOK (gN : ℕ → ℕ)
         (leastMap_Xenum_rel P gN hgN c a b).mp hstep
       rw [hfincl, unpair_pair_fst, unpair_pair_snd, Xenum_codePair P gN hgN a b]
       exact hsub
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 theorem primrec_fixStp (fincl : ℕ → ℕ) (hfinclp : Nat.Primrec fincl) :
     Nat.Primrec (fixStp fincl) := by
@@ -2450,21 +2222,11 @@ theorem primrec_fixStp (fincl : ℕ → ℕ) (hfinclp : Nat.Primrec fincl) :
         (codePair w.unpair.2.unpair.1.unpair.1 w.unpair.1)))) 0) :=
     primrec_selectFn hflag (primrec_isOne.comp (hfinclp.comp hinner)) (Nat.Primrec.const 0)
   exact (hx.pair hsel).of_eq (fun _ => rfl)
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 theorem primrec_fixChainChar (fincl : ℕ → ℕ) (hfinclp : Nat.Primrec fincl) :
     Nat.Primrec (fun t => fixChainChar P fincl t.unpair.1 t.unpair.2) :=
   (primrec_foldCode (primrec_fixStp fincl hfinclp) Nat.Primrec.left
     (Nat.Primrec.const (Nat.pair P.masterIdx 1)) Nat.Primrec.right).of_eq (fun _ => rfl)
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
 
 end
 end DomainTheory.NeighbourhoodSystems

@@ -35,8 +35,6 @@ section
 def upSet (m : ℕ) : Set ℕ := {k | m ≤ k}
 end
 
-section
-end
 end DomainTheory.NeighbourhoodSystems.Exercise421
 
 section

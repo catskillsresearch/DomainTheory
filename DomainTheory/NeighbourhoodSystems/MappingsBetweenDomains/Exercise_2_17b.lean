@@ -153,13 +153,6 @@ to reduce continuity checks to principal elements; a duplicate of `Theorem85.lea
 kept local here to avoid a heavy import for this early file.) -/
 instance instNonemptyMemSubtype (x : V₀.Element) : Nonempty {X : Set α // x.mem X} :=
   ⟨⟨V₀.master, x.master_mem⟩⟩
-end
-
-section
-open NeighborhoodSystem
-universe u
-variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 /-- A continuous function between domains is monotone for the approximation order `⊑`: this is
 because `⊑` is recoverable from the topology (`le_iff_isOpen_imp`) and continuous preimages of opens
@@ -169,6 +162,7 @@ theorem continuous_monotone {c : V₀.Element → V₁.Element} (hc : Continuous
   rw [V₁.le_iff_isOpen_imp]
   intro U hU hxU
   exact V₀.isOpen_isUpperSet (hU.preimage hc) hxU hxy
+
 end
 
 end NeighborhoodSystem

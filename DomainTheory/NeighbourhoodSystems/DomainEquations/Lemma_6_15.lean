@@ -90,28 +90,8 @@ def inj (h : D ◁ E) : ApproximableMap D E where
     rintro X X' Y Y' ⟨_, _, hXY⟩ hX'X hYY' hX' hY'
     exact ⟨hX', hY', (hX'X.trans hXY).trans hYY'⟩
 
-end Subsystem
-end
-
-section
-variable {α : Type*}
-
-namespace Subsystem
-
-variable {D E : NeighborhoodSystem α}
-
 @[simp] theorem inj_rel (h : D ◁ E) {X Y : Set α} :
     (h.inj).rel X Y ↔ D.mem X ∧ E.mem Y ∧ X ⊆ Y := Iff.rfl
-
-end Subsystem
-end
-
-section
-variable {α : Type*}
-
-namespace Subsystem
-
-variable {D E : NeighborhoodSystem α}
 
 /-- **The projection `j : E → D` of Proposition 6.12.** As a neighbourhood relation,
 `Y j X ↔ Y ∈ E ∧ X ∈ D ∧ Y ⊆ X`. Element-wise (see `toElementMap_proj`) it is Scott's
@@ -131,28 +111,8 @@ def proj (h : D ◁ E) : ApproximableMap E D where
     rintro Y Y' X X' ⟨_, _, hYX⟩ hY'Y hXX' hY' hX'
     exact ⟨hY', hX', (hY'Y.trans hYX).trans hXX'⟩
 
-end Subsystem
-end
-
-section
-variable {α : Type*}
-
-namespace Subsystem
-
-variable {D E : NeighborhoodSystem α}
-
 @[simp] theorem proj_rel (h : D ◁ E) {Y X : Set α} :
     (h.proj).rel Y X ↔ E.mem Y ∧ D.mem X ∧ Y ⊆ X := Iff.rfl
-
-end Subsystem
-end
-
-section
-variable {α : Type*}
-
-namespace Subsystem
-
-variable {D E : NeighborhoodSystem α}
 
 /-- **Proposition 6.12, second law: `i ∘ j ⊆ I_E`.** A round trip `Y ⊆ X ⊆ Y'` through a common
 `D`-neighbourhood `X` is in particular `Y ⊆ Y'` on `E`. The reverse inclusion fails (not every
@@ -161,16 +121,6 @@ theorem inj_comp_proj_le (h : D ◁ E) : h.inj.comp h.proj ≤ idMap E := by
   intro Y Y' hr
   obtain ⟨X, ⟨hEY, _, hYX⟩, _, hEY', hXY'⟩ := hr
   exact ⟨hEY, hEY', hYX.trans hXY'⟩
-
-end Subsystem
-end
-
-section
-variable {α : Type*}
-
-namespace Subsystem
-
-variable {D E : NeighborhoodSystem α}
 
 /-- **Proposition 6.12, first law: `j ∘ i = I_D`.** Each side relates `X` and `Z` exactly when
 `X, Z ∈ D` and `X ⊆ Z`: a round trip `X ⊆ Y ⊆ Z` through an `E`-neighbourhood `Y` collapses to
@@ -248,48 +198,16 @@ down-set `{x ∣ x ⊑ h(y)}` of `h(y)`. -/
 def lowerSet (P : ProjectionPair D E) (y : E.Element) : Set D.Element :=
   {x | P.inj.toElementMap x ≤ y}
 
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
-
 @[simp] theorem mem_lowerSet (P : ProjectionPair D E) {y : E.Element} {x : D.Element} :
     x ∈ P.lowerSet y ↔ P.inj.toElementMap x ≤ y := Iff.rfl
-
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
 
 /-- The set `{y ∈ |ℰ| ∣ x ⊑ h(y)}` of the second formula. By the Galois connection it is the
 up-set `{y ∣ g(x) ⊑ y}` of `g(x)`. -/
 def upperSet (P : ProjectionPair D E) (x : D.Element) : Set E.Element :=
   {y | x ≤ P.proj.toElementMap y}
 
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
-
 @[simp] theorem mem_upperSet (P : ProjectionPair D E) {x : D.Element} {y : E.Element} :
     y ∈ P.upperSet x ↔ x ≤ P.proj.toElementMap y := Iff.rfl
-
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
 
 end Subsystem.ProjectionPair
 end

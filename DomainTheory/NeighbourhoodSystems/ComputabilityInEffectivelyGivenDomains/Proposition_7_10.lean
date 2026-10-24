@@ -10,6 +10,7 @@ open NeighborhoodSystem Domain.Recursive
 section
 namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
+
 /- concordance: source L4517 PROPOSITION 7.10 power domain effective -/
 /-- **Proposition 7.10 (Part A) — the Smyth power domain `ℙ𝒟` as a neighbourhood system.** Master
 `↓Δ`; closure under intersection is `PDmem_inter`; `↓X ⊆ ↓Δ` since `X ⊆ Δ`. -/
@@ -27,23 +28,7 @@ abbrev PowerDomain : NeighborhoodSystem (Set α) where
     obtain ⟨X, hX, hZmem, hZsub⟩ := hZ
     exact ⟨hZmem, hZsub.trans (V.sub_master (hL X hX))⟩
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
 @[simp] theorem PowerDomain_mem {W : Set (Set α)} : V.PowerDomain.mem W ↔ V.PDmem W := Iff.rfl
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 @[simp] theorem PowerDomain_master : V.PowerDomain.master = V.upSet V.master := rfl
 
@@ -60,53 +45,13 @@ variable (P : ComputablePresentation V)
 /-- The finite union of down-sets indexed by a `List` of `𝒟`-indices: `⋃_{b ∈ l} ↓X_b`. -/
 def UPX (l : List ℕ) : Set (Set α) := ⋃ b ∈ l, V.upSet (P.X b)
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 theorem UPX_def (l : List ℕ) : V.UPX P l = ⋃ b ∈ l, V.upSet (P.X b) := rfl
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 /-- **The enumeration of `ℙ𝒟`.** `Ypd c = ⋃_{a ∈ decodeList c} ↓X_a` — a finite union of down-sets,
 ranging over all of `ℙ𝒟` as `c` ranges over `ℕ` (the empty code `0` gives `∅`). -/
 def Ypd (c : ℕ) : Set (Set α) := V.UPX P (decodeList c)
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 theorem Ypd_def (c : ℕ) : V.Ypd P c = V.UPX P (decodeList c) := rfl
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 /-- One step of the **inner** fold (over `decodeList m`, parameter the outer index `a`): prepend
 `P.inter a b` to the accumulator code iff `(a, b)` is consistent (`cons ⟨a,b⟩ = 1`), else leave it.
@@ -116,43 +61,13 @@ def innerInterStp (cons : ℕ → ℕ) (w : ℕ) : ℕ :=
     (Nat.pair (P.inter w.unpair.2.unpair.2 w.unpair.1) w.unpair.2.unpair.1 + 1)
     w.unpair.2.unpair.1
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 /-- The inner fold: process `decodeList m`, accumulating the consistent intersection indices. -/
 def innerInterCode (cons : ℕ → ℕ) (a acc m : ℕ) : ℕ := foldCode (V.innerInterStp P cons) a acc m
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 theorem innerInterStp_eq (cons : ℕ → ℕ) (a acc b : ℕ) :
     V.innerInterStp P cons (Nat.pair b (Nat.pair acc a))
       = selectFn (isOne (cons (Nat.pair a b))) (Nat.pair (P.inter a b) acc + 1) acc := by
   unfold innerInterStp; simp only [unpair_pair_fst, unpair_pair_snd]
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 theorem innerInterCode_eq (cons : ℕ → ℕ) (a acc m : ℕ) :
     V.innerInterCode P cons a acc m
@@ -163,29 +78,9 @@ theorem innerInterCode_eq (cons : ℕ → ℕ) (a acc m : ℕ) :
     funext acc b; exact V.innerInterStp_eq P cons a acc b
   unfold innerInterCode; rw [foldCode_eq', hf]
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 theorem mem_UPX {l : List ℕ} {z : Set α} :
     z ∈ V.UPX P l ↔ ∃ b ∈ l, z ∈ V.upSet (P.X b) := by
   simp only [UPX, Set.mem_iUnion, exists_prop]
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 theorem UPX_cons (b : ℕ) (l : List ℕ) :
     V.UPX P (b :: l) = V.upSet (P.X b) ∪ V.UPX P l := by
@@ -200,56 +95,16 @@ theorem UPX_cons (b : ℕ) (l : List ℕ) :
     · exact ⟨b, List.mem_cons.mpr (Or.inl rfl), hz⟩
     · exact ⟨c, List.mem_cons.mpr (Or.inr hc), hz⟩
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 theorem UPX_nil : V.UPX P [] = ∅ := by
   ext z
   rw [V.mem_UPX P]
   simp only [List.not_mem_nil, false_and, exists_false, Set.mem_empty_iff_false]
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 theorem Ypd_cons_code (v acc : ℕ) :
     V.Ypd P (Nat.pair v acc + 1) = V.upSet (P.X v) ∪ V.Ypd P acc := by
   rw [Ypd_def, decodeList_succ, unpair_pair_fst, unpair_pair_snd, V.UPX_cons P, ← V.Ypd_def P]
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 theorem Ypd_zero : V.Ypd P 0 = ∅ := by rw [Ypd_def, decodeList_zero, V.UPX_nil P]
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 /-- The enumeration is onto `ℙ𝒟` (build the index list entry by entry from `P.surj`; choice-free). -/
 theorem PDmem_exists_Ypd_aux :
@@ -263,42 +118,12 @@ theorem PDmem_exists_Ypd_aux :
     obtain ⟨c', hc'⟩ := ih (fun Y hY => hL Y (List.mem_cons.mpr (Or.inr hY)))
     exact ⟨Nat.pair n c' + 1, by rw [V.Ypd_cons_code P, hn, hc', V.upSetUnion_cons]⟩
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 theorem PDmem_exists_Ypd {W : Set (Set α)} (hW : V.PDmem W) : ∃ c, V.Ypd P c = W := by
   obtain ⟨L, hL, rfl⟩ := hW
   exact V.PDmem_exists_Ypd_aux P L hL
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 theorem mem_Ypd {c : ℕ} {z : Set α} :
     z ∈ V.Ypd P c ↔ ∃ a ∈ decodeList c, z ∈ V.upSet (P.X a) := V.mem_UPX P
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 /-- Every `Ypd c` is a `ℙ𝒟`-neighbourhood (list `(decodeList c).map P.X`). -/
 theorem Ypd_isPDmem (c : ℕ) : V.PDmem (V.Ypd P c) := by
@@ -314,58 +139,18 @@ theorem Ypd_isPDmem (c : ℕ) : V.PDmem (V.Ypd P c) := by
       obtain ⟨a, ha, rfl⟩ := List.mem_map.mp hX
       exact ⟨a, ha, hz⟩
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 /-- One step of the **outer** fold (over `decodeList n`, parameter `m`): run the inner fold for the
 current outer index `a`. `foldCode` shape: state `w = ⟨a, ⟨acc, m⟩⟩`. -/
 def outerInterStp (cons : ℕ → ℕ) (w : ℕ) : ℕ :=
   V.innerInterCode P cons w.unpair.1 w.unpair.2.unpair.1 w.unpair.2.unpair.2
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 /-- **The intersection code** `interCode cons n m`: a code of the list of `P.inter a b` over the
 consistent pairs `(a, b) ∈ dl n × dl m`. -/
 def interCode (cons : ℕ → ℕ) (n m : ℕ) : ℕ := foldCode (V.outerInterStp P cons) m 0 n
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 theorem outerInterStp_eq (cons : ℕ → ℕ) (a acc m : ℕ) :
     V.outerInterStp P cons (Nat.pair a (Nat.pair acc m)) = V.innerInterCode P cons a acc m := by
   unfold outerInterStp; simp only [unpair_pair_fst, unpair_pair_snd]
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 theorem interCode_eq (cons : ℕ → ℕ) (n m : ℕ) :
     V.interCode P cons n m
@@ -374,16 +159,6 @@ theorem interCode_eq (cons : ℕ → ℕ) (n m : ℕ) :
       = (fun acc a => V.innerInterCode P cons a acc m) := by
     funext acc a; exact V.outerInterStp_eq P cons a acc m
   unfold interCode; rw [foldCode_eq', hf]
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 theorem primrec_innerInterStp (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons) :
     Nat.Primrec (V.innerInterStp P cons) := by
@@ -402,46 +177,16 @@ theorem primrec_innerInterStp (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons) :
     Nat.Primrec.succ.comp (hinter_ab.pair hacc)
   exact (primrec_selectFn (primrec_isOne.comp hcons_ab) hprepend hacc).of_eq (fun _ => rfl)
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 theorem primrec_outerInterStp (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons) :
     Nat.Primrec (V.outerInterStp P cons) :=
   (primrec_foldCode (V.primrec_innerInterStp P cons hconsp) Nat.Primrec.left
     (Nat.Primrec.left.comp Nat.Primrec.right) (Nat.Primrec.right.comp Nat.Primrec.right)).of_eq
     (fun _ => rfl)
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 theorem primrec_interCode (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons) :
     Nat.Primrec (fun t => V.interCode P cons t.unpair.1 t.unpair.2) :=
   (primrec_foldCode (V.primrec_outerInterStp P cons hconsp) Nat.Primrec.right
     (Nat.Primrec.const 0) Nat.Primrec.left).of_eq (fun _ => rfl)
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 /-- `∀ a ∈ dl c, ∃ b ∈ dl k, X_a ⊆ X_b` is recursively decidable (nested bounded `∀/∃` over
 `P.incl_computable`). -/
@@ -450,16 +195,6 @@ theorem subCode_computable :
   have hinner : RecDecidable₂ (fun k a => ∃ b ∈ decodeList k, P.X a ⊆ P.X b) :=
     P.incl_computable.swap.bExistsList
   exact hinner.swap.bForallList
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 /-- If `(a, b)` is *inconsistent* (no `𝒟`-neighbourhood below `X_a ∩ X_b`) then `↓X_a ∩ ↓X_b = ∅`. -/
 theorem upSet_inter_eq_empty_of_not_cons {a b : ℕ}
@@ -471,16 +206,6 @@ theorem upSet_inter_eq_empty_of_not_cons {a b : ℕ}
   intro hZmem hZsub
   obtain ⟨n, hn⟩ := P.surj hZmem
   exact h ⟨n, by rw [hn]; exact hZsub⟩
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 /-- One inner step at the `Ypd` level: prepending the consistent intersection index adds exactly
 `↓X_a ∩ ↓X_b` (which is `∅` for inconsistent pairs). The `by_cases` on `cons ⟨a,b⟩ = 1` is on a
@@ -502,16 +227,6 @@ theorem Ypd_innerstep (cons : ℕ → ℕ) {a b : ℕ}
     rw [hisz, selectFn_zero,
       V.upSet_inter_eq_empty_of_not_cons P (fun hk => h (hcons.mpr hk)), Set.union_empty]
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 /-- The inner fold computes `↓X_a ∩ (⋃_{b ∈ bs} ↓X_b)` on top of the starting accumulator. -/
 theorem Ypd_innerfoldl (cons : ℕ → ℕ) (a : ℕ)
     (hcons : ∀ b, cons (Nat.pair a b) = 1 ↔ ∃ k, P.X k ⊆ P.X a ∩ P.X b) :
@@ -527,32 +242,12 @@ theorem Ypd_innerfoldl (cons : ℕ → ℕ) (a : ℕ)
     rw [List.foldl_cons, ih, V.Ypd_innerstep P cons (hcons b), V.UPX_cons P,
       Set.inter_union_distrib_left, Set.union_assoc]
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 /-- `Ypd (innerInterCode cons a acc m) = Ypd acc ∪ (↓X_a ∩ Y_m)`. -/
 theorem Ypd_innerInterCode (cons : ℕ → ℕ) (a acc m : ℕ)
     (hcons : ∀ b, cons (Nat.pair a b) = 1 ↔ ∃ k, P.X k ⊆ P.X a ∩ P.X b) :
     V.Ypd P (V.innerInterCode P cons a acc m)
       = V.Ypd P acc ∪ (V.upSet (P.X a) ∩ V.Ypd P m) := by
   rw [V.innerInterCode_eq P, V.Ypd_innerfoldl P cons a hcons (decodeList m) acc, ← V.Ypd_def P]
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 /-- The outer fold computes `(⋃_{a ∈ as} ↓X_a) ∩ Y_m` on top of the starting accumulator. -/
 theorem Ypd_outerfoldl (cons : ℕ → ℕ) (m : ℕ)
@@ -568,32 +263,12 @@ theorem Ypd_outerfoldl (cons : ℕ → ℕ) (m : ℕ)
     rw [List.foldl_cons, ih, V.Ypd_innerInterCode P cons a acc m (hcons a), V.UPX_cons P,
       Set.union_inter_distrib_right, Set.union_assoc]
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 /-- **Correctness of the intersection code:** `Y_{interCode n m} = Y_n ∩ Y_m`. -/
 theorem Ypd_interCode (cons : ℕ → ℕ) (n m : ℕ)
     (hcons : ∀ a b, cons (Nat.pair a b) = 1 ↔ ∃ k, P.X k ⊆ P.X a ∩ P.X b) :
     V.Ypd P (V.interCode P cons n m) = V.Ypd P n ∩ V.Ypd P m := by
   rw [V.interCode_eq P, V.Ypd_outerfoldl P cons m hcons (decodeList n) 0, V.Ypd_zero P,
     Set.empty_union, ← V.Ypd_def P]
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 /-- `↓X_a ⊆ Y_k ↔ ∃ b ∈ dl k, X_a ⊆ X_b` (a down-set lies in a finite union of down-sets iff its top
 `X_a` is below one of them). -/
@@ -607,16 +282,6 @@ theorem upSet_subset_Ypd_iff {a k : ℕ} :
   · rintro ⟨b, hb, hab⟩ z hz
     exact (V.mem_Ypd P).mpr ⟨b, hb, hz.1, hz.2.trans hab⟩
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 /-- `Y_c ⊆ Y_k ↔ ∀ a ∈ dl c, ∃ b ∈ dl k, X_a ⊆ X_b`. -/
 theorem Ypd_subset_iff {c k : ℕ} :
     V.Ypd P c ⊆ V.Ypd P k ↔ ∀ a ∈ decodeList c, ∃ b ∈ decodeList k, P.X a ⊆ P.X b := by
@@ -625,16 +290,6 @@ theorem Ypd_subset_iff {c k : ℕ} :
   · intro h a ha; exact (V.upSet_subset_Ypd_iff P).mp (h a ha)
   · intro h a ha; exact (V.upSet_subset_Ypd_iff P).mpr (h a ha)
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 /-- **Equality of two finite unions of down-sets**, unfolded as a nested bounded `∀/∃`. -/
 theorem Ypd_eq_iff {c k : ℕ} :
     V.Ypd P c = V.Ypd P k ↔
@@ -642,32 +297,12 @@ theorem Ypd_eq_iff {c k : ℕ} :
       (∀ b ∈ decodeList k, ∃ a ∈ decodeList c, P.X b ⊆ P.X a) := by
   rw [Set.Subset.antisymm_iff, V.Ypd_subset_iff P, V.Ypd_subset_iff P]
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
-
 /-- **Scott's relation (i) for `ℙ𝒟`, at the level of codes:** equality of two enumerated
 neighbourhoods is recursively decidable. -/
 theorem eqCode_computable : RecDecidable₂ (fun c k => V.Ypd P c = V.Ypd P k) := by
   have h := (V.subCode_computable P).and (V.subCode_computable P).swap
   refine RecDecidable.of_iff (fun t => ?_) h
   exact V.Ypd_eq_iff P
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 /-- **Scott's relation (i):** `Y_n ∩ Y_m = Y_k` is recursively decidable, by reducing to the equality
 decider via the (primitive-recursive) intersection code. -/
@@ -684,16 +319,6 @@ theorem Ypd_interEq_computable (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons)
   refine RecDecidable.of_iff (fun t => ?_) ((V.eqCode_computable P).comp hg)
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [V.Ypd_interCode P cons t.unpair.1 t.unpair.2.unpair.1 hcons]
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-variable (P : ComputablePresentation V)
 
 /-- **Proposition 7.10 (Part B), parametrised.** The `ℙ𝒟` presentation built from an explicit
 primitive-recursive consistency decider `cons` for `𝒟` (cf. `funPresentation`, Theorem 7.5). The data
@@ -753,10 +378,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 /-- **Definition 7.11 — the empty join.** With no arguments, `{ } = ⊥` (the least element of
 `|ℙ𝒟|`). -/
 def PDfinJoinZero : V.PowerDomain.Element := V.PowerDomain.bot
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.11 — membership.** A `ℙ𝒟`-neighbourhood `W` lies in the join of
 `x₀, …, x_{n-1}` iff some choice of representatives `X_i ∈ x_i` has every down-set
@@ -764,10 +385,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 def PDmemFinJoin {n : ℕ} (xs : Fin n → V.Element) (W : Set (Set α)) : Prop :=
   ∃ (X : Fin n → Set α) (_hX : ∀ i, (xs i).mem (X i)),
     V.PowerDomain.mem W ∧ ∀ i, V.upSet (X i) ⊆ W
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.11 — the non-empty join.** For `n ≥ 1`, `{x₀,…,x_{n-1}}` is the filter
 generated by Scott's union condition. -/
@@ -787,10 +404,6 @@ def PDfinJoinSucc {m : ℕ} (xs : Fin (m + 1) → V.Element) : V.PowerDomain.Ele
   up_mem h hW hsub := by
     obtain ⟨X, hX, _, hsub'⟩ := h
     exact ⟨X, hX, hW, fun i => (hsub' i).trans hsub⟩
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 end
 end NeighborhoodSystem

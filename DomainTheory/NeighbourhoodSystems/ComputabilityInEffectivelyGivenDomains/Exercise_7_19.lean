@@ -12,6 +12,7 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
+
 /- concordance: source L4663 EXERCISE 7.19 power domain functor -/
 /-- **Exercise 7.19 (Scott 1981, PRG-19) — the functorial action `ℙf : ℙD → ℙE`.** Given an
 approximable map `f : D → E`, the relation between `ℙD`- and `ℙE`-neighbourhoods is "every member of
@@ -43,21 +44,9 @@ def PFmap (f : ApproximableMap V W) : ApproximableMap V.PowerDomain W.PowerDomai
     intro X hX
     obtain ⟨Y, hYB, hrel⟩ := hbody X (hA'A hX)
     exact ⟨Y, hBB' hYB, hrel⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 @[simp] theorem PFmap_rel {f : ApproximableMap V W} {A : Set (Set α)} {B : Set (Set β)} :
     (PFmap f).rel A B ↔ V.PDmem A ∧ W.PDmem B ∧ ∀ X ∈ A, ∃ Y ∈ B, f.rel X Y := Iff.rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 /-- **Exercise 7.19 — the combinator `λf. ℙf : (D → E) → (ℙD → ℙE)`.** The flat Smyth-style lift
 `(Φ, Ψ) ↦ mem Φ ∧ mem Ψ ∧ ∀ f ∈ Φ, ℙf ∈ Ψ` of Exercise 7.19's functorial action, one level up on the
@@ -88,6 +77,7 @@ def PFmapComb (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
   mono := by
     rintro Φ Φ' Ψ Ψ' ⟨_, _, hbody⟩ hΦ'Φ hΨΨ' hΦ' hΨ'
     exact ⟨hΦ', hΨ', fun f hf => hΨΨ' (hbody f (hΦ'Φ hf))⟩
+
 end
 
 section
@@ -149,12 +139,6 @@ theorem PFmap_idMap (V : NeighborhoodSystem α) : PFmap (idMap V) = idMap V.Powe
     refine ⟨hA, hB, ?_⟩
     intro X hX
     exact ⟨X, hsub hX, V.PDmem_mem hA hX, V.PDmem_mem hA hX, subset_rfl⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 /-- **Exercise 7.19 — the relation of `ℙf` at the level of `ℙ𝒟`-codes.** Over the canonical
 presentations of Proposition 7.10, `(ℙf).rel (Y_c) (Y_d) ↔ ∀ a ∈ dl c, ∃ b ∈ dl d, Xₐ f Y_b`. -/
@@ -175,12 +159,6 @@ theorem PFmap_rel_Ypd_iff (P : ComputablePresentation V) (Q : ComputablePresenta
     obtain ⟨b, hb, hrel⟩ := hgen a ha
     exact ⟨Q.X b, (W.mem_Ypd Q).mpr ⟨b, hb, Q.mem_X b, subset_rfl⟩,
       f.mono hrel hXsub subset_rfl hXmem (Q.mem_X b)⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 /-- **Exercise 7.19 — Scott's displayed formula.** On generators (finite lists of down-sets)
 `(ℙf).rel (⋃_{X∈L₁} ↓X) (⋃_{Y∈L₂} ↓Y) ↔ ∀ X ∈ L₁, ∃ Y ∈ L₂, X f Y`, exactly Scott's
@@ -204,12 +182,6 @@ theorem PFmap_rel_fin (f : ApproximableMap V W) {L₁ : List (Set α)} {L₂ : L
     obtain ⟨Y, hY, hrel⟩ := hgen X hX
     exact ⟨Y, (W.mem_PDunion).mpr ⟨Y, hY, hL₂ Y hY, subset_rfl⟩,
       f.mono hrel hZsub subset_rfl hZmem (hL₂ Y hY)⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 /-- **Bounded `∃` over a coded list preserves recursive enumerability.** If `R` is r.e. then so is
 `fun d a => ∃ b ∈ decodeList d, R a b`: project out `b` (`REPred.proj`) over the conjunction of the
@@ -236,12 +208,6 @@ theorem bExists_decodeList_re {R : ℕ → ℕ → Prop} (hR : REPred₂ R) :
     simp only [unpair_pair_fst, unpair_pair_snd]
   refine REPred.of_iff (fun s => ?_) (hpart1.and hpart2).proj
   simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 /-- **Exercise 7.19 (Scott's first question) — `ℙf` is computable when `f` is.** Stated at the level
 of the `ℙ𝒟`-codes of Proposition 7.10 (`Y_c = ⋃_{a∈dl c} ↓Xₐ`): the relation `(ℙf).rel (Y_c) (Y_d)`
@@ -258,12 +224,6 @@ theorem PFmap_isComputable_Ypd (P : ComputablePresentation V) (Q : ComputablePre
   refine REPred.of_iff (fun s => ?_) (hForall.comp hswap)
   simp only [unpair_pair_fst, unpair_pair_snd]
   exact PFmap_rel_Ypd_iff P Q f
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 /-- **Exercise 7.19 (Scott's first question), packaged.** `ℙf` is a computable map between the
 canonical effective presentations `ℙ𝒟`, `ℙℰ` (Proposition 7.10) whenever `f` is computable. -/
@@ -276,12 +236,6 @@ theorem PFmap_isComputable (P : ComputablePresentation V) (Q : ComputablePresent
     ComputableMap (V.PDPresentation P consV hconsVp hconsVs)
       (W.PDPresentation Q consW hconsWp hconsWs) (PFmap f) := by
   exact ⟨PFmap_isComputable_Ypd P Q hf⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 /-- Choice-free gathering of composition witnesses along the generators of the source: from a list
 `L` of `𝒟`-neighbourhoods each admitting a `(g∘f)`-witness into `C`, build a single list `M` of
@@ -320,12 +274,6 @@ theorem comp_witness (f : ApproximableMap V W) (g : ApproximableMap W U) (C : Se
       rcases List.mem_cons.mp hY with rfl | hY'
       · exact ⟨Zx, hZxC, hgx⟩
       · exact hgM Y hY'
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 /-- **Exercise 7.19 — `ℙ` preserves composition.** `ℙ(g ∘ f) = ℙg ∘ ℙf`. The forward direction
 constructs the intermediate `ℙE`-neighbourhood from `comp_witness`; the backward direction merely
@@ -361,12 +309,6 @@ theorem PFmap_comp (g : ApproximableMap W U) (f : ApproximableMap V W) :
     obtain ⟨Y, hYB, hfXY⟩ := hfAB X hX
     obtain ⟨Z, hZC, hgYZ⟩ := hgBC Y hYB
     exact ⟨Z, hZC, Y, hfXY, hgYZ⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 /-- **Choice-free witness gathering (single list).** From `∀ X ∈ L₁, ∃ Y ∈ L₂, f.rel X Y`, build one
 list `M` of `(X, Y)` pairs, each drawn from `L₁ × L₂` and `f`-related, that *covers* `L₁`: every
@@ -393,12 +335,6 @@ theorem gather_witnesses (f : ApproximableMap V W) :
       · exact ⟨Y, hY, List.mem_cons.mpr (Or.inl rfl)⟩
       · obtain ⟨Y', hY', hmem⟩ := hMwit X' hX''
         exact ⟨Y', hY', List.mem_cons.mpr (Or.inr hmem)⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 /-- **Choice-free witness gathering (list of step constraints).** From a finite list `L` of
 `ℙD × ℙE`-neighbourhood pairs `(A, B)`, each satisfied by `ℙf` (`(ℙf).rel A B`), build a *single*
@@ -445,12 +381,6 @@ theorem exists_stepFun_forall_PFmap_rel (f : ApproximableMap V W) :
         obtain ⟨Y, hY, hmem⟩ := hM₀wit X hX
         exact ⟨Y, hY, hg (X, Y) (List.mem_append.mpr (Or.inl hmem))⟩
       · exact hMgen g (fun q hq => hg q (List.mem_append.mpr (Or.inr hq))) p' hp''
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 /-- **Exercise 7.19 — faithfulness of `PFmapComb`.** Under the function-space correspondence of
 Theorem 3.10 (`toFilter f` is the point of `(D → E)` fixed by `f`), `PFmapComb` really does send
@@ -475,6 +405,7 @@ theorem PFmapComb_toElementMap (f : ApproximableMap V W) :
       ⟨⟨L₂, hL₂, rfl⟩, PFmap f, hfΨ⟩
     exact ⟨stepFun M, ⟨hΦmem, mem_stepFun.mpr hMrel⟩, hΦmem, hΨmem',
       fun g hg => mem_stepFun.mpr (hMgen g (mem_stepFun.mp hg))⟩
+
 end
 
 section
@@ -1179,10 +1110,5 @@ theorem example_719.{u_1, u_2, u_3} : And
   @DomainTheory.NeighbourhoodSystems.PFmap_rel_fin
 end
 
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*}
-
-end
 end DomainTheory.NeighbourhoodSystems
 end

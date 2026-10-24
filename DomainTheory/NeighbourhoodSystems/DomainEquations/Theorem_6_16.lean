@@ -265,17 +265,9 @@ abbrev tcObj (D : StrictDomainObj.{w}) : StrictDomainObj.{w} where
   carrier := Option (Unit ⊕ D.carrier ⊕ D.carrier)
   sys := sum3 unitSys D.sys D.sys Example62C.unitSys_nonempty D.nonempty D.nonempty
   nonempty := sum3_nonempty
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 @[simp] theorem tcObj_sys (D : StrictDomainObj.{w}) :
     (tcObj D).sys = sum3 unitSys D.sys D.sys Example62C.unitSys_nonempty D.nonempty D.nonempty := rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 section ShapeLemmas
 
@@ -295,20 +287,6 @@ theorem mem_subset_j0_inv {W : Set (Option (α ⊕ β ⊕ γ))} {X : Set α}
   · obtain ⟨b, hb⟩ := h₁ Y₂ hY₂; exact absurd (hsub (t1_mem_j1.mpr hb)) t1_not_mem_j0
   · obtain ⟨c, hc⟩ := h₂ Z₂ hZ₂; exact absurd (hsub (t2_mem_j2.mpr hc)) t2_not_mem_j0
 
-end ShapeLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section ShapeLemmas
-
-open Example62C
-
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  {V₂ : NeighborhoodSystem γ} {h₀ : ∀ X, V₀.mem X → X.Nonempty}
-  {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty} {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
 /-- A `sum3`-neighbourhood contained in a `1`-copy `1Y` is itself a `1`-copy. -/
 theorem mem_subset_j1_inv {W : Set (Option (α ⊕ β ⊕ γ))} {Y : Set β}
     (hW : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).mem W) (hsub : W ⊆ j1 Y) :
@@ -318,20 +296,6 @@ theorem mem_subset_j1_inv {W : Set (Option (α ⊕ β ⊕ γ))} {Y : Set β}
   · obtain ⟨a, ha⟩ := h₀ X₂ hX₂; exact absurd (hsub (t0_mem_j0.mpr ha)) t0_not_mem_j1
   · exact ⟨Y₂, hY₂, rfl⟩
   · obtain ⟨c, hc⟩ := h₂ Z₂ hZ₂; exact absurd (hsub (t2_mem_j2.mpr hc)) t2_not_mem_j1
-
-end ShapeLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section ShapeLemmas
-
-open Example62C
-
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  {V₂ : NeighborhoodSystem γ} {h₀ : ∀ X, V₀.mem X → X.Nonempty}
-  {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty} {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
 
 /-- A `sum3`-neighbourhood contained in a `2`-copy `2Z` is itself a `2`-copy. -/
 theorem mem_subset_j2_inv {W : Set (Option (α ⊕ β ⊕ γ))} {Z : Set γ}
@@ -344,10 +308,6 @@ theorem mem_subset_j2_inv {W : Set (Option (α ⊕ β ⊕ γ))} {Z : Set γ}
   · exact ⟨Z₂, hZ₂, rfl⟩
 
 end ShapeLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 section SumInj
 
@@ -382,21 +342,6 @@ def sinj0 (x₀ : V₀.Element) : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).Element w
       · obtain ⟨a, ha⟩ := h₀ X (x₀.sub hx); exact absurd (hsub (t0_mem_j0.mpr ha)) t0_not_mem_j1
       · obtain ⟨a, ha⟩ := h₀ X (x₀.sub hx); exact absurd (hsub (t0_mem_j0.mpr ha)) t0_not_mem_j2
 
-end SumInj
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section SumInj
-
-open Example62C
-
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
 @[simp] theorem sinj0_mem_j0 {x₀ : V₀.Element} {X : Set α} (hX : V₀.mem X) :
     (sinj0 (V₁ := V₁) (V₂ := V₂) (h₀ := h₀) (h₁ := h₁) (h₂ := h₂) x₀).mem (j0 X) ↔ x₀.mem X := by
   constructor
@@ -404,21 +349,6 @@ variable {α β γ : Type*}
     · exact absurd (h0 ▸ none_mem_master3) none_not_mem_j0
     · rw [j0_injective heq]; exact hx
   · intro hx; exact Or.inr ⟨X, hX, rfl, hx⟩
-
-end SumInj
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section SumInj
-
-open Example62C
-
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
 
 /-- The `1`-injection `D₁ ↪ D₀+D₁+D₂`. -/
 def sinj1 (x₁ : V₁.Element) : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).Element where
@@ -443,21 +373,6 @@ def sinj1 (x₁ : V₁.Element) : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).Element w
       · exact Or.inr ⟨Y', hY', rfl, x₁.up_mem hx hY' (j1_subset_j1.mp hsub)⟩
       · obtain ⟨b, hb⟩ := h₁ Y (x₁.sub hx); exact absurd (hsub (t1_mem_j1.mpr hb)) t1_not_mem_j2
 
-end SumInj
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section SumInj
-
-open Example62C
-
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
 @[simp] theorem sinj1_mem_j1 {x₁ : V₁.Element} {Y : Set β} (hY : V₁.mem Y) :
     (sinj1 (V₀ := V₀) (V₂ := V₂) (h₀ := h₀) (h₁ := h₁) (h₂ := h₂) x₁).mem (j1 Y) ↔ x₁.mem Y := by
   constructor
@@ -465,21 +380,6 @@ variable {α β γ : Type*}
     · exact absurd (h0 ▸ none_mem_master3) none_not_mem_j1
     · rw [j1_injective heq]; exact hx
   · intro hx; exact Or.inr ⟨Y, hY, rfl, hx⟩
-
-end SumInj
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section SumInj
-
-open Example62C
-
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
 
 /-- The `2`-injection `D₂ ↪ D₀+D₁+D₂`. -/
 def sinj2 (x₂ : V₂.Element) : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).Element where
@@ -504,21 +404,6 @@ def sinj2 (x₂ : V₂.Element) : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).Element w
       · obtain ⟨c, hc⟩ := h₂ Z (x₂.sub hx); exact absurd (hsub (t2_mem_j2.mpr hc)) t2_not_mem_j1
       · exact Or.inr ⟨Z', hZ', rfl, x₂.up_mem hx hZ' (j2_subset_j2.mp hsub)⟩
 
-end SumInj
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section SumInj
-
-open Example62C
-
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
 @[simp] theorem sinj2_mem_j2 {x₂ : V₂.Element} {Z : Set γ} (hZ : V₂.mem Z) :
     (sinj2 (V₀ := V₀) (V₁ := V₁) (h₀ := h₀) (h₁ := h₁) (h₂ := h₂) x₂).mem (j2 Z) ↔ x₂.mem Z := by
   constructor
@@ -528,10 +413,6 @@ variable {α β γ : Type*}
   · intro hx; exact Or.inr ⟨Z, hZ, rfl, hx⟩
 
 end SumInj
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 section SumInjMap
 
@@ -551,24 +432,6 @@ theorem sinj1_mono {x x' : V₁.Element} (hx : x ≤ x') :
   · exact Or.inl rfl
   · exact Or.inr ⟨Y, hY, rfl, hx Y hm⟩
 
-end SumInjMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section SumInjMap
-
-open Example62C
-
-variable {α β γ α' β' γ' : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'} {V₂' : NeighborhoodSystem γ'}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-  {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
-  {h₂' : ∀ Z, V₂'.mem Z → Z.Nonempty}
-
 theorem sinj2_mono {x x' : V₂.Element} (hx : x ≤ x') :
     sinj2 (V₀ := V₀) (V₁ := V₁) (h₀ := h₀) (h₁ := h₁) (h₂ := h₂) x ≤ sinj2 x' := by
   rintro W (rfl | ⟨Z, hZ, rfl, hm⟩)
@@ -576,10 +439,6 @@ theorem sinj2_mono {x x' : V₂.Element} (hx : x ≤ x') :
   · exact Or.inr ⟨Z, hZ, rfl, hx Z hm⟩
 
 end SumInjMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 section SumMap3
 
@@ -699,24 +558,6 @@ def sumMap3 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMap V₁ V�
       · exact Or.inr (Or.inr (Or.inr ⟨Z₂, Y'₂, rfl, rfl,
           f₂.mono hf hZ₂Z (j2_subset_j2.mp hW'W'₂) hZ₂ hY'₂⟩))
 
-end SumMap3
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section SumMap3
-
-open Example62C
-
-variable {α β γ α' β' γ' : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'} {V₂' : NeighborhoodSystem γ'}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-  {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
-  {h₂' : ∀ Z, V₂'.mem Z → Z.Nonempty}
-
 /-- The three-way sum map is always strict: `(f₀+f₁+f₂)(⊥) = ⊥`. (The master only relates to the
 master, since `master3` is not any tagged copy.) -/
 theorem isStrict_sumMap3 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMap V₁ V₁')
@@ -730,24 +571,6 @@ theorem isStrict_sumMap3 (f₀ : ApproximableMap V₀ V₀') (f₁ : Approximabl
   · exact absurd (hWX ▸ h0) none_not_mem_j0
   · exact absurd (hWX ▸ h0) none_not_mem_j1
   · exact absurd (hWX ▸ h0) none_not_mem_j2
-
-end SumMap3
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section SumMap3
-
-open Example62C
-
-variable {α β γ α' β' γ' : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'} {V₂' : NeighborhoodSystem γ'}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-  {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
-  {h₂' : ∀ Z, V₂'.mem Z → Z.Nonempty}
 
 /-- **Functoriality (composition): `(g₀∘f₀) + (g₁∘f₁) + (g₂∘f₂) = (g₀+g₁+g₂) ∘ (f₀+f₁+f₂)`.** -/
 theorem sumMap3_comp {α'' β'' γ'' : Type*} {V₀'' : NeighborhoodSystem α''}
@@ -814,24 +637,6 @@ theorem sumMap3_comp {α'' β'' γ'' : Type*} {V₀'' : NeighborhoodSystem α''}
       · obtain rfl : Y'₀ = Z' := j2_injective (hW'eq.symm.trans hW'Z')
         exact Or.inr (Or.inr (Or.inr ⟨Z, Z'', rfl, rfl, ⟨Y'₀, hf, hg⟩⟩))
 
-end SumMap3
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section SumMap3
-
-open Example62C
-
-variable {α β γ α' β' γ' : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'} {V₂' : NeighborhoodSystem γ'}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-  {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
-  {h₂' : ∀ Z, V₂'.mem Z → Z.Nonempty}
-
 /-- **Functoriality (identities): `I + I + I = I`.** -/
 theorem sumMap3_id :
     sumMap3 (h₀ := h₀) (h₁ := h₁) (h₂ := h₂) (h₀' := h₀) (h₁' := h₁) (h₂' := h₂)
@@ -868,10 +673,6 @@ theorem sumMap3_id :
       · exact Or.inr (Or.inr (Or.inr ⟨Z, Z', rfl, rfl, hZ, hZ', j2_subset_j2.mp hsub⟩))
 
 end SumMap3
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 section SumInjMap
 
@@ -914,24 +715,6 @@ theorem sumMap3_sinj0 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMa
       exact ⟨j0 X, Or.inr ⟨X, x₀.sub hx, rfl, hx⟩, Or.inr (Or.inl ⟨X, x₀.sub hx, rfl⟩),
         Or.inr (Or.inl ⟨Y', f₀.rel_cod hf, rfl⟩), Or.inr (Or.inl ⟨X, Y', rfl, rfl, hf⟩)⟩
 
-end SumInjMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section SumInjMap
-
-open Example62C
-
-variable {α β γ α' β' γ' : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'} {V₂' : NeighborhoodSystem γ'}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-  {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
-  {h₂' : ∀ Z, V₂'.mem Z → Z.Nonempty}
-
 /-- `(f₀+f₁+f₂)(inj₁ x) = inj₁(f₁ x)`. -/
 theorem sumMap3_sinj1 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMap V₁ V₁')
     (f₂ : ApproximableMap V₂ V₂') (x₁ : V₁.Element) :
@@ -960,24 +743,6 @@ theorem sumMap3_sinj1 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMa
     · obtain ⟨X, hx, hf⟩ := hm
       exact ⟨j1 X, Or.inr ⟨X, x₁.sub hx, rfl, hx⟩, Or.inr (Or.inr (Or.inl ⟨X, x₁.sub hx, rfl⟩)),
         Or.inr (Or.inr (Or.inl ⟨Y', f₁.rel_cod hf, rfl⟩)), Or.inr (Or.inr (Or.inl ⟨X, Y', rfl, rfl, hf⟩))⟩
-
-end SumInjMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section SumInjMap
-
-open Example62C
-
-variable {α β γ α' β' γ' : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-  {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'} {V₂' : NeighborhoodSystem γ'}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-  {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
-  {h₂' : ∀ Z, V₂'.mem Z → Z.Nonempty}
 
 /-- `(f₀+f₁+f₂)(inj₂ x) = inj₂(f₂ x)`. -/
 theorem sumMap3_sinj2 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMap V₁ V₁')
@@ -1009,10 +774,6 @@ theorem sumMap3_sinj2 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMa
         Or.inr (Or.inr (Or.inr ⟨Y', f₂.rel_cod hf, rfl⟩)), Or.inr (Or.inr (Or.inr ⟨X, Y', rfl, rfl, hf⟩))⟩
 
 end SumInjMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 open Example62C in
 /-- The morphism action of `T`: `T(f) = I_𝟙 + f + f` (identity on the terminator, `f` on each
@@ -1022,10 +783,6 @@ def tcMapHom {D E : StrictDomainObj.{w}} (f : (D ⟶ E)) :
   ⟨sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := D.nonempty) (h₂ := D.nonempty)
       (h₀' := Example62C.unitSys_nonempty) (h₁' := E.nonempty) (h₂' := E.nonempty)
       (idMap unitSys) f.1 f.1, isStrict_sumMap3 _ _ _⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 end
 end DomainTheory.NeighbourhoodSystems

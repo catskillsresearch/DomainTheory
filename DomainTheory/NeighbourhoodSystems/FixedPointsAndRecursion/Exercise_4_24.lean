@@ -48,31 +48,20 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise424
 open DomainTheory.NeighbourhoodSystems.Exercise414 Function
 section
 variable {A B : Type*} {f : A → B} {g : B → A}
+
 open Classical in
 /- concordance: source L2363 EXERCISE 4.24 Schroeder-Bernstein theorem -/
 /-- **Exercise 4.24 (Scott 1981, PRG-19).** Tarski's bijection `h : A → B`: `f` on the fixed set
 `X`, and the `g`-inverse off it. -/
 noncomputable def sbFun (f : A → B) (g : B → A) (a : A) : B :=
   if ha : a ∈ sbSet f g then f a else Classical.choose (mem_range_of_not_mem ha)
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- Off the fixed set, `h(a)` is a genuine `g`-preimage of `a`: `g(h(a)) = a`. -/
 theorem g_sbFun_not_mem {a : A} (ha : a ∉ sbSet f g) : g (sbFun f g a) = a := by
   rw [sbFun, dite_eq_right ha]
   exact Classical.choose_spec (mem_range_of_not_mem ha)
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 theorem sbFun_mem {a : A} (ha : a ∈ sbSet f g) : sbFun f g a = f a := dite_eq_left ha
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 theorem sbFun_injective (hf : Injective f) : Injective (sbFun f g) := by
   intro a₁ a₂ heq
@@ -92,10 +81,6 @@ theorem sbFun_injective (hf : Injective f) : Injective (sbFun f g) := by
     have : g (sbFun f g a₁) = g (sbFun f g a₂) := by rw [heq]
     rw [g_sbFun_not_mem h1, g_sbFun_not_mem h2] at this
     exact this
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 theorem sbFun_surjective (hg : Injective g) : Surjective (sbFun f g) := by
   intro b
@@ -109,18 +94,10 @@ theorem sbFun_surjective (hg : Injective g) : Surjective (sbFun f g) := by
   · -- `g b ∉ X`: then `h (g b) = b`.
     refine ⟨g b, ?_⟩
     exact hg (g_sbFun_not_mem hb)
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- **Exercise 4.24 (Scott 1981, PRG-19).** The one-one correspondence as an `Equiv A ≃ B`. -/
 noncomputable def schroeder_bernstein_equiv (hf : Injective f) (hg : Injective g) : A ≃ B :=
   Equiv.ofBijective (sbFun f g) ⟨sbFun_injective hf, sbFun_surjective hg⟩
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 open Classical in
 
@@ -129,6 +106,7 @@ open Classical in
 theorem schroeder_bernstein (hf : Injective f) (hg : Injective g) :
     ∃ h : A → B, Bijective h :=
   ⟨sbFun f g, sbFun_injective hf, sbFun_surjective hg⟩
+
 end
 
 section
@@ -143,12 +121,5 @@ end DomainTheory.NeighbourhoodSystems.Exercise424
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
-end ApproximableMap
-end
 end DomainTheory.NeighbourhoodSystems
 end

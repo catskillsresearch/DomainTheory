@@ -9,16 +9,13 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 section
 universe w
+
 /- concordance: source L3849 DEFINITION 6.13 continuity on domains -/
 /-- **Definition 6.13 (Scott 1981, PRG-19), monotone on domains.** A functor `T` is *monotone on
 domains* iff every subdomain relation `D ◁ E` is carried to a subdomain relation `T(D) ◁ T(E)` whose
 projection pair is `(T(i), T(j))` — see `MonotoneAt`. -/
 def MonotoneOnDomains (T : Endofunctor DomainObj.{w}) : Prop :=
   ∀ {α : Type w} {D E : NeighborhoodSystem α} (h : D ◁ E), MonotoneAt T h
-end
-
-section
-universe w
 
 /-- The **target-side neighbourhood family** of the image `T(D)` of a subsystem `h : D ◁ E`, viewed
 over `T(E)`'s carrier (using `MonotoneAt.carrier_eq` to transport neighbourhoods of `T(D)` to that
@@ -27,10 +24,6 @@ def targetFam (T : Endofunctor DomainObj.{w}) (hmono : MonotoneOnDomains T)
     {α : Type w} {D E : NeighborhoodSystem α} (h : D ◁ E) :
     Set (Set (T.obj ⟨α, E⟩).carrier) :=
   {Y | (T.obj ⟨α, D⟩).sys.mem ((hmono h).carrier_eq ▸ Y)}
-end
-
-section
-universe w
 
 /-- **Definition 6.13 (Scott 1981, PRG-19), continuous on domains.** A monotone functor `T` is
 *continuous on domains* iff `λD. T(D) : {D ∣ D ◁ E} → {D' ∣ D' ◁ T(E)}` is approximable. In the
@@ -45,6 +38,7 @@ def ContinuousOnDomains (T : Endofunctor DomainObj.{w}) : Prop :=
       {U : NeighborhoodSystem α} (hUE : U ◁ E)
       (_hU : ∀ X, U.mem X ↔ ∃ D ∈ ℱ, D.mem X),
       targetFam T hmono hUE = ⋃ D, ⋃ hD : D ∈ ℱ, targetFam T hmono (hℱ hD)
+
 end
 
 section
@@ -100,14 +94,6 @@ inductive FExpr where
   | sum : FExpr → FExpr → FExpr
   | prod : FExpr → FExpr → FExpr
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- A non-empty `b`-tagged copy can never sit inside a `b'`-tagged copy for `b ≠ b'`. -/
 theorem embBit_not_subset_cross {b b' : Bool} (h : b ≠ b') {X Y : Set Str} (hX : X.Nonempty)
     (hsub : embBit b X ⊆ embBit b' Y) : False := by
@@ -162,14 +148,6 @@ def prodMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMa
     obtain ⟨hsX', hsY'⟩ := prodTokNbhd_subset_iff.mp hZZ'
     exact ⟨X₂, Y₂, X'₃, Y'₃, f₀.mono h0 hsX hsX' hX₂ hX'₃, f₁.mono h1 hsY hsY' hY₂ hY'₃, rfl, rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **The one-neighbourhood system `{Γ}`** over `{0,1}*`: its only neighbourhood is `Γ` itself, and
 its master (token set) is `Γ`. It is `∅`-free precisely because `Γ` is non-empty. -/
 def singletonSys (Γ : Set Str) (h : Γ.Nonempty) : ScottSys where
@@ -211,14 +189,6 @@ def FExpr.RootedConst : FExpr → Prop
   | .sum a b => a.RootedConst ∧ b.RootedConst
   | .prod a b => a.RootedConst ∧ b.RootedConst
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **The token-level master recursion.** `mFun T Γ` computes `tok(T({Γ}))` purely from `Γ`, without
 touching the neighbourhood data of `{Γ}` (`mFun_eq_master`): constants are constant, the identity
 returns `Γ`, and both sum and product wrap the two component token sets with the tags `0,1` under a
@@ -229,26 +199,10 @@ def mFun : FExpr → Set Str → Set Str
   | .sum T₀ T₁, Γ => insert ([] : Str) (embBit false (mFun T₀ Γ) ∪ embBit true (mFun T₁ Γ))
   | .prod T₀ T₁, Γ => insert ([] : Str) (embBit false (mFun T₀ Γ) ∪ embBit true (mFun T₁ Γ))
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- The **Kleene iteration** `mFunⁿ({Λ})` whose union is the least fixed point above `{Λ}`. -/
 def mIter (T : FExpr) : ℕ → Set Str
   | 0 => {([] : Str)}
   | n + 1 => mFun T (mIter T n)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 /-- **The action of `T` on objects.** -/
 def FExpr.obj : FExpr → ScottSys → ScottSys
@@ -256,14 +210,6 @@ def FExpr.obj : FExpr → ScottSys → ScottSys
   | .var, X => X
   | .sum T₀ T₁, X => (T₀.obj X).sum (T₁.obj X)
   | .prod T₀ T₁, X => (T₀.obj X).prod (T₁.obj X)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 /-- **`f₀ + f₁`, the action of the sum functor on (approximable) maps.** It carries the master to the
 master (so it is strict), a left copy `0X` to `0X'` whenever `X f₀ X'`, and a right copy `1Y` to
@@ -330,14 +276,6 @@ def sumMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap
         · exact Or.inr (Or.inr ⟨Y₂, Y₃,
             f₁.mono hrel (embBit_subset.mp hWW) (embBit_subset.mp hZZ') hY₂ hY₃, rfl, rfl⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **The action of `T` on (approximable) maps.** Constants act by the identity, the identity functor
 acts by `f` itself, and sums/products act by the bifunctorial combinators `sumMapTok`/`prodMapTok`. -/
 def FExpr.map : (T : FExpr) → {X Y : ScottSys} → ApproximableMap X.sys Y.sys →
@@ -347,24 +285,8 @@ def FExpr.map : (T : FExpr) → {X Y : ScottSys} → ApproximableMap X.sys Y.sys
   | .sum T₀ T₁, _, _, f => sumMapTok (T₀.map f) (T₁.map f)
   | .prod T₀ T₁, _, _, f => prodMapTok (T₀.map f) (T₁.map f)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **`tok(𝒟)`** — the underlying set of tokens of a system, i.e. its master neighbourhood `Δ`. -/
 def ScottSys.tok (D : ScottSys) : Set Str := D.sys.master
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 /-- `mFun T Γ` is exactly the token set `tok(T({Γ})) = (T.obj {Γ}).sys.master`. -/
 theorem mFun_eq_master : (T : FExpr) → {Γ : Set Str} → (h : Γ.Nonempty) →

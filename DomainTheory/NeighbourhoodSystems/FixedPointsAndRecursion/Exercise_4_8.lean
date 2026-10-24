@@ -11,6 +11,7 @@ open NeighborhoodSystem ApproximableMap
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
+
 /- concordance: source L2209 EXERCISE 4.8 fixed-point induction -/
 /-- **Exercise 4.8 (Scott 1981, PRG-19) — fixed-point induction.** If a predicate `P` holds at `⊥`,
 is preserved by `f`, and is closed under sups of monotone chains, then it holds at `fix(f)`. -/
@@ -27,14 +28,6 @@ theorem fix_induction (f : ApproximableMap V V) (P : V.Element → Prop)
     | succ k ih => rw [iterElem_succ]; exact hstep _ ih
   rw [fixElement_eq_supChain f]
   exact hsup f.iterElem hmono hP
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- **Exercise 4.8 (Scott 1981, PRG-19) — application to `S = {x ∣ a(x) = b(x)}`.** If `a(⊥) = b(⊥)`
 and `f` commutes with both `a` and `b` (`f ∘ a = a ∘ f`, `f ∘ b = b ∘ f`), then `a` and `b` agree at
@@ -148,9 +141,5 @@ end DomainTheory.NeighbourhoodSystems.ApproximableMap
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
-section
-variable {α : Type*}
-
-end
 end DomainTheory.NeighbourhoodSystems
 end

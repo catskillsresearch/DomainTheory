@@ -84,8 +84,6 @@ theorem nestedOrDisjoint : NestedOrDisjoint memC := by
       exact h h2
 end
 
-section
-end
 end DomainTheory.NeighbourhoodSystems.Example44
 
 section
@@ -214,36 +212,12 @@ namespace ApproximableMap
 def iterFrom (f : ApproximableMap V V) (a : V.Element) (n : ℕ) : V.Element :=
   (f.toElementMap)^[n] a
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 @[simp] theorem iterFrom_zero (f : ApproximableMap V V) (a : V.Element) :
     f.iterFrom a 0 = a := rfl
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 theorem iterFrom_succ (f : ApproximableMap V V) (a : V.Element) (n : ℕ) :
     f.iterFrom a (n + 1) = f.toElementMap (f.iterFrom a n) := by
   rw [iterFrom, iterFrom, Function.iterate_succ', Function.comp_apply]
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- One step of the chain: `fⁿ(a) ⊑ fⁿ⁺¹(a)` (proved choice-free by induction). -/
 theorem iterFrom_step (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toElementMap a)
@@ -254,14 +228,6 @@ theorem iterFrom_step (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.to
     rw [iterFrom_succ f a k, iterFrom_succ f a (k + 1)]
     exact f.toElementMap_mono ih
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- When `a ⊑ f(a)`, the chain `fⁿ(a)` is monotone: `n ≤ m ⟹ fⁿ(a) ⊑ fᵐ(a)`. Proved by induction
 on `n ≤ m` (so as to stay **choice-free**, unlike `monotone_nat_of_le_succ`). -/
 theorem iterFrom_mono (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toElementMap a)
@@ -270,28 +236,12 @@ theorem iterFrom_mono (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.to
   | refl => exact le_refl _
   | step _ ih => exact le_trans ih (iterFrom_step f ha _)
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- The fixed point of `f` lying above a pre-fixed-point candidate `a` (with `a ⊑ f(a)`),
 constructed as the directed union `⊔ₙ fⁿ(a)`. -/
 def fixAbove (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toElementMap a) : V.Element :=
   NeighborhoodSystem.iSupDirected (f.iterFrom a)
     (fun i j => ⟨max i j, iterFrom_mono f ha (le_max_left i j),
       iterFrom_mono f ha (le_max_right i j)⟩)
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 end ApproximableMap
 end

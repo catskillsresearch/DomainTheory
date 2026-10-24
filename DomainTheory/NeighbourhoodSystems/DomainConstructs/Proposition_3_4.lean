@@ -40,14 +40,5 @@ theorem toElementMap₂_toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) (x 
     exact ⟨X, Y, hX, hY, hrel⟩
 end
 
-section
-open NeighborhoodSystem
-variable {α β γ δ : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₂ : NeighborhoodSystem γ}
-open ApproximableMap
-variable {V₃ : NeighborhoodSystem δ}
-
-end
 end DomainTheory.NeighbourhoodSystems
 end

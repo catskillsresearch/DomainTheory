@@ -65,11 +65,6 @@ theorem denote_eq_empty_iff (e : SExpr) :
     rw [← toNFA_accepts e] at hx
     obtain ⟨s, hs, hse⟩ := hx
     exact h s hs x hse
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
 
 /-- A nonempty accepted language ⟺ some accept state is reachable by reading some word. -/
 theorem nfa_accepts_nonempty_iff (M : NFA Bool σ) :
@@ -77,11 +72,6 @@ theorem nfa_accepts_nonempty_iff (M : NFA Bool σ) :
   constructor
   · rintro ⟨x, S, hS, hSe⟩; exact ⟨S, hS, x, hSe⟩
   · rintro ⟨S, hS, x, hSe⟩; exact ⟨x, S, hS, hSe⟩
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
 
 section ShortWord
 
@@ -99,18 +89,6 @@ theorem nfa_accepts_nonempty_iff_short :
   · intro ⟨w, _, hw⟩
     exact ⟨w, hw⟩
 
-end ShortWord
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-
-section ShortWord
-
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
-
-
 omit [Fintype σ] in
 theorem pathStateAt_last {s t : σ} {x : List Bool} (p : M.Path s t x) :
     pathStateAt p x.length (Nat.le_refl _) = t := by
@@ -121,6 +99,7 @@ theorem pathStateAt_last {s t : σ} {x : List Bool} (p : M.Path s t x) :
     exact ih
 
 end ShortWord
+
 end
 
 section
@@ -5052,19 +5031,11 @@ structure ComputablePresentation (V : NeighborhoodSystem α) where
   masterIdx : ℕ
   /-- `X masterIdx = Δ`. -/
   masterIdx_spec : X masterIdx = V.master
-end
-
-section
-variable {α : Type*}
 
 /-- **Definition 7.1 (Scott 1981, PRG-19) — effectively given.** A neighbourhood system is
 *effectively given* when it admits a computable presentation. -/
 def NeighborhoodSystem.IsEffectivelyGiven (V : NeighborhoodSystem α) : Prop :=
   Nonempty (ComputablePresentation V)
-end
-
-section
-variable {α : Type*}
 
 namespace ComputablePresentation
 
@@ -5072,16 +5043,6 @@ variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 /-- Reindexing `(n, m) ↦ (n, m, n)` on `Nat.pair` codes: `t ↦ pair n (pair m n)`. -/
 def inclShuffle (t : ℕ) : ℕ := Nat.pair t.unpair.1 (Nat.pair t.unpair.2 t.unpair.1)
-
-end ComputablePresentation
-end
-
-section
-variable {α : Type*}
-
-namespace ComputablePresentation
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 /-- **Reindexing a computable presentation along a primitive-recursive involution.** Given
 `φ : ℕ → ℕ` with `φ ∘ φ = id` (so `φ` is automatically a bijection, with itself as inverse) and
@@ -5128,20 +5089,11 @@ def reindexInvolutive (P : ComputablePresentation V) (φ : ℕ → ℕ)
   masterIdx := φ P.masterIdx
   masterIdx_spec := by show P.X (φ (φ P.masterIdx)) = V.master; rw [hφinv]; exact P.masterIdx_spec
 
-end ComputablePresentation
-end
-
-section
-variable {α : Type*}
-
-namespace ComputablePresentation
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
 /-- Swap the two components of a `Nat.pair` code: `t ↦ pair m n`. -/
 def swapPair (t : ℕ) : ℕ := Nat.pair t.unpair.2 t.unpair.1
 
 end ComputablePresentation
+
 end
 
 section
@@ -5162,10 +5114,6 @@ def unitPresentation : ComputablePresentation unitSys where
   inter_spec _ := by rw [Set.inter_self]
   masterIdx := 0
   masterIdx_spec := rfl
-end
-
-section
-variable {α : Type*}
 
 namespace ComputablePresentation
 
@@ -5197,6 +5145,7 @@ theorem eq_computable : RecDecidable₂ (fun n m => P.X n = P.X m) := by
 
 
 end ComputablePresentation
+
 end
 
 section
@@ -5228,9 +5177,5 @@ end
 end Exercise722
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
-section
-variable {α β γ : Type*}
-
-end
 end DomainTheory.NeighbourhoodSystems
 end

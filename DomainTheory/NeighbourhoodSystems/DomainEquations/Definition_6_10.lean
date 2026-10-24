@@ -33,16 +33,8 @@ structure Subsystem (D E : NeighborhoodSystem α) : Prop where
   sub : ∀ {X : Set α}, D.mem X → E.mem X
   /-- Consistency in `D` is the same as in `E`: if `X, Y ∈ D` and `X ∩ Y ∈ E`, then `X ∩ Y ∈ D`. -/
   inter_closed : ∀ {X Y : Set α}, D.mem X → D.mem Y → E.mem (X ∩ Y) → D.mem (X ∩ Y)
-end
-
-section
-variable {α : Type*}
 
 @[inherit_doc] infix:50 " ◁ " => Subsystem
-end
-
-section
-variable {α : Type*}
 
 namespace Subsystem
 
@@ -57,26 +49,10 @@ theorem _root_.DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.ext {D E : N
   subst hmaster
   rfl
 
-end Subsystem
-end
-
-section
-variable {α : Type*}
-
-namespace Subsystem
-
 /-- The subsystem relation is **antisymmetric**: `D ◁ E` and `E ◁ D` force `D = E`. (Mutual `sub`
 gives equal `mem`, and `master_eq` gives equal masters.) -/
 theorem antisymm {D E : NeighborhoodSystem α} (h₁ : D ◁ E) (h₂ : E ◁ D) : D = E :=
   NeighborhoodSystem.ext (fun _ => ⟨fun h => h₁.sub h, fun h => h₂.sub h⟩) h₁.master_eq
-
-end Subsystem
-end
-
-section
-variable {α : Type*}
-
-namespace Subsystem
 
 /-- The subsystem relation is **reflexive**: `D ◁ D`. (The `inter_closed` clause is trivial — the
 hypothesis is already the conclusion.) -/
@@ -84,14 +60,6 @@ theorem refl (D : NeighborhoodSystem α) : D ◁ D where
   master_eq := rfl
   sub h := h
   inter_closed _ _ h := h
-
-end Subsystem
-end
-
-section
-variable {α : Type*}
-
-namespace Subsystem
 
 /-- The subsystem relation is **transitive**: `D ◁ E` and `E ◁ F` give `D ◁ F`.
 
@@ -102,14 +70,6 @@ theorem trans {D E F : NeighborhoodSystem α} (h₁ : D ◁ E) (h₂ : E ◁ F) 
   sub h := h₂.sub (h₁.sub h)
   inter_closed hX hY hXY :=
     h₁.inter_closed hX hY (h₂.inter_closed (h₁.sub hX) (h₁.sub hY) hXY)
-
-end Subsystem
-end
-
-section
-variable {α : Type*}
-
-namespace Subsystem
 
 /-- **Scott's remark (the prose after Definition 6.10).** Once `D₀` and `D₁` both sit inside a
 common system `E` as subdomains, the subdomain relation between them is just inclusion of
@@ -130,6 +90,7 @@ theorem subsystem_iff_subset_of_common {D₀ D₁ E : NeighborhoodSystem α}
     exact h₀.inter_closed hX hY (h₁.sub hXY)
 
 end Subsystem
+
 end
 
 end DomainTheory.NeighbourhoodSystems
@@ -163,67 +124,17 @@ variable {α : Type*}
 /-- The master neighbourhood `Γ = {1,2}* 0 Δ` of `D^§`: any path, `D`-token in `Δ`. -/
 def Gamma (D : NeighborhoodSystem α) : Set (List Bool × α) := {t | t.2 ∈ D.master}
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 /-- `1P = {(1::p, a) ∣ (p, a) ∈ P}`: the `1`-prefixed copy of a `D^§`-neighbourhood `P`. -/
 def embL (P : Set (List Bool × α)) : Set (List Bool × α) := {t | ∃ p', t.1 = true :: p' ∧ (p', t.2) ∈ P}
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 /-- `2Q = {(2::q, a) ∣ (q, a) ∈ Q}`: the `2`-prefixed copy of a `D^§`-neighbourhood `Q`. -/
 def embR (Q : Set (List Bool × α)) : Set (List Bool × α) := {t | ∃ q', t.1 = false :: q' ∧ (q', t.2) ∈ Q}
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 /-- `1P ∪ 2Q`: the product-style neighbourhood of `D^§`. -/
 def embPair (P Q : Set (List Bool × α)) : Set (List Bool × α) := embL P ∪ embR Q
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 /-- `0X = {([], a) ∣ a ∈ X}`: the `0`-tagged copy of a `D`-neighbourhood `X` (empty `{1,2}`-path). -/
 def embZero (X : Set α) : Set (List Bool × α) := {t | t.1 = [] ∧ t.2 ∈ X}
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 end Example61
 end

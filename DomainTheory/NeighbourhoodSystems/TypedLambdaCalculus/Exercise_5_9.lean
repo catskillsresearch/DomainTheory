@@ -15,6 +15,7 @@ open NeighborhoodSystem ApproximableMap
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
+
 /- concordance: source L3015 EXERCISE 5.9 common fixed points -/
 /-- **Exercise 5.9 (Scott 1981, PRG-19).** Commuting approximable maps have a *least common fixed
 point* `x = f(x) = g(x)`. -/
@@ -55,24 +56,8 @@ theorem commuting_least_common_fixed {f g : ApproximableMap V V} (hcomm : f.comp
   have haw : a ≤ w := fixElement_le_of_toElementMap_le f (le_of_eq hfw)
   exact fixAbove_least g ha_le haw (le_of_eq hgw)
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 theorem iterElem_zero' (f : ApproximableMap V V) : f.iterElem 0 = V.bot := by
   rw [iterElem_eq_iterate, Function.iterate_zero_apply]
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- `(f²)ⁿ(⊥) = f^{2n}(⊥)`. -/
 theorem comp_self_iterElem (f : ApproximableMap V V) (n : ℕ) :
@@ -82,14 +67,6 @@ theorem comp_self_iterElem (f : ApproximableMap V V) (n : ℕ) :
   | succ k ih =>
     have h2 : 2 * (k + 1) = 2 * k + 1 + 1 := by ring
     rw [iterElem_succ, ih, toElementMap_comp, h2, iterElem_succ, iterElem_succ]
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- **Exercise 5.9 (Scott 1981, PRG-19).** If `f, g` commute and `f(⊥) = g(⊥)`, then
 `fix(f) = fix(g)`. -/
@@ -142,14 +119,6 @@ theorem fixElement_eq_of_commuting_bot {f g : ApproximableMap V V} (hcomm : f.co
   apply le_antisymm
   · exact fixElement_le_of_toElementMap_le f (le_of_eq hffixg)
   · exact fixElement_le_of_toElementMap_le g (le_of_eq hgfixf)
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- **Exercise 5.9 (Scott 1981, PRG-19).** In particular `fix(f) = fix(f²)`: the `f²`-chain
 `f^{2n}(⊥)` is cofinal in the `f`-chain `fⁿ(⊥)`, so the two least fixed points coincide. -/

@@ -157,49 +157,25 @@ variable {V : NeighborhoodSystem α}
 /-- The **double-indexed fiber** of a `(D^∞)^∞`-set: `fiber2 S i j = fiber (fiber S i) j`, the tokens
 `a` with `(i, (j, a)) ∈ S`. -/
 def fiber2 (S : Set (ℕ × (ℕ × α))) (i j : ℕ) : Set α := fiber (fiber S i) j
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 @[simp] theorem mem_fiber2 {S : Set (ℕ × (ℕ × α))} {i j : ℕ} {a : α} :
     a ∈ fiber2 S i j ↔ (i, (j, a)) ∈ S := Iff.rfl
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 theorem fiber2_inter (S S' : Set (ℕ × (ℕ × α))) (i j : ℕ) :
     fiber2 (S ∩ S') i j = fiber2 S i j ∩ fiber2 S' i j := rfl
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 theorem fiber2_master (i j : ℕ) :
     fiber2 ((iterSys (iterSys V)).master) i j = V.master := by
   show fiber (fiber ((iterSys (iterSys V)).master) i) j = V.master
   rw [fiber_iterSys_master, fiber_iterSys_master]
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 theorem fiber2_mono {S S' : Set (ℕ × (ℕ × α))} (h : S ⊆ S') (i j : ℕ) :
     fiber2 S i j ⊆ fiber2 S' i j := fun _ ha => h ha
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 /-- `V.mem (fiber2 S i j)` for every `(D^∞)^∞`-neighbourhood `S`. -/
 theorem mem_fiber2_of_mem {S : Set (ℕ × (ℕ × α))} (hS : (iterSys (iterSys V)).mem S) (i j : ℕ) :
     V.mem (fiber2 S i j) := (hS.1 i).1 j
+
 end
 
 end Exercise718
@@ -447,37 +423,17 @@ variable {V : NeighborhoodSystem α}
 /-- The `(D^∞)^∞`-set reindexing a `D^∞`-neighbourhood `W`: `fiber2 (reindexF W) i j = fiber W (pair i j)`. -/
 def reindexF (W : Set (ℕ × α)) : Set (ℕ × (ℕ × α)) :=
   {p | p.2.2 ∈ fiber W (Nat.pair p.1 p.2.1)}
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 @[simp] theorem fiber2_reindexF (W : Set (ℕ × α)) (i j : ℕ) :
     fiber2 (reindexF W) i j = fiber W (Nat.pair i j) := rfl
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 /-- The `D^∞`-set reindexing a `(D^∞)^∞`-neighbourhood `S`:
 `fiber (reindexG S) k = fiber2 S (unpair k).1 (unpair k).2`. -/
 def reindexG (S : Set (ℕ × (ℕ × α))) : Set (ℕ × α) :=
   {p | p.2 ∈ fiber2 S (Nat.unpair p.1).1 (Nat.unpair p.1).2}
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 @[simp] theorem fiber_reindexG (S : Set (ℕ × (ℕ × α))) (k : ℕ) :
     fiber (reindexG S) k = fiber2 S (Nat.unpair k).1 (Nat.unpair k).2 := rfl
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 theorem exists_inner_bound {S : Set (ℕ × (ℕ × α))} (hS : (iterSys (iterSys V)).mem S) :
     ∀ n, ∃ M, ∀ i, i < n → ∀ j, M ≤ j → fiber2 S i j = V.master := by
@@ -492,11 +448,6 @@ theorem exists_inner_bound {S : Set (ℕ × (ℕ × α))} (hS : (iterSys (iterSy
     · exact hM i hlt j (le_trans (le_max_left _ _) hj)
     · subst heq
       exact hMn j (le_trans (le_max_right _ _) hj)
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 /-- `Nat.pair` is strictly monotone on strict componentwise order (local copy of the
 `Proposition77` lemma to avoid the heavy import). -/
@@ -520,11 +471,6 @@ theorem pair_lt_pair_of_lt {x y i j : ℕ} (hx : x < i) (hy : y < j) :
     · rw [max_eq_left h]; have := le_max_left i j; omega
   have h4 : (max x y + 1) * (max x y + 1) ≤ max i j * max i j := Nat.mul_le_mul h3 h3
   omega
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 theorem reindexF_mem {W : Set (ℕ × α)} (hW : (iterSys V).mem W) :
     (iterSys (iterSys V)).mem (reindexF W) := by
@@ -543,11 +489,6 @@ theorem reindexF_mem {W : Set (ℕ × α)} (hW : (iterSys V).mem W) :
     show fiber2 (reindexF W) i j = fiber ((iterSys V).master) j
     rw [fiber2_reindexF, fiber_iterSys_master]
     exact hNw (Nat.pair i j) (le_trans hi (le_pair_left i j))
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 theorem reindexF_subset_iff {W : Set (ℕ × α)} {S : Set (ℕ × (ℕ × α))} :
     reindexF W ⊆ S ↔ ∀ i j, fiber W (Nat.pair i j) ⊆ fiber2 S i j := by
@@ -559,11 +500,6 @@ theorem reindexF_subset_iff {W : Set (ℕ × α)} {S : Set (ℕ × (ℕ × α))}
     refine subset_of_fiber_subset (fun i => subset_of_fiber_subset (fun j => ?_))
     show fiber2 (reindexF W) i j ⊆ fiber2 S i j
     rw [fiber2_reindexF]; exact h i j
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 /-- **The forward map `F : D^∞ → (D^∞)^∞`** of `D^∞ ≅ (D^∞)^∞` (reindexing fibers along `Nat.pair`):
 `W F S ↔ ∀ i j, fiber W (pair i j) ⊆ fiber2 S i j`. -/
@@ -582,20 +518,10 @@ def Fmap (V : NeighborhoodSystem α) : ApproximableMap (iterSys V) (iterSys (ite
   mono := by
     rintro W W' S S' ⟨hW, hS, hf⟩ hW'W hSS' hW' hS'
     exact ⟨hW', hS', fun i j => ((fiber_mono hW'W _).trans (hf i j)).trans (fiber2_mono hSS' i j)⟩
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 @[simp] theorem Fmap_rel {W : Set (ℕ × α)} {S : Set (ℕ × (ℕ × α))} :
     (Fmap V).rel W S ↔ (iterSys V).mem W ∧ (iterSys (iterSys V)).mem S ∧
       ∀ i j, fiber W (Nat.pair i j) ⊆ fiber2 S i j := Iff.rfl
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 theorem reindexG_mem {S : Set (ℕ × (ℕ × α))} (hS : (iterSys (iterSys V)).mem S) :
     (iterSys V).mem (reindexG S) := by
@@ -618,11 +544,6 @@ theorem reindexG_mem {S : Set (ℕ × (ℕ × α))} (hS : (iterSys (iterSys V)).
     · have h1 : fiber S i = (iterSys V).master := hNo i (not_lt.mp hiN)
       show fiber2 S i j = V.master
       rw [fiber2, h1, fiber_iterSys_master]
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 theorem reindexG_subset_iff {S : Set (ℕ × (ℕ × α))} {W : Set (ℕ × α)} :
     reindexG S ⊆ W ↔ ∀ k, fiber2 S (Nat.unpair k).1 (Nat.unpair k).2 ⊆ fiber W k := by
@@ -633,11 +554,6 @@ theorem reindexG_subset_iff {S : Set (ℕ × (ℕ × α))} {W : Set (ℕ × α)}
   · intro h
     refine subset_of_fiber_subset (fun k => ?_)
     rw [fiber_reindexG]; exact h k
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 /-- **The inverse map `G : (D^∞)^∞ → D^∞`** (reindexing fibers along `Nat.unpair`):
 `S G W ↔ ∀ k, fiber2 S (unpair k).1 (unpair k).2 ⊆ fiber W k`. -/
@@ -656,20 +572,10 @@ def Gmap (V : NeighborhoodSystem α) : ApproximableMap (iterSys (iterSys V)) (it
   mono := by
     rintro S S' W W' ⟨hS, hW, hg⟩ hS'S hWW' hS' hW'
     exact ⟨hS', hW', fun k => ((fiber2_mono hS'S _ _).trans (hg k)).trans (fiber_mono hWW' k)⟩
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 @[simp] theorem Gmap_rel {S : Set (ℕ × (ℕ × α))} {W : Set (ℕ × α)} :
     (Gmap V).rel S W ↔ (iterSys (iterSys V)).mem S ∧ (iterSys V).mem W ∧
       ∀ k, fiber2 S (Nat.unpair k).1 (Nat.unpair k).2 ⊆ fiber W k := Iff.rfl
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 /-- `F ∘ G = I_{(D^∞)^∞}`. -/
 theorem Fmap_comp_Gmap : (Fmap V).comp (Gmap V) = idMap (iterSys (iterSys V)) := by
@@ -690,11 +596,6 @@ theorem Fmap_comp_Gmap : (Fmap V).comp (Gmap V) = idMap (iterSys (iterSys V)) :=
     · intro i j
       rw [fiber_reindexG, unpair_pair_fst, unpair_pair_snd]
       exact fiber2_mono hSS' i j
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
 
 /-- `G ∘ F = I_{D^∞}`. -/
 theorem Gmap_comp_Fmap : (Gmap V).comp (Fmap V) = idMap (iterSys V) := by
@@ -714,6 +615,7 @@ theorem Gmap_comp_Fmap : (Gmap V).comp (Fmap V) = idMap (iterSys V) := by
     · intro k
       rw [fiber2_reindexF, pair_unpair]
       exact fiber_mono hWW' k
+
 end
 
 section
@@ -755,13 +657,6 @@ theorem Gmap_rel_enum_iff (s n : ℕ) :
     · exact hbd k hk
     · rw [iterIdx_ge (not_lt.mp hk), P.masterIdx_spec]
       exact V.sub_master (P.mem_X _)
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
-variable {P}
 
 /-- **`G` is computable** (in fact recursively decidable): a single bounded `∀` of `incl_computable`. -/
 theorem Gmap_isComputable :
@@ -798,6 +693,7 @@ theorem Gmap_isComputable :
   refine (RecDecidable.of_iff (fun t => ?_) hp₀).re
   simp only [iterPresentation_X, unpair_pair_fst, unpair_pair_snd]
   exact Gmap_rel_enum_iff t.unpair.1 t.unpair.2
+
 end
 
 section
@@ -843,13 +739,6 @@ theorem Fmap_rel_enum_iff (n m : ℕ) :
         rw [iterIdx_ge (not_lt.mp hi), masterIdx_iterPresentation]
       rw [h0, iterIdx_ge (Nat.zero_le j), P.masterIdx_spec]
       exact V.sub_master (P.mem_X _)
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
-variable {P}
 
 /-- **`F` is computable** (in fact recursively decidable): its index relation reduces to a nested
 bounded `∀` of `incl_computable`. -/
@@ -898,13 +787,6 @@ theorem Fmap_isComputable :
   -- match the relation with the nested bounded `∀`
   simp only [iterPresentation_X, unpair_pair_fst, unpair_pair_snd]
   exact Fmap_rel_enum_iff t.unpair.1 t.unpair.2
-end
-
-section
-variable {α β : Type*}
-variable {V : NeighborhoodSystem α}
-variable (P : ComputablePresentation V)
-variable {P}
 
 /-- **Exercise 7.18 (Scott 1981, PRG-19) — `D^∞ ≅ (D^∞)^∞` is an *effective* isomorphism.** Relative
 to `iterPresentation P` and `iterPresentation (iterPresentation P)`, the reindexing maps `F`, `G` are
@@ -917,6 +799,7 @@ def iterIterEffectiveIso (P : ComputablePresentation V) :
   invMap_computable := Gmap_isComputable
   left_inv := Gmap_comp_Fmap
   right_inv := Fmap_comp_Gmap
+
 end
 
 end Exercise718
@@ -1176,19 +1059,11 @@ this session's edit scope; a future session may hoist `ConsistencyPresentation` 
 them for dot-notation parity with `IsEffectivelyGiven`. -/
 class PartiallyEffectivelyGiven (V : NeighborhoodSystem α) : Prop where
   out : Nonempty (ConsistencyPresentation V)
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem c9b5_encodeListBool_eq (σ : List Bool) :
     Domain.Recursive.c9b5_encodeListBool σ = encodeListBool σ := by
   unfold Domain.Recursive.c9b5_encodeListBool encodeListBool
   congr 1
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem c9b5_sexprDepth_eq (e : SExpr) : Domain.Recursive.c9b5_sexprDepth e = sexprDepth e := by
   induction e with
@@ -1196,10 +1071,6 @@ theorem c9b5_sexprDepth_eq (e : SExpr) : Domain.Recursive.c9b5_sexprDepth e = se
   | single _ => rfl
   | cat a b iha ihb => simp [Domain.Recursive.c9b5_sexprDepth, sexprDepth, iha, ihb]
   | cap a b iha ihb => simp [Domain.Recursive.c9b5_sexprDepth, sexprDepth, iha, ihb]
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem c9b5_sexprGodelEncode_eq (e : SExpr) :
     Domain.Recursive.c9b5_sexprGodelEncode e = SExpr.encode e := by
@@ -1208,10 +1079,6 @@ theorem c9b5_sexprGodelEncode_eq (e : SExpr) :
   | single σ => simp [Domain.Recursive.c9b5_sexprGodelEncode, SExpr.encode, c9b5_encodeListBool_eq]
   | cat a b iha ihb => simp [Domain.Recursive.c9b5_sexprGodelEncode, SExpr.encode, iha, ihb]
   | cap a b iha ihb => simp [Domain.Recursive.c9b5_sexprGodelEncode, SExpr.encode, iha, ihb]
-end
-
-section
-set_option maxHeartbeats 5000000
 
 /-- **Fuel sufficiency:** the recovered expression never needs more depth than the fuel it was
 decoded with. -/
@@ -1263,20 +1130,12 @@ theorem decodeFuel_depth_le {fuel c : ℕ} {e : SExpr} (h : decodeFuel fuel c = 
           omega
     | _ + 4 =>
       rw [decodeFuel_succ_junk fuel c (by omega)] at h; simp at h
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem natBool_eq_some_iff (n : ℕ) (b : Bool) : natBool n = some b ↔ n = boolNat b := by
   match n with
   | 0 => cases b <;> simp [natBool, boolNat]
   | 1 => cases b <;> simp [natBool, boolNat]
   | n + 2 => cases b <;> simp [natBool, boolNat]
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem mapM_natBool_eq_some (l : List ℕ) (σ : List Bool)
     (h : l.mapM natBool = some σ) : l = σ.map boolNat := by
@@ -1293,10 +1152,6 @@ theorem mapM_natBool_eq_some (l : List ℕ) (σ : List Bool)
         simp only [hnx, htx] at h
         obtain rfl : σ = b :: ys := by simpa using h.symm
         simp [ih ys htx, (natBool_eq_some_iff x b).mp hnx]
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem decodeListBool_eq_some (n : ℕ) (σ : List Bool) (h : decodeListBool n = some σ) :
     n = encodeListBool σ := by
@@ -1304,10 +1159,6 @@ theorem decodeListBool_eq_some (n : ℕ) (σ : List Bool) (h : decodeListBool n 
   calc n = encodeList (decodeList n) := (encodeList_decodeList n).symm
     _ = encodeList (σ.map boolNat) := by rw [hl]
     _ = encodeListBool σ := rfl
-end
-
-section
-set_option maxHeartbeats 5000000
 
 /-- **Soundness:** any code `c` that `decodeFuel` accepts is the canonical `SExpr.encode` of the
 recovered expression (`decodeList`/`decodeListBool`/`Nat.pair` are all injective in the relevant
@@ -1371,10 +1222,6 @@ theorem decodeFuel_sound {fuel c : ℕ} {e : SExpr} (h : decodeFuel fuel c = som
           rw [← h, SExpr.encode, hc3, hpc]
     | _ + 4 =>
       rw [decodeFuel_succ_junk fuel c (by omega)] at h; simp at h
-end
-
-section
-set_option maxHeartbeats 5000000
 
 /-- `{0,1}` packaging of `ssysActive` via `decodeFuelOkChar` (C9b1) + `decideNonemptyBChar`
 (C9b6), operating purely on the Gödel code `n.unpair.1` with fuel `n.unpair.2 + 1` (mirroring
@@ -1382,10 +1229,6 @@ set_option maxHeartbeats 5000000
 def ssysActiveChar (n : ℕ) : ℕ :=
   mulBit (decodeFuelOkChar (n.unpair.2 + 1) n.unpair.1)
     (decideNonemptyBChar (n.unpair.2 + 1) n.unpair.1)
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem primrec_ssysActiveChar : Nat.Primrec ssysActiveChar := by
   have hpack : Nat.Primrec (fun n : ℕ => Nat.pair (n.unpair.2 + 1) n.unpair.1) :=
@@ -1398,10 +1241,6 @@ theorem primrec_ssysActiveChar : Nat.Primrec ssysActiveChar := by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (primrec_mulBit.comp (Nat.Primrec.pair h1 h2)).of_eq fun n => by
     simp only [unpair_pair_fst, unpair_pair_snd, ssysActiveChar]
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem ssysActiveChar_eq_one_iff (n : ℕ) : ssysActiveChar n = 1 ↔ ssysActive n = true := by
   simp only [ssysActiveChar, ssysActive, SExpr.decode, mulBit_eq_one_iff,
@@ -1414,17 +1253,9 @@ theorem ssysActiveChar_eq_one_iff (n : ℕ) : ssysActiveChar n = 1 ↔ ssysActiv
       rw [c9b5_sexprDepth_eq]; exact decodeFuel_depth_le hdec
     simp only [Option.isSome_some, true_and]
     rw [hc, ← c9b5_sexprGodelEncode_eq, decideNonemptyBChar_eq_one_iff hdepth, decideNonemptyB_iff]
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem ssysActiveChar_le_one (n : ℕ) : ssysActiveChar n ≤ 1 :=
   mulBit_le_one (decodeFuelOkChar_le_one _ _) (bExistsFn_le_one _ _ _)
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem ssysActive_exists_decode {n : ℕ} (hn : ssysActive n = true) :
     ∃ e, SExpr.decode n = some e := by
@@ -1432,50 +1263,26 @@ theorem ssysActive_exists_decode {n : ℕ} (hn : ssysActive n = true) :
   cases hdec : SExpr.decode n with
   | none => simp [hdec] at hn
   | some e => exact ⟨e, rfl⟩
-end
-
-section
-set_option maxHeartbeats 5000000
 
 /-- The Gödel code of `safeDecodeActive n` (`ssysCanonicalCode_eq`): `n`'s own decoded code if
 active, else the code of `.sigma` (matching `safeDecodeActive`'s junk fallback). -/
 @[irreducible] def ssysCanonicalCode (n : ℕ) : ℕ :=
   Domain.Recursive.selectFn (ssysActiveChar n) n.unpair.1 (SExpr.encode .sigma)
-end
-
-section
-set_option maxHeartbeats 5000000
 
 /-- `{0,1}` packaging of `ssysConsistentB` on `Nat.pair`-coded index pairs. -/
 def ssysConsChar (t : ℕ) : ℕ := boolNat (ssysConsistentB t.unpair.1 t.unpair.2)
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem ssysConsChar_eq_one_iff (t : ℕ) :
     ssysConsChar t = 1 ↔ ssysConsistentB t.unpair.1 t.unpair.2 = true := by
   simp [ssysConsChar, boolNat_eq_one_iff]
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem ssysConsChar_le_one (t : ℕ) : ssysConsChar t ≤ 1 := by
   have := boolNat_zero_one (ssysConsistentB t.unpair.1 t.unpair.2)
   unfold ssysConsChar
   omega
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem ssysConsChar_zero_one (t : ℕ) : ssysConsChar t = 0 ∨ ssysConsChar t = 1 :=
   boolNat_zero_one _
-end
-
-section
-set_option maxHeartbeats 5000000
 
 /-- `{0,1}` packaging of `ssysConsistentB`: inactive-either defaults to `1` (consistent), while
 active-active reduces to `consistentBChar` (C9b6). Fuel `n.unpair.2 + m.unpair.2 + 2` is generous
@@ -1484,10 +1291,6 @@ def ssysConsistentBChar (n m : ℕ) : ℕ :=
   selectFn (mulBit (ssysActiveChar n) (ssysActiveChar m))
     (consistentBChar (n.unpair.2 + m.unpair.2 + 2) n.unpair.1 m.unpair.1)
     1
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem primrec_ssysConsistentBChar :
     Nat.Primrec (fun t => ssysConsistentBChar t.unpair.1 t.unpair.2) := by
@@ -1509,10 +1312,6 @@ theorem primrec_ssysConsistentBChar :
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (primrec_selectFn hcond hcons (Nat.Primrec.const 1)).of_eq fun t => by
     simp only [ssysConsistentBChar]
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem ssysConsistentBChar_eq_one_iff (n m : ℕ) :
     ssysConsistentBChar n m = 1 ↔ ssysConsistentB n m = true := by
@@ -1556,10 +1355,6 @@ theorem ssysConsistentBChar_eq_one_iff (n m : ℕ) :
       | false => rfl
       | true => exact absurd hAn hn
     simp only [hn0, mulBit, zero_mul, selectFn_zero, hnf, Bool.not_false, Bool.true_or, ite_true]
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem ssysConsistentBChar_le_one (n m : ℕ) : ssysConsistentBChar n m ≤ 1 := by
   unfold ssysConsistentBChar
@@ -1573,27 +1368,15 @@ theorem ssysConsistentBChar_le_one (n m : ℕ) : ssysConsistentBChar n m ≤ 1 :
       simp [hn, hm]) with h0 | h1
   · rw [h0, selectFn_zero]
   · rw [h1, selectFn_one]; exact consistentBChar_le_one _ _ _
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem ssysConsChar_eq_ssysConsistentBChar (t : ℕ) :
     ssysConsChar t = ssysConsistentBChar t.unpair.1 t.unpair.2 := by
   apply eq_of_le_one_iff_one (ssysConsChar_le_one t) (ssysConsistentBChar_le_one _ _)
   rw [ssysConsChar_eq_one_iff, ssysConsistentBChar_eq_one_iff]
-end
-
-section
-set_option maxHeartbeats 5000000
 
 /-- **7.22i(b)8 / closes the C9b umbrella.** -/
 theorem primrec_ssysConsChar : Nat.Primrec ssysConsChar :=
   (primrec_ssysConsistentBChar).of_eq fun t => (ssysConsChar_eq_ssysConsistentBChar t).symm
-end
-
-section
-set_option maxHeartbeats 5000000
 
 /-- **Exercise 7.22k.** `{0,1}` decider for Definition 7.1 relation (i) on `SsysX` indices,
 `Nat.pair`-coded as `pair n (pair m k)`. -/
@@ -1603,36 +1386,20 @@ def ssysInterEqChar (t : ℕ) : ℕ :=
   let k := t.unpair.2.unpair.2
   Domain.Recursive.interEqChar (n.unpair.2 + m.unpair.2 + k.unpair.2 + 3)
     (Domain.Recursive.capCode (ssysCanonicalCode n) (ssysCanonicalCode m)) (ssysCanonicalCode k)
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem ssys_cons_char_eq_one_iff (n m : ℕ) :
     (∃ k, SsysX k ⊆ SsysX n ∩ SsysX m) ↔ ssysConsChar (Nat.pair n m) = 1 := by
   rw [ssysConsChar_eq_one_iff, ssys_cons_char_iff, unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-set_option maxHeartbeats 5000000
 
 /-- **Conditional C9 closure.** Instantiated once the sole missing primitive-recursive link below
 is proved. -/
 theorem Ssys_cons_computable_of_primrec_ssysConsChar (hf : Nat.Primrec ssysConsChar) :
     RecDecidable₂ (fun n m => ∃ k, SsysX k ⊆ SsysX n ∩ SsysX m) :=
   RecDecidable₂.of_paired_zero_one_char hf ssysConsChar_zero_one ssys_cons_char_eq_one_iff
-end
-
-section
-set_option maxHeartbeats 5000000
 
 /-- **Definition 7.1 (ii) is recursively decidable** (Exercise 7.22, closing C9). -/
 theorem Ssys_cons_computable : RecDecidable₂ (fun n m => ∃ k, SsysX k ⊆ SsysX n ∩ SsysX m) :=
   Ssys_cons_computable_of_primrec_ssysConsChar primrec_ssysConsChar
-end
-
-section
-set_option maxHeartbeats 5000000
 
 /-- The partial presentation of `Ssys`: enumeration `SsysX` onto `S`, consistency via
 `Ssys_cons_computable`. -/
@@ -1641,10 +1408,6 @@ def SsysPres : ConsistencyPresentation Ssys where
   mem_X n := Ssys_mem.mpr (SsysX_mem n)
   surj hY := SsysX_surj (Ssys_mem.mp hY)
   cons_computable := Ssys_cons_computable
-end
-
-section
-set_option maxHeartbeats 5000000
 
 theorem c9b5_boolNat_eq (b : Bool) : Domain.Recursive.c9b5_boolNat b = boolNat b := by
   cases b <;> rfl
@@ -1788,6 +1551,7 @@ recursively decidable — with nothing deferred. What remains unbuilt is only th
 formalisation relies on but which is not part of Definition 7.1's text; see the section docstring
 above. -/
 theorem Ssys_partially_effectively_given : PartiallyEffectivelyGiven Ssys := ⟨⟨SsysPres⟩⟩
+
 end
 
 end Exercise722

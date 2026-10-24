@@ -59,32 +59,12 @@ def comp {A B C : TAlgebra T} (β : AlgHom B C) (α : AlgHom A B) : AlgHom A C w
     rw [← CategoryTheory.Category.assoc, hα, CategoryTheory.Category.assoc, hβ,
       ← CategoryTheory.Category.assoc, hmap]
 
-end AlgHom
-end
-
-section
-universe u
-variable {Obj : Type u} [Category Obj]
-variable {T : Endofunctor Obj}
-
-namespace AlgHom
-
 /-- The identity is a homomorphism: `I ∘ k = k ∘ T(I)`. -/
 def id (A : TAlgebra T) : AlgHom A A where
   hom := (𝟙 A.carrier)
   comm := by
     simp only [compAfter]
     rw [CategoryTheory.Category.comp_id, T.map_id, CategoryTheory.Category.id_comp]
-
-end AlgHom
-end
-
-section
-universe u
-variable {Obj : Type u} [Category Obj]
-variable {T : Endofunctor Obj}
-
-namespace AlgHom
 
 @[simp] theorem id_hom (A : TAlgebra T) : (AlgHom.id A).hom = (𝟙 A.carrier) := rfl
 
@@ -104,23 +84,14 @@ def idEndofunctor (Obj : Type u) [Category Obj] : Endofunctor Obj where
   map f := f
   map_id _ := rfl
   map_comp _ _ := rfl
-end
-
-section
-universe u
 
 @[simp] theorem idEndofunctor_obj {Obj : Type u} [Category Obj] (X : Obj) :
     (idEndofunctor Obj).obj X = X := rfl
-end
-
-section
-universe u
 
 @[simp] theorem idEndofunctor_map {Obj : Type u} [Category Obj] {X Y : Obj}
     (f : (X ⟶ Y)) : (idEndofunctor Obj).map f = f := rfl
+
 end
 
-section
-end
 end DomainTheory.NeighbourhoodSystems
 end

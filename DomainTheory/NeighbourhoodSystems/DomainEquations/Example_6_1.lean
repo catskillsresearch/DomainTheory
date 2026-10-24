@@ -35,48 +35,16 @@ namespace Example62
 `b = false` and `1X` for `b = true`). -/
 def embBit (b : Bool) (X : Set Str) : Set Str := {w | ∃ w', w = b :: w' ∧ w' ∈ X}
 
-end Example62
-end
-
-section
-open NeighborhoodSystem ApproximableMap ExampleB
-
-namespace Example62
-
 @[simp] theorem mem_embBit {b : Bool} {X : Set Str} {w : Str} :
     w ∈ embBit b X ↔ ∃ w', w = b :: w' ∧ w' ∈ X := Iff.rfl
-
-end Example62
-end
-
-section
-open NeighborhoodSystem ApproximableMap ExampleB
-
-namespace Example62
 
 /-- Scott's standing assumption `∅ ∉ B`: every neighbourhood of `B` is nonempty (cones contain their
 generating prefix). -/
 theorem B_nonempty : ∀ X, B.mem X → X.Nonempty := by
   rintro X ⟨σ, rfl⟩; exact ⟨σ, List.prefix_rfl⟩
 
-end Example62
-end
-
-section
-open NeighborhoodSystem ApproximableMap ExampleB
-
-namespace Example62
-
 /-- The right-hand side of Scott's domain equation: the sum system `B + B` (Exercise 3.18). -/
 abbrev BB : NeighborhoodSystem (Option (Str ⊕ Str)) := sum B B B_nonempty B_nonempty
-
-end Example62
-end
-
-section
-open NeighborhoodSystem ApproximableMap ExampleB
-
-namespace Example62
 
 /-- `bX = b·X` is exactly the single-bit prepend of Example 1.B. -/
 theorem embBit_eq_prepend (b : Bool) (X : Set Str) : embBit b X = prepend [b] X := by
@@ -86,25 +54,9 @@ theorem embBit_eq_prepend (b : Bool) (X : Set Str) : embBit b X = prepend [b] X 
   · rintro ⟨w', rfl, hX⟩; exact ⟨w', hX, rfl⟩
   · rintro ⟨τ, hX, rfl⟩; exact ⟨τ, rfl, hX⟩
 
-end Example62
-end
-
-section
-open NeighborhoodSystem ApproximableMap ExampleB
-
-namespace Example62
-
 /-- `b(σΣ*) = (bσ)Σ*`: prepending a bit to a cone gives the cone of the longer prefix. -/
 theorem embBit_cone (b : Bool) (σ : Str) : embBit b (cone σ) = cone (b :: σ) := by
   rw [embBit_eq_prepend, prepend_cone]; rfl
-
-end Example62
-end
-
-section
-open NeighborhoodSystem ApproximableMap ExampleB
-
-namespace Example62
 
 theorem embBit_inter (b : Bool) (X X' : Set Str) :
     embBit b X ∩ embBit b X' = embBit b (X ∩ X') := by
@@ -118,14 +70,6 @@ theorem embBit_inter (b : Bool) (X X' : Set Str) :
   · rintro ⟨w', rfl, hX, hX'⟩
     exact ⟨⟨w', rfl, hX⟩, ⟨w', rfl, hX'⟩⟩
 
-end Example62
-end
-
-section
-open NeighborhoodSystem ApproximableMap ExampleB
-
-namespace Example62
-
 theorem embBit_inter_ne {b b' : Bool} (h : b ≠ b') (X Y : Set Str) :
     embBit b X ∩ embBit b' Y = ∅ := by
   ext w
@@ -133,14 +77,6 @@ theorem embBit_inter_ne {b b' : Bool} (h : b ≠ b') (X Y : Set Str) :
   rintro ⟨w', rfl, -⟩ ⟨w'', heq, -⟩
   rw [List.cons.injEq] at heq
   exact h heq.1
-
-end Example62
-end
-
-section
-open NeighborhoodSystem ApproximableMap ExampleB
-
-namespace Example62
 
 theorem embBit_ne {b b' : Bool} (h : b ≠ b') {X Y : Set Str} (hX : X.Nonempty) :
     embBit b X ≠ embBit b' Y := by
@@ -150,14 +86,6 @@ theorem embBit_ne {b b' : Bool} (h : b ≠ b') {X Y : Set Str} (hX : X.Nonempty)
   obtain ⟨w'', he, -⟩ := hmem
   rw [List.cons.injEq] at he
   exact h he.1
-
-end Example62
-end
-
-section
-open NeighborhoodSystem ApproximableMap ExampleB
-
-namespace Example62
 
 theorem embBit_subset {b : Bool} {X X' : Set Str} :
     embBit b X ⊆ embBit b X' ↔ X ⊆ X' := by
@@ -170,24 +98,8 @@ theorem embBit_subset {b : Bool} {X X' : Set Str} :
   · rintro h w ⟨w', rfl, hX⟩
     exact ⟨w', rfl, h hX⟩
 
-end Example62
-end
-
-section
-open NeighborhoodSystem ApproximableMap ExampleB
-
-namespace Example62
-
 theorem embBit_injective {b : Bool} {X X' : Set Str} (h : embBit b X = embBit b X') : X = X' :=
   Set.Subset.antisymm (embBit_subset.mp h.subset) (embBit_subset.mp h.symm.subset)
-
-end Example62
-end
-
-section
-open NeighborhoodSystem ApproximableMap ExampleB
-
-namespace Example62
 
 end Example62
 end

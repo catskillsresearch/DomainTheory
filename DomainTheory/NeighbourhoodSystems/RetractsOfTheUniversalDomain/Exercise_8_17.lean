@@ -48,12 +48,6 @@ variable {α : Type u} {β : Type v} {γ : Type w}
 domain `𝒰` to an arbitrary `W`. -/
 def IsUniversal {δ : Type w} (W : NeighborhoodSystem δ) : Prop :=
   ∀ {α : Type u} (D : NeighborhoodSystem α) [Countable {S : Set α // D.mem S}], D ⊴ W
-end
-
-section
-open NeighborhoodSystem ApproximableMap Subsystem
-universe u v w
-variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **`ProjPair`s compose.** If `D ⇄ E` and `E ⇄ F` are projection pairs, so is `D ⇄ F`
 (`inj := p2.inj ∘ p1.inj`, `proj := p1.proj ∘ p2.proj`). The first law composes as an equality
@@ -75,12 +69,6 @@ def ProjPair.comp {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
           comp_mono_gen le_rfl (comp_mono_gen p1.inj_comp_proj_le le_rfl)
       _ = p2.inj.comp p2.proj := by rw [idMap_comp]
       _ ≤ idMap F := p2.inj_comp_proj_le
-end
-
-section
-open NeighborhoodSystem ApproximableMap Subsystem
-universe u v w
-variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **A `DomainIso` gives a `ProjPair`, via Theorem 2.7's `ofIso`.** Both round trips are genuine
 *equalities* (not just `≤`), since `e` is a full isomorphism, not merely a retraction. Uses
@@ -105,12 +93,6 @@ def ProjPair.ofIso {D : NeighborhoodSystem α} {E : NeighborhoodSystem β} (e : 
       rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply,
         toElementMap_idMap]
     exact le_iff_toElementMap_le.mpr fun y => (heq y).le
-end
-
-section
-open NeighborhoodSystem ApproximableMap Subsystem
-universe u v w
-variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **A subsystem relation `D ◁ E` gives a `ProjPair`** (Proposition 6.12, rebundled). -/
 def ProjPair.ofSubsystem {D E : NeighborhoodSystem α} (h : D ◁ E) : ProjPair D E where
@@ -118,12 +100,6 @@ def ProjPair.ofSubsystem {D E : NeighborhoodSystem α} (h : D ◁ E) : ProjPair 
   proj := h.proj
   proj_comp_inj := h.proj_comp_inj
   inj_comp_proj_le := h.inj_comp_proj_le
-end
-
-section
-open NeighborhoodSystem ApproximableMap Subsystem
-universe u v w
-variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **`D ⊴ E` composed with an isomorphism `D ≅ᴰ D'` on the left is still `D ⊴ E`** — immediate
 from unfolding `⊴` and composing the two `DomainIso`s (`OrderIso.trans`). -/
@@ -147,34 +123,16 @@ theorem trianglelefteq_trans {D : NeighborhoodSystem α} {E : NeighborhoodSystem
   have hD'F : D' ⊴ F :=
     trianglelefteq_of_projectionPair pD'F.inj pD'F.proj pD'F.proj_comp_inj pD'F.inj_comp_proj_le
   exact trianglelefteq_of_isomorphic_left ⟨eDD'⟩ hD'F
-end
-
-section
-open NeighborhoodSystem ApproximableMap Subsystem
-universe u v w
-variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **`𝒰` is universal** (restating Theorem 8.8(a) in `⊴`-shape). -/
 theorem U_isUniversal : IsUniversal.{u} U := by
   intro α D _
   obtain ⟨D', hiso, hsub⟩ := theorem_8_8_a D
   exact ⟨D', hsub, hiso⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap Subsystem
-universe u v w
-variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **Exercise 8.17, Part 1 (`→`).** `iArrow/jArrow` already are the pair `𝒰→𝒰 ⇄ 𝒰`; bonus `⊴`. -/
 theorem funSpaceUU_trianglelefteq_U : funSpace U U ⊴ U :=
   trianglelefteq_of_projectionPair iArrow jArrow jArrow_comp_iArrow iArrow_comp_jArrow_le
-end
-
-section
-open NeighborhoodSystem ApproximableMap Subsystem
-universe u v w
-variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **Universality transports along isomorphism.** If `W` is universal and `W ≅ᴰ W'`, then `W'` is
 universal too: every countable `D` embeds in `W` (`D ⊴ W`), and `W ⊴ W'` (take `D' := W'` in `⊴`'s
@@ -184,12 +142,6 @@ theorem isUniversal_of_isomorphic {W : NeighborhoodSystem β} {W' : Neighborhood
   have hWW'_tri : W ⊴ W' := hWW'.elim fun e => ⟨W', Subsystem.refl W', ⟨e⟩⟩
   intro α D _
   exact trianglelefteq_trans (hW D) hWW'_tri
-end
-
-section
-open NeighborhoodSystem ApproximableMap Subsystem
-universe u v w
-variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **Exercise 8.17, Part 3.** Exercise 8.12's `V` (a `NeighborhoodSystem ℕ`, built from `2^kℕ+ℓ` —
 literally a *different* neighbourhood system from `U : NeighborhoodSystem ℚ`, not merely a
@@ -197,27 +149,16 @@ relabelling) is a universal domain, since it is effectively isomorphic to `𝒰`
 Exercise 8.12's headline) and universality transports along isomorphism. -/
 theorem V_isUniversal : IsUniversal.{u} V :=
   isUniversal_of_isomorphic U_isUniversal ⟨effectiveIso812_UV.toDomainIso⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap Subsystem
-universe u v w
-variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **Exercise 8.17, Part 1 (`×`).** `iTimes/jTimes` already are the pair `𝒰×𝒰 ⇄ 𝒰`; bonus `⊴`. -/
 theorem prodUU_trianglelefteq_U : prod U U ⊴ U :=
   trianglelefteq_of_projectionPair iTimes jTimes jTimes_comp_iTimes iTimes_comp_jTimes_le
-end
-
-section
-open NeighborhoodSystem ApproximableMap Subsystem
-universe u v w
-variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **Exercise 8.17, Part 1 (`+`).** `iPlus/jPlus` (`Definition89.lean`) already *are* the computable
 projection pair `𝒰+𝒰 ⇄ 𝒰` needed for 8.9. Bonus: Lemma 6.15 upgrades it to `𝒰+𝒰 ⊴ 𝒰`. -/
 theorem sumUU_trianglelefteq_U : sum U U U_mem_nonempty U_mem_nonempty ⊴ U :=
   trianglelefteq_of_projectionPair iPlus jPlus jPlus_comp_iPlus iPlus_comp_jPlus_le
+
 end
 
 section
@@ -305,11 +246,6 @@ noncomputable def funToPair : ApproximableMap (funSpace TD E) (prod E E) :=
       (paired (idMap (funSpace TD E)) (constMap (funSpace TD E) Example23.falseElt)))
 
 end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
 
 section Sum
 
@@ -321,11 +257,6 @@ noncomputable def sumToProdT : ApproximableMap (sum E E hE hE) (prod TD (prod E 
     (paired (outMap₀ (h₀ := hE) (h₁ := hE)) (outMap₁ (h₀ := hE) (h₁ := hE)))
 
 end Sum
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
 
 section Prod
 
@@ -336,23 +267,13 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 noncomputable def swapProdT : ApproximableMap (prod (prod E E) TD) (prod TD (prod E E)) :=
   paired (proj₁ (prod E E) TD) (proj₀ (prod E E) TD)
 
-end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-
-section Prod
-
-variable {α : Type u} {E : NeighborhoodSystem α}
-
 /-- **Pairing up, as a function out of `T`.** `pairToFun(x, y) : T → E` sends `t ↦ cond(t, x,
 y)`; in particular `true ↦ x`, `false ↦ y`, `⊥ ↦ ⊥` (Exercise 3.26). -/
 noncomputable def pairToFun : ApproximableMap (prod E E) (funSpace TD E) :=
   curry ((cond E).comp swapProdT)
 
 end Prod
+
 end
 
 section
@@ -370,20 +291,12 @@ theorem TD_bot_eq_botElt : TD.bot = Example23.botElt :=
   le_antisymm (NeighborhoodSystem.bot_le _ _) (Example23.botElt_le _)
 
 end General
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- **`T`'s elements, named via `Example23`.** The three-way classification of `Example12`,
 restated with `Example23`'s `⊥`/`true`/`false` names (they are the *same* terms by `rfl`). -/
 theorem TD_trichotomy (t : TD.Element) :
     t = Example23.botElt ∨ t = Example23.trueElt ∨ t = Example23.falseElt :=
   Example12.neighborhoodSystem.element_classification t
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
 
 section General
 
@@ -402,16 +315,6 @@ theorem expMap_mono_left {V0 : NeighborhoodSystem α} {V1 : NeighborhoodSystem �
   rw [funSpaceEquiv_apply, funSpaceEquiv_apply, toApproxMap_toElementMap_expMap,
     toApproxMap_toElementMap_expMap]
   exact comp_mono_gen le_rfl (comp_mono_gen le_rfl hh)
-
-end General
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-
-section General
-
-variable {α β γ δ : Type*}
 
 /-- **Contravariant functoriality of `⊴` in the function-space's domain argument.** `A ⊴ B ⟹
 (A → C) ⊴ (B → C)` for any `C`: precompose/postcompose with the given projection pair via
@@ -434,10 +337,6 @@ theorem funSpace_dom_trianglelefteq {A : NeighborhoodSystem α} {B : Neighborhoo
       _ = idMap (funSpace B C) := expMap_id
 
 end General
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
 
 section SumHelpers
 
@@ -462,17 +361,6 @@ theorem outMap₀_comp_inMap₁ :
     exact ⟨inj₁ Y, ⟨hY, Or.inr (Or.inr ⟨Y, hY, rfl⟩), subset_rfl⟩,
       Or.inr (Or.inr ⟨Y, hY, rfl⟩), V₀.master_mem, (leftPart_inj₁ V₀ (h₁ Y hY)).subset⟩
 
-end SumHelpers
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-
-section SumHelpers
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
 /-- **`out₁ ∘ in₀ = const ⊥`.** A left-injected element carries no right-hand information. -/
 theorem outMap₁_comp_inMap₀ :
     (outMap₁ (V₀ := V₀) (V₁ := V₁) (h₀ := h₀) (h₁ := h₁)).comp
@@ -492,10 +380,6 @@ theorem outMap₁_comp_inMap₀ :
       Or.inr (Or.inl ⟨X, hX, rfl⟩), V₁.master_mem, (rightPart_inj₀ V₁ (h₀ X hX)).subset⟩
 
 end SumHelpers
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
 
 section General
 
@@ -512,16 +396,6 @@ theorem pair_bot {V0 : NeighborhoodSystem α} {V1 : NeighborhoodSystem β} :
     rw [mem_bot]
     exact prod_master.symm
   · exact NeighborhoodSystem.bot_le _ _
-
-end General
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-
-section General
-
-variable {α β γ δ : Type*}
 
 /-- **Covariant functoriality of `⊴` in `prod`'s left argument.** `A ⊴ B ⟹ prod A C ⊴ prod B C`
 for any `C`: pair the given projection pair with the identity on `C`. -/
@@ -555,16 +429,6 @@ theorem prod_left_trianglelefteq {A : NeighborhoodSystem α} {B : NeighborhoodSy
       le_iff_toElementMap_le.mp p.inj_comp_proj_le x
     rwa [toElementMap_comp, toElementMap_idMap] at hxx
 
-end General
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-
-section General
-
-variable {α β γ δ : Type*}
-
 /-- **Covariant functoriality of `⊴` in `prod`'s right argument.** `A ⊴ B ⟹ prod C A ⊴ prod C B`,
 obtained from `prod_left_trianglelefteq` by conjugating with `prod`'s commutativity
 (`Exercise315.prod_comm_isomorphic`). -/
@@ -577,16 +441,6 @@ theorem prod_right_trianglelefteq {A : NeighborhoodSystem α} {B : NeighborhoodS
     (prod_comm_isomorphic (V₀ := B) (V₁ := C)).elim fun e => ⟨_, Subsystem.refl _, ⟨e⟩⟩
   exact trianglelefteq_trans (trianglelefteq_trans h1 h2) h3
 
-end General
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-
-section General
-
-variable {α β γ δ : Type*}
-
 /-- If `f` sends the master input to only the master output, then `f` sends `⊥` to `⊥`
 (more precisely, `≤ ⊥`, i.e. `= ⊥` by `bot_le`). The elementwise membership at `⊥` is read off the
 relation at `V₀.master` via `rel_iff_mem_principal` (`⊥ = ↑Δ`). -/
@@ -598,10 +452,6 @@ theorem toElementMap_bot_le {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
   exact h ((rel_iff_mem_principal f V₀.master_mem).mpr hY)
 
 end General
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
 
 section SumHelpers
 
@@ -617,17 +467,6 @@ theorem outMap₀_bot_le :
   have h2 : leftPart V₀ (sumMaster V₀ V₁) ⊆ Y := hg.2.2
   rwa [leftPart_sumMaster] at h2
 
-end SumHelpers
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-
-section SumHelpers
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
 /-- `out₁(⊥) ≤ ⊥`: the basepoint carries no right-hand information. -/
 theorem outMap₁_bot_le :
     (outMap₁ (h₀ := h₀) (h₁ := h₁)).toElementMap (sum V₀ V₁ h₀ h₁).bot ≤ V₁.bot := by
@@ -638,6 +477,7 @@ theorem outMap₁_bot_le :
   rwa [rightPart_sumMaster] at h2
 
 end SumHelpers
+
 end
 
 section
@@ -657,11 +497,6 @@ theorem toElementMap_funToPair (φ : (funSpace TD E).Element) :
     toElementMap_constMap, evalMap_apply]
 
 end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
 
 section Sum
 
@@ -675,18 +510,6 @@ theorem toElementMap_sumToProdT (w : (sum E E hE hE).Element) :
             ((outMap₁ (h₀ := hE) (h₁ := hE)).toElementMap w)) := by
   simp only [sumToProdT, toElementMap_paired]
 
-end Sum
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-
-section Sum
-
-variable {α : Type u} {E : NeighborhoodSystem α} (hE : ∀ X, E.mem X → X.Nonempty)
-
-
 /-- **`condSum ∘ sumToProdT = I`.** Scott's identity `cond_which`, transported through
 `condSumEmb`. -/
 theorem condSum_comp_sumToProdT :
@@ -698,11 +521,6 @@ theorem condSum_comp_sumToProdT :
   exact cond_which w
 
 end Sum
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
 
 section Prod
 
@@ -714,34 +532,10 @@ theorem toElementMap_swapProdT (x y : E.Element) (t : TD.Element) :
   simp only [swapProdT, toElementMap_paired, toElementMap_proj₀, toElementMap_proj₁, fst_pair,
     snd_pair]
 
-end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-
-section Prod
-
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-
 theorem toApproxMap_pairToFun (x y : E.Element) (t : TD.Element) :
     (toApproxMap ((pairToFun (E := E)).toElementMap (pair x y))).toElementMap t
       = (cond E).toElementMap (pair t (pair x y)) := by
   rw [pairToFun, toElementMap_curry_apply, toElementMap_comp, toElementMap_swapProdT]
-
-end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-
-section Prod
-
-variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **`funToPair ∘ pairToFun = I`.** `(x, y) ↦ (λt. cond(t,x,y)) ↦ (cond(true,x,y),
 cond(false,x,y)) = (x, y)`. -/
@@ -752,18 +546,6 @@ theorem funToPair_comp_pairToFun : (funToPair (E := E)).comp pairToFun = idMap (
   set x := z.fst; set y := z.snd
   rw [toElementMap_comp, toElementMap_idMap, toElementMap_funToPair, toApproxMap_pairToFun,
     toApproxMap_pairToFun, Exercise326.cond_true, Exercise326.cond_false]
-
-end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-
-section Prod
-
-variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **`pairToFun ∘ funToPair ≤ I`.** For every `φ : T → E`, feeding `(φ(true), φ(false))` back
 through `cond` gives a map agreeing with `φ` at `true`/`false` and `≤ φ` at `⊥` (`E.bot ≤`
@@ -781,34 +563,10 @@ theorem pairToFun_comp_funToPair_le :
   · rw [toApproxMap_pairToFun, Exercise326.cond_true]
   · rw [toApproxMap_pairToFun, Exercise326.cond_false]
 
-end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-
-section Prod
-
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-
 /-- **`E × E ⊴ (T → E)`.** -/
 theorem prod_trianglelefteq_funSpace_TD : prod E E ⊴ funSpace TD E :=
   trianglelefteq_of_projectionPair pairToFun funToPair funToPair_comp_pairToFun
     pairToFun_comp_funToPair_le
-
-end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-
-section Prod
-
-variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **Exercise 8.19, Goal 1.** `T ⊴ E` and `E → E ⊴ E` give `E × E ⊴ E`: chain `E×E ⊴ (T→E) ⊴
 (E→E) ⊴ E`. -/
@@ -819,6 +577,7 @@ theorem prod_trianglelefteq_of (hT : TD ⊴ E) (hArrow : funSpace E E ⊴ E) :
     hArrow
 
 end Prod
+
 end
 
 section
@@ -838,17 +597,6 @@ theorem which_bot_le :
   intro Y hg
   exact whichGuard_masterC hg.2.2 rfl
 
-end SumHelpers
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-
-section SumHelpers
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
 /-- `which(in₀ x) ≤ true`: a left-injected element's tag never reaches `false`. -/
 theorem which_inMap₀_le_trueElt (x : V₀.Element) :
     (whichMap V₀ V₁ h₀ h₁).toElementMap ((inMap₀ (h₀ := h₀) (h₁ := h₁)).toElementMap x)
@@ -864,17 +612,6 @@ theorem which_inMap₀_le_trueElt (x : V₀.Element) :
     obtain ⟨Y, hY, hmem⟩ := which_mem_one.mp hZ
     obtain ⟨X, _, hX0, _, hsub⟩ := hmem
     exact not_inj₀_subset_inj₁ (h₀ X hX0) hsub
-
-end SumHelpers
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-
-section SumHelpers
-
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
 /-- `which(in₁ y) ≤ false`: a right-injected element's tag never reaches `true`. -/
 theorem which_inMap₁_le_falseElt (y : V₁.Element) :
@@ -893,6 +630,7 @@ theorem which_inMap₁_le_falseElt (y : V₁.Element) :
     exact Or.inr rfl
 
 end SumHelpers
+
 end
 
 section
@@ -942,34 +680,10 @@ theorem sumToProdT_comp_condSum_le :
       simp only [toElementMap_comp, toElementMap_idMap] at h2
       exact h2.le
 
-end Sum
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-
-section Sum
-
-variable {α : Type u} {E : NeighborhoodSystem α} (hE : ∀ X, E.mem X → X.Nonempty)
-
-
 /-- **`E + E ⊴ T × (E × E)`.** -/
 theorem sum_trianglelefteq_prodT : sum E E hE hE ⊴ prod TD (prod E E) :=
   trianglelefteq_of_projectionPair (sumToProdT hE) (condSum E E hE hE) (condSum_comp_sumToProdT hE)
     (sumToProdT_comp_condSum_le hE)
-
-end Sum
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-
-section Sum
-
-variable {α : Type u} {E : NeighborhoodSystem α} (hE : ∀ X, E.mem X → X.Nonempty)
-
 
 /-- **Exercise 8.19, Goal 2.** `T ⊴ E` and `E → E ⊴ E` give `E + E ⊴ E`: chain
 `E+E ⊴ T×(E×E) ⊴ E×(E×E) ⊴ E×E ⊴ E`, using Goal 1 (applied twice, to peel off each product layer)
@@ -982,11 +696,6 @@ theorem sum_trianglelefteq_of (hT : TD ⊴ E) (hArrow : funSpace E E ⊴ E) :
     (trianglelefteq_trans (prod_right_trianglelefteq E hPE) hPE)
 
 end Sum
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
 
 end
 end DomainTheory.NeighbourhoodSystems

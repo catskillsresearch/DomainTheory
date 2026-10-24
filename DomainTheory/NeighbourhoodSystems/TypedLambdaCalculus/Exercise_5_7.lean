@@ -43,11 +43,6 @@ theorem app_two_args (σ : ApproximableMap (prod V₀ V₁) V₂) (x : V₀.Elem
     σ.toElementMap (pair x y) =
       (toApproxMap ((curry σ).toElementMap x)).toElementMap y := by
   rw [toElementMap_curry_apply]
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- The defining equation of `curry₃`: `(λx, y, z. g)(x)(y)(z) = g⟨⟨x, y⟩, z⟩`. -/
 theorem curry₃_apply (g : ApproximableMap (prod (prod V₀ V₁) V₂) V₃)
@@ -55,33 +50,18 @@ theorem curry₃_apply (g : ApproximableMap (prod (prod V₀ V₁) V₂) V₃)
     (toApproxMap ((toApproxMap ((curry₃ g).toElementMap x)).toElementMap y)).toElementMap z =
       g.toElementMap (pair (pair x y) z) := by
   rw [curry₃, toElementMap_curry_apply, toElementMap_curry_apply]
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- **Two-variable abstraction.** `λx, y. τ` is `curry`, characterised by `(curry g)(x)(y) = g⟨x, y⟩`.
 It binds one variable `x` and returns the one-variable function `λy. g⟨x, y⟩`. -/
 theorem lam_two_vars (g : ApproximableMap (prod V₀ V₁) V₂) (x : V₀.Element) (y : V₁.Element) :
     (toApproxMap ((curry g).toElementMap x)).toElementMap y = g.toElementMap (pair x y) :=
   toElementMap_curry_apply g x y
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- **Surjective pairing.** Every element `z : D₀ × D₁` is recovered from its projections:
 `⟨p₀(z), p₁(z)⟩ = z`. This is what makes `p₀`, `p₁`, `pair` enough to encode the product. -/
 theorem surjective_pairing (z : (prod V₀ V₁).Element) :
     pair ((proj₀ V₀ V₁).toElementMap z) ((proj₁ V₀ V₁).toElementMap z) = z := by
   rw [toElementMap_proj₀, toElementMap_proj₁, pair_fst_snd]
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- **One-argument-at-a-time application.** For `h : D₀ → (D₁ → D₂)`, applying the uncurried map to
 a `pair` is the same as applying `h` to `x` and then to `y`:
@@ -92,16 +72,12 @@ theorem uncurry_apply (h : ApproximableMap V₀ (funSpace V₁ V₂))
       (toApproxMap (h.toElementMap x)).toElementMap y := by
   rw [uncurry_eq, toElementMap_comp, toElementMap_paired, toElementMap_comp,
     toElementMap_proj₀, toElementMap_proj₁, fst_pair, snd_pair, evalMap_apply]
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- The two encodings are mutually inverse: uncurrying the two-variable abstraction returns the
 original two-variable function. -/
 theorem uncurry_lam_two_vars (g : ApproximableMap (prod V₀ V₁) V₂) : uncurry (curry g) = g :=
   uncurry_curry g
+
 end
 
 section

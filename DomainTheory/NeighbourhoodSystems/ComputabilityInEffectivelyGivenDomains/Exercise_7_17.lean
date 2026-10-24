@@ -13,6 +13,7 @@ section
 variable {α : Type*}
 namespace Proposition77
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
+
 /- concordance: source L4647 EXERCISE 7.17 recursion over lists -/
 /-- **Exercise 7.17 (Scott 1981, PRG-19) — the pairing `pair : D^§ × D^§ → D^§` is computable.**
 Its index relation is exactly `V_{2·⟨a,b⟩+2} ⊆ V_k`, a recursive slice of `D^§`'s inclusion decider
@@ -33,17 +34,6 @@ theorem pairSharp_isComputable (P : ComputablePresentation D) :
   refine (RecDecidable.of_iff (fun s => ?_) (hincl.comp hr)).re
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [pairSharp_rel_Vsharp_iff hD P s.unpair.1 s.unpair.2]
-
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
 
 /-- The index characterization of `proj1Map`. `V_m proj₁ V_k` iff `k = 0` (`V_k = Γ`) or `m` is an
 even node index `2a+2` with `V_{q a} ⊆ V_k` (the *right* child, `q a = a.unpair.2`). -/
@@ -68,17 +58,6 @@ theorem proj1_rel_Vsharp_iff (P : ComputablePresentation D) (m k : ℕ) :
       exact ⟨by omega, by omega, by rw [hQ]; exact hQk⟩
     · rintro ⟨-, -, hsub⟩
       exact ⟨Vsharp D P a.unpair.1, Vsharp D P a.unpair.2, rfl, hsub⟩
-
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
 
 /-- **Exercise 7.17 (Scott 1981, PRG-19) — `proj₁` is computable.**
 `V_m proj₁ V_k ↔ k = 0 ∨ (m even, m ≠ 0, V_{q(m/2-1)} ⊆ V_k)`: a disjunction of the equality and
@@ -239,17 +218,6 @@ theorem embZero_ne_embPair_of_memS (hD : ∀ X, D.mem X → X.Nonempty)
   · rw [hp'] at hpath; simp at hpath
   · rw [hq'] at hpath; simp at hpath
 
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 /-- Related outputs are `E`-neighbourhoods. -/
 theorem gRel_cod {W Z} (h : GRel u v W Z) : E.mem Z := by
   induction h with
@@ -257,34 +225,12 @@ theorem gRel_cod {W Z} (h : GRel u v W Z) : E.mem Z := by
   | leaf hrel => exact u.rel_cod hrel
   | node _ _ hvrel _ _ => exact v.rel_cod hvrel
 
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 /-- Related inputs are `D^§`-neighbourhoods. -/
 theorem gRel_dom {W Z} (h : GRel u v W Z) : MemS D W := by
   induction h with
   | gamma _ => exact MemS.gamma
   | leaf hrel => exact MemS.zero (u.rel_dom hrel)
   | node _ _ _ ihP ihQ => exact MemS.pair ihP ihQ
-
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- Inversion at a node `1·P ∪ 2·Q`: `(1·P∪2·Q) g Z ↔ ∃ Z₁ Z₂, P g Z₁ ∧ Q g Z₂ ∧ ⟨Z₁,Z₂⟩ v Z`. -/
 theorem gRel_embPair_inv (hD : ∀ X, D.mem X → X.Nonempty) {P Q : Set (List Bool × α)} {Z}
@@ -300,17 +246,6 @@ theorem gRel_embPair_inv (hD : ∀ X, D.mem X → X.Nonempty) {P Q : Set (List B
       obtain ⟨rfl, rfl⟩ := embPair_injective hW
       exact ⟨Z₁, Z₂, hP', hQ', hvrel⟩
 
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 /-- Inversion at a leaf `0·X`: `0·X g Z ↔ X u Z`. -/
 theorem gRel_embZero_inv (hD : ∀ X, D.mem X → X.Nonempty) {X : Set α} {Z}
     (h : GRel u v (embZero X) Z) : u.rel X Z := by
@@ -321,17 +256,6 @@ theorem gRel_embZero_inv (hD : ∀ X, D.mem X → X.Nonempty) {X : Set α} {Z}
   | @node P Q Z₁ Z₂ Z hP hQ hvrel =>
       exact absurd hW (embZero_ne_embPair_of_memS hD (gRel_dom hP))
 
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 /-- Inversion at `Γ`: `Γ g Z` forces `Z = Δ_E` (Scott's strictness). -/
 theorem gRel_gamma_inv (hD : ∀ X, D.mem X → X.Nonempty) {Z}
     (h : GRel u v (Gamma D) Z) : Z = E.master := by
@@ -340,17 +264,6 @@ theorem gRel_gamma_inv (hD : ∀ X, D.mem X → X.Nonempty) {Z}
   | gamma hZ => exact hZ
   | @leaf X Z hrel => exact absurd hW.symm (embZero_ne_Gamma D hD X)
   | @node P Q Z₁ Z₂ Z hP hQ hvrel => exact absurd hW.symm (embPair_ne_Gamma D hD P Q)
-
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- Intersectivity on the output (Scott's 2.1(ii)). -/
 theorem gRel_interRight (hD : ∀ X, D.mem X → X.Nonempty) {W Z} (h : GRel u v W Z) :
@@ -382,17 +295,6 @@ theorem gRel_interRight (hD : ∀ X, D.mem X → X.Nonempty) {W Z} (h : GRel u v
           subset_rfl hmem (v.rel_cod hv')
       exact v.inter_right hv1 hv2
 
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 /-- **Strictness in the relation: every `D^§`-neighbourhood folds to `Δ_E`.** This is why no separate
 "top" clause is needed — `u`/`v` relate `Δ ↦ Δ`, so the master propagates through the tree. -/
 theorem gRel_master : ∀ {W}, MemS D W → GRel u v W E.master := by
@@ -405,17 +307,6 @@ theorem gRel_master : ∀ {W}, MemS D W → GRel u v W E.master := by
       refine GRel.node ihP ihQ ?_
       have h := v.master_rel
       rwa [prod_master] at h
-
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- Monotonicity (Scott's 2.1(iii)). -/
 theorem gRel_mono (hD : ∀ X, D.mem X → X.Nonempty) {W Z} (h : GRel u v W Z) :
@@ -440,17 +331,6 @@ theorem gRel_mono (hD : ∀ X, D.mem X → X.Nonempty) {W Z} (h : GRel u v W Z) 
       exact v.mono hvrel subset_rfl hZZ'
         (prod_mem_prodNbhd (gRel_cod hP) (gRel_cod hQ)) hZ'mem
 
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 /-- **Exercise 7.17 Part 2 — the universal strict map `g : D^§ → E`.** -/
 def gMap (u : ApproximableMap D E) (v : ApproximableMap (prod E E) E)
     (hD : ∀ X, D.mem X → X.Nonempty) : ApproximableMap (Dsharp D hD) E where
@@ -461,30 +341,8 @@ def gMap (u : ApproximableMap D E) (v : ApproximableMap (prod E E) E)
   inter_right h h' := gRel_interRight hD h h'
   mono h hsub hsup hX' hY' := gRel_mono hD h hsub hsup hX' hY'
 
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 @[simp] theorem gMap_rel {hD : ∀ X, D.mem X → X.Nonempty} {W : Set (List Bool × α)} {Z : Set β} :
     (gMap u v hD).rel W Z ↔ GRel u v W Z := Iff.rfl
-
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 section Computability
 
@@ -515,45 +373,8 @@ def gStep (p : ℕ) : ℕ :=
       (Nat.pair (childL.unpair.1 * childR.unpair.1
           * fV (Nat.pair wit (Nat.pair (Nat.pair childL.unpair.2 childR.unpair.2) out))) out))
 
-end Computability
-
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-section Computability
-
-variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
 /-- The full evaluator: the course-of-values value of `gStep` at `w = ⟨n, cert⟩`. -/
 def gEval : ℕ → ℕ := gOf (gStep fe fU fV mIdx)
-
-end Computability
-
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-section Computability
-
-variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
 
 theorem gEval_pair (n cert : ℕ) :
     gEval fe fU fV mIdx (Nat.pair n cert)
@@ -562,18 +383,6 @@ theorem gEval_pair (n cert : ℕ) :
   rw [gEval, gOf_def]
 
 end Computability
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **`g(in x) = u(x)`.** The injection summand of `D^§ ≅ D + (D^§×D^§)` folds via `u`. -/
 theorem gMap_in (hD : ∀ X, D.mem X → X.Nonempty) (x : D.Element) :
@@ -589,19 +398,6 @@ theorem gMap_in (hD : ∀ X, D.mem X → X.Nonempty) (x : D.Element) :
     · exact ⟨X, hXx, gRel_embZero_inv hD hrel⟩
   · rintro ⟨X, hXx, hrel⟩
     exact ⟨embZero X, Or.inr ⟨X, hXx, rfl⟩, GRel.leaf hrel⟩
-
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **`g(pair y z) = v(⟨g y, g z⟩)`.** The product summand folds via `v` applied to the recursive
 results — the defining recursion of the catamorphism. -/
@@ -623,35 +419,9 @@ theorem gMap_pair (hD : ∀ X, D.mem X → X.Nonempty) (y z : (Dsharp D hD).Elem
     obtain ⟨Z₁, Z₂, ⟨P, hPy, hP1⟩, ⟨Q, hQz, hQ2⟩, rfl⟩ := mem_pair.mp hVmem
     exact ⟨embPair P Q, Or.inr ⟨P, Q, hPy, hQz, rfl⟩, GRel.node hP1 hQ2 hvrel⟩
 
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
 /-- **`g` is strict** (`g(⊥) = ⊥`): Scott's "the unique *strict* mapping". -/
 theorem gMap_strict (hD : ∀ X, D.mem X → X.Nonempty) :
     IsStrict (gMap u v hD) := fun _ h => gRel_gamma_inv hD h
-
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 section Computability
 
@@ -663,25 +433,6 @@ theorem gStep_gamma (cert tbl : ℕ) :
       = Nat.pair (fe (Nat.pair cert.unpair.1 mIdx)) cert.unpair.1 := by
   simp only [gStep, unpair_pair_fst, unpair_pair_snd, Nat.sub_zero, selectFn_one]
 
-end Computability
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-section Computability
-
-variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
-
 theorem gStep_leaf (a cert tbl : ℕ) :
     gStep fe fU fV mIdx (Nat.pair (Nat.pair (2 * a + 1) cert) tbl)
       = Nat.pair (fU (Nat.pair cert.unpair.2.unpair.1 (Nat.pair a cert.unpair.1)))
@@ -689,25 +440,6 @@ theorem gStep_leaf (a cert tbl : ℕ) :
   simp only [gStep, unpair_pair_fst, unpair_pair_snd]
   rw [show (1 : ℕ) - (2 * a + 1) = 0 by omega, selectFn_zero,
     show (2 * a + 1) % 2 = 1 by omega, selectFn_one, show (2 * a + 1) / 2 = a by omega]
-
-end Computability
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-section Computability
-
-variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
 
 theorem gStep_node (a cert tbl : ℕ) :
     gStep fe fU fV mIdx (Nat.pair (Nat.pair (2 * a + 2) cert) tbl)
@@ -728,25 +460,6 @@ theorem gStep_node (a cert tbl : ℕ) :
   rw [show (1 : ℕ) - (2 * a + 2) = 0 by omega, selectFn_zero,
     show (2 * a + 2) % 2 = 0 by omega, selectFn_zero, show (2 * a + 2) / 2 - 1 = a by omega]
 
-end Computability
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-section Computability
-
-variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
-
 /-- The output index of `gEval ⟨n, cert⟩` is just `cert`'s first component (all three branches emit
 `out`). -/
 theorem gEval_out (n cert : ℕ) :
@@ -757,25 +470,6 @@ theorem gEval_out (n cert : ℕ) :
   · rw [gStep_leaf, unpair_pair_snd]
   · rw [gStep_node, unpair_pair_snd]
 
-end Computability
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-section Computability
-
-variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
-
 /-- Memo lookup, in `gEval` form: at any earlier code `w' < w`, position `w-1-w'` of the table is
 `gEval w'`. -/
 theorem listGet_rtbl_gEval {w' w : ℕ} (h : w' < w) :
@@ -783,18 +477,6 @@ theorem listGet_rtbl_gEval {w' w : ℕ} (h : w' < w) :
   listGet_rtbl (gStep fe fU fV mIdx) h
 
 end Computability
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- `Nat.pair` is monotone in its second argument (first argument fixed). -/
 theorem pair_le_pair_right {a b d : ℕ} (h : b ≤ d) : Nat.pair a b ≤ Nat.pair a d := by
@@ -813,19 +495,6 @@ theorem pair_le_pair_right {a b d : ℕ} (h : b ≤ d) : Nat.pair a b ≤ Nat.pa
       omega
     · rw [ite_eq_right (Nat.not_lt.mpr had)]; omega
 
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
 /-- `Nat.pair` is strictly monotone in its first argument (second argument fixed). -/
 theorem pair_lt_pair_left {a c b : ℕ} (h : a < c) : Nat.pair a b < Nat.pair c b := by
   unfold Nat.pair
@@ -842,36 +511,10 @@ theorem pair_lt_pair_left {a c b : ℕ} (h : a < c) : Nat.pair a b < Nat.pair c 
     have hexp : (a + 1) * (a + 1) = a * a + 2 * a + 1 := by ring
     omega
 
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
 /-- Combined: strict in the first argument, monotone in the second. -/
 theorem pair_lt_pair_of_lt_le {a c b d : ℕ} (hac : a < c) (hbd : b ≤ d) :
     Nat.pair a b < Nat.pair c d :=
   lt_of_lt_of_le (pair_lt_pair_left hac) (pair_le_pair_right hbd)
-
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 section Computability
 
@@ -945,25 +588,6 @@ theorem gEval_complete (hD : ∀ X, D.mem X → X.Nonempty)
         exact hwit
       · rw [unpair_pair_fst]; exact he
 
-end Computability
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-section Computability
-
-variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
-
 /-- The certificate step is primitive recursive (when the underlying functions are). -/
 theorem primrec_gStep (hfe : Nat.Primrec fe) (hfU : Nat.Primrec fU) (hfV : Nat.Primrec fV) :
     Nat.Primrec (gStep fe fU fV mIdx) := by
@@ -1036,18 +660,6 @@ theorem primrec_gStep (hfe : Nat.Primrec fe) (hfU : Nat.Primrec fU) (hfV : Nat.P
     (primrec_selectFn (primrec_mod2.comp hnn) hleaf hnode)).of_eq fun p => rfl
 
 end Computability
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- A decoded sub-component is `≤` the code it is decoded from. -/
 theorem unpair_snd_snd_fst_le (c : ℕ) : c.unpair.2.unpair.2.unpair.1 ≤ c := by
@@ -1056,37 +668,11 @@ theorem unpair_snd_snd_fst_le (c : ℕ) : c.unpair.2.unpair.2.unpair.1 ≤ c := 
   have h3 := unpair_fst_le c.unpair.2.unpair.2
   omega
 
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
 theorem unpair_snd_snd_snd_le (c : ℕ) : c.unpair.2.unpair.2.unpair.2 ≤ c := by
   have h1 := unpair_snd_le c
   have h2 := unpair_snd_le c.unpair.2
   have h3 := unpair_snd_le c.unpair.2.unpair.2
   omega
-
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 section Computability
 
@@ -1136,18 +722,6 @@ theorem gEval_sound
   intro n cert; exact key (Nat.pair n cert) n cert rfl
 
 end Computability
-end Exercise717
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-namespace Exercise717
-
-
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **Exercise 7.17 (Part 2) (Scott 1981, PRG-19).** If `E` is effectively given (presentation `Q`) and
 `u : D → E`, `v : E × E → E` are computable, then the unique strict catamorphism `g : D^§ → E`
@@ -1243,14 +817,5 @@ end
 
 end DomainTheory.NeighbourhoodSystems.Exercise717
 namespace DomainTheory.NeighbourhoodSystems
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-end NeighborhoodSystem
-end
 end DomainTheory.NeighbourhoodSystems
 end

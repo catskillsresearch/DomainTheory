@@ -51,58 +51,18 @@ variable {D : NeighborhoodSystem Str}
 /-- The master neighbourhood `{Λ} ∪ 0Δ` of the lift. -/
 def liftTokMaster (D : NeighborhoodSystem Str) : Set Str := insert [] (embBit false D.master)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D : NeighborhoodSystem Str}
-
 theorem embF_subset_liftTokMaster {X : Set Str} (hX : D.mem X) :
     embBit false X ⊆ liftTokMaster D :=
   (embBit_subset.mpr (D.sub_master hX)).trans (Set.subset_insert _ _)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D : NeighborhoodSystem Str}
 
 theorem liftTokMaster_inter_embF {X : Set Str} (hX : D.mem X) :
     liftTokMaster D ∩ embBit false X = embBit false X :=
   Set.inter_eq_right.mpr (embF_subset_liftTokMaster hX)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D : NeighborhoodSystem Str}
-
 theorem nil_mem_liftTokMaster : ([] : Str) ∈ liftTokMaster D := Set.mem_insert _ _
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D : NeighborhoodSystem Str}
 
 theorem embF_ne_liftTokMaster {X : Set Str} : embBit false X ≠ liftTokMaster D := fun h =>
   nil_not_mem_embBit (h.symm ▸ nil_mem_liftTokMaster)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D : NeighborhoodSystem Str}
 
 end Exercise619
 end

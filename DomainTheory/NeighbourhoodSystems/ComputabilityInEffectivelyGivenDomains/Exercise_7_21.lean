@@ -15,6 +15,7 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β : Type*}
+
 /- concordance: source L4689 EXERCISE 7.21 distributing the power domain -/
 /-- **Exercise 7.21 — the two-variable combinator `papplyEval : ℙ(D→E) × ℙD → ℙE`.** The Smyth
 power-domain lift of evaluation (Theorem 3.11): a `ℙ(D→E)`-neighbourhood `Φ` applied to a
@@ -52,42 +53,22 @@ def papplyEval (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
     intro G hG X hX
     obtain ⟨Y, hYB, hrel⟩ := hbody G (hΦ'Φ hG) X (hA'A hX)
     exact ⟨Y, hBB' hYB, hrel⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β : Type*}
 
 @[simp] theorem papplyEval_rel {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
     {Φ : Set (Set (ApproximableMap V W))} {A : Set (Set α)} {B : Set (Set β)} :
     (papplyEval V W).rel Φ A B ↔ (funSpace V W).PDmem Φ ∧ V.PDmem A ∧ W.PDmem B ∧
       ∀ G ∈ Φ, ∀ X ∈ A, ∃ Y ∈ B, (eval V W).rel G X Y := Iff.rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β : Type*}
 
 /-- **Exercise 7.21 — the combinator as a map out of the product `ℙ(D→E) × ℙD → ℙE`.** -/
 def papplyB (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
     ApproximableMap (prod (funSpace V W).PowerDomain V.PowerDomain) W.PowerDomain :=
   ofMap₂ (papplyEval V W)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β : Type*}
 
 /-- **Exercise 7.21 — the headline combinator `papply : ℙ(D→E) → (ℙD → ℙE)`.** Currying `papplyB`
 (Theorem 3.12) gives the combinator of *exactly* the type Scott asks for. -/
 def papply (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
     ApproximableMap (funSpace V W).PowerDomain (funSpace V.PowerDomain W.PowerDomain) :=
   curry (papplyB V W)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β : Type*}
 
 /-- **Exercise 7.21 — `papply`'s relation at the level of `ℙ𝒟`-codes.** Over the canonical
 presentations of Proposition 7.10 (function-space presentation `Pf`, domain `P`, codomain `Q`):
@@ -115,11 +96,6 @@ theorem papplyEval_rel_Ypd_iff {V : NeighborhoodSystem α} {W : NeighborhoodSyst
     obtain ⟨y, hy, hrel⟩ := hgen g hg x hx
     exact ⟨Q.X y, (W.mem_Ypd Q).mpr ⟨y, hy, Q.mem_X y, subset_rfl⟩,
       (eval V W).mono hrel hGsub hXsub subset_rfl hGmem hXmem (Q.mem_X y)⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β : Type*}
 
 /-- **Exercise 7.21 — non-triviality.** For any neighbourhoods `X₀ ∈ D`, `Y₀ ∈ E`, the set of
 functions sending `X₀` into `Y₀` (the principal `ℙ(D→E)`-element `↓[X₀,Y₀]`), applied to the
@@ -136,11 +112,6 @@ theorem papplyEval_step_witness {V : NeighborhoodSystem α} {W : NeighborhoodSys
   intro f hf
   have hfstep : f.rel X₀ Y₀ := mem_step.mp (hGsub hf)
   exact f.mono hfstep hXsub subset_rfl hXmem hY₀
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β : Type*}
 
 /-- **Three nested bounded quantifiers preserve recursive enumerability.** If `R` is r.e. (in the
 paired form `R g x y`) then so is `∀ g ∈ dl w.1, ∀ x ∈ dl w.2.1, ∃ y ∈ dl w.2.2, R g x y`. Built from
@@ -196,11 +167,6 @@ theorem re_forallG_forallX_existsY {R : ℕ → ℕ → ℕ → Prop}
       (Nat.Primrec.left.comp Nat.Primrec.right)).pair Nat.Primrec.left
   refine REPred.of_iff (fun w => ?_) (hGfull.comp hm4)
   simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β : Type*}
 
 /-- **Exercise 7.21 (the computability half) — `papply` is computable when `eval` is.** Stated at the
 level of the `ℙ𝒟`-codes of Proposition 7.10: given that `eval` is recursively enumerable on codes
@@ -217,6 +183,7 @@ theorem papplyEval_isComputable {V : NeighborhoodSystem α} {W : NeighborhoodSys
     (re_forallG_forallX_existsY
       (R := fun g x y => (eval V W).rel (Pf.X g) (P.X x) (Q.X y)) heval)
   exact papplyEval_rel_Ypd_iff Pf P Q
+
 end
 
 section
@@ -495,30 +462,8 @@ variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 /-- Consistency bit of a packed triple. -/
 def consB (r : ℕ) : ℕ := r.unpair.2.unpair.1
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 /-- Equality bit of a packed triple. -/
 def eqB (r : ℕ) : ℕ := r.unpair.1
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- Intersection index of a packed triple. -/
 def intI (r : ℕ) : ℕ := r.unpair.2.unpair.2
@@ -553,31 +498,9 @@ def listGetStp (t : ℕ) : ℕ :=
   Nat.pair (t.unpair.2.unpair.1.unpair.1 - 1)
     (selectFn (isOne t.unpair.2.unpair.1.unpair.1) t.unpair.1 t.unpair.2.unpair.1.unpair.2)
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 /-- `listGet c i = (decodeList c).getD i 0`: the `i`-th entry of the list coded by `c`. -/
 def listGet (c i : ℕ) : ℕ :=
   (foldCode listGetStp 0 (Nat.pair (i + 1) 0) c).unpair.2
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- The fold step on an explicit accumulator `pair cd val`. -/
 theorem listGetStp_pair (cd val x : ℕ) :
@@ -585,17 +508,6 @@ theorem listGetStp_pair (cd val x : ℕ) :
       = Nat.pair (cd - 1) (selectFn (isOne cd) x val) := by
   unfold listGetStp
   simp only [unpair_pair_fst, unpair_pair_snd]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- With `cd = 0` the fold is a fixed point on the value. -/
 theorem listGet_foldl_zero (l : List ℕ) (val : ℕ) :
@@ -606,17 +518,6 @@ theorem listGet_foldl_zero (l : List ℕ) (val : ℕ) :
   | cons x xs ih =>
       rw [List.foldl_cons, listGetStp_pair, Nat.zero_sub,
         show isOne 0 = 0 from rfl, selectFn_zero, ih]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- The fold reads off the `cd-1`-th element (default `val`). -/
 theorem listGet_foldl (l : List ℕ) (c val : ℕ) :
@@ -632,17 +533,6 @@ theorem listGet_foldl (l : List ℕ) (c val : ℕ) :
       · obtain ⟨c', rfl⟩ : ∃ c', c = c' + 1 := ⟨c - 1, by omega⟩
         rw [show isOne (c' + 1 + 1) = 0 by unfold isOne; omega, selectFn_zero, ih,
           List.getD_cons_succ]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **Correctness of `listGet`** on a coded list. -/
 theorem listGet_encodeList (l : List ℕ) (i : ℕ) : listGet (encodeList l) i = l.getD i 0 := by
@@ -693,17 +583,6 @@ theorem memS_sub_embPair (hD : ∀ X, D.mem X → X.Nonempty)
       · simp at hq'
   | @pair Pp Qq hP hQ => exact ⟨Pp, Qq, hP, hQ, rfl⟩
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 theorem memS_sub_embZero (hD : ∀ X, D.mem X → X.Nonempty) {W : Set (List Bool × α)} {Y : Set α}
     (hW : MemS D W) (hsub : W ⊆ embZero Y) : ∃ Z, D.mem Z ∧ W = embZero Z := by
   cases hW with
@@ -749,44 +628,11 @@ variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 /-- Pack the triple `(eqBit, consBit, interIdx)` into one natural. -/
 def packT (e c ii : ℕ) : ℕ := Nat.pair e (Nat.pair c ii)
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 @[simp] theorem eqB_packT (e c ii : ℕ) : eqB (packT e c ii) = e := by
   simp only [eqB, packT, unpair_pair_fst]
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 @[simp] theorem consB_packT (e c ii : ℕ) : consB (packT e c ii) = c := by
   simp only [consB, packT, unpair_pair_fst, unpair_pair_snd]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 @[simp] theorem intI_packT (e c ii : ℕ) : intI (packT e c ii) = ii := by
   simp only [intI, packT, unpair_pair_snd]
@@ -828,53 +674,14 @@ def dsharpStep (p : ℕ) : ℕ :=
           (packT (eqB r1 * eqB r2) (consB r1 * consB r2)
             (2 * Nat.pair (intI r1) (intI r2) + 2)))))
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-variable (fcons feq finter : ℕ → ℕ)
-
 theorem dsharpStep_i0 (j tbl : ℕ) :
     dsharpStep fcons feq finter (Nat.pair (Nat.pair 0 j) tbl) = packT (1 - j) 1 j := by
   simp only [dsharpStep, unpair_pair_fst, unpair_pair_snd, Nat.sub_zero, selectFn_one]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-variable (fcons feq finter : ℕ → ℕ)
 
 theorem dsharpStep_j0 {i : ℕ} (tbl : ℕ) (hi : i ≠ 0) :
     dsharpStep fcons feq finter (Nat.pair (Nat.pair i 0) tbl) = packT (1 - i) 1 i := by
   simp only [dsharpStep, unpair_pair_fst, unpair_pair_snd]
   rw [show (1 : ℕ) - i = 0 by omega, selectFn_zero, Nat.sub_zero, selectFn_one]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-variable (fcons feq finter : ℕ → ℕ)
 
 theorem dsharpStep_ll (a b tbl : ℕ) :
     dsharpStep fcons feq finter (Nat.pair (Nat.pair (2 * a + 1) (2 * b + 1)) tbl)
@@ -886,19 +693,6 @@ theorem dsharpStep_ll (a b tbl : ℕ) :
     show (2 * b + 1) % 2 = 1 by omega, selectFn_one,
     show (2 * a + 1) / 2 = a by omega, show (2 * b + 1) / 2 = b by omega]
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-variable (fcons feq finter : ℕ → ℕ)
-
 theorem dsharpStep_ln (a b tbl : ℕ) :
     dsharpStep fcons feq finter (Nat.pair (Nat.pair (2 * a + 1) (2 * b + 2)) tbl) = packT 0 0 0 := by
   simp only [dsharpStep, unpair_pair_fst, unpair_pair_snd]
@@ -907,19 +701,6 @@ theorem dsharpStep_ln (a b tbl : ℕ) :
     show (2 * a + 1) % 2 = 1 by omega, selectFn_one,
     show (2 * b + 2) % 2 = 0 by omega, selectFn_zero]
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-variable (fcons feq finter : ℕ → ℕ)
-
 theorem dsharpStep_nl (a b tbl : ℕ) :
     dsharpStep fcons feq finter (Nat.pair (Nat.pair (2 * a + 2) (2 * b + 1)) tbl) = packT 0 0 0 := by
   simp only [dsharpStep, unpair_pair_fst, unpair_pair_snd]
@@ -927,19 +708,6 @@ theorem dsharpStep_nl (a b tbl : ℕ) :
     show (1 : ℕ) - (2 * b + 1) = 0 by omega, selectFn_zero,
     show (2 * a + 2) % 2 = 0 by omega, selectFn_zero,
     show (2 * b + 1) % 2 = 1 by omega, selectFn_one]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-variable (fcons feq finter : ℕ → ℕ)
 
 theorem dsharpStep_nn (a b tbl : ℕ) :
     dsharpStep fcons feq finter (Nat.pair (Nat.pair (2 * a + 2) (2 * b + 2)) tbl)
@@ -975,15 +743,6 @@ theorem pair_lt_succ_sq (x y : ℕ) : Nat.pair x y < (max x y + 1) * (max x y + 
   rcases lt_or_ge x y with h | h
   · rw [ite_eq_left h, show max x y = y by omega, hm]; omega
   · rw [ite_eq_right (by omega), show max x y = x by omega, hm]; omega
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
 
 theorem pair_lt_pair_of_lt {x y i j : ℕ} (hx : x < i) (hy : y < j) :
     Nat.pair x y < Nat.pair i j := by
@@ -1022,17 +781,6 @@ theorem primrec_listGet : Nat.Primrec (fun p => listGet p.unpair.1 p.unpair.2) :
     (Nat.Primrec.succ.comp Nat.Primrec.right).pair (Nat.Primrec.const 0)
   exact (Nat.Primrec.right.comp
     (primrec_foldCode hstp (Nat.Primrec.const 0) hz Nat.Primrec.left)).of_eq fun p => rfl
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- `listGet` as a binary primrec composite. -/
 theorem primrec_listGet₂ {c i : ℕ → ℕ} (hc : Nat.Primrec c) (hi : Nat.Primrec i) :
@@ -1139,59 +887,15 @@ def rtbl (step : ℕ → ℕ) : ℕ → ℕ
   | 0 => 0
   | (w + 1) => Nat.pair (step (Nat.pair w (rtbl step w))) (rtbl step w) + 1
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 /-- The course-of-values value at `w`: `g w = step (pair w (table of g below w))`. -/
 def gOf (step : ℕ → ℕ) (w : ℕ) : ℕ := step (Nat.pair w (rtbl step w))
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- The reverse list of memo values `[g(w-1), …, g 0]`. -/
 def gList (step : ℕ → ℕ) : ℕ → List ℕ
   | 0 => []
   | (w + 1) => gOf step w :: gList step w
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 theorem gOf_def (step : ℕ → ℕ) (w : ℕ) : gOf step w = step (Nat.pair w (rtbl step w)) := rfl
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem getD_gList (step : ℕ → ℕ) : ∀ (w p : ℕ), p < w →
     (gList step w).getD p 0 = gOf step (w - 1 - p) := by
@@ -1210,17 +914,6 @@ theorem getD_gList (step : ℕ → ℕ) : ∀ (w p : ℕ), p < w →
           have : w + 1 - 1 - (p + 1) = w - 1 - p := by omega
           rw [this]
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 theorem rtbl_eq_encode (step : ℕ → ℕ) (w : ℕ) : rtbl step w = encodeList (gList step w) := by
   induction w with
   | zero => rfl
@@ -1229,34 +922,12 @@ theorem rtbl_eq_encode (step : ℕ → ℕ) (w : ℕ) : rtbl step w = encodeList
         = encodeList (gList step (w + 1))
       rw [gList, encodeList, gOf, ih]
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 /-- **The course-of-values lookup.** Inside `step` at `w`, position `w-1-v` of the reverse table is
 exactly `g v`, for any earlier `v < w`. -/
 theorem listGet_rtbl (step : ℕ → ℕ) {v w : ℕ} (hv : v < w) :
     listGet (rtbl step w) (w - 1 - v) = gOf step v := by
   rw [rtbl_eq_encode, listGet_encodeList, getD_gList step w (w - 1 - v) (by omega)]
   congr 1; omega
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem rtbl_eq_rec (step : ℕ → ℕ) (w : ℕ) :
     rtbl step w
@@ -1265,17 +936,6 @@ theorem rtbl_eq_rec (step : ℕ → ℕ) (w : ℕ) :
   induction w with
   | zero => rfl
   | succ w ih => rw [rtbl, ih]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- `rtbl step` is primitive recursive when `step` is (a single `prec` whose step is a cons). -/
 theorem primrec_rtbl {step : ℕ → ℕ} (hstep : Nat.Primrec step) : Nat.Primrec (rtbl step) := by
@@ -1286,17 +946,6 @@ theorem primrec_rtbl {step : ℕ → ℕ} (hstep : Nat.Primrec step) : Nat.Primr
     (Nat.Primrec.zero.pair primrec_id)).of_eq fun w => ?_
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
   rw [rtbl_eq_rec]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- `gOf step` is primitive recursive when `step` is. -/
 theorem primrec_gOf {step : ℕ → ℕ} (hstep : Nat.Primrec step) : Nat.Primrec (gOf step) :=
@@ -1315,15 +964,6 @@ namespace Proposition77
 theorem unpair_fst_le (n : ℕ) : n.unpair.1 ≤ n := by
   have h := le_pair_left n.unpair.1 n.unpair.2
   rwa [pair_unpair] at h
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
 
 end Proposition77
 end

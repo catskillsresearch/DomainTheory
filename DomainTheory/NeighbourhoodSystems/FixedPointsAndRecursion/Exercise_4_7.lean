@@ -13,6 +13,7 @@ open NeighborhoodSystem ApproximableMap
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
+
 /- concordance: source L2203 EXERCISE 4.7 fixed point above a seed -/
 /- concordance: source L2201 EXERCISES — Lecture IV exercises -/
 /-- **Exercise 4.7 (Scott 1981, PRG-19).** `fixAbove f ha` is a fixed point: `f(x) = x`. -/
@@ -37,14 +38,6 @@ theorem fixAbove_isFixed (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f
       _ = f.toElementMap (f.iterFrom a n) := iterFrom_succ f a n
       _ ≤ f.toElementMap (f.fixAbove ha) :=
           f.toElementMap_mono (NeighborhoodSystem.le_iSupDirected (f.iterFrom a) hdir n)
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- **Exercise 4.7 (Scott 1981, PRG-19).** `fixAbove f ha` is the *least* fixed point above `a`:
 any `z` with `a ⊑ z` and `f(z) ⊑ z` lies above it. (Relativized form of 4.2(iii).) -/
@@ -165,38 +158,14 @@ theorem le_fixAbove (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toEl
       iterFrom_mono f ha (le_max_right i j)⟩) 0
   rwa [iterFrom_zero] at this
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- The sup of a monotone `ω`-chain, realized as a directed union (`max`-directedness). -/
 def supChain (s : ℕ → V.Element) (hmono : Monotone s) : V.Element :=
   NeighborhoodSystem.iSupDirected s
     (fun i j => ⟨max i j, hmono (le_max_left i j), hmono (le_max_right i j)⟩)
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- The approximants form a monotone `ω`-chain (the `Monotone` packaging of `iterElem_mono`). -/
 theorem iterElem_monotone (f : ApproximableMap V V) : Monotone f.iterElem :=
   fun _ _ hab => iterElem_mono f hab
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- `fⁿ⁺¹(⊥) = f(fⁿ(⊥))`. -/
 theorem iterElem_succ (f : ApproximableMap V V) (n : ℕ) :
@@ -205,36 +174,12 @@ theorem iterElem_succ (f : ApproximableMap V V) (n : ℕ) :
       = f.toElementMap ((f.iterMap n).toElementMap V.bot)
   rw [toElementMap_comp]
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 theorem iterElem_zero (f : ApproximableMap V V) : f.iterElem 0 = V.bot :=
   toElementMap_idMap V.bot
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 theorem mem_supChain (s : ℕ → V.Element) (hmono : Monotone s) {Z : Set α} :
     (supChain s hmono).mem Z ↔ ∃ n, (s n).mem Z :=
   NeighborhoodSystem.mem_iSupDirected s _
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- The approximants `fⁿ(⊥)` form a monotone chain whose sup is `fix(f)`. -/
 theorem fixElement_eq_supChain (f : ApproximableMap V V) :
@@ -245,14 +190,6 @@ theorem fixElement_eq_supChain (f : ApproximableMap V V) :
   constructor
   · rintro ⟨n, hn⟩; exact ⟨n, (mem_iterElem f n).mpr hn⟩
   · rintro ⟨n, hn⟩; exact ⟨n, (mem_iterElem f n).mp hn⟩
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 end ApproximableMap
 end

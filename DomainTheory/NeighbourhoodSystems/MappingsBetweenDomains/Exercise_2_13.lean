@@ -28,13 +28,6 @@ def ofContinuous (c : V₀.Element → V₁.Element) (hc : Continuous c) : Appro
   ofMono (fun _X hX => c (V₀.principal hX))
     (fun _X _X' hX hX' hX'X =>
       NeighborhoodSystem.continuous_monotone hc ((V₀.principal_le_iff hX hX').mpr hX'X))
-end
-
-section
-open NeighborhoodSystem
-universe u
-variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 /-- **Exercise 2.13 (forward).** The elementwise function of an approximable mapping is continuous.
 For an open `U` and `x` with `f(x) ∈ U`, openness gives `Y` with `Y ∈ f(x)` and `[Y] ⊆ U`; unfolding
@@ -50,6 +43,7 @@ theorem continuous_toElementMap (f : ApproximableMap V₀ V₁) :
   obtain ⟨Y, hY, hYU⟩ := hU.out (f.toElementMap x) hx
   obtain ⟨X, hxX, hrel⟩ := hY
   exact ⟨X, hxX, fun x' hx' => hYU ⟨X, hx', hrel⟩⟩
+
 end
 
 end ApproximableMap
@@ -82,14 +76,6 @@ theorem mem_iff_principal_of_continuous {c : V₀.Element → V₁.Element} (hc 
   · rintro ⟨X, hxX, hY⟩
     have hple : V₀.principal (x.sub hxX) ≤ x := fun Z hZ => x.up_mem hxX hZ.1 hZ.2
     exact (continuous_monotone hc hple) Y hY
-end
-
-section
-open NeighborhoodSystem
-universe u
-variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-
 
 theorem principalFamily_directed (x : V₀.Element) :
     ∀ i j : {X : Set α // x.mem X}, ∃ k : {X : Set α // x.mem X},
@@ -98,14 +84,6 @@ theorem principalFamily_directed (x : V₀.Element) :
   fun i j => ⟨⟨i.1 ∩ j.1, x.inter_mem i.2 j.2⟩,
     (V₀.principal_le_iff (x.sub i.2) (x.sub (x.inter_mem i.2 j.2))).mpr Set.inter_subset_left,
     (V₀.principal_le_iff (x.sub j.2) (x.sub (x.inter_mem i.2 j.2))).mpr Set.inter_subset_right⟩
-end
-
-section
-open NeighborhoodSystem
-universe u
-variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-
 
 theorem eq_iSupDirected_principal (x : V₀.Element) :
     x = iSupDirected (fun i : {X : Set α // x.mem X} => V₀.principal (x.sub i.2))
@@ -118,14 +96,6 @@ theorem eq_iSupDirected_principal (x : V₀.Element) :
   · rintro ⟨⟨X, hX⟩, hZ'⟩
     obtain ⟨hZmem, hXZ⟩ := (V₀.mem_principal _).mp hZ'
     exact x.up_mem hX hZmem hXZ
-end
-
-section
-open NeighborhoodSystem
-universe u
-variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-
 
 /-- **The converse of `continuous_toElementMap`/`continuous_monotone`, in domain-theoretic form.**
 A monotone function that also preserves directed unions is topologically continuous — the standard
@@ -159,6 +129,7 @@ theorem continuous_of_monotone_iSupDirected {c : V₀.Element → V₁.Element} 
   refine ⟨i.1, i.2, fun x' hx' => hYU ?_⟩
   have hple : fam i ≤ x' := fun Z hZ => x'.up_mem hx' hZ.1 hZ.2
   exact (hmono hple) Y hi
+
 end
 
 end NeighborhoodSystem

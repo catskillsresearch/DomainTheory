@@ -78,16 +78,6 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
 theorem sumTok_mem_embF {X : Set Str} (hX : D₀.mem X) :
     (sumTok D₀ D₁ h₀ h₁).mem (embBit false X) := Or.inr (Or.inl ⟨X, hX, rfl⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem sumTok_mem_embF_inv {W : Set Str} (h : (sumTok D₀ D₁ h₀ h₁).mem (embBit false W)) :
     D₀.mem W := by
   rcases h with h0 | ⟨X, hX, heq⟩ | ⟨Y, hY, heq⟩
@@ -95,28 +85,8 @@ theorem sumTok_mem_embF_inv {W : Set Str} (h : (sumTok D₀ D₁ h₀ h₁).mem 
   · rw [embBit_injective heq]; exact hX
   · exact absurd heq.symm (embBit_ne (show (true : Bool) ≠ false by decide) (h₁ Y hY))
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem sumTok_mem_embT {Y : Set Str} (hY : D₁.mem Y) :
     (sumTok D₀ D₁ h₀ h₁).mem (embBit true Y) := Or.inr (Or.inr ⟨Y, hY, rfl⟩)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 theorem sumTok_mem_embT_inv {W : Set Str} (h : (sumTok D₀ D₁ h₀ h₁).mem (embBit true W)) :
     D₁.mem W := by
@@ -125,31 +95,11 @@ theorem sumTok_mem_embT_inv {W : Set Str} (h : (sumTok D₀ D₁ h₀ h₁).mem 
   · exact absurd heq.symm (embBit_ne (show (false : Bool) ≠ true by decide) (h₀ X hX))
   · rw [embBit_injective heq]; exact hY
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem sumTok_mem_nonempty {W : Set Str} (h : (sumTok D₀ D₁ h₀ h₁).mem W) : W.Nonempty := by
   rcases h with rfl | ⟨X, hX, rfl⟩ | ⟨Y, hY, rfl⟩
   · exact ⟨[], nil_mem_sumTokMaster⟩
   · exact embBit_nonempty (h₀ X hX)
   · exact embBit_nonempty (h₁ Y hY)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 theorem sum_mem_inj₀_inv {X : Set Str} (h : (sum D₀ D₁ h₀ h₁).mem (inj₀ X)) : D₀.mem X := by
   rcases h with h0 | ⟨X', hX', heq⟩ | ⟨Y', hY', heq⟩
@@ -158,16 +108,6 @@ theorem sum_mem_inj₀_inv {X : Set Str} (h : (sum D₀ D₁ h₀ h₁).mem (inj
   · obtain ⟨b, hb⟩ := h₁ Y' hY'
     exact absurd (heq ▸ ir_mem_inj₁.mpr hb) ir_mem_inj₀
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem sum_mem_inj₁_inv {Y : Set Str} (h : (sum D₀ D₁ h₀ h₁).mem (inj₁ Y)) : D₁.mem Y := by
   rcases h with h0 | ⟨X', hX', heq⟩ | ⟨Y', hY', heq⟩
   · exact absurd (h0 ▸ none_mem_sumMaster) none_mem_inj₁
@@ -175,32 +115,12 @@ theorem sum_mem_inj₁_inv {Y : Set Str} (h : (sum D₀ D₁ h₀ h₁).mem (inj
     exact absurd (heq ▸ il_mem_inj₀.mpr ha) il_mem_inj₁
   · rw [inj₁_injective heq]; exact hY'
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem sum_mem_nonempty {W : Set (Option (Str ⊕ Str))} (h : (sum D₀ D₁ h₀ h₁).mem W) :
     W.Nonempty := by
   rcases h with rfl | ⟨X, hX, rfl⟩ | ⟨Y, hY, rfl⟩
   · exact ⟨none, none_mem_sumMaster⟩
   · exact inj₀_nonempty (h₀ X hX)
   · exact inj₁_nonempty (h₁ Y hY)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- The forward half of the isomorphism, a token-level analogue of `Example62.toBB`. -/
 def toSum (x : (sumTok D₀ D₁ h₀ h₁).Element) : (sum D₀ D₁ h₀ h₁).Element where
@@ -253,16 +173,6 @@ def toSum (x : (sumTok D₀ D₁ h₀ h₁).Element) : (sum D₀ D₁ h₀ h₁)
       · refine Or.inr (Or.inr ⟨Y', hY', rfl, ?_⟩)
         exact x.up_mem hzY (sumTok_mem_embT hY') (embBit_subset.mpr (inj₁_subset_inj₁.mp hsub))
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem toSum_mem_inj₀ {x : (sumTok D₀ D₁ h₀ h₁).Element} {X : Set Str} (hX : D₀.mem X) :
     (toSum x).mem (inj₀ X) ↔ x.mem (embBit false X) := by
   constructor
@@ -273,16 +183,6 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
       exact absurd (heq ▸ il_mem_inj₀.mpr ha) il_mem_inj₁
   · intro hz; exact Or.inr (Or.inl ⟨X, hX, rfl, hz⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem toSum_mem_inj₁ {x : (sumTok D₀ D₁ h₀ h₁).Element} {Y : Set Str} (hY : D₁.mem Y) :
     (toSum x).mem (inj₁ Y) ↔ x.mem (embBit true Y) := by
   constructor
@@ -292,16 +192,6 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
       exact absurd (heq ▸ il_mem_inj₀.mpr ha) il_mem_inj₁
     · rwa [inj₁_injective heq]
   · intro hz; exact Or.inr (Or.inr ⟨Y, hY, rfl, hz⟩)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- The inverse half of the isomorphism, a token-level analogue of `Example62.fromBB`. -/
 def fromSum (s : (sum D₀ D₁ h₀ h₁).Element) : (sumTok D₀ D₁ h₀ h₁).Element where
@@ -358,16 +248,6 @@ def fromSum (s : (sum D₀ D₁ h₀ h₁).Element) : (sumTok D₀ D₁ h₀ h�
         exact s.up_mem hsY (Or.inr (Or.inr ⟨Y', hY', rfl⟩))
           (inj₁_subset_inj₁.mpr (embBit_subset.mp hsub))
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem fromSum_mem_embF {s : (sum D₀ D₁ h₀ h₁).Element} {X : Set Str} (hX : D₀.mem X) :
     (fromSum s).mem (embBit false X) ↔ s.mem (inj₀ X) := by
   constructor
@@ -377,16 +257,6 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
     · exact absurd heq (embBit_ne (show (false : Bool) ≠ true by decide) (h₀ X hX))
   · intro hs; exact Or.inr (Or.inl ⟨X, hX, rfl, hs⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem fromSum_mem_embT {s : (sum D₀ D₁ h₀ h₁).Element} {Y : Set Str} (hY : D₁.mem Y) :
     (fromSum s).mem (embBit true Y) ↔ s.mem (inj₁ Y) := by
   constructor
@@ -395,16 +265,6 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
     · exact absurd heq.symm (embBit_ne (show (false : Bool) ≠ true by decide) (h₀ X' hX'))
     · rwa [embBit_injective heq]
   · intro hs; exact Or.inr (Or.inr ⟨Y, hY, rfl, hs⟩)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 theorem fromSum_toSum (x : (sumTok D₀ D₁ h₀ h₁).Element) : fromSum (toSum x) = x := by
   apply NeighborhoodSystem.Element.ext
@@ -420,41 +280,11 @@ theorem fromSum_toSum (x : (sumTok D₀ D₁ h₀ h₁).Element) : fromSum (toSu
     · exact Or.inr (Or.inl ⟨X, hX, rfl, (toSum_mem_inj₀ hX).mpr hW⟩)
     · exact Or.inr (Or.inr ⟨Y, hY, rfl, (toSum_mem_inj₁ hY).mpr hW⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 /-- A product neighbourhood `{Λ} ∪ 0X ∪ 1Y` over `{0,1}*`. -/
 def prodTokNbhd (X Y : Set Str) : Set Str := insert [] (embBit false X ∪ embBit true Y)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem mem_prodTokNbhd_nil {X Y : Set Str} : ([] : Str) ∈ prodTokNbhd X Y :=
   Set.mem_insert _ _
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 @[simp] theorem mem_prodTokNbhd_false {X Y : Set Str} {w' : Str} :
     (false :: w') ∈ prodTokNbhd X Y ↔ w' ∈ X := by
@@ -466,16 +296,6 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
     · rw [List.cons.injEq] at hu; exact absurd hu.1 (by decide)
   · intro h; exact Or.inr (Or.inl ⟨w', rfl, h⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem mem_prodTokNbhd_true {X Y : Set Str} {w' : Str} :
     (true :: w') ∈ prodTokNbhd X Y ↔ w' ∈ Y := by
   simp only [prodTokNbhd, Set.mem_insert_iff, Set.mem_union, mem_embBit]
@@ -486,16 +306,6 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
     · rw [List.cons.injEq] at hu; rw [hu.2]; exact hY
   · intro h; exact Or.inr (Or.inr ⟨w', rfl, h⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 /-- Scott's (2) for the product: product neighbourhoods intersect componentwise. -/
 theorem prodTokNbhd_inter (X X' Y Y' : Set Str) :
     prodTokNbhd X Y ∩ prodTokNbhd X' Y' = prodTokNbhd (X ∩ X') (Y ∩ Y') := by
@@ -503,16 +313,6 @@ theorem prodTokNbhd_inter (X X' Y Y' : Set Str) :
   cases w with
   | nil => simp [Set.mem_inter_iff]
   | cons b w' => cases b <;> simp [Set.mem_inter_iff]
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- Scott's (1) for the product: inclusion of product neighbourhoods is componentwise. -/
 theorem prodTokNbhd_subset_iff {X X' Y Y' : Set Str} :
@@ -529,16 +329,6 @@ theorem prodTokNbhd_subset_iff {X X' Y Y' : Set Str} :
       cases b with
       | false => exact mem_prodTokNbhd_false.mpr (hX (mem_prodTokNbhd_false.mp hw))
       | true => exact mem_prodTokNbhd_true.mpr (hY (mem_prodTokNbhd_true.mp hw))
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- **Exercise 6.19 — the concrete product system `𝒟₀ × 𝒟₁` over `{0,1}*`.** Neighbourhoods are
 `{Λ} ∪ 0X ∪ 1Y` with `X ∈ 𝒟₀`, `Y ∈ 𝒟₁`. Closed under consistent intersection by Scott's (1)/(2)
@@ -557,16 +347,6 @@ def prodTok (D₀ D₁ : NeighborhoodSystem Str) : NeighborhoodSystem Str where
     rintro W ⟨X, Y, hX, hY, rfl⟩
     exact prodTokNbhd_subset_iff.mpr ⟨D₀.sub_master hX, D₁.sub_master hY⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem prodTokNbhd_injective {X X' Y Y' : Set Str} (h : prodTokNbhd X Y = prodTokNbhd X' Y') :
     X = X' ∧ Y = Y' :=
   ⟨Set.Subset.antisymm (prodTokNbhd_subset_iff.mp h.subset).1
@@ -574,53 +354,13 @@ theorem prodTokNbhd_injective {X X' Y Y' : Set Str} (h : prodTokNbhd X Y = prodT
    Set.Subset.antisymm (prodTokNbhd_subset_iff.mp h.subset).2
       (prodTokNbhd_subset_iff.mp h.symm.subset).2⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem prodTok_mem_iff {W : Set Str} :
     (prodTok D₀ D₁).mem W ↔ ∃ X Y, D₀.mem X ∧ D₁.mem Y ∧ W = prodTokNbhd X Y := Iff.rfl
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem prodTok_master : (prodTok D₀ D₁).master = prodTokNbhd D₀.master D₁.master := rfl
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 theorem prodTok_mem_prodTokNbhd {X Y : Set Str} (hX : D₀.mem X) (hY : D₁.mem Y) :
     (prodTok D₀ D₁).mem (prodTokNbhd X Y) := ⟨X, Y, hX, hY, rfl⟩
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- Scott's `z₀`: the first component of a `prodTok`-element. -/
 def fstTok (z : (prodTok D₀ D₁).Element) : D₀.Element where
@@ -639,28 +379,8 @@ def fstTok (z : (prodTok D₀ D₁).Element) : D₀.Element where
     exact ⟨hX', z.up_mem hzX (prodTok_mem_prodTokNbhd hX' D₁.master_mem)
       (prodTokNbhd_subset_iff.mpr ⟨hXX', subset_rfl⟩)⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem mem_fstTok {z : (prodTok D₀ D₁).Element} {X : Set Str} :
     (fstTok z).mem X ↔ D₀.mem X ∧ z.mem (prodTokNbhd X D₁.master) := Iff.rfl
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- Scott's `z₁`: the second component of a `prodTok`-element. -/
 def sndTok (z : (prodTok D₀ D₁).Element) : D₁.Element where
@@ -679,28 +399,8 @@ def sndTok (z : (prodTok D₀ D₁).Element) : D₁.Element where
     exact ⟨hY', z.up_mem hzY (prodTok_mem_prodTokNbhd D₀.master_mem hY')
       (prodTokNbhd_subset_iff.mpr ⟨subset_rfl, hYY'⟩)⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem mem_sndTok {z : (prodTok D₀ D₁).Element} {Y : Set Str} :
     (sndTok z).mem Y ↔ D₁.mem Y ∧ z.mem (prodTokNbhd D₀.master Y) := Iff.rfl
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- The element pairing `⟨x, y⟩` for the concrete product. -/
 def pairTok (x : D₀.Element) (y : D₁.Element) : (prodTok D₀ D₁).Element where
@@ -715,16 +415,6 @@ def pairTok (x : D₀.Element) (y : D₁.Element) : (prodTok D₀ D₁).Element 
     obtain ⟨hXX', hYY'⟩ := prodTokNbhd_subset_iff.mp hsub
     exact ⟨X', Y', x.up_mem hX hX' hXX', y.up_mem hY hY' hYY', rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem mem_pairTok_prodTokNbhd {x : D₀.Element} {y : D₁.Element} {X Y : Set Str} :
     (pairTok x y).mem (prodTokNbhd X Y) ↔ x.mem X ∧ y.mem Y := by
   constructor
@@ -733,32 +423,12 @@ theorem mem_pairTok_prodTokNbhd {x : D₀.Element} {y : D₁.Element} {X Y : Set
     exact ⟨hX', hY'⟩
   · rintro ⟨hx, hy⟩; exact ⟨X, Y, hx, hy, rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem fstTok_pairTok (x : D₀.Element) (y : D₁.Element) : fstTok (pairTok x y) = x := by
   apply NeighborhoodSystem.Element.ext
   intro X
   constructor
   · rintro ⟨hX, hmem⟩; exact (mem_pairTok_prodTokNbhd.mp hmem).1
   · intro hX; exact ⟨x.sub hX, mem_pairTok_prodTokNbhd.mpr ⟨hX, y.master_mem⟩⟩
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- Scott's (3) for the product: membership of `X ∪ Y` splits into its two slices. -/
 theorem prodTok_mem_split {z : (prodTok D₀ D₁).Element} {X Y : Set Str}
@@ -776,16 +446,6 @@ theorem prodTok_mem_split {z : (prodTok D₀ D₁).Element} {X Y : Set Str}
     rwa [prodTokNbhd_inter, Set.inter_eq_left.mpr (D₀.sub_master hX),
       Set.inter_eq_right.mpr (D₁.sub_master hY)] at this
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem pairTok_fstTok_sndTok (z : (prodTok D₀ D₁).Element) : pairTok (fstTok z) (sndTok z) = z := by
   apply NeighborhoodSystem.Element.ext
   intro W
@@ -797,32 +457,12 @@ theorem pairTok_fstTok_sndTok (z : (prodTok D₀ D₁).Element) : pairTok (fstTo
     obtain ⟨h1, h2⟩ := (prodTok_mem_split hX hY).mp hW
     exact ⟨X, Y, ⟨hX, h1⟩, ⟨hY, h2⟩, rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 @[simp] theorem sndTok_pairTok (x : D₀.Element) (y : D₁.Element) : sndTok (pairTok x y) = y := by
   apply NeighborhoodSystem.Element.ext
   intro Y
   constructor
   · rintro ⟨hY, hmem⟩; exact (mem_pairTok_prodTokNbhd.mp hmem).2
   · intro hY; exact ⟨y.sub hY, mem_pairTok_prodTokNbhd.mpr ⟨x.master_mem, hY⟩⟩
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- The order-isomorphism `|D₀ × D₁|ₜₒₖ ≃o |D₀| × |D₁|` (Scott's Proposition 3.2, token-level). -/
 def prodTokEquiv : (prodTok D₀ D₁).Element ≃o D₀.Element × D₁.Element where
@@ -842,16 +482,6 @@ def prodTokEquiv : (prodTok D₀ D₁).Element ≃o D₀.Element × D₁.Element
     · intro h
       exact ⟨fun X ⟨hX, hzX⟩ => ⟨hX, h _ hzX⟩, fun Y ⟨hY, hzY⟩ => ⟨hY, h _ hzY⟩⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem toSum_fromSum (s : (sum D₀ D₁ h₀ h₁).Element) : toSum (fromSum s) = s := by
   apply NeighborhoodSystem.Element.ext
   intro W
@@ -865,16 +495,6 @@ theorem toSum_fromSum (s : (sum D₀ D₁ h₀ h₁).Element) : toSum (fromSum s
     · exact Or.inl rfl
     · exact Or.inr (Or.inl ⟨X, hX, rfl, (fromSum_mem_embF hX).mpr hW⟩)
     · exact Or.inr (Or.inr ⟨Y, hY, rfl, (fromSum_mem_embT hY).mpr hW⟩)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- **Exercise 6.19 — the concrete sum is correct up to isomorphism.** The order-isomorphism
 `|D₀ + D₁|ₜₒₖ ≃o |D₀ + D₁|` between Scott's `{0,1}*`-presentation and the abstract separated sum. -/
@@ -897,28 +517,8 @@ def sumTokEquiv : (sumTok D₀ D₁ h₀ h₁).Element ≃o (sum D₀ D₁ h₀ 
       · exact Or.inr (Or.inl ⟨X, hX, rfl, h _ hzX⟩)
       · exact Or.inr (Or.inr ⟨Y, hY, rfl, h _ hzY⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 /-- `prodTokNbhd D₀.master D₁.master` is exactly the sum master `{Λ} ∪ 0Δ₀ ∪ 1Δ₁`. -/
 theorem prodTokNbhd_master_eq : prodTokNbhd D₀.master D₁.master = sumTokMaster D₀ D₁ := rfl
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- **Exercise 6.19 — *"Are these correct up to isomorphism?"* (product).** Scott's uniform
 `{0,1}*`-presentation `𝒟₀ × 𝒟₁` is isomorphic, as a domain, to the abstract product of Definition 3.1.
@@ -926,29 +526,9 @@ Both compute the same domain `|D₀| × |D₁|` (via `prodTokEquiv` and Scott's 
 theorem prodTok_iso_prod : prodTok D₀ D₁ ≅ᴰ prod D₀ D₁ :=
   ⟨prodTokEquiv.trans (prodEquiv D₀ D₁).symm⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 /-- The concrete product is again `∅`-free (every neighbourhood contains `Λ`). -/
 theorem prodTok_nonempty : ∀ W, (prodTok D₀ D₁).mem W → W.Nonempty := by
   rintro W ⟨X, Y, _, _, rfl⟩; exact ⟨[], mem_prodTokNbhd_nil⟩
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- **Exercise 6.19 — *"Are these correct up to isomorphism?"* (sum).** Scott's uniform
 `{0,1}*`-presentation `𝒟₀ + 𝒟₁` is isomorphic, as a domain, to the abstract separated sum of
@@ -1022,18 +602,6 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
 
 theorem sumTok_mem_master : (sumTok D₀ D₁ h₀ h₁).mem (sumTokMaster D₀ D₁) := Or.inl rfl
 
-end Exercise619
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example62 ExampleB
-
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 /-- The concrete sum is again `∅`-free (an object of Scott's category). -/
 theorem sumTok_nonempty : ∀ W, (sumTok D₀ D₁ h₀ h₁).mem W → W.Nonempty :=
   fun _ h => sumTok_mem_nonempty h
@@ -1052,18 +620,6 @@ variable {ι : Type u} {α : ι → Type v}
 
 /-- A **product neighbourhood** `iprodNbhd X = {⟨i, a⟩ ∣ a ∈ X i}` over `Σ i, α i`. -/
 def iprodNbhd (X : ∀ i, Set (α i)) : Set (Σ i, α i) := {p | p.2 ∈ X p.1}
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
 
 @[simp] theorem mem_iprodNbhd {X : ∀ i, Set (α i)} {i : ι} {a : α i} :
     (⟨i, a⟩ : Σ i, α i) ∈ iprodNbhd X ↔ a ∈ X i := Iff.rfl
@@ -1087,20 +643,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 the construction constructive, which is exactly what is needed for the cylinder.) -/
 def FinSupp (D : ∀ i, NeighborhoodSystem (α i)) (X : ∀ i, Set (α i)) : Prop :=
   ∃ l : List ι, ∀ i, i ∉ l → X i = (D i).master
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 theorem FinSupp.inter {X X' : ∀ i, Set (α i)}
     (hX : FinSupp D X) (hX' : FinSupp D X') : FinSupp D (fun i => X i ∩ X' i) := by
@@ -1128,34 +670,10 @@ theorem iprodNbhd_injective {X X' : ∀ i, Set (α i)} (h : iprodNbhd X = iprodN
   funext i; apply Set.ext; intro a
   simpa only [mem_iprodNbhd] using Set.ext_iff.mp h ⟨i, a⟩
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
 /-- Product neighbourhoods intersect coordinatewise (Scott's (2)). -/
 theorem iprodNbhd_inter (X X' : ∀ i, Set (α i)) :
     iprodNbhd X ∩ iprodNbhd X' = iprodNbhd (fun i => X i ∩ X' i) := by
   apply Set.ext; rintro ⟨i, a⟩; simp [iprodNbhd, Set.mem_inter_iff]
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
 
 /-- Inclusion of product neighbourhoods is coordinatewise (Scott's (1)). -/
 theorem iprodNbhd_subset_iff {X X' : ∀ i, Set (α i)} :
@@ -1180,25 +698,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 theorem FinSupp.master : FinSupp D (fun i => (D i).master) := ⟨[], fun _ _ => rfl⟩
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
-section IndexedProduct
-
-variable [Nonempty ι]
-
-end IndexedProduct
 end Exercise629
 end
 end DomainTheory.NeighbourhoodSystems

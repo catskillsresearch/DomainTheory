@@ -42,27 +42,11 @@ theorem Subsystem.proj_isStrict {α : Type*} {D E : NeighborhoodSystem α} (h : 
   obtain ⟨_, hXD, hsub⟩ := hrel
   exact Set.Subset.antisymm (D.sub_master hXD) (by rw [h.master_eq]; exact hsub)
 
-end Exercise619
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise619
-
 /-- `i ∘ j = I_Exp` at the raw level (from the iso's `inv_hom_id`). -/
 theorem expHom_comp_expInv (N : ScottSys) (hN : ([] : Str) ∈ N.sys.master) :
     (expHom N hN).comp (expInv N hN) = idMap (Exp N hN).sys := by
   have h := congrArg (Subtype.val) (ExpIso N hN).inv_hom_id
   exact h
-
-end Exercise619
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise619
 
 section Existence
 
@@ -82,19 +66,6 @@ theorem algHom_fix (g : AlgHom (ExpAlg N hN) B) :
           congrArg (fun m => m.comp (expInv N hN)) hcomm
     _ = (algStr B).comp (((Texp N).map g.hom.1).comp (expInv N hN)) := comp_assoc _ _ _
 
-end Existence
-end Exercise619
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise619
-
-section Existence
-
-variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))
-
 /-- **`descAlgHom` is the least homomorphism**: `val ≤ g` for every homomorphism `g : Exp → D`. The
 Kleene iterates `valₙ` lie below any fixed point `g` (induction: `val₀ = ⊥ ≤ g`, and the operator is
 monotone with `g` its own fixed point), so their union `val` does too. This is the easy half of
@@ -106,25 +77,13 @@ theorem descRel_le_algHom (g : AlgHom (ExpAlg N hN) B) : ∀ n, descRel hN B n �
       exact comp_mono_gen le_rfl
         (comp_mono_gen ((Texp N).map_mono (descRel_le_algHom g n)) le_rfl)
 
-end Existence
-end Exercise619
-end
-
-section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise619
-
-section Existence
-
-variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))
-
 theorem descMap_le_algHom (g : AlgHom (ExpAlg N hN) B) : descMap hN B ≤ g.hom.1 := by
   intro X Y hr
   obtain ⟨n, hn⟩ := hr
   exact descRel_le_algHom hN B g n X Y hn
 
 end Existence
+
 end Exercise619
 end
 
@@ -225,103 +184,37 @@ namespace Exercise624
 /-- The first right-hand side `D + (D × E)`. -/
 def Fsol (D E : ScottSys) : ScottSys := D.sum (D.prod E)
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 /-- The second right-hand side `D + E`. -/
 def Gsol (D E : ScottSys) : ScottSys := D.sum E
-
-end Exercise624
-end
-
-section
-namespace Exercise624
 
 /-- `gTok p q = tok((D + E))` for `D = {p}`, `E = {q}`: the tagged union `{Λ} ∪ 0p ∪ 1q`. It is also
 the master of the product `{p} × {q}` (sum and product share the master shape over `{0,1}*`). -/
 def gTok (p q : Set Str) : Set Str := insert ([] : Str) (embBit false p ∪ embBit true q)
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 /-- `fTok p q = tok((D + (D×E)))` for `D = {p}`, `E = {q}`: `{Λ} ∪ 0p ∪ 1(gTok p q)`, equivalently
 `gTok p (gTok p q)`. -/
 def fTok (p q : Set Str) : Set Str := gTok p (gTok p q)
-
-end Exercise624
-end
-
-section
-namespace Exercise624
 
 /-- The pair iteration `Φ(p, q) = (fTok p q, gTok p q)` from the bottom pair `({Λ}, {Λ})`. -/
 def pIter : ℕ → Set Str × Set Str
   | 0 => ({([] : Str)}, {([] : Str)})
   | n + 1 => (fTok (pIter n).1 (pIter n).2, gTok (pIter n).1 (pIter n).2)
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 /-- The first component of the double fixed point, `Γ_D = ⋃ₙ (Φⁿ).₁`. -/
 def GammaD : Set Str := ⋃ n, (pIter n).1
-
-end Exercise624
-end
-
-section
-namespace Exercise624
 
 /-- The second component of the double fixed point, `Γ_E = ⋃ₙ (Φⁿ).₂`. -/
 def GammaE : Set Str := ⋃ n, (pIter n).2
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 theorem nil_mem_GammaD : ([] : Str) ∈ GammaD := Set.mem_iUnion.mpr ⟨0, rfl⟩
-
-end Exercise624
-end
-
-section
-namespace Exercise624
 
 /-- The solution system `D = {Γ_D}`. -/
 def Dsol : ScottSys := singletonSys GammaD ⟨[], nil_mem_GammaD⟩
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 theorem nil_mem_GammaE : ([] : Str) ∈ GammaE := Set.mem_iUnion.mpr ⟨0, rfl⟩
-
-end Exercise624
-end
-
-section
-namespace Exercise624
 
 /-- The solution system `E = {Γ_E}`. -/
 def Esol : ScottSys := singletonSys GammaE ⟨[], nil_mem_GammaE⟩
-
-end Exercise624
-end
-
-section
-namespace Exercise624
 
 /-- `gTok` is monotone in both arguments. -/
 theorem gTok_mono {p p' q q' : Set Str} (hp : p ⊆ p') (hq : q ⊆ q') : gTok p q ⊆ gTok p' q' := by
@@ -330,56 +223,20 @@ theorem gTok_mono {p p' q q' : Set Str} (hp : p ⊆ p') (hq : q ⊆ q') : gTok p
   · exact Or.inr (Or.inl ⟨w', rfl, hp hw'⟩)
   · exact Or.inr (Or.inr ⟨w', rfl, hq hw'⟩)
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 /-- `fTok` is monotone in both arguments. -/
 theorem fTok_mono {p p' q q' : Set Str} (hp : p ⊆ p') (hq : q ⊆ q') : fTok p q ⊆ fTok p' q' :=
   gTok_mono hp (gTok_mono hp hq)
-
-end Exercise624
-end
-
-section
-namespace Exercise624
 
 /-- The master (token set) of `D + (D×E)` is `fTok Γ_D Γ_E` — definitionally, the sum/product
 masters expand to the tagged-union shape `gTok`/`fTok`. -/
 theorem master_Fsol : (Fsol Dsol Esol).sys.master = fTok GammaD GammaE := rfl
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 /-- The master (token set) of `D + E` is `gTok Γ_D Γ_E`. -/
 theorem master_Gsol : (Gsol Dsol Esol).sys.master = gTok GammaD GammaE := rfl
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 theorem nil_mem_fTok (p q : Set Str) : ([] : Str) ∈ fTok p q := Set.mem_insert _ _
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 theorem nil_mem_gTok (p q : Set Str) : ([] : Str) ∈ gTok p q := Set.mem_insert _ _
-
-end Exercise624
-end
-
-section
-namespace Exercise624
 
 /-- **Additivity of `fTok`.** Every token of `fTok (⋃ₙ aₙ) (⋃ₙ bₙ)` already lies in some
 `fTok aₙ bₙ`. The nested `true`-branch (the product copy `0p` inside `1(gTok p q)`) still references
@@ -397,12 +254,6 @@ theorem mem_fTok_iUnion {a b : ℕ → Set Str} {w : Str}
     · obtain ⟨n, hn⟩ := Set.mem_iUnion.mp hu'
       exact ⟨n, Or.inr (Or.inr ⟨true :: u', rfl, Or.inr (Or.inr ⟨u', rfl, hn⟩)⟩)⟩
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 /-- **Additivity of `gTok`.** Every token of `gTok (⋃ₙ aₙ) (⋃ₙ bₙ)` already lies in some
 `gTok aₙ bₙ` — each token references at most one coordinate. -/
 theorem mem_gTok_iUnion {a b : ℕ → Set Str} {w : Str}
@@ -414,31 +265,13 @@ theorem mem_gTok_iUnion {a b : ℕ → Set Str} {w : Str}
   · obtain ⟨n, hn⟩ := Set.mem_iUnion.mp hw'
     exact ⟨n, Or.inr (Or.inr ⟨w', rfl, hn⟩)⟩
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 /-- Each stage sits inside the colimit `Γ_D` (choice-free; avoids `Set.subset_iUnion`). -/
 theorem pIter_fst_subset_GammaD (m : ℕ) : (pIter m).1 ⊆ GammaD :=
   fun _ hx => Set.mem_iUnion.mpr ⟨m, hx⟩
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 /-- Each stage sits inside the colimit `Γ_E` (choice-free). -/
 theorem pIter_snd_subset_GammaE (m : ℕ) : (pIter m).2 ⊆ GammaE :=
   fun _ hx => Set.mem_iUnion.mpr ⟨m, hx⟩
-
-end Exercise624
-end
-
-section
-namespace Exercise624
 
 /-- **First equation of the double fixed point:** `fTok Γ_D Γ_E = Γ_D`, i.e. `tok(D + (D×E)) = Γ_D`
 for `D = {Γ_D}`, `E = {Γ_E}`. -/
@@ -456,12 +289,6 @@ theorem fTok_GammaD_GammaE : fTok GammaD GammaE = GammaD := by
     | succ m =>
         exact fTok_mono (pIter_fst_subset_GammaD m) (pIter_snd_subset_GammaE m) hn
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 /-- **`{Γ_D} ◁ D + (D × E)`.** The singleton system `D = {Γ_D}` is a subsystem of `D + (D×E)`: by the
 fixed point its only neighbourhood `Γ_D` is the master of `D + (D×E)`. -/
 theorem Dsol_subsystem : Dsol.sys ◁ (Fsol Dsol Esol).sys := by
@@ -474,12 +301,6 @@ theorem Dsol_subsystem : Dsol.sys ◁ (Fsol Dsol Esol).sys := by
   · intro X Y hX hY _
     show X ∩ Y = GammaD
     rw [show X = GammaD from hX, show Y = GammaD from hY, Set.inter_self]
-
-end Exercise624
-end
-
-section
-namespace Exercise624
 
 /-- **Second equation of the double fixed point:** `gTok Γ_D Γ_E = Γ_E`, i.e. `tok(D + E) = Γ_E`. -/
 theorem gTok_GammaD_GammaE : gTok GammaD GammaE = GammaE := by
@@ -496,12 +317,6 @@ theorem gTok_GammaD_GammaE : gTok GammaD GammaE = GammaE := by
     | succ m =>
         exact gTok_mono (pIter_fst_subset_GammaD m) (pIter_snd_subset_GammaE m) hn
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 /-- **`{Γ_E} ◁ D + E`.** The singleton system `E = {Γ_E}` is a subsystem of `D + E`: by the fixed
 point its only neighbourhood `Γ_E` is the master of `D + E`. -/
 theorem Esol_subsystem : Esol.sys ◁ (Gsol Dsol Esol).sys := by
@@ -515,12 +330,6 @@ theorem Esol_subsystem : Esol.sys ◁ (Gsol Dsol Esol).sys := by
     show X ∩ Y = GammaE
     rw [show X = GammaE from hX, show Y = GammaE from hY, Set.inter_self]
 
-end Exercise624
-end
-
-section
-namespace Exercise624
-
 /-- **The double fixed point (token level).** There is a pair of token sets `(Γ_D, Γ_E)`, both
 containing `Λ`, that solve the two coupled token equations `tok(D + (D×E)) = Γ_D` and
 `tok(D + E) = Γ_E` simultaneously. -/
@@ -528,12 +337,6 @@ theorem exists_double_fixedPoint :
     ∃ Γd Γe : Set Str, ([] : Str) ∈ Γd ∧ ([] : Str) ∈ Γe ∧
       fTok Γd Γe = Γd ∧ gTok Γd Γe = Γe :=
   ⟨GammaD, GammaE, nil_mem_GammaD, nil_mem_GammaE, fTok_GammaD_GammaE, gTok_GammaD_GammaE⟩
-
-end Exercise624
-end
-
-section
-namespace Exercise624
 
 end Exercise624
 end

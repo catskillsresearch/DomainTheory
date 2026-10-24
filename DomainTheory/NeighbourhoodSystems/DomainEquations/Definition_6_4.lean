@@ -41,15 +41,3 @@ structure AlgHom (A B : TAlgebra T) where
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- IsInitial.lean
-universe u
-
-namespace DomainTheory.NeighbourhoodSystems
-
-variable {Obj : Type u} [Category Obj]
-
-variable {T : Endofunctor Obj}
-
-end DomainTheory.NeighbourhoodSystems
-end

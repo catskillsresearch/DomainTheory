@@ -243,14 +243,6 @@ theorem PDmem_upSet_inter {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) :
       exact h (V.inter_mem hX hY hZmem hZsub)
     rw [hempty]; exact V.PDmem_empty
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
 /-- Cons law for the finite union of down-sets: `⋃_{X ∈ Y::L} ↓X = ↓Y ∪ ⋃_{X ∈ L} ↓X`. -/
 theorem upSetUnion_cons (Y : Set α) (L : List (Set α)) :
     (⋃ X ∈ (Y :: L), V.upSet X) = V.upSet Y ∪ ⋃ X ∈ L, V.upSet X := by
@@ -265,27 +257,11 @@ theorem upSetUnion_cons (Y : Set α) (L : List (Set α)) :
     · exact ⟨Y, List.mem_cons.mpr (Or.inl rfl), hz⟩
     · exact ⟨X, List.mem_cons.mpr (Or.inr hX), hz⟩
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
 /-- The finite union `⋃_{X ∈ []} ↓X` is empty. -/
 theorem upSetUnion_nil : (⋃ X ∈ ([] : List (Set α)), V.upSet X) = ∅ := by
   ext z
   rw [V.mem_PDunion]
   simp only [List.not_mem_nil, false_and, exists_false, Set.mem_empty_iff_false]
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `↓X ∩ (⋃_{Y ∈ L} ↓Y) ∈ ℙ𝒟`: distribute `∩` over the finite union and use `PDmem_upSet_inter`
 term by term. -/
@@ -302,14 +278,6 @@ theorem PDmem_upSet_inter_biUnion {X : Set α} (hX : V.mem X) :
     rw [V.upSetUnion_cons, Set.inter_union_distrib_left]
     exact V.PDmem_union (V.PDmem_upSet_inter hX (hL Y (List.mem_cons.mpr (Or.inl rfl))))
       (ih (fun Z hZ => hL Z (List.mem_cons.mpr (Or.inr hZ))))
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `(⋃_{X ∈ L₁} ↓X) ∩ W₂ ∈ ℙ𝒟` for any `ℙ𝒟`-neighbourhood `W₂` (induction on `L₁`). -/
 theorem PDmem_biUnion_inter :
@@ -328,27 +296,11 @@ theorem PDmem_biUnion_inter :
     obtain ⟨L₂, hL₂, rfl⟩ := hW₂
     exact V.PDmem_upSet_inter_biUnion (hL X (List.mem_cons.mpr (Or.inl rfl))) L₂ hL₂
 
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
 /-- **`ℙ𝒟` is closed under binary intersection.** (The content of Part A's condition (ii).) -/
 theorem PDmem_inter {W₁ W₂ : Set (Set α)} (h₁ : V.PDmem W₁) (h₂ : V.PDmem W₂) :
     V.PDmem (W₁ ∩ W₂) := by
   obtain ⟨L₁, hL₁, rfl⟩ := h₁
   exact V.PDmem_biUnion_inter L₁ hL₁ h₂
-
-end NeighborhoodSystem
-end
-
-section
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 end NeighborhoodSystem
 end

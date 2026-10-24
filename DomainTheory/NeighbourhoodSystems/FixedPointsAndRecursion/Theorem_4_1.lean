@@ -10,6 +10,7 @@ open NeighborhoodSystem ApproximableMap
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
+
 /- concordance: source L1657 THEOREM 4.1 least fixed point -/
 /-- **Theorem 4.1 (Scott 1981, PRG-19).** The `n`-fold composition `fⁿ` of an endomap with itself:
 `f⁰ = I_𝒟` and `f^{n+1} = f ∘ fⁿ`. -/
@@ -17,34 +18,10 @@ def iterMap (f : ApproximableMap V V) : ℕ → ApproximableMap V V
   | 0 => idMap V
   | (n + 1) => f.comp (f.iterMap n)
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 @[simp] theorem iterMap_zero (f : ApproximableMap V V) : f.iterMap 0 = idMap V := rfl
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 @[simp] theorem iterMap_succ (f : ApproximableMap V V) (n : ℕ) :
     f.iterMap (n + 1) = f.comp (f.iterMap n) := rfl
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- Composition is monotone in both arguments. -/
 theorem comp_mono {f g a b : ApproximableMap V V} (hfg : f ≤ g) (hab : a ≤ b) :
@@ -53,28 +30,12 @@ theorem comp_mono {f g a b : ApproximableMap V V} (hfg : f ≤ g) (hab : a ≤ b
   obtain ⟨Y, hXY, hYZ⟩ := h
   exact ⟨Y, hab X Y hXY, hfg Y Z hYZ⟩
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- The iterate is monotone in the map: `f ⊑ g ⟹ fⁿ ⊑ gⁿ` (Scott's "`fⁿ ⊆ gⁿ`"). -/
 theorem iterMap_mono_map {f g : ApproximableMap V V} (hfg : f ≤ g) (n : ℕ) :
     f.iterMap n ≤ g.iterMap n := by
   induction n with
   | zero => show (idMap V) ≤ (idMap V); exact le_refl _
   | succ k ih => exact comp_mono hfg ih
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- `f` commutes with its own iterate: `f ∘ fⁿ = fⁿ ∘ f`. Proved by induction using associativity
 and the identity laws. -/
@@ -86,14 +47,6 @@ theorem iter_comm (f : ApproximableMap V V) (n : ℕ) :
     show f.comp (f.comp (f.iterMap n)) = (f.comp (f.iterMap n)).comp f
     rw [comp_assoc, ← ih]
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- Scott's "a sequence for an `X ∈ x` can always be extended": if `Δ fⁿ X`, then `Δ f^{n+1} X`
 (prepend a `Δ`-step, using `Δ f Δ`). -/
 theorem rel_master_succ (f : ApproximableMap V V) {n : ℕ} {X : Set α}
@@ -102,14 +55,6 @@ theorem rel_master_succ (f : ApproximableMap V V) {n : ℕ} {X : Set α}
   rw [hcomm]
   exact ⟨V.master, f.master_rel, h⟩
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- Monotonicity of the reachability relation in the number of steps: `n ≤ m` and `Δ fⁿ X` imply
 `Δ fᵐ X`. -/
 theorem rel_master_mono (f : ApproximableMap V V) {n m : ℕ} (hnm : n ≤ m) {X : Set α}
@@ -117,14 +62,6 @@ theorem rel_master_mono (f : ApproximableMap V V) {n m : ℕ} (hnm : n ≤ m) {X
   induction hnm with
   | refl => exact h
   | step _ ih => exact rel_master_succ f ih
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- **Theorem 4.1 (Scott 1981, PRG-19).** The least fixed point of `f`, Scott's
 `x = {X ∈ 𝒟 ∣ Δ fⁿ X for some n}`. The three filter conditions are exactly Scott's: `Δ ∈ x` (the
@@ -144,24 +81,8 @@ def fixElement (f : ApproximableMap V V) : V.Element where
     rintro X Y ⟨n, hn⟩ hYmem hXY
     exact ⟨n, (f.iterMap n).mono hn subset_rfl hXY V.master_mem hYmem⟩
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 @[simp] theorem mem_fixElement (f : ApproximableMap V V) {X : Set α} :
     f.fixElement.mem X ↔ ∃ n, (f.iterMap n).rel V.master X := Iff.rfl
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- The least fixed point is monotone in the map: `f ⊑ g ⟹ fix(f) ⊑ fix(g)` (immediate from
 `iterMap_mono_map`; underlies the approximability of `fix` in 4.2). -/
@@ -173,10 +94,5 @@ theorem fixElement_mono {f g : ApproximableMap V V} (hfg : f ≤ g) :
 end ApproximableMap
 end
 
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-open ApproximableMap
-
-end
 end DomainTheory.NeighbourhoodSystems
 end

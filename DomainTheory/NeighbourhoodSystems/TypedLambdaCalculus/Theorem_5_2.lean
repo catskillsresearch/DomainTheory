@@ -15,6 +15,7 @@ section
 variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 namespace Theorem52
+
 /- concordance: source L2657 THEOREM 5.2 beta conversion -/
 /-- **Theorem 5.2 (Scott 1981, PRG-19) — β as a map equation.** Substituting the constant `σ` for
 the bound variable: `(λx.τ)(σ) = τ[σ/x]`, where the left side first abstracts (`curry g`) then
@@ -29,15 +30,6 @@ theorem beta (g : ApproximableMap (prod V₀ V₁) V₂) (σ : V₁.Element) :
     toElementMap_constMap, toElementMap_comp, toElementMap_paired, toElementMap_idMap,
     toElementMap_constMap]
 
-end Theorem52
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-namespace Theorem52
-
 /-- **Theorem 5.2 (Scott 1981, PRG-19) — abstraction case (`inv` step).**
 `(λx.λy.τ)(σ)(y) = τ[σ/x]` evaluated at `y`: the double-curry application law. The bound `y` is
 carried inert past the substitution of `σ` for `x`, exactly Scott's
@@ -48,15 +40,6 @@ theorem beta_abs (g : ApproximableMap (prod (prod V₀ V₁) V₂) V₃) (v : V�
       = g.toElementMap (pair (pair v σ) y) := by
   rw [toElementMap_curry_apply, toElementMap_curry_apply]
 
-end Theorem52
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-namespace Theorem52
-
 /-- **Theorem 5.2 (Scott 1981, PRG-19) — tuple case.**
 `(λx.⟨τ₀, τ₁⟩)(σ) = ⟨(λx.τ₀)(σ), (λx.τ₁)(σ)⟩`: abstraction distributes over a tuple. -/
 theorem beta_tuple (g₀ : ApproximableMap (prod V₀ V₁) V₂) (g₁ : ApproximableMap (prod V₀ V₁) V₃)
@@ -66,15 +49,6 @@ theorem beta_tuple (g₀ : ApproximableMap (prod V₀ V₁) V₂) (g₁ : Approx
           ((toApproxMap ((curry g₁).toElementMap v)).toElementMap x) := by
   rw [toElementMap_curry_apply, toElementMap_paired, toElementMap_curry_apply,
     toElementMap_curry_apply]
-
-end Theorem52
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-namespace Theorem52
 
 /-- **Theorem 5.2, base value law (Scott 1981, PRG-19).** `(λx.τ)(σ) = τ[σ/x]` evaluated: applying
 the abstraction `curry g` (in free-variable context `v`) to `x` substitutes, giving `g(v, x)`. -/

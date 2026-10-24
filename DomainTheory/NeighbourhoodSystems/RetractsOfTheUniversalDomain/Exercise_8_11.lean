@@ -103,8 +103,6 @@ theorem aRel_combine {r s s' : ℚ} (hs1 : s ≤ 1) (hs1' : s' ≤ 1)
     · exact Or.inr ⟨rfl, min_self 1⟩
 end
 
-section
-end
 end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
@@ -939,5 +937,3 @@ end
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-end

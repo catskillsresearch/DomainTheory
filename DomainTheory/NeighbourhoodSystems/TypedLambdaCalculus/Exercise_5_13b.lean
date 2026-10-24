@@ -42,29 +42,18 @@ def setCongr (e : α ≃ β) : Set α ≃o Set β where
       rwa [e.injective hey] at hy
     · rintro h _ ⟨x, hx, rfl⟩
       exact ⟨x, h hx, rfl⟩
-end
-
-section
-variable {α β : Type*}
 
 /-- `P N ≅ P(N × N)` — induced by the pairing bijection `numEquiv`. -/
 def PN_orderIso_PNN : Set ℕ ≃o Set (ℕ × ℕ) := setCongr numEquiv.symm
-end
-
-section
-variable {α β : Type*}
 
 /-- `P N ≅ P N × P N` — `N ≅ N ⊕ N` together with `P(A ⊕ B) ≅ P A × P B` (`Set.sumEquiv`). -/
 def PN_orderIso_prod : Set ℕ ≃o Set ℕ × Set ℕ :=
   (setCongr Equiv.natSumNatEquivNat.symm).trans Set.sumEquiv
-end
-
-section
-variable {α β : Type*}
 
 /-- `P(N × N) ≅ P N × P N` — by composing the two isomorphisms above. -/
 def PNN_orderIso_prod : Set (ℕ × ℕ) ≃o Set ℕ × Set ℕ :=
   PN_orderIso_PNN.symm.trans PN_orderIso_prod
+
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise513

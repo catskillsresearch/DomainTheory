@@ -31,28 +31,17 @@ section
 open NeighborhoodSystem ApproximableMap
 universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
+
 /- concordance: source L4890 THEOREM 8.6 sub combinator -/
 /-- **Theorem 8.6's combinator `sub(f)` (Scott 1981, PRG-19), per token `f`.** Scott's formula
 `X sub(f) Z ↔ ∃Y ∈ E, X⊆Y ∧ f.rel Y Y ∧ Y⊆Z` is literally `retractionOfSubsystem` applied to
 `fixedNbhd f = {Y ∈ E ∣ Y f Y}` (Theorem 8.5's subsystem, built for *any* `f`). -/
 def sub (f : ApproximableMap E E) : ApproximableMap E E :=
   Subsystem.retractionOfSubsystem (fixedNbhd_subsystem f)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 @[simp] theorem sub_rel {f : ApproximableMap E E} {X Z : Set α} :
     (sub f).rel X Z ↔ E.mem X ∧ E.mem Z ∧ ∃ Y, (E.mem Y ∧ f.rel Y Y) ∧ X ⊆ Y ∧ Y ⊆ Z :=
   Subsystem.retractionOfSubsystem_rel (fixedNbhd_subsystem f)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- `fixedNbhd (retractionOfSubsystem h) = D`: the round trip recovering a subsystem `D` from the
 retraction it induces. `Y (retractionOfSubsystem h) Y ↔ ∃W∈D, Y⊆W⊆Y`, and `Y⊆W⊆Y` forces `W=Y`, so
@@ -69,6 +58,7 @@ theorem fixedNbhd_retractionOfSubsystem {D : NeighborhoodSystem α} (h : D ◁ E
     · intro hX
       exact ⟨h.sub hX, h.sub hX, h.sub hX, X, hX, subset_rfl, subset_rfl⟩
   · exact h.master_eq.symm
+
 end
 
 section
@@ -96,12 +86,6 @@ theorem sub_mono {f g : ApproximableMap E E} (h : f ≤ g) : sub f ≤ sub g := 
   rintro X Z hr
   obtain ⟨hX, hZ, Y, ⟨hYE, hYf⟩, hXY, hYZ⟩ := sub_rel.mp hr
   exact sub_rel.mpr ⟨hX, hZ, Y, ⟨hYE, h Y Y hYf⟩, hXY, hYZ⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- Every `retractionOfSubsystem h` is already a fixed point of `sub` — immediate from the round
 trip `fixedNbhd_retractionOfSubsystem`, since `sub` is *defined* as `retractionOfSubsystem` applied
@@ -111,12 +95,6 @@ theorem sub_retractionOfSubsystem {D : NeighborhoodSystem α} (h : D ◁ E) :
   unfold sub
   congr 1
   exact fixedNbhd_retractionOfSubsystem h
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **The finitary projections on `E` are order-isomorphic to the subsystems of `E`.** Forward:
 `f ↦ ⟨fixedNbhd f, fixedNbhd_subsystem f⟩`; backward: `D ↦ retractionOfSubsystem D` (a fixed point
@@ -147,6 +125,7 @@ def finitaryProjectionSubsystemEquiv (E : NeighborhoodSystem α) :
         (fixedNbhd_subsystem f.1) (fixedNbhd_subsystem g.1)).mpr ?_
       intro X hX
       exact ⟨hX.1, hfg X X hX.2⟩
+
 end
 
 section
@@ -161,40 +140,10 @@ theorem toApproxMap_monotone {φ ψ : (funSpace E E).Element} (h : φ ≤ ψ) :
   have := (funSpaceEquiv E E).monotone h
   simpa using this
 
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
 theorem subFilter_mono {φ ψ : (funSpace E E).Element} (h : φ ≤ ψ) : subFilter φ ≤ subFilter ψ :=
   toFilter_le_iff.mpr (sub_mono (toApproxMap_monotone h))
 
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
 theorem subFilter_monotone : Monotone (subFilter (E := E)) := fun _ _ h => subFilter_mono h
-
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
 
 /-- Directed unions of filters correspond, under `toApproxMap`, to the raw (pointwise) union of the
 underlying maps' relations — immediate from `mem_iSupDirected` unfolded through `toApproxMap_rel`.
@@ -203,16 +152,6 @@ theorem toApproxMap_rel_iSupDirected {I : Type u} [Nonempty I] (φ : I → (funS
     (hdir : ∀ i j, ∃ k, φ i ≤ φ k ∧ φ j ≤ φ k) {X Z : Set α} :
     (toApproxMap (iSupDirected φ hdir)).rel X Z ↔ ∃ i, (toApproxMap (φ i)).rel X Z := by
   simp only [toApproxMap_rel, mem_iSupDirected]
-
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
 
 /-- **`sub` commutes with directed unions of relations.** `sub`'s formula (`sub_rel`) is a positive
 existential in `f`'s relation (`∃Y, ... ∧ f.rel Y Y ∧ ...`), so it commutes with an arbitrary union
@@ -229,69 +168,19 @@ theorem sub_toApproxMap_iSupDirected {I : Type u} [Nonempty I] (φ : I → (funS
   · rintro ⟨i, hX, hZ, Y, ⟨hYE, hYi⟩, hXY, hYZ⟩
     exact ⟨hX, hZ, Y, ⟨hYE, i, hYi⟩, hXY, hYZ⟩
 
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
 theorem toApproxMap_toFilter (f : ApproximableMap E E) : toApproxMap (toFilter f) = f :=
   (funSpaceEquiv E E).right_inv f
-
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
 
 theorem toApproxMap_subFilter (φ : (funSpace E E).Element) :
     toApproxMap (subFilter φ) = sub (toApproxMap φ) :=
   toApproxMap_toFilter _
 
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
 theorem toFilter_toApproxMap (φ : (funSpace E E).Element) : toFilter (toApproxMap φ) = φ :=
   (funSpaceEquiv E E).left_inv φ
-
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
 
 theorem toApproxMap_injective {φ ψ : (funSpace E E).Element} (h : toApproxMap φ = toApproxMap ψ) :
     φ = ψ := by
   rw [← toFilter_toApproxMap φ, ← toFilter_toApproxMap ψ, h]
-
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
 
 /-- **`subFilter` preserves directed unions.** Assembled from `sub_toApproxMap_iSupDirected` and
 `toApproxMap_rel_iSupDirected` via `toApproxMap`'s injectivity. -/
@@ -306,59 +195,19 @@ theorem subFilter_iSupDirected {I : Type u} [Nonempty I] (φ : I → (funSpace E
   rw [sub_toApproxMap_iSupDirected, toApproxMap_rel_iSupDirected]
   simp only [toApproxMap_subFilter]
 
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
 /-- **`subFilter` is (topologically) continuous**, via the domain-theoretic bridge
 `continuous_of_monotone_iSupDirected` (monotone + preserves directed unions). -/
 theorem continuous_subFilter : Continuous (subFilter (E := E)) :=
   continuous_of_monotone_iSupDirected subFilter_monotone subFilter_iSupDirected
-
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
 
 /-- **`sub`, packaged as a genuine approximable map on the function space `(E → E)`** (Scott's
 remark that `f ↦ sub(f)` is itself approximable), via Exercise 2.13's `ofContinuous`. -/
 def subApprox : ApproximableMap (funSpace E E) (funSpace E E) :=
   ofContinuous subFilter continuous_subFilter
 
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
 theorem toElementMap_subApprox (φ : (funSpace E E).Element) :
     subApprox.toElementMap φ = subFilter φ :=
   toElementMap_ofContinuous subFilter continuous_subFilter φ
-
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
 
 /-- **`Fix(subApprox) ≃o {f ∣ sub f = f}`.** `subApprox.toElementMap φ = φ` unfolds (via
 `toElementMap_subApprox`/`subFilter`) to `toFilter (sub (toApproxMap φ)) = φ`, i.e. exactly
@@ -383,23 +232,13 @@ def subApproxFixIso :
     show toApproxMap φ.1 ≤ toApproxMap ψ.1 ↔ φ.1 ≤ ψ.1
     exact (funSpaceEquiv E E).map_rel_iff
 
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
-
 /-- **Theorem 8.6(b)(ii) (Scott 1981, PRG-19).** `subApprox` is finitary: composing
 `subApproxFixIso` with `finitaryProjectionSubsystemEquiv` and Proposition 6.11's
 `subsystemReprIso` witnesses `Fix(subApprox)` as (order-isomorphic to) a genuine domain. -/
 theorem isFinitary_subApprox : IsFinitary (subApprox (E := E)) :=
   ⟨_, _, ⟨subApproxFixIso.trans
     ((finitaryProjectionSubsystemEquiv E).trans (Proposition611.subsystemReprIso E))⟩⟩
+
 end Sub8_6
 end
 
@@ -424,12 +263,6 @@ theorem fixedNbhd_sub (f : ApproximableMap E E) : fixedNbhd (sub f) = fixedNbhd 
       obtain ⟨hYE, hYf⟩ := hmem
       refine ⟨hYE, sub_rel.mpr ⟨hYE, hYE, Y, ⟨hYE, hYf⟩, subset_rfl, subset_rfl⟩⟩
   · rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **The easy half of Theorem 8.6's range characterization.** If `f` is a fixed point of `sub`,
 then `f` is a finitary projection: `sub f = f` says exactly that `f` *is*
@@ -440,12 +273,6 @@ theorem isFinitaryProjection_of_sub_eq_self {f : ApproximableMap E E} (h : sub f
     FinitaryProjection f := by
   rw [← h]
   exact Subsystem.isFinitaryProjection_retractionOfSubsystem (fixedNbhd_subsystem f)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **`sub f ≤ f`, unconditionally (Scott 1981, PRG-19).** "`X ⊆ Y, f Y ⊆ Z` always implies
 `X f Z`" — a bare narrow-input/widen-output monotonicity calculation, needing nothing about `f`. -/
@@ -454,6 +281,7 @@ theorem sub_le (f : ApproximableMap E E) : sub f ≤ f := by
   obtain ⟨hX, hZ, Y, ⟨hYE, hYf⟩, hXY, hYZ⟩ := sub_rel.mp hr
   have h1 : f.rel X Y := f.mono hYf hXY subset_rfl hX hYE
   exact f.mono h1 subset_rfl hYZ hX hZ
+
 end
 
 section
@@ -499,23 +327,11 @@ theorem sub_eq_self_of_isFinitaryProjection {f : ApproximableMap E E}
     obtain ⟨-, W, hW, hWZ, hWf⟩ := (formula_of_isFinitaryProjection h (E.principal hX)).mp hmem
     obtain ⟨hWE, hXW⟩ := (E.mem_principal hX).mp hW
     exact sub_rel.mpr ⟨hX, hZ, W, ⟨hWE, hWf⟩, hXW, hWZ⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **Theorem 8.6's range characterization, in full.** `sub f = f ↔ f` is a finitary projection. -/
 theorem sub_eq_self_iff_isFinitaryProjection {f : ApproximableMap E E} :
     sub f = f ↔ FinitaryProjection f :=
   ⟨isFinitaryProjection_of_sub_eq_self, sub_eq_self_of_isFinitaryProjection⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **`sub` is idempotent: `sub (sub f) = sub f`** (sharper than Scott's stated `sub(f) ⊆
 sub(sub(f))`, Theorem 8.6's projection clause for `sub` itself). Both sides are
@@ -525,12 +341,6 @@ theorem sub_sub (f : ApproximableMap E E) : sub (sub f) = sub f := by
   unfold sub
   congr 1
   exact fixedNbhd_sub f
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **`sub` is itself a finitary projection on `E → E`'s range** (Theorem 8.6's remark that `sub`
 restricted to its own range is the identity, i.e. `sub` "is" a projection onto the finitary
@@ -540,6 +350,7 @@ fixed point of `sub` (feed `isFinitaryProjection_of_sub_eq_self (sub_sub f)` bac
 `f`, needing no hypothesis on `f` at all. -/
 theorem isFinitaryProjection_sub (f : ApproximableMap E E) : FinitaryProjection (sub f) :=
   isFinitaryProjection_of_sub_eq_self (sub_sub f)
+
 end
 
 section
@@ -555,33 +366,11 @@ theorem subFilter_subFilter (φ : (funSpace E E).Element) :
   unfold subFilter
   rw [toApproxMap_toFilter, sub_sub]
 
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
-
 theorem toElementMap_subApprox_comp (φ : (funSpace E E).Element) :
     (subApprox.comp subApprox).toElementMap φ = subApprox.toElementMap φ := by
   rw [toElementMap_comp]
   simp only [toElementMap_subApprox]
   exact subFilter_subFilter φ
-
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
 
 /-- **`subApprox` is a retraction**: `subApprox ∘ subApprox = subApprox`, from `subFilter`'s own
 idempotency (`subFilter_subFilter`), itself inherited from `sub_sub`. Proved via `le_antisymm` on
@@ -590,32 +379,10 @@ theorem isRetraction_subApprox : Retraction (subApprox (E := E)) :=
   ⟨le_antisymm (le_iff_toElementMap_le.mpr fun φ => (toElementMap_subApprox_comp φ).le)
     (le_iff_toElementMap_le.mpr fun φ => (toElementMap_subApprox_comp φ).ge)⟩
 
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
-
 /-- **`sub` is itself a *projection* on the function space `(E → E)`** (half of Theorem 8.6's
 second clause; the other half, `IsFinitary subApprox`, is below). -/
 theorem isProjection_subApprox : IsProjection (subApprox (E := E)) :=
   ⟨isRetraction_subApprox, subApprox_le_idMap⟩
-
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
 
 /-- **Theorem 8.6(b), in full.** `subApprox` is a finitary projection on `(E → E)`. -/
 theorem isFinitaryProjection_subApprox : FinitaryProjection (subApprox (E := E)) :=
@@ -683,11 +450,6 @@ theorem subApprox_rel_iff {F G : Set (ApproximableMap E E)} (hF : (funSpace E E)
     (subApprox (E := E)).rel F G ↔
       (funSpace E E).mem G ∧ sub (toApproxMap ((funSpace E E).principal hF)) ∈ G :=
   ⟨fun ⟨_, hG, hmem⟩ => ⟨hG, hmem⟩, fun ⟨hG, hmem⟩ => ⟨hF, hG, hmem⟩⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-variable {α : Type*} {E : NeighborhoodSystem α}
 
 section SubComputable
 
@@ -704,20 +466,6 @@ theorem subApprox_rel_Xenum_iff (n m : ℕ) :
           (P.X e.unpair.1) (P.X e.unpair.2) := by
   rw [subApprox_rel_iff (Xenum_mem P P gN hgN n), and_iff_right (Xenum_mem P P gN hgN m)]
   exact mem_Xenum_iff_map P P gN _ m
-
-end SubComputable
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-variable {α : Type*} {E : NeighborhoodSystem α}
-
-section SubComputable
-
-variable (P : ComputablePresentation E) (gN : ℕ → ℕ)
-  (hgN : ∀ c, gN c = 1 ↔
-    (stepFun (funListOf P P (decodeList c)) : Set (ApproximableMap E E)).Nonempty)
-
 
 /-- **The per-witness `sub`-step predicate is recursively decidable**, coded as a function of
 `w = ⟨y, ⟨n, e⟩⟩`: the function-space inclusion `Xenum n ⊆ Xenum (codePair y y)` (via `fincl`, the
@@ -753,19 +501,6 @@ theorem subStep_recDecidable (fincl incl : ℕ → ℕ)
       fun w => by rw [hincl]; simp only [unpair_pair_fst, unpair_pair_snd]⟩
   exact h1.and (h2.and h3)
 
-end SubComputable
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-variable {α : Type*} {E : NeighborhoodSystem α}
-
-section SubComputable
-
-variable (P : ComputablePresentation E) (gN : ℕ → ℕ)
-  (hgN : ∀ c, gN c = 1 ↔
-    (stepFun (funListOf P P (decodeList c)) : Set (ApproximableMap E E)).Nonempty)
-
 /-- **`sub`'s defining existential, reindexed to presentation indices.** `sub f` relates presented
 neighbourhoods `X_a`, `X_b` iff some presented `X_y` witnesses Scott's formula (`P.surj` turns the
 arbitrary witness neighbourhood `Y` of `sub_rel` into an index `y`). -/
@@ -780,19 +515,6 @@ theorem sub_rel_iff_exists_index {f : ApproximableMap E E} {a b : ℕ} :
   · rintro ⟨y, hYf, haY, hYb⟩
     exact ⟨P.X y, ⟨P.mem_X y, hYf⟩, haY, hYb⟩
 
-end SubComputable
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-variable {α : Type*} {E : NeighborhoodSystem α}
-
-section SubComputable
-
-variable (P : ComputablePresentation E) (gN : ℕ → ℕ)
-  (hgN : ∀ c, gN c = 1 ↔
-    (stepFun (funListOf P P (decodeList c)) : Set (ApproximableMap E E)).Nonempty)
-
 /-- **`sub` of `Xenum n`'s least map, in fully decidable-existential form.** Combines
 `sub_rel_iff_exists_index` with Theorem 7.6's `leastMap_Xenum_rel`/`Xenum_codePair` to turn the
 witness condition `ĝₙ.rel (X_y) (X_y)` into the recursively decidable function-space inclusion
@@ -805,20 +527,6 @@ theorem sub_leastMap_rel_iff (n a b : ℕ) :
   rw [sub_rel_iff_exists_index P]
   refine exists_congr (fun y => ?_)
   rw [leastMap_Xenum_rel P gN hgN n y y, Xenum_codePair P gN hgN y y]
-
-end SubComputable
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-variable {α : Type*} {E : NeighborhoodSystem α}
-
-section SubComputable
-
-variable (P : ComputablePresentation E) (gN : ℕ → ℕ)
-  (hgN : ∀ c, gN c = 1 ↔
-    (stepFun (funListOf P P (decodeList c)) : Set (ApproximableMap E E)).Nonempty)
-
 
 /-- **Theorem 8.6(c) (Scott 1981, PRG-19), as an `ComputableMap` statement.** Relative to the
 function-space presentation `funPresentation P P …` (Theorem 7.5) built from any presentation `P` of
@@ -859,11 +567,6 @@ theorem subApprox_isComputable
   exact sub_leastMap_rel_iff P gN hgN t.unpair.1 e.unpair.1 e.unpair.2
 
 end SubComputable
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-variable {α : Type*} {E : NeighborhoodSystem α}
 
 /-- **Theorem 8.6(c) (Scott 1981, PRG-19), in full: "If `E` is effectively given, then `sub` is
 computable."** Packages `subApprox_isComputable` with the function-space presentation that Theorem
@@ -885,6 +588,7 @@ theorem sub_isComputable_of_isEffectivelyGiven (h : E.IsEffectivelyGiven) :
     (primrec_funConsChar P P fc fc hfcp hfcp) hincl' hinclp hincl' hinclp heq' heqp,
     subApprox_isComputable P (funConsChar P P fc fc) hgN incl eq
       (primrec_funConsChar P P fc fc hfcp hfcp) hincl' hinclp heq' heqp⟩
+
 end
 
 section
@@ -993,11 +697,6 @@ def SplitSpec (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ) : P
       (A \ Xn = ∅ ↔ (split A B Xn).2 = ∅) ∧
       (split A B Xn).1 ∪ (split A B Xn).2 = B ∧
       (split A B Xn).1 ∩ (split A B Xn).2 = ∅
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 /-- **The key local splitting step behind Theorem 8.8(a)'s back-and-forth construction.** Given a
 `D`-side atom `A` matched with a `U`-side atom `B` (`A = ∅ ↔ B = ∅`, and `B` is either empty or a
@@ -1036,15 +735,11 @@ theorem exists_split {A : Set α} {B : Set ℚ} (hAB : A = ∅ ↔ B = ∅)
       have hZne : Z ≠ ∅ := hZ.2.1.ne_empty
       exact ⟨Y, Z, Or.inr hY, Or.inr hZ, iff_of_false h1 hYne, iff_of_false h2 hZne,
         hYZunion, hYZinter⟩
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 def genAtom {β : Type*} (Z : ℕ → Set β) (M : Set β) (δ : ℕ → Bool) : ℕ → Set β
   | 0 => M
   | (n + 1) => genAtom Z M δ n ∩ (if δ n then Z n else M \ Z n)
+
 end
 
 section
@@ -1082,32 +777,15 @@ include hΔ hsplit
 /-- Pad `δ' : Fin n → Bool` to a total `ℕ → Bool`, filling positions `≥ n` with `true`. -/
 def extendTrue {n : ℕ} (δ' : Fin n → Bool) : ℕ → Bool :=
   fun i => if h : i < n then δ' ⟨i, h⟩ else true
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-variable (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
-variable (X : ℕ → Set α) (Δ : Set α)
-variable (hΔ : Δ.Nonempty) (hsplit : SplitSpec split)
-include hΔ hsplit
 
 /-- **Scott's `Yₙ`**: the union, over all `2ⁿ` depth-`n` atoms, of the "+"-piece chosen when
 splitting against `X n`. -/
 noncomputable def Yseq (n : ℕ) : Set ℚ :=
   ⋃ δ' : Fin n → Bool, atomU split X Δ (extendTrue δ') (n + 1)
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-variable (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
-variable (X : ℕ → Set α) (Δ : Set α)
-variable (hΔ : Δ.Nonempty) (hsplit : SplitSpec split)
-include hΔ hsplit
 
 /-- Restrict `δ : ℕ → Bool` to `Fin n → Bool`. -/
 def restrictFin (δ : ℕ → Bool) (n : ℕ) : Fin n → Bool := fun i => δ i.val
+
 end
 
 section
@@ -1126,11 +804,6 @@ noncomputable def splitChoice (A : Set α) (B : Set ℚ) (Xn : Set α) : Set ℚ
   if h : (A = ∅ ↔ B = ∅) ∧ (B = ∅ ∨ U.mem B) then
     ⟨(exists_split h.1 h.2 Xn).choose, (exists_split h.1 h.2 Xn).choose_spec.choose⟩
   else (∅, ∅)
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 theorem genAtom_subset {β : Type*} (Z : ℕ → Set β) (M : Set β) (δ : ℕ → Bool) (n : ℕ) :
     genAtom Z M δ n ⊆ M := by
@@ -1652,6 +1325,7 @@ theorem Yseq_nonempty_of_mem {n : ℕ} {x : α} (hxΔ : x ∈ Δ) (hxn : x ∈ X
     rw [hδ2_eq, ← hI_eq_atomU]
     exact Set.nonempty_iff_ne_empty.mpr hIne
   exact hne2.mono (subset_Yseq split X Δ (restrictFin δ0 n))
+
 end
 
 section
@@ -1669,11 +1343,6 @@ theorem splitChoice_isSplitSpec : SplitSpec (α := α) splitChoice := by
   unfold splitChoice
   rw [dite_eq_left ⟨hAB, hBU⟩]
   exact (exists_split hAB hBU Xn).choose_spec.choose_spec
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 section Reencode
 
@@ -1683,25 +1352,9 @@ variable (e : ℕ → Set α)
 below `e n`. This is `D†`'s replacement for `e n` itself. -/
 def idxSet (n : ℕ) : Set ℕ := {m | e m ⊆ e n}
 
-end Reencode
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Reencode
-
-variable (e : ℕ → Set α)
-
 @[simp] theorem mem_idxSet {m n : ℕ} : m ∈ idxSet e n ↔ e m ⊆ e n := Iff.rfl
 
 end Reencode
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 section Setup
 
@@ -1712,43 +1365,14 @@ include hcover in
 /-- Every enumerated set is a genuine `D`-neighbourhood. -/
 theorem D_mem_e (n : ℕ) : D.mem (e n) := (hcover (e n)).mpr ⟨n, rfl⟩
 
-end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Setup
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
-
 /-- **Scott's `Yₙ`, built from the separated reindexing.** Instantiated with the classical
 `splitChoice` (this is `Theorem88.lean`'s general, non-effective apparatus). -/
 noncomputable abbrev Yidx (n : ℕ) : Set ℚ := Yseq splitChoice (idxSet e) Set.univ n
-
-end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Setup
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
 
 include hcover in
 theorem e_subset_master (n : ℕ) : e n ⊆ D.master := D.sub_master (D_mem_e D e hcover n)
 
 end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 section Reencode
 
@@ -1763,26 +1387,10 @@ theorem idxSet_inter_of_inter_eq {i j m : ℕ} (h : e i ∩ e j = e m) :
   show e k ⊆ e i ∧ e k ⊆ e j ↔ e k ⊆ e m
   rw [← Set.subset_inter_iff, h]
 
-end Reencode
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Reencode
-
-variable (e : ℕ → Set α)
-
 theorem idxSet_zero_eq_univ {n0 : ℕ} (hsub : ∀ m, e m ⊆ e n0) : idxSet e n0 = Set.univ :=
   Set.eq_univ_of_forall hsub
 
 end Reencode
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 section Setup
 
@@ -1794,11 +1402,6 @@ theorem idxSet_zero : idxSet e 0 = Set.univ :=
   idxSet_zero_eq_univ e (fun m => he0 ▸ e_subset_master D e hcover m)
 
 end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 section Reencode
 
@@ -1808,28 +1411,12 @@ variable (e : ℕ → Set α)
 regardless of whether `e n` itself is empty. -/
 theorem self_mem_idxSet (n : ℕ) : n ∈ idxSet e n := show e n ⊆ e n from subset_rfl
 
-end Reencode
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Reencode
-
-variable (e : ℕ → Set α)
-
 /-- The raw inclusion order on `idxSet`s matches `e`'s own inclusion order — this is the
 "separation" property `D†` is built to have. -/
 theorem idxSet_subset_iff (i j : ℕ) : idxSet e i ⊆ idxSet e j ↔ e i ⊆ e j :=
   ⟨fun h => h (self_mem_idxSet e i), fun h _ hm => hm.trans h⟩
 
 end Reencode
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 section Setup
 
@@ -1841,33 +1428,9 @@ variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
 `D` is ever needed, since we reindexed onto `ℕ` before invoking it (`idxSet_nonempty`). -/
 theorem univ_nonempty_nat : (Set.univ : Set ℕ).Nonempty := ⟨0, trivial⟩
 
-end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Setup
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
-
 /-- `Yidx e n` is always `∅` or a genuine `U`-neighbourhood. -/
 theorem Yidx_empty_or_mem (n : ℕ) : Yidx e n = ∅ ∨ U.mem (Yidx e n) :=
   Yseq_empty_or_mem splitChoice (idxSet e) Set.univ univ_nonempty_nat splitChoice_isSplitSpec n
-
-end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Setup
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
 
 /-- **`Yidx e n` is always non-empty** (hence, by `Yidx_empty_or_mem`, always a genuine
 `U`-neighbourhood): `n` itself witnesses `n ∈ idxSet e n`. -/
@@ -1875,66 +1438,18 @@ theorem Yidx_nonempty (n : ℕ) : (Yidx e n).Nonempty :=
   Yseq_nonempty_of_mem splitChoice (idxSet e) Set.univ univ_nonempty_nat splitChoice_isSplitSpec
     (Set.mem_univ n) (self_mem_idxSet e n)
 
-end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Setup
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
-
 theorem Yidx_mem (n : ℕ) : U.mem (Yidx e n) :=
   (Yidx_empty_or_mem e n).resolve_left (Yidx_nonempty e n).ne_empty
-
-end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Setup
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
 
 /-- `Yidx e n` is always `⊆ U.master`. -/
 theorem Yidx_subset_master (n : ℕ) : Yidx e n ⊆ U.master :=
   Yseq_subset_master splitChoice (idxSet e) Set.univ univ_nonempty_nat splitChoice_isSplitSpec n
-
-end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Setup
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
 
 include hcover he0 in
 /-- `Yidx e 0 = U.master`, since `idxSet e 0 = Set.univ` (Scott's `X₀ = Δ`). -/
 theorem Yidx_zero : Yidx e 0 = U.master :=
   Yseq_zero_eq_master splitChoice (idxSet e) Set.univ univ_nonempty_nat splitChoice_isSplitSpec
     (idxSet_zero D e hcover he0)
-
-end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Setup
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
 
 /-- **The order-embedding at the neighbourhood level.** This is where the whole `idxSet`
 reindexing pays off: because `idxSet`'s inclusion order matches `e`'s (`idxSet_subset_iff`), the
@@ -1947,18 +1462,6 @@ theorem embed_subset_iff (i j : ℕ) : e i ⊆ e j ↔ Yidx e i ⊆ Yidx e j := 
     splitChoice_isSplitSpec i j
   rwa [Set.univ_inter, Set.inter_eq_self_of_subset_right (Yidx_subset_master e i)] at this
 
-end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Setup
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
-
 theorem embed_eq_iff (i j : ℕ) : e i = e j ↔ Yidx e i = Yidx e j :=
   ⟨fun h => Set.Subset.antisymm ((embed_subset_iff e i j).mp h.subset)
       ((embed_subset_iff e j i).mp h.symm.subset),
@@ -1966,11 +1469,6 @@ theorem embed_eq_iff (i j : ℕ) : e i = e j ↔ Yidx e i = Yidx e j :=
       ((embed_subset_iff e j i).mpr h.symm.subset)⟩
 
 end Setup
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 section Subsystem
 
@@ -1990,18 +1488,6 @@ theorem exists_inter_index_of_dmem {i j : ℕ} (hDij : D.mem (e i ∩ e j)) :
   exact ⟨m, hm, (transfer_inter_eq_iff splitChoice (idxSet e) Set.univ univ_nonempty_nat
     splitChoice_isSplitSpec i j m
     (Set.subset_univ _) (Set.subset_univ _) (Set.subset_univ _)).mp (idxSet_inter_of_inter_eq e hm)⟩
-
-end Subsystem
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Subsystem
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
 
 /-- **`D'`**: the neighbourhood system generated by `{Yidx e n ∣ n ∈ ℕ}`. Its `inter_mem` axiom
 transfers *directly* from `D`'s own `inter_mem`: a witness `X k ⊆ X i ∩ X j` on the `D'`-side pulls
@@ -2023,18 +1509,6 @@ noncomputable def DprimeU : NeighborhoodSystem ℚ where
         (Set.subset_inter h1 h2))
     exact ⟨m, hYeq⟩
 
-end Subsystem
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Subsystem
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
-
 include hcover in
 /-- **The "unwitnessed" variant**, used exactly when only the raw non-emptiness of `Yidx e i ∩
 Yidx e j` is known (not an explicit `D`-side witness): non-emptiness transfers down
@@ -2055,18 +1529,6 @@ theorem exists_inter_index_of_nonempty {i j : ℕ} (hne : (Yidx e i ∩ Yidx e j
     (D.inter_mem (D_mem_e D e hcover i) (D_mem_e D e hcover j) (D_mem_e D e hcover k)
       (Set.subset_inter hki hkj))
 
-end Subsystem
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Subsystem
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
-
 include hcover he0 in
 /-- **`D' ◁ U`.** `sub` is `Yidx_mem`; `inter_closed` uses `exists_inter_index_of_nonempty` to find
 *some* witnessed-consistent pair on the `D`-side from the mere non-emptiness of `Yidx e i ∩ Yidx e
@@ -2080,11 +1542,6 @@ theorem DprimeU_subsystem : DprimeU D e hcover he0 ◁ U where
     exact ⟨m, hYeq⟩
 
 end Subsystem
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 section Iso
 
@@ -2108,18 +1565,6 @@ def toD (y : (DprimeU D e hcover he0).Element) : D.Element where
     have hYij : Yidx e i ⊆ Yidx e j := (embed_subset_iff e i j).mp hST
     exact ⟨j, rfl, y.up_mem hyi ⟨j, rfl⟩ hYij⟩
 
-end Iso
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Iso
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
-
 /-- **Pushforward**: the `D'`-filter `{Yidx e n ∣ e n ∈ x}` induced by a `D`-filter `x`. -/
 def toDprimeU (x : D.Element) : (DprimeU D e hcover he0).Element where
   mem Y := ∃ n, Y = Yidx e n ∧ x.mem (e n)
@@ -2134,18 +1579,6 @@ def toDprimeU (x : D.Element) : (DprimeU D e hcover he0).Element where
     rintro X Y ⟨i, rfl, hxi⟩ ⟨j, rfl⟩ hXY
     have heij : e i ⊆ e j := (embed_subset_iff e i j).mpr hXY
     exact ⟨j, rfl, x.up_mem hxi (D_mem_e D e hcover j) heij⟩
-
-end Iso
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Iso
-
-variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
-  (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
 
 /-- **The order isomorphism `D.Element ≃o D'.Element`.** `toDprimeU`/`toD` are mutually inverse
 (via `embed_eq_iff`, which resolves the ambiguity of *which* index represents a given
@@ -2190,11 +1623,6 @@ noncomputable def domainIso : DomainIso D (DprimeU D e hcover he0) where
       exact ⟨n, hn, hle _ hxn⟩
 
 end Iso
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 section Reencode
 
@@ -2206,26 +1634,9 @@ theorem idxSet_eq_iff (i j : ℕ) : idxSet e i = idxSet e j ↔ e i = e j :=
       ((idxSet_subset_iff e j i).mp h.symm.subset),
     fun h => by rw [idxSet, idxSet, h]⟩
 
-end Reencode
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
-
-section Reencode
-
-variable (e : ℕ → Set α)
-
-
 theorem idxSet_nonempty (n : ℕ) : (idxSet e n).Nonempty := ⟨n, self_mem_idxSet e n⟩
 
 end Reencode
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 section Iso
 
@@ -2237,11 +1648,6 @@ variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
 theorem isomorphic_DprimeU : D ≅ᴰ DprimeU D e hcover he0 := ⟨domainIso D e hcover he0⟩
 
 end Iso
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 end
 end DomainTheory.NeighbourhoodSystems

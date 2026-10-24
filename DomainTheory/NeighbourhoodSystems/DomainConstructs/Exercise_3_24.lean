@@ -228,10 +228,6 @@ theorem example_324_iter.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {V₀ 
   @DomainTheory.NeighbourhoodSystems.funIter_isomorphic
 end
 
-section
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-end
 end
 end DomainTheory.NeighbourhoodSystems
 end

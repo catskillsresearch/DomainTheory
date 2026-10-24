@@ -16,31 +16,16 @@ variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSyst
 the neighbourhood with `e(↑X) = ↑φ(X)` provided by Theorem 2.7. -/
 noncomputable def phi (e : V₀.Element ≃o V₁.Element) {X : Set α} (hX : V₀.mem X) : Set β :=
   Classical.choose (exists_principal_eq_apply_principal e hX)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- `φ(X) ∈ 𝒟₁`. -/
 theorem phi_mem (e : V₀.Element ≃o V₁.Element) {X : Set α} (hX : V₀.mem X) :
     V₁.mem (phi e hX) :=
   Classical.choose (Classical.choose_spec (exists_principal_eq_apply_principal e hX))
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- **Theorem 2.7 defining equation: `e(↑X) = ↑φ(X)`.** -/
 theorem phi_spec (e : V₀.Element ≃o V₁.Element) {X : Set α} (hX : V₀.mem X) :
     e (V₀.principal hX) = V₁.principal (phi_mem e hX) :=
   Classical.choose_spec (Classical.choose_spec (exists_principal_eq_apply_principal e hX))
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- **Exercise 2.14 — `φ` preserves consistent intersections.** If `X, X'` are consistent
 (`X ∩ X' ∈ 𝒟₀`), then `φ(X ∩ X') = φ(X) ∩ φ(X')`.
@@ -92,11 +77,6 @@ theorem phi_inter (e : V₀.Element ≃o V₁.Element) {X X' : Set α}
     rw [hqXX'] at h
     exact (V₁.principal_le_iff (phi_mem e hXX') hinter).mp h
   exact Set.Subset.antisymm hsubInter hsub2
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- **Exercise 2.14 — the approximable mapping of `e` is `φ(X) ⊆ Y`.** For `X ∈ 𝒟₀`,
 `(ofIso e).rel X Y ↔ Y ∈ 𝒟₁ ∧ φ(X) ⊆ Y`. (Immediate from `phi_spec` and `mem_principal`.) -/
@@ -111,6 +91,7 @@ theorem rel_ofIso_iff (e : V₀.Element ≃o V₁.Element) {X : Set α} (hX : V�
     refine ⟨hX, ?_⟩
     rw [phi_spec e hX]
     exact h
+
 end
 
 section

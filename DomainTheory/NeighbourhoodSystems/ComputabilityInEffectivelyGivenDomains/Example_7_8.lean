@@ -61,8 +61,6 @@ def PN : NeighborhoodSystem ℕ where
   sub_master := by rintro X _; exact Set.subset_univ X
 end
 
-section
-end
 end DomainTheory.NeighbourhoodSystems.Example78
 
 section
@@ -118,12 +116,3 @@ end
 end DomainTheory.NeighbourhoodSystems.Example78
 end
 
-section
-/- concordance: source L4607 EXERCISES — Lecture VII exercises -/
--- Exercise713/InclStructure.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise713
-
-open NeighborhoodSystem Domain.Recursive
-
-end DomainTheory.NeighbourhoodSystems.Exercise713
-end

@@ -13,6 +13,7 @@ open NeighborhoodSystem ApproximableMap
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
+
 /- concordance: source L2239 EXERCISE 4.10 domain above an element -/
 /-- **Exercise 4.10 (Scott 1981, PRG-19).** The relativized neighbourhood system `Dₐ`: same tokens
 and master, neighbourhoods exactly the members of the filter `a`. -/
@@ -24,34 +25,10 @@ def relSystem (a : V.Element) : NeighborhoodSystem α where
   sub_master := fun hX => V.sub_master (a.sub hX)
   inter_mem := fun hX hY _ _ => a.inter_mem hX hY
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 @[simp] theorem relSystem_mem (a : V.Element) {X : Set α} :
     (relSystem a).mem X ↔ a.mem X := Iff.rfl
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 @[simp] theorem relSystem_master (a : V.Element) : (relSystem a).master = V.master := rfl
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- The `𝒟`-element obtained from a `Dₐ`-filter by upward closure in `𝒟`. -/
 def embed (a : V.Element) (g : (relSystem a).Element) : V.Element where
@@ -68,39 +45,15 @@ def embed (a : V.Element) (g : (relSystem a).Element) : V.Element where
     rintro X Y ⟨hVX, W, haW, hgW, hWX⟩ hVY hXY
     exact ⟨hVY, W, haW, hgW, subset_trans hWX hXY⟩
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- `embed a g ⊑ a`: the embedding lands below `a`. -/
 theorem embed_le (a : V.Element) (g : (relSystem a).Element) : embed a g ≤ a := by
   rintro X ⟨hVX, W, haW, _, hWX⟩
   exact a.up_mem haW hVX hWX
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 theorem embed_mono (a : V.Element) {g₁ g₂ : (relSystem a).Element} (h : g₁ ≤ g₂) :
     embed a g₁ ≤ embed a g₂ := by
   rintro X ⟨hVX, W, haW, hgW, hWX⟩
   exact ⟨hVX, W, haW, h _ hgW, hWX⟩
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 theorem le_of_embed_le (a : V.Element) {g₁ g₂ : (relSystem a).Element}
     (h : embed a g₁ ≤ embed a g₂) : g₁ ≤ g₂ := by
@@ -109,14 +62,6 @@ theorem le_of_embed_le (a : V.Element) {g₁ g₂ : (relSystem a).Element}
   have : (embed a g₂).mem X := h X ⟨hVX, X, g₁.sub hg₁X, hg₁X, subset_rfl⟩
   obtain ⟨_, W, haW, hg₂W, hWX⟩ := this
   exact g₂.up_mem hg₂W (g₁.sub hg₁X) hWX
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- **Exercise 4.10 (Scott 1981, PRG-19).** When `f(a) = a`, the restriction `f' : Dₐ → Dₐ`
 (`f'(x) = f(x)`). The codomain condition uses `↑X ⊑ a ⟹ f(↑X) ⊑ f(a) = a`. -/
@@ -141,14 +86,6 @@ def relMap (f : ApproximableMap V V) {a : V.Element} (ha : f.toElementMap a = a)
     rintro X X' Y Y' ⟨_, hXY⟩ hX'X hYY' haX' haY'
     exact ⟨haX', f.mono hXY hX'X hYY' (a.sub haX') (a.sub haY')⟩
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- The `Dₐ`-filter obtained from an element `x ⊑ a` by restriction (same membership). -/
 def restrict (a : V.Element) (x : V.Element) (hx : x ≤ a) : (relSystem a).Element where
   mem X := x.mem X
@@ -156,14 +93,6 @@ def restrict (a : V.Element) (x : V.Element) (hx : x ≤ a) : (relSystem a).Elem
   master_mem := x.master_mem
   inter_mem := fun hX hY => x.inter_mem hX hY
   up_mem := fun hX hY hXY => x.up_mem hX (a.sub hY) hXY
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 theorem embed_restrict (a : V.Element) (x : V.Element) (hx : x ≤ a) :
     embed a (restrict a x hx) = x := by
@@ -175,14 +104,6 @@ theorem embed_restrict (a : V.Element) (x : V.Element) (hx : x ≤ a) :
   · intro hxX
     exact ⟨x.sub hxX, X, hx _ hxX, hxX, subset_rfl⟩
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 theorem restrict_embed (a : V.Element) (g : (relSystem a).Element) :
     restrict a (embed a g) (embed_le a g) = g := by
   apply Element.ext
@@ -192,14 +113,6 @@ theorem restrict_embed (a : V.Element) (g : (relSystem a).Element) :
     exact g.up_mem hgW (a.up_mem haW hVX hWX) hWX
   · intro hgX
     exact ⟨a.sub (g.sub hgX), X, g.sub hgX, hgX, subset_rfl⟩
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- **Exercise 4.10 (Scott 1981, PRG-19).** `|Dₐ| ≃o {x ∈ |𝒟| ∣ x ⊑ a}`: the relativized domain has
 exactly the elements below `a` as its points, with the inherited order. -/
@@ -214,28 +127,12 @@ def relIso (a : V.Element) : (relSystem a).Element ≃o {x : V.Element // x ≤ 
     · intro h; exact le_of_embed_le a h
     · intro h; exact embed_mono a h
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- **Exercise 4.10 (Scott 1981, PRG-19).** Any fixed point of `f` below `fix(f)` *is* `fix(f)`:
 a fixed point is a pre-fixed point, so leastness forces `fix(f) ⊑ x`. -/
 theorem fixElement_below_unique (f : ApproximableMap V V) {x : V.Element}
     (hxle : x ≤ f.fixElement) (hxfix : f.toElementMap x = x) : x = f.fixElement := by
   have hge : f.fixElement ≤ x := fixElement_le_of_toElementMap_le f (le_of_eq hxfix)
   exact le_antisymm hxle hge
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- The restriction `f'` has the same action as `f`: `embed a (f'(g)) = f(embed a g)`. -/
 theorem relMap_toElementMap_embed (f : ApproximableMap V V) {a : V.Element}
@@ -259,14 +156,6 @@ theorem relMap_toElementMap_embed (f : ApproximableMap V V) {a : V.Element}
       have := (f.toElementMap_mono hpr) X hmemfW
       rw [ha] at this; exact this
     exact ⟨hVX, X, haX, ⟨W, hgW, haW, hWX⟩, subset_rfl⟩
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- **Exercise 4.10 (Scott 1981, PRG-19).** With `a = fix(f)`, the restricted map `f'` has *exactly
 one* fixed point: the top element of `D_{fix f}`, namely `restrict (fix f)` of `fix f` itself. Every
@@ -426,14 +315,6 @@ def inclMap (a : V.Element) : ApproximableMap (relSystem a) V where
     rintro X X' Y Y' ⟨_, _, hXY⟩ hX'X hYY' haX' hVY'
     exact ⟨haX', hVY', (hX'X.trans hXY).trans hYY'⟩
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- The inclusion's elementwise action is `embed a` (Exercise 4.10). -/
 theorem inclMap_toElementMap (a : V.Element) (g : (relSystem a).Element) :
     (inclMap a).toElementMap g = embed a g := by
@@ -444,14 +325,6 @@ theorem inclMap_toElementMap (a : V.Element) (g : (relSystem a).Element) :
     exact ⟨hVY, X, haX, hgX, hXY⟩
   · rintro ⟨hVY, W, haW, hgW, hWY⟩
     exact ⟨W, hgW, haW, hVY, hWY⟩
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- The inclusion is strict: `ι(⊥) = ⊥`. -/
 theorem inclMap_bot (a : V.Element) : (inclMap a).toElementMap (relSystem a).bot = V.bot := by
@@ -467,14 +340,6 @@ theorem inclMap_bot (a : V.Element) : (inclMap a).toElementMap (relSystem a).bot
   · rintro rfl
     exact ⟨V.master_mem, V.master, a.master_mem, (relSystem a).bot.master_mem, subset_rfl⟩
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- The inclusion intertwines `f'` with `f`: `ι ∘ f' = f ∘ ι` (from `relMap_toElementMap_embed`). -/
 theorem inclMap_intertwine (f : ApproximableMap V V) {a : V.Element} (ha : f.toElementMap a = a)
     (g : (relSystem a).Element) :
@@ -485,11 +350,5 @@ theorem inclMap_intertwine (f : ApproximableMap V V) {a : V.Element} (ha : f.toE
 end ApproximableMap
 end
 
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-open ApproximableMap
-universe u
-
-end
 end DomainTheory.NeighbourhoodSystems
 end

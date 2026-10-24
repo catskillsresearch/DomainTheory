@@ -16,6 +16,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exerci
 section
 universe u
 variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj} {A B : TAlgebra T}
+
 /- concordance: source L3709 PROPOSITION 6.6 uniqueness of initial algebras -/
 /-- **Proposition 6.6 (Scott 1981, PRG-19).** Any two initial `T`-algebras have isomorphic carriers;
 the isomorphism is built from the unique homomorphisms in both directions. -/
@@ -30,16 +31,12 @@ def initialIso (hA : IsInitial A) (hB : IsInitial B) : Iso A.carrier B.carrier w
     have h := comp_desc_eq_id hB hA
     have := congrArg AlgHom.hom h
     simpa using this
-end
-
-section
-universe u
-variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj} {A B : TAlgebra T}
 
 /-- The isomorphism of Proposition 6.6 is **unique**: the homomorphism `A → B` realising it is the
 only homomorphism between the two initial algebras. -/
 theorem iso_hom_unique (hA : IsInitial A) (h : AlgHom A B) : h = hA.desc B :=
   hA.uniq B h
+
 end
 
 section
@@ -65,22 +62,12 @@ theorem comp_mono_gen {a a' : ApproximableMap V₁ V₂} {b b' : ApproximableMap
   intro X Z h
   obtain ⟨Y, hXY, hYZ⟩ := h
   exact ⟨Y, hb _ _ hXY, ha _ _ hYZ⟩
-end
-
-section
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 /-- The composite of strict maps is strict: `(a ∘ b)(⊥) = a(b(⊥)) = a(⊥) = ⊥`. -/
 theorem isStrict_comp {a : ApproximableMap V₁ V₂} {b : ApproximableMap V₀ V₁}
     (ha : IsStrict a) (hb : IsStrict b) : IsStrict (a.comp b) := by
   rw [isStrict_iff_apply_bot, toElementMap_comp, isStrict_iff_apply_bot.mp hb,
     isStrict_iff_apply_bot.mp ha]
-end
-
-section
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 section HomOp
 
@@ -93,31 +80,12 @@ variable (T : Endofunctor DomainObj) (D E : DomainObj)
 def homOpComp (g : StrictMap (T.obj D).sys (T.obj E).sys) : StrictMap D.sys E.sys :=
   ⟨k.comp (g.1.comp j), isStrict_comp hk (isStrict_comp g.2 hj)⟩
 
-end HomOp
-end
-
-section
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-section HomOp
-
-variable (T : Endofunctor DomainObj) (D E : DomainObj)
-  (j : ApproximableMap D.sys (T.obj D).sys)
-  (k : ApproximableMap (T.obj E).sys E.sys)
-  (hj : IsStrict j) (hk : IsStrict k)
-
 theorem homOpComp_mono {g g' : StrictMap (T.obj D).sys (T.obj E).sys} (hgg : g ≤ g') :
     homOpComp T D E j k hj hk g ≤ homOpComp T D E j k hj hk g' := by
   show k.comp (g.1.comp j) ≤ k.comp (g'.1.comp j)
   exact comp_mono_gen le_rfl (comp_mono_gen (Subtype.coe_le_coe.mpr hgg) le_rfl)
 
 end HomOp
-end
-
-section
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 /-- `toStrictFilter` is monotone. -/
 theorem toStrictFilter_mono {f f' : StrictMap V₀ V₁} (h : f ≤ f') :
@@ -125,11 +93,6 @@ theorem toStrictFilter_mono {f f' : StrictMap V₀ V₁} (h : f ≤ f') :
   intro W hW
   rw [mem_toStrictFilter] at hW ⊢
   exact ⟨hW.1, strictFun_mem_up_closed hW.1 hW.2 h⟩
-end
-
-section
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 /-- `toStrictMap` is monotone. -/
 theorem toStrictMap_mono {φ φ' : (strictFun V₀ V₁).Element} (h : φ ≤ φ') :
@@ -137,11 +100,6 @@ theorem toStrictMap_mono {φ φ' : (strictFun V₀ V₁).Element} (h : φ ≤ φ
   intro X Y hrel
   rw [toStrictMap_rel] at hrel ⊢
   exact h _ hrel
-end
-
-section
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 section HomOp
 
@@ -164,11 +122,6 @@ def homOp : ApproximableMap (strictFun (T.obj D).sys (T.obj E).sys) (strictFun D
       exact ((strictFun (T.obj D).sys (T.obj E).sys).principal_le_iff hN hN').mpr hN'N)
 
 end HomOp
-end
-
-section
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 section HomOp
 
@@ -184,11 +137,6 @@ theorem homOp_rel {N : Set (StrictMap (T.obj D).sys (T.obj E).sys)}
   Iff.rfl
 
 end HomOp
-end
-
-section
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 /-- If `a ∘ b = I` then `a` is strict: any (split) iso preserves `⊥`. -/
 theorem isStrict_of_comp_eq_id {a : ApproximableMap V₁ V₀} {b : ApproximableMap V₀ V₁}
@@ -199,11 +147,6 @@ theorem isStrict_of_comp_eq_id {a : ApproximableMap V₁ V₀} {b : Approximable
       ≤ a.toElementMap (b.toElementMap V₀.bot) := toElementMap_mono a (V₁.bot_le _)
     _ = (a.comp b).toElementMap V₀.bot := (toElementMap_comp a b V₀.bot).symm
     _ = V₀.bot := by rw [h, toElementMap_idMap]
-end
-
-section
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 /-- `toStrictFilter ∘ toStrictMap = id` (the left inverse of the strict-function-space
 representation; the mirror of `toStrictMap_toStrictFilter`). -/
@@ -220,11 +163,6 @@ theorem toStrictFilter_toStrictMap (φ : (strictFun V₀ V₁).Element) :
     obtain ⟨⟨L, hL, rfl⟩, _⟩ := φ.sub hW
     intro p hp
     exact (mem_sstepFun_iff φ hL).mp hW p hp
-end
-
-section
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 section HomOp
 
@@ -279,11 +217,6 @@ theorem homOp_apply_filter (g : StrictMap (T.obj D).sys (T.obj E).sys) :
   exact hL.symm
 
 end HomOp
-end
-
-section
-variable {α β γ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 end
 end DomainTheory.NeighbourhoodSystems

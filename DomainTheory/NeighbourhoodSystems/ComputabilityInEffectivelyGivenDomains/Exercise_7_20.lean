@@ -12,6 +12,7 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*}
+
 /- concordance: source L4675 EXERCISE 7.20 union on power domains -/
 /-- **Exercise 7.20 (Scott 1981, PRG-19) — the flattening combinator `union : ℙ(ℙD) → ℙD`.** Given a
 `ℙℙD`-neighbourhood `A` and a `ℙD`-neighbourhood `B`, the relation holds iff every `D`-neighbourhood
@@ -48,20 +49,10 @@ def unionMap (V : NeighborhoodSystem α) :
     intro S hS X hX
     obtain ⟨Y, hYB, hXY⟩ := hbody S (hA'A hS) X hX
     exact ⟨Y, hBB' hYB, hXY⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*}
 
 @[simp] theorem unionMap_rel {V : NeighborhoodSystem α} {A : Set (Set (Set α))} {B : Set (Set α)} :
     (unionMap V).rel A B ↔ V.PowerDomain.PDmem A ∧ V.PDmem B ∧ ∀ S ∈ A, ∀ X ∈ S, ∃ Y ∈ B, X ⊆ Y :=
   Iff.rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*}
 
 /-- **Exercise 7.20 — the relation of `union` at the level of `ℙℙ𝒟`/`ℙ𝒟`-codes.** For any
 presentation `Q` of `ℙ𝒟` whose `c`-th neighbourhood is `Y_c = ⋃_{a∈dl c} ↓Xₐ` (e.g. the
@@ -89,11 +80,6 @@ theorem unionMap_rel_Ypd_iff {V : NeighborhoodSystem α} (P : ComputablePresenta
     obtain ⟨a, ha, hXin⟩ := (V.mem_Ypd P).mp hXinQ
     obtain ⟨b, hb, hab⟩ := hgen c hc a ha
     exact ⟨P.X b, (V.mem_Ypd P).mpr ⟨b, hb, P.mem_X b, subset_rfl⟩, hXin.2.trans hab⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*}
 
 /-- The empty power-domain neighbourhood lies under every intersection of neighbourhoods. -/
 theorem ypd_zero_subset_inter {V : NeighborhoodSystem α} (P : ComputablePresentation V) (a b : ℕ) :
@@ -124,11 +110,6 @@ theorem unionMap_isComputable {V : NeighborhoodSystem α} (P : ComputablePresent
     refine RecDecidable.of_iff (fun t => ?_) hrd
     exact unionMap_rel_Ypd_iff P (V.PDPresentation P consV hconsVp hconsVs) (fun _ => rfl)
   exact key.re
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*}
 
 /-- **Exercise 7.20 — Scott's displayed formula.** On generators (nested finite lists of down-sets)
 `(union).rel (⋃_{l∈LS} ↓_{ℙD}(⋃_{X∈l} ↓X)) (⋃_{Y∈LY} ↓Y) ↔ ∀ l ∈ LS, ∀ X ∈ l, ∃ Y ∈ LY, X ⊆ Y`,
@@ -166,6 +147,7 @@ theorem unionMap_rel_fin (V : NeighborhoodSystem α) {LS : List (List (Set α))}
       obtain ⟨X', hX', hXmem⟩ := (V.mem_PDunion).mp hXin
       obtain ⟨Y, hY, hX'Y⟩ := hgen l hl X' hX'
       exact ⟨Y, (V.mem_PDunion).mpr ⟨Y, hY, hLY Y hY, subset_rfl⟩, hXmem.2.trans hX'Y⟩
+
 end
 
 section
@@ -582,10 +564,5 @@ theorem example_720.{u_1} : And
   @DomainTheory.NeighbourhoodSystems.unionMap_rel_fin
 end
 
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β : Type*}
-
-end
 end DomainTheory.NeighbourhoodSystems
 end

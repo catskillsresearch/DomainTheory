@@ -80,10 +80,6 @@ theorem funSpace_mem_up_closed {W : Set (ApproximableMap V₀ V₁)} (hW : (funS
   obtain ⟨⟨L, _, rfl⟩, _⟩ := hW
   exact stepFun_up_closed hf hff'
 
-section
-variable {V₂ : NeighborhoodSystem γ}
-
-end
 end
 end DomainTheory.NeighbourhoodSystems
 end

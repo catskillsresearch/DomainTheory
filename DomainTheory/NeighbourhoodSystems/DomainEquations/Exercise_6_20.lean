@@ -15,6 +15,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise510
 section
 namespace Exercise619
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
+
 /- concordance: source L4099 EXERCISE 6.20 tokens of a functor -/
 /-- **The conclusion of Exercise 6.20 (token level).** For any construct `T` whose constants contain
 `Λ`, there is a set `Γ` with `Λ ∈ Γ` and `Γ = tok(T({Γ}))`. -/
@@ -45,13 +46,6 @@ theorem exists_singleton_subsystem (T : FExpr) (hT : T.RootedConst) :
     intro X Y hX hY _
     show X ∩ Y = Γ
     rw [show X = Γ from hX, show Y = Γ from hY, Set.inter_self]
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 /-- **`(g₀ ∘ f₀) × (g₁ ∘ f₁) = (g₀ × g₁) ∘ (f₀ × f₁)`.** -/
 theorem prodMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys)
@@ -67,14 +61,6 @@ theorem prodMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : Appro
     obtain ⟨rfl, rfl⟩ := prodTokNbhd_injective hWeq
     exact ⟨X, Y, X'', Y'', ⟨X', hf0, hg0⟩, ⟨Y', hf1, hg1⟩, rfl, rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **`(I_{𝒟₀} × I_{𝒟₁}) = I_{𝒟₀×𝒟₁}`.** -/
 theorem prodMapTok_id :
     prodMapTok (idMap A₀.sys) (idMap A₁.sys) = idMap (A₀.prod A₁).sys := by
@@ -88,14 +74,6 @@ theorem prodMapTok_id :
     obtain ⟨hsX, hsY⟩ := prodTokNbhd_subset_iff.mp hsub
     exact ⟨X, Y, X', Y', ⟨hX, hX', hsX⟩, ⟨hY, hY', hsY⟩, rfl, rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **`prodMapTok` is strict** exactly when both components are strict. -/
 theorem prodMapTok_isStrict {f₀ : ApproximableMap A₀.sys B₀.sys}
     {f₁ : ApproximableMap A₁.sys B₁.sys} (hf₀ : IsStrict f₀) (hf₁ : IsStrict f₁) :
@@ -105,14 +83,6 @@ theorem prodMapTok_isStrict {f₀ : ApproximableMap A₀.sys B₀.sys}
   rw [hf₀ h0, hf₁ h1]
   rfl
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- `prodMapTok` is monotone in both arguments. -/
 theorem prodMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
     {f₁ f₁' : ApproximableMap A₁.sys B₁.sys} (h0 : f₀ ≤ f₀') (h1 : f₁ ≤ f₁') :
@@ -120,14 +90,6 @@ theorem prodMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
   rw [ApproximableMap.le_iff]
   rintro W W' ⟨X, Y, X', Y', hr0, hr1, rfl, rfl⟩
   exact ⟨X, Y, X', Y', h0 X X' hr0, h1 Y Y' hr1, rfl, rfl⟩
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 /-- The product carries the subsystem relation componentwise. -/
 theorem prodTok_subsystem (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
@@ -201,14 +163,6 @@ theorem sumMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : Approx
       · obtain rfl := embBit_injective heq
         exact Or.inr (Or.inr ⟨Y, Y'', ⟨Y', hf, hg⟩, rfl, rfl⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **Functor law 2 — `T(g ∘ f) = T(g) ∘ T(f)`.** Every construct `T` preserves composition; together
 with `map_id` this shows *these are all functors*. -/
 theorem FExpr.map_comp : (T : FExpr) → {X Y Z : ScottSys} → (f : ApproximableMap X.sys Y.sys) →
@@ -223,14 +177,6 @@ theorem FExpr.map_comp : (T : FExpr) → {X Y Z : ScottSys} → (f : Approximabl
       show prodMapTok (T₀.map (g.comp f)) (T₁.map (g.comp f))
           = (prodMapTok (T₀.map g) (T₁.map g)).comp (prodMapTok (T₀.map f) (T₁.map f))
       rw [T₀.map_comp f g, T₁.map_comp f g, prodMapTok_comp]
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 /-- **`(I_{𝒟₀} + I_{𝒟₁}) = I_{𝒟₀+𝒟₁}`.** -/
 theorem sumMapTok_id :
@@ -254,14 +200,6 @@ theorem sumMapTok_id :
       · exact absurd hsub (fun h => embBit_not_subset_cross (by decide) (A₀.ne X hX) h)
       · exact Or.inr (Or.inr ⟨Y, Y', ⟨hY, hY', embBit_subset.mp hsub⟩, rfl, rfl⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **Functor law 1 — `T(I_X) = I_{T(X)}`.** Every construct `T` preserves identities. -/
 theorem FExpr.map_id : (T : FExpr) → (X : ScottSys) → T.map (idMap X.sys) = idMap (T.obj X).sys
   | .const D, _ => rfl
@@ -275,14 +213,6 @@ theorem FExpr.map_id : (T : FExpr) → (X : ScottSys) → T.map (idMap X.sys) = 
           = idMap ((T₀.obj X).prod (T₁.obj X)).sys
       rw [T₀.map_id X, T₁.map_id X, prodMapTok_id]
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **`sumMapTok` is strict** for *any* component maps: the master input `Λ` (the only neighbourhood
 containing the empty string) relates only to the output master. -/
 theorem sumMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
@@ -294,14 +224,6 @@ theorem sumMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
   · have heq' : sumTokMaster A₀.sys A₁.sys = embBit true Y0 := heq
     exact absurd (heq' ▸ nil_mem_sumTokMaster) nil_not_mem_embBit
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **Every `T` preserves strictness** (so it restricts to Scott's category of strict maps): `T(f)`
 is strict whenever `f` is (and constants/sums are strict unconditionally). -/
 theorem FExpr.map_isStrict : (T : FExpr) → {X Y : ScottSys} → (f : ApproximableMap X.sys Y.sys) →
@@ -311,14 +233,6 @@ theorem FExpr.map_isStrict : (T : FExpr) → {X Y : ScottSys} → (f : Approxima
   | .sum T₀ T₁, _, _, f, _ => sumMapTok_isStrict (T₀.map f) (T₁.map f)
   | .prod T₀ T₁, _, _, f, hf =>
       prodMapTok_isStrict (T₀.map_isStrict f hf) (T₁.map_isStrict f hf)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 /-- `sumMapTok` is monotone in both arguments. -/
 theorem sumMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
@@ -330,14 +244,6 @@ theorem sumMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
   · exact Or.inr (Or.inl ⟨X, X', h0 X X' hrel, rfl, rfl⟩)
   · exact Or.inr (Or.inr ⟨Y, Y', h1 Y Y' hrel, rfl, rfl⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **`λf. T(f)` is monotone.** A sharper map `f ≤ f'` is sent to a sharper image `T(f) ≤ T(f')` —
 the monotonicity half of *continuous on maps*. -/
 theorem FExpr.map_mono : (T : FExpr) → {X Y : ScottSys} → {f f' : ApproximableMap X.sys Y.sys} →
@@ -346,14 +252,6 @@ theorem FExpr.map_mono : (T : FExpr) → {X Y : ScottSys} → {f f' : Approximab
   | .var, _, _, _, _, h => h
   | .sum T₀ T₁, _, _, _, _, h => sumMapTok_mono (T₀.map_mono h) (T₁.map_mono h)
   | .prod T₀ T₁, _, _, _, _, h => prodMapTok_mono (T₀.map_mono h) (T₁.map_mono h)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 /-- Forward direction of continuity on maps: a related pair of `T(f)` is already related by some
 `T(gᵢ)`. -/
@@ -379,14 +277,6 @@ theorem FExpr.map_continuous_mp : (T : FExpr) → {I : Type} → {X Y : ScottSys
       obtain ⟨k, hik, hjk⟩ := hdir i j
       exact ⟨k, P, Q, P', Q', (T₀.map_mono hik) P P' hi, (T₁.map_mono hjk) Q Q' hj, rfl, rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **`λf. T(f)` is continuous on maps.** For a non-empty directed family `gᵢ` with pointwise union
 `f`, the relation of `T(f)` is the union of those of the `T(gᵢ)` — `T(f)` is approximable. -/
 theorem FExpr.map_continuous (T : FExpr) {I : Type} [Nonempty I] {X Y : ScottSys}
@@ -399,14 +289,6 @@ theorem FExpr.map_continuous (T : FExpr) {I : Type} [Nonempty I] {X Y : ScottSys
   have hgif : g i ≤ f := by
     rw [ApproximableMap.le_iff]; intro A' B' h; exact (hf A' B').mpr ⟨i, h⟩
   exact (T.map_mono hgif) A B hi
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 /-- The sum carries the subsystem relation componentwise: `𝒟₀ ◁ ℰ₀` and `𝒟₁ ◁ ℰ₁` give
 `𝒟₀+𝒟₁ ◁ ℰ₀+ℰ₁`. -/
@@ -436,14 +318,6 @@ theorem sumTok_subsystem (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sy
       exact Or.inr (Or.inr ⟨Y ∩ Y',
         h1.inter_closed hY hY' (sumTok_mem_embT_inv (h₀ := B₀.ne) (h₁ := B₁.ne) hInt), rfl⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 /-- **`λX. T(X)` is monotone on domains.** Whenever `X ◁ Y` we have `T(X) ◁ T(Y)`. -/
 theorem FExpr.obj_subsystem : (T : FExpr) → {X Y : ScottSys} → X.sys ◁ Y.sys →
     (T.obj X).sys ◁ (T.obj Y).sys
@@ -451,14 +325,6 @@ theorem FExpr.obj_subsystem : (T : FExpr) → {X Y : ScottSys} → X.sys ◁ Y.s
   | .var, _, _, h => h
   | .sum T₀ T₁, _, _, h => sumTok_subsystem (T₀.obj_subsystem h) (T₁.obj_subsystem h)
   | .prod T₀ T₁, _, _, h => prodTok_subsystem (T₀.obj_subsystem h) (T₁.obj_subsystem h)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 /-- Forward direction of continuity on domains: a neighbourhood of `T(U)` is a neighbourhood of some
 `T(D)` with `D ∈ ℱ`. -/
@@ -483,14 +349,6 @@ theorem FExpr.obj_continuous_mp : (T : FExpr) → {ℱ : Set ScottSys} → {U : 
       obtain ⟨D₂, hD₂, hYD⟩ := T₁.obj_continuous_mp hdir hne hsub hU hY
       obtain ⟨D₃, hD₃, hr1, hr2⟩ := hdir D₁ hD₁ D₂ hD₂
       exact ⟨D₃, hD₃, X, Y, (T₀.obj_subsystem hr1).sub hXD, (T₁.obj_subsystem hr2).sub hYD, rfl⟩
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 /-- **`λD. T(D)` is continuous on domains.** For a non-empty `◁`-directed family `ℱ` of subsystems of
 `U` whose union is `U`, the neighbourhood family of `T(U)` is the union of those of the `T(D)`. -/
@@ -555,36 +413,8 @@ def GExpr.naryOp (op : GExpr → GExpr → GExpr) (a : GExpr) : List GExpr → G
   | [] => a
   | b :: l => op a (GExpr.naryOp op b l)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- n-ary separated product `T₀ × T₁ × ⋯ × Tₙ`. -/
 def GExpr.naryProd : GExpr → List GExpr → GExpr := GExpr.naryOp GExpr.prod
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- n-ary separated sum `T₀ + T₁ + ⋯ + Tₙ`. -/
 def GExpr.narySum : GExpr → List GExpr → GExpr := GExpr.naryOp GExpr.sum
@@ -592,12 +422,5 @@ def GExpr.narySum : GExpr → List GExpr → GExpr := GExpr.naryOp GExpr.sum
 end Exercise619
 end
 
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-end Exercise619
-end
 end DomainTheory.NeighbourhoodSystems
 end

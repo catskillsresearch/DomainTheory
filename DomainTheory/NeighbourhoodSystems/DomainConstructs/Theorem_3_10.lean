@@ -179,10 +179,6 @@ def MapsBounded (F : Set (ApproximableMap V₀ V₁)) : Prop := ∃ h, ∀ f ∈
 def PointwiseBounded (F : Set (ApproximableMap V₀ V₁)) : Prop :=
   ∀ x : V₀.Element, V₁.Bounded (Set.image (fun f => f.toElementMap x) F)
 
-section
-variable {V₂ : NeighborhoodSystem γ}
-
-end
 end
 end DomainTheory.NeighbourhoodSystems
 end

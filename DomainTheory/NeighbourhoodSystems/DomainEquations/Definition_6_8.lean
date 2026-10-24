@@ -62,11 +62,6 @@ algebra `A`. -/
 theorem comp_desc_eq_id (hA : IsInitial A) (hB : IsInitial B) :
     (hB.desc A).comp (hA.desc B) = AlgHom.id A := by
   rw [hA.uniq A ((hB.desc A).comp (hA.desc B)), hA.uniq A (AlgHom.id A)]
-end
-
-section
-universe u
-variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj} {A B : TAlgebra T}
 
 end
 end DomainTheory.NeighbourhoodSystems

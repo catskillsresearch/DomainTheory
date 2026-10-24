@@ -11,11 +11,13 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 section
 variable {α β γ : Type*}
 open Exercise510
+
 section Smash
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 variable {P₀ P₁}
 variable (P₀ P₁)
+
 /- concordance: source L4643 EXERCISE 7.15 further constructs effective -/
 /-- **Exercise 7.15 — `𝒟₀ ⊗ 𝒟₁` is effectively given (Scott's Definition 7.1).** A bare presentation
 of the smash product. The enumeration is classical (re-routing improper products to the master); the
@@ -161,40 +163,8 @@ noncomputable def smashPresentation : ScottPresentation (smash V₀ V₁) where
         rw [smashEnum_master (t := t.unpair.1) hpa',
           Set.inter_eq_right.mpr (smashEnum_subset_master t.unpair.2)]
 
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable (P₀ P₁)
-
 @[simp] theorem smashPresentation_X (t : ℕ) :
     (smashPresentation P₀ P₁).X t = smashEnum P₀ P₁ t := rfl
-
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable (P₀ P₁)
 
 /-- **The smash projection `p₀ : 𝒟₀ ⊗ 𝒟₁ → 𝒟₀`**, `(X ∪ Y) p₀ X' ↔ X ⊆ X'`. -/
 def smashProj₀ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
@@ -212,40 +182,8 @@ def smashProj₀ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     rintro W W₂ X' X₂' ⟨_, _, hsub⟩ hW₂W hX'X₂' hW₂ hX₂'
     exact ⟨hW₂, hX₂', ((Set.preimage_mono hW₂W).trans hsub).trans hX'X₂'⟩
 
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable (P₀ P₁)
-
 @[simp] theorem smashProj₀_rel {W : Set (α ⊕ β)} {X' : Set α} :
     (smashProj₀ V₀ V₁).rel W X' ↔ (smash V₀ V₁).mem W ∧ V₀.mem X' ∧ Sum.inl ⁻¹' W ⊆ X' := Iff.rfl
-
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable (P₀ P₁)
 
 /-- **The smash projection `p₁ : 𝒟₀ ⊗ 𝒟₁ → 𝒟₁`**, `(X ∪ Y) p₁ Y' ↔ Y ⊆ Y'`. -/
 def smashProj₁ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
@@ -263,40 +201,8 @@ def smashProj₁ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     rintro W W₂ Y' Y₂' ⟨_, _, hsub⟩ hW₂W hY'Y₂' hW₂ hY₂'
     exact ⟨hW₂, hY₂', ((Set.preimage_mono hW₂W).trans hsub).trans hY'Y₂'⟩
 
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable (P₀ P₁)
-
 @[simp] theorem smashProj₁_rel {W : Set (α ⊕ β)} {Y' : Set β} :
     (smashProj₁ V₀ V₁).rel W Y' ↔ (smash V₀ V₁).mem W ∧ V₁.mem Y' ∧ Sum.inr ⁻¹' W ⊆ Y' := Iff.rfl
-
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable (P₀ P₁)
 
 /-- **The strict pairing `⟨a, b⟩⊗ : 𝒟₂ → 𝒟₀ ⊗ 𝒟₁`.** Like Theorem 7.4's `paired`, but the smash
 collapse forces the image factors to be proper (else the result is the master/bottom of the smash). -/
@@ -341,22 +247,6 @@ def smashPaired {V₂ : NeighborhoodSystem γ} (a : ApproximableMap V₂ V₀)
         exact Or.inr ⟨A₂, B₂, rfl, hA₂ne, hB₂ne,
           a.mono ha hZ₂Z hAA₂ hZ₂mem hA₂, b.mono hb hZ₂Z hBB₂ hZ₂mem hB₂⟩
 
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable (P₀ P₁)
-
 @[simp] theorem smashPaired_rel {V₂ : NeighborhoodSystem γ} {a : ApproximableMap V₂ V₀}
     {b : ApproximableMap V₂ V₁} {Z : Set γ} {W : Set (α ⊕ β)} :
     (smashPaired a b).rel Z W ↔ V₂.mem Z ∧ (smash V₀ V₁).mem W ∧
@@ -365,11 +255,6 @@ variable (P₀ P₁)
   Iff.rfl
 
 end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -426,26 +311,9 @@ def osum : NeighborhoodSystem (Option (α ⊕ β)) where
         · exact Or.inr (Or.inr ⟨Y ∩ Y', V₁.inter_mem hY hY' hZ₁ (inj₁_subset_inj₁.mp hZsub),
             inter_ne_master_right hY hYne, rfl⟩)
 
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
 @[simp] theorem osum_master : (osum h₀ h₁).master = sumMaster V₀ V₁ := rfl
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -463,11 +331,6 @@ noncomputable def osumEnum (t : ℕ) : Set (Option (α ⊕ β)) :=
   else sumMaster V₀ V₁
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -482,44 +345,12 @@ open scoped Classical in
 theorem osumEnum_left {t : ℕ} (h : t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master) :
     osumEnum P₀ P₁ t = inj₀ (P₀.X t.unpair.2) := ite_eq_left h
 
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
 open scoped Classical in
 theorem osumEnum_master {t : ℕ}
     (h0 : ¬(t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master))
     (h1 : ¬(t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V₁.master)) :
     osumEnum P₀ P₁ t = sumMaster V₀ V₁ := by
   unfold osumEnum; rw [ite_eq_right h0, ite_eq_right h1]
-
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
 
 open scoped Classical in
 theorem osumEnum_right {t : ℕ} (h : t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V₁.master) :
@@ -528,44 +359,12 @@ theorem osumEnum_right {t : ℕ} (h : t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V
     rintro ⟨hc, -⟩; obtain ⟨h1, -⟩ := h; omega
   unfold osumEnum; rw [ite_eq_right h0, ite_eq_left h]
 
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
 theorem osumEnum_mem (t : ℕ) : (osum h₀ h₁).mem (osumEnum P₀ P₁ t) := by
   by_cases hL : t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master
   · rw [osumEnum_left hL]; exact Or.inr (Or.inl ⟨_, P₀.mem_X _, hL.2, rfl⟩)
   · by_cases hR : t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V₁.master
     · rw [osumEnum_right hR]; exact Or.inr (Or.inr ⟨_, P₁.mem_X _, hR.2, rfl⟩)
     · rw [osumEnum_master hL hR]; exact Or.inl rfl
-
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
 
 include h₀ h₁ in
 theorem osumEnum_nonempty (t : ℕ) : (osumEnum P₀ P₁ t).Nonempty := by
@@ -575,32 +374,11 @@ theorem osumEnum_nonempty (t : ℕ) : (osumEnum P₀ P₁ t).Nonempty := by
     · rw [osumEnum_right hR]; exact inj₁_nonempty (h₁ _ (P₁.mem_X _))
     · rw [osumEnum_master hL hR]; exact ⟨none, none_mem_sumMaster⟩
 
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
 include h₀ h₁ in
 theorem osumEnum_subset_master (t : ℕ) : osumEnum P₀ P₁ t ⊆ sumMaster V₀ V₁ :=
   (osum h₀ h₁).sub_master (osumEnum_mem h₀ h₁ t)
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -630,24 +408,6 @@ def osumOutMap₀ : ApproximableMap (osum h₀ h₁) V₀ where
     rintro W W' X X' ⟨_, _, hsub⟩ hW'W hXX' hW' hX'
     exact ⟨hW', hX', (leftPart_mono V₀ hW'W).trans (hsub.trans hXX')⟩
 
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable {h₀ h₁}
-
 /-- **Coalesced right projection `out₁ : 𝒟₀ ⊕ 𝒟₁ → 𝒟₁`**. -/
 def osumOutMap₁ : ApproximableMap (osum h₀ h₁) V₁ where
   rel W Y := (osum h₀ h₁).mem W ∧ V₁.mem Y ∧ rightPart V₁ W ⊆ Y
@@ -666,11 +426,6 @@ def osumOutMap₁ : ApproximableMap (osum h₀ h₁) V₁ where
     exact ⟨hW', hY', (rightPart_mono V₁ hW'W).trans (hsub.trans hYY')⟩
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -892,11 +647,6 @@ noncomputable def osumPresentation : ScottPresentation (osum h₀ h₁) where
         exact hj
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -915,11 +665,6 @@ variable (P₀ P₁)
     (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)).X t = osumEnum P₀ P₁ t := rfl
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Iterate
 
@@ -931,28 +676,10 @@ variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 to `P.masterIdx` (the master index) beyond the coded length. -/
 def iterIdx (t j : ℕ) : ℕ := nthCode t j P.masterIdx
 
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
 /-- The `D^∞`-enumeration: the neighbourhood whose `j`-th fiber is `P.X (iterIdx t j)`. -/
 def iterEnum (t : ℕ) : Set (ℕ × α) := {p | p.2 ∈ P.X (iterIdx P t p.1)}
 
 end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Iterate
 
@@ -963,21 +690,6 @@ variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 variable {P}
 
 @[simp] theorem fiber_iterEnum (t j : ℕ) : fiber (iterEnum P t) j = P.X (iterIdx P t j) := rfl
-
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable {P}
 
 /-- Build, by induction on `N`, a list of fiber indices reproducing `W`'s first `N` fibers. -/
 theorem exists_list_fiber {W : Set (ℕ × α)} (hW : (iterSys V).mem W) :
@@ -998,40 +710,10 @@ theorem exists_list_fiber {W : Set (ℕ × α)} (hW : (iterSys V).mem W) :
         List.getD_cons_zero]
       exact hn
 
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable {P}
-
 /-- The coordinate-wise intersection generator: with `s = ⟨j, ⟨n, m⟩⟩`, returns an index of
 `X (iterIdx n j) ∩ X (iterIdx m j)` via `P.inter`. -/
 def interG (P : ComputablePresentation V) (s : ℕ) : ℕ :=
   P.inter (iterIdx P s.unpair.2.unpair.1 s.unpair.1) (iterIdx P s.unpair.2.unpair.2 s.unpair.1)
-
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable {P}
 
 /-- Beyond the coded length the fiber index defaults to the master: if `t ≤ j` then
 `iterIdx t j = masterIdx` (the coded list has length `≤ t`). -/
@@ -1039,21 +721,6 @@ theorem iterIdx_ge {t j : ℕ} (h : t ≤ j) : iterIdx P t j = P.masterIdx := by
   unfold iterIdx
   rw [nthCode_eq, getD_eq_default_cf]
   exact le_trans (decodeList_length_le t) h
-
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable {P}
 
 /-- **Relation (i) reduces to a bounded coordinate check.** `iterEnum n ∩ iterEnum m = iterEnum k`
 iff fiber-wise equality holds for all `j` below `n+m+k` (beyond which every fiber is `Δ`). -/
@@ -1074,79 +741,19 @@ theorem iterEnum_inter_eq_iff {n m k : ℕ} :
     · rw [iterIdx_ge (show n ≤ j by omega), iterIdx_ge (show m ≤ j by omega),
         iterIdx_ge (show k ≤ j by omega), P.masterIdx_spec, Set.inter_self]
 
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable {P}
-
 theorem iterEnum_mem (t : ℕ) : (iterSys V).mem (iterEnum P t) := by
   refine ⟨fun j => ?_, t, fun j hj => ?_⟩
   · rw [fiber_iterEnum]; exact P.mem_X _
   · rw [fiber_iterEnum, iterIdx_ge hj, P.masterIdx_spec]
 
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable {P}
-
 /-- The `D^∞`-intersection function: tabulate `interG` over the coordinates `0 … n+m-1`. -/
 def iterInter (P : ComputablePresentation V) (n m : ℕ) : ℕ :=
   tabCode (interG P) (Nat.pair (n + m) (Nat.pair n m)) (n + m)
-
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable {P}
 
 theorem iterInter_idx_ge {n m j : ℕ} (hj : n + m ≤ j) :
     iterIdx P (iterInter P n m) j = P.masterIdx := by
   show nthCode (iterInter P n m) j P.masterIdx = _
   rw [iterInter, tabCode_nth_ge hj]
-
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable {P}
 
 theorem iterInter_idx_lt {n m j : ℕ} (hj : j < n + m) :
     iterIdx P (iterInter P n m) j = P.inter (iterIdx P n j) (iterIdx P m j) := by
@@ -1154,21 +761,6 @@ theorem iterInter_idx_lt {n m j : ℕ} (hj : j < n + m) :
   rw [iterInter, tabCode_nth_lt hj]
   unfold interG
   simp only [unpair_pair_fst, unpair_pair_snd]
-
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable {P}
 
 /-- **Relation (ii) reduces to a bounded coordinate check.** `iterEnum n ∩ iterEnum m` is consistent
 iff every coordinate `j < n+m` is consistent in `V`. The witness is `iterInter n m`. -/
@@ -1193,11 +785,6 @@ theorem iterEnum_cons_iff {n m : ℕ} :
         iterIdx_ge (show m ≤ j by omega), P.masterIdx_spec, Set.inter_self]
 
 end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -1220,24 +807,6 @@ theorem osum_eq_master_of_inj₀master {W : Set (Option (α ⊕ β))} (hW : (osu
   · obtain ⟨a, ha⟩ := h₀ V₀.master V₀.master_mem
     exact absurd (hsub (il_mem_inj₀.mpr ha)) il_mem_inj₁
 
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable {h₀ h₁}
-
 /-- **Coalesced left injection `in₀ : 𝒟₀ → 𝒟₀ ⊕ 𝒟₁`**, `X (in₀) W ↔ inj₀ X ⊆ W`. -/
 def osumInMap₀ : ApproximableMap V₀ (osum h₀ h₁) where
   rel X W := V₀.mem X ∧ (osum h₀ h₁).mem W ∧ inj₀ X ⊆ W
@@ -1258,24 +827,6 @@ def osumInMap₀ : ApproximableMap V₀ (osum h₀ h₁) where
     rintro X X' W W' ⟨_, _, hsub⟩ hX'X hWW' hX' hW'
     exact ⟨hX', hW', (inj₀_subset_inj₀.mpr hX'X).trans (hsub.trans hWW')⟩
 
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable {h₀ h₁}
-
 theorem osum_eq_master_of_inj₁master {W : Set (Option (α ⊕ β))} (hW : (osum h₀ h₁).mem W)
     (hsub : inj₁ V₁.master ⊆ W) : W = sumMaster V₀ V₁ := by
   rcases hW with rfl | ⟨X', hX', -, rfl⟩ | ⟨Y', hY', hY'ne, rfl⟩
@@ -1283,24 +834,6 @@ theorem osum_eq_master_of_inj₁master {W : Set (Option (α ⊕ β))} (hW : (osu
   · obtain ⟨b, hb⟩ := h₁ V₁.master V₁.master_mem
     exact absurd (hsub (ir_mem_inj₁.mpr hb)) ir_mem_inj₀
   · exact absurd (Set.Subset.antisymm (V₁.sub_master hY') (inj₁_subset_inj₁.mp hsub)) hY'ne
-
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable {h₀ h₁}
 
 /-- **Coalesced right injection `in₁ : 𝒟₁ → 𝒟₀ ⊕ 𝒟₁`**. -/
 def osumInMap₁ : ApproximableMap V₁ (osum h₀ h₁) where
@@ -1323,11 +856,6 @@ def osumInMap₁ : ApproximableMap V₁ (osum h₀ h₁) where
     exact ⟨hY', hW', (inj₁_subset_inj₁.mpr hY'Y).trans (hsub.trans hWW')⟩
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -1359,11 +887,6 @@ theorem osum_mem_subset_inj₀ {W : Set (Option (α ⊕ β))} {X : Set α}
 end CoalescedFunctor
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -1394,11 +917,6 @@ theorem osum_mem_subset_inj₁ {W : Set (Option (α ⊕ β))} {Y : Set β}
 end CoalescedFunctor
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -1489,11 +1007,6 @@ def osumMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
 end CoalescedFunctor
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Iterate
 
@@ -1510,21 +1023,6 @@ theorem primrec_iterIdx_proj {codeProj : ℕ → ℕ} (hc : Nat.Primrec codeProj
     (Nat.Primrec.const P.masterIdx)))).of_eq (fun w => ?_)
   simp only [iterIdx, unpair_pair_fst, unpair_pair_snd]
 
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable {P}
-
 theorem primrec_interG : Nat.Primrec (interG P) := by
   have hA : Nat.Primrec (fun s => iterIdx P s.unpair.2.unpair.1 s.unpair.1) :=
     primrec_iterIdx_proj (Nat.Primrec.left.comp Nat.Primrec.right)
@@ -1533,21 +1031,6 @@ theorem primrec_interG : Nat.Primrec (interG P) := by
   refine (P.inter_primrec.comp (hA.pair hB)).of_eq (fun s => ?_)
   unfold interG
   simp only [unpair_pair_fst, unpair_pair_snd]
-
-end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Iterate
-
-open Domain.Recursive
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable {P}
 
 /-- **Exercise 7.15 (Scott 1981, PRG-19) — `D^∞` carries a full computable presentation.** Built
 choice-free from a presentation `P` of `V`: the enumeration codes finite fiber-index lists, the two
@@ -1631,11 +1114,6 @@ noncomputable def iterPresentation (P : ComputablePresentation V) :
     rw [fiber_iterEnum, fiber_iterSys_master, iterIdx_ge (Nat.zero_le j), P.masterIdx_spec]
 
 end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Smash
 
@@ -1700,6 +1178,7 @@ def smashMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
 end SmashFunctor
 
 end Smash
+
 end
 
 section
@@ -1714,10 +1193,6 @@ def ComputablePresentation.toScott {V : NeighborhoodSystem α} (P : ComputablePr
   surj := P.surj
   interEq_computable := P.interEq_computable
   cons_computable := P.cons_computable
-end
-
-section
-variable {α β γ : Type*}
 
 namespace ScottPresentation
 
@@ -1738,6 +1213,7 @@ variable {P}
 @[simp] theorem iterPresentation_X (t : ℕ) : (iterPresentation P).X t = iterEnum P t := rfl
 
 end Iterate
+
 end
 
 section
@@ -1746,10 +1222,7 @@ variable {α β γ : Type*}
 theorem NeighborhoodSystem.IsEffectivelyGiven.toS {V : NeighborhoodSystem α}
     (h : V.IsEffectivelyGiven) : V.IsEffectivelyGivenS :=
   h.elim fun P => ⟨P.toScott⟩
-end
 
-section
-variable {α β γ : Type*}
 open Exercise510
 
 section Iterate
@@ -1769,11 +1242,6 @@ theorem iterSys_isEffectivelyGiven (e : V.IsEffectivelyGiven) :
   exact ⟨iterPresentation (P := Q)⟩
 
 end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -1829,31 +1297,6 @@ theorem osumInMap₀_isComputable :
     · rw [osumEnum_master hL hR]
       exact ⟨fun _ => Or.inr ⟨hL, hR⟩, fun _ => inj₀_subset_sumMaster (P₀.mem_X _)⟩
 
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-variable {P₀ P₁}
-
-
-variable {h₀ h₁}
-
-
-variable (P₀ P₁)
-
-
 /-- **`in₁` is computable.** Symmetric to `in₀`. -/
 theorem osumInMap₁_isComputable :
     ComputableMapS P₁.toScott (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) osumInMap₁ := by
@@ -1891,11 +1334,6 @@ theorem osumInMap₁_isComputable :
       exact ⟨fun _ => Or.inr ⟨hL, hR⟩, fun _ => inj₁_subset_sumMaster (P₁.mem_X _)⟩
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -2020,30 +1458,6 @@ theorem osumMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : Com
         exact ⟨osumEnum_mem h₀ h₁ _, (osum h₀' h₁').master_mem, Or.inl rfl⟩
 
 end CoalescedFunctor
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-variable {P₀ P₁}
-
-
-variable {h₀ h₁}
-
-
-variable (P₀ P₁)
-
 
 /-- **`out₀` is computable.** `(osumEnum n) (out₀) X⁰_m ↔ leftPart (osumEnum n) ⊆ X⁰_m`; the left
 part is `X⁰_{n.2}` on a proper left copy and `Δ₀` on a right copy / the master, so the relation is
@@ -2080,31 +1494,6 @@ theorem osumOutMap₀_isComputable :
       exact ⟨fun h => Or.inr ⟨hL, h⟩,
         fun h => h.elim (fun h => absurd ⟨h.1, h.2.1⟩ hL) (fun h => h.2)⟩
 
-end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Coalesced
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
-
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-variable {P₀ P₁}
-
-
-variable {h₀ h₁}
-
-
-variable (P₀ P₁)
-
-
 /-- **`out₁` is computable.** Symmetric to `out₀` via `rightPart`. -/
 theorem osumOutMap₁_isComputable :
     ComputableMapS (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) P₁.toScott osumOutMap₁ := by
@@ -2139,11 +1528,6 @@ theorem osumOutMap₁_isComputable :
         fun h => h.elim (fun h => absurd ⟨h.1, h.2.1⟩ hR) (fun h => h.2)⟩
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -2166,11 +1550,6 @@ theorem osum_isEffectivelyGivenS (e₀ : V₀.IsEffectivelyGiven) (e₁ : V₁.I
   exact ⟨osumPresentation h₀ h₁ (P₀ := Q₀) (P₁ := Q₁)⟩
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Coalesced
 
@@ -2184,11 +1563,6 @@ theorem osum_mem_iff {W : Set (Option (α ⊕ β))} :
       (∃ Y, V₁.mem Y ∧ Y ≠ V₁.master ∧ W = inj₁ Y) := Iff.rfl
 
 end Coalesced
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Iterate
 
@@ -2214,11 +1588,6 @@ theorem projN_isComputable (P : ComputablePresentation V) (n : ℕ) :
   exact ⟨fun h => h.2.2, fun h => ⟨iterEnum_mem _, P.mem_X _, h⟩⟩
 
 end Iterate
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Smash
 
@@ -2316,24 +1685,6 @@ theorem smashMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : Co
         Or.inl (smashEnum_master hJPm)⟩
 
 end SmashFunctor
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-variable {P₀ P₁}
-
-
-variable (P₀ P₁)
-
 
 /-- **The strict pairing `⟨a, b⟩⊗` is computable.** `Zₙ ⟨a,b⟩⊗ (smashEnum m) ↔` either `m` improper
 (the codomain master absorbs) or `m` proper together with `a`'s and `b`'s r.e. relations on the
@@ -2376,25 +1727,6 @@ theorem smashPaired_isComputable {V₂ : NeighborhoodSystem γ} (P₂ : Computab
       exact ⟨P₂.mem_X _, smashEnum_mem (P₀ := P₀) (P₁ := P₁) _,
         Or.inl (smashEnum_master hJPm)⟩
 
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-variable {P₀ P₁}
-
-
-variable (P₀ P₁)
-
-
 /-- **The smash projection `p₀` is computable.** `(smashEnum n) p₀ X⁰_m ↔ X⁰_{effL n} ⊆ X⁰_m`
 (`smashEnum_eq_eff` rewrites `Sum.inl ⁻¹' (smashEnum n)` to the effective left factor), a recursive
 slice of `incl_computable`. -/
@@ -2435,25 +1767,6 @@ theorem smashProj₀_isComputable :
     rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, inl_preimage_prodNbhd]
     exact h
 
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-variable {P₀ P₁}
-
-
-variable (P₀ P₁)
-
-
 /-- **The smash projection `p₁` is computable.** Symmetric to `smashProj₀_isComputable`, using the
 effective right factor `Sum.inr ⁻¹' (smashEnum n) = X¹_{effR n}`. -/
 theorem smashProj₁_isComputable :
@@ -2493,25 +1806,6 @@ theorem smashProj₁_isComputable :
     rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, inr_preimage_prodNbhd]
     exact h
 
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-variable {P₀ P₁}
-
-
-variable (P₀ P₁)
-
-
 /-- **Exercise 7.15 (Scott 1981, PRG-19) — the smash product `𝒟₀ ⊗ 𝒟₁` is effectively given.**
 (Scott's Definition 7.1; the only classical input is the enumeration's properness branch.) -/
 theorem smash_isEffectivelyGivenS (h₀ : V₀.IsEffectivelyGiven) (h₁ : V₁.IsEffectivelyGiven) :
@@ -2520,6 +1814,7 @@ theorem smash_isEffectivelyGivenS (h₀ : V₀.IsEffectivelyGiven) (h₁ : V₁.
   exact ⟨smashPresentation Q₀ Q₁⟩
 
 end Smash
+
 end
 
 section
@@ -2586,10 +1881,6 @@ end
 namespace Exercise718
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
-section
-variable {α β : Type*}
-
-end
 end Exercise718
 end DomainTheory.NeighbourhoodSystems
 end

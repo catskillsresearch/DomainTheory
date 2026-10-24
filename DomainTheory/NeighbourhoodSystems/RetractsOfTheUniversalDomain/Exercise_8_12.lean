@@ -24,13 +24,3 @@ end affine
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-namespace DomainTheory.NeighbourhoodSystems
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-end
-end DomainTheory.NeighbourhoodSystems
-end

@@ -50,13 +50,3 @@ structure Iso (X Y : Obj) where
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- TAlgebra.lean
-universe u
-
-namespace DomainTheory.NeighbourhoodSystems
-
-variable {Obj : Type u} [Category Obj]
-
-end DomainTheory.NeighbourhoodSystems
-end

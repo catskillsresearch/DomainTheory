@@ -18,20 +18,12 @@ list `L` of `𝒟`-neighbourhoods. The empty list `L = []` realizes Scott's `n =
 union `∅`). -/
 def PDmem (W : Set (Set α)) : Prop :=
   ∃ L : List (Set α), (∀ X ∈ L, V.mem X) ∧ W = ⋃ X ∈ L, V.upSet X
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.9 — the preparation `𝒟†`.** Scott prepares `𝒟` for the power-domain
 construct by replacing it with the isomorphic system `𝒟† = {↓X ∣ X ∈ 𝒟}`, which is exactly
 Exercise 1.20's `powerSystem` (over the token type `Δ† = 𝒟`, i.e. `Set α`). It is a *positive*
 neighbourhood system (`powerSystem_isPositive`). -/
 abbrev dagger : NeighborhoodSystem (Set α) := V.powerSystem
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.9 — closure under finite unions.** `ℙ𝒟` is closed under binary union
 (concatenate the index lists); with `PDmem_empty` this gives closure under all finite unions,
@@ -54,18 +46,10 @@ theorem PDmem_union {W₁ W₂ : Set (Set α)} (h₁ : V.PDmem W₁) (h₂ : V.P
     · rintro ⟨X, hX | hX, hz⟩
       · exact Or.inl ⟨X, hX, hz⟩
       · exact Or.inr ⟨X, hX, hz⟩
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.9 — `𝒟 ≅ 𝒟†` (Exercise 1.20).** The preparation does not change the domain:
 `𝒟` and `𝒟†` are isomorphic. (This is what makes `ℙ𝒟` isomorphism-invariant.) -/
 theorem dagger_isomorphic : V ≅ᴰ V.dagger := V.isomorphic_powerSystem
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.9 (remark 2).** "In that case `↓X ∩ ↓Y = ↓(X ∩ Y)`." When `{X, Y}` is
 consistent (witness `Z ⊆ X ∩ Y`, `Z ∈ 𝒟`), the intersection `X ∩ Y` is again a neighbourhood,
@@ -76,19 +60,11 @@ theorem dagger_upSet_inter {X Y Z : Set α} (hX : V.mem X) (hY : V.mem Y) (hZ : 
     (hsub : Z ⊆ X ∩ Y) : V.dagger.mem (V.upSet X ∩ V.upSet Y) := by
   rw [V.upSet_inter]
   exact ⟨X ∩ Y, V.inter_mem hX hY hZ hsub, rfl⟩
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- Membership in a finite union of down-sets: `z ∈ ⋃_{X∈L} ↓X ↔ ∃ X ∈ L, z ∈ ↓X`. -/
 theorem mem_PDunion {L : List (Set α)} {z : Set α} :
     z ∈ (⋃ X ∈ L, V.upSet X) ↔ ∃ X ∈ L, z ∈ V.upSet X := by
   simp only [Set.mem_iUnion, exists_prop]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.9 — the empty union.** "The finite unions in `ℙ𝒟` can be empty (i.e. if
 `n = 0`)." The empty neighbourhood `∅` is a neighbourhood of `ℙ𝒟` (witnessed by `L = []`). -/
@@ -100,10 +76,6 @@ theorem PDmem_empty : V.PDmem ∅ := by
     constructor
     · intro h; exact absurd h (Set.notMem_empty z)
     · rintro ⟨X, hX, _⟩; cases hX
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.9 — Scott's `⋃_{i<n}` form.** The neighbourhood family of `ℙ𝒟`, written with
 a finite sequence `X : Fin n → 𝒟` exactly as Scott displays it: `W = ⋃_{i<n} ↓Xᵢ` with each
@@ -135,10 +107,6 @@ theorem PDmem_iff_fin {W : Set (Set α)} :
       · rintro ⟨Y, hY, hz⟩
         obtain ⟨i, rfl⟩ := Set.mem_range.mp (List.mem_ofFn.mp hY)
         exact ⟨i, hz⟩
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.9 — singletons.** Every down-set `↓X` (`X ∈ 𝒟`) is a neighbourhood of `ℙ𝒟`
 (the case `n = 1`); these are exactly the neighbourhoods of the prepared system `𝒟†`. -/
@@ -150,18 +118,10 @@ theorem PDmem_upSet {X : Set α} (hX : V.mem X) : V.PDmem (V.upSet X) := by
     constructor
     · intro hz; exact ⟨X, List.mem_singleton.mpr rfl, hz⟩
     · rintro ⟨Y, hY, hz⟩; rw [List.mem_singleton] at hY; subst hY; exact hz
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.9 — the master neighbourhood `↓Δ`.** The largest neighbourhood of `ℙ𝒟` is
 `↓Δ = 𝒟` (all `𝒟`-neighbourhoods), itself a finite union (the case `X₀ = Δ`). -/
 theorem PDmem_master : V.PDmem (V.upSet V.master) := V.PDmem_upSet V.master_mem
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.9 (remark 1).** "`↓X ∩ ↓Y ≠ ∅` iff `{X, Y}` is consistent in `𝒟`." The
 down-sets `↓X`, `↓Y` meet exactly when `X, Y` have a common lower neighbourhood `Z ⊆ X ∩ Y`. -/
@@ -171,6 +131,7 @@ theorem upSet_inter_nonempty_iff {X Y : Set α} :
   constructor
   · rintro ⟨Z, hZmem, hZsub⟩; exact ⟨Z, hZmem, hZsub⟩
   · rintro ⟨Z, hZmem, hZsub⟩; exact ⟨Z, hZmem, hZsub⟩
+
 end
 
 end NeighborhoodSystem

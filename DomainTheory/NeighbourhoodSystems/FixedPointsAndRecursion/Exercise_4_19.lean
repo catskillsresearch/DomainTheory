@@ -235,6 +235,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise419
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
 section
 variable {β : Type*}
+
 /- concordance: source L2323 EXERCISE 4.19 Peano axioms for sequences -/
 /-- **Exercise 4.19 (Scott 1981, PRG-19).** The same defining equation holds on every partial
 element `σ⊥` — including `⊥ = []⊥` where `empty(⊥) = ⊥` forces `cond(⊥, …) = ⊥`. -/
@@ -250,10 +251,6 @@ theorem one_def_strBot (σ : Str) : oneMap.toElementMap (strBot σ) = oneDef (st
     | true =>
       rw [oneDef, emptyMap_strBot, headValC_true, Exercise326.cond_false,
         zeroMap_strBot, headValC_true, Exercise326.cond_false, oneMap_strBot, headValC_true]
-end
-
-section
-variable {β : Type*}
 
 /-- **Exercise 4.19 (Scott 1981, PRG-19).** `one` is definable from `empty`, `zero`, `cond`: the
 equation `one(x) = cond(empty(x), false, cond(zero(x), false, true))` holds on every total element
@@ -273,6 +270,7 @@ theorem one_def_strElem (σ : Str) : oneMap.toElementMap (strElem σ) = oneDef (
     | true =>
       rw [oneDef, emptyMap_strElem, headValC_true, Exercise326.cond_false,
         zeroMap_strElem, headValC_true, Exercise326.cond_false, oneMap_strElem, headValC_true]
+
 end
 
 section
@@ -515,14 +513,6 @@ theorem comp_fixElement_isFixed (f g : ApproximableMap V V) :
     rw [← toElementMap_comp]
     exact toElementMap_fixElement (g.comp f)
   rw [h]
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 end ApproximableMap
 end

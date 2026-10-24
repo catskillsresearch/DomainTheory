@@ -13,6 +13,7 @@ open NeighborhoodSystem
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 namespace NeighborhoodSystem
+
 /- concordance: source L2285 EXERCISE 4.15 maximal fixed points -/
 /-- **Exercise 4.15 (Scott 1981, PRG-19).** A monotone `f : |𝒟| → |𝒟|` has a *maximal* fixed point:
 some `m` with `f(m) = m` that admits no strictly larger fixed point. -/
@@ -38,14 +39,6 @@ theorem exists_maximal_fixedPoint (f : V.Element → V.Element) (hf : Monotone f
   have hfm_le_m : f m ≤ m := hm.2 (hf hms) hms
   refine ⟨m, le_antisymm hfm_le_m hms, fun y hy hmy => hm.2 ?_ hmy⟩
   exact le_of_eq hy.symm
-
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
 
 /-- **Exercise 4.15 (Scott 1981, PRG-19).** A monotone `f : |𝒟| → |𝒟|` has a *least* fixed point.
 (Having a maximal fixed point `m` gives a pre-fixed point `f(m) ⊑ m`; Exercise 4.13(1)'s `monoFix`
@@ -177,14 +170,6 @@ theorem f_sInf_le (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Ele
   intro s hsS
   calc f (V.sInf S hS) ≤ f s := hf (V.sInf_le S hS hsS)
     _ = s := hfix s hsS
-
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
 
 end NeighborhoodSystem
 end

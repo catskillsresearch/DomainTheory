@@ -25,10 +25,5 @@ def lambek (A : TAlgebra T) (hA : IsInitial A) : Iso (T.obj A.carrier) A.carrier
       _ = (𝟙 (T.obj A.carrier)) := T.map_id _
 end
 
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-universe w
-
-end
 end DomainTheory.NeighbourhoodSystems
 end

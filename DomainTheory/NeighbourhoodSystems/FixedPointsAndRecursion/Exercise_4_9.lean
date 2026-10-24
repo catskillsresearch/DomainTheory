@@ -14,6 +14,7 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 section
 variable {α : Type*}
+
 /- concordance: source L2225 EXERCISE 4.9 fix as a fixed point -/
 /-- **Exercise 4.9 (Scott 1981, PRG-19).** The approximable operator `Ψ = λF λf. f(F(f))` on the
 higher-order domain `E = ((𝒟 → 𝒟) → 𝒟)`, built as `curry (eval ∘ ⟨π_G, eval⟩)`. -/
@@ -21,10 +22,6 @@ def bigPsi (V : NeighborhoodSystem α) :
     ApproximableMap (funSpace (funSpace V V) V) (funSpace (funSpace V V) V) :=
   curry ((evalMap V V).comp
     (paired (proj₁ (funSpace (funSpace V V) V) (funSpace V V)) (evalMap (funSpace V V) V)))
-end
-
-section
-variable {α : Type*}
 
 /-- **Exercise 4.9 (Scott 1981, PRG-19).** The defining equation `Ψ(θ)(f) = f(θ(f))`. -/
 theorem bigPsi_apply (V : NeighborhoodSystem α)
@@ -33,10 +30,6 @@ theorem bigPsi_apply (V : NeighborhoodSystem α)
       = (toApproxMap f).toElementMap ((toApproxMap θ).toElementMap f) := by
   rw [bigPsi, toElementMap_curry_apply, toElementMap_comp, toElementMap_paired,
     toElementMap_proj₁, snd_pair, evalMap_apply, evalMap_apply]
-end
-
-section
-variable {α : Type*}
 
 /-- `fix`, as the element of `E = ((𝒟 → 𝒟) → 𝒟)` corresponding to the operator `fixMap`, unfolds
 under `toApproxMap` back to `fixMap` (the `funSpace` round-trip). -/
@@ -44,10 +37,6 @@ theorem toApproxMap_toFilter_fixMap (V : NeighborhoodSystem α) :
     toApproxMap (toFilter (fixMap V)) = fixMap V := by
   have he := (funSpaceEquiv (funSpace V V) V).apply_symm_apply (fixMap V)
   rwa [funSpaceEquiv_apply, funSpaceEquiv_symm_apply] at he
-end
-
-section
-variable {α : Type*}
 
 /-- **Exercise 4.9 (Scott 1981, PRG-19).** `fix` is a *fixed point* of `Ψ`: `Ψ(fix) = fix`. -/
 theorem bigPsi_fix (V : NeighborhoodSystem α) :
@@ -57,10 +46,6 @@ theorem bigPsi_fix (V : NeighborhoodSystem α) :
   apply ext_of_toElementMap
   intro f
   rw [bigPsi_apply, toApproxMap_toFilter_fixMap, fixMap_toElementMap, toElementMap_fixElement]
-end
-
-section
-variable {α : Type*}
 
 /-- **Exercise 4.9 (Scott 1981, PRG-19).** `fix` is the *least* pre-fixed point of `Ψ`: any `θ` with
 `Ψ(θ) ⊑ θ` satisfies `fix ⊑ θ`. -/
@@ -81,10 +66,6 @@ theorem bigPsi_least (V : NeighborhoodSystem α) (θ : (funSpace (funSpace V V) 
   intro f
   rw [fixMap_toElementMap]
   exact fixElement_le_of_toElementMap_le (toApproxMap f) (hpre f)
-end
-
-section
-variable {α : Type*}
 
 /-- **Exercise 4.9 (Scott 1981, PRG-19).** `fix = fix(Ψ)`: `fix` is the least fixed point of `Ψ`,
 i.e. coincides with Theorem 4.1's canonical least fixed point `fixElement Ψ`. -/
@@ -93,6 +74,7 @@ theorem fix_eq_fixElement_bigPsi (V : NeighborhoodSystem α) :
   apply le_antisymm
   · exact bigPsi_least V _ (le_of_eq (toElementMap_fixElement (bigPsi V)))
   · exact fixElement_le_of_toElementMap_le (bigPsi V) (le_of_eq (bigPsi_fix V))
+
 end
 
 section
@@ -652,12 +634,5 @@ theorem example_409.{u_1} : And
   @DomainTheory.NeighbourhoodSystems.fix_eq_fixElement_bigPsi
 end
 
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
-end ApproximableMap
-end
 end DomainTheory.NeighbourhoodSystems
 end

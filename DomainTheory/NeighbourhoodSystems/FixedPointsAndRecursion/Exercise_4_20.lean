@@ -57,12 +57,5 @@ end DomainTheory.NeighbourhoodSystems.ApproximableMap
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
-end ApproximableMap
-end
 end DomainTheory.NeighbourhoodSystems
 end

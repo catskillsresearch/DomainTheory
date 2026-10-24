@@ -39,8 +39,6 @@ theorem nestedOrDisjoint : NestedOrDisjoint memN := by
       exact h hkm
 end
 
-section
-end
 end DomainTheory.NeighbourhoodSystems.Example43
 
 section

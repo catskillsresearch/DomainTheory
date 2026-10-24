@@ -52,14 +52,6 @@ theorem iterElem_le_fixElement (f : ApproximableMap V V) (n : ℕ) :
     f.iterElem n ≤ f.fixElement :=
   fun _ hX => ⟨n, (mem_iterElem f n).mp hX⟩
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- **Exercise 4.11(iii) (Scott 1981, PRG-19).** `fix` is *uniform*: if `h(⊥) = ⊥` and
 `h ∘ f₀ = f₁ ∘ h`, then `h(fix f₀) = fix f₁`. -/
 theorem fixElement_uniform {β γ : Type*} {W₀ : NeighborhoodSystem β} {W₁ : NeighborhoodSystem γ}
@@ -205,5 +197,3 @@ end
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-end

@@ -44,50 +44,18 @@ def aOp (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
     ApproximableMap E E :=
   toApproxMap ((paired s t).iterElem n).fst
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
 /-- Scott's `‖s‖ = fix(⟨s, t⟩)`'s first component, as an actual approximable map `E → E`. -/
 def aStar (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) : ApproximableMap E E :=
   toApproxMap (paired s t).fixElement.fst
-
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
 
 /-- The `n`-th approximant's second component, as an actual approximable map `E → E`. -/
 def bOp (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
     ApproximableMap E E :=
   toApproxMap ((paired s t).iterElem n).snd
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
 /-- Scott's `‖t‖ = fix(⟨s, t⟩)`'s second component, as an actual approximable map `E → E`. -/
 def bStar (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) : ApproximableMap E E :=
   toApproxMap (paired s t).fixElement.snd
-
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
 
 /-- Scott's `s(a, b)`: the operator `(E → E) × (E → E) → (E → E)` induced by an approximable map
 `s` out of the pair space, applied to two actual maps `a b : E → E`. -/
@@ -95,28 +63,10 @@ def binOp (f : ApproximableMap (PairSpace (E := E)) (funSpace E E))
     (a b : ApproximableMap E E) : ApproximableMap E E :=
   toApproxMap (f.toElementMap (pair (toFilter a) (toFilter b)))
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
-
 theorem fst_mono {z z' : (PairSpace (E := E)).Element} (h : z ≤ z') : z.fst ≤ z'.fst := by
   intro X hX
   rw [mem_fst] at hX ⊢
   exact ⟨hX.1, h _ hX.2⟩
-
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
 
 /-- The `n`-th approximant of `⟨s, t⟩` is exactly the pairing of `aOp`'s and `bOp`'s `n`-th
 approximants (`Product.lean`'s `pair_fst_snd`, transported through the `toFilter`/`toApproxMap`
@@ -128,29 +78,11 @@ theorem iterElem_pair_eq_pair (s t : ApproximableMap (PairSpace (E := E)) (funSp
           (toFilter (toApproxMap ((paired s t).iterElem n).snd))
   rw [toFilter_toApproxMap, toFilter_toApproxMap, pair_fst_snd]
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
-
 theorem iterElem_succ_pair (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
     (paired s t).iterElem (n + 1) = (paired s t).toElementMap ((paired s t).iterElem n) := by
   show ((paired s t).comp ((paired s t).iterMap n)).toElementMap (PairSpace (E := E)).bot
       = (paired s t).toElementMap (((paired s t).iterMap n).toElementMap (PairSpace (E := E)).bot)
   rw [toElementMap_comp]
-
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
 
 /-- **The mutual recursion on approximants**: `aOp s t (n+1) = binOp s (aOp s t n) (bOp s t n)`. -/
 theorem aOp_succ (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
@@ -159,15 +91,6 @@ theorem aOp_succ (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n 
       = toApproxMap (s.toElementMap (pair (toFilter (aOp s t n)) (toFilter (bOp s t n))))
   rw [iterElem_succ_pair, toElementMap_paired, fst_pair, iterElem_pair_eq_pair]
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
-
 /-- **The mutual recursion on approximants**: `bOp s t (n+1) = binOp t (aOp s t n) (bOp s t n)`. -/
 theorem bOp_succ (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
     bOp s t (n + 1) = binOp t (aOp s t n) (bOp s t n) := by
@@ -175,29 +98,11 @@ theorem bOp_succ (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n 
       = toApproxMap (t.toElementMap (pair (toFilter (aOp s t n)) (toFilter (bOp s t n))))
   rw [iterElem_succ_pair, toElementMap_paired, snd_pair, iterElem_pair_eq_pair]
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
-
 theorem iterElem_zero_pair (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     (paired s t).iterElem 0 = (PairSpace (E := E)).bot := by
   show (idMap (PairSpace (E := E))).toElementMap (PairSpace (E := E)).bot
       = (PairSpace (E := E)).bot
   rw [toElementMap_idMap]
-
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
 
 theorem pair_bot_bot : pair ((funSpace E E).bot) ((funSpace E E).bot) = (PairSpace (E := E)).bot := by
   apply Element.ext
@@ -213,66 +118,21 @@ theorem pair_bot_bot : pair ((funSpace E E).bot) ((funSpace E E).bot) = (PairSpa
     · rw [mem_bot]
     · rw [hW, prod_master]
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
-
 theorem pairSpace_bot_fst : ((PairSpace (E := E)).bot).fst = (funSpace E E).bot := by
   rw [← pair_bot_bot, fst_pair]
-
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
 
 theorem aOp_zero (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     aOp s t 0 = constMap E E.bot := by
   show toApproxMap ((paired s t).iterElem 0).fst = constMap E E.bot
   rw [iterElem_zero_pair, pairSpace_bot_fst, Exercise823.toApproxMap_bot_eq_constMap]
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
-
 theorem pairSpace_bot_snd : ((PairSpace (E := E)).bot).snd = (funSpace E E).bot := by
   rw [← pair_bot_bot, snd_pair]
-
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
 
 theorem bOp_zero (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     bOp s t 0 = constMap E E.bot := by
   show toApproxMap ((paired s t).iterElem 0).snd = constMap E E.bot
   rw [iterElem_zero_pair, pairSpace_bot_snd, Exercise823.toApproxMap_bot_eq_constMap]
-
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
 
 /-- Every approximant pair `(aOp s t n, bOp s t n)` consists of finitary projections, provided
 `s`/`t` send pairs of finitary projections to finitary projections. -/
@@ -290,28 +150,10 @@ theorem isFinitaryProjection_chain (s t : ApproximableMap (PairSpace (E := E)) (
     rw [aOp_succ, bOp_succ]
     exact hst _ _ ih.1 ih.2
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
-
 theorem snd_mono {z z' : (PairSpace (E := E)).Element} (h : z ≤ z') : z.snd ≤ z'.snd := by
   intro X hX
   rw [mem_snd] at hX ⊢
   exact ⟨hX.1, h _ hX.2⟩
-
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
 
 /-- **Exercise 8.24, Claim 1.** Provided `s`/`t` map pairs of finitary projections to finitary
 projections, the simultaneous fixed point `(aStar s t, bStar s t)` really consists of finitary
@@ -395,15 +237,6 @@ theorem isFinitaryProjection_aStar_bStar (s t : ApproximableMap (PairSpace (E :=
     apply isFinitaryProjection_of_sub_eq_self
     rw [← toApproxMap_subFilter, hkeyB]
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
-
 /-- **Exercise 8.24, Claim 2 (initiality with respect to projections).** If `a, b` is *any* other
 pair of finitary projections that is a pre-fixed point of the same pair of operators
 (`binOp s a b ≤ a`, `binOp t a b ≤ b`, in particular any exact alternative solution), then
@@ -458,15 +291,6 @@ theorem fixedNbhd_aStar_bStar_subsystem (s t : ApproximableMap (PairSpace (E := 
   exact ⟨(isFinitaryProjection_le_iff_fixedNbhd_subsystem hFinA ha).mp hAle,
     (isFinitaryProjection_le_iff_fixedNbhd_subsystem hFinB hb).mp hBle⟩
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
-
 theorem toElementMap_fixElement_fst (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     s.toElementMap (paired s t).fixElement = (paired s t).fixElement.fst := by
   have h : (paired s t).toElementMap (paired s t).fixElement = (paired s t).fixElement :=
@@ -475,29 +299,11 @@ theorem toElementMap_fixElement_fst (s t : ApproximableMap (PairSpace (E := E)) 
   have h' := congrArg NeighborhoodSystem.Element.fst h
   rwa [fst_pair] at h'
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
-
 /-- `(aStar s t, bStar s t)` is a *genuine* fixed point of the pair `(s, t)`. -/
 theorem binOp_aStar_bStar_left (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     binOp s (aStar s t) (bStar s t) = aStar s t := by
   unfold binOp aStar bStar
   rw [toFilter_toApproxMap, toFilter_toApproxMap, pair_fst_snd, toElementMap_fixElement_fst]
-
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
 
 theorem toElementMap_fixElement_snd (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     t.toElementMap (paired s t).fixElement = (paired s t).fixElement.snd := by
@@ -507,29 +313,11 @@ theorem toElementMap_fixElement_snd (s t : ApproximableMap (PairSpace (E := E)) 
   have h' := congrArg NeighborhoodSystem.Element.snd h
   rwa [snd_pair] at h'
 
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
-
 /-- `(aStar s t, bStar s t)` is a *genuine* fixed point of the pair `(s, t)`. -/
 theorem binOp_aStar_bStar_right (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     binOp t (aStar s t) (bStar s t) = bStar s t := by
   unfold binOp aStar bStar
   rw [toFilter_toApproxMap, toFilter_toApproxMap, pair_fst_snd, toElementMap_fixElement_snd]
-
-end Exercise824
-end
-
-section
-namespace Exercise824
-
-variable {α : Type} {E : NeighborhoodSystem α}
-
 
 /-- **Exercise 8.24, Claim 2 (the domain equations).** Given any correspondences `S, T` (bundling,
 for each pair of maps, a type and a domain over it) with `Fix(binOp s a b) ≅ S(a,b)` and
@@ -1289,8 +1077,6 @@ end
 
 end DomainTheory.NeighbourhoodSystems.Exercise824
 namespace DomainTheory.NeighbourhoodSystems.Example15
-section
-end
 
 end DomainTheory.NeighbourhoodSystems.Example15
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
@@ -1341,19 +1127,9 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`isoInj : D → D''`**, Theorem 2.7 applied to `domainIsoCode P`. -/
 noncomputable def isoInj : ApproximableMap D (DprimeUCode P) := ofIso (domainIsoCode P)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`isoProj : D'' → D`**, Theorem 2.7 applied to the inverse iso. -/
 noncomputable def isoProj : ApproximableMap (DprimeUCode P) D := ofIso (domainIsoCode P).symm
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- `isoInj ∘ isoProj = I_D''`. -/
 theorem isoInj_comp_isoProj : (isoInj P).comp (isoProj P) = idMap (DprimeUCode P) := by
@@ -1363,11 +1139,6 @@ theorem isoInj_comp_isoProj : (isoInj P).comp (isoProj P) = idMap (DprimeUCode P
   show (isoInj P).toElementMap ((isoProj P).toElementMap y) = _
   rw [isoInj, isoProj, toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply,
     toElementMap_idMap]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`isoInj`'s relation at raw indices reduces to a single reindexed inclusion.** `n := b` is always
 a valid witness (`Yc P b = Yc P b`), and any *other* witness `n` with `Yc P b = Yc P n` forces
@@ -1382,11 +1153,6 @@ theorem isoInj_rel_iff_incl {a b : ℕ} :
     rwa [← hb, (embed_eq_iff_raw_code P b n).mpr hn]
   · intro hsub
     exact ⟨P.mem_X a, b, rfl, (P0 P).mem_X b, hb ▸ hsub⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`isoInj` is computable** relative to `P`/`DprimeUCodePresentation P`: its raw-index relation is
 `incl_computable` reindexed by the primitive-recursive `eIdx P` in the second argument. -/
@@ -1400,11 +1166,6 @@ theorem isoInj_isComputableMap : ComputableMap P (DprimeUCodePresentation P) (is
   refine REPred.of_iff (fun t => ?_) hp.re
   show (isoInj P).rel (P.X t.unpair.1) ((DprimeUCodePresentation P).X t.unpair.2) ↔ _
   exact isoInj_rel_iff_incl P
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- `isoProj ∘ isoInj = I_D` (Theorem 2.7's `toElementMap_ofIso`, both ways, plus `OrderIso.symm_apply_apply`). -/
 theorem isoProj_comp_isoInj : (isoProj P).comp (isoInj P) = idMap D := by
@@ -1414,11 +1175,6 @@ theorem isoProj_comp_isoInj : (isoProj P).comp (isoInj P) = idMap D := by
   show (isoProj P).toElementMap ((isoInj P).toElementMap x) = _
   rw [isoInj, isoProj, toElementMap_ofIso, toElementMap_ofIso, OrderIso.symm_apply_apply,
     toElementMap_idMap]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`isoProj`'s relation at raw indices reduces to a single reindexed inclusion.** `m := eIdx P a`
 is always a valid witness (`e P (eIdx P a) = P.X a` by involutivity), and any *other* witness `m`
@@ -1439,11 +1195,6 @@ theorem isoProj_rel_iff_incl {b a : ℕ} :
     exact hsub
   · intro hsub
     exact ⟨⟨b, rfl⟩, eIdx P a, hea.symm, ⟨eIdx P a, rfl⟩, hsub⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`isoProj` is computable** relative to `DprimeUCodePresentation P`/`P`: its raw-index relation is
 `DprimeUCodePresentation`'s `incl_computable` reindexed by `eIdx P` in the second argument. -/
@@ -1458,11 +1209,6 @@ theorem isoProj_isComputableMap : ComputableMap (DprimeUCodePresentation P) P (i
   refine REPred.of_iff (fun t => ?_) hp.re
   show (isoProj P).rel ((DprimeUCodePresentation P).X t.unpair.1) (P.X t.unpair.2) ↔ _
   exact isoProj_rel_iff_incl P
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`theorem_8_8_b`, strengthened.** For any effectively given `D` (via `P`), there is a
 *single* computable projection pair `i : D → U`, `j : U → D` directly (no intermediate isomorphic
@@ -1483,11 +1229,8 @@ theorem theorem_8_8_b_strong :
     exact h.inj_comp_proj_le
   · exact comp_isComputable (isoInj_isComputableMap P) (DprimeUCode_inj_isComputableMap P)
   · exact comp_isComputable (DprimeUCode_proj_isComputableMap P) (isoProj_isComputableMap P)
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
 
 end
+
 end DomainTheory.NeighbourhoodSystems
 end

@@ -103,12 +103,6 @@ isomorphic to (the element poset of) some neighbourhood system. -/
 def IsFinitary (a : ApproximableMap E E) : Prop :=
   ∃ (β : Type u) (F : NeighborhoodSystem β),
     Nonempty ({y : E.Element // a.toElementMap y = y} ≃o F.Element)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {D E : NeighborhoodSystem α}
 
 end
 end DomainTheory.NeighbourhoodSystems

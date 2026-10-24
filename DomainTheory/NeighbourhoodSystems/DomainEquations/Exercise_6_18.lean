@@ -104,24 +104,6 @@ def toS (z : (Dsharp D hD).Element) : (sumSys D hD).Element where
         obtain ⟨hPP, hQQ⟩ := prodNbhd_subset_iff.mp (inj₁_subset_inj₁.mp hsub)
         exact z.up_mem hzPQ (MemS.pair hP' hQ') (embPair_subset.mpr ⟨hPP, hQQ⟩)
 
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
-
 @[simp] theorem toS_mem_inj₀ {z : (Dsharp D hD).Element} {X : Set α} (hX : D.mem X) :
     (toS D hD z).mem (inj₀ X) ↔ z.mem (embZero X) := by
   constructor
@@ -131,24 +113,6 @@ include hD
     · obtain ⟨a, ha⟩ := hD X hX
       exact absurd (heq ▸ il_mem_inj₀.mpr ha) il_mem_inj₁
   · intro hz; exact Or.inr (Or.inl ⟨X, hX, rfl, hz⟩)
-
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
 
 @[simp] theorem toS_mem_inj₁ {z : (Dsharp D hD).Element} {P Q : Set (List Bool × α)}
     (hP : MemS D P) (hQ : MemS D Q) :
@@ -162,24 +126,6 @@ include hD
       rw [hPP, hQQ]; exact hz
   · intro hz; exact Or.inr (Or.inr ⟨P, Q, hP, hQ, rfl, hz⟩)
 
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
-
 theorem embPair_ne_Gamma (P Q : Set (List Bool × α)) : embPair P Q ≠ Gamma D := by
   intro h
   obtain ⟨a, ha⟩ := hD D.master D.master_mem
@@ -189,47 +135,11 @@ theorem embPair_ne_Gamma (P Q : Set (List Bool × α)) : embPair P Q ≠ Gamma D
   · simp at hp'
   · simp at hq'
 
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
-
 theorem embZero_ne_Gamma (X : Set α) : embZero X ≠ Gamma D := by
   intro h
   obtain ⟨a, ha⟩ := hD D.master D.master_mem
   have hmem : ((true :: [], a) : List Bool × α) ∈ Gamma D := ha
   rw [← h] at hmem; exact absurd hmem.1 (by simp)
-
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
 
 theorem embZero_ne_embPair {X : Set α} (hX : D.mem X) (P Q : Set (List Bool × α)) :
     embZero X ≠ embPair P Q := by
@@ -239,24 +149,6 @@ theorem embZero_ne_embPair {X : Set α} (hX : D.mem X) (P Q : Set (List Bool × 
   rcases hmem with ⟨p', hp', -⟩ | ⟨q', hq', -⟩
   · simp at hp'
   · simp at hq'
-
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
 
 /-- **Example 6.1 — the inverse half of the domain equation.** Sends an element `s` of
 `D + (D^§ × D^§)` back to an element of `D^§`. -/
@@ -333,24 +225,6 @@ def fromS (s : (sumSys D hD).Element) : (Dsharp D hD).Element where
         exact s.up_mem hsPQ (Or.inr (Or.inr ⟨prodNbhd P' Q', prod_mem_prodNbhd hP' hQ', rfl⟩))
           (inj₁_subset_inj₁.mpr (prodNbhd_subset_iff.mpr ⟨hPP, hQQ⟩))
 
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
-
 @[simp] theorem fromS_mem_embZero {s : (sumSys D hD).Element} {X : Set α} (hX : D.mem X) :
     (fromS D hD s).mem (embZero X) ↔ s.mem (inj₀ X) := by
   constructor
@@ -359,24 +233,6 @@ include hD
     · rwa [embZero_injective heq]
     · exact absurd heq (embZero_ne_embPair D hD hX P Q)
   · intro hs; exact Or.inr (Or.inl ⟨X, hX, rfl, hs⟩)
-
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
 
 @[simp] theorem fromS_mem_embPair {s : (sumSys D hD).Element} {P Q : Set (List Bool × α)}
     (hP : MemS D P) (hQ : MemS D Q) :
@@ -388,24 +244,6 @@ include hD
     · obtain ⟨hPP, hQQ⟩ := embPair_injective heq
       rw [hPP, hQQ]; exact hs
   · intro hs; exact Or.inr (Or.inr ⟨P, Q, hP, hQ, rfl, hs⟩)
-
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
 
 /-- `fromS ∘ toS = id`. -/
 theorem fromS_toS (z : (Dsharp D hD).Element) : fromS D hD (toS D hD z) = z := by
@@ -421,24 +259,6 @@ theorem fromS_toS (z : (Dsharp D hD).Element) : fromS D hD (toS D hD z) = z := b
     | gamma => exact Or.inl rfl
     | @zero X hX => exact Or.inr (Or.inl ⟨X, hX, rfl, (toS_mem_inj₀ D hD hX).mpr hW⟩)
     | @pair P Q hP hQ => exact Or.inr (Or.inr ⟨P, Q, hP, hQ, rfl, (toS_mem_inj₁ D hD hP hQ).mpr hW⟩)
-
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
 
 /-- Scott's injection `x^§ = {Γ} ∪ {0X ∣ X ∈ x}` of a `D`-element into `D^§`. -/
 def inSharp (x : D.Element) : (Dsharp D hD).Element where
@@ -467,24 +287,6 @@ def inSharp (x : D.Element) : (Dsharp D hD).Element where
         rcases hmem with ⟨p', hp', -⟩ | ⟨q', hq', -⟩
         · simp at hp'
         · simp at hq'
-
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
 
 /-- Scott's pairing `⟨x, y⟩ = {Γ} ∪ {1P ∪ 2Q ∣ P ∈ x, Q ∈ y}` of two `D^§`-elements. -/
 def pairSharp (x y : (Dsharp D hD).Element) : (Dsharp D hD).Element where
@@ -521,24 +323,6 @@ def pairSharp (x y : (Dsharp D hD).Element) : (Dsharp D hD).Element where
         obtain ⟨hPP, hQQ⟩ := embPair_subset.mp hsub
         exact Or.inr ⟨P', Q', x.up_mem hP hP' hPP, y.up_mem hQ hQ' hQQ, rfl⟩
 
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
-
 /-- `toS ∘ fromS = id`. -/
 theorem toS_fromS (s : (sumSys D hD).Element) : toS D hD (fromS D hD s) = s := by
   apply NeighborhoodSystem.Element.ext
@@ -554,24 +338,6 @@ theorem toS_fromS (s : (sumSys D hD).Element) : toS D hD (fromS D hD s) = s := b
     · exact Or.inr (Or.inl ⟨X, hX, rfl, (fromS_mem_embZero D hD hX).mpr hW⟩)
     · obtain ⟨P, Q, hP, hQ, rfl⟩ := hV
       exact Or.inr (Or.inr ⟨P, Q, hP, hQ, rfl, (fromS_mem_embPair D hD hP hQ).mpr hW⟩)
-
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
 
 /-- **Example 6.1 (Scott 1981, PRG-19) — the domain equation, as an order-isomorphism.**
 `|D^§| ≃o |D + (D^§ × D^§)|`. -/
@@ -595,24 +361,6 @@ def dsharpEquiv : (Dsharp D hD).Element ≃o (sumSys D hD).Element where
       · exact Or.inl rfl
       · exact Or.inr (Or.inl ⟨X, hX, rfl, h _ hzX⟩)
       · exact Or.inr (Or.inr ⟨P, Q, hP, hQ, rfl, h _ hzPQ⟩)
-
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
 
 /-- **Example 6.1 (Scott 1981, PRG-19) — the domain equation `D^§ ≅ D + (D^§ × D^§)`.** The tree
 algebra `D^§` is, as a domain, isomorphic to `D + (D^§ × D^§)` — Scott's defining isomorphism, "as can

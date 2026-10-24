@@ -11,6 +11,7 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
+
 /- concordance: source L4361 THEOREM 7.5 function space effective -/
 /-- **Theorem 7.5 (existence part) (Scott 1981, PRG-19).** If `𝒟₀` and `𝒟₁` are effectively given,
 then so is the function space `(𝒟₀ → 𝒟₁)`. Choice-free. -/
@@ -29,12 +30,6 @@ theorem funSpace_isEffectivelyGiven (h₀ : V₀.IsEffectivelyGiven) (h₁ : V�
     (fun s => (hincl0s s).symm) hincl0p
     (fun s => (hincl1s s).symm) hincl1p
     (fun s => (heq1s s).symm) heq1p⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **The step neighbourhood `[X₀ⱼ, Y₁ₘ]` as a one-entry `Xenum`.** The code `⟨⟨j, m⟩, 0⟩ + 1`
 decodes to the singleton entry-list `[⟨j, m⟩]`, which is always consistent (the step map itself is a
@@ -55,12 +50,6 @@ theorem Xenum_singleton (gN : ℕ → ℕ)
   have hcons : gN (Nat.pair (Nat.pair j m) 0 + 1) = 1 := by
     rw [hgN, hdec, hstepeq]; exact (step_mem (P₀.mem_X j) (P₁.mem_X m)).2
   rw [Xenum_pos P₀ P₁ hcons, hdec, hstepeq]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 section ConsChain
 
@@ -84,12 +73,6 @@ theorem consChain_iff (js : List ℕ) :
     exact fun z hz => (mem_interFrom P |>.mp hz).2 j hj
 
 end ConsChain
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **Evaluation against a product neighbourhood.** `(F, X) eval Y ↔ F ⊆ [X, Y]`, for any
 function-space neighbourhood `F` and basic neighbourhoods `X, Y`: every map in `F` relates `X` to `Y`
@@ -104,12 +87,6 @@ theorem evalMap_rel_prodNbhd_iff {F : Set (ApproximableMap V₀ V₁)} (hF : (fu
   · rintro ⟨_, _, _, _, hrel⟩ f hf; exact mem_step.mpr (hrel f hf)
   · intro hsub
     exact ⟨prod_mem_prodNbhd hF hX, hF, hX, hY, fun f hf => mem_step.mp (hsub hf)⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **Theorem 7.5 (Scott 1981, PRG-19) — `eval` is computable (choice-free).** Relative to the
 function-space presentation `funPresentation` (and the product/codomain presentations), the
@@ -146,16 +123,11 @@ theorem evalMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
         hincl1 hincl1p heq1 heq1p) P₀).X t.unpair.1
       = prodNbhd (Xenum P₀ P₁ gN t.unpair.1.unpair.1) (P₀.X t.unpair.1.unpair.2) from rfl,
     evalMap_rel_prodNbhd_iff (Xenum_mem P₀ P₁ gN hgN _) (P₀.mem_X _) (P₁.mem_X _)]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem funListOf_append (la lb : List ℕ) :
     funListOf P₀ P₁ (la ++ lb) = funListOf P₀ P₁ la ++ funListOf P₀ P₁ lb := by
   simp [funListOf, List.map_append]
+
 end
 
 section
@@ -188,12 +160,6 @@ theorem mem_Xenum_iff (gN : ℕ → ℕ) (φ : (funSpace V₀ V₁).Element) (c 
     constructor
     · intro _ hcon; exact absurd hcon h
     · intro _; rw [← funSpace_master]; exact φ.master_mem
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **Theorem 7.5 (Scott 1981, PRG-19) — computable elements = computable maps (choice-free).** For
 the function-space enumeration `Xenum` built from a consistency char `gN`, an element `φ` has an r.e.
@@ -234,12 +200,6 @@ theorem Xenum_isComputableElement_iff (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN)
       ((RecDecidable.natEq hgNp (Nat.Primrec.const 1)).not).re
     refine REPred.of_iff (fun c => ?_) (hne1.or hforall)
     rw [hbridge c]; exact Decidable.imp_iff_not_or
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **Theorem 7.5 (Scott 1981, PRG-19), packaged for `funPresentation`.** An element of the
 function-space presentation is a computable element iff it is (the filter of) a computable map. -/
@@ -254,12 +214,6 @@ theorem isComputableElement_funPresentation_iff (gN incl0 incl1 eq1 : ℕ → �
         hincl1 hincl1p heq1 heq1p) φ ↔ ComputableMap P₀ P₁ (toApproxMap φ) :=
   ⟨fun h => (Xenum_isComputableElement_iff P₀ P₁ gN hgNp hgN φ).mp h.out,
     fun h => ⟨(Xenum_isComputableElement_iff P₀ P₁ gN hgNp hgN φ).mpr h⟩⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **Membership in `Xenum` for a single map.** A map `f` lies in `Xenum c` iff (when `c` is
 consistent) it relates every coded step `⟨X₀ᵢ, X₁ⱼ⟩`; junk codes give `univ`. (The single-map analogue
@@ -280,12 +234,6 @@ theorem mem_Xenum_iff_map (gN : ℕ → ℕ) (f : ApproximableMap V₀ V₁) (c 
     constructor
     · intro _ hcon; exact absurd hcon h
     · intro _; exact Set.mem_univ f
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **Bridge for `curry`.** `(X₀ₙ) curry(g) (Xenum c)` iff, *when `c` is consistent*, `g` relates
 `X₀ₙ ∪ X₁_{e.1}` to `X₂_{e.2}` for every coded entry `e`. -/
@@ -310,12 +258,6 @@ theorem curry_rel_Xenum_iff {V₂ : NeighborhoodSystem γ} (P₂ : ComputablePre
     intro hc e he
     rw [gSection_rel]
     exact himp hc e he
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **Theorem 7.5 (Scott 1981, PRG-19) — `curry` is computable (choice-free).** If `g : 𝒟₀ × 𝒟₁ → 𝒟₂`
 is computable then so is `curry g : 𝒟₀ → (𝒟₁ → 𝒟₂)`: its neighbourhood relation is the parameterised
@@ -353,6 +295,7 @@ theorem curry_isComputable {V₂ : NeighborhoodSystem γ} (P₂ : ComputablePres
   show (curry g).rel (P₀.X t.unpair.1) (Xenum P₁ P₂ gN t.unpair.2) ↔ _
   rw [curry_rel_Xenum_iff P₀ P₁ P₂ gN hgN g t.unpair.1 t.unpair.2]
   exact Decidable.imp_iff_not_or
+
 end
 
 section
@@ -961,22 +904,10 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
 `(𝒟₀×𝒟₁→𝒟₂)` (a `Xenum`-singleton over the product presentation). -/
 def curryStepCode (a e' : ℕ) : ℕ :=
   Nat.pair (Nat.pair (Nat.pair a e'.unpair.1) e'.unpair.2) 0 + 1
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  {V₂ : NeighborhoodSystem γ}
 
 /-- `curryIso V₀ V₁ V₂` sends a filter `x` to the filter of the curried least map (by definition). -/
 theorem curryIso_apply (x : (funSpace (prod V₀ V₁) V₂).Element) :
     curryIso V₀ V₁ V₂ x = toFilter (curry (toApproxMap x)) := rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  {V₂ : NeighborhoodSystem γ}
 
 theorem primrec_curryStepCode {a e : ℕ → ℕ} (ha : Nat.Primrec a) (he : Nat.Primrec e) :
     Nat.Primrec (fun w => curryStepCode (a w) (e w)) := by
@@ -985,12 +916,6 @@ theorem primrec_curryStepCode {a e : ℕ → ℕ} (ha : Nat.Primrec a) (he : Nat
   refine (Nat.Primrec.succ.comp (((ha.pair h1).pair h2).pair (Nat.Primrec.const 0))).of_eq
     (fun w => ?_)
   rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  {V₂ : NeighborhoodSystem γ}
 
 end
 end DomainTheory.NeighbourhoodSystems

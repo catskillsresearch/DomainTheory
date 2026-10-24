@@ -109,11 +109,6 @@ theorem translateAbs_sandwich {a b body : ApproximableMap E E}
     b.comp ((translateAbs a b body).comp a) = translateAbs a b body := by
   show b.comp ((b.comp (body.comp a)).comp a) = b.comp (body.comp a)
   rw [comp_assoc b (body.comp a) a, comp_assoc body a a, ha.out, ← comp_assoc b b (body.comp a), hb.out]
-end
-
-section
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **The matching claim for application**: if `f` already "has the right type" (`f = b∘f∘a`) and
 `x` already "has type `D_a`" (`a(x) = x`), then `f(x)` already "has type `D_b`" (`b(f(x)) = f(x)`).
@@ -123,10 +118,9 @@ theorem translateApp_hasType {a b f : ApproximableMap E E} (hsandwich : b.comp (
     {x : E.Element} (hx : a.toElementMap x = x) :
     b.toElementMap (f.toElementMap x) = f.toElementMap x := by
   conv_rhs => rw [← hsandwich, toElementMap_comp, toElementMap_comp, hx]
+
 end
 
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-end

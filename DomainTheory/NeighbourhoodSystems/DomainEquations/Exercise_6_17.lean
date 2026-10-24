@@ -16,6 +16,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+
 open Example62C in
 /- concordance: source L4077 EXERCISE 6.17 algebras for sequence domains -/
 /-- **Exercise 6.17 — the functor `T(X) = 𝟙 + X + X`** on the category of `∅`-free domains and strict
@@ -35,29 +36,18 @@ abbrev Tc : Endofunctor StrictDomainObj.{w} where
       (idMap unitSys) g.1 g.1 (idMap unitSys) f.1 f.1
     rw [idMap_comp] at h
     exact h)
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 @[simp] theorem Tc_obj (D : StrictDomainObj.{w}) : Tc.obj D = tcObj D := rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 @[simp] theorem Tc_map_val {D E : StrictDomainObj.{w}} (f : (D ⟶ E)) :
     (Tc.map f).1 = sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := D.nonempty) (h₂ := D.nonempty)
       (h₀' := Example62C.unitSys_nonempty) (h₁' := E.nonempty) (h₂' := E.nonempty)
       (idMap unitSys) f.1 f.1 := rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 open Example44 Example62C ExampleB in
 /-- `C` (Example 4.4: finite-or-infinite binary sequences) as an object of the `∅`-free category. -/
 abbrev Cobj : StrictDomainObj.{0} := ⟨Str, C, C_nonempty⟩
+
 end
 
 section
@@ -68,16 +58,6 @@ namespace Example62C
 open Example44 ExampleB Example62
 
 @[simp] theorem ccEquiv_apply (x : C.Element) : ccEquiv x = toCC x := rfl
-
-end Example62C
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Example62C
-
-open Example44 ExampleB Example62
 
 /-- `(b·z).mem (bX) ↔ z.mem X`: the `b`-successor's filter restricted to the `b`-copy is `z`. -/
 theorem consMap_mem_embBit {b : Bool} {z : C.Element} {X : Set Str} (hX : C.mem X) :
@@ -90,16 +70,6 @@ theorem consMap_mem_embBit {b : Bool} {z : C.Element} {X : Set Str} (hX : C.mem 
     refine ⟨X, hz, z.sub hz, memC_embBit b hX, ?_⟩
     rw [← embBit_eq_prepend]
 
-end Example62C
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Example62C
-
-open Example44 ExampleB Example62
-
 /-- `(b·z)` never meets the `(¬b)`-copy: `0z` avoids the `1`-copies and vice versa (used to discharge
 the cross-tag cases in `toCC_consMap`). -/
 theorem consMap_not_mem_embBit_ne {b c : Bool} (hbc : b ≠ c) {z : C.Element} {X : Set Str} :
@@ -109,16 +79,6 @@ theorem consMap_not_mem_embBit_ne {b c : Bool} (hbc : b ≠ c) {z : C.Element} {
   rw [← embBit_eq_prepend] at hsub
   obtain ⟨w, hw, heq⟩ := hsub ⟨a, rfl, ha⟩
   rw [List.cons.injEq] at hw; exact hbc hw.1
-
-end Example62C
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Example62C
-
-open Example44 ExampleB Example62
 
 /-- `(b·z)` avoids the terminator `{Λ}` (since `bσ ≠ Λ`). -/
 theorem consMap_not_mem_nil {b : Bool} {z : C.Element} :
@@ -146,18 +106,6 @@ def descE : B.carrier.sys.Element :=
   B.str.1.toElementMap (sinj0 (h₀ := Example62C.unitSys_nonempty) (h₁ := B.carrier.nonempty)
     (h₂ := B.carrier.nonempty) unitSys.bot)
 
-end Initial
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section Initial
-
-open Example44 Example62C ExampleB Exercise419 Exercise516
-
-variable (B : TAlgebra Tc)
-
 /-- The `b`-th successor operation `f_b = k ∘ inj_b`: `f₀` via the `0`-copy (`inj₁`), `f₁` via the
 `1`-copy (`inj₂`). -/
 def descF (b : Bool) (y : B.carrier.sys.Element) : B.carrier.sys.Element :=
@@ -165,52 +113,16 @@ def descF (b : Bool) (y : B.carrier.sys.Element) : B.carrier.sys.Element :=
     (sinj2 (h₀ := Example62C.unitSys_nonempty) (h₁ := B.carrier.nonempty) (h₂ := B.carrier.nonempty) y)
     (sinj1 (h₀ := Example62C.unitSys_nonempty) (h₁ := B.carrier.nonempty) (h₂ := B.carrier.nonempty) y))
 
-end Initial
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section Initial
-
-open Example44 Example62C ExampleB Exercise419 Exercise516
-
-variable (B : TAlgebra Tc)
-
 theorem descF_mono (b : Bool) {y y' : B.carrier.sys.Element} (h : y ≤ y') :
     descF B b y ≤ descF B b y' := by
   cases b
   · exact B.str.1.toElementMap_mono (sinj1_mono h)
   · exact B.str.1.toElementMap_mono (sinj2_mono h)
 
-end Initial
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section Initial
-
-open Example44 Example62C ExampleB Exercise419 Exercise516
-
-variable (B : TAlgebra Tc)
-
 /-- The recursion `φ(Λ)=z`, `φ(b·σ)=f_b(φ(σ))` on a finite string, with base value `z`. -/
 def descVal (z : B.carrier.sys.Element) : Str → B.carrier.sys.Element
   | [] => z
   | b :: σ => descF B b (descVal z σ)
-
-end Initial
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section Initial
-
-open Example44 Example62C ExampleB Exercise419 Exercise516
-
-variable (B : TAlgebra Tc)
 
 theorem descVal_append (z : B.carrier.sys.Element) (σ ρ : Str) :
     descVal B z (σ ++ ρ) = descVal B (descVal B z ρ) σ := by
@@ -218,52 +130,16 @@ theorem descVal_append (z : B.carrier.sys.Element) (σ ρ : Str) :
   | nil => rfl
   | cons b σ ih => exact congrArg (descF B b) ih
 
-end Initial
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section Initial
-
-open Example44 Example62C ExampleB Exercise419 Exercise516
-
-variable (B : TAlgebra Tc)
-
 theorem descVal_mono_z {z z' : B.carrier.sys.Element} (h : z ≤ z') :
     ∀ σ, descVal B z σ ≤ descVal B z' σ
   | [] => h
   | _ :: σ => descF_mono B _ (descVal_mono_z h σ)
-
-end Initial
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section Initial
-
-open Example44 Example62C ExampleB Exercise419 Exercise516
-
-variable (B : TAlgebra Tc)
 
 theorem descMap_hcone {σ τ : Str} (h : σ <+: τ) :
     descVal B B.carrier.sys.bot σ ≤ descVal B B.carrier.sys.bot τ := by
   obtain ⟨ρ, rfl⟩ := h
   rw [descVal_append]
   exact descVal_mono_z B (B.carrier.sys.bot_le _) σ
-
-end Initial
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section Initial
-
-open Example44 Example62C ExampleB Exercise419 Exercise516
-
-variable (B : TAlgebra Tc)
 
 theorem descMap_hsing {σ τ : Str} (h : σ <+: τ) :
     descVal B B.carrier.sys.bot σ ≤ descVal B (descE B) τ := by
@@ -272,6 +148,7 @@ theorem descMap_hsing {σ τ : Str} (h : σ <+: τ) :
   exact descVal_mono_z B (B.carrier.sys.bot_le _) σ
 
 end Initial
+
 end
 
 end DomainTheory.NeighbourhoodSystems
@@ -727,14 +604,6 @@ def CisInitial : IsInitial Calg where
 end
 
 section
-namespace Example62C
-
-open Example44 ExampleB Example62
-
-end Example62C
-end
-
-section
 set_option linter.unusedVariables false
 
 theorem example_617 : ∀
@@ -762,33 +631,17 @@ variable {A : Type} [DecidableEq A]
 
 /-- The token type `A*` of finite `A`-strings. -/
 abbrev Strn (A : Type) := List A
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- The cone `σA*`: all extensions of `σ`. -/
 def coneN (σ : Strn A) : Set (Strn A) := {w | σ <+: w}
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
 @[simp] theorem mem_coneN {σ w : Strn A} : w ∈ coneN σ ↔ σ <+: w := Iff.rfl
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
 theorem coneN_nil : coneN ([] : Strn A) = Set.univ := by ext w; simp [coneN]
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
@@ -796,10 +649,6 @@ theorem coneN_subset_coneN {σ τ : Strn A} : coneN σ ⊆ coneN τ ↔ τ <+: �
   constructor
   · intro h; exact h (show σ ∈ coneN σ from List.prefix_rfl)
   · intro hτσ w hw; exact hτσ.trans hw
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
@@ -807,10 +656,6 @@ theorem coneN_injective {σ τ : Strn A} (h : coneN σ = coneN τ) : σ = τ := 
   have h1 : τ <+: σ := coneN_subset_coneN.mp (le_of_eq h)
   have h2 : σ <+: τ := coneN_subset_coneN.mp (le_of_eq h.symm)
   exact h2.eq_of_length (h2.length_le.antisymm h1.length_le)
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 theorem coneN_trichotomy (σ τ : Strn A) :
     coneN σ ⊆ coneN τ ∨ coneN τ ⊆ coneN σ ∨ coneN σ ∩ coneN τ = ∅ :=
@@ -823,42 +668,22 @@ theorem coneN_trichotomy (σ τ : Strn A) :
     rcases List.prefix_or_prefix_of_prefix h1 h2 with h | h
     · exact hστ h
     · exact hτσ h))
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- Membership in `Cₐ`: a cone `σA*` or a singleton `{σ}`. -/
 def memCn (X : Set (Strn A)) : Prop := (∃ σ, X = coneN σ) ∨ (∃ σ, X = {σ})
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
 theorem memCn_coneN (σ : Strn A) : memCn (coneN σ) := Or.inl ⟨σ, rfl⟩
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
 theorem memCn_singleton (σ : Strn A) : memCn ({σ} : Set (Strn A)) := Or.inr ⟨σ, rfl⟩
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
 theorem singleton_subset_coneN {σ τ : Strn A} : ({τ} : Set (Strn A)) ⊆ coneN σ ↔ σ <+: τ := by
   rw [Set.singleton_subset_iff, mem_coneN]
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 theorem singleton_coneN_nd (σ τ : Strn A) :
     ({τ} : Set (Strn A)) ⊆ coneN σ ∨ coneN σ ⊆ {τ} ∨ ({τ} : Set (Strn A)) ∩ coneN σ = ∅ := by
@@ -870,10 +695,6 @@ theorem singleton_coneN_nd (σ τ : Strn A) :
       iff_false, not_and]
     rintro rfl hτ
     exact h hτ
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 theorem nestedOrDisjointN : NestedOrDisjoint (memCn (A := A)) := by
   rintro X Y (⟨σ, rfl⟩ | ⟨σ, rfl⟩) (⟨τ, rfl⟩ | ⟨τ, rfl⟩)
@@ -894,58 +715,30 @@ theorem nestedOrDisjointN : NestedOrDisjoint (memCn (A := A)) := by
         not_and]
       rintro rfl h2
       exact h h2
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- **The generic domain `Cₐ`** of finite-or-infinite `A`-sequences. -/
 abbrev Cn (A : Type) [DecidableEq A] : NeighborhoodSystem (Strn A) :=
   NeighborhoodSystem.ofNestedOrDisjoint memCn Set.univ
     ⟨[], Set.mem_univ _⟩ (Or.inl ⟨[], coneN_nil.symm⟩) nestedOrDisjointN
     (fun _ => Set.subset_univ _)
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 @[simp] theorem Cn_mem {X : Set (Strn A)} : (Cn A).mem X ↔ memCn X := Iff.rfl
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 @[simp] theorem Cn_master : (Cn A).master = (Set.univ : Set (Strn A)) := rfl
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- `Cₐ` is `∅`-free: every neighbourhood is non-empty (cones and singletons are inhabited). -/
 theorem Cn_nonempty : ∀ X, (Cn A).mem X → X.Nonempty := by
   rintro X (⟨σ, rfl⟩ | ⟨σ, rfl⟩)
   · exact ⟨σ, List.prefix_rfl⟩
   · exact ⟨σ, rfl⟩
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- `σX = {στ ∣ τ ∈ X}`. -/
 def prependN (σ : Strn A) (X : Set (Strn A)) : Set (Strn A) := {w | ∃ τ, τ ∈ X ∧ w = σ ++ τ}
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
 @[simp] theorem mem_prependN {σ : Strn A} {X : Set (Strn A)} {w : Strn A} :
     w ∈ prependN σ X ↔ ∃ τ, τ ∈ X ∧ w = σ ++ τ := Iff.rfl
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
@@ -956,20 +749,12 @@ theorem prependN_coneN (σ ρ : Strn A) : prependN σ (coneN ρ) = coneN (σ ++ 
   · rintro ⟨τ, hτ, rfl⟩; exact (List.prefix_append_right_inj σ).mpr hτ
   · rintro ⟨t, ht⟩
     exact ⟨ρ ++ t, List.prefix_append ρ t, by rw [← ht, List.append_assoc]⟩
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
 theorem prependN_mono (σ : Strn A) {X X' : Set (Strn A)} (h : X' ⊆ X) :
     prependN σ X' ⊆ prependN σ X := by
   rintro w ⟨τ, hτ, rfl⟩; exact ⟨τ, h hτ, rfl⟩
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
@@ -979,10 +764,6 @@ theorem prependN_singleton (σ τ : Strn A) : prependN σ {τ} = {σ ++ τ} := b
   constructor
   · rintro ⟨t, rfl, rfl⟩; rfl
   · rintro rfl; exact ⟨τ, rfl, rfl⟩
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 omit [DecidableEq A] in
 
@@ -990,10 +771,6 @@ theorem memCn_prependN (σ : Strn A) {X : Set (Strn A)} (hX : memCn X) : memCn (
   rcases hX with ⟨ρ, rfl⟩ | ⟨ρ, rfl⟩
   · exact Or.inl ⟨σ ++ ρ, prependN_coneN σ ρ⟩
   · exact Or.inr ⟨σ ++ ρ, prependN_singleton σ ρ⟩
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- **The successor `x ↦ a·x`** prepending the letter `a`: `X (a·x) Y ↔ aX ⊆ Y`. -/
 def consMapN (a : A) : ApproximableMap (Cn A) (Cn A) where
@@ -1010,17 +787,9 @@ def consMapN (a : A) : ApproximableMap (Cn A) (Cn A) where
   mono := by
     rintro X X' Y Y' ⟨_, _, hXY⟩ hX'X hYY' hX' hY'
     exact ⟨hX', hY', (prependN_mono [a] hX'X).trans (hXY.trans hYY')⟩
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 @[simp] theorem consMapN_rel {a : A} {X Y : Set (Strn A)} :
     (consMapN a).rel X Y ↔ memCn X ∧ memCn Y ∧ prependN [a] X ⊆ Y := Iff.rfl
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section SumSig
 
@@ -1032,17 +801,9 @@ variable {β : Type v} {γ : Type v}
 abbrev SigTok (A : Type) (β : Type v) := Option (Unit ⊕ (A × β))
 
 end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- The partial element `σ⊥ = ↑σA*`. -/
 def strBotN (σ : Strn A) : (Cn A).Element := (Cn A).principal (Cn_mem.mpr (memCn_coneN σ))
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 theorem consMapN_strBot (a : A) (σ : Strn A) :
     (consMapN a).toElementMap (strBotN σ) = strBotN (a :: σ) := by
@@ -1058,17 +819,9 @@ theorem consMapN_strBot (a : A) (σ : Strn A) :
     refine ⟨coneN σ, ⟨memCn_coneN σ, subset_rfl⟩, memCn_coneN σ, hY, ?_⟩
     rw [show prependN [a] (coneN σ) = coneN (a :: σ) by rw [prependN_coneN]; rfl]
     exact hsub
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- The total element `σ = ↑{σ}`. -/
 def strElemN (σ : Strn A) : (Cn A).Element := (Cn A).principal (Cn_mem.mpr (memCn_singleton σ))
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 theorem consMapN_strElem (a : A) (σ : Strn A) :
     (consMapN a).toElementMap (strElemN σ) = strElemN (a :: σ) := by
@@ -1084,10 +837,6 @@ theorem consMapN_strElem (a : A) (σ : Strn A) :
     refine ⟨{σ}, ⟨memCn_singleton σ, subset_rfl⟩, memCn_singleton σ, hY, ?_⟩
     rw [show prependN [a] ({σ} : Set (Strn A)) = {a :: σ} by rw [prependN_singleton]; rfl]
     exact hsub
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section SumSig
 
@@ -1098,50 +847,14 @@ variable {β : Type v} {γ : Type v}
 /-- The token `t` in the `a`-indexed copy. -/
 def tc (a : A) (t : β) : SigTok A β := some (Sum.inr (a, t))
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
 /-- The `a`-indexed tagged copy `aX`. -/
 def jc (a : A) (X : Set β) : Set (SigTok A β) := {w | ∃ t, w = tc a t ∧ t ∈ X}
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
 
 omit [DecidableEq A] in
 
 theorem tc_injective {a a' : A} {t t' : β} (h : (tc a t : SigTok A β) = tc a' t') :
     a = a' ∧ t = t' := by
   simp only [tc, Option.some.injEq, Sum.inr.injEq, Prod.mk.injEq] at h; exact h
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
 
 omit [DecidableEq A] in
 
@@ -1151,131 +864,35 @@ omit [DecidableEq A] in
   · rintro ⟨t', heq, ht'⟩; obtain ⟨-, rfl⟩ := tc_injective heq; exact ht'
   · intro ht; exact ⟨t, rfl, ht⟩
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
 /-- The lone `𝟙`-token. -/
 def tu : SigTok A β := some (Sum.inl ())
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
 
 /-- The `𝟙`-copy neighbourhood (the image of `univ : Set Unit`). -/
 def jU : Set (SigTok A β) := {tu}
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
 omit [DecidableEq A] in
 
 @[simp] theorem mem_jU {w : SigTok A β} : w ∈ (jU : Set (SigTok A β)) ↔ w = tu := Iff.rfl
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
 
 omit [DecidableEq A] in
 
 @[simp] theorem none_not_mem_jU : (none : SigTok A β) ∉ (jU : Set (SigTok A β)) := by
   simp [jU, tu]
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
 omit [DecidableEq A] in
 
 @[simp] theorem none_not_mem_jc {a : A} {X : Set β} : (none : SigTok A β) ∉ jc a X := by
   rintro ⟨t, heq, -⟩; exact absurd heq (by simp [tc])
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
 
 omit [DecidableEq A] in
 
 @[simp] theorem tu_not_mem_jc {a : A} {X : Set β} : (tu : SigTok A β) ∉ jc a X := by
   rintro ⟨t, heq, -⟩; exact absurd heq (by simp [tu, tc])
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
 omit [DecidableEq A] in
 
 @[simp] theorem tc_not_mem_jU {a : A} {t : β} : (tc a t : SigTok A β) ∉ (jU : Set (SigTok A β)) := by
   simp [jU, tu, tc]
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
 
 omit [DecidableEq A] in
 
@@ -1284,33 +901,9 @@ theorem jU_inter_jc (a : A) (X : Set β) : (jU ∩ jc a X : Set (SigTok A β)) =
   simp only [Set.mem_inter_iff, mem_jU, Set.mem_empty_iff_false, iff_false, not_and]
   rintro rfl; exact tu_not_mem_jc
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
 omit [DecidableEq A] in
 
 theorem jU_nonempty : (jU : Set (SigTok A β)).Nonempty := ⟨tu, rfl⟩
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
 
 omit [DecidableEq A] in
 
@@ -1320,18 +913,6 @@ theorem jc_inter_jc_ne {a a' : A} (h : a ≠ a') (X X' : Set β) :
   simp only [Set.mem_inter_iff, Set.mem_empty_iff_false, iff_false, not_and]
   rintro ⟨t, rfl, -⟩ ⟨t', heq, -⟩
   exact h (tc_injective heq).1
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
 
 omit [DecidableEq A] in
 
@@ -1343,34 +924,10 @@ theorem jc_inter_jc_same (a : A) (X X' : Set β) :
     obtain ⟨-, rfl⟩ := tc_injective heq; exact ⟨t, rfl, ht, ht'⟩
   · rintro ⟨t, rfl, ht, ht'⟩; exact ⟨⟨t, rfl, ht⟩, ⟨t, rfl, ht'⟩⟩
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
 omit [DecidableEq A] in
 
 theorem jc_nonempty {a : A} {X : Set β} (hX : X.Nonempty) : (jc a X : Set (SigTok A β)).Nonempty := by
   obtain ⟨t, ht⟩ := hX; exact ⟨tc a t, t, rfl, ht⟩
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
 
 omit [DecidableEq A] in
 
@@ -1380,34 +937,10 @@ theorem jc_subset_jc {a : A} {X X' : Set β} :
   · intro h t ht; exact tc_mem_jc.mp (h (tc_mem_jc.mpr ht))
   · rintro h w ⟨t, rfl, ht⟩; exact tc_mem_jc.mpr (h ht)
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
 omit [DecidableEq A] in
 
 theorem jc_injective {a : A} {X X' : Set β} (h : (jc a X : Set (SigTok A β)) = jc a X') : X = X' :=
   Set.Subset.antisymm (jc_subset_jc.mp h.subset) (jc_subset_jc.mp h.symm.subset)
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
 
 omit [DecidableEq A] in
 /-- Tagged copies determine both index and set: `aX = a'X'` (with `X` non-empty) forces `a=a'`,
@@ -1420,10 +953,6 @@ theorem jc_eq_jc {a a' : A} {X X' : Set β} (hXne : X.Nonempty)
   exact ⟨rfl, jc_injective heq⟩
 
 end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section SumSig
 
@@ -1438,10 +967,6 @@ def masterSig : Set (SigTok A β) :=
   {w | w = none ∨ w = tu ∨ ∃ a t, t ∈ V.master ∧ w = tc a t}
 
 end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section SumSig
 
@@ -1458,10 +983,6 @@ omit [DecidableEq A] in
 @[simp] theorem none_mem_masterSig : (none : SigTok A β) ∈ masterSig V := Or.inl rfl
 
 end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section SumSig
 
@@ -1476,10 +997,6 @@ theorem tc_mem_jc_ne {a a' : A} (h : a ≠ a') {X : Set β} {t : β} :
   rintro ⟨t', heq, -⟩; exact h (tc_injective heq).1
 
 end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section SumSig
 
@@ -1495,64 +1012,16 @@ omit [DecidableEq A] in
 
 @[simp] theorem tu_mem_masterSig : (tu : SigTok A β) ∈ masterSig V := Or.inr (Or.inl rfl)
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
-
 omit [DecidableEq A] in
 
 theorem eq_masterSig_of_subset {W : Set (SigTok A β)}
     (hsub : masterSig V ⊆ W) (hsub' : W ⊆ masterSig V) : W = masterSig V :=
   Set.Subset.antisymm hsub' hsub
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
-
 omit [DecidableEq A] in
 
 theorem jU_subset_masterSig : (jU : Set (SigTok A β)) ⊆ masterSig V := by
   rintro w rfl; exact tu_mem_masterSig
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
 
 omit [DecidableEq A] in
 
@@ -1560,64 +1029,16 @@ theorem jc_subset_masterSig {a : A} {X : Set β} (hX : V.mem X) :
     (jc a X : Set (SigTok A β)) ⊆ masterSig V := by
   rintro w ⟨t, rfl, ht⟩; exact Or.inr (Or.inr ⟨a, t, V.sub_master hX ht, rfl⟩)
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
-
 omit [DecidableEq A] in
 
 theorem masterSig_inter_jU : (masterSig V ∩ jU : Set (SigTok A β)) = jU :=
   Set.inter_eq_right.mpr jU_subset_masterSig
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
 
 omit [DecidableEq A] in
 
 theorem masterSig_inter_jc {a : A} {X : Set β} (hX : V.mem X) :
     (masterSig V ∩ jc a X : Set (SigTok A β)) = jc a X :=
   Set.inter_eq_right.mpr (jc_subset_masterSig hX)
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
 
 /-- **The `A`-indexed separated sum `𝟙 + Σ_a V`** over `{Λ} ∪ {tu} ∪ ⋃_a aΔ`, under the standing
 assumption that no neighbourhood of `V` is empty. The alphabet-generic analogue of `sum3 unitSys V V`
@@ -1670,30 +1091,10 @@ def sumSig (A : Type) [DecidableEq A] (V : NeighborhoodSystem β)
         · rw [jc_inter_jc_ne haa] at hZsub ⊢
           obtain ⟨t, ht⟩ := hne Z hZ; exact absurd (hZsub ht) (Set.notMem_empty t)
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
-
 @[simp] theorem sumSig_master {h : ∀ X, V.mem X → X.Nonempty} :
     (sumSig A V h).master = masterSig V := rfl
 
 end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section SumSig
 
@@ -1716,24 +1117,6 @@ theorem mem_subset_jU_inv {W : Set (SigTok A β)}
   · obtain ⟨t, ht⟩ := h X₂ hX₂
     exact absurd (hsub (tc_mem_jc.mpr ht)) tc_not_mem_jU
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
-
-variable {h : ∀ X, V.mem X → X.Nonempty}
-
 /-- A `sumSig`-neighbourhood contained in an `a`-copy `aX` is itself an `a`-copy. -/
 theorem mem_subset_jc_inv {W : Set (SigTok A β)} {a : A} {X : Set β}
     (hW : (sumSig A V h).mem W) (hsub : W ⊆ jc a X) : ∃ X₂, V.mem X₂ ∧ W = jc a X₂ := by
@@ -1744,24 +1127,6 @@ theorem mem_subset_jc_inv {W : Set (SigTok A β)} {a : A} {X : Set β}
     obtain ⟨t', heq, -⟩ := hsub (tc_mem_jc.mpr ht)
     obtain ⟨rfl, -⟩ := tc_injective heq
     exact ⟨X₂, hX₂, rfl⟩
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
-
-variable {h : ∀ X, V.mem X → X.Nonempty}
 
 /-- The `a`-th copy injection `V ↪ 𝟙+Σ_a V`: send `x∈|V|` to the sum element whose proper
 neighbourhoods are the `a`-copies `aX` with `X∈x`. -/
@@ -1790,24 +1155,6 @@ def sinjC (a : A) (x : V.Element) : (sumSig A V h).Element where
         obtain ⟨rfl, -⟩ := tc_injective heq
         exact Or.inr ⟨X', hX', rfl, x.up_mem hx hX' (jc_subset_jc.mp hsub)⟩
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
-
-variable {h : ∀ X, V.mem X → X.Nonempty}
-
 /-- The basepoint/`𝟙`-injection: the image of the unique point of `𝟙`. Its proper neighbourhood is
 the `𝟙`-copy `jU`. -/
 def sinjU : (sumSig A V h).Element where
@@ -1831,43 +1178,7 @@ def sinjU : (sumSig A V h).Element where
       · exact Or.inr rfl
       · exact absurd (hsub (show tu ∈ jU from rfl)) tu_not_mem_jc
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
-
-variable {h : ∀ X, V.mem X → X.Nonempty}
-
 @[simp] theorem sinjU_mem_jU : (sinjU (h := h)).mem (jU : Set (SigTok A β)) := Or.inr rfl
-
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
-
-variable {h : ∀ X, V.mem X → X.Nonempty}
 
 @[simp] theorem sinjC_mem_jc {a : A} {x : V.Element} {X : Set β} (hX : V.mem X) :
     (sinjC (h := h) a x).mem (jc a X) ↔ x.mem X := by
@@ -1877,24 +1188,6 @@ variable {h : ∀ X, V.mem X → X.Nonempty}
     · rw [jc_injective heq]; exact hx
   · intro hx; exact Or.inr ⟨X, hX, rfl, hx⟩
 
-end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumSig
-
-universe v
-
-variable {β : Type v} {γ : Type v}
-
-variable (V : NeighborhoodSystem β)
-
-variable {V}
-
-variable {h : ∀ X, V.mem X → X.Nonempty}
-
 theorem sinjC_mono {a : A} {x x' : V.Element} (hxle : x ≤ x') :
     sinjC (h := h) a x ≤ sinjC a x' := by
   rintro W (rfl | ⟨X, hX, rfl, hm⟩)
@@ -1902,10 +1195,6 @@ theorem sinjC_mono {a : A} {x x' : V.Element} (hxle : x ≤ x') :
   · exact Or.inr ⟨X, hX, rfl, hxle X hm⟩
 
 end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section SumMapSig
 
@@ -1976,21 +1265,6 @@ def sumMapSig (f : ApproximableMap V₀ V₁) :
         exact Or.inr (Or.inr ⟨a, X₂, Y'₂, rfl, rfl,
           f.mono hf hX₂X (jc_subset_jc.mp hW'W'₂) hX₂ hY'₂⟩)
 
-end SumMapSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumMapSig
-
-universe v
-
-variable {β₀ β₁ β₂ : Type v}
-  {V₀ : NeighborhoodSystem β₀} {V₁ : NeighborhoodSystem β₁} {V₂ : NeighborhoodSystem β₂}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
 /-- The sum map is strict: it sends `⊥ = master` only to `master`. -/
 theorem isStrict_sumMapSig (f : ApproximableMap V₀ V₁) :
     IsStrict (sumMapSig (A := A) (h₀ := h₀) (h₁ := h₁) f) := by
@@ -2002,41 +1276,11 @@ theorem isStrict_sumMapSig (f : ApproximableMap V₀ V₁) :
   · exact absurd (hWX ▸ (show (none : SigTok A β₀) ∈ (sumSig A V₀ h₀).master from
       none_mem_masterSig)) none_not_mem_jc
 
-end SumMapSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumMapSig
-
-universe v
-
-variable {β₀ β₁ β₂ : Type v}
-  {V₀ : NeighborhoodSystem β₀} {V₁ : NeighborhoodSystem β₁} {V₂ : NeighborhoodSystem β₂}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
 @[simp] theorem sumMapSig_rel {f : ApproximableMap V₀ V₁} {W W'} :
     (sumMapSig (A := A) (h₀ := h₀) (h₁ := h₁) f).rel W W' ↔
       (sumSig A V₀ h₀).mem W ∧ (sumSig A V₁ h₁).mem W' ∧
         (W' = masterSig V₁ ∨ (W = jU ∧ W' = jU) ∨
           ∃ a X Y', W = jc a X ∧ W' = jc a Y' ∧ f.rel X Y') := Iff.rfl
-
-end SumMapSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumMapSig
-
-universe v
-
-variable {β₀ β₁ β₂ : Type v}
-  {V₀ : NeighborhoodSystem β₀} {V₁ : NeighborhoodSystem β₁} {V₂ : NeighborhoodSystem β₂}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
 
 /-- **Functoriality (composition): `Σ(g∘f) = Σg ∘ Σf`.** -/
 theorem sumMapSig_comp (g : ApproximableMap V₁ V₂) (f : ApproximableMap V₀ V₁) :
@@ -2072,21 +1316,6 @@ theorem sumMapSig_comp (g : ApproximableMap V₁ V₂) (f : ApproximableMap V₀
       · obtain ⟨rfl, rfl⟩ := jc_eq_jc (h₁ Y'₀ (f.rel_cod hf)) (hW'eq.symm.trans hW'Y')
         exact Or.inr (Or.inr ⟨a', X, Z'', rfl, rfl, ⟨Y'₀, hf, hg⟩⟩)
 
-end SumMapSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumMapSig
-
-universe v
-
-variable {β₀ β₁ β₂ : Type v}
-  {V₀ : NeighborhoodSystem β₀} {V₁ : NeighborhoodSystem β₁} {V₂ : NeighborhoodSystem β₂}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
 /-- **Functoriality (identities): `Σ(I) = I`.** -/
 theorem sumMapSig_id :
     sumMapSig (A := A) (V₀ := V₀) (V₁ := V₀) (h₀ := h₀) (h₁ := h₀) (idMap V₀)
@@ -2116,21 +1345,6 @@ theorem sumMapSig_id :
         obtain ⟨rfl, -⟩ := tc_injective he
         exact Or.inr (Or.inr ⟨a, X, X', rfl, rfl, hX, hX', jc_subset_jc.mp hsub⟩)
 
-end SumMapSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumMapSig
-
-universe v
-
-variable {β₀ β₁ β₂ : Type v}
-  {V₀ : NeighborhoodSystem β₀} {V₁ : NeighborhoodSystem β₁} {V₂ : NeighborhoodSystem β₂}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
 /-- `Σf` on the `a`-copy injection: `(Σf)(inj_a x) = inj_a (f x)`. -/
 theorem sumMapSig_sinjC (f : ApproximableMap V₀ V₁) (a : A) (x : V₀.Element) :
     (sumMapSig (A := A) (h₀ := h₀) (h₁ := h₁) f).toElementMap (sinjC (h := h₀) a x)
@@ -2156,21 +1370,6 @@ theorem sumMapSig_sinjC (f : ApproximableMap V₀ V₁) (a : A) (x : V₀.Elemen
       exact ⟨jc a X, Or.inr ⟨X, x.sub hx, rfl, hx⟩, Or.inr (Or.inr ⟨a, X, x.sub hx, rfl⟩),
         Or.inr (Or.inr ⟨a, Y', f.rel_cod hf, rfl⟩), Or.inr (Or.inr ⟨a, X, Y', rfl, rfl, hf⟩)⟩
 
-end SumMapSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section SumMapSig
-
-universe v
-
-variable {β₀ β₁ β₂ : Type v}
-  {V₀ : NeighborhoodSystem β₀} {V₁ : NeighborhoodSystem β₁} {V₂ : NeighborhoodSystem β₂}
-  {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-  {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
-
 /-- `Σf` fixes the basepoint injection. -/
 theorem sumMapSig_sinjU (f : ApproximableMap V₀ V₁) :
     (sumMapSig (A := A) (h₀ := h₀) (h₁ := h₁) f).toElementMap (sinjU (h := h₀))
@@ -2192,10 +1391,6 @@ theorem sumMapSig_sinjU (f : ApproximableMap V₀ V₁) :
         Or.inr (Or.inl ⟨rfl, rfl⟩)⟩
 
 end SumMapSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section SumSig
 
@@ -2215,44 +1410,24 @@ theorem sumSig_nonempty {h : ∀ X, V.mem X → X.Nonempty} :
   · exact jc_nonempty (h X hX)
 
 end SumSig
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- `Tsig` on objects: `Tsig(D) = 𝟙 + Σ_a D`, again `∅`-free (`sumSig_nonempty`). -/
 abbrev tsigObj (A : Type) [DecidableEq A] (D : StrictDomainObj.{0}) : StrictDomainObj.{0} where
   carrier := SigTok A D.carrier
   sys := sumSig A D.sys D.nonempty
   nonempty := sumSig_nonempty
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 @[simp] theorem tsigObj_sys (A : Type) [DecidableEq A] (D : StrictDomainObj.{0}) :
     (tsigObj A D).sys = sumSig A D.sys D.nonempty := rfl
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- `Tsig` on maps: `Tsig(f) = I_𝟙 + Σ_a f`, strict by `isStrict_sumMapSig`. -/
 def tsigMapHom (A : Type) [DecidableEq A] {D E : StrictDomainObj.{0}} (f : (D ⟶ E)) :
     ((tsigObj A D) ⟶ (tsigObj A E)) :=
   ⟨sumMapSig (A := A) (h₀ := D.nonempty) (h₁ := E.nonempty) f.1, isStrict_sumMapSig _⟩
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 @[simp] theorem tsigMapHom_val (A : Type) [DecidableEq A] {D E : StrictDomainObj.{0}}
     (f : (D ⟶ E)) :
     (tsigMapHom A f).1 = sumMapSig (A := A) (h₀ := D.nonempty) (h₁ := E.nonempty) f.1 := rfl
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- **The functor `Tsig(X) = 𝟙 + Σ_{a:A} X`** on the category of `∅`-free domains and strict maps. -/
 abbrev Tsig (A : Type) [DecidableEq A] : Endofunctor StrictDomainObj.{0} where
@@ -2260,25 +1435,13 @@ abbrev Tsig (A : Type) [DecidableEq A] : Endofunctor StrictDomainObj.{0} where
   map := tsigMapHom A
   map_id _ := Subtype.ext sumMapSig_id
   map_comp {_ _ _} g f := Subtype.ext (sumMapSig_comp g.1 f.1)
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 @[simp] theorem Tsig_obj (A : Type) [DecidableEq A] (D : StrictDomainObj.{0}) :
     (Tsig A).obj D = tsigObj A D := rfl
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 @[simp] theorem Tsig_map_val (A : Type) [DecidableEq A] {D E : StrictDomainObj.{0}}
     (f : (D ⟶ E)) :
     ((Tsig A).map f).1 = sumMapSig (A := A) (h₀ := D.nonempty) (h₁ := E.nonempty) f.1 := rfl
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Iso
 
@@ -2287,44 +1450,14 @@ variable {A : Type} [DecidableEq A] [Inhabited A]
 /-- `aX = {a :: w' ∣ w' ∈ X}`: the `a`-prefixed copy of a neighbourhood. -/
 def embA (a : A) (X : Set (Strn A)) : Set (Strn A) := {w | ∃ w', w = a :: w' ∧ w' ∈ X}
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [DecidableEq A] [Inhabited A] in
 
 @[simp] theorem mem_embA {a : A} {X : Set (Strn A)} {w : Strn A} :
     w ∈ embA a X ↔ ∃ w', w = a :: w' ∧ w' ∈ X := Iff.rfl
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 /-- The right-hand side of the domain equation: the `A`-indexed sum `𝟙 + Σ_a Cₐ`. -/
 abbrev CCn (A : Type) [DecidableEq A] : NeighborhoodSystem (SigTok A (Strn A)) :=
   sumSig A (Cn A) Cn_nonempty
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 omit [DecidableEq A] [Inhabited A] in
 
@@ -2335,30 +1468,10 @@ theorem embA_eq_prependN (a : A) (X : Set (Strn A)) : embA a X = prependN [a] X 
   · rintro ⟨w', rfl, hX⟩; exact ⟨w', hX, rfl⟩
   · rintro ⟨t, hX, rfl⟩; exact ⟨t, rfl, hX⟩
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [DecidableEq A] [Inhabited A] in
 
 theorem embA_coneN (a : A) (σ : Strn A) : embA a (coneN σ) = coneN (a :: σ) := by
   rw [embA_eq_prependN, prependN_coneN]; rfl
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 omit [DecidableEq A] [Inhabited A] in
 
@@ -2370,16 +1483,6 @@ theorem embA_inter (a : A) (X X' : Set (Strn A)) : embA a X ∩ embA a X' = embA
     rw [List.cons.injEq] at heq; obtain ⟨-, rfl⟩ := heq; exact ⟨w', rfl, hX, hX'⟩
   · rintro ⟨w', rfl, hX, hX'⟩; exact ⟨⟨w', rfl, hX⟩, ⟨w', rfl, hX'⟩⟩
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [DecidableEq A] [Inhabited A] in
 
 theorem embA_inter_ne {a a' : A} (h : a ≠ a') (X Y : Set (Strn A)) :
@@ -2389,30 +1492,10 @@ theorem embA_inter_ne {a a' : A} (h : a ≠ a') (X Y : Set (Strn A)) :
   rintro ⟨w', rfl, -⟩ ⟨w'', heq, -⟩
   rw [List.cons.injEq] at heq; exact h heq.1
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [DecidableEq A] [Inhabited A] in
 
 theorem embA_singleton (a : A) (σ : Strn A) : embA a ({σ} : Set (Strn A)) = {a :: σ} := by
   rw [embA_eq_prependN, prependN_singleton]; rfl
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 omit [DecidableEq A] [Inhabited A] in
 
@@ -2423,30 +1506,10 @@ theorem embA_subset {a : A} {X X' : Set (Strn A)} : embA a X ⊆ embA a X' ↔ X
     rw [List.cons.injEq] at heq; obtain ⟨-, rfl⟩ := heq; exact hX'
   · rintro h w ⟨w', rfl, hX⟩; exact ⟨w', rfl, h hX⟩
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [DecidableEq A] [Inhabited A] in
 
 theorem embA_injective {a : A} {X X' : Set (Strn A)} (h : embA a X = embA a X') : X = X' :=
   Set.Subset.antisymm (embA_subset.mp h.subset) (embA_subset.mp h.symm.subset)
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 omit [DecidableEq A] [Inhabited A] in
 /-- **The shape of a `Cₐ`-neighbourhood.** Every neighbourhood is the master `Σ*`, the terminator
@@ -2461,32 +1524,12 @@ theorem memCn_cases {W : Set (Strn A)} (hW : memCn W) :
     | nil => exact Or.inr (Or.inl rfl)
     | cons a σ' => exact Or.inr (Or.inr ⟨a, {σ'}, memCn_singleton σ', (embA_singleton a σ').symm⟩)
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [Inhabited A] in
 
 omit [DecidableEq A] in
 
 theorem memCn_embA (a : A) {X : Set (Strn A)} (hX : memCn X) : memCn (embA a X) := by
   rw [embA_eq_prependN]; exact memCn_prependN [a] hX
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 omit [DecidableEq A] [Inhabited A] in
 
@@ -2499,45 +1542,15 @@ theorem memCn_embA_inv {a : A} {W : Set (Strn A)} (h : memCn (embA a W)) : memCn
     obtain ⟨w', rfl, -⟩ := hmem
     rw [← embA_singleton] at hσ; rw [embA_injective hσ]; exact memCn_singleton w'
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [DecidableEq A] [Inhabited A] in
 
 theorem nil_not_mem_embA {a : A} {X : Set (Strn A)} : ([] : Strn A) ∉ embA a X := by
   rintro ⟨w', heq, -⟩; exact absurd heq (by simp)
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [DecidableEq A] [Inhabited A] in
 
 theorem embA_ne_univ (a : A) (X : Set (Strn A)) : embA a X ≠ Set.univ := by
   intro h; exact nil_not_mem_embA (X := X) (a := a) (by rw [h]; trivial)
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 omit [DecidableEq A] [Inhabited A] in
 
@@ -2548,16 +1561,6 @@ theorem singleton_nil_inter_embA (a : A) (X : Set (Strn A)) :
     iff_false, not_and]
   rintro rfl ⟨w', heq, -⟩; exact absurd heq (by simp)
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [DecidableEq A] [Inhabited A] in
 
 theorem singleton_nil_ne_embA (a : A) (X : Set (Strn A)) :
@@ -2565,32 +1568,12 @@ theorem singleton_nil_ne_embA (a : A) (X : Set (Strn A)) :
   intro h
   exact nil_not_mem_embA (h ▸ (Set.mem_singleton_iff.mpr rfl : ([] : Strn A) ∈ ({[]} : Set (Strn A))))
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [DecidableEq A] in
 
 theorem singleton_nil_ne_univ : ({[]} : Set (Strn A)) ≠ Set.univ := by
   intro h
   have hmem : ([default] : Strn A) ∈ ({[]} : Set (Strn A)) := by rw [h]; trivial
   rw [Set.mem_singleton_iff] at hmem; exact absurd hmem (by simp)
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 omit [Inhabited A] in
 
@@ -2604,16 +1587,6 @@ theorem sumSig_mem_jc_inv {a : A} {X : Set (Strn A)} (h : (CCn A).mem (jc a X)) 
     · subst haa; rw [jc_injective heq]; exact hX'
     · obtain ⟨t, ht⟩ := Cn_nonempty X' hX'
       exact absurd (heq.symm ▸ (tc_mem_jc.mpr ht)) (tc_mem_jc_ne (Ne.symm haa))
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 /-- **Forward half of `Cₐ ≅ 𝟙 + Σ_a Cₐ`.** Records, for each branch, whether `x` finishes at `Λ`
 (the `𝟙`-summand) or reaches the `a`-copy `aX` (the `a`-th summand). -/
@@ -2666,16 +1639,6 @@ def toCC (x : (Cn A).Element) : (CCn A).Element where
         exact Or.inr (Or.inr ⟨a, X', hX', rfl,
           x.up_mem hzF (memCn_embA a hX') (embA_subset.mpr (jc_subset_jc.mp hsub))⟩)
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [Inhabited A] in
 
 @[simp] theorem toCC_mem_jU {x : (Cn A).Element} :
@@ -2686,16 +1649,6 @@ omit [Inhabited A] in
     · exact hz
     · exact absurd (heq ▸ (show tu ∈ jU from rfl)) tu_not_mem_jc
   · intro hz; exact Or.inr (Or.inl ⟨rfl, hz⟩)
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 omit [Inhabited A] in
 
@@ -2710,16 +1663,6 @@ omit [Inhabited A] in
       exact hz
   · intro hz; exact Or.inr (Or.inr ⟨a, X, hX, rfl, hz⟩)
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [DecidableEq A] [Inhabited A] in
 /-- Prefixed copies determine index and set: `aX = a'X'` (with `X` non-empty) forces `a=a'`, `X=X'`. -/
 theorem embA_eq_embA {a a' : A} {X X' : Set (Strn A)} (hXne : X.Nonempty)
@@ -2730,16 +1673,6 @@ theorem embA_eq_embA {a a' : A} {X X' : Set (Strn A)} (hXne : X.Nonempty)
   obtain ⟨u, he, -⟩ := hmem
   rw [List.cons.injEq] at he; obtain ⟨rfl, -⟩ := he
   exact ⟨rfl, embA_injective h⟩
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 /-- **Inverse half of `Cₐ ≅ 𝟙 + Σ_a Cₐ`.** -/
 def fromCC (s : (CCn A).Element) : (Cn A).Element where
@@ -2793,16 +1726,6 @@ def fromCC (s : (CCn A).Element) : (Cn A).Element where
         exact s.up_mem hsF (Or.inr (Or.inr ⟨a, X', hX', rfl⟩))
           (jc_subset_jc.mpr (embA_subset.mp hsub))
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 @[simp] theorem fromCC_mem_nil {s : (CCn A).Element} :
     (fromCC s).mem ({[]} : Set (Strn A)) ↔ s.mem (jU : Set (SigTok A (Strn A))) := by
   constructor
@@ -2811,16 +1734,6 @@ variable {A : Type} [DecidableEq A] [Inhabited A]
     · exact hs
     · exact absurd heq (singleton_nil_ne_embA a' X')
   · intro hs; exact Or.inr (Or.inl ⟨rfl, hs⟩)
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 omit [Inhabited A] in
 
@@ -2833,16 +1746,6 @@ omit [Inhabited A] in
     · obtain ⟨rfl, rfl⟩ := embA_eq_embA (Cn_nonempty X hX) heqj
       exact hs
   · intro hs; exact Or.inr (Or.inr ⟨a, X, hX, rfl, hs⟩)
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 omit [Inhabited A] in
 
@@ -2860,16 +1763,6 @@ theorem fromCC_toCC (x : (Cn A).Element) : fromCC (toCC x) = x := by
     · exact Or.inr (Or.inl ⟨rfl, toCC_mem_jU.mpr hW⟩)
     · exact Or.inr (Or.inr ⟨a, X, hX, rfl, (toCC_mem_jc hX).mpr hW⟩)
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 theorem toCC_fromCC (s : (CCn A).Element) : toCC (fromCC s) = s := by
   apply NeighborhoodSystem.Element.ext
   intro W
@@ -2883,16 +1776,6 @@ theorem toCC_fromCC (s : (CCn A).Element) : toCC (fromCC s) = s := by
     · exact Or.inl rfl
     · exact Or.inr (Or.inl ⟨rfl, fromCC_mem_nil.mpr hW⟩)
     · exact Or.inr (Or.inr ⟨a, X, hX, rfl, (fromCC_mem_embA hX).mpr hW⟩)
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 /-- **The isomorphism `|Cₐ| ≃o |𝟙 + Σ_a Cₐ|`.** -/
 def ccEquiv : (Cn A).Element ≃o (CCn A).Element where
@@ -2914,23 +1797,9 @@ def ccEquiv : (Cn A).Element ≃o (CCn A).Element where
       · exact Or.inr (Or.inl ⟨rfl, hle _ hz⟩)
       · exact Or.inr (Or.inr ⟨a, X, hX, rfl, hle _ hz⟩)
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 @[simp] theorem ccEquiv_apply (x : (Cn A).Element) : ccEquiv x = toCC x := rfl
 
 end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Algebra
 
@@ -2939,51 +1808,17 @@ variable {A : Type} [DecidableEq A] [Inhabited A]
 /-- `Cₐ` as an object of the `∅`-free category. -/
 abbrev Cnobj (A : Type) [DecidableEq A] : StrictDomainObj.{0} := ⟨Strn A, Cn A, Cn_nonempty⟩
 
-end Algebra
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Algebra
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 @[simp] theorem Cnobj_sys (A : Type) [DecidableEq A] : (Cnobj A).sys = Cn A := rfl
-
-end Algebra
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Algebra
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 /-- **The `Tsig`-algebra structure on `Cₐ`.** The structure map `i : 𝟙+Σ_a Cₐ → Cₐ` is the inverse of
 the domain-equation isomorphism `ccEquiv`, strict by `isStrict_ofIso`. -/
 abbrev cnStr : (((Tsig A).obj (Cnobj A)) ⟶ (Cnobj A)) :=
   ⟨ofIso ccEquiv.symm, isStrict_ofIso _⟩
 
-end Algebra
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Algebra
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 /-- **`Cₐ` is a `Tsig`-algebra** for `Tsig(X) = 𝟙 + Σ_a X`. -/
 abbrev Cnalg (A : Type) [DecidableEq A] [Inhabited A] : TAlgebra (Tsig A) := ⟨Cnobj A, cnStr⟩
 
 end Algebra
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Iso
 
@@ -3001,16 +1836,6 @@ theorem consMapN_mem_embA {a : A} {z : (Cn A).Element} {X : Set (Strn A)} (hX : 
     refine ⟨X, hz, z.sub hz, memCn_embA a hX, ?_⟩
     rw [← embA_eq_prependN]
 
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 omit [Inhabited A] in
 
 theorem consMapN_not_mem_embA_ne {a c : A} (hac : a ≠ c) {z : (Cn A).Element} {X : Set (Strn A)} :
@@ -3020,16 +1845,6 @@ theorem consMapN_not_mem_embA_ne {a c : A} (hac : a ≠ c) {z : (Cn A).Element} 
   rw [← embA_eq_prependN] at hsub
   obtain ⟨w, hw, -⟩ := hsub ⟨t, rfl, ht⟩
   rw [List.cons.injEq] at hw; exact hac hw.1
-
-end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
 
 omit [Inhabited A] in
 
@@ -3042,10 +1857,6 @@ theorem consMapN_not_mem_nil {a : A} {z : (Cn A).Element} :
   rw [Set.mem_singleton_iff] at hmem; exact absurd hmem (by simp)
 
 end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Initial
 
@@ -3055,29 +1866,9 @@ variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 def descE : B.carrier.sys.Element :=
   B.str.1.toElementMap (sinjU (h := B.carrier.nonempty))
 
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
-
 /-- The `a`-th successor operation `f_a = k ∘ inj_a`. -/
 def descF (a : A) (y : B.carrier.sys.Element) : B.carrier.sys.Element :=
   B.str.1.toElementMap (sinjC (h := B.carrier.nonempty) a y)
-
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
 omit [Inhabited A] in
 
@@ -3085,30 +1876,10 @@ theorem descF_mono (a : A) {y y' : B.carrier.sys.Element} (h : y ≤ y') :
     descF B a y ≤ descF B a y' :=
   B.str.1.toElementMap_mono (sinjC_mono h)
 
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
-
 /-- The recursion `φ(Λ)=z`, `φ(a·σ)=f_a(φ(σ))` on a finite string, with base value `z`. -/
 def descVal (z : B.carrier.sys.Element) : Strn A → B.carrier.sys.Element
   | [] => z
   | a :: σ => descF B a (descVal z σ)
-
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
 omit [Inhabited A] in
 
@@ -3118,32 +1889,12 @@ theorem descVal_append (z : B.carrier.sys.Element) (σ ρ : Strn A) :
   | nil => rfl
   | cons a σ ih => exact congrArg (descF B a) ih
 
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
-
 omit [Inhabited A] in
 
 theorem descVal_mono_z {z z' : B.carrier.sys.Element} (h : z ≤ z') :
     ∀ σ, descVal B z σ ≤ descVal B z' σ
   | [] => h
   | _ :: σ => descF_mono B _ (descVal_mono_z h σ)
-
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
 omit [Inhabited A] in
 
@@ -3152,16 +1903,6 @@ theorem descMap_hcone {σ τ : Strn A} (h : σ <+: τ) :
   obtain ⟨ρ, rfl⟩ := h
   rw [descVal_append]
   exact descVal_mono_z B (B.carrier.sys.bot_le _) σ
-
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
 omit [Inhabited A] in
 
@@ -3172,10 +1913,6 @@ theorem descMap_hsing {σ τ : Strn A} (h : σ <+: τ) :
   exact descVal_mono_z B (B.carrier.sys.bot_le _) σ
 
 end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Lift
 
@@ -3192,16 +1929,6 @@ theorem map_ext_Cn {V : NeighborhoodSystem β} {f g : ApproximableMap (Cn A) V}
   · exact hbot σ
   · exact helem σ
 
-end Lift
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Lift
-
-variable {A : Type} [DecidableEq A] [Inhabited A] {β : Type}
-
 omit [DecidableEq A] in
 /-- A cone is never contained in a singleton: it has the two distinct elements `τ` and `τ·default`. -/
 theorem not_coneN_subset_singleton (τ σ : Strn A) : ¬ coneN τ ⊆ ({σ} : Set (Strn A)) := by
@@ -3212,30 +1939,10 @@ theorem not_coneN_subset_singleton (τ σ : Strn A) : ¬ coneN τ ⊆ ({σ} : Se
   have : τ = τ ++ [default] := h1.trans h2.symm
   simp at this
 
-end Lift
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Lift
-
-variable {A : Type} [DecidableEq A] [Inhabited A] {β : Type}
-
 omit [DecidableEq A] in
 
 theorem coneN_ne_singleton (τ σ : Strn A) : coneN τ ≠ ({σ} : Set (Strn A)) := fun h =>
   not_coneN_subset_singleton τ σ (h ▸ subset_rfl)
-
-end Lift
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Lift
-
-variable {A : Type} [DecidableEq A] [Inhabited A] {β : Type}
 
 /-- A map `Cₐ → V` determined by its value `coneVal σ` on each partial element `σ⊥` and `singVal σ`
 on each total element `σ`. (The alphabet-generic copy of `Exercise419.liftC`.) -/
@@ -3281,10 +1988,6 @@ def liftCn (V : NeighborhoodSystem β) (coneVal singVal : Strn A → V.Element)
         exact Or.inr ⟨τ, rfl, (singVal τ).up_mem hY hY' hYY'⟩
 
 end Lift
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Initial
 
@@ -3296,10 +1999,6 @@ def descMap : ApproximableMap (Cn A) B.carrier.sys :=
     (fun {_ _} => descMap_hcone B) (fun {_ _} => descMap_hsing B)
 
 end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Lift
 
@@ -3321,10 +2020,6 @@ theorem liftCn_strBot (V : NeighborhoodSystem β) (coneVal singVal : Strn A → 
     exact ⟨coneN σ, ⟨memCn_coneN σ, subset_rfl⟩, Or.inl ⟨σ, rfl, hY⟩⟩
 
 end Lift
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Initial
 
@@ -3335,10 +2030,6 @@ variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
   liftCn_strBot _ _ _ _ _ σ
 
 end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Lift
 
@@ -3364,10 +2055,6 @@ theorem liftCn_strElem (V : NeighborhoodSystem β) (coneVal singVal : Strn A →
     exact ⟨{σ}, ⟨memCn_singleton σ, subset_rfl⟩, Or.inr ⟨σ, rfl, hY⟩⟩
 
 end Lift
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Initial
 
@@ -3377,16 +2064,6 @@ variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
     (descMap B).toElementMap (strElemN σ) = descVal B (descE B) σ :=
   liftCn_strElem _ _ _ _ _ σ
 
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
-
 omit [Inhabited A] in
 
 theorem Cn_bot_eq_strBotN_nil : (Cn A).bot = strBotN ([] : Strn A) := by
@@ -3395,32 +2072,12 @@ theorem Cn_bot_eq_strBotN_nil : (Cn A).bot = strBotN ([] : Strn A) := by
   show ((Cn A).mem Y ∧ (Cn A).master ⊆ Y) ↔ ((Cn A).mem Y ∧ coneN [] ⊆ Y)
   rw [Cn_master, coneN_nil]
 
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
-
 theorem ccEquiv_comp_symm :
     (ofIso (ccEquiv (A := A))).comp (ofIso ccEquiv.symm) = idMap (CCn A) := by
   apply ext_of_toElementMap
   intro s
   rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, toElementMap_idMap]
   exact ccEquiv.apply_symm_apply s
-
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
 theorem ccEquiv_symm_comp :
     (ofIso (ccEquiv (A := A)).symm).comp (ofIso ccEquiv) = idMap (Cn A) := by
@@ -3429,42 +2086,12 @@ theorem ccEquiv_symm_comp :
   rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, toElementMap_idMap]
   exact ccEquiv.symm_apply_apply x
 
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
-
 theorem descMap_strict : IsStrict (descMap B) := by
   rw [isStrict_iff_apply_bot, Cn_bot_eq_strBotN_nil, descMap_strBot]
   rfl
 
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
-
 /-- The bundled strict homomorphism `Cₐ → E`. -/
 def descStrict : ((Cnobj A) ⟶ B.carrier) := ⟨descMap B, descMap_strict B⟩
-
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
 theorem genKeyBot (g : ApproximableMap (Cn A) B.carrier.sys) :
     B.str.1.toElementMap ((sumMapSig (A := A) (h₀ := Cn_nonempty) (h₁ := B.carrier.nonempty)
@@ -3477,10 +2104,6 @@ theorem genKeyBot (g : ApproximableMap (Cn A) B.carrier.sys) :
   exact isStrict_iff_apply_bot.mp B.str.2
 
 end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Iso
 
@@ -3505,10 +2128,6 @@ theorem toCC_consMapN (a : A) (z : (Cn A).Element) :
     · exact Or.inr (Or.inr ⟨a, X, hX, rfl, (consMapN_mem_embA hX).mpr hm⟩)
 
 end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Initial
 
@@ -3523,10 +2142,6 @@ theorem genKey (g : ApproximableMap (Cn A) B.carrier.sys) (a : A) (w : (Cn A).El
   rw [toCC_consMapN, sumMapSig_sinjC]; rfl
 
 end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Iso
 
@@ -3548,10 +2163,6 @@ theorem toCC_strElemN_nil :
     · exact Or.inr (Or.inl ⟨rfl, memCn_singleton [], subset_rfl⟩)
 
 end Iso
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 section Initial
 
@@ -3564,16 +2175,6 @@ theorem genKey0 (g : ApproximableMap (Cn A) B.carrier.sys) :
         g).toElementMap (toCC (strElemN ([] : Strn A))))
       = descE B := by
   rw [toCC_strElemN_nil, sumMapSig_sinjU]; rfl
-
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
 /-- `Cₐ`'s algebra map satisfies the recursion. -/
 theorem descMap_satisfiesRec :
@@ -3599,32 +2200,12 @@ theorem descMap_satisfiesRec :
       rw [descMap_strElem] at h
       exact h.symm
 
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
-
 /-- **The homomorphism square** `desc ∘ i = k ∘ T(desc)`. -/
 theorem descComm : (descMap B).comp (ofIso ccEquiv.symm)
     = B.str.1.comp (sumMapSig (A := A) (h₀ := Cn_nonempty) (h₁ := B.carrier.nonempty)
         (descMap B)) := by
   conv_lhs => rw [descMap_satisfiesRec B]
   rw [comp_assoc, ccEquiv_comp_symm, comp_idMap]
-
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
 /-- **The descent homomorphism `(Cₐ, i) → (E, k)`** as a `Tsig`-algebra homomorphism. -/
 def descAlgHom : AlgHom (Cnalg A) B where
@@ -3633,16 +2214,6 @@ def descAlgHom : AlgHom (Cnalg A) B where
     apply Subtype.ext
     simp only [StrictDomainObj.comp_val]
     exact descComm B
-
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
 /-- **Any map satisfying the homomorphism recursion equals `descMap`.** -/
 theorem rec_determines (g : ApproximableMap (Cn A) B.carrier.sys)
@@ -3681,16 +2252,6 @@ theorem rec_determines (g : ApproximableMap (Cn A) B.carrier.sys)
   · intro σ; rw [hbot, descMap_strBot]
   · intro σ; rw [helem, descMap_strElem]
 
-end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
-
-section Initial
-
-variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
-
 /-- **Uniqueness.** Any `Tsig`-algebra homomorphism out of `(Cₐ, i)` equals `descAlgHom`. -/
 theorem descAlgHom_uniq (h' : AlgHom (Cnalg A) B) : h' = descAlgHom B := by
   obtain ⟨hom, comm⟩ := h'
@@ -3709,10 +2270,6 @@ theorem descAlgHom_uniq (h' : AlgHom (Cnalg A) B) : h' = descAlgHom B := by
   rfl
 
 end Initial
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- **Exercise 6.17 part 2 — `(Cₐ, i)` is an initial `Tsig`-algebra for `Tsig(X) = 𝟙 + Σ_a X`.**
 The descent map `φ : Cₐ → E` is the closed-form head-recursion `φ(Λ) = e`, `φ(a·x) = f_a(φ x)`
@@ -3721,21 +2278,14 @@ The descent map `φ : Cₐ → E` is the closed-form head-recursion `φ(Λ) = e`
 def CnisInitial (A : Type) [DecidableEq A] [Inhabited A] : IsInitial (Cnalg A) where
   desc := descAlgHom
   uniq := fun B h => descAlgHom_uniq B h
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- **`Cₙ` is the initial algebra** of `X ↦ 𝟙 + Σ_{Fin (n+1)} X`. -/
 def CfinIsInitial (n : ℕ) : IsInitial (Cnalg (Fin (n + 1))) := CnisInitial (Fin (n + 1))
-end
-
-section
-variable {A : Type} [DecidableEq A]
 
 /-- **Exercise 6.17 part 2 — the domain equation `Cₐ ≅ 𝟙 + Σ_a Cₐ`.** -/
 theorem Cn_domain_equation (A : Type) [DecidableEq A] [Inhabited A] :
     Cn A ≅ᴰ CCn A := ⟨ccEquiv⟩
+
 end
 
 section
@@ -3772,10 +2322,6 @@ theorem embA_ne {a a' : A} (h : a ≠ a') {X Y : Set (Strn A)} (hX : X.Nonempty)
   rw [List.cons.injEq] at he; exact h he.1
 
 end Iso
-end
-
-section
-variable {A : Type}
 
 section Iso
 
@@ -3783,6 +2329,7 @@ theorem embA_nonempty {a : A} {X : Set (Strn A)} (hX : X.Nonempty) : (embA a X).
   obtain ⟨w', hw'⟩ := hX; exact ⟨a :: w', w', rfl, hw'⟩
 
 end Iso
+
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise617Gen
@@ -3798,34 +2345,10 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 def consSeq (a : V.Element) (b : (iterSys V).Element) : ℕ → V.Element :=
   fun i => Nat.casesOn i a (fun k => component b k)
 
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 @[simp] theorem consSeq_zero (a : V.Element) (b : (iterSys V).Element) : consSeq a b 0 = a := rfl
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 @[simp] theorem consSeq_succ (a : V.Element) (b : (iterSys V).Element) (k : ℕ) :
     consSeq a b (k + 1) = component b k := rfl
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- `⊥` of `𝒟^∞` is the all-`⊥` sequence. -/
 theorem iterBot_eq : (iterSys V).bot = ofSeq (fun _ : ℕ => V.bot) := by
@@ -3843,25 +2366,9 @@ theorem iterBot_eq : (iterSys V).bot = ofSeq (fun _ : ℕ => V.bot) := by
     rw [fiber_iterSys_master]
     rwa [mem_bot] at hi
 
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 /-- The `n`-th coordinate of `⊥` is `⊥`. -/
 @[simp] theorem component_bot (n : ℕ) : component (iterSys V).bot n = V.bot := by
   rw [iterBot_eq, component_ofSeq]
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- A successor-increasing chain is increasing. -/
 theorem chain_le_of_succ {β : Type*} {W : NeighborhoodSystem β} {a : ℕ → W.Element}
@@ -3869,14 +2376,6 @@ theorem chain_le_of_succ {β : Type*} {W : NeighborhoodSystem β} {a : ℕ → W
   induction hij with
   | refl => exact le_rfl
   | step _ ih => exact ih.trans (h _)
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 section Target
 
@@ -3892,48 +2391,16 @@ theorem constBot_le (f : ApproximableMap (iterSys V) E) :
 
 end Target
 
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 /-- `i : 𝒟 × 𝒟^∞ → 𝒟^∞`, the "cons" iso (`iterProdIso⁻¹`); the `T`-algebra structure map. -/
 def imap (V : NeighborhoodSystem α) : ApproximableMap (prod V (iterSys V)) (iterSys V) :=
   ofIso (iterProdIso V).symm
 
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 theorem isStrict_imap : IsStrict (imap V) := isStrict_ofIso _
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **The forward iso reads off head and tail.** `iterProdIso z = ⟨z₀, ⟨z₁,z₂,…⟩⟩`: the first
 component is the `0`-coordinate `component z 0`, the second is the shifted sequence. -/
 theorem iterProdIso_apply (z : (iterSys V).Element) :
     iterProdIso V z = pair (component z 0) (ofSeq (fun n => component z (n + 1))) := rfl
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **The inverse iso is "cons".** `iterProdIso⁻¹ ⟨a, b⟩ = ⟨a, b₀, b₁, …⟩`. -/
 theorem iterProdIso_symm_pair (a : V.Element) (b : (iterSys V).Element) :
@@ -3975,25 +2442,9 @@ def iterObj (Dom : StrictDomainObj.{w}) : StrictDomainObj.{w} where
   sys := iterSys Dom.sys
   nonempty := iterSys_nonempty Dom.nonempty
 
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 /-- `j : 𝒟^∞ → 𝒟 × 𝒟^∞`, the splitting iso (`iterProdIso`). -/
 def jmap (V : NeighborhoodSystem α) : ApproximableMap (iterSys V) (prod V (iterSys V)) :=
   ofIso (iterProdIso V)
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 section Target
 
@@ -4003,20 +2454,6 @@ variable {γ : Type*} {E : NeighborhoodSystem γ}
 def descOp (k : ApproximableMap (prod V E) E) (f : ApproximableMap (iterSys V) E) :
     ApproximableMap (iterSys V) E :=
   k.comp ((prodMap (idMap V) f).comp (jmap V))
-
-end Target
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
 
 /-- The defining action of the operator: `Op(f)(z) = k(z₀, f(⟨z₁,z₂,…⟩))`. -/
 theorem descOp_apply (k : ApproximableMap (prod V E) E) (f : ApproximableMap (iterSys V) E)
@@ -4028,34 +2465,12 @@ theorem descOp_apply (k : ApproximableMap (prod V E) E) (f : ApproximableMap (it
   rw [toElementMap_comp, toElementMap_comp, toElementMap_ofIso, iterProdIso_apply,
     toElementMap_prodMap_pair, toElementMap_idMap]
 
-end Target
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
-
 /-- The descent chain `h₀ = ⊥`, `hₙ₊₁ = Op(hₙ)`. -/
 def descSeq (k : ApproximableMap (prod V E) E) : ℕ → ApproximableMap (iterSys V) E
   | 0 => constMap (iterSys V) E.bot
   | (n + 1) => descOp k (descSeq k n)
 
 end Target
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 section Uniq
 
@@ -4072,20 +2487,6 @@ theorem gcomp_rho_succ (k : ApproximableMap (prod V E) E) (g : ApproximableMap (
   congr 1
   rw [← comp_assoc, ← prodMap_comp, idMap_comp]
 
-end Uniq
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Uniq
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
-
 /-- The descent chain for any strict `g` starts at the constant `⊥`: `g ∘ ρ₀ = ⊥`. -/
 theorem gcomp_rho_zero (g : ApproximableMap (iterSys V) E) (hg : IsStrict g) :
     g.comp (descSeq (imap V) 0) = constMap (iterSys V) E.bot := by
@@ -4097,14 +2498,6 @@ theorem gcomp_rho_zero (g : ApproximableMap (iterSys V) E) (hg : IsStrict g) :
 
 end Uniq
 
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 /-- `j ∘ i = I` on `𝒟 × 𝒟^∞`. -/
 theorem jmap_comp_imap : (jmap V).comp (imap V) = idMap (prod V (iterSys V)) := by
   apply ext_of_toElementMap
@@ -4112,14 +2505,6 @@ theorem jmap_comp_imap : (jmap V).comp (imap V) = idMap (prod V (iterSys V)) := 
   simp only [jmap, imap]
   rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, toElementMap_idMap,
     OrderIso.apply_symm_apply]
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 section Target
 
@@ -4130,33 +2515,11 @@ def kHead (k : ApproximableMap (prod V E) E) (a : V.Element) :
     ApproximableMap E E :=
   k.comp (paired (constMap E a) (idMap E))
 
-end Target
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
-
 theorem kHead_apply (k : ApproximableMap (prod V E) E) (a : V.Element) (u : E.Element) :
     (kHead k a).toElementMap u = k.toElementMap (pair a u) := by
   rw [kHead, toElementMap_comp, toElementMap_paired, toElementMap_constMap, toElementMap_idMap]
 
 end Target
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- `⊥` of a product is the pair of `⊥`s. -/
 theorem pair_bot {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} :
@@ -4169,14 +2532,6 @@ theorem pair_bot {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Neighbor
     rw [mem_bot] at hX hY; subst hX; subst hY; rfl
   · rintro rfl
     exact ⟨V₀.master, V₁.master, V₀.bot.master_mem, V₁.bot.master_mem, rfl⟩
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 section Target
 
@@ -4198,14 +2553,6 @@ theorem descSeq_strict (k : ApproximableMap (prod V E) E) (hk : IsStrict k) :
 
 end Target
 
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 /-- `T(f₀ × f₁)` is strict when both factors are: `(f₀ × f₁)(⊥,⊥) = (f₀ ⊥, f₁ ⊥) = (⊥,⊥)`. -/
 theorem isStrict_prodMap {α β α' β' : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
     {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
@@ -4214,14 +2561,6 @@ theorem isStrict_prodMap {α β α' β' : Type*} {V₀ : NeighborhoodSystem α} 
   rw [isStrict_iff_apply_bot, show (prod V₀ V₁).bot = pair V₀.bot V₁.bot from pair_bot.symm,
     toElementMap_prodMap_pair, isStrict_iff_apply_bot.mp hf₀, isStrict_iff_apply_bot.mp hf₁]
   exact pair_bot
-
-end Exercise618
-end
-
-section
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 end Exercise618
 end
@@ -4263,16 +2602,6 @@ theorem prodMap_idMap_mono {γ : Type*} {E : NeighborhoodSystem γ}
   simp only [prodMap, paired_rel] at hrel ⊢
   exact ⟨hrel.1, hrel.2.1, comp_mono_gen h le_rfl _ _ hrel.2.2⟩
 
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 section Target
 
 variable {γ : Type*} {E : NeighborhoodSystem γ}
@@ -4281,43 +2610,11 @@ theorem descOp_mono (k : ApproximableMap (prod V E) E) {f f' : ApproximableMap (
     (h : f ≤ f') : descOp k f ≤ descOp k f' :=
   comp_mono_gen le_rfl (comp_mono_gen (prodMap_idMap_mono h) le_rfl)
 
-end Target
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
-
 theorem descSeq_mono_succ (k : ApproximableMap (prod V E) E) (n : ℕ) :
     descSeq k n ≤ descSeq k (n + 1) := by
   induction n with
   | zero => exact constBot_le _
   | succ m ih => exact descOp_mono k ih
-
-end Target
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
 
 theorem descSeq_mono (k : ApproximableMap (prod V E) E) {n m : ℕ} (h : n ≤ m) :
     descSeq k n ≤ descSeq k m := by
@@ -4325,84 +2622,20 @@ theorem descSeq_mono (k : ApproximableMap (prod V E) E) {n m : ℕ} (h : n ≤ m
   | refl => exact le_rfl
   | step _ ih => exact ih.trans (descSeq_mono_succ k _)
 
-end Target
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
-
 theorem descSeq_dir (k : ApproximableMap (prod V E) E) :
     ∀ i j, ∃ l, (∀ X Y, (descSeq k i).rel X Y → (descSeq k l).rel X Y) ∧
       (∀ X Y, (descSeq k j).rel X Y → (descSeq k l).rel X Y) :=
   fun i j => ⟨max i j, fun _ _ => descSeq_mono k (le_max_left i j) _ _,
     fun _ _ => descSeq_mono k (le_max_right i j) _ _⟩
 
-end Target
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
-
 /-- **The descent map `h = ⋃ₙ hₙ : 𝒟^∞ → E`.** -/
 def descMap (k : ApproximableMap (prod V E) E) : ApproximableMap (iterSys V) E :=
   iSupMap (descSeq k) (descSeq_dir k)
-
-end Target
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
 
 theorem descMap_toElementMap (k : ApproximableMap (prod V E) E) (z : (iterSys V).Element)
     {Y : Set γ} :
     ((descMap k).toElementMap z).mem Y ↔ ∃ n, ((descSeq k n).toElementMap z).mem Y :=
   mem_toElementMap_iSupMap (descSeq k) (descSeq_dir k) z
-
-end Target
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
 
 theorem descMap_strict (k : ApproximableMap (prod V E) E) (hk : IsStrict k) :
     IsStrict (descMap k) := by
@@ -4455,30 +2688,10 @@ def prodObj (Dom X : StrictDomainObj.{w}) : StrictDomainObj.{w} where
   sys := prod Dom.sys X.sys
   nonempty := prod_nonempty Dom.nonempty X.nonempty
 
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 /-- The morphism action `T(f) = id_𝒟 × f`, strict by `isStrict_prodMap`. -/
 def prodMapHom (Dom : StrictDomainObj.{w}) {X Y : StrictDomainObj.{w}} (f : (X ⟶ Y)) :
     ((prodObj Dom X) ⟶ (prodObj Dom Y)) :=
   ⟨prodMap (idMap Dom.sys) f.1, isStrict_prodMap isStrict_idMap f.2⟩
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **The product endofunctor `T(X) = 𝒟 × X`** on `∅`-free domains and strict maps, for a fixed
 domain `𝒟`. On objects `T(X) = 𝒟 × X`; on maps `T(f) = id_𝒟 × f`. -/
@@ -4495,31 +2708,11 @@ def prodFunctor (Dom : StrictDomainObj.{w}) : Endofunctor StrictDomainObj.{w} wh
     rw [idMap_comp] at h
     exact h)
 
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 /-- **`𝒟^∞` as a `T`-algebra**, `(𝒟^∞, i)` with `i : 𝒟 × 𝒟^∞ → 𝒟^∞` the "cons" iso (`imap`,
 Exercise 3.16's `iterProdIso⁻¹`), strict by `isStrict_imap`. -/
 def iterAlg (Dom : StrictDomainObj.{w}) : TAlgebra (prodFunctor Dom) where
   carrier := iterObj Dom
   str := ⟨imap Dom.sys, isStrict_imap⟩
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **The truncation formula** `ρₙ(⟨x₀,x₁,…⟩) = ⟨x₀,…,x_{n-1},⊥,⊥,…⟩`. -/
 theorem rho_apply (n : ℕ) (z : (iterSys V).Element) :
@@ -4548,16 +2741,6 @@ theorem rho_apply (n : ℕ) (z : (iterSys V).Element) :
       by_cases h : k < n
       · rw [ite_eq_left h, ite_eq_left (Nat.succ_lt_succ h)]
       · rw [ite_eq_right h, ite_eq_right (fun hc => h (Nat.lt_of_succ_lt_succ hc))]
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **`⋃ₙ ρₙ = I`.** Every `z` is the directed union of its truncations: the cofinite-`Δ` structure
 of `𝒟^∞` means each neighbourhood of `z` is already realised by a finite truncation. -/
@@ -4597,16 +2780,6 @@ theorem iSupRho_eq_id : descMap (imap V) = idMap (iterSys V) := by
     · rw [ite_eq_left h]; exact hcomp i
     · rw [ite_eq_right h, hN i (not_lt.mp h)]; exact V.bot.master_mem
 
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 section Uniq
 
 variable {γ : Type*} {E : NeighborhoodSystem γ}
@@ -4643,30 +2816,10 @@ theorem comm_unique (k : ApproximableMap (prod V E) E)
 
 end Uniq
 
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 /-- Directedness of a successor-increasing chain. -/
 theorem succChainDir {β : Type*} {W : NeighborhoodSystem β} (a : ℕ → W.Element)
     (h : ∀ n, a n ≤ a (n + 1)) : ∀ i j, ∃ l, a i ≤ a l ∧ a j ≤ a l :=
   fun i j => ⟨max i j, chain_le_of_succ h (le_max_left i j), chain_le_of_succ h (le_max_right i j)⟩
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- Approximable maps are monotone in the map argument: `f ≤ g ⟹ f(x) ≤ g(x)`. -/
 theorem toElementMap_le_of_le {β₀ β₁ : Type*} {W₀ : NeighborhoodSystem β₀}
@@ -4674,16 +2827,6 @@ theorem toElementMap_le_of_le {β₀ β₁ : Type*} {W₀ : NeighborhoodSystem �
     f.toElementMap x ≤ g.toElementMap x := by
   rintro Y ⟨X, hX, hrel⟩
   exact ⟨X, hX, h _ _ hrel⟩
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 section Target
 
@@ -4694,22 +2837,6 @@ theorem descSeqEltMono (k : ApproximableMap (prod V E) E) (x : (iterSys V).Eleme
     ∀ n, (descSeq k n).toElementMap x ≤ (descSeq k (n + 1)).toElementMap x :=
   fun n => toElementMap_le_of_le (descSeq_mono_succ k n) x
 
-end Target
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
-
 /-- **The descent map as a directed union.** `h(x) = ⋃ₙ hₙ(x)`. -/
 theorem descMap_eq (k : ApproximableMap (prod V E) E) (x : (iterSys V).Element) :
     (descMap k).toElementMap x
@@ -4718,22 +2845,6 @@ theorem descMap_eq (k : ApproximableMap (prod V E) E) (x : (iterSys V).Element) 
   apply Element.ext
   intro Y
   rw [descMap_toElementMap, mem_iSupDirected]
-
-end Target
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
 
 /-- **The descent map is a fixed point** of `Op = k ∘ T(·) ∘ j`. -/
 theorem descMap_fix (k : ApproximableMap (prod V E) E) : descMap k = descOp k (descMap k) := by
@@ -4759,22 +2870,6 @@ theorem descMap_fix (k : ApproximableMap (prod V E) E) : descMap k = descOp k (d
     rw [hstep m] at hm
     exact ⟨m + 1, hm⟩
 
-end Target
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-section Target
-
-variable {γ : Type*} {E : NeighborhoodSystem γ}
-
 /-- **Existence of the algebra homomorphism.** The descent map makes the square commute:
 `descMap ∘ i = k ∘ T(descMap)` (using `j ∘ i = I` and the fixed-point equation). -/
 theorem descMap_comm (k : ApproximableMap (prod V E) E) :
@@ -4786,16 +2881,6 @@ theorem descMap_comm (k : ApproximableMap (prod V E) E) :
 
 end Target
 
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
 /-- **The descent homomorphism `(𝒟^∞, i) → (E, k)`**: the strict map `descMap k` (existence half),
 with the homomorphism square supplied by `descMap_comm`. -/
 def descAlgHom (Dom : StrictDomainObj.{w}) (B : TAlgebra (prodFunctor Dom)) :
@@ -4806,16 +2891,6 @@ def descAlgHom (Dom : StrictDomainObj.{w}) (B : TAlgebra (prodFunctor Dom)) :
     show (descMap B.str.1).comp (imap Dom.sys)
        = B.str.1.comp (prodMap (idMap Dom.sys) (descMap B.str.1))
     exact descMap_comm B.str.1
-
-end Exercise618
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-namespace Exercise618
-
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 end Exercise618
 end

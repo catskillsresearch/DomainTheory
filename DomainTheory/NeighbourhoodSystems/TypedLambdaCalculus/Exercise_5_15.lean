@@ -34,59 +34,27 @@ section
 variable {S : Type*} [Monoid S]
 
 @[simp] theorem kpow_zero (z : Set S) : kpow z 0 = 1 := rfl
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 @[simp] theorem kpow_succ (z : Set S) (n : ℕ) : kpow z (n + 1) = z * kpow z n := rfl
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- Scott's operator `w ↦ z·w ∪ v`, whose least fixed point is the least solution of `w = z·w ∪ v`. -/
 def G (z v : Set S) (w : Set S) : Set S := z * w ∪ v
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- Scott's `z*`: the set of all finite products of elements of `z` (including the empty product
 `1`). Defined as `{s ∣ ∃ n, s ∈ zⁿ}` to stay choice-free (avoiding `⋃` order lemmas). -/
 def star (z : Set S) : Set S := {s | ∃ n, s ∈ kpow z n}
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- The "feedback" coefficient `A = a ∪ b·a*·b` of the eliminated system. -/
 def parkA (a b : Set S) : Set S := a ∪ b * star a * b
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- The "feedback" constant `C = c ∪ b·a*·d`. -/
 def parkC (a b c d : Set S) : Set S := c ∪ b * star a * d
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- Park's least solution for `x`: `x₀ = (a ∪ b·a*·b)*·(c ∪ b·a*·d)`. -/
 def parkX (a b c d : Set S) : Set S := star (parkA a b) * parkC a b c d
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- The accompanying least solution for `y`: `y₀ = a*·(b·x₀ ∪ d)`. -/
 def parkY (a b c d : Set S) : Set S := star a * (b * parkX a b c d ∪ d)
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- `{e}ⁿ = {eⁿ}` at the membership level (choice-free). -/
 theorem mem_kpow_singleton (e s : S) (n : ℕ) : s ∈ kpow ({e} : Set S) n ↔ s = e ^ n := by
@@ -100,16 +68,8 @@ theorem mem_kpow_singleton (e s : S) (n : ℕ) : s ∈ kpow ({e} : Set S) n ↔ 
         rw [(ih t).mp ht, ha]
       · rintro rfl
         exact ⟨e, Set.mem_singleton_iff.mpr rfl, e ^ m, (ih (e ^ m)).mpr rfl, rfl⟩
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 theorem mem_star {z : Set S} {s : S} : s ∈ star z ↔ ∃ n, s ∈ kpow z n := Iff.rfl
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- `{e}* = e* = {Λ, e, e², …}`: a point lies in `star {e}` iff it is some power of `e`. -/
 theorem mem_star_singleton (e s : S) : s ∈ star ({e} : Set S) ↔ ∃ n, s = e ^ n := by
@@ -117,10 +77,6 @@ theorem mem_star_singleton (e s : S) : s ∈ star ({e} : Set S) ↔ ∃ n, s = e
   constructor
   · rintro ⟨n, hn⟩; exact ⟨n, (mem_kpow_singleton e s n).mp hn⟩
   · rintro ⟨n, rfl⟩; exact ⟨n, (mem_kpow_singleton e (e ^ n) n).mpr rfl⟩
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- Associativity of the pointwise product (membership proof, choice-free). -/
 theorem smul_assoc (a b c : Set S) : a * b * c = a * (b * c) := by
@@ -130,10 +86,6 @@ theorem smul_assoc (a b c : Set S) : a * b * c = a * (b * c) := by
     exact ⟨p, hp, q * w, ⟨q, hq, w, hw, rfl⟩, by rw [mul_assoc]⟩
   · rintro ⟨p, hp, u, ⟨q, hq, w, hw, rfl⟩, rfl⟩
     exact ⟨p * q, ⟨p, hp, q, hq, rfl⟩, w, hw, by rw [mul_assoc]⟩
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- Left distributivity `a·(b ∪ c) = a·b ∪ a·c` (choice-free). -/
 theorem smul_union (a b c : Set S) : a * (b ∪ c) = a * b ∪ a * c := by
@@ -145,10 +97,6 @@ theorem smul_union (a b c : Set S) : a * (b ∪ c) = a * b ∪ a * c := by
   · rintro (⟨u, hu, w, hw, rfl⟩ | ⟨u, hu, w, hw, rfl⟩)
     · exact ⟨u, hu, w, Or.inl hw, rfl⟩
     · exact ⟨u, hu, w, Or.inr hw, rfl⟩
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- **Scott's unfolding** `z* = Λ ∪ z·z*`. -/
 theorem star_eq (z : Set S) : star z = (1 : Set S) ∪ z * star z := by
@@ -173,10 +121,6 @@ theorem star_eq (z : Set S) : star z = (1 : Set S) ∪ z * star z := by
       obtain ⟨a, ha, t, ht, rfl⟩ := h2
       obtain ⟨m, hm⟩ := mem_star.mp ht
       exact mem_star.mpr ⟨m + 1, by rw [kpow_succ, Set.mem_mul]; exact ⟨a, ha, t, hm, rfl⟩⟩
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- For any prefixed point `w₀` of `w ↦ z·w ∪ v` (i.e. `z·w₀ ∪ v ⊆ w₀`), the candidate `z*·v` is
 below `w₀`: the induction `zⁿ·v ⊆ w₀`. -/
@@ -195,10 +139,6 @@ theorem star_mul_subset_prefixed (z v x : Set S) (hx : z * x ∪ v ⊆ x) : star
   obtain ⟨a, ha, t, ht, rfl⟩ := hs
   obtain ⟨n, hn⟩ := mem_star.mp ha
   exact hpow n (by rw [Set.mem_mul]; exact ⟨a, hn, t, ht, rfl⟩)
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- Right distributivity `(a ∪ b)·c = a·c ∪ b·c` (choice-free). -/
 theorem sunion_mul (a b c : Set S) : (a ∪ b) * c = a * c ∪ b * c := by
@@ -210,20 +150,12 @@ theorem sunion_mul (a b c : Set S) : (a ∪ b) * c = a * c ∪ b * c := by
   · rintro (⟨u, hu, w, hw, rfl⟩ | ⟨u, hu, w, hw, rfl⟩)
     · exact ⟨u, Or.inl hu, w, hw, rfl⟩
     · exact ⟨u, Or.inr hu, w, hw, rfl⟩
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- `z*·v` is a fixed point of `w ↦ z·w ∪ v`: the star identity `z·(z*·v) ∪ v = z*·v`. -/
 theorem star_mul_isFixed (z v : Set S) : z * (star z * v) ∪ v = star z * v := by
   conv_rhs => rw [star_eq z]
   rw [sunion_mul, one_mul, smul_assoc]
   exact Set.union_comm _ _
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- **Arden's lemma.** The least solution of `w = z·w ∪ v` in `P S` is `z*·v`. (Stated via
 `lfpSet`, Exercise 4.14; the proof uses neither `Monotone` nor `⋃` order lemmas, so it is
@@ -233,10 +165,6 @@ theorem arden (z v : Set S) : lfpSet (G z v) = star z * v := by
   · exact lfpSet_least (G z v) (star_mul_isFixed z v)
   · intro s hs x hx
     exact star_mul_subset_prefixed z v x hx hs
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- `x₀` satisfies the first equation `x = a·x ∪ b·y ∪ c`. -/
 theorem parkX_eq (a b c d : Set S) :
@@ -246,10 +174,6 @@ theorem parkX_eq (a b c d : Set S) :
   conv_lhs => rw [← hfix]
   simp only [parkA, parkC, parkY, sunion_mul, smul_union, smul_assoc,
     Set.union_comm, Set.union_left_comm]
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- `y₀` satisfies the second equation `y = b·x ∪ a·y ∪ d`. -/
 theorem parkY_eq (a b c d : Set S) :
@@ -258,10 +182,6 @@ theorem parkY_eq (a b c d : Set S) :
     star_mul_isFixed a (b * parkX a b c d ∪ d)
   conv_lhs => rw [← hfix]
   simp only [Set.union_assoc, Set.union_comm]
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- **Exercise 5.15(2), leastness.** Any solution `(x, y)` of the system dominates `(x₀, y₀)`. Hence
 `(x₀, y₀)` is the *least* solution, and `x₀ = (a ∪ b·a*·b)*·(c ∪ b·a*·d)` as claimed. The proof is
@@ -316,20 +236,12 @@ theorem park_least (a b c d : Set S) {x y : Set S}
       Set.union_subset_union_left d (Set.mul_subset_mul_left hPX)
     exact (Set.mul_subset_mul_left h1).trans hyy
   exact ⟨hPX, hPY⟩
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- **Exercise 5.15(2), existence.** `(x₀, y₀)` solves David Park's system. -/
 theorem park_solves (a b c d : Set S) :
     parkX a b c d = a * parkX a b c d ∪ b * parkY a b c d ∪ c ∧
       parkY a b c d = b * parkX a b c d ∪ a * parkY a b c d ∪ d :=
   ⟨parkX_eq a b c d, parkY_eq a b c d⟩
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- **Exercise 5.15(1).** The least fixed point of `z = {e}·z ∪ {e'}` is `e*·{e'}` (`star {e}` is
 `e*` by `mem_star_singleton`). -/
@@ -337,6 +249,7 @@ theorem part1 (e e' : S) :
     lfpSet (fun w => ({e} : Set S) * w ∪ {e'}) = star ({e} : Set S) * {e'} := by
   have hG : (fun w => ({e} : Set S) * w ∪ {e'}) = G ({e} : Set S) {e'} := rfl
   rw [hG]; exact arden {e} {e'}
+
 end
 
 section

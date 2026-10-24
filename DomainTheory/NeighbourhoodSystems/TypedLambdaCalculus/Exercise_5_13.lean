@@ -159,11 +159,6 @@ theorem unnum_numP (c : ℕ × ℕ) : unnum (numP c) = c :=
 end
 
 section
-variable {α β : Type*}
-
-end
-
-section
 set_option linter.unusedVariables false
 
 theorem example_513 : ∀ (c : Prod Nat Nat),

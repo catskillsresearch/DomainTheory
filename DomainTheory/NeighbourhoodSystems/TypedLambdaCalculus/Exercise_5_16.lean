@@ -17,105 +17,54 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exampl
 
 /-- Complement every bit of a finite string. -/
 abbrev flip (σ : Str) : Str := σ.map not
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 @[simp] theorem flip_nil : flip [] = [] := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 @[simp] theorem flip_cons (b : Bool) (σ : Str) : flip (b :: σ) = (!b) :: flip σ := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 @[simp] theorem flip_flip (σ : Str) : flip (flip σ) = σ := by
   induction σ with
   | nil => rfl
   | cons b σ ih => simp [ih]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- Double every bit of a finite string: `double (b :: σ) = b :: b :: double σ`. -/
 def double : Str → Str
   | [] => []
   | b :: σ => b :: b :: double σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 @[simp] theorem double_nil : double [] = [] := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 @[simp] theorem double_cons (b : Bool) (σ : Str) : double (b :: σ) = b :: b :: double σ := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- `double` distributes over append. -/
 theorem double_append (σ τ : Str) : double (σ ++ τ) = double σ ++ double τ := by
   induction σ with
   | nil => rfl
   | cons b σ ih => simp [double, ih]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- `double` preserves the prefix order. -/
 theorem double_prefix {σ τ : Str} (h : σ <+: τ) : double σ <+: double τ := by
   obtain ⟨ρ, rfl⟩ := h
   exact ⟨double ρ, (double_append σ ρ).symm⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- `flip` preserves the prefix order. -/
 theorem flip_prefix {σ τ : Str} (h : σ <+: τ) : flip σ <+: flip τ := h.map _
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 theorem not_strElem_le_strBot {σ τ : Str} : ¬ strElem σ ≤ strBot τ := by
   rw [strElem, strBot, C.principal_le_iff]
   exact not_cone_subset_singleton τ σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 theorem strBot_le_strBot_iff {σ τ : Str} : strBot σ ≤ strBot τ ↔ σ <+: τ := by
   rw [strBot, strBot, C.principal_le_iff, cone_subset_cone]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 theorem strBot_le_strElem_iff {σ τ : Str} : strBot σ ≤ strElem τ ↔ σ <+: τ := by
   rw [strBot, strElem, C.principal_le_iff]
   exact singleton_subset_cone
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 theorem strElem_le_strElem_iff {σ τ : Str} : strElem σ ≤ strElem τ ↔ σ = τ := by
   rw [strElem, strElem, C.principal_le_iff, Set.singleton_subset_iff, Set.mem_singleton_iff,
     eq_comm]
+
 end
 
 section
@@ -126,11 +75,6 @@ variable {β : Type*}
 def tailSing : Str → C.Element
   | [] => strBot []
   | _ :: σ' => strElem σ'
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 theorem tail_hsing {σ τ : Str} (h : σ <+: τ) : strBot σ.tail ≤ tailSing τ := by
   cases τ with
@@ -142,6 +86,7 @@ theorem tail_hsing {σ τ : Str} (h : σ <+: τ) : strBot σ.tail ≤ tailSing �
     | cons b σ' =>
       obtain ⟨rfl, h'⟩ := List.cons_prefix_cons.mp h
       exact h'
+
 end
 
 section
@@ -161,11 +106,6 @@ variable {β : Type*}
 
 theorem tail_hcone {σ τ : Str} (h : σ <+: τ) : strBot σ.tail ≤ strBot τ.tail :=
   strBot_le_strBot_iff.mpr (tail_prefix h)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 end
 end DomainTheory.NeighbourhoodSystems.Exercise516
@@ -175,174 +115,80 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 section
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 variable {β : Type*}
+
 /- concordance: source L3184 EXERCISE 5.16 negation of sequences -/
 /-- **Exercise 5.16 / Example 4.4 — `tail : C → C`.** Built with the head-test combinator `liftC`:
 on `σ⊥` it returns `(tail σ)⊥`, on `σ` the total `tail σ` (with `tail Λ = ⊥`). -/
 def tailMap : ApproximableMap C C :=
   liftC C (fun σ => strBot σ.tail) tailSing tail_hcone tail_hsing
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem tailMap_strBot (σ : Str) :
     tailMap.toElementMap (strBot σ) = strBot σ.tail :=
   liftC_strBot C (fun σ => strBot σ.tail) tailSing tail_hcone tail_hsing σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem tailMap_strElem (σ : Str) :
     tailMap.toElementMap (strElem σ) = tailSing σ :=
   liftC_strElem C (fun σ => strBot σ.tail) tailSing tail_hcone tail_hsing σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 theorem neg_hcone {σ τ : Str} (h : σ <+: τ) : strBot (flip σ) ≤ strBot (flip τ) :=
   strBot_le_strBot_iff.mpr (flip_prefix h)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 theorem neg_hsing {σ τ : Str} (h : σ <+: τ) : strBot (flip σ) ≤ strElem (flip τ) :=
   strBot_le_strElem_iff.mpr (flip_prefix h)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- **Exercise 5.16 — `neg : C → C`.** The closed-form solution of Scott's recursion, built with
 `liftC`: `neg(σ⊥) = (flip σ)⊥` and `neg(σ) = flip σ`. -/
 def negMap : ApproximableMap C C :=
   liftC C (fun σ => strBot (flip σ)) (fun σ => strElem (flip σ)) neg_hcone neg_hsing
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem negMap_strBot (σ : Str) :
     negMap.toElementMap (strBot σ) = strBot (flip σ) :=
   liftC_strBot C (fun σ => strBot (flip σ)) (fun σ => strElem (flip σ)) neg_hcone neg_hsing σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem negMap_strElem (σ : Str) :
     negMap.toElementMap (strElem σ) = strElem (flip σ) :=
   liftC_strElem C (fun σ => strBot (flip σ)) (fun σ => strElem (flip σ)) neg_hcone neg_hsing σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 theorem d_hcone {σ τ : Str} (h : σ <+: τ) : strBot (double σ) ≤ strBot (double τ) :=
   strBot_le_strBot_iff.mpr (double_prefix h)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 theorem d_hsing {σ τ : Str} (h : σ <+: τ) : strBot (double σ) ≤ strElem (double τ) :=
   strBot_le_strElem_iff.mpr (double_prefix h)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- **Exercise 5.16 / Example 4.4 — `d : C → C`.** The doubling map, closed form via `liftC`:
 `d(σ⊥) = (double σ)⊥`, `d(σ) = double σ`. -/
 def dMap : ApproximableMap C C :=
   liftC C (fun σ => strBot (double σ)) (fun σ => strElem (double σ)) d_hcone d_hsing
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem dMap_strBot (σ : Str) :
     dMap.toElementMap (strBot σ) = strBot (double σ) :=
   liftC_strBot C (fun σ => strBot (double σ)) (fun σ => strElem (double σ)) d_hcone d_hsing σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem dMap_strElem (σ : Str) :
     dMap.toElementMap (strElem σ) = strElem (double σ) :=
   liftC_strElem C (fun σ => strBot (double σ)) (fun σ => strElem (double σ)) d_hcone d_hsing σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- The neighbourhood of the tagged string `(b, σ)`: `{σ}` if total, `cone σ` if partial. -/
 def shape : Bool → Str → Set Str
   | true, σ => {σ}
   | false, σ => cone σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 theorem memC_shape : ∀ (b : Bool) (σ : Str), memC (shape b σ)
   | true, σ => memC_singleton σ
   | false, σ => memC_cone σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- The element of the tagged string `(b, σ)`: total `σ` if `b`, partial `σ⊥` otherwise. -/
 def shapeElem (b : Bool) (σ : Str) : C.Element := C.principal (memC_shape b σ)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem shapeElem_true (σ : Str) : shapeElem true σ = strElem σ := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem shapeElem_false (σ : Str) : shapeElem false σ = strBot σ := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- The approximation order between tagged strings: `(b, σ) ⊑ (b', σ')`. A total string is maximal
 (only `⊑` itself); a partial string `σ⊥` is `⊑` anything extending `σ`. -/
 def SLe : Bool → Str → Bool → Str → Prop
   | true, σ, b', σ' => b' = true ∧ σ = σ'
   | false, σ, _, σ' => σ <+: σ'
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- The interleave value function: `mergeVal σ b₀ τ b₁` returns the interleaving of the tagged
 strings `(b₀, σ)` and `(b₁, τ)` as a tagged string. Boundary convention (the only monotone one):
@@ -351,36 +197,16 @@ def mergeVal : Str → Bool → Str → Bool → Str × Bool
   | [], b₀, _, _ => ([], b₀)
   | a :: _, _, [], _ => ([a], false)
   | a :: σ, b₀, b :: τ, b₁ => (a :: b :: (mergeVal σ b₀ τ b₁).1, (mergeVal σ b₀ τ b₁).2)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem mergeVal_nil (b₀ : Bool) (τ : Str) (b₁ : Bool) :
     mergeVal [] b₀ τ b₁ = ([], b₀) := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem mergeVal_cons_nil (a : Bool) (σ : Str) (b₀ b₁ : Bool) :
     mergeVal (a :: σ) b₀ [] b₁ = ([a], false) := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem mergeVal_cons_cons (a : Bool) (σ : Str) (b₀ b : Bool) (τ : Str) (b₁ : Bool) :
     mergeVal (a :: σ) b₀ (b :: τ) b₁ =
       (a :: b :: (mergeVal σ b₀ τ b₁).1, (mergeVal σ b₀ τ b₁).2) := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- Two equal head bits prepended preserve `SLe`. -/
 theorem SLe_cons2 {p p' : Bool} {ρ ρ' : Str} (c d : Bool) (h : SLe p ρ p' ρ') :
@@ -389,11 +215,6 @@ theorem SLe_cons2 {p p' : Bool} {ρ ρ' : Str} (c d : Bool) (h : SLe p ρ p' ρ'
   | true => obtain ⟨rfl, rfl⟩ := h; exact ⟨rfl, rfl⟩
   | false =>
     exact List.cons_prefix_cons.mpr ⟨rfl, List.cons_prefix_cons.mpr ⟨rfl, h⟩⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- Invert `SLe` on a cons in the first string: the second string starts with the same head. -/
 theorem SLe_cons_inv {b₀ b₀' : Bool} {a : Bool} {σ₀ σ' : Str} (h : SLe b₀ (a :: σ₀) b₀' σ') :
@@ -408,20 +229,10 @@ theorem SLe_cons_inv {b₀ b₀' : Bool} {a : Bool} {σ₀ σ' : Str} (h : SLe b
     | cons a' σ₀' =>
       obtain ⟨rfl, h'⟩ := List.cons_prefix_cons.mp h
       exact ⟨σ₀', rfl, h'⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- The element produced by interleaving `(b₀, σ)` and `(b₁, τ)`. -/
 def mergeElem (σ : Str) (b₀ : Bool) (τ : Str) (b₁ : Bool) : C.Element :=
   shapeElem (mergeVal σ b₀ τ b₁).2 (mergeVal σ b₀ τ b₁).1
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- **The monotonicity of interleaving.** If `(b₀, σ) ⊑ (b₀', σ')` and `(b₁, τ) ⊑ (b₁', τ')` then the
 interleavings are `⊑`-ordered. The crux that makes `merge` approximable. -/
@@ -448,11 +259,6 @@ theorem mergeVal_SLe : ∀ (σ : Str) (b₀ : Bool) (σ' : Str) (b₀' : Bool)
     obtain ⟨τ₀', rfl, h1'⟩ := SLe_cons_inv h1
     simp only [mergeVal_cons_cons]
     exact SLe_cons2 a b (mergeVal_SLe σ₀ b₀ σ₀' b₀' τ₀ b₁ τ₀' b₁' h0' h1')
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- `SLe` characterizes the element order on `shapeElem`. -/
 theorem shapeElem_le_iff {b b' : Bool} {σ σ' : Str} :
@@ -461,11 +267,6 @@ theorem shapeElem_le_iff {b b' : Bool} {σ σ' : Str} :
     simp only [shapeElem_true, shapeElem_false, SLe, strElem_le_strElem_iff,
       strBot_le_strBot_iff, strBot_le_strElem_iff, true_and]
   · exact ⟨fun h => absurd h not_strElem_le_strBot, fun h => absurd h (by simp)⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- The element-order form of `mergeVal_SLe`. -/
 theorem mergeElem_mono {σ σ' τ τ' : Str} {b₀ b₀' b₁ b₁' : Bool}
@@ -473,33 +274,18 @@ theorem mergeElem_mono {σ σ' τ τ' : Str} {b₀ b₀' b₁ b₁' : Bool}
     mergeElem σ b₀ τ b₁ ≤ mergeElem σ' b₀' τ' b₁' :=
   shapeElem_le_iff.mpr
     (mergeVal_SLe σ b₀ σ' b₀' τ b₁ τ' b₁' (shapeElem_le_iff.mp h0) (shapeElem_le_iff.mp h1))
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 theorem shape_injective : ∀ {b b' : Bool} {σ σ' : Str}, shape b σ = shape b' σ' → b = b' ∧ σ = σ'
   | true, true, σ, σ', h => ⟨rfl, by rwa [shape, shape, Set.singleton_eq_singleton_iff] at h⟩
   | true, false, σ, σ', h => absurd h.symm (cone_ne_singleton σ' σ)
   | false, true, σ, σ', h => absurd h (cone_ne_singleton σ σ')
   | false, false, σ, σ', h => ⟨rfl, cone_injective h⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 theorem shape_refine {b : Bool} {σ : Str} {P : Set Str} (hP : memC P) (hsub : P ⊆ shape b σ) :
     ∃ (b' : Bool) (σ' : Str), P = shape b' σ' ∧ shapeElem b σ ≤ shapeElem b' σ' := by
   rcases hP with ⟨ρ, rfl⟩ | ⟨ρ, rfl⟩
   · exact ⟨false, ρ, rfl, (C.principal_le_iff (memC_shape b σ) (memC_shape false ρ)).mpr hsub⟩
   · exact ⟨true, ρ, rfl, (C.principal_le_iff (memC_shape b σ) (memC_shape true ρ)).mpr hsub⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- **Exercise 5.16 (Scott 1981, PRG-19).** The interleaving map `merge : C × C → C` with
 `merge(εx, δy) = ε·δ·merge(x, y)`. Built directly as an approximable map: an input neighbourhood
@@ -533,22 +319,12 @@ def mergeMap : ApproximableMap (prod C C) C where
     refine ⟨b₀', σ', b₁', τ', rfl, ?_⟩
     have hmono := mergeElem_mono hle0 hle1
     exact (mergeElem σ' b₀' τ' b₁').up_mem (hmono Z hZ) hZ' hZZ'
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 @[simp] theorem consMap_shapeElem (b c : Bool) (σ : Str) :
     (consMap b).toElementMap (shapeElem c σ) = shapeElem c (b :: σ) := by
   cases c with
   | false => rw [shapeElem_false, consMap_strBot]; rfl
   | true => rw [shapeElem_true, consMap_strElem]; rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- Two approximable maps out of `C` agree as soon as they agree on every finite element `σ⊥` and
 `σ` (Exercise 2.8). This is the workhorse for the map equalities below. -/
@@ -560,21 +336,11 @@ theorem map_ext_C {V : NeighborhoodSystem β} {f g : ApproximableMap C V}
   obtain (⟨σ, rfl⟩ | ⟨σ, rfl⟩) := (C_mem.mp hX)
   · exact hbot σ
   · exact helem σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 theorem memC_eq_shape {X : Set Str} (hX : memC X) : ∃ (b : Bool) (σ : Str), X = shape b σ := by
   rcases hX with ⟨σ, rfl⟩ | ⟨σ, rfl⟩
   · exact ⟨false, σ, rfl⟩
   · exact ⟨true, σ, rfl⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- **The value of `merge` on a pair of finite elements.** `merge(⟨(b₀, σ), (b₁, τ)⟩) =
 mergeElem σ b₀ τ b₁`. The analogue of `liftC_strBot`/`liftC_strElem` for the product. -/
@@ -594,31 +360,16 @@ theorem mergeMap_pair (b₀ : Bool) (σ : Str) (b₁ : Bool) (τ : Str) :
   · intro hZ
     refine ⟨prodNbhd (shape b₀ σ) (shape b₁ τ), ?_, b₀, σ, b₁, τ, rfl, hZ⟩
     exact mem_pair_prodNbhd.mpr ⟨⟨memC_shape b₀ σ, subset_rfl⟩, ⟨memC_shape b₁ τ, subset_rfl⟩⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- The diagonal value: interleaving `(s, σ)` with itself doubles. -/
 theorem mergeVal_diag (s : Bool) (σ : Str) : mergeVal σ s σ s = (double σ, s) := by
   induction σ with
   | nil => rfl
   | cons a σ ih => simp [mergeVal_cons_cons, ih]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- On the diagonal `merge(⟨(s, σ), (s, σ)⟩)` doubles `σ`. -/
 theorem mergeElem_diag (s : Bool) (σ : Str) : mergeElem σ s σ s = shapeElem s (double σ) := by
   simp [mergeElem, mergeVal_diag]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- **Exercise 5.16 (Scott 1981, PRG-19).** `merge(x, x) = d(x)` for all `x ∈ |C|` (the doubling map
 of Example 4.4). -/
@@ -637,11 +388,6 @@ theorem mergeMap_diag (x : C.Element) :
   have hx := congrArg (fun m : ApproximableMap C C => m.toElementMap x) key
   simp only [toElementMap_comp, toElementMap_paired, toElementMap_idMap] at hx
   exact hx
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- **Exercise 5.16 (Scott 1981, PRG-19).** `neg ∘ neg = id` as approximable maps: it suffices to
 check on the finite elements `σ⊥`, `σ`, where it is `flip ∘ flip = id`. -/
@@ -651,21 +397,11 @@ theorem negMap_comp_negMap : negMap.comp negMap = idMap C := by
     rw [toElementMap_comp, negMap_strBot, negMap_strBot, flip_flip, toElementMap_idMap]
   · intro σ
     rw [toElementMap_comp, negMap_strElem, negMap_strElem, flip_flip, toElementMap_idMap]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- **Exercise 5.16 (Scott 1981, PRG-19).** `neg(neg(x)) = x` for all `x ∈ |C|`. -/
 theorem negMap_negMap (x : C.Element) : negMap.toElementMap (negMap.toElementMap x) = x := by
   have h := negMap_comp_negMap
   rw [← toElementMap_comp, h, toElementMap_idMap]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- **Exercise 5.16 — the recursion for `neg`, case `0`.** `neg(0·x) = 1·neg(x)` as a map identity. -/
 theorem neg_cons_false : negMap.comp (consMap false) = (consMap true).comp negMap := by
@@ -678,11 +414,6 @@ theorem neg_cons_false : negMap.comp (consMap false) = (consMap true).comp negMa
     rw [toElementMap_comp, consMap_strElem, negMap_strElem, toElementMap_comp, negMap_strElem,
       consMap_strElem]
     rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- **Exercise 5.16 — the recursion for `neg`, case `1`.** `neg(1·x) = 0·neg(x)` as a map identity. -/
 theorem neg_cons_true : negMap.comp (consMap true) = (consMap false).comp negMap := by
@@ -695,11 +426,6 @@ theorem neg_cons_true : negMap.comp (consMap true) = (consMap false).comp negMap
     rw [toElementMap_comp, consMap_strElem, negMap_strElem, toElementMap_comp, negMap_strElem,
       consMap_strElem]
     rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 theorem prod_principal_pair (b₀ : Bool) (σ : Str) (b₁ : Bool) (τ : Str) :
     (prod C C).principal (prod_mem_prodNbhd (memC_shape b₀ σ) (memC_shape b₁ τ))
@@ -714,11 +440,6 @@ theorem prod_principal_pair (b₀ : Bool) (σ : Str) (b₁ : Bool) (τ : Str) :
     exact ⟨X', Y', ⟨hX', hsX⟩, ⟨hY', hsY⟩, rfl⟩
   · rintro ⟨X', Y', ⟨hX', hsX⟩, ⟨hY', hsY⟩, rfl⟩
     exact ⟨prod_mem_prodNbhd hX' hY', prodNbhd_subset_iff.mpr ⟨hsX, hsY⟩⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- Two maps `C × C → C` agree as soon as they agree on every pair of finite elements. -/
 theorem prodMap_ext {f g : ApproximableMap (prod C C) C}
@@ -735,11 +456,6 @@ theorem prodMap_ext {f g : ApproximableMap (prod C C) C}
   have heq : (prod C C).principal hW = pair (shapeElem b₀ σ) (shapeElem b₁ τ) :=
     prod_principal_pair b₀ σ b₁ τ
   rw [heq]; exact h b₀ σ b₁ τ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- **Exercise 5.16 (Scott 1981, PRG-19).** The defining recursion of `merge`:
 `merge(εx, δy) = ε·δ·merge(x, y)` for all `x, y ∈ |C|` and bits `ε, δ`. -/
@@ -759,6 +475,7 @@ theorem mergeMap_cons (ε δ : Bool) (x y : C.Element) :
   simp only [toElementMap_comp, toElementMap_paired, toElementMap_proj₀, toElementMap_proj₁,
     fst_pair, snd_pair] at hx
   exact hx
+
 end
 
 section
@@ -1373,16 +1090,12 @@ variable {β : Type*}
 theorem tailMap_consMap_strBot (b : Bool) (σ : Str) :
     tailMap.toElementMap ((consMap b).toElementMap (strBot σ)) = strBot σ := by
   rw [consMap_strBot, tailMap_strBot]; rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
-variable {β : Type*}
 
 /-- `tail(b(σ)) = σ`. -/
 theorem tailMap_consMap_strElem (b : Bool) (σ : Str) :
     tailMap.toElementMap ((consMap b).toElementMap (strElem σ)) = strElem σ := by
   rw [consMap_strElem, tailMap_strElem]; rfl
+
 end
 
 section
@@ -1392,65 +1105,29 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exampl
 def expand : Str → Str
   | [] => []
   | b :: σ => b :: (!b) :: expand σ
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 @[simp] theorem expand_nil : expand [] = [] := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 @[simp] theorem expand_cons (b : Bool) (σ : Str) : expand (b :: σ) = b :: (!b) :: expand σ := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- The Thue–Morse bit-function: `tm n = ⊕(binary digits of n)`, the parity of the number of `1`s in
 the binary expansion of `n` (Lambek's description). -/
 def tm (n : ℕ) : Bool := (Nat.bits n).foldr xor false
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- **Exercise 5.16 (the operator `Φ`).** `Φ(x) = 0·merge(neg x, tail x)` as an approximable map. -/
 def tmOp : ApproximableMap C C :=
   (consMap false).comp (mergeMap.comp (paired negMap tailMap))
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 @[simp] theorem tm_zero : tm 0 = false := by simp [tm, Nat.zero_bits]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- The length-`n` Thue–Morse prefix `[tm 0, tm 1, …, tm (n-1)]`. -/
 def tmList (n : ℕ) : Str := (List.range n).map tm
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 @[simp] theorem tmList_zero : tmList 0 = [] := rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- **Exercise 5.16 (Scott 1981, PRG-19).** Scott's Thue–Morse element `t = 0·merge(neg t, tail t)`,
 the least fixed point of `Φ`. -/
 def tElt : C.Element := tmOp.fixElement
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- `σΣ* = Σ*` iff `σ = Λ`. -/
 theorem cone_univ_iff {σ : Str} : cone σ = Set.univ ↔ σ = [] := by
@@ -1458,20 +1135,12 @@ theorem cone_univ_iff {σ : Str} : cone σ = Set.univ ↔ σ = [] := by
   · intro h
     exact List.prefix_nil.mp (mem_cone.mp (h ▸ Set.mem_univ ([] : Str)))
   · rintro rfl; exact cone_nil
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- `expand` distributes over append (it is a monoid morphism `Σ* → Σ*`). -/
 theorem expand_append (σ τ : Str) : expand (σ ++ τ) = expand σ ++ expand τ := by
   induction σ with
   | nil => rfl
   | cons b σ ih => simp [ih]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- Each approximant is below the least fixed point. -/
 theorem iterElem_le_fixElement {α : Type*} {V : NeighborhoodSystem α} (f : ApproximableMap V V)
@@ -1480,29 +1149,17 @@ theorem iterElem_le_fixElement {α : Type*} {V : NeighborhoodSystem α} (f : App
   intro Z hZ
   rw [mem_iSupDirected]
   exact ⟨n, hZ⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- A one-step unfolding of the iterated bottom element: `fⁿ⁺¹(⊥) = f(fⁿ(⊥))`. -/
 theorem iterElem_succ {α : Type*} {V : NeighborhoodSystem α} (f : ApproximableMap V V) (n : ℕ) :
     f.iterElem (n + 1) = f.toElementMap (f.iterElem n) := by
   rw [iterElem_eq_iterate, iterElem_eq_iterate]
   exact Function.iterate_succ_apply' f.toElementMap n V.bot
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- The base of the iterated bottom element: `f⁰(⊥) = ⊥`. -/
 theorem iterElem_zero' {α : Type*} {V : NeighborhoodSystem α} (f : ApproximableMap V V) :
     f.iterElem 0 = V.bot := by
   rw [iterElem_eq_iterate, Function.iterate_zero_apply]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- Every iterate of `expand` from `[0]` starts with `0` (so `Φ` keeps acting as `expand`). -/
 theorem iterate_expand_cons (k : ℕ) : ∃ ρ, (expand^[k] [false] : Str) = false :: ρ := by
@@ -1511,10 +1168,6 @@ theorem iterate_expand_cons (k : ℕ) : ∃ ρ, (expand^[k] [false] : Str) = fal
   | succ k ih =>
     obtain ⟨ρ, hρ⟩ := ih
     exact ⟨true :: expand ρ, by rw [Function.iterate_succ_apply', hρ]; rfl⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- The second (total/partial-flag) component of an interleaving with a partial first input is always
 `false`: a partial input keeps the output partial. -/
@@ -1522,19 +1175,11 @@ theorem mergeVal_snd_false : ∀ (σ τ : Str) (b₁ : Bool), (mergeVal σ false
   | [], _, _ => rfl
   | _ :: _, [], _ => rfl
   | _ :: σ, _ :: τ, b₁ => by simp only [mergeVal_cons_cons]; exact mergeVal_snd_false σ τ b₁
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- `(strBot τ)` has the cone of `σ` as a neighbourhood iff `σ` is a prefix of `τ`. -/
 theorem strBot_mem_cone {σ τ : Str} : (strBot τ).mem (cone σ) ↔ σ <+: τ := by
   rw [strBot, mem_principal]
   exact ⟨fun h => cone_subset_cone.mp h.2, fun h => ⟨memC_cone σ, cone_subset_cone.mpr h⟩⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- `⊥ = []⊥` in `C` (the cone of `Λ` is the master). -/
 theorem strBot_nil : strBot [] = C.bot := by
@@ -1543,10 +1188,6 @@ theorem strBot_nil : strBot [] = C.bot := by
   rw [strBot, mem_principal, mem_bot, cone_nil, C_master]
   exact ⟨fun h => Set.Subset.antisymm (Set.subset_univ _) h.2,
     fun h => ⟨h ▸ C.master_mem, h ▸ Set.Subset.refl _⟩⟩
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- **Exercise 5.16 — the defining unfolding.** `t = 0·merge(neg t, tail t)`. -/
 theorem tElt_unfold :
@@ -1556,24 +1197,12 @@ theorem tElt_unfold :
   have h := toElementMap_fixElement tmOp
   rw [tmOp, toElementMap_comp, toElementMap_comp, toElementMap_paired] at h
   exact h
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 theorem tmList_length (n : ℕ) : (tmList n).length = n := by
   rw [tmList, List.length_map, List.length_range]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 theorem tmList_succ (n : ℕ) : tmList (n + 1) = tmList n ++ [tm n] := by
   simp only [tmList, List.range_succ, List.map_append, List.map_cons, List.map_nil]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- Thue–Morse prefixes are nested in the prefix order. -/
 theorem tmList_prefix {n m : ℕ} (h : n ≤ m) : tmList n <+: tmList m := by
@@ -1583,10 +1212,6 @@ theorem tmList_prefix {n m : ℕ} (h : n ≤ m) : tmList n <+: tmList m := by
     rcases Nat.lt_succ_iff_lt_or_eq.mp (Nat.lt_succ_of_le h) with hlt | rfl
     · exact (ih (Nat.lt_succ_iff.mp hlt)).trans (by rw [tmList_succ]; exact List.prefix_append _ _)
     · exact List.prefix_rfl
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- The value of `Φ` on a partial element `σ⊥` is `(0 · weave σ)⊥`, the leading `0` prepended to the
 interleaving of `(flip σ)⊥` and `(tail σ)⊥`. -/
@@ -1598,28 +1223,16 @@ theorem tmOp_strBot (σ : Str) :
     show (strBot (flip σ)) = shapeElem false (flip σ) from rfl,
     show (strBot σ.tail) = shapeElem false σ.tail from rfl, mergeMap_pair, mergeElem,
     mergeVal_snd_false, shapeElem_false, consMap_strBot]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- The even recurrence `tm (2n) = tm n` (appending a `0`-digit does not change the parity). -/
 theorem tm_two_mul (n : ℕ) : tm (2 * n) = tm n := by
   rcases Nat.eq_zero_or_pos n with rfl | hn
   · rfl
   · simp only [tm, Nat.bit0_bits n (by omega : n ≠ 0), List.foldr_cons, Bool.false_xor]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- The odd recurrence `tm (2n+1) = ¬ tm n` (appending a `1`-digit flips the parity). -/
 theorem tm_two_mul_add_one (n : ℕ) : tm (2 * n + 1) = !tm n := by
   simp only [tm, Nat.bit1_bits n, List.foldr_cons, Bool.true_xor]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- **The morphism step on prefixes.** `expand (tmList m) = tmList (2m)`: applying the Thue–Morse
 morphism to a length-`m` prefix yields the length-`2m` prefix — this is exactly the even/odd parity
@@ -1633,10 +1246,6 @@ theorem expand_tmList (m : ℕ) : expand (tmList m) = tmList (2 * m) := by
         tm_two_mul_add_one, tm_two_mul, List.append_assoc]
       rfl
     rw [tmList_succ, expand_append, ih, key, expand_cons, expand_nil]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- **The bridge.** The `k`-fold morphism iterate of `[0]` is the Thue–Morse parity prefix of length
 `2ᵏ`: `expandᵏ[0] = tmList (2ᵏ)`. -/
@@ -1645,10 +1254,6 @@ theorem expand_iterate_eq (k : ℕ) : (expand^[k] [false] : Str) = tmList (2 ^ k
   | zero => rfl
   | succ k ih =>
     rw [Function.iterate_succ_apply', ih, expand_tmList, show 2 * 2 ^ k = 2 ^ (k + 1) by ring]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- The interleaving of `h :: flip ρ` with `ρ` (both starting after a common head `h`) is
 `h :: expand ρ`. This is the heart of why `Φ` *is* the Thue–Morse morphism on the trajectory. -/
@@ -1657,10 +1262,6 @@ theorem weave_head : ∀ (h : Bool) (ρ : Str), (mergeVal (h :: flip ρ) false �
   | h, c :: ρ => by
     simp only [flip_cons, mergeVal_cons_cons, expand_cons]
     rw [weave_head (!c) ρ]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- **The Thue–Morse trajectory.** On a partial element whose string starts with `0`, `Φ` acts as the
 Thue–Morse morphism `expand`. -/
@@ -1669,10 +1270,6 @@ theorem tmOp_strBot_expand (ρ : Str) :
   rw [tmOp_strBot]
   simp only [flip_cons, List.tail_cons, expand_cons]
   rw [weave_head (!false) ρ]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- **Exercise 5.16 (the approximants).** The `(k+1)`-st approximant of the least fixed point is the
 partial element of the `k`-fold Thue–Morse morphism iterate of `[0]`:
@@ -1686,6 +1283,7 @@ theorem iterElem_succ_eq (k : ℕ) :
   | succ k ih =>
     obtain ⟨ρ, hρ⟩ := iterate_expand_cons k
     rw [iterElem_succ, ih, hρ, tmOp_strBot_expand, ← hρ, Function.iterate_succ_apply']
+
 end
 
 section
@@ -1791,16 +1389,12 @@ theorem append_three_period {α : Type*} (a : List α) (m : ℕ) (hm : m < 2 * a
       show m + a.length - a.length = m by omega,
       List.getElem?_append_left (by omega : m - a.length < a.length),
       List.getElem?_append_right (by omega : a.length ≤ m)]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems
-open Example44 ExampleB NeighborhoodSystem
 
 /-- The `j`-th bit of the length-`n` Thue–Morse prefix is `tm j`. -/
 theorem tmList_getElem? {n j : ℕ} (h : j < n) : (tmList n)[j]? = some (tm j) := by
   rw [tmList, List.getElem?_map, List.getElem?_range h]
   rfl
+
 end
 
 section
@@ -1808,26 +1402,14 @@ open DomainTheory.NeighbourhoodSystems
 
 theorem tm_of_eq_two_mul {x y : ℕ} (h : x = 2 * y) : tm x = tm y := by
   rw [h, tm_two_mul]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems
 
 theorem tm_of_eq_two_mul_add_one {x y : ℕ} (h : x = 2 * y + 1) : tm x = !tm y := by
   rw [h, tm_two_mul_add_one]
-end
-
-section
-open DomainTheory.NeighbourhoodSystems
 
 /-- An even-indexed symbol differs from its successor: `tm (2x) ≠ tm (2x+1)`. -/
 theorem tm_two_mul_ne (x : ℕ) : tm (2 * x) ≠ tm (2 * x + 1) := by
   rw [tm_two_mul, tm_two_mul_add_one]
   cases tm x <;> simp
-end
-
-section
-open DomainTheory.NeighbourhoodSystems
 
 /-- `tm x = tm (x+1)` forces `x` to be **odd**: equal consecutive symbols only straddle a block
 boundary `(2m+1, 2m+2)`, never a block `(2m, 2m+1)`. -/
@@ -1835,10 +1417,6 @@ theorem odd_of_consec_eq {x : ℕ} (h : tm x = tm (x + 1)) : Odd x := by
   rcases Nat.even_or_odd x with ⟨m, hm⟩ | hodd
   · exfalso; rw [hm, ← two_mul] at h; exact tm_two_mul_ne m h
   · exact hodd
-end
-
-section
-open DomainTheory.NeighbourhoodSystems
 
 /-- **No three consecutive equal symbols** (the period-`1` case): `¬ (tm j = tm (j+1) ∧
 tm (j+1) = tm (j+2))`. If both held, `j` and `j+1` would both be odd. -/
@@ -1849,10 +1427,6 @@ theorem no_three_consec (j : ℕ) : ¬ (tm j = tm (j + 1) ∧ tm (j + 1) = tm (j
   rcases hj with ⟨a, rfl⟩
   rcases hj1 with ⟨b, hb⟩
   omega
-end
-
-section
-open DomainTheory.NeighbourhoodSystems
 
 /-- **Overlap-freeness of the Thue–Morse sequence** (Scott 1981, PRG-19; Thue 1912). No overlap
 exists at any offset and period. -/
@@ -1953,10 +1527,6 @@ theorem no_overlap (p : ℕ) : ∀ i, ¬ Overlap i p := by
                 simp_all
             · revert r3 r4; cases tm (a + 2) <;> cases tm (a + q + 2) <;> cases tm (a + q + 3) <;>
                 simp_all
-end
-
-section
-open DomainTheory.NeighbourhoodSystems
 
 /-- **The Thue–Morse sequence is cube-free.** A cube of period `p ≥ 1` (the factor `a·a·a` with
 `|a| = p`) is in particular an overlap, so none exists. -/
@@ -1964,6 +1534,7 @@ theorem no_cube (i p : ℕ) (hp : 1 ≤ p) :
     ¬ ∀ k, k < 2 * p → tm (i + k) = tm (i + p + k) := by
   intro hcube
   exact no_overlap p i ⟨hp, fun k hk => hcube k (by omega)⟩
+
 end
 
 section
@@ -1978,20 +1549,12 @@ theorem tmList_le_tElt (n : ℕ) : strBot (tmList n) ≤ tElt := by
         strBot_le_strBot_iff.mpr hpre
     _ = tmOp.iterElem (n + 1) := (iterElem_succ_eq n).symm
     _ ≤ tElt := iterElem_le_fixElement tmOp (n + 1)
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- **Property (a), digit form.** The `n`-th digit of `t` is `tm n` (the parity of the binary digits
 of `n`): the length-`(n+1)` prefix of `t` is `tmList n ++ [tm n]`. -/
 theorem tElt_digit (n : ℕ) : strBot (tmList n ++ [tm n]) ≤ tElt := by
   have h := tmList_le_tElt (n + 1)
   rwa [tmList_succ] at h
-end
-
-section
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-- **Property (a) (Scott 1981, PRG-19; Lambek).** The finite-prefix characterization of `t`: a
 string `σ` is a prefix of `t` **iff** it is the length-`σ.length` Thue–Morse parity prefix. Reading
@@ -2023,6 +1586,7 @@ theorem tElt_mem_cone_iff (σ : Str) : tElt.mem (cone σ) ↔ σ = tmList σ.len
     have hmem : (strBot (tmList σ.length)).mem (cone σ) :=
       strBot_mem_cone.mpr (hσ ▸ List.prefix_rfl)
     exact h _ hmem
+
 end
 
 section
@@ -2115,52 +1679,20 @@ namespace ApproximableMap
 def pfix (τ : ApproximableMap (prod V V) V) : ApproximableMap V V :=
   (fixMap V).comp (curry τ)
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- The **operator** `λg. λx. τ(x, g(x))` of Proposition 5.4, as an approximable endomap of the
 function space `(𝒟 → 𝒟)`: `recOp τ := curry(τ ∘ ⟨p₁, eval⟩)`. -/
 def recOp (τ : ApproximableMap (prod V V) V) : ApproximableMap (funSpace V V) (funSpace V V) :=
   curry (τ.comp (paired (proj₁ (funSpace V V) V) (evalMap V V)))
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- The section `y ↦ τ(x, y)` of `τ : 𝒟 × 𝒟 → 𝒟` at a fixed `x`, as an approximable endomap of
 `𝒟` (the curried `τ` applied to `x`). -/
 def section₂ (τ : ApproximableMap (prod V V) V) (x : V.Element) : ApproximableMap V V :=
   toApproxMap ((curry τ).toElementMap x)
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 /-- `pfix τ (x) = !y. τ(x, y)`, the least fixed point of the section at `x`. -/
 theorem pfix_apply (τ : ApproximableMap (prod V V) V) (x : V.Element) :
     (pfix τ).toElementMap x = (section₂ τ x).fixElement := by
   rw [pfix, toElementMap_comp, fixMap_toElementMap, section₂]
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- `recOp τ (g) (x) = τ(x, g(x))`. -/
 theorem recOp_apply (τ : ApproximableMap (prod V V) V) (φ : (funSpace V V).Element) (x : V.Element) :
@@ -2169,38 +1701,14 @@ theorem recOp_apply (τ : ApproximableMap (prod V V) V) (φ : (funSpace V V).Ele
   rw [recOp, toElementMap_curry_apply, toElementMap_comp, toElementMap_paired,
     toElementMap_proj₁, snd_pair, evalMap_apply]
 
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
 theorem section₂_apply (τ : ApproximableMap (prod V V) V) (x y : V.Element) :
     (section₂ τ x).toElementMap y = τ.toElementMap (pair x y) := by
   rw [section₂, toElementMap_curry_apply]
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 /-- `pfix τ` is a fixed point of `recOp τ` (pointwise: `τ(x, pfix τ x) = pfix τ x`). -/
 theorem pfix_isFixed (τ : ApproximableMap (prod V V) V) (x : V.Element) :
     τ.toElementMap (pair x ((pfix τ).toElementMap x)) = (pfix τ).toElementMap x := by
   rw [pfix_apply, ← section₂_apply, toElementMap_fixElement]
-
-end ApproximableMap
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
 
 end ApproximableMap
 end

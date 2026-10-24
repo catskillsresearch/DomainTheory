@@ -17,8 +17,6 @@ theorem singleton_inter_eq_empty {n m : ℕ} (hmn : m ≠ n) :
   exact hmn h2.symm
 end
 
-section
-end
 end DomainTheory.NeighbourhoodSystems.Exercise418
 
 section

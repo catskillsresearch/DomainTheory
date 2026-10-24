@@ -93,8 +93,6 @@ theorem Ssys_inter_mem {X Y Z : Set (List Bool)}
   InS.inter hX hY (hZ.nonempty.mono hZsub)
 end
 
-section
-end
 end Exercise722
 end DomainTheory.NeighbourhoodSystems
 
@@ -1020,11 +1018,6 @@ variable (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂)
 @[simp] theorem catEps_accept : (catEps M₁ M₂).accept = inr '' M₂.accept := rfl
 
 example [Fintype σ₁] [Fintype σ₂] : Fintype (σ₁ ⊕ σ₂) := inferInstance
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂)
 
 /-- ε-closure: the only ε-edges go from an `inl`-accept state to `inr`-start states, so the closure
 of `T` adds `inr '' M₂.start` exactly when `T` already contains some `inl`-accept state. -/
@@ -1052,11 +1045,6 @@ theorem catEps_mem_εClosure_iff (T : Set (σ₁ ⊕ σ₂)) (s : σ₁ ⊕ σ�
       refine (catEps M₁ M₂).mem_εClosure_of_mem_step ?_ hbase
       simp only [catEps_step_inl_none, mem_ofPred_eq]
       exact ⟨hq, t, ht, rfl⟩
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂)
 
 /-- **Closed form for `eval`.** After reading `x`, the reachable `inl`-states mirror `M₁.eval x`, and
 the reachable `inr`-states are exactly the `M₂`-states reachable from some prefix-split `x = u ++ v`
@@ -1141,11 +1129,6 @@ theorem catEps_mem_eval_iff (x : List Bool) (s : σ₁ ⊕ σ₂) :
           refine ⟨inr t₂, (ih (inr t₂)).mpr (Or.inr ⟨t₂, rfl, u, v', hxe, hu, ht₂⟩), ?_⟩
           rw [catEps_step_inr_some, catEps_mem_εClosure_iff]
           exact Or.inl ⟨t', hstep, rfl⟩
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂)
 
 /-- **The concatenation automaton recognises exactly the concatenation language.** -/
 theorem catEps_accepts :
@@ -1164,6 +1147,7 @@ theorem catEps_accepts :
     refine ⟨inr t, ⟨t, ht, rfl⟩, ?_⟩
     rw [catEps_mem_eval_iff]
     exact Or.inr ⟨t, rfl, u, v, rfl, hu, hteval⟩
+
 end
 
 end Exercise722
@@ -1455,27 +1439,16 @@ def pathStateAtAux {s t : σ} {x : List Bool} : M.Path s t x → ∀ n, n ≤ x.
   | .cons _ s' _ _ _ _ p', 0, _ => s'
   | .cons _ _ _ _ _ _ p', n + 1, hn =>
       pathStateAtAux p' n (Nat.le_of_succ_le_succ hn)
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
 
 def pathStateAt {s t : σ} {x : List Bool} (p : M.Path s t x) (n : ℕ) (hn : n ≤ x.length) : σ :=
   pathStateAtAux p n hn
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
 
 structure PathSplit {s t : σ} {x : List Bool} (p : M.Path s t x) (n : ℕ) (hn : n ≤ x.length) where
   u : σ
   hp : M.Path s u (x.take n)
   ht : M.Path u t (x.drop n)
   hu : pathStateAt p n hn = u
+
 end
 
 section
@@ -1491,10 +1464,6 @@ def NFAinter (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂) : NFA Bool (σ₁ �
   accept := {s | s.1 ∈ M₁.accept ∧ s.2 ∈ M₂.accept}
 
 end NFAinterLemmas
-end
-
-section
-variable {σ₁ σ₂ : Type}
 
 section NFAinterLemmas
 
@@ -1517,16 +1486,6 @@ theorem NFAinter_mem_eval_iff (x : List Bool) (p : σ₁ × σ₂) :
       obtain ⟨q2, hq2, hs2⟩ := h2
       exact ⟨(q1, q2), (ih (q1, q2)).mpr ⟨hq1, hq2⟩, hs1, hs2⟩
 
-end NFAinterLemmas
-end
-
-section
-variable {σ₁ σ₂ : Type}
-
-section NFAinterLemmas
-
-variable (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂)
-
 theorem NFAinter_mem_accepts_iff (x : List Bool) :
     x ∈ (NFAinter M₁ M₂).accepts ↔ x ∈ M₁.accepts ∧ x ∈ M₂.accepts := by
   constructor
@@ -1537,10 +1496,6 @@ theorem NFAinter_mem_accepts_iff (x : List Bool) :
     exact ⟨(s, t), ⟨hs, ht⟩, (NFAinter_mem_eval_iff M₁ M₂ x (s, t)).mpr ⟨hse, hte⟩⟩
 
 end NFAinterLemmas
-end
-
-section
-variable {σ₁ σ₂ : Type}
 
 /-- State type of the automaton for an `SExpr` (a `Fintype`, see `instFintypeAutState`). -/
 def autState : SExpr → Type
@@ -1548,10 +1503,6 @@ def autState : SExpr → Type
   | .single σ => Option (Fin (σ.length + 1))
   | .cap a b => autState a × autState b
   | .cat a b => autState a ⊕ autState b
-end
-
-section
-variable {σ₁ σ₂ : Type}
 
 /-- The NFA from a DFA tracks the single deterministic state as a singleton. -/
 theorem dfaToNFA_eval {σ : Type} (M : DFA Bool σ) (x : List Bool) :
@@ -1571,10 +1522,6 @@ theorem dfaToNFA_eval {σ : Type} (M : DFA Bool σ) (x : List Bool) :
     · intro hs
       rw [Set.mem_singleton_iff, DFA.eval_append_singleton] at hs
       exact ⟨M.eval x, Set.mem_singleton _, hs⟩
-end
-
-section
-variable {σ₁ σ₂ : Type}
 
 /-- Choice-free version of `DFA.toNFA_correct`. -/
 theorem dfaToNFA_accepts {σ : Type} (M : DFA Bool σ) : M.toNFA.accepts = M.accepts := by
@@ -1587,10 +1534,6 @@ theorem dfaToNFA_accepts {σ : Type} (M : DFA Bool σ) : M.toNFA.accepts = M.acc
   · intro hx
     rw [DFA.mem_accepts] at hx
     exact ⟨M.eval x, hx, by rw [dfaToNFA_eval]; exact Set.mem_singleton _⟩
-end
-
-section
-variable {σ₁ σ₂ : Type}
 
 instance instFintypeAutState : (e : SExpr) → Fintype (autState e)
   | .sigma => inferInstanceAs (Fintype Unit)
@@ -1601,10 +1544,6 @@ instance instFintypeAutState : (e : SExpr) → Fintype (autState e)
   | .cat a b => by
       letI := instFintypeAutState a; letI := instFintypeAutState b
       exact inferInstanceAs (Fintype (autState a ⊕ autState b))
-end
-
-section
-variable {σ₁ σ₂ : Type}
 
 instance instDecidableEqAutState : (e : SExpr) → DecidableEq (autState e)
   | .sigma => inferInstanceAs (DecidableEq Unit)
@@ -1615,10 +1554,6 @@ instance instDecidableEqAutState : (e : SExpr) → DecidableEq (autState e)
   | .cat a b => by
       letI := instDecidableEqAutState a; letI := instDecidableEqAutState b
       exact inferInstanceAs (DecidableEq (autState a ⊕ autState b))
-end
-
-section
-variable {σ₁ σ₂ : Type}
 
 /-- A crude upper bound on `Fintype.card (autState e)` (used to bound word search length). -/
 def autStateCard : SExpr → ℕ
@@ -1626,6 +1561,7 @@ def autStateCard : SExpr → ℕ
   | .single σ => σ.length + 2
   | .cap a b => autStateCard a * autStateCard b
   | .cat a b => autStateCard a + autStateCard b
+
 end
 
 section
@@ -1646,34 +1582,12 @@ omit [Fintype σ] in
     cases p with
     | cons _ s' _ _ _ _ _ => simp [pathStateAt, pathStateAtAux]
 
-end ShortWord
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-
-section ShortWord
-
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
-
 theorem accepts_card_zero (hσ : Fintype.card σ = 0) {w : List Bool} (hw : w ∈ M.accepts) : False := by
   rw [NFA.mem_accepts] at hw
   obtain ⟨t, ht, hte⟩ := hw
   rw [NFA.mem_evalFrom_iff_exists (S := M.start) (s := t) (x := w)] at hte
   obtain ⟨s, hs, _⟩ := hte
   exact (Fintype.card_eq_zero_iff.mp hσ).elim s
-
-end ShortWord
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-
-section ShortWord
-
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
 
 theorem autStateCard_eq_card (e : SExpr) : autStateCard e = Fintype.card (autState e) := by
   induction e with
@@ -1700,28 +1614,13 @@ theorem autStateCard_eq_card (e : SExpr) : autStateCard e = Fintype.card (autSta
     exact (Fintype.card_sum (α := autState a) (β := autState b)).symm
 
 end ShortWord
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
 
 /-- Search `wordsUpTo (autStateCard e)` for a word accepted by `matchesB e`. -/
 def decideNonemptyB (e : SExpr) : Bool :=
   anyMatchesB e (wordsUpTo (autStateCard e))
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
 
 /-- Decidable emptiness of `denote e` via bounded word search. -/
 def decideEmptyB (e : SExpr) : Bool := !decideNonemptyB e
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
 
 section ShortWord
 
@@ -1733,17 +1632,6 @@ theorem mem_accepts_of_path {s t : σ} {x : List Bool} (hs : s ∈ M.start) (ht 
   rw [NFA.accepts_iff_exists_path]
   exact ⟨s, hs, t, ht, ⟨p⟩⟩
 
-end ShortWord
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-
-section ShortWord
-
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
-
 /-- Append two paths meeting at the middle state. -/
 def pathAppend {s u t : σ} {a b : List Bool} (p : M.Path s u a) (p' : M.Path u t b) :
     M.Path s t (a ++ b) :=
@@ -1752,34 +1640,12 @@ def pathAppend {s u t : σ} {a b : List Bool} (p : M.Path s u a) (p' : M.Path u 
   | .cons sMid s' _ a' xs hstep p'' =>
       .cons sMid s' _ a' (xs ++ b) hstep (pathAppend p'' p')
 
-end ShortWord
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-
-section ShortWord
-
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
-
 omit [Fintype σ] in
 theorem pathStateAt_succ {sMid s' u : σ} {a : Bool} {xs : List Bool}
     (hstep : sMid ∈ M.step s' a) (p' : M.Path sMid u xs) (n : ℕ) (hn : n ≤ xs.length) :
     pathStateAt (.cons sMid s' u a xs hstep p') (n + 1) (Nat.succ_le_succ hn) =
       pathStateAt p' n hn := by
   simp [pathStateAt, pathStateAtAux]
-
-end ShortWord
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-
-section ShortWord
-
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
 
 noncomputable def pathAppend_take_drop {s t : σ} {x : List Bool} (p : M.Path s t x) (n : ℕ)
     (hn : n ≤ x.length) : PathSplit p n hn := by
@@ -1805,17 +1671,6 @@ noncomputable def pathAppend_take_drop {s t : σ} {x : List Bool} (p : M.Path s 
         hu := by rw [pathStateAt_succ hstep p' n' hn']; exact split.hu
       }
 
-end ShortWord
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-
-section ShortWord
-
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
-
 omit [Fintype σ] in
 theorem accepts_skip_loop {s t : σ} {x : List Bool} {i j : ℕ}
     (hi : i ≤ x.length) (hj : j ≤ x.length) (_hij : i < j)
@@ -1826,17 +1681,6 @@ theorem accepts_skip_loop {s t : σ} {x : List Bool} {i j : ℕ}
   let splitJ := pathAppend_take_drop hp j hj
   have hqq' : splitI.u = splitJ.u := by rw [← splitI.hu, heq, splitJ.hu]
   exact mem_accepts_of_path hs ht (pathAppend splitI.hp (hqq' ▸ splitJ.ht))
-
-end ShortWord
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-
-section ShortWord
-
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
 
 theorem accepts_shorten_step {x : List Bool} (hx : x ∈ M.accepts)
     (hlen : Fintype.card σ ≤ x.length) :
@@ -1860,17 +1704,6 @@ theorem accepts_shorten_step {x : List Bool} (hx : x ∈ M.accepts)
       simp [List.length_append, List.length_take, List.length_drop]
       omega
 
-end ShortWord
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-
-section ShortWord
-
-variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
-
 theorem exists_accepted_word_short (h : M.accepts.Nonempty) :
     ∃ w, w.length < Fintype.card σ ∧ w ∈ M.accepts := by
   by_cases hσ : Fintype.card σ = 0
@@ -1889,6 +1722,7 @@ theorem exists_accepted_word_short (h : M.accepts.Nonempty) :
       x rfl hx
 
 end ShortWord
+
 end
 
 section
@@ -1901,10 +1735,6 @@ def toNFA : (e : SExpr) → NFA Bool (autState e)
   | .single σ => (singleDFA σ).toNFA
   | .cap a b => NFAinter (toNFA a) (toNFA b)
   | .cat a b => (catEps (toNFA a) (toNFA b)).toNFA
-end
-
-section
-variable {σ₁ σ₂ : Type}
 
 /-- **The automaton recognises exactly the language it should.** -/
 theorem toNFA_accepts : (e : SExpr) → (toNFA e).accepts = denote e
@@ -1923,6 +1753,7 @@ theorem toNFA_accepts : (e : SExpr) → (toNFA e).accepts = denote e
   | .cat a b => by
       change (catEps (toNFA a) (toNFA b)).toNFA.accepts = denote (.cat a b)
       rw [εNFA.toNFA_correct, catEps_accepts, toNFA_accepts a, toNFA_accepts b, denote_cat]
+
 end
 
 section
@@ -1948,44 +1779,25 @@ theorem denote_nonempty_iff_short (e : SExpr) :
     exact ⟨w, (matchesB_iff e w).mp hmatch⟩
 
 end ShortWord
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
 
 @[simp] theorem decideNonemptyB_iff (e : SExpr) :
     decideNonemptyB e = true ↔ (denote e).Nonempty := by
   simp [decideNonemptyB, anyMatchesB, List.any_eq_true, denote_nonempty_iff_short]
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
 
 @[simp] theorem decideEmptyB_iff (e : SExpr) :
     decideEmptyB e = true ↔ denote e = ∅ := by
   rw [decideEmptyB, Bool.not_eq_true_eq_eq_false, ← Bool.eq_false_eq_not_eq_true,
     decideNonemptyB_iff, Set.not_nonempty_iff_eq_empty]
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
 
 instance decidableEmptyDenote (e : SExpr) : Decidable (denote e = ∅) :=
   if h : decideEmptyB e then .isTrue (decideEmptyB_iff e |>.mp h)
   else .isFalse fun he => h (decideEmptyB_iff e |>.mpr he)
 
 #eval decideEmptyB (.cap (.single [false]) (.single [true])) -- should be `true` (disjoint singletons)
-end
-
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
 
 /-- Decides relation (ii) on a pair of expressions: `true` iff `denote a ∩ denote b` is non-empty. -/
 def consistentB (a b : SExpr) : Bool := !decideEmptyB (.cap a b)
+
 end
 
 section
@@ -2036,11 +1848,6 @@ theorem autStateCard_le_card (e : SExpr) : autStateCard e ≤ Fintype.card (autS
     exact (Nat.add_le_add ih_a ih_b).trans (Fintype.card_sum (α := autState a) (β := autState b)).ge
 end
 
-section
-variable {σ₁ σ₂ : Type}
-variable {σ : Type}
-
-end
 end Exercise722
 end DomainTheory.NeighbourhoodSystems
 end

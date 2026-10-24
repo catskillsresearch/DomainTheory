@@ -22,6 +22,7 @@ open Domain.Recursive NeighborhoodSystem
 section
 open NeighborhoodSystem
 variable {α : Type*}
+
 /- concordance: source L4943 THEOREM 8.8 universality of U -/
 /-- **First sentence of Theorem 8.8 (Scott 1981, PRG-19, Lecture VIII).** `𝒰` is universal: every *countable*
 neighbourhood system `D` embeds, up to isomorphism, as a subsystem of `𝒰`.
@@ -53,11 +54,6 @@ theorem theorem_8_8_a.{u} {α : Type u} (D : NeighborhoodSystem α)
       | zero => rw [he0]; exact D.master_mem
       | succ n => rw [hen n]; exact (f n).2
   exact ⟨DprimeU D e hcover he0, isomorphic_DprimeU D e hcover he0, DprimeU_subsystem D e hcover he0⟩
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 /-- **First sentence of Theorem 8.8 (Scott 1981, PRG-19).** Scott's wording:
 "The system `𝒰` is universal in the sense that, for every countable neighbourhood
@@ -66,6 +62,7 @@ theorem theorem_8_8.{u} {α : Type u} (D : NeighborhoodSystem α)
     [Countable {S : Set α // D.mem S}] : D ⊴ U := by
   obtain ⟨D', hiso, hsub⟩ := theorem_8_8_a D
   exact ⟨D', hsub, hiso⟩
+
 end
 
 section
@@ -75,24 +72,15 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 /-- The `idxSet`-atom of the *positive* constraints `pos`: indices `m` with `Xₘ ⊆ Xᵢ` for every
 `i ∈ pos`. (The empty list gives `Set.univ`, matching `genAtom`'s depth-`0` value.) -/
 def IPos (pos : List ℕ) : Set ℕ := {m | ∀ i ∈ pos, m ∈ idxSet P.X i}
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 @[simp] theorem IPos_nil : IPos P [] = Set.univ := by
   ext m; simp [IPos]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The full atom**: positive constraints `pos` together with negative constraints `neg`
 (`¬(Xₘ ⊆ Xⱼ)` for `j ∈ neg`). This is `genAtom (idxSet P.X) Set.univ δ n` for the sign sequence
 built from `pos`/`neg`. -/
 def DAtom (pos neg : List ℕ) : Set ℕ := IPos P pos ∩ {m | ∀ j ∈ neg, m ∉ idxSet P.X j}
+
 end
 
 section
@@ -108,43 +96,20 @@ the fold is permanently "not ok" (accumulator frozen at the last good `idx`, whi
 def meetStep (r i : ℕ) : ℕ :=
   selectFn (isOne r.unpair.1 * isOne (cons (Nat.pair r.unpair.2 i)))
     (Nat.pair 1 (P.inter r.unpair.2 i)) (Nat.pair 0 r.unpair.2)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-variable (cons : ℕ → ℕ)
 
 /-- **The positive meet-fold**: fold `meetStep` across `pos`, starting from `(ok, idx) = (1,
 masterIdx)` (the empty meet is `Δ`, always "ok"). -/
 def meetFold (l : List ℕ) : ℕ := l.foldl (meetStep P cons) (Nat.pair 1 P.masterIdx)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-variable (cons : ℕ → ℕ)
 
 @[simp] theorem meetFold_nil : meetFold P cons [] = Nat.pair 1 P.masterIdx := rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-variable (cons : ℕ → ℕ)
 
 /-- `foldCode`-shaped step matching `meetStep`: state `w = pair i (pair r params)` (`params`
 unused). -/
 def meetStepCode (w : ℕ) : ℕ := meetStep P cons w.unpair.2.unpair.1 w.unpair.1
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-variable (cons : ℕ → ℕ)
 
 /-- The code-level positive meet-fold. -/
 def meetFoldCode (c : ℕ) : ℕ := foldCode (meetStepCode P cons) 0 (Nat.pair 1 P.masterIdx) c
+
 end
 
 section
@@ -176,11 +141,6 @@ theorem IPos_cons (i : ℕ) (rest : List ℕ) :
   · rintro ⟨hi, hrest⟩ j (rfl | hj)
     · exact hi
     · exact hrest j hj
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- `idxSet P.X P.masterIdx = Set.univ`: `masterIdx` indexes `D`'s master `Δ`, and every
 `D`-neighbourhood is `⊆ Δ`. -/
@@ -189,6 +149,7 @@ theorem idxSet_masterIdx_eq_univ : idxSet P.X P.masterIdx = Set.univ :=
     show P.X m ⊆ P.X P.masterIdx
     rw [P.masterIdx_spec]
     exact D.sub_master (P.mem_X m)
+
 end
 
 section
@@ -204,23 +165,11 @@ theorem meetFoldCode_eq (c : ℕ) : meetFoldCode P cons c = meetFold P cons (dec
     simp only [unpair_pair_fst, unpair_pair_snd]
   unfold meetFoldCode meetFold
   rw [foldCode_eq', hfun]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-variable (cons : ℕ → ℕ)
 
 theorem meetFold_cons (i : ℕ) (rest : List ℕ) :
     meetFold P cons (i :: rest) = (rest.foldl (meetStep P cons) (meetStep P cons
       (Nat.pair 1 P.masterIdx) i)) := by
   unfold meetFold; rw [List.foldl_cons]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-variable (cons : ℕ → ℕ)
 
 theorem meetStep_ok_le_one (r i : ℕ) : (meetStep P cons r i).unpair.1 ≤ 1 := by
   have h1 := isOne_le_one r.unpair.1
@@ -233,12 +182,6 @@ theorem meetStep_ok_le_one (r i : ℕ) : (meetStep P cons r i).unpair.1 ≤ 1 :=
         isOne (cons (Nat.pair r.unpair.2 i)) = 1 by omega) with h' | h'
     · rw [h', selectFn_zero, unpair_pair_fst]; exact Nat.zero_le 1
     · rw [h', selectFn_one, unpair_pair_fst]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-variable (cons : ℕ → ℕ)
 
 /-- **One-step transfer of the meet-fold invariant**: if `init` codes `(ok, idx)` faithfully
 relative to some set `S` (`ok = 1 → idxSet idx = S`, `ok = 0 → S = ∅`), then `meetStep init i`
@@ -288,12 +231,6 @@ theorem meetStep_spec
       exact hc ((hcons _ _).mpr ⟨m, Set.subset_inter hm1 hm2⟩)
     · rw [(isOne_eq_one_iff _).mpr hc, selectFn_one, unpair_pair_fst]
       intro h; exact absurd h (by decide)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-variable (cons : ℕ → ℕ)
 
 /-- **The meet-fold invariant, folded across a whole list.** Generalizes `meetStep_spec` from one
 step to a full list `l`, relative to an arbitrary starting accumulator `init`/set `S`. -/
@@ -314,12 +251,6 @@ theorem meetFold_foldl_spec
     rw [List.foldl_cons, IPos_cons, ← Set.inter_assoc]
     obtain ⟨hle', h1', h0'⟩ := meetStep_spec P cons hcons hle h1 h0 i
     exact ih hle' h1' h0'
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-variable (cons : ℕ → ℕ)
 
 /-- **Correctness of the positive meet-fold**, instantiated at the real starting point
 `(1, masterIdx)`/`Set.univ`. -/
@@ -335,6 +266,7 @@ theorem meetFold_spec
     (by rw [hinit1]) (fun _ => by rw [hinit2]; exact idxSet_masterIdx_eq_univ P)
     (fun h => absurd (hinit1.symm.trans h) (by norm_num))
   simpa only [meetFold, Set.univ_inter] using h
+
 end
 
 section
@@ -342,15 +274,11 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem mem_IPos {pos : List ℕ} {m : ℕ} : m ∈ IPos P pos ↔ ∀ i ∈ pos, P.X m ⊆ P.X i := Iff.rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem mem_DAtom {pos neg : List ℕ} {m : ℕ} :
     m ∈ DAtom P pos neg ↔ (∀ i ∈ pos, P.X m ⊆ P.X i) ∧ (∀ j ∈ neg, ¬ P.X m ⊆ P.X j) := by
   simp only [DAtom, Set.mem_inter_iff, mem_IPos, Set.mem_ofPred_eq, mem_idxSet]
+
 end
 
 section
@@ -456,17 +384,12 @@ theorem primrec_meetStepCode (hconsp : Nat.Primrec cons) : Nat.Primrec (meetStep
   have helse : Nat.Primrec (fun w : ℕ => Nat.pair 0 w.unpair.2.unpair.1.unpair.2) :=
     (Nat.Primrec.const 0).pair hridx
   exact (primrec_selectFn hcond hthen helse).of_eq (fun _ => rfl)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-variable (cons : ℕ → ℕ)
 
 theorem primrec_meetFoldCode (hconsp : Nat.Primrec cons) :
     Nat.Primrec (meetFoldCode P cons) :=
   (primrec_foldCode (primrec_meetStepCode P cons hconsp) (Nat.Primrec.const 0)
     (Nat.Primrec.const (Nat.pair 1 P.masterIdx)) primrec_id).of_eq (fun _ => rfl)
+
 end
 
 section
@@ -495,13 +418,6 @@ theorem primrec_DAtomEmptyChar (hconsp : Nat.Primrec cons) (hinclp : Nat.Primrec
       (fun t => by simp only [unpair_pair_fst, unpair_pair_snd])
   exact (primrec_selectFn (primrec_isOne.comp hmfok) hexists (Nat.Primrec.const 1)).of_eq
     (fun _ => rfl)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive
-variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-variable (cons : ℕ → ℕ)
-variable (incl : ℕ → ℕ)
 
 /-- **Part 5's headline result.** `D`-side atom emptiness (in the `idxSet` sense above) is
 recursively decidable in the two constraint-list codes, for any `ComputablePresentation` of `D`.
@@ -523,6 +439,7 @@ theorem DAtom_recDecidable :
   refine ⟨fun t => DAtomEmptyChar P cons incl t.unpair.1 t.unpair.2,
     primrec_DAtomEmptyChar P cons incl hconsp hinclp, fun t => ?_⟩
   exact (DAtomEmptyChar_eq_one_iff P cons incl hcons hincl t.unpair.1 t.unpair.2).symm
+
 end
 
 section
@@ -534,22 +451,12 @@ iff the presented neighbourhood `Xₙ = P.X n` is already `a`-fixed, i.e. (`diag
 iff `Xₙ` is a neighbourhood of Theorem 8.5's subsystem `fixedNbhd a = {X ∈ V ∣ X a X}`. -/
 def DiagFixed (P : ComputablePresentation V) (a : ApproximableMap V V) (n : ℕ) : Prop :=
   a.rel (P.X n) (P.X n)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- `DiagFixed P a n` is exactly `(fixedNbhd a).mem (P.X n)`, since `P.X n` is always already a
 `V`-neighbourhood (`P.mem_X`). -/
 theorem diagFixed_iff_fixedNbhd_mem (P : ComputablePresentation V) (a : ApproximableMap V V)
     (n : ℕ) : DiagFixed P a n ↔ (fixedNbhd a).mem (P.X n) :=
   (and_iff_right (P.mem_X n)).symm
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **`DiagFixed P a` is recursively enumerable, given `a` is a computable map.** Restrict
 `ComputableMap`'s two-variable relation `Xₙ a Xₘ` to the diagonal `n = m` via `REPred.comp`
@@ -561,11 +468,6 @@ theorem diagFixed_isREPred {P : ComputablePresentation V} {a : ApproximableMap V
   refine REPred.of_iff (fun n => ?_) (ha'.comp hdiag)
   simp only [unpair_pair_fst, unpair_pair_snd]
   exact Iff.rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **The decidable witness relation underlying `DiagFixed`'s r.e.-ness, extracted.** Unfolding
 `REPred`'s own definition (`p n ↔ ∃ i, q ⟨i,n⟩` with `q` recursively decidable via a `{0,1}`-valued
@@ -579,6 +481,7 @@ theorem diagFixed_exists_qChar {P : ComputablePresentation V} {a : ApproximableM
   obtain ⟨q, hq, hqe⟩ := diagFixed_isREPred ha
   obtain ⟨f, hf, hfe⟩ := hq
   exact ⟨f, hf, fun n => (hqe n).trans (exists_congr (fun i => hfe _))⟩
+
 end
 
 section
@@ -593,23 +496,12 @@ advance to `P.inter r n`; otherwise no-op (skip this entry). -/
 def myStep (r e : ℕ) : ℕ :=
   selectFn (isOne (qChar e) * isOne (cons (Nat.pair r e.unpair.2)))
     (P.inter r e.unpair.2) r
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
 
 /-- **The `qChar`-gated fold**, starting from `P.masterIdx`. -/
 def myFold (l : List ℕ) : ℕ := l.foldl (myStep P qChar cons) P.masterIdx
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
 
 @[simp] theorem myFold_nil : myFold P qChar cons [] = P.masterIdx := rfl
+
 end
 
 section
@@ -622,17 +514,10 @@ variable (P qChar cons)
 /-- `foldCode`-shaped step matching `myStep`: state `w = pair e (pair r params)` (`params`
 unused). -/
 def myStepCode (w : ℕ) : ℕ := myStep P qChar cons w.unpair.2.unpair.1 w.unpair.1
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
-variable {P qChar cons}
-variable (P qChar cons)
 
 /-- The code-level `qChar`-gated fold. -/
 def myFoldCode (c : ℕ) : ℕ := foldCode (myStepCode P qChar cons) 0 P.masterIdx c
+
 end
 
 section
@@ -719,13 +604,6 @@ theorem myStep_diagFixed_of_diagFixed {a : ApproximableMap V V}
           ((diagFixed_iff_fixedNbhd_mem P a e.unpair.2).mp hn) hVinter
       rw [diagFixed_iff_fixedNbhd_mem, P.inter_spec ⟨k, hk⟩]
       exact hfix
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
-variable {P qChar cons}
 
 /-- **The fold invariant, over an arbitrary starting accumulator.** -/
 theorem myFold_diagFixed_of_diagFixed {a : ApproximableMap V V}
@@ -738,13 +616,6 @@ theorem myFold_diagFixed_of_diagFixed {a : ApproximableMap V V}
     intro r hr
     rw [List.foldl_cons]
     exact ih (myStep_diagFixed_of_diagFixed hqChar hcons hr e)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
-variable {P qChar cons}
 
 /-- **Correctness of the `qChar`-gated fold, instantiated at the real starting point
 `P.masterIdx`.** -/
@@ -753,6 +624,7 @@ theorem myFold_diagFixed {a : ApproximableMap V V}
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) (l : List ℕ) :
     DiagFixed P a (myFold P qChar cons l) :=
   myFold_diagFixed_of_diagFixed hqChar hcons l (diagFixed_masterIdx a)
+
 end
 
 section
@@ -772,14 +644,6 @@ theorem diagFixed_myFoldCode {a : ApproximableMap V V}
     DiagFixed P a (myFoldCode P qChar cons c) := by
   rw [myFoldCode_eq]
   exact myFold_diagFixed hqChar hcons (decodeList c)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
-variable {P qChar cons}
-variable (P qChar cons)
 
 theorem primrec_myStepCode (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primrec cons) :
     Nat.Primrec (myStepCode P qChar cons) := by
@@ -799,14 +663,6 @@ theorem primrec_myStepCode (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primrec c
       (fun w : ℕ => P.inter w.unpair.2.unpair.1 w.unpair.1.unpair.2) :=
     (P.inter_primrec.comp hargs).of_eq fun w => by simp only [unpair_pair_fst, unpair_pair_snd]
   exact (primrec_selectFn hcond hinter hr).of_eq fun _ => rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
-variable {P qChar cons}
-variable (P qChar cons)
 
 /-- **`myFoldCode` is primitive recursive** (Part 2's headline `Nat.Primrec` claim). -/
 theorem primrec_myFoldCode (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primrec cons) :
@@ -814,6 +670,7 @@ theorem primrec_myFoldCode (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primrec c
   (primrec_foldCode (primrec_myStepCode P qChar cons hqCharp hconsp)
     (Nat.Primrec.const 0) (Nat.Primrec.const P.masterIdx) primrec_id).of_eq
     fun _ => rfl
+
 end
 
 section
@@ -840,13 +697,6 @@ theorem D_X_mem {a : ApproximableMap V V}
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) (c : ℕ) :
     (fixedNbhd a).mem (D_X P qChar cons c) :=
   (diagFixed_iff_fixedNbhd_mem P a _).mp (diagFixed_myFoldCode P qChar cons hqChar hcons c)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
-variable {P qChar cons}
 
 /-- **The reusable core of the surjectivity argument.** Any `V`-neighbourhood `P.X m` already
 known to be `DiagFixed` (regardless of whether `m` itself is `myFoldCode`'s output) is `D_X qChar
@@ -879,13 +729,6 @@ theorem D_X_of_diagFixed {a : ApproximableMap V V}
   rw [hstep, hstepval]
   have hcons' : (∃ k, P.X k ⊆ P.X P.masterIdx ∩ P.X m) := (hcons P.masterIdx m).mp hcond
   rw [P.inter_spec hcons', P.masterIdx_spec, Set.inter_eq_right.mpr (V.sub_master (P.mem_X m))]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
-variable {P qChar cons}
 
 /-- **Theorem 8.8(c), Part 3 of 6, second half.** Every `fixedNbhd a`-neighbourhood `Y` is
 `D_X qChar cons c` for some list-code `c`: `P.surj` finds `Y`'s raw `V`-index, which is `DiagFixed`
@@ -899,13 +742,6 @@ theorem D_X_surj {a : ApproximableMap V V}
   have hdiag : DiagFixed P a n₀ := by unfold DiagFixed; rw [hn₀]; exact hYa
   obtain ⟨c, hc⟩ := D_X_of_diagFixed hqChar hcons hdiag
   exact ⟨c, by rw [hc, hn₀]⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
-variable {P qChar cons}
 
 /-- **The one genuine lemma of Theorem 8.8(c), Part 4 of 6.** `D`-consistency of two list-codes
 (`∃ k, D_X k ⊆ D_X c₁ ∩ D_X c₂`) is equivalent to plain `V`-consistency of the underlying raw
@@ -936,6 +772,7 @@ theorem D_X_cons_iff {a : ApproximableMap V V}
       unfold D_X
       rw [← hn₁, ← hn₂]
     exact ⟨c, heq ▸ subset_rfl⟩
+
 end
 
 section
@@ -961,14 +798,6 @@ theorem D_X_cons_computable {a : ApproximableMap V V}
   refine RecDecidable.of_iff (fun t => ?_) (P.cons_computable.comp hreindex)
   simp only [unpair_pair_fst, unpair_pair_snd]
   exact D_X_cons_iff hqChar hcons t.unpair.1 t.unpair.2
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
-variable {P qChar cons}
-variable (P qChar cons)
 
 /-- **Theorem 8.8(c), Part 4 of 6, first half (`interEq_computable`, free).** `D_X c₁ ∩ D_X c₂ =
 D_X c₃` is exactly `P.interEq_computable` reindexed along the primitive-recursive triple
@@ -987,6 +816,7 @@ theorem D_X_interEq_computable (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primr
   refine RecDecidable.of_iff (fun t => ?_) (P.interEq_computable.comp hreindex)
   unfold D_X
   simp only [unpair_pair_fst, unpair_pair_snd]
+
 end
 
 section
@@ -1059,13 +889,6 @@ theorem myStep_subset
     · rw [isOne_of_ne_one hc, selectFn_zero]
     · rw [(isOne_eq_one_iff _).mpr hc, selectFn_one, P.inter_spec ((hcons r e.unpair.2).mp hc)]
       exact Set.inter_subset_left
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
-variable {P qChar cons}
 
 /-- **Folding only ever shrinks the presented set.** -/
 theorem myFoldl_subset
@@ -1078,13 +901,6 @@ theorem myFoldl_subset
     intro r
     rw [List.foldl_cons]
     exact (ih (myStep P qChar cons r e)).trans (myStep_subset hcons r e)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-  (qChar cons : ℕ → ℕ)
-variable {P qChar cons}
 
 /-- **The key lemma.** Refolding a list `l` from a start `n` that is `⊆` (in `P.X`) another start
 `r`, reproduces `P.X n ∩ P.X (fold of l from r)` — *provided* this is already known to be
@@ -1165,6 +981,7 @@ theorem myFoldl_inter_of_le
           rw [P.inter_spec hwitN]
           exact Set.subset_inter (Set.subset_inter hkR hkne) hkY
         rw [ih hnr' hk', P.inter_spec hwitN, Set.inter_assoc, Set.inter_eq_right.mpr hYsub]
+
 end
 
 section
@@ -1206,25 +1023,13 @@ open Domain.Recursive NeighborhoodSystem
 
 /-- A fixed code for the rational pair `(0,1)`, presenting `U.master`. -/
 def masterPairCode : ℕ := Nat.pair zeroCode oneCode
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 @[simp] theorem decodeRatPair_masterPairCode : decodeRatPair masterPairCode = ((0 : ℚ), (1 : ℚ)) := by
   unfold masterPairCode decodeRatPair
   simp only [unpair_pair_fst, unpair_pair_snd, decodeRat_zeroCode, decodeRat_oneCode]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- A fixed index of `U.master = Ico 0 1`. -/
 def UmasterIdx : ℕ := encodeQPairList [((0 : ℚ), (1 : ℚ))]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- The singleton list-code `[masterPairCode]` decodes to the singleton presenting list of
 `U.master`. -/
@@ -1233,10 +1038,6 @@ theorem decodeQPairList_masterCode :
   unfold decodeQPairList
   rw [decodeList_succ, unpair_pair_fst, unpair_pair_snd, decodeList_zero]
   simp [decodeRatPair_masterPairCode]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **A list all of whose pairs are already non-degenerate is empty iff it presents `∅`** (unlike
 an arbitrary presenting list, where individually-degenerate pairs could make this fail). -/
@@ -1250,10 +1051,6 @@ theorem presentedIntervals_eq_empty_iff_of_forall_lt {L' : List (ℚ × ℚ)}
         ⟨a, List.mem_cons.mpr (Or.inl rfl), le_refl _,
           hpos a (List.mem_cons.mpr (Or.inl rfl))⟩⟩)
   · rintro rfl; exact presentedIntervals_nil
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem presentedIntervals_filter_qpPos (L : List (ℚ × ℚ)) :
     presentedIntervals (L.filter (fun p => decide (p.1 < p.2))) = presentedIntervals L := by
@@ -1264,27 +1061,15 @@ theorem presentedIntervals_filter_qpPos (L : List (ℚ × ℚ)) :
     exact ⟨p, hp, hx⟩
   · rintro ⟨p, hp, hx1, hx2⟩
     exact ⟨p, ⟨hp, lt_of_le_of_lt hx1 hx2⟩, hx1, hx2⟩
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem presentedIntervals_singleton_zero_one :
     presentedIntervals ([((0 : ℚ), (1 : ℚ))]) = U.master := by
   rw [presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]; rfl
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- Clip a rational pair to `[0,1)`, moving `r` up to `0` and `s` down to `1` when needed. Mirrors
 `Definition87.lean`'s `private def clip`, redefined here (public) since `canonList`/`canonCode` need
 both a list-level and a code-level version of it. -/
 def qpClip (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ 0, p.2 ⊓ 1)
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **Canonicalize** an arbitrary presenting list into one that presents a genuine
 `U`-neighbourhood: clip every pair into `[0,1)` and discard degenerate pairs, falling back to the
@@ -1293,20 +1078,12 @@ def canonList (L : List (ℚ × ℚ)) : List (ℚ × ℚ) :=
   match (L.map qpClip).filter (fun p => decide (p.1 < p.2)) with
   | [] => [((0 : ℚ), (1 : ℚ))]
   | L' => L'
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- Unfolding equation for `canonList` on the `cons` branch. -/
 theorem canonList_eq_of_filter_eq_cons {L : List (ℚ × ℚ)} {a : ℚ × ℚ} {l : List (ℚ × ℚ)}
     (h : (L.map qpClip).filter (fun p => decide (p.1 < p.2)) = a :: l) :
     canonList L = a :: l := by
   unfold canonList; rw [h]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- Unfolding equation for `canonList` on the `nil` branch, stated so `rw` can fire on a literal
 occurrence of `canonList L` (rather than needing to see through the `match`). -/
@@ -1314,10 +1091,6 @@ theorem canonList_eq_of_filter_eq_nil {L : List (ℚ × ℚ)}
     (h : (L.map qpClip).filter (fun p => decide (p.1 < p.2)) = []) :
     canonList L = [((0 : ℚ), (1 : ℚ))] := by
   unfold canonList; rw [h]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem presentedIntervals_map_qpClip (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map qpClip) = presentedIntervals L ∩ Set.Ico (0 : ℚ) 1 := by
@@ -1329,10 +1102,6 @@ theorem presentedIntervals_map_qpClip (L : List (ℚ × ℚ)) :
       le_sup_right.trans hx1, hx2.trans_le inf_le_right⟩
   · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hx0, hx1⟩
     exact ⟨(q.1 ⊔ 0, q.2 ⊓ 1), ⟨q, hq, rfl⟩, sup_le hxq1 hx0, lt_inf_iff.mpr ⟨hxq2, hx1⟩⟩
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **`canonList` always presents a genuine `U`-neighbourhood.** -/
 theorem U_mem_presentedIntervals_canonList (L : List (ℚ × ℚ)) :
@@ -1350,10 +1119,6 @@ theorem U_mem_presentedIntervals_canonList (L : List (ℚ × ℚ)) :
     have ha : a.1 < a.2 := by simpa using (List.mem_filter.mp hmem).2
     refine ⟨⟨a :: l, rfl⟩, ?_, hL'eq ▸ Set.inter_subset_right⟩
     exact ⟨a.1, mem_presentedIntervals.mpr ⟨a, List.mem_cons.mpr (Or.inl rfl), le_refl _, ha⟩⟩
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **`canonList` is a no-op (as a set) on a list that already presents a `U`-neighbourhood.** -/
 theorem canonList_fixed {L : List (ℚ × ℚ)} (h : U.mem (presentedIntervals L)) :
@@ -1368,68 +1133,36 @@ theorem canonList_fixed {L : List (ℚ × ℚ)} (h : U.mem (presentedIntervals L
     exact hne.ne_empty hcontra
   · rw [canonList_eq_of_filter_eq_cons hL, ← hL, presentedIntervals_filter_qpPos,
       presentedIntervals_map_qpClip, Set.inter_eq_left.mpr hsub]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- Code-level `qpClip`: `(r,s) ↦ (r⊔0, s⊓1)` on a rational-pair code. -/
 def qpClipCode (e : ℕ) : ℕ :=
   Nat.pair (ratMaxCode (Nat.pair e.unpair.1 zeroCode)) (ratMinCode (Nat.pair e.unpair.2 oneCode))
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- `[qpClipCode e]` if the clipped pair is non-degenerate, else `[]` (the empty list code `0`). -/
 def canonFilterStep (e : ℕ) : ℕ :=
   selectFn (qpNonemptyBop (qpClipCode e)) (Nat.pair (qpClipCode e) 0 + 1) 0
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- The code-level clip-and-filter pass, mirroring the list-level
 `(L.map qpClip).filter (fun p => decide (p.1 < p.2))`. -/
 def canonListCode (c : ℕ) : ℕ := flatMapCode (fun t => canonFilterStep t.unpair.2) 0 c
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **The code-level canonicalization**, mirroring `canonList` exactly: `canonListCode c` if
 non-empty, else the fallback singleton `[masterPairCode]` (presenting `U.master`). -/
 def canonCode (c : ℕ) : ℕ :=
   selectFn (isZero (canonListCode c)) (Nat.pair masterPairCode 0 + 1) (canonListCode c)
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **`𝒰`'s enumeration**: canonicalize the `List (ℚ × ℚ)` coded by `n`. -/
 def UX (n : ℕ) : Set ℚ := presentedIntervals (decodeQPairList (canonCode n))
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- The intersection index: `combineCode` on canonicalized codes (`UX` re-canonicalizes on
 lookup, so no further canonicalization is needed here). -/
 def Uinter (n m : ℕ) : ℕ := combineCode (canonCode n) (canonCode m)
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem decodeRatPair_qpClipCode (e : ℕ) :
     decodeRatPair (qpClipCode e) = qpClip (decodeRatPair e) := by
   unfold qpClipCode qpClip decodeRatPair
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [decodeRat_ratMaxCode, decodeRat_ratMinCode, decodeRat_zeroCode, decodeRat_oneCode]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem decodeList_canonFilterStep (e : ℕ) :
     decodeList (canonFilterStep e)
@@ -1450,10 +1183,6 @@ theorem decodeList_canonFilterStep (e : ℕ) :
       rw [← qpNonemptyBop_eq_one_iff]; omega
     rw [decodeRatPair_qpClipCode] at hnot
     simp [hnot, decodeList_zero]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem decodeQPairList_canonFilterStep (e : ℕ) :
     decodeQPairList (canonFilterStep e)
@@ -1462,10 +1191,6 @@ theorem decodeQPairList_canonFilterStep (e : ℕ) :
   unfold decodeQPairList
   rw [decodeList_canonFilterStep]
   split <;> simp [decodeRatPair_qpClipCode]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem mem_decodeQPairList_canonFilterStep (e : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (canonFilterStep e) ↔
@@ -1474,10 +1199,6 @@ theorem mem_decodeQPairList_canonFilterStep (e : ℕ) (p : ℚ × ℚ) :
   by_cases h : (qpClip (decodeRatPair e)).1 < (qpClip (decodeRatPair e)).2
   · simp [h]
   · simp [h]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **`canonListCode` realizes the clip-and-filter pass at the set level.** -/
 theorem mem_decodeQPairList_canonListCode (c : ℕ) (p : ℚ × ℚ) :
@@ -1492,10 +1213,6 @@ theorem mem_decodeQPairList_canonListCode (c : ℕ) (p : ℚ × ℚ) :
   · rintro ⟨p0, hp0, hcond, hp⟩
     obtain ⟨y, hy, rfl⟩ := (mem_decodeQPairList c p0).mp hp0
     exact ⟨y, hy, by rw [unpair_pair_snd, mem_decodeQPairList_canonFilterStep]; exact ⟨hcond, hp⟩⟩
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- Every element of `decodeQPairList (canonListCode c)` is already non-degenerate (this is
 `canonFilterStep`'s whole point), so — unlike an arbitrary list — this particular list is empty
@@ -1506,10 +1223,6 @@ theorem decodeQPairList_canonListCode_eq_nil_iff (c : ℕ) :
   (presentedIntervals_eq_empty_iff_of_forall_lt (fun p hp => by
     obtain ⟨p0, hp0, hcond, rfl⟩ := (mem_decodeQPairList_canonListCode c p).mp hp
     exact hcond)).symm
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **`canonListCode` realizes the clip-and-filter pass at the `presentedIntervals` level.** -/
 theorem presentedIntervals_decodeQPairList_canonListCode (c : ℕ) :
@@ -1525,10 +1238,6 @@ theorem presentedIntervals_decodeQPairList_canonListCode (c : ℕ) :
   · rintro ⟨⟨p0, hp0, hp⟩, hcond⟩
     rw [decide_eq_true_eq] at hcond
     exact ⟨p0, hp0, hp ▸ hcond, hp.symm⟩
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **`canonCode` realizes `canonList` at the `presentedIntervals` level.** -/
 theorem presentedIntervals_decodeQPairList_canonCode (c : ℕ) :
@@ -1574,17 +1283,9 @@ theorem presentedIntervals_decodeQPairList_canonCode (c : ℕ) :
         presentedIntervals_map_qpClip]
       exact hne
     rw [hcc, decodeQPairList_masterCode, canonList_eq_of_filter_eq_nil hLnil']
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem UX_eq (n : ℕ) : UX n = presentedIntervals (canonList (decodeQPairList n)) :=
   presentedIntervals_decodeQPairList_canonCode n
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem UX_UmasterIdx : UX UmasterIdx = U.master := by
   unfold UmasterIdx
@@ -1592,18 +1293,10 @@ theorem UX_UmasterIdx : UX UmasterIdx = U.master := by
   have hmem : U.mem (presentedIntervals [((0 : ℚ), (1 : ℚ))]) := by
     rw [presentedIntervals_singleton_zero_one]; exact U.master_mem
   rw [canonList_fixed hmem, presentedIntervals_singleton_zero_one]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- Every `UX n` is a genuine `U`-neighbourhood. -/
 theorem U_mem_UX (n : ℕ) : U.mem (UX n) := by
   rw [UX_eq]; exact U_mem_presentedIntervals_canonList _
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- `UX` is onto `U`'s neighbourhoods: every `U`-neighbourhood already has a Scott-literal
 presenting list (`U_mem_iff_scott`), on which `canonList` is a no-op (`canonList_fixed`). -/
@@ -1613,10 +1306,6 @@ theorem U_surj_UX : ∀ {Y : Set ℚ}, U.mem Y → ∃ n, UX n = Y := by
   have hUL : U.mem (presentedIntervals L) := by rw [← hYeq]; exact hY
   exact ⟨encodeQPairList L, by
     rw [UX_eq, decodeQPairList_encodeQPairList, canonList_fixed hUL, ← hYeq]⟩
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **Scott's consistency condition reduces to non-emptiness**: since `U`'s raw intersection
 `combineCode` output is *automatically* a genuine `U`-neighbourhood whenever it is non-empty
@@ -1635,10 +1324,6 @@ theorem U_cons_iff_nonempty_inter (n m : ℕ) :
         hne, Set.inter_subset_left.trans hsubn⟩
     obtain ⟨k, hk⟩ := U_surj_UX hUmem
     exact ⟨k, by rw [hk]⟩
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem Uinter_spec {n m : ℕ} (h : ∃ k, UX k ⊆ UX n ∩ UX m) : UX (Uinter n m) = UX n ∩ UX m := by
   have hne : (UX n ∩ UX m).Nonempty := (U_cons_iff_nonempty_inter n m).mp h
@@ -1651,30 +1336,18 @@ theorem Uinter_spec {n m : ℕ} (h : ∃ k, UX k ⊆ UX n ∩ UX m) : UX (Uinter
   unfold Uinter UX
   rw [presentedIntervals_decodeQPairList_canonCode, canonList_fixed hUL,
     presentedIntervals_decodeQPairList_combineCode]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem primrec_qpClipCode : Nat.Primrec qpClipCode := by
   have h1 : Nat.Primrec (fun e : ℕ => e.unpair.1) := Nat.Primrec.left
   have h2 : Nat.Primrec (fun e : ℕ => e.unpair.2) := Nat.Primrec.right
   exact ((primrec_ratMaxCode.comp (h1.pair (Nat.Primrec.const zeroCode))).pair
     (primrec_ratMinCode.comp (h2.pair (Nat.Primrec.const oneCode)))).of_eq fun _ => rfl
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem primrec_canonFilterStep : Nat.Primrec canonFilterStep := by
   have hc : Nat.Primrec qpClipCode := primrec_qpClipCode
   exact (primrec_selectFn (primrec_qpNonemptyBop.comp hc)
     (Nat.Primrec.succ.comp (hc.pair (Nat.Primrec.const 0))) (Nat.Primrec.const 0)).of_eq
     fun _ => rfl
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem primrec_canonListCode : Nat.Primrec canonListCode := by
   have hg : Nat.Primrec (fun t : ℕ => canonFilterStep t.unpair.2) :=
@@ -1683,19 +1356,11 @@ theorem primrec_canonListCode : Nat.Primrec canonListCode := by
     fun c => by
       unfold canonListCode
       simp only [id, unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem primrec_canonCode : Nat.Primrec canonCode :=
   (primrec_selectFn (primrec_isZero.comp primrec_canonListCode)
     (Nat.Primrec.const (Nat.pair masterPairCode 0 + 1)) primrec_canonListCode).of_eq
     fun _ => rfl
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **7.1(ii) for `𝒰`**: consistency `∃k. X_k ⊆ Xₙ ∩ Xₘ` is recursively decidable, via
 `U_cons_iff_nonempty_inter` and `recDecidable_presentedIntervals_nonempty`. -/
@@ -1708,10 +1373,6 @@ theorem U_cons_computable : RecDecidable₂ (fun n m => ∃ k, UX k ⊆ UX n ∩
   refine RecDecidable.of_iff (fun t => ?_) (recDecidable_presentedIntervals_nonempty.comp hcomb)
   show (∃ k, UX k ⊆ UX t.unpair.1 ∩ UX t.unpair.2) ↔ _
   rw [U_cons_iff_nonempty_inter, UX, UX, presentedIntervals_decodeQPairList_combineCode]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **7.1(i) for `𝒰`**: `Xₙ ∩ Xₘ = X_k` is recursively decidable. Reduces to
 `recDecidable₂_presentedIntervals_eq` on the codes `combineCode (canonCode n) (canonCode m)`
@@ -1734,20 +1395,12 @@ theorem U_interEq_computable : RecDecidable₃ (fun n m k => UX n ∩ UX m = UX 
   show UX t.unpair.1 ∩ UX t.unpair.2.unpair.1 = UX t.unpair.2.unpair.2 ↔ _
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [UX, UX, UX, presentedIntervals_decodeQPairList_combineCode]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 theorem Uinter_primrec : Nat.Primrec (fun t : ℕ => Uinter t.unpair.1 t.unpair.2) := by
   unfold Uinter
   exact (primrec_combineCode.comp ((primrec_canonCode.comp Nat.Primrec.left).pair
     (primrec_canonCode.comp Nat.Primrec.right))).of_eq
     fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **Theorem 8.8(b), Part 3.** `𝒰` (Definition 8.7) has a genuine `ComputablePresentation`. -/
 def UComputablePresentation : ComputablePresentation U where
@@ -1761,17 +1414,9 @@ def UComputablePresentation : ComputablePresentation U where
   inter_spec := Uinter_spec
   masterIdx := UmasterIdx
   masterIdx_spec := UX_UmasterIdx
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **`𝒰` is effectively given.** -/
 theorem U_isEffectivelyGiven : U.IsEffectivelyGiven := ⟨UComputablePresentation⟩
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- `decodeQPairList (canonCode c)` is never empty (it always contains at least the fallback
 pair `(0,1)`, or a genuine clipped pair). -/
@@ -1791,19 +1436,11 @@ theorem decodeQPairList_canonCode_ne_nil (c : ℕ) : decodeQPairList (canonCode 
     have h' := hcontra
     unfold decodeQPairList at h'
     rwa [List.map_eq_nil_iff, decodeList_eq_nil_iff] at h'
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- `canonCode c` is never the `0` (empty-list) code. -/
 theorem canonCode_ne_zero (c : ℕ) : canonCode c ≠ 0 := by
   intro h
   exact decodeQPairList_canonCode_ne_nil c (by rw [h]; unfold decodeQPairList; rw [decodeList_zero]; rfl)
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- Every pair in `decodeQPairList (canonListCode c)` is already non-degenerate (this is
 `canonFilterStep`'s whole point). -/
@@ -1811,10 +1448,6 @@ theorem forall_lt_decodeQPairList_canonListCode (c : ℕ) :
     ∀ p ∈ decodeQPairList (canonListCode c), p.1 < p.2 := fun p hp => by
   obtain ⟨p0, -, hcond, rfl⟩ := (mem_decodeQPairList_canonListCode c p).mp hp
   exact hcond
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- **Every pair in `decodeQPairList (canonCode c)` is non-degenerate** — both branches of
 `canonCode` (the filtered list, or the `[masterPairCode]` fallback) only ever produce
@@ -1835,10 +1468,9 @@ theorem forall_lt_decodeQPairList_canonCode (c : ℕ) :
       exact hz ((isZero_eq_one_iff _).mp (by omega))
     rw [hzero, selectFn_zero]
     exact forall_lt_decodeQPairList_canonListCode c
+
 end
 
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-end

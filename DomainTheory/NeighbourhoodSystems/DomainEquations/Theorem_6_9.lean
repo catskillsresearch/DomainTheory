@@ -221,21 +221,14 @@ instance : Category StrictDomainObj where
   id_comp f := Subtype.ext (ApproximableMap.comp_idMap f.1)
   comp_id f := Subtype.ext (ApproximableMap.idMap_comp f.1)
   assoc f g h := Subtype.ext (ApproximableMap.comp_assoc h.1 g.1 f.1).symm
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 @[simp] theorem StrictDomainObj.id_val (D : StrictDomainObj) :
     ((𝟙 D) : StrictMap D.sys D.sys).1 = ApproximableMap.idMap D.sys := rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 @[simp] theorem StrictDomainObj.comp_val {D E F : StrictDomainObj}
     (g : (E ⟶ F)) (f : (D ⟶ E)) :
     ((g ⊚ f : StrictMap D.sys F.sys)).1 = g.1.comp f.1 := rfl
+
 end
 
 section
@@ -248,82 +241,22 @@ variable {α : Type*}
 @[simp] theorem mem_embZero {X : Set α} {p : List Bool} {a : α} :
     (p, a) ∈ embZero X ↔ p = [] ∧ a ∈ X := Iff.rfl
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 @[simp] theorem mem_embL {P : Set (List Bool × α)} {p : List Bool} {a : α} :
     (p, a) ∈ embL P ↔ ∃ p', p = true :: p' ∧ (p', a) ∈ P := Iff.rfl
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 @[simp] theorem mem_embR {Q : Set (List Bool × α)} {p : List Bool} {a : α} :
     (p, a) ∈ embR Q ↔ ∃ q', p = false :: q' ∧ (q', a) ∈ Q := Iff.rfl
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 @[simp] theorem mem_embPair {P Q : Set (List Bool × α)} {p : List Bool} {a : α} :
     (p, a) ∈ embPair P Q ↔
       (∃ p', p = true :: p' ∧ (p', a) ∈ P) ∨ (∃ q', p = false :: q' ∧ (q', a) ∈ Q) := Iff.rfl
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 @[simp] theorem mem_Gamma {D : NeighborhoodSystem α} {p : List Bool} {a : α} :
     (p, a) ∈ Gamma D ↔ a ∈ D.master := Iff.rfl
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 theorem Gamma_nonempty {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty) :
     (Gamma D).Nonempty := by
   obtain ⟨a, ha⟩ := hD D.master D.master_mem; exact ⟨([], a), ha⟩
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 theorem embPair_inter (P Q P' Q' : Set (List Bool × α)) :
     embPair P Q ∩ embPair P' Q' = embPair (P ∩ P') (Q ∩ Q') := by
@@ -333,29 +266,9 @@ theorem embPair_inter (P Q P' Q' : Set (List Bool × α)) :
   · simp
   · cases b <;> simp [List.cons.injEq]
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 theorem embPair_nonempty {P Q : Set (List Bool × α)} (hP : P.Nonempty) :
     (embPair P Q).Nonempty := by
   obtain ⟨⟨p', a⟩, hP⟩ := hP; exact ⟨(true :: p', a), Or.inl ⟨p', rfl, hP⟩⟩
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 theorem embPair_subset {P Q P' Q' : Set (List Bool × α)} :
     embPair P Q ⊆ embPair P' Q' ↔ P ⊆ P' ∧ Q ⊆ Q' := by
@@ -379,31 +292,11 @@ theorem embPair_subset {P Q P' Q' : Set (List Bool × α)} :
     · exact Or.inl ⟨p', hp', hP hPmem⟩
     · exact Or.inr ⟨q', hq', hQ hQmem⟩
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 theorem embPair_injective {P Q P' Q' : Set (List Bool × α)}
     (h : embPair P Q = embPair P' Q') : P = P' ∧ Q = Q' := by
   obtain ⟨hP, hQ⟩ := embPair_subset.mp h.subset
   obtain ⟨hP', hQ'⟩ := embPair_subset.mp h.symm.subset
   exact ⟨Set.Subset.antisymm hP hP', Set.Subset.antisymm hQ hQ'⟩
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 theorem embPair_subset_Gamma {D : NeighborhoodSystem α} {P Q : Set (List Bool × α)}
     (hP : P ⊆ Gamma D) (hQ : Q ⊆ Gamma D) : embPair P Q ⊆ Gamma D := by
@@ -411,31 +304,11 @@ theorem embPair_subset_Gamma {D : NeighborhoodSystem α} {P Q : Set (List Bool �
   · have h := hP hPmem; exact h
   · have h := hQ hQmem; exact h
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 theorem embZero_inter (X X' : Set α) :
     embZero X ∩ embZero X' = embZero (X ∩ X' : Set α) := by
   ext ⟨p, a⟩
   simp only [Set.mem_inter_iff, mem_embZero]
   tauto
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 theorem embZero_inter_embPair (X : Set α) (P Q : Set (List Bool × α)) :
     embZero X ∩ embPair P Q = ∅ := by
@@ -445,28 +318,8 @@ theorem embZero_inter_embPair (X : Set α) (P Q : Set (List Bool × α)) :
   rintro ⟨rfl, -⟩
   exact ⟨by rintro ⟨p', hp', -⟩; exact absurd hp' (by simp), by rintro ⟨q', hq', -⟩; exact absurd hq' (by simp)⟩
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 theorem embZero_nonempty {X : Set α} (hX : X.Nonempty) : (embZero X).Nonempty := by
   obtain ⟨a, ha⟩ := hX; exact ⟨([], a), rfl, ha⟩
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 theorem embZero_subset {X X' : Set α} : embZero X ⊆ embZero X' ↔ X ⊆ X' := by
   constructor
@@ -475,42 +328,12 @@ theorem embZero_subset {X X' : Set α} : embZero X ⊆ embZero X' ↔ X ⊆ X' :
     exact this.2
   · intro h t ht; exact ⟨ht.1, h ht.2⟩
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 theorem embZero_injective {X X' : Set α} (h : embZero X = embZero X') : X = X' :=
   Set.Subset.antisymm (embZero_subset.mp h.subset) (embZero_subset.mp h.symm.subset)
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 theorem embZero_subset_Gamma {D : NeighborhoodSystem α} {X : Set α} (hX : D.mem X) :
     embZero X ⊆ Gamma D := by
   rintro ⟨p, a⟩ ⟨-, ha⟩; exact D.sub_master hX ha
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 /-- Under Scott's standing assumption `∅ ∉ 𝒟`, no neighbourhood of `D^§` is empty. -/
 theorem memS_nonempty {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
@@ -520,16 +343,6 @@ theorem memS_nonempty {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Non
   | zero hX => exact embZero_nonempty (hD _ hX)
   | pair _ _ ihP _ => exact embPair_nonempty ihP
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 /-- Every neighbourhood of `D^§` is a subset of the master `Γ` (Scott's `𝒟^§ ⊆ 𝒫(Γ)`). -/
 theorem memS_subset_gamma {D : NeighborhoodSystem α} {W : Set (List Bool × α)}
     (hW : MemS D W) : W ⊆ Gamma D := by
@@ -537,16 +350,6 @@ theorem memS_subset_gamma {D : NeighborhoodSystem α} {W : Set (List Bool × α)
   | gamma => exact subset_rfl
   | zero hX => exact embZero_subset_Gamma hX
   | pair _ _ ihP ihQ => exact embPair_subset_Gamma ihP ihQ
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 /-- **Example 6.1 — closure under consistent intersection.** Scott's central verification, "by
 induction on the number of steps required to put `X` and `Y` into `𝒟^§`". The cross cases
@@ -610,16 +413,6 @@ theorem memS_inter {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonemp
         obtain ⟨hsub₀, hsub₁⟩ := embPair_subset.mp hsub
         exact MemS.pair (ihP hP' hZ₀ hsub₀) (ihQ hQ' hZ₁ hsub₁)
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 /-- **Example 6.1 (Scott 1981, PRG-19).** The *tree algebra* `D^§`: a neighbourhood system over
 `Γ = {1,2}* 0 Δ`, under the standing assumption `∅ ∉ 𝒟` (`hD`). -/
 abbrev Dsharp (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty) :
@@ -633,41 +426,11 @@ abbrev Dsharp (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty) :
   inter_mem := fun hX hY hZ hsub => memS_inter hD hX hY hZ hsub
   sub_master := memS_subset_gamma
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 @[simp] theorem Dsharp_mem {D : NeighborhoodSystem α} {hD : ∀ X, D.mem X → X.Nonempty}
     {W : Set (List Bool × α)} : (Dsharp D hD).mem W ↔ MemS D W := Iff.rfl
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 @[simp] theorem Dsharp_master {D : NeighborhoodSystem α} {hD : ∀ X, D.mem X → X.Nonempty} :
     (Dsharp D hD).master = Gamma D := rfl
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 theorem memS_embPair_inv {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
     {P Q : Set (List Bool × α)} (h : MemS D (embPair P Q)) : MemS D P ∧ MemS D Q := by
@@ -693,16 +456,6 @@ theorem memS_embPair_inv {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.
     obtain ⟨hPP, hQQ⟩ := embPair_injective hW
     rw [hPP, hQQ]; exact ⟨hP', hQ'⟩
 
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
 theorem memS_embZero_inv {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty) {X : Set α}
     (h : MemS D (embZero X)) : D.mem X := by
   generalize hW : embZero X = W at h
@@ -722,16 +475,6 @@ theorem memS_embZero_inv {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.
       · simp [hq']
     have hz : t ∈ embZero X := by rw [← hW] at ht; exact ht
     exact hcons hz.1
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
 
 section Equation
 
@@ -786,13 +529,3 @@ structure MonotoneAt (T : Endofunctor DomainObj.{w}) {α : Type w}
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap
-
-section
-universe w
-
-end
-end DomainTheory.NeighbourhoodSystems
-end

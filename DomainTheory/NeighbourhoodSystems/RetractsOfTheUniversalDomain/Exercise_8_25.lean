@@ -51,11 +51,6 @@ def arrowReindexOrderIso {ι ι' : Type*} (e : ι ≃ ι') (E : Type*) [Preorder
       simpa using h (e i)
     · intro h i'
       simpa using h (e.symm i')
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 /-- The pointwise order on `α ⊕ β → E` corresponds, coordinatewise, to the product order on
 `(α → E) × (β → E)`: splitting a sum-indexed family into its two summand-indexed restrictions is an
@@ -75,21 +70,11 @@ def sumArrowOrderIso (α β : Type*) (E : Type*) [Preorder E] :
       | inr b => exact h2 b
     · intro h
       exact ⟨fun a => h (Sum.inl a), fun b => h (Sum.inr b)⟩
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 /-- **Interleaving.** Two `ℕ`-indexed sequences of `E` can be merged, order-isomorphically, into a
 single `ℕ`-indexed sequence, via the pairing bijection `ℕ ⊕ ℕ ≃ ℕ`. -/
 def interleaveOrderIso (E : Type*) [Preorder E] : (ℕ → E) × (ℕ → E) ≃o (ℕ → E) :=
   (sumArrowOrderIso ℕ ℕ E).symm.trans (arrowReindexOrderIso Equiv.natSumNatEquivNat E)
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 /-- The order isomorphism `|𝒟^∞ × 𝒟^∞| ≃o |𝒟^∞|` underlying `pow_prod_isomorphic`. -/
 def powProdOrderIso (V : NeighborhoodSystem α) :
@@ -97,17 +82,13 @@ def powProdOrderIso (V : NeighborhoodSystem α) :
   (prodEquiv (iterSys V) (iterSys V)).trans <|
     (prodCongrOrderIso (iterSeqEquiv V) (iterSeqEquiv V)).trans <|
       (interleaveOrderIso V.Element).trans (iterSeqEquiv V).symm
-end
-
-section
-open NeighborhoodSystem
-variable {α : Type*}
 
 /-- **Exercise 8.25 (Scott 1981, PRG-19), first step: `𝒟^∞ × 𝒟^∞ ≅ 𝒟^∞`**, for any `𝒟`. Specialized
 to `𝒟 = 𝒰` this is Scott's `𝒰^∞ × 𝒰^∞ ≅ 𝒰^∞`. -/
 theorem pow_prod_isomorphic (V : NeighborhoodSystem α) :
     prod (iterSys V) (iterSys V) ≅ᴰ iterSys V :=
   ⟨powProdOrderIso V⟩
+
 end
 
 section
@@ -136,11 +117,6 @@ def isoOfUnique (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
   map_rel_iff' := by
     intro a b
     exact iff_of_true (le_refl _) (le_of_eq (Subsingleton.elim a b))
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β : Type*}
 
 /-- **There is only one approximable self-map of `𝟙`, the identity.** Both maps induce the same
 (unique) elementwise function, so `ext_of_toElementMap` identifies them. -/
@@ -153,27 +129,18 @@ along `funSpaceEquiv`. -/
 instance uniqueFunSpaceUnitSys : Unique (funSpace unitSys unitSys).Element where
   default := (funSpaceEquiv unitSys unitSys).symm default
   uniq _x := (funSpaceEquiv unitSys unitSys).injective (Subsingleton.elim _ _)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β : Type*}
 
 /-- **Any two `NeighborhoodSystem`s with `Unique` element posets determine isomorphic domains.** -/
 theorem isomorphic_of_unique (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     [Unique V₀.Element] [Unique V₁.Element] : V₀ ≅ᴰ V₁ :=
   ⟨isoOfUnique V₀ V₁⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β : Type*}
 
 /-- **Exercise 8.25 (Scott 1981, PRG-19) — the obstruction `𝟙 → 𝟙 = 𝟙`.** The terminal one-point
 domain is a fixed point of `→`, carrying no information: this is why "the obvious solution by
 retracts is of no use". -/
 theorem funSpace_unitSys_isomorphic : funSpace unitSys unitSys ≅ᴰ unitSys :=
   isomorphic_of_unique _ _
+
 end
 
 section
@@ -194,18 +161,10 @@ open Domain.Recursive
 
 /-- Decode a natural code as an integer: `pair a b ↦ a - b`. -/
 def decodeInt (c : ℕ) : ℤ := (c.unpair.1 : ℤ) - (c.unpair.2 : ℤ)
-end
-
-section
-open Domain.Recursive
 
 /-- Encode an integer as the difference-pair `(z.toNat, (-z).toNat)` (one of the two is always
 `0`). -/
 def encodeInt (z : ℤ) : ℕ := Nat.pair z.toNat (-z).toNat
-end
-
-section
-open Domain.Recursive
 
 @[simp] theorem decodeInt_encodeInt (z : ℤ) : decodeInt (encodeInt z) = z := by
   unfold decodeInt encodeInt
@@ -220,24 +179,12 @@ open Domain.Recursive
       have := Int.toNat_of_nonpos (show z ≤ 0 from h'.le); simp [this]
     have hnz : ((-z).toNat : ℤ) = -z := Int.toNat_of_nonneg (by omega)
     rw [hz, hnz]; ring
-end
-
-section
-open Domain.Recursive
 
 /-- Decode a natural code as a rational via `mkRat`: `pair c d ↦ mkRat (decodeInt c) (d + 1)`. -/
 def decodeRat (c : ℕ) : ℚ := mkRat (decodeInt c.unpair.1) (c.unpair.2 + 1)
-end
-
-section
-open Domain.Recursive
 
 /-- Encode a rational `q` using its own reduced `num`/`den`. -/
 def encodeRat (q : ℚ) : ℕ := Nat.pair (encodeInt q.num) (q.den - 1)
-end
-
-section
-open Domain.Recursive
 
 @[simp] theorem decodeRat_encodeRat (q : ℚ) : decodeRat (encodeRat q) = q := by
   unfold decodeRat encodeRat
@@ -245,46 +192,22 @@ open Domain.Recursive
   have hden : q.den - 1 + 1 = q.den := by
     have := q.den_nz; omega
   rw [hden, Rat.mkRat_self]
-end
-
-section
-open Domain.Recursive
 
 /-- A fixed code for the rational `1`. -/
 def oneCode : ℕ := Nat.pair (Nat.pair 1 0) 0
-end
-
-section
-open Domain.Recursive
 
 /-- The denominator (`d + 1`, always positive) of a rational code. -/
 def qDen (c : ℕ) : ℕ := c.unpair.2 + 1
-end
-
-section
-open Domain.Recursive
 
 /-- The numerator's negative part `b` of a rational code (so the numerator is `a - b`). -/
 def qNumN (c : ℕ) : ℕ := c.unpair.1.unpair.2
-end
-
-section
-open Domain.Recursive
 
 /-- The numerator's positive part `a` of a rational code. -/
 def qNumP (c : ℕ) : ℕ := c.unpair.1.unpair.1
-end
-
-section
-open Domain.Recursive
 
 theorem decodeRat_eq (c : ℕ) :
     decodeRat c = mkRat ((qNumP c : ℤ) - (qNumN c : ℤ)) (qDen c) := by
   unfold decodeRat decodeInt qNumP qNumN qDen; rfl
-end
-
-section
-open Domain.Recursive
 
 /-- The `{0,1}`-valued cross-cleared comparison test `a₁·d₂ + b₂·d₁ ≤ a₂·d₁ + b₁·d₂`, applied to
 `t = pair c₁ c₂`. -/
@@ -292,52 +215,24 @@ def ratLeCode (t : ℕ) : ℕ :=
   let c1 := t.unpair.1; let c2 := t.unpair.2
   isZero ((qNumP c1 * qDen c2 + qNumN c2 * qDen c1) -
     (qNumP c2 * qDen c1 + qNumN c1 * qDen c2))
-end
-
-section
-open Domain.Recursive
 
 /-- `ratLtCode (pair c₁ c₂)` decides `decodeRat c₁ < decodeRat c₂` via `¬ (decodeRat c₂ ≤ decodeRat c₁)`. -/
 def ratLtCode (t : ℕ) : ℕ := 1 - ratLeCode (Nat.pair t.unpair.2 t.unpair.1)
-end
-
-section
-open Domain.Recursive
 
 /-- `ratMaxCode (pair c₁ c₂)` selects whichever of `c₁, c₂` decodes to the larger rational. -/
 def ratMaxCode (t : ℕ) : ℕ := selectFn (ratLeCode t) t.unpair.2 t.unpair.1
-end
-
-section
-open Domain.Recursive
 
 /-- `ratMinCode (pair c₁ c₂)` selects whichever of `c₁, c₂` decodes to the smaller rational. -/
 def ratMinCode (t : ℕ) : ℕ := selectFn (ratLeCode t) t.unpair.1 t.unpair.2
-end
-
-section
-open Domain.Recursive
 
 /-- A fixed code for the rational `0`. -/
 def zeroCode : ℕ := Nat.pair (Nat.pair 0 0) 0
-end
-
-section
-open Domain.Recursive
 
 @[simp] theorem decodeRat_zeroCode : decodeRat zeroCode = 0 := by
   rw [decodeRat_eq]; norm_num [zeroCode, qNumP, qNumN, qDen, unpair_pair]
-end
-
-section
-open Domain.Recursive
 
 @[simp] theorem decodeRat_oneCode : decodeRat oneCode = 1 := by
   rw [decodeRat_eq]; norm_num [oneCode, qNumP, qNumN, qDen, unpair_pair]
-end
-
-section
-open Domain.Recursive
 
 /-- The midpoint code `(c₁+c₂)/2` of two rational codes, via denominator cross-clearing (as in
 `ratLeCode`) for the sum, then doubling the denominator to halve. -/
@@ -346,38 +241,18 @@ def ratMidCode (t : ℕ) : ℕ :=
   Nat.pair (Nat.pair (qNumP c1 * qDen c2 + qNumP c2 * qDen c1)
                       (qNumN c1 * qDen c2 + qNumN c2 * qDen c1))
     (2 * qDen c1 * qDen c2 - 1)
-end
-
-section
-open Domain.Recursive
 
 /-- `decodeRat` is surjective: every rational number is `decodeRat` of some code (namely
 `encodeRat q`). -/
 theorem decodeRat_surjective : Function.Surjective decodeRat :=
   fun q => ⟨encodeRat q, decodeRat_encodeRat q⟩
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_qDen : Nat.Primrec qDen :=
   Nat.Primrec.succ.comp Nat.Primrec.right
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_qNumN : Nat.Primrec qNumN := Nat.Primrec.right.comp Nat.Primrec.left
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_qNumP : Nat.Primrec qNumP := Nat.Primrec.left.comp Nat.Primrec.left
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_ratLeCode : Nat.Primrec ratLeCode := by
   have hc1 : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
@@ -392,25 +267,13 @@ theorem primrec_ratLeCode : Nat.Primrec ratLeCode := by
       (primrec_mul₂ (primrec_qNumN.comp hc1) (primrec_qDen.comp hc2))
   exact (primrec_isZero.comp (primrec_sub₂ hlhs hrhs)).of_eq fun t => by
     simp only [ratLeCode]
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_ratLtCode : Nat.Primrec ratLtCode :=
   primrec_sub₂ (Nat.Primrec.const 1)
     (primrec_ratLeCode.comp (Nat.Primrec.right.pair Nat.Primrec.left))
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_ratMaxCode : Nat.Primrec ratMaxCode :=
   primrec_selectFn primrec_ratLeCode Nat.Primrec.right Nat.Primrec.left
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_ratMidCode : Nat.Primrec ratMidCode := by
   have hc1 : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
@@ -430,23 +293,11 @@ theorem primrec_ratMidCode : Nat.Primrec ratMidCode := by
       (Nat.Primrec.const 1)
   exact (Nat.Primrec.pair (Nat.Primrec.pair hnumP hnumN) hden).of_eq fun t => by
     simp only [ratMidCode]
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_ratMinCode : Nat.Primrec ratMinCode :=
   primrec_selectFn primrec_ratLeCode Nat.Primrec.left Nat.Primrec.right
-end
-
-section
-open Domain.Recursive
 
 theorem qDen_pos (c : ℕ) : 0 < qDen c := Nat.succ_pos _
-end
-
-section
-open Domain.Recursive
 
 theorem qDen_ratMidCode (c1 c2 : ℕ) : qDen (ratMidCode (Nat.pair c1 c2)) = qDen c1 * qDen c2 * 2 := by
   have h1 : 1 ≤ 2 * qDen c1 * qDen c2 := by
@@ -458,10 +309,6 @@ theorem qDen_ratMidCode (c1 c2 : ℕ) : qDen (ratMidCode (Nat.pair c1 c2)) = qDe
   show (ratMidCode (Nat.pair c1 c2)).unpair.2 + 1 = qDen c1 * qDen c2 * 2
   simp only [ratMidCode, unpair_pair_fst, unpair_pair_snd]
   rw [Nat.sub_add_cancel h1]; ring
-end
-
-section
-open Domain.Recursive
 
 /-- **Correctness of `ratMidCode`**: it decodes to the arithmetic mean of the two decoded
 rationals. -/
@@ -482,10 +329,6 @@ theorem decodeRat_ratMidCode (c1 c2 : ℕ) :
   push_cast
   field_simp
   ring
-end
-
-section
-open Domain.Recursive
 
 /-- **`decodeRat_ratMidCode`, un-paired**: lets callers apply it to an arbitrary code `e`
 (typically itself obtained by decoding a list, e.g. `firstElemCode`) without first having to
@@ -496,10 +339,6 @@ theorem decodeRat_ratMidCode' (e : ℕ) :
     decodeRat (ratMidCode e) = (decodeRat e.unpair.1 + decodeRat e.unpair.2) / 2 := by
   have h := decodeRat_ratMidCode e.unpair.1 e.unpair.2
   rwa [Nat.pair_unpair] at h
-end
-
-section
-open Domain.Recursive
 
 /-- **Correctness of `ratLeCode`**: it is `1` exactly when the decoded rationals compare `≤`. -/
 theorem ratLeCode_eq_one_iff (c1 c2 : ℕ) :
@@ -511,16 +350,8 @@ theorem ratLeCode_eq_one_iff (c1 c2 : ℕ) :
     ← Nat.cast_le (α := ℚ)]
   push_cast
   constructor <;> intro h <;> nlinarith [h]
-end
-
-section
-open Domain.Recursive
 
 theorem ratLeCode_le_one (t : ℕ) : ratLeCode t ≤ 1 := isZero_le_one _
-end
-
-section
-open Domain.Recursive
 
 theorem decodeRat_ratMaxCode (c1 c2 : ℕ) :
     decodeRat (ratMaxCode (Nat.pair c1 c2)) = max (decodeRat c1) (decodeRat c2) := by
@@ -532,10 +363,6 @@ theorem decodeRat_ratMaxCode (c1 c2 : ℕ) :
     have hf0 : ratLeCode (Nat.pair c1 c2) = 0 := by
       have := ratLeCode_le_one (Nat.pair c1 c2); omega
     rw [hf0, selectFn_zero, max_eq_left ((not_le.mp h).le)]
-end
-
-section
-open Domain.Recursive
 
 theorem decodeRat_ratMinCode (c1 c2 : ℕ) :
     decodeRat (ratMinCode (Nat.pair c1 c2)) = min (decodeRat c1) (decodeRat c2) := by
@@ -547,10 +374,6 @@ theorem decodeRat_ratMinCode (c1 c2 : ℕ) :
     have hf0 : ratLeCode (Nat.pair c1 c2) = 0 := by
       have := ratLeCode_le_one (Nat.pair c1 c2); omega
     rw [hf0, selectFn_zero, min_eq_right ((not_le.mp h).le)]
-end
-
-section
-open Domain.Recursive
 
 theorem ratLtCode_eq_one_iff (c1 c2 : ℕ) :
     ratLtCode (Nat.pair c1 c2) = 1 ↔ decodeRat c1 < decodeRat c2 := by
@@ -560,16 +383,8 @@ theorem ratLtCode_eq_one_iff (c1 c2 : ℕ) :
   rw [show (1 : ℕ) - ratLeCode (Nat.pair c2 c1) = 1 ↔ ratLeCode (Nat.pair c2 c1) = 0 from by omega,
     show ratLeCode (Nat.pair c2 c1) = 0 ↔ ¬ ratLeCode (Nat.pair c2 c1) = 1 from by omega,
     ratLeCode_eq_one_iff, not_le]
-end
-
-section
-open Domain.Recursive
 
 theorem ratLtCode_le_one (t : ℕ) : ratLtCode t ≤ 1 := by unfold ratLtCode; omega
-end
-
-section
-open Domain.Recursive
 
 /-- **`<` on rational codes is recursively decidable.** Packaged as `RecDecidable₂` (rather than the
 raw `{0,1}` characteristic `ratLtCode`) so it composes directly with `Recursive.lean`'s closure
@@ -578,6 +393,7 @@ theorem ratLtCode_recDecidable₂ : RecDecidable₂ (fun c1 c2 => decodeRat c1 <
   refine RecDecidable₂.of_paired_zero_one_char primrec_ratLtCode
     (fun t => by have := ratLtCode_le_one t; omega) (fun n m => ?_)
   exact (ratLtCode_eq_one_iff n m).symm
+
 end
 
 end DomainTheory.NeighbourhoodSystems
@@ -843,49 +659,25 @@ open Domain.Recursive
 
 /-- Decode a natural as a pair of rationals. -/
 def decodeRatPair (c : ℕ) : ℚ × ℚ := (decodeRat c.unpair.1, decodeRat c.unpair.2)
-end
-
-section
-open Domain.Recursive
 
 /-- Encode a pair of rationals as a single natural. -/
 def encodeRatPair (p : ℚ × ℚ) : ℕ := Nat.pair (encodeRat p.1) (encodeRat p.2)
-end
-
-section
-open Domain.Recursive
 
 @[simp] theorem decodeRatPair_encodeRatPair (p : ℚ × ℚ) : decodeRatPair (encodeRatPair p) = p := by
   unfold decodeRatPair encodeRatPair
   simp only [unpair_pair_fst, unpair_pair_snd, decodeRat_encodeRat]
-end
-
-section
-open Domain.Recursive
 
 /-- Decode a natural as a list of rational pairs. -/
 def decodeQPairList (c : ℕ) : List (ℚ × ℚ) := (decodeList c).map decodeRatPair
-end
-
-section
-open Domain.Recursive
 
 /-- Encode a list of rational pairs as a single natural, via `encodeList`. -/
 def encodeQPairList (L : List (ℚ × ℚ)) : ℕ := encodeList (L.map encodeRatPair)
-end
-
-section
-open Domain.Recursive
 
 @[simp] theorem decodeQPairList_encodeQPairList (L : List (ℚ × ℚ)) :
     decodeQPairList (encodeQPairList L) = L := by
   unfold decodeQPairList encodeQPairList
   rw [decodeList_encodeList, List.map_map]
   simp only [Function.comp_def, decodeRatPair_encodeRatPair, List.map_id_fun', id]
-end
-
-section
-open Domain.Recursive
 
 /-- Code-level `diffOneList`, taking `t = pair qc pc` (subtracted interval `q` **first**, matching
 `flatMapCode`'s calling convention). -/
@@ -894,105 +686,53 @@ def diffOneCode (t : ℕ) : ℕ :=
     (Nat.pair t.unpair.2.unpair.1 (ratMinCode (Nat.pair t.unpair.2.unpair.2 t.unpair.1.unpair.1)))
     (Nat.pair (Nat.pair (ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.2))
       t.unpair.2.unpair.2) 0 + 1) + 1
-end
-
-section
-open Domain.Recursive
 
 /-- **Difference of a single interval-pair by another**, as a `≤ 2`-element list, via the
 unconditional `Ico_diff_Ico`. -/
 def diffOneList (p q : ℚ × ℚ) : List (ℚ × ℚ) := [(p.1, p.2 ⊓ q.1), (p.1 ⊔ q.2, p.2)]
-end
-
-section
-open Domain.Recursive
 
 /-- `diffSingleCode accL q` subtracts the single interval-pair coded by `q` from the whole
 QPair-list coded by `accL`. -/
 def diffSingleCode (accL q : ℕ) : ℕ := flatMapCode diffOneCode q accL
-end
-
-section
-open Domain.Recursive
 
 /-- `foldCode`'s step for `diffAllCode`'s fold over `L2` (params unused): pops `q`, subtracts it
 from the "remaining pieces" accumulator via `diffSingleCode`. -/
 def diffAllStep (w : ℕ) : ℕ := diffSingleCode w.unpair.2.unpair.1 w.unpair.1
-end
-
-section
-open Domain.Recursive
 
 /-- `diffAllCode pc L2` subtracts the whole QPair-list coded by `L2` from the single interval-pair
 coded by `pc`, folding `diffSingleCode` over `L2` from the seed `[pc]`. -/
 def diffAllCode (pc L2 : ℕ) : ℕ := foldCode diffAllStep 0 (Nat.pair pc 0 + 1) L2
-end
-
-section
-open Domain.Recursive
 
 /-- `diffCode c1 c2` subtracts the QPair-list coded by `c2` from the QPair-list coded by `c1`. -/
 def diffCode (c1 c2 : ℕ) : ℕ := flatMapCode (fun t => diffAllCode t.unpair.2 t.unpair.1) c2 c1
-end
-
-section
-open Domain.Recursive
 
 /-- **Subtract a single interval-pair `q` from a whole presenting list `L`.** -/
 def diffSingleList (L : List (ℚ × ℚ)) (q : ℚ × ℚ) : List (ℚ × ℚ) :=
   L.flatMap (fun p => diffOneList p q)
-end
-
-section
-open Domain.Recursive
 
 /-- **Subtract a whole presenting list `L2` from a single interval-pair `p`**, by folding
 `diffSingleList` over `L2`, starting from `[p]`. -/
 def diffAllList (p : ℚ × ℚ) (L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L2.foldl diffSingleList [p]
-end
-
-section
-open Domain.Recursive
 
 /-- **Subtract `L2` from `L1`**, presenting the set difference `presentedIntervals L1 \\
 presentedIntervals L2`. -/
 def diffLists (L1 L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L1.flatMap (fun p => diffAllList p L2)
-end
-
-section
-open Domain.Recursive
 
 /-- The per-pair-code operation `(pc, qc) ↦ (max, min)` realizing `(p.1 ⊔ q.1, p.2 ⊓ q.2)`. -/
 def qpCombineBop (t : ℕ) : ℕ :=
   Nat.pair (ratMaxCode (Nat.pair t.unpair.1.unpair.1 t.unpair.2.unpair.1))
     (ratMinCode (Nat.pair t.unpair.1.unpair.2 t.unpair.2.unpair.2))
-end
-
-section
-open Domain.Recursive
 
 /-- `combineCode` realizes `combineIntervals` on codes: `Nat.Primrec` in both arguments. -/
 def combineCode (c1 c2 : ℕ) : ℕ := crossCombine qpCombineBop c1 c2
-end
-
-section
-open Domain.Recursive
 
 /-- The `{0,1}` flag: does the rational-pair code `e` decode to a non-degenerate pair `p.1 < p.2`? -/
 def qpNonemptyBop (e : ℕ) : ℕ := ratLtCode (Nat.pair e.unpair.1 e.unpair.2)
-end
-
-section
-open Domain.Recursive
 
 /-- The `{0,1}` flag: does the QPair-list code `c` present a non-empty set? A bounded `∃` over
 `decodeList c` via `Recursive.lean`'s `existsListChar` (the second argument of `existsListChar` is
 an unused parameter, fixed to `0`). -/
 def qpNonemptyChar (c : ℕ) : ℕ := existsListChar (fun t => qpNonemptyBop t.unpair.1) 0 c
-end
-
-section
-open Domain.Recursive
 
 /-- Two lists with the same **elements** present the same set. -/
 theorem presentedIntervals_congr {L1 L2 : List (ℚ × ℚ)} (h : ∀ p, p ∈ L1 ↔ p ∈ L2) :
@@ -1140,10 +880,6 @@ theorem presentedIntervals_nonempty_iff (L : List (ℚ × ℚ)) :
     exact ⟨p, hp, lt_of_le_of_lt hx1 hx2⟩
   · rintro ⟨p, hp, hlt⟩
     exact ⟨p.1, mem_presentedIntervals.mpr ⟨p, hp, le_refl _, hlt⟩⟩
-end
-
-section
-open Domain.Recursive
 
 theorem decodeRatPair_qpCombineBop (e1 e2 : ℕ) :
     decodeRatPair (qpCombineBop (Nat.pair e1 e2))
@@ -1151,28 +887,16 @@ theorem decodeRatPair_qpCombineBop (e1 e2 : ℕ) :
   unfold qpCombineBop decodeRatPair
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [decodeRat_ratMaxCode, decodeRat_ratMinCode]
-end
-
-section
-open Domain.Recursive
 
 theorem mem_combineIntervals {L1 L2 : List (ℚ × ℚ)} {p : ℚ × ℚ} :
     p ∈ combineIntervals L1 L2 ↔ ∃ p1 ∈ L1, ∃ p2 ∈ L2, p = (p1.1 ⊔ p2.1, p1.2 ⊓ p2.2) := by
   unfold combineIntervals
   rw [List.mem_flatMap]
   simp only [List.mem_map, eq_comm]
-end
-
-section
-open Domain.Recursive
 
 theorem mem_decodeQPairList (c : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList c ↔ ∃ e ∈ decodeList c, p = decodeRatPair e := by
   unfold decodeQPairList; rw [List.mem_map]; simp [eq_comm]
-end
-
-section
-open Domain.Recursive
 
 theorem mem_decodeQPairList_combineCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (combineCode c1 c2) ↔
@@ -1191,10 +915,6 @@ theorem mem_decodeQPairList_combineCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
     refine ⟨qpCombineBop (Nat.pair e1 e2),
       (mem_decodeList_crossCombine (bop := qpCombineBop) c1 c2 _).mpr ⟨e1, he1, e2, he2, rfl⟩, ?_⟩
     rw [decodeRatPair_qpCombineBop, he1', he2', hp]
-end
-
-section
-open Domain.Recursive
 
 /-- **`combineCode` realizes `combineIntervals` at the set level.** -/
 theorem presentedIntervals_decodeQPairList_combineCode (c1 c2 : ℕ) :
@@ -1204,20 +924,12 @@ theorem presentedIntervals_decodeQPairList_combineCode (c1 c2 : ℕ) :
   apply presentedIntervals_congr
   intro p
   rw [mem_decodeQPairList_combineCode, mem_combineIntervals]
-end
-
-section
-open Domain.Recursive
 
 /-- **Subset between `presentedIntervals`-coded sets reduces to non-emptiness of `diffCode`.** -/
 theorem presentedIntervals_decodeQPairList_subset_iff (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList c1) ⊆ presentedIntervals (decodeQPairList c2) ↔
       ¬ (presentedIntervals (decodeQPairList (diffCode c1 c2))).Nonempty := by
   rw [presentedIntervals_decodeQPairList_diffCode, Set.not_nonempty_iff_eq_empty, Set.sdiff_eq_empty]
-end
-
-section
-open Domain.Recursive
 
 theorem presentedIntervals_foldl_diffSingleList (L2 : List (ℚ × ℚ)) :
     ∀ acc : List (ℚ × ℚ),
@@ -1228,20 +940,12 @@ theorem presentedIntervals_foldl_diffSingleList (L2 : List (ℚ × ℚ)) :
     intro acc
     rw [List.foldl_cons, ih (diffSingleList acc a), presentedIntervals_diffSingleList,
       presentedIntervals_cons, Set.sdiff_sdiff]
-end
-
-section
-open Domain.Recursive
 
 theorem presentedIntervals_diffAllList (p : ℚ × ℚ) (L2 : List (ℚ × ℚ)) :
     presentedIntervals (diffAllList p L2) = Set.Ico p.1 p.2 \ presentedIntervals L2 := by
   unfold diffAllList
   rw [presentedIntervals_foldl_diffSingleList, presentedIntervals_cons, presentedIntervals_nil,
     Set.union_empty]
-end
-
-section
-open Domain.Recursive
 
 theorem presentedIntervals_diffLists (L1 L2 : List (ℚ × ℚ)) :
     presentedIntervals (diffLists L1 L2) = presentedIntervals L1 \ presentedIntervals L2 := by
@@ -1251,10 +955,6 @@ theorem presentedIntervals_diffLists (L1 L2 : List (ℚ × ℚ)) :
     rw [show diffLists (a :: l) L2 = diffAllList a L2 ++ diffLists l L2 from rfl,
       presentedIntervals_append, presentedIntervals_diffAllList, ih, presentedIntervals_cons,
       Set.union_sdiff_distrib]
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_diffOneCode : Nat.Primrec diffOneCode := by
   have ha : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.right
@@ -1269,19 +969,11 @@ theorem primrec_diffOneCode : Nat.Primrec diffOneCode := by
     (primrec_ratMaxCode.comp (ha.pair hd)).pair hb
   exact (Nat.Primrec.succ.comp (hleft.pair
     (Nat.Primrec.succ.comp (hright.pair (Nat.Primrec.const 0))))).of_eq fun _ => rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_diffSingleCode : Nat.Primrec (fun t : ℕ => diffSingleCode t.unpair.1 t.unpair.2) := by
   unfold diffSingleCode
   exact ((primrec_flatMapCode primrec_diffOneCode).comp (Nat.Primrec.right.pair Nat.Primrec.left)).of_eq
     fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_diffAllStep : Nat.Primrec diffAllStep := by
   unfold diffAllStep
@@ -1289,19 +981,11 @@ theorem primrec_diffAllStep : Nat.Primrec diffAllStep := by
   have hq : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
   exact (primrec_diffSingleCode.comp (hacc.pair hq)).of_eq fun w => by
     simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_diffAllCode : Nat.Primrec (fun t : ℕ => diffAllCode t.unpair.1 t.unpair.2) :=
   (primrec_foldCode primrec_diffAllStep (Nat.Primrec.const 0)
     (Nat.Primrec.succ.comp (Nat.Primrec.left.pair (Nat.Primrec.const 0)))
     Nat.Primrec.right).of_eq fun _ => rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_diffCode : Nat.Primrec (fun t : ℕ => diffCode t.unpair.1 t.unpair.2) := by
   unfold diffCode
@@ -1310,10 +994,6 @@ theorem primrec_diffCode : Nat.Primrec (fun t : ℕ => diffCode t.unpair.1 t.unp
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact ((primrec_flatMapCode hf).comp (Nat.Primrec.right.pair Nat.Primrec.left)).of_eq fun t => by
     simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_qpCombineBop : Nat.Primrec qpCombineBop := by
   have h11 : Nat.Primrec (fun t : ℕ => t.unpair.1.unpair.1) :=
@@ -1326,24 +1006,12 @@ theorem primrec_qpCombineBop : Nat.Primrec qpCombineBop := by
     Nat.Primrec.right.comp Nat.Primrec.right
   exact ((primrec_ratMaxCode.comp (h11.pair h21)).pair
     (primrec_ratMinCode.comp (h12.pair h22))).of_eq fun _ => rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_combineCode : Nat.Primrec (fun t => combineCode t.unpair.1 t.unpair.2) :=
   primrec_crossCombine primrec_qpCombineBop
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_qpNonemptyBop : Nat.Primrec qpNonemptyBop :=
   primrec_ratLtCode.comp (Nat.Primrec.left.pair Nat.Primrec.right)
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_qpNonemptyChar : Nat.Primrec qpNonemptyChar := by
   have hg : Nat.Primrec (fun t : ℕ => qpNonemptyBop t.unpair.1) :=
@@ -1352,18 +1020,10 @@ theorem primrec_qpNonemptyChar : Nat.Primrec qpNonemptyChar := by
     fun c => by
       unfold qpNonemptyChar
       simp only [id, unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open Domain.Recursive
 
 theorem qpNonemptyBop_eq_one_iff (e : ℕ) :
     qpNonemptyBop e = 1 ↔ (decodeRatPair e).1 < (decodeRatPair e).2 := by
   unfold qpNonemptyBop decodeRatPair; exact ratLtCode_eq_one_iff e.unpair.1 e.unpair.2
-end
-
-section
-open Domain.Recursive
 
 theorem qpNonemptyChar_eq_one_iff (c : ℕ) :
     qpNonemptyChar c = 1 ↔ ∃ e ∈ decodeList c, (decodeRatPair e).1 < (decodeRatPair e).2 := by
@@ -1371,10 +1031,6 @@ theorem qpNonemptyChar_eq_one_iff (c : ℕ) :
   rw [existsListChar_eq_one_iff]
   refine exists_congr fun e => and_congr_right fun _ => ?_
   rw [unpair_pair_fst, qpNonemptyBop_eq_one_iff]
-end
-
-section
-open Domain.Recursive
 
 /-- **`presentedIntervals (decodeQPairList c)` is non-empty iff `qpNonemptyChar c = 1`.** -/
 theorem presentedIntervals_decodeQPairList_nonempty_iff (c : ℕ) :
@@ -1386,16 +1042,8 @@ theorem presentedIntervals_decodeQPairList_nonempty_iff (c : ℕ) :
     exact ⟨e, he, hlt⟩
   · rintro ⟨e, he, hlt⟩
     exact ⟨decodeRatPair e, (mem_decodeQPairList c (decodeRatPair e)).mpr ⟨e, he, rfl⟩, hlt⟩
-end
-
-section
-open Domain.Recursive
 
 theorem qpNonemptyChar_le_one (c : ℕ) : qpNonemptyChar c ≤ 1 := existsListChar_le_one _ 0 c
-end
-
-section
-open Domain.Recursive
 
 /-- **Non-emptiness of the set presented by a QPair-list code is recursively decidable.** -/
 theorem recDecidable_presentedIntervals_nonempty :
@@ -1403,10 +1051,6 @@ theorem recDecidable_presentedIntervals_nonempty :
   RecDecidable.of_zero_one_char primrec_qpNonemptyChar
     (fun c => by have := qpNonemptyChar_le_one c; omega)
     presentedIntervals_decodeQPairList_nonempty_iff
-end
-
-section
-open Domain.Recursive
 
 /-- **Subset between `presentedIntervals`-coded sets is recursively decidable.** -/
 theorem recDecidable₂_presentedIntervals_subset :
@@ -1416,10 +1060,6 @@ theorem recDecidable₂_presentedIntervals_subset :
   refine RecDecidable.of_iff (fun t => ?_)
     (recDecidable_presentedIntervals_nonempty.comp primrec_diffCode).not
   exact presentedIntervals_decodeQPairList_subset_iff t.unpair.1 t.unpair.2
-end
-
-section
-open Domain.Recursive
 
 /-- **Equality between `presentedIntervals`-coded sets is recursively decidable**, from
 `recDecidable₂_presentedIntervals_subset` in both directions (`Set.Subset.antisymm_iff`). -/
@@ -1430,12 +1070,8 @@ theorem recDecidable₂_presentedIntervals_eq :
   refine RecDecidable.of_iff (fun t => ?_)
     (recDecidable₂_presentedIntervals_subset.and recDecidable₂_presentedIntervals_subset.swap)
   exact Set.Subset.antisymm_iff
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α : Type*} {E : NeighborhoodSystem α}
 
 end
+
 end DomainTheory.NeighbourhoodSystems
 end

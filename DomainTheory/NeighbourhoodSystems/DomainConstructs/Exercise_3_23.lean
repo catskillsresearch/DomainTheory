@@ -47,5 +47,3 @@ end
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-end

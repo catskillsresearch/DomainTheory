@@ -251,10 +251,6 @@ theorem example_327.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {V₀ : Dom
   @DomainTheory.NeighbourhoodSystems.Exercise327.C_dir
 end
 
-section
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-end
 end
 end DomainTheory.NeighbourhoodSystems.Exercise327
 end

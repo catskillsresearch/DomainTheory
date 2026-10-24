@@ -214,13 +214,5 @@ theorem commute_apply {f g : ApproximableMap V V} (hcomm : f.comp g = g.comp f) 
 
 end ApproximableMap
 end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
-end ApproximableMap
-end
 end DomainTheory.NeighbourhoodSystems
 end

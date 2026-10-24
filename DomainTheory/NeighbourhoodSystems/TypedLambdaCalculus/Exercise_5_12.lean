@@ -133,30 +133,19 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 theorem whileMap_bot {x : V.Element} (hx : p.toElementMap x = Example23.botElt) :
     (whileMap V p f).toElementMap x = V.bot := by
   rw [whileMap_rec, hx, Exercise326.cond_bot]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-  (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 /-- If the test fails (`p(x) = false`), the loop exits: `w(x) = x`. -/
 theorem whileMap_false {x : V.Element} (hx : p.toElementMap x = Example23.falseElt) :
     (whileMap V p f).toElementMap x = x := by
   rw [whileMap_rec, hx, Exercise326.cond_false]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-  (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 /-- If the test holds (`p(x) = true`), the loop runs the body: `w(x) = w(f(x))`. -/
 theorem whileMap_true {x : V.Element} (hx : p.toElementMap x = Example23.trueElt) :
     (whileMap V p f).toElementMap x = (whileMap V p f).toElementMap (f.toElementMap x) := by
   rw [whileMap_rec, hx, Exercise326.cond_true]
+
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise512
 end
 
-section
-end

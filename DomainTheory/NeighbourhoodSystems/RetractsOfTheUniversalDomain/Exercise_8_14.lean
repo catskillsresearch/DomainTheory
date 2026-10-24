@@ -14,17 +14,12 @@ section
 open NeighborhoodSystem ApproximableMap
 universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
+
 /- concordance: source L5159 EXERCISE 8.14 closure operators -/
 /-- **Exercise 8.14 (Scott 1981, PRG-19), the definition.** A retraction `a : E → E` is a
 *closure operator* iff `I_E ⊑ a`, i.e. `a` is inflationary. -/
 class ClosureOperator (a : ApproximableMap E E) : Prop where
   out : Retraction a ∧ idMap E ≤ a
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section ClosureOperator
 
@@ -39,12 +34,6 @@ def IsCompactFix (_h : ClosureOperator a) (y : FixSet a) : Prop :=
     y.1 ≤ iSupDirected (fun i => (d i).1) hdir → ∃ i, y.1 ≤ (d i).1
 
 end ClosureOperator
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
 
@@ -54,12 +43,6 @@ variable {a : ApproximableMap E E} (h : ClosureOperator a)
 def CompactFix (h : ClosureOperator a) := {y : FixSet a // IsCompactFix h y}
 
 end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section ClosureOperator
 
@@ -69,35 +52,11 @@ variable {a : ApproximableMap E E}
 def botFix (h : ClosureOperator a) : FixSet a :=
   ⟨a.toElementMap ⊥, toElementMap_idem h.out.1 ⊥⟩
 
-end ClosureOperator
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section ClosureOperator
-
-variable {a : ApproximableMap E E}
-
 /-- **`a(⊥)` is the least element of `Fix(a)`**: `a(⊥) ⊑ y` for every `y ∈ Fix(a)`. Since `⊥ ⊑ y`
 always, monotonicity gives `a(⊥) ⊑ a(y) = y`. -/
 theorem botFix_le (h : ClosureOperator a) (y : FixSet a) : (botFix h).1 ≤ y.1 := by
   have h1 : a.toElementMap ⊥ ≤ a.toElementMap y.1 := a.toElementMap_mono bot_le
   rwa [y.2] at h1
-
-end ClosureOperator
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section ClosureOperator
-
-variable {a : ApproximableMap E E}
 
 /-- `botFix` is compact: it is below *every* element of `Fix(a)` (`botFix_le`), so trivially below
 any particular member of a (non-empty) directed family. -/
@@ -107,12 +66,6 @@ theorem isCompactFix_botFix (h : ClosureOperator a) : IsCompactFix h (botFix h) 
   exact ⟨i0, botFix_le h (d i0)⟩
 
 end ClosureOperator
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
 
@@ -122,12 +75,6 @@ variable {a : ApproximableMap E E} (h : ClosureOperator a)
 def botK : CompactFix h := ⟨botFix h, isCompactFix_botFix h⟩
 
 end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section ClosureOperator
 
@@ -138,18 +85,6 @@ theorem le_toElementMap_of_isClosureOperator (h : ClosureOperator a) (y : E.Elem
     y ≤ a.toElementMap y := by
   have h1 := (le_iff_toElementMap_le.mp h.out.2) y
   rwa [toElementMap_idMap] at h1
-
-end ClosureOperator
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section ClosureOperator
-
-variable {a : ApproximableMap E E}
 
 /-- **Finite joins of compacts are compact.** If `y₁, y₂ ∈ Fix(a)` are compact and bounded above
 (in `E`), their join `a(⊔{y₁,y₂})` (`⊔` = Exercise 1.27's `sSup`) is again compact: if it sits below
@@ -178,18 +113,6 @@ theorem isCompactFix_sup (h : ClosureOperator a) {y1 y2 : FixSet a}
   have h3 := a.toElementMap_mono hsup_le
   rwa [(d k).2] at h3
 
-end ClosureOperator
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section ClosureOperator
-
-variable {a : ApproximableMap E E}
-
 /-- **The key new fact.** `a(↑X)`, for any `E`-neighbourhood `X`, is compact w.r.t. directed unions
 *within `Fix(a)`* — even though it need not be principal in `E` itself. Proof: if
 `a(↑X) ⊑ ⋃ᵢ d(i)` then (since `↑X ⊑ a(↑X)` by inflation) `↑X ⊑ ⋃ᵢ d(i)`, so by compactness of `↑X`
@@ -206,12 +129,6 @@ theorem isCompactFix_toElementMap_principal (h : ClosureOperator a) {X : Set α}
   rwa [(d i).2] at h2
 
 end ClosureOperator
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
 
@@ -222,36 +139,12 @@ def genK {X : Set α} (hX : E.mem X) : CompactFix h :=
   ⟨⟨a.toElementMap (E.principal hX), toElementMap_idem h.out.1 _⟩,
     isCompactFix_toElementMap_principal h hX⟩
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 /-- The join of two compact fixed points bounded above by a common `y ∈ Fix(a)`. -/
 def joinCompactFix {k1 k2 : CompactFix h} {y : FixSet a}
     (hk1y : k1.1.1 ≤ y.1) (hk2y : k2.1.1 ≤ y.1) : CompactFix h :=
   ⟨⟨a.toElementMap (E.sSup {k1.1.1, k2.1.1} ⟨y.1, by rintro x (rfl | rfl) <;> assumption⟩),
       toElementMap_idem h.out.1 _⟩,
     isCompactFix_sup h k1.2 k2.2 ⟨y.1, by rintro x (rfl | rfl) <;> assumption⟩⟩
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 theorem joinCompactFix_le {k1 k2 : CompactFix h} {y : FixSet a}
     (hk1y : k1.1.1 ≤ y.1) (hk2y : k2.1.1 ≤ y.1) : (joinCompactFix h hk1y hk2y).1.1 ≤ y.1 := by
@@ -262,95 +155,23 @@ theorem joinCompactFix_le {k1 k2 : CompactFix h} {y : FixSet a}
   have h1 := a.toElementMap_mono hsup_le
   rwa [y.2] at h1
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 /-- The principal up-set of a compact fixed point `k`: `{q ∣ k ⊑ q}`. This is the "neighbourhood"
 of `k` in the reconstructed system (smaller compacts give *bigger* up-sets, matching the
 information-order convention `Factoid 1.7a`). -/
 def upFix (k : CompactFix h) : Set (CompactFix h) := {q | k.1.1 ≤ q.1.1}
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 @[simp] theorem mem_upFix {k q : CompactFix h} : q ∈ upFix h k ↔ k.1.1 ≤ q.1.1 := Iff.rfl
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 theorem self_mem_upFix (k : CompactFix h) : k ∈ upFix h k := (mem_upFix h).mpr (le_refl _)
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 theorem upFix_antitone {k k' : CompactFix h} (hkk' : k.1.1 ≤ k'.1.1) :
     upFix h k' ⊆ upFix h k :=
   fun _ hq => hkk'.trans hq
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 /-- The generator of a non-empty up-set is unique. -/
 theorem upFix_injOn {k k' : CompactFix h} (heq : upFix h k = upFix h k') : k.1.1 = k'.1.1 :=
   le_antisymm ((Set.ext_iff.mp heq k').mpr (self_mem_upFix h k'))
     ((Set.ext_iff.mp heq k).mp (self_mem_upFix h k))
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 /-- **The key algebraic identity**: the intersection of two principal up-sets, when jointly
 bounded by some `y`, is again a principal up-set — of the join. -/
@@ -377,32 +198,8 @@ theorem upFix_inter (k1 k2 : CompactFix h) {y : FixSet a}
     · exact ((E.le_sSup {k1.1.1, k2.1.1} hb (by simp)).trans
         (le_toElementMap_of_isClosureOperator h _)).trans hjq
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 theorem upFix_subset_upFix_botK (k : CompactFix h) : upFix h k ⊆ upFix h (botK h) :=
   fun q _ => botFix_le h q.1
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 /-- **The reconstructed neighbourhood system.** Tokens are the compact fixed points of `a`;
 neighbourhoods are their principal up-sets. -/
@@ -417,48 +214,12 @@ def domainOfClosure (h : ClosureOperator a) : NeighborhoodSystem (CompactFix h) 
     obtain ⟨hk13, hk23⟩ := hZsub (self_mem_upFix h k3)
     exact ⟨joinCompactFix h hk13 hk23, upFix_inter h k1 k2 hk13 hk23⟩
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 /-- The compact fixed points confirmed by a filter `g` of `domainOfClosure h`. -/
 def confirmedIdx (g : (domainOfClosure h).Element) := {k : CompactFix h // g.mem (upFix h k)}
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 instance instNonemptyConfirmedIdx (g : (domainOfClosure h).Element) :
     Nonempty (confirmedIdx h g) :=
   ⟨⟨botK h, g.master_mem⟩⟩
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 theorem confirmedIdx_directed (g : (domainOfClosure h).Element) :
     ∀ i j : confirmedIdx h g, ∃ k : confirmedIdx h g,
@@ -470,51 +231,15 @@ theorem confirmedIdx_directed (g : (domainOfClosure h).Element) :
   have hmem3 : k3 ∈ upFix h k1 ∩ upFix h k2 := hk3eq ▸ self_mem_upFix h k3
   exact ⟨⟨k3, hint⟩, hmem3.1, hmem3.2⟩
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 /-- **The backward map `|domainOfClosure h| → Fix(a)`**: the directed union of all confirmed
 compacts. -/
 def fromElementFilter (g : (domainOfClosure h).Element) : FixSet a :=
   ⟨iSupDirected (fun i : confirmedIdx h g => i.1.1.1) (confirmedIdx_directed h g),
     toElementMap_iSupDirected_fixed _ (confirmedIdx_directed h g) (fun i => i.1.1.2)⟩
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 /-- The family `a(↑X)`, for `X` ranging over the (principal-approximant) neighbourhoods of `y.1`. -/
 def genFamily (y : FixSet a) (i : {X : Set α // y.1.mem X}) : FixSet a :=
   (genK h (y.1.sub i.2)).1
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 theorem genFamily_directed (y : FixSet a) :
     ∀ i j : {X : Set α // y.1.mem X}, ∃ k, (genFamily h y i).1 ≤ (genFamily h y k).1 ∧
@@ -522,18 +247,6 @@ theorem genFamily_directed (y : FixSet a) :
   intro i j
   obtain ⟨k, hik, hjk⟩ := principalFamily_directed y.1 i j
   exact ⟨k, a.toElementMap_mono hik, a.toElementMap_mono hjk⟩
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 /-- **The forward map `Fix(a) → |domainOfClosure h|`**: `y ↦ {S ∣ S = ↑k ∧ k ⊑ y}`. -/
 def toElementFilter (y : FixSet a) : (domainOfClosure h).Element where
@@ -547,18 +260,6 @@ def toElementFilter (y : FixSet a) : (domainOfClosure h).Element where
     rintro S1 S2 ⟨k1, rfl, hk1y⟩ hS2mem hsub
     obtain ⟨k2, rfl⟩ := hS2mem
     exact ⟨k2, rfl, (mem_upFix h |>.mp (hsub (self_mem_upFix h k1))).trans hk1y⟩
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 theorem le_of_toElementFilter_le {y y' : FixSet a}
     (hle : toElementFilter h y ≤ toElementFilter h y') : y.1 ≤ y'.1 := by
@@ -576,18 +277,6 @@ theorem le_of_toElementFilter_le {y y' : FixSet a}
   rw [show a.toElementMap (E.principal hX) = k'.1.1 from hkeq] at h1
   exact (h1.trans hk'y') X ((E.mem_principal hX).mpr ⟨hX, subset_rfl⟩)
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 theorem toElementFilter_fromElementFilter (g : (domainOfClosure h).Element) :
     toElementFilter h (fromElementFilter h g) = g := by
   apply Element.ext
@@ -600,33 +289,9 @@ theorem toElementFilter_fromElementFilter (g : (domainOfClosure h).Element) :
     obtain ⟨k0, rfl⟩ := g.sub hS
     exact ⟨k0, rfl, le_iSupDirected _ (confirmedIdx_directed h g) ⟨k0, hS⟩⟩
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 theorem toElementFilter_mono {y y' : FixSet a} (hyy' : y.1 ≤ y'.1) :
     toElementFilter h y ≤ toElementFilter h y' :=
   fun _ ⟨k, hSeq, hky⟩ => ⟨k, hSeq, hky.trans hyy'⟩
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 /-- **`y` is the directed union of `a(↑X)` for `X ∈ y`.** Apply `a` (continuous, `toElementMap_
 iSupDirected`) to `E`'s own algebraicity decomposition (`eq_iSupDirected_principal`) of `y.1`, then
@@ -638,18 +303,6 @@ theorem toElementMap_eq_iSupDirected_genFamily (y : FixSet a) :
     exact toElementMap_iSupDirected a _ (principalFamily_directed y.1)
   rw [y.2] at h1
   exact h1
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
 
 theorem fromElementFilter_toElementFilter (y : FixSet a) :
     fromElementFilter h (toElementFilter h y) = y := by
@@ -671,18 +324,6 @@ theorem fromElementFilter_toElementFilter (y : FixSet a) :
     exact le_iSupDirected (fun i : confirmedIdx h (toElementFilter h y) => i.1.1.1)
       (confirmedIdx_directed h (toElementFilter h y)) ⟨genK h (y.1.sub i.2), hk⟩
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 /-- **Exercise 8.14, the domain isomorphism.** `Fix(a)` is order-isomorphic to
 `|domainOfClosure h|`. -/
 def fixSetOrderIso (h : ClosureOperator a) : FixSet a ≃o (domainOfClosure h).Element where
@@ -693,19 +334,6 @@ def fixSetOrderIso (h : ClosureOperator a) : FixSet a ≃o (domainOfClosure h).E
   map_rel_iff' := by
     intro y y'
     exact ⟨le_of_toElementFilter_le h, toElementFilter_mono h⟩
-
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
 
 /-- **Exercise 8.14, the final question, answered exactly.** `y ∈ Fix(a)` is compact (i.e. is a
 *finite element* of the fixed-point domain) **iff** `y = a(↑X)` for a single `E`-neighbourhood `X`.
@@ -726,25 +354,13 @@ theorem isCompactFix_iff (y : FixSet a) :
   · rintro ⟨X, hX, hy⟩
     exact hy ▸ isCompactFix_toElementMap_principal h hX
 
-end FiniteDomain
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section FiniteDomain
-
-variable {a : ApproximableMap E E} (h : ClosureOperator a)
-
-
 /-- **Exercise 8.14 (Scott 1981, PRG-19), the main theorem.** For any closure operator
 `a : E → E`, the fixed-point set of `a` is a finitary domain. -/
 theorem isFinitary_of_isClosureOperator (h : ClosureOperator a) : IsFinitary a :=
   ⟨CompactFix h, domainOfClosure h, ⟨fixSetOrderIso h⟩⟩
 
 end FiniteDomain
+
 end
 
 section
@@ -794,14 +410,11 @@ open Domain.Recursive NeighborhoodSystem
 
 /-- A fixed index of `V.master = Set.univ`. -/
 def VmasterIdx : ℕ := Nat.pair 0 1
-end
-
-section
-open Domain.Recursive NeighborhoodSystem
 
 /-- The low-bit AND `(x &&& y) % 2`, in arithmetic `{0,1}`-valued form: simply the product of the
 low bits (`1` iff both are `1`). -/
 def lowAnd (x y : ℕ) : ℕ := x % 2 * (y % 2)
+
 end
 
 namespace primrec
@@ -1644,10 +1257,6 @@ exactly like `myUpsample` itself. -/
 def isPeriodicMask (k j m : ℕ) : ℕ :=
   isZero ((myUpsample j k (myModPow2 m (2 ^ j)) - myModPow2 m (2 ^ k)) +
     (myModPow2 m (2 ^ k) - myUpsample j k (myModPow2 m (2 ^ j))))
-end
-
-section
-open Domain.Recursive
 
 /-- **`minLevel k m`**: the smallest `j ≤ k` such that `levelSet k m` is presentable at level `j`
 (`minLevel_isPeriodicMask`, `minLevel_le`); the presentation-independent canonical level of the set
@@ -1655,28 +1264,16 @@ open Domain.Recursive
 def minLevel (k m : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0
     (fun i ih => selectFn (isZero (i - ih)) (selectFn (isPeriodicMask k i m) i (i + 1)) ih) (k + 1)
-end
-
-section
-open Domain.Recursive
 
 /-- The raw `Nat.rec`-fold underlying `minLevel k m`, exposed at an arbitrary bound `N` so the
 inductive argument below can range over all `N`, specializing to `N = k + 1` at the end. -/
 def minLevelFold (k m N : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0
     (fun i ih => selectFn (isZero (i - ih)) (selectFn (isPeriodicMask k i m) i (i + 1)) ih) N
-end
-
-section
-open Domain.Recursive
 
 /-- **`minMask k m`**: `m`'s own bits, truncated to `minLevel k m`'s width — the presentation-
 independent canonical mask of the set `levelSet k m` (`minLevel_unique`). -/
 def minMask (k m : ℕ) : ℕ := myModPow2 m (2 ^ minLevel k m)
-end
-
-section
-open Domain.Recursive
 
 theorem isPeriodicMask_le_one (k j m : ℕ) : isPeriodicMask k j m ≤ 1 := isZero_le_one _
 
@@ -1849,10 +1446,6 @@ level and the minimal mask. -/
 theorem minLevel_unique {k₁ m₁ k₂ m₂ : ℕ} (h : levelSet k₁ m₁ = levelSet k₂ m₂) :
     minLevel k₁ m₁ = minLevel k₂ m₂ ∧ minMask k₁ m₁ = minMask k₂ m₂ :=
   ⟨minLevel_eq h, minMask_eq h⟩
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_isPeriodicMask :
     Nat.Primrec (fun t => isPeriodicMask t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) := by
@@ -1874,10 +1467,6 @@ theorem primrec_isPeriodicMask :
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (primrec_isZero.comp (primrec_add₂ (primrec_sub₂ hups hmodk)
     (primrec_sub₂ hmodk hups))).of_eq fun t => rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_minLevel : Nat.Primrec (fun t => minLevel t.unpair.1 t.unpair.2) := by
   -- `w` is shaped `pair (pair k m) (pair i ih)`, matching `Nat.Primrec.prec`'s own convention
@@ -1909,10 +1498,6 @@ theorem primrec_minLevel : Nat.Primrec (fun t => minLevel t.unpair.1 t.unpair.2)
   refine (hprec.comp hpack).of_eq fun t => ?_
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
   rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_minMask : Nat.Primrec (fun t => minMask t.unpair.1 t.unpair.2) := by
   have hm : Nat.Primrec (fun t : ℕ => t.unpair.2) := Nat.Primrec.right
@@ -1921,19 +1506,11 @@ theorem primrec_minMask : Nat.Primrec (fun t => minMask t.unpair.1 t.unpair.2) :
     primrec_two_pow hlvl
   exact (primrec.myModPow2.comp (hm.pair hpow)).of_eq fun t => by
     simp only [unpair_pair_fst, unpair_pair_snd, minMask]
-end
-
-section
-open Domain.Recursive
 
 /-- **The "clear one bit" primitive.** `myClearBit m ℓ := m - 2 ^ ℓ` — primitive recursive for
 free (plain subtraction and a power of two), and, whenever bit `ℓ` of `m` is genuinely set,
 literally equal to `m ^^^ 2 ^ ℓ` (`myClearBit_eq_xor`). -/
 def myClearBit (m ℓ : ℕ) : ℕ := m - 2 ^ ℓ
-end
-
-section
-open Domain.Recursive
 
 /-- **The least-set-bit search combinator.** `myFirstBit m N` is the smallest `ℓ < N` with
 `m.testBit ℓ = true`, or `N` itself (a sentinel, since a genuine witness is always `< N`) if no
@@ -1944,58 +1521,30 @@ tested, becoming the new witness if set, or `i + 1` (the new sentinel) if not. -
 def myFirstBit (m N : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0
     (fun i ih => selectFn (isZero (i - ih)) (selectFn (myTestBit m i) i (i + 1)) ih) N
-end
-
-section
-open Domain.Recursive
 
 /-- The presentation-independent canonical level of `VX n`. -/
 def splitVMinLevel (n : ℕ) : ℕ := minLevel (canonIdx n).unpair.1 (canonIdx n).unpair.2
-end
-
-section
-open Domain.Recursive
 
 /-- The presentation-independent canonical mask of `VX n`, at `splitVMinLevel n`'s width. -/
 def splitVMinMask (n : ℕ) : ℕ := minMask (canonIdx n).unpair.1 (canonIdx n).unpair.2
-end
-
-section
-open Domain.Recursive
 
 /-- The upsampled mask `M := myUpsample k (k+1) m` for `(k, m) := (splitVMinLevel n, splitVMinMask
 n)` — Scott's `M` from `V_no_minimal`, at the code level, fed the *minimal* presentation. -/
 def splitVUpsampled (n : ℕ) : ℕ :=
   myUpsample (splitVMinLevel n) (splitVMinLevel n + 1) (splitVMinMask n)
-end
-
-section
-open Domain.Recursive
 
 /-- The splitting bit `ℓ₀` — the least set bit of the upsampled mask `M`, bounded by `2 ^ (k+1)`. -/
 def splitVBit (n : ℕ) : ℕ :=
   myFirstBit (splitVUpsampled n) (2 ^ (splitVMinLevel n + 1))
-end
-
-section
-open Domain.Recursive
 
 /-- **`splitVLeft`**: the code for `Y := levelSet (k+1) (2 ^ ℓ₀)`, `V_no_minimal`'s "left" half. -/
 def splitVLeft (n : ℕ) : ℕ := Nat.pair (splitVMinLevel n + 1) (2 ^ splitVBit n)
-end
-
-section
-open Domain.Recursive
 
 /-- **`splitVRight`**: the code for `Z := levelSet (k+1) (M ^^^ 2 ^ ℓ₀)`, `V_no_minimal`'s "right"
 half — `myClearBit` stands in for `^^^` (justified since `ℓ₀` is, by construction, a genuinely set
 bit of `M`; `myClearBit_eq_xor`, `(e)(b)(ii)`). -/
 def splitVRight (n : ℕ) : ℕ :=
   Nat.pair (splitVMinLevel n + 1) (myClearBit (splitVUpsampled n) (splitVBit n))
-end
-
-section
-open Domain.Recursive
 
 /-- **Unfolding equation** for `myFirstBit` at a successor argument, stated so `rw` fires cleanly
 on the outer application (mirrors `LevelSetPrimrec.lean`'s `myUpsampleJointStep.eq`). -/
@@ -2300,26 +1849,14 @@ theorem splitVLeft_congr {n n' : ℕ} (hn : VX n = VX n') :
 theorem splitVRight_congr {n n' : ℕ} (hn : VX n = VX n') :
     VX (splitVRight n) = VX (splitVRight n') := by
   rw [splitVRight_eq_of_congr hn]
-end
-
-section
-open Domain.Recursive
 
 /-- **`myFirstBit` never overshoots its bound.** -/
 theorem myFirstBit_le (m N : ℕ) : myFirstBit m N ≤ N := by
   rcases myFirstBit_spec m N with ⟨h, -, -⟩ | ⟨h, -⟩ <;> omega
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_myClearBit : Nat.Primrec (fun t => myClearBit t.unpair.1 t.unpair.2) := by
   have hpow : Nat.Primrec (fun t : ℕ => (2 : ℕ) ^ t.unpair.2) := primrec_two_pow Nat.Primrec.right
   exact (primrec_sub₂ Nat.Primrec.left hpow).of_eq fun _ => rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_myFirstBit : Nat.Primrec (fun t => myFirstBit t.unpair.1 t.unpair.2) := by
   have hm : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
@@ -2343,10 +1880,6 @@ theorem primrec_myFirstBit : Nat.Primrec (fun t => myFirstBit t.unpair.1 t.unpai
   refine (hprec.comp (Nat.Primrec.left.pair Nat.Primrec.right)).of_eq fun t => ?_
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
   rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_splitVMinLevel : Nat.Primrec splitVMinLevel := by
   have hk : Nat.Primrec (fun n : ℕ => (canonIdx n).unpair.1) :=
@@ -2355,10 +1888,6 @@ theorem primrec_splitVMinLevel : Nat.Primrec splitVMinLevel := by
     Nat.Primrec.right.comp primrec.canonIdx
   exact (primrec_minLevel.comp (hk.pair hm)).of_eq fun n => by
     simp only [unpair_pair_fst, unpair_pair_snd]; rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_splitVMinMask : Nat.Primrec splitVMinMask := by
   have hk : Nat.Primrec (fun n : ℕ => (canonIdx n).unpair.1) :=
@@ -2367,10 +1896,6 @@ theorem primrec_splitVMinMask : Nat.Primrec splitVMinMask := by
     Nat.Primrec.right.comp primrec.canonIdx
   exact (primrec_minMask.comp (hk.pair hm)).of_eq fun n => by
     simp only [unpair_pair_fst, unpair_pair_snd]; rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_splitVUpsampled : Nat.Primrec splitVUpsampled := by
   have hk1 : Nat.Primrec (fun n : ℕ => splitVMinLevel n + 1) :=
@@ -2378,10 +1903,6 @@ theorem primrec_splitVUpsampled : Nat.Primrec splitVUpsampled := by
   exact (primrec.myUpsample.comp
       (primrec_splitVMinLevel.pair (hk1.pair primrec_splitVMinMask))).of_eq fun n => by
     simp only [unpair_pair_fst, unpair_pair_snd]; rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_splitVBit : Nat.Primrec splitVBit := by
   have hk1 : Nat.Primrec (fun n : ℕ => splitVMinLevel n + 1) :=
@@ -2390,20 +1911,12 @@ theorem primrec_splitVBit : Nat.Primrec splitVBit := by
     primrec_two_pow hk1
   exact (primrec_myFirstBit.comp (primrec_splitVUpsampled.pair hbound)).of_eq fun n => by
     simp only [unpair_pair_fst, unpair_pair_snd]; rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_splitVLeft : Nat.Primrec splitVLeft := by
   have hk1 : Nat.Primrec (fun n : ℕ => splitVMinLevel n + 1) :=
     Nat.Primrec.succ.comp primrec_splitVMinLevel
   have hpow : Nat.Primrec (fun n : ℕ => (2 : ℕ) ^ splitVBit n) := primrec_two_pow primrec_splitVBit
   exact (Nat.Primrec.pair hk1 hpow).of_eq fun n => rfl
-end
-
-section
-open Domain.Recursive
 
 theorem primrec_splitVRight : Nat.Primrec splitVRight := by
   have hk1 : Nat.Primrec (fun n : ℕ => splitVMinLevel n + 1) :=
@@ -2412,13 +1925,8 @@ theorem primrec_splitVRight : Nat.Primrec splitVRight := by
     (primrec_myClearBit.comp (primrec_splitVUpsampled.pair primrec_splitVBit)).of_eq fun n => by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (Nat.Primrec.pair hk1 hclear).of_eq fun n => rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 end
+
 end DomainTheory.NeighbourhoodSystems
 end

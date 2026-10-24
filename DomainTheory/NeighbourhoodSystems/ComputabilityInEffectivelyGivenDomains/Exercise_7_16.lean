@@ -14,6 +14,7 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   {V₂ : NeighborhoodSystem γ}
+
 /- concordance: source L4645 EXERCISE 7.16 curry as an enumeration -/
 /-- **Exercise 7.16 — `curry` is a *recursive* set.** Relative to the function-space presentations
 `PA` of `(𝒟₀×𝒟₁→𝒟₂)` and `PB` of `(𝒟₀→(𝒟₁→𝒟₂))` (and the inner one `Pc` of `(𝒟₁→𝒟₂)`) built by
@@ -109,12 +110,6 @@ theorem curryComb_rel_recDecidable
     RecDecidable.natEq (hgNbp.comp Nat.Primrec.right) (Nat.Primrec.const 1)
   refine RecDecidable.of_iff (fun t => ?_) (guard2.not.or B2)
   exact Decidable.imp_iff_not_or
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  {V₂ : NeighborhoodSystem γ}
 
 /-- **Exercise 7.16 — `curry` is computable, and in fact a recursive set.** If `𝒟₀, 𝒟₁, 𝒟₂` are
 effectively given, then there are computable presentations of `(𝒟₀×𝒟₁→𝒟₂)` and `(𝒟₀→(𝒟₁→𝒟₂))`
@@ -173,12 +168,6 @@ theorem curryComb_isComputable
       (primrec_funConsChar P₀ Pc fc0 fcc hfc0p hfccp)
       (primrec_funConsChar P₁ P₂ fc1 fc2 hfc1p hfc2p)
   exact ⟨PA, PB, hRec, ⟨hRec.re⟩⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  {V₂ : NeighborhoodSystem γ}
 
 /-- The least map of a function-space neighbourhood `G` — `toApproxMap ↑G` — belongs to `G`. -/
 theorem toApproxMap_principal_mem {G : Set (ApproximableMap V₀ V₁)}
@@ -188,12 +177,6 @@ theorem toApproxMap_principal_mem {G : Set (ApproximableMap V₀ V₁)}
   show (toApproxMap ((funSpace V₀ V₁).principal hG)).rel p.1 p.2
   rw [toApproxMap_rel, mem_principal]
   exact ⟨step_mem (hL p hp).1 (hL p hp).2, fun f hf => hf p hp⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  {V₂ : NeighborhoodSystem γ}
 
 /-- **Exercise 7.16 — `curry` written out as a relation between neighbourhoods.** The combinator
 relates a neighbourhood `G` of `(𝒟₀×𝒟₁→𝒟₂)` to a neighbourhood `H` of `(𝒟₀→(𝒟₁→𝒟₂))` exactly when
@@ -219,6 +202,7 @@ theorem curryComb_rel {G : Set (ApproximableMap (prod V₀ V₁) V₂)}
     refine ⟨hG, ?_⟩
     rw [curryIso_apply, mem_toFilter]
     exact ⟨hH, hall _ (toApproxMap_principal_mem hG)⟩
+
 end
 
 section
@@ -820,5 +804,3 @@ end
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-end

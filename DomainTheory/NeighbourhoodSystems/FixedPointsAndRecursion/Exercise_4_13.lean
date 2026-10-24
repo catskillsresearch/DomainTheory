@@ -37,27 +37,11 @@ namespace NeighborhoodSystem
 @[simp] theorem mem_preFix {f : V.Element → V.Element} {x : V.Element} :
     x ∈ preFix f ↔ f x ≤ x := Iff.rfl
 
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
-
 /-- **Exercise 4.13(1) (Scott 1981, PRG-19).** The least fixed point of a *monotone* `f` defined
 purely as the greatest lower bound of the pre-fixed points, `⋂ {x ∣ f(x) ⊑ x}`. Well-defined as an
 element by Exercise 1.18 (`sInf`); the non-emptiness witness is any `a` with `f(a) ⊑ a`. -/
 def monoFix (f : V.Element → V.Element) {a : V.Element} (ha : f a ≤ a) : V.Element :=
   V.sInf (preFix f) ⟨a, ha⟩
-
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
 
 /-- **Exercise 4.13(3) (Scott 1981, PRG-19).** For any structured set `⟨Z, z, ·⟩` (`z : Z`,
 `op : Z → Z`) there is a *unique* `s : ℕ → Z` with `s(0) = z` and `s(n⁺) = (s n)·`. This is the
@@ -72,38 +56,14 @@ theorem exists_unique_nat_rec {Z : Type*} (z : Z) (op : Z → Z) :
   | zero => exact h0
   | succ k ih => rw [hsucc k, ih]
 
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
-
 /-- `monoFix f ha ⊑ x` for every pre-fixed point `x` (`f(x) ⊑ x`). -/
 theorem monoFix_le_preFix (f : V.Element → V.Element) {a : V.Element} (ha : f a ≤ a)
     {x : V.Element} (hx : f x ≤ x) : monoFix f ha ≤ x :=
   V.sInf_le (preFix f) ⟨a, ha⟩ hx
 
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
-
 /-- `monoFix f ha ⊑ a`: the least fixed point lies below the given pre-fixed point `a`. -/
 theorem monoFix_le (f : V.Element → V.Element) {a : V.Element} (ha : f a ≤ a) :
     monoFix f ha ≤ a := monoFix_le_preFix f ha ha
-
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
 
 /-- **Exercise 4.13(1) (Scott 1981, PRG-19).** `monoFix f ha` is the *least* fixed point: any `y`
 with `f(y) = y` satisfies `b ⊑ y`. -/
@@ -111,28 +71,12 @@ theorem monoFix_least (f : V.Element → V.Element) {a : V.Element} (ha : f a �
     {y : V.Element} (hy : f y = y) : monoFix f ha ≤ y :=
   monoFix_le_preFix f ha (le_of_eq hy)
 
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
-
 /-- The key step: `f(b) ⊑ b` where `b = monoFix f ha`, by monotonicity alone. -/
 theorem monoFix_preFix (f : V.Element → V.Element) (hf : Monotone f) {a : V.Element}
     (ha : f a ≤ a) : f (monoFix f ha) ≤ monoFix f ha := by
   apply V.le_sInf (preFix f) ⟨a, ha⟩
   intro x hx
   exact le_trans (hf (monoFix_le_preFix f ha hx)) hx
-
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
 
 /-- **Exercise 4.13(1) (Scott 1981, PRG-19).** `monoFix f ha` is a fixed point: `f(b) = b`. (After
 `f(b) ⊑ b`, monotonicity gives `f(f(b)) ⊑ f(b)`, so `f(b)` is itself a pre-fixed point, whence
@@ -143,14 +87,6 @@ theorem monoFix_isFixed (f : V.Element → V.Element) (hf : Monotone f) {a : V.E
   have hbf : monoFix f ha ≤ f (monoFix f ha) :=
     monoFix_le_preFix f ha (hf hfb)
   exact le_antisymm hfb hbf
-
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
 
 /-- **Exercise 4.13(4) (Scott 1981, PRG-19).** Specializing 4.13(3) to the structured set
 `⟨ℕ, 0, ⁺⟩`: the *unique* function `s` with `s(0) = 0` and `s(n⁺) = (s n)⁺` is the identity. This
@@ -396,14 +332,6 @@ theorem chainUnion_le (C : Set V.Element) (hne : C.Nonempty) (hchain : IsChain (
     {y : V.Element} (hy : ∀ x ∈ C, x ≤ y) : V.chainUnion C hne hchain ≤ y := by
   rintro Z ⟨x, hxC, hxZ⟩
   exact hy x hxC Z hxZ
-
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
 
 end NeighborhoodSystem
 end

@@ -12,6 +12,7 @@ namespace Exercise629
 universe u v
 variable {ι : Type u} {α : ι → Type v}
 variable {D : ∀ i, NeighborhoodSystem (α i)}
+
 section IndexedProduct
 variable [Nonempty ι]
 variable (D) in
@@ -40,20 +41,6 @@ def iprod : NeighborhoodSystem (Σ i, α i) where
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 section IndexedProduct
 
 variable [Nonempty ι]
@@ -70,20 +57,6 @@ end Iso
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 section IndexedProduct
 
 variable [Nonempty ι]
@@ -99,20 +72,6 @@ omit [Nonempty ι] in
 end Iso
 
 end IndexedProduct
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 section IndexedProduct
 
@@ -141,54 +100,12 @@ end Iso
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 /-- A tagged copy `inj i X = {some ⟨i, a⟩ ∣ a ∈ X}` of summand `i`. -/
 def injI (i : ι) (X : Set (α i)) : Set (Option (Σ i, α i)) :=
   (fun a => (some ⟨i, a⟩ : Option (Σ i, α i))) '' X
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 theorem none_not_mem_injI {i : ι} {X : Set (α i)} : (none : Option (Σ i, α i)) ∉ injI i X := by
   rintro ⟨a, _, heq⟩; simp at heq
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 section IndexedProduct
 
@@ -206,20 +123,6 @@ end Iso
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 section IndexedProduct
 
 variable [Nonempty ι]
@@ -235,20 +138,6 @@ def slice (D : ∀ i, NeighborhoodSystem (α i)) (i : ι) (U : Set (α i)) : Set
 end Iso
 
 end IndexedProduct
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 section IndexedProduct
 
@@ -270,20 +159,6 @@ end Iso
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 section IndexedProduct
 
 variable [Nonempty ι]
@@ -299,20 +174,6 @@ end Iso
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 @[simp] theorem some_mem_injI {i : ι} {a : α i} {X : Set (α i)} :
     (some ⟨i, a⟩ : Option (Σ i, α i)) ∈ injI i X ↔ a ∈ X := by
   constructor
@@ -321,40 +182,12 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
     rwa [heq] at hb
   · intro ha; exact ⟨a, ha, rfl⟩
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 /-- A tagged token determines its summand index. -/
 theorem index_of_some_mem_injI {i k : ι} {a : α k} {X : Set (α i)}
     (hmem : (some ⟨k, a⟩ : Option (Σ i, α i)) ∈ injI i X) : k = i := by
   obtain ⟨b, _, heq⟩ := hmem
   simp only [Option.some.injEq] at heq
   exact (congrArg Sigma.fst heq).symm
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 theorem injI_inter_same (i : ι) (X Y : Set (α i)) : injI i X ∩ injI i Y = injI i (X ∩ Y) := by
   apply Set.ext
@@ -371,38 +204,10 @@ theorem injI_inter_same (i : ι) (X Y : Set (α i)) : injI i X ∩ injI i Y = in
       have h' := some_mem_injI.mp h
       exact ⟨some_mem_injI.mpr h'.1, some_mem_injI.mpr h'.2⟩
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 theorem injI_subset_iff {i : ι} {X Y : Set (α i)} : injI i X ⊆ injI i Y ↔ X ⊆ Y := by
   constructor
   · intro h a ha; exact some_mem_injI.mp (h (some_mem_injI.mpr ha))
   · intro h; rintro w ⟨a, ha, rfl⟩; exact ⟨a, h ha, rfl⟩
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 /-- **Exercise 6.29 — the indexed smash product `⊗_i D_i`.** The index type is non-empty so its
 dependent-sum token set is non-empty. A proper neighbourhood is a cylinder proper in *every*
@@ -446,72 +251,16 @@ def iotimes [Nonempty ι] (D : ∀ i, NeighborhoodSystem (α i)) : NeighborhoodS
             (by rw [← heq]; exact Set.inter_subset_left))
         · exact hXf.inter hX'f
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 /-- The basepoint master of the indexed sum: `{none} ∪ {some ⟨i, a⟩ ∣ a ∈ Δᵢ}`. -/
 def sumMasterI (D : ∀ i, NeighborhoodSystem (α i)) : Set (Option (Σ i, α i)) :=
   insert none ((fun p => (some p : Option (Σ i, α i))) '' iprodNbhd (fun i => (D i).master))
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 theorem injI_subset_sumMasterI {i : ι} {X : Set (α i)} (hX : (D i).mem X) :
     injI i X ⊆ sumMasterI D := by
   rintro w ⟨a, ha, rfl⟩
   exact Set.mem_insert_iff.mpr (Or.inr ⟨⟨i, a⟩, (D i).sub_master hX ha, rfl⟩)
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 theorem none_mem_sumMasterI : (none : Option (Σ i, α i)) ∈ sumMasterI D := Set.mem_insert _ _
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 /-- **Exercise 6.29 — the indexed coalesced sum `⊕_i D_i`.** -/
 def ioplus (D : ∀ i, NeighborhoodSystem (α i))
@@ -547,20 +296,6 @@ def ioplus (D : ∀ i, NeighborhoodSystem (α i))
             fun heq => hXne (Set.Subset.antisymm ((D k).sub_master hX)
               (heq ▸ Set.inter_subset_left)), rfl⟩
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 /-- **Exercise 6.29 — the indexed separated sum `∑_i D_i`.** -/
 def isum (D : ∀ i, NeighborhoodSystem (α i))
     (hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.Nonempty) :
@@ -594,20 +329,6 @@ def isum (D : ∀ i, NeighborhoodSystem (α i))
           rw [injI_inter_same] at hsub ⊢
           exact Or.inr ⟨k, X ∩ Y, (D k).inter_mem hX hY hWk (injI_subset_iff.mp hsub), rfl⟩
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 section IndexedProduct
 
 variable [Nonempty ι]
@@ -624,20 +345,6 @@ theorem updTuple_apply_ne {i j : ι} (U : Set (α i)) (h : j ≠ i) :
 end Iso
 
 end IndexedProduct
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 section IndexedProduct
 
@@ -664,20 +371,6 @@ theorem fromPi_mem_slice (x : ∀ i, (D i).Element) (i : ι) (U : Set (α i)) :
 end Iso
 
 end IndexedProduct
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 section IndexedProduct
 
@@ -710,20 +403,6 @@ end Iso
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 section IndexedProduct
 
 variable [Nonempty ι]
@@ -746,20 +425,6 @@ end Iso
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 section IndexedProduct
 
 variable [Nonempty ι]
@@ -780,20 +445,6 @@ theorem iprod_mem_slice {i : ι} {U : Set (α i)} (hU : (D i).mem U) :
 end Iso
 
 end IndexedProduct
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 section IndexedProduct
 
@@ -818,20 +469,6 @@ end Iso
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 section IndexedProduct
 
 variable [Nonempty ι]
@@ -852,20 +489,6 @@ theorem slice_subset (i : ι) {U U' : Set (α i)} (hUU' : U ⊆ U') : slice D i 
 end Iso
 
 end IndexedProduct
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 section IndexedProduct
 
@@ -900,20 +523,6 @@ end Iso
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 section IndexedProduct
 
 variable [Nonempty ι]
@@ -932,20 +541,6 @@ theorem proj_fromPi (x : ∀ i, (D i).Element) (i : ι) : proj (fromPi D x) i = 
 end Iso
 
 end IndexedProduct
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 section IndexedProduct
 
@@ -971,20 +566,6 @@ theorem z_mem_iprodNbhd_restrictTo (z : (iprod D).Element) {X : ∀ i, Set (α i
 end Iso
 
 end IndexedProduct
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 section IndexedProduct
 
@@ -1015,20 +596,6 @@ end Iso
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 section IndexedProduct
 
 variable [Nonempty ι]
@@ -1051,20 +618,6 @@ theorem fromPi_toPi (z : (iprod D).Element) : fromPi D (fun i => proj z i) = z :
 end Iso
 
 end IndexedProduct
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 section IndexedProduct
 
@@ -1099,20 +652,6 @@ end Iso
 
 end IndexedProduct
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 theorem injI_inter_ne {i j : ι} (h : i ≠ j) (X : Set (α i)) (Y : Set (α j)) :
     injI i X ∩ injI j Y = ∅ := by
   apply Set.eq_empty_iff_forall_notMem.mpr
@@ -1120,36 +659,8 @@ theorem injI_inter_ne {i j : ι} (h : i ≠ j) (X : Set (α i)) (Y : Set (α j))
   · exact none_not_mem_injI hw1
   · exact h ((index_of_some_mem_injI hw1).symm.trans (index_of_some_mem_injI hw2))
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 theorem injI_nonempty {i : ι} {X : Set (α i)} (hX : X.Nonempty) : (injI i X).Nonempty := by
   obtain ⟨a, ha⟩ := hX; exact ⟨some ⟨i, a⟩, some_mem_injI.mpr ha⟩
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 /-- **Exercise 6.29 — `⊗` does not generalize.** Over an infinite index, the smash product has only
 its basepoint: an all-coordinates-proper cylinder has support `Set.univ`, which cannot be finite. -/
@@ -1163,20 +674,6 @@ theorem iotimes_only_master [Infinite ι] (D : ∀ i, NeighborhoodSystem (α i))
     refine absurd ((List.finite_toSet l).subset (fun i _ => ?_)) Set.infinite_univ
     exact not_not.mp fun hni => hXne i (hl i hni)
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 /-- **Exercise 6.29 — the infinite smash collapses to one point.** Its element domain is a
 singleton (`⊥` only), so `⊗` has no sensible infinitary generalization. -/
 theorem iotimes_subsingleton [Infinite ι] (D : ∀ i, NeighborhoodSystem (α i)) :
@@ -1188,20 +685,6 @@ theorem iotimes_subsingleton [Infinite ι] (D : ∀ i, NeighborhoodSystem (α i)
   · intro hx; rw [iotimes_only_master D W (x.sub hx)]; exact y.master_mem
   · intro hy; rw [iotimes_only_master D W (y.sub hy)]; exact x.master_mem
 
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 section IndexedProduct
 
 variable [Nonempty ι]
@@ -1211,19 +694,6 @@ theorem iprod_mem_iprodNbhd {X : ∀ i, Set (α i)} (hX : ∀ i, (D i).mem (X i)
   ⟨X, hX, hXf, rfl⟩
 
 end IndexedProduct
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 /-- **Exercise 6.29 — a sum element reaches at most one summand.** -/
 theorem isum_summand_unique {hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.Nonempty}
@@ -1241,20 +711,6 @@ theorem isum_summand_unique {hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.
     obtain rfl := index_of_some_mem_injI hmem.1
     obtain rfl := index_of_some_mem_injI hmem.2
     rfl
-
-end Exercise629
-end
-
-section
-open NeighborhoodSystem
-
-namespace Exercise629
-
-universe u v
-
-variable {ι : Type u} {α : ι → Type v}
-
-variable {D : ∀ i, NeighborhoodSystem (α i)}
 
 /-- **Exercise 6.29 — sum trichotomy.** Every element of `∑_i D_i` either reaches into some summand
 or is the basepoint `⊥`. (Prop-level and genuinely classical: the case split is excluded middle on
@@ -1455,16 +911,8 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 `D' ◁ E`: `D` *embeds as a subdomain* of `E`. -/
 def Trianglelefteq (D : NeighborhoodSystem α) (E : NeighborhoodSystem β) : Prop :=
   ∃ D' : NeighborhoodSystem β, D' ◁ E ∧ (D ≅ᴰ D')
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 @[inherit_doc] infix:50 " ⊴ " => Trianglelefteq
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section ProjectionPair
 
@@ -1473,16 +921,6 @@ variable (i : ApproximableMap D E) (j : ApproximableMap E D)
 /-- The generator predicate: `Y` generates `i(↑X)`. Relationally, `X i Y` and `Y j X`. -/
 def IsGen (X : Set α) (Y : Set β) : Prop := i.rel X Y ∧ j.rel Y X
 
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
-
 /-- **Generators exist** (uses `j ∘ i = I_D`). Every `D`-neighbourhood `X` has a generator: apply
 `j ∘ i = I_D` to the identity relation `X I_D X`. -/
 theorem isGen_exists (hji : j.comp i = idMap D) {X : Set α} (hX : D.mem X) :
@@ -1490,16 +928,6 @@ theorem isGen_exists (hji : j.comp i = idMap D) {X : Set α} (hX : D.mem X) :
   have hrel : (j.comp i).rel X X := by rw [hji]; exact ⟨hX, hX, subset_rfl⟩
   obtain ⟨Y, hiXY, hjYX⟩ := hrel
   exact ⟨Y, hiXY, hjYX⟩
-
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
 
 /-- **Generators are closed under intersection.** If `Y, Y'` generate `X, X'` and `Y ∩ Y' ∈ E`, then
 `Y ∩ Y'` generates `X ∩ X'`. Needs only `mono`/`inter_right` of `i` and `j` (the hypothesis
@@ -1521,29 +949,9 @@ theorem isGen_inter {X X' : Set α} {Y Y' : Set β}
     i.mono hiX'Y' Set.inter_subset_right subset_rfl hDXX' (i.rel_cod hiX'Y')
   exact ⟨i.inter_right hi1 hi2, hjInter⟩
 
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
-
 /-- The masters generate each other: `IsGen Δ_D Δ_E` (from `i.master_rel`, `j.master_rel`). -/
 theorem isGen_master : IsGen i j D.master E.master :=
   ⟨i.master_rel, j.master_rel⟩
-
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
 
 /-- **The image subdomain `D'`.** A `β`-set `Y` is a neighbourhood iff it generates some
 `D`-neighbourhood; the master is `E`'s master. `isGen_inter` supplies condition (ii). -/
@@ -1563,16 +971,6 @@ def Dprime : NeighborhoodSystem β where
     rintro Y ⟨X, hg⟩
     exact E.sub_master (i.rel_cod hg.1)
 
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
-
 /-- **The generator correspondence is monotone** (uses `j ∘ i = I_D`): if `Y, Y'` generate `X, X'`
 and `Y ⊆ Y'`, then `X ⊆ X'`. (Widen `X i Y` to `X i Y'` by `mono`, compose with `Y' j X'`, and read
 off `X ⊆ X'` from `j ∘ i = I_D`.) -/
@@ -1586,31 +984,11 @@ theorem isGen_mono (hji : j.comp i = idMap D) {X X' : Set α} {Z W : Set β}
   rw [hji] at hrel
   exact hrel.2.2
 
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
-
 /-- Generators are unique in the first argument (`isGen_mono` both ways). -/
 theorem isGen_fst_unique (hji : j.comp i = idMap D) {X X' : Set α} {Y : Set β}
     (h : IsGen i j X Y) (h' : IsGen i j X' Y) : X = X' :=
   Set.Subset.antisymm (isGen_mono i j hji h h' subset_rfl)
     (isGen_mono i j hji h' h subset_rfl)
-
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
 
 /-- **The generator correspondence is monotone, other direction** (uses `i ∘ j ⊆ I_E`): if `Z, W`
 generate `X, X'` and `X ⊆ X'`, then `Z ⊆ W`. (Widen `Z j X` to `Z j X'` by `mono`, compose with
@@ -1624,43 +1002,13 @@ theorem isGen_mono' (hij : i.comp j ≤ idMap E) {X X' : Set α} {Z W : Set β}
   have hrel : (i.comp j).rel Z W := ⟨X', hjZX', hiX'W⟩
   exact (hij Z W hrel).2.2
 
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
-
 /-- Generators are unique in the second argument (`isGen_mono'` both ways). -/
 theorem isGen_snd_unique (hij : i.comp j ≤ idMap E) {X : Set α} {Y Y' : Set β}
     (h : IsGen i j X Y) (h' : IsGen i j X Y') : Y = Y' :=
   Set.Subset.antisymm (isGen_mono' i j hij h h' subset_rfl)
     (isGen_mono' i j hij h' h subset_rfl)
 
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
-
 @[simp] theorem mem_Dprime {Y : Set β} : (Dprime i j).mem Y ↔ ∃ X, IsGen i j X Y := Iff.rfl
-
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
 
 /-- **`D' ◁ E`.** Same master (`rfl`); `D' ⊆ E` since a generator's `Y` is an `E`-neighbourhood; and
 the consistency clause `inter_closed` is exactly `isGen_inter`. -/
@@ -1670,16 +1018,6 @@ theorem Dprime_subsystem : Dprime i j ◁ E where
   inter_closed := by
     rintro Y₁ Y₂ ⟨X₁, hg₁⟩ ⟨X₂, hg₂⟩ hE
     exact ⟨X₁ ∩ X₂, isGen_inter i j hg₁ hg₂ hE⟩
-
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
 
 /-- **Inverse map of the isomorphism `D ≅ D'`.** `y ↦ {X ∣ ∃ Y ∈ y, IsGen i j X Y}`. (Needs both
 laws: `j ∘ i = I_D` for generator existence and `i ∘ j ⊆ I_E` for `isGen_mono'`.) -/
@@ -1698,16 +1036,6 @@ def ofEl (hji : j.comp i = idMap D) (hij : i.comp j ≤ idMap E)
     obtain ⟨Y', hg'⟩ := isGen_exists i j hji hDX'
     have hYY' : Y ⊆ Y' := isGen_mono' i j hij hg hg' hXX'
     exact ⟨Y', y.up_mem hYy ⟨X', hg'⟩ hYY', hg'⟩
-
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
 
 /-- **Forward map of the isomorphism `D ≅ D'`.** `x ↦ {Y ∣ ∃ X ∈ x, IsGen i j X Y}` — the
 generators of the members of `x`. (Needs `j ∘ i = I_D` for upward closure, via `isGen_mono`.) -/
@@ -1729,16 +1057,6 @@ def toEl (hji : j.comp i = idMap D) (x : D.Element) : (Dprime i j).Element where
     rintro Y Y' ⟨X, hXx, hg⟩ ⟨X', hg'⟩ hYY'
     have hXX' : X ⊆ X' := isGen_mono i j hji hg hg' hYY'
     exact ⟨X', x.up_mem hXx (i.rel_dom hg'.1) hXX', hg'⟩
-
-end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-section ProjectionPair
-
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
 
 /-- **The domain isomorphism `D ≅ D'`** (Scott's "inclusion-preserving one-one correspondence").
 Built from `toEl`/`ofEl`; the inverse laws and order-reflection come from generator uniqueness. -/
@@ -1777,10 +1095,6 @@ def dprimeEquiv (hji : j.comp i = idMap D) (hij : i.comp j ≤ idMap E) :
       exact ⟨X, h X hXx, hg⟩
 
 end ProjectionPair
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 end
 end DomainTheory.NeighbourhoodSystems

@@ -114,8 +114,6 @@ section
 theorem memC1_univ : memC1 (Set.univ : Set ℕ) := Or.inl ⟨0, tail_zero.symm⟩
 end
 
-section
-end
 end DomainTheory.NeighbourhoodSystems.Exercise425
 
 section
@@ -254,10 +252,6 @@ theorem fixMap_fixed (V : NeighborhoodSystem α) (φ : (funSpace V V).Element) :
     (toApproxMap φ).toElementMap ((fixMap V).toElementMap φ) = (fixMap V).toElementMap φ := by
   rw [fixMap_toElementMap]
   exact toElementMap_fixElement (toApproxMap φ)
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **Theorem 4.2 (Scott 1981, PRG-19) — uniqueness.** Any approximable operator `fax` satisfying
 (i) and (ii) coincides with `fix`. (Scott: from (i)(ii) one proves `fix(f) ⊆ fax(f)` and
@@ -272,16 +266,9 @@ theorem fixMap_unique (V : NeighborhoodSystem α) (fax : ApproximableMap (funSpa
   apply le_antisymm
   · exact h_least φ _ (le_of_eq (fixMap_fixed V φ))
   · exact fixMap_least V φ (le_of_eq (h_fix φ))
+
 end
 
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Theorem46/PeanoModel.lean
-universe u
-
-namespace DomainTheory.NeighbourhoodSystems
-
-end DomainTheory.NeighbourhoodSystems
-end

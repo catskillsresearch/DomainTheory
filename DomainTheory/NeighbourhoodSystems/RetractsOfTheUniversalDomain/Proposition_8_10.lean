@@ -14,17 +14,13 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
+
 /- concordance: source L5040 PROPOSITION 8.10 constructs preserve projections -/
 /-- **Proposition 8.10 (Scott 1981, PRG-19), `→`-case.** `a, b` projections `⟹` `a → b` a
 projection. -/
 theorem isProjection_arrowComb {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) : IsProjection (arrowComb a b) :=
   ⟨isRetraction_arrowComb ha.1 hb.1, le_idMap_arrowComb ha.2 hb.2⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **`j₊` sends `𝒰`'s bottom to `𝒰+𝒰`'s bottom.** General fact: if `j ∘ i = I_D`, then `j(E.bot)`
 is a global lower bound of `|D|` (via `D.bot ≤ i(v)` monotone through `j`, landing on
@@ -35,20 +31,10 @@ theorem toElementMap_bot_eq_bot_of_comp_eq_idMap {i : ApproximableMap D E} {j : 
   · have h2 := j.toElementMap_mono (E.bot_le (i.toElementMap D.bot))
     rwa [toElementMap_of_comp_eq_idMap hji] at h2
   · exact D.bot_le _
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 theorem jPlus_bot_eq_bot :
     jPlus.toElementMap U.bot = (sum U U U_mem_nonempty U_mem_nonempty).bot :=
   toElementMap_bot_eq_bot_of_comp_eq_idMap jPlus_comp_iPlus
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 theorem toElementMap_prodComb (a b : ApproximableMap U U) (x : U.Element) :
     (prodComb a b).toElementMap x =
@@ -56,11 +42,6 @@ theorem toElementMap_prodComb (a b : ApproximableMap U U) (x : U.Element) :
         (b.toElementMap (jTimes.toElementMap x).snd)) := by
   rw [prodComb_eq]
   simp only [toElementMap_comp, toElementMap_prodMap]
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **Proposition 8.10, `×`-case, retraction half.** -/
 theorem isRetraction_prodComb {a b : ApproximableMap U U} (ha : Retraction a)
@@ -71,11 +52,6 @@ theorem isRetraction_prodComb {a b : ApproximableMap U U} (ha : Retraction a)
   rw [toElementMap_comp, toElementMap_prodComb a b ((prodComb a b).toElementMap x),
     toElementMap_prodComb a b x, toElementMap_of_comp_eq_idMap jTimes_comp_iTimes, fst_pair,
     snd_pair, toElementMap_idem_of_isRetraction ha, toElementMap_idem_of_isRetraction hb]
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **Proposition 8.10, `×`-case, projection half.** -/
 theorem le_idMap_prodComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : b ≤ idMap U) :
@@ -93,22 +69,12 @@ theorem le_idMap_prodComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb :
         (b.toElementMap (jTimes.toElementMap x).snd))
       ≤ iTimes.toElementMap (jTimes.toElementMap x) := iTimes.toElementMap_mono hpair
     _ ≤ x := toElementMap_le_of_comp_le_idMap iTimes_comp_jTimes_le x
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **Proposition 8.10 (Scott 1981, PRG-19), `×`-case.** `a, b` projections `⟹` `a × b` a
 projection. -/
 theorem isProjection_prodComb {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) : IsProjection (prodComb a b) :=
   ⟨isRetraction_prodComb ha.1 hb.1, le_idMap_prodComb ha.2 hb.2⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **Elementwise unfolding of `sumComb`.** Chains `sumComb_eq`, `toElementMap_comp`, and
 `toElementMap_paired`, landing exactly on `cond_toElementMap_mem`'s pattern. -/
@@ -128,11 +94,6 @@ theorem toElementMap_sumComb_mem (a b : ApproximableMap U U) (x : U.Element) {Z 
   rw [sumComb_eq]
   simp only [toElementMap_comp, toElementMap_paired]
   rw [cond_toElementMap_mem]
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **On a "left" point** (`jPlus x` reaches the left copy), `sumComb a b` evaluates to Scott's
 literal `i₊∘in₀∘a∘out₀` formula. -/
@@ -157,11 +118,6 @@ theorem toElementMap_sumComb_of_left {a b : ApproximableMap U U} {x : U.Element}
     · exact Element.master_mem _
   · intro h
     exact Or.inl ⟨hz, h⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **On a point reaching neither copy** (in particular, `𝒰`'s own `⊥`, via `jPlus_bot_eq_bot`),
 `sumComb a b` sends it to `𝒰`'s `⊥`. -/
@@ -188,11 +144,6 @@ theorem toElementMap_sumComb_of_neither {a b : ApproximableMap U U} {x : U.Eleme
     · exact h
   · intro h
     exact Or.inr (Or.inr h)
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **On a "right" point**, symmetric to `toElementMap_sumComb_of_left`. -/
 theorem toElementMap_sumComb_of_right {a b : ApproximableMap U U} {x : U.Element}
@@ -216,11 +167,6 @@ theorem toElementMap_sumComb_of_right {a b : ApproximableMap U U} {x : U.Element
     · exact Element.master_mem _
   · intro h
     exact Or.inr (Or.inl ⟨ho, h⟩)
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **Proposition 8.10, `+`-case, retraction half.** -/
 theorem isRetraction_sumComb {a b : ApproximableMap U U} (ha : Retraction a)
@@ -253,11 +199,6 @@ theorem isRetraction_sumComb {a b : ApproximableMap U U} (ha : Retraction a)
     intro W hW
     rw [jPlus_bot_eq_bot, mem_bot] at hW
     exact hW
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **Proposition 8.10, `+`-case, projection half.** -/
 theorem le_idMap_sumComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : b ≤ idMap U) :
@@ -288,22 +229,12 @@ theorem le_idMap_sumComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : 
       _ ≤ x := toElementMap_le_of_comp_le_idMap iPlus_comp_jPlus_le x
   · rw [toElementMap_sumComb_of_neither hN]
     exact U.bot_le x
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **Proposition 8.10 (Scott 1981, PRG-19), `+`-case.** `a, b` projections `⟹` `a + b` a
 projection. -/
 theorem isProjection_sumComb {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) : IsProjection (sumComb a b) :=
   ⟨isRetraction_sumComb ha.1 hb.1, le_idMap_sumComb ha.2 hb.2⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **Proposition 8.10 (Scott 1981, PRG-19), first half.** If `a, b : 𝒰 → 𝒰` are projections,
 then so are `a+b`, `a×b`, and `a→b`. -/
@@ -311,6 +242,7 @@ theorem isProjection_combinators {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) :
     IsProjection (sumComb a b) ∧ IsProjection (prodComb a b) ∧ IsProjection (arrowComb a b) :=
   ⟨isProjection_sumComb ha hb, isProjection_prodComb ha hb, isProjection_arrowComb ha hb⟩
+
 end
 
 section
@@ -1828,35 +1760,9 @@ action of `×` (Exercise 3.19's `prodMap`) on the injections `i_a : D_a → 𝒰
 noncomputable def IProdComb : ApproximableMap (prod (fixedNbhd a) (fixedNbhd b)) U :=
   iTimes.comp (prodMap (fixedNbhd_subsystem a).inj (fixedNbhd_subsystem b).inj)
 
-end ProdCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section ProdCase
-
-variable (a b : ApproximableMap U U)
-
 /-- **`J_× : 𝒰 → D_a × D_b`**, symmetric to `IProdComb`, via the projections `j_a`, `j_b`. -/
 noncomputable def JProdComb : ApproximableMap U (prod (fixedNbhd a) (fixedNbhd b)) :=
   (prodMap (fixedNbhd_subsystem a).proj (fixedNbhd_subsystem b).proj).comp jTimes
-
-end ProdCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section ProdCase
-
-variable (a b : ApproximableMap U U)
 
 theorem JProdComb_comp_IProdComb :
     (JProdComb a b).comp (IProdComb a b) = idMap (prod (fixedNbhd a) (fixedNbhd b)) := by
@@ -1866,6 +1772,7 @@ theorem JProdComb_comp_IProdComb :
     prodMap_id]
 
 end ProdCase
+
 end
 
 section
@@ -1937,13 +1844,6 @@ noncomputable def expMap (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1
   curry (k.comp ((evalMap V0 V1).comp (prodMap (idMap (funSpace V0 V1)) h)))
 
 end ExpMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section ArrowCase
 
@@ -1955,32 +1855,12 @@ functorial action of `→` (`expMap`) on `j_a : 𝒰 → D_a` (contravariant slo
 noncomputable def IArrowComb : ApproximableMap (funSpace (fixedNbhd a) (fixedNbhd b)) U :=
   iArrow.comp (expMap (fixedNbhd_subsystem a).proj (fixedNbhd_subsystem b).inj)
 
-end ArrowCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section ArrowCase
-
-variable (a b : ApproximableMap U U)
-
 /-- **`J_→ : 𝒰 → (D_a → D_b)`**, symmetric to `IArrowComb`, via `i_a` (contravariant) and
 `j_b` (covariant). -/
 noncomputable def JArrowComb : ApproximableMap U (funSpace (fixedNbhd a) (fixedNbhd b)) :=
   (expMap (fixedNbhd_subsystem a).inj (fixedNbhd_subsystem b).proj).comp jArrow
 
 end ArrowCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section ExpMap
 
@@ -1995,48 +1875,15 @@ variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
 theorem expMap_eq (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1') :
     expMap h k = curry (k.comp ((evalMap V0 V1).comp (prodMap (idMap (funSpace V0 V1)) h))) := rfl
 
-end ExpMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section ExpMap
-
-variable {γ δ γ' δ' γ'' δ'' : Type*}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
 /-- `expMap` specializes to `lamComb` on self-maps of `𝒰`. -/
 theorem expMap_eq_lamComb (a b : ApproximableMap U U) : expMap a b = lamComb a b := rfl
 
 end ExpMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 /-- Every neighbourhood of `D_a := fixedNbhd a` is non-empty (inherited from `𝒰`). -/
 theorem fixedNbhd_mem_nonempty (a : ApproximableMap U U) :
     ∀ X, (fixedNbhd a).mem X → X.Nonempty :=
   fun X hX => U_mem_nonempty X ((fixedNbhd_subsystem a).sub hX)
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section SumCase
 
@@ -2049,19 +1896,6 @@ noncomputable def ISumComb : ApproximableMap (sum (fixedNbhd a) (fixedNbhd b)
   iPlus.comp (sumMap (h₀' := U_mem_nonempty) (h₁' := U_mem_nonempty)
     (fixedNbhd_subsystem a).inj (fixedNbhd_subsystem b).inj)
 
-end SumCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section SumCase
-
-variable (a b : ApproximableMap U U)
-
 /-- **`J_+ : 𝒰 → D_a + D_b`**, symmetric to `ISumComb`, via the projections `j_a`, `j_b`. -/
 noncomputable def JSumComb : ApproximableMap U (sum (fixedNbhd a) (fixedNbhd b)
     (fixedNbhd_mem_nonempty a) (fixedNbhd_mem_nonempty b)) :=
@@ -2069,26 +1903,12 @@ noncomputable def JSumComb : ApproximableMap U (sum (fixedNbhd a) (fixedNbhd b)
     (fixedNbhd_subsystem a).proj (fixedNbhd_subsystem b).proj).comp jPlus
 
 end SumCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 /-- **`i_a ∘ j_a = a`, for a finitary projection `a`.** Theorem 8.6's `sub_eq_self_of_isFinitaryProjection`,
 restated via `retractionOfSubsystem`'s definition. -/
 theorem inj_comp_proj_eq_self (ha : FinitaryProjection a) :
     (fixedNbhd_subsystem a).inj.comp (fixedNbhd_subsystem a).proj = a :=
   sub_eq_self_of_isFinitaryProjection ha
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section ProdCase
 
@@ -2100,19 +1920,6 @@ theorem IProdComb_comp_JProdComb (ha : FinitaryProjection a) (hb : FinitaryProje
   rw [comp_assoc, ← comp_assoc (prodMap _ _) (prodMap _ _) jTimes, ← prodMap_comp,
     inj_comp_proj_eq_self ha, inj_comp_proj_eq_self hb, ← comp_assoc, prodComb_eq, comp_assoc]
 
-end ProdCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section ProdCase
-
-variable (a b : ApproximableMap U U)
-
 /-- **Proposition 8.10(b), `×`-case, the isomorphism `D_{a×b} ≅ D_a × D_b`.** -/
 noncomputable def prodComb_elementIso (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (prod (fixedNbhd a) (fixedNbhd b)).Element ≃o
@@ -2121,13 +1928,6 @@ noncomputable def prodComb_elementIso (ha : FinitaryProjection a) (hb : Finitary
     (IProdComb_comp_JProdComb a b ha hb).symm
 
 end ProdCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
 
@@ -2158,31 +1958,6 @@ theorem reaches_neither_iff_eq_bot {y : (sum V0 V1 h0 h1).Element} :
     rw [mem_bot] at hW
     exact hW
 
-end SumMapLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section SumMapLemmas
-
-variable {γ δ γ' δ' γ'' δ'' : Type u}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
-variable {h0 : ∀ X, V0.mem X → X.Nonempty} {h1 : ∀ Y, V1.mem Y → Y.Nonempty}
-
-variable {h0' : ∀ X, V0'.mem X → X.Nonempty} {h1' : ∀ Y, V1'.mem Y → Y.Nonempty}
-
-variable {h0'' : ∀ X, V0''.mem X → X.Nonempty} {h1'' : ∀ Y, V1''.mem Y → Y.Nonempty}
-
 /-- `sumMap` sends the bottom element to the bottom element. -/
 theorem sumMap_bot (f : ApproximableMap V0 V0') (g : ApproximableMap V1 V1') :
     (sumMap (h₀ := h0) (h₁ := h1) (h₀' := h0') (h₁' := h1') f g).toElementMap
@@ -2204,31 +1979,6 @@ theorem sumMap_bot (f : ApproximableMap V0 V0') (g : ApproximableMap V1 V1') :
     exact ⟨sumMaster V0 V1, (sum V0 V1 h0 h1).mem_bot.mpr rfl, (sum V0 V1 h0 h1).master_mem,
       (sum V0' V1' h0' h1').master_mem, Or.inl rfl⟩
 
-end SumMapLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section SumMapLemmas
-
-variable {γ δ γ' δ' γ'' δ'' : Type u}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
-variable {h0 : ∀ X, V0.mem X → X.Nonempty} {h1 : ∀ Y, V1.mem Y → Y.Nonempty}
-
-variable {h0' : ∀ X, V0'.mem X → X.Nonempty} {h1' : ∀ Y, V1'.mem Y → Y.Nonempty}
-
-variable {h0'' : ∀ X, V0''.mem X → X.Nonempty} {h1'' : ∀ Y, V1''.mem Y → Y.Nonempty}
-
 /-- If `y` reaches the left copy, `(sumMap f g)(y)` also reaches the left copy. -/
 theorem sumMap_reaches_left {f : ApproximableMap V0 V0'} {g : ApproximableMap V1 V1'}
     {y : (sum V0 V1 h0 h1).Element} (hL : ∃ X, V0.mem X ∧ y.mem (inj₀ X)) :
@@ -2240,31 +1990,6 @@ theorem sumMap_reaches_left {f : ApproximableMap V0 V0'} {g : ApproximableMap V1
   exact ⟨V0'.master, V0'.master_mem, inj₀ X, hXy,
     Or.inr (Or.inl ⟨X, hX, rfl⟩), Or.inr (Or.inl ⟨V0'.master, V0'.master_mem, rfl⟩),
     Or.inr (Or.inl ⟨X, V0'.master, rfl, rfl, hf⟩)⟩
-
-end SumMapLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section SumMapLemmas
-
-variable {γ δ γ' δ' γ'' δ'' : Type u}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
-variable {h0 : ∀ X, V0.mem X → X.Nonempty} {h1 : ∀ Y, V1.mem Y → Y.Nonempty}
-
-variable {h0' : ∀ X, V0'.mem X → X.Nonempty} {h1' : ∀ Y, V1'.mem Y → Y.Nonempty}
-
-variable {h0'' : ∀ X, V0''.mem X → X.Nonempty} {h1'' : ∀ Y, V1''.mem Y → Y.Nonempty}
 
 /-- If `y` reaches the right copy, `(sumMap f g)(y)` also reaches the right copy. -/
 theorem sumMap_reaches_right {f : ApproximableMap V0 V0'} {g : ApproximableMap V1 V1'}
@@ -2279,13 +2004,6 @@ theorem sumMap_reaches_right {f : ApproximableMap V0 V0'} {g : ApproximableMap V
     Or.inr (Or.inr ⟨Y, V1'.master, rfl, rfl, hg⟩)⟩
 
 end SumMapLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section ExpMap
 
@@ -2309,25 +2027,6 @@ theorem toApproxMap_toElementMap_expMap (h : ApproximableMap V0' V0) (k : Approx
     toElementMap_prodMap_pair, toElementMap_idMap, evalMap_apply, toElementMap_comp,
     toElementMap_comp]
 
-end ExpMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section ExpMap
-
-variable {γ δ γ' δ' γ'' δ'' : Type*}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
 /-- **`expMap` preserves composition, contravariantly in `h`:
 `expMap (h∘h') (k'∘k) = expMap h' k' ∘ expMap h k`.** -/
 theorem expMap_comp (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1')
@@ -2341,13 +2040,6 @@ theorem expMap_comp (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1')
   simp only [comp_assoc]
 
 end ExpMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section ArrowCase
 
@@ -2361,13 +2053,6 @@ theorem IArrowComb_comp_JArrowComb (ha : FinitaryProjection a) (hb : FinitaryPro
     arrowComb_eq, comp_assoc]
 
 end ArrowCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section ExpMap
 
@@ -2388,13 +2073,6 @@ theorem expMap_id : expMap (idMap V0) (idMap V1) = idMap (funSpace V0 V1) := by
     toApproxMap_toElementMap_expMap, comp_idMap, idMap_comp]
 
 end ExpMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section ArrowCase
 
@@ -2408,19 +2086,6 @@ theorem JArrowComb_comp_IArrowComb :
     ← expMap_comp, (fixedNbhd_subsystem a).proj_comp_inj, (fixedNbhd_subsystem b).proj_comp_inj,
     expMap_id]
 
-end ArrowCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section ArrowCase
-
-variable (a b : ApproximableMap U U)
-
 /-- **Proposition 8.10(b), `→`-case, the isomorphism `D_{a→b} ≅ (D_a → D_b)`.** -/
 noncomputable def arrowComb_elementIso (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (funSpace (fixedNbhd a) (fixedNbhd b)).Element ≃o
@@ -2429,6 +2094,7 @@ noncomputable def arrowComb_elementIso (ha : FinitaryProjection a) (hb : Finitar
     (IArrowComb_comp_JArrowComb a b ha hb).symm
 
 end ArrowCase
+
 end
 
 section
@@ -2492,31 +2158,6 @@ theorem toElementMap_sumMap_inMap₀ (f : ApproximableMap V0 V0') (g : Approxima
         rw [toElementMap_comp, toElementMap_comp, ← hz]
     _ = f.toElementMap v := by rw [heq]
 
-end SumMapLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section SumMapLemmas
-
-variable {γ δ γ' δ' γ'' δ'' : Type u}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
-variable {h0 : ∀ X, V0.mem X → X.Nonempty} {h1 : ∀ Y, V1.mem Y → Y.Nonempty}
-
-variable {h0' : ∀ X, V0'.mem X → X.Nonempty} {h1' : ∀ Y, V1'.mem Y → Y.Nonempty}
-
-variable {h0'' : ∀ X, V0''.mem X → X.Nonempty} {h1'' : ∀ Y, V1''.mem Y → Y.Nonempty}
-
 theorem toElementMap_sumMap_inMap₁ (f : ApproximableMap V0 V0') (g : ApproximableMap V1 V1')
     (w : V1.Element) :
     (sumMap (h₀ := h0) (h₁ := h1) (h₀' := h0') (h₁' := h1') f g).toElementMap
@@ -2539,31 +2180,6 @@ theorem toElementMap_sumMap_inMap₁ (f : ApproximableMap V0 V0') (g : Approxima
         rw [toElementMap_comp, toElementMap_comp, ← hz]
     _ = g.toElementMap w := by rw [heq]
 
-end SumMapLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section SumMapLemmas
-
-variable {γ δ γ' δ' γ'' δ'' : Type u}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
-variable {h0 : ∀ X, V0.mem X → X.Nonempty} {h1 : ∀ Y, V1.mem Y → Y.Nonempty}
-
-variable {h0' : ∀ X, V0'.mem X → X.Nonempty} {h1' : ∀ Y, V1'.mem Y → Y.Nonempty}
-
-variable {h0'' : ∀ X, V0''.mem X → X.Nonempty} {h1'' : ∀ Y, V1''.mem Y → Y.Nonempty}
-
 theorem toElementMap_sumMap_of_left {f : ApproximableMap V0 V0'} {g : ApproximableMap V1 V1'}
     {y : (sum V0 V1 h0 h1).Element} (hL : ∃ X, V0.mem X ∧ y.mem (inj₀ X)) :
     (sumMap (h₀ := h0) (h₁ := h1) (h₀' := h0') (h₁' := h1') f g).toElementMap y =
@@ -2571,31 +2187,6 @@ theorem toElementMap_sumMap_of_left {f : ApproximableMap V0 V0'} {g : Approximab
         (f.toElementMap ((outMap₀ (h₀ := h0) (h₁ := h1)).toElementMap y)) := by
   conv_lhs => rw [← inMap₀_outMap₀_eq_of_left hL]
   exact toElementMap_sumMap_inMap₀ f g _
-
-end SumMapLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section SumMapLemmas
-
-variable {γ δ γ' δ' γ'' δ'' : Type u}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
-variable {h0 : ∀ X, V0.mem X → X.Nonempty} {h1 : ∀ Y, V1.mem Y → Y.Nonempty}
-
-variable {h0' : ∀ X, V0'.mem X → X.Nonempty} {h1' : ∀ Y, V1'.mem Y → Y.Nonempty}
-
-variable {h0'' : ∀ X, V0''.mem X → X.Nonempty} {h1'' : ∀ Y, V1''.mem Y → Y.Nonempty}
 
 theorem toElementMap_sumMap_of_right {f : ApproximableMap V0 V0'} {g : ApproximableMap V1 V1'}
     {y : (sum V0 V1 h0 h1).Element} (hR : ∃ Y, V1.mem Y ∧ y.mem (inj₁ Y)) :
@@ -2606,13 +2197,6 @@ theorem toElementMap_sumMap_of_right {f : ApproximableMap V0 V0'} {g : Approxima
   exact toElementMap_sumMap_inMap₁ f g _
 
 end SumMapLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section SumCase
 
@@ -2638,13 +2222,6 @@ theorem sumComb_eq_iPlus_sumMap_jPlus :
       toElementMap_bot_eq_bot_of_comp_le_idMap iPlus_comp_jPlus_le]
 
 end SumCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
 
@@ -2682,13 +2259,6 @@ theorem sumMap_comp (f' : ApproximableMap V0' V0'') (f : ApproximableMap V0 V0')
     rw [hN, sumMap_bot, sumMap_bot, sumMap_bot]
 
 end SumMapLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section SumCase
 
@@ -2702,13 +2272,6 @@ theorem ISumComb_comp_JSumComb (ha : FinitaryProjection a) (hb : FinitaryProject
     sumComb_eq_iPlus_sumMap_jPlus, comp_assoc]
 
 end SumCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
 
@@ -2739,13 +2302,6 @@ theorem sumMap_id : sumMap (h₀ := h0) (h₁ := h1) (h₀' := h0) (h₁' := h1)
     rw [hN, sumMap_bot]
 
 end SumMapLemmas
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section SumCase
 
@@ -2760,19 +2316,6 @@ theorem JSumComb_comp_ISumComb :
     ← sumMap_comp, (fixedNbhd_subsystem a).proj_comp_inj, (fixedNbhd_subsystem b).proj_comp_inj,
     sumMap_id]
 
-end SumCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section SumCase
-
-variable (a b : ApproximableMap U U)
-
 /-- **Proposition 8.10(b), `+`-case, the isomorphism `D_{a+b} ≅ D_a + D_b`.** -/
 noncomputable def sumComb_elementIso (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (sum (fixedNbhd a) (fixedNbhd b) (fixedNbhd_mem_nonempty a) (fixedNbhd_mem_nonempty b)).Element
@@ -2781,6 +2324,7 @@ noncomputable def sumComb_elementIso (ha : FinitaryProjection a) (hb : FinitaryP
     (ISumComb_comp_JSumComb a b ha hb).symm
 
 end SumCase
+
 end
 
 section
@@ -2813,20 +2357,6 @@ theorem finitary_arrowComb (ha : FinitaryProjection a) (hb : FinitaryProjection 
   isFinitary_of_projectionPair (IArrowComb a b) (JArrowComb a b) (JArrowComb_comp_IArrowComb a b)
     (IArrowComb_comp_JArrowComb a b ha hb).symm
 
-end ArrowCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section ArrowCase
-
-variable (a b : ApproximableMap U U)
-
-
 /-- **Proposition 8.10(b), `→`-case, in full.** `a, b` finitary projections `⟹` `a → b` is a
 finitary projection, and its fixed-point set is order-isomorphic to `D_a → D_b`. -/
 theorem finitaryProjection_arrowComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
@@ -2834,13 +2364,6 @@ theorem finitaryProjection_arrowComb (ha : FinitaryProjection a) (hb : FinitaryP
   ⟨⟨isProjection_arrowComb ha.out.1 hb.out.1, finitary_arrowComb a b ha hb⟩⟩
 
 end ArrowCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section ProdCase
 
@@ -2854,20 +2377,6 @@ theorem finitary_prodComb (ha : FinitaryProjection a) (hb : FinitaryProjection b
   isFinitary_of_projectionPair (IProdComb a b) (JProdComb a b) (JProdComb_comp_IProdComb a b)
     (IProdComb_comp_JProdComb a b ha hb).symm
 
-end ProdCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section ProdCase
-
-variable (a b : ApproximableMap U U)
-
-
 /-- **Proposition 8.10(b), `×`-case, in full.** `a, b` finitary projections `⟹` `a × b` is a
 finitary projection, and its fixed-point set is order-isomorphic to `D_a × D_b`. -/
 theorem finitaryProjection_prodComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
@@ -2875,13 +2384,6 @@ theorem finitaryProjection_prodComb (ha : FinitaryProjection a) (hb : FinitaryPr
   ⟨⟨isProjection_prodComb ha.out.1 hb.out.1, finitary_prodComb a b ha hb⟩⟩
 
 end ProdCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 section SumCase
 
@@ -2895,20 +2397,6 @@ theorem finitary_sumComb (ha : FinitaryProjection a) (hb : FinitaryProjection b)
   isFinitary_of_projectionPair (ISumComb a b) (JSumComb a b) (JSumComb_comp_ISumComb a b)
     (ISumComb_comp_JSumComb a b ha hb).symm
 
-end SumCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
-
-section SumCase
-
-variable (a b : ApproximableMap U U)
-
-
 /-- **Proposition 8.10(b), `+`-case, in full.** `a, b` finitary projections `⟹` `a + b` is a
 finitary projection, and its fixed-point set is order-isomorphic to `D_a + D_b`. -/
 theorem finitaryProjection_sumComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
@@ -2916,13 +2404,6 @@ theorem finitaryProjection_sumComb (ha : FinitaryProjection a) (hb : FinitaryPro
   ⟨⟨isProjection_sumComb ha.out.1 hb.out.1, finitary_sumComb a b ha hb⟩⟩
 
 end SumCase
-end
-
-section
-open NeighborhoodSystem ApproximableMap Exercise326
-universe u
-variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {a b : ApproximableMap U U}
 
 /-- **Proposition 8.10(b) (Scott 1981, PRG-19), in full.** If `a, b : 𝒰 → 𝒰` are finitary
 projections, then so are `a+b`, `a×b`, `a→b`, with `D_{a+b} ≅ D_a+D_b`, `D_{a×b} ≅ D_a×D_b`,
@@ -2933,6 +2414,7 @@ theorem finitaryProjection_combinators {a b : ApproximableMap U U}
       FinitaryProjection (arrowComb a b) :=
   ⟨finitaryProjection_sumComb a b ha hb, finitaryProjection_prodComb a b ha hb,
     finitaryProjection_arrowComb a b ha hb⟩
+
 end
 
 section
@@ -5250,9 +4732,5 @@ theorem theorem_810_b : And
   DomainTheory.NeighbourhoodSystems.finitary_sumComb
 end
 
-section
-open NeighborhoodSystem ApproximableMap
-
-end
 end DomainTheory.NeighbourhoodSystems
 end

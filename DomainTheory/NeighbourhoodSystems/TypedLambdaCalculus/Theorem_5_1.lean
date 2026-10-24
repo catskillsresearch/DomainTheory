@@ -15,6 +15,7 @@ section
 variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 namespace Theorem51
+
 /- concordance: source L2599 THEOREM 5.1 terms denote approximable maps -/
 /-- **Theorem 5.1, abstraction case (Scott 1981, PRG-19).** If `⟦σ⟧ : Γ × 𝒟ₙ → 𝒟'` is approximable,
 then `λx.σ` is interpreted by `curry ⟦σ⟧ : Γ → (𝒟ₙ → 𝒟')` (approximable by Thm 3.12), with value
@@ -22,15 +23,6 @@ then `λx.σ` is interpreted by `curry ⟦σ⟧ : Γ → (𝒟ₙ → 𝒟')` (a
 theorem abs_apply (g : ApproximableMap (prod V₀ V₁) V₂) (v : V₀.Element) (x : V₁.Element) :
     (toApproxMap ((curry g).toElementMap v)).toElementMap x = g.toElementMap (pair v x) :=
   toElementMap_curry_apply g v x
-
-end Theorem51
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-namespace Theorem51
 
 /-- **Theorem 5.1, application case (Scott 1981, PRG-19).** If `⟦σ₀⟧ : Γ → (𝒟₀ → 𝒟₁)` and
 `⟦σ₁⟧ : Γ → 𝒟₀` are approximable, then `σ₀(σ₁)` is interpreted by `eval ∘ ⟨⟦σ₀⟧, ⟦σ₁⟧⟩`
@@ -41,43 +33,16 @@ theorem app_apply (F : ApproximableMap V₂ (funSpace V₀ V₁)) (G : Approxima
       = (toApproxMap (F.toElementMap w)).toElementMap (G.toElementMap w) := by
   rw [toElementMap_comp, toElementMap_paired, evalMap_apply]
 
-end Theorem51
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-namespace Theorem51
-
 /-- **Theorem 5.1, constant case (Scott 1981, PRG-19).** A constant `k` is interpreted by the
 constant map, which is approximable with value `k`. -/
 theorem const_apply (k : V₁.Element) (x : V₀.Element) :
     (constMap V₀ k).toElementMap x = k := toElementMap_constMap k x
-
-end Theorem51
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-namespace Theorem51
 
 /-- **Theorem 5.1, tuple case (Scott 1981, PRG-19).** If `⟦σ₀⟧, ⟦σ₁⟧` are approximable, so is the
 tuple `⟨⟦σ₀⟧, ⟦σ₁⟧⟩ = paired`, with value `⟨σ₀(w), σ₁(w)⟩`. -/
 theorem tuple_apply (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁) (w : V₂.Element) :
     (paired f g).toElementMap w = pair (f.toElementMap w) (g.toElementMap w) :=
   toElementMap_paired f g w
-
-end Theorem51
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-namespace Theorem51
 
 /-- **Theorem 5.1, variable case (Scott 1981, PRG-19).** A free variable is interpreted by a
 projection of the context; the projections are approximable with `p₀⟨x,y⟩ = x`, `p₁⟨x,y⟩ = y`. -/
@@ -446,15 +411,11 @@ theorem var_snd (x : V₀.Element) (y : V₁.Element) :
     (proj₁ V₀ V₁).toElementMap (pair x y) = y := by rw [toElementMap_proj₁, snd_pair]
 
 end Theorem51
-end
-
-section
-variable {α β γ δ : Type*}
-  {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 namespace Theorem52
 
 end Theorem52
+
 end
 end DomainTheory.NeighbourhoodSystems
 end

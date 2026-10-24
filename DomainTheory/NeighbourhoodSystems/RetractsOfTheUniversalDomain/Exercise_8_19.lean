@@ -119,11 +119,6 @@ to the function that ignores its argument and always returns `b`. -/
 noncomputable def constFunMap : ApproximableMap B (funSpace A B) := curry (proj₀ B A)
 
 end FunSpace
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u v
 
 section Prod
 
@@ -132,26 +127,10 @@ variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : Neighborho
 /-- **`a ↦ ⟨a, ⊥⟩`.** -/
 noncomputable def embedFst : ApproximableMap A (prod A B) := paired (idMap A) (constMap A B.bot)
 
-end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u v
-
-section Prod
-
-variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
 /-- **`b ↦ ⟨⊥, b⟩`.** -/
 noncomputable def embedSnd : ApproximableMap B (prod A B) := paired (constMap B A.bot) (idMap B)
 
 end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u v
 
 section FunSpace
 
@@ -161,17 +140,6 @@ variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : Neighborho
 noncomputable def evalBotMap : ApproximableMap (funSpace A B) B :=
   (evalMap A B).comp (paired (idMap (funSpace A B)) (constMap (funSpace A B) A.bot))
 
-end FunSpace
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u v
-
-section FunSpace
-
-variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
 @[simp] theorem toApproxMap_constFunMap (b : B.Element) (a : A.Element) :
     (toApproxMap ((constFunMap A B).toElementMap b)).toElementMap a = b := by
   rw [constFunMap, toElementMap_curry_apply, toElementMap_proj₀, fst_pair]
@@ -179,6 +147,7 @@ variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : Neighborho
 end FunSpace
 
 variable {α : Type u} (D : NeighborhoodSystem α)
+
 end
 
 section
@@ -235,34 +204,10 @@ theorem embedSnd_comp_proj₁_le : (embedSnd A B).comp (proj₁ A B) ≤ idMap (
     toElementMap_paired, toElementMap_idMap, toElementMap_constMap]
   exact pair_le_pair_iff.mpr ⟨A.bot_le x, le_refl y⟩
 
-end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u v
-
-section Prod
-
-variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
-
 theorem proj₀_comp_embedFst : (proj₀ A B).comp (embedFst A B) = idMap A := by
   apply le_antisymm <;> rw [le_iff_toElementMap_le] <;> intro a <;>
     simp [embedFst, toElementMap_comp, toElementMap_idMap, toElementMap_paired, toElementMap_constMap,
       toElementMap_proj₀, fst_pair]
-
-end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u v
-
-section Prod
-
-variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
 
 theorem proj₁_comp_embedSnd : (proj₁ A B).comp (embedSnd A B) = idMap B := by
   apply le_antisymm <;> rw [le_iff_toElementMap_le] <;> intro b <;>
@@ -270,11 +215,6 @@ theorem proj₁_comp_embedSnd : (proj₁ A B).comp (embedSnd A B) = idMap B := b
       toElementMap_proj₁, snd_pair]
 
 end Prod
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u v
 
 section FunSpace
 
@@ -285,18 +225,6 @@ theorem toElementMap_evalBotMap (φ : (funSpace A B).Element) :
     (evalBotMap A B).toElementMap φ = (toApproxMap φ).toElementMap A.bot := by
   simp [evalBotMap, toElementMap_comp, toElementMap_paired, toElementMap_idMap,
     toElementMap_constMap, evalMap_apply]
-
-end FunSpace
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u v
-
-section FunSpace
-
-variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
 
 /-- `const_{φ(⊥)} ≤ φ` pointwise, since `φ(⊥) ≤ φ(x)` for every `x` (monotonicity,
 `toElementMap_mono`, Proposition 2.2(iii), applied to `⊥ ≤ x`). -/
@@ -311,33 +239,9 @@ theorem constFunMap_comp_evalBotMap_le :
   rw [toApproxMap_constFunMap, toElementMap_evalBotMap]
   exact toElementMap_mono (toApproxMap φ) (A.bot_le a)
 
-end FunSpace
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u v
-
-section FunSpace
-
-variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
-
 theorem evalBotMap_comp_constFunMap : (evalBotMap A B).comp (constFunMap A B) = idMap B := by
   apply le_antisymm <;> rw [le_iff_toElementMap_le] <;> intro b <;>
     rw [toElementMap_comp, toElementMap_idMap, toElementMap_evalBotMap, toApproxMap_constFunMap]
-
-end FunSpace
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u v
-
-section FunSpace
-
-variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
 
 /-- **`B ⊴ funSpace A B`**, via `b ↦ (λ_. b)` / evaluation at `⊥`. -/
 theorem trianglelefteq_funSpace_const : B ⊴ funSpace A B :=
@@ -345,6 +249,7 @@ theorem trianglelefteq_funSpace_const : B ⊴ funSpace A B :=
     (evalBotMap_comp_constFunMap A B) (constFunMap_comp_evalBotMap_le A B)
 
 end FunSpace
+
 end
 
 section
@@ -380,12 +285,6 @@ variable {α : Type u} (D : NeighborhoodSystem α)
 
 /-- **Exercise 8.20, `D ⊴ D×D`.** -/
 theorem D_trianglelefteq_prod : D ⊴ prod D D := trianglelefteq_prod_fst D D
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} (D : NeighborhoodSystem α)
 
 end
 end DomainTheory.NeighbourhoodSystems

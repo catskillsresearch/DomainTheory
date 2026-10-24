@@ -83,44 +83,14 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
 theorem oplusTok_mem_embF {X : Set Str} (hX : D₀.mem X) (hXne : X ≠ D₀.master) :
     (oplusTok D₀ D₁ h₀ h₁).mem (embBit false X) := Or.inr (Or.inl ⟨X, hX, hXne, rfl⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem oplusTok_mem_embT {Y : Set Str} (hY : D₁.mem Y) (hYne : Y ≠ D₁.master) :
     (oplusTok D₀ D₁ h₀ h₁).mem (embBit true Y) := Or.inr (Or.inr ⟨Y, hY, hYne, rfl⟩)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 theorem oplusTok_nonempty : ∀ W, (oplusTok D₀ D₁ h₀ h₁).mem W → W.Nonempty := by
   rintro W (rfl | ⟨X, hX, -, rfl⟩ | ⟨Y, hY, -, rfl⟩)
   · exact ⟨[], nil_mem_sumTokMaster⟩
   · exact embBit_nonempty (h₀ X hX)
   · exact embBit_nonempty (h₁ Y hY)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- The **coalesced sum object** `𝒟₀ ⊕ 𝒟₁`. -/
 def ScottSys.oplus (A₀ A₁ : ScottSys) : ScottSys :=
@@ -142,20 +112,6 @@ variable {C₀ C₁ : ScottSys}
 
 /-- n-ary coalesced sum `T₀ ⊕ T₁ ⊕ ⋯ ⊕ Tₙ`. -/
 def GExpr.naryOplus : GExpr → List GExpr → GExpr := GExpr.naryOp GExpr.oplus
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- **`f₀ ⊕ f₁`, the action of the coalesced sum on maps.** -/
 def oplusMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys) :
@@ -272,54 +228,14 @@ def otimesTok (D₀ D₁ : NeighborhoodSystem Str) : NeighborhoodSystem Str wher
             D₁.inter_mem hY hY' hZ₁ hsub₁, inter_ne_of_ne_left (D₀.sub_master hX) hXne,
             inter_ne_of_ne_left (D₁.sub_master hY) hYne, rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem otimesTok_mem_master : (otimesTok D₀ D₁).mem (prodTokNbhd D₀.master D₁.master) := Or.inl rfl
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 theorem otimesTok_mem_prod {X Y : Set Str} (hX : D₀.mem X) (hY : D₁.mem Y)
     (hXne : X ≠ D₀.master) (hYne : Y ≠ D₁.master) :
     (otimesTok D₀ D₁).mem (prodTokNbhd X Y) := Or.inr ⟨X, Y, hX, hY, hXne, hYne, rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem otimesTok_nonempty : ∀ W, (otimesTok D₀ D₁).mem W → W.Nonempty := by
   rintro W (rfl | ⟨X, Y, -, -, -, -, rfl⟩) <;> exact ⟨[], mem_prodTokNbhd_nil⟩
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- The **smash product object** `𝒟₀ ⊗ 𝒟₁`. -/
 def ScottSys.otimes (A₀ A₁ : ScottSys) : ScottSys :=
@@ -348,20 +264,6 @@ def GExpr.RootedConst : GExpr → Prop
   | .oplus a b => a.RootedConst ∧ b.RootedConst
   | .otimes a b => a.RootedConst ∧ b.RootedConst
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- **The token-level master recursion for `GExpr`.** All four binary operations share the same body
 (`sumTokMaster = prodTokNbhd` on masters). -/
 def gFun : GExpr → Set Str → Set Str
@@ -372,55 +274,13 @@ def gFun : GExpr → Set Str → Set Str
   | .oplus a b, Γ => insert ([] : Str) (embBit false (gFun a Γ) ∪ embBit true (gFun b Γ))
   | .otimes a b, Γ => insert ([] : Str) (embBit false (gFun a Γ) ∪ embBit true (gFun b Γ))
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- The **Kleene iteration** `gFunⁿ({Λ})`. -/
 def gIter (T : GExpr) : ℕ → Set Str
   | 0 => {([] : Str)}
   | n + 1 => gFun T (gIter T n)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- n-ary smash product `T₀ ⊗ T₁ ⊗ ⋯ ⊗ Tₙ`. -/
 def GExpr.naryOtimes : GExpr → List GExpr → GExpr := GExpr.naryOp GExpr.otimes
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- **The action of `T` on objects.** -/
 def GExpr.obj : GExpr → ScottSys → ScottSys
@@ -430,20 +290,6 @@ def GExpr.obj : GExpr → ScottSys → ScottSys
   | .prod a b, X => (a.obj X).prod (b.obj X)
   | .oplus a b, X => (a.obj X).oplus (b.obj X)
   | .otimes a b, X => (a.obj X).otimes (b.obj X)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- **`f₀ ⊗ f₁`, the action of the smash product on maps.** -/
 def otimesMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys) :
@@ -494,20 +340,6 @@ def otimesMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : Approximable
           exact Or.inr ⟨Xz, Yz, Xz', Yz', f₀.mono hr0 hXzX hX'Xz' hXz hXz',
             f₁.mono hr1 hYzY hY'Yz' hYz hYz', hXzne, hYzne, hXz'ne, hYz'ne, rfl, rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- **The action of `T` on maps.** -/
 def GExpr.map : (T : GExpr) → {X Y : ScottSys} → ApproximableMap X.sys Y.sys →
     ApproximableMap (T.obj X).sys (T.obj Y).sys
@@ -517,20 +349,6 @@ def GExpr.map : (T : GExpr) → {X Y : ScottSys} → ApproximableMap X.sys Y.sys
   | .prod a b, _, _, f => prodMapTok (a.map f) (b.map f)
   | .oplus a b, _, _, f => oplusMapTok (a.map f) (b.map f)
   | .otimes a b, _, _, f => otimesMapTok (a.map f) (b.map f)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- `gFun T Γ = tok(T({Γ}))`. -/
 theorem gFun_eq_master : (T : GExpr) → {Γ : Set Str} → (h : Γ.Nonempty) →
@@ -764,59 +582,17 @@ theorem naryOplus_singleton_subsystem (a : GExpr) (l : List GExpr)
       (singletonSys Γ h).sys ◁ ((GExpr.naryOplus a l).obj (singletonSys Γ h)).sys :=
   gExists_singleton_subsystem _ (GExpr.naryOp_rootedConst (fun _ _ => Iff.rfl) a l ha hl)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 theorem naryOtimes_singleton_subsystem (a : GExpr) (l : List GExpr)
     (ha : a.RootedConst) (hl : ∀ b ∈ l, b.RootedConst) :
     ∃ (Γ : Set Str) (h : Γ.Nonempty),
       (singletonSys Γ h).sys ◁ ((GExpr.naryOtimes a l).obj (singletonSys Γ h)).sys :=
   gExists_singleton_subsystem _ (GExpr.naryOp_rootedConst (fun _ _ => Iff.rfl) a l ha hl)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 theorem naryProd_singleton_subsystem (a : GExpr) (l : List GExpr)
     (ha : a.RootedConst) (hl : ∀ b ∈ l, b.RootedConst) :
     ∃ (Γ : Set Str) (h : Γ.Nonempty),
       (singletonSys Γ h).sys ◁ ((GExpr.naryProd a l).obj (singletonSys Γ h)).sys :=
   gExists_singleton_subsystem _ (GExpr.naryOp_rootedConst (fun _ _ => Iff.rfl) a l ha hl)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- **Every n-ary construct has a solution `Γ = tok(T({Γ}))`** (so `{Γ} ◁ T({Γ})` and 6.14 applies),
 illustrated for the n-ary separated sum; identical for `naryProd`/`naryOplus`/`naryOtimes`. -/
@@ -825,20 +601,6 @@ theorem narySum_singleton_subsystem (a : GExpr) (l : List GExpr)
     ∃ (Γ : Set Str) (h : Γ.Nonempty),
       (singletonSys Γ h).sys ◁ ((GExpr.narySum a l).obj (singletonSys Γ h)).sys :=
   gExists_singleton_subsystem _ (GExpr.naryOp_rootedConst (fun _ _ => Iff.rfl) a l ha hl)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- **`(g₀ ∘ f₀) ⊕ (g₁ ∘ f₁) = (g₀ ⊕ g₁) ∘ (f₀ ⊕ f₁)`** for **strict** `g₀, g₁`. (Strictness of the
 outer maps is exactly what prevents an intermediate top `f₀(X) = Δ₀'` from being re-expanded — that
@@ -877,20 +639,6 @@ theorem oplusMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : Appr
       · obtain rfl := embBit_injective heq
         exact Or.inr (Or.inr ⟨Y, Y'', ⟨Y', hf, hg⟩, hYne, hY''ne, rfl, rfl⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- **`(I ⊕ I) = I`.** -/
 theorem oplusMapTok_id :
     oplusMapTok (idMap A₀.sys) (idMap A₁.sys) = idMap (A₀.oplus A₁).sys := by
@@ -916,20 +664,6 @@ theorem oplusMapTok_id :
       · exact absurd hsub (fun h => embBit_not_subset_cross (by decide) (A₀.ne X hX) h)
       · exact Or.inr (Or.inr ⟨Y, Y', ⟨hY, hY', embBit_subset.mp hsub⟩, hYne, hY'ne, rfl, rfl⟩)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- **`oplusMapTok` is always strict.** -/
 theorem oplusMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
     (f₁ : ApproximableMap A₁.sys B₁.sys) : IsStrict (oplusMapTok f₀ f₁) := by
@@ -939,20 +673,6 @@ theorem oplusMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
     exact absurd (heq' ▸ nil_mem_sumTokMaster) nil_not_mem_embBit
   · have heq' : sumTokMaster A₀.sys A₁.sys = embBit true Y0 := heq
     exact absurd (heq' ▸ nil_mem_sumTokMaster) nil_not_mem_embBit
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- `oplusMapTok` is monotone in both arguments. -/
 theorem oplusMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
@@ -982,32 +702,12 @@ theorem oplusTok_mem_embF_inv {W : Set Str} (h : (oplusTok D₀ D₁ h₀ h₁).
   · rw [embBit_injective heq]; exact hX
   · exact absurd heq.symm (embBit_ne (show (true : Bool) ≠ false by decide) (h₁ Y hY))
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 theorem oplusTok_mem_embT_inv {W : Set Str} (h : (oplusTok D₀ D₁ h₀ h₁).mem (embBit true W)) :
     D₁.mem W := by
   rcases h with h0 | ⟨X, hX, -, heq⟩ | ⟨Y, hY, -, heq⟩
   · exact absurd (h0.symm ▸ nil_mem_sumTokMaster) nil_not_mem_embBit
   · exact absurd heq.symm (embBit_ne (show (false : Bool) ≠ true by decide) (h₀ X hX))
   · rw [embBit_injective heq]; exact hY
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 theorem oplusTok_mem_master : (oplusTok D₀ D₁ h₀ h₁).mem (sumTokMaster D₀ D₁) := Or.inl rfl
 
@@ -1098,20 +798,6 @@ theorem otimesMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : App
         exact Or.inr ⟨X, Y, X'', Y'', ⟨X', hf0, hg0⟩, ⟨Y', hf1, hg1⟩,
           hXne, hYne, hX''ne, hY''ne, rfl, rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- **`(I ⊗ I) = I`.** -/
 theorem otimesMapTok_id :
     otimesMapTok (idMap A₀.sys) (idMap A₁.sys) = idMap (A₀.otimes A₁).sys := by
@@ -1133,20 +819,6 @@ theorem otimesMapTok_id :
         exact Or.inr ⟨X, Y, X', Y', ⟨hX, hX', hsX⟩, ⟨hY, hY', hsY⟩,
           hXne, hYne, hX'ne, hY'ne, rfl, rfl⟩
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- **Functor law 1 — `T(I_X) = I_{T(X)}`.** -/
 theorem GExpr.map_id : (T : GExpr) → (X : ScottSys) → T.map (idMap X.sys) = idMap (T.obj X).sys
   | .const _, _ => rfl
@@ -1166,20 +838,6 @@ theorem GExpr.map_id : (T : GExpr) → (X : ScottSys) → T.map (idMap X.sys) = 
           = idMap ((a.obj X).otimes (b.obj X)).sys
       rw [a.map_id X, b.map_id X, otimesMapTok_id]
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- **`otimesMapTok` is always strict.** -/
 theorem otimesMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
     (f₁ : ApproximableMap A₁.sys B₁.sys) : IsStrict (otimesMapTok f₀ f₁) := by
@@ -1188,20 +846,6 @@ theorem otimesMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
   · have heq' : prodTokNbhd A₀.sys.master A₁.sys.master = prodTokNbhd X Y0 := heq
     obtain ⟨h, -⟩ := prodTokNbhd_injective heq'
     exact absurd h.symm hXne
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- **Every `T` preserves strictness.** -/
 theorem GExpr.map_isStrict : (T : GExpr) → {X Y : ScottSys} → (f : ApproximableMap X.sys Y.sys) →
@@ -1212,20 +856,6 @@ theorem GExpr.map_isStrict : (T : GExpr) → {X Y : ScottSys} → (f : Approxima
   | .prod a b, _, _, f, hf => prodMapTok_isStrict (a.map_isStrict f hf) (b.map_isStrict f hf)
   | .oplus a b, _, _, f, _ => oplusMapTok_isStrict (a.map f) (b.map f)
   | .otimes a b, _, _, f, _ => otimesMapTok_isStrict (a.map f) (b.map f)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- **Functor law 2 — `T(g ∘ f) = T(g) ∘ T(f)` for strict `g`.** Together with `map_id`, *these are
 all functors* of the strict-map category. The strictness of `g` is needed (and only) for the
@@ -1255,20 +885,6 @@ theorem GExpr.map_comp : (T : GExpr) → {X Y Z : ScottSys} → (f : Approximabl
       rw [a.map_comp f hg, b.map_comp f hg]
       · exact otimesMapTok_comp _ _ (a.map_isStrict g hg) (b.map_isStrict g hg)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- `otimesMapTok` is monotone in both arguments. -/
 theorem otimesMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
     {f₁ f₁' : ApproximableMap A₁.sys B₁.sys} (h0 : f₀ ≤ f₀') (h1 : f₁ ≤ f₁') :
@@ -1277,20 +893,6 @@ theorem otimesMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
   rintro W W' (⟨hW, rfl⟩ | ⟨X, Y, X', Y', hr0, hr1, hXne, hYne, hX'ne, hY'ne, rfl, rfl⟩)
   · exact Or.inl ⟨hW, rfl⟩
   · exact Or.inr ⟨X, Y, X', Y', h0 X X' hr0, h1 Y Y' hr1, hXne, hYne, hX'ne, hY'ne, rfl, rfl⟩
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- **`λf. T(f)` is monotone** (the order half of *continuous on maps*). -/
 theorem GExpr.map_mono : (T : GExpr) → {X Y : ScottSys} → {f f' : ApproximableMap X.sys Y.sys} →
@@ -1301,20 +903,6 @@ theorem GExpr.map_mono : (T : GExpr) → {X Y : ScottSys} → {f f' : Approximab
   | .prod a b, _, _, _, _, h => prodMapTok_mono (a.map_mono h) (b.map_mono h)
   | .oplus a b, _, _, _, _, h => oplusMapTok_mono (a.map_mono h) (b.map_mono h)
   | .otimes a b, _, _, _, _, h => otimesMapTok_mono (a.map_mono h) (b.map_mono h)
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- Forward direction of continuity on maps for `GExpr`. -/
 theorem GExpr.map_continuous_mp : (T : GExpr) → {I : Type} → {X Y : ScottSys} →
@@ -1354,20 +942,6 @@ theorem GExpr.map_continuous_mp : (T : GExpr) → {I : Type} → {X Y : ScottSys
         obtain ⟨k, hik, hjk⟩ := hdir i j
         exact ⟨k, Or.inr ⟨P, Q, P', Q', (a.map_mono hik) P P' hi, (b.map_mono hjk) Q Q' hj,
           hPne, hQne, hP'ne, hQ'ne, rfl, rfl⟩⟩
-
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
 
 /-- **`λf. T(f)` is continuous on maps.** -/
 theorem GExpr.map_continuous (T : GExpr) {I : Type} [Nonempty I] {X Y : ScottSys}
@@ -1459,20 +1033,6 @@ theorem GExpr.obj_subsystem : (T : GExpr) → {X Y : ScottSys} → X.sys ◁ Y.s
   | .oplus a b, _, _, h => oplusTok_subsystem (a.obj_subsystem h) (b.obj_subsystem h)
   | .otimes a b, _, _, h => otimesTok_subsystem (a.obj_subsystem h) (b.obj_subsystem h)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- Forward direction of continuity on domains for `GExpr`. -/
 theorem GExpr.obj_continuous_mp : (T : GExpr) → {ℱ : Set ScottSys} → {U : ScottSys} →
     DirectedOn (fun a b => a.sys ◁ b.sys) ℱ → ℱ.Nonempty →
@@ -1517,20 +1077,6 @@ theorem GExpr.obj_continuous_mp : (T : GExpr) → {ℱ : Set ScottSys} → {U : 
         · exact fun heq => hXne (heq.trans (a.obj_subsystem (hsub D₃ hD₃)).master_eq)
         · exact fun heq => hYne (heq.trans (b.obj_subsystem (hsub D₃ hD₃)).master_eq)
 
-end Exercise619
-end
-
-section
-namespace Exercise619
-
-variable {D₀ D₁ : NeighborhoodSystem Str}
-
-variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-variable {A₀ A₁ B₀ B₁ : ScottSys}
-
-variable {C₀ C₁ : ScottSys}
-
 /-- **`λD. T(D)` is continuous on domains.** -/
 theorem GExpr.obj_continuous (T : GExpr) {ℱ : Set ScottSys} {U : ScottSys}
     (hdir : DirectedOn (fun a b => a.sys ◁ b.sys) ℱ) (hne : ℱ.Nonempty)
@@ -1546,5 +1092,3 @@ end
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-end

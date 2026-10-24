@@ -5,50 +5,31 @@ public import Mathlib.Order.BourbakiWitt
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise414
-section
-variable {A : Type*}
-
-end
 end DomainTheory.NeighbourhoodSystems.Exercise414
 
 section
 namespace DomainTheory.NeighbourhoodSystems.Exercise414
 section
 variable {A : Type*}
+
 /- concordance: source L2283 EXERCISE 4.14 greatest powerset fixed point -/
 /-- **Exercise 4.14 (Scott 1981, PRG-19).** The *greatest* fixed point of a monotone `f : P A → P A`,
 constructed as the union of all post-fixed points `⋃ {x ∣ x ⊆ f(x)}`. -/
 def gfpSet (f : Set A → Set A) : Set A := {a | ∃ x : Set A, x ⊆ f x ∧ a ∈ x}
-end
-
-section
-variable {A : Type*}
 
 /-- **Exercise 4.13(2) (Scott 1981, PRG-19).** The *least* fixed point of a monotone `f : P A → P A`,
 as the intersection of all pre-fixed points `⋂ {x ∣ f(x) ⊆ x}`. -/
 def lfpSet (f : Set A → Set A) : Set A := {a | ∀ x : Set A, f x ⊆ x → a ∈ x}
-end
-
-section
-variable {A : Type*}
 
 /-- `lfpSet f ⊆ x` for every pre-fixed point `f(x) ⊆ x`. -/
 theorem lfpSet_subset (f : Set A → Set A) {x : Set A} (hx : f x ⊆ x) : lfpSet f ⊆ x :=
   fun _ ha => ha x hx
-end
-
-section
-variable {A : Type*}
 
 /-- `f (lfpSet f) ⊆ lfpSet f`: it is a pre-fixed point. -/
 theorem f_subset_lfpSet (f : Set A → Set A) (hf : Monotone f) :
     f (lfpSet f) ⊆ lfpSet f := by
   intro a ha x hx
   exact hx (hf (lfpSet_subset f hx) ha)
-end
-
-section
-variable {A : Type*}
 
 /-- **Exercise 4.13(2) (Scott 1981, PRG-19).** `lfpSet f` is a fixed point: `f(b) = b`. -/
 theorem lfpSet_isFixed (f : Set A → Set A) (hf : Monotone f) :
@@ -56,46 +37,26 @@ theorem lfpSet_isFixed (f : Set A → Set A) (hf : Monotone f) :
   have hsub : f (lfpSet f) ⊆ lfpSet f := f_subset_lfpSet f hf
   have hsup : lfpSet f ⊆ f (lfpSet f) := lfpSet_subset f (hf hsub)
   exact Set.Subset.antisymm hsub hsup
-end
-
-section
-variable {A : Type*}
 
 /-- **Exercise 4.13(2) (Scott 1981, PRG-19).** `lfpSet f` is the *least* fixed point: any fixed
 point `y = f(y)` satisfies `b ⊆ y`. -/
 theorem lfpSet_least (f : Set A → Set A) {y : Set A} (hy : f y = y) :
     lfpSet f ⊆ y := lfpSet_subset f (le_of_eq hy)
-end
-
-section
-variable {A : Type*}
 
 /-- Every post-fixed point `x ⊆ f(x)` is contained in `gfpSet f`. -/
 theorem subset_gfpSet (f : Set A → Set A) {x : Set A} (hx : x ⊆ f x) : x ⊆ gfpSet f :=
   fun _ ha => ⟨x, hx, ha⟩
-end
-
-section
-variable {A : Type*}
 
 /-- **Exercise 4.14 (Scott 1981, PRG-19).** `gfpSet f` is the *greatest* fixed point: any fixed
 point `y = f(y)` satisfies `y ⊆ g`. Hence `f` *does* have a maximum fixed point. -/
 theorem gfpSet_greatest (f : Set A → Set A) {y : Set A} (hy : f y = y) :
     y ⊆ gfpSet f := subset_gfpSet f (le_of_eq hy.symm)
-end
-
-section
-variable {A : Type*}
 
 /-- `gfpSet f ⊆ f (gfpSet f)`: it is a post-fixed point. -/
 theorem gfpSet_subset_f (f : Set A → Set A) (hf : Monotone f) :
     gfpSet f ⊆ f (gfpSet f) := by
   rintro a ⟨x, hx, hax⟩
   exact hf (subset_gfpSet f hx) (hx hax)
-end
-
-section
-variable {A : Type*}
 
 /-- **Exercise 4.14 (Scott 1981, PRG-19).** `gfpSet f` is a fixed point: `f(g) = g`. -/
 theorem gfpSet_isFixed (f : Set A → Set A) (hf : Monotone f) :
@@ -103,6 +64,7 @@ theorem gfpSet_isFixed (f : Set A → Set A) (hf : Monotone f) :
   have hsub : gfpSet f ⊆ f (gfpSet f) := gfpSet_subset_f f hf
   have hsup : f (gfpSet f) ⊆ gfpSet f := subset_gfpSet f (hf hsub)
   exact Set.Subset.antisymm hsup hsub
+
 end
 
 section

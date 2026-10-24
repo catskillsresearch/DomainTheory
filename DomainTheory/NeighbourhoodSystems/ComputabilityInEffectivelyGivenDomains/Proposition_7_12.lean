@@ -14,6 +14,7 @@ section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
 namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
+
 /- concordance: source L4563 PROPOSITION 7.12 finite sets are approximable -/
 /-- **Proposition 7.12 — monotonicity of `{·}` on principal inputs.** When `X' ⊆ X`, the join
 `{↑X'}` is blunter than `{↑X}` in `|ℙ𝒟|`. -/
@@ -25,31 +26,11 @@ theorem PDsingleton_mono {X X' : Set α} (hX : V.mem X) (hX' : V.mem X') (hX'X :
   rw [mem_principal] at hYpr
   exact ⟨Y, ⟨hYpr.1, hX'X.trans hYpr.2⟩, hPD, hsub⟩
 
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
 /-- **Proposition 7.12 — the singleton approximable map `λ x. {x}`.** Built from Exercise 2.8's
 extension principle: on the finite element `↑X` the value is `{↑X}`. -/
 def PDsingletonApproxMap : ApproximableMap V V.PowerDomain :=
   ofMono (fun _X hX => V.PDsingleton (V.principal hX))
     (fun X X' hX hX' hX'X => @PDsingleton_mono α V X X' hX hX' hX'X)
-
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 @[simp] theorem PDsingletonApproxMap_rel {X : Set α} {W : Set (Set α)} (hX : V.mem X) :
     (PDsingletonApproxMap (V := V)).rel X W ↔ (V.PDsingleton (V.principal hX)).mem W := by
@@ -57,16 +38,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
   constructor
   · intro ⟨_, h⟩; exact h
   · intro h; exact ⟨hX, h⟩
-
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- Meet of two `{·}`-values in `|ℙ𝒟|`. -/
 def PDsingletonMeet (a b : V.PowerDomain.Element) : V.PowerDomain.Element where
@@ -76,28 +47,8 @@ def PDsingletonMeet (a b : V.PowerDomain.Element) : V.PowerDomain.Element where
   inter_mem h1 h2 := ⟨a.inter_mem h1.1 h2.1, b.inter_mem h1.2 h2.2⟩
   up_mem h hW hsub := ⟨a.up_mem h.1 hW hsub, b.up_mem h.2 hW hsub⟩
 
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
 @[simp] theorem PDsingletonMeet_mem {a b : V.PowerDomain.Element} {W : Set (Set α)} :
     (V.PDsingletonMeet a b).mem W ↔ a.mem W ∧ b.mem W := Iff.rfl
-
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Proposition 7.12 — the binary join as a two-variable approximable map.** -/
 def PDfinJoinApproxMap₂ : ApproximableMap₂ V V V.PowerDomain where
@@ -113,28 +64,8 @@ def PDfinJoinApproxMap₂ : ApproximableMap₂ V V V.PowerDomain where
     ⟨(PDsingletonApproxMap (V := V)).mono h1 hXX' hWW' hX' hW',
       (PDsingletonApproxMap (V := V)).mono h2 hYY' hWW' hY' hW'⟩
 
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
 /-- **Proposition 7.12 — the binary join map on `D × D`.** -/
 def finJoinMap_prod : ApproximableMap (prod V V) V.PowerDomain := ofMap₂ (PDfinJoinApproxMap₂ (V := V))
-
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 @[simp] theorem finJoinMap_prod_rel {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) {W : Set (Set α)} :
     (finJoinMap_prod (V := V)).rel (prodNbhd X Y) W ↔
@@ -159,35 +90,11 @@ variable {γ δ : Type*}
 the inclusion order on filters transport this property. -/
 def HasTop (E : NeighborhoodSystem γ) : Prop := ∃ t : E.Element, ∀ x : E.Element, x ≤ t
 
-end Counterexample712C
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace Counterexample712C
-
-open NeighborhoodSystem
-
-variable {γ δ : Type*}
-
 /-- `{false} ∩ {true} = ∅` in `Set Bool`. -/
 theorem ft_inter : ({false} : Set Bool) ∩ {true} = ∅ := by
   ext b
   simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false, not_and]
   rintro rfl h; exact absurd h (by decide)
-
-end Counterexample712C
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace Counterexample712C
-
-open NeighborhoodSystem
-
-variable {γ δ : Type*}
 
 /-- **The improper filter.** When a system `E` is *unconditionally* closed under intersection, the
 family of *all* its neighbourhoods is a genuine filter — the greatest element of `|E|`. -/
@@ -199,35 +106,11 @@ def improperTop (E : NeighborhoodSystem γ)
   inter_mem h1 h2 := hcl h1 h2
   up_mem _ hY _ := hY
 
-end Counterexample712C
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace Counterexample712C
-
-open NeighborhoodSystem
-
-variable {γ δ : Type*}
-
 /-- `{true} ∩ {false} = ∅` in `Set Bool`. -/
 theorem tf_inter : ({true} : Set Bool) ∩ {false} = ∅ := by
   ext b
   simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false, not_and]
   rintro rfl h; exact absurd h (by decide)
-
-end Counterexample712C
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace Counterexample712C
-
-open NeighborhoodSystem
-
-variable {γ δ : Type*}
 
 /-- The flat two-point domain over `Bool`: the neighbourhoods are the master `Δ = {true, false}`
 and the two singletons `{true}`, `{false}`. Since `{true} ∩ {false} = ∅` and `∅` is not a
@@ -316,17 +199,6 @@ theorem PDfinJoin_pair (x y : V.Element) :
     · intro i; fin_cases i <;> assumption
     · intro i; fin_cases i <;> assumption
 
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-
 /-- **Proposition 7.12 — binary intersection law (membership form).** `{x, y}` meets `W` iff both
 singleton joins do. The general `n`-ary fold `{x₀,…,x_{n-1}} = ⋂ᵢ {xᵢ}` follows by iterating
 `PDfinJoin_pair`. -/
@@ -360,19 +232,6 @@ theorem PDfinJoinApproxMap₂_rel_PD {X Y : Set α} (hX : V.mem X) (hY : V.mem Y
     rcases (PDfinJoin_inter_two (x := V.principal hX) (y := V.principal hY)).1 h with ⟨h1, h2⟩
     exact ⟨by rw [PDsingletonApproxMap_rel (hX := hX)]; exact h1,
       by rw [PDsingletonApproxMap_rel (hX := hY)]; exact h2⟩
-
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-
-variable (P : ComputablePresentation V)
 
 /-- **Proposition 7.12 — code form of singleton membership.** `{↑X_n}` relates to `Y_k` iff some
 index in `dl k` lies above `X_n`. -/
@@ -418,17 +277,6 @@ theorem PDsingletonApproxMap_toElementMap (x : V.Element) :
     rw [PDsingletonApproxMap_rel (hX := x.sub hy), PDmem_singleton]
     exact ⟨Y, ⟨x.sub hy, subset_rfl⟩, hPD, hsub⟩
 
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-
 /-- **Proposition 7.12 — binary join action.** `PDfinJoinApproxMap₂(x, y) = {x, y}`. -/
 theorem PDfinJoinApproxMap₂_toElementMap (x y : V.Element) :
     (PDfinJoinApproxMap₂ (V := V)).toElementMap₂ x y = V.PDfinJoin 2 ![x, y] := by
@@ -449,17 +297,6 @@ theorem PDfinJoinApproxMap₂_toElementMap (x y : V.Element) :
     obtain ⟨Y, hyY, hrelY⟩ :=
       (ApproximableMap.mem_toElementMap (PDsingletonApproxMap (V := V)) y).mp h2
     exact ⟨X, Y, hxX, hyY, hrelX, hrelY⟩
-
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
 
 /-- **Proposition 7.12 — on finite elements `{↑X} = ↑(↓X)`.** The singleton join of the principal
 filter `↑X ⊆ |𝒟|` is the principal filter in `|ℙ𝒟|` generated by the down-set token `↓X`. -/
@@ -490,32 +327,7 @@ variable {γ δ : Type*}
 
 theorem Vshape_mem_false : Vshape.mem {false} := Or.inr (Or.inr rfl)
 
-end Counterexample712C
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace Counterexample712C
-
-open NeighborhoodSystem
-
-variable {γ δ : Type*}
-
-
 theorem Vshape_mem_true : Vshape.mem {true} := Or.inr (Or.inl rfl)
-end Counterexample712C
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace Counterexample712C
-
-open NeighborhoodSystem
-
-variable {γ δ : Type*}
-
 
 /-- `∅` is not a `Vshape`-neighbourhood (each neighbourhood is nonempty). -/
 theorem Vshape_not_mem_empty : ¬ Vshape.mem (∅ : Set Bool) := by
@@ -523,19 +335,6 @@ theorem Vshape_not_mem_empty : ¬ Vshape.mem (∅ : Set Bool) := by
   · exact Set.empty_ne_univ h
   · exact absurd h.symm (Set.singleton_ne_empty true)
   · exact absurd h.symm (Set.singleton_ne_empty false)
-
-end Counterexample712C
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace Counterexample712C
-
-open NeighborhoodSystem
-
-variable {γ δ : Type*}
-
 
 /-- **`|Vshape|` has no greatest element.** A greatest element would contain both `{true}` and
 `{false}`, hence (by `inter_mem`) their intersection `∅`, which is not a neighbourhood. -/
@@ -574,17 +373,6 @@ theorem ext_of_principal {β : Type*} {W : NeighborhoodSystem β}
     have hX := g.rel_dom hr
     rw [f.rel_iff_mem_principal hX, h X hX, ← g.rel_iff_mem_principal hX]; exact hr
 
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-
 theorem finJoinMap_prod_toElementMap (x y : V.Element) :
     (finJoinMap_prod (V := V)).toElementMap (pair x y) = V.PDfinJoin 2 ![x, y] := by
   have hmap : toMap₂ (finJoinMap_prod (V := V)) = PDfinJoinApproxMap₂ (V := V) := toMap₂_ofMap₂ _
@@ -608,19 +396,6 @@ theorem hasTop_of_inter_closed (E : NeighborhoodSystem γ)
     (hcl : ∀ {X Y : Set γ}, E.mem X → E.mem Y → E.mem (X ∩ Y)) : HasTop E :=
   ⟨improperTop E hcl, fun x _X hX => x.sub hX⟩
 
-end Counterexample712C
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace Counterexample712C
-
-open NeighborhoodSystem
-
-variable {γ δ : Type*}
-
-
 /-- **`HasTop` transports across domain isomorphisms.** An order-iso `|D| ≃o |D'|` carries the
 greatest element of `|D'|` to that of `|D|`. -/
 theorem hasTop_of_iso {D : NeighborhoodSystem γ} {D' : NeighborhoodSystem δ}
@@ -629,19 +404,6 @@ theorem hasTop_of_iso {D : NeighborhoodSystem γ} {D' : NeighborhoodSystem δ}
   refine ⟨e.symm t, fun x => ?_⟩
   rw [← e.le_iff_le, e.apply_symm_apply]
   exact ht (e x)
-
-end Counterexample712C
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace Counterexample712C
-
-open NeighborhoodSystem
-
-variable {γ δ : Type*}
-
 
 /-- **`ℙ𝒟` is unconditionally closed under intersection** (`PDmem_inter`; the empty union always
 supplies the consistency witness). Hence `|ℙ𝒟|` always has a greatest element. -/
@@ -672,19 +434,6 @@ theorem singleton_isComputable (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons)
       ∃ e ∈ decodeList s.unpair.2, P.X s.unpair.1 ⊆ P.X e
   simp only [PDPresentation]
   apply PDsingletonApproxMap_rel_Ypd_iff (V := V)
-
-end NeighborhoodSystem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace NeighborhoodSystem
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-
-variable (P : ComputablePresentation V)
 
 /-- **Proposition 7.12 — the binary join map is computable.** Two independent singleton tests. -/
 theorem PDfinJoinApproxMap₂_isComputable (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons)
@@ -728,19 +477,6 @@ theorem subsystem_inter_closed {D E : NeighborhoodSystem γ} (h : D ◁ E)
     {X Y : Set γ} (hX : D.mem X) (hY : D.mem Y) : D.mem (X ∩ Y) :=
   h.inter_closed hX hY (hE (h.sub hX) (h.sub hY))
 
-end Counterexample712C
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace Counterexample712C
-
-open NeighborhoodSystem
-
-variable {γ δ : Type*}
-
-
 /-- **`D ⊴ ℙ𝒟` forces `|D|` to have a greatest element.** This is the obstruction behind Part C. -/
 theorem hasTop_of_trianglelefteq_powerDomain {D : NeighborhoodSystem γ} {E : NeighborhoodSystem δ}
     (h : D ⊴ E.PowerDomain) : HasTop D := by
@@ -748,19 +484,6 @@ theorem hasTop_of_trianglelefteq_powerDomain {D : NeighborhoodSystem γ} {E : Ne
   have hPcl : ∀ {X Y : Set (Set δ)}, E.PowerDomain.mem X → E.PowerDomain.mem Y →
       E.PowerDomain.mem (X ∩ Y) := fun hX hY => E.PDmem_inter hX hY
   exact hasTop_of_iso e (hasTop_of_inter_closed D' (subsystem_inter_closed hsub hPcl))
-
-end Counterexample712C
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-namespace Counterexample712C
-
-open NeighborhoodSystem
-
-variable {γ δ : Type*}
-
 
 /-- **Proposition 7.12, Part C is FALSE in general.** The flat two-point domain `Vshape` is *not* a
 subdomain of its own Smyth power domain: `Vshape ⋬ ℙ(Vshape)`. (Contrast Parts A, B, D, which hold
@@ -2010,13 +1733,9 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
 def interList (base : Set β) : List (Set β) → Set β
   | [] => base
   | Y :: M => Y ∩ interList base M
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 @[simp] theorem interList_nil (base : Set β) : interList base [] = base := rfl
+
 end
 
 section
@@ -2026,47 +1745,17 @@ variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V�
 
 /-- The step pair coded by an entry `e`: `(X_{e.unpair.1}, Y_{e.unpair.2})`. -/
 def funPair (e : ℕ) : Set α × Set β := (P₀.X e.unpair.1, P₁.X e.unpair.2)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 @[simp] theorem funPair_fst (e : ℕ) : (funPair P₀ P₁ e).1 = P₀.X e.unpair.1 := rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 @[simp] theorem funPair_snd (e : ℕ) : (funPair P₀ P₁ e).2 = P₁.X e.unpair.2 := rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The sublist of `L` selected by the bitmask `b` (low bit = head). -/
 def bitSelect : List ℕ → ℕ → List ℕ
   | [], _ => []
   | e :: L, b => if b % 2 = 1 then e :: bitSelect L (b / 2) else bitSelect L (b / 2)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 @[simp] theorem bitSelect_nil (b : ℕ) : bitSelect [] b = [] := rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- A `{0,1}` left-fold `AND` of `isOne ∘ g` over a list, started from `a ∈ {0,1}`. -/
 theorem andFoldl_eq_one_iff (g : ℕ → ℕ) :
@@ -2087,118 +1776,46 @@ theorem andFoldl_eq_one_iff (g : ℕ → ℕ) :
       constructor
       · rintro ⟨hge, hall⟩; exact ⟨rfl, hge, hall⟩
       · rintro ⟨_, hge, hall⟩; exact ⟨hge, hall⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem andFoldl_one (g : ℕ → ℕ) (el : List ℕ) :
     List.foldl (fun acc x => selectFn acc (isOne (g x)) 0) 1 el = 1 ↔ ∀ e ∈ el, g e = 1 := by
   rw [andFoldl_eq_one_iff g el 1 (le_refl 1)]; simp
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- Prepend the entry `x` onto the list coded by `acc`. -/
 def appendStep (acc x : ℕ) : ℕ := Nat.pair x acc + 1
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- `foldCode`-shaped wrapper of `appendStep`. -/
 def appendStp (w : ℕ) : ℕ := appendStep w.unpair.2.unpair.1 w.unpair.1
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **`appendCode a b`** codes `(decodeList b).reverse ++ decodeList a`. -/
 def appendCode (a b : ℕ) : ℕ := foldCode appendStp 0 a b
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem appendStp_eq (x acc : ℕ) : appendStp (Nat.pair x (Nat.pair acc 0)) = appendStep acc x := by
   unfold appendStp; simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The least map of the empty step-list — the function-space bottom: it relates every `𝒟₀`
 neighbourhood only to `Δ₁`. -/
 def botMap : ApproximableMap V₀ V₁ :=
   leastMap [] (by simp) (by intro X _; rw [interYs_nil]; exact V₁.master_mem)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem botMap_rel {X : Set α} {Y : Set β} :
     (botMap : ApproximableMap V₀ V₁).rel X Y ↔ V₀.mem X ∧ V₁.mem Y ∧ V₁.master ⊆ Y := Iff.rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The running set of the conditional `inter`-chain: `A` intersected with the outputs `X₁_{e.2}` of
 the entries `e ∈ el` whose input dominates `X₀_k`. -/
 def condSet (k : ℕ) (A : Set β) (el : List ℕ) : Set β :=
   {z | z ∈ A ∧ ∀ e ∈ el, P₀.X k ⊆ P₀.X e.unpair.1 → z ∈ P₁.X e.unpair.2}
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem condSet_nil (k : ℕ) (A : Set β) : condSet P₀ P₁ k A [] = A := by
   ext z; simp [condSet]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem condSet_subset (k : ℕ) (A : Set β) (el : List ℕ) : condSet P₀ P₁ k A el ⊆ A :=
   fun _ hz => hz.1
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The `{0,1}` characteristic function of Scott's consistency relation (ii) for the function space:
 `∃ k, Xenum k ⊆ Xenum n ∩ Xenum m`. -/
 def consPairChar (gN : ℕ → ℕ) (n m : ℕ) : ℕ :=
   selectFn (isOne (gN n)) (selectFn (isOne (gN m)) (gN (appendCode n m)) 1) 1
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 section ConsFold
 
@@ -2213,34 +1830,10 @@ def consUpd (projFn fc : ℕ → ℕ) (s x : ℕ) : ℕ :=
         (selectFn s.unpair.2.unpair.2 (isOne (fc (Nat.pair s.unpair.2.unpair.1 (projFn x)))) 0)))
     (Nat.pair (s.unpair.1 / 2) (Nat.pair s.unpair.2.unpair.1 s.unpair.2.unpair.2))
 
-end ConsFold
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-section ConsFold
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
 /-- `foldCode`-shaped wrapper of `consUpd` (state lives in `w.unpair.2.unpair.1`, entry in
 `w.unpair.1`). -/
 def consStp (projFn fc : ℕ → ℕ) (w : ℕ) : ℕ :=
   consUpd P projFn fc w.unpair.2.unpair.1 w.unpair.1
-
-end ConsFold
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-section ConsFold
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 /-- The `{0,1}` characteristic function of the bitmask-selected-sublist consistency test, packaged
 through `foldCode` so it is primitive recursive. Input `w = pair b c` (bitmask `b`, list code `c`). -/
@@ -2249,22 +1842,10 @@ def consCharAt (projFn fc : ℕ → ℕ) (w : ℕ) : ℕ :=
     w.unpair.2).unpair.2.unpair.2
 
 end ConsFold
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem decodeList_appendStep (acc x : ℕ) :
     decodeList (appendStep acc x) = x :: decodeList acc := by
   unfold appendStep; rw [decodeList_succ, unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- `decodeList` inverts `encodeList`: every list is the decoding of its code. -/
 theorem decodeList_encodeList (l : List ℕ) : decodeList (encodeList l) = l := by
@@ -2273,12 +1854,6 @@ theorem decodeList_encodeList (l : List ℕ) : decodeList (encodeList l) = l := 
   | cons a l ih =>
     rw [show encodeList (a :: l) = Nat.pair a (encodeList l) + 1 from rfl,
       decodeList_succ, unpair_pair_fst, unpair_pair_snd, ih]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem decodeList_foldl_appendStp (el : List ℕ) (acc : ℕ) :
     decodeList (List.foldl (fun acc x => appendStp (Nat.pair x (Nat.pair acc 0))) acc el)
@@ -2288,52 +1863,22 @@ theorem decodeList_foldl_appendStp (el : List ℕ) (acc : ℕ) :
   | cons e el ih =>
     rw [List.foldl_cons, ih, appendStp_eq, decodeList_appendStep, List.reverse_cons,
       List.append_assoc, List.singleton_append]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem decodeList_appendCode (a b : ℕ) :
     decodeList (appendCode a b) = (decodeList b).reverse ++ decodeList a := by
   unfold appendCode; rw [foldCode_eq']; exact decodeList_foldl_appendStp (decodeList b) a
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The per-bitmask implication char: `cons₀(selected inputs) → cons₁(selected outputs)`. -/
 def funImpChar (fc0 fc1 : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn (isOne (consCharAt P₀ (fun e => e.unpair.1) fc0 w))
     (isOne (consCharAt P₁ (fun e => e.unpair.2) fc1 w)) 1
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The concrete `{0,1}` characteristic function of function-space consistency. -/
 def funConsChar (fc0 fc1 : ℕ → ℕ) (c : ℕ) : ℕ :=
   bForallFn (funImpChar P₀ P₁ fc0 fc1) c (2 ^ c)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The list of step pairs coded by an entry-list `el`. -/
 def funListOf (el : List ℕ) : List (Set α × Set β) := el.map (funPair P₀ P₁)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The function-space enumeration: a code `c` lists step-pairs; if they are consistent (`gN c = 1`,
 where `gN` is the consistency char) the neighbourhood is `stepFun (funListOf (decodeList c))`,
@@ -2341,38 +1886,14 @@ otherwise we send the junk code to the master neighbourhood `univ`. Choice-free 
 branch is a `Nat`-equality `if`. -/
 def Xenum (gN : ℕ → ℕ) (c : ℕ) : Set (ApproximableMap V₀ V₁) :=
   if gN c = 1 then stepFun (funListOf P₀ P₁ (decodeList c)) else Set.univ
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem Xenum_neg {gN : ℕ → ℕ} {c : ℕ} (h : gN c ≠ 1) : Xenum P₀ P₁ gN c = Set.univ := ite_eq_right h
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem Xenum_pos {gN : ℕ → ℕ} {c : ℕ} (h : gN c = 1) :
     Xenum P₀ P₁ gN c = stepFun (funListOf P₀ P₁ (decodeList c)) := ite_eq_left h
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem funListOf_cons (e : ℕ) (el : List ℕ) :
     funListOf P₀ P₁ (e :: el) = funPair P₀ P₁ e :: funListOf P₀ P₁ el := rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- Every valid finite step-list is `funListOf` of some entry-list (choice-free: `Exists.elim` of
 `P₀.surj`/`P₁.surj`, entry by entry). -/
@@ -2390,12 +1911,6 @@ theorem exists_funListOf {L : List (Set α × Set β)} (hL : ∀ p ∈ L, V₀.m
     congr 1
     show (P₀.X (Nat.pair i j).unpair.1, P₁.X (Nat.pair i j).unpair.2) = (X, Y)
     rw [unpair_pair_fst, unpair_pair_snd, hi, hj]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem funListOf_valid (el : List ℕ) :
     ∀ p ∈ funListOf P₀ P₁ el, V₀.mem p.1 ∧ V₁.mem p.2 := by
@@ -2403,12 +1918,6 @@ theorem funListOf_valid (el : List ℕ) :
   rw [funListOf, List.mem_map] at hp
   obtain ⟨e, _, rfl⟩ := hp
   exact ⟨P₀.mem_X _, P₁.mem_X _⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem Xenum_mem (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
@@ -2418,23 +1927,11 @@ theorem Xenum_mem (gN : ℕ → ℕ)
   · rw [Xenum_pos P₀ P₁ h]
     exact ⟨⟨funListOf P₀ P₁ (decodeList c), funListOf_valid P₀ P₁ _, rfl⟩, (hgN c).mp h⟩
   · rw [Xenum_neg P₀ P₁ h]; exact funSpace_master ▸ (funSpace V₀ V₁).master_mem
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem Xenum_nonempty (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
       : Set (ApproximableMap V₀ V₁)).Nonempty) (c : ℕ) :
     (Xenum P₀ P₁ gN c).Nonempty := (Xenum_mem P₀ P₁ gN hgN c).2
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 section ConsChain
 
@@ -2443,18 +1940,6 @@ variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 /-- The `inter`-chain index of `js`: `inter`-fold from `masterIdx`. -/
 def idxchain (js : List ℕ) : ℕ := js.foldl (fun acc j => P.inter acc j) P.masterIdx
 
-end ConsChain
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-section ConsChain
-
-variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
 /-- The running intersection of `A` with the neighbourhoods `X_j` (`j ∈ js`), left-accumulated to
 match `List.foldl`. -/
 def interFrom (A : Set α) : List ℕ → Set α
@@ -2462,23 +1947,11 @@ def interFrom (A : Set α) : List ℕ → Set α
   | j :: js => interFrom (A ∩ P.X j) js
 
 end ConsChain
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The canonical code of the intersection `Xenum n ∩ Xenum m`: `appendCode` when both are
 consistent, otherwise the consistent side (the other being `univ`). -/
 def interIdx (gN : ℕ → ℕ) (n m : ℕ) : ℕ :=
   selectFn (isOne (gN n)) (selectFn (isOne (gN m)) (appendCode n m) n) m
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- One step of the `interYs`-index fold. State `pair entry (pair acc k)`: entry `e = w.unpair.1`,
 running `𝒟₁`-index `acc = w.unpair.2.unpair.1`, input index `k = w.unpair.2.unpair.2` (the
@@ -2486,33 +1959,15 @@ running `𝒟₁`-index `acc = w.unpair.2.unpair.1`, input index `k = w.unpair.2
 def interYsStp (incl0 : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn (isOne (incl0 (Nat.pair w.unpair.2.unpair.2 w.unpair.1.unpair.1)))
     (P₁.inter w.unpair.2.unpair.1 w.unpair.1.unpair.2) w.unpair.2.unpair.1
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The index of `interYs Δ₁ (funListOf (decodeList a)) (X₀_k)`: a conditional `inter`-fold over
 `decodeList a` from `masterIdx`, with `k` carried as the `foldCode` parameter. -/
 def interYsIdx (incl0 : ℕ → ℕ) (a k : ℕ) : ℕ :=
   foldCode (interYsStp P₁ incl0) k P₁.masterIdx a
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem mem_condSet {k : ℕ} {A : Set β} {el : List ℕ} {z : β} :
     z ∈ condSet P₀ P₁ k A el ↔ z ∈ A ∧ ∀ e ∈ el, P₀.X k ⊆ P₀.X e.unpair.1 → z ∈ P₁.X e.unpair.2 :=
   Iff.rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- `condSet` cons-step when the input does not dominate the head entry's input: drop the head. -/
 theorem condSet_cons_neg {k : ℕ} {A : Set β} {e : ℕ} {el : List ℕ}
@@ -2525,12 +1980,6 @@ theorem condSet_cons_neg {k : ℕ} {A : Set β} {e : ℕ} {el : List ℕ}
     exact ⟨hzA, fun e' he' hsub => hall e' (Or.inr he') hsub⟩
   · rintro ⟨hzA, hall⟩
     exact ⟨hzA, fun e' he' hsub => he'.elim (fun heq => absurd (heq ▸ hsub) h) (fun hmem => hall e' hmem hsub)⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- `condSet` cons-step when the input dominates the head entry's input: intersect `A` with the
 head's output. -/
@@ -2544,12 +1993,6 @@ theorem condSet_cons_pos {k : ℕ} {A : Set β} {e : ℕ} {el : List ℕ}
     exact ⟨⟨hzA, hall e (Or.inl rfl) h⟩, fun e' he' hsub => hall e' (Or.inr he') hsub⟩
   · rintro ⟨⟨hzA, hzE⟩, hall⟩
     exact ⟨hzA, fun e' he' hsub => he'.elim (fun heq => heq ▸ hzE) (fun hmem => hall e' hmem hsub)⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- Correctness of the conditional `inter`-fold (`if`-form). When the running set is consistent, the
 fold computes an index of it, by induction with `inter_spec` (mirrors `interFrom_eq_of_foldl`). -/
@@ -2581,12 +2024,6 @@ theorem condFoldl_spec (incl0 : ℕ → ℕ)
         hpred ((hincl0 (Nat.pair k e.unpair.1)).mpr (by rwa [unpair_pair_fst, unpair_pair_snd]))
       rw [condSet_cons_neg P₀ P₁ hincl] at hcons ⊢
       exact condFoldl_spec incl0 hincl0 k el A a hXa hA hcons
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- `condSet k Δ₁ el` is exactly `interYs Δ₁ (funListOf el) (X₀_k)`. -/
 theorem condSet_eq_interYs (k : ℕ) (el : List ℕ) :
@@ -2602,12 +2039,6 @@ theorem condSet_eq_interYs (k : ℕ) (el : List ℕ) :
     exact hall e he hsub
   · rintro ⟨hz, hall⟩
     exact ⟨hz, fun e he hsub => hall (funPair P₀ P₁ e) (List.mem_map.mpr ⟨e, he, rfl⟩) hsub⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem primrec_appendCode : Nat.Primrec (fun t => appendCode t.unpair.1 t.unpair.2) := by
   have hstp : Nat.Primrec appendStp :=
@@ -2615,12 +2046,6 @@ theorem primrec_appendCode : Nat.Primrec (fun t => appendCode t.unpair.1 t.unpai
       (Nat.Primrec.const 1)).of_eq (fun w => rfl)
   exact (primrec_foldCode hstp (Nat.Primrec.const 0) Nat.Primrec.left Nat.Primrec.right).of_eq
     (fun t => rfl)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem primrec_consPairChar (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN) :
     Nat.Primrec (fun t => consPairChar gN t.unpair.1 t.unpair.2) := by
@@ -2629,12 +2054,6 @@ theorem primrec_consPairChar (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN) :
   have happ := hgNp.comp primrec_appendCode
   have hinner := primrec_selectFn (primrec_isOne.comp hm) happ (Nat.Primrec.const 1)
   exact (primrec_selectFn (primrec_isOne.comp hn) hinner (Nat.Primrec.const 1)).of_eq (fun _ => rfl)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem primrec_interIdx (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN) :
     Nat.Primrec (fun t => interIdx gN t.unpair.1 t.unpair.2) := by
@@ -2642,12 +2061,6 @@ theorem primrec_interIdx (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN) :
   have hm := hgNp.comp Nat.Primrec.right
   have hinner := primrec_selectFn (primrec_isOne.comp hm) primrec_appendCode Nat.Primrec.left
   exact (primrec_selectFn (primrec_isOne.comp hn) hinner Nat.Primrec.right).of_eq (fun _ => rfl)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem primrec_interYsStp (incl0 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0) :
     Nat.Primrec (interYsStp P₁ incl0) := by
@@ -2664,23 +2077,11 @@ theorem primrec_interYsStp (incl0 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0) :
   refine (primrec_selectFn hcond hinter hacc).of_eq (fun w => ?_)
   unfold interYsStp
   simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem primrec_interYsIdx (incl0 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0) :
     Nat.Primrec (fun t => interYsIdx P₁ incl0 t.unpair.1 t.unpair.2) :=
   (primrec_foldCode (primrec_interYsStp P₁ incl0 hincl0p) Nat.Primrec.right
     (Nat.Primrec.const P₁.masterIdx) Nat.Primrec.left).of_eq (fun _ => rfl)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **Choice-free `rel_interYs` for a presented list.** Any `f ∈ stepFun (funListOf el)` relates each
 `X₀_{n'}` to the intersection of the relevant outputs `interYs Δ₁ (funListOf el) (X₀_{n'})`. The
@@ -2716,12 +2117,6 @@ theorem rel_interYs_funList {f : ApproximableMap V₀ V₁} {el : List ℕ}
         simp only [Set.mem_inter_iff, Set.mem_ofPred_eq, funPair]
         exact ⟨fun h => h.2, fun h => ⟨fun hc => absurd hc hinc, h⟩⟩
       rw [heq]; exact htail
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- If `stepFun (funListOf ea)` is non-empty, then `interYs Δ₁ (funListOf ea) X` is a neighbourhood of
 `𝒟₁` for every `X ∈ 𝒟₀` (the consistency hypothesis needed by `leastMap`). Choice-free. -/
@@ -2734,12 +2129,6 @@ theorem interYs_funList_mem_of_nonempty {ea : List ℕ}
   have hr := rel_interYs_funList P₀ P₁ hf n'
   rw [hn'] at hr
   exact f.rel_cod hr
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- `selectFn` driven by `isOne` is a `Nat`-equality `if` (choice-free; `decEq` on `ℕ`). -/
 theorem selectFn_isOne (v a b : ℕ) : selectFn (isOne v) a b = if v = 1 then a else b := by
@@ -2751,12 +2140,6 @@ theorem selectFn_isOne (v a b : ℕ) : selectFn (isOne v) a b = if v = 1 then a 
       · exact h0
       · exact absurd ((isOne_eq_one_iff v).mp h1) h
     rw [h0, selectFn_zero]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **`interYsIdx` indexes `interYs Δ₁ (funListOf (decodeList a)) (X₀_k)`** (when that is consistent,
 which it is whenever `stepFun (funListOf (decodeList a))` is non-empty). Choice-free. -/
@@ -2779,23 +2162,11 @@ theorem interYsIdx_spec (incl0 : ℕ → ℕ)
   rw [← condSet_eq_interYs P₀ P₁ k (decodeList a)] at hcons ⊢
   exact condFoldl_spec P₀ P₁ incl0 hincl0 k (decodeList a) V₁.master P₁.masterIdx
     P₁.masterIdx_spec V₁.master_mem hcons
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- `selectFn c d 0 = 1` decides the conjunction `c = 1 ∧ d = 1`. -/
 theorem selectFn_mul_iff (c d : ℕ) : selectFn c d 0 = 1 ↔ c = 1 ∧ d = 1 := by
   have h : selectFn c d 0 = c * d := by simp only [selectFn, Nat.mul_zero, Nat.add_zero]
   rw [h, nat_mul_eq_one]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- `stepFun (funListOf (decodeList (appendCode a b)))` is exactly `X a ∩ X b` at the level of the
 underlying step-intersections. -/
@@ -2811,12 +2182,6 @@ theorem stepFun_funListOf_appendCode (a b : ℕ) :
   · rintro ⟨ha, hb⟩ p (hp | hp)
     · exact hb p hp
     · exact ha p hp
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **`interIdx` codes the intersection** whenever it is non-empty (and the result is in the
 enumeration). -/
@@ -2837,12 +2202,6 @@ theorem Xenum_inter_eq (gN : ℕ → ℕ)
       rw [Xenum_pos P₀ P₁ hgne]
     · rw [ite_eq_right hm, Xenum_neg P₀ P₁ hm, Set.inter_univ]
   · rw [ite_eq_right hn, Xenum_neg P₀ P₁ hn, Set.univ_inter]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem consPairChar_spec (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
@@ -2866,12 +2225,6 @@ theorem consPairChar_spec (gN : ℕ → ℕ)
       exact iff_of_true rfl ((hgN n).mp hn)
   · rw [selectFn_isOne, ite_eq_right hn, Xenum_neg P₀ P₁ hn, Set.univ_inter]
     exact iff_of_true rfl (Xenum_nonempty P₀ P₁ gN hgN m)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **`stepFun (funListOf el)` is everything iff every output neighbourhood is `Δ₁`.** Forward:
 the bottom map `botMap` lies in `univ`, and `botMap.rel X Y` forces `Y = Δ₁`. Backward: `[X, Δ₁]`
@@ -2894,12 +2247,6 @@ theorem stepFun_funListOf_eq_univ_iff (el : List ℕ) :
     show f.rel (P₀.X e.unpair.1) (P₁.X e.unpair.2)
     rw [h e he]
     exact f.mono f.master_rel (V₀.sub_master (P₀.mem_X _)) subset_rfl (P₀.mem_X _) V₁.master_mem
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **Function-space inclusion characterisation (choice-free).** With `ea` consistent (so the least
 map exists), `stepFun (funListOf ea) ⊆ stepFun (funListOf eb)` iff for every entry `e' ∈ eb`, the
@@ -2920,24 +2267,12 @@ theorem stepFun_funListOf_subset_iff {ea eb : List ℕ}
     show f.rel (P₀.X e'.unpair.1) (P₁.X e'.unpair.2)
     exact f.mono (rel_interYs_funList P₀ P₁ hf e'.unpair.1) subset_rfl (hcond e' he')
       (P₀.mem_X _) (P₁.mem_X _)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- One step of the `stepFun`-inclusion fold over `decodeList b`: test `interYs-index ⊆ output`. -/
 def subStp (incl0 incl1 : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn w.unpair.2.unpair.1
     (isOne (incl1 (Nat.pair (interYsIdx P₁ incl0 w.unpair.2.unpair.2 w.unpair.1.unpair.1)
       w.unpair.1.unpair.2))) 0
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem primrec_subStp (incl0 incl1 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0)
     (hincl1p : Nat.Primrec incl1) : Nat.Primrec (subStp P₁ incl0 incl1) := by
@@ -2959,34 +2294,16 @@ theorem primrec_subStp (incl0 incl1 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0)
   refine (primrec_selectFn hflag (primrec_isOne.comp hincl) (Nat.Primrec.const 0)).of_eq (fun w => ?_)
   unfold subStp
   rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The `{0,1}` characteristic function of `stepFun (funListOf (decodeList a)) ⊆ stepFun (funListOf
 (decodeList b))` (correct when `a` is consistent). `a` is the `foldCode` parameter, `b` the code. -/
 def subChar (incl0 incl1 : ℕ → ℕ) (a b : ℕ) : ℕ := foldCode (subStp P₁ incl0 incl1) a 1 b
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem primrec_subChar (incl0 incl1 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0)
     (hincl1p : Nat.Primrec incl1) :
     Nat.Primrec (fun t => subChar P₁ incl0 incl1 t.unpair.1 t.unpair.2) :=
   (primrec_foldCode (primrec_subStp P₁ incl0 incl1 hincl0p hincl1p) Nat.Primrec.left
     (Nat.Primrec.const 1) Nat.Primrec.right).of_eq (fun _ => rfl)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem subChar_spec (incl0 incl1 : ℕ → ℕ)
     (hincl0 : ∀ s, incl0 s = 1 ↔ P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2)
@@ -3016,23 +2333,11 @@ theorem subChar_spec (incl0 incl1 : ℕ → ℕ)
   rw [hincl1]
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [interYsIdx_spec P₀ P₁ incl0 hincl0 a e'.unpair.1 (hcons (P₀.mem_X e'.unpair.1))]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- One step of the trivial-test fold: is this entry's output index equal to `masterIdx`? -/
 def trivStp (eq1 : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn w.unpair.2.unpair.1
     (isOne (eq1 (Nat.pair w.unpair.1.unpair.2 P₁.masterIdx))) 0
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem primrec_trivStp (eq1 : ℕ → ℕ) (heq1p : Nat.Primrec eq1) :
     Nat.Primrec (trivStp P₁ eq1) := by
@@ -3044,21 +2349,9 @@ theorem primrec_trivStp (eq1 : ℕ → ℕ) (heq1p : Nat.Primrec eq1) :
   refine (primrec_selectFn hflag (primrec_isOne.comp harg) (Nat.Primrec.const 0)).of_eq (fun w => ?_)
   unfold trivStp
   rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The `{0,1}` characteristic function of `stepFun (funListOf (decodeList a)) = univ`. -/
 def trivialChar (eq1 : ℕ → ℕ) (a : ℕ) : ℕ := foldCode (trivStp P₁ eq1) 0 1 a
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The `{0,1}` characteristic function of `Xenum a = Xenum b`. Both consistent → inclusion both
 ways (`subChar`); one consistent, one junk (`univ`) → the consistent side is the trivial
@@ -3069,34 +2362,16 @@ def eqEnumChar (gN incl0 incl1 eq1 : ℕ → ℕ) (a b : ℕ) : ℕ :=
       (selectFn (subChar P₁ incl0 incl1 a b) (subChar P₁ incl0 incl1 b a) 0)
       (trivialChar P₁ eq1 a))
     (selectFn (isOne (gN b)) (trivialChar P₁ eq1 b) 1)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- The `{0,1}` characteristic function of Scott's relation (i) for the function space:
 `Xenum n ∩ Xenum m = Xenum k`. -/
 def interEqChar (gN incl0 incl1 eq1 : ℕ → ℕ) (n m k : ℕ) : ℕ :=
   selectFn (consPairChar gN n m) (eqEnumChar P₁ gN incl0 incl1 eq1 (interIdx gN n m) k) 0
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem primrec_trivialChar (eq1 : ℕ → ℕ) (heq1p : Nat.Primrec eq1) :
     Nat.Primrec (trivialChar P₁ eq1) :=
   (primrec_foldCode (primrec_trivStp P₁ eq1 heq1p) (Nat.Primrec.const 0)
     (Nat.Primrec.const 1) primrec_id).of_eq (fun _ => rfl)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem primrec_eqEnumChar (gN incl0 incl1 eq1 : ℕ → ℕ) (hgNp : Nat.Primrec gN)
     (hincl0p : Nat.Primrec incl0) (hincl1p : Nat.Primrec incl1) (heq1p : Nat.Primrec eq1) :
@@ -3117,12 +2392,6 @@ theorem primrec_eqEnumChar (gN incl0 incl1 eq1 : ℕ → ℕ) (hgNp : Nat.Primre
   have hacons := primrec_selectFn hb hbothcons htriva
   have hanot := primrec_selectFn hb htrivb (Nat.Primrec.const 1)
   exact (primrec_selectFn ha hacons hanot).of_eq (fun _ => rfl)
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem primrec_interEqChar (gN incl0 incl1 eq1 : ℕ → ℕ) (hgNp : Nat.Primrec gN)
     (hincl0p : Nat.Primrec incl0) (hincl1p : Nat.Primrec incl1) (heq1p : Nat.Primrec eq1) :
@@ -3141,12 +2410,6 @@ theorem primrec_interEqChar (gN incl0 incl1 eq1 : ℕ → ℕ) (hgNp : Nat.Primr
   show _ = interEqChar P₁ gN incl0 incl1 eq1 t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2
   unfold interEqChar
   simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem trivialChar_spec (eq1 : ℕ → ℕ)
     (heq1 : ∀ s, eq1 s = 1 ↔ P₁.X s.unpair.1 = P₁.X s.unpair.2) (a : ℕ) :
@@ -3166,12 +2429,6 @@ theorem trivialChar_spec (eq1 : ℕ → ℕ)
   refine imp_congr_right (fun he => ?_)
   rw [heq1]
   simp only [unpair_pair_fst, unpair_pair_snd, P₁.masterIdx_spec]
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem eqEnumChar_spec (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
@@ -3196,12 +2453,6 @@ theorem eqEnumChar_spec (gN incl0 incl1 eq1 : ℕ → ℕ)
       exact eq_comm
     · rw [ite_eq_right hb, Xenum_neg P₀ P₁ ha, Xenum_neg P₀ P₁ hb]
       exact iff_of_true rfl rfl
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 theorem interEqChar_spec (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
@@ -3223,12 +2474,6 @@ theorem interEqChar_spec (gN incl0 incl1 eq1 : ℕ → ℕ)
     have hne : (Xenum P₀ P₁ gN n ∩ Xenum P₀ P₁ gN m).Nonempty := by
       rw [heq]; exact Xenum_nonempty P₀ P₁ gN hgN k
     exact ⟨⟨k, heq.superset⟩, by rw [Xenum_inter_eq P₀ P₁ gN hgN n m hne]; exact heq⟩
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 /-- **The function-space presentation.** Built from explicit characteristic functions for the
 component presentations' relations (`gN` = function-space consistency, `incl0`/`incl1` = inclusion,
@@ -3267,6 +2512,7 @@ def funPresentation (gN incl0 incl1 eq1 : ℕ → ℕ)
     unfold Xenum
     rw [decodeList_zero]
     simp only [funListOf, List.map_nil, stepFun_nil, ite_self]
+
 end
 
 section

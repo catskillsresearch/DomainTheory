@@ -29,14 +29,3 @@ end
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-/- concordance: source L1408 EXERCISES — Lecture III exercises -/
--- Exercise314/diag.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-end DomainTheory.NeighbourhoodSystems
-end

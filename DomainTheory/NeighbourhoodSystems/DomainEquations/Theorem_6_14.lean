@@ -14,6 +14,7 @@ section
 universe w
 namespace Theorem614
 variable {α : Type w}
+
 /- concordance: source L3861 THEOREM 6.14 existence of initial algebras -/
 /-- **Theorem 6.14 (Scott 1981, PRG-19) — the canonical fixed point.** Under the hypotheses
 (continuous on maps, monotone and continuous on domains, with a generating set `{Γ} ◁ T({Γ})`), the
@@ -25,16 +26,6 @@ theorem exists_algebra_with_hom (s : Setup.{w}) :
     ∃ A : TAlgebra s.T, Nonempty (Iso (s.T.obj A.carrier) A.carrier) ∧
       ∀ B : TAlgebra s.T, IsStrict B.str → Nonempty (AlgHom A B) :=
   ⟨colimAlg s, ⟨colimIso s⟩, fun B hk => nonempty_algHom s B hk⟩
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- **`ρ₀ = ⊥`** when `{Γ}` is the trivial one-point system: `ρ₀` relates `X` only to the master.
 This is where Scott's `{Γ}` (a *one-point* domain) is used. -/
@@ -53,31 +44,11 @@ theorem rho_zero_rel (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.maste
     · have h := (colim s).sub_master hcX; rwa [colim_master] at h
     · rw [colim_master]
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- For a strict map `g`, `g(⊥) = ⊥` relationally: `g` sends `Δ` only to `Δ`. -/
 theorem strict_rel_master {β₀ β₁ : Type w} {V₀ : NeighborhoodSystem β₀}
     {V₁ : NeighborhoodSystem β₁} {g : ApproximableMap V₀ V₁} (hg : IsStrict g) {Z : Set β₁} :
     g.rel V₀.master Z ↔ Z = V₁.master :=
   ⟨fun h => hg h, fun h => h ▸ g.master_rel⟩
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- For a strict homomorphism `g`, the base `g ∘ ρ₀` is the least map: it relates `X` only to the
 master of `E`, independent of `g`. -/
@@ -94,16 +65,6 @@ theorem gcomp_rho_zero_rel (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ
   · rintro ⟨hcX, rfl⟩
     exact ⟨(colim s).master, (rho_zero_rel s hΓ).mpr ⟨hcX, rfl⟩, g.master_rel⟩
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- The base case of `g`-independence: any two strict maps agree after `∘ ρ₀`. -/
 theorem gcomp_rho_zero_indep (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
     (B : TAlgebra s.T) {g g' : ApproximableMap (colim s) B.carrier.sys}
@@ -113,30 +74,10 @@ theorem gcomp_rho_zero_indep (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.
   intro X Z
   rw [gcomp_rho_zero_rel s hΓ B hg, gcomp_rho_zero_rel s hΓ B hg']
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- Transport of a `Hom X X` along an object equality is heterogeneously equal to itself. -/
 theorem transport_heq {Obj : Type*} [Category Obj] {X Y : Obj} (e : X = Y)
     (f : (X ⟶ X)) : HEq (e ▸ f : (Y ⟶ Y)) f := by
   cases e; rfl
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- **`ρₙ₊₁ = i ∘ T(ρₙ) ∘ j`** (Scott's `T(ρₙ) = ρₙ₊₁`, conjugated by the structure iso). Since the
 iso `𝒟 ≅ T(𝒟)` is the identity, this is the carrier transport of `T(ρₙ)`; combined with
@@ -149,16 +90,6 @@ theorem key_rho (s : Setup.{w}) (n : ℕ) :
   apply eq_of_heq
   exact HEq.trans (map_rho_heq s n).symm
     (transport_heq (colimObj_eq s) (Tmap_rho s n)).symm
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- **The fixed-point recursion `gₙ₊₁ = k ∘ T(gₙ) ∘ j`.** Using `key_rho` (`ρₙ₊₁ = i∘T(ρₙ)∘j`) and the
 homomorphism square `g ∘ i = k ∘ T(g)`. -/
@@ -192,16 +123,6 @@ theorem gcomp_rho_succ (s : Setup.{w}) (B : TAlgebra s.T) (g : AlgHom (colimAlg 
             (s.T.map_comp (X := objColim s) (Y := objColim s) (Z := B.carrier) g.hom
               (rho s n)).symm
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- **`g`-independence of `gₙ = g ∘ ρₙ`.** For any two strict homomorphisms into the same algebra,
 `g ∘ ρₙ = g' ∘ ρₙ` for all `n` — the sequence is determined by the recursion, not by `g`. -/
 theorem gcomp_rho_indep (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
@@ -211,16 +132,6 @@ theorem gcomp_rho_indep (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.ma
   induction n with
   | zero => exact gcomp_rho_zero_indep s hΓ B hg hg'
   | succ k ih => rw [gcomp_rho_succ s B g k, gcomp_rho_succ s B g' k, ih]
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- **The underlying maps of two strict homomorphisms coincide**: `g = g ∘ I = g ∘ ⋃ₙ ρₙ =
 ⋃ₙ (g ∘ ρₙ)`, and the latter is `g`-independent. -/
@@ -248,32 +159,12 @@ theorem gcomp_eq (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
   rw [← e, ← e', ← iSupRho_eq_id]
   exact key
 
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
-
 /-- **Uniqueness of strict homomorphisms out of `𝒟`.** Any two strict `T`-algebra homomorphisms from
 the canonical solution into the same algebra are equal. -/
 theorem algHom_unique (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
     (B : TAlgebra s.T) (g g' : AlgHom (colimAlg s) B)
     (hg : IsStrict g.hom) (hg' : IsStrict g'.hom) : g = g' :=
   algHom_ext (gcomp_eq s hΓ B g g' hg hg')
-
-end Theorem614
-end
-
-section
-universe w
-
-namespace Theorem614
-
-variable {α : Type w}
 
 /-- **Theorem 6.14 (Scott 1981, PRG-19) — initial `T`-algebra.** When `{Γ}` is the one-point
 generating system, the canonical solution `𝒟 = ⋃ₙ Tⁿ({Γ})` is the **initial** `T`-algebra among the
@@ -594,24 +485,6 @@ include hD
 def sumSys : NeighborhoodSystem (Option (α ⊕ ((List Bool × α) ⊕ (List Bool × α)))) :=
   sum D (prod (Dsharp D hD) (Dsharp D hD)) hD (prod_dsharp_nonempty D hD)
 
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
-
 /-- No neighbourhood of the sum `D + (D^§ × D^§)` is empty. -/
 theorem sumSys_mem_nonempty {W : Set (Option (α ⊕ ((List Bool × α) ⊕ (List Bool × α))))}
     (h : (sumSys D hD).mem W) : W.Nonempty := by
@@ -620,24 +493,6 @@ theorem sumSys_mem_nonempty {W : Set (Option (α ⊕ ((List Bool × α) ⊕ (Lis
   · exact inj₀_nonempty (hD X hX)
   · exact inj₁_nonempty (prod_dsharp_nonempty D hD Y hY)
 
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
-
 /-- A sum-neighbourhood of the form `0X` arises only from the left factor, so `X ∈ 𝒟`. -/
 theorem sum_mem_inj₀_inv {X : Set α} (h : (sumSys D hD).mem (inj₀ X)) : D.mem X := by
   rcases h with h0 | ⟨X', hX', heq⟩ | ⟨Y', hY', heq⟩
@@ -645,24 +500,6 @@ theorem sum_mem_inj₀_inv {X : Set α} (h : (sumSys D hD).mem (inj₀ X)) : D.m
   · rw [inj₀_injective heq]; exact hX'
   · obtain ⟨b, hb⟩ := prod_dsharp_nonempty D hD Y' hY'
     exact absurd (heq ▸ ir_mem_inj₁.mpr hb) ir_mem_inj₀
-
-end Equation
-
-end Example61
-end
-
-section
-open NeighborhoodSystem
-
-namespace Example61
-
-variable {α : Type*}
-
-section Equation
-
-variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
-
-include hD
 
 /-- A sum-neighbourhood of the form `1V` arises only from the right factor, so `V ∈ 𝒟^§ × 𝒟^§`. -/
 theorem sum_mem_inj₁_inv {V : Set ((List Bool × α) ⊕ (List Bool × α))}
@@ -687,22 +524,12 @@ variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj}
 abbrev tStr (A : TAlgebra T) : TAlgebra T where
   carrier := T.obj A.carrier
   str := T.map A.str
-end
-
-section
-universe u
-variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj}
 
 /-- The structure map `i : T(D) → D` is itself a homomorphism `(T(D), T(i)) → (D, i)`: the square
 `i ∘ T(i) = i ∘ T(i)` commutes trivially. -/
 def strHom (A : TAlgebra T) : AlgHom (tStr A) A where
   hom := A.str
   comm := rfl
-end
-
-section
-universe u
-variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj}
 
 /-- The composite `i ∘ j` of `i` with the descent homomorphism `j : (D,i) → (T(D),T(i))` is the
 identity on `D`. -/
@@ -711,11 +538,6 @@ theorem str_comp_desc (A : TAlgebra T) (hA : IsInitial A) :
   have h : (strHom A).comp (hA.desc (tStr A)) = AlgHom.id A := by
     rw [hA.uniq A ((strHom A).comp (hA.desc (tStr A))), hA.uniq A (AlgHom.id A)]
   exact congrArg AlgHom.hom h
-end
-
-section
-universe u
-variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj}
 
 end
 
@@ -761,10 +583,6 @@ theorem botStrict_rel {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Nei
     exact hcb
   · rintro ⟨hX, rfl⟩
     exact sstep_cod_master hX
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 /-- **The per-step computation of Theorem 6.9's operator.** For the operator `Op = (k ∘ · ∘ j) ∘ Φ`
 on the strict function space, `Op(x)` is the strict map `k ∘ T(toStrictMap x) ∘ j`. This is the
@@ -787,12 +605,8 @@ theorem opStep (T : Endofunctor DomainObj.{w}) (D E : DomainObj.{w})
   show k.comp ((toStrictMap (Φ.toElementMap (toStrictFilter h))).1.comp j)
       = k.comp ((T.map (X := D) (Y := E) h.1).comp j)
   rw [hΦ h]
-end
-
-section
-universe u
-variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj}
 
 end
+
 end DomainTheory.NeighbourhoodSystems
 end

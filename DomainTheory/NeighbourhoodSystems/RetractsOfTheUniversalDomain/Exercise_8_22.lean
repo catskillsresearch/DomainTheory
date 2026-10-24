@@ -45,85 +45,31 @@ def enc : Str → Str
   | [] => []
   | b :: σ => b :: b :: enc σ
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 /-- The "completed" encoding: `enc σ` followed by the two-bit marker `[true, false]`, which can
 never arise as a doubled block `[b, b]`. -/
 def encC (σ : Str) : Str := enc σ ++ [true, false]
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 @[simp] theorem enc_nil : enc ([] : Str) = [] := rfl
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 @[simp] theorem enc_cons (b : Bool) (σ : Str) : enc (b :: σ) = b :: b :: enc σ := rfl
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 theorem encC_cons (b : Bool) (σ : Str) : encC (b :: σ) = b :: b :: encC σ := by
   simp [encC]
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 theorem encC_nil : encC ([] : Str) = [true, false] := rfl
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 theorem enc_append (σ τ : Str) : enc (σ ++ τ) = enc σ ++ enc τ := by
   induction σ with
   | nil => simp
   | cons b σ' ih => simp [ih]
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 theorem enc_length (σ : Str) : (enc σ).length = 2 * σ.length := by
   induction σ with
   | nil => simp
   | cons b σ' ih => simp [ih]; ring
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 theorem encC_length (σ : Str) : (encC σ).length = 2 * σ.length + 2 := by
   simp [encC, enc_length]
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 /-- **Two completions relate only to themselves.** `encC σ <+: encC τ ↔ σ = τ`: distinct completed
 positions of `C` become disjoint (never nested) `B`-cones. -/
@@ -156,31 +102,13 @@ theorem encC_prefix_encC_iff {σ τ : Str} : encC σ <+: encC τ ↔ σ = τ := 
         rw [ih h3]
   · rintro rfl; exact List.prefix_rfl
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 theorem encC_injective {σ τ : Str} (h : encC σ = encC τ) : σ = τ :=
   encC_prefix_encC_iff.mp (h ▸ List.prefix_rfl)
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 theorem enc_prefix_of_prefix {σ τ : Str} (h : σ <+: τ) : enc σ <+: enc τ := by
   obtain ⟨t, rfl⟩ := h
   rw [enc_append]
   exact ⟨enc t, rfl⟩
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 /-- **The marker never collides with a real prefix.** `enc ρ <+: encC σ` exactly reproduces `C`'s
 own "cone ⊆ completed" relation `ρ <+: σ`: the extra length used by the marker can never be
@@ -208,12 +136,6 @@ theorem enc_prefix_encC_iff {ρ σ : Str} : enc ρ <+: encC σ ↔ ρ <+: σ := 
     calc enc ρ <+: enc σ := enc_prefix_of_prefix h
       _ <+: encC σ := ⟨[true, false], rfl⟩
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 /-- **`enc` is prefix-reflecting.** Doubling never merges or confuses distinct prefixes: a prefix
 relation between doubled strings comes from a prefix relation between the originals. -/
 theorem enc_prefix_iff {σ τ : Str} : enc σ <+: enc τ ↔ σ <+: τ := by
@@ -234,31 +156,13 @@ theorem enc_prefix_iff {σ τ : Str} : enc σ <+: enc τ ↔ σ <+: τ := by
       rw [List.cons_prefix_cons]
       exact ⟨rfl, ih h3⟩
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 theorem enc_injective {σ τ : Str} (h : enc σ = enc τ) : σ = τ := by
   have h1 : σ <+: τ := enc_prefix_iff.mp ⟨[], by simpa using h⟩
   have h2 : τ <+: σ := enc_prefix_iff.mp ⟨[], by simpa using h.symm⟩
   exact h1.eq_of_length (h1.length_le.antisymm h2.length_le)
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 /-- The image family: `B`-cones re-encoding `C`'s cones (`enc`) and completions (`encC`). -/
 def memD' (X : Set Str) : Prop := (∃ σ, X = cone (enc σ)) ∨ (∃ σ, X = cone (encC σ))
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 /-- Every `D'`-set is literally a `B`-cone, so nestedness-or-disjointness is free from `B`'s own
 `cone_trichotomy`. -/
@@ -269,39 +173,15 @@ theorem D'_nestedOrDisjoint : NestedOrDisjoint memD' := by
   · exact cone_trichotomy (encC σ) (enc τ)
   · exact cone_trichotomy (encC σ) (encC τ)
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 /-- **The image neighbourhood system `D'`.** -/
 def D' : NeighborhoodSystem Str :=
   NeighborhoodSystem.ofNestedOrDisjoint memD' Set.univ ⟨[], Set.mem_univ _⟩
     (Or.inl ⟨[], by rw [enc_nil, cone_nil]⟩)
     D'_nestedOrDisjoint (by rintro X (⟨σ, rfl⟩ | ⟨σ, rfl⟩) <;> exact Set.subset_univ _)
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 @[simp] theorem D'_mem {X : Set Str} : D'.mem X ↔ memD' X := Iff.rfl
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 @[simp] theorem D'_master : D'.master = (Set.univ : Set Str) := rfl
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 /-- **`D' ◁ B`.** Same master; `D'.mem ⊆ B.mem` since every `D'`-set is a `B`-cone; and
 consistency is inherited via `D'_nestedOrDisjoint` exactly as in `B_subsystem_C`. -/
@@ -315,38 +195,14 @@ theorem D'_subsystem_B : D' ◁ B where
     · rw [Set.inter_eq_right.mpr h]; exact hY
     · rw [h] at hBXY; exact absurd (B_nonempty ∅ hBXY) (by simp)
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 theorem cone_encC_subset_cone_enc_iff {σ τ : Str} : cone (encC σ) ⊆ cone (enc τ) ↔ τ <+: σ := by
   rw [cone_subset_cone, enc_prefix_encC_iff]
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 theorem cone_encC_subset_iff {σ τ : Str} : cone (encC σ) ⊆ cone (encC τ) ↔ σ = τ := by
   rw [cone_subset_cone, encC_prefix_encC_iff, eq_comm]
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 theorem cone_enc_subset_iff {σ τ : Str} : cone (enc σ) ⊆ cone (enc τ) ↔ τ <+: σ := by
   rw [cone_subset_cone, enc_prefix_iff]
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 theorem cone_ne_singleton (σ τ : Str) : cone σ ≠ ({τ} : Set Str) := by
   intro h
@@ -355,12 +211,6 @@ theorem cone_ne_singleton (σ τ : Str) : cone σ ≠ ({τ} : Set Str) := by
   rw [h] at h1 h2
   simp only [Set.mem_singleton_iff] at h1 h2
   exact absurd (h2.trans h1.symm) (by simp)
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 /-- **No `B`-cone reaches "past" a completion.** `encC σ` is never a prefix of `enc τ`: a
 "completed" position of `C` never contains, as a subset, a "still going" cone. -/
@@ -388,30 +238,12 @@ theorem not_encC_prefix_enc {σ τ : Str} : ¬ encC σ <+: enc τ := by
       obtain ⟨-, h3⟩ := List.cons_prefix_cons.mp h2
       exact ih h3
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 theorem enc_ne_encC (σ τ : Str) : enc σ ≠ encC τ := by
   intro h
   exact not_encC_prefix_enc (σ := τ) (τ := σ) (h ▸ List.prefix_rfl)
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 theorem not_cone_enc_subset_cone_encC {σ τ : Str} : ¬ cone (enc σ) ⊆ cone (encC τ) := by
   rw [cone_subset_cone]; exact not_encC_prefix_enc
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 /-- **Inverse half of `C ≅ᴰ D'`.** -/
 def fromD' (y : D'.Element) : C.Element where
@@ -482,12 +314,6 @@ def fromD' (y : D'.Element) : C.Element where
       · refine Or.inr ⟨κ, ?_, rfl⟩
         have hσκ : σ = κ := hsub rfl
         exact y.up_mem hσ (Or.inr ⟨κ, rfl⟩) (cone_encC_subset_iff.mpr hσκ)
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 /-- **Forward half of `C ≅ᴰ D'`.** Sends a `C`-element `x` to the `D'`-element recording, for each
 `D'`-shape, whether `x` reaches the corresponding `C`-neighbourhood. -/
@@ -568,12 +394,6 @@ def toD' (x : C.Element) : D'.Element where
         have hστ : σ = κ := cone_encC_subset_iff.mp hsub
         exact hστ ▸ hσ
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 @[simp] theorem toD'_mem_enc {x : C.Element} (κ : Str) :
     (toD' x).mem (cone (enc κ)) ↔ x.mem (cone κ) := by
   constructor
@@ -582,12 +402,6 @@ namespace Exercise822
       rw [hκσ]; exact hσ
     · exact absurd (cone_injective heq) (enc_ne_encC κ σ)
   · intro hx; exact Or.inl ⟨κ, hx, rfl⟩
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 @[simp] theorem toD'_mem_encC {x : C.Element} (κ : Str) :
     (toD' x).mem (cone (encC κ)) ↔ x.mem ({κ} : Set Str) := by
@@ -598,12 +412,6 @@ namespace Exercise822
       rw [hκσ]; exact hσ
   · intro hx; exact Or.inr ⟨κ, hx, rfl⟩
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 @[simp] theorem fromD'_mem_cone {y : D'.Element} (κ : Str) :
     (fromD' y).mem (cone κ) ↔ y.mem (cone (enc κ)) := by
   constructor
@@ -612,12 +420,6 @@ namespace Exercise822
       rw [hκσ]; exact hσ
     · exact absurd heq (cone_ne_singleton κ σ)
   · intro hy; exact Or.inl ⟨κ, hy, rfl⟩
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 @[simp] theorem fromD'_mem_singleton {y : D'.Element} (κ : Str) :
     (fromD' y).mem ({κ} : Set Str) ↔ y.mem (cone (encC κ)) := by
@@ -629,12 +431,6 @@ namespace Exercise822
         simpa using h1
       rw [hκσ]; exact hσ
   · intro hy; exact Or.inr ⟨κ, hy, rfl⟩
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 theorem fromD'_toD' (x : C.Element) : fromD' (toD' x) = x := by
   apply NeighborhoodSystem.Element.ext
@@ -648,12 +444,6 @@ theorem fromD'_toD' (x : C.Element) : fromD' (toD' x) = x := by
     · exact Or.inl ⟨σ, (toD'_mem_enc σ).mpr hX, rfl⟩
     · exact Or.inr ⟨σ, (toD'_mem_encC σ).mpr hX, rfl⟩
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 theorem toD'_fromD' (y : D'.Element) : toD' (fromD' y) = y := by
   apply NeighborhoodSystem.Element.ext
   intro W
@@ -665,12 +455,6 @@ theorem toD'_fromD' (y : D'.Element) : toD' (fromD' y) = y := by
     rcases y.sub hW with ⟨κ, rfl⟩ | ⟨κ, rfl⟩
     · exact Or.inl ⟨κ, (fromD'_mem_cone κ).mpr hW, rfl⟩
     · exact Or.inr ⟨κ, (fromD'_mem_singleton κ).mpr hW, rfl⟩
-
-end Exercise822
-end
-
-section
-namespace Exercise822
 
 /-- **`C ≅ᴰ D'`.** -/
 def cdEquiv : C.Element ≃o D'.Element where
@@ -690,13 +474,6 @@ def cdEquiv : C.Element ≃o D'.Element where
       · exact Or.inl ⟨σ, h _ hσ, rfl⟩
       · exact Or.inr ⟨σ, h _ hσ, rfl⟩
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
-
 /-- **`B` is a literal subsystem of `C`** (Definition 6.10): every `B`-neighbourhood is already a
 `C`-neighbourhood, and consistency is inherited — if two cones intersect to a `C`-neighbourhood
 (hence nonempty), `cone_trichotomy` rules out the disjoint case, so the intersection is already the
@@ -711,33 +488,12 @@ theorem B_subsystem_C : B ◁ C where
     · rw [Set.inter_eq_right.mpr h]; exact ⟨τ, rfl⟩
     · rw [h] at hCXY; exact absurd (C_nonempty ∅ hCXY) (by simp)
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
-
 /-- **`B ⊴ C`** (Exercise 8.22). The projection Scott asks us to notice: the identity inclusion
 `B ◁ C`. -/
 theorem B_trianglelefteq_C : B ⊴ C :=
   Subsystem.trianglelefteq B_subsystem_C
 
-end Exercise822
-end
-
-section
-namespace Exercise822
-
-
 theorem C_isomorphic_D' : C ≅ᴰ D' := ⟨cdEquiv⟩
-
-end Exercise822
-end
-
-section
-namespace Exercise822
-
 
 /-- **`C ⊴ B`.** The nontrivial half of Exercise 8.22: `C` (finite-or-infinite binary sequences)
 embeds as a subdomain of `B` (infinite binary sequences) via the bit-doubling re-encoding
@@ -768,41 +524,21 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 stack. -/
 def embedIntoPow : ApproximableMap V (iterSys V) :=
   (push V).comp (paired (idMap V) (constMap V (iterSys V).bot))
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 theorem toElementMap_embedIntoPow (x : V.Element) :
     (embedIntoPow V).toElementMap x = (push V).toElementMap (pair x (iterSys V).bot) := by
   rw [embedIntoPow, toElementMap_comp, toElementMap_paired, toElementMap_idMap,
     toElementMap_constMap]
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- Every coordinate past the head of `⟨x, ⊥, ⊥, …⟩` is `⊥`. -/
 theorem component_embedIntoPow_succ (x : V.Element) (n : ℕ) :
     component ((embedIntoPow V).toElementMap x) (n + 1) = V.bot := by
   rw [toElementMap_embedIntoPow, ← component_tail, tail_push, Exercise618.component_bot]
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- The head of the singleton stack `⟨x, ⊥, ⊥, …⟩` is `x`. -/
 theorem component_embedIntoPow_zero (x : V.Element) :
     component ((embedIntoPow V).toElementMap x) 0 = x := by
   rw [toElementMap_embedIntoPow, ← head_apply, head_push]
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **`embedIntoPow ∘ head ≤ id`**: re-stacking after reading only the head can only forget
 information (all coordinates past the head collapse to `⊥`). -/
@@ -815,21 +551,11 @@ theorem embedIntoPow_comp_head_le : (embedIntoPow V).comp (head V) ≤ idMap (it
   cases n with
   | zero => rw [component_embedIntoPow_zero, head_apply]
   | succ m => rw [component_embedIntoPow_succ]; exact NeighborhoodSystem.bot_le V _
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **`head` retracts `embedIntoPow`.** -/
 theorem head_comp_embedIntoPow : (head V).comp (embedIntoPow V) = idMap V :=
   ApproximableMap.ext_of_toElementMap fun x => by
     rw [toElementMap_comp, toElementMap_idMap, head_apply, component_embedIntoPow_zero]
-end
-
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 end
 end DomainTheory.NeighbourhoodSystems

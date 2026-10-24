@@ -12,6 +12,7 @@ namespace Exercise718
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 section
 variable {α β : Type*}
+
 /- concordance: source L4655 EXERCISE 7.18 effective isomorphism -/
 /-- **Exercise 7.18 (Scott 1981, PRG-19) — effective isomorphism (completing the sentence).** Two
 effectively given systems `D` (presentation `P`) and `E` (presentation `Q`) are *effectively
@@ -31,16 +32,13 @@ structure EffectiveIso {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
   left_inv : invMap.comp toMap = idMap V
   /-- `toMap ∘ invMap = I_E`. -/
   right_inv : toMap.comp invMap = idMap W
-end
-
-section
-variable {α β : Type*}
 
 /-- **Exercise 7.18 — effectively isomorphic.** `D` and `E` are effectively isomorphic when an
 `EffectiveIso` exists. -/
 def EffectivelyIsomorphic {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
     (P : ComputablePresentation V) (Q : ComputablePresentation W) : Prop :=
   Nonempty (EffectiveIso P Q)
+
 end
 
 end Exercise718
@@ -94,29 +92,9 @@ def proj1Map : ApproximableMap (Dsharp D hD) (Dsharp D hD) where
         obtain ⟨-, hQ'Q⟩ := embPair_subset.mp hW'W
         exact Or.inr ⟨Pp', Qq', rfl, fun z hz => hZZ' (hQZ (hQ'Q hz))⟩
 
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
 @[simp] theorem proj1Map_rel {W Z : Set (List Bool × α)} :
     (proj1Map hD).rel W Z ↔
       MemS D W ∧ MemS D Z ∧ (Z = Gamma D ∨ ∃ Pp Qq, W = embPair Pp Qq ∧ Qq ⊆ Z) := Iff.rfl
-
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
 /-- **Example 6.1's pairing constructor `pair : D^§ × D^§ → D^§`, as a joint approximable map.**
 `(A ∪ B) pair W ↔ A, B ∈ 𝒟^§ ∧ W ∈ 𝒟^§ ∧ 1·A ∪ 2·B ⊆ W` (with `A ∪ B = prodNbhd A B`). -/
@@ -139,32 +117,11 @@ def pairSharpMap : ApproximableMap (prod (Dsharp D hD) (Dsharp D hD)) (Dsharp D 
     exact ⟨prod_mem_prodNbhd hA' hB', hW'mem, A', B', hA', hB', rfl,
       (embPair_subset.mpr ⟨hA'A, hB'B⟩).trans (hsub.trans hWW')⟩
 
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
-
 @[simp] theorem pairSharpMap_rel {V : Set ((List Bool × α) ⊕ (List Bool × α))}
     {W : Set (List Bool × α)} :
     (pairSharpMap hD).rel V W ↔
       (prod (Dsharp D hD) (Dsharp D hD)).mem V ∧ MemS D W ∧
         ∃ A B, MemS D A ∧ MemS D B ∧ V = prodNbhd A B ∧ embPair A B ⊆ W := Iff.rfl
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
 
 /-- **`pairSharpMap` really is Example 6.1's pairing:** `pair(x, y) ↦ ⟨x, y⟩^§` (`pairSharp`). -/
 theorem pairSharpMap_toElementMap (x y : (Dsharp D hD).Element) :
@@ -185,17 +142,6 @@ theorem pairSharpMap_toElementMap (x y : (Dsharp D hD).Element) :
     · exact ⟨prodNbhd P Q, ⟨P, Q, hxP, hyQ, rfl⟩, prod_mem_prodNbhd (x.sub hxP) (y.sub hyQ),
         MemS.pair (x.sub hxP) (y.sub hyQ), P, Q, x.sub hxP, y.sub hyQ, rfl, subset_rfl⟩
 
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
-
 /-- The index characterization of `pairSharpMap` against the product/`Vsharp` enumerations:
 `(V⁰_{p t} ∪ V¹_{q t}) pair V_k ↔ V_{2·t+2} ⊆ V_k` (since `V_{2t+2} = 1·V_{p t} ∪ 2·V_{q t}`). -/
 theorem pairSharp_rel_Vsharp_iff (P : ComputablePresentation D) (t k : ℕ) :
@@ -211,17 +157,6 @@ theorem pairSharp_rel_Vsharp_iff (P : ComputablePresentation D) (t k : ℕ) :
   · intro hsub
     exact ⟨prod_mem_prodNbhd (Vsharp_mem P _) (Vsharp_mem P _), Vsharp_mem P k,
       _, _, Vsharp_mem P _, Vsharp_mem P _, rfl, hsub⟩
-
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
 
 end Proposition77
 end

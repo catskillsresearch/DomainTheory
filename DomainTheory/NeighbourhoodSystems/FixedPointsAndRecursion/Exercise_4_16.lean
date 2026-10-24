@@ -12,6 +12,7 @@ open NeighborhoodSystem
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 namespace NeighborhoodSystem
+
 /- concordance: source L2293 EXERCISE 4.16 optimal fixed point -/
 /-- **Exercise 4.16 (Scott 1981, PRG-19).** The *optimal* fixed point associated with a non-empty
 set `S` of fixed points: the least fixed point sitting below `⋂S` (Exercise 4.13(1) applied to the
@@ -20,27 +21,11 @@ def optimalFix (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Elemen
     (hfix : ∀ s ∈ S, f s = s) : V.Element :=
   monoFix f (f_sInf_le f hf S hS hfix)
 
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
-
 /-- `optimalFix S` is a fixed point. -/
 theorem optimalFix_isFixed (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Element)
     (hS : S.Nonempty) (hfix : ∀ s ∈ S, f s = s) :
     f (optimalFix f hf S hS hfix) = optimalFix f hf S hS hfix :=
   monoFix_isFixed f hf _
-
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
 
 /-- `optimalFix S ⊑ ⋂S`. -/
 theorem optimalFix_le_sInf (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Element)
@@ -48,27 +33,11 @@ theorem optimalFix_le_sInf (f : V.Element → V.Element) (hf : Monotone f) (S : 
     optimalFix f hf S hS hfix ≤ V.sInf S hS :=
   monoFix_le f _
 
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
-
 /-- **Exercise 4.16 (Scott 1981, PRG-19).** `optimalFix S` lies below every member of `S`. -/
 theorem optimalFix_le (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Element)
     (hS : S.Nonempty) (hfix : ∀ s ∈ S, f s = s) {s : V.Element} (hs : s ∈ S) :
     optimalFix f hf S hS hfix ≤ s :=
   le_trans (optimalFix_le_sInf f hf S hS hfix) (V.sInf_le S hS hs)
-
-end NeighborhoodSystem
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace NeighborhoodSystem
 
 /-- **Exercise 4.16 (Scott 1981, PRG-19).** `optimalFix S` is *consistent* with every member of `S`
 (they share a common upper bound, namely `s` itself). -/

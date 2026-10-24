@@ -9,6 +9,7 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace NeighborhoodSystem
 section
 variable {α : Type*} (V : NeighborhoodSystem α)
+
 /- concordance: source L4557 DEFINITION 7.11 finite sets of elements -/
 /-- **Definition 7.11.** The finite-element join `{x₀,…,x_{n-1}}` in `|ℙ𝒟|`. The empty
 family yields `⊥`; otherwise use Scott's union-of-down-sets condition. -/
@@ -16,25 +17,13 @@ def PDfinJoin (n : ℕ) (xs : Fin n → V.Element) : V.PowerDomain.Element :=
   match n with
   | 0 => V.PDfinJoinZero
   | _m + 1 => V.PDfinJoinSucc xs
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 @[simp] theorem PDmem_finJoinZero {W : Set (Set α)} :
     (V.PDfinJoinZero).mem W ↔ W = V.PowerDomain.master := by
   rw [PDfinJoinZero, mem_bot, PowerDomain_master]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.11 — singleton join.** Write `{x}` for the unary join. -/
 def PDsingleton (x : V.Element) : V.PowerDomain.Element := V.PDfinJoin 1 (fun (_ : Fin 1) => x)
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 theorem PDmem_finJoinSucc {m : ℕ} (xs : Fin (m + 1) → V.Element) {W : Set (Set α)} :
     (V.PDfinJoinSucc xs).mem W ↔ V.PDmemFinJoin xs W := Iff.rfl
@@ -49,10 +38,6 @@ theorem PDmem_finJoinSucc {m : ℕ} (xs : Fin (m + 1) → V.Element) {W : Set (S
     exact ⟨X 0, hX 0, hPD, hsub 0⟩
   · rintro ⟨X, hX, hPD, hsub⟩
     refine ⟨fun _ => X, fun _ => hX, hPD, fun _ => hsub⟩
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 theorem PDmem_finJoin {n : ℕ} (xs : Fin n → V.Element) {W : Set (Set α)} :
     (V.PDfinJoin n xs).mem W ↔
@@ -60,10 +45,6 @@ theorem PDmem_finJoin {n : ℕ} (xs : Fin n → V.Element) {W : Set (Set α)} :
   match n with
   | 0 => simp [PDfinJoin, PDfinJoinZero, mem_bot]
   | m + 1 => simp [PDfinJoin, PDfinJoinSucc]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Definition 7.11 — Scott's displayed union form.** For `n ≥ 1`, membership is equivalent to
 some representatives `X_i ∈ x_i` with `⋃_{i<n} ↓X_i ⊆ W`. -/
@@ -78,6 +59,7 @@ theorem PDmem_finJoin_iUnion {m : ℕ} (xs : Fin (m + 1) → V.Element) {W : Set
     exact ⟨X, hX, hPD, Set.iUnion_subset hsub⟩
   · rintro ⟨X, hX, hPD, hsub⟩
     exact ⟨X, hX, hPD, (Set.iUnion_subset_iff).mp hsub⟩
+
 end
 
 end NeighborhoodSystem
@@ -100,11 +82,5 @@ theorem PDmem_down {A : Set (Set α)} (hA : V.PDmem A) {Z X : Set α}
 end NeighborhoodSystem
 end
 
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
-
-end
 end DomainTheory.NeighbourhoodSystems
 end

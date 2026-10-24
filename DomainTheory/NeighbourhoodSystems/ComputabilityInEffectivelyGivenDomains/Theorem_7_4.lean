@@ -13,6 +13,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 section
 variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
 /- concordance: source L4311 THEOREM 7.4 sum and product effective -/
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — `𝒟₀ × 𝒟₁` is effectively given.** The presentation
 `W_k = X⁰_{p k} ∪ X¹_{q k}`. Scott's 7.1(i) and (ii) each split, via `prodNbhd_inter` /
@@ -83,20 +84,10 @@ def prodPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePres
   masterIdx_spec := by
     simp only [prodEnum_apply, unpair_pair_fst, unpair_pair_snd, P₀.masterIdx_spec,
       P₁.masterIdx_spec, prod_master]
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 @[simp] theorem prodPresentation_X (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
     (t : ℕ) :
     (prodPresentation P₀ P₁).X t = prodNbhd (P₀.X t.unpair.1) (P₁.X t.unpair.2) := rfl
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 section Sum
 
@@ -111,11 +102,6 @@ def sumEnum (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation 
   else sumMaster V₀ V₁
 
 end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 section Sum
 
@@ -126,136 +112,32 @@ variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V�
 @[simp] theorem sumEnum_zero {t : ℕ} (h : t.unpair.1 = 0) :
     sumEnum P₀ P₁ t = inj₀ (P₀.X t.unpair.2) := by unfold sumEnum; rw [ite_eq_left h]
 
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
 @[simp] theorem sumEnum_one {t : ℕ} (h : t.unpair.1 = 1) :
     sumEnum P₀ P₁ t = inj₁ (P₁.X t.unpair.2) := by
   have h0 : t.unpair.1 ≠ 0 := by omega
   unfold sumEnum; rw [ite_eq_right h0, ite_eq_left h]
 
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
 theorem inj₀_eq_iff {A B : Set α} : (inj₀ A : Set (Option (α ⊕ β))) = inj₀ B ↔ A = B :=
   ⟨inj₀_injective, fun h => h ▸ rfl⟩
-
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
 
 /-- A nonempty left copy cannot equal a right copy. -/
 theorem inj₀_eq_inj₁_elim {A : Set α} {B : Set β} (hA : A.Nonempty)
     (h : (inj₀ A : Set (Option (α ⊕ β))) = inj₁ B) : False := by
   obtain ⟨a, ha⟩ := hA; exact il_mem_inj₁ (h ▸ il_mem_inj₀.mpr ha)
 
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
 theorem inj₀_ne_inj₁_of_nonempty {A : Set α} {B : Set β} (hB : B.Nonempty) :
     (inj₀ A : Set (Option (α ⊕ β))) ≠ inj₁ B := by
   rintro h; obtain ⟨b, hb⟩ := hB
   exact ir_mem_inj₀ (h.symm ▸ ir_mem_inj₁.mpr hb)
 
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
 theorem inj₀_ne_sumMaster {A : Set α} : (inj₀ A : Set (Option (α ⊕ β))) ≠ sumMaster V₀ V₁ :=
   fun h => none_mem_inj₀ (h.symm ▸ none_mem_sumMaster)
-
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
 
 theorem inj₁_eq_iff {A B : Set β} : (inj₁ A : Set (Option (α ⊕ β))) = inj₁ B ↔ A = B :=
   ⟨inj₁_injective, fun h => h ▸ rfl⟩
 
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
 theorem inj₁_ne_sumMaster {B : Set β} : (inj₁ B : Set (Option (α ⊕ β))) ≠ sumMaster V₀ V₁ :=
   fun h => none_mem_inj₁ (h.symm ▸ none_mem_sumMaster)
-
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
 
 /-- Equality of two enumerated `𝒟₀`-neighbourhoods is recursively decidable (antisymmetry of `⊆`,
 decided by `incl_computable`). -/
@@ -266,19 +148,6 @@ theorem recDec_setEq₀ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primr
   simp only [unpair_pair_fst, unpair_pair_snd]
   exact ⟨fun h => ⟨h.subset, h.symm.subset⟩, fun ⟨h1, h2⟩ => Set.Subset.antisymm h1 h2⟩
 
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
 theorem recDec_setEq₁ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     RecDecidable (fun u => P₁.X (f u) = P₁.X (g u)) := by
   have hincl : RecDecidable (fun s => P₁.X s.unpair.1 ⊆ P₁.X s.unpair.2) := P₁.incl_computable
@@ -286,34 +155,8 @@ theorem recDec_setEq₁ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primr
   simp only [unpair_pair_fst, unpair_pair_snd]
   exact ⟨fun h => ⟨h.subset, h.symm.subset⟩, fun ⟨h1, h2⟩ => Set.Subset.antisymm h1 h2⟩
 
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
 theorem sumEnum_master {t : ℕ} (h0 : t.unpair.1 ≠ 0) (h1 : t.unpair.1 ≠ 1) :
     sumEnum P₀ P₁ t = sumMaster V₀ V₁ := by unfold sumEnum; rw [ite_eq_right h0, ite_eq_right h1]
-
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
 
 theorem sumEnum_mem (t : ℕ) : (sum V₀ V₁ h₀ h₁).mem (sumEnum P₀ P₁ t) := by
   unfold sumEnum
@@ -323,19 +166,6 @@ theorem sumEnum_mem (t : ℕ) : (sum V₀ V₁ h₀ h₁).mem (sumEnum P₀ P₁
     · exact Or.inr (Or.inr ⟨_, P₁.mem_X _, rfl⟩)
     · exact Or.inl rfl
 
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
 include h₀ h₁ in
 theorem sumEnum_nonempty (t : ℕ) : (sumEnum P₀ P₁ t).Nonempty := by
   unfold sumEnum
@@ -344,19 +174,6 @@ theorem sumEnum_nonempty (t : ℕ) : (sumEnum P₀ P₁ t).Nonempty := by
   · split
     · exact inj₁_nonempty (h₁ _ (P₁.mem_X _))
     · exact ⟨none, none_mem_sumMaster⟩
-
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
 
 /-- Every enumerated sum-neighbourhood lies under the master (no non-emptiness needed). -/
 theorem sumEnum_subset_sumMaster (n : ℕ) :
@@ -368,36 +185,10 @@ theorem sumEnum_subset_sumMaster (n : ℕ) :
     · exact inj₁_subset_sumMaster (P₁.mem_X _)
     · exact subset_rfl
 
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
 /-- `Z ∩ M = Z`: the master absorbs on the right. -/
 theorem sumEnum_inter_sumMaster (n : ℕ) :
     sumEnum P₀ P₁ n ∩ sumMaster V₀ V₁ = sumEnum P₀ P₁ n :=
   Set.inter_eq_left.mpr (sumEnum_subset_sumMaster n)
-
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
 
 /-- `M ∩ Z = Z`: the master absorbs on the left. -/
 theorem sumMaster_inter_sumEnum (m : ℕ) :
@@ -405,11 +196,6 @@ theorem sumMaster_inter_sumEnum (m : ℕ) :
   Set.inter_eq_right.mpr (sumEnum_subset_sumMaster m)
 
 end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- Choice-free three-way split of a tag `n ∈ {0, 1, ≥2}` (via `Nat.decEq`, not classical `em`). -/
 theorem tag_trichotomy (n : ℕ) : n = 0 ∨ n = 1 ∨ (n ≠ 0 ∧ n ≠ 1) := by
@@ -426,11 +212,6 @@ theorem tag_trichotomy (n : ℕ) : n = 0 ∨ n = 1 ∨ (n ≠ 0 ∧ n ≠ 1) := 
     · exact Or.inr (Or.inr ⟨h, h'⟩)
     · exact Or.inr (Or.inl h')
   · exact Or.inl h
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 section Sum
 
@@ -498,19 +279,6 @@ theorem sumEnum_eq_iff (x y : ℕ) :
     rw [sumEnum_master hx0 hx1, sumEnum_master hy0 hy1]
     exact ⟨fun _ => Or.inl ⟨⟨hx0, hx1⟩, ⟨hy0, hy1⟩⟩, fun _ => rfl⟩
 
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
 include h₁ in
 /-- **`sumEnum u.1 = sumEnum u.2` is recursively decidable** (the `of_iff` translation of
 `sumEnum_eq_iff` into the tag/component deciders). -/
@@ -531,19 +299,6 @@ theorem eqSEdec :
   exact RecDecidable.of_iff (fun u => sumEnum_eq_iff (h₁ := h₁) u.unpair.1 u.unpair.2)
     (((hX0.not.and hX1.not).and (hY0.not.and hY1.not)).or
       (((hX0.and hY0).and hE0).or ((hX1.and hY1).and hE1)))
-
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
 
 include h₀ h₁
 
@@ -865,24 +620,6 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
     rw [sumEnum_master (by rw [unpair_pair_fst]; decide) (by rw [unpair_pair_fst]; decide)]
     rfl
 
-end Sum
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-section Sum
-
-variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-
-variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
-
-include h₀ h₁
-
-
 /-- **Theorem 7.4 (Scott 1981, PRG-19).** The sum of effectively given domains is effectively given. -/
 theorem sum_isEffectivelyGiven (g₀ : V₀.IsEffectivelyGiven) (g₁ : V₁.IsEffectivelyGiven) :
     (sum V₀ V₁ h₀ h₁).IsEffectivelyGiven := by
@@ -1143,12 +880,8 @@ theorem sumMap_isComputable {V₀' : NeighborhoodSystem α'} {V₁' : Neighborho
         Or.inr (Or.inl ⟨_, _, sumEnum_zero hn0, sumEnum_zero hm0, hfXY⟩)⟩
     · exact ⟨sumEnum_mem _, sumEnum_mem _,
         Or.inr (Or.inr ⟨_, _, sumEnum_one hn1, sumEnum_one hm1, hgYY⟩)⟩
-end Sum
-end
 
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+end Sum
 
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — the paired map `⟨f, g⟩` is computable.** `Zₙ ⟨f, g⟩ (X⁰_k ∪
 X¹_l) ↔ Zₙ f X⁰_k ∧ Zₙ g X¹_l`, the conjunction of two r.e. relations. -/
@@ -1169,11 +902,6 @@ theorem paired_isComputable {V₂ : NeighborhoodSystem γ}
     unpair_pair_fst, unpair_pair_snd]
   exact ⟨fun h => ⟨h.2.1, h.2.2⟩,
     fun h => ⟨prod_mem_prodNbhd (P₀.mem_X _) (P₁.mem_X _), h.1, h.2⟩⟩
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- **Theorem 7.4 (Scott 1981, PRG-19).** The product of effectively given domains is effectively
 given. -/
@@ -1181,11 +909,6 @@ theorem prod_isEffectivelyGiven (h₀ : V₀.IsEffectivelyGiven) (h₁ : V₁.Is
     (prod V₀ V₁).IsEffectivelyGiven := by
   obtain ⟨P₀⟩ := h₀; obtain ⟨P₁⟩ := h₁
   exact ⟨prodPresentation P₀ P₁⟩
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — `proj₀` is computable.** `(Xₙ⁰ ∪ Xₘ¹) p₀ X⁰_k ↔ Xₙ⁰ ⊆ X⁰_k`,
 a recursive slice of `incl_computable`, hence r.e. -/
@@ -1199,11 +922,6 @@ theorem proj₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : Comput
   simp only [prodPresentation_X, proj₀_rel, inl_preimage_prodNbhd, unpair_pair_fst, unpair_pair_snd]
   exact ⟨fun h => h.2.2,
     fun h => ⟨prod_mem_prodNbhd (P₀.mem_X _) (P₁.mem_X _), P₀.mem_X _, h⟩⟩
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — `proj₁` is computable.** `(Xₙ⁰ ∪ Xₘ¹) p₁ X¹_k ↔ Xₘ¹ ⊆ X¹_k`
 (Scott's worked example), a recursive slice of `incl_computable`. -/
@@ -1217,11 +935,6 @@ theorem proj₁_isComputable (P₀ : ComputablePresentation V₀) (P₁ : Comput
   simp only [prodPresentation_X, proj₁_rel, inr_preimage_prodNbhd, unpair_pair_fst, unpair_pair_snd]
   exact ⟨fun h => h.2.2,
     fun h => ⟨prod_mem_prodNbhd (P₀.mem_X _) (P₁.mem_X _), P₁.mem_X _, h⟩⟩
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — the product functor `f × g` is computable.** Using
 `f × g = ⟨f ∘ p₀, g ∘ p₁⟩` (Exercise 3.19) together with computability of `projᵢ` and `comp`
@@ -1235,6 +948,7 @@ theorem prodMap_isComputable {V₀' : NeighborhoodSystem α'} {V₁' : Neighborh
   rw [prodMap]
   exact paired_isComputable (comp_isComputable (proj₀_isComputable P₀ P₁) hf)
     (comp_isComputable (proj₁_isComputable P₀ P₁) hg)
+
 end
 
 section
@@ -2378,10 +2092,6 @@ structure ScottPresentation (V : NeighborhoodSystem α) where
   interEq_computable : RecDecidable₃ (fun n m k => X n ∩ X m = X k)
   /-- **7.1(ii)** consistency `∃k. X_k ⊆ Xₙ ∩ Xₘ` recursively decidable. -/
   cons_computable : RecDecidable₂ (fun n m => ∃ k, X k ⊆ X n ∩ X m)
-end
-
-section
-variable {α β γ : Type*}
 
 /-- **Definition 7.2 relative to bare presentations.** A computable map between bare presentations is
 one whose neighbourhood relation `Xₙ f Yₘ` is r.e. (identical to `ComputableMap`, which only uses
@@ -2389,18 +2099,10 @@ the enumerations). -/
 class ComputableMapS {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
     (P : ScottPresentation V) (Q : ScottPresentation W) (f : ApproximableMap V W) : Prop where
   out : REPred₂ (fun n m => f.rel (P.X n) (Q.X m))
-end
-
-section
-variable {α β γ : Type*}
 
 /-- **Effectively given (Scott's literal Definition 7.1).** -/
 def NeighborhoodSystem.IsEffectivelyGivenS (V : NeighborhoodSystem α) : Prop :=
   Nonempty (ScottPresentation V)
-end
-
-section
-variable {α β γ : Type*}
 
 namespace ScottPresentation
 
@@ -2409,28 +2111,8 @@ variable {V : NeighborhoodSystem α} (P : ScottPresentation V)
 /-- Reindexing `(n, m) ↦ (n, m, n)`. -/
 def inclShuffle (t : ℕ) : ℕ := Nat.pair t.unpair.1 (Nat.pair t.unpair.2 t.unpair.1)
 
-end ScottPresentation
-end
-
-section
-variable {α β γ : Type*}
-
-namespace ScottPresentation
-
-variable {V : NeighborhoodSystem α} (P : ScottPresentation V)
-
 theorem primrec_inclShuffle : Nat.Primrec inclShuffle :=
   Nat.Primrec.pair Nat.Primrec.left (Nat.Primrec.pair Nat.Primrec.right Nat.Primrec.left)
-
-end ScottPresentation
-end
-
-section
-variable {α β γ : Type*}
-
-namespace ScottPresentation
-
-variable {V : NeighborhoodSystem α} (P : ScottPresentation V)
 
 /-- The inclusion relation is decidable: `Xₙ ⊆ Xₘ ↔ Xₙ ∩ Xₘ = Xₙ`. -/
 theorem incl_computable : RecDecidable₂ (fun n m => P.X n ⊆ P.X m) := by
@@ -2439,6 +2121,7 @@ theorem incl_computable : RecDecidable₂ (fun n m => P.X n ⊆ P.X m) := by
   exact Set.inter_eq_left.symm
 
 end ScottPresentation
+
 end
 
 section
@@ -2460,11 +2143,6 @@ noncomputable def smashEnum (t : ℕ) : Set (α ⊕ β) :=
   else prodNbhd V₀.master V₁.master
 
 end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
 
 section Smash
 
@@ -2478,38 +2156,10 @@ theorem smashEnum_master {t : ℕ}
     (h : ¬(P₀.X t.unpair.1 ≠ V₀.master ∧ P₁.X t.unpair.2 ≠ V₁.master)) :
     smashEnum P₀ P₁ t = prodNbhd V₀.master V₁.master := ite_eq_right h
 
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
 open scoped Classical in
 theorem smashEnum_proper {t : ℕ}
     (h : P₀.X t.unpair.1 ≠ V₀.master ∧ P₁.X t.unpair.2 ≠ V₁.master) :
     smashEnum P₀ P₁ t = prodNbhd (P₀.X t.unpair.1) (P₁.X t.unpair.2) := ite_eq_left h
-
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
 
 /-- **The smash enumeration as a product neighbourhood with *effective* factors.** Given `{0,1}`
 deciders `c₀`, `c₁` of properness, `smashEnum t = prodNbhd X⁰_{effL} X¹_{effR}` where the effective
@@ -2541,20 +2191,6 @@ theorem smashEnum_eq_eff {c₀ c₁ : ℕ → ℕ} (hc₀le : ∀ n, c₀ n ≤ 
         rw [hz, Nat.mul_zero]
     rw [hpf, selectFn_zero, selectFn_zero, P₀.masterIdx_spec, P₁.masterIdx_spec]
 
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
 /-- Every enumerated smash neighbourhood is a product `prodNbhd A B` of component neighbourhoods
 (the proper form, or the master `prodNbhd Δ₀ Δ₁`). -/
 theorem smashEnum_eq_prodNbhd_mem (k : ℕ) :
@@ -2563,38 +2199,10 @@ theorem smashEnum_eq_prodNbhd_mem (k : ℕ) :
   · exact ⟨_, _, P₀.mem_X _, P₁.mem_X _, smashEnum_proper h⟩
   · exact ⟨_, _, V₀.master_mem, V₁.master_mem, smashEnum_master h⟩
 
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
 theorem smashEnum_mem (t : ℕ) : (smash V₀ V₁).mem (smashEnum P₀ P₁ t) := by
   by_cases h : P₀.X t.unpair.1 ≠ V₀.master ∧ P₁.X t.unpair.2 ≠ V₁.master
   · rw [smashEnum_proper h]; exact smash_mem_proper (P₀.mem_X _) h.1 (P₁.mem_X _) h.2
   · rw [smashEnum_master h]; exact (smash V₀ V₁).master_mem
-
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
 
 theorem smashEnum_subset_master (k : ℕ) :
     smashEnum P₀ P₁ k ⊆ prodNbhd V₀.master V₁.master := by
@@ -2602,6 +2210,7 @@ theorem smashEnum_subset_master (k : ℕ) :
   rwa [smash_master] at h
 
 end Smash
+
 end
 
 section
@@ -2613,28 +2222,8 @@ variable {V : NeighborhoodSystem α} (P : ScottPresentation V)
 
 def swapPair (t : ℕ) : ℕ := Nat.pair t.unpair.2 t.unpair.1
 
-end ScottPresentation
-end
-
-section
-variable {α β γ : Type*}
-
-namespace ScottPresentation
-
-variable {V : NeighborhoodSystem α} (P : ScottPresentation V)
-
 theorem primrec_swapPair : Nat.Primrec swapPair :=
   Nat.Primrec.pair Nat.Primrec.right Nat.Primrec.left
-
-end ScottPresentation
-end
-
-section
-variable {α β γ : Type*}
-
-namespace ScottPresentation
-
-variable {V : NeighborhoodSystem α} (P : ScottPresentation V)
 
 /-- Equality of neighbourhoods is decidable. -/
 theorem eq_computable : RecDecidable₂ (fun n m => P.X n = P.X m) := by
@@ -2668,22 +2257,6 @@ theorem proper₀_dec : RecDecidable (fun n => P₀.X n ≠ V₀.master) := by
     simp only [unpair_pair_fst, unpair_pair_snd, P₀.masterIdx_spec, id_eq]
   exact heq.not
 
-end Smash
-end
-
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable (P₀ P₁)
-
 theorem proper₁_dec : RecDecidable (fun n => P₁.X n ≠ V₁.master) := by
   have heq : RecDecidable (fun n => P₁.X n = V₁.master) := by
     refine RecDecidable.of_iff (fun n => ?_)
@@ -2692,22 +2265,7 @@ theorem proper₁_dec : RecDecidable (fun n => P₁.X n ≠ V₁.master) := by
   exact heq.not
 
 end Smash
-end
 
-section
-variable {α β γ : Type*}
-open Exercise510
-
-section Smash
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-variable {P₀ P₁}
-
-variable (P₀ P₁)
-
-end Smash
 end
 end DomainTheory.NeighbourhoodSystems
 end

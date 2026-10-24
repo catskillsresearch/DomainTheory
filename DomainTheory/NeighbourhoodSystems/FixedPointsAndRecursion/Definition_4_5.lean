@@ -51,16 +51,6 @@ inductive Graph (P : PeanoModel M) (Q : PeanoModel N) : M → N → Prop
   | base : Graph P Q P.zero Q.zero
   | step : ∀ {m n}, Graph P Q m n → Graph P Q (P.succ m) (Q.succ n)
 
-end PeanoModel
-end
-
-section
-universe u v
-
-namespace PeanoModel
-
-variable {M : Type u} {N : Type v}
-
 /-- The construction is symmetric in the two models: `Graph P Q m n` swaps to `Graph Q P n m`.
 (This is why the relation is one-one in *both* directions, as Scott notes: "the rôles of `N` and
 `M` are completely symmetric".) -/
@@ -69,16 +59,6 @@ theorem Graph.swap {P : PeanoModel M} {Q : PeanoModel N} {m : M} {n : N}
   induction h with
   | base => exact Graph.base
   | step _ ih => exact Graph.step ih
-
-end PeanoModel
-end
-
-section
-universe u v
-
-namespace PeanoModel
-
-variable {M : Type u} {N : Type v}
 
 /-- **Inversion at a successor (uses 4.5(i)/(ii)).** Anything related to `n⁺` on the left comes
 from a relation `n r n₀` with right value a successor: `n⁺ r k ⟹ ∃ n₀, n r n₀ ∧ k = n₀#`. -/
@@ -93,16 +73,6 @@ theorem graph_succ_right (P : PeanoModel M) (Q : PeanoModel N) {m : M} {k : N}
     subst hm
     exact ⟨n0, h', rfl⟩
 
-end PeanoModel
-end
-
-section
-universe u v
-
-namespace PeanoModel
-
-variable {M : Type u} {N : Type v}
-
 /-- **Inversion at `0` (uses 4.5(i)).** Anything related to `0` on the left is `□` on the right:
 `0 r k ⟹ k = □`. (The other generating rule would force `0 = n⁺`, impossible by 4.5(i).) -/
 theorem graph_zero_right (P : PeanoModel M) (Q : PeanoModel N) {k : N}
@@ -111,16 +81,6 @@ theorem graph_zero_right (P : PeanoModel M) (Q : PeanoModel N) {k : N}
   cases h with
   | base => rfl
   | step _ => exact absurd hz (P.zero_ne_succ _)
-
-end PeanoModel
-end
-
-section
-universe u v
-
-namespace PeanoModel
-
-variable {M : Type u} {N : Type v}
 
 /-- Each element of the left model is related by `Graph` to exactly one element of the right
 model. Proved by the induction principle 4.5(iii) on the set `{m ∣ ∃! n, m r n}`: the base case
@@ -135,32 +95,12 @@ theorem exists_unique_right (P : PeanoModel M) (Q : PeanoModel N) (m : M) :
     obtain ⟨n'', hn'', rfl⟩ := graph_succ_right P Q hk
     rw [huniq n'' hn'']
 
-end PeanoModel
-end
-
-section
-universe u v
-
-namespace PeanoModel
-
-variable {M : Type u} {N : Type v}
-
 /-- Dually (by `Graph.swap`), each element of the right model is related to exactly one element of
 the left model. -/
 theorem exists_unique_left (P : PeanoModel M) (Q : PeanoModel N) (n : N) :
     ∃! m, Graph P Q m n := by
   obtain ⟨m, hm, huniq⟩ := exists_unique_right Q P n
   exact ⟨m, hm.swap, fun y hy => huniq y hy.swap⟩
-
-end PeanoModel
-end
-
-section
-universe u v
-
-namespace PeanoModel
-
-variable {M : Type u} {N : Type v}
 
 end PeanoModel
 end

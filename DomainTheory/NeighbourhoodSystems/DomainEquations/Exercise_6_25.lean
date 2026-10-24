@@ -14,6 +14,7 @@ open NeighborhoodSystem ApproximableMap Subsystem
 section
 variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem.ProjectionPair
+
 /- concordance: source L4175 EXERCISE 6.25 projection pair laws -/
 /-- **Exercise 6.25 — `g` maps consistent sets to consistent sets.** "Consistent" for sets of
 elements is "bounded" (Exercise 1.27). If `S` is bounded by `b`, its image `{g(s) ∣ s ∈ S}` is
@@ -25,40 +26,16 @@ theorem inj_bounded (P : ProjectionPair D E) {S : Set D.Element} (hS : D.Bounded
   rintro _ ⟨s, hs, rfl⟩
   exact P.inj.toElementMap_mono (hb s hs)
 
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
-
 /-- **`g(h(y)) ⊑ y`.** The second projection-pair law `g ∘ h ⊆ I_ℰ`, read on elements. -/
 theorem inj_proj_apply_le (P : ProjectionPair D E) (y : E.Element) :
     P.inj.toElementMap (P.proj.toElementMap y) ≤ y := by
   have h := (le_iff_toElementMap_le.mp P.inj_comp_proj_le) y
   rwa [toElementMap_comp, toElementMap_idMap] at h
 
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
-
 /-- **`h(g(x)) = x`.** The first projection-pair law `h ∘ g = I_𝒟`, read on elements. -/
 theorem proj_inj_apply (P : ProjectionPair D E) (x : D.Element) :
     P.proj.toElementMap (P.inj.toElementMap x) = x := by
   rw [← toElementMap_comp, P.proj_comp_inj, toElementMap_idMap]
-
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
 
 /-- **Exercise 6.25, the Galois connection.** For `x ∈ |𝒟|`, `y ∈ |ℰ|`:
 `g(x) ⊑ y ↔ x ⊑ h(y)`. So `g` (lower adjoint) and `h` (upper adjoint) determine each other.
@@ -73,14 +50,6 @@ theorem galois (P : ProjectionPair D E) (x : D.Element) (y : E.Element) :
     rwa [P.proj_inj_apply x] at this
   · intro hxy
     exact (P.inj.toElementMap_mono hxy).trans (P.inj_proj_apply_le y)
-
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
 
 /-- **Exercise 6.25 — `g` preserves `⊔` (not just *directed* unions).** For any bounded set `S`,
 `g(⊔S) = ⊔ {g(s) ∣ s ∈ S}`. This is the characteristic property of a lower adjoint.
@@ -99,26 +68,10 @@ theorem inj_sSup (P : ProjectionPair D E) {S : Set D.Element} (hS : D.Bounded S)
     rintro _ ⟨s, hs, rfl⟩
     exact P.inj.toElementMap_mono (D.le_sSup S hS hs)
 
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
-
 /-- The set `{x ∣ g(x) ⊑ y}` is bounded: `h(y)` is an upper bound (it is in fact the top). -/
 theorem lowerSet_bounded (P : ProjectionPair D E) (y : E.Element) :
     D.Bounded (P.lowerSet y) :=
   ⟨P.proj.toElementMap y, fun _ hx => (P.galois _ y).mp hx⟩
-
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
 
 /-- **Exercise 6.25 — "check that the set on the right is directed".** Any two members of
 `{x ∣ g(x) ⊑ y}` have a common upper bound *inside the set*, namely `h(y)` itself (the down-set of
@@ -130,14 +83,6 @@ theorem lowerSet_directed (P : ProjectionPair D E) (y : E.Element) :
   exact ⟨P.proj.toElementMap y, P.inj_proj_apply_le y,
     (P.galois a y).mp ha, (P.galois b y).mp hb⟩
 
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
-
 /-- **Exercise 6.25, first extremal formula.** `h(y) = ⊔ {x ∈ |𝒟| ∣ g(x) ⊑ y}`.
 
 `h(y)` is the *greatest* member of the set (`g(h(y)) ⊑ y`, so `h(y)` is in it; every member is
@@ -148,27 +93,11 @@ theorem proj_eq_sSup (P : ProjectionPair D E) (y : E.Element) :
   · exact D.le_sSup _ (P.lowerSet_bounded y) (P.inj_proj_apply_le y)
   · exact D.sSup_le _ (P.lowerSet_bounded y) fun x hx => (P.galois x y).mp hx
 
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
-
 /-- **Exercise 6.25 — "check that the set on the right is non-empty".** `g(x)` itself lies in
 `{y ∣ x ⊑ h(y)}`, since `x ⊑ h(g(x)) = x`. -/
 theorem upperSet_nonempty (P : ProjectionPair D E) (x : D.Element) :
     (P.upperSet x).Nonempty :=
   ⟨P.inj.toElementMap x, by rw [mem_upperSet, P.proj_inj_apply x]⟩
-
-end Subsystem.ProjectionPair
-end
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
 
 /-- **Exercise 6.25, second extremal formula.** `g(x) = ⊓ {y ∈ |ℰ| ∣ x ⊑ h(y)}`.
 
@@ -724,10 +653,6 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 /-- **A neighbourhood system is *finite*** when it has only finitely many neighbourhoods. -/
 def NeighborhoodSystem.IsFinite {α : Type*} (D : NeighborhoodSystem α) : Prop :=
   Finite {X : Set α // D.mem X}
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **The element-wise map of an injection `i` is an order embedding.** Given approximable maps
 `i : D → E`, `j : E → D` with `j ∘ i = I_D`, the map `x ↦ i(x)` on elements is an order embedding
@@ -746,10 +671,6 @@ def projElementEmbedding {α β : Type*} {D : NeighborhoodSystem α} {E : Neighb
       rwa [hround a, hround b] at hjm
     · intro h
       exact toElementMap_mono i h)
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **`D ⊴ E` yields an order embedding `|D| ↪o |E|`.** Unfold `⊴` to an iso `|D| ≅o |D'|` onto a
 subdomain `D' ◁ E`, turn `D' ◁ E` into Proposition 6.12's projection pair, and compose its
@@ -759,10 +680,6 @@ theorem Trianglelefteq.elementEmbedding (h : D ⊴ E) :
   obtain ⟨D', hsub, ⟨e⟩⟩ := h
   exact ⟨e.toOrderEmbedding.trans
     (projElementEmbedding hsub.inj hsub.proj hsub.proj_comp_inj)⟩
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **A finite system has a finite element domain.** A filter `x : |D|` is determined by which of
 the (finitely many) neighbourhoods it contains, so `x ↦ {p | x.mem p.1}` injects `|D|` into the
@@ -779,10 +696,6 @@ theorem finite_element_of_isFinite {α : Type*} {D : NeighborhoodSystem α} (h :
   · have := Set.ext_iff.mp hxy ⟨X, hX⟩
     simpa using this
   · exact ⟨fun hmem => absurd (x.sub hmem) hX, fun hmem => absurd (y.sub hmem) hX⟩
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **Finite Cantor–Schröder–Bernstein (order version).** Mutual order embeddings between two
 *finite* ordered types yield an order isomorphism. The embeddings are injective, so equal finite
@@ -799,10 +712,6 @@ theorem orderIso_of_embeddings {P Q : Type*} [PartialOrder P] [PartialOrder Q]
   have hbij : Function.Bijective f :=
     (Fintype.bijective_iff_injective_and_card f).mpr ⟨f.injective, hcard⟩
   exact ⟨{ toEquiv := Equiv.ofBijective f hbij, map_rel_iff' := f.map_rel_iff' }⟩
-end
-
-section
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 end
 end DomainTheory.NeighbourhoodSystems

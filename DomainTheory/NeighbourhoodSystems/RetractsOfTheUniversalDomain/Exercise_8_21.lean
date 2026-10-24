@@ -58,48 +58,15 @@ noncomputable def dsharpMap (f : ApproximableMap D₁ D₀) :
     ApproximableMap (Dsharp D₁ hD₁) (Dsharp D₀ hD₀) :=
   gMap ((inSharpMap hD₀).comp f) (pairSharpMap hD₀) hD₁
 
-end DsharpFunctor
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-section DsharpFunctor
-
-variable {γ δ ε : Type*} {D₀ : NeighborhoodSystem γ} {D₁ : NeighborhoodSystem δ}
-  {D₂ : NeighborhoodSystem ε}
-
-variable (hD₀ : ∀ X, D₀.mem X → X.Nonempty) (hD₁ : ∀ X, D₁.mem X → X.Nonempty)
-  {hD₂ : ∀ X, D₂.mem X → X.Nonempty}
-
 theorem dsharpMap_eq (f : ApproximableMap D₁ D₀) :
     dsharpMap hD₀ hD₁ f = gMap ((inSharpMap hD₀).comp f) (pairSharpMap hD₀) hD₁ := rfl
-
-end DsharpFunctor
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-section DsharpFunctor
-
-variable {γ δ ε : Type*} {D₀ : NeighborhoodSystem γ} {D₁ : NeighborhoodSystem δ}
-  {D₂ : NeighborhoodSystem ε}
-
-variable (hD₀ : ∀ X, D₀.mem X → X.Nonempty) (hD₁ : ∀ X, D₁.mem X → X.Nonempty)
-  {hD₂ : ∀ X, D₂.mem X → X.Nonempty}
 
 /-- **`aSharpInner` is `dsharpMap` at `D₀ = D₁ = U`, `f := a`.** -/
 theorem dsharpMap_self_eq_aSharpInner (a : ApproximableMap U U) :
     dsharpMap U_mem_nonempty U_mem_nonempty a = aSharpInner a := rfl
 
 end DsharpFunctor
+
 end
 
 section
@@ -132,19 +99,13 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 /-- **`i§ : U§ → U`** (Definition-8.9-style fixed computable projection pair for `U§`). -/
 noncomputable def iSharp : ApproximableMap (Dsharp U U_mem_nonempty) U :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`I : (D_a)§ → U`**, transporting `iSharp` through `dsharpMap`'s action on the subsystem
 injection `(fixedNbhd_subsystem a).inj : D_a → U`. -/
 noncomputable def ISharpComb (a : ApproximableMap U U) :
     ApproximableMap (Dsharp (fixedNbhd a) (fixedNbhd_mem_nonempty a)) U :=
   iSharp.comp (dsharpMap U_mem_nonempty (fixedNbhd_mem_nonempty a) (fixedNbhd_subsystem a).inj)
+
 end
 
 section
@@ -170,12 +131,6 @@ theorem idMap_rel_imp_grel_inSharp_pairSharp :
       intro Z hZ hsub
       exact GRel.node (ihP hP subset_rfl) (ihQ hQ subset_rfl)
         ⟨prod_mem_prodNbhd hP hQ, hZ, P, Q, hP, hQ, rfl, hsub⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 /-- **`gMap in pair = I_{D§}`**: the catamorphism instantiated at `u := in`, `v := pair` (the tree
 algebra's own structure maps) is the identity on `D§`. -/
@@ -188,6 +143,7 @@ theorem gMap_inSharp_pairSharp_eq_idMap :
   · rw [ApproximableMap.le_iff]
     intro W Z h
     exact idMap_rel_imp_grel_inSharp_pairSharp h.1 h.2.1 h.2.2
+
 end
 
 section
@@ -237,51 +193,24 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 /-- **`j§ : U → U§`**. -/
 noncomputable def jSharp : ApproximableMap U (Dsharp U U_mem_nonempty) :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`J : U → (D_a)§`**, symmetric to `ISharpComb`, via the subsystem projection
 `(fixedNbhd_subsystem a).proj : U → D_a`. -/
 noncomputable def JSharpComb (a : ApproximableMap U U) :
     ApproximableMap U (Dsharp (fixedNbhd a) (fixedNbhd_mem_nonempty a)) :=
   (dsharpMap (fixedNbhd_mem_nonempty a) U_mem_nonempty (fixedNbhd_subsystem a).proj).comp jSharp
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Scott's operator `a§ : U → U`** (Exercise 8.21), conjugating `aSharpInner a` through the
 `U§ ⊴ U` projection pair, exactly as Definition 8.9 builds `a+b`, `a×b`, `a→b`. -/
 noncomputable def aSharp (a : ApproximableMap U U) : ApproximableMap U U :=
   iSharp.comp ((aSharpInner a).comp jSharp)
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 theorem aSharp_eq (a : ApproximableMap U U) :
     aSharp a = iSharp.comp ((aSharpInner a).comp jSharp) := rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 theorem jSharp_comp_iSharp : jSharp.comp iSharp = idMap _ :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.1
+
 end
 
 section
@@ -304,12 +233,6 @@ theorem pair_principal_eq_principal_prodNbhd {γ δ : Type*} {V₀ : Neighborhoo
   · rintro ⟨⟨P', Q', hP', hQ', rfl⟩, hsub⟩
     obtain ⟨hPP', hQQ'⟩ := prodNbhd_subset_iff.mp hsub
     exact ⟨P', Q', ⟨hP', hPP'⟩, ⟨hQ', hQQ'⟩, rfl⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 /-- **`⟨↑P, ↑Q⟩^§ = ↑(1P∪2Q)`**: `pairSharp` sends a pair of principal elements to the principal
 element of the corresponding node neighbourhood. -/
@@ -327,6 +250,7 @@ theorem pairSharp_principal {P Q : Set (List Bool × α)} (hP : MemS D P) (hQ : 
     exact ⟨hW, hsub⟩
   · rintro ⟨hW, hsub⟩
     exact ⟨prod_mem_prodNbhd hP hQ, hW, P, Q, hP, hQ, rfl, hsub⟩
+
 end
 
 section
@@ -400,13 +324,6 @@ theorem gMap_eq_of_satisfies {k : ApproximableMap (Dsharp D hD) E} (hk : IsStric
   by_cases hW : MemS D W
   · exact main hW Z
   · exact ⟨fun h => absurd (k.rel_dom h) hW, fun h => absurd (gRel_dom h) hW⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 section DsharpFunctor
 
@@ -467,13 +384,6 @@ theorem dsharpMap_comp (f : ApproximableMap D₂ D₁) (f' : ApproximableMap D�
         rw [toElementMap_comp, toElementMap_comp]
 
 end DsharpFunctor
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`I ∘ J = a§`**, when `a` is a finitary projection. -/
 theorem ISharpComb_comp_JSharpComb {a : ApproximableMap U U} (ha : FinitaryProjection a) :
@@ -482,13 +392,6 @@ theorem ISharpComb_comp_JSharpComb {a : ApproximableMap U U} (ha : FinitaryProje
   rw [comp_assoc, ← comp_assoc (dsharpMap _ _ _) (dsharpMap _ _ _) jSharp, ← dsharpMap_comp,
     inj_comp_proj_eq_self ha, dsharpMap_self_eq_aSharpInner]
   exact (aSharp_eq a).symm
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`J ∘ I = I_{(D_a)§}`**, unconditionally (no finitary/projection hypothesis on `a` needed). -/
 theorem JSharpComb_comp_ISharpComb (a : ApproximableMap U U) :
@@ -497,13 +400,6 @@ theorem JSharpComb_comp_ISharpComb (a : ApproximableMap U U) :
   unfold JSharpComb ISharpComb
   rw [comp_assoc, ← comp_assoc jSharp iSharp (dsharpMap _ _ _), jSharp_comp_iSharp, idMap_comp,
     ← dsharpMap_comp, (fixedNbhd_subsystem a).proj_comp_inj, dsharpMap_id]
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Exercise 8.21(c) (Scott 1981, PRG-19).** For a finitary projection `a` of `U`, the tree
 algebra `(D_a)§` of `D_a := fixedNbhd a` is order-isomorphic to `a§`'s own fixed-point domain —
@@ -514,13 +410,6 @@ noncomputable def dsharp_fixedNbhd_elementIso {a : ApproximableMap U U}
       {y : U.Element // (aSharp a).toElementMap y = y} :=
   elementIsoOfProjectionPair (ISharpComb a) (JSharpComb a) (JSharpComb_comp_ISharpComb a)
     (ISharpComb_comp_JSharpComb ha).symm
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Exercise 8.21(b)(2), general form.** If `a : D → D` is a retraction, so is the recursive
 extension `gMap ((inSharpMap hD).comp a) (pairSharpMap hD) hD` of `a`'s tree algebra (`aSharpInner a`
@@ -572,6 +461,7 @@ theorem gMap_selfComp_eq_of_isRetraction {a : ApproximableMap D D} (ha : Retract
             (pair (g.toElementMap (g.toElementMap y)) (g.toElementMap (g.toElementMap z))) := e3
       _ = v.toElementMap (pair ((g.comp g).toElementMap y) ((g.comp g).toElementMap z)) := by
           rw [toElementMap_comp, toElementMap_comp]
+
 end
 
 section
@@ -600,13 +490,6 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 theorem aSharpInner_eq (a : ApproximableMap U U) :
     aSharpInner a = gMap ((inSharpMap U_mem_nonempty).comp a) (pairSharpMap U_mem_nonempty)
       U_mem_nonempty := rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Exercise 8.21(b)(2).** If `a` is a retraction (`a∘a = a`), so is its recursive extension
 `aSharpInner a`: the specialization of `gMap_selfComp_eq_of_isRetraction` to `D := U`. -/
@@ -616,6 +499,7 @@ theorem aSharpInner_idem_of_isRetraction {a : ApproximableMap U U} (ha : Retract
   show (aSharpInner a).comp (aSharpInner a) = aSharpInner a
   rw [aSharpInner_eq]
   exact gMap_selfComp_eq_of_isRetraction ha
+
 end
 
 section
@@ -639,13 +523,6 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 theorem iSharp_comp_jSharp_le : iSharp.comp jSharp ≤ idMap U :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.2.1
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`a ≤ I ⟹ a§ ≤ I`** (half of "`a` a projection ⟹ `a§` a projection", Proposition 8.10's
 proof recipe transcribed to `§`). -/
@@ -665,61 +542,26 @@ theorem aSharp_le_idMap_of_le {a : ApproximableMap U U} (ha : a ≤ idMap U) :
         comp_mono_gen le_rfl (comp_mono_gen h2 le_rfl)
     _ = iSharp.comp jSharp := by rw [idMap_comp]
     _ ≤ idMap U := iSharp_comp_jSharp_le
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`U§ ⊴ U`.** -/
 theorem dsharpU_trianglelefteq_U : Dsharp U U_mem_nonempty ⊴ U :=
   trianglelefteq_of_projectionPair iSharp jSharp jSharp_comp_iSharp iSharp_comp_jSharp_le
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 theorem iSharp_isComputableMap :
     ComputableMap (dsharpPresentation UComputablePresentation U_mem_nonempty)
       UComputablePresentation iSharp :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.2.2.1
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`a§` is finitary whenever `a` is a finitary projection.** -/
 theorem isFinitary_aSharp {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     IsFinitary (aSharp a) :=
   isFinitary_of_projectionPair (ISharpComb a) (JSharpComb a) (JSharpComb_comp_ISharpComb a)
     (ISharpComb_comp_JSharpComb ha).symm
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 theorem jSharp_isComputableMap :
     ComputableMap UComputablePresentation
       (dsharpPresentation UComputablePresentation U_mem_nonempty) jSharp :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.2.2.2
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`a§` is computable whenever `a` is.** -/
 theorem aSharp_isComputable {a : ApproximableMap U U}
@@ -735,13 +577,6 @@ theorem aSharp_isComputable {a : ApproximableMap U U}
       (dsharpPresentation UComputablePresentation U_mem_nonempty) hu
       (pairSharp_isComputable U_mem_nonempty UComputablePresentation)
   exact comp_isComputable (comp_isComputable jSharp_isComputableMap hInner) iSharp_isComputableMap
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`a§`, unfolded one step through the `U§ ⊴ U` projection pair.** Mirrors
 `Proposition810.lean`'s `toElementMap_prodComb`/`toElementMap_arrowComb` pattern. -/
@@ -750,13 +585,6 @@ theorem toElementMap_aSharp (a : ApproximableMap U U) (x : U.Element) :
       = iSharp.toElementMap ((aSharpInner a).toElementMap (jSharp.toElementMap x)) := by
   rw [aSharp_eq]
   simp only [toElementMap_comp]
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Exercise 8.21(b)(3).** Idempotence of `aSharpInner a` transports through the projection pair
 `iSharp`/`jSharp` to idempotence of `aSharp a` itself — exactly `Proposition810.lean`'s
@@ -771,13 +599,6 @@ theorem isRetraction_aSharp {a : ApproximableMap U U} (ha2 : Retraction (aSharpI
   rw [toElementMap_comp, toElementMap_aSharp a ((aSharp a).toElementMap x),
     toElementMap_aSharp a x, toElementMap_of_comp_eq_idMap jSharp_comp_iSharp,
     toElementMap_idem_of_isRetraction ha2]
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Exercise 8.21(b), assembled.** `a` a projection of `U` `⟹` `a§` a projection: the `≤ I` half
 is 8.21(a)'s `aSharp_le_idMap_of_le`; the retraction half chains `aSharpInner_idem_of_isRetraction`
@@ -788,19 +609,13 @@ projection" in full, matching `Proposition810.lean`'s `isProjection_sumComb`/`is
 theorem isProjection_aSharp {a : ApproximableMap U U} (ha : IsProjection a) :
     IsProjection (aSharp a) :=
   ⟨isRetraction_aSharp (aSharpInner_idem_of_isRetraction ha.1), aSharp_le_idMap_of_le ha.2⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-variable {hD : ∀ X, D.mem X → X.Nonempty}
-variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Exercise 8.21, in full (Scott 1981, PRG-19).** `a` a finitary projection of `U` `⟹` `a§` is
 a finitary projection of `U`, with `D_{a§} ≅ (D_a)§`. -/
 theorem isFinitaryProjection_aSharp {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     FinitaryProjection (aSharp a) :=
   ⟨⟨isProjection_aSharp ha.out.1, isFinitary_aSharp ha⟩⟩
+
 end
 
 section
@@ -1101,25 +916,11 @@ theorem ofIso_comp_ofIso_symm (e : V₀.Element ≃o V₀'.Element) :
   intro x
   rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, toElementMap_idMap,
     OrderIso.apply_symm_apply]
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 theorem funSpaceCongr_hij (e0 : V₀.Element ≃o V₀'.Element) (e1 : V₁.Element ≃o V₁'.Element) :
     (expMap (ofIso e0.symm) (ofIso e1)).comp (expMap (ofIso e0) (ofIso e1.symm)) =
       idMap (funSpace V₀' V₁') := by
   rw [← expMap_comp, ofIso_comp_ofIso_symm, ofIso_comp_ofIso_symm, expMap_id]
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 theorem ofIso_symm_comp_ofIso (e : V₀.Element ≃o V₀'.Element) :
     (ofIso e.symm).comp (ofIso e) = idMap V₀ := by
@@ -1127,25 +928,11 @@ theorem ofIso_symm_comp_ofIso (e : V₀.Element ≃o V₀'.Element) :
   intro x
   rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, toElementMap_idMap,
     OrderIso.symm_apply_apply]
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 theorem funSpaceCongr_hji (e0 : V₀.Element ≃o V₀'.Element) (e1 : V₁.Element ≃o V₁'.Element) :
     (expMap (ofIso e0) (ofIso e1.symm)).comp (expMap (ofIso e0.symm) (ofIso e1)) =
       idMap (funSpace V₀ V₁) := by
   rw [← expMap_comp, ofIso_symm_comp_ofIso, ofIso_symm_comp_ofIso, expMap_id]
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 /-- **Two approximable maps that are *exact* (not merely `≤`) mutual inverses give an
 order-isomorphism of element types.** The generic upgrade behind `elementIsoOfProjectionPair`
@@ -1168,13 +955,6 @@ def orderIsoOfMutualInverse {D : NeighborhoodSystem α} {E : NeighborhoodSystem 
         toElementMap_idMap] at hm
     · intro h
       exact i.toElementMap_mono h
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 /-- **`funSpace` is a congruence for `≃o`.** `𝒟₀ ≃o 𝒟₀'`, `𝒟₁ ≃o 𝒟₁'` `⟹`
 `(𝒟₀ → 𝒟₁) ≃o (𝒟₀' → 𝒟₁')`. -/
@@ -1183,19 +963,13 @@ noncomputable def funSpaceCongrOrderIso (e0 : V₀.Element ≃o V₀'.Element)
     (funSpace V₀ V₁).Element ≃o (funSpace V₀' V₁').Element :=
   orderIsoOfMutualInverse (expMap (ofIso e0.symm) (ofIso e1)) (expMap (ofIso e0) (ofIso e1.symm))
     (funSpaceCongr_hji e0 e1) (funSpaceCongr_hij e0 e1)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 /-- **Currying (Theorem 3.12), as a domain isomorphism.** `(𝒟₀ × 𝒟₁ → 𝒟₂) ≅ (𝒟₀ → (𝒟₁ → 𝒟₂))`. -/
 theorem curry_isomorphic (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (V₂ : NeighborhoodSystem γ) :
     funSpace (prod V₀ V₁) V₂ ≅ᴰ funSpace V₀ (funSpace V₁ V₂) :=
   ⟨curryIso V₀ V₁ V₂⟩
+
 end
 
 section
@@ -1226,28 +1000,15 @@ variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 theorem funSpace_congr (h0 : V₀ ≅ᴰ V₀') (h1 : V₁ ≅ᴰ V₁') :
     funSpace V₀ V₁ ≅ᴰ funSpace V₀' V₁' :=
   h0.elim fun e0 => h1.elim fun e1 => ⟨funSpaceCongrOrderIso e0 e1⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 /-- **`funSpace` congruence, domain slot.** `𝒟₀ ≅ᴰ 𝒟₀'` `⟹` `(𝒟₀ → 𝒟₁) ≅ᴰ (𝒟₀' → 𝒟₁)`. -/
 theorem funSpace_congr_left (h0 : V₀ ≅ᴰ V₀') : funSpace V₀ V₁ ≅ᴰ funSpace V₀' V₁ :=
   funSpace_congr h0 (Isomorphic.refl V₁)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 /-- **`funSpace` congruence, codomain slot.** `𝒟₁ ≅ᴰ 𝒟₁'` `⟹` `(𝒟₀ → 𝒟₁) ≅ᴰ (𝒟₀ → 𝒟₁')`. -/
 theorem funSpace_congr_right (h1 : V₁ ≅ᴰ V₁') : funSpace V₀ V₁ ≅ᴰ funSpace V₀ V₁' :=
   funSpace_congr (Isomorphic.refl V₀) h1
+
 end
 
 section
@@ -1259,11 +1020,6 @@ theorem prod_self_isomorphic (hDV : D ≅ᴰ funSpace D V) (hVV : prod V V ≅�
     prod D D ≅ᴰ D :=
   ((hDV.prod hDV).trans (funProd_isomorphic).symm).trans
     ((funSpace_congr_right hVV).trans hDV.symm)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β : Type*} {D : NeighborhoodSystem α} {V : NeighborhoodSystem β}
 
 /-- **Closing argument, step 2 (Exercise 8.25's main equation).** `D ≅ D → V` and `V × V ≅ V`
 imply `D ≅ D → D`. -/
@@ -1274,6 +1030,7 @@ theorem funSpace_self_isomorphic (hDV : D ≅ᴰ funSpace D V) (hVV : prod V V �
     ((funSpace_congr_right hDV).trans (curry_isomorphic D D V).symm).trans
       ((funSpace_congr_left hDD).trans hDV.symm)
   step.symm
+
 end
 
 section
@@ -1292,5 +1049,3 @@ end
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-end

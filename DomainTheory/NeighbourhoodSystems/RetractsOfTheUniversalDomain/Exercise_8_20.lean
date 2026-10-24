@@ -98,10 +98,6 @@ open NeighborhoodSystem ApproximableMap
 /-- The domain `(𝒰→𝒰) × ((𝒰→𝒰) × 𝒰)` of the joint evaluator: an element `⟨ψ, ⟨φ, x⟩⟩` packages
 the varying map `ψ` (to become `a`), the curry variable `φ`, and the point `x`. -/
 abbrev RDom := prod (funSpace U U) (prod (funSpace U U) U)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- `R(ψ, φ, x) := c(φ(ψ(x)))`, purely as a composite of `evalMap`, `proj`s and `paired` — jointly
 continuous in `(ψ, φ, x)` since `evalMap` is. -/
@@ -112,20 +108,12 @@ noncomputable def RMap (c : ApproximableMap U U) : ApproximableMap RDom U :=
       ((evalMap U U).comp
         (paired (proj₀ (funSpace U U) (prod (funSpace U U) U))
           ((proj₁ (funSpace U U) U).comp (proj₁ (funSpace U U) (prod (funSpace U U) U)))))))
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- First curry (peeling off `ψ`), leaving the `(φ, x)` pair bundled: an element of
 `𝒰→𝒰 → funSpace ((𝒰→𝒰) × 𝒰) 𝒰`. -/
 noncomputable def curryOnceC (c : ApproximableMap U U) :
     ApproximableMap (funSpace U U) (funSpace (prod (funSpace U U) U) U) :=
   curry (RMap c)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`fixedNbhd a ≅ Fix(a)`, for any finitary projection `a : 𝒰 → 𝒰`.** Theorem 8.6(a)'s
 `inj_comp_proj_eq_self` identifies `retractionOfSubsystem (fixedNbhd_subsystem a)` with `a` itself,
@@ -135,77 +123,41 @@ noncomputable def fixedNbhd_elementIso_fix {a : ApproximableMap U U} (ha : Finit
   have h := Subsystem.elementIso (fixedNbhd_subsystem a)
   unfold Subsystem.retractionOfSubsystem at h
   rwa [inj_comp_proj_eq_self ha] at h
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- Second curry (via Table 5.5's `curryC`, peeling off `φ`): `ψ ↦ (φ ↦ (x ↦ R(ψ,φ,x)))`, an
 element of the fourth-order function space `(𝒰→𝒰) → ((𝒰→𝒰) → (𝒰→𝒰))`. -/
 noncomputable def lamOp (c : ApproximableMap U U) :
     ApproximableMap (funSpace U U) (funSpace (funSpace U U) (funSpace U U)) :=
   (curryC (funSpace U U) U U).comp (curryOnceC c)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- A fixed computable presentation of `𝒰^∞ = iterSys 𝒰` (Exercise 7.15). -/
 noncomputable def presentationIterU : ComputablePresentation (iterSys U) :=
   Classical.choice (iterSys_isEffectivelyGiven U_isEffectivelyGiven)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`i : 𝒰^∞ → 𝒰`**, fixed by Theorem 8.8(b) applied to `𝒰^∞`. -/
 noncomputable def cInj : ApproximableMap (iterSys U) U :=
   (theorem_8_8_b_strong presentationIterU).choose
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`j : 𝒰 → 𝒰^∞`**, fixed by Theorem 8.8(b) applied to `𝒰^∞`. -/
 noncomputable def cProj : ApproximableMap U (iterSys U) :=
   (theorem_8_8_b_strong presentationIterU).choose_spec.choose
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`c := i ∘ j : 𝒰 → 𝒰`**, the finitary projection witnessing `𝒰^∞` inside `𝒰`. -/
 noncomputable def cCombinator : ApproximableMap U U := cInj.comp cProj
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- Exercise 8.23's abstract correspondence `T(a) := D_a → D_c` (a domain, for each finitary
 projection `a`). -/
 noncomputable def TArrow (a : ApproximableMap U U) : Σ β : Type, NeighborhoodSystem β :=
   ⟨_, funSpace (fixedNbhd a) (fixedNbhd cCombinator)⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 theorem cProj_comp_cInj : cProj.comp cInj = idMap (iterSys U) :=
   (theorem_8_8_b_strong presentationIterU).choose_spec.choose_spec.1
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`𝒰^∞ ≅ Fix(c)`**, from the generic projection-pair `elementIso` (Proposition 8.10(b)'s
 `elementIsoOfProjectionPair`). -/
 noncomputable def cElementIso :
     (iterSys U).Element ≃o {y : U.Element // cCombinator.toElementMap y = y} :=
   elementIsoOfProjectionPair cInj cProj cProj_comp_cInj rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`t(a) := a → c`, made continuous in `a`.** Conjugates `lamOp c`'s output by the fixed
 projection pair `jArrow : 𝒰 → (𝒰→𝒰)`, `iArrow : (𝒰→𝒰) → 𝒰` (Definition 8.9), via `expMap jArrow
@@ -213,55 +165,27 @@ iArrow`. -/
 noncomputable def tOpMap (c : ApproximableMap U U) :
     ApproximableMap (funSpace U U) (funSpace U U) :=
   (expMap jArrow iArrow).comp (lamOp c)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 theorem cInj_comp_cProj_le : cInj.comp cProj ≤ idMap U :=
   (theorem_8_8_b_strong presentationIterU).choose_spec.choose_spec.2.1
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 theorem isFinitary_cCombinator : IsFinitary cCombinator :=
   isFinitary_of_projectionPair cInj cProj cProj_comp_cInj rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 theorem isRetraction_cCombinator : Retraction cCombinator := by
   constructor
   show (cInj.comp cProj).comp (cInj.comp cProj) = cInj.comp cProj
   rw [comp_assoc, ← comp_assoc cProj cInj cProj, cProj_comp_cInj, idMap_comp]
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 theorem isProjection_cCombinator : IsProjection cCombinator :=
   ⟨isRetraction_cCombinator, cInj_comp_cProj_le⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 theorem isFinitaryProjection_cCombinator : FinitaryProjection cCombinator :=
   ⟨⟨isProjection_cCombinator, isFinitary_cCombinator⟩⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`fixedNbhd c ≅ 𝒰^∞`.** -/
 theorem fixedNbhd_cCombinator_isomorphic : fixedNbhd cCombinator ≅ᴰ iterSys U :=
   ⟨(fixedNbhd_elementIso_fix isFinitaryProjection_cCombinator).trans cElementIso.symm⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`fixedNbhd c × fixedNbhd c ≅ fixedNbhd c`**, transported from `Exercise825Pow.pow_prod_isomorphic`
 along `fixedNbhd_cCombinator_isomorphic`. -/
@@ -269,20 +193,12 @@ theorem hVV_cCombinator :
     prod (fixedNbhd cCombinator) (fixedNbhd cCombinator) ≅ᴰ fixedNbhd cCombinator :=
   ((fixedNbhd_cCombinator_isomorphic.prod fixedNbhd_cCombinator_isomorphic).trans
     (pow_prod_isomorphic U)).trans fixedNbhd_cCombinator_isomorphic.symm
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 theorem toElementMap_RMap (c : ApproximableMap U U) (ψ φ : (funSpace U U).Element) (x : U.Element) :
     (RMap c).toElementMap (pair ψ (pair φ x)) =
       c.toElementMap ((toApproxMap φ).toElementMap ((toApproxMap ψ).toElementMap x)) := by
   simp only [RMap, toElementMap_comp, toElementMap_paired, toElementMap_proj₀, toElementMap_proj₁,
     fst_pair, snd_pair, evalMap_apply]
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`lamOp c` recovers `expMap (-) c = lamComb (-) c` at every `a`.** The heart of the
 continuity argument: unwinding both curry layers (`curryC_toApproxMap`, `toElementMap_curry_apply`
@@ -302,10 +218,6 @@ theorem toApproxMap_lamOp (c a : ApproximableMap U U) :
   rw [lamOp, toElementMap_comp, curryC_toApproxMap, toElementMap_curry_apply, curryOnceC,
     toElementMap_curry_apply, toElementMap_RMap, Sub8_6.toApproxMap_toFilter,
     toApproxMap_toElementMap_expMap, toElementMap_comp, toElementMap_comp]
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`tOp (tOpMap c) a = arrowComb a c`**, for every `a`: `t` really does implement
 `a ↦ arrowComb a c`, continuously. -/
@@ -315,20 +227,12 @@ theorem tOp_tOpMap (c a : ApproximableMap U U) :
   rw [tOpMap, toElementMap_comp, toApproxMap_toElementMap_expMap, toApproxMap_lamOp,
     expMap_eq_lamComb]
   rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 theorem hT_TArrow (a : ApproximableMap U U) (ha : FinitaryProjection a) :
     Nonempty (Exercise823.Fix (Exercise823.tOp (tOpMap cCombinator) a) ≃o
       (TArrow a).2.Element) := by
   rw [tOp_tOpMap]
   exact ⟨(arrowComb_elementIso a cCombinator ha isFinitaryProjection_cCombinator).symm⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`t` sends finitary projections to finitary projections** (Exercise 8.23's hypothesis `ht`),
 via `tOp_tOpMap` and Proposition 8.10(b)'s `finitaryProjection_arrowComb`. -/
@@ -337,10 +241,6 @@ theorem ht_tOpMap (c : ApproximableMap U U) (hc : FinitaryProjection c) :
   intro a ha
   rw [tOp_tOpMap]
   exact finitaryProjection_arrowComb a c ha hc
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`D ≅ D → 𝒰^∞` for `D := fixedNbhd (fixOp t)`.** Exercise 8.23's `fixedDomain_fixOp_iso_T`
 gives `Fix(‖t‖) ≅ D → D_c`; `fixedNbhd_elementIso_fix` identifies `D`'s own element type with
@@ -355,10 +255,6 @@ theorem Dsol_isomorphic_funSpace_cCombinator :
     ⟨fixedNbhd_elementIso_fix hFP⟩
   have h2 := Exercise823.fixedDomain_fixOp_iso_T (tOpMap cCombinator) hht TArrow hT_TArrow
   exact h1.elim fun e1 => h2.elim fun e2 => ⟨e1.trans e2⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **`𝒰 ⊴ D`**: the solution domain contains a copy of the universal domain `𝒰`, so it is
 non-trivial (Scott's remark). Chains `𝒰 ⊴ 𝒰^∞` (`Exercise825Embed.trianglelefteq_iterSys`),
@@ -374,10 +270,6 @@ theorem U_trianglelefteq_Dsol : U ⊴ fixedNbhd (Exercise823.fixOp (tOpMap cComb
   have h4 : funSpace D (fixedNbhd cCombinator) ⊴ D :=
     ⟨D, Subsystem.refl D, Dsol_isomorphic_funSpace_cCombinator.symm⟩
   exact trianglelefteq_trans (trianglelefteq_trans (trianglelefteq_trans h1 h2) h3) h4
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- **Exercise 8.25 (Scott 1981, PRG-19), main theorem.** `D ≅ D → D`, for
 `D := fixedNbhd (fixOp (tOpMap cCombinator))`: a non-trivial domain isomorphic to its own function
@@ -387,6 +279,7 @@ theorem exercise_8_25_main :
       funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))
         (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
   funSpace_self_isomorphic Dsol_isomorphic_funSpace_cCombinator hVV_cCombinator
+
 end
 
 section

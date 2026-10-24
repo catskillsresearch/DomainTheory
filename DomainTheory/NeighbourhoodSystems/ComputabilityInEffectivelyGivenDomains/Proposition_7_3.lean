@@ -11,6 +11,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 section
 variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
+
 /- concordance: source L4305 PROPOSITION 7.3 computable maps form a category -/
 /-- **Proposition 7.3 (consequence) (Scott 1981, PRG-19).** "If `f : 𝒟 → ℰ` is computable and
 `x ∈ |𝒟|` is computable, then `f(x) ∈ |ℰ|` is also computable." Here `f(x) = {Yₘ ∣ ∃ Xₙ ∈ x, Xₙ f Yₘ}`
@@ -30,11 +31,6 @@ theorem apply_isComputableElement {P : ComputablePresentation V} {Q : Computable
     exact ⟨n, hX, hfX⟩
   · rintro ⟨n, hxn, hfn⟩
     exact ⟨P.X n, hxn, hfn⟩
-end
-
-section
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
 
 /-- **Proposition 7.3 (Scott 1981, PRG-19) — composition of computable maps is computable.** For
 `X (g∘f) Z ↔ ∃ Y, X f Y ∧ Y g Z`, surjectivity of the middle presentation `Q` lets the witness `Y`
@@ -61,11 +57,6 @@ theorem comp_isComputable {U : NeighborhoodSystem γ}
     exact ⟨l, hfY, hgY⟩
   · rintro ⟨l, hfl, hgl⟩
     exact ⟨Q.X l, hfl, hgl⟩
-end
-
-section
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
 
 /-- **The identity map is computable** (the identity half of Proposition 7.3). The relation
 `Xₙ I Xₘ` is `Xₙ ⊆ Xₘ` (`incl_computable`), which is recursively *decidable*, hence recursively
@@ -76,11 +67,6 @@ theorem idMap_isComputable (P : ComputablePresentation V) :
     simp only [idMap_rel]
     exact ⟨fun h => h.2.2, fun h => ⟨P.mem_X _, P.mem_X _, h⟩⟩)
     P.incl_computable).re⟩
-end
-
-section
-variable {α β γ : Type*}
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
 
 /-- **Every finite (principal) element is computable** (Scott's remark after 7.2: "If `y` were
 finite, the set of indices would be recursive"). For the finite element `↑Xₙ`, the index set
@@ -97,6 +83,7 @@ theorem principal_isComputableElement (P : ComputablePresentation V) (n : ℕ) :
   refine (RecDecidable.of_iff (fun m => ?_) hrec).re
   simp only [mem_principal]
   exact ⟨fun h => h.2, fun h => ⟨P.mem_X m, h⟩⟩
+
 end
 
 end DomainTheory.NeighbourhoodSystems

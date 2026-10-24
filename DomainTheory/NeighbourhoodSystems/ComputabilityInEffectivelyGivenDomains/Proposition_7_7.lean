@@ -45,32 +45,10 @@ theorem Vsharp_succ (k : ℕ) :
       else embPair (Vsharp D P ((k - 1) / 2).unpair.1) (Vsharp D P ((k - 1) / 2).unpair.2) := by
   rw [Vsharp]
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 theorem Vsharp_even (n : ℕ) :
     Vsharp D P (2 * n + 2) = embPair (Vsharp D P n.unpair.1) (Vsharp D P n.unpair.2) := by
   rw [show 2 * n + 2 = (2 * n + 1) + 1 from rfl, Vsharp_succ, ite_eq_right (by omega),
     show (2 * n + 1 - 1) / 2 = n from by omega]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem Vsharp_even_inter_even (a b : ℕ) :
     Vsharp D P (2 * a + 2) ∩ Vsharp D P (2 * b + 2)
@@ -78,88 +56,22 @@ theorem Vsharp_even_inter_even (a b : ℕ) :
                 (Vsharp D P a.unpair.2 ∩ Vsharp D P b.unpair.2) := by
   rw [Vsharp_even, Vsharp_even, embPair_inter]
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 theorem Vsharp_odd (n : ℕ) : Vsharp D P (2 * n + 1) = embZero (P.X n) := by
   rw [Vsharp_succ, ite_eq_left (by omega), show 2 * n / 2 = n from by omega]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem Vsharp_odd_inter_even (a b : ℕ) :
     Vsharp D P (2 * a + 1) ∩ Vsharp D P (2 * b + 2) = ∅ := by
   rw [Vsharp_odd, Vsharp_even, embZero_inter_embPair]
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 theorem Vsharp_even_inter_odd (a b : ℕ) :
     Vsharp D P (2 * a + 2) ∩ Vsharp D P (2 * b + 1) = ∅ := by
   rw [Set.inter_comm]; exact Vsharp_odd_inter_even P b a
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem Vsharp_odd_inter_odd (a b : ℕ) :
     Vsharp D P (2 * a + 1) ∩ Vsharp D P (2 * b + 1) = embZero (P.X a ∩ P.X b) := by
   rw [Vsharp_odd, Vsharp_odd, embZero_inter]
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 theorem Vsharp_zero : Vsharp D P 0 = Gamma D := by rw [Vsharp]
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem Vsharp_eq_Gamma_iff (hD : ∀ X, D.mem X → X.Nonempty) (j : ℕ) :
     Vsharp D P j = Gamma D ↔ j = 0 := by
@@ -170,17 +82,6 @@ theorem Vsharp_eq_Gamma_iff (hD : ∀ X, D.mem X → X.Nonempty) (j : ℕ) :
     · rw [Vsharp_odd] at h; exact absurd h (embZero_ne_Gamma D hD (P.X a))
     · rw [Vsharp_even] at h; exact absurd h (embPair_ne_Gamma D hD _ _)
   · rintro rfl; exact Vsharp_zero P
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- Every `V k` is a neighbourhood of `D^§`. -/
 theorem Vsharp_mem (k : ℕ) : MemS D (Vsharp D P k) := by
@@ -199,45 +100,12 @@ theorem Vsharp_mem (k : ℕ) : MemS D (Vsharp D P k) := by
         exact MemS.pair (ih _ (by have := unpair_fst_le n; omega))
           (ih _ (by have := unpair_snd_le n; omega))
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 theorem Vsharp_inter_zero (n : ℕ) : Vsharp D P n ∩ Vsharp D P 0 = Vsharp D P n := by
   rw [Vsharp_zero, Set.inter_eq_left]; exact memS_subset_gamma (Vsharp_mem P n)
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- Under `∅ ∉ 𝒟`, no `V k` is empty. -/
 theorem Vsharp_nonempty (hD : ∀ X, D.mem X → X.Nonempty) (k : ℕ) : (Vsharp D P k).Nonempty :=
   memS_nonempty hD (Vsharp_mem P k)
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- Every neighbourhood of `D^§` is enumerated as some `V k` (surjectivity of `V`). -/
 theorem Vsharp_surj {W : Set (List Bool × α)} (hW : MemS D W) : ∃ k, Vsharp D P k = W := by
@@ -252,30 +120,8 @@ theorem Vsharp_surj {W : Set (List Bool × α)} (hW : MemS D W) : ∃ k, Vsharp 
       have h2 : (Nat.pair a b).unpair.2 = b := by rw [unpair_pair]
       rw [Vsharp_even, h1, h2, ha, hb]
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 theorem Vsharp_zero_inter (m : ℕ) : Vsharp D P 0 ∩ Vsharp D P m = Vsharp D P m := by
   rw [Vsharp_zero, Set.inter_eq_right]; exact memS_subset_gamma (Vsharp_mem P m)
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem exists_sub_embPair_iff (hD : ∀ X, D.mem X → X.Nonempty)
     (A B : Set (List Bool × α)) :
@@ -292,17 +138,6 @@ theorem exists_sub_embPair_iff (hD : ∀ X, D.mem X → X.Nonempty)
   · rintro ⟨⟨l1, h1⟩, ⟨l2, h2⟩⟩
     obtain ⟨l, hl⟩ := Vsharp_surj P (MemS.pair (Vsharp_mem P l1) (Vsharp_mem P l2))
     exact ⟨l, by rw [hl]; exact embPair_subset.mpr ⟨h1, h2⟩⟩
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem exists_sub_embZero_iff (hD : ∀ X, D.mem X → X.Nonempty) (Y : Set α) :
     (∃ l, Vsharp D P l ⊆ embZero Y) ↔ ∃ k, P.X k ⊆ Y := by
@@ -469,19 +304,6 @@ theorem dsharp_decider_spec (hD : ∀ X, D.mem X → X.Nonempty)
   intro i j
   exact key (Nat.pair i j) i j rfl
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-variable (fcons feq finter : ℕ → ℕ)
-
 /-- **Intersection-index correctness in isolation.** The `intI` component of `gOf (dsharpStep …)` is
 independent of the `eq`/`cons` bits (`fcons`/`feq`), so it is correct assuming only that `finter`
 correctly intersects in `D`. This lets the `inter` *data* field be built with dummy `fcons`/`feq`
@@ -546,19 +368,6 @@ theorem dsharp_intI_correct (hD : ∀ X, D.mem X → X.Nonempty)
               ih _ (hw ▸ hlt2) a.unpair.2 b.unpair.2 rfl hp2]
   intro i j; exact key (Nat.pair i j) i j rfl
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-variable (fcons feq finter : ℕ → ℕ)
-
 /-- **Decidability of `7.1(i)` for `D^§`.** `Vₙ ∩ Vₘ = V_k` iff `(n,m)` is consistent and the
 computed intersection index agrees with `k` under `D^§`-equality. Inconsistency forces the product
 to `0` (and then `Vₙ ∩ Vₘ = ∅ ≠ V_k`, since `V_k` is nonempty), so the single product decider is
@@ -582,19 +391,6 @@ theorem dsharp_interEq_iff (hD : ∀ X, D.mem X → X.Nonempty)
     exact ⟨hc0.mpr hch, he.mpr ((hi0 hch).trans hEq)⟩
   · rintro ⟨hcb, heb⟩
     rw [← hi0 (hc0.mp hcb)]; exact he.mp heb
-
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-variable (fcons feq finter : ℕ → ℕ)
 
 /-- **Proposition 7.7 (Scott 1981, PRG-19).** A computable presentation of `D^§` from one of `D`. -/
 def dsharpPresentation (hD : ∀ X, D.mem X → X.Nonempty) :
@@ -660,22 +456,6 @@ def dsharpPresentation (hD : ∀ X, D.mem X → X.Nonempty) :
   masterIdx := 0
   masterIdx_spec := Vsharp_zero P
 
-end Proposition77
-end
-
-section
-open NeighborhoodSystem Domain.Recursive Example61
-variable {α : Type*}
-
-namespace Proposition77
-
-
-variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
-variable (fcons feq finter : ℕ → ℕ)
-
-
 /-- **Proposition 7.7 (Scott 1981, PRG-19).** If `D` is effectively given, so is `D^§`. -/
 theorem dsharp_isEffectivelyGiven (P : ComputablePresentation D)
     (hD : ∀ X, D.mem X → X.Nonempty) :
@@ -712,16 +492,6 @@ variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 @[simp] theorem dsharpPresentation_X (P : ComputablePresentation D) (n : ℕ) :
     (dsharpPresentation P hD).X n = Vsharp D P n := rfl
 
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
 /-- **Example 6.1's injection `λx. x^§` as an approximable map.** Scott's neighbourhood relation
 `X (λx.x^§) W ↔ 0·X ⊆ W` (`embZero X ⊆ W`). The filter laws are immediate: `inter_right` uses
 `memS_inter` (with witness `0·X`), and `mono` uses monotonicity of `embZero`. -/
@@ -738,28 +508,8 @@ def inSharpMap : ApproximableMap D (Dsharp D hD) where
     rintro X X' W W' ⟨hX, hW, hsub⟩ hX'X hWW' hX'mem hW'mem
     exact ⟨hX'mem, hW'mem, (embZero_subset.mpr hX'X).trans (hsub.trans hWW')⟩
 
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
 @[simp] theorem inSharpMap_rel {X : Set α} {W : Set (List Bool × α)} :
     (inSharpMap hD).rel X W ↔ D.mem X ∧ MemS D W ∧ embZero X ⊆ W := Iff.rfl
-
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
 /-- **The first projection of the pair part of `D^§`, as an approximable map.** On the pair summand
 `1·P ∪ 2·Q` it returns `P`; everywhere else it returns `⊥ = {Γ}`. The neighbourhood relation is
@@ -802,30 +552,9 @@ def proj0Map : ApproximableMap (Dsharp D hD) (Dsharp D hD) where
         obtain ⟨hP'P, -⟩ := embPair_subset.mp hW'W
         exact Or.inr ⟨Pp', Qq', rfl, fun z hz => hZZ' (hPZ (hP'P hz))⟩
 
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
-
 @[simp] theorem proj0Map_rel {W Z : Set (List Bool × α)} :
     (proj0Map hD).rel W Z ↔
       MemS D W ∧ MemS D Z ∧ (Z = Gamma D ∨ ∃ Pp Qq, W = embPair Pp Qq ∧ Pp ⊆ Z) := Iff.rfl
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
 
 /-- **`inSharpMap` really computes `inSharp`.** Its elementwise action is Scott's `λx. x^§`. -/
 theorem inSharpMap_toElementMap (x : D.Element) :
@@ -849,17 +578,6 @@ theorem inSharpMap_toElementMap (x : D.Element) :
     · exact ⟨D.master, x.master_mem, D.master_mem, MemS.gamma, embZero_subset_Gamma D.master_mem⟩
     · exact ⟨Y, hYx, x.sub hYx, MemS.zero (x.sub hYx), subset_rfl⟩
 
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
-
 /-- **Proposition 7.7 (Scott 1981, PRG-19) — `λx. x^§` is computable.**
 `Xₙ (λx.x^§) V_k ↔ V_{2n+1} ⊆ V_k` (`embZero Xₙ ⊆ V_k`), a recursive slice of the inclusion
 decider for `D^§`, hence r.e. -/
@@ -875,17 +593,6 @@ theorem inSharp_isComputable (P : ComputablePresentation D) :
   refine (RecDecidable.of_iff (fun t => ?_) (hincl.comp hr)).re
   simp only [inSharpMap_rel, unpair_pair_fst, unpair_pair_snd, Vsharp_odd]
   exact ⟨fun h => h.2.2, fun h => ⟨P.mem_X _, Vsharp_mem P _, h⟩⟩
-
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
 
 /-- The index characterization of `proj0Map` against the `Vsharp` enumeration. `V_m proj₀ V_k` iff
 `k = 0` (`V_k = Γ`) or `m` is an even node index `2a+2` with `V_{p a} ⊆ V_k` (the left child). -/
@@ -911,17 +618,6 @@ theorem proj0_rel_Vsharp_iff (P : ComputablePresentation D) (m k : ℕ) :
     · rintro ⟨-, -, hsub⟩
       exact ⟨Vsharp D P a.unpair.1, Vsharp D P a.unpair.2, rfl, hsub⟩
 
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
-
 /-- **Proposition 7.7 (Scott 1981, PRG-19) — `proj₀` is computable.**
 `V_m proj₀ V_k ↔ k = 0 ∨ (m even, m ≠ 0, V_{p(m/2-1)} ⊆ V_k)`: a disjunction of the equality and
 inclusion deciders with primitive-recursive parity/child reindexings, hence r.e. -/
@@ -944,17 +640,6 @@ theorem proj0_isComputable (P : ComputablePresentation D) :
     simp only [dsharpPresentation_X, unpair_pair_fst, unpair_pair_snd]
   exact (RecDecidable.of_iff (fun s => proj0_rel_Vsharp_iff hD P s.unpair.1 s.unpair.2)
     (hk0.or (hmod.and (hne.and hincl)))).re
-
-end Proposition77
-end
-
-section
-variable {α : Type*}
-
-namespace Proposition77
-
-variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
-
 
 /-- **`proj0Map` really is the first projection of the pair part:** `proj₀(⟨x, y⟩^§) = x`. -/
 theorem proj0_toElementMap_pairSharp (x y : (Dsharp D hD).Element) :
@@ -1015,14 +700,10 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 def prodEnum (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) (t : ℕ) :
     Set (α ⊕ β) :=
   prodNbhd (P₀.X t.unpair.1) (P₁.X t.unpair.2)
-end
-
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 @[simp] theorem prodEnum_apply (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
     (t : ℕ) : prodEnum P₀ P₁ t = prodNbhd (P₀.X t.unpair.1) (P₁.X t.unpair.2) := rfl
+
 end
 
 section
@@ -1035,10 +716,5 @@ theorem prodNbhd_eq_iff {X X' : Set α} {Y Y' : Set β} :
   ⟨prodNbhd_injective, by rintro ⟨rfl, rfl⟩; rfl⟩
 end
 
-section
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-end
 end DomainTheory.NeighbourhoodSystems
 end

@@ -18,6 +18,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
+
 /- concordance: source L4807 EXAMPLES 8.4 check, fade, and smash -/
 /-- **Example 8.4's two-point system `O = {{0},{0,1}}`.** Tokens `Δ = {0,1} : Fin 2`; the only
 neighbourhoods are `{0}` (most informative) and `{0,1}` (the master, least informative). -/
@@ -36,40 +37,21 @@ def O : NeighborhoodSystem (Fin 2) where
     rintro X (rfl | rfl)
     · exact fin2_zero_subset_zero_one
     · exact subset_rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 theorem O_master_eq : O.master = ({0, 1} : Set (Fin 2)) := rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 @[simp] theorem O_mem_iff {X : Set (Fin 2)} :
     O.mem X ↔ X = ({0} : Set (Fin 2)) ∨ X = ({0, 1} : Set (Fin 2)) := Iff.rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 theorem O_mem_zero : O.mem ({0} : Set (Fin 2)) := Or.inl rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 /-- `O`'s top element `⊤ = ↑{0}` (the more informative of the two elements; `O.bot = ↑{0,1}` is the
 generic `NeighborhoodSystem.bot`). -/
 def Otop : O.Element := O.principal O_mem_zero
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 @[simp] theorem mem_Otop {Y : Set (Fin 2)} : Otop.mem Y ↔ O.mem Y ∧ ({0} : Set (Fin 2)) ⊆ Y :=
   Iff.rfl
+
 end
 
 section
@@ -111,21 +93,11 @@ def check : ApproximableMap D O where
       intro hX'eq
       apply hXne
       exact Set.Subset.antisymm (D.sub_master hX) (hX'eq ▸ hXX')
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
 
 @[simp] theorem check_rel {X : Set α} {Y : Set (Fin 2)} :
     (check : ApproximableMap D O).rel X Y ↔
       D.mem X ∧ O.mem Y ∧ (Y = ({0, 1} : Set (Fin 2)) ∨ X ≠ D.master) :=
   Iff.rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-- A non-bottom element of `D` always has *some* member neighbourhood other than the master.
 (Classical: uses `by_contra`/`push_neg`, an allowed `Prop`-level use of `Classical.choice`.) -/
@@ -138,11 +110,6 @@ theorem exists_mem_ne_master_of_ne_bot {y : D.Element} (hy : y ≠ D.bot) :
   intro Z
   rw [mem_bot]
   exact ⟨fun hZ => hcon Z hZ, fun hZ => hZ ▸ y.master_mem⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-- **Example 8.4's `fade` combinator, as a two-variable map.** `X, Y fade Z ↔ Z = Δ_D ∨ (X = {0}
 ∧ Y ⊆ Z)`: the master is always a safe output; `X = {0}` (the informative `O`-input) lets `Y` pass
@@ -189,15 +156,11 @@ def fade₂ : ApproximableMap₂ O D D where
           simp at h2
       right
       exact ⟨hX'eq, hYY'.trans (hYZ.trans hZZ')⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-- **Example 8.4's `fade` combinator**, packaged as a genuine `ApproximableMap (prod O D) D`
 via the Theorem 3.5 bridge (`ofMap₂`). -/
 def fade : ApproximableMap (prod O D) D := ofMap₂ fade₂
+
 end
 
 section
@@ -207,12 +170,6 @@ variable (u : D.Element) (hu : u ≠ D.bot)
 
 /-- **Example 8.4(a)'s retraction** `a(x) = fade(check(x), u)`. -/
 def a : ApproximableMap D D := fade.comp (paired check (constMap D u))
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
-variable (u : D.Element) (hu : u ≠ D.bot)
 
 /-- The `D`-element corresponding to `t : O.Element` under `a`'s formula: `Z ↦ Z = Δ_D ∨ (t ∋ {0}
 ∧ u ∋ Z)`. This is a genuine `Element` (filter), built with no case-split on `t`. -/
@@ -247,22 +204,10 @@ def fixOfO (t : O.Element) : D.Element where
     rcases hZ1 with rfl | ⟨ht, huZ⟩
     · left; exact Set.Subset.antisymm (D.sub_master hZ'D) hZZ'
     · right; exact ⟨ht, u.up_mem huZ hZ'D hZZ'⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
-variable (u : D.Element) (hu : u ≠ D.bot)
 
 @[simp] theorem mem_fixOfO {t : O.Element} {Z : Set α} :
     (fixOfO u t).mem Z ↔ D.mem Z ∧ (Z = D.master ∨ (t.mem ({0} : Set (Fin 2)) ∧ u.mem Z)) :=
   Iff.rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
-variable (u : D.Element) (hu : u ≠ D.bot)
 
 theorem O_le_iff {t t' : O.Element} :
     t ≤ t' ↔ (t.mem ({0} : Set (Fin 2)) → t'.mem ({0} : Set (Fin 2))) := by
@@ -272,12 +217,6 @@ theorem O_le_iff {t t' : O.Element} :
     rcases O_mem_iff.mp (t.sub hY) with rfl | rfl
     · exact h hY
     · exact t'.master_mem
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
-variable (u : D.Element) (hu : u ≠ D.bot)
 
 theorem fixOfO_mono {t t' : O.Element} (h : t ≤ t') : fixOfO u t ≤ fixOfO u t' := by
   intro Z hZ
@@ -285,12 +224,6 @@ theorem fixOfO_mono {t t' : O.Element} (h : t ≤ t') : fixOfO u t ≤ fixOfO u 
   obtain ⟨hZD, hZeq | ⟨ht0, huZ⟩⟩ := hZ
   · exact ⟨hZD, Or.inl hZeq⟩
   · exact ⟨hZD, Or.inr ⟨O_le_iff.mp h ht0, huZ⟩⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
-variable (u : D.Element) (hu : u ≠ D.bot)
 
 theorem fixOfO_ne_bot_iff (hu : u ≠ D.bot) {t : O.Element} :
     fixOfO u t ≠ D.bot ↔ t.mem ({0} : Set (Fin 2)) := by
@@ -312,6 +245,7 @@ theorem fixOfO_ne_bot_iff (hu : u ≠ D.bot) {t : O.Element} :
     have : (fixOfO u t).mem Z := ⟨u.sub huZ, Or.inr ⟨ht0, huZ⟩⟩
     rw [hbot, mem_bot] at this
     exact hZne this
+
 end
 
 section
@@ -382,11 +316,6 @@ theorem mem_toElementMap₂_fade (t : O.Element) (y : D.Element) {Z : Set α} :
     · exact ⟨O.master, D.master, t.master_mem, y.master_mem, O.master_mem, D.master_mem, hZD,
         Or.inl hZeq⟩
     · exact ⟨({0} : Set (Fin 2)), Z, ht0, hyZ, O_mem_zero, hZD, hZD, Or.inr ⟨rfl, subset_rfl⟩⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-- The two-variable elementwise bridge for a general `ApproximableMap₂`, specialized to a pair. -/
 theorem toElementMap_ofMap₂_pair {β γ δ : Type*} {V₀ : NeighborhoodSystem β}
@@ -396,6 +325,7 @@ theorem toElementMap_ofMap₂_pair {β γ δ : Type*} {V₀ : NeighborhoodSystem
   have h := toElementMap₂_toMap₂ (ofMap₂ f₂) p q
   rw [toMap₂_ofMap₂] at h
   exact h.symm
+
 end
 
 section
@@ -419,12 +349,6 @@ theorem mem_toElementMap_a {x : D.Element} {Z : Set α} :
   · rintro ⟨hZD, hZeq | ⟨hxne, huZ⟩⟩
     · exact ⟨hZD, Or.inl hZeq⟩
     · exact ⟨hZD, Or.inr ⟨⟨O_mem_zero, Or.inr hxne⟩, huZ⟩⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
-variable (u : D.Element) (hu : u ≠ D.bot)
 
 /-- `fixOfO` and `check.toElementMap` intertwine `a` and the identity on `D`: applying `fixOfO`
 after `check.toElementMap` recovers `a` itself. -/
@@ -441,24 +365,12 @@ theorem fixOfO_check_toElementMap (x : D.Element) :
       · exact h
     · intro h; exact ⟨O_mem_zero, Or.inr h⟩
   rw [hcheck]
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
-variable (u : D.Element) (hu : u ≠ D.bot)
 
 theorem toElementMap_a_fixOfO (hu : u ≠ D.bot) (t : O.Element) :
     (a u).toElementMap (fixOfO u t) = fixOfO u t := by
   apply Element.ext
   intro Z
   rw [mem_toElementMap_a, mem_fixOfO, fixOfO_ne_bot_iff u hu]
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
-variable (u : D.Element) (hu : u ≠ D.bot)
 
 /-- **Example 8.4(a) (Scott 1981, PRG-19), packaged.** The range (fixed-point set) of `a` is
 order-isomorphic to `O`. -/
@@ -478,6 +390,7 @@ def fixIso (hu : u ≠ D.bot) : O.Element ≃o {y : D.Element // (a u).toElement
       have := toElementMap_mono check h
       rwa [check_toElementMap_fixOfO u hu, check_toElementMap_fixOfO u hu] at this
     · exact fixOfO_mono u
+
 end
 
 section
@@ -502,12 +415,6 @@ theorem a_bot : (a u).toElementMap D.bot = D.bot := by
   rw [mem_toElementMap_a, mem_bot]
   exact ⟨fun ⟨_, h⟩ => h.resolve_right (fun h' => h'.1 rfl) |>.symm ▸ rfl,
     fun h => ⟨h ▸ D.master_mem, Or.inl h⟩⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
-variable (u : D.Element) (hu : u ≠ D.bot)
 
 theorem a_of_ne_bot {x : D.Element} (hx : x ≠ D.bot) : (a u).toElementMap x = u := by
   apply Element.ext
@@ -519,12 +426,6 @@ theorem a_of_ne_bot {x : D.Element} (hx : x ≠ D.bot) : (a u).toElementMap x = 
     · exact huZ
   · intro huZ
     exact ⟨u.sub huZ, Or.inr ⟨hx, huZ⟩⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
-variable (u : D.Element) (hu : u ≠ D.bot)
 
 /-- **Example 8.4(a) (Scott 1981, PRG-19).** `a` is a retraction. -/
 theorem isRetraction_a (hu : u ≠ D.bot) : Retraction (a u) := by
@@ -535,18 +436,13 @@ theorem isRetraction_a (hu : u ≠ D.bot) : Retraction (a u) := by
   by_cases hx : x = D.bot
   · subst hx; rw [a_bot, a_bot]
   · rw [a_of_ne_bot u hx, a_of_ne_bot u hu]
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α : Type*} {D : NeighborhoodSystem α}
-variable (u : D.Element) (hu : u ≠ D.bot)
 
 /-- **Example 8.4(a) (Scott 1981, PRG-19), final statement.** If `D` is not trivial (`u ≠ ⊥`),
 `a(x) = fade(check(x), u)` is a retraction on `D` whose range is isomorphic to `O = {{0},{0,1}}`. -/
 theorem example84a (hu : u ≠ D.bot) :
     Retraction (a u) ∧ Nonempty (O.Element ≃o {y : D.Element // (a u).toElementMap y = y}) :=
   ⟨isRetraction_a u hu, ⟨fixIso u hu⟩⟩
+
 end
 
 section
@@ -562,11 +458,6 @@ theorem check_toElementMap_mem_zero_iff {x : D.Element} :
     · exact absurd h fin2_zero_ne_zero_one
     · exact h
   · intro h; exact ⟨O_mem_zero, Or.inr h⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- The closed form of `fade`'s elementwise action, generalized (via `mem_toElementMap₂_fade`) from
 Example 8.4(a)'s ambient `D` to an arbitrary neighbourhood system `G`. -/
@@ -576,11 +467,6 @@ theorem mem_toElementMap_fade {γ : Type*} {G : NeighborhoodSystem γ} (t : O.El
       G.mem Z ∧ (Z = G.master ∨ (t.mem ({0} : Set (Fin 2)) ∧ w.mem Z)) := by
   rw [show (fade (D := G)) = ofMap₂ (fade₂ (D := G)) from rfl, toElementMap_ofMap₂_pair,
     mem_toElementMap₂_fade]
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -600,33 +486,18 @@ theorem pair_bot_bot : pair (D.bot) (E.bot) = (prod D E).bot := by
     · rw [hW, prod_master]
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
 @[simp] theorem prod_bot_fst : ((prod D E).bot).fst = D.bot := by rw [← pair_bot_bot, fst_pair]
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
 @[simp] theorem prod_bot_snd : ((prod D E).bot).snd = E.bot := by rw [← pair_bot_bot, snd_pair]
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -638,11 +509,6 @@ def smashFadeInner : ApproximableMap (prod D E) (prod D E) :=
     (paired ((check (D := E)).comp (proj₁ D E)) (idMap (prod D E)))
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -653,11 +519,6 @@ def smashRetraction : ApproximableMap (prod D E) (prod D E) :=
     (paired ((check (D := D)).comp (proj₀ D E)) (smashFadeInner (D := D) (E := E)))
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -667,11 +528,6 @@ def strictEvalFade : ApproximableMap (prod (funSpace D E) D) E :=
     (paired ((check (D := D)).comp (proj₁ (funSpace D E) D)) (evalMap D E))
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -680,11 +536,6 @@ Theorem 3.12's `curry`. -/
 def strictRetraction : ApproximableMap (funSpace D E) (funSpace D E) := curry strictEvalFade
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -703,11 +554,6 @@ theorem toApproxMap_strictRetraction_mem {φ : (funSpace D E).Element} {y : D.El
     evalMap_apply, mem_toElementMap_fade, check_toElementMap_mem_zero_iff]
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -724,11 +570,6 @@ theorem strictRetraction_apply_bot (φ : (funSpace D E).Element) :
     exact ⟨E.master_mem, Or.inl rfl⟩
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -740,11 +581,6 @@ theorem isStrict_toApproxMap_of_fixed {φ : (funSpace D E).Element}
   rwa [hφ] at h
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -763,11 +599,6 @@ theorem strictRetraction_apply_of_ne_bot {y : D.Element} (hy : y ≠ D.bot)
     exact ⟨((toApproxMap φ).toElementMap y).sub hZ, Or.inr ⟨hy, hZ⟩⟩
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -775,11 +606,6 @@ theorem toApproxMap_toFilter (f : ApproximableMap D E) : toApproxMap (toFilter f
   (funSpaceEquiv D E).right_inv f
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -789,11 +615,6 @@ theorem toFilter_toApproxMap (φ : (funSpace D E).Element) : toFilter (toApproxM
   (funSpaceEquiv D E).left_inv φ
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -809,11 +630,6 @@ theorem strictRetraction_fixed_of_isStrict {f : ApproximableMap D E} (hf : Exerc
   rw [← toFilter_toApproxMap (strictRetraction.toElementMap (toFilter f)), key]
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -833,11 +649,6 @@ def strictRetractionFixIso :
     exact (funSpaceEquiv D E).map_rel_iff
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -873,11 +684,6 @@ theorem exists_smash_witness {z : (prod D E).Element} (hx : z.fst ≠ D.bot) (hy
     exact prodNbhd_subset_iff.mpr ⟨Set.inter_subset_right, Set.inter_subset_right⟩
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -891,11 +697,6 @@ theorem smashFadeInner_mem {z : (prod D E).Element} {Z : Set (α ⊕ β)} :
     toElementMap_idMap, mem_toElementMap_fade, check_toElementMap_mem_zero_iff]
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -910,11 +711,6 @@ theorem smashRetraction_mem {z : (prod D E).Element} {Z : Set (α ⊕ β)} :
     mem_toElementMap_fade, check_toElementMap_mem_zero_iff]
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -936,11 +732,6 @@ theorem smashRetraction_mem_iff {z : (prod D E).Element} {Z : Set (α ⊕ β)} :
     · exact ⟨hPZ, Or.inr ⟨hx, hPZ, Or.inr ⟨hy, hzZ⟩⟩⟩
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -956,11 +747,6 @@ theorem smashRetraction_le_idMap : smashRetraction (D := D) (E := E) ≤ idMap (
   · exact hzZ
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -978,11 +764,6 @@ theorem smashRetraction_of_eq_bot {z : (prod D E).Element} (hz : z.fst = D.bot �
     exact ⟨(prod D E).master_mem, Or.inl rfl⟩
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -1000,11 +781,6 @@ theorem smashRetraction_of_ne_bot {z : (prod D E).Element} (hx : z.fst ≠ D.bot
     exact ⟨z.sub hzZ, Or.inr ⟨hx, hy, hzZ⟩⟩
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -1023,11 +799,6 @@ theorem isRetraction_smashRetraction : Retraction (smashRetraction (D := D) (E :
     · rw [smashRetraction_of_ne_bot hx hy, smashRetraction_of_ne_bot hx hy]
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -1064,11 +835,6 @@ theorem smash_subsystem_prod : Exercise510.smash D E ◁ prod D E where
           Exercise510.inter_ne_master_right hY hYne, rfl⟩
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -1091,11 +857,6 @@ theorem mem_toElementMap_retractionOfSubsystem_smash {z : (prod D E).Element}
       ⟨z.sub hzY, hPZ, Y, hSY, subset_rfl, hYZ⟩⟩
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -1128,11 +889,6 @@ theorem smashRetraction_eq_retractionOfSubsystem :
       · intro hybot; rw [hybot, mem_bot] at hzsYB; exact hYBne hzsYB
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
 
@@ -1148,11 +904,6 @@ theorem example84b_smash :
     ⟨Subsystem.elementIso smash_subsystem_prod⟩⟩
 
 end Smash
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -1174,11 +925,6 @@ theorem strictRetraction_le_idMap : strictRetraction (D := D) (E := E) ≤ idMap
   exact (funSpaceEquiv D E).map_rel_iff.mp hmap
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -1188,11 +934,6 @@ theorem toApproxMap_injective {a b : (funSpace D E).Element} (h : toApproxMap a 
   rw [← toFilter_toApproxMap a, ← toFilter_toApproxMap b, h]
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -1210,11 +951,6 @@ theorem isRetraction_strictRetraction : Retraction (strictRetraction (D := D) (E
   · rw [strictRetraction_apply_of_ne_bot hy, strictRetraction_apply_of_ne_bot hy]
 
 end Strict
-end
-
-section
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
-variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
 
@@ -1229,6 +965,7 @@ theorem example84b_strict :
     ⟨strictRetractionFixIso.trans (Exercise510.strictFunEquiv D E).symm |>.symm⟩⟩
 
 end Strict
+
 end
 
 section
@@ -1238,12 +975,6 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- The fixed-point set of `a`, as a bare type — matching `IsFinitary`'s witness type. -/
 abbrev FixSet (a : ApproximableMap E E) := {y : E.Element // a.toElementMap y = y}
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **The candidate subdomain of Theorem 8.5's proof, `D = {X ∈ E ∣ X a X}`.** Built for *any*
 approximable map `a : E → E` — the neighbourhood-system axioms need only `mono`/`inter_right` of
@@ -1263,21 +994,9 @@ def fixedNbhd (a : ApproximableMap E E) : NeighborhoodSystem α where
       a.mono hYa Set.inter_subset_right subset_rfl hXYE hYE
     exact ⟨hXYE, a.inter_right h1 h2⟩
   sub_master := fun h => E.sub_master h.1
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 @[simp] theorem fixedNbhd_mem {a : ApproximableMap E E} {X : Set α} :
     (fixedNbhd a).mem X ↔ E.mem X ∧ a.rel X X := Iff.rfl
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section Algebraic
 
@@ -1285,18 +1004,6 @@ variable {γ : Type u} {V : NeighborhoodSystem γ}
 
 instance instNonemptyMemSubtype (x : V.Element) : Nonempty {X : Set γ // x.mem X} :=
   ⟨⟨V.master, x.master_mem⟩⟩
-
-end Algebraic
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section Algebraic
-
-variable {γ : Type u} {V : NeighborhoodSystem γ}
 
 /-- **Compactness, as a standalone predicate**: `x` is compact iff every time `x` sits below a
 directed union it already sits below one of the summands. By algebraicity, this is exactly the
@@ -1308,12 +1015,6 @@ def IsCompactElt (x : V.Element) : Prop :=
     x ≤ iSupDirected d hdir → ∃ i, x ≤ d i
 
 end Algebraic
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section HardDirection
 
@@ -1329,12 +1030,6 @@ def sectionMap : ApproximableMap F E :=
     e.symm.monotone ((F.principal_le_iff hX hX').mpr hXX'))
 
 end HardDirection
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section Algebraic
 
@@ -1452,12 +1147,6 @@ theorem toElementMap_sectionMap (w' : F.Element) :
     have := e.symm.monotone key
     rwa [e.symm_apply_apply] at this
 end HardDirection
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section HardDirection
 
@@ -1495,12 +1184,6 @@ theorem e_apply_iSupDirected_fixed {I : Type u} [Nonempty I] (d : I → E.Elemen
     exact e.monotone (le_iSupDirected d hdir i)
 
 end HardDirection
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section Algebraic
 
@@ -1518,12 +1201,6 @@ theorem eq_principal_of_isCompactElt {x : V.Element} (hx : IsCompactElt x) :
   exact ⟨i0.1, x.sub i0.2, le_antisymm hi0 (principal_le_of_mem i0.2)⟩
 
 end Algebraic
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **`fixedNbhd a ◁ E`, unconditionally.** The consistency clause is the same monotonicity +
 intersectivity calculation as `fixedNbhd`'s own `inter_mem`, just without needing the extra
@@ -1536,12 +1213,6 @@ theorem fixedNbhd_subsystem (a : ApproximableMap E E) : fixedNbhd a ◁ E where
     have h1 : a.rel (X ∩ Y) X := a.mono hXa Set.inter_subset_left subset_rfl hEXY hXE
     have h2 : a.rel (X ∩ Y) Y := a.mono hYa Set.inter_subset_right subset_rfl hEXY hYE
     exact ⟨hEXY, a.inter_right h1 h2⟩
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **The "easy" (`⟸`) half of formula (ii), isolated.** Valid for **any** approximable map
 `a : E → E` with **no hypothesis on `a` at all** — not even that `a` satisfies the rest of formula
@@ -1558,12 +1229,6 @@ theorem mem_of_exists_rel_self {a : ApproximableMap E E} (x : E.Element) {Y : Se
   have hle : E.principal hX ≤ x := principal_le_of_mem hXx
   have hXmem : (a.toElementMap x).mem X := (a.toElementMap_mono hle) X hmem
   exact (a.toElementMap x).up_mem hXmem hYE hXY
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **Theorem 8.5, `(ii) ⟹ (i)` (Scott 1981, PRG-19).** If `a` satisfies Scott's step-closure
 formula `a(x) = {Y ∈ E ∣ ∃X∈x, X⊆Y ∧ XaX}` for every `x ∈ |E|`, then `a` is a finitary projection.
@@ -1592,12 +1257,6 @@ theorem isFinitaryProjection_of_formula (a : ApproximableMap E E)
           hYZ hYa)
   rw [heq]
   exact Subsystem.isFinitaryProjection_retractionOfSubsystem (fixedNbhd_subsystem a)
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section Algebraic
 
@@ -1612,29 +1271,10 @@ theorem principal_compact {X : Set γ} (hX : V.mem X) {I : Type*} [Nonempty I]
   obtain ⟨i, hi⟩ := (mem_iSupDirected d hdir).mp (h X ⟨hX, subset_rfl⟩)
   exact ⟨i, fun _ ⟨hW, hXW⟩ => (d i).up_mem hi hW hXW⟩
 
-end Algebraic
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section Algebraic
-
-variable {γ : Type u} {V : NeighborhoodSystem γ}
-
-
 theorem principal_isCompactElt {X : Set γ} (hX : V.mem X) : IsCompactElt (V.principal hX) :=
   fun d hdir h => principal_compact hX d hdir h
 
 end Algebraic
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section HardDirection
 
@@ -1646,12 +1286,6 @@ theorem toElementMap_idem {a : ApproximableMap E E} (ha : Retraction a) (z : E.E
   rw [← toElementMap_comp a a z, ha.out]
 
 end HardDirection
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 section HardDirection
 
@@ -1704,22 +1338,6 @@ theorem exists_principal_eq_of_isRetraction_le_idMap (ha_ret : Retraction a)
     rwa [toElementMap_idMap] at this
   exact ⟨i0, hfinal.trans hd2le⟩
 
-end HardDirection
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-section HardDirection
-
-variable {a : ApproximableMap E E}
-
-
-variable {β : Type u} {F : NeighborhoodSystem β} (e : FixSet a ≃o F.Element)
-
-
 /-- **Theorem 8.5, `(i) ⟹ (ii)` (Scott 1981, PRG-19), assembled.** If `a` is a finitary projection,
 it satisfies Scott's step-closure formula.
 
@@ -1770,12 +1388,6 @@ theorem formula_of_isFinitaryProjection {a : ApproximableMap E E} (h : FinitaryP
     exact mem_of_exists_rel_self x hYE hXx hXY hXaX
 
 end HardDirection
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
 
 end
 end DomainTheory.NeighbourhoodSystems

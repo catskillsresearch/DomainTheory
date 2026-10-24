@@ -69,6 +69,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise422
 open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
 section
 variable {M : Type*} (zero : M) (succ : M → M)
+
 /- concordance: source L2347 EXERCISE 4.22 inductive subset of a model -/
 /-- **Exercise 4.22 (Scott 1981, PRG-19).** The carved-out subset `N ⊆ N*`, with the inherited
 `0` and `⁺`, is a model of **all three** Peano axioms — even though `N*` was only assumed to satisfy
@@ -90,16 +91,13 @@ def peanoSub (hzero : ∀ n, zero ≠ succ n) (hinj : Function.Injective succ) :
         exact ⟨succ_mem_nats zero succ hmnat, hstep ⟨m, hmnat⟩ hms⟩
     obtain ⟨_, hns⟩ := hsub n.2
     exact hns
-end
-
-section
-variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- **Exercise 4.22 (Scott 1981, PRG-19).** *Yes:* whenever `N*` satisfies (i) and (ii), there is a
 subset `N ⊆ N*` (carrying the inherited structure) satisfying (i), (ii), and (iii). -/
 theorem exists_peano_submodel (hzero : ∀ n, zero ≠ succ n) (hinj : Function.Injective succ) :
     Nonempty (PeanoModel (Nat' zero succ)) :=
   ⟨peanoSub zero succ hzero hinj⟩
+
 end
 
 section
@@ -121,13 +119,10 @@ theorem genOp_monotone : Monotone (genOp zero succ) := by
   rcases hz with hz | ⟨a, ha, rfl⟩
   · exact Or.inl hz
   · exact Or.inr ⟨a, hxy ha, rfl⟩
-end
-
-section
-variable {M : Type*} (zero : M) (succ : M → M)
 
 theorem genOp_nats : genOp zero succ (nats zero succ) = nats zero succ :=
   lfpSet_isFixed (genOp zero succ) (genOp_monotone zero succ)
+
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise422

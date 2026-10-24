@@ -1504,8 +1504,6 @@ theorem primrec_lamDef {n : ℕ} {f : List.Vector ℕ n → ℕ} (h : Nat.Primre
       exact ⟨_, lamDef_prec φf φg _ _ hφf hφg⟩
 end
 
-section
-end
 end DomainTheory.NeighbourhoodSystems.Theorem56Full
 
 namespace DomainTheory.NeighbourhoodSystems.Theorem56Full
@@ -1573,5 +1571,3 @@ end
 end DomainTheory.NeighbourhoodSystems.Theorem56Full
 end
 
-section
-end

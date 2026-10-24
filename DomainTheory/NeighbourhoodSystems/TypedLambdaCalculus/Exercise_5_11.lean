@@ -90,6 +90,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise511
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 section
 variable {α : Type*} (V : NeighborhoodSystem α)
+
 /- concordance: source L3031 EXERCISE 5.11 stack combinators -/
 /-- **Exercise 5.11 (Scott 1981, PRG-19).** The recursion `diag(x) = push(x, diag(x))`. -/
 theorem diag_rec (x : V.Element) :
@@ -102,18 +103,10 @@ theorem diag_rec (x : V.Element) :
   rw [← hφ] at hval
   rw [hval] at hfix
   exact hfix.symm
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 theorem fold_unfold (z : (iterSys V).Element) :
     (fold V).toElementMap ((unfold V).toElementMap z) = z := by
   rw [unfold, fold, toElementMap_ofIso, toElementMap_ofIso, OrderIso.symm_apply_apply]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 theorem mapBody_apply (W : (funSpace (Arg V) (iterSys V)).Element)
     (s : (iterSys (funSpace V V)).Element) (x : V.Element) :
@@ -124,10 +117,6 @@ theorem mapBody_apply (W : (funSpace (Arg V) (iterSys V)).Element)
   rw [mapBody, toElementMap_comp]
   simp only [toElementMap_paired, toElementMap_comp, toElementMap_proj₀, toElementMap_proj₁,
     fst_pair, snd_pair, evalMap_apply]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Exercise 5.11 (Scott 1981, PRG-19).** The recursion defining `map`:
 `map(s, x) = push((head s)(x), map(tail s, x))`. -/
@@ -141,46 +130,26 @@ theorem map_rec (s : (iterSys (funSpace V V)).Element) (x : V.Element) :
   have hval := toElementMap_curry_apply (mapBody V) (mapOp V).fixElement (pair s x)
   rw [← mapOp, hfix] at hval
   rw [mapMap, hval, mapBody_apply]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Stack law.** `push(head z, tail z) = z` (a stack is its top pushed onto its tail). -/
 theorem push_head_tail (z : (iterSys V).Element) :
     (push V).toElementMap (pair ((head V).toElementMap z) ((tail V).toElementMap z)) = z := by
   rw [head, tail, toElementMap_comp, toElementMap_comp, toElementMap_proj₀, toElementMap_proj₁,
     pair_fst_snd, push, fold_unfold]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 theorem unfold_fold (p : (prod V (iterSys V)).Element) :
     (unfold V).toElementMap ((fold V).toElementMap p) = p := by
   rw [unfold, fold, toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Stack law.** `head(push(x, s)) = x`. -/
 theorem head_push (x : V.Element) (s : (iterSys V).Element) :
     (head V).toElementMap ((push V).toElementMap (pair x s)) = x := by
   rw [head, toElementMap_comp, push, unfold_fold, toElementMap_proj₀, fst_pair]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Stack law.** `tail(push(x, s)) = s`. -/
 theorem tail_push (x : V.Element) (s : (iterSys V).Element) :
     (tail V).toElementMap ((push V).toElementMap (pair x s)) = s := by
   rw [tail, toElementMap_comp, push, unfold_fold, toElementMap_proj₁, snd_pair]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Exercise 5.11 (Scott 1981, PRG-19).** Scott's emphasised property: *all* components of
 `diag(x)` equal `x`, i.e. `diag(x) = ⟨x⟩ₙ`. -/
@@ -194,10 +163,6 @@ theorem component_diag (x : V.Element) (n : ℕ) :
       conv_lhs => rw [diag_rec]
       rw [tail_push]
     rw [← component_tail, ht, ih]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- **Exercise 5.11 (Scott 1981, PRG-19).** The `n`-th component of `map(s, x)` is `(component s n)(x)`,
 i.e. `map(⟨fₙ⟩, x) = ⟨fₙ(x)⟩ₙ`. -/
@@ -217,6 +182,7 @@ theorem component_map (x : V.Element) :
       conv_lhs => rw [map_rec]
       rw [tail_push]
     rw [← component_tail, ht, ih, component_tail]
+
 end
 
 section
