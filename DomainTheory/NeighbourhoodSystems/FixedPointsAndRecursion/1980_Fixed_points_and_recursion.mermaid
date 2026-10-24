@@ -1,0 +1,84 @@
+%% Each box is one item. The arrowhead is on the item that imports.
+%% An arrow already implied by a longer path is omitted.
+%% The introduction has no Lean file, so it is not shown.
+%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
+flowchart TB
+
+  Theorem_4_1["Theorem 4.1<br>least fixed point"]
+  Theorem_4_2["Theorem 4.2<br>fix combinator"]
+  Example_4_3["Example 4.3<br>partial functions"]
+  Example_4_4["Example 4.4<br>sequence domain"]
+  Definition_4_5["Def 4.5<br>Peano axioms"]
+  Theorem_4_6["Theorem 4.6<br>models isomorphic"]
+  Exercise_4_7["Exercise 4.7<br>fixed point above"]
+  Exercise_4_8["Exercise 4.8<br>fixed-point induction"]
+  Exercise_4_9["Exercise 4.9<br>fix as fixed point"]
+  Exercise_4_10["Exercise 4.10<br>domain above"]
+  Exercise_4_11["Exercise 4.11<br>characterizing fix"]
+  Exercise_4_12["Exercise 4.12<br>no greatest point"]
+  Exercise_4_13["Exercise 4.13<br>avoiding numbers"]
+  Exercise_4_14["Exercise 4.14<br>powerset fixed point"]
+  Exercise_4_15["Exercise 4.15<br>maximal fixed points"]
+  Exercise_4_16["Exercise 4.16<br>optimal fixed point"]
+  Exercise_4_17["Exercise 4.17<br>generated submonoid"]
+  Exercise_4_18["Exercise 4.18<br>checking numbers"]
+  Exercise_4_19["Exercise 4.19<br>Peano for sequences"]
+  Exercise_4_20["Exercise 4.20<br>fix of a composite"]
+  Exercise_4_21["Exercise 4.21<br>order as fixed point"]
+  Exercise_4_22["Exercise 4.22<br>inductive subset"]
+  Exercise_4_23["Exercise 4.23<br>commuting iterates"]
+  Exercise_4_24["Exercise 4.24<br>Schroeder-Bernstein"]
+  Exercise_4_25["Exercise 4.25<br>unary sequences"]
+
+  Definition_4_5 --> Exercise_4_22
+  Definition_4_5 --> Theorem_4_6
+  Example_4_3 --> Exercise_4_18
+  Example_4_3 --> Exercise_4_25
+  Example_4_4 --> Exercise_4_19
+  Example_4_4 --> Exercise_4_7
+  Exercise_4_10 --> Exercise_4_11
+  Exercise_4_13 --> Exercise_4_15
+  Exercise_4_14 --> Exercise_4_17
+  Exercise_4_14 --> Exercise_4_21
+  Exercise_4_14 --> Exercise_4_22
+  Exercise_4_14 --> Exercise_4_24
+  Exercise_4_15 --> Exercise_4_16
+  Exercise_4_19 --> Exercise_4_20
+  Exercise_4_7 --> Exercise_4_8
+  Theorem_4_1 --> Theorem_4_2
+  Theorem_4_2 --> Example_4_4
+  Theorem_4_2 --> Exercise_4_10
+  Theorem_4_2 --> Exercise_4_23
+  Theorem_4_2 --> Exercise_4_25
+  Theorem_4_2 --> Exercise_4_9
+
+  classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef cexs fill:#fef3c7,stroke:#b45309,color:#78350f
+  classDef cex fill:#e0e7ff,stroke:#4338ca,color:#312e81
+  classDef cthm fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
+
+  class Theorem_4_1 cthm
+  class Theorem_4_2 cthm
+  class Example_4_3 cexs
+  class Example_4_4 cexs
+  class Definition_4_5 cdef
+  class Theorem_4_6 cthm
+  class Exercise_4_7 cex
+  class Exercise_4_8 cex
+  class Exercise_4_9 cex
+  class Exercise_4_10 cex
+  class Exercise_4_11 cex
+  class Exercise_4_12 cex
+  class Exercise_4_13 cex
+  class Exercise_4_14 cex
+  class Exercise_4_15 cex
+  class Exercise_4_16 cex
+  class Exercise_4_17 cex
+  class Exercise_4_18 cex
+  class Exercise_4_19 cex
+  class Exercise_4_20 cex
+  class Exercise_4_21 cex
+  class Exercise_4_22 cex
+  class Exercise_4_23 cex
+  class Exercise_4_24 cex
+  class Exercise_4_25 cex

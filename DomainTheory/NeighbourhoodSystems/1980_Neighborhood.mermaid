@@ -1,25 +1,26 @@
 %% Each box is one section. The arrowhead is on the section that imports.
-%% The number is how many direct imports.
 %% An arrow already implied by a longer path is omitted.
+%% The label is the number of direct import lines.
 %% The introduction has no Lean file, so it has no arrow.
+%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
 flowchart TB
 
-  DOM["Domains given by neighbourhoods"]
-  MAP["Mappings between domains"]
-  CON["Domain constructs"]
-  FIX["Fixed points and recursion"]
-  LAM["Typed λ-calculus"]
-  EQ["Domain equations"]
-  COMP["Computability in effectively given domains"]
-  RET["Retracts of the universal domain"]
+  DOM["Domains given<br>by neighbourhoods"]
+  MAP["Mappings<br>between domains"]
+  CON["Domain<br>constructs"]
+  FIX["Fixed points<br>and recursion"]
+  LAM["Typed<br>λ-calculus"]
+  EQ["Domain<br>equations"]
+  COMP["Computability<br>effectively given"]
+  RET["Retracts of<br>universal domain"]
 
-  DOM -->|"1"| MAP
-  MAP -->|"1"| CON
-  CON -->|"1"| FIX
-  FIX -->|"1"| LAM
-  LAM -->|"1"| EQ
-  EQ -->|"1"| COMP
-  COMP -->|"1"| RET
+  COMP -->|"14"| RET
+  CON -->|"30"| FIX
+  DOM -->|"27"| MAP
+  EQ -->|"3"| COMP
+  FIX -->|"153"| LAM
+  LAM -->|"87"| EQ
+  MAP -->|"16"| CON
 
   classDef c0 fill:#f1f5f9,stroke:#64748b,color:#0f172a
   classDef c1 fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a

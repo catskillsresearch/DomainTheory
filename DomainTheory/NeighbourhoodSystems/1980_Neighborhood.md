@@ -1,6 +1,6 @@
 # Neighbourhood systems
 
-**Dependency diagram.** Each box is one section. The arrowhead is on the section that imports. The number is how many direct imports. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it has no arrow.
+**Dependency diagram.** Each box is one section. The arrowhead is on the section that imports, and the number on it is how many import lines run that way. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it has no arrow.
 
 @import "1980_Neighborhood.mermaid"
 

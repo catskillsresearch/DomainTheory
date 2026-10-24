@@ -40,181 +40,181 @@ line,keyword,number,label,file
 536,EXERCISE,1.25,final segments of ordinals,DomainsGivenByNeighbourhoods/Exercise_1_25.lean
 538,EXERCISE,1.26,ideals of a ring,DomainsGivenByNeighbourhoods/Exercise_1_26.lean
 546,EXERCISE,1.27,suprema of bounded sets,DomainsGivenByNeighbourhoods/Exercise_1_27.lean
-568,DEFINITION,2.1,approximable mapping,MappingsBetweenDomains/MappingsBetweenDomains.lean
-586,PROPOSITION,2.2,elementwise action,MappingsBetweenDomains/MappingsBetweenDomains.lean
-620,EXAMPLE,2.3,parity of leading zeros,MappingsBetweenDomains/MappingsBetweenDomains.lean
-663,EXAMPLE,2.4,erase a run of ones,MappingsBetweenDomains/MappingsBetweenDomains.lean
-682,THEOREM,2.5,category of approximable maps,MappingsBetweenDomains/MappingsBetweenDomains.lean
-731,PROPOSITION,2.6,identity and composition,MappingsBetweenDomains/MappingsBetweenDomains.lean
-743,THEOREM,2.7,isomorphisms are approximable,MappingsBetweenDomains/MappingsBetweenDomains.lean
-767,EXERCISES,,Lecture II exercises,MappingsBetweenDomains/MappingsBetweenDomains.lean
-769,EXERCISE,2.8,determined by finite elements,MappingsBetweenDomains/MappingsBetweenDomains.lean
-773,EXERCISE,2.9,directed union formula,MappingsBetweenDomains/MappingsBetweenDomains.lean
-781,EXERCISE,2.10,intersection of two maps,MappingsBetweenDomains/MappingsBetweenDomains.lean
-789,EXERCISE,2.11,directed unions of elements,MappingsBetweenDomains/MappingsBetweenDomains.lean
-811,EXERCISE,2.12,directed unions of maps,MappingsBetweenDomains/MappingsBetweenDomains.lean
-825,EXERCISE,2.13,approximable means continuous,MappingsBetweenDomains/MappingsBetweenDomains.lean
-845,EXERCISE,2.14,isomorphisms of neighbourhoods,MappingsBetweenDomains/MappingsBetweenDomains.lean
-861,EXERCISE,2.15,opens classified by maps,MappingsBetweenDomains/MappingsBetweenDomains.lean
-871,EXERCISE,2.16,prefixing is approximable,MappingsBetweenDomains/MappingsBetweenDomains.lean
-877,EXERCISE,2.17,equations for erase-ones,MappingsBetweenDomains/MappingsBetweenDomains.lean
-888,EXERCISE,2.18,doubling binary digits,MappingsBetweenDomains/MappingsBetweenDomains.lean
-899,EXERCISE,2.19,maps of two arguments,MappingsBetweenDomains/MappingsBetweenDomains.lean
-913,EXERCISE,2.20,powerset of the integers,MappingsBetweenDomains/MappingsBetweenDomains.lean
-920,EXERCISE,2.21,finite and infinite sequences,MappingsBetweenDomains/MappingsBetweenDomains.lean
-922,EXERCISE,2.22,domains from closure properties,MappingsBetweenDomains/MappingsBetweenDomains.lean
-944,DEFINITION,3.1,product of systems,DomainConstructs/DomainConstructs.lean
-958,PROPOSITION,3.2,elements of a product,DomainConstructs/DomainConstructs.lean
-1008,DEFINITION,3.3,projection mappings,DomainConstructs/DomainConstructs.lean
-1036,PROPOSITION,3.4,pairing and projections,DomainConstructs/DomainConstructs.lean
-1086,THEOREM,3.5,separate approximability,DomainConstructs/DomainConstructs.lean
-1094,LEMMA,3.6,constant functions,DomainConstructs/DomainConstructs.lean
-1129,PROPOSITION,3.7,closure under substitution,DomainConstructs/DomainConstructs.lean
-1169,DEFINITION,3.8,function space,DomainConstructs/DomainConstructs.lean
-1181,PROPOSITION,3.9,consistent step neighbourhoods,DomainConstructs/DomainConstructs.lean
-1273,THEOREM,3.10,elements are mappings,DomainConstructs/DomainConstructs.lean
-1291,THEOREM,3.11,evaluation combinator,DomainConstructs/DomainConstructs.lean
-1327,THEOREM,3.12,currying,DomainConstructs/DomainConstructs.lean
-1390,THEOREM,3.13,pointwise order of maps,DomainConstructs/DomainConstructs.lean
-1408,EXERCISES,,Lecture III exercises,DomainConstructs/DomainConstructs.lean
-1410,EXERCISE,3.14,tagged product of tokens,DomainConstructs/DomainConstructs.lean
-1436,EXERCISE,3.15,product isomorphisms,DomainConstructs/DomainConstructs.lean
-1448,EXERCISE,3.16,infinite sequences of elements,DomainConstructs/DomainConstructs.lean
-1473,EXERCISE,3.17,embedding binary sequences,DomainConstructs/DomainConstructs.lean
-1495,EXERCISE,3.18,separated sum,DomainConstructs/DomainConstructs.lean
-1513,EXERCISE,3.19,induced maps on constructs,DomainConstructs/DomainConstructs.lean
-1541,EXERCISE,3.20,sum and product functors,DomainConstructs/DomainConstructs.lean
-1543,EXERCISE,3.21,identity of step neighbourhoods,DomainConstructs/DomainConstructs.lean
-1545,EXERCISE,3.22,composition combinator,DomainConstructs/DomainConstructs.lean
-1569,EXERCISE,3.23,cartesian closed category,DomainConstructs/DomainConstructs.lean
-1571,EXERCISE,3.24,function-space isomorphisms,DomainConstructs/DomainConstructs.lean
-1583,EXERCISE,3.25,opens form a domain,DomainConstructs/DomainConstructs.lean
-1585,EXERCISE,3.26,conditional combinator,DomainConstructs/DomainConstructs.lean
-1627,EXERCISE,3.27,function space via closure,DomainConstructs/DomainConstructs.lean
-1635,EXERCISE,3.28,minimal step function,DomainConstructs/DomainConstructs.lean
-1657,THEOREM,4.1,least fixed point,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-1715,THEOREM,4.2,fix combinator,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-1795,EXAMPLE,4.3,partial functions on integers,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-1989,EXAMPLE,4.4,sequence domain,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2143,DEFINITION,4.5,Peano axioms,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2155,THEOREM,4.6,Peano models isomorphic,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2201,EXERCISES,,Lecture IV exercises,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2203,EXERCISE,4.7,fixed point above a seed,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2209,EXERCISE,4.8,fixed-point induction,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2225,EXERCISE,4.9,fix as a fixed point,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2239,EXERCISE,4.10,domain above an element,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2249,EXERCISE,4.11,characterizing the fix combinator,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2259,EXERCISE,4.12,no greatest fixed point,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2261,EXERCISE,4.13,avoiding the natural numbers,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2283,EXERCISE,4.14,greatest powerset fixed point,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2285,EXERCISE,4.15,maximal fixed points,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2293,EXERCISE,4.16,optimal fixed point,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2305,EXERCISE,4.17,generated submonoid,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2321,EXERCISE,4.18,checking the number domain,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2323,EXERCISE,4.19,Peano axioms for sequences,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2325,EXERCISE,4.20,fix of a composite,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2331,EXERCISE,4.21,order as a fixed point,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2347,EXERCISE,4.22,inductive subset of a model,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2351,EXERCISE,4.23,commuting with the iterates,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2363,EXERCISE,4.24,Schroeder-Bernstein theorem,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2377,EXERCISE,4.25,unary sequence domain,FixedPointsAndRecursion/FixedPointsAndRecursion.lean
-2599,THEOREM,5.1,terms denote approximable maps,TypedLambdaCalculus/TypedLambdaCalculus.lean
-2657,THEOREM,5.2,beta conversion,TypedLambdaCalculus/TypedLambdaCalculus.lean
-2745,PROPOSITION,5.3,simultaneous fixed points,TypedLambdaCalculus/TypedLambdaCalculus.lean
-2799,PROPOSITION,5.4,fixed point under a parameter,TypedLambdaCalculus/TypedLambdaCalculus.lean
-2836,TABLE,5.5,table of combinators,TypedLambdaCalculus/TypedLambdaCalculus.lean
-2877,THEOREM,5.6,partial recursive functions,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3003,EXERCISES,,Lecture V exercises,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3005,EXERCISE,5.7,currying the lambda notation,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3013,EXERCISE,5.8,combinatory completeness,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3015,EXERCISE,5.9,common fixed points,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3017,EXERCISE,5.10,smash product,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3031,EXERCISE,5.11,stack combinators,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3071,EXERCISE,5.12,while combinator,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3097,EXERCISE,5.13,pairing function on numbers,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3119,EXERCISE,5.14,functions as graphs,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3149,EXERCISE,5.15,star of a word,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3184,EXERCISE,5.16,negation of sequences,TypedLambdaCalculus/TypedLambdaCalculus.lean
-3218,EXAMPLE,6.1,indefinite product,DomainEquations/DomainEquations.lean
-3510,EXAMPLE,6.2,sequence domain equations,DomainEquations/DomainEquations.lean
-3625,DEFINITION,6.3,functor,DomainEquations/DomainEquations.lean
-3667,DEFINITION,6.4,algebra for a functor,DomainEquations/DomainEquations.lean
-3705,DEFINITION,6.5,initial algebra,DomainEquations/DomainEquations.lean
-3709,PROPOSITION,6.6,uniqueness of initial algebras,DomainEquations/DomainEquations.lean
-3713,PROPOSITION,6.7,functor preserves initiality,DomainEquations/DomainEquations.lean
-3765,DEFINITION,6.8,continuity on maps,DomainEquations/DomainEquations.lean
-3775,THEOREM,6.9,homomorphism from initial algebra,DomainEquations/DomainEquations.lean
-3799,DEFINITION,6.10,subdomain,DomainEquations/DomainEquations.lean
-3817,PROPOSITION,6.11,lattice of subsystems,DomainEquations/DomainEquations.lean
-3827,PROPOSITION,6.12,projection pair,DomainEquations/DomainEquations.lean
-3849,DEFINITION,6.13,continuity on domains,DomainEquations/DomainEquations.lean
-3861,THEOREM,6.14,existence of initial algebras,DomainEquations/DomainEquations.lean
-3957,LEMMA,6.15,subdomains from projection pairs,DomainEquations/DomainEquations.lean
-4015,THEOREM,6.16,initial algebra is minimal,DomainEquations/DomainEquations.lean
-4075,EXERCISES,,Lecture VI exercises,DomainEquations/DomainEquations.lean
-4077,EXERCISE,6.17,algebras for sequence domains,DomainEquations/DomainEquations.lean
-4079,EXERCISE,6.18,infinite product as initial,DomainEquations/DomainEquations.lean
-4087,EXERCISE,6.19,strict sum and product,DomainEquations/DomainEquations.lean
-4099,EXERCISE,6.20,tokens of a functor,DomainEquations/DomainEquations.lean
-4115,EXERCISE,6.21,coalesced sum and smash,DomainEquations/DomainEquations.lean
-4127,EXERCISE,6.22,equations for the integers,DomainEquations/DomainEquations.lean
-4141,EXERCISE,6.23,syntactic expression domain,DomainEquations/DomainEquations.lean
-4161,EXERCISE,6.24,recursive domain equations,DomainEquations/DomainEquations.lean
-4175,EXERCISE,6.25,projection pair laws,DomainEquations/DomainEquations.lean
-4187,EXERCISE,6.26,lifting a domain,DomainEquations/DomainEquations.lean
-4199,EXERCISE,6.27,which embeddings hold,DomainEquations/DomainEquations.lean
-4207,EXERCISE,6.28,finite embeddings cancel,DomainEquations/DomainEquations.lean
-4215,EXERCISE,6.29,infinitary sum and product,DomainEquations/DomainEquations.lean
-4243,DEFINITION,7.1,computable presentation,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4271,DEFINITION,7.2,computable mapping,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4305,PROPOSITION,7.3,computable maps form a category,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4311,THEOREM,7.4,sum and product effective,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4361,THEOREM,7.5,function space effective,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4411,THEOREM,7.6,fix is computable,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4433,PROPOSITION,7.7,lists effectively given,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4477,EXAMPLE,7.8,powerset effectively given,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4495,DEFINITION,7.9,power domain,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4517,PROPOSITION,7.10,power domain effective,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4557,DEFINITION,7.11,finite sets of elements,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4563,PROPOSITION,7.12,finite sets are approximable,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4607,EXERCISES,,Lecture VII exercises,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4609,EXERCISE,7.13,axiomatic neighbourhood structure,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4631,EXERCISE,7.14,primitive recursive witnesses,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4643,EXERCISE,7.15,further constructs effective,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4645,EXERCISE,7.16,curry as an enumeration,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4647,EXERCISE,7.17,recursion over lists,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4655,EXERCISE,7.18,effective isomorphism,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4663,EXERCISE,7.19,power domain functor,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4675,EXERCISE,7.20,union on power domains,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4689,EXERCISE,7.21,distributing the power domain,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4707,EXERCISE,7.22,domain of formal languages,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4727,EXERCISE,7.23,graph and fun computable,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4739,EXERCISE,7.24,LUCID history domain,ComputabilityInEffectivelyGivenDomains/ComputabilityInEffectivelyGivenDomains.lean
-4769,DEFINITION,8.1,retraction,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-4771,PROPOSITION,8.2,retractions from subdomains,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-4801,DEFINITION,8.3,projections,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-4807,EXAMPLES,8.4,"check, fade, and smash",RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-4854,THEOREM,8.5,finitary projection test,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-4890,THEOREM,8.6,sub combinator,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-4928,DEFINITION,8.7,interval presentation of U,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-4943,THEOREM,8.8,universality of U,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5028,DEFINITION,8.9,constructs on projections,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5040,PROPOSITION,8.10,constructs preserve projections,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5135,EXERCISES,,Lecture VIII exercises,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5137,EXERCISE,8.11,retraction on intervals,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5147,EXERCISE,8.12,integer presentation of U,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5153,EXERCISE,8.13,Boolean-algebra filters,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5159,EXERCISE,8.14,closure operators,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5161,EXERCISE,8.15,domain of subsystems,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5163,EXERCISE,8.16,order of projections,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5173,EXERCISE,8.17,explicit embeddings into U,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5177,EXERCISE,8.18,missing proofs of 8.10,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5179,EXERCISE,8.19,closure under sum and product,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5185,EXERCISE,8.20,self-embeddings of a domain,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5191,EXERCISE,8.21,lists of a projection,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5195,EXERCISE,8.22,comparing B and C,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5207,EXERCISE,8.23,initial algebra inside U,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5219,EXERCISE,8.24,coupled domain equations,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5224,EXERCISE,8.25,reflexive function space,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5246,EXERCISE,8.26,untyped calculus in U,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
-5267,EXERCISE,8.27,infinite cartesian products,RetractsOfTheUniversalDomain/RetractsOfTheUniversalDomain.lean
+568,DEFINITION,2.1,approximable mapping,MappingsBetweenDomains/Definition_2_1.lean
+586,PROPOSITION,2.2,elementwise action,MappingsBetweenDomains/Proposition_2_2.lean
+620,EXAMPLE,2.3,parity of leading zeros,MappingsBetweenDomains/Example_2_3.lean
+663,EXAMPLE,2.4,erase a run of ones,MappingsBetweenDomains/Example_2_4.lean
+682,THEOREM,2.5,category of approximable maps,MappingsBetweenDomains/Theorem_2_5.lean
+731,PROPOSITION,2.6,identity and composition,MappingsBetweenDomains/Proposition_2_6.lean
+743,THEOREM,2.7,isomorphisms are approximable,MappingsBetweenDomains/Theorem_2_7.lean
+767,EXERCISES,,Lecture II exercises,
+769,EXERCISE,2.8,determined by finite elements,MappingsBetweenDomains/Exercise_2_8.lean
+773,EXERCISE,2.9,directed union formula,MappingsBetweenDomains/Exercise_2_9.lean
+781,EXERCISE,2.10,intersection of two maps,MappingsBetweenDomains/Exercise_2_10.lean
+789,EXERCISE,2.11,directed unions of elements,MappingsBetweenDomains/Exercise_2_11.lean
+811,EXERCISE,2.12,directed unions of maps,MappingsBetweenDomains/Exercise_2_12.lean
+825,EXERCISE,2.13,approximable means continuous,MappingsBetweenDomains/Exercise_2_13.lean
+845,EXERCISE,2.14,isomorphisms of neighbourhoods,MappingsBetweenDomains/Exercise_2_14.lean
+861,EXERCISE,2.15,opens classified by maps,MappingsBetweenDomains/Exercise_2_15.lean
+871,EXERCISE,2.16,prefixing is approximable,MappingsBetweenDomains/Exercise_2_16.lean
+877,EXERCISE,2.17,equations for erase-ones,MappingsBetweenDomains/Exercise_2_17.lean
+888,EXERCISE,2.18,doubling binary digits,MappingsBetweenDomains/Exercise_2_18.lean
+899,EXERCISE,2.19,maps of two arguments,MappingsBetweenDomains/Exercise_2_19.lean
+913,EXERCISE,2.20,powerset of the integers,MappingsBetweenDomains/Exercise_2_20.lean
+920,EXERCISE,2.21,finite and infinite sequences,MappingsBetweenDomains/Exercise_2_21.lean
+922,EXERCISE,2.22,domains from closure properties,MappingsBetweenDomains/Exercise_2_22.lean
+944,DEFINITION,3.1,product of systems,DomainConstructs/Definition_3_1.lean
+958,PROPOSITION,3.2,elements of a product,DomainConstructs/Proposition_3_2.lean
+1008,DEFINITION,3.3,projection mappings,DomainConstructs/Definition_3_3.lean
+1036,PROPOSITION,3.4,pairing and projections,DomainConstructs/Proposition_3_4.lean
+1086,THEOREM,3.5,separate approximability,DomainConstructs/Theorem_3_5.lean
+1094,LEMMA,3.6,constant functions,DomainConstructs/Lemma_3_6.lean
+1129,PROPOSITION,3.7,closure under substitution,DomainConstructs/Proposition_3_7.lean
+1169,DEFINITION,3.8,function space,DomainConstructs/Definition_3_8.lean
+1181,PROPOSITION,3.9,consistent step neighbourhoods,DomainConstructs/Proposition_3_9.lean
+1273,THEOREM,3.10,elements are mappings,DomainConstructs/Theorem_3_10.lean
+1291,THEOREM,3.11,evaluation combinator,DomainConstructs/Theorem_3_11.lean
+1327,THEOREM,3.12,currying,DomainConstructs/Theorem_3_12.lean
+1390,THEOREM,3.13,pointwise order of maps,DomainConstructs/Theorem_3_13.lean
+1408,EXERCISES,,Lecture III exercises,
+1410,EXERCISE,3.14,tagged product of tokens,DomainConstructs/Exercise_3_14.lean
+1436,EXERCISE,3.15,product isomorphisms,DomainConstructs/Exercise_3_15.lean
+1448,EXERCISE,3.16,infinite sequences of elements,DomainConstructs/Exercise_3_16.lean
+1473,EXERCISE,3.17,embedding binary sequences,DomainConstructs/Exercise_3_17.lean
+1495,EXERCISE,3.18,separated sum,DomainConstructs/Exercise_3_18.lean
+1513,EXERCISE,3.19,induced maps on constructs,DomainConstructs/Exercise_3_19.lean
+1541,EXERCISE,3.20,sum and product functors,DomainConstructs/Exercise_3_20.lean
+1543,EXERCISE,3.21,identity of step neighbourhoods,DomainConstructs/Exercise_3_21.lean
+1545,EXERCISE,3.22,composition combinator,DomainConstructs/Exercise_3_22.lean
+1569,EXERCISE,3.23,cartesian closed category,DomainConstructs/Exercise_3_23.lean
+1571,EXERCISE,3.24,function-space isomorphisms,DomainConstructs/Exercise_3_24.lean
+1583,EXERCISE,3.25,opens form a domain,DomainConstructs/Exercise_3_25.lean
+1585,EXERCISE,3.26,conditional combinator,DomainConstructs/Exercise_3_26.lean
+1627,EXERCISE,3.27,function space via closure,DomainConstructs/Exercise_3_27.lean
+1635,EXERCISE,3.28,minimal step function,DomainConstructs/Exercise_3_28.lean
+1657,THEOREM,4.1,least fixed point,FixedPointsAndRecursion/Theorem_4_1.lean
+1715,THEOREM,4.2,fix combinator,FixedPointsAndRecursion/Theorem_4_2.lean
+1795,EXAMPLE,4.3,partial functions on integers,FixedPointsAndRecursion/Example_4_3.lean
+1989,EXAMPLE,4.4,sequence domain,FixedPointsAndRecursion/Example_4_4.lean
+2143,DEFINITION,4.5,Peano axioms,FixedPointsAndRecursion/Definition_4_5.lean
+2155,THEOREM,4.6,Peano models isomorphic,FixedPointsAndRecursion/Theorem_4_6.lean
+2201,EXERCISES,,Lecture IV exercises,
+2203,EXERCISE,4.7,fixed point above a seed,FixedPointsAndRecursion/Exercise_4_7.lean
+2209,EXERCISE,4.8,fixed-point induction,FixedPointsAndRecursion/Exercise_4_8.lean
+2225,EXERCISE,4.9,fix as a fixed point,FixedPointsAndRecursion/Exercise_4_9.lean
+2239,EXERCISE,4.10,domain above an element,FixedPointsAndRecursion/Exercise_4_10.lean
+2249,EXERCISE,4.11,characterizing the fix combinator,FixedPointsAndRecursion/Exercise_4_11.lean
+2259,EXERCISE,4.12,no greatest fixed point,FixedPointsAndRecursion/Exercise_4_12.lean
+2261,EXERCISE,4.13,avoiding the natural numbers,FixedPointsAndRecursion/Exercise_4_13.lean
+2283,EXERCISE,4.14,greatest powerset fixed point,FixedPointsAndRecursion/Exercise_4_14.lean
+2285,EXERCISE,4.15,maximal fixed points,FixedPointsAndRecursion/Exercise_4_15.lean
+2293,EXERCISE,4.16,optimal fixed point,FixedPointsAndRecursion/Exercise_4_16.lean
+2305,EXERCISE,4.17,generated submonoid,FixedPointsAndRecursion/Exercise_4_17.lean
+2321,EXERCISE,4.18,checking the number domain,FixedPointsAndRecursion/Exercise_4_18.lean
+2323,EXERCISE,4.19,Peano axioms for sequences,FixedPointsAndRecursion/Exercise_4_19.lean
+2325,EXERCISE,4.20,fix of a composite,FixedPointsAndRecursion/Exercise_4_20.lean
+2331,EXERCISE,4.21,order as a fixed point,FixedPointsAndRecursion/Exercise_4_21.lean
+2347,EXERCISE,4.22,inductive subset of a model,FixedPointsAndRecursion/Exercise_4_22.lean
+2351,EXERCISE,4.23,commuting with the iterates,FixedPointsAndRecursion/Exercise_4_23.lean
+2363,EXERCISE,4.24,Schroeder-Bernstein theorem,FixedPointsAndRecursion/Exercise_4_24.lean
+2377,EXERCISE,4.25,unary sequence domain,FixedPointsAndRecursion/Exercise_4_25.lean
+2599,THEOREM,5.1,terms denote approximable maps,TypedLambdaCalculus/Theorem_5_1.lean
+2657,THEOREM,5.2,beta conversion,TypedLambdaCalculus/Theorem_5_2.lean
+2745,PROPOSITION,5.3,simultaneous fixed points,TypedLambdaCalculus/Proposition_5_3.lean
+2799,PROPOSITION,5.4,fixed point under a parameter,TypedLambdaCalculus/Proposition_5_4.lean
+2836,TABLE,5.5,table of combinators,TypedLambdaCalculus/Table_5_5.lean
+2877,THEOREM,5.6,partial recursive functions,TypedLambdaCalculus/Theorem_5_6.lean
+3003,EXERCISES,,Lecture V exercises,
+3005,EXERCISE,5.7,currying the lambda notation,TypedLambdaCalculus/Exercise_5_7.lean
+3013,EXERCISE,5.8,combinatory completeness,TypedLambdaCalculus/Exercise_5_8.lean
+3015,EXERCISE,5.9,common fixed points,TypedLambdaCalculus/Exercise_5_9.lean
+3017,EXERCISE,5.10,smash product,TypedLambdaCalculus/Exercise_5_10.lean
+3031,EXERCISE,5.11,stack combinators,TypedLambdaCalculus/Exercise_5_11.lean
+3071,EXERCISE,5.12,while combinator,TypedLambdaCalculus/Exercise_5_12.lean
+3097,EXERCISE,5.13,pairing function on numbers,TypedLambdaCalculus/Exercise_5_13.lean
+3119,EXERCISE,5.14,functions as graphs,TypedLambdaCalculus/Exercise_5_14.lean
+3149,EXERCISE,5.15,star of a word,TypedLambdaCalculus/Exercise_5_15.lean
+3184,EXERCISE,5.16,negation of sequences,TypedLambdaCalculus/Exercise_5_16.lean
+3218,EXAMPLE,6.1,indefinite product,DomainEquations/Example_6_1.lean
+3510,EXAMPLE,6.2,sequence domain equations,DomainEquations/Example_6_2.lean
+3625,DEFINITION,6.3,functor,DomainEquations/Definition_6_3.lean
+3667,DEFINITION,6.4,algebra for a functor,DomainEquations/Definition_6_4.lean
+3705,DEFINITION,6.5,initial algebra,DomainEquations/Definition_6_5.lean
+3709,PROPOSITION,6.6,uniqueness of initial algebras,DomainEquations/Proposition_6_6.lean
+3713,PROPOSITION,6.7,functor preserves initiality,DomainEquations/Proposition_6_7.lean
+3765,DEFINITION,6.8,continuity on maps,DomainEquations/Definition_6_8.lean
+3775,THEOREM,6.9,homomorphism from initial algebra,DomainEquations/Theorem_6_9.lean
+3799,DEFINITION,6.10,subdomain,DomainEquations/Definition_6_10.lean
+3817,PROPOSITION,6.11,lattice of subsystems,DomainEquations/Proposition_6_11.lean
+3827,PROPOSITION,6.12,projection pair,DomainEquations/Proposition_6_12.lean
+3849,DEFINITION,6.13,continuity on domains,DomainEquations/Definition_6_13.lean
+3861,THEOREM,6.14,existence of initial algebras,DomainEquations/Theorem_6_14.lean
+3957,LEMMA,6.15,subdomains from projection pairs,DomainEquations/Lemma_6_15.lean
+4015,THEOREM,6.16,initial algebra is minimal,DomainEquations/Theorem_6_16.lean
+4075,EXERCISES,,Lecture VI exercises,
+4077,EXERCISE,6.17,algebras for sequence domains,DomainEquations/Exercise_6_17.lean
+4079,EXERCISE,6.18,infinite product as initial,DomainEquations/Exercise_6_18.lean
+4087,EXERCISE,6.19,strict sum and product,DomainEquations/Exercise_6_19.lean
+4099,EXERCISE,6.20,tokens of a functor,DomainEquations/Exercise_6_20.lean
+4115,EXERCISE,6.21,coalesced sum and smash,DomainEquations/Exercise_6_21.lean
+4127,EXERCISE,6.22,equations for the integers,DomainEquations/Exercise_6_22.lean
+4141,EXERCISE,6.23,syntactic expression domain,DomainEquations/Exercise_6_23.lean
+4161,EXERCISE,6.24,recursive domain equations,DomainEquations/Exercise_6_24.lean
+4175,EXERCISE,6.25,projection pair laws,DomainEquations/Exercise_6_25.lean
+4187,EXERCISE,6.26,lifting a domain,DomainEquations/Exercise_6_26.lean
+4199,EXERCISE,6.27,which embeddings hold,DomainEquations/Exercise_6_27.lean
+4207,EXERCISE,6.28,finite embeddings cancel,DomainEquations/Exercise_6_28.lean
+4215,EXERCISE,6.29,infinitary sum and product,DomainEquations/Exercise_6_29.lean
+4243,DEFINITION,7.1,computable presentation,ComputabilityInEffectivelyGivenDomains/Definition_7_1.lean
+4271,DEFINITION,7.2,computable mapping,ComputabilityInEffectivelyGivenDomains/Definition_7_2.lean
+4305,PROPOSITION,7.3,computable maps form a category,ComputabilityInEffectivelyGivenDomains/Proposition_7_3.lean
+4311,THEOREM,7.4,sum and product effective,ComputabilityInEffectivelyGivenDomains/Theorem_7_4.lean
+4361,THEOREM,7.5,function space effective,ComputabilityInEffectivelyGivenDomains/Theorem_7_5.lean
+4411,THEOREM,7.6,fix is computable,ComputabilityInEffectivelyGivenDomains/Theorem_7_6.lean
+4433,PROPOSITION,7.7,lists effectively given,ComputabilityInEffectivelyGivenDomains/Proposition_7_7.lean
+4477,EXAMPLE,7.8,powerset effectively given,ComputabilityInEffectivelyGivenDomains/Example_7_8.lean
+4495,DEFINITION,7.9,power domain,ComputabilityInEffectivelyGivenDomains/Definition_7_9.lean
+4517,PROPOSITION,7.10,power domain effective,ComputabilityInEffectivelyGivenDomains/Proposition_7_10.lean
+4557,DEFINITION,7.11,finite sets of elements,ComputabilityInEffectivelyGivenDomains/Definition_7_11.lean
+4563,PROPOSITION,7.12,finite sets are approximable,ComputabilityInEffectivelyGivenDomains/Proposition_7_12.lean
+4607,EXERCISES,,Lecture VII exercises,
+4609,EXERCISE,7.13,axiomatic neighbourhood structure,ComputabilityInEffectivelyGivenDomains/Exercise_7_13.lean
+4631,EXERCISE,7.14,primitive recursive witnesses,ComputabilityInEffectivelyGivenDomains/Exercise_7_14.lean
+4643,EXERCISE,7.15,further constructs effective,ComputabilityInEffectivelyGivenDomains/Exercise_7_15.lean
+4645,EXERCISE,7.16,curry as an enumeration,ComputabilityInEffectivelyGivenDomains/Exercise_7_16.lean
+4647,EXERCISE,7.17,recursion over lists,ComputabilityInEffectivelyGivenDomains/Exercise_7_17.lean
+4655,EXERCISE,7.18,effective isomorphism,ComputabilityInEffectivelyGivenDomains/Exercise_7_18.lean
+4663,EXERCISE,7.19,power domain functor,ComputabilityInEffectivelyGivenDomains/Exercise_7_19.lean
+4675,EXERCISE,7.20,union on power domains,ComputabilityInEffectivelyGivenDomains/Exercise_7_20.lean
+4689,EXERCISE,7.21,distributing the power domain,ComputabilityInEffectivelyGivenDomains/Exercise_7_21.lean
+4707,EXERCISE,7.22,domain of formal languages,ComputabilityInEffectivelyGivenDomains/Exercise_7_22.lean
+4727,EXERCISE,7.23,graph and fun computable,ComputabilityInEffectivelyGivenDomains/Exercise_7_23.lean
+4739,EXERCISE,7.24,LUCID history domain,ComputabilityInEffectivelyGivenDomains/Exercise_7_24.lean
+4769,DEFINITION,8.1,retraction,RetractsOfTheUniversalDomain/Definition_8_1.lean
+4771,PROPOSITION,8.2,retractions from subdomains,RetractsOfTheUniversalDomain/Proposition_8_2.lean
+4801,DEFINITION,8.3,projections,RetractsOfTheUniversalDomain/Definition_8_3.lean
+4807,EXAMPLES,8.4,"check, fade, and smash",RetractsOfTheUniversalDomain/Examples_8_4.lean
+4854,THEOREM,8.5,finitary projection test,RetractsOfTheUniversalDomain/Theorem_8_5.lean
+4890,THEOREM,8.6,sub combinator,RetractsOfTheUniversalDomain/Theorem_8_6.lean
+4928,DEFINITION,8.7,interval presentation of U,RetractsOfTheUniversalDomain/Definition_8_7.lean
+4943,THEOREM,8.8,universality of U,RetractsOfTheUniversalDomain/Theorem_8_8.lean
+5028,DEFINITION,8.9,constructs on projections,RetractsOfTheUniversalDomain/Definition_8_9.lean
+5040,PROPOSITION,8.10,constructs preserve projections,RetractsOfTheUniversalDomain/Proposition_8_10.lean
+5135,EXERCISES,,Lecture VIII exercises,
+5137,EXERCISE,8.11,retraction on intervals,RetractsOfTheUniversalDomain/Exercise_8_11.lean
+5147,EXERCISE,8.12,integer presentation of U,RetractsOfTheUniversalDomain/Exercise_8_12.lean
+5153,EXERCISE,8.13,Boolean-algebra filters,RetractsOfTheUniversalDomain/Exercise_8_13.lean
+5159,EXERCISE,8.14,closure operators,RetractsOfTheUniversalDomain/Exercise_8_14.lean
+5161,EXERCISE,8.15,domain of subsystems,RetractsOfTheUniversalDomain/Exercise_8_15.lean
+5163,EXERCISE,8.16,order of projections,RetractsOfTheUniversalDomain/Exercise_8_16.lean
+5173,EXERCISE,8.17,explicit embeddings into U,RetractsOfTheUniversalDomain/Exercise_8_17.lean
+5177,EXERCISE,8.18,missing proofs of 8.10,RetractsOfTheUniversalDomain/Exercise_8_18.lean
+5179,EXERCISE,8.19,closure under sum and product,RetractsOfTheUniversalDomain/Exercise_8_19.lean
+5185,EXERCISE,8.20,self-embeddings of a domain,RetractsOfTheUniversalDomain/Exercise_8_20.lean
+5191,EXERCISE,8.21,lists of a projection,RetractsOfTheUniversalDomain/Exercise_8_21.lean
+5195,EXERCISE,8.22,comparing B and C,RetractsOfTheUniversalDomain/Exercise_8_22.lean
+5207,EXERCISE,8.23,initial algebra inside U,RetractsOfTheUniversalDomain/Exercise_8_23.lean
+5219,EXERCISE,8.24,coupled domain equations,RetractsOfTheUniversalDomain/Exercise_8_24.lean
+5224,EXERCISE,8.25,reflexive function space,RetractsOfTheUniversalDomain/Exercise_8_25.lean
+5246,EXERCISE,8.26,untyped calculus in U,RetractsOfTheUniversalDomain/Exercise_8_26.lean
+5267,EXERCISE,8.27,infinite cartesian products,RetractsOfTheUniversalDomain/Exercise_8_27.lean

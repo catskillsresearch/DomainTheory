@@ -1,0 +1,680 @@
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
+public import Mathlib.Algebra.Group.Nat.Defs
+public import Mathlib.Algebra.Group.Pointwise.Set.Basic
+public import Mathlib.Algebra.Group.Submonoid.Basic
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Order.Monotone.Basic
+public import Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
+
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
+
+@[expose] public section
+
+section
+namespace DomainTheory.NeighbourhoodSystems
+open NeighborhoodSystem ApproximableMap
+section
+variable {α : Type*}
+/- concordance: source L2225 EXERCISE 4.9 fix as a fixed point -/
+/-- **Exercise 4.9 (Scott 1981, PRG-19).** The approximable operator `Ψ = λF λf. f(F(f))` on the
+higher-order domain `E = ((𝒟 → 𝒟) → 𝒟)`, built as `curry (eval ∘ ⟨π_G, eval⟩)`. -/
+def bigPsi (V : NeighborhoodSystem α) :
+    ApproximableMap (funSpace (funSpace V V) V) (funSpace (funSpace V V) V) :=
+  curry ((evalMap V V).comp
+    (paired (proj₁ (funSpace (funSpace V V) V) (funSpace V V)) (evalMap (funSpace V V) V)))
+end
+
+section
+variable {α : Type*}
+
+/-- **Exercise 4.9 (Scott 1981, PRG-19).** The defining equation `Ψ(θ)(f) = f(θ(f))`. -/
+theorem bigPsi_apply (V : NeighborhoodSystem α)
+    (θ : (funSpace (funSpace V V) V).Element) (f : (funSpace V V).Element) :
+    (toApproxMap ((bigPsi V).toElementMap θ)).toElementMap f
+      = (toApproxMap f).toElementMap ((toApproxMap θ).toElementMap f) := by
+  rw [bigPsi, toElementMap_curry_apply, toElementMap_comp, toElementMap_paired,
+    toElementMap_proj₁, snd_pair, evalMap_apply, evalMap_apply]
+end
+
+section
+variable {α : Type*}
+
+/-- `fix`, as the element of `E = ((𝒟 → 𝒟) → 𝒟)` corresponding to the operator `fixMap`, unfolds
+under `toApproxMap` back to `fixMap` (the `funSpace` round-trip). -/
+theorem toApproxMap_toFilter_fixMap (V : NeighborhoodSystem α) :
+    toApproxMap (toFilter (fixMap V)) = fixMap V := by
+  have he := (funSpaceEquiv (funSpace V V) V).apply_symm_apply (fixMap V)
+  rwa [funSpaceEquiv_apply, funSpaceEquiv_symm_apply] at he
+end
+
+section
+variable {α : Type*}
+
+/-- **Exercise 4.9 (Scott 1981, PRG-19).** `fix` is a *fixed point* of `Ψ`: `Ψ(fix) = fix`. -/
+theorem bigPsi_fix (V : NeighborhoodSystem α) :
+    (bigPsi V).toElementMap (toFilter (fixMap V)) = toFilter (fixMap V) := by
+  apply (funSpaceEquiv (funSpace V V) V).injective
+  rw [funSpaceEquiv_apply, funSpaceEquiv_apply]
+  apply ext_of_toElementMap
+  intro f
+  rw [bigPsi_apply, toApproxMap_toFilter_fixMap, fixMap_toElementMap, toElementMap_fixElement]
+end
+
+section
+variable {α : Type*}
+
+/-- **Exercise 4.9 (Scott 1981, PRG-19).** `fix` is the *least* pre-fixed point of `Ψ`: any `θ` with
+`Ψ(θ) ⊑ θ` satisfies `fix ⊑ θ`. -/
+theorem bigPsi_least (V : NeighborhoodSystem α) (θ : (funSpace (funSpace V V) V).Element)
+    (hθ : (bigPsi V).toElementMap θ ≤ θ) : toFilter (fixMap V) ≤ θ := by
+  -- transport `Ψ(θ) ⊑ θ` to the pointwise pre-fixed-point inequality on maps.
+  have hθ' : toApproxMap ((bigPsi V).toElementMap θ) ≤ toApproxMap θ := by
+    rw [← funSpaceEquiv_apply, ← funSpaceEquiv_apply]
+    exact (funSpaceEquiv (funSpace V V) V).monotone hθ
+  have hpre : ∀ f, (toApproxMap f).toElementMap ((toApproxMap θ).toElementMap f)
+      ≤ (toApproxMap θ).toElementMap f := by
+    intro f
+    have h := (le_iff_toElementMap_le.mp hθ') f
+    rwa [bigPsi_apply] at h
+  -- conclude `fix ⊑ θ` pointwise via Theorem 4.1's minimality.
+  apply (funSpaceEquiv (funSpace V V) V).le_iff_le.mp
+  rw [funSpaceEquiv_apply, funSpaceEquiv_apply, toApproxMap_toFilter_fixMap, le_iff_toElementMap_le]
+  intro f
+  rw [fixMap_toElementMap]
+  exact fixElement_le_of_toElementMap_le (toApproxMap f) (hpre f)
+end
+
+section
+variable {α : Type*}
+
+/-- **Exercise 4.9 (Scott 1981, PRG-19).** `fix = fix(Ψ)`: `fix` is the least fixed point of `Ψ`,
+i.e. coincides with Theorem 4.1's canonical least fixed point `fixElement Ψ`. -/
+theorem fix_eq_fixElement_bigPsi (V : NeighborhoodSystem α) :
+    toFilter (fixMap V) = (bigPsi V).fixElement := by
+  apply le_antisymm
+  · exact bigPsi_least V _ (le_of_eq (toElementMap_fixElement (bigPsi V)))
+  · exact fixElement_le_of_toElementMap_le (bigPsi V) (le_of_eq (bigPsi_fix V))
+end
+
+section
+set_option linter.unusedVariables false
+
+theorem example_409.{u_1} : And
+  (And
+    (And
+      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
+        (θ :
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+        (f :
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V)),
+        @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+            (@DomainTheory.NeighbourhoodSystems.toApproxMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+              α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.bigPsi α V) θ))
+            f)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V
+            (@DomainTheory.NeighbourhoodSystems.toApproxMap α α V V f)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+              (@DomainTheory.NeighbourhoodSystems.toApproxMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V θ)
+              f)))
+      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+        @Eq
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.bigPsi α V)
+            (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V)))
+          (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V))))
+    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
+      (θ :
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+          (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)),
+      @LE.le
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+              (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+                α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))))
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.bigPsi α V) θ)
+          θ →
+        @LE.le
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+              (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+                α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))))
+          (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V))
+          θ))
+  (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+    @Eq
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+          α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+        (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+          (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+      (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+        (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V))
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+          α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+        (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+          (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+        (@DomainTheory.NeighbourhoodSystems.bigPsi α V))) :=
+  @And.intro
+  (And
+    (And
+      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
+        (θ :
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+        (f :
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V)),
+        @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+            (@DomainTheory.NeighbourhoodSystems.toApproxMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+              α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.bigPsi α V) θ))
+            f)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V
+            (@DomainTheory.NeighbourhoodSystems.toApproxMap α α V V f)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+              (@DomainTheory.NeighbourhoodSystems.toApproxMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V θ)
+              f)))
+      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+        @Eq
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.bigPsi α V)
+            (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V)))
+          (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V))))
+    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
+      (θ :
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+          (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)),
+      @LE.le
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+              (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+                α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))))
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.bigPsi α V) θ)
+          θ →
+        @LE.le
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+              (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+                α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))))
+          (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V))
+          θ))
+  (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+    @Eq
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+          α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+        (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+          (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+      (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+        (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V))
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+          α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+        (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+          (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+        (@DomainTheory.NeighbourhoodSystems.bigPsi α V)))
+  (@And.intro
+    (And
+      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
+        (θ :
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+        (f :
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V)),
+        @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+            (@DomainTheory.NeighbourhoodSystems.toApproxMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+              α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.bigPsi α V) θ))
+            f)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V
+            (@DomainTheory.NeighbourhoodSystems.toApproxMap α α V V f)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+              (@DomainTheory.NeighbourhoodSystems.toApproxMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V θ)
+              f)))
+      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+        @Eq
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.bigPsi α V)
+            (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V)))
+          (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V))))
+    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
+      (θ :
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+          (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)),
+      @LE.le
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+              (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+                α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))))
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.bigPsi α V) θ)
+          θ →
+        @LE.le
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+              (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+                α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))))
+          (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V))
+          θ)
+    (@And.intro
+      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
+        (θ :
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+        (f :
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V)),
+        @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+            (@DomainTheory.NeighbourhoodSystems.toApproxMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+              α (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.funSpace
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                  (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+                (@DomainTheory.NeighbourhoodSystems.bigPsi α V) θ))
+            f)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V
+            (@DomainTheory.NeighbourhoodSystems.toApproxMap α α V V f)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+              (@DomainTheory.NeighbourhoodSystems.toApproxMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+                (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V θ)
+              f)))
+      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+        @Eq
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V))
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.funSpace (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V)
+            (@DomainTheory.NeighbourhoodSystems.bigPsi α V)
+            (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+              (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V)))
+          (@DomainTheory.NeighbourhoodSystems.toFilter (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+            (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V (@DomainTheory.NeighbourhoodSystems.fixMap α V)))
+      @DomainTheory.NeighbourhoodSystems.bigPsi_apply @DomainTheory.NeighbourhoodSystems.bigPsi_fix)
+    @DomainTheory.NeighbourhoodSystems.bigPsi_least)
+  @DomainTheory.NeighbourhoodSystems.fix_eq_fixElement_bigPsi
+end
+
+section
+variable {α : Type*} {V : NeighborhoodSystem α}
+
+namespace ApproximableMap
+
+end ApproximableMap
+end
+end DomainTheory.NeighbourhoodSystems
+end

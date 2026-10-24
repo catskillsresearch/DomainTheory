@@ -1,0 +1,11 @@
+# LECTURE II
+
+<u>MAPPINGS BETWEEN DOMAINS</u>
+
+The elements of a domain are regarded as being specified by approximations: the neighbourhoods. With the idea of approximation as the dominant notion, therefore, it is natural to look for a concept of mapping (transformation of domains) that in some suitable sense preserves the spirit of the approximations. In a 'theory of computability,' where the (finite) approximations to the elements are all we can ever know at one time, the only mappings that can be computed are those that proceed by approximation, somehow passing from the neighbourhoods of one domain over to the neighbourhoods of the other.
+
+Suppose $X \in \mathcal{D}_0$ is given - it is an approximation to certain elements of $|\mathcal{D}_0|$. (More precisely $\uparrow X$ is the approximation in the domain, but it is easier to speak of the neighbourhood $X$.) What can be said about the approximations of the images of these elements under the mapping we will call $f$? If $X$ is not a very sharp approximation, then not very much can be said about the image in the other domain $|\mathcal{D}_1|$. Trivially, of course, we can say that $\Delta_1$ is an approximation - because it approximates everything in its domain. Suppose, however, that we could say more. Suppose we could say that both $Y$ and $Y'$ approximate the image of $X$. If the mapping $f$ is coherent, then it is reasonable to suppose that such a statement would imply that $Y$ and $Y'$ are *consistent* in $\mathcal{D}_1$. But if this is so, then since the two neighbourhoods are meant to cluster around the same images, we can feel some confidence in saying that $Y \cap Y'$ approximates these images. In other words to specify $f$ we do not supply a unique image of $X$, but we say which of the $Y \in \mathcal{D}_1$ approximate the (ideal) image. To make this idea work a *monotonicity condition* is also needed since we are trying to express the idea that "if we give at least $X$ as an approximate input to $f$, then we can expect at least $Y$ as output." Thus,
+
+<!-- page 25 -->
+
+a mapping is taken as a kind of relation between neighbourhoods.

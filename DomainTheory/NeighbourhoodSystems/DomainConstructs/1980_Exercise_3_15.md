@@ -1,0 +1,21 @@
+# Exercise 3.15
+
+## Human-English
+
+**EXERCISE 3.15.** Establish the usual isomorphisms:
+
+(i) $\mathcal{D}_0 \times \mathcal{D}_1 \cong \mathcal{D}_1 \times \mathcal{D}_0$;
+
+(ii) $\mathcal{D}_0 \times (\mathcal{D}_1 \times \mathcal{D}_2) \cong (\mathcal{D}_0 \times \mathcal{D}_1) \times \mathcal{D}_2 \cong \mathcal{D}_0 \times \mathcal{D}_1 \times \mathcal{D}_2$.
+
+How does the product of no factors fit in? Prove also:
+
+(iii) $\mathcal{D}_0 \cong \mathcal{D}'_0$ and $\mathcal{D}_1 \cong \mathcal{D}'_1$ imply $\mathcal{D}_0 \times \mathcal{D}_1 \cong \mathcal{D}'_0 \times \mathcal{D}'_1$.
+
+<!-- page 50 -->
+
+## AI: Human-English to AI-Lean
+
+**[Exercise_3_15.lean](Exercise_3_15.lean)**
+
+@import "Exercise_3_15.lean"

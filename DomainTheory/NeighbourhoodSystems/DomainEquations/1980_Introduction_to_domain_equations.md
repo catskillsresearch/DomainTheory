@@ -1,11 +1,37 @@
 # Domain equations
 
-## Human-English
+**Dependency diagram.** Each box is one item. The arrowhead is on the item that imports. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it is not shown. Blue is a definition, green a proposition or lemma, amber an example, red a theorem, and indigo an exercise.
 
-@import "1980_Introduction_to_domain_equations.english" {code_block=false}
+@import "1980_Introduction_to_domain_equations.mermaid"
 
-## AI: Human-English to AI-Lean
-
-**[DomainEquations.lean](DomainEquations.lean)**
-
-@import "DomainEquations.lean"
+- [Introduction](1980_Introduction.md)
+- [Example 6.1 — indefinite product](1980_Example_6_1.md)
+- [Example 6.2 — sequence domain equations](1980_Example_6_2.md)
+- [Definition 6.3 — functor](1980_Definition_6_3.md)
+- [Definition 6.4 — algebra for a functor](1980_Definition_6_4.md)
+- [Definition 6.5 — initial algebra](1980_Definition_6_5.md)
+- [Proposition 6.6 — uniqueness of initial algebras](1980_Proposition_6_6.md)
+- [Proposition 6.7 — functor preserves initiality](1980_Proposition_6_7.md)
+- [Definition 6.8 — continuity on maps](1980_Definition_6_8.md)
+- [Theorem 6.9 — homomorphism from initial algebra](1980_Theorem_6_9.md)
+- [Definition 6.10 — subdomain](1980_Definition_6_10.md)
+- [Proposition 6.11 — lattice of subsystems](1980_Proposition_6_11.md)
+- [Proposition 6.12 — projection pair](1980_Proposition_6_12.md)
+- [Definition 6.13 — continuity on domains](1980_Definition_6_13.md)
+- [Theorem 6.14 — existence of initial algebras](1980_Theorem_6_14.md)
+- [Lemma 6.15 — subdomains from projection pairs](1980_Lemma_6_15.md)
+- [Theorem 6.16 — initial algebra is minimal](1980_Theorem_6_16.md)
+- [Lecture VI exercises](1980_Lecture_VI_exercises.md)
+- [Exercise 6.17 — algebras for sequence domains](1980_Exercise_6_17.md)
+- [Exercise 6.18 — infinite product as initial](1980_Exercise_6_18.md)
+- [Exercise 6.19 — strict sum and product](1980_Exercise_6_19.md)
+- [Exercise 6.20 — tokens of a functor](1980_Exercise_6_20.md)
+- [Exercise 6.21 — coalesced sum and smash](1980_Exercise_6_21.md)
+- [Exercise 6.22 — equations for the integers](1980_Exercise_6_22.md)
+- [Exercise 6.23 — syntactic expression domain](1980_Exercise_6_23.md)
+- [Exercise 6.24 — recursive domain equations](1980_Exercise_6_24.md)
+- [Exercise 6.25 — projection pair laws](1980_Exercise_6_25.md)
+- [Exercise 6.26 — lifting a domain](1980_Exercise_6_26.md)
+- [Exercise 6.27 — which embeddings hold](1980_Exercise_6_27.md)
+- [Exercise 6.28 — finite embeddings cancel](1980_Exercise_6_28.md)
+- [Exercise 6.29 — infinitary sum and product](1980_Exercise_6_29.md)

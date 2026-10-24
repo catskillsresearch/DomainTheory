@@ -1,0 +1,5 @@
+# LECTURE VIII
+
+<u>RETRACTS OF THE UNIVERSAL DOMAIN</u>
+
+In order to be able to have a fully flexible method of solving domain equations and to be able to see why the domains obtained are effectively given, we shall embed all the desired domains in one "largest" domain. This universal domain will be easily shown to be effectively given, and the mappings needed to extract the other domains will be found to be computable. In order to be able to carry out this programme, we investigate first how certain subdomains correspond to mappings — the so-called *retracts*. An advantage of this analysis is that all the necessary definitions can be written out in $\lambda$-calculus notation, thus demonstrating the power of our mathematical programming language.

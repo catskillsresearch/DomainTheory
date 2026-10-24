@@ -1,11 +1,35 @@
 # Retracts of the universal domain
 
-## Human-English
+**Dependency diagram.** Each box is one item. The arrowhead is on the item that imports. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it is not shown. Blue is a definition, green a proposition, amber an example, red a theorem, and indigo an exercise.
 
-@import "1980_Retracts_of_the_universal_domain.english" {code_block=false}
+@import "1980_Retracts_of_the_universal_domain.mermaid"
 
-## AI: Human-English to AI-Lean
-
-**[RetractsOfTheUniversalDomain.lean](RetractsOfTheUniversalDomain.lean)**
-
-@import "RetractsOfTheUniversalDomain.lean"
+- [Introduction](1980_Introduction.md)
+- [Definition 8.1 — retraction](1980_Definition_8_1.md)
+- [Proposition 8.2 — retractions from subdomains](1980_Proposition_8_2.md)
+- [Definition 8.3 — projections](1980_Definition_8_3.md)
+- [Examples 8.4 — check, fade, and smash](1980_Examples_8_4.md)
+- [Theorem 8.5 — finitary projection test](1980_Theorem_8_5.md)
+- [Theorem 8.6 — sub combinator](1980_Theorem_8_6.md)
+- [Definition 8.7 — interval presentation of U](1980_Definition_8_7.md)
+- [Theorem 8.8 — universality of U](1980_Theorem_8_8.md)
+- [Definition 8.9 — constructs on projections](1980_Definition_8_9.md)
+- [Proposition 8.10 — constructs preserve projections](1980_Proposition_8_10.md)
+- [Lecture VIII exercises](1980_Lecture_VIII_exercises.md)
+- [Exercise 8.11 — retraction on intervals](1980_Exercise_8_11.md)
+- [Exercise 8.12 — integer presentation of U](1980_Exercise_8_12.md)
+- [Exercise 8.13 — Boolean-algebra filters](1980_Exercise_8_13.md)
+- [Exercise 8.14 — closure operators](1980_Exercise_8_14.md)
+- [Exercise 8.15 — domain of subsystems](1980_Exercise_8_15.md)
+- [Exercise 8.16 — order of projections](1980_Exercise_8_16.md)
+- [Exercise 8.17 — explicit embeddings into U](1980_Exercise_8_17.md)
+- [Exercise 8.18 — missing proofs of 8.10](1980_Exercise_8_18.md)
+- [Exercise 8.19 — closure under sum and product](1980_Exercise_8_19.md)
+- [Exercise 8.20 — self-embeddings of a domain](1980_Exercise_8_20.md)
+- [Exercise 8.21 — lists of a projection](1980_Exercise_8_21.md)
+- [Exercise 8.22 — comparing B and C](1980_Exercise_8_22.md)
+- [Exercise 8.23 — initial algebra inside U](1980_Exercise_8_23.md)
+- [Exercise 8.24 — coupled domain equations](1980_Exercise_8_24.md)
+- [Exercise 8.25 — reflexive function space](1980_Exercise_8_25.md)
+- [Exercise 8.26 — untyped calculus in U](1980_Exercise_8_26.md)
+- [Exercise 8.27 — infinite cartesian products](1980_Exercise_8_27.md)

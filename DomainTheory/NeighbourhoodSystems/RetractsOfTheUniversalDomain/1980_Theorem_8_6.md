@@ -1,0 +1,47 @@
+# Theorem 8.6
+
+## Human-English
+
+**THEOREM 8.6.** For any domain $E$ define
+
+$$\mathrm{sub} : (E \to E) \to (E \to E)$$
+
+by the formula
+
+$$X \ \mathrm{sub} \ (f) \ Z \quad \text{iff} \quad \exists Y \in E.\quad X \subseteq Y \ \ f \ Y \subseteq Z,$$
+
+<!-- page 139 -->
+
+for all $X, Z \in E$ and all $f : E \to E$. Then the range of $\mathrm{sub}$ consists exactly of the finitary projections on $E$, and moreover $\mathrm{sub}$ itself is a finitary projection on $(E \to E)$. If $E$ is effectively given, then $\mathrm{sub}$ is computable.
+
+*Proof:* It is trivial to check that $\mathrm{sub}(f)$ is always approximable. Also, it is obvious from the definition that the correspondence
+
+$$f \mapsto \mathrm{sub}(f)$$
+
+preserves directed unions of $f$'s. Thus, $\mathrm{sub}$ is itself approximable. We note that
+
+$$X \subseteq Y \ \ f \ Y \subseteq Z \text{ always implies } X \ f \ Z;$$
+
+hence, $\mathrm{sub}(f) \subseteq f$ holds. Also
+
+$$Y \ f \ Y \text{ always implies } Y \ \mathrm{sub}(f) \ Y,$$
+
+hence, $\mathrm{sub}(f) \subseteq \mathrm{sub}(\mathrm{sub}(f))$ holds. This shows $\mathrm{sub}$ to be a projection on $(E \to E)$. The effectiveness of the definition makes it also clear that $\mathrm{sub}$ is computable when $E$ has a computable presentation.
+
+Since, $\mathrm{sub}$ is a projection, its range is the same as its fixed-point set. If
+
+$$\mathrm{sub}(a) = a,$$
+
+then there is no problem in checking that $a$ satisfies 8.5(ii) *and conversely*. So the range of $\mathrm{sub}$ picks out exactly the finitary projections in view of 8.5.
+
+Finally, to prove that $\mathrm{sub}$ is a finitary projection of $(E \to E)$, we invoke 6.11 and remark that, in view of 8.2, the fixed point set (range) of $\mathrm{sub}$ is in a one-one inclusion-preserving correspondence with the domain $\{D \mid D \triangleleft E\}$. $\square$
+
+These results have almost completely translated the theory of $\triangleleft$-subdomains into $\lambda$-calculus via the sub-combinator. One last step will complete the passage, and then we shall be able to return to solving domain equations.
+
+<!-- page 140 -->
+
+## AI: Human-English to AI-Lean
+
+**[Theorem_8_6.lean](Theorem_8_6.lean)**
+
+@import "Theorem_8_6.lean"

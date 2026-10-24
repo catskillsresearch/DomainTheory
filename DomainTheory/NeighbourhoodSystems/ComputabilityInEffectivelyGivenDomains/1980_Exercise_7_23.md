@@ -1,0 +1,21 @@
+# Exercise 7.23
+
+## Human-English
+
+**EXERCISE 7.23.** Complete the discussion of $P\mathbf{N}$ of Example 7.8. Show that the combinators $\mathrm{fun}$ and $\mathrm{graph}$ of Exercise 5.14 are computable. Also do the same for
+
+$$\lambda x, y.\, x \cap y, \quad \lambda x, y.\, x \cup y, \quad \text{and } \lambda x, y.\, x + y,$$
+
+where for $x, y \in P\mathbf{N}$ we define
+
+$$x + y = \{n + m \mid n \in x \text{ and } m \in y\}.$$
+
+What are the computable elements of $P\mathbf{N}$ ?
+
+<!-- page 134 -->
+
+## AI: Human-English to AI-Lean
+
+**[Exercise_7_23.lean](Exercise_7_23.lean)**
+
+@import "Exercise_7_23.lean"

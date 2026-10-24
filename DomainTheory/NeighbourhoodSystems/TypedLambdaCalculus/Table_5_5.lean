@@ -1,0 +1,489 @@
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_3
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_11
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_25
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
+public import Mathlib.Algebra.FreeMonoid.Basic
+public import Mathlib.Algebra.Group.Pointwise.Set.Basic
+public import Mathlib.Algebra.Ring.Parity
+public import Mathlib.Computability.PartrecBasis
+public import Mathlib.Data.List.Basic
+public import Mathlib.Data.Nat.Bits
+public import Mathlib.Data.Set.Image
+public import Mathlib.Logic.Equiv.Nat
+public import Mathlib.Order.Hom.Set
+public import Mathlib.Tactic.Ring
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_20
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
+
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
+
+@[expose] public section
+
+section
+namespace DomainTheory.NeighbourhoodSystems
+open NeighborhoodSystem ApproximableMap
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+/- concordance: source L2836 TABLE 5.5 table of combinators -/
+/-- **Table 5.5 (Scott 1981, PRG-19).** `P₀ = λx,y.x`, the first projection `𝒟₀ × 𝒟₁ → 𝒟₀`. -/
+def P₀ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) : ApproximableMap (prod V₀ V₁) V₀ :=
+  proj₀ V₀ V₁
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+@[simp] theorem P₀_apply (x : V₀.Element) (y : V₁.Element) :
+    (P₀ V₀ V₁).toElementMap (pair x y) = x := by
+  rw [P₀, toElementMap_proj₀, fst_pair]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- **Table 5.5 (Scott 1981, PRG-19).** `P₁ = λx,y.y`, the second projection `𝒟₀ × 𝒟₁ → 𝒟₁`. -/
+def P₁ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) : ApproximableMap (prod V₀ V₁) V₁ :=
+  proj₁ V₀ V₁
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+@[simp] theorem P₁_apply (x : V₀.Element) (y : V₁.Element) :
+    (P₁ V₀ V₁).toElementMap (pair x y) = y := by
+  rw [P₁, toElementMap_proj₁, snd_pair]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- **Table 5.5 (Scott 1981, PRG-19).** `diag = λx.⟨x,x⟩`, the diagonal `𝒟 → 𝒟 × 𝒟`. -/
+def diagC (V : NeighborhoodSystem α) : ApproximableMap V (prod V V) := paired (idMap V) (idMap V)
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+@[simp] theorem diagC_apply (x : V.Element) : (diagC V).toElementMap x = pair x x := by
+  rw [diagC, toElementMap_paired, toElementMap_idMap]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- **Table 5.5 (Scott 1981, PRG-19).** `pair = λx λy.⟨x,y⟩`, as the curried map
+`𝒟₀ → (𝒟₁ → 𝒟₀ × 𝒟₁)`. -/
+def pairC (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
+    ApproximableMap V₀ (funSpace V₁ (prod V₀ V₁)) := curry (idMap (prod V₀ V₁))
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- **Table 5.5 (Scott 1981, PRG-19).** The base case `inv_{0,1}^2 = λx,y.⟨y,x⟩` of the
+argument-swap scheme: `𝒟₀ × 𝒟₁ → 𝒟₁ × 𝒟₀`. -/
+def swapC (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
+    ApproximableMap (prod V₀ V₁) (prod V₁ V₀) := paired (proj₁ V₀ V₁) (proj₀ V₀ V₁)
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+@[simp] theorem swapC_apply (x : V₀.Element) (y : V₁.Element) :
+    (swapC V₀ V₁).toElementMap (pair x y) = pair y x := by
+  rw [swapC, toElementMap_paired, toElementMap_proj₁, toElementMap_proj₀, snd_pair, fst_pair]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- The uncurried `(g, f), x ↦ g(f(x))` over `((𝒟₁→𝒟₂) × (𝒟₀→𝒟₁)) × 𝒟₀ → 𝒟₂`, built purely from
+projections, pairing and `eval` (this is the variable-free expression Scott alludes to). -/
+def compMapTbl (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
+    ApproximableMap (prod (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀) V₂ :=
+  (evalMap V₁ V₂).comp
+    (paired
+      ((proj₀ (funSpace V₁ V₂) (funSpace V₀ V₁)).comp
+        (proj₀ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))
+      ((evalMap V₀ V₁).comp
+        (paired
+          ((proj₁ (funSpace V₁ V₂) (funSpace V₀ V₁)).comp
+            (proj₀ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))
+          (proj₁ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))))
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- **Table 5.5 (Scott 1981, PRG-19).** `comp = λg,f λx.g(f(x))` as an approximable map
+`((𝒟₁→𝒟₂) × (𝒟₀→𝒟₁)) → (𝒟₀ → 𝒟₂)`. -/
+def compC (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
+    ApproximableMap (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) (funSpace V₀ V₂) :=
+  curry (compMapTbl V₀ V₁ V₂)
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- **Table 5.5 (Scott 1981, PRG-19).** `const = λk λx.k`, sending `k ∈ |𝒟₁|` to the constant map
+`𝒟₀ → 𝒟₁`. Realized as `curry(p₀)`. -/
+def constC (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
+    ApproximableMap V₁ (funSpace V₀ V₁) := curry (proj₀ V₁ V₀)
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- The order-isomorphism `|𝒟₀ × 𝒟₁ → 𝒟₂| ≃o |𝒟₀ → (𝒟₁ → 𝒟₂)|` between the *function-space
+domains*, obtained from Theorem 3.10 (`funSpaceEquiv`) and Theorem 3.12 (`curryEquiv`). -/
+def curryIso (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
+    (funSpace (prod V₀ V₁) V₂).Element ≃o (funSpace V₀ (funSpace V₁ V₂)).Element :=
+  (funSpaceEquiv (prod V₀ V₁) V₂).trans
+    ((curryEquiv V₀ V₁ V₂).trans (funSpaceEquiv V₀ (funSpace V₁ V₂)).symm)
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- **Table 5.5 (Scott 1981, PRG-19).** `curry = λg λx λy.g(x,y)` as an approximable map
+`(𝒟₀ × 𝒟₁ → 𝒟₂) → (𝒟₀ → (𝒟₁ → 𝒟₂))`. -/
+def curryC (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
+    ApproximableMap (funSpace (prod V₀ V₁) V₂) (funSpace V₀ (funSpace V₁ V₂)) :=
+  ofIso (curryIso V₀ V₁ V₂)
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- **Table 5.5 (Scott 1981, PRG-19).** `eval = λf,x.f(x)`, evaluation `(𝒟₀ → 𝒟₁) × 𝒟₀ → 𝒟₁`
+(this is Theorem 3.11's `evalMap`). -/
+def evalC (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
+    ApproximableMap (prod (funSpace V₀ V₁) V₀) V₁ := evalMap V₀ V₁
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- **Table 5.5 (Scott 1981, PRG-19).** `fix = λf.!x.f(x)`, the least fixed-point operator
+`(𝒟 → 𝒟) → 𝒟` (Theorem 4.2's `fixMap`). -/
+def fixC (V : NeighborhoodSystem α) : ApproximableMap (funSpace V V) V := fixMap V
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- The uncurried `(f, g), x ↦ ⟨f(x), g(x)⟩` over `((𝒟₂→𝒟₀) × (𝒟₂→𝒟₁)) × 𝒟₂ → 𝒟₀ × 𝒟₁`. -/
+def funpairMapTbl (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
+    (V₂ : NeighborhoodSystem γ) :
+    ApproximableMap (prod (prod (funSpace V₂ V₀) (funSpace V₂ V₁)) V₂) (prod V₀ V₁) :=
+  paired
+    ((evalMap V₂ V₀).comp
+      (paired
+        ((proj₀ (funSpace V₂ V₀) (funSpace V₂ V₁)).comp
+          (proj₀ (prod (funSpace V₂ V₀) (funSpace V₂ V₁)) V₂))
+        (proj₁ (prod (funSpace V₂ V₀) (funSpace V₂ V₁)) V₂)))
+    ((evalMap V₂ V₁).comp
+      (paired
+        ((proj₁ (funSpace V₂ V₀) (funSpace V₂ V₁)).comp
+          (proj₀ (prod (funSpace V₂ V₀) (funSpace V₂ V₁)) V₂))
+        (proj₁ (prod (funSpace V₂ V₀) (funSpace V₂ V₁)) V₂)))
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+  {V₂ : NeighborhoodSystem γ}
+
+/-- **Table 5.5 (Scott 1981, PRG-19).** `funpair = λf λg λx.⟨f(x), g(x)⟩`, the curried operation
+`(𝒟₂→𝒟₀) → ((𝒟₂→𝒟₁) → (𝒟₂ → 𝒟₀ × 𝒟₁))`. -/
+def funpairC (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
+    ApproximableMap (funSpace V₂ V₀)
+      (funSpace (funSpace V₂ V₁) (funSpace V₂ (prod V₀ V₁))) :=
+  curry (curry (funpairMapTbl V₀ V₁ V₂))
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+theorem compC_apply (φ : (funSpace V₁ V₂).Element) (ψ : (funSpace V₀ V₁).Element) (x : V₀.Element) :
+    (toApproxMap ((compC V₀ V₁ V₂).toElementMap (pair φ ψ))).toElementMap x
+      = (toApproxMap φ).toElementMap ((toApproxMap ψ).toElementMap x) := by
+  rw [compC, toElementMap_curry_apply, compMapTbl]
+  simp only [toElementMap_comp, toElementMap_paired, toElementMap_proj₀, toElementMap_proj₁,
+    fst_pair, snd_pair, evalMap_apply]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+/-- `comp(g, f) = g ∘ f` (Scott's infix `g ∘ f`). -/
+theorem compC_eq_comp (φ : (funSpace V₁ V₂).Element) (ψ : (funSpace V₀ V₁).Element) :
+    toApproxMap ((compC V₀ V₁ V₂).toElementMap (pair φ ψ)) = (toApproxMap φ).comp (toApproxMap ψ) := by
+  apply ext_of_toElementMap
+  intro x
+  rw [toElementMap_comp, compC_apply]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+theorem constC_apply (k : V₁.Element) (x : V₀.Element) :
+    (toApproxMap ((constC V₀ V₁).toElementMap k)).toElementMap x = k := by
+  rw [constC, toElementMap_curry_apply, toElementMap_proj₀, fst_pair]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+/-- `const(k)` is the constant map `constMap` of Lemma 3.6. -/
+theorem constC_eq_constMap (k : V₁.Element) :
+    toApproxMap ((constC V₀ V₁).toElementMap k) = constMap V₀ k := by
+  apply ext_of_toElementMap
+  intro x
+  rw [constC_apply, toElementMap_constMap]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+/-- `curry(g)` is the curried map of Theorem 3.12. -/
+theorem curryC_toApproxMap (φ : (funSpace (prod V₀ V₁) V₂).Element) :
+    toApproxMap ((curryC V₀ V₁ V₂).toElementMap φ) = curry (toApproxMap φ) := by
+  rw [curryC, toElementMap_ofIso]
+  show toApproxMap (toFilter (curry (toApproxMap φ))) = curry (toApproxMap φ)
+  have he := (funSpaceEquiv V₀ (funSpace V₁ V₂)).apply_symm_apply (curry (toApproxMap φ))
+  rwa [funSpaceEquiv_apply, funSpaceEquiv_symm_apply] at he
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+theorem curryC_apply (φ : (funSpace (prod V₀ V₁) V₂).Element) (x : V₀.Element) (y : V₁.Element) :
+    (toApproxMap ((toApproxMap ((curryC V₀ V₁ V₂).toElementMap φ)).toElementMap x)).toElementMap y
+      = (toApproxMap φ).toElementMap (pair x y) := by
+  rw [curryC_toApproxMap, toElementMap_curry_apply]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+theorem evalC_apply (φ : (funSpace V₀ V₁).Element) (x : V₀.Element) :
+    (evalC V₀ V₁).toElementMap (pair φ x) = (toApproxMap φ).toElementMap x := by
+  rw [evalC, evalMap_apply]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+theorem fixC_apply (φ : (funSpace V V).Element) :
+    (fixC V).toElementMap φ = (toApproxMap φ).fixElement := by
+  rw [fixC, fixMap_toElementMap]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+/-- `fix(f) = f(fix(f))`. -/
+theorem fixC_fixed (φ : (funSpace V V).Element) :
+    (toApproxMap φ).toElementMap ((fixC V).toElementMap φ) = (fixC V).toElementMap φ := by
+  rw [fixC]; exact fixMap_fixed V φ
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+theorem funpairC_apply (φ : (funSpace V₂ V₀).Element) (ψ : (funSpace V₂ V₁).Element)
+    (x : V₂.Element) :
+    (toApproxMap ((toApproxMap ((funpairC V₀ V₁ V₂).toElementMap φ)).toElementMap ψ)).toElementMap x
+      = pair ((toApproxMap φ).toElementMap x) ((toApproxMap ψ).toElementMap x) := by
+  rw [funpairC, toElementMap_curry_apply, toElementMap_curry_apply, funpairMapTbl]
+  simp only [toElementMap_paired, toElementMap_comp, toElementMap_proj₀, toElementMap_proj₁,
+    fst_pair, snd_pair, evalMap_apply]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+/-- `funpair(f)(g)` is the paired map `⟨f, g⟩` of Definition 3.3. -/
+theorem funpairC_eq_paired (φ : (funSpace V₂ V₀).Element) (ψ : (funSpace V₂ V₁).Element) :
+    toApproxMap ((toApproxMap ((funpairC V₀ V₁ V₂).toElementMap φ)).toElementMap ψ)
+      = paired (toApproxMap φ) (toApproxMap ψ) := by
+  apply ext_of_toElementMap
+  intro x
+  rw [funpairC_apply, toElementMap_paired]
+end
+
+section
+variable {α β γ : Type*}
+  {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+theorem pairC_apply (x : V₀.Element) (y : V₁.Element) :
+    (toApproxMap ((pairC V₀ V₁).toElementMap x)).toElementMap y = pair x y := by
+  rw [pairC, toElementMap_curry_apply, toElementMap_idMap]
+end
+
+section
+variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+namespace ApproximableMap
+
+/-- The approximable map `y ↦ !x. τ(x, y)`: `fix ∘ curry(τ ∘ swap)`. -/
+def secFixX (τ : ApproximableMap (prod V₀ V₁) V₀) : ApproximableMap V₁ V₀ :=
+  (fixMap V₀).comp (curry (τ.comp (swapC V₁ V₀)))
+
+end ApproximableMap
+end
+
+section
+variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+namespace ApproximableMap
+
+/-- The outer operator `y ↦ σ(!x. τ(x, y), y)`. -/
+def outerOp (τ : ApproximableMap (prod V₀ V₁) V₀) (σ : ApproximableMap (prod V₀ V₁) V₁) :
+    ApproximableMap V₁ V₁ :=
+  σ.comp (paired (secFixX τ) (idMap V₁))
+
+end ApproximableMap
+end
+
+section
+variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+namespace ApproximableMap
+
+/-- The section `x ↦ τ(x, y)` of `τ : 𝒟₀ × 𝒟₁ → 𝒟₀` at a fixed `y`, as an approximable endomap of
+`𝒟₀` (the curried `τ ∘ swap` applied to `y`). -/
+def sectionX (τ : ApproximableMap (prod V₀ V₁) V₀) (y : V₁.Element) : ApproximableMap V₀ V₀ :=
+  toApproxMap ((curry (τ.comp (swapC V₁ V₀))).toElementMap y)
+
+end ApproximableMap
+end
+
+section
+variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+namespace ApproximableMap
+
+
+theorem outerOp_apply (τ : ApproximableMap (prod V₀ V₁) V₀) (σ : ApproximableMap (prod V₀ V₁) V₁)
+    (y : V₁.Element) :
+    (outerOp τ σ).toElementMap y = σ.toElementMap (pair ((secFixX τ).toElementMap y) y) := by
+  rw [outerOp, toElementMap_comp, toElementMap_paired, toElementMap_idMap]
+
+end ApproximableMap
+end
+
+section
+variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+namespace ApproximableMap
+
+
+theorem secFixX_apply (τ : ApproximableMap (prod V₀ V₁) V₀) (y : V₁.Element) :
+    (secFixX τ).toElementMap y = (sectionX τ y).fixElement := by
+  rw [secFixX, toElementMap_comp, fixMap_toElementMap, sectionX]
+
+end ApproximableMap
+end
+
+section
+variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+namespace ApproximableMap
+
+
+theorem sectionX_apply (τ : ApproximableMap (prod V₀ V₁) V₀) (y : V₁.Element) (x : V₀.Element) :
+    (sectionX τ y).toElementMap x = τ.toElementMap (pair x y) := by
+  rw [sectionX, toElementMap_curry_apply, toElementMap_comp, swapC_apply]
+
+end ApproximableMap
+end
+
+section
+variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+namespace ApproximableMap
+
+
+/-- `!x. τ(x, y)` is a fixed point of the section: `τ(!x.τ(x,y), y) = !x.τ(x,y)`. -/
+theorem secFixX_isFixed (τ : ApproximableMap (prod V₀ V₁) V₀) (y : V₁.Element) :
+    τ.toElementMap (pair ((secFixX τ).toElementMap y) y) = (secFixX τ).toElementMap y := by
+  rw [secFixX_apply, ← sectionX_apply, toElementMap_fixElement]
+
+end ApproximableMap
+end
+
+section
+variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+namespace ApproximableMap
+
+
+end ApproximableMap
+end
+end DomainTheory.NeighbourhoodSystems
+end

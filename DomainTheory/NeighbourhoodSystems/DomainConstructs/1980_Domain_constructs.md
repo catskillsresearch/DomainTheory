@@ -1,11 +1,36 @@
 # Domain constructs
 
-## Human-English
+**Dependency diagram.** Each box is one item. The arrowhead is on the item that imports. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it is not shown. Blue is a definition, green a proposition or lemma, amber an example, red a theorem, and indigo an exercise.
 
-@import "1980_Domain_constructs.english" {code_block=false}
+@import "1980_Domain_constructs.mermaid"
 
-## AI: Human-English to AI-Lean
-
-**[DomainConstructs.lean](DomainConstructs.lean)**
-
-@import "DomainConstructs.lean"
+- [Introduction](1980_Introduction.md)
+- [Definition 3.1 — product of systems](1980_Definition_3_1.md)
+- [Proposition 3.2 — elements of a product](1980_Proposition_3_2.md)
+- [Definition 3.3 — projection mappings](1980_Definition_3_3.md)
+- [Proposition 3.4 — pairing and projections](1980_Proposition_3_4.md)
+- [Theorem 3.5 — separate approximability](1980_Theorem_3_5.md)
+- [Lemma 3.6 — constant functions](1980_Lemma_3_6.md)
+- [Proposition 3.7 — closure under substitution](1980_Proposition_3_7.md)
+- [Definition 3.8 — function space](1980_Definition_3_8.md)
+- [Proposition 3.9 — consistent step neighbourhoods](1980_Proposition_3_9.md)
+- [Theorem 3.10 — elements are mappings](1980_Theorem_3_10.md)
+- [Theorem 3.11 — evaluation combinator](1980_Theorem_3_11.md)
+- [Theorem 3.12 — currying](1980_Theorem_3_12.md)
+- [Theorem 3.13 — pointwise order of maps](1980_Theorem_3_13.md)
+- [Lecture III exercises](1980_Lecture_III_exercises.md)
+- [Exercise 3.14 — tagged product of tokens](1980_Exercise_3_14.md)
+- [Exercise 3.15 — product isomorphisms](1980_Exercise_3_15.md)
+- [Exercise 3.16 — infinite sequences of elements](1980_Exercise_3_16.md)
+- [Exercise 3.17 — embedding binary sequences](1980_Exercise_3_17.md)
+- [Exercise 3.18 — separated sum](1980_Exercise_3_18.md)
+- [Exercise 3.19 — induced maps on constructs](1980_Exercise_3_19.md)
+- [Exercise 3.20 — sum and product functors](1980_Exercise_3_20.md)
+- [Exercise 3.21 — identity of step neighbourhoods](1980_Exercise_3_21.md)
+- [Exercise 3.22 — composition combinator](1980_Exercise_3_22.md)
+- [Exercise 3.23 — cartesian closed category](1980_Exercise_3_23.md)
+- [Exercise 3.24 — function-space isomorphisms](1980_Exercise_3_24.md)
+- [Exercise 3.25 — opens form a domain](1980_Exercise_3_25.md)
+- [Exercise 3.26 — conditional combinator](1980_Exercise_3_26.md)
+- [Exercise 3.27 — function space via closure](1980_Exercise_3_27.md)
+- [Exercise 3.28 — minimal step function](1980_Exercise_3_28.md)
