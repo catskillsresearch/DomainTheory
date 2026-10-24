@@ -34,7 +34,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.rawD
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepthInst31
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.foldr_max_le_of_forall
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.foldr_max_lt_of_forall
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_of_mem_funTok
 
 @[expose] public section
 

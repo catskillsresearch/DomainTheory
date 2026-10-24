@@ -16,7 +16,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamI
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamOutputUnion
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntDepthInst31
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.finsetMaxDepth_of_mem_funTok
 
 @[expose] public section
 
@@ -45,8 +44,8 @@ def LamConDepth (u : Finset (RawLamToken α)) : Prop :=
         LamConDepth (lamInputUnion s) → LamConDepth (lamOutputUnion s))
 termination_by finsetMaxDepth u
 decreasing_by
-  · exact (finsetMaxDepth_of_mem_funTok (mem_lamFunFinset.1 ‹_›)).1
-  · exact (finsetMaxDepth_of_mem_funTok (mem_lamFunFinset.1 ‹_›)).2
+  · exact (finsetMaxDepth.of_mem_funTok (mem_lamFunFinset.1 ‹_›)).1
+  · exact (finsetMaxDepth.of_mem_funTok (mem_lamFunFinset.1 ‹_›)).2
   · exact finsetMaxDepth.inputUnion_lt ‹_› ‹_›
   · exact finsetMaxDepth.outputUnion_lt ‹_› ‹_›
 

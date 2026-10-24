@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.compOp_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.compOp
 
 @[expose] public section
 
@@ -55,6 +55,6 @@ theorem theorem_76.{u_1, u_2, u_3} : ∀ {α : Type u_1} {β : Type u_2} {γ : T
         (@DomainTheory.InformationSystems.InfoSys.approxMap_toElement α β inst inst_1 A B f)))
     (@DomainTheory.InformationSystems.InfoSys.approxMap_toElement α γ inst inst_2 A C
       (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.comp α β γ inst inst_1 inst_2 A B C g f)) :=
-  @DomainTheory.InformationSystems.InfoSys.compOp_toElement
+  @DomainTheory.InformationSystems.InfoSys.compOp.toElement
 
 end DomainTheory.InformationSystems.InfoSys

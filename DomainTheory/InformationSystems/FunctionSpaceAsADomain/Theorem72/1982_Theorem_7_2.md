@@ -334,9 +334,7 @@
 
 
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/compOp_toElement.lean](../Factoid76/compOp_toElement.lean)**
 
-@import "../Factoid76/compOp_toElement.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid76.lean](../Factoid76.lean)**
 
@@ -361,9 +359,7 @@
 
 
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/pairOp_toElement.lean](../Factoid76/pairOp_toElement.lean)**
 
-@import "../Factoid76/pairOp_toElement.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/InfoSysObj.lean](../Factoid77/InfoSysObj.lean)**
 
@@ -501,21 +497,15 @@
 
 @import "../Factoid77/curryRight_uncurryRight.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/uncurryRight_curryRight.lean](../Factoid77/uncurryRight_curryRight.lean)**
 
-@import "../Factoid77/uncurryRight_curryRight.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorExpEquiv.lean](../Factoid77/tensorExpEquiv.lean)**
 
 @import "../Factoid77/tensorExpEquiv.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/uncurryRight_toElement.lean](../Factoid77/uncurryRight_toElement.lean)**
 
-@import "../Factoid77/uncurryRight_toElement.lean"
 
-**[InformationSystems/FunctionSpaceAsADomain/Factoid77/uncurryRight_comp_left.lean](../Factoid77/uncurryRight_comp_left.lean)**
 
-@import "../Factoid77/uncurryRight_comp_left.lean"
 
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/expFunctor.lean](../Factoid77/expFunctor.lean)**
@@ -821,7 +811,6 @@
 
 @import "../Factoid76/pairMap_comp_fst_snd_toElement.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid76/compOp_toElement.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid76.ai_lean_to_english" {code_block=false}
 
@@ -836,7 +825,6 @@
 
 
 
-@import "../Factoid76/pairOp_toElement.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/InfoSysObj.ai_lean_to_english" {code_block=false}
 
@@ -910,13 +898,10 @@
 
 @import "../Factoid77/curryRight_uncurryRight.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/uncurryRight_curryRight.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/tensorExpEquiv.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/uncurryRight_toElement.ai_lean_to_english" {code_block=false}
 
-@import "../Factoid77/uncurryRight_comp_left.ai_lean_to_english" {code_block=false}
 
 
 @import "../Factoid77/expFunctor.ai_lean_to_english" {code_block=false}

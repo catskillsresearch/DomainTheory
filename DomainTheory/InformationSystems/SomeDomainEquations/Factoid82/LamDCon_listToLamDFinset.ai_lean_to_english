@@ -1,3 +1,0 @@
-A list of raw tokens whose finset is depth-consistent determines a bundled-consistent finset of depth-well-formed tokens, with well-formedness of each entry taken from membership in that finset.
-
-Rewriting bundled consistency along the forgetful image of the packaged list returns the original finset, which is depth-consistent by hypothesis.

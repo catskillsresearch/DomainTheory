@@ -1,3 +1,0 @@
-If u and v are bundled-consistent, every token of u is bundled-entailed by v, and c is bundled-entailed by u, then c is bundled-entailed by v.
-
-Depth-entailment transitivity applies. Each forgotten member of u is the underlying token of some member of u, and that member is entailed by v.

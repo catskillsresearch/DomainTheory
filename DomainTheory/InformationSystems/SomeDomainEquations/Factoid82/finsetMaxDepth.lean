@@ -208,6 +208,14 @@ theorem finsetMaxDepth.list_lt_funTok_out (u v : List (RawLamToken α)) :
   simp only [rawDepth]
   exact Nat.lt_of_le_of_lt (Nat.le_trans h1 h2) (Nat.lt_add_of_pos_left (Nat.succ_pos 0))
 
+
+theorem finsetMaxDepth.of_mem_funTok {u : Finset (RawLamToken α)}
+    {xs ys : List (RawLamToken α)} (h : .funTok xs ys ∈ u) :
+    finsetMaxDepth (listToFinset xs) < finsetMaxDepth u ∧
+      finsetMaxDepth (listToFinset ys) < finsetMaxDepth u :=
+  ⟨Nat.lt_of_lt_of_le (finsetMaxDepth.list_lt_funTok xs ys) (le_finsetMaxDepth_of_mem h),
+    Nat.lt_of_lt_of_le (finsetMaxDepth.list_lt_funTok_out xs ys) (le_finsetMaxDepth_of_mem h)⟩
+
 end InfoSys
 
 end DomainTheory.InformationSystems

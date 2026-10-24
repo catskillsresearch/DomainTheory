@@ -13,7 +13,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.Basi
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.IsLamWF_of_mem
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lambdaSystem
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.listToLamDFinset
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon_listToLamDFinset
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon
 
 @[expose] public section
 
@@ -38,8 +38,8 @@ def lamUnfold (t : LamDToken A) :
         IsLamWF_of_mem A hxs ((mem_listToFinset).2 hw)
       let v := listToLamDFinset A ys fun _w hw =>
         IsLamWF_of_mem A hys ((mem_listToFinset).2 hw)
-      .right ⟨(u, v), ⟨LamDCon_listToLamDFinset A xs hxs,
-        LamDCon_listToLamDFinset A ys hys⟩⟩
+      .right ⟨(u, v), ⟨LamDCon.listToLamDFinset A xs hxs,
+        LamDCon.listToLamDFinset A ys hys⟩⟩
 
 end InfoSys
 

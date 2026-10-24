@@ -9,11 +9,9 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.I
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.exp
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.curryRight
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.uncurryRight
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.uncurryRight_curryRight
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.curryRight_uncurryRight
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCategoryInfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCartesianMonoidalCategoryInfoSysObj
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.uncurryRight_comp_left
 
 @[expose] public section
 
@@ -43,7 +41,7 @@ noncomputable def tensorExpEquiv (A : InfoSysObj.{u}) (Y Z : InfoSysObj.{u}) :
     (A ⊗ Y ⟶ Z) ≃ (Y ⟶ InfoSysObj.exp A Z) where
   toFun := curryRight A Y Z
   invFun := uncurryRight A Y Z
-  left_inv := uncurryRight_curryRight A Y Z
+  left_inv := uncurryRight.curryRight A Y Z
   right_inv := curryRight_uncurryRight A Y Z
 
 end InfoSys
@@ -79,9 +77,9 @@ theorem tensorExpEquiv.natural (A : InfoSysObj.{u}) {Y' Y Z : InfoSysObj.{u}}
       (tensorExpEquiv A Y' Z ((tensorLeft A).map f ≫ g)) =
     uncurryRight A Y' Z (f ≫ tensorExpEquiv A Y Z g)
   simp only [tensorExpEquiv, Equiv.coe_fn_mk]
-  have h := uncurryRight_comp_left A f (curryRight A Y Z g)
-  rw [uncurryRight_curryRight] at h
-  rw [uncurryRight_curryRight, h]
+  have h := uncurryRight.comp_left A f (curryRight A Y Z g)
+  rw [uncurryRight.curryRight] at h
+  rw [uncurryRight.curryRight, h]
 
 end InfoSys
 

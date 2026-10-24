@@ -118,9 +118,7 @@
 
 @import "foldr_max_lt_of_forall.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/finsetMaxDepth_of_mem_funTok.lean](finsetMaxDepth_of_mem_funTok.lean)**
 
-@import "finsetMaxDepth_of_mem_funTok.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid82/rawDepth_funTok_gt_left.lean](rawDepth_funTok_gt_left.lean)**
 
@@ -266,9 +264,7 @@
 
 @import "LamDEnt.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/LamDEnt_bot.lean](LamDEnt_bot.lean)**
 
-@import "LamDEnt_bot.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid82/lamForgetFinset.lean](lamForgetFinset.lean)**
 
@@ -430,25 +426,17 @@
 
 @import "LamConDepth_singleton_funTok.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/LamDEnt_of_mem.lean](LamDEnt_of_mem.lean)**
 
-@import "LamDEnt_of_mem.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/LamDEnt_trans.lean](LamDEnt_trans.lean)**
 
-@import "LamDEnt_trans.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid82/LamDCon_insert_of_ent.lean](LamDCon_insert_of_ent.lean)**
 
 @import "LamDCon_insert_of_ent.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/LamDCon_subset.lean](LamDCon_subset.lean)**
 
-@import "LamDCon_subset.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/LamDCon_singleton.lean](LamDCon_singleton.lean)**
 
-@import "LamDCon_singleton.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid82/lambdaSystem.lean](lambdaSystem.lean)**
 
@@ -466,9 +454,7 @@
 
 @import "lamDForget_listToLamDFinset.lean"
 
-**[InformationSystems/SomeDomainEquations/Factoid82/LamDCon_listToLamDFinset.lean](LamDCon_listToLamDFinset.lean)**
 
-@import "LamDCon_listToLamDFinset.lean"
 
 **[InformationSystems/SomeDomainEquations/Factoid82/lamUnfold.lean](lamUnfold.lean)**
 
@@ -714,7 +700,6 @@
 
 @import "le_finsetMaxDepth_of_mem.ai_lean_to_english" {code_block=false}
 
-@import "finsetMaxDepth_of_mem_funTok.ai_lean_to_english" {code_block=false}
 
 @import "rawDepth_funTok_gt_left.ai_lean_to_english" {code_block=false}
 
@@ -788,7 +773,6 @@
 
 @import "LamDEnt.ai_lean_to_english" {code_block=false}
 
-@import "LamDEnt_bot.ai_lean_to_english" {code_block=false}
 
 @import "lamForgetFinset.ai_lean_to_english" {code_block=false}
 
@@ -872,15 +856,11 @@
 
 @import "mem_lamDForgetFinset.ai_lean_to_english" {code_block=false}
 
-@import "LamDEnt_of_mem.ai_lean_to_english" {code_block=false}
 
-@import "LamDEnt_trans.ai_lean_to_english" {code_block=false}
 
 @import "LamDCon_insert_of_ent.ai_lean_to_english" {code_block=false}
 
-@import "LamDCon_subset.ai_lean_to_english" {code_block=false}
 
-@import "LamDCon_singleton.ai_lean_to_english" {code_block=false}
 
 @import "lambdaSystem.ai_lean_to_english" {code_block=false}
 
@@ -890,7 +870,6 @@
 
 @import "lamDForget_listToLamDFinset.ai_lean_to_english" {code_block=false}
 
-@import "LamDCon_listToLamDFinset.ai_lean_to_english" {code_block=false}
 
 @import "lamUnfold.ai_lean_to_english" {code_block=false}
 

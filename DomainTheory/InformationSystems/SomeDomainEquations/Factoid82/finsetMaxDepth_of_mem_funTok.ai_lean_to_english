@@ -1,3 +1,0 @@
-If a function token belongs to a finite set of raw lambda tokens, then the finset depths of its input list and of its output list are both strictly below the finset depth of the set.
-
-Each strict comparison of a list finset depth with the raw depth of the function token is composed with the bound of that raw depth by the finset depth of a set containing the token.

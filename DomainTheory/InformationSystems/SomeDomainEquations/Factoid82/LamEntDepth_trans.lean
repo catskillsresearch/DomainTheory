@@ -136,7 +136,7 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
                 have htokR : .funTok r.1 r.2 ∈ v :=
                   mem_lamFunFinset.1 (hSsub (mem_funion.2 (Or.inr hr)))
                 have hzt := rawDepth_funTok_gt_left (v := r.2) ((mem_listToFinset).1 ht')
-                have hDq := (finsetMaxDepth_of_mem_funTok htok).1
+                have hDq := (finsetMaxDepth.of_mem_funTok htok).1
                 have hDxs := finsetMaxDepth.list_lt_funTok xs ys
                 exact Nat.max_lt.2 ⟨Nat.lt_of_lt_of_le hDxs hleC,
                   Nat.max_lt.2 ⟨Nat.lt_of_lt_of_le hDq hleU,

@@ -13,12 +13,7 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamD
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.BasicInst74
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDEnt
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon_subset
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon_singleton
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDEnt_bot
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDEnt_of_mem
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon_insert_of_ent
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDEnt_trans
 
 @[expose] public section
 
@@ -37,12 +32,12 @@ def lambdaSystem : InfoSys (LamDToken A) where
   bot := lamDBot A
   Con := {u | LamDCon A u}
   Ent := LamDEnt A
-  con_subset := fun hu hv => LamDCon_subset A hu hv
-  con_sing := LamDCon_singleton A
+  con_subset := fun hu hv => LamDCon.subset A hu hv
+  con_sing := LamDCon.singleton A
   ent_con := fun h => LamDCon_insert_of_ent A h
-  ent_bot := fun hu => LamDEnt_bot A hu
-  ent_refl := fun hu hp => LamDEnt_of_mem A hu hp
-  ent_trans := fun hv hu hEnts hEntc => LamDEnt_trans A hv hu hEnts hEntc
+  ent_bot := fun hu => LamDEnt.bot A hu
+  ent_refl := fun hu hp => LamDEnt.of_mem A hu hp
+  ent_trans := fun hv hu hEnts hEntc => LamDEnt.trans A hv hu hEnts hEntc
 
 end InfoSys
 
