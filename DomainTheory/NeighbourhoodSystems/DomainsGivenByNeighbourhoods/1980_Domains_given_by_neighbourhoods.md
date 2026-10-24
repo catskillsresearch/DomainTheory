@@ -1,11 +1,40 @@
 # Domains given by neighbourhoods
 
-## Human-English
+**Dependency diagram.** Each box is one item. The arrowhead is on the item that imports. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it is not shown. Blue is a definition, green a factoid, amber an example, red a theorem, and indigo an exercise.
 
-@import "1980_Domains_given_by_neighbourhoods.english" {code_block=false}
+@import "1980_Domains_given_by_neighbourhoods.mermaid"
 
-## AI: Human-English to AI-Lean
-
-**[DomainsGivenByNeighbourhoods.lean](DomainsGivenByNeighbourhoods.lean)**
-
-@import "DomainsGivenByNeighbourhoods.lean"
+- [Introduction](1980_Introduction.md)
+- [Definition 1.1 — neighbourhood system](1980_Definition_1_1.md)
+- [Factoid 1.1 — empty intersection is delta; recursive finite intersection](1980_Factoid_1_1.md)
+- [Example 1.2 — two-token domain](1980_Example_1_2.md)
+- [Example 1.3 — three-step chain](1980_Example_1_3.md)
+- [Example 1.4 — finite binary tree](1980_Example_1_4.md)
+- [Factoid 1.4a — nested or disjoint](1980_Factoid_1_4.md)
+- [Example 1.5 — all nonempty subsets](1980_Example_1_5.md)
+- [Factoid 1.5 — consistent iff nonempty; equivalent sequences same limit](1980_Factoid_1_5.md)
+- [Definition 1.6 — ideal elements](1980_Definition_1_6.md)
+- [Definition 1.7 — principal filter](1980_Definition_1_7.md)
+- [Factoid 1.7 — principals are one-one; inclusion-reversing principals; union of principal filters](1980_Factoid_1_7.md)
+- [Definition 1.8 — approximation and totality](1980_Definition_1_8.md)
+- [Factoid 1.8 — bottom element; bottom is least; finite filters are principal; prefix order; union of finite approximations](1980_Factoid_1_8.md)
+- [Examples 1.2–1.5 (Revisited) — finite examples revisited](1980_Examples_1_2_1_5_revisited.md)
+- [Definition 1.9 — isomorphic domains](1980_Definition_1_9.md)
+- [Theorem 1.10 — basic open neighbourhoods](1980_Theorem_1_10.md)
+- [Theorem 1.11 — intersections and directed unions](1980_Theorem_1_11.md)
+- [Exercise 1.12 — final segments of integers](1980_Exercise_1_12.md)
+- [Exercise 1.13 — infinite binary tree](1980_Exercise_1_13.md)
+- [Exercise 1.14 — finite nonempty subsets](1980_Exercise_1_14.md)
+- [Exercise 1.15 — finite elements without chains](1980_Exercise_1_15.md)
+- [Exercise 1.16 — cofinite integer subsets](1980_Exercise_1_16.md)
+- [Exercise 1.17 — rational open intervals](1980_Exercise_1_17.md)
+- [Exercise 1.18 — consistency of neighbourhood families](1980_Exercise_1_18.md)
+- [Exercise 1.19 — positive neighbourhood systems](1980_Exercise_1_19.md)
+- [Exercise 1.20 — upward closed neighbourhoods](1980_Exercise_1_20.md)
+- [Exercise 1.21 — complete neighbourhood systems](1980_Exercise_1_21.md)
+- [Exercise 1.22 — topology of a domain](1980_Exercise_1_22.md)
+- [Exercise 1.23 — decidable total elements](1980_Exercise_1_23.md)
+- [Exercise 1.24 — extending partial elements](1980_Exercise_1_24.md)
+- [Exercise 1.25 — final segments of ordinals](1980_Exercise_1_25.md)
+- [Exercise 1.26 — ideals of a ring](1980_Exercise_1_26.md)
+- [Exercise 1.27 — suprema of bounded sets](1980_Exercise_1_27.md)

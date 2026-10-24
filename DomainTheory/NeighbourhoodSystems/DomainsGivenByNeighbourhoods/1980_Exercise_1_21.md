@@ -1,0 +1,15 @@
+# Exercise 1.21
+
+## Human-English
+
+**EXERCISE 1.21.** Work out in greater detail the proof of 1.10. Remark that the neighbourhood system over $|\mathcal{D}|$ so constructed is positive, thereby obtaining in a different way the same kind of conclusion as in 1.20. Show also that the system over $|\mathcal{D}|$ is complete in the sense that every filter is fixed by a unique member of the underlying set. (A filter is *fixed by a point* iff it is the filter of *all* neighbourhoods containing that point.) Remark that a complete system is one where tokens and (partial) elements can always be identified (under a suitable one-one correspondence). Show also that consistency of a set $\{ X_i \mid i < n \}$ of neighbourhoods in $\mathcal{D}$ is equivalent to saying
+
+$$
+\bigcap_{i < n} [ X_i ] \neq \emptyset.
+$$
+
+## AI: Human-English to AI-Lean
+
+**[Exercise_1_21.lean](Exercise_1_21.lean)**
+
+@import "Exercise_1_21.lean"

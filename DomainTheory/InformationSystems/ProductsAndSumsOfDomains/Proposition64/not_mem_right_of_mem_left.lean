@@ -50,4 +50,5 @@ theorem not_mem_right_of_mem_left (z : (sumSystem A B).Element)
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

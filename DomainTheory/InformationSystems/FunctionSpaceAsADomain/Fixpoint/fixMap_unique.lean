@@ -39,4 +39,5 @@ theorem fixMap_unique (φ : ApproximableMap (functionSystem A A) A)
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

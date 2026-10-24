@@ -34,4 +34,5 @@ theorem ext_iff_toElement (f g : ApproximableMap A B) :
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

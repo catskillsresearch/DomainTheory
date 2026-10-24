@@ -17,71 +17,20 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-universe u v
-
 variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
 variable (A : InfoSys α) (B : InfoSys β)
+universe u v
 
 /-- Union of input components of a finite set of function-space tokens. -/
 def funInputUnion (s : Finset (FunToken A B)) : Finset α :=
   Multiset.foldr (fun p : FunToken A B => funion p.val.1) (∅ : Finset α) s.1
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
 theorem funInputUnion.empty : funInputUnion A B (∅ : Finset (FunToken A B)) = ∅ :=
   rfl
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem mem_funInputUnion {s : Finset (FunToken A B)} {x : α} :
     x ∈ funInputUnion A B s ↔ ∃ p ∈ s, x ∈ p.val.1 := by
   simpa [funInputUnion] using mem_foldr_funInput A B s.1 x
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem entSet_inputUnion_of_ent {u' : Finset α} {s : Finset (FunToken A B)}
     (h : ∀ q ∈ s, A.EntSet u' q.val.1) :
@@ -90,43 +39,11 @@ theorem entSet_inputUnion_of_ent {u' : Finset α} {s : Finset (FunToken A B)}
   rcases (mem_funInputUnion A B).1 hx with ⟨q, hq, hx'⟩
   exact h q hq x hx'
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem funInputUnion.con_of_ent {u' : Finset α} {s : Finset (FunToken A B)}
     (hu' : u' ∈ A.Con) (h : ∀ q ∈ s, A.EntSet u' q.val.1) :
     funInputUnion A B s ∈ A.Con :=
   A.con_subset (proposition_2_3_ii A hu' (entSet_inputUnion_of_ent A B h))
     (subset_funion_right _ _)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem funInputUnion.funion (s t : Finset (FunToken A B)) :
     funInputUnion A B (s ∪' t) = funInputUnion A B s ∪' funInputUnion A B t := by
@@ -144,22 +61,6 @@ theorem funInputUnion.funion (s t : Finset (FunToken A B)) :
     · rcases (mem_funInputUnion A B).1 hx with ⟨p, hp, hx'⟩
       exact (mem_funInputUnion A B).2 ⟨p, mem_funion.mpr (Or.inr hp), hx'⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem funInputUnion.singleton (p : FunToken A B) :
     funInputUnion A B {p} = p.val.1 := by
   ext x
@@ -171,22 +72,6 @@ theorem funInputUnion.singleton (p : FunToken A B) :
     exact hx'
   · intro hx
     exact (mem_funInputUnion A B).2 ⟨p, Finset.mem_singleton_self p, hx⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem funInputUnion.insert (s : Finset (FunToken A B)) (p : FunToken A B) :
     funInputUnion A B (Insert.insert p s) = p.val.1 ∪' funInputUnion A B s := by
@@ -204,5 +89,6 @@ theorem funInputUnion.insert (s : Finset (FunToken A B)) (p : FunToken A B) :
   rw [h, funInputUnion.funion, funInputUnion.singleton]
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

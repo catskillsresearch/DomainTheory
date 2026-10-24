@@ -5,7 +5,7 @@ public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilt
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Round
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.mem_wayBelowUp_ofFilter_of_round
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.UpperLower.Basic

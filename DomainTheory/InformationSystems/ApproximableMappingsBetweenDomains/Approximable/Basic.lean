@@ -31,4 +31,5 @@ variable {A : InfoSys α} {B : InfoSys β}
   Iff.rfl
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

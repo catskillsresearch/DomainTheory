@@ -96,12 +96,8 @@ open DomainTheory.InformationSystems.InfoSys
 open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open DomainTheory.ContinuousLattice
 open ContinuousLatticeToNeighborhood
-
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
 variable {D E : Type*} [CompleteLattice D] [CompleteLattice E]
-
 
 namespace ConjScottMap
 

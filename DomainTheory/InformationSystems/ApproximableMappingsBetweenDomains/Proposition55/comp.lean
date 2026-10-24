@@ -9,11 +9,9 @@ namespace DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
 namespace ApproximableMap
 
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-
 variable {A : InfoSys α} {B : InfoSys β} {C : InfoSys γ}
 
 /-- **Proposition 5.5(i).** Composition of approximable mappings. -/
@@ -42,23 +40,6 @@ def comp (g : ApproximableMap B C) (f : ApproximableMap A B) : ApproximableMap A
     · exact f.mono hf hEntu (proposition_2_3_iii B (f.rel_cod hf)) hu' (f.rel_cod hf)
     · exact g.mono hg (proposition_2_3_iii B (f.rel_cod hf)) hEntw (f.rel_cod hf) hw'
 
-end ApproximableMap
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-namespace ApproximableMap
-
-variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-variable {A : InfoSys α} {B : InfoSys β} {C : InfoSys γ}
-
-
 /-- **Proposition 5.5(ii).** `(g ∘ f)(x) = g(f(x))`. -/
 theorem comp.toElement (g : ApproximableMap B C) (f : ApproximableMap A B) (x : A.Element) :
     (comp g f).toElement x = g.toElement (f.toElement x) := by
@@ -86,4 +67,5 @@ theorem comp.toElement (g : ApproximableMap B C) (f : ApproximableMap A B) (x : 
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

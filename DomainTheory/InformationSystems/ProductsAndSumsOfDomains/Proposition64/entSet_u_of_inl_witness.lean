@@ -70,4 +70,5 @@ theorem entSet_u_of_inl_witness {u u' : Finset (SumToken α β)} {v : Finset α}
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

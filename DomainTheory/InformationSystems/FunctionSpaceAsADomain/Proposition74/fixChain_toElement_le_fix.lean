@@ -84,4 +84,5 @@ theorem fixChain_toElement_le_fix (f : ApproximableMap A A) (g : ApproximableMap
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

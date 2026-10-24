@@ -81,4 +81,5 @@ theorem comp_copairMap_inlMap (f : ApproximableMap A C) (g : ApproximableMap B C
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

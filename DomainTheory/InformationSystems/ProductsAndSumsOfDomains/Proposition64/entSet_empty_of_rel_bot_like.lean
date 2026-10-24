@@ -73,4 +73,5 @@ theorem entSet_empty_of_rel_bot_like (h : ApproximableMap (sumSystem A B) C)
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

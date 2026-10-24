@@ -70,4 +70,5 @@ theorem entSet_liftRht_of_right_only {u : Finset (SumToken α β)}
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

@@ -17,34 +17,18 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
-
 variable (A : InfoSys α)
 
 /-- Entailment for trees. -/
 def TreeEnt (u : Finset (TreeToken α)) (p : TreeToken α) : Prop :=
   TreeCon A u ∧ TreeEntPayload A u p
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem TreeEnt.of_mem {u : Finset (TreeToken α)} {p : TreeToken α}
     (hu : TreeCon A u) (hp : p ∈ u) : TreeEnt A u p :=
   ⟨hu, TreeEntPayload.of_mem A hu hp⟩
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

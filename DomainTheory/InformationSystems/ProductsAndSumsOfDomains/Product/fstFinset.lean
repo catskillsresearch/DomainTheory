@@ -18,27 +18,12 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
 variable (A : InfoSys α) (B : InfoSys β)
 
 /-- Left projection of a finite set of product tokens (Scott 6.1). -/
 def fstFinset (u : Finset (ProdToken A B)) : Finset α :=
   Multiset.foldr (fun p : ProdToken A B => insert p.val.1) (∅ : Finset α)
     (u.filter (fun p => p.val.2 = B.bot)).1
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem mem_fstFinset {u : Finset (ProdToken A B)} {x : α} :
     x ∈ fstFinset A B u ↔ ∃ p ∈ u, p.val.2 = B.bot ∧ p.val.1 = x := by
@@ -51,20 +36,6 @@ theorem mem_fstFinset {u : Finset (ProdToken A B)} {x : α} :
   · rintro ⟨p, hp, hbot, hx⟩
     exact ⟨p, Finset.mem_filter.mpr ⟨hp, hbot⟩, hx⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem fstFinset.empty : fstFinset A B (∅ : Finset (ProdToken A B)) = ∅ := by
   ext x
   constructor
@@ -73,22 +44,6 @@ theorem fstFinset.empty : fstFinset A B (∅ : Finset (ProdToken A B)) = ∅ := 
     exact False.elim (Finset.notMem_empty _ hp)
   · intro hx
     exact False.elim (Finset.notMem_empty x hx)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 
 theorem fstFinset.funion (u v : Finset (ProdToken A B)) :
     fstFinset A B (u ∪' v) = fstFinset A B u ∪' fstFinset A B v := by
@@ -106,19 +61,6 @@ theorem fstFinset.funion (u v : Finset (ProdToken A B)) :
     · rcases (mem_fstFinset A B).1 hx with ⟨p, hp, hbot, hx'⟩
       exact (mem_fstFinset A B).2 ⟨p, mem_funion.mpr (Or.inr hp), hbot, hx'⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem fstFinset.insert_left (u : Finset (ProdToken A B)) (p : ProdToken A B)
     (hp : p.val.2 = B.bot) :
     fstFinset A B (insert p u) = insert p.val.1 (fstFinset A B u) := by
@@ -135,20 +77,6 @@ theorem fstFinset.insert_left (u : Finset (ProdToken A B)) (p : ProdToken A B)
     · rcases (mem_fstFinset A B).1 hx' with ⟨q, hq, hbot, hxq⟩
       exact (mem_fstFinset A B).2 ⟨q, Finset.mem_insert_of_mem hq, hbot, hxq⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem fstFinset.insert_not_left (u : Finset (ProdToken A B)) (p : ProdToken A B)
     (hp : p.val.2 ≠ B.bot) :
     fstFinset A B (insert p u) = fstFinset A B u := by
@@ -163,39 +91,11 @@ theorem fstFinset.insert_not_left (u : Finset (ProdToken A B)) (p : ProdToken A 
     rcases (mem_fstFinset A B).1 hx with ⟨q, hq, hbot, hx'⟩
     exact (mem_fstFinset A B).2 ⟨q, Finset.mem_insert_of_mem hq, hbot, hx'⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem fstFinset.mono {u v : Finset (ProdToken A B)} (h : v ⊆ u) :
     fstFinset A B v ⊆ fstFinset A B u := by
   intro x hx
   rcases (mem_fstFinset A B).1 hx with ⟨p, hp, hbot, hx'⟩
   exact (mem_fstFinset A B).2 ⟨p, h hp, hbot, hx'⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem fstFinset.singleton_left (p : ProdToken A B) (hp : p.val.2 = B.bot) :
     fstFinset A B {p} = {p.val.1} := by
@@ -204,5 +104,6 @@ theorem fstFinset.singleton_left (p : ProdToken A B) (hp : p.val.2 = B.bot) :
   rfl
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

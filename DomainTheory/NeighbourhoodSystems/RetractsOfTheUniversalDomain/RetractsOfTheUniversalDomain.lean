@@ -4,7 +4,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.ComputabilityInEffectivelyGivenDomains
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.DomainConstructs
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.DomainEquations
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.FixedPointsAndRecursion
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.MappingsBetweenDomains
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.TypedLambdaCalculus
@@ -35,174 +35,82 @@ public import Mathlib.Topology.Constructions
 @[expose] public section
 
 section
--- Definition87/presentedIntervals.lean
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 /-- The set presented by a list of interval endpoint-pairs: the union `⋃ (r,s) ∈ L, [r,s)`. -/
 def presentedIntervals (L : List (ℚ × ℚ)) : Set ℚ := ⋃ p ∈ L, Set.Ico p.1 p.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/mem_presentedIntervals.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 @[simp] theorem mem_presentedIntervals {L : List (ℚ × ℚ)} {x : ℚ} :
     x ∈ presentedIntervals L ↔ ∃ p ∈ L, p.1 ≤ x ∧ x < p.2 := by
   simp only [presentedIntervals, Set.mem_iUnion, Set.mem_Ico, exists_prop]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/presentedIntervals_nil.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 @[simp] theorem presentedIntervals_nil : presentedIntervals ([] : List (ℚ × ℚ)) = ∅ := by
   ext x; simp
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/UMaster.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 /-- Scott's master neighbourhood `Δ = [0,1)` for `𝒰`. -/
 abbrev UMaster : Set ℚ := Set.Ico (0 : ℚ) 1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/UMaster_nonempty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 /-- Scott's token set `[0,1)` is non-empty. -/
 theorem UMaster_nonempty : UMaster.Nonempty := by
   exact ⟨0, by simp [UMaster]⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/UMem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 /-- Membership in Scott's universal family: non-empty subsets of `[0,1)` presentable as a
 finite union of rational half-open intervals. -/
 def UMem (X : Set ℚ) : Prop :=
   (∃ L : List (ℚ × ℚ), X = presentedIntervals L) ∧ X.Nonempty ∧ X ⊆ Set.Ico (0 : ℚ) 1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/U_sub_master.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 /-- Every `UMem` set is contained in `[0,1)`. -/
 theorem U_sub_master {X : Set ℚ} (hX : UMem X) : X ⊆ UMaster := hX.2.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/clip.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 /-- Clip an interval-pair to `[0,1)`, moving `r` up to `0` and `s` down to `1` when needed. -/
 def clip (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ 0, p.2 ⊓ 1)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/clipGe.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 def clipGe (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ m, p.2)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/clipLt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 def clipLt (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1, p.2 ⊓ m)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/combineIntervals.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 /-- Pairwise-combine two endpoint-lists via `Set.Ico_inter_Ico`, realizing the intersection of the
 two presented unions as another presented union. -/
 def combineIntervals (L1 L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) :=
   L1.flatMap (fun p => L2.map (fun q => (p.1 ⊔ q.1, p.2 ⊓ q.2)))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/presentedIntervals_cons.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 theorem presentedIntervals_cons (p : ℚ × ℚ) (L : List (ℚ × ℚ)) :
     presentedIntervals (p :: L) = Set.Ico p.1 p.2 ∪ presentedIntervals L := by
   ext x; simp [Set.mem_Ico, or_and_right, exists_or]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/U_master_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 /-- `[0,1)` is presented by the single interval `[0,1)`. -/
 theorem U_master_mem : UMem UMaster :=
   ⟨⟨[(0, 1)], by rw [presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]⟩,
     ⟨0, by norm_num⟩, subset_rfl⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/presentedIntervals_inter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 /-- **The presented family is closed under intersection**, with no side conditions on endpoints:
 `Set.Ico_inter_Ico` handles crossed bounds automatically by returning the empty interval. -/
 theorem presentedIntervals_inter (L1 L2 : List (ℚ × ℚ)) :
@@ -216,16 +124,9 @@ theorem presentedIntervals_inter (L1 L2 : List (ℚ × ℚ)) :
   · rintro ⟨r, ⟨p, hp, q, hq, rfl⟩, hx1, hx2⟩
     exact ⟨⟨p, hp, le_sup_left.trans hx1, hx2.trans_le inf_le_left⟩,
       ⟨q, hq, le_sup_right.trans hx1, hx2.trans_le inf_le_right⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/U_inter_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 /-- Intersection of two presentable sets is presentable, via `combineIntervals`. -/
 theorem U_inter_mem {X Y Z : Set ℚ} (hX : UMem X) (hY : UMem Y) (hZ : UMem Z)
     (hZsub : Z ⊆ X ∩ Y) : UMem (X ∩ Y) := by
@@ -234,16 +135,9 @@ theorem U_inter_mem {X Y Z : Set ℚ} (hX : UMem X) (hY : UMem Y) (hZ : UMem Z)
   rcases hZ with ⟨-, hZne, -⟩
   exact ⟨⟨combineIntervals L1 L2, presentedIntervals_inter L1 L2⟩,
     hZne.mono hZsub, Set.inter_subset_left.trans hXsub⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/U.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 /- concordance: source L4928 DEFINITION 8.7 interval presentation of U -/
 /-- **Definition 8.7 (Scott 1981, PRG-19).** The neighbourhood system `𝒰` over `[0,1) ⊆ ℚ`: its
 neighbourhoods are the non-empty subsets of `[0,1)` presentable as a finite union of rational
@@ -257,17 +151,9 @@ def U : NeighborhoodSystem ℚ where
   master_mem := U_master_mem
   inter_mem := U_inter_mem
   sub_master := U_sub_master
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
 theorem presentedIntervals_map_clip (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map clip) = presentedIntervals L ∩ Set.Ico (0 : ℚ) 1 := by
   ext x
@@ -332,17 +218,9 @@ theorem presentedIntervals_map_clipGe (m : ℚ) (L : List (ℚ × ℚ)) :
     exact ⟨⟨q, hq, le_sup_left.trans hx1, hx2⟩, le_sup_right.trans hx1⟩
   · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hxm⟩
     exact ⟨(q.1 ⊔ m, q.2), ⟨q, hq, rfl⟩, sup_le hxq1 hxm, hxq2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/U_no_minimal.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
 /-- **Scott's remark after Definition 8.7**: "`U` has no minimal neighbourhoods: every set in `U`
 can be written as the union of two disjoint sets in `U`." Splitting at the rational midpoint `m`
 of any interval witnessing `X`'s non-emptiness realizes `X` as `Y ⊔ Z` for `U`-neighbourhoods
@@ -388,33 +266,17 @@ theorem U_no_minimal {X : Set ℚ} (hX : U.mem X) :
     have hYsub : presentedIntervals L ∩ Set.Iio m ⊆ presentedIntervals L ∩ Set.Ici m := by
       rw [hEq]; exact Set.inter_subset_left
     exact hYne.ne_empty ((Set.inter_eq_left.mpr hYsub).symm.trans hYZinter)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/presentedIntervals_append.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
 theorem presentedIntervals_append (L1 L2 : List (ℚ × ℚ)) :
     presentedIntervals (L1 ++ L2) = presentedIntervals L1 ∪ presentedIntervals L2 := by
   induction L1 with
   | nil => simp
   | cons p L1 ih => simp [List.cons_append, presentedIntervals_cons, ih, Set.union_assoc]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/U_union_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
 /-- **`U` is closed under binary union**, as long as the result is non-empty: if `X` and `Y` are
 each either empty or `U`-neighbourhoods, so is `X ∪ Y`. Unlike intersection (Definition 8.7's
 `inter_mem`), this needs no consistency witness — `U`'s neighbourhoods are *by definition* finite
@@ -431,17 +293,9 @@ theorem U_union_mem {X Y : Set ℚ} (hX : X = ∅ ∨ U.mem X) (hY : Y = ∅ ∨
       obtain ⟨⟨L2, rfl⟩, hYne, hYsub⟩ := hY
       refine Or.inr ⟨⟨L1 ++ L2, (presentedIntervals_append L1 L2).symm⟩,
         hXne.mono Set.subset_union_left, Set.union_subset hXsub hYsub⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition87/U_iUnion_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
 /-- **`U` is closed under finite (`Fintype`-indexed) unions**, as long as the result is
 non-empty: if every `f i` is either empty or a `U`-neighbourhood, so is `⋃ i, f i` (given it is
 non-empty). Proved by folding `U_union_mem` over `Finset.univ` (`Finset.induction_on`). -/
@@ -458,6 +312,7 @@ theorem U_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℚ} (hf : ∀ i,
   have hall : (⋃ i, f i) = ⋃ i ∈ (Finset.univ : Finset ι), f i := by simp
   rw [hall] at hne ⊢
   exact (hstep Finset.univ).resolve_left hne.ne_empty
+end
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -483,11 +338,10 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/enc.lean
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 
+section
 namespace Exercise822
 
 /-- Doubles every bit of a string: `enc [] = []`, `enc (b :: σ) = b :: b :: enc σ`. -/
@@ -496,16 +350,9 @@ def enc : Str → Str
   | b :: σ => b :: b :: enc σ
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/encC.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- The "completed" encoding: `enc σ` followed by the two-bit marker `[true, false]`, which can
@@ -513,77 +360,42 @@ never arise as a doubled block `[b, b]`. -/
 def encC (σ : Str) : Str := enc σ ++ [true, false]
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/enc_nil.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 @[simp] theorem enc_nil : enc ([] : Str) = [] := rfl
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/enc_cons.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 @[simp] theorem enc_cons (b : Bool) (σ : Str) : enc (b :: σ) = b :: b :: enc σ := rfl
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/encC_cons.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem encC_cons (b : Bool) (σ : Str) : encC (b :: σ) = b :: b :: encC σ := by
   simp [encC]
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/encC_nil.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem encC_nil : encC ([] : Str) = [true, false] := rfl
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/enc_append.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem enc_append (σ τ : Str) : enc (σ ++ τ) = enc σ ++ enc τ := by
@@ -592,16 +404,9 @@ theorem enc_append (σ τ : Str) : enc (σ ++ τ) = enc σ ++ enc τ := by
   | cons b σ' ih => simp [ih]
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/enc_length.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem enc_length (σ : Str) : (enc σ).length = 2 * σ.length := by
@@ -610,32 +415,18 @@ theorem enc_length (σ : Str) : (enc σ).length = 2 * σ.length := by
   | cons b σ' ih => simp [ih]; ring
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/encC_length.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem encC_length (σ : Str) : (encC σ).length = 2 * σ.length + 2 := by
   simp [encC, enc_length]
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/encC_prefix_encC_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- **Two completions relate only to themselves.** `encC σ <+: encC τ ↔ σ = τ`: distinct completed
@@ -670,32 +461,18 @@ theorem encC_prefix_encC_iff {σ τ : Str} : encC σ <+: encC τ ↔ σ = τ := 
   · rintro rfl; exact List.prefix_rfl
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/encC_injective.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem encC_injective {σ τ : Str} (h : encC σ = encC τ) : σ = τ :=
   encC_prefix_encC_iff.mp (h ▸ List.prefix_rfl)
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/enc_prefix_of_prefix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem enc_prefix_of_prefix {σ τ : Str} (h : σ <+: τ) : enc σ <+: enc τ := by
@@ -704,16 +481,9 @@ theorem enc_prefix_of_prefix {σ τ : Str} (h : σ <+: τ) : enc σ <+: enc τ :
   exact ⟨enc t, rfl⟩
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/enc_prefix_encC_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- **The marker never collides with a real prefix.** `enc ρ <+: encC σ` exactly reproduces `C`'s
@@ -743,16 +513,9 @@ theorem enc_prefix_encC_iff {ρ σ : Str} : enc ρ <+: encC σ ↔ ρ <+: σ := 
       _ <+: encC σ := ⟨[true, false], rfl⟩
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/enc_prefix_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- **`enc` is prefix-reflecting.** Doubling never merges or confuses distinct prefixes: a prefix
@@ -776,16 +539,9 @@ theorem enc_prefix_iff {σ τ : Str} : enc σ <+: enc τ ↔ σ <+: τ := by
       exact ⟨rfl, ih h3⟩
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/enc_injective.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem enc_injective {σ τ : Str} (h : enc σ = enc τ) : σ = τ := by
@@ -794,32 +550,18 @@ theorem enc_injective {σ τ : Str} (h : enc σ = enc τ) : σ = τ := by
   exact h1.eq_of_length (h1.length_le.antisymm h2.length_le)
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/memD'.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- The image family: `B`-cones re-encoding `C`'s cones (`enc`) and completions (`encC`). -/
 def memD' (X : Set Str) : Prop := (∃ σ, X = cone (enc σ)) ∨ (∃ σ, X = cone (encC σ))
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/D'_nestedOrDisjoint.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- Every `D'`-set is literally a `B`-cone, so nestedness-or-disjointness is free from `B`'s own
@@ -832,16 +574,9 @@ theorem D'_nestedOrDisjoint : NestedOrDisjoint memD' := by
   · exact cone_trichotomy (encC σ) (encC τ)
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/D'.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- **The image neighbourhood system `D'`.** -/
@@ -851,46 +586,25 @@ def D' : NeighborhoodSystem Str :=
     D'_nestedOrDisjoint (by rintro X (⟨σ, rfl⟩ | ⟨σ, rfl⟩) <;> exact Set.subset_univ _)
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/D'_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 @[simp] theorem D'_mem {X : Set Str} : D'.mem X ↔ memD' X := Iff.rfl
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/D'_master.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 @[simp] theorem D'_master : D'.master = (Set.univ : Set Str) := rfl
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/D'_subsystem_B.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- **`D' ◁ B`.** Same master; `D'.mem ⊆ B.mem` since every `D'`-set is a `B`-cone; and
@@ -906,64 +620,36 @@ theorem D'_subsystem_B : D' ◁ B where
     · rw [h] at hBXY; exact absurd (B_nonempty ∅ hBXY) (by simp)
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/cone_encC_subset_cone_enc_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem cone_encC_subset_cone_enc_iff {σ τ : Str} : cone (encC σ) ⊆ cone (enc τ) ↔ τ <+: σ := by
   rw [cone_subset_cone, enc_prefix_encC_iff]
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/cone_encC_subset_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem cone_encC_subset_iff {σ τ : Str} : cone (encC σ) ⊆ cone (encC τ) ↔ σ = τ := by
   rw [cone_subset_cone, encC_prefix_encC_iff, eq_comm]
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/cone_enc_subset_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem cone_enc_subset_iff {σ τ : Str} : cone (enc σ) ⊆ cone (enc τ) ↔ τ <+: σ := by
   rw [cone_subset_cone, enc_prefix_iff]
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/cone_ne_singleton.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem cone_ne_singleton (σ τ : Str) : cone σ ≠ ({τ} : Set Str) := by
@@ -975,16 +661,9 @@ theorem cone_ne_singleton (σ τ : Str) : cone σ ≠ ({τ} : Set Str) := by
   exact absurd (h2.trans h1.symm) (by simp)
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/not_encC_prefix_enc.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- **No `B`-cone reaches "past" a completion.** `encC σ` is never a prefix of `enc τ`: a
@@ -1014,16 +693,9 @@ theorem not_encC_prefix_enc {σ τ : Str} : ¬ encC σ <+: enc τ := by
       exact ih h3
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/enc_ne_encC.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem enc_ne_encC (σ τ : Str) : enc σ ≠ encC τ := by
@@ -1031,32 +703,18 @@ theorem enc_ne_encC (σ τ : Str) : enc σ ≠ encC τ := by
   exact not_encC_prefix_enc (σ := τ) (τ := σ) (h ▸ List.prefix_rfl)
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/not_cone_enc_subset_cone_encC.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem not_cone_enc_subset_cone_encC {σ τ : Str} : ¬ cone (enc σ) ⊆ cone (encC τ) := by
   rw [cone_subset_cone]; exact not_encC_prefix_enc
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/fromD'.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- **Inverse half of `C ≅ᴰ D'`.** -/
@@ -1130,16 +788,9 @@ def fromD' (y : D'.Element) : C.Element where
         exact y.up_mem hσ (Or.inr ⟨κ, rfl⟩) (cone_encC_subset_iff.mpr hσκ)
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/toD'.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- **Forward half of `C ≅ᴰ D'`.** Sends a `C`-element `x` to the `D'`-element recording, for each
@@ -1222,16 +873,9 @@ def toD' (x : C.Element) : D'.Element where
         exact hστ ▸ hσ
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/toD'_mem_enc.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 @[simp] theorem toD'_mem_enc {x : C.Element} (κ : Str) :
@@ -1244,16 +888,9 @@ namespace Exercise822
   · intro hx; exact Or.inl ⟨κ, hx, rfl⟩
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/toD'_mem_encC.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 @[simp] theorem toD'_mem_encC {x : C.Element} (κ : Str) :
@@ -1266,16 +903,9 @@ namespace Exercise822
   · intro hx; exact Or.inr ⟨κ, hx, rfl⟩
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/fromD'_mem_cone.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 @[simp] theorem fromD'_mem_cone {y : D'.Element} (κ : Str) :
@@ -1288,16 +918,9 @@ namespace Exercise822
   · intro hy; exact Or.inl ⟨κ, hy, rfl⟩
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/fromD'_mem_singleton.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 @[simp] theorem fromD'_mem_singleton {y : D'.Element} (κ : Str) :
@@ -1312,16 +935,9 @@ namespace Exercise822
   · intro hy; exact Or.inr ⟨κ, hy, rfl⟩
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/fromD'_toD'.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem fromD'_toD' (x : C.Element) : fromD' (toD' x) = x := by
@@ -1337,16 +953,9 @@ theorem fromD'_toD' (x : C.Element) : fromD' (toD' x) = x := by
     · exact Or.inr ⟨σ, (toD'_mem_encC σ).mpr hX, rfl⟩
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/toD'_fromD'.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 theorem toD'_fromD' (y : D'.Element) : toD' (fromD' y) = y := by
@@ -1362,16 +971,9 @@ theorem toD'_fromD' (y : D'.Element) : toD' (fromD' y) = y := by
     · exact Or.inr ⟨κ, (fromD'_mem_singleton κ).mpr hW, rfl⟩
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/cdEquiv.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 /-- **`C ≅ᴰ D'`.** -/
@@ -1393,16 +995,9 @@ def cdEquiv : C.Element ≃o D'.Element where
       · exact Or.inr ⟨σ, h _ hσ, rfl⟩
 
 end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/B_subsystem_C.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 
@@ -1421,15 +1016,9 @@ theorem B_subsystem_C : B ◁ C where
     · rw [h] at hCXY; exact absurd (C_nonempty ∅ hCXY) (by simp)
 
 end Exercise822
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/B_trianglelefteq_C.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 
@@ -1439,30 +1028,18 @@ theorem B_trianglelefteq_C : B ⊴ C :=
   Subsystem.trianglelefteq B_subsystem_C
 
 end Exercise822
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/C_isomorphic_Du27.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 
 theorem C_isomorphic_D' : C ≅ᴰ D' := ⟨cdEquiv⟩
 
 end Exercise822
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise822/C_trianglelefteq_B.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
 namespace Exercise822
 
 
@@ -1472,98 +1049,64 @@ embeds as a subdomain of `B` (infinite binary sequences) via the bit-doubling re
 theorem C_trianglelefteq_B : C ⊴ B := ⟨D', D'_subsystem_B, C_isomorphic_D'⟩
 
 end Exercise822
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise822.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise822
-
+section
 set_option linter.unusedVariables false
 
 theorem example_822 : @DomainTheory.NeighbourhoodSystems.Trianglelefteq DomainTheory.NeighbourhoodSystems.ExampleB.Str
   DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example44.C
   DomainTheory.NeighbourhoodSystems.ExampleB.B :=
   DomainTheory.NeighbourhoodSystems.Exercise822.C_trianglelefteq_B
-
-end DomainTheory.NeighbourhoodSystems.Exercise822
 end
 
-section
--- Exercise825Embed/embedIntoPow.lean
+end DomainTheory.NeighbourhoodSystems.Exercise822
 namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- The "singleton stack" embedding `D → D^∞`: `x ↦ ⟨x, ⊥, ⊥, …⟩`, i.e. `x` prepended to the all-`⊥`
 stack. -/
 def embedIntoPow : ApproximableMap V (iterSys V) :=
   (push V).comp (paired (idMap V) (constMap V (iterSys V).bot))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Embed/toElementMap_embedIntoPow.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-
 variable {α : Type*} (V : NeighborhoodSystem α)
-
 
 theorem toElementMap_embedIntoPow (x : V.Element) :
     (embedIntoPow V).toElementMap x = (push V).toElementMap (pair x (iterSys V).bot) := by
   rw [embedIntoPow, toElementMap_comp, toElementMap_paired, toElementMap_idMap,
     toElementMap_constMap]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Embed/component_embedIntoPow_succ.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-
 variable {α : Type*} (V : NeighborhoodSystem α)
-
 
 /-- Every coordinate past the head of `⟨x, ⊥, ⊥, …⟩` is `⊥`. -/
 theorem component_embedIntoPow_succ (x : V.Element) (n : ℕ) :
     component ((embedIntoPow V).toElementMap x) (n + 1) = V.bot := by
   rw [toElementMap_embedIntoPow, ← component_tail, tail_push, Exercise618.component_bot]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Embed/component_embedIntoPow_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-
 variable {α : Type*} (V : NeighborhoodSystem α)
-
 
 /-- The head of the singleton stack `⟨x, ⊥, ⊥, …⟩` is `x`. -/
 theorem component_embedIntoPow_zero (x : V.Element) :
     component ((embedIntoPow V).toElementMap x) 0 = x := by
   rw [toElementMap_embedIntoPow, ← head_apply, head_push]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Embed/embedIntoPow_comp_head_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-
 variable {α : Type*} (V : NeighborhoodSystem α)
-
 
 /-- **`embedIntoPow ∘ head ≤ id`**: re-stacking after reading only the head can only forget
 information (all coordinates past the head collapse to `⊥`). -/
@@ -1576,35 +1119,21 @@ theorem embedIntoPow_comp_head_le : (embedIntoPow V).comp (head V) ≤ idMap (it
   cases n with
   | zero => rw [component_embedIntoPow_zero, head_apply]
   | succ m => rw [component_embedIntoPow_succ]; exact NeighborhoodSystem.bot_le V _
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Embed/head_comp_embedIntoPow.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-
 variable {α : Type*} (V : NeighborhoodSystem α)
-
 
 /-- **`head` retracts `embedIntoPow`.** -/
 theorem head_comp_embedIntoPow : (head V).comp (embedIntoPow V) = idMap V :=
   ApproximableMap.ext_of_toElementMap fun x => by
     rw [toElementMap_comp, toElementMap_idMap, head_apply, component_embedIntoPow_zero]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Embed/trianglelefteq_iterSys.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-
 variable {α : Type*} (V : NeighborhoodSystem α)
-
 
 /- concordance: source L5224 EXERCISE 8.25 reflexive function space -/
 /-- **Exercise 8.25 (Scott 1981, PRG-19): `𝒟 ⊴ 𝒟^∞`**, for every `𝒟`. Specialized to `𝒟 = 𝒰` this is
@@ -1612,29 +1141,18 @@ Scott's remark `𝒰 ⊴ 𝒰^∞`. -/
 theorem trianglelefteq_iterSys : V ⊴ iterSys V :=
   trianglelefteq_of_projectionPair (embedIntoPow V) (head V)
     (head_comp_embedIntoPow V) (embedIntoPow_comp_head_le V)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Embed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_825_embed.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
   @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Prod Nat α) V (@DomainTheory.NeighbourhoodSystems.iterSys α V) :=
   @DomainTheory.NeighbourhoodSystems.trianglelefteq_iterSys
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Pow/arrowReindexOrderIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 /-- Reindexing a non-dependent `ι → E` arrow type along a bijection of index types is an order
@@ -1653,16 +1171,10 @@ def arrowReindexOrderIso {ι ι' : Type*} (e : ι ≃ ι') (E : Type*) [Preorder
       simpa using h (e i)
     · intro h i'
       simpa using h (e.symm i')
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Pow/sumArrowOrderIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 /-- The pointwise order on `α ⊕ β → E` corresponds, coordinatewise, to the product order on
@@ -1683,32 +1195,20 @@ def sumArrowOrderIso (α β : Type*) (E : Type*) [Preorder E] :
       | inr b => exact h2 b
     · intro h
       exact ⟨fun a => h (Sum.inl a), fun b => h (Sum.inr b)⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Pow/interleaveOrderIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 /-- **Interleaving.** Two `ℕ`-indexed sequences of `E` can be merged, order-isomorphically, into a
 single `ℕ`-indexed sequence, via the pairing bijection `ℕ ⊕ ℕ ≃ ℕ`. -/
 def interleaveOrderIso (E : Type*) [Preorder E] : (ℕ → E) × (ℕ → E) ≃o (ℕ → E) :=
   (sumArrowOrderIso ℕ ℕ E).symm.trans (arrowReindexOrderIso Equiv.natSumNatEquivNat E)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Pow/powProdOrderIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 /-- The order isomorphism `|𝒟^∞ × 𝒟^∞| ≃o |𝒟^∞|` underlying `pow_prod_isomorphic`. -/
@@ -1717,32 +1217,20 @@ def powProdOrderIso (V : NeighborhoodSystem α) :
   (prodEquiv (iterSys V) (iterSys V)).trans <|
     (prodCongrOrderIso (iterSeqEquiv V) (iterSeqEquiv V)).trans <|
       (interleaveOrderIso V.Element).trans (iterSeqEquiv V).symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Pow/pow_prod_isomorphic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
-
 
 /-- **Exercise 8.25 (Scott 1981, PRG-19), first step: `𝒟^∞ × 𝒟^∞ ≅ 𝒟^∞`**, for any `𝒟`. Specialized
 to `𝒟 = 𝒰` this is Scott's `𝒰^∞ × 𝒰^∞ ≅ 𝒰^∞`. -/
 theorem pow_prod_isomorphic (V : NeighborhoodSystem α) :
     prod (iterSys V) (iterSys V) ≅ᴰ iterSys V :=
   ⟨powProdOrderIso V⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Pow.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_825_pow.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
@@ -1751,16 +1239,10 @@ theorem example_825_pow.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.Neighbourh
       (@DomainTheory.NeighbourhoodSystems.iterSys α V))
     (@DomainTheory.NeighbourhoodSystems.iterSys α V) :=
   @DomainTheory.NeighbourhoodSystems.pow_prod_isomorphic
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Unit/isoOfUnique.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β : Type*}
 
 /-- **Any two `NeighborhoodSystem`s with `Unique` element posets are isomorphic.** Both sides are
@@ -1774,18 +1256,11 @@ def isoOfUnique (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
   map_rel_iff' := by
     intro a b
     exact iff_of_true (le_refl _) (le_of_eq (Subsingleton.elim a b))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Unit/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β : Type*}
-
 
 /-- **There is only one approximable self-map of `𝟙`, the identity.** Both maps induce the same
 (unique) elementwise function, so `ext_of_toElementMap` identifies them. -/
@@ -1798,48 +1273,30 @@ along `funSpaceEquiv`. -/
 instance uniqueFunSpaceUnitSys : Unique (funSpace unitSys unitSys).Element where
   default := (funSpaceEquiv unitSys unitSys).symm default
   uniq _x := (funSpaceEquiv unitSys unitSys).injective (Subsingleton.elim _ _)
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Unit/isomorphic_of_unique.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β : Type*}
-
 
 /-- **Any two `NeighborhoodSystem`s with `Unique` element posets determine isomorphic domains.** -/
 theorem isomorphic_of_unique (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     [Unique V₀.Element] [Unique V₁.Element] : V₀ ≅ᴰ V₁ :=
   ⟨isoOfUnique V₀ V₁⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Unit/funSpace_unitSys_isomorphic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β : Type*}
-
 
 /-- **Exercise 8.25 (Scott 1981, PRG-19) — the obstruction `𝟙 → 𝟙 = 𝟙`.** The terminal one-point
 domain is a fixed point of `→`, carrying no information: this is why "the obvious solution by
 retracts is of no use". -/
 theorem funSpace_unitSys_isomorphic : funSpace unitSys unitSys ≅ᴰ unitSys :=
   isomorphic_of_unique _ _
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Unit.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_825_unit : @DomainTheory.NeighbourhoodSystems.Isomorphic
@@ -1850,39 +1307,24 @@ theorem example_825_unit : @DomainTheory.NeighbourhoodSystems.Isomorphic
     DomainTheory.NeighbourhoodSystems.unitSys)
   DomainTheory.NeighbourhoodSystems.unitSys :=
   DomainTheory.NeighbourhoodSystems.funSpace_unitSys_isomorphic
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeInt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- Decode a natural code as an integer: `pair a b ↦ a - b`. -/
 def decodeInt (c : ℕ) : ℤ := (c.unpair.1 : ℤ) - (c.unpair.2 : ℤ)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/encodeInt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- Encode an integer as the difference-pair `(z.toNat, (-z).toNat)` (one of the two is always
 `0`). -/
 def encodeInt (z : ℤ) : ℕ := Nat.pair z.toNat (-z).toNat
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeInt_encodeInt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 @[simp] theorem decodeInt_encodeInt (z : ℤ) : decodeInt (encodeInt z) = z := by
@@ -1898,38 +1340,23 @@ open Domain.Recursive
       have := Int.toNat_of_nonpos (show z ≤ 0 from h'.le); simp [this]
     have hnz : ((-z).toNat : ℤ) = -z := Int.toNat_of_nonneg (by omega)
     rw [hz, hnz]; ring
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeRat.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- Decode a natural code as a rational via `mkRat`: `pair c d ↦ mkRat (decodeInt c) (d + 1)`. -/
 def decodeRat (c : ℕ) : ℚ := mkRat (decodeInt c.unpair.1) (c.unpair.2 + 1)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/encodeRat.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- Encode a rational `q` using its own reduced `num`/`den`. -/
 def encodeRat (q : ℚ) : ℕ := Nat.pair (encodeInt q.num) (q.den - 1)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeRat_encodeRat.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 @[simp] theorem decodeRat_encodeRat (q : ℚ) : decodeRat (encodeRat q) = q := by
@@ -1938,75 +1365,45 @@ open Domain.Recursive
   have hden : q.den - 1 + 1 = q.den := by
     have := q.den_nz; omega
   rw [hden, Rat.mkRat_self]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/oneCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- A fixed code for the rational `1`. -/
 def oneCode : ℕ := Nat.pair (Nat.pair 1 0) 0
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/qDen.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The denominator (`d + 1`, always positive) of a rational code. -/
 def qDen (c : ℕ) : ℕ := c.unpair.2 + 1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/qNumN.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The numerator's negative part `b` of a rational code (so the numerator is `a - b`). -/
 def qNumN (c : ℕ) : ℕ := c.unpair.1.unpair.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/qNumP.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The numerator's positive part `a` of a rational code. -/
 def qNumP (c : ℕ) : ℕ := c.unpair.1.unpair.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeRat_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 theorem decodeRat_eq (c : ℕ) :
     decodeRat c = mkRat ((qNumP c : ℤ) - (qNumN c : ℤ)) (qDen c) := by
   unfold decodeRat decodeInt qNumP qNumN qDen; rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/ratLeCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The `{0,1}`-valued cross-cleared comparison test `a₁·d₂ + b₂·d₁ ≤ a₂·d₁ + b₁·d₂`, applied to
@@ -2015,86 +1412,51 @@ def ratLeCode (t : ℕ) : ℕ :=
   let c1 := t.unpair.1; let c2 := t.unpair.2
   isZero ((qNumP c1 * qDen c2 + qNumN c2 * qDen c1) -
     (qNumP c2 * qDen c1 + qNumN c1 * qDen c2))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/ratLtCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- `ratLtCode (pair c₁ c₂)` decides `decodeRat c₁ < decodeRat c₂` via `¬ (decodeRat c₂ ≤ decodeRat c₁)`. -/
 def ratLtCode (t : ℕ) : ℕ := 1 - ratLeCode (Nat.pair t.unpair.2 t.unpair.1)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/ratMaxCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- `ratMaxCode (pair c₁ c₂)` selects whichever of `c₁, c₂` decodes to the larger rational. -/
 def ratMaxCode (t : ℕ) : ℕ := selectFn (ratLeCode t) t.unpair.2 t.unpair.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/ratMinCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- `ratMinCode (pair c₁ c₂)` selects whichever of `c₁, c₂` decodes to the smaller rational. -/
 def ratMinCode (t : ℕ) : ℕ := selectFn (ratLeCode t) t.unpair.1 t.unpair.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/zeroCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- A fixed code for the rational `0`. -/
 def zeroCode : ℕ := Nat.pair (Nat.pair 0 0) 0
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeRat_zeroCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 @[simp] theorem decodeRat_zeroCode : decodeRat zeroCode = 0 := by
   rw [decodeRat_eq]; norm_num [zeroCode, qNumP, qNumN, qDen, unpair_pair]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeRat_oneCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 @[simp] theorem decodeRat_oneCode : decodeRat oneCode = 1 := by
   rw [decodeRat_eq]; norm_num [oneCode, qNumP, qNumN, qDen, unpair_pair]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/ratMidCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The midpoint code `(c₁+c₂)/2` of two rational codes, via denominator cross-clearing (as in
@@ -2104,66 +1466,38 @@ def ratMidCode (t : ℕ) : ℕ :=
   Nat.pair (Nat.pair (qNumP c1 * qDen c2 + qNumP c2 * qDen c1)
                       (qNumN c1 * qDen c2 + qNumN c2 * qDen c1))
     (2 * qDen c1 * qDen c2 - 1)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeRat_surjective.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- `decodeRat` is surjective: every rational number is `decodeRat` of some code (namely
 `encodeRat q`). -/
 theorem decodeRat_surjective : Function.Surjective decodeRat :=
   fun q => ⟨encodeRat q, decodeRat_encodeRat q⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/primrec_qDen.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_qDen : Nat.Primrec qDen :=
   Nat.Primrec.succ.comp Nat.Primrec.right
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/primrec_qNumN.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_qNumN : Nat.Primrec qNumN := Nat.Primrec.right.comp Nat.Primrec.left
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/primrec_qNumP.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_qNumP : Nat.Primrec qNumP := Nat.Primrec.left.comp Nat.Primrec.left
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/primrec_ratLeCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_ratLeCode : Nat.Primrec ratLeCode := by
   have hc1 : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
@@ -2178,43 +1512,25 @@ theorem primrec_ratLeCode : Nat.Primrec ratLeCode := by
       (primrec_mul₂ (primrec_qNumN.comp hc1) (primrec_qDen.comp hc2))
   exact (primrec_isZero.comp (primrec_sub₂ hlhs hrhs)).of_eq fun t => by
     simp only [ratLeCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/primrec_ratLtCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_ratLtCode : Nat.Primrec ratLtCode :=
   primrec_sub₂ (Nat.Primrec.const 1)
     (primrec_ratLeCode.comp (Nat.Primrec.right.pair Nat.Primrec.left))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/primrec_ratMaxCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_ratMaxCode : Nat.Primrec ratMaxCode :=
   primrec_selectFn primrec_ratLeCode Nat.Primrec.right Nat.Primrec.left
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/primrec_ratMidCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_ratMidCode : Nat.Primrec ratMidCode := by
   have hc1 : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
@@ -2234,41 +1550,23 @@ theorem primrec_ratMidCode : Nat.Primrec ratMidCode := by
       (Nat.Primrec.const 1)
   exact (Nat.Primrec.pair (Nat.Primrec.pair hnumP hnumN) hden).of_eq fun t => by
     simp only [ratMidCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/primrec_ratMinCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_ratMinCode : Nat.Primrec ratMinCode :=
   primrec_selectFn primrec_ratLeCode Nat.Primrec.left Nat.Primrec.right
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/qDen_pos.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem qDen_pos (c : ℕ) : 0 < qDen c := Nat.succ_pos _
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/qDen_ratMidCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem qDen_ratMidCode (c1 c2 : ℕ) : qDen (ratMidCode (Nat.pair c1 c2)) = qDen c1 * qDen c2 * 2 := by
   have h1 : 1 ≤ 2 * qDen c1 * qDen c2 := by
@@ -2280,16 +1578,10 @@ theorem qDen_ratMidCode (c1 c2 : ℕ) : qDen (ratMidCode (Nat.pair c1 c2)) = qDe
   show (ratMidCode (Nat.pair c1 c2)).unpair.2 + 1 = qDen c1 * qDen c2 * 2
   simp only [ratMidCode, unpair_pair_fst, unpair_pair_snd]
   rw [Nat.sub_add_cancel h1]; ring
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeRat_ratMidCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **Correctness of `ratMidCode`**: it decodes to the arithmetic mean of the two decoded
 rationals. -/
@@ -2310,16 +1602,10 @@ theorem decodeRat_ratMidCode (c1 c2 : ℕ) :
   push_cast
   field_simp
   ring
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeRat_ratMidCodeu27.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **`decodeRat_ratMidCode`, un-paired**: lets callers apply it to an arbitrary code `e`
 (typically itself obtained by decoding a list, e.g. `firstElemCode`) without first having to
@@ -2330,16 +1616,10 @@ theorem decodeRat_ratMidCode' (e : ℕ) :
     decodeRat (ratMidCode e) = (decodeRat e.unpair.1 + decodeRat e.unpair.2) / 2 := by
   have h := decodeRat_ratMidCode e.unpair.1 e.unpair.2
   rwa [Nat.pair_unpair] at h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/ratLeCode_eq_one_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **Correctness of `ratLeCode`**: it is `1` exactly when the decoded rationals compare `≤`. -/
 theorem ratLeCode_eq_one_iff (c1 c2 : ℕ) :
@@ -2351,28 +1631,16 @@ theorem ratLeCode_eq_one_iff (c1 c2 : ℕ) :
     ← Nat.cast_le (α := ℚ)]
   push_cast
   constructor <;> intro h <;> nlinarith [h]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/ratLeCode_le_one.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem ratLeCode_le_one (t : ℕ) : ratLeCode t ≤ 1 := isZero_le_one _
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeRat_ratMaxCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem decodeRat_ratMaxCode (c1 c2 : ℕ) :
     decodeRat (ratMaxCode (Nat.pair c1 c2)) = max (decodeRat c1) (decodeRat c2) := by
@@ -2384,16 +1652,10 @@ theorem decodeRat_ratMaxCode (c1 c2 : ℕ) :
     have hf0 : ratLeCode (Nat.pair c1 c2) = 0 := by
       have := ratLeCode_le_one (Nat.pair c1 c2); omega
     rw [hf0, selectFn_zero, max_eq_left ((not_le.mp h).le)]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/decodeRat_ratMinCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem decodeRat_ratMinCode (c1 c2 : ℕ) :
     decodeRat (ratMinCode (Nat.pair c1 c2)) = min (decodeRat c1) (decodeRat c2) := by
@@ -2405,16 +1667,10 @@ theorem decodeRat_ratMinCode (c1 c2 : ℕ) :
     have hf0 : ratLeCode (Nat.pair c1 c2) = 0 := by
       have := ratLeCode_le_one (Nat.pair c1 c2); omega
     rw [hf0, selectFn_zero, min_eq_right ((not_le.mp h).le)]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/ratLtCode_eq_one_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem ratLtCode_eq_one_iff (c1 c2 : ℕ) :
     ratLtCode (Nat.pair c1 c2) = 1 ↔ decodeRat c1 < decodeRat c2 := by
@@ -2424,28 +1680,16 @@ theorem ratLtCode_eq_one_iff (c1 c2 : ℕ) :
   rw [show (1 : ℕ) - ratLeCode (Nat.pair c2 c1) = 1 ↔ ratLeCode (Nat.pair c2 c1) = 0 from by omega,
     show ratLeCode (Nat.pair c2 c1) = 0 ↔ ¬ ratLeCode (Nat.pair c2 c1) = 1 from by omega,
     ratLeCode_eq_one_iff, not_le]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/ratLtCode_le_one.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem ratLtCode_le_one (t : ℕ) : ratLtCode t ≤ 1 := by unfold ratLtCode; omega
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- RationalPrimrec/ratLtCode_recDecidableu2082.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **`<` on rational codes is recursively decidable.** Packaged as `RecDecidable₂` (rather than the
 raw `{0,1}` characteristic `ratLtCode`) so it composes directly with `Recursive.lean`'s closure
@@ -2454,106 +1698,62 @@ theorem ratLtCode_recDecidable₂ : RecDecidable₂ (fun c1 c2 => decodeRat c1 <
   refine RecDecidable₂.of_paired_zero_one_char primrec_ratLtCode
     (fun t => by have := ratLtCode_le_one t; omega) (fun n m => ?_)
   exact (ratLtCode_eq_one_iff n m).symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- RecursiveCross/consStep2.lean
+end DomainTheory.NeighbourhoodSystems
 namespace Domain.Recursive
-
+section
 /-- `foldCode`'s step for consing the popped element `x` onto the accumulator (ignoring the
 threaded parameter). -/
 def consStep2 (w : ℕ) : ℕ := Nat.pair w.unpair.1 w.unpair.2.unpair.1 + 1
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/appendCode.lean
-namespace Domain.Recursive
-
 /-- `appendCode c1 c2` codes a list with the same **elements** as `decodeList c1 ++ decodeList c2`
 (reversed on the `c1` side, since `foldCode` conses left-to-right; irrelevant for set-level uses). -/
 def appendCode (c1 c2 : ℕ) : ℕ := foldCode consStep2 0 c2 c1
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/crossInnerStep.lean
-namespace Domain.Recursive
-
 /-- `foldCode`'s step for the inner loop: pops `y` from `c2`, applies `bop (pair x y)` (`x` threaded
 as the fixed parameter), conses onto the accumulator. -/
 def crossInnerStep (bop : ℕ → ℕ) (w : ℕ) : ℕ :=
   Nat.pair (bop (Nat.pair w.unpair.2.unpair.2 w.unpair.1)) w.unpair.2.unpair.1 + 1
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/crossInner.lean
-namespace Domain.Recursive
-
 /-- `crossInner bop x c2` codes `[bop (x, y) ∣ y ∈ decodeList c2]` (up to order). -/
 def crossInner (bop : ℕ → ℕ) (x c2 : ℕ) : ℕ := foldCode (crossInnerStep bop) x 0 c2
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/crossOuterStep.lean
-namespace Domain.Recursive
-
 /-- `foldCode`'s outer step: pops `x` from `c1`, appends `crossInner bop x c2` onto the
 accumulator (`c2` threaded as the fixed parameter). -/
 def crossOuterStep (bop : ℕ → ℕ) (w : ℕ) : ℕ :=
   appendCode (crossInner bop w.unpair.1 w.unpair.2.unpair.2) w.unpair.2.unpair.1
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/crossCombine.lean
-namespace Domain.Recursive
-
 /-- **`crossCombine bop c1 c2`** codes `[bop (x, y) ∣ x ∈ decodeList c1, y ∈ decodeList c2]`
 (up to order/duplicates), i.e. the code-level analogue of `L1.flatMap (fun x => L2.map (bop x ·))`.
 This is the workhorse behind `Definition87.lean`'s `combineIntervals` at the code level. -/
 def crossCombine (bop : ℕ → ℕ) (c1 c2 : ℕ) : ℕ := foldCode (crossOuterStep bop) c2 0 c1
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/flatMapStep.lean
-namespace Domain.Recursive
-
 /-- `foldCode`'s step for `flatMapCode`: pops `y` from the folded list, appends `f (pair x y)`
 (`x` threaded as the fixed parameter) onto the accumulator. -/
 def flatMapStep (f : ℕ → ℕ) (w : ℕ) : ℕ :=
   appendCode (f (Nat.pair w.unpair.2.unpair.2 w.unpair.1)) w.unpair.2.unpair.1
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/flatMapCode.lean
-namespace Domain.Recursive
-
 /-- **`flatMapCode f x c`** codes `(decodeList c).flatMap (fun y => decodeList (f (pair x y)))`
 (up to order/duplicates). -/
 def flatMapCode (f : ℕ → ℕ) (x c : ℕ) : ℕ := foldCode (flatMapStep f) x 0 c
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/Basic.lean
-namespace Domain.Recursive
-
-
 theorem consStep2_eq (x acc params : ℕ) :
     consStep2 (Nat.pair x (Nat.pair acc params)) = Nat.pair x acc + 1 := by
   unfold consStep2; simp only [unpair_pair_fst, unpair_pair_snd]
@@ -2664,69 +1864,40 @@ theorem mem_decodeList_flatMapCode_aux (f : ℕ → ℕ) (x : ℕ) :
       · exact Or.inr (Or.inl hz)
       · exact Or.inl ⟨y, hy, hz⟩
       · exact Or.inr (Or.inr hacc)
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/mem_decodeList_crossCombine.lean
-namespace Domain.Recursive
-
-
 theorem mem_decodeList_crossCombine {bop : ℕ → ℕ} (c1 c2 z : ℕ) :
     z ∈ decodeList (crossCombine bop c1 c2) ↔
       ∃ x ∈ decodeList c1, ∃ y ∈ decodeList c2, z = bop (Nat.pair x y) := by
   unfold crossCombine
   rw [foldCode_eq', mem_decodeList_crossCombine_aux bop c2 (decodeList c1) 0 z]
   simp only [decodeList_zero, List.not_mem_nil, or_false]
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/mem_decodeList_flatMapCode.lean
-namespace Domain.Recursive
-
-
 theorem mem_decodeList_flatMapCode {f : ℕ → ℕ} (x c z : ℕ) :
     z ∈ decodeList (flatMapCode f x c) ↔ ∃ y ∈ decodeList c, z ∈ decodeList (f (Nat.pair x y)) := by
   unfold flatMapCode
   rw [foldCode_eq', mem_decodeList_flatMapCode_aux f x (decodeList c) 0 z]
   simp only [decodeList_zero, List.not_mem_nil, or_false]
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/primrec_consStep2.lean
-namespace Domain.Recursive
-
-
 theorem primrec_consStep2 : Nat.Primrec consStep2 := by
   have h1 : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
   have h21 : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
     Nat.Primrec.left.comp Nat.Primrec.right
   exact (Nat.Primrec.succ.comp (h1.pair h21)).of_eq fun _ => rfl
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/primrec_appendCode.lean
-namespace Domain.Recursive
-
-
 theorem primrec_appendCode : Nat.Primrec (fun t => appendCode t.unpair.1 t.unpair.2) :=
   (primrec_foldCode primrec_consStep2 (Nat.Primrec.const 0) Nat.Primrec.right
     Nat.Primrec.left).of_eq fun _ => rfl
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/primrec_crossInnerStep.lean
-namespace Domain.Recursive
-
-
 theorem primrec_crossInnerStep {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
     Nat.Primrec (crossInnerStep bop) := by
   have hy : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
@@ -2735,28 +1906,16 @@ theorem primrec_crossInnerStep {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
   have hx : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.2) :=
     Nat.Primrec.right.comp Nat.Primrec.right
   exact (Nat.Primrec.succ.comp ((hbop.comp (hx.pair hy)).pair hacc)).of_eq fun _ => rfl
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/primrec_crossInner.lean
-namespace Domain.Recursive
-
-
 theorem primrec_crossInner {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
     Nat.Primrec (fun t => crossInner bop t.unpair.1 t.unpair.2) :=
   (primrec_foldCode (primrec_crossInnerStep hbop) Nat.Primrec.left (Nat.Primrec.const 0)
     Nat.Primrec.right).of_eq fun _ => rfl
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/primrec_crossOuterStep.lean
-namespace Domain.Recursive
-
-
 theorem primrec_crossOuterStep {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
     Nat.Primrec (crossOuterStep bop) := by
   have hx : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
@@ -2770,28 +1929,16 @@ theorem primrec_crossOuterStep {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
   exact (primrec_appendCode.comp (hinner.pair hacc)).of_eq fun w => by
     unfold crossOuterStep
     simp only [unpair_pair_fst, unpair_pair_snd]
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/primrec_crossCombine.lean
-namespace Domain.Recursive
-
-
 theorem primrec_crossCombine {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
     Nat.Primrec (fun t => crossCombine bop t.unpair.1 t.unpair.2) :=
   (primrec_foldCode (primrec_crossOuterStep hbop) Nat.Primrec.right (Nat.Primrec.const 0)
     Nat.Primrec.left).of_eq fun _ => rfl
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/primrec_flatMapStep.lean
-namespace Domain.Recursive
-
-
 theorem primrec_flatMapStep {f : ℕ → ℕ} (hf : Nat.Primrec f) : Nat.Primrec (flatMapStep f) := by
   have hy : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
   have hacc : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
@@ -2800,88 +1947,54 @@ theorem primrec_flatMapStep {f : ℕ → ℕ} (hf : Nat.Primrec f) : Nat.Primrec
     Nat.Primrec.right.comp Nat.Primrec.right
   exact (primrec_appendCode.comp ((hf.comp (hx.pair hy)).pair hacc)).of_eq fun w => by
     unfold flatMapStep; simp only [unpair_pair_fst, unpair_pair_snd]
-
-end Domain.Recursive
 end
 
 section
--- RecursiveCross/primrec_flatMapCode.lean
-namespace Domain.Recursive
-
-
 theorem primrec_flatMapCode {f : ℕ → ℕ} (hf : Nat.Primrec f) :
     Nat.Primrec (fun t => flatMapCode f t.unpair.1 t.unpair.2) :=
   (primrec_foldCode (primrec_flatMapStep hf) Nat.Primrec.left (Nat.Primrec.const 0)
     Nat.Primrec.right).of_eq fun _ => rfl
-
-end Domain.Recursive
 end
 
-section
--- IntervalPrimrec/decodeRatPair.lean
+end Domain.Recursive
 namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
 
 /-- Decode a natural as a pair of rationals. -/
 def decodeRatPair (c : ℕ) : ℚ × ℚ := (decodeRat c.unpair.1, decodeRat c.unpair.2)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/encodeRatPair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- Encode a pair of rationals as a single natural. -/
 def encodeRatPair (p : ℚ × ℚ) : ℕ := Nat.pair (encodeRat p.1) (encodeRat p.2)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/decodeRatPair_encodeRatPair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 @[simp] theorem decodeRatPair_encodeRatPair (p : ℚ × ℚ) : decodeRatPair (encodeRatPair p) = p := by
   unfold decodeRatPair encodeRatPair
   simp only [unpair_pair_fst, unpair_pair_snd, decodeRat_encodeRat]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/decodeQPairList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- Decode a natural as a list of rational pairs. -/
 def decodeQPairList (c : ℕ) : List (ℚ × ℚ) := (decodeList c).map decodeRatPair
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/encodeQPairList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- Encode a list of rational pairs as a single natural, via `encodeList`. -/
 def encodeQPairList (L : List (ℚ × ℚ)) : ℕ := encodeList (L.map encodeRatPair)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/decodeQPairList_encodeQPairList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 @[simp] theorem decodeQPairList_encodeQPairList (L : List (ℚ × ℚ)) :
@@ -2889,14 +2002,9 @@ open Domain.Recursive
   unfold decodeQPairList encodeQPairList
   rw [decodeList_encodeList, List.map_map]
   simp only [Function.comp_def, decodeRatPair_encodeRatPair, List.map_id_fun', id]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/diffOneCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- Code-level `diffOneList`, taking `t = pair qc pc` (subtracted interval `q` **first**, matching
@@ -2906,171 +2014,105 @@ def diffOneCode (t : ℕ) : ℕ :=
     (Nat.pair t.unpair.2.unpair.1 (ratMinCode (Nat.pair t.unpair.2.unpair.2 t.unpair.1.unpair.1)))
     (Nat.pair (Nat.pair (ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.2))
       t.unpair.2.unpair.2) 0 + 1) + 1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/diffOneList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **Difference of a single interval-pair by another**, as a `≤ 2`-element list, via the
 unconditional `Ico_diff_Ico`. -/
 def diffOneList (p q : ℚ × ℚ) : List (ℚ × ℚ) := [(p.1, p.2 ⊓ q.1), (p.1 ⊔ q.2, p.2)]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/diffSingleCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- `diffSingleCode accL q` subtracts the single interval-pair coded by `q` from the whole
 QPair-list coded by `accL`. -/
 def diffSingleCode (accL q : ℕ) : ℕ := flatMapCode diffOneCode q accL
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/diffAllStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- `foldCode`'s step for `diffAllCode`'s fold over `L2` (params unused): pops `q`, subtracts it
 from the "remaining pieces" accumulator via `diffSingleCode`. -/
 def diffAllStep (w : ℕ) : ℕ := diffSingleCode w.unpair.2.unpair.1 w.unpair.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/diffAllCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- `diffAllCode pc L2` subtracts the whole QPair-list coded by `L2` from the single interval-pair
 coded by `pc`, folding `diffSingleCode` over `L2` from the seed `[pc]`. -/
 def diffAllCode (pc L2 : ℕ) : ℕ := foldCode diffAllStep 0 (Nat.pair pc 0 + 1) L2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/diffCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- `diffCode c1 c2` subtracts the QPair-list coded by `c2` from the QPair-list coded by `c1`. -/
 def diffCode (c1 c2 : ℕ) : ℕ := flatMapCode (fun t => diffAllCode t.unpair.2 t.unpair.1) c2 c1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/diffSingleList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **Subtract a single interval-pair `q` from a whole presenting list `L`.** -/
 def diffSingleList (L : List (ℚ × ℚ)) (q : ℚ × ℚ) : List (ℚ × ℚ) :=
   L.flatMap (fun p => diffOneList p q)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/diffAllList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **Subtract a whole presenting list `L2` from a single interval-pair `p`**, by folding
 `diffSingleList` over `L2`, starting from `[p]`. -/
 def diffAllList (p : ℚ × ℚ) (L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L2.foldl diffSingleList [p]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/diffLists.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **Subtract `L2` from `L1`**, presenting the set difference `presentedIntervals L1 \\
 presentedIntervals L2`. -/
 def diffLists (L1 L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L1.flatMap (fun p => diffAllList p L2)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/qpCombineBop.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The per-pair-code operation `(pc, qc) ↦ (max, min)` realizing `(p.1 ⊔ q.1, p.2 ⊓ q.2)`. -/
 def qpCombineBop (t : ℕ) : ℕ :=
   Nat.pair (ratMaxCode (Nat.pair t.unpair.1.unpair.1 t.unpair.2.unpair.1))
     (ratMinCode (Nat.pair t.unpair.1.unpair.2 t.unpair.2.unpair.2))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/combineCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- `combineCode` realizes `combineIntervals` on codes: `Nat.Primrec` in both arguments. -/
 def combineCode (c1 c2 : ℕ) : ℕ := crossCombine qpCombineBop c1 c2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/qpNonemptyBop.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The `{0,1}` flag: does the rational-pair code `e` decode to a non-degenerate pair `p.1 < p.2`? -/
 def qpNonemptyBop (e : ℕ) : ℕ := ratLtCode (Nat.pair e.unpair.1 e.unpair.2)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/qpNonemptyChar.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The `{0,1}` flag: does the QPair-list code `c` present a non-empty set? A bounded `∃` over
 `decodeList c` via `Recursive.lean`'s `existsListChar` (the second argument of `existsListChar` is
 an unused parameter, fixed to `0`). -/
 def qpNonemptyChar (c : ℕ) : ℕ := existsListChar (fun t => qpNonemptyBop t.unpair.1) 0 c
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- Two lists with the same **elements** present the same set. -/
 theorem presentedIntervals_congr {L1 L2 : List (ℚ × ℚ)} (h : ∀ p, p ∈ L1 ↔ p ∈ L2) :
@@ -3218,17 +2260,10 @@ theorem presentedIntervals_nonempty_iff (L : List (ℚ × ℚ)) :
     exact ⟨p, hp, lt_of_le_of_lt hx1 hx2⟩
   · rintro ⟨p, hp, hlt⟩
     exact ⟨p.1, mem_presentedIntervals.mpr ⟨p, hp, le_refl _, hlt⟩⟩
-
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/decodeRatPair_qpCombineBop.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem decodeRatPair_qpCombineBop (e1 e2 : ℕ) :
     decodeRatPair (qpCombineBop (Nat.pair e1 e2))
@@ -3236,46 +2271,28 @@ theorem decodeRatPair_qpCombineBop (e1 e2 : ℕ) :
   unfold qpCombineBop decodeRatPair
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [decodeRat_ratMaxCode, decodeRat_ratMinCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/mem_combineIntervals.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem mem_combineIntervals {L1 L2 : List (ℚ × ℚ)} {p : ℚ × ℚ} :
     p ∈ combineIntervals L1 L2 ↔ ∃ p1 ∈ L1, ∃ p2 ∈ L2, p = (p1.1 ⊔ p2.1, p1.2 ⊓ p2.2) := by
   unfold combineIntervals
   rw [List.mem_flatMap]
   simp only [List.mem_map, eq_comm]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/mem_decodeQPairList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem mem_decodeQPairList (c : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList c ↔ ∃ e ∈ decodeList c, p = decodeRatPair e := by
   unfold decodeQPairList; rw [List.mem_map]; simp [eq_comm]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/mem_decodeQPairList_combineCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem mem_decodeQPairList_combineCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (combineCode c1 c2) ↔
@@ -3294,16 +2311,10 @@ theorem mem_decodeQPairList_combineCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
     refine ⟨qpCombineBop (Nat.pair e1 e2),
       (mem_decodeList_crossCombine (bop := qpCombineBop) c1 c2 _).mpr ⟨e1, he1, e2, he2, rfl⟩, ?_⟩
     rw [decodeRatPair_qpCombineBop, he1', he2', hp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/presentedIntervals_decodeQPairList_combineCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **`combineCode` realizes `combineIntervals` at the set level.** -/
 theorem presentedIntervals_decodeQPairList_combineCode (c1 c2 : ℕ) :
@@ -3313,32 +2324,20 @@ theorem presentedIntervals_decodeQPairList_combineCode (c1 c2 : ℕ) :
   apply presentedIntervals_congr
   intro p
   rw [mem_decodeQPairList_combineCode, mem_combineIntervals]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/presentedIntervals_decodeQPairList_subset_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **Subset between `presentedIntervals`-coded sets reduces to non-emptiness of `diffCode`.** -/
 theorem presentedIntervals_decodeQPairList_subset_iff (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList c1) ⊆ presentedIntervals (decodeQPairList c2) ↔
       ¬ (presentedIntervals (decodeQPairList (diffCode c1 c2))).Nonempty := by
   rw [presentedIntervals_decodeQPairList_diffCode, Set.not_nonempty_iff_eq_empty, Set.sdiff_eq_empty]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/presentedIntervals_foldl_diffSingleList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem presentedIntervals_foldl_diffSingleList (L2 : List (ℚ × ℚ)) :
     ∀ acc : List (ℚ × ℚ),
@@ -3349,32 +2348,20 @@ theorem presentedIntervals_foldl_diffSingleList (L2 : List (ℚ × ℚ)) :
     intro acc
     rw [List.foldl_cons, ih (diffSingleList acc a), presentedIntervals_diffSingleList,
       presentedIntervals_cons, Set.sdiff_sdiff]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/presentedIntervals_diffAllList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem presentedIntervals_diffAllList (p : ℚ × ℚ) (L2 : List (ℚ × ℚ)) :
     presentedIntervals (diffAllList p L2) = Set.Ico p.1 p.2 \ presentedIntervals L2 := by
   unfold diffAllList
   rw [presentedIntervals_foldl_diffSingleList, presentedIntervals_cons, presentedIntervals_nil,
     Set.union_empty]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/presentedIntervals_diffLists.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem presentedIntervals_diffLists (L1 L2 : List (ℚ × ℚ)) :
     presentedIntervals (diffLists L1 L2) = presentedIntervals L1 \ presentedIntervals L2 := by
@@ -3384,16 +2371,10 @@ theorem presentedIntervals_diffLists (L1 L2 : List (ℚ × ℚ)) :
     rw [show diffLists (a :: l) L2 = diffAllList a L2 ++ diffLists l L2 from rfl,
       presentedIntervals_append, presentedIntervals_diffAllList, ih, presentedIntervals_cons,
       Set.union_sdiff_distrib]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/primrec_diffOneCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_diffOneCode : Nat.Primrec diffOneCode := by
   have ha : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.right
@@ -3408,31 +2389,19 @@ theorem primrec_diffOneCode : Nat.Primrec diffOneCode := by
     (primrec_ratMaxCode.comp (ha.pair hd)).pair hb
   exact (Nat.Primrec.succ.comp (hleft.pair
     (Nat.Primrec.succ.comp (hright.pair (Nat.Primrec.const 0))))).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/primrec_diffSingleCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_diffSingleCode : Nat.Primrec (fun t : ℕ => diffSingleCode t.unpair.1 t.unpair.2) := by
   unfold diffSingleCode
   exact ((primrec_flatMapCode primrec_diffOneCode).comp (Nat.Primrec.right.pair Nat.Primrec.left)).of_eq
     fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/primrec_diffAllStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_diffAllStep : Nat.Primrec diffAllStep := by
   unfold diffAllStep
@@ -3440,31 +2409,19 @@ theorem primrec_diffAllStep : Nat.Primrec diffAllStep := by
   have hq : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
   exact (primrec_diffSingleCode.comp (hacc.pair hq)).of_eq fun w => by
     simp only [unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/primrec_diffAllCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_diffAllCode : Nat.Primrec (fun t : ℕ => diffAllCode t.unpair.1 t.unpair.2) :=
   (primrec_foldCode primrec_diffAllStep (Nat.Primrec.const 0)
     (Nat.Primrec.succ.comp (Nat.Primrec.left.pair (Nat.Primrec.const 0)))
     Nat.Primrec.right).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/primrec_diffCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_diffCode : Nat.Primrec (fun t : ℕ => diffCode t.unpair.1 t.unpair.2) := by
   unfold diffCode
@@ -3473,16 +2430,10 @@ theorem primrec_diffCode : Nat.Primrec (fun t : ℕ => diffCode t.unpair.1 t.unp
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact ((primrec_flatMapCode hf).comp (Nat.Primrec.right.pair Nat.Primrec.left)).of_eq fun t => by
     simp only [unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/primrec_qpCombineBop.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_qpCombineBop : Nat.Primrec qpCombineBop := by
   have h11 : Nat.Primrec (fun t : ℕ => t.unpair.1.unpair.1) :=
@@ -3495,42 +2446,24 @@ theorem primrec_qpCombineBop : Nat.Primrec qpCombineBop := by
     Nat.Primrec.right.comp Nat.Primrec.right
   exact ((primrec_ratMaxCode.comp (h11.pair h21)).pair
     (primrec_ratMinCode.comp (h12.pair h22))).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/primrec_combineCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_combineCode : Nat.Primrec (fun t => combineCode t.unpair.1 t.unpair.2) :=
   primrec_crossCombine primrec_qpCombineBop
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/primrec_qpNonemptyBop.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_qpNonemptyBop : Nat.Primrec qpNonemptyBop :=
   primrec_ratLtCode.comp (Nat.Primrec.left.pair Nat.Primrec.right)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/primrec_qpNonemptyChar.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_qpNonemptyChar : Nat.Primrec qpNonemptyChar := by
   have hg : Nat.Primrec (fun t : ℕ => qpNonemptyBop t.unpair.1) :=
@@ -3539,30 +2472,18 @@ theorem primrec_qpNonemptyChar : Nat.Primrec qpNonemptyChar := by
     fun c => by
       unfold qpNonemptyChar
       simp only [id, unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/qpNonemptyBop_eq_one_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem qpNonemptyBop_eq_one_iff (e : ℕ) :
     qpNonemptyBop e = 1 ↔ (decodeRatPair e).1 < (decodeRatPair e).2 := by
   unfold qpNonemptyBop decodeRatPair; exact ratLtCode_eq_one_iff e.unpair.1 e.unpair.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/qpNonemptyChar_eq_one_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem qpNonemptyChar_eq_one_iff (c : ℕ) :
     qpNonemptyChar c = 1 ↔ ∃ e ∈ decodeList c, (decodeRatPair e).1 < (decodeRatPair e).2 := by
@@ -3570,16 +2491,10 @@ theorem qpNonemptyChar_eq_one_iff (c : ℕ) :
   rw [existsListChar_eq_one_iff]
   refine exists_congr fun e => and_congr_right fun _ => ?_
   rw [unpair_pair_fst, qpNonemptyBop_eq_one_iff]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/presentedIntervals_decodeQPairList_nonempty_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **`presentedIntervals (decodeQPairList c)` is non-empty iff `qpNonemptyChar c = 1`.** -/
 theorem presentedIntervals_decodeQPairList_nonempty_iff (c : ℕ) :
@@ -3591,28 +2506,16 @@ theorem presentedIntervals_decodeQPairList_nonempty_iff (c : ℕ) :
     exact ⟨e, he, hlt⟩
   · rintro ⟨e, he, hlt⟩
     exact ⟨decodeRatPair e, (mem_decodeQPairList c (decodeRatPair e)).mpr ⟨e, he, rfl⟩, hlt⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/qpNonemptyChar_le_one.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem qpNonemptyChar_le_one (c : ℕ) : qpNonemptyChar c ≤ 1 := existsListChar_le_one _ 0 c
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/recDecidable_presentedIntervals_nonempty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **Non-emptiness of the set presented by a QPair-list code is recursively decidable.** -/
 theorem recDecidable_presentedIntervals_nonempty :
@@ -3620,16 +2523,10 @@ theorem recDecidable_presentedIntervals_nonempty :
   RecDecidable.of_zero_one_char primrec_qpNonemptyChar
     (fun c => by have := qpNonemptyChar_le_one c; omega)
     presentedIntervals_decodeQPairList_nonempty_iff
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/recDecidableu2082_presentedIntervals_subset.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **Subset between `presentedIntervals`-coded sets is recursively decidable.** -/
 theorem recDecidable₂_presentedIntervals_subset :
@@ -3639,16 +2536,10 @@ theorem recDecidable₂_presentedIntervals_subset :
   refine RecDecidable.of_iff (fun t => ?_)
     (recDecidable_presentedIntervals_nonempty.comp primrec_diffCode).not
   exact presentedIntervals_decodeQPairList_subset_iff t.unpair.1 t.unpair.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- IntervalPrimrec/recDecidableu2082_presentedIntervals_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **Equality between `presentedIntervals`-coded sets is recursively decidable**, from
 `recDecidable₂_presentedIntervals_subset` in both directions (`Set.Subset.antisymm_iff`). -/
@@ -3659,16 +2550,10 @@ theorem recDecidable₂_presentedIntervals_eq :
   refine RecDecidable.of_iff (fun t => ?_)
     (recDecidable₂_presentedIntervals_subset.and recDecidable₂_presentedIntervals_subset.swap)
   exact Set.Subset.antisymm_iff
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Retraction.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {E : NeighborhoodSystem α}
 
 /- concordance: source L4769 DEFINITION 8.1 retraction -/
@@ -3676,32 +2561,19 @@ variable {α : Type*} {E : NeighborhoodSystem α}
 `a : E → E` with `a ∘ a = a`. -/
 class Retraction (a : ApproximableMap E E) : Prop where
   out : a.comp a = a
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition81.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {E : NeighborhoodSystem α}
-
 
 /-- The identity mapping `I_E` is (trivially) a retraction. -/
 @[simp] theorem isRetraction_idMap : Retraction (idMap E) :=
   ⟨idMap_comp (idMap E)⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition82/retractionOfSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem
@@ -3711,16 +2583,10 @@ namespace Subsystem
 def retractionOfSubsystem (h : D ◁ E) : ApproximableMap E E := h.inj.comp h.proj
 
 end Subsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition82/retractionOfSubsystem_rel.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem
@@ -3735,16 +2601,10 @@ namespace Subsystem
     exact ⟨Y, ⟨hEX, hDY, hXY⟩, hDY, hEZ, hYZ⟩
 
 end Subsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition82/retractionOfSubsystem_toElementMap_inj.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem
@@ -3760,16 +2620,10 @@ theorem retractionOfSubsystem_toElementMap_inj (h : D ◁ E) (x : D.Element) :
   rw [h1, h2, h.proj_comp_inj, toElementMap_idMap]
 
 end Subsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition82/elementIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem
@@ -3808,16 +2662,10 @@ def elementIso (h : D ◁ E) :
       exact h.inj.toElementMap_mono hle
 
 end Subsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition82/isRetraction_retractionOfSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem
@@ -3832,15 +2680,10 @@ theorem isRetraction_retractionOfSubsystem (h : D ◁ E) :
   rw [comp_assoc, ← comp_assoc h.proj h.inj h.proj, h.proj_comp_inj, idMap_comp]
 
 end Subsystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition82/retraction_of_subsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem
@@ -3855,13 +2698,11 @@ theorem retraction_of_subsystem (h : D ◁ E) :
   ⟨isRetraction_retractionOfSubsystem h, ⟨elementIso h⟩⟩
 
 end Subsystem
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Proposition82.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Subsystem
-
+section
 set_option linter.unusedVariables false
 
 theorem theorem_82.{u_1} : And
@@ -3926,18 +2767,13 @@ theorem theorem_82.{u_1} : And
               y))))
   @DomainTheory.NeighbourhoodSystems.Subsystem.isRetraction_retractionOfSubsystem
   @DomainTheory.NeighbourhoodSystems.Subsystem.retraction_of_subsystem
-
-end DomainTheory.NeighbourhoodSystems.Subsystem
 end
 
-section
--- Definition83/IsFinitary.lean
+end DomainTheory.NeighbourhoodSystems.Subsystem
 namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {D E : NeighborhoodSystem α}
 
 /-- **Definition 8.3, second clause (Scott 1981, PRG-19).** A retraction `a : E → E` is *finitary*
@@ -3946,18 +2782,11 @@ isomorphic to (the element poset of) some neighbourhood system. -/
 def IsFinitary (a : ApproximableMap E E) : Prop :=
   ∃ (β : Type u) (F : NeighborhoodSystem β),
     Nonempty ({y : E.Element // a.toElementMap y = y} ≃o F.Element)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition83/IsProjection.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {D E : NeighborhoodSystem α}
 
 /- concordance: source L4801 DEFINITION 8.3 projections -/
@@ -3966,37 +2795,22 @@ variable {α : Type u} {D E : NeighborhoodSystem α}
 definition, matching Scott's usage where "projection" is applied to a retraction already in
 hand; the conjunction is spelled out where needed, e.g. `FinitaryProjection`.) -/
 def IsProjection (a : ApproximableMap E E) : Prop := Retraction a ∧ a ≤ idMap E
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition83/FinitaryProjection.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {D E : NeighborhoodSystem α}
 
 /-- A **finitary projection**: both clauses of Definition 8.3 together with `Retraction`. -/
 class FinitaryProjection (a : ApproximableMap E E) : Prop where
   out : IsProjection a ∧ IsFinitary a
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition83/isFinitary_retractionOfSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {D E : NeighborhoodSystem α}
-
 
 namespace Subsystem
 
@@ -4009,19 +2823,12 @@ theorem isFinitary_retractionOfSubsystem (h : D ◁ E) :
   ⟨α, D, ⟨(elementIso h).symm⟩⟩
 
 end Subsystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition83/retractionOfSubsystem_le_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {D E : NeighborhoodSystem α}
-
 
 namespace Subsystem
 
@@ -4036,19 +2843,12 @@ theorem retractionOfSubsystem_le_idMap (h : D ◁ E) : retractionOfSubsystem h �
   exact ⟨hEX, hEZ, hXY.trans hYZ⟩
 
 end Subsystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition83/isProjection_retractionOfSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {D E : NeighborhoodSystem α}
-
 
 namespace Subsystem
 
@@ -4060,19 +2860,12 @@ theorem isProjection_retractionOfSubsystem (h : D ◁ E) :
   ⟨isRetraction_retractionOfSubsystem h, retractionOfSubsystem_le_idMap h⟩
 
 end Subsystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition83/isFinitaryProjection_retractionOfSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {D E : NeighborhoodSystem α}
-
 
 namespace Subsystem
 
@@ -4084,13 +2877,9 @@ theorem isFinitaryProjection_retractionOfSubsystem (h : D ◁ E) :
   ⟨⟨isProjection_retractionOfSubsystem h, isFinitary_retractionOfSubsystem h⟩⟩
 
 end Subsystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/fin2_zero_ne_zero_one.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 theorem fin2_zero_ne_zero_one : ({0} : Set (Fin 2)) ≠ ({0, 1} : Set (Fin 2)) := by
@@ -4098,26 +2887,16 @@ theorem fin2_zero_ne_zero_one : ({0} : Set (Fin 2)) ≠ ({0, 1} : Set (Fin 2)) :
   have h1 : (1 : Fin 2) ∈ ({0, 1} : Set (Fin 2)) := by simp
   rw [← h] at h1
   simp at h1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/fin2_zero_subset_zero_one.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 theorem fin2_zero_subset_zero_one : ({0} : Set (Fin 2)) ⊆ ({0, 1} : Set (Fin 2)) := by
   intro x hx; simp only [Set.mem_singleton_iff] at hx; subst hx; simp
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/O.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 /- concordance: source L4807 EXAMPLES 8.4 check, fade, and smash -/
@@ -4138,75 +2917,44 @@ def O : NeighborhoodSystem (Fin 2) where
     rintro X (rfl | rfl)
     · exact fin2_zero_subset_zero_one
     · exact subset_rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/O_master_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 theorem O_master_eq : O.master = ({0, 1} : Set (Fin 2)) := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/O_mem_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 @[simp] theorem O_mem_iff {X : Set (Fin 2)} :
     O.mem X ↔ X = ({0} : Set (Fin 2)) ∨ X = ({0, 1} : Set (Fin 2)) := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/O_mem_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 theorem O_mem_zero : O.mem ({0} : Set (Fin 2)) := Or.inl rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/Otop.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 /-- `O`'s top element `⊤ = ↑{0}` (the more informative of the two elements; `O.bot = ↑{0,1}` is the
 generic `NeighborhoodSystem.bot`). -/
 def Otop : O.Element := O.principal O_mem_zero
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/mem_Otop.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 @[simp] theorem mem_Otop {Y : Set (Fin 2)} : Otop.mem Y ↔ O.mem Y ∧ ({0} : Set (Fin 2)) ⊆ Y :=
   Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/check.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-- **Example 8.4's `check` combinator.** `X check Y ↔ Y = {0,1} ∨ X ≠ Δ_D`. -/
@@ -4244,32 +2992,20 @@ def check : ApproximableMap D O where
       intro hX'eq
       apply hXne
       exact Set.Subset.antisymm (D.sub_master hX) (hX'eq ▸ hXX')
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/check_rel.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 @[simp] theorem check_rel {X : Set α} {Y : Set (Fin 2)} :
     (check : ApproximableMap D O).rel X Y ↔
       D.mem X ∧ O.mem Y ∧ (Y = ({0, 1} : Set (Fin 2)) ∨ X ≠ D.master) :=
   Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/exists_mem_ne_master_of_ne_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-- A non-bottom element of `D` always has *some* member neighbourhood other than the master.
@@ -4283,16 +3019,10 @@ theorem exists_mem_ne_master_of_ne_bot {y : D.Element} (hy : y ≠ D.bot) :
   intro Z
   rw [mem_bot]
   exact ⟨fun hZ => hcon Z hZ, fun hZ => hZ ▸ y.master_mem⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/fade₂.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-- **Example 8.4's `fade` combinator, as a two-variable map.** `X, Y fade Z ↔ Z = Δ_D ∨ (X = {0}
@@ -4340,49 +3070,29 @@ def fade₂ : ApproximableMap₂ O D D where
           simp at h2
       right
       exact ⟨hX'eq, hYY'.trans (hYZ.trans hZZ')⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/fade.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-- **Example 8.4's `fade` combinator**, packaged as a genuine `ApproximableMap (prod O D) D`
 via the Theorem 3.5 bridge (`ofMap₂`). -/
 def fade : ApproximableMap (prod O D) D := ofMap₂ fade₂
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/a.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 /-- **Example 8.4(a)'s retraction** `a(x) = fade(check(x), u)`. -/
 def a : ApproximableMap D D := fade.comp (paired check (constMap D u))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/fixOfO.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 /-- The `D`-element corresponding to `t : O.Element` under `a`'s formula: `Z ↦ Z = Δ_D ∨ (t ∋ {0}
@@ -4418,35 +3128,21 @@ def fixOfO (t : O.Element) : D.Element where
     rcases hZ1 with rfl | ⟨ht, huZ⟩
     · left; exact Set.Subset.antisymm (D.sub_master hZ'D) hZZ'
     · right; exact ⟨ht, u.up_mem huZ hZ'D hZZ'⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/mem_fixOfO.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 @[simp] theorem mem_fixOfO {t : O.Element} {Z : Set α} :
     (fixOfO u t).mem Z ↔ D.mem Z ∧ (Z = D.master ∨ (t.mem ({0} : Set (Fin 2)) ∧ u.mem Z)) :=
   Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/O_le_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 theorem O_le_iff {t t' : O.Element} :
@@ -4457,18 +3153,11 @@ theorem O_le_iff {t t' : O.Element} :
     rcases O_mem_iff.mp (t.sub hY) with rfl | rfl
     · exact h hY
     · exact t'.master_mem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/fixOfO_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 theorem fixOfO_mono {t t' : O.Element} (h : t ≤ t') : fixOfO u t ≤ fixOfO u t' := by
@@ -4477,18 +3166,11 @@ theorem fixOfO_mono {t t' : O.Element} (h : t ≤ t') : fixOfO u t ≤ fixOfO u 
   obtain ⟨hZD, hZeq | ⟨ht0, huZ⟩⟩ := hZ
   · exact ⟨hZD, Or.inl hZeq⟩
   · exact ⟨hZD, Or.inr ⟨O_le_iff.mp h ht0, huZ⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/fixOfO_ne_bot_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 theorem fixOfO_ne_bot_iff (hu : u ≠ D.bot) {t : O.Element} :
@@ -4511,16 +3193,10 @@ theorem fixOfO_ne_bot_iff (hu : u ≠ D.bot) {t : O.Element} :
     have : (fixOfO u t).mem Z := ⟨u.sub huZ, Or.inr ⟨ht0, huZ⟩⟩
     rw [hbot, mem_bot] at this
     exact hZne this
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/mem_toElementMap_check.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-- The closed form of `check`'s elementwise action: `check(x) ∋ Y ↔ Y ∈ O ∧ (Y = {0,1} ∨ x ≠ ⊥)`.
@@ -4541,18 +3217,11 @@ theorem mem_toElementMap_check {x : D.Element} {Y : Set (Fin 2)} :
     · exact ⟨D.master, x.master_mem, D.master_mem, hYO, Or.inl hYeq⟩
     · obtain ⟨X, hxX, hXne⟩ := exists_mem_ne_master_of_ne_bot hxne
       exact ⟨X, hxX, x.sub hxX, hYO, Or.inr hXne⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/check_toElementMap_fixOfO.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 theorem check_toElementMap_fixOfO (hu : u ≠ D.bot) (t : O.Element) :
@@ -4572,16 +3241,10 @@ theorem check_toElementMap_fixOfO (hu : u ≠ D.bot) (t : O.Element) :
     rcases O_mem_iff.mp hYO with rfl | rfl
     · exact Or.inr htY
     · exact Or.inl rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/mem_toElementMap₂_fade.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-- The closed form of `fade`'s elementwise action on a pair `⟨t, y⟩`: `fade(t,y) ∋ Z ↔ Z = Δ_D ∨
@@ -4600,16 +3263,10 @@ theorem mem_toElementMap₂_fade (t : O.Element) (y : D.Element) {Z : Set α} :
     · exact ⟨O.master, D.master, t.master_mem, y.master_mem, O.master_mem, D.master_mem, hZD,
         Or.inl hZeq⟩
     · exact ⟨({0} : Set (Fin 2)), Z, ht0, hyZ, O_mem_zero, hZD, hZD, Or.inr ⟨rfl, subset_rfl⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/toElementMap_ofMap₂_pair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 /-- The two-variable elementwise bridge for a general `ApproximableMap₂`, specialized to a pair. -/
@@ -4620,18 +3277,11 @@ theorem toElementMap_ofMap₂_pair {β γ δ : Type*} {V₀ : NeighborhoodSystem
   have h := toElementMap₂_toMap₂ (ofMap₂ f₂) p q
   rw [toMap₂_ofMap₂] at h
   exact h.symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/mem_toElementMap_a.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 theorem mem_toElementMap_a {x : D.Element} {Z : Set α} :
@@ -4650,18 +3300,11 @@ theorem mem_toElementMap_a {x : D.Element} {Z : Set α} :
   · rintro ⟨hZD, hZeq | ⟨hxne, huZ⟩⟩
     · exact ⟨hZD, Or.inl hZeq⟩
     · exact ⟨hZD, Or.inr ⟨⟨O_mem_zero, Or.inr hxne⟩, huZ⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/fixOfO_check_toElementMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 /-- `fixOfO` and `check.toElementMap` intertwine `a` and the identity on `D`: applying `fixOfO`
@@ -4679,18 +3322,11 @@ theorem fixOfO_check_toElementMap (x : D.Element) :
       · exact h
     · intro h; exact ⟨O_mem_zero, Or.inr h⟩
   rw [hcheck]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/toElementMap_a_fixOfO.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 theorem toElementMap_a_fixOfO (hu : u ≠ D.bot) (t : O.Element) :
@@ -4698,18 +3334,11 @@ theorem toElementMap_a_fixOfO (hu : u ≠ D.bot) (t : O.Element) :
   apply Element.ext
   intro Z
   rw [mem_toElementMap_a, mem_fixOfO, fixOfO_ne_bot_iff u hu]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/fixIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 /-- **Example 8.4(a) (Scott 1981, PRG-19), packaged.** The range (fixed-point set) of `a` is
@@ -4730,16 +3359,10 @@ def fixIso (hu : u ≠ D.bot) : O.Element ≃o {y : D.Element // (a u).toElement
       have := toElementMap_mono check h
       rwa [check_toElementMap_fixOfO u hu, check_toElementMap_fixOfO u hu] at this
     · exact fixOfO_mono u
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/Otop_ne_Obot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 
 theorem Otop_ne_Obot : Otop ≠ O.bot := by
   intro h
@@ -4747,22 +3370,12 @@ theorem Otop_ne_Obot : Otop ≠ O.bot := by
   rw [h, mem_bot, O_master_eq] at h1
   have h2 : (1 : Fin 2) ∈ ({0} : Set (Fin 2)) := by rw [h1]; simp
   simp at h2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/a_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
-
 variable (u : D.Element) (hu : u ≠ D.bot)
-
 
 theorem a_bot : (a u).toElementMap D.bot = D.bot := by
   apply Element.ext
@@ -4770,22 +3383,12 @@ theorem a_bot : (a u).toElementMap D.bot = D.bot := by
   rw [mem_toElementMap_a, mem_bot]
   exact ⟨fun ⟨_, h⟩ => h.resolve_right (fun h' => h'.1 rfl) |>.symm ▸ rfl,
     fun h => ⟨h ▸ D.master_mem, Or.inl h⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/a_of_ne_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
-
 variable (u : D.Element) (hu : u ≠ D.bot)
-
 
 theorem a_of_ne_bot {x : D.Element} (hx : x ≠ D.bot) : (a u).toElementMap x = u := by
   apply Element.ext
@@ -4797,22 +3400,12 @@ theorem a_of_ne_bot {x : D.Element} (hx : x ≠ D.bot) : (a u).toElementMap x = 
     · exact huZ
   · intro huZ
     exact ⟨u.sub huZ, Or.inr ⟨hx, huZ⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/isRetraction_a.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
-
 variable (u : D.Element) (hu : u ≠ D.bot)
-
 
 /-- **Example 8.4(a) (Scott 1981, PRG-19).** `a` is a retraction. -/
 theorem isRetraction_a (hu : u ≠ D.bot) : Retraction (a u) := by
@@ -4823,37 +3416,22 @@ theorem isRetraction_a (hu : u ≠ D.bot) : Retraction (a u) := by
   by_cases hx : x = D.bot
   · subst hx; rw [a_bot, a_bot]
   · rw [a_of_ne_bot u hx, a_of_ne_bot u hu]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84/example84a.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
-
 variable (u : D.Element) (hu : u ≠ D.bot)
-
 
 /-- **Example 8.4(a) (Scott 1981, PRG-19), final statement.** If `D` is not trivial (`u ≠ ⊥`),
 `a(x) = fade(check(x), u)` is a retraction on `D` whose range is isomorphic to `O = {{0},{0,1}}`. -/
 theorem example84a (hu : u ≠ D.bot) :
     Retraction (a u) ∧ Nonempty (O.Element ≃o {y : D.Element // (a u).toElementMap y = y}) :=
   ⟨isRetraction_a u hu, ⟨fixIso u hu⟩⟩
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/check_toElementMap_mem_zero_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- `check(x) ∋ {0} ↔ x ≠ ⊥`: the clean, non-set-theoretic form of `mem_toElementMap_check`. -/
@@ -4865,16 +3443,10 @@ theorem check_toElementMap_mem_zero_iff {x : D.Element} :
     · exact absurd h fin2_zero_ne_zero_one
     · exact h
   · intro h; exact ⟨O_mem_zero, Or.inr h⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/mem_toElementMap_fade.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- The closed form of `fade`'s elementwise action, generalized (via `mem_toElementMap₂_fade`) from
@@ -4885,16 +3457,10 @@ theorem mem_toElementMap_fade {γ : Type*} {G : NeighborhoodSystem γ} (t : O.El
       G.mem Z ∧ (Z = G.master ∨ (t.mem ({0} : Set (Fin 2)) ∧ w.mem Z)) := by
   rw [show (fade (D := G)) = ofMap₂ (fade₂ (D := G)) from rfl, toElementMap_ofMap₂_pair,
     mem_toElementMap₂_fade]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/pair_bot_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
@@ -4915,16 +3481,10 @@ theorem pair_bot_bot : pair (D.bot) (E.bot) = (prod D E).bot := by
     · rw [hW, prod_master]
 
 end Smash
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/prod_bot_fst.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
@@ -4932,16 +3492,10 @@ section Smash
 @[simp] theorem prod_bot_fst : ((prod D E).bot).fst = D.bot := by rw [← pair_bot_bot, fst_pair]
 
 end Smash
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/prod_bot_snd.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
@@ -4949,16 +3503,10 @@ section Smash
 @[simp] theorem prod_bot_snd : ((prod D E).bot).snd = E.bot := by rw [← pair_bot_bot, snd_pair]
 
 end Smash
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/smashFadeInner.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
@@ -4971,16 +3519,10 @@ def smashFadeInner : ApproximableMap (prod D E) (prod D E) :=
     (paired ((check (D := E)).comp (proj₁ D E)) (idMap (prod D E)))
 
 end Smash
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/smashRetraction.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Smash
@@ -4992,16 +3534,10 @@ def smashRetraction : ApproximableMap (prod D E) (prod D E) :=
     (paired ((check (D := D)).comp (proj₀ D E)) (smashFadeInner (D := D) (E := E)))
 
 end Smash
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/strictEvalFade.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
@@ -5012,16 +3548,10 @@ def strictEvalFade : ApproximableMap (prod (funSpace D E) D) E :=
     (paired ((check (D := D)).comp (proj₁ (funSpace D E) D)) (evalMap D E))
 
 end Strict
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/strictRetraction.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
@@ -5031,16 +3561,10 @@ Theorem 3.12's `curry`. -/
 def strictRetraction : ApproximableMap (funSpace D E) (funSpace D E) := curry strictEvalFade
 
 end Strict
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/toApproxMap_strictRetraction_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
@@ -5060,16 +3584,10 @@ theorem toApproxMap_strictRetraction_mem {φ : (funSpace D E).Element} {y : D.El
     evalMap_apply, mem_toElementMap_fade, check_toElementMap_mem_zero_iff]
 
 end Strict
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/strictRetraction_apply_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
@@ -5087,16 +3605,10 @@ theorem strictRetraction_apply_bot (φ : (funSpace D E).Element) :
     exact ⟨E.master_mem, Or.inl rfl⟩
 
 end Strict
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/isStrict_toApproxMap_of_fixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
@@ -5109,16 +3621,10 @@ theorem isStrict_toApproxMap_of_fixed {φ : (funSpace D E).Element}
   rwa [hφ] at h
 
 end Strict
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/strictRetraction_apply_of_ne_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
@@ -5138,16 +3644,10 @@ theorem strictRetraction_apply_of_ne_bot {y : D.Element} (hy : y ≠ D.bot)
     exact ⟨((toApproxMap φ).toElementMap y).sub hZ, Or.inr ⟨hy, hZ⟩⟩
 
 end Strict
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/toApproxMap_toFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
@@ -5156,16 +3656,10 @@ theorem toApproxMap_toFilter (f : ApproximableMap D E) : toApproxMap (toFilter f
   (funSpaceEquiv D E).right_inv f
 
 end Strict
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/toFilter_toApproxMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
@@ -5176,16 +3670,10 @@ theorem toFilter_toApproxMap (φ : (funSpace D E).Element) : toFilter (toApproxM
   (funSpaceEquiv D E).left_inv φ
 
 end Strict
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/strictRetraction_fixed_of_isStrict.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
@@ -5202,16 +3690,10 @@ theorem strictRetraction_fixed_of_isStrict {f : ApproximableMap D E} (hf : Exerc
   rw [← toFilter_toApproxMap (strictRetraction.toElementMap (toFilter f)), key]
 
 end Strict
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/strictRetractionFixIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 section Strict
@@ -5232,18 +3714,11 @@ def strictRetractionFixIso :
     exact (funSpaceEquiv D E).map_rel_iff
 
 end Strict
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/exists_smash_witness.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5279,17 +3754,11 @@ theorem exists_smash_witness {z : (prod D E).Element} (hx : z.fst ≠ D.bot) (hy
     exact prodNbhd_subset_iff.mpr ⟨Set.inter_subset_right, Set.inter_subset_right⟩
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/smashFadeInner_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5303,17 +3772,11 @@ theorem smashFadeInner_mem {z : (prod D E).Element} {Z : Set (α ⊕ β)} :
     toElementMap_idMap, mem_toElementMap_fade, check_toElementMap_mem_zero_iff]
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/smashRetraction_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5328,17 +3791,11 @@ theorem smashRetraction_mem {z : (prod D E).Element} {Z : Set (α ⊕ β)} :
     mem_toElementMap_fade, check_toElementMap_mem_zero_iff]
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/smashRetraction_mem_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5360,17 +3817,11 @@ theorem smashRetraction_mem_iff {z : (prod D E).Element} {Z : Set (α ⊕ β)} :
     · exact ⟨hPZ, Or.inr ⟨hx, hPZ, Or.inr ⟨hy, hzZ⟩⟩⟩
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/smashRetraction_le_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5386,17 +3837,11 @@ theorem smashRetraction_le_idMap : smashRetraction (D := D) (E := E) ≤ idMap (
   · exact hzZ
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/smashRetraction_of_eq_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5414,17 +3859,11 @@ theorem smashRetraction_of_eq_bot {z : (prod D E).Element} (hz : z.fst = D.bot �
     exact ⟨(prod D E).master_mem, Or.inl rfl⟩
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/smashRetraction_of_ne_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5442,17 +3881,11 @@ theorem smashRetraction_of_ne_bot {z : (prod D E).Element} (hx : z.fst ≠ D.bot
     exact ⟨z.sub hzZ, Or.inr ⟨hx, hy, hzZ⟩⟩
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/isRetraction_smashRetraction.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5471,17 +3904,11 @@ theorem isRetraction_smashRetraction : Retraction (smashRetraction (D := D) (E :
     · rw [smashRetraction_of_ne_bot hx hy, smashRetraction_of_ne_bot hx hy]
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/smash_subsystem_prod.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5518,17 +3945,11 @@ theorem smash_subsystem_prod : Exercise510.smash D E ◁ prod D E where
           Exercise510.inter_ne_master_right hY hYne, rfl⟩
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/mem_toElementMap_retractionOfSubsystem_smash.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5551,17 +3972,11 @@ theorem mem_toElementMap_retractionOfSubsystem_smash {z : (prod D E).Element}
       ⟨z.sub hzY, hPZ, Y, hSY, subset_rfl, hYZ⟩⟩
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/smashRetraction_eq_retractionOfSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5594,17 +4009,11 @@ theorem smashRetraction_eq_retractionOfSubsystem :
       · intro hybot; rw [hybot, mem_bot] at hzsYB; exact hYBne hzsYB
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/example84b_smash.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Smash
 
@@ -5620,17 +4029,11 @@ theorem example84b_smash :
     ⟨Subsystem.elementIso smash_subsystem_prod⟩⟩
 
 end Smash
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/strictRetraction_le_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Strict
 
@@ -5652,17 +4055,11 @@ theorem strictRetraction_le_idMap : strictRetraction (D := D) (E := E) ≤ idMap
   exact (funSpaceEquiv D E).map_rel_iff.mp hmap
 
 end Strict
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/toApproxMap_injective.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Strict
 
@@ -5672,17 +4069,11 @@ theorem toApproxMap_injective {a b : (funSpace D E).Element} (h : toApproxMap a 
   rw [← toFilter_toApproxMap a, ← toFilter_toApproxMap b, h]
 
 end Strict
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/isRetraction_strictRetraction.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Strict
 
@@ -5700,17 +4091,11 @@ theorem isRetraction_strictRetraction : Retraction (strictRetraction (D := D) (E
   · rw [strictRetraction_apply_of_ne_bot hy, strictRetraction_apply_of_ne_bot hy]
 
 end Strict
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Example84b/example84b_strict.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 section Strict
 
@@ -5725,33 +4110,20 @@ theorem example84b_strict :
     ⟨strictRetractionFixIso.trans (Exercise510.strictFunEquiv D E).symm |>.symm⟩⟩
 
 end Strict
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/FixSet.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- The fixed-point set of `a`, as a bare type — matching `IsFinitary`'s witness type. -/
 abbrev FixSet (a : ApproximableMap E E) := {y : E.Element // a.toElementMap y = y}
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/fixedNbhd.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **The candidate subdomain of Theorem 8.5's proof, `D = {X ∈ E ∣ X a X}`.** Built for *any*
@@ -5772,34 +4144,20 @@ def fixedNbhd (a : ApproximableMap E E) : NeighborhoodSystem α where
       a.mono hYa Set.inter_subset_right subset_rfl hXYE hYE
     exact ⟨hXYE, a.inter_right h1 h2⟩
   sub_master := fun h => E.sub_master h.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/fixedNbhd_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 @[simp] theorem fixedNbhd_mem {a : ApproximableMap E E} {X : Set α} :
     (fixedNbhd a).mem X ↔ E.mem X ∧ a.rel X X := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/BasicInst8.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section Algebraic
@@ -5810,18 +4168,11 @@ instance instNonemptyMemSubtype (x : V.Element) : Nonempty {X : Set γ // x.mem 
   ⟨⟨V.master, x.master_mem⟩⟩
 
 end Algebraic
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/IsCompactElt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section Algebraic
@@ -5838,18 +4189,11 @@ def IsCompactElt (x : V.Element) : Prop :=
     x ≤ iSupDirected d hdir → ∃ i, x ≤ d i
 
 end Algebraic
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/sectionMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section HardDirection
@@ -5866,20 +4210,12 @@ def sectionMap : ApproximableMap F E :=
     e.symm.monotone ((F.principal_le_iff hX hX').mpr hXX'))
 
 end HardDirection
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 section Algebraic
 
@@ -5997,19 +4333,12 @@ theorem toElementMap_sectionMap (w' : F.Element) :
     have := e.symm.monotone key
     rwa [e.symm_apply_apply] at this
 end HardDirection
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/e_apply_iSupDirected_fixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 section HardDirection
 
@@ -6047,19 +4376,12 @@ theorem e_apply_iSupDirected_fixed {I : Type u} [Nonempty I] (d : I → E.Elemen
     exact e.monotone (le_iSupDirected d hdir i)
 
 end HardDirection
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/eq_principal_of_isCompactElt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 section Algebraic
 
@@ -6077,19 +4399,12 @@ theorem eq_principal_of_isCompactElt {x : V.Element} (hx : IsCompactElt x) :
   exact ⟨i0.1, x.sub i0.2, le_antisymm hi0 (principal_le_of_mem i0.2)⟩
 
 end Algebraic
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/fixedNbhd_subsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **`fixedNbhd a ◁ E`, unconditionally.** The consistency clause is the same monotonicity +
 intersectivity calculation as `fixedNbhd`'s own `inter_mem`, just without needing the extra
@@ -6102,20 +4417,12 @@ theorem fixedNbhd_subsystem (a : ApproximableMap E E) : fixedNbhd a ◁ E where
     have h1 : a.rel (X ∩ Y) X := a.mono hXa Set.inter_subset_left subset_rfl hEXY hXE
     have h2 : a.rel (X ∩ Y) Y := a.mono hYa Set.inter_subset_right subset_rfl hEXY hYE
     exact ⟨hEXY, a.inter_right h1 h2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/mem_of_exists_rel_self.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **The "easy" (`⟸`) half of formula (ii), isolated.** Valid for **any** approximable map
 `a : E → E` with **no hypothesis on `a` at all** — not even that `a` satisfies the rest of formula
@@ -6132,20 +4439,12 @@ theorem mem_of_exists_rel_self {a : ApproximableMap E E} (x : E.Element) {Y : Se
   have hle : E.principal hX ≤ x := principal_le_of_mem hXx
   have hXmem : (a.toElementMap x).mem X := (a.toElementMap_mono hle) X hmem
   exact (a.toElementMap x).up_mem hXmem hYE hXY
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/isFinitaryProjection_of_formula.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **Theorem 8.5, `(ii) ⟹ (i)` (Scott 1981, PRG-19).** If `a` satisfies Scott's step-closure
 formula `a(x) = {Y ∈ E ∣ ∃X∈x, X⊆Y ∧ XaX}` for every `x ∈ |E|`, then `a` is a finitary projection.
@@ -6174,20 +4473,12 @@ theorem isFinitaryProjection_of_formula (a : ApproximableMap E E)
           hYZ hYa)
   rw [heq]
   exact Subsystem.isFinitaryProjection_retractionOfSubsystem (fixedNbhd_subsystem a)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/principal_compact.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 section Algebraic
 
@@ -6203,19 +4494,12 @@ theorem principal_compact {X : Set γ} (hX : V.mem X) {I : Type*} [Nonempty I]
   exact ⟨i, fun _ ⟨hW, hXW⟩ => (d i).up_mem hi hW hXW⟩
 
 end Algebraic
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/principal_isCompactElt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 section Algebraic
 
@@ -6226,19 +4510,12 @@ theorem principal_isCompactElt {X : Set γ} (hX : V.mem X) : IsCompactElt (V.pri
   fun d hdir h => principal_compact hX d hdir h
 
 end Algebraic
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/toElementMap_idem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 section HardDirection
 
@@ -6250,19 +4527,12 @@ theorem toElementMap_idem {a : ApproximableMap E E} (ha : Retraction a) (z : E.E
   rw [← toElementMap_comp a a z, ha.out]
 
 end HardDirection
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/exists_principal_eq_of_isRetraction_le_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 section HardDirection
 
@@ -6316,19 +4586,12 @@ theorem exists_principal_eq_of_isRetraction_le_idMap (ha_ret : Retraction a)
   exact ⟨i0, hfinal.trans hd2le⟩
 
 end HardDirection
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/formula_of_isFinitaryProjection.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 section HardDirection
 
@@ -6388,19 +4651,12 @@ theorem formula_of_isFinitaryProjection {a : ApproximableMap E E} (h : FinitaryP
     exact mem_of_exists_rel_self x hYE hXx hXY hXaX
 
 end HardDirection
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85/finitaryProjection_iff_formula.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /- concordance: source L4854 THEOREM 8.5 finitary projection test -/
 /-- **Theorem 8.5 (Scott 1981, PRG-19), in full.** `a : E → E` is a finitary projection iff it
@@ -6409,14 +4665,9 @@ theorem finitaryProjection_iff_formula (a : ApproximableMap E E) :
     FinitaryProjection a ↔ ∀ (x : E.Element) {Y : Set α}, (a.toElementMap x).mem Y ↔
       E.mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ a.rel X X :=
   ⟨fun h => formula_of_isFinitaryProjection h, fun hii => isFinitaryProjection_of_formula a hii⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem85.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem theorem_85.{u} : And
@@ -6523,6 +4774,7 @@ theorem theorem_85.{u} : And
     @DomainTheory.NeighbourhoodSystems.formula_of_isFinitaryProjection
     @DomainTheory.NeighbourhoodSystems.finitaryProjection_iff_formula)
   @DomainTheory.NeighbourhoodSystems.isFinitaryProjection_of_formula
+end
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -6556,34 +4808,19 @@ end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/R_mem_iff.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
 open NeighborhoodSystem ApproximableMap
 
+section
 @[simp] theorem R_mem_iff {X : Set ℚ} :
     R.mem X ↔ ∃ r : ℚ, 0 < r ∧ r ≤ 1 ∧ X = Set.Ico (0 : ℚ) r := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/R_master.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 @[simp] theorem R_master : R.master = Set.Ico (0 : ℚ) 1 := rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/Ico0_inj.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- The parametrization `r ↦ [0,r)` is injective on positive `r`: if `r < s` then `r` itself
 witnesses the difference (`r ∈ [0,s)` but `r ∉ [0,r)`). -/
 theorem Ico0_inj {r s : ℚ} (hr : 0 < r) (hs : 0 < s)
@@ -6596,30 +4833,16 @@ theorem Ico0_inj {r s : ℚ} (hr : 0 < r) (hs : 0 < s)
   · have hmem : s ∈ Set.Ico (0 : ℚ) r := ⟨hs.le, hgt⟩
     rw [h] at hmem
     exact absurd hmem.2 (lt_irrefl s)
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/Ico0_inter.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- Two `[0,·)`-intervals intersect to a third, with the endpoint `min r s`. -/
 theorem Ico0_inter (r s : ℚ) :
     Set.Ico (0 : ℚ) r ∩ Set.Ico (0 : ℚ) s = Set.Ico (0 : ℚ) (min r s) := by
   rw [Set.Ico_inter_Ico, sup_idem]
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/Ico0_le_of_subset.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- If `[0,p) ⊆ [0,q)` and `p > 0`, then `p ≤ q`. (The converse direction of nestedness; note `q > 0`
 is *derived*, from `0 ∈ [0,p) ⊆ [0,q)`, not assumed.) -/
 theorem Ico0_le_of_subset {p q : ℚ} (hp : 0 < p)
@@ -6628,30 +4851,16 @@ theorem Ico0_le_of_subset {p q : ℚ} (hp : 0 < p)
   by_contra hlt
   rw [not_le] at hlt
   exact absurd (hsub ⟨hq.le, hlt⟩).2 (lt_irrefl q)
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/aRel.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- Scott's relation: `[0,r) a [0,s)` iff `r < s` or `r = s = 1`. -/
 def aRel (X Y : Set ℚ) : Prop :=
   ∃ r s : ℚ, 0 < r ∧ r ≤ 1 ∧ 0 < s ∧ s ≤ 1 ∧
     X = Set.Ico (0 : ℚ) r ∧ Y = Set.Ico (0 : ℚ) s ∧ (r < s ∨ (r = 1 ∧ s = 1))
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/aRel_combine.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **Scott's combinator law**: if `X a Y` and `X a Y'` then `X a (Y ∩ Y')`, unwound to endpoints. -/
 theorem aRel_combine {r s s' : ℚ} (hs1 : s ≤ 1) (hs1' : s' ≤ 1)
     (h1 : r < s ∨ (r = 1 ∧ s = 1)) (h2 : r < s' ∨ (r = 1 ∧ s' = 1)) :
@@ -6663,16 +4872,9 @@ theorem aRel_combine {r s s' : ℚ} (hs1 : s ≤ 1) (hs1' : s' ≤ 1)
   · rcases h2 with h2 | ⟨-, rfl⟩
     · exact absurd (h2.trans_le hs1') (lt_irrefl _)
     · exact Or.inr ⟨rfl, min_self 1⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/a.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /- concordance: source L5137 EXERCISE 8.11 retraction on intervals -/
 /-- **Exercise 8.11 (first part).** `aRel` defines an approximable map `a : R → R`. -/
 def a : ApproximableMap R R where
@@ -6699,16 +4901,9 @@ def a : ApproximableMap R R where
     · rcases hr1'.lt_or_eq with h | h
       · exact Or.inl (h.trans_le hss')
       · exact Or.inr ⟨h, le_antisymm hs1' hss'⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/aRel_iff.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- `aRel` unwound at concrete endpoints: exactly Scott's displayed condition. -/
 theorem aRel_iff {r s : ℚ} (hr0 : 0 < r) (hr1 : r ≤ 1) (hs0 : 0 < s) (hs1 : s ≤ 1) :
     aRel (Set.Ico (0 : ℚ) r) (Set.Ico (0 : ℚ) s) ↔ (r < s ∨ (r = 1 ∧ s = 1)) := by
@@ -6718,27 +4913,13 @@ theorem aRel_iff {r s : ℚ} (hr0 : 0 < r) (hr1 : r ≤ 1) (hs0 : 0 < s) (hs1 : 
     exact hcond
   · intro h
     exact ⟨r, s, hr0, hr1, hs0, hs1, rfl, rfl, h⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/a_rel.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 @[simp] theorem a_rel {X Y : Set ℚ} : a.rel X Y ↔ aRel X Y := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/ext_U.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- `R`'s elements are entirely determined by their membership at the endpoints `[0,r)`: two
 elements agreeing on every `r` agree everywhere (any other `X` with `x.mem X` is forced, by
 `x.sub`, to already be some `[0,r)`). -/
@@ -6753,16 +4934,9 @@ theorem Element.ext_U {x y : R.Element} (h : ∀ r : ℚ, x.mem (Set.Ico 0 r) �
   · intro hy
     obtain ⟨r, _, _, rfl⟩ := y.sub hy
     exact (h r).mpr hy
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/mkElement.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **Building an `R.Element` from an "up-set" predicate `U`.** `U` must contain `1`, be bounded
 to `(0,1]`, and be upward closed within `(0,1]` — exactly Definition 1.6's filter conditions,
 transported along the bijection `r ↦ [0,r)`. -/
@@ -6781,28 +4955,14 @@ def mkElement (U : ℚ → Prop) (hU1 : U 1) (hUpos : ∀ r, U r → 0 < r) (hUl
     rintro X Y ⟨r, hr, rfl⟩ hY hsub
     obtain ⟨s, hs0, hs1, rfl⟩ := hY
     exact ⟨s, hUup r s hr (Ico0_le_of_subset (hUpos r hr) hsub) hs1, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/mkElement_mem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 @[simp] theorem mkElement_mem {U hU1 hUpos hUle1 hUup} {X : Set ℚ} :
     (mkElement U hU1 hUpos hUle1 hUup).mem X ↔ ∃ r, U r ∧ X = Set.Ico (0 : ℚ) r := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/R_mem_Ico0.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- Any `R`-neighbourhood `[0,s)` forces `0 < s ≤ 1` (even though `R_mem_iff` phrases `R.mem X` as
 an existential over a *possibly different* endpoint, injectivity pins it down to `s` itself). -/
 theorem R_mem_Ico0 {s : ℚ} (h : R.mem (Set.Ico (0 : ℚ) s)) : 0 < s ∧ s ≤ 1 := by
@@ -6812,67 +4972,32 @@ theorem R_mem_Ico0 {s : ℚ} (h : R.mem (Set.Ico (0 : ℚ) s)) : 0 < s ∧ s ≤
   have hs0 : 0 < s := lt_of_le_of_lt hx0 hxs
   have hsr : s = r := Ico0_inj hs0 hr0 heq
   exact ⟨hs0, hsr ▸ hr1⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutU.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **The Dedekind-cut up-set for `t ∈ [0,1]`.** `cutU t r` holds at `r ≤ 1` with `1 - t < r`
 (strictly), or at the single endpoint `r = 1`; `1 - t` is Scott's "cut point" `c`, chosen so the
 represented real `t` increases exactly as the up-set does (Scott's hint: `⊆` matches `≤`). -/
 def cutU (t : ℝ) (r : ℚ) : Prop := r ≤ 1 ∧ ((1 - t : ℝ) < (r : ℝ) ∨ r = 1)
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutU_le1.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 theorem cutU_le1 {t : ℝ} {r : ℚ} (h : cutU t r) : r ≤ 1 := h.1
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutU_one.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 theorem cutU_one {t : ℝ} : cutU t 1 := ⟨le_rfl, Or.inr rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutU_pos.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 theorem cutU_pos {t : ℝ} (ht1 : t ≤ 1) {r : ℚ} (h : cutU t r) : 0 < r := by
   rcases h.2 with h2 | rfl
   · have hc : (0 : ℝ) ≤ 1 - t := by linarith
     exact_mod_cast lt_of_le_of_lt hc h2
   · norm_num
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutU_up.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 theorem cutU_up {r s : ℚ} {t : ℝ} (h : cutU t r) (hrs : r ≤ s) (hs1 : s ≤ 1) : cutU t s := by
   refine ⟨hs1, ?_⟩
   rcases h.2 with h2 | rfl
@@ -6880,30 +5005,16 @@ theorem cutU_up {r s : ℚ} {t : ℝ} (h : cutU t r) (hrs : r ≤ s) (hs1 : s �
     have hcast : (r : ℝ) ≤ (s : ℝ) := by exact_mod_cast hrs
     linarith
   · exact Or.inr (le_antisymm hs1 hrs)
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutElt.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- The fixed point of `a` corresponding to `t ∈ [0,1]` (Scott's Dedekind cut). -/
 def cutElt (t : ℝ) (ht1 : t ≤ 1) : R.Element :=
   mkElement (cutU t) cutU_one (fun _ h => cutU_pos ht1 h) (fun _ h => cutU_le1 h)
     (fun _ _ h hrs hs1 => cutU_up h hrs hs1)
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutElt_mem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 @[simp] theorem cutElt_mem {t : ℝ} {ht1 : t ≤ 1} {r : ℚ} :
     (cutElt t ht1).mem (Set.Ico 0 r) ↔ cutU t r := by
   simp only [cutElt, mkElement_mem]
@@ -6915,95 +5026,46 @@ open NeighborhoodSystem ApproximableMap
     have hr0 : 0 < r := lt_of_le_of_lt hx0 hxr
     rwa [Ico0_inj hr0 hr'0 heq]
   · exact fun h => ⟨r, h, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutS.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- The (real-valued) image of `x`'s up-set: `{(r:ℝ) ∣ x.mem [0,r)}`. -/
 def cutS (x : R.Element) : Set ℝ := (fun r : ℚ => (r : ℝ)) '' {r | x.mem (Set.Ico 0 r)}
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutPoint.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **The canonical Dedekind cut point** `1 - c` of a fixed element `x`, `c := sInf (cutS x)`. -/
 noncomputable def cutPoint (x : R.Element) : ℝ := 1 - sInf (cutS x)
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutS_bddBelow.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 theorem cutS_bddBelow (x : R.Element) : BddBelow (cutS x) := by
   refine ⟨0, ?_⟩
   rintro y ⟨r, hr, rfl⟩
   dsimp only
   exact_mod_cast (R_mem_Ico0 (x.sub hr)).1.le
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutPoint_nonneg.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 theorem cutPoint_nonneg (x : R.Element) : 0 ≤ cutPoint x := by
   have hmem1 : x.mem (Set.Ico (0 : ℚ) 1) := by rw [← R_master]; exact x.master_mem
   have hc1 : sInf (cutS x) ≤ 1 := csInf_le (cutS_bddBelow x) ⟨1, hmem1, by norm_num⟩
   unfold cutPoint; linarith
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutS_nonempty.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 theorem cutS_nonempty (x : R.Element) : (cutS x).Nonempty :=
   ⟨1, 1, show x.mem (Set.Ico (0 : ℚ) 1) by rw [← R_master]; exact x.master_mem, by norm_num⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutPoint_le_one.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 theorem cutPoint_le_one (x : R.Element) : cutPoint x ≤ 1 := by
   have hc0 : (0:ℝ) ≤ sInf (cutS x) := le_csInf (cutS_nonempty x)
     (by rintro y ⟨r, hr, rfl⟩; dsimp only; exact_mod_cast (R_mem_Ico0 (x.sub hr)).1.le)
   unfold cutPoint; linarith
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutElt_cutPoint.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **Surjectivity**: every fixed point of `a` equals `cutElt (cutPoint x) _`; the fixed-point
 equation supplies exactly the "openness" (no minimum, aside from `r = 1`) that makes this work. -/
 theorem cutElt_cutPoint {x : R.Element} (hfix : a.toElementMap x = x) :
@@ -7047,16 +5109,9 @@ theorem cutElt_cutPoint {x : R.Element} (hfix : a.toElementMap x = x) :
       have hr0pos : 0 < r0 := (R_mem_Ico0 (x.sub hr0mem)).1
       exact x.up_mem hr0mem ⟨r, hr0pos.trans hr0r, hr1, rfl⟩ (Set.Ico_subset_Ico le_rfl hr0r.le)
     · rw [← R_master]; exact x.master_mem
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutU_mono.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- `cutU` is monotone in `t`: raising `t` only weakens the cut point `1 - t`, so it only
 *enlarges* the up-set. -/
 theorem cutU_mono {t t' : ℝ} (htt' : t ≤ t') {r : ℚ} (h : cutU t r) : cutU t' r := by
@@ -7064,31 +5119,17 @@ theorem cutU_mono {t t' : ℝ} (htt' : t ≤ t') {r : ℚ} (h : cutU t r) : cutU
   rcases h.2 with hc | rfl
   · exact Or.inl (by linarith)
   · exact Or.inr rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/le_iff_U.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- Domain order reduces to a statement about `mem` at the endpoints `[0,r)` alone. -/
 theorem le_iff_U {x y : R.Element} :
     x ≤ y ↔ ∀ r : ℚ, x.mem (Set.Ico 0 r) → y.mem (Set.Ico 0 r) :=
   ⟨fun h r => h (Set.Ico 0 r), fun h X hX => by
     obtain ⟨r, _, _, rfl⟩ := x.sub hX; exact h r hX⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutElt_le_iff.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **Scott's hint made precise:** `⊆` (the up-sets, i.e. `⊑` on `R.Element`) matches `≤` (on the
 represented reals) — `cutElt` is order-preserving *both ways*. -/
 theorem cutElt_le_iff {t t' : ℝ} (_ht0 : 0 ≤ t) (ht1 : t ≤ 1) (ht0' : 0 ≤ t') (ht1' : t' ≤ 1) :
@@ -7108,30 +5149,16 @@ theorem cutElt_le_iff {t t' : ℝ} (_ht0 : 0 ≤ t) (ht1 : t ≤ 1) (ht0' : 0 �
     · linarith
     · rw [hreq] at hr2; norm_num at hr2; linarith
   · exact fun htt' r hr => cutU_mono htt' hr
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/cutElt_injective.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- `cutElt` is injective on `[0,1]` (antisymmetry of `cutElt_le_iff`). -/
 theorem cutElt_injective {t t' : ℝ} (ht0 : 0 ≤ t) (ht1 : t ≤ 1) (ht0' : 0 ≤ t') (ht1' : t' ≤ 1)
     (h : cutElt t ht1 = cutElt t' ht1') : t = t' :=
   le_antisymm ((cutElt_le_iff ht0 ht1 ht0' ht1').mp h.le) ((cutElt_le_iff ht0' ht1' ht0 ht1).mp h.ge)
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/toElementMap_cutElt.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **`cutElt t` is a fixed point of `a`**, for every `t ∈ [0,1]`: this is exactly the "open cut"
 computation — `a` shifts `[0,r)` strictly forward, so `s` re-enters the up-set from below iff some
 smaller `r` was already in it, i.e. iff `1 - t < s` (density of `ℚ` supplies the witness `r`). -/
@@ -7164,16 +5191,9 @@ theorem toElementMap_cutElt {t : ℝ} (ht1 : t ≤ 1) :
         cutU_le1 hs, rfl, rfl, Or.inl (by exact_mod_cast hr2)⟩
     · exact ⟨Set.Ico 0 1, ⟨1, cutU_one, rfl⟩, 1, 1, one_pos, le_rfl, one_pos, le_rfl, rfl, rfl,
         Or.inr ⟨rfl, rfl⟩⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/fixOrderIso.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **Exercise 8.11 (Dedekind-cut correspondence).** The fixed-point set of `a` is order
 isomorphic to `Set.Icc (0 : ℝ) 1` — a one-one correspondence with the reals between `0` and `1`
 inclusive, under which `⊆` (domain order) matches `≤` (Scott's hint). -/
@@ -7195,32 +5215,16 @@ noncomputable def fixOrderIso : {y : R.Element // a.toElementMap y = y} ≃o Set
       rw [← cutElt_cutPoint y.2, ← cutElt_cutPoint y'.2] at h
       exact (cutElt_le_iff (cutPoint_nonneg y.1) (cutPoint_le_one y.1) (cutPoint_nonneg y'.1)
         (cutPoint_le_one y'.1)).mp h
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/aRel_le.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
-
 theorem aRel_le {r s : ℚ} (h : r < s ∨ (r = 1 ∧ s = 1)) : r ≤ s := by
   rcases h with h | ⟨rfl, rfl⟩
   · exact h.le
   · exact le_rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/isRetraction_a.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.11 (second part, retraction).** `a ∘ a = a`. -/
 theorem isRetraction_a : Retraction a := by
   constructor
@@ -7248,33 +5252,17 @@ theorem isRetraction_a : Retraction a := by
         ⟨s, t, hs0, hs1, ht0, ht1, rfl, rfl, Or.inl hst⟩⟩
     · exact ⟨Set.Ico 0 1, ⟨1, 1, one_pos, le_rfl, one_pos, le_rfl, rfl, rfl, Or.inr ⟨rfl, rfl⟩⟩,
         ⟨1, 1, one_pos, le_rfl, one_pos, le_rfl, rfl, rfl, Or.inr ⟨rfl, rfl⟩⟩⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/isProjection_a.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.11 (second part, projection).** `a ⊑ I_R`. -/
 theorem isProjection_a : IsProjection a := by
   refine ⟨isRetraction_a, ?_⟩
   rintro X Y ⟨r, s, hr0, hr1, hs0, hs1, rfl, rfl, hcond⟩
   exact ⟨⟨r, hr0, hr1, rfl⟩, ⟨s, hs0, hs1, rfl⟩, Set.Ico_subset_Ico le_rfl (aRel_le hcond)⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/not_isCompactElt_pos.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **No point `g ⟨t,_,_⟩` with `t > 0` is compact**, for *any* neighbourhood system `F` and order
 isomorphism `g : Set.Icc (0:ℝ) 1 ≃o F.Element`: the directed family `{g ⟨s,_,_⟩ ∣ 0 ≤ s < t}` has
 supremum exactly `g ⟨t,_,_⟩` (`isLUB_Ico` transported through `g`), yet `g ⟨t,_,_⟩` sits strictly
@@ -7315,17 +5303,9 @@ theorem not_isCompactElt_pos {β : Type} {F : NeighborhoodSystem β}
   obtain ⟨i, hi⟩ := hcompact fam hdir (le_of_eq heq.symm)
   have hle : (⟨t, ht0, ht1⟩ : Set.Icc (0 : ℝ) 1) ≤ i.1 := g.le_iff_le.mp hi
   exact absurd hle (not_le.mpr i.2.2)
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811/not_isFinitary_a.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.11 (conclusion).** `a` is *not* finitary: were it, its fixed-point set — order
 isomorphic to `Set.Icc (0:ℝ) 1` via `fixOrderIso` — would also be order isomorphic to some `F.Element`,
 which is algebraic (`eq_iSupDirected_principal`); but every principal approximant of `g ⟨1,_,_⟩`
@@ -7369,14 +5349,9 @@ theorem not_isFinitary_a : ¬ IsFinitary a := by
   have : (⟨1, zero_le_one, le_refl 1⟩ : Set.Icc (0:ℝ) 1) = ⟨0, le_refl 0, zero_le_one⟩ :=
     g.injective hxeq
   exact absurd (congrArg Subtype.val this) one_ne_zero
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
 section
--- Exercise811.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-
 set_option linter.unusedVariables false
 
 theorem example_811 : And
@@ -7405,83 +5380,57 @@ theorem example_811 : And
     DomainTheory.NeighbourhoodSystems.Exercise811.isProjection_a
     DomainTheory.NeighbourhoodSystems.Exercise811.isRetraction_a)
   DomainTheory.NeighbourhoodSystems.Exercise811.not_isFinitary_a
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
 end
 
-section
--- Exercise812.lean
+end DomainTheory.NeighbourhoodSystems.Exercise811
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 /-- **`2^k ℕ + ℓ`** (for `ℓ < 2^k`): the residue class of `ℓ` modulo `2^k`. Automatically `∅` when
 `ℓ ≥ 2^k` (no `n` can leave a remainder that large), matching Scott's side condition `ℓ < 2^k`
 without needing to bake it into the definition. -/
 def affine (k ℓ : ℕ) : Set ℕ := {n : ℕ | n % 2 ^ k = ℓ}
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 @[simp] theorem mem_affine {k ℓ n : ℕ} : n ∈ affine k ℓ ↔ n % 2 ^ k = ℓ := Iff.rfl
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace affine
-
 open NeighborhoodSystem
 
-
+section
 theorem nonempty {k ℓ : ℕ} (hℓ : ℓ < 2 ^ k) : (affine k ℓ).Nonempty :=
   ⟨ℓ, Nat.mod_eq_of_lt hℓ⟩
+end
 
 end affine
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 /-- The union of the residue classes `affine k ℓ` for `ℓ < 2^k` with `m.testBit ℓ = true`. Every
 finite union of `affine`-sets sharing the *same* level `k` is of this form for a unique `m`
 (`Finset.range (2^k)` residues partition `ℕ`, unlike arbitrary rational intervals), so a single
 natural number `m` replaces the `List` bookkeeping `Definition87.lean` needs for `𝒰`. -/
 def levelSet (k m : ℕ) : Set ℕ := {n : ℕ | m.testBit (n % 2 ^ k) = true}
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 @[simp] theorem mem_levelSet {k m n : ℕ} : n ∈ levelSet k m ↔ m.testBit (n % 2 ^ k) = true :=
   Iff.rfl
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open NeighborhoodSystem
 
-
+section
 theorem inter_same_level (k m₁ m₂ : ℕ) :
     levelSet k m₁ ∩ levelSet k m₂ = levelSet k (m₁ &&& m₂) := by
   ext n; simp [levelSet, Nat.testBit_and]
+end
 
-end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace levelSet
-
-open NeighborhoodSystem
-
-
+section
 theorem nonempty_iff {k m : ℕ} :
     (levelSet k m).Nonempty ↔ ∃ ℓ < 2 ^ k, m.testBit ℓ = true := by
   constructor
@@ -7489,29 +5438,15 @@ theorem nonempty_iff {k m : ℕ} :
     exact ⟨n % 2 ^ k, Nat.mod_lt n (by positivity), hn⟩
   · rintro ⟨ℓ, hℓ, hm⟩
     exact ⟨ℓ, by rw [mem_levelSet, Nat.mod_eq_of_lt hℓ]; exact hm⟩
+end
 
-end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace levelSet
-
-open NeighborhoodSystem
-
-
+section
 theorem union_same_level (k m₁ m₂ : ℕ) :
     levelSet k m₁ ∪ levelSet k m₂ = levelSet k (m₁ ||| m₂) := by
   ext n; simp [levelSet, Nat.testBit_or]
+end
 
-end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace levelSet
-
-open NeighborhoodSystem
-
-
+section
 /-- `levelSet k m` is exactly the union of `affine k ℓ` over `ℓ` with `m.testBit ℓ`. -/
 theorem eq_biUnion (k m : ℕ) :
     levelSet k m = ⋃ ℓ ∈ (Finset.range (2 ^ k)).filter (fun ℓ => m.testBit ℓ), affine k ℓ := by
@@ -7521,84 +5456,63 @@ theorem eq_biUnion (k m : ℕ) :
   constructor
   · intro h; exact ⟨n % 2 ^ k, ⟨Nat.mod_lt n (by positivity), h⟩, rfl⟩
   · rintro ⟨ℓ, ⟨-, hm⟩, rfl⟩; exact hm
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace affine
-
 open NeighborhoodSystem
 
-
+section
 /-- `affine k ℓ` itself is the singleton-bitmask `levelSet`. -/
 theorem eq_levelSet (k ℓ : ℕ) : affine k ℓ = levelSet k (2 ^ ℓ) := by
   ext n
   simp [mem_affine, mem_levelSet, Nat.testBit_two_pow, eq_comm]
+end
 
 end affine
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 /-- Re-express a level-`k` bitmask `m` at a finer level `k' ≥ k`: residue `r` (mod `2^k'`) is
 included iff `r`'s coarser residue `r % 2^k` was. Built via `Nat.equivBitIndices` (the bijection
 `ℕ ≃ Finset ℕ` sending `n` to its set bits) rather than raw shifting arithmetic. -/
 def upsample (k k' m : ℕ) : ℕ :=
   ∑ r ∈ (Finset.range (2 ^ k')).filter (fun r => m.testBit (r % 2 ^ k)), 2 ^ r
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace testBit
-
 open NeighborhoodSystem
 
+section
 theorem upsample {k k' m r : ℕ} (hr : r < 2 ^ k') :
     (_root_.DomainTheory.NeighbourhoodSystems.upsample k k' m).testBit r ↔ m.testBit (r % 2 ^ k) := by
   unfold _root_.DomainTheory.NeighbourhoodSystems.upsample
   rw [← Nat.mem_bitIndices, ← List.mem_toFinset, Finset.toFinset_bitIndices_sum_two_pow,
     Finset.mem_filter, Finset.mem_range]
   simp [hr]
+end
 
 end testBit
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open NeighborhoodSystem
 
+section
 /-- `levelSet 0 1 = ℕ`: at level `0` there is a single residue class (everything is `≡ 0 mod 1`),
 and `1` (bit `0` set) selects it. This is `V`'s master neighbourhood. -/
 theorem zero_one : levelSet 0 1 = Set.univ := by
   ext n; simp [levelSet, Nat.mod_one]
+end
 
-end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace levelSet
-
-open NeighborhoodSystem
-
+section
 /-- **`upsample` preserves the set `levelSet` represents.** -/
 theorem upsample {k k' m : ℕ} (hk : k ≤ k') : levelSet k' (_root_.DomainTheory.NeighbourhoodSystems.upsample k k' m) = levelSet k m := by
   ext n
   simp only [mem_levelSet]
   rw [testBit.upsample (Nat.mod_lt n (by positivity)),
     Nat.mod_mod_of_dvd n (pow_dvd_pow 2 hk)]
+end
 
-end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace levelSet
-
-open NeighborhoodSystem
-
+section
 /-- **`levelSet` is closed under intersection, unconditionally** (unlike `Definition87.lean`'s `U`,
 which genuinely needs a consistency hypothesis): upsample both masks to the common level
 `max k₁ k₂` and take the bitwise `AND`. -/
@@ -7608,14 +5522,12 @@ theorem inter (k₁ m₁ k₂ m₂ : ℕ) :
   rw [← levelSet.upsample (le_max_left k₁ k₂) (m := m₁), ← levelSet.upsample (le_max_right k₁ k₂) (m := m₂)]
   ext n
   simp only [mem_levelSet, Set.mem_inter_iff, Nat.testBit_and, Bool.and_eq_true]
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 /-- **Exercise 8.12's `V`**: the neighbourhood system over `ℕ` whose neighbourhoods are the
 non-empty finite unions of residue classes `2^k ℕ + ℓ` (`ℓ < 2^k`). Bookkeeping-free via
 `levelSet`: every finite union of `affine`-sets — even at *different* levels `kᵢ` — refines
@@ -7633,14 +5545,9 @@ def V : NeighborhoodSystem ℕ where
     exact ⟨max k₁ k₂, upsample k₁ (max k₁ k₂) m₁ &&& upsample k₂ (max k₁ k₂) m₂,
       levelSet.inter k₁ m₁ k₂ m₂, hZne.mono hZsub⟩
   sub_master := by rintro X _; exact Set.subset_univ X
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 /-- **`V` is closed under binary union**, as long as the result is non-empty — mirrors
 `Definition87.lean`'s `U_union_mem`, needed to reassemble Scott's literal finite unions. -/
 theorem V_union_mem {X Y : Set ℕ} (hX : X = ∅ ∨ V.mem X) (hY : Y = ∅ ∨ V.mem Y) :
@@ -7656,14 +5563,9 @@ theorem V_union_mem {X Y : Set ℕ} (hX : X = ∅ ∨ V.mem X) (hY : Y = ∅ ∨
     rw [← levelSet.union_same_level, levelSet.upsample (le_max_left k₁ k₂),
       levelSet.upsample (le_max_right k₁ k₂)]
   exact Or.inr ⟨max k₁ k₂, _, heq, hXne.mono Set.subset_union_left⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 /-- **`V` is closed under finite (`Fintype`-indexed) unions**, as long as the result is
 non-empty — mirrors `Definition87.lean`'s `U_iUnion_mem` verbatim. -/
 theorem V_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℕ} (hf : ∀ i, f i = ∅ ∨ V.mem (f i))
@@ -7679,14 +5581,9 @@ theorem V_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℕ} (hf : ∀ i,
   have hall : (⋃ i, f i) = ⋃ i ∈ (Finset.univ : Finset ι), f i := by simp
   rw [hall] at hne ⊢
   exact (hstep Finset.univ).resolve_left hne.ne_empty
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 /-- **`V.mem` literally matches Scott's "non-empty finite unions of `2^k ℕ + ℓ`, `ℓ < 2^k`"** —
 reconciles the bookkeeping-free `levelSet` encoding with Exercise 8.12's literal description,
 mirroring `Definition87.lean`'s `U_mem_iff_scott`. -/
@@ -7714,11 +5611,9 @@ theorem V_mem_iff_finiteUnion {X : Set ℕ} :
       ext n; simp only [Set.mem_iUnion, exists_prop, Subtype.exists]
     rw [hrw] at hne ⊢
     exact V_iUnion_mem hf hne
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 set_option linter.unusedVariables false
 
 theorem example_812 : ∀ {X : Set Nat},
@@ -7742,14 +5637,9 @@ theorem example_812 : ∀ {X : Set Nat},
                 DomainTheory.NeighbourhoodSystems.affine (@Prod.fst Nat Nat p) (@Prod.snd Nat Nat p)))
           (@Set.Nonempty Nat X))) :=
   @DomainTheory.NeighbourhoodSystems.V_mem_iff_finiteUnion
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 /-- **Scott's remark after Definition 8.7, transplanted to `V`**: every `V`-neighbourhood splits
 into two disjoint proper `V`-neighbourhoods. Refine to one level finer via `upsample`, which
 duplicates every set bit `ℓ` of `m` into a matching pair `(ℓ, ℓ + 2^k)`; peeling off *one*
@@ -7807,6 +5697,7 @@ theorem V_no_minimal {X : Set ℕ} (hX : V.mem X) :
     apply hYne.ne_empty
     have hYsub : Y ⊆ Z := by rw [hEq]; exact hUnion ▸ Set.subset_union_left
     rw [← hInter, Set.inter_eq_left.mpr hYsub]
+end
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -7832,13 +5723,10 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/ClosureOperator.lean
 namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 /- concordance: source L5159 EXERCISE 8.14 closure operators -/
@@ -7846,18 +5734,11 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 *closure operator* iff `I_E ⊑ a`, i.e. `a` is inflationary. -/
 class ClosureOperator (a : ApproximableMap E E) : Prop where
   out : Retraction a ∧ idMap E ≤ a
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/IsCompactFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section ClosureOperator
@@ -7873,18 +5754,11 @@ def IsCompactFix (_h : ClosureOperator a) (y : FixSet a) : Prop :=
     y.1 ≤ iSupDirected (fun i => (d i).1) hdir → ∃ i, y.1 ≤ (d i).1
 
 end ClosureOperator
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/CompactFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -7895,18 +5769,11 @@ variable {a : ApproximableMap E E} (h : ClosureOperator a)
 def CompactFix (h : ClosureOperator a) := {y : FixSet a // IsCompactFix h y}
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/botFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section ClosureOperator
@@ -7918,18 +5785,11 @@ def botFix (h : ClosureOperator a) : FixSet a :=
   ⟨a.toElementMap ⊥, toElementMap_idem h.out.1 ⊥⟩
 
 end ClosureOperator
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/botFix_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section ClosureOperator
@@ -7943,18 +5803,11 @@ theorem botFix_le (h : ClosureOperator a) (y : FixSet a) : (botFix h).1 ≤ y.1 
   rwa [y.2] at h1
 
 end ClosureOperator
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/isCompactFix_botFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section ClosureOperator
@@ -7969,18 +5822,11 @@ theorem isCompactFix_botFix (h : ClosureOperator a) : IsCompactFix h (botFix h) 
   exact ⟨i0, botFix_le h (d i0)⟩
 
 end ClosureOperator
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/botK.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -7991,18 +5837,11 @@ variable {a : ApproximableMap E E} (h : ClosureOperator a)
 def botK : CompactFix h := ⟨botFix h, isCompactFix_botFix h⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/le_toElementMap_of_isClosureOperator.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section ClosureOperator
@@ -8016,18 +5855,11 @@ theorem le_toElementMap_of_isClosureOperator (h : ClosureOperator a) (y : E.Elem
   rwa [toElementMap_idMap] at h1
 
 end ClosureOperator
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/isCompactFix_sup.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section ClosureOperator
@@ -8062,18 +5894,11 @@ theorem isCompactFix_sup (h : ClosureOperator a) {y1 y2 : FixSet a}
   rwa [(d k).2] at h3
 
 end ClosureOperator
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/isCompactFix_toElementMap_principal.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section ClosureOperator
@@ -8096,18 +5921,11 @@ theorem isCompactFix_toElementMap_principal (h : ClosureOperator a) {X : Set α}
   rwa [(d i).2] at h2
 
 end ClosureOperator
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/genK.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8120,18 +5938,11 @@ def genK {X : Set α} (hX : E.mem X) : CompactFix h :=
     isCompactFix_toElementMap_principal h hX⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/joinCompactFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8146,18 +5957,11 @@ def joinCompactFix {k1 k2 : CompactFix h} {y : FixSet a}
     isCompactFix_sup h k1.2 k2.2 ⟨y.1, by rintro x (rfl | rfl) <;> assumption⟩⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/joinCompactFix_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8174,18 +5978,11 @@ theorem joinCompactFix_le {k1 k2 : CompactFix h} {y : FixSet a}
   rwa [y.2] at h1
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/upFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8198,18 +5995,11 @@ information-order convention `Factoid 1.7a`). -/
 def upFix (k : CompactFix h) : Set (CompactFix h) := {q | k.1.1 ≤ q.1.1}
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/mem_upFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8219,18 +6009,11 @@ variable {a : ApproximableMap E E} (h : ClosureOperator a)
 @[simp] theorem mem_upFix {k q : CompactFix h} : q ∈ upFix h k ↔ k.1.1 ≤ q.1.1 := Iff.rfl
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/self_mem_upFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8240,18 +6023,11 @@ variable {a : ApproximableMap E E} (h : ClosureOperator a)
 theorem self_mem_upFix (k : CompactFix h) : k ∈ upFix h k := (mem_upFix h).mpr (le_refl _)
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/upFix_antitone.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8263,18 +6039,11 @@ theorem upFix_antitone {k k' : CompactFix h} (hkk' : k.1.1 ≤ k'.1.1) :
   fun _ hq => hkk'.trans hq
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/upFix_injOn.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8287,18 +6056,11 @@ theorem upFix_injOn {k k' : CompactFix h} (heq : upFix h k = upFix h k') : k.1.1
     ((Set.ext_iff.mp heq k).mp (self_mem_upFix h k))
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/upFix_inter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8331,18 +6093,11 @@ theorem upFix_inter (k1 k2 : CompactFix h) {y : FixSet a}
         (le_toElementMap_of_isClosureOperator h _)).trans hjq
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/upFix_subset_upFix_botK.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8353,18 +6108,11 @@ theorem upFix_subset_upFix_botK (k : CompactFix h) : upFix h k ⊆ upFix h (botK
   fun q _ => botFix_le h q.1
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/domainOfClosure.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8385,18 +6133,11 @@ def domainOfClosure (h : ClosureOperator a) : NeighborhoodSystem (CompactFix h) 
     exact ⟨joinCompactFix h hk13 hk23, upFix_inter h k1 k2 hk13 hk23⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/confirmedIdx.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8407,18 +6148,11 @@ variable {a : ApproximableMap E E} (h : ClosureOperator a)
 def confirmedIdx (g : (domainOfClosure h).Element) := {k : CompactFix h // g.mem (upFix h k)}
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/BasicInst34.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8430,18 +6164,11 @@ instance instNonemptyConfirmedIdx (g : (domainOfClosure h).Element) :
   ⟨⟨botK h, g.master_mem⟩⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/confirmedIdx_directed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8459,18 +6186,11 @@ theorem confirmedIdx_directed (g : (domainOfClosure h).Element) :
   exact ⟨⟨k3, hint⟩, hmem3.1, hmem3.2⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/fromElementFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8484,18 +6204,11 @@ def fromElementFilter (g : (domainOfClosure h).Element) : FixSet a :=
     toElementMap_iSupDirected_fixed _ (confirmedIdx_directed h g) (fun i => i.1.1.2)⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/genFamily.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8507,18 +6220,11 @@ def genFamily (y : FixSet a) (i : {X : Set α // y.1.mem X}) : FixSet a :=
   (genK h (y.1.sub i.2)).1
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/genFamily_directed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8533,18 +6239,11 @@ theorem genFamily_directed (y : FixSet a) :
   exact ⟨k, a.toElementMap_mono hik, a.toElementMap_mono hjk⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/toElementFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8565,18 +6264,11 @@ def toElementFilter (y : FixSet a) : (domainOfClosure h).Element where
     exact ⟨k2, rfl, (mem_upFix h |>.mp (hsub (self_mem_upFix h k1))).trans hk1y⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/le_of_toElementFilter_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8600,18 +6292,11 @@ theorem le_of_toElementFilter_le {y y' : FixSet a}
   exact (h1.trans hk'y') X ((E.mem_principal hX).mpr ⟨hX, subset_rfl⟩)
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/toElementFilter_fromElementFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8631,18 +6316,11 @@ theorem toElementFilter_fromElementFilter (g : (domainOfClosure h).Element) :
     exact ⟨k0, rfl, le_iSupDirected _ (confirmedIdx_directed h g) ⟨k0, hS⟩⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/toElementFilter_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8654,18 +6332,11 @@ theorem toElementFilter_mono {y y' : FixSet a} (hyy' : y.1 ≤ y'.1) :
   fun _ ⟨k, hSeq, hky⟩ => ⟨k, hSeq, hky.trans hyy'⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/toElementMap_eq_iSupDirected_genFamily.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8684,18 +6355,11 @@ theorem toElementMap_eq_iSupDirected_genFamily (y : FixSet a) :
   exact h1
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/fromElementFilter_toElementFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8723,18 +6387,11 @@ theorem fromElementFilter_toElementFilter (y : FixSet a) :
       (confirmedIdx_directed h (toElementFilter h y)) ⟨genK h (y.1.sub i.2), hk⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/fixSetOrderIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 section FiniteDomain
@@ -8753,20 +6410,12 @@ def fixSetOrderIso (h : ClosureOperator a) : FixSet a ≃o (domainOfClosure h).E
     exact ⟨le_of_toElementFilter_le h, toElementFilter_mono h⟩
 
 end FiniteDomain
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/isCompactFix_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 section FiniteDomain
 
@@ -8793,19 +6442,12 @@ theorem isCompactFix_iff (y : FixSet a) :
     exact hy ▸ isCompactFix_toElementMap_principal h hX
 
 end FiniteDomain
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814/isFinitary_of_isClosureOperator.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 section FiniteDomain
 
@@ -8818,13 +6460,9 @@ theorem isFinitary_of_isClosureOperator (h : ClosureOperator a) : IsFinitary a :
   ⟨CompactFix h, domainOfClosure h, ⟨fixSetOrderIso h⟩⟩
 
 end FiniteDomain
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise814.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_814.{u} : And
@@ -8864,60 +6502,47 @@ theorem example_814.{u} : And
     {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
     @DomainTheory.NeighbourhoodSystems.ClosureOperator α E a → @DomainTheory.NeighbourhoodSystems.IsFinitary α E a)
   @DomainTheory.NeighbourhoodSystems.isCompactFix_iff @DomainTheory.NeighbourhoodSystems.isFinitary_of_isClosureOperator
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- LevelSetPrimrec/level_set_primrec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- A fixed index of `V.master = Set.univ`. -/
 def VmasterIdx : ℕ := Nat.pair 0 1
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- The low-bit AND `(x &&& y) % 2`, in arithmetic `{0,1}`-valued form: simply the product of the
 low bits (`1` iff both are `1`). -/
 def lowAnd (x y : ℕ) : ℕ := x % 2 * (y % 2)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem lowAnd : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.lowAnd t.unpair.1 t.unpair.2) :=
   (primrec_mul₂ (primrec_mod2.comp Nat.Primrec.left) (primrec_mod2.comp Nat.Primrec.right)).of_eq
     fun _ => rfl
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- Packed iteration state `pair (pair curA curB) (pair weight acc)` for the bitwise-AND fold. -/
 def landStep (s : ℕ) : ℕ :=
   Nat.pair (Nat.pair (s.unpair.1.unpair.1 / 2) (s.unpair.1.unpair.2 / 2))
     (Nat.pair (2 * s.unpair.2.unpair.1)
       (s.unpair.2.unpair.2 + s.unpair.2.unpair.1 * lowAnd s.unpair.1.unpair.1 s.unpair.1.unpair.2))
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem landStep : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.landStep := by
   have hA : Nat.Primrec (fun s : ℕ => s.unpair.1.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.left
   have hB : Nat.Primrec (fun s : ℕ => s.unpair.1.unpair.2) := Nat.Primrec.right.comp Nat.Primrec.left
@@ -8929,15 +6554,13 @@ theorem landStep : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.landStep
   exact (((primrec_div2.comp hA).pair (primrec_div2.comp hB)).pair
     ((primrec_mul₂ (Nat.Primrec.const 2) hW).pair
       (primrec_add₂ hAcc (primrec_mul₂ hW hlow)))).of_eq fun _ => rfl
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem inj_of_lt {k a b : ℕ} (ha : a < 2 ^ (2 ^ k)) (hb : b < 2 ^ (2 ^ k))
     (h : levelSet k a = levelSet k b) : a = b := by
   apply Nat.eq_of_testBit_eq
@@ -8949,14 +6572,12 @@ theorem inj_of_lt {k a b : ℕ} (ha : a < 2 ^ (2 ^ k)) (hb : b < 2 ^ (2 ^ k))
   · have hpow : (2:ℕ) ^ (2 ^ k) ≤ 2 ^ ℓ := Nat.pow_le_pow_right (by norm_num) (Nat.le_of_not_lt hℓ)
     rw [Nat.testBit_lt_two_pow (lt_of_lt_of_le ha hpow),
       Nat.testBit_lt_two_pow (lt_of_lt_of_le hb hpow)]
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- `lowAnd x y = (x &&& y) % 2`. -/
 theorem lowAnd_eq_mod (x y : ℕ) : lowAnd x y = (x &&& y) % 2 := by
   have key : ((x &&& y) % 2 = 1) ↔ (x % 2 = 1 ∧ y % 2 = 1) := by
@@ -8973,13 +6594,9 @@ theorem lowAnd_eq_mod (x y : ℕ) : lowAnd x y = (x &&& y) % 2 := by
   · have hne : (x &&& y) % 2 ≠ 1 := fun h => by have := key.mp h; omega
     omega
   · exact (key.mpr ⟨hx, hy⟩).symm
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- One recursion step for `Nat.land` on the low bit: `x &&& y = 2 (x/2 &&& y/2) + lowAnd x y`. -/
 theorem land_low_rec (x y : ℕ) : x &&& y = 2 * (x / 2 &&& y / 2) + lowAnd x y := by
   have hdiv : (x &&& y) / 2 = x / 2 &&& y / 2 := by
@@ -8990,13 +6607,9 @@ theorem land_low_rec (x y : ℕ) : x &&& y = 2 * (x / 2 &&& y / 2) + lowAnd x y 
   have hmod := lowAnd_eq_mod x y
   conv_lhs => rw [← Nat.div_add_mod (x &&& y) 2]
   rw [hdiv, hmod]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **Invariant of the bitwise-AND iteration.** After `k` steps the two running arguments are
 `a / 2^k`, `b / 2^k`, the weight is `2^k`, and `acc + 2^k · (a/2^k &&& b/2^k) = a &&& b`. -/
 theorem landStep_iter_spec (a b : ℕ) : ∀ k,
@@ -9036,13 +6649,9 @@ theorem landStep_iter_spec (a b : ℕ) : ∀ k,
     · rw [p21, hW, ← pow_succ']
     · rw [p22, hA, hB, hW, hdd, hdd', pow_succ, ← hAcc, land_low_rec (a / 2 ^ k) (b / 2 ^ k)]
       ring
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- `j % s = j - s` when `s ≤ j < 2 * s` (the single-wraparound case of `%`). -/
 theorem mod_eq_sub_of_le_of_lt_two_mul {j s : ℕ} (h1 : s ≤ j) (h2 : j < 2 * s) :
     j % s = j - s := by
@@ -9050,84 +6659,56 @@ theorem mod_eq_sub_of_le_of_lt_two_mul {j s : ℕ} (h1 : s ≤ j) (h2 : j < 2 * 
   calc j % s = ((j - s) + s) % s := by rw [← heq]
     _ = (j - s) % s := Nat.add_mod_right _ _
     _ = j - s := Nat.mod_eq_of_lt (by omega)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- `Nat.rec`-based iterate of "halve", i.e. `myDivPow2 m ℓ = m / 2 ^ ℓ`
 (`myDivPow2_eq`), built via `Nat.Primrec.prec` on the count `ℓ` (params `m` fixed throughout the
 recursion), mirroring `primrec_foldCode`'s "iterate a step a data-dependent number of times" idiom. -/
 def myDivPow2 (m ℓ : ℕ) : ℕ := Nat.unpaired (fun z n => n.rec z (fun _ ih => ih / 2)) (Nat.pair m ℓ)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- `myModPow2 m s = m % 2 ^ s`, derived from `myDivPow2` via `Nat.div_add_mod`
 (`myModPow2.eq`): no separate general-purpose primitive-recursive `mod` is needed. -/
 def myModPow2 (m s : ℕ) : ℕ := m - myDivPow2 m s * 2 ^ s
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- `myTestBit m ℓ ∈ {0,1}` is a `Nat.Primrec` version of `m.testBit ℓ`
 (`myTestBit.eq_one_iff`), via `myDivPow2` and mathlib's own
 `Nat.testBit_eq_decide_div_mod_eq : m.testBit ℓ = decide (m / 2 ^ ℓ % 2 = 1)`. -/
 def myTestBit (m ℓ : ℕ) : ℕ := myDivPow2 m ℓ % 2
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem myDivPow2 : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.myDivPow2 t.unpair.1 t.unpair.2) := by
   have hg : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.2 / 2) :=
     primrec_div2.comp (Nat.Primrec.right.comp Nat.Primrec.right)
   refine (Nat.Primrec.prec Nat.Primrec.id hg).of_eq fun t => ?_
   unfold _root_.DomainTheory.NeighbourhoodSystems.myDivPow2
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem myModPow2 : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.myModPow2 t.unpair.1 t.unpair.2) := by
   have hpow : Nat.Primrec (fun t : ℕ => (2:ℕ) ^ t.unpair.2) := primrec_two_pow Nat.Primrec.right
   have hdiv : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.myDivPow2 t.unpair.1 t.unpair.2) := primrec.myDivPow2
   exact (primrec_sub₂ Nat.Primrec.left (primrec_mul₂ hdiv hpow)).of_eq fun t => rfl
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem myTestBit : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.myTestBit t.unpair.1 t.unpair.2) :=
   (primrec_mod2.comp primrec.myDivPow2).of_eq fun _ => rfl
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem myDivPow2_eq (m ℓ : ℕ) : myDivPow2 m ℓ = m / 2 ^ ℓ := by
   unfold myDivPow2
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
@@ -9136,52 +6717,44 @@ theorem myDivPow2_eq (m ℓ : ℕ) : myDivPow2 m ℓ = m / 2 ^ ℓ := by
   | succ ℓ ih =>
     show (ℓ.rec m (fun _ ih => ih / 2)) / 2 = m / 2 ^ (ℓ + 1)
     rw [ih, Nat.div_div_eq_div_mul, ← pow_succ]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace myModPow2
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem eq (m s : ℕ) : myModPow2 m s = m % 2 ^ s := by
   unfold myModPow2
   rw [myDivPow2_eq]
   have h : m / 2 ^ s * 2 ^ s + m % 2 ^ s = m := by
     rw [mul_comm]; exact Nat.div_add_mod m (2 ^ s)
   omega
+end
 
 end myModPow2
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace myTestBit
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem eq_one_iff (m ℓ : ℕ) : myTestBit m ℓ = 1 ↔ m.testBit ℓ = true := by
   unfold myTestBit
   rw [myDivPow2_eq, Nat.testBit_eq_decide_div_mod_eq, decide_eq_true_eq]
+end
 
 end myTestBit
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace myModPow2
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem lt (m s : ℕ) : myModPow2 m s < 2 ^ s := by
   rw [myModPow2.eq]; exact Nat.mod_lt m (Nat.two_pow_pos s)
+end
 
 end myModPow2
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- `levelSet k (myModPow2 x (2^k)) = levelSet k x`: truncating a mask to its meaningful low
 `2^k` bits never changes the `levelSet` it presents (`levelSet k _` only ever reads bit positions
 `< 2^k`). Used to keep `myUpsample`'s output *bounded* (`myUpsample_lt`) even when no genuine
@@ -9191,26 +6764,22 @@ theorem myModPow2 (k x : ℕ) : levelSet k (_root_.DomainTheory.NeighbourhoodSys
   simp only [mem_levelSet, myModPow2.eq, Nat.testBit_mod_two_pow]
   have : n % 2 ^ k < 2 ^ k := Nat.mod_lt n (Nat.two_pow_pos k)
   simp [this]
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- The iterative bitwise AND: iterate `landStep` `a + b` times from the initial state, and read off
 the accumulator. -/
 def myLand (a b : ℕ) : ℕ :=
   (landStep^[a + b] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.2
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem myLand : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.myLand t.unpair.1 t.unpair.2) := by
   have hbase : Nat.Primrec
       (fun z => Nat.pair (Nat.pair z.unpair.1 z.unpair.2) (Nat.pair 1 0)) :=
@@ -9226,14 +6795,12 @@ theorem myLand : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
   rw [rec_const_iterate]
   rfl
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **Correctness of the iterative bitwise AND.** `myLand a b = a &&& b`. -/
 theorem myLand_eq_land (a b : ℕ) : myLand a b = a &&& b := by
   unfold myLand
@@ -9246,69 +6813,47 @@ theorem myLand_eq_land (a b : ℕ) : myLand a b = a &&& b := by
       (Nat.le_add_left b a)))
   rw [ha0, hb0] at hAcc
   simpa using hAcc
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- The `bExistsFn` body `pair ℓ m ↦ myTestBit m ℓ`. -/
 def levelSetNonemptyBody (t : ℕ) : ℕ := myTestBit t.unpair.2 t.unpair.1
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **`myLevelSetNonempty k m ∈ {0,1}`** decides `(levelSet k m).Nonempty`
 (`myLevelSetNonempty.eq_one_iff`). -/
 def myLevelSetNonempty (k m : ℕ) : ℕ := bExistsFn levelSetNonemptyBody m (2 ^ k)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- Keep a code `c = pair k m` unchanged when `levelSet k m` is non-empty; otherwise fall back to
 the fixed master code `pair 0 1` (`levelSet 0 1 = univ`, `levelSet.zero_one`). -/
 def canonIdx (c : ℕ) : ℕ :=
   selectFn (myLevelSetNonempty c.unpair.1 c.unpair.2) c (Nat.pair 0 1)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace myLevelSetNonempty
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem le_one (k m : ℕ) : myLevelSetNonempty k m ≤ 1 :=
   bExistsFn_le_one _ _ _
+end
 
-end myLevelSetNonempty
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace myLevelSetNonempty
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem eq_one_iff (k m : ℕ) :
     myLevelSetNonempty k m = 1 ↔ (levelSet k m).Nonempty := by
   unfold myLevelSetNonempty
   rw [bExistsFn_eq_one_iff, levelSet.nonempty_iff]
   simp only [levelSetNonemptyBody, unpair_pair_fst, unpair_pair_snd, myTestBit.eq_one_iff]
+end
 
 end myLevelSetNonempty
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace canonIdx
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem eq_master_of_empty {c : ℕ} (h : levelSet c.unpair.1 c.unpair.2 = ∅) :
     canonIdx c = Nat.pair 0 1 := by
   unfold canonIdx
@@ -9317,28 +6862,20 @@ theorem eq_master_of_empty {c : ℕ} (h : levelSet c.unpair.1 c.unpair.2 = ∅) 
     ((myLevelSetNonempty.eq_one_iff _ _).mp heq).ne_empty h
   have h0 : myLevelSetNonempty c.unpair.1 c.unpair.2 = 0 := by omega
   rw [h0, selectFn_zero]
+end
 
-end canonIdx
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace canonIdx
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem eq_self_of_nonempty {c : ℕ} (h : (levelSet c.unpair.1 c.unpair.2).Nonempty) :
     canonIdx c = c := by
   unfold canonIdx
   rw [(myLevelSetNonempty.eq_one_iff _ _).mpr h, selectFn_one]
+end
 
 end canonIdx
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- `canonIdx` always lands on a code presenting a non-empty `levelSet`. -/
 theorem canonIdx_nonempty (c : ℕ) :
     (levelSet (canonIdx c).unpair.1 (canonIdx c).unpair.2).Nonempty := by
@@ -9347,39 +6884,29 @@ theorem canonIdx_nonempty (c : ℕ) :
   · rw [canonIdx.eq_master_of_empty (Set.not_nonempty_iff_eq_empty.mp h), unpair_pair_fst,
       unpair_pair_snd, levelSet.zero_one]
     exact Set.univ_nonempty
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace canonIdx
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- `canonIdx` is idempotent (a fixed point once applied). -/
 theorem idempotent (c : ℕ) : canonIdx (canonIdx c) = canonIdx c :=
   canonIdx.eq_self_of_nonempty (levelSet.canonIdx_nonempty c)
+end
 
 end canonIdx
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem levelSetNonemptyBody : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.levelSetNonemptyBody :=
   (primrec.myTestBit.comp (Nat.Primrec.right.pair Nat.Primrec.left)).of_eq fun t => by
     simp only [_root_.DomainTheory.NeighbourhoodSystems.levelSetNonemptyBody, unpair_pair_fst, unpair_pair_snd]
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem myLevelSetNonempty :
     Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.myLevelSetNonempty t.unpair.1 t.unpair.2) := by
   have hbe : Nat.Primrec (fun t : ℕ => bExistsFn _root_.DomainTheory.NeighbourhoodSystems.levelSetNonemptyBody t.unpair.1 t.unpair.2) :=
@@ -9387,49 +6914,33 @@ theorem myLevelSetNonempty :
   have hpow : Nat.Primrec (fun t : ℕ => (2:ℕ) ^ t.unpair.1) := primrec_two_pow Nat.Primrec.left
   exact (hbe.comp (Nat.Primrec.right.pair hpow)).of_eq fun t => by
     simp only [_root_.DomainTheory.NeighbourhoodSystems.myLevelSetNonempty, unpair_pair_fst, unpair_pair_snd]
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem canonIdx : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.canonIdx := by
   have hne : Nat.Primrec (fun c => _root_.DomainTheory.NeighbourhoodSystems.myLevelSetNonempty c.unpair.1 c.unpair.2) :=
     primrec.myLevelSetNonempty
   exact (primrec_selectFn hne primrec_id (Nat.Primrec.const (Nat.pair 0 1))).of_eq fun _ => rfl
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`V`'s enumeration**: canonicalize the `(level, mask)` pair coded by `n`. -/
 def VX (c : ℕ) : Set ℕ := levelSet (canonIdx c).unpair.1 (canonIdx c).unpair.2
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem VX_VmasterIdx : VX VmasterIdx = V.master := by
   have hne : (levelSet (Nat.pair 0 1 : ℕ).unpair.1 (Nat.pair 0 1 : ℕ).unpair.2).Nonempty := by
     rw [unpair_pair_fst, unpair_pair_snd, levelSet.zero_one]; exact Set.univ_nonempty
   unfold VX VmasterIdx
   rw [canonIdx.eq_self_of_nonempty hne, unpair_pair_fst, unpair_pair_snd, levelSet.zero_one]
   rfl
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- `VX` is onto `V`'s neighbourhoods: every `V`-neighbourhood is already `levelSet k m` for some
 non-empty pair `(k, m)`, on which `canonIdx` is a no-op. -/
 theorem V_surj_VX : ∀ {Y : Set ℕ}, V.mem Y → ∃ n, VX n = Y := by
@@ -9439,76 +6950,48 @@ theorem V_surj_VX : ∀ {Y : Set ℕ}, V.mem Y → ∃ n, VX n = Y := by
     rwa [unpair_pair_fst, unpair_pair_snd]
   unfold VX
   rw [canonIdx.eq_self_of_nonempty hne', unpair_pair_fst, unpair_pair_snd]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem VX_nonempty (c : ℕ) : (VX c).Nonempty := levelSet.canonIdx_nonempty c
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- Every `VX n` is a genuine `V`-neighbourhood. -/
 theorem V_mem_VX (c : ℕ) : V.mem (VX c) :=
   ⟨(canonIdx c).unpair.1, (canonIdx c).unpair.2, rfl, levelSet.canonIdx_nonempty c⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- `VX` factors through `canonIdx` (canonicalizing twice changes nothing). -/
 theorem VX_canonIdx (c : ℕ) : VX (canonIdx c) = VX c := by unfold VX; rw [canonIdx.idempotent]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- One computable upsampling step: re-express a level-`k` mask at level `k + 1` by duplicating its
 low `2^k` bits into a second copy shifted up by `2^k` positions. -/
 def myUpsampleStep (k m : ℕ) : ℕ :=
   2 ^ (2 ^ k) * myModPow2 m (2 ^ k) + myModPow2 m (2 ^ k)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- Joint (level, mask) iteration state for `myUpsample`: `pair level mask`. -/
 def myUpsampleJointStep (s : ℕ) : ℕ :=
   Nat.pair (s.unpair.1 + 1) (myUpsampleStep s.unpair.1 s.unpair.2)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace myUpsampleJointStep
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- Unfolding equation for `myUpsampleJointStep`, stated so `rw` fires on a single (outer)
 occurrence rather than `unfold`ing every nested occurrence (in particular, the ones hidden inside
 an already-iterated `myUpsampleJointStep^[d]` term). -/
 theorem eq (s : ℕ) :
     myUpsampleJointStep s = Nat.pair (s.unpair.1 + 1) (myUpsampleStep s.unpair.1 s.unpair.2) := rfl
+end
 
-end myUpsampleJointStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace myUpsampleJointStep
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- Iterate `myUpsampleJointStep` `d` times from `pair k m`, and read off the level after `d`
 steps and the resulting mask. -/
 theorem iter_level (k m d : ℕ) :
@@ -9518,15 +7001,13 @@ theorem iter_level (k m d : ℕ) :
   | succ d ih =>
     rw [Function.iterate_succ_apply', myUpsampleJointStep.eq, unpair_pair_fst, ih]
     omega
+end
 
 end myUpsampleJointStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **The key correctness lemma for `myUpsampleStep`**: it realizes `Exercise812.lean`'s
 mathematical `upsample` at the `levelSet` level, one step at a time. -/
 theorem myUpsampleStep (k m : ℕ) :
@@ -9548,15 +7029,13 @@ theorem myUpsampleStep (k m : ℕ) :
     have hsub : n % 2 ^ (k + 1) - 2 ^ k < 2 ^ k := by omega
     rw [ite_eq_right hcase, myModPow2.eq, Nat.testBit_mod_two_pow, decide_eq_true_iff.mpr hsub,
       Bool.true_and, hmm, mod_eq_sub_of_le_of_lt_two_mul hge (h2 ▸ hjlt)]
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace myUpsampleJointStep
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem iter_levelSet (k m d : ℕ) :
     levelSet (k + d) ((myUpsampleJointStep^[d] (Nat.pair k m)).unpair.2) = levelSet k m := by
   induction d with
@@ -9565,15 +7044,13 @@ theorem iter_levelSet (k m d : ℕ) :
     rw [Function.iterate_succ_apply', myUpsampleJointStep.eq, unpair_pair_snd,
       myUpsampleJointStep.iter_level, show k + (d + 1) = (k + d) + 1 from by omega,
       levelSet.myUpsampleStep, ih]
+end
 
 end myUpsampleJointStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem myUpsampleStep : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.myUpsampleStep t.unpair.1 t.unpair.2) := by
   have hs : Nat.Primrec (fun t : ℕ => (2:ℕ) ^ t.unpair.1) := primrec_two_pow Nat.Primrec.left
   have hm' : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.myModPow2 t.unpair.2 (2 ^ t.unpair.1)) :=
@@ -9581,27 +7058,19 @@ theorem myUpsampleStep : Nat.Primrec (fun t => _root_.DomainTheory.Neighbourhood
       simp only [unpair_pair_fst, unpair_pair_snd]
   have h2s : Nat.Primrec (fun t : ℕ => (2:ℕ) ^ (2 ^ t.unpair.1)) := primrec_two_pow hs
   exact (primrec_add₂ (primrec_mul₂ h2s hm') hm').of_eq fun t => rfl
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem myUpsampleJointStep : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.myUpsampleJointStep := by
   have hstep : Nat.Primrec (fun s : ℕ => _root_.DomainTheory.NeighbourhoodSystems.myUpsampleStep s.unpair.1 s.unpair.2) :=
     primrec.myUpsampleStep
   exact ((Nat.Primrec.succ.comp Nat.Primrec.left).pair hstep).of_eq fun _ => rfl
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`myUpsample k k' m`**: the computable re-expression of a level-`k` mask `m` at level
 `k' ≥ k`, agreeing with `Exercise812.lean`'s (non-computable) `upsample` at the `levelSet` level
 (`levelSet.myUpsample`), and always *bounded* (`myUpsample_lt`) — the final `myModPow2` truncation
@@ -9610,14 +7079,12 @@ degenerate `k = k'` case, where the raw iteration runs zero steps and would othe
 unchanged (junk bits included). Undefined behaviour (returns junk) when `k' < k`. -/
 def myUpsample (k k' m : ℕ) : ℕ :=
   myModPow2 ((myUpsampleJointStep^[k' - k] (Nat.pair k m)).unpair.2) (2 ^ k')
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`myUpsample` realizes `upsample` at the `levelSet` level.** -/
 theorem myUpsample {k k' : ℕ} (hk : k ≤ k') (m : ℕ) :
     levelSet k' (_root_.DomainTheory.NeighbourhoodSystems.myUpsample k k' m) = levelSet k m := by
@@ -9625,15 +7092,9 @@ theorem myUpsample {k k' : ℕ} (hk : k ≤ k') (m : ℕ) :
   rw [levelSet.myModPow2]
   have := myUpsampleJointStep.iter_levelSet k m (k' - k)
   rwa [show k + (k' - k) = k' from by omega] at this
+end
 
-end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace levelSet
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **Computable version of `levelSet.inter`.** -/
 theorem myInter (k1 m1 k2 m2 : ℕ) :
     levelSet k1 m1 ∩ levelSet k2 m2
@@ -9641,15 +7102,13 @@ theorem myInter (k1 m1 k2 m2 : ℕ) :
   conv_lhs => rw [← levelSet.myUpsample (Nat.le_max_left k1 k2) m1,
     ← levelSet.myUpsample (Nat.le_max_right k1 k2) m2]
   rw [levelSet.inter_same_level, myLand_eq_land]
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem myUpsample :
     Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.myUpsample t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) := by
   have hstep : Nat.Primrec (fun w => _root_.DomainTheory.NeighbourhoodSystems.myUpsampleJointStep w.unpair.2.unpair.2) :=
@@ -9666,14 +7125,12 @@ theorem myUpsample :
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
   unfold _root_.DomainTheory.NeighbourhoodSystems.myUpsample
   rw [rec_const_iterate]
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- The **raw** `(level, mask)` code for `VX n ∩ VX m`, before re-canonicalization: upsample both
 `canonIdx`-normalized masks to the common level `max k₁ k₂` and take `myLand`. -/
 def VinterRaw (n m : ℕ) : ℕ :=
@@ -9683,14 +7140,12 @@ def VinterRaw (n m : ℕ) : ℕ :=
         (canonIdx n).unpair.2)
       (myUpsample (canonIdx m).unpair.1 (max (canonIdx n).unpair.1 (canonIdx m).unpair.1)
         (canonIdx m).unpair.2))
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`VinterRaw` realizes `VX n ∩ VX m`** at the `levelSet` level (unconditionally — `V`'s
 consistency is genuinely automatic, mirroring `PN`). -/
 theorem VinterRaw (n m : ℕ) :
@@ -9699,15 +7154,13 @@ theorem VinterRaw (n m : ℕ) :
   rw [unpair_pair_fst, unpair_pair_snd]
   exact (levelSet.myInter (canonIdx n).unpair.1 (canonIdx n).unpair.2
     (canonIdx m).unpair.1 (canonIdx m).unpair.2).symm
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem VinterRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.VinterRaw t.unpair.1 t.unpair.2) := by
   have hcn : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.canonIdx t.unpair.1) := primrec.canonIdx.comp Nat.Primrec.left
   have hcm : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.canonIdx t.unpair.2) := primrec.canonIdx.comp Nat.Primrec.right
@@ -9735,34 +7188,28 @@ theorem VinterRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSyste
     (primrec.myLand.comp (hup1.pair hup2)).of_eq fun t => by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (hkJ.pair hland).of_eq fun _ => rfl
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- The intersection index: `canonIdx` of the raw intersection code `VinterRaw`. -/
 def Vinter (n m : ℕ) : ℕ := canonIdx (VinterRaw n m)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem Vinter : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.Vinter t.unpair.1 t.unpair.2) :=
   (primrec.canonIdx.comp primrec.VinterRaw).of_eq fun _ => rfl
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **Scott's consistency condition reduces to non-emptiness.** -/
 theorem Vcons_iff_nonempty_inter (n m : ℕ) :
     (∃ k, VX k ⊆ VX n ∩ VX m) ↔ (VX n ∩ VX m).Nonempty := by
@@ -9776,13 +7223,9 @@ theorem Vcons_iff_nonempty_inter (n m : ℕ) :
       exact ⟨(VinterRaw n m).unpair.1, (VinterRaw n m).unpair.2, rfl, hne⟩
     obtain ⟨k, hk⟩ := V_surj_VX hVmem
     exact ⟨k, by rw [hk]⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem Vinter_spec {n m : ℕ} (h : ∃ k, VX k ⊆ VX n ∩ VX m) : VX (Vinter n m) = VX n ∩ VX m := by
   have hne : (levelSet (VinterRaw n m).unpair.1 (VinterRaw n m).unpair.2).Nonempty := by
     rw [levelSet.VinterRaw]; exact (Vcons_iff_nonempty_inter n m).mp h
@@ -9790,24 +7233,18 @@ theorem Vinter_spec {n m : ℕ} (h : ∃ k, VX k ⊆ VX n ∩ VX m) : VX (Vinter
   rw [VX_canonIdx]
   show levelSet (canonIdx (VinterRaw n m)).unpair.1 (canonIdx (VinterRaw n m)).unpair.2 = VX n ∩ VX m
   rw [canonIdx.eq_self_of_nonempty hne, levelSet.VinterRaw]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **`myUpsample` is always bounded** by `2 ^ (2 ^ k')`, regardless of whether a genuine
 upsampling step occurs. -/
 theorem myUpsample_lt (k k' m : ℕ) : myUpsample k k' m < 2 ^ (2 ^ k') := myModPow2.lt _ _
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`levelSet` equality reduces to `myUpsample` equality** at the common level `max k₁ k₂`: this
 is the injectivity criterion (`levelSet.inj_of_lt`) driving Scott's relation 7.1(i) decider. -/
 theorem eq_iff_myUpsample_eq (k1 m1 k2 m2 : ℕ) :
@@ -9821,14 +7258,12 @@ theorem eq_iff_myUpsample_eq (k1 m1 k2 m2 : ℕ) :
   · intro h
     rw [← levelSet.myUpsample (Nat.le_max_left k1 k2) m1,
       ← levelSet.myUpsample (Nat.le_max_right k1 k2) m2, h]
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **7.1(ii) for `V`**: consistency `∃k. X_k ⊆ Xₙ ∩ Xₘ` is recursively decidable, via
 `Vcons_iff_nonempty_inter` and `myLevelSetNonempty`. -/
 theorem V_cons_computable : RecDecidable₂ (fun n m => ∃ k, VX k ⊆ VX n ∩ VX m) := by
@@ -9845,13 +7280,9 @@ theorem V_cons_computable : RecDecidable₂ (fun n m => ∃ k, VX k ⊆ VX n ∩
   · intro n m
     rw [unpair_pair_fst, unpair_pair_snd, Vcons_iff_nonempty_inter, ← levelSet.VinterRaw,
       myLevelSetNonempty.eq_one_iff]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **7.1(i) for `V`**: `Xₙ ∩ Xₘ = X_k` is recursively decidable, reduced to `myUpsample` equality
 of the raw intersection code against `X_k`'s own code (`levelSet.eq_iff_myUpsample_eq`). -/
 theorem V_interEq_computable : RecDecidable₃ (fun n m k => VX n ∩ VX m = VX k) := by
@@ -9887,13 +7318,9 @@ theorem V_interEq_computable : RecDecidable₃ (fun n m k => VX n ∩ VX m = VX 
   dsimp only
   rw [← levelSet.VinterRaw, ← levelSet.eq_iff_myUpsample_eq]
   rfl
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **Exercise 8.12(b).** `V` (Exercise 8.12(a)) has a genuine `ComputablePresentation`. -/
 def VComputablePresentation : ComputablePresentation V where
   X := VX
@@ -9906,39 +7333,24 @@ def VComputablePresentation : ComputablePresentation V where
   inter_spec := Vinter_spec
   masterIdx := VmasterIdx
   masterIdx_spec := VX_VmasterIdx
-
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
-/-- **Exercise 8.12(b) (Scott 1981, PRG-19).** `V` is effectively given. -/
-theorem V_isEffectivelyGiven : V.IsEffectivelyGiven := ⟨VComputablePresentation⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- LevelSetPrimrec/myTestBit_2.lean
-namespace DomainTheory.NeighbourhoodSystems
-namespace myTestBit
+/-- **Exercise 8.12(b) (Scott 1981, PRG-19).** `V` is effectively given. -/
+theorem V_isEffectivelyGiven : V.IsEffectivelyGiven := ⟨VComputablePresentation⟩
+end
 
+namespace myTestBit
 open Domain.Recursive NeighborhoodSystem
 
-
+section
 theorem le_one (m ℓ : ℕ) : myTestBit m ℓ ≤ 1 := by
   unfold myTestBit
   rcases Nat.mod_two_eq_zero_or_one (myDivPow2 m ℓ) with h | h <;> omega
-
-end myTestBit
-end DomainTheory.NeighbourhoodSystems
 end
 
+end myTestBit
 section
--- MinLevel/isPeriodicMask.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **`isPeriodicMask k j m ∈ {0,1}`** decides whether `levelSet k m` is also presentable at level
@@ -9947,14 +7359,9 @@ exactly like `myUpsample` itself. -/
 def isPeriodicMask (k j m : ℕ) : ℕ :=
   isZero ((myUpsample j k (myModPow2 m (2 ^ j)) - myModPow2 m (2 ^ k)) +
     (myModPow2 m (2 ^ k) - myUpsample j k (myModPow2 m (2 ^ j))))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- MinLevel/minLevel.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **`minLevel k m`**: the smallest `j ≤ k` such that `levelSet k m` is presentable at level `j`
@@ -9963,14 +7370,9 @@ open Domain.Recursive
 def minLevel (k m : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0
     (fun i ih => selectFn (isZero (i - ih)) (selectFn (isPeriodicMask k i m) i (i + 1)) ih) (k + 1)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- MinLevel/minLevelFold.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The raw `Nat.rec`-fold underlying `minLevel k m`, exposed at an arbitrary bound `N` so the
@@ -9978,29 +7380,18 @@ inductive argument below can range over all `N`, specializing to `N = k + 1` at 
 def minLevelFold (k m N : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0
     (fun i ih => selectFn (isZero (i - ih)) (selectFn (isPeriodicMask k i m) i (i + 1)) ih) N
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- MinLevel/minMask.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **`minMask k m`**: `m`'s own bits, truncated to `minLevel k m`'s width — the presentation-
 independent canonical mask of the set `levelSet k m` (`minLevel_unique`). -/
 def minMask (k m : ℕ) : ℕ := myModPow2 m (2 ^ minLevel k m)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- MinLevel/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem isPeriodicMask_le_one (k j m : ℕ) : isPeriodicMask k j m ≤ 1 := isZero_le_one _
 
@@ -10173,15 +7564,10 @@ level and the minimal mask. -/
 theorem minLevel_unique {k₁ m₁ k₂ m₂ : ℕ} (h : levelSet k₁ m₁ = levelSet k₂ m₂) :
     minLevel k₁ m₁ = minLevel k₂ m₂ ∧ minMask k₁ m₁ = minMask k₂ m₂ :=
   ⟨minLevel_eq h, minMask_eq h⟩
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- MinLevel/primrec_isPeriodicMask.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_isPeriodicMask :
     Nat.Primrec (fun t => isPeriodicMask t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) := by
@@ -10203,16 +7589,10 @@ theorem primrec_isPeriodicMask :
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (primrec_isZero.comp (primrec_add₂ (primrec_sub₂ hups hmodk)
     (primrec_sub₂ hmodk hups))).of_eq fun t => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- MinLevel/primrec_minLevel.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_minLevel : Nat.Primrec (fun t => minLevel t.unpair.1 t.unpair.2) := by
   -- `w` is shaped `pair (pair k m) (pair i ih)`, matching `Nat.Primrec.prec`'s own convention
@@ -10244,16 +7624,10 @@ theorem primrec_minLevel : Nat.Primrec (fun t => minLevel t.unpair.1 t.unpair.2)
   refine (hprec.comp hpack).of_eq fun t => ?_
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
   rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- MinLevel/primrec_minMask.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_minMask : Nat.Primrec (fun t => minMask t.unpair.1 t.unpair.2) := by
   have hm : Nat.Primrec (fun t : ℕ => t.unpair.2) := Nat.Primrec.right
@@ -10262,28 +7636,18 @@ theorem primrec_minMask : Nat.Primrec (fun t => minMask t.unpair.1 t.unpair.2) :
     primrec_two_pow hlvl
   exact (primrec.myModPow2.comp (hm.pair hpow)).of_eq fun t => by
     simp only [unpair_pair_fst, unpair_pair_snd, minMask]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/myClearBit.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **The "clear one bit" primitive.** `myClearBit m ℓ := m - 2 ^ ℓ` — primitive recursive for
 free (plain subtraction and a power of two), and, whenever bit `ℓ` of `m` is genuinely set,
 literally equal to `m ^^^ 2 ^ ℓ` (`myClearBit_eq_xor`). -/
 def myClearBit (m ℓ : ℕ) : ℕ := m - 2 ^ ℓ
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/myFirstBit.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **The least-set-bit search combinator.** `myFirstBit m N` is the smallest `ℓ < N` with
@@ -10295,77 +7659,47 @@ tested, becoming the new witness if set, or `i + 1` (the new sentinel) if not. -
 def myFirstBit (m N : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0
     (fun i ih => selectFn (isZero (i - ih)) (selectFn (myTestBit m i) i (i + 1)) ih) N
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/splitVMinLevel.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The presentation-independent canonical level of `VX n`. -/
 def splitVMinLevel (n : ℕ) : ℕ := minLevel (canonIdx n).unpair.1 (canonIdx n).unpair.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/splitVMinMask.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The presentation-independent canonical mask of `VX n`, at `splitVMinLevel n`'s width. -/
 def splitVMinMask (n : ℕ) : ℕ := minMask (canonIdx n).unpair.1 (canonIdx n).unpair.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/splitVUpsampled.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The upsampled mask `M := myUpsample k (k+1) m` for `(k, m) := (splitVMinLevel n, splitVMinMask
 n)` — Scott's `M` from `V_no_minimal`, at the code level, fed the *minimal* presentation. -/
 def splitVUpsampled (n : ℕ) : ℕ :=
   myUpsample (splitVMinLevel n) (splitVMinLevel n + 1) (splitVMinMask n)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/splitVBit.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- The splitting bit `ℓ₀` — the least set bit of the upsampled mask `M`, bounded by `2 ^ (k+1)`. -/
 def splitVBit (n : ℕ) : ℕ :=
   myFirstBit (splitVUpsampled n) (2 ^ (splitVMinLevel n + 1))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/splitVLeft.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **`splitVLeft`**: the code for `Y := levelSet (k+1) (2 ^ ℓ₀)`, `V_no_minimal`'s "left" half. -/
 def splitVLeft (n : ℕ) : ℕ := Nat.pair (splitVMinLevel n + 1) (2 ^ splitVBit n)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/splitVRight.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **`splitVRight`**: the code for `Z := levelSet (k+1) (M ^^^ 2 ^ ℓ₀)`, `V_no_minimal`'s "right"
@@ -10373,16 +7707,10 @@ half — `myClearBit` stands in for `^^^` (justified since `ℓ₀` is, by const
 bit of `M`; `myClearBit_eq_xor`, `(e)(b)(ii)`). -/
 def splitVRight (n : ℕ) : ℕ :=
   Nat.pair (splitVMinLevel n + 1) (myClearBit (splitVUpsampled n) (splitVBit n))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **Unfolding equation** for `myFirstBit` at a successor argument, stated so `rw` fires cleanly
 on the outer application (mirrors `LevelSetPrimrec.lean`'s `myUpsampleJointStep.eq`). -/
@@ -10687,43 +8015,26 @@ theorem splitVLeft_congr {n n' : ℕ} (hn : VX n = VX n') :
 theorem splitVRight_congr {n n' : ℕ} (hn : VX n = VX n') :
     VX (splitVRight n) = VX (splitVRight n') := by
   rw [splitVRight_eq_of_congr hn]
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/myFirstBit_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 /-- **`myFirstBit` never overshoots its bound.** -/
 theorem myFirstBit_le (m N : ℕ) : myFirstBit m N ≤ N := by
   rcases myFirstBit_spec m N with ⟨h, -, -⟩ | ⟨h, -⟩ <;> omega
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/primrec_myClearBit.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_myClearBit : Nat.Primrec (fun t => myClearBit t.unpair.1 t.unpair.2) := by
   have hpow : Nat.Primrec (fun t : ℕ => (2 : ℕ) ^ t.unpair.2) := primrec_two_pow Nat.Primrec.right
   exact (primrec_sub₂ Nat.Primrec.left hpow).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/primrec_myFirstBit.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_myFirstBit : Nat.Primrec (fun t => myFirstBit t.unpair.1 t.unpair.2) := by
   have hm : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
@@ -10747,16 +8058,10 @@ theorem primrec_myFirstBit : Nat.Primrec (fun t => myFirstBit t.unpair.1 t.unpai
   refine (hprec.comp (Nat.Primrec.left.pair Nat.Primrec.right)).of_eq fun t => ?_
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
   rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/primrec_splitVMinLevel.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_splitVMinLevel : Nat.Primrec splitVMinLevel := by
   have hk : Nat.Primrec (fun n : ℕ => (canonIdx n).unpair.1) :=
@@ -10765,16 +8070,10 @@ theorem primrec_splitVMinLevel : Nat.Primrec splitVMinLevel := by
     Nat.Primrec.right.comp primrec.canonIdx
   exact (primrec_minLevel.comp (hk.pair hm)).of_eq fun n => by
     simp only [unpair_pair_fst, unpair_pair_snd]; rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/primrec_splitVMinMask.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_splitVMinMask : Nat.Primrec splitVMinMask := by
   have hk : Nat.Primrec (fun n : ℕ => (canonIdx n).unpair.1) :=
@@ -10783,16 +8082,10 @@ theorem primrec_splitVMinMask : Nat.Primrec splitVMinMask := by
     Nat.Primrec.right.comp primrec.canonIdx
   exact (primrec_minMask.comp (hk.pair hm)).of_eq fun n => by
     simp only [unpair_pair_fst, unpair_pair_snd]; rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/primrec_splitVUpsampled.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_splitVUpsampled : Nat.Primrec splitVUpsampled := by
   have hk1 : Nat.Primrec (fun n : ℕ => splitVMinLevel n + 1) :=
@@ -10800,16 +8093,10 @@ theorem primrec_splitVUpsampled : Nat.Primrec splitVUpsampled := by
   exact (primrec.myUpsample.comp
       (primrec_splitVMinLevel.pair (hk1.pair primrec_splitVMinMask))).of_eq fun n => by
     simp only [unpair_pair_fst, unpair_pair_snd]; rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/primrec_splitVBit.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_splitVBit : Nat.Primrec splitVBit := by
   have hk1 : Nat.Primrec (fun n : ℕ => splitVMinLevel n + 1) :=
@@ -10818,32 +8105,20 @@ theorem primrec_splitVBit : Nat.Primrec splitVBit := by
     primrec_two_pow hk1
   exact (primrec_myFirstBit.comp (primrec_splitVUpsampled.pair hbound)).of_eq fun n => by
     simp only [unpair_pair_fst, unpair_pair_snd]; rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/primrec_splitVLeft.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_splitVLeft : Nat.Primrec splitVLeft := by
   have hk1 : Nat.Primrec (fun n : ℕ => splitVMinLevel n + 1) :=
     Nat.Primrec.succ.comp primrec_splitVMinLevel
   have hpow : Nat.Primrec (fun n : ℕ => (2 : ℕ) ^ splitVBit n) := primrec_two_pow primrec_splitVBit
   exact (Nat.Primrec.pair hk1 hpow).of_eq fun n => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitV/primrec_splitVRight.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 theorem primrec_splitVRight : Nat.Primrec splitVRight := by
   have hk1 : Nat.Primrec (fun n : ℕ => splitVMinLevel n + 1) :=
@@ -10852,18 +8127,11 @@ theorem primrec_splitVRight : Nat.Primrec splitVRight := by
     (primrec_myClearBit.comp (primrec_splitVUpsampled.pair primrec_splitVBit)).of_eq fun n => by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (Nat.Primrec.pair hk1 hclear).of_eq fun n => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/sub.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 /- concordance: source L4890 THEOREM 8.6 sub combinator -/
@@ -10872,35 +8140,21 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 `fixedNbhd f = {Y ∈ E ∣ Y f Y}` (Theorem 8.5's subsystem, built for *any* `f`). -/
 def sub (f : ApproximableMap E E) : ApproximableMap E E :=
   Subsystem.retractionOfSubsystem (fixedNbhd_subsystem f)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/sub_rel.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 @[simp] theorem sub_rel {f : ApproximableMap E E} {X Z : Set α} :
     (sub f).rel X Z ↔ E.mem X ∧ E.mem Z ∧ ∃ Y, (E.mem Y ∧ f.rel Y Y) ∧ X ⊆ Y ∧ Y ⊆ Z :=
   Subsystem.retractionOfSubsystem_rel (fixedNbhd_subsystem f)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/fixedNbhd_retractionOfSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- `fixedNbhd (retractionOfSubsystem h) = D`: the round trip recovering a subsystem `D` from the
@@ -10918,18 +8172,11 @@ theorem fixedNbhd_retractionOfSubsystem {D : NeighborhoodSystem α} (h : D ◁ E
     · intro hX
       exact ⟨h.sub hX, h.sub hX, h.sub hX, X, hX, subset_rfl, subset_rfl⟩
   · exact h.master_eq.symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/subFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -10939,18 +8186,11 @@ def subFilter (φ : (funSpace E E).Element) : (funSpace E E).Element :=
   toFilter (sub (toApproxMap φ))
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/sub_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **`sub` is monotone.** `f ≤ g → sub f ≤ sub g`: immediate from `fixedNbhd`'s definition, since
@@ -10959,18 +8199,11 @@ theorem sub_mono {f g : ApproximableMap E E} (h : f ≤ g) : sub f ≤ sub g := 
   rintro X Z hr
   obtain ⟨hX, hZ, Y, ⟨hYE, hYf⟩, hXY, hYZ⟩ := sub_rel.mp hr
   exact sub_rel.mpr ⟨hX, hZ, Y, ⟨hYE, h Y Y hYf⟩, hXY, hYZ⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/sub_retractionOfSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- Every `retractionOfSubsystem h` is already a fixed point of `sub` — immediate from the round
@@ -10981,18 +8214,11 @@ theorem sub_retractionOfSubsystem {D : NeighborhoodSystem α} (h : D ◁ E) :
   unfold sub
   congr 1
   exact fixedNbhd_retractionOfSubsystem h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/finitaryProjectionSubsystemEquiv.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **The finitary projections on `E` are order-isomorphic to the subsystems of `E`.** Forward:
@@ -11024,18 +8250,11 @@ def finitaryProjectionSubsystemEquiv (E : NeighborhoodSystem α) :
         (fixedNbhd_subsystem f.1) (fixedNbhd_subsystem g.1)).mpr ?_
       intro X hX
       exact ⟨hX.1, hfg X X hX.2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/toApproxMap_monotone.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11046,18 +8265,11 @@ theorem toApproxMap_monotone {φ ψ : (funSpace E E).Element} (h : φ ≤ ψ) :
   simpa using this
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/subFilter_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11066,18 +8278,11 @@ theorem subFilter_mono {φ ψ : (funSpace E E).Element} (h : φ ≤ ψ) : subFil
   toFilter_le_iff.mpr (sub_mono (toApproxMap_monotone h))
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/subFilter_monotone.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11085,18 +8290,11 @@ namespace Sub8_6
 theorem subFilter_monotone : Monotone (subFilter (E := E)) := fun _ _ h => subFilter_mono h
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/toApproxMap_rel_iSupDirected.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11110,18 +8308,11 @@ theorem toApproxMap_rel_iSupDirected {I : Type u} [Nonempty I] (φ : I → (funS
   simp only [toApproxMap_rel, mem_iSupDirected]
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/sub_toApproxMap_iSupDirected.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11142,18 +8333,11 @@ theorem sub_toApproxMap_iSupDirected {I : Type u} [Nonempty I] (φ : I → (funS
     exact ⟨hX, hZ, Y, ⟨hYE, i, hYi⟩, hXY, hYZ⟩
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/toApproxMap_toFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11162,18 +8346,11 @@ theorem toApproxMap_toFilter (f : ApproximableMap E E) : toApproxMap (toFilter f
   (funSpaceEquiv E E).right_inv f
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/toApproxMap_subFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11183,18 +8360,11 @@ theorem toApproxMap_subFilter (φ : (funSpace E E).Element) :
   toApproxMap_toFilter _
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/toFilter_toApproxMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11203,18 +8373,11 @@ theorem toFilter_toApproxMap (φ : (funSpace E E).Element) : toFilter (toApproxM
   (funSpaceEquiv E E).left_inv φ
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/toApproxMap_injective.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11224,18 +8387,11 @@ theorem toApproxMap_injective {φ ψ : (funSpace E E).Element} (h : toApproxMap 
   rw [← toFilter_toApproxMap φ, ← toFilter_toApproxMap ψ, h]
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/subFilter_iSupDirected.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11254,18 +8410,11 @@ theorem subFilter_iSupDirected {I : Type u} [Nonempty I] (φ : I → (funSpace E
   simp only [toApproxMap_subFilter]
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/continuous_subFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11276,18 +8425,11 @@ theorem continuous_subFilter : Continuous (subFilter (E := E)) :=
   continuous_of_monotone_iSupDirected subFilter_monotone subFilter_iSupDirected
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/subApprox.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11298,18 +8440,11 @@ def subApprox : ApproximableMap (funSpace E E) (funSpace E E) :=
   ofContinuous subFilter continuous_subFilter
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/toElementMap_subApprox.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11319,18 +8454,11 @@ theorem toElementMap_subApprox (φ : (funSpace E E).Element) :
   toElementMap_ofContinuous subFilter continuous_subFilter φ
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/subApproxFixIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 namespace Sub8_6
@@ -11359,20 +8487,12 @@ def subApproxFixIso :
     exact (funSpaceEquiv E E).map_rel_iff
 
 end Sub8_6
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 namespace Sub8_6
 
@@ -11384,19 +8504,12 @@ theorem isFinitary_subApprox : IsFinitary (subApprox (E := E)) :=
   ⟨_, _, ⟨subApproxFixIso.trans
     ((finitaryProjectionSubsystemEquiv E).trans (Proposition611.subsystemReprIso E))⟩⟩
 end Sub8_6
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/fixedNbhd_sub.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- `fixedNbhd (sub f) = fixedNbhd f`: `Y (sub f) Y ↔ Y f Y`, since a witness `Y ⊆ Y' ⊆ Y` forces
 `Y' = Y`. This is the key computation behind `sub`'s idempotency (`sub_sub`). -/
@@ -11414,20 +8527,12 @@ theorem fixedNbhd_sub (f : ApproximableMap E E) : fixedNbhd (sub f) = fixedNbhd 
       obtain ⟨hYE, hYf⟩ := hmem
       refine ⟨hYE, sub_rel.mpr ⟨hYE, hYE, Y, ⟨hYE, hYf⟩, subset_rfl, subset_rfl⟩⟩
   · rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/isFinitaryProjection_of_sub_eq_self.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **The easy half of Theorem 8.6's range characterization.** If `f` is a fixed point of `sub`,
 then `f` is a finitary projection: `sub f = f` says exactly that `f` *is*
@@ -11438,20 +8543,12 @@ theorem isFinitaryProjection_of_sub_eq_self {f : ApproximableMap E E} (h : sub f
     FinitaryProjection f := by
   rw [← h]
   exact Subsystem.isFinitaryProjection_retractionOfSubsystem (fixedNbhd_subsystem f)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/sub_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **`sub f ≤ f`, unconditionally (Scott 1981, PRG-19).** "`X ⊆ Y, f Y ⊆ Z` always implies
 `X f Z`" — a bare narrow-input/widen-output monotonicity calculation, needing nothing about `f`. -/
@@ -11460,20 +8557,12 @@ theorem sub_le (f : ApproximableMap E E) : sub f ≤ f := by
   obtain ⟨hX, hZ, Y, ⟨hYE, hYf⟩, hXY, hYZ⟩ := sub_rel.mp hr
   have h1 : f.rel X Y := f.mono hYf hXY subset_rfl hX hYE
   exact f.mono h1 subset_rfl hYZ hX hZ
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/subApprox_le_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 namespace Sub8_6
 
@@ -11489,19 +8578,12 @@ theorem subApprox_le_idMap : subApprox ≤ idMap (funSpace E E) := by
     _ = φ := toFilter_toApproxMap φ
 
 end Sub8_6
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/sub_eq_self_of_isFinitaryProjection.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **The hard half of Theorem 8.6's range characterization, now unblocked by Theorem 8.5.** Every
 finitary projection is a fixed point of `sub`: `⊇` is `sub_le`; `⊆` unwinds `X f Z` via
@@ -11520,39 +8602,23 @@ theorem sub_eq_self_of_isFinitaryProjection {f : ApproximableMap E E}
     obtain ⟨-, W, hW, hWZ, hWf⟩ := (formula_of_isFinitaryProjection h (E.principal hX)).mp hmem
     obtain ⟨hWE, hXW⟩ := (E.mem_principal hX).mp hW
     exact sub_rel.mpr ⟨hX, hZ, W, ⟨hWE, hWf⟩, hXW, hWZ⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/sub_eq_self_iff_isFinitaryProjection.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **Theorem 8.6's range characterization, in full.** `sub f = f ↔ f` is a finitary projection. -/
 theorem sub_eq_self_iff_isFinitaryProjection {f : ApproximableMap E E} :
     sub f = f ↔ FinitaryProjection f :=
   ⟨isFinitaryProjection_of_sub_eq_self, sub_eq_self_of_isFinitaryProjection⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/sub_sub.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **`sub` is idempotent: `sub (sub f) = sub f`** (sharper than Scott's stated `sub(f) ⊆
 sub(sub(f))`, Theorem 8.6's projection clause for `sub` itself). Both sides are
@@ -11562,20 +8628,12 @@ theorem sub_sub (f : ApproximableMap E E) : sub (sub f) = sub f := by
   unfold sub
   congr 1
   exact fixedNbhd_sub f
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/isFinitaryProjection_sub.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **`sub` is itself a finitary projection on `E → E`'s range** (Theorem 8.6's remark that `sub`
 restricted to its own range is the identity, i.e. `sub` "is" a projection onto the finitary
@@ -11585,20 +8643,12 @@ fixed point of `sub` (feed `isFinitaryProjection_of_sub_eq_self (sub_sub f)` bac
 `f`, needing no hypothesis on `f` at all. -/
 theorem isFinitaryProjection_sub (f : ApproximableMap E E) : FinitaryProjection (sub f) :=
   isFinitaryProjection_of_sub_eq_self (sub_sub f)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/subFilter_subFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 namespace Sub8_6
 
@@ -11609,19 +8659,12 @@ theorem subFilter_subFilter (φ : (funSpace E E).Element) :
   rw [toApproxMap_toFilter, sub_sub]
 
 end Sub8_6
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/toElementMap_subApprox_comp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 namespace Sub8_6
 
@@ -11633,19 +8676,12 @@ theorem toElementMap_subApprox_comp (φ : (funSpace E E).Element) :
   exact subFilter_subFilter φ
 
 end Sub8_6
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/isRetraction_subApprox.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 namespace Sub8_6
 
@@ -11658,19 +8694,12 @@ theorem isRetraction_subApprox : Retraction (subApprox (E := E)) :=
     (le_iff_toElementMap_le.mpr fun φ => (toElementMap_subApprox_comp φ).ge)⟩
 
 end Sub8_6
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/isProjection_subApprox.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 namespace Sub8_6
 
@@ -11681,19 +8710,12 @@ theorem isProjection_subApprox : IsProjection (subApprox (E := E)) :=
   ⟨isRetraction_subApprox, subApprox_le_idMap⟩
 
 end Sub8_6
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86/isFinitaryProjection_subApprox.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 namespace Sub8_6
 
@@ -11703,13 +8725,9 @@ theorem isFinitaryProjection_subApprox : FinitaryProjection (subApprox (E := E))
   ⟨⟨isProjection_subApprox, isFinitary_subApprox⟩⟩
 
 end Sub8_6
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem theorem_86.{u} : And
@@ -11755,18 +8773,11 @@ theorem theorem_86.{u} : And
     @DomainTheory.NeighbourhoodSystems.sub_eq_self_iff_isFinitaryProjection
     @DomainTheory.NeighbourhoodSystems.Sub8_6.isFinitary_subApprox)
   @DomainTheory.NeighbourhoodSystems.Sub8_6.isFinitaryProjection_subApprox
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86c/subApprox_rel_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-
 variable {α : Type*} {E : NeighborhoodSystem α}
-
 
 /-- **`subApprox`'s relation, unfolded via `ofMono`/`ofContinuous`/`toFilter`.** `F subApprox G`
 holds iff `G` is a genuine function-space neighbourhood containing `sub` of `F`'s least map (any
@@ -11775,18 +8786,11 @@ theorem subApprox_rel_iff {F G : Set (ApproximableMap E E)} (hF : (funSpace E E)
     (subApprox (E := E)).rel F G ↔
       (funSpace E E).mem G ∧ sub (toApproxMap ((funSpace E E).principal hF)) ∈ G :=
   ⟨fun ⟨_, hG, hmem⟩ => ⟨hG, hmem⟩, fun ⟨hG, hmem⟩ => ⟨hF, hG, hmem⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86c/subApprox_rel_Xenum_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-
 variable {α : Type*} {E : NeighborhoodSystem α}
-
 
 section SubComputable
 
@@ -11805,17 +8809,11 @@ theorem subApprox_rel_Xenum_iff (n m : ℕ) :
   exact mem_Xenum_iff_map P P gN _ m
 
 end SubComputable
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86c/subStep_recDecidable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-
 variable {α : Type*} {E : NeighborhoodSystem α}
-
 
 section SubComputable
 
@@ -11859,17 +8857,11 @@ theorem subStep_recDecidable (fincl incl : ℕ → ℕ)
   exact h1.and (h2.and h3)
 
 end SubComputable
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86c/sub_rel_iff_exists_index.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-
 variable {α : Type*} {E : NeighborhoodSystem α}
-
 
 section SubComputable
 
@@ -11892,17 +8884,11 @@ theorem sub_rel_iff_exists_index {f : ApproximableMap E E} {a b : ℕ} :
     exact ⟨P.X y, ⟨P.mem_X y, hYf⟩, haY, hYb⟩
 
 end SubComputable
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86c/sub_leastMap_rel_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-
 variable {α : Type*} {E : NeighborhoodSystem α}
-
 
 section SubComputable
 
@@ -11924,17 +8910,11 @@ theorem sub_leastMap_rel_iff (n a b : ℕ) :
   rw [leastMap_Xenum_rel P gN hgN n y y, Xenum_codePair P gN hgN y y]
 
 end SubComputable
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86c/subApprox_isComputable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-
 variable {α : Type*} {E : NeighborhoodSystem α}
-
 
 section SubComputable
 
@@ -11982,17 +8962,11 @@ theorem subApprox_isComputable
   exact sub_leastMap_rel_iff P gN hgN t.unpair.1 e.unpair.1 e.unpair.2
 
 end SubComputable
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86c/sub_isComputable_of_isEffectivelyGiven.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
-
 variable {α : Type*} {E : NeighborhoodSystem α}
-
 
 /-- **Theorem 8.6(c) (Scott 1981, PRG-19), in full: "If `E` is effectively given, then `sub` is
 computable."** Packages `subApprox_isComputable` with the function-space presentation that Theorem
@@ -12014,14 +8988,9 @@ theorem sub_isComputable_of_isEffectivelyGiven (h : E.IsEffectivelyGiven) :
     (primrec_funConsChar P P fc fc hfcp hfcp) hincl' hinclp hincl' hinclp heq' heqp,
     subApprox_isComputable P (funConsChar P P fc fc) hgN incl eq
       (primrec_funConsChar P P fc fc hfcp hfcp) hincl' hinclp heq' heqp⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem86c.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem theorem_86_c.{u_1} : And
@@ -12110,16 +9079,10 @@ theorem theorem_86_c.{u_1} : And
           Pfun Pfun (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E))
   @DomainTheory.NeighbourhoodSystems.subApprox_isComputable
   @DomainTheory.NeighbourhoodSystems.sub_isComputable_of_isEffectivelyGiven
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88/SplitSpec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 /-- **The abstract specification a splitting operation must satisfy** — exactly `exists_split`'s
@@ -12133,16 +9096,10 @@ def SplitSpec (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ) : P
       (A \ Xn = ∅ ↔ (split A B Xn).2 = ∅) ∧
       (split A B Xn).1 ∪ (split A B Xn).2 = B ∧
       (split A B Xn).1 ∩ (split A B Xn).2 = ∅
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88/exists_split.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 /-- **The key local splitting step behind Theorem 8.8(a)'s back-and-forth construction.** Given a
@@ -12182,33 +9139,20 @@ theorem exists_split {A : Set α} {B : Set ℚ} (hAB : A = ∅ ↔ B = ∅)
       have hZne : Z ≠ ∅ := hZ.2.1.ne_empty
       exact ⟨Y, Z, Or.inr hY, Or.inr hZ, iff_of_false h1 hYne, iff_of_false h2 hZne,
         hYZunion, hYZinter⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88/genAtom.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 def genAtom {β : Type*} (Z : ℕ → Set β) (M : Set β) (δ : ℕ → Bool) : ℕ → Set β
   | 0 => M
   | (n + 1) => genAtom Z M δ n ∩ (if δ n then Z n else M \ Z n)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88/atomU.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
-
 variable (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
 
 /-- The `U`-side atom matching `genAtom X Δ δ n`, built recursively via an abstract splitting
@@ -12219,102 +9163,58 @@ noncomputable def atomU (split : Set α → Set ℚ → Set α → Set ℚ × Se
   | (n + 1) =>
       if δ n then (split (genAtom X Δ δ n) (atomU split X Δ δ n) (X n)).1
       else (split (genAtom X Δ δ n) (atomU split X Δ δ n) (X n)).2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88/atomU_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
-
 variable (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
-
 variable (X : ℕ → Set α) (Δ : Set α)
 
 @[simp] theorem atomU_zero (δ : ℕ → Bool) : atomU split X Δ δ 0 = U.master := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88/extendTrue.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
-
 variable (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
-
 variable (X : ℕ → Set α) (Δ : Set α)
-
 variable (hΔ : Δ.Nonempty) (hsplit : SplitSpec split)
-
 include hΔ hsplit
 
 /-- Pad `δ' : Fin n → Bool` to a total `ℕ → Bool`, filling positions `≥ n` with `true`. -/
 def extendTrue {n : ℕ} (δ' : Fin n → Bool) : ℕ → Bool :=
   fun i => if h : i < n then δ' ⟨i, h⟩ else true
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88/Yseq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
-
 variable (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
-
 variable (X : ℕ → Set α) (Δ : Set α)
-
 variable (hΔ : Δ.Nonempty) (hsplit : SplitSpec split)
-
 include hΔ hsplit
 
 /-- **Scott's `Yₙ`**: the union, over all `2ⁿ` depth-`n` atoms, of the "+"-piece chosen when
 splitting against `X n`. -/
 noncomputable def Yseq (n : ℕ) : Set ℚ :=
   ⋃ δ' : Fin n → Bool, atomU split X Δ (extendTrue δ') (n + 1)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88/restrictFin.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
-
 variable (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
-
 variable (X : ℕ → Set α) (Δ : Set α)
-
 variable (hΔ : Δ.Nonempty) (hsplit : SplitSpec split)
-
 include hΔ hsplit
 
 /-- Restrict `δ : ℕ → Bool` to `Fin n → Bool`. -/
 def restrictFin (δ : ℕ → Bool) (n : ℕ) : Fin n → Bool := fun i => δ i.val
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88/splitChoice.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 open Classical in
@@ -12329,18 +9229,11 @@ noncomputable def splitChoice (A : Set α) (B : Set ℚ) (Xn : Set α) : Set ℚ
   if h : (A = ∅ ↔ B = ∅) ∧ (B = ∅ ∨ U.mem B) then
     ⟨(exists_split h.1 h.2 Xn).choose, (exists_split h.1 h.2 Xn).choose_spec.choose⟩
   else (∅, ∅)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
-
 
 theorem genAtom_subset {β : Type*} (Z : ℕ → Set β) (M : Set β) (δ : ℕ → Bool) (n : ℕ) :
     genAtom Z M δ n ⊆ M := by
@@ -12862,17 +9755,11 @@ theorem Yseq_nonempty_of_mem {n : ℕ} {x : α} (hxΔ : x ∈ Δ) (hxn : x ∈ X
     rw [hδ2_eq, ← hI_eq_atomU]
     exact Set.nonempty_iff_ne_empty.mpr hIne
   exact hne2.mono (subset_Yseq split X Δ (restrictFin δ0 n))
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88/splitChoice_isSplitSpec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
-
 
 open Classical in
 
@@ -12885,16 +9772,10 @@ theorem splitChoice_isSplitSpec : SplitSpec (α := α) splitChoice := by
   unfold splitChoice
   rw [dite_eq_left ⟨hAB, hBU⟩]
   exact (exists_split hAB hBU Xn).choose_spec.choose_spec
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/idxSet.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Reencode
@@ -12906,16 +9787,10 @@ below `e n`. This is `D†`'s replacement for `e n` itself. -/
 def idxSet (n : ℕ) : Set ℕ := {m | e m ⊆ e n}
 
 end Reencode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/mem_idxSet.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Reencode
@@ -12925,16 +9800,10 @@ variable (e : ℕ → Set α)
 @[simp] theorem mem_idxSet {m n : ℕ} : m ∈ idxSet e n ↔ e m ⊆ e n := Iff.rfl
 
 end Reencode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/D_mem_e.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -12947,16 +9816,10 @@ include hcover in
 theorem D_mem_e (n : ℕ) : D.mem (e n) := (hcover (e n)).mpr ⟨n, rfl⟩
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/Yidx.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -12969,16 +9832,10 @@ variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
 noncomputable abbrev Yidx (n : ℕ) : Set ℚ := Yseq splitChoice (idxSet e) Set.univ n
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/e_subset_master.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -12990,16 +9847,10 @@ include hcover in
 theorem e_subset_master (n : ℕ) : e n ⊆ D.master := D.sub_master (D_mem_e D e hcover n)
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/idxSet_inter_of_inter_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Reencode
@@ -13016,16 +9867,10 @@ theorem idxSet_inter_of_inter_eq {i j m : ℕ} (h : e i ∩ e j = e m) :
   rw [← Set.subset_inter_iff, h]
 
 end Reencode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/idxSet_zero_eq_univ.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Reencode
@@ -13036,16 +9881,10 @@ theorem idxSet_zero_eq_univ {n0 : ℕ} (hsub : ∀ m, e m ⊆ e n0) : idxSet e n
   Set.eq_univ_of_forall hsub
 
 end Reencode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/idxSet_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -13058,16 +9897,10 @@ theorem idxSet_zero : idxSet e 0 = Set.univ :=
   idxSet_zero_eq_univ e (fun m => he0 ▸ e_subset_master D e hcover m)
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/self_mem_idxSet.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Reencode
@@ -13079,16 +9912,10 @@ regardless of whether `e n` itself is empty. -/
 theorem self_mem_idxSet (n : ℕ) : n ∈ idxSet e n := show e n ⊆ e n from subset_rfl
 
 end Reencode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/idxSet_subset_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Reencode
@@ -13101,16 +9928,10 @@ theorem idxSet_subset_iff (i j : ℕ) : idxSet e i ⊆ idxSet e j ↔ e i ⊆ e 
   ⟨fun h => h (self_mem_idxSet e i), fun h _ hm => hm.trans h⟩
 
 end Reencode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/univ_nonempty_nat.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -13124,16 +9945,10 @@ variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
 theorem univ_nonempty_nat : (Set.univ : Set ℕ).Nonempty := ⟨0, trivial⟩
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/Yidx_empty_or_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -13146,16 +9961,10 @@ theorem Yidx_empty_or_mem (n : ℕ) : Yidx e n = ∅ ∨ U.mem (Yidx e n) :=
   Yseq_empty_or_mem splitChoice (idxSet e) Set.univ univ_nonempty_nat splitChoice_isSplitSpec n
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/Yidx_nonempty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -13170,16 +9979,10 @@ theorem Yidx_nonempty (n : ℕ) : (Yidx e n).Nonempty :=
     (Set.mem_univ n) (self_mem_idxSet e n)
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/Yidx_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -13191,16 +9994,10 @@ theorem Yidx_mem (n : ℕ) : U.mem (Yidx e n) :=
   (Yidx_empty_or_mem e n).resolve_left (Yidx_nonempty e n).ne_empty
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/Yidx_subset_master.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -13213,16 +10010,10 @@ theorem Yidx_subset_master (n : ℕ) : Yidx e n ⊆ U.master :=
   Yseq_subset_master splitChoice (idxSet e) Set.univ univ_nonempty_nat splitChoice_isSplitSpec n
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/Yidx_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -13237,16 +10028,10 @@ theorem Yidx_zero : Yidx e 0 = U.master :=
     (idxSet_zero D e hcover he0)
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/embed_subset_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -13266,16 +10051,10 @@ theorem embed_subset_iff (i j : ℕ) : e i ⊆ e j ↔ Yidx e i ⊆ Yidx e j := 
   rwa [Set.univ_inter, Set.inter_eq_self_of_subset_right (Yidx_subset_master e i)] at this
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/embed_eq_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Setup
@@ -13290,16 +10069,10 @@ theorem embed_eq_iff (i j : ℕ) : e i = e j ↔ Yidx e i = Yidx e j :=
       ((embed_subset_iff e j i).mpr h.symm.subset)⟩
 
 end Setup
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/exists_inter_index_of_dmem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Subsystem
@@ -13322,16 +10095,10 @@ theorem exists_inter_index_of_dmem {i j : ℕ} (hDij : D.mem (e i ∩ e j)) :
     (Set.subset_univ _) (Set.subset_univ _) (Set.subset_univ _)).mp (idxSet_inter_of_inter_eq e hm)⟩
 
 end Subsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/DprimeU.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Subsystem
@@ -13360,16 +10127,10 @@ noncomputable def DprimeU : NeighborhoodSystem ℚ where
     exact ⟨m, hYeq⟩
 
 end Subsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/exists_inter_index_of_nonempty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Subsystem
@@ -13398,16 +10159,10 @@ theorem exists_inter_index_of_nonempty {i j : ℕ} (hne : (Yidx e i ∩ Yidx e j
       (Set.subset_inter hki hkj))
 
 end Subsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/DprimeU_subsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Subsystem
@@ -13428,16 +10183,10 @@ theorem DprimeU_subsystem : DprimeU D e hcover he0 ◁ U where
     exact ⟨m, hYeq⟩
 
 end Subsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/toD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Iso
@@ -13463,16 +10212,10 @@ def toD (y : (DprimeU D e hcover he0).Element) : D.Element where
     exact ⟨j, rfl, y.up_mem hyi ⟨j, rfl⟩ hYij⟩
 
 end Iso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/toDprimeU.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Iso
@@ -13496,16 +10239,10 @@ def toDprimeU (x : D.Element) : (DprimeU D e hcover he0).Element where
     exact ⟨j, rfl, x.up_mem hxi (D_mem_e D e hcover j) heij⟩
 
 end Iso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/domainIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Iso
@@ -13556,16 +10293,10 @@ noncomputable def domainIso : DomainIso D (DprimeU D e hcover he0) where
       exact ⟨n, hn, hle _ hxn⟩
 
 end Iso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/idxSet_eq_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Reencode
@@ -13579,15 +10310,10 @@ theorem idxSet_eq_iff (i j : ℕ) : idxSet e i = idxSet e j ↔ e i = e j :=
     fun h => by rw [idxSet, idxSet, h]⟩
 
 end Reencode
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/idxSet_nonempty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
 
 section Reencode
@@ -13598,17 +10324,11 @@ variable (e : ℕ → Set α)
 theorem idxSet_nonempty (n : ℕ) : (idxSet e n).Nonempty := ⟨n, self_mem_idxSet e n⟩
 
 end Reencode
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/isomorphic_DprimeU.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
-
 
 section Iso
 
@@ -13620,17 +10340,11 @@ variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
 theorem isomorphic_DprimeU : D ≅ᴰ DprimeU D e hcover he0 := ⟨domainIso D e hcover he0⟩
 
 end Iso
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/theorem_8_8_a.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
-
 
 /- concordance: source L4943 THEOREM 8.8 universality of U -/
 /-- **First sentence of Theorem 8.8 (Scott 1981, PRG-19, Lecture VIII).** `𝒰` is universal: every *countable*
@@ -13663,18 +10377,11 @@ theorem theorem_8_8_a.{u} {α : Type u} (D : NeighborhoodSystem α)
       | zero => rw [he0]; exact D.master_mem
       | succ n => rw [hen n]; exact (f n).2
   exact ⟨DprimeU D e hcover he0, isomorphic_DprimeU D e hcover he0, DprimeU_subsystem D e hcover he0⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88a/theorem_8_8.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 variable {α : Type*}
-
 
 /-- **First sentence of Theorem 8.8 (Scott 1981, PRG-19).** Scott's wording:
 "The system `𝒰` is universal in the sense that, for every countable neighbourhood
@@ -13683,63 +10390,38 @@ theorem theorem_8_8.{u} {α : Type u} (D : NeighborhoodSystem α)
     [Countable {S : Set α // D.mem S}] : D ⊴ U := by
   obtain ⟨D', hiso, hsub⟩ := theorem_8_8_a D
   exact ⟨D', hsub, hiso⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/IPos.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- The `idxSet`-atom of the *positive* constraints `pos`: indices `m` with `Xₘ ⊆ Xᵢ` for every
 `i ∈ pos`. (The empty list gives `Set.univ`, matching `genAtom`'s depth-`0` value.) -/
 def IPos (pos : List ℕ) : Set ℕ := {m | ∀ i ∈ pos, m ∈ idxSet P.X i}
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/IPos_nil.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 @[simp] theorem IPos_nil : IPos P [] = Set.univ := by
   ext m; simp [IPos]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/DAtom.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The full atom**: positive constraints `pos` together with negative constraints `neg`
 (`¬(Xₘ ⊆ Xⱼ)` for `j ∈ neg`). This is `genAtom (idxSet P.X) Set.univ δ n` for the sign sequence
 built from `pos`/`neg`. -/
 def DAtom (pos neg : List ℕ) : Set ℕ := IPos P pos ∩ {m | ∀ j ∈ neg, m ∉ idxSet P.X j}
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/meetStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable (cons : ℕ → ℕ)
 
 /-- One step of the positive meet-fold. The accumulator `r` codes `(ok, idx)`
@@ -13750,85 +10432,49 @@ the fold is permanently "not ok" (accumulator frozen at the last good `idx`, whi
 def meetStep (r i : ℕ) : ℕ :=
   selectFn (isOne r.unpair.1 * isOne (cons (Nat.pair r.unpair.2 i)))
     (Nat.pair 1 (P.inter r.unpair.2 i)) (Nat.pair 0 r.unpair.2)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/meetFold.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable (cons : ℕ → ℕ)
 
 /-- **The positive meet-fold**: fold `meetStep` across `pos`, starting from `(ok, idx) = (1,
 masterIdx)` (the empty meet is `Δ`, always "ok"). -/
 def meetFold (l : List ℕ) : ℕ := l.foldl (meetStep P cons) (Nat.pair 1 P.masterIdx)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/meetFold_nil.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable (cons : ℕ → ℕ)
 
 @[simp] theorem meetFold_nil : meetFold P cons [] = Nat.pair 1 P.masterIdx := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/meetStepCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable (cons : ℕ → ℕ)
 
 /-- `foldCode`-shaped step matching `meetStep`: state `w = pair i (pair r params)` (`params`
 unused). -/
 def meetStepCode (w : ℕ) : ℕ := meetStep P cons w.unpair.2.unpair.1 w.unpair.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/meetFoldCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable (cons : ℕ → ℕ)
 
 /-- The code-level positive meet-fold. -/
 def meetFoldCode (c : ℕ) : ℕ := foldCode (meetStepCode P cons) 0 (Nat.pair 1 P.masterIdx) c
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/DAtomEmptyChar.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable (cons : ℕ → ℕ)
-
 variable (incl : ℕ → ℕ)
 
 /-- **The full `DAtom`-emptiness decider.** `1` iff `DAtom (decodeList posC) (decodeList negC) =
@@ -13839,18 +10485,11 @@ def DAtomEmptyChar (posC negC : ℕ) : ℕ :=
     (existsListChar (fun t => incl (Nat.pair t.unpair.2 t.unpair.1))
       (meetFoldCode P cons posC).unpair.2 negC)
     1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/IPos_cons.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem IPos_cons (i : ℕ) (rest : List ℕ) :
     IPos P (i :: rest) = idxSet P.X i ∩ IPos P rest := by
@@ -13861,18 +10500,11 @@ theorem IPos_cons (i : ℕ) (rest : List ℕ) :
   · rintro ⟨hi, hrest⟩ j (rfl | hj)
     · exact hi
     · exact hrest j hj
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/idxSet_masterIdx_eq_univ.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- `idxSet P.X P.masterIdx = Set.univ`: `masterIdx` indexes `D`'s master `Δ`, and every
 `D`-neighbourhood is `⊆ Δ`. -/
@@ -13881,21 +10513,12 @@ theorem idxSet_masterIdx_eq_univ : idxSet P.X P.masterIdx = Set.univ :=
     show P.X m ⊆ P.X P.masterIdx
     rw [P.masterIdx_spec]
     exact D.sub_master (P.mem_X m)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/meetFoldCode_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
 
 theorem meetFoldCode_eq (c : ℕ) : meetFoldCode P cons c = meetFold P cons (decodeList c) := by
   have hfun : (fun (acc x : ℕ) => meetStepCode P cons (Nat.pair x (Nat.pair acc 0)))
@@ -13905,41 +10528,23 @@ theorem meetFoldCode_eq (c : ℕ) : meetFoldCode P cons c = meetFold P cons (dec
     simp only [unpair_pair_fst, unpair_pair_snd]
   unfold meetFoldCode meetFold
   rw [foldCode_eq', hfun]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/meetFold_cons.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
 
 theorem meetFold_cons (i : ℕ) (rest : List ℕ) :
     meetFold P cons (i :: rest) = (rest.foldl (meetStep P cons) (meetStep P cons
       (Nat.pair 1 P.masterIdx) i)) := by
   unfold meetFold; rw [List.foldl_cons]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/meetStep_ok_le_one.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
 
 theorem meetStep_ok_le_one (r i : ℕ) : (meetStep P cons r i).unpair.1 ≤ 1 := by
   have h1 := isOne_le_one r.unpair.1
@@ -13952,21 +10557,12 @@ theorem meetStep_ok_le_one (r i : ℕ) : (meetStep P cons r i).unpair.1 ≤ 1 :=
         isOne (cons (Nat.pair r.unpair.2 i)) = 1 by omega) with h' | h'
     · rw [h', selectFn_zero, unpair_pair_fst]; exact Nat.zero_le 1
     · rw [h', selectFn_one, unpair_pair_fst]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/meetStep_spec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
 
 /-- **One-step transfer of the meet-fold invariant**: if `init` codes `(ok, idx)` faithfully
 relative to some set `S` (`ok = 1 → idxSet idx = S`, `ok = 0 → S = ∅`), then `meetStep init i`
@@ -14016,21 +10612,12 @@ theorem meetStep_spec
       exact hc ((hcons _ _).mpr ⟨m, Set.subset_inter hm1 hm2⟩)
     · rw [(isOne_eq_one_iff _).mpr hc, selectFn_one, unpair_pair_fst]
       intro h; exact absurd h (by decide)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/meetFold_foldl_spec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
 
 /-- **The meet-fold invariant, folded across a whole list.** Generalizes `meetStep_spec` from one
 step to a full list `l`, relative to an arbitrary starting accumulator `init`/set `S`. -/
@@ -14051,21 +10638,12 @@ theorem meetFold_foldl_spec
     rw [List.foldl_cons, IPos_cons, ← Set.inter_assoc]
     obtain ⟨hle', h1', h0'⟩ := meetStep_spec P cons hcons hle h1 h0 i
     exact ih hle' h1' h0'
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/meetFold_spec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
 
 /-- **Correctness of the positive meet-fold**, instantiated at the real starting point
 `(1, masterIdx)`/`Set.univ`. -/
@@ -14081,51 +10659,28 @@ theorem meetFold_spec
     (by rw [hinit1]) (fun _ => by rw [hinit2]; exact idxSet_masterIdx_eq_univ P)
     (fun h => absurd (hinit1.symm.trans h) (by norm_num))
   simpa only [meetFold, Set.univ_inter] using h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/mem_IPos.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem mem_IPos {pos : List ℕ} {m : ℕ} : m ∈ IPos P pos ↔ ∀ i ∈ pos, P.X m ⊆ P.X i := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/mem_DAtom.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem mem_DAtom {pos neg : List ℕ} {m : ℕ} :
     m ∈ DAtom P pos neg ↔ (∀ i ∈ pos, P.X m ⊆ P.X i) ∧ (∀ j ∈ neg, ¬ P.X m ⊆ P.X j) := by
   simp only [DAtom, Set.mem_inter_iff, mem_IPos, Set.mem_ofPred_eq, mem_idxSet]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/DAtom_eq_empty_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
 
 /-- **The core emptiness characterization.** `DAtom pos neg` is empty iff either the positive
 part is inconsistent, or the meet's own index `idx` already lies inside some negative target
@@ -14167,24 +10722,13 @@ theorem DAtom_eq_empty_iff
         rw [← hIPos] at hmI
         exact hmI
       exact hmem.2 j hj (hmsub.trans hsub)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/DAtomEmptyChar_eq_one_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
-
 variable (incl : ℕ → ℕ)
-
 
 theorem DAtomEmptyChar_eq_one_iff
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m)
@@ -14207,21 +10751,12 @@ theorem DAtomEmptyChar_eq_one_iff
       exact (hincl _ _).mpr hsub
   · rw [isOne_of_ne_one hok, selectFn_zero]
     simp only [ne_eq, hok, not_false_eq_true, true_or]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/primrec_meetStepCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
 
 theorem primrec_meetStepCode (hconsp : Nat.Primrec cons) : Nat.Primrec (meetStepCode P cons) := by
   have hx : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
@@ -14245,44 +10780,24 @@ theorem primrec_meetStepCode (hconsp : Nat.Primrec cons) : Nat.Primrec (meetStep
   have helse : Nat.Primrec (fun w : ℕ => Nat.pair 0 w.unpair.2.unpair.1.unpair.2) :=
     (Nat.Primrec.const 0).pair hridx
   exact (primrec_selectFn hcond hthen helse).of_eq (fun _ => rfl)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/primrec_meetFoldCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
 
 theorem primrec_meetFoldCode (hconsp : Nat.Primrec cons) :
     Nat.Primrec (meetFoldCode P cons) :=
   (primrec_foldCode (primrec_meetStepCode P cons hconsp) (Nat.Primrec.const 0)
     (Nat.Primrec.const (Nat.pair 1 P.masterIdx)) primrec_id).of_eq (fun _ => rfl)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/primrec_DAtomEmptyChar.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
-
 variable (incl : ℕ → ℕ)
-
 
 theorem primrec_DAtomEmptyChar (hconsp : Nat.Primrec cons) (hinclp : Nat.Primrec incl) :
     Nat.Primrec (fun t => DAtomEmptyChar P cons incl t.unpair.1 t.unpair.2) := by
@@ -14304,24 +10819,13 @@ theorem primrec_DAtomEmptyChar (hconsp : Nat.Primrec cons) (hinclp : Nat.Primrec
       (fun t => by simp only [unpair_pair_fst, unpair_pair_snd])
   exact (primrec_selectFn (primrec_isOne.comp hmfok) hexists (Nat.Primrec.const 1)).of_eq
     (fun _ => rfl)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- DAtomDecidable/DAtom_recDecidable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable (cons : ℕ → ℕ)
-
-
 variable (incl : ℕ → ℕ)
-
 
 /-- **Part 5's headline result.** `D`-side atom emptiness (in the `idxSet` sense above) is
 recursively decidable in the two constraint-list codes, for any `ComputablePresentation` of `D`.
@@ -14343,16 +10847,10 @@ theorem DAtom_recDecidable :
   refine ⟨fun t => DAtomEmptyChar P cons incl t.unpair.1 t.unpair.2,
     primrec_DAtomEmptyChar P cons incl hconsp hinclp, fun t => ?_⟩
   exact (DAtomEmptyChar_eq_one_iff P cons incl hcons hincl t.unpair.1 t.unpair.2).symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88h/DiagFixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **Theorem 8.8(c), Part 1 of 6 — the diagonal fixed-point predicate.** `DiagFixed P a n` holds
@@ -14360,36 +10858,22 @@ iff the presented neighbourhood `Xₙ = P.X n` is already `a`-fixed, i.e. (`diag
 iff `Xₙ` is a neighbourhood of Theorem 8.5's subsystem `fixedNbhd a = {X ∈ V ∣ X a X}`. -/
 def DiagFixed (P : ComputablePresentation V) (a : ApproximableMap V V) (n : ℕ) : Prop :=
   a.rel (P.X n) (P.X n)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88h/diagFixed_iff_fixedNbhd_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
 
 /-- `DiagFixed P a n` is exactly `(fixedNbhd a).mem (P.X n)`, since `P.X n` is always already a
 `V`-neighbourhood (`P.mem_X`). -/
 theorem diagFixed_iff_fixedNbhd_mem (P : ComputablePresentation V) (a : ApproximableMap V V)
     (n : ℕ) : DiagFixed P a n ↔ (fixedNbhd a).mem (P.X n) :=
   (and_iff_right (P.mem_X n)).symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88h/diagFixed_isREPred.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
 
 /-- **`DiagFixed P a` is recursively enumerable, given `a` is a computable map.** Restrict
 `ComputableMap`'s two-variable relation `Xₙ a Xₘ` to the diagonal `n = m` via `REPred.comp`
@@ -14401,18 +10885,11 @@ theorem diagFixed_isREPred {P : ComputablePresentation V} {a : ApproximableMap V
   refine REPred.of_iff (fun n => ?_) (ha'.comp hdiag)
   simp only [unpair_pair_fst, unpair_pair_snd]
   exact Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88h/diagFixed_exists_qChar.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
 
 /-- **The decidable witness relation underlying `DiagFixed`'s r.e.-ness, extracted.** Unfolding
 `REPred`'s own definition (`p n ↔ ∃ i, q ⟨i,n⟩` with `q` recursively decidable via a `{0,1}`-valued
@@ -14426,16 +10903,10 @@ theorem diagFixed_exists_qChar {P : ComputablePresentation V} {a : ApproximableM
   obtain ⟨q, hq, hqe⟩ := diagFixed_isREPred ha
   obtain ⟨f, hf, hfe⟩ := hq
   exact ⟨f, hf, fun n => (hqe n).trans (exists_congr (fun i => hfe _))⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/myStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
@@ -14446,88 +10917,52 @@ advance to `P.inter r n`; otherwise no-op (skip this entry). -/
 def myStep (r e : ℕ) : ℕ :=
   selectFn (isOne (qChar e) * isOne (cons (Nat.pair r e.unpair.2)))
     (P.inter r e.unpair.2) r
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/myFold.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
 /-- **The `qChar`-gated fold**, starting from `P.masterIdx`. -/
 def myFold (l : List ℕ) : ℕ := l.foldl (myStep P qChar cons) P.masterIdx
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/myFold_nil.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
 @[simp] theorem myFold_nil : myFold P qChar cons [] = P.masterIdx := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/myStepCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
-
 variable (P qChar cons)
 
 /-- `foldCode`-shaped step matching `myStep`: state `w = pair e (pair r params)` (`params`
 unused). -/
 def myStepCode (w : ℕ) : ℕ := myStep P qChar cons w.unpair.2.unpair.1 w.unpair.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/myFoldCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
-
 variable (P qChar cons)
 
 /-- The code-level `qChar`-gated fold. -/
 def myFoldCode (c : ℕ) : ℕ := foldCode (myStepCode P qChar cons) 0 P.masterIdx c
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/diagFixed_masterIdx.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
-
 variable {P qChar cons}
 
 /-- **The base case: `P.masterIdx` is always `DiagFixed`.** `P.X P.masterIdx = V.master`
@@ -14536,24 +10971,14 @@ theorem diagFixed_masterIdx (a : ApproximableMap V V) : DiagFixed P a P.masterId
   show a.rel (P.X P.masterIdx) (P.X P.masterIdx)
   rw [P.masterIdx_spec]
   exact a.master_rel
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/myFoldCode_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
-
 variable {P qChar cons}
-
 variable (P qChar cons)
-
 
 theorem myFoldCode_eq (c : ℕ) : myFoldCode P qChar cons c = myFold P qChar cons (decodeList c) := by
   have hfun : (fun (acc x : ℕ) => myStepCode P qChar cons (Nat.pair x (Nat.pair acc 0)))
@@ -14563,37 +10988,22 @@ theorem myFoldCode_eq (c : ℕ) : myFoldCode P qChar cons c = myFold P qChar con
     simp only [unpair_pair_fst, unpair_pair_snd]
   unfold myFoldCode myFold
   rw [foldCode_eq', hfun]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/myFold_cons.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 
 theorem myFold_cons (e : ℕ) (rest : List ℕ) :
     myFold P qChar cons (e :: rest) = rest.foldl (myStep P qChar cons) (myStep P qChar cons P.masterIdx e) := by
   unfold myFold; rw [List.foldl_cons]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/myStep_diagFixed_of_diagFixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
-
 variable {P qChar cons}
 
 /-- **One-step preservation of `DiagFixed`.** If the accumulator `r` is already `DiagFixed` and
@@ -14633,20 +11043,12 @@ theorem myStep_diagFixed_of_diagFixed {a : ApproximableMap V V}
           ((diagFixed_iff_fixedNbhd_mem P a e.unpair.2).mp hn) hVinter
       rw [diagFixed_iff_fixedNbhd_mem, P.inter_spec ⟨k, hk⟩]
       exact hfix
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/myFold_diagFixed_of_diagFixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
-
 variable {P qChar cons}
 
 /-- **The fold invariant, over an arbitrary starting accumulator.** -/
@@ -14660,20 +11062,12 @@ theorem myFold_diagFixed_of_diagFixed {a : ApproximableMap V V}
     intro r hr
     rw [List.foldl_cons]
     exact ih (myStep_diagFixed_of_diagFixed hqChar hcons hr e)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/myFold_diagFixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
-
 variable {P qChar cons}
 
 /-- **Correctness of the `qChar`-gated fold, instantiated at the real starting point
@@ -14683,24 +11077,14 @@ theorem myFold_diagFixed {a : ApproximableMap V V}
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) (l : List ℕ) :
     DiagFixed P a (myFold P qChar cons l) :=
   myFold_diagFixed_of_diagFixed hqChar hcons l (diagFixed_masterIdx a)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/diagFixed_myFoldCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
-
 variable {P qChar cons}
-
 variable (P qChar cons)
-
 
 /-- **Theorem 8.8(c), Part 2 of 6, headline invariant.** `myFoldCode qChar cons c` is `DiagFixed`
 for *every* list-code `c` — no matter what garbage `c` decodes to, the fold only ever advances past
@@ -14712,24 +11096,14 @@ theorem diagFixed_myFoldCode {a : ApproximableMap V V}
     DiagFixed P a (myFoldCode P qChar cons c) := by
   rw [myFoldCode_eq]
   exact myFold_diagFixed hqChar hcons (decodeList c)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/primrec_myStepCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
-
 variable {P qChar cons}
-
 variable (P qChar cons)
-
 
 theorem primrec_myStepCode (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primrec cons) :
     Nat.Primrec (myStepCode P qChar cons) := by
@@ -14749,24 +11123,14 @@ theorem primrec_myStepCode (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primrec c
       (fun w : ℕ => P.inter w.unpair.2.unpair.1 w.unpair.1.unpair.2) :=
     (P.inter_primrec.comp hargs).of_eq fun w => by simp only [unpair_pair_fst, unpair_pair_snd]
   exact (primrec_selectFn hcond hinter hr).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88i/primrec_myFoldCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
-
 variable {P qChar cons}
-
 variable (P qChar cons)
-
 
 /-- **`myFoldCode` is primitive recursive** (Part 2's headline `Nat.Primrec` claim). -/
 theorem primrec_myFoldCode (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primrec cons) :
@@ -14774,36 +11138,22 @@ theorem primrec_myFoldCode (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primrec c
   (primrec_foldCode (primrec_myStepCode P qChar cons hqCharp hconsp)
     (Nat.Primrec.const 0) (Nat.Primrec.const P.masterIdx) primrec_id).of_eq
     fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88j/D_X.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
 /-- **The enumeration induced by the `qChar`-gated fold**: `D_X c` reads off the `V`-neighbourhood
 presented at the fold's output raw index. -/
 def D_X (c : ℕ) : Set α := P.X (myFoldCode P qChar cons c)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88j/D_X_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
-
 variable {P qChar cons}
 
 /-- **Theorem 8.8(c), Part 3 of 6, first half.** Every `D_X qChar cons c` is a `fixedNbhd
@@ -14814,20 +11164,12 @@ theorem D_X_mem {a : ApproximableMap V V}
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) (c : ℕ) :
     (fixedNbhd a).mem (D_X P qChar cons c) :=
   (diagFixed_iff_fixedNbhd_mem P a _).mp (diagFixed_myFoldCode P qChar cons hqChar hcons c)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88j/D_X_of_diagFixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
-
 variable {P qChar cons}
 
 /-- **The reusable core of the surjectivity argument.** Any `V`-neighbourhood `P.X m` already
@@ -14861,20 +11203,12 @@ theorem D_X_of_diagFixed {a : ApproximableMap V V}
   rw [hstep, hstepval]
   have hcons' : (∃ k, P.X k ⊆ P.X P.masterIdx ∩ P.X m) := (hcons P.masterIdx m).mp hcond
   rw [P.inter_spec hcons', P.masterIdx_spec, Set.inter_eq_right.mpr (V.sub_master (P.mem_X m))]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88j/D_X_surj.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
-
 variable {P qChar cons}
 
 /-- **Theorem 8.8(c), Part 3 of 6, second half.** Every `fixedNbhd a`-neighbourhood `Y` is
@@ -14889,19 +11223,12 @@ theorem D_X_surj {a : ApproximableMap V V}
   have hdiag : DiagFixed P a n₀ := by unfold DiagFixed; rw [hn₀]; exact hYa
   obtain ⟨c, hc⟩ := D_X_of_diagFixed hqChar hcons hdiag
   exact ⟨c, by rw [hc, hn₀]⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88k/D_X_cons_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
 
 /-- **The one genuine lemma of Theorem 8.8(c), Part 4 of 6.** `D`-consistency of two list-codes
@@ -14933,21 +11260,13 @@ theorem D_X_cons_iff {a : ApproximableMap V V}
       unfold D_X
       rw [← hn₁, ← hn₂]
     exact ⟨c, heq ▸ subset_rfl⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88k/D_X_cons_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
-
 variable (P qChar cons)
 
 /-- **Theorem 8.8(c), Part 4 of 6, second half (`cons_computable`).** `D_X`-consistency is
@@ -14966,21 +11285,13 @@ theorem D_X_cons_computable {a : ApproximableMap V V}
   refine RecDecidable.of_iff (fun t => ?_) (P.cons_computable.comp hreindex)
   simp only [unpair_pair_fst, unpair_pair_snd]
   exact D_X_cons_iff hqChar hcons t.unpair.1 t.unpair.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88k/D_X_interEq_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
-
 variable (P qChar cons)
 
 /-- **Theorem 8.8(c), Part 4 of 6, first half (`interEq_computable`, free).** `D_X c₁ ∩ D_X c₂ =
@@ -15000,43 +11311,26 @@ theorem D_X_interEq_computable (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primr
   refine RecDecidable.of_iff (fun t => ?_) (P.interEq_computable.comp hreindex)
   unfold D_X
   simp only [unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88l/D_inter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
 
 /-- **The `.inter` field for `D_X`**: concatenate the two list-codes (`Recursive.lean`'s
 Exercise 7.22 `appendListCode`), reusing that this is exactly `myFoldCode`'s left-fold-from-
 `P.masterIdx` restarted at `myFoldCode c₁` (via `List.foldl_append`). -/
 def D_inter (c₁ c₂ : ℕ) : ℕ := appendListCode c₁ c₂
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88l/D_X_inter_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
-
-
 variable (P qChar cons)
-
 variable {P qChar cons}
 
 theorem D_X_inter_eq (c₁ c₂ : ℕ) :
@@ -15050,41 +11344,24 @@ theorem D_X_inter_eq (c₁ c₂ : ℕ) :
   have heq1 : (decodeList c₁).foldl (myStep P qChar cons) P.masterIdx =
       myFoldCode P qChar cons c₁ := (myFoldCode_eq P qChar cons c₁).symm
   rw [h1, List.foldl_append, heq1]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88l/D_inter_primrec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
-
-
 variable (P qChar cons)
 
 theorem D_inter_primrec : Nat.Primrec (fun t => D_inter t.unpair.1 t.unpair.2) :=
   primrec_appendListCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88l/myStep_subset.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
-
 
 /-- **One step of `myStep` only shrinks the presented set.** -/
 theorem myStep_subset
@@ -15106,21 +11383,13 @@ theorem myStep_subset
     · rw [isOne_of_ne_one hc, selectFn_zero]
     · rw [(isOne_eq_one_iff _).mpr hc, selectFn_one, P.inter_spec ((hcons r e.unpair.2).mp hc)]
       exact Set.inter_subset_left
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88l/myFoldl_subset.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
-
 
 /-- **Folding only ever shrinks the presented set.** -/
 theorem myFoldl_subset
@@ -15133,21 +11402,13 @@ theorem myFoldl_subset
     intro r
     rw [List.foldl_cons]
     exact (ih (myStep P qChar cons r e)).trans (myStep_subset hcons r e)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88l/myFoldl_inter_of_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
-
 
 /-- **The key lemma.** Refolding a list `l` from a start `n` that is `⊆` (in `P.X`) another start
 `r`, reproduces `P.X n ∩ P.X (fold of l from r)` — *provided* this is already known to be
@@ -15228,24 +11489,14 @@ theorem myFoldl_inter_of_le
           rw [P.inter_spec hwitN]
           exact Set.subset_inter (Set.subset_inter hkR hkne) hkY
         rw [ih hnr' hk', P.inter_spec hwitN, Set.inter_assoc, Set.inter_eq_right.mpr hYsub]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88l/D_X_inter_spec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
-
 variable {P qChar cons}
-
-
 variable (P qChar cons)
-
 variable {P qChar cons}
 
 /-- **Theorem 8.8(c), Part 5 of 6, headline.** Given `D`-consistency of `c₁`, `c₂`,
@@ -15272,51 +11523,31 @@ theorem D_X_inter_spec
     exact hk0
   rw [D_X_inter_eq, myFoldl_inter_of_le hcons (decodeList c₂) hnr hk, ← heq2]
   rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/masterPairCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- A fixed code for the rational pair `(0,1)`, presenting `U.master`. -/
 def masterPairCode : ℕ := Nat.pair zeroCode oneCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/decodeRatPair_masterPairCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 @[simp] theorem decodeRatPair_masterPairCode : decodeRatPair masterPairCode = ((0 : ℚ), (1 : ℚ)) := by
   unfold masterPairCode decodeRatPair
   simp only [unpair_pair_fst, unpair_pair_snd, decodeRat_zeroCode, decodeRat_oneCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/UmasterIdx.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- A fixed index of `U.master = Ico 0 1`. -/
 def UmasterIdx : ℕ := encodeQPairList [((0 : ℚ), (1 : ℚ))]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/decodeQPairList_masterCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- The singleton list-code `[masterPairCode]` decodes to the singleton presenting list of
@@ -15326,14 +11557,9 @@ theorem decodeQPairList_masterCode :
   unfold decodeQPairList
   rw [decodeList_succ, unpair_pair_fst, unpair_pair_snd, decodeList_zero]
   simp [decodeRatPair_masterPairCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/presentedIntervals_eq_empty_iff_of_forall_lt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **A list all of whose pairs are already non-degenerate is empty iff it presents `∅`** (unlike
@@ -15348,14 +11574,9 @@ theorem presentedIntervals_eq_empty_iff_of_forall_lt {L' : List (ℚ × ℚ)}
         ⟨a, List.mem_cons.mpr (Or.inl rfl), le_refl _,
           hpos a (List.mem_cons.mpr (Or.inl rfl))⟩⟩)
   · rintro rfl; exact presentedIntervals_nil
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/presentedIntervals_filter_qpPos.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem presentedIntervals_filter_qpPos (L : List (ℚ × ℚ)) :
@@ -15367,41 +11588,26 @@ theorem presentedIntervals_filter_qpPos (L : List (ℚ × ℚ)) :
     exact ⟨p, hp, hx⟩
   · rintro ⟨p, hp, hx1, hx2⟩
     exact ⟨p, ⟨hp, lt_of_le_of_lt hx1 hx2⟩, hx1, hx2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/presentedIntervals_singleton_zero_one.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem presentedIntervals_singleton_zero_one :
     presentedIntervals ([((0 : ℚ), (1 : ℚ))]) = U.master := by
   rw [presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]; rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/qpClip.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Clip a rational pair to `[0,1)`, moving `r` up to `0` and `s` down to `1` when needed. Mirrors
 `Definition87.lean`'s `private def clip`, redefined here (public) since `canonList`/`canonCode` need
 both a list-level and a code-level version of it. -/
 def qpClip (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ 0, p.2 ⊓ 1)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/canonList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **Canonicalize** an arbitrary presenting list into one that presents a genuine
@@ -15411,14 +11617,9 @@ def canonList (L : List (ℚ × ℚ)) : List (ℚ × ℚ) :=
   match (L.map qpClip).filter (fun p => decide (p.1 < p.2)) with
   | [] => [((0 : ℚ), (1 : ℚ))]
   | L' => L'
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/canonList_eq_of_filter_eq_cons.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Unfolding equation for `canonList` on the `cons` branch. -/
@@ -15426,14 +11627,9 @@ theorem canonList_eq_of_filter_eq_cons {L : List (ℚ × ℚ)} {a : ℚ × ℚ} 
     (h : (L.map qpClip).filter (fun p => decide (p.1 < p.2)) = a :: l) :
     canonList L = a :: l := by
   unfold canonList; rw [h]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/canonList_eq_of_filter_eq_nil.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Unfolding equation for `canonList` on the `nil` branch, stated so `rw` can fire on a literal
@@ -15442,14 +11638,9 @@ theorem canonList_eq_of_filter_eq_nil {L : List (ℚ × ℚ)}
     (h : (L.map qpClip).filter (fun p => decide (p.1 < p.2)) = []) :
     canonList L = [((0 : ℚ), (1 : ℚ))] := by
   unfold canonList; rw [h]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/presentedIntervals_map_qpClip.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem presentedIntervals_map_qpClip (L : List (ℚ × ℚ)) :
@@ -15462,14 +11653,9 @@ theorem presentedIntervals_map_qpClip (L : List (ℚ × ℚ)) :
       le_sup_right.trans hx1, hx2.trans_le inf_le_right⟩
   · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hx0, hx1⟩
     exact ⟨(q.1 ⊔ 0, q.2 ⊓ 1), ⟨q, hq, rfl⟩, sup_le hxq1 hx0, lt_inf_iff.mpr ⟨hxq2, hx1⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/U_mem_presentedIntervals_canonList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **`canonList` always presents a genuine `U`-neighbourhood.** -/
@@ -15488,14 +11674,9 @@ theorem U_mem_presentedIntervals_canonList (L : List (ℚ × ℚ)) :
     have ha : a.1 < a.2 := by simpa using (List.mem_filter.mp hmem).2
     refine ⟨⟨a :: l, rfl⟩, ?_, hL'eq ▸ Set.inter_subset_right⟩
     exact ⟨a.1, mem_presentedIntervals.mpr ⟨a, List.mem_cons.mpr (Or.inl rfl), le_refl _, ha⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/canonList_fixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **`canonList` is a no-op (as a set) on a list that already presents a `U`-neighbourhood.** -/
@@ -15511,92 +11692,57 @@ theorem canonList_fixed {L : List (ℚ × ℚ)} (h : U.mem (presentedIntervals L
     exact hne.ne_empty hcontra
   · rw [canonList_eq_of_filter_eq_cons hL, ← hL, presentedIntervals_filter_qpPos,
       presentedIntervals_map_qpClip, Set.inter_eq_left.mpr hsub]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/qpClipCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Code-level `qpClip`: `(r,s) ↦ (r⊔0, s⊓1)` on a rational-pair code. -/
 def qpClipCode (e : ℕ) : ℕ :=
   Nat.pair (ratMaxCode (Nat.pair e.unpair.1 zeroCode)) (ratMinCode (Nat.pair e.unpair.2 oneCode))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/canonFilterStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- `[qpClipCode e]` if the clipped pair is non-degenerate, else `[]` (the empty list code `0`). -/
 def canonFilterStep (e : ℕ) : ℕ :=
   selectFn (qpNonemptyBop (qpClipCode e)) (Nat.pair (qpClipCode e) 0 + 1) 0
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/canonListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- The code-level clip-and-filter pass, mirroring the list-level
 `(L.map qpClip).filter (fun p => decide (p.1 < p.2))`. -/
 def canonListCode (c : ℕ) : ℕ := flatMapCode (fun t => canonFilterStep t.unpair.2) 0 c
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/canonCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **The code-level canonicalization**, mirroring `canonList` exactly: `canonListCode c` if
 non-empty, else the fallback singleton `[masterPairCode]` (presenting `U.master`). -/
 def canonCode (c : ℕ) : ℕ :=
   selectFn (isZero (canonListCode c)) (Nat.pair masterPairCode 0 + 1) (canonListCode c)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/UX.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **`𝒰`'s enumeration**: canonicalize the `List (ℚ × ℚ)` coded by `n`. -/
 def UX (n : ℕ) : Set ℚ := presentedIntervals (decodeQPairList (canonCode n))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/Uinter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- The intersection index: `combineCode` on canonicalized codes (`UX` re-canonicalizes on
 lookup, so no further canonicalization is needed here). -/
 def Uinter (n m : ℕ) : ℕ := combineCode (canonCode n) (canonCode m)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/decodeRatPair_qpClipCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem decodeRatPair_qpClipCode (e : ℕ) :
@@ -15604,14 +11750,9 @@ theorem decodeRatPair_qpClipCode (e : ℕ) :
   unfold qpClipCode qpClip decodeRatPair
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [decodeRat_ratMaxCode, decodeRat_ratMinCode, decodeRat_zeroCode, decodeRat_oneCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/decodeList_canonFilterStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem decodeList_canonFilterStep (e : ℕ) :
@@ -15633,14 +11774,9 @@ theorem decodeList_canonFilterStep (e : ℕ) :
       rw [← qpNonemptyBop_eq_one_iff]; omega
     rw [decodeRatPair_qpClipCode] at hnot
     simp [hnot, decodeList_zero]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/decodeQPairList_canonFilterStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem decodeQPairList_canonFilterStep (e : ℕ) :
@@ -15650,14 +11786,9 @@ theorem decodeQPairList_canonFilterStep (e : ℕ) :
   unfold decodeQPairList
   rw [decodeList_canonFilterStep]
   split <;> simp [decodeRatPair_qpClipCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/mem_decodeQPairList_canonFilterStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem mem_decodeQPairList_canonFilterStep (e : ℕ) (p : ℚ × ℚ) :
@@ -15667,14 +11798,9 @@ theorem mem_decodeQPairList_canonFilterStep (e : ℕ) (p : ℚ × ℚ) :
   by_cases h : (qpClip (decodeRatPair e)).1 < (qpClip (decodeRatPair e)).2
   · simp [h]
   · simp [h]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/mem_decodeQPairList_canonListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **`canonListCode` realizes the clip-and-filter pass at the set level.** -/
@@ -15690,14 +11816,9 @@ theorem mem_decodeQPairList_canonListCode (c : ℕ) (p : ℚ × ℚ) :
   · rintro ⟨p0, hp0, hcond, hp⟩
     obtain ⟨y, hy, rfl⟩ := (mem_decodeQPairList c p0).mp hp0
     exact ⟨y, hy, by rw [unpair_pair_snd, mem_decodeQPairList_canonFilterStep]; exact ⟨hcond, hp⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/decodeQPairList_canonListCode_eq_nil_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Every element of `decodeQPairList (canonListCode c)` is already non-degenerate (this is
@@ -15709,14 +11830,9 @@ theorem decodeQPairList_canonListCode_eq_nil_iff (c : ℕ) :
   (presentedIntervals_eq_empty_iff_of_forall_lt (fun p hp => by
     obtain ⟨p0, hp0, hcond, rfl⟩ := (mem_decodeQPairList_canonListCode c p).mp hp
     exact hcond)).symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/presentedIntervals_decodeQPairList_canonListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **`canonListCode` realizes the clip-and-filter pass at the `presentedIntervals` level.** -/
@@ -15733,14 +11849,9 @@ theorem presentedIntervals_decodeQPairList_canonListCode (c : ℕ) :
   · rintro ⟨⟨p0, hp0, hp⟩, hcond⟩
     rw [decide_eq_true_eq] at hcond
     exact ⟨p0, hp0, hp ▸ hcond, hp.symm⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/presentedIntervals_decodeQPairList_canonCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **`canonCode` realizes `canonList` at the `presentedIntervals` level.** -/
@@ -15787,26 +11898,16 @@ theorem presentedIntervals_decodeQPairList_canonCode (c : ℕ) :
         presentedIntervals_map_qpClip]
       exact hne
     rw [hcc, decodeQPairList_masterCode, canonList_eq_of_filter_eq_nil hLnil']
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/UX_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem UX_eq (n : ℕ) : UX n = presentedIntervals (canonList (decodeQPairList n)) :=
   presentedIntervals_decodeQPairList_canonCode n
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/UX_UmasterIdx.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem UX_UmasterIdx : UX UmasterIdx = U.master := by
@@ -15815,27 +11916,17 @@ theorem UX_UmasterIdx : UX UmasterIdx = U.master := by
   have hmem : U.mem (presentedIntervals [((0 : ℚ), (1 : ℚ))]) := by
     rw [presentedIntervals_singleton_zero_one]; exact U.master_mem
   rw [canonList_fixed hmem, presentedIntervals_singleton_zero_one]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/U_mem_UX.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Every `UX n` is a genuine `U`-neighbourhood. -/
 theorem U_mem_UX (n : ℕ) : U.mem (UX n) := by
   rw [UX_eq]; exact U_mem_presentedIntervals_canonList _
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/U_surj_UX.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- `UX` is onto `U`'s neighbourhoods: every `U`-neighbourhood already has a Scott-literal
@@ -15846,14 +11937,9 @@ theorem U_surj_UX : ∀ {Y : Set ℚ}, U.mem Y → ∃ n, UX n = Y := by
   have hUL : U.mem (presentedIntervals L) := by rw [← hYeq]; exact hY
   exact ⟨encodeQPairList L, by
     rw [UX_eq, decodeQPairList_encodeQPairList, canonList_fixed hUL, ← hYeq]⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/U_cons_iff_nonempty_inter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **Scott's consistency condition reduces to non-emptiness**: since `U`'s raw intersection
@@ -15873,14 +11959,9 @@ theorem U_cons_iff_nonempty_inter (n m : ℕ) :
         hne, Set.inter_subset_left.trans hsubn⟩
     obtain ⟨k, hk⟩ := U_surj_UX hUmem
     exact ⟨k, by rw [hk]⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/Uinter_spec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem Uinter_spec {n m : ℕ} (h : ∃ k, UX k ⊆ UX n ∩ UX m) : UX (Uinter n m) = UX n ∩ UX m := by
@@ -15894,14 +11975,9 @@ theorem Uinter_spec {n m : ℕ} (h : ∃ k, UX k ⊆ UX n ∩ UX m) : UX (Uinter
   unfold Uinter UX
   rw [presentedIntervals_decodeQPairList_canonCode, canonList_fixed hUL,
     presentedIntervals_decodeQPairList_combineCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/primrec_qpClipCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem primrec_qpClipCode : Nat.Primrec qpClipCode := by
@@ -15909,14 +11985,9 @@ theorem primrec_qpClipCode : Nat.Primrec qpClipCode := by
   have h2 : Nat.Primrec (fun e : ℕ => e.unpair.2) := Nat.Primrec.right
   exact ((primrec_ratMaxCode.comp (h1.pair (Nat.Primrec.const zeroCode))).pair
     (primrec_ratMinCode.comp (h2.pair (Nat.Primrec.const oneCode)))).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/primrec_canonFilterStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem primrec_canonFilterStep : Nat.Primrec canonFilterStep := by
@@ -15924,14 +11995,9 @@ theorem primrec_canonFilterStep : Nat.Primrec canonFilterStep := by
   exact (primrec_selectFn (primrec_qpNonemptyBop.comp hc)
     (Nat.Primrec.succ.comp (hc.pair (Nat.Primrec.const 0))) (Nat.Primrec.const 0)).of_eq
     fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/primrec_canonListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem primrec_canonListCode : Nat.Primrec canonListCode := by
@@ -15941,28 +12007,18 @@ theorem primrec_canonListCode : Nat.Primrec canonListCode := by
     fun c => by
       unfold canonListCode
       simp only [id, unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/primrec_canonCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem primrec_canonCode : Nat.Primrec canonCode :=
   (primrec_selectFn (primrec_isZero.comp primrec_canonListCode)
     (Nat.Primrec.const (Nat.pair masterPairCode 0 + 1)) primrec_canonListCode).of_eq
     fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/U_cons_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **7.1(ii) for `𝒰`**: consistency `∃k. X_k ⊆ Xₙ ∩ Xₘ` is recursively decidable, via
@@ -15976,14 +12032,9 @@ theorem U_cons_computable : RecDecidable₂ (fun n m => ∃ k, UX k ⊆ UX n ∩
   refine RecDecidable.of_iff (fun t => ?_) (recDecidable_presentedIntervals_nonempty.comp hcomb)
   show (∃ k, UX k ⊆ UX t.unpair.1 ∩ UX t.unpair.2) ↔ _
   rw [U_cons_iff_nonempty_inter, UX, UX, presentedIntervals_decodeQPairList_combineCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/U_interEq_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **7.1(i) for `𝒰`**: `Xₙ ∩ Xₘ = X_k` is recursively decidable. Reduces to
@@ -16007,14 +12058,9 @@ theorem U_interEq_computable : RecDecidable₃ (fun n m k => UX n ∩ UX m = UX 
   show UX t.unpair.1 ∩ UX t.unpair.2.unpair.1 = UX t.unpair.2.unpair.2 ↔ _
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [UX, UX, UX, presentedIntervals_decodeQPairList_combineCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/Uinter_primrec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 theorem Uinter_primrec : Nat.Primrec (fun t : ℕ => Uinter t.unpair.1 t.unpair.2) := by
@@ -16022,14 +12068,9 @@ theorem Uinter_primrec : Nat.Primrec (fun t : ℕ => Uinter t.unpair.1 t.unpair.
   exact (primrec_combineCode.comp ((primrec_canonCode.comp Nat.Primrec.left).pair
     (primrec_canonCode.comp Nat.Primrec.right))).of_eq
     fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/UComputablePresentation.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- **Theorem 8.8(b), Part 3.** `𝒰` (Definition 8.7) has a genuine `ComputablePresentation`. -/
@@ -16044,29 +12085,17 @@ def UComputablePresentation : ComputablePresentation U where
   inter_spec := Uinter_spec
   masterIdx := UmasterIdx
   masterIdx_spec := UX_UmasterIdx
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/U_isEffectivelyGiven.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 /-- **`𝒰` is effectively given.** -/
 theorem U_isEffectivelyGiven : U.IsEffectivelyGiven := ⟨UComputablePresentation⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/decodeQPairList_canonCode_ne_nil.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 /-- `decodeQPairList (canonCode c)` is never empty (it always contains at least the fallback
 pair `(0,1)`, or a genuine clipped pair). -/
@@ -16086,31 +12115,19 @@ theorem decodeQPairList_canonCode_ne_nil (c : ℕ) : decodeQPairList (canonCode 
     have h' := hcontra
     unfold decodeQPairList at h'
     rwa [List.map_eq_nil_iff, decodeList_eq_nil_iff] at h'
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/canonCode_ne_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 /-- `canonCode c` is never the `0` (empty-list) code. -/
 theorem canonCode_ne_zero (c : ℕ) : canonCode c ≠ 0 := by
   intro h
   exact decodeQPairList_canonCode_ne_nil c (by rw [h]; unfold decodeQPairList; rw [decodeList_zero]; rfl)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/forall_lt_decodeQPairList_canonListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 /-- Every pair in `decodeQPairList (canonListCode c)` is already non-degenerate (this is
 `canonFilterStep`'s whole point). -/
@@ -16118,16 +12135,10 @@ theorem forall_lt_decodeQPairList_canonListCode (c : ℕ) :
     ∀ p ∈ decodeQPairList (canonListCode c), p.1 < p.2 := fun p hp => by
   obtain ⟨p0, -, hcond, rfl⟩ := (mem_decodeQPairList_canonListCode c p).mp hp
   exact hcond
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- UComputablePresentation/forall_lt_decodeQPairList_canonCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 /-- **Every pair in `decodeQPairList (canonCode c)` is non-degenerate** — both branches of
 `canonCode` (the filtered list, or the `[masterPairCode]` fallback) only ever produce
@@ -16148,6 +12159,7 @@ theorem forall_lt_decodeQPairList_canonCode (c : ℕ) :
       exact hz ((isZero_eq_one_iff _).mp (by omega))
     rw [hzero, selectFn_zero]
     exact forall_lt_decodeQPairList_canonListCode c
+end
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -16181,11 +12193,9 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/combineSub_sublist.lean
 namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16201,16 +12211,10 @@ theorem combineSub_sublist : (combineSub js sub1 sub2).Sublist js := List.filter
 end Combine
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/finGen.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16225,16 +12229,10 @@ def finGen (js : List ℕ) : Set (Set α) :=
   {Y | ∃ sub : List ℕ, sub.Sublist js ∧ D.mem Y ∧ Y = interFrom P D.master sub}
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/finGen_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16246,16 +12244,10 @@ theorem finGen_mono {js js' : List ℕ} (h : js.Sublist js') : finGen P js ⊆ f
   fun _ ⟨sub, hsub, hD, hY⟩ => ⟨sub, hsub.trans h, hD, hY⟩
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/finGen_sub_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16267,16 +12259,10 @@ theorem finGen_sub_mem {js : List ℕ} {Y : Set α} : Y ∈ finGen P js → D.me
   fun ⟨_, _, hD, _⟩ => hD
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/finGen_sub_master.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16288,16 +12274,10 @@ theorem finGen_sub_master {js : List ℕ} {Y : Set α} (h : Y ∈ finGen P js) :
   D.sub_master (finGen_sub_mem P h)
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/master_mem_finGen.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16309,16 +12289,10 @@ theorem master_mem_finGen (js : List ℕ) : D.master ∈ finGen P js :=
   ⟨[], List.nil_sublist js, D.master_mem, rfl⟩
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/mem_combineSub.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16339,16 +12313,10 @@ theorem mem_combineSub {j : ℕ} :
 end Combine
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/interFrom_combineSub_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16383,16 +12351,10 @@ theorem interFrom_combineSub_eq (h1 : sub1.Sublist js) (h2 : sub2.Sublist js) :
 end Combine
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/finGenSys.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16414,16 +12376,10 @@ def finGenSys (js : List ℕ) : NeighborhoodSystem α where
   sub_master := fun ⟨sub, _, _, hY⟩ => hY ▸ interFrom_subset P
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/mem_finGenSys.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16434,16 +12390,10 @@ variable (P : ComputablePresentation D)
     (finGenSys P js).mem Y ↔ Y ∈ finGen P js := Iff.rfl
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/finGenSys_subsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16460,16 +12410,10 @@ theorem finGenSys_subsystem (js : List ℕ) : finGenSys P js ◁ D where
       rw [interFrom_combineSub_eq P h1 h2, hX, hY]⟩
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/interFrom_cons_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16486,16 +12430,10 @@ theorem interFrom_cons_eq (A : Set α) (j : ℕ) (sub : List ℕ) :
   tauto
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/nbhdGen.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section SubD
@@ -16507,16 +12445,10 @@ generated subsystem extends `Fin(js)` — the neighbourhood of `SubD` generated 
 def nbhdGen (js : List ℕ) : Set (List ℕ) := {js' | finGen P js ⊆ finGen P js'}
 
 end SubD
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/mem_nbhdGen.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section SubD
@@ -16527,16 +12459,10 @@ variable (P : ComputablePresentation D)
     js' ∈ nbhdGen P js ↔ finGen P js ⊆ finGen P js' := Iff.rfl
 
 end SubD
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/nbhdGen_antitone.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section SubD
@@ -16548,16 +12474,10 @@ theorem nbhdGen_antitone {js js' : List ℕ} (h : finGen P js ⊆ finGen P js') 
     nbhdGen P js' ⊆ nbhdGen P js := fun _ hk => h.trans hk
 
 end SubD
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/principal_mem_finGen.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16580,16 +12500,10 @@ theorem principal_mem_finGen {js : List ℕ} {i : ℕ} (hi : i ∈ js) : P.X i �
     exact hall i (List.mem_singleton.mpr rfl)
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/finGen_le_iff_forall_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16633,16 +12547,10 @@ theorem finGen_le_iff_forall_mem {D' : NeighborhoodSystem α} (hD' : D' ◁ D) (
         exact hYeq ▸ hD'.inter_closed hj hY2mem hXYmem
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/finGen_append_le_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section FinGen
@@ -16658,16 +12566,10 @@ theorem finGen_append_le_iff {D' : NeighborhoodSystem α} (hD' : D' ◁ D) (js1 
     finGen_le_iff_forall_mem P hD', List.forall_mem_append]
 
 end FinGen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/nbhdGen_inter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section SubD
@@ -16684,16 +12586,10 @@ theorem nbhdGen_inter (js1 js2 : List ℕ) :
   exact (finGen_append_le_iff P (finGenSys_subsystem P js') js1 js2).symm
 
 end SubD
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/self_mem_nbhdGen.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section SubD
@@ -16703,16 +12599,10 @@ variable (P : ComputablePresentation D)
 theorem self_mem_nbhdGen (js : List ℕ) : js ∈ nbhdGen P js := (mem_nbhdGen P).mpr subset_rfl
 
 end SubD
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/SubD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section SubD
@@ -16735,16 +12625,10 @@ def SubD (P : ComputablePresentation D) : NeighborhoodSystem (List ℕ) where
     exact nbhdGen_antitone P (finGen_mono P (List.nil_sublist js))
 
 end SubD
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/finGen_eq_of_nbhdGen_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section SubD
@@ -16759,16 +12643,10 @@ theorem finGen_eq_of_nbhdGen_eq {a b : List ℕ} (h : nbhdGen P a = nbhdGen P b)
     ((Set.ext_iff.mp h a).mp (self_mem_nbhdGen P a))
 
 end SubD
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/mem_SubD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section SubD
@@ -16778,16 +12656,10 @@ variable (P : ComputablePresentation D)
 @[simp] theorem mem_SubD {N : Set (List ℕ)} : (SubD P).mem N ↔ ∃ js, N = nbhdGen P js := Iff.rfl
 
 end SubD
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/SubD_master.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section SubD
@@ -16797,16 +12669,10 @@ variable (P : ComputablePresentation D)
 @[simp] theorem SubD_master : (SubD P).master = nbhdGen P [] := rfl
 
 end SubD
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/QBody.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -16828,16 +12694,10 @@ def QBody (prev : ℕ → ℕ) (c : ℕ) : ℕ :=
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/QBody_local.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -16858,16 +12718,10 @@ theorem QBody_local (f g : ℕ → ℕ) (c : ℕ)
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/QFuel.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -16885,16 +12739,10 @@ def QFuel : ℕ → ℕ → ℕ
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/QLookup.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -16909,16 +12757,10 @@ def QLookup (w : ℕ) : ℕ := QBody r (fun c' => nthCode w.unpair.1 c' 0) w.unp
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/QFuel_fuelTable_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -16939,16 +12781,10 @@ theorem QFuel_fuelTable_eq :
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/QstepFn.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -16959,16 +12795,10 @@ the next list entry. Packaged in `foldCode`'s `pair x (pair acc params)` calling
 def QstepFn (r : ℕ → ℕ) (t : ℕ) : ℕ := Uinter t.unpair.2.unpair.1 (r t.unpair.1)
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q'Xcode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -16979,16 +12809,10 @@ def Q'Xcode (r : ℕ → ℕ) (n : ℕ) : ℕ :=
   foldCode (QstepFn r) 0 UComputablePresentation.masterIdx n
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q'X.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -16997,16 +12821,10 @@ section UniversalSubsystem
 def Q'X (r : ℕ → ℕ) (n : ℕ) : Set ℚ := UX (Q'Xcode r n)
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q'X_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17023,16 +12841,10 @@ theorem Q'X_eq (r : ℕ → ℕ) (n : ℕ) :
   rfl
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/SubDX.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -17043,16 +12855,10 @@ variable (P : ComputablePresentation D)
 def SubDX (n : ℕ) : Set (List ℕ) := nbhdGen P (decodeList n)
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/SubDX_inter_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -17068,16 +12874,10 @@ theorem SubDX_inter_eq (n m : ℕ) :
   rw [appendListCode_eq, nbhdGen_inter]
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/SubDX_masterIdx_spec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -17089,16 +12889,10 @@ theorem SubDX_masterIdx_spec : SubDX P (encodeList ([] : List ℕ)) = (SubD P).m
   rw [decodeList_encodeList]
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/SubDX_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -17108,16 +12902,10 @@ variable (P : ComputablePresentation D)
 theorem SubDX_mem (n : ℕ) : (SubD P).mem (SubDX P n) := ⟨decodeList n, rfl⟩
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/SubDX_surj.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -17129,16 +12917,10 @@ theorem SubDX_surj {N : Set (List ℕ)} (hN : (SubD P).mem N) : ∃ n, SubDX P n
   exact ⟨encodeList js, by unfold SubDX; rw [decodeList_encodeList]⟩
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/SubD_cons_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -17153,16 +12935,10 @@ theorem SubD_cons_computable :
   rw [SubDX_inter_eq]
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/TreeVal.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17178,16 +12954,10 @@ def TreeVal (c : ℕ) : ℕ := QFuel r (c + 1) c
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q2X.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17202,16 +12972,10 @@ def Q2X (c : ℕ) : Set ℚ := UX (TreeVal r c)
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/TreeVal_of_tag0.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17232,16 +12996,10 @@ theorem TreeVal_of_tag0 {c : ℕ} (h : c.unpair.1 = 0) : TreeVal r c = r c.unpai
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/TreeVal_of_tag_ge2.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17266,16 +13024,10 @@ theorem TreeVal_of_tag_ge2 {c : ℕ} (h : 2 ≤ c.unpair.1) :
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/UX_Uinter_dichotomy.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17305,16 +13057,10 @@ theorem UX_Uinter_dichotomy (n m : ℕ) :
     exact Set.inter_eq_left.mpr (Set.inter_subset_left.trans hsubn)
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/consUpd_foldl_idx.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -17339,16 +13085,10 @@ theorem consUpd_foldl_idx (projFn fc : ℕ → ℕ) (el : List ℕ) (b a flag : 
       exact ih (b / 2) a flag
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/exists_common_witness.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -17375,16 +13115,10 @@ theorem exists_common_witness (x : (SubD P).Element) {js : List ℕ}
         finGen_mono P (List.sublist_append_right jsj js0') (hsub0' (principal_mem_finGen P hi))
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/exists_preimage_of_forall_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17402,16 +13136,10 @@ theorem exists_preimage_of_forall_mem {r : ℕ → ℕ} {l : List ℕ} (h : ∀ 
     exact ⟨n0 :: l0', by simp [hn0, hl0']⟩
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/idxCharAt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -17425,16 +13153,10 @@ def idxCharAt (fc : ℕ → ℕ) (w : ℕ) : ℕ :=
     w.unpair.2).unpair.2.unpair.1
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/idxCharAt_eq_idxchain.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -17459,16 +13181,10 @@ theorem idxCharAt_eq_idxchain (fc : ℕ → ℕ) (w : ℕ) :
     List.map_id]
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/interFrom_append_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -17485,16 +13201,10 @@ theorem interFrom_append_eq (A : Set α) (l1 l2 : List ℕ) :
   tauto
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/leafCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17507,16 +13217,10 @@ def leafCode (j : ℕ) : ℕ := Nat.pair 0 j
 end TermAlgebra
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/TreeVal_leaf.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17537,16 +13241,10 @@ theorem TreeVal_leaf (j : ℕ) : TreeVal r (leafCode j) = r j := by
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/masterCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17559,16 +13257,10 @@ def masterCode : ℕ := Nat.pair 2 0
 end TermAlgebra
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/TreeVal_master.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17589,16 +13281,10 @@ theorem TreeVal_master : TreeVal r masterCode = UComputablePresentation.masterId
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/nbhdGen_eq_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section SubD
@@ -17612,16 +13298,10 @@ theorem nbhdGen_eq_iff {a b : List ℕ} : nbhdGen P a = nbhdGen P b ↔ finGen P
   rw [h]
 
 end SubD
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/nodeCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17634,16 +13314,10 @@ def nodeCode (t1 t2 : ℕ) : ℕ := Nat.pair 1 (Nat.pair t1 t2)
 end TermAlgebra
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q2inter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17658,16 +13332,10 @@ def Q2inter (c1 c2 : ℕ) : ℕ := nodeCode c1 c2
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/listToTreeAux.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17687,16 +13355,10 @@ def listToTreeAux : ℕ → List ℕ → ℕ
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/ofSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -17720,16 +13382,10 @@ def ofSubsystem (D' : NeighborhoodSystem α) (hD' : D' ◁ D) : (SubD P).Element
       (hle.trans ((finGen_le_iff_forall_mem P hD' js1).mpr h1))⟩
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/mem_ofSubsystem_nbhdGen.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -17750,16 +13406,10 @@ theorem mem_ofSubsystem_nbhdGen {D' : NeighborhoodSystem α} (hD' : D' ◁ D) (j
   · exact fun hall => ⟨js, rfl, hall⟩
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/primrec_Q2inter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17777,16 +13427,10 @@ theorem primrec_Q2inter : Nat.Primrec (fun t : ℕ => Q2inter t.unpair.1 t.unpai
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/primrec_QLookup.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17838,16 +13482,10 @@ theorem primrec_QLookup (hr : Nat.Primrec r) : Nat.Primrec (QLookup r) := by
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/primrec_QFuel2.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17875,16 +13513,10 @@ theorem primrec_QFuel2 (hr : Nat.Primrec r) :
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/primrec_TreeVal.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17905,16 +13537,10 @@ theorem primrec_TreeVal (hr : Nat.Primrec r) : Nat.Primrec (TreeVal r) := by
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q2_interEq_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -17942,16 +13568,10 @@ theorem Q2_interEq_computable (hr : Nat.Primrec r) :
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/primrec_idxCharAt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -17966,16 +13586,10 @@ theorem primrec_idxCharAt {fc : ℕ → ℕ} (hfcp : Nat.Primrec fc) :
   exact Nat.Primrec.left.comp (Nat.Primrec.right.comp hfold)
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/mem_finGen_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -18029,16 +13643,10 @@ theorem mem_finGen_computable :
     rw [idxchain_spec P hDb]
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/finGen_subset_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -18058,16 +13666,10 @@ theorem finGen_subset_computable :
   exact hiff t.unpair.1 t.unpair.2
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/SubD_interEq_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -18114,16 +13716,10 @@ theorem SubD_interEq_computable :
   exact hiff t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/SubDPresentation.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section Computability
@@ -18144,16 +13740,10 @@ def SubDPresentation : ComputablePresentation (SubD P) where
   masterIdx_spec := SubDX_masterIdx_spec P
 
 end Computability
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/toSubsystemSys.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -18180,16 +13770,10 @@ def toSubsystemSys (x : (SubD P).Element) : NeighborhoodSystem α where
   sub_master := fun ⟨_, _, hY⟩ => finGen_sub_master P hY
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q2X_masterIdx_spec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18207,16 +13791,10 @@ theorem Q2X_masterIdx_spec :
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/toSubsystemSys_subsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -18237,16 +13815,10 @@ theorem toSubsystemSys_subsystem (x : (SubD P).Element) : toSubsystemSys P x ◁
     rw [interFrom_append_eq, hXeq, hYeq]
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/ofSubsystem_toSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -18267,16 +13839,10 @@ theorem ofSubsystem_toSubsystem (x : (SubD P).Element) :
     exact ⟨js, rfl, fun i hi => ⟨js, hx, principal_mem_finGen P hi⟩⟩
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/mem_nbhdGen_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -18292,16 +13858,10 @@ theorem mem_nbhdGen_iff (x : (SubD P).Element) (js : List ℕ) :
   exact mem_ofSubsystem_nbhdGen P (toSubsystemSys_subsystem P x) js
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q'x_surj.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18325,16 +13885,10 @@ theorem Q'x_surj (r : ℕ → ℕ) (x : (SubD UComputablePresentation).Element)
   exact idxchain_spec UComputablePresentation (hYeq ▸ hDY)
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/toSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -18346,16 +13900,10 @@ def toSubsystem (x : (SubD P).Element) : {D' : NeighborhoodSystem α // D' ◁ D
   ⟨toSubsystemSys P x, toSubsystemSys_subsystem P x⟩
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/toSubsystem_ofSubsystem_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -18381,16 +13929,10 @@ theorem toSubsystem_ofSubsystem_mem (D' : NeighborhoodSystem α) (hD' : D' ◁ D
     exact hY
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/toSubsystem_ofSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -18403,16 +13945,10 @@ theorem toSubsystem_ofSubsystem (D' : NeighborhoodSystem α) (hD' : D' ◁ D) :
   Subtype.ext (NeighborhoodSystem.ext (toSubsystem_ofSubsystem_mem P D' hD') hD'.master_eq.symm)
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/subsystemIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section OrderIso
@@ -18441,16 +13977,10 @@ def subsystemIso : (SubD P).Element ≃o {D' : NeighborhoodSystem α // D' ◁ D
       exact ⟨js, hab (nbhdGen P js) haj, hY⟩
 
 end OrderIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/unpair_snd_lt_of_unpair_fst_pos.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18470,16 +14000,10 @@ theorem unpair_snd_lt_of_unpair_fst_pos {c : ℕ} (h : 0 < c.unpair.1) : c.unpai
 end TermAlgebra
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/QFuel_stable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18520,16 +14044,10 @@ theorem QFuel_stable :
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/TreeVal_eq_QFuel.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18544,16 +14062,10 @@ theorem TreeVal_eq_QFuel {c fuel : ℕ} (h : c < fuel) : TreeVal r c = QFuel r f
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/TreeVal_of_tag1.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18578,16 +14090,10 @@ theorem TreeVal_of_tag1 {c : ℕ} (h : c.unpair.1 = 1) :
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q2x_mem_X.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18640,16 +14146,10 @@ theorem Q2x_mem_X (hspec : ∀ i, (toSubsystemSys UComputablePresentation x).mem
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/nodeCode_fst_lt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18669,16 +14169,10 @@ theorem nodeCode_fst_lt (t1 t2 : ℕ) : t1 < nodeCode t1 t2 := by
 end TermAlgebra
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/nodeCode_snd_lt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18697,16 +14191,10 @@ theorem nodeCode_snd_lt (t1 t2 : ℕ) : t2 < nodeCode t1 t2 := by
 end TermAlgebra
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/TreeVal_node.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18735,16 +14223,10 @@ theorem TreeVal_node (t1 t2 : ℕ) :
 end TreeVal
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q2_cons_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18775,16 +14257,10 @@ theorem Q2_cons_computable (hr : Nat.Primrec r) :
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q2inter_spec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18806,16 +14282,10 @@ theorem Q2inter_spec {n m : ℕ} (h : ∃ k, Q2X r k ⊆ Q2X r n ∩ Q2X r m) :
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/TreeVal_listToTreeAux.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18835,16 +14305,10 @@ theorem TreeVal_listToTreeAux (acc : ℕ) (l : List ℕ) :
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q2x_surj.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18876,16 +14340,10 @@ theorem Q2x_surj (hspec : ∀ i, (toSubsystemSys UComputablePresentation x).mem 
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Q'xPresentation.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section UniversalSubsystem
@@ -18915,16 +14373,10 @@ def Q'xPresentation (hr : Nat.Primrec r)
 end TreeVal2
 
 end UniversalSubsystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 section ComputableElements
@@ -19049,17 +14501,11 @@ theorem subsystemU_effectivelyGiven_of_isComputableElement
 
 end TreeVal2
 end UniversalSubsystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/primrec_QstepFn.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 
 section UniversalSubsystem
 
@@ -19072,17 +14518,11 @@ theorem primrec_QstepFn {r : ℕ → ℕ} (hr : Nat.Primrec r) : Nat.Primrec (Qs
     simp only [unpair_pair_fst, unpair_pair_snd]
 
 end UniversalSubsystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/primrec_Qu27Xcode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 
 section UniversalSubsystem
 
@@ -19092,17 +14532,11 @@ theorem primrec_Q'Xcode {r : ℕ → ℕ} (hr : Nat.Primrec r) : Nat.Primrec (Q'
     (Nat.Primrec.const UComputablePresentation.masterIdx) Nat.Primrec.id
 
 end UniversalSubsystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815/subsystem_isEffectivelyGiven_of_isEffectivelyGiven.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α}
-
 
 /-- **Exercise 8.15, first half.** If `D` is effectively given, there is an effectively given
 neighbourhood system (`SubD P`, on tokens `List ℕ`) whose elements are order-isomorphic to
@@ -19113,14 +14547,9 @@ theorem subsystem_isEffectivelyGiven_of_isEffectivelyGiven (hD : D.IsEffectively
       Nonempty (V.Element ≃o {D' : NeighborhoodSystem α // D' ◁ D}) := by
   obtain ⟨P⟩ := hD
   exact ⟨SubD P, ⟨SubDPresentation P⟩, ⟨subsystemIso P⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise815.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_815.{u_1} : ∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
@@ -19145,187 +14574,113 @@ theorem example_815.{u_1} : ∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodS
                   @DomainTheory.NeighbourhoodSystems.Subsystem α D' D)
                 (@DomainTheory.NeighbourhoodSystems.Proposition611.subPartialOrder α D))))) :=
   @DomainTheory.NeighbourhoodSystems.subsystem_isEffectivelyGiven_of_isEffectivelyGiven
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/clipGeCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Clip a rational-pair code `e` to `[decodeRat m, ∞)`, given `t = pair m e`. -/
 def clipGeCode (t : ℕ) : ℕ :=
   Nat.pair (ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1)) t.unpair.2.unpair.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/clipGeListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Clip every pair of the list-code `c` into `[decodeRat m, ∞)`. -/
 def clipGeListCode (m c : ℕ) : ℕ := flatMapCode (fun t => Nat.pair (clipGeCode t) 0 + 1) m c
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/clipLtCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Clip a rational-pair code `e` to `(-∞, decodeRat m)`, given `t = pair m e`. -/
 def clipLtCode (t : ℕ) : ℕ :=
   Nat.pair t.unpair.2.unpair.1 (ratMinCode (Nat.pair t.unpair.2.unpair.2 t.unpair.1))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/clipLtListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Clip every pair of the list-code `c` into `(-∞, decodeRat m)`. -/
 def clipLtListCode (m c : ℕ) : ℕ := flatMapCode (fun t => Nat.pair (clipLtCode t) 0 + 1) m c
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/firstElemCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- The code of the head element of a non-empty list-code `c` (`decodeList c`'s head). Junk
 (`0`'s `unpair.1`) when `c = 0`, but we only ever apply it to `canonCode n ≠ 0`
 (`canonCode_ne_zero`). -/
 def firstElemCode (c : ℕ) : ℕ := (c - 1).unpair.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/qpClipGe.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Clip a pair up to `[m, ∞)`: clamp the left endpoint at `m`, leave the right endpoint. -/
 def qpClipGe (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ m, p.2)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/qpClipLt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- Clip a pair down to `(-∞, m)`: leave the left endpoint, clamp the right endpoint at `m`. -/
 def qpClipLt (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1, p.2 ⊓ m)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/splitMidCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- The midpoint code of the first pair of `canonCode n`'s presenting list. -/
 def splitMidCode (n : ℕ) : ℕ := ratMidCode (firstElemCode (canonCode n))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/splitULeft.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- The "left" half of the canonical split of `Xₙ`: `Xₙ ∩ (-∞, m)` for `m` the midpoint of `Xₙ`'s
 first presenting pair. -/
 def splitULeft (n : ℕ) : ℕ := clipLtListCode (splitMidCode n) (canonCode n)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/splitURight.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
 /-- The "right" half of the canonical split of `Xₙ`: `Xₙ ∩ [m, ∞)`. -/
 def splitURight (n : ℕ) : ℕ := clipGeListCode (splitMidCode n) (canonCode n)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/decodeQPairList_singletonCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem decodeQPairList_singletonCode (v : ℕ) :
     decodeQPairList (Nat.pair v 0 + 1) = [decodeRatPair v] := by
   unfold decodeQPairList
   rw [decodeList_succ, unpair_pair_fst, unpair_pair_snd, decodeList_zero]
   rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/decodeRatPair_clipGeCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem decodeRatPair_clipGeCode (m e : ℕ) :
     decodeRatPair (clipGeCode (Nat.pair m e)) = qpClipGe (decodeRat m) (decodeRatPair e) := by
   unfold clipGeCode decodeRatPair qpClipGe
   simp only [unpair_pair_fst, unpair_pair_snd, decodeRat_ratMaxCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/decodeRatPair_clipLtCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem decodeRatPair_clipLtCode (m e : ℕ) :
     decodeRatPair (clipLtCode (Nat.pair m e)) = qpClipLt (decodeRat m) (decodeRatPair e) := by
   unfold clipLtCode decodeRatPair qpClipLt
   simp only [unpair_pair_fst, unpair_pair_snd, decodeRat_ratMinCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/mem_decodeQPairList_clipGeListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem mem_decodeQPairList_clipGeListCode (m c : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (clipGeListCode m c) ↔
@@ -19340,16 +14695,10 @@ theorem mem_decodeQPairList_clipGeListCode (m c : ℕ) (p : ℚ × ℚ) :
     obtain ⟨y, hy, rfl⟩ := (mem_decodeQPairList c p0).mp hp0
     exact ⟨y, hy, by
       rw [decodeQPairList_singletonCode, List.mem_singleton, decodeRatPair_clipGeCode]; exact hp⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/mem_decodeQPairList_clipLtListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem mem_decodeQPairList_clipLtListCode (m c : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (clipLtListCode m c) ↔
@@ -19364,16 +14713,10 @@ theorem mem_decodeQPairList_clipLtListCode (m c : ℕ) (p : ℚ × ℚ) :
     obtain ⟨y, hy, rfl⟩ := (mem_decodeQPairList c p0).mp hp0
     exact ⟨y, hy, by
       rw [decodeQPairList_singletonCode, List.mem_singleton, decodeRatPair_clipLtCode]; exact hp⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/mem_decodeQPairList_firstElemCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem mem_decodeQPairList_firstElemCode {c : ℕ} (hc : c ≠ 0) :
     decodeRatPair (firstElemCode c) ∈ decodeQPairList c := by
@@ -19382,16 +14725,10 @@ theorem mem_decodeQPairList_firstElemCode {c : ℕ} (hc : c ≠ 0) :
   unfold decodeQPairList
   rw [this, decodeList_succ]
   exact List.mem_map_of_mem (by simp)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/presentedIntervals_map_qpClipGe.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem presentedIntervals_map_qpClipGe (m : ℚ) (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map (qpClipGe m)) = presentedIntervals L ∩ Set.Ici m := by
@@ -19402,16 +14739,10 @@ theorem presentedIntervals_map_qpClipGe (m : ℚ) (L : List (ℚ × ℚ)) :
     exact ⟨⟨q, hq, le_sup_left.trans hx1, hx2⟩, le_sup_right.trans hx1⟩
   · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hxm⟩
     exact ⟨(q.1 ⊔ m, q.2), ⟨q, hq, rfl⟩, sup_le hxq1 hxm, hxq2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/presentedIntervals_decodeQPairList_clipGeListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem presentedIntervals_decodeQPairList_clipGeListCode (m c : ℕ) :
     presentedIntervals (decodeQPairList (clipGeListCode m c)) =
@@ -19421,16 +14752,10 @@ theorem presentedIntervals_decodeQPairList_clipGeListCode (m c : ℕ) :
   intro p
   rw [mem_decodeQPairList_clipGeListCode, List.mem_map]
   simp only [eq_comm]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/presentedIntervals_map_qpClipLt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem presentedIntervals_map_qpClipLt (m : ℚ) (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map (qpClipLt m)) = presentedIntervals L ∩ Set.Iio m := by
@@ -19441,16 +14766,10 @@ theorem presentedIntervals_map_qpClipLt (m : ℚ) (L : List (ℚ × ℚ)) :
     exact ⟨⟨q, hq, hx1, hx2.trans_le inf_le_left⟩, hx2.trans_le inf_le_right⟩
   · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hxm⟩
     exact ⟨(q.1, q.2 ⊓ m), ⟨q, hq, rfl⟩, hxq1, lt_inf_iff.mpr ⟨hxq2, hxm⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/presentedIntervals_decodeQPairList_clipLtListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem presentedIntervals_decodeQPairList_clipLtListCode (m c : ℕ) :
     presentedIntervals (decodeQPairList (clipLtListCode m c)) =
@@ -19460,16 +14779,10 @@ theorem presentedIntervals_decodeQPairList_clipLtListCode (m c : ℕ) :
   intro p
   rw [mem_decodeQPairList_clipLtListCode, List.mem_map]
   simp only [eq_comm]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/primrec_clipGeCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem primrec_clipGeCode : Nat.Primrec clipGeCode := by
   have hm : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
@@ -19479,31 +14792,19 @@ theorem primrec_clipGeCode : Nat.Primrec clipGeCode := by
     Nat.Primrec.right.comp Nat.Primrec.right
   exact (Nat.Primrec.pair (primrec_ratMaxCode.comp (he1.pair hm)) he2).of_eq
     fun t => by simp only [clipGeCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/primrec_clipGeListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem primrec_clipGeListCode : Nat.Primrec (fun t : ℕ => clipGeListCode t.unpair.1 t.unpair.2) := by
   have hg : Nat.Primrec (fun t : ℕ => Nat.pair (clipGeCode t) 0 + 1) :=
     Nat.Primrec.succ.comp (primrec_clipGeCode.pair (Nat.Primrec.const 0))
   exact (primrec_flatMapCode hg).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/primrec_clipLtCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem primrec_clipLtCode : Nat.Primrec clipLtCode := by
   have hm : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
@@ -19513,102 +14814,60 @@ theorem primrec_clipLtCode : Nat.Primrec clipLtCode := by
     Nat.Primrec.right.comp Nat.Primrec.right
   exact (Nat.Primrec.pair he1 (primrec_ratMinCode.comp (he2.pair hm))).of_eq
     fun t => by simp only [clipLtCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/primrec_clipLtListCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem primrec_clipLtListCode : Nat.Primrec (fun t : ℕ => clipLtListCode t.unpair.1 t.unpair.2) := by
   have hg : Nat.Primrec (fun t : ℕ => Nat.pair (clipLtCode t) 0 + 1) :=
     Nat.Primrec.succ.comp (primrec_clipLtCode.pair (Nat.Primrec.const 0))
   exact (primrec_flatMapCode hg).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/primrec_firstElemCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem primrec_firstElemCode : Nat.Primrec firstElemCode :=
   Nat.Primrec.left.comp primrec_pred
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/primrec_splitMidCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem primrec_splitMidCode : Nat.Primrec splitMidCode :=
   (primrec_ratMidCode.comp (primrec_firstElemCode.comp primrec_canonCode)).of_eq fun n => by
     simp only [splitMidCode]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/primrec_splitULeft.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem primrec_splitULeft : Nat.Primrec splitULeft :=
   (primrec_clipLtListCode.comp (primrec_splitMidCode.pair primrec_canonCode)).of_eq
     fun n => by simp only [splitULeft, unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/primrec_splitURight.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem primrec_splitURight : Nat.Primrec splitURight :=
   (primrec_clipGeListCode.comp (primrec_splitMidCode.pair primrec_canonCode)).of_eq
     fun n => by simp only [splitURight, unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/splitU_p0_lt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 /-- The first pair `p₀` of `canonCode n`'s presenting list is non-degenerate, `p₀.1 < p₀.2`. -/
 theorem splitU_p0_lt (n : ℕ) :
     (decodeRatPair (firstElemCode (canonCode n))).1 < (decodeRatPair (firstElemCode (canonCode n))).2 :=
   forall_lt_decodeQPairList_canonCode n _
     (mem_decodeQPairList_firstElemCode (canonCode_ne_zero n))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/splitU_mid_gt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem splitU_mid_gt (n : ℕ) :
     (decodeRatPair (firstElemCode (canonCode n))).1 < decodeRat (splitMidCode n) := by
@@ -19618,16 +14877,10 @@ theorem splitU_mid_gt (n : ℕ) :
   have h := splitU_p0_lt n
   unfold decodeRatPair at h
   exact left_lt_add_div_two.mpr h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/UX_splitULeft.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem UX_splitULeft (n : ℕ) :
     UX (splitULeft n) = UX n ∩ Set.Iio (decodeRat (splitMidCode n)) := by
@@ -19645,16 +14898,10 @@ theorem UX_splitULeft (n : ℕ) :
   show presentedIntervals (decodeQPairList (clipLtListCode (splitMidCode n) (canonCode n))) = _
   rw [presentedIntervals_decodeQPairList_clipLtListCode]
   rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/splitU_mid_lt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem splitU_mid_lt (n : ℕ) :
     decodeRat (splitMidCode n) < (decodeRatPair (firstElemCode (canonCode n))).2 := by
@@ -19664,16 +14911,10 @@ theorem splitU_mid_lt (n : ℕ) :
   have h := splitU_p0_lt n
   unfold decodeRatPair at h
   exact add_div_two_lt_right.mpr h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/UX_splitURight.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 theorem UX_splitURight (n : ℕ) :
     UX (splitURight n) = UX n ∩ Set.Ici (decodeRat (splitMidCode n)) := by
@@ -19691,16 +14932,10 @@ theorem UX_splitURight (n : ℕ) :
   show presentedIntervals (decodeQPairList (clipGeListCode (splitMidCode n) (canonCode n))) = _
   rw [presentedIntervals_decodeQPairList_clipGeListCode]
   rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/splitU_disjoint.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 /-- **Theorem 8.8(b) Part 4, disjointness**: `splitULeft`/`splitURight` cover disjoint pieces. -/
 theorem splitU_disjoint (n : ℕ) : UX (splitULeft n) ∩ UX (splitURight n) = ∅ := by
@@ -19709,16 +14944,10 @@ theorem splitU_disjoint (n : ℕ) : UX (splitULeft n) ∩ UX (splitURight n) = �
   simp only [Set.mem_inter_iff, Set.mem_Iio, Set.mem_Ici, Set.mem_empty_iff_false, iff_false]
   rintro ⟨⟨-, h1⟩, -, h2⟩
   exact absurd h1 (not_lt.mpr h2)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/splitU_left_ne.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 /-- **Theorem 8.8(b) Part 4, properness (left)**: `splitULeft n` is a *proper* subset of `Xₙ`. -/
 theorem splitU_left_ne (n : ℕ) : UX (splitULeft n) ≠ UX n := by
@@ -19728,16 +14957,10 @@ theorem splitU_left_ne (n : ℕ) : UX (splitULeft n) ≠ UX n := by
   have hZempty : UX (splitURight n) ⊆ (∅ : Set ℚ) := by
     rw [← splitU_disjoint n]; exact Set.subset_inter hZsub subset_rfl
   exact (U_mem_UX (splitURight n)).2.1.ne_empty (Set.subset_empty_iff.mp hZempty)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/splitU_right_ne.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 /-- **Theorem 8.8(b) Part 4, properness (right)**: `splitURight n` is a *proper* subset of `Xₙ`. -/
 theorem splitU_right_ne (n : ℕ) : UX (splitURight n) ≠ UX n := by
@@ -19747,16 +14970,10 @@ theorem splitU_right_ne (n : ℕ) : UX (splitURight n) ≠ UX n := by
   have hYempty : UX (splitULeft n) ⊆ (∅ : Set ℚ) := by
     rw [← splitU_disjoint n]; exact Set.subset_inter subset_rfl hYsub
   exact (U_mem_UX (splitULeft n)).2.1.ne_empty (Set.subset_empty_iff.mp hYempty)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- SplitU/splitU_union.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
-
 
 /-- **Theorem 8.8(b) Part 4, covering**: `splitULeft`/`splitURight` reunite to `Xₙ`. -/
 theorem splitU_union (n : ℕ) : UX (splitULeft n) ∪ UX (splitURight n) = UX n := by
@@ -19769,16 +14986,10 @@ theorem splitU_union (n : ℕ) : UX (splitULeft n) ∪ UX (splitURight n) = UX n
     rcases lt_or_ge x (decodeRat (splitMidCode n)) with hlt | hge
     · exact Or.inl ⟨h, hlt⟩
     · exact Or.inr ⟨h, hge⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88b/eIdx.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **Swap `0` and `P.masterIdx`.** A primitive-recursive involution on `ℕ` re-pointing whichever
@@ -19786,32 +14997,20 @@ index `P.masterIdx` names `D`'s master neighbourhood to sit at index `0` instead
 other index fixed. -/
 def eIdx (n : ℕ) : ℕ :=
   if n = 0 then P.masterIdx else if n = P.masterIdx then 0 else n
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88b/eIdx_involutive.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem eIdx_involutive : Function.Involutive (eIdx P) := by
   intro n
   unfold eIdx
   split_ifs with h0 hm hm' hm'' hm''' <;> simp_all
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88b/eIdx_primrec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem eIdx_primrec : Nat.Primrec (eIdx P) := by
@@ -19842,16 +15041,10 @@ theorem eIdx_primrec : Nat.Primrec (eIdx P) := by
     have hn0 : n = 0 := by unfold isZero at h0; omega
     unfold eIdx
     rw [ite_eq_left hn0]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88b/P0.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The re-pointed presentation `P₀`**: `P`'s enumeration reindexed by `eIdx`, so that
@@ -19860,29 +15053,17 @@ structural fields — in particular the two deciders `interEq_computable`/`cons_
 for `DAtom_recDecidable` — transfers automatically, with no need to redo Part 5's work. -/
 noncomputable def P0 : ComputablePresentation D :=
   P.reindexInvolutive (eIdx P) (eIdx_involutive P) (eIdx_primrec P)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88b/P0_X.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 @[simp] theorem P0_X (n : ℕ) : (P0 P).X n = P.X (eIdx P n) := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88b/posnegList.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The `(pos, neg)` accumulator pair for a sign sequence `δ`, at depth `n`.** Mirrors
@@ -19893,18 +15074,11 @@ def posnegList (δ : ℕ → Bool) : ℕ → List ℕ × List ℕ
   | n + 1 =>
       let pn := posnegList δ n
       if δ n then (pn.1 ++ [n], pn.2) else (pn.1, pn.2 ++ [n])
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88b/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **`e := P₀.X`, Scott's re-enumeration with `e 0 = D.master`.** -/
 noncomputable abbrev e : ℕ → Set α := (P0 P).X
@@ -19978,31 +15152,18 @@ theorem genAtom_eq_DAtom (δ : ℕ → Bool) :
       show IPos (P0 P) (posnegList δ n).1 ∩ {m | ∀ j ∈ (posnegList δ n).2, m ∉ idxSet (e P) j}
           ∩ (Set.univ \ idxSet (e P) n) = _
       ac_rfl
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88b/eIdx_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem eIdx_zero : eIdx P 0 = P.masterIdx := ite_eq_left rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88b/genAtom_empty_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **Part 6c's headline result.** `genAtom`-emptiness (for the reindexed enumeration `e P`, at any
 sign sequence `δ` and depth `n`) reduces to `DAtom (P0 P)`-emptiness at the `posnegList`
@@ -20015,18 +15176,11 @@ theorem genAtom_empty_iff (δ : ℕ → Bool) (n : ℕ) :
     genAtom (idxSet (e P)) Set.univ δ n = ∅ ↔
       DAtom (P0 P) (posnegList δ n).1 (posnegList δ n).2 = ∅ := by
   rw [genAtom_eq_DAtom]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88b/hcover.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem hcover : ∀ S, D.mem S ↔ ∃ n, S = e P n := by
   intro S
@@ -20036,32 +15190,19 @@ theorem hcover : ∀ S, D.mem S ↔ ∃ n, S = e P n := by
     exact ⟨eIdx P n, by show S = P.X (eIdx P (eIdx P n)); rw [eIdx_involutive P n]; exact hn.symm⟩
   · rintro ⟨n, rfl⟩
     exact (P0 P).mem_X n
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88b/he0.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem he0 : e P 0 = D.master := by
   show P.X (eIdx P 0) = D.master
   rw [eIdx_zero]; exact P.masterIdx_spec
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/DprimeU_cons_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`∃ k, Yidx (e P) k ⊆ Yidx (e P) i ∩ Yidx (e P) j` is recursively decidable in `(i, j)`.** This
@@ -20073,16 +15214,10 @@ theorem DprimeU_cons_computable :
   simp only [Set.subset_inter_iff]
   exact exists_congr (fun k => by
     rw [← embed_subset_iff (e P) k t.unpair.1, ← embed_subset_iff (e P) k t.unpair.2])
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/DprimeU_inter_spec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The intersection index transfers.** `(P0 P).inter n m` — Scott's own primitive-recursive
@@ -20102,69 +15237,39 @@ theorem DprimeU_inter_spec {n m : ℕ}
   exact ((transfer_inter_eq_iff splitChoice (idxSet (e P)) Set.univ univ_nonempty_nat
     splitChoice_isSplitSpec n m ((P0 P).inter n m)
     (Set.subset_univ _) (Set.subset_univ _) (Set.subset_univ _)).mp hidx).symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/capNegCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 def capNegCode (t : ℕ) : ℕ := encodeList [t.unpair.2.unpair.2]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/capNegCode_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem capNegCode_eq (a : ℕ) : encodeList [a] = Nat.pair a 0 + 1 := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/capPosCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 def capPosCode (t : ℕ) : ℕ := encodeList [t.unpair.1, t.unpair.2.unpair.1]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/capPosCode_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem capPosCode_eq (a b : ℕ) : encodeList [a, b] = Nat.pair a (Nat.pair b 0 + 1) + 1 :=
   rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/idxSet_inter_eq_iff_DAtom.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`idxSet`-intersection, characterized by a single `DAtom` emptiness query.** For *any*
@@ -20197,16 +15302,10 @@ theorem idxSet_inter_eq_iff_DAtom {β : Type*} {V : NeighborhoodSystem β}
   · rintro ⟨hki, hkj, hempty⟩
     exact Set.Subset.antisymm (hDAtom_iff.mp hempty)
       (Set.subset_inter ((idxSet_subset_iff Q.X k i).mpr hki) ((idxSet_subset_iff Q.X k j).mpr hkj))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/inclK_i_recDecidable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`Yidx (e P) i ⊆ Yidx (e P) j`, reindexed.** A thin wrapper packaging two `incl_computable`-style
@@ -20219,16 +15318,10 @@ theorem inclK_i_recDecidable :
   have hp := (P0 P).incl_computable.comp hg
   refine RecDecidable.of_iff (fun t => ?_) hp
   simp only [unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/inclK_j_recDecidable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem inclK_j_recDecidable :
@@ -20239,16 +15332,10 @@ theorem inclK_j_recDecidable :
   have hp := (P0 P).incl_computable.comp hg
   refine RecDecidable.of_iff (fun t => ?_) hp
   simp only [unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/primrec_capNegCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem primrec_capNegCode : Nat.Primrec capNegCode := by
@@ -20257,16 +15344,10 @@ theorem primrec_capNegCode : Nat.Primrec capNegCode := by
   refine (primrec_add₂ hinner (Nat.Primrec.const 1)).of_eq (fun t => ?_)
   show _ = capNegCode t
   rw [capNegCode, capNegCode_eq]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/primrec_capPosCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem primrec_capPosCode : Nat.Primrec capPosCode := by
@@ -20278,16 +15359,10 @@ theorem primrec_capPosCode : Nat.Primrec capPosCode := by
   refine (primrec_add₂ houter (Nat.Primrec.const 1)).of_eq (fun t => ?_)
   show _ = capPosCode t
   rw [capPosCode, capPosCode_eq]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/DAtom_pair_recDecidable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`DAtom (P0 P) [i, j] [k] = ∅` is recursively decidable in `(i, j, k)`.** Reindexes
@@ -20299,16 +15374,10 @@ theorem DAtom_pair_recDecidable :
   have hp := (DAtom_recDecidable (P0 P)).comp hg
   refine RecDecidable.of_iff (fun t => ?_) hp
   simp only [unpair_pair_fst, unpair_pair_snd, capPosCode, capNegCode, decodeList_encodeList]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/DprimeU_interEq_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **Part 6's headline decidability result.** `Yidx (e P) i ∩ Yidx (e P) j = Yidx (e P) k` is
@@ -20327,16 +15396,10 @@ theorem DprimeU_interEq_computable :
       (Set.subset_univ _) (Set.subset_univ _) (Set.subset_univ _),
     idxSet_inter_eq_iff_DAtom (P0 P) t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2]
   tauto
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/DprimeUPresentation.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **Part 6's final assembly.** Theorem 8.8(a)'s own subsystem `DprimeU D (e P) (hcover P) (he0 P)`
@@ -20356,18 +15419,11 @@ noncomputable def DprimeUPresentation :
   inter_spec h := DprimeU_inter_spec P h
   masterIdx := 0
   masterIdx_spec := Yidx_zero D (e P) (hcover P) (he0 P)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88c/DprimeU_isEffectivelyGiven.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **Theorem 8.8(b), Part 6.** If `D` is effectively given, then Theorem 8.8(a)'s own subsystem
 `D'` (with `D ≅ᴰ D'` and `D' ◁ U`, from `isomorphic_DprimeU`/`DprimeU_subsystem`) is *also*
@@ -20375,16 +15431,10 @@ effectively given. -/
 theorem DprimeU_isEffectivelyGiven :
     (DprimeU D (e P) (hcover P) (he0 P)).IsEffectivelyGiven :=
   ⟨DprimeUPresentation P⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/packState.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20395,16 +15445,10 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 def packState (remK posC negC uCode : ℕ) : ℕ := Nat.pair remK (Nat.pair posC (Nat.pair negC uCode))
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/stateCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20414,16 +15458,10 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 def stateCode (s : ℕ) : ℕ := s.unpair.2.unpair.2.unpair.2
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/stateNeg.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20433,16 +15471,10 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 def stateNeg (s : ℕ) : ℕ := s.unpair.2.unpair.2.unpair.1
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/statePos.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20452,16 +15484,10 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 def statePos (s : ℕ) : ℕ := s.unpair.2.unpair.1
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/stateRem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20471,16 +15497,10 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 def stateRem (s : ℕ) : ℕ := s.unpair.1
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/stateRem_packState.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20491,16 +15511,10 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
   unfold stateRem packState; simp only [unpair_pair_fst]
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/statePos_packState.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20511,16 +15525,10 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
   unfold statePos packState; simp only [unpair_pair_fst, unpair_pair_snd]
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/stateNeg_packState.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20531,16 +15539,10 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
   unfold stateNeg packState; simp only [unpair_pair_fst, unpair_pair_snd]
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/stateCode_packState.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20551,16 +15553,10 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
   unfold stateCode packState; simp only [unpair_pair_snd]
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomBase.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20572,18 +15568,11 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 def atomBase (k : ℕ) : ℕ := packState k 0 0 UmasterIdx
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/datomDec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The extracted `D`-atom-emptiness decider for `P0 P`.** Obtained non-constructively
@@ -20594,66 +15583,45 @@ Wrapped in `isOne` so the result is *literally* `{0,1}`-valued (not just "`= 1` 
 `selectFn`-based case analysis on `emptyI`/`emptyJ` needs the *exact* value `0` on the false side, not
 merely `≠ 1` (`selectFn`, unlike a genuine `if`, is only well-behaved on a literal `0`/`1` condition). -/
 noncomputable def datomDec : ℕ → ℕ := fun n => isOne ((DAtom_recDecidable (P0 P)).choose n)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/deltaOf.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The bit-sequence associated to a bit-source `k`**: `deltaOf k i = true` iff bit `i` of `k`
 (read low-bit-first, matching `atomStep`'s `remK % 2`/`remK / 2` peeling) is `1`. -/
 def deltaOf (k : ℕ) : ℕ → Bool := fun i => decide ((k / 2 ^ i) % 2 = 1)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Theorem88d/encodeBits.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Theorem88d
-
 open NeighborhoodSystem Domain.Recursive
 
+section
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 private def encodeBits (δ : ℕ → Bool) : ℕ → ℕ
   | 0 => 0
   | n + 1 => encodeBits δ n + (if δ n then 2 ^ n else 0)
-
-end DomainTheory.NeighbourhoodSystems.Theorem88d
 end
 
-section
--- Theorem88d/unionUX.lean
+end DomainTheory.NeighbourhoodSystems.Theorem88d
 namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`unionUX n m` codes `UX n ∪ UX m`.** Canonicalizes both inputs first (mirroring `Uinter`),
 then concatenates; the result is always a genuine `U`-neighbourhood since a union of two such is
 again presentable, non-empty, and `⊆ [0,1)`. -/
 def unionUX (n m : ℕ) : ℕ := Domain.Recursive.appendCode (canonCode n) (canonCode m)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/wState.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20664,16 +15632,10 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 def wState (w : ℕ) : ℕ := w.unpair.2.unpair.2
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/wY.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20684,16 +15646,10 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 def wY (w : ℕ) : ℕ := w.unpair.2.unpair.1
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 section AtomCode
@@ -20722,103 +15678,61 @@ def atomStep (datomDec : ℕ → ℕ) (w : ℕ) : ℕ :=
       (selectFn emptyJ 0 (selectFn emptyI (stateCode s) (splitURight (stateCode s)))))
 
 end AtomCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUCodeState.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The full state recursion**, packing `atomBase`/`atomStep (datomDec P)` via `Nat.Primrec.prec`:
 `atomUCodeState P (pair k n)` is the depth-`n` state for bit-source `k`. -/
 noncomputable def atomUCodeState (t : ℕ) : ℕ :=
   t.unpair.2.rec (atomBase t.unpair.1) (fun y IH => atomStep (datomDec P) (Nat.pair t.unpair.1 (Nat.pair y IH)))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The depth-`n` `U`-side code**, for bit-source `k` (meaningful exactly when the matching
 `D`-side atom, `DAtom (P0 P) (decodeList (atomUPos P n k)) (decodeList (atomUNeg P n k))`, is
 non-empty — see `genAtom_atomUCode` below). -/
 noncomputable def atomUCode (n k : ℕ) : ℕ := stateCode (atomUCodeState P (Nat.pair k n))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUNeg.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The depth-`n` accumulated negative-index code**, for bit-source `k`. -/
 noncomputable def atomUNeg (n k : ℕ) : ℕ := stateNeg (atomUCodeState P (Nat.pair k n))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUPos.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The depth-`n` accumulated positive-index code**, for bit-source `k`. -/
 noncomputable def atomUPos (n k : ℕ) : ℕ := statePos (atomUCodeState P (Nat.pair k n))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUEmpty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`D`-side atom emptiness at depth `n`, for bit-source `k`** — `1` iff the accumulated
 `(pos, neg)` constraint pair already denotes the empty `D`-index atom. -/
 noncomputable def atomUEmpty (n k : ℕ) : ℕ := datomDec P (Nat.pair (atomUPos P n k) (atomUNeg P n k))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/yFoldStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- One step of the depth-`n` union fold over bit-sources `i + 2ⁿ` (bit `n` forced `1`): silently
@@ -20837,71 +15751,43 @@ noncomputable def yFoldStep (w : ℕ) : ℕ :=
     (selectFn acc.unpair.1
       (Nat.pair 1 (unionUX acc.unpair.2 (atomUCode P (n + 1) k)))
       (Nat.pair 1 (atomUCode P (n + 1) k)))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/yFold.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- The depth-`n` union fold over `i < N`, starting from the "nothing found yet" accumulator
 `(0, 0)`. -/
 noncomputable def yFold (n N : ℕ) : ℕ :=
   N.rec (Nat.pair 0 0) (fun i acc => yFoldStep P (Nat.pair n (Nat.pair i acc)))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/YseqCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`YseqCode`, Scott's `Yₙ` coded.** The `Nat.Primrec` union, over the `2ⁿ` bit-sources
 `i < 2ⁿ` (bit `n` forced `1`, i.e. `i + 2ⁿ`), of the genuine (non-junk) atoms `atomUCode P (n+1)
 (i + 2ⁿ)`. -/
 noncomputable def YseqCode (n : ℕ) : ℕ := (yFold P n (2 ^ n)).unpair.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/Yc.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`Yc P`, the `Set`-valued family underlying `YseqCode`** — the code-native analogue of
 `Theorem88.lean`'s abstract `Yseq`, used to state the `genAtom`-closed-form correspondence below. -/
 def Yc (m : ℕ) : Set ℚ := UX (YseqCode P m)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem datomDec_spec (posC negC : ℕ) :
@@ -21287,21 +16173,12 @@ theorem exists_atomUEmpty_zero (n : ℕ) : ∃ i < 2 ^ n, atomUEmpty P (n + 1) (
     · rw [deltaOf_two_pow_add_self hm0lt, hδ0n]
   rw [genAtom_congr (idxSet (e P)) Set.univ hagree]
   exact hAne
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/DAtom_union.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **The `D`-side atom splits along any prepended index** (Scott's `Δ = idxSetₙ ∪ (Δ∖idxSetₙ)`,
 pulled back through `DAtom`): needed to show that once the "negative refinement" of a nonempty atom
@@ -21311,18 +16188,11 @@ theorem DAtom_union (i : ℕ) (pos neg : List ℕ) :
   ext m
   simp only [mem_DAtom, Set.mem_union, List.mem_cons, forall_eq_or_imp]
   by_cases hm : (P0 P).X m ⊆ (P0 P).X i <;> tauto
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/U_mem_union_UX.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem U_mem_union_UX (n m : ℕ) : U.mem (UX n ∪ UX m) := by
   obtain ⟨-, hne1, hsub1⟩ := U_mem_UX n
@@ -21330,80 +16200,44 @@ theorem U_mem_union_UX (n m : ℕ) : U.mem (UX n ∪ UX m) := by
   exact ⟨⟨decodeQPairList (canonCode n) ++ decodeQPairList (canonCode m),
       (presentedIntervals_append _ _).symm⟩, hne1.mono Set.subset_union_left,
     Set.union_subset hsub1 hsub2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUCode_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **Validity**, the free half of the invariant: `UX` never needs an emptiness hypothesis at all. -/
 theorem atomUCode_mem (n k : ℕ) : U.mem (UX (atomUCode P n k)) := U_mem_UX _
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUEmpty_congr.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem atomUEmpty_congr {n k k' : ℕ} (h : ∀ i < n, deltaOf k i = deltaOf k' i) :
     atomUEmpty P n k = atomUEmpty P n k' := by
   obtain ⟨hpos, hneg, -⟩ := atomUCodeState_congr P h
   unfold atomUEmpty
   rw [hpos, hneg]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUEmpty_zero_or_one.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem atomUEmpty_zero_or_one (n k : ℕ) : atomUEmpty P n k = 0 ∨ atomUEmpty P n k = 1 := by
   have h := datomDec_le_one P (Nat.pair (atomUPos P n k) (atomUNeg P n k))
   unfold atomUEmpty
   omega
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/datomDec_eq_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- The complementary fact to `datomDec_spec`: whenever the `D`-side atom is *non*-empty,
 `datomDec` reads out exactly `0` (not just "`≠ 1`") — needed so `selectFn`'s zero-branch actually
@@ -21413,42 +16247,24 @@ theorem datomDec_eq_zero (posC negC : ℕ) (h : DAtom (P0 P) (decodeList posC) (
   have hle := datomDec_le_one P (Nat.pair posC negC)
   have hne : datomDec P (Nat.pair posC negC) ≠ 1 := fun he => h ((datomDec_spec P posC negC).mp he)
   omega
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/deltaOf_mod_two_pow_of_lt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- Reducing modulo `2ⁿ` never disturbs bits strictly below `n`. -/
 theorem deltaOf_mod_two_pow_of_lt {k n i : ℕ} (hi : i < n) :
     deltaOf (k % 2 ^ n) i = deltaOf k i := by
   rw [deltaOf_eq_testBit, deltaOf_eq_testBit, Nat.testBit_mod_two_pow]
   simp [hi]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUCodeState_congr_twin.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **The canonical "positive twin" at depth `n`** shares `k`'s own `(pos, neg, code)` triple, since
 it agrees with `k` on every bit below `n` (`atomUCodeState_congr` applied to
@@ -21461,21 +16277,12 @@ theorem atomUCodeState_congr_twin (n k : ℕ) :
     intro i hi
     rw [deltaOf_add_two_pow_of_lt _ hi, deltaOf_mod_two_pow_of_lt hi]
   exact atomUCodeState_congr P hagree
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/eq_of_deltaOf_agree_of_lt_two_pow.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **Uniqueness of a bit-source below `2ⁿ`**: two bit-sources agreeing on every bit below `n` and
 both `< 2ⁿ` are equal (every bit at or above `n` is forced `false` by the bound, so agreement below
@@ -21490,18 +16297,11 @@ theorem eq_of_deltaOf_agree_of_lt_two_pow {n i j : ℕ} (hi : i < 2 ^ n) (hj : j
   · have hile : 2 ^ n ≤ 2 ^ l := Nat.pow_le_pow_right (by norm_num) hl
     rw [deltaOf_eq_testBit, deltaOf_eq_testBit, Nat.testBit_lt_two_pow (hi.trans_le hile),
       Nat.testBit_lt_two_pow (hj.trans_le hile)]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/mem_decodeQPairList_appendCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem mem_decodeQPairList_appendCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (Domain.Recursive.appendCode c1 c2) ↔ p ∈ decodeQPairList c1 ∨ p ∈ decodeQPairList c2 := by
@@ -21513,18 +16313,11 @@ theorem mem_decodeQPairList_appendCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
   · rintro (⟨v, hv, rfl⟩ | ⟨v, hv, rfl⟩)
     · exact ⟨v, Or.inl hv, rfl⟩
     · exact ⟨v, Or.inr hv, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/presentedIntervals_decodeQPairList_appendCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem presentedIntervals_decodeQPairList_appendCode (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList (Domain.Recursive.appendCode c1 c2))
@@ -21539,18 +16332,11 @@ theorem presentedIntervals_decodeQPairList_appendCode (c1 c2 : ℕ) :
   · rintro (⟨p, hp, h1, h2⟩ | ⟨p, hp, h1, h2⟩)
     · exact ⟨p, (mem_decodeQPairList_appendCode c1 c2 p).mpr (Or.inl hp), h1, h2⟩
     · exact ⟨p, (mem_decodeQPairList_appendCode c1 c2 p).mpr (Or.inr hp), h1, h2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/UX_unionUX.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem UX_unionUX (n m : ℕ) : UX (unionUX n m) = UX n ∪ UX m := by
   have hmem : U.mem (presentedIntervals (decodeQPairList (Domain.Recursive.appendCode (canonCode n) (canonCode m)))) := by
@@ -21560,18 +16346,11 @@ theorem UX_unionUX (n m : ℕ) : UX (unionUX n m) = UX n ∪ UX m := by
   rw [presentedIntervals_decodeQPairList_canonCode, canonList_fixed hmem,
     presentedIntervals_decodeQPairList_appendCode]
   rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_atomBase.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 section AtomCode
 
@@ -21584,35 +16363,20 @@ theorem primrec_atomBase : Nat.Primrec atomBase :=
     unfold atomBase packState; simp only [id_eq]
 
 end AtomCode
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_datomDec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem primrec_datomDec : Nat.Primrec (datomDec P) :=
   (primrec_isOne.comp (DAtom_recDecidable (P0 P)).choose_spec.1).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_stateCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 section AtomCode
 
@@ -21623,17 +16387,11 @@ theorem primrec_stateCode : Nat.Primrec stateCode :=
   Nat.Primrec.right.comp (Nat.Primrec.right.comp Nat.Primrec.right)
 
 end AtomCode
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_stateNeg.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 section AtomCode
 
@@ -21643,17 +16401,11 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 theorem primrec_stateNeg : Nat.Primrec stateNeg :=
   Nat.Primrec.left.comp (Nat.Primrec.right.comp Nat.Primrec.right)
 end AtomCode
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_statePos.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 section AtomCode
 
@@ -21662,17 +16414,11 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 
 theorem primrec_statePos : Nat.Primrec statePos := Nat.Primrec.left.comp Nat.Primrec.right
 end AtomCode
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_stateRem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 section AtomCode
 
@@ -21681,35 +16427,22 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 
 theorem primrec_stateRem : Nat.Primrec stateRem := Nat.Primrec.left
 end AtomCode
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_unionUX.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem primrec_unionUX : Nat.Primrec (fun t : ℕ => unionUX t.unpair.1 t.unpair.2) := by
   unfold unionUX
   exact (Domain.Recursive.primrec_appendCode.comp ((primrec_canonCode.comp Nat.Primrec.left).pair
     (primrec_canonCode.comp Nat.Primrec.right))).of_eq
     fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_wState.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 section AtomCode
 
@@ -21718,17 +16451,11 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 
 theorem primrec_wState : Nat.Primrec wState := Nat.Primrec.right.comp Nat.Primrec.right
 end AtomCode
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_wY.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 section AtomCode
 
@@ -21737,17 +16464,11 @@ variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 
 theorem primrec_wY : Nat.Primrec wY := Nat.Primrec.left.comp Nat.Primrec.right
 end AtomCode
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_atomStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 section AtomCode
 
@@ -21800,114 +16521,61 @@ theorem primrec_atomStep {datomDec : ℕ → ℕ} (hd : Nat.Primrec datomDec) :
     simp only []
 
 end AtomCode
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_atomUCodeState.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem primrec_atomUCodeState : Nat.Primrec (atomUCodeState P) :=
   (Nat.Primrec.prec primrec_atomBase (primrec_atomStep (primrec_datomDec P))).of_eq fun _t => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_atomUCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem primrec_atomUCode : Nat.Primrec (fun t : ℕ => atomUCode P t.unpair.1 t.unpair.2) :=
   (primrec_stateCode.comp (primrec_atomUCodeState P |>.comp
     (Nat.Primrec.right.pair Nat.Primrec.left))).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_atomUNeg.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem primrec_atomUNeg : Nat.Primrec (fun t : ℕ => atomUNeg P t.unpair.1 t.unpair.2) :=
   (primrec_stateNeg.comp (primrec_atomUCodeState P |>.comp
     (Nat.Primrec.right.pair Nat.Primrec.left))).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_atomUPos.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem primrec_atomUPos : Nat.Primrec (fun t : ℕ => atomUPos P t.unpair.1 t.unpair.2) :=
   (primrec_statePos.comp (primrec_atomUCodeState P |>.comp
     (Nat.Primrec.right.pair Nat.Primrec.left))).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_atomUEmpty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem primrec_atomUEmpty : Nat.Primrec (fun t : ℕ => atomUEmpty P t.unpair.1 t.unpair.2) :=
   ((primrec_datomDec P).comp ((primrec_atomUPos P).pair (primrec_atomUNeg P))).of_eq
     fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_yFoldStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem primrec_yFoldStep : Nat.Primrec (yFoldStep P) := by
   have hn : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
@@ -21943,39 +16611,21 @@ theorem primrec_yFoldStep : Nat.Primrec (yFoldStep P) := by
       ((Nat.Primrec.const 1).pair hunion)
       ((Nat.Primrec.const 1).pair hcode)
   exact (primrec_selectFn hempty hacc hinner).of_eq fun w => by unfold yFoldStep; simp only []
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_yFold.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem primrec_yFold : Nat.Primrec (fun t : ℕ => yFold P t.unpair.1 t.unpair.2) :=
   (Nat.Primrec.prec (Nat.Primrec.const (Nat.pair 0 0)) (primrec_yFoldStep P)).of_eq fun _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/primrec_YseqCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem primrec_YseqCode : Nat.Primrec (YseqCode P) := by
   have h2n : Nat.Primrec (fun n : ℕ => 2 ^ n) := primrec_two_pow Nat.Primrec.id
@@ -21984,21 +16634,12 @@ theorem primrec_YseqCode : Nat.Primrec (YseqCode P) := by
   show ((yFold P (Nat.pair n (2 ^ n)).unpair.1 (Nat.pair n (2 ^ n)).unpair.2)).unpair.2 = YseqCode P n
   rw [unpair_pair_fst, unpair_pair_snd]
   rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/yFoldStep_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- Unfolding `yFoldStep` at an explicit `(n, i, acc)` triple. -/
 theorem yFoldStep_eq (n i acc : ℕ) :
@@ -22009,56 +16650,29 @@ theorem yFoldStep_eq (n i acc : ℕ) :
           (Nat.pair 1 (atomUCode P (n + 1) (i + 2 ^ n)))) := by
   unfold yFoldStep
   simp only [unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/yFold_succ.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem yFold_succ (n N : ℕ) :
     yFold P n (N + 1) = yFoldStep P (Nat.pair n (Nat.pair N (yFold P n N))) := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/yFold_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem yFold_zero (n : ℕ) : yFold P n 0 = Nat.pair 0 0 := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/yFold_found_le_one.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem yFold_found_le_one (n : ℕ) : ∀ N, (yFold P n N).unpair.1 ≤ 1 := by
   intro N
@@ -22072,21 +16686,12 @@ theorem yFold_found_le_one (n : ℕ) : ∀ N, (yFold P n N).unpair.1 ≤ 1 := by
       · rw [show (yFold P n N).unpair.1 = 0 from hf0, selectFn_zero, unpair_pair_fst]
       · rw [show (yFold P n N).unpair.1 = 1 from by omega, selectFn_one, unpair_pair_fst]
     · rw [h1, selectFn_one]; exact ih
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/yFold_found_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **The "found" flag exactly tracks existence of a non-junk bit-source below `N`.** -/
 theorem yFold_found_iff (n : ℕ) :
@@ -22114,21 +16719,12 @@ theorem yFold_found_iff (n : ℕ) :
         rcases Nat.lt_succ_iff_lt_or_eq.mp hi with hi' | rfl
         · exact ⟨i, hi', hie⟩
         · exact absurd hie (by omega)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/yFold_mem_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **The membership form of `yFold`'s correctness**: once a non-junk bit-source has been found
 below `N`, the running code's `UX`-image is exactly the union of the genuine (non-junk) atoms
@@ -22172,39 +16768,21 @@ theorem yFold_mem_iff (n : ℕ) :
         rcases Nat.lt_succ_iff_lt_or_eq.mp hi with hi' | rfl
         · exact ⟨i, hi', hie, hz⟩
         · exact absurd hie (by omega)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/yFold_two_pow_found.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem yFold_two_pow_found (n : ℕ) : (yFold P n (2 ^ n)).unpair.1 = 1 :=
   (yFold_found_iff P n (2 ^ n)).mpr (exists_atomUEmpty_zero P n)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/mem_UX_YseqCode_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **The closed-form membership characterization of `YseqCode`** — the "Set-level closed form"
 this part exists to supply: a point lies in `UX (YseqCode P n)` iff it lies in some genuine
@@ -22213,21 +16791,12 @@ theorem mem_UX_YseqCode_iff (n : ℕ) (z : ℚ) :
     z ∈ UX (YseqCode P n) ↔
       ∃ i < 2 ^ n, atomUEmpty P (n + 1) (i + 2 ^ n) = 0 ∧ z ∈ UX (atomUCode P (n + 1) (i + 2 ^ n)) :=
   yFold_mem_iff P n (2 ^ n) (yFold_two_pow_found P n) z
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUCode_disjoint_YseqCode_of_posTwin_empty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **General exclusion lemma**: if a bit-source `k'` is non-junk at depth `n`, and its own
 canonical "positive twin" at depth `n + 1` (same bits below `n`, forcing bit `n` to `true`) is
@@ -22265,21 +16834,12 @@ theorem atomUCode_disjoint_YseqCode_of_posTwin_empty {n k' : ℕ} (hk' : atomUEm
     have hzmem : z ∈ UX (atomUCode P n (i + 2 ^ n)) ∩ UX (atomUCode P n k') := ⟨hzB', hzB⟩
     rw [hd] at hzmem
     exact absurd hzmem (Set.mem_empty_iff_false z).mp
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUCode_succ_true.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem atomUCode_succ_true {k n : ℕ} (hne : atomUEmpty P (n + 1) k = 0)
     (hδ : deltaOf k n = true) :
@@ -22323,21 +16883,12 @@ theorem atomUCode_succ_true {k n : ℕ} (hne : atomUEmpty P (n + 1) k = 0)
       have hzmem : z ∈ UX (atomUCode P n (i + 2 ^ n)) ∩ UX (atomUCode P n k) := ⟨hzB', hzB⟩
       rw [hd] at hzmem
       exact absurd hzmem (Set.mem_empty_iff_false z).mp
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUCode_inter_succ_empty_of_junk.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **The junction lemma**: once a bit-source's atom is still non-empty at depth `n` but becomes
 junk at depth `n + 1`, `genAtom`'s corresponding step (against `Yc P`/`U.master`) is already
@@ -22418,21 +16969,12 @@ theorem atomUCode_inter_succ_empty_of_junk {n k : ℕ} (hn0 : atomUEmpty P n k =
     apply Set.eq_empty_iff_forall_notMem.mpr
     rintro z ⟨hz1, -, hz2⟩
     exact hz2 (hsub hz1)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUCode_succ_false.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **The closed form, "false"-branch** (mirroring `Theorem88.lean`'s `atomU_succ_eq`'s `else`
 case): for non-junk `k` with bit `n` forced `false`, the depth-`(n+1)` atom is the depth-`n` atom
@@ -22515,21 +17057,12 @@ theorem atomUCode_succ_false {k n : ℕ} (hne : atomUEmpty P (n + 1) k = 0)
       · exact Set.sdiff_subset
     rw [hncode, hI, selectFn_one]
     exact hEq
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/atomUCode_eq_genAtomYseqCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **The closed-form correspondence** (mirrors `Theorem88.lean`'s `atomU_eq_genAtom`): whenever
 `k`'s bit-source is still `D`-side non-empty at depth `n`, the `U`-code `atomUCode P n k` is
@@ -22566,21 +17099,12 @@ theorem atomUCode_eq_genAtomYseqCode (k : ℕ) :
       apply Set.Subset.antisymm
       · intro z hz; exact ⟨hz.1, hsub hz.1, hz.2⟩
       · rintro z ⟨hz1, -, hz2⟩; exact ⟨hz1, hz2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88d/genAtom_Yc_empty_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **`Yc P`'s `genAtom`-emptiness matches `atomUEmpty` exactly** (the code-native analogue of
 `atomU_invariant`'s emptiness-matching clause "(■)"): combines `atomUCode_eq_genAtomYseqCode`
@@ -22625,29 +17149,17 @@ theorem genAtom_Yc_empty_iff (n k : ℕ) :
             (if deltaOf k n then Yc P n else U.master \ Yc P n) = ∅
           rw [hprev, Set.empty_inter]
         exact ⟨fun _ => h1, fun _ => hempty⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/Yc_subset_master.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem Yc_subset_master (n : ℕ) : Yc P n ⊆ U.master := (U_mem_UX (YseqCode P n)).2.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/Yc_zero_eq_master.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`Yc P 0 = U.master`** (Scott's convention `Y₀ = U.master`, matching `Yseq_zero_eq_master`):
@@ -22696,16 +17208,10 @@ theorem Yc_zero_eq_master : Yc P 0 = U.master := by
       rw [DAtom_cons_neg, hnn, Set.inter_univ, hidx0, Set.sdiff_self]
     rw [hnegEmpty, selectFn_one, atomUCode_zero]
   rw [hcode, UX_UmasterIdx]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/encodeBits.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`δ`'s length-`n` bit-encoding**: the natural number `< 2 ^ n` agreeing with `δ` on every bit
@@ -22713,16 +17219,10 @@ below `n`. -/
 def encodeBits (δ : ℕ → Bool) : ℕ → ℕ
   | 0 => 0
   | (n + 1) => encodeBits δ n + (if δ n then 2 ^ n else 0)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/encodeBits_lt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem encodeBits_lt (δ : ℕ → Bool) : ∀ n, encodeBits δ n < 2 ^ n
@@ -22732,16 +17232,10 @@ theorem encodeBits_lt (δ : ℕ → Bool) : ∀ n, encodeBits δ n < 2 ^ n
       show encodeBits δ n + (if δ n then 2 ^ n else 0) < 2 ^ (n + 1)
       rw [pow_succ]
       rcases Bool.eq_false_or_eq_true (δ n) with h | h <;> simp [h] <;> omega
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/deltaOf_encodeBits.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem deltaOf_encodeBits (δ : ℕ → Bool) : ∀ n i, i < n → deltaOf (encodeBits δ n) i = δ i := by
@@ -22763,16 +17257,10 @@ theorem deltaOf_encodeBits (δ : ℕ → Bool) : ∀ n i, i < n → deltaOf (enc
         exact deltaOf_two_pow_add_self (encodeBits_lt δ n)
       · rw [h, ite_eq_right (by simp), Nat.add_zero, deltaOf_eq_testBit,
           Nat.testBit_lt_two_pow (encodeBits_lt δ n)]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/hcoreIdxYc.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The `genAtom`-emptiness core, for arbitrary `δ : ℕ → Bool`.** Realizes `δ`'s first `n` bits
@@ -22784,16 +17272,10 @@ theorem hcoreIdxYc (δ : ℕ → Bool) (n : ℕ) :
   have hagree : ∀ i < n, δ i = deltaOf k i := fun i hi => (deltaOf_encodeBits δ n i hi).symm
   rw [genAtom_congr (idxSet (e P)) Set.univ hagree, genAtom_congr (Yc P) U.master hagree,
     ← atomUEmpty_eq_one_iff_genAtom, genAtom_Yc_empty_iff]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/inclK_i_recDecidable_code.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem inclK_i_recDecidable_code :
@@ -22803,16 +17285,10 @@ theorem inclK_i_recDecidable_code :
   have hp := (P0 P).incl_computable.comp hg
   refine RecDecidable.of_iff (fun t => ?_) hp
   simp only [unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/inclK_j_recDecidable_code.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem inclK_j_recDecidable_code :
@@ -22823,16 +17299,10 @@ theorem inclK_j_recDecidable_code :
   have hp := (P0 P).incl_computable.comp hg
   refine RecDecidable.of_iff (fun t => ?_) hp
   simp only [unpair_pair_fst, unpair_pair_snd]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/transfer_dir_idxYc.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem transfer_dir_idxYc {β1 β2 : Type*} (Z1 : ℕ → Set β1) (M1 : Set β1) (Z2 : ℕ → Set β2)
@@ -22856,16 +17326,10 @@ theorem transfer_dir_idxYc {β1 β2 : Type*} (Z1 : ℕ → Set β1) (M1 : Set β
     rw [Bool.eq_iff_iff, decide_eq_true_iff]
     exact (hxcs p hp).symm
   rwa [hbeq] at hforward
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/transfer_empty_iff_idxYc.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem transfer_empty_iff_idxYc {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ cs, p.1 < n) :
@@ -22874,16 +17338,10 @@ theorem transfer_empty_iff_idxYc {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p
   ⟨transfer_dir_idxYc (idxSet (e P)) Set.univ (Yc P) U.master (hcoreIdxYc P) hn,
     transfer_dir_idxYc (Yc P) U.master (idxSet (e P)) Set.univ (fun δ n => (hcoreIdxYc P δ n).symm)
       hn⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/transfer_double_subset_iff_idxYc.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem transfer_double_subset_iff_idxYc (i j k : ℕ) :
@@ -22925,16 +17383,10 @@ theorem transfer_double_subset_iff_idxYc (i j k : ℕ) :
   rw [← Set.sdiff_eq_empty, ← Set.sdiff_eq_empty, ← Set.not_nonempty_iff_eq_empty,
     ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/transfer_inter_empty_iff_idxYc.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem transfer_inter_empty_iff_idxYc (i j : ℕ) :
@@ -22965,16 +17417,10 @@ theorem transfer_inter_empty_iff_idxYc (i j : ℕ) :
   rw [hLHS, hRHS] at key
   rw [← Set.not_nonempty_iff_eq_empty, ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/transfer_subset_iff_idxYc.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem transfer_subset_iff_idxYc (i j : ℕ) :
@@ -23009,16 +17455,10 @@ theorem transfer_subset_iff_idxYc (i j : ℕ) :
   rw [← Set.sdiff_eq_empty, ← Set.sdiff_eq_empty, ← Set.not_nonempty_iff_eq_empty,
     ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/embed_subset_iff_code.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`idxSet e i ⊆ idxSet e j ↔ Yc P i ⊆ Yc P j`.** The `Δ = Set.univ`/`Yc P i ⊆ U.master`
@@ -23026,16 +17466,10 @@ simplification of `transfer_subset_iff_idxYc`, matching `Theorem88a.lean`'s `emb
 theorem embed_subset_iff_code (i j : ℕ) : idxSet (e P) i ⊆ idxSet (e P) j ↔ Yc P i ⊆ Yc P j := by
   have := transfer_subset_iff_idxYc P i j
   rwa [Set.univ_inter, Set.inter_eq_self_of_subset_right (Yc_subset_master P i)] at this
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/embed_eq_iff_code.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem embed_eq_iff_code (i j : ℕ) : idxSet (e P) i = idxSet (e P) j ↔ Yc P i = Yc P j :=
@@ -23043,16 +17477,10 @@ theorem embed_eq_iff_code (i j : ℕ) : idxSet (e P) i = idxSet (e P) j ↔ Yc P
       ((embed_subset_iff_code P j i).mp h.symm.subset),
     fun h => Set.Subset.antisymm ((embed_subset_iff_code P i j).mpr h.subset)
       ((embed_subset_iff_code P j i).mpr h.symm.subset)⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/embed_eq_iff_raw_code.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`e P i = e P j ↔ Yc P i = Yc P j`**, the raw-level analogue of `Theorem88a.lean`'s
@@ -23060,16 +17488,10 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 theorem embed_eq_iff_raw_code (i j : ℕ) : e P i = e P j ↔ Yc P i = Yc P j := by
   rw [← idxSet_eq_iff (e P) i j]
   exact embed_eq_iff_code P i j
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/embed_subset_iff_raw_code.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`e P i ⊆ e P j ↔ Yc P i ⊆ Yc P j`**, the raw-level analogue of `Theorem88a.lean`'s
@@ -23077,16 +17499,10 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 theorem embed_subset_iff_raw_code (i j : ℕ) : e P i ⊆ e P j ↔ Yc P i ⊆ Yc P j := by
   rw [← idxSet_subset_iff (e P) i j]
   exact embed_subset_iff_code P i j
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/DprimeUCode_cons_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`∃ k, Yc P k ⊆ Yc P i ∩ Yc P j` is recursively decidable in `(i, j)`.** Transfers
@@ -23098,16 +17514,10 @@ theorem DprimeUCode_cons_computable :
   simp only [Set.subset_inter_iff]
   exact exists_congr (fun k => by
     rw [← embed_subset_iff_raw_code P k t.unpair.1, ← embed_subset_iff_raw_code P k t.unpair.2])
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/transfer_inter_eq_iff_idxYc.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem transfer_inter_eq_iff_idxYc (i j k : ℕ) :
@@ -23129,16 +17539,10 @@ theorem transfer_inter_eq_iff_idxYc (i j k : ℕ) :
     have hkj : Yc P k ⊆ Yc P j := by rw [← heq]; exact Set.inter_subset_right
     have hijk : Yc P i ∩ Yc P j ⊆ Yc P k := by rw [heq]
     exact Set.Subset.antisymm (h3.mpr hijk) (Set.subset_inter (h1.mpr hki) (h2.mpr hkj))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/DprimeUCode_interEq_computable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`Yc P i ∩ Yc P j = Yc P k` is recursively decidable in `(i, j, k)`.** Transfers
@@ -23154,16 +17558,10 @@ theorem DprimeUCode_interEq_computable :
   rw [← transfer_inter_eq_iff_idxYc P t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2,
     idxSet_inter_eq_iff_DAtom (P0 P) t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2]
   tauto
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/DprimeUCode_inter_spec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The intersection index transfers.** `(P0 P).inter n m` (Scott's own primitive-recursive
@@ -23180,32 +17578,20 @@ theorem DprimeUCode_inter_spec {n m : ℕ} (h : ∃ k, Yc P k ⊆ Yc P n ∩ Yc 
   have hidx : idxSet (e P) n ∩ idxSet (e P) m = idxSet (e P) ((P0 P).inter n m) :=
     idxSet_inter_of_inter_eq (e P) heP.symm
   exact ((transfer_inter_eq_iff_idxYc P n m ((P0 P).inter n m)).mp hidx).symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/exists_inter_index_of_dmem_code.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem exists_inter_index_of_dmem_code {i j : ℕ} (hDij : D.mem (e P i ∩ e P j)) :
     ∃ m, e P i ∩ e P j = e P m ∧ Yc P i ∩ Yc P j = Yc P m := by
   obtain ⟨m, hm⟩ := (hcover P (e P i ∩ e P j)).mp hDij
   exact ⟨m, hm, (transfer_inter_eq_iff_idxYc P i j m).mp (idxSet_inter_of_inter_eq (e P) hm)⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/DprimeUCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`D'' := DprimeUCode`**: the neighbourhood system generated by `{Yc P n ∣ n ∈ ℕ}`, genuinely
@@ -23224,16 +17610,10 @@ noncomputable def DprimeUCode : NeighborhoodSystem ℚ where
       (D.inter_mem (D_mem_e D (e P) (hcover P) i) (D_mem_e D (e P) (hcover P) j)
         (D_mem_e D (e P) (hcover P) k) (Set.subset_inter h1 h2))
     exact ⟨m, hYeq⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/DprimeUCodePresentation.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **Theorem 8.8(b)(vii)(3), presentation half.** `D''` (`DprimeUCode P`, genuinely code-driven:
@@ -23252,16 +17632,10 @@ noncomputable def DprimeUCodePresentation : ComputablePresentation (DprimeUCode 
   inter_spec h := DprimeUCode_inter_spec P h
   masterIdx := 0
   masterIdx_spec := Yc_zero_eq_master P
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/exists_inter_index_of_nonempty_code.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem exists_inter_index_of_nonempty_code {i j : ℕ} (hne : (Yc P i ∩ Yc P j).Nonempty) :
@@ -23276,16 +17650,10 @@ theorem exists_inter_index_of_nonempty_code {i j : ℕ} (hne : (Yc P i ∩ Yc P 
   exact exists_inter_index_of_dmem_code P
     (D.inter_mem (D_mem_e D (e P) (hcover P) i) (D_mem_e D (e P) (hcover P) j)
       (D_mem_e D (e P) (hcover P) k) (Set.subset_inter hki hkj))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/DprimeUCode_subsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`D'' ◁ U`.** -/
@@ -23296,16 +17664,10 @@ theorem DprimeUCode_subsystem : DprimeUCode P ◁ U where
     rintro X Y ⟨i, rfl⟩ ⟨j, rfl⟩ hUmem
     obtain ⟨m, -, hYeq⟩ := exists_inter_index_of_nonempty_code P hUmem.2.1
     exact ⟨m, hYeq⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/toDCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **Pullback**: the `D`-filter induced by a `D''`-filter `y`. -/
@@ -23324,16 +17686,10 @@ def toDCode (y : (DprimeUCode P).Element) : D.Element where
     obtain ⟨j, rfl⟩ := (hcover P T).mp hDT
     have hYij : Yc P i ⊆ Yc P j := (embed_subset_iff_raw_code P i j).mp hST
     exact ⟨j, rfl, y.up_mem hyi ⟨j, rfl⟩ hYij⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/toDprimeUCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **Pushforward**: the `D''`-filter induced by a `D`-filter `x`. -/
@@ -23350,16 +17706,10 @@ def toDprimeUCode (x : D.Element) : (DprimeUCode P).Element where
     rintro X Y ⟨i, rfl, hxi⟩ ⟨j, rfl⟩ hXY
     have heij : e P i ⊆ e P j := (embed_subset_iff_raw_code P i j).mpr hXY
     exact ⟨j, rfl, x.up_mem hxi (D_mem_e D (e P) (hcover P) j) heij⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/domainIsoCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The order isomorphism `D.Element ≃o D''.Element`.** -/
@@ -23400,48 +17750,28 @@ noncomputable def domainIsoCode : DomainIso D (DprimeUCode P) where
     · intro hle Y hY
       obtain ⟨n, hn, hxn⟩ := hY
       exact ⟨n, hn, hle _ hxn⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/DprimeUCode_isEffectivelyGiven.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **Theorem 8.8(b)(vii)(3), full statement.** `D''` is effectively given, `D ≅ᴰ D''`, and
 `D'' ◁ U`. -/
 theorem DprimeUCode_isEffectivelyGiven : (DprimeUCode P).IsEffectivelyGiven :=
   ⟨DprimeUCodePresentation P⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88e/isomorphic_DprimeUCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **Theorem 8.8(b)(vii)(3), isomorphism half.** `D ≅ᴰ D''`. -/
 theorem isomorphic_DprimeUCode : D ≅ᴰ DprimeUCode P := ⟨domainIsoCode P⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88f/DprimeUCode_inj_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The injection `i : D'' → U` is computable.** `i`'s relation `Yc P n \, i \, UX m` reduces to
@@ -23462,16 +17792,10 @@ theorem DprimeUCode_inj_isComputableMap :
   rw [Subsystem.inj_rel]
   exact ⟨fun ⟨_, _, hsub⟩ => hsub,
     fun hsub => ⟨⟨t.unpair.1, rfl⟩, U_mem_UX _, hsub⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88f/DprimeUCode_proj_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **The projection `j : U → D''` is computable.** `j`'s relation `UX m \, j \, Yc P n` reduces to
@@ -23492,16 +17816,10 @@ theorem DprimeUCode_proj_isComputableMap :
   rw [Subsystem.proj_rel]
   exact ⟨fun ⟨_, _, hsub⟩ => hsub,
     fun hsub => ⟨U_mem_UX _, ⟨t.unpair.2, rfl⟩, hsub⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88f/DprimeUCode_projectionPair_isComputable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **Theorem 8.8(b)(vii)(4), full statement.** The projection pair witnessing `D'' ◁ U` (Proposition
@@ -23514,14 +17832,9 @@ theorem DprimeUCode_projectionPair_isComputable :
       ComputableMap UComputablePresentation (DprimeUCodePresentation P)
         (DprimeUCode_subsystem P).proj :=
   ⟨DprimeUCode_inj_isComputableMap P, DprimeUCode_proj_isComputableMap P⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88g/theorem_8_8_b.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive
 
 /-- **Theorem 8.8(b) (Scott 1981, PRG-19), final assembly.** If `D` is effectively given (via a
@@ -23537,16 +17850,10 @@ theorem theorem_8_8_b {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePr
         ComputableMap UComputablePresentation P' h.proj :=
   ⟨DprimeUCode P, DprimeUCodePresentation P, DprimeUCode_subsystem P,
     isomorphic_DprimeUCode P, DprimeUCode_inj_isComputableMap P, DprimeUCode_proj_isComputableMap P⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88m/fixedNbhd_isEffectivelyGiven.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **Theorem 8.8(c), Part 6 of 6 — final assembly.** A computable approximable self-map `a` of an
@@ -23576,16 +17883,10 @@ theorem fixedNbhd_isEffectivelyGiven {P : ComputablePresentation V} {a : Approxi
   show D_X P qChar cons 0 = V.master
   show P.X (myFoldCode P qChar cons 0) = V.master
   rw [myFoldCode_eq, decodeList_zero, myFold_nil, P.masterIdx_spec]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88m/theorem_8_8_c.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **Theorem 8.8(c) (Scott 1981, PRG-19), headline.** If `a : U → U` is a computable, finitary
@@ -23598,14 +17899,9 @@ theorem theorem_8_8_c {a : ApproximableMap U U} (_hfin : FinitaryProjection a)
     (hcomp : ComputableMap UComputablePresentation UComputablePresentation a) :
     (fixedNbhd a).IsEffectivelyGiven ∧ fixedNbhd a ◁ U :=
   ⟨fixedNbhd_isEffectivelyGiven hcomp, fixedNbhd_subsystem a⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem theorem_88.{u, u_1} : And
@@ -23697,122 +17993,77 @@ theorem theorem_88.{u, u_1} : And
               (@DomainTheory.NeighbourhoodSystems.Subsystem.proj Rat D' DomainTheory.NeighbourhoodSystems.U h))))
     @DomainTheory.NeighbourhoodSystems.theorem_8_8_a @DomainTheory.NeighbourhoodSystems.theorem_8_8_b)
   @DomainTheory.NeighbourhoodSystems.theorem_8_8_c
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/U_mem_nonempty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- Every `𝒰`-neighbourhood is non-empty (built into Definition 8.7). -/
 theorem U_mem_nonempty : ∀ X, U.mem X → X.Nonempty := fun _ hX => hX.2.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/funSpaceUU_isEffectivelyGiven.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- `𝒰 → 𝒰` is effectively given (Theorem 7.5, applied to `U`'s own presentation twice). -/
 theorem funSpaceUU_isEffectivelyGiven : (funSpace U U).IsEffectivelyGiven :=
   funSpace_isEffectivelyGiven U_isEffectivelyGiven U_isEffectivelyGiven
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/funSpaceUUPresentation.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- A fixed presentation of `𝒰 → 𝒰`. -/
 noncomputable def funSpaceUUPresentation : ComputablePresentation (funSpace U U) :=
   funSpaceUU_isEffectivelyGiven.some
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/lamComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- **`λf. b∘f∘a : (𝒰→𝒰) → (𝒰→𝒰)`**, uncurried as `b ∘ eval ∘ (id ×ₘ a)`. -/
 noncomputable def lamComb (a b : ApproximableMap U U) :
     ApproximableMap (funSpace U U) (funSpace U U) :=
   curry (b.comp ((evalMap U U).comp (prodMap (idMap (funSpace U U)) a)))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/prodUU_isEffectivelyGiven.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- `𝒰 × 𝒰` is effectively given (Theorem 7.4, applied to `U`'s own presentation twice). -/
 theorem prodUU_isEffectivelyGiven : (prod U U).IsEffectivelyGiven :=
   prod_isEffectivelyGiven U_isEffectivelyGiven U_isEffectivelyGiven
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/prodUUPresentation.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- A fixed presentation of `𝒰 × 𝒰`. -/
 noncomputable def prodUUPresentation : ComputablePresentation (prod U U) :=
   prodUU_isEffectivelyGiven.some
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/sumUU_isEffectivelyGiven.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- `𝒰 + 𝒰` is effectively given (Theorem 7.4, applied to `U`'s own presentation twice). -/
 theorem sumUU_isEffectivelyGiven :
     (sum U U U_mem_nonempty U_mem_nonempty).IsEffectivelyGiven :=
   sum_isEffectivelyGiven U_isEffectivelyGiven U_isEffectivelyGiven
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/sumUUPresentation.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- A fixed presentation of `𝒰 + 𝒰`. -/
 noncomputable def sumUUPresentation : ComputablePresentation (sum U U U_mem_nonempty U_mem_nonempty) :=
   sumUU_isEffectivelyGiven.some
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/inter.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace inter
-
 open NeighborhoodSystem
 
+section
 /-- **`A ∩ (M \ Z) = A \ Z` whenever `A ⊆ M`**: needed to turn a `genAtom`-style "intersect with
 `M \ Z`" step into a literal `A \ Z` once `A` is known to already lie inside `M`. Generic set-theory
 fact, used by 8.12(c)(vi)(5)(b)'s `genAtom.combinedX_succ_eq` below. -/
@@ -23823,26 +18074,14 @@ theorem diff_eq_diff_of_subset {γ : Type*} {A M Z : Set γ} (h : A ⊆ M) :
   constructor
   · rintro ⟨hxA, -, hxZ⟩; exact ⟨hxA, hxZ⟩
   · rintro ⟨hxA, hxZ⟩; exact ⟨hxA, h hxA, hxZ⟩
+end
 
-end inter
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace inter
-
-open NeighborhoodSystem
-
+section
 theorem diff_self_eq_empty {γ : Type*} (P Q : Set γ) : (P ∩ Q) ∩ (P \ Q) = ∅ := by
   ext x; simp only [Set.mem_inter_iff, Set.mem_sdiff, Set.mem_empty_iff_false, iff_false]; tauto
+end
 
-end inter
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace inter
-
-open NeighborhoodSystem
-
+section
 theorem mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositive)
     {A B : Set γ} (hA : A = ∅ ∨ D.mem A) (hB : D.mem B) : A ∩ B = ∅ ∨ D.mem (A ∩ B) := by
   rcases hA with rfl | hA
@@ -23850,28 +18089,19 @@ theorem mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositi
   · rcases Set.eq_empty_or_nonempty (A ∩ B) with h | h
     · exact Or.inl h
     · exact Or.inr ((hpos hA hB).mpr h)
-
-end inter
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/part_c_2.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end inter
 open NeighborhoodSystem
 
+section
 /-- **Difference-closure**, generalizing `U_diff_mem`/`V_diff_mem`: the set-difference of two
 neighbourhoods is again a neighbourhood, or empty. -/
 def NeighborhoodSystem.DiffClosed {α : Type*} (D : NeighborhoodSystem α) : Prop :=
   ∀ {X Y : Set α}, D.mem X → D.mem Y → X \ Y = ∅ ∨ D.mem (X \ Y)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 /-- **Atomlessness** ("no minimal neighbourhoods"), generalizing `U_no_minimal`/`V_no_minimal`:
 every non-empty neighbourhood splits into two disjoint, non-empty neighbourhood pieces whose union
 recovers it. (Phrased with explicit `Nonempty` clauses, equivalent given `Y ∩ Z = ∅`/`Y ∪ Z = X` to
@@ -23880,13 +18110,9 @@ needs — an *abstract* `D.mem` need not itself carry nonemptiness the way `U.me
 def NeighborhoodSystem.NoMinimal {α : Type*} (D : NeighborhoodSystem α) : Prop :=
   ∀ {X : Set α}, D.mem X →
     ∃ Y Z : Set α, D.mem Y ∧ D.mem Z ∧ Y.Nonempty ∧ Z.Nonempty ∧ Y ∩ Z = ∅ ∧ Y ∪ Z = X
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 /-- **Generalization of `Theorem88.lean`'s `SplitSpec`.** -/
 def SplitSpec' {α γ : Type*} (E : NeighborhoodSystem γ)
     (split : Set α → Set γ → Set α → Set γ × Set γ) : Prop :=
@@ -23897,13 +18123,9 @@ def SplitSpec' {α γ : Type*} (E : NeighborhoodSystem γ)
       (A \ Xn = ∅ ↔ (split A B Xn).2 = ∅) ∧
       (split A B Xn).1 ∪ (split A B Xn).2 = B ∧
       (split A B Xn).1 ∩ (split A B Xn).2 = ∅
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -23921,13 +18143,9 @@ def combinedδ (δ : ℕ → Bool × Bool) (n : ℕ) : Bool :=
   if n % 2 = 0 then (δ (n / 2)).1 else (δ (n / 2)).2
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -23945,13 +18163,9 @@ theorem combinedδ_even (δ : ℕ → Bool × Bool) (k : ℕ) : combinedδ δ (2
   rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -23969,13 +18183,9 @@ theorem combinedδ_odd (δ : ℕ → Bool × Bool) (k : ℕ) : combinedδ δ (2 
   rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -23992,13 +18202,9 @@ include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem 
 def deinterleaveδ (δ' : ℕ → Bool) (k : ℕ) : Bool × Bool := (δ' (2 * k), δ' (2 * k + 1))
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24025,13 +18231,9 @@ theorem combinedδ_deinterleaveδ (δ' : ℕ → Bool) :
     rw [show 2 * (m / 2) + 1 = m from by omega]
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 /-- **Generalization of `Theorem88.lean`'s `exists_split`** to an abstract atomless `E`. -/
 theorem exists_split' {α γ : Type*} {E : NeighborhoodSystem γ} (hEnomin : E.NoMinimal)
     {A : Set α} {B : Set γ} (hAB : A = ∅ ↔ B = ∅) (hBE : B = ∅ ∨ E.mem B) (Xn : Set α) :
@@ -24066,24 +18268,16 @@ theorem exists_split' {α γ : Type*} {E : NeighborhoodSystem γ} (hEnomin : E.N
       have hZne : Z ≠ ∅ := hZne'.ne_empty
       exact ⟨Y, Z, Or.inr hY, Or.inr hZ, iff_of_false h1 hYne, iff_of_false h2 hZne,
         hYZunion, hYZinter⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 /-- Pad `δ' : Fin n → Bool × Bool` to a total `ℕ → Bool × Bool`, filling positions `≥ n` with
 `(true, true)`. -/
 def extendTruePair {n : ℕ} (δ' : Fin n → Bool × Bool) : ℕ → Bool × Bool :=
   fun i => (extendTrue (Prod.fst ∘ δ') i, extendTrue (Prod.snd ∘ δ') i)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 /-- **Generic "swap-if" disjointness helper**: if `P` and `Q` are disjoint, then choosing `P` for
 one Boolean and `Q` for a *different* Boolean always lands in disjoint sets, regardless of which
 Boolean is `true`. -/
@@ -24091,13 +18285,9 @@ theorem if_swap_disjoint {γ : Type*} {P Q : Set γ} (hPQ : P ∩ Q = ∅) {b b'
     (if b then P else Q) ∩ (if b' then P else Q) = ∅ := by
   rcases Bool.eq_false_or_eq_true b with hb | hb <;> rcases Bool.eq_false_or_eq_true b' with hb' | hb' <;>
     simp_all [Set.inter_comm]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 /-- **`NoMinimal` forces `¬ D.mem ∅`, hence every genuine `D`-neighbourhood is non-empty.**
 Applying `NoMinimal` at `X := ∅` would demand a non-empty `Y ⊆ Y ∪ Z = ∅`, impossible. (Exercise
 8.12(c)(vi)(7): the one fact needed to know `hXmem`/`hYmem`'s enumerated sets are never `∅`, hence
@@ -24110,13 +18300,9 @@ theorem NeighborhoodSystem.NoMinimal.mem_ne_empty {α : Type*} {D : Neighborhood
   subst hXe
   obtain ⟨Y, Z, -, -, hYne, -, -, hunion⟩ := hD hX
   exact hYne.ne_empty (Set.union_empty_iff.mp hunion).1
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24132,13 +18318,9 @@ omit hD₀pos hD₀diff hD₁pos hD₁diff hD₁nomin hYmem hD₀mne hD₁mne in
 theorem X_ne_empty (n : ℕ) : X n ≠ ∅ := hD₀nomin.mem_ne_empty (hXmem n)
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24154,22 +18336,14 @@ omit hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hXmem hD₀mne hD₁mne in
 theorem Y_ne_empty (n : ℕ) : Y n ≠ ∅ := hD₁nomin.mem_ne_empty (hYmem n)
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 /-- Restrict `δ : ℕ → Bool × Bool` to `Fin n → Bool × Bool`. -/
 def restrictFinPair (δ : ℕ → Bool × Bool) (n : ℕ) : Fin n → Bool × Bool := fun i => δ i.val
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 theorem extendTruePair_restrictFinPair_agree (δ : ℕ → Bool × Bool) (n i : ℕ) (hi : i < n) :
     extendTruePair (restrictFinPair δ n) i = δ i := by
   have h1 : extendTrue (Prod.fst ∘ restrictFinPair δ n) i = (δ i).1 :=
@@ -24179,13 +18353,9 @@ theorem extendTruePair_restrictFinPair_agree (δ : ℕ → Bool × Bool) (n i : 
   show (extendTrue (Prod.fst ∘ restrictFinPair δ n) i, extendTrue (Prod.snd ∘ restrictFinPair δ n) i)
       = δ i
   rw [h1, h2]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 open Classical in
 /-- **Generalization of `Theorem88.lean`'s `splitChoice`.** -/
 noncomputable def splitChoice' {α γ : Type*} (E : NeighborhoodSystem γ) (hEnomin : E.NoMinimal)
@@ -24193,13 +18363,9 @@ noncomputable def splitChoice' {α γ : Type*} (E : NeighborhoodSystem γ) (hEno
   if h : (A = ∅ ↔ B = ∅) ∧ (B = ∅ ∨ E.mem B) then
     ⟨(exists_split' hEnomin h.1 h.2 Xn).choose, (exists_split' hEnomin h.1 h.2 Xn).choose_spec.choose⟩
   else (∅, ∅)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 theorem splitChoice'_isSplitSpec {α γ : Type*} (E : NeighborhoodSystem γ) (hEnomin : E.NoMinimal) :
     SplitSpec' (α := α) E (splitChoice' E hEnomin) := by
   intro A B hAB hBE Xn
@@ -24207,23 +18373,15 @@ theorem splitChoice'_isSplitSpec {α γ : Type*} (E : NeighborhoodSystem γ) (hE
   unfold splitChoice'
   rw [dite_eq_left ⟨hAB, hBE⟩]
   exact (exists_split' hEnomin hAB hBE Xn).choose_spec.choose_spec
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 def xyStep {α γ : Type*} (split : Set α → Set γ → Set α → Set γ × Set γ)
     (A : Set α) (B : Set γ) (Xn : Set α) (b : Bool) : Set α × Set γ :=
   (if b then A ∩ Xn else A \ Xn, if b then (split A B Xn).1 else (split A B Xn).2)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 /-- **`xyStep`'s two outputs, at two *different* sign bits, are pairwise disjoint** — the local,
 one-step content behind `atomPair`'s eventual pairwise-disjointness invariant. -/
 theorem xyStep_disjoint_of_ne {α γ : Type*} {E : NeighborhoodSystem γ}
@@ -24234,34 +18392,24 @@ theorem xyStep_disjoint_of_ne {α γ : Type*} {E : NeighborhoodSystem γ}
       (xyStep split A B Xn b).2 ∩ (xyStep split A B Xn b').2 = ∅ :=
   ⟨if_swap_disjoint (inter.diff_self_eq_empty A Xn) hbb',
     if_swap_disjoint (hsplit hAB hBE Xn).2.2.2.2.2 hbb'⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/diff.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace diff
-
 open NeighborhoodSystem
 
+section
 theorem mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hdiff : D.DiffClosed)
     {A B : Set γ} (hA : A = ∅ ∨ D.mem A) (hB : D.mem B) : A \ B = ∅ ∨ D.mem (A \ B) := by
   rcases hA with rfl | hA
   · exact Or.inl (Set.empty_sdiff B)
   · exact hdiff hA hB
-
-end diff
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/union.lean
-namespace DomainTheory.NeighbourhoodSystems
+end diff
 namespace union
-
 open NeighborhoodSystem
 
+section
 theorem eq_master_diff_inter_compl {γ : Type*} (M X Y : Set γ) (hX : X ⊆ M) (hY : Y ⊆ M) :
     X ∪ Y = M \ ((M \ X) ∩ (M \ Y)) := by
   ext x
@@ -24269,15 +18417,9 @@ theorem eq_master_diff_inter_compl {γ : Type*} (M X Y : Set γ) (hX : X ⊆ M) 
   have hYx : x ∈ Y → x ∈ M := @hY x
   simp only [Set.mem_union, Set.mem_sdiff, Set.mem_inter_iff]
   tauto
+end
 
-end union
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace union
-
-open NeighborhoodSystem
-
+section
 /-- **Union-closure from `IsPositive` + `DiffClosed` alone**: if `X` and `Y` are each mem-or-∅ in a
 Positive, difference-closed `D`, so is `X ∪ Y`. -/
 theorem mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositive)
@@ -24304,17 +18446,12 @@ theorem mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositi
           rcases Set.eq_empty_or_nonempty ((M \ X) ∩ (M \ Y)) with hcap0 | hcapne
           · rw [hcap0, Set.sdiff_empty]; exact Or.inr D.master_mem
           · exact hdiff D.master_mem ((hpos hMXm hMYm).mpr hcapne)
-
-end union
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/part_c.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end union
 open NeighborhoodSystem
 
+section
 /-- **`Fintype`-indexed union-closure from `IsPositive` + `DiffClosed` alone**, generalizing
 `Definition87.lean`'s `U_iUnion_mem`/`Exercise812.lean`'s `V_iUnion_mem` to an abstract `D`. Proved
 identically (fold `union.mem_or_empty` over `Finset.univ`), just with the generic one-step lemma in
@@ -24333,29 +18470,20 @@ theorem iUnion_mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.I
   have hall : (⋃ i, f i) = ⋃ i ∈ (Finset.univ : Finset ι), f i := by simp
   rw [hall]
   exact hstep Finset.univ
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812c/xStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 /-- **The `X`-sub-step**, as an instance of `xyStep`: split `D₁`'s side while directly refining
 `D₀`'s side. -/
 noncomputable def xStep {α β : Type*} (D₁ : NeighborhoodSystem β) (hD₁nomin : D₁.NoMinimal)
     (A : Set α) (B : Set β) (Xn : Set α) (b : Bool) : Set α × Set β :=
   xyStep (splitChoice' D₁ hD₁nomin) A B Xn b
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace xStep
-
 open NeighborhoodSystem
 
+section
 /-- **`xStep`'s `α`-side output is always a subset of `A`** (unconditional: `A ∩ Xn` and `A \ Xn`
 are both `⊆ A`). -/
 theorem fst_subset {α β : Type*} (D₁ : NeighborhoodSystem β) (hD₁nomin : D₁.NoMinimal)
@@ -24363,15 +18491,9 @@ theorem fst_subset {α β : Type*} (D₁ : NeighborhoodSystem β) (hD₁nomin : 
   by_cases hb : b = true
   · simp only [xStep, xyStep, hb, ite_true]; exact Set.inter_subset_left
   · simp only [xStep, xyStep, hb]; exact Set.sdiff_subset
+end
 
-end xStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xStep
-
-open NeighborhoodSystem
-
+section
 /-- **`xStep`'s `β`-side output is a subset of `B`**, given the `SplitSpec'` preconditions
 (`I ∪ J = B`, so both `I ⊆ B` and `J ⊆ B`). -/
 theorem snd_subset {α β : Type*} {D₁ : NeighborhoodSystem β} (hD₁nomin : D₁.NoMinimal)
@@ -24381,15 +18503,9 @@ theorem snd_subset {α β : Type*} {D₁ : NeighborhoodSystem β} (hD₁nomin : 
   by_cases hb : b = true
   · simp only [xStep, xyStep, hb, ite_true]; exact Set.subset_union_left.trans_eq hspec.2.2.2.2.1
   · simp only [xStep, xyStep, hb]; exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
+end
 
-end xStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xStep
-
-open NeighborhoodSystem
-
+section
 /-- **`xStep`'s two outputs, at two different sign bits, are pairwise disjoint.** -/
 theorem disjoint_of_ne {α β : Type*} {D₁ : NeighborhoodSystem β} (hD₁nomin : D₁.NoMinimal)
     {A : Set α} {B : Set β} (hAB : A = ∅ ↔ B = ∅) (hBmem : B = ∅ ∨ D₁.mem B) (Xn : Set α)
@@ -24397,17 +18513,12 @@ theorem disjoint_of_ne {α β : Type*} {D₁ : NeighborhoodSystem β} (hD₁nomi
     (xStep D₁ hD₁nomin A B Xn b).1 ∩ (xStep D₁ hD₁nomin A B Xn b').1 = ∅ ∧
       (xStep D₁ hD₁nomin A B Xn b).2 ∩ (xStep D₁ hD₁nomin A B Xn b').2 = ∅ :=
   xyStep_disjoint_of_ne (splitChoice'_isSplitSpec D₁ hD₁nomin) hAB hBmem Xn hbb'
-
-end xStep
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/yStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end xStep
 open NeighborhoodSystem
 
+section
 /-- **The `Y`-sub-step**, symmetric to `xStep`: split `D₀`'s side while directly refining `D₁`'s
 side. The `.swap` puts the output back into `(α-side, β-side)` order, matching `atomPair`'s own
 `(A2, B2)` convention (`xyStep`'s first component is always the *direct* side, which for the
@@ -24415,14 +18526,12 @@ side. The `.swap` puts the output back into `(α-side, β-side)` order, matching
 noncomputable def yStep {α β : Type*} (D₀ : NeighborhoodSystem α) (hD₀nomin : D₀.NoMinimal)
     (A1 : Set α) (B1 : Set β) (Yn : Set β) (b : Bool) : Set α × Set β :=
   (xyStep (splitChoice' D₀ hD₀nomin) B1 A1 Yn b).swap
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace yStep
-
 open NeighborhoodSystem
 
+section
 /-- **`yStep`'s two outputs, at two different sign bits, are pairwise disjoint.** -/
 theorem disjoint_of_ne {α β : Type*} {D₀ : NeighborhoodSystem α} (hD₀nomin : D₀.NoMinimal)
     {A1 : Set α} {B1 : Set β} (hBA : B1 = ∅ ↔ A1 = ∅) (hAmem : A1 = ∅ ∨ D₀.mem A1) (Yn : Set β)
@@ -24431,15 +18540,9 @@ theorem disjoint_of_ne {α β : Type*} {D₀ : NeighborhoodSystem α} (hD₀nomi
       (yStep D₀ hD₀nomin A1 B1 Yn b).2 ∩ (yStep D₀ hD₀nomin A1 B1 Yn b').2 = ∅ := by
   have h := xyStep_disjoint_of_ne (splitChoice'_isSplitSpec D₀ hD₀nomin) hBA hAmem Yn hbb'
   exact ⟨h.2, h.1⟩
+end
 
-end yStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yStep
-
-open NeighborhoodSystem
-
+section
 /-- **`yStep`'s `α`-side output is a subset of `A1`**, given the `SplitSpec'` preconditions. -/
 theorem fst_subset {α β : Type*} {D₀ : NeighborhoodSystem α} (hD₀nomin : D₀.NoMinimal)
     {A1 : Set α} {B1 : Set β} (hBA : B1 = ∅ ↔ A1 = ∅) (hAmem : A1 = ∅ ∨ D₀.mem A1) (Yn : Set β)
@@ -24450,32 +18553,21 @@ theorem fst_subset {α β : Type*} {D₀ : NeighborhoodSystem α} (hD₀nomin : 
     exact Set.subset_union_left.trans_eq hspec.2.2.2.2.1
   · simp only [yStep, xyStep, Prod.swap, hb]
     exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
+end
 
-end yStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yStep
-
-open NeighborhoodSystem
-
+section
 /-- **`yStep`'s `β`-side output is always a subset of `B1`** (unconditional). -/
 theorem snd_subset {α β : Type*} (D₀ : NeighborhoodSystem α) (hD₀nomin : D₀.NoMinimal)
     (A1 : Set α) (B1 : Set β) (Yn : Set β) (b : Bool) : (yStep D₀ hD₀nomin A1 B1 Yn b).2 ⊆ B1 := by
   by_cases hb : b = true
   · simp only [yStep, xyStep, Prod.swap, hb, ite_true]; exact Set.inter_subset_left
   · simp only [yStep, xyStep, Prod.swap, hb]; exact Set.sdiff_subset
-
-end yStep
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/atomPair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end yStep
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24500,14 +18592,12 @@ noncomputable def atomPair (δ : ℕ → Bool × Bool) : ℕ → Set α × Set �
       (A2, B2)
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace atomPair
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24553,15 +18643,9 @@ theorem congr {δ δ' : ℕ → Bool × Bool} {n : ℕ} (h : ∀ i < n, δ i = �
     rw [hprev, hn]
 
 end AtomPair
+end
 
-end atomPair
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPair
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24632,15 +18716,9 @@ theorem invariant (δ : ℕ → Bool × Bool) :
     exact ⟨hB2A2.symm, hA2mem, hB2mem⟩
 
 end AtomPair
+end
 
-end atomPair
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPair
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24662,15 +18740,9 @@ theorem succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) :
         (Y n) (δ n).2 := rfl
 
 end AtomPair
+end
 
-end atomPair
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPair
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24693,15 +18765,9 @@ theorem snd_subset (δ : ℕ → Bool × Bool) (n : ℕ) :
     (xStep.snd_subset hD₁nomin ihAB ihB (X n) (δ n).1)
 
 end AtomPair
+end
 
-end atomPair
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPair
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24722,17 +18788,12 @@ theorem snd_subset_master (δ : ℕ → Bool × Bool) (n : ℕ) :
       X Y hXmem hYmem hD₀mne hD₁mne δ n).trans ih
 
 end AtomPair
-
-end atomPair
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/XPseq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end atomPair
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24754,14 +18815,12 @@ noncomputable def XPseq (n : ℕ) : Set β :=
       (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y (extendTruePair δ') n).2 (X n) true).2
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace XPseq
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24783,18 +18842,13 @@ theorem empty_or_mem (n : ℕ) :
   exact (splitChoice'_isSplitSpec D₁ hD₁nomin hAB hBmem (X n)).1
 
 end AtomPair
-
-end XPseq
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/xStep_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end XPseq
 namespace xStep
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24834,15 +18888,9 @@ theorem spec (δ : ℕ → Bool × Bool) (n : ℕ) :
     · simp only [xStep, xyStep, hδ1]; exact diff.mem_or_empty hD₀diff ihA (hXmem n)
 
 end AtomPair
+end
 
-end xStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xStep
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24883,17 +18931,12 @@ theorem spec_bit (δ : ℕ → Bool × Bool) (n : ℕ) (bx : Bool) :
   rwa [hcongr, hbit] at hspec
 
 end AtomPair
-
-end xStep
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/YPseq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end xStep
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24919,14 +18962,12 @@ noncomputable def YPseq (n : ℕ) : Set α :=
       (Y n) true).1
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace YPseq
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24950,18 +18991,13 @@ theorem empty_or_mem (n : ℕ) :
   exact splitChoice'_isSplitSpec D₀ hD₀nomin hBA hAmem (Y n) |>.1
 
 end AtomPair
-
-end YPseq
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/atomPair_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end YPseq
 namespace atomPair
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -24984,15 +19020,9 @@ theorem fst_subset (δ : ℕ → Bool × Bool) (n : ℕ) :
     (xStep.fst_subset D₁ hD₁nomin _ _ (X n) (δ n).1)
 
 end AtomPair
+end
 
-end atomPair
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPair
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25018,15 +19048,9 @@ theorem fst_subset_master (δ : ℕ → Bool × Bool) (n : ℕ) :
       X Y hXmem hYmem hD₀mne hD₁mne δ n).trans ih
 
 end AtomPair
+end
 
-end atomPair
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPair
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25131,17 +19155,12 @@ theorem disjoint (δ δ' : ℕ → Bool × Bool) :
         Set.subset_eq_empty (Set.inter_subset_inter h2 h2') hd2⟩
 
 end AtomPair
-
-end atomPair
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/combinedX.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end atomPair
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25159,14 +19178,12 @@ noncomputable def combinedX (n : ℕ) : Set α :=
   if n % 2 = 0 then X (n / 2) else YPseq D₀ D₁ hD₀nomin hD₁nomin X Y (n / 2)
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace combinedX
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25184,15 +19201,9 @@ theorem even (k : ℕ) : combinedX D₀ D₁ hD₀nomin hD₁nomin X Y (2 * k) =
   rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
 end AtomPair
+end
 
-end combinedX
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace combinedX
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25211,18 +19222,13 @@ theorem odd (k : ℕ) :
   rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 end AtomPair
-
-end combinedX
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/subset.lean
-namespace DomainTheory.NeighbourhoodSystems
+end combinedX
 namespace subset
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25245,15 +19251,9 @@ theorem XPseq {n : ℕ} (δ' : Fin n → Bool × Bool) :
       (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y (extendTruePair δ') n).2 (X n) true).2) δ'
 
 end AtomPair
+end
 
-end subset
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace subset
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25277,18 +19277,13 @@ theorem YPseq {n : ℕ} (δ' : Fin n → Bool × Bool) (bx : Bool) :
   exact Set.mem_iUnion.mpr ⟨δ', Set.mem_iUnion.mpr ⟨bx, hz⟩⟩
 
 end AtomPair
-
-end subset
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/XPseq_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end subset
 namespace XPseq
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25313,15 +19308,9 @@ theorem subset_master (n : ℕ) : XPseq D₀ D₁ hD₀nomin hD₁nomin X Y n �
       hYmem hD₀mne hD₁mne (extendTruePair δ') n)
 
 end AtomPair
+end
 
-end XPseq
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace XPseq
-
-open NeighborhoodSystem
-
+section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25359,17 +19348,12 @@ theorem zero : XPseq D₀ D₁ hD₀nomin hD₁nomin X Y 0 = D₁.master := by
   exact hkey.trans (subset.XPseq D₀ D₁ hD₀nomin hD₁nomin X Y (Fin.elim0 : Fin 0 → Bool × Bool))
 
 end Iso
-
-end XPseq
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/combinedY.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end XPseq
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25387,14 +19371,12 @@ noncomputable def combinedY (n : ℕ) : Set β :=
   if n % 2 = 0 then XPseq D₀ D₁ hD₀nomin hD₁nomin X Y (n / 2) else Y (n / 2)
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace combinedY
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25413,15 +19395,9 @@ theorem even (k : ℕ) :
   rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
 end AtomPair
+end
 
-end combinedY
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace combinedY
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25439,15 +19415,9 @@ theorem odd (k : ℕ) : combinedY D₀ D₁ hD₀nomin hD₁nomin X Y (2 * k + 1
   rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 end AtomPair
+end
 
-end combinedY
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace combinedY
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25472,18 +19442,13 @@ theorem subset_master (i : ℕ) :
     exact D₁.sub_master (hYmem (i / 2))
 
 end AtomPair
-
-end combinedY
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/xStep_3.lean
-namespace DomainTheory.NeighbourhoodSystems
+end combinedY
 namespace xStep
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25537,15 +19502,9 @@ theorem snd_eq_inter_XPseq (δ : ℕ → Bool × Bool) (n : ℕ) :
       exact absurd (Set.mem_inter hzB' hzB) (by rw [hdisjBB]; simp)
 
 end AtomPair
+end
 
-end xStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xStep
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25607,33 +19566,22 @@ theorem snd_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     · rintro ⟨hx1, -, hx2⟩; exact ⟨hx1, hx2⟩
 
 end AtomPair
-
-end xStep
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/genAtom.lean
-namespace DomainTheory.NeighbourhoodSystems
+end xStep
 namespace genAtom
-
 open NeighborhoodSystem
 
+section
 /-- **`genAtom`'s own recursive equation, as a rewritable lemma** (mirrors `Theorem88.lean`'s
 `atomU_succ`; `genAtom`'s `def` is a direct structural match on its `Nat` argument, so this holds by
 `rfl`, but stating it separately lets `rw` fire on `Nat`-literal successor forms like `2 * n + 1 + 1`
 without needing to unfold `genAtom` itself). -/
 theorem succ' {γ : Type*} (Z : ℕ → Set γ) (M : Set γ) (δ : ℕ → Bool) (n : ℕ) :
     genAtom Z M δ (n + 1) = genAtom Z M δ n ∩ (if δ n then Z n else M \ Z n) := rfl
+end
 
-end genAtom
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace genAtom
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25666,15 +19614,9 @@ theorem combinedX_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
     exact inter.diff_eq_diff_of_subset hAsub
 
 end AtomPair
+end
 
-end genAtom
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace genAtom
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25701,18 +19643,13 @@ theorem combinedY_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
     hD₀mne hD₁mne δ n (δ n).1).symm
 
 end AtomPair
-
-end genAtom
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/yStep_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end genAtom
 namespace yStep
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25791,15 +19728,9 @@ theorem fst_eq_inter_YPseq (δ : ℕ → Bool × Bool) (n : ℕ) :
       exact absurd (Set.mem_inter hzA1' hzAfull) (by rw [hdisjAA]; simp)
 
 end AtomPair
+end
 
-end yStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yStep
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25872,18 +19803,13 @@ theorem fst_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     · rintro ⟨hx1, -, hx2⟩; exact ⟨hx1, hx2⟩
 
 end AtomPair
-
-end yStep
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/atomPair_3.lean
-namespace DomainTheory.NeighbourhoodSystems
+end yStep
 namespace atomPair
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25923,15 +19849,9 @@ theorem snd_eq_genAtom (δ : ℕ → Bool × Bool) (n : ℕ) :
         exact (inter.diff_eq_diff_of_subset hB1sub).symm
 
 end AtomPair
+end
 
-end atomPair
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPair
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -25963,18 +19883,13 @@ theorem fst_eq_genAtom (δ : ℕ → Bool × Bool) (n : ℕ) :
       rw [atomPair.succ_eq, hstep, h2, genAtom.succ', combinedδ_odd, combinedX.odd, hodd]
 
 end AtomPair
-
-end atomPair
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/hcore.lean
-namespace DomainTheory.NeighbourhoodSystems
+end atomPair
 namespace hcore
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26003,15 +19918,9 @@ theorem even (δ' : ℕ → Bool) (n : ℕ) :
     hD₀mne hD₁mne (deinterleaveδ δ') n).1
 
 end AtomPair
+end
 
-end hcore
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace hcore
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26047,14 +19956,12 @@ theorem odd (δ' : ℕ → Bool) (n : ℕ) :
     hD₀mne hD₁mne (deinterleaveδ δ') n ((deinterleaveδ δ') n).1).1.symm
 
 end AtomPair
+end
 
 end hcore
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26084,17 +19991,12 @@ theorem hcore (δ' : ℕ → Bool) (n : ℕ) :
       hD₁mne δ' (n / 2)
 
 end AtomPair
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/transfer.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace transfer
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26121,15 +20023,9 @@ theorem empty_combined {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ cs, p
       (combinedX D₀ D₁ hD₀nomin hD₁nomin X Y) D₀.master hc' hn⟩
 
 end AtomPair
+end
 
-end transfer
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace transfer
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26175,15 +20071,9 @@ theorem double_subset_combined (i j k : ℕ) :
   exact key
 
 end AtomPair
+end
 
-end transfer
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace transfer
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26225,15 +20115,9 @@ theorem inter_empty_combined (i j : ℕ) :
   exact key
 
 end AtomPair
+end
 
-end transfer
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace transfer
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26275,15 +20159,9 @@ theorem subset_combined (i j : ℕ) :
   exact key
 
 end AtomPair
+end
 
-end transfer
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace transfer
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26347,18 +20225,13 @@ theorem inter_eq_combined (i j k : ℕ)
     exact Set.Subset.antisymm (h3.mpr hijk) (Set.subset_inter (h1.mpr hki) (h2.mpr hkj))
 
 end AtomPair
-
-end transfer
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/YPseq_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end transfer
 namespace YPseq
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26384,15 +20257,9 @@ theorem subset_master (n : ℕ) : YPseq D₀ D₁ hD₀nomin hD₁nomin X Y n �
         hYmem hD₀mne hD₁mne (extendTruePair δ') n))
 
 end AtomPair
+end
 
-end YPseq
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YPseq
-
-open NeighborhoodSystem
-
+section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26439,15 +20306,9 @@ theorem zero : YPseq D₀ D₁ hD₀nomin hD₁nomin X Y 0 = D₀.master := by
   exact hkey2.trans hgoal
 
 end Iso
+end
 
-end YPseq
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YPseq
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26472,15 +20333,9 @@ theorem inter_empty_iff_Y_inter_empty (i j : ℕ) :
   exact key
 
 end AtomPair
+end
 
-end YPseq
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YPseq
-
-open NeighborhoodSystem
-
+section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26507,17 +20362,12 @@ theorem subset_X_iff_Y_subset_XPseq (i j : ℕ) :
   exact key
 
 end Iso
-
-end YPseq
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/part_c_3.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end YPseq
 open NeighborhoodSystem
 
+section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26547,17 +20397,12 @@ theorem X_subset_YPseq_iff_XPseq_subset_Y (i j : ℕ) :
   exact key
 
 end Iso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/XPseq_3.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace XPseq
-
 open NeighborhoodSystem
 
+section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26594,18 +20439,13 @@ theorem eq_Y_iff_X_eq_YPseq (j k : ℕ) :
         hXmem hYmem hD₀mne hD₁mne k j).mp h.symm.subset)
 
 end Iso
-
-end XPseq
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/part_c_4.lean
-namespace DomainTheory.NeighbourhoodSystems
+end XPseq
 namespace combinedX
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26629,15 +20469,13 @@ theorem subset_master (i : ℕ) :
       hD₀mne hD₁mne (i / 2)
 
 end AtomPair
+end
 
 end combinedX
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace YPseq
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26664,14 +20502,12 @@ theorem inter_eq_iff_Y_inter_eq (i j k : ℕ) :
   exact key
 
 end AtomPair
+end
 
 end YPseq
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26696,13 +20532,9 @@ theorem X_inter_empty_iff_XPseq_inter_empty (i j : ℕ) :
   exact key
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26721,14 +20553,12 @@ theorem X_eq_empty_iff_XPseq_eq_empty (n : ℕ) :
   rwa [Set.inter_self, Set.inter_self] at this
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace XPseq
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26746,15 +20576,9 @@ theorem ne_empty (n : ℕ) : XPseq D₀ D₁ hD₀nomin hD₁nomin X Y n ≠ ∅
       hYmem hD₀mne hD₁mne n).mpr h)
 
 end AtomPair
+end
 
-end XPseq
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace XPseq
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26775,14 +20599,12 @@ theorem mem (n : ℕ) : D₁.mem (XPseq D₀ D₁ hD₀nomin hD₁nomin X Y n) :
       hD₁mne n)
 
 end AtomPair
+end
 
 end XPseq
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26802,14 +20624,12 @@ theorem Y_eq_empty_iff_YPseq_eq_empty (n : ℕ) :
   exact this.symm
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace YPseq
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26827,15 +20647,9 @@ theorem ne_empty (n : ℕ) : YPseq D₀ D₁ hD₀nomin hD₁nomin X Y n ≠ ∅
       hYmem hD₀mne hD₁mne n).mpr h)
 
 end AtomPair
+end
 
-end YPseq
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YPseq
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26855,14 +20669,12 @@ theorem mem (n : ℕ) : D₀.mem (YPseq D₀ D₁ hD₀nomin hD₁nomin X Y n) :
       hD₁mne n)
 
 end AtomPair
+end
 
 end YPseq
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26887,13 +20699,9 @@ theorem X_subset_iff_XPseq_subset (i j : ℕ) :
   exact key
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26928,13 +20736,9 @@ theorem X_eq_iff_XPseq_eq (i j : ℕ) :
         hYmem hD₀mne hD₁mne j i).mpr h.symm.subset)
 
 end Iso
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26961,13 +20765,9 @@ theorem X_inter_eq_iff_XPseq_inter_eq (i j k : ℕ) :
   exact key
 
 end AtomPair
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -26992,13 +20792,9 @@ theorem exists_inter_index_X {i j : ℕ} (hDij : D₀.mem (X i ∩ X j)) :
     hD₁nomin X Y hXmem hYmem hD₀mne hD₁mne i j m).mp hm⟩
 
 end Iso
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -27021,13 +20817,9 @@ theorem exists_inter_index_Y {i j : ℕ} (hDij : D₁.mem (Y i ∩ Y j)) :
     hD₁nomin X Y hXmem hYmem hD₀mne hD₁mne i j m).mpr hm⟩
 
 end Iso
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -27073,13 +20865,9 @@ def toD0 (y : D₁.Element) : D₀.Element where
     exact ⟨j, hYPj_eq_Xk, hj ▸ hyXPk⟩
 
 end Iso
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -27129,13 +20917,9 @@ def toD1 (x : D₀.Element) : D₁.Element where
     exact ⟨j, hXPj_eq_Yk.symm, hj ▸ hxYPk⟩
 
 end Iso
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -27213,14 +20997,9 @@ noncomputable def domainIso812c : DomainIso D₀ D₁ where
       exact ⟨n, hn, hle _ hxn⟩
 
 end Iso
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 theorem genAtom_mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositive)
     (hdiff : D.DiffClosed) {Z : ℕ → Set γ} (hZ : ∀ n, D.mem (Z n)) (δ : ℕ → Bool) :
     ∀ n, genAtom Z D.master δ n = ∅ ∨ D.mem (genAtom Z D.master δ n) := by
@@ -27306,13 +21085,9 @@ theorem isomorphic_812c : D₀ ≅ᴰ D₁ :=
   ⟨domainIso812c D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem hD₀mne
     hD₁mne hXcover hYcover hX0 hY0⟩
 end Iso
-end DomainTheory.NeighbourhoodSystems
+end
 
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 /-- **`U` is closed under set-difference of two of its own neighbourhoods** (or the difference is
 empty): `IntervalPrimrec.lean`'s `diffLists`/`presentedIntervals_diffLists`, built unconditionally
 from `Ico_diff_Ico`, already witnesses presentability of the raw difference; only non-emptiness can
@@ -27324,23 +21099,13 @@ theorem U_diff_mem {X Y : Set ℚ} (hX : U.mem X) (hY : U.mem Y) : X \ Y = ∅ �
   · exact Or.inl h
   · exact Or.inr ⟨⟨diffLists L1 L2, (presentedIntervals_diffLists L1 L2).symm⟩, h,
       Set.sdiff_subset.trans hXsub⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 theorem U_diffClosed : U.DiffClosed := fun hX hY => U_diff_mem hX hY
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 /-- **`U` is Positive**: since `combineIntervals` presents *any* raw intersection of two presented
 lists unconditionally, and `X ∩ Y ⊆ [0,1)` is automatic whenever `X ⊆ [0,1)`, only non-emptiness
 can ever obstruct `U.mem (X ∩ Y)`. -/
@@ -27348,61 +21113,36 @@ theorem U_isPositive : U.IsPositive := by
   rintro X Y ⟨⟨L1, rfl⟩, -, hXsub⟩ ⟨⟨L2, rfl⟩, -, -⟩
   refine ⟨fun h => h.2.1, fun hne => ⟨⟨combineIntervals L1 L2, presentedIntervals_inter L1 L2⟩,
     hne, Set.inter_subset_left.trans hXsub⟩⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 theorem U_noMinimal : U.NoMinimal := by
   intro X hX
   obtain ⟨Y, Z, hY, hZ, hYZinter, hYZunion, -, -⟩ := U_no_minimal hX
   exact ⟨Y, Z, hY, hZ, hY.2.1, hZ.2.1, hYZinter, hYZunion⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 /-- **`V` is Positive**: `levelSet.inter` presents *any* raw intersection unconditionally, so only
 non-emptiness can obstruct `V.mem (X ∩ Y)`. -/
 theorem V_isPositive : V.IsPositive := by
   rintro X Y ⟨k₁, m₁, rfl, -⟩ ⟨k₂, m₂, rfl, -⟩
   refine ⟨fun ⟨k, m, heq, hne⟩ => hne, fun hne => ⟨max k₁ k₂, _, levelSet.inter k₁ m₁ k₂ m₂, hne⟩⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 theorem V_mem_nonempty {X : Set ℕ} (hX : V.mem X) : X.Nonempty := by
   obtain ⟨k, m, -, hne⟩ := hX; exact hne
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
+section
 theorem V_noMinimal : V.NoMinimal := by
   intro X hX
   obtain ⟨Y, Z, hY, hZ, hYZinter, hYZunion, -, -⟩ := V_no_minimal hX
   exact ⟨Y, Z, hY, hZ, V_mem_nonempty hY, V_mem_nonempty hZ, hYZinter, hYZunion⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812c.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_812_c.{u_1, u_2} : And
@@ -28674,15 +22414,10 @@ theorem example_812_c.{u_1, u_2} : And
       @DomainTheory.NeighbourhoodSystems.YPseq.zero)
     @DomainTheory.NeighbourhoodSystems.exists_inter_index_X)
   @DomainTheory.NeighbourhoodSystems.exists_inter_index_Y
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 variable {α γ : Type*}
-
 variable (E : NeighborhoodSystem γ) (split : Set α → Set γ → Set α → Set γ × Set γ)
 
 /-- The `E`-side atom matching `genAtom X Δ δ n`, built recursively via an abstract splitting
@@ -28694,35 +22429,21 @@ noncomputable def atomE (E : NeighborhoodSystem γ) (split : Set α → Set γ �
   | (n + 1) =>
       if δ n then (split (genAtom X Δ δ n) (atomE E split X Δ δ n) (X n)).1
       else (split (genAtom X Δ δ n) (atomE E split X Δ δ n) (X n)).2
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 variable {α γ : Type*}
-
 variable (E : NeighborhoodSystem γ) (split : Set α → Set γ → Set α → Set γ × Set γ)
-
 variable (X : ℕ → Set α) (Δ : Set α)
 
 @[simp] theorem atomE_zero (δ : ℕ → Bool) : atomE E split X Δ δ 0 = E.master := rfl
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 variable {α γ : Type*}
-
 variable (E : NeighborhoodSystem γ) (split : Set α → Set γ → Set α → Set γ × Set γ)
-
 variable (X : ℕ → Set α) (Δ : Set α)
-
 variable (hΔ : Δ.Nonempty) (hEmne : E.master.Nonempty) (hsplit : SplitSpec' E split)
-
 include hΔ hEmne hsplit
 
 omit hΔ hEmne hsplit in
@@ -28730,20 +22451,12 @@ omit hΔ hEmne hsplit in
 "+"-piece chosen when splitting against `X n`. Generalizes `Theorem88.lean`'s `Yseq`. -/
 noncomputable def YseqE (n : ℕ) : Set γ :=
   ⋃ δ' : Fin n → Bool, atomE E split X Δ (extendTrue δ') (n + 1)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
+section
 variable {α γ : Type*}
-
 variable (E : NeighborhoodSystem γ) (split : Set α → Set γ → Set α → Set γ × Set γ)
-
-
 variable (X : ℕ → Set α) (Δ : Set α)
-
 
 theorem atomE_succ (δ : ℕ → Bool) (n : ℕ) :
     atomE E split X Δ δ (n + 1) =
@@ -29148,11 +22861,9 @@ theorem YseqE_nonempty_of_mem {n : ℕ} {x : α} (hxΔ : x ∈ Δ) (hxn : x ∈ 
     rw [hδ2_eq, ← hI_eq_atomE]
     exact Set.nonempty_iff_ne_empty.mpr hIne
   exact hne2.mono (subset_YseqE E split X Δ (restrictFin δ0 n))
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 set_option linter.unusedVariables false
 
 theorem example_812_c_yseq.{u_1, u_2} : ∀ {α : Type u_1} {γ : Type u_2} (E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ)
@@ -29165,18 +22876,12 @@ theorem example_812_c_yseq.{u_1, u_2} : ∀ {α : Type u_1} {γ : Type u_2} (E :
             @Membership.mem α (Set α) (@Set.instMembership α) (X n) x →
               @Set.Nonempty γ (@DomainTheory.NeighbourhoodSystems.YseqE α γ E split X Δ n) :=
   @DomainTheory.NeighbourhoodSystems.YseqE_nonempty_of_mem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812c/part_c_5.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace testBit
-
 open NeighborhoodSystem
 
-
+section
 /-- **The bitwise "and-not" identity**: `a ^^^ (a &&& b) = a` on bits where `b`'s bit is `0`, and
 `= 0` on bits where `b`'s bit is `1` (whether or not `a`'s bit is set) — i.e. exactly "`a`'s bits
 with `b`'s bits cleared". Mirrors `levelSet.inter`'s own `&&&`-formula; here `^^^` combines with
@@ -29186,16 +22891,13 @@ theorem xor_and_self (a b : ℕ) (i : ℕ) :
     (a ^^^ (a &&& b)).testBit i = (a.testBit i && !b.testBit i) := by
   rw [Nat.testBit_xor, Nat.testBit_and]
   cases a.testBit i <;> cases b.testBit i <;> rfl
+end
 
 end testBit
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open NeighborhoodSystem
 
-
+section
 /-- **`levelSet` is closed under set-difference, unconditionally** — mirrors `levelSet.inter`
 exactly, combining `upsample`-to-a-common-level with the "and-not" bit identity
 `testBit.xor_and_self` in place of plain `&&&`. -/
@@ -29210,14 +22912,11 @@ theorem diff (k₁ m₁ k₂ m₂ : ℕ) :
   ext n
   simp only [mem_levelSet, Set.mem_sdiff, testBit.xor_and_self, Bool.and_eq_true, Bool.not_eq_true,
     Bool.not_eq_true']
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem
-
 
 /-- **`V` is closed under set-difference of two of its own neighbourhoods** (or the difference is
 empty). -/
@@ -29227,23 +22926,15 @@ theorem V_diff_mem {X Y : Set ℕ} (hX : V.mem X) (hY : V.mem Y) : X \ Y = ∅ �
   rcases Set.eq_empty_or_nonempty (levelSet k₁ m₁ \ levelSet k₂ m₂) with h | h
   · exact Or.inl h
   · exact Or.inr ⟨max k₁ k₂, _, levelSet.diff k₁ m₁ k₂ m₂, h⟩
-
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
-
-theorem V_diffClosed : V.DiffClosed := fun hX hY => V_diff_mem hX hY
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812d/other_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+open NeighborhoodSystem
 
+theorem V_diffClosed : V.DiffClosed := fun hX hY => V_diff_mem hX hY
+end
+
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 /-- **`IsComputableDiff P`**: set-difference relative to the presentation `P` is computable — a
@@ -29264,11 +22955,9 @@ structure IsComputableDiff {α : Type*} {V : NeighborhoodSystem α} (P : Computa
   /-- **7.1(i)-for-`\`**: "`X n \ X m` is a genuine neighbourhood" is recursively decidable in
   `n, m`, mirroring `cons_computable`'s role for `∩`. -/
   diff_computable : RecDecidable₂ (fun n m => ∃ k, P.X k = P.X n \ P.X m)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 /-- **A split function is computable relative to two presentations** `P` (`α`-side), `Q` (`γ`-side)
@@ -29306,11 +22995,9 @@ structure IsComputableSplit {α γ : Type*} {V : NeighborhoodSystem α} {W : Nei
   non-empty. See `posIdx_spec`'s docstring for why this is conditional. -/
   negIdx_spec : ∀ n m k, (split (P.X n) (Q.X m) (P.X k)).2 ≠ ∅ →
     (split (P.X n) (Q.X m) (P.X k)).2 = Q.X (negIdx n m k)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 /-- **`IsComputableUnion P`**: set-union relative to the presentation `P` is computable — a
@@ -29333,82 +23020,64 @@ structure IsComputableUnion {α : Type*} {V : NeighborhoodSystem α} (P : Comput
   /-- **7.1(i)-for-`∪`**: "`X n ∪ X m` is a genuine neighbourhood" is recursively decidable in
   `n, m`, mirroring `cons_computable`'s role for `∩`. -/
   union_computable : RecDecidable₂ (fun n m => ∃ k, P.X k = P.X n ∪ P.X m)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 /-- Pack a two-sided code state: `idx0` (`P₀`-index of `A_n`), `idx1` (`P₁`-index of `B_n`),
 `junk` (`1` iff `A_n = B_n = ∅` already). -/
 def packState2 (idx0 idx1 junk : ℕ) : ℕ := Nat.pair idx0 (Nat.pair idx1 junk)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 def stateIdx0 (s : ℕ) : ℕ := s.unpair.1
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 @[simp] theorem stateIdx0_packState2 (a b c : ℕ) : stateIdx0 (packState2 a b c) = a := by
   unfold stateIdx0 packState2; simp only [unpair_pair_fst]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 def stateIdx1 (s : ℕ) : ℕ := s.unpair.2.unpair.1
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 @[simp] theorem stateIdx1_packState2 (a b c : ℕ) : stateIdx1 (packState2 a b c) = b := by
   unfold stateIdx1 packState2; simp only [unpair_pair_fst, unpair_pair_snd]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 def stateJunk (s : ℕ) : ℕ := s.unpair.2.unpair.2
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 @[simp] theorem stateJunk_packState2 (a b c : ℕ) : stateJunk (packState2 a b c) = c := by
   unfold stateJunk packState2; simp only [unpair_pair_snd]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 /-- Pack the persistent bit-source remainder `rem` alongside the current two-sided
 `packState2`-shaped inner state `s`. -/
 def packStateC (rem s : ℕ) : ℕ := Nat.pair rem s
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 section XSubStep
@@ -29421,11 +23090,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 def xwB1 (w : ℕ) : ℕ := w.unpair.2.unpair.1
 
 end XSubStep
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 section XSubStep
@@ -29438,11 +23105,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 def xwN (w : ℕ) : ℕ := w.unpair.1
 
 end XSubStep
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 section XSubStep
@@ -29455,14 +23120,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 def xwS (w : ℕ) : ℕ := w.unpair.2.unpair.2
 
 end XSubStep
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812d/diff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 namespace IsComputableDiff
@@ -29489,14 +23149,9 @@ theorem exists_iff_ne_empty (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m :
 
 end diff
 end IsComputableDiff
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812d/existsDiffDec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 section DirectDec
@@ -29510,14 +23165,12 @@ variable (hDiff : IsComputableDiff P)
 noncomputable def existsDiffDec : ℕ → ℕ := fun t => isOne (hDiff.diff_computable.choose t)
 
 end DirectDec
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace existsDiffDec
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29527,15 +23180,9 @@ variable (hDiff : IsComputableDiff P)
 theorem le_one (t : ℕ) : existsDiffDec P hDiff t ≤ 1 := isOne_le_one _
 
 end DirectDec
+end
 
-end existsDiffDec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace existsDiffDec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29552,15 +23199,9 @@ theorem spec (n m : ℕ) :
   exact h.symm
 
 end DirectDec
+end
 
-end existsDiffDec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace existsDiffDec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29584,17 +23225,12 @@ theorem eq_zero_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
     exact (h2.mp (h1.mp h1')) hempty
 
 end DirectDec
-
-end existsDiffDec
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/emptyDiffDec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end existsDiffDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29605,14 +23241,12 @@ variable (hDiff : IsComputableDiff P)
 noncomputable def emptyDiffDec : ℕ → ℕ := fun t => 1 - existsDiffDec P hDiff t
 
 end DirectDec
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace emptyDiffDec
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29623,15 +23257,9 @@ theorem le_one (t : ℕ) : emptyDiffDec P hDiff t ≤ 1 := by
   unfold emptyDiffDec; have := existsDiffDec.le_one P hDiff t; omega
 
 end DirectDec
+end
 
-end emptyDiffDec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace emptyDiffDec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29648,17 +23276,12 @@ theorem eq_one_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
   · intro hempty; have := h0.mpr hempty; omega
 
 end DirectDec
-
-end emptyDiffDec
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/existsInterDec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end emptyDiffDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29668,14 +23291,12 @@ own predicate). -/
 noncomputable def existsInterDec : ℕ → ℕ := fun t => isOne (P.cons_computable.choose t)
 
 end DirectDec
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace existsInterDec
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29683,15 +23304,9 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 theorem le_one (t : ℕ) : existsInterDec P t ≤ 1 := isOne_le_one _
 
 end DirectDec
+end
 
-end existsInterDec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace existsInterDec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29706,15 +23321,9 @@ theorem spec (n m : ℕ) :
   exact h.symm
 
 end DirectDec
+end
 
-end existsInterDec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace existsInterDec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29741,17 +23350,12 @@ theorem eq_zero_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
     exact absurd (Set.subset_eq_empty hk hempty) (hnomin.mem_ne_empty (P.mem_X k))
 
 end DirectDec
-
-end existsInterDec
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/emptyInterDec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end existsInterDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29761,14 +23365,12 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 noncomputable def emptyInterDec : ℕ → ℕ := fun t => 1 - existsInterDec P t
 
 end DirectDec
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace emptyInterDec
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29777,15 +23379,9 @@ theorem le_one (t : ℕ) : emptyInterDec P t ≤ 1 := by
   unfold emptyInterDec; have := existsInterDec.le_one P t; omega
 
 end DirectDec
+end
 
-end emptyInterDec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace emptyInterDec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -29800,65 +23396,41 @@ theorem eq_one_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
   · intro hempty; have := h0.mpr hempty; omega
 
 end DirectDec
+end
 
 end emptyInterDec
-end DomainTheory.NeighbourhoodSystems
-end
+open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 section
--- Exercise812d/stateRemC.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 def stateRemC (t : ℕ) : ℕ := t.unpair.1
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace stateRemC
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 @[simp] theorem packStateC (a b : ℕ) : stateRemC (_root_.DomainTheory.NeighbourhoodSystems.packStateC a b) = a := by
   unfold stateRemC _root_.DomainTheory.NeighbourhoodSystems.packStateC; simp only [unpair_pair_fst]
+end
 
 end stateRemC
-end DomainTheory.NeighbourhoodSystems
+open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+
+section
+/-- The base (depth-`0`) state: `A₀ = D₀.master`, `B₀ = D₁.master`, never junk. -/
+def stateBase2 (masterIdx0 masterIdx1 : ℕ) : ℕ := packState2 masterIdx0 masterIdx1 0
 end
 
 section
--- Exercise812d/other.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-/-- The base (depth-`0`) state: `A₀ = D₀.master`, `B₀ = D₁.master`, never junk. -/
-def stateBase2 (masterIdx0 masterIdx1 : ℕ) : ℕ := packState2 masterIdx0 masterIdx1 0
-
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 def stateInnerC (t : ℕ) : ℕ := t.unpair.2
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 @[simp] theorem stateInnerC_packStateC (a b : ℕ) : stateInnerC (packStateC a b) = b := by
   unfold stateInnerC packStateC; simp only [unpair_pair_snd]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -29872,13 +23444,9 @@ remainder `k` untouched. -/
 def atomPairBase (k : ℕ) : ℕ := packStateC k (stateBase2 P₀.masterIdx P₁.masterIdx)
 
 end AtomPairCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 /-- **Genuine `\`-index equality**, given the emptiness decider reads `0`: the raw existence fact
 (`existsDiffDec.spec`) plugged straight into `hDiff.diffIdx_spec` — unconditional. -/
 theorem diffIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} {Q : ComputablePresentation W}
@@ -29888,24 +23456,16 @@ theorem diffIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} {Q : C
   have hle := existsDiffDec.le_one Q hDiff (Nat.pair idx0 n0)
   have h1 : existsDiffDec Q hDiff (Nat.pair idx0 n0) = 1 := by unfold emptyDiffDec at h; omega
   exact (existsDiffDec.spec Q hDiff idx0 n0).mp h1
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 def encodeDeltaPair (δ : ℕ → Bool × Bool) : ℕ → ℕ
   | 0 => 0
   | n + 1 => encodeDeltaPair δ n +
       ((if (δ n).1 then 1 else 0) + (if (δ n).2 then 2 else 0)) * 4 ^ n
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 theorem encodeDeltaPair_lt (δ : ℕ → Bool × Bool) : ∀ n, encodeDeltaPair δ n < 4 ^ n
   | 0 => by simp [encodeDeltaPair]
   | n + 1 => by
@@ -29916,13 +23476,9 @@ theorem encodeDeltaPair_lt (δ : ℕ → Bool × Bool) : ∀ n, encodeDeltaPair 
       rcases Bool.eq_false_or_eq_true (δ n).1 with h1 | h1 <;>
         rcases Bool.eq_false_or_eq_true (δ n).2 with h2 | h2 <;>
         simp only [h1, h2, ite_true, ite_false, Bool.false_eq_true] <;> omega
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 /-- **Genuine `∩`-index equality**, given the emptiness decider reads `0`: the raw existence fact
 (`existsInterDec.spec`) plugged straight into `Q.inter_spec` — unconditional, no `IsPositive`/
 `NoMinimal` needed. -/
@@ -29933,13 +23489,9 @@ theorem interIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} (Q : 
   have hle := existsInterDec.le_one Q (Nat.pair idx0 n0)
   have h1 : existsInterDec Q (Nat.pair idx0 n0) = 1 := by unfold emptyInterDec at h; omega
   exact (existsInterDec.spec Q idx0 n0).mp h1
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -29956,13 +23508,9 @@ theorem junk_eq_zero_of_selectFn_eq_zero {junk X : ℕ} (h : selectFn junk 1 X =
   · exfalso; unfold selectFn at h; have : 1 ≤ junk := h0; nlinarith
 
 end AtomPairCorrect
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 /-- **A union of two already-genuine neighbourhoods is again genuine** (sharper than
 `union.mem_or_empty`'s bare dichotomy): under `NoMinimal`, a `mem` set is never empty
 (`NoMinimal.mem_ne_empty`), so `X ∪ Y ⊇ X ≠ ∅` rules out the dichotomy's `∅` branch outright. -/
@@ -29971,16 +23519,9 @@ theorem NeighborhoodSystem.mem_union_of_mem {γ : Type*} {D : NeighborhoodSystem
     (hX : D.mem X) (hY : D.mem Y) : D.mem (X ∪ Y) :=
   (union.mem_or_empty hpos hdiff (Or.inr hX) (Or.inr hY)).resolve_left fun h =>
     hnomin.mem_ne_empty hX (Set.subset_eq_empty Set.subset_union_left h)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812d/combineFound2.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 /-- **Combine two `(found, code)` packed fold results into one**: union their codes via `hUnion`
 when both found something, and simply propagate whichever single side found something otherwise
 (mirroring `XFoldStep`/`YFoldStep`'s own "skip junk, else union" shape one level up). Generic in any
@@ -29991,14 +23532,12 @@ noncomputable def combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
   selectFn r0.unpair.1
     (selectFn r1.unpair.1 (Nat.pair 1 (hUnion.unionIdx r0.unpair.2 r1.unpair.2)) r0)
     r1
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace combineFound2
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 theorem found_iff {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
     (h0 : r0.unpair.1 ≤ 1) (h1 : r1.unpair.1 ≤ 1) :
@@ -30010,15 +23549,9 @@ theorem found_iff {γ : Type*} {W : NeighborhoodSystem γ}
     rcases Nat.eq_zero_or_pos r1.unpair.1 with hr1 | hr1
     · rw [hr1, selectFn_zero]; omega
     · rw [show r1.unpair.1 = 1 from by omega, selectFn_one, unpair_pair_fst]; omega
+end
 
-end combineFound2
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace combineFound2
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 theorem mem_iff {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hpos : W.IsPositive) (hdiff : W.DiffClosed)
     (hnomin : W.NoMinimal) (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
@@ -30057,15 +23590,9 @@ theorem mem_iff {γ : Type*} {W : NeighborhoodSystem γ}
       · rintro (⟨-, hz⟩ | ⟨-, hz⟩)
         · exact Or.inl hz
         · exact Or.inr hz
+end
 
-end combineFound2
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace combineFound2
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 theorem mem_of_found {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hpos : W.IsPositive) (hdiff : W.DiffClosed)
     (hnomin : W.NoMinimal) (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
@@ -30090,18 +23617,13 @@ theorem mem_of_found {γ : Type*} {W : NeighborhoodSystem γ}
         Q.surj (NeighborhoodSystem.mem_union_of_mem hpos hdiff hnomin hmem0' hmem1')
       rw [hUnion.unionIdx_spec hex]
       exact NeighborhoodSystem.mem_union_of_mem hpos hdiff hnomin hmem0' hmem1'
-
-end combineFound2
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/digit.lean
-namespace DomainTheory.NeighbourhoodSystems
+end combineFound2
 namespace digit
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 /-- Adding a higher digit (`d * 4 ^ n`, `n > i`) never disturbs a `deltaPair`-digit strictly
 below `n`. The purely-arithmetic core making `encodeDeltaPair`'s induction go through. -/
 theorem add_mul_pow_of_lt (m d i n : ℕ) (hi : i < n) :
@@ -30111,15 +23633,9 @@ theorem add_mul_pow_of_lt (m d i n : ℕ) (hi : i < n) :
   rw [heq, Nat.add_mul_div_left m _ (pow_pos (by norm_num) i)]
   rw [show 4 * 4 ^ j * d = 4 * (4 ^ j * d) by ring]
   exact Nat.add_mul_mod_self_left _ _ _
+end
 
-end digit
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace digit
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 /-- `encodeDeltaPair`'s freshly-added digit at position `n` is read straight back off by dividing
 out the lower `4 ^ n` (which is exactly `encodeDeltaPair δ n`, `< 4 ^ n` by `encodeDeltaPair_lt`,
 hence contributes `0` to the quotient). -/
@@ -30130,57 +23646,38 @@ theorem eq_of_encodeDeltaPair (δ : ℕ → Bool × Bool) (n : ℕ) :
       ((if (δ n).1 then 1 else 0) + (if (δ n).2 then 2 else 0)) * 4 ^ n) / 4 ^ n = _
   rw [Nat.add_mul_div_right _ _ (pow_pos (by norm_num) n),
     Nat.div_eq_of_lt (encodeDeltaPair_lt δ n), Nat.zero_add]
-
-end digit
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/deltaPair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end digit
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 /-- **The two-bits-per-depth sign sequence** read off a bit-source `k`, the `atomPairG`-shaped
 analogue of `Theorem88d.lean`'s `deltaOf`: the depth-`i` nibble `(k / 4 ^ i) % 2` supplies `(δ i).1`,
 and `(k / 4 ^ i / 2) % 2` supplies `(δ i).2` — matching exactly how `atomPairStep` peels two bits
 per depth from `rem` (`rem % 2`, `(rem / 2) % 2`, then `rem / 4`). -/
 def deltaPair (k : ℕ) : ℕ → Bool × Bool :=
   fun i => (decide ((k / 4 ^ i) % 2 = 1), decide ((k / 4 ^ i / 2) % 2 = 1))
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace deltaPair
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 theorem fst_eq_testBit (k i : ℕ) : (deltaPair k i).1 = k.testBit (2 * i) := by
   show decide ((k / 4 ^ i) % 2 = 1) = k.testBit (2 * i)
   rw [Nat.testBit_eq_decide_div_mod_eq, show (4 : ℕ) ^ i = 2 ^ (2 * i) by
     rw [show (4 : ℕ) = 2 ^ 2 from rfl, ← pow_mul]]
+end
 
-end deltaPair
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace deltaPair
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 theorem snd_eq_testBit (k i : ℕ) : (deltaPair k i).2 = k.testBit (2 * i + 1) := by
   show decide ((k / 4 ^ i / 2) % 2 = 1) = k.testBit (2 * i + 1)
   rw [Nat.div_div_eq_div_mul, Nat.testBit_eq_decide_div_mod_eq, show (4 : ℕ) ^ i * 2 = 2 ^ (2 * i + 1)
     by rw [show (4 : ℕ) = 2 ^ 2 from rfl, ← pow_mul, pow_succ]]
+end
 
-end deltaPair
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace deltaPair
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 /-- **The inversion property**: `deltaPair (encodeDeltaPair δ n)` agrees with `δ` on every position
 strictly below `n`. Combined with `atomPairG.congr` (`(d)(1)`, already `Pass`), this is exactly
 what transports `(c)(ii)`'s `Fin n → Bool × Bool`-indexed classical covering fact into the
@@ -30215,18 +23712,13 @@ theorem encodeDeltaPair (δ : ℕ → Bool × Bool) :
       rcases Bool.eq_false_or_eq_true (δ i).1 with h1 | h1 <;>
         rcases Bool.eq_false_or_eq_true (δ i).2 with h2 | h2 <;>
         simp [h1, h2, Prod.ext_iff]
-
-end deltaPair
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/selectFn.lean
-namespace DomainTheory.NeighbourhoodSystems
+end deltaPair
 namespace selectFn
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -30250,15 +23742,9 @@ theorem le_one {c a b : ℕ} (hc : c ≤ 1) (ha : a ≤ 1) (hb : b ≤ 1) :
   · rw [selectFn_one]; exact ha
 
 end AtomPairCorrect2
+end
 
-end selectFn
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace selectFn
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -30279,17 +23765,12 @@ theorem one_eq_zero_iff {c X : ℕ} : selectFn c 1 X = 0 ↔ c = 0 ∧ X = 0 := 
     simp [selectFn_zero]
 
 end AtomPairCorrect
-
-end selectFn
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/xStepG.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end selectFn
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30301,14 +23782,12 @@ noncomputable def xStepG (splitX : Set α → Set β → Set α → Set β × Se
   xyStep splitX A B Xn b
 
 end StepGen
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace xStepG
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30322,15 +23801,9 @@ theorem disjoint_of_ne {D₁ : NeighborhoodSystem β}
   xyStep_disjoint_of_ne hxSplit hAB hBmem Xn hbb'
 
 end StepGen
+end
 
-end xStepG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xStepG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30342,15 +23815,9 @@ theorem fst_subset (splitX : Set α → Set β → Set α → Set β × Set β)
   · simp only [xStepG, xyStep, hb]; exact Set.sdiff_subset
 
 end StepGen
+end
 
-end xStepG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xStepG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30366,15 +23833,9 @@ theorem fst_union (splitX : Set α → Set β → Set α → Set β × Set β)
   exact Set.inter_union_sdiff A Xn
 
 end StepGen
+end
 
-end xStepG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xStepG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30389,15 +23850,9 @@ theorem snd_subset {D₁ : NeighborhoodSystem β}
   · simp only [xStepG, xyStep, hb]; exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
 
 end StepGen
+end
 
-end xStepG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xStepG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30415,17 +23870,12 @@ theorem snd_union {D₁ : NeighborhoodSystem β}
   exact hspec.2.2.2.2.1
 
 end StepGen
-
-end xStepG
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/xSubStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end xStepG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -30452,14 +23902,12 @@ noncomputable def xSubStep (w : ℕ) : ℕ :=
   packState2 (selectFn newJunk 0 directIdx) (selectFn newJunk 0 splitIdx) newJunk
 
 end XSubStep
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace xSubStep
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -30478,15 +23926,9 @@ theorem idx0_eq {s n b1 : ℕ}
     selectFn_zero]
 
 end AtomPairCorrect
+end
 
-end xSubStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xSubStep
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -30506,15 +23948,9 @@ theorem idx1_eq {s n b1 : ℕ}
     selectFn_zero]
 
 end AtomPairCorrect
+end
 
-end xSubStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xSubStep
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -30531,15 +23967,9 @@ theorem junk_eq (s n b1 : ℕ) :
   simp only [xwN, xwB1, xwS, unpair_pair_fst, unpair_pair_snd, stateJunk_packState2]
 
 end AtomPairCorrect
+end
 
-end xSubStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xSubStep
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -30600,17 +24030,12 @@ theorem correct {s n : ℕ} {A : Set α} {B : Set β}
       exact (hSplitX.negIdx_spec (stateIdx0 s) (stateIdx1 s) n hne).symm
 
 end AtomPairCorrect2
-
-end xSubStep
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/yStepG.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end xSubStep
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30623,14 +24048,12 @@ noncomputable def yStepG (splitY : Set β → Set α → Set β → Set α × Se
   (xyStep splitY B1 A1 Yn b).swap
 
 end StepGen
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace yStepG
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30645,15 +24068,9 @@ theorem disjoint_of_ne {D₀ : NeighborhoodSystem α}
   exact ⟨h.2, h.1⟩
 
 end StepGen
+end
 
-end yStepG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yStepG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30670,15 +24087,9 @@ theorem fst_subset {D₀ : NeighborhoodSystem α}
     exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
 
 end StepGen
+end
 
-end yStepG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yStepG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30696,15 +24107,9 @@ theorem fst_union {D₀ : NeighborhoodSystem α}
   exact hspec.2.2.2.2.1
 
 end StepGen
+end
 
-end yStepG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yStepG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30716,15 +24121,9 @@ theorem snd_subset (splitY : Set β → Set α → Set β → Set α × Set α)
   · simp only [yStepG, xyStep, Prod.swap, hb]; exact Set.sdiff_subset
 
 end StepGen
+end
 
-end yStepG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yStepG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section StepGen
 
 variable {α β : Type*}
@@ -30741,17 +24140,12 @@ theorem snd_union (splitY : Set β → Set α → Set β → Set α × Set α)
   exact Set.inter_union_sdiff B1 Yn
 
 end StepGen
-
-end yStepG
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/atomPairG.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end yStepG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -30777,14 +24171,12 @@ noncomputable def atomPairG (δ : ℕ → Bool × Bool) : ℕ → Set α × Set 
       (A2, B2)
 
 end AtomPairGen
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace atomPairG
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -30830,15 +24222,9 @@ theorem congr {δ δ' : ℕ → Bool × Bool} {n : ℕ} (h : ∀ i < n, δ i = �
     rw [hprev, hn]
 
 end AtomPairGen
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -30908,15 +24294,9 @@ theorem invariant (δ : ℕ → Bool × Bool) :
     exact ⟨hB2A2.symm, hA2mem, hB2mem⟩
 
 end AtomPairGen
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -30936,15 +24316,9 @@ theorem succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) :
         (Y n) (δ n).2 := rfl
 
 end AtomPairGen
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31002,15 +24376,9 @@ theorem fst_union_step (δ : ℕ → Bool × Bool) (n : ℕ) :
   exact xStepG.fst_union splitX A B (X n)
 
 end AtomPairGen
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31071,15 +24439,9 @@ theorem master_covered (n : ℕ) :
     · exact step false false h4
 
 end AtomPairGen
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGenDelta
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31107,15 +24469,9 @@ theorem master_covered_deltaPair (n : ℕ) :
   exact hδ'
 
 end AtomPairGenDelta
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31168,15 +24524,9 @@ theorem snd_union_step (δ : ℕ → Bool × Bool) (n : ℕ) :
   exact xStepG.snd_union hxSplit ihAB ihB (X n)
 
 end AtomPairGen
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31236,15 +24586,9 @@ theorem master_covered_snd (n : ℕ) :
     · exact step false false h4
 
 end AtomPairGen
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGenDelta
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31276,18 +24620,13 @@ theorem master_covered_deltaPair_snd (n : ℕ) :
   exact hδ'
 
 end AtomPairGenDelta
-
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/xStepG_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end atomPairG
 namespace xStepG
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31325,18 +24664,13 @@ theorem spec (δ : ℕ → Bool × Bool) (n : ℕ) :
     · simp only [xStepG, xyStep, hδ1]; exact diff.mem_or_empty hD₀diff ihA (hXmem n)
 
 end AtomPairGen
-
-end xStepG
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/atomPairG_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end xStepG
 namespace atomPairG
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31361,15 +24695,9 @@ theorem fst_subset (δ : ℕ → Bool × Bool) (n : ℕ) :
     (xStepG.fst_subset splitX _ _ (X n) (δ n).1)
 
 end AtomPairGen
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31392,15 +24720,9 @@ theorem fst_subset_master (δ : ℕ → Bool × Bool) (n : ℕ) :
       splitX hxSplit X Y hXmem hYmem hD₀mne hD₁mne δ n).trans ih
 
 end AtomPairGen
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31425,15 +24747,9 @@ theorem snd_subset (δ : ℕ → Bool × Bool) (n : ℕ) :
     (xStepG.snd_subset hxSplit ihAB ihB (X n) (δ n).1)
 
 end AtomPairGen
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31527,15 +24843,9 @@ theorem disjoint (δ δ' : ℕ → Bool × Bool) :
         Set.subset_eq_empty (Set.inter_subset_inter h2 h2') hd2⟩
 
 end AtomPairGen
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -31558,17 +24868,12 @@ theorem snd_subset_master (δ : ℕ → Bool × Bool) (n : ℕ) :
       splitX hxSplit X Y hXmem hYmem hD₀mne hD₁mne δ n).trans ih
 
 end AtomPairGen
-
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/ySubStep.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end atomPairG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section YSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31594,14 +24899,12 @@ noncomputable def ySubStep (w : ℕ) : ℕ :=
   packState2 (selectFn newJunk 0 splitIdx) (selectFn newJunk 0 directIdx) newJunk
 
 end YSubStep
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace ySubStep
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31621,15 +24924,9 @@ theorem idx0_eq {s n b2 : ℕ}
     selectFn_zero]
 
 end AtomPairCorrect
+end
 
-end ySubStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace ySubStep
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31648,15 +24945,9 @@ theorem idx1_eq {s n b2 : ℕ}
     selectFn_zero]
 
 end AtomPairCorrect
+end
 
-end ySubStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace ySubStep
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31673,15 +24964,9 @@ theorem junk_eq (s n b2 : ℕ) :
   simp only [xwN, xwB1, xwS, unpair_pair_fst, unpair_pair_snd, stateJunk_packState2]
 
 end AtomPairCorrect
+end
 
-end ySubStep
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace ySubStep
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31737,17 +25022,12 @@ theorem correct {s n : ℕ} {A : Set α} {B : Set β}
       exact diffIdx_eq_of_empty_zero hDiff1 hemp
 
 end AtomPairCorrect2
-
-end ySubStep
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/other_3.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end ySubStep
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31762,13 +25042,9 @@ shape of `Nat.Primrec.prec`, exactly as `Theorem88d.lean`'s own `k` is unused in
 def pcN (w : ℕ) : ℕ := xwB1 w
 
 end AtomPairCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31781,13 +25057,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 def pcT (w : ℕ) : ℕ := xwS w
 
 end AtomPairCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31812,16 +25084,9 @@ noncomputable def atomPairStep (w : ℕ) : ℕ :=
   packStateC (rem / 4) s2
 
 end AtomPairCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812d/atomPairCodeState.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31839,14 +25104,12 @@ noncomputable def atomPairCodeState (t : ℕ) : ℕ :=
       (Nat.pair t.unpair.1 (Nat.pair y IH)))
 
 end AtomPairCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace atomPairCodeState
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31865,17 +25128,12 @@ theorem succ (k n : ℕ) :
   simp only [unpair_pair_fst, unpair_pair_snd]
 
 end AtomPairCorrect
-
-end atomPairCodeState
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/atomPairJunk.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end atomPairCodeState
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31890,14 +25148,12 @@ noncomputable def atomPairJunk (n k : ℕ) : ℕ :=
     (Nat.pair k n)))
 
 end AtomPairCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace atomPairJunk
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XYPseqCodeZero
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31921,15 +25177,9 @@ theorem zero (k : ℕ) :
   simp [atomPairCodeState, atomPairBase, stateBase2]
 
 end XYPseqCodeZero
+end
 
-end atomPairJunk
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairJunk
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -31955,15 +25205,9 @@ theorem eq_zero_of_succ {k n : ℕ}
   exact junk_eq_zero_of_selectFn_eq_zero h1
 
 end AtomPairCorrect
+end
 
-end atomPairJunk
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairJunk
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32001,17 +25245,12 @@ theorem le_one (k n : ℕ) :
       (selectFn.le_one hb2 (emptyInterDec.le_one P₁ _) (emptyDiffDec.le_one P₁ hDiff1 _))
 
 end AtomPairCorrect2
-
-end atomPairJunk
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/other_4.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 /-- **Distinctness of bounded bit-sources**: two bit-sources both `< 4 ^ n` and unequal must
 disagree (via `deltaPair`) at some position strictly below `n`. Unlike `Theorem88d.lean`'s
 `eq_of_deltaOf_agree_of_lt_two_pow` (which this directly mirrors), agreement of `deltaPair k`/
@@ -32040,13 +25279,9 @@ theorem eq_of_deltaPair_agree_of_lt_four_pow {n k k' : ℕ} (hk : k < 4 ^ n) (hk
     have hile : (2 : ℕ) ^ (2 * n) ≤ 2 ^ l := Nat.pow_le_pow_right (by norm_num) hl
     rw [Nat.testBit_lt_two_pow ((h4n ▸ hk).trans_le hile),
       Nat.testBit_lt_two_pow ((h4n ▸ hk').trans_le hile)]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 /-- **Contrapositive form**: two distinct bit-sources both `< 4 ^ n` must disagree somewhere below
 `n` — the form actually consumed by `(d)(5)(b)`'s I-formula lemmas (ruling out cross-terms from a
 *different* bit-source witnessing the same point). -/
@@ -32055,13 +25290,9 @@ theorem exists_deltaPair_ne_of_lt_of_ne {n k k' : ℕ} (hk : k < 4 ^ n) (hk' : k
   by_contra hcon
   push Not at hcon
   exact hne (eq_of_deltaPair_agree_of_lt_four_pow hk hk' hcon)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect4
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32091,13 +25322,9 @@ theorem exists_atomPairG_deltaPair_inter_Xn_ne_empty (n : ℕ) :
   exact ⟨i, hi, Set.nonempty_iff_ne_empty.mp ⟨z, hzcover, hz⟩⟩
 
 end AtomPairCorrect4
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect4Snd
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32126,13 +25353,9 @@ theorem exists_atomPairG_deltaPair_inter_Yn_ne_empty (n : ℕ) :
   exact ⟨i, hi, Set.nonempty_iff_ne_empty.mp ⟨z, hzcover, hz⟩⟩
 
 end AtomPairCorrect4Snd
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32147,13 +25370,9 @@ noncomputable def atomPairIdx0 (n k : ℕ) : ℕ :=
     (Nat.pair k n)))
 
 end AtomPairCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32168,13 +25387,9 @@ noncomputable def atomPairIdx1 (n k : ℕ) : ℕ :=
     (Nat.pair k n)))
 
 end AtomPairCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32198,13 +25413,9 @@ noncomputable def xPseqAtomState (n i : ℕ) : ℕ :=
       (atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i))))
 
 end XPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32228,17 +25439,12 @@ noncomputable def yPseqAtomState (n i bx : ℕ) : ℕ :=
         (atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)))))))
 
 end YPseqCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/stateRemC_2.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace stateRemC
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32260,18 +25466,13 @@ theorem atomPairCodeState (k n : ℕ) :
       Nat.div_div_eq_div_mul, ← pow_succ]
 
 end AtomPairCorrect
-
-end stateRemC
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/atomPairCodeState_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end stateRemC
 namespace atomPairCodeState
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32347,15 +25548,9 @@ theorem correct (k n : ℕ)
       hxspec.1 hxspec.2 (deltaPair k n).2 hjunk
 
 end AtomPairCorrect2
+end
 
-end atomPairCodeState
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairCodeState
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect3
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32391,18 +25586,13 @@ theorem disjoint {n k k' : ℕ}
     P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deltaPair k) (deltaPair k') n hne
 
 end AtomPairCorrect3
-
-end atomPairCodeState
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/atomPairG_3.lean
-namespace DomainTheory.NeighbourhoodSystems
+end atomPairCodeState
 namespace atomPairG
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairCorrect5
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32540,15 +25730,9 @@ theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
         hD₁diff splitX hxSplit P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deltaPair i) n) (ih hn1)
 
 end AtomPairCorrect5
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect5
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32693,18 +25877,13 @@ theorem snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
         hD₁diff splitX hxSplit P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deltaPair i) n) (ih hn1)
 
 end AtomPairCorrect5
-
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/atomPairJunk_3.lean
-namespace DomainTheory.NeighbourhoodSystems
+end atomPairG
 namespace atomPairJunk
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section AtomPairCorrect5
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32733,17 +25912,12 @@ theorem eq_zero_of_snd_ne_empty {i n : ℕ}
     hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne i n h1)
 
 end AtomPairCorrect5
-
-end atomPairJunk
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/yPseqAtomIdx.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32760,14 +25934,12 @@ noncomputable def yPseqAtomIdx (n i bx : ℕ) : ℕ :=
   stateIdx0 (yPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx)
 
 end YPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace yPseqAtomIdx
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32784,17 +25956,12 @@ theorem mem (n i bx : ℕ) :
   P₀.mem_X _
 
 end YPseqCode
-
-end yPseqAtomIdx
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/yPseqAtomJunk.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end yPseqAtomIdx
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32810,14 +25977,12 @@ noncomputable def yPseqAtomJunk (n i bx : ℕ) : ℕ :=
   stateJunk (yPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx)
 
 end YPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace yPseqAtomJunk
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32838,15 +26003,9 @@ theorem le_one {bx : ℕ} (hbx : bx ≤ 1) (n i : ℕ) :
     (le_refl 1) (selectFn.le_one hbx (emptyInterDec.le_one P₀ _) (emptyDiffDec.le_one P₀ hDiff0 _))
 
 end YPseqCode
+end
 
-end yPseqAtomJunk
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yPseqAtomJunk
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32864,15 +26023,9 @@ theorem zero_or_one {bx : ℕ} (hbx : bx ≤ 1) (n i : ℕ) :
   omega
 
 end YPseqCode
+end
 
-end yPseqAtomJunk
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yPseqAtomJunk
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -32964,15 +26117,9 @@ theorem eq_zero_of_bit {i n : ℕ}
   exact hyc0
 
 end YPseqCodeUnconditional
+end
 
-end yPseqAtomJunk
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yPseqAtomJunk
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33040,18 +26187,13 @@ theorem exists_zero (n : ℕ) :
     exact ⟨i, hi, 0, Nat.zero_le 1, hzero⟩
 
 end YPseqCodeUnconditional
-
-end yPseqAtomJunk
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/atomPairJunk_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end yPseqAtomJunk
 namespace atomPairJunk
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section YPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33094,15 +26236,9 @@ theorem eq_zero_of_yPseqAtomJunk {n i : ℕ} (b : Bool)
   exact junk_eq_zero_of_selectFn_eq_zero h3
 
 end YPseqCodeIFormula
+end
 
-end atomPairJunk
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairJunk
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCorrect5
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33130,17 +26266,12 @@ theorem eq_zero_of_ne_empty {i n : ℕ}
     hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne i n h1)
 
 end AtomPairCorrect5
-
-end atomPairJunk
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/xPseqAtomJunk.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33157,14 +26288,12 @@ noncomputable def xPseqAtomJunk (n i : ℕ) : ℕ :=
   stateJunk (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)
 
 end XPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace xPseqAtomJunk
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33184,15 +26313,9 @@ theorem eq (n i : ℕ) :
   rw [xSubStep.junk_eq, stateIdx0_packState2, stateJunk_packState2, selectFn_one]
 
 end XPseqCode
+end
 
-end xPseqAtomJunk
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xPseqAtomJunk
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33210,15 +26333,9 @@ theorem le_one (n i : ℕ) :
     (le_refl 1) (emptyInterDec.le_one P₀ _)
 
 end XPseqCode
+end
 
-end xPseqAtomJunk
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xPseqAtomJunk
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33236,15 +26353,9 @@ theorem zero_or_one (n i : ℕ) :
   omega
 
 end XPseqCode
+end
 
-end xPseqAtomJunk
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xPseqAtomJunk
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33291,17 +26402,12 @@ theorem exists_zero (n : ℕ) :
   exact hne' ((emptyInterDec.eq_one_iff P₀ hD₀pos hD₀nomin _ _).mp h1)
 
 end XPseqCodeUnconditional
-
-end xPseqAtomJunk
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/xPseqAtomIdx.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end xPseqAtomJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33317,14 +26423,12 @@ noncomputable def xPseqAtomIdx (n i : ℕ) : ℕ :=
   stateIdx1 (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)
 
 end XPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace xPseqAtomIdx
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33342,15 +26446,9 @@ theorem mem (n i : ℕ) :
   P₁.mem_X _
 
 end XPseqCode
+end
 
-end xPseqAtomIdx
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xPseqAtomIdx
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33377,17 +26475,12 @@ theorem eq {n i : ℕ}
   rw [xSubStep.idx1_eq (h := h'), stateIdx0_packState2, stateIdx1_packState2, selectFn_one]
 
 end XPseqCode
-
-end xPseqAtomIdx
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/other_5.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end xPseqAtomIdx
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33413,13 +26506,9 @@ noncomputable def XFoldStep (w : ℕ) : ℕ :=
       (Nat.pair 1 (xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)))
 
 end XPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33442,13 +26531,9 @@ theorem XFoldStep_eq (n i acc : ℕ) :
   simp only [unpair_pair_fst, unpair_pair_snd]
 
 end XPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XYPseqCodeZero
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33480,13 +26565,9 @@ theorem xPseqAtomIdx0_eq {n i : ℕ}
   rw [xSubStep.idx0_eq (h := h'), stateIdx0_packState2, selectFn_one]
 
 end XYPseqCodeZero
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33511,13 +26592,9 @@ noncomputable def YFoldStep (w : ℕ) : ℕ :=
       (Nat.pair 1 (yPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx)))
 
 end YPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33540,13 +26617,9 @@ noncomputable def YFoldInnerPair (nb N : ℕ) : ℕ :=
     hUnion0 (Nat.pair nb (Nat.pair i acc)))
 
 end YPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33569,16 +26642,9 @@ theorem YFoldStep_eq (n bx i acc : ℕ) :
   simp only [unpair_pair_fst, unpair_pair_snd]
 
 end YPseqCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812d/XFold.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33596,14 +26662,12 @@ noncomputable def XFold (n N : ℕ) : ℕ :=
     hUnion1 (Nat.pair n (Nat.pair i acc)))
 
 end XPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace XFold
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33621,15 +26685,9 @@ theorem succ (n N : ℕ) :
           n N))) := rfl
 
 end XPseqCode
+end
 
-end XFold
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace XFold
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33644,15 +26702,9 @@ theorem zero (n : ℕ) : XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSp
     Nat.pair 0 0 := rfl
 
 end XPseqCode
+end
 
-end XFold
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace XFold
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33683,15 +26735,9 @@ theorem found_le_one (n : ℕ) :
     · rw [h1, selectFn_one]; exact ih
 
 end XPseqCode
+end
 
-end XFold
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace XFold
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33740,15 +26786,9 @@ theorem found_iff (n : ℕ) :
         · exact absurd hie (by omega)
 
 end XPseqCode
+end
 
-end XFold
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace XFold
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33801,15 +26841,9 @@ theorem mem_of_found (n : ℕ) :
       exact ih hfound1
 
 end XPseqCode
+end
 
-end XFold
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace XFold
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33881,15 +26915,9 @@ theorem mem_iff (n : ℕ) :
         · exact absurd hie (by omega)
 
 end XPseqCode
+end
 
-end XFold
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace XFold
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33914,17 +26942,12 @@ theorem four_pow_found (n : ℕ) :
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne n)
 
 end XPseqCodeUnconditional
-
-end XFold
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/XPseqCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end XFold
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33942,14 +26965,12 @@ noncomputable def XPseqCode (n : ℕ) : ℕ :=
   (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n (4 ^ n)).unpair.2
 
 end XPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace XPseqCode
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -33971,15 +26992,9 @@ theorem mem {n : ℕ}
     hUnion1 n (4 ^ n) hfound
 
 end XPseqCode
+end
 
-end XPseqCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace XPseqCode
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34003,17 +27018,12 @@ theorem mem_unconditional (n : ℕ) :
       hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion1 n)
 
 end XPseqCodeUnconditional
-
-end XPseqCode
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/YFoldInner.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end XPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34031,14 +27041,12 @@ noncomputable def YFoldInner (n bx N : ℕ) : ℕ :=
     hUnion0 (Nat.pair (Nat.pair n bx) (Nat.pair i acc)))
 
 end YPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace YFoldInner
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34055,15 +27063,9 @@ theorem eq_pair (n bx N : ℕ) :
         (Nat.pair n bx) N := rfl
 
 end YPseqCode
+end
 
-end YFoldInner
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YFoldInner
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34081,15 +27083,9 @@ theorem succ (n bx N : ℕ) :
           splitY hSplitY hUnion0 n bx N))) := rfl
 
 end YPseqCode
+end
 
-end YFoldInner
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YFoldInner
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34105,15 +27101,9 @@ theorem zero (n bx : ℕ) :
       Nat.pair 0 0 := rfl
 
 end YPseqCode
+end
 
-end YFoldInner
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YFoldInner
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34145,15 +27135,9 @@ theorem found_le_one {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
     · rw [h1, selectFn_one]; exact ih
 
 end YPseqCode
+end
 
-end YFoldInner
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YFoldInner
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34203,15 +27187,9 @@ theorem found_iff {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
         · exact absurd hie (by omega)
 
 end YPseqCode
+end
 
-end YFoldInner
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YFoldInner
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34262,15 +27240,9 @@ theorem mem_of_found {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
       exact ih hfound1
 
 end YPseqCode
+end
 
-end YFoldInner
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YFoldInner
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34342,15 +27314,9 @@ theorem mem_iff {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
         · exact absurd hie (by omega)
 
 end YPseqCode
+end
 
-end YFoldInner
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YFoldInner
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34379,17 +27345,12 @@ theorem or_found (n : ℕ) :
       (le_refl 1) n (4 ^ n)).mpr ⟨i, hi, hzero⟩)
 
 end YPseqCodeUnconditional
-
-end YFoldInner
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/YPseqCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end YFoldInner
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34408,14 +27369,12 @@ noncomputable def YPseqCode (n : ℕ) : ℕ :=
     (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))).unpair.2
 
 end YPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace YPseqCode
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34446,15 +27405,9 @@ theorem mem {n : ℕ}
     hfound
 
 end YPseqCode
+end
 
-end YPseqCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YPseqCode
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34484,15 +27437,9 @@ theorem four_pow_found (n : ℕ) :
       hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 n)
 
 end YPseqCodeUnconditional
+end
 
-end YPseqCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YPseqCode
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34515,17 +27462,12 @@ theorem mem_unconditional (n : ℕ) :
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 n)
 
 end YPseqCodeUnconditional
-
-end YPseqCode
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/combinedXCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end YPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34547,14 +27489,12 @@ noncomputable def combinedXCode (n : ℕ) : Set α :=
   else P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 (n / 2))
 
 end CombinedCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace combinedXCode
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34575,15 +27515,9 @@ theorem even (k : ℕ) :
   rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
 end CombinedCode
+end
 
-end combinedXCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace combinedXCode
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34605,15 +27539,9 @@ theorem odd (k : ℕ) :
   rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 end CombinedCode
+end
 
-end combinedXCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace combinedXCode
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34638,17 +27566,12 @@ theorem subset_master (i : ℕ) :
   split <;> exact D₀.sub_master (P₀.mem_X _)
 
 end CombinedCodeTransfer
-
-end combinedXCode
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/combinedYCode.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end combinedXCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34671,14 +27594,12 @@ noncomputable def combinedYCode (n : ℕ) : Set β :=
   else P₁.X (n / 2)
 
 end CombinedCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace combinedYCode
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34700,15 +27621,9 @@ theorem even (k : ℕ) :
   rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
 end CombinedCode
+end
 
-end combinedYCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace combinedYCode
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34730,15 +27645,9 @@ theorem odd (k : ℕ) :
   rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 end CombinedCode
+end
 
-end combinedYCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace combinedYCode
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34760,17 +27669,12 @@ theorem subset_master (i : ℕ) :
   split <;> exact D₁.sub_master (P₁.mem_X _)
 
 end CombinedCodeTransfer
-
-end combinedYCode
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/other_6.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end combinedYCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34795,13 +27699,9 @@ theorem mem_XPseqCode_iff {n : ℕ}
     n (4 ^ n) hfound z
 
 end XPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34861,13 +27761,9 @@ theorem mem_YPseqCode_iff {n : ℕ}
         hD₀pos hD₀diff hD₀nomin hUnion0 (le_refl 1) n (4 ^ n) hf1 z).mpr ⟨i, hi, hie, hz⟩⟩
 
 end YPseqCode
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34894,13 +27790,9 @@ theorem mem_XPseqCode_iff_unconditional (n : ℕ) (z : β) :
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion1 n) z
 
 end XPseqCodeUnconditional
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -34929,17 +27821,12 @@ theorem mem_YPseqCode_iff_unconditional (n : ℕ) (z : α) :
       hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 n) z
 
 end YPseqCodeUnconditional
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/primrec.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -34950,15 +27837,9 @@ theorem existsDiffDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.ex
   (primrec_isOne.comp hDiff.diff_computable.choose_spec.1).of_eq fun _ => rfl
 
 end DirectDec
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -34969,15 +27850,9 @@ theorem emptyDiffDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.emp
   primrec_sub₂ (Nat.Primrec.const 1) (primrec.existsDiffDec P hDiff)
 
 end DirectDec
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -34986,15 +27861,9 @@ theorem existsInterDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.e
   (primrec_isOne.comp P.cons_computable.choose_spec.1).of_eq fun _ => rfl
 
 end DirectDec
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -35003,45 +27872,21 @@ theorem emptyInterDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.em
   primrec_sub₂ (Nat.Primrec.const 1) (primrec.existsInterDec P)
 
 end DirectDec
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 theorem stateIdx0 : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateIdx0 := Nat.Primrec.left
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 theorem stateIdx1 : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateIdx1 := Nat.Primrec.left.comp Nat.Primrec.right
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 theorem stateJunk : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateJunk := Nat.Primrec.right.comp Nat.Primrec.right
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35055,15 +27900,9 @@ theorem atomPairBase : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.ato
     fun k => by unfold _root_.DomainTheory.NeighbourhoodSystems.atomPairBase packStateC; simp only [id_eq]
 
 end AtomPairCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 theorem combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) :
     Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.combineFound2 hUnion t.unpair.1 t.unpair.2) := by
@@ -35081,35 +27920,17 @@ theorem combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
       (Nat.pair 1 (hUnion.unionIdx t.unpair.1.unpair.2 t.unpair.2.unpair.2)) t.unpair.1) :=
     primrec_selectFn hf1 ((Nat.Primrec.const 1).pair hunion) h0
   exact (primrec_selectFn hf0 hinner h1).of_eq fun t => by unfold _root_.DomainTheory.NeighbourhoodSystems.combineFound2; simp only []
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 theorem stateInnerC : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateInnerC := Nat.Primrec.right
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 theorem stateRemC : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateRemC := Nat.Primrec.left
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35120,15 +27941,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 theorem xwB1 : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.xwB1 := Nat.Primrec.left.comp Nat.Primrec.right
 
 end XSubStep
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35140,15 +27955,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 theorem pcN : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.pcN := primrec.xwB1
 
 end AtomPairCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35159,15 +27968,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 theorem xwN : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.xwN := Nat.Primrec.left
 
 end XSubStep
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35178,15 +27981,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 theorem xwS : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.xwS := Nat.Primrec.right.comp Nat.Primrec.right
 
 end XSubStep
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35198,15 +27995,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 theorem pcT : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.pcT := primrec.xwS
 
 end AtomPairCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35272,15 +28063,9 @@ theorem xSubStep : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.xSubSte
     simp only []
 
 end XSubStep
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35346,15 +28131,9 @@ theorem ySubStep : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.ySubSte
     simp only []
 
 end YSubStep
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35395,15 +28174,9 @@ theorem atomPairStep :
     simp only []
 
 end AtomPairCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35418,15 +28191,9 @@ theorem atomPairCodeState :
     (primrec.atomPairStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY)).of_eq fun _ => rfl
 
 end AtomPairCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35442,15 +28209,9 @@ theorem atomPairIdx0 : Nat.Primrec
       (Nat.Primrec.right.pair Nat.Primrec.left)))).of_eq fun _ => rfl
 
 end AtomPairCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35466,15 +28227,9 @@ theorem atomPairIdx1 : Nat.Primrec
       (Nat.Primrec.right.pair Nat.Primrec.left)))).of_eq fun _ => rfl
 
 end AtomPairCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35490,15 +28245,9 @@ theorem atomPairJunk : Nat.Primrec
       (Nat.Primrec.right.pair Nat.Primrec.left)))).of_eq fun _ => rfl
 
 end AtomPairCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35535,15 +28284,9 @@ theorem xPseqAtomState : Nat.Primrec
   exact ((primrec.xSubStep P₀ P₁ hDiff0 splitX hSplitX).comp (hn.pair hinner)).of_eq fun _ => rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35561,15 +28304,9 @@ theorem xPseqAtomIdx : Nat.Primrec
     hSplitY)).of_eq fun _ => rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35587,15 +28324,9 @@ theorem xPseqAtomJunk : Nat.Primrec
     hSplitY)).of_eq fun _ => rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35643,15 +28374,9 @@ theorem XFoldStep :
   exact (primrec_selectFn hjunk hacc hinner).of_eq fun w => by unfold _root_.DomainTheory.NeighbourhoodSystems.XFoldStep; simp only []
 
 end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35670,15 +28395,9 @@ theorem XFold : Nat.Primrec
     fun _ => rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35701,15 +28420,9 @@ theorem XPseqCode : Nat.Primrec
   rw [unpair_pair_fst, unpair_pair_snd]; rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35789,15 +28502,9 @@ theorem yPseqAtomState : Nat.Primrec
   exact ((primrec.ySubStep P₀ P₁ hDiff1 splitY hSplitY).comp hystep_arg).of_eq fun _ => rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35815,15 +28522,9 @@ theorem yPseqAtomIdx : Nat.Primrec
     hSplitY)).of_eq fun _ => rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35841,15 +28542,9 @@ theorem yPseqAtomJunk : Nat.Primrec
     hSplitY)).of_eq fun _ => rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35901,15 +28596,9 @@ theorem YFoldStep :
   exact (primrec_selectFn hjunk hacc hinner).of_eq fun w => by unfold _root_.DomainTheory.NeighbourhoodSystems.YFoldStep; simp only []
 
 end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35928,15 +28617,9 @@ theorem YFoldInnerPair : Nat.Primrec
     fun _ => rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -35962,15 +28645,9 @@ theorem YFoldInner : Nat.Primrec
         t.unpair.1.unpair.1 t.unpair.1.unpair.2 t.unpair.2).symm
 
 end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -36004,18 +28681,13 @@ theorem YPseqCode : Nat.Primrec
   exact (Nat.Primrec.right.comp hcomb).of_eq fun _ => rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-
-end primrec
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/xPseqAtomIdx_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end primrec
 namespace xPseqAtomIdx
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -36073,15 +28745,9 @@ theorem subset_atomPairIdx1 {n m : ℕ}
     _ = (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair m) n).2 := hspec.2.2.2.2.1
 
 end XPseqCodeIFormula
+end
 
-end xPseqAtomIdx
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xPseqAtomIdx
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -36142,18 +28808,13 @@ theorem eq_inter_XPseqCode {n k : ℕ} (hk : k < 4 ^ n)
       exact absurd (Set.mem_inter hz'' hzB) (by rw [hdisj]; simp)
 
 end XPseqCodeIFormula
-
-end xPseqAtomIdx
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/xStepG_3.lean
-namespace DomainTheory.NeighbourhoodSystems
+end xPseqAtomIdx
 namespace xStepG
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -36270,15 +28931,9 @@ theorem snd_eq_inter_XPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) :
       rw [h2empty, hdisjXP]
 
 end CombinedCode
+end
 
-end xStepG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace xStepG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -36350,18 +29005,13 @@ theorem snd_succ_eq_XPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     · rintro ⟨hx1, -, hx2⟩; exact ⟨hx1, hx2⟩
 
 end CombinedCode
-
-end xStepG
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/genAtom.lean
-namespace DomainTheory.NeighbourhoodSystems
+end xStepG
 namespace genAtom
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -36403,15 +29053,9 @@ theorem combinedXCode_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
     exact inter.diff_eq_diff_of_subset hAsub
 
 end CombinedCode
+end
 
-end genAtom
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace genAtom
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -36445,18 +29089,13 @@ theorem combinedYCode_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
     hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion1 δ n (δ n).1).symm
 
 end CombinedCode
-
-end genAtom
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/yPseqAtomIdx_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end genAtom
 namespace yPseqAtomIdx
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section YPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -36546,15 +29185,9 @@ theorem subset_xStepGFst {n i : ℕ} (b : Bool)
   exact yStepG.fst_subset hySplit hBA hAmem (P₁.X n) true
 
 end YPseqCodeIFormula
+end
 
-end yPseqAtomIdx
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yPseqAtomIdx
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -36592,15 +29225,9 @@ theorem subset_atomPairIdx0 {n i : ℕ} (b : Bool)
     (xStepG.fst_subset splitX _ _ (P₀.X n) b)
 
 end YPseqCodeIFormula
+end
 
-end yPseqAtomIdx
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yPseqAtomIdx
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -36676,15 +29303,9 @@ theorem eq_of_dichotomy {n i i' : ℕ} {z : α} (b b' : Bool)
     exact absurd (Set.mem_inter hzA' hzA) (by rw [hdisj]; simp)
 
 end YPseqCodeIFormula
+end
 
-end yPseqAtomIdx
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yPseqAtomIdx
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section YPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -36738,18 +29359,13 @@ theorem eq_inter_YPseqCode {n i : ℕ} (hi : i < 4 ^ n) (b : Bool)
         hjunk hjunk' hzA1 hz'
 
 end YPseqCodeIFormula
-
-end yPseqAtomIdx
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/yStepG_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end yPseqAtomIdx
 namespace yStepG
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37006,15 +29622,9 @@ theorem fst_eq_inter_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (bx : Bool)
       rw [h1empty, hdisjYP]
 
 end CombinedCode
+end
 
-end yStepG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace yStepG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37110,18 +29720,13 @@ theorem fst_succ_eq_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     · rintro ⟨hx1, -, hx2⟩; exact ⟨hx1, hx2⟩
 
 end CombinedCode
-
-end yStepG
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/atomPairG_4.lean
-namespace DomainTheory.NeighbourhoodSystems
+end yStepG
 namespace atomPairG
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37166,15 +29771,9 @@ theorem snd_eq_genAtomCode (δ : ℕ → Bool × Bool) (n : ℕ) :
         exact (inter.diff_eq_diff_of_subset hB1sub).symm
 
 end CombinedCode
+end
 
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace atomPairG
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37217,18 +29816,13 @@ theorem fst_eq_genAtomCode (δ : ℕ → Bool × Bool) (n : ℕ) :
       rw [atomPairG.succ_eq, hstep, h2, genAtom.succ', combinedδ_odd, combinedXCode.odd, hodd]
 
 end CombinedCode
-
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/hcoreCode.lean
-namespace DomainTheory.NeighbourhoodSystems
+end atomPairG
 namespace hcoreCode
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37270,15 +29864,9 @@ theorem even (δ' : ℕ → Bool) (n : ℕ) :
     P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deinterleaveδ δ') n).1
 
 end CombinedCode
+end
 
-end hcoreCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace hcoreCode
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37325,14 +29913,12 @@ theorem odd (δ' : ℕ → Bool) (n : ℕ) :
     P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deinterleaveδ δ') n).1.symm
 
 end CombinedCode
+end
 
 end hcoreCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37374,17 +29960,12 @@ theorem hcoreCode (δ' : ℕ → Bool) (n : ℕ) :
       hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 δ' (n / 2)
 
 end CombinedCode
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/transfer.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace transfer
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37424,15 +30005,9 @@ theorem empty_combinedCode {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ c
       hc' hn⟩
 
 end CombinedCodeTransfer
+end
 
-end transfer
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace transfer
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37489,15 +30064,9 @@ theorem double_subset_combinedCode (i j k : ℕ) :
   exact key
 
 end CombinedCodeTransfer
+end
 
-end transfer
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace transfer
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37548,15 +30117,9 @@ theorem subset_combinedCode (i j : ℕ) :
   exact key
 
 end CombinedCodeTransfer
+end
 
-end transfer
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace transfer
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37640,18 +30203,13 @@ theorem inter_eq_combinedCode (i j k : ℕ)
     exact Set.Subset.antisymm (h3.mpr hijk) (Set.subset_inter (h1.mpr hki) (h2.mpr hkj))
 
 end CombinedCodeTransfer
-
-end transfer
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/YPseqCode_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end transfer
 namespace YPseqCode
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XYPseqCodeZero
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37787,15 +30345,9 @@ theorem zero :
     rwa [hyzeroeq]
 
 end XYPseqCodeZero
+end
 
-end YPseqCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YPseqCode
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCodeCrossFamily
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37830,15 +30382,9 @@ theorem subset_X_iff_Y_subset_XPseqCode (i j : ℕ) :
   exact key
 
 end CombinedCodeCrossFamily
+end
 
-end YPseqCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace YPseqCode
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37872,17 +30418,12 @@ theorem inter_eq_iff_Y_inter_eq (i j k : ℕ) :
   exact key
 
 end CombinedCodeTransfer
-
-end YPseqCode
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/other_7.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end YPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section CombinedCodeCrossFamily
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37920,13 +30461,9 @@ theorem X_subset_YPseqCode_iff_XPseqCode_subset_Y (i j : ℕ) :
   exact key
 
 end CombinedCodeCrossFamily
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -37958,13 +30495,9 @@ theorem X_subset_iff_XPseqCode_subset (i j : ℕ) :
   exact key
 
 end CombinedCodeTransfer
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section XEqIffXPseqCodeEq
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38010,13 +30543,9 @@ theorem X_eq_iff_XPseqCode_eq (i j : ℕ) :
         i).mpr h.symm.subset)
 
 end XEqIffXPseqCodeEq
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38048,17 +30577,12 @@ theorem X_inter_eq_iff_XPseqCode_inter_eq (i j k : ℕ) :
   exact key
 
 end CombinedCodeTransfer
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/XPseqCode_2.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace XPseqCode
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section XYPseqCodeZero
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38130,15 +30654,9 @@ theorem zero :
     rwa [hzeroeq]
 
 end XYPseqCodeZero
+end
 
-end XPseqCode
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace XPseqCode
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section CombinedCodeCrossFamily
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38183,18 +30701,13 @@ theorem eq_Y_iff_X_eq_YPseqCode (j k : ℕ) :
         hUnion0 hUnion1 k j).mp h.symm.subset)
 
 end CombinedCodeCrossFamily
-
-end XPseqCode
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/toD1Code.lean
-namespace DomainTheory.NeighbourhoodSystems
+end XPseqCode
 namespace toD1Code
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section ToD1CodeUpMem
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38246,14 +30759,12 @@ theorem up_mem (x : D₀.Element) {T1 T2 : Set β}
     (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 k) k).mpr rfl).symm
 
 end ToD1CodeUpMem
+end
 
 end toD1Code
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section ToD1Code
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38306,17 +30817,12 @@ def toD1Code (x : D₀.Element) : D₁.Element where
     hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 x
 
 end ToD1Code
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/toD0Code.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace toD0Code
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section ToD0CodeUpMem
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38371,14 +30877,12 @@ theorem up_mem (y : D₁.Element) {S1 S2 : Set α}
     k (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 k)).mp rfl
 
 end ToD0CodeUpMem
+end
 
 end toD0Code
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section ToD0Code
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38433,14 +30937,12 @@ def toD0Code (y : D₁.Element) : D₀.Element where
     hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 y
 
 end ToD0Code
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace toD0Code
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section ToD0CodeToD1Code
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38495,18 +30997,13 @@ theorem toD1Code (x : D₀.Element) :
       n, rfl, hxS⟩
 
 end ToD0CodeToD1Code
-
-end toD0Code
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/toD1Code_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end toD0Code
 namespace toD1Code
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section ToD1CodeToD0Code
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38564,17 +31061,12 @@ theorem toD0Code (y : D₁.Element) :
       n, rfl, hyT⟩
 
 end ToD1CodeToD0Code
-
-end toD1Code
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/domainIsoCode812d.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end toD1Code
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section DomainIsoCode812d
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38631,17 +31123,12 @@ noncomputable def domainIsoCode812d : DomainIso D₀ D₁ where
       exact ⟨n, hn, hle _ hxn⟩
 
 end DomainIsoCode812d
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/toD0Code_2.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace toD0Code
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section ToD0CodeRelIff
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38682,18 +31169,13 @@ theorem rel_iff (m n : ℕ) :
     exact ⟨P₁.mem_X m, k, hk, P₁.mem_X k, hsub⟩
 
 end ToD0CodeRelIff
-
-end toD0Code
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/toD1Code_3.lean
-namespace DomainTheory.NeighbourhoodSystems
+end toD0Code
 namespace toD1Code
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section ToD1CodeRelIff
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38735,18 +31217,13 @@ theorem rel_iff (n m : ℕ) :
     exact ⟨P₀.mem_X n, k, hk, P₀.mem_X k, hsub⟩
 
 end ToD1CodeRelIff
-
-end toD1Code
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/domainIsoCode812d_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end toD1Code
 namespace domainIsoCode812d
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+section
 section DomainIsoCode812dSymmIsComputableMap
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38804,15 +31281,9 @@ theorem symm_isComputableMap :
     exact ⟨k, hk.1, hk.2⟩
 
 end DomainIsoCode812dSymmIsComputableMap
+end
 
-end domainIsoCode812d
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace domainIsoCode812d
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
+section
 section DomainIsoCode812dIsComputableMap
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -38871,15 +31342,10 @@ theorem isComputableMap :
     exact ⟨k, hk.1, hk.2⟩
 
 end DomainIsoCode812dIsComputableMap
-
-end domainIsoCode812d
-end DomainTheory.NeighbourhoodSystems
 end
 
+end domainIsoCode812d
 section
--- Exercise812d/other_8.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 /-- **Union-closure**, the `∪` analogue of `NeighborhoodSystem.DiffClosed`: the union of two
@@ -38888,11 +31354,9 @@ union of two `NoMinimal`-nonempty neighbourhoods is automatically itself non-emp
 question `UnionClosed` settles is whether the union stays inside `V.mem`. -/
 def NeighborhoodSystem.UnionClosed {α : Type*} (D : NeighborhoodSystem α) : Prop :=
   ∀ {X Y : Set α}, D.mem X → D.mem Y → D.mem (X ∪ Y)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 section InvMapComp812d
@@ -38939,11 +31403,9 @@ theorem invMap_comp_toMap :
   rw [toElementMap_ofIso, toElementMap_ofIso, OrderIso.symm_apply_apply, toElementMap_idMap]
 
 end InvMapComp812d
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 section ToMapComp812d
@@ -38988,11 +31450,9 @@ theorem toMap_comp_invMap :
   rw [toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply, toElementMap_idMap]
 
 end ToMapComp812d
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 section EffectiveIso812d
@@ -39038,11 +31498,9 @@ noncomputable def effectiveIso812d : EffectiveIso P₀ P₁ where
     hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0
 
 end EffectiveIso812d
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 namespace IsComputableSplit
@@ -39172,12 +31630,10 @@ theorem effectivelyIsomorphic_812d : EffectivelyIsomorphic P₀ P₁ :=
   ⟨effectiveIso812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff hD₀nomin
     hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0⟩
 end EffectiveIso812d
-end DomainTheory.NeighbourhoodSystems
+end
 
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 
 namespace IsComputableSplit
 
@@ -39191,12 +31647,10 @@ theorem negIdx_mem (h : IsComputableSplit P Q split) (n m k : ℕ)
   rw [h.negIdx_spec n m k hne]; exact Q.mem_X _
 
 end IsComputableSplit
-end DomainTheory.NeighbourhoodSystems
+end
 
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 
 namespace IsComputableSplit
 
@@ -39212,13 +31666,9 @@ theorem posIdx_mem (h : IsComputableSplit P Q split) (n m k : ℕ)
   rw [h.posIdx_spec n m k hne]; exact Q.mem_X _
 
 end IsComputableSplit
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812d.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_812_d.{u_1, u_2} : And
@@ -46156,11 +38606,9 @@ theorem example_812_d.{u_1, u_2} : And
       @DomainTheory.NeighbourhoodSystems.toD1Code.toD0Code)
     @DomainTheory.NeighbourhoodSystems.toD1Code.up_mem)
   @DomainTheory.NeighbourhoodSystems.toMap_comp_invMap
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- **A union of two genuine `U`-neighbourhoods is again genuine, unconditionally** — no
@@ -46172,11 +38620,9 @@ theorem U_union_UX_mem (n m : ℕ) : U.mem (UX n ∪ UX m) := by
   obtain ⟨⟨L2, hL2⟩, -, hsub2⟩ := U_mem_UX m
   exact ⟨⟨L1 ++ L2, by rw [presentedIntervals_append, hL1, hL2]⟩,
     hne1.mono Set.subset_union_left, Set.union_subset hsub1 hsub2⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- The **raw** `(level, mask)` code for `VX n ∪ VX m`, before re-canonicalization: upsample both
@@ -46189,11 +38635,9 @@ def VunionRaw (n m : ℕ) : ℕ :=
         (canonIdx n).unpair.2)
       (myUpsample (canonIdx m).unpair.1 (max (canonIdx n).unpair.1 (canonIdx m).unpair.1)
         (canonIdx m).unpair.2))
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- `decodeQPairList` commutes with `appendListCode` (it is just `decodeList` followed by a fixed
@@ -46202,21 +38646,17 @@ theorem decodeQPairList_appendListCode (c1 c2 : ℕ) :
     decodeQPairList (appendListCode c1 c2) = decodeQPairList c1 ++ decodeQPairList c2 := by
   unfold decodeQPairList
   rw [appendListCode_eq, List.map_append]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- The low-bit XOR `(x ^^^ y) % 2`, in arithmetic `{0,1}`-valued form: the sum of the low bits,
 mod `2`. -/
 def lowXor (x y : ℕ) : ℕ := (x % 2 + y % 2) % 2
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- `lowXor x y = (x ^^^ y) % 2`. -/
@@ -46224,11 +38664,9 @@ theorem lowXor_eq_mod (x y : ℕ) : lowXor x y = (x ^^^ y) % 2 := by
   unfold lowXor
   rw [Nat.xor_mod_two_eq]
   exact (Nat.add_mod x y 2).symm
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- Packed iteration state `pair (pair curA curB) (pair weight acc)` for the bitwise-XOR fold. -/
@@ -46236,32 +38674,26 @@ def xorStep (s : ℕ) : ℕ :=
   Nat.pair (Nat.pair (s.unpair.1.unpair.1 / 2) (s.unpair.1.unpair.2 / 2))
     (Nat.pair (2 * s.unpair.2.unpair.1)
       (s.unpair.2.unpair.2 + s.unpair.2.unpair.1 * lowXor s.unpair.1.unpair.1 s.unpair.1.unpair.2))
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- The iterative bitwise XOR: iterate `xorStep` `a + b` times from the initial state, and read off
 the accumulator. -/
 def myXor (a b : ℕ) : ℕ :=
   (xorStep^[a + b] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.2
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- `a` with `b`'s bits cleared: `a ^^^ (a &&& b)` (`testBit.xor_and_self`), computed via `myXor`
 composed with the already-`Pass` `myLand`. -/
 def myAndNot (a b : ℕ) : ℕ := myXor a (myLand a b)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- The **raw** `(level, mask)` code for `VX n \ VX m`, before re-canonicalization: upsample both
@@ -46273,11 +38705,9 @@ def VdiffRaw (n m : ℕ) : ℕ :=
         (canonIdx n).unpair.2)
       (myUpsample (canonIdx m).unpair.1 (max (canonIdx n).unpair.1 (canonIdx m).unpair.1)
         (canonIdx m).unpair.2))
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- One recursion step for `Nat.xor` on the low bit: `x ^^^ y = 2 (x/2 ^^^ y/2) + lowXor x y`. -/
@@ -46290,11 +38720,9 @@ theorem xor_low_rec (x y : ℕ) : x ^^^ y = 2 * (x / 2 ^^^ y / 2) + lowXor x y :
   have hmod := lowXor_eq_mod x y
   conv_lhs => rw [← Nat.div_add_mod (x ^^^ y) 2]
   rw [hdiv, hmod]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- **Invariant of the bitwise-XOR iteration.** After `k` steps the two running arguments are
@@ -46336,11 +38764,9 @@ theorem xorStep_iter_spec (a b : ℕ) : ∀ k,
     · rw [p21, hW, ← pow_succ']
     · rw [p22, hA, hB, hW, hdd, hdd', pow_succ, ← hAcc, xor_low_rec (a / 2 ^ k) (b / 2 ^ k)]
       ring
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- **Correctness of the iterative bitwise XOR.** `myXor a b = a ^^^ b`. -/
@@ -46355,27 +38781,19 @@ theorem myXor_eq_xor (a b : ℕ) : myXor a b = a ^^^ b := by
       (Nat.le_add_left b a)))
   rw [ha0, hb0] at hAcc
   simpa using hAcc
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 theorem myAndNot_eq (a b : ℕ) : myAndNot a b = a ^^^ (a &&& b) := by
   unfold myAndNot; rw [myXor_eq_xor, myLand_eq_land]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/atomPairG_5.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace atomPairG
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-
+section
 section Recover
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -46419,18 +38837,13 @@ theorem splitChoice_eq (δ : ℕ → Bool × Bool) :
     rfl
 
 end Recover
-end atomPairG
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/atomPairJunk_4.lean
-namespace DomainTheory.NeighbourhoodSystems
+end atomPairG
 namespace atomPairJunk
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-
+section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -46451,18 +38864,13 @@ theorem mono {n k : ℕ}
   omega
 
 end AtomPairCorrect2
-end atomPairJunk
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812d/combineFound2_2.lean
-namespace DomainTheory.NeighbourhoodSystems
+end atomPairJunk
 namespace combineFound2
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-
+section
 theorem found_le_one {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
     (h0 : r0.unpair.1 ≤ 1) (h1 : r1.unpair.1 ≤ 1) :
@@ -46474,44 +38882,25 @@ theorem found_le_one {γ : Type*} {W : NeighborhoodSystem γ}
     rcases Nat.eq_zero_or_pos r1.unpair.1 with hr1 | hr1
     · rw [hr1, selectFn_zero]; exact h0
     · rw [show r1.unpair.1 = 1 from by omega, selectFn_one, unpair_pair_fst]
+end
 
 end combineFound2
-end DomainTheory.NeighbourhoodSystems
-end
-
-section
--- Exercise812d/deltaPair_2.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace deltaPair
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-
+section
 theorem fst_eq_true_iff (k i : ℕ) : (deltaPair k i).1 = true ↔ (k / 4 ^ i) % 2 = 1 := by
   unfold deltaPair; simp
-
-end deltaPair
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace deltaPair
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-
-theorem snd_eq_true_iff (k i : ℕ) : (deltaPair k i).2 = true ↔ (k / 4 ^ i / 2) % 2 = 1 := by
-  unfold deltaPair; simp
-
-end deltaPair
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812d/union.lean
-namespace DomainTheory.NeighbourhoodSystems
+theorem snd_eq_true_iff (k i : ℕ) : (deltaPair k i).2 = true ↔ (k / 4 ^ i / 2) % 2 = 1 := by
+  unfold deltaPair; simp
+end
 
+end deltaPair
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 
 namespace IsComputableUnion
 
@@ -46533,13 +38922,9 @@ theorem «exists» (hunion : V.UnionClosed) (n m : ℕ) :
 
 end union
 end IsComputableUnion
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812e/part_e.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
 
 /-- **A computable canonical bisection of a `ComputablePresentation`'s own neighbourhoods**: two
@@ -46577,11 +38962,9 @@ structure ComputableBisection {γ : Type*} {W : NeighborhoodSystem γ} (Q : Comp
   left_congr : ∀ k k', Q.X k = Q.X k' → Q.X (left k) = Q.X (left k')
   /-- `right`'s *output set* depends only on `Q.X k` as a set, not on which raw index represents it. -/
   right_congr : ∀ k k', Q.X k = Q.X k' → Q.X (right k) = Q.X (right k')
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
 
 namespace ComputableBisection
@@ -46624,11 +39007,9 @@ noncomputable def splitFromBisection (A : Set α) (B' : Set γ) (Xn : Set α) : 
     splitChoice' W hWnomin A B' Xn
 
 end ComputableBisection
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
 
 namespace ComputableBisection
@@ -46644,11 +39025,9 @@ noncomputable def negIdxFromBisection (n m k : ℕ) : ℕ :=
     (selectFn (emptyDiffDec P hDiff (Nat.pair n k)) m (B.right m))
 
 end ComputableBisection
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
 
 namespace ComputableBisection
@@ -46682,11 +39061,9 @@ end emptyDiffDec
 end Congr
 
 end ComputableBisection
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
 
 namespace ComputableBisection
@@ -46718,11 +39095,9 @@ end emptyInterDec
 end Congr
 
 end ComputableBisection
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
 
 namespace ComputableBisection
@@ -46762,11 +39137,9 @@ theorem eq (hpos : V.IsPositive) (hnomin : V.NoMinimal)
 
 end splitFromBisection
 end ComputableBisection
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
 
 namespace ComputableBisection
@@ -46784,13 +39157,10 @@ noncomputable def posIdxFromBisection (n m k : ℕ) : ℕ :=
     (selectFn (emptyDiffDec P hDiff (Nat.pair n k)) m (B.left m))
 
 end ComputableBisection
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
-
 
 namespace ComputableBisection
 
@@ -46829,10 +39199,9 @@ theorem posIdxFromBisection_congr (hpos : V.IsPositive) (hnomin : V.NoMinimal)
 
 end Congr
 end ComputableBisection
-end DomainTheory.NeighbourhoodSystems
+end
 
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
 
 namespace ComputableBisection
@@ -46864,11 +39233,9 @@ theorem negIdxFromBisection :
 
 end primrec
 end ComputableBisection
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
 
 namespace ComputableBisection
@@ -46900,11 +39267,9 @@ theorem posIdxFromBisection :
 
 end primrec
 end ComputableBisection
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
 
 namespace ComputableBisection
@@ -46953,16 +39318,10 @@ noncomputable def ofBisection (hpos : V.IsPositive) (hnomin : V.NoMinimal)
 
 end isComputableSplit
 end ComputableBisection
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812e.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive
-
 
 namespace ComputableBisection
 
@@ -46998,10 +39357,11 @@ theorem negIdxFromBisection_congr (hpos : V.IsPositive) (hnomin : V.NoMinimal)
 
 end Congr
 end ComputableBisection
+end
+
 end DomainTheory.NeighbourhoodSystems
-
 namespace DomainTheory.NeighbourhoodSystems.ComputableBisection
-
+section
 set_option linter.unusedVariables false
 
 theorem example_812_e.{u_1, u_2} : ∀ {α : Type u_1} {γ : Type u_2} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
@@ -47027,16 +39387,13 @@ theorem example_812_e.{u_1, u_2} : ∀ {α : Type u_1} {γ : Type u_2} {V : Doma
                   (@DomainTheory.NeighbourhoodSystems.ComputableBisection.negIdxFromBisection α γ V W P hDiff Q B n' m'
                     k')) :=
   @DomainTheory.NeighbourhoodSystems.ComputableBisection.negIdxFromBisection_congr
-
-end DomainTheory.NeighbourhoodSystems.ComputableBisection
 end
 
-section
--- Exercise812eD/part_e_domain.lean
+end DomainTheory.NeighbourhoodSystems.ComputableBisection
 namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`B812e`: `V`'s computable canonical bisection, packaged as a `ComputableBisection`.** -/
 def B812e : ComputableBisection VComputablePresentation where
   left := splitVLeft
@@ -47047,23 +39404,15 @@ def B812e : ComputableBisection VComputablePresentation where
   union := splitV_union
   left_congr := fun _ _ h => splitVLeft_congr h
   right_congr := fun _ _ h => splitVRight_congr h
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- The difference index: `diffCode` on canonicalized codes (`UX` re-canonicalizes on lookup, so no
 further canonicalization is needed here — mirrors `Uinter`). -/
 def Udiff (n m : ℕ) : ℕ := diffCode (canonCode n) (canonCode m)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **Scott's consistency condition for `\` reduces to non-emptiness**, exactly mirroring
 `U_cons_iff_nonempty_inter`: `U_diff_mem` (`Exercise812c.lean`) shows `UX n \ UX m` is always either
 empty or a genuine `U`-neighbourhood, and every `UX k` is non-empty (`U.mem` forces
@@ -47077,14 +39426,12 @@ theorem U_diff_iff_nonempty (n m : ℕ) :
     rcases U_diff_mem (U_mem_UX n) (U_mem_UX m) with hempty | hmem
     · exact absurd hempty hne.ne_empty
     · exact U_surj_UX hmem
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace Udiff
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`Udiff` realizes set difference at the raw (uncanonicalized) `presentedIntervals` level**,
 unconditionally — the one respect in which `\` is *simpler* than `∩` here (no consistency case
 split needed at this stage). -/
@@ -47092,28 +39439,20 @@ theorem eq_diff (n m : ℕ) :
     presentedIntervals (decodeQPairList (Udiff n m)) = UX n \ UX m := by
   unfold Udiff
   exact presentedIntervals_decodeQPairList_diffCode (canonCode n) (canonCode m)
+end
 
-end Udiff
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace Udiff
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem primrec : Nat.Primrec (fun t : ℕ => Udiff t.unpair.1 t.unpair.2) := by
   unfold Udiff
   exact (primrec_diffCode.comp ((primrec_canonCode.comp Nat.Primrec.left).pair
     (primrec_canonCode.comp Nat.Primrec.right))).of_eq
     fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
+end
 
 end Udiff
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **7.1(i)-for-`\`, for `𝒰`**: `Xₙ \ Xₘ = X_k` for some `k` is recursively decidable — mirrors
 `U_cons_computable` exactly, substituting `Udiff` for the raw `combineCode` composite. -/
 theorem U_diff_computable : RecDecidable₂ (fun n m => ∃ k, UX k = UX n \ UX m) := by
@@ -47122,14 +39461,12 @@ theorem U_diff_computable : RecDecidable₂ (fun n m => ∃ k, UX k = UX n \ UX 
     (recDecidable_presentedIntervals_nonempty.comp Udiff.primrec)
   show (∃ k, UX k = UX t.unpair.1 \ UX t.unpair.2) ↔ _
   rw [U_diff_iff_nonempty, ← Udiff.eq_diff]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace Udiff
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`Udiff n m` genuinely indexes `UX n \ UX m` whenever that difference is a genuine
 neighbourhood** — mirrors `Uinter_spec` exactly: the raw `diffCode` output is already a genuine
 `U`-neighbourhood (by hypothesis via `Udiff.eq_diff`), so re-canonicalizing it (`canonCode`'s own
@@ -47141,40 +39478,32 @@ theorem spec {n m : ℕ} (h : ∃ k, UX k = UX n \ UX m) : UX (Udiff n m) = UX n
     rw [← hk]; exact U_mem_UX k
   show presentedIntervals (decodeQPairList (canonCode (Udiff n m))) = _
   rw [presentedIntervals_decodeQPairList_canonCode, canonList_fixed hUL, Udiff.eq_diff]
+end
 
 end Udiff
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`U` has a computable `\`**, completing the missing prerequisite this section opened with. -/
 def U_isComputableDiff : IsComputableDiff UComputablePresentation where
   diffIdx := Udiff
   diffIdx_primrec := Udiff.primrec
   diffIdx_spec := Udiff.spec
   diff_computable := U_diff_computable
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **`splitX812e`: the exercise's literal target split**, `U` as prober against `V`'s canonical
 bisection. -/
 noncomputable def splitX812e : Set ℚ → Set ℕ → Set ℚ → Set ℕ × Set ℕ :=
   ComputableBisection.splitFromBisection UComputablePresentation U_isComputableDiff B812e
     V_noMinimal
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace isComputableSplit
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **Exercise 8.12(e), completed in full**: `splitX812e` satisfies `IsComputableSplit`.
 `noncomputable def`, not `theorem` — `IsComputableSplit` is a data-carrying structure (its
 `posIdx`/`negIdx` fields are `ℕ`-valued functions), mirroring `isComputableSplit.ofBisection`
@@ -47183,19 +39512,13 @@ noncomputable def «812e» :
     IsComputableSplit UComputablePresentation VComputablePresentation splitX812e :=
   ComputableBisection.isComputableSplit.ofBisection UComputablePresentation U_isComputableDiff
     B812e V_noMinimal U_isPositive U_noMinimal U_diffClosed
-
-end isComputableSplit
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise816/isFinitaryProjection_le_iff_fixedNbhd_subsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end isComputableSplit
 open NeighborhoodSystem ApproximableMap
 
+section
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **Exercise 8.16, Part 1 (Scott 1981, PRG-19).** For finitary projections `a, b : E → E`,
@@ -47219,18 +39542,10 @@ theorem isFinitaryProjection_le_iff_fixedNbhd_subsystem {a b : ApproximableMap E
       hD
     have hback := (finitaryProjectionSubsystemEquiv E).symm.monotone hle
     rwa [OrderIso.symm_apply_apply, OrderIso.symm_apply_apply] at hback
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise816/exercise_8_16.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 /- concordance: source L5163 EXERCISE 8.16 order of projections -/
@@ -47250,14 +39565,9 @@ theorem exercise_8_16 :
         ComputableMap P P a → (fixedNbhd a).IsEffectivelyGiven) :=
   ⟨fun ha hb => isFinitaryProjection_le_iff_fixedNbhd_subsystem ha hb,
     fun hcomp => fixedNbhd_isEffectivelyGiven hcomp⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise816.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_816.{u} : And
@@ -47324,6 +39634,7 @@ theorem example_816.{u} : And
             (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E b)))
   @DomainTheory.NeighbourhoodSystems.exercise_8_16
   @DomainTheory.NeighbourhoodSystems.isFinitaryProjection_le_iff_fixedNbhd_subsystem
+end
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -47351,11 +39662,10 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/uniqueFixedConstMapBot.lean
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Sub8_6
 
+section
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47366,16 +39676,9 @@ instance uniqueFixedConstMapBot :
   uniq := fun ⟨_y, hy⟩ => Subtype.ext (eq_bot_of_fixed_constMap_bot hy)
 
 end Exercise823
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/finitaryWitnessEquivBot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47394,16 +39697,9 @@ def finitaryWitnessEquivBot (E : NeighborhoodSystem α) :
     exact iff_of_true (le_refl default) (le_of_eq hab)
 
 end Exercise823
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/fixOp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47413,16 +39709,9 @@ def fixOp (t : ApproximableMap (funSpace E E) (funSpace E E)) : ApproximableMap 
   toApproxMap t.fixElement
 
 end Exercise823
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/tOp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47434,16 +39723,9 @@ def tOp (t : ApproximableMap (funSpace E E) (funSpace E E)) (a : ApproximableMap
   toApproxMap (t.toElementMap (toFilter a))
 
 end Exercise823
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47453,15 +39735,9 @@ variable {α : Type} {E : NeighborhoodSystem α}
 formulation. -/
 abbrev Fix (a : ApproximableMap E E) := {y : E.Element // a.toElementMap y = y}
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/constMap_bot_le_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47475,15 +39751,9 @@ theorem constMap_bot_le_idMap (E : NeighborhoodSystem α) :
   exact ⟨hX, E.master_mem, E.sub_master hX⟩
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/isRetraction_constMap_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47503,15 +39773,9 @@ theorem isRetraction_constMap_bot (E : NeighborhoodSystem α) :
     exact ⟨E.master, ⟨hX, rfl⟩, E.master_mem, hZ⟩
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/isProjection_constMap_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47522,15 +39786,9 @@ theorem isProjection_constMap_bot (E : NeighborhoodSystem α) :
   ⟨isRetraction_constMap_bot E, constMap_bot_le_idMap E⟩
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/isFinitaryProjection_constMap_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47541,15 +39799,9 @@ theorem isFinitaryProjection_constMap_bot (E : NeighborhoodSystem α) :
   ⟨⟨isProjection_constMap_bot E, Unit, unitSys, ⟨finitaryWitnessEquivBot E⟩⟩⟩
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/iterElem_succu27.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47562,15 +39814,9 @@ theorem iterElem_succ' (t : ApproximableMap (funSpace E E) (funSpace E E)) (n : 
   rfl
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/iterElem_zerou27.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47582,15 +39828,9 @@ theorem iterElem_zero' (t : ApproximableMap (funSpace E E) (funSpace E E)) :
   rw [toElementMap_idMap]
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/rel_master_of_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47603,15 +39843,9 @@ theorem rel_master_of_mem (f : ApproximableMap E E) {X : Set α} (hX : E.mem X) 
   f.mono f.master_rel (E.sub_master hX) subset_rfl hX E.master_mem
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/tOp_fixOp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47624,15 +39858,9 @@ theorem tOp_fixOp (t : ApproximableMap (funSpace E E) (funSpace E E)) :
   rw [toFilter_toApproxMap, toElementMap_fixElement]
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/tOp_toApproxMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47644,15 +39872,9 @@ theorem tOp_toApproxMap (t : ApproximableMap (funSpace E E) (funSpace E E))
   rw [toFilter_toApproxMap]
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/toApproxMap_bot_eq_constMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47673,15 +39895,9 @@ theorem toApproxMap_bot_eq_constMap (E : NeighborhoodSystem α) :
     exact Set.eq_univ_of_forall fun f => rel_master_of_mem f hX
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/isFinitaryProjection_fixOp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47731,15 +39947,9 @@ theorem isFinitaryProjection_fixOp (t : ApproximableMap (funSpace E E) (funSpace
   rw [← toApproxMap_subFilter, hkey]
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/fixedDomain_fixOp_iso_T.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47759,15 +39969,9 @@ theorem fixedDomain_fixOp_iso_T (t : ApproximableMap (funSpace E E) (funSpace E 
   rwa [tOp_fixOp] at h
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise823/fixedNbhd_fixOp_subsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6
-
 namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -47802,13 +40006,11 @@ theorem fixedNbhd_fixOp_subsystem (t : ApproximableMap (funSpace E E) (funSpace 
     (isFinitaryProjection_fixOp t ht) ha).mp hle
 
 end Exercise823
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise823.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise823
-
+section
 set_option linter.unusedVariables false
 
 theorem example_823 : And
@@ -48153,6 +40355,7 @@ theorem example_823 : And
     @DomainTheory.NeighbourhoodSystems.Exercise823.fixedDomain_fixOp_iso_T
     @DomainTheory.NeighbourhoodSystems.Exercise823.fixedNbhd_fixOp_subsystem)
   @DomainTheory.NeighbourhoodSystems.Exercise823.isFinitaryProjection_fixOp
+end
 
 end DomainTheory.NeighbourhoodSystems.Exercise823
 end
@@ -48179,11 +40382,10 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/aOp.lean
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
 
+section
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48194,16 +40396,9 @@ def aOp (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
   toApproxMap ((paired s t).iterElem n).fst
 
 end Exercise824
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/aStar.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48213,16 +40408,9 @@ def aStar (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) : Approxim
   toApproxMap (paired s t).fixElement.fst
 
 end Exercise824
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/bOp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48233,16 +40421,9 @@ def bOp (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
   toApproxMap ((paired s t).iterElem n).snd
 
 end Exercise824
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/bStar.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48252,16 +40433,9 @@ def bStar (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) : Approxim
   toApproxMap (paired s t).fixElement.snd
 
 end Exercise824
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/binOp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48273,16 +40447,9 @@ def binOp (f : ApproximableMap (PairSpace (E := E)) (funSpace E E))
   toApproxMap (f.toElementMap (pair (toFilter a) (toFilter b)))
 
 end Exercise824
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/fst_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48294,15 +40461,9 @@ theorem fst_mono {z z' : (PairSpace (E := E)).Element} (h : z ≤ z') : z.fst �
   exact ⟨hX.1, h _ hX.2⟩
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/iterElem_pair_eq_pair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48319,15 +40480,9 @@ theorem iterElem_pair_eq_pair (s t : ApproximableMap (PairSpace (E := E)) (funSp
   rw [toFilter_toApproxMap, toFilter_toApproxMap, pair_fst_snd]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/iterElem_succ_pair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48340,15 +40495,9 @@ theorem iterElem_succ_pair (s t : ApproximableMap (PairSpace (E := E)) (funSpace
   rw [toElementMap_comp]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/aOp_succ.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48362,15 +40511,9 @@ theorem aOp_succ (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n 
   rw [iterElem_succ_pair, toElementMap_paired, fst_pair, iterElem_pair_eq_pair]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/bOp_succ.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48384,15 +40527,9 @@ theorem bOp_succ (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n 
   rw [iterElem_succ_pair, toElementMap_paired, snd_pair, iterElem_pair_eq_pair]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/iterElem_zero_pair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48405,15 +40542,9 @@ theorem iterElem_zero_pair (s t : ApproximableMap (PairSpace (E := E)) (funSpace
   rw [toElementMap_idMap]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/pair_bot_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48434,15 +40565,9 @@ theorem pair_bot_bot : pair ((funSpace E E).bot) ((funSpace E E).bot) = (PairSpa
     · rw [hW, prod_master]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/pairSpace_bot_fst.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48452,15 +40577,9 @@ theorem pairSpace_bot_fst : ((PairSpace (E := E)).bot).fst = (funSpace E E).bot 
   rw [← pair_bot_bot, fst_pair]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/aOp_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48472,15 +40591,9 @@ theorem aOp_zero (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
   rw [iterElem_zero_pair, pairSpace_bot_fst, Exercise823.toApproxMap_bot_eq_constMap]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/pairSpace_bot_snd.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48490,15 +40603,9 @@ theorem pairSpace_bot_snd : ((PairSpace (E := E)).bot).snd = (funSpace E E).bot 
   rw [← pair_bot_bot, snd_pair]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/bOp_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48510,15 +40617,9 @@ theorem bOp_zero (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
   rw [iterElem_zero_pair, pairSpace_bot_snd, Exercise823.toApproxMap_bot_eq_constMap]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/isFinitaryProjection_chain.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48541,15 +40642,9 @@ theorem isFinitaryProjection_chain (s t : ApproximableMap (PairSpace (E := E)) (
     exact hst _ _ ih.1 ih.2
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/snd_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48561,15 +40656,9 @@ theorem snd_mono {z z' : (PairSpace (E := E)).Element} (h : z ≤ z') : z.snd �
   exact ⟨hX.1, h _ hX.2⟩
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/isFinitaryProjection_aStar_bStar.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48658,15 +40747,9 @@ theorem isFinitaryProjection_aStar_bStar (s t : ApproximableMap (PairSpace (E :=
     rw [← toApproxMap_subFilter, hkeyB]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/fixedNbhd_aStar_bStar_subsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48727,15 +40810,9 @@ theorem fixedNbhd_aStar_bStar_subsystem (s t : ApproximableMap (PairSpace (E := 
     (isFinitaryProjection_le_iff_fixedNbhd_subsystem hFinB hb).mp hBle⟩
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/toElementMap_fixElement_fst.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48750,15 +40827,9 @@ theorem toElementMap_fixElement_fst (s t : ApproximableMap (PairSpace (E := E)) 
   rwa [fst_pair] at h'
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/binOp_aStar_bStar_left.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48771,15 +40842,9 @@ theorem binOp_aStar_bStar_left (s t : ApproximableMap (PairSpace (E := E)) (funS
   rw [toFilter_toApproxMap, toFilter_toApproxMap, pair_fst_snd, toElementMap_fixElement_fst]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/toElementMap_fixElement_snd.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48794,15 +40859,9 @@ theorem toElementMap_fixElement_snd (s t : ApproximableMap (PairSpace (E := E)) 
   rwa [snd_pair] at h'
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/binOp_aStar_bStar_right.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48815,15 +40874,9 @@ theorem binOp_aStar_bStar_right (s t : ApproximableMap (PairSpace (E := E)) (fun
   rw [toFilter_toApproxMap, toFilter_toApproxMap, pair_fst_snd, toElementMap_fixElement_snd]
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise824/fixedDomain_aStar_bStar_iso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
-
 namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
@@ -48854,13 +40907,11 @@ theorem fixedDomain_aStar_bStar_iso (s t : ApproximableMap (PairSpace (E := E)) 
   exact ⟨h1, h2⟩
 
 end Exercise824
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise824.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise824
-
+section
 set_option linter.unusedVariables false
 
 theorem example_824 : And
@@ -49585,18 +41636,16 @@ theorem example_824 : And
     @DomainTheory.NeighbourhoodSystems.Exercise824.fixedDomain_aStar_bStar_iso
     @DomainTheory.NeighbourhoodSystems.Exercise824.fixedNbhd_aStar_bStar_subsystem)
   @DomainTheory.NeighbourhoodSystems.Exercise824.isFinitaryProjection_aStar_bStar
-
-end DomainTheory.NeighbourhoodSystems.Exercise824
 end
 
-section
--- PalomarExamples/Basic.lean
+end DomainTheory.NeighbourhoodSystems.Exercise824
 namespace DomainTheory.NeighbourhoodSystems.Example15
+section
+end
 
 end DomainTheory.NeighbourhoodSystems.Example15
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
-
+section
 /-- Countability of the neighbourhoods of `S`, via the `SExpr` presentation.
 Picking a preimage uses Mathlib's `Surjective.countable` (hence `Classical.choice`);
 the syntax `SExpr` itself is countable choice-free. -/
@@ -49615,70 +41664,47 @@ instance Ssys_countable : Countable {S : Set (List Bool) // Ssys.mem S} := by
       exact Subtype.ext he
   exact Countable.of_equiv ({S : Set (List Bool) // InS S})
     (Equiv.subtypeEquivRight fun _ => Ssys_mem.symm)
-end DomainTheory.NeighbourhoodSystems.Exercise722
 end
 
-section
--- PalomarExamples/P4_embeds.lean
+end DomainTheory.NeighbourhoodSystems.Exercise722
 namespace DomainTheory.NeighbourhoodSystems.Example15
-
+section
 /-- **New corollary for Example 1.5.** The finite powerset system is countable, so the first
 sentence of Theorem 8.8 applies. Scott does not separately state this embedding. -/
 theorem P4_embeds : neighborhoodSystem ⊴ U :=
   theorem_8_8 neighborhoodSystem
-
-end DomainTheory.NeighbourhoodSystems.Example15
 end
 
-section
--- PalomarExamples/Ssys_embeds.lean
+end DomainTheory.NeighbourhoodSystems.Example15
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
-
-
+section
 /-- **New corollary for Exercise 7.22.** Countability is `Ssys_countable` (via `SExpr`), so the
 first sentence of Theorem 8.8 applies. Scott does not separately state this embedding. -/
 theorem Ssys_embeds : Ssys ⊴ U :=
   theorem_8_8 Ssys
-
-end DomainTheory.NeighbourhoodSystems.Exercise722
 end
 
-section
--- Theorem88n/isoInj.lean
+end DomainTheory.NeighbourhoodSystems.Exercise722
 namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`isoInj : D → D''`**, Theorem 2.7 applied to `domainIsoCode P`. -/
 noncomputable def isoInj : ApproximableMap D (DprimeUCode P) := ofIso (domainIsoCode P)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88n/isoProj.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`isoProj : D'' → D`**, Theorem 2.7 applied to the inverse iso. -/
 noncomputable def isoProj : ApproximableMap (DprimeUCode P) D := ofIso (domainIsoCode P).symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88n/isoInj_comp_isoProj.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- `isoInj ∘ isoProj = I_D''`. -/
 theorem isoInj_comp_isoProj : (isoInj P).comp (isoProj P) = idMap (DprimeUCode P) := by
@@ -49688,18 +41714,11 @@ theorem isoInj_comp_isoProj : (isoInj P).comp (isoProj P) = idMap (DprimeUCode P
   show (isoInj P).toElementMap ((isoProj P).toElementMap y) = _
   rw [isoInj, isoProj, toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply,
     toElementMap_idMap]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88n/isoInj_rel_iff_incl.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **`isoInj`'s relation at raw indices reduces to a single reindexed inclusion.** `n := b` is always
 a valid witness (`Yc P b = Yc P b`), and any *other* witness `n` with `Yc P b = Yc P n` forces
@@ -49714,18 +41733,11 @@ theorem isoInj_rel_iff_incl {a b : ℕ} :
     rwa [← hb, (embed_eq_iff_raw_code P b n).mpr hn]
   · intro hsub
     exact ⟨P.mem_X a, b, rfl, (P0 P).mem_X b, hb ▸ hsub⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88n/isoInj_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **`isoInj` is computable** relative to `P`/`DprimeUCodePresentation P`: its raw-index relation is
 `incl_computable` reindexed by the primitive-recursive `eIdx P` in the second argument. -/
@@ -49739,18 +41751,11 @@ theorem isoInj_isComputableMap : ComputableMap P (DprimeUCodePresentation P) (is
   refine REPred.of_iff (fun t => ?_) hp.re
   show (isoInj P).rel (P.X t.unpair.1) ((DprimeUCodePresentation P).X t.unpair.2) ↔ _
   exact isoInj_rel_iff_incl P
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88n/isoProj_comp_isoInj.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- `isoProj ∘ isoInj = I_D` (Theorem 2.7's `toElementMap_ofIso`, both ways, plus `OrderIso.symm_apply_apply`). -/
 theorem isoProj_comp_isoInj : (isoProj P).comp (isoInj P) = idMap D := by
@@ -49760,18 +41765,11 @@ theorem isoProj_comp_isoInj : (isoProj P).comp (isoInj P) = idMap D := by
   show (isoProj P).toElementMap ((isoInj P).toElementMap x) = _
   rw [isoInj, isoProj, toElementMap_ofIso, toElementMap_ofIso, OrderIso.symm_apply_apply,
     toElementMap_idMap]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88n/isoProj_rel_iff_incl.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **`isoProj`'s relation at raw indices reduces to a single reindexed inclusion.** `m := eIdx P a`
 is always a valid witness (`e P (eIdx P a) = P.X a` by involutivity), and any *other* witness `m`
@@ -49792,18 +41790,11 @@ theorem isoProj_rel_iff_incl {b a : ℕ} :
     exact hsub
   · intro hsub
     exact ⟨⟨b, rfl⟩, eIdx P a, hea.symm, ⟨eIdx P a, rfl⟩, hsub⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88n/isoProj_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **`isoProj` is computable** relative to `DprimeUCodePresentation P`/`P`: its raw-index relation is
 `DprimeUCodePresentation`'s `incl_computable` reindexed by `eIdx P` in the second argument. -/
@@ -49818,18 +41809,11 @@ theorem isoProj_isComputableMap : ComputableMap (DprimeUCodePresentation P) P (i
   refine REPred.of_iff (fun t => ?_) hp.re
   show (isoProj P).rel ((DprimeUCodePresentation P).X t.unpair.1) (P.X t.unpair.2) ↔ _
   exact isoProj_rel_iff_incl P
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem88n/theorem_8_8_b_strong.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 /-- **`theorem_8_8_b`, strengthened.** For any effectively given `D` (via `P`), there is a
 *single* computable projection pair `i : D → U`, `j : U → D` directly (no intermediate isomorphic
@@ -49850,119 +41834,74 @@ theorem theorem_8_8_b_strong :
     exact h.inj_comp_proj_le
   · exact comp_isComputable (isoInj_isComputableMap P) (DprimeUCode_inj_isComputableMap P)
   · exact comp_isComputable (DprimeUCode_proj_isComputableMap P) (isoProj_isComputableMap P)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/iArrow.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /- concordance: source L5028 DEFINITION 8.9 constructs on projections -/
 /-- **`i_→ : (𝒰→𝒰) → 𝒰`** (Definition 8.9), fixed by `theorem_8_8_b_strong` applied to `𝒰→𝒰`. -/
 noncomputable def iArrow : ApproximableMap (funSpace U U) U :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/iPlus.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- **`i₊ : 𝒰+𝒰 → 𝒰`** (Definition 8.9), fixed by `theorem_8_8_b_strong` applied to `𝒰+𝒰`. -/
 noncomputable def iPlus : ApproximableMap (sum U U U_mem_nonempty U_mem_nonempty) U :=
   (theorem_8_8_b_strong sumUUPresentation).choose
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/iTimes.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- **`i_× : 𝒰×𝒰 → 𝒰`** (Definition 8.9), fixed by `theorem_8_8_b_strong` applied to `𝒰×𝒰`. -/
 noncomputable def iTimes : ApproximableMap (prod U U) U :=
   (theorem_8_8_b_strong prodUUPresentation).choose
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/jArrow.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- **`j_→ : 𝒰 → (𝒰→𝒰)`** (Definition 8.9). -/
 noncomputable def jArrow : ApproximableMap U (funSpace U U) :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose_spec.choose
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/arrowComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- **`a → b : 𝒰 → 𝒰`** (Definition 8.9): `i_→ ∘ (λf. b∘f∘a) ∘ j_→`. -/
 noncomputable def arrowComb (a b : ApproximableMap U U) : ApproximableMap U U :=
   iArrow.comp ((lamComb a b).comp jArrow)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/jPlus.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- **`j₊ : 𝒰 → 𝒰+𝒰`** (Definition 8.9). -/
 noncomputable def jPlus : ApproximableMap U (sum U U U_mem_nonempty U_mem_nonempty) :=
   (theorem_8_8_b_strong sumUUPresentation).choose_spec.choose
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/jTimes.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- **`j_× : 𝒰 → 𝒰×𝒰`** (Definition 8.9). -/
 noncomputable def jTimes : ApproximableMap U (prod U U) :=
   (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/prodComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- **`a × b : 𝒰 → 𝒰`** (Definition 8.9): `i_× ∘ ⟨a∘proj₀, b∘proj₁⟩ ∘ j_×`. -/
 noncomputable def prodComb (a b : ApproximableMap U U) : ApproximableMap U U :=
   iTimes.comp ((paired (a.comp (proj₀ U U)) (b.comp (proj₁ U U))).comp jTimes)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/sumComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- **`a + b : 𝒰 → 𝒰`** (Definition 8.9): `cond ∘ ⟨which, i₊∘in₀∘a∘out₀, i₊∘in₁∘b∘out₁⟩ ∘ j₊`. -/
@@ -49974,195 +41913,107 @@ noncomputable def sumComb (a b : ApproximableMap U U) : ApproximableMap U U :=
                 (iPlus.comp ((inMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).comp
                   (b.comp (outMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty))))))).comp
       jPlus)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/iArrow_comp_jArrow_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem iArrow_comp_jArrow_le : iArrow.comp jArrow ≤ idMap U :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose_spec.choose_spec.2.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/iArrow_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem iArrow_isComputableMap :
     ComputableMap funSpaceUUPresentation UComputablePresentation iArrow :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose_spec.choose_spec.2.2.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/iPlus_comp_jPlus_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem iPlus_comp_jPlus_le : iPlus.comp jPlus ≤ idMap U :=
   (theorem_8_8_b_strong sumUUPresentation).choose_spec.choose_spec.2.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/iPlus_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem iPlus_isComputableMap : ComputableMap sumUUPresentation UComputablePresentation iPlus :=
   (theorem_8_8_b_strong sumUUPresentation).choose_spec.choose_spec.2.2.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/iTimes_comp_jTimes_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem iTimes_comp_jTimes_le : iTimes.comp jTimes ≤ idMap U :=
   (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose_spec.2.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/iTimes_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem iTimes_isComputableMap :
     ComputableMap prodUUPresentation UComputablePresentation iTimes :=
   (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose_spec.2.2.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/jArrow_comp_iArrow.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem jArrow_comp_iArrow : jArrow.comp iArrow = idMap _ :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose_spec.choose_spec.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/jArrow_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem jArrow_isComputableMap :
     ComputableMap UComputablePresentation funSpaceUUPresentation jArrow :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose_spec.choose_spec.2.2.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/jPlus_comp_iPlus.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem jPlus_comp_iPlus : jPlus.comp iPlus = idMap _ :=
   (theorem_8_8_b_strong sumUUPresentation).choose_spec.choose_spec.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/jPlus_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem jPlus_isComputableMap : ComputableMap UComputablePresentation sumUUPresentation jPlus :=
   (theorem_8_8_b_strong sumUUPresentation).choose_spec.choose_spec.2.2.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/jTimes_comp_iTimes.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem jTimes_comp_iTimes : jTimes.comp iTimes = idMap _ :=
   (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose_spec.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition89/jTimes_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 theorem jTimes_isComputableMap :
     ComputableMap UComputablePresentation prodUUPresentation jTimes :=
   (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose_spec.2.2.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/arrowComb_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 theorem arrowComb_eq (a b : ApproximableMap U U) :
     arrowComb a b = iArrow.comp ((lamComb a b).comp jArrow) := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/inMapu2080_toElementMap_reaches_left.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- The image of `in₀` always reaches the left copy (witnessed by `V₀.master`, since `v.master_mem`
 always holds and `in₀`'s relation only needs `inj₀ X ⊆ inj₀ V₀.master`). -/
@@ -50171,19 +42022,11 @@ theorem inMap₀_toElementMap_reaches_left {γ δ} {V₀ : NeighborhoodSystem γ
     ∃ X, V₀.mem X ∧ ((inMap₀ (h₀ := h₀) (h₁ := h₁)).toElementMap v).mem (inj₀ X) := by
   refine ⟨V₀.master, V₀.master_mem, V₀.master, v.master_mem, V₀.master_mem, ?_, subset_rfl⟩
   exact Or.inr (Or.inl ⟨V₀.master, V₀.master_mem, rfl⟩)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/inMapu2081_toElementMap_reaches_right.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- The image of `in₁` always reaches the right copy. -/
 theorem inMap₁_toElementMap_reaches_right {γ δ} {V₀ : NeighborhoodSystem γ} {V₁ : NeighborhoodSystem δ}
@@ -50191,35 +42034,19 @@ theorem inMap₁_toElementMap_reaches_right {γ δ} {V₀ : NeighborhoodSystem �
     ∃ Y, V₁.mem Y ∧ ((inMap₁ (h₀ := h₀) (h₁ := h₁)).toElementMap v).mem (inj₁ Y) := by
   refine ⟨V₁.master, V₁.master_mem, V₁.master, v.master_mem, V₁.master_mem, ?_, subset_rfl⟩
   exact Or.inr (Or.inr ⟨V₁.master, V₁.master_mem, rfl⟩)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/lamComb_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 theorem lamComb_eq (a b : ApproximableMap U U) :
     lamComb a b = curry (b.comp ((evalMap U U).comp (prodMap (idMap (funSpace U U)) a))) := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/not_sum_reaches_both.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- No element of `𝒟₀+𝒟₁` reaches into both the left and the right copy (Exercise 3.18's
 disjointness `inj₀_inter_inj₁`, plus `not_sum_mem_empty`). -/
@@ -50232,35 +42059,19 @@ theorem not_sum_reaches_both {γ δ} {V₀ : NeighborhoodSystem γ} {V₁ : Neig
   have h := w.inter_mem hX hY
   rw [inj₀_inter_inj₁] at h
   exact not_sum_mem_empty (w.sub h)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/prodComb_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 theorem prodComb_eq (a b : ApproximableMap U U) :
     prodComb a b = iTimes.comp ((prodMap a b).comp jTimes) := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/sumComb_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 theorem sumComb_eq (a b : ApproximableMap U U) :
     sumComb a b = (cond U).comp
@@ -50270,19 +42081,11 @@ theorem sumComb_eq (a b : ApproximableMap U U) :
                   (iPlus.comp ((inMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).comp
                     (b.comp (outMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty))))))).comp
         jPlus) := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toApproxMap_toElementMap_lamComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **`lamComb a b`, transported through `funSpaceEquiv`, is exactly `λf. b∘f∘a`.** Chains
 `toElementMap_curry_apply` (Theorem 3.12(i)), `toElementMap_prodMap_pair`/`toElementMap_idMap`,
@@ -50295,19 +42098,11 @@ theorem toApproxMap_toElementMap_lamComb (a b : ApproximableMap U U)
   rw [lamComb_eq, toElementMap_curry_apply, toElementMap_comp, toElementMap_comp,
     toElementMap_prodMap_pair, toElementMap_idMap, evalMap_apply, toElementMap_comp,
     toElementMap_comp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/isRetraction_lamComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Proposition 8.10, `→`-case (the `lamComb` half), retraction.** -/
 theorem isRetraction_lamComb {a b : ApproximableMap U U} (ha : Retraction a)
@@ -50322,19 +42117,11 @@ theorem isRetraction_lamComb {a b : ApproximableMap U U} (ha : Retraction a)
     comp_assoc b ((toApproxMap φ).comp a) a,
     ← comp_assoc b b (((toApproxMap φ).comp a).comp a), hb.out,
     comp_assoc (toApproxMap φ) a a, ha.out]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/le_idMap_lamComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Proposition 8.10, `→`-case (the `lamComb` half), projection.** -/
 theorem le_idMap_lamComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : b ≤ idMap U) :
@@ -50346,53 +42133,31 @@ theorem le_idMap_lamComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : 
   calc b.comp ((toApproxMap φ).comp a) ≤ (idMap U).comp ((toApproxMap φ).comp (idMap U)) :=
         comp_mono_gen hb (comp_mono_gen le_rfl ha)
     _ = toApproxMap φ := by rw [comp_idMap, idMap_comp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toElementMap_arrowComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 theorem toElementMap_arrowComb (a b : ApproximableMap U U) (x : U.Element) :
     (arrowComb a b).toElementMap x =
       iArrow.toElementMap ((lamComb a b).toElementMap (jArrow.toElementMap x)) := by
   rw [arrowComb_eq]
   simp only [toElementMap_comp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toElementMap_idem_of_isRetraction.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- `a ∘ a = a` unwound at the element level: `a(a(x)) = a(x)` for every `x`. -/
 theorem toElementMap_idem_of_isRetraction {a : ApproximableMap E E} (ha : Retraction a)
     (x : E.Element) : a.toElementMap (a.toElementMap x) = a.toElementMap x := by
   rw [← toElementMap_comp, ha.out]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toElementMap_le_of_comp_le_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- If `i ∘ j ≤ I_E`, then `i(j(x)) ≤ x` for every `x ∈ |E|`. -/
@@ -50400,17 +42165,10 @@ theorem toElementMap_le_of_comp_le_idMap {i : ApproximableMap D E} {j : Approxim
     (hij : i.comp j ≤ idMap E) (x : E.Element) : i.toElementMap (j.toElementMap x) ≤ x := by
   have h := (le_iff_toElementMap_le.mp hij) x
   rwa [toElementMap_comp, toElementMap_idMap] at h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toElementMap_le_self_of_le_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- `a ≤ idMap E` unwound at the element level: `a(x) ≤ x` for every `x`. -/
@@ -50418,19 +42176,11 @@ theorem toElementMap_le_self_of_le_idMap {a : ApproximableMap E E} (ha : a ≤ i
     (x : E.Element) : a.toElementMap x ≤ x := by
   have h := (le_iff_toElementMap_le.mp ha) x
   rwa [toElementMap_idMap] at h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/le_idMap_arrowComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Proposition 8.10, `→`-case, projection half.** -/
 theorem le_idMap_arrowComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : b ≤ idMap U) :
@@ -50443,36 +42193,21 @@ theorem le_idMap_arrowComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb 
         iArrow.toElementMap_mono
           (toElementMap_le_self_of_le_idMap (le_idMap_lamComb ha hb) _)
     _ ≤ x := toElementMap_le_of_comp_le_idMap iArrow_comp_jArrow_le x
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toElementMap_of_comp_eq_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- If `j ∘ i = I_D`, then `j(i(v)) = v` for every `v ∈ |D|`. -/
 theorem toElementMap_of_comp_eq_idMap {i : ApproximableMap D E} {j : ApproximableMap E D}
     (hji : j.comp i = idMap D) (v : D.Element) : j.toElementMap (i.toElementMap v) = v := by
   rw [← toElementMap_comp, hji, toElementMap_idMap]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/isRetraction_arrowComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Proposition 8.10, `→`-case, retraction half.** -/
 theorem isRetraction_arrowComb {a b : ApproximableMap U U} (ha : Retraction a)
@@ -50483,19 +42218,11 @@ theorem isRetraction_arrowComb {a b : ApproximableMap U U} (ha : Retraction a)
   rw [toElementMap_comp, toElementMap_arrowComb a b ((arrowComb a b).toElementMap x),
     toElementMap_arrowComb a b x, toElementMap_of_comp_eq_idMap jArrow_comp_iArrow,
     toElementMap_idem_of_isRetraction (isRetraction_lamComb ha hb)]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/isProjection_arrowComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /- concordance: source L5040 PROPOSITION 8.10 constructs preserve projections -/
 /-- **Proposition 8.10 (Scott 1981, PRG-19), `→`-case.** `a, b` projections `⟹` `a → b` a
@@ -50503,19 +42230,11 @@ projection. -/
 theorem isProjection_arrowComb {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) : IsProjection (arrowComb a b) :=
   ⟨isRetraction_arrowComb ha.1 hb.1, le_idMap_arrowComb ha.2 hb.2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toElementMap_bot_eq_bot_of_comp_eq_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **`j₊` sends `𝒰`'s bottom to `𝒰+𝒰`'s bottom.** General fact: if `j ∘ i = I_D`, then `j(E.bot)`
 is a global lower bound of `|D|` (via `D.bot ≤ i(v)` monotone through `j`, landing on
@@ -50526,36 +42245,20 @@ theorem toElementMap_bot_eq_bot_of_comp_eq_idMap {i : ApproximableMap D E} {j : 
   · have h2 := j.toElementMap_mono (E.bot_le (i.toElementMap D.bot))
     rwa [toElementMap_of_comp_eq_idMap hji] at h2
   · exact D.bot_le _
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/jPlus_bot_eq_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 theorem jPlus_bot_eq_bot :
     jPlus.toElementMap U.bot = (sum U U U_mem_nonempty U_mem_nonempty).bot :=
   toElementMap_bot_eq_bot_of_comp_eq_idMap jPlus_comp_iPlus
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toElementMap_prodComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 theorem toElementMap_prodComb (a b : ApproximableMap U U) (x : U.Element) :
     (prodComb a b).toElementMap x =
@@ -50563,19 +42266,11 @@ theorem toElementMap_prodComb (a b : ApproximableMap U U) (x : U.Element) :
         (b.toElementMap (jTimes.toElementMap x).snd)) := by
   rw [prodComb_eq]
   simp only [toElementMap_comp, toElementMap_prodMap]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/isRetraction_prodComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Proposition 8.10, `×`-case, retraction half.** -/
 theorem isRetraction_prodComb {a b : ApproximableMap U U} (ha : Retraction a)
@@ -50586,19 +42281,11 @@ theorem isRetraction_prodComb {a b : ApproximableMap U U} (ha : Retraction a)
   rw [toElementMap_comp, toElementMap_prodComb a b ((prodComb a b).toElementMap x),
     toElementMap_prodComb a b x, toElementMap_of_comp_eq_idMap jTimes_comp_iTimes, fst_pair,
     snd_pair, toElementMap_idem_of_isRetraction ha, toElementMap_idem_of_isRetraction hb]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/le_idMap_prodComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Proposition 8.10, `×`-case, projection half.** -/
 theorem le_idMap_prodComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : b ≤ idMap U) :
@@ -50616,38 +42303,22 @@ theorem le_idMap_prodComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb :
         (b.toElementMap (jTimes.toElementMap x).snd))
       ≤ iTimes.toElementMap (jTimes.toElementMap x) := iTimes.toElementMap_mono hpair
     _ ≤ x := toElementMap_le_of_comp_le_idMap iTimes_comp_jTimes_le x
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/isProjection_prodComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Proposition 8.10 (Scott 1981, PRG-19), `×`-case.** `a, b` projections `⟹` `a × b` a
 projection. -/
 theorem isProjection_prodComb {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) : IsProjection (prodComb a b) :=
   ⟨isRetraction_prodComb ha.1 hb.1, le_idMap_prodComb ha.2 hb.2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toElementMap_sumComb_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Elementwise unfolding of `sumComb`.** Chains `sumComb_eq`, `toElementMap_comp`, and
 `toElementMap_paired`, landing exactly on `cond_toElementMap_mem`'s pattern. -/
@@ -50667,19 +42338,11 @@ theorem toElementMap_sumComb_mem (a b : ApproximableMap U U) (x : U.Element) {Z 
   rw [sumComb_eq]
   simp only [toElementMap_comp, toElementMap_paired]
   rw [cond_toElementMap_mem]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toElementMap_sumComb_of_left.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **On a "left" point** (`jPlus x` reaches the left copy), `sumComb a b` evaluates to Scott's
 literal `i₊∘in₀∘a∘out₀` formula. -/
@@ -50704,19 +42367,11 @@ theorem toElementMap_sumComb_of_left {a b : ApproximableMap U U} {x : U.Element}
     · exact Element.master_mem _
   · intro h
     exact Or.inl ⟨hz, h⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toElementMap_sumComb_of_neither.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **On a point reaching neither copy** (in particular, `𝒰`'s own `⊥`, via `jPlus_bot_eq_bot`),
 `sumComb a b` sends it to `𝒰`'s `⊥`. -/
@@ -50743,19 +42398,11 @@ theorem toElementMap_sumComb_of_neither {a b : ApproximableMap U U} {x : U.Eleme
     · exact h
   · intro h
     exact Or.inr (Or.inr h)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/toElementMap_sumComb_of_right.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **On a "right" point**, symmetric to `toElementMap_sumComb_of_left`. -/
 theorem toElementMap_sumComb_of_right {a b : ApproximableMap U U} {x : U.Element}
@@ -50779,19 +42426,11 @@ theorem toElementMap_sumComb_of_right {a b : ApproximableMap U U} {x : U.Element
     · exact Element.master_mem _
   · intro h
     exact Or.inr (Or.inl ⟨ho, h⟩)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/isRetraction_sumComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Proposition 8.10, `+`-case, retraction half.** -/
 theorem isRetraction_sumComb {a b : ApproximableMap U U} (ha : Retraction a)
@@ -50824,19 +42463,11 @@ theorem isRetraction_sumComb {a b : ApproximableMap U U} (ha : Retraction a)
     intro W hW
     rw [jPlus_bot_eq_bot, mem_bot] at hW
     exact hW
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/le_idMap_sumComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Proposition 8.10, `+`-case, projection half.** -/
 theorem le_idMap_sumComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : b ≤ idMap U) :
@@ -50867,38 +42498,22 @@ theorem le_idMap_sumComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : 
       _ ≤ x := toElementMap_le_of_comp_le_idMap iPlus_comp_jPlus_le x
   · rw [toElementMap_sumComb_of_neither hN]
     exact U.bot_le x
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/isProjection_sumComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Proposition 8.10 (Scott 1981, PRG-19), `+`-case.** `a, b` projections `⟹` `a + b` a
 projection. -/
 theorem isProjection_sumComb {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) : IsProjection (sumComb a b) :=
   ⟨isRetraction_sumComb ha.1 hb.1, le_idMap_sumComb ha.2 hb.2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810/isProjection_combinators.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **Proposition 8.10 (Scott 1981, PRG-19), first half.** If `a, b : 𝒰 → 𝒰` are projections,
 then so are `a+b`, `a×b`, and `a→b`. -/
@@ -50906,14 +42521,9 @@ theorem isProjection_combinators {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) :
     IsProjection (sumComb a b) ∧ IsProjection (prodComb a b) ∧ IsProjection (arrowComb a b) :=
   ⟨isProjection_sumComb ha hb, isProjection_prodComb ha hb, isProjection_arrowComb ha hb⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem theorem_810 : And
@@ -52411,20 +44021,12 @@ theorem theorem_810 : And
       @DomainTheory.NeighbourhoodSystems.le_idMap_lamComb)
     @DomainTheory.NeighbourhoodSystems.le_idMap_prodComb)
   @DomainTheory.NeighbourhoodSystems.le_idMap_sumComb
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/IProdComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ProdCase
@@ -52437,20 +44039,12 @@ noncomputable def IProdComb : ApproximableMap (prod (fixedNbhd a) (fixedNbhd b))
   iTimes.comp (prodMap (fixedNbhd_subsystem a).inj (fixedNbhd_subsystem b).inj)
 
 end ProdCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/JProdComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ProdCase
@@ -52462,20 +44056,12 @@ noncomputable def JProdComb : ApproximableMap U (prod (fixedNbhd a) (fixedNbhd b
   (prodMap (fixedNbhd_subsystem a).proj (fixedNbhd_subsystem b).proj).comp jTimes
 
 end ProdCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/JProdComb_comp_IProdComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ProdCase
@@ -52490,18 +44076,11 @@ theorem JProdComb_comp_IProdComb :
     prodMap_id]
 
 end ProdCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/elementIsoOfProjectionPair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- **Generalized Proposition 8.2 `elementIso`.** Given an approximable projection pair
@@ -52542,20 +44121,12 @@ def elementIsoOfProjectionPair (i : ApproximableMap D E) (j : ApproximableMap E 
       exact hmono
     · intro hle
       exact i.toElementMap_mono hle
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/expMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ExpMap
@@ -52576,20 +44147,12 @@ noncomputable def expMap (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1
   curry (k.comp ((evalMap V0 V1).comp (prodMap (idMap (funSpace V0 V1)) h)))
 
 end ExpMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/IArrowComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ArrowCase
@@ -52603,20 +44166,12 @@ noncomputable def IArrowComb : ApproximableMap (funSpace (fixedNbhd a) (fixedNbh
   iArrow.comp (expMap (fixedNbhd_subsystem a).proj (fixedNbhd_subsystem b).inj)
 
 end ArrowCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/JArrowComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ArrowCase
@@ -52629,20 +44184,12 @@ noncomputable def JArrowComb : ApproximableMap U (funSpace (fixedNbhd a) (fixedN
   (expMap (fixedNbhd_subsystem a).inj (fixedNbhd_subsystem b).proj).comp jArrow
 
 end ArrowCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/expMap_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ExpMap
@@ -52659,20 +44206,12 @@ theorem expMap_eq (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1') :
     expMap h k = curry (k.comp ((evalMap V0 V1).comp (prodMap (idMap (funSpace V0 V1)) h))) := rfl
 
 end ExpMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/expMap_eq_lamComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ExpMap
@@ -52689,40 +44228,24 @@ variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
 theorem expMap_eq_lamComb (a b : ApproximableMap U U) : expMap a b = lamComb a b := rfl
 
 end ExpMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/fixedNbhd_mem_nonempty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 /-- Every neighbourhood of `D_a := fixedNbhd a` is non-empty (inherited from `𝒰`). -/
 theorem fixedNbhd_mem_nonempty (a : ApproximableMap U U) :
     ∀ X, (fixedNbhd a).mem X → X.Nonempty :=
   fun X hX => U_mem_nonempty X ((fixedNbhd_subsystem a).sub hX)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/ISumComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumCase
@@ -52737,20 +44260,12 @@ noncomputable def ISumComb : ApproximableMap (sum (fixedNbhd a) (fixedNbhd b)
     (fixedNbhd_subsystem a).inj (fixedNbhd_subsystem b).inj)
 
 end SumCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/JSumComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumCase
@@ -52764,20 +44279,12 @@ noncomputable def JSumComb : ApproximableMap U (sum (fixedNbhd a) (fixedNbhd b)
     (fixedNbhd_subsystem a).proj (fixedNbhd_subsystem b).proj).comp jPlus
 
 end SumCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/inj_comp_proj_eq_self.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 /-- **`i_a ∘ j_a = a`, for a finitary projection `a`.** Theorem 8.6's `sub_eq_self_of_isFinitaryProjection`,
@@ -52785,20 +44292,12 @@ restated via `retractionOfSubsystem`'s definition. -/
 theorem inj_comp_proj_eq_self (ha : FinitaryProjection a) :
     (fixedNbhd_subsystem a).inj.comp (fixedNbhd_subsystem a).proj = a :=
   sub_eq_self_of_isFinitaryProjection ha
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/IProdComb_comp_JProdComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ProdCase
@@ -52812,20 +44311,12 @@ theorem IProdComb_comp_JProdComb (ha : FinitaryProjection a) (hb : FinitaryProje
     inj_comp_proj_eq_self ha, inj_comp_proj_eq_self hb, ← comp_assoc, prodComb_eq, comp_assoc]
 
 end ProdCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/prodComb_elementIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ProdCase
@@ -52840,20 +44331,12 @@ noncomputable def prodComb_elementIso (ha : FinitaryProjection a) (hb : Finitary
     (IProdComb_comp_JProdComb a b ha hb).symm
 
 end ProdCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/reaches_neither_iff_eq_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
@@ -52886,20 +44369,12 @@ theorem reaches_neither_iff_eq_bot {y : (sum V0 V1 h0 h1).Element} :
     exact hW
 
 end SumMapLemmas
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/sumMap_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
@@ -52940,20 +44415,12 @@ theorem sumMap_bot (f : ApproximableMap V0 V0') (g : ApproximableMap V1 V1') :
       (sum V0' V1' h0' h1').master_mem, Or.inl rfl⟩
 
 end SumMapLemmas
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/sumMap_reaches_left.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
@@ -52985,20 +44452,12 @@ theorem sumMap_reaches_left {f : ApproximableMap V0 V0'} {g : ApproximableMap V1
     Or.inr (Or.inl ⟨X, V0'.master, rfl, rfl, hf⟩)⟩
 
 end SumMapLemmas
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/sumMap_reaches_right.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
@@ -53030,20 +44489,12 @@ theorem sumMap_reaches_right {f : ApproximableMap V0 V0'} {g : ApproximableMap V
     Or.inr (Or.inr ⟨Y, V1'.master, rfl, rfl, hg⟩)⟩
 
 end SumMapLemmas
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/toApproxMap_toElementMap_expMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ExpMap
@@ -53069,20 +44520,12 @@ theorem toApproxMap_toElementMap_expMap (h : ApproximableMap V0' V0) (k : Approx
     toElementMap_comp]
 
 end ExpMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/expMap_comp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ExpMap
@@ -53108,20 +44551,12 @@ theorem expMap_comp (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1')
   simp only [comp_assoc]
 
 end ExpMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/IArrowComb_comp_JArrowComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ArrowCase
@@ -53136,20 +44571,12 @@ theorem IArrowComb_comp_JArrowComb (ha : FinitaryProjection a) (hb : FinitaryPro
     arrowComb_eq, comp_assoc]
 
 end ArrowCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/expMap_id.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ExpMap
@@ -53171,20 +44598,12 @@ theorem expMap_id : expMap (idMap V0) (idMap V1) = idMap (funSpace V0 V1) := by
     toApproxMap_toElementMap_expMap, comp_idMap, idMap_comp]
 
 end ExpMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/JArrowComb_comp_IArrowComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ArrowCase
@@ -53200,20 +44619,12 @@ theorem JArrowComb_comp_IArrowComb :
     expMap_id]
 
 end ArrowCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/arrowComb_elementIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section ArrowCase
@@ -53228,18 +44639,11 @@ noncomputable def arrowComb_elementIso (ha : FinitaryProjection a) (hb : Finitar
     (IArrowComb_comp_JArrowComb a b ha hb).symm
 
 end ArrowCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/toElementMap_bot_eq_bot_of_comp_le_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-- If `i ∘ j ≤ I_E`, then `i` sends `D`'s bottom to `E`'s bottom: `i(⊥_D) ≤ i(j(⊥_E)) ≤ ⊥_E`
@@ -53252,20 +44656,12 @@ theorem toElementMap_bot_eq_bot_of_comp_le_idMap {i : ApproximableMap D E} {j : 
           i.toElementMap_mono (D.bot_le _)
       _ ≤ E.bot := toElementMap_le_of_comp_le_idMap hij E.bot
   · exact E.bot_le _
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/toElementMap_sumMap_inMap₀.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
@@ -53307,20 +44703,12 @@ theorem toElementMap_sumMap_inMap₀ (f : ApproximableMap V0 V0') (g : Approxima
     _ = f.toElementMap v := by rw [heq]
 
 end SumMapLemmas
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/toElementMap_sumMap_inMap₁.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
@@ -53362,20 +44750,12 @@ theorem toElementMap_sumMap_inMap₁ (f : ApproximableMap V0 V0') (g : Approxima
     _ = g.toElementMap w := by rw [heq]
 
 end SumMapLemmas
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/toElementMap_sumMap_of_left.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
@@ -53403,20 +44783,12 @@ theorem toElementMap_sumMap_of_left {f : ApproximableMap V0 V0'} {g : Approximab
   exact toElementMap_sumMap_inMap₀ f g _
 
 end SumMapLemmas
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/toElementMap_sumMap_of_right.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
@@ -53444,20 +44816,12 @@ theorem toElementMap_sumMap_of_right {f : ApproximableMap V0 V0'} {g : Approxima
   exact toElementMap_sumMap_inMap₁ f g _
 
 end SumMapLemmas
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/sumComb_eq_iPlus_sumMap_jPlus.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumCase
@@ -53484,20 +44848,12 @@ theorem sumComb_eq_iPlus_sumMap_jPlus :
       toElementMap_bot_eq_bot_of_comp_le_idMap iPlus_comp_jPlus_le]
 
 end SumCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/sumMap_comp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
@@ -53536,20 +44892,12 @@ theorem sumMap_comp (f' : ApproximableMap V0' V0'') (f : ApproximableMap V0 V0')
     rw [hN, sumMap_bot, sumMap_bot, sumMap_bot]
 
 end SumMapLemmas
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/ISumComb_comp_JSumComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumCase
@@ -53564,20 +44912,12 @@ theorem ISumComb_comp_JSumComb (ha : FinitaryProjection a) (hb : FinitaryProject
     sumComb_eq_iPlus_sumMap_jPlus, comp_assoc]
 
 end SumCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/sumMap_id.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumMapLemmas
@@ -53609,20 +44949,12 @@ theorem sumMap_id : sumMap (h₀ := h0) (h₁ := h1) (h₀' := h0) (h₁' := h1)
     rw [hN, sumMap_bot]
 
 end SumMapLemmas
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/JSumComb_comp_ISumComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumCase
@@ -53639,20 +44971,12 @@ theorem JSumComb_comp_ISumComb :
     sumMap_id]
 
 end SumCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/sumComb_elementIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {a b : ApproximableMap U U}
 
 section SumCase
@@ -53667,45 +44991,25 @@ noncomputable def sumComb_elementIso (ha : FinitaryProjection a) (hb : FinitaryP
     (ISumComb_comp_JSumComb a b ha hb).symm
 
 end SumCase
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/isFinitary_of_projectionPair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **`IsFinitary` from a concrete projection-pair witness.** -/
 theorem isFinitary_of_projectionPair (i : ApproximableMap D E) (j : ApproximableMap E D)
     (hji : j.comp i = idMap D) {g : ApproximableMap E E} (hg : g = i.comp j) :
     IsFinitary g :=
   ⟨α, D, ⟨(elementIsoOfProjectionPair i j hji hg).symm⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/finitary_arrowComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {a b : ApproximableMap U U}
-
 
 section ArrowCase
 
@@ -53720,23 +45024,13 @@ theorem finitary_arrowComb (ha : FinitaryProjection a) (hb : FinitaryProjection 
     (IArrowComb_comp_JArrowComb a b ha hb).symm
 
 end ArrowCase
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/finitaryProjection_arrowComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {a b : ApproximableMap U U}
-
 
 section ArrowCase
 
@@ -53750,23 +45044,13 @@ theorem finitaryProjection_arrowComb (ha : FinitaryProjection a) (hb : FinitaryP
   ⟨⟨isProjection_arrowComb ha.out.1 hb.out.1, finitary_arrowComb a b ha hb⟩⟩
 
 end ArrowCase
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/finitary_prodComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {a b : ApproximableMap U U}
-
 
 section ProdCase
 
@@ -53781,23 +45065,13 @@ theorem finitary_prodComb (ha : FinitaryProjection a) (hb : FinitaryProjection b
     (IProdComb_comp_JProdComb a b ha hb).symm
 
 end ProdCase
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/finitaryProjection_prodComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {a b : ApproximableMap U U}
-
 
 section ProdCase
 
@@ -53811,23 +45085,13 @@ theorem finitaryProjection_prodComb (ha : FinitaryProjection a) (hb : FinitaryPr
   ⟨⟨isProjection_prodComb ha.out.1 hb.out.1, finitary_prodComb a b ha hb⟩⟩
 
 end ProdCase
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/finitary_sumComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {a b : ApproximableMap U U}
-
 
 section SumCase
 
@@ -53842,23 +45106,13 @@ theorem finitary_sumComb (ha : FinitaryProjection a) (hb : FinitaryProjection b)
     (ISumComb_comp_JSumComb a b ha hb).symm
 
 end SumCase
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/finitaryProjection_sumComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {a b : ApproximableMap U U}
-
 
 section SumCase
 
@@ -53872,23 +45126,13 @@ theorem finitaryProjection_sumComb (ha : FinitaryProjection a) (hb : FinitaryPro
   ⟨⟨isProjection_sumComb ha.out.1 hb.out.1, finitary_sumComb a b ha hb⟩⟩
 
 end SumCase
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/finitaryProjection_combinators.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
-
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {a b : ApproximableMap U U}
-
 
 /-- **Proposition 8.10(b) (Scott 1981, PRG-19), in full.** If `a, b : 𝒰 → 𝒰` are finitary
 projections, then so are `a+b`, `a×b`, `a→b`, with `D_{a+b} ≅ D_a+D_b`, `D_{a×b} ≅ D_a×D_b`,
@@ -53899,14 +45143,9 @@ theorem finitaryProjection_combinators {a b : ApproximableMap U U}
       FinitaryProjection (arrowComb a b) :=
   ⟨finitaryProjection_sumComb a b ha hb, finitaryProjection_prodComb a b ha hb,
     finitaryProjection_arrowComb a b ha hb⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b/proposition_8_10.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- **Proposition 8.10 (Scott 1981, PRG-19).** If `a, b : 𝒰 → 𝒰` are finitary projections, then
@@ -53929,14 +45168,9 @@ theorem proposition_8_10 {a b : ApproximableMap U U}
   ⟨finitaryProjection_sumComb a b ha hb, finitaryProjection_prodComb a b ha hb,
     finitaryProjection_arrowComb a b ha hb, ⟨sumComb_elementIso a b ha hb⟩,
     ⟨prodComb_elementIso a b ha hb⟩, ⟨arrowComb_elementIso a b ha hb⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Proposition810b.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem theorem_810_b : And
@@ -56224,14 +47458,9 @@ theorem theorem_810_b : And
       DomainTheory.NeighbourhoodSystems.finitary_arrowComb)
     DomainTheory.NeighbourhoodSystems.finitary_prodComb)
   DomainTheory.NeighbourhoodSystems.finitary_sumComb
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise818/exercise_8_18.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /- concordance: source L5177 EXERCISE 8.18 missing proofs of 8.10 -/
@@ -56248,14 +47477,9 @@ theorem exercise_8_18 {a b : ApproximableMap U U} (ha : IsProjection a) (hb : Is
         FinitaryProjection (sumComb a b) ∧ FinitaryProjection (prodComb a b) ∧
           FinitaryProjection (arrowComb a b)) :=
   ⟨isProjection_combinators ha hb, fun hfa hfb => finitaryProjection_combinators hfa hfb⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise818.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_818 : ∀
@@ -56284,6 +47508,7 @@ theorem example_818 : ∀
                 (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.arrowComb a b)))) :=
   @DomainTheory.NeighbourhoodSystems.exercise_8_18
+end
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -56312,15 +47537,11 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/dsharpMap.lean
 namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 section DsharpFunctor
@@ -56339,20 +47560,12 @@ noncomputable def dsharpMap (f : ApproximableMap D₁ D₀) :
   gMap ((inSharpMap hD₀).comp f) (pairSharpMap hD₀) hD₁
 
 end DsharpFunctor
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/dsharpMap_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 section DsharpFunctor
@@ -56367,20 +47580,12 @@ theorem dsharpMap_eq (f : ApproximableMap D₁ D₀) :
     dsharpMap hD₀ hD₁ f = gMap ((inSharpMap hD₀).comp f) (pairSharpMap hD₀) hD₁ := rfl
 
 end DsharpFunctor
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/dsharpMap_self_eq_aSharpInner.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 section DsharpFunctor
@@ -56396,18 +47601,11 @@ theorem dsharpMap_self_eq_aSharpInner (a : ApproximableMap U U) :
     dsharpMap U_mem_nonempty U_mem_nonempty a = aSharpInner a := rfl
 
 end DsharpFunctor
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/grel_inSharp_pairSharp_imp_idMap_rel.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 /-- Forward direction: every `GRel (inSharpMap) (pairSharpMap)`-related pair is an `idMap`-related
@@ -56424,39 +47622,23 @@ theorem grel_inSharp_pairSharp_imp_idMap_rel :
       obtain ⟨-, hZmem, A, B, hAmem, hBmem, heq, hsub⟩ := hvrel
       obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
       exact ⟨MemS.pair hPmem hQmem, hZmem, (embPair_subset.mpr ⟨hPZ1, hQZ2⟩).trans hsub⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/iSharp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`i§ : U§ → U`** (Definition-8.9-style fixed computable projection pair for `U§`). -/
 noncomputable def iSharp : ApproximableMap (Dsharp U U_mem_nonempty) U :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/ISharpComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`I : (D_a)§ → U`**, transporting `iSharp` through `dsharpMap`'s action on the subsystem
@@ -56464,18 +47646,11 @@ injection `(fixedNbhd_subsystem a).inj : D_a → U`. -/
 noncomputable def ISharpComb (a : ApproximableMap U U) :
     ApproximableMap (Dsharp (fixedNbhd a) (fixedNbhd_mem_nonempty a)) U :=
   iSharp.comp (dsharpMap U_mem_nonempty (fixedNbhd_mem_nonempty a) (fixedNbhd_subsystem a).inj)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/idMap_rel_imp_grel_inSharp_pairSharp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 /-- Backward direction: every `idMap`-related pair is `GRel (inSharpMap) (pairSharpMap)`-related,
@@ -56496,18 +47671,11 @@ theorem idMap_rel_imp_grel_inSharp_pairSharp :
       intro Z hZ hsub
       exact GRel.node (ihP hP subset_rfl) (ihQ hQ subset_rfl)
         ⟨prod_mem_prodNbhd hP hQ, hZ, P, Q, hP, hQ, rfl, hsub⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/gMap_inSharp_pairSharp_eq_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 /-- **`gMap in pair = I_{D§}`**: the catamorphism instantiated at `u := in`, `v := pair` (the tree
@@ -56521,20 +47689,12 @@ theorem gMap_inSharp_pairSharp_eq_idMap :
   · rw [ApproximableMap.le_iff]
     intro W Z h
     exact idMap_rel_imp_grel_inSharp_pairSharp h.1 h.2.1 h.2.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/dsharpMap_id.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 section DsharpFunctor
@@ -56551,18 +47711,11 @@ theorem dsharpMap_id : dsharpMap hD₀ hD₀ (idMap D₀) = idMap (Dsharp D₀ h
   exact gMap_inSharp_pairSharp_eq_idMap
 
 end DsharpFunctor
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/inSharp_principal.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 /-- **`x^§|_{↑X} = ↑(0X)`**: `inSharp` sends the principal element `↑X` to the principal element of
@@ -56574,39 +47727,23 @@ theorem inSharp_principal {X : Set α} (hX : D.mem X) :
   intro W
   simp only [mem_principal, ← rel_iff_mem_principal (inSharpMap hD) hX, inSharpMap_rel]
   exact ⟨fun h => h.2, fun h => ⟨hX, h⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/jSharp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`j§ : U → U§`**. -/
 noncomputable def jSharp : ApproximableMap U (Dsharp U U_mem_nonempty) :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/JSharpComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`J : U → (D_a)§`**, symmetric to `ISharpComb`, via the subsystem projection
@@ -56614,74 +47751,43 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 noncomputable def JSharpComb (a : ApproximableMap U U) :
     ApproximableMap U (Dsharp (fixedNbhd a) (fixedNbhd_mem_nonempty a)) :=
   (dsharpMap (fixedNbhd_mem_nonempty a) U_mem_nonempty (fixedNbhd_subsystem a).proj).comp jSharp
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/aSharp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Scott's operator `a§ : U → U`** (Exercise 8.21), conjugating `aSharpInner a` through the
 `U§ ⊴ U` projection pair, exactly as Definition 8.9 builds `a+b`, `a×b`, `a→b`. -/
 noncomputable def aSharp (a : ApproximableMap U U) : ApproximableMap U U :=
   iSharp.comp ((aSharpInner a).comp jSharp)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/aSharp_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 theorem aSharp_eq (a : ApproximableMap U U) :
     aSharp a = iSharp.comp ((aSharpInner a).comp jSharp) := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/jSharp_comp_iSharp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 theorem jSharp_comp_iSharp : jSharp.comp iSharp = idMap _ :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/pair_principal_eq_principal_prodNbhd.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 /-- **`⟨↑P, ↑Q⟩ = ↑(P∪Q)`** (general, for any two neighbourhood systems): the pairing of two
@@ -56699,18 +47805,11 @@ theorem pair_principal_eq_principal_prodNbhd {γ δ : Type*} {V₀ : Neighborhoo
   · rintro ⟨⟨P', Q', hP', hQ', rfl⟩, hsub⟩
     obtain ⟨hPP', hQQ'⟩ := prodNbhd_subset_iff.mp hsub
     exact ⟨P', Q', ⟨hP', hPP'⟩, ⟨hQ', hQQ'⟩, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/pairSharp_principal.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 /-- **`⟨↑P, ↑Q⟩^§ = ↑(1P∪2Q)`**: `pairSharp` sends a pair of principal elements to the principal
@@ -56729,20 +47828,12 @@ theorem pairSharp_principal {P Q : Set (List Bool × α)} (hP : MemS D P) (hQ : 
     exact ⟨hW, hsub⟩
   · rintro ⟨hW, hsub⟩
     exact ⟨prod_mem_prodNbhd hP hQ, hW, P, Q, hP, hQ, rfl, hsub⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/gMap_eq_of_satisfies.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Uniqueness of the catamorphism** (Exercise 8.21(b)(1), Scott's own remark "`g` is unique
@@ -56810,20 +47901,12 @@ theorem gMap_eq_of_satisfies {k : ApproximableMap (Dsharp D hD) E} (hk : IsStric
   by_cases hW : MemS D W
   · exact main hW Z
   · exact ⟨fun h => absurd (k.rel_dom h) hW, fun h => absurd (gRel_dom h) hW⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/dsharpMap_comp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 section DsharpFunctor
@@ -56885,20 +47968,12 @@ theorem dsharpMap_comp (f : ApproximableMap D₂ D₁) (f' : ApproximableMap D�
         rw [toElementMap_comp, toElementMap_comp]
 
 end DsharpFunctor
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/ISharpComb_comp_JSharpComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`I ∘ J = a§`**, when `a` is a finitary projection. -/
@@ -56908,20 +47983,12 @@ theorem ISharpComb_comp_JSharpComb {a : ApproximableMap U U} (ha : FinitaryProje
   rw [comp_assoc, ← comp_assoc (dsharpMap _ _ _) (dsharpMap _ _ _) jSharp, ← dsharpMap_comp,
     inj_comp_proj_eq_self ha, dsharpMap_self_eq_aSharpInner]
   exact (aSharp_eq a).symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/JSharpComb_comp_ISharpComb.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **`J ∘ I = I_{(D_a)§}`**, unconditionally (no finitary/projection hypothesis on `a` needed). -/
@@ -56931,20 +47998,12 @@ theorem JSharpComb_comp_ISharpComb (a : ApproximableMap U U) :
   unfold JSharpComb ISharpComb
   rw [comp_assoc, ← comp_assoc jSharp iSharp (dsharpMap _ _ _), jSharp_comp_iSharp, idMap_comp,
     ← dsharpMap_comp, (fixedNbhd_subsystem a).proj_comp_inj, dsharpMap_id]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/dsharp_fixedNbhd_elementIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Exercise 8.21(c) (Scott 1981, PRG-19).** For a finitary projection `a` of `U`, the tree
@@ -56956,20 +48015,12 @@ noncomputable def dsharp_fixedNbhd_elementIso {a : ApproximableMap U U}
       {y : U.Element // (aSharp a).toElementMap y = y} :=
   elementIsoOfProjectionPair (ISharpComb a) (JSharpComb a) (JSharpComb_comp_ISharpComb a)
     (ISharpComb_comp_JSharpComb ha).symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 /-- **Exercise 8.21(b)(2), general form.** If `a : D → D` is a retraction, so is the recursive
@@ -57022,18 +48073,11 @@ theorem gMap_selfComp_eq_of_isRetraction {a : ApproximableMap D D} (ha : Retract
             (pair (g.toElementMap (g.toElementMap y)) (g.toElementMap (g.toElementMap z))) := e3
       _ = v.toElementMap (pair ((g.comp g).toElementMap y) ((g.comp g).toElementMap z)) := by
           rw [toElementMap_comp, toElementMap_comp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/GRelu2emono_uv.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **`GRel` is monotone in `u`, `v`.** Direct structural induction on the `GRel` derivation,
 parallel to `gRel_mono`'s induction on shape. -/
@@ -57046,46 +48090,24 @@ theorem GRel.mono_uv (_hD : ∀ X, D.mem X → X.Nonempty)
   | gamma hZ => exact GRel.gamma hZ
   | leaf hrel => exact GRel.leaf (hu _ _ hrel)
   | node hP hQ hvrel ihP ihQ => exact GRel.node ihP ihQ (hv _ _ hvrel)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/aSharpInner_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 theorem aSharpInner_eq (a : ApproximableMap U U) :
     aSharpInner a = gMap ((inSharpMap U_mem_nonempty).comp a) (pairSharpMap U_mem_nonempty)
       U_mem_nonempty := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/aSharpInner_idem_of_isRetraction.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **Exercise 8.21(b)(2).** If `a` is a retraction (`a∘a = a`), so is its recursive extension
 `aSharpInner a`: the specialization of `gMap_selfComp_eq_of_isRetraction` to `D := U`. -/
@@ -57095,18 +48117,11 @@ theorem aSharpInner_idem_of_isRetraction {a : ApproximableMap U U} (ha : Retract
   show (aSharpInner a).comp (aSharpInner a) = aSharpInner a
   rw [aSharpInner_eq]
   exact gMap_selfComp_eq_of_isRetraction ha
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/gMap_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 /-- **`gMap` is monotone in `u`, `v`.** -/
 theorem gMap_mono (hD : ∀ X, D.mem X → X.Nonempty)
@@ -57115,45 +48130,23 @@ theorem gMap_mono (hD : ∀ X, D.mem X → X.Nonempty)
   rw [ApproximableMap.le_iff]
   intro W Z h
   exact GRel.mono_uv hD hu hv h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/iSharp_comp_jSharp_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 theorem iSharp_comp_jSharp_le : iSharp.comp jSharp ≤ idMap U :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.2.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/aSharp_le_idMap_of_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **`a ≤ I ⟹ a§ ≤ I`** (half of "`a` a projection ⟹ `a§` a projection", Proposition 8.10's
 proof recipe transcribed to `§`). -/
@@ -57173,116 +48166,61 @@ theorem aSharp_le_idMap_of_le {a : ApproximableMap U U} (ha : a ≤ idMap U) :
         comp_mono_gen le_rfl (comp_mono_gen h2 le_rfl)
     _ = iSharp.comp jSharp := by rw [idMap_comp]
     _ ≤ idMap U := iSharp_comp_jSharp_le
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/dsharpU_trianglelefteq_U.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **`U§ ⊴ U`.** -/
 theorem dsharpU_trianglelefteq_U : Dsharp U U_mem_nonempty ⊴ U :=
   trianglelefteq_of_projectionPair iSharp jSharp jSharp_comp_iSharp iSharp_comp_jSharp_le
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/iSharp_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 theorem iSharp_isComputableMap :
     ComputableMap (dsharpPresentation UComputablePresentation U_mem_nonempty)
       UComputablePresentation iSharp :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.2.2.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/isFinitary_aSharp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **`a§` is finitary whenever `a` is a finitary projection.** -/
 theorem isFinitary_aSharp {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     IsFinitary (aSharp a) :=
   isFinitary_of_projectionPair (ISharpComb a) (JSharpComb a) (JSharpComb_comp_ISharpComb a)
     (ISharpComb_comp_JSharpComb ha).symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/jSharp_isComputableMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 theorem jSharp_isComputableMap :
     ComputableMap UComputablePresentation
       (dsharpPresentation UComputablePresentation U_mem_nonempty) jSharp :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.2.2.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/aSharp_isComputable.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **`a§` is computable whenever `a` is.** -/
 theorem aSharp_isComputable {a : ApproximableMap U U}
@@ -57298,24 +48236,13 @@ theorem aSharp_isComputable {a : ApproximableMap U U}
       (dsharpPresentation UComputablePresentation U_mem_nonempty) hu
       (pairSharp_isComputable U_mem_nonempty UComputablePresentation)
   exact comp_isComputable (comp_isComputable jSharp_isComputableMap hInner) iSharp_isComputableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/toElementMap_aSharp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **`a§`, unfolded one step through the `U§ ⊴ U` projection pair.** Mirrors
 `Proposition810.lean`'s `toElementMap_prodComb`/`toElementMap_arrowComb` pattern. -/
@@ -57324,24 +48251,13 @@ theorem toElementMap_aSharp (a : ApproximableMap U U) (x : U.Element) :
       = iSharp.toElementMap ((aSharpInner a).toElementMap (jSharp.toElementMap x)) := by
   rw [aSharp_eq]
   simp only [toElementMap_comp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/isRetraction_aSharp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **Exercise 8.21(b)(3).** Idempotence of `aSharpInner a` transports through the projection pair
 `iSharp`/`jSharp` to idempotence of `aSharp a` itself — exactly `Proposition810.lean`'s
@@ -57356,24 +48272,13 @@ theorem isRetraction_aSharp {a : ApproximableMap U U} (ha2 : Retraction (aSharpI
   rw [toElementMap_comp, toElementMap_aSharp a ((aSharp a).toElementMap x),
     toElementMap_aSharp a x, toElementMap_of_comp_eq_idMap jSharp_comp_iSharp,
     toElementMap_idem_of_isRetraction ha2]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/isProjection_aSharp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **Exercise 8.21(b), assembled.** `a` a projection of `U` `⟹` `a§` a projection: the `≤ I` half
 is 8.21(a)'s `aSharp_le_idMap_of_le`; the retraction half chains `aSharpInner_idem_of_isRetraction`
@@ -57384,38 +48289,22 @@ projection" in full, matching `Proposition810.lean`'s `isProjection_sumComb`/`is
 theorem isProjection_aSharp {a : ApproximableMap U U} (ha : IsProjection a) :
     IsProjection (aSharp a) :=
   ⟨isRetraction_aSharp (aSharpInner_idem_of_isRetraction ha.1), aSharp_le_idMap_of_le ha.2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821/isFinitaryProjection_aSharp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
 
 /-- **Exercise 8.21, in full (Scott 1981, PRG-19).** `a` a finitary projection of `U` `⟹` `a§` is
 a finitary projection of `U`, with `D_{a§} ≅ (D_a)§`. -/
 theorem isFinitaryProjection_aSharp {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     FinitaryProjection (aSharp a) :=
   ⟨⟨isProjection_aSharp ha.out.1, isFinitary_aSharp ha⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise821.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_821.{u_1} : And
@@ -57699,20 +48588,12 @@ theorem example_821.{u_1} : And
       @DomainTheory.NeighbourhoodSystems.aSharpInner_idem_of_isRetraction)
     @DomainTheory.NeighbourhoodSystems.isProjection_aSharp)
   @DomainTheory.NeighbourhoodSystems.isRetraction_aSharp
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Congr/ofIso_comp_ofIso_symm.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β γ α' β' : Type*}
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 theorem ofIso_comp_ofIso_symm (e : V₀.Element ≃o V₀'.Element) :
@@ -57721,40 +48602,24 @@ theorem ofIso_comp_ofIso_symm (e : V₀.Element ≃o V₀'.Element) :
   intro x
   rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, toElementMap_idMap,
     OrderIso.apply_symm_apply]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Congr/funSpaceCongr_hij.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β γ α' β' : Type*}
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 theorem funSpaceCongr_hij (e0 : V₀.Element ≃o V₀'.Element) (e1 : V₁.Element ≃o V₁'.Element) :
     (expMap (ofIso e0.symm) (ofIso e1)).comp (expMap (ofIso e0) (ofIso e1.symm)) =
       idMap (funSpace V₀' V₁') := by
   rw [← expMap_comp, ofIso_comp_ofIso_symm, ofIso_comp_ofIso_symm, expMap_id]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Congr/ofIso_symm_comp_ofIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β γ α' β' : Type*}
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 theorem ofIso_symm_comp_ofIso (e : V₀.Element ≃o V₀'.Element) :
@@ -57763,40 +48628,24 @@ theorem ofIso_symm_comp_ofIso (e : V₀.Element ≃o V₀'.Element) :
   intro x
   rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, toElementMap_idMap,
     OrderIso.symm_apply_apply]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Congr/funSpaceCongr_hji.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β γ α' β' : Type*}
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 theorem funSpaceCongr_hji (e0 : V₀.Element ≃o V₀'.Element) (e1 : V₁.Element ≃o V₁'.Element) :
     (expMap (ofIso e0) (ofIso e1.symm)).comp (expMap (ofIso e0.symm) (ofIso e1)) =
       idMap (funSpace V₀ V₁) := by
   rw [← expMap_comp, ofIso_symm_comp_ofIso, ofIso_symm_comp_ofIso, expMap_id]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Congr/orderIsoOfMutualInverse.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β γ α' β' : Type*}
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 /-- **Two approximable maps that are *exact* (not merely `≤`) mutual inverses give an
@@ -57820,20 +48669,12 @@ def orderIsoOfMutualInverse {D : NeighborhoodSystem α} {E : NeighborhoodSystem 
         toElementMap_idMap] at hm
     · intro h
       exact i.toElementMap_mono h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Congr/funSpaceCongrOrderIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β γ α' β' : Type*}
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 /-- **`funSpace` is a congruence for `≃o`.** `𝒟₀ ≃o 𝒟₀'`, `𝒟₁ ≃o 𝒟₁'` `⟹`
@@ -57843,34 +48684,22 @@ noncomputable def funSpaceCongrOrderIso (e0 : V₀.Element ≃o V₀'.Element)
     (funSpace V₀ V₁).Element ≃o (funSpace V₀' V₁').Element :=
   orderIsoOfMutualInverse (expMap (ofIso e0.symm) (ofIso e1)) (expMap (ofIso e0) (ofIso e1.symm))
     (funSpaceCongr_hji e0 e1) (funSpaceCongr_hij e0 e1)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Congr/curry_isomorphic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
-
 
 /-- **Currying (Theorem 3.12), as a domain isomorphism.** `(𝒟₀ × 𝒟₁ → 𝒟₂) ≅ (𝒟₀ → (𝒟₁ → 𝒟₂))`. -/
 theorem curry_isomorphic (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (V₂ : NeighborhoodSystem γ) :
     funSpace (prod V₀ V₁) V₂ ≅ᴰ funSpace V₀ (funSpace V₁ V₂) :=
   ⟨curryIso V₀ V₁ V₂⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Congr.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_825_congr.{u_1, u_2, u_3} : ∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} (V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
@@ -57885,72 +48714,45 @@ theorem example_825_congr.{u_1, u_2, u_3} : ∀ {α : Type u_1} {β : Type u_2} 
     (@DomainTheory.NeighbourhoodSystems.funSpace α (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) V₀
       (@DomainTheory.NeighbourhoodSystems.funSpace β γ V₁ V₂)) :=
   @DomainTheory.NeighbourhoodSystems.curry_isomorphic
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Congr/funSpace_congr.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
-
 
 /-- **`funSpace` is a congruence for `≅ᴰ`.** `𝒟₀ ≅ᴰ 𝒟₀'`, `𝒟₁ ≅ᴰ 𝒟₁'` `⟹`
 `(𝒟₀ → 𝒟₁) ≅ᴰ (𝒟₀' → 𝒟₁')`. -/
 theorem funSpace_congr (h0 : V₀ ≅ᴰ V₀') (h1 : V₁ ≅ᴰ V₁') :
     funSpace V₀ V₁ ≅ᴰ funSpace V₀' V₁' :=
   h0.elim fun e0 => h1.elim fun e1 => ⟨funSpaceCongrOrderIso e0 e1⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Congr/funSpace_congr_left.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
-
 
 /-- **`funSpace` congruence, domain slot.** `𝒟₀ ≅ᴰ 𝒟₀'` `⟹` `(𝒟₀ → 𝒟₁) ≅ᴰ (𝒟₀' → 𝒟₁)`. -/
 theorem funSpace_congr_left (h0 : V₀ ≅ᴰ V₀') : funSpace V₀ V₁ ≅ᴰ funSpace V₀' V₁ :=
   funSpace_congr h0 (Isomorphic.refl V₁)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Congr/funSpace_congr_right.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
-
 /-- **`funSpace` congruence, codomain slot.** `𝒟₁ ≅ᴰ 𝒟₁'` `⟹` `(𝒟₀ → 𝒟₁) ≅ᴰ (𝒟₀ → 𝒟₁')`. -/
 theorem funSpace_congr_right (h1 : V₁ ≅ᴰ V₁') : funSpace V₀ V₁ ≅ᴰ funSpace V₀ V₁' :=
   funSpace_congr (Isomorphic.refl V₀) h1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Closing/prod_self_isomorphic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {V : NeighborhoodSystem β}
 
 /-- **Closing argument, step 1.** `D ≅ D → V` and `V × V ≅ V` imply `D × D ≅ D`. -/
@@ -57958,16 +48760,10 @@ theorem prod_self_isomorphic (hDV : D ≅ᴰ funSpace D V) (hVV : prod V V ≅�
     prod D D ≅ᴰ D :=
   ((hDV.prod hDV).trans (funProd_isomorphic).symm).trans
     ((funSpace_congr_right hVV).trans hDV.symm)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Closing/funSpace_self_isomorphic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 variable {α β : Type*} {D : NeighborhoodSystem α} {V : NeighborhoodSystem β}
 
 /-- **Closing argument, step 2 (Exercise 8.25's main equation).** `D ≅ D → V` and `V × V ≅ V`
@@ -57979,14 +48775,9 @@ theorem funSpace_self_isomorphic (hDV : D ≅ᴰ funSpace D V) (hVV : prod V V �
     ((funSpace_congr_right hDV).trans (curry_isomorphic D D V).symm).trans
       ((funSpace_congr_left hDD).trans hDV.symm)
   step.symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825Closing.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_825_closing.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
@@ -57997,6 +48788,7 @@ theorem example_825_closing.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {D 
       @DomainTheory.NeighbourhoodSystems.Isomorphic α (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
         (@DomainTheory.NeighbourhoodSystems.funSpace α α D D) :=
   @DomainTheory.NeighbourhoodSystems.funSpace_self_isomorphic
+end
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -58018,28 +48810,19 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise826/Ulam.lean
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
+section
 /-- **Self-abstraction inside `𝒰`** (the end-of-lecture equation `λx.τ ≅ i_→(λx.τ)`): given the
 "outside" function `f : 𝒰 → 𝒰` (`τ`'s ordinary denotation as an approximable map), encode it into
 `𝒰` via `i_→` (`iArrow`, Definition 8.9). -/
 noncomputable def Ulam (f : ApproximableMap U U) : U.Element :=
   iArrow.toElementMap (toFilter f)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise826/translateAbs.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 /-- **Scott's translation recipe for a `λ`-abstraction**, `λx^{D_a}.σ ↦ λx. b(σ'[a(x)/x])`: given
@@ -58049,17 +48832,9 @@ neighbourhood system `E` and arbitrary `a, b : E → E` — specializes to Scott
 projections, but needs nothing special about `E`. -/
 def translateAbs (a b body : ApproximableMap E E) : ApproximableMap E E :=
   b.comp (body.comp a)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise826/Uapply_Ulam.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Faithfulness (`β`-soundness) of the self-hosted encoding.** Applying the self-hosted
 abstraction of `f` recovers `f` itself: `Uapply (Ulam f) x = f(x)`. The internal `λ`-calculus of
 `𝒰` literally computes the same thing as the "outside" one it is modelling — this is the actual
@@ -58076,21 +48851,11 @@ theorem Uapply_Ulam (f : ApproximableMap U U) (x : U.Element) :
       = (jArrow.comp iArrow).toElementMap (toFilter f) :=
     (toElementMap_comp jArrow iArrow (toFilter f)).symm
   rw [h1, jArrow_comp_iArrow, toElementMap_idMap, evalMap_apply, hround]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise826/translateAbs_idMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **A sanity check: the identity abstraction translates to the identity, and the recipe applied
 to `body = id` (the trivial "translation" of a bare variable `σ = x`) already has the right type
@@ -58100,14 +48865,9 @@ induction discussed above (the base case: variables). -/
 theorem translateAbs_idMap {a b : ApproximableMap E E} : translateAbs a b (idMap E) = b.comp a := by
   unfold translateAbs
   rw [idMap_comp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise826.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_826.{u} : ∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
@@ -58117,21 +48877,11 @@ theorem example_826.{u} : ∀ {α : Type u} {E : DomainTheory.NeighbourhoodSyste
       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap α E))
     (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α α α E E E b a) :=
   @DomainTheory.NeighbourhoodSystems.translateAbs_idMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise826/translateAbs_sandwich.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **"Be sure to show that this result has the right type."** `translateAbs a b body` always
 satisfies the defining sandwich equation `f = b∘f∘a` of Scott's `D_a → D_b` translation scheme
@@ -58145,21 +48895,11 @@ theorem translateAbs_sandwich {a b body : ApproximableMap E E}
     b.comp ((translateAbs a b body).comp a) = translateAbs a b body := by
   show b.comp ((b.comp (body.comp a)).comp a) = b.comp (body.comp a)
   rw [comp_assoc b (body.comp a) a, comp_assoc body a a, ha.out, ← comp_assoc b b (body.comp a), hb.out]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise826/translateApp_hasType.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 universe u
-
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 /-- **The matching claim for application**: if `f` already "has the right type" (`f = b∘f∘a`) and
 `x` already "has type `D_a`" (`a(x) = x`), then `f(x)` already "has type `D_b`" (`b(f(x)) = f(x)`).
@@ -58169,6 +48909,7 @@ theorem translateApp_hasType {a b f : ApproximableMap E E} (hsandwich : b.comp (
     {x : E.Element} (hx : a.toElementMap x = x) :
     b.toElementMap (f.toElementMap x) = f.toElementMap x := by
   conv_rhs => rw [← hsandwich, toElementMap_comp, toElementMap_comp, hx]
+end
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -58189,55 +48930,33 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/subU.lean
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
+section
 /-- **`sub`, regarded as a finitary projection of `𝒰` itself** (the exercise's opening sentence):
 conjugate Theorem 8.6(b)'s `subApprox : (𝒰→𝒰)→(𝒰→𝒰)` through the fixed pair `i_→, j_→`
 (Definition 8.9), exactly as `a→b` is built from `λf.b∘f∘a` in `Definition89.lean`. -/
 noncomputable def subU : ApproximableMap U U :=
   iArrow.comp (Sub8_6.subApprox.comp jArrow)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/PolymorphicType.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **A polymorphic type** (Scott 1981, PRG-19, Exercise 8.27): `d = sub∘d∘sub`, `sub` here being
 `subU` (Step 1's "`sub` regarded as a combinator on `𝒰`"). -/
 class PolymorphicType (d : ApproximableMap U U) : Prop where
   out : subU.comp (d.comp subU) = d
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piDApply.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **`Π(d)(x)`, for `x` a plain map `𝒰 → 𝒰`** (not yet an element of the function space) — the
 formula's "closed form" as a composite `ApproximableMap`, matching Scott's
 `λt. sub(d(sub(t)))(x(sub(t)))` literally. -/
 noncomputable def piDApply (d f : ApproximableMap U U) : ApproximableMap U U :=
   (evalMap U U).comp (paired (jArrow.comp (subU.comp (d.comp subU))) (f.comp subU))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piDUncurried.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **`Π(d)(x)(t)`, uncurried**: an `ApproximableMap ((𝒰→𝒰) × 𝒰) 𝒰`, jointly continuous in
 `(x, t)` for `d` fixed. -/
 noncomputable def piDUncurried (d : ApproximableMap U U) : ApproximableMap (prod (funSpace U U) U) U :=
@@ -58246,126 +48965,63 @@ noncomputable def piDUncurried (d : ApproximableMap U U) : ApproximableMap (prod
       (jArrow.comp (subU.comp (d.comp (subU.comp (proj₁ (funSpace U U) U)))))
       ((evalMap U U).comp
         (paired (proj₀ (funSpace U U) U) (subU.comp (proj₁ (funSpace U U) U)))))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **`Π(d)`, as a self-map of `(𝒰→𝒰)`** (currying `piDUncurried d` in `x`, leaving `t` bound). -/
 noncomputable def piD (d : ApproximableMap U U) : ApproximableMap (funSpace U U) (funSpace U U) :=
   curry (piDUncurried d)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piU.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **`Π(d)`, regarded as a combinator living in `𝒰` itself** — conjugating `piD d` through
 `i_→, j_→` (Definition 8.9), exactly as `subU` was built from `subApprox` in Step 1. This is what
 Scott's "type" means: a self-map *of `𝒰`*, not of `(𝒰→𝒰)`. -/
 noncomputable def piU (d : ApproximableMap U U) : ApproximableMap U U :=
   iArrow.comp ((piD d).comp jArrow)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/scFamily.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- The family of `subU`-self-consistent nbhds already in `t`'s filter. -/
 def scFamily (t : U.Element) : Type := {T : Set ℚ // subU.rel T T ∧ t.mem T}
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/BasicInst38.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 instance instNonemptyScFamily (t : U.Element) : Nonempty (scFamily t) :=
   ⟨⟨U.master, subU.master_rel, t.master_mem⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piDTypeMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **The "type at `s`" map**, `decode(subU(d(s)))`, as a function of the *element* `s` (not just
 `s = subU(principal Y)` for some `Y`). Packaging `piDApply`'s inner formula this way is what lets
 continuity/monotonicity in `s` be stated directly. -/
 noncomputable def piDTypeMap (d : ApproximableMap U U) : ApproximableMap U (funSpace U U) :=
   jArrow.comp (subU.comp d)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piDType.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- The "type at `s`" itself, as an `ApproximableMap U U`. Always a finitary projection
 (`isFinitaryProjection_piDType`, Step 4), for *any* `d` and `s`. -/
 noncomputable def piDType (d : ApproximableMap U U) (s : U.Element) : ApproximableMap U U :=
   toApproxMap ((piDTypeMap d).toElementMap s)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/scPrincipal.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- The principal element witnessed by a member of `scFamily t`. -/
 def scPrincipal {t : U.Element} (i : scFamily t) : U.Element :=
   U.principal (t.sub i.2.2)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/toElementMap_piU.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- `piU d`'s defining formula unfolded at the element level (mirrors `toElementMap_subU`). -/
 theorem toElementMap_piU (d : ApproximableMap U U) (w : U.Element) :
     (piU d).toElementMap w =
       iArrow.toElementMap ((piD d).toElementMap (jArrow.toElementMap w)) := by
   unfold piU
   rw [toElementMap_comp, toElementMap_comp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piD_fix_of_piU_fix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- Unfolds `(piU d).toElementMap w = w` into the statement that `j_→(w)` is already a fixed
 point of `piD d` (mirrors `subApprox_fix_of_subU_fix`). -/
 theorem piD_fix_of_piU_fix {d : ApproximableMap U U} {w : U.Element}
@@ -58374,31 +49030,17 @@ theorem piD_fix_of_piU_fix {d : ApproximableMap U U} {w : U.Element}
   rw [toElementMap_piU] at hw
   have hstep := congrArg jArrow.toElementMap hw
   rwa [jArrow_comp_iArrow_apply] at hstep
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piU_fix_of_piD_fix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- Mirrors `subU_fix_of_subApprox_fix`. -/
 theorem piU_fix_of_piD_fix {d : ApproximableMap U U} {φ : (funSpace U U).Element}
     (hφ : (piD d).toElementMap φ = φ) :
     (piU d).toElementMap (iArrow.toElementMap φ) = iArrow.toElementMap φ := by
   rw [toElementMap_piU, jArrow_comp_iArrow_apply, hφ]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piUFixIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **Exercise 8.27(b)(0): `Fix(piU d) ≃o Fix(piD d)`.** Forward: `w ↦ j_→(w)`; backward:
 `φ ↦ i_→(φ)`. Needs only `j_→∘i_→ = I` (no inequality on `i_→∘j_→`) — mirrors `subUFixIso`
 verbatim, with `piD d`/`piU d` in place of `subApprox`/`subU`. -/
@@ -58434,32 +49076,18 @@ noncomputable def piUFixIso (d : ApproximableMap U U) :
       rwa [e1, e2] at h2
     · intro hle
       exact jArrow.toElementMap_mono hle
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/toElementMap_subU.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- `subU`'s defining formula unfolded at the element level. -/
 theorem toElementMap_subU (w : U.Element) :
     subU.toElementMap w = iArrow.toElementMap (Sub8_6.subApprox.toElementMap
       (jArrow.toElementMap w)) := by
   unfold subU
   rw [toElementMap_comp, toElementMap_comp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/subApprox_fix_of_subU_fix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- Unfolds `subU.toElementMap w = w` (via `jArrow_comp_iArrow`) into the statement that
 `j_→(w)` is already a fixed point of `subApprox`. Used for both `subUFixIso.toFun`'s well-typing
 and its `left_inv`. -/
@@ -58468,30 +49096,16 @@ theorem subApprox_fix_of_subU_fix {w : U.Element} (hw : subU.toElementMap w = w)
   rw [toElementMap_subU] at hw
   have hstep := congrArg jArrow.toElementMap hw
   rwa [jArrow_comp_iArrow_apply] at hstep
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/subU_fix_of_subApprox_fix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 theorem subU_fix_of_subApprox_fix {φ : (funSpace U U).Element}
     (hφ : Sub8_6.subApprox.toElementMap φ = φ) :
     subU.toElementMap (iArrow.toElementMap φ) = iArrow.toElementMap φ := by
   rw [toElementMap_subU, jArrow_comp_iArrow_apply, hφ]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/subUFixIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **`Fix(subU) ≃o Fix(subApprox)`.** Forward: `w ↦ j_→(w)`; backward: `φ ↦ i_→(φ)`. Needs only
 `j_→∘i_→ = I` (no inequality on `i_→∘j_→`). -/
 noncomputable def subUFixIso :
@@ -58526,16 +49140,9 @@ noncomputable def subUFixIso :
       rwa [e1, e2] at h2
     · intro hle
       exact jArrow.toElementMap_mono hle
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/subUFixIsoSubFixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 /-- **`subU`'s fixed points are exactly the finitary projections of `𝒰`** (Exercise 8.27's
 opening sentence, precisely): composing `subUFixIso` with Theorem 8.6(b)(ii)'s `subApproxFixIso`
 identifies `Fix(subU)` with `{f : 𝒰→𝒰 ∣ sub f = f}`, which by Theorem 8.6(a)'s
@@ -58544,17 +49151,9 @@ noncomputable def subUFixIsoSubFixed :
     {w : U.Element // subU.toElementMap w = w} ≃o
       {f : ApproximableMap U U // sub f = f} :=
   subUFixIso.trans Sub8_6.subApproxFixIso
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Conjugating a retraction of `(𝒰→𝒰)` through `i_→, j_→` gives a retraction of `𝒰`.** Pure
 associativity plus `j_→∘i_→ = I` (`jArrow_comp_iArrow`) and `H∘H=H`. -/
 theorem isRetraction_conjArrow {H : ApproximableMap (funSpace U U) (funSpace U U)}
@@ -58745,18 +49344,9 @@ theorem eq_iSupDirected_scPrincipal {t : U.Element} (ht : subU.toElementMap t = 
   · rintro ⟨i, hi⟩
     obtain ⟨hZmem, hTZ⟩ := (U.mem_principal _).mp hi
     exact t.up_mem i.2.2 hZmem hTZ
-
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/isFinitaryProjection_piD_of_formula.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.27(b)(1).** If `piD d` satisfies Scott's step-closure formula (ii), it is a
 finitary projection — a direct specialization of `Theorem85.lean`'s general
 `isFinitaryProjection_of_formula`, no new proof needed beyond the specialization itself. -/
@@ -58765,17 +49355,9 @@ theorem isFinitaryProjection_piD_of_formula (d : ApproximableMap U U)
       (funSpace U U).mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ (piD d).rel X X) :
     FinitaryProjection (piD d) :=
   isFinitaryProjection_of_formula (piD d) hii
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/isFinitary_piU_of_isFinitary_piD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.27(b)(0), corollary: if `piD d` is finitary then so is `piU d`.** Mirrors
 `isFinitary_subU`'s use of `subUFixIso`. This is the reduction Exercise 8.27(b)(1)–(b)(4) will
 target: it suffices to prove `IsFinitary (piD d)` for `d` polymorphic. -/
@@ -58783,17 +49365,9 @@ theorem isFinitary_piU_of_isFinitary_piD {d : ApproximableMap U U} (h : IsFinita
     IsFinitary (piU d) := by
   obtain ⟨β, F, ⟨iso⟩⟩ := h
   exact ⟨β, F, ⟨(piUFixIso d).trans iso⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/isFinitary_piU_of_formula.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.27(b)(1), assembled with (b)(0):** formula (ii) for `piD d` alone gives
 `IsFinitary (piU d)`, i.e. (combined with the already-Pass 8.27(a)) the *entire* exercise for `d`
 polymorphic. This pins down exactly what Exercise 8.27(b)(2)–(b)(3) need to supply: `hii`. -/
@@ -58802,17 +49376,9 @@ theorem isFinitary_piU_of_formula {d : ApproximableMap U U}
       (funSpace U U).mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ (piD d).rel X X) :
     IsFinitary (piU d) :=
   isFinitary_piU_of_isFinitary_piD (isFinitaryProjection_piD_of_formula d hii).out.2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/le_idMap_piD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **`Π(d) ≤ I`, for any `d`.** Chains: `subU(t) ⊑ t` (`subU`'s own projection property) with
 `f`'s monotonicity to get `f(subU(t)) ⊑ f(t)`, then the "type at `t`"'s own `≤ I` (from
 `isFinitaryProjection_decode_subU`) to get `(type at t)(f(subU(t))) ⊑ f(subU(t))`. -/
@@ -58832,17 +49398,9 @@ theorem le_idMap_piD (d : ApproximableMap U U) : piD d ≤ idMap (funSpace U U) 
     _ ≤ (toApproxMap φ).toElementMap t :=
         (toApproxMap φ).toElementMap_mono
           (toElementMap_le_self_of_le_idMap isProjection_subU.2 t)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piDApply_toElementMap_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- Evaluating `piDApply d f` at an already-`subU`-projected point simplifies (via `subU`'s
 idempotency) exactly to `toElementMap_piDApply`'s formula with `t` replaced by `subU.toElementMap
 t` throughout. The key computational step behind `isRetraction_piD`. -/
@@ -58851,17 +49409,9 @@ theorem piDApply_toElementMap_eq (d f : ApproximableMap U U) (t : U.Element) :
       (toApproxMap (jArrow.toElementMap (subU.toElementMap (d.toElementMap
           (subU.toElementMap t))))).toElementMap (f.toElementMap (subU.toElementMap t)) := by
   rw [toElementMap_piDApply, toElementMap_idem_of_isRetraction isProjection_subU.1 t]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/isRetraction_piD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **`Π(d)` is a retraction, for any `d`.** -/
 theorem isRetraction_piD (d : ApproximableMap U U) : Retraction (piD d) := by
   constructor
@@ -58878,31 +49428,15 @@ theorem isRetraction_piD (d : ApproximableMap U U) : Retraction (piD d) := by
     toElementMap_piDApply d (toApproxMap φ) t]
   exact toElementMap_idem_of_isRetraction
     (isFinitaryProjection_decode_subU (d.toElementMap (subU.toElementMap t))).out.1.1 _
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/isProjection_piD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Scott's own hint, in full: `Π(d)` is a projection, for every `d`.** -/
 theorem isProjection_piD (d : ApproximableMap U U) : IsProjection (piD d) :=
   ⟨isRetraction_piD d, le_idMap_piD d⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/isProjection_piU.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **`Π(d)`, regarded as living in `𝒰` (`piU d`), is a projection, for every `d`.** Half of "for
 `d` a polymorphic type, `Π(d)` is a type" (Definition 8.3's `IsProjection` clause) — Scott's own
 "it is easy to check" — obtained "for free" from `isProjection_piD` via the same conjugation
@@ -58910,33 +49444,17 @@ gadget (`isProjection_conjArrow`) used for `subU` in Step 1. Note this does not 
 be a polymorphic type. -/
 theorem isProjection_piU (d : ApproximableMap U U) : IsProjection (piU d) :=
   isProjection_conjArrow (isProjection_piD d)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piDType_monotone.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **`piDType d` is monotone in `s`.** Composite of monotone `toElementMap`s (`d`, `subU`,
 `jArrow`) followed by monotone `toApproxMap` (`Sub8_6.toApproxMap_monotone`). -/
 theorem piDType_monotone (d : ApproximableMap U U) {s s' : U.Element} (h : s ≤ s') :
     piDType d s ≤ piDType d s' :=
   Sub8_6.toApproxMap_monotone ((piDTypeMap d).toElementMap_mono h)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/piD_rel_self_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.27(b)(2), specialized to self-relation** (the shape Theorem 8.5's formula (ii)
 actually tests, `a.rel X X`): combines (a) and (b) into the single membership-test formula that
 Exercise 8.27(b)(3) will chain through `subU`'s and each `D'_s`'s own formula (ii). -/
@@ -58944,64 +49462,32 @@ theorem piD_rel_self_iff (d : ApproximableMap U U) {X : Set (ApproximableMap U U
     (piD d).rel X X ↔ ∃ hX : (funSpace U U).mem X, gSection (piDUncurried d) hX ∈ X := by
   rw [piD_rel_iff]
   exact ⟨fun ⟨hX, _, hmem⟩ => ⟨hX, hmem⟩, fun ⟨hX, hmem⟩ => ⟨hX, hX, hmem⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/toElementMap_piDTypeMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 theorem toElementMap_piDTypeMap (d : ApproximableMap U U) (s : U.Element) :
     (piDTypeMap d).toElementMap s = jArrow.toElementMap (subU.toElementMap (d.toElementMap s)) := by
   unfold piDTypeMap
   rw [toElementMap_comp, toElementMap_comp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/isFinitaryProjection_piDType.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 theorem isFinitaryProjection_piDType (d : ApproximableMap U U) (s : U.Element) :
     FinitaryProjection (piDType d s) := by
   unfold piDType
   rw [toElementMap_piDTypeMap]
   exact isFinitaryProjection_decode_subU (d.toElementMap s)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/toElementMap_piDApplyu27.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- `piDApply`'s defining formula, restated via `piDType`/`piDTypeMap`. -/
 theorem toElementMap_piDApply' (d f : ApproximableMap U U) (t : U.Element) :
     (piDApply d f).toElementMap t =
       (piDType d (subU.toElementMap t)).toElementMap (f.toElementMap (subU.toElementMap t)) := by
   rw [toElementMap_piDApply, piDType, toElementMap_piDTypeMap]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/exists_X_of_mem_step.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.27(b)(3)(b), single-pair case — the genuine mathematical content.** Given
 `f := piDApply d (toApproxMap x)` relates `Y₀` to `Z₀`, produce `X` (a single `step`) with
 `x.mem X`, `X ⊆ step Y₀ Z₀`, `(piD d).rel X X`.
@@ -59079,17 +49565,9 @@ theorem exists_X_of_mem_step (d : ApproximableMap U U) (x : (funSpace U U).Eleme
       (rel_iff_mem_principal g hTfinal).mp hg
     exact mem_of_exists_rel_self (g.toElementMap (U.principal hTfinal))
       ((piDType d (U.principal hTfinal)).rel_dom hPfinal) hgmem subset_rfl hPfinal
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/exists_X_of_mem_stepFun.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.27(b)(3)(b), assembled over a whole `stepFun` list.** Induction on the list `L`
 using `exists_X_of_mem_step` for the head pair and the inductive hypothesis for the tail, combined
 via `x.inter_mem` (giving the ambient validity of the intersection "for free", `x.sub`) and
@@ -59117,17 +49595,9 @@ theorem exists_X_of_mem_stepFun (d : ApproximableMap U U) (x : (funSpace U U).El
       have h2 : (piD d).rel (Xp ∩ XL) XL :=
         (piD d).mono hXLXL Set.inter_subset_right subset_rfl hvalidInter hvalidL
       exact (piD d).inter_right h1 h2
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/hii_hard_direction.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.27(b)(3), the `⟹` half, closed for any `d` at all.** Destructure the general
 `Y : Set (ApproximableMap U U)` via `funSpace_mem_iff` into `Y = stepFun L`, then apply
 `exists_X_of_mem_stepFun`. -/
@@ -59137,17 +49607,9 @@ theorem hii_hard_direction (d : ApproximableMap U U) (x : (funSpace U U).Element
     ∃ X, x.mem X ∧ X ⊆ Y ∧ (piD d).rel X X := by
   obtain ⟨⟨L, _, rfl⟩, _⟩ := hYE
   exact exists_X_of_mem_stepFun d x L hmem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/hii_piD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.27(b)(3), in full: `piD d` satisfies Scott's step-closure formula (ii), for *any*
 `d` at all** (`d`'s polymorphism is not needed). Combines the reduction (b)(3)(a) with the easy
 (`hii_easy_direction`) and now-closed hard (`hii_hard_direction`) halves. -/
@@ -59162,47 +49624,26 @@ theorem hii_piD (d : ApproximableMap U U) (x : (funSpace U U).Element)
   · rintro ⟨hYE, X, hXx, hXY, hXX⟩
     have := hii_easy_direction d x hYE hXx hXY hXX
     rwa [piD_toElementMap_mem_iff] at this
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/isFinitaryProjection_piD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.27(b)(4): `piD d` is a finitary projection, for every `d`** (Exercise 8.27(b)(1)
 specialized to `hii_piD`). Combined with Exercise 8.27(b)(0) (`isFinitary_piU_of_isFinitary_piD`),
 this closes "`Π(d)` is a type" — Scott's own hint, in full, and *without even needing `d` to be a
 polymorphic type* (a strictly stronger statement than the exercise asks for). -/
 theorem isFinitaryProjection_piD (d : ApproximableMap U U) : FinitaryProjection (piD d) :=
   isFinitaryProjection_piD_of_formula d (fun x => hii_piD d x)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827/isFinitaryProjection_piU.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
-
 /-- **Exercise 8.27, in full: for `d` a polymorphic type, `Π(d)` is a type.** (In fact for *any*
 `d` at all — see `isFinitaryProjection_piD`.) This is the exercise's own statement, the last exercise
 in the book, closed. -/
 theorem isFinitaryProjection_piU (d : ApproximableMap U U) : FinitaryProjection (piU d) :=
   ⟨⟨isProjection_piU d, isFinitary_piU_of_isFinitary_piD (isFinitaryProjection_piD d).out.2⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise827.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_827 : And
@@ -65412,17 +55853,12 @@ theorem example_827 : And
       @DomainTheory.NeighbourhoodSystems.isFinitary_piU_of_formula)
     @DomainTheory.NeighbourhoodSystems.isFinitary_piU_of_isFinitary_piD)
   DomainTheory.NeighbourhoodSystems.piD_rel_self_iff
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- UBisection2/bisection.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace decodeRat
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem foldl_ratMax (l : List ℕ) (z : ℕ) :
     decodeRat (l.foldl (fun acc x => ratMaxCode (Nat.pair acc x.unpair.2)) z)
       = (l.map decodeRatPair).foldl (fun acc p => max acc p.2) (decodeRat z) := by
@@ -65431,15 +55867,13 @@ theorem foldl_ratMax (l : List ℕ) (z : ℕ) :
   | cons a l ih =>
     rw [List.foldl_cons, List.map_cons, List.foldl_cons, ih, decodeRat_ratMaxCode]
     rfl
+end
 
 end decodeRat
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace foldl
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem maxSnd_mem_or_eq_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
     L.foldl (fun acc p => max acc p.2) seed = seed ∨
       ∃ p ∈ L, L.foldl (fun acc q => max acc q.2) seed = p.2 := by
@@ -65456,14 +55890,12 @@ theorem maxSnd_mem_or_eq_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
       rcases ih a.2 with h | ⟨p, hp, h⟩
       · exact Or.inr ⟨a, List.mem_cons_self .., h⟩
       · exact Or.inr ⟨p, List.mem_cons_of_mem a hp, h⟩
+end
 
 end foldl
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **Every pair of `decodeQPairList (canonCode c)` has both endpoints in `[0, 1]`** — mirrors
 `forall_lt_decodeQPairList_canonCode` (nondegeneracy), giving the companion boundedness fact. -/
 theorem forall_bounds_decodeQPairList_canonCode (c : ℕ) :
@@ -65483,33 +55915,23 @@ theorem forall_bounds_decodeQPairList_canonCode (c : ℕ) :
     intro p hp
     obtain ⟨p0, -, -, rfl⟩ := (mem_decodeQPairList_canonListCode c p).mp hp
     exact ⟨le_sup_right, inf_le_right⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- `max_i pᵢ.2` over a presenting list, folded with seed `0`. -/
 def listMaxSnd (L : List (ℚ × ℚ)) : ℚ := L.foldl (fun acc p => max acc p.2) 0
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- `min_i pᵢ.1` over a presenting list, folded with seed `1` (safe: every genuine pair has
 `p.1 < 1` once bounded, `forall_bounds_decodeQPairList_canonCode`). -/
 def listMinFst (L : List (ℚ × ℚ)) : ℚ := L.foldl (fun acc p => min acc p.1) 1
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace decodeRat
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- Bridging `List.foldl` over raw pair-codes (via `ratMinCode`) to `List.foldl` over decoded
 pairs (via `min ·.1`), one step at a time. -/
 theorem foldl_ratMin (l : List ℕ) (z : ℕ) :
@@ -65520,15 +55942,13 @@ theorem foldl_ratMin (l : List ℕ) (z : ℕ) :
   | cons a l ih =>
     rw [List.foldl_cons, List.map_cons, List.foldl_cons, ih, decodeRat_ratMinCode]
     rfl
+end
 
 end decodeRat
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace foldl
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem maxSnd_seed_le (L : List (ℚ × ℚ)) (seed : ℚ) :
     seed ≤ L.foldl (fun acc p => max acc p.2) seed := by
   induction L generalizing seed with
@@ -65536,25 +55956,21 @@ theorem maxSnd_seed_le (L : List (ℚ × ℚ)) (seed : ℚ) :
   | cons a l ih =>
     rw [List.foldl_cons]
     exact (le_max_left seed a.2).trans (ih (max seed a.2))
+end
 
 end foldl
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- The code-level `listMaxSnd`: fold `ratMaxCode` over `c`'s pair-codes, seeded at `zeroCode`. -/
 def listMaxSndCode (c : ℕ) : ℕ :=
   foldCode (fun t => ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.2)) 0 zeroCode c
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace decodeRat
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem listMaxSndCode (c : ℕ) :
     decodeRat (_root_.DomainTheory.NeighbourhoodSystems.listMaxSndCode c) = listMaxSnd (decodeQPairList c) := by
   unfold _root_.DomainTheory.NeighbourhoodSystems.listMaxSndCode listMaxSnd decodeQPairList
@@ -65565,15 +55981,13 @@ theorem listMaxSndCode (c : ℕ) :
       = (fun acc x : ℕ => ratMaxCode (Nat.pair acc x.unpair.2)) := by
     funext acc x; simp only [unpair_pair_fst, unpair_pair_snd]
   rw [hstep, decodeRat.foldl_ratMax, decodeRat_zeroCode]
+end
 
 end decodeRat
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace foldl
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem maxSnd_ge (L : List (ℚ × ℚ)) (seed : ℚ) (p : ℚ × ℚ) (hp : p ∈ L) :
     p.2 ≤ L.foldl (fun acc q => max acc q.2) seed := by
   induction L generalizing seed with
@@ -65583,51 +55997,39 @@ theorem maxSnd_ge (L : List (ℚ × ℚ)) (seed : ℚ) (p : ℚ × ℚ) (hp : p 
     rcases List.mem_cons.mp hp with rfl | hp'
     · exact (le_max_right seed p.2).trans (foldl.maxSnd_seed_le l (max seed p.2))
     · exact ih (max seed a.2) hp'
+end
 
 end foldl
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace listMaxSnd
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem ge {L : List (ℚ × ℚ)} {p : ℚ × ℚ} (hp : p ∈ L) : p.2 ≤ listMaxSnd L :=
   foldl.maxSnd_ge L 0 p hp
+end
 
-end listMaxSnd
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace listMaxSnd
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem attained {L : List (ℚ × ℚ)} (hne : L ≠ []) (hlb : ∀ p ∈ L, 0 < p.2) :
     ∃ p ∈ L, p.2 = listMaxSnd L := by
   rcases foldl.maxSnd_mem_or_eq_seed L 0 with h1 | ⟨p, hp, h1⟩
   · obtain ⟨p0, hp0⟩ := List.exists_mem_of_ne_nil L hne
     exact absurd (h1 ▸ listMaxSnd.ge hp0) (not_le.mpr (hlb p0 hp0))
   · exact ⟨p, hp, h1.symm⟩
+end
 
 end listMaxSnd
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- The code-level `listMinFst`: fold `ratMinCode` over `c`'s pair-codes, seeded at `oneCode`. -/
 def listMinFstCode (c : ℕ) : ℕ :=
   foldCode (fun t => ratMinCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.1)) 0 oneCode c
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace decodeRat
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem listMinFstCode (c : ℕ) :
     decodeRat (_root_.DomainTheory.NeighbourhoodSystems.listMinFstCode c) = listMinFst (decodeQPairList c) := by
   unfold _root_.DomainTheory.NeighbourhoodSystems.listMinFstCode listMinFst decodeQPairList
@@ -65638,15 +56040,13 @@ theorem listMinFstCode (c : ℕ) :
       = (fun acc x : ℕ => ratMinCode (Nat.pair acc x.unpair.1)) := by
     funext acc x; simp only [unpair_pair_fst, unpair_pair_snd]
   rw [hstep, decodeRat.foldl_ratMin, decodeRat_oneCode]
+end
 
 end decodeRat
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace foldl
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem minFst_le_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
     L.foldl (fun acc p => min acc p.1) seed ≤ seed := by
   induction L generalizing seed with
@@ -65654,15 +56054,13 @@ theorem minFst_le_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
   | cons a l ih =>
     rw [List.foldl_cons]
     exact (ih (min seed a.1)).trans (min_le_left seed a.1)
+end
 
 end foldl
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace listMaxSnd
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`listMaxSnd L` is arbitrarily approached from below by `presentedIntervals L`.** -/
 theorem tight {L : List (ℚ × ℚ)} (hne : L ≠ [])
     (hpos : ∀ p ∈ L, p.1 < p.2) (hb : ∀ p ∈ L, 0 ≤ p.1 ∧ p.2 ≤ 1) {y : ℚ}
@@ -65674,25 +56072,21 @@ theorem tight {L : List (ℚ × ℚ)} (hne : L ≠ [])
   · exact ⟨p.1, mem_presentedIntervals.mpr ⟨p, hp, le_refl _, hpos p hp⟩, hlt⟩
   · exact ⟨(y + p.2) / 2, mem_presentedIntervals.mpr ⟨p, hp, hge.trans (left_lt_add_div_two.mpr hy).le,
       add_div_two_lt_right.mpr hy⟩, left_lt_add_div_two.mpr hy⟩
+end
 
 end listMaxSnd
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- The midpoint code of `canonCode n`'s intrinsic `(min, max)` pair. -/
 def splitU2MidCode (n : ℕ) : ℕ :=
   ratMidCode (Nat.pair (listMinFstCode (canonCode n)) (listMaxSndCode (canonCode n)))
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace decodeRat
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem splitU2MidCode (n : ℕ) :
     decodeRat (_root_.DomainTheory.NeighbourhoodSystems.splitU2MidCode n) =
       (listMinFst (decodeQPairList (canonCode n)) + listMaxSnd (decodeQPairList (canonCode n)))
@@ -65700,15 +56094,13 @@ theorem splitU2MidCode (n : ℕ) :
   unfold _root_.DomainTheory.NeighbourhoodSystems.splitU2MidCode
   rw [decodeRat_ratMidCode', unpair_pair_fst, unpair_pair_snd, decodeRat.listMinFstCode,
     decodeRat.listMaxSndCode]
+end
 
 end decodeRat
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace foldl
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem minFst_le (L : List (ℚ × ℚ)) (seed : ℚ) (p : ℚ × ℚ) (hp : p ∈ L) :
     L.foldl (fun acc q => min acc q.1) seed ≤ p.1 := by
   induction L generalizing seed with
@@ -65718,26 +56110,22 @@ theorem minFst_le (L : List (ℚ × ℚ)) (seed : ℚ) (p : ℚ × ℚ) (hp : p 
     rcases List.mem_cons.mp hp with rfl | hp'
     · exact (foldl.minFst_le_seed l (min seed p.1)).trans (min_le_right seed p.1)
     · exact ih (min seed a.1) hp'
+end
 
 end foldl
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace listMinFst
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem le {L : List (ℚ × ℚ)} {p : ℚ × ℚ} (hp : p ∈ L) : listMinFst L ≤ p.1 :=
   foldl.minFst_le L 1 p hp
+end
 
 end listMinFst
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace splitU2
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`Xₙ`'s intrinsic minimum is strictly below its intrinsic maximum**, via any single
 witnessing pair of `canonCode n`'s presenting list (nonempty, `forall_lt_...`). -/
 theorem min_lt_max (n : ℕ) :
@@ -65745,77 +56133,57 @@ theorem min_lt_max (n : ℕ) :
   obtain ⟨p, hp⟩ := List.exists_mem_of_ne_nil _ (decodeQPairList_canonCode_ne_nil n)
   exact lt_of_le_of_lt (listMinFst.le hp)
     (lt_of_lt_of_le (forall_lt_decodeQPairList_canonCode n p hp) (listMaxSnd.ge hp))
+end
 
-end splitU2
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace splitU2
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem mid_lt_max (n : ℕ) :
     decodeRat (splitU2MidCode n) < listMaxSnd (decodeQPairList (canonCode n)) := by
   rw [decodeRat.splitU2MidCode]; exact add_div_two_lt_right.mpr (splitU2.min_lt_max n)
+end
 
-end splitU2
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace splitU2
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem min_lt_mid (n : ℕ) :
     listMinFst (decodeQPairList (canonCode n)) < decodeRat (splitU2MidCode n) := by
   rw [decodeRat.splitU2MidCode]; exact left_lt_add_div_two.mpr (splitU2.min_lt_max n)
+end
 
 end splitU2
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace listMaxSnd
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`listMaxSnd L` strictly upper-bounds `presentedIntervals L`.** -/
 theorem upper_bound {L : List (ℚ × ℚ)} {x : ℚ} (hx : x ∈ presentedIntervals L) :
     x < listMaxSnd L := by
   obtain ⟨p, hp, -, hx2⟩ := mem_presentedIntervals.mp hx
   exact hx2.trans_le (listMaxSnd.ge hp)
+end
 
 end listMaxSnd
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace listMinFst
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`listMinFst L` lower-bounds `presentedIntervals L`.** -/
 theorem lower_bound {L : List (ℚ × ℚ)} {x : ℚ} (hx : x ∈ presentedIntervals L) :
     listMinFst L ≤ x := by
   obtain ⟨p, hp, hx1, -⟩ := _root_.DomainTheory.NeighbourhoodSystems.mem_presentedIntervals.mp hx
   exact (listMinFst.le hp).trans hx1
+end
 
 end listMinFst
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- The "left" half of the canonical split of `Xₙ`: `Xₙ ∩ (-∞, m)` for `m` the midpoint of `Xₙ`'s
 intrinsic `(min, max)`. -/
 def splitU2Left (n : ℕ) : ℕ := clipLtListCode (splitU2MidCode n) (canonCode n)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace foldl
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem minFst_mem_or_eq_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
     L.foldl (fun acc p => min acc p.1) seed = seed ∨
       ∃ p ∈ L, L.foldl (fun acc q => min acc q.1) seed = p.1 := by
@@ -65832,30 +56200,26 @@ theorem minFst_mem_or_eq_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
       rcases ih a.1 with h | ⟨p, hp, h⟩
       · exact Or.inr ⟨a, List.mem_cons_self .., h⟩
       · exact Or.inr ⟨p, List.mem_cons_of_mem a hp, h⟩
+end
 
 end foldl
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace listMinFst
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem attained {L : List (ℚ × ℚ)} (hne : L ≠ []) (hub : ∀ p ∈ L, p.1 < 1) :
     ∃ p ∈ L, p.1 = listMinFst L := by
   rcases foldl.minFst_mem_or_eq_seed L 1 with h1 | ⟨p, hp, h1⟩
   · obtain ⟨p0, hp0⟩ := List.exists_mem_of_ne_nil L hne
     exact absurd (h1 ▸ listMinFst.le hp0) (not_le.mpr (hub p0 hp0))
   · exact ⟨p, hp, h1.symm⟩
+end
 
 end listMinFst
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace listMaxSnd
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`listMaxSnd` is a well-defined function of the presented set alone.** -/
 theorem congr {L1 L2 : List (ℚ × ℚ)} (hne1 : L1 ≠ []) (hne2 : L2 ≠ [])
     (hpos1 : ∀ p ∈ L1, p.1 < p.2) (hb1 : ∀ p ∈ L1, 0 ≤ p.1 ∧ p.2 ≤ 1)
@@ -65870,15 +56234,13 @@ theorem congr {L1 L2 : List (ℚ × ℚ)} (hne1 : L1 ≠ []) (hne2 : L2 ≠ [])
   · obtain ⟨x, hx, hyx⟩ := listMaxSnd.tight hne1 hpos1 hb1 hlt
     have hx2 : x ∈ presentedIntervals L2 := heq ▸ hx
     exact absurd (listMaxSnd.upper_bound hx2) (not_lt.mpr hyx.le)
+end
 
 end listMaxSnd
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace listMinFst
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`listMinFst L` is the genuine minimum of `presentedIntervals L`** (membership half). -/
 theorem mem_presentedIntervals {L : List (ℚ × ℚ)} (hne : L ≠ [])
     (hpos : ∀ p ∈ L, p.1 < p.2) (hb : ∀ p ∈ L, 0 ≤ p.1 ∧ p.2 ≤ 1) :
@@ -65886,15 +56248,9 @@ theorem mem_presentedIntervals {L : List (ℚ × ℚ)} (hne : L ≠ [])
   have hub : ∀ p ∈ L, p.1 < 1 := fun p hp => (hpos p hp).trans_le (hb p hp).2
   obtain ⟨p, hp, hpeq⟩ := listMinFst.attained hne hub
   exact _root_.DomainTheory.NeighbourhoodSystems.mem_presentedIntervals.mpr ⟨p, hp, hpeq.le, hpeq ▸ hpos p hp⟩
+end
 
-end listMinFst
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace listMinFst
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **`listMinFst` is a well-defined function of the presented set alone**, mirroring
 `MinLevel.lean`'s `minLevel_unique` for `V`: two (nonempty, nondegenerate, `[0,1]`-bounded)
 presenting lists of the *same* set have the same `listMinFst`. -/
@@ -65908,14 +56264,12 @@ theorem congr {L1 L2 : List (ℚ × ℚ)} (hne1 : L1 ≠ []) (hne2 : L2 ≠ [])
   have hm2 : listMinFst L2 ∈ presentedIntervals L1 :=
     heq ▸ listMinFst.mem_presentedIntervals hne2 hpos2 hb2
   exact le_antisymm (listMinFst.lower_bound hm2) (listMinFst.lower_bound hm1)
+end
 
 end listMinFst
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`splitU2Left`/`splitU2Right`'s midpoint depends only on `UX n` as a set** — the key lemma
 that `SplitU.lean`'s `splitULeft`/`splitURight` lack, via `listMinFst.congr`/`listMaxSnd.congr`. -/
 theorem splitU2MidCode_congr {n n' : ℕ} (h : UX n = UX n') :
@@ -65931,22 +56285,14 @@ theorem splitU2MidCode_congr {n n' : ℕ} (h : UX n = UX n') :
     (forall_bounds_decodeQPairList_canonCode n) (forall_lt_decodeQPairList_canonCode n')
     (forall_bounds_decodeQPairList_canonCode n') heqP
   rw [decodeRat.splitU2MidCode, decodeRat.splitU2MidCode, hminEq, hmaxEq]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- The "right" half of the canonical split of `Xₙ`: `Xₙ ∩ [m, ∞)`. -/
 def splitU2Right (n : ℕ) : ℕ := clipGeListCode (splitU2MidCode n) (canonCode n)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem UX_splitU2Right (n : ℕ) :
     UX (splitU2Right n) = UX n ∩ Set.Ici (decodeRat (splitU2MidCode n)) := by
   have hUL : U.mem (presentedIntervals (decodeQPairList (splitU2Right n))) := by
@@ -65965,24 +56311,16 @@ theorem UX_splitU2Right (n : ℕ) :
   show presentedIntervals (decodeQPairList (clipGeListCode (splitU2MidCode n) (canonCode n))) = _
   rw [presentedIntervals_decodeQPairList_clipGeListCode]
   rfl
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **`splitU2Right`'s output set is a well-defined function of `UX k` as a set.** -/
 theorem splitU2Right_congr {n n' : ℕ} (h : UX n = UX n') :
     UX (splitU2Right n) = UX (splitU2Right n') := by
   rw [UX_splitU2Right, UX_splitU2Right, h, splitU2MidCode_congr h]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem UX_splitU2Left (n : ℕ) :
     UX (splitU2Left n) = UX n ∩ Set.Iio (decodeRat (splitU2MidCode n)) := by
   have hUL : U.mem (presentedIntervals (decodeQPairList (splitU2Left n))) := by
@@ -66000,14 +56338,12 @@ theorem UX_splitU2Left (n : ℕ) :
   show presentedIntervals (decodeQPairList (clipLtListCode (splitU2MidCode n) (canonCode n))) = _
   rw [presentedIntervals_decodeQPairList_clipLtListCode]
   rfl
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace splitU2
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **Disjointness**: `splitU2Left`/`splitU2Right` cover disjoint pieces. -/
 theorem disjoint (n : ℕ) : UX (splitU2Left n) ∩ UX (splitU2Right n) = ∅ := by
   rw [UX_splitU2Left, UX_splitU2Right]
@@ -66015,15 +56351,9 @@ theorem disjoint (n : ℕ) : UX (splitU2Left n) ∩ UX (splitU2Right n) = ∅ :=
   simp only [Set.mem_inter_iff, Set.mem_Iio, Set.mem_Ici, Set.mem_empty_iff_false, iff_false]
   rintro ⟨⟨-, h1⟩, -, h2⟩
   exact absurd h1 (not_lt.mpr h2)
+end
 
-end splitU2
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace splitU2
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **Covering**: `splitU2Left`/`splitU2Right` reunite to `Xₙ`. -/
 theorem union (n : ℕ) : UX (splitU2Left n) ∪ UX (splitU2Right n) = UX n := by
   rw [UX_splitU2Left, UX_splitU2Right]
@@ -66035,35 +56365,26 @@ theorem union (n : ℕ) : UX (splitU2Left n) ∪ UX (splitU2Right n) = UX n := b
     rcases lt_or_ge x (decodeRat (splitU2MidCode n)) with hlt | hge
     · exact Or.inl ⟨h, hlt⟩
     · exact Or.inr ⟨h, hge⟩
+end
 
 end splitU2
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`splitU2Left`'s output set is a well-defined function of `UX k` as a set.** -/
 theorem splitU2Left_congr {n n' : ℕ} (h : UX n = UX n') :
     UX (splitU2Left n) = UX (splitU2Left n') := by
   rw [UX_splitU2Left, UX_splitU2Left, h, splitU2MidCode_congr h]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
-
+section
 theorem zero_le_listMaxSnd (L : List (ℚ × ℚ)) : 0 ≤ listMaxSnd L := foldl.maxSnd_seed_le L 0
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem listMaxSndCode : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.listMaxSndCode := by
   have hstp : Nat.Primrec
       (fun t : ℕ => ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.2)) :=
@@ -66071,15 +56392,9 @@ theorem listMaxSndCode : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.li
       (Nat.Primrec.right.comp Nat.Primrec.left))).of_eq fun _ => rfl
   exact (primrec_foldCode hstp (Nat.Primrec.const 0) (Nat.Primrec.const zeroCode) primrec_id).of_eq
     fun _ => rfl
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem listMinFstCode : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.listMinFstCode := by
   have hstp : Nat.Primrec
       (fun t : ℕ => ratMinCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.1)) :=
@@ -66087,52 +56402,32 @@ theorem listMinFstCode : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.li
       (Nat.Primrec.left.comp Nat.Primrec.left))).of_eq fun _ => rfl
   exact (primrec_foldCode hstp (Nat.Primrec.const 0) (Nat.Primrec.const oneCode) primrec_id).of_eq
     fun _ => rfl
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem splitU2MidCode : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.splitU2MidCode :=
   (primrec_ratMidCode.comp
     ((primrec.listMinFstCode.comp primrec_canonCode).pair
       (primrec.listMaxSndCode.comp primrec_canonCode))).of_eq fun n => by
     simp only [_root_.DomainTheory.NeighbourhoodSystems.splitU2MidCode]
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem splitU2Left : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.splitU2Left :=
   (primrec_clipLtListCode.comp (primrec.splitU2MidCode.pair primrec_canonCode)).of_eq
     fun n => by simp only [_root_.DomainTheory.NeighbourhoodSystems.splitU2Left, unpair_pair_fst, unpair_pair_snd]
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem splitU2Right : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.splitU2Right :=
   (primrec_clipGeListCode.comp (primrec.splitU2MidCode.pair primrec_canonCode)).of_eq
     fun n => by simp only [_root_.DomainTheory.NeighbourhoodSystems.splitU2Right, unpair_pair_fst, unpair_pair_snd]
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`U`'s computable canonical bisection, packaged as a `ComputableBisection`** — the missing
 `(f)`-side prerequisite, fixing `SplitU.lean`'s `left_congr`/`right_congr` gap (see the module
 docstring). -/
@@ -66145,55 +56440,36 @@ def UBisection2 : ComputableBisection UComputablePresentation where
   union := splitU2.union
   left_congr := fun _ _ h => splitU2Left_congr h
   right_congr := fun _ _ h => splitU2Right_congr h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- UBisection2/listMinFst_2.lean
-namespace DomainTheory.NeighbourhoodSystems
 namespace listMinFst
-
 open Domain.Recursive NeighborhoodSystem
 
-
+section
 theorem le_one (L : List (ℚ × ℚ)) : listMinFst L ≤ 1 := foldl.minFst_le_seed L 1
+end
 
 end listMinFst
-end DomainTheory.NeighbourhoodSystems
-end
+open Domain.Recursive NeighborhoodSystem
 
 section
--- primrec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
 /-- The difference index: `canonIdx` of the raw difference code `VdiffRaw`. -/
 def Vdiff (n m : ℕ) : ℕ := canonIdx (VdiffRaw n m)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **The "same level" set-difference formula**, mirroring `Exercise812.lean`'s
 `levelSet.inter_same_level` exactly (`&&&` becomes the "and-not" combinator `a ^^^ (a &&& b)`,
 via `testBit.xor_and_self`). -/
 theorem diff_same_level (k m₁ m₂ : ℕ) :
     levelSet k m₁ \ levelSet k m₂ = levelSet k (m₁ ^^^ (m₁ &&& m₂)) := by
   ext n; simp [levelSet]
+end
 
-end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace levelSet
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **Computable version of `levelSet.diff_same_level`, upsampled to a common level** — mirrors
 `levelSet.myInter` exactly, substituting `myAndNot` for `myLand`. -/
 theorem myDiff (k1 m1 k2 m2 : ℕ) :
@@ -66202,15 +56478,9 @@ theorem myDiff (k1 m1 k2 m2 : ℕ) :
   conv_lhs => rw [← levelSet.myUpsample (Nat.le_max_left k1 k2) (m := m1),
     ← levelSet.myUpsample (Nat.le_max_right k1 k2) (m := m2)]
   rw [levelSet.diff_same_level, myAndNot_eq]
+end
 
-end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace levelSet
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **`VdiffRaw` realizes `VX n \ VX m`** at the `levelSet` level (unconditionally). -/
 theorem VdiffRaw (n m : ℕ) :
     levelSet (_root_.DomainTheory.NeighbourhoodSystems.VdiffRaw n m).unpair.1 (_root_.DomainTheory.NeighbourhoodSystems.VdiffRaw n m).unpair.2 = VX n \ VX m := by
@@ -66218,15 +56488,13 @@ theorem VdiffRaw (n m : ℕ) :
   rw [unpair_pair_fst, unpair_pair_snd]
   exact (levelSet.myDiff (canonIdx n).unpair.1 (canonIdx n).unpair.2
     (canonIdx m).unpair.1 (canonIdx m).unpair.2).symm
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace Vdiff
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **Scott's consistency condition for `\` reduces to non-emptiness**, mirroring
 `Vcons_iff_nonempty_inter`. -/
 theorem iff_nonempty (n m : ℕ) :
@@ -66241,15 +56509,9 @@ theorem iff_nonempty (n m : ℕ) :
       exact ⟨(VdiffRaw n m).unpair.1, (VdiffRaw n m).unpair.2, rfl, hne⟩
     obtain ⟨k, hk⟩ := V_surj_VX hVmem
     exact ⟨k, hk⟩
+end
 
-end Vdiff
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace Vdiff
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem spec {n m : ℕ} (h : ∃ k, VX k = VX n \ VX m) : VX (Vdiff n m) = VX n \ VX m := by
   have hne : (levelSet (VdiffRaw n m).unpair.1 (VdiffRaw n m).unpair.2).Nonempty := by
     rw [levelSet.VdiffRaw]; obtain ⟨k, hk⟩ := h; rw [← hk]; exact VX_nonempty k
@@ -66257,28 +56519,20 @@ theorem spec {n m : ℕ} (h : ∃ k, VX k = VX n \ VX m) : VX (Vdiff n m) = VX n
   rw [VX_canonIdx]
   show levelSet (canonIdx (VdiffRaw n m)).unpair.1 (canonIdx (VdiffRaw n m)).unpair.2 = VX n \ VX m
   rw [canonIdx.eq_self_of_nonempty hne, levelSet.VdiffRaw]
+end
 
 end Vdiff
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem lowXor : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.lowXor t.unpair.1 t.unpair.2) :=
   (primrec_mod2.comp
     (primrec_add₂ (primrec_mod2.comp Nat.Primrec.left) (primrec_mod2.comp Nat.Primrec.right))).of_eq
     fun _ => rfl
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem xorStep : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.xorStep := by
   have hA : Nat.Primrec (fun s : ℕ => s.unpair.1.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.left
   have hB : Nat.Primrec (fun s : ℕ => s.unpair.1.unpair.2) := Nat.Primrec.right.comp Nat.Primrec.left
@@ -66290,15 +56544,9 @@ theorem xorStep : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.xorStep :
   exact (((primrec_div2.comp hA).pair (primrec_div2.comp hB)).pair
     ((primrec_mul₂ (Nat.Primrec.const 2) hW).pair
       (primrec_add₂ hAcc (primrec_mul₂ hW hlow)))).of_eq fun _ => rfl
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem myXor : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.myXor t.unpair.1 t.unpair.2) := by
   have hbase : Nat.Primrec
       (fun z => Nat.pair (Nat.pair z.unpair.1 z.unpair.2) (Nat.pair 1 0)) :=
@@ -66314,28 +56562,16 @@ theorem myXor : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.m
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
   rw [rec_const_iterate]
   rfl
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem myAndNot : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.myAndNot t.unpair.1 t.unpair.2) := by
   have hland : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.myLand t.unpair.1 t.unpair.2) := primrec.myLand
   exact (primrec.myXor.comp (Nat.Primrec.left.pair hland)).of_eq fun t => by
     simp only [_root_.DomainTheory.NeighbourhoodSystems.myAndNot, unpair_pair_fst, unpair_pair_snd]
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem VdiffRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.VdiffRaw t.unpair.1 t.unpair.2) := by
   have hcn : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.canonIdx t.unpair.1) := primrec.canonIdx.comp Nat.Primrec.left
   have hcm : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.canonIdx t.unpair.2) := primrec.canonIdx.comp Nat.Primrec.right
@@ -66363,14 +56599,12 @@ theorem VdiffRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystem
     (primrec.myAndNot.comp (hup1.pair hup2)).of_eq fun t => by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (hkJ.pair handnot).of_eq fun _ => rfl
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **7.1(i)-for-`\`, for `V`**: `Xₙ \ Xₘ = X_k` for some `k` is recursively decidable. -/
 theorem V_diff_computable : RecDecidable₂ (fun n m => ∃ k, VX k = VX n \ VX m) := by
   have hvr : Nat.Primrec (fun t : ℕ => VdiffRaw t.unpair.1 t.unpair.2) := primrec.VdiffRaw
@@ -66386,63 +56620,43 @@ theorem V_diff_computable : RecDecidable₂ (fun n m => ∃ k, VX k = VX n \ VX 
   · intro n m
     rw [unpair_pair_fst, unpair_pair_snd, Vdiff.iff_nonempty, ← levelSet.VdiffRaw,
       myLevelSetNonempty.eq_one_iff]
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem Vdiff : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.Vdiff t.unpair.1 t.unpair.2) :=
   (primrec.canonIdx.comp primrec.VdiffRaw).of_eq fun _ => rfl
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`V` has a computable `\`**, the missing prerequisite for Exercise 8.12(f). -/
 def V_isComputableDiff : IsComputableDiff VComputablePresentation where
   diffIdx := Vdiff
   diffIdx_primrec := primrec.Vdiff
   diffIdx_spec := Vdiff.spec
   diff_computable := V_diff_computable
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- VDiff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812f/isComputableSplit.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
 /-- **`splitX812f`: the exercise's literal target split**, `V` as prober against `U`'s canonical
 bisection (`UBisection2`). -/
 noncomputable def splitX812f : Set ℕ → Set ℚ → Set ℕ → Set ℚ × Set ℚ :=
   ComputableBisection.splitFromBisection VComputablePresentation V_isComputableDiff UBisection2
     U_noMinimal
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace isComputableSplit
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **Exercise 8.12(f), completed in full**: `splitX812f` satisfies `IsComputableSplit`, the
 mirror image of `Exercise812eD.lean`'s `isComputableSplit.812e`. `noncomputable def`, not
 `theorem` — `IsComputableSplit` is a data-carrying structure (its `posIdx`/`negIdx` fields are
@@ -66451,36 +56665,23 @@ noncomputable def «812f» :
     IsComputableSplit VComputablePresentation UComputablePresentation splitX812f :=
   ComputableBisection.isComputableSplit.ofBisection VComputablePresentation V_isComputableDiff
     UBisection2 U_noMinimal V_isPositive V_noMinimal V_diffClosed
-
-end isComputableSplit
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise812eD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
+end isComputableSplit
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- The union index: list-concatenate the two canonicalized presenting lists. `UX` re-canonicalizes
 on lookup, so no further canonicalization of the inputs is needed here (mirrors `Udiff`). -/
 def Uunion (n m : ℕ) : ℕ := appendListCode (canonCode n) (canonCode m)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- The union index: `canonIdx` of the raw union code `VunionRaw`. -/
 def Vunion (n m : ℕ) : ℕ := canonIdx (VunionRaw n m)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- `hX0`: index `0` presents `U`'s master neighbourhood. `decodeQPairList 0 = []`
 (`decodeList_zero`), so `canonList` falls back to its `[(0,1)]` branch, which presents
 `U.master` exactly as in `U_mem_presentedIntervals_canonList`. -/
@@ -66491,46 +56692,36 @@ theorem UX_zero : UX 0 = U.master := by
   rw [hL, canonList_eq_of_filter_eq_nil (by simp), presentedIntervals_cons, presentedIntervals_nil,
     Set.union_empty]
   rfl
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace Uunion
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem primrec : Nat.Primrec (fun t : ℕ => Uunion t.unpair.1 t.unpair.2) := by
   unfold Uunion
   exact (primrec_appendListCode.comp ((primrec_canonCode.comp Nat.Primrec.left).pair
     (primrec_canonCode.comp Nat.Primrec.right))).of_eq
     fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
+end
 
 end Uunion
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- `hD₁mne` for `V`: the master neighbourhood `V.master = Set.univ` is non-empty. -/
 theorem V_master_nonempty : V.master.Nonempty := Set.univ_nonempty
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- `hD₀mne` for `U`: the master neighbourhood `U.master = Set.Ico 0 1` is non-empty. -/
 theorem U_master_nonempty : U.master.Nonempty := ⟨0, by norm_num [U]⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace Uunion
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`Uunion` realizes set union at the raw (uncanonicalized) `presentedIntervals` level**,
 unconditionally — concatenating presenting lists always presents the union, no consistency case
 split needed (the one respect in which `∪` is even simpler than `\`'s `Udiff.eq_diff`). -/
@@ -66539,14 +56730,11 @@ theorem eq_union (n m : ℕ) :
   unfold Uunion
   rw [decodeQPairList_appendListCode, presentedIntervals_append]
   rfl
+end
 
 end Uunion
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive
-
 
 namespace ComputableBisection
 
@@ -66612,12 +56800,10 @@ theorem isSplitSpec' (hpos : V.IsPositive) (hnomin : V.NoMinimal)
 
 end splitFromBisection
 end ComputableBisection
-end DomainTheory.NeighbourhoodSystems
+end
 
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
-
 
 /-- **`8.12(g)(3)`, `V`-as-prober half**: `splitX812f` also satisfies `SplitSpec'`, the mirror
 image of `Exercise812eD.lean`'s `hxSplit812e`. The extra hypothesis it needs, `∀ j, UX j ≠ ∅`, is
@@ -66626,14 +56812,12 @@ theorem hySplit812f : SplitSpec' U splitX812f :=
   ComputableBisection.splitFromBisection.isSplitSpec' VComputablePresentation V_isComputableDiff
     UBisection2 U_noMinimal V_isPositive V_noMinimal V_diffClosed
     (fun j => (U_mem_UX j).2.1.ne_empty)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace Uunion
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`Uunion n m` genuinely indexes `UX n ∪ UX m`** — mirrors `Udiff.spec`'s shape exactly, but the
 hypothesis is never used (the union is already unconditionally genuine, `U_union_mem`): the raw
 `appendListCode` output is already a genuine `U`-neighbourhood, so re-canonicalizing it (`canonCode`'s
@@ -66643,15 +56827,12 @@ theorem spec {n m : ℕ} (_ : ∃ k, UX k = UX n ∪ UX m) : UX (Uunion n m) = U
     rw [Uunion.eq_union]; exact U_union_UX_mem n m
   show presentedIntervals (decodeQPairList (canonCode (Uunion n m))) = _
   rw [presentedIntervals_decodeQPairList_canonCode, canonList_fixed hUL, Uunion.eq_union]
+end
 
 end Uunion
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
-
+section
 /-- **`8.12(g)(3)`, `U`-as-prober half**: `splitX812e` also satisfies `SplitSpec'` — completing the
 concrete-construction half of `8.12(g)(3)` left open by `Exercise812e.lean`'s generic
 `splitFromBisection.isSplitSpec'`. The extra hypothesis it needs, `∀ j, VX j ≠ ∅`, is immediate:
@@ -66660,48 +56841,34 @@ every `VX j` is `V.mem`-genuine (`VComputablePresentation.mem_X`) and `V.mem` st
 theorem hxSplit812e : SplitSpec' V splitX812e :=
   ComputableBisection.splitFromBisection.isSplitSpec' UComputablePresentation U_isComputableDiff
     B812e V_noMinimal U_isPositive U_noMinimal U_diffClosed (fun j => (VX_nonempty j).ne_empty)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **`Xₙ ∪ Xₘ` is always presentable as some `X_k`**, for `𝒰` — via `U_surj_UX` on
 `U_union_UX_mem` (mirroring `U_diff_iff_nonempty`'s use of `U_surj_UX`, but unconditional). -/
 theorem U_union_exists (n m : ℕ) : ∃ k, UX k = UX n ∪ UX m := U_surj_UX (U_union_UX_mem n m)
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **7.1(i)-for-`∪`, for `𝒰`**: trivially recursively decidable (the always-`1` constant), since
 `U_union_exists` shows the underlying predicate is unconditionally `True`. -/
 theorem U_union_computable : RecDecidable₂ (fun n m => ∃ k, UX k = UX n ∪ UX m) :=
   ⟨fun _ => 1, Nat.Primrec.const 1, fun t => iff_of_true (U_union_exists t.unpair.1 t.unpair.2) rfl⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **`U` has a computable `∪`.** -/
 def U_isComputableUnion : IsComputableUnion UComputablePresentation where
   unionIdx := Uunion
   unionIdx_primrec := Uunion.primrec
   unionIdx_spec := Uunion.spec
   union_computable := U_union_computable
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **Computable version of `levelSet.union_same_level` at differing levels** — the bitwise-`OR`
 analogue of `levelSet.myInter`, mirroring its proof verbatim with `myLor`/`Nat.testBit_or` in place
 of `myLand`/`Nat.testBit_and`. -/
@@ -66711,15 +56878,9 @@ theorem myUnion (k1 m1 k2 m2 : ℕ) :
   conv_lhs => rw [← levelSet.myUpsample (Nat.le_max_left k1 k2) m1,
     ← levelSet.myUpsample (Nat.le_max_right k1 k2) m2]
   rw [levelSet.union_same_level, myLor_eq_lor]
+end
 
-end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace levelSet
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **`VunionRaw` realizes `VX n ∪ VX m`** at the `levelSet` level (unconditionally). -/
 theorem VunionRaw (n m : ℕ) :
     levelSet (_root_.DomainTheory.NeighbourhoodSystems.VunionRaw n m).unpair.1 (_root_.DomainTheory.NeighbourhoodSystems.VunionRaw n m).unpair.2 = VX n ∪ VX m := by
@@ -66727,15 +56888,13 @@ theorem VunionRaw (n m : ℕ) :
   rw [unpair_pair_fst, unpair_pair_snd]
   exact (levelSet.myUnion (canonIdx n).unpair.1 (canonIdx n).unpair.2
     (canonIdx m).unpair.1 (canonIdx m).unpair.2).symm
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace Vunion
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`Vunion n m` genuinely indexes `VX n ∪ VX m`**, unconditionally — `VunionRaw n m` is already
 non-empty (both `VX n`, `VX m` are non-empty, `VX_nonempty`, and a union of a non-empty set with
 anything is non-empty), so `canonIdx` is a no-op on it (`canonIdx.eq_self_of_nonempty`), mirroring
@@ -66747,57 +56906,41 @@ theorem spec (n m : ℕ) : VX (Vunion n m) = VX n ∪ VX m := by
   rw [VX_canonIdx]
   show levelSet (canonIdx (VunionRaw n m)).unpair.1 (canonIdx (VunionRaw n m)).unpair.2 = VX n ∪ VX m
   rw [canonIdx.eq_self_of_nonempty hne, levelSet.VunionRaw]
+end
 
-end Vunion
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace Vunion
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- `Vunion.spec`, repackaged to accept (and discard) `IsComputableUnion`'s hypothesis. -/
 theorem spec' {n m : ℕ} (_ : ∃ k, VX k = VX n ∪ VX m) : VX (Vunion n m) = VX n ∪ VX m :=
   Vunion.spec n m
+end
 
 end Vunion
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- **`Xₙ ∪ Xₘ` is always presentable as some `X_k`**, for `V` — witnessed directly by `Vunion`. -/
 theorem V_union_exists (n m : ℕ) : ∃ k, VX k = VX n ∪ VX m := ⟨Vunion n m, Vunion.spec n m⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 /-- **7.1(i)-for-`∪`, for `V`**: trivially recursively decidable (the always-`1` constant). -/
 theorem V_union_computable : RecDecidable₂ (fun n m => ∃ k, VX k = VX n ∪ VX m) :=
   ⟨fun _ => 1, Nat.Primrec.const 1, fun t => iff_of_true (V_union_exists t.unpair.1 t.unpair.2) rfl⟩
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace levelSet
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- `levelSet 0 0 = ∅`: at level `0`, mask `0` has no set bits. -/
 theorem zero_zero : levelSet 0 0 = ∅ := by
   ext n; simp [levelSet, Nat.zero_testBit]
+end
 
 end levelSet
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 /-- `hY0`: index `0` presents `V`'s master neighbourhood. `Nat.unpair 0 = (0, 0)` and
 `levelSet 0 0 = ∅`, so `canonIdx 0` falls back to `VmasterIdx = Nat.pair 0 1`
 (`canonIdx.eq_master_of_empty`), whose `VX`-image is `V.master` (`VX_VmasterIdx`). -/
@@ -66806,58 +56949,44 @@ theorem VX_zero : VX 0 = V.master := by
     canonIdx.eq_master_of_empty (by rw [Nat.unpair_zero]; exact levelSet.zero_zero)
   rw [← VX_canonIdx 0, hc0]
   exact VX_VmasterIdx
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 set_option linter.unusedVariables false
 
 theorem example_812_e_d : @DomainTheory.NeighbourhoodSystems.SplitSpec' Rat Nat DomainTheory.NeighbourhoodSystems.V
   DomainTheory.NeighbourhoodSystems.splitX812e :=
   @DomainTheory.NeighbourhoodSystems.hxSplit812e
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 set_option linter.unusedVariables false
 
 theorem example_812_f : @DomainTheory.NeighbourhoodSystems.SplitSpec' Nat Rat DomainTheory.NeighbourhoodSystems.U
   DomainTheory.NeighbourhoodSystems.splitX812f :=
   @DomainTheory.NeighbourhoodSystems.hySplit812f
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 set_option linter.unusedVariables false
 
 theorem example_812_g1a : @Eq (Set Rat) (DomainTheory.NeighbourhoodSystems.UX (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
   (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master Rat DomainTheory.NeighbourhoodSystems.U) :=
   DomainTheory.NeighbourhoodSystems.UX_zero
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 set_option linter.unusedVariables false
 
 theorem example_812_g1b : @Eq (Set Nat) (DomainTheory.NeighbourhoodSystems.VX (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
   (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master Nat DomainTheory.NeighbourhoodSystems.V) :=
   DomainTheory.NeighbourhoodSystems.VX_zero
+end
 
-end DomainTheory.NeighbourhoodSystems
+section
+end
 
-namespace DomainTheory.NeighbourhoodSystems
-
-open Domain.Recursive NeighborhoodSystem
-
-
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 set_option linter.unusedVariables false
 
 theorem example_812_g2 : ∀ {n m : Nat},
@@ -66869,14 +56998,12 @@ theorem example_812_g2 : ∀ {n m : Nat},
       (@Union.union (Set Nat) (@Set.instUnion Nat) (DomainTheory.NeighbourhoodSystems.VX n)
         (DomainTheory.NeighbourhoodSystems.VX m)) :=
   @DomainTheory.NeighbourhoodSystems.Vunion.spec'
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
 namespace primrec
-
 open Domain.Recursive NeighborhoodSystem
 
+section
 theorem VunionRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.VunionRaw t.unpair.1 t.unpair.2) := by
   have hcn : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.canonIdx t.unpair.1) := primrec.canonIdx.comp Nat.Primrec.left
   have hcm : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.canonIdx t.unpair.2) := primrec.canonIdx.comp Nat.Primrec.right
@@ -66904,23 +57031,15 @@ theorem VunionRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSyste
     (primrec_myLor.comp (hup1.pair hup2)).of_eq fun t => by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (hkJ.pair hlor).of_eq fun _ => rfl
+end
 
-end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-namespace primrec
-
-open Domain.Recursive NeighborhoodSystem
-
+section
 theorem Vunion : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.Vunion t.unpair.1 t.unpair.2) :=
   (primrec.canonIdx.comp primrec.VunionRaw).of_eq fun _ => rfl
+end
 
 end primrec
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem
 
 /-- **`V` has a computable `∪`.** -/
@@ -66929,11 +57048,9 @@ def V_isComputableUnion : IsComputableUnion VComputablePresentation where
   unionIdx_primrec := primrec.Vunion
   unionIdx_spec := Vunion.spec'
   union_computable := V_union_computable
+end
 
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-
+section
 open Domain.Recursive NeighborhoodSystem Exercise718
 
 /-- **Exercise 8.12, completed in full**: `U` and `V` are effectively isomorphic
@@ -66944,22 +57061,12 @@ noncomputable def effectiveIso812_UV : EffectiveIso UComputablePresentation VCom
     U_isPositive U_diffClosed U_noMinimal hxSplit812e V_isPositive V_diffClosed V_noMinimal
     hySplit812f U_master_nonempty V_master_nonempty U_isComputableUnion V_isComputableUnion UX_zero
     VX_zero
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise812g4.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/GeneratedBy.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
 /-- The Boolean subalgebra of `Set ℕ` generated by a family `g` of "generators": the smallest
@@ -66971,81 +57078,49 @@ inductive GeneratedBy {α : Type*} (g : ℕ → Set α) : Set α → Prop
   | inter {X Y} : GeneratedBy g X → GeneratedBy g Y → GeneratedBy g (X ∩ Y)
   | union {X Y} : GeneratedBy g X → GeneratedBy g Y → GeneratedBy g (X ∪ Y)
   | compl {X} : GeneratedBy g X → GeneratedBy g Xᶜ
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/bitmaskOf.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
 /-- Build a natural number with a prescribed (finite) set of bits set — the "witness" constructor
 used both for `generator`'s `levelSet` realization and for the complement/independence proofs
 below. -/
 def bitmaskOf (s : Finset ℕ) : ℕ := ∑ j ∈ s, 2 ^ j
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/testBit_sum_two_pow.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
 /-- **`(∑ j ∈ s, 2^j).testBit i ↔ i ∈ s`.** The general "read off a prescribed finite bit pattern"
 fact behind `upsample` (`Exercise812.lean`) — isolated here for reuse. -/
 theorem testBit_sum_two_pow {s : Finset ℕ} {i : ℕ} : (∑ j ∈ s, 2 ^ j).testBit i ↔ i ∈ s := by
   rw [← Nat.mem_bitIndices, ← List.mem_toFinset, Finset.toFinset_bitIndices_sum_two_pow]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/testBit_bitmaskOf.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
 @[simp] theorem testBit_bitmaskOf {s : Finset ℕ} {i : ℕ} : (bitmaskOf s).testBit i ↔ i ∈ s :=
   testBit_sum_two_pow
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/generator.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
 /-- The **`i`-th generator**: `{n | n.testBit i}`, the set of naturals whose `i`-th binary digit is
 `1`. These are Scott's `ℵ₀` propositional variables, realized concretely. -/
 def generator (i : ℕ) : Set ℕ := {n : ℕ | n.testBit i = true}
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 @[simp] theorem mem_generator {i n : ℕ} : n ∈ generator i ↔ n.testBit i = true := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/exercise813a.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 /- concordance: source L5153 EXERCISE 8.13 Boolean-algebra filters -/
 /-- **Exercise 8.13(a).** `U` is isomorphic to `V`'s domain of elements, and `V`'s domain of
@@ -67054,41 +57129,24 @@ proper filters of the free Boolean algebra on `ℵ₀` generators. No new back-a
 needed: `effectiveIso812_UV` (`Exercise812g4.lean`, already `Pass`) already supplies the
 isomorphism (in fact an *effective* one, stronger than what `8.13` asks for). -/
 theorem exercise813a : U ≅ᴰ V := ⟨effectiveIso812_UV.toDomainIso⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_813_a : @DomainTheory.NeighbourhoodSystems.Isomorphic Rat Nat DomainTheory.NeighbourhoodSystems.U
   DomainTheory.NeighbourhoodSystems.V :=
   DomainTheory.NeighbourhoodSystems.exercise813a
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/generator_nonempty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 theorem generator_nonempty (i : ℕ) : (generator i).Nonempty := ⟨2 ^ i, by simp⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/generators_independent.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 /-- **The `generator i` are independent**: every finite Boolean combination — assign each `i ∈ s`
 to `generator i` (if `ε i`) or its complement (otherwise) — is non-empty. This is the standard
@@ -67103,16 +57161,10 @@ theorem generators_independent (s : Finset ℕ) (ε : ℕ → Bool) :
   simp only [Set.mem_iInter]
   intro i hi
   split_ifs with hb <;> simp [testBit_bitmaskOf, Finset.mem_filter, hi, hb]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/levelSet_compl.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 /-- **`levelSet` is closed under complement** (within the "`∅`-or-genuine" dichotomy every closure
 fact in this development uses): the bitmask that selects exactly the residues `< 2^k` *not*
@@ -67124,16 +57176,10 @@ theorem levelSet_compl (k m : ℕ) :
   simp only [Set.mem_compl_iff, mem_levelSet, testBit_bitmaskOf, Finset.mem_filter,
     Finset.mem_range]
   exact ⟨fun h => ⟨Nat.mod_lt n (Nat.two_pow_pos _), h⟩, fun h => h.2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/V_compl_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 theorem V_compl_mem {X : Set ℕ} (hX : V.mem X) : Xᶜ = ∅ ∨ V.mem Xᶜ := by
   obtain ⟨k, m, rfl, -⟩ := hX
@@ -67141,16 +57187,10 @@ theorem V_compl_mem {X : Set ℕ} (hX : V.mem X) : Xᶜ = ∅ ∨ V.mem Xᶜ := 
   rcases (levelSet _ _).eq_empty_or_nonempty with h | h
   · exact Or.inl h
   · exact Or.inr ⟨k, _, rfl, h⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/testBit_mod_two_pow.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 /-- **`n % 2^k`'s bit `i`** is `n`'s own bit `i` when `i < k` (the low bits are preserved by
 reduction mod `2^k`), and `false` otherwise (nothing above bit `k-1` survives). Proved via the
@@ -67165,16 +57205,10 @@ theorem testBit_mod_two_pow (n k i : ℕ) :
     exact h.symm
   · simp only [Nat.not_lt.mpr hik, decide_false, Bool.false_and]
     exact Nat.testBit_eq_false_of_lt (hlt.trans_le (Nat.pow_le_pow_right (by norm_num) hik))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/affine_eq_biInter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 /-- **Completeness**: every `V`-neighbourhood is generated by `generator`. `affine k ℓ` (a single
 residue class) is a finite intersection of generators/their complements (one constraint per bit
@@ -67199,16 +57233,10 @@ theorem affine_eq_biInter (k ℓ : ℕ) (hℓ : ℓ < 2 ^ k) :
   rw [key]
   refine forall₂_congr fun i _ => ?_
   split_ifs with hb <;> simp [hb]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/generatedBy_affine.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 theorem generatedBy_affine (k ℓ : ℕ) (hℓ : ℓ < 2 ^ k) : GeneratedBy generator (affine k ℓ) := by
   rw [affine_eq_biInter k ℓ hℓ]
@@ -67220,16 +57248,10 @@ theorem generatedBy_affine (k ℓ : ℕ) (hℓ : ℓ < 2 ^ k) : GeneratedBy gene
     split_ifs with hb
     · exact GeneratedBy.of _
     · exact GeneratedBy.compl (GeneratedBy.of _)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/generatedBy_biUnion_affine.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 theorem generatedBy_biUnion_affine (k : ℕ) (s : Finset ℕ) (hs : ∀ ℓ ∈ s, ℓ < 2 ^ k) :
     GeneratedBy generator (⋃ ℓ ∈ s, affine k ℓ) := by
@@ -67239,46 +57261,28 @@ theorem generatedBy_biUnion_affine (k : ℕ) (s : Finset ℕ) (hs : ∀ ℓ ∈ 
     rw [Finset.set_biUnion_insert]
     exact GeneratedBy.union (generatedBy_affine k a (hs a (Finset.mem_insert_self a s)))
       (ih fun ℓ hℓ => hs ℓ (Finset.mem_insert_of_mem hℓ))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/generatedBy_levelSet.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 theorem generatedBy_levelSet (k m : ℕ) : GeneratedBy generator (levelSet k m) := by
   rw [levelSet.eq_biUnion]
   exact generatedBy_biUnion_affine k _ fun ℓ hℓ => (Finset.mem_filter.mp hℓ).1 |> Finset.mem_range.mp
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/testBit_mod_two_pow_succ.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 /-- Specialization of `testBit_mod_two_pow` used repeatedly below: reducing mod `2^(i+1)` never
 disturbs bit `i` itself. -/
 theorem testBit_mod_two_pow_succ (n i : ℕ) :
     (n % 2 ^ (i + 1)).testBit i = n.testBit i := by
   rw [testBit_mod_two_pow]; simp
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/generator_eq_levelSet.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 /-- Every `generator i` is a `V`-neighbourhood: `generator i = levelSet (i+1) M` for the bitmask
 `M` selecting exactly the residues `< 2^(i+1)` whose own bit `i` is set. -/
@@ -67289,29 +57293,17 @@ theorem generator_eq_levelSet (i : ℕ) :
   simp only [mem_generator, mem_levelSet, testBit_bitmaskOf, Finset.mem_filter, Finset.mem_range]
   rw [← testBit_mod_two_pow_succ]
   exact ⟨fun h => ⟨Nat.mod_lt n (Nat.two_pow_pos _), h⟩, fun h => h.2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/V_mem_generator.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 theorem V_mem_generator (i : ℕ) : V.mem (generator i) :=
   generator_eq_levelSet i ▸ ⟨i + 1, _, rfl, generator_eq_levelSet i ▸ generator_nonempty i⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/generatedBy_generator_imp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 /-- **Soundness**: everything generated by `generator` is either empty or a genuine
 `V`-neighbourhood. -/
@@ -67337,16 +57329,10 @@ theorem generatedBy_generator_imp {X : Set ℕ} (h : GeneratedBy generator X) :
     · simp only [Set.compl_empty]
       exact Or.inr V.master_mem
     · exact V_compl_mem hX
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813a/V_mem_iff_generatedBy.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
-
 
 /-- **`V.mem` is *exactly* "non-empty and generated by `generator`"** — soundness
 (`generatedBy_generator_imp`) plus completeness (`generatedBy_levelSet`). Since `V.Element`'s
@@ -67360,14 +57346,9 @@ theorem V_mem_iff_generatedBy {X : Set ℕ} : V.mem X ↔ GeneratedBy generator 
     exact ⟨generatedBy_levelSet k m, hne⟩
   · rintro ⟨hgen, hne⟩
     exact (generatedBy_generator_imp hgen).resolve_left hne.ne_empty
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/Formula.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- A minimal propositional-logic syntax over `ℵ₀` variables (indexed by `ℕ`). -/
 inductive Formula : Type
   | var (i : ℕ) : Formula
@@ -67376,14 +57357,9 @@ inductive Formula : Type
   | neg (φ : Formula) : Formula
   | and (φ ψ : Formula) : Formula
   | or (φ ψ : Formula) : Formula
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/evalSet.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- The *same* recursion, but interpreted in `Set ℕ` via `generator` (`Exercise813a.lean`) instead
 of an abstract Boolean — i.e. the specific homomorphism `var i ↦ generator i`. -/
 def evalSet : Formula → Set ℕ
@@ -67393,14 +57369,9 @@ def evalSet : Formula → Set ℕ
   | .neg φ => (evalSet φ)ᶜ
   | .and φ ψ => evalSet φ ∩ evalSet ψ
   | .or φ ψ => evalSet φ ∪ evalSet ψ
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/evalV.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- The standard truth-valuation semantics: `v : ℕ → Bool` assigns each variable a truth value. -/
 def evalV (v : ℕ → Bool) : Formula → Bool
   | .var i => v i
@@ -67409,24 +57380,14 @@ def evalV (v : ℕ → Bool) : Formula → Bool
   | .neg φ => !(evalV v φ)
   | .and φ ψ => evalV v φ && evalV v ψ
   | .or φ ψ => evalV v φ || evalV v ψ
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/SemanticEquiv.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- **Scott's Lindenbaum equivalence**: `φ ~ ψ` iff they agree under every truth valuation. -/
 def SemanticEquiv (φ ψ : Formula) : Prop := ∀ v, evalV v φ = evalV v ψ
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/exists_bitsOf_agree.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- Given any (finite) target set of variables and any valuation `v`, some `n : ℕ` matches `v` on
 exactly that set — witnessed directly via `bitmaskOf` (`Exercise813a.lean`). -/
 theorem exists_bitsOf_agree (S : Finset ℕ) (v : ℕ → Bool) :
@@ -67436,36 +57397,21 @@ theorem exists_bitsOf_agree (S : Finset ℕ) (v : ℕ → Bool) :
     rw [testBit_bitmaskOf]; simp [Finset.mem_filter, hi]
   rcases hv : v i with - | - <;> rcases hn : (bitmaskOf (S.filter (fun i => v i))).testBit i
     with - | - <;> simp_all
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/formulaSetoid.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 instance formulaSetoid : Setoid Formula where
   r := SemanticEquiv
   iseqv := ⟨fun _ _ => rfl, fun h v => (h v).symm, fun h1 h2 v => (h1 v).trans (h2 v)⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/Lindenbaum.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- **The Lindenbaum algebra of propositional calculus**: `Formula` quotiented by semantic
 equivalence. -/
 def Lindenbaum : Type := Quotient formulaSetoid
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/mem_evalSet_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- **The bridge between the two evaluations**: `evalSet` at `n : ℕ` agrees with `evalV` at `n`'s
 own bit-sequence `fun i => n.testBit i`. -/
 theorem mem_evalSet_iff (n : ℕ) (φ : Formula) :
@@ -67477,14 +57423,9 @@ theorem mem_evalSet_iff (n : ℕ) (φ : Formula) :
   | neg φ ih => simp [evalSet, evalV, ih]
   | and φ ψ ihφ ihψ => simp [evalSet, evalV, ihφ, ihψ]
   | or φ ψ ihφ ihψ => simp [evalSet, evalV, ihφ, ihψ]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/vars.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- The (finite) set of variables occurring in a formula. -/
 def vars : Formula → Finset ℕ
   | .var i => {i}
@@ -67493,14 +57434,9 @@ def vars : Formula → Finset ℕ
   | .neg φ => vars φ
   | .and φ ψ => vars φ ∪ vars ψ
   | .or φ ψ => vars φ ∪ vars ψ
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/evalV_eq_of_agree.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 theorem evalV_eq_of_agree {φ : Formula} {v v' : ℕ → Bool} (h : ∀ i ∈ vars φ, v i = v' i) :
     evalV v φ = evalV v' φ := by
   induction φ with
@@ -67516,14 +57452,9 @@ theorem evalV_eq_of_agree {φ : Formula} {v v' : ℕ → Bool} (h : ∀ i ∈ va
     simp only [evalV, vars] at h ⊢
     rw [ihφ (fun i hi => h i (Finset.mem_union_left _ hi)),
       ihψ (fun i hi => h i (Finset.mem_union_right _ hi))]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/semanticEquiv_iff_evalSet_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- **The one substantive lemma**: semantic equivalence (quantifying over *all* valuations) agrees
 with `evalSet`-equality (which only ever "tests" the countably many bit-derived valuations) —
 because a formula only mentions finitely many variables, any valuation can be swapped for a
@@ -67545,46 +57476,25 @@ theorem semanticEquiv_iff_evalSet_eq {φ ψ : Formula} :
     rw [h1, h2]
     rcases hφ : evalV (fun i => n.testBit i) φ with - | - <;>
       rcases hψ : evalV (fun i => n.testBit i) ψ with - | - <;> simp_all
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/toSet.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- The canonical map to `Set ℕ`, well-defined by `semanticEquiv_iff_evalSet_eq`. -/
 def Lindenbaum.toSet : Lindenbaum → Set ℕ :=
   Quotient.lift evalSet fun _ _ h => semanticEquiv_iff_evalSet_eq.mp h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/toSet_mk.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 @[simp] theorem Lindenbaum.toSet_mk (φ : Formula) :
     Lindenbaum.toSet ⟦φ⟧ = evalSet φ := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/Entails.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- Semantic entailment: `φ ⊨ ψ` iff every valuation satisfying `φ` satisfies `ψ`. -/
 def Entails (φ ψ : Formula) : Prop := ∀ v, evalV v φ = true → evalV v ψ = true
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/Lindenbaumu2etoSet_injective.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 /-- **`Lindenbaum.toSet` is injective.** -/
 theorem Lindenbaum.toSet_injective : Function.Injective Lindenbaum.toSet := by
   intro x y
@@ -67594,15 +57504,9 @@ theorem Lindenbaum.toSet_injective : Function.Injective Lindenbaum.toSet := by
     | _ ψ =>
       intro h
       exact Quotient.sound (semanticEquiv_iff_evalSet_eq.mpr h)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/entails_iff_evalSet_subset.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 /-- **The bijection is an order correspondence, not just a set bijection**: semantic entailment
 matches `⊆` of the corresponding `evalSet`s, by the same finitary argument as
 `semanticEquiv_iff_evalSet_eq`. -/
@@ -67620,14 +57524,9 @@ theorem entails_iff_evalSet_subset {φ ψ : Formula} :
       evalV_eq_of_agree fun i hi => (hn i (Finset.mem_union_right _ hi)).symm
     rw [h2, ← mem_evalSet_iff]
     exact h (by rw [mem_evalSet_iff, ← h1]; exact hv)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_813_b : ∀ {φ ψ : DomainTheory.NeighbourhoodSystems.Formula},
@@ -67635,15 +57534,9 @@ theorem example_813_b : ∀ {φ ψ : DomainTheory.NeighbourhoodSystems.Formula},
     (@LE.le (Set Nat) (@Set.instLE Nat) (DomainTheory.NeighbourhoodSystems.evalSet φ)
       (DomainTheory.NeighbourhoodSystems.evalSet ψ)) :=
   @DomainTheory.NeighbourhoodSystems.entails_iff_evalSet_subset
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/generatedBy_iff_exists_evalSet.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 /-- **`evalSet`'s range is exactly `GeneratedBy generator`** — the algebra generated by `generator`
 (`Exercise813a.lean`) is precisely "the Boolean combinations expressible as a `Formula`." -/
 theorem generatedBy_iff_exists_evalSet {X : Set ℕ} :
@@ -67670,15 +57563,9 @@ theorem generatedBy_iff_exists_evalSet {X : Set ℕ} :
     | neg φ ih => exact ih.compl
     | and φ ψ ihφ ihψ => exact ihφ.inter ihψ
     | or φ ψ ihφ ihψ => exact ihφ.union ihψ
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813b/Lindenbaumu2erange_toSet.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 /-- **Headline: `Lindenbaum.toSet`'s range is exactly `Exercise813a.lean`'s free Boolean algebra on
 `ℵ₀` generators, `{X | GeneratedBy generator X}`.** Together with injectivity, `Lindenbaum.toSet`
 is a bijection `Lindenbaum ≃ {X : Set ℕ // GeneratedBy generator X}` — i.e. `Lindenbaum` *is* (a
@@ -67694,67 +57581,37 @@ theorem Lindenbaum.range_toSet : Set.range Lindenbaum.toSet = {X | GeneratedBy g
     | _ φ => exact ⟨φ, rfl⟩
   · rintro ⟨φ, rfl⟩
     exact ⟨⟦φ⟧, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/genPoint.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- The `i`-th coordinate-projection basic clopen of Cantor space `ℕ → Bool`: the literal
 transcription, on this carrier, of `8.13(a)`'s `generator i`. -/
 def genPoint (i : ℕ) : Set (ℕ → Bool) := (fun x : ℕ → Bool => x i) ⁻¹' {true}
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/mem_genPoint.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 @[simp] theorem mem_genPoint {i : ℕ} {x : ℕ → Bool} : x ∈ genPoint i ↔ x i = true := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/box.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- The basic clopen pinning every coordinate in `I` to match `f`, and leaving the rest free —
 the standard basis element of the product topology on `ℕ → Bool`. -/
 def box (I : Finset ℕ) (f : ℕ → Bool) : Set (ℕ → Bool) := {x | ∀ i ∈ I, x i = f i}
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/generatedBy_genPoint_empty.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- `GeneratedBy genPoint ∅` — recorded separately since `GeneratedBy`'s only route to `∅` is via
 `compl` of `univ`. -/
 theorem generatedBy_genPoint_empty : GeneratedBy genPoint (∅ : Set (ℕ → Bool)) := by
   simpa using GeneratedBy.univ.compl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/mem_box.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 @[simp] theorem mem_box {I : Finset ℕ} {f x : ℕ → Bool} :
     x ∈ box I f ↔ ∀ i ∈ I, x i = f i := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/evalSet'.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- The *same* recursion as `evalSet`, but interpreted via `genPoint` instead of `generator`. -/
 def evalSet' : Formula → Set (ℕ → Bool)
   | .var i => genPoint i
@@ -67763,14 +57620,9 @@ def evalSet' : Formula → Set (ℕ → Bool)
   | .neg φ => (evalSet' φ)ᶜ
   | .and φ ψ => evalSet' φ ∩ evalSet' ψ
   | .or φ ψ => evalSet' φ ∪ evalSet' ψ
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/generatedBy_iff_exists_evalSet'.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 theorem generatedBy_iff_exists_evalSet' {Y : Set (ℕ → Bool)} :
     GeneratedBy genPoint Y ↔ ∃ φ : Formula, evalSet' φ = Y := by
   constructor
@@ -67795,14 +57647,9 @@ theorem generatedBy_iff_exists_evalSet' {Y : Set (ℕ → Bool)} :
     | neg φ ih => exact ih.compl
     | and φ ψ ihφ ihψ => exact ihφ.inter ihψ
     | or φ ψ ihφ ihψ => exact ihφ.union ihψ
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/mem_evalSet'_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- Cantor space's own points already *are* valuations, so this bridge is definitional-level
 simple: no bit-encoding step is needed (contrast `8.13(b)`'s `mem_evalSet_iff`). -/
 theorem mem_evalSet'_iff (x : ℕ → Bool) (φ : Formula) :
@@ -67814,14 +57661,9 @@ theorem mem_evalSet'_iff (x : ℕ → Bool) (φ : Formula) :
   | neg φ ih => simp [evalSet', evalV, ih]
   | and φ ψ ihφ ihψ => simp [evalSet', evalV, ihφ, ihψ]
   | or φ ψ ihφ ihψ => simp [evalSet', evalV, ihφ, ihψ]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/entails_iff_evalSet'_subset.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- The same finitary-free argument as `semanticEquiv_iff_evalSet'_eq`, for entailment. -/
 theorem entails_iff_evalSet'_subset {φ ψ : Formula} :
     Entails φ ψ ↔ evalSet' φ ⊆ evalSet' ψ := by
@@ -67831,14 +57673,9 @@ theorem entails_iff_evalSet'_subset {φ ψ : Formula} :
     exact h _ hx
   · intro h v hv
     exact (mem_evalSet'_iff v ψ).mp (h ((mem_evalSet'_iff v φ).mpr hv))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/semanticEquiv_iff_evalSet'_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- No finitary agreement argument is needed here (contrast `8.13(b)`'s `semanticEquiv_iff_
 evalSet_eq`): `evalV`'s own domain `ℕ → Bool` already *is* Cantor space's points. -/
 theorem semanticEquiv_iff_evalSet'_eq {φ ψ : Formula} :
@@ -67851,81 +57688,46 @@ theorem semanticEquiv_iff_evalSet'_eq {φ ψ : Formula} :
     have hmem : v ∈ evalSet' φ ↔ v ∈ evalSet' ψ := by rw [h]
     rw [mem_evalSet'_iff, mem_evalSet'_iff] at hmem
     rcases hφ : evalV v φ with - | - <;> rcases hψ : evalV v ψ with - | - <;> simp_all
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/toSet'.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- `Lindenbaum`'s canonical map to Cantor-space clopens, the counterpart of `8.13(b)`'s
 `Lindenbaum.toSet`. -/
 def Lindenbaum.toSet' : Lindenbaum → Set (ℕ → Bool) :=
   Quotient.lift evalSet' fun _ _ h => semanticEquiv_iff_evalSet'_eq.mp h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/toSet'_mk.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 @[simp] theorem Lindenbaum.toSet'_mk (φ : Formula) :
     Lindenbaum.toSet' ⟦φ⟧ = evalSet' φ := rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/Corresponds.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- **`8.13(c2)`, the headline.** `X` and `Y` are the `evalSet`/`evalSet'` images of a *common*
 `Formula` — i.e. the same node of the (unique, up to `SemanticEquiv`) Lindenbaum algebra. -/
 def Corresponds (X : Set ℕ) (Y : Set (ℕ → Bool)) : Prop :=
   ∃ φ : Formula, evalSet φ = X ∧ evalSet' φ = Y
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/dualFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- `Y ↦ Yᶜ`, applied to a whole family: turns an ideal into (the membership predicate of) a
 filter, and vice versa (`dualFilter` is its own inverse, `dualFilter_dualFilter`). -/
 def dualFilter {α : Type*} (x : Set (Set α)) : Set (Set α) := {Y | Yᶜ ∈ x}
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/generatedBy_left.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 theorem Corresponds.generatedBy_left {X : Set ℕ} {Y : Set (ℕ → Bool)} (h : Corresponds X Y) :
     GeneratedBy generator X := by
   obtain ⟨φ, rfl, -⟩ := h; exact generatedBy_iff_exists_evalSet.mpr ⟨φ, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/generatedBy_right.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 theorem Corresponds.generatedBy_right {X : Set ℕ} {Y : Set (ℕ → Bool)} (h : Corresponds X Y) :
     GeneratedBy genPoint Y := by
   obtain ⟨φ, -, rfl⟩ := h; exact generatedBy_iff_exists_evalSet'.mpr ⟨φ, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/inter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 theorem Corresponds.inter {X₁ X₂ : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}
     (h1 : Corresponds X₁ Y₁) (h2 : Corresponds X₂ Y₂) :
     Corresponds (X₁ ∩ X₂) (Y₁ ∩ Y₂) := by
@@ -67934,65 +57736,35 @@ theorem Corresponds.inter {X₁ X₂ : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}
   refine ⟨.and φ ψ, ?_, ?_⟩
   · show evalSet φ ∩ evalSet ψ = X₁ ∩ X₂; rw [hφX, hψX]
   · show evalSet' φ ∩ evalSet' ψ = Y₁ ∩ Y₂; rw [hφY, hψY]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/mem_dualFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 @[simp] theorem mem_dualFilter {α : Type*} {x : Set (Set α)} {Y : Set α} :
     Y ∈ dualFilter x ↔ Yᶜ ∈ x := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/dualFilter_dualFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 @[simp] theorem dualFilter_dualFilter {α : Type*} (x : Set (Set α)) :
     dualFilter (dualFilter x) = x := by
   ext Y; simp [dualFilter]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/idealOf.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- The clopens contained in `O`: a proper ideal of `GeneratedBy genPoint` whenever `O ≠ univ`. -/
 def idealOf (O : Set (ℕ → Bool)) : Set (Set (ℕ → Bool)) := {Y | GeneratedBy genPoint Y ∧ Y ⊆ O}
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/down_mem_idealOf.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 theorem down_mem_idealOf {O Y Z : Set (ℕ → Bool)} (hY : Y ∈ idealOf O)
     (hZg : GeneratedBy genPoint Z) (hZY : Z ⊆ Y) : Z ∈ idealOf O := ⟨hZg, hZY.trans hY.2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/empty_mem_idealOf.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 theorem empty_mem_idealOf (O : Set (ℕ → Bool)) : (∅ : Set (ℕ → Bool)) ∈ idealOf O :=
   ⟨generatedBy_genPoint_empty, Set.empty_subset _⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/inter_mem_dualFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- An ideal closed under (binary, hence finite) union dualizes to a filter closed under
 intersection (`(Y ∩ Z)ᶜ = Yᶜ ∪ Zᶜ`, De Morgan). -/
 theorem inter_mem_dualFilter {α : Type*} {x : Set (Set α)}
@@ -68000,14 +57772,9 @@ theorem inter_mem_dualFilter {α : Type*} {x : Set (Set α)}
     (hY : Y ∈ dualFilter x) (hZ : Z ∈ dualFilter x) : Y ∩ Z ∈ dualFilter x := by
   have h := hx _ hY _ hZ
   simpa [dualFilter, Set.compl_inter] using h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/nonempty_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- `Corresponds` matches `Set.Nonempty` — via `n ↦ fun i => n.testBit i` directly for `→`, and
 `exists_bitsOf_agree` (`8.13(b)`) for `←`, since a formula's satisfying valuation can always be
 swapped for a matching bit-derived one on its own (finite) variables. -/
@@ -68022,25 +57789,15 @@ theorem Corresponds.nonempty_iff {X : Set ℕ} {Y : Set (ℕ → Bool)} (h : Cor
     refine ⟨n, (mem_evalSet_iff n φ).mpr ?_⟩
     rw [evalV_eq_of_agree hn]
     exact (mem_evalSet'_iff v φ).mp hv
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/not_empty_mem_dualFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- An ideal excluding `univ` dualizes to a filter excluding `∅`. -/
 theorem not_empty_mem_dualFilter {α : Type*} {x : Set (Set α)} (h : Set.univ ∉ x) :
     (∅ : Set α) ∉ dualFilter x := by simpa [dualFilter] using h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/subset_iff.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- `Corresponds` also matches `⊆` — i.e. it is an order-isomorphism between the two concrete
 algebras, not just a bijection. -/
 theorem Corresponds.subset_iff {X₁ X₂ : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}
@@ -68050,45 +57807,25 @@ theorem Corresponds.subset_iff {X₁ X₂ : Set ℕ} {Y₁ Y₂ : Set (ℕ → B
   subst hφX; subst hφY; subst hψX; subst hψY
   exact ⟨fun hsub => entails_iff_evalSet'_subset.mp (entails_iff_evalSet_subset.mpr hsub),
     fun hsub => entails_iff_evalSet_subset.mp (entails_iff_evalSet'_subset.mpr hsub)⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/union_mem_idealOf.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 theorem union_mem_idealOf {O Y Z : Set (ℕ → Bool)} (hY : Y ∈ idealOf O) (hZ : Z ∈ idealOf O) :
     Y ∪ Z ∈ idealOf O := ⟨hY.1.union hZ.1, Set.union_subset hY.2 hZ.2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/univ_mem_dualFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- An ideal containing `∅` dualizes to a filter containing `univ`. -/
 theorem univ_mem_dualFilter {α : Type*} {x : Set (Set α)} (h : (∅ : Set α) ∈ x) :
     Set.univ ∈ dualFilter x := by simpa [dualFilter] using h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/univ_not_mem_idealOf.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 theorem univ_not_mem_idealOf {O : Set (ℕ → Bool)} (hO : O ≠ Set.univ) : Set.univ ∉ idealOf O :=
   fun h => hO (Set.univ_subset_iff.mp h.2)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/up_mem_dualFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- An ideal downward-closed within `GeneratedBy g` dualizes to a filter upward-closed within
 `GeneratedBy g` (De Morgan again: `Z ⊆ Y ↔ Yᶜ ⊆ Zᶜ`). -/
 theorem up_mem_dualFilter {α : Type*} {g : ℕ → Set α} {x : Set (Set α)}
@@ -68096,14 +57833,9 @@ theorem up_mem_dualFilter {α : Type*} {g : ℕ → Set α} {x : Set (Set α)}
     (hY : Y ∈ dualFilter x) (hZg : GeneratedBy g Z) (hYZ : Y ⊆ Z) : Z ∈ dualFilter x := by
   have hcompl : Zᶜ ⊆ Yᶜ := Set.compl_subset_compl.mpr hYZ
   simpa [dualFilter] using hx _ hY _ hZg.compl hcompl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/elementOfOpen.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- **`8.13(c4)`, the headline connection.** Every open `O ≠ Set.univ` of Cantor space `2^ℕ`
 determines a genuine element of `V` (hence of `U`, via `exercise813a`) — the proper filter "dual"
 to the ideal of clopens inside `O`, transported to `ℕ`-clopens via `Corresponds`. This is the
@@ -68131,15 +57863,9 @@ def elementOfOpen {O : Set (ℕ → Bool)} (hO : O ≠ Set.univ) : V.Element whe
       up_mem_dualFilter (fun Y hY Z hZg hZY => down_mem_idealOf hY hZg hZY) hY₁
         hC₂.generatedBy_right ((hC₁.subset_iff hC₂).mp hX₁X₂),
       hC₂⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 theorem exists_corresponds_of_generatedBy_generator {X : Set ℕ} (hX : GeneratedBy generator X) :
     ∃ Y, Corresponds X Y := by
   obtain ⟨φ, hφ⟩ := generatedBy_iff_exists_evalSet.mp hX
@@ -68151,31 +57877,18 @@ theorem Corresponds.unique_left {X₁ X₂ : Set ℕ} {Y : Set (ℕ → Bool)}
   obtain ⟨ψ, hψX, hψY⟩ := h2
   have hse : SemanticEquiv φ ψ := semanticEquiv_iff_evalSet'_eq.mpr (hφY.trans hψY.symm)
   rw [← hφX, ← hψX, semanticEquiv_iff_evalSet_eq.mp hse]
-
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/Correspondsu2eunique_right.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 theorem Corresponds.unique_right {X : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}
     (h1 : Corresponds X Y₁) (h2 : Corresponds X Y₂) : Y₁ = Y₂ := by
   obtain ⟨φ, hφX, hφY⟩ := h1
   obtain ⟨ψ, hψX, hψY⟩ := h2
   have hse : SemanticEquiv φ ψ := semanticEquiv_iff_evalSet_eq.mpr (hφX.trans hψX.symm)
   rw [← hφY, ← hψY, semanticEquiv_iff_evalSet'_eq.mp hse]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/Lindenbaumu2erange_toSetu27.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 theorem Lindenbaum.range_toSet' :
     Set.range Lindenbaum.toSet' = {Y | GeneratedBy genPoint Y} := by
   ext Y
@@ -68186,15 +57899,9 @@ theorem Lindenbaum.range_toSet' :
     | _ φ => exact ⟨φ, rfl⟩
   · rintro ⟨φ, rfl⟩
     exact ⟨⟦φ⟧, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/Lindenbaumu2etoSetu27_injective.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 theorem Lindenbaum.toSet'_injective : Function.Injective Lindenbaum.toSet' := by
   intro x y
   induction x using Quotient.ind with
@@ -68203,28 +57910,16 @@ theorem Lindenbaum.toSet'_injective : Function.Injective Lindenbaum.toSet' := by
     | _ ψ =>
       intro h
       exact Quotient.sound (semanticEquiv_iff_evalSet'_eq.mpr h)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/exists_corresponds_of_generatedBy_genPoint.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 theorem exists_corresponds_of_generatedBy_genPoint {Y : Set (ℕ → Bool)}
     (hY : GeneratedBy genPoint Y) : ∃ X, Corresponds X Y := by
   obtain ⟨φ, hφ⟩ := generatedBy_iff_exists_evalSet'.mp hY
   exact ⟨evalSet φ, φ, rfl, hφ⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/generatedBy_genPoint_box.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 theorem generatedBy_genPoint_box (I : Finset ℕ) (f : ℕ → Bool) :
     GeneratedBy genPoint (box I f) := by
   induction I using Finset.induction_on with
@@ -68241,15 +57936,9 @@ theorem generatedBy_genPoint_box (I : Finset ℕ) (f : ℕ → Bool) :
     split_ifs with hfa
     · exact (GeneratedBy.of a).inter ih
     · exact (GeneratedBy.of a).compl.inter ih
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/generatedBy_genPoint_biUnion.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 /-- Finite unions of `box`es (over any index type) are `GeneratedBy genPoint` — the same
 `Finset.induction_on`/`Finset.set_biUnion_insert` idiom as `8.13(a)`'s `generatedBy_biUnion_affine`. -/
 theorem generatedBy_genPoint_biUnion {β : Type*} (t : Finset β) (I : β → Finset ℕ)
@@ -68260,28 +57949,17 @@ theorem generatedBy_genPoint_biUnion {β : Type*} (t : Finset β) (I : β → Fi
   | insert a s ha ih =>
     rw [Finset.set_biUnion_insert]
     exact (generatedBy_genPoint_box _ _).union ih
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/generatedBy_of_mem_dualFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 /-- Dualizing preserves membership in the algebra generated by `g` (using that `GeneratedBy g` is
 closed under `compl`). -/
 theorem generatedBy_of_mem_dualFilter {α : Type*} {g : ℕ → Set α} {x : Set (Set α)}
     (hx : ∀ Y ∈ x, GeneratedBy g Y) {Y : Set α} (hY : Y ∈ dualFilter x) : GeneratedBy g Y := by
   simpa using (hx _ hY).compl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_813_c.{u_1} : ∀ {α : Type u_1} {g : Nat → Set α} {x : Set (Set α)},
@@ -68293,26 +57971,14 @@ theorem example_813_c.{u_1} : ∀ {α : Type u_1} {g : Nat → Set α} {x : Set 
           (@DomainTheory.NeighbourhoodSystems.dualFilter α x) Y →
         @DomainTheory.NeighbourhoodSystems.GeneratedBy α g Y :=
   @DomainTheory.NeighbourhoodSystems.generatedBy_of_mem_dualFilter
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/isClopen_genPoint.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 theorem isClopen_genPoint (i : ℕ) : IsClopen (genPoint i) :=
   (isClopen_discrete ({true} : Set Bool)).preimage (continuous_apply i)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/generatedBy_genPoint_isClopen.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 /-- **Easy direction**: everything `GeneratedBy genPoint` is clopen. -/
 theorem generatedBy_genPoint_isClopen {Y : Set (ℕ → Bool)} (h : GeneratedBy genPoint Y) :
     IsClopen Y := by
@@ -68322,46 +57988,22 @@ theorem generatedBy_genPoint_isClopen {Y : Set (ℕ → Bool)} (h : GeneratedBy 
   | inter _ _ ih1 ih2 => exact ih1.inter ih2
   | union _ _ ih1 ih2 => exact ih1.union ih2
   | compl _ ih => exact ih.compl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/isOpen_box.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 theorem isOpen_box (I : Finset ℕ) (f : ℕ → Bool) : IsOpen (box I f) :=
   (generatedBy_genPoint_isClopen (generatedBy_genPoint_box I f)).isOpen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/isOpen_genPoint.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 theorem isOpen_genPoint (i : ℕ) : IsOpen (genPoint i) := (isClopen_genPoint i).isOpen
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/self_mem_box.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 theorem self_mem_box (I : Finset ℕ) (f : ℕ → Bool) : f ∈ box I f := fun _ _ => rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/isClopen_iff_generatedBy_genPoint.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 /-- **`8.13(c1)`.** Cantor space's clopen algebra is exactly `GeneratedBy genPoint` — the free
 Boolean algebra on `ℵ₀` generators (`8.13(a)`), transported to carrier `ℕ → Bool`. -/
 theorem isClopen_iff_generatedBy_genPoint {Y : Set (ℕ → Bool)} :
@@ -68386,15 +58028,9 @@ theorem isClopen_iff_generatedBy_genPoint {Y : Set (ℕ → Bool)} :
     refine Set.Subset.antisymm ht (Set.iUnion₂_subset fun f _ => hIfn (f : ℕ → Bool) f.2)
   rw [heq]
   exact generatedBy_genPoint_biUnion t Ig fg
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise813c/isOpen_iff_exists_iUnion_generatedBy.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-
 /-- Immediate corollary: **opens** (not just clopens) of Cantor space are exactly unions of
 `GeneratedBy genPoint` clopens — the "topological basis" fact underlying the scoping row's
 candidate `(ii)`. -/
@@ -68415,6 +58051,7 @@ theorem isOpen_iff_exists_iUnion_generatedBy {O : Set (ℕ → Bool)} :
       exact hYO hxY
   · rintro ⟨S, hS, rfl⟩
     exact isOpen_biUnion fun Y hY => (generatedBy_genPoint_isClopen (hS Y hY)).isOpen
+end
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -68446,13 +58083,10 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817/IsUniversal.lean
 namespace DomainTheory.NeighbourhoodSystems
-
+section
 open NeighborhoodSystem ApproximableMap Subsystem
-
 universe u v w
-
 variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **Universality, as an abstract predicate**: every countable neighbourhood system embeds
@@ -68460,18 +58094,11 @@ variable {α : Type u} {β : Type v} {γ : Type w}
 domain `𝒰` to an arbitrary `W`. -/
 def IsUniversal {δ : Type w} (W : NeighborhoodSystem δ) : Prop :=
   ∀ {α : Type u} (D : NeighborhoodSystem α) [Countable {S : Set α // D.mem S}], D ⊴ W
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817/comp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Subsystem
-
 universe u v w
-
 variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **`ProjPair`s compose.** If `D ⇄ E` and `E ⇄ F` are projection pairs, so is `D ⇄ F`
@@ -68494,18 +58121,11 @@ def ProjPair.comp {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
           comp_mono_gen le_rfl (comp_mono_gen p1.inj_comp_proj_le le_rfl)
       _ = p2.inj.comp p2.proj := by rw [idMap_comp]
       _ ≤ idMap F := p2.inj_comp_proj_le
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817/ofIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Subsystem
-
 universe u v w
-
 variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **A `DomainIso` gives a `ProjPair`, via Theorem 2.7's `ofIso`.** Both round trips are genuine
@@ -68531,18 +58151,11 @@ def ProjPair.ofIso {D : NeighborhoodSystem α} {E : NeighborhoodSystem β} (e : 
       rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply,
         toElementMap_idMap]
     exact le_iff_toElementMap_le.mpr fun y => (heq y).le
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817/ofSubsystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Subsystem
-
 universe u v w
-
 variable {α : Type u} {β : Type v} {γ : Type w}
 
 /-- **A subsystem relation `D ◁ E` gives a `ProjPair`** (Proposition 6.12, rebundled). -/
@@ -68551,20 +58164,12 @@ def ProjPair.ofSubsystem {D E : NeighborhoodSystem α} (h : D ◁ E) : ProjPair 
   proj := h.proj
   proj_comp_inj := h.proj_comp_inj
   inj_comp_proj_le := h.inj_comp_proj_le
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Subsystem
-
 universe u v w
-
 variable {α : Type u} {β : Type v} {γ : Type w}
-
 
 /-- **`D ⊴ E` composed with an isomorphism `D ≅ᴰ D'` on the left is still `D ⊴ E`** — immediate
 from unfolding `⊴` and composing the two `DomainIso`s (`OrderIso.trans`). -/
@@ -68588,58 +58193,34 @@ theorem trianglelefteq_trans {D : NeighborhoodSystem α} {E : NeighborhoodSystem
   have hD'F : D' ⊴ F :=
     trianglelefteq_of_projectionPair pD'F.inj pD'F.proj pD'F.proj_comp_inj pD'F.inj_comp_proj_le
   exact trianglelefteq_of_isomorphic_left ⟨eDD'⟩ hD'F
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817/U_isUniversal.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Subsystem
-
 universe u v w
-
 variable {α : Type u} {β : Type v} {γ : Type w}
-
 
 /-- **`𝒰` is universal** (restating Theorem 8.8(a) in `⊴`-shape). -/
 theorem U_isUniversal : IsUniversal.{u} U := by
   intro α D _
   obtain ⟨D', hiso, hsub⟩ := theorem_8_8_a D
   exact ⟨D', hsub, hiso⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817/funSpaceUU_trianglelefteq_U.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Subsystem
-
 universe u v w
-
 variable {α : Type u} {β : Type v} {γ : Type w}
-
 
 /-- **Exercise 8.17, Part 1 (`→`).** `iArrow/jArrow` already are the pair `𝒰→𝒰 ⇄ 𝒰`; bonus `⊴`. -/
 theorem funSpaceUU_trianglelefteq_U : funSpace U U ⊴ U :=
   trianglelefteq_of_projectionPair iArrow jArrow jArrow_comp_iArrow iArrow_comp_jArrow_le
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817/isUniversal_of_isomorphic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Subsystem
-
 universe u v w
-
 variable {α : Type u} {β : Type v} {γ : Type w}
-
 
 /-- **Universality transports along isomorphism.** If `W` is universal and `W ≅ᴰ W'`, then `W'` is
 universal too: every countable `D` embeds in `W` (`D ⊴ W`), and `W ⊴ W'` (take `D' := W'` in `⊴`'s
@@ -68649,20 +58230,12 @@ theorem isUniversal_of_isomorphic {W : NeighborhoodSystem β} {W' : Neighborhood
   have hWW'_tri : W ⊴ W' := hWW'.elim fun e => ⟨W', Subsystem.refl W', ⟨e⟩⟩
   intro α D _
   exact trianglelefteq_trans (hW D) hWW'_tri
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817/V_isUniversal.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Subsystem
-
 universe u v w
-
 variable {α : Type u} {β : Type v} {γ : Type w}
-
 
 /-- **Exercise 8.17, Part 3.** Exercise 8.12's `V` (a `NeighborhoodSystem ℕ`, built from `2^kℕ+ℓ` —
 literally a *different* neighbourhood system from `U : NeighborhoodSystem ℚ`, not merely a
@@ -68670,51 +58243,30 @@ relabelling) is a universal domain, since it is effectively isomorphic to `𝒰`
 Exercise 8.12's headline) and universality transports along isomorphism. -/
 theorem V_isUniversal : IsUniversal.{u} V :=
   isUniversal_of_isomorphic U_isUniversal ⟨effectiveIso812_UV.toDomainIso⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817/prodUU_trianglelefteq_U.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Subsystem
-
 universe u v w
-
 variable {α : Type u} {β : Type v} {γ : Type w}
-
 
 /-- **Exercise 8.17, Part 1 (`×`).** `iTimes/jTimes` already are the pair `𝒰×𝒰 ⇄ 𝒰`; bonus `⊴`. -/
 theorem prodUU_trianglelefteq_U : prod U U ⊴ U :=
   trianglelefteq_of_projectionPair iTimes jTimes jTimes_comp_iTimes iTimes_comp_jTimes_le
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817/sumUU_trianglelefteq_U.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Subsystem
-
 universe u v w
-
 variable {α : Type u} {β : Type v} {γ : Type w}
-
 
 /-- **Exercise 8.17, Part 1 (`+`).** `iPlus/jPlus` (`Definition89.lean`) already *are* the computable
 projection pair `𝒰+𝒰 ⇄ 𝒰` needed for 8.9. Bonus: Lemma 6.15 upgrades it to `𝒰+𝒰 ⊴ 𝒰`. -/
 theorem sumUU_trianglelefteq_U : sum U U U_mem_nonempty U_mem_nonempty ⊴ U :=
   trianglelefteq_of_projectionPair iPlus jPlus jPlus_comp_iPlus iPlus_comp_jPlus_le
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise817.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_817.{u} : And
@@ -68780,16 +58332,10 @@ theorem example_817.{u} : And
       DomainTheory.NeighbourhoodSystems.funSpaceUU_trianglelefteq_U)
     DomainTheory.NeighbourhoodSystems.prodUU_trianglelefteq_U)
   DomainTheory.NeighbourhoodSystems.sumUU_trianglelefteq_U
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/funToPair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
 
 section Prod
@@ -68805,16 +58351,10 @@ noncomputable def funToPair : ApproximableMap (funSpace TD E) (prod E E) :=
       (paired (idMap (funSpace TD E)) (constMap (funSpace TD E) Example23.falseElt)))
 
 end Prod
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/sumToProdT.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
 
 section Sum
@@ -68827,16 +58367,10 @@ noncomputable def sumToProdT : ApproximableMap (sum E E hE hE) (prod TD (prod E 
     (paired (outMap₀ (h₀ := hE) (h₁ := hE)) (outMap₁ (h₀ := hE) (h₁ := hE)))
 
 end Sum
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/swapProdT.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
 
 section Prod
@@ -68849,16 +58383,10 @@ noncomputable def swapProdT : ApproximableMap (prod (prod E E) TD) (prod TD (pro
   paired (proj₁ (prod E E) TD) (proj₀ (prod E E) TD)
 
 end Prod
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/pairToFun.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
 
 section Prod
@@ -68871,16 +58399,10 @@ noncomputable def pairToFun : ApproximableMap (prod E E) (funSpace TD E) :=
   curry ((cond E).comp swapProdT)
 
 end Prod
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/TD_bot_eq_botElt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section General
 
@@ -68894,31 +58416,20 @@ theorem TD_bot_eq_botElt : TD.bot = Example23.botElt :=
   le_antisymm (NeighborhoodSystem.bot_le _ _) (Example23.botElt_le _)
 
 end General
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/TD_trichotomy.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 /-- **`T`'s elements, named via `Example23`.** The three-way classification of `Example12`,
 restated with `Example23`'s `⊥`/`true`/`false` names (they are the *same* terms by `rfl`). -/
 theorem TD_trichotomy (t : TD.Element) :
     t = Example23.botElt ∨ t = Example23.trueElt ∨ t = Example23.falseElt :=
   Example12.neighborhoodSystem.element_classification t
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/expMap_mono_left.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section General
 
@@ -68939,15 +58450,10 @@ theorem expMap_mono_left {V0 : NeighborhoodSystem α} {V1 : NeighborhoodSystem �
   exact comp_mono_gen le_rfl (comp_mono_gen le_rfl hh)
 
 end General
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/funSpace_dom_trianglelefteq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section General
 
@@ -68974,15 +58480,10 @@ theorem funSpace_dom_trianglelefteq {A : NeighborhoodSystem α} {B : Neighborhoo
       _ = idMap (funSpace B C) := expMap_id
 
 end General
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/outMapu2080_comp_inMapu2081.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section SumHelpers
 
@@ -69008,15 +58509,10 @@ theorem outMap₀_comp_inMap₁ :
       Or.inr (Or.inr ⟨Y, hY, rfl⟩), V₀.master_mem, (leftPart_inj₁ V₀ (h₁ Y hY)).subset⟩
 
 end SumHelpers
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/outMapu2081_comp_inMapu2080.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section SumHelpers
 
@@ -69042,15 +58538,10 @@ theorem outMap₁_comp_inMap₀ :
       Or.inr (Or.inl ⟨X, hX, rfl⟩), V₁.master_mem, (rightPart_inj₀ V₁ (h₀ X hX)).subset⟩
 
 end SumHelpers
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/pair_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section General
 
@@ -69069,15 +58560,10 @@ theorem pair_bot {V0 : NeighborhoodSystem α} {V1 : NeighborhoodSystem β} :
   · exact NeighborhoodSystem.bot_le _ _
 
 end General
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/prod_left_trianglelefteq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section General
 
@@ -69116,15 +58602,10 @@ theorem prod_left_trianglelefteq {A : NeighborhoodSystem α} {B : NeighborhoodSy
     rwa [toElementMap_comp, toElementMap_idMap] at hxx
 
 end General
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/prod_right_trianglelefteq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section General
 
@@ -69143,15 +58624,10 @@ theorem prod_right_trianglelefteq {A : NeighborhoodSystem α} {B : NeighborhoodS
   exact trianglelefteq_trans (trianglelefteq_trans h1 h2) h3
 
 end General
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/toElementMap_bot_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section General
 
@@ -69168,15 +58644,10 @@ theorem toElementMap_bot_le {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
   exact h ((rel_iff_mem_principal f V₀.master_mem).mpr hY)
 
 end General
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/outMapu2080_bot_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section SumHelpers
 
@@ -69193,15 +58664,10 @@ theorem outMap₀_bot_le :
   rwa [leftPart_sumMaster] at h2
 
 end SumHelpers
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/outMapu2081_bot_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section SumHelpers
 
@@ -69218,17 +58684,11 @@ theorem outMap₁_bot_le :
   rwa [rightPart_sumMaster] at h2
 
 end SumHelpers
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/toElementMap_funToPair.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Prod
 
@@ -69243,17 +58703,11 @@ theorem toElementMap_funToPair (φ : (funSpace TD E).Element) :
     toElementMap_constMap, evalMap_apply]
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/toElementMap_sumToProdT.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Sum
 
@@ -69268,17 +58722,11 @@ theorem toElementMap_sumToProdT (w : (sum E E hE hE).Element) :
   simp only [sumToProdT, toElementMap_paired]
 
 end Sum
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/condSum_comp_sumToProdT.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Sum
 
@@ -69296,17 +58744,11 @@ theorem condSum_comp_sumToProdT :
   exact cond_which w
 
 end Sum
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/toElementMap_swapProdT.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Prod
 
@@ -69319,17 +58761,11 @@ theorem toElementMap_swapProdT (x y : E.Element) (t : TD.Element) :
     snd_pair]
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/toApproxMap_pairToFun.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Prod
 
@@ -69342,17 +58778,11 @@ theorem toApproxMap_pairToFun (x y : E.Element) (t : TD.Element) :
   rw [pairToFun, toElementMap_curry_apply, toElementMap_comp, toElementMap_swapProdT]
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/funToPair_comp_pairToFun.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Prod
 
@@ -69370,17 +58800,11 @@ theorem funToPair_comp_pairToFun : (funToPair (E := E)).comp pairToFun = idMap (
     toApproxMap_pairToFun, Exercise326.cond_true, Exercise326.cond_false]
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/pairToFun_comp_funToPair_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Prod
 
@@ -69404,17 +58828,11 @@ theorem pairToFun_comp_funToPair_le :
   · rw [toApproxMap_pairToFun, Exercise326.cond_false]
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/prod_trianglelefteq_funSpace_TD.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Prod
 
@@ -69427,17 +58845,11 @@ theorem prod_trianglelefteq_funSpace_TD : prod E E ⊴ funSpace TD E :=
     pairToFun_comp_funToPair_le
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/prod_trianglelefteq_of.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Prod
 
@@ -69453,15 +58865,10 @@ theorem prod_trianglelefteq_of (hT : TD ⊴ E) (hArrow : funSpace E E ⊴ E) :
     hArrow
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/which_bot_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section SumHelpers
 
@@ -69478,15 +58885,10 @@ theorem which_bot_le :
   exact whichGuard_masterC hg.2.2 rfl
 
 end SumHelpers
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/which_inMapu2080_le_trueElt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section SumHelpers
 
@@ -69510,15 +58912,10 @@ theorem which_inMap₀_le_trueElt (x : V₀.Element) :
     exact not_inj₀_subset_inj₁ (h₀ X hX0) hsub
 
 end SumHelpers
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/which_inMapu2081_le_falseElt.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 
 section SumHelpers
 
@@ -69542,17 +58939,11 @@ theorem which_inMap₁_le_falseElt (y : V₁.Element) :
     exact Or.inr rfl
 
 end SumHelpers
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/sumToProdT_comp_condSum_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Sum
 
@@ -69598,17 +58989,11 @@ theorem sumToProdT_comp_condSum_le :
       exact h2.le
 
 end Sum
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/sum_trianglelefteq_prodT.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Sum
 
@@ -69621,17 +59006,11 @@ theorem sum_trianglelefteq_prodT : sum E E hE hE ⊴ prod TD (prod E E) :=
     (sumToProdT_comp_condSum_le hE)
 
 end Sum
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/sum_trianglelefteq_of.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 section Sum
 
@@ -69649,17 +59028,11 @@ theorem sum_trianglelefteq_of (hT : TD ⊴ E) (hArrow : funSpace E E ⊴ E) :
     (trianglelefteq_trans (prod_right_trianglelefteq E hPE) hPE)
 
 end Sum
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819/exercise_8_19.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap Exercise326
-
 universe u
-
 
 /- concordance: source L5179 EXERCISE 8.19 closure under sum and product -/
 /-- **Exercise 8.19.** If `T ⊴ E` and `E → E ⊴ E`, then `E + E ⊴ E` and `E × E ⊴ E`. -/
@@ -69667,14 +59040,9 @@ theorem exercise_8_19 {α : Type u} {E : NeighborhoodSystem α}
     (hE : ∀ X, E.mem X → X.Nonempty) (hT : TD ⊴ E) (hArrow : funSpace E E ⊴ E) :
     sum E E hE hE ⊴ E ∧ prod E E ⊴ E :=
   ⟨sum_trianglelefteq_of hE hT hArrow, prod_trianglelefteq_of hT hArrow⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise819.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_819.{u} : And
@@ -69754,16 +59122,10 @@ theorem example_819.{u} : And
             (@DomainTheory.NeighbourhoodSystems.prod α α E E) E)
     @DomainTheory.NeighbourhoodSystems.exercise_8_19 @DomainTheory.NeighbourhoodSystems.prod_trianglelefteq_of)
   @DomainTheory.NeighbourhoodSystems.sum_trianglelefteq_of
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/constFunMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
 
 section FunSpace
@@ -69775,16 +59137,10 @@ to the function that ignores its argument and always returns `b`. -/
 noncomputable def constFunMap : ApproximableMap B (funSpace A B) := curry (proj₀ B A)
 
 end FunSpace
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/embedFst.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
 
 section Prod
@@ -69795,16 +59151,10 @@ variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : Neighborho
 noncomputable def embedFst : ApproximableMap A (prod A B) := paired (idMap A) (constMap A B.bot)
 
 end Prod
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/embedSnd.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
 
 section Prod
@@ -69815,16 +59165,10 @@ variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : Neighborho
 noncomputable def embedSnd : ApproximableMap B (prod A B) := paired (constMap B A.bot) (idMap B)
 
 end Prod
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/evalBotMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
 
 section FunSpace
@@ -69836,16 +59180,10 @@ noncomputable def evalBotMap : ApproximableMap (funSpace A B) B :=
   (evalMap A B).comp (paired (idMap (funSpace A B)) (constMap (funSpace A B) A.bot))
 
 end FunSpace
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/Basic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
 
 section FunSpace
@@ -69859,17 +59197,11 @@ variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : Neighborho
 end FunSpace
 
 variable {α : Type u} (D : NeighborhoodSystem α)
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/embedFst_comp_proju2080_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
-
 
 section Prod
 
@@ -69886,17 +59218,11 @@ theorem embedFst_comp_proj₀_le : (embedFst A B).comp (proj₀ A B) ≤ idMap (
   exact pair_le_pair_iff.mpr ⟨le_refl x, B.bot_le y⟩
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/embedFst_ne_embedSnd_of_ne_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
 
 /-- **Multiplicity, product case.** `embedFst`/`embedSnd` (hence the two projection pairs above)
 are genuinely *different maps* as soon as `D` has an element `x ≠ ⊥`: evaluating both at `x` gives
@@ -69907,18 +59233,11 @@ theorem embedFst_ne_embedSnd_of_ne_bot {α : Type u} {D : NeighborhoodSystem α}
   simp only [embedFst, embedSnd, toElementMap_paired, toElementMap_idMap,
     toElementMap_constMap] at heq
   simpa using congrArg (·.fst) heq
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/embedSnd_comp_proju2081_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
-
 
 section Prod
 
@@ -69935,17 +59254,11 @@ theorem embedSnd_comp_proj₁_le : (embedSnd A B).comp (proj₁ A B) ≤ idMap (
   exact pair_le_pair_iff.mpr ⟨A.bot_le x, le_refl y⟩
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/proju2080_comp_embedFst.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
-
 
 section Prod
 
@@ -69958,17 +59271,11 @@ theorem proj₀_comp_embedFst : (proj₀ A B).comp (embedFst A B) = idMap A := b
       toElementMap_proj₀, fst_pair]
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/proju2081_comp_embedSnd.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
-
 
 section Prod
 
@@ -69981,17 +59288,11 @@ theorem proj₁_comp_embedSnd : (proj₁ A B).comp (embedSnd A B) = idMap B := b
       toElementMap_proj₁, snd_pair]
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/toElementMap_evalBotMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
-
 
 section FunSpace
 
@@ -70004,17 +59305,11 @@ theorem toElementMap_evalBotMap (φ : (funSpace A B).Element) :
     toElementMap_constMap, evalMap_apply]
 
 end FunSpace
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/constFunMap_comp_evalBotMap_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
-
 
 section FunSpace
 
@@ -70035,17 +59330,11 @@ theorem constFunMap_comp_evalBotMap_le :
   exact toElementMap_mono (toApproxMap φ) (A.bot_le a)
 
 end FunSpace
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/evalBotMap_comp_constFunMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
-
 
 section FunSpace
 
@@ -70057,17 +59346,11 @@ theorem evalBotMap_comp_constFunMap : (evalBotMap A B).comp (constFunMap A B) = 
     rw [toElementMap_comp, toElementMap_idMap, toElementMap_evalBotMap, toApproxMap_constFunMap]
 
 end FunSpace
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/trianglelefteq_funSpace_const.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
-
 
 section FunSpace
 
@@ -70080,34 +59363,20 @@ theorem trianglelefteq_funSpace_const : B ⊴ funSpace A B :=
     (evalBotMap_comp_constFunMap A B) (constFunMap_comp_evalBotMap_le A B)
 
 end FunSpace
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/D_trianglelefteq_funSpace.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
-
 variable {α : Type u} (D : NeighborhoodSystem α)
 
 /-- **Exercise 8.20, `D ⊴ D→D`.** -/
 theorem D_trianglelefteq_funSpace : D ⊴ funSpace D D := trianglelefteq_funSpace_const D D
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/trianglelefteq_prod_fst.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
-
 
 section Prod
 
@@ -70120,35 +59389,20 @@ theorem trianglelefteq_prod_fst : A ⊴ prod A B :=
     (embedFst_comp_proj₀_le A B)
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/D_trianglelefteq_prod.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
-
 variable {α : Type u} (D : NeighborhoodSystem α)
 
 /-- **Exercise 8.20, `D ⊴ D×D`.** -/
 theorem D_trianglelefteq_prod : D ⊴ prod D D := trianglelefteq_prod_fst D D
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/exercise_8_20.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u
-
-
 variable {α : Type u} (D : NeighborhoodSystem α)
 
 /- concordance: source L5185 EXERCISE 8.20 self-embeddings of a domain -/
@@ -70157,14 +59411,9 @@ needed, unlike Exercise 8.19). See the module docstring for the discussion of co
 multiplicity of projection pairs that Scott also asks about. -/
 theorem exercise_8_20 : D ⊴ prod D D ∧ D ⊴ funSpace D D :=
   ⟨D_trianglelefteq_prod D, D_trianglelefteq_funSpace D⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_820.{u} : And
@@ -70208,18 +59457,11 @@ theorem example_820.{u} : And
         (@DomainTheory.NeighbourhoodSystems.funSpace α α D D))
     @DomainTheory.NeighbourhoodSystems.exercise_8_20 @DomainTheory.NeighbourhoodSystems.D_trianglelefteq_funSpace)
   @DomainTheory.NeighbourhoodSystems.D_trianglelefteq_prod
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise820/trianglelefteq_prod_snd.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 universe u v
-
 
 section Prod
 
@@ -70232,26 +59474,17 @@ theorem trianglelefteq_prod_snd : B ⊴ prod A B :=
     (embedSnd_comp_proj₁_le A B)
 
 end Prod
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/RDom.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- The domain `(𝒰→𝒰) × ((𝒰→𝒰) × 𝒰)` of the joint evaluator: an element `⟨ψ, ⟨φ, x⟩⟩` packages
 the varying map `ψ` (to become `a`), the curry variable `φ`, and the point `x`. -/
 abbrev RDom := prod (funSpace U U) (prod (funSpace U U) U)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/RMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- `R(ψ, φ, x) := c(φ(ψ(x)))`, purely as a composite of `evalMap`, `proj`s and `paired` — jointly
@@ -70263,14 +59496,9 @@ noncomputable def RMap (c : ApproximableMap U U) : ApproximableMap RDom U :=
       ((evalMap U U).comp
         (paired (proj₀ (funSpace U U) (prod (funSpace U U) U))
           ((proj₁ (funSpace U U) U).comp (proj₁ (funSpace U U) (prod (funSpace U U) U)))))))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/curryOnceC.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- First curry (peeling off `ψ`), leaving the `(φ, x)` pair bundled: an element of
@@ -70278,14 +59506,9 @@ open NeighborhoodSystem ApproximableMap
 noncomputable def curryOnceC (c : ApproximableMap U U) :
     ApproximableMap (funSpace U U) (funSpace (prod (funSpace U U) U) U) :=
   curry (RMap c)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/fixedNbhd_elementIso_fix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- **`fixedNbhd a ≅ Fix(a)`, for any finitary projection `a : 𝒰 → 𝒰`.** Theorem 8.6(a)'s
@@ -70296,14 +59519,9 @@ noncomputable def fixedNbhd_elementIso_fix {a : ApproximableMap U U} (ha : Finit
   have h := Subsystem.elementIso (fixedNbhd_subsystem a)
   unfold Subsystem.retractionOfSubsystem at h
   rwa [inj_comp_proj_eq_self ha] at h
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/lamOp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- Second curry (via Table 5.5's `curryC`, peeling off `φ`): `ψ ↦ (φ ↦ (x ↦ R(ψ,φ,x)))`, an
@@ -70311,91 +59529,56 @@ element of the fourth-order function space `(𝒰→𝒰) → ((𝒰→𝒰) →
 noncomputable def lamOp (c : ApproximableMap U U) :
     ApproximableMap (funSpace U U) (funSpace (funSpace U U) (funSpace U U)) :=
   (curryC (funSpace U U) U U).comp (curryOnceC c)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/presentationIterU.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- A fixed computable presentation of `𝒰^∞ = iterSys 𝒰` (Exercise 7.15). -/
 noncomputable def presentationIterU : ComputablePresentation (iterSys U) :=
   Classical.choice (iterSys_isEffectivelyGiven U_isEffectivelyGiven)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/cInj.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- **`i : 𝒰^∞ → 𝒰`**, fixed by Theorem 8.8(b) applied to `𝒰^∞`. -/
 noncomputable def cInj : ApproximableMap (iterSys U) U :=
   (theorem_8_8_b_strong presentationIterU).choose
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/cProj.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- **`j : 𝒰 → 𝒰^∞`**, fixed by Theorem 8.8(b) applied to `𝒰^∞`. -/
 noncomputable def cProj : ApproximableMap U (iterSys U) :=
   (theorem_8_8_b_strong presentationIterU).choose_spec.choose
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/cCombinator.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- **`c := i ∘ j : 𝒰 → 𝒰`**, the finitary projection witnessing `𝒰^∞` inside `𝒰`. -/
 noncomputable def cCombinator : ApproximableMap U U := cInj.comp cProj
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/TArrow.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- Exercise 8.23's abstract correspondence `T(a) := D_a → D_c` (a domain, for each finitary
 projection `a`). -/
 noncomputable def TArrow (a : ApproximableMap U U) : Σ β : Type, NeighborhoodSystem β :=
   ⟨_, funSpace (fixedNbhd a) (fixedNbhd cCombinator)⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/cProj_comp_cInj.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 theorem cProj_comp_cInj : cProj.comp cInj = idMap (iterSys U) :=
   (theorem_8_8_b_strong presentationIterU).choose_spec.choose_spec.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/cElementIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- **`𝒰^∞ ≅ Fix(c)`**, from the generic projection-pair `elementIso` (Proposition 8.10(b)'s
@@ -70403,14 +59586,9 @@ open NeighborhoodSystem ApproximableMap
 noncomputable def cElementIso :
     (iterSys U).Element ≃o {y : U.Element // cCombinator.toElementMap y = y} :=
   elementIsoOfProjectionPair cInj cProj cProj_comp_cInj rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/tOpMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
 /-- **`t(a) := a → c`, made continuous in `a`.** Conjugates `lamOp c`'s output by the fixed
@@ -70419,97 +59597,55 @@ iArrow`. -/
 noncomputable def tOpMap (c : ApproximableMap U U) :
     ApproximableMap (funSpace U U) (funSpace U U) :=
   (expMap jArrow iArrow).comp (lamOp c)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/cInj_comp_cProj_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 theorem cInj_comp_cProj_le : cInj.comp cProj ≤ idMap U :=
   (theorem_8_8_b_strong presentationIterU).choose_spec.choose_spec.2.1
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/isFinitary_cCombinator.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 theorem isFinitary_cCombinator : IsFinitary cCombinator :=
   isFinitary_of_projectionPair cInj cProj cProj_comp_cInj rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/isRetraction_cCombinator.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 theorem isRetraction_cCombinator : Retraction cCombinator := by
   constructor
   show (cInj.comp cProj).comp (cInj.comp cProj) = cInj.comp cProj
   rw [comp_assoc, ← comp_assoc cProj cInj cProj, cProj_comp_cInj, idMap_comp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/isProjection_cCombinator.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 theorem isProjection_cCombinator : IsProjection cCombinator :=
   ⟨isRetraction_cCombinator, cInj_comp_cProj_le⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/isFinitaryProjection_cCombinator.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 theorem isFinitaryProjection_cCombinator : FinitaryProjection cCombinator :=
   ⟨⟨isProjection_cCombinator, isFinitary_cCombinator⟩⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/fixedNbhd_cCombinator_isomorphic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 /-- **`fixedNbhd c ≅ 𝒰^∞`.** -/
 theorem fixedNbhd_cCombinator_isomorphic : fixedNbhd cCombinator ≅ᴰ iterSys U :=
   ⟨(fixedNbhd_elementIso_fix isFinitaryProjection_cCombinator).trans cElementIso.symm⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/hVV_cCombinator.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 /-- **`fixedNbhd c × fixedNbhd c ≅ fixedNbhd c`**, transported from `Exercise825Pow.pow_prod_isomorphic`
 along `fixedNbhd_cCombinator_isomorphic`. -/
@@ -70517,32 +59653,20 @@ theorem hVV_cCombinator :
     prod (fixedNbhd cCombinator) (fixedNbhd cCombinator) ≅ᴰ fixedNbhd cCombinator :=
   ((fixedNbhd_cCombinator_isomorphic.prod fixedNbhd_cCombinator_isomorphic).trans
     (pow_prod_isomorphic U)).trans fixedNbhd_cCombinator_isomorphic.symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/toElementMap_RMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 theorem toElementMap_RMap (c : ApproximableMap U U) (ψ φ : (funSpace U U).Element) (x : U.Element) :
     (RMap c).toElementMap (pair ψ (pair φ x)) =
       c.toElementMap ((toApproxMap φ).toElementMap ((toApproxMap ψ).toElementMap x)) := by
   simp only [RMap, toElementMap_comp, toElementMap_paired, toElementMap_proj₀, toElementMap_proj₁,
     fst_pair, snd_pair, evalMap_apply]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/toApproxMap_lamOp.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 /-- **`lamOp c` recovers `expMap (-) c = lamComb (-) c` at every `a`.** The heart of the
 continuity argument: unwinding both curry layers (`curryC_toApproxMap`, `toElementMap_curry_apply`
@@ -70562,16 +59686,10 @@ theorem toApproxMap_lamOp (c a : ApproximableMap U U) :
   rw [lamOp, toElementMap_comp, curryC_toApproxMap, toElementMap_curry_apply, curryOnceC,
     toElementMap_curry_apply, toElementMap_RMap, Sub8_6.toApproxMap_toFilter,
     toApproxMap_toElementMap_expMap, toElementMap_comp, toElementMap_comp]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/tOp_tOpMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 /-- **`tOp (tOpMap c) a = arrowComb a c`**, for every `a`: `t` really does implement
 `a ↦ arrowComb a c`, continuously. -/
@@ -70581,32 +59699,20 @@ theorem tOp_tOpMap (c a : ApproximableMap U U) :
   rw [tOpMap, toElementMap_comp, toApproxMap_toElementMap_expMap, toApproxMap_lamOp,
     expMap_eq_lamComb]
   rfl
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/hT_TArrow.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 theorem hT_TArrow (a : ApproximableMap U U) (ha : FinitaryProjection a) :
     Nonempty (Exercise823.Fix (Exercise823.tOp (tOpMap cCombinator) a) ≃o
       (TArrow a).2.Element) := by
   rw [tOp_tOpMap]
   exact ⟨(arrowComb_elementIso a cCombinator ha isFinitaryProjection_cCombinator).symm⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/ht_tOpMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 /-- **`t` sends finitary projections to finitary projections** (Exercise 8.23's hypothesis `ht`),
 via `tOp_tOpMap` and Proposition 8.10(b)'s `finitaryProjection_arrowComb`. -/
@@ -70615,16 +59721,10 @@ theorem ht_tOpMap (c : ApproximableMap U U) (hc : FinitaryProjection c) :
   intro a ha
   rw [tOp_tOpMap]
   exact finitaryProjection_arrowComb a c ha hc
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/Dsol_isomorphic_funSpace_cCombinator.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 /-- **`D ≅ D → 𝒰^∞` for `D := fixedNbhd (fixOp t)`.** Exercise 8.23's `fixedDomain_fixOp_iso_T`
 gives `Fix(‖t‖) ≅ D → D_c`; `fixedNbhd_elementIso_fix` identifies `D`'s own element type with
@@ -70639,16 +59739,10 @@ theorem Dsol_isomorphic_funSpace_cCombinator :
     ⟨fixedNbhd_elementIso_fix hFP⟩
   have h2 := Exercise823.fixedDomain_fixOp_iso_T (tOpMap cCombinator) hht TArrow hT_TArrow
   exact h1.elim fun e1 => h2.elim fun e2 => ⟨e1.trans e2⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/U_trianglelefteq_Dsol.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 /-- **`𝒰 ⊴ D`**: the solution domain contains a copy of the universal domain `𝒰`, so it is
 non-trivial (Scott's remark). Chains `𝒰 ⊴ 𝒰^∞` (`Exercise825Embed.trianglelefteq_iterSys`),
@@ -70664,16 +59758,10 @@ theorem U_trianglelefteq_Dsol : U ⊴ fixedNbhd (Exercise823.fixOp (tOpMap cComb
   have h4 : funSpace D (fixedNbhd cCombinator) ⊴ D :=
     ⟨D, Subsystem.refl D, Dsol_isomorphic_funSpace_cCombinator.symm⟩
   exact trianglelefteq_trans (trianglelefteq_trans (trianglelefteq_trans h1 h2) h3) h4
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint/exercise_8_25_main.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
 
 /-- **Exercise 8.25 (Scott 1981, PRG-19), main theorem.** `D ≅ D → D`, for
 `D := fixedNbhd (fixOp (tOpMap cCombinator))`: a non-trivial domain isomorphic to its own function
@@ -70683,14 +59771,9 @@ theorem exercise_8_25_main :
       funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))
         (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
   funSpace_self_isomorphic Dsol_isomorphic_funSpace_cCombinator hVV_cCombinator
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825FixedPoint.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_825_fixed_point : @DomainTheory.NeighbourhoodSystems.Isomorphic Rat
@@ -70712,14 +59795,9 @@ theorem example_825_fixed_point : @DomainTheory.NeighbourhoodSystems.Isomorphic 
       (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
         (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))) :=
   DomainTheory.NeighbourhoodSystems.exercise_8_25_main
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825/exercise_8_25.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- **Exercise 8.25 (Scott 1981, PRG-19), the answer.** The concrete domain
 `D := fixedNbhd (fixOp (tOpMap cCombinator))` (built in `Exercise825FixedPoint.lean` by the
 fixed-point method of Exercise 8.23, applied to `T(a) := a → 𝒰^∞`) satisfies `D ≅ D → D`. -/
@@ -70728,28 +59806,18 @@ theorem exercise_8_25 :
       funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))
         (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
   exercise_8_25_main
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825/exercise_8_25_universal.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 /-- **Exercise 8.25 (Scott 1981, PRG-19), non-triviality/universality.** The solution domain `D`
 of `exercise_8_25` contains a genuine embedded copy of the universal domain `𝒰` (`𝒰 ⊴ D`), so it is
 certainly not the one-point domain, and is in fact universal: every countable neighbourhood system
 embeds (up to isomorphism) into `𝒰`, hence into `D`. -/
 theorem exercise_8_25_universal : U ⊴ fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) :=
   U_trianglelefteq_Dsol
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise825.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_825 : And
@@ -70799,6 +59867,7 @@ theorem example_825 : And
       (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
         (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator))))
   DomainTheory.NeighbourhoodSystems.exercise_8_25 DomainTheory.NeighbourhoodSystems.exercise_8_25_universal
+end
 
 end DomainTheory.NeighbourhoodSystems
 end

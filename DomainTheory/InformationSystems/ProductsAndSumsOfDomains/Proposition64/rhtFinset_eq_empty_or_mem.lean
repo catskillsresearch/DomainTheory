@@ -65,4 +65,5 @@ theorem rhtFinset_eq_empty_or_mem (u : Finset (SumToken α β)) :
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

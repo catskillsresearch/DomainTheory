@@ -20,51 +20,21 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.t
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
-
 open CategoryTheory
-
 open CategoryTheory.Limits
-
 open CategoryTheory.MonoidalCategory
 
 namespace InfoSys
 
-attribute [instance] InfoSysObj.decEq
-
 open ApproximableMap
-
+attribute [instance] InfoSysObj.decEq
 attribute [instance] instCategoryInfoSysObj
-
 attribute [instance] instCartesianMonoidalCategoryInfoSysObj
 
 def productMapToTensorMap (A Y Y' : InfoSysObj.{u})
     (f : ApproximableMap (productSystem A.sys Y.sys) (productSystem A.sys Y'.sys)) :
     A ⊗ Y ⟶ A ⊗ Y' :=
   cast (tensorMap_eq_productMap A Y Y').symm f
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open CategoryTheory
-
-open CategoryTheory.Limits
-
-open CategoryTheory.MonoidalCategory
-
-namespace InfoSys
-
-attribute [instance] InfoSysObj.decEq
-
-open ApproximableMap
-
-attribute [instance] instCategoryInfoSysObj
-
-attribute [instance] instCartesianMonoidalCategoryInfoSysObj
 
 theorem productMapToTensorMap.comp.toElement (A Y Y' Z : InfoSysObj.{u})
     (f : ApproximableMap (productSystem A.sys Y.sys) (productSystem A.sys Y'.sys))
@@ -83,5 +53,6 @@ theorem productMapToTensorMap.comp.toElement (A Y Y' Z : InfoSysObj.{u})
   exact acomp.toElement _ _ _
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

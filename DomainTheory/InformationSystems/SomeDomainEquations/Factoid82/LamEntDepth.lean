@@ -44,9 +44,7 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
-
 variable (A : InfoSys α)
-
 
 /-- Depth-based entailment as an inductive Prop (Scott (8)–(11)).
 Premises are positive, so FunEnt-style recursion is allowed — unlike FunCon
@@ -75,36 +73,9 @@ inductive LamEntDepth : Finset (RawLamToken α) → RawLamToken α → Prop wher
       (hEntOut : ∀ z ∈ listToFinset ys, LamEntDepth (lamOutputUnion s) z) :
       LamEntDepth u (.funTok xs ys)
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamEntDepth_bot {u : Finset (RawLamToken α)} (hu : LamConDepth A u) :
     LamEntDepth A u .bot :=
   LamEntDepth.bot hu
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamEntDepth.con {u : Finset (RawLamToken α)} {t : RawLamToken α}
     (ht : LamEntDepth A u t) : LamConDepth A u := by
@@ -114,5 +85,6 @@ theorem LamEntDepth.con {u : Finset (RawLamToken α)} {t : RawLamToken α}
   | funTok hu _ _ _ _ _ _ _ _ => exact hu
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

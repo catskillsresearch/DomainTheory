@@ -14,7 +14,6 @@ namespace DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
 /-- Unfold product-shaped tokens into `V × V`. Top `∇` has no single product-token
 image (it generates the top *element*); we send it to `(∇, Δ)` as a left witness. -/
 def vUnfold (t : VToken) : ProdToken vSystem vSystem :=
@@ -24,41 +23,15 @@ def vUnfold (t : VToken) : ProdToken vSystem vSystem :=
   | .pairL x => ⟨(x, .bot), ⟨Or.inr rfl⟩⟩
   | .pairR y => ⟨(.bot, y), ⟨Or.inl rfl⟩⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem vUnfold.bot : vUnfold .bot = prodBot vSystem vSystem := rfl
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem vUnfold.pairL (x : VToken) :
     vUnfold (.pairL x) = ⟨(x, .bot), ⟨Or.inr rfl⟩⟩ := rfl
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem vUnfold.pairR (y : VToken) :
     vUnfold (.pairR y) = ⟨(.bot, y), ⟨Or.inl rfl⟩⟩ := rfl
 
 end InfoSys
+
+
 end DomainTheory.InformationSystems

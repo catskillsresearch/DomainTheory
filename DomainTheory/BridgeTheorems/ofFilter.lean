@@ -3,7 +3,7 @@ module
 public import DomainTheory.BridgeTheorems.toNeighborhoodSystem
 public import DomainTheory.BridgeTheorems.mem_basicOpen_of_singletons
 public import DomainTheory.BridgeTheorems.con_of_basicOpen_subset
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46

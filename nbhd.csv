@@ -1,46 +1,45 @@
 line,keyword,number,label,file
-120,DEFINITION,1.1,neighbourhood system,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-131,FACTOID,1.1a,empty intersection is delta,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-135,FACTOID,1.1b,recursive finite intersection,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-146,EXAMPLE,1.2,two-token domain,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-160,EXAMPLE,1.3,three-step chain,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-177,EXAMPLE,1.4,finite binary tree,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-206,FACTOID,1.4a,nested or disjoint,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-208,EXAMPLE,1.5,all nonempty subsets,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-210,FACTOID,1.5a,consistent iff nonempty,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-238,FACTOID,1.5b,equivalent sequences same limit,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-240,DEFINITION,1.6,ideal elements,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-256,DEFINITION,1.7,principal filter,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-264,FACTOID,1.7a1,principals are one-one,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-267,FACTOID,1.7a2,inclusion-reversing principals,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-273,FACTOID,1.7b,union of principal filters,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-282,DEFINITION,1.8,approximation and totality,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-282,FACTOID,1.8a1,bottom element,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-282,FACTOID,1.8a2,bottom is least,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-284,EXAMPLES,1.2–1.5,finite examples revisited,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-284,FACTOID,1.8b,finite filters are principal,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-312,FACTOID,1.8c,prefix order,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-317,FACTOID,1.8d,union of finite approximations,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-326,DEFINITION,1.9,isomorphic domains,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-334,THEOREM,1.10,basic open neighbourhoods,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-372,THEOREM,1.11,intersections and directed unions,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-444,EXERCISES,,Lecture I exercises,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-446,EXERCISE,1.12,final segments of integers,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-454,EXERCISE,1.13,infinite binary tree,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-456,EXERCISE,1.14,finite nonempty subsets,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-458,EXERCISE,1.15,finite elements without chains,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-462,EXERCISE,1.16,cofinite integer subsets,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-464,EXERCISE,1.17,rational open intervals,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-466,EXERCISE,1.18,consistency of neighbourhood families,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-468,EXERCISE,1.19,positive neighbourhood systems,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-472,EXERCISE,1.20,upward closed neighbourhoods,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-486,EXERCISE,1.21,complete neighbourhood systems,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-492,EXERCISE,1.22,topology of a domain,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-514,EXERCISE,1.23,decidable total elements,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-532,EXERCISE,1.24,extending partial elements,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-536,EXERCISE,1.25,final segments of ordinals,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-538,EXERCISE,1.26,ideals of a ring,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
-546,EXERCISE,1.27,suprema of bounded sets,DomainsGivenByNeighbourhoods/DomainsGivenByNeighbourhoods.lean
+120,DEFINITION,1.1,neighbourhood system,DomainsGivenByNeighbourhoods/NeighborhoodSystem.lean
+131,FACTOID,1.1a,empty intersection is delta,DomainsGivenByNeighbourhoods/Factoid_1_1.lean
+135,FACTOID,1.1b,recursive finite intersection,DomainsGivenByNeighbourhoods/Factoid_1_1.lean
+146,EXAMPLE,1.2,two-token domain,DomainsGivenByNeighbourhoods/Example_1_2.lean
+160,EXAMPLE,1.3,three-step chain,DomainsGivenByNeighbourhoods/Example_1_3.lean
+177,EXAMPLE,1.4,finite binary tree,DomainsGivenByNeighbourhoods/Example_1_4.lean
+206,FACTOID,1.4a,nested or disjoint,DomainsGivenByNeighbourhoods/Factoid_1_4.lean
+208,EXAMPLE,1.5,all nonempty subsets,DomainsGivenByNeighbourhoods/Example_1_5.lean
+210,FACTOID,1.5a,consistent iff nonempty,DomainsGivenByNeighbourhoods/Factoid_1_5.lean
+238,FACTOID,1.5b,equivalent sequences same limit,DomainsGivenByNeighbourhoods/Factoid_1_5.lean
+240,DEFINITION,1.6,ideal elements,DomainsGivenByNeighbourhoods/Element.lean
+256,DEFINITION,1.7,principal filter,DomainsGivenByNeighbourhoods/principal.lean
+264,FACTOID,1.7a1,principals are one-one,DomainsGivenByNeighbourhoods/Factoid_1_7.lean
+267,FACTOID,1.7a2,inclusion-reversing principals,DomainsGivenByNeighbourhoods/Factoid_1_7.lean
+273,FACTOID,1.7b,union of principal filters,DomainsGivenByNeighbourhoods/Factoid_1_7.lean
+282,DEFINITION,1.8,approximation and totality,DomainsGivenByNeighbourhoods/bot.lean
+282,FACTOID,1.8a1,bottom element,DomainsGivenByNeighbourhoods/Factoid_1_8.lean
+282,FACTOID,1.8a2,bottom is least,DomainsGivenByNeighbourhoods/Factoid_1_8.lean
+284,EXAMPLES,1.2–1.5,finite examples revisited,DomainsGivenByNeighbourhoods/Examples_1_2_1_5_revisited.lean
+284,FACTOID,1.8b,finite filters are principal,DomainsGivenByNeighbourhoods/Factoid_1_8.lean
+312,FACTOID,1.8c,prefix order,DomainsGivenByNeighbourhoods/Factoid_1_8.lean
+317,FACTOID,1.8d,union of finite approximations,DomainsGivenByNeighbourhoods/Factoid_1_8.lean
+326,DEFINITION,1.9,isomorphic domains,DomainsGivenByNeighbourhoods/DomainIso.lean
+334,THEOREM,1.10,basic open neighbourhoods,DomainsGivenByNeighbourhoods/Theorem_1_10.lean
+372,THEOREM,1.11,intersections and directed unions,DomainsGivenByNeighbourhoods/Theorem_1_11.lean
+446,EXERCISE,1.12,final segments of integers,DomainsGivenByNeighbourhoods/Exercise_1_12.lean
+454,EXERCISE,1.13,infinite binary tree,DomainsGivenByNeighbourhoods/Exercise_1_13.lean
+456,EXERCISE,1.14,finite nonempty subsets,DomainsGivenByNeighbourhoods/Exercise_1_14.lean
+458,EXERCISE,1.15,finite elements without chains,DomainsGivenByNeighbourhoods/Exercise_1_15.lean
+462,EXERCISE,1.16,cofinite integer subsets,DomainsGivenByNeighbourhoods/Exercise_1_16.lean
+464,EXERCISE,1.17,rational open intervals,DomainsGivenByNeighbourhoods/Exercise_1_17.lean
+466,EXERCISE,1.18,consistency of neighbourhood families,DomainsGivenByNeighbourhoods/Exercise_1_18.lean
+468,EXERCISE,1.19,positive neighbourhood systems,DomainsGivenByNeighbourhoods/Exercise_1_19.lean
+472,EXERCISE,1.20,upward closed neighbourhoods,DomainsGivenByNeighbourhoods/Exercise_1_20.lean
+486,EXERCISE,1.21,complete neighbourhood systems,DomainsGivenByNeighbourhoods/Exercise_1_21.lean
+492,EXERCISE,1.22,topology of a domain,DomainsGivenByNeighbourhoods/Exercise_1_22.lean
+514,EXERCISE,1.23,decidable total elements,DomainsGivenByNeighbourhoods/Exercise_1_23.lean
+532,EXERCISE,1.24,extending partial elements,DomainsGivenByNeighbourhoods/Exercise_1_24.lean
+536,EXERCISE,1.25,final segments of ordinals,DomainsGivenByNeighbourhoods/Exercise_1_25.lean
+538,EXERCISE,1.26,ideals of a ring,DomainsGivenByNeighbourhoods/Exercise_1_26.lean
+546,EXERCISE,1.27,suprema of bounded sets,DomainsGivenByNeighbourhoods/Exercise_1_27.lean
 568,DEFINITION,2.1,approximable mapping,MappingsBetweenDomains/MappingsBetweenDomains.lean
 586,PROPOSITION,2.2,elementwise action,MappingsBetweenDomains/MappingsBetweenDomains.lean
 620,EXAMPLE,2.3,parity of leading zeros,MappingsBetweenDomains/MappingsBetweenDomains.lean

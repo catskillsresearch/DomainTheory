@@ -26,4 +26,5 @@ theorem comp_constMap (f : ApproximableMap B C) (b : B.Element) :
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

@@ -64,4 +64,5 @@ theorem eq_botElement_of_no_injections (z : (sumSystem A B).Element)
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

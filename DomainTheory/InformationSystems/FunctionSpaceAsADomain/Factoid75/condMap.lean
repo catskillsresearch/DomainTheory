@@ -30,11 +30,9 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 open ApproximableMap
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+variable (A : InfoSys α) (B : InfoSys β)
 
 def condMap (x y : A.Element) : ApproximableMap boolSystem A where
   rel u v :=
@@ -117,25 +115,6 @@ def condMap (x y : A.Element) : ApproximableMap boolSystem A where
         cases p <;> simp only [boolSat] at htru hfls
       · exact subset_of_entSet_mem A (hf hFlsU) hEntv
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
-open ApproximableMap
-
-
 theorem entSet_singleton_fls_of_ent_fls {u : Finset BoolToken}
     (_hu : u ∈ boolSystem.Con) (h : boolSystem.Ent u .fls) :
     boolSystem.EntSet ({BoolToken.fls} : Finset BoolToken) u := by
@@ -157,24 +136,6 @@ theorem entSet_singleton_fls_of_ent_fls {u : Finset BoolToken}
           have : s = .fls := Finset.mem_singleton.mp hs
           subst this; trivial⟩, fun q hq => hq .fls (Finset.mem_singleton_self _)⟩
     | tru => exact False.elim hsat
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
-open ApproximableMap
-
 
 theorem entSet_singleton_tru_of_ent_tru {u : Finset BoolToken}
     (_hu : u ∈ boolSystem.Con) (h : boolSystem.Ent u .tru) :
@@ -198,92 +159,19 @@ theorem entSet_singleton_tru_of_ent_tru {u : Finset BoolToken}
           subst this; trivial⟩, fun q hq => hq .tru (Finset.mem_singleton_self _)⟩
     | fls => exact False.elim hsat
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
-open ApproximableMap
-
-
 theorem not_emptyEntails_singleton_fls :
     ¬ EmptyEntails boolSystem ({BoolToken.fls} : Finset BoolToken) :=
   fun h => not_ent_empty_fls (h .fls (Finset.mem_singleton_self _))
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
-open ApproximableMap
-
-
 theorem not_emptyEntails_singleton_tru :
     ¬ EmptyEntails boolSystem ({BoolToken.tru} : Finset BoolToken) :=
   fun h => not_ent_empty_tru (h .tru (Finset.mem_singleton_self _))
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
-open ApproximableMap
-
 
 theorem not_ent_fls_tru : ¬ boolSystem.Ent {BoolToken.fls} BoolToken.tru := by
   intro ⟨⟨p, hp⟩, hAll⟩
   have hfls : boolSat p .fls := hp .fls (Finset.mem_singleton_self _)
   have htru : boolSat p .tru := hAll p hp
   cases p <;> simp only [boolSat] at htru hfls
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
-open ApproximableMap
-
 
 theorem condMap_toElement_boolFalse (x y : A.Element) :
     (condMap A x y).toElement boolFalse = y := by
@@ -315,47 +203,11 @@ theorem condMap_toElement_boolFalse (x y : A.Element) :
 
 alias condMap.toElement_boolFalse := condMap_toElement_boolFalse
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
-open ApproximableMap
-
-
 theorem not_ent_tru_fls : ¬ boolSystem.Ent {BoolToken.tru} BoolToken.fls := by
   intro ⟨⟨p, hp⟩, hAll⟩
   have htru : boolSat p .tru := hp .tru (Finset.mem_singleton_self _)
   have hfls : boolSat p .fls := hAll p hp
   cases p <;> simp only [boolSat] at htru hfls
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
-open ApproximableMap
-
 
 theorem condMap_toElement_boolTrue (x y : A.Element) :
     (condMap A x y).toElement boolTrue = x := by
@@ -387,24 +239,6 @@ theorem condMap_toElement_boolTrue (x y : A.Element) :
 
 alias condMap.toElement_boolTrue := condMap_toElement_boolTrue
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
-open ApproximableMap
-
-
 /-- One direction of the conditional isomorphism on pairs. -/
 theorem condMap.pair_roundtrip (x y : A.Element) :
     (condMap A x y).toElement boolTrue = x ∧
@@ -412,4 +246,6 @@ theorem condMap.pair_roundtrip (x y : A.Element) :
   ⟨condMap.toElement_boolTrue A x y, condMap.toElement_boolFalse A x y⟩
 
 end InfoSys
+
+
 end DomainTheory.InformationSystems

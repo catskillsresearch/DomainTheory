@@ -25,18 +25,6 @@ theorem fixChain_pad.front {w : Finset (FunToken A A)} {n : Nat} {v : Finset α}
     obtain ⟨u, hu, huC, hvC, hEnt⟩ := h
     exact ⟨u, ih hu, huC, hvC, hEnt⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α] (A : InfoSys α)
-
 theorem fixChain_pad {w : Finset (FunToken A A)} {n k : Nat} {v : Finset α}
     (hw : FunCon A A w) (h : FixChain A w n v) : FixChain A w (n + k) v := by
   induction k with
@@ -44,5 +32,6 @@ theorem fixChain_pad {w : Finset (FunToken A A)} {n k : Nat} {v : Finset α}
   | succ k ih => exact fixChain_pad.front A hw ih
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

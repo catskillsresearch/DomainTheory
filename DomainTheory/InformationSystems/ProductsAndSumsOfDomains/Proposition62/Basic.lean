@@ -102,4 +102,5 @@ theorem rel_bot_subset_left {D : InfoSys α} {s : Finset γ} {v : Finset α}
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

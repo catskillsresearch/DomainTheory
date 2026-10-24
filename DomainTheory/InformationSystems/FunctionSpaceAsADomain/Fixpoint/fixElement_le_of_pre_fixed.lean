@@ -32,4 +32,5 @@ theorem fixElement_le_of_pre_fixed (f : ApproximableMap A A) (x : A.Element)
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

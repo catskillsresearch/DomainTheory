@@ -35,4 +35,5 @@ theorem proposition_7_4_iii (f : ApproximableMap A A) (g : ApproximableMap B B)
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

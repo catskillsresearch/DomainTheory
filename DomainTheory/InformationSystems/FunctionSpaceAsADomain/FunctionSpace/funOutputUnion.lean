@@ -16,71 +16,20 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-universe u v
-
 variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
 variable (A : InfoSys α) (B : InfoSys β)
+universe u v
 
 /-- Union of output components of a finite set of function-space tokens. -/
 def funOutputUnion (s : Finset (FunToken A B)) : Finset β :=
   Multiset.foldr (fun p : FunToken A B => funion p.val.2) (∅ : Finset β) s.1
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
 theorem funOutputUnion.empty : funOutputUnion A B (∅ : Finset (FunToken A B)) = ∅ :=
   rfl
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem mem_funOutputUnion {s : Finset (FunToken A B)} {y : β} :
     y ∈ funOutputUnion A B s ↔ ∃ p ∈ s, y ∈ p.val.2 := by
   simpa [funOutputUnion] using mem_foldr_funOutput A B s.1 y
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem funOutputUnion.funion (s t : Finset (FunToken A B)) :
     funOutputUnion A B (s ∪' t) = funOutputUnion A B s ∪' funOutputUnion A B t := by
@@ -98,22 +47,6 @@ theorem funOutputUnion.funion (s t : Finset (FunToken A B)) :
     · rcases (mem_funOutputUnion A B).1 hy with ⟨p, hp, hy'⟩
       exact (mem_funOutputUnion A B).2 ⟨p, mem_funion.mpr (Or.inr hp), hy'⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem funOutputUnion.singleton (p : FunToken A B) :
     funOutputUnion A B {p} = p.val.2 := by
   ext y
@@ -125,22 +58,6 @@ theorem funOutputUnion.singleton (p : FunToken A B) :
     exact hy'
   · intro hy
     exact (mem_funOutputUnion A B).2 ⟨p, Finset.mem_singleton_self p, hy⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem funOutputUnion.insert (s : Finset (FunToken A B)) (p : FunToken A B) :
     funOutputUnion A B (Insert.insert p s) = p.val.2 ∪' funOutputUnion A B s := by
@@ -158,5 +75,6 @@ theorem funOutputUnion.insert (s : Finset (FunToken A B)) (p : FunToken A B) :
   rw [h, funOutputUnion.funion, funOutputUnion.singleton]
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

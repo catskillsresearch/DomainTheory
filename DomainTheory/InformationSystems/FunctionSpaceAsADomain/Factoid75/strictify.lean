@@ -21,11 +21,9 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
 variable (A : InfoSys α) (B : InfoSys β)
 
 namespace ApproximableMap
-
 /-- **Factoid 7.5.** Largest strict approximable map contained in `f` (Scott’s `strict`). -/
 def strictify (f : ApproximableMap A B) : ApproximableMap A B where
   rel u v :=
@@ -66,26 +64,6 @@ def strictify (f : ApproximableMap A B) : ApproximableMap A B where
     · refine Or.inr ⟨f.mono hf hEntu hEntv hu' hv', fun hE' => hn ?_⟩
       exact fun x hx => A.ent_trans A.con_empty hu' hE' (hEntu x hx)
 
-end ApproximableMap
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-namespace ApproximableMap
-
-
 theorem strictify.toElement_le (f : ApproximableMap A B) (x : A.Element) :
     (strictify A B f).toElement x ≤ f.toElement x := by
   intro Z ⟨u, hu, ⟨_, _, hcase⟩⟩
@@ -95,5 +73,8 @@ theorem strictify.toElement_le (f : ApproximableMap A B) (x : A.Element) :
   · exact ⟨u, hu, hf⟩
 
 end ApproximableMap
+
+
 end InfoSys
+
 end DomainTheory.InformationSystems

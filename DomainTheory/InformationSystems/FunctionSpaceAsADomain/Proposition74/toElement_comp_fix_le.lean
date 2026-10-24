@@ -32,4 +32,5 @@ theorem toElement_comp_fix_le (f : ApproximableMap A A) (g : ApproximableMap B B
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

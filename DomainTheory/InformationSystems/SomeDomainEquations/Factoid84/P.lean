@@ -8,13 +8,10 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.PEnt
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
 namespace Factoid84
 
 open DomainTheory.InformationSystems.Constructive
-
 open InfoSys
-
 open ApproximableMap
 
 /-- **Powerset information system.** Tokens `ℕ`, bot `0`, every finite set
@@ -34,22 +31,7 @@ def P : InfoSys ℕ where
     · exact Or.inl rfl
     · exact hEnts c hc
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
 theorem P.AllConsistent : P.AllConsistent := fun _ => trivial
 
 end Factoid84
-
 end DomainTheory.InformationSystems

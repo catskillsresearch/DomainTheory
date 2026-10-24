@@ -2,7 +2,7 @@ module
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.mem_funion
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.Basic.notation5
 public import Mathlib.Order.Hom.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23

@@ -14,11 +14,8 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.c
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
-
 open CategoryTheory
-
 open CategoryTheory.Limits
-
 open CategoryTheory.MonoidalCategory
 
 namespace InfoSys

@@ -67,4 +67,5 @@ theorem subset_botElement_of_projections_empty {u : Finset (SumToken α β)}
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

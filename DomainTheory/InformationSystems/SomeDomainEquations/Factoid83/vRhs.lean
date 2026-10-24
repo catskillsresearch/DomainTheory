@@ -14,22 +14,13 @@ namespace DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
 /-- Right-hand side of Scott’s equation `V ≅ V × V`. -/
 def vRhs : InfoSys (ProdToken vSystem vSystem) :=
   productSystem vSystem vSystem
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem vRhs.eq_product : vRhs = productSystem vSystem vSystem := rfl
 
 end InfoSys
+
+
 end DomainTheory.InformationSystems

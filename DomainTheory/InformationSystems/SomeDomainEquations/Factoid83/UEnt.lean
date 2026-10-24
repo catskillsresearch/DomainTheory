@@ -20,47 +20,16 @@ namespace DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
 /-- Entailment for `U` (Scott (10)). -/
 def UEnt (u : Finset UToken) (p : UToken) : Prop :=
   UCon u ∧ VEnt (uForgetFinset u) p.val
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem UEnt.bot {u : Finset UToken} (hu : UCon u) : UEnt u uBot :=
   ⟨hu, VEnt.bot⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem UEnt.of_mem {u : Finset UToken} {p : UToken}
     (hu : UCon u) (hp : p ∈ u) : UEnt u p :=
   ⟨hu, VEnt.of_mem ((mem_uForgetFinset).2 ⟨p, hp, rfl⟩)⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem UEnt.trans {u v : Finset UToken} {c : UToken}
     (hv : UCon v) (_hu : UCon u)
@@ -72,5 +41,6 @@ theorem UEnt.trans {u v : Finset UToken} {c : UToken}
     h.2⟩
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

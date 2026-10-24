@@ -34,25 +34,10 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
-
 variable (A : InfoSys α)
 
 def finsetMaxDepth (u : Finset (RawLamToken α)) : ℕ :=
   Multiset.foldr (maxDepthInsert (α := α)) 0 u.1
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem finsetMaxDepth.listToFinset_le (u : List (RawLamToken α)) :
     finsetMaxDepth (listToFinset u) ≤
@@ -60,20 +45,6 @@ theorem finsetMaxDepth.listToFinset_le (u : List (RawLamToken α)) :
   simp only [finsetMaxDepth]
   exact foldr_max_le_of_forall fun t ht =>
     foldl_list_le_of_mem ((mem_listToFinset).1 (Finset.mem_def.2 ht))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem finsetMaxDepth.list_lt_funTok (u v : List (RawLamToken α)) :
     finsetMaxDepth (listToFinset u) < rawDepth (.funTok u v) := by
@@ -84,20 +55,6 @@ theorem finsetMaxDepth.list_lt_funTok (u v : List (RawLamToken α)) :
     Nat.le_max_left _ _
   simp only [rawDepth]
   exact Nat.lt_of_le_of_lt (Nat.le_trans h1 h2) (Nat.lt_add_of_pos_left (Nat.succ_pos 0))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 omit [DecidableEq α] in
 
@@ -114,20 +71,6 @@ theorem le_finsetMaxDepth_of_mem {u : Finset (RawLamToken α)} {t : RawLamToken 
     rcases ht' with rfl | ht'
     · exact Nat.le_max_left _ _
     · exact Nat.le_trans (ih ht') (Nat.le_max_right _ _)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem finsetMaxDepth.inputUnion_lt {u : Finset (RawLamToken α)}
     {s : Finset (List (RawLamToken α) × List (RawLamToken α))}
@@ -149,20 +92,6 @@ theorem finsetMaxDepth.inputUnion_lt {u : Finset (RawLamToken α)}
     (rawDepth_funTok_gt_left ((mem_listToFinset).1 htp))
     (le_finsetMaxDepth_of_mem htok)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem finsetMaxDepth.outputUnion_lt {u : Finset (RawLamToken α)}
     {s : Finset (List (RawLamToken α) × List (RawLamToken α))}
     (hs : s ⊆ lamFunFinset u) (hfun : lamFunFinset u ≠ ∅) :
@@ -183,21 +112,6 @@ theorem finsetMaxDepth.outputUnion_lt {u : Finset (RawLamToken α)}
     (rawDepth_funTok_gt_right ((mem_listToFinset).1 htp))
     (le_finsetMaxDepth_of_mem htok)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem finsetMaxDepth.list_lt_funTok_out (u v : List (RawLamToken α)) :
     finsetMaxDepth (listToFinset v) < rawDepth (.funTok u v) := by
   have h1 := finsetMaxDepth.listToFinset_le v
@@ -217,5 +131,6 @@ theorem finsetMaxDepth.of_mem_funTok {u : Finset (RawLamToken α)}
     Nat.lt_of_lt_of_le (finsetMaxDepth.list_lt_funTok_out xs ys) (le_finsetMaxDepth_of_mem h)⟩
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

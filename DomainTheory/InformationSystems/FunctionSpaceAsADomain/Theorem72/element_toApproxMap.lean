@@ -13,9 +13,9 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.a
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
 open DomainTheory.InformationSystems.Constructive
 
+section
 namespace InfoSys
 
 universe u v w
@@ -36,13 +36,9 @@ theorem element_toApproxMap.empty_rel (x : (functionSystem A B).Element) :
   exact factoid_3_2 (functionSystem A B) x
 
 end InfoSys
+end
 
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
+section
 namespace InfoSys
 
 universe u v w
@@ -81,13 +77,9 @@ theorem element_toApproxMap.mono (x : (functionSystem A B).Element) :
   exact x.closed {p} r hwsub hEnt
 
 end InfoSys
+end
 
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
+section
 namespace InfoSys
 
 universe u v w
@@ -107,13 +99,9 @@ theorem element_toApproxMap.rel_cod (x : (functionSystem A B).Element) :
   fun ⟨_, hv, _⟩ => hv
 
 end InfoSys
+end
 
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
+section
 namespace InfoSys
 
 universe u v w
@@ -133,13 +121,9 @@ theorem element_toApproxMap.rel_dom (x : (functionSystem A B).Element) :
   fun ⟨hu, _, _⟩ => hu
 
 end InfoSys
+end
 
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
+section
 namespace InfoSys
 
 universe u v w
@@ -208,13 +192,9 @@ theorem element_toApproxMap.union_right (x : (functionSystem A B).Element) :
   exact x.closed w r hwsub hEnt
 
 end InfoSys
+end
 
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
+section
 namespace InfoSys
 
 universe u v w
@@ -236,13 +216,9 @@ def element_toApproxMap (x : (functionSystem A B).Element) : ApproximableMap A B
   mono := element_toApproxMap.mono A B x
 
 end InfoSys
+end
 
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
+section
 namespace InfoSys
 
 universe u v w
@@ -268,4 +244,6 @@ theorem element_toApproxMap.approxMap_toElement (f : ApproximableMap A B) :
       exact hrel⟩
 
 end InfoSys
+end
+
 end DomainTheory.InformationSystems

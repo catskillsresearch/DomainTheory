@@ -12,7 +12,6 @@ public import Mathlib.Data.Set.Basic
 namespace DomainTheory.ContinuousLattice
 
 universe u
-
 attribute [instance] CLat.str
 
 section Conj

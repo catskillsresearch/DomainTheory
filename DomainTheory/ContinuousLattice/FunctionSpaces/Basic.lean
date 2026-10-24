@@ -11,7 +11,6 @@ public import Mathlib.Data.Finset.Basic
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
@@ -26,13 +25,11 @@ abbrev ScottC (D D' : Type*) [CompleteLattice D] [CompleteLattice D'] :=
   @ContinuousMap D D' scottTopologicalSpace scottTopologicalSpace
 
 namespace ScottMap
-
 theorem continuous (f : ScottMap D D') :
     @Continuous D D' scottTopologicalSpace scottTopologicalSpace f :=
   f.2
 
 end ScottMap
-
 namespace IsContinuousLatticeRetraction
 
 end IsContinuousLatticeRetraction
@@ -56,9 +53,10 @@ end Proposition310
 namespace Proposition313
 
 end Proposition313
-
 namespace Proposition314
-
 @[simp] theorem fixMap_apply (f : ScottMap D D) : (fixMap f : D) = fix f := rfl
+
 end Proposition314
+
+
 end DomainTheory.ContinuousLattice

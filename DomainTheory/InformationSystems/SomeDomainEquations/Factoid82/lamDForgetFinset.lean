@@ -22,43 +22,14 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
-
 variable (A : InfoSys α)
 
 def lamDForgetFinset (u : Finset (LamDToken A)) : Finset (RawLamToken α) :=
   Multiset.foldr (lamDForgetInsert (A := A)) ∅ u.1
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem mem_lamDForgetFinset {u : Finset (LamDToken A)} {t : RawLamToken α} :
     t ∈ lamDForgetFinset A u ↔ ∃ p ∈ u, p.val = t := by
   simpa [lamDForgetFinset] using mem_foldr_lamDForget A u.1 t
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem lamDForgetFinset.insert (u : Finset (LamDToken A)) (p : LamDToken A) :
     lamDForgetFinset A (Insert.insert p u) = Insert.insert p.val (lamDForgetFinset A u) := by
@@ -75,39 +46,11 @@ theorem lamDForgetFinset.insert (u : Finset (LamDToken A)) (p : LamDToken A) :
     · rcases (mem_lamDForgetFinset A).1 ht with ⟨q, hq, rfl⟩
       exact (mem_lamDForgetFinset A).2 ⟨q, Finset.mem_insert_of_mem hq, rfl⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamDForgetFinset.mono {u v : Finset (LamDToken A)} (h : v ⊆ u) :
     lamDForgetFinset A v ⊆ lamDForgetFinset A u := by
   intro t ht
   rcases (mem_lamDForgetFinset A).1 ht with ⟨p, hp, rfl⟩
   exact (mem_lamDForgetFinset A).2 ⟨p, h hp, rfl⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem lamDForgetFinset.singleton (p : LamDToken A) :
     lamDForgetFinset A {p} = {p.val} := by
@@ -122,5 +65,6 @@ theorem lamDForgetFinset.singleton (p : LamDToken A) :
       ⟨p, Finset.mem_singleton_self p, (Finset.mem_singleton.mp ht).symm⟩
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

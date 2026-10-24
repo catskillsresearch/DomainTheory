@@ -32,4 +32,5 @@ theorem closure_empty_eq_bot :
       ha
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

@@ -9,7 +9,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeP
 namespace DomainTheory.ContinuousLattice
 
 universe u
-
 attribute [instance] CLat.str
 
 namespace functionSpaceRetrFun

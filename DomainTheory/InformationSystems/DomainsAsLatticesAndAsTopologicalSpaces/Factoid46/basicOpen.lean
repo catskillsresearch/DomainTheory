@@ -18,19 +18,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 def basicOpen (A : InfoSys α) (u : Finset α) : Set A.Element :=
   {x | ↑u ⊆ x.carrier}
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
 /-- Intersection of basic opens: `[u] ∩ [v] = [u ∪' v]`. -/
 theorem basicOpen.inter (A : InfoSys α) (u v : Finset α) :
     A.basicOpen u ∩ A.basicOpen v = A.basicOpen (u ∪' v) := by
@@ -48,4 +35,6 @@ theorem basicOpen.inter (A : InfoSys α) (u v : Finset α) :
       exact huv (Finset.mem_coe.2 (mem_funion.mpr (Or.inr (Finset.mem_coe.1 ha))))
 
 end InfoSys
+
+
 end DomainTheory.InformationSystems

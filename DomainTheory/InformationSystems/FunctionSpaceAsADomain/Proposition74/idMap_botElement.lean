@@ -27,4 +27,5 @@ theorem idMap_botElement : (idMap A).toElement A.botElement = A.botElement :=
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

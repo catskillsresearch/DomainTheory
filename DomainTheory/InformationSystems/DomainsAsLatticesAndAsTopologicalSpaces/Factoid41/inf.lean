@@ -5,7 +5,6 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
@@ -19,29 +18,8 @@ def inf (x y : sys.Element) : sys.Element where
     ⟨x.closed Y a (Set.Subset.trans hY Set.inter_subset_left) hEnt,
      y.closed Y a (Set.Subset.trans hY Set.inter_subset_right) hEnt⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
-
 theorem inf.le_left (x y : sys.Element) : sys.inf x y ≤ x :=
   Set.inter_subset_left
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
 
 theorem inf.le_right (x y : sys.Element) : sys.inf x y ≤ y :=
   Set.inter_subset_right

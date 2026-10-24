@@ -15,9 +15,7 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 open ApproximableMap
-
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 /-- Uncurried composition: `((B→C)×(A→B)) × A → C`. -/
@@ -31,22 +29,6 @@ def compOpUncurry : ApproximableMap
         (pairMap (functionSystem A B) A
           (comp (sndMap (functionSystem B C) (functionSystem A B)) (fstMap Q A))
           (sndMap Q A))))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-open ApproximableMap
-
-variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
-
 
 theorem compOpUncurry.toElement (g : ApproximableMap B C) (f : ApproximableMap A B)
     (x : A.Element) :
@@ -132,4 +114,6 @@ theorem compOpUncurry.toElement (g : ApproximableMap B C) (f : ApproximableMap A
   rw [houter, applyMap_toElement, element_toApproxMap.approxMap_toElement]
 
 end InfoSys
+
+
 end DomainTheory.InformationSystems

@@ -10,7 +10,6 @@ namespace DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
 private def pairLInsert : VToken → Finset VToken → Finset VToken
   | .pairL t => insert t
   | .bot | .top | .pairR _ => id
@@ -55,15 +54,6 @@ theorem mem_vPairLFinset {u : Finset VToken} {t : VToken} :
     t ∈ vPairLFinset u ↔ .pairL t ∈ u := by
   simpa [vPairLFinset] using mem_foldr_pairL u.1 t
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem vPairLFinset.insert_top (u : Finset VToken) :
     vPairLFinset (insert (.top : VToken) u) = vPairLFinset u := by
   ext t; simp only [mem_vPairLFinset, Finset.mem_insert]
@@ -72,4 +62,6 @@ theorem vPairLFinset.insert_top (u : Finset VToken) :
   · exact Or.inr
 
 end InfoSys
+
+
 end DomainTheory.InformationSystems

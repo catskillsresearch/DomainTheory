@@ -27,4 +27,5 @@ theorem approxMap_to_unit_eq_const (f : ApproximableMap A unitSystem) :
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

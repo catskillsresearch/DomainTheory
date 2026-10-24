@@ -15,7 +15,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
 
@@ -28,40 +27,11 @@ inductive TreeCon : Finset (TreeToken α) → Prop where
       (hA : atomFinset u = ∅)
       (hL : TreeCon (pairLFinset u)) (hR : TreeCon (pairRFinset u)) : TreeCon u
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem TreeCon.atom_con_of_atoms {u : Finset (TreeToken α)}
     (hu : TreeCon A u) (hne : atomFinset u ≠ ∅) : atomFinset u ∈ A.Con := by
   cases hu with
   | left _ hA _ _ => exact hA
   | right _ hA _ _ => exact False.elim (hne hA)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem TreeCon.atoms_empty_of_right {u : Finset (TreeToken α)}
     (hu : TreeCon A u) (hP : pairLFinset u ≠ ∅ ∨ pairRFinset u ≠ ∅) :
@@ -73,21 +43,6 @@ theorem TreeCon.atoms_empty_of_right {u : Finset (TreeToken α)}
     · exact False.elim (h hR)
   | right _ hA _ _ => exact hA
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem TreeCon.pairs_empty_of_left {u : Finset (TreeToken α)}
     (hu : TreeCon A u) (hA : atomFinset u ≠ ∅) :
     pairLFinset u = ∅ ∧ pairRFinset u = ∅ := by
@@ -96,5 +51,6 @@ theorem TreeCon.pairs_empty_of_left {u : Finset (TreeToken α)}
   | right _ hAt _ _ => exact False.elim (hA hAt)
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

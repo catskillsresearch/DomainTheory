@@ -18,9 +18,7 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
-
 variable (A : InfoSys α)
 
 /-- Unfold a tree token into the sum-of-product carrier. -/
@@ -32,98 +30,20 @@ def treeUnfold (t : TreeToken α) :
   | .pairL t => .right ⟨(t, treeBot), ⟨Or.inr rfl⟩⟩
   | .pairR t => .right ⟨(treeBot, t), ⟨Or.inl rfl⟩⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-
-variable {α : Type*} [DecidableEq α]
-
-
-variable (A : InfoSys α)
-
-
 theorem treeUnfold.atom (x : α) : treeUnfold A (.atom x) = SumToken.left x := rfl
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-
-variable {α : Type*} [DecidableEq α]
-
-
-variable (A : InfoSys α)
-
-
 theorem treeUnfold.bot : treeUnfold A treeBot = SumToken.bot := rfl
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-
-variable {α : Type*} [DecidableEq α]
-
-
-variable (A : InfoSys α)
-
 
 theorem treeUnfold.pairL (t : TreeToken α) :
     treeUnfold A (.pairL t) = .right ⟨(t, treeBot), ⟨Or.inr rfl⟩⟩ := rfl
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-
-variable {α : Type*} [DecidableEq α]
-
-
-variable (A : InfoSys α)
-
-
 theorem treeUnfold.pairR (t : TreeToken α) :
     treeUnfold A (.pairR t) = .right ⟨(treeBot, t), ⟨Or.inl rfl⟩⟩ := rfl
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem treeUnfold.pairL_bot_eq_pairR_bot :
     treeUnfold A (.pairL treeBot) = treeUnfold A (.pairR treeBot) := rfl
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

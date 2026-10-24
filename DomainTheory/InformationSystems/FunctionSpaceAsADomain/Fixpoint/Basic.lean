@@ -41,4 +41,5 @@ theorem rel_of_mem_approx (f : ApproximableMap A A)
   simpa [mem_approxMap_toElement] using hw (Finset.mem_coe.2 hp)
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

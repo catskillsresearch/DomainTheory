@@ -14,7 +14,6 @@ namespace DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
 /-- Entailment on `V` (Scott (3)–(6)). -/
 inductive VEnt : Finset VToken → VToken → Prop where
   | bot {u : Finset VToken} : VEnt u .bot
@@ -28,15 +27,6 @@ inductive VEnt : Finset VToken → VToken → Prop where
   | pairR_top {u : Finset VToken} {y : VToken} (h : .top ∈ u) : VEnt u (.pairR y)
   | pairR_proj {u : Finset VToken} {y : VToken}
       (h : VEnt (vPairRFinset u) y) : VEnt u (.pairR y)
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 /-- If `u ⊢ ∇`, then `u` entails every token (rogue top). -/
 theorem VEnt.of_ent_top {u : Finset VToken} (h : VEnt u .top) (c : VToken) :
@@ -53,16 +43,6 @@ theorem VEnt.of_ent_top {u : Finset VToken} (h : VEnt u .top) (c : VToken) :
     | top_mem hm => exact VEnt.pairR_top hm
     | top_both _ hR => exact VEnt.pairR_proj (VEnt.of_ent_top hR y)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem VEnt.of_mem {u : Finset VToken} {c : VToken}
     (hc : c ∈ u) : VEnt u c := by
   induction c generalizing u with
@@ -73,32 +53,12 @@ theorem VEnt.of_mem {u : Finset VToken} {c : VToken}
   | pairR y ih =>
     exact VEnt.pairR_proj (ih (mem_vPairRFinset.2 hc))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 /-- From `v ⊢ (X, Δ)`, either `∇ ∈ v` or the left projection entails `X`. -/
 theorem VEnt.pairL_inv {v : Finset VToken} {x : VToken}
     (h : VEnt v (.pairL x)) : .top ∈ v ∨ VEnt (vPairLFinset v) x := by
   cases h with
   | pairL_top hm => exact Or.inl hm
   | pairL_proj h' => exact Or.inr h'
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 /-- Push an `EntSet` through the left projection (or absorb via top). -/
 theorem VEnt.pairLFinset_of_EntSet {u v : Finset VToken}
@@ -113,31 +73,11 @@ theorem VEnt.pairLFinset_of_EntSet {u v : Finset VToken}
     · exact False.elim (htop hm)
     · exact hproj
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem VEnt.pairR_inv {v : Finset VToken} {y : VToken}
     (h : VEnt v (.pairR y)) : .top ∈ v ∨ VEnt (vPairRFinset v) y := by
   cases h with
   | pairR_top hm => exact Or.inl hm
   | pairR_proj h' => exact Or.inr h'
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem VEnt.pairRFinset_of_EntSet {u v : Finset VToken}
     (hEnts : ∀ y ∈ u, VEnt v y) :
@@ -150,16 +90,6 @@ theorem VEnt.pairRFinset_of_EntSet {u v : Finset VToken}
     rcases VEnt.pairR_inv hy' with hm | hproj
     · exact False.elim (htop hm)
     · exact hproj
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem VEnt.trans {u v : Finset VToken} {c : VToken}
     (hEnts : ∀ y ∈ u, VEnt v y) (h : VEnt u c) : VEnt v c := by
@@ -184,5 +114,6 @@ theorem VEnt.trans {u v : Finset VToken} {c : VToken}
     · exact VEnt.pairR_proj (ih hR)
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

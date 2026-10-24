@@ -53,16 +53,12 @@ open CategoryTheory.MonoidalCategory
 
 namespace InfoSys
 
-
 attribute [instance] InfoSysObj.decEq
 
 namespace InfoSysObj
 
-
 end InfoSysObj
-
 namespace ApproximableMap
-
 
 end ApproximableMap
 
@@ -94,5 +90,9 @@ noncomputable instance (A : InfoSysObj.{u}) : Closed A where
 
 noncomputable instance : MonoidalClosed InfoSysObj.{u} where
   closed _ := inferInstance
+
+
 end InfoSys
+
+
 end DomainTheory.InformationSystems

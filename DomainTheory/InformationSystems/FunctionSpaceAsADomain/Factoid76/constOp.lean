@@ -17,48 +17,15 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 open ApproximableMap
-
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 /-- **Factoid 7.6.** Operator `const : B → (A → B)`, as `curry fst`. -/
 def constOp : ApproximableMap B (functionSystem A B) :=
   curryMap B A B (fstMap B A)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-open ApproximableMap
-
-variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
-
-
 theorem constOp.uncurry : uncurryMap B A B (constOp A B) = fstMap B A := by
   simp only [constOp, uncurry_curryMap]
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-open ApproximableMap
-
-variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
-
 
 theorem pairMap_comp_fst_snd_toElement
     {P : InfoSys α} {X : InfoSys β} {Y : InfoSys γ}
@@ -71,21 +38,6 @@ theorem pairMap_comp_fst_snd_toElement
   · rw [← comp.toElement, comp_fstMap_pairMap, comp.toElement, fstMap_pairElements,
       fstMap_pairElements]
   · rw [← comp.toElement, comp_sndMap_pairMap, sndMap_pairElements, sndMap_pairElements]
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-open ApproximableMap
-
-variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
-
 
 theorem constOp.toElement (b : B.Element) :
     (constOp A B).toElement b =
@@ -104,4 +56,6 @@ theorem constOp.toElement (b : B.Element) :
   rw [← huniq, approxMap_toElement_element_toApproxMap]
 
 end InfoSys
+
+
 end DomainTheory.InformationSystems

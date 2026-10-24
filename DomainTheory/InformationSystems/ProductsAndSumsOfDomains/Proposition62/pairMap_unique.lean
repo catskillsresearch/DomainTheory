@@ -48,4 +48,5 @@ theorem pairMap_unique (f : ApproximableMap C A) (g : ApproximableMap C B)
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

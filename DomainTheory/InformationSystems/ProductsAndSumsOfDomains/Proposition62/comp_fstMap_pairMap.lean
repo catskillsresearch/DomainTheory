@@ -48,4 +48,5 @@ theorem comp_fstMap_pairMap (f : ApproximableMap C A) (g : ApproximableMap C B) 
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

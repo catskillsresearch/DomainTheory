@@ -24,7 +24,6 @@ public import Mathlib.Data.Set.Basic
 namespace DomainTheory.ContinuousLattice
 
 open Set
-
 universe u
 
 section InverseLimit
@@ -38,7 +37,6 @@ variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
     (@Pi.topologicalSpace ℕ D (fun _ => scottTopologicalSpace))
 
 namespace inverseLimit
-
 /-- Every coordinate projection from the explicit product/subspace inverse-limit topology is
 continuous. -/
 theorem coordinate_continuous (n : ℕ) :
@@ -154,9 +152,7 @@ theorem eq_iSup (x : InverseLimit D P) :
       rw [← Subtype.coe_le_coe]; intro m; exact iComp_incl_le D P n x m
 
 end inverseLimit
-
 namespace inverseLimitTopology
-
 /-- Proposition 4.2's projection `j_{∞n}` is a continuous coordinate map for the explicit
 product/subspace inverse-limit topology. -/
 theorem projInf_continuous (n : ℕ) :
@@ -185,5 +181,6 @@ theorem coconeInf_continuous (hD : ∀ n, ContinuousLattice (D n))
 end inverseLimitTopology
 
 end InverseLimit
+
 
 end DomainTheory.ContinuousLattice

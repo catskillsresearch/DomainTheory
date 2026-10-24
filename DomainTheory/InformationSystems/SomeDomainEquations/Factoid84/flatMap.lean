@@ -14,13 +14,10 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.mem_
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
-
 open InfoSys
-
 open ApproximableMap
 
 namespace Factoid84
-
 def flatMap : ApproximableMap P P where
   rel := flatRel
   rel_dom := fun _ => trivial
@@ -67,20 +64,6 @@ def flatMap : ApproximableMap P P where
         · exact False.elim (by cases h0)
         · exact hv1 h1v'
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
-
 theorem flatMap.consistent : ConsistentApprox flatMap := by
   intro hsub
   have h1 : 1 ∈ (barElement 1).carrier := (mem_barElement 1 1).2 (Or.inr rfl)
@@ -92,20 +75,6 @@ theorem flatMap.consistent : ConsistentApprox flatMap := by
     · exact absurd h (by decide)
     · exact absurd h (by decide)
   · exact hv1 (Finset.mem_singleton_self 1)
-
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
 
 theorem flatMap.idem : IdemApprox flatMap := by
   refine ApproximableMap.ext fun u v => ?_
@@ -126,20 +95,6 @@ theorem flatMap.idem : IdemApprox flatMap := by
     · exact ⟨insert 1 v, Or.inl h1u, Or.inl (Finset.mem_insert_self 1 v)⟩
     · exact ⟨v, Or.inr ⟨hv, hv1⟩, Or.inr ⟨fun n hn => Or.inr hn, hv1⟩⟩
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
-
 theorem flatMap.refl : ReflApprox flatMap := by
   intro u v ⟨_, _, hEnt⟩
   by_cases h1 : 1 ∈ u
@@ -152,20 +107,6 @@ theorem flatMap.refl : ReflApprox flatMap := by
       · exact absurd h0 (by decide)
       · exact h1 h
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
-
 theorem flatMap.toElement_of_mem_one {x : P.Element} (h1 : 1 ∈ x.carrier) :
     flatMap.toElement x = topElement := by
   apply le_antisymm
@@ -176,36 +117,8 @@ theorem flatMap.toElement_of_mem_one {x : P.Element} (h1 : 1 ∈ x.carrier) :
     have : a = 1 := Finset.mem_singleton.mp (Finset.mem_coe.1 ha)
     subst this; exact h1
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
-
 theorem flatMap.rogue : RogueApprox flatMap :=
   flatMap.toElement_of_mem_one ((mem_barElement 1 1).2 (Or.inr rfl))
-
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
 
 theorem flatMap.isDomain : IsDomainApprox flatMap where
   refl := flatMap.refl
@@ -215,5 +128,6 @@ theorem flatMap.isDomain : IsDomainApprox flatMap where
   consistent := flatMap.consistent
 
 end Factoid84
+
 
 end DomainTheory.InformationSystems

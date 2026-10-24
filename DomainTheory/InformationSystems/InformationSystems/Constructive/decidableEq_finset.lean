@@ -17,24 +17,12 @@ omit [DecidableEq α] in
 theorem decidableEq_finset.eq_of_subset (s t : Finset α) (h : s ⊆ t ∧ t ⊆ s) : s = t :=
   Finset.Subset.antisymm h.1 h.2
 
-end DomainTheory.InformationSystems.Constructive
-
-namespace DomainTheory.InformationSystems.Constructive
-
-variable {α : Type*} [DecidableEq α]
-
 omit [DecidableEq α] in
 /-- Mutual subset is required for finset equality in this decidable instance. -/
 theorem decidableEq_finset.false_of_ne (s t : Finset α) (h : ¬(s ⊆ t ∧ t ⊆ s)) (heq : s = t) :
     False := by
   subst heq
   exact h ⟨Finset.Subset.refl _, Finset.Subset.refl _⟩
-
-end DomainTheory.InformationSystems.Constructive
-
-namespace DomainTheory.InformationSystems.Constructive
-
-variable {α : Type*} [DecidableEq α]
 
 /-- Choice-free decidable equality for `Finset`.
 mathlib's `Finset.decidableEq` goes through `Multiset` quotients and pulls

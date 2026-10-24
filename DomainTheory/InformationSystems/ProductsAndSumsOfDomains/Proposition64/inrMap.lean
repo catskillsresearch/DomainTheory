@@ -21,7 +21,6 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-
 variable (A : InfoSys α) (B : InfoSys β)
 
 namespace ApproximableMap
@@ -52,26 +51,6 @@ def inrMap : ApproximableMap B (sumSystem A B) where
       (rht_mem_Con_of_SumCon_lft_empty A B hu hl)
       (proposition_2_3_iv (sys := B) hw' hw hEntw hEnt)
       (entSet_rht_of_sumEntSet A B hEntu)
-
-end ApproximableMap
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-variable (A : InfoSys α) (B : InfoSys β)
-
-namespace ApproximableMap
-
-variable {C : InfoSys γ}
-
 
 theorem inrMap.toElement_sumElementRht (z : (sumSystem A B).Element)
     (y0 : β) (hy0 : SumToken.right y0 ∈ z.carrier) :
@@ -113,5 +92,8 @@ theorem inrMap.toElement_sumElementRht (z : (sumSystem A B).Element)
       exact False.elim (not_mem_right_of_mem_left A B z hp hy0)
 
 end ApproximableMap
+
+
 end InfoSys
+
 end DomainTheory.InformationSystems

@@ -6,7 +6,6 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
@@ -23,17 +22,6 @@ def familyInf (S : Set sys.Element) (hne : S.Nonempty) : sys.Element where
     intro Y a hY hEnt x hx
     have hYx : (Y : Set α) ⊆ x.carrier := fun b hb => (hY hb) x hx
     exact x.closed Y a hYx hEnt
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
 
 theorem familyInf.le (S : Set sys.Element) (hne : S.Nonempty) {x : sys.Element}
     (hx : x ∈ S) : sys.familyInf S hne ≤ x :=

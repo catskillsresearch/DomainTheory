@@ -25,4 +25,5 @@ theorem toElement_constMap_bot (b : A.Element) :
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

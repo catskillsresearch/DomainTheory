@@ -11,9 +11,9 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.r
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
 open DomainTheory.InformationSystems.Constructive
 
+section
 namespace InfoSys
 
 universe u v w
@@ -45,13 +45,9 @@ theorem approxMap_toElement.closed (f : ApproximableMap A B)
   exact f.mono hU (proposition_2_3_iii A p.property.1) hEntOut p.property.1 p.property.2
 
 end InfoSys
+end
 
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
+section
 namespace InfoSys
 
 universe u v w
@@ -71,13 +67,9 @@ theorem approxMap_toElement.consistent (f : ApproximableMap A B)
   funCon_of_approxMap A B f Y fun _ hp => hY (Finset.mem_coe.2 hp)
 
 end InfoSys
+end
 
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
+section
 namespace InfoSys
 
 universe u v w
@@ -96,5 +88,6 @@ def approxMap_toElement (f : ApproximableMap A B) : (functionSystem A B).Element
   closed := approxMap_toElement.closed A B f
 
 end InfoSys
+end
 
 end DomainTheory.InformationSystems

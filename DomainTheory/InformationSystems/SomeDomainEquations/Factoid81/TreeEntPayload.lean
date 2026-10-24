@@ -21,9 +21,7 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
-
 variable (A : InfoSys α)
 
 /-- Payload of tree entailment (Scott §8 (8)–(12)), recursive on the token.
@@ -44,21 +42,6 @@ def TreeEntPayload (u : Finset (TreeToken α)) : TreeToken α → Prop
       atomFinset u = ∅ ∧ TreeCon A (pairRFinset u) ∧ TreeCon A (pairLFinset u) ∧
         ((pairRFinset u ≠ ∅ ∧ TreeEntPayload (pairRFinset u) t) ∨
           (t = .bot ∧ pairLFinset u ≠ ∅))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem TreeEntPayload.of_mem {u : Finset (TreeToken α)} {p : TreeToken α}
     (hu : TreeCon A u) (hp : p ∈ u) : TreeEntPayload A u p := by
@@ -81,21 +64,6 @@ theorem TreeEntPayload.of_mem {u : Finset (TreeToken α)} {p : TreeToken α}
     exact ⟨hAt, TreeCon.pairR_of_right A hu hAt, TreeCon.pairL_of_right A hu hAt,
       Or.inl ⟨hne, ih (TreeCon.pairR_of_right A hu hAt) ht⟩⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem TreeEntPayload.of_no_atoms_no_pairs {u : Finset (TreeToken α)} {t : TreeToken α}
     (hAt : atomFinset u = ∅) (hL : pairLFinset u = ∅) (hR : pairRFinset u = ∅)
     (h : TreeEntPayload A u t) : t = .bot := by
@@ -114,5 +82,6 @@ theorem TreeEntPayload.of_no_atoms_no_pairs {u : Finset (TreeToken α)} {t : Tre
     · exact False.elim (hLne hL)
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

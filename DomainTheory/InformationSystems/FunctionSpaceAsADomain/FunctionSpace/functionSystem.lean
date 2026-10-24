@@ -31,11 +31,9 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-universe u v
-
 variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
 variable (A : InfoSys α) (B : InfoSys β)
+universe u v
 
 /-- Singletons are consistent in the function space. -/
 theorem functionSystem.con_sing (p : FunToken A B) : FunCon A B {p} := by
@@ -48,42 +46,10 @@ theorem functionSystem.con_sing (p : FunToken A B) : FunCon A B {p} := by
     exact hy'
   exact B.con_subset p.property.2 hsub
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 /-- Downward closure of function-space consistency. -/
 theorem functionSystem.con_subset {w w' : Finset (FunToken A B)}
     (hw : FunCon A B w) (hw' : w' ⊆ w) : FunCon A B w' :=
   fun s hs hin => hw s (fun _ hq => hw' (hs hq)) hin
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 /-- The function-space bottom is entailed by every consistent set. -/
 theorem functionSystem.ent_bot {w : Finset (FunToken A B)} (hw : FunCon A B w) :
@@ -91,22 +57,6 @@ theorem functionSystem.ent_bot {w : Finset (FunToken A B)} (hw : FunCon A B w) :
   ⟨hw, ∅, Finset.empty_subset _,
     fun q hq => False.elim (Finset.notMem_empty q hq),
     fun y hy => False.elim (Finset.notMem_empty y hy)⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 /-- Adding an entailed function-space token preserves consistency. -/
 theorem functionSystem.ent_con {w : Finset (FunToken A B)} {p : FunToken A B}
@@ -169,22 +119,6 @@ theorem functionSystem.ent_con {w : Finset (FunToken A B)} {p : FunToken A B}
       · exact hqW
     exact hw t ht' hin
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 /-- Function-space entailment is reflexive on members. -/
 theorem functionSystem.ent_refl {w : Finset (FunToken A B)} {p : FunToken A B}
     (hw : FunCon A B w) (hp : p ∈ w) : FunEnt A B w p :=
@@ -198,22 +132,6 @@ theorem functionSystem.ent_refl {w : Finset (FunToken A B)} {p : FunToken A B}
     by
       rw [funOutputUnion.singleton]
       exact proposition_2_3_iii B p.property.2⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 /-- Function-space entailment is transitive. -/
 theorem functionSystem.ent_trans {u v : Finset (FunToken A B)} {c : FunToken A B}
@@ -237,22 +155,6 @@ theorem functionSystem.ent_trans {u v : Finset (FunToken A B)} {c : FunToken A B
   have hout_S : funOutputUnion A B S ∈ B.Con := hv S hSsub hin_S
   exact proposition_2_3_iv B hout_S hout_s hSout hEntOut
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-universe u v
-
-variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 /-- **Definition 7.1.** The function-space information system `A → B`. -/
 def functionSystem : InfoSys (FunToken A B) where
   bot := funBot A B
@@ -266,5 +168,6 @@ def functionSystem : InfoSys (FunToken A B) where
   ent_trans := functionSystem.ent_trans A B
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

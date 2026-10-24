@@ -1,0 +1,31 @@
+# Exercise 1.22
+
+## Human-English
+
+**EXERCISE 1.22.** (For topologists). Show that the neighbourhoods $[X]$ for $X \in \mathcal{D}$ make $|\mathcal{D}|$ into a topological space where the open subsets $\mathcal{U} \subseteq |\mathcal{D}|$ can be characterized by the following two conditions:
+
+(i) whenever $x \in \mathcal{U}$ and $x \sqsubseteq y \in |\mathcal{D}|$, then $y \in \mathcal{U}$; and
+
+(ii) whenever $x \in \mathcal{U}$, then $[X] \in \mathcal{U}$ for some $X \in x$.
+
+Prove also that the inclusion relation on $|\mathcal{D}|$ can be defined topologically as:
+
+(iii) $x \sqsubseteq y$ iff for all open $\mathcal{U} \subseteq |\mathcal{D}|$, if $x \in \mathcal{U}$ then $y \in \mathcal{U}$.
+
+<!-- page 22 -->
+
+Is $|D|$ ever a Hausdorff space?
+
+Show that if $(x_n)_{n=0}^{\infty}$ is a sequence of elements of $|D|$ with $x_n \subseteq x_{n+1}$ for all $n$, then
+
+$$
+\bigcup_{n=0}^{\infty} x_n
+$$
+
+is not only in $|D|$ but is a topological limit point of the sequence. Show that any element $x$ is a limit point of the set $\{\uparrow X \mid X \in x\}$. Are there other limit points?
+
+## AI: Human-English to AI-Lean
+
+**[Exercise_1_22.lean](Exercise_1_22.lean)**
+
+@import "Exercise_1_22.lean"

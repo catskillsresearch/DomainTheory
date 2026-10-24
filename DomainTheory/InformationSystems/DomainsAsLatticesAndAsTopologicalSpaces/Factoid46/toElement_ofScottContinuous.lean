@@ -63,4 +63,5 @@ theorem toElement_ofScottContinuous (g : ScottContinuous A B) (x : A.Element) :
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

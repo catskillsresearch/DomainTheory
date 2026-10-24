@@ -4,7 +4,7 @@ public import DomainTheory.BridgeTheorems.toNeighborhoodSystem
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen
 public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
 public import DomainTheory.BridgeTheorems.basicOpen_empty
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.mem_funion
 public import Mathlib.Order.Hom.Basic

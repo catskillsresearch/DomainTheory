@@ -22,19 +22,6 @@ def familySup (S : Set sys.Element)
     (hU : sys.IsFinitelyConsistent (sys.familyUnionCarrier S)) : sys.Element :=
   sys.deductiveClosure (sys.familyUnionCarrier S) hU
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
-
 theorem familySup.le (S : Set sys.Element)
     (hU : sys.IsFinitelyConsistent (sys.familyUnionCarrier S)) {z : sys.Element}
     (h : ∀ x ∈ S, x ≤ z) : sys.familySup S hU ≤ z := by
@@ -47,4 +34,6 @@ theorem familySup.le (S : Set sys.Element)
   exact z.closed u a huZ hEnt
 
 end InfoSys
+
+
 end DomainTheory.InformationSystems

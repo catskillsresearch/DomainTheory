@@ -122,4 +122,5 @@ theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

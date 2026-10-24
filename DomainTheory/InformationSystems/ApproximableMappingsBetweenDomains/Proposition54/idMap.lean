@@ -32,19 +32,6 @@ def idMap : ApproximableMap A A where
     exact proposition_2_3_iv A hu' hv
       (proposition_2_3_iv A hu' hu hEntu huv) hEntv
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α] (A : InfoSys α)
-
-
 /-- **Proposition 5.4(ii).** `I_A(x) = x`. -/
 theorem idMap.toElement (x : A.Element) : (idMap A).toElement x = x := by
   apply le_antisymm
@@ -63,4 +50,6 @@ theorem idMap.toElement (x : A.Element) : (idMap A).toElement x = x := by
       exact proposition_2_3_iii A (A.con_sing Y)
 
 end InfoSys
+
+
 end DomainTheory.InformationSystems

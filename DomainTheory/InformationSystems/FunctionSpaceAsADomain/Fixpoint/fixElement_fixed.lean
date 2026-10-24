@@ -34,4 +34,5 @@ theorem fixElement_fixed (f : ApproximableMap A A) :
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

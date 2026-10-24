@@ -58,4 +58,5 @@ theorem fixChain_subset_pre_fixed (f : ApproximableMap A A) (x : A.Element)
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems

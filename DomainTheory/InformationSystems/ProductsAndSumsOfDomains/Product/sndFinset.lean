@@ -18,27 +18,12 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
 variable (A : InfoSys α) (B : InfoSys β)
 
 /-- Right projection of a finite set of product tokens (Scott 6.1). -/
 def sndFinset (u : Finset (ProdToken A B)) : Finset β :=
   Multiset.foldr (fun p : ProdToken A B => insert p.val.2) (∅ : Finset β)
     (u.filter (fun p => p.val.1 = A.bot)).1
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem mem_sndFinset {u : Finset (ProdToken A B)} {y : β} :
     y ∈ sndFinset A B u ↔ ∃ p ∈ u, p.val.1 = A.bot ∧ p.val.2 = y := by
@@ -51,20 +36,6 @@ theorem mem_sndFinset {u : Finset (ProdToken A B)} {y : β} :
   · rintro ⟨p, hp, hbot, hy⟩
     exact ⟨p, Finset.mem_filter.mpr ⟨hp, hbot⟩, hy⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem sndFinset.empty : sndFinset A B (∅ : Finset (ProdToken A B)) = ∅ := by
   ext y
   constructor
@@ -73,22 +44,6 @@ theorem sndFinset.empty : sndFinset A B (∅ : Finset (ProdToken A B)) = ∅ := 
     exact False.elim (Finset.notMem_empty _ hp)
   · intro hy
     exact False.elim (Finset.notMem_empty y hy)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 
 theorem sndFinset.funion (u v : Finset (ProdToken A B)) :
     sndFinset A B (u ∪' v) = sndFinset A B u ∪' sndFinset A B v := by
@@ -106,19 +61,6 @@ theorem sndFinset.funion (u v : Finset (ProdToken A B)) :
     · rcases (mem_sndFinset A B).1 hy with ⟨p, hp, hbot, hy'⟩
       exact (mem_sndFinset A B).2 ⟨p, mem_funion.mpr (Or.inr hp), hbot, hy'⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem sndFinset.insert_not_right (u : Finset (ProdToken A B)) (p : ProdToken A B)
     (hp : p.val.1 ≠ A.bot) :
     sndFinset A B (insert p u) = sndFinset A B u := by
@@ -132,20 +74,6 @@ theorem sndFinset.insert_not_right (u : Finset (ProdToken A B)) (p : ProdToken A
   · intro hy
     rcases (mem_sndFinset A B).1 hy with ⟨q, hq, hbot, hy'⟩
     exact (mem_sndFinset A B).2 ⟨q, Finset.mem_insert_of_mem hq, hbot, hy'⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem sndFinset.insert_right (u : Finset (ProdToken A B)) (p : ProdToken A B)
     (hp : p.val.1 = A.bot) :
@@ -163,39 +91,11 @@ theorem sndFinset.insert_right (u : Finset (ProdToken A B)) (p : ProdToken A B)
     · rcases (mem_sndFinset A B).1 hy' with ⟨q, hq, hbot, hyq⟩
       exact (mem_sndFinset A B).2 ⟨q, Finset.mem_insert_of_mem hq, hbot, hyq⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem sndFinset.mono {u v : Finset (ProdToken A B)} (h : v ⊆ u) :
     sndFinset A B v ⊆ sndFinset A B u := by
   intro y hy
   rcases (mem_sndFinset A B).1 hy with ⟨p, hp, hbot, hy'⟩
   exact (mem_sndFinset A B).2 ⟨p, h hp, hbot, hy'⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem sndFinset.singleton_right (p : ProdToken A B) (hp : p.val.1 = A.bot) :
     sndFinset A B {p} = {p.val.2} := by
@@ -204,5 +104,6 @@ theorem sndFinset.singleton_right (p : ProdToken A B) (hp : p.val.1 = A.bot) :
   rfl
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

@@ -19,7 +19,6 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-
 variable (A : InfoSys α) (B : InfoSys β)
 
 namespace ApproximableMap
@@ -63,26 +62,6 @@ def copairMap (f : ApproximableMap A C) (g : ApproximableMap B C) :
       exact Or.inr (Or.inr ⟨hne',
         g.mono hg (entSet_rht_of_sumEntSet A B hEntu) hEnts
           (SumCon.rht_con_of_rht_nonempty A B hu' hne') hs'⟩)
-
-end ApproximableMap
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
-variable (A : InfoSys α) (B : InfoSys β)
-
-namespace ApproximableMap
-
-variable {C : InfoSys γ}
-
 
 theorem copairMap.botElement (f : ApproximableMap A C) (g : ApproximableMap B C) :
     (copairMap A B f g).toElement (sumSystem A B).botElement = C.botElement := by
@@ -131,5 +110,8 @@ theorem copairMap.botElement (f : ApproximableMap A C) (g : ApproximableMap B C)
       hY
 
 end ApproximableMap
+
+
 end InfoSys
+
 end DomainTheory.InformationSystems

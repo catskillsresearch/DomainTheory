@@ -24,27 +24,14 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
+open ApproximableMap
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 /-- `f` is strict when `f(⊥) = ⊥`. -/
 def IsStrict (A : InfoSys α) (B : InfoSys β) (f : ApproximableMap A B) : Prop :=
   f.toElement A.botElement = B.botElement
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
 variable (A : InfoSys α) (B : InfoSys β)
-
-open ApproximableMap
 
 theorem IsStrict.condMap (x y : A.Element) : IsStrict boolSystem A (InfoSys.condMap A x y) := by
   apply le_antisymm
@@ -53,20 +40,6 @@ theorem IsStrict.condMap (x y : A.Element) : IsStrict boolSystem A (InfoSys.cond
       mem_botElement_emptyEntails boolSystem (hu (Finset.mem_coe.2 ht))
     exact emptyEntails_mem_botElement A (hE hEmp Z (Finset.mem_singleton_self _))
   · exact botElement.le A _
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 namespace ApproximableMap
 

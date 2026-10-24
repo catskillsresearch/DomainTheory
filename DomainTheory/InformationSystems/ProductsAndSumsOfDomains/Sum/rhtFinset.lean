@@ -18,26 +18,11 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
 variable (A : InfoSys α) (B : InfoSys β)
 
 /-- Right projection `rht u` (Scott 6.3). -/
 def rhtFinset (u : Finset (SumToken α β)) : Finset β :=
   Multiset.foldr rhtInsert (∅ : Finset β) u.1
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 omit [DecidableEq α] in
 
@@ -51,22 +36,6 @@ theorem mem_rhtFinset {u : Finset (SumToken α β)} {y : β} :
   · intro hy
     exact ⟨.right y, hy, rfl⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
-
 omit [DecidableEq α] in
 
 
@@ -77,21 +46,6 @@ theorem rhtFinset.empty : rhtFinset (∅ : Finset (SumToken α β)) = ∅ := by
     exact False.elim (Finset.notMem_empty _ ((mem_rhtFinset).1 hy))
   · intro hy
     exact False.elim (Finset.notMem_empty y hy)
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 
 theorem rhtFinset.funion (u v : Finset (SumToken α β)) :
     rhtFinset (u ∪' v) = rhtFinset u ∪' rhtFinset v := by
@@ -107,19 +61,6 @@ theorem rhtFinset.funion (u v : Finset (SumToken α β)) :
     · exact (mem_rhtFinset).2 (mem_funion.mpr (Or.inl ((mem_rhtFinset).1 h)))
     · exact (mem_rhtFinset).2 (mem_funion.mpr (Or.inr ((mem_rhtFinset).1 h)))
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem rhtFinset.insert_bot (u : Finset (SumToken α β)) :
     rhtFinset (insert (.bot : SumToken α β) u) = rhtFinset u := by
   ext y
@@ -132,20 +73,6 @@ theorem rhtFinset.insert_bot (u : Finset (SumToken α β)) :
   · intro hy
     exact (mem_rhtFinset).2 (Finset.mem_insert.mpr (Or.inr ((mem_rhtFinset).1 hy)))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 theorem rhtFinset.insert_left (u : Finset (SumToken α β)) (x : α) :
     rhtFinset (insert (.left x) u) = rhtFinset u := by
   ext y
@@ -157,20 +84,6 @@ theorem rhtFinset.insert_left (u : Finset (SumToken α β)) (x : α) :
     · exact (mem_rhtFinset).2 h
   · intro hy
     exact (mem_rhtFinset).2 (Finset.mem_insert.mpr (Or.inr ((mem_rhtFinset).1 hy)))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 theorem rhtFinset.insert_right (u : Finset (SumToken α β)) (y : β) :
     rhtFinset (insert (.right y) u) = insert y (rhtFinset u) := by
@@ -187,40 +100,12 @@ theorem rhtFinset.insert_right (u : Finset (SumToken α β)) (y : β) :
     · exact (mem_rhtFinset).2 (Finset.mem_insert.mpr (Or.inl (congrArg SumToken.right hz')))
     · exact (mem_rhtFinset).2 (Finset.mem_insert.mpr (Or.inr ((mem_rhtFinset).1 hz')))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 omit [DecidableEq α] in
 
 theorem rhtFinset.mono {u v : Finset (SumToken α β)} (h : v ⊆ u) :
     rhtFinset v ⊆ rhtFinset u := by
   intro y hy
   exact (mem_rhtFinset).2 (h ((mem_rhtFinset).1 hy))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
 
 omit [DecidableEq α] in
 
@@ -234,20 +119,6 @@ theorem rhtFinset.singleton_bot :
   · intro hy
     exact False.elim (Finset.notMem_empty y hy)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-variable (A : InfoSys α) (B : InfoSys β)
-
 omit [DecidableEq α] in
 
 theorem rhtFinset.singleton_right (y : β) :
@@ -257,5 +128,6 @@ theorem rhtFinset.singleton_right (y : β) :
   exact ⟨SumToken.right.inj, fun h => h ▸ rfl⟩
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

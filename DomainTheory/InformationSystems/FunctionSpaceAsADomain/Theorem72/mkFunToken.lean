@@ -9,9 +9,9 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
 open DomainTheory.InformationSystems.Constructive
 
+section
 namespace InfoSys
 
 universe u v w
@@ -27,13 +27,9 @@ theorem mkFunToken.property (u : Finset α) (v : Finset β) (hu : u ∈ A.Con) (
   ⟨hu, hv⟩
 
 end InfoSys
+end
 
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
+section
 namespace InfoSys
 
 universe u v w
@@ -49,13 +45,9 @@ def mkFunToken (u : Finset α) (v : Finset β) (hu : u ∈ A.Con) (hv : v ∈ B.
   ⟨(u, v), mkFunToken.property A B u v hu hv⟩
 
 end InfoSys
+end
 
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
+section
 namespace InfoSys
 
 universe u v w
@@ -70,4 +62,6 @@ theorem mkFunToken.eq (p : FunToken A B) :
   Subtype.ext rfl
 
 end InfoSys
+end
+
 end DomainTheory.InformationSystems

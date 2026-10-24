@@ -18,18 +18,6 @@ variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 def IsDirected (S : Set sys.Element) : Prop :=
   ∀ (x y : sys.Element), x ∈ S → y ∈ S → ∃ z ∈ S, x ≤ z ∧ y ≤ z
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
 theorem IsDirected.of_IsChain {S : Set sys.Element} (h : sys.Chain S) : sys.IsDirected S := by
   intro x y hx hy
   rcases h.out x y hx hy with hxy | hyx
@@ -37,5 +25,6 @@ theorem IsDirected.of_IsChain {S : Set sys.Element} (h : sys.Chain S) : sys.IsDi
   · exact ⟨x, hx, le_rfl, hyx⟩
 
 end InfoSys
+
 
 end DomainTheory.InformationSystems

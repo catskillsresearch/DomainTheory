@@ -21,19 +21,6 @@ def join (x y : sys.Element)
     (h : sys.IsFinitelyConsistent (x.carrier ∪ y.carrier)) : sys.Element :=
   sys.deductiveClosure (x.carrier ∪ y.carrier) h
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
-
 theorem join.le (x y z : sys.Element)
     (h : sys.IsFinitelyConsistent (x.carrier ∪ y.carrier))
     (hx : x ≤ z) (hy : y ≤ z) : sys.join x y h ≤ z := by
@@ -47,4 +34,6 @@ theorem join.le (x y z : sys.Element)
   exact z.closed u a huZ hEnt
 
 end InfoSys
+
+
 end DomainTheory.InformationSystems

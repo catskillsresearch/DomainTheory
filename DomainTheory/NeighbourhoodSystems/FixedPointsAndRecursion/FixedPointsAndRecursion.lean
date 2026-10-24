@@ -2,7 +2,7 @@ module
 
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.DomainConstructs
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.MappingsBetweenDomains
 public import Mathlib.Algebra.Group.Nat.Defs
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
@@ -15,11 +15,10 @@ public import Mathlib.Tactic
 @[expose] public section
 
 section
--- Exercise412/Basic.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise412
-
 open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
 
+section
 /-- Abbreviation for Example 1.2's domain `T`. -/
 abbrev T : NeighborhoodSystem Example12.Token := Example12.neighborhoodSystem
 
@@ -45,65 +44,34 @@ theorem zero_ne_master : (Example12.zero) ≠ Example12.master := by
   have h1 : (1 : Example12.Token) ∈ ({0} : Set Example12.Token) := (h 1).mpr (Set.mem_univ 1)
   simp only [Set.mem_singleton_iff] at h1
   exact absurd h1 (by decide)
-end DomainTheory.NeighbourhoodSystems.Exercise412
 end
 
 section
--- Exercise412/elemOne_not_le_elemZero.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise412
-
-open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
-
-
 /-- The two total elements are incomparable: `elemOne ⋢ elemZero`. -/
 theorem elemOne_not_le_elemZero : ¬ elemOne ≤ elemZero := by
   intro h
   rcases h Example12.one (Or.inr rfl) with hm | hz
   · exact one_ne_master hm
   · exact one_ne_zero hz
-
-end DomainTheory.NeighbourhoodSystems.Exercise412
 end
 
 section
--- Exercise412/elemZero_not_le_elemOne.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise412
-
-open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
-
-
 /-- The two total elements are incomparable: `elemZero ⋢ elemOne`. -/
 theorem elemZero_not_le_elemOne : ¬ elemZero ≤ elemOne := by
   intro h
   rcases h Example12.zero (Or.inr rfl) with hm | ho
   · exact zero_ne_master hm
   · exact one_ne_zero ho.symm
-
-end DomainTheory.NeighbourhoodSystems.Exercise412
 end
 
 section
--- Exercise412/idMap_fixed.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise412
-
-open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
-
-
 /- concordance: source L2259 EXERCISE 4.12 no greatest fixed point -/
 /-- **Exercise 4.12 (Scott 1981, PRG-19).** Every element is a fixed point of the identity map
 (so `I_T` has *many* fixed points: `⊥`, `elemZero`, `elemOne`). -/
 theorem idMap_fixed (x : T.Element) : (idMap T).toElementMap x = x := toElementMap_idMap x
-
-end DomainTheory.NeighbourhoodSystems.Exercise412
 end
 
 section
--- Exercise412/no_greatest_fixedPoint.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise412
-
-open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
-
-
 /-- **Exercise 4.12 (Scott 1981, PRG-19).** `I_T` has no *greatest* (hence no maximum) fixed point:
 the two total elements `elemZero`, `elemOne` are both fixed points, are incomparable, and no element
 dominates both. -/
@@ -117,14 +85,9 @@ theorem no_greatest_fixedPoint :
   · exact (bot_lt_elemZero).2 h0
   · exact elemOne_not_le_elemZero h1
   · exact elemZero_not_le_elemOne h0
-
-end DomainTheory.NeighbourhoodSystems.Exercise412
 end
 
 section
--- Exercise412.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise412
-
 set_option linter.unusedVariables false
 
 theorem example_412 : And
@@ -241,73 +204,47 @@ theorem example_412 : And
               x z)))
   DomainTheory.NeighbourhoodSystems.Exercise412.idMap_fixed
   DomainTheory.NeighbourhoodSystems.Exercise412.no_greatest_fixedPoint
-
-end DomainTheory.NeighbourhoodSystems.Exercise412
 end
 
-section
--- Exercise414/gfpSet.lean
+end DomainTheory.NeighbourhoodSystems.Exercise412
 namespace DomainTheory.NeighbourhoodSystems.Exercise414
-
+section
 variable {A : Type*}
 
 /- concordance: source L2283 EXERCISE 4.14 greatest powerset fixed point -/
 /-- **Exercise 4.14 (Scott 1981, PRG-19).** The *greatest* fixed point of a monotone `f : P A → P A`,
 constructed as the union of all post-fixed points `⋃ {x ∣ x ⊆ f(x)}`. -/
 def gfpSet (f : Set A → Set A) : Set A := {a | ∃ x : Set A, x ⊆ f x ∧ a ∈ x}
-
-end DomainTheory.NeighbourhoodSystems.Exercise414
 end
 
 section
--- Exercise414/lfpSet.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {A : Type*}
 
 /-- **Exercise 4.13(2) (Scott 1981, PRG-19).** The *least* fixed point of a monotone `f : P A → P A`,
 as the intersection of all pre-fixed points `⋂ {x ∣ f(x) ⊆ x}`. -/
 def lfpSet (f : Set A → Set A) : Set A := {a | ∀ x : Set A, f x ⊆ x → a ∈ x}
-
-end DomainTheory.NeighbourhoodSystems.Exercise414
 end
 
 section
--- Exercise414/lfpSet_subset.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {A : Type*}
-
 
 /-- `lfpSet f ⊆ x` for every pre-fixed point `f(x) ⊆ x`. -/
 theorem lfpSet_subset (f : Set A → Set A) {x : Set A} (hx : f x ⊆ x) : lfpSet f ⊆ x :=
   fun _ ha => ha x hx
-
-end DomainTheory.NeighbourhoodSystems.Exercise414
 end
 
 section
--- Exercise414/f_subset_lfpSet.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {A : Type*}
-
 
 /-- `f (lfpSet f) ⊆ lfpSet f`: it is a pre-fixed point. -/
 theorem f_subset_lfpSet (f : Set A → Set A) (hf : Monotone f) :
     f (lfpSet f) ⊆ lfpSet f := by
   intro a ha x hx
   exact hx (hf (lfpSet_subset f hx) ha)
-
-end DomainTheory.NeighbourhoodSystems.Exercise414
 end
 
 section
--- Exercise414/lfpSet_isFixed.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {A : Type*}
-
 
 /-- **Exercise 4.13(2) (Scott 1981, PRG-19).** `lfpSet f` is a fixed point: `f(b) = b`. -/
 theorem lfpSet_isFixed (f : Set A → Set A) (hf : Monotone f) :
@@ -315,76 +252,46 @@ theorem lfpSet_isFixed (f : Set A → Set A) (hf : Monotone f) :
   have hsub : f (lfpSet f) ⊆ lfpSet f := f_subset_lfpSet f hf
   have hsup : lfpSet f ⊆ f (lfpSet f) := lfpSet_subset f (hf hsub)
   exact Set.Subset.antisymm hsub hsup
-
-end DomainTheory.NeighbourhoodSystems.Exercise414
 end
 
 section
--- Exercise414/lfpSet_least.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {A : Type*}
-
 
 /-- **Exercise 4.13(2) (Scott 1981, PRG-19).** `lfpSet f` is the *least* fixed point: any fixed
 point `y = f(y)` satisfies `b ⊆ y`. -/
 theorem lfpSet_least (f : Set A → Set A) {y : Set A} (hy : f y = y) :
     lfpSet f ⊆ y := lfpSet_subset f (le_of_eq hy)
-
-end DomainTheory.NeighbourhoodSystems.Exercise414
 end
 
 section
--- Exercise414/subset_gfpSet.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {A : Type*}
-
 
 /-- Every post-fixed point `x ⊆ f(x)` is contained in `gfpSet f`. -/
 theorem subset_gfpSet (f : Set A → Set A) {x : Set A} (hx : x ⊆ f x) : x ⊆ gfpSet f :=
   fun _ ha => ⟨x, hx, ha⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise414
 end
 
 section
--- Exercise414/gfpSet_greatest.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {A : Type*}
-
 
 /-- **Exercise 4.14 (Scott 1981, PRG-19).** `gfpSet f` is the *greatest* fixed point: any fixed
 point `y = f(y)` satisfies `y ⊆ g`. Hence `f` *does* have a maximum fixed point. -/
 theorem gfpSet_greatest (f : Set A → Set A) {y : Set A} (hy : f y = y) :
     y ⊆ gfpSet f := subset_gfpSet f (le_of_eq hy.symm)
-
-end DomainTheory.NeighbourhoodSystems.Exercise414
 end
 
 section
--- Exercise414/gfpSet_subset_f.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {A : Type*}
-
 
 /-- `gfpSet f ⊆ f (gfpSet f)`: it is a post-fixed point. -/
 theorem gfpSet_subset_f (f : Set A → Set A) (hf : Monotone f) :
     gfpSet f ⊆ f (gfpSet f) := by
   rintro a ⟨x, hx, hax⟩
   exact hf (subset_gfpSet f hx) (hx hax)
-
-end DomainTheory.NeighbourhoodSystems.Exercise414
 end
 
 section
--- Exercise414/gfpSet_isFixed.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {A : Type*}
-
 
 /-- **Exercise 4.14 (Scott 1981, PRG-19).** `gfpSet f` is a fixed point: `f(g) = g`. -/
 theorem gfpSet_isFixed (f : Set A → Set A) (hf : Monotone f) :
@@ -392,14 +299,9 @@ theorem gfpSet_isFixed (f : Set A → Set A) (hf : Monotone f) :
   have hsub : gfpSet f ⊆ f (gfpSet f) := gfpSet_subset_f f hf
   have hsup : f (gfpSet f) ⊆ gfpSet f := subset_gfpSet f (hf hsub)
   exact Set.Subset.antisymm hsup hsub
-
-end DomainTheory.NeighbourhoodSystems.Exercise414
 end
 
 section
--- Exercise414.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise414
-
 set_option linter.unusedVariables false
 
 theorem example_414.{u_1} : And
@@ -432,83 +334,43 @@ theorem example_414.{u_1} : And
         (@DomainTheory.NeighbourhoodSystems.Exercise414.gfpSet A f))
   @DomainTheory.NeighbourhoodSystems.Exercise414.gfpSet_greatest
   @DomainTheory.NeighbourhoodSystems.Exercise414.gfpSet_isFixed
-
-end DomainTheory.NeighbourhoodSystems.Exercise414
 end
 
-section
--- Exercise417/F.lean
+end DomainTheory.NeighbourhoodSystems.Exercise414
 namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
 open Pointwise
-
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
+section
 variable {S : Type*} [Monoid S]
 
 /-- Scott's operator `F(x) = {1} ∪ {a, b} ∪ x · x` on `P S`. -/
 def F (a b : S) (x : Set S) : Set S := {1} ∪ {a, b} ∪ x * x
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/base_subset_F.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
 
 /-- `{1} ∪ {a, b} ⊆ F a b x`. -/
 theorem base_subset_F (a b : S) (x : Set S) : {1} ∪ {a, b} ⊆ F a b x :=
   Set.subset_union_left
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/one_mem_F.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
 
 theorem one_mem_F (a b : S) (x : Set S) : (1 : S) ∈ F a b x :=
   base_subset_F a b x (Set.mem_union_left _ rfl)
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/self_mul_subset_F.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
 
 theorem self_mul_subset_F (a b : S) (x : Set S) : x * x ⊆ F a b x :=
   Set.subset_union_right
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/preFixSubmonoid.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
 
 /-- A pre-fixed point of `F` is a submonoid containing `{a, b}`: it contains `1` and is closed under
@@ -519,106 +381,52 @@ def preFixSubmonoid (a b : S) {x : Set S} (hx : F a b x ⊆ x) : Submonoid S whe
   mul_mem' := by
     intro s t hs ht
     exact hx (self_mul_subset_F a b x (Set.mul_mem_mul hs ht))
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/F_monotone.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
-
 
 theorem F_monotone (a b : S) : Monotone (F a b) := by
   intro x y hxy
   exact Set.union_subset_union (le_refl _) (Set.mul_subset_mul hxy hxy)
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/F_one_one_singleton.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
-
 
 /-- `{1}` is a fixed point of `F 1 1`: `{1} ∪ {1, 1} ∪ {1}·{1} = {1}`. -/
 theorem F_one_one_singleton : F (1 : ℕ) 1 ({1} : Set ℕ) = {1} := by
   unfold F
   rw [Set.singleton_mul_singleton]
   simp
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/F_univ.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
-
 
 /-- In any monoid, `Set.univ` is a fixed point of `F a b`: `s = 1 · s ∈ univ · univ`. -/
 theorem F_univ (a b : S) : F a b (Set.univ : Set S) = Set.univ := by
   apply Set.Subset.antisymm (Set.subset_univ _)
   intro s _
   exact self_mul_subset_F a b _ (Set.mem_mul.mpr ⟨1, trivial, s, trivial, one_mul s⟩)
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/a_mem_F.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
-
 
 theorem a_mem_F (a b : S) (x : Set S) : a ∈ F a b x :=
   base_subset_F a b x (Set.mem_union_right _ (Set.mem_insert _ _))
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/b_mem_F.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
-
 
 theorem b_mem_F (a b : S) (x : Set S) : b ∈ F a b x :=
   base_subset_F a b x (Set.mem_union_right _ (Set.mem_insert_of_mem _ rfl))
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/fixedPoint_not_unique.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
-
 
 /- concordance: source L2305 EXERCISE 4.17 generated submonoid -/
 /-- **Exercise 4.17 (Scott 1981, PRG-19).** The fixed point need **not** be unique: over `S = ℕ`
@@ -630,37 +438,19 @@ theorem fixedPoint_not_unique :
   intro h
   have h2 : (2 : ℕ) ∈ ({1} : Set ℕ) := by rw [h]; exact Set.mem_univ 2
   simp at h2
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/leastSolution_eq.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
-
 
 /-- The least solution `lfpSet (F a b)` indeed solves Scott's equation `x = {1} ∪ {a, b} ∪ x · x`. -/
 theorem leastSolution_eq (a b : S) :
     F a b (lfpSet (F a b)) = lfpSet (F a b) :=
   lfpSet_isFixed (F a b) (F_monotone a b)
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417/lfpSet_eq_closure.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
-open Pointwise
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {S : Type*} [Monoid S]
-
 
 /-- **Exercise 4.17 (Scott 1981, PRG-19).** The least solution of `x = {1} ∪ {a, b} ∪ x · x` is the
 submonoid generated by `{a, b}` (all finite products of `a`s and `b`s, including `1`). -/
@@ -691,14 +481,9 @@ theorem lfpSet_eq_closure (a b : S) :
       · rw [h]; exact ha
       · rw [Set.mem_singleton_iff.mp h]; exact hb
     exact (Submonoid.closure_le (S := preFixSubmonoid a b hfix)).mpr hmem
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
 section
--- Exercise417.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-
 set_option linter.unusedVariables false
 
 theorem example_417.{u_1} : And
@@ -751,77 +536,39 @@ theorem example_417.{u_1} : And
             (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) b)))))
   DomainTheory.NeighbourhoodSystems.Exercise417.fixedPoint_not_unique
   @DomainTheory.NeighbourhoodSystems.Exercise417.lfpSet_eq_closure
-
-end DomainTheory.NeighbourhoodSystems.Exercise417
 end
 
-section
--- Exercise421/leOp.lean
+end DomainTheory.NeighbourhoodSystems.Exercise417
 namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
+section
 /-- Scott's operator `ℓ ↦ {(n, n)} ∪ {(n, m⁺) ∣ (n, m) ∈ ℓ}` on `P(ℕ × ℕ)`. -/
 def leOp (u : Set (ℕ × ℕ)) : Set (ℕ × ℕ) :=
   {p | p.1 = p.2} ∪ {p | ∃ m, (p.1, m) ∈ u ∧ p.2 = m + 1}
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/leRel.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 /-- The relation `≤` itself, as a subset of `ℕ × ℕ`. -/
 def leRel : Set (ℕ × ℕ) := {p | p.1 ≤ p.2}
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/mulOp.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 /-- Scott's hint operator `n·ℕ = {0} ∪ {n + m ∣ m ∈ n·ℕ}` on `P ℕ` (for fixed `n`). -/
 def mulOp (n : ℕ) (u : Set ℕ) : Set ℕ := {0} ∪ {k | ∃ m ∈ u, k = n + m}
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/succImage.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 /-- Scott's `x⁺ = {n⁺ ∣ n ∈ x}` on `P ℕ`. -/
 def succImage (x : Set ℕ) : Set ℕ := {k | ∃ j ∈ x, k = j + 1}
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/upSet.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 /-- The up-set `[m] = {k ∣ m ≤ k}` — the value of Scott's unique function `[·]` of 4.13(3). -/
 def upSet (m : ℕ) : Set ℕ := {k | m ≤ k}
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/addIso.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
 /- concordance: source L2331 EXERCISE 4.21 order as a fixed point -/
 /-- **Exercise 4.21 (Scott 1981, PRG-19).** The structure-preserving bijection between
 `⟨ℕ, 0, ⁺⟩` and `⟨[m], m, ⁺⟩` (where `[m] = {k ∣ m ≤ k}`, with distinguished element `m` and the
@@ -833,73 +580,33 @@ def addIso (m : ℕ) : ℕ ≃ {k : ℕ // k ∈ upSet m} where
   right_inv := by
     rintro ⟨k, hk⟩
     exact Subtype.ext (Nat.add_sub_of_le hk)
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/addIso_apply.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 /-- The isomorphism is given by addition: `addIso m n = m + n`. -/
 theorem addIso_apply (m n : ℕ) : (addIso m n : ℕ) = m + n := rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/addIso_succ.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 /-- The isomorphism preserves the successor: `addIso m (n⁺) = (addIso m n)⁺`. -/
 theorem addIso_succ (m n : ℕ) : (addIso m (n + 1) : ℕ) = (addIso m n : ℕ) + 1 := by
   simp only [addIso_apply]; omega
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/addIso_zero.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 /-- The isomorphism sends `0` to the distinguished element `m` of `[m]`. -/
 theorem addIso_zero (m : ℕ) : (addIso m 0 : ℕ) = m := by simp [addIso]
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/leOp_monotone.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 theorem leOp_monotone : Monotone leOp := by
   intro u v huv p hp
   rcases hp with hp | ⟨m, hm, hpm⟩
   · exact Or.inl hp
   · exact Or.inr ⟨m, huv hm, hpm⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/leRel_isFixed.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 /-- **Exercise 4.21 (Scott 1981, PRG-19).** `≤` solves Scott's fixed-point equation. -/
 theorem leRel_isFixed : leOp leRel = leRel := by
   apply Set.Subset.antisymm
@@ -912,17 +619,9 @@ theorem leRel_isFixed : leOp leRel = leRel := by
     · refine Or.inr ⟨m - 1, ?_, ?_⟩
       · change n ≤ m - 1; omega
       · omega
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/mem_fixedPoint_iff.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 /-- The key step toward uniqueness: any fixed point `u` of `leOp` agrees with `≤` pointwise.
 By induction on the second coordinate `m`; the base case `m = 0` uses that the successor clause
 cannot produce a `0` on the right. -/
@@ -949,49 +648,25 @@ theorem mem_fixedPoint_iff {u : Set (ℕ × ℕ)} (hu : leOp u = u) (n m : ℕ) 
       rcases Nat.eq_or_lt_of_le h with h' | h'
       · exact Or.inl h'
       · exact Or.inr ⟨k, ih.mpr (Nat.lt_succ_iff.mp h'), rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/leOp_unique.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 /-- **Exercise 4.21 (Scott 1981, PRG-19).** The order relation `≤` is the **unique** fixed point of
 Scott's equation: any `u` with `leOp u = u` equals `leRel`. -/
 theorem leOp_unique {u : Set (ℕ × ℕ)} (hu : leOp u = u) : u = leRel := by
   ext ⟨n, m⟩
   rw [mem_fixedPoint_iff hu]
   rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/mulOp_monotone.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 theorem mulOp_monotone (n : ℕ) : Monotone (mulOp n) := by
   rintro u v huv k (hk | ⟨m, hm, rfl⟩)
   · exact Or.inl hk
   · exact Or.inr ⟨m, huv hm, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/mulOp_lfp_eq_multiples.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 /-- **Exercise 4.21 (Scott 1981, PRG-19).** The least solution of the multiplication equation
 `n·ℕ = {0} ∪ {n + m ∣ m ∈ n·ℕ}` is exactly the set of **multiples of `n`**. -/
 theorem mulOp_lfp_eq_multiples (n : ℕ) :
@@ -1013,17 +688,9 @@ theorem mulOp_lfp_eq_multiples (n : ℕ) :
     | succ j ih =>
       rw [← hfix]
       exact Or.inr ⟨n * j, ih, by ring⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/upSet_succ.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 /-- `[m⁺] = [m]⁺`: the recursion step of 4.13(3). -/
 theorem upSet_succ (m : ℕ) : upSet (m + 1) = succImage (upSet m) := by
   ext k
@@ -1033,31 +700,15 @@ theorem upSet_succ (m : ℕ) : upSet (m + 1) = succImage (upSet m) := by
     exact ⟨k - 1, by omega, by omega⟩
   · rintro ⟨j, hj, rfl⟩
     omega
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/upSet_zero.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 /-- `[0] = ℕ`: the recursion base of 4.13(3). -/
 theorem upSet_zero : upSet 0 = Set.univ := by
   ext k; simp [upSet]
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421/upSet_unique.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-
 /-- **Exercise 4.21 / 4.13(3) (Scott 1981, PRG-19).** `[·] = upSet` is the *unique* function with
 `[0] = ℕ` and `[m⁺] = [m]⁺`. -/
 theorem upSet_unique (s : ℕ → Set ℕ) (h0 : s 0 = Set.univ)
@@ -1066,14 +717,9 @@ theorem upSet_unique (s : ℕ → Set ℕ) (h0 : s 0 = Set.univ)
   induction m with
   | zero => rw [h0, upSet_zero]
   | succ k ih => rw [hsucc k, ih, upSet_succ]
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
 section
--- Exercise421.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise421
-
 set_option linter.unusedVariables false
 
 theorem example_421 : And
@@ -1156,30 +802,20 @@ theorem example_421 : And
       @DomainTheory.NeighbourhoodSystems.Exercise421.leOp_unique)
     DomainTheory.NeighbourhoodSystems.Exercise421.leRel_isFixed)
   DomainTheory.NeighbourhoodSystems.Exercise421.mulOp_lfp_eq_multiples
-
-end DomainTheory.NeighbourhoodSystems.Exercise421
 end
 
-section
--- Exercise424/sbOp.lean
+end DomainTheory.NeighbourhoodSystems.Exercise421
 namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
 open DomainTheory.NeighbourhoodSystems.Exercise414 Function
 
+section
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- Tarski's operator `T(X) = (A − g(B)) ∪ g(f(X))` on `P A`. -/
 def sbOp (f : A → B) (g : B → A) (X : Set A) : Set A := (Set.range g)ᶜ ∪ g '' (f '' X)
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/sbOp_monotone.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 theorem sbOp_monotone (f : A → B) (g : B → A) : Monotone (sbOp f g) := by
@@ -1187,60 +823,32 @@ theorem sbOp_monotone (f : A → B) (g : B → A) : Monotone (sbOp f g) := by
   rcases ha with ha | ⟨b, ⟨x, hx, rfl⟩, rfl⟩
   · exact Or.inl ha
   · exact Or.inr ⟨f x, ⟨x, hXY hx, rfl⟩, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/sbSet.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- The Tarski fixed point `X` with `X = (A − g(B)) ∪ g(f(X))` (`lfpSet`, Exercise 4.14). -/
 def sbSet (f : A → B) (g : B → A) : Set A := lfpSet (sbOp f g)
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/sbSet_isFixed.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 theorem sbSet_isFixed (f : A → B) (g : B → A) : sbOp f g (sbSet f g) = sbSet f g :=
   lfpSet_isFixed (sbOp f g) (sbOp_monotone f g)
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/g_f_mem_of_mem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- `g(f(a)) ∈ X` whenever `a ∈ X` (the `g(f(X)) ⊆ T(X) = X` half). -/
 theorem g_f_mem_of_mem {a : A} (ha : a ∈ sbSet f g) : g (f a) ∈ sbSet f g := by
   rw [← sbSet_isFixed]
   exact Or.inr ⟨f a, ⟨a, ha, rfl⟩, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/mem_range_of_not_mem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- Anything outside the fixed set `X` lies in the range of `g` (so it has a `g`-preimage). -/
@@ -1248,16 +856,9 @@ theorem mem_range_of_not_mem {a : A} (ha : a ∉ sbSet f g) : a ∈ Set.range g 
   have hne : a ∉ sbOp f g (sbSet f g) := by rw [sbSet_isFixed]; exact ha
   have : ¬ a ∉ Set.range g := fun h => hne (Or.inl h)
   exact not_not.mp this
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/sbFun.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 open Classical in
@@ -1266,45 +867,24 @@ open Classical in
 `X`, and the `g`-inverse off it. -/
 noncomputable def sbFun (f : A → B) (g : B → A) (a : A) : B :=
   if ha : a ∈ sbSet f g then f a else Classical.choose (mem_range_of_not_mem ha)
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/g_sbFun_not_mem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- Off the fixed set, `h(a)` is a genuine `g`-preimage of `a`: `g(h(a)) = a`. -/
 theorem g_sbFun_not_mem {a : A} (ha : a ∉ sbSet f g) : g (sbFun f g a) = a := by
   rw [sbFun, dite_eq_right ha]
   exact Classical.choose_spec (mem_range_of_not_mem ha)
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/sbFun_mem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 theorem sbFun_mem {a : A} (ha : a ∈ sbSet f g) : sbFun f g a = f a := dite_eq_left ha
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/sbFun_injective.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 theorem sbFun_injective (hf : Injective f) : Injective (sbFun f g) := by
@@ -1325,16 +905,9 @@ theorem sbFun_injective (hf : Injective f) : Injective (sbFun f g) := by
     have : g (sbFun f g a₁) = g (sbFun f g a₂) := by rw [heq]
     rw [g_sbFun_not_mem h1, g_sbFun_not_mem h2] at this
     exact this
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/sbFun_surjective.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 theorem sbFun_surjective (hg : Injective g) : Surjective (sbFun f g) := by
@@ -1349,33 +922,18 @@ theorem sbFun_surjective (hg : Injective g) : Surjective (sbFun f g) := by
   · -- `g b ∉ X`: then `h (g b) = b`.
     refine ⟨g b, ?_⟩
     exact hg (g_sbFun_not_mem hb)
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/schroeder_bernstein_equiv.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- **Exercise 4.24 (Scott 1981, PRG-19).** The one-one correspondence as an `Equiv A ≃ B`. -/
 noncomputable def schroeder_bernstein_equiv (hf : Injective f) (hg : Injective g) : A ≃ B :=
   Equiv.ofBijective (sbFun f g) ⟨sbFun_injective hf, sbFun_surjective hg⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424/schroeder_bernstein.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
-open DomainTheory.NeighbourhoodSystems.Exercise414 Function
-
 variable {A B : Type*} {f : A → B} {g : B → A}
-
 
 open Classical in
 
@@ -1385,29 +943,21 @@ open Classical in
 theorem schroeder_bernstein (hf : Injective f) (hg : Injective g) :
     ∃ h : A → B, Bijective h :=
   ⟨sbFun f g, sbFun_injective hf, sbFun_surjective hg⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
 section
--- Exercise424.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise424
-
 set_option linter.unusedVariables false
 
 theorem example_424.{u_1, u_2} : ∀ {A : Type u_1} {B : Type u_2} {f : A → B} {g : B → A},
   @Function.Injective A B f → @Function.Injective B A g → ∃ (h : A → B), @Function.Bijective A B h :=
   @DomainTheory.NeighbourhoodSystems.Exercise424.schroeder_bernstein
-
-end DomainTheory.NeighbourhoodSystems.Exercise424
 end
 
-section
--- Theorem41/iterMap.lean
+end DomainTheory.NeighbourhoodSystems.Exercise424
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
+section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1420,16 +970,9 @@ def iterMap (f : ApproximableMap V V) : ℕ → ApproximableMap V V
   | (n + 1) => f.comp (f.iterMap n)
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/iterMap_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1437,16 +980,9 @@ namespace ApproximableMap
 @[simp] theorem iterMap_zero (f : ApproximableMap V V) : f.iterMap 0 = idMap V := rfl
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/iterMap_succ.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1455,16 +991,9 @@ namespace ApproximableMap
     f.iterMap (n + 1) = f.comp (f.iterMap n) := rfl
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/comp_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1477,16 +1006,9 @@ theorem comp_mono {f g a b : ApproximableMap V V} (hfg : f ≤ g) (hab : a ≤ b
   exact ⟨Y, hab X Y hXY, hfg Y Z hYZ⟩
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/iterMap_mono_map.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1499,16 +1021,9 @@ theorem iterMap_mono_map {f g : ApproximableMap V V} (hfg : f ≤ g) (n : ℕ) :
   | succ k ih => exact comp_mono hfg ih
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/iter_comm.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1524,16 +1039,9 @@ theorem iter_comm (f : ApproximableMap V V) (n : ℕ) :
     rw [comp_assoc, ← ih]
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/rel_master_succ.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1547,16 +1055,9 @@ theorem rel_master_succ (f : ApproximableMap V V) {n : ℕ} {X : Set α}
   exact ⟨V.master, f.master_rel, h⟩
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/rel_master_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1570,16 +1071,9 @@ theorem rel_master_mono (f : ApproximableMap V V) {n m : ℕ} (hnm : n ≤ m) {X
   | step _ ih => exact rel_master_succ f ih
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/fixElement.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1603,16 +1097,9 @@ def fixElement (f : ApproximableMap V V) : V.Element where
     exact ⟨n, (f.iterMap n).mono hn subset_rfl hXY V.master_mem hYmem⟩
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/mem_fixElement.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1621,16 +1108,9 @@ namespace ApproximableMap
     f.fixElement.mem X ↔ ∃ n, (f.iterMap n).rel V.master X := Iff.rfl
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/fixElement_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1643,18 +1123,10 @@ theorem fixElement_mono {f g : ApproximableMap V V} (hfg : f ≤ g) :
   exact ⟨n, iterMap_mono_map hfg n V.master X hn⟩
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/fixMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
 open ApproximableMap
 
 /- concordance: source L1715 THEOREM 4.2 fix combinator -/
@@ -1669,16 +1141,9 @@ def fixMap (V : NeighborhoodSystem α) : ApproximableMap (funSpace V V) V :=
       apply fixElement_mono
       exact (funSpaceEquiv V V).monotone
         (((funSpace V V).principal_le_iff hW hW').mpr hW'W))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/iterElem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1687,21 +1152,11 @@ namespace ApproximableMap
 def iterElem (f : ApproximableMap V V) (n : ℕ) : V.Element := (f.iterMap n).toElementMap V.bot
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/exists_principal_iterMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
-
 open ApproximableMap
-
 
 /-- **Theorem 4.2 (Scott 1981, PRG-19) — Scott's equation (∗), hard half.** A finite `f`-chain
 `Δ (toApproxMap φ)ⁿ X` factors through a *single* finite approximant `F ∈ φ`: there is a
@@ -1736,16 +1191,9 @@ theorem exists_principal_iterMap (V : NeighborhoodSystem α) (φ : (funSpace V V
       show ((funSpace V V).principal (φ.sub hwInter)).mem (step Y X)
       exact ⟨step_mem hVY hVX, Set.inter_subset_right⟩
     exact ⟨Y, hYg, hgYX⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/fixElement_le_of_toElementMap_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1773,20 +1221,11 @@ theorem fixElement_le_of_toElementMap_le (f : ApproximableMap V V) {z : V.Elemen
   exact key n X hn
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/fixMap_toElementMap_principal.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
-
 open ApproximableMap
-
 
 /-- On a finite element `↑F`, `fix` returns `fix(↑F)` (the least fixed point of the least map of
 `F`). -/
@@ -1795,21 +1234,11 @@ theorem fixMap_toElementMap_principal (V : NeighborhoodSystem α)
     (fixMap V).toElementMap ((funSpace V V).principal hW) =
       (toApproxMap ((funSpace V V).principal hW)).fixElement :=
   toElementMap_ofMono_principal _ _ W hW
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/fixMap_toElementMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
-
 open ApproximableMap
-
 
 /-- **Theorem 4.2 (Scott 1981, PRG-19) — Scott's equation (∗).** The elementwise action of `fix` is
 the least fixed point of the corresponding map: `fix.toElementMap φ = fix(toApproxMap φ)`. The
@@ -1831,21 +1260,11 @@ theorem fixMap_toElementMap (V : NeighborhoodSystem α) (φ : (funSpace V V).Ele
     refine ⟨W, hw, ?_⟩
     rw [fixMap_toElementMap_principal]
     exact ⟨n, hWn⟩
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/fixMap_least.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
-
 open ApproximableMap
-
 
 /-- **Theorem 4.2(ii) (Scott 1981, PRG-19).** `f(x) ⊆ x ⟹ fix(f) ⊆ x`: `fix` lands in the least
 pre-fixed point. -/
@@ -1853,21 +1272,11 @@ theorem fixMap_least (V : NeighborhoodSystem α) (φ : (funSpace V V).Element) {
     (hz : (toApproxMap φ).toElementMap z ≤ z) : (fixMap V).toElementMap φ ≤ z := by
   rw [fixMap_toElementMap]
   exact fixElement_le_of_toElementMap_le (toApproxMap φ) hz
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/fixMap_toElementMap_toFilter.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
-
 open ApproximableMap
-
 
 /-- `fix` applied to (the filter of) an approximable map `f` returns the least fixed point of `f`.
 This is the bridge to the "for any `f : 𝒟 → 𝒟`" form of Theorem 4.2, using the Theorem 3.10
@@ -1879,16 +1288,9 @@ theorem fixMap_toElementMap_toFilter (V : NeighborhoodSystem α) (f : Approximab
     have he := (funSpaceEquiv V V).apply_symm_apply f
     rwa [funSpaceEquiv_apply, funSpaceEquiv_symm_apply] at he
   rw [h]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/iterElem_eq_iterate.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1909,15 +1311,9 @@ theorem iterElem_eq_iterate (f : ApproximableMap V V) (n : ℕ) :
     rw [hstep, ih, Function.iterate_succ', Function.comp_apply]
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/mem_iterElem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1933,15 +1329,9 @@ theorem mem_iterElem (f : ApproximableMap V V) (n : ℕ) {X : Set α} :
   · intro h; exact ⟨V.master, by rw [mem_bot], h⟩
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/iterElem_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1955,15 +1345,9 @@ theorem iterElem_mono (f : ApproximableMap V V) {n m : ℕ} (hnm : n ≤ m) :
   exact rel_master_mono f hnm hX
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/fixElement_eq_iSupDirected.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -1984,20 +1368,11 @@ theorem fixElement_eq_iSupDirected (f : ApproximableMap V V) :
   · rintro ⟨n, hn⟩; exact ⟨n, (mem_iterElem f n).mp hn⟩
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/fixMap_eq_iSup.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
-
 open ApproximableMap
-
 
 /-- **Theorem 4.2(iii) (Scott 1981, PRG-19).** `fix(f) = ⊔ₙ fⁿ(⊥)` (as a directed union). -/
 theorem fixMap_eq_iSup (V : NeighborhoodSystem α) (φ : (funSpace V V).Element) :
@@ -2007,16 +1382,9 @@ theorem fixMap_eq_iSup (V : NeighborhoodSystem α) (φ : (funSpace V V).Element)
           iterElem_mono _ (le_max_right i j)⟩) := by
   rw [fixMap_toElementMap]
   exact fixElement_eq_iSupDirected (toApproxMap φ)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/toElementMap_fixElement.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -2044,13 +1412,11 @@ theorem toElementMap_fixElement (f : ApproximableMap V V) :
       exact ⟨Z, ⟨k, hZ⟩, hZY⟩
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Theorem41.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
-
+section
 set_option linter.unusedVariables false
 
 theorem theorem_41.{u_1} : And
@@ -2095,51 +1461,27 @@ theorem theorem_41.{u_1} : And
       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f))
   @DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement_le_of_toElementMap_le
   @DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap_fixElement
-
-end DomainTheory.NeighbourhoodSystems.ApproximableMap
 end
 
-section
--- Example43/memN.lean
+end DomainTheory.NeighbourhoodSystems.ApproximableMap
 namespace DomainTheory.NeighbourhoodSystems.Example43
-
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
+section
 /-- Membership in Scott's natural-number system: a neighbourhood is the whole space `ℕ` or a
 singleton `{n}`. -/
 def memN (X : Set ℕ) : Prop := X = Set.univ ∨ ∃ n, X = {n}
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/memN_singleton.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 theorem memN_singleton (n : ℕ) : memN ({n} : Set ℕ) := Or.inr ⟨n, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/memN_univ.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 theorem memN_univ : memN (Set.univ : Set ℕ) := Or.inl rfl
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/nestedOrDisjoint.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- Any two neighbourhoods of `N` are nested or disjoint: `ℕ` contains every singleton, and two
 distinct singletons are disjoint. -/
 theorem nestedOrDisjoint : NestedOrDisjoint memN := by
@@ -2155,133 +1497,63 @@ theorem nestedOrDisjoint : NestedOrDisjoint memN := by
         not_and]
       rintro rfl hkm
       exact h hkm
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/N.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /- concordance: source L1795 EXAMPLE 4.3 partial functions on integers -/
 /-- **Example 4.3 (Scott 1981, PRG-19).** The natural-number neighbourhood system `N` on `Δ = ℕ`. -/
 abbrev N : NeighborhoodSystem ℕ :=
   NeighborhoodSystem.ofNestedOrDisjoint memN Set.univ Set.univ_nonempty memN_univ nestedOrDisjoint
     (fun _ => Set.subset_univ _)
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/N_mem.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 @[simp] theorem N_mem {X : Set ℕ} : N.mem X ↔ memN X := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/N_master.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 @[simp] theorem N_master : N.master = (Set.univ : Set ℕ) := rfl
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/T.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- The two-token truth domain `T` of Example 1.2 (= `Example23.T`). -/
 abbrev T : NeighborhoodSystem Example12.Token := Example23.T
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/natElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- Scott's total element `n̂ = ↑{n} = {{n}, ℕ}`, the principal filter of the singleton `{n}`. -/
 def natElem (n : ℕ) : N.Element := N.principal (N_mem.mpr (memN_singleton n))
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/predVal.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- The value table for `pred`: `pred(0) = ⊥`, `pred(k+1) = k`. -/
 def predVal : ℕ → N.Element
   | 0 => N.bot
   | (k + 1) => natElem k
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/singleton_nat_inj.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- Singletons of naturals are one-one as sets. -/
 theorem singleton_nat_inj {n m : ℕ} (h : ({n} : Set ℕ) = {m}) : n = m := by
   have h1 : n ∈ ({n} : Set ℕ) := rfl
   rw [h] at h1
   exact h1
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/univ_ne_singleton.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- `ℕ` is not a singleton (a witness `n+1 ≠ n`). -/
 theorem univ_ne_singleton (n : ℕ) : (Set.univ : Set ℕ) ≠ {n} := by
   intro h
   have h1 : (n + 1) ∈ ({n} : Set ℕ) := h ▸ Set.mem_univ (n + 1)
   exact Nat.succ_ne_self n h1
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/singleton_ne_univ.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- `{n} ≠ ℕ` (the symmetric form). -/
 theorem singleton_ne_univ (n : ℕ) : ({n} : Set ℕ) ≠ Set.univ := fun h => univ_ne_singleton n h.symm
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/constLiftN.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- The *strict* approximable map `N → V` determined by a choice of value `val n ∈ |V|` for each
 `n`: it sends the total element `n̂` to `val n` and the bottom `⊥` to `⊥`. The relation
 `X f Y` holds when either `X = Δ_N` forces the blunt output `Y = Δ_V` (the strict `⊥ ↦ ⊥` clause),
@@ -2325,92 +1597,41 @@ def constLiftN {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element
       · have hkn : k = n := Set.mem_singleton_iff.mp (Set.singleton_subset_iff.mp hX'X)
         subst hkn
         exact Or.inr ⟨k, rfl, (val k).up_mem hY hY' hYY'⟩
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/predMap.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- **Example 4.3 — `pred`.** `pred(0) = ⊥`, `pred(n+1) = n`, strict (`pred(⊥) = ⊥`). -/
 def predMap : ApproximableMap N N := constLiftN N predVal
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/succMap.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- **Example 4.3 — `succ`.** `succ(n) = n + 1`, strict (`succ(⊥) = ⊥`). -/
 def succMap : ApproximableMap N N := constLiftN N (fun n => natElem (n + 1))
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/zeroElt.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- Scott's `0 ∈ |N|`, the distinguished zero of the structured domain. -/
 def zeroElt : N.Element := natElem 0
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/zeroVal.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- The value table for `zero`: `zero(0) = true`, `zero(n+1) = false`. -/
 def zeroVal : ℕ → T.Element
   | 0 => Example23.trueElt
   | (_ + 1) => Example23.falseElt
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/zeroMap.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- **Example 4.3 — `zero`.** `zero(0) = true`, `zero(n+1) = false`, strict (`zero(⊥) = ⊥`). -/
 def zeroMap : ApproximableMap N T := constLiftN T zeroVal
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/N_bot_mem.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `⊥ ∈ N` reads: a neighbourhood lies in `⊥` iff it is the whole space `ℕ`. -/
 theorem N_bot_mem {X : Set ℕ} : N.bot.mem X ↔ X = Set.univ := NeighborhoodSystem.mem_bot N
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/constLiftN_bot.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- **Computation on bottom (strictness).** `f(⊥) = ⊥`. -/
 theorem constLiftN_bot {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element) :
     (constLiftN V val).toElementMap N.bot = V.bot := by
@@ -2427,17 +1648,9 @@ theorem constLiftN_bot {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V
     rw [V.mem_bot] at hY
     subst hY
     exact ⟨Set.univ, N_bot_mem.mpr rfl, Or.inl ⟨rfl, rfl⟩⟩
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/mem_natElem_iff.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- A neighbourhood belongs to `n̂` iff it is `ℕ` (the master) or the singleton `{n}`. -/
 theorem mem_natElem_iff {n : ℕ} {Y : Set ℕ} :
     (natElem n).mem Y ↔ Y = Set.univ ∨ Y = {n} := by
@@ -2452,17 +1665,9 @@ theorem mem_natElem_iff {n : ℕ} {Y : Set ℕ} :
   · rintro (rfl | rfl)
     · exact ⟨memN_univ, Set.subset_univ _⟩
     · exact ⟨memN_singleton n, subset_rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/constLiftN_natElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- **Computation on the total elements.** `f(n̂) = val n`. -/
 theorem constLiftN_natElem {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element) (n : ℕ) :
     (constLiftN V val).toElementMap (natElem n) = val n := by
@@ -2479,192 +1684,89 @@ theorem constLiftN_natElem {β : Type*} (V : NeighborhoodSystem β) (val : ℕ �
         subst hnk; exact hY
   · intro hY
     exact ⟨{n}, mem_natElem_iff.mpr (Or.inr rfl), Or.inr ⟨n, rfl, hY⟩⟩
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/predMap_bot.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `pred(⊥) = ⊥`. -/
 theorem predMap_bot : predMap.toElementMap N.bot = N.bot :=
   constLiftN_bot N predVal
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/predMap_natElem_succ.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `pred((n+1)^) = n̂`. -/
 theorem predMap_natElem_succ (k : ℕ) : predMap.toElementMap (natElem (k + 1)) = natElem k :=
   constLiftN_natElem N predVal (k + 1)
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/predMap_natElem_zero.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `pred(0̂) = ⊥`: predecessor of zero is undefined. -/
 theorem predMap_natElem_zero : predMap.toElementMap (natElem 0) = N.bot :=
   constLiftN_natElem N predVal 0
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/succMap_bot.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `succ(⊥) = ⊥`. -/
 theorem succMap_bot : succMap.toElementMap N.bot = N.bot :=
   constLiftN_bot N (fun n => natElem (n + 1))
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/succMap_natElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `succ(n̂) = (n+1)^`. -/
 theorem succMap_natElem (n : ℕ) : succMap.toElementMap (natElem n) = natElem (n + 1) :=
   constLiftN_natElem N (fun n => natElem (n + 1)) n
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/predMap_succMap_natElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `pred(succ(n̂)) = n̂`: the predecessor undoes the successor on total elements. (A sample of the
 "recursion" reasoning Scott highlights; cf. the iterated-summation example.) -/
 theorem predMap_succMap_natElem (n : ℕ) :
     predMap.toElementMap (succMap.toElementMap (natElem n)) = natElem n := by
   rw [succMap_natElem, predMap_natElem_succ]
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/zeroMap_bot.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `zero(⊥) = ⊥`. -/
 theorem zeroMap_bot : zeroMap.toElementMap N.bot = T.bot :=
   constLiftN_bot T zeroVal
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/zeroMap_natElem_succ.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `zero((n+1)^) = false`. -/
 theorem zeroMap_natElem_succ (n : ℕ) : zeroMap.toElementMap (natElem (n + 1)) = Example23.falseElt :=
   constLiftN_natElem T zeroVal (n + 1)
-
-end DomainTheory.NeighbourhoodSystems.Example43
 end
 
 section
--- Example43/zeroMap_natElem_zero.lean
-namespace DomainTheory.NeighbourhoodSystems.Example43
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `zero(0̂) = true`. -/
 theorem zeroMap_natElem_zero : zeroMap.toElementMap (natElem 0) = Example23.trueElt :=
   constLiftN_natElem T zeroVal 0
+end
 
 end DomainTheory.NeighbourhoodSystems.Example43
-end
-
-section
--- Example44/memC.lean
 namespace DomainTheory.NeighbourhoodSystems.Example44
-
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
 
+section
 /-- Membership in `C`: a neighbourhood is a cone `σΣ*` or a singleton `{σ}`. -/
 def memC (X : Set Str) : Prop := (∃ σ, X = cone σ) ∨ (∃ σ, X = {σ})
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/memC_cone.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 theorem memC_cone (σ : Str) : memC (cone σ) := Or.inl ⟨σ, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/memC_singleton.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 theorem memC_singleton (σ : Str) : memC ({σ} : Set Str) := Or.inr ⟨σ, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/prepend_mono.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 /-- Prepending is monotone in its set argument. -/
 theorem prepend_mono (σ : Str) {X X' : Set Str} (h : X' ⊆ X) : prepend σ X' ⊆ prepend σ X := by
   rintro w ⟨τ, hτ, rfl⟩
   exact ⟨τ, h hτ, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/prepend_singleton.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 /-- `σ{τ} = {στ}`: prepending `σ` to a singleton is the singleton of the concatenation. -/
 theorem prepend_singleton (σ τ : Str) : prepend σ {τ} = {σ ++ τ} := by
   ext w
@@ -2672,29 +1774,15 @@ theorem prepend_singleton (σ τ : Str) : prepend σ {τ} = {σ ++ τ} := by
   constructor
   · rintro ⟨t, rfl, rfl⟩; rfl
   · rintro rfl; exact ⟨τ, rfl, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/singleton_subset_cone.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 /-- `{τ} ⊆ σΣ*` iff `σ` is an initial segment of `τ`. -/
 theorem singleton_subset_cone {σ τ : Str} : ({τ} : Set Str) ⊆ cone σ ↔ σ <+: τ := by
   rw [Set.singleton_subset_iff, mem_cone]
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/singleton_cone_nd.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 /-- A singleton and a cone are nested-or-disjoint. -/
 theorem singleton_cone_nd (σ τ : Str) :
     ({τ} : Set Str) ⊆ cone σ ∨ cone σ ⊆ {τ} ∨ ({τ} : Set Str) ∩ cone σ = ∅ := by
@@ -2706,16 +1794,9 @@ theorem singleton_cone_nd (σ τ : Str) :
       iff_false, not_and]
     rintro rfl hτ
     exact h hτ
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/nestedOrDisjoint.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 /-- Any two neighbourhoods of `C` are nested or disjoint. -/
 theorem nestedOrDisjoint : NestedOrDisjoint memC := by
   rintro X Y (⟨σ, rfl⟩ | ⟨σ, rfl⟩) (⟨τ, rfl⟩ | ⟨τ, rfl⟩)
@@ -2736,16 +1817,9 @@ theorem nestedOrDisjoint : NestedOrDisjoint memC := by
         not_and]
       rintro rfl h2
       exact h h2
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/C.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 /- concordance: source L1989 EXAMPLE 4.4 sequence domain -/
 /-- **Example 4.4 (Scott 1981, PRG-19).** The neighbourhood system `C` of finite or infinite binary
 sequences on `Δ = Σ*`. -/
@@ -2753,54 +1827,26 @@ abbrev C : NeighborhoodSystem Str :=
   NeighborhoodSystem.ofNestedOrDisjoint memC Set.univ
     ⟨[], Set.mem_univ _⟩ (Or.inl ⟨[], cone_nil.symm⟩) nestedOrDisjoint
     (fun _ => Set.subset_univ _)
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/C_mem.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 @[simp] theorem C_mem {X : Set Str} : C.mem X ↔ memC X := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/C_master.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 @[simp] theorem C_master : C.master = (Set.univ : Set Str) := rfl
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/memC_prepend.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 /-- Prepending the bit `b` (or, generally, a prefix `σ`) to a neighbourhood of `C` lands back in
 `C`: `σ(τΣ*) = (στ)Σ*` and `σ{τ} = {στ}`. -/
 theorem memC_prepend (σ : Str) {X : Set Str} (hX : memC X) : memC (prepend σ X) := by
   rcases hX with ⟨ρ, rfl⟩ | ⟨ρ, rfl⟩
   · exact Or.inl ⟨σ ++ ρ, prepend_cone σ ρ⟩
   · exact Or.inr ⟨σ ++ ρ, prepend_singleton σ ρ⟩
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/consMap.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 /-- **Example 4.4 — the successors `x ↦ bx`.** The approximable map prepending the bit `b`:
 `X (bx) Y ↔ bX ⊆ Y`. Approximable because `bX` is again a neighbourhood (`memC_prepend`) and
 prepending is monotone. -/
@@ -2819,70 +1865,33 @@ def consMap (b : Bool) : ApproximableMap C C where
   mono := by
     rintro X X' Y Y' ⟨hX, hY, hsub⟩ hX'X hYY' hX' hY'
     exact ⟨hX', hY', (prepend_mono [b] hX'X).trans (hsub.trans hYY')⟩
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/altElt.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 /-- **Example 4.4 — an element defined by a fixed-point equation.** Scott's `a = 01a`, the infinite
 sequence that alternates `0`s and `1`s. We take the least fixed point of `x ↦ 0(1x)`
 (`= consMap 0 ∘ consMap 1`), which exists by the Fixed-point Theorem 4.1. -/
 def altElt : C.Element := ((consMap false).comp (consMap true)).fixElement
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/strBot.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 /-- Scott's partial element `σ⊥ = ↑σΣ*` ("the sequence starts with `σ`"). -/
 def strBot (σ : Str) : C.Element := C.principal (C_mem.mpr (memC_cone σ))
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/strElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
 /-- Scott's total element `σ = ↑{σ}` (the finite sequence `σ`, completed). -/
 def strElem (σ : Str) : C.Element := C.principal (C_mem.mpr (memC_singleton σ))
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/altElt_eq.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
-
 /-- `a = 0(1a)`: `altElt` satisfies Scott's defining equation. -/
 theorem altElt_eq : (consMap false).toElementMap ((consMap true).toElementMap altElt) = altElt := by
   have h := toElementMap_fixElement ((consMap false).comp (consMap true))
   rwa [toElementMap_comp] at h
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/consMap_strBot.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
-
 /-- `bx` on a partial element: `b(σ⊥) = (bσ)⊥`. -/
 theorem consMap_strBot (b : Bool) (σ : Str) :
     (consMap b).toElementMap (strBot σ) = strBot (b :: σ) := by
@@ -2896,17 +1905,9 @@ theorem consMap_strBot (b : Bool) (σ : Str) :
   · rintro ⟨hY, hsub⟩
     refine ⟨cone σ, ⟨memC_cone σ, subset_rfl⟩, memC_cone σ, hY, ?_⟩
     rw [prepend_cone]; exact hsub
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/consMap_strElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
-
 /-- `bx` on a total element: `b(σ) = (bσ)` (prepend the bit to a finite sequence). -/
 theorem consMap_strElem (b : Bool) (σ : Str) :
     (consMap b).toElementMap (strElem σ) = strElem (b :: σ) := by
@@ -2920,30 +1921,19 @@ theorem consMap_strElem (b : Bool) (σ : Str) :
   · rintro ⟨hY, hsub⟩
     refine ⟨{σ}, ⟨memC_singleton σ, subset_rfl⟩, memC_singleton σ, hY, ?_⟩
     rw [prepend_singleton]; exact hsub
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
 section
--- Example44/prepend_subset_self.lean
-namespace DomainTheory.NeighbourhoodSystems.Example44
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
-
-
 /-- `σX ⊆ X` along the prefix order: a prepended neighbourhood is contained in any neighbourhood it
 refines. (Used only via `prepend_mono`; kept implicit.) -/
 theorem prepend_subset_self : True := trivial
-
-end DomainTheory.NeighbourhoodSystems.Example44
 end
 
-section
--- Exercise407/iterFrom.lean
+end DomainTheory.NeighbourhoodSystems.Example44
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
+section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -2953,16 +1943,9 @@ def iterFrom (f : ApproximableMap V V) (a : V.Element) (n : ℕ) : V.Element :=
   (f.toElementMap)^[n] a
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise407/iterFrom_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -2971,16 +1954,9 @@ namespace ApproximableMap
     f.iterFrom a 0 = a := rfl
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise407/iterFrom_succ.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -2990,16 +1966,9 @@ theorem iterFrom_succ (f : ApproximableMap V V) (a : V.Element) (n : ℕ) :
   rw [iterFrom, iterFrom, Function.iterate_succ', Function.comp_apply]
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise407/iterFrom_step.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3014,16 +1983,9 @@ theorem iterFrom_step (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.to
     exact f.toElementMap_mono ih
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise407/iterFrom_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3037,16 +1999,9 @@ theorem iterFrom_mono (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.to
   | step _ ih => exact le_trans ih (iterFrom_step f ha _)
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise407/fixAbove.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3059,16 +2014,9 @@ def fixAbove (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toElementMa
       iterFrom_mono f ha (le_max_right i j)⟩)
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise407/fixAbove_isFixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3100,15 +2048,9 @@ theorem fixAbove_isFixed (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f
           f.toElementMap_mono (NeighborhoodSystem.le_iSupDirected (f.iterFrom a) hdir n)
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise407/fixAbove_least.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3127,13 +2069,11 @@ theorem fixAbove_least (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.t
     exact le_trans (f.toElementMap_mono ih) hz
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise407.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
-
+section
 set_option linter.unusedVariables false
 
 theorem example_407.{u_1} : And
@@ -3216,16 +2156,13 @@ theorem example_407.{u_1} : And
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixAbove α V f a ha) z)
   @DomainTheory.NeighbourhoodSystems.ApproximableMap.fixAbove_isFixed
   @DomainTheory.NeighbourhoodSystems.ApproximableMap.fixAbove_least
-
-end DomainTheory.NeighbourhoodSystems.ApproximableMap
 end
 
-section
--- Exercise407/le_fixAbove.lean
+end DomainTheory.NeighbourhoodSystems.ApproximableMap
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
+section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3240,15 +2177,9 @@ theorem le_fixAbove (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toEl
   rwa [iterFrom_zero] at this
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise408/supChain.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3259,16 +2190,9 @@ def supChain (s : ℕ → V.Element) (hmono : Monotone s) : V.Element :=
     (fun i j => ⟨max i j, hmono (le_max_left i j), hmono (le_max_right i j)⟩)
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise408/iterElem_monotone.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3279,15 +2203,9 @@ theorem iterElem_monotone (f : ApproximableMap V V) : Monotone f.iterElem :=
   fun _ _ hab => iterElem_mono f hab
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise408/iterElem_succ.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3301,15 +2219,9 @@ theorem iterElem_succ (f : ApproximableMap V V) (n : ℕ) :
   rw [toElementMap_comp]
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise408/iterElem_zero.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3319,15 +2231,9 @@ theorem iterElem_zero (f : ApproximableMap V V) : f.iterElem 0 = V.bot :=
   toElementMap_idMap V.bot
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise408/mem_supChain.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3338,15 +2244,9 @@ theorem mem_supChain (s : ℕ → V.Element) (hmono : Monotone s) {Z : Set α} :
   NeighborhoodSystem.mem_iSupDirected s _
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise408/fixElement_eq_supChain.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3363,15 +2263,9 @@ theorem fixElement_eq_supChain (f : ApproximableMap V V) :
   · rintro ⟨n, hn⟩; exact ⟨n, (mem_iterElem f n).mp hn⟩
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise408/fix_induction.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3395,15 +2289,9 @@ theorem fix_induction (f : ApproximableMap V V) (P : V.Element → Prop)
   exact hsup f.iterElem hmono hP
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise408/fix_induction_eq.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -3440,13 +2328,11 @@ theorem fix_induction_eq (f a b : ApproximableMap V V)
     · rintro ⟨n, hn⟩; exact ⟨n, by rw [hs n]; exact hn⟩
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise408.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
-
+section
 set_option linter.unusedVariables false
 
 theorem example_408.{u_1} : And
@@ -3517,16 +2403,13 @@ theorem example_408.{u_1} : And
           P (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f))
   @DomainTheory.NeighbourhoodSystems.ApproximableMap.fix_induction_eq
   @DomainTheory.NeighbourhoodSystems.ApproximableMap.fix_induction
-
-end DomainTheory.NeighbourhoodSystems.ApproximableMap
 end
 
-section
--- Exercise409/bigPsi.lean
+end DomainTheory.NeighbourhoodSystems.ApproximableMap
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
+section
 variable {α : Type*}
 
 /- concordance: source L2225 EXERCISE 4.9 fix as a fixed point -/
@@ -3536,18 +2419,10 @@ def bigPsi (V : NeighborhoodSystem α) :
     ApproximableMap (funSpace (funSpace V V) V) (funSpace (funSpace V V) V) :=
   curry ((evalMap V V).comp
     (paired (proj₁ (funSpace (funSpace V V) V) (funSpace V V)) (evalMap (funSpace V V) V)))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise409/bigPsi_apply.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*}
-
 
 /-- **Exercise 4.9 (Scott 1981, PRG-19).** The defining equation `Ψ(θ)(f) = f(θ(f))`. -/
 theorem bigPsi_apply (V : NeighborhoodSystem α)
@@ -3556,18 +2431,10 @@ theorem bigPsi_apply (V : NeighborhoodSystem α)
       = (toApproxMap f).toElementMap ((toApproxMap θ).toElementMap f) := by
   rw [bigPsi, toElementMap_curry_apply, toElementMap_comp, toElementMap_paired,
     toElementMap_proj₁, snd_pair, evalMap_apply, evalMap_apply]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise409/toApproxMap_toFilter_fixMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*}
-
 
 /-- `fix`, as the element of `E = ((𝒟 → 𝒟) → 𝒟)` corresponding to the operator `fixMap`, unfolds
 under `toApproxMap` back to `fixMap` (the `funSpace` round-trip). -/
@@ -3575,18 +2442,10 @@ theorem toApproxMap_toFilter_fixMap (V : NeighborhoodSystem α) :
     toApproxMap (toFilter (fixMap V)) = fixMap V := by
   have he := (funSpaceEquiv (funSpace V V) V).apply_symm_apply (fixMap V)
   rwa [funSpaceEquiv_apply, funSpaceEquiv_symm_apply] at he
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise409/bigPsi_fix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*}
-
 
 /-- **Exercise 4.9 (Scott 1981, PRG-19).** `fix` is a *fixed point* of `Ψ`: `Ψ(fix) = fix`. -/
 theorem bigPsi_fix (V : NeighborhoodSystem α) :
@@ -3596,18 +2455,10 @@ theorem bigPsi_fix (V : NeighborhoodSystem α) :
   apply ext_of_toElementMap
   intro f
   rw [bigPsi_apply, toApproxMap_toFilter_fixMap, fixMap_toElementMap, toElementMap_fixElement]
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise409/bigPsi_least.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*}
-
 
 /-- **Exercise 4.9 (Scott 1981, PRG-19).** `fix` is the *least* pre-fixed point of `Ψ`: any `θ` with
 `Ψ(θ) ⊑ θ` satisfies `fix ⊑ θ`. -/
@@ -3628,18 +2479,10 @@ theorem bigPsi_least (V : NeighborhoodSystem α) (θ : (funSpace (funSpace V V) 
   intro f
   rw [fixMap_toElementMap]
   exact fixElement_le_of_toElementMap_le (toApproxMap f) (hpre f)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise409/fix_eq_fixElement_bigPsi.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*}
-
 
 /-- **Exercise 4.9 (Scott 1981, PRG-19).** `fix = fix(Ψ)`: `fix` is the least fixed point of `Ψ`,
 i.e. coincides with Theorem 4.1's canonical least fixed point `fixElement Ψ`. -/
@@ -3648,14 +2491,9 @@ theorem fix_eq_fixElement_bigPsi (V : NeighborhoodSystem α) :
   apply le_antisymm
   · exact bigPsi_least V _ (le_of_eq (toElementMap_fixElement (bigPsi V)))
   · exact fixElement_le_of_toElementMap_le (bigPsi V) (le_of_eq (bigPsi_fix V))
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise409.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_409.{u_1} : And
@@ -4210,16 +3048,9 @@ theorem example_409.{u_1} : And
       @DomainTheory.NeighbourhoodSystems.bigPsi_apply @DomainTheory.NeighbourhoodSystems.bigPsi_fix)
     @DomainTheory.NeighbourhoodSystems.bigPsi_least)
   @DomainTheory.NeighbourhoodSystems.fix_eq_fixElement_bigPsi
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/relSystem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4236,16 +3067,9 @@ def relSystem (a : V.Element) : NeighborhoodSystem α where
   inter_mem := fun hX hY _ _ => a.inter_mem hX hY
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/relSystem_mem.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4254,16 +3078,9 @@ namespace ApproximableMap
     (relSystem a).mem X ↔ a.mem X := Iff.rfl
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/relSystem_master.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4271,16 +3088,9 @@ namespace ApproximableMap
 @[simp] theorem relSystem_master (a : V.Element) : (relSystem a).master = V.master := rfl
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/embed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4301,16 +3111,9 @@ def embed (a : V.Element) (g : (relSystem a).Element) : V.Element where
     exact ⟨hVY, W, haW, hgW, subset_trans hWX hXY⟩
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/embed_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4321,16 +3124,9 @@ theorem embed_le (a : V.Element) (g : (relSystem a).Element) : embed a g ≤ a :
   exact a.up_mem haW hVX hWX
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/embed_mono.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4341,16 +3137,9 @@ theorem embed_mono (a : V.Element) {g₁ g₂ : (relSystem a).Element} (h : g₁
   exact ⟨hVX, W, haW, h _ hgW, hWX⟩
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/le_of_embed_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4364,16 +3153,9 @@ theorem le_of_embed_le (a : V.Element) {g₁ g₂ : (relSystem a).Element}
   exact g₂.up_mem hg₂W (g₁.sub hg₁X) hWX
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/relMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4402,16 +3184,9 @@ def relMap (f : ApproximableMap V V) {a : V.Element} (ha : f.toElementMap a = a)
     exact ⟨haX', f.mono hXY hX'X hYY' (a.sub haX') (a.sub haY')⟩
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/restrict.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4425,16 +3200,9 @@ def restrict (a : V.Element) (x : V.Element) (hx : x ≤ a) : (relSystem a).Elem
   up_mem := fun hX hY hXY => x.up_mem hX (a.sub hY) hXY
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/embed_restrict.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4450,16 +3218,9 @@ theorem embed_restrict (a : V.Element) (x : V.Element) (hx : x ≤ a) :
     exact ⟨x.sub hxX, X, hx _ hxX, hxX, subset_rfl⟩
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/restrict_embed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4475,16 +3236,9 @@ theorem restrict_embed (a : V.Element) (g : (relSystem a).Element) :
     exact ⟨a.sub (g.sub hgX), X, g.sub hgX, hgX, subset_rfl⟩
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/relIso.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4503,16 +3257,9 @@ def relIso (a : V.Element) : (relSystem a).Element ≃o {x : V.Element // x ≤ 
     · intro h; exact embed_mono a h
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/fixElement_below_unique.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4526,15 +3273,9 @@ theorem fixElement_below_unique (f : ApproximableMap V V) {x : V.Element}
   exact le_antisymm hxle hge
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/relMap_toElementMap_embed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4564,15 +3305,9 @@ theorem relMap_toElementMap_embed (f : ApproximableMap V V) {a : V.Element}
     exact ⟨hVX, X, haX, ⟨W, hgW, haW, hWX⟩, subset_rfl⟩
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise410/relMap_unique_fixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4603,13 +3338,11 @@ theorem relMap_unique_fixed (f : ApproximableMap V V)
   rw [← h1, h2]
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise410.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
-
+section
 set_option linter.unusedVariables false
 
 theorem example_410.{u_1} : And
@@ -4712,16 +3445,13 @@ theorem example_410.{u_1} : And
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f))))
   @DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement_below_unique
   @DomainTheory.NeighbourhoodSystems.ApproximableMap.relMap_unique_fixed
-
-end DomainTheory.NeighbourhoodSystems.ApproximableMap
 end
 
-section
--- Exercise411/inclMap.lean
+end DomainTheory.NeighbourhoodSystems.ApproximableMap
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
+section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4742,16 +3472,9 @@ def inclMap (a : V.Element) : ApproximableMap (relSystem a) V where
     exact ⟨haX', hVY', (hX'X.trans hXY).trans hYY'⟩
 
 end ApproximableMap
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise411/inclMap_toElementMap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4769,15 +3492,9 @@ theorem inclMap_toElementMap (a : V.Element) (g : (relSystem a).Element) :
     exact ⟨W, hgW, haW, hVY, hWY⟩
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise411/inclMap_bot.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4798,15 +3515,9 @@ theorem inclMap_bot (a : V.Element) : (inclMap a).toElementMap (relSystem a).bot
     exact ⟨V.master_mem, V.master, a.master_mem, (relSystem a).bot.master_mem, subset_rfl⟩
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise411/inclMap_intertwine.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4820,20 +3531,11 @@ theorem inclMap_intertwine (f : ApproximableMap V V) {a : V.Element} (ha : f.toE
   rw [inclMap_toElementMap, inclMap_toElementMap, relMap_toElementMap_embed]
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise411/fix_unique_of_uniform.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
-
 open ApproximableMap
-
 universe u
 
 /- concordance: source L2249 EXERCISE 4.11 characterizing the fix combinator -/
@@ -4864,16 +3566,9 @@ theorem fix_unique_of_uniform
     (inclMap_bot f.fixElement) (inclMap_intertwine f ha)
   rw [huniq, inclMap_toElementMap, embed_restrict] at huse
   exact huse.symm
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise411/iterElem_le_fixElement.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4885,15 +3580,9 @@ theorem iterElem_le_fixElement (f : ApproximableMap V V) (n : ℕ) :
   fun _ hX => ⟨n, (mem_iterElem f n).mp hX⟩
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise411/fixElement_uniform.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -4928,13 +3617,9 @@ theorem fixElement_uniform {β γ : Type*} {W₀ : NeighborhoodSystem β} {W₁ 
     exact fixElement_le_of_toElementMap_le f₁ (le_of_eq hfp)
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise411.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 set_option linter.unusedVariables false
 
 theorem example_411.{u_2, u_3, u} : And
@@ -5043,6 +3728,7 @@ theorem example_411.{u_2, u_3, u} : And
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f))
   (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement_uniform)
   DomainTheory.NeighbourhoodSystems.fix_unique_of_uniform
+end
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -5067,11 +3753,10 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise413/mem_preFix.lean
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5080,16 +3765,9 @@ namespace NeighborhoodSystem
     x ∈ preFix f ↔ f x ≤ x := Iff.rfl
 
 end NeighborhoodSystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise413/monoFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5101,16 +3779,9 @@ def monoFix (f : V.Element → V.Element) {a : V.Element} (ha : f a ≤ a) : V.E
   V.sInf (preFix f) ⟨a, ha⟩
 
 end NeighborhoodSystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise413/exists_unique_nat_rec.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5130,15 +3801,9 @@ theorem exists_unique_nat_rec {Z : Type*} (z : Z) (op : Z → Z) :
   | succ k ih => rw [hsucc k, ih]
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise413/monoFix_le_preFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5150,15 +3815,9 @@ theorem monoFix_le_preFix (f : V.Element → V.Element) {a : V.Element} (ha : f 
   V.sInf_le (preFix f) ⟨a, ha⟩ hx
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise413/monoFix_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5169,15 +3828,9 @@ theorem monoFix_le (f : V.Element → V.Element) {a : V.Element} (ha : f a ≤ a
     monoFix f ha ≤ a := monoFix_le_preFix f ha ha
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise413/monoFix_least.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5190,15 +3843,9 @@ theorem monoFix_least (f : V.Element → V.Element) {a : V.Element} (ha : f a �
   monoFix_le_preFix f ha (le_of_eq hy)
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise413/monoFix_preFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5212,15 +3859,9 @@ theorem monoFix_preFix (f : V.Element → V.Element) (hf : Monotone f) {a : V.El
   exact le_trans (hf (monoFix_le_preFix f ha hx)) hx
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise413/monoFix_isFixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5237,15 +3878,9 @@ theorem monoFix_isFixed (f : V.Element → V.Element) (hf : Monotone f) {a : V.E
   exact le_antisymm hfb hbf
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise413/nat_iterate_unique.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5262,13 +3897,11 @@ theorem nat_iterate_unique {s : ℕ → ℕ} (h0 : s 0 = 0) (hsucc : ∀ n, s (n
   | succ k ih => rw [hsucc k, ih]
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise413.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
-
+section
 set_option linter.unusedVariables false
 
 theorem example_413.{u_1, u_2} : And
@@ -5480,16 +4113,13 @@ theorem example_413.{u_1, u_2} : And
       @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.exists_unique_nat_rec)
     @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.monoFix_least)
   @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.nat_iterate_unique
-
-end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 end
 
-section
--- Exercise415/chainUnion_le.lean
+end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5502,15 +4132,9 @@ theorem chainUnion_le (C : Set V.Element) (hne : C.Nonempty) (hchain : IsChain (
   exact hy x hxC Z hxZ
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise415/exists_maximal_fixedPoint.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5542,15 +4166,9 @@ theorem exists_maximal_fixedPoint (f : V.Element → V.Element) (hf : Monotone f
   exact le_of_eq hy.symm
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise415/exists_least_fixedPoint.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5565,13 +4183,11 @@ theorem exists_least_fixedPoint (f : V.Element → V.Element) (hf : Monotone f) 
     fun y hy => monoFix_least f (le_of_eq hfm) hy⟩
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise415.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
-
+section
 set_option linter.unusedVariables false
 
 theorem example_415.{u_1} : And
@@ -5668,16 +4284,13 @@ theorem example_415.{u_1} : And
                   y m))
   @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.exists_least_fixedPoint
   @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.exists_maximal_fixedPoint
-
-end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 end
 
-section
--- Exercise416/f_sInf_le.lean
+end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem
 
+section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5692,16 +4305,9 @@ theorem f_sInf_le (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Ele
     _ = s := hfix s hsS
 
 end NeighborhoodSystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise416/optimalFix.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5715,16 +4321,9 @@ def optimalFix (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Elemen
   monoFix f (f_sInf_le f hf S hS hfix)
 
 end NeighborhoodSystem
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise416/optimalFix_isFixed.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5737,15 +4336,9 @@ theorem optimalFix_isFixed (f : V.Element → V.Element) (hf : Monotone f) (S : 
   monoFix_isFixed f hf _
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise416/optimalFix_le_sInf.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5758,15 +4351,9 @@ theorem optimalFix_le_sInf (f : V.Element → V.Element) (hf : Monotone f) (S : 
   monoFix_le f _
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise416/optimalFix_le.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5779,15 +4366,9 @@ theorem optimalFix_le (f : V.Element → V.Element) (hf : Monotone f) (S : Set V
   le_trans (optimalFix_le_sInf f hf S hS hfix) (V.sInf_le S hS hs)
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise416/optimalFix_consistent.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
@@ -5801,13 +4382,11 @@ theorem optimalFix_consistent (f : V.Element → V.Element) (hf : Monotone f) (S
   ⟨s, optimalFix_le f hf S hS hfix hs, le_refl s⟩
 
 end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise416.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
-
+section
 set_option linter.unusedVariables false
 
 theorem example_416.{u_1} : And
@@ -6056,16 +4635,13 @@ theorem example_416.{u_1} : And
     @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.f_sInf_le
     @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.optimalFix_consistent)
   @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.optimalFix_le
-
-end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 end
 
-section
--- Exercise418/Basic.lean
+end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 namespace DomainTheory.NeighbourhoodSystems.Exercise418
-
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example43
 
+section
 /-- Distinct singletons are disjoint. -/
 theorem singleton_inter_eq_empty {n m : ℕ} (hmn : m ≠ n) :
     ({n} : Set ℕ) ∩ {m} = ∅ := by
@@ -6073,16 +4649,9 @@ theorem singleton_inter_eq_empty {n m : ℕ} (hmn : m ≠ n) :
   simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false, not_and]
   rintro rfl h2
   exact hmn h2.symm
-end DomainTheory.NeighbourhoodSystems.Exercise418
 end
 
 section
--- Exercise418/natElem_injective.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise418
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example43
-
-
 /- concordance: source L2321 EXERCISE 4.18 checking the number domain -/
 /-- **Exercise 4.18 (Scott 1981, PRG-19).** The numerals are distinct: `n̂ = m̂ ⟹ n = m`. -/
 theorem natElem_injective {n m : ℕ} (h : natElem n = natElem m) : n = m := by
@@ -6091,47 +4660,24 @@ theorem natElem_injective {n m : ℕ} (h : natElem n = natElem m) : n = m := by
   rcases hmem with hu | hs
   · exact absurd hu (singleton_ne_univ n)
   · exact singleton_nat_inj hs
-
-end DomainTheory.NeighbourhoodSystems.Exercise418
 end
 
 section
--- Exercise418/natElem_zero_ne_succ.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise418
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example43
-
-
 /-- **Exercise 4.18 (Scott 1981, PRG-19).** `0̂` is not a numeral successor. -/
 theorem natElem_zero_ne_succ (k : ℕ) : natElem 0 ≠ natElem (k + 1) := fun h =>
   Nat.succ_ne_zero k (natElem_injective h).symm
-
-end DomainTheory.NeighbourhoodSystems.Exercise418
 end
 
 section
--- Exercise418/not_N_mem_empty.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise418
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example43
-
 /-- `∅` is not a neighbourhood of `N`. -/
 theorem not_N_mem_empty : ¬ N.mem (∅ : Set ℕ) := by
   rw [N_mem]
   rintro (h | ⟨n, h⟩)
   · exact Set.empty_ne_univ h
   · exact (Set.singleton_ne_empty n) h.symm
-
-end DomainTheory.NeighbourhoodSystems.Exercise418
 end
 
 section
--- Exercise418/element_classification.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise418
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example43
-
-
 /-- **Exercise 4.18 (Scott 1981, PRG-19).** Element classification: every element of `|N|` is either
 the bottom `⊥` or a total element `n̂`. So `N` is the flat domain over `ℕ`. -/
 theorem element_classification (x : N.Element) :
@@ -6166,47 +4712,26 @@ theorem element_classification (x : N.Element) :
       · exact absurd hY (fun hm => h ⟨m, hm⟩)
     · rintro rfl
       exact x.master_mem
-
-end DomainTheory.NeighbourhoodSystems.Exercise418
 end
 
 section
--- Exercise418/succMap_injective.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise418
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example43
-
-
 /-- **Exercise 4.18 (Scott 1981, PRG-19).** `succ` is injective on the total elements. -/
 theorem succMap_injective {n m : ℕ}
     (h : succMap.toElementMap (natElem n) = succMap.toElementMap (natElem m)) : n = m := by
   rw [succMap_natElem, succMap_natElem] at h
   have := natElem_injective h
   omega
-
-end DomainTheory.NeighbourhoodSystems.Exercise418
 end
 
 section
--- Exercise418/zero_ne_succMap.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise418
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example43
-
-
 /-- **Exercise 4.18 (Scott 1981, PRG-19).** `0̂` is not in the image of `succ` — Peano's
 "zero is not a successor". -/
 theorem zero_ne_succMap (n : ℕ) : natElem 0 ≠ succMap.toElementMap (natElem n) := by
   rw [succMap_natElem]
   exact natElem_zero_ne_succ n
-
-end DomainTheory.NeighbourhoodSystems.Exercise418
 end
 
 section
--- Exercise418.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise418
-
 set_option linter.unusedVariables false
 
 theorem example_418 : And
@@ -6429,42 +4954,25 @@ theorem example_418 : And
       DomainTheory.NeighbourhoodSystems.Exercise418.natElem_zero_ne_succ)
     @DomainTheory.NeighbourhoodSystems.Exercise418.succMap_injective)
   DomainTheory.NeighbourhoodSystems.Exercise418.zero_ne_succMap
-
-end DomainTheory.NeighbourhoodSystems.Exercise418
 end
 
-section
--- Exercise419/Basic/notation14.lean
+end DomainTheory.NeighbourhoodSystems.Exercise418
 namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
 
+section
 variable {β : Type*}
 
 notation "𝕥" => Example23.trueElt
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/Basic/notation15.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 notation "𝕗" => Example23.falseElt
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/headValC.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 /-- The codomain value chosen by inspecting the head of a sequence: `[] ↦ z`, `0σ ↦ a₀`, `1σ ↦ a₁`.
@@ -6474,72 +4982,37 @@ def headValC (V : NeighborhoodSystem β) (z a0 a1 : V.Element) : Str → V.Eleme
   | [] => z
   | false :: _ => a0
   | true :: _ => a1
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/headValC_nil.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 @[simp] theorem headValC_nil (V : NeighborhoodSystem β) (z a0 a1 : V.Element) :
     headValC V z a0 a1 [] = z := rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/headValC_false.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 @[simp] theorem headValC_false (V : NeighborhoodSystem β) (z a0 a1 : V.Element) (σ : Str) :
     headValC V z a0 a1 (false :: σ) = a0 := rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/headValC_true.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 @[simp] theorem headValC_true (V : NeighborhoodSystem β) (z a0 a1 : V.Element) (σ : Str) :
     headValC V z a0 a1 (true :: σ) = a1 := rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/T.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 /-- The truth domain `T` of Example 1.2. -/
 abbrev T : NeighborhoodSystem Example12.Token := Example23.T
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/headValC_bot_le.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 /-- Monotonicity of the head value: along a prefix `σ <+: τ`, the *partial* value (`z = ⊥`) at `σ`
@@ -6554,16 +5027,9 @@ theorem headValC_bot_le (V : NeighborhoodSystem β) (z' a0 a1 : V.Element) {σ �
     cases b
     · rw [List.cons_append]; exact le_of_eq rfl
     · rw [List.cons_append]; exact le_of_eq rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/not_cone_subset_singleton.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 /-- A cone is never contained in a singleton (it has at least two elements). -/
 theorem not_cone_subset_singleton (τ σ : Str) : ¬ cone τ ⊆ ({σ} : Set Str) := by
   intro h
@@ -6572,30 +5038,16 @@ theorem not_cone_subset_singleton (τ σ : Str) : ¬ cone τ ⊆ ({σ} : Set Str
   rw [Set.mem_singleton_iff] at h1 h2
   have : τ = τ ++ [true] := h1.trans h2.symm
   simp at this
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/cone_ne_singleton.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 /-- A cone is never equal to a singleton. -/
 theorem cone_ne_singleton (τ σ : Str) : cone τ ≠ ({σ} : Set Str) := by
   intro h
   exact not_cone_subset_singleton τ σ (h ▸ subset_rfl)
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/liftC.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 /-- A map `C → V` determined by its value `coneVal σ` on each partial element `σ⊥` and `singVal σ`
@@ -6646,32 +5098,18 @@ def liftC (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
           rwa [Set.mem_singleton_iff] at this
         subst hτσ
         exact Or.inr ⟨τ, rfl, (singVal τ).up_mem hY hY' hYY'⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/emptyMap.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 /-- **Example 4.4 — `empty`.** `empty(Λ) = true`, `empty(0x) = empty(1x) = false`, strict. -/
 def emptyMap : ApproximableMap C T :=
   liftC T (headValC T T.bot 𝕗 𝕗) (headValC T 𝕥 𝕗 𝕗)
     (headValC_bot_le T T.bot 𝕗 𝕗) (headValC_bot_le T 𝕥 𝕗 𝕗)
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/liftC_strBot.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 /-- `liftC` on a partial element: `f(σ⊥) = coneVal σ`. -/
@@ -6689,16 +5127,9 @@ theorem liftC_strBot (V : NeighborhoodSystem β) (coneVal singVal : Str → V.El
     · exact absurd (hXsing ▸ hsub) (not_cone_subset_singleton σ σ')
   · intro hY
     exact ⟨cone σ, ⟨memC_cone σ, subset_rfl⟩, Or.inl ⟨σ, rfl, hY⟩⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/liftC_strElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 /-- `liftC` on a total element: `f(σ) = singVal σ`. -/
@@ -6721,144 +5152,81 @@ theorem liftC_strElem (V : NeighborhoodSystem β) (coneVal singVal : Str → V.E
       subst hσσ'; exact hY
   · intro hY
     exact ⟨{σ}, ⟨memC_singleton σ, subset_rfl⟩, Or.inr ⟨σ, rfl, hY⟩⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/emptyMap_strElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 @[simp] theorem emptyMap_strElem (σ : Str) :
     emptyMap.toElementMap (strElem σ) = headValC T 𝕥 𝕗 𝕗 σ :=
   liftC_strElem T (headValC T T.bot 𝕗 𝕗) (headValC T 𝕥 𝕗 𝕗)
     (headValC_bot_le T T.bot 𝕗 𝕗) (headValC_bot_le T 𝕥 𝕗 𝕗) σ
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/emptyMap_strBot.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 @[simp] theorem emptyMap_strBot (σ : Str) :
     emptyMap.toElementMap (strBot σ) = headValC T T.bot 𝕗 𝕗 σ :=
   liftC_strBot T (headValC T T.bot 𝕗 𝕗) (headValC T 𝕥 𝕗 𝕗)
     (headValC_bot_le T T.bot 𝕗 𝕗) (headValC_bot_le T 𝕥 𝕗 𝕗) σ
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/oneMap.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 /-- **Example 4.4 — `one`.** `one(Λ) = false`, `one(0x) = false`, `one(1x) = true`, strict. -/
 def oneMap : ApproximableMap C T :=
   liftC T (headValC T T.bot 𝕗 𝕥) (headValC T 𝕗 𝕗 𝕥)
     (headValC_bot_le T T.bot 𝕗 𝕥) (headValC_bot_le T 𝕗 𝕗 𝕥)
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/zeroMap.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 /-- **Example 4.4 — `zero`.** `zero(Λ) = false`, `zero(0x) = true`, `zero(1x) = false`, strict. -/
 def zeroMap : ApproximableMap C T :=
   liftC T (headValC T T.bot 𝕥 𝕗) (headValC T 𝕗 𝕥 𝕗)
     (headValC_bot_le T T.bot 𝕥 𝕗) (headValC_bot_le T 𝕗 𝕥 𝕗)
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/zeroMap_strElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 @[simp] theorem zeroMap_strElem (σ : Str) :
     zeroMap.toElementMap (strElem σ) = headValC T 𝕗 𝕥 𝕗 σ :=
   liftC_strElem T (headValC T T.bot 𝕥 𝕗) (headValC T 𝕗 𝕥 𝕗)
     (headValC_bot_le T T.bot 𝕥 𝕗) (headValC_bot_le T 𝕗 𝕥 𝕗) σ
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/zeroMap_strBot.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 @[simp] theorem zeroMap_strBot (σ : Str) :
     zeroMap.toElementMap (strBot σ) = headValC T T.bot 𝕥 𝕗 σ :=
   liftC_strBot T (headValC T T.bot 𝕥 𝕗) (headValC T 𝕗 𝕥 𝕗)
     (headValC_bot_le T T.bot 𝕥 𝕗) (headValC_bot_le T 𝕗 𝕥 𝕗) σ
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/oneMap_strElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 @[simp] theorem oneMap_strElem (σ : Str) :
     oneMap.toElementMap (strElem σ) = headValC T 𝕗 𝕗 𝕥 σ :=
   liftC_strElem T (headValC T T.bot 𝕗 𝕥) (headValC T 𝕗 𝕗 𝕥)
     (headValC_bot_le T T.bot 𝕗 𝕥) (headValC_bot_le T 𝕗 𝕗 𝕥) σ
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/oneMap_strBot.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 @[simp] theorem oneMap_strBot (σ : Str) :
     oneMap.toElementMap (strBot σ) = headValC T T.bot 𝕗 𝕥 σ :=
   liftC_strBot T (headValC T T.bot 𝕗 𝕥) (headValC T 𝕗 𝕗 𝕥)
     (headValC_bot_le T T.bot 𝕗 𝕥) (headValC_bot_le T 𝕗 𝕗 𝕥) σ
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/oneDef.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
 variable {β : Type*}
 
 /-- The defining right-hand side: `cond(empty(x), false, cond(zero(x), false, true))`. It uses only
@@ -6868,19 +5236,10 @@ def oneDef (x : C.Element) : T.Element :=
     (pair (emptyMap.toElementMap x)
       (pair 𝕗
         ((Exercise326.cond T).toElementMap (pair (zeroMap.toElementMap x) (pair 𝕗 𝕥)))))
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/condT_bot.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
-
 variable {β : Type*}
-
 
 /-- `cond(⊥, x, y) = ⊥` in `T`, phrased with `T.bot` (which the head-test `empty(⊥)` produces)
 rather than the syntactically distinct `Example23.botElt` of `Exercise326.cond_bot`. -/
@@ -6897,19 +5256,10 @@ theorem condT_bot (x y : T.Element) :
   · intro h
     rw [NeighborhoodSystem.mem_bot] at h
     exact Or.inr (Or.inr h)
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/one_def_strBot.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
-
 variable {β : Type*}
-
 
 /- concordance: source L2323 EXERCISE 4.19 Peano axioms for sequences -/
 /-- **Exercise 4.19 (Scott 1981, PRG-19).** The same defining equation holds on every partial
@@ -6926,19 +5276,10 @@ theorem one_def_strBot (σ : Str) : oneMap.toElementMap (strBot σ) = oneDef (st
     | true =>
       rw [oneDef, emptyMap_strBot, headValC_true, Exercise326.cond_false,
         zeroMap_strBot, headValC_true, Exercise326.cond_false, oneMap_strBot, headValC_true]
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/one_def_strElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
-
 variable {β : Type*}
-
 
 /-- **Exercise 4.19 (Scott 1981, PRG-19).** `one` is definable from `empty`, `zero`, `cond`: the
 equation `one(x) = cond(empty(x), false, cond(zero(x), false, true))` holds on every total element
@@ -6958,46 +5299,22 @@ theorem one_def_strElem (σ : Str) : oneMap.toElementMap (strElem σ) = oneDef (
     | true =>
       rw [oneDef, emptyMap_strElem, headValC_true, Exercise326.cond_false,
         zeroMap_strElem, headValC_true, Exercise326.cond_false, oneMap_strElem, headValC_true]
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/peano_cons_disjoint.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
-
 /-- **Exercise 4.19 — Peano (ii′) for `{0,1}*`.** The two successor ranges are disjoint:
 `0σ ≠ 1τ`. -/
 theorem peano_cons_disjoint (σ τ : Str) : (false :: σ) ≠ (true :: τ) := by
   simp
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/peano_cons_injective.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
-
 /-- **Exercise 4.19 — Peano (ii) for `{0,1}*`.** Each successor `b ::·` is injective. -/
 theorem peano_cons_injective {b : Bool} {σ τ : Str} (h : b :: σ = b :: τ) : σ = τ :=
   (List.cons.injEq b σ b τ).mp h |>.2
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/peano_induction.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
-
 /-- **Exercise 4.19 — Peano (iii) for `{0,1}*`.** Induction: a predicate holding at `Λ` and closed
 under both successors holds everywhere. (This is `List.rec`; it is the two-successor analogue of
 Definition 4.5(iii) and the recursion engine behind `tail`/`empty`/`zero`/`one`.) -/
@@ -7007,28 +5324,15 @@ theorem peano_induction (P : Str → Prop) (hnil : P []) (hcons : ∀ b σ, P σ
   induction σ with
   | nil => exact hnil
   | cons b σ ih => exact hcons b σ ih
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419/peano_nil_ne_cons.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
-
-
 /-- **Exercise 4.19 — Peano (i) for `{0,1}*`.** `Λ` is not a successor: `[] ≠ b :: σ`. -/
 theorem peano_nil_ne_cons (b : Bool) (σ : Str) : ([] : Str) ≠ b :: σ := by
   simp
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
 section
--- Exercise419.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
-
 set_option linter.unusedVariables false
 
 theorem example_419 : And
@@ -7215,16 +5519,13 @@ theorem example_419 : And
       DomainTheory.NeighbourhoodSystems.Exercise419.peano_cons_disjoint)
     @DomainTheory.NeighbourhoodSystems.Exercise419.peano_cons_injective)
   DomainTheory.NeighbourhoodSystems.Exercise419.peano_induction
-
-end DomainTheory.NeighbourhoodSystems.Exercise419
 end
 
-section
--- Exercise420/comp_fixElement_isFixed.lean
+end DomainTheory.NeighbourhoodSystems.Exercise419
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
+section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -7242,15 +5543,9 @@ theorem comp_fixElement_isFixed (f g : ApproximableMap V V) :
   rw [h]
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise420/fixElement_comp_comm.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -7276,13 +5571,11 @@ theorem fixElement_comp_comm (f g : ApproximableMap V V) :
       _ = (f.comp g).fixElement := toElementMap_fixElement (f.comp g)
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise420.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
-
+section
 set_option linter.unusedVariables false
 
 theorem example_420.{u_1} : ∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
@@ -7294,16 +5587,13 @@ theorem example_420.{u_1} : ∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodS
       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α α α V V V g f))) :=
   @DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement_comp_comm
-
-end DomainTheory.NeighbourhoodSystems.ApproximableMap
 end
 
-section
--- Exercise423/f_unique_fixedPoint.lean
+end DomainTheory.NeighbourhoodSystems.ApproximableMap
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
 
+section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
@@ -7350,13 +5640,11 @@ theorem f_unique_fixedPoint (f : ApproximableMap V V) (a : ℕ → ApproximableM
   exact le_antisymm hge hle
 
 end ApproximableMap
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Exercise423.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
-
+section
 set_option linter.unusedVariables false
 
 theorem example_423.{u_1} : ∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
@@ -7396,98 +5684,46 @@ theorem example_423.{u_1} : ∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodS
           @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
             (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f x) x :=
   @DomainTheory.NeighbourhoodSystems.ApproximableMap.f_unique_fixedPoint
-
-end DomainTheory.NeighbourhoodSystems.ApproximableMap
 end
 
-section
--- Exercise425/shift.lean
+end DomainTheory.NeighbourhoodSystems.ApproximableMap
 namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
+section
 /-- Shifting a set up by one length: `shift X = {m + 1 ∣ m ∈ X}` (the token action of prepending a
 `1`). -/
 def shift (X : Set ℕ) : Set ℕ := {k | ∃ m ∈ X, k = m + 1}
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/tail.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- The tail `tail n = {1ᵐ ∣ m ≥ n} = {m ∣ n ≤ m}` (the partial information "at least `n` ones"). -/
 def tail (n : ℕ) : Set ℕ := {m | n ≤ m}
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/mem_tail.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 @[simp] theorem mem_tail {n k : ℕ} : k ∈ tail n ↔ n ≤ k := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/memC1.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- Membership in `C₁`: a neighbourhood is a tail `tail n` or a singleton `{n}`. -/
 def memC1 (X : Set ℕ) : Prop := (∃ n, X = tail n) ∨ (∃ n, X = {n})
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/memC1_singleton.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 theorem memC1_singleton (n : ℕ) : memC1 ({n} : Set ℕ) := Or.inr ⟨n, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/memC1_tail.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 theorem memC1_tail (n : ℕ) : memC1 (tail n) := Or.inl ⟨n, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/shift_mono.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 theorem shift_mono {X X' : Set ℕ} (h : X' ⊆ X) : shift X' ⊆ shift X := by
   rintro k ⟨m, hm, rfl⟩; exact ⟨m, h hm, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/shift_singleton.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- `1·{1ⁿ} = {1ⁿ⁺¹}`: shifting a singleton. -/
 theorem shift_singleton (n : ℕ) : shift ({n} : Set ℕ) = {n + 1} := by
   ext k
@@ -7495,16 +5731,9 @@ theorem shift_singleton (n : ℕ) : shift ({n} : Set ℕ) = {n + 1} := by
   constructor
   · rintro ⟨m, rfl, rfl⟩; rfl
   · rintro rfl; exact ⟨n, rfl, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/shift_tail.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- `1·(1ⁿ⊥) = 1ⁿ⁺¹⊥`: shifting a tail. -/
 theorem shift_tail (n : ℕ) : shift (tail n) = tail (n + 1) := by
   ext k
@@ -7512,31 +5741,17 @@ theorem shift_tail (n : ℕ) : shift (tail n) = tail (n + 1) := by
   constructor
   · rintro ⟨m, hm, rfl⟩; omega
   · intro h; exact ⟨k - 1, by omega, by omega⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/memC1_shift.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- Shifting keeps us inside `C₁` (`shift (tail n) = tail (n+1)`, `shift {n} = {n+1}`). -/
 theorem memC1_shift {X : Set ℕ} (hX : memC1 X) : memC1 (shift X) := by
   rcases hX with ⟨n, rfl⟩ | ⟨n, rfl⟩
   · exact Or.inl ⟨n + 1, shift_tail n⟩
   · exact Or.inr ⟨n + 1, shift_singleton n⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/singleton_tail_nd.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- A singleton and a tail are nested or disjoint. -/
 theorem singleton_tail_nd (n k : ℕ) :
     ({k} : Set ℕ) ⊆ tail n ∨ tail n ⊆ {k} ∨ ({k} : Set ℕ) ∩ tail n = ∅ := by
@@ -7547,16 +5762,9 @@ theorem singleton_tail_nd (n k : ℕ) :
     simp only [Set.mem_inter_iff, Set.mem_singleton_iff, mem_tail, Set.mem_empty_iff_false,
       iff_false, not_and]
     rintro rfl hw; exact h hw
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/nestedOrDisjoint.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- Any two neighbourhoods of `C₁` are nested or disjoint. -/
 theorem nestedOrDisjoint : NestedOrDisjoint memC1 := by
   rintro X Y (⟨n, rfl⟩ | ⟨n, rfl⟩) (⟨m, rfl⟩ | ⟨m, rfl⟩)
@@ -7578,76 +5786,34 @@ theorem nestedOrDisjoint : NestedOrDisjoint memC1 := by
       simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false,
         not_and]
       rintro rfl h2; exact h h2
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/tail_zero.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 theorem tail_zero : tail 0 = Set.univ := by ext k; simp [tail]
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/memC1_univ.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 theorem memC1_univ : memC1 (Set.univ : Set ℕ) := Or.inl ⟨0, tail_zero.symm⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/C1.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /- concordance: source L2377 EXERCISE 4.25 unary sequence domain -/
 /-- **Exercise 4.25 (Scott 1981, PRG-19).** The unary sequence system `C₁` on `Δ = {1}* ≅ ℕ`. -/
 def C1 : NeighborhoodSystem ℕ :=
   NeighborhoodSystem.ofNestedOrDisjoint memC1 Set.univ Set.univ_nonempty
     memC1_univ nestedOrDisjoint
     (fun _ => Set.subset_univ _)
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/C1_mem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 @[simp] theorem C1_mem {X : Set ℕ} : C1.mem X ↔ memC1 X := Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/C1_master.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 @[simp] theorem C1_master : C1.master = (Set.univ : Set ℕ) := rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/consMap.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- **Exercise 4.25 — the successor `x ↦ 1x`** (analogous to the two successors of `C`). The
 approximable map prepending a `1`, i.e. shifting the length: `X (1x) Y ↔ shift X ⊆ Y`. -/
 def consMap : ApproximableMap C1 C1 where
@@ -7662,70 +5828,34 @@ def consMap : ApproximableMap C1 C1 where
   mono := by
     rintro X X' Y Y' ⟨hX, hY, hsub⟩ hX'X hYY' hX' hY'
     exact ⟨hX', hY', (shift_mono hX'X).trans (hsub.trans hYY')⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/infElt.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- **Exercise 4.25 — the infinite unary sequence `1^∞`.** Unlike the flat domain `N` (whose only
 elements are `⊥` and the numerals `n̂`), `C₁` has a genuine *infinite* element: the least fixed point
 of the successor `x ↦ 1x`, satisfying `1^∞ = 1·1^∞` (`infElt_eq`). This is what distinguishes the
 *non-flat* `C₁` (the true analogue of `C`) from `N`. -/
 def infElt : C1.Element := consMap.fixElement
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/oneBot.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- The partial element `1ⁿ⊥ = ↑(tail n)` ("at least `n` ones"). -/
 def oneBot (n : ℕ) : C1.Element := C1.principal (memC1_tail n)
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/oneElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- The total element `1ⁿ = ↑{n}` (the finite string of exactly `n` ones). -/
 def oneElem (n : ℕ) : C1.Element := C1.principal (memC1_singleton n)
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/relateNToC1.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
 /-- **Exercise 4.25 — relating `N` and `C₁`.** The "length ↦ unary expansion" map `N → C₁` sending
 the numeral `n̂` to the finite string `1ⁿ` and `⊥` to `⊥` (strict). Built from the strict-lift
 combinator `constLiftN` of Example 4.3. -/
 def relateNToC1 : ApproximableMap Example43.N C1 := Example43.constLiftN C1 oneElem
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/consMap_oneBot.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `1·(1ⁿ⊥) = 1ⁿ⁺¹⊥`. -/
 theorem consMap_oneBot (n : ℕ) : consMap.toElementMap (oneBot n) = oneBot (n + 1) := by
   apply Element.ext
@@ -7738,17 +5868,9 @@ theorem consMap_oneBot (n : ℕ) : consMap.toElementMap (oneBot n) = oneBot (n +
   · rintro ⟨hY, hsub⟩
     refine ⟨tail n, ⟨memC1_tail n, subset_rfl⟩, memC1_tail n, hY, ?_⟩
     rw [shift_tail]; exact hsub
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/consMap_oneElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `1·(1ⁿ) = 1ⁿ⁺¹`. -/
 theorem consMap_oneElem (n : ℕ) : consMap.toElementMap (oneElem n) = oneElem (n + 1) := by
   apply Element.ext
@@ -7761,42 +5883,21 @@ theorem consMap_oneElem (n : ℕ) : consMap.toElementMap (oneElem n) = oneElem (
   · rintro ⟨hY, hsub⟩
     refine ⟨{n}, ⟨memC1_singleton n, subset_rfl⟩, memC1_singleton n, hY, ?_⟩
     rw [shift_singleton]; exact hsub
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/infElt_eq.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `1^∞ = 1·1^∞`: the infinite sequence is fixed by the successor. -/
 theorem infElt_eq : consMap.toElementMap infElt = infElt :=
   toElementMap_fixElement consMap
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/relateNToC1_bot.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `relateNToC1(⊥) = ⊥`. -/
 theorem relateNToC1_bot : relateNToC1.toElementMap Example43.N.bot = C1.bot :=
   Example43.constLiftN_bot C1 oneElem
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
 set_option linter.unusedVariables false
 
 theorem example_425 : @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Nat DomainTheory.NeighbourhoodSystems.Exercise425.C1)
@@ -7805,36 +5906,22 @@ theorem example_425 : @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
     (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot Nat DomainTheory.NeighbourhoodSystems.Example43.N))
   (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot Nat DomainTheory.NeighbourhoodSystems.Exercise425.C1) :=
   DomainTheory.NeighbourhoodSystems.Exercise425.relateNToC1_bot
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
 section
--- Exercise425/relateNToC1_natElem.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-
-
 /-- `relateNToC1(n̂) = 1ⁿ`. -/
 theorem relateNToC1_natElem (n : ℕ) :
     relateNToC1.toElementMap (Example43.natElem n) = oneElem n :=
   Example43.constLiftN_natElem C1 oneElem n
-
-end DomainTheory.NeighbourhoodSystems.Exercise425
 end
 
-section
--- Theorem41/fixMap_fixed.lean
+end DomainTheory.NeighbourhoodSystems.Exercise425
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-
 open ApproximableMap
 
+section
+variable {α : Type*} {V : NeighborhoodSystem α}
 
 /-- **Theorem 4.2(i) (Scott 1981, PRG-19).** `fix(f) = f(fix(f))`: the value of `fix` is a fixed
 point of the argument. (Equivalently `eval(f, fix(f)) = fix(f)` by `evalMap_apply`.) -/
@@ -7842,21 +5929,10 @@ theorem fixMap_fixed (V : NeighborhoodSystem α) (φ : (funSpace V V).Element) :
     (toApproxMap φ).toElementMap ((fixMap V).toElementMap φ) = (fixMap V).toElementMap φ := by
   rw [fixMap_toElementMap]
   exact toElementMap_fixElement (toApproxMap φ)
-
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem41/fixMap_unique.lean
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
-
-open ApproximableMap
-
 
 /-- **Theorem 4.2 (Scott 1981, PRG-19) — uniqueness.** Any approximable operator `fax` satisfying
 (i) and (ii) coincides with `fix`. (Scott: from (i)(ii) one proves `fix(f) ⊆ fax(f)` and
@@ -7871,6 +5947,7 @@ theorem fixMap_unique (V : NeighborhoodSystem α) (fax : ApproximableMap (funSpa
   apply le_antisymm
   · exact h_least φ _ (le_of_eq (fixMap_fixed V φ))
   · exact fixMap_least V φ (le_of_eq (h_fix φ))
+end
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -7906,9 +5983,8 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem46/Graph.lean
 namespace DomainTheory.NeighbourhoodSystems
-
+section
 universe u v
 
 namespace PeanoModel
@@ -7924,15 +6000,10 @@ inductive Graph (P : PeanoModel M) (Q : PeanoModel N) : M → N → Prop
   | step : ∀ {m n}, Graph P Q m n → Graph P Q (P.succ m) (Q.succ n)
 
 end PeanoModel
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem46/Graphu2eswap.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 universe u v
-
 
 namespace PeanoModel
 
@@ -7949,15 +6020,10 @@ theorem Graph.swap {P : PeanoModel M} {Q : PeanoModel N} {m : M} {n : N}
   | step _ ih => exact Graph.step ih
 
 end PeanoModel
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem46/graph_succ_right.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 universe u v
-
 
 namespace PeanoModel
 
@@ -7978,15 +6044,10 @@ theorem graph_succ_right (P : PeanoModel M) (Q : PeanoModel N) {m : M} {k : N}
     exact ⟨n0, h', rfl⟩
 
 end PeanoModel
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem46/graph_zero_right.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 universe u v
-
 
 namespace PeanoModel
 
@@ -8003,15 +6064,10 @@ theorem graph_zero_right (P : PeanoModel M) (Q : PeanoModel N) {k : N}
   | step _ => exact absurd hz (P.zero_ne_succ _)
 
 end PeanoModel
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem46/exists_unique_right.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 universe u v
-
 
 namespace PeanoModel
 
@@ -8032,15 +6088,10 @@ theorem exists_unique_right (P : PeanoModel M) (Q : PeanoModel N) (m : M) :
     rw [huniq n'' hn'']
 
 end PeanoModel
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem46/exists_unique_left.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 universe u v
-
 
 namespace PeanoModel
 
@@ -8055,15 +6106,10 @@ theorem exists_unique_left (P : PeanoModel M) (Q : PeanoModel N) (n : N) :
   exact ⟨m, hm.swap, fun y hy => huniq y hy.swap⟩
 
 end PeanoModel
-end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Theorem46/peano_models_isomorphic.lean
-namespace DomainTheory.NeighbourhoodSystems
-
 universe u v
-
 
 namespace PeanoModel
 
@@ -8100,13 +6146,11 @@ theorem peano_models_isomorphic (P : PeanoModel M) (Q : PeanoModel N) :
     exact ((exists_unique_right P Q (P.succ m)).choose_spec.2 _ (Graph.step hf)).symm
 
 end PeanoModel
-end DomainTheory.NeighbourhoodSystems
 end
 
-section
--- Theorem46.lean
+end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.PeanoModel
-
+section
 set_option linter.unusedVariables false
 
 theorem theorem_46.{u, v} : ∀ {M : Type u} {N : Type v} (P : DomainTheory.NeighbourhoodSystems.PeanoModel M)
@@ -8127,31 +6171,21 @@ theorem theorem_46.{u, v} : ∀ {M : Type u} {N : Type v} (P : DomainTheory.Neig
             (@DFunLike.coe (Equiv M N) M (fun (x : M) => N)
               (@EquivLike.toFunLike (Equiv M N) M N (@Equiv.instEquivLike M N)) e m))) :=
   @DomainTheory.NeighbourhoodSystems.PeanoModel.peano_models_isomorphic
-
-end DomainTheory.NeighbourhoodSystems.PeanoModel
 end
 
-section
--- Exercise422/genOp.lean
+end DomainTheory.NeighbourhoodSystems.PeanoModel
 namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
 open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
 
+section
 variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- Scott's operator `g(x) = {0} ∪ x⁺` on `P(N*)`, whose least fixed point is the smallest subset
 containing `0` and closed under the successor. -/
 def genOp (x : Set M) : Set M := {zero} ∪ succ '' x
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/natPeano.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- *(For set theorists.)* The standard natural numbers `⟨ℕ, 0, ⁺⟩` form a model of Peano's Axioms;
@@ -8167,44 +6201,23 @@ def natPeano : PeanoModel ℕ where
     induction n with
     | zero => exact h0
     | succ k ih => exact hstep k ih
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/nats.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- The carved-out subset `N ⊆ N*`: the least fixed point of `g` (Exercise 4.13(2)/4.14). -/
 def nats : Set M := lfpSet (genOp zero succ)
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/Nat'.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- The subtype `N = {m // m ∈ nats}` carrying the carved-out Peano structure. -/
 abbrev Nat' : Type _ := {m : M // m ∈ nats zero succ}
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/nats_induction.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- **Induction by minimality.** Any subset `s ⊆ N*` containing `0` and closed under `⁺` contains
@@ -8216,46 +6229,25 @@ theorem nats_induction (s : Set M) (h0 : zero ∈ s) (hsucc : ∀ n ∈ s, succ 
   rintro x (rfl | ⟨n, hn, rfl⟩)
   · exact h0
   · exact hsucc n hn
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/succ_mem_nats.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- `N` is closed under the successor: `n ∈ N ⟹ n⁺ ∈ N` — again directly from `lfpSet`. -/
 theorem succ_mem_nats {n : M} (hn : n ∈ nats zero succ) : succ n ∈ nats zero succ := by
   intro x hx
   exact hx (Or.inr ⟨n, hn x hx, rfl⟩)
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/subSucc.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- The successor of the subtype (well-defined by closure `succ_mem_nats`). -/
 def subSucc (n : Nat' zero succ) : Nat' zero succ := ⟨succ n.1, succ_mem_nats zero succ n.2⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/zero_mem_nats.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- `0 ∈ N` — directly from the `lfpSet` definition (no monotonicity needed), keeping the
@@ -8263,30 +6255,16 @@ construction choice-free. -/
 theorem zero_mem_nats : zero ∈ nats zero succ := by
   intro x hx
   exact hx (Or.inl rfl)
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/subZero.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- The zero of the subtype. -/
 def subZero : Nat' zero succ := ⟨zero, zero_mem_nats zero succ⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/peanoSub.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
 
 /- concordance: source L2347 EXERCISE 4.22 inductive subset of a model -/
@@ -8310,32 +6288,19 @@ def peanoSub (hzero : ∀ n, zero ≠ succ n) (hinj : Function.Injective succ) :
         exact ⟨succ_mem_nats zero succ hmnat, hstep ⟨m, hmnat⟩ hms⟩
     obtain ⟨_, hns⟩ := hsub n.2
     exact hns
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/exists_peano_submodel.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
-
 
 /-- **Exercise 4.22 (Scott 1981, PRG-19).** *Yes:* whenever `N*` satisfies (i) and (ii), there is a
 subset `N ⊆ N*` (carrying the inherited structure) satisfying (i), (ii), and (iii). -/
 theorem exists_peano_submodel (hzero : ∀ n, zero ≠ succ n) (hinj : Function.Injective succ) :
     Nonempty (PeanoModel (Nat' zero succ)) :=
   ⟨peanoSub zero succ hzero hinj⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
 set_option linter.unusedVariables false
 
 theorem example_422.{u_1} : ∀ {M : Type u_1} (zero : M) (succ : M → M),
@@ -8344,39 +6309,24 @@ theorem example_422.{u_1} : ∀ {M : Type u_1} (zero : M) (succ : M → M),
       Nonempty
         (DomainTheory.NeighbourhoodSystems.PeanoModel (@DomainTheory.NeighbourhoodSystems.Exercise422.Nat' M zero succ)) :=
   @DomainTheory.NeighbourhoodSystems.Exercise422.exists_peano_submodel
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/genOp_monotone.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
-
 
 theorem genOp_monotone : Monotone (genOp zero succ) := by
   intro x y hxy z hz
   rcases hz with hz | ⟨a, ha, rfl⟩
   · exact Or.inl hz
   · exact Or.inr ⟨a, hxy ha, rfl⟩
-
-end DomainTheory.NeighbourhoodSystems.Exercise422
 end
 
 section
--- Exercise422/genOp_nats.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise422
-
-open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
-
 variable {M : Type*} (zero : M) (succ : M → M)
-
 
 theorem genOp_nats : genOp zero succ (nats zero succ) = nats zero succ :=
   lfpSet_isFixed (genOp zero succ) (genOp_monotone zero succ)
+end
 
 end DomainTheory.NeighbourhoodSystems.Exercise422
 end

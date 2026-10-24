@@ -13,21 +13,12 @@ namespace DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
 /-- Scott: all finite subsets of `D_V` are consistent. -/
 def VCon (_u : Finset VToken) : Prop := True
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem VCon.any (u : Finset VToken) : VCon u := trivial
 
 end InfoSys
+
+
 end DomainTheory.InformationSystems

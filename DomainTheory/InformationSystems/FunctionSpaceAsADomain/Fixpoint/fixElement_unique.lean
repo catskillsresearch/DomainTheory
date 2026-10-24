@@ -33,4 +33,5 @@ theorem fixElement_unique (f : ApproximableMap A A) (φ : A.Element)
 
 end ApproximableMap
 end InfoSys
+
 end DomainTheory.InformationSystems
