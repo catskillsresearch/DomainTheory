@@ -1,3 +1,0 @@
-The image of an element x of C contains the tagged left copy of the unit universe if and only if x contains the singleton of the empty word.
-
-In the forward direction the four forms of membership in the image are examined. The master would place the basepoint in the left copy. The unit form is the desired membership. A middle or right copy would place the left tag of the unique unit element in that copy, which the tag lemmas exclude. In the reverse direction the unit form of the image is taken with that membership.

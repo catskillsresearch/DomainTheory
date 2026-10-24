@@ -1,3 +1,0 @@
-For two strings, the singleton of the second is contained in the cone of the first, or that cone is contained in the singleton, or the two sets are disjoint.
-
-If the first string is a prefix of the second, the singleton is contained in the cone. Otherwise the intersection is empty, because a common member would be the second string and would have the first string as a prefix.

@@ -1,3 +1,0 @@
-Every element of the natural-number domain is either the bottom element or the total element named by a natural number. Equal numerals name equal natural numbers. The numeral zero is distinct from the numeral of every successor. The successor map is injective on the total elements of the natural-number domain. The numeral zero is not the successor of any numeral.
-
-The numbered name example_418 is the conjunction of these statements. The proof is that conjunction.

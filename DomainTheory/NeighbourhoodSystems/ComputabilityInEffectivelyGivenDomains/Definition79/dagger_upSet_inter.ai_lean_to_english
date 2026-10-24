@@ -1,3 +1,0 @@
-If neighbourhoods X and Y admit a neighbourhood Z contained in their intersection, then the intersection of the down-sets of X and Y is a neighbourhood of the prepared system.
-
-Rewrite that intersection of down-sets as the down-set of X intersect Y. The intersection is a neighbourhood because Z witnesses the intersection law, so this down-set is a neighbourhood of the preparation.

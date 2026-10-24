@@ -1,3 +1,0 @@
-The elementwise action of the approximable map induced by an order isomorphism is the isomorphism itself.
-
-The induced image lies below the isomorphic image, because a witnessing principal lies below the element and the isomorphism is monotone. The element equals the inverse image of the induced image: each of its neighbourhoods belongs to the induced image of the corresponding principal, so the element lies below that inverse image, and the reverse inequality is the inverse image of the inequality already shown. Applying the isomorphism and cancelling the inverse yields the claim.

@@ -1,3 +1,0 @@
-Uncurrying h equals the composition of evaluation with the pairing of h composed with the first projection and the second projection.
-
-The maps agree on element maps. Expanding composition, pairing, the two projections, and evaluation, the resulting elements contain the same neighbourhoods: a product neighbourhood of the argument splits into a left neighbourhood and a right neighbourhood, and a pair of such neighbourhoods rebuilds the product neighbourhood.

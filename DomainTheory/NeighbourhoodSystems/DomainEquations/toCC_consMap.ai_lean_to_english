@@ -1,3 +1,0 @@
-Across the isomorphism of the sequence domain with the three-way sum of the unit and two copies of itself, prepending the bit false is the middle injection and prepending the bit true is the right injection.
-
-The two elements contain the same neighbourhoods. If the bit is false, the master is kept, the empty-sequence neighbourhood is excluded, a neighbourhood tagged by the matching bit is membership for the cons map, and a neighbourhood tagged by the other bit is excluded; the converse restores the matching-bit membership. If the bit is true, the same case split with the two bit tags exchanged places the image in the right injection.

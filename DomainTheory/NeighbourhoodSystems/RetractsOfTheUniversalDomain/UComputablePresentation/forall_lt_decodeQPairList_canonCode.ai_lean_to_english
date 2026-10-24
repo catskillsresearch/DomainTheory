@@ -1,3 +1,0 @@
-Every pair decoded from a canonical code has left endpoint strictly less than its right endpoint. Both the filtered list and the master-pair fallback produce only such pairs, so a split may take the first pair as a midpoint witness.
-
-Unfold the canonical code. If the list code is zero, the zero test selects the master singleton, whose only pair is zero and one. Otherwise the zero test reads zero, since a reading of one would make the list code zero, and the claim is the same fact for the canonical list code.

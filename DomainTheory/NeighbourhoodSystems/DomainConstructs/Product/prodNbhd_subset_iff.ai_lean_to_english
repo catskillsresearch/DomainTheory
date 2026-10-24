@@ -1,3 +1,0 @@
-Scott's identity (1) states that one product neighbourhood is contained in another if and only if each component is contained in the corresponding component.
-
-A left token of the smaller first component is a left token of the smaller product, hence of the larger product, hence of the larger first component, and likewise for right tokens. Conversely, a token of the smaller product lies in one component, and the component inclusion puts it in the larger product.

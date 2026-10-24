@@ -1,3 +1,0 @@
-The first component of the generalized atom pair at depth n equals the generated atom, at depth twice n, of the interleaved first-system family along the interleaved bit history.
-
-The argument is induction on n. Depth zero is reflexive. At a successor, the odd successor equation rewrites the X half-step, the closed form of the Y step rewrites the second half-step, and the identity twice (n + 1) equals twice n plus two, together with the successor equation of the generated atom and the odd clauses of the interleaved family and bits, assembles the equality.

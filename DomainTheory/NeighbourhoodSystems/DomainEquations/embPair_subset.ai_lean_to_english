@@ -1,3 +1,0 @@
-One pair embedding is contained in another exactly when each component is contained in the corresponding component.
-
-From a containment, a point of the left component tagged by true lies in the larger embedding, the false-tagged alternative has the wrong head bit, and the tail lies in the larger left component; the right component is the same argument with the false tag. From component inclusions, a point of the smaller embedding lies in one component and the corresponding inclusion puts it in the larger embedding.

@@ -1,3 +1,0 @@
-If the backward map composed with the forward map is the identity, and Z generates X while W generates X', then an inclusion of Z in W yields an inclusion of X in X'.
-
-The forward relation from X to Z widens along the inclusion to a forward relation from X to W. Composing with the backward relation from W to X' gives a composite relation from X to X', and the identity composite reads off the inclusion of X in X'.

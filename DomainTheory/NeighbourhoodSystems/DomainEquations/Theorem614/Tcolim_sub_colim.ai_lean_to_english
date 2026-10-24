@@ -1,3 +1,0 @@
-Every neighbourhood of the image of the colimit under T is a neighbourhood of the colimit.
-
-Continuity on domains is applied to the family of all tower systems. Each member is a subdomain of the colimit, the family is nonempty, and it is directed by passing to the system at the maximum of two indices. Membership in the colimit is membership in some member of the family. The given neighbourhood transports to a member of the target family of the identity subdomain of the colimit, so the continuity equation places it in the target family of some level. Transport along the successor carrier identification, rewritten by composition of set transports, places it in the next level, and therefore in the colimit.

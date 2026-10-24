@@ -1,3 +1,0 @@
-The sharp neighbourhoods of n and m are equal to the sharp neighbourhood of k exactly when the product of the consistency bit at the pair of n and m with the equality bit comparing the computed intersection index to k is one.
-
-A product of naturals is one exactly when both factors are one. The decider specification supplies consistency and intersection correctness at n and m, and equality at the computed intersection index against k. If the neighbourhoods agree, k witnesses consistency and the computed intersection equals the neighbourhood of k. Conversely, consistency makes the computed intersection equal the meet, and equality with the neighbourhood of k gives the claim.

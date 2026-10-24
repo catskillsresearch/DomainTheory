@@ -1,3 +1,0 @@
-The image of a function-space element x under the product of d lies in Y if and only if Y is a neighbourhood and some neighbourhood X lies in x, is contained in Y, and is self-related by the product.
-
-Rewrite by the membership reduction to the closed form. From a neighbourhood and a membership of the closed form, the hard direction supplies X. Conversely, the easy direction gives membership of the image, and the same reduction turns that membership back into the neighbourhood and the closed-form membership.

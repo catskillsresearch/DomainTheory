@@ -1,3 +1,0 @@
-The first pair of the canonical presenting list is nondegenerate: its left endpoint is strictly less than its right endpoint.
-
-Every pair in that list is nondegenerate, and the decoded head pair belongs to the list because the canonical code is nonzero.

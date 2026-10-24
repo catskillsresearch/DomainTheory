@@ -1,3 +1,0 @@
-The right projection after the left injection is the constant map whose value is the bottom element of the right summand.
-
-Compare the relations. In one direction a witness contains the left injection of the input neighbourhood, so the right part of that injection is contained in the right part of the witness and hence in the output neighbourhood. The right part of a left injection is the master, so the output neighbourhood equals the master, and the input is a neighbourhood. In the other direction the left injection of the input itself is the witness, by the left-injection clause of sum membership and the same computation of its right part.

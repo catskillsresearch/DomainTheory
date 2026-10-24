@@ -1,3 +1,0 @@
-For a nonempty, nondegenerate, unit-interval-bounded list of rational pairs, the minimum first component lies in the presented intervals.
-
-Every first component is strictly below one, because it lies strictly below the second component and the second component is at most one. Some pair attains the minimum first component, and that value is the left endpoint of the pair's half-open interval, which is a member of the presented intervals.

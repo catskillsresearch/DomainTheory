@@ -1,3 +1,0 @@
-The table-lookup form of the automaton-state cardinality step is primitive recursive.
-
-The two recursive lookups of the child codes, their sum, and their product are primitive recursive, as are the constant 1 and the length of the payload plus 2. Equality-to-one tests compare the tag with 0, 1, 2, and 3. Nested selection on those tests chooses the constant 1, the length plus 2, the sum, the product, or 0. After rewriting by the body equation, matching on the tag simplifies each branch to the corresponding clause: tag 0 selects the constant, tag 1 selects the length, tag 2 selects the sum, tag 3 selects the product, and every larger tag selects 0.

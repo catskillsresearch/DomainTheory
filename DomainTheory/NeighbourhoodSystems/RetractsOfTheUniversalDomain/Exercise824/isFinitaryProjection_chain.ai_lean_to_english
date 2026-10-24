@@ -1,3 +1,0 @@
-If two approximable maps from the pair space into the function space send pairs of finitary projections to finitary projections, then every approximant pair consists of finitary projections.
-
-The proof is by induction on the index. At zero, the two approximants rewrite as constant maps at the bottom, and each constant map at the bottom is a finitary projection. At a successor, the approximants rewrite as the two maps applied to the preceding pair, and the hypothesis applies to the inductive pair.

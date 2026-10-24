@@ -1,3 +1,0 @@
-If the false-tagged copy of a set is a neighbourhood of the concrete sum, then that set is a neighbourhood of the first system.
-
-The master contains the empty word, which is not a tagged word, so the neighbourhood is not the master. A true-tagged copy of a nonempty neighbourhood cannot equal a false-tagged copy. The remaining case is a false-tagged copy of a neighbourhood of the first system, and injectivity of the tagging identifies the set with that neighbourhood.

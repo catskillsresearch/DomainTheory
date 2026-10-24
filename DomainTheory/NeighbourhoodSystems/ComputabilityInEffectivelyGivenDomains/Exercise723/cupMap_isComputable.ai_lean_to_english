@@ -1,3 +1,0 @@
-The union map cupMap is a computable map from the product presentation of PNpres to PNpres. The test reduces to one computable neighbourhood inclusion against the primitive-recursive reindexing myLor.
-
-The presentation supplies a recursively decidable inclusion test. The bitwise disjunction of the two input indices is primitive recursive, and pairing it with the output index is primitive recursive. The inclusion test along that reindexing decides the relation of cupMap, by cupMap_rel_iff after simplifying the unpairing, and the recursively enumerable reading is the computability of the map.

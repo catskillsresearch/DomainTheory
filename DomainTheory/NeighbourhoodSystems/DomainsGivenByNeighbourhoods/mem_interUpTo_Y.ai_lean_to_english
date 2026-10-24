@@ -1,3 +1,0 @@
-Every finite prefix intersection of the chosen neighbourhoods is a neighbourhood.
-
-The empty intersection is the master neighbourhood. A successor intersection is rewritten, by the identification of the running accumulator with the prefix intersection, to an accumulator, which is a neighbourhood.

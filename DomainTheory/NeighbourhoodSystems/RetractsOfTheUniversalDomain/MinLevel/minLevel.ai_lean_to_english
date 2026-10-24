@@ -1,1 +1,0 @@
-The minimal level of a level and a mask is the recursion, on the bound one more than the level, that starts at zero and at stage i keeps the value already found when that value is strictly smaller than i, and otherwise returns i when the periodicity test succeeds and i + 1 when it fails. It is the least level, at most the given level, at which the level set is presentable.

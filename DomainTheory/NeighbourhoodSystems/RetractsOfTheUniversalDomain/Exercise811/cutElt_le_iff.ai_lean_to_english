@@ -1,3 +1,0 @@
-For reals t and t' in the unit interval, the cut element of t lies below the cut element of t' if and only if t ≤ t'.
-
-Order of elements is inclusion of up-sets. If t is not at most t', a rational lies strictly between 1 − t and 1 − t' and is at most 1, so it belongs to the smaller cut and the resulting membership in the larger cut contradicts that upper bound. If t ≤ t', monotonicity of the cut up-set gives the inclusion.

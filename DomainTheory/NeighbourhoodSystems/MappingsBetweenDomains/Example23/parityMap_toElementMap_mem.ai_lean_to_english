@@ -1,3 +1,0 @@
-A neighbourhood belongs to the elementwise value of the parity map at an element exactly when some cone belonging to the element has that neighbourhood in the element selected by its scan.
-
-Elementwise membership is a neighbourhood of the element related by the map. Every neighbourhood of a binary element is a cone, and the relation on a cone is scan membership. Conversely that cone is a witness.

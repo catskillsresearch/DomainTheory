@@ -1,3 +1,0 @@
-For every depth n there exist a bit-source below 4 to the power n and a bit at most 1 such that the Y half-step atom at that bit-source and bit is not junk.
-
-Some such bit-source has generated second component meeting the basic neighbourhood of n, so that component is nonempty and the atom-pair is not junk. The generated pair satisfies the invariant, and the two split components of the generalized X-step reunite to the second component, so one of them meets the basic neighbourhood of n. The split specification promotes a nonempty split component to a nonempty direct-refinement component. The bit lemma then makes the half-step atom at bit 1, or at bit 0, not junk, according to which branch meets the neighbourhood.

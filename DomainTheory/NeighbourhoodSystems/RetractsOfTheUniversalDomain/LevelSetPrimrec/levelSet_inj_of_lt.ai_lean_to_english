@@ -1,9 +1,0 @@
-If two masks are strictly below two raised to two to the k and present the same level
-set at level k, then the masks are equal.
-
-It is enough that they have the same test bits. If the bit index is below two to the k,
-extensionality of the level sets, the membership law, and the fact that the remainder of
-the index by two to the k is the index itself reduce the two test bits to one Boolean,
-and the four Boolean cases agree. If the index is at least two to the k, two to the
-power two to the k is at most two to that index, so both masks lie strictly below two to
-the index and both test bits are false.

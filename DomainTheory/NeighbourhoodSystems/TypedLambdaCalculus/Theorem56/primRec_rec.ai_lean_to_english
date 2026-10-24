@@ -1,3 +1,0 @@
-Primitive recursion at a pair of elements x and y equals the conditional on the zero test of x, the value f at y, and g at the predecessor of x, at y, and at the recursion applied to that predecessor and y.
-
-The operator fixes its least fixed point. Currying the body at that fixed point and the pair, then rewriting by the definition of the operator, the fixed-point equation, the definition of the recursion, and the application lemma for the body, yields the conditional.

@@ -1,3 +1,0 @@
-The table-lookup form of the fuel-bounded decode-success step is primitive recursive.
-
-The two recursive lookups of the child codes and their product are primitive recursive, as are the selection of 1 or 0 according as the payload equals 1, and the bit-string character of the payload. Equality-to-one tests compare the tag with 0, 1, 2, and 3. Nested selection chooses the payload test, the bit-string character, the product, the product again, or 0. After rewriting by the body equation, matching on the tag simplifies each branch to the corresponding clause: tag 0 selects the payload test, tag 1 selects the bit-string character, tags 2 and 3 select the product, and every larger tag selects 0.

@@ -1,3 +1,0 @@
-If a neighbourhood X' is contained in a neighbourhood X, then the singleton of the principal element of X lies below the singleton of the principal element of X'.
-
-A power-domain neighbourhood of the left singleton is witnessed by a neighbourhood Y of the principal element of X, together with a power-domain neighbourhood and a down-set inclusion. Principal membership gives the inclusion of X in Y, which composes with the inclusion of X' in X to give the inclusion of X' in Y, so the same data witness membership on the right.

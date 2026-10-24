@@ -1,3 +1,0 @@
-The coalesced sum is a subsystem of the separated sum.
-
-The masters agree by reflexivity. A coalesced neighbourhood is the sum master, a proper left tag, or a proper right tag, and each is a separated-sum neighbourhood. Intersecting with the master reduces by the master-intersection laws and remains in the coalesced sum. Two left tags, or two right tags, intersect by the tag intersection law, and the intersection stays proper because a proper neighbourhood, intersected on the left with a set below the master, remains proper. A left tag meeting a right tag is empty, while a separated-sum neighbourhood is nonempty.

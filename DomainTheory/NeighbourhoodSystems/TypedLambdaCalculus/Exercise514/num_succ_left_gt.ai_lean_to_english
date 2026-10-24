@@ -1,3 +1,0 @@
-The pairing of n + 1 with b is strictly greater than b.
-
-Unfold the pairing. Arithmetic rewrites n + 1 + b as the successor of n + b. Rewriting by that equality and the successor law for triangular numbers, arithmetic gives the strict inequality.

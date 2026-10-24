@@ -1,3 +1,0 @@
-The fixed-point isomorphism sends the directed supremum of an a-fixed family, when that supremum is itself a-fixed, to the directed supremum of the images.
-
-Both inequalities are proved directly. The fixed supremum lies below the inverse image of the supremum of the images, because each summand lies below that inverse image by the round trip of a summand already below the supremum, and monotonicity of the isomorphism with the other round trip gives the inequality. The reverse bounds each image by monotonicity, using that each summand lies below the supremum.

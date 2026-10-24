@@ -1,3 +1,0 @@
-The approximable map a is a projection on R: it lies below the identity of R.
-
-It is already a retraction. A related pair of neighbourhoods is a pair of intervals [0, r) and [0, s) with the endpoint bounds of R, and [0, r) is contained in [0, s) because the left endpoint is unchanged and the relation forces r ≤ s.

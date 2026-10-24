@@ -1,3 +1,0 @@
-Every element of the flat domain is the bottom element or the principal filter of a singleton.
-
-The argument is classical. If the element contains some singleton {n}, any other singleton it contains equals n, because distinct singletons are disjoint and the element cannot contain the empty set. Extensionality then matches the element with the principal filter of {n}: a neighbourhood in the element is the whole set or that singleton, and a neighbourhood containing the singleton is recovered by upward closure. If the element contains no singleton, extensionality matches it with the bottom element: a neighbourhood in it cannot be a singleton, so it is the whole set, and the master neighbourhood belongs to every element.

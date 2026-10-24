@@ -1,3 +1,0 @@
-The tag is injective in the list and the output jointly: equal tags give equal lists and equal outputs.
-
-The argument is induction on the first list. If both lists are empty, injectivity of the pairing equates the outputs. If one list is empty and the other is not, injectivity of the pairing forces a first coordinate 0 to equal a positive integer, which arithmetic rules out. If both lists are nonempty, injectivity of the pairing equates the incremented heads and the tags of the tails. Arithmetic equates the heads, and the inductive hypothesis equates the tails and the outputs.

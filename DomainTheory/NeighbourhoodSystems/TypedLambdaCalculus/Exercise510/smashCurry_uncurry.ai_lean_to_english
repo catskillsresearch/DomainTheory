@@ -1,3 +1,0 @@
-Currying the uncurry of a strict map into the strict function space returns the original map.
-
-Extensionality of strict maps and of approximable maps reduces the claim to relations. A curried relation presents its codomain as a step-function set of a list, and the generation lemma with the section computation of the uncurry turns section membership in each step into the corresponding relation of the original map. Conversely, a relation of the original map supplies the neighbourhood data, and the same two lemmas put the section into every step of the list.

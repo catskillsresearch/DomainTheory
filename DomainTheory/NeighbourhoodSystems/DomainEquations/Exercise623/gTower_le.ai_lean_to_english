@@ -1,3 +1,0 @@
-The tower is a chain of subsystems: if n is at most m, then the n-th level is a subsystem of the m-th level.
-
-Induction along the inequality gives reflexivity of the subsystem relation when the indices agree, and a successor step composes the inductive comparison with the chain step from a level to the next.

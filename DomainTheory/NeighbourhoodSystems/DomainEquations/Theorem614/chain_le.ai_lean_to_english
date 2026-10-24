@@ -1,3 +1,0 @@
-If n is at most m, then the n-th system of the tower is a subdomain of the m-th system.
-
-The proof is by induction on the inequality. The subdomain relation is reflexive when the indices agree. A successor step composes the inductive inclusion with the basic step from a level to the next.

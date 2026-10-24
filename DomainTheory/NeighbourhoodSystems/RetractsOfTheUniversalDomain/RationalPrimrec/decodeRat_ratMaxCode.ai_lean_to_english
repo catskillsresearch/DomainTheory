@@ -1,3 +1,0 @@
-The maximum code of two rational codes decodes to the maximum of the two decoded rationals.
-
-Unfolding the maximum code and cancelling the pairing, the comparison of the two decoded rationals splits the argument. If the first is at most the second, the comparison code equals one, selection returns the second code, and the maximum is the second rational. Otherwise the comparison code differs from one, and since it is at most one it equals zero, so selection returns the first code and the maximum is the first rational.

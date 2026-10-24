@@ -1,3 +1,0 @@
-The code-level qChar-gated fold of a code equals the list-level fold of the decoded list.
-
-The code-fold step, which pairs an entry with the pair of the accumulator and zero and applies the code-level step, equals the list-level step: unfold the code-level step and simplify the unpairing of a pair. Unfold both folds and rewrite by the code-fold equation and that equality.

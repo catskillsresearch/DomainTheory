@@ -1,3 +1,0 @@
-For finitary projections a and b, the sum injection into the universal domain composed after the sum extraction equals the sum combinator of a and b.
-
-Unfold both maps. Associativity, the composition law of the sum of maps, the identities that each subsystem injection after its projection is the finitary projection, and the identification of the sum combinator with the sum injection after the sum of the maps after the sum extraction give the equality.

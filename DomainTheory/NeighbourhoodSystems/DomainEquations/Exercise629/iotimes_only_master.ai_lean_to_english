@@ -1,3 +1,0 @@
-Over an infinite index, every neighbourhood of the indexed smash product equals its master.
-
-Such a neighbourhood is the master already, or it is the product neighbourhood of a tuple that differs from the master at every index and is supported by a finite list. Every index then lies on that list, so the set of entries of the list contains the whole index type, which is infinite.

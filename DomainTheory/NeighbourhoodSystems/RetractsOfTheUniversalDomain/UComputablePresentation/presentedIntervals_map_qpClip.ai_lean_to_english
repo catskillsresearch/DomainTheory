@@ -1,3 +1,0 @@
-The intervals presented by a list after every pair is clipped equal the original presented intervals cut by the half-open unit interval.
-
-A point between the clipped endpoints lies between the original endpoints and in the unit interval, by the maximum with zero and the minimum with one. A point of an original pair that also lies in the unit interval lies between the clipped endpoints.

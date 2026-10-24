@@ -1,1 +1,0 @@
-The completed encoding of a string is its doubled encoding followed by the two-bit marker whose bits are true and then false.

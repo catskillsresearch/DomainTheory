@@ -1,3 +1,0 @@
-Theorem 8.6 states that the packaged map subApprox on the function space is finitary: its fixed elements are order-isomorphic to a domain.
-
-The witness is the composite of the order isomorphism from the fixed elements of subApprox to the endomaps fixed by sub, the order isomorphism from those endomaps to the subsystems of E, and the representation of the subsystems of E as a domain.

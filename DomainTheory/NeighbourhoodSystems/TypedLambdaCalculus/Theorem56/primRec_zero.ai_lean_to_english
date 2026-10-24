@@ -1,3 +1,0 @@
-Primitive recursion at the numeral 0 and the numeral m equals f at the numeral m.
-
-Unfold the defining recursion and use that the zero test of the numeral 0 is true and that the conditional then returns its first branch.

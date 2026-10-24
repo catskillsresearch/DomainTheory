@@ -1,3 +1,0 @@
-If two functions on the natural numbers are primitive recursive, then so is the function sending an input to the intersection code of T on their values.
-
-The equality characteristic of the two functions is primitive recursive, and selection against the constant 3 and against the zero tests of the two functions assembles a primitive recursive function. Unfolding the intersection code and the equality characteristic, the cases in which the first value is zero, the second value is zero, the two values agree, and the two values differ are rewritten by the selection laws and the arithmetic of the zero test.

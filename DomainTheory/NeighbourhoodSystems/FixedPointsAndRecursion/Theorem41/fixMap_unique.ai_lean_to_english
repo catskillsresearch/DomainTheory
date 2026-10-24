@@ -1,3 +1,0 @@
-An approximable operator from the function space that fixes each argument on its own value, and that lies below every pre-fixed point, equals the fixed-point operator.
-
-Extensionality of maps that induce the same elementwise function reduces the claim to each element. The two values lie below one another: the rival lies below the fixed-point value because that value is a fixed point, and the fixed-point value lies below the rival because the rival value is a pre-fixed point.

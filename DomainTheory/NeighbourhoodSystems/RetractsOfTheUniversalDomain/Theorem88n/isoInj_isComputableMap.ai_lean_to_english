@@ -1,3 +1,0 @@
-The code-level injection is a computable map from the presentation to the presentation of the coded copy.
-
-Pairing the first component of a code with the index involution of the second component is primitive recursive. Inclusion of the presented neighbourhood of the first component in the presented neighbourhood of that reindexed second component is recursively decidable by composing inclusion decidability with the reindexing and simplifying the unpairing of a pair. The recursively enumerable predicate of that decidable predicate agrees with the relation of the injection by the reduction of the relation to a single inclusion.

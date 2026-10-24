@@ -1,3 +1,0 @@
-If X and Y are contained in M, then their union equals M minus the intersection of M minus X and M minus Y.
-
-An element of the union lies in M and fails to lie in at least one of the two complements. An element of the right-hand side lies in M and fails to lie in both complements, so it lies in X or in Y.

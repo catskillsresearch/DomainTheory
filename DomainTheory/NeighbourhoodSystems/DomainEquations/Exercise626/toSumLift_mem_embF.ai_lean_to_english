@@ -1,3 +1,0 @@
-For a neighbourhood X of D, the image of a coalesced-sum element under the forward map contains the false tag of X if and only if the element contains the double false tag of X.
-
-The sum master differs from a false tag. A left witness is identified by injectivity of tagging. A right witness would equate a false tag with a true tag, which fails for a nonempty neighbourhood of D. The converse records the left disjunct.

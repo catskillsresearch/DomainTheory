@@ -1,1 +1,0 @@
-matchesB decides, by recursion on the expression, whether a word belongs to the denoted language. The universal expression accepts every word, a singleton accepts the word equal to its list, a concatenation accepts a word when some cut has its prefix accepted by the first factor and its suffix accepted by the second, and an intersection accepts a word when both factors accept it.

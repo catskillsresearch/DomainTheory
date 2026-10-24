@@ -1,3 +1,0 @@
-Every element of Example 1.3 is the bottom filter, the intermediate filter, or the total filter.
-
-If the element contains {2}, it is the total filter. If it contains {1, 2} but not {2}, it is the intermediate filter. Otherwise the two filters contain the same neighbourhoods: every neighbourhood is the master, {1, 2}, or {2}, the last two are excluded, and the master belongs to every element.

@@ -1,3 +1,0 @@
-Any two unary neighbourhoods are nested or disjoint.
-
-Split on whether each neighbourhood is a tail or a singleton. Two tails are nested by comparing their starting lengths: the tail with the later start is contained in the tail with the earlier start. A singleton and a tail, in either order, are nested or disjoint by the singleton-tail law. Two singletons of equal index coincide, and two singletons of distinct indices are disjoint because a common element would equal both indices.

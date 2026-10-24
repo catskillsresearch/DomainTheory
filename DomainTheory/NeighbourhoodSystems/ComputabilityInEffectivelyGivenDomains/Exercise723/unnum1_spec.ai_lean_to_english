@@ -1,3 +1,0 @@
-The primitive-recursive first component of a numeral decoding equals the first component of the decoding.
-
-Unfold the definition, rewrite by the specification of the paired decoding, and take the first component of the pairing.

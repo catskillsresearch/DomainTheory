@@ -1,3 +1,0 @@
-Each stage of the descent chain lies below the next stage.
-
-Induct on the index. At zero the constant-bottom map lies below every map. At a successor the operator is monotone, so the inductive hypothesis lifts.

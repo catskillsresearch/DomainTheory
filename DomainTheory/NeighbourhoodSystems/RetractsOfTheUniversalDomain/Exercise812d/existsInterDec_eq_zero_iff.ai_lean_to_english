@@ -1,3 +1,0 @@
-For a positive system with no minimal neighbourhood, the intersection-existence decider reads zero on a pair exactly when the intersection of the two enumerated neighbourhoods is empty.
-
-The decider is at most one. A zero reading with a nonempty intersection is impossible: positivity makes the intersection a neighbourhood, surjectivity supplies a code contained in it, and the specification forces a reading of one. A reading of one with an empty intersection is impossible: the specification supplies a code contained in the empty set, contradicting the absence of a minimal neighbourhood.

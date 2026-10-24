@@ -1,1 +1,0 @@
-One step of the depth-n, bit-bx union fold reads the depth, the bit, the index, and the accumulator from its packed argument. If the half-step atom is junk the accumulator is kept. Otherwise, if the accumulator has already found an atom its code is united with the new atom index, and if not the step starts a fresh code at that atom with found flag 1.

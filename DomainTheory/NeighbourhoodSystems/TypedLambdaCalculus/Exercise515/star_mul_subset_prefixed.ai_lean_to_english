@@ -1,3 +1,0 @@
-If a set x contains z · x ∪ v, then the product of the star of z with v is contained in x.
-
-The hypothesis splits into the two inclusions of v and of z · x in x. By induction on n, every power zⁿ · v is contained in x: the zeroth power is v after cancelling the unit, and a successor power reassociates to a left multiple of the preceding power, which the inclusion of z · x absorbs. An element of the star product factors as a product of an element of some power with an element of v, and therefore lies in that power times v.

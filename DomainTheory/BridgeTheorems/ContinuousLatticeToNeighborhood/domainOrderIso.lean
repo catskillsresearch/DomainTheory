@@ -6,7 +6,7 @@ public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilt
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.RoundFilter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.mem_wayBelowUp_toFilter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter_mono
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.BasicInst22
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.UpperLower.Basic
@@ -21,7 +21,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
 public import DomainTheory.ContinuousLattice.WayBelow.sInf_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.isContinuousLattice_iff_isLUB_sInf_nhds
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter

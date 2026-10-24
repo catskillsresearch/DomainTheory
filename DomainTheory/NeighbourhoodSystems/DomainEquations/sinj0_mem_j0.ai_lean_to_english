@@ -1,3 +1,0 @@
-The zero-injection of an element contains the zero-copy of a neighbourhood X exactly when the element contains X.
-
-If the copy belongs to the injection, it is not the master, because the master contains the point none and a zero-copy does not. It is therefore a zero-copy of some set, and injectivity of zero-copies forces that set to be X. Conversely, the zero-copy of X is one of the neighbourhoods recorded by the injection.

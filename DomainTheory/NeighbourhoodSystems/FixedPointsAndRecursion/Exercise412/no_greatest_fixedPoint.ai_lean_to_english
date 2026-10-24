@@ -1,3 +1,0 @@
-The identity map on the domain of Example 1.2 has no greatest fixed point.
-
-A candidate would lie above both total elements, since the identity fixes every element. Classification of the elements gives three cases. The total element determined by 0 does not lie below bottom. The total element determined by 1 does not lie below the total element determined by 0, and the total element determined by 0 does not lie below the total element determined by 1.

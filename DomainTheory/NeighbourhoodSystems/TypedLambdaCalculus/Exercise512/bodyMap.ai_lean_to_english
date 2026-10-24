@@ -1,1 +1,0 @@
-The body of the loop is the approximable map from the product of the function space with the domain to the domain, sending a pair (w, x) to the conditional of the test p(x), the value w(f(x)), and x. It is assembled from the conditional, evaluation, the two projections, pairing, and composition with the test and with f.

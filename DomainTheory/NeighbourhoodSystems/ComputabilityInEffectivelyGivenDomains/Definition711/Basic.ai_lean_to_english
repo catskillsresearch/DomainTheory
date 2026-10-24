@@ -1,7 +1,0 @@
-A neighbourhood belongs to the successor finite join of a nonempty family of elements if and only if it satisfies the finite-join membership predicate of that family.
-
-The two sides are the same proposition, so the equivalence is definitional.
-
-A neighbourhood W belongs to the singleton join of an element x if and only if some representative X of x has its down-set contained in W and W is a power-domain neighbourhood.
-
-Unfold the singleton as the length-one finite join, then the successor join, then the membership predicate. From a family of representatives, take the value at the single index. From one representative, use the constant family with that value.

@@ -1,3 +1,0 @@
-A rational pair lies in the list decoded from a filter step if and only if the clipped decoded pair is nondegenerate and the pair equals that clip.
-
-Rewrite by the decoding of the filter step. When the clip is nondegenerate, membership is equality with the clip. When the clip is degenerate, both sides fail.

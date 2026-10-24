@@ -1,3 +1,0 @@
-The first component of the chain characteristic is the last index of the decoded list starting from the master index, and its second component equals 1 if and only if the decidable chain predicate holds of that list from the master index.
-
-Rewrite the characteristic as the left fold of the pure step. The first-component lemma reads off the last index, and the second-component lemma, applied to the start flag 1, reads off the chain predicate.

@@ -1,3 +1,0 @@
-At a successor, the greedy state is the next enumerated set paired with its intersection against the running intersection when the consistency test holds, and is the previous state otherwise.
-
-The two sides agree by reflexivity.

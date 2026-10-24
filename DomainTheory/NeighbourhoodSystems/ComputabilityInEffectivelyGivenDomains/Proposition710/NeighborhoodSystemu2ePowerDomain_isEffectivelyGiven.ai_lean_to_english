@@ -1,3 +1,0 @@
-Proposition 7.10. The Smyth power domain of an effectively given neighbourhood system is effectively given. The consistency decider is taken from the given presentation inside the existence proof.
-
-From an effective presentation, take its consistency decider. The power-domain presentation built from that decider is a computable presentation, because the decider's specification on a paired index, rewritten by the unpairing equations, is the required consistency test.

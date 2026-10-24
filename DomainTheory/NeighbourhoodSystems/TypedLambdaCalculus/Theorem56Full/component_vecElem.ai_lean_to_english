@@ -1,3 +1,0 @@
-The i-th component of the stack of a vector of length n is the numeral at position i when i lies below n, and bottom otherwise.
-
-Unfold the vector element as an argument element and apply the component formula. Both branches of the bound test agree.

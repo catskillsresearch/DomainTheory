@@ -1,3 +1,0 @@
-Reading a function back as a pair, after sending a pair to the function that conditions on a truth value, is the identity on the product.
-
-Compare the maps on elements. Write the product element as the pair of its components. The element formulas for the composite, the identity, the reading map, and the pairing map, together with the laws that the conditional at true and at false returns the two components, give the original pair.

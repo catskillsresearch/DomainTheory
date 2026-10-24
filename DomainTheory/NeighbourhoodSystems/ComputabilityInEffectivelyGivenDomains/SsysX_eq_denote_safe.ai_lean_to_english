@@ -1,3 +1,0 @@
-The enumerated set at an index equals the denotation of the safe active decoding of that index.
-
-Unfolding both sides and splitting on the decoding, a failure simplifies by the denotation of the master expression and the default neighbourhood. If decoding yields an expression, the case in which nonemptiness is decided true simplifies directly, and the remaining case again simplifies by the master denotation and the default.

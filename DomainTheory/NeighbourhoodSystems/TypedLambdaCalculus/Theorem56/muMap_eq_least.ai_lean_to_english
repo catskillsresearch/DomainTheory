@@ -1,3 +1,0 @@
-If n₀ is the least zero of f at the numeral m, in the sense that f at the numerals n₀ and m is the numeral 0 and f at each smaller numeral and m is a positive numeral, then the minimization at the numeral m is the numeral n₀.
-
-Rewrite the minimization at the numeral m as the search at zero and m. Climbing from 0 across those positive values reaches n₀, using that the zero element is the numeral 0 and that adding zero on the left leaves n₀ unchanged. The found lemma then returns the numeral n₀.

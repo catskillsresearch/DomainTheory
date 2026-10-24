@@ -1,3 +1,0 @@
-An element of the function space contains the enumerated neighbourhood of a code if and only if, whenever the consistency characteristic of the code equals 1, the element contains every step neighbourhood coded in the decoded list.
-
-If the code is consistent, the enumerated set is the positive enumeration, and membership in the step-function neighbourhood is membership of every presented pair: each coded entry maps to its step pair, and every presented pair comes from a coded entry. If the code is inconsistent, the enumerated set is the negative enumeration; a demand that the characteristic equal 1 contradicts the case, and otherwise membership is the master-neighbourhood axiom of the function space.

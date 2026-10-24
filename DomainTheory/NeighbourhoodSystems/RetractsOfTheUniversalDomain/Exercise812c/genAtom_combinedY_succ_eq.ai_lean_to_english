@@ -1,3 +1,0 @@
-If the second component of atomPair at depth n agrees with the generic atom of combinedY at depth 2n, then the generic atom at depth 2n+1 equals the second output of the X-step at the first sign bit.
-
-The successor law of the generic atom, the assumed agreement, and the even clauses of the interleaved signs and of combinedY reduce the claim to the two-branch closed form of that second output, read in reverse.

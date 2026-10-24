@@ -1,3 +1,0 @@
-Lifting is an order embedding: the lift of x lies below the lift of y if and only if x lies below y.
-
-Suppose the lift of x lies below the lift of y, and X belongs to x. The false tag of X then belongs to the lift of y. It is not the lift master, because the empty string lies in the master and does not lie in a false-tagged set. The remaining case gives a neighbourhood of y with the same false tag, and injectivity of tagging identifies it with X. Conversely, if x lies below y, the lift master belongs to the lift of y, and the false tag of a neighbourhood of x is the false tag of a neighbourhood of y.

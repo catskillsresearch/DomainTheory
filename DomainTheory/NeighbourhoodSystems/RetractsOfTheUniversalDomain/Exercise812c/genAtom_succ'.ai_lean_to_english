@@ -1,3 +1,0 @@
-The generic atom at depth n+1 is the atom at depth n intersected with the current test set when the sign bit is true, and intersected with the complement of that test set in the starting set when the bit is false.
-
-The defining recursion matches on the successor, so the equation is definitional.

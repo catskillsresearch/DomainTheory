@@ -1,3 +1,0 @@
-A left-copy neighbourhood of the sum arises only from the left factor, so the copied set is a neighbourhood of D.
-
-It is not the master, because the master token does not lie in a left copy. It is not a right copy, because a token of the nonempty product neighbourhood lies in the right copy and not in the left. The remaining case is a left copy, and injectivity of the left embedding returns membership in D.

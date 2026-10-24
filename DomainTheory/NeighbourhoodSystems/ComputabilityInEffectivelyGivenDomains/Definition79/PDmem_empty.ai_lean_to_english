@@ -1,3 +1,0 @@
-The empty set is a neighbourhood of the Smyth power domain.
-
-Witness it by the empty list. Nothing belongs to that list. By extensionality and membership in a union of down-sets, a set lies in the corresponding union exactly when it lies in the down-set of some listed neighbourhood, so both the empty set and that union are empty.

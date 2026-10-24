@@ -1,3 +1,0 @@
-The decidable chain predicate holds of a list if and only if the least map of the enumerated neighbourhood of the function-space code takes consecutive steps along that list.
-
-Induct on the list. The empty list holds on both sides. On a cons, the inclusion characteristic accepts the one-entry code if and only if the enumerated neighbourhood is contained in the corresponding step neighbourhood, and the least-map relation turns that inclusion into the least-map step. The inductive hypothesis handles the tail.

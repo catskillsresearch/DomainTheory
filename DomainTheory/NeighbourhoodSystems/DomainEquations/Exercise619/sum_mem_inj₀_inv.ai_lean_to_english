@@ -1,3 +1,0 @@
-If the left injection of a set is a neighbourhood of the abstract sum, then that set is a neighbourhood of the first system.
-
-The sum master contains the untagged token, which does not lie in a left injection, so the neighbourhood is not the master. A right injection of a nonempty neighbourhood contains a right-tagged token, which does not lie in a left injection. The remaining case is a left injection of a neighbourhood of the first system, and injectivity of the left injection identifies the set with that neighbourhood.

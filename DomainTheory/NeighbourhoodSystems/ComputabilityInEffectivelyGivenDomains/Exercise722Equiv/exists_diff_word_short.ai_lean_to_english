@@ -1,3 +1,0 @@
-If the language of the first expression is not contained in the language of the second, then some word shorter than the number of pairs of finite state sets lies in the first language and outside the second.
-
-Failure of inclusion supplies a word in the difference of the languages, and the acceptance criterion makes the language of the difference automaton nonempty. The short accepted-word lemma shortens a witness below the number of states of that automaton, and the same criterion returns membership in the first language and exclusion from the second.

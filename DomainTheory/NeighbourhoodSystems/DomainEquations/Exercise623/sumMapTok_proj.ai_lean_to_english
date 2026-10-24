@@ -1,3 +1,0 @@
-The sum carries the projection. The sum of the two projections equals the projection of the sum subsystem.
-
-Every neighbourhood of the larger sum is included in the master of the smaller sum: the master neighbourhood by the master equality, and a tagged neighbourhood by rewriting the factor master equality and composing the tagged inclusion with the embedding of the smaller master. Extensionality then matches the master, left-tag, and right-tag cases, ruling out an empty string in a tag and ruling out a cross-tag inclusion.

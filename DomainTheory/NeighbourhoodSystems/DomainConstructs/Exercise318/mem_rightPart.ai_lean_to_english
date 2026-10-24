@@ -1,3 +1,0 @@
-A token lies in the right content of a sum set when its right tag lies in the set, or the token lies in the second master and the set contains a left tag or the basepoint.
-
-Unfold the right content as a union of a preimage and a set defined by a predicate; the two sides are the same membership statement.

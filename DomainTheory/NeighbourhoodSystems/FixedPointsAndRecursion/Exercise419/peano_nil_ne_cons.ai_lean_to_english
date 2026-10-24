@@ -1,3 +1,0 @@
-The empty binary string is not a successor.
-
-The list constructors separate the empty string from a cons cell.

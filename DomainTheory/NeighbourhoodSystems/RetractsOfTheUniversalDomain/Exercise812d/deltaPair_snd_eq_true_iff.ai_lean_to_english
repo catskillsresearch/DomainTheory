@@ -1,3 +1,0 @@
-The second component of deltaPair at depth i is true exactly when the next bit of the base-four digit of k at place i is set.
-
-Unfold deltaPair and simplify.

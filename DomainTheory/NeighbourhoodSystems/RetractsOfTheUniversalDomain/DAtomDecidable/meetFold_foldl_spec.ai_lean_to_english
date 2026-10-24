@@ -1,3 +1,0 @@
-Folding the meet step across a list preserves the invariant that the success bit is at most one, that success means the index set of the accumulator equals a starting set intersected with the positive index set of the list, and that failure means that intersection is empty, whenever the starting accumulator stands in the same relation to the starting set.
-
-Induct on the list. For the empty list, simplification reduces the claim to the hypothesis on the starting accumulator. For an extended list, rewrite the fold and the positive index set so that the new starting set is the old one intersected with the index set of the head, apply the one-step specification, and use the inductive hypothesis.

@@ -1,3 +1,0 @@
-Proposition 3.7 of Scott (1981, PRG-19) states that substituting approximable maps a and b into a joint map F yields a map whose value at w is the two-variable form of F evaluated at the values of a and b at w.
-
-Composition and pairing expand the left side to the value of F at the pairing of those two values, and the elementwise form of the two-variable map identifies that value with the right side.

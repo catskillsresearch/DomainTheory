@@ -1,3 +1,0 @@
-No completed encoding is a prefix of a doubled encoding.
-
-Induct on the completed string. If both strings are empty, simplification rejects the marker as a prefix of the empty string. If the completed string is empty and the doubled string is not, two prefix steps yield a boolean contradiction by decision. If the completed string is nonempty and the doubled string is empty, the length inequality is impossible by simplification. If both are nonempty, two prefix steps peel the doubled bit and the inductive hypothesis applies to the tails.

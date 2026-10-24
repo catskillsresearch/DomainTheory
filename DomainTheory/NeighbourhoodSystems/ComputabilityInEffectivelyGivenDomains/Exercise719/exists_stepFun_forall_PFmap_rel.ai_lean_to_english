@@ -1,3 +1,0 @@
-From a finite list of pairs of power-domain neighbourhoods, each related by the power-domain action of a map f, one finite list of related pairs can be chosen so that every map agreeing with f on that list has its power-domain action relating every pair in the original list.
-
-The argument is induction on the list. The empty list needs no pairs. For a nonempty list, the two power-domain neighbourhoods are written as finite unions of up-sets, the finite formula supplies a witness for each generator of the source, those witnesses are gathered, and the inductive hypothesis covers the tail. A map agreeing on the concatenated list agrees on the head witnesses, hence satisfies the head constraint by the finite formula, and satisfies the tail by the inductive hypothesis.

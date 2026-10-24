@@ -1,3 +1,0 @@
-If Ψ sends an operator θ below θ, then the fixed-point operator lies below θ.
-
-Monotonicity of the function-space equivalence transports the hypothesis to an inequality of maps. Evaluating at an arbitrary map f and rewriting by the application law for Ψ shows that θ(f) is a pre-fixed point of f. The order law of the equivalence, the round trip for the fixed-point map, and the action of that map reduce the desired inequality to a pointwise comparison, which is the minimality of the least fixed point of f.

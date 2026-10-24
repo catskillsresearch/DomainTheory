@@ -1,3 +1,0 @@
-The singleton map relates the enumerated neighbourhood of n to the neighbourhood coded by k if and only if some index in the decoded list of k lies above the neighbourhood of n.
-
-Rewrite the relation as singleton membership in the power domain. From a witness neighbourhood Y, the enumerated neighbourhood of n lies in the down-set of Y by the principal inclusion, hence lies in the coded neighbourhood by the down-set inclusion, and membership supplies an index whose enumerated neighbourhood contains it. Conversely, the enumerated neighbourhood of that index, the fact that the coded neighbourhood is a power-domain neighbourhood, and the inclusion of its down-set in the coded neighbourhood given by the down-set criterion at the index itself, form the witness.

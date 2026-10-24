@@ -1,3 +1,0 @@
-The approximable map carried by the constant function with value b, evaluated at any argument, returns b.
-
-Unfold the constant-function map as the curry of the first projection, apply the curry law, and read the first component of the pair.

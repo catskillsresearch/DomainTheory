@@ -1,3 +1,0 @@
-The sharp of an endomap, evaluated at an element, is the tree-algebra embedding applied to the inner sharp applied to the tree-algebra projection of that element.
-
-Unfold the sharp as that composite, and use that composition of approximable maps acts by composition on elements.

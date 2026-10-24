@@ -1,3 +1,0 @@
-The tag of the bottom of a sum lies below the bottom element of the three-point domain. The basepoint carries no tag information.
-
-Rewrite that bottom element as the bottom of the three-point domain, and apply the lemma that a map sending master only to master sends bottom below bottom. At the master input only the third guard of the tag map applies, and it forces the output to be master.

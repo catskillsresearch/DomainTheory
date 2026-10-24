@@ -1,3 +1,0 @@
-The prefix characteristic of two codes equals 1 if and only if the list coded by the first is a prefix of the list coded by the second.
-
-Unfold the characteristic. Rewrite by the specifications of list equality, of coded initial segments, and of the length characteristic, then by the characterization of a prefix as equality with an initial segment, and commute the resulting equality.

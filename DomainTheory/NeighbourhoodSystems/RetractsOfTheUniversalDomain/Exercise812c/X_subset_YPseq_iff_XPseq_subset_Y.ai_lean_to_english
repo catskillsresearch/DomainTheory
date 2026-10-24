@@ -1,3 +1,0 @@
-The enumerated set X i is contained in YPseq j if and only if XPseq i is contained in the enumerated set Y j.
-
-Specialize the combined inclusion transfer to the indices 2i and 2j + 1. At the even index the interleaved families are X and XPseq, and at the odd index they are YPseq and Y. Intersecting with the masters does not change the even-index sets, because X i lies in the master of the first system and XPseq i lies in the master of the second.

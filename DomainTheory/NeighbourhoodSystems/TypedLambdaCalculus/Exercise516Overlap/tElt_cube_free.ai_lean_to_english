@@ -1,3 +1,0 @@
-The element t is cube-free in Scott's form: for a finite string u and a nonempty finite string a, the partial element of u followed by three copies of a does not lie below t.
-
-If it did, the cone of that string would be a neighbourhood of t, so the string would equal the Thue–Morse prefix of its length. The length is the length of u plus three times the length of a, and the length of a is at least 1. Cube-freeness of the bit sequence at offset the length of u and period the length of a then requires two bits to differ. Those bits are entries of the prefix. Rewriting the string as u followed by three copies of a and discarding u, the triple-concatenation period identifies the two entries, so the bits agree.

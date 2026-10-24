@@ -1,3 +1,0 @@
-Once the found flag of the X-fold is 1, the presentation image of the running code is a genuine neighbourhood of the second neighbourhood system.
-
-The argument is induction on the stage. Zero contradicts the flag. At a successor the step is unfolded. If the current atom is non-junk and the previous flag is 0, the new code is that atom, which is genuine. If the previous flag is 1, the inductive hypothesis and the atom's membership give two genuine neighbourhoods whose union is genuine, and surjectivity of the presentation supplies a code for that union, which the union-index specification returns. If the current atom is junk, the accumulator is unchanged and the inductive hypothesis applies.

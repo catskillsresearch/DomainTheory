@@ -1,3 +1,0 @@
-The sum map of f and g sends the right inclusion of an element to the right inclusion of its image under g.
-
-The image reaches the right copy, because the right inclusion does and the sum map preserves right reach, so the right round trip recovers the image from its right projection. The right projection of the image equals the right projection composed with the sum map composed with the right inclusion, by the two composition rules for element maps, and that composite equals g.

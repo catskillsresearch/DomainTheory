@@ -1,3 +1,0 @@
-The curry combinator relates a neighbourhood G of the maps from the product of the first two neighbourhood systems into the third to a neighbourhood H of the maps from the first into the function space of the second and the third exactly when both are neighbourhoods of those function spaces and the curry of every map in G lies in H.
-
-In one direction the image filter is rewritten by the action of the curry isomorphism and membership in the filter of a map. The least map of the principal neighbourhood of G lies below every member of G, monotonicity of currying preserves that inequality, and the function space is upward closed. In the other direction the same rewrites reduce the relation to membership of the curry of that least map, which belongs to G.

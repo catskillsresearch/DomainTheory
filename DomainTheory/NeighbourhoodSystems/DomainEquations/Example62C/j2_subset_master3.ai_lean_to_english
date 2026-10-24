@@ -1,3 +1,0 @@
-If Z is a neighbourhood of V₂, then the tagged right copy of Z is contained in the master neighbourhood of the three-way sum of V₀, V₁, and V₂.
-
-A token of the copy is the right tag of some c in Z. It lies in the inserted master on the right of the insertion and in the right half of the union, because the sub-master law places c in the master of V₂ and the membership criterion places its right tag in the right copy of that master.

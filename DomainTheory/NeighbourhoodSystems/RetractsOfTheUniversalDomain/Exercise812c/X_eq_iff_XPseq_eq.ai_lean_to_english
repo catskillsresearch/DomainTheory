@@ -1,3 +1,0 @@
-The enumerated sets X i and X j are equal if and only if XPseq i and XPseq j are equal.
-
-Each equality gives both inclusions. The same-family inclusion transfer converts an inclusion of enumerated sets into the corresponding inclusion of recovered sets, and conversely. Antisymmetry packages each pair of inclusions.

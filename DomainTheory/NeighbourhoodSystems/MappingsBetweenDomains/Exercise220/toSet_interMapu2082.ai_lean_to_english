@@ -1,3 +1,0 @@
-The set represented by the intersection of two elements is the intersection of the sets they represent.
-
-A number whose singleton complement belongs to the intersection comes from input neighbourhoods whose union is contained in that singleton complement, so the number lies in neither input neighbourhood and each element contains the singleton complement. Conversely, the two copies of the singleton complement are neighbourhoods of the two elements, and their union is contained in the singleton complement.

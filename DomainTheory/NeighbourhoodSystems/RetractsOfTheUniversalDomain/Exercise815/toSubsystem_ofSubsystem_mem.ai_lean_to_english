@@ -1,3 +1,0 @@
-The neighbourhood system reconstructed from the filter induced by a subsystem has exactly the neighbourhoods of that subsystem.
-
-In one direction, unwind the two existential witnesses, replace the two generating lists by equality of their finitely generated families, and apply the generator-wise criterion. In the other direction, surjectivity of the presentation supplies an index whose basic neighbourhood is the given neighbourhood, and the singleton list of that index witnesses both filter membership and membership in the finitely generated family.

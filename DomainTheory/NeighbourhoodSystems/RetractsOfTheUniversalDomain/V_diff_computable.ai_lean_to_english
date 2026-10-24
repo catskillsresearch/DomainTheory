@@ -1,3 +1,0 @@
-Existence of an enumerated neighbourhood of V equal to the difference of two enumerated neighbourhoods is recursively decidable.
-
-The raw difference of a paired code is primitive recursive, and so is the nonempty test of the level set of its two components. That test is at most one. It reads one exactly when the level set is nonempty, which is the existence statement by the level-set computation of the raw difference and the reduction of a representing index to nonemptiness.

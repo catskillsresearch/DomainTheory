@@ -1,3 +1,0 @@
-The functorial action of a composite equals the composite of the functorial actions.
-
-Apply uniqueness of the catamorphism to the composite of the two actions, which is strict. On a leaf, the two leaf laws give the leaf embedding of the composite. On a node, the two pairing laws give the pairing of the composite's values. Uniqueness identifies the composite of the actions with the action of the composite.

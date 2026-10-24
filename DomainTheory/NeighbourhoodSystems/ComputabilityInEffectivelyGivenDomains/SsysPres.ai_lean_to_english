@@ -1,3 +1,0 @@
-The partial presentation of the neighbourhood system enumerates by the enumeration map onto the carrier, and takes consistency from the recursive decidability of consistency.
-
-The enumeration is the enumeration map. Membership of each enumerated set is the membership characterization applied to the fact that every value of the map lies in the carrier. Surjectivity is the surjectivity of the map, transported along the same characterization. Consistency is the recursive decidability of the consistency relation.

@@ -1,3 +1,0 @@
-Check sends the fixed-point element associated with an element of the two-point system back to that element.
-
-Extensionality, after rewriting by the membership criterion of check and by the criterion that the fixed-point element differs from bottom, unpacks a two-point membership and a disjunction. An equality with the master rewrites to master membership of the element. The other alternative splits the two-point membership into the singleton, which is the membership already obtained, or the master, which belongs to the element. Conversely, a neighbourhood of the element is a neighbourhood of the two-point system, hence the singleton, which is the right alternative, or the master, which is the left alternative.

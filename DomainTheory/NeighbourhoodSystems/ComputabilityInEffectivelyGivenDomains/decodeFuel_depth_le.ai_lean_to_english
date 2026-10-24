@@ -1,3 +1,0 @@
-If a fuel-bounded decode recovers an expression, then the depth of that expression is at most the fuel.
-
-Induction on the fuel. Zero fuel never succeeds. At a successor, match the tag. Tag 0 yields sigma, of depth 1, when the payload is zero, and fails otherwise. Tag 1 yields a singleton, of depth 1, when the boolean list decodes. Tags 2 and 3 succeed only when both subcodes decode, and the inductive depth bounds together with one extra constructor stay within the successor fuel. A tag of the form t + 4 fails.

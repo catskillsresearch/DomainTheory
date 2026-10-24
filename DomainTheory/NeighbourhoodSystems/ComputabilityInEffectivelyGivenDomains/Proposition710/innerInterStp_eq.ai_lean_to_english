@@ -1,3 +1,0 @@
-On the state packed as the pair of b with the pair of the accumulator and a, the inner step selects the list code that prepends the intersection index of a and b when the consistency test of that pair returns one, and otherwise returns the accumulator.
-
-Unfold the definition and simplify the unpairings of the packed pairs.

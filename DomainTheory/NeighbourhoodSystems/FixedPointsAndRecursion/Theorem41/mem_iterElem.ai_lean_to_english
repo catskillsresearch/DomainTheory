@@ -1,3 +1,0 @@
-A neighbourhood belongs to the n-th approximant of an approximable endomap if and only if the n-th iterate relates the master neighbourhood to it.
-
-In one direction the witnessing neighbourhood lies in the bottom element, hence is the master, and the relation is already from the master. In the other direction the master belongs to the bottom element and is the witness.

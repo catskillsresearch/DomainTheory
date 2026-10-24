@@ -1,8 +1,0 @@
-The nonempty-presentation flag of a rational-pair list code equals one if and only if
-some code in the decoded list decodes to a pair whose first component is strictly less
-than its second.
-
-Unfolding the flag and rewriting by the characterization of the bounded existential
-characteristic, the existential is congruent in its right conjunct. The left pairing
-projection and the characterization of the pair nonemptiness flag turn that conjunct
-into the comparison of the decoded components.

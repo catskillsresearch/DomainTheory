@@ -1,3 +1,0 @@
-The least fixed point of the multiplication operator of n is the set of multiples of n.
-
-The multiples form a pre-fixed point, since zero is the multiple of index zero and n plus the multiple of index i is the multiple of index i + 1, so the least fixed point is contained in the multiples. Conversely, each multiple of index i lies in the least fixed point by induction on i, using that the least fixed point is fixed: the multiple of index zero is the zero clause, and the next multiple is the sum clause applied to the inductive multiple.

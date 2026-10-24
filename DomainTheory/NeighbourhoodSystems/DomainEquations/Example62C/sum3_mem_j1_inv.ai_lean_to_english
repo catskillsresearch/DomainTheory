@@ -1,3 +1,0 @@
-If the tagged middle copy of X is a neighbourhood of the three-way sum of the unit system with two copies of C, then X is a neighbourhood of C.
-
-The four shapes of such a neighbourhood are examined. The master would place the basepoint in the middle copy. A left copy would place a point of its nonempty unit neighbourhood, read through the left tag, in the middle copy. A middle copy equals the given copy, so injectivity identifies X with a neighbourhood of C. A right copy would place a point of its nonempty neighbourhood of C, read through the right tag, in the middle copy. Each mismatched token is excluded by the corresponding non-membership lemma.

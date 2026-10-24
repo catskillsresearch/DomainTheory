@@ -1,3 +1,0 @@
-The supremum of a pointwise-bounded set of maps lies below any approximable map that lies above every member of the set.
-
-A related pair of the supremum is membership of the output in the pointwise supremum at the principal filter of the input. That pointwise supremum lies below the upper bound at the same principal filter, because each member does, so the output belongs to the upper bound and the upper bound relates the pair.

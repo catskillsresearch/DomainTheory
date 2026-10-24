@@ -1,3 +1,0 @@
-Any two strict approximable maps from the infinite iteration into a target that both commute with a common algebra structure are equal.
-
-By induction on the truncation, using the zero law from strictness and the successor law from the homomorphism equation, the two maps agree after composition with every truncation of the inclusion. Extensionality of the composites with the descent map of the inclusion follows, because a relation through one truncation transfers across that agreement. The directed union of the truncations is the identity, so cancelling the identity composite yields equality of the maps.

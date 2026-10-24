@@ -1,3 +1,0 @@
-A defaulted reading of an append, at an index at least the length of the left list, agrees with the defaulted reading of the right list at the index minus that length.
-
-The proof is by induction on the left list. The empty append is the right list and the subtracted length is 0. For a cons cell, index 0 is impossible because a positive length is not at most 0, and a successor index rewrites the reading and the length and applies the inductive hypothesis.

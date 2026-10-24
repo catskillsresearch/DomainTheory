@@ -1,3 +1,0 @@
-Applying the uncurry of a map to a pair equals applying the map to the first component and then to the second.
-
-Rewrite by the equation for uncurry, then by composition of element maps, the paired map, composition again, the two projections, the components of a pair, and evaluation.

@@ -1,1 +1,0 @@
-The append lookup, on an index and parameters packing two codes and the first length, returns the indexed entry of the first code when the index is strictly below that length, and otherwise the corresponding entry of the second code, with default zero.

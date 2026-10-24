@@ -1,3 +1,0 @@
-The value of Φ on the partial element given by a string σ is the partial element whose string is false followed by the first component of the merge of the flipped string with the tail, both carrying a false second component.
-
-Unfold Φ. Rewrite by the composition law twice, the pairing law, the action of negation and of the tail on partial elements, the definitional identifications of those partial elements with shape elements headed by false, the merge of a pair and of an element, the vanishing of the second merge component, the shape of false, and cons on a partial element.

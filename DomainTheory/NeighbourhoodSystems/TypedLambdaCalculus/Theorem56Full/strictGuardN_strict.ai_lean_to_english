@@ -1,3 +1,0 @@
-If an argument is argument-like and some coordinate below n is bottom, the guard of depth n sends that argument to bottom.
-
-Induct on n. Depth 0 is impossible, since no index is below 0. At depth m + 1, if the bottom coordinate lies strictly below m then the inner guard is already bottom and the one-coordinate guard preserves bottom; if the bottom coordinate equals m then the one-coordinate guard at m returns bottom.

@@ -1,3 +1,0 @@
-The least fixed point of an approximable endomap equals the least fixed point of its composite with itself.
-
-By antisymmetry. Each iterate from the bottom element lies below the iterate at twice the index, by monotonicity of iteration; that even iterate equals the corresponding iterate of the square, and so lies below the least fixed point of the square. In the other direction the least fixed point of the map is a fixed point of the square, because composition of element maps applied to the fixed-point equation twice recovers it, and the least-fixed-point bound applies.

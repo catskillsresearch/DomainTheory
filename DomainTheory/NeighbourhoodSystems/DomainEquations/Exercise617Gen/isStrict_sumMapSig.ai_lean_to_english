@@ -1,3 +1,0 @@
-The sum map of an approximable map is strict: a neighbourhood related to the master neighbourhood of the domain is the master neighbourhood of the codomain.
-
-The relation says that the codomain neighbourhood is the master neighbourhood, or that it is the unit neighbourhood and the domain neighbourhood is the unit neighbourhood, or that both neighbourhoods are tagged copies. The master case is the claim. In the other two cases the empty token would belong to the master neighbourhood of the domain and also to the unit neighbourhood or to a tagged copy, both of which exclude the empty token.

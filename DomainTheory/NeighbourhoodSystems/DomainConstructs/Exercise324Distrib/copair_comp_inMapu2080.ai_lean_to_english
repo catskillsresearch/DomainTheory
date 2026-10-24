@@ -1,3 +1,0 @@
-The copairing composed on the right with the left injection is the first of the two maps.
-
-If the composite relates an input to an output, an intermediate sum neighbourhood is a left copy of that input and is related by the copairing. A master output is the master relation of the first map, a left copy shrinks to the given relation, and a right copy cannot contain the left copy. Conversely, the left copy of the input is an intermediate neighbourhood whose copairing clause is that same left copy.

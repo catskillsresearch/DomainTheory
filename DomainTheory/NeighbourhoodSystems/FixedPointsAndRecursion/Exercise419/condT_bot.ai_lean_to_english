@@ -1,3 +1,0 @@
-In the truth domain, the conditional sends bottom in the test coordinate to bottom.
-
-Extensionality and the membership law for the conditional reduce the claim to neighbourhoods. A neighbourhood related by the conditional arises from the zero branch, the one branch, or the master neighbourhood. The first two contradict the separation of the zero and one tokens from the master neighbourhood of bottom, and the master neighbourhood belongs to bottom. Conversely, a neighbourhood of bottom is the master neighbourhood, which the conditional law accepts.

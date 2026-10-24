@@ -1,1 +1,0 @@
-The second curry of the joint evaluator peels off the remaining map by the curry combinator of Table 5.5. It sends the varying map to the map that sends the second map to the map sending a point to the value of the joint evaluator, and it is that curry combinator composed with the first curry.

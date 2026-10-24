@@ -1,3 +1,0 @@
-The excluded-point set of the filter of an excluded-point set E is E itself.
-
-Extensionality and the two membership lemmas reduce the claim to the double complement of a singleton being finite and contained in E. Simplification cancels the double complement, uses finiteness of a singleton, and rewrites containment of a singleton as membership of its element.

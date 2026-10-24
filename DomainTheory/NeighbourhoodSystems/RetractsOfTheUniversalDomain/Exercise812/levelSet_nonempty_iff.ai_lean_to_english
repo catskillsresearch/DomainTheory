@@ -1,3 +1,0 @@
-A level set at level k with mask m is nonempty if and only if some residue ℓ below 2^k has its bit set in m.
-
-A member has remainder modulo 2^k strictly below 2^k, and that remainder is a set bit. Conversely, such a residue ℓ lies in the level set, because its remainder modulo 2^k is itself.

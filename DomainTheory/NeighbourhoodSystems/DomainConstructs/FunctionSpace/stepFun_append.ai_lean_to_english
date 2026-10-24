@@ -1,3 +1,0 @@
-The step neighborhood of an appended list is the intersection of the step neighborhoods of the two lists.
-
-A map relates every pair of the append exactly when it relates every pair of each list, by splitting membership in an appended list.

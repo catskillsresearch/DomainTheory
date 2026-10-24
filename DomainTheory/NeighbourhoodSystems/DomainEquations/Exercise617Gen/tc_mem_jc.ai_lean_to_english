@@ -1,3 +1,0 @@
-The copy token of a letter and a token lies in the copy of a set at that letter when the token lies in the set.
-
-A member of the copy is a copy token of some token in the set, and injectivity forces that token to be the given one. Conversely, the given token is itself the witness.

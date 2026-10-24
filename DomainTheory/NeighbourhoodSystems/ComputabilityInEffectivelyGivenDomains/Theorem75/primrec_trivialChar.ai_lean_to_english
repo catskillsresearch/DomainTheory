@@ -1,3 +1,0 @@
-If the equality characteristic is primitive recursive, then the triviality characteristic is primitive recursive.
-
-It is the fold of the primitive-recursive triviality step, with constant parameter 0, constant start 1, and the identity as the list code.

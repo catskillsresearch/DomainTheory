@@ -1,3 +1,0 @@
-A set is a neighbourhood of the Smyth power domain if and only if it is the indexed union of the down-sets of a finite sequence of neighbourhoods.
-
-From a list, take its length and its entries. Membership in the list-indexed union matches the sequence-indexed union because a listed neighbourhood is the entry at its position, and conversely. From a finite sequence, take the list of its values. A neighbourhood occurs in that list exactly when it is a value of the sequence, so the two unions agree.

@@ -1,3 +1,0 @@
-The enumerated neighbourhood at the list-code intersection of two codes equals the neighbourhood presented at the fold of the second decoded list, started at the code-level fold of the first code.
-
-The left side is the neighbourhood at the code-level fold of the appended codes. The code-fold equation and the append equation rewrite it as the fold of the concatenated decoded lists from the master index. The fold of the first decoded list from the master index is the code-level fold of the first code, by symmetry of the code-fold equation. The append equation for left folds then starts the second fold at that index.

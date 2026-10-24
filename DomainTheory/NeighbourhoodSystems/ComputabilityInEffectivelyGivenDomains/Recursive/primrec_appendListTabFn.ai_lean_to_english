@@ -1,3 +1,0 @@
-The tabulation lookup used to concatenate two coded lists is primitive recursive.
-
-From the packed argument one reads the index, the two list codes, and the length of the first list. The test that the index plus one does not exceed that length, the indexed entry of the first list, and the indexed entry of the second list at the index minus that length are primitive recursive. Selection on the test between those two entries agrees with the lookup after unfolding it and simplifying the pairing projections.

@@ -1,3 +1,0 @@
-The i-th generator is the level set of height i + 1 whose mask selects the residues below 2 to the i + 1 that have bit i set.
-
-A number has bit i set exactly when its residue modulo 2 to the i + 1 does, and that residue lies below 2 to the i + 1 and has bit i set exactly when it belongs to the mask.

@@ -1,3 +1,0 @@
-subsetB reports true if and only if the language of the first expression is contained in the language of the second.
-
-Unfold the bounded check of every listed word. If inclusion fails, the short difference lemma supplies a short word in the first language and outside the second; that word lies in the searched list, the check then forces the second matcher to accept it, and the matcher criterion puts it in the second language. Conversely, for each searched word, membership in the first language and the inclusion yield acceptance by the second matcher, while failure of that membership means the first matcher rejects the word.

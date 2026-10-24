@@ -1,3 +1,0 @@
-The matcher accepts a word if and only if the word lies in the denotation of the expression.
-
-Induction on the expression, generalizing the word. The universal language and a singleton reduce by the definitions. For concatenation, membership in a concatenation is a split of the word, and the search over cut points matches the inductive hypotheses in both directions, transporting the strict range bound across the successor comparison. For intersection, the conjunction of the two matcher calls matches the conjunction of the inductive hypotheses under the intersection equation.

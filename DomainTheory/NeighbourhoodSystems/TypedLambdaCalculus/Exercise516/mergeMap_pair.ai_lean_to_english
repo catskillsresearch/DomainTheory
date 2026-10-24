@@ -1,3 +1,0 @@
-Merging the pair of finite shape elements of (b₀, σ) and (b₁, τ) equals the interleaved element of σ, b₀, τ, and b₁.
-
-By extensionality of elements, compare membership of a neighbourhood. If the neighbourhood lies in the image, the witnessing input is a product neighbourhood contained in the pair, so each shape element lies below the corresponding given shape element, and monotonicity of the interleaved element supplies the membership. Conversely, the product of the two shape neighbourhoods lies in the pair and witnesses the membership.

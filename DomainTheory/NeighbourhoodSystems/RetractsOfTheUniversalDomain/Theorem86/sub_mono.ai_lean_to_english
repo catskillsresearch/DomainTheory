@@ -1,3 +1,0 @@
-The combinator sub is monotone: if f lies below g, then sub f lies below sub g.
-
-A relation of sub f supplies a witness neighbourhood related to itself by f. The inequality turns that self-relation into a self-relation for g, which is a relation of sub g.

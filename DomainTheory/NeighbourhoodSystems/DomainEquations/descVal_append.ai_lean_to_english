@@ -1,3 +1,0 @@
-The recursive value of a base element along a concatenation of two strings equals the recursive value, along the first string, of the recursive value of the base along the second string.
-
-Induct on the first string. The empty string is reflexivity. A cons cell applies the bit successor to both sides of the inductive hypothesis.

@@ -1,3 +1,0 @@
-For an arbitrary sign history, a depth n, and a bit, the second component of the generalized X-step equals the second component of the generated pair, cut by the basic neighbourhood of the X-sequence code of n when the bit is true and by the master minus that neighbourhood when the bit is false.
-
-The generated pair satisfies the split hypotheses, and the true case is the intersection formula already proved. For the false bit, the split specification makes the two branches reunite to the second component and makes them disjoint, so the false branch is the difference of the second component with the true branch, hence with the sequence neighbourhood. The generated second component lies in the master, so cutting the difference further by the master does not change it.

@@ -1,3 +1,0 @@
-If a sum element reaches the right copy, the sum map sends it to the right inclusion of g applied to its right projection.
-
-The right round trip rewrites the element as the right inclusion of its right projection, and the inclusion formula for the sum map gives the result.

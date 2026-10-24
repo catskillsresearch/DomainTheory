@@ -1,3 +1,0 @@
-The square of the square root of n is at most n.
-
-If 1 is strictly less than n, rewriting the square root by the right branch of its definition, which applies because n is not at most 1, reduces the claim to the iterative square bound. Otherwise n is at most 1, and rewriting by the left branch reduces the claim to the calculation that n times n is at most 1 times n, which equals n.

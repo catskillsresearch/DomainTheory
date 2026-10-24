@@ -1,7 +1,0 @@
-module
-
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.PalomarExamples.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.PalomarExamples.P4_embeds
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.PalomarExamples.Ssys_embeds
-
-@[expose] public section

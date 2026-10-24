@@ -1,3 +1,0 @@
-If two strings, each a block of ones followed by false and a remainder, are equal, then the lengths of the blocks and the remainders agree.
-
-Induction on the two lengths. Both zero simplifies to equality of the remainders. A zero against a successor, or a successor against a zero, is contradictory after unfolding one replicate. When both are successors, cancel one leading true and apply the inductive hypothesis.

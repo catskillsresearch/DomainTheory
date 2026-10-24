@@ -1,1 +1,0 @@
-The interleaving map from the product of C with itself to C relates a product neighbourhood of the shapes of two tagged strings (b₀, σ) and (b₁, τ) to the neighbourhoods of the interleaved element of σ, b₀, τ, and b₁. This is Scott's merge, with merge(εx, δy) = ε·δ·merge(x, y), built directly as an approximable map.

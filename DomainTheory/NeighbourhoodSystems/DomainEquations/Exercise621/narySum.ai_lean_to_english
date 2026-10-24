@@ -1,1 +1,0 @@
-The n-ary separated sum of a head expression and a list of expressions is the right-nested fold of the separated-sum constructor.

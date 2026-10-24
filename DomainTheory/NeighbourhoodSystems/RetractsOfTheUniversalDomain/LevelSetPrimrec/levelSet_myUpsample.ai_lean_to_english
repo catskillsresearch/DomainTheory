@@ -1,6 +1,0 @@
-Upsampling a mask from level k to a level at least k presents, at the higher level, the
-same set as the original mask at level k.
-
-Unfolding upsampling, the final truncation does not change the level set. The iteration
-of the joint step for the difference of the levels preserves the level set, and adding
-that difference back to k recovers the higher level.

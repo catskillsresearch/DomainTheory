@@ -1,3 +1,0 @@
-The pairing of the two bottoms of the function space is the bottom of the pair space.
-
-Element extensionality reduces the claim to membership. Rewrite membership in the pair and in the bottom. In one direction a witnessing product has both factors in the bottom, so both factors are the master and the product of the masters is the master. In the other direction the two masters of the function space lie in the bottom, and rewriting the neighbourhood as the master together with the product of the masters recovers it.

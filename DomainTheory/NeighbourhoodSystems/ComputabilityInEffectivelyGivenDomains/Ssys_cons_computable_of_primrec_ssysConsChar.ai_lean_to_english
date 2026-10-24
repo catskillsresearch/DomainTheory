@@ -1,3 +1,0 @@
-If the consistency character is primitive recursive, then the relation asserting that some enumerated set is contained in the intersection of two enumerated sets is recursively decidable.
-
-The paired zero-one character theorem applies to that primitive recursion, the fact that the character takes values in {0, 1}, and the equivalence of the character equaling 1 with the consistency relation.

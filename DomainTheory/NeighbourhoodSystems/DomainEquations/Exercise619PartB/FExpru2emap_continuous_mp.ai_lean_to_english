@@ -1,3 +1,0 @@
-If an approximable map is the pointwise union of a nonempty directed family, then a relation of the image of the union under a construct is already a relation of the image of some member.
-
-The proof is by induction on the construct. A constant image does not depend on the map, so any index works. The identity variable is the given union. A sum relation is the master, a left copy, or a right copy: the master is again independent of the index, and each copy uses the inductive hypothesis on that component. A product relation supplies a pair of component relations; the inductive hypotheses give two indices, directedness supplies a common upper bound, and monotonicity of the two components carries the relations to that bound.

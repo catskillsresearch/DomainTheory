@@ -1,3 +1,0 @@
-The intersection-emptiness decider is primitive recursive.
-
-It is subtraction of the primitive-recursive intersection-existence decider from the constant one.

@@ -1,3 +1,0 @@
-Selecting by a word that begins with the letter i and continues as σ equals selecting by σ in the i-th immediate subtree.
-
-Function extensionality reduces the trees to a continuation, and simplification unfolds the immediate subtree.

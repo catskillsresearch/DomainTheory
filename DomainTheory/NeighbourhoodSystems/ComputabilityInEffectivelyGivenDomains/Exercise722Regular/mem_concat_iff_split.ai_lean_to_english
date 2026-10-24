@@ -1,3 +1,0 @@
-A word lies in a concatenation of two languages if and only if some cut at most its length puts the prefix in the first language and the suffix in the second.
-
-From a concatenation witness, the cut is the length of the first factor, and taking and dropping that length recover the two factors. Conversely, the prefix and the suffix at the given cut concatenate back to the word.

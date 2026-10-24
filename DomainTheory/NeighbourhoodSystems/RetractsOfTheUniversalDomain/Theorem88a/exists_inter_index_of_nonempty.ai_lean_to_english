@@ -1,3 +1,0 @@
-If Yidx e i ∩ Yidx e j is nonempty, then some index m satisfies both e i ∩ e j = e m and Yidx e i ∩ Yidx e j = Yidx e m.
-
-The intersection of the index sets is nonempty. If it were empty, the transfer of emptiness, after the intersections with the universe are removed, would make the Yidx intersection empty. Any index k in the intersection satisfies e k ⊆ e i ∩ e j, so the intersection law of D puts e i ∩ e j in D, and the witnessed form of the lemma supplies m.

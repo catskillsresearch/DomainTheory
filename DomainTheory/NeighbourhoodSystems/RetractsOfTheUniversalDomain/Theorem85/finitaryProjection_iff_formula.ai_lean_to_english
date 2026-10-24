@@ -1,3 +1,0 @@
-An approximable endomap is a finitary projection if and only if a neighbourhood belongs to the image of an element exactly when it is a neighbourhood and some neighbourhood of the element is contained in it and related to itself by the map.
-
-One direction is the derivation of the step-closure formula from a finitary projection, and the other is the derivation of a finitary projection from that formula.

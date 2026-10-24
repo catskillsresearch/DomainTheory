@@ -1,3 +1,0 @@
-The three-way sum preserves composition: the sum of three composites equals the composite of the two three-way sums.
-
-In one direction a master step factors through the intermediate master, and a tagged step factors through the intermediate tagged copy carried by the two relations. In the other direction an intermediate master forces the composite relation to be the master. An intermediate tagged copy must carry the same tag as the first factor; a different tag is impossible because the tags are disjoint, and the same tag composes the two relations.

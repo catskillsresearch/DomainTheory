@@ -1,3 +1,0 @@
-A finite sequence of neighbourhoods is consistent if and only if the bracket of its finite intersection is nonempty. A finite sequence of neighbourhoods is consistent if and only if some filter lies in the bracket of every term. The token system is complete. The token system is positive: the intersection of two of its neighbourhoods is a neighbourhood if and only if the intersection is nonempty. The map sending an element to the filter of brackets of its neighbourhoods is a bijection onto the elements of the token system.
-
-The numbered name example_121 is the conjunction of these statements. The proof is that conjunction.

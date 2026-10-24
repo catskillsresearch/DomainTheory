@@ -1,3 +1,0 @@
-The concatenation automaton accepts exactly the concatenation of the two accepted languages.
-
-An accepting right state after reading a word falls under the right-hand clause of the evaluation law, because a left state is not a right state, and that clause supplies an accepted prefix together with a run of the second automaton on the suffix. Conversely, an accepted split gives an accepting state of the second automaton on the suffix, and the evaluation law puts the corresponding right state in the run of the concatenation automaton.

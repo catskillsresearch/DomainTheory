@@ -1,3 +1,0 @@
-The composite of the post- and pre-composition operator with the continuity witness, applied to an element x of the strict function space, is the strict map given by k composed with the functor applied to the underlying map of x, composed with j.
-
-Let h be the strict map represented by x. The filter of h is x, and the image of that filter under the continuity witness is the filter of the strict map the witness assigns to h. Composition of element maps, the action lemma for the operator, and the inverse strict representation reduce the claim to the defining property of the witness, which replaces that strict map by the functor applied to h.

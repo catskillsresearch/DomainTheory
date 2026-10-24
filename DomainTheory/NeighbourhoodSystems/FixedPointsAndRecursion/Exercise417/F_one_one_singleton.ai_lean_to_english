@@ -1,3 +1,0 @@
-In the multiplicative monoid of the natural numbers, with both generators equal to one, the singleton of one is a fixed point of the power-set operator.
-
-Unfolding the operator, the square of that singleton is the singleton of the product, and the resulting union is the singleton of one.

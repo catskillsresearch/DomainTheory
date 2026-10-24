@@ -5,7 +5,7 @@ public import DomainTheory.BridgeTheorems.ofFilter
 public import DomainTheory.BridgeTheorems.mem_basicOpen_singleton
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.subset_closure
 public import Mathlib.Order.Hom.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23

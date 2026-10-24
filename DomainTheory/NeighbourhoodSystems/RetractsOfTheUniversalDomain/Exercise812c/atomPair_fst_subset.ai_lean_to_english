@@ -1,3 +1,0 @@
-The first component of an atom pair shrinks from depth n to depth n + 1.
-
-By the successor formula, that component is the first output of the Y-step on the X-step of the depth-n pair. The X-step specification supplies the hypotheses of the Y-step. The first output of the Y-step is contained in the first output of the X-step, which is contained in the first component at depth n.

@@ -1,3 +1,0 @@
-A right-tagged token lies in the right copy of a set if and only if the underlying token lies in that set.
-
-Unfold the right copy as the image of the right tag. An image witness is a token of the set whose tag equals the given tag; injectivity of the option and right-sum constructors identifies the two tokens, so membership transfers. In the other direction the given token is the image witness.

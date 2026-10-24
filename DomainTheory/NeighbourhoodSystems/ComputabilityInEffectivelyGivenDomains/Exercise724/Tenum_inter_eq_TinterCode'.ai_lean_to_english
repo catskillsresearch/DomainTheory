@@ -1,3 +1,0 @@
-For indices at most 2, the intersection of two enumerated neighbourhoods is empty when their intersection code is the junk value 3, and otherwise equals the neighbourhood enumerated by that code.
-
-Case on both indices in that range, and simplify by the enumeration, the intersection code, the master neighbourhood, intersection with the universe, intersection of a set with itself, and the two intersections of the neighbourhoods zero and one.

@@ -1,3 +1,0 @@
-The union of two enumerated neighbourhoods of U is a neighbourhood of U. Presentability, nonemptiness, and containment in the unit interval all pass to the union.
-
-Presentations of the two neighbourhoods concatenate to a presentation of the union. Nonemptiness of the first passes along the left inclusion, and the two containments in the unit interval pass to the union.

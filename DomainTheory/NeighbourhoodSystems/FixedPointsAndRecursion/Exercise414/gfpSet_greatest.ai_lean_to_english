@@ -1,3 +1,0 @@
-The union of the post-fixed points of an endomap f contains every fixed point of f.
-
-A fixed point equals its image, so it is a post-fixed point, and every post-fixed point is contained in that union.

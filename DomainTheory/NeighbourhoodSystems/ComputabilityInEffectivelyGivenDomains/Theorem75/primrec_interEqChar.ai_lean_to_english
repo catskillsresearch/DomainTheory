@@ -1,3 +1,0 @@
-If the consistency, inclusion, and equality characteristics are primitive recursive, then the function reading three codes from a nested pairing and returning their intersection-equality characteristic is primitive recursive.
-
-Project the three components. Compose the paired consistency characteristic and the paired intersection index with the first two, and compose the enumerated-equality characteristic with that index and the third. Selection of the consistency bit against the equality characteristic agrees with the intersection-equality characteristic after unpacking.

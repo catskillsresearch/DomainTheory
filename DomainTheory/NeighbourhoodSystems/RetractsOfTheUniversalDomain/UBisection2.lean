@@ -1,8 +1,0 @@
-module
-
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.bisection
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.listMinFst_2
-
-@[expose] public section

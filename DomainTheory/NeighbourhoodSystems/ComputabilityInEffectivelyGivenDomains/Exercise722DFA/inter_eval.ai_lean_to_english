@@ -1,3 +1,0 @@
-The product of two deterministic automata evaluates a word as the pair of the two component evaluations.
-
-The proof inducts on the word from the right. The empty word is reflexivity. A final letter rewrites each of the three evaluations by the equation for appending one letter, applies the inductive hypothesis, and the resulting step is reflexivity.

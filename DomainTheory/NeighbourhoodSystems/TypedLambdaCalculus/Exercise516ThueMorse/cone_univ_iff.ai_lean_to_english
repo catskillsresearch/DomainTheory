@@ -1,3 +1,0 @@
-The cone of a string σ is the set of all strings if and only if σ is empty.
-
-If the cone is the whole set, the empty string lies in the cone, so σ is a prefix of the empty string and hence empty. Conversely, the cone of the empty string is the whole set.

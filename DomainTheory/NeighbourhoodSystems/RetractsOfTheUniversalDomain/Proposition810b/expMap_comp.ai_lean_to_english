@@ -1,3 +1,0 @@
-The exponential preserves composition, contravariantly in the first argument: the exponential of a composite h after h' and a composite k' after k equals the exponential of h' and k' composed after the exponential of h and k.
-
-Compare elements of the function space, and apply the function-space equivalence, which is injective. The elementwise form of the exponential turns both sides into the corresponding composites of maps, and associativity identifies them.

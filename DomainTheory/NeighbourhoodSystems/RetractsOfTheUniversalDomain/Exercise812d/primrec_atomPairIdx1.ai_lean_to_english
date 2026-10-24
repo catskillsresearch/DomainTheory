@@ -1,3 +1,0 @@
-The second index extracted from the atom-pair state, read on a paired argument, is primitive recursive.
-
-Swap the pair, run the primitive-recursive state, project the inner state, and project the second index. The composite equals the extracted index.

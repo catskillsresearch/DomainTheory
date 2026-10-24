@@ -1,3 +1,0 @@
-One step of the inner fold adds exactly the intersection of the two down-sets. When the consistency decider accepts the pair, the step prepends the intersection index; when it rejects the pair, that intersection of down-sets is empty and the accumulator is left unchanged. The case split is an equality of natural numbers.
-
-If the decider returns 1, selection takes the successor pairing code. Its enumeration is the down-set of the intersection index united with the accumulator, and the intersection specification together with the down-set intersection law identifies that down-set. If the decider does not return 1, the one-test is at most 1 and is not 1, so it is 0, selection leaves the accumulator, and the intersection of the down-sets is empty.

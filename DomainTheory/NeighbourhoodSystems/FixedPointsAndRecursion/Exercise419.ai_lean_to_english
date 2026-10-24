@@ -1,3 +1,0 @@
-The empty binary string is not a successor. The equation defining the test one holds on every partial element of the sequence domain. The equation defining the test one from emptiness, zero, and the conditional holds on every total element of the sequence domain. The two successor operations on binary strings have disjoint ranges: a string headed by false differs from a string headed by true. Each successor operation on binary strings is injective. A predicate on binary strings that holds of the empty string and is preserved by both successors holds of every string.
-
-The numbered name example_419 is the conjunction of these statements. The proof is that conjunction.

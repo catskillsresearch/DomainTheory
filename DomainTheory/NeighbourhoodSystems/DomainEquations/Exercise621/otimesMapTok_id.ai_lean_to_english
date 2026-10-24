@@ -1,3 +1,0 @@
-The smash product of the two identity maps is the identity map of the smash product.
-
-The two approximable maps are equal because they relate the same neighbourhoods. In the forward direction the master clause uses membership of the input and the fact that every neighbourhood lies under the master. A proper identity rectangle becomes a componentwise inclusion of product neighbourhoods, with both memberships given by the proper-rectangle clause. In the backward direction a master output is the master clause. A proper output whose input is the master would force a component inclusion against properness, by the componentwise characterization of inclusion of product neighbourhoods. Two proper rectangles unpack that inclusion into the two component inclusions.

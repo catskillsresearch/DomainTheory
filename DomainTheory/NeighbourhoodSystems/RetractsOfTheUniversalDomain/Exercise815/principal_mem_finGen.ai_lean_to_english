@@ -1,3 +1,0 @@
-If an index belongs to a list js, then the basic neighbourhood named by that index belongs to the finitely generated family of js.
-
-The singleton list of the index is a sublist of js, and the basic neighbourhood is a neighbourhood. Extensionality and the membership characterization of the intersection show that the intersection of the master with that singleton equals the basic neighbourhood, because the basic neighbourhood is contained in the master.

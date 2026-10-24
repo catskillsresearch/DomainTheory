@@ -1,3 +1,0 @@
-When both splits are the canonical split choices coming from the absence of minimal neighbourhoods, the generalized atom pair agrees with the original atom pair at every depth.
-
-The argument is induction on the depth. Depth zero is reflexive. At a successor the generalized step is rewritten by the inductive hypothesis and then matches the successor equation of the original atom pair.

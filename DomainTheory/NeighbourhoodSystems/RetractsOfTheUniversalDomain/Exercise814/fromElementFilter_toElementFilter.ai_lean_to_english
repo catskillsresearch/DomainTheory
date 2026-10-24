@@ -1,3 +1,0 @@
-The composite of the backward map after the forward map is the identity on fixed points of a closure operator.
-
-The underlying elements agree by antisymmetry. The directed supremum of the confirmed compacts lies below the fixed point, because injectivity of principal up-sets turns each confirmation into that inequality. In the other direction the fixed point is the directed supremum of its generating family, and each member of that family is a confirmed compact: the principal element of the corresponding neighbourhood lies below the fixed point, so monotonicity of the element map and the fixed-point equation put its image below the fixed point as well.

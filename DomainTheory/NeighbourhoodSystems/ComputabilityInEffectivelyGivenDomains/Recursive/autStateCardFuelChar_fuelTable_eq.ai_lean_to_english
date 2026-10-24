@@ -1,3 +1,0 @@
-For every fuel, every bound, and every code at most that bound, indexing the fuel table of the state-card lookup at that code returns the fuel-bounded state-card character.
-
-This is the generic agreement of a fuel table with a course-of-values recursion. The zero and successor equations are definitional, the lookup unfolds to the body applied to table indexing, and the body depends only on values at codes at most its argument.

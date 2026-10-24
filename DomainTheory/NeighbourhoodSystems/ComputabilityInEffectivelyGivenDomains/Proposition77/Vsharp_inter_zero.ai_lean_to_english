@@ -1,3 +1,0 @@
-The intersection of the enumerated set at n with the enumerated set at 0 equals the enumerated set at n.
-
-The value at 0 is the master neighbourhood, and the value at n is a section neighbourhood, hence contained in the master neighbourhood, so the intersection with the master neighbourhood does not change it.

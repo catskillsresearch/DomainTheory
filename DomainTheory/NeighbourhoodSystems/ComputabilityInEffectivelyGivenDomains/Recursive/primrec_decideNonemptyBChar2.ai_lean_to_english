@@ -1,3 +1,0 @@
-The non-emptiness decider is jointly primitive recursive in the fuel and the code.
-
-The product of the bit-string character of the candidate and the joint matching character of the fuel, the expression code, and the candidate is primitive recursive. The parametrized bounded existential of that product, composed with the packing of the fuel and the code together with the code bound of their automaton-state cardinality, agrees with the decider after simplifying the pairing projections.

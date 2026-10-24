@@ -1,3 +1,0 @@
-For positive n, if a tagged tuple belongs to MemA, then each of its components belongs to MemA.
-
-Replace the tuple by a variable and case on its membership. The case of the set of all strings would put the empty string in the tuple. In the tuple case, nonemptiness at index zero produces a slot word of the second tuple; transporting it across the equality and applying uniqueness of slot prefixes forces the tags to agree, after which injectivity of embTuple identifies each component.

@@ -1,3 +1,0 @@
-Any two neighbourhoods of the binary-sequence system are nested or disjoint.
-
-The proof cases on both neighbourhoods. Two cones are compared by the cone trichotomy. A singleton and a cone, in either order, are compared by the singleton-cone alternative, and in one order the empty intersection is rewritten by commutativity. Equal singletons coincide. Distinct singletons have empty intersection, because a common element would be both strings.

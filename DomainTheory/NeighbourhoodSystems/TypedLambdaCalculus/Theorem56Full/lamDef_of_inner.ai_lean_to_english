@@ -1,3 +1,0 @@
-Wrapping an inner map that is correct on total argument stacks in the strict guard of arity n yields a very strict λ-definition of the partial function. Strictness is then the strictness of the guard.
-
-On a vector stack every relevant coordinate is total, so the guard agrees with the inner map, and the two hypotheses give definedness and undefinedness. If an arg-like stack has bottom in one of its first n coordinates, the strictness lemma for the guard returns bottom.

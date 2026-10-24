@@ -1,3 +1,0 @@
-The remainder modulo 2 is primitive recursive.
-
-It is the right projection composed with the half-and-parity function. The half-and-parity specification and the second pairing projection identify that projection with the remainder.

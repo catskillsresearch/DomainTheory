@@ -1,3 +1,0 @@
-For every element of a separated sum, the conditional applied to the discriminator of that element and the two injected projections returns the element.
-
-Compare neighbourhoods, rewriting by the elementwise criterion for the conditional and the two membership criteria for the discriminator. A left alternative rewrites by the left round-trip identity, a right alternative by the right round-trip identity, and a master alternative is the master membership. Conversely, the trichotomy splits the element into a left element, a right element, or an element for which every neighbourhood is the master, and these are the three alternatives of the criterion, the first two rewritten by the round-trip identities.

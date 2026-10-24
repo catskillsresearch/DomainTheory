@@ -1,3 +1,0 @@
-The second projection relates the sharp neighbourhood coded by m to the sharp neighbourhood coded by k exactly when k is zero, or m is even and nonzero and the sharp neighbourhood of the right component of m divided by two, minus one, is contained in the neighbourhood coded by k.
-
-Both codes denote sharp neighbourhoods, and equality with the master neighbourhood is equality of the code with zero. The zero neighbourhood is never a paired embedding, and its code is zero. An odd neighbourhood is a zero embedding, hence not a paired embedding, and an odd code is not even. An even neighbourhood is a paired embedding, the arithmetic identity recovers the child index, and injectivity of the paired embedding identifies the right-hand child.

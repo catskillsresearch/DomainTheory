@@ -1,3 +1,0 @@
-Two bit-sources both strictly less than four to the n, and agreeing under deltaPair at every position below n, are equal.
-
-Compare test bits. Below 2n an even bit is twice a depth below n, and agreement of the first components gives equal test bits; an odd bit is one more than twice such a depth, and agreement of the second components gives equal test bits. At or above 2n both sources lie below two to that power, since four to the n equals two to the 2n, so both test bits are zero.

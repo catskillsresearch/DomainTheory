@@ -1,3 +1,0 @@
-On finite generators, the power-domain action relates the union of the up-sets of a list to the union of the up-sets of another list exactly when every neighbourhood in the first list is related by the map to some neighbourhood in the second list.
-
-A generator is a member of its union of up-sets, so the relation supplies a target, which lies under a generator of the target list, and monotonicity of the map returns to that generator. Conversely, a member of the source union lies under a generator, the hypothesis supplies a related generator of the target, and monotonicity extends the relation to the member.

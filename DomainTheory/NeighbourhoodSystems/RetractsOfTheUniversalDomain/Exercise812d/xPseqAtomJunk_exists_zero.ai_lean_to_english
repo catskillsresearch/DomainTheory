@@ -1,3 +1,0 @@
-For every depth n there is a bit-source below 4 to the power n whose X half-step atom is not junk.
-
-Some such bit-source has depth-n first component meeting the basic neighbourhood of n. That component is nonempty, so the recorded atom-pair state is not junk, and code-state correctness rewrites it as the basic neighbourhood of the first atom-pair index. The intersection of that neighbourhood with the basic neighbourhood of n is therefore nonempty. The junk formula and selection at flag 0 reduce the half-step junk flag to the emptiness decision for that intersection. The decision is at most 1, and the value 1 would make the intersection empty, so the decision, and hence the junk flag, is 0.

@@ -1,3 +1,0 @@
-Applying fromAA after toAA returns the original element of A.
-
-Two elements agree when they contain the same neighbourhoods. If the composite contains the set of all strings, so does the original element. A false-tagged or true-tagged tuple in the composite belongs to the original element by the forward half of toAA_mem_inj₀ or toAA_mem_inj₁. Conversely, a neighbourhood of the original element is the set of all strings or a tagged tuple, and the false and true tags belong to the composite by the reverse halves of those characterizations.

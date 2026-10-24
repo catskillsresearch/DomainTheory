@@ -1,3 +1,0 @@
-The least map of the enumerated neighbourhood of a code relates the neighbourhood at one index to the neighbourhood at another if and only if that enumerated neighbourhood is contained in the step neighbourhood between them.
-
-Rewrite the relation of the underlying map as membership in the principal filter. Containment is that membership, and the converse packages the containment with the step of the two presentation neighbourhoods, which is a neighbourhood of the function space.

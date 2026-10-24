@@ -1,3 +1,0 @@
-From the hypothesis that every neighbourhood in a finite list is related by a map to some neighbourhood in a second finite list, one finite list of related pairs can be chosen that covers the first list.
-
-The argument is induction on the first list. The empty list is covered by the empty list of pairs. For a nonempty list, a witness for the head is taken from the hypothesis and the inductive hypothesis covers the tail, and the pair of the head with its witness is placed at the head of that list.

@@ -1,3 +1,0 @@
-The pairing constructor sends the pair of the principal elements of two tree neighbourhoods to the principal element of the corresponding node neighbourhood.
-
-Rewrite pairing as the pairing map applied to the principal element of the product neighbourhood, and compare membership. A pairing relation decomposes into membership of the node and containment of the product of the two neighbourhoods, which is membership in that principal element, and conversely.

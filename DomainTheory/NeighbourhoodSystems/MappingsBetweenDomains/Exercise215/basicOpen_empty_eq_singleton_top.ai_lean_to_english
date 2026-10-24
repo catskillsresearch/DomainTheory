@@ -1,3 +1,0 @@
-The basic open of the empty neighbourhood is the singleton of the top element.
-
-Extensionality reduces the equality to membership. An element lies in that basic open exactly when it contains the empty set, and it contains the empty set exactly when it is the top element, which is membership in the singleton.

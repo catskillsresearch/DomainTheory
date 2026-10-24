@@ -1,8 +1,0 @@
-module
-
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.level_set_primrec
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.myTestBit_2
-
-@[expose] public section

@@ -1,3 +1,0 @@
-The intersection of two tagged copies at the same index is the tagged copy of the intersection of the underlying sets.
-
-Extensionality splits on the optional token. The basepoint lies on neither side. For a tagged token, membership on either side forces the index to be the common index, and the underlying token lies in both sets exactly when it lies in the intersection.

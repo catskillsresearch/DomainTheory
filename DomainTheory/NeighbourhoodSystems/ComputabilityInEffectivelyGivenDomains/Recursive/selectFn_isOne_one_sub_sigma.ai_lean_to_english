@@ -1,3 +1,0 @@
-Selection of 1 or 0 according as the equality-to-one test of one minus u holds equals 1 if and only if u equals 0.
-
-If the selection equals 1, then either u is 0, or else one minus u is not 1 by arithmetic, so the equality test is 0 and simplification by selection at 0 is impossible. Conversely, substituting 0 for u and simplifying by the equality test of 1 and selection at 1 yields 1.

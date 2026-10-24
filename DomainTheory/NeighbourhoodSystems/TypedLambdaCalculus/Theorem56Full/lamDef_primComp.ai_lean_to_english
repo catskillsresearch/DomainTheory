@@ -1,3 +1,0 @@
-Composition of total functions, in the shape of the primitive-recursive composition constructor, preserves λ-definability. The realiser is the outer realiser composed with the tuple of the inner realisers, wrapped in the strict guard.
-
-Transport the partial-composition theorem along a pointwise equality. For each vector, the monadic vector of the coerced total functions is the defined vector of their values, and binding the outer function through that defined value returns the outer function at the vector of values.

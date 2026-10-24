@@ -1,3 +1,0 @@
-If an approximable map is computable and an element x is computable, then the image of x under the map is a computable element.
-
-The graph of the map and the index set of x are recursively enumerable. Reindex the index set along the first projection, conjoin it with the graph, and project. A codomain neighbourhood lies in the image exactly when some domain neighbourhood lies in x and is related by the map to it. Surjectivity of the domain presentation supplies an index for such a neighbourhood, using that a member of x is a neighbourhood, and an index conversely supplies the enumerated neighbourhood.

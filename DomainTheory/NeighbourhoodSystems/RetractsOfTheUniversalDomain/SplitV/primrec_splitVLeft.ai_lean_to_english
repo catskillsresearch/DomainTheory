@@ -1,3 +1,0 @@
-splitVLeft is primitive recursive.
-
-The successor of the minimal level and two to the power of the splitting bit are primitive recursive, and their pairing agrees with the left half by reflexivity.

@@ -1,3 +1,0 @@
-Every expression preserves identity maps: T of the identity on X is the identity on T(X).
-
-The proof is by induction on T. A constant and the variable are definitional. The separated sum, the separated product, the coalesced sum, and the smash product each rewrite the two components by the inductive hypothesis and apply the identity law of that operation.

@@ -1,3 +1,0 @@
-The section, at a neighbourhood of the first factor, of a strict map out of the smash product is itself strict.
-
-Rewrite strictness as preservation of the bottom element, and unfold the section. The bottom element of the second system is the principal element of its master. The element map at that principal element, together with the right-hand bottom law, replaces the smash pair of the principal element of the given neighbourhood with the principal element of the master by the bottom element of the smash. What remains is preservation of the bottom element by the original map.

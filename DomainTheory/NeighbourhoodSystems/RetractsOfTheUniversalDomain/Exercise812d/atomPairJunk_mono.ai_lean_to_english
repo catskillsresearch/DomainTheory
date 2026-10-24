@@ -1,3 +1,0 @@
-If the junk flag is 1 at depth n, then it is 1 at depth n + 1.
-
-The flag at depth n + 1 is at most 1. If it were not 1 it would be 0, and a zero flag at depth n + 1 would force the flag at depth n to be 0.

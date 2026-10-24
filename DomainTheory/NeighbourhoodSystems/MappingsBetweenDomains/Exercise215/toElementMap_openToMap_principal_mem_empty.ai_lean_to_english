@@ -1,3 +1,0 @@
-The element map of the approximable map of an open set, evaluated at the principal filter of a neighbourhood, contains the empty set if and only if that principal filter lies in the open set.
-
-The relation of the map on that principal filter holds of the empty set exactly under this condition. In one direction the relation supplies the membership. In the other, the empty set is a neighbourhood of O and the hypothesis is the required witness.

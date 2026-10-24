@@ -1,3 +1,0 @@
-If two strings agree at every index where both are defined, then one is a prefix of the other.
-
-The empty string is a prefix of any string, and a nonempty string has the empty string as a prefix. If both strings are cons cells, agreement at index zero forces the heads to be equal, the tails satisfy the same agreement condition shifted by one, and the inductive alternative lifts by cons.

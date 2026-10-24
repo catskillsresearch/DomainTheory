@@ -1,3 +1,0 @@
-The product of two computable maps is computable.
-
-Rewrite the product map as the pairing of the first map after the first projection with the second map after the second projection. Each projection is computable, composition preserves computability, and pairing preserves computability.

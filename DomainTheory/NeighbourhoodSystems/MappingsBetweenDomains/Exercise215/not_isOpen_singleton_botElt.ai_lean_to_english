@@ -1,3 +1,0 @@
-The singleton of the bottom element is not an open subset of the domain of O.
-
-If it were open, some neighbourhood of the bottom element would have its basic open contained in the singleton. Membership in the bottom element forces that neighbourhood to be the universe. The top element contains the master neighbourhood, which is the universe, so the top element lies in the basic open and therefore in the singleton. That contradicts the distinctness of the bottom and top elements.

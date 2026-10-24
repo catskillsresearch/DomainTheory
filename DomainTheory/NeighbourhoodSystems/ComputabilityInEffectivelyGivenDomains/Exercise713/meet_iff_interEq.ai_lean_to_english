@@ -1,3 +1,0 @@
-For a computable presentation, the meet condition on indices n, m, and k holds if and only if the intersection of the n-th and m-th neighbourhoods equals the k-th neighbourhood.
-
-If the meet condition holds, the k-th neighbourhood is contained in the intersection. That containment and the intersection law make the intersection a neighbourhood, so some enumerated neighbourhood equals it. The meet condition at that index places the intersection inside the k-th neighbourhood. Conversely, if the intersection equals the k-th neighbourhood, containment in the k-th neighbourhood is containment in both of the others.

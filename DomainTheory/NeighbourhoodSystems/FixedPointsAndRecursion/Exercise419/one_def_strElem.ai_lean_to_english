@@ -1,3 +1,0 @@
-The equation defining the test one from emptiness, zero, and the conditional holds on every total element of the sequence domain.
-
-On the empty string the emptiness test returns true, so the conditional selects false, which is the value of the test one. On a false-headed string the emptiness test returns false and the zero test returns true, so the inner conditional selects false. On a true-headed string both tests return false, so the inner conditional selects true.

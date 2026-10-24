@@ -1,3 +1,0 @@
-The subsystem relation is antisymmetric: if each of two neighbourhood systems is a subsystem of the other, then the systems are equal.
-
-Extensionality of neighbourhood systems applies. Each inclusion clause gives one direction of the agreement of membership, and the master-equality clause of the first hypothesis gives the equality of the masters.

@@ -1,3 +1,0 @@
-The conditional at false returns the second argument.
-
-If an output neighbourhood belongs to the value, the witnessing input splits as a product whose truth component belongs to false, so it is the master or the singleton of one. The zero clause is impossible in either case. The one clause places the output above a neighbourhood of the second argument, and the master clause forces the output to be the master, which belongs to that argument. Conversely, if the output belongs to the second argument, the product of the singleton of one with the master and that output lies in the paired argument, and the guard is the one clause with right component equal to the output.

@@ -1,3 +1,0 @@
-One product neighbourhood is contained in another if and only if each coordinate set is contained in the corresponding set.
-
-A token of a coordinate set is a dependent pair in the smaller product neighbourhood, hence in the larger one. Conversely, a dependent pair in the smaller neighbourhood has its second component in the smaller coordinate set, hence in the larger one.

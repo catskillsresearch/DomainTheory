@@ -1,3 +1,0 @@
-The code-level pushforward of the code-level pullback of an element of the second system is that element.
-
-By extensionality of elements it is enough to compare membership of an arbitrary neighbourhood. If the neighbourhood is the basic neighbourhood of an X-sequence code m whose index neighbourhood equals the basic neighbourhood of a Y-sequence code n met by the element, the cross-parity equality identifies the X-sequence neighbourhood with the basic neighbourhood of n, which the element meets. Conversely, if the element meets the neighbourhood, surjectivity names it as a basic neighbourhood of some index n, and the reverse of the same equality at the Y-sequence code of n and n supplies the X-sequence witness, with the remaining equations holding by reflexivity.

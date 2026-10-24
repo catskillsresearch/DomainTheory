@@ -1,3 +1,0 @@
-The truncated difference of 1 and of 2 minus a equals 1 when 2 is at most a, and equals 0 otherwise.
-
-Split on whether 2 is at most a, and close both cases by arithmetic.

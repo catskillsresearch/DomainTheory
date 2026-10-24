@@ -1,3 +1,0 @@
-The cap-consistency character is jointly primitive recursive in the fuel and the two codes.
-
-Packing the fuel with the constant 3 and the two codes is primitive recursive. Composing the joint non-emptiness decider with that packing agrees with the consistency character after simplifying the pairing projections and unfolding the character and the cap code.

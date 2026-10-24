@@ -1,3 +1,0 @@
-An n-ary fold preserves the rooted-constant condition whenever the binary operation does. Each of separated sum, separated product, coalesced sum, and smash product preserves it definitionally.
-
-The proof inducts on the list. An empty tail returns the hypothesis on the head. A cons cell rewrites the fold and the rootedness equivalence of the operation, then pairs the head hypothesis with the inductive result on the tail, using that the head belongs to the cons list and that every remaining entry belongs to the tail.

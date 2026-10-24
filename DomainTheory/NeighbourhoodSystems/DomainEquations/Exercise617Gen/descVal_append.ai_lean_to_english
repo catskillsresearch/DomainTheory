@@ -1,3 +1,0 @@
-Evaluating the head recursion of a base element on a concatenation of finite strings σ and ρ equals evaluating, on σ, the head recursion started at the value of ρ.
-
-The claim is proved by induction on σ. The empty string is the identity of concatenation. For a string that begins with a letter, the successor operation of that letter is applied to both sides of the inductive hypothesis.

@@ -1,3 +1,0 @@
-The element lattice of the flat two-point domain has no greatest element.
-
-A greatest element would lie above both principal elements, hence would contain both singletons, since each singleton lies in its own principal filter. Closure under intersection would put their intersection into the element. That intersection is empty, so the element would contain the empty set, and every set in an element is a neighbourhood, contradicting that the empty set is not a neighbourhood.

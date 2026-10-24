@@ -1,1 +1,0 @@
-Cnalg A is the Tsig-algebra whose carrier is the empty-free object Cnobj A and whose structure map is cnStr. It presents the neighbourhood system of finite A-strings as an algebra for the endofunctor sending X to the sum of a unit and a copy of X for each letter of A.

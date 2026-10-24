@@ -1,3 +1,0 @@
-A state lies in the epsilon-closure of a set of states of the concatenation automaton if and only if it already lies in the set, or the set contains some left accepting state and the state is a right copy of a start state of the second automaton.
-
-In the forward direction, induct on the closure. A base member lies in the set. A further epsilon step leaves a left state only toward a right start state, and only from an accepting left state; a right state has no epsilon step, and a state added by an earlier crossing is already a right state, so it cannot be the source of another crossing. Conversely, members of the set lie in the closure, and a right start state is reached by one epsilon step from a left accepting state already in the closure.

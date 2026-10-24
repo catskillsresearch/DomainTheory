@@ -1,3 +1,0 @@
-For each fuel bound, the {0,1} non-emptiness decider on a Gödel code is primitive recursive.
-
-The product of the bit-string character of a candidate and the matching character, at that fuel, of the expression code against the candidate is primitive recursive. Pairing a code with the code bound of its automaton-state cardinality at that fuel is primitive recursive. The bounded existential of the product, composed with that packing, agrees with the decider by simplification.

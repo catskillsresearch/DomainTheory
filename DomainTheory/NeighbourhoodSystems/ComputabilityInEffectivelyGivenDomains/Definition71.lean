@@ -1,6 +1,0 @@
-module
-
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71.Basic
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71.unitSys_isEffectivelyGiven
-
-@[expose] public section

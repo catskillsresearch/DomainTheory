@@ -1,3 +1,0 @@
-If the left injection of a set V is a neighbourhood of the separated sum Aⁿ + Aⁿ, then V is a neighbourhood of the n-fold power of A.
-
-The membership splits into the sum master, a left summand, or a right summand. The master case is impossible because the basepoint belongs to the master and not to a left injection. The left case uses injectivity of the left injection. The right case takes a nonempty witness from apowNe and produces a right-injection token, which cannot lie in a left injection.

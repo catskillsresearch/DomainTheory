@@ -1,3 +1,0 @@
-The right subtree is disjoint from the leaf 00.
-
-Compare the two sets by extensionality, case-split on the seven tokens, and simplify the membership definitions.

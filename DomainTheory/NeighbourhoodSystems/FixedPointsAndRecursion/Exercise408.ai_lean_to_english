@@ -1,3 +1,0 @@
-If two approximable endomaps a and b agree at bottom, and an approximable endomap f commutes with each of them, then a and b agree at the least fixed point of f. If a predicate on elements holds at bottom, is preserved by the elementwise action of an approximable endomap f, and is closed under suprema of monotone chains, then it holds at the least fixed point of f.
-
-The numbered name example_408 is the conjunction of these statements. The proof is that conjunction.

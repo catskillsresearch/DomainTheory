@@ -1,3 +1,0 @@
-The constant-bottom map is a retraction: its composite with itself is itself.
-
-Compare relations by extensionality of maps. A composite pair factors through an intermediate neighbourhood, which the first factor forces to be the master, with the input a neighbourhood and the output the bottom neighbourhood. Conversely, the master is such an intermediate neighbourhood.

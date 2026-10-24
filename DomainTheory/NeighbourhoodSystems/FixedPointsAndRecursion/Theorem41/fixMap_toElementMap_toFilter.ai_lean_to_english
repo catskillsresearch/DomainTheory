@@ -1,3 +1,0 @@
-The fixed-point operator, applied to the filter of an approximable endomap, returns the least fixed point of that endomap.
-
-The elementwise equation reduces the claim to the least fixed point of the map recovered from the filter. The function-space equivalence sends the endomap to its filter and back, so the recovered map is the original endomap.

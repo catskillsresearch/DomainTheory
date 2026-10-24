@@ -1,3 +1,0 @@
-Every value of the coalesced-sum enumeration is nonempty.
-
-A proper left code is the left injection of a nonempty neighbourhood, a proper right code is the right injection of a nonempty neighbourhood, and every remaining code is the master, which contains the empty option.

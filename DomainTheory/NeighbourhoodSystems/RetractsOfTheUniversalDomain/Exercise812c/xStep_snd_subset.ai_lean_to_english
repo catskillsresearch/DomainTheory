@@ -1,3 +1,0 @@
-Under matching emptiness and the empty-or-neighbourhood alternative, the second output of xStep is contained in the incoming second set.
-
-The split specification gives a union of the two split pieces equal to that set. The true-bit output is the first piece, and the false-bit output is the second piece.

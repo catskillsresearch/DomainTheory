@@ -1,3 +1,0 @@
-Each level of the tower is a subsystem of the colimit.
-
-The masters agree because both equal the fixed-point token set. A neighbourhood of the level is a colimit neighbourhood at that index. If the intersection of two such neighbourhoods is a colimit neighbourhood at some index, the chain comparison places it in the level at the maximum of the two indices, and the chain comparison back to the original level shows that the intersection is closed there.

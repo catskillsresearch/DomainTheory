@@ -1,3 +1,0 @@
-A vector lies in the monadic combination of a family of partial natural numbers if and only if each entry lies in the corresponding partial value.
-
-Induct on the length. At length zero there is no index, and the only vector is the empty vector, which is the pure empty vector. At a successor the combination is the zeroth partial value bound into the shifted combination and then consed. From a factorization into a head and a tail, the head membership and the inductive hypothesis give every coordinate. Conversely, the head and tail of the vector supply the factors, the inductive hypothesis puts the tail in the shifted combination, and consing the head onto the tail recovers the vector.

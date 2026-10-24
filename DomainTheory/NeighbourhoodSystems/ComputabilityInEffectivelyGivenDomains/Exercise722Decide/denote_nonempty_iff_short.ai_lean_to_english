@@ -1,3 +1,0 @@
-The language of e is nonempty if and only if some word in the list bounded by autStateCard e is accepted by the matcher.
-
-The bound autStateCard e equals the number of automaton states. If the language is nonempty, acceptance by the automaton and the short accepted-word lemma give a word shorter than that number of states; arithmetic places it in the bounded list, and the matcher criterion accepts it. Conversely, the length bound is rewritten and the matcher criterion places the matched word in the language.

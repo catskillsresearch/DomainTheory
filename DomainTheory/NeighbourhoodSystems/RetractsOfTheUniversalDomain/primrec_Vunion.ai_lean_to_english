@@ -1,3 +1,0 @@
-The function sending a paired natural number to the canonical union of its two components is primitive recursive.
-
-It is the canonical-index function composed with the raw union, and the composite agrees with the definition by reflexivity.

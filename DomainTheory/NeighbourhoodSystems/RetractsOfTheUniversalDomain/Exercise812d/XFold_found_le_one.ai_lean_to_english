@@ -1,3 +1,0 @@
-The found flag of the X-fold is at most 1 at every stage.
-
-The argument is induction on the stage. At zero the fold is the pair of zeros. At a successor the step is unfolded. If the current atom is non-junk, the previous flag is 0 or 1 and both branches of the inner selection have first component 1. If the atom is junk, the step keeps the previous accumulator, whose flag is at most 1 by the inductive hypothesis.

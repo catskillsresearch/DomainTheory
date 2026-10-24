@@ -1,1 +1,0 @@
-With the parameter equal to the pair of a length B and a parameter p, tabulation of g for B steps codes the list of the values of g at the pairs of 0, 1, up through B minus 1 with p. It is the primitive recursion that starts at 0 and applies the tabulation step.

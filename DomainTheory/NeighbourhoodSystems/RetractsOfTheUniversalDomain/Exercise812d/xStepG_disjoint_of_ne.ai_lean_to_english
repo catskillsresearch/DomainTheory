@@ -1,3 +1,0 @@
-If a split satisfies the split specification, the two sides are empty together, the second side is empty or genuine, and two bits differ, then the generalized X-steps at those bits are disjoint on each component.
-
-This is the corresponding disjointness fact for the two-sided step.

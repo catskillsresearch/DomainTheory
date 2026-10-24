@@ -1,3 +1,0 @@
-If the consistency function is primitive recursive, then the outer intersection step is primitive recursive.
-
-It is the primitive-recursive fold of the primitive-recursive inner step, reading the left projection as the outer index, the left projection of the right as the accumulator, and the right projection of the right as the parameter, and this fold is the outer step.

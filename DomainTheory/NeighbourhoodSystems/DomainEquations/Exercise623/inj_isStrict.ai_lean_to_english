@@ -1,3 +1,0 @@
-The injection of a subsystem into the larger system is strict: it sends the master of the smaller system only to the master of the larger system.
-
-If the injection relates a neighbourhood, its relational description supplies a neighbourhood of the larger system contained in it and contained in the smaller master. Antisymmetry of inclusion, using that every neighbourhood of the larger system lies in its master and that the two masters agree, shows that the neighbourhood is the larger master.

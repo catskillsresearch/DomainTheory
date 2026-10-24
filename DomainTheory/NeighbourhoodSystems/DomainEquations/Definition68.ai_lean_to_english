@@ -1,1 +1,0 @@
-This file gathers and re-exports the notion of an endofunctor continuous on maps, the fact that such an endofunctor preserves strictness of maps, the round trip from a strict map through its filter, and the fact that the identity endofunctor is continuous on maps.

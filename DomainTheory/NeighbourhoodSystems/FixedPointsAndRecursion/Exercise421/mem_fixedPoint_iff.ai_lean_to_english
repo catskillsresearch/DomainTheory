@@ -1,3 +1,0 @@
-A pair belongs to a fixed point of Scott's operator if and only if its first component is at most its second.
-
-Proceed by induction on the second component, rewriting membership by the fixed-point equation. When the second component is zero, a diagonal pair is ordered by equality, a successor clause cannot make zero a successor, and an inequality with right side zero forces equality, hence the diagonal. At a successor, a diagonal pair is ordered by equality, and a successor witness has predecessor equal to the inductive index, so the inductive hypothesis and the successor of an inequality give the order; conversely equality is the diagonal, and a strict inequality supplies the predecessor pair by the inductive hypothesis.

@@ -1,3 +1,0 @@
-The neighbourhood coded by c is contained in the neighbourhood coded by k if and only if every index in the decoded list of c lies below some index in the decoded list of k.
-
-Rewrite both sides by the definitions of the coded neighbourhood and of the finite union of down-sets, so the inclusion is equivalent to each corresponding down-set being contained in the neighbourhood coded by k. Each of those inclusions is the down-set criterion, in both directions.

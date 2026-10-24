@@ -1,3 +1,0 @@
-The body of the bounded search for a nonempty level set is primitive recursive. On a paired code it returns the bit test of the second component at the position given by the first component.
-
-The bit test is primitive recursive, and so is its composition with the pairing of the right projection and the left projection. Unfolding the body and the two pairing identities shows that this composition is the body.

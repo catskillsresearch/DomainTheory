@@ -1,3 +1,0 @@
-The bound autStateCard e equals the number of states of the automaton of e.
-
-The proof is by induction on the expression. For the universal language the state type is a singleton, so both sides equal one. For a singleton word the state type is an optional initial segment one longer than the word, and the option and finite-segment counting formulas give the length plus two. For an intersection the inductive hypotheses and the product counting formula give the product of the bounds. For a concatenation they give the sum of the bounds.

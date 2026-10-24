@@ -1,3 +1,0 @@
-Inclusion of the strictification of a function-space element lies below that element.
-
-The composite equals the filter of the relational strictification of the approximable map of the element, because the strict map of the strictification is the strictification of that approximable map. Rewriting the original element as the filter of its approximable map, the inequality is the image, under the inverse function-space equivalence, of the inequality of a strictified map below the original map.

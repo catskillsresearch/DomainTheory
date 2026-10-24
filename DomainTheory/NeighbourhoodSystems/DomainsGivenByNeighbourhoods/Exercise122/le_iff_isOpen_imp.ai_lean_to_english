@@ -1,3 +1,0 @@
-One element approximates another if and only if every open set containing the first contains the second.
-
-If the first approximates the second, upward closure of open sets carries membership from the first to the second. Conversely, each neighbourhood of the first element has an open basic neighbourhood, so the second element belongs to that basic neighbourhood and therefore contains the neighbourhood.

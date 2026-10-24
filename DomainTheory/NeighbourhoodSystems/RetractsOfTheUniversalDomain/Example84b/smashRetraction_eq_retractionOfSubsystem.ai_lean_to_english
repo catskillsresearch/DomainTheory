@@ -1,3 +1,0 @@
-Scott's smash combinator equals the canonical subsystem retraction of the smash subsystem of the product.
-
-Compare membership by the closed form of smash and the closed form of the subsystem retraction. If the neighbourhood is the master, the smash master is a witness. If both coordinates are not bottom and the neighbourhood belongs to z, the compactness lemma supplies a smash witness. Conversely, a witness that is the smash master forces the neighbourhood to be the product master, and a proper product witness has factors belonging to the two coordinates, so neither coordinate is bottom, and upward closure puts the neighbourhood in z.

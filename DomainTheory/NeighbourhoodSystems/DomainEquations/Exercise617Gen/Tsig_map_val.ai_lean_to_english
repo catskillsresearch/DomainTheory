@@ -1,3 +1,0 @@
-The underlying approximable map of the image of a strict morphism f under the functor Tsig A is the sum map of the underlying approximable map of f, using the emptiness witnesses of the domain and of the codomain.
-
-The two sides are definitionally equal.

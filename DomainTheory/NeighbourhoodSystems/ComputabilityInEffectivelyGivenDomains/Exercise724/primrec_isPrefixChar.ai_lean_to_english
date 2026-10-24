@@ -1,3 +1,0 @@
-The prefix test, read on the two components of an unpaired natural number, is primitive recursive.
-
-The length of the first list is primitive recursive, so the code of the initial segment of the second list of that length is primitive recursive. List equality of that segment with the first list is primitive recursive, and simplification shows that this equality is the prefix test.

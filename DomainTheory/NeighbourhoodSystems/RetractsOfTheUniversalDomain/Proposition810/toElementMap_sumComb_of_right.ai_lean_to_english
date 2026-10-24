@@ -1,3 +1,0 @@
-If the sum extraction of an element meets the right copy, then the sum combinator sends the element to the sum injection of the right injection of the second map applied to the right extraction of that extracted element.
-
-The which-map then meets one, and it cannot meet zero, because an element cannot meet both copies. Compare neighbourhoods. The membership law of the sum combinator has three alternatives: the zero alternative is impossible, the one alternative is the right branch, and the master is met by every element. Conversely, the one alternative holds because the which-map meets one.

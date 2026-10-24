@@ -1,3 +1,0 @@
-A neighbourhood of C contained in the shape of (b, σ) is itself the shape of some tagged string (b', σ'), and the shape element of (b, σ) lies below the shape element of (b', σ').
-
-Split the neighbourhood into a cone or a singleton. The cone is the partial shape of its string, and the singleton is the total shape of its string. In each case the given containment is the principal order of the two shape elements.

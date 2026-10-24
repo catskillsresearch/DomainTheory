@@ -1,3 +1,0 @@
-The fixed neighbourhood of the fixed point of the continuous operator of the combinator is isomorphic to the function space from that neighbourhood into the fixed neighbourhood of the combinator.
-
-The operator sends finitary projections to finitary projections, so its fixed point is a finitary projection. The fixed neighbourhood is then order-isomorphic to the fixed set of that projection. The fixed-point correspondence of Exercise 8.23, instantiated at the arrow domain, identifies that fixed set with the function space into the fixed neighbourhood of the combinator. Compose the two order isomorphisms.

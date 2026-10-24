@@ -1,1 +1,0 @@
-This file gathers and re-exports the basic cross-combine development, primitive recursiveness of the cons step, of append, of the inner step, of the inner fold, of the outer step, and of the cross-combine, membership for the decoded cross-combine, and primitive recursiveness of the flat-map step and of the flat-map code together with membership for the decoded flat-map.

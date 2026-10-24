@@ -1,3 +1,0 @@
-Theorem 5.2 (Scott 1981, PRG-19) states that evaluation composed with the pairing of the curry of g and the constant map of σ equals g composed with the pairing of the identity and that same constant map.
-
-Extend by values. At each context element, rewrite both sides by composition, pairing, evaluation, the curried application law, the constant map, and the identity.

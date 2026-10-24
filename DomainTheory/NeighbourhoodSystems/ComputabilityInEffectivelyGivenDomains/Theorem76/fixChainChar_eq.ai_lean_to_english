@@ -1,3 +1,0 @@
-The chain characteristic of a function-space code and a list code equals the left fold of the pure step, starting from the pairing of the master index with 1, along the decoded list.
-
-Unfold the characteristic as a fold. The packed step agrees with the pure step, so the fold is the left fold of the pure step.

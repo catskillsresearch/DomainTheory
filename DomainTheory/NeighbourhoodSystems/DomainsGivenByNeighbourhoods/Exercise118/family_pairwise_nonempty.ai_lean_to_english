@@ -1,3 +1,0 @@
-Every pair of members of the three-member family has nonempty intersection.
-
-Membership in the family means each set is A, B, or Cc. The argument cases on those three choices for each member, and each of the nine intersections contains 0, 1, or 2.

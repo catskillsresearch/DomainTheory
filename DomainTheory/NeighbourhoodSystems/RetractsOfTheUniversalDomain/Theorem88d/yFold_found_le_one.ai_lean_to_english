@@ -1,3 +1,0 @@
-The found flag of the depth-n fold is at most one after every number of steps.
-
-The argument is by induction on the number of steps. The zero fold pairs zero with zero. At a successor the fold is one step, which unfolds to a selection on emptiness. If the new atom is non-empty, the previous flag is zero or else one by the inductive bound, and both branches of the inner selection unpack to found flag one. If the new atom is empty, the selection keeps the previous flag.

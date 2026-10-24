@@ -1,3 +1,0 @@
-The binary search at a pair of elements x and y equals the conditional on the zero test of f at that pair, the value x, and the search at the successor of x and at y.
-
-The minimization operator fixes its least fixed point. Currying the body at that fixed point and the pair, then rewriting by the definition of the operator, the fixed-point equation, the definition of the search, and the application lemma for the body, yields the conditional.

@@ -1,3 +1,0 @@
-If a body lookup is primitive recursive, then the fuel table of that lookup, as a function of the pair of a bound and a fuel, is primitive recursive.
-
-The lookup with its arguments swapped is primitive recursive, hence so is its tabulation, and the zero table of length one more than the bound is primitive recursive in the bound. Packing the bound plus one with the previous table makes the fuel-table step primitive recursive by composition with that tabulation. An auxiliary induction on the fuel shows that primitive recursion from the zero table, stepping by the fuel-table step, equals the fuel table. Primitive recursion with those base and step functions therefore agrees with the fuel table after simplifying the unpaired projections and applying the auxiliary equality.

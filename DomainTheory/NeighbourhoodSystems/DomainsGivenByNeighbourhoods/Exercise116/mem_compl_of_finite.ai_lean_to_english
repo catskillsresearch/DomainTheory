@@ -1,3 +1,0 @@
-If F is a finite set of natural numbers and the complement of every singleton of a point of F lies in a cofinite filter, then the complement of F lies in the filter.
-
-The proof inducts on the finite set. For the empty set, the complement is the whole set of natural numbers, which is the master neighbourhood. When a point is inserted into a finite set, the complement of the union is the intersection of the complements, and the filter contains that intersection because it contains the complement of the inserted singleton and, by the inductive hypothesis, the complement of the remaining set.

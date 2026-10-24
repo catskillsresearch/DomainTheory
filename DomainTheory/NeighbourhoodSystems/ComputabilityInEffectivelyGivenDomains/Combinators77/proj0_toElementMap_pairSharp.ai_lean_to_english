@@ -1,3 +1,0 @@
-The first projection sends the sharp pairing of elements x and y to x.
-
-A neighbourhood of the pair is either the master neighbourhood or a pair of a neighbourhood of x with a neighbourhood of y. In the master case the relation forces the codomain to be the master neighbourhood, which belongs to x, because a pair embedding is distinct from the master neighbourhood. In the pair case, either the codomain is again the master neighbourhood, or the two pair decompositions agree and the inclusion of the left component places the codomain above a neighbourhood of x. Conversely, if Z belongs to x, the pair embedding of Z with the master neighbourhood belongs to the sharp pair, since the master neighbourhood belongs to y, and the relation holds with left component Z.

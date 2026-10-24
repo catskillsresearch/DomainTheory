@@ -1,3 +1,0 @@
-If the embedding of one letter applied to a set of strings is a neighbourhood, then that set is a neighbourhood.
-
-The embedding is a cone or a singleton of some string. That string lies in the embedding, so it begins with the letter and has a tail. In the cone case the embedding of the cone of the tail equals the given embedding, and injectivity makes the set that cone. In the singleton case the embedding of the singleton of the tail equals the given embedding, and injectivity makes the set that singleton.

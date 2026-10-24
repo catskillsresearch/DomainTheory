@@ -1,3 +1,0 @@
-The forward comparison sends the image of an element under prepending one letter to the letter-copy injection of that element.
-
-The master is a neighbourhood of the injection. The unit copy would require the prepended element to contain the empty string, which the cons map excludes. A copy at the same letter belongs to the injection by the membership law for prepending, and a copy at a different letter does not belong to the prepended element. Conversely, the master and a letter-copy belonging to the element are neighbourhoods of the forward image by that membership law.

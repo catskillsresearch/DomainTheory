@@ -1,3 +1,0 @@
-Consing a bit b onto the element of the sequence domain coded by a tag and a finite string yields the element coded by the same tag on the string that begins with b.
-
-The argument is a case analysis on the tag. The partial tag rewrites by the partial-element form of the shape and the cons law on partial strings, and the two sides agree. The total tag rewrites by the total-element form of the shape and the cons law on total strings, and the two sides agree.

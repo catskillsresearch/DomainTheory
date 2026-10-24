@@ -1,3 +1,0 @@
-The iterative bitwise conjunction of the two components of a paired code is primitive recursive.
-
-The base state, which packs the input with the pair of one and zero, is primitive recursive, by pairing projections with the constants one and zero. The step, the bitwise-and step read from the inner second component, is primitive recursive. Primitive recursion of that base and step, fed the identity paired with the sum of the two components and then read at the inner right component, is primitive recursive. Simplifying the pairing identities and rewriting the constant recursion as iteration shows that this function is the iterative conjunction.

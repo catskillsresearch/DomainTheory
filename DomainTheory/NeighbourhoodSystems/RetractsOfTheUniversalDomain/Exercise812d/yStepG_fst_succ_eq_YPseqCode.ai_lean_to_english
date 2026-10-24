@@ -1,3 +1,0 @@
-For either boolean sign, the first component of the generalized Y-step at that sign, fed the generalized X-step at the history's own bit, equals that X-step's first component intersected with the Y-sequence neighbourhood when the sign is true, and with the master neighbourhood minus that set when the sign is false.
-
-The true sign is the intersection identity for an arbitrary bit, specialized to the history bit. For the false sign, the split specification says the true and false first components are complementary pieces of the X-step's first component, so the false piece is that component minus the Y-sequence neighbourhood. The component lies in the master, so intersecting further with the master does not change the difference.

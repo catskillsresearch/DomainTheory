@@ -1,3 +1,0 @@
-Every pair in the image of a code list under funListOf has a neighbourhood of the domain presentation as its first component and a neighbourhood of the codomain presentation as its second.
-
-Membership in the image means the pair is the step pair of some code, and both components are neighbourhoods by the presentation axiom that every enumerated set is a neighbourhood.

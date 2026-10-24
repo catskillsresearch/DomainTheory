@@ -1,3 +1,0 @@
-The intersection map capMap is a computable map from the product of the presentation PNpres with itself to PNpres. The test reduces to the computable inclusion of neighbourhoods, applied twice and conjoined.
-
-The presentation supplies a recursively decidable test of neighbourhood inclusion. Pairing the first, respectively the second, component of the input index with the output index is primitive recursive. The conjunction of the inclusion test along those two reindexings decides the relation of capMap, by capMap_rel_iff after simplifying the unpairing, and passing to the recursively enumerable reading gives computability of the map.

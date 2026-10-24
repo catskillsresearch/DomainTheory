@@ -1,1 +1,0 @@
-The bounded-forall indicator of a function g at n and N is the natural recursion of length N that starts at one and at stage i selects the one-test of g at the pair of i and n if the accumulator is set and otherwise zero.

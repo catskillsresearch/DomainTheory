@@ -1,3 +1,0 @@
-For every count, the product of that iterate of prepending, started at the bottom element, with the infinite word of the prepended word lies below the infinite word.
-
-At count zero the iterate is the bottom element, because it is the identity map applied to the bottom element, and the bottom element annihilates on the left. At a successor the iterate is the product of the embedding of the word with the previous iterate, by the composition law for the element map and the agreement of prepending with multiplication. Associativity, monotonicity of multiplication on the right, the inductive bound, and the fixed-point equation of the infinite word close the step.

@@ -1,3 +1,0 @@
-The power-domain action preserves identity maps. The action of the identity is the identity of the power domain.
-
-The identity relates neighbourhoods by inclusion. If every member of the source lies under some member of the target, downward closure puts the source inside the target. Conversely, if the source is contained in the target, each member is a witness for itself.

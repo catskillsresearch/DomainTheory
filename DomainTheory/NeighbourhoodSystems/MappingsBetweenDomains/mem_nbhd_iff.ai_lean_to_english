@@ -1,3 +1,0 @@
-The neighbourhood of a token belongs to an ideal element if and only if the underlying set of the token is contained in the set represented by the element.
-
-If the neighbourhood belongs to the element, each member of the token lies in its closure and therefore in the represented set. Conversely, the token is finite, so some token has its neighbourhood in the element and contains the original token in its closure. That neighbourhood is then contained in the neighbourhood of the original token, and upward closure puts the latter neighbourhood in the element.

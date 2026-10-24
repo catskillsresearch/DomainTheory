@@ -1,3 +1,0 @@
-If a singly indexed set is a neighbourhood of the iteration, then its reindexing is a neighbourhood of the double iteration.
-
-Each inner fiber of the reindexing is a fiber of the original neighbourhood, hence a neighbourhood of the system. For each outer index those fibers equal the master neighbourhood for all sufficiently large inner indices, because the pairing grows with its second component. For all sufficiently large outer indices every inner fiber equals the master of the iteration, because the pairing grows with its first component, so the outer fiber is the master of the iteration.

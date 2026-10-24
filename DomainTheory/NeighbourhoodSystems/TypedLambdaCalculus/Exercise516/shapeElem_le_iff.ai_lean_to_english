@@ -1,3 +1,0 @@
-The shape element of (b, σ) lies below the shape element of (b', σ') if and only if (b, σ) lies below (b', σ') in the tagged-string order.
-
-Case on the two tags. The combinations of partial and total reduce, by the shape-element clauses and the order characterizations for partial and total finite elements, to the matching clause of the tagged-string order. The remaining case, a total element below a partial element, is impossible in both directions.

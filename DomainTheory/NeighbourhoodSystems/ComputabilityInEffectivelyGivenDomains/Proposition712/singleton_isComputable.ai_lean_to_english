@@ -1,3 +1,0 @@
-When a domain is effectively given, the singleton map is a computable map from its presentation to the induced presentation of the power domain.
-
-The inclusion decider, swapped, closed under bounded existence over a decoded list, and swapped again, decides the stated bounded existence of a larger index. That relation is the computability relation: the power-domain presentation enumerates the coded neighbourhoods, and the singleton relation with a coded neighbourhood is this bounded existence.

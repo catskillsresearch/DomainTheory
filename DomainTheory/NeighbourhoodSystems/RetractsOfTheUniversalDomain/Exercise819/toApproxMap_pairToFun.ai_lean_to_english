@@ -1,3 +1,0 @@
-The approximable map carried by the curried pairing of elements x and y, evaluated at an element t of the three-point domain, equals the conditional evaluated at the pair of t with the pair of x and y.
-
-Unfold the currying of the composite with the swap, which rearranges the pair of the pair of x and y with t into the pair of t with the pair of x and y.

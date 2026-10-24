@@ -1,3 +1,0 @@
-For neighbourhoods X₀ and Y₀, papplyEval relates the upset of the step neighbourhood of functions sending X₀ into Y₀, the upset of X₀, and the upset of Y₀.
-
-The three upsets are power-domain neighbourhoods. For a function neighbourhood above the step and an argument neighbourhood above X₀, the neighbourhood Y₀ is the witness: every function in the step sends X₀ into Y₀, and monotonicity of such a function carries the argument neighbourhood into Y₀.

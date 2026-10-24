@@ -1,3 +1,0 @@
-The map from finite or infinite sequences to elements of L is injective. Finite sequences are separated by injectivity of the neighbourhood map, a finite sequence is separated from an infinite sequence because only the finite case has a minimum neighbourhood, and infinite sequences are separated by injectivity of the stream element.
-
-On two finite lists, injectivity of principal filters and of the neighbourhood map recovers the lists. A finite list and a stream cannot have the same image, in either order, because the principal filter has a minimum neighbourhood and the stream element does not. On two streams, injectivity of the stream element recovers the streams.

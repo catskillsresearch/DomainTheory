@@ -1,3 +1,0 @@
-If a neighbourhood system is effectively given, then some effectively given neighbourhood system on lists of natural numbers has elements order-isomorphic to its subsystems.
-
-A computable presentation of the system determines the system of its finitely generated subsystems. That system is effectively given by the presentation built from the same data, and the order isomorphism of its elements with the subsystems is the isomorphism already constructed for that presentation.

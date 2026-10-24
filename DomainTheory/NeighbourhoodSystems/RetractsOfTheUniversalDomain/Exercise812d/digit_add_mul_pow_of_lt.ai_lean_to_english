@@ -1,3 +1,0 @@
-Adding a higher base-four digit, a multiple of four to the n with n greater than i, does not change the base-four digit at place i.
-
-Write n as i plus a positive increment. Factor the added term so that division by four to the i extracts a multiple of four, which vanishes under remainder four.

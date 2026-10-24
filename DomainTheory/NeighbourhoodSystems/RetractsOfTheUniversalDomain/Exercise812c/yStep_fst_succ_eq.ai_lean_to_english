@@ -1,3 +1,0 @@
-The first output of the Y-step at either sign, after the X-step at the first sign bit, equals the post-X first value intersected with YPseq at n when the bit is true, and intersected with the complement of that YPseq set in the master of D₀ when the bit is false.
-
-The specification of the X-step supplies the split hypotheses. The true bit is the intersection formula. For the false bit, the two split pieces union to the post-X first value and meet emptily, so the false piece is that value minus YPseq. The post-X value lies in the first component of the atom and hence in the master, so the difference agrees with the intersection against the complement in the master.

@@ -1,3 +1,0 @@
-If two self-maps of the universal domain are retractions, then so is their arrow combinator.
-
-Compare elements. The elementwise form of the arrow combinator, applied twice, together with the identity that the arrow extraction after the arrow injection is the identity, reduces the claim to idempotence of the lambda combinator, which holds because the lambda combinator of two retractions is a retraction.

@@ -1,3 +1,0 @@
-The binary join map sends elements x and y to the binary finite join of x and y.
-
-By extensionality of power-domain elements, and by the membership form of the intersection law, W lies in the join if and only if it lies in both singletons. Membership in the image of the two-variable map is a neighbourhood X of x and a neighbourhood Y of y related by both singleton relations. Each singleton relation rewrites as membership in the image of the singleton map, and conversely those two memberships unpack to such neighbourhoods.

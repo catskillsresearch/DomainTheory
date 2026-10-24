@@ -1,3 +1,0 @@
-If an endomap a of the universal domain lies below the identity, then its sharp lies below the identity.
-
-The leaf embedding composed with a lies below the leaf embedding. The inner sharp therefore lies below the catamorphism of the leaf embedding and the pairing, which is the identity on the tree algebra. Conjugating by the projection pair, and using that the embedding after the projection lies below the identity, gives the inequality for the sharp.

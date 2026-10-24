@@ -1,3 +1,0 @@
-For two correspondences, the set of natural numbers of the first is contained in the set of natural numbers of the second if and only if the same inclusion holds for the two sets of points of Cantor space.
-
-Each correspondence is given by a formula, and substituting those evaluations reduces the claim to a comparison of evaluations. Inclusion of the evaluations on the natural numbers is entailment, which is inclusion of the Cantor-space evaluations, and the same chain runs from the Cantor-space inclusion back to the inclusion on the natural numbers.

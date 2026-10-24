@@ -1,3 +1,0 @@
-The complement of the intersection of nbhd a and nbhd b equals the union of the two complements. Membership in these neighbourhoods is decided by test bits, so the identity does not need a general excluded middle.
-
-Extend the two sets in the point and simplify membership. Case-splitting on the bit of a and the bit of b, decide closes every Boolean combination.

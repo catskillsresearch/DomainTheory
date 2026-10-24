@@ -1,3 +1,0 @@
-Some neighbourhood of the system is contained in the intersection of the neighbourhoods at two indices if and only if the consistency characteristic of the pairing of those indices equals 1.
-
-Rewrite by the criterion that this characteristic equals 1 exactly when the consistency decision on the two components holds, then by the equivalence of that decision with the existence of such a neighbourhood. Unpairing inverts the pairing.

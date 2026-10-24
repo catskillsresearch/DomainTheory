@@ -1,3 +1,0 @@
-The evaluator at the pair of an index and a certificate equals the certificate step applied to that combined code together with the memo table of the step at that code.
-
-This is the defining equation of the course-of-values iteration.

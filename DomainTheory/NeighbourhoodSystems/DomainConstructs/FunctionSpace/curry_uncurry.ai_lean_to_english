@@ -1,3 +1,0 @@
-Currying the uncurry of a map into the function space recovers the original map.
-
-Extensionality of relations reduces the claim to one neighborhood pair. If the curried uncurry relates an input to a step intersection, each step factor is a product relation of the uncurry, which unwinds to the original map relating the input to that step, and those steps reassemble. Conversely, if the original map relates the input to the step intersection, each step factor rebuilds as a product neighborhood whose right preimage is related by the original map, so the section of the uncurry lies in the intersection.

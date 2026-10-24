@@ -1,3 +1,0 @@
-A code of the first presentation is contained in the image of YPseqCode j if and only if the image of its XPseqCode is contained in the code j of the second presentation.
-
-The combined-code subset transfer is instantiated at the mixed indices twice i and twice j plus one. The even and odd clauses rewrite the four combined sets, and the two intersections with the masters cancel because both sides already lie in the master.

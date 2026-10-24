@@ -1,1 +1,0 @@
-The existence character of a decider, a parameter, and a code is the fold of the existence step of that decider, with the given parameter and initial accumulator 0, over the list coded by the code. It is the {0, 1} flag that some decoded entry, paired with the parameter, is accepted by the decider.

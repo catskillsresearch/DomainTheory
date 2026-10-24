@@ -1,3 +1,0 @@
-The embedding of a concatenation of words is the product of the embeddings.
-
-If a neighbourhood contains the concatenated word, the singletons of the two words are neighbourhoods of the two embeddings, and their concatenation is the singleton of the concatenated word, which sits inside the neighbourhood. Conversely, a neighbourhood of the product contains the concatenation of a neighbourhood containing the first word with a neighbourhood containing the second, hence contains the concatenated word.

@@ -1,3 +1,0 @@
-A grammar expression carries the injection of a subsystem to the injection of the image subsystem.
-
-The argument is by induction on the expression. A constant expression gives the identity injection of a system into itself. A variable expression acts as the underlying map. For a separated sum, a product, a coalesced sum, or a tensor, the expression acts by the corresponding map constructor on the two components; the inductive hypothesis replaces each component by the injection of its image, and the constructor carries those injections to the injection of the combined subsystem.

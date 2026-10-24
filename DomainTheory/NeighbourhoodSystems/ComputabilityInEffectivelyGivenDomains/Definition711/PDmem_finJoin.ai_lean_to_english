@@ -1,3 +1,0 @@
-A set W belongs to the finite join of a family of length n if and only if W is the master neighbourhood of the power domain when n is zero, and W satisfies the finite-join membership predicate otherwise.
-
-Split on n. In the zero case, simplify by the empty join, the zero join, and membership in the bottom element. In the successor case, simplify by the finite join and the successor join.

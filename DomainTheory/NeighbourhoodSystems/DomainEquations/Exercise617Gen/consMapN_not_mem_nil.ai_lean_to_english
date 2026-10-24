@@ -1,3 +1,0 @@
-The image of an element under the successor map that prepends a letter a does not contain the singleton of the empty string.
-
-A witnessing neighbourhood of the relation is nonempty, so it contains some string. Rewriting the inclusion as an inclusion of the a-prefixed copy puts the a-prefixed form of that string into the singleton, so that form equals the empty string, which simplification rejects.

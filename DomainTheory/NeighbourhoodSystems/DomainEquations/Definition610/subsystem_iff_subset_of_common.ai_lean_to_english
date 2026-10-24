@@ -1,3 +1,0 @@
-If two neighbourhood systems are both subsystems of one common system, then the first is a subsystem of the second if and only if every neighbourhood of the first is a neighbourhood of the second.
-
-The forward direction is the inclusion clause of the subsystem relation. In the reverse direction the masters agree because each equals the master of the common system. If the intersection of two neighbourhoods of the first system is a neighbourhood of the second, it is a neighbourhood of the common system, and the subsystem relation from the first system to the common system returns that intersection to the first system.

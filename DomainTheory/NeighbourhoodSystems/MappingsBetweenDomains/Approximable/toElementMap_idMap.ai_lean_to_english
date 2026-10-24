@@ -1,3 +1,0 @@
-The elementwise action of the identity map is the identity function on elements.
-
-Extensionality of elements splits the equality. A neighbourhood of the image is contained in a neighbourhood of the element, so upward closure puts it in the element. A neighbourhood of the element is related to itself by the identity.

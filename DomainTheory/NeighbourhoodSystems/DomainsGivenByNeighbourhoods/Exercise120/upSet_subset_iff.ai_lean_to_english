@@ -1,3 +1,0 @@
-For a neighbourhood, its up-set is contained in the up-set of another set if and only if the neighbourhood is contained in that set.
-
-If the up-set is contained in the other up-set, the neighbourhood itself lies in its own up-set, so it is contained in the other set. Conversely, a neighbourhood contained in the first set is contained in the second set by transitivity of inclusion.

@@ -1,7 +1,0 @@
-If a neighbourhood system is isomorphic to a second system, and the second embeds in a third, then the first embeds in the third.
-
-Unfold the embedding as a subsystem of the third isomorphic to the second system, and compose that isomorphism with the isomorphism of the first system with the second.
-
-The embedding relation is transitive.
-
-Unfold the two embeddings as a subsystem of the middle system and a subsystem of the last system. Those subsystem relations, and the isomorphism of the middle system with its copy, become projection pairs, and their composite is a projection pair from the first copy into the last system. That pair is an embedding, and transporting it along the isomorphism of the first system with its copy yields the composite embedding.

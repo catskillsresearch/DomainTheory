@@ -1,3 +1,0 @@
-Any two cones of finite binary strings are nested or disjoint.
-
-If the first prefix is an initial segment of the second, the second cone is contained in the first. If the second prefix is an initial segment of the first, the first cone is contained in the second. Otherwise a string in both cones is a common extension, so one prefix is an initial segment of the other, and extensionality records that the intersection is empty.

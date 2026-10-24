@@ -1,9 +1,0 @@
-The basic open of an intersection is contained in the basic open of the left factor whenever that factor is a neighbourhood.
-
-A filter containing the intersection contains the left factor by upward closure along the left inclusion.
-
-The basic open of an intersection is contained in the basic open of the right factor whenever that factor is a neighbourhood.
-
-A filter containing the intersection contains the right factor by upward closure along the right inclusion.
-
-The elements carry the topology whose open sets are the open filters. The whole space is open because every element contains the master and the basic open of the master is contained in the whole space. The intersection of two open sets is open because a common point has a basic neighbourhood inside each, and the basic open of the intersection of those neighbourhoods is contained in both. A union of open sets is open because a point of the union lies in some member, and a basic neighbourhood of that point inside the member is contained in the union.

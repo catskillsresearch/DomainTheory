@@ -1,3 +1,0 @@
-The meet-fold of a list with a given head and tail is the tail folded from the meet step applied to the initial accumulator and the head.
-
-Unfold the fold and apply the cons equation for left folds.

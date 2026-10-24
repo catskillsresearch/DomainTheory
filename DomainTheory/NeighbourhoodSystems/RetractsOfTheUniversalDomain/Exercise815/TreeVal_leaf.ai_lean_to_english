@@ -1,3 +1,0 @@
-Evaluation of a leaf code returns the enumerator at the index stored in the leaf.
-
-The tag of a leaf code is zero and its payload is that index, so the first selector equals one and the fuel step returns the enumerator at the payload.

@@ -1,3 +1,0 @@
-The recursion map obeys the primitive-recursion equation. At an argument z it conditions on the zero-test of the head of z, returning the base map on the tail when the test succeeds and otherwise the step map on the argument that pushes the predecessor of the head in front of the push of the recursive value at that predecessor and the tail, followed by the tail.
-
-The least fixed point of the recursion operator is fixed by the operator's element map. Currying the primitive-recursion body and evaluating at that fixed point and at z, then rewriting by the definition of the operator and by this fixed-point equation, gives the claim after the element-map form of the body.

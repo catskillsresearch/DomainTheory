@@ -1,3 +1,0 @@
-The fixed point of the monoid power-set operator need not be unique. In the multiplicative monoid of the natural numbers, with both generators equal to one, there are two distinct fixed points.
-
-The singleton of one and the whole set are fixed points. If they were equal, the number two would belong to the singleton of one, which it does not.

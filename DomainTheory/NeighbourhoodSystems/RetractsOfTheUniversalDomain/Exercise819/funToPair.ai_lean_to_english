@@ -1,1 +1,0 @@
-The map from functions on the truth-value domain into a product reads a function as the pair of its value at the true element and its value at the false element. Each component is evaluation after pairing the identity on the function space with the constant map at that truth value.

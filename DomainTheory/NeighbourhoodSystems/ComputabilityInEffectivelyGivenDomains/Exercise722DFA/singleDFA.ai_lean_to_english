@@ -1,1 +1,0 @@
-The automaton for a single word starts at length zero. From a length still inside the word, the matching next letter advances the length by one and any other letter goes to the sink. Once the word has been consumed, every letter goes to the sink. The only accept state is the length equal to the length of the word.

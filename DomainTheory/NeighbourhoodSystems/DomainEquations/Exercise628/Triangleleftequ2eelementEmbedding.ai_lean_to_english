@@ -1,3 +1,0 @@
-If a neighbourhood system embeds as a subdomain of another, then there is an order embedding of the element domain of the first into the element domain of the second.
-
-Unfold the embedding into a subdomain together with an order isomorphism onto that subdomain, and compose the isomorphism, read as an order embedding, with the element embedding of the projection pair carried by the subdomain relation.

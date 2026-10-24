@@ -1,3 +1,0 @@
-For a neighbourhood X of B, the image toBB x contains the left injection of X if and only if x contains the 0-copy embBit false X.
-
-In the forward direction the membership clause is the master, a left injection, or a right injection. The master clause contradicts the basepoint not lying in a left injection. The left clause uses injectivity of the left injection. The right clause takes a nonempty witness in X and produces a left-injection token, which cannot lie in a right injection. The reverse direction is the left disjunct of the definition.

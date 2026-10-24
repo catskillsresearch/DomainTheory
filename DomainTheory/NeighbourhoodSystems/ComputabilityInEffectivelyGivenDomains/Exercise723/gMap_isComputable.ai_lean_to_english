@@ -1,3 +1,0 @@
-The map gMap is computable from the product presentation of PNpres to PNpres. Its neighbourhood relation reduces to a bounded quantification, primitive recursive by the decidable bit-implies-Fun test.
-
-The bounded quantification, over j below the output index, of the implication from a set bit to membership in Fun of the two input complements is recursively decidable by the bounded-universal closure of that test along the right projection. Rewriting the relation of gMap by its index criterion and by the bounded form of the Fun inclusion identifies this decidable predicate with the relation, and the recursively enumerable reading is computability of the map.

@@ -1,1 +1,0 @@
-The Kleene iterates of the operator sending a map h to the structure map composed with T(h) composed with the inverse structure map begin with the constant bottom map. The successor of the n-th iterate is the structure map composed with T of the n-th iterate composed with the inverse structure map.

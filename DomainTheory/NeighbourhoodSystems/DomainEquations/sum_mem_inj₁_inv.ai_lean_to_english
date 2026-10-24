@@ -1,3 +1,0 @@
-A right-copy neighbourhood of the sum arises only from the product factor, so the copied set is a neighbourhood of the product of the two sharp systems.
-
-It is not the master, because the master token does not lie in a right copy. It is not a left copy, because a token of the nonempty neighbourhood of D lies in the left copy and not in the right. The remaining case is a right copy, and injectivity of the right embedding returns the product membership.

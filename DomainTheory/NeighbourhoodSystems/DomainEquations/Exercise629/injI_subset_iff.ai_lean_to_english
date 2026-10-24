@@ -1,3 +1,0 @@
-One tagged copy at an index is contained in another if and only if the underlying set is contained in the other.
-
-A token of the smaller set tags to a token of the smaller copy, hence of the larger copy, and therefore lies in the larger set. Conversely, every token of the smaller copy is the tag of a token of the smaller set, which lies in the larger set.

@@ -1,3 +1,0 @@
-The descent map is a fixed point of the operator sending a map f to the structure map composed with the product of the identity and f, composed with the projection.
-
-Compare element maps. The operator's action, the directed-union expression for the descent of the tail, the head-action law, and the directed-union expression for the descent of the original element present both sides as directed unions. The head action on stage m of the tail equals stage m + 1 of the chain on the original element. In one direction a stage-zero membership rewrites by that identity and the elementwise increase of the chain, and a later stage rewrites by the identity to the previous index. In the other direction a stage-m membership rewrites by the identity and sits at index m + 1.

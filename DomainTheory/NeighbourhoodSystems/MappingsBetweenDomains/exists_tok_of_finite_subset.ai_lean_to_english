@@ -1,3 +1,0 @@
-A finite set contained in the set represented by an ideal element is contained in the closure of some token whose neighbourhood belongs to that element.
-
-Induct on the finite set. The empty set is contained in the closure of the empty token, whose neighbourhood belongs to every element. When an element is inserted, membership of that element in the represented set supplies a token, and the inductive hypothesis supplies a token for the remainder. The directedness step produces a token above both, and the insertion decomposition places the new element and the remainder inside its closure.

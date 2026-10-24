@@ -1,3 +1,0 @@
-If the conditional guard holds and the truth component is the singleton of zero, the left value component is contained in the output.
-
-The one clause would identify that singleton with the singleton of one, and the master clause would identify it with the master. The remaining clause is the left-hand inclusion.

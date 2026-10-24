@@ -1,3 +1,0 @@
-The coalesced-sum map constructor carries the injections of two subsystems to the injection of the coalesced-sum subsystem.
-
-Every neighbourhood of the smaller coalesced sum is contained in the master of the larger one, by agreement of the masters and by embedding each summand. Extensionality and the relational form of the injection then match the two relations. A master pair, and each pair of embedded neighbourhoods related by a component injection, is a pair of neighbourhoods of the large sum with the source contained in the target. Conversely, the target is the master or an embedding of one summand, and the source must be of the same kind: the master element does not lie in an embedding, and embeddings of opposite bits are never subsets of one another.

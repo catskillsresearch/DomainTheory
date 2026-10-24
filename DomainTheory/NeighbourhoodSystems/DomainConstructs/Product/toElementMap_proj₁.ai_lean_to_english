@@ -1,3 +1,0 @@
-The value of the second projection at a product element is the second component of that element.
-
-The two elements contain the same neighbourhoods. A neighbourhood of the projected value comes from a product neighbourhood of the element whose right preimage is contained in the output, and upward closure replaces the left component by the master. Conversely, the product of the master with the output belongs to the element and is related by the projection, because its right preimage is the output.

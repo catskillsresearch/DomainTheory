@@ -1,3 +1,0 @@
-A pair of states is reached by the product automaton on a word if and only if each component is reached by its own automaton on that word.
-
-The proof inducts on the word from the right. On the empty word the start clauses agree. Extending by a letter, a product predecessor splits into component predecessors whose letter steps are the two components of the product step, and a pair of component steps reassembles into one product step.

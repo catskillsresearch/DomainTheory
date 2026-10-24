@@ -1,3 +1,0 @@
-The shift of the tail of length n is the tail of length n + 1.
-
-The successor of a number at least n is at least n + 1, and a number at least n + 1 is the successor of its predecessor, which is at least n.

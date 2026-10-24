@@ -1,3 +1,0 @@
-The image fromCC s contains the singleton of the empty string if and only if s contains the unit copy of the whole unit set.
-
-In the forward direction the membership clause is the set of all strings, the unit copy, a 0-copy, or a 1-copy. The first contradicts the empty singleton not being the whole set of strings. The unit clause is the desired membership. Each bit-copy clause contradicts the empty singleton differing from a bit copy. The reverse direction is the unit disjunct.

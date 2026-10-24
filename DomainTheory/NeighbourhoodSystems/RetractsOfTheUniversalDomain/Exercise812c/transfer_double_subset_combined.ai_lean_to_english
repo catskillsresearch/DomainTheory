@@ -1,3 +1,0 @@
-The master of D₀ meet combinedX at i meet combinedX at j is contained in combinedX at k if and only if the master of D₁ meet combinedY at i meet combinedY at j is contained in combinedY at k.
-
-Emptiness transfer at the three constraints that affirm i, affirm j, and deny k, with bound one more than the maximum of the three indices, equates nonemptiness of the two described sets. Each described set is the corresponding triple intersection minus the set at k. Emptiness of a difference is containment, so negating both sides of the nonemptiness equivalence yields the two containments.

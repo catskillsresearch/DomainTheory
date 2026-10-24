@@ -1,3 +1,0 @@
-Example 8.4(b)(i): strictRetraction is a projection on the function space from D to E, and its fixed-point set is order-isomorphic to the strict function space.
-
-A retraction that lies below the identity is a projection, by the retraction and inequality already proved for strict. The fixed-point isomorphism, composed with the inverse of the strict-function equivalence and then reversed, is the required order isomorphism.

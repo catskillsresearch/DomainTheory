@@ -1,3 +1,0 @@
-The language of e is empty if and only if no accept state of its automaton lies in the evaluation of any word.
-
-Rewrite emptiness as failure of every word to belong to the language. If the language is empty and an accept state lies in the evaluation of a word, acceptance of the automaton would put that word in the language. Conversely, a word in the language is accepted by some accept state in its evaluation, which the hypothesis rules out.

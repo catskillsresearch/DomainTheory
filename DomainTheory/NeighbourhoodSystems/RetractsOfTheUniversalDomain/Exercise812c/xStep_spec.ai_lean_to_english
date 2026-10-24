@@ -1,3 +1,0 @@
-The second output of the X-step on atomPair at depth n, at the current set of the first enumeration, and at the first sign bit, is empty exactly when the first output is empty, and the first output is empty or a neighbourhood of D₀.
-
-The invariant supplies matching emptiness and the empty-or-neighbourhood alternatives. The split specification gives the emptiness match for each bit. If the bit is true, intersection closure gives the alternative for the first output; if the bit is false, difference closure does.

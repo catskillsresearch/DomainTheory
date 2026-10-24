@@ -1,3 +1,0 @@
-The subsystem retraction fixes the image of every subsystem element under the injection.
-
-The action of the retraction on that image is the injection of the projection of the image. The projection of the image is the composite of the projection after the injection, which is the identity, so the element map of the identity returns the element and injecting it restores the image.

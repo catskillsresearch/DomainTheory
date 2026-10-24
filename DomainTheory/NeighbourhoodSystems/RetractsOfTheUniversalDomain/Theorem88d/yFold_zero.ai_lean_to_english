@@ -1,3 +1,0 @@
-The depth-n union fold of length zero is the pair of zero with zero.
-
-The proof is the base equation of the fold.

@@ -1,3 +1,0 @@
-The least single-step map from Y to Z lies below every approximable map in the step from Y to Z.
-
-The least map of a step list lies below every map in the step function of that list, and the step function of a one-element list is the step neighbourhood.

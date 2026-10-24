@@ -1,3 +1,0 @@
-If the done flag is zero and the first component of the numeral decoding is a successor, the transition writes the second component, the flag zero, the successor of the pairing of the predecessor with the reversed accumulator, and the carried value.
-
-Unfold the transition. The outer selection on the zero flag and the successor hypothesis leave the inner selection. The zero test of a successor is zero, and the predecessor of a successor is the predecessor, so the inner selection is the continuation branch.

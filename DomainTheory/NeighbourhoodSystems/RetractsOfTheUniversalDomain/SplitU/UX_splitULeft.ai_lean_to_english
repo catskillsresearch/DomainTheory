@@ -1,3 +1,0 @@
-The neighbourhood presented by splitULeft n is the neighbourhood presented by n, cut to the open ray of rationals strictly below the decoded midpoint.
-
-The clipped list presents a U-neighbourhood: its presented intervals are the original intervals cut below the midpoint, the left endpoint of the first canonical pair lies in them and strictly below the midpoint, and the cut is bounded because it sits inside the original neighbourhood. The canonical presentation of the left half is fixed by that membership, so its presented intervals are again the clipped intervals, which are the stated cut.

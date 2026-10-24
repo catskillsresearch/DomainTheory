@@ -1,3 +1,0 @@
-The value of an infinite pairing at an element is the sequence of the values of the component maps at that element.
-
-A neighbourhood of the paired value comes from an input neighbourhood related on every fibre, which is membership of each fibre in the corresponding value. Conversely, membership of every fibre gives an input neighbourhood at each coordinate, and one neighbourhood that works for all coordinates is obtained by swapping the quantifiers.

@@ -1,3 +1,0 @@
-For a neighbourhood X of the binary-sequence domain, the element rebuilt from a sum element contains the false-bit tagging of X if and only if the sum element contains the left injection of X.
-
-If the rebuilt element contains that tagging, the witnessing clause is not the master, because a bit tagging is distinct from the full set of strings, and it is not a true-bit tagging, because the booleans differ and X is nonempty. The remaining clause is a false-bit tagging of some neighbourhood, and injectivity makes that neighbourhood equal to X. Conversely, the false-bit clause of the rebuilt membership records that the left injection of X belongs to the sum element.

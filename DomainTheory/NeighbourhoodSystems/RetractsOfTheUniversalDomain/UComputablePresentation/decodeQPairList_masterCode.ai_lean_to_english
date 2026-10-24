@@ -1,3 +1,0 @@
-The singleton list code of the master pair decodes to the singleton list of the pair zero and one, the presenting list of the master neighbourhood of U.
-
-Unfold the pair-list decoding, rewrite the successor and its zero tail, and simplify by the decoding of the master pair.

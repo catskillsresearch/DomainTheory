@@ -1,3 +1,0 @@
-A number j lies in Fun of the complements of nbhd n and nbhd m if and only if some c strictly below n has its bit in n set, has untagged value j, and has every entry of its decoded untagged list satisfying bitAt m i equals 1. This rewrites the outer existential so that it is bounded by n.
-
-Rewrite by the decoded Fun criterion and simplify bit-list membership, complement membership, and the correctness of bitAt. The forward direction adds the bound that a set bit lies strictly below n. The reverse direction discards that bound.

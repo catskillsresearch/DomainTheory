@@ -1,3 +1,0 @@
-Every finitary projection is a fixed point of sub.
-
-Extensionality of approximable maps splits the relation. One inclusion is the inequality of sub below the identity. In the other, a relation of f is membership of the output in the image of the principal of the input. The step-closure formula of a finitary projection supplies a witness neighbourhood contained in the output and related to itself, and membership in the principal is the inclusion of the input in that witness, which is the relation of sub.

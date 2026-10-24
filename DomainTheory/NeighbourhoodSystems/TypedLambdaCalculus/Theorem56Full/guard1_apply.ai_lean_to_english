@@ -1,3 +1,0 @@
-The guard at a coordinate j of an approximable map φ, evaluated at a stack, equals the conditional on the zero test of the j-th component and two copies of φ at that stack.
-
-Unfold the guard and simplify the element maps of composition, pairing, and the j-th projection.

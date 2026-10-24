@@ -1,3 +1,0 @@
-If two approximable endomaps a and b agree at bottom, and an approximable endomap f commutes with each of them, then a and b agree at the least fixed point of f.
-
-Commutation of the maps, rewritten by the composition law for elementwise actions, gives a(f(x)) equal to f(a(x)) and b(f(x)) equal to f(b(x)). Fixed-point induction is applied to agreement of a and b. The base case is the given agreement at bottom. The inductive step rewrites both sides by those commutation identities and uses the inductive agreement. For a monotone chain, both images of the supremum are directed unions of the images of the terms; extensionality reduces the comparison to membership in those unions, and pointwise agreement of the images transfers the witnesses in both directions.

@@ -1,3 +1,0 @@
-The copy of a set X prefixed by a letter is contained in the copy of a set X' prefixed by the same letter if and only if X is contained in X'.
-
-If the copies are nested and a string lies in X, the letter followed by that string lies in the smaller copy, hence in the larger copy, and the two decompositions agree, so the string lies in X'. Conversely, a string in the smaller copy has its remainder in X, hence in X', and therefore lies in the larger copy.

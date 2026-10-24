@@ -1,3 +1,0 @@
-If a doubly indexed set is a neighbourhood of the double iteration of a neighbourhood system, then for every n there is a bound M such that, for every i less than n and every j at least M, the double fiber at i and j is the master neighbourhood.
-
-Fix n and induct. For zero, the bound 0 works because no index is strictly smaller. For a successor, take the inductive bound together with the cofinite master bound of the outer fiber at the new index, and use their maximum. An index strictly below the new one inherits the inductive bound, and the new index inherits the cofinite bound.

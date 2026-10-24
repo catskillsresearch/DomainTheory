@@ -1,3 +1,0 @@
-If some enumerated neighbourhood is contained in the intersection of two enumerated neighbourhoods, then the neighbourhood enumerated by their intersection code equals that intersection.
-
-Unfold the intersection code. If the prefix characteristic of the second address against the first is zero, selection returns the second code. Consistency cannot be the first disjunct of the consistency criterion, so the other prefix characteristic is one, and the subset criterion makes the second neighbourhood contained in the first, hence equal to the intersection. If the characteristic is one, selection returns the first code, and the subset criterion makes the first neighbourhood contained in the second, hence equal to the intersection.

@@ -1,3 +1,0 @@
-The finite intersection of the first n terms of a sequence of sets is contained in the master neighbourhood.
-
-The argument is by induction on n. At zero the intersection is the master, so the inclusion is reflexive. At a successor the intersection is contained in the preceding intersection, and the inductive hypothesis places that preceding intersection inside the master.

@@ -1,3 +1,0 @@
-The least filter containing a finitely consistent family approximates every filter that contains the family.
-
-A member of the least filter contains a finite intersection of members of the family. That intersection belongs to the larger filter, and upward closure puts the member in the larger filter.

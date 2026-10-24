@@ -1,3 +1,0 @@
-The first component of the pairing of two elements is the first element.
-
-Two elements agree when they contain the same neighbourhoods. A neighbourhood of that first component is, by the membership criterion for pairs, a neighbourhood of the first element. Conversely, a neighbourhood of the first element is a neighbourhood of the first factor, and the pair contains the product neighbourhood of that set with the master of the second element.

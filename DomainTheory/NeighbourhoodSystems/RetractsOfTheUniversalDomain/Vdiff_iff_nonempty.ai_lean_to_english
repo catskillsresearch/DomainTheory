@@ -1,3 +1,0 @@
-An enumerated neighbourhood of V equals the difference of two enumerated neighbourhoods if and only if that difference is nonempty.
-
-A representing neighbourhood is nonempty. If the difference is nonempty, the level set of the raw difference is nonempty, so the difference is a neighbourhood of V presented by that raw level and mask, and surjectivity supplies an index.

@@ -1,3 +1,0 @@
-If two valuations agree on every variable occurring in a formula, they assign the formula the same truth value.
-
-The proof is by induction on the formula. A variable is covered by the agreement hypothesis. Falsehood and truth are independent of the valuation. A negation follows from the inductive hypothesis. For a conjunction or a disjunction, the variables are a union, so each inductive hypothesis applies to the agreement restricted to that side.

@@ -1,3 +1,0 @@
-Every countable neighbourhood system D is isomorphic to some neighbourhood system D' of subsets of the rationals, and D' is a subsystem of the universal system U. If D is effectively given, there is a neighbourhood system of sets of rationals which is itself effectively given, isomorphic to D, and a subsystem of the universal system, and whose injection into the universal system and projection back are computable relative to the two presentations. Theorem 8.8(c) of Scott (1981, PRG-19).
-
-The numbered name theorem_88 is the conjunction of these statements. The proof is that conjunction.

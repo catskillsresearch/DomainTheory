@@ -1,3 +1,0 @@
-If the outer combination's found flag is 1, then the image of YPseqCode n is a genuine neighbourhood of the first neighbourhood system.
-
-The two-way combination preserves genuineness. Both inner flags are at most 1, and each inner fold's code is genuine whenever its own flag is 1.

@@ -1,3 +1,0 @@
-The coalesced right injection is a computable map from the Scott presentation of the right system into the coalesced-sum presentation.
-
-The relation holds exactly when the right injection of the domain neighbourhood is contained in the enumerated codomain. Equality of tags, properness, and inclusion are recursively decidable. On a proper left code the inclusion fails, because a point of the nonempty domain neighbourhood lies in the right injection and not in the left injection, and a tag of 1 cannot be a tag of 0. On a proper right code the inclusion is inclusion of right neighbourhoods. On the master it holds, because every right injection is contained in the separated-sum master. That decidable combination is recursively enumerable.

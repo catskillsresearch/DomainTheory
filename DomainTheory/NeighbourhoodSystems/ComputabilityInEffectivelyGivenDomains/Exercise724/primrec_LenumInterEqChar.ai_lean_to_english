@@ -1,3 +1,0 @@
-The characteristic that compares an intersection code of the enumeration of L with a third code, read on the three components of a nested unpairing, is primitive recursive.
-
-The three projections are primitive recursive. Composing the prefix test and the list-equality test with the pairings of those projections gives the four comparisons in the definition, and the two products of a prefix bit with an equality bit are primitive recursive. Their sum minus their product is primitive recursive, and simplification shows that this combination is the characteristic.

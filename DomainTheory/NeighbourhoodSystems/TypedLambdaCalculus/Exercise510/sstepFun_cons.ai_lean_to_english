@@ -1,3 +1,0 @@
-The step-function set of a pair followed by a list is the intersection of the step set of that pair with the step-function set of the list.
-
-Extensionality and the membership criteria reduce the equality to the decomposition of a cons cell: the head pair gives the step, and the remaining pairs give the step-function set of the tail.

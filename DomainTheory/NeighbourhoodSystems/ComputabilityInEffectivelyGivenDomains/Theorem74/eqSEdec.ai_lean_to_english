@@ -1,3 +1,0 @@
-Equality of two enumerated sum neighbourhoods is recursively decidable.
-
-The four comparisons of the two tags with zero and with one are recursively decidable, as are equality of the two first-presentation components and equality of the two second-presentation components. By the equality criterion for the enumeration, the predicate is the disjunction of both tags lying off zero and one, both tags zero with equal first components, and both tags one with equal second components.

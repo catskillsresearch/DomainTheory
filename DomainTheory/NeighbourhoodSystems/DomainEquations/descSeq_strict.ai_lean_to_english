@@ -1,3 +1,0 @@
-If the structure map is strict, every stage of the descent chain is strict.
-
-The zeroth stage is the constant-bottom map. At a successor the previous stage sends bottom to bottom. The next stage is the operator, whose action on bottom is the structure map applied to the pair of the zeroth component of bottom and the previous stage of the tail of bottom. Every component of bottom is bottom, so the tail sequence is bottom, the pair of bottoms is bottom, and the structure map sends bottom to bottom.

@@ -1,1 +1,0 @@
-The tabulation step reads a packed state whose first component pairs a length B with a parameter p, and whose second component pairs a counter y with a previous code. It returns one plus the pair of the value of g at B minus 1 minus y with p, and the previous code, thus prepending that value to the tail.

@@ -1,3 +1,0 @@
-If a string has bit b at an index, the fiber of its encoding at that index is the bit neighbourhood of b.
-
-By extensionality, a token in the fiber meets the encoding condition for b. Conversely, a token in that bit neighbourhood meets every bit constraint at the index, because the only defined bit there is b.

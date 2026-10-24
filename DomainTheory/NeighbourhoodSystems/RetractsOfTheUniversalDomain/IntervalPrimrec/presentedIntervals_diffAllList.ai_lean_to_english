@@ -1,3 +1,0 @@
-Subtracting a list of rational pairs from a single pair presents the difference of that pair's interval with the presented list.
-
-Unfold the fold, apply the presentation of a folded single difference, and cancel the empty second piece of the singleton presentation.

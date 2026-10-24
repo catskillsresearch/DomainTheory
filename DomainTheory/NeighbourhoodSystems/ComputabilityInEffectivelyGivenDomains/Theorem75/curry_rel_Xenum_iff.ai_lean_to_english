@@ -1,3 +1,0 @@
-Currying relates an indexed neighbourhood to an enumerated function-space neighbourhood if and only if, whenever the code is consistent, the original map relates the product of that neighbourhood with each selected input to the corresponding output.
-
-Unfold currying. In one direction, read membership of the section map in the enumeration and rewrite the section relation as the product relation. In the other direction, the indexed neighbourhood and the enumerated set are neighbourhoods, and the same rewriting puts the section map in the enumeration.

@@ -1,3 +1,0 @@
-If σ is a prefix of τ, then the partial element of the tail of σ lies below the total tail of τ.
-
-If τ is empty, the prefix forces σ empty, and the order holds by reflexivity. If τ is a cons, the order from a partial element to a total element reduces to a prefix relation. An empty σ is a prefix of the tail. A cons σ has the same head as τ, and the remaining prefix is the tail prefix.

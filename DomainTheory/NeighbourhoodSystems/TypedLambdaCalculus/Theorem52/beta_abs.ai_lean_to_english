@@ -1,3 +1,0 @@
-Theorem 5.2, abstraction case (Scott 1981, PRG-19), states that the map recovered by applying the double curry of g at a context element, then at σ, then at y, equals g at the pair of the pair of the context element and σ with y.
-
-Rewrite by the curried application law twice.

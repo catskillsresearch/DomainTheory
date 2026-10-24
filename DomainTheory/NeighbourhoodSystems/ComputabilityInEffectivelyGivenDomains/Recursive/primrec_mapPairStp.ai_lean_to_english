@@ -1,3 +1,0 @@
-The fold-shaped step that prepends a pair onto a coded list is primitive recursive.
-
-The head, the accumulator, and the threaded parameter are projections. The successor of the pair whose first component is the pair of the parameter and the head, and whose second component is the accumulator, agrees with the step by definition.

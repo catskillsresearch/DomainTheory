@@ -1,3 +1,0 @@
-The inner Y-fold, read on a packed triple of depth, branch, and stage, is primitive recursive.
-
-Reassembling the three components into the pair expected by the paired fold is primitive recursive. Composing the primitive-recursive paired fold and rewriting by the equation of the inner fold with its paired form gives the claim.

@@ -1,3 +1,0 @@
-The first component of the generalized atom pair is contained in the master neighbourhood of the first neighbourhood system.
-
-The argument is induction on the depth. At depth zero the component is the master. At a successor it shrinks into the previous component, which lies in the master.

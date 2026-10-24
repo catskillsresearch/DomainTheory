@@ -1,3 +1,0 @@
-If the zero-embedding of a set X is a neighbourhood of D-sharp, then X is a neighbourhood of D.
-
-The construction cannot be the master: a point of the master of D whose boolean list is true followed by the empty list lies in the master of D-sharp but not in a zero-embedding. A zero-copy reduces by injectivity of the zero-embedding. A pair-copy is impossible: a point of a nonempty pair embedding has a nonempty boolean list, while every point of a zero-embedding has an empty list.

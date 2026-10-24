@@ -1,3 +1,0 @@
-The intersection of relevant outputs is antitone in the input set: a smaller input yields a smaller intersection.
-
-A point of the smaller intersection lies in the master and in every output whose input contains the smaller set. Every output whose input contains the larger set is among those, so the point lies in the larger intersection.

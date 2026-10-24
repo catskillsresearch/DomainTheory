@@ -1,3 +1,0 @@
-Iterating integer halving zero times leaves the input unchanged: halfIter n 0 equals n.
-
-The equation is definitional.

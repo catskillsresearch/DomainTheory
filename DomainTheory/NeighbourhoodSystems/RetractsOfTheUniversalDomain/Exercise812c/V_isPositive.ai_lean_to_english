@@ -1,3 +1,0 @@
-The neighbourhood system V is positive: the intersection of two neighbourhoods is a neighbourhood exactly when it is nonempty.
-
-Write both neighbourhoods as level sets. A neighbourhood intersection carries a nonemptiness witness. Conversely, a nonempty intersection is the level set at the maximum of the two levels given by the intersection formula for level sets.

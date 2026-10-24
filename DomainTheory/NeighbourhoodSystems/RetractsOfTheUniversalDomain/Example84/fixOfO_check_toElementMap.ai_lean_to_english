@@ -1,3 +1,0 @@
-Applying fixOfO after the elementwise action of check recovers the elementwise action of a.
-
-Extensionality reduces the claim to membership of a neighbourhood Z. The membership laws for fixOfO and for a agree once membership of {0} in check of x is rewritten as x not being bottom. That equivalence is the closed form of check: the alternative that the neighbourhood equals {0, 1} contradicts distinctness of {0} and {0, 1}, and a non-bottom x is witnessed because {0} is an O-neighbourhood.

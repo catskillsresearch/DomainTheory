@@ -1,3 +1,0 @@
-The elementwise image of the least fixed point of an approximable endomap is the least fixed point itself.
-
-Extensionality of elements splits the equality. A neighbourhood of the image comes from an n-step chain and one further step, which together form a chain of length n + 1. A chain of length zero forces the neighbourhood to be the master, which belongs to the least fixed point and is related to itself by the map. A chain of successor length exposes an intermediate neighbourhood of the least fixed point and a last step, which is membership in the image.

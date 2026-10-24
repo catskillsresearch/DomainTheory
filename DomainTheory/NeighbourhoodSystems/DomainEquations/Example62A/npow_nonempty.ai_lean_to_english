@@ -1,3 +1,0 @@
-If n is positive and every neighbourhood of V is nonempty, then every neighbourhood of the n-fold product of V is nonempty.
-
-Unpack the product witness and take a nonempty witness in the component at index zero.

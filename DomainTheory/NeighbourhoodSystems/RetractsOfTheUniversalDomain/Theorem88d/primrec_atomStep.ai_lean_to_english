@@ -1,3 +1,0 @@
-If a function deciding emptiness of a D-atom is primitive recursive, then the one-step transition of the packed atom state is primitive recursive.
-
-The depth, the packed state, and its remainder, positive code, negative code, and U-code are primitive recursive, as are the remainder bit, the two candidate codes with the current index prepended, the two emptiness queries made with the given decider, and the two splits of the code. Selection on the bit assembles the new code, the new positive code, and the new negative code. Pairing the halved remainder with those three values equals the step, by unfolding the step and the packing.

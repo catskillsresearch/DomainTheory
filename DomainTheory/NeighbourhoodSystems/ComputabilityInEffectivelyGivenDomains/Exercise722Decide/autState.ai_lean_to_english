@@ -1,1 +1,0 @@
-The state type of a fragment expression is a single point for the full language, an optional length index for a singleton, a product of the state types for an intersection, and a sum of the state types for a concatenation.

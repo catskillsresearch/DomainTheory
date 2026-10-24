@@ -1,1 +1,0 @@
-restrictFinPair cuts a sequence of Boolean pairs down to the finite initial segment of a given length, reading the sequence at the underlying index of each finite position.

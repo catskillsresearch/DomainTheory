@@ -1,6 +1,0 @@
-After d iterations of the joint upsampling step from the pair of a level k and a mask,
-the level component is k plus d.
-
-The proof is by induction on d. At zero the iteration simplifies. At a successor, one
-further step, the unfolding equation, and the left pairing projection reduce the level
-to the successor of the inductive value, and arithmetic gives k plus the successor.

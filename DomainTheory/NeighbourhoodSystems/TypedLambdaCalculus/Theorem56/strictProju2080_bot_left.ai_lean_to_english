@@ -1,3 +1,0 @@
-The strict first projection of bottom and a numeral is bottom.
-
-Rewrite by the application lemma and split on the numeral. If it is zero the zero test is true, and if it is a successor the zero test is false. In both cases the conditional returns the first argument, which is bottom.

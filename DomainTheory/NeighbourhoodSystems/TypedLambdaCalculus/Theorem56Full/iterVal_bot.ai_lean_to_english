@@ -1,3 +1,0 @@
-If a realiser λ-defines a total function that never returns zero when a counter is consed onto a parameter vector, then every finite approximant of the search returns bottom at the stack of every such cons.
-
-Induct on the approximant index, with the counter quantified. The zeroth approximant is bottom. For a successor, the value at the current counter is some positive numeral. Unfold one search step, simplify the head, the tail, and the push on the numeral stack, evaluate the realiser, and take the false branch of the conditional. The continuation is the previous approximant at the next counter, which is bottom by the inductive hypothesis.

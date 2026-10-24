@@ -1,3 +1,0 @@
-One upsampling step is primitive recursive on a paired code. It duplicates the low block of the mask: two to the power of two to the level, times the mask truncated to two to that level, plus the same truncation.
-
-Two to the power of the left component is primitive recursive. The truncation of the right component at that power is primitive recursive, by composing the primitive-recursive truncation with the pairing of the right projection and the power; the pairing identities match the arguments. Two to the power of that power is primitive recursive. Adding the product of this power with the truncation to the truncation itself is primitive recursive, and it agrees with the step by reflexivity.

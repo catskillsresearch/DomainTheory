@@ -1,3 +1,0 @@
-The product of every d on the function space lies below the identity.
-
-Compare element maps, then compare through the function-space equivalence, and use the transport to the closed form. At an element t, the closed-form value is at most the underlying map at sub of t, because the decoded type lies below the identity. That value is at most the underlying map at t, because sub lies below the identity and the underlying map is monotone.

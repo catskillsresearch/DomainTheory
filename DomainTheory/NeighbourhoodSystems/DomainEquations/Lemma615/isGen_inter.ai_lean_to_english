@@ -1,3 +1,0 @@
-If Y generates X and Y' generates X', and the intersection of Y and Y' is a neighbourhood of the codomain, then that intersection generates the intersection of X and X'.
-
-The backward relations restrict along the two inclusions of the intersection, and the right-intersection law of the backward map yields a backward relation to the intersection of X and X', which is therefore a neighbourhood of the domain. The forward relations restrict in the same way, and the right-intersection law of the forward map yields the forward relation.

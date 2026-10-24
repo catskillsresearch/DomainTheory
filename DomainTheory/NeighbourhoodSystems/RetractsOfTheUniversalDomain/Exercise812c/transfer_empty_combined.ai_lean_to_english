@@ -1,3 +1,0 @@
-A finite Boolean combination of values of combinedX is nonempty inside the master of D₀ if and only if the same combination of values of combinedY is nonempty inside the master of D₁, whenever every index in the combination lies below the given bound.
-
-The core law says that the generic atom of combinedX is empty exactly when the generic atom of combinedY is empty, and the symmetric form reverses the equivalence. The generic transfer lemma in each direction gives the two nonemptiness statements.

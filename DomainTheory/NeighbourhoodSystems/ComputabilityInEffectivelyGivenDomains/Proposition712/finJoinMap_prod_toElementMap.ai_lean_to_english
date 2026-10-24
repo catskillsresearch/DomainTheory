@@ -1,3 +1,0 @@
-The product join map sends the pair of elements x and y to the binary finite join of x and y.
-
-The two-variable map recovered from the product map is the binary join map. Rewriting the element action through that identification and through the action of the binary join gives the binary finite join.

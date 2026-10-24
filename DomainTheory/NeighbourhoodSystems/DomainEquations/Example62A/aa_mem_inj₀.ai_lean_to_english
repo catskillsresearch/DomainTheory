@@ -1,3 +1,0 @@
-If every component of a family X belongs to MemA, then the left injection of the proper product of X is a neighbourhood of the separated sum Aⁿ + Aⁿ.
-
-It is the left-summand clause, and apow_mem_prodN supplies the product membership.

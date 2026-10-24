@@ -1,3 +1,0 @@
-Any upper bound of the active values at an element lies above the least map at that element.
-
-A neighborhood of the least map at the element comes from an input belonging to the element together with a superset of the finite intersection of the relevant outputs. That intersection belongs to the upper bound, because each relevant output has its principal filter among the active values and hence below the upper bound, so the output itself belongs to the upper bound. The original neighborhood then belongs to the upper bound by upward closure.

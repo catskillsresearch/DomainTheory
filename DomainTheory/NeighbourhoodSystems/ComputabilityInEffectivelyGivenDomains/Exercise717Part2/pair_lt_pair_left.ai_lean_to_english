@@ -1,3 +1,0 @@
-Numerical pairing is strictly monotone in its first argument when the second argument is held fixed.
-
-The definition of pairing is unfolded, and the comparisons with the fixed second argument are split. If both first arguments lie below it, the inequality is the given comparison. If only the smaller one does, the square of the larger first argument dominates the square of the second argument. If neither does, the square of the successor of the smaller first argument is at most the square of the larger, and expanding that square leaves room for the strict inequality.

@@ -1,3 +1,0 @@
-The packed unnumbering unnumPair is primitive recursive.
-
-Primitive recursion starts from the constant packing of 0 with 0 and steps by nextCellStep on the accumulator, with the iteration count equal to the input. The constant-iterator form of that recursion is identified with unnumPair.

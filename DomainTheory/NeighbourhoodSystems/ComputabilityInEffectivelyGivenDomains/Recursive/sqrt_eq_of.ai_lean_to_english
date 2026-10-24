@@ -1,3 +1,0 @@
-If the square of q is at most m and m is strictly less than the square of q plus 1, then the square root of m equals q.
-
-The square of the square root is at most m, and m is strictly less than the square of one more than the square root. If the square root were strictly less than q, then one more than the square root would be at most q, and multiplying those bounds would put a square at most the square of q, contradicting the two inequalities by arithmetic. Thus q is at most the square root. If q were strictly less than the square root, the same comparison of squares would contradict the upper bound. Thus the square root is at most q, and arithmetic gives equality.

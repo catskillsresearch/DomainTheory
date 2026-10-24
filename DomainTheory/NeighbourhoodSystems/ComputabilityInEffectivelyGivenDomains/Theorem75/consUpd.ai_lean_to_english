@@ -1,1 +1,0 @@
-One consistency update selects on the low bit of the mask in the state. The set bit shifts the mask, intersects the running index with the projected entry, and conjoins the flag with the consistency test of that pair. The unset bit only shifts the mask and keeps the index and the flag.

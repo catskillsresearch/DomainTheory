@@ -1,3 +1,0 @@
-If X is a neighbourhood of C, then the image of an element x of C contains the tagged middle copy of X if and only if x contains the false embedding of X.
-
-In the forward direction the four forms of membership in the image are examined. The master would place the basepoint in the middle copy. The unit form would place a middle tag of a point of the nonempty set X in the left copy. A middle copy equals the given copy by injectivity and yields the membership. A right copy would place that middle tag in the right copy. Each mismatched token is excluded by the corresponding non-membership lemma. In the reverse direction the false-embedding form of the image is taken.

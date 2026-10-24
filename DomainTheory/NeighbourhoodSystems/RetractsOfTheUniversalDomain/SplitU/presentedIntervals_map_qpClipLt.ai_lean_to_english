@@ -1,3 +1,0 @@
-Mapping the downward clip at m over a list of rational pairs presents the intervals of the original list, cut to the open ray below m.
-
-A point of a clipped pair still lies in the original interval, because the right endpoint only falls, and it lies strictly below m. Conversely, a point of an original interval that lies strictly below m lies in the interval whose right endpoint is the minimum of the old right endpoint and m.

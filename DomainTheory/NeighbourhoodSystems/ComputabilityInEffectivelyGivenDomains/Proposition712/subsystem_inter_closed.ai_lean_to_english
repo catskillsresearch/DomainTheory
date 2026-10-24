@@ -1,3 +1,0 @@
-A subsystem of a neighbourhood system that is unconditionally closed under intersection is itself unconditionally closed under intersection.
-
-The subsystem's intersection clause applies once both sets are neighbourhoods of the larger system, which the inclusion supplies, and the larger system contains their intersection.

@@ -1,3 +1,0 @@
-The stage-zero retraction is bottom: it relates a neighbourhood A of the exponential only to the master of the exponential.
-
-Unfolding the relational description, the witness at stage zero is the generator, and that generator is the master of the colimit, so the target, lying between that master and the master of the exponential, equals the master. Conversely the master itself is a witness, with the source included in the master.

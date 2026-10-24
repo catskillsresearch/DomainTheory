@@ -1,7 +1,0 @@
-The consistency bit of two fragment expressions is true if and only if the denotation of their intersection expression is nonempty.
-
-Unfolding the definitions, the consistency bit is the nonemptiness bit of the intersection expression, and that bit is true exactly when the denotation is nonempty.
-
-The intersection of the denotations of two expressions is nonempty if and only if their consistency bit is true.
-
-The intersection of the denotations is the denotation of the intersection expression, and the previous equivalence applies.

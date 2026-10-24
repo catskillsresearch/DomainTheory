@@ -1,3 +1,0 @@
-If a finite string σ is a prefix of a finite string τ, the head recursion started at the bottom element and evaluated at σ lies below the head recursion started at the distinguished point and evaluated at τ.
-
-The prefix exhibits τ as σ followed by a suffix. Appending rewrites the value at τ as the recursion, started at the distinguished value of the suffix, evaluated on σ. Monotonicity in the base point, using that the bottom element lies below that distinguished value, gives the comparison.

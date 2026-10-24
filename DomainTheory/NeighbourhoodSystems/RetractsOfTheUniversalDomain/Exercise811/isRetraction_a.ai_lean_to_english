@@ -1,3 +1,0 @@
-The approximable map a is a retraction: composing it with itself yields a.
-
-Compare related pairs by extensionality of approximable maps. An intermediate interval forces the two middle endpoints to agree. Two strict steps compose, a strict step followed by the diagonal endpoint stays strict, a diagonal step followed by a strict step would force the right endpoint to be strictly less than itself, and two diagonal steps give the diagonal. Conversely, a strict relation is split by a rational strictly between the endpoints, giving two strict steps, and the diagonal case at 1 is the diagonal step through [0, 1) taken twice.

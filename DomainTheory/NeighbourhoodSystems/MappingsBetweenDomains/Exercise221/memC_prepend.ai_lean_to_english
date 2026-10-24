@@ -1,3 +1,0 @@
-Prepending a finite binary string σ to a neighbourhood of the system C yields a neighbourhood of C.
-
-If the neighbourhood is the cone of a string ρ, the prepend is the cone of σ followed by ρ. If it is the singleton of ρ, the prepend is the singleton of σ followed by ρ.

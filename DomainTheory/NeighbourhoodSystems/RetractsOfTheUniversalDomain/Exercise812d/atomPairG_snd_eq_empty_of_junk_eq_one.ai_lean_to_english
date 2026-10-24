@@ -1,3 +1,0 @@
-If the junk flag of a bit-source at depth n equals 1, then the second component of the generalized atom pair along that bit-source's history is empty.
-
-The argument is induction on n. At depth zero the flag is 0, a contradiction. A flag already positive at the previous depth equals 1, and the second component only shrinks. If the junk is fresh, the previous state is correct and the step unfolds into the X emptiness check and the Y emptiness check. If the X check does not fire, the X sub-step is correct and the Y check says the next second component is empty directly. If the X check fires, the first component of the X step is empty, the X-step specification transfers emptiness to its second component, and the next second component sits inside that set.

@@ -1,3 +1,0 @@
-A neighbourhood of the three-way sum that is contained in a two-copy is itself a two-copy.
-
-The master contains the point none, which does not lie in a two-copy. A zero-copy and a one-copy each contain a point of their own tag, and that point does not lie in a two-copy. A two-copy is already of the required form.

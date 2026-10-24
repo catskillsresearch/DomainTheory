@@ -1,7 +1,0 @@
-module
-
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example15.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example15.mem_iff_nonempty
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example15.consistent_iff_inter_nonempty
-
-@[expose] public section

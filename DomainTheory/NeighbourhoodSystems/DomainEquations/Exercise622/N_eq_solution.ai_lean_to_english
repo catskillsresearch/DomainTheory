@@ -1,3 +1,0 @@
-The equation N congruent to {{0}, {0, Λ}} ⊕ N has a solution: some nonempty set Γ of strings, the token set of the vertical naturals, satisfies Γ = tok of the vertical-naturals expression applied to the singleton system on Γ, so that singleton system is a subsystem of the expression applied to it and Theorem 6.14 applies.
-
-The general singleton-subsystem solution applies to the vertical-naturals expression, using that the expression is rooted.
