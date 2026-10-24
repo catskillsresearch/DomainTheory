@@ -1,6 +1,8 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_17
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_1
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_19
 
 @[expose] public section
 
@@ -54,6 +56,54 @@ theorem appendSeq_mem {α : Type*} {C : Set (Set α)} {X1 : ℕ → Set α} {n1 
   by_cases h : i < n1
   · rw [ite_eq_left h]; exact h1 i h
   · rw [ite_eq_right h]; exact h2 (i - n1) (by omega)
+
+end DomainTheory.NeighbourhoodSystems
+end
+
+section
+-- Exercise118/A.lean
+set_option linter.unusedSimpArgs false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+namespace triSys
+
+/-- `A = {0,1}`. -/
+def A : Set (Fin 3) := {0, 1}
+
+end triSys
+
+end DomainTheory.NeighbourhoodSystems
+end
+
+section
+-- Exercise118/B.lean
+set_option linter.unusedSimpArgs false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+namespace triSys
+
+/-- `B = {1,2}`. -/
+def B : Set (Fin 3) := {1, 2}
+
+end triSys
+
+end DomainTheory.NeighbourhoodSystems
+end
+
+section
+-- Exercise118/Cc.lean
+set_option linter.unusedSimpArgs false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+namespace triSys
+
+/-- `Cc = {0,2}`. -/
+def Cc : Set (Fin 3) := {0, 2}
+
+end triSys
 
 end DomainTheory.NeighbourhoodSystems
 end
@@ -499,356 +549,5 @@ theorem example_118.{u_1} : And
   (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.leastFilter_le)
   DomainTheory.NeighbourhoodSystems.triSys.not_finitelyConsistent
 
-end DomainTheory.NeighbourhoodSystems
-end
-
-section
--- Exercise119/Tok.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-/-- Tokens `Δ = {0, 1, 2}`. -/
-abbrev Tok := Fin 3
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/a.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-/-- The neighbourhood `{0, 1}`. -/
-def a : Set Tok := {0, 1}
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/b.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-/-- The neighbourhood `{1, 2}`. -/
-def b : Set Tok := {1, 2}
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/master.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-/-- The master neighbourhood `Δ`. -/
-def master : Set Tok := Set.univ
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/memSet.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-/-- `𝒟 = {Δ, {0,1}, {1,2}}`. -/
-def memSet : Set (Set Tok) := {master, a, b}
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/mem.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-/-- Membership in `𝒟`. -/
-def mem (X : Set Tok) : Prop := X ∈ memSet
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/mem_iff.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-theorem mem_iff (X : Set Tok) : mem X ↔ X = master ∨ X = a ∨ X = b := by
-  simp only [mem, memSet, Set.mem_insert_iff, Set.mem_singleton_iff]
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/inter_eq.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-/-- Classification of binary intersections in `𝒟`. -/
-theorem inter_eq (X Y : Set Tok) (hX : mem X) (hY : mem Y) :
-    X ∩ Y = master ∨ X ∩ Y = a ∨ X ∩ Y = b ∨ X ∩ Y = ({1} : Set Tok) := by
-  rcases (mem_iff X).mp hX with rfl | rfl | rfl
-  · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-    · exact Or.inl (by ext x; fin_cases x <;> simp [master, a, b])
-    · exact Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b]))
-    · exact Or.inr (Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b])))
-  · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-    · exact Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b]))
-    · exact Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b]))
-    · exact Or.inr (Or.inr (Or.inr (by ext x; fin_cases x <;> simp [master, a, b])))
-  · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-    · exact Or.inr (Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b])))
-    · exact Or.inr (Or.inr (Or.inr (by ext x; fin_cases x <;> simp [master, a, b])))
-    · exact Or.inr (Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b])))
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/mem_a.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-theorem mem_a : mem a := (mem_iff _).mpr (Or.inr (Or.inl rfl))
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/mem_b.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-theorem mem_b : mem b := (mem_iff _).mpr (Or.inr (Or.inr rfl))
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/mem_master.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-theorem mem_master : mem master := (mem_iff _).mpr (Or.inl rfl)
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/not_mem_sub_one.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-/-- No neighbourhood is contained in `{1}` (each contains a token other than `1`). This is why
-the overlapping pair `{0,1}`, `{1,2}` never triggers condition (ii). -/
-theorem not_mem_sub_one {Z : Set Tok} (hZ : mem Z) (hsub : Z ⊆ ({1} : Set Tok)) : False := by
-  rcases (mem_iff Z).mp hZ with rfl | rfl | rfl
-  · exact absurd (hsub (show (0 : Tok) ∈ master by simp [master])) (by simp)
-  · exact absurd (hsub (show (0 : Tok) ∈ a by simp [a])) (by simp)
-  · exact absurd (hsub (show (2 : Tok) ∈ b by simp [b])) (by simp)
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/notPositiveSystem.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-/-- **Exercise 1.19 — the non-positive example is a neighbourhood system.** The only intersection
-that is not already a neighbourhood is `{0,1} ∩ {1,2} = {1}`, and that case is impossible: a
-consistency witness `Z ⊆ {1}` with `Z ∈ 𝒟` does not exist (`not_mem_sub_one`). -/
-def notPositiveSystem : NeighborhoodSystem Tok where
-  mem := mem
-  master := master
-  master_nonempty := Set.univ_nonempty
-  master_mem := mem_master
-  sub_master := fun _ => Set.subset_univ _
-  inter_mem := by
-    intro X Y Z hX hY hZ hZsub
-    rcases inter_eq X Y hX hY with h | h | h | h
-    · rw [h]; exact mem_master
-    · rw [h]; exact mem_a
-    · rw [h]; exact mem_b
-    · rw [h] at hZsub; exact (not_mem_sub_one hZ hZsub).elim
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/positiveExample.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-/-- All non-empty subsets of `Fin 2` form a *positive* neighbourhood system: there `X ∩ Y ∈ 𝒟`
-literally **is** `(X ∩ Y).Nonempty`, so (ii′) is `Iff.rfl`. -/
-def positiveExample : NeighborhoodSystem (Fin 2) :=
-  NeighborhoodSystem.ofPositive (fun X => X.Nonempty) Set.univ
-    (by exact ⟨(0 : Fin 2), Set.mem_univ 0⟩)
-    (by exact ⟨(0 : Fin 2), Set.mem_univ 0⟩) (by intro X _; exact Set.subset_univ X)
-    (by intro X Y _ _; exact Iff.rfl)
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/a_inter_b.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-
-/-- `{0,1} ∩ {1,2} = {1}`. -/
-theorem a_inter_b : a ∩ b = ({1} : Set Tok) := by ext x; fin_cases x <;> simp [a, b]
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/one_not_mem.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-
-/-- `{1}` is not a neighbourhood (it is neither `Δ`, `{0,1}`, nor `{1,2}`). -/
-theorem one_not_mem : ¬ mem ({1} : Set Tok) := by
-  intro h
-  rcases (mem_iff _).mp h with h | h | h
-  · have h0 : (0 : Tok) ∈ master := by simp [master]
-    rw [← h] at h0; simp at h0
-  · have h0 : (0 : Tok) ∈ a := by simp [a]
-    rw [← h] at h0; simp at h0
-  · have h2 : (2 : Tok) ∈ b := by simp [b]
-    rw [← h] at h2; simp at h2
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/not_isPositive.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-
-/-- **Exercise 1.19 — the example is not positive.** `{0,1}` and `{1,2}` are neighbourhoods whose
-intersection `{1}` is non-empty but is *not* a neighbourhood, contradicting (ii′). -/
-theorem not_isPositive : ¬ notPositiveSystem.IsPositive := by
-  intro h
-  have hab := h (X := a) (Y := b) mem_a mem_b
-  rw [a_inter_b] at hab
-  exact one_not_mem (hab.mpr ⟨1, rfl⟩)
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119.lean
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-set_option linter.unusedVariables false
-
-theorem example_119 : Not
-  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsPositive DomainTheory.NeighbourhoodSystems.Exercise119.Tok
-    DomainTheory.NeighbourhoodSystems.Exercise119.notPositiveSystem) :=
-  DomainTheory.NeighbourhoodSystems.Exercise119.not_isPositive
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
--- Exercise119/positiveExample_isPositive.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
-
-theorem positiveExample_isPositive : positiveExample.IsPositive := by
-  intro X Y _ _
-  exact Iff.rfl
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
-namespace DomainTheory.NeighbourhoodSystems
-namespace NeighborhoodSystem
-section
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-/-- Exercise 1.20's `↑X = {Y ∈ 𝒟 ∣ Y ⊆ X}` (the up-set of `X` *inside* `𝒟`). -/
-def upSet (X : Set α) : Set (Set α) := {Y | V.mem Y ∧ Y ⊆ X}
-
-@[simp] theorem mem_upSet {X Y : Set α} : Y ∈ V.upSet X ↔ V.mem Y ∧ Y ⊆ X := Iff.rfl
-
-/-- `↑X ∩ ↑Y = ↑(X ∩ Y)` — a set identity (no membership hypotheses). -/
-theorem upSet_inter (X Y : Set α) : V.upSet X ∩ V.upSet Y = V.upSet (X ∩ Y) := by
-  ext Z
-  simp only [Set.mem_inter_iff, mem_upSet, Set.subset_inter_iff]
-  tauto
-
-/-- `X ↦ ↑X` is inclusion-**preserving**: `↑X ⊆ ↑Y ↔ X ⊆ Y` (for `X ∈ 𝒟`).
-`→` tests at `X ∈ ↑X`; `←` is transitivity of `⊆`. -/
-theorem upSet_subset_iff {X Y : Set α} (hX : V.mem X) : V.upSet X ⊆ V.upSet Y ↔ X ⊆ Y := by
-  constructor
-  · intro h
-    exact (h ⟨hX, subset_rfl⟩).2
-  · intro hXY Z hZ
-    exact ⟨hZ.1, hZ.2.trans hXY⟩
-end
-
-end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
 end

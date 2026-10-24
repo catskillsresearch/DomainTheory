@@ -274,8 +274,8 @@ theorem inter_eq (X Y : Set Token) (hX : mem X) (hY : mem Y) :
 /- concordance: source L177 EXAMPLE 1.4 finite binary tree -/
 /-- **Example 1.4.** The binary-tree neighbourhood system on `Δ = {Λ,0,1,00,01,10,11}`. -/
 def neighborhoodSystem : NeighborhoodSystem Token where
-  mem := mem
-  master := master
+  mem
+  master
   master_nonempty := Set.univ_nonempty
   master_mem := mem_master
   sub_master := fun _ => Set.subset_univ _

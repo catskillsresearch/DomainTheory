@@ -1,6 +1,8 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_15
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+public import Mathlib.Algebra.Group.End
+public import Mathlib.Basic.Finite.Defs
 
 @[expose] public section
 
@@ -157,18 +159,4 @@ theorem example_116 : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsTo
 end
 
 end DomainTheory.NeighbourhoodSystems.Cofinite
-namespace DomainTheory.NeighbourhoodSystems
-namespace RatInterval
-section
-
-open NeighborhoodSystem
-
-/-- A neighbourhood of `ratIntervalSystem`: either `Δ = ℝ`, or a non-empty open interval with
-rational endpoints. -/
-def ratIntervalMem (X : Set ℝ) : Prop :=
-  X = Set.univ ∨ ∃ a b : ℚ, a < b ∧ X = Set.Ioo (a : ℝ) (b : ℝ)
-end
-
-end RatInterval
-end DomainTheory.NeighbourhoodSystems
 end

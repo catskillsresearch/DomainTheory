@@ -1,6 +1,10 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_26
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_18
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
+public import Mathlib.Basic.Finite.Defs
 
 @[expose] public section
 

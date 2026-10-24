@@ -1,6 +1,9 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_27
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
+public import Mathlib.Algebra.Group.End
 
 @[expose] public section
 

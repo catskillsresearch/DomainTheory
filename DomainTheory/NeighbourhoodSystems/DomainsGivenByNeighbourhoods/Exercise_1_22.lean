@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_20
+public import Mathlib.Topology.Defs.Filter
 
 @[expose] public section
 

@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_27
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.MappingsBetweenDomains
 public import Mathlib.Data.Set.Image
 public import Mathlib.Data.Set.Insert

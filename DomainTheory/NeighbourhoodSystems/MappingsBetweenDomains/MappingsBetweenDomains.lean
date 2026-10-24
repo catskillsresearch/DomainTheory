@@ -3,6 +3,8 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_2
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_22
 public import Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Data.Set.Image
 public import Mathlib.Data.Set.Lattice.Bounded

@@ -1,6 +1,7 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_25
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_1
+public import Mathlib.RingTheory.Ideal.Span
 
 @[expose] public section
 

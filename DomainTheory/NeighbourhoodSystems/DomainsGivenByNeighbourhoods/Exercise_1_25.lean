@@ -1,6 +1,11 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_4
+public import Mathlib.Algebra.Group.End
+public import Mathlib.Order.UpperLower.Basic
 
 @[expose] public section
 
@@ -10,6 +15,20 @@ namespace FinalSegment
 section
 
 open NeighborhoodSystem
+
+/-- In a linear order, any two upper sets are nested. (Hence final segments are
+*nested-or-disjoint* — in fact always nested.) -/
+theorem upperSet_subset_or {Δ : Type*} [LinearOrder Δ] {X Y : Set Δ}
+    (hX : IsUpperSet X) (hY : IsUpperSet Y) : X ⊆ Y ∨ Y ⊆ X := by
+  by_cases h : X ⊆ Y
+  · exact Or.inl h
+  · right
+    rw [Set.not_subset] at h
+    obtain ⟨a, haX, haY⟩ := h
+    intro b hbY
+    rcases le_total a b with hab | hba
+    · exact hX hab haX
+    · exact absurd (hY hba hbY) haY
 
 /- concordance: source L536 EXERCISE 1.25 final segments of ordinals -/
 /-- **Exercise 1.25 — the final-segment neighbourhood system.** Over a (non-empty) linear order

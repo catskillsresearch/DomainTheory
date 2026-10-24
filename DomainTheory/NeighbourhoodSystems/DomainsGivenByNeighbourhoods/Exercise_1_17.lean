@@ -1,6 +1,7 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_16
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Element
+public import Mathlib.Basic.Real.Basic
 
 @[expose] public section
 
@@ -10,6 +11,11 @@ namespace RatInterval
 section
 
 open NeighborhoodSystem
+
+/-- A neighbourhood of `ratIntervalSystem`: either `Δ = ℝ`, or a non-empty open interval with
+rational endpoints. -/
+def ratIntervalMem (X : Set ℝ) : Prop :=
+  X = Set.univ ∨ ∃ a b : ℚ, a < b ∧ X = Set.Ioo (a : ℝ) (b : ℝ)
 
 /- concordance: source L464 EXERCISE 1.17 rational open intervals -/
 /-- **Exercise 1.17 — intersections.** The intersection of two neighbourhoods that share a point
@@ -129,52 +135,4 @@ theorem example_117 : And
 end
 
 end DomainTheory.NeighbourhoodSystems.RatInterval
-end
-
-section
--- Exercise118/A.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems
-
-namespace triSys
-
-/-- `A = {0,1}`. -/
-def A : Set (Fin 3) := {0, 1}
-
-end triSys
-
-end DomainTheory.NeighbourhoodSystems
-end
-
-section
--- Exercise118/B.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems
-
-namespace triSys
-
-/-- `B = {1,2}`. -/
-def B : Set (Fin 3) := {1, 2}
-
-end triSys
-
-end DomainTheory.NeighbourhoodSystems
-end
-
-section
--- Exercise118/Cc.lean
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems
-
-namespace triSys
-
-/-- `Cc = {0,2}`. -/
-def Cc : Set (Fin 3) := {0, 2}
-
-end triSys
-
-end DomainTheory.NeighbourhoodSystems
 end

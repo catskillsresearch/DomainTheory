@@ -97,8 +97,8 @@ theorem inter_eq (X Y : Set Token) (h : mem X) (h' : mem Y) :
 /- concordance: source L160 EXAMPLE 1.3 three-step chain -/
 /-- **Example 1.3.** The neighbourhood system on `Δ = {0, 1, 2}`. -/
 def neighborhoodSystem : NeighborhoodSystem Token where
-  mem := mem
-  master := master
+  mem
+  master
   master_nonempty := Set.univ_nonempty
   master_mem := mem_master
   sub_master := fun _ => Set.subset_univ _

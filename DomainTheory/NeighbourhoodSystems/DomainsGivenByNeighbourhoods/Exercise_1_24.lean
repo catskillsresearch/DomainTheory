@@ -1,6 +1,7 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_22
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+public import Mathlib.Order.Preorder.Chain
 
 @[expose] public section
 
@@ -67,27 +68,4 @@ theorem example_124.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodS
 end
 
 end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
-namespace DomainTheory.NeighbourhoodSystems
-namespace FinalSegment
-section
-
-open NeighborhoodSystem
-
-/-- In a linear order, any two upper sets are nested. (Hence final segments are
-*nested-or-disjoint* — in fact always nested.) -/
-theorem upperSet_subset_or {Δ : Type*} [LinearOrder Δ] {X Y : Set Δ}
-    (hX : IsUpperSet X) (hY : IsUpperSet Y) : X ⊆ Y ∨ Y ⊆ X := by
-  by_cases h : X ⊆ Y
-  · exact Or.inl h
-  · right
-    rw [Set.not_subset] at h
-    obtain ⟨a, haX, haY⟩ := h
-    intro b hbY
-    rcases le_total a b with hab | hba
-    · exact hX hab haX
-    · exact absurd (hY hba hbY) haY
-end
-
-end FinalSegment
-end DomainTheory.NeighbourhoodSystems
 end

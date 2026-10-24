@@ -3,6 +3,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.DomainConstructs
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.MappingsBetweenDomains
 public import Mathlib.Algebra.Group.Nat.Defs
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic

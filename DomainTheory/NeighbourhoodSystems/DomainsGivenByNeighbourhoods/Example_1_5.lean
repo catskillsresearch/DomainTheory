@@ -40,7 +40,7 @@ theorem P4_sub_master {X : Set Token} (_h : P4Mem X) : X ⊆ master :=
 /-- **Example 1.5.** The neighbourhood system of all non-empty subsets of `Δ = {0,1,2,3}`. -/
 def neighborhoodSystem : NeighborhoodSystem Token where
   mem := P4Mem
-  master := master
+  master
   master_nonempty := P4_master_nonempty
   master_mem := P4_master_mem
   inter_mem := P4_inter_mem

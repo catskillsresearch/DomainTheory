@@ -136,16 +136,3 @@ theorem isTotal_iff_top (x : neighborhoodSystem.Element) :
   · rintro rfl; exact top_isTotal
 
 end DomainTheory.NeighbourhoodSystems.Exercise112
-namespace DomainTheory.NeighbourhoodSystems.Exercise114
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
-
-/-- Membership: `X` is a neighbourhood iff `X = ℕ` (the master `Δ`) or `X` is finite and non-empty. -/
-def mem (X : Set ℕ) : Prop := X = Set.univ ∨ (X.Finite ∧ X.Nonempty)
-
-theorem nonempty_of_mem {X : Set ℕ} (h : mem X) : X.Nonempty := by
-  rcases h with rfl | h
-  · exact Set.univ_nonempty
-  · exact h.2
-
-end DomainTheory.NeighbourhoodSystems.Exercise114

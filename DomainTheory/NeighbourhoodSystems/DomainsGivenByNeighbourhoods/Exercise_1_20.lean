@@ -1,8 +1,44 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_18
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_19
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Algebra.Group.End
 
 @[expose] public section
+
+section
+namespace DomainTheory.NeighbourhoodSystems
+namespace NeighborhoodSystem
+section
+
+variable {α : Type*} (V : NeighborhoodSystem α)
+
+/-- Exercise 1.20's `↑X = {Y ∈ 𝒟 ∣ Y ⊆ X}` (the up-set of `X` *inside* `𝒟`). -/
+def upSet (X : Set α) : Set (Set α) := {Y | V.mem Y ∧ Y ⊆ X}
+
+@[simp] theorem mem_upSet {X Y : Set α} : Y ∈ V.upSet X ↔ V.mem Y ∧ Y ⊆ X := Iff.rfl
+
+/-- `↑X ∩ ↑Y = ↑(X ∩ Y)` — a set identity (no membership hypotheses). -/
+theorem upSet_inter (X Y : Set α) : V.upSet X ∩ V.upSet Y = V.upSet (X ∩ Y) := by
+  ext Z
+  simp only [Set.mem_inter_iff, mem_upSet, Set.subset_inter_iff]
+  tauto
+
+/-- `X ↦ ↑X` is inclusion-**preserving**: `↑X ⊆ ↑Y ↔ X ⊆ Y` (for `X ∈ 𝒟`).
+`→` tests at `X ∈ ↑X`; `←` is transitivity of `⊆`. -/
+theorem upSet_subset_iff {X Y : Set α} (hX : V.mem X) : V.upSet X ⊆ V.upSet Y ↔ X ⊆ Y := by
+  constructor
+  · intro h
+    exact (h ⟨hX, subset_rfl⟩).2
+  · intro hXY Z hZ
+    exact ⟨hZ.1, hZ.2.trans hXY⟩
+end
+
+end NeighborhoodSystem
+end DomainTheory.NeighbourhoodSystems
+end
 
 section
 namespace DomainTheory.NeighbourhoodSystems
