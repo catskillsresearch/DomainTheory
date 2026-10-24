@@ -158,14 +158,5 @@ theorem unnum_numP (c : ℕ × ℕ) : unnum (numP c) = c :=
   num_injective (by rw [numP_unnum])
 end
 
-section
-set_option linter.unusedVariables false
-
-theorem example_513 : ∀ (c : Prod Nat Nat),
-  @Eq (Prod Nat Nat)
-    (DomainTheory.NeighbourhoodSystems.Exercise513.unnum (DomainTheory.NeighbourhoodSystems.Exercise513.numP c)) c :=
-  DomainTheory.NeighbourhoodSystems.Exercise513.unnum_numP
-end
-
 end DomainTheory.NeighbourhoodSystems.Exercise513
 

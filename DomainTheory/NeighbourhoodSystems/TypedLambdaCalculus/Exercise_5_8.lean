@@ -182,37 +182,5 @@ theorem bracket_spec {X : Dom} {A : Dom} (t : Poly X A) (x : X.sys.Element) :
       exact hS
 end
 
-section
-set_option linter.unusedVariables false
-
-theorem example_508 : ∀ {X A : DomainTheory.NeighbourhoodSystems.Exercise508.Dom} (t : DomainTheory.NeighbourhoodSystems.Exercise508.Poly X A)
-  (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element X.carrier X.sys),
-  @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element A.carrier A.sys)
-    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap X.carrier A.carrier X.sys A.sys
-      (@DomainTheory.NeighbourhoodSystems.toApproxMap X.carrier A.carrier X.sys A.sys
-        (@DomainTheory.NeighbourhoodSystems.Exercise508.CL.denote (X.arrow A)
-          (@DomainTheory.NeighbourhoodSystems.Exercise508.bracket X A t)))
-      x)
-    (@DomainTheory.NeighbourhoodSystems.Exercise508.Poly.denote X A t x) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise508.bracket_spec
-end
-
 end DomainTheory.NeighbourhoodSystems.Exercise508
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
-/-- Commutation `f ∘ g = g ∘ f` read elementwise: `f(g(x)) = g(f(x))`. -/
-theorem commute_apply {f g : ApproximableMap V V} (hcomm : f.comp g = g.comp f) (x : V.Element) :
-    f.toElementMap (g.toElementMap x) = g.toElementMap (f.toElementMap x) := by
-  have h1 : (f.comp g).toElementMap x = (g.comp f).toElementMap x := by rw [hcomm]
-  rwa [toElementMap_comp, toElementMap_comp] at h1
-
-end ApproximableMap
-end
-end DomainTheory.NeighbourhoodSystems
 end

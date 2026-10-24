@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_10
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
 
 @[expose] public section
@@ -80,118 +81,111 @@ theorem fixElement_uniform {β γ : Type*} {W₀ : NeighborhoodSystem β} {W₁ 
       rw [← hintw f₀.fixElement, toElementMap_fixElement]
     exact fixElement_le_of_toElementMap_le f₁ (le_of_eq hfp)
 
+/-- Commuting approximable maps have a least common fixed point `x = f(x) = g(x)`. -/
+theorem commuting_least_common_fixed {f g : ApproximableMap V V} (hcomm : f.comp g = g.comp f) :
+    ∃ x : V.Element, f.toElementMap x = x ∧ g.toElementMap x = x ∧
+      ∀ w : V.Element, f.toElementMap w = w → g.toElementMap w = w → x ≤ w := by
+  set a := f.fixElement with ha_def
+  have hfa : f.toElementMap a = a := toElementMap_fixElement f
+  -- `a ⊑ g(a)` since `g(a)` is a fixed point of `f`.
+  have ha_le : a ≤ g.toElementMap a := by
+    apply fixElement_le_of_toElementMap_le f
+    rw [commute_apply hcomm, hfa]
+  set x := g.fixAbove ha_le with hx_def
+  have hgx : g.toElementMap x = x := fixAbove_isFixed g ha_le
+  have hax : a ≤ x := le_fixAbove g ha_le
+  -- each `gⁿ(a)` is a fixed point of `f`.
+  have hfix_each : ∀ n, f.toElementMap (g.iterFrom a n) = g.iterFrom a n := by
+    intro n
+    induction n with
+    | zero => rw [iterFrom_zero]; exact hfa
+    | succ k ih =>
+      rw [iterFrom_succ g a k, commute_apply hcomm, ih]
+  -- so `f(x) = x` by continuity.
+  have hfx : f.toElementMap x = x := by
+    apply le_antisymm
+    · rw [hx_def, fixAbove, toElementMap_iSupDirected]
+      apply NeighborhoodSystem.iSupDirected_le
+      intro n
+      rw [hfix_each n]
+      exact NeighborhoodSystem.le_iSupDirected (g.iterFrom a) _ n
+    · rw [hx_def, fixAbove]
+      apply NeighborhoodSystem.iSupDirected_le
+      intro n
+      rw [← hfix_each n]
+      exact f.toElementMap_mono (NeighborhoodSystem.le_iSupDirected (g.iterFrom a) _ n)
+  refine ⟨x, hfx, hgx, ?_⟩
+  intro w hfw hgw
+  have haw : a ≤ w := fixElement_le_of_toElementMap_le f (le_of_eq hfw)
+  exact fixAbove_least g ha_le haw (le_of_eq hgw)
+
+/-- If `f` and `g` commute and `f(⊥) = g(⊥)`, then `fix(f) = fix(g)`. -/
+theorem fixElement_eq_of_commuting_bot {f g : ApproximableMap V V} (hcomm : f.comp g = g.comp f)
+    (hbot : f.toElementMap V.bot = g.toElementMap V.bot) :
+    f.fixElement = g.fixElement := by
+  -- `g(fⁿ⊥) = fⁿ⁺¹⊥`.
+  have hshift : ∀ n, g.toElementMap (f.iterElem n) = f.iterElem (n + 1) := by
+    intro n
+    induction n with
+    | zero =>
+      rw [iterElem_zero, iterElem_succ, iterElem_zero, ← hbot]
+    | succ k ih =>
+      rw [iterElem_succ, ← commute_apply hcomm, ih]
+      exact (iterElem_succ f (k + 1)).symm
+  -- `g(fix f) = fix f`.
+  have hgfixf : g.toElementMap f.fixElement = f.fixElement := by
+    rw [fixElement_eq_iSupDirected f, toElementMap_iSupDirected]
+    apply le_antisymm
+    · apply NeighborhoodSystem.iSupDirected_le
+      intro n
+      rw [hshift n]
+      exact NeighborhoodSystem.le_iSupDirected f.iterElem _ (n + 1)
+    · apply NeighborhoodSystem.iSupDirected_le
+      intro n
+      calc f.iterElem n ≤ f.iterElem (n + 1) := iterElem_mono f (Nat.le_succ n)
+        _ = g.toElementMap (f.iterElem n) := (hshift n).symm
+        _ ≤ _ := NeighborhoodSystem.le_iSupDirected (fun m => g.toElementMap (f.iterElem m)) _ n
+  -- symmetric: `f(fix g) = fix g`.
+  have hshift' : ∀ n, f.toElementMap (g.iterElem n) = g.iterElem (n + 1) := by
+    intro n
+    induction n with
+    | zero =>
+      rw [iterElem_zero, iterElem_succ, iterElem_zero, hbot]
+    | succ k ih =>
+      rw [iterElem_succ, commute_apply hcomm, ih]
+      exact (iterElem_succ g (k + 1)).symm
+  have hffixg : f.toElementMap g.fixElement = g.fixElement := by
+    rw [fixElement_eq_iSupDirected g, toElementMap_iSupDirected]
+    apply le_antisymm
+    · apply NeighborhoodSystem.iSupDirected_le
+      intro n
+      rw [hshift' n]
+      exact NeighborhoodSystem.le_iSupDirected g.iterElem _ (n + 1)
+    · apply NeighborhoodSystem.iSupDirected_le
+      intro n
+      calc g.iterElem n ≤ g.iterElem (n + 1) := iterElem_mono g (Nat.le_succ n)
+        _ = f.toElementMap (g.iterElem n) := (hshift' n).symm
+        _ ≤ _ := NeighborhoodSystem.le_iSupDirected (fun m => f.toElementMap (g.iterElem m)) _ n
+  apply le_antisymm
+  · exact fixElement_le_of_toElementMap_le f (le_of_eq hffixg)
+  · exact fixElement_le_of_toElementMap_le g (le_of_eq hgfixf)
+
+/-- `fix(f) = fix(f²)`: the `f²`-chain `f^{2n}(⊥)` is cofinal in the `f`-chain `fⁿ(⊥)`. -/
+theorem fixElement_iterTwice (f : ApproximableMap V V) :
+    f.fixElement = (f.comp f).fixElement := by
+  apply le_antisymm
+  · -- `fix f ⊑ fix f²`: `fⁿ⊥ ⊑ f^{2n}⊥ = (f²)ⁿ⊥ ⊑ fix f²`.
+    rw [fixElement_eq_iSupDirected f]
+    apply NeighborhoodSystem.iSupDirected_le
+    intro n
+    calc f.iterElem n ≤ f.iterElem (2 * n) := iterElem_mono f (by omega)
+      _ = (f.comp f).iterElem n := (comp_self_iterElem f n).symm
+      _ ≤ (f.comp f).fixElement := iterElem_le_fixElement (f.comp f) n
+  · -- `fix f² ⊑ fix f`: `fix f` is a fixed point of `f²`.
+    refine fixElement_le_of_toElementMap_le (f.comp f) (le_of_eq ?_)
+    rw [toElementMap_comp, toElementMap_fixElement, toElementMap_fixElement]
+
 end ApproximableMap
-end
-
-section
-set_option linter.unusedVariables false
-
-theorem example_411.{u_2, u_3, u} : And
-  (∀ {β : Type u_2} {γ : Type u_3} {W₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-    {W₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ}
-    (f₀ : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β W₀ W₀)
-    (f₁ : @DomainTheory.NeighbourhoodSystems.ApproximableMap γ γ W₁ W₁)
-    (h : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ W₀ W₁),
-    @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot β W₀))
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot γ W₁) →
-      (∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β W₀),
-          @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β β W₀ W₀ f₀ x))
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap γ γ W₁ W₁ f₁
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h x))) →
-        @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement β W₀ f₀))
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement γ W₁ f₁))
-  (∀
-    (F :
-      {β : Type u} →
-        (W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β) →
-          @DomainTheory.NeighbourhoodSystems.ApproximableMap β β W W →
-            @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β W),
-    (∀ {β : Type u} (W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β)
-        (g : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β W W),
-        @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β W)
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β β W W g (@F β W g)) (@F β W g)) →
-      (∀ {β γ : Type u} (W₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β)
-          (W₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ)
-          (g₀ : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β W₀ W₀)
-          (g₁ : @DomainTheory.NeighbourhoodSystems.ApproximableMap γ γ W₁ W₁)
-          (h : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ W₀ W₁),
-          @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h
-                (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot β W₀))
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot γ W₁) →
-            (∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β W₀),
-                @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h
-                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β β W₀ W₀ g₀ x))
-                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap γ γ W₁ W₁ g₁
-                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h x))) →
-              @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-                (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h (@F β W₀ g₀))
-                (@F γ W₁ g₁)) →
-        ∀ {α : Type u} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-          (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V),
-          @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V) (@F α V f)
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f)) :=
-  @And.intro
-  (∀ {β : Type u_2} {γ : Type u_3} {W₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-    {W₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ}
-    (f₀ : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β W₀ W₀)
-    (f₁ : @DomainTheory.NeighbourhoodSystems.ApproximableMap γ γ W₁ W₁)
-    (h : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ W₀ W₁),
-    @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot β W₀))
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot γ W₁) →
-      (∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β W₀),
-          @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β β W₀ W₀ f₀ x))
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap γ γ W₁ W₁ f₁
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h x))) →
-        @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement β W₀ f₀))
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement γ W₁ f₁))
-  (∀
-    (F :
-      {β : Type u} →
-        (W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β) →
-          @DomainTheory.NeighbourhoodSystems.ApproximableMap β β W W →
-            @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β W),
-    (∀ {β : Type u} (W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β)
-        (g : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β W W),
-        @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β W)
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β β W W g (@F β W g)) (@F β W g)) →
-      (∀ {β γ : Type u} (W₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β)
-          (W₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ)
-          (g₀ : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β W₀ W₀)
-          (g₁ : @DomainTheory.NeighbourhoodSystems.ApproximableMap γ γ W₁ W₁)
-          (h : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ W₀ W₁),
-          @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h
-                (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot β W₀))
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot γ W₁) →
-            (∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β W₀),
-                @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h
-                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β β W₀ W₀ g₀ x))
-                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap γ γ W₁ W₁ g₁
-                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h x))) →
-              @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element γ W₁)
-                (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β γ W₀ W₁ h (@F β W₀ g₀))
-                (@F γ W₁ g₁)) →
-        ∀ {α : Type u} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-          (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V),
-          @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V) (@F α V f)
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f))
-  (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement_uniform)
-  DomainTheory.NeighbourhoodSystems.fix_unique_of_uniform
 end
 
 end DomainTheory.NeighbourhoodSystems

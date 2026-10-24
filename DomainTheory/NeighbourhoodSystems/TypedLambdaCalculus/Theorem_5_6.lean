@@ -295,51 +295,6 @@ end Mu
 end
 
 section
-set_option linter.unusedVariables false
-
-theorem theorem_56 : ∀
-  (f :
-    @DomainTheory.NeighbourhoodSystems.ApproximableMap (Sum Nat Nat) Nat
-      (@DomainTheory.NeighbourhoodSystems.prod Nat Nat DomainTheory.NeighbourhoodSystems.Example43.N
-        DomainTheory.NeighbourhoodSystems.Example43.N)
-      DomainTheory.NeighbourhoodSystems.Example43.N)
-  {m n₀ : Nat},
-  @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Nat DomainTheory.NeighbourhoodSystems.Example43.N)
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap (Sum Nat Nat) Nat
-        (@DomainTheory.NeighbourhoodSystems.prod Nat Nat DomainTheory.NeighbourhoodSystems.Example43.N
-          DomainTheory.NeighbourhoodSystems.Example43.N)
-        DomainTheory.NeighbourhoodSystems.Example43.N f
-        (@DomainTheory.NeighbourhoodSystems.pair Nat Nat DomainTheory.NeighbourhoodSystems.Example43.N
-          DomainTheory.NeighbourhoodSystems.Example43.N (DomainTheory.NeighbourhoodSystems.Example43.natElem n₀)
-          (DomainTheory.NeighbourhoodSystems.Example43.natElem m)))
-      (DomainTheory.NeighbourhoodSystems.Example43.natElem (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))) →
-    (∀ (i : Nat),
-        @LT.lt Nat instLTNat i n₀ →
-          ∃ (j : Nat),
-            @Eq
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Nat
-                DomainTheory.NeighbourhoodSystems.Example43.N)
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap (Sum Nat Nat) Nat
-                (@DomainTheory.NeighbourhoodSystems.prod Nat Nat DomainTheory.NeighbourhoodSystems.Example43.N
-                  DomainTheory.NeighbourhoodSystems.Example43.N)
-                DomainTheory.NeighbourhoodSystems.Example43.N f
-                (@DomainTheory.NeighbourhoodSystems.pair Nat Nat DomainTheory.NeighbourhoodSystems.Example43.N
-                  DomainTheory.NeighbourhoodSystems.Example43.N (DomainTheory.NeighbourhoodSystems.Example43.natElem i)
-                  (DomainTheory.NeighbourhoodSystems.Example43.natElem m)))
-              (DomainTheory.NeighbourhoodSystems.Example43.natElem
-                (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) j
-                  (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))) →
-      @Eq
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Nat
-          DomainTheory.NeighbourhoodSystems.Example43.N)
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap Nat Nat
-          DomainTheory.NeighbourhoodSystems.Example43.N DomainTheory.NeighbourhoodSystems.Example43.N
-          (DomainTheory.NeighbourhoodSystems.Theorem56.muMap f) (DomainTheory.NeighbourhoodSystems.Example43.natElem m))
-        (DomainTheory.NeighbourhoodSystems.Example43.natElem n₀) :=
-  DomainTheory.NeighbourhoodSystems.Theorem56.muMap_eq_least
-end
-
-section
 section PrimRec
 
 variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)
@@ -1530,18 +1485,6 @@ theorem partrec_lamDef {n : ℕ} {f : List.Vector ℕ n →. ℕ} (h : Nat.Partr
   | rfind _ ih =>
       obtain ⟨φf, hφf⟩ := ih
       exact ⟨_, lamDef_rfind φf hφf⟩
-end
-
-section
-set_option linter.unusedVariables false
-
-theorem theorem_56_full : ∀ {n : Nat} {f : PFun (List.Vector Nat n) Nat},
-  @Nat.Partrec' n f →
-    ∃ (φ :
-      @DomainTheory.NeighbourhoodSystems.ApproximableMap (Prod Nat Nat) Nat
-        DomainTheory.NeighbourhoodSystems.Theorem56Full.𝒩 DomainTheory.NeighbourhoodSystems.Example43.N),
-      @DomainTheory.NeighbourhoodSystems.Theorem56Full.LamDef n φ f :=
-  @DomainTheory.NeighbourhoodSystems.Theorem56Full.partrec_lamDef
 end
 
 section

@@ -81,14 +81,6 @@ theorem Fun_isApprox (u : Set ℕ) : IsApprox (Fun u) := by
 end
 
 section
-set_option linter.unusedVariables false
-
-theorem example_514 : ∀ (u : Set Nat),
-  DomainTheory.NeighbourhoodSystems.Exercise514.IsApprox (DomainTheory.NeighbourhoodSystems.Exercise514.Fun u) :=
-  DomainTheory.NeighbourhoodSystems.Exercise514.Fun_isApprox
-end
-
-section
 /-- **`Fun` is monotone in both arguments jointly.** Needed to check the `mono` axiom of the
 neighbourhood-level approximable map built from `Fun` (Exercise 7.23). -/
 theorem Fun_mono {u u' x x' : Set ℕ} (hu : u ⊆ u') (hx : x ⊆ x') : Fun u x ⊆ Fun u' x' := by

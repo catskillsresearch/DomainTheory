@@ -38,22 +38,6 @@ end ApproximableMap
 end
 
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
-section
-set_option linter.unusedVariables false
-
-theorem example_420.{u_1} : ∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-  (f g : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V),
-  @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α α α V V V f g))
-    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α α α V V V g f))) :=
-  @DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement_comp_comm
-end
-
-end DomainTheory.NeighbourhoodSystems.ApproximableMap
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 

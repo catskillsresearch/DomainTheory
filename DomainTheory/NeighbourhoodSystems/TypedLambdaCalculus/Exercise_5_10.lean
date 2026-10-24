@@ -812,15 +812,6 @@ theorem isStrict_idMap : IsStrict (idMap V₀) := by
 end
 
 section
-set_option linter.unusedVariables false
-
-theorem example_510.{u_1} : ∀ {α : Type u_1} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
-  @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict α α V₀ V₀
-    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap α V₀) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise510.isStrict_idMap
-end
-
-section
 variable {α β γ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
