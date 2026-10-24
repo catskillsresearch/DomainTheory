@@ -32,14 +32,6 @@ def iSupMap {I : Type*} [Nonempty I] (f : I → ApproximableMap V₀ V₁)
   mono := by
     rintro X X' Z Z' ⟨i, hi⟩ hX'X hZZ' hX' hZ'
     exact ⟨i, (f i).mono hi hX'X hZZ' hX' hZ'⟩
-end
-
-section
-variable {α β γ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /- concordance: source L811 EXERCISE 2.12 directed unions of maps -/
 /-- **Exercise 2.12.** The induced elementwise map is the pointwise union: `g(x) = ⋃ᵢ f i (x)`. -/

@@ -33,10 +33,6 @@ structure ApproximableMap (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSys
   /-- (iii) monotonicity: a sharper input `X' ⊆ X` with a blunter output `Y ⊆ Y'` is still related,
   provided `X'`, `Y'` are neighbourhoods. -/
   mono : ∀ {X X' Y Y'}, rel X Y → X' ⊆ X → Y ⊆ Y' → V₀.mem X' → V₁.mem Y' → rel X' Y'
-end
-
-section
-variable {α β γ δ : Type*}
 
 namespace ApproximableMap
 
@@ -51,10 +47,6 @@ theorem ext {f g : ApproximableMap V₀ V₁} (h : ∀ X Y, f.rel X Y ↔ g.rel 
   subst this; rfl
 
 end ApproximableMap
-end
-
-section
-variable {α β γ δ : Type*}
 
 namespace NeighborhoodSystem
 

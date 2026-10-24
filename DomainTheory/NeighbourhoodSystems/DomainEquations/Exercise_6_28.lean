@@ -1,28 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_25
 
 @[expose] public section
@@ -115,7 +92,6 @@ namespace Subsystem
 
 variable {D E : NeighborhoodSystem α}
 
-
 /-- **Element-wise description of `i` (Scott's equation).** `i(x) = {Y ∈ E ∣ ∃ X ∈ x, X ⊆ Y}`. -/
 theorem toElementMap_inj (h : D ◁ E) (x : D.Element) {Y : Set α} :
     (h.inj.toElementMap x).mem Y ↔ E.mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y := by
@@ -134,7 +110,6 @@ variable {α : Type*}
 namespace Subsystem
 
 variable {D E : NeighborhoodSystem α}
-
 
 /-- **Element-wise description of `j` (Scott's equation).** `j(y) = y ∩ D`: the neighbourhoods of
 `j(y)` are exactly the `D`-neighbourhoods that already belong to `y`. -/
@@ -164,7 +139,6 @@ section
 export CategoryTheory (Category)
 
 open scoped CategoryTheory
-
 
 scoped infixr:80 " ⊚ " => compAfter
 end

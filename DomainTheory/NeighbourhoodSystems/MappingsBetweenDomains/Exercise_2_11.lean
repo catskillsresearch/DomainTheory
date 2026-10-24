@@ -24,12 +24,6 @@ def iSupDirected {α : Type*} {V : NeighborhoodSystem α} {I : Type*} [Nonempty 
     rintro _ ⟨i, rfl⟩ _ ⟨j, rfl⟩
     obtain ⟨k, hik, hjk⟩ := hdir i j
     exact ⟨a k, ⟨k, rfl⟩, hik, hjk⟩)
-end
-
-section
-variable {α β γ : Type*}
-
-
 
 theorem mem_iSupDirected {α : Type*} {V : NeighborhoodSystem α} {I : Type*} [Nonempty I]
     (a : I → V.Element) (hdir : ∀ i j, ∃ k, a i ≤ a k ∧ a j ≤ a k) {Z : Set α} :
@@ -37,12 +31,6 @@ theorem mem_iSupDirected {α : Type*} {V : NeighborhoodSystem α} {I : Type*} [N
   constructor
   · rintro ⟨s, ⟨i, rfl⟩, hsZ⟩; exact ⟨i, hsZ⟩
   · rintro ⟨i, hi⟩; exact ⟨a i, ⟨i, rfl⟩, hi⟩
-end
-
-section
-variable {α β γ : Type*}
-
-
 
 theorem iSupDirected_le {α : Type*} {V : NeighborhoodSystem α} {I : Type*} [Nonempty I]
     (a : I → V.Element) (hdir : ∀ i j, ∃ k, a i ≤ a k ∧ a j ≤ a k) {y : V.Element}
@@ -50,12 +38,6 @@ theorem iSupDirected_le {α : Type*} {V : NeighborhoodSystem α} {I : Type*} [No
   intro Z hZ
   obtain ⟨i, hi⟩ := (mem_iSupDirected a hdir).mp hZ
   exact hy i Z hi
-end
-
-section
-variable {α β γ : Type*}
-
-
 
 theorem le_iSupDirected {α : Type*} {V : NeighborhoodSystem α} {I : Type*} [Nonempty I]
     (a : I → V.Element) (hdir : ∀ i j, ∃ k, a i ≤ a k ∧ a j ≤ a k) (i : I) :

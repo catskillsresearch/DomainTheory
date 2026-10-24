@@ -1,28 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_17
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem_6_14
@@ -631,13 +608,11 @@ namespace Example61
 
 variable {α : Type*}
 
-
 section Equation
 
 variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
 
 include hD
-
 
 /-- **Example 6.1 (Scott 1981, PRG-19) — the domain equation `D^§ ≅ D + (D^§ × D^§)`.** The tree
 algebra `D^§` is, as a domain, isomorphic to `D + (D^§ × D^§)` — Scott's defining isomorphism, "as can
@@ -645,7 +620,6 @@ be seen by reference to the equation for `D^§` and the definitions of `+` and `
 theorem dsharp_domain_equation :
     Dsharp D hD ≅ᴰ sum D (prod (Dsharp D hD) (Dsharp D hD)) hD (prod_dsharp_nonempty D hD) :=
   ⟨dsharpEquiv D hD⟩
-
 
 /-- **Example 6.1 (Scott 1981, PRG-19).** `λx. x^§` is an *isomorphic injection*: `x^§ ⊑ x'^§ ↔ x ⊑ x'`
 (in particular one-one). -/
@@ -659,7 +633,6 @@ theorem inSharp_le_iff {x x' : D.Element} : inSharp D hD x ≤ inSharp D hD x' �
     rcases hW with rfl | ⟨X, hX, rfl⟩
     · exact Or.inl rfl
     · exact Or.inr ⟨X, h _ hX, rfl⟩
-
 
 /-- **Example 6.1 (Scott 1981, PRG-19).** `λx, y. ⟨x, y⟩` is an *isomorphic injection*:
 `⟨x, y⟩ ⊑ ⟨x', y'⟩ ↔ x ⊑ x' ∧ y ⊑ y'`. -/

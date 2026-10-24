@@ -1,21 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-public import Mathlib.Algebra.Group.Nat.Defs
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Group.Submonoid.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.Monotone.Basic
-public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
 
@@ -61,7 +45,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- **Exercise 4.7 (Scott 1981, PRG-19).** `fixAbove f ha` is the *least* fixed point above `a`:
 any `z` with `a ⊑ z` and `f(z) ⊑ z` lies above it. (Relativized form of 4.2(iii).) -/
@@ -174,7 +157,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-
 /-- `a ⊑ fixAbove f ha`: the constructed fixed point lies above `a` (it is the `n = 0` term). -/
 theorem le_fixAbove (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toElementMap a) :
     a ≤ f.fixAbove ha := by
@@ -204,7 +186,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-
 /-- The approximants form a monotone `ω`-chain (the `Monotone` packaging of `iterElem_mono`). -/
 theorem iterElem_monotone (f : ApproximableMap V V) : Monotone f.iterElem :=
   fun _ _ hab => iterElem_mono f hab
@@ -216,7 +197,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- `fⁿ⁺¹(⊥) = f(fⁿ(⊥))`. -/
 theorem iterElem_succ (f : ApproximableMap V V) (n : ℕ) :
@@ -233,7 +213,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-
 theorem iterElem_zero (f : ApproximableMap V V) : f.iterElem 0 = V.bot :=
   toElementMap_idMap V.bot
 
@@ -244,7 +223,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 theorem mem_supChain (s : ℕ → V.Element) (hmono : Monotone s) {Z : Set α} :
     (supChain s hmono).mem Z ↔ ∃ n, (s n).mem Z :=
@@ -257,7 +235,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- The approximants `fⁿ(⊥)` form a monotone chain whose sup is `fix(f)`. -/
 theorem fixElement_eq_supChain (f : ApproximableMap V V) :
@@ -276,7 +253,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 end ApproximableMap
 end

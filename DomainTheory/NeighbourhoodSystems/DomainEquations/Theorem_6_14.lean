@@ -1,28 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_27
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_6
@@ -57,9 +34,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- **`ρ₀ = ⊥`** when `{Γ}` is the trivial one-point system: `ρ₀` relates `X` only to the master.
 This is where Scott's `{Γ}` (a *one-point* domain) is used. -/
@@ -86,9 +61,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- For a strict map `g`, `g(⊥) = ⊥` relationally: `g` sends `Δ` only to `Δ`. -/
 theorem strict_rel_master {β₀ β₁ : Type w} {V₀ : NeighborhoodSystem β₀}
@@ -104,9 +77,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- For a strict homomorphism `g`, the base `g ∘ ρ₀` is the least map: it relates `X` only to the
 master of `E`, independent of `g`. -/
@@ -131,9 +102,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- The base case of `g`-independence: any two strict maps agree after `∘ ρ₀`. -/
 theorem gcomp_rho_zero_indep (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
@@ -152,9 +121,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- Transport of a `Hom X X` along an object equality is heterogeneously equal to itself. -/
 theorem transport_heq {Obj : Type*} [Category Obj] {X Y : Obj} (e : X = Y)
@@ -169,9 +136,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- **`ρₙ₊₁ = i ∘ T(ρₙ) ∘ j`** (Scott's `T(ρₙ) = ρₙ₊₁`, conjugated by the structure iso). Since the
 iso `𝒟 ≅ T(𝒟)` is the identity, this is the carrier transport of `T(ρₙ)`; combined with
@@ -193,9 +158,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- **The fixed-point recursion `gₙ₊₁ = k ∘ T(gₙ) ∘ j`.** Using `key_rho` (`ρₙ₊₁ = i∘T(ρₙ)∘j`) and the
 homomorphism square `g ∘ i = k ∘ T(g)`. -/
@@ -237,9 +200,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- **`g`-independence of `gₙ = g ∘ ρₙ`.** For any two strict homomorphisms into the same algebra,
 `g ∘ ρₙ = g' ∘ ρₙ` for all `n` — the sequence is determined by the recursion, not by `g`. -/
@@ -259,9 +220,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- **The underlying maps of two strict homomorphisms coincide**: `g = g ∘ I = g ∘ ⋃ₙ ρₙ =
 ⋃ₙ (g ∘ ρₙ)`, and the latter is `g`-independent. -/
@@ -297,9 +256,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- **Uniqueness of strict homomorphisms out of `𝒟`.** Any two strict `T`-algebra homomorphisms from
 the canonical solution into the same algebra are equal. -/
@@ -316,9 +273,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- **Theorem 6.14 (Scott 1981, PRG-19) — initial `T`-algebra.** When `{Γ}` is the one-point
 generating system, the canonical solution `𝒟 = ⋃ₙ Tⁿ({Γ})` is the **initial** `T`-algebra among the

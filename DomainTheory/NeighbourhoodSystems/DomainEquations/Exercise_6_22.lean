@@ -1,28 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_21
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_6
@@ -118,7 +96,6 @@ end
 section
 namespace Exercise619
 
-
 theorem NStarExpr_rooted {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) :
     (NStarExpr N).RootedConst := ⟨hN, hN, trivial⟩
 
@@ -127,7 +104,6 @@ end
 
 section
 namespace Exercise619
-
 
 /-- **`N* ≅ N ⊕ (N ⊗ N*)` has a solution** for any rooted datum domain `N` (the strict streams over
 `N`). -/
@@ -142,7 +118,6 @@ end
 section
 namespace Exercise619
 
-
 /-- `Λ ∈ tok(Cnat)`, so `Cnat` is a rooted constant. -/
 theorem nil_mem_Cnat : ([] : Str) ∈ Cnat.sys.master := Set.mem_insert_iff.mpr (Or.inr rfl)
 
@@ -152,7 +127,6 @@ end
 section
 namespace Exercise619
 
-
 theorem NExpr_rooted : NExpr.RootedConst := ⟨nil_mem_Cnat, trivial⟩
 
 end Exercise619
@@ -160,7 +134,6 @@ end
 
 section
 namespace Exercise619
-
 
 /-- **Chaining the equations.** The solution `N` to the first equation is itself a rooted domain
 (`Λ ∈ tok(N)`, since its token set is the fixed point `Γ₁ ∋ Λ`), so it is a legitimate datum domain
@@ -205,7 +178,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-
 /-- **`N ≅ {{0},{0,Λ}} ⊕ N` has a solution.** There is `Γ` (the vertical naturals' token set) with
 `Γ = tok(NExpr({Γ}))`, so `{Γ} ◁ NExpr({Γ})` and Theorem 6.14 applies. -/
 theorem N_eq_solution :
@@ -221,7 +193,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-
 /-- `Λ ∈ tok(Cone)`. -/
 theorem nil_mem_Cone : ([] : Str) ∈ Cone.sys.master := rfl
 
@@ -233,7 +204,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-
 theorem MExpr_rooted : MExpr.RootedConst := ⟨nil_mem_Cone, trivial⟩
 
 end Exercise619
@@ -243,7 +213,6 @@ section
 open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
 
 namespace Exercise619
-
 
 /-- **`M ≅ {{Λ}} + M` has a solution** (the lazy naturals). -/
 theorem M_eq_solution :

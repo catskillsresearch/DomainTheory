@@ -1,41 +1,11 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_3
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_11
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import Mathlib.Algebra.FreeMonoid.Basic
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Ring.Parity
-public import Mathlib.Computability.PartrecBasis
-public import Mathlib.Data.List.Basic
-public import Mathlib.Data.Nat.Bits
-public import Mathlib.Data.Set.Image
-public import Mathlib.Logic.Equiv.Nat
-public import Mathlib.Order.Hom.Set
-public import Mathlib.Tactic.Ring
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_20
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 
 @[expose] public section
-
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise508
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
@@ -57,12 +27,6 @@ structure Dom where
 /-- The function domain `(A → B)`; its carrier is `ApproximableMap A.sys B.sys` and its system is the
 function space `funSpace A.sys B.sys`. -/
 abbrev Dom.arrow (A B : Dom) : Dom := ⟨ApproximableMap A.sys B.sys, funSpace A.sys B.sys⟩
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 /-- `CL A`: a **variable-free** combinator expression of type `A`. The only constructors are
 constants and application, so application (`σ(τ)`) is the sole mode of combination. -/
@@ -70,17 +34,10 @@ inductive CL : Dom → Type 1 where
   | con {A : Dom} (c : A.sys.Element) : CL A
   | app {A B : Dom} (f : CL (A.arrow B)) (a : CL A) : CL B
 
-
 /-- The denotation of a variable-free combinator expression: a single element. -/
 def CL.denote : {A : Dom} → CL A → A.sys.Element
   | _, .con c => c
   | _, .app f a => (toApproxMap f.denote).toElementMap a.denote
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 /-- `Poly X A`: an open term of type `A` with a single free variable of type `X`. Constructors:
 the variable, a closed constant (any element of any domain — "enough combinators available"), and
@@ -90,36 +47,17 @@ inductive Poly (X : Dom) : Dom → Type 1 where
   | con {A : Dom} (c : A.sys.Element) : Poly X A
   | app {A B : Dom} (f : Poly X (A.arrow B)) (a : Poly X A) : Poly X B
 
-
 /-- The denotation of an open term: the body as a function of its free variable. -/
 def Poly.denote {X : Dom} : {A : Dom} → Poly X A → X.sys.Element → A.sys.Element
   | _, .var, x => x
   | _, .con c, _ => c
   | _, .app f a, x => (toApproxMap (f.denote x)).toElementMap (a.denote x)
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 /-- `I = λx.x` as an element of `(X → X)`. -/
 def Ielem (X : Dom) : (X.arrow X).sys.Element := toFilter (idMap X.sys)
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 /-- `K = λx, y.x` as an element of `(A → (X → A))`. -/
 def Kelem (A X : Dom) : (A.arrow (X.arrow A)).sys.Element := toFilter (curry (proj₀ A.sys X.sys))
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 /-- The uncurried body of `S`: with `F : 𝒟ₓ → (𝒟ₐ → 𝒟_b)`, `G : 𝒟ₓ → 𝒟ₐ`, `x : 𝒟ₓ`,
 `Sbody⟨⟨F, G⟩, x⟩ = (F x)(G x)`, expressed using only `proj`, `pair` and `eval`. -/
@@ -138,12 +76,6 @@ def Sbody (Vx : NeighborhoodSystem αx) (Va : NeighborhoodSystem αa) (Vb : Neig
           ((proj₁ (funSpace Vx (funSpace Va Vb)) (funSpace Vx Va)).comp
             (proj₀ (prod (funSpace Vx (funSpace Va Vb)) (funSpace Vx Va)) Vx))
           (proj₁ (prod (funSpace Vx (funSpace Va Vb)) (funSpace Vx Va)) Vx))))
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 /-- `S = λf, g, x. f(x)(g(x))`, the curried form
 `(𝒟ₓ → (𝒟ₐ → 𝒟_b)) → ((𝒟ₓ → 𝒟ₐ) → (𝒟ₓ → 𝒟_b))`. -/
@@ -151,24 +83,12 @@ def Smap (Vx : NeighborhoodSystem αx) (Va : NeighborhoodSystem αa) (Vb : Neigh
     ApproximableMap (funSpace Vx (funSpace Va Vb))
       (funSpace (funSpace Vx Va) (funSpace Vx Vb)) :=
   curry (curry (Sbody Vx Va Vb))
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 /-- `S = λf, g, x. f(x)(g(x))` as an element of
 `((X → (A → B)) → ((X → A) → (X → B)))`. -/
 def Selem (X A B : Dom) :
     ((X.arrow (A.arrow B)).arrow ((X.arrow A).arrow (X.arrow B))).sys.Element :=
   toFilter (Smap X.sys A.sys B.sys)
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 /-- **Bracket abstraction.** Turn an open body `t` (a `λ`-body with one free variable) into a
 *variable-free* combinator expression denoting `λx.t`, using only application and the combinators
@@ -182,12 +102,6 @@ def bracket {X : Dom} : {A : Dom} → Poly X A → CL (X.arrow A)
   | _, .var => .con (Ielem X)
   | _, .con c => .app (.con (Kelem _ X)) (.con c)
   | _, .app f a => .app (.app (.con (Selem X _ _)) (bracket f)) (bracket a)
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 /-- The defining equation of `S`: `S(F)(G)(x) = F(x)(G(x))`. -/
 theorem Smap_apply (F : (funSpace Vx (funSpace Va Vb)).Element) (G : (funSpace Vx Va).Element)
@@ -219,12 +133,6 @@ variable {αx αa αb : Type*}
 theorem Ielem_apply (X : Dom) (x : X.sys.Element) :
     (toApproxMap (Ielem X)).toElementMap x = x := by
   rw [Ielem, toApproxMap_toFilter, toElementMap_idMap]
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 /-- `K(c)(x) = c`. -/
 theorem Kelem_apply (A X : Dom) (c : A.sys.Element) (x : X.sys.Element) :
@@ -233,12 +141,6 @@ theorem Kelem_apply (A X : Dom) (c : A.sys.Element) (x : X.sys.Element) :
   have h := toElementMap_curry_apply (proj₀ A.sys X.sys) c x
   rw [toElementMap_proj₀, fst_pair] at h
   exact h
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 /-- `S(F)(G)(x) = F(x)(G(x))`. -/
 theorem Selem_apply (X A B : Dom)
@@ -247,13 +149,6 @@ theorem Selem_apply (X A B : Dom)
       = (toApproxMap ((toApproxMap F).toElementMap x)).toElementMap ((toApproxMap G).toElementMap x) := by
   rw [Selem, toApproxMap_toFilter]
   exact Smap_apply F G x
-end
-
-section
-variable {α β γ : Type*}
-variable {αx αa αb : Type*}
-  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
-
 end
 end DomainTheory.NeighbourhoodSystems.Exercise508
 

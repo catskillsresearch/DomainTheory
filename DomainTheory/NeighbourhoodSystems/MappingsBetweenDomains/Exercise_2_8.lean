@@ -36,14 +36,6 @@ def ofMono (m : (X : Set α) → V₀.mem X → V₁.Element)
     rintro X X' Y Y' ⟨hX, hY⟩ hX'X hYY' hX' hY'
     have hle : m X hX ≤ m X' hX' := hmono X X' hX hX' hX'X
     exact ⟨hX', (m X' hX').up_mem (hle Y hY) hY' hYY'⟩
-end
-
-section
-variable {α β γ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /-- **Exercise 2.8 (uniqueness).** An approximable mapping is *uniquely determined by its elementwise
 effect on finite elements*: if `f(↑X) = g(↑X)` for every neighbourhood `X`, then `f = g`. (Off `𝒟₀`
@@ -58,14 +50,6 @@ theorem eq_of_toElementMap_principal {f g : ApproximableMap V₀ V₁}
   · constructor
     · intro hr; exact absurd (f.rel_dom hr) hX
     · intro hr; exact absurd (g.rel_dom hr) hX
-end
-
-section
-variable {α β γ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /-- **Exercise 2.8 (extension, computed).** The map `ofMono m` realizes `m` on finite elements:
 `(ofMono m)(↑X) = m(↑X)`. -/

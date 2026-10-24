@@ -1,28 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_22
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_6
@@ -57,7 +34,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-
 /-- The projection `j : E → D` of a subsystem is **strict**. -/
 theorem Subsystem.proj_isStrict {α : Type*} {D E : NeighborhoodSystem α} (h : D ◁ E) :
     IsStrict h.proj := by
@@ -74,7 +50,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-
 /-- `i ∘ j = I_Exp` at the raw level (from the iso's `inv_hom_id`). -/
 theorem expHom_comp_expInv (N : ScottSys) (hN : ([] : Str) ∈ N.sys.master) :
     (expHom N hN).comp (expInv N hN) = idMap (Exp N hN).sys := by
@@ -89,11 +64,9 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-
 section Existence
 
 variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))
-
 
 /-- **Every homomorphism `g : Exp → D` is a fixed point** of the operator `λh. k ∘ T(h) ∘ j`. This is
 the homomorphism square `g ∘ i = k ∘ T(g)` (`g.comm`) rearranged by `i ∘ j = I`. -/
@@ -118,11 +91,9 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-
 section Existence
 
 variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))
-
 
 /-- **`descAlgHom` is the least homomorphism**: `val ≤ g` for every homomorphism `g : Exp → D`. The
 Kleene iterates `valₙ` lie below any fixed point `g` (induction: `val₀ = ⊥ ≤ g`, and the operator is
@@ -144,11 +115,9 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-
 section Existence
 
 variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))
-
 
 theorem descMap_le_algHom (g : AlgHom (ExpAlg N hN) B) : descMap hN B ≤ g.hom.1 := by
   intro X Y hr
@@ -354,7 +323,6 @@ end
 section
 namespace Exercise624
 
-
 /-- `gTok` is monotone in both arguments. -/
 theorem gTok_mono {p p' q q' : Set Str} (hp : p ⊆ p') (hq : q ⊆ q') : gTok p q ⊆ gTok p' q' := by
   rintro w (rfl | ⟨w', rfl, hw'⟩ | ⟨w', rfl, hw'⟩)
@@ -368,7 +336,6 @@ end
 section
 namespace Exercise624
 
-
 /-- `fTok` is monotone in both arguments. -/
 theorem fTok_mono {p p' q q' : Set Str} (hp : p ⊆ p') (hq : q ⊆ q') : fTok p q ⊆ fTok p' q' :=
   gTok_mono hp (gTok_mono hp hq)
@@ -378,7 +345,6 @@ end
 
 section
 namespace Exercise624
-
 
 /-- The master (token set) of `D + (D×E)` is `fTok Γ_D Γ_E` — definitionally, the sum/product
 masters expand to the tagged-union shape `gTok`/`fTok`. -/
@@ -390,7 +356,6 @@ end
 section
 namespace Exercise624
 
-
 /-- The master (token set) of `D + E` is `gTok Γ_D Γ_E`. -/
 theorem master_Gsol : (Gsol Dsol Esol).sys.master = gTok GammaD GammaE := rfl
 
@@ -400,7 +365,6 @@ end
 section
 namespace Exercise624
 
-
 theorem nil_mem_fTok (p q : Set Str) : ([] : Str) ∈ fTok p q := Set.mem_insert _ _
 
 end Exercise624
@@ -409,7 +373,6 @@ end
 section
 namespace Exercise624
 
-
 theorem nil_mem_gTok (p q : Set Str) : ([] : Str) ∈ gTok p q := Set.mem_insert _ _
 
 end Exercise624
@@ -417,7 +380,6 @@ end
 
 section
 namespace Exercise624
-
 
 /-- **Additivity of `fTok`.** Every token of `fTok (⋃ₙ aₙ) (⋃ₙ bₙ)` already lies in some
 `fTok aₙ bₙ`. The nested `true`-branch (the product copy `0p` inside `1(gTok p q)`) still references
@@ -441,7 +403,6 @@ end
 section
 namespace Exercise624
 
-
 /-- **Additivity of `gTok`.** Every token of `gTok (⋃ₙ aₙ) (⋃ₙ bₙ)` already lies in some
 `gTok aₙ bₙ` — each token references at most one coordinate. -/
 theorem mem_gTok_iUnion {a b : ℕ → Set Str} {w : Str}
@@ -459,7 +420,6 @@ end
 section
 namespace Exercise624
 
-
 /-- Each stage sits inside the colimit `Γ_D` (choice-free; avoids `Set.subset_iUnion`). -/
 theorem pIter_fst_subset_GammaD (m : ℕ) : (pIter m).1 ⊆ GammaD :=
   fun _ hx => Set.mem_iUnion.mpr ⟨m, hx⟩
@@ -470,7 +430,6 @@ end
 section
 namespace Exercise624
 
-
 /-- Each stage sits inside the colimit `Γ_E` (choice-free). -/
 theorem pIter_snd_subset_GammaE (m : ℕ) : (pIter m).2 ⊆ GammaE :=
   fun _ hx => Set.mem_iUnion.mpr ⟨m, hx⟩
@@ -480,7 +439,6 @@ end
 
 section
 namespace Exercise624
-
 
 /-- **First equation of the double fixed point:** `fTok Γ_D Γ_E = Γ_D`, i.e. `tok(D + (D×E)) = Γ_D`
 for `D = {Γ_D}`, `E = {Γ_E}`. -/
@@ -504,7 +462,6 @@ end
 section
 namespace Exercise624
 
-
 /-- **`{Γ_D} ◁ D + (D × E)`.** The singleton system `D = {Γ_D}` is a subsystem of `D + (D×E)`: by the
 fixed point its only neighbourhood `Γ_D` is the master of `D + (D×E)`. -/
 theorem Dsol_subsystem : Dsol.sys ◁ (Fsol Dsol Esol).sys := by
@@ -523,7 +480,6 @@ end
 
 section
 namespace Exercise624
-
 
 /-- **Second equation of the double fixed point:** `gTok Γ_D Γ_E = Γ_E`, i.e. `tok(D + E) = Γ_E`. -/
 theorem gTok_GammaD_GammaE : gTok GammaD GammaE = GammaE := by
@@ -546,7 +502,6 @@ end
 section
 namespace Exercise624
 
-
 /-- **`{Γ_E} ◁ D + E`.** The singleton system `E = {Γ_E}` is a subsystem of `D + E`: by the fixed
 point its only neighbourhood `Γ_E` is the master of `D + E`. -/
 theorem Esol_subsystem : Esol.sys ◁ (Gsol Dsol Esol).sys := by
@@ -566,7 +521,6 @@ end
 section
 namespace Exercise624
 
-
 /-- **The double fixed point (token level).** There is a pair of token sets `(Γ_D, Γ_E)`, both
 containing `Λ`, that solve the two coupled token equations `tok(D + (D×E)) = Γ_D` and
 `tok(D + E) = Γ_E` simultaneously. -/
@@ -580,7 +534,6 @@ end
 
 section
 namespace Exercise624
-
 
 end Exercise624
 end

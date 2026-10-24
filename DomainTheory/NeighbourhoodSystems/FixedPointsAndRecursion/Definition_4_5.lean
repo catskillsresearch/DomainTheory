@@ -1,24 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-public import Mathlib.Algebra.Group.Nat.Defs
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Group.Submonoid.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.Monotone.Basic
-public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
-
 public import Mathlib.Tactic.Attr.Core
 public import Aesop.BuiltinRules
 public import Mathlib.Basic.ExistsUnique
@@ -80,7 +61,6 @@ namespace PeanoModel
 
 variable {M : Type u} {N : Type v}
 
-
 /-- The construction is symmetric in the two models: `Graph P Q m n` swaps to `Graph Q P n m`.
 (This is why the relation is one-one in *both* directions, as Scott notes: "the rôles of `N` and
 `M` are completely symmetric".) -/
@@ -99,7 +79,6 @@ universe u v
 namespace PeanoModel
 
 variable {M : Type u} {N : Type v}
-
 
 /-- **Inversion at a successor (uses 4.5(i)/(ii)).** Anything related to `n⁺` on the left comes
 from a relation `n r n₀` with right value a successor: `n⁺ r k ⟹ ∃ n₀, n r n₀ ∧ k = n₀#`. -/
@@ -124,7 +103,6 @@ namespace PeanoModel
 
 variable {M : Type u} {N : Type v}
 
-
 /-- **Inversion at `0` (uses 4.5(i)).** Anything related to `0` on the left is `□` on the right:
 `0 r k ⟹ k = □`. (The other generating rule would force `0 = n⁺`, impossible by 4.5(i).) -/
 theorem graph_zero_right (P : PeanoModel M) (Q : PeanoModel N) {k : N}
@@ -143,7 +121,6 @@ universe u v
 namespace PeanoModel
 
 variable {M : Type u} {N : Type v}
-
 
 /-- Each element of the left model is related by `Graph` to exactly one element of the right
 model. Proved by the induction principle 4.5(iii) on the set `{m ∣ ∃! n, m r n}`: the base case
@@ -168,7 +145,6 @@ namespace PeanoModel
 
 variable {M : Type u} {N : Type v}
 
-
 /-- Dually (by `Graph.swap`), each element of the right model is related to exactly one element of
 the left model. -/
 theorem exists_unique_left (P : PeanoModel M) (Q : PeanoModel N) (n : N) :
@@ -185,7 +161,6 @@ universe u v
 namespace PeanoModel
 
 variable {M : Type u} {N : Type v}
-
 
 end PeanoModel
 end

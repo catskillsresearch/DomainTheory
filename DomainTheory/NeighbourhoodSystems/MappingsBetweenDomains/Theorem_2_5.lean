@@ -29,23 +29,9 @@ def idMap (V : NeighborhoodSystem α) : ApproximableMap V V where
   mono := by
     rintro X X' Y Y' ⟨_, _, hXY⟩ hX'X hYY' hX' hY'
     exact ⟨hX', hY', (hX'X.trans hXY).trans hYY'⟩
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 @[simp] theorem idMap_rel {V : NeighborhoodSystem α} {X Y : Set α} :
     (idMap V).rel X Y ↔ V.mem X ∧ V.mem Y ∧ X ⊆ Y := Iff.rfl
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 /-- **Theorem 2.5(ii) (Scott 1981, PRG-19) — composition `g ∘ f`.** `X (g∘f) Z ↔ ∃ Y, X f Y ∧ Y g Z`.
 Approximability is Scott's verification: (i) use `Y = Δ₁`; (ii) intersect both witnesses via
@@ -69,23 +55,9 @@ def comp (g : ApproximableMap V₁ V₂) (f : ApproximableMap V₀ V₁) : Appro
     rintro X X' Z Z' ⟨Y, hXY, hYZ⟩ hX'X hZZ' hX' hZ'
     refine ⟨Y, f.mono hXY hX'X subset_rfl hX' (f.rel_cod hXY), ?_⟩
     exact g.mono hYZ subset_rfl hZZ' (g.rel_dom hYZ) hZ'
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 @[simp] theorem comp_rel {g : ApproximableMap V₁ V₂} {f : ApproximableMap V₀ V₁} {X : Set α}
     {Z : Set γ} : (g.comp f).rel X Z ↔ ∃ Y, f.rel X Y ∧ g.rel Y Z := Iff.rfl
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 @[simp] theorem toElementMap_idMap (x : V₀.Element) : (idMap V₀).toElementMap x = x := by
   apply Element.ext
@@ -95,14 +67,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : N
     exact x.up_mem hXx hY hXY
   · intro hY
     exact ⟨Y, hY, x.sub hY, x.sub hY, subset_rfl⟩
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /- concordance: source L682 THEOREM 2.5 category of approximable maps -/
 /-- **Theorem 2.5 — associativity.** `h ∘ (g ∘ f) = (h ∘ g) ∘ f`. Pure reassociation of the
@@ -117,14 +81,6 @@ theorem comp_assoc {V₃ : NeighborhoodSystem δ} (h : ApproximableMap V₂ V₃
     exact ⟨Z, ⟨Y, hXY, hYZ⟩, hZW⟩
   · rintro ⟨Z, ⟨Y, hXY, hYZ⟩, hZW⟩
     exact ⟨Y, hXY, Z, hYZ, hZW⟩
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /-- **Theorem 2.5 — right identity law.** `f ∘ I_{D₀} = f`. (`→`: a witness `X ⊆ Y` sharpens the
 input of `f` by `f.mono`; `←`: take `Y = X`.) -/
@@ -136,14 +92,6 @@ theorem comp_idMap (f : ApproximableMap V₀ V₁) : f.comp (idMap V₀) = f := 
     exact f.mono hYZ hXY subset_rfl hX (f.rel_cod hYZ)
   · intro hXZ
     exact ⟨X, ⟨f.rel_dom hXZ, f.rel_dom hXZ, subset_rfl⟩, hXZ⟩
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /-- **Theorem 2.5 — left identity law.** `I_{D₁} ∘ f = f`. (`→`: a witness `Y ⊆ Z` widens the output
 of `f` by `f.mono`; `←`: take `Y = Z`.) -/
@@ -158,20 +106,5 @@ theorem idMap_comp (f : ApproximableMap V₀ V₁) : (idMap V₁).comp f = f := 
 end
 
 end ApproximableMap
-
-section
-variable {α β γ δ : Type*}
-
-namespace NeighborhoodSystem
-
-
-/-- Each member of a directed family approximates the directed union. -/
-theorem le_sSupDirected (V : NeighborhoodSystem α) (S : Set V.Element) (hne : S.Nonempty)
-    (hdir : ∀ a ∈ S, ∀ b ∈ S, ∃ c ∈ S, a ≤ c ∧ b ≤ c) {a : V.Element} (ha : a ∈ S) :
-    a ≤ V.sSupDirected S hne hdir :=
-  fun _ hZ => ⟨a, ha, hZ⟩
-
-end NeighborhoodSystem
-end
 
 end DomainTheory.NeighbourhoodSystems

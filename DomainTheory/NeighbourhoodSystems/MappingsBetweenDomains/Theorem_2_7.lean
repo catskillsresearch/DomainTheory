@@ -1,7 +1,6 @@
 module
 
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7
 public import Mathlib.Order.Hom.Basic
@@ -38,14 +37,6 @@ def ofIso (e : V₀.Element ≃o V₁.Element) : ApproximableMap V₀ V₁ where
     have hle : V₀.principal hX ≤ V₀.principal hX' := (V₀.principal_le_iff hX hX').mpr hX'X
     have hmem : (e (V₀.principal hX')).mem Y := (e.monotone hle) Y hY
     exact (e (V₀.principal hX')).up_mem hmem hY' hYY'
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /-- **Theorem 2.7 (Scott 1981, PRG-19) — finite elements go to finite elements.** A domain
 isomorphism `e` carries the finite (principal) element `↑X` to a finite element `↑Y` of the other
@@ -110,14 +101,6 @@ theorem exists_principal_eq_apply_principal (e : V₀.Element ≃o V₁.Element)
     rw [e.apply_symm_apply] at this
     rwa [← hw] at this
   exact le_antisymm hw_le_prinY (hprin_le_w hY hYw)
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /-- **Theorem 2.7 — the relation re-defines the function.** The elementwise map of `ofIso e` is `e`
 itself: `(ofIso e)(x) = e(x)` for every `x`. The forward inclusion uses that `X ∈ x` implies
@@ -144,14 +127,6 @@ theorem toElementMap_ofIso (e : V₀.Element ≃o V₁.Element) (x : V₀.Elemen
   have h1 : e x = e (e.symm ((ofIso e).toElementMap x)) := congrArg e key
   rw [e.apply_symm_apply] at h1
   exact h1.symm
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /-- **Theorem 2.7 (statement) (Scott 1981, PRG-19).** "Every isomorphism between domains results from
 an approximable mapping." For any domain isomorphism `e`, there is an approximable mapping whose

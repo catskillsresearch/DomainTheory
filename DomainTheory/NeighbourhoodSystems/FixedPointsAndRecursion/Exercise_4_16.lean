@@ -1,22 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-public import Mathlib.Algebra.Group.Nat.Defs
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Group.Submonoid.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.Monotone.Basic
-public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_15
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_13
@@ -45,7 +28,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
 
-
 /-- `optimalFix S` is a fixed point. -/
 theorem optimalFix_isFixed (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Element)
     (hS : S.Nonempty) (hfix : ∀ s ∈ S, f s = s) :
@@ -59,7 +41,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
-
 
 /-- `optimalFix S ⊑ ⋂S`. -/
 theorem optimalFix_le_sInf (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Element)
@@ -75,7 +56,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
 
-
 /-- **Exercise 4.16 (Scott 1981, PRG-19).** `optimalFix S` lies below every member of `S`. -/
 theorem optimalFix_le (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Element)
     (hS : S.Nonempty) (hfix : ∀ s ∈ S, f s = s) {s : V.Element} (hs : s ∈ S) :
@@ -89,7 +69,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
-
 
 /-- **Exercise 4.16 (Scott 1981, PRG-19).** `optimalFix S` is *consistent* with every member of `S`
 (they share a common upper bound, namely `s` itself). -/

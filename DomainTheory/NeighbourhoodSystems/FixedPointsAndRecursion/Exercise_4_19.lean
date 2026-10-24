@@ -1,29 +1,12 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-public import Mathlib.Algebra.Group.Nat.Defs
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Group.Submonoid.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.Monotone.Basic
-public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
 
 @[expose] public section
-
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise419
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
@@ -32,16 +15,8 @@ section
 variable {β : Type*}
 
 notation "𝕥" => Example23.trueElt
-end
-
-section
-variable {β : Type*}
 
 notation "𝕗" => Example23.falseElt
-end
-
-section
-variable {β : Type*}
 
 /-- The codomain value chosen by inspecting the head of a sequence: `[] ↦ z`, `0σ ↦ a₀`, `1σ ↦ a₁`.
 With `z = ⊥` this is the value at the *partial* element `σ⊥`; with `z = vΛ` the value at the
@@ -50,38 +25,18 @@ def headValC (V : NeighborhoodSystem β) (z a0 a1 : V.Element) : Str → V.Eleme
   | [] => z
   | false :: _ => a0
   | true :: _ => a1
-end
-
-section
-variable {β : Type*}
 
 @[simp] theorem headValC_nil (V : NeighborhoodSystem β) (z a0 a1 : V.Element) :
     headValC V z a0 a1 [] = z := rfl
-end
-
-section
-variable {β : Type*}
 
 @[simp] theorem headValC_false (V : NeighborhoodSystem β) (z a0 a1 : V.Element) (σ : Str) :
     headValC V z a0 a1 (false :: σ) = a0 := rfl
-end
-
-section
-variable {β : Type*}
 
 @[simp] theorem headValC_true (V : NeighborhoodSystem β) (z a0 a1 : V.Element) (σ : Str) :
     headValC V z a0 a1 (true :: σ) = a1 := rfl
-end
-
-section
-variable {β : Type*}
 
 /-- The truth domain `T` of Example 1.2. -/
 abbrev T : NeighborhoodSystem Example12.Token := Example23.T
-end
-
-section
-variable {β : Type*}
 
 /-- Monotonicity of the head value: along a prefix `σ <+: τ`, the *partial* value (`z = ⊥`) at `σ`
 is below *any* head value at `τ` with the same head constants. Covers both required conditions
@@ -166,19 +121,11 @@ def liftC (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
           rwa [Set.mem_singleton_iff] at this
         subst hτσ
         exact Or.inr ⟨τ, rfl, (singVal τ).up_mem hY hY' hYY'⟩
-end
-
-section
-variable {β : Type*}
 
 /-- **Example 4.4 — `empty`.** `empty(Λ) = true`, `empty(0x) = empty(1x) = false`, strict. -/
 def emptyMap : ApproximableMap C T :=
   liftC T (headValC T T.bot 𝕗 𝕗) (headValC T 𝕥 𝕗 𝕗)
     (headValC_bot_le T T.bot 𝕗 𝕗) (headValC_bot_le T 𝕥 𝕗 𝕗)
-end
-
-section
-variable {β : Type*}
 
 /-- `liftC` on a partial element: `f(σ⊥) = coneVal σ`. -/
 theorem liftC_strBot (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
@@ -195,10 +142,6 @@ theorem liftC_strBot (V : NeighborhoodSystem β) (coneVal singVal : Str → V.El
     · exact absurd (hXsing ▸ hsub) (not_cone_subset_singleton σ σ')
   · intro hY
     exact ⟨cone σ, ⟨memC_cone σ, subset_rfl⟩, Or.inl ⟨σ, rfl, hY⟩⟩
-end
-
-section
-variable {β : Type*}
 
 /-- `liftC` on a total element: `f(σ) = singVal σ`. -/
 theorem liftC_strElem (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
@@ -220,82 +163,46 @@ theorem liftC_strElem (V : NeighborhoodSystem β) (coneVal singVal : Str → V.E
       subst hσσ'; exact hY
   · intro hY
     exact ⟨{σ}, ⟨memC_singleton σ, subset_rfl⟩, Or.inr ⟨σ, rfl, hY⟩⟩
-end
-
-section
-variable {β : Type*}
 
 @[simp] theorem emptyMap_strElem (σ : Str) :
     emptyMap.toElementMap (strElem σ) = headValC T 𝕥 𝕗 𝕗 σ :=
   liftC_strElem T (headValC T T.bot 𝕗 𝕗) (headValC T 𝕥 𝕗 𝕗)
     (headValC_bot_le T T.bot 𝕗 𝕗) (headValC_bot_le T 𝕥 𝕗 𝕗) σ
-end
-
-section
-variable {β : Type*}
 
 @[simp] theorem emptyMap_strBot (σ : Str) :
     emptyMap.toElementMap (strBot σ) = headValC T T.bot 𝕗 𝕗 σ :=
   liftC_strBot T (headValC T T.bot 𝕗 𝕗) (headValC T 𝕥 𝕗 𝕗)
     (headValC_bot_le T T.bot 𝕗 𝕗) (headValC_bot_le T 𝕥 𝕗 𝕗) σ
-end
-
-section
-variable {β : Type*}
 
 /-- **Example 4.4 — `one`.** `one(Λ) = false`, `one(0x) = false`, `one(1x) = true`, strict. -/
 def oneMap : ApproximableMap C T :=
   liftC T (headValC T T.bot 𝕗 𝕥) (headValC T 𝕗 𝕗 𝕥)
     (headValC_bot_le T T.bot 𝕗 𝕥) (headValC_bot_le T 𝕗 𝕗 𝕥)
-end
-
-section
-variable {β : Type*}
 
 /-- **Example 4.4 — `zero`.** `zero(Λ) = false`, `zero(0x) = true`, `zero(1x) = false`, strict. -/
 def zeroMap : ApproximableMap C T :=
   liftC T (headValC T T.bot 𝕥 𝕗) (headValC T 𝕗 𝕥 𝕗)
     (headValC_bot_le T T.bot 𝕥 𝕗) (headValC_bot_le T 𝕗 𝕥 𝕗)
-end
-
-section
-variable {β : Type*}
 
 @[simp] theorem zeroMap_strElem (σ : Str) :
     zeroMap.toElementMap (strElem σ) = headValC T 𝕗 𝕥 𝕗 σ :=
   liftC_strElem T (headValC T T.bot 𝕥 𝕗) (headValC T 𝕗 𝕥 𝕗)
     (headValC_bot_le T T.bot 𝕥 𝕗) (headValC_bot_le T 𝕗 𝕥 𝕗) σ
-end
-
-section
-variable {β : Type*}
 
 @[simp] theorem zeroMap_strBot (σ : Str) :
     zeroMap.toElementMap (strBot σ) = headValC T T.bot 𝕥 𝕗 σ :=
   liftC_strBot T (headValC T T.bot 𝕥 𝕗) (headValC T 𝕗 𝕥 𝕗)
     (headValC_bot_le T T.bot 𝕥 𝕗) (headValC_bot_le T 𝕗 𝕥 𝕗) σ
-end
-
-section
-variable {β : Type*}
 
 @[simp] theorem oneMap_strElem (σ : Str) :
     oneMap.toElementMap (strElem σ) = headValC T 𝕗 𝕗 𝕥 σ :=
   liftC_strElem T (headValC T T.bot 𝕗 𝕥) (headValC T 𝕗 𝕗 𝕥)
     (headValC_bot_le T T.bot 𝕗 𝕥) (headValC_bot_le T 𝕗 𝕗 𝕥) σ
-end
-
-section
-variable {β : Type*}
 
 @[simp] theorem oneMap_strBot (σ : Str) :
     oneMap.toElementMap (strBot σ) = headValC T T.bot 𝕗 𝕥 σ :=
   liftC_strBot T (headValC T T.bot 𝕗 𝕥) (headValC T 𝕗 𝕗 𝕥)
     (headValC_bot_le T T.bot 𝕗 𝕥) (headValC_bot_le T 𝕗 𝕗 𝕥) σ
-end
-
-section
-variable {β : Type*}
 
 /-- The defining right-hand side: `cond(empty(x), false, cond(zero(x), false, true))`. It uses only
 `empty`, `zero` and the conditional `cond` (Exercise 3.26) — not `one`. -/
@@ -304,10 +211,6 @@ def oneDef (x : C.Element) : T.Element :=
     (pair (emptyMap.toElementMap x)
       (pair 𝕗
         ((Exercise326.cond T).toElementMap (pair (zeroMap.toElementMap x) (pair 𝕗 𝕥)))))
-end
-
-section
-variable {β : Type*}
 
 /-- `cond(⊥, x, y) = ⊥` in `T`, phrased with `T.bot` (which the head-test `empty(⊥)` produces)
 rather than the syntactically distinct `Example23.botElt` of `Exercise326.cond_bot`. -/
@@ -324,11 +227,6 @@ theorem condT_bot (x y : T.Element) :
   · intro h
     rw [NeighborhoodSystem.mem_bot] at h
     exact Or.inr (Or.inr h)
-end
-
-section
-variable {β : Type*}
-
 end
 end DomainTheory.NeighbourhoodSystems.Exercise419
 

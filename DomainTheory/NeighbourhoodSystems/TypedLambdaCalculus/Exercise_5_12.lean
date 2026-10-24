@@ -1,41 +1,13 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_3
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_11
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import Mathlib.Algebra.FreeMonoid.Basic
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Ring.Parity
-public import Mathlib.Computability.PartrecBasis
-public import Mathlib.Data.List.Basic
-public import Mathlib.Data.Nat.Bits
-public import Mathlib.Data.Set.Image
-public import Mathlib.Logic.Equiv.Nat
-public import Mathlib.Order.Hom.Set
-public import Mathlib.Tactic.Ring
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_20
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 
 @[expose] public section
-
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise512
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
@@ -55,35 +27,15 @@ def bodyMap : ApproximableMap (prod (funSpace V V) V) V :=
         ((evalMap V V).comp
           (paired (proj₀ (funSpace V V) V) (f.comp (proj₁ (funSpace V V) V))))
         (proj₁ (funSpace V V) V)))
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-  (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 /-- The loop operator `Wop : (D → D) → (D → D)`, `Wop(w) = λx. cond(p(x), w(f(x)), x)`. -/
 def Wop : ApproximableMap (funSpace V V) (funSpace V V) := curry (bodyMap V p f)
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-  (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 /-- The `while`-loop element of the function space `D → D`: the least fixed point of `Wop`. -/
 def whileFix : (funSpace V V).Element := (Wop V p f).fixElement
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-  (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 /-- The approximable function `while p do f : D → D` denoted by `whileFix`. -/
 def whileMap : ApproximableMap V V := toApproxMap (whileFix V p f)
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-  (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 /-- Value of the loop body: `M(w, x) = cond(p(x), w(f(x)), x)`. -/
 theorem bodyMap_apply (w : (funSpace V V).Element) (x : V.Element) :
@@ -94,11 +46,6 @@ theorem bodyMap_apply (w : (funSpace V V).Element) (x : V.Element) :
   rw [bodyMap, toElementMap_comp]
   simp only [toElementMap_paired, toElementMap_comp, toElementMap_proj₀, toElementMap_proj₁,
     fst_pair, snd_pair, evalMap_apply]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-  (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 /-- `Wop(w)(x) = cond(p(x), w(f(x)), x)`. -/
 theorem Wop_apply (w : (funSpace V V).Element) (x : V.Element) :
@@ -107,11 +54,6 @@ theorem Wop_apply (w : (funSpace V V).Element) (x : V.Element) :
         (pair (p.toElementMap x)
           (pair ((toApproxMap w).toElementMap (f.toElementMap x)) x)) := by
   rw [Wop, toElementMap_curry_apply, bodyMap_apply]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-  (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 /-- **Leastness.** Any `w'` satisfying the `while`-recursion `w'(x) = cond(p(x), w'(f(x)), x)`
 dominates the least solution `whileMap`. -/
@@ -129,12 +71,6 @@ theorem whileMap_least (w' : (funSpace V V).Element)
   intro x
   rw [Wop_apply]
   exact (hw' x).symm
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-  (p : ApproximableMap V TD) (f : ApproximableMap V V)
-
 end
 end DomainTheory.NeighbourhoodSystems.Exercise512
 

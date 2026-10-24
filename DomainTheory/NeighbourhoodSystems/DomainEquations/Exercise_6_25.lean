@@ -1,28 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma_6_15
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
@@ -105,7 +82,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem.ProjectionPair
 
-
 /-- **Exercise 6.25 — `g` preserves `⊔` (not just *directed* unions).** For any bounded set `S`,
 `g(⊔S) = ⊔ {g(s) ∣ s ∈ S}`. This is the characteristic property of a lower adjoint.
 
@@ -131,7 +107,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem.ProjectionPair
 
-
 /-- The set `{x ∣ g(x) ⊑ y}` is bounded: `h(y)` is an upper bound (it is in fact the top). -/
 theorem lowerSet_bounded (P : ProjectionPair D E) (y : E.Element) :
     D.Bounded (P.lowerSet y) :=
@@ -144,7 +119,6 @@ section
 variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem.ProjectionPair
-
 
 /-- **Exercise 6.25 — "check that the set on the right is directed".** Any two members of
 `{x ∣ g(x) ⊑ y}` have a common upper bound *inside the set*, namely `h(y)` itself (the down-set of
@@ -164,7 +138,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem.ProjectionPair
 
-
 /-- **Exercise 6.25, first extremal formula.** `h(y) = ⊔ {x ∈ |𝒟| ∣ g(x) ⊑ y}`.
 
 `h(y)` is the *greatest* member of the set (`g(h(y)) ⊑ y`, so `h(y)` is in it; every member is
@@ -183,7 +156,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem.ProjectionPair
 
-
 /-- **Exercise 6.25 — "check that the set on the right is non-empty".** `g(x)` itself lies in
 `{y ∣ x ⊑ h(y)}`, since `x ⊑ h(g(x)) = x`. -/
 theorem upperSet_nonempty (P : ProjectionPair D E) (x : D.Element) :
@@ -197,7 +169,6 @@ section
 variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem.ProjectionPair
-
 
 /-- **Exercise 6.25, second extremal formula.** `g(x) = ⊓ {y ∈ |ℰ| ∣ x ⊑ h(y)}`.
 

@@ -30,10 +30,6 @@ structure ApproximableMap₂ (V₀ : NeighborhoodSystem α) (V₁ : Neighborhood
   /-- (iii) joint monotonicity: sharper inputs `X' ⊆ X`, `Y' ⊆ Y`; blunter output `Z ⊆ Z'`. -/
   mono : ∀ {X X' Y Y' Z Z'}, rel X Y Z → X' ⊆ X → Y' ⊆ Y → Z ⊆ Z' →
     V₀.mem X' → V₁.mem Y' → V₂.mem Z' → rel X' Y' Z'
-end
-
-section
-variable {α β γ : Type*}
 
 namespace ApproximableMap₂
 
@@ -65,10 +61,6 @@ def toElementMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) (x : V₀.Element) (
     exact ⟨X, Y, hX, hY, f.mono hrel subset_rfl subset_rfl hZZ' (x.sub hX) (y.sub hY) hZ'⟩
 
 end ApproximableMap₂
-end
-
-section
-variable {α β γ : Type*}
 
 namespace NeighborhoodSystem
 
@@ -91,10 +83,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : N
 @[simp] theorem mem_toElementMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) (x : V₀.Element) (y : V₁.Element)
     {Z : Set γ} : (f.toElementMap₂ x y).mem Z ↔ ∃ X Y, x.mem X ∧ y.mem Y ∧ f.rel X Y Z := Iff.rfl
 end ApproximableMap₂
-end
-
-section
-variable {α β γ : Type*}
 
 namespace ApproximableMap₂
 
@@ -113,10 +101,6 @@ theorem rel₂_iff_mem_principal (f : ApproximableMap₂ V₀ V₁ V₂) {X : Se
     exact f.mono hrel hXX' hYY' subset_rfl hX hY (f.rel_cod hrel)
 
 end ApproximableMap₂
-end
-
-section
-variable {α β γ : Type*}
 
 namespace ApproximableMap₂
 

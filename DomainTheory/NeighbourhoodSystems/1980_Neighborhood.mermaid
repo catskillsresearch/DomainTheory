@@ -3,7 +3,7 @@
 %% The label is the number of direct import lines.
 %% The introduction has no Lean file, so it has no arrow.
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
-flowchart TB
+flowchart TD
 
   DOM["Domains given<br>by neighbourhoods"]
   MAP["Mappings<br>between domains"]
@@ -14,15 +14,14 @@ flowchart TB
   COMP["Computability<br>effectively given"]
   RET["Retracts of<br>universal domain"]
 
-  COMP -->|"14"| RET
-  CON -->|"30"| FIX
   DOM -->|"27"| MAP
-  EQ -->|"3"| COMP
-  FIX -->|"153"| LAM
-  LAM -->|"87"| EQ
   MAP -->|"16"| CON
+  CON -->|"5"| FIX
+  FIX -->|"13"| LAM
+  LAM -->|"4"| EQ
+  EQ -->|"3"| COMP
+  COMP -->|"14"| RET
 
-  classDef c0 fill:#f1f5f9,stroke:#64748b,color:#0f172a
   classDef c1 fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef c2 fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef c3 fill:#fef3c7,stroke:#b45309,color:#78350f
@@ -32,7 +31,6 @@ flowchart TB
   classDef c7 fill:#cffafe,stroke:#0e7490,color:#164e63
   classDef c8 fill:#fae8ff,stroke:#a21caf,color:#701a75
 
-  class INTRO c0
   class DOM c1
   class MAP c2
   class CON c3

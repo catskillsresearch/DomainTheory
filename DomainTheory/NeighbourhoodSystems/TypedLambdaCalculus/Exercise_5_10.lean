@@ -1,35 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_3
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_11
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import Mathlib.Algebra.FreeMonoid.Basic
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Ring.Parity
-public import Mathlib.Computability.PartrecBasis
-public import Mathlib.Data.List.Basic
-public import Mathlib.Data.Nat.Bits
-public import Mathlib.Data.Set.Image
-public import Mathlib.Logic.Equiv.Nat
-public import Mathlib.Order.Hom.Set
-public import Mathlib.Tactic.Ring
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_20
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_26
@@ -38,7 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7
 
 @[expose] public section
-
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise510
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
@@ -64,21 +34,10 @@ theorem inter_ne_master_left {X X' : Set α} (hX : V₀.mem X) (hXne : X ≠ V�
   apply hXne
   refine Set.Subset.antisymm (V₀.sub_master hX) ?_
   rw [← h]; exact Set.inter_subset_left
-end
-
-section
-variable {α β γ : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 theorem inter_ne_master_right {Y Y' : Set β} (hY : V₁.mem Y) (hYne : Y ≠ V₁.master) :
     Y ∩ Y' ≠ V₁.master :=
   inter_ne_master_left (V₀ := V₁) hY hYne
-end
-
-section
-variable {α β γ : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 end
 end DomainTheory.NeighbourhoodSystems.Exercise510
 

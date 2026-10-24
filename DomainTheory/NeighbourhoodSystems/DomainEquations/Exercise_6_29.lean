@@ -1,28 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_19
 
 @[expose] public section
@@ -111,7 +88,6 @@ section IndexedProduct
 
 variable [Nonempty ι]
 
-
 section Iso
 
 variable [DecidableEq ι]
@@ -141,7 +117,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 section IndexedProduct
 
 variable [Nonempty ι]
-
 
 section Iso
 
@@ -219,7 +194,6 @@ section IndexedProduct
 
 variable [Nonempty ι]
 
-
 section Iso
 
 variable [DecidableEq ι]
@@ -250,7 +224,6 @@ section IndexedProduct
 
 variable [Nonempty ι]
 
-
 section Iso
 
 variable [DecidableEq ι]
@@ -280,7 +253,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 section IndexedProduct
 
 variable [Nonempty ι]
-
 
 section Iso
 
@@ -315,7 +287,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 section IndexedProduct
 
 variable [Nonempty ι]
-
 
 section Iso
 
@@ -641,7 +612,6 @@ section IndexedProduct
 
 variable [Nonempty ι]
 
-
 section Iso
 
 variable [DecidableEq ι]
@@ -672,7 +642,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 section IndexedProduct
 
 variable [Nonempty ι]
-
 
 section Iso
 
@@ -713,7 +682,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 section IndexedProduct
 
 variable [Nonempty ι]
-
 
 section Iso
 
@@ -760,7 +728,6 @@ section IndexedProduct
 
 variable [Nonempty ι]
 
-
 section Iso
 
 variable [DecidableEq ι]
@@ -797,7 +764,6 @@ section IndexedProduct
 
 variable [Nonempty ι]
 
-
 section Iso
 
 variable [DecidableEq ι]
@@ -832,7 +798,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 section IndexedProduct
 
 variable [Nonempty ι]
-
 
 section Iso
 
@@ -871,7 +836,6 @@ section IndexedProduct
 
 variable [Nonempty ι]
 
-
 section Iso
 
 variable [DecidableEq ι]
@@ -906,7 +870,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 section IndexedProduct
 
 variable [Nonempty ι]
-
 
 section Iso
 
@@ -955,7 +918,6 @@ section IndexedProduct
 
 variable [Nonempty ι]
 
-
 section Iso
 
 variable [DecidableEq ι]
@@ -988,7 +950,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 section IndexedProduct
 
 variable [Nonempty ι]
-
 
 section Iso
 
@@ -1028,7 +989,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 section IndexedProduct
 
 variable [Nonempty ι]
-
 
 section Iso
 
@@ -1073,7 +1033,6 @@ section IndexedProduct
 
 variable [Nonempty ι]
 
-
 section Iso
 
 variable [DecidableEq ι]
@@ -1110,7 +1069,6 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 section IndexedProduct
 
 variable [Nonempty ι]
-
 
 section Iso
 
@@ -1153,9 +1111,7 @@ universe u v
 
 variable {ι : Type u} {α : ι → Type v}
 
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 
 theorem injI_inter_ne {i j : ι} (h : i ≠ j) (X : Set (α i)) (Y : Set (α j)) :
     injI i X ∩ injI j Y = ∅ := by
@@ -1176,9 +1132,7 @@ universe u v
 
 variable {ι : Type u} {α : ι → Type v}
 
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 
 theorem injI_nonempty {i : ι} {X : Set (α i)} (hX : X.Nonempty) : (injI i X).Nonempty := by
   obtain ⟨a, ha⟩ := hX; exact ⟨some ⟨i, a⟩, some_mem_injI.mpr ha⟩
@@ -1195,9 +1149,7 @@ universe u v
 
 variable {ι : Type u} {α : ι → Type v}
 
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 
 /-- **Exercise 6.29 — `⊗` does not generalize.** Over an infinite index, the smash product has only
 its basepoint: an all-coordinates-proper cylinder has support `Set.univ`, which cannot be finite. -/
@@ -1223,9 +1175,7 @@ universe u v
 
 variable {ι : Type u} {α : ι → Type v}
 
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 
 /-- **Exercise 6.29 — the infinite smash collapses to one point.** Its element domain is a
 singleton (`⊥` only), so `⊗` has no sensible infinitary generalization. -/
@@ -1250,14 +1200,11 @@ universe u v
 
 variable {ι : Type u} {α : ι → Type v}
 
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 
 section IndexedProduct
 
 variable [Nonempty ι]
-
 
 theorem iprod_mem_iprodNbhd {X : ∀ i, Set (α i)} (hX : ∀ i, (D i).mem (X i))
     (hXf : FinSupp D X) : (iprod D).mem (iprodNbhd X) :=
@@ -1276,9 +1223,7 @@ universe u v
 
 variable {ι : Type u} {α : ι → Type v}
 
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 
 /-- **Exercise 6.29 — a sum element reaches at most one summand.** -/
 theorem isum_summand_unique {hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.Nonempty}
@@ -1309,9 +1254,7 @@ universe u v
 
 variable {ι : Type u} {α : ι → Type v}
 
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
 
 /-- **Exercise 6.29 — sum trichotomy.** Every element of `∑_i D_i` either reaches into some summand
 or is the basepoint `⊥`. (Prop-level and genuinely classical: the case split is excluded middle on

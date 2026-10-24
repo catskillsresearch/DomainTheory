@@ -1,24 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-public import Mathlib.Algebra.Group.Nat.Defs
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Group.Submonoid.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.Monotone.Basic
-public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
-
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_10
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
 
@@ -66,7 +47,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-
 /-- `fⁿ(⊥) ⊑ fix(f)`: every approximant lies below the least fixed point. -/
 theorem iterElem_le_fixElement (f : ApproximableMap V V) (n : ℕ) :
     f.iterElem n ≤ f.fixElement :=
@@ -79,7 +59,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- **Exercise 4.11(iii) (Scott 1981, PRG-19).** `fix` is *uniform*: if `h(⊥) = ⊥` and
 `h ∘ f₀ = f₁ ∘ h`, then `h(fix f₀) = fix f₁`. -/

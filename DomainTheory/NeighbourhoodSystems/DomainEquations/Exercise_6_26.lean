@@ -1,28 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_24
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_21
@@ -1027,9 +1004,7 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 
 /-- `liftBot` is the least element of `𝒟_⊥`. -/
 theorem liftBot_le (z : (liftTok D hD).Element) : liftBot D hD ≤ z := by
@@ -1043,9 +1018,7 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 
 /-- The fresh bottom is *strictly* below every lifted element. -/
 theorem liftBot_lt_liftUp (x : D.Element) : liftBot D hD < liftUp (hD := hD) x := by
@@ -1062,12 +1035,9 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
-
 variable {A B C : ScottSys}
-
 
 /-- **`(g ∘ f)_⊥ = g_⊥ ∘ f_⊥`.** -/
 theorem liftMapTok_comp (f : ApproximableMap A.sys B.sys) (g : ApproximableMap B.sys C.sys) :
@@ -1097,12 +1067,9 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
-
 variable {A B C : ScottSys}
-
 
 /-- **`(I_𝒟)_⊥ = I_{𝒟_⊥}`.** -/
 theorem liftMapTok_id : liftMapTok (idMap A.sys) = idMap (ScottSys.lift A).sys := by
@@ -1128,12 +1095,9 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
-
 variable {A B C : ScottSys}
-
 
 /-- **`f_⊥` is strict** for *any* `f`: the master `Λ`-bearing input relates only to the master. -/
 theorem liftMapTok_isStrict (f : ApproximableMap A.sys B.sys) : IsStrict (liftMapTok f) := by
@@ -1151,7 +1115,6 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 theorem liftTok_mem_master : (liftTok D hD).mem (liftTokMaster D) := Or.inl rfl
@@ -1164,9 +1127,7 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 
 /-- `liftUp` is an order embedding: `liftUp x ⊑ liftUp y ↔ x ⊑ y`. -/
 theorem liftUp_le_liftUp_iff {x y : D.Element} :
@@ -1189,9 +1150,7 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 
 theorem liftUp_unlift (z : (liftTok D hD).Element) (hz : z.mem (embBit false D.master)) :
     liftUp (hD := hD) (unlift z hz) = z := by
@@ -1214,9 +1173,7 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 
 /-- **Exercise 6.26 — "describe in terms of elements".** Every element of `𝒟_⊥` is either the fresh
 bottom or a lifted `𝒟`-element: `|𝒟_⊥| ≅ |𝒟|_⊥`. (`Prop`-level; the case split on "does `z` contain
@@ -1244,15 +1201,11 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 
 variable {A B C : ScottSys}
 
-
 variable {D E : ScottSys}
-
 
 /-- **Exercise 6.26 — `𝒟_⊥ ⊕ ℰ_⊥ ≅ 𝒟 + ℰ`.** Coalescing the fresh bottoms of the two lifts
 reproduces the separated sum. -/
@@ -1267,15 +1220,11 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
 
 variable {A B C : ScottSys}
 
-
 variable {D E : ScottSys}
-
 
 /-- **Exercise 6.26 — `𝒟_⊥ ⊗ ℰ_⊥ ≅ (𝒟 × ℰ)_⊥`** (the answer to Scott's `??`). The smash product of
 two lifts is the lift of the product. -/

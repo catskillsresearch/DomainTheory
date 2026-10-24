@@ -176,10 +176,6 @@ def openToMap (U : Set V.Element) (hU : IsOpen U) : ApproximableMap V O where
     have hmem' : V.principal hX ∈ U := hmem
     have hle : V.principal hX ≤ V.principal hX' := (V.principal_le_iff hX hX').mpr hX'X
     exact ⟨hX', V.isOpen_isUpperSet hU hmem' hle⟩
-end
-
-section
-variable {γ : Type*} (V : NeighborhoodSystem γ)
 
 /-- The value of `openToMap U hU` on the finite element `↑X` contains `∅` iff `↑X ∈ U`; i.e.
 `(openToMap U hU)(↑X) = ⊤ ↔ ↑X ∈ U`. -/
@@ -193,10 +189,6 @@ theorem toElementMap_openToMap_principal_mem_empty (U : Set V.Element) (hU : IsO
     exact hmem
   · intro h
     exact ⟨hX, O_mem_empty, fun _ => ⟨hX, h⟩⟩
-end
-
-section
-variable {γ : Type*} (V : NeighborhoodSystem γ)
 
 /-- **Exercise 2.15 — round trip (open → map → open).** `mapToOpen (openToMap U hU) = U`. -/
 theorem mem_mapToOpen_openToMap (U : Set V.Element) (hU : IsOpen U) (x : V.Element) :
@@ -213,10 +205,6 @@ theorem mem_mapToOpen_openToMap (U : Set V.Element) (hU : IsOpen U) (x : V.Eleme
     refine ⟨X, hxX, ?_⟩
     rw [toElementMap_openToMap_principal_mem_empty]
     exact hXU (show V.principal (x.sub hxX) ∈ V.basicOpen X from ⟨x.sub hxX, subset_rfl⟩)
-end
-
-section
-variable {γ : Type*} (V : NeighborhoodSystem γ)
 
 /-- **Exercise 2.15 — round trip (map → open → map).** `openToMap (mapToOpen f) = f`. -/
 theorem openToMap_mapToOpen (f : ApproximableMap V O) :

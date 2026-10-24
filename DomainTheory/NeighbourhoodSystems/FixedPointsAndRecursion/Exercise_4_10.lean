@@ -1,24 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-public import Mathlib.Algebra.Group.Nat.Defs
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Group.Submonoid.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.Monotone.Basic
-public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
-
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
 public import Mathlib.Tactic.Monotonicity.Lemmas
@@ -241,7 +222,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-
 /-- **Exercise 4.10 (Scott 1981, PRG-19).** Any fixed point of `f` below `fix(f)` *is* `fix(f)`:
 a fixed point is a pre-fixed point, so leastness forces `fix(f) ⊑ x`. -/
 theorem fixElement_below_unique (f : ApproximableMap V V) {x : V.Element}
@@ -256,7 +236,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- The restriction `f'` has the same action as `f`: `embed a (f'(g)) = f(embed a g)`. -/
 theorem relMap_toElementMap_embed (f : ApproximableMap V V) {a : V.Element}
@@ -288,7 +267,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- **Exercise 4.10 (Scott 1981, PRG-19).** With `a = fix(f)`, the restricted map `f'` has *exactly
 one* fixed point: the top element of `D_{fix f}`, namely `restrict (fix f)` of `fix f` itself. Every
@@ -456,7 +434,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-
 /-- The inclusion's elementwise action is `embed a` (Exercise 4.10). -/
 theorem inclMap_toElementMap (a : V.Element) (g : (relSystem a).Element) :
     (inclMap a).toElementMap g = embed a g := by
@@ -475,7 +452,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- The inclusion is strict: `ι(⊥) = ⊥`. -/
 theorem inclMap_bot (a : V.Element) : (inclMap a).toElementMap (relSystem a).bot = V.bot := by
@@ -498,7 +474,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- The inclusion intertwines `f'` with `f`: `ι ∘ f' = f ∘ ι` (from `relMap_toElementMap_embed`). -/
 theorem inclMap_intertwine (f : ApproximableMap V V) {a : V.Element} (ha : f.toElementMap a = a)

@@ -1,28 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_20
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
@@ -549,14 +526,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
 variable {C₀ C₁ : ScottSys}
-
 
 /-- `gFun T Γ = tok(T({Γ}))`. -/
 theorem gFun_eq_master : (T : GExpr) → {Γ : Set Str} → (h : Γ.Nonempty) →
@@ -609,7 +583,6 @@ theorem gFun_continuous (T : GExpr) {ℱ : Set (Set Str)} {U : Set Str}
   | oplus a b ih₀ ih₁ => intro w; exact insertTag_continuous hne ih₀ ih₁ w
   | otimes a b ih₀ ih₁ => intro w; exact insertTag_continuous hne ih₀ ih₁ w
 
-
 theorem gFun_nil_mem : ∀ (T : GExpr), T.RootedConst → {Γ : Set Str} →
     ([] : Str) ∈ Γ → ([] : Str) ∈ gFun T Γ
   | .const _, hC, _, _ => hC
@@ -618,7 +591,6 @@ theorem gFun_nil_mem : ∀ (T : GExpr), T.RootedConst → {Γ : Set Str} →
   | .prod _ _, _, _, _ => Set.mem_insert _ _
   | .oplus _ _, _, _, _ => Set.mem_insert _ _
   | .otimes _ _, _, _, _ => Set.mem_insert _ _
-
 
 theorem nil_mem_gIter (T : GExpr) (hT : T.RootedConst) : ∀ n, ([] : Str) ∈ gIter T n
   | 0 => rfl
@@ -687,7 +659,6 @@ theorem gExists_singleton_subsystem (T : GExpr) (hT : T.RootedConst) :
     show X ∩ Y = Γ
     rw [show X = Γ from hX, show Y = Γ from hY, Set.inter_self]
 
-
 end Exercise619
 end
 
@@ -743,15 +714,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- The `Λ ∈ tok` side-condition is preserved by any n-ary fold whose binary operation preserves it
 (all four of `+`, `×`, `⊕`, `⊗` do, definitionally). -/
@@ -773,7 +740,6 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 theorem inter_ne_of_ne_right {X X' Δ : Set Str} (hX' : X' ⊆ Δ) (hne : X' ≠ Δ) : X ∩ X' ≠ Δ := by
   intro h
   exact hne (Set.Subset.antisymm hX' (by rw [← h]; exact Set.inter_subset_right))
@@ -786,15 +752,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 theorem naryOplus_singleton_subsystem (a : GExpr) (l : List GExpr)
     (ha : a.RootedConst) (hl : ∀ b ∈ l, b.RootedConst) :
@@ -810,15 +772,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 theorem naryOtimes_singleton_subsystem (a : GExpr) (l : List GExpr)
     (ha : a.RootedConst) (hl : ∀ b ∈ l, b.RootedConst) :
@@ -834,15 +792,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 theorem naryProd_singleton_subsystem (a : GExpr) (l : List GExpr)
     (ha : a.RootedConst) (hl : ∀ b ∈ l, b.RootedConst) :
@@ -858,15 +812,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **Every n-ary construct has a solution `Γ = tok(T({Γ}))`** (so `{Γ} ◁ T({Γ})` and 6.14 applies),
 illustrated for the n-ary separated sum; identical for `naryProd`/`naryOplus`/`naryOtimes`. -/
@@ -884,15 +834,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **`(g₀ ∘ f₀) ⊕ (g₁ ∘ f₁) = (g₀ ⊕ g₁) ∘ (f₀ ⊕ f₁)`** for **strict** `g₀, g₁`. (Strictness of the
 outer maps is exactly what prevents an intermediate top `f₀(X) = Δ₀'` from being re-expanded — that
@@ -939,15 +885,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **`(I ⊕ I) = I`.** -/
 theorem oplusMapTok_id :
@@ -982,15 +924,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **`oplusMapTok` is always strict.** -/
 theorem oplusMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
@@ -1010,15 +948,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- `oplusMapTok` is monotone in both arguments. -/
 theorem oplusMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
@@ -1039,9 +973,7 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 theorem oplusTok_mem_embF_inv {W : Set Str} (h : (oplusTok D₀ D₁ h₀ h₁).mem (embBit false W)) :
     D₀.mem W := by
@@ -1058,9 +990,7 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 theorem oplusTok_mem_embT_inv {W : Set Str} (h : (oplusTok D₀ D₁ h₀ h₁).mem (embBit true W)) :
     D₁.mem W := by
@@ -1077,9 +1007,7 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 theorem oplusTok_mem_master : (oplusTok D₀ D₁ h₀ h₁).mem (sumTokMaster D₀ D₁) := Or.inl rfl
 
@@ -1091,9 +1019,7 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
@@ -1135,15 +1061,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **`(g₀ ∘ f₀) ⊗ (g₁ ∘ f₁) = (g₀ ⊗ g₁) ∘ (f₀ ⊗ f₁)`** for **strict** `g₀, g₁`. -/
 theorem otimesMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys)
@@ -1184,15 +1106,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **`(I ⊗ I) = I`.** -/
 theorem otimesMapTok_id :
@@ -1223,15 +1141,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **Functor law 1 — `T(I_X) = I_{T(X)}`.** -/
 theorem GExpr.map_id : (T : GExpr) → (X : ScottSys) → T.map (idMap X.sys) = idMap (T.obj X).sys
@@ -1260,15 +1174,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **`otimesMapTok` is always strict.** -/
 theorem otimesMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
@@ -1287,15 +1197,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **Every `T` preserves strictness.** -/
 theorem GExpr.map_isStrict : (T : GExpr) → {X Y : ScottSys} → (f : ApproximableMap X.sys Y.sys) →
@@ -1315,15 +1221,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **Functor law 2 — `T(g ∘ f) = T(g) ∘ T(f)` for strict `g`.** Together with `map_id`, *these are
 all functors* of the strict-map category. The strictness of `g` is needed (and only) for the
@@ -1361,15 +1263,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- `otimesMapTok` is monotone in both arguments. -/
 theorem otimesMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
@@ -1388,15 +1286,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **`λf. T(f)` is monotone** (the order half of *continuous on maps*). -/
 theorem GExpr.map_mono : (T : GExpr) → {X Y : ScottSys} → {f f' : ApproximableMap X.sys Y.sys} →
@@ -1416,15 +1310,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- Forward direction of continuity on maps for `GExpr`. -/
 theorem GExpr.map_continuous_mp : (T : GExpr) → {I : Type} → {X Y : ScottSys} →
@@ -1473,15 +1363,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **`λf. T(f)` is continuous on maps.** -/
 theorem GExpr.map_continuous (T : GExpr) {I : Type} [Nonempty I] {X Y : ScottSys}
@@ -1503,9 +1389,7 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 theorem otimesTok_mem_prod_inv {X Y : Set Str} (h : (otimesTok D₀ D₁).mem (prodTokNbhd X Y))
     (hX : X ≠ D₀.master) : D₀.mem X ∧ D₁.mem Y := by
@@ -1521,9 +1405,7 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
@@ -1561,15 +1443,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **`λX. T(X)` is monotone on domains.** -/
 theorem GExpr.obj_subsystem : (T : GExpr) → {X Y : ScottSys} → X.sys ◁ Y.sys →
@@ -1589,15 +1467,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- Forward direction of continuity on domains for `GExpr`. -/
 theorem GExpr.obj_continuous_mp : (T : GExpr) → {ℱ : Set ScottSys} → {U : ScottSys} →
@@ -1651,15 +1525,11 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-
 variable {C₀ C₁ : ScottSys}
-
 
 /-- **`λD. T(D)` is continuous on domains.** -/
 theorem GExpr.obj_continuous (T : GExpr) {ℱ : Set ScottSys} {U : ScottSys}

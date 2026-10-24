@@ -1,26 +1,11 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
 public import Mathlib.Algebra.Group.Nat.Defs
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.Group.Submonoid.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.Monotone.Basic
-public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
 
 @[expose] public section
-
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise417
 open Pointwise
@@ -31,32 +16,16 @@ variable {S : Type*} [Monoid S]
 
 /-- Scott's operator `F(x) = {1} ∪ {a, b} ∪ x · x` on `P S`. -/
 def F (a b : S) (x : Set S) : Set S := {1} ∪ {a, b} ∪ x * x
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- `{1} ∪ {a, b} ⊆ F a b x`. -/
 theorem base_subset_F (a b : S) (x : Set S) : {1} ∪ {a, b} ⊆ F a b x :=
   Set.subset_union_left
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 theorem one_mem_F (a b : S) (x : Set S) : (1 : S) ∈ F a b x :=
   base_subset_F a b x (Set.mem_union_left _ rfl)
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 theorem self_mul_subset_F (a b : S) (x : Set S) : x * x ⊆ F a b x :=
   Set.subset_union_right
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- A pre-fixed point of `F` is a submonoid containing `{a, b}`: it contains `1` and is closed under
 multiplication and contains `a, b`. Packaged as the submonoid with that carrier. -/
@@ -66,53 +35,28 @@ def preFixSubmonoid (a b : S) {x : Set S} (hx : F a b x ⊆ x) : Submonoid S whe
   mul_mem' := by
     intro s t hs ht
     exact hx (self_mul_subset_F a b x (Set.mul_mem_mul hs ht))
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 theorem F_monotone (a b : S) : Monotone (F a b) := by
   intro x y hxy
   exact Set.union_subset_union (le_refl _) (Set.mul_subset_mul hxy hxy)
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- `{1}` is a fixed point of `F 1 1`: `{1} ∪ {1, 1} ∪ {1}·{1} = {1}`. -/
 theorem F_one_one_singleton : F (1 : ℕ) 1 ({1} : Set ℕ) = {1} := by
   unfold F
   rw [Set.singleton_mul_singleton]
   simp
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 /-- In any monoid, `Set.univ` is a fixed point of `F a b`: `s = 1 · s ∈ univ · univ`. -/
 theorem F_univ (a b : S) : F a b (Set.univ : Set S) = Set.univ := by
   apply Set.Subset.antisymm (Set.subset_univ _)
   intro s _
   exact self_mul_subset_F a b _ (Set.mem_mul.mpr ⟨1, trivial, s, trivial, one_mul s⟩)
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 theorem a_mem_F (a b : S) (x : Set S) : a ∈ F a b x :=
   base_subset_F a b x (Set.mem_union_right _ (Set.mem_insert _ _))
-end
-
-section
-variable {S : Type*} [Monoid S]
 
 theorem b_mem_F (a b : S) (x : Set S) : b ∈ F a b x :=
   base_subset_F a b x (Set.mem_union_right _ (Set.mem_insert_of_mem _ rfl))
-end
-
-section
-variable {S : Type*} [Monoid S]
-
 end
 end DomainTheory.NeighbourhoodSystems.Exercise417
 

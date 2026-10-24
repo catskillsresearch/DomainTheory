@@ -1,34 +1,8 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_3
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_11
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import Mathlib.Algebra.FreeMonoid.Basic
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Ring.Parity
-public import Mathlib.Computability.PartrecBasis
-public import Mathlib.Data.List.Basic
 public import Mathlib.Data.Nat.Bits
-public import Mathlib.Data.Set.Image
-public import Mathlib.Logic.Equiv.Nat
-public import Mathlib.Order.Hom.Set
-public import Mathlib.Tactic.Ring
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_20
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
@@ -36,7 +10,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7
 
 @[expose] public section
-
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise516
 section
@@ -2176,7 +2149,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-
 /-- `pfix τ (x) = !y. τ(x, y)`, the least fixed point of the section at `x`. -/
 theorem pfix_apply (τ : ApproximableMap (prod V V) V) (x : V.Element) :
     (pfix τ).toElementMap x = (section₂ τ x).fixElement := by
@@ -2189,7 +2161,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- `recOp τ (g) (x) = τ(x, g(x))`. -/
 theorem recOp_apply (τ : ApproximableMap (prod V V) V) (φ : (funSpace V V).Element) (x : V.Element) :
@@ -2206,7 +2177,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-
 theorem section₂_apply (τ : ApproximableMap (prod V V) V) (x y : V.Element) :
     (section₂ τ x).toElementMap y = τ.toElementMap (pair x y) := by
   rw [section₂, toElementMap_curry_apply]
@@ -2218,7 +2188,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- `pfix τ` is a fixed point of `recOp τ` (pointwise: `τ(x, pfix τ x) = pfix τ x`). -/
 theorem pfix_isFixed (τ : ApproximableMap (prod V V) V) (x : V.Element) :
@@ -2232,7 +2201,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 end ApproximableMap
 end

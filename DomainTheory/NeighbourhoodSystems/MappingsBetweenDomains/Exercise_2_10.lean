@@ -26,14 +26,6 @@ def interMap (f g : ApproximableMap V₀ V₁) : ApproximableMap V₀ V₁ where
   inter_right := fun ⟨hf, hg⟩ ⟨hf', hg'⟩ => ⟨f.inter_right hf hf', g.inter_right hg hg'⟩
   mono := fun ⟨hf, hg⟩ hX'X hZZ' hX' hZ' =>
     ⟨f.mono hf hX'X hZZ' hX' hZ', g.mono hg hX'X hZZ' hX' hZ'⟩
-end
-
-section
-variable {α β γ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /- concordance: source L781 EXERCISE 2.10 intersection of two maps -/
 /-- **Exercise 2.10.** `h(x) = f(x) ∩ g(x)` (the meet in `|𝒟₁|`). The non-trivial direction combines

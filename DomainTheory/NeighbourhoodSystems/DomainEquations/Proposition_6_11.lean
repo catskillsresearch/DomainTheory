@@ -1,34 +1,10 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_10
 
 @[expose] public section
-
 
 namespace DomainTheory.NeighbourhoodSystems.Proposition611
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set DomainTheory.NeighbourhoodSystems.Exercise222
@@ -41,10 +17,6 @@ variable {α : Type*}
 family of sets that, by Exercise 2.22, represents `{D ∣ D ◁ E}` as a domain. -/
 def subFam (E : NeighborhoodSystem α) : Set (Set (Set α)) :=
   {𝒮 | ∃ D : NeighborhoodSystem α, D ◁ E ∧ 𝒮 = {X | D.mem X}}
-end
-
-section
-variable {α : Type*}
 
 /-- Consistency is inherited from `E` (Definition 6.10's essential clause): if `X, Y` lie in a
 subdomain's neighbourhood-set and `X ∩ Y ∈ E`, then `X ∩ Y` lies in it too. -/
@@ -52,10 +24,6 @@ theorem subFam_inter_closed (E : NeighborhoodSystem α) {𝒮 : Set (Set α)} {X
     (h : 𝒮 ∈ subFam E) (hX : X ∈ 𝒮) (hY : Y ∈ 𝒮) (hXY : E.mem (X ∩ Y)) : X ∩ Y ∈ 𝒮 := by
   obtain ⟨D, hD, rfl⟩ := h
   exact hD.inter_closed hX hY hXY
-end
-
-section
-variable {α : Type*}
 
 /-- The master `Δ = E.master` belongs to the neighbourhood-set of any subdomain (a subsystem shares
 `E`'s master and contains it). -/
@@ -64,20 +32,12 @@ theorem subFam_master_mem (E : NeighborhoodSystem α) {𝒮 : Set (Set α)}
   obtain ⟨D, hD, rfl⟩ := h
   rw [← hD.master_eq]
   exact D.master_mem
-end
-
-section
-variable {α : Type*}
 
 /-- Every member of a subdomain's neighbourhood-set is an `E`-neighbourhood (`D ⊆ E`). -/
 theorem subFam_mem_E (E : NeighborhoodSystem α) {𝒮 : Set (Set α)} {X : Set α}
     (h : 𝒮 ∈ subFam E) (hX : X ∈ 𝒮) : E.mem X := by
   obtain ⟨D, hD, rfl⟩ := h
   exact hD.sub hX
-end
-
-section
-variable {α : Type*}
 
 /-- The **intersection subdomain** of a non-empty family `ℱ` of subdomain neighbourhood-sets: its
 neighbourhoods are the sets common to *every* member of `ℱ`. -/
@@ -97,10 +57,6 @@ def interSys (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α)))
     intro X hX
     obtain ⟨𝒮, h𝒮⟩ := hne
     exact E.sub_master (subFam_mem_E E (hℱ h𝒮) (hX 𝒮 h𝒮))
-end
-
-section
-variable {α : Type*}
 
 /-- The neighbourhood-set of the intersection subdomain is exactly `⋂₀ ℱ`. -/
 theorem interSys_nbset (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α)))
@@ -108,10 +64,6 @@ theorem interSys_nbset (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α)))
     {X | (interSys E ℱ hne hℱ).mem X} = ⋂₀ ℱ := by
   ext X
   exact Set.mem_sInter.symm
-end
-
-section
-variable {α : Type*}
 
 /-- The intersection subdomain is a subsystem of `E`. -/
 theorem interSys_subsystem (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α)))
@@ -124,10 +76,6 @@ theorem interSys_subsystem (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α))
   inter_closed := by
     intro X Y hX hY hEXY 𝒮 h𝒮
     exact subFam_inter_closed E (hℱ h𝒮) (hX 𝒮 h𝒮) (hY 𝒮 h𝒮) hEXY
-end
-
-section
-variable {α : Type*}
 
 /-- Rebuild a subsystem of `E` from its neighbourhood-set `𝒮 ∈ subFam E`. The data (the `mem`
 predicate `· ∈ 𝒮` and the master `E.master`) depends only on `𝒮`; the proof obligations are
@@ -143,10 +91,6 @@ def ofMem (E : NeighborhoodSystem α) (𝒮 : Set (Set α)) (h : 𝒮 ∈ subFam
     exact subFam_inter_closed E h hX hY
       (E.inter_mem (subFam_mem_E E h hX) (subFam_mem_E E h hY) (subFam_mem_E E h hZ) hsub)
   sub_master := fun hX => E.sub_master (subFam_mem_E E h hX)
-end
-
-section
-variable {α : Type*}
 
 /-- `ofMem` lands in the subsystems of `E`. -/
 theorem ofMem_subsystem (E : NeighborhoodSystem α) (𝒮 : Set (Set α)) (h : 𝒮 ∈ subFam E) :
@@ -154,11 +98,6 @@ theorem ofMem_subsystem (E : NeighborhoodSystem α) (𝒮 : Set (Set α)) (h : �
   master_eq := rfl
   sub := subFam_mem_E E h
   inter_closed := subFam_inter_closed E h
-end
-
-section
-variable {α : Type*}
-
 end
 
 section
@@ -173,7 +112,6 @@ theorem theorem_611.{u_1} : ∀ {α : Type u_1} (E : DomainTheory.NeighbourhoodS
 end
 
 end DomainTheory.NeighbourhoodSystems.Proposition611
-
 
 namespace DomainTheory.NeighbourhoodSystems.Proposition611
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set DomainTheory.NeighbourhoodSystems.Exercise222
@@ -193,7 +131,6 @@ end
 
 end DomainTheory.NeighbourhoodSystems.Proposition611
 
-
 namespace DomainTheory.NeighbourhoodSystems.Proposition611
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set DomainTheory.NeighbourhoodSystems.Exercise222
 
@@ -204,19 +141,11 @@ variable {α : Type*}
 neighbourhood-set `{X ∣ E.mem X}` is a member. -/
 theorem subFam_nonempty (E : NeighborhoodSystem α) : (subFam E).Nonempty :=
   ⟨{X | E.mem X}, E, Subsystem.refl E, rfl⟩
-end
-
-section
-variable {α : Type*}
 
 /-- **Closure under non-empty intersection** (Exercise 2.22's hypothesis (i)). -/
 theorem subFam_sInter_mem (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α)))
     (hne : ℱ.Nonempty) (hℱ : ℱ ⊆ subFam E) : ⋂₀ ℱ ∈ subFam E :=
   ⟨interSys E ℱ hne hℱ, interSys_subsystem E ℱ hne hℱ, (interSys_nbset E ℱ hne hℱ).symm⟩
-end
-
-section
-variable {α : Type*}
 
 /-- **The poset of subsystems is the family `subFam E`.** The subsystems of `E`, ordered by `◁`,
 are order-isomorphic to `subFam E` ordered by `⊆`. A subsystem is sent to its family of
@@ -250,7 +179,6 @@ def subIso (E : NeighborhoodSystem α) :
 end
 
 end DomainTheory.NeighbourhoodSystems.Proposition611
-
 
 namespace DomainTheory.NeighbourhoodSystems.Proposition611
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set DomainTheory.NeighbourhoodSystems.Exercise222
@@ -286,10 +214,6 @@ def unionSys (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α)))
     intro X hX
     obtain ⟨𝒮, h𝒮, hX𝒮⟩ := hX
     exact E.sub_master (subFam_mem_E E (hℱ h𝒮) hX𝒮)
-end
-
-section
-variable {α : Type*}
 
 /-- The neighbourhood-set of the union subdomain is exactly `⋃₀ ℱ`. -/
 theorem unionSys_nbset (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α)))
@@ -297,10 +221,6 @@ theorem unionSys_nbset (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α)))
     {X | (unionSys E ℱ hne hℱ hdir).mem X} = ⋃₀ ℱ := by
   ext X
   exact Set.mem_sUnion.symm
-end
-
-section
-variable {α : Type*}
 
 /-- The union subdomain is a subsystem of `E` (Scott's remark: the directed union of subdomains is
 again a subdomain). -/
@@ -318,10 +238,6 @@ theorem unionSys_subsystem (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α))
     obtain ⟨𝒮y, h𝒮y, hYy⟩ := hY
     obtain ⟨𝒮s, h𝒮s, hxs, hys⟩ := hdir 𝒮x h𝒮x 𝒮y h𝒮y
     exact ⟨𝒮s, h𝒮s, subFam_inter_closed E (hℱ h𝒮s) (hxs hXx) (hys hYy) hEXY⟩
-end
-
-section
-variable {α : Type*}
 
 /-- **Closure under directed union** (Exercise 2.22's hypothesis (ii)) — Scott's remark. -/
 theorem subFam_sUnion_mem (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α)))
@@ -329,11 +245,6 @@ theorem subFam_sUnion_mem (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α)))
     ⋃₀ ℱ ∈ subFam E :=
   ⟨unionSys E ℱ hne hℱ hdir, unionSys_subsystem E ℱ hne hℱ hdir,
     (unionSys_nbset E ℱ hne hℱ hdir).symm⟩
-end
-
-section
-variable {α : Type*}
-
 end
 end DomainTheory.NeighbourhoodSystems.Proposition611
 

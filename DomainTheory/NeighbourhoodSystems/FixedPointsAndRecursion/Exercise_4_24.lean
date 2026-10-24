@@ -1,29 +1,11 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-public import Mathlib.Algebra.Group.Nat.Defs
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Group.Submonoid.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.Monotone.Basic
-public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
-
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NeighborhoodSystem
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
 public import Mathlib.Algebra.Group.End
 
 @[expose] public section
-
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise424
 open DomainTheory.NeighbourhoodSystems.Exercise414 Function
@@ -33,53 +15,29 @@ variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- Tarski's operator `T(X) = (A − g(B)) ∪ g(f(X))` on `P A`. -/
 def sbOp (f : A → B) (g : B → A) (X : Set A) : Set A := (Set.range g)ᶜ ∪ g '' (f '' X)
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 theorem sbOp_monotone (f : A → B) (g : B → A) : Monotone (sbOp f g) := by
   intro X Y hXY a ha
   rcases ha with ha | ⟨b, ⟨x, hx, rfl⟩, rfl⟩
   · exact Or.inl ha
   · exact Or.inr ⟨f x, ⟨x, hXY hx, rfl⟩, rfl⟩
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- The Tarski fixed point `X` with `X = (A − g(B)) ∪ g(f(X))` (`lfpSet`, Exercise 4.14). -/
 def sbSet (f : A → B) (g : B → A) : Set A := lfpSet (sbOp f g)
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 theorem sbSet_isFixed (f : A → B) (g : B → A) : sbOp f g (sbSet f g) = sbSet f g :=
   lfpSet_isFixed (sbOp f g) (sbOp_monotone f g)
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- `g(f(a)) ∈ X` whenever `a ∈ X` (the `g(f(X)) ⊆ T(X) = X` half). -/
 theorem g_f_mem_of_mem {a : A} (ha : a ∈ sbSet f g) : g (f a) ∈ sbSet f g := by
   rw [← sbSet_isFixed]
   exact Or.inr ⟨f a, ⟨a, ha, rfl⟩, rfl⟩
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 /-- Anything outside the fixed set `X` lies in the range of `g` (so it has a `g`-preimage). -/
 theorem mem_range_of_not_mem {a : A} (ha : a ∉ sbSet f g) : a ∈ Set.range g := by
   have hne : a ∉ sbOp f g (sbSet f g) := by rw [sbSet_isFixed]; exact ha
   have : ¬ a ∉ Set.range g := fun h => hne (Or.inl h)
   exact not_not.mp this
-end
-
-section
-variable {A B : Type*} {f : A → B} {g : B → A}
 
 open Classical in
 end
@@ -165,7 +123,6 @@ section
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 open Classical in
-
 
 /-- **Exercise 4.24 (Scott 1981, PRG-19) — Schröder–Bernstein.** Injections `f : A → B` and
 `g : B → A` yield a bijection `A → B`. -/

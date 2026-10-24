@@ -1,28 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_26
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_12
@@ -54,14 +32,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 /-- Choice-free extensionality from agreement on principal inputs. Unlike `ext_of_toElementMap`
 (which splits on the undecidable `V₀.mem X`), both sides of the relation carry domain membership via
@@ -89,7 +64,6 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 theorem fstInj_comp_fstProj_le (D₀ D₁ : NeighborhoodSystem Str) :
     (fstInj D₀ D₁).comp (fstProj D₀ D₁) ≤ idMap (prodTok D₀ D₁) := by
   intro W W' hr
@@ -103,7 +77,6 @@ section
 namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
-
 
 theorem fstProj_comp_fstInj (D₀ D₁ : NeighborhoodSystem Str) :
     (fstProj D₀ D₁).comp (fstInj D₀ D₁) = idMap D₀ := by
@@ -127,7 +100,6 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 /-- **Exercise 6.27 (2).** `𝒟 ⊴ 𝒟 × ℰ`. -/
 theorem fst_trianglelefteq_prod (D₀ D₁ : NeighborhoodSystem Str) :
     D₀ ⊴ prodTok D₀ D₁ :=
@@ -141,7 +113,6 @@ section
 namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
-
 
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
@@ -181,7 +152,6 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 /-- **Exercise 6.27 (3).** `(𝒟 ⊕ ℰ) ⊴ (𝒟 + ℰ)`. -/
@@ -197,7 +167,6 @@ section
 namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
-
 
 theorem otimesTok_subsystem_prodTok (D₀ D₁ : NeighborhoodSystem Str) :
     otimesTok D₀ D₁ ◁ prodTok D₀ D₁ where
@@ -231,7 +200,6 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 /-- **Exercise 6.27 (1).** `(𝒟 ⊗ ℰ) ⊴ (𝒟 × ℰ)`. -/
 theorem otimes_trianglelefteq_prod (D₀ D₁ : NeighborhoodSystem Str) :
     otimesTok D₀ D₁ ⊴ prodTok D₀ D₁ :=
@@ -245,9 +213,7 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 /-- With the unit second factor, the smash `twoPt ⊗ 𝟙` collapses to its master. -/
 theorem otimes_unitPt_collapse :
@@ -264,14 +230,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 theorem strictifyMap_le (g : ApproximableMap V₀ V₁) : strictifyMap g ≤ g := fun _ _ h => h.1
 
@@ -284,14 +247,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 theorem strictifyMap_of_isStrict {f : ApproximableMap V₀ V₁} (hf : IsStrict f) :
     strictifyMap f = f := by
@@ -308,9 +268,7 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 /-- If a system's only neighbourhood is its master, its element lattice is a single point (`⊥`). -/
 theorem subsingleton_element_of_only_master {γ : Type*} {V : NeighborhoodSystem γ}
@@ -330,9 +288,7 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 /-- **Exercise 6.27 (6).** `𝒟 ⊴ 𝒟 ⊗ ℰ` does **not** hold for all `𝒟, ℰ`: take `𝒟` two-point and
 `ℰ = 𝟙`. Then `𝒟 ⊗ 𝟙` has a one-point element lattice while `𝒟` has two, so no isomorphism onto a
@@ -363,14 +319,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 /-- The four inverse identities of the two representation equivalences (defeq unfoldings). -/
 theorem toApproxMap_toFilter (g : ApproximableMap V₀ V₁) : toApproxMap (toFilter g) = g :=
@@ -385,14 +338,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 theorem toElementMap_inclMap (φ : (strictFun V₀ V₁).Element) :
     inclMap.toElementMap φ = incl φ := by
@@ -423,14 +373,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 theorem toElementMap_strctMap (ψ : (funSpace V₀ V₁).Element) :
     strctMap.toElementMap ψ = strct ψ := by
@@ -461,14 +408,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 theorem toFilter_toApproxMap (ψ : (funSpace V₀ V₁).Element) : toFilter (toApproxMap ψ) = ψ :=
   (funSpaceEquiv V₀ V₁).symm_apply_apply ψ
@@ -482,14 +426,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 theorem toStrictFilter_toStrictMap (φ : (strictFun V₀ V₁).Element) :
     toStrictFilter (toStrictMap φ) = φ :=
@@ -504,14 +445,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 theorem strct_incl (φ : (strictFun V₀ V₁).Element) : strct (incl φ) = φ := by
   show toStrictFilter (strictify (toApproxMap (toFilter (toStrictMap φ).1))) = φ
@@ -529,14 +467,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 theorem strctMap_comp_inclMap :
     (strctMap (V₀ := V₀) (V₁ := V₁)).comp inclMap = idMap (strictFun V₀ V₁) := by
@@ -553,14 +488,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 theorem toStrictMap_toStrictFilter (g : StrictMap V₀ V₁) : toStrictMap (toStrictFilter g) = g :=
   (strictFunEquiv V₀ V₁).apply_symm_apply g
@@ -574,14 +506,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 theorem incl_strct_le (ψ : (funSpace V₀ V₁).Element) : incl (strct ψ) ≤ ψ := by
   have key : incl (strct ψ) = toFilter (strictifyMap (toApproxMap ψ)) := by
@@ -601,14 +530,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 theorem inclMap_comp_strctMap_le :
     (inclMap (V₀ := V₀) (V₁ := V₁)).comp strctMap ≤ idMap (funSpace V₀ V₁) := by
@@ -626,14 +552,11 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 /-- **Exercise 6.27 (5).** `(𝒟 →⊥ ℰ) ⊴ (𝒟 → ℰ)` for all `𝒟, ℰ` (choice-free). -/
 theorem strictFun_trianglelefteq_funSpace (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
@@ -1491,11 +1414,9 @@ namespace Theorem614
 
 variable {α : Type w}
 
-
 /-- The colimit `𝒟` as a `T`-algebra, with structure map the iso `T(𝒟) → 𝒟`. -/
 abbrev colimAlg (s : Setup.{w}) : TAlgebra s.T :=
   ⟨⟨s.Tok, colim s⟩, (colimIso s).hom⟩
-
 
 /-- The colimit `𝒟` as a category object `⟨Tok, 𝒟⟩`. -/
 abbrev objColim (s : Setup.{w}) : DomainObj := ⟨s.Tok, colim s⟩
@@ -1519,9 +1440,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- Two algebra homomorphisms with equal underlying maps are equal (the commuting square is a
 `Prop`). -/
@@ -1537,9 +1456,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- In the category of domains, `⊚` (categorical composition) is `ApproximableMap.comp`. -/
 theorem cat_comp_eq {X Y Z : DomainObj} (g : (Y ⟶ Z)) (f : (X ⟶ Y)) :
@@ -1553,9 +1470,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- **`⋃ₙ ρₙ = I_𝒟`** (Scott's key identity for uniqueness). The forward inclusion uses
 `X ⊆ z ⊆ Y ⟹ X ⊆ Y`; the reverse factors the identity step `X ⊆ X ⊆ Y` through the level
@@ -1581,9 +1496,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- Conjugation by the identity isomorphism `isoOfEq e` is the object-transport along `e`. -/
 theorem isoOfEq_conj {Obj : Type*} [Category Obj] {X Y : Obj} (e : X = Y)
@@ -1602,9 +1515,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- **The carrier-transport core of `T(ρₙ) = ρₙ₊₁`.** Given the *monotone-on-domains* data for a
 subsystem (its injection `Tmi`/projection `Tmj` are heterogeneously equal to the canonical 6.12 pair
@@ -1638,9 +1549,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 /-- **`T(ρₙ) = ρₙ₊₁`, heterogeneously.** The image `T(ρₙ)` of the `n`-th projection, living over
 `T(𝒟)`'s carrier, is heterogeneously equal to the `(n+1)`-st projection `ρₙ₊₁` over `Tok`. -/
@@ -1666,9 +1575,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 theorem nonempty_strict_algHom (s : Setup.{w}) (B : TAlgebra s.T) (hk : IsStrict B.str) :
     Nonempty {g : AlgHom (colimAlg s) B // IsStrict g.hom} :=
@@ -1682,9 +1589,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 theorem nonempty_algHom (s : Setup.{w}) (B : TAlgebra s.T) (hk : IsStrict B.str) :
     Nonempty (AlgHom (colimAlg s) B) :=
@@ -1698,9 +1603,7 @@ universe w
 
 namespace Theorem614
 
-
 variable {α : Type w}
-
 
 end Theorem614
 end

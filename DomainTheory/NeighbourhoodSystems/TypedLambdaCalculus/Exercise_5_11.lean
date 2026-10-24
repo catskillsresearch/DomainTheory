@@ -1,41 +1,14 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_3
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_11
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import Mathlib.Algebra.FreeMonoid.Basic
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Ring.Parity
-public import Mathlib.Computability.PartrecBasis
-public import Mathlib.Data.List.Basic
-public import Mathlib.Data.Nat.Bits
-public import Mathlib.Data.Set.Image
-public import Mathlib.Logic.Equiv.Nat
-public import Mathlib.Order.Hom.Set
-public import Mathlib.Tactic.Ring
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_20
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 
 @[expose] public section
-
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise511
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
@@ -45,79 +18,39 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `fold : D × D^∞ → D^∞`, the inverse direction of `iterProdIso`. -/
 def fold : ApproximableMap (prod V (iterSys V)) (iterSys V) := ofIso (iterProdIso V).symm
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `iterProdIso` reads a stack as its head together with the tail sequence. -/
 theorem iterProdIso_apply (z : (iterSys V).Element) :
     iterProdIso V z = pair (component z 0) (ofSeq (fun n => component z (n + 1))) := rfl
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `push : D × D^∞ → D^∞`, prepend an element to a stack. -/
 def push : ApproximableMap (prod V (iterSys V)) (iterSys V) := fold V
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `unfold : D^∞ → D × D^∞`, the forward direction of `iterProdIso`. -/
 def unfold : ApproximableMap (iterSys V) (prod V (iterSys V)) := ofIso (iterProdIso V)
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `head : D^∞ → D`, the top of the stack. -/
 def head : ApproximableMap (iterSys V) V := (proj₀ V (iterSys V)).comp (unfold V)
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 @[simp] theorem head_apply (z : (iterSys V).Element) :
     (head V).toElementMap z = component z 0 := by
   rw [head, toElementMap_comp, unfold, toElementMap_ofIso, toElementMap_proj₀,
     iterProdIso_apply, fst_pair]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `tail : D^∞ → D^∞`, the stack with its top removed. -/
 def tail : ApproximableMap (iterSys V) (iterSys V) := (proj₁ V (iterSys V)).comp (unfold V)
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 @[simp] theorem tail_apply (z : (iterSys V).Element) :
     (tail V).toElementMap z = ofSeq (fun n => component z (n + 1)) := by
   rw [tail, toElementMap_comp, unfold, toElementMap_ofIso, toElementMap_proj₁,
     iterProdIso_apply, snd_pair]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- The argument domain of `map`: a stack of functions paired with a point, `(D → D)^∞ × D`. -/
 abbrev Arg (V : NeighborhoodSystem α) := prod (iterSys (funSpace V V)) V
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `diag : D → D^∞`, defined as the least fixed point of `s ↦ push(x, s)`. -/
 def diag : ApproximableMap V (iterSys V) :=
   (fixMap (iterSys V)).comp (curry (push V))
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- The body of the `map` recursion as a two-argument map
 `M(W, ⟨s, x⟩) = push((head s)(x), W(tail s, x))`, from which `map = fix(curry M)`. -/
@@ -137,35 +70,18 @@ def mapBody : ApproximableMap (prod (funSpace (Arg V) (iterSys V)) (Arg V)) (ite
               (proj₁ (funSpace (Arg V) (iterSys V)) (Arg V))))
             ((proj₁ (iterSys (funSpace V V)) V).comp
               (proj₁ (funSpace (Arg V) (iterSys V)) (Arg V)))))))
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- The `map` recursion operator `R(W) = λ⟨s, x⟩. push((head s)(x), W(tail s, x))`. -/
 def mapOp : ApproximableMap (funSpace (Arg V) (iterSys V)) (funSpace (Arg V) (iterSys V)) :=
   curry (mapBody V)
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `map : (D → D)^∞ × D → D^∞`, the least fixed point of `mapOp`. -/
 def mapMap : ApproximableMap (Arg V) (iterSys V) := toApproxMap (mapOp V).fixElement
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- `(tail z)ₙ = zₙ₊₁`. -/
 theorem component_tail (z : (iterSys V).Element) (n : ℕ) :
     component ((tail V).toElementMap z) n = component z (n + 1) := by
   rw [tail_apply, component_ofSeq]
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-
 end
 end DomainTheory.NeighbourhoodSystems.Exercise511
 

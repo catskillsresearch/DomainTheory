@@ -1,19 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-public import Mathlib.Algebra.Group.Nat.Defs
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Group.Submonoid.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.Monotone.Basic
-public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
@@ -100,7 +86,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- **Theorem 4.1 (Scott 1981, PRG-19).** `fixElement f` is the *least pre-fixed point*: if
 `f(z) ⊆ z`, then `x ⊆ z`. (Scott's induction: `Δ ∈ z`, and `X ∈ z`, `X f Y` give `Y ∈ f(z) ⊆ z`,
@@ -198,7 +183,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-
 /-- `fⁿ(⊥)` agrees with the iterated elementwise function `(f(·))^[n] ⊥` — Scott's `fⁿ(⊥)`. -/
 theorem iterElem_eq_iterate (f : ApproximableMap V V) (n : ℕ) :
     f.iterElem n = (f.toElementMap)^[n] V.bot := by
@@ -221,7 +205,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-
 /-- `Y ∈ fⁿ(⊥) ↔ Δ fⁿ Y`: the `n`-th approximant is the family of neighbourhoods reachable from
 `Δ` in exactly the `n` steps recorded by `fⁿ`. -/
 theorem mem_iterElem (f : ApproximableMap V V) (n : ℕ) {X : Set α} :
@@ -239,7 +222,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-
 /-- The approximants form an increasing chain: `n ≤ m ⟹ fⁿ(⊥) ⊑ fᵐ(⊥)`. -/
 theorem iterElem_mono (f : ApproximableMap V V) {n m : ℕ} (hnm : n ≤ m) :
     f.iterElem n ≤ f.iterElem m := by
@@ -254,7 +236,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- **Theorem 4.2(iii) (Scott 1981, PRG-19).** `fix(f) = ⊔ₙ fⁿ(⊥)`, here as the directed union of
 the increasing chain of approximants. -/
@@ -291,7 +272,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
-
 
 /-- **Theorem 4.1 (Scott 1981, PRG-19).** `fixElement f` is a *fixed point*: `f(x) = x`.
 `f(x) ⊆ x` appends an `f`-step (`Δ f^{n+1} X` from `Δ fⁿ X' f X`); `x ⊆ f(x)` reads off the last

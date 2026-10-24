@@ -1,23 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-public import Mathlib.Algebra.Group.Nat.Defs
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Group.Submonoid.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.Monotone.Basic
-public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_18
 
@@ -76,7 +59,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
 
-
 /-- **Exercise 4.13(3) (Scott 1981, PRG-19).** For any structured set `⟨Z, z, ·⟩` (`z : Z`,
 `op : Z → Z`) there is a *unique* `s : ℕ → Z` with `s(0) = z` and `s(n⁺) = (s n)·`. This is the
 choice-free recursion principle (`Nat.rec`); together with 4.13(1) it eliminates the circularity in
@@ -98,7 +80,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
 
-
 /-- `monoFix f ha ⊑ x` for every pre-fixed point `x` (`f(x) ⊑ x`). -/
 theorem monoFix_le_preFix (f : V.Element → V.Element) {a : V.Element} (ha : f a ≤ a)
     {x : V.Element} (hx : f x ≤ x) : monoFix f ha ≤ x :=
@@ -112,7 +93,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
 
-
 /-- `monoFix f ha ⊑ a`: the least fixed point lies below the given pre-fixed point `a`. -/
 theorem monoFix_le (f : V.Element → V.Element) {a : V.Element} (ha : f a ≤ a) :
     monoFix f ha ≤ a := monoFix_le_preFix f ha ha
@@ -124,7 +104,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
-
 
 /-- **Exercise 4.13(1) (Scott 1981, PRG-19).** `monoFix f ha` is the *least* fixed point: any `y`
 with `f(y) = y` satisfies `b ⊑ y`. -/
@@ -140,7 +119,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
 
-
 /-- The key step: `f(b) ⊑ b` where `b = monoFix f ha`, by monotonicity alone. -/
 theorem monoFix_preFix (f : V.Element → V.Element) (hf : Monotone f) {a : V.Element}
     (ha : f a ≤ a) : f (monoFix f ha) ≤ monoFix f ha := by
@@ -155,7 +133,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
-
 
 /-- **Exercise 4.13(1) (Scott 1981, PRG-19).** `monoFix f ha` is a fixed point: `f(b) = b`. (After
 `f(b) ⊑ b`, monotonicity gives `f(f(b)) ⊑ f(b)`, so `f(b)` is itself a pre-fixed point, whence
@@ -174,7 +151,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
-
 
 /-- **Exercise 4.13(4) (Scott 1981, PRG-19).** Specializing 4.13(3) to the structured set
 `⟨ℕ, 0, ⁺⟩`: the *unique* function `s` with `s(0) = 0` and `s(n⁺) = (s n)⁺` is the identity. This

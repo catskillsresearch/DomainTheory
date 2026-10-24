@@ -1,28 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
-public import Mathlib.CategoryTheory.Category.Basic
-public import Mathlib.Computability.MyhillNerode
-public import Mathlib.Data.Finset.Basic
-public import Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_13
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
@@ -74,9 +51,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **`(g₀ ∘ f₀) × (g₁ ∘ f₁) = (g₀ × g₁) ∘ (f₀ × f₁)`.** -/
 theorem prodMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys)
@@ -98,9 +73,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **`(I_{𝒟₀} × I_{𝒟₁}) = I_{𝒟₀×𝒟₁}`.** -/
 theorem prodMapTok_id :
@@ -121,9 +94,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **`prodMapTok` is strict** exactly when both components are strict. -/
 theorem prodMapTok_isStrict {f₀ : ApproximableMap A₀.sys B₀.sys}
@@ -140,9 +111,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- `prodMapTok` is monotone in both arguments. -/
 theorem prodMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
@@ -158,9 +127,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- The product carries the subsystem relation componentwise. -/
 theorem prodTok_subsystem (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
@@ -201,9 +168,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise510
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **`(g₀ ∘ f₀) + (g₁ ∘ f₁) = (g₀ + g₁) ∘ (f₀ + f₁)`.** -/
 theorem sumMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys)
@@ -242,9 +207,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **Functor law 2 — `T(g ∘ f) = T(g) ∘ T(f)`.** Every construct `T` preserves composition; together
 with `map_id` this shows *these are all functors*. -/
@@ -267,9 +230,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **`(I_{𝒟₀} + I_{𝒟₁}) = I_{𝒟₀+𝒟₁}`.** -/
 theorem sumMapTok_id :
@@ -299,9 +260,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **Functor law 1 — `T(I_X) = I_{T(X)}`.** Every construct `T` preserves identities. -/
 theorem FExpr.map_id : (T : FExpr) → (X : ScottSys) → T.map (idMap X.sys) = idMap (T.obj X).sys
@@ -322,9 +281,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **`sumMapTok` is strict** for *any* component maps: the master input `Λ` (the only neighbourhood
 containing the empty string) relates only to the output master. -/
@@ -343,9 +300,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **Every `T` preserves strictness** (so it restricts to Scott's category of strict maps): `T(f)`
 is strict whenever `f` is (and constants/sums are strict unconditionally). -/
@@ -363,9 +318,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- `sumMapTok` is monotone in both arguments. -/
 theorem sumMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
@@ -383,9 +336,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **`λf. T(f)` is monotone.** A sharper map `f ≤ f'` is sent to a sharper image `T(f) ≤ T(f')` —
 the monotonicity half of *continuous on maps*. -/
@@ -402,9 +353,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- Forward direction of continuity on maps: a related pair of `T(f)` is already related by some
 `T(gᵢ)`. -/
@@ -436,9 +385,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **`λf. T(f)` is continuous on maps.** For a non-empty directed family `gᵢ` with pointwise union
 `f`, the relation of `T(f)` is the union of those of the `T(gᵢ)` — `T(f)` is approximable. -/
@@ -459,9 +406,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- The sum carries the subsystem relation componentwise: `𝒟₀ ◁ ℰ₀` and `𝒟₁ ◁ ℰ₁` give
 `𝒟₀+𝒟₁ ◁ ℰ₀+ℰ₁`. -/
@@ -497,9 +442,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **`λX. T(X)` is monotone on domains.** Whenever `X ◁ Y` we have `T(X) ◁ T(Y)`. -/
 theorem FExpr.obj_subsystem : (T : FExpr) → {X Y : ScottSys} → X.sys ◁ Y.sys →
@@ -515,9 +458,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- Forward direction of continuity on domains: a neighbourhood of `T(U)` is a neighbourhood of some
 `T(D)` with `D ∈ ℱ`. -/
@@ -549,9 +490,7 @@ end
 section
 namespace Exercise619
 
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
 
 /-- **`λD. T(D)` is continuous on domains.** For a non-empty `◁`-directed family `ℱ` of subsystems of
 `U` whose union is `U`, the neighbourhood family of `T(U)` is the union of those of the `T(D)`. -/

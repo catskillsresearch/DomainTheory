@@ -1,29 +1,9 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_24
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-public import Mathlib.Algebra.Group.Nat.Defs
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Group.Submonoid.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.Monotone.Basic
-public import Mathlib.Tactic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
-
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Definition_4_5
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
 
 @[expose] public section
-
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise422
 open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
@@ -34,10 +14,6 @@ variable {M : Type*} (zero : M) (succ : M → M)
 /-- Scott's operator `g(x) = {0} ∪ x⁺` on `P(N*)`, whose least fixed point is the smallest subset
 containing `0` and closed under the successor. -/
 def genOp (x : Set M) : Set M := {zero} ∪ succ '' x
-end
-
-section
-variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- *(For set theorists.)* The standard natural numbers `⟨ℕ, 0, ⁺⟩` form a model of Peano's Axioms;
 their existence is the **axiom of infinity**. (This witnesses that an `N*` satisfying (i)/(ii) — in
@@ -52,24 +28,12 @@ def natPeano : PeanoModel ℕ where
     induction n with
     | zero => exact h0
     | succ k ih => exact hstep k ih
-end
-
-section
-variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- The carved-out subset `N ⊆ N*`: the least fixed point of `g` (Exercise 4.13(2)/4.14). -/
 def nats : Set M := lfpSet (genOp zero succ)
-end
-
-section
-variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- The subtype `N = {m // m ∈ nats}` carrying the carved-out Peano structure. -/
 abbrev Nat' : Type _ := {m : M // m ∈ nats zero succ}
-end
-
-section
-variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- **Induction by minimality.** Any subset `s ⊆ N*` containing `0` and closed under `⁺` contains
 all of `N`. (This is the heart of axiom (iii): `s` is a pre-fixed point of `g`, hence dominates the
@@ -80,44 +44,23 @@ theorem nats_induction (s : Set M) (h0 : zero ∈ s) (hsucc : ∀ n ∈ s, succ 
   rintro x (rfl | ⟨n, hn, rfl⟩)
   · exact h0
   · exact hsucc n hn
-end
-
-section
-variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- `N` is closed under the successor: `n ∈ N ⟹ n⁺ ∈ N` — again directly from `lfpSet`. -/
 theorem succ_mem_nats {n : M} (hn : n ∈ nats zero succ) : succ n ∈ nats zero succ := by
   intro x hx
   exact hx (Or.inr ⟨n, hn x hx, rfl⟩)
-end
-
-section
-variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- The successor of the subtype (well-defined by closure `succ_mem_nats`). -/
 def subSucc (n : Nat' zero succ) : Nat' zero succ := ⟨succ n.1, succ_mem_nats zero succ n.2⟩
-end
-
-section
-variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- `0 ∈ N` — directly from the `lfpSet` definition (no monotonicity needed), keeping the
 construction choice-free. -/
 theorem zero_mem_nats : zero ∈ nats zero succ := by
   intro x hx
   exact hx (Or.inl rfl)
-end
-
-section
-variable {M : Type*} (zero : M) (succ : M → M)
 
 /-- The zero of the subtype. -/
 def subZero : Nat' zero succ := ⟨zero, zero_mem_nats zero succ⟩
-end
-
-section
-variable {M : Type*} (zero : M) (succ : M → M)
-
 end
 end DomainTheory.NeighbourhoodSystems.Exercise422
 

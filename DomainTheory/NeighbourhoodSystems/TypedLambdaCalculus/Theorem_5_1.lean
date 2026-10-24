@@ -1,34 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_3
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_11
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_25
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_21
-public import Mathlib.Algebra.FreeMonoid.Basic
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Ring.Parity
-public import Mathlib.Computability.PartrecBasis
-public import Mathlib.Data.List.Basic
-public import Mathlib.Data.Nat.Bits
-public import Mathlib.Data.Set.Image
-public import Mathlib.Logic.Equiv.Nat
-public import Mathlib.Order.Hom.Set
-public import Mathlib.Tactic.Ring
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_20
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
@@ -61,7 +32,6 @@ variable {α β γ δ : Type*}
 
 namespace Theorem51
 
-
 /-- **Theorem 5.1, application case (Scott 1981, PRG-19).** If `⟦σ₀⟧ : Γ → (𝒟₀ → 𝒟₁)` and
 `⟦σ₁⟧ : Γ → 𝒟₀` are approximable, then `σ₀(σ₁)` is interpreted by `eval ∘ ⟨⟦σ₀⟧, ⟦σ₁⟧⟩`
 (approximable by Thm 3.11 and Thm 2.5), with value `(σ₀ w)(σ₁ w)`. -/
@@ -80,7 +50,6 @@ variable {α β γ δ : Type*}
 
 namespace Theorem51
 
-
 /-- **Theorem 5.1, constant case (Scott 1981, PRG-19).** A constant `k` is interpreted by the
 constant map, which is approximable with value `k`. -/
 theorem const_apply (k : V₁.Element) (x : V₀.Element) :
@@ -94,7 +63,6 @@ variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 namespace Theorem51
-
 
 /-- **Theorem 5.1, tuple case (Scott 1981, PRG-19).** If `⟦σ₀⟧, ⟦σ₁⟧` are approximable, so is the
 tuple `⟨⟦σ₀⟧, ⟦σ₁⟧⟩ = paired`, with value `⟨σ₀(w), σ₁(w)⟩`. -/
@@ -110,7 +78,6 @@ variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 namespace Theorem51
-
 
 /-- **Theorem 5.1, variable case (Scott 1981, PRG-19).** A free variable is interpreted by a
 projection of the context; the projections are approximable with `p₀⟨x,y⟩ = x`, `p₁⟨x,y⟩ = y`. -/
@@ -474,7 +441,6 @@ variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 namespace Theorem51
-
 
 theorem var_snd (x : V₀.Element) (y : V₁.Element) :
     (proj₁ V₀ V₁).toElementMap (pair x y) = y := by rw [toElementMap_proj₁, snd_pair]

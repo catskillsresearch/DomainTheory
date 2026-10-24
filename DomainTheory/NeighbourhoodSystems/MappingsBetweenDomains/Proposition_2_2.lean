@@ -38,24 +38,9 @@ def toElementMap (f : ApproximableMap V₀ V₁) (x : V₀.Element) : V₁.Eleme
   up_mem := by
     rintro Y Y' ⟨X, hX, hXY⟩ hY' hYY'
     exact ⟨X, hX, f.mono hXY subset_rfl hYY' (x.sub hX) hY'⟩
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 @[simp] theorem mem_toElementMap (f : ApproximableMap V₀ V₁) (x : V₀.Element) {Y : Set β} :
     (f.toElementMap x).mem Y ↔ ∃ X, x.mem X ∧ f.rel X Y := Iff.rfl
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /-- **Proposition 2.2(ii) (Scott 1981, PRG-19).** The relation is recovered from the elementwise
 map: for `X ∈ 𝒟₀`, `X f Y ↔ Y ∈ f(↑X)`. (`→` since `X ∈ ↑X`; `←` since any `Z ∈ ↑X` has `X ⊆ Z`,
@@ -67,14 +52,6 @@ theorem rel_iff_mem_principal (f : ApproximableMap V₀ V₁) {X : Set α} (hX :
     exact ⟨X, ⟨hX, subset_rfl⟩, hXY⟩
   · rintro ⟨Z, ⟨_, hXZ⟩, hZY⟩
     exact f.mono hZY hXZ subset_rfl hX (f.rel_cod hZY)
-end
-
-section
-variable {α β γ δ : Type*}
-
-
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 /-- **Proposition 2.2(iv) (Scott 1981, PRG-19).** Two approximable maps are *identical as relations*
 iff they induce the same elementwise function: `(∀ x, f(x) = g(x)) ⟹ f = g`. For neighbourhoods `X`
@@ -105,11 +82,13 @@ theorem sSupDirected_le (V : NeighborhoodSystem α) (S : Set V.Element) (hne : S
   rintro Z ⟨s, hs, hsZ⟩
   exact hy s hs Z hsZ
 
-end NeighborhoodSystem
-end
+/-- Each member of a directed family approximates the directed union. -/
+theorem le_sSupDirected (V : NeighborhoodSystem α) (S : Set V.Element) (hne : S.Nonempty)
+    (hdir : ∀ a ∈ S, ∀ b ∈ S, ∃ c ∈ S, a ≤ c ∧ b ≤ c) {a : V.Element} (ha : a ∈ S) :
+    a ≤ V.sSupDirected S hne hdir :=
+  fun _ hZ => ⟨a, ha, hZ⟩
 
-section
-variable {α β γ δ : Type*}
+end NeighborhoodSystem
 
 namespace ApproximableMap
 
