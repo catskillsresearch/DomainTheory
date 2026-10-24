@@ -4,8 +4,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_3
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_2
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import Mathlib.Algebra.Group.End
 @[expose] public section
 
 section
@@ -60,6 +58,14 @@ theorem ofMap₂_toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) : ofMap₂
   · intro hrel
     exact ⟨f.rel_dom hrel, by rwa [← prodNbhd_preimage (f.rel_dom hrel)]⟩
 
+/-- Extensionality for two-variable approximable mappings. -/
+theorem ApproximableMap₂.ext {f g : ApproximableMap₂ V₀ V₁ V₂}
+    (h : ∀ X Y Z, f.rel X Y Z ↔ g.rel X Y Z) : f = g := by
+  obtain ⟨rf, _, _, _, _, _, _⟩ := f
+  obtain ⟨rg, _, _, _, _, _, _⟩ := g
+  have : rf = rg := by funext X Y Z; exact propext (h X Y Z)
+  subst this; rfl
+
 theorem toMap₂_ofMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) : toMap₂ (ofMap₂ f) = f := by
   apply ApproximableMap₂.ext
   intro X Y Z
@@ -80,68 +86,17 @@ def map₂Equiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V
   left_inv := ofMap₂_toMap₂
   right_inv := toMap₂_ofMap₂
 
-/-- An approximable map relates any input neighbourhood to the master output `Δ₁`. -/
-theorem ApproximableMap.rel_master (f : ApproximableMap V₀ V₁) {X : Set α} (hX : V₀.mem X) :
-    f.rel X V₁.master :=
-  f.mono f.master_rel (V₀.sub_master hX) subset_rfl hX V₁.master_mem
-end
-
-section
-open NeighborhoodSystem
-variable {α β γ δ : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-/-- **Proposition 3.2(i) (Scott 1981, PRG-19).** `⟨x, y⟩ ⊑ ⟨x', y'⟩ ↔ x ⊑ x' ∧ y ⊑ y'`. -/
-theorem pair_le_pair_iff {x x' : V₀.Element} {y y' : V₁.Element} :
-    pair x y ≤ pair x' y' ↔ x ≤ x' ∧ y ≤ y' := by
-  constructor
-  · intro h
-    refine ⟨fun X hX => ?_, fun Y hY => ?_⟩
-    · obtain ⟨X', Y', hX', hY', heq⟩ :=
-        h (prodNbhd X V₁.master) ⟨X, V₁.master, hX, y.master_mem, rfl⟩
-      obtain ⟨rfl, _⟩ := prodNbhd_injective heq
-      exact hX'
-    · obtain ⟨X', Y', hX', hY', heq⟩ :=
-        h (prodNbhd V₀.master Y) ⟨V₀.master, Y, x.master_mem, hY, rfl⟩
-      obtain ⟨_, rfl⟩ := prodNbhd_injective heq
-      exact hY'
-  · rintro ⟨hx, hy⟩ W ⟨X, Y, hX, hY, rfl⟩
-    exact ⟨X, Y, hx X hX, hy Y hY, rfl⟩
-end
-
-section
-open NeighborhoodSystem
-variable {α β γ δ : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₂ : NeighborhoodSystem γ}
-open ApproximableMap
-
-/-- **Proposition 3.4(iv) (Scott 1981, PRG-19).** `⟨f, g⟩(w) = ⟨f(w), g(w)⟩`. -/
-theorem toElementMap_paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁)
-    (w : V₂.Element) :
-    (paired f g).toElementMap w = pair (f.toElementMap w) (g.toElementMap w) := by
+/-- **Theorem 3.5 (elementwise) (Scott 1981, PRG-19).** The two-variable elementwise map of
+`toMap₂ f` is `f` evaluated at the pairing: `(toMap₂ f)(x, y) = f(⟨x, y⟩)`. -/
+theorem toElementMap₂_toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) (x : V₀.Element) (y : V₁.Element) :
+    (toMap₂ f).toElementMap₂ x y = f.toElementMap (pair x y) := by
   apply Element.ext
-  intro P
+  intro Z
   constructor
-  · rintro ⟨Z, hwZ, hP, hfZ, hgZ⟩
-    exact ⟨Sum.inl ⁻¹' P, Sum.inr ⁻¹' P, ⟨Z, hwZ, hfZ⟩, ⟨Z, hwZ, hgZ⟩, prodNbhd_preimage hP⟩
-  · rintro ⟨X, Y, ⟨Z₁, hwZ₁, hfZ₁⟩, ⟨Z₂, hwZ₂, hgZ₂⟩, rfl⟩
-    refine ⟨Z₁ ∩ Z₂, w.inter_mem hwZ₁ hwZ₂, prod_mem_prodNbhd (f.rel_cod hfZ₁) (g.rel_cod hgZ₂),
-      ?_, ?_⟩
-    · rw [inl_preimage_prodNbhd]
-      exact f.mono hfZ₁ Set.inter_subset_left subset_rfl (w.sub (w.inter_mem hwZ₁ hwZ₂))
-        (f.rel_cod hfZ₁)
-    · rw [inr_preimage_prodNbhd]
-      exact g.mono hgZ₂ Set.inter_subset_right subset_rfl (w.sub (w.inter_mem hwZ₁ hwZ₂))
-        (g.rel_cod hgZ₂)
-
-/-- **Proposition 3.4(iii) (Scott 1981, PRG-19).** `h = ⟨p₀ ∘ h, p₁ ∘ h⟩`. -/
-theorem paired_proj (h : ApproximableMap V₂ (prod V₀ V₁)) :
-    paired ((proj₀ V₀ V₁).comp h) ((proj₁ V₀ V₁).comp h) = h := by
-  apply ext_of_toElementMap
-  intro w
-  rw [toElementMap_paired, toElementMap_comp, toElementMap_comp, toElementMap_proj₀,
-    toElementMap_proj₁, pair_fst_snd]
+  · rintro ⟨X, Y, hX, hY, hrel⟩
+    exact ⟨prodNbhd X Y, ⟨X, Y, hX, hY, rfl⟩, hrel⟩
+  · rintro ⟨W, ⟨X, Y, hX, hY, rfl⟩, hrel⟩
+    exact ⟨X, Y, hX, hY, hrel⟩
 
 end
 end DomainTheory.NeighbourhoodSystems

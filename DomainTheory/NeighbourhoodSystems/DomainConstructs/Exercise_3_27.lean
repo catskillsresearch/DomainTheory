@@ -1,15 +1,138 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_20
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_28
-
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
+public import Mathlib.Order.Directed
 @[expose] public section
 
 section
 namespace DomainTheory.NeighbourhoodSystems.Exercise327
 section
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
+
+section
+variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+/-- The **graph** of an approximable map, as a set of neighbourhood pairs. -/
+def graph (f : ApproximableMap V₀ V₁) : Set (Set α × Set β) := {p | f.rel p.1 p.2}
+
+@[simp] theorem mem_graph {f : ApproximableMap V₀ V₁} {p : Set α × Set β} :
+    p ∈ graph f ↔ f.rel p.1 p.2 := Iff.rfl
+
+/-- Scott's family `C`: all graphs of approximable maps `𝒟₀ → 𝒟₁`. -/
+def C (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) : Set (Set (Set α × Set β)) :=
+  Set.range (graph (V₀ := V₀) (V₁ := V₁))
+
+theorem C_nonempty : (C V₀ V₁).Nonempty :=
+  ⟨graph (constMap V₀ V₁.bot), constMap V₀ V₁.bot, rfl⟩
+
+theorem graph_injective : Function.Injective (graph (V₀ := V₀) (V₁ := V₁)) :=
+  fun _ _ h => ApproximableMap.ext fun X Y => Set.ext_iff.mp h (X, Y)
+
+/-- `graph` is an order-isomorphism of approximable maps (under `⊑`) onto the family `C`
+(under `⊆`). -/
+noncomputable def graphEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
+    ApproximableMap V₀ V₁ ≃o {X : Set (Set α × Set β) // X ∈ C V₀ V₁} where
+  toFun f := ⟨graph f, f, rfl⟩
+  invFun X := X.2.choose
+  left_inv f := graph_injective (⟨graph f, f, rfl⟩ : {X // X ∈ C V₀ V₁}).2.choose_spec
+  right_inv X := Subtype.ext X.2.choose_spec
+  map_rel_iff' := by
+    intro f g
+    show graph f ⊆ graph g ↔ f ≤ g
+    rw [ApproximableMap.le_iff]
+    exact ⟨fun h X Y hf => h (a := (X, Y)) hf, fun h p hp => h p.1 p.2 hp⟩
+
+/-- The **join** `⋁ 𝒮` of a directed family of approximable maps: `X (⋁𝒮) Y` iff `(X, Y)` lies in
+some member. Directedness is what restores the intersectivity condition (ii). -/
+def joinMap (𝒮 : Set (Set (Set α × Set β))) (h𝒮 : 𝒮 ⊆ C V₀ V₁) (hne : 𝒮.Nonempty)
+    (hdir : DirectedOn (· ⊆ ·) 𝒮) : ApproximableMap V₀ V₁ where
+  rel X Y := ∃ S ∈ 𝒮, (X, Y) ∈ S
+  rel_dom := by rintro X Y ⟨S, hS, hp⟩; obtain ⟨f, rfl⟩ := h𝒮 hS; exact f.rel_dom hp
+  rel_cod := by rintro X Y ⟨S, hS, hp⟩; obtain ⟨f, rfl⟩ := h𝒮 hS; exact f.rel_cod hp
+  master_rel := by
+    obtain ⟨S, hS⟩ := hne; obtain ⟨f, rfl⟩ := h𝒮 hS
+    exact ⟨graph f, hS, f.master_rel⟩
+  inter_right := by
+    rintro X Y Y' ⟨S, hS, hp⟩ ⟨S', hS', hp'⟩
+    obtain ⟨S₃, hS₃, hSS₃, hS'S₃⟩ := hdir S hS S' hS'
+    obtain ⟨f, rfl⟩ := h𝒮 hS₃
+    exact ⟨graph f, hS₃, f.inter_right (hSS₃ hp) (hS'S₃ hp')⟩
+  mono := by
+    rintro X X' Y Y' ⟨S, hS, hp⟩ hX'X hYY' hX' hY'
+    obtain ⟨f, rfl⟩ := h𝒮 hS
+    exact ⟨graph f, hS, f.mono hp hX'X hYY' hX' hY'⟩
+
+/-- The pointwise **meet** `⋀ 𝒮` of a family of approximable maps (drawn from `C`): `X (⋀𝒮) Y` iff
+`(X, Y)` lies in every member of `𝒮`. -/
+def meetMap (𝒮 : Set (Set (Set α × Set β))) (h𝒮 : 𝒮 ⊆ C V₀ V₁) (hne : 𝒮.Nonempty) :
+    ApproximableMap V₀ V₁ where
+  rel X Y := ∀ S ∈ 𝒮, (X, Y) ∈ S
+  rel_dom := by
+    intro X Y h
+    obtain ⟨S, hS⟩ := hne; obtain ⟨f, rfl⟩ := h𝒮 hS
+    exact f.rel_dom (h _ hS)
+  rel_cod := by
+    intro X Y h
+    obtain ⟨S, hS⟩ := hne; obtain ⟨f, rfl⟩ := h𝒮 hS
+    exact f.rel_cod (h _ hS)
+  master_rel := by
+    intro S hS; obtain ⟨f, rfl⟩ := h𝒮 hS; exact f.master_rel
+  inter_right := by
+    intro X Y Y' hY hY' S hS
+    obtain ⟨f, rfl⟩ := h𝒮 hS
+    exact f.inter_right (hY _ hS) (hY' _ hS)
+  mono := by
+    intro X X' Y Y' h hX'X hYY' hX' hY' S hS
+    obtain ⟨f, rfl⟩ := h𝒮 hS
+    exact f.mono (h _ hS) hX'X hYY' hX' hY'
+
+theorem sInter_eq_graph_meetMap (𝒮 : Set (Set (Set α × Set β))) (h𝒮 : 𝒮 ⊆ C V₀ V₁)
+    (hne : 𝒮.Nonempty) : ⋂₀ 𝒮 = graph (meetMap 𝒮 h𝒮 hne) := by
+  ext p
+  simp only [Set.mem_sInter, mem_graph]
+  exact ⟨fun h S hS => h S hS, fun h S hS => h S hS⟩
+
+/-- **Exercise 2.22 hypothesis (i).** `C` is closed under non-empty intersections. -/
+theorem C_inter : ∀ 𝒮 : Set (Set (Set α × Set β)), 𝒮.Nonempty → 𝒮 ⊆ C V₀ V₁ → ⋂₀ 𝒮 ∈ C V₀ V₁ := by
+  intro 𝒮 hne h𝒮
+  rw [sInter_eq_graph_meetMap 𝒮 h𝒮 hne]
+  exact ⟨meetMap 𝒮 h𝒮 hne, rfl⟩
+
+theorem sUnion_eq_graph_joinMap (𝒮 : Set (Set (Set α × Set β))) (h𝒮 : 𝒮 ⊆ C V₀ V₁)
+    (hne : 𝒮.Nonempty) (hdir : DirectedOn (· ⊆ ·) 𝒮) :
+    ⋃₀ 𝒮 = graph (joinMap 𝒮 h𝒮 hne hdir) := by
+  ext p
+  simp only [Set.mem_sUnion, mem_graph]
+  exact ⟨fun ⟨S, hS, hp⟩ => ⟨S, hS, hp⟩, fun ⟨S, hS, hp⟩ => ⟨S, hS, hp⟩⟩
+
+/-- **Exercise 2.22 hypothesis (ii).** `C` is closed under directed unions. -/
+theorem C_dir : ∀ 𝒮 : Set (Set (Set α × Set β)), 𝒮.Nonempty → 𝒮 ⊆ C V₀ V₁ →
+    DirectedOn (· ⊆ ·) 𝒮 → ⋃₀ 𝒮 ∈ C V₀ V₁ := by
+  intro 𝒮 hne h𝒮 hdir
+  rw [sUnion_eq_graph_joinMap 𝒮 h𝒮 hne hdir]
+  exact ⟨joinMap 𝒮 h𝒮 hne hdir, rfl⟩
+
+end
+
+section
+set_option linter.unusedVariables false
+
+theorem example_327.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+  {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β} (𝒮 : Set (Set (Prod (Set α) (Set β)))),
+  @Set.Nonempty (Set (Prod (Set α) (Set β))) 𝒮 →
+    @LE.le (Set (Set (Prod (Set α) (Set β)))) (@Set.instLE (Set (Prod (Set α) (Set β)))) 𝒮
+        (@DomainTheory.NeighbourhoodSystems.Exercise327.C α β V₀ V₁) →
+      @DirectedOn (Set (Prod (Set α) (Set β)))
+          (fun (x1 x2 : Set (Prod (Set α) (Set β))) =>
+            @LE.le (Set (Prod (Set α) (Set β))) (@Set.instLE (Prod (Set α) (Set β))) x1 x2)
+          𝒮 →
+        @Membership.mem (Set (Prod (Set α) (Set β))) (Set (Set (Prod (Set α) (Set β))))
+          (@Set.instMembership (Set (Prod (Set α) (Set β))))
+          (@DomainTheory.NeighbourhoodSystems.Exercise327.C α β V₀ V₁) (@Set.sUnion (Prod (Set α) (Set β)) 𝒮) :=
+  @DomainTheory.NeighbourhoodSystems.Exercise327.C_dir
+end
+
 section
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 /- concordance: source L1627 EXERCISE 3.27 function space via closure -/
@@ -26,159 +149,4 @@ end
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise327
-namespace DomainTheory.NeighbourhoodSystems.Exercise325
-section
-
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set
-
-/-- The **Sierpiński domain** `𝒪`: the system over a one-token type whose neighbourhoods are `Δ`
-(`univ`) and `∅`. Its elements are `⊥` (only `Δ`) and `⊤` (also `∅`), i.e. the two-point domain. -/
-def sierpinski : NeighborhoodSystem Unit where
-  mem N := N = Set.univ ∨ N = ∅
-  master := Set.univ
-  master_nonempty := ⟨(), Set.mem_univ _⟩
-  master_mem := Or.inl rfl
-  inter_mem := by
-    intro X Y Z hX hY hZ _
-    rcases hX with rfl | rfl
-    · rcases hY with rfl | rfl
-      · left; rw [Set.univ_inter]
-      · right; rw [Set.univ_inter]
-    · right; rw [Set.empty_inter]
-  sub_master := fun _ => Set.subset_univ _
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-/-- `mapOfOpen U : 𝒟 → 𝒪`. It always relates `X` to the blunt neighbourhood `univ` of `𝒪`, and
-relates `X` to the sharp neighbourhood `∅` exactly when the basic open `[X]` lies inside `U`. As an
-elementwise map it sends `x` to `⊤` iff `x ∈ U`. -/
-def mapOfOpen (U : Set V.Element) : ApproximableMap V sierpinski where
-  rel X Y := V.mem X ∧ (Y = Set.univ ∨ (Y = ∅ ∧ V.basicOpen X ⊆ U))
-  rel_dom h := h.1
-  rel_cod h := by
-    rcases h.2 with rfl | ⟨rfl, _⟩
-    · exact Or.inl rfl
-    · exact Or.inr rfl
-  master_rel := ⟨V.master_mem, Or.inl rfl⟩
-  inter_right := by
-    rintro X Y Y' ⟨hX, hY⟩ ⟨_, hY'⟩
-    refine ⟨hX, ?_⟩
-    rcases hY with rfl | ⟨rfl, hsub⟩
-    · rcases hY' with rfl | ⟨rfl, hsub'⟩
-      · left; rw [Set.univ_inter]
-      · right; rw [Set.univ_inter]; exact ⟨rfl, hsub'⟩
-    · rcases hY' with rfl | ⟨rfl, _⟩
-      · right; rw [Set.inter_univ]; exact ⟨rfl, hsub⟩
-      · right; rw [Set.inter_self]; exact ⟨rfl, hsub⟩
-  mono := by
-    rintro X X' Y Y' ⟨hX, hY⟩ hX'X hYY' hX' hY'
-    refine ⟨hX', ?_⟩
-    rcases hY' with rfl | rfl
-    · left; rfl
-    · right
-      refine ⟨rfl, ?_⟩
-      rcases hY with rfl | ⟨rfl, hsub⟩
-      · exact absurd (hYY' (Set.mem_univ ())) (by simp)
-      · have hbo : V.basicOpen X' ⊆ V.basicOpen X := fun z hz => z.up_mem hz hX hX'X
-        exact subset_trans hbo hsub
-
-@[simp] theorem mapOfOpen_rel (U : Set V.Element) (X : Set α) (Y : Set Unit) :
-    (mapOfOpen V U).rel X Y ↔ V.mem X ∧ (Y = Set.univ ∨ (Y = ∅ ∧ V.basicOpen X ⊆ U)) := Iff.rfl
-
-/-- The decisive special case: `X (mapOfOpen U) ∅ ↔ [X] ⊆ U` (for a neighbourhood `X`). -/
-theorem mapOfOpen_rel_empty (U : Set V.Element) (X : Set α) :
-    (mapOfOpen V U).rel X ∅ ↔ V.mem X ∧ V.basicOpen X ⊆ U := by
-  rw [mapOfOpen_rel]
-  constructor
-  · rintro ⟨hX, h⟩
-    refine ⟨hX, ?_⟩
-    rcases h with h | ⟨_, h⟩
-    · exact absurd h Set.empty_ne_univ
-    · exact h
-  · rintro ⟨hX, h⟩
-    exact ⟨hX, Or.inr ⟨rfl, h⟩⟩
-
-/-- `openOfMap f = {x ∣ f(x) = ⊤} = ⋃ {[X] ∣ X f ∅}`: the points sent by `f` to the top of `𝒪`. -/
-def openOfMap (f : ApproximableMap V sierpinski) : Set V.Element :=
-  {x | ∃ X, x.mem X ∧ f.rel X ∅}
-
-/-- `openOfMap f` is open: it is a union of basic opens `[X]`. -/
-theorem openOfMap_isOpen (f : ApproximableMap V sierpinski) : IsOpen (openOfMap V f) := by
-  constructor
-  intro x hx
-  obtain ⟨X, hxX, hf⟩ := hx
-  exact ⟨X, hxX, fun z hz => ⟨X, hz, hf⟩⟩
-
-end
-
-section
-set_option linter.unusedVariables false
-
-theorem example_325.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-  (f :
-    @DomainTheory.NeighbourhoodSystems.ApproximableMap α Unit V
-      DomainTheory.NeighbourhoodSystems.Exercise325.sierpinski),
-  @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V)
-    (@DomainTheory.NeighbourhoodSystems.Exercise325.openOfMap α V f) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise325.openOfMap_isOpen
-end
-
-section
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-/-- **Exercise 3.25 (core).** The open subsets of `|𝒟|` (ordered by `⊆`) are order-isomorphic to the
-approximable maps `𝒟 → 𝒪`. -/
-def openIso (V : NeighborhoodSystem α) :
-    {U : Set V.Element // IsOpen U} ≃o ApproximableMap V sierpinski where
-  toFun U := mapOfOpen V U.1
-  invFun f := ⟨openOfMap V f, openOfMap_isOpen V f⟩
-  left_inv U := by
-    apply Subtype.ext
-    ext x
-    constructor
-    · rintro ⟨X, hxX, hrel⟩
-      rw [mapOfOpen_rel_empty] at hrel
-      exact hrel.2 hxX
-    · intro hx
-      obtain ⟨X, hxX, hsub⟩ := U.2.out x hx
-      exact ⟨X, hxX, (mapOfOpen_rel_empty V U.1 X).mpr ⟨x.sub hxX, hsub⟩⟩
-  right_inv f := by
-    apply ApproximableMap.ext
-    intro X Y
-    rw [mapOfOpen_rel]
-    constructor
-    · rintro ⟨hX, hd⟩
-      rcases hd with rfl | ⟨rfl, hsub⟩
-      · exact f.mono f.master_rel (V.sub_master hX) (Set.subset_univ _) hX (Or.inl rfl)
-      · have hpr : V.principal hX ∈ V.basicOpen X := ⟨hX, subset_rfl⟩
-        obtain ⟨X', hX', hf⟩ := hsub hpr
-        exact f.mono hf hX'.2 subset_rfl hX (Or.inr rfl)
-    · intro hf
-      refine ⟨f.rel_dom hf, ?_⟩
-      rcases f.rel_cod hf with rfl | rfl
-      · left; rfl
-      · exact Or.inr ⟨rfl, fun z hz => ⟨X, hz, hf⟩⟩
-  map_rel_iff' := by
-    intro a b
-    show mapOfOpen V a.1 ≤ mapOfOpen V b.1 ↔ a ≤ b
-    rw [ApproximableMap.le_iff]
-    constructor
-    · intro h x hx
-      obtain ⟨X, hxX, hsub⟩ := a.2.out x hx
-      have hrelB := h X ∅ ((mapOfOpen_rel_empty V a.1 X).mpr ⟨x.sub hxX, hsub⟩)
-      rw [mapOfOpen_rel_empty] at hrelB
-      exact hrelB.2 hxX
-    · intro h X Y hrel
-      rw [mapOfOpen_rel] at hrel ⊢
-      obtain ⟨hX, hd⟩ := hrel
-      refine ⟨hX, ?_⟩
-      rcases hd with hu | ⟨he, hsub⟩
-      · exact Or.inl hu
-      · exact Or.inr ⟨he, fun z hz => h (hsub hz)⟩
-
-end
-end
-end DomainTheory.NeighbourhoodSystems.Exercise325
 end

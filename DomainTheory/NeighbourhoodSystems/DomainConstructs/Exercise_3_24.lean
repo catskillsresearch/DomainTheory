@@ -4,6 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_10
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_4
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_5
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_18
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_19
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5
 @[expose] public section
@@ -226,6 +229,252 @@ theorem example_324_iter.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {V₀ 
     (@DomainTheory.NeighbourhoodSystems.iterSys (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V₀ V₁)
       (@DomainTheory.NeighbourhoodSystems.funSpace α β V₀ V₁)) :=
   @DomainTheory.NeighbourhoodSystems.funIter_isomorphic
+end
+
+section
+open NeighborhoodSystem ApproximableMap
+variable {α β γ : Type*}
+variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
+variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
+
+/-- **Exercise 3.24(iv) (Scott 1981, PRG-19).** The *copairing* `[a, b] : 𝒟₀ + 𝒟₁ → 𝒟₂`: a left copy
+`0X` is routed through `a`, a right copy `1Y` through `b`, and the basepoint `Λ` to `⊥` (so `Λ`
+relates only to `Δ₂`). -/
+def copair (a : ApproximableMap V₀ V₂) (b : ApproximableMap V₁ V₂) :
+    ApproximableMap (sum V₀ V₁ h₀ h₁) V₂ where
+  rel W Z := (sum V₀ V₁ h₀ h₁).mem W ∧ V₂.mem Z ∧
+    (Z = V₂.master ∨
+      (∃ X, W = inj₀ X ∧ a.rel X Z) ∨
+      (∃ Y, W = inj₁ Y ∧ b.rel Y Z))
+  rel_dom h := h.1
+  rel_cod h := h.2.1
+  master_rel := ⟨(sum V₀ V₁ h₀ h₁).master_mem, V₂.master_mem, Or.inl rfl⟩
+  inter_right := by
+    rintro W Z Z' ⟨hW, _, hd⟩ ⟨_, _, hd'⟩
+    have hmem : ∀ Z'' : Set γ,
+        (Z'' = V₂.master ∨ (∃ X, W = inj₀ X ∧ a.rel X Z'') ∨ (∃ Y, W = inj₁ Y ∧ b.rel Y Z'')) →
+        V₂.mem Z'' := by
+      rintro Z'' (rfl | ⟨_, _, hf⟩ | ⟨_, _, hg⟩)
+      · exact V₂.master_mem
+      · exact a.rel_cod hf
+      · exact b.rel_cod hg
+    have key : Z ∩ Z' = V₂.master ∨ (∃ X, W = inj₀ X ∧ a.rel X (Z ∩ Z')) ∨
+        (∃ Y, W = inj₁ Y ∧ b.rel Y (Z ∩ Z')) := by
+      rcases hd with rfl | ⟨X, hWX, hf⟩ | ⟨Y, hWY, hg⟩
+      · rw [Set.inter_eq_right.mpr (V₂.sub_master (hmem _ hd'))]; exact hd'
+      · rcases hd' with rfl | ⟨X', hWX', hf'⟩ | ⟨Y', hWY', hg'⟩
+        · rw [Set.inter_eq_left.mpr (V₂.sub_master (a.rel_cod hf))]
+          exact Or.inr (Or.inl ⟨X, hWX, hf⟩)
+        · obtain rfl : X = X' := inj₀_injective (hWX ▸ hWX')
+          exact Or.inr (Or.inl ⟨X, hWX, a.inter_right hf hf'⟩)
+        · exact absurd (hWX ▸ hWY' : (inj₀ X : Set _) = inj₁ Y')
+            (fun h => not_inj₀_subset_inj₁ (h₀ X (a.rel_dom hf)) h.subset)
+      · rcases hd' with rfl | ⟨X', hWX', hf'⟩ | ⟨Y', hWY', hg'⟩
+        · rw [Set.inter_eq_left.mpr (V₂.sub_master (b.rel_cod hg))]
+          exact Or.inr (Or.inr ⟨Y, hWY, hg⟩)
+        · exact absurd (hWY ▸ hWX' : (inj₁ Y : Set _) = inj₀ X')
+            (fun h => not_inj₁_subset_inj₀ (h₁ Y (b.rel_dom hg)) h.subset)
+        · obtain rfl : Y = Y' := inj₁_injective (hWY ▸ hWY')
+          exact Or.inr (Or.inr ⟨Y, hWY, b.inter_right hg hg'⟩)
+    exact ⟨hW, hmem _ key, key⟩
+  mono := by
+    rintro W W₂ Z Z' ⟨_, _, hd⟩ hW₂W hZZ' hW₂ hZ'
+    refine ⟨hW₂, hZ', ?_⟩
+    rcases hd with rfl | ⟨X, rfl, hf⟩ | ⟨Y, rfl, hg⟩
+    · left; exact Set.Subset.antisymm (V₂.sub_master hZ') hZZ'
+    · obtain ⟨X₂, hX₂, rfl⟩ := mem_subset_inj₀ hW₂ hW₂W
+      exact Or.inr (Or.inl ⟨X₂, rfl, a.mono hf (inj₀_subset_inj₀.mp hW₂W) hZZ' hX₂ hZ'⟩)
+    · obtain ⟨Y₂, hY₂, rfl⟩ := mem_subset_inj₁ hW₂ hW₂W
+      exact Or.inr (Or.inr ⟨Y₂, rfl, b.mono hg (inj₁_subset_inj₁.mp hW₂W) hZZ' hY₂ hZ'⟩)
+
+@[simp] theorem copair_rel {a : ApproximableMap V₀ V₂} {b : ApproximableMap V₁ V₂}
+    {W : Set (Option (α ⊕ β))} {Z : Set γ} :
+    (copair (h₀ := h₀) (h₁ := h₁) a b).rel W Z ↔ (sum V₀ V₁ h₀ h₁).mem W ∧ V₂.mem Z ∧
+      (Z = V₂.master ∨ (∃ X, W = inj₀ X ∧ a.rel X Z) ∨ (∃ Y, W = inj₁ Y ∧ b.rel Y Z)) := Iff.rfl
+
+/-- The canonical comparison `Hom(𝒟₀+𝒟₁, 𝒟₂) → Hom(𝒟₀,𝒟₂) × Hom(𝒟₁,𝒟₂)`, `h ↦ (h∘in₀, h∘in₁)`. -/
+def copairProj (h : ApproximableMap (sum V₀ V₁ h₀ h₁) V₂) :
+    ApproximableMap V₀ V₂ × ApproximableMap V₁ V₂ :=
+  (h.comp inMap₀, h.comp inMap₁)
+
+/-- A product neighbourhood over non-empty factors is non-empty. -/
+theorem prod_mem_nonempty (hn₀ : ∀ X, V₀.mem X → X.Nonempty) (_hn₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
+    (W : Set (α ⊕ β)) (hW : (prod V₀ V₁).mem W) : W.Nonempty := by
+  obtain ⟨X, Y, hX, _, rfl⟩ := hW
+  obtain ⟨a, ha⟩ := hn₀ X hX
+  exact ⟨Sum.inl a, mem_prodNbhd_inl.mpr ha⟩
+
+/-- **Exercise 3.24(iii) (Scott 1981, PRG-19).** The canonical *distribution* approximable map
+`(𝒟₀ × 𝒟₁) + (𝒟₀ × 𝒟₂) → 𝒟₀ × (𝒟₁ + 𝒟₂)`, `inᵢ⟨x, u⟩ ↦ ⟨x, inᵢ u⟩`. (This direction always exists;
+the reverse map / isomorphism does not, since the left side has an element `⟨x, ⊥⟩` for each `x`.) -/
+def distribMap (hn₀ : ∀ X, V₀.mem X → X.Nonempty) (hn₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
+    (hn₂ : ∀ Z, V₂.mem Z → Z.Nonempty) :
+    ApproximableMap
+      (sum (prod V₀ V₁) (prod V₀ V₂) (prod_mem_nonempty hn₀ hn₁) (prod_mem_nonempty hn₀ hn₂))
+      (prod V₀ (sum V₁ V₂ hn₁ hn₂)) :=
+  copair
+    (paired (proj₀ V₀ V₁) ((inMap₀ (h₀ := hn₁) (h₁ := hn₂)).comp (proj₁ V₀ V₁)))
+    (paired (proj₀ V₀ V₂) ((inMap₁ (h₀ := hn₁) (h₁ := hn₂)).comp (proj₁ V₀ V₂)))
+
+/-- **Exercise 3.24(iv) (Scott 1981, PRG-19).** `[a, b] ∘ in₀ = a`. -/
+theorem copair_comp_inMap₀ (a : ApproximableMap V₀ V₂) (b : ApproximableMap V₁ V₂) :
+    (copair (h₀ := h₀) (h₁ := h₁) a b).comp inMap₀ = a := by
+  apply ApproximableMap.ext
+  intro X Z
+  constructor
+  · rintro ⟨W, ⟨hX, _, hinj⟩, _, hZ, hd⟩
+    rcases hd with rfl | ⟨X', hWX', hf⟩ | ⟨Y', hWY', hg⟩
+    · exact a.rel_master hX
+    · exact a.mono hf (inj₀_subset_inj₀.mp (hWX' ▸ hinj)) subset_rfl hX hZ
+    · exact (not_inj₀_subset_inj₁ (h₀ X hX) (hWY' ▸ hinj)).elim
+  · intro hf
+    exact ⟨inj₀ X, ⟨a.rel_dom hf, Or.inr (Or.inl ⟨X, a.rel_dom hf, rfl⟩), subset_rfl⟩,
+      Or.inr (Or.inl ⟨X, a.rel_dom hf, rfl⟩), a.rel_cod hf,
+      Or.inr (Or.inl ⟨X, rfl, hf⟩)⟩
+
+/-- **Exercise 3.24(iv) (Scott 1981, PRG-19).** `[a, b] ∘ in₁ = b`. -/
+theorem copair_comp_inMap₁ (a : ApproximableMap V₀ V₂) (b : ApproximableMap V₁ V₂) :
+    (copair (h₀ := h₀) (h₁ := h₁) a b).comp inMap₁ = b := by
+  apply ApproximableMap.ext
+  intro Y Z
+  constructor
+  · rintro ⟨W, ⟨hY, _, hinj⟩, _, hZ, hd⟩
+    rcases hd with rfl | ⟨X', hWX', hf⟩ | ⟨Y', hWY', hg⟩
+    · exact b.rel_master hY
+    · exact (not_inj₁_subset_inj₀ (h₁ Y hY) (hWX' ▸ hinj)).elim
+    · exact b.mono hg (inj₁_subset_inj₁.mp (hWY' ▸ hinj)) subset_rfl hY hZ
+  · intro hg
+    exact ⟨inj₁ Y, ⟨b.rel_dom hg, Or.inr (Or.inr ⟨Y, b.rel_dom hg, rfl⟩), subset_rfl⟩,
+      Or.inr (Or.inr ⟨Y, b.rel_dom hg, rfl⟩), b.rel_cod hg,
+      Or.inr (Or.inr ⟨Y, rfl, hg⟩)⟩
+
+/-- **Exercise 3.24(iv) (Scott 1981, PRG-19).** `(𝒟₀→𝒟₂) × (𝒟₁→𝒟₂)` is a **retract** of
+`(𝒟₀+𝒟₁) → 𝒟₂`: the copairing is a section of `h ↦ (h∘in₀, h∘in₁)`. (It is *not* an isomorphism: the
+value of a map on the basepoint `Λ` is not recoverable from its restrictions to the two copies.) -/
+theorem copairProj_copair (a : ApproximableMap V₀ V₂) (b : ApproximableMap V₁ V₂) :
+    copairProj (h₀ := h₀) (h₁ := h₁) (copair a b) = (a, b) := by
+  show ((copair (h₀ := h₀) (h₁ := h₁) a b).comp inMap₀,
+        (copair (h₀ := h₀) (h₁ := h₁) a b).comp inMap₁) = (a, b)
+  rw [copair_comp_inMap₀, copair_comp_inMap₁]
+end
+
+section
+set_option linter.unusedVariables false
+
+theorem example_324_distrib.{u_1, u_2, u_3} : And
+  (And
+    (∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+      {V₂ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ}
+      {h₀ : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V₀ X → @Set.Nonempty α X}
+      {h₁ : ∀ (Y : Set β), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β V₁ Y → @Set.Nonempty β Y}
+      (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+      (b : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂),
+      @Eq
+        (Prod (@DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂))
+        (@DomainTheory.NeighbourhoodSystems.copairProj α β γ V₀ V₁ V₂ h₀ h₁
+          (@DomainTheory.NeighbourhoodSystems.copair α β γ V₀ V₁ V₂ h₀ h₁ a b))
+        (@Prod.mk (@DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) a b))
+    (∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+      {V₂ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ}
+      {h₀ : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V₀ X → @Set.Nonempty α X}
+      {h₁ : ∀ (Y : Set β), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β V₁ Y → @Set.Nonempty β Y}
+      (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+      (b : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂),
+      @Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α (Option (Sum α β)) γ V₀
+          (@DomainTheory.NeighbourhoodSystems.sum α β V₀ V₁ h₀ h₁) V₂
+          (@DomainTheory.NeighbourhoodSystems.copair α β γ V₀ V₁ V₂ h₀ h₁ a b)
+          (@DomainTheory.NeighbourhoodSystems.inMap₀ α β V₀ V₁ h₀ h₁))
+        a))
+  (∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+    {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+    {V₂ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ}
+    {h₀ : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V₀ X → @Set.Nonempty α X}
+    {h₁ : ∀ (Y : Set β), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β V₁ Y → @Set.Nonempty β Y}
+    (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+    (b : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂),
+    @Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp β (Option (Sum α β)) γ V₁
+        (@DomainTheory.NeighbourhoodSystems.sum α β V₀ V₁ h₀ h₁) V₂
+        (@DomainTheory.NeighbourhoodSystems.copair α β γ V₀ V₁ V₂ h₀ h₁ a b)
+        (@DomainTheory.NeighbourhoodSystems.inMap₁ α β V₀ V₁ h₀ h₁))
+      b) :=
+  @And.intro
+  (And
+    (∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+      {V₂ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ}
+      {h₀ : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V₀ X → @Set.Nonempty α X}
+      {h₁ : ∀ (Y : Set β), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β V₁ Y → @Set.Nonempty β Y}
+      (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+      (b : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂),
+      @Eq
+        (Prod (@DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂))
+        (@DomainTheory.NeighbourhoodSystems.copairProj α β γ V₀ V₁ V₂ h₀ h₁
+          (@DomainTheory.NeighbourhoodSystems.copair α β γ V₀ V₁ V₂ h₀ h₁ a b))
+        (@Prod.mk (@DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) a b))
+    (∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+      {V₂ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ}
+      {h₀ : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V₀ X → @Set.Nonempty α X}
+      {h₁ : ∀ (Y : Set β), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β V₁ Y → @Set.Nonempty β Y}
+      (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+      (b : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂),
+      @Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α (Option (Sum α β)) γ V₀
+          (@DomainTheory.NeighbourhoodSystems.sum α β V₀ V₁ h₀ h₁) V₂
+          (@DomainTheory.NeighbourhoodSystems.copair α β γ V₀ V₁ V₂ h₀ h₁ a b)
+          (@DomainTheory.NeighbourhoodSystems.inMap₀ α β V₀ V₁ h₀ h₁))
+        a))
+  (∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+    {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+    {V₂ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ}
+    {h₀ : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V₀ X → @Set.Nonempty α X}
+    {h₁ : ∀ (Y : Set β), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β V₁ Y → @Set.Nonempty β Y}
+    (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+    (b : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂),
+    @Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp β (Option (Sum α β)) γ V₁
+        (@DomainTheory.NeighbourhoodSystems.sum α β V₀ V₁ h₀ h₁) V₂
+        (@DomainTheory.NeighbourhoodSystems.copair α β γ V₀ V₁ V₂ h₀ h₁ a b)
+        (@DomainTheory.NeighbourhoodSystems.inMap₁ α β V₀ V₁ h₀ h₁))
+      b)
+  (@And.intro
+    (∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+      {V₂ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ}
+      {h₀ : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V₀ X → @Set.Nonempty α X}
+      {h₁ : ∀ (Y : Set β), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β V₁ Y → @Set.Nonempty β Y}
+      (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+      (b : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂),
+      @Eq
+        (Prod (@DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂))
+        (@DomainTheory.NeighbourhoodSystems.copairProj α β γ V₀ V₁ V₂ h₀ h₁
+          (@DomainTheory.NeighbourhoodSystems.copair α β γ V₀ V₁ V₂ h₀ h₁ a b))
+        (@Prod.mk (@DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) a b))
+    (∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+      {V₂ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ}
+      {h₀ : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V₀ X → @Set.Nonempty α X}
+      {h₁ : ∀ (Y : Set β), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β V₁ Y → @Set.Nonempty β Y}
+      (a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+      (b : @DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂),
+      @Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap α γ V₀ V₂)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α (Option (Sum α β)) γ V₀
+          (@DomainTheory.NeighbourhoodSystems.sum α β V₀ V₁ h₀ h₁) V₂
+          (@DomainTheory.NeighbourhoodSystems.copair α β γ V₀ V₁ V₂ h₀ h₁ a b)
+          (@DomainTheory.NeighbourhoodSystems.inMap₀ α β V₀ V₁ h₀ h₁))
+        a)
+    @DomainTheory.NeighbourhoodSystems.copairProj_copair @DomainTheory.NeighbourhoodSystems.copair_comp_inMap₀)
+  @DomainTheory.NeighbourhoodSystems.copair_comp_inMap₁
 end
 
 end

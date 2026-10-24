@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_22
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_15
 
 public import Mathlib.Computability.Primrec.Basic
 

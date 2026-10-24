@@ -1,7 +1,4 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_21
-
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 @[expose] public section
@@ -13,6 +10,22 @@ open NeighborhoodSystem ApproximableMap
 section
 variable {α β γ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
+
+/-- The uncurried composition map `((𝒟₁→𝒟₂) × (𝒟₀→𝒟₁)) × 𝒟₀ → 𝒟₂`, `⟨⟨g, f⟩, x⟩ ↦ g(f(x))`,
+built from the inner evaluation `(𝒟₀→𝒟₁) × 𝒟₀ → 𝒟₁`, the outer evaluation `(𝒟₁→𝒟₂) × 𝒟₁ → 𝒟₂`,
+and the product projections/pairing (Definition 3.3). -/
+def compApp (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
+    ApproximableMap (prod (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀) V₂ :=
+  (evalMap V₁ V₂).comp
+    (paired
+      ((proj₀ (funSpace V₁ V₂) (funSpace V₀ V₁)).comp
+        (proj₀ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))
+      ((evalMap V₀ V₁).comp
+        (paired
+          ((proj₁ (funSpace V₁ V₂) (funSpace V₀ V₁)).comp
+            (proj₀ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))
+          (proj₁ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))))
+
 /- concordance: source L1545 EXERCISE 3.22 composition combinator -/
 /-- **Exercise 3.22 (Scott 1981, PRG-19).** The composition mapping
 `comp : (𝒟₁ → 𝒟₂) × (𝒟₀ → 𝒟₁) → (𝒟₀ → 𝒟₂)`, `comp = curry(compApp)`. -/
@@ -181,17 +194,6 @@ theorem example_322.{u_1, u_2, u_3} : And
         (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α β V₀ V₁
           (@DomainTheory.NeighbourhoodSystems.toApproxMap α β V₀ V₁ Fφ) x)))
   @DomainTheory.NeighbourhoodSystems.toApproxMap_compMap @DomainTheory.NeighbourhoodSystems.toElementMap_compMap_apply
-end
-
-section
-variable {α β γ : Type*} (V : NeighborhoodSystem α)
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-/-- There is at most one approximable mapping into the terminal domain `𝟙`: the codomain `|𝟙|`
-is a subsingleton, so any two maps have the same elementwise action. -/
-instance : Subsingleton (ApproximableMap V unitSys) :=
-  ⟨fun _ _ => ext_of_toElementMap fun _ => Subsingleton.elim _ _⟩
-
 end
 end
 end DomainTheory.NeighbourhoodSystems

@@ -1,5 +1,8 @@
 module
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_18
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_3
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_4
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 @[expose] public section
 
@@ -239,53 +242,117 @@ theorem example_319_sum.{u_1, u_2, u_3, u_4} : And
 end
 
 section
-open NeighborhoodSystem
-variable {α β γ δ : Type*}
+open NeighborhoodSystem ApproximableMap
+variable {α β γ α' β' : Type*}
+variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
+variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
-/-- The product neighbourhood `X ∪ Y` over the disjoint union `Δ₀ ∪ Δ₁`, modelled on `α ⊕ β` as
-`Sum.inl '' X ∪ Sum.inr '' Y`. -/
-def prodNbhd (X : Set α) (Y : Set β) : Set (α ⊕ β) := Sum.inl '' X ∪ Sum.inr '' Y
+/-- **Exercise 3.19(ii) (Scott 1981, PRG-19).** The product mapping `f × g = ⟨f ∘ p₀, g ∘ p₁⟩`. -/
+def prodMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
+    ApproximableMap (prod V₀ V₁) (prod V₀' V₁') :=
+  paired (f.comp (proj₀ V₀ V₁)) (g.comp (proj₁ V₀ V₁))
 
-@[simp] theorem mem_prodNbhd_inl {X : Set α} {Y : Set β} {a : α} :
-    (Sum.inl a : α ⊕ β) ∈ prodNbhd X Y ↔ a ∈ X := by
-  simp [prodNbhd]
+/-- **Exercise 3.19 (Scott 1981, PRG-19).** `(f × g)(w) = ⟨f(w₀), g(w₁)⟩` for every product element
+`w` (so in particular `(f × g)(⟨x, y⟩) = ⟨f(x), g(y)⟩`, equation (i)). -/
+theorem toElementMap_prodMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁')
+    (w : (prod V₀ V₁).Element) :
+    (prodMap f g).toElementMap w = pair (f.toElementMap w.fst) (g.toElementMap w.snd) := by
+  rw [prodMap, toElementMap_paired, toElementMap_comp, toElementMap_comp, toElementMap_proj₀,
+    toElementMap_proj₁]
 
-@[simp] theorem mem_prodNbhd_inr {X : Set α} {Y : Set β} {b : β} :
-    (Sum.inr b : α ⊕ β) ∈ prodNbhd X Y ↔ b ∈ Y := by
-  simp [prodNbhd]
+/-- **Exercise 3.19(i) (Scott 1981, PRG-19).** `(f × g)(⟨x, y⟩) = ⟨f(x), g(y)⟩`. -/
+theorem toElementMap_prodMap_pair (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁')
+    (x : V₀.Element) (y : V₁.Element) :
+    (prodMap f g).toElementMap (pair x y) = pair (f.toElementMap x) (g.toElementMap y) := by
+  rw [toElementMap_prodMap, fst_pair, snd_pair]
+end
 
-@[simp] theorem inl_preimage_prodNbhd (X : Set α) (Y : Set β) :
-    Sum.inl ⁻¹' prodNbhd X Y = X := by ext a; simp
+section
+set_option linter.unusedVariables false
 
-@[simp] theorem inr_preimage_prodNbhd (X : Set α) (Y : Set β) :
-    Sum.inr ⁻¹' prodNbhd X Y = Y := by ext b; simp
-
-/-- The representation `X ∪ Y` is unique (choice-free, via the preimage projections). -/
-theorem prodNbhd_injective {X X' : Set α} {Y Y' : Set β}
-    (h : prodNbhd X Y = prodNbhd X' Y') : X = X' ∧ Y = Y' := by
-  refine ⟨?_, ?_⟩
-  · rw [← inl_preimage_prodNbhd X Y, ← inl_preimage_prodNbhd X' Y', h]
-  · rw [← inr_preimage_prodNbhd X Y, ← inr_preimage_prodNbhd X' Y', h]
-
-/-- Scott's (2): the product nbhds intersect componentwise. -/
-theorem prodNbhd_inter (X X' : Set α) (Y Y' : Set β) :
-    prodNbhd X Y ∩ prodNbhd X' Y' = prodNbhd (X ∩ X') (Y ∩ Y') := by
-  ext (a | b) <;> simp [Set.mem_inter_iff]
-
-/-- Scott's (1): inclusion of product nbhds is componentwise (uses disjointness of `Δ₀`, `Δ₁`). -/
-theorem prodNbhd_subset_iff {X X' : Set α} {Y Y' : Set β} :
-    prodNbhd X Y ⊆ prodNbhd X' Y' ↔ X ⊆ X' ∧ Y ⊆ Y' := by
-  constructor
-  · intro h
-    refine ⟨fun a ha => ?_, fun b hb => ?_⟩
-    · have : (Sum.inl a : α ⊕ β) ∈ prodNbhd X' Y' := h (by simpa using ha)
-      simpa using this
-    · have : (Sum.inr b : α ⊕ β) ∈ prodNbhd X' Y' := h (by simpa using hb)
-      simpa using this
-  · rintro ⟨hX, hY⟩ (a | b) hs
-    · simp only [mem_prodNbhd_inl] at hs ⊢; exact hX hs
-    · simp only [mem_prodNbhd_inr] at hs ⊢; exact hY hs
-
+theorem example_319.{u_1, u_2, u_4, u_5} : And
+  (∀ {α : Type u_1} {β : Type u_2} {α' : Type u_4} {β' : Type u_5}
+    {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+    {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+    {V₀' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α'}
+    {V₁' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β'}
+    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α' V₀ V₀')
+    (g : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β' V₁ V₁')
+    (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V₀)
+    (y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β V₁),
+    @Eq
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Sum α' β')
+        (@DomainTheory.NeighbourhoodSystems.prod α' β' V₀' V₁'))
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap (Sum α β) (Sum α' β')
+        (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) (@DomainTheory.NeighbourhoodSystems.prod α' β' V₀' V₁')
+        (@DomainTheory.NeighbourhoodSystems.prodMap α β α' β' V₀ V₁ V₀' V₁' f g)
+        (@DomainTheory.NeighbourhoodSystems.pair α β V₀ V₁ x y))
+      (@DomainTheory.NeighbourhoodSystems.pair α' β' V₀' V₁'
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α' V₀ V₀' f x)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β β' V₁ V₁' g y)))
+  (∀ {α : Type u_1} {β : Type u_2} {α' : Type u_4} {β' : Type u_5}
+    {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+    {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+    {V₀' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α'}
+    {V₁' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β'}
+    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α' V₀ V₀')
+    (g : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β' V₁ V₁')
+    (w :
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Sum α β)
+        (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁)),
+    @Eq
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Sum α' β')
+        (@DomainTheory.NeighbourhoodSystems.prod α' β' V₀' V₁'))
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap (Sum α β) (Sum α' β')
+        (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) (@DomainTheory.NeighbourhoodSystems.prod α' β' V₀' V₁')
+        (@DomainTheory.NeighbourhoodSystems.prodMap α β α' β' V₀ V₁ V₀' V₁' f g) w)
+      (@DomainTheory.NeighbourhoodSystems.pair α' β' V₀' V₁'
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α' V₀ V₀' f
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.fst α β V₀ V₁ w))
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β β' V₁ V₁' g
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.snd α β V₀ V₁ w)))) :=
+  @And.intro
+  (∀ {α : Type u_1} {β : Type u_2} {α' : Type u_4} {β' : Type u_5}
+    {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+    {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+    {V₀' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α'}
+    {V₁' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β'}
+    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α' V₀ V₀')
+    (g : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β' V₁ V₁')
+    (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V₀)
+    (y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β V₁),
+    @Eq
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Sum α' β')
+        (@DomainTheory.NeighbourhoodSystems.prod α' β' V₀' V₁'))
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap (Sum α β) (Sum α' β')
+        (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) (@DomainTheory.NeighbourhoodSystems.prod α' β' V₀' V₁')
+        (@DomainTheory.NeighbourhoodSystems.prodMap α β α' β' V₀ V₁ V₀' V₁' f g)
+        (@DomainTheory.NeighbourhoodSystems.pair α β V₀ V₁ x y))
+      (@DomainTheory.NeighbourhoodSystems.pair α' β' V₀' V₁'
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α' V₀ V₀' f x)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β β' V₁ V₁' g y)))
+  (∀ {α : Type u_1} {β : Type u_2} {α' : Type u_4} {β' : Type u_5}
+    {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+    {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+    {V₀' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α'}
+    {V₁' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β'}
+    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α' V₀ V₀')
+    (g : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β' V₁ V₁')
+    (w :
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Sum α β)
+        (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁)),
+    @Eq
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Sum α' β')
+        (@DomainTheory.NeighbourhoodSystems.prod α' β' V₀' V₁'))
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap (Sum α β) (Sum α' β')
+        (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) (@DomainTheory.NeighbourhoodSystems.prod α' β' V₀' V₁')
+        (@DomainTheory.NeighbourhoodSystems.prodMap α β α' β' V₀ V₁ V₀' V₁' f g) w)
+      (@DomainTheory.NeighbourhoodSystems.pair α' β' V₀' V₁'
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α' V₀ V₀' f
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.fst α β V₀ V₁ w))
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap β β' V₁ V₁' g
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.snd α β V₀ V₁ w))))
+  @DomainTheory.NeighbourhoodSystems.toElementMap_prodMap_pair @DomainTheory.NeighbourhoodSystems.toElementMap_prodMap
 end
 end DomainTheory.NeighbourhoodSystems
 end

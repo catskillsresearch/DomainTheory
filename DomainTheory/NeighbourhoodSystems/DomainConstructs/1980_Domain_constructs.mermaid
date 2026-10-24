@@ -33,34 +33,41 @@ flowchart TB
   Exercise_3_27["Exercise 3.27<br>closure space"]
   Exercise_3_28["Exercise 3.28<br>minimal step"]
 
-  Exercise_3_18 --> Exercise_3_19
-  Exercise_3_19 --> Definition_3_1
   Definition_3_1 --> Proposition_3_2
+  Definition_3_1 --> Definition_3_3
   Definition_3_1 --> Lemma_3_6
-  Proposition_3_2 --> Definition_3_3
   Definition_3_3 --> Theorem_3_5
+  Proposition_3_2 --> Theorem_3_5
   Lemma_3_6 --> Theorem_3_5
   Theorem_3_5 --> Proposition_3_4
   Proposition_3_4 --> Proposition_3_7
   Proposition_3_4 --> Exercise_3_14
+  Proposition_3_2 --> Exercise_3_14
   Exercise_3_14 --> Exercise_3_15
   Exercise_3_15 --> Exercise_3_16
-  Exercise_3_16 --> Exercise_3_20
-  Exercise_3_20 --> Exercise_3_26
-  Exercise_3_26 --> Definition_3_8
+  Exercise_3_18 --> Exercise_3_19
+  Definition_3_3 --> Exercise_3_19
+  Proposition_3_4 --> Exercise_3_19
+  Exercise_3_19 --> Exercise_3_20
+  Exercise_3_18 --> Exercise_3_26
+  Exercise_3_19 --> Exercise_3_26
+  Lemma_3_6 --> Definition_3_8
   Definition_3_8 --> Theorem_3_10
   Theorem_3_10 --> Theorem_3_11
   Theorem_3_11 --> Theorem_3_12
   Theorem_3_12 --> Theorem_3_13
-  Theorem_3_13 --> Proposition_3_9
-  Theorem_3_13 --> Exercise_3_24
-  Proposition_3_9 --> Exercise_3_17
+  Definition_3_8 --> Proposition_3_9
+  Proposition_3_9 --> Exercise_3_21
   Proposition_3_9 --> Exercise_3_28
-  Exercise_3_17 --> Exercise_3_21
-  Exercise_3_21 --> Exercise_3_22
-  Exercise_3_22 --> Exercise_3_23
-  Exercise_3_28 --> Exercise_3_27
-  Exercise_3_27 --> Exercise_3_25
+  Exercise_3_16 --> Exercise_3_17
+  Definition_3_8 --> Exercise_3_17
+  Theorem_3_12 --> Exercise_3_22
+  Exercise_3_15 --> Exercise_3_23
+  Theorem_3_12 --> Exercise_3_23
+  Theorem_3_13 --> Exercise_3_24
+  Exercise_3_19 --> Exercise_3_24
+  Theorem_3_12 --> Exercise_3_25
+  Theorem_3_12 --> Exercise_3_27
 
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef cprop fill:#dcfce7,stroke:#15803d,color:#14532d

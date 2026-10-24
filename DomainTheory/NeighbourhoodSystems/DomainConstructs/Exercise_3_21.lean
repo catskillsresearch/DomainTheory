@@ -1,7 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_17
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_11
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 @[expose] public section
 
 section
@@ -10,6 +9,72 @@ section
 open NeighborhoodSystem ApproximableMap
 section
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+/-- For a single step `[Y, Z]` and an input `X ⊄ Y`, the intersection is the whole master `Δ₂`. -/
+theorem interYs_single_not_subset_eq {YX : Set α} {Z : Set β} {X : Set α}
+    (hXY : ¬ X ⊆ YX) : interYs V₁.master [(YX, Z)] X = V₁.master := by
+  ext z
+  rw [mem_interYs]
+  constructor
+  · rintro ⟨hm, _⟩; exact hm
+  · intro hz
+    exact ⟨hz, fun p hp hXp => by rw [List.mem_singleton] at hp; subst hp; exact absurd hXp hXY⟩
+
+/-- For a single step `[Y, Z]` and a *sharp enough* input `X ⊆ Y`, the intersection is just `Z`. -/
+theorem interYs_single_subset_eq {YX : Set α} {Z : Set β} {X : Set α} (hZ : V₁.mem Z)
+    (hXY : X ⊆ YX) : interYs V₁.master [(YX, Z)] X = Z := by
+  ext z
+  rw [mem_interYs]
+  constructor
+  · rintro ⟨_, hall⟩; exact hall (YX, Z) (List.mem_singleton.mpr rfl) hXY
+  · intro hz
+    exact ⟨V₁.sub_master hZ hz, fun p hp _ => by rw [List.mem_singleton] at hp; subst hp; exact hz⟩
+
+/-- Consistency (`hcons`) for a single step `[Y, Z]`: the intersection over the relevant outputs is
+either `Z` (sharp input) or `Δ₂` (blunt input), both neighbourhoods. -/
+theorem stepCons {Y : Set α} {Z : Set β} (hZ : V₁.mem Z) :
+    ∀ {X}, V₀.mem X → V₁.mem (interYs V₁.master [(Y, Z)] X) := by
+  intro X _
+  by_cases hXY : X ⊆ Y
+  · rw [interYs_single_subset_eq hZ hXY]; exact hZ
+  · rw [interYs_single_not_subset_eq hXY]; exact V₁.master_mem
+
+/-- The single-step least map `f₀ ∈ [Y, Z]`: `leastMap [(Y, Z)]`, the minimal approximable mapping
+relating `Y` to `Z`. -/
+def leastStep (Y : Set α) (Z : Set β) (hY : V₀.mem Y) (hZ : V₁.mem Z) :
+    ApproximableMap V₀ V₁ :=
+  leastMap [(Y, Z)] (by rintro p hp; rw [List.mem_singleton] at hp; subst hp; exact ⟨hY, hZ⟩)
+    (stepCons hZ)
+
+theorem leastStep_le {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V₁.mem Z)
+    {f : ApproximableMap V₀ V₁} (hf : f ∈ step Y Z) : leastStep Y Z hY hZ ≤ f := by
+  apply leastMap_le
+  rw [stepFun_singleton]; exact hf
+
+theorem leastStep_mem {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V₁.mem Z) :
+    leastStep Y Z hY hZ ∈ step Y Z := by
+  have := leastMap_mem_stepFun (V₀ := V₀) (V₁ := V₁)
+    (L := [(Y, Z)]) (by rintro p hp; rw [List.mem_singleton] at hp; subst hp; exact ⟨hY, hZ⟩)
+    (stepCons hZ)
+  rw [stepFun_singleton] at this
+  exact this
+
+/-- The least elements of equal step neighbourhoods coincide. -/
+theorem leastStep_eq_of_step_eq {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V₁.mem Z)
+    {Y' : Set α} {Z' : Set β} (hY' : V₀.mem Y') (hZ' : V₁.mem Z')
+    (h : (step Y Z : Set (ApproximableMap V₀ V₁)) = step Y' Z') :
+    leastStep Y Z hY hZ = leastStep Y' Z' hY' hZ' := by
+  apply le_antisymm
+  · exact leastStep_le hY hZ (h ▸ leastStep_mem hY' hZ')
+  · exact leastStep_le hY' hZ' (h.symm ▸ leastStep_mem hY hZ)
+
+/-- `f₀ = leastStep Y Z` relates `Y'` to `Z'` iff (`Y' ⊆ Y` and `Z ⊆ Z'`) or `Z' = Δ₂`. -/
+theorem leastStep_rel {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V₁.mem Z)
+    {Y' : Set α} {Z' : Set β} (hY' : V₀.mem Y') (hZ' : V₁.mem Z') :
+    (leastStep Y Z hY hZ).rel Y' Z' ↔ interYs V₁.master [(Y, Z)] Y' ⊆ Z' := by
+  rw [leastStep, leastMap_rel]
+  exact ⟨fun h => h.2.2, fun h => ⟨hY', hZ', h⟩⟩
+
 /- concordance: source L1543 EXERCISE 3.21 identity of step neighbourhoods -/
 /-- **Exercise 3.21.** If the output is the master, `[Y, Δ₂]` is the whole function space. -/
 theorem step_master_right (Y : Set α) (hY : V₀.mem Y) :
@@ -188,27 +253,6 @@ theorem example_321.{u_1, u_2} : And
                     And (@Eq (Set α) Y Y') (@Eq (Set β) Z Z'))
     @DomainTheory.NeighbourhoodSystems.step_eq_iff @DomainTheory.NeighbourhoodSystems.step_eq_of_ne_master)
   @DomainTheory.NeighbourhoodSystems.step_master_right
-end
-
-section
-variable {α β γ : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-/-- The uncurried composition map `((𝒟₁→𝒟₂) × (𝒟₀→𝒟₁)) × 𝒟₀ → 𝒟₂`, `⟨⟨g, f⟩, x⟩ ↦ g(f(x))`,
-built from the inner evaluation `(𝒟₀→𝒟₁) × 𝒟₀ → 𝒟₁`, the outer evaluation `(𝒟₁→𝒟₂) × 𝒟₁ → 𝒟₂`,
-and the product projections/pairing (Definition 3.3). -/
-def compApp (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
-    ApproximableMap (prod (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀) V₂ :=
-  (evalMap V₁ V₂).comp
-    (paired
-      ((proj₀ (funSpace V₁ V₂) (funSpace V₀ V₁)).comp
-        (proj₀ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))
-      ((evalMap V₀ V₁).comp
-        (paired
-          ((proj₁ (funSpace V₁ V₂) (funSpace V₀ V₁)).comp
-            (proj₀ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))
-          (proj₁ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))))
-
 end
 end
 end DomainTheory.NeighbourhoodSystems

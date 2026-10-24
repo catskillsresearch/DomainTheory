@@ -65,6 +65,11 @@ theorem ext_of_toElementMap {f g : ApproximableMap V₀ V₁}
   · constructor
     · intro hr; exact absurd (f.rel_dom hr) hX
     · intro hr; exact absurd (g.rel_dom hr) hX
+
+/-- An approximable map relates any input neighbourhood to the master output `Δ₁`. -/
+theorem rel_master (f : ApproximableMap V₀ V₁) {X : Set α} (hX : V₀.mem X) :
+    f.rel X V₁.master :=
+  f.mono f.master_rel (V₀.sub_master hX) subset_rfl hX V₁.master_mem
 end
 
 end ApproximableMap

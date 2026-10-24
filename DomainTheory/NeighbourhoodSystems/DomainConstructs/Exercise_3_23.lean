@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_22
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_15
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 @[expose] public section
@@ -12,6 +12,12 @@ open NeighborhoodSystem ApproximableMap
 section
 variable {α β γ : Type*} (V : NeighborhoodSystem α)
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
+
+/-- There is at most one approximable mapping into the terminal domain `𝟙`: the codomain `|𝟙|`
+is a subsingleton, so any two maps have the same elementwise action. -/
+instance : Subsingleton (ApproximableMap V unitSys) :=
+  ⟨fun _ _ => ext_of_toElementMap fun _ => Subsingleton.elim _ _⟩
+
 /- concordance: source L1569 EXERCISE 3.23 cartesian closed category -/
 /-- **Exercise 3.23 (Scott 1981, PRG-19).** `𝟙 = unitSys` is the *terminal object*: for every domain
 `𝒟` there is a unique approximable mapping `𝒟 → 𝟙` (the constant map at `⊥`). -/
@@ -46,4 +52,3 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 end
-

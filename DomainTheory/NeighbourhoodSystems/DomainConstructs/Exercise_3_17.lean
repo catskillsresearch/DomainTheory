@@ -1,13 +1,149 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
-
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_8
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Examples_1_2_1_5_revisited
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 @[expose] public section
 
 section
 namespace DomainTheory.NeighbourhoodSystems.Exercise317
 section
+
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
+
+/-- The truth domain `T` of Example 1.2. -/
+abbrev T : NeighborhoodSystem Example12.Token := Example12.neighborhoodSystem
+
+/-- Tokens of `T`: `{0, 1}`. -/
+abbrev Token := Example12.Token
+
+/-- `T`-neighbourhoods are non-empty (`∅ ∉ T`). -/
+theorem T_nbhd_nonempty {F : Set Token} (hF : T.mem F) : F.Nonempty := by
+  rcases (Example12.mem_iff F).mp hF with rfl | rfl | rfl
+  · exact ⟨0, by simp [Example12.master]⟩
+  · exact ⟨0, by simp [Example12.zero]⟩
+  · exact ⟨1, by simp [Example12.one]⟩
+
+/-- The `T`-neighbourhood selected by a bit: `false ↦ {0}`, `true ↦ {1}`. -/
+def bitNbhd : Bool → Set Token
+  | false => Example12.zero
+  | true => Example12.one
+
+theorem bitNbhd_mem (b : Bool) : T.mem (bitNbhd b) := by
+  cases b
+  · exact Example12.mem_zero
+  · exact Example12.mem_one
+
+/-- `encSet σ ⊆ ℕ × {0,1}`: pin copy `i` to `bitNbhd σ[i]` for `i < |σ|`, free otherwise. -/
+def encSet (σ : Str) : Set (ℕ × Token) := {p | ∀ b, σ[p.1]? = some b → p.2 ∈ bitNbhd b}
+
+@[simp] theorem mem_encSet {σ : Str} {p : ℕ × Token} :
+    p ∈ encSet σ ↔ ∀ b, σ[p.1]? = some b → p.2 ∈ bitNbhd b := Iff.rfl
+
+@[simp] theorem encSet_nil : encSet [] = Set.univ := by
+  ext p; simp [encSet]
+
+theorem comparable_of_agree : ∀ {τ τ' : Str},
+    (∀ (i : ℕ) (b b' : Bool), τ[i]? = some b → τ'[i]? = some b' → b = b') → τ <+: τ' ∨ τ' <+: τ
+  | [], _, _ => Or.inl (List.nil_prefix)
+  | _ :: _, [], _ => Or.inr (List.nil_prefix)
+  | a :: s, a' :: s', hag => by
+      have ha : a = a' := hag 0 a a' (by simp) (by simp)
+      subst ha
+      have hrec : ∀ (i : ℕ) (b b' : Bool), s[i]? = some b → s'[i]? = some b' → b = b' := by
+        intro i b b' hb hb'
+        exact hag (i + 1) b b' (by simpa using hb) (by simpa using hb')
+      rcases comparable_of_agree hrec with h | h
+      · exact Or.inl (List.cons_prefix_cons.mpr ⟨rfl, h⟩)
+      · exact Or.inr (List.cons_prefix_cons.mpr ⟨rfl, h⟩)
+
+/-- Two prefixes that both bound a common non-empty `T^∞`-neighbourhood agree where both defined. -/
+theorem encSet_agree {τ τ' : Str} {W : Set (ℕ × Token)} (hW : (iterSys T).mem W)
+    (h : W ⊆ encSet τ) (h' : W ⊆ encSet τ') {i : ℕ} {b b' : Bool}
+    (hb : τ[i]? = some b) (hb' : τ'[i]? = some b') : b = b' := by
+  obtain ⟨t, ht⟩ := T_nbhd_nonempty (hW.1 i)
+  have h1 : t ∈ bitNbhd b := (h ht) b hb
+  have h2 : t ∈ bitNbhd b' := (h' ht) b' hb'
+  by_contra hne
+  cases b <;> cases b' <;> simp_all [bitNbhd, Example12.zero, Example12.one]
+
+/-- A longer prefix encodes to a *smaller* set: `σ ⪯ σ' ⟹ encSet σ' ⊆ encSet σ`. -/
+theorem encSet_anti {σ σ' : Str} (h : σ <+: σ') : encSet σ' ⊆ encSet σ := by
+  obtain ⟨t, rfl⟩ := h
+  rintro ⟨i, x⟩ hp b hb
+  have hi : i < σ.length := by
+    obtain ⟨hlt, -⟩ := List.getElem?_eq_some_iff.mp hb; exact hlt
+  exact hp b (by rw [List.getElem?_append_left hi]; exact hb)
+
+theorem fiber_encSet_none {σ : Str} {i : ℕ} (h : σ[i]? = none) :
+    fiber (encSet σ) i = Set.univ := by
+  ext t
+  simp only [mem_fiber, mem_encSet, Set.mem_univ, iff_true]
+  intro b hb; rw [h] at hb; exact absurd hb (by simp)
+
+theorem fiber_encSet_some {σ : Str} {i : ℕ} {b : Bool} (h : σ[i]? = some b) :
+    fiber (encSet σ) i = bitNbhd b := by
+  ext t
+  simp only [mem_fiber, mem_encSet]
+  constructor
+  · intro hh; exact hh b h
+  · intro ht b' hb'
+    rw [h] at hb'
+    obtain rfl := Option.some.inj hb'
+    exact ht
+
+/-- `encSet σ` is a `T^∞`-neighbourhood. -/
+theorem encSet_mem (σ : Str) : (iterSys T).mem (encSet σ) := by
+  refine ⟨fun i => ?_, σ.length, fun i hi => ?_⟩
+  · cases h : σ[i]? with
+    | none => rw [fiber_encSet_none h]; exact T.master_mem
+    | some b => rw [fiber_encSet_some h]; exact bitNbhd_mem b
+  · rw [fiber_encSet_none (List.getElem?_eq_none_iff.mpr hi)]; rfl
+
+/-- **The encoding map `f : B → T^∞`.** Relates the cone `σΣ*` to every `T^∞`-neighbourhood weaker
+than `encSet σ`. -/
+def f : ApproximableMap B (iterSys T) where
+  rel X W := ∃ σ, X = cone σ ∧ (iterSys T).mem W ∧ encSet σ ⊆ W
+  rel_dom := fun ⟨σ, hX, _⟩ => hX ▸ memB_cone σ
+  rel_cod := fun ⟨_, _, hW, _⟩ => hW
+  master_rel := ⟨[], cone_nil.symm, (iterSys T).master_mem, by rw [encSet_nil]; exact Set.subset_univ _⟩
+  inter_right := by
+    rintro X W W' ⟨σ, hX, hWmem, hWsub⟩ ⟨σ', hX', hW'mem, hW'sub⟩
+    obtain rfl : σ = σ' := cone_injective (hX.symm.trans hX')
+    exact ⟨σ, hX, (iterSys T).inter_mem hWmem hW'mem (encSet_mem σ)
+      (Set.subset_inter hWsub hW'sub), Set.subset_inter hWsub hW'sub⟩
+  mono := by
+    rintro X X' W W' ⟨σ, hX, _, hWsub⟩ hX'X hWW' hX' hW'mem
+    obtain ⟨σ', rfl⟩ := hX'
+    subst hX
+    have hpre : σ <+: σ' := cone_subset_cone.mp hX'X
+    exact ⟨σ', rfl, hW'mem, (encSet_anti hpre).trans (hWsub.trans hWW')⟩
+
+/-- **The decoding map `g : T^∞ → B`.** Relates `W` to the cone `τΣ*` exactly when `W ⊆ encSet τ`,
+i.e. `W` pins the first `|τ|` copies to `τ`. -/
+def g : ApproximableMap (iterSys T) B where
+  rel W X := (iterSys T).mem W ∧ ∃ τ, X = cone τ ∧ W ⊆ encSet τ
+  rel_dom h := h.1
+  rel_cod := fun ⟨_, τ, hX, _⟩ => hX ▸ memB_cone τ
+  master_rel := ⟨(iterSys T).master_mem, [], cone_nil.symm, by rw [encSet_nil]; exact Set.subset_univ _⟩
+  inter_right := by
+    rintro W X X' ⟨hW, τ, hX, hWτ⟩ ⟨_, τ', hX', hWτ'⟩
+    subst hX; subst hX'
+    rcases comparable_of_agree (fun i b b' => encSet_agree hW hWτ hWτ') with hpre | hpre
+    · exact ⟨hW, τ', by rw [Set.inter_eq_right.mpr (cone_subset_cone.mpr hpre)], hWτ'⟩
+    · exact ⟨hW, τ, by rw [Set.inter_eq_left.mpr (cone_subset_cone.mpr hpre)], hWτ⟩
+  mono := by
+    rintro W W₂ X X₂ ⟨_, τ, hX, hWτ⟩ hW₂W hXX₂ hW₂ hX₂
+    obtain ⟨τ₂, rfl⟩ := hX₂
+    subst hX
+    have hpre : τ₂ <+: τ := cone_subset_cone.mp hXX₂
+    exact ⟨hW₂, τ₂, rfl, hW₂W.trans (hWτ.trans (encSet_anti hpre))⟩
+
+theorem exists_not_mem_bitNbhd (b : Bool) : ∃ t : Token, t ∉ bitNbhd b := by
+  cases b
+  · exact ⟨1, by simp [bitNbhd, Example12.zero]⟩
+  · exact ⟨0, by simp [bitNbhd, Example12.one]⟩
+
 /- concordance: source L1473 EXERCISE 3.17 embedding binary sequences -/
 /-- **Exercise 3.17 — `f` is a section of `g`.** `f ∘ g ⊑ I_{T^∞}`. -/
 theorem fg_le_id : f.comp g ≤ idMap (iterSys T) := by
@@ -178,80 +314,4 @@ theorem f_injective : Function.Injective f.toElementMap := by
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise317
-namespace DomainTheory.NeighbourhoodSystems
-section
-
-open NeighborhoodSystem ApproximableMap
-
-section
-variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-/-- For a single step `[Y, Z]` and an input `X ⊄ Y`, the intersection is the whole master `Δ₂`. -/
-theorem interYs_single_not_subset_eq {YX : Set α} {Z : Set β} {X : Set α}
-    (hXY : ¬ X ⊆ YX) : interYs V₁.master [(YX, Z)] X = V₁.master := by
-  ext z
-  rw [mem_interYs]
-  constructor
-  · rintro ⟨hm, _⟩; exact hm
-  · intro hz
-    exact ⟨hz, fun p hp hXp => by rw [List.mem_singleton] at hp; subst hp; exact absurd hXp hXY⟩
-
-/-- For a single step `[Y, Z]` and a *sharp enough* input `X ⊆ Y`, the intersection is just `Z`. -/
-theorem interYs_single_subset_eq {YX : Set α} {Z : Set β} {X : Set α} (hZ : V₁.mem Z)
-    (hXY : X ⊆ YX) : interYs V₁.master [(YX, Z)] X = Z := by
-  ext z
-  rw [mem_interYs]
-  constructor
-  · rintro ⟨_, hall⟩; exact hall (YX, Z) (List.mem_singleton.mpr rfl) hXY
-  · intro hz
-    exact ⟨V₁.sub_master hZ hz, fun p hp _ => by rw [List.mem_singleton] at hp; subst hp; exact hz⟩
-
-/-- Consistency (`hcons`) for a single step `[Y, Z]`: the intersection over the relevant outputs is
-either `Z` (sharp input) or `Δ₂` (blunt input), both neighbourhoods. -/
-theorem stepCons {Y : Set α} {Z : Set β} (hZ : V₁.mem Z) :
-    ∀ {X}, V₀.mem X → V₁.mem (interYs V₁.master [(Y, Z)] X) := by
-  intro X _
-  by_cases hXY : X ⊆ Y
-  · rw [interYs_single_subset_eq hZ hXY]; exact hZ
-  · rw [interYs_single_not_subset_eq hXY]; exact V₁.master_mem
-
-/-- The single-step least map `f₀ ∈ [Y, Z]`: `leastMap [(Y, Z)]`, the minimal approximable mapping
-relating `Y` to `Z`. -/
-def leastStep (Y : Set α) (Z : Set β) (hY : V₀.mem Y) (hZ : V₁.mem Z) :
-    ApproximableMap V₀ V₁ :=
-  leastMap [(Y, Z)] (by rintro p hp; rw [List.mem_singleton] at hp; subst hp; exact ⟨hY, hZ⟩)
-    (stepCons hZ)
-
-theorem leastStep_le {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V₁.mem Z)
-    {f : ApproximableMap V₀ V₁} (hf : f ∈ step Y Z) : leastStep Y Z hY hZ ≤ f := by
-  apply leastMap_le
-  rw [stepFun_singleton]; exact hf
-
-theorem leastStep_mem {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V₁.mem Z) :
-    leastStep Y Z hY hZ ∈ step Y Z := by
-  have := leastMap_mem_stepFun (V₀ := V₀) (V₁ := V₁)
-    (L := [(Y, Z)]) (by rintro p hp; rw [List.mem_singleton] at hp; subst hp; exact ⟨hY, hZ⟩)
-    (stepCons hZ)
-  rw [stepFun_singleton] at this
-  exact this
-
-/-- The least elements of equal step neighbourhoods coincide. -/
-theorem leastStep_eq_of_step_eq {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V₁.mem Z)
-    {Y' : Set α} {Z' : Set β} (hY' : V₀.mem Y') (hZ' : V₁.mem Z')
-    (h : (step Y Z : Set (ApproximableMap V₀ V₁)) = step Y' Z') :
-    leastStep Y Z hY hZ = leastStep Y' Z' hY' hZ' := by
-  apply le_antisymm
-  · exact leastStep_le hY hZ (h ▸ leastStep_mem hY' hZ')
-  · exact leastStep_le hY' hZ' (h.symm ▸ leastStep_mem hY hZ)
-
-/-- `f₀ = leastStep Y Z` relates `Y'` to `Z'` iff (`Y' ⊆ Y` and `Z ⊆ Z'`) or `Z' = Δ₂`. -/
-theorem leastStep_rel {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V₁.mem Z)
-    {Y' : Set α} {Z' : Set β} (hY' : V₀.mem Y') (hZ' : V₁.mem Z') :
-    (leastStep Y Z hY hZ).rel Y' Z' ↔ interYs V₁.master [(Y, Z)] Y' ⊆ Z' := by
-  rw [leastStep, leastMap_rel]
-  exact ⟨fun h => h.2.2, fun h => ⟨hY', hZ', h⟩⟩
-
-end
-end
-end DomainTheory.NeighbourhoodSystems
 end

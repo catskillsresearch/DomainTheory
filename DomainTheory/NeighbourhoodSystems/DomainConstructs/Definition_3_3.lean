@@ -1,7 +1,8 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_2
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_1
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
 @[expose] public section
 
 section
@@ -124,6 +125,33 @@ theorem toElementMap_proj₀_pair (x : V₀.Element) (y : V₁.Element) :
 theorem toElementMap_proj₁_pair (x : V₀.Element) (y : V₁.Element) :
     (proj₁ V₀ V₁).toElementMap (pair x y) = y := by
   rw [toElementMap_proj₁, snd_pair]
+
+/-- Elementwise action of pairing: `⟨f, g⟩(w) = ⟨f(w), g(w)⟩`. -/
+theorem toElementMap_paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁)
+    (w : V₂.Element) :
+    (paired f g).toElementMap w = pair (f.toElementMap w) (g.toElementMap w) := by
+  apply Element.ext
+  intro P
+  constructor
+  · rintro ⟨Z, hwZ, hP, hfZ, hgZ⟩
+    exact ⟨Sum.inl ⁻¹' P, Sum.inr ⁻¹' P, ⟨Z, hwZ, hfZ⟩, ⟨Z, hwZ, hgZ⟩, prodNbhd_preimage hP⟩
+  · rintro ⟨X, Y, ⟨Z₁, hwZ₁, hfZ₁⟩, ⟨Z₂, hwZ₂, hgZ₂⟩, rfl⟩
+    refine ⟨Z₁ ∩ Z₂, w.inter_mem hwZ₁ hwZ₂, prod_mem_prodNbhd (f.rel_cod hfZ₁) (g.rel_cod hgZ₂),
+      ?_, ?_⟩
+    · rw [inl_preimage_prodNbhd]
+      exact f.mono hfZ₁ Set.inter_subset_left subset_rfl (w.sub (w.inter_mem hwZ₁ hwZ₂))
+        (f.rel_cod hfZ₁)
+    · rw [inr_preimage_prodNbhd]
+      exact g.mono hgZ₂ Set.inter_subset_right subset_rfl (w.sub (w.inter_mem hwZ₁ hwZ₂))
+        (g.rel_cod hgZ₂)
+
+/-- Every map into a product is the pairing of its projections: `h = ⟨p₀ ∘ h, p₁ ∘ h⟩`. -/
+theorem paired_proj (h : ApproximableMap V₂ (prod V₀ V₁)) :
+    paired ((proj₀ V₀ V₁).comp h) ((proj₁ V₀ V₁).comp h) = h := by
+  apply ext_of_toElementMap
+  intro w
+  rw [toElementMap_paired, toElementMap_comp, toElementMap_comp, toElementMap_proj₀,
+    toElementMap_proj₁, pair_fst_snd]
 
 end
 end DomainTheory.NeighbourhoodSystems

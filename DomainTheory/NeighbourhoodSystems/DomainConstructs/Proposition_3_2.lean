@@ -36,21 +36,23 @@ def prodEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
 
 @[simp] theorem prodEquiv_symm_apply (p : V₀.Element × V₁.Element) :
     (prodEquiv V₀ V₁).symm p = pair p.1 p.2 := rfl
-end
 
-section
-open NeighborhoodSystem
-variable {α β γ δ : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₂ : NeighborhoodSystem γ}
-open ApproximableMap
-
-/-- Every product neighbourhood is `(inl⁻¹ W) ∪ (inr⁻¹ W)`. -/
-theorem prodNbhd_preimage {W : Set (α ⊕ β)} (hW : (prod V₀ V₁).mem W) :
-    W = prodNbhd (Sum.inl ⁻¹' W) (Sum.inr ⁻¹' W) := by
-  obtain ⟨X, Y, _, _, rfl⟩ := hW
-  rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
-
+/-- **Proposition 3.2(i) (Scott 1981, PRG-19).** `⟨x, y⟩ ⊑ ⟨x', y'⟩ ↔ x ⊑ x' ∧ y ⊑ y'`. -/
+theorem pair_le_pair_iff {x x' : V₀.Element} {y y' : V₁.Element} :
+    pair x y ≤ pair x' y' ↔ x ≤ x' ∧ y ≤ y' := by
+  constructor
+  · intro h
+    refine ⟨fun X hX => ?_, fun Y hY => ?_⟩
+    · obtain ⟨X', Y', hX', hY', heq⟩ :=
+        h (prodNbhd X V₁.master) ⟨X, V₁.master, hX, y.master_mem, rfl⟩
+      obtain ⟨rfl, _⟩ := prodNbhd_injective heq
+      exact hX'
+    · obtain ⟨X', Y', hX', hY', heq⟩ :=
+        h (prodNbhd V₀.master Y) ⟨V₀.master, Y, x.master_mem, hY, rfl⟩
+      obtain ⟨_, rfl⟩ := prodNbhd_injective heq
+      exact hY'
+  · rintro ⟨hx, hy⟩ W ⟨X, Y, hX, hY, rfl⟩
+    exact ⟨X, Y, hx X hX, hy Y hY, rfl⟩
 end
 end DomainTheory.NeighbourhoodSystems
 end

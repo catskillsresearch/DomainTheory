@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_26
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_8
 
 @[expose] public section
 

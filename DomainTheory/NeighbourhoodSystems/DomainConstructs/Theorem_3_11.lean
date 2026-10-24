@@ -60,25 +60,35 @@ theorem gSection_le {g : ApproximableMap (prod V₀ V₁) V₂} {X X' : Set α}
   have hY := (prod_mem_prodNbhd_iff.mp (g.rel_dom h)).2
   exact g.mono h (prodNbhd_subset_iff.mpr ⟨hX'X, subset_rfl⟩) subset_rfl
     (prod_mem_prodNbhd hX' hY) (g.rel_cod h)
+
+/-- **Theorem 3.11(i) (Scott 1981, PRG-19).** `eval(f, x) = f(x)` (with the filter `φ` viewed as
+the map `toApproxMap φ` via Theorem 3.10). -/
+theorem toElementMap₂_eval (φ : (funSpace V₁ V₂).Element) (x : V₁.Element) :
+    (eval V₁ V₂).toElementMap₂ φ x = (toApproxMap φ).toElementMap x := by
+  apply Element.ext
+  intro Y
+  constructor
+  · rintro ⟨F, X, hφF, hxX, _, hX, hY, hrel⟩
+    refine ⟨X, hxX, ?_⟩
+    show φ.mem (step X Y)
+    exact φ.up_mem hφF (step_mem hX hY) (fun f hf => hrel f hf)
+  · rintro ⟨X, hxX, hrel⟩
+    have hstep : (funSpace V₁ V₂).mem (step X Y) := φ.sub hrel
+    obtain ⟨f, hf⟩ := (funSpace_mem_iff.mp hstep).2
+    exact ⟨step X Y, X, hrel, hxX, hstep, f.rel_dom hf, f.rel_cod hf, fun g hg => hg⟩
+
+/-- **Theorem 3.11(i) (Scott 1981, PRG-19).** `eval(⟨f, x⟩) = f(x)`. -/
+theorem evalMap_apply (φ : (funSpace V₁ V₂).Element) (x : V₁.Element) :
+    (evalMap V₁ V₂).toElementMap (pair φ x) = (toApproxMap φ).toElementMap x := by
+  rw [evalMap, ← toElementMap₂_toMap₂, toMap₂_ofMap₂, toElementMap₂_eval]
+
+/-- `(eval ∘ ⟨F, G⟩)(w) = F(w)(G(w))`. -/
+theorem toElementMap_evalMap_comp_paired (F : ApproximableMap V₀ (funSpace V₁ V₂))
+    (G : ApproximableMap V₀ V₁) (w : V₀.Element) :
+    ((evalMap V₁ V₂).comp (paired F G)).toElementMap w =
+      (toApproxMap (F.toElementMap w)).toElementMap (G.toElementMap w) := by
+  rw [toElementMap_comp, toElementMap_paired, evalMap_apply]
 end
-
-theorem mapsBounded_principal {F : Set (ApproximableMap V₀ V₁)} (hF : PointwiseBounded F)
-    {X : Set α} (hX : V₀.mem X) :
-    V₁.Bounded (Set.image (fun f => f.toElementMap (V₀.principal hX)) F) :=
-  hF (V₀.principal hX)
-
-/-- Step neighbourhoods are *up-closed* under the map order: if `f ∈ stepFun L` and `f ⊑ f'`, then
-`f' ∈ stepFun L`. -/
-theorem stepFun_up_closed {L : List (Set α × Set β)} {f f' : ApproximableMap V₀ V₁}
-    (hf : f ∈ stepFun L) (hff' : f ≤ f') : f' ∈ stepFun L := by
-  intro p hp
-  exact hff' p.1 p.2 (hf p hp)
-
-/-- A function-space neighbourhood is up-closed under the map order. -/
-theorem funSpace_mem_up_closed {W : Set (ApproximableMap V₀ V₁)} (hW : (funSpace V₀ V₁).mem W)
-    {f f' : ApproximableMap V₀ V₁} (hf : f ∈ W) (hff' : f ≤ f') : f' ∈ W := by
-  obtain ⟨⟨L, _, rfl⟩, _⟩ := hW
-  exact stepFun_up_closed hf hff'
 
 end
 end DomainTheory.NeighbourhoodSystems

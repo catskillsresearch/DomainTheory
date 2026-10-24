@@ -1,6 +1,7 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_19
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_1
 
+public import Mathlib.Data.Set.Operations
 @[expose] public section
 
 section
@@ -8,6 +9,51 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem
 variable {α β γ δ : Type*}
+
+/-- The product neighbourhood `X ∪ Y` over the disjoint union `Δ₀ ∪ Δ₁`, modelled on `α ⊕ β` as
+`Sum.inl '' X ∪ Sum.inr '' Y`. -/
+def prodNbhd (X : Set α) (Y : Set β) : Set (α ⊕ β) := Sum.inl '' X ∪ Sum.inr '' Y
+
+@[simp] theorem mem_prodNbhd_inl {X : Set α} {Y : Set β} {a : α} :
+    (Sum.inl a : α ⊕ β) ∈ prodNbhd X Y ↔ a ∈ X := by
+  simp [prodNbhd]
+
+@[simp] theorem mem_prodNbhd_inr {X : Set α} {Y : Set β} {b : β} :
+    (Sum.inr b : α ⊕ β) ∈ prodNbhd X Y ↔ b ∈ Y := by
+  simp [prodNbhd]
+
+@[simp] theorem inl_preimage_prodNbhd (X : Set α) (Y : Set β) :
+    Sum.inl ⁻¹' prodNbhd X Y = X := by ext a; simp
+
+@[simp] theorem inr_preimage_prodNbhd (X : Set α) (Y : Set β) :
+    Sum.inr ⁻¹' prodNbhd X Y = Y := by ext b; simp
+
+/-- The representation `X ∪ Y` is unique (choice-free, via the preimage projections). -/
+theorem prodNbhd_injective {X X' : Set α} {Y Y' : Set β}
+    (h : prodNbhd X Y = prodNbhd X' Y') : X = X' ∧ Y = Y' := by
+  refine ⟨?_, ?_⟩
+  · rw [← inl_preimage_prodNbhd X Y, ← inl_preimage_prodNbhd X' Y', h]
+  · rw [← inr_preimage_prodNbhd X Y, ← inr_preimage_prodNbhd X' Y', h]
+
+/-- Scott's (2): the product nbhds intersect componentwise. -/
+theorem prodNbhd_inter (X X' : Set α) (Y Y' : Set β) :
+    prodNbhd X Y ∩ prodNbhd X' Y' = prodNbhd (X ∩ X') (Y ∩ Y') := by
+  ext (a | b) <;> simp [Set.mem_inter_iff]
+
+/-- Scott's (1): inclusion of product nbhds is componentwise (uses disjointness of `Δ₀`, `Δ₁`). -/
+theorem prodNbhd_subset_iff {X X' : Set α} {Y Y' : Set β} :
+    prodNbhd X Y ⊆ prodNbhd X' Y' ↔ X ⊆ X' ∧ Y ⊆ Y' := by
+  constructor
+  · intro h
+    refine ⟨fun a ha => ?_, fun b hb => ?_⟩
+    · have : (Sum.inl a : α ⊕ β) ∈ prodNbhd X' Y' := h (by simpa using ha)
+      simpa using this
+    · have : (Sum.inr b : α ⊕ β) ∈ prodNbhd X' Y' := h (by simpa using hb)
+      simpa using this
+  · rintro ⟨hX, hY⟩ (a | b) hs
+    · simp only [mem_prodNbhd_inl] at hs ⊢; exact hX hs
+    · simp only [mem_prodNbhd_inr] at hs ⊢; exact hY hs
+
 /- concordance: source L944 DEFINITION 3.1 product of systems -/
 /-- **Definition 3.1 (Scott 1981, PRG-19).** The *product system* `𝒟₀ × 𝒟₁`: neighbourhoods are
 `X ∪ Y` with `X ∈ 𝒟₀`, `Y ∈ 𝒟₁`. Closure under consistent intersection is Scott's (2)
@@ -42,6 +88,20 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 theorem prod_mem_prodNbhd {X : Set α} {Y : Set β} (hX : V₀.mem X) (hY : V₁.mem Y) :
     (prod V₀ V₁).mem (prodNbhd X Y) := ⟨X, Y, hX, hY, rfl⟩
+
+theorem prod_mem_prodNbhd_iff {X : Set α} {Y : Set β} :
+    (prod V₀ V₁).mem (prodNbhd X Y) ↔ V₀.mem X ∧ V₁.mem Y := by
+  constructor
+  · rintro ⟨A, B, hA, hB, heq⟩
+    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    exact ⟨hA, hB⟩
+  · rintro ⟨hX, hY⟩; exact prod_mem_prodNbhd hX hY
+
+/-- Every product neighbourhood is `(inl⁻¹ W) ∪ (inr⁻¹ W)`. -/
+theorem prodNbhd_preimage {W : Set (α ⊕ β)} (hW : (prod V₀ V₁).mem W) :
+    W = prodNbhd (Sum.inl ⁻¹' W) (Sum.inr ⁻¹' W) := by
+  obtain ⟨X, Y, _, _, rfl⟩ := hW
+  rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
 
 /-- Scott's `z₀ = {X ∈ 𝒟₀ ∣ X ∪ Δ₁ ∈ z}`: the first component of a product element. -/
 def NeighborhoodSystem.Element.fst (z : (prod V₀ V₁).Element) : V₀.Element where
@@ -152,6 +212,12 @@ theorem pair_fst_snd (z : (prod V₀ V₁).Element) : pair z.fst z.snd = z := by
     exact (mem_pair_prodNbhd.mp hmem).2
   · intro hY
     exact ⟨y.sub hY, mem_pair_prodNbhd.mpr ⟨x.master_mem, hY⟩⟩
+
+theorem prod_mem_inl {W : Set (α ⊕ β)} (hW : (prod V₀ V₁).mem W) : V₀.mem (Sum.inl ⁻¹' W) := by
+  obtain ⟨X, Y, hX, _, rfl⟩ := hW; rwa [inl_preimage_prodNbhd]
+
+theorem prod_mem_inr {W : Set (α ⊕ β)} (hW : (prod V₀ V₁).mem W) : V₁.mem (Sum.inr ⁻¹' W) := by
+  obtain ⟨X, Y, _, hY, rfl⟩ := hW; rwa [inr_preimage_prodNbhd]
 
 end
 end DomainTheory.NeighbourhoodSystems

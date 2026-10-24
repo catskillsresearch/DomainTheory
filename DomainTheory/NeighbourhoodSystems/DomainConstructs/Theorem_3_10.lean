@@ -1,5 +1,4 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_27
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_8
 
 @[expose] public section
@@ -105,79 +104,6 @@ theorem funSpace_mem_inter {W W' : Set (ApproximableMap V₀ V₁)}
   rcases List.mem_append.mp hp with h | h
   · exact hL p h
   · exact hL' p h
-
-/-- Scott's intersection `⋂ {Yᵢ ∣ X ⊆ Xᵢ}` of the outputs whose input is coarser than `X`, taken
-inside the master neighbourhood `Δ₁` (so the empty intersection is `Δ₁`, per the convention 1.1a).
-Indexed by the list `L` of `(Xᵢ, Yᵢ)` pairs. -/
-def interYs (m : Set β) : List (Set α × Set β) → Set α → Set β
-  | [], _ => m
-  | p :: L, X => {z | X ⊆ p.1 → z ∈ p.2} ∩ interYs m L X
-
-@[simp] theorem interYs_nil (m : Set β) (X : Set α) : interYs m [] X = m := rfl
-
-theorem interYs_cons (m : Set β) (p : Set α × Set β) (L : List (Set α × Set β)) (X : Set α) :
-    interYs m (p :: L) X = {z | X ⊆ p.1 → z ∈ p.2} ∩ interYs m L X := rfl
-
-/-- Membership in `interYs`: `z ∈ ⋂{Yᵢ ∣ X ⊆ Xᵢ}` iff `z ∈ Δ₁` and `z ∈ Yᵢ` for every `i` with
-`X ⊆ Xᵢ`. -/
-theorem mem_interYs {m : Set β} {L : List (Set α × Set β)} {X : Set α} {z : β} :
-    z ∈ interYs m L X ↔ z ∈ m ∧ ∀ p ∈ L, X ⊆ p.1 → z ∈ p.2 := by
-  induction L with
-  | nil => simp
-  | cons p L ih =>
-    rw [interYs_cons]
-    simp only [Set.mem_inter_iff, Set.mem_ofPred_eq, ih, List.mem_cons]
-    constructor
-    · rintro ⟨hp, hm, hL⟩
-      refine ⟨hm, ?_⟩
-      rintro q (rfl | hq) hXq
-      · exact hp hXq
-      · exact hL q hq hXq
-    · rintro ⟨hm, hall⟩
-      exact ⟨fun hXp => hall p (Or.inl rfl) hXp, hm,
-        fun q hq hXq => hall q (Or.inr hq) hXq⟩
-
-/-- `interYs` is antitone in the input `X`: a sharper input intersects over more outputs. -/
-theorem interYs_antitone {m : Set β} {L : List (Set α × Set β)} {X X' : Set α} (h : X' ⊆ X) :
-    interYs m L X' ⊆ interYs m L X := by
-  intro z hz
-  rw [mem_interYs] at hz ⊢
-  exact ⟨hz.1, fun p hp hXp => hz.2 p hp (h.trans hXp)⟩
-
-/-- `interYs` is contained in the master neighbourhood. -/
-theorem interYs_subset_master {m : Set β} {L : List (Set α × Set β)} {X : Set α} :
-    interYs m L X ⊆ m := fun _ hz => (mem_interYs.mp hz).1
-
-/-- **Proposition 3.9(ii) (Scott 1981, PRG-19).** The *least* approximable mapping `f₀` belonging to
-the neighbourhood `⋂ [Xᵢ, Yᵢ]`, defined by `X f₀ Y ↔ ⋂{Yᵢ ∣ X ⊆ Xᵢ} ⊆ Y`. Well-definedness uses
-Scott's condition (i) in the operational form `hcons`: for every neighbourhood `X`, the outputs
-`{Yᵢ ∣ X ⊆ Xᵢ}` (consistent in `𝒟₁`, witnessed by `X` being a common lower bound of their inputs)
-have their intersection again a neighbourhood. -/
-def leastMap (L : List (Set α × Set β)) (_hL : ∀ p ∈ L, V₀.mem p.1 ∧ V₁.mem p.2)
-    (hcons : ∀ {X}, V₀.mem X → V₁.mem (interYs V₁.master L X)) : ApproximableMap V₀ V₁ where
-  rel X Y := V₀.mem X ∧ V₁.mem Y ∧ interYs V₁.master L X ⊆ Y
-  rel_dom h := h.1
-  rel_cod h := h.2.1
-  master_rel := ⟨V₀.master_mem, V₁.master_mem, interYs_subset_master⟩
-  inter_right := by
-    rintro X Y Y' ⟨hX, hY, hsub⟩ ⟨_, hY', hsub'⟩
-    exact ⟨hX, V₁.inter_mem hY hY' (hcons hX) (Set.subset_inter hsub hsub'),
-      Set.subset_inter hsub hsub'⟩
-  mono := by
-    rintro X X' Y Y' ⟨_, _, hsub⟩ hX'X hYY' hX' hY'
-    exact ⟨hX', hY', (interYs_antitone hX'X).trans (hsub.trans hYY')⟩
-
-@[simp] theorem leastMap_rel {L : List (Set α × Set β)}
-    {hL : ∀ p ∈ L, V₀.mem p.1 ∧ V₁.mem p.2}
-    {hcons : ∀ {X}, V₀.mem X → V₁.mem (interYs V₁.master L X)} {X : Set α} {Y : Set β} :
-    (leastMap L hL hcons).rel X Y ↔ V₀.mem X ∧ V₁.mem Y ∧ interYs V₁.master L X ⊆ Y := Iff.rfl
-
-/-- A set `F` of approximable maps is *bounded* when it has an upper bound in the map order. -/
-def MapsBounded (F : Set (ApproximableMap V₀ V₁)) : Prop := ∃ h, ∀ f ∈ F, f ≤ h
-
-/-- `F` is *pointwise bounded* when `{f(x) ∣ f ∈ F}` is bounded in `|𝒟₁|` for every `x`. -/
-def PointwiseBounded (F : Set (ApproximableMap V₀ V₁)) : Prop :=
-  ∀ x : V₀.Element, V₁.Bounded (Set.image (fun f => f.toElementMap x) F)
 
 end
 end DomainTheory.NeighbourhoodSystems

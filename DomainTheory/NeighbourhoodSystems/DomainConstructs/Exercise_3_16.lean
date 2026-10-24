@@ -9,9 +9,54 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem
 variable {α : Type*}
+/- concordance: source L1448 EXERCISE 3.16 infinite sequences of elements -/
+/-- The `i`-th *fiber* of a set `W ⊆ ℕ × α`: the tokens appearing in copy `i`. -/
+def fiber (W : Set (ℕ × α)) (i : ℕ) : Set α := {a | (i, a) ∈ W}
+
+@[simp] theorem mem_fiber {W : Set (ℕ × α)} {i : ℕ} {a : α} : a ∈ fiber W i ↔ (i, a) ∈ W := Iff.rfl
+
+theorem eq_of_fiber_eq {W W' : Set (ℕ × α)} (h : ∀ i, fiber W i = fiber W' i) : W = W' := by
+  ext ⟨i, a⟩
+  exact Set.ext_iff.mp (h i) a
+
+theorem fiber_inter (W W' : Set (ℕ × α)) (i : ℕ) :
+    fiber (W ∩ W') i = fiber W i ∩ fiber W' i := rfl
+
+theorem fiber_mono {W W' : Set (ℕ × α)} (h : W ⊆ W') (i : ℕ) : fiber W i ⊆ fiber W' i :=
+  fun _ ha => h ha
+end
+
+section
+open NeighborhoodSystem
+variable {α : Type*}
+variable (V : NeighborhoodSystem α)
+
+/-- The `𝒟^∞`-neighbourhood pinning copy `n` to `X` and leaving all other copies at `Δ`: Scott's
+`Δ^∞ ∩ (1ⁿ0X)`, i.e. the combination with `Xₙ = X` and `Xₘ = Δ` for `m ≠ n`. -/
+def single (n : ℕ) (X : Set α) : Set (ℕ × α) :=
+  {p | if p.1 = n then p.2 ∈ X else p.2 ∈ V.master}
+end
+
+section
+open NeighborhoodSystem
+variable {α : Type*}
 variable (V : NeighborhoodSystem α)
 variable {V}
-/- concordance: source L1448 EXERCISE 3.16 infinite sequences of elements -/
+
+@[simp] theorem fiber_single_self (n : ℕ) (X : Set α) : fiber (single V n X) n = X := by
+  ext a; simp [fiber, single]
+
+theorem fiber_single_ne {n i : ℕ} (h : i ≠ n) (X : Set α) : fiber (single V n X) i = V.master := by
+  ext a; simp [fiber, single, h]
+
+end
+
+section
+open NeighborhoodSystem
+variable {α : Type*}
+variable (V : NeighborhoodSystem α)
+variable {V}
+
 /-- **Exercise 3.16 (Scott 1981, PRG-19).** The infinite iterate `𝒟^∞` over `Δ^∞ = ℕ × Δ`:
 `W ∈ 𝒟^∞` iff every fiber is a neighbourhood of `𝒟` and all but finitely many fibers equal `Δ`. -/
 def iterSys (V : NeighborhoodSystem α) : NeighborhoodSystem (ℕ × α) where
@@ -295,19 +340,6 @@ theorem example_316.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodS
     (@DomainTheory.NeighbourhoodSystems.iterSys α V)
     (@DomainTheory.NeighbourhoodSystems.prod α (Prod Nat α) V (@DomainTheory.NeighbourhoodSystems.iterSys α V)) :=
   @DomainTheory.NeighbourhoodSystems.iter_isomorphic
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-variable {α β γ α' β' : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
-
-/-- **Exercise 3.19(ii) (Scott 1981, PRG-19).** The product mapping `f × g = ⟨f ∘ p₀, g ∘ p₁⟩`. -/
-def prodMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
-    ApproximableMap (prod V₀ V₁) (prod V₀' V₁') :=
-  paired (f.comp (proj₀ V₀ V₁)) (g.comp (proj₁ V₀ V₁))
-
 end
 end DomainTheory.NeighbourhoodSystems
 end

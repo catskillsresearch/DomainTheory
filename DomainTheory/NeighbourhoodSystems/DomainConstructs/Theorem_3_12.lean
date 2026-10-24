@@ -1,8 +1,6 @@
 module
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_11
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7
 @[expose] public section
 
 section
@@ -31,12 +29,6 @@ def curry (g : ApproximableMap (prod V₀ V₁) V₂) : ApproximableMap V₀ (fu
 @[simp] theorem curry_rel {g : ApproximableMap (prod V₀ V₁) V₂} {X : Set α}
     {W : Set (ApproximableMap V₁ V₂)} :
     (curry g).rel X W ↔ ∃ hX : V₀.mem X, (funSpace V₁ V₂).mem W ∧ gSection g hX ∈ W := Iff.rfl
-
-theorem prod_mem_inl {W : Set (α ⊕ β)} (hW : (prod V₀ V₁).mem W) : V₀.mem (Sum.inl ⁻¹' W) := by
-  obtain ⟨X, Y, hX, _, rfl⟩ := hW; rwa [inl_preimage_prodNbhd]
-
-theorem prod_mem_inr {W : Set (α ⊕ β)} (hW : (prod V₀ V₁).mem W) : V₁.mem (Sum.inr ⁻¹' W) := by
-  obtain ⟨X, Y, _, hY, rfl⟩ := hW; rwa [inr_preimage_prodNbhd]
 
 /-- The relational generation lemma for maps `h : 𝒟₀ → (𝒟₁ → 𝒟₂)`: `X h (⋂ᵢ [Yᵢ,Zᵢ])` iff
 `X h [Yᵢ,Zᵢ]` for all `i`. -/
@@ -70,28 +62,6 @@ theorem rel_stepFun_iff (h : ApproximableMap V₀ (funSpace V₁ V₂)) {X : Set
       have htail : h.rel X (stepFun L) :=
         (ih hLtail).mpr (fun q hq => hall q (List.mem_cons.mpr (Or.inr hq)))
       exact h.inter_right hstep htail
-end
-
-/-- The sup of `{f(↑X) ∣ f ∈ F}` on principal inputs, used to build `sSupMaps`. -/
-def supOnPrincipal (F : Set (ApproximableMap V₀ V₁)) (hF : PointwiseBounded F)
-    (X : Set α) (hX : V₀.mem X) : V₁.Element :=
-  V₁.sSup (Set.image (fun f => f.toElementMap (V₀.principal hX)) F) (mapsBounded_principal hF hX)
-
-theorem supOnPrincipal_mono (F : Set (ApproximableMap V₀ V₁)) (hF : PointwiseBounded F)
-    (X X' : Set α) (hX : V₀.mem X) (hX' : V₀.mem X') (hX'X : X' ⊆ X) :
-    supOnPrincipal F hF X hX ≤ supOnPrincipal F hF X' hX' :=
-  V₁.sSup_le _ (mapsBounded_principal hF hX) fun s hs => by
-    obtain ⟨f, hf, rfl⟩ := hs
-    exact (toElementMap_mono f ((V₀.principal_le_iff hX hX').mpr hX'X)).trans
-      (V₁.le_sSup _ (mapsBounded_principal hF hX') ⟨f, hf, rfl⟩)
-
-/-- **Theorem 3.13(iii) (Scott 1981, PRG-19).** The least upper bound of a pointwise-bounded set
-`F`, defined on principal inputs by `supOnPrincipal` and extended via Exercise 2.8 (`ofMono`). -/
-def sSupMaps (F : Set (ApproximableMap V₀ V₁)) (hF : PointwiseBounded F) : ApproximableMap V₀ V₁ :=
-  ofMono (fun X hX => supOnPrincipal F hF X hX) (supOnPrincipal_mono F hF)
-
-section
-variable {V₂ : NeighborhoodSystem γ}
 
 /-- **Theorem 3.12 (Scott 1981, PRG-19).** Uncurrying `h : 𝒟₀ → (𝒟₁ → 𝒟₂)` to `𝒟₀ × 𝒟₁ → 𝒟₂`:
 `X ∪ Y (uncurry h) Z ↔ X h [Y, Z]`. -/
@@ -194,16 +164,53 @@ def curryEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
       intro p hp
       have hgrel : g.rel (prodNbhd X p.1) p.2 := hmem p hp
       exact hg _ _ hgrel
+
+/-- **Theorem 3.12(i) (Scott 1981, PRG-19).** `curry(g)(x)(y) = g(x, y)`. -/
+theorem toElementMap_curry_apply (g : ApproximableMap (prod V₀ V₁) V₂)
+    (x : V₀.Element) (y : V₁.Element) :
+    (toApproxMap ((curry g).toElementMap x)).toElementMap y = g.toElementMap (pair x y) := by
+  apply Element.ext
+  intro Z
+  constructor
+  · rintro ⟨Y, hyY, X, hxX, hX, _, hrel⟩
+    exact ⟨prodNbhd X Y, ⟨X, Y, hxX, hyY, rfl⟩, hrel⟩
+  · rintro ⟨W, ⟨X, Y, hxX, hyY, rfl⟩, hrel⟩
+    exact ⟨Y, hyY, X, hxX, x.sub hxX, step_mem (y.sub hyY) (g.rel_cod hrel), hrel⟩
+
+/-- `uncurry` is the composition `eval ∘ ⟨h ∘ p₀, p₁⟩`. -/
+theorem uncurry_eq (h : ApproximableMap V₀ (funSpace V₁ V₂)) :
+    uncurry h = (evalMap V₁ V₂).comp (paired (h.comp (proj₀ V₀ V₁)) (proj₁ V₀ V₁)) := by
+  apply ext_of_toElementMap
+  intro w
+  rw [toElementMap_comp, toElementMap_paired, toElementMap_comp, toElementMap_proj₀,
+    toElementMap_proj₁, evalMap_apply]
+  apply Element.ext
+  intro Z
+  constructor
+  · rintro ⟨W₀, hwW₀, hW₀, hrel⟩
+    obtain ⟨X, Y, hX, hY, rfl⟩ := hW₀
+    rw [inl_preimage_prodNbhd] at hrel
+    rw [inr_preimage_prodNbhd] at hrel
+    obtain ⟨hwX, hwY⟩ := (prod_mem_split hX hY).mp hwW₀
+    exact ⟨Y, ⟨hY, hwY⟩, X, ⟨hX, hwX⟩, hrel⟩
+  · rintro ⟨Y, ⟨hY, hwY⟩, X, ⟨hX, hwX⟩, hrel⟩
+    refine ⟨prodNbhd X Y, (prod_mem_split hX hY).mpr ⟨hwX, hwY⟩, prod_mem_prodNbhd hX hY, ?_⟩
+    rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+    exact hrel
+
+/-- **Theorem 3.12(iii) (Scott 1981, PRG-19).** `curry (eval ∘ ⟨h ∘ p₀, p₁⟩) = h`. -/
+theorem curry_eval_comp (h : ApproximableMap V₀ (funSpace V₁ V₂)) :
+    curry ((evalMap V₁ V₂).comp (paired (h.comp (proj₀ V₀ V₁)) (proj₁ V₀ V₁))) = h := by
+  rw [← uncurry_eq, curry_uncurry]
+
+/-- **Theorem 3.12(ii) (Scott 1981, PRG-19).** `eval ∘ ⟨curry(g) ∘ p₀, p₁⟩ = g`. -/
+theorem eval_comp_curry (g : ApproximableMap (prod V₀ V₁) V₂) :
+    (evalMap V₁ V₂).comp (paired ((curry g).comp (proj₀ V₀ V₁)) (proj₁ V₀ V₁)) = g := by
+  rw [← uncurry_eq]; exact uncurry_curry g
 end
 
 theorem ApproximableMap.le_iff {f g : ApproximableMap V₀ V₁} :
     f ≤ g ↔ ∀ X Y, f.rel X Y → g.rel X Y := Iff.rfl
-
-/-- `interYs` contains `Yⱼ` whenever `Xⱼ ⊆ X`-indexed: in particular `interYs m L Xⱼ ⊆ Yⱼ` for
-`(Xⱼ, Yⱼ) ∈ L`. -/
-theorem interYs_subset_of_mem {m : Set β} {L : List (Set α × Set β)} {p : Set α × Set β}
-    (hp : p ∈ L) : interYs m L p.1 ⊆ p.2 :=
-  fun _ hz => (mem_interYs.mp hz).2 p hp subset_rfl
 
 end
 end DomainTheory.NeighbourhoodSystems

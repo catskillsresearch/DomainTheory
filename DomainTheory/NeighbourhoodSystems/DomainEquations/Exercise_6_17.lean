@@ -9,6 +9,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem_6_16
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_6
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_20
 
 @[expose] public section
 
