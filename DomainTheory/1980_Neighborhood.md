@@ -1,5 +1,9 @@
 # Neighbourhood systems
 
+**Dependency diagram.** Each box is one section. The arrowhead is on the section that imports. The number is how many direct imports. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it has no arrow.
+
+@import "1980_Neighborhood.mermaid"
+
 - [Introduction](NeighbourhoodSystems/1980_Introduction.md)
 - [Domains given by neighbourhoods](NeighbourhoodSystems/1980_Domains_given_by_neighbourhoods.md)
 - [Mappings between domains](NeighbourhoodSystems/1980_Mappings_between_domains.md)
