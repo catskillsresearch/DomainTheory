@@ -30,7 +30,6 @@
 
 @import "Factoid33/Basic.lean"
 
-
 **[InformationSystems/ElementsOfASystem/Factoid33.lean](Factoid33.lean)**
 
 @import "Factoid33.lean"
@@ -186,7 +185,6 @@
 @import "Factoid33/botElement.ai_lean_to_english" {code_block=false}
 
 @import "Factoid33/Basic.ai_lean_to_english" {code_block=false}
-
 
 @import "Factoid33.ai_lean_to_english" {code_block=false}
 

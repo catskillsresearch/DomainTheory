@@ -118,8 +118,6 @@
 
 @import "foldr_max_lt_of_forall.lean"
 
-
-
 **[InformationSystems/SomeDomainEquations/Factoid82/rawDepth_funTok_gt_left.lean](rawDepth_funTok_gt_left.lean)**
 
 @import "rawDepth_funTok_gt_left.lean"
@@ -263,8 +261,6 @@
 **[InformationSystems/SomeDomainEquations/Factoid82/LamDEnt.lean](LamDEnt.lean)**
 
 @import "LamDEnt.lean"
-
-
 
 **[InformationSystems/SomeDomainEquations/Factoid82/lamForgetFinset.lean](lamForgetFinset.lean)**
 
@@ -426,17 +422,9 @@
 
 @import "LamConDepth_singleton_funTok.lean"
 
-
-
-
-
 **[InformationSystems/SomeDomainEquations/Factoid82/LamDCon_insert_of_ent.lean](LamDCon_insert_of_ent.lean)**
 
 @import "LamDCon_insert_of_ent.lean"
-
-
-
-
 
 **[InformationSystems/SomeDomainEquations/Factoid82/lambdaSystem.lean](lambdaSystem.lean)**
 
@@ -453,8 +441,6 @@
 **[InformationSystems/SomeDomainEquations/Factoid82/lamDForget_listToLamDFinset.lean](lamDForget_listToLamDFinset.lean)**
 
 @import "lamDForget_listToLamDFinset.lean"
-
-
 
 **[InformationSystems/SomeDomainEquations/Factoid82/lamUnfold.lean](lamUnfold.lean)**
 
@@ -700,7 +686,6 @@
 
 @import "le_finsetMaxDepth_of_mem.ai_lean_to_english" {code_block=false}
 
-
 @import "rawDepth_funTok_gt_left.ai_lean_to_english" {code_block=false}
 
 @import "rawDepth_funTok_gt_right.ai_lean_to_english" {code_block=false}
@@ -772,7 +757,6 @@
 @import "LamDCon.ai_lean_to_english" {code_block=false}
 
 @import "LamDEnt.ai_lean_to_english" {code_block=false}
-
 
 @import "lamForgetFinset.ai_lean_to_english" {code_block=false}
 
@@ -856,11 +840,7 @@
 
 @import "mem_lamDForgetFinset.ai_lean_to_english" {code_block=false}
 
-
-
 @import "LamDCon_insert_of_ent.ai_lean_to_english" {code_block=false}
-
-
 
 @import "lambdaSystem.ai_lean_to_english" {code_block=false}
 
@@ -869,7 +849,6 @@
 @import "mem_listToLamDFinset.ai_lean_to_english" {code_block=false}
 
 @import "lamDForget_listToLamDFinset.ai_lean_to_english" {code_block=false}
-
 
 @import "lamUnfold.ai_lean_to_english" {code_block=false}
 

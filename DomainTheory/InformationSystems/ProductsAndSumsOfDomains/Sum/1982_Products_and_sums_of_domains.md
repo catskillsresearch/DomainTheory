@@ -66,7 +66,6 @@
 
 **[InformationSystems/ProductsAndSumsOfDomains/Product/fstFinset.lean](../Product/fstFinset.lean)**
 
-
 **[InformationSystems/ProductsAndSumsOfDomains/Product/mem_foldr_fst.lean](../Product/mem_foldr_fst.lean)**
 
 @import "../Product/mem_foldr_fst.lean"
@@ -74,13 +73,6 @@
 **[InformationSystems/ProductsAndSumsOfDomains/Product/mem_foldr_snd.lean](../Product/mem_foldr_snd.lean)**
 
 @import "../Product/mem_foldr_snd.lean"
-
-
-
-
-
-
-
 
 **[InformationSystems/ProductsAndSumsOfDomains/Product/prodBot.lean](../Product/prodBot.lean)**
 
@@ -97,14 +89,6 @@
 **[InformationSystems/ProductsAndSumsOfDomains/Product/ProdEnt.lean](../Product/ProdEnt.lean)**
 
 @import "../Product/ProdEnt.lean"
-
-
-
-
-
-
-
-
 
 **[InformationSystems/ProductsAndSumsOfDomains/Product/productSystem.lean](../Product/productSystem.lean)**
 
@@ -210,7 +194,6 @@
 
 @import "../Product/BasicInst7.ai_lean_to_english" {code_block=false}
 
-
 @import "../Product/instLeftCommutativeFstInsert.ai_lean_to_english" {code_block=false}
 
 @import "../Product/instLeftCommutativeSndInsert.ai_lean_to_english" {code_block=false}
@@ -223,11 +206,6 @@
 
 @import "../Product/mem_fstFinset.ai_lean_to_english" {code_block=false}
 
-
-
-
-
-
 @import "../Product/prodBot.ai_lean_to_english" {code_block=false}
 
 @import "../Product/sndFinset.ai_lean_to_english" {code_block=false}
@@ -237,12 +215,6 @@
 @import "../Product/ProdEnt.ai_lean_to_english" {code_block=false}
 
 @import "../Product/mem_sndFinset.ai_lean_to_english" {code_block=false}
-
-
-
-
-
-
 
 @import "../Product/productSystem.ai_lean_to_english" {code_block=false}
 

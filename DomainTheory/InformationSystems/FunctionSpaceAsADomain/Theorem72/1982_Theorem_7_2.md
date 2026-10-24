@@ -178,8 +178,6 @@
 
 @import "../Factoid75/boolSat.lean"
 
-
-
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/boolSystem.lean](../Factoid75/boolSystem.lean)**
 
 @import "../Factoid75/boolSystem.lean"
@@ -216,9 +214,6 @@
 
 @import "../Factoid75/condMap_unique.lean"
 
-
-
-
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/filter_ne_subset_of_subset_insert_strict.lean](../Factoid75/filter_ne_subset_of_subset_insert_strict.lean)**
 
 @import "../Factoid75/filter_ne_subset_of_subset_insert_strict.lean"
@@ -235,10 +230,6 @@
 
 @import "../Factoid75/IsStrictToken_of_IsStrict.lean"
 
-
-
-
-
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/not_ent_empty_fls.lean](../Factoid75/not_ent_empty_fls.lean)**
 
 @import "../Factoid75/not_ent_empty_fls.lean"
@@ -246,13 +237,6 @@
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/not_ent_empty_tru.lean](../Factoid75/not_ent_empty_tru.lean)**
 
 @import "../Factoid75/not_ent_empty_tru.lean"
-
-
-
-
-
-
-
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/conditional_iso.lean](../Factoid75/conditional_iso.lean)**
 
@@ -270,14 +254,9 @@
 
 @import "../Factoid75/strictify.lean"
 
-
-
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/subset_of_entSet_mem.lean](../Factoid75/subset_of_entSet_mem.lean)**
 
 @import "../Factoid75/subset_of_entSet_mem.lean"
-
-
-
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/toFunFinset.lean](../Factoid75/toFunFinset.lean)**
 
@@ -290,12 +269,6 @@
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictFunEnt.lean](../Factoid75/StrictFunEnt.lean)**
 
 @import "../Factoid75/StrictFunEnt.lean"
-
-
-
-
-
-
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/strictFunctionSystem.lean](../Factoid75/strictFunctionSystem.lean)**
 
@@ -325,21 +298,13 @@
 
 @import "../Factoid76/compOp.lean"
 
-
-
 **[InformationSystems/FunctionSpaceAsADomain/Factoid76/constOp.lean](../Factoid76/constOp.lean)**
 
 @import "../Factoid76/constOp.lean"
 
-
-
-
-
-
 **[InformationSystems/FunctionSpaceAsADomain/Factoid76.lean](../Factoid76.lean)**
 
 @import "../Factoid76.lean"
-
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid76/pairMap_toElement_pairElements.lean](../Factoid76/pairMap_toElement_pairElements.lean)**
 
@@ -357,10 +322,6 @@
 
 @import "../Factoid76/Basic.lean"
 
-
-
-
-
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/InfoSysObj.lean](../Factoid77/InfoSysObj.lean)**
 
 @import "../Factoid77/InfoSysObj.lean"
@@ -368,9 +329,6 @@
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/acomp.lean](../Factoid77/acomp.lean)**
 
 @import "../Factoid77/acomp.lean"
-
-
-
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/curry_uncurry.lean](../Factoid77/curry_uncurry.lean)**
 
@@ -399,8 +357,6 @@
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/swapMap.lean](../Factoid77/swapMap.lean)**
 
 @import "../Factoid77/swapMap.lean"
-
-
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/swapMap_acomp_swapMap.lean](../Factoid77/swapMap_acomp_swapMap.lean)**
 
@@ -454,7 +410,6 @@
 
 @import "../Factoid77/tensorElementToProdElement.lean"
 
-
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorHom_eq_productMap.lean](../Factoid77/tensorHom_eq_productMap.lean)**
 
 @import "../Factoid77/tensorHom_eq_productMap.lean"
@@ -462,7 +417,6 @@
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/prodHomToTensorHom.lean](../Factoid77/prodHomToTensorHom.lean)**
 
 @import "../Factoid77/prodHomToTensorHom.lean"
-
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorHomToProdHom.lean](../Factoid77/tensorHomToProdHom.lean)**
 
@@ -480,7 +434,6 @@
 
 @import "../Factoid77/productMapToTensorMap.lean"
 
-
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorLeft_map_eq.lean](../Factoid77/tensorLeft_map_eq.lean)**
 
 @import "../Factoid77/tensorLeft_map_eq.lean"
@@ -497,16 +450,9 @@
 
 @import "../Factoid77/curryRight_uncurryRight.lean"
 
-
-
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorExpEquiv.lean](../Factoid77/tensorExpEquiv.lean)**
 
 @import "../Factoid77/tensorExpEquiv.lean"
-
-
-
-
-
 
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/expFunctor.lean](../Factoid77/expFunctor.lean)**
 
@@ -559,7 +505,6 @@
 @import "../Fixpoint/fixChain_pad.lean"
 
 **[InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_pad.lean](../Fixpoint/fixChain_pad.lean)**
-
 
 **[InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixReach_con.lean](../Fixpoint/fixReach_con.lean)**
 
@@ -717,8 +662,6 @@
 
 @import "../Factoid75/boolSat.ai_lean_to_english" {code_block=false}
 
-
-
 @import "../Factoid75/boolSystem.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/boolCon_trichotomy.ai_lean_to_english" {code_block=false}
@@ -736,7 +679,6 @@
 @import "../Factoid75/entSet_singleton_fls_of_ent_fls.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/entSet_singleton_tru_of_ent_tru.ai_lean_to_english" {code_block=false}
-
 
 @import "../Factoid75/filter_ne_subset_of_subset_insert_strict.ai_lean_to_english" {code_block=false}
 
@@ -756,10 +698,7 @@
 
 @import "../Factoid75/not_ent_fls_tru.ai_lean_to_english" {code_block=false}
 
-
 @import "../Factoid75/not_ent_tru_fls.ai_lean_to_english" {code_block=false}
-
-
 
 @import "../Factoid75/conditional_iso.ai_lean_to_english" {code_block=false}
 
@@ -769,14 +708,11 @@
 
 @import "../Factoid75/strictify.ai_lean_to_english" {code_block=false}
 
-
-
 @import "../Factoid75/subset_of_entSet_mem.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/condMap.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/condMap_unique.ai_lean_to_english" {code_block=false}
-
 
 @import "../Factoid75/toFunFinset.ai_lean_to_english" {code_block=false}
 
@@ -785,10 +721,6 @@
 @import "../Factoid75/StrictFunEnt.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid75/mem_toFunFinset.ai_lean_to_english" {code_block=false}
-
-
-
-
 
 @import "../Factoid75/strictFunctionSystem.ai_lean_to_english" {code_block=false}
 
@@ -804,16 +736,11 @@
 
 @import "../Factoid76/compOp.ai_lean_to_english" {code_block=false}
 
-
-
 @import "../Factoid76/constOp.ai_lean_to_english" {code_block=false}
-
 
 @import "../Factoid76/pairMap_comp_fst_snd_toElement.ai_lean_to_english" {code_block=false}
 
-
 @import "../Factoid76.ai_lean_to_english" {code_block=false}
-
 
 @import "../Factoid76/pairMap_toElement_pairElements.ai_lean_to_english" {code_block=false}
 
@@ -823,15 +750,9 @@
 
 @import "../Factoid76/Basic.ai_lean_to_english" {code_block=false}
 
-
-
-
 @import "../Factoid77/InfoSysObj.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/acomp.ai_lean_to_english" {code_block=false}
-
-
-
 
 @import "../Factoid77/curry_uncurry.ai_lean_to_english" {code_block=false}
 
@@ -846,8 +767,6 @@
 @import "../Factoid77/productLimitCone.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/swapMap.ai_lean_to_english" {code_block=false}
-
-
 
 @import "../Factoid77/swapMap_acomp_swapMap.ai_lean_to_english" {code_block=false}
 
@@ -875,11 +794,9 @@
 
 @import "../Factoid77/tensorElementToProdElement.ai_lean_to_english" {code_block=false}
 
-
 @import "../Factoid77/tensorHom_eq_productMap.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/prodHomToTensorHom.ai_lean_to_english" {code_block=false}
-
 
 @import "../Factoid77/tensorHomToProdHom.ai_lean_to_english" {code_block=false}
 
@@ -889,7 +806,6 @@
 
 @import "../Factoid77/productMapToTensorMap.ai_lean_to_english" {code_block=false}
 
-
 @import "../Factoid77/tensorLeft_map_eq.ai_lean_to_english" {code_block=false}
 
 @import "../Factoid77/uncurryProduct.ai_lean_to_english" {code_block=false}
@@ -898,11 +814,7 @@
 
 @import "../Factoid77/curryRight_uncurryRight.ai_lean_to_english" {code_block=false}
 
-
 @import "../Factoid77/tensorExpEquiv.ai_lean_to_english" {code_block=false}
-
-
-
 
 @import "../Factoid77/expFunctor.ai_lean_to_english" {code_block=false}
 
@@ -927,7 +839,6 @@
 @import "../Fixpoint/fixChain_empty.ai_lean_to_english" {code_block=false}
 
 @import "../Fixpoint/fixChain_mono_w.ai_lean_to_english" {code_block=false}
-
 
 @import "../Fixpoint/fixChain_pad.ai_lean_to_english" {code_block=false}
 

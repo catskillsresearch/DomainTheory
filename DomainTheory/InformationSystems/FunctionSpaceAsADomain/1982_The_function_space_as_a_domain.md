@@ -22,7 +22,6 @@
 
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funBot.lean](FunctionSpace/funBot.lean)**
 
-
 @import "FunctionSpace/funInputUnion.lean"
 
 @import "FunctionSpace/funOutputUnion.lean"
@@ -65,9 +64,7 @@
 
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funInputUnion.lean](FunctionSpace/funInputUnion.lean)**
 
-
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funOutputUnion.lean](FunctionSpace/funOutputUnion.lean)**
-
 
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/FunCon.lean](FunctionSpace/FunCon.lean)**
 
@@ -78,7 +75,6 @@
 @import "FunctionSpace/FunEnt.lean"
 
 @import "FunctionSpace/functionSystem.lean"
-
 
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/insert_filter_ne.lean](FunctionSpace/insert_filter_ne.lean)**
 
@@ -92,29 +88,11 @@
 
 @import "FunctionSpace/mem_foldr_funOutput.lean"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/exists_combined_witness.lean](FunctionSpace/exists_combined_witness.lean)**
 
 @import "FunctionSpace/exists_combined_witness.lean"
 
-
-
-
-
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/functionSystem.lean](FunctionSpace/functionSystem.lean)**
-
 
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/Basic.lean](FunctionSpace/Basic.lean)**
 
@@ -130,10 +108,7 @@
 
 @import "FunctionSpace/BasicInst7.ai_lean_to_english" {code_block=false}
 
-
 @import "FunctionSpace/funBot.ai_lean_to_english" {code_block=false}
-
-
 
 @import "FunctionSpace/funion_assoc'.ai_lean_to_english" {code_block=false}
 
@@ -161,8 +136,6 @@
 
 @import "FunctionSpace/FunEnt.ai_lean_to_english" {code_block=false}
 
-
-
 @import "FunctionSpace/insert_filter_ne.ai_lean_to_english" {code_block=false}
 
 @import "FunctionSpace/mem_foldr_funInput.ai_lean_to_english" {code_block=false}
@@ -173,20 +146,9 @@
 
 @import "FunctionSpace/entSet_inputUnion_of_ent.ai_lean_to_english" {code_block=false}
 
-
-
-
-
 @import "FunctionSpace/mem_funOutputUnion.ai_lean_to_english" {code_block=false}
 
-
-
-
 @import "FunctionSpace/exists_combined_witness.ai_lean_to_english" {code_block=false}
-
-
-
-
 
 @import "FunctionSpace/functionSystem.ai_lean_to_english" {code_block=false}
 

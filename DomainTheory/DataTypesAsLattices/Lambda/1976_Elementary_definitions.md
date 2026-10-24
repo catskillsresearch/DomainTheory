@@ -6,13 +6,13 @@
 
 ## AI: Human-English to AI-Lean
 
-**[DataTypesAsLattices/Computability/topRecTerm.lean](topRecTerm.lean)**
+**[DataTypesAsLattices/Computability/topRecTerm.lean](../Computability/topRecTerm.lean)**
 
-@import "topRecTerm.lean"
+@import "../Computability/topRecTerm.lean"
 
-**[DataTypesAsLattices/Computability/topRecTerm_interp.lean](topRecTerm_interp.lean)**
+**[DataTypesAsLattices/Computability/topRecTerm_interp.lean](../Computability/topRecTerm_interp.lean)**
 
-@import "topRecTerm_interp.lean"
+@import "../Computability/topRecTerm_interp.lean"
 
 **[DataTypesAsLattices/Lambda/eq_2_16.lean](eq_2_16.lean)**
 
@@ -96,9 +96,9 @@
 
 ## AI: AI-Lean to AI-English
 
-@import "topRecTerm.ai_lean_to_english" {code_block=false}
+@import "../Computability/topRecTerm.ai_lean_to_english" {code_block=false}
 
-@import "topRecTerm_interp.ai_lean_to_english" {code_block=false}
+@import "../Computability/topRecTerm_interp.ai_lean_to_english" {code_block=false}
 
 @import "eq_2_16.ai_lean_to_english" {code_block=false}
 

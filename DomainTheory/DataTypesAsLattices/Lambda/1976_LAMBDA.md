@@ -6,9 +6,9 @@
 
 ## AI: Human-English to AI-Lean
 
-**[DataTypesAsLattices/Computability/combinatory_isLambdaDefinable.lean](combinatory_isLambdaDefinable.lean)**
+**[DataTypesAsLattices/Computability/combinatory_isLambdaDefinable.lean](../Computability/combinatory_isLambdaDefinable.lean)**
 
-@import "combinatory_isLambdaDefinable.lean"
+@import "../Computability/combinatory_isLambdaDefinable.lean"
 
 **[DataTypesAsLattices/Lambda/Comb.lean](Comb.lean)**
 
@@ -408,7 +408,7 @@
 
 ## AI: AI-Lean to AI-English
 
-@import "combinatory_isLambdaDefinable.ai_lean_to_english" {code_block=false}
+@import "../Computability/combinatory_isLambdaDefinable.ai_lean_to_english" {code_block=false}
 
 @import "Comb.ai_lean_to_english" {code_block=false}
 

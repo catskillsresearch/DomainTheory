@@ -6,69 +6,69 @@
 
 ## AI: Human-English to AI-Lean
 
-**[DataTypesAsLattices/Computability/primRecComb.lean](primRecComb.lean)**
+**[DataTypesAsLattices/Computability/primRecComb.lean](../Computability/primRecComb.lean)**
 
-@import "primRecComb.lean"
+@import "../Computability/primRecComb.lean"
 
-**[DataTypesAsLattices/Computability/primRecComb_combinatory.lean](primRecComb_combinatory.lean)**
+**[DataTypesAsLattices/Computability/primRecComb_combinatory.lean](../Computability/primRecComb_combinatory.lean)**
 
-@import "primRecComb_combinatory.lean"
+@import "../Computability/primRecComb_combinatory.lean"
 
-**[DataTypesAsLattices/Computability/primRecComb_ofNat.lean](primRecComb_ofNat.lean)**
+**[DataTypesAsLattices/Computability/primRecComb_ofNat.lean](../Computability/primRecComb_ofNat.lean)**
 
-@import "primRecComb_ofNat.lean"
+@import "../Computability/primRecComb_ofNat.lean"
 
-**[DataTypesAsLattices/Computability/primRecOpC_app.lean](primRecOpC_app.lean)**
+**[DataTypesAsLattices/Computability/primRecOpC_app.lean](../Computability/primRecOpC_app.lean)**
 
-@import "primRecOpC_app.lean"
+@import "../Computability/primRecOpC_app.lean"
 
-**[DataTypesAsLattices/Computability/primRecOpEnv.lean](primRecOpEnv.lean)**
+**[DataTypesAsLattices/Computability/primRecOpEnv.lean](../Computability/primRecOpEnv.lean)**
 
-@import "primRecOpEnv.lean"
+@import "../Computability/primRecOpEnv.lean"
 
-**[DataTypesAsLattices/Computability/primRecOpEnv_combinatory.lean](primRecOpEnv_combinatory.lean)**
+**[DataTypesAsLattices/Computability/primRecOpEnv_combinatory.lean](../Computability/primRecOpEnv_combinatory.lean)**
 
-@import "primRecOpEnv_combinatory.lean"
+@import "../Computability/primRecOpEnv_combinatory.lean"
 
-**[DataTypesAsLattices/Computability/primRecOpC_combinatory.lean](primRecOpC_combinatory.lean)**
+**[DataTypesAsLattices/Computability/primRecOpC_combinatory.lean](../Computability/primRecOpC_combinatory.lean)**
 
-@import "primRecOpC_combinatory.lean"
+@import "../Computability/primRecOpC_combinatory.lean"
 
-**[DataTypesAsLattices/Computability/primRecOpTerm.lean](primRecOpTerm.lean)**
+**[DataTypesAsLattices/Computability/primRecOpTerm.lean](../Computability/primRecOpTerm.lean)**
 
-@import "primRecOpTerm.lean"
+@import "../Computability/primRecOpTerm.lean"
 
-**[DataTypesAsLattices/Computability/primRecOpC.lean](primRecOpC.lean)**
+**[DataTypesAsLattices/Computability/primRecOpC.lean](../Computability/primRecOpC.lean)**
 
-@import "primRecOpC.lean"
+@import "../Computability/primRecOpC.lean"
 
-**[DataTypesAsLattices/Computability/primRecVal_add.lean](primRecVal_add.lean)**
+**[DataTypesAsLattices/Computability/primRecVal_add.lean](../Computability/primRecVal_add.lean)**
 
-@import "primRecVal_add.lean"
+@import "../Computability/primRecVal_add.lean"
 
-**[DataTypesAsLattices/Computability/primRecVal_mul.lean](primRecVal_mul.lean)**
+**[DataTypesAsLattices/Computability/primRecVal_mul.lean](../Computability/primRecVal_mul.lean)**
 
-@import "primRecVal_mul.lean"
+@import "../Computability/primRecVal_mul.lean"
 
-**[DataTypesAsLattices/Computability/primRecZeroC.lean](primRecZeroC.lean)**
+**[DataTypesAsLattices/Computability/primRecZeroC.lean](../Computability/primRecZeroC.lean)**
 
-@import "primRecZeroC.lean"
+@import "../Computability/primRecZeroC.lean"
 
-**[DataTypesAsLattices/Computability/primRecZeroC_app.lean](primRecZeroC_app.lean)**
+**[DataTypesAsLattices/Computability/primRecZeroC_app.lean](../Computability/primRecZeroC_app.lean)**
 
-@import "primRecZeroC_app.lean"
+@import "../Computability/primRecZeroC_app.lean"
 
-**[DataTypesAsLattices/Computability/primRecZeroC_combinatory.lean](primRecZeroC_combinatory.lean)**
+**[DataTypesAsLattices/Computability/primRecZeroC_combinatory.lean](../Computability/primRecZeroC_combinatory.lean)**
 
-@import "primRecZeroC_combinatory.lean"
+@import "../Computability/primRecZeroC_combinatory.lean"
 
-**[DataTypesAsLattices/Computability/primRecVal_sub.lean](primRecVal_sub.lean)**
+**[DataTypesAsLattices/Computability/primRecVal_sub.lean](../Computability/primRecVal_sub.lean)**
 
-@import "primRecVal_sub.lean"
+@import "../Computability/primRecVal_sub.lean"
 
-**[DataTypesAsLattices/Computability/primRecVal_sqrt.lean](primRecVal_sqrt.lean)**
+**[DataTypesAsLattices/Computability/primRecVal_sqrt.lean](../Computability/primRecVal_sqrt.lean)**
 
-@import "primRecVal_sqrt.lean"
+@import "../Computability/primRecVal_sqrt.lean"
 
 **[DataTypesAsLattices/Lambda/primRecHat_zero.lean](primRecHat_zero.lean)**
 
@@ -116,37 +116,37 @@
 
 ## AI: AI-Lean to AI-English
 
-@import "primRecComb.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecComb.ai_lean_to_english" {code_block=false}
 
-@import "primRecComb_combinatory.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecComb_combinatory.ai_lean_to_english" {code_block=false}
 
-@import "primRecComb_ofNat.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecComb_ofNat.ai_lean_to_english" {code_block=false}
 
-@import "primRecOpC_app.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecOpC_app.ai_lean_to_english" {code_block=false}
 
-@import "primRecOpEnv.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecOpEnv.ai_lean_to_english" {code_block=false}
 
-@import "primRecOpEnv_combinatory.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecOpEnv_combinatory.ai_lean_to_english" {code_block=false}
 
-@import "primRecOpC_combinatory.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecOpC_combinatory.ai_lean_to_english" {code_block=false}
 
-@import "primRecOpTerm.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecOpTerm.ai_lean_to_english" {code_block=false}
 
-@import "primRecOpC.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecOpC.ai_lean_to_english" {code_block=false}
 
-@import "primRecVal_add.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecVal_add.ai_lean_to_english" {code_block=false}
 
-@import "primRecVal_mul.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecVal_mul.ai_lean_to_english" {code_block=false}
 
-@import "primRecZeroC.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecZeroC.ai_lean_to_english" {code_block=false}
 
-@import "primRecZeroC_app.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecZeroC_app.ai_lean_to_english" {code_block=false}
 
-@import "primRecZeroC_combinatory.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecZeroC_combinatory.ai_lean_to_english" {code_block=false}
 
-@import "primRecVal_sub.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecVal_sub.ai_lean_to_english" {code_block=false}
 
-@import "primRecVal_sqrt.ai_lean_to_english" {code_block=false}
+@import "../Computability/primRecVal_sqrt.ai_lean_to_english" {code_block=false}
 
 @import "primRecHat_zero.ai_lean_to_english" {code_block=false}
 
