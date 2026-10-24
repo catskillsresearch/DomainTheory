@@ -6,7 +6,7 @@ public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilt
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter_toFilter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.mem_wayBelowUp_toFilter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter_mono
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.UpperLower.Basic

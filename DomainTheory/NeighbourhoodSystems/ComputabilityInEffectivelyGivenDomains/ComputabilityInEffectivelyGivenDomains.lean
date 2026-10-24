@@ -1,11 +1,11 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs
-public import DomainTheory.NeighbourhoodSystems.DomainEquations
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.DomainConstructs
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.DomainEquations
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.FixedPointsAndRecursion
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.MappingsBetweenDomains
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.TypedLambdaCalculus
 public import Mathlib.Computability.DFA
 public import Mathlib.Computability.EpsilonNFA
 public import Mathlib.Computability.Partrec
@@ -29,6 +29,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L4495 DEFINITION 7.9 power domain -/
 /-- **Definition 7.9 — the Smyth power domain `ℙ𝒟`.** A set `W : Set (Set α)` is a
 neighbourhood of `ℙ𝒟` iff it is a *finite union of down-sets* `⋃_{X ∈ L} ↓X` for some finite
 list `L` of `𝒟`-neighbourhoods. The empty list `L = []` realizes Scott's `n = 0` (the empty
@@ -477,6 +478,7 @@ namespace Exercise722
 
 open NeighborhoodSystem ApproximableMap
 
+/- concordance: source L4707 EXERCISE 7.22 domain of formal languages -/
 /-- **Exercise 7.22 (neighbourhood-system part).** `S` is a *positive* neighbourhood system over the
 token type `Σ = {0,1}*`, with master neighbourhood `Δ = Σ = Set.univ`. Proof fields are named so
 Palomar can lock this value. -/
@@ -3694,6 +3696,7 @@ variable {σ₁ σ₂ : Type}
 variable {σ : Type}
 
 
+/- concordance: source L4243 DEFINITION 7.1 computable presentation -/
 /-- **Definition 7.1 (ii) for encoded neighbourhoods:** when `denote a`, `denote b ∈ S`,
 `consistentB` agrees with membership of the intersection in `S`. -/
 theorem consistentB_iff_Ssys (a b : SExpr) (ha : InS (denote a)) (hb : InS (denote b)) :
@@ -10372,6 +10375,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 variable {α β γ : Type*}
 
+/- concordance: source L4271 DEFINITION 7.2 computable mapping -/
 /-- **Definition 7.2 (Scott 1981, PRG-19) — computable element.** Specializing to `f : 𝟙 → W`, the
 condition becomes: the index set `{m ∣ Yₘ ∈ y}` of the element `y ∈ |W|` is recursively enumerable.
 We take this as the definition of a *computable element*. -/
@@ -10411,6 +10415,7 @@ variable {α β γ : Type*}
 
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
 
+/- concordance: source L4305 PROPOSITION 7.3 computable maps form a category -/
 /-- **Proposition 7.3 (consequence) (Scott 1981, PRG-19).** "If `f : 𝒟 → ℰ` is computable and
 `x ∈ |𝒟|` is computable, then `f(x) ∈ |ℰ|` is also computable." Here `f(x) = {Yₘ ∣ ∃ Xₙ ∈ x, Xₙ f Yₘ}`
 (`toElementMap`); surjectivity of `P` lets the witness `X` range over indices `n`, and the resulting
@@ -10626,6 +10631,7 @@ namespace DomainTheory.NeighbourhoodSystems.Example78
 
 open Domain.Recursive NeighborhoodSystem
 
+/- concordance: source L4477 EXAMPLE 7.8 powerset effectively given -/
 /-- **Example 7.8 — the computable presentation of `PN`.** The enumeration is `nbhd`; the
 intersection function is the choice-free primitive-recursive bitwise OR `myLor`; Scott's relation
 7.1(i) is `nbhd n ∩ nbhd m = nbhd k ↔ (n ||| m) = k`, decided by `RecDecidable.natEq`; relation
@@ -10690,11 +10696,13 @@ end DomainTheory.NeighbourhoodSystems.Example78
 end
 
 section
+/- concordance: source L4607 EXERCISES — Lecture VII exercises -/
 -- Exercise713/InclStructure.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise713
 
 open NeighborhoodSystem Domain.Recursive
 
+/- concordance: source L4609 EXERCISE 7.13 axiomatic neighbourhood structure -/
 /-- **Exercise 7.13 — the abstract data.** A relation `INCL : ℕ → ℕ → Prop` together with the
 witnesses and decidability/axiom data Scott requires. The derived relations are
 `CONS`/`MEET` (below); the literal existential axioms (iii)/(iv) are `axiom_iii`/`axiom_iv`.
@@ -11414,6 +11422,7 @@ end DomainTheory.NeighbourhoodSystems.Exercise713
 end
 
 section
+/- concordance: source L4631 EXERCISE 7.14 primitive recursive witnesses -/
 -- Exercise714/tFun.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise714
 
@@ -11823,6 +11832,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L4517 PROPOSITION 7.10 power domain effective -/
 /-- **Proposition 7.10 (Part A) — the Smyth power domain `ℙ𝒟` as a neighbourhood system.** Master
 `↓Δ`; closure under intersection is `PDmem_inter`; `↓X ⊆ ↓Δ` since `X ⊆ Δ`. -/
 abbrev PowerDomain : NeighborhoodSystem (Set α) where
@@ -12919,6 +12929,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L4557 DEFINITION 7.11 finite sets of elements -/
 /-- **Definition 7.11.** The finite-element join `{x₀,…,x_{n-1}}` in `|ℙ𝒟|`. The empty
 family yields `⊥`; otherwise use Scott's union-of-down-sets condition. -/
 def PDfinJoin (n : ℕ) (xs : Fin n → V.Element) : V.PowerDomain.Element :=
@@ -13072,6 +13083,7 @@ variable {α β γ : Type*}
 
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
+/- concordance: source L4663 EXERCISE 7.19 power domain functor -/
 /-- **Exercise 7.19 (Scott 1981, PRG-19) — the functorial action `ℙf : ℙD → ℙE`.** Given an
 approximable map `f : D → E`, the relation between `ℙD`- and `ℙE`-neighbourhoods is "every member of
 the source is `f`-related to some member of the target". This is the representation-independent form
@@ -14376,6 +14388,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 variable {α : Type*}
 
+/- concordance: source L4675 EXERCISE 7.20 union on power domains -/
 /-- **Exercise 7.20 (Scott 1981, PRG-19) — the flattening combinator `union : ℙ(ℙD) → ℙD`.** Given a
 `ℙℙD`-neighbourhood `A` and a `ℙD`-neighbourhood `B`, the relation holds iff every `D`-neighbourhood
 `X` occurring in some member-set `S ∈ A` is covered by some `Y ∈ B`. This is the
@@ -14987,6 +15000,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 variable {α β : Type*}
 
+/- concordance: source L4689 EXERCISE 7.21 distributing the power domain -/
 /-- **Exercise 7.21 — the two-variable combinator `papplyEval : ℙ(D→E) × ℙD → ℙE`.** The Smyth
 power-domain lift of evaluation (Theorem 3.11): a `ℙ(D→E)`-neighbourhood `Φ` applied to a
 `ℙD`-neighbourhood `A` covers a `ℙE`-neighbourhood `B` iff every function-neighbourhood `G ∈ Φ`
@@ -16599,6 +16613,7 @@ variable {α : Type*}
 
 namespace Proposition77
 
+/- concordance: source L4433 PROPOSITION 7.7 lists effectively given -/
 /-- **Proposition 7.7 (Scott 1981, PRG-19).** Scott's enumeration of `D^§`:
 `V₀ = Γ`, `V_{2n+1} = 0·Xₙ`, `V_{2n+2} = 1·V_{p n} ∪ 2·V_{q n}` (`p = unpair.1`, `q = unpair.2`). -/
 def Vsharp (D : NeighborhoodSystem α) (P : ComputablePresentation D) :
@@ -17856,6 +17871,7 @@ variable {α β γ α' β' : Type*}
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
+/- concordance: source L4311 THEOREM 7.4 sum and product effective -/
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — `𝒟₀ × 𝒟₁` is effectively given.** The presentation
 `W_k = X⁰_{p k} ∪ X¹_{q k}`. Scott's 7.1(i) and (ii) each split, via `prodNbhd_inter` /
 `prodNbhd_subset_iff`, into the *conjunction* of the two factors' relations on the projected
@@ -20932,6 +20948,7 @@ variable {P₀ P₁}
 
 variable (P₀ P₁)
 
+/- concordance: source L4643 EXERCISE 7.15 further constructs effective -/
 /-- **Exercise 7.15 — `𝒟₀ ⊗ 𝒟₁` is effectively given (Scott's Definition 7.1).** A bare presentation
 of the smash product. The enumeration is classical (re-routing improper products to the master); the
 two relations (i),(ii) are choice-free recursively decidable, reducing to the components' relations
@@ -24000,6 +24017,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 variable {α β : Type*}
 
+/- concordance: source L4655 EXERCISE 7.18 effective isomorphism -/
 /-- **Exercise 7.18 (Scott 1981, PRG-19) — effective isomorphism (completing the sentence).** Two
 effectively given systems `D` (presentation `P`) and `E` (presentation `Q`) are *effectively
 isomorphic* iff there is a pair of mutually inverse approximable maps `toMap : D → E`,
@@ -24265,6 +24283,7 @@ namespace Proposition77
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
 
+/- concordance: source L4647 EXERCISE 7.17 recursion over lists -/
 /-- **Exercise 7.17 (Scott 1981, PRG-19) — the pairing `pair : D^§ × D^§ → D^§` is computable.**
 Its index relation is exactly `V_{2·⟨a,b⟩+2} ⊆ V_k`, a recursive slice of `D^§`'s inclusion decider
 (`dsharpPresentation.incl_computable`) reindexed by the primitive-recursive node map
@@ -25696,6 +25715,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L4563 PROPOSITION 7.12 finite sets are approximable -/
 /-- **Proposition 7.12 — monotonicity of `{·}` on principal inputs.** When `X' ⊆ X`, the join
 `{↑X'}` is blunter than `{↑X}` in `|ℙ𝒟|`. -/
 theorem PDsingleton_mono {X X' : Set α} (hX : V.mem X) (hX' : V.mem X') (hX'X : X' ⊆ X) :
@@ -30177,6 +30197,7 @@ theorem primrec_funConsChar (fc0 fc1 : ℕ → ℕ) (hfc0p : Nat.Primrec fc0) (h
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
 
 
+/- concordance: source L4361 THEOREM 7.5 function space effective -/
 /-- **Theorem 7.5 (existence part) (Scott 1981, PRG-19).** If `𝒟₀` and `𝒟₁` are effectively given,
 then so is the function space `(𝒟₀ → 𝒟₁)`. Choice-free. -/
 theorem funSpace_isEffectivelyGiven (h₀ : V₀.IsEffectivelyGiven) (h₁ : V₁.IsEffectivelyGiven) :
@@ -31294,6 +31315,7 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
   {V₂ : NeighborhoodSystem γ}
 
 
+/- concordance: source L4645 EXERCISE 7.16 curry as an enumeration -/
 /-- **Exercise 7.16 — `curry` is a *recursive* set.** Relative to the function-space presentations
 `PA` of `(𝒟₀×𝒟₁→𝒟₂)` and `PB` of `(𝒟₀→(𝒟₁→𝒟₂))` (and the inner one `Pc` of `(𝒟₁→𝒟₂)`) built by
 Theorem 7.5, the `curry` combinator's neighbourhood relation is **recursively decidable**:
@@ -32125,6 +32147,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L4727 EXERCISE 7.23 graph and fun computable -/
 -- Exercise723/capMap.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise723
 
@@ -35339,6 +35362,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise724
 
 open NeighborhoodSystem Domain.Recursive
 
+/- concordance: source L4739 EXERCISE 7.24 LUCID history domain -/
 /-- **Exercise 7.24 — `L` is a neighbourhood system** on tokens `Γ`, master `Γ = nbhd []`. -/
 abbrev L : NeighborhoodSystem Gamma :=
   NeighborhoodSystem.ofNestedOrDisjoint Lmem Set.univ Set.univ_nonempty
@@ -38843,6 +38867,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 variable (P : ComputablePresentation V)
 
 
+/- concordance: source L4411 THEOREM 7.6 fix is computable -/
 /-- **Theorem 7.6 (Scott 1981, PRG-19) — `fix` is computable (choice-free).** For any effectively
 given domain `𝒟` (here a computable presentation `P` of `V`, together with the function-space
 consistency/inclusion/equality chars of Theorem 7.5), the combinator `fix : (𝒟 → 𝒟) → 𝒟` is

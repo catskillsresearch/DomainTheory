@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toNeighborhoodSystem
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.UpperLower.Basic

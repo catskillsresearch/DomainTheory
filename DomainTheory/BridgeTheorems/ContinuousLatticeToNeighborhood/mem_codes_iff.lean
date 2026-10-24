@@ -14,7 +14,7 @@ public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
 public import DomainTheory.ContinuousLattice.WayBelow.sInf_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.isContinuousLattice_iff_isLUB_sInf_nhds
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Basic
 
 

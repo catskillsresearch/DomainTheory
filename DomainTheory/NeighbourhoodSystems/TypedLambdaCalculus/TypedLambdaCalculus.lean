@@ -1,8 +1,8 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.DomainConstructs
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.FixedPointsAndRecursion
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.MappingsBetweenDomains
 public import Mathlib.Algebra.FreeMonoid.Basic
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.Ring.Parity
@@ -17,6 +17,8 @@ public import Mathlib.Tactic.Ring
 @[expose] public section
 
 section
+/- concordance: source L3005 EXERCISE 5.7 currying the lambda notation -/
+/- concordance: source L3003 EXERCISES — Lecture V exercises -/
 -- Exercise507/curry₃.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise507
 
@@ -522,6 +524,7 @@ variable {αx αa αb : Type*}
   {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 
+/- concordance: source L3013 EXERCISE 5.8 combinatory completeness -/
 /-- **Combinatory completeness (Exercise 5.8, Scott 1981, PRG-19).** The variable-free combinator
 expression `bracket t` denotes exactly the function `λx.t`: applied to any `x`, it yields `t.denote x`.
 
@@ -596,6 +599,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
+/- concordance: source L3015 EXERCISE 5.9 common fixed points -/
 /-- **Exercise 5.9 (Scott 1981, PRG-19).** Commuting approximable maps have a *least common fixed
 point* `x = f(x) = g(x)`. -/
 theorem commuting_least_common_fixed {f g : ApproximableMap V V} (hcomm : f.comp g = g.comp f) :
@@ -975,6 +979,7 @@ variable {α β γ : Type*}
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
+/- concordance: source L3017 EXERCISE 5.10 smash product -/
 /-- **Exercise 5.10 (Scott 1981, PRG-19) — the smash product `𝒟₀ ⊗ 𝒟₁`.** Neighbourhoods are the
 master `Δ₀ ∪ Δ₁` together with the *proper* product neighbourhoods `X ∪ Y` (both factors proper).
 
@@ -2747,6 +2752,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
+/- concordance: source L3031 EXERCISE 5.11 stack combinators -/
 /-- **Exercise 5.11 (Scott 1981, PRG-19).** The recursion `diag(x) = push(x, diag(x))`. -/
 theorem diag_rec (x : V.Element) :
     (diag V).toElementMap x =
@@ -3423,6 +3429,7 @@ variable {α : Type*} (V : NeighborhoodSystem α)
   (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 
+/- concordance: source L3071 EXERCISE 5.12 while combinator -/
 /-- **Exercise 5.12 (Scott 1981, PRG-19).** The defining recursion of the `while`-loop:
 `w(x) = cond(p(x), w(f(x)), x)`. -/
 theorem whileMap_rec (x : V.Element) :
@@ -3531,6 +3538,7 @@ end DomainTheory.NeighbourhoodSystems.Exercise512
 end
 
 section
+/- concordance: source L3149 EXERCISE 5.15 star of a word -/
 -- Exercise515/kpow.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise515
 
@@ -4527,6 +4535,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exampl
 
 variable {β : Type*}
 
+/- concordance: source L3184 EXERCISE 5.16 negation of sequences -/
 /-- **Exercise 5.16 / Example 4.4 — `tail : C → C`.** Built with the head-test combinator `liftC`:
 on `σ⊥` it returns `(tail σ)⊥`, on `σ` the total `tail σ` (with `tail Λ = ⊥`). -/
 def tailMap : ApproximableMap C C :=
@@ -7191,6 +7200,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
+/- concordance: source L2799 PROPOSITION 5.4 fixed point under a parameter -/
 /-- **Proposition 5.4 (Scott 1981, PRG-19).** `λx. !y. τ(x, y) = !g. λx. τ(x, g(x))`. -/
 theorem pfix_eq_fixElement_recOp (τ : ApproximableMap (prod V V) V) :
     pfix τ = toApproxMap (recOp τ).fixElement := by
@@ -7275,6 +7285,7 @@ variable {α β γ : Type*}
   {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   {V₂ : NeighborhoodSystem γ}
 
+/- concordance: source L2836 TABLE 5.5 table of combinators -/
 /-- **Table 5.5 (Scott 1981, PRG-19).** `P₀ = λx,y.x`, the first projection `𝒟₀ × 𝒟₁ → 𝒟₀`. -/
 def P₀ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) : ApproximableMap (prod V₀ V₁) V₀ :=
   proj₀ V₀ V₁
@@ -7980,6 +7991,7 @@ variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSyst
 namespace ApproximableMap
 
 
+/- concordance: source L2745 PROPOSITION 5.3 simultaneous fixed points -/
 /-- **Proposition 5.3 (Scott 1981, PRG-19).** Bekić's theorem: the least fixed point of
 `F = ⟨τ, σ⟩` is the pair `⟨!x.τ(x, !y.σ(x,y)-coordinate), !y.σ(!x.τ(x,y), y)⟩`. Here the second
 coordinate is `ystar = (outerOp τ σ).fixElement` and the first is `xstar = secFixX τ (ystar)`. -/
@@ -8095,6 +8107,7 @@ variable {α β γ δ : Type*}
 namespace Theorem51
 
 
+/- concordance: source L2599 THEOREM 5.1 terms denote approximable maps -/
 /-- **Theorem 5.1, abstraction case (Scott 1981, PRG-19).** If `⟦σ⟧ : Γ × 𝒟ₙ → 𝒟'` is approximable,
 then `λx.σ` is interpreted by `curry ⟦σ⟧ : Γ → (𝒟ₙ → 𝒟')` (approximable by Thm 3.12), with value
 `(λx.σ)(v)(x) = σ(v, x)`. -/
@@ -8573,6 +8586,7 @@ variable {α β γ δ : Type*}
 
 namespace Theorem52
 
+/- concordance: source L2657 THEOREM 5.2 beta conversion -/
 /-- **Theorem 5.2 (Scott 1981, PRG-19) — β as a map equation.** Substituting the constant `σ` for
 the bound variable: `(λx.τ)(σ) = τ[σ/x]`, where the left side first abstracts (`curry g`) then
 applies to the constant `σ`, and the right side substitutes `σ` directly. Both are approximable
@@ -12024,6 +12038,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
+/- concordance: source L2877 THEOREM 5.6 partial recursive functions -/
 /-- **Theorem 5.6 (Scott 1981, PRG-19) — every partial recursive function is λ-definable.** For each
 `Nat.Partrec'` function `f : Vector ℕ n →. ℕ` there is an approximable map `φ : 𝒩 → N` that is a
 *very strict* λ-definition of `f`: it returns `f`'s value on total arguments, `⊥` where `f` is
@@ -12357,6 +12372,7 @@ end DomainTheory.NeighbourhoodSystems.Exercise513
 end
 
 section
+/- concordance: source L3119 EXERCISE 5.14 functions as graphs -/
 -- Exercise514/tag.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise514
 
@@ -12642,6 +12658,7 @@ section
 -- numEquiv.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
+/- concordance: source L3097 EXERCISE 5.13 pairing function on numbers -/
 /-- **Exercise 5.13.** The pairing function packaged as a bijection `ℕ × ℕ ≃ ℕ` (choice-free, via the
 explicit inverse `unnum`). -/
 def numEquiv : ℕ × ℕ ≃ ℕ where

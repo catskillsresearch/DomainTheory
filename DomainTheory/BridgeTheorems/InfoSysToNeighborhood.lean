@@ -3,7 +3,7 @@ module
 public import DomainTheory.BridgeTheorems.toNeighborhoodSystem
 public import DomainTheory.BridgeTheorems.InfoSysToNeighborhood.domainOrderIso
 public import Mathlib.Order.Hom.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23

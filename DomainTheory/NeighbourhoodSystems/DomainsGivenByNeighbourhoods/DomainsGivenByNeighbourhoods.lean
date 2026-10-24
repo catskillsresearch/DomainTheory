@@ -23,6 +23,7 @@ section
 -- NeighborhoodSystem.lean
 namespace DomainTheory.NeighbourhoodSystems
 
+/- concordance: source L120 DEFINITION 1.1 neighbourhood system -/
 /-- **Definition 1.1 (Scott 1981, PRG-19).** A *neighbourhood system* over a token type
 `α`. `mem X` means "`X` is a neighbourhood" (`X ∈ 𝒟`), and `master` is Scott's least
 informative neighbourhood `Δ` (the whole token set, "ask me no questions").
@@ -63,6 +64,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L240 DEFINITION 1.6 ideal elements -/
 /-- **Definition 1.6 (Scott 1981, PRG-19).** An (ideal) *element* of a neighbourhood system:
 a subfamily `x ⊆ 𝒟` that is a *filter* — (i) `Δ ∈ x`, (ii) closed under intersection, (iii)
 upward closed within `𝒟`. The domain is the type `Element` of all such filters, ordered by
@@ -87,6 +89,7 @@ section
 -- IsPositive.lean
 namespace DomainTheory.NeighbourhoodSystems
 
+/- concordance: source L468 EXERCISE 1.19 positive neighbourhood systems -/
 /-- **Exercise 1.19 (Scott 1981, PRG-19) — positivity, condition (ii′).** A neighbourhood
 system is *positive* when Scott's (ii) is strengthened to the biconditional **(ii′)**: for
 `X, Y ∈ 𝒟`, the intersection `X ∩ Y` is a neighbourhood **iff** it is non-empty. -/
@@ -118,6 +121,7 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-- The finite intersection `⋂_{i < n} Xᵢ` of the first `n` terms of a sequence of
+/- concordance: source L131 FACTOID 1.1a empty intersection is delta -/
 neighbourhoods, defined by Scott's recursive convention (**Factoid 1.1a / 1.1b**):
 
 * `n = 0` : the empty intersection is `Δ` (`master`);
@@ -158,6 +162,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L135 FACTOID 1.1b recursive finite intersection -/
 /-- **Factoid 1.1b.** The intersection of the first `n + 1` neighbourhoods peels off the
 last factor: `⋂_{i < n+1} Xᵢ = (⋂_{i < n} Xᵢ) ∩ Xₙ`. -/
 @[simp] theorem interUpTo_succ (X : ℕ → Set α) (n : ℕ) :
@@ -344,6 +349,7 @@ section
 -- ofNestedOrDisjoint.lean
 namespace DomainTheory.NeighbourhoodSystems
 
+/- concordance: source L206 FACTOID 1.4a nested or disjoint -/
 /-- **Factoid 1.4a (Scott 1981, PRG-19).** "In these systems two neighbourhoods are either
 disjoint or one is included in the other": a family containing `Δ` whose members are pairwise
 nested-or-disjoint **is** a neighbourhood system. This uniformly explains why Examples 1.2,
@@ -410,6 +416,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L256 DEFINITION 1.7 principal filter -/
 /-- **Definition 1.7 (Scott 1981, PRG-19).** The *principal filter* `↑X` determined by a
 neighbourhood `X ∈ 𝒟`:
 
@@ -459,6 +466,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L282 DEFINITION 1.8 approximation and totality -/
 /-- **Definition 1.8 (Scott 1981, PRG-19) — `⊥`.** The least defined element `⊥ = {Δ}`,
 "read: *bottom*". It is the principal filter of the master neighbourhood `Δ`: `⊥ = ↑Δ`. -/
 def bot : V.Element := V.principal V.master_mem
@@ -501,6 +509,8 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L282 FACTOID 1.8a2 bottom is least -/
+/- concordance: source L282 FACTOID 1.8a1 bottom element -/
 /-- **Factoid 1.8a (Scott 1981, PRG-19).** "The element that approximates all others, `{Δ}`,
 is called `⊥`": `⊥` is the least element of `|𝒟|`, `⊥ ⊑ x` for every `x`.
 
@@ -539,6 +549,7 @@ section
 -- DomainIso.lean
 namespace DomainTheory.NeighbourhoodSystems
 
+/- concordance: source L326 DEFINITION 1.9 isomorphic domains -/
 /-- **Definition 1.9 (Scott 1981, PRG-19).** Two neighbourhood systems `𝒟₀` and `𝒟₁` (over possibly
 *different* token types) *determine isomorphic domains* iff there is a one-one, inclusion-preserving
 correspondence between `|𝒟₀|` and `|𝒟₁|`. We package "one-one + preserves inclusion (both ways)" as
@@ -686,6 +697,7 @@ theorem Element.mem_interUpTo_iff {α : Type*} {V : NeighborhoodSystem α} (x : 
   · exact x.mem_interUpTo X
 
 
+/- concordance: source L238 FACTOID 1.5b equivalent sequences same limit -/
 /-- **Factoid 1.5b (Scott 1981, PRG-19).** "It is easy to prove that … the two families are
 *equal* if and only if the sequences are *equivalent*." Given that every term of each sequence
 is a neighbourhood, the limit families coincide exactly when the sequences are equivalent. -/
@@ -715,6 +727,8 @@ theorem limitFamily_eq_iff (X Y : ℕ → Set α)
       exact ⟨hZ, n, hn.trans hm⟩
 
 
+/- concordance: source L267 FACTOID 1.7a2 inclusion-reversing principals -/
+/- concordance: source L264 FACTOID 1.7a1 principals are one-one -/
 /-- **Factoid 1.7a (Scott 1981, PRG-19) — inclusion-*reversing*.** "It is obvious that the
 correspondence between `X` and `↑X` is one-one and inclusion *reversing*." The order on `↑`:
 `↑X ⊑ ↑Y ↔ Y ⊆ X` (equivalently Scott's `X ⊆ Y ↔ ↑Y ⊑ ↑X`).
@@ -737,6 +751,7 @@ theorem principal_injective {X Y : Set α} (hX : V.mem X) (hY : V.mem Y)
   have hXY : X ⊆ Y := (V.principal_le_iff hY hX).mp (le_of_eq h.symm)
   exact Set.Subset.antisymm hXY hYX
 
+/- concordance: source L273 FACTOID 1.7b union of principal filters -/
 /-- **Factoid 1.7b (Scott 1981, PRG-19).** "It is also obvious from the definitions that for each
 `x ∈ |𝒟|`, `x = ⋃ {↑X ∣ X ∈ x}`." In membership form (the union over a `Set (Set α)` made
 concrete): a neighbourhood `Z` is in `x` iff `Z` lies in the principal filter `↑X` of *some*
@@ -752,6 +767,8 @@ theorem eq_iUnion_principal (x : V.Element) {Z : Set α} :
     exact x.up_mem hX hVZ hXZ
 
 
+/- concordance: source L284 FACTOID 1.8b finite filters are principal -/
+/- concordance: source L284 EXAMPLES 1.2–1.5 finite examples revisited -/
 /-- **Factoid 1.8b (Scott 1981, PRG-19) — "Examples 1.2–1.5 revisited".** "Any explicitly given
 filter `x` is principal … the minimal `X ∈ x` tells us all we need to know." Stated honestly: if
 the filter `x` has a `⊆`-minimum member `X` (one contained in every member of `x`), then `x` is
@@ -1029,6 +1046,7 @@ section
 -- Example12/neighborhoodSystem.lean
 namespace DomainTheory.NeighbourhoodSystems.Example12
 
+/- concordance: source L146 EXAMPLE 1.2 two-token domain -/
 /-- **Example 1.2.** The neighbourhood system on `Δ = {0, 1}`. -/
 def neighborhoodSystem : NeighborhoodSystem Token where
   mem := mem
@@ -1623,6 +1641,7 @@ section
 -- Example13/neighborhoodSystem.lean
 namespace DomainTheory.NeighbourhoodSystems.Example13
 
+/- concordance: source L160 EXAMPLE 1.3 three-step chain -/
 /-- **Example 1.3.** The neighbourhood system on `Δ = {0, 1, 2}`. -/
 def neighborhoodSystem : NeighborhoodSystem Token where
   mem := mem
@@ -2608,6 +2627,7 @@ section
 -- Example14/neighborhoodSystem.lean
 namespace DomainTheory.NeighbourhoodSystems.Example14
 
+/- concordance: source L177 EXAMPLE 1.4 finite binary tree -/
 /-- **Example 1.4.** The binary-tree neighbourhood system on `Δ = {Λ,0,1,00,01,10,11}`. -/
 def neighborhoodSystem : NeighborhoodSystem Token where
   mem := mem
@@ -3548,6 +3568,7 @@ namespace DomainTheory.NeighbourhoodSystems.Example15
 
 open NeighborhoodSystem
 
+/- concordance: source L208 EXAMPLE 1.5 all nonempty subsets -/
 /-- **Example 1.5.** The neighbourhood system of all non-empty subsets of `Δ = {0,1,2,3}`. -/
 def neighborhoodSystem : NeighborhoodSystem Token where
   mem := P4Mem
@@ -3580,6 +3601,7 @@ namespace DomainTheory.NeighbourhoodSystems.Example15
 open NeighborhoodSystem
 
 
+/- concordance: source L210 FACTOID 1.5a consistent iff nonempty -/
 /-- **Factoid 1.5a (Scott 1981, PRG-19).** In Example 1.5, "sets are consistent in `𝒟` iff they
 have a non-empty intersection": a finite prefix `X₀, …, Xₙ₋₁` is consistent exactly when its
 intersection `⋂_{i<n} Xᵢ` is non-empty. -/
@@ -3935,6 +3957,7 @@ namespace DomainTheory.NeighbourhoodSystems.ExampleB
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
+/- concordance: source L317 FACTOID 1.8d union of finite approximations -/
 /-- **Factoid (Scott 1981, PRG-19).** "`x = ⋃ₙ σₙ⊥`": every `x ∈ |B|` is the union of the finite
 elements `σ⊥` whose generating cone `σΣ*` lies in `x`. In membership form, a neighbourhood `Z`
 belongs to `x` iff `Z` lies in some `σ⊥ = ↑(σΣ*)` with `σΣ* ∈ x`.
@@ -4020,6 +4043,7 @@ namespace DomainTheory.NeighbourhoodSystems.ExampleB
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
+/- concordance: source L312 FACTOID 1.8c prefix order -/
 /-- **Factoid (Scott 1981, PRG-19).** "`σ₀⊥ ⊆ σ₁⊥` if and only if `σ₀` is an *initial segment* of
 the sequence `σ₁`." The approximation order on finite elements is exactly the prefix order:
 `σ₀⊥ ⊑ σ₁⊥ ↔ σ₀ <+: σ₁`. (Via `principal_le_iff` — reversal — composed with `cone_subset_cone` —
@@ -4106,6 +4130,7 @@ end DomainTheory.NeighbourhoodSystems.ExampleB
 end
 
 section
+/- concordance: source L444 EXERCISES — Lecture I exercises -/
 -- Exercise112/tail.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise112
 
@@ -4193,6 +4218,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise112
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
+/- concordance: source L446 EXERCISE 1.12 final segments of integers -/
 /-- **Exercise 1.12.** The final-segment neighbourhood system on `ℕ` (master `Δ = tail 0 = ℕ`). -/
 def neighborhoodSystem : NeighborhoodSystem ℕ :=
   ofNestedOrDisjoint mem (tail 0) ⟨0, Nat.zero_le 0⟩ ⟨0, rfl⟩ nestedOrDisjoint
@@ -4457,6 +4483,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise114
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
+/- concordance: source L456 EXERCISE 1.14 finite nonempty subsets -/
 /-- **Exercise 1.14.** The neighbourhood system of finite non-empty subsets of `ℕ` (plus `Δ = ℕ`). -/
 def neighborhoodSystem : NeighborhoodSystem ℕ where
   mem := mem
@@ -4992,6 +5019,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise115
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
+/- concordance: source L458 EXERCISE 1.15 finite elements without chains -/
 /-- **Exercise 1.15.** `flat` and `stem` are *not* isomorphic: an order-isomorphism would transport
 `stem`'s strict 3-chain `⊥ ⊏ ↑{0,1} ⊏ ↑{0}` back to a strict 3-chain in `flat`, which has none. -/
 theorem not_isomorphic : ¬ (flat ≅ᴰ stem) := by
@@ -5025,6 +5053,7 @@ namespace Cofinite
 
 open NeighborhoodSystem
 
+/- concordance: source L462 EXERCISE 1.16 cofinite integer subsets -/
 /-- **Exercise 1.16 — the cofinite neighbourhood system on `ℕ`.** `X ∈ 𝒟 ⟺ Xᶜ` finite;
 closed under finite intersection since `(X∩Y)ᶜ = Xᶜ ∪ Yᶜ`. -/
 def cofiniteSystem : NeighborhoodSystem ℕ where
@@ -5382,6 +5411,7 @@ namespace RatInterval
 
 open NeighborhoodSystem
 
+/- concordance: source L464 EXERCISE 1.17 rational open intervals -/
 /-- **Exercise 1.17 — intersections.** The intersection of two neighbourhoods that share a point
 is again a neighbourhood: `Ioo a b ∩ Ioo c d = Ioo (max a c) (min b d)`, with rational endpoints,
 non-empty because it contains the shared point. -/
@@ -5638,6 +5668,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L466 EXERCISE 1.18 consistency of neighbourhood families -/
 /-- **Exercise 1.18 — consistent subset.** `C ⊆ 𝒟` is *finitely consistent* iff every finite
 sequence drawn from `C` is `Consistent` in `𝒟`. -/
 def FinitelyConsistent (C : Set (Set α)) : Prop :=
@@ -6524,6 +6555,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L472 EXERCISE 1.20 upward closed neighbourhoods -/
 /-- **Exercise 1.20 — the power system `𝒟' = {↑X ∣ X ∈ 𝒟}`** over the tokens `Δ' = 𝒟`. The
 master is `↑Δ`; the intersection law uses the consistency witness `Z ∈ ↑Z ⊆ ↑X ∩ ↑Y` to get
 `Z ⊆ X ∩ Y`, hence `X ∩ Y ∈ 𝒟` and `↑X ∩ ↑Y = ↑(X∩Y)`. -/
@@ -6941,6 +6973,7 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
+/- concordance: source L492 EXERCISE 1.22 topology of a domain -/
 /-- **Exercise 1.22.** Each basic neighbourhood `[X]` is open. -/
 theorem isOpen_basicOpen (X : Set α) : IsOpen (V.basicOpen X) :=
   ⟨fun _ hx => ⟨X, hx, subset_rfl⟩⟩
@@ -7042,220 +7075,26 @@ end
 
 section
 -- Exercise122.lean
-namespace DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
+namespace DomainTheory.NeighbourhoodSystems
 
-set_option linter.unusedVariables false
+namespace NeighborhoodSystem
 
-theorem example_122.{u_1} : And
-  (And
-    (And
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-        {U : Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)},
-        @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V) U →
-          ∀ ⦃x y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V⦄,
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-              @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                  x y →
-                @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                  (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U y)
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Set α),
-        @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.basicOpen α V X)))
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-      (U : Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)),
-      Iff
-        (@IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V) U)
-        (And
-          (∀ ⦃x y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V⦄,
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-              @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                  x y →
-                @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                  (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U y)
-          (∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-              ∃ (X : Set α),
-                And (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem α V x X)
-                  (@LE.le (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                    (@Set.instLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.basicOpen α V X) U)))))
-  (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-    (x y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-    Iff
-      (@LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        x y)
-      (∀ (U : Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)),
-        @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V) U →
-          @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-              (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-              (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-              (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-              (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U y)) :=
-  @And.intro
-  (And
-    (And
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-        {U : Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)},
-        @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V) U →
-          ∀ ⦃x y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V⦄,
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-              @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                  x y →
-                @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                  (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U y)
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Set α),
-        @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.basicOpen α V X)))
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-      (U : Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)),
-      Iff
-        (@IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V) U)
-        (And
-          (∀ ⦃x y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V⦄,
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-              @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                  x y →
-                @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                  (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U y)
-          (∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-              ∃ (X : Set α),
-                And (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem α V x X)
-                  (@LE.le (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                    (@Set.instLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.basicOpen α V X) U)))))
-  (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-    (x y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-    Iff
-      (@LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        x y)
-      (∀ (U : Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)),
-        @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V) U →
-          @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-              (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-              (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-              (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-              (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U y))
-  (@And.intro
-    (And
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-        {U : Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)},
-        @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V) U →
-          ∀ ⦃x y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V⦄,
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-              @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                  x y →
-                @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                  (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U y)
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Set α),
-        @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.basicOpen α V X)))
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-      (U : Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)),
-      Iff
-        (@IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V) U)
-        (And
-          (∀ ⦃x y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V⦄,
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-              @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                  x y →
-                @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                  (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U y)
-          (∀ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-              ∃ (X : Set α),
-                And (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem α V x X)
-                  (@LE.le (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                    (@Set.instLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.basicOpen α V X) U))))
-    (@And.intro
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-        {U : Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)},
-        @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V) U →
-          ∀ ⦃x y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V⦄,
-            @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U x →
-              @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                  x y →
-                @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                  (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)) U y)
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Set α),
-        @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.basicOpen α V X))
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.isOpen_isUpperSet
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.isOpen_basicOpen)
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.isOpen_iff_upper_basic)
-  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.le_iff_isOpen_imp
+variable {α : Type*} (V : NeighborhoodSystem α)
 
-end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
+/-- **Exercise 1.22 (assembled).** Open sets are upward closed; basic opens are open; opens are
+exactly the upper sets covered by basic opens; and `⊑` is specialization in the Scott topology. -/
+example :
+    (∀ {U : Set V.Element}, IsOpen U → ∀ ⦃x y : V.Element⦄, x ∈ U → x ≤ y → y ∈ U) ∧
+      (∀ X : Set α, IsOpen (V.basicOpen X)) ∧
+      (∀ U : Set V.Element,
+        IsOpen U ↔
+          (∀ ⦃x y : V.Element⦄, x ∈ U → x ≤ y → y ∈ U) ∧
+            (∀ x ∈ U, ∃ X, x.mem X ∧ V.basicOpen X ⊆ U)) ∧
+      (∀ x y : V.Element, x ≤ y ↔ ∀ U : Set V.Element, IsOpen U → x ∈ U → y ∈ U) :=
+  ⟨V.isOpen_isUpperSet, V.isOpen_basicOpen, V.isOpen_iff_upper_basic, V.le_iff_isOpen_imp⟩
+
+end NeighborhoodSystem
+end DomainTheory.NeighbourhoodSystems
 end
 
 section
@@ -7286,6 +7125,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L532 EXERCISE 1.24 extending partial elements -/
 /-- **Exercise 1.24 — the union of a chain of filters is a filter.** For a non-empty chain `C` of
 filters, `⋃ C = {X ∣ ∃ x ∈ C, X ∈ x}` is again a filter. The intersection axiom uses chain
 totality: given `X ∈ x` and `Y ∈ y` with `x, y ∈ C`, one of `x ⊑ y`, `y ⊑ x` holds, and the larger
@@ -7406,6 +7246,7 @@ namespace FinalSegment
 
 open NeighborhoodSystem
 
+/- concordance: source L536 EXERCISE 1.25 final segments of ordinals -/
 /-- **Exercise 1.25 — the final-segment neighbourhood system.** Over a (non-empty) linear order
 `Δ`, the non-empty upper sets (final segments) form a neighbourhood system. Built via
 `ofNestedOrDisjoint` since any two upper sets are nested (`upperSet_subset_or`). -/
@@ -7883,6 +7724,7 @@ open NeighborhoodSystem
 
 variable {A : Type*} [CommRing A]
 
+/- concordance: source L538 EXERCISE 1.26 ideals of a ring -/
 /-- **Exercise 1.26 — the basic neighbourhood `I(F)`.** `I(F) = {G ∣ F ⊆ ⟨G⟩}`, the finite sets `G`
 whose generated ideal contains `F`. -/
 def IFamily (F : Finset A) : Set (Finset A) := {G | (↑F : Set A) ⊆ Ideal.span (↑G : Set A)}
@@ -8355,6 +8197,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L546 EXERCISE 1.27 suprema of bounded sets -/
 /-- **Exercise 1.27 — bounded set of elements.** `X ⊆ |𝒟|` is *bounded* iff it has an upper
 bound `y ∈ |𝒟|`: `x ⊑ y` for all `x ∈ X`. -/
 def Bounded (X : Set V.Element) : Prop := ∃ y : V.Element, ∀ x ∈ X, x ≤ y
@@ -8907,6 +8750,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L334 THEOREM 1.10 basic open neighbourhoods -/
 /-- **Theorem 1.10.** The *element-token system* `{[X] ∣ X ∈ 𝒟}` over the tokens `|𝒟|`. The two
 laws reduce to facts about `[·]`: the master `[Δ] = |𝒟|` is the whole space; the consistency
 witness `[W]` for `[X] ∩ [Y]` yields `W ⊆ X ∩ Y` (via `↑W`), so `X ∩ Y ∈ 𝒟` and
@@ -9297,6 +9141,7 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
+/- concordance: source L486 EXERCISE 1.21 complete neighbourhood systems -/
 /-- **Exercise 1.21 — consistency via the intersection `[⋂]`.** For `X₀, …, Xₙ₋₁ ∈ 𝒟`,
 `⟨Xᵢ⟩` is consistent iff `[⋂_{i<n} Xᵢ] ≠ ∅`. Combines Theorem 1.1c
 (`consistent_iff_interUpTo_mem`) with `bracket_nonempty_iff`. -/
@@ -9582,6 +9427,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L372 THEOREM 1.11 intersections and directed unions -/
 /-- **Theorem 1.11 (i).** The intersection `⋂ₙ xₙ = {X ∣ ∀ n, X ∈ xₙ}` of a sequence of elements is
 again an element of `|𝒟|`. (No proviso: all of 1.6(i)–(iii) are pointwise.) -/
 def iInter (x : ℕ → V.Element) : V.Element where
@@ -9868,6 +9714,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise113
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
+/- concordance: source L454 EXERCISE 1.13 infinite binary tree -/
 /-- **Exercise 1.13 (total elements).** Each infinite path `p` gives a *total* (maximal) element
 `branch p`: any `y` it approximates approximates it back. (These maximal elements are exactly the
 limit nodes along the top of the binary-tree picture.) -/
@@ -10289,6 +10136,7 @@ variable (henum : ∀ n, V.mem (enum n))
 
 include henum
 
+/- concordance: source L514 EXERCISE 1.23 decidable total elements -/
 /-- **Exercise 1.23 — the greedy element.** The filter generated by all `Yₙ`:
 `{X ∈ 𝒟 ∣ ⋂_{i<n} Yᵢ ⊆ X for some n}`. The prefix intersections `⋂_{i<n} Yᵢ` are a descending
 chain of neighbourhoods, so this is a genuine filter. -/

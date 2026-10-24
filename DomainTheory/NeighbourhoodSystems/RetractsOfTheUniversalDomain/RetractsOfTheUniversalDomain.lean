@@ -1,13 +1,13 @@
 module
 
 
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs
-public import DomainTheory.NeighbourhoodSystems.DomainEquations
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.ComputabilityInEffectivelyGivenDomains
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.DomainConstructs
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.DomainEquations
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.FixedPointsAndRecursion
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.MappingsBetweenDomains
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.TypedLambdaCalculus
 public import Mathlib.Algebra.Order.Archimedean.Basic
 public import Mathlib.Algebra.Order.Field.Basic
 public import Mathlib.Algebra.Order.Field.Rat
@@ -244,6 +244,7 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
+/- concordance: source L4928 DEFINITION 8.7 interval presentation of U -/
 /-- **Definition 8.7 (Scott 1981, PRG-19).** The neighbourhood system `𝒰` over `[0,1) ⊆ ℚ`: its
 neighbourhoods are the non-empty subsets of `[0,1)` presentable as a finite union of rational
 intervals `[r,s)` (see the module docstring for why the raw endpoints need no `0 ≤ r < s ≤ 1`
@@ -462,6 +463,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L5195 EXERCISE 8.22 comparing B and C -/
 -- Exercise822/C_nonempty.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -1604,6 +1606,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exerci
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
+/- concordance: source L5224 EXERCISE 8.25 reflexive function space -/
 /-- **Exercise 8.25 (Scott 1981, PRG-19): `𝒟 ⊴ 𝒟^∞`**, for every `𝒟`. Specialized to `𝒟 = 𝒰` this is
 Scott's remark `𝒰 ⊴ 𝒰^∞`. -/
 theorem trianglelefteq_iterSys : V ⊴ iterSys V :=
@@ -3668,6 +3671,7 @@ open NeighborhoodSystem ApproximableMap
 
 variable {α : Type*} {E : NeighborhoodSystem α}
 
+/- concordance: source L4769 DEFINITION 8.1 retraction -/
 /-- **Definition 8.1 (Scott 1981, PRG-19).** A *retraction* of `E` is an approximable mapping
 `a : E → E` with `a ∘ a = a`. -/
 class Retraction (a : ApproximableMap E E) : Prop where
@@ -3842,6 +3846,7 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem
 
 
+/- concordance: source L4771 PROPOSITION 8.2 retractions from subdomains -/
 /-- **Proposition 8.2 (Scott 1981, PRG-19), packaged.** `D ◁ E` induces a retraction `a` on `E`
 whose fixed-point set is (order-isomorphic to) `|D|`. -/
 theorem retraction_of_subsystem (h : D ◁ E) :
@@ -3955,6 +3960,7 @@ universe u
 
 variable {α : Type u} {D E : NeighborhoodSystem α}
 
+/- concordance: source L4801 DEFINITION 8.3 projections -/
 /-- **Definition 8.3, first clause (Scott 1981, PRG-19).** A retraction `a : E → E` is a
 *projection* provided `a ⊑ I_E`. (We do not separately require `Retraction a` in the
 definition, matching Scott's usage where "projection" is applied to a retraction already in
@@ -4114,6 +4120,7 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
+/- concordance: source L4807 EXAMPLES 8.4 check, fade, and smash -/
 /-- **Example 8.4's two-point system `O = {{0},{0,1}}`.** Tokens `Δ = {0,1} : Fin 2`; the only
 neighbourhoods are `{0}` (most informative) and `{0,1}` (the master, least informative). -/
 def O : NeighborhoodSystem (Fin 2) where
@@ -6395,6 +6402,7 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
+/- concordance: source L4854 THEOREM 8.5 finitary projection test -/
 /-- **Theorem 8.5 (Scott 1981, PRG-19), in full.** `a : E → E` is a finitary projection iff it
 satisfies the step-closure formula `a(x) = {Y ∈ E ∣ ∃X∈x, X⊆Y ∧ XaX}` for every `x ∈ |E|`. -/
 theorem finitaryProjection_iff_formula (a : ApproximableMap E E) :
@@ -6520,6 +6528,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L5135 EXERCISES — Lecture VIII exercises -/
 -- Exercise811/R.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise811
 
@@ -6664,6 +6673,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise811
 
 open NeighborhoodSystem ApproximableMap
 
+/- concordance: source L5137 EXERCISE 8.11 retraction on intervals -/
 /-- **Exercise 8.11 (first part).** `aRel` defines an approximable map `a : R → R`. -/
 def a : ApproximableMap R R where
   rel := aRel
@@ -7802,6 +7812,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L5147 EXERCISE 8.12 integer presentation of U -/
 -- Exercise812/affine_2.lean
 namespace DomainTheory.NeighbourhoodSystems
 namespace affine
@@ -7830,6 +7841,7 @@ universe u
 
 variable {α : Type u} {E : NeighborhoodSystem α}
 
+/- concordance: source L5159 EXERCISE 8.14 closure operators -/
 /-- **Exercise 8.14 (Scott 1981, PRG-19), the definition.** A retraction `a : E → E` is a
 *closure operator* iff `I_E ⊑ a`, i.e. `a` is inflationary. -/
 class ClosureOperator (a : ApproximableMap E E) : Prop where
@@ -10854,6 +10866,7 @@ universe u
 
 variable {α : Type u} {E : NeighborhoodSystem α}
 
+/- concordance: source L4890 THEOREM 8.6 sub combinator -/
 /-- **Theorem 8.6's combinator `sub(f)` (Scott 1981, PRG-19), per token `f`.** Scott's formula
 `X sub(f) Z ↔ ∃Y ∈ E, X⊆Y ∧ f.rel Y Y ∧ Y⊆Z` is literally `retractionOfSubsystem` applied to
 `fixedNbhd f = {Y ∈ E ∣ Y f Y}` (Theorem 8.5's subsystem, built for *any* `f`). -/
@@ -13619,6 +13632,7 @@ open NeighborhoodSystem
 variable {α : Type*}
 
 
+/- concordance: source L4943 THEOREM 8.8 universality of U -/
 /-- **First sentence of Theorem 8.8 (Scott 1981, PRG-19, Lecture VIII).** `𝒰` is universal: every *countable*
 neighbourhood system `D` embeds, up to isomorphism, as a subsystem of `𝒰`.
 
@@ -16139,6 +16153,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L5161 EXERCISE 8.15 domain of subsystems -/
 -- Exercise815/combineSub.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -47218,6 +47233,7 @@ universe u
 
 variable {α : Type u} {E : NeighborhoodSystem α}
 
+/- concordance: source L5163 EXERCISE 8.16 order of projections -/
 /-- **Exercise 8.16 (Scott 1981, PRG-19), in full.**
 
 Part 1: for finitary projections `a, b : E → E`, `a ≤ b ↔ D_a ◁ D_b` (fills the gap at the end of
@@ -47313,6 +47329,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L5207 EXERCISE 8.23 initial algebra inside U -/
 -- Exercise823/eq_bot_of_fixed_constMap_bot.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -48141,6 +48158,7 @@ end DomainTheory.NeighbourhoodSystems.Exercise823
 end
 
 section
+/- concordance: source L5219 EXERCISE 8.24 coupled domain equations -/
 -- Exercise824/PairSpace.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -49842,6 +49860,7 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
+/- concordance: source L5028 DEFINITION 8.9 constructs on projections -/
 /-- **`i_→ : (𝒰→𝒰) → 𝒰`** (Definition 8.9), fixed by `theorem_8_8_b_strong` applied to `𝒰→𝒰`. -/
 noncomputable def iArrow : ApproximableMap (funSpace U U) U :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose
@@ -50478,6 +50497,7 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
+/- concordance: source L5040 PROPOSITION 8.10 constructs preserve projections -/
 /-- **Proposition 8.10 (Scott 1981, PRG-19), `→`-case.** `a, b` projections `⟹` `a → b` a
 projection. -/
 theorem isProjection_arrowComb {a b : ApproximableMap U U}
@@ -56214,6 +56234,7 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
+/- concordance: source L5177 EXERCISE 8.18 missing proofs of 8.10 -/
 /-- **Exercise 8.18 (Scott 1981, PRG-19), in full: Proposition 8.10, both halves, all three
 combinators.** If `a, b : 𝒰 → 𝒰` are projections, then so are `a+b`, `a×b`, `a→b`
 (`isProjection_combinators`); if moreover `a, b` are finitary, then so are `a+b`, `a×b`, `a→b`
@@ -56268,6 +56289,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L5191 EXERCISE 8.21 lists of a projection -/
 -- Exercise821/aSharpInner.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -57980,6 +58002,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L5246 EXERCISE 8.26 untyped calculus in U -/
 -- Exercise826/Uapply.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -58151,6 +58174,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L5267 EXERCISE 8.27 infinite cartesian products -/
 -- Exercise827/jArrow_comp_iArrow_apply.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -67023,6 +67047,7 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
+/- concordance: source L5153 EXERCISE 8.13 Boolean-algebra filters -/
 /-- **Exercise 8.13(a).** `U` is isomorphic to `V`'s domain of elements, and `V`'s domain of
 elements is (`V_mem_iff_generatedBy`, `generators_independent`) *by construction* the domain of
 proper filters of the free Boolean algebra on `ℵ₀` generators. No new back-and-forth argument is
@@ -68395,6 +68420,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L5173 EXERCISE 8.17 explicit embeddings into U -/
 -- Exercise817/ProjPair.lean
 universe u v w
 
@@ -69635,6 +69661,7 @@ open NeighborhoodSystem ApproximableMap Exercise326
 universe u
 
 
+/- concordance: source L5179 EXERCISE 8.19 closure under sum and product -/
 /-- **Exercise 8.19.** If `T ⊴ E` and `E → E ⊴ E`, then `E + E ⊴ E` and `E × E ⊴ E`. -/
 theorem exercise_8_19 {α : Type u} {E : NeighborhoodSystem α}
     (hE : ∀ X, E.mem X → X.Nonempty) (hT : TD ⊴ E) (hArrow : funSpace E E ⊴ E) :
@@ -70124,6 +70151,7 @@ universe u
 
 variable {α : Type u} (D : NeighborhoodSystem α)
 
+/- concordance: source L5185 EXERCISE 8.20 self-embeddings of a domain -/
 /-- **Exercise 8.20.** For any domain `D`, `D ⊴ D×D` and `D ⊴ D→D` (unconditionally — no hypotheses
 needed, unlike Exercise 8.19). See the module docstring for the discussion of computability and
 multiplicity of projection pairs that Scott also asks about. -/

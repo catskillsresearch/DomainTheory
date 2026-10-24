@@ -6,6 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods.lean](DomainsGivenByNeighbourhoods.lean)**
+**[DomainsGivenByNeighbourhoods.lean](DomainsGivenByNeighbourhoods.lean)**
 
 @import "DomainsGivenByNeighbourhoods.lean"

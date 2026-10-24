@@ -1,7 +1,7 @@
 module
 
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
 public import Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Data.Set.Image
 public import Mathlib.Data.Set.Lattice.Bounded
@@ -20,6 +20,7 @@ open NeighborhoodSystem
 
 variable {α β γ δ : Type*}
 
+/- concordance: source L568 DEFINITION 2.1 approximable mapping -/
 /-- **Definition 2.1 (Scott 1981, PRG-19).** An *approximable mapping* `f : 𝒟₀ → 𝒟₁` is a relation
 `rel` between neighbourhoods (`rel X Y`, Scott's `X f Y`) confined to `𝒟₀ × 𝒟₁` and satisfying
 Scott's three conditions:
@@ -116,6 +117,7 @@ namespace ApproximableMap
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
+/- concordance: source L586 PROPOSITION 2.2 elementwise action -/
 /-- **Proposition 2.2(i) (Scott 1981, PRG-19).** The elementwise function determined by an
 approximable mapping: `f(x) = {Y ∈ 𝒟₁ ∣ ∃ X ∈ x, X f Y}`. The four filter laws use *all* of
 Definition 2.1: `master_mem` uses (i); `inter_mem` uses (ii) together with (iii) (to pull both
@@ -313,6 +315,7 @@ namespace ApproximableMap
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
+/- concordance: source L743 THEOREM 2.7 isomorphisms are approximable -/
 /-- **Theorem 2.7 (Scott 1981, PRG-19) — the approximable map of an isomorphism.** Given a domain
 isomorphism `e : |𝒟₀| ≃o |𝒟₁|` (Definition 1.9), Scott's "only way to define a neighbourhood
 mapping" is the relation `X f Y ↔ Y ∈ e(↑X)`. The conditions of 2.1 hold because `e` is monotone:
@@ -352,6 +355,7 @@ namespace ApproximableMap
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 
+/- concordance: source L682 THEOREM 2.5 category of approximable maps -/
 /-- **Theorem 2.5 — associativity.** `h ∘ (g ∘ f) = (h ∘ g) ∘ f`. Pure reassociation of the
 existential witnesses. -/
 theorem comp_assoc {V₃ : NeighborhoodSystem δ} (h : ApproximableMap V₂ V₃)
@@ -626,6 +630,7 @@ namespace ApproximableMap
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 
+/- concordance: source L731 PROPOSITION 2.6 identity and composition -/
 /-- **Proposition 2.6(ii) (Scott 1981, PRG-19).** Composition of approximable mappings becomes
 composition of the elementwise functions: `(g ∘ f)(x) = g(f(x))`. Both sides unfold to
 `∃ Y X, x.mem X ∧ X f Y ∧ Y g Z`; the proof is a reassociation of existentials. -/
@@ -745,6 +750,7 @@ open NeighborhoodSystem
 
 variable {α β γ : Type*}
 
+/- concordance: source L899 EXERCISE 2.19 maps of two arguments -/
 /-- **Exercise 2.19 (Scott 1981, PRG-19).** An *approximable mapping of two variables*
 `f : 𝒟₀ × 𝒟₁ → 𝒟₂` is a ternary relation `X, Y f Z` confined to `𝒟₀ × 𝒟₁ × 𝒟₂` with the natural
 generalization of Definition 2.1: (i) `Δ₀, Δ₁ f Δ₂`; (ii) intersectivity on the output; (iii)
@@ -777,6 +783,7 @@ variable {α β γ : Type*}
 
 namespace NeighborhoodSystem
 
+/- concordance: source L789 EXERCISE 2.11 directed unions of elements -/
 /-- **Exercise 2.11 — directed union (indexed form).** For a directed family `a : I → |𝒟|` (any two
 `a i, a j` have a common upper bound `a k`), the union `⋃ᵢ a i` is again an element of `|𝒟|`. Built
 on `sSupDirected` over the range. -/
@@ -868,6 +875,8 @@ namespace ApproximableMap
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
+/- concordance: source L769 EXERCISE 2.8 determined by finite elements -/
+/- concordance: source L767 EXERCISES — Lecture II exercises -/
 /-- **Exercise 2.8 (extension).** *Any* monotone function on finite elements comes from an
 approximable map. Here a "monotone function on finite elements" is a map `m` sending each
 neighbourhood `X` (a finite element `↑X`) to an element `m X hX : |𝒟₁|`, monotone in the sense
@@ -1077,6 +1086,7 @@ namespace ApproximableMap
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 
+/- concordance: source L811 EXERCISE 2.12 directed unions of maps -/
 /-- **Exercise 2.12.** The induced elementwise map is the pointwise union: `g(x) = ⋃ᵢ f i (x)`. -/
 theorem mem_toElementMap_iSupMap {I : Type*} [Nonempty I] (f : I → ApproximableMap V₀ V₁)
     (hdir : ∀ i j, ∃ k, (∀ X Y, (f i).rel X Y → (f k).rel X Y) ∧
@@ -1106,6 +1116,7 @@ namespace ApproximableMap
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 
+/- concordance: source L781 EXERCISE 2.10 intersection of two maps -/
 /-- **Exercise 2.10.** `h(x) = f(x) ∩ g(x)` (the meet in `|𝒟₁|`). The non-trivial direction combines
 witnesses `X ∈ x` (for `f`) and `X' ∈ x` (for `g`) through `X ∩ X' ∈ x` using `mono`. -/
 theorem mem_toElementMap_interMap (f g : ApproximableMap V₀ V₁) (x : V₀.Element) {Z : Set β} :
@@ -1205,6 +1216,7 @@ namespace ApproximableMap
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 
+/- concordance: source L773 EXERCISE 2.9 directed union formula -/
 /-- **Exercise 2.9 (Scott 1981, PRG-19).** `f(x) = ⋃ {f(↑X) ∣ X ∈ x}`: a neighbourhood `Y` lies in
 `f(x)` iff it lies in `f(↑X)` for some `X ∈ x`. (Immediate from `rel_iff_mem_principal`.) -/
 theorem toElementMap_mem_iff_principal (f : ApproximableMap V₀ V₁) (x : V₀.Element) {Y : Set β} :
@@ -1513,6 +1525,7 @@ namespace DomainTheory.NeighbourhoodSystems.Example23
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
+/- concordance: source L620 EXAMPLE 2.3 parity of leading zeros -/
 /-- **Example 2.3 — the parity mapping `f : B → T`.** `X f Y` iff `X` is the cone `σΣ*` of some
 prefix `σ` and `Y` is approximated by the parity verdict `valElt (scan σ)`. Definition 2.1:
 (i) the empty prefix scans to `none = ⊥`, and `⊥` contains `Δ_T`; (ii) for a fixed cone the verdict
@@ -1685,6 +1698,7 @@ namespace DomainTheory.NeighbourhoodSystems.Example24
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
+/- concordance: source L877 EXERCISE 2.17 equations for erase-ones -/
 /-- **The four equations of Exercise 2.17.** `g(0x) = 0g(x)`, `g(11x) = g(1x)`, `g(10x) = 0x` for
 *every* `x : |B|`, plus the single value equation `g(1) = ⊥` (this last one is *not* quantified
 over `x`: it pins down `g` at the single finite element `1⊥`, matching Scott's literal statement
@@ -1855,6 +1869,7 @@ namespace DomainTheory.NeighbourhoodSystems.Example24
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
+/- concordance: source L663 EXAMPLE 2.4 erase a run of ones -/
 /-- **Example 2.4 — the run-eliminating mapping `g : B → B`.** `X g Y` iff `X = σΣ*` and the cone of
 the guaranteed output `(out σ)Σ*` approximates `Y`. Definition 2.1: (i) `out [] = []` so `Δ g Δ`;
 (ii) a fixed cone has a unique prefix, and the value is the principal filter `↑((out σ)Σ*)`, closed
@@ -2241,6 +2256,7 @@ variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Neigh
 
 namespace ApproximableMap
 
+/- concordance: source L825 EXERCISE 2.13 approximable means continuous -/
 /-- **Exercise 2.13 (reverse).** The approximable mapping determined by a continuous function `c`:
 its action on the finite element `↑X` is the value `c(↑X)`, extended to all of `𝒟₀` via `ofMono`.
 Monotonicity of `X ↦ c(↑X)` is `continuous_monotone` together with the inclusion-reversal
@@ -2600,6 +2616,7 @@ open NeighborhoodSystem ApproximableMap
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
+/- concordance: source L845 EXERCISE 2.14 isomorphisms of neighbourhoods -/
 /-- **Exercise 2.14 — the correspondence `φ`.** For a domain isomorphism `e` and `X ∈ 𝒟₀`, `φ(X)` is
 the neighbourhood with `e(↑X) = ↑φ(X)` provided by Theorem 2.7. -/
 noncomputable def phi (e : V₀.Element ≃o V₁.Element) {X : Set α} (hX : V₀.mem X) : Set β :=
@@ -2859,6 +2876,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise215
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
+/- concordance: source L861 EXERCISE 2.15 opens classified by maps -/
 /-- **Exercise 2.15 — the one-token system `𝒪 = {Δ, ∅}`.** -/
 def O : NeighborhoodSystem (Fin 1) :=
   NeighborhoodSystem.ofNestedOrDisjoint memO Set.univ Set.univ_nonempty
@@ -3520,6 +3538,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise216
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
+/- concordance: source L871 EXERCISE 2.16 prefixing is approximable -/
 /-- **Exercise 2.16.** The elementwise action of `sigmaMap σ` is Scott's `σx`: `(sigmaMap σ)(x) =
 σx` for every `x ∈ |B|`. -/
 theorem toElementMap_sigmaMap (σ : Str) (x : B.Element) :
@@ -3716,6 +3735,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise218
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
+/- concordance: source L888 EXERCISE 2.18 doubling binary digits -/
 /-- **Exercise 2.18 — the spacing map `h : 𝔹 → 𝔹`.** `X h Y ↔ ∃ σ, X = σΣ* ∧ Y ∈ 𝔹 ∧ (hOut σ)Σ* ⊆ Y`.
 Same shape as `Example24.runMap`, with the doubling `hOut` (`hOut_mono` gives Definition 2.1(iii)). -/
 def hMap : ApproximableMap B B where
@@ -4044,6 +4064,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise220
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
+/- concordance: source L913 EXERCISE 2.20 powerset of the integers -/
 /-- **Exercise 2.20 — the powerset system `𝒫`.** Tokens `ℕ`; the neighbourhoods are the cofinite
 sets, closed under finite intersection (`(X ∩ Y)ᶜ = Xᶜ ∪ Yᶜ`). -/
 def powerSet : NeighborhoodSystem ℕ where
@@ -4543,6 +4564,7 @@ end DomainTheory.NeighbourhoodSystems.Exercise220
 end
 
 section
+/- concordance: source L920 EXERCISE 2.21 finite and infinite sequences -/
 -- Exercise221/cone_not_subset_singleton.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise221
 
@@ -5642,6 +5664,7 @@ variable (hne : C.Nonempty)
 variable (hDir : ∀ 𝒮 : Set (Set τ), 𝒮.Nonempty → 𝒮 ⊆ C → DirectedOn (· ⊆ ·) 𝒮 → ⋃₀ 𝒮 ∈ C)
 
 include hDir in
+/- concordance: source L922 EXERCISE 2.22 domains from closure properties -/
 /-- **Exercise 2.22 — the representation theorem.** `C`, ordered by inclusion, is order-isomorphic
 to the domain `|reprSystem|`. The isomorphism sends `x ↦ ⋃ {F̄ ∣ C(F) ∈ x}` (`toC`) and
 `X ↦ {C(F) ∣ F ⊆ X}` (`ofC`). -/

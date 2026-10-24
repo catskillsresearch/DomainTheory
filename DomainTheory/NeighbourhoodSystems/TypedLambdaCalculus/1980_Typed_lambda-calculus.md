@@ -6,6 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/TypedLambdaCalculus.lean](TypedLambdaCalculus.lean)**
+**[TypedLambdaCalculus.lean](TypedLambdaCalculus.lean)**
 
 @import "TypedLambdaCalculus.lean"

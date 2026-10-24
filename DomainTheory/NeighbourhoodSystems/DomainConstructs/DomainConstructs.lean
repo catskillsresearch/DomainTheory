@@ -1,7 +1,7 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.MappingsBetweenDomains
 public import Mathlib.Data.Set.Image
 public import Mathlib.Data.Set.Insert
 
@@ -744,6 +744,7 @@ variable (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
 
 variable {V₀ V₁}
 
+/- concordance: source L1495 EXERCISE 3.18 separated sum -/
 /-- **Exercise 3.18 (Scott 1981, PRG-19).** The *sum system* `𝒟₀ + 𝒟₁` over `{Λ} ∪ 0Δ₀ ∪ 1Δ₁`,
 under the standing assumption that no neighbourhood of `𝒟₀` or `𝒟₁` is empty. -/
 def sum (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
@@ -1280,6 +1281,7 @@ variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y →
 
 variable {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
 
+/- concordance: source L1513 EXERCISE 3.19 induced maps on constructs -/
 /-- **Exercise 3.19 (Scott 1981, PRG-19).** The *sum mapping* `f + g : 𝒟₀ + 𝒟₁ → 𝒟₀' + 𝒟₁'`. As a
 relation between sum-neighbourhoods, `W (f+g) W'` holds iff `W'` is the codomain master, or `W = 0X`
 with `W' = 0Y'` and `X f Y'`, or `W = 1Y` with `W' = 1Y'` and `Y g Y'`. -/
@@ -1684,6 +1686,7 @@ open NeighborhoodSystem
 
 variable {α β γ δ : Type*}
 
+/- concordance: source L944 DEFINITION 3.1 product of systems -/
 /-- **Definition 3.1 (Scott 1981, PRG-19).** The *product system* `𝒟₀ × 𝒟₁`: neighbourhoods are
 `X ∪ Y` with `X ∈ 𝒟₀`, `Y ∈ 𝒟₁`. Closure under consistent intersection is Scott's (2)
 (`prodNbhd_inter`) together with the factors' closure; the consistency witness `Z ⊆ (X∪Y) ∩ (X'∪Y')`
@@ -2017,6 +2020,7 @@ variable {α β γ δ : Type*}
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
+/- concordance: source L958 PROPOSITION 3.2 elements of a product -/
 /-- **Proposition 3.2 (Scott 1981, PRG-19).** The order-isomorphism `|𝒟₀ × 𝒟₁| ≃o |𝒟₀| × |𝒟₁|`. -/
 def prodEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     (prod V₀ V₁).Element ≃o V₀.Element × V₁.Element where
@@ -2108,6 +2112,7 @@ variable {V₂ : NeighborhoodSystem γ}
 
 open ApproximableMap
 
+/- concordance: source L1008 DEFINITION 3.3 projection mappings -/
 /-- **Definition 3.3 (Scott 1981, PRG-19).** The paired mapping `⟨f, g⟩ : 𝒟₂ → 𝒟₀ × 𝒟₁`,
 `Z ⟨f, g⟩ (X ∪ Y) ↔ Z f X ∧ Z g Y`. -/
 def paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁) :
@@ -2348,6 +2353,7 @@ variable {V₂ : NeighborhoodSystem γ}
 
 open ApproximableMap
 
+/- concordance: source L1094 LEMMA 3.6 constant functions -/
 /-- **Lemma 3.6 (Scott 1981, PRG-19).** The constant map at `b : |𝒟₁|`: `X b Y ↔ Y ∈ b`. -/
 def constMap (V₀ : NeighborhoodSystem α) (b : V₁.Element) : ApproximableMap V₀ V₁ where
   rel X Y := V₀.mem X ∧ b.mem Y
@@ -2471,6 +2477,7 @@ variable {V₂ : NeighborhoodSystem γ}
 
 open ApproximableMap
 
+/- concordance: source L1086 THEOREM 3.5 separate approximability -/
 /-- **Theorem 3.5 (←) (Scott 1981, PRG-19).** A two-variable mapping induces a joint mapping. -/
 def ofMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) : ApproximableMap (prod V₀ V₁) V₂ where
   rel W Z := (prod V₀ V₁).mem W ∧ f.rel (Sum.inl ⁻¹' W) (Sum.inr ⁻¹' W) Z
@@ -2746,6 +2753,7 @@ variable {V₂ : NeighborhoodSystem γ}
 open ApproximableMap
 
 
+/- concordance: source L1036 PROPOSITION 3.4 pairing and projections -/
 /-- **Proposition 3.4(i) (Scott 1981, PRG-19).** `p₀ ∘ ⟨f, g⟩ = f`. -/
 theorem proj₀_comp_paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁) :
     (proj₀ V₀ V₁).comp (paired f g) = f := by
@@ -2834,6 +2842,7 @@ open ApproximableMap
 
 variable {V₃ : NeighborhoodSystem δ}
 
+/- concordance: source L1129 PROPOSITION 3.7 closure under substitution -/
 /-- **Proposition 3.7 (Scott 1981, PRG-19).** Multivariate approximable functions are closed under
 substitution: substituting approximable maps `a, b : 𝒟₃ → 𝒟ᵢ` into a two-variable approximable map
 `F : 𝒟₀ × 𝒟₁ → 𝒟₂` yields the approximable map `F ∘ ⟨a, b⟩`, whose value is `F(a(w), b(w))`. The
@@ -2848,6 +2857,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L1408 EXERCISES — Lecture III exercises -/
 -- Exercise314/diag.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -2855,6 +2865,7 @@ open NeighborhoodSystem ApproximableMap
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L1410 EXERCISE 3.14 tagged product of tokens -/
 /-- **Exercise 3.14 (Scott 1981, PRG-19).** The *diagonal* approximable mapping
 `diag : 𝒟 → 𝒟 × 𝒟`, defined as the paired map `⟨I_𝒟, I_𝒟⟩` of the identity with itself. -/
 def diag : ApproximableMap V (prod V V) := paired (idMap V) (idMap V)
@@ -3161,6 +3172,7 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : N
 
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
+/- concordance: source L1436 EXERCISE 3.15 product isomorphisms -/
 /-- **Exercise 3.15 (empty product).** `𝟙` is a right unit: `𝒟 × 𝟙 ≅ 𝒟`. -/
 def prodUnitD (V₀ : NeighborhoodSystem α) :
     (prod V₀ unitSys).Element ≃o V₀.Element :=
@@ -3480,6 +3492,7 @@ variable (V : NeighborhoodSystem α)
 
 variable {V}
 
+/- concordance: source L1448 EXERCISE 3.16 infinite sequences of elements -/
 /-- **Exercise 3.16 (Scott 1981, PRG-19).** The infinite iterate `𝒟^∞` over `Δ^∞ = ℕ × Δ`:
 `W ∈ 𝒟^∞` iff every fiber is a neighbourhood of `𝒟` and all but finitely many fibers equal `Δ`. -/
 def iterSys (V : NeighborhoodSystem α) : NeighborhoodSystem (ℕ × α) where
@@ -4144,6 +4157,7 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : N
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 
+/- concordance: source L1541 EXERCISE 3.20 sum and product functors -/
 /-- **Exercise 3.20 (Scott 1981, PRG-19).** The universal property of the product (uniqueness):
 any `k` with `p₀ ∘ k = h₀` and `p₁ ∘ k = h₁` equals the pairing `⟨h₀, h₁⟩`. Hence `prod` with
 `proj₀`, `proj₁` is the categorical product of `𝒟₀` and `𝒟₁`. -/
@@ -5629,6 +5643,7 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
 
+/- concordance: source L1585 EXERCISE 3.26 conditional combinator -/
 /-- **Exercise 3.26.** `condSum(⊥, x, y) = ⊥`. -/
 theorem condSum_bot (x : V₀.Element) (y : V₁.Element) :
     (condSum V₀ V₁ h₀ h₁).toElementMap (pair Example23.botElt (pair x y)) = (sum V₀ V₁ h₀ h₁).bot := by
@@ -6439,6 +6454,7 @@ open NeighborhoodSystem ApproximableMap
 
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
+/- concordance: source L1169 DEFINITION 3.8 function space -/
 /-- **Definition 3.8 (Scott 1981, PRG-19).** The *function space* `(𝒟₀ → 𝒟₁)`: tokens are
 approximable maps, neighbourhoods are non-empty finite intersections of step sets. -/
 def funSpace (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
@@ -6598,6 +6614,7 @@ open NeighborhoodSystem ApproximableMap
 
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
+/- concordance: source L1273 THEOREM 3.10 elements are mappings -/
 /-- **Theorem 3.10 (Scott 1981, PRG-19).** The relation `X φ̂ Y ↔ [X, Y] ∈ φ` of a filter `φ`.
 Intersectivity is the payoff of positivity (`[X,Y]∩[X,Y'] = [X,Y∩Y']` is non-empty, so `Y∩Y' ∈ 𝒟₁`). -/
 def toApproxMap (φ : (funSpace V₀ V₁).Element) : ApproximableMap V₀ V₁ where
@@ -6967,6 +6984,7 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
 
 variable {V₂ : NeighborhoodSystem γ}
 
+/- concordance: source L1291 THEOREM 3.11 evaluation combinator -/
 /-- **Theorem 3.11 (Scott 1981, PRG-19).** The two-variable evaluation map
 `eval : (𝒟₁ → 𝒟₂) × 𝒟₁ → 𝒟₂`, `F, X eval Y ↔ X f Y for all f ∈ F`. -/
 def eval (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
@@ -7131,6 +7149,7 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
 
 variable {V₂ : NeighborhoodSystem γ}
 
+/- concordance: source L1327 THEOREM 3.12 currying -/
 /-- **Theorem 3.12 (Scott 1981, PRG-19).** `curry(g) : 𝒟₀ → (𝒟₁ → 𝒟₂)`, where
 `X curry(g) W ↔ (the X-section of g) ∈ W` (for `W = [Y, Z]` this is `X ∪ Y g Z`). -/
 def curry (g : ApproximableMap (prod V₀ V₁) V₂) : ApproximableMap V₀ (funSpace V₁ V₂) where
@@ -7504,6 +7523,7 @@ open NeighborhoodSystem ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
+/- concordance: source L1390 THEOREM 3.13 pointwise order of maps -/
 /-- **Theorem 3.13(i) (Scott 1981, PRG-19).** `f ⊑ g ↔ ∀ x, f(x) ⊑ g(x)`. -/
 theorem le_iff_toElementMap_le {f g : ApproximableMap V₀ V₁} :
     f ≤ g ↔ ∀ x, f.toElementMap x ≤ g.toElementMap x := by
@@ -7547,6 +7567,7 @@ open NeighborhoodSystem ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
+/- concordance: source L1181 PROPOSITION 3.9 consistent step neighbourhoods -/
 /-- **Proposition 3.9 (Scott 1981, PRG-19).** The least map `f₀` belongs to the neighbourhood:
 `Xᵢ f₀ Yᵢ` for every `(Xᵢ, Yᵢ) ∈ L`. -/
 theorem leastMap_mem_stepFun {L : List (Set α × Set β)} (hL : ∀ p ∈ L, V₀.mem p.1 ∧ V₁.mem p.2)
@@ -8242,6 +8263,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise317
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
+/- concordance: source L1473 EXERCISE 3.17 embedding binary sequences -/
 /-- **Exercise 3.17 — `f` is a section of `g`.** `f ∘ g ⊑ I_{T^∞}`. -/
 theorem fg_le_id : f.comp g ≤ idMap (iterSys T) := by
   intro W Z
@@ -8613,6 +8635,7 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
+/- concordance: source L1543 EXERCISE 3.21 identity of step neighbourhoods -/
 /-- **Exercise 3.21.** If the output is the master, `[Y, Δ₂]` is the whole function space. -/
 theorem step_master_right (Y : Set α) (hY : V₀.mem Y) :
     (step Y V₁.master : Set (ApproximableMap V₀ V₁)) = Set.univ := by
@@ -8873,6 +8896,7 @@ variable {α β γ : Type*}
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
+/- concordance: source L1545 EXERCISE 3.22 composition combinator -/
 /-- **Exercise 3.22 (Scott 1981, PRG-19).** The composition mapping
 `comp : (𝒟₁ → 𝒟₂) × (𝒟₀ → 𝒟₁) → (𝒟₀ → 𝒟₂)`, `comp = curry(compApp)`. -/
 def compMap (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
@@ -9116,6 +9140,7 @@ variable {α β γ : Type*} (V : NeighborhoodSystem α)
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
+/- concordance: source L1569 EXERCISE 3.23 cartesian closed category -/
 /-- **Exercise 3.23 (Scott 1981, PRG-19).** `𝟙 = unitSys` is the *terminal object*: for every domain
 `𝒟` there is a unique approximable mapping `𝒟 → 𝟙` (the constant map at `⊥`). -/
 instance : Unique (ApproximableMap V unitSys) where
@@ -9193,6 +9218,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L1571 EXERCISE 3.24 function-space isomorphisms -/
 -- Exercise324/funProdEquiv.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -9540,6 +9566,7 @@ open NeighborhoodSystem ApproximableMap
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
+/- concordance: source L1635 EXERCISE 3.28 minimal step function -/
 /-- **Exercise 3.28 — the active values.** The set `{ ↑Yᵢ ∣ x ∈ [Xᵢ] }` of principal filters whose
 input `Xᵢ` is a member of `x`. -/
 def leastMapVals (L : List (Set α × Set β)) (hL : ∀ p ∈ L, V₀.mem p.1 ∧ V₁.mem p.2)
@@ -9985,6 +10012,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
+/- concordance: source L1627 EXERCISE 3.27 function space via closure -/
 /-- **Exercise 3.27.** The function space `|𝒟₀ → 𝒟₁|` is (order-)isomorphic to the domain produced by
 the *abstract* representation theorem (Exercise 2.22) applied to the family `C` of graphs of
 approximable maps. This re-proves that approximable mappings form a domain without appealing to the
@@ -10235,6 +10263,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
+/- concordance: source L1583 EXERCISE 3.25 opens form a domain -/
 /-- **Exercise 3.25.** The family of open subsets of `|𝒟|`, ordered by inclusion, is
 order-isomorphic to the domain `|𝒟 → 𝒪|` of the Sierpiński function space — hence *is* (isomorphic
 to) a domain. This uses Theorem 3.10 (`funSpaceEquiv`) exactly as Scott directs. -/

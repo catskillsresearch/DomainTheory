@@ -3,7 +3,7 @@ module
 public import DomainTheory.BridgeTheorems.toFilter
 public import DomainTheory.BridgeTheorems.ofFilter
 public import DomainTheory.BridgeTheorems.mem_basicOpen_iff
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46

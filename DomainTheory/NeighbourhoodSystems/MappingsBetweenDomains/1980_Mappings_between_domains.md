@@ -6,6 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/MappingsBetweenDomains.lean](MappingsBetweenDomains.lean)**
+**[MappingsBetweenDomains.lean](MappingsBetweenDomains.lean)**
 
 @import "MappingsBetweenDomains.lean"

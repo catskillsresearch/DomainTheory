@@ -4,7 +4,7 @@ public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp_inter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp_bot
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.UpperLower.Basic

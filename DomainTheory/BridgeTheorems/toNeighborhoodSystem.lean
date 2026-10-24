@@ -2,7 +2,7 @@ module
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen
 public import DomainTheory.BridgeTheorems.con_of_basicOpen_subset
 public import DomainTheory.BridgeTheorems.basicOpen_empty
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.closure
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 public import Mathlib.Order.Hom.Basic

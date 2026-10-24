@@ -6,6 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains.lean](ComputabilityInEffectivelyGivenDomains.lean)**
+**[ComputabilityInEffectivelyGivenDomains.lean](ComputabilityInEffectivelyGivenDomains.lean)**
 
 @import "ComputabilityInEffectivelyGivenDomains.lean"

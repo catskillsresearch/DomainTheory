@@ -6,6 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/FixedPointsAndRecursion.lean](FixedPointsAndRecursion.lean)**
+**[FixedPointsAndRecursion.lean](FixedPointsAndRecursion.lean)**
 
 @import "FixedPointsAndRecursion.lean"

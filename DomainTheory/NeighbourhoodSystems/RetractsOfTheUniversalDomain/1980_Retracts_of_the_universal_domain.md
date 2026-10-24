@@ -6,6 +6,6 @@
 
 ## AI: Human-English to AI-Lean
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain.lean](RetractsOfTheUniversalDomain.lean)**
+**[RetractsOfTheUniversalDomain.lean](RetractsOfTheUniversalDomain.lean)**
 
 @import "RetractsOfTheUniversalDomain.lean"

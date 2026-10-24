@@ -1,11 +1,11 @@
 module
 
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.DomainConstructs
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.FixedPointsAndRecursion
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.MappingsBetweenDomains
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.TypedLambdaCalculus
 public import Mathlib.CategoryTheory.Category.Basic
 public import Mathlib.Computability.MyhillNerode
 public import Mathlib.Data.Finset.Basic
@@ -34,6 +34,7 @@ namespace DomainTheory.NeighbourhoodSystems
 
 variable {α : Type*}
 
+/- concordance: source L3799 DEFINITION 6.10 subdomain -/
 /-- **Definition 6.10 (Scott 1981, PRG-19).** The *subsystem* (subdomain) relation `D ◁ E` for two
 neighbourhood systems over the same token type. It records that `D` and `E` are systems over the
 same `Δ` (`master_eq`), that `D` is a subfamily of `E` (`sub`), and — the essential clause — that
@@ -288,6 +289,7 @@ namespace Example61
 
 variable {α : Type*}
 
+/- concordance: source L3218 EXAMPLE 6.1 indefinite product -/
 /-- **Example 6.1 (Scott 1981, PRG-19).** The neighbourhoods of `D^§`, defined inductively as the
 *least* family of subsets of `Γ` containing (i) `Γ`, (ii) `0X` for `X ∈ 𝒟`, and (iii) `1P ∪ 2Q`
 whenever it already contains `P` and `Q`. This is Scott's fixed-point family
@@ -522,6 +524,7 @@ open NeighborhoodSystem ApproximableMap ExampleB
 
 namespace Example62
 
+/- concordance: source L3510 EXAMPLE 6.2 sequence domain equations -/
 /-- **Example 6.2 — the shape of a `B`-neighbourhood.** Every neighbourhood of `B` is either the
 master `Σ* = cone []`, a `0`-copy `0X` with `X ∈ B`, or a `1`-copy `1X` with `X ∈ B`. -/
 theorem memB_cases {W : Set Str} (hW : B.mem W) :
@@ -4429,6 +4432,7 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
+/- concordance: source L4087 EXERCISE 6.19 strict sum and product -/
 /-- **Exercise 6.19 — the concrete sum system `𝒟₀ + 𝒟₁` over `{0,1}*`.** A neighbourhood is the
 master `{Λ} ∪ 0Δ₀ ∪ 1Δ₁`, a left copy `0X` (`X ∈ 𝒟₀`), or a right copy `1Y` (`Y ∈ 𝒟₁`). The standing
 assumption `∅ ∉ 𝒟ᵢ` (`h₀`, `h₁`) makes the two tagged copies disjoint, so the system is closed under
@@ -5978,6 +5982,7 @@ section IndexedProduct
 variable [Nonempty ι]
 
 variable (D) in
+/- concordance: source L4215 EXERCISE 6.29 infinitary sum and product -/
 /-- **Exercise 6.29 — the indexed product `∏_i D_i`.** The index type is non-empty so the
 dependent-sum token set contains a token. Neighbourhoods are cylinders: tuples `X i ∈ 𝒟ᵢ`
 that are the master in all but finitely many coordinates. -/
@@ -8085,6 +8090,7 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
+/- concordance: source L3827 PROPOSITION 6.12 projection pair -/
 /-- **Proposition 6.12 + Lemma 6.15 packaged.** A subdomain relation `D ◁ E` is in particular a
 witness of `D ⊴ E` (take `D' = D`). Together with `trianglelefteq_of_projectionPair`, this shows
 `D ⊴ E` holds **iff** there is a projection pair `D ⇄ E`. -/
@@ -8108,6 +8114,7 @@ section ProjectionPair
 variable (i : ApproximableMap D E) (j : ApproximableMap E D)
 
 
+/- concordance: source L3957 LEMMA 6.15 subdomains from projection pairs -/
 /-- **Lemma 6.15 (Scott 1981, PRG-19).** A projection pair `i : D → E`, `j : E → D` with
 `j ∘ i = I_D` and `i ∘ j ⊆ I_E` exhibits `D` as a subdomain of `E`: `D ⊴ E`. This is the converse
 of Proposition 6.12 (`Subsystem.projectionPair`). -/
@@ -8490,6 +8497,7 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem.ProjectionPair
 
 
+/- concordance: source L4175 EXERCISE 6.25 projection pair laws -/
 /-- **Exercise 6.25 — `g` maps consistent sets to consistent sets.** "Consistent" for sets of
 elements is "bounded" (Exercise 1.27). If `S` is bounded by `b`, its image `{g(s) ∣ s ∈ S}` is
 bounded by `g(b)` (monotonicity). -/
@@ -9383,6 +9391,7 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
+/- concordance: source L4207 EXERCISE 6.28 finite embeddings cancel -/
 /-- **Exercise 6.28 (core).** If `|D|` and `|E|` are finite and `D ⊴ E ⊴ D`, then `D ≅ᴰ E`.
 The two `⊴`s give mutual order embeddings of the (finite) element domains, and
 `orderIso_of_embeddings` upgrades them to an isomorphism. -/
@@ -9581,6 +9590,7 @@ namespace DomainTheory.NeighbourhoodSystems
 
 variable {Obj : Type u} [Category Obj]
 
+/- concordance: source L3625 DEFINITION 6.3 functor -/
 /-- **Definition 6.3 (Scott 1981, PRG-19).** A *functor* on a category into itself (an
 *endofunctor*): an assignment `obj` on objects and `map` on morphisms preserving identities
 (`map_id`) and composition (`map_comp`). -/
@@ -9630,6 +9640,7 @@ namespace DomainTheory.NeighbourhoodSystems
 
 variable {Obj : Type u} [Category Obj]
 
+/- concordance: source L3667 DEFINITION 6.4 algebra for a functor -/
 /-- **Definition 6.4 (Scott 1981, PRG-19).** A *`T`-algebra*: a domain `carrier` together with a
 structure map `str : T(carrier) → carrier`. -/
 structure TAlgebra (T : Endofunctor Obj) where
@@ -9672,6 +9683,7 @@ variable {Obj : Type u} [Category Obj]
 
 variable {T : Endofunctor Obj}
 
+/- concordance: source L3705 DEFINITION 6.5 initial algebra -/
 /-- **Definition 6.5 (Scott 1981, PRG-19).** A `T`-algebra `A` is *initial* iff there is a (unique)
 homomorphism from `A` into every `T`-algebra. We package the homomorphism as the data `desc` and its
 uniqueness as `uniq`. -/
@@ -9837,6 +9849,7 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 
+/- concordance: source L3765 DEFINITION 6.8 continuity on maps -/
 /-- **Definition 6.8 (Scott 1981, PRG-19).** An endofunctor `T` on the category of domains is
 *continuous on maps* when, for every pair of domains `D` and `E`, the induced action `λf. T(f)` on the
 **strict** function space `(D →⊥ E)` is approximable: there is an approximable map `Φ` from
@@ -9931,6 +9944,7 @@ universe u
 
 variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj} {A B : TAlgebra T}
 
+/- concordance: source L3709 PROPOSITION 6.6 uniqueness of initial algebras -/
 /-- **Proposition 6.6 (Scott 1981, PRG-19).** Any two initial `T`-algebras have isomorphic carriers;
 the isomorphism is built from the unique homomorphisms in both directions. -/
 def initialIso (hA : IsInitial A) (hB : IsInitial B) : Iso A.carrier B.carrier where
@@ -10312,6 +10326,7 @@ variable {α β γ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 
+/- concordance: source L3775 THEOREM 6.9 homomorphism from initial algebra -/
 /-- **Theorem 6.9 (Scott 1981, PRG-19).** If `T` is continuous on maps and `D ≅ T(D)` (so `D` is a
 `T`-algebra via `i : T(D) → D`), then for any `T`-algebra `B = (E, k)` with `k` strict there is a
 homomorphism `D → E`. The homomorphism is the least fixed point of `λh. k ∘ T(h) ∘ j`. -/
@@ -11449,6 +11464,7 @@ open NeighborhoodSystem ApproximableMap
 
 universe w
 
+/- concordance: source L3849 DEFINITION 6.13 continuity on domains -/
 /-- **Definition 6.13 (Scott 1981, PRG-19), monotone on domains.** A functor `T` is *monotone on
 domains* iff every subdomain relation `D ◁ E` is carried to a subdomain relation `T(D) ◁ T(E)` whose
 projection pair is `(T(i), T(j))` — see `MonotoneAt`. -/
@@ -12114,6 +12130,7 @@ theorem mFun_iter_fixed (T : FExpr) (hT : T.RootedConst) :
     rw [Set.mem_iUnion] at hw; obtain ⟨n, hn⟩ := hw
     exact ⟨mIter T n, ⟨n, rfl⟩, hstep n hn⟩
 
+/- concordance: source L4099 EXERCISE 6.20 tokens of a functor -/
 /-- **The conclusion of Exercise 6.20 (token level).** For any construct `T` whose constants contain
 `Λ`, there is a set `Γ` with `Λ ∈ Γ` and `Γ = tok(T({Γ}))`. -/
 theorem exists_tok_fixedPoint (T : FExpr) (hT : T.RootedConst) :
@@ -12944,6 +12961,7 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
+/- concordance: source L4115 EXERCISE 6.21 coalesced sum and smash -/
 /-- **Exercise 6.21 — the coalesced sum system `𝒟₀ ⊕ 𝒟₁` over `{0,1}*`.** As `sumTok`, but the
 improper copies `0Δ₀`, `1Δ₁` are removed (`X ≠ Δ₀`, `Y ≠ Δ₁`), so the two bottoms are identified. -/
 def oplusTok (D₀ D₁ : NeighborhoodSystem Str)
@@ -15017,6 +15035,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L4127 EXERCISE 6.22 equations for the integers -/
 -- Exercise622/Cnat.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -17733,6 +17752,7 @@ variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master)
 
 variable (B : TAlgebra (TexpF N))
 
+/- concordance: source L4141 EXERCISE 6.23 syntactic expression domain -/
 /-- **Exercise 6.23 (Scott 1981, PRG-19) — `Exp` is the initial `T`-algebra.** For every algebra
 `B = (D, s, u, v)` there is a *unique* homomorphism `val(s) : Exp → D` — Scott's evaluation of an
 expression. Existence is `descAlgHom` (Phase 3); uniqueness is the projection-chain argument. -/
@@ -18510,6 +18530,7 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
+/- concordance: source L4161 EXERCISE 6.24 recursive domain equations -/
 /-- **Exercise 6.24 (object level).** By the double fixed-point method there exist `∅`-free systems
 `D`, `E` over `{0,1}*` such that `{D} ◁ D + (D×E)` and `{E} ◁ D + E` **simultaneously**. These two
 facts are exactly the joint hypothesis of the simultaneous Theorem 6.14, which then yields the
@@ -18664,6 +18685,7 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
+/- concordance: source L4187 EXERCISE 6.26 lifting a domain -/
 /-- **Exercise 6.26 — the lifted system `𝒟_⊥` over `{0,1}*`.** A neighbourhood is the master
 `{Λ} ∪ 0Δ` or a tagged copy `0X` (`X ∈ 𝒟`). `∅`-freeness of `𝒟` (`hD`) keeps it `∅`-free. -/
 def liftTok (D : NeighborhoodSystem Str) (_hD : ∀ X, D.mem X → X.Nonempty) :
@@ -21266,6 +21288,7 @@ theorem inlInj_comp_inlProj_le :
   obtain ⟨X, ⟨hW, _, hsub⟩, _, hW', hsub'⟩ := hr
   exact ⟨hW, hW', hsub.trans hsub'⟩
 
+/- concordance: source L4199 EXERCISE 6.27 which embeddings hold -/
 /-- **Exercise 6.27 (4).** `𝒟 ⊴ 𝒟 ⊕ ℰ`. (Uses `Classical.choice` via `oplus_mem_leftN`.) -/
 theorem inl_trianglelefteq_oplus :
     D₀ ⊴ oplusTok D₀ D₁ h₀ h₁ :=
@@ -23385,6 +23408,7 @@ namespace Theorem614
 variable {α : Type w}
 
 
+/- concordance: source L3861 THEOREM 6.14 existence of initial algebras -/
 /-- **Theorem 6.14 (Scott 1981, PRG-19) — the canonical fixed point.** Under the hypotheses
 (continuous on maps, monotone and continuous on domains, with a generating set `{Γ} ◁ T({Γ})`), the
 iterated colimit `𝒟 = ⋃ₙ Tⁿ({Γ})` is a `T`-algebra whose structure map is an isomorphism
@@ -24394,6 +24418,7 @@ universe u
 
 variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj}
 
+/- concordance: source L3713 PROPOSITION 6.7 functor preserves initiality -/
 /-- **Proposition 6.7 (Lambek's lemma; Scott 1981, PRG-19).** The structure map `i : T(D) → D` of an
 initial `T`-algebra is an isomorphism `T(D) ≅ D`, with inverse the descent homomorphism `j`. -/
 def lambek (A : TAlgebra T) (hA : IsInitial A) : Iso (T.obj A.carrier) A.carrier where
@@ -24420,6 +24445,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exerci
 universe w
 
 
+/- concordance: source L4015 THEOREM 6.16 initial algebra is minimal -/
 /-- **Theorem 6.16 (Scott 1981, PRG-19).** If `T` is continuous on maps and `D` is an initial
 `T`-algebra, then for any system `E ≅ T(E)` we have `D ⊴ E`: the initial algebra embeds as a
 subdomain of every solution of the domain equation. -/
@@ -25572,6 +25598,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exerci
 
 
 open Example62C in
+/- concordance: source L4077 EXERCISE 6.17 algebras for sequence domains -/
 /-- **Exercise 6.17 — the functor `T(X) = 𝟙 + X + X`** on the category of `∅`-free domains and strict
 maps. On objects, `T(D) = 𝟙 + D + D` (Example 6.2's three-way sum); on maps, `T(f) = I_𝟙 + f + f`. -/
 abbrev Tc : Endofunctor StrictDomainObj.{w} where
@@ -25921,6 +25948,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L4075 EXERCISES — Lecture VI exercises -/
 -- Exercise617/descMap.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -30668,13 +30696,9 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-variable {A : Type} [DecidableEq A]
-
+variable {A : Type}
 
 section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 
 theorem embA_ne {a a' : A} (h : a ≠ a') {X Y : Set (Strn A)} (hX : X.Nonempty) :
     embA a X ≠ embA a' Y := by
@@ -30694,13 +30718,9 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-variable {A : Type} [DecidableEq A]
-
+variable {A : Type}
 
 section Iso
-
-variable {A : Type} [DecidableEq A] [Inhabited A]
-
 
 theorem embA_nonempty {a : A} {X : Set (Strn A)} (hX : X.Nonempty) : (embA a X).Nonempty := by
   obtain ⟨w', hw'⟩ := hX; exact ⟨a :: w', w', rfl, hw'⟩
@@ -32084,6 +32104,7 @@ namespace Exercise618
 
 variable {α : Type*} {V : NeighborhoodSystem α}
 
+/- concordance: source L4079 EXERCISE 6.18 infinite product as initial -/
 /-- **Exercise 6.18 (initial-algebra half) — `𝒟^∞` is the initial `T`-algebra for `T(X) = 𝒟 × X`.**
 For every `T`-algebra `(E, k)` the descent map `h(⟨x₀,x₁,…⟩) = k(x₀, k(x₁, …))` is the *unique*
 strict homomorphism `𝒟^∞ → E`. Together with Exercise 3.16's `𝒟^∞ ≅ 𝒟 × 𝒟^∞` (the domain-equation
@@ -32923,6 +32944,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set DomainTheory.Neigh
 
 variable {α : Type*}
 
+/- concordance: source L3817 PROPOSITION 6.11 lattice of subsystems -/
 /-- **Proposition 6.11 (Scott 1981, PRG-19).** For a neighbourhood system `E`, the set of
 subsystems `{D ∣ D ◁ E}`, ordered by the subdomain relation `◁`, *forms a domain in its own
 right*: it is order-isomorphic to the domain `|reprSystem (subFam E) …|` produced by the abstract

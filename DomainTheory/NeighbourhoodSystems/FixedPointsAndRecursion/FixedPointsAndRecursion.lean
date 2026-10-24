@@ -1,9 +1,9 @@
 module
 
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.DomainConstructs
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainsGivenByNeighbourhoods
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.MappingsBetweenDomains
 public import Mathlib.Algebra.Group.Nat.Defs
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.Group.Submonoid.Basic
@@ -89,6 +89,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise412
 open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
 
 
+/- concordance: source L2259 EXERCISE 4.12 no greatest fixed point -/
 /-- **Exercise 4.12 (Scott 1981, PRG-19).** Every element is a fixed point of the identity map
 (so `I_T` has *many* fixed points: `⊥`, `elemZero`, `elemOne`). -/
 theorem idMap_fixed (x : T.Element) : (idMap T).toElementMap x = x := toElementMap_idMap x
@@ -250,6 +251,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {A : Type*}
 
+/- concordance: source L2283 EXERCISE 4.14 greatest powerset fixed point -/
 /-- **Exercise 4.14 (Scott 1981, PRG-19).** The *greatest* fixed point of a monotone `f : P A → P A`,
 constructed as the union of all post-fixed points `⋃ {x ∣ x ⊆ f(x)}`. -/
 def gfpSet (f : Set A → Set A) : Set A := {a | ∃ x : Set A, x ⊆ f x ∧ a ∈ x}
@@ -618,6 +620,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
+/- concordance: source L2305 EXERCISE 4.17 generated submonoid -/
 /-- **Exercise 4.17 (Scott 1981, PRG-19).** The fixed point need **not** be unique: over `S = ℕ`
 (under `·`) with `a = b = 1`, both `{1}` (the least solution) and `Set.univ` solve the equation, and
 they are distinct. -/
@@ -819,6 +822,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise421
 
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
+/- concordance: source L2331 EXERCISE 4.21 order as a fixed point -/
 /-- **Exercise 4.21 (Scott 1981, PRG-19).** The structure-preserving bijection between
 `⟨ℕ, 0, ⁺⟩` and `⟨[m], m, ⁺⟩` (where `[m] = {k ∣ m ≤ k}`, with distinguished element `m` and the
 successor `⁺`). It is **ordinary addition** by `m`: `n ↦ m + n`. -/
@@ -1257,6 +1261,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise414 Function
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 open Classical in
+/- concordance: source L2363 EXERCISE 4.24 Schroeder-Bernstein theorem -/
 /-- **Exercise 4.24 (Scott 1981, PRG-19).** Tarski's bijection `h : A → B`: `f` on the fixed set
 `X`, and the `g`-inverse off it. -/
 noncomputable def sbFun (f : A → B) (g : B → A) (a : A) : B :=
@@ -1407,6 +1412,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
+/- concordance: source L1657 THEOREM 4.1 least fixed point -/
 /-- **Theorem 4.1 (Scott 1981, PRG-19).** The `n`-fold composition `fⁿ` of an endomap with itself:
 `f⁰ = I_𝒟` and `f^{n+1} = f ∘ fⁿ`. -/
 def iterMap (f : ApproximableMap V V) : ℕ → ApproximableMap V V
@@ -1651,6 +1657,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 open ApproximableMap
 
+/- concordance: source L1715 THEOREM 4.2 fix combinator -/
 /-- **Theorem 4.2 (Scott 1981, PRG-19).** The fixed-point operator `fix : (𝒟 → 𝒟) → 𝒟` as an
 approximable mapping. Built by the extension principle (Exercise 2.8, `ofMono`): on the finite
 element `↑F` it returns `fix(↑F)`, where `↑F = toApproxMap (principal hF)` is the least map of the
@@ -2158,6 +2165,7 @@ namespace DomainTheory.NeighbourhoodSystems.Example43
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
+/- concordance: source L1795 EXAMPLE 4.3 partial functions on integers -/
 /-- **Example 4.3 (Scott 1981, PRG-19).** The natural-number neighbourhood system `N` on `Δ = ℕ`. -/
 abbrev N : NeighborhoodSystem ℕ :=
   NeighborhoodSystem.ofNestedOrDisjoint memN Set.univ Set.univ_nonempty memN_univ nestedOrDisjoint
@@ -2738,6 +2746,7 @@ namespace DomainTheory.NeighbourhoodSystems.Example44
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
 
+/- concordance: source L1989 EXAMPLE 4.4 sequence domain -/
 /-- **Example 4.4 (Scott 1981, PRG-19).** The neighbourhood system `C` of finite or infinite binary
 sequences on `Δ = Σ*`. -/
 abbrev C : NeighborhoodSystem Str :=
@@ -3065,6 +3074,8 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
+/- concordance: source L2203 EXERCISE 4.7 fixed point above a seed -/
+/- concordance: source L2201 EXERCISES — Lecture IV exercises -/
 /-- **Exercise 4.7 (Scott 1981, PRG-19).** `fixAbove f ha` is a fixed point: `f(x) = x`. -/
 theorem fixAbove_isFixed (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toElementMap a) :
     f.toElementMap (f.fixAbove ha) = f.fixAbove ha := by
@@ -3366,6 +3377,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
+/- concordance: source L2209 EXERCISE 4.8 fixed-point induction -/
 /-- **Exercise 4.8 (Scott 1981, PRG-19) — fixed-point induction.** If a predicate `P` holds at `⊥`,
 is preserved by `f`, and is closed under sups of monotone chains, then it holds at `fix(f)`. -/
 theorem fix_induction (f : ApproximableMap V V) (P : V.Element → Prop)
@@ -3517,6 +3529,7 @@ open NeighborhoodSystem ApproximableMap
 
 variable {α : Type*}
 
+/- concordance: source L2225 EXERCISE 4.9 fix as a fixed point -/
 /-- **Exercise 4.9 (Scott 1981, PRG-19).** The approximable operator `Ψ = λF λf. f(F(f))` on the
 higher-order domain `E = ((𝒟 → 𝒟) → 𝒟)`, built as `curry (eval ∘ ⟨π_G, eval⟩)`. -/
 def bigPsi (V : NeighborhoodSystem α) :
@@ -4211,6 +4224,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
+/- concordance: source L2239 EXERCISE 4.10 domain above an element -/
 /-- **Exercise 4.10 (Scott 1981, PRG-19).** The relativized neighbourhood system `Dₐ`: same tokens
 and master, neighbourhoods exactly the members of the filter `a`. -/
 def relSystem (a : V.Element) : NeighborhoodSystem α where
@@ -4822,6 +4836,7 @@ open ApproximableMap
 
 universe u
 
+/- concordance: source L2249 EXERCISE 4.11 characterizing the fix combinator -/
 /-- **Exercise 4.11 (Scott 1981, PRG-19) — Plotkin's uniqueness.** Any assignment `F` of a
 fixed-point operator to every domain satisfying (ii) `F_𝒟(f) = f(F_𝒟(f))` and (iii) the uniformity
 law coincides with `fix`: `F_𝒟(f) = fix(f)` for every domain `𝒟` and every `f : 𝒟 → 𝒟`. -/
@@ -5033,6 +5048,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
+/- concordance: source L2261 EXERCISE 4.13 avoiding the natural numbers -/
 -- Exercise413/preFix.lean
 namespace DomainTheory.NeighbourhoodSystems
 
@@ -5499,6 +5515,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
 
+/- concordance: source L2285 EXERCISE 4.15 maximal fixed points -/
 /-- **Exercise 4.15 (Scott 1981, PRG-19).** A monotone `f : |𝒟| → |𝒟|` has a *maximal* fixed point:
 some `m` with `f(m) = m` that admits no strictly larger fixed point. -/
 theorem exists_maximal_fixedPoint (f : V.Element → V.Element) (hf : Monotone f) :
@@ -5689,6 +5706,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
 
+/- concordance: source L2293 EXERCISE 4.16 optimal fixed point -/
 /-- **Exercise 4.16 (Scott 1981, PRG-19).** The *optimal* fixed point associated with a non-empty
 set `S` of fixed points: the least fixed point sitting below `⋂S` (Exercise 4.13(1) applied to the
 pre-fixed point `⋂S`). -/
@@ -6065,6 +6083,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise418
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example43
 
 
+/- concordance: source L2321 EXERCISE 4.18 checking the number domain -/
 /-- **Exercise 4.18 (Scott 1981, PRG-19).** The numerals are distinct: `n̂ = m̂ ⟹ n = m`. -/
 theorem natElem_injective {n m : ℕ} (h : natElem n = natElem m) : n = m := by
   have hmem : (natElem m).mem {n} := h ▸ (mem_natElem_iff.mpr (Or.inr rfl))
@@ -6892,6 +6911,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exampl
 variable {β : Type*}
 
 
+/- concordance: source L2323 EXERCISE 4.19 Peano axioms for sequences -/
 /-- **Exercise 4.19 (Scott 1981, PRG-19).** The same defining equation holds on every partial
 element `σ⊥` — including `⊥ = []⊥` where `empty(⊥) = ⊥` forces `cond(⊥, …) = ⊥`. -/
 theorem one_def_strBot (σ : Str) : oneMap.toElementMap (strBot σ) = oneDef (strBot σ) := by
@@ -7235,6 +7255,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
+/- concordance: source L2325 EXERCISE 4.20 fix of a composite -/
 /-- **Exercise 4.20 (Scott 1981, PRG-19).** `fix(f ∘ g) = f(fix(g ∘ f))`. -/
 theorem fixElement_comp_comm (f g : ApproximableMap V V) :
     (f.comp g).fixElement = f.toElementMap (g.comp f).fixElement := by
@@ -7287,6 +7308,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
+/- concordance: source L2351 EXERCISE 4.23 commuting with the iterates -/
 /-- **Exercise 4.23 (Scott 1981, PRG-19) — Eilenberg.** If `f` is approximable and `aₙ` is an
 *approximation scheme* — (i) `a₀ = ⊥`, (ii) increasing, (iii) `⊔ₙ aₙ = I` (pointwise `IsLUB`),
 (iv) `aₙ₊₁ ∘ f = aₙ₊₁ ∘ f ∘ aₙ` — then `f` has a **unique** fixed point.
@@ -7588,6 +7610,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise425
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
+/- concordance: source L2377 EXERCISE 4.25 unary sequence domain -/
 /-- **Exercise 4.25 (Scott 1981, PRG-19).** The unary sequence system `C₁` on `Δ = {1}* ≅ ℕ`. -/
 def C1 : NeighborhoodSystem ℕ :=
   NeighborhoodSystem.ofNestedOrDisjoint memC1 Set.univ Set.univ_nonempty
@@ -7858,6 +7881,7 @@ universe u
 
 namespace DomainTheory.NeighbourhoodSystems
 
+/- concordance: source L2143 DEFINITION 4.5 Peano axioms -/
 /-- **Definition 4.5 (Scott 1981, PRG-19).** A *model for Peano's Axioms*: a type `N` with a
 distinguished element `zero` and a unary `succ`essor, satisfying
 
@@ -8046,6 +8070,7 @@ namespace PeanoModel
 variable {M : Type u} {N : Type v}
 
 
+/- concordance: source L2155 THEOREM 4.6 Peano models isomorphic -/
 /-- **Theorem 4.6 (Scott 1981, PRG-19).** *All models of Peano's Axioms are isomorphic.* Between
 any two models there is a bijection `e : N ≃ M` of the underlying sets that preserves the
 structure: `e 0 = □` and `e (n⁺) = (e n)#`. The bijection is the least-fixed-point relation
@@ -8264,6 +8289,7 @@ open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercis
 
 variable {M : Type*} (zero : M) (succ : M → M)
 
+/- concordance: source L2347 EXERCISE 4.22 inductive subset of a model -/
 /-- **Exercise 4.22 (Scott 1981, PRG-19).** The carved-out subset `N ⊆ N*`, with the inherited
 `0` and `⁺`, is a model of **all three** Peano axioms — even though `N*` was only assumed to satisfy
 (i) and (ii). Axioms (i)/(ii) are inherited; (iii) holds by minimality of the least fixed point. -/
