@@ -1,0 +1,8 @@
+{
+  "maxEdges": 5000,
+  "maxTextSize": 200000,
+  "flowchart": {
+    "wrappingWidth": 2000,
+    "htmlLabels": false
+  }
+}

@@ -2,13 +2,13 @@
 
 ## Factoid 1.1a — empty intersection is delta
 
-\bigcap_{i < n} X_i = \Delta, \text{ if } n = 0;
 $$
-
+\bigcap_{i < n} X_i = \Delta, \text{ if } n = 0;
 $$
 
 ## Factoid 1.1b — recursive finite intersection
 
+$$
 = \left(\bigcap_{i < n-1} X_i\right) \cap X_{n-1}, \text{ if } n > 0.
 $$
 

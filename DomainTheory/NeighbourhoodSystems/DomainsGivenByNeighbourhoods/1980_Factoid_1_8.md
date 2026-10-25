@@ -44,10 +44,9 @@ Again there is an exercise here to show $\sigma x \in |B|$. In particular $\sigm
 
 If now $x \in |B|$ is any explicitly given element (that is, if we know for any $X \in B$ whether or not $X \in x$), we have but to work out from these definitions that
 
-$$
-
 ## Factoid 1.8d — union of finite approximations
 
+$$
 x = \bigcup_{n=0}^{\infty} \sigma_n\perp,
 $$
 

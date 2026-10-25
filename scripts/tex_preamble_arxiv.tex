@@ -1,15 +1,18 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,letterpaper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[margin=1in]{geometry}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{cmu-titlepage2}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{stmaryrd}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{tabularx}
-\usepackage{authblk}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
@@ -18,7 +21,21 @@
 \usepackage{newunicodechar}
 \usepackage{listings}
 \usepackage{soul}
+\usepackage{titlesec}
+\usepackage{xurl}
 \usepackage[colorlinks=true,linkcolor=blue!40!black,citecolor=blue!40!black,urlcolor=blue!40!black]{hyperref}
+\emergencystretch=2em
+
+% hyperref may reclaim \abstract as an environment; restore the CMU command.
+% Need \makeatletter so \@abstract is a single csname (catcode of @ is "other"
+% in the user preamble).
+\makeatletter
+\long\def\abstract#1{\gdef\@abstract{#1}}
+\gdef\@abstract{}
+\makeatother
+
+% DomainTheory exception vs scott1964: every level-1 section starts on a new page.
+\newcommand{\sectionbreak}{\clearpage}
 
 % Let long \texttt{...} identifiers (e.g. lindenbaum_next_subset) break after each
 % underscore so they wrap inside narrow table cells instead of overflowing the column.

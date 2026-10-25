@@ -34,17 +34,24 @@ PREAMBLE = SCRIPTS / "tex_preamble_arxiv.tex"
 LISTINGS_DIR = ROOT / "lean-listings"
 FIGURES_DIR = ROOT / "figures"
 PUPPETEER_CONFIG = SCRIPTS / "puppeteer-config.json"
+MERMAID_CONFIG = SCRIPTS / "mermaid-config.json"
 LISTING_CHUNK_LINES = 400
 _WRITTEN_LISTINGS: set[Path] = set()
 
-AUTHOR = "Lars Warren Ericson"
-COMPANY = "Catskills Research Company"
 GITHUB_URL = r"https://github.com/catskillsresearch/DomainTheory"
-# DomainTheory has no Palomar registration yet; set this when registered.
-# (Do not reuse scott_models' PALOMAR-2026-08-25-000003 entry.)
-PALOMAR_URL = ""
-ORCID = "0000-0001-8299-9361"
-EMAIL = "lars.ericson@catskillsresearch.com"
+# CMU SCS tech-report front matter (same authors / style as archive/scott1964).
+# Update REPORT_NUMBER when the library assigns an official id.
+REPORT_NUMBER = "CMU-CS-26-140"
+REPORT_DATE = "October 2026"
+PDF_AUTHORS = "Lars Warren Ericson; Dana S. Scott; Vijay D'Silva; Brian Milnes"
+KEYWORDS = (
+    "Lean 4; formal verification; domain theory; continuous lattices; "
+    "neighbourhood systems; information systems; Scott topology"
+)
+PDF_KEYWORDS = (
+    "Lean 4, formal verification, domain theory, continuous lattices, "
+    "neighbourhood systems, information systems"
+)
 
 
 def find_chrome() -> str | None:
@@ -87,20 +94,36 @@ def render_mermaid(code: str, idx: int) -> str:
     # Raster PNG for arXiv (embedded PDF figures are rejected). Scale 3 keeps
     # the diagrams sharp on the printed page.
     cmd = [mmdc, "-i", str(mmd_path), "-o", str(png_path), "-b", "white", "-s", "3"]
+    if MERMAID_CONFIG.is_file():
+        cmd += ["-c", str(MERMAID_CONFIG)]
     if PUPPETEER_CONFIG.is_file():
         cmd += ["-p", str(PUPPETEER_CONFIG)]
     proc = subprocess.run(cmd, env=env, capture_output=True, text=True, check=False)
     if proc.returncode != 0 or not png_path.is_file():
         sys.stderr.write(proc.stdout + "\n" + proc.stderr + "\n")
-        raise RuntimeError(f"mmdc failed to render figure {idx}")
+        # Oversized dependency graphs: keep the source as a listing instead of failing
+        # the whole TeX build.
+        sys.stderr.write(
+            f"warning: mmdc failed on figure {idx}; embedding diagram source as a listing\n"
+        )
+        rel_listing, _ = write_listing(code_stripped, f"mermaid-figure-{idx:03d}.mmd")
+        # Caller expects a PNG path; return a sentinel handled by replace_fences.
+        return f"LISTING:{rel_listing}"
     return png_path.relative_to(ROOT).as_posix()
 
 
 def extract_title() -> str:
-    first = (ROOT / "arxiv.md").read_text(encoding="utf-8").splitlines()[0]
-    title = first[2:].strip() if first.startswith("# ") else first.strip()
-    title = re.sub(r"\*([^*]+)\*", r"\\emph{\1}", title)
-    return title
+    path = ROOT / "arxiv.md"
+    if not path.is_file():
+        return "Domain Theory in Lean 4"
+    for line in path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if stripped.startswith("<!--") or not stripped:
+            continue
+        title = stripped[2:].strip() if stripped.startswith("# ") else stripped
+        title = re.sub(r"\*([^*]+)\*", r"\\emph{\1}", title)
+        return title
+    return "Domain Theory in Lean 4"
 
 
 TITLE = extract_title()
@@ -140,6 +163,9 @@ PROSE_ASCII_FALLBACKS: tuple[tuple[str, str], ...] = (
 PDFLATEX_UNICODE_FIXES: tuple[tuple[str, str], ...] = (
     ("\U0001d49f", r"\ensuremath{\mathcal{D}}"),  # 𝒟
     ("\U0001d4af", r"\ensuremath{\mathcal{T}}"),  # 𝒯
+    ("\U0001d509", r"\ensuremath{\mathfrak{F}}"),  # 𝔉
+    ("\U0001d50a", r"\ensuremath{\mathfrak{G}}"),  # 𝔊
+    ("\U0001d546", r"\ensuremath{\mathbb{O}}"),  # 𝕆
 )
 
 
@@ -151,11 +177,70 @@ def apply_prose_ascii_fallbacks(text: str) -> str:
     return text
 
 
+# Box / geometric / punctuation glyphs that sometimes leak outside listings.
+_BOX_ASCII: tuple[tuple[str, str], ...] = (
+    ("│", "|"),
+    ("─", "-"),
+    ("━", "-"),
+    ("├", "+"),
+    ("┤", "+"),
+    ("┬", "+"),
+    ("┴", "+"),
+    ("┼", "+"),
+    ("┌", "+"),
+    ("┐", "+"),
+    ("└", "+"),
+    ("┘", "+"),
+    ("╭", "+"),
+    ("╮", "+"),
+    ("╰", "+"),
+    ("╯", "+"),
+    ("║", "|"),
+    ("═", "="),
+    ("╔", "+"),
+    ("╗", "+"),
+    ("╚", "+"),
+    ("╝", "+"),
+    ("╠", "+"),
+    ("╣", "+"),
+    ("╱", "/"),
+    ("╲", "/"),
+    ("○", "o"),
+    ("∿", "~"),
+    ("\u2212", "-"),  # MINUS SIGN
+    ("\u2013", "-"),  # EN DASH (safe in verbatim; prose often wants this too)
+    ("\u2217", "*"),  # ASTERISK OPERATOR
+    ("\u00b7", "."),  # MIDDLE DOT
+    ("\u2026", "..."),  # HORIZONTAL ELLIPSIS
+    ("\u2080", "0"),  # subscripts that appear in ascii-art trees
+    ("\u2081", "1"),
+    ("\u2082", "2"),
+    ("\u2083", "3"),
+    ("\u2084", "4"),
+    ("\u2085", "5"),
+    ("\u2086", "6"),
+    ("\u2087", "7"),
+    ("\u2088", "8"),
+    ("\u2089", "9"),
+    ("\u208a", "+"),
+    ("\u208b", "-"),
+)
+
+
 def apply_pdflatex_unicode_fixes(text: str) -> str:
-    """Replace glyphs pdfLaTeX cannot declare (SMP letters) in TeX output."""
+    """Replace glyphs pdfLaTeX cannot declare (SMP letters / box art) in TeX output."""
     for src, dst in PDFLATEX_UNICODE_FIXES:
         text = text.replace(src, dst)
-    return text
+    for src, dst in _BOX_ASCII:
+        text = text.replace(src, dst)
+    # Any remaining supplementary-plane characters become a safe ASCII placeholder.
+    def _smp(m: re.Match[str]) -> str:
+        ch = m.group(0)
+        return f"[U+{ord(ch):04X}]"
+
+    text = re.sub(r"[\U00010000-\U0010FFFF]", _smp, text)
+    # Scrub leftover box / block / geometric shapes that break T1 listings/prose.
+    return re.sub(r"[\u2500-\u257F\u2580-\u259F\u25A0-\u25FF]", "?", text)
 
 
 def github_math_to_tex(text: str) -> str:
@@ -214,8 +299,19 @@ def extract_abstract(text: str) -> tuple[str, str]:
     m = re.search(r"^##\s+Abstract\s*\n(.*?)(?=^##\s)", text, re.DOTALL | re.MULTILINE)
     if not m:
         return "", text
-    abstract_md = m.group(1).strip()
-    body = text[: m.start()] + text[m.end() :]
+    abstract_block = m.group(1).strip()
+    # CMU front-matter abstract is prose only; leave diagrams / fences in the body.
+    parts = re.split(
+        r"\n(?=\*\*Dependency diagram\.\*\*|^```)",
+        abstract_block,
+        maxsplit=1,
+    )
+    abstract_md = parts[0].strip()
+    leftover = parts[1].strip() if len(parts) > 1 else ""
+    body = text[: m.start()]
+    if leftover:
+        body += leftover + "\n\n"
+    body += text[m.end() :]
     return abstract_md, body
 
 
@@ -369,7 +465,16 @@ def replace_fences(
             label = f"fig:mermaid-{slug}"
             mermaid_idx += 1
             other_idx += 1
-            placeholders[key] = figure_latex(rel_path, caption, label)
+            if rel_path.startswith("LISTING:"):
+                listing = rel_path.removeprefix("LISTING:")
+                placeholders[key] = (
+                    f"\\begin{{quote}}\\textit{{{caption}}} "
+                    f"(diagram omitted: too large to render; source listing.)"
+                    f"\\end{{quote}}\n"
+                    f"\\lstinputlisting[style=leanbox]{{{listing}}}\n"
+                )
+            else:
+                placeholders[key] = figure_latex(rel_path, caption, label)
             return f"\n\n{key}\n\n"
         key = f"CODEINCLUDE{other_idx:03d}"
         rel_path, _ = write_listing(body, f"snippet-{other_idx:03d}.txt")
@@ -389,6 +494,7 @@ def pandoc_to_latex(markdown: str, shift: bool = True) -> str:
         "-t",
         "latex",
         "--wrap=none",
+        "--no-highlight",
     ]
     if shift:
         cmd += ["--shift-heading-level-by=-1"]
@@ -417,9 +523,47 @@ def inject_placeholders(latex: str, placeholders: dict[str, str]) -> str:
     return out
 
 
+_MATH_REGION = re.compile(
+    r"(\\\(.+?\\\)|\\\[.+?\\\]|\$\$.+?\$\$|(?<!\$)\$(?!\$).+?(?<!\$)\$(?!\$))",
+    re.DOTALL,
+)
+_MATH_FONT_TO_TEXT = (
+    ("mathbf", "textbf"),
+    ("mathrm", "textrm"),
+    ("mathit", "textit"),
+    ("mathsf", "textsf"),
+    ("mathtt", "texttt"),
+)
+
+
+def _math_fonts_outside_math(latex: str) -> str:
+    """Map ``\\mathbf`` etc. to text-mode cmds only outside math regions.
+
+    A global replace breaks constructs like ``\\(\\mathbf{\\times}\\)`` because
+    ``\\times`` is illegal in ``\\textbf``.
+    """
+    parts = _MATH_REGION.split(latex)
+    out: list[str] = []
+    for i, part in enumerate(parts):
+        if i % 2 == 1:
+            # Inside math: keep math fonts; only remap unsupported script font.
+            out.append(part.replace("\\mathscr{", "\\mathcal{"))
+            continue
+        for math_cmd, text_cmd in _MATH_FONT_TO_TEXT:
+            part = re.sub(rf"\\{math_cmd}\{{", rf"\\{text_cmd}{{", part)
+        part = part.replace("\\mathscr{", "\\mathcal{")
+        out.append(part)
+    return "".join(out)
+
+
 def cleanup_pandoc_latex(latex: str) -> str:
     latex = latex.replace("\\pandocbounded{", "{")
     latex = re.sub(r"\\tightlist\n", "", latex)
+    # Pandoc's `\textquotesingle{}` inside `\texttt{...}` can recurse until
+    # TeX's input stack overflows (e.g. Lean files named `insert_comm'.lean`).
+    latex = latex.replace("\\textquotesingle{}", "'")
+    latex = latex.replace("\\textquotesingle", "'")
+    latex = _math_fonts_outside_math(latex)
     for cmd in ("section", "subsection", "subsubsection", "paragraph"):
         latex = re.sub(
             rf"(\\{cmd}\{{)\d+(?:\.\d+)*\.?\s+",
@@ -453,15 +597,24 @@ def cleanup_pandoc_latex(latex: str) -> str:
 def insert_appendix_command(latex: str) -> str:
     marker = r"\section{Lean sources in the Palomar archive}"
     if marker not in latex:
-        raise RuntimeError(f"missing {marker!r} in LaTeX output")
+        # Tree-compiled documents have no Palomar appendix.
+        return latex
     return latex.replace(marker, r"\appendix" + "\n" + marker, 1)
 
 
-def insert_list_of_figures(latex: str) -> str:
-    marker = r"\hypertarget{references}{%"
-    if marker not in latex:
-        raise RuntimeError(f"missing {marker!r} in LaTeX output")
-    return latex.replace(marker, r"\listoffigures" + "\n\n" + marker, 1)
+def insert_front_matter_lists(latex: str) -> str:
+    """Table of contents and list of figures after CMU front matter (unnumbered)."""
+    block = (
+        "{\\pagestyle{empty}\n"
+        "\\tableofcontents\n"
+        "\\clearpage\n"
+        "\\listoffigures\n"
+        "\\clearpage\n"
+        "\\ifthenelse{\\isodd{\\value{page}}}{}{\\mbox{}\\clearpage}\n"
+        "}\n"
+        "\\pagestyle{plain}\n\n"
+    )
+    return block + latex
 
 
 def build_document(preamble: str, title_page: str, body: str) -> str:
@@ -487,35 +640,47 @@ def cleanup_abstract_latex(latex: str) -> str:
     return latex
 
 
+def embed_cmu_abstract(abstract_latex: str) -> str:
+    """Prepare abstract body for cmu-titlepage2's \\abstract / \\gdef storage.
+
+    cmu-titlepage2's \\abstract is not \\long, so blank lines (\\par) are
+    forbidden. ``\\gdef\\@abstract{#1}`` also treats ``#`` as a parameter
+    marker, so every ``#`` in the body must be doubled.
+    """
+    body = abstract_latex.strip()
+    # Single paragraph for the non-long \\abstract command.
+    body = re.sub(r"\s*\n\s*", " ", body)
+    return body.replace("#", "##")
+
+
 def build_title_page(abstract_latex: str) -> str:
-    palomar_line = (
-        f"          \\textbf{{Palomar Registration:}} \\url{{{PALOMAR_URL}}}\n"
-        if PALOMAR_URL
-        else ""
-    )
+    abstract_body = embed_cmu_abstract(abstract_latex)
     return textwrap.dedent(
         f"""
-        \\title{{\\textbf{{{TITLE}}}}}
+        \\title{{{TITLE}}}
 
-        \\author[1]{{\\textbf{{{AUTHOR}}}}}
-        \\affil[1]{{ORCID: {ORCID}}}
-        \\affil[1]{{{COMPANY}}}
-        \\affil[1]{{\\texttt{{{EMAIL}}}}}
+        \\author{{
+          Lars Warren Ericson$^\\dagger$, Dana S. Scott, Vijay D'Silva$^\\ddagger$,\\\\
+          Brian Milnes$^\\S$
+        }}
+        \\disclaimer{{$^\\dagger$ Catskills Research Company, $^\\ddagger$ Google Research, $^\\S$ Unaffiliated}}
 
-        \\date{{\\today}}
+        \\date{{{REPORT_DATE}}}
+        \\trnumber{{{REPORT_NUMBER}}}
+        \\keywords{{{KEYWORDS}}}
+        \\abstract{{
+        {abstract_body}
+        }}
+        \\hypersetup{{
+          pdftitle={{{TITLE}}},
+          pdfauthor={{{PDF_AUTHORS}}},
+          pdfsubject={{Carnegie Mellon University School of Computer Science Technical Report {REPORT_NUMBER}}},
+          pdfkeywords={{{PDF_KEYWORDS}}}
+        }}
 
         \\begin{{document}}
 
         \\maketitle
-
-        \\begin{{center}}
-          \\small
-          \\textbf{{Github:}} \\url{{{GITHUB_URL}}} \\\\
-{palomar_line}        \\end{{center}}
-
-        \\begin{{abstract}}
-        {abstract_latex.strip()}
-        \\end{{abstract}}
         """
     ).strip()
 
@@ -544,7 +709,10 @@ def main() -> int:
     body = normalize_appendix_headings(body)
     abstract_md, body = extract_abstract(body)
     body = strip_manual_section_numbers(body)
-    body = demote_inventory_headings(body)
+    # Tree-compiled notes use #### for nested subsections; only demote the old
+    # inventory-style headings when the source is a hand-written arxiv.md.
+    if "compile_md_tree.py" not in raw:
+        body = demote_inventory_headings(body)
     body = github_math_to_tex(body)
     body, placeholders = replace_fences(body, mermaid_captions)
     prune_stale_listings()
@@ -554,7 +722,7 @@ def main() -> int:
     latex_body = pandoc_to_latex(body, shift=True)
     latex_body = inject_placeholders(latex_body, placeholders)
     latex_body = cleanup_pandoc_latex(latex_body)
-    latex_body = insert_list_of_figures(latex_body)
+    latex_body = insert_front_matter_lists(latex_body)
     latex_body = insert_appendix_command(latex_body)
 
     abstract_latex = pandoc_to_latex(github_math_to_tex(abstract_md), shift=False) if abstract_md else ""
@@ -563,13 +731,18 @@ def main() -> int:
     preamble = PREAMBLE.read_text(encoding="utf-8")
     title_page = build_title_page(abstract_latex)
     document = build_document(preamble, title_page, latex_body)
-    document = apply_pdflatex_unicode_fixes(document)
+    # Only rewrite the document body: the preamble's \newunicodechar lines must
+    # keep their SMP code points intact.
     body_start = document.find(r"\begin{document}")
-    body = document[body_start:] if body_start != -1 else document
+    if body_start == -1:
+        raise RuntimeError("missing \\begin{document} in assembled TeX")
+    head, body = document[:body_start], document[body_start:]
+    body = apply_pdflatex_unicode_fixes(body)
     leftover = sorted({ch for ch in body if ord(ch) > 0xFFFF})
     if leftover:
         shown = ", ".join(f"U+{ord(ch):04X}" for ch in leftover)
         raise RuntimeError(f"arxiv.tex body still has supplementary-plane characters: {shown}")
+    document = head + body
     changed = write_if_changed(OUT, document)
     n_listings = sum(1 for p in LISTINGS_DIR.iterdir() if p.is_file()) if LISTINGS_DIR.is_dir() else 0
     n_figures = sum(1 for p in FIGURES_DIR.glob("*.png"))

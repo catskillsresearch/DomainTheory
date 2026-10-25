@@ -10,9 +10,7 @@ DEFINITION 1.1. A family $\mathcal{D}$ of subsets of a given set $\Delta$ is cal
 
 <!-- page 9 -->
 
-We remark that by convention $\Delta$ corresponds to the intersection of an empty sequence of neighbourhoods; in particular,
-
-$$
+We remark that by convention $\Delta$ corresponds to the intersection of an empty sequence of neighbourhoods; in particular, see Factoid 1.1.
 
 ## AI: Human-English to AI-Lean
 
