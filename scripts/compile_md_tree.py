@@ -44,8 +44,7 @@ DEFAULT_ABSTRACT = """\
 This document is a machine-checked Lean 4 formalization of Dana Scott's papers
 on domain theory: continuous lattices (1972), datatypes as lattices (1976),
 neighbourhood systems (1980), and information systems (1982), together with
-bridge theorems relating the three presentations. Each note in the source tree
-is included in reading order from `DomainTheory.md`.
+bridge theorems relating the lattice, neighbourhood, and information systems presentations.
 """
 
 
