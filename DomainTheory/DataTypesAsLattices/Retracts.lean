@@ -35,7 +35,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.treeF
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.fixedToInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimitToFixed
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6_inverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.treeR
 public import DomainTheory.DataTypesAsLattices.Retracts.boolR
 public import DomainTheory.DataTypesAsLattices.Retracts.boolR_more
@@ -53,7 +52,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -82,14 +80,11 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retract_interpolation
 public import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
 public import DomainTheory.DataTypesAsLattices.Retracts.directed_sUnion_fixed
 public import DomainTheory.DataTypesAsLattices.Retracts.sSup_fixed_eq_sUnion
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_continuous
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import DomainTheory.DataTypesAsLattices.Retracts.funRetract_isRetract
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_right_const
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_i
 public import DomainTheory.DataTypesAsLattices.Retracts.eq_4_11
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_ii
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_restrict
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_range
 public import DomainTheory.DataTypesAsLattices.Retracts.eq_4_11_comp
@@ -99,17 +94,17 @@ public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3
 public import DomainTheory.DataTypesAsLattices.Retracts.predSet_ofNat_zero
 public import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_same_ofNat
 public import DomainTheory.DataTypesAsLattices.Retracts.predSet_eq_ofNat_of_no_zero
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_4_ii
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_5_strict
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_4
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_5
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_isGraph
 public import DomainTheory.DataTypesAsLattices.Retracts.iUnion_retract_isGraph
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_fix_idem
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_4
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_5
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6
 public import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_bool_idem
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6_limit
 
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
+
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6_inverseLimit
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6_limit
 
 @[expose] public section

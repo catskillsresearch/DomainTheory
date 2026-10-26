@@ -73,7 +73,7 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 theorem primRecOpEnv_combinatory : ∀ i, IsCombinatory (primRecOpEnv i)
   | 2 => dollarC_combinatory
   | 3 => Ycomb_combinatory
-  | 4 => theorem_2_4_closed primRecStepTerm
+  | 4 => theorem_2_4.closed primRecStepTerm
   | 0 | 1 => botElem_combinatory
   | _ + 5 => botElem_combinatory
 

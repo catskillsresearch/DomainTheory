@@ -75,7 +75,7 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 theorem pairComb_app (n m : ℕ) :
     funOf (funOf pairComb (ofNat n)) (ofNat m) = ofNat (Nat.pair n m) := by
   unfold pairComb pairTerm
-  rw [theorem_2_2_beta, theorem_2_2_beta]
+  rw [theorem_2_2.beta, theorem_2_2.beta]
   simp [interp, envSet, Function.update, arithEnv]
   rw [subC_realizes2, mulC_realizes2, mulC_realizes2, addC_realizes2,
     addC_realizes2, addC_realizes2]

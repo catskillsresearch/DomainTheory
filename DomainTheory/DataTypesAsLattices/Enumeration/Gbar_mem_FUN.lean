@@ -95,7 +95,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_secondRecSubst
@@ -136,6 +135,6 @@ theorem Gbar_mem_FUN : Gbar ∈ FUN := by
   have h : Gbar = graph (fun x => barStepBody barComb Gcomb x) := eq_3_15 Gcomb
   have hf : IsScottContinuous (fun x => barStepBody barComb Gcomb x) :=
     barStepBody.isScottContinuous_x barComb Gcomb
-  rw [h, theorem_1_2_i hf]
+  rw [h, theorem_1_2.i hf]
 
 end DomainTheory.DataTypesAsLattices

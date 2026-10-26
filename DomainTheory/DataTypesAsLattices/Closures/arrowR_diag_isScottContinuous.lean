@@ -49,7 +49,7 @@ theorem arrowR_diag_isScottContinuous :
       graph_const_isScottContinuous
         (fun a x => funOf a (funOf u (funOf a x)))
         (fun x =>
-          theorem_1_3_tuple
+          theorem_1_3.tuple
             (f := fun a b => funOf a (funOf u (funOf b x)))
             (fun b => funOf_isScottContinuous_left (funOf u (funOf b x)))
             (fun a =>

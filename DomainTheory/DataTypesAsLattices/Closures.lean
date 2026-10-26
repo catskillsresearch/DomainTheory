@@ -43,7 +43,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_9
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_10
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_16
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_17
-public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_values
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_18
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_18_rev
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_18_eq
@@ -106,25 +105,18 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxTag_bot
 public import DomainTheory.DataTypesAsLattices.Closures.boxTag_of_mem
 public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_boxShift
 public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_boxPlus
-public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_4_plus
 public import DomainTheory.DataTypesAsLattices.Closures.Vapply_left_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Closures.Vapply_right_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Closures.Vcomb_app
-public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_iff
 public import DomainTheory.DataTypesAsLattices.Closures.Vapply_graph_isClosure
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_19
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_21
 public import DomainTheory.DataTypesAsLattices.Closures.Vcomb_isRetract
 public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_Vcomb
-public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_universe
 public import DomainTheory.DataTypesAsLattices.Closures.typed_of_retract_Vcomb
-public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_6_iterates
 public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_6
-public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_6_combinator
-public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_1_isolated
 public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_arrowR
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_2
-public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_3_closure
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_22
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_23
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_24
@@ -140,5 +132,13 @@ public import DomainTheory.DataTypesAsLattices.Closures.openR_idem
 public import DomainTheory.DataTypesAsLattices.Closures.openR_isRetract
 public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_openR
 public import DomainTheory.DataTypesAsLattices.Closures.openR_isClosure
+
+public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_3_closure
+public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_4_plus
+public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_iff
+public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_universe
+public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_values
+public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_6_combinator
+public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_6_iterates
 
 @[expose] public section

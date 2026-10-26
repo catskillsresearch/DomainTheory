@@ -8,8 +8,6 @@ public import DomainTheory.DataTypesAsLattices.FixedPoint
 public import DomainTheory.DataTypesAsLattices.Embedding.extend
 public import DomainTheory.DataTypesAsLattices.Embedding.embed
 public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_5
-public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_5_extends
 public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_6
-public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_6_injective_continuous
 
 @[expose] public section

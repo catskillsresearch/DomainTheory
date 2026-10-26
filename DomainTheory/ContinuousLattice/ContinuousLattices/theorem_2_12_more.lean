@@ -11,15 +11,20 @@ public import DomainTheory.ContinuousLattice.ScottMaps.continuous_preservesDirec
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Topology.Defs.Basic
-
+public import DomainTheory.ContinuousLattice.ContinuousLattices.IsContinuousLatticeu2eorderIso
+public import DomainTheory.ContinuousLattice.ContinuousLattices.orderIsoScottHomeomorph
+public import DomainTheory.ContinuousLattice.Specialization.specializationLe_scott_iff
+public import DomainTheory.ContinuousLattice.Specialization.SpecializationLeu2emap
+public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
+public import DomainTheory.ContinuousLattice.Constructions.proposition_2_11
+public import DomainTheory.ContinuousLattice.Injective.proposition_1_2
+public import Mathlib.Topology.Order
 
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
 open Topology Set
-
 
 universe u
 
@@ -32,7 +37,7 @@ The injective space `D` is a retract of a power `𝕆^I = (I → Prop)` of the S
 `scottTopology_sierpinskiPower`). The fixed-point set `IdemFix e` is therefore a continuous lattice
 (`idemFix_isContinuousLattice`, via Proposition 2.10), and `d ↦ s d` is a homeomorphism `D ≃ₜ
 IdemFix e` with inverse the retraction. -/
-theorem theorem_2_12_backward {D : Type u} [TopologicalSpace D] [T0Space D]
+theorem theorem_2_12.backward {D : Type u} [TopologicalSpace D] [T0Space D]
     (hD : InjectiveSpace.{u, u} D) :
     ∃ (E : Type u) (inst : CompleteLattice E),
       @ContinuousLattice E inst ∧
@@ -72,5 +77,67 @@ theorem theorem_2_12_backward {D : Type u} [TopologicalSpace D] [T0Space D]
     right_inv := fun k => Subtype.ext k.2
     continuous_toFun := by exact R.section'.continuous.subtype_mk hfix
     continuous_invFun := by exact R.retraction.continuous.comp continuous_subtype_val }⟩
+
+section Theorem212Transfer
+
+variable {A B : Type u} [latticeA : CompleteLattice A] [latticeB : CompleteLattice B]
+
+/-- **Theorem 2.12, source-faithful exact-order form.** If an injective `T₀` topology on an
+already specified complete lattice has that lattice order as its specialization order, then the
+specified lattice is continuous and the given topology is exactly its Scott topology. -/
+theorem theorem_2_12.backward_exact [τA : TopologicalSpace A] [T0Space A]
+    (hA : InjectiveSpace.{u, u} A)
+    (hspec : ∀ x y : A, SpecializationLe x y ↔ @LE.le A latticeA.toLE x y) :
+    ContinuousLattice A ∧
+      (@scottTopologicalSpace A latticeA) = τA := by
+  obtain ⟨E, instE, hE, ⟨h⟩⟩ := theorem_2_12.backward hA
+  let : CompleteLattice E := instE
+  let : TopologicalSpace E := @scottTopologicalSpace E instE
+  let : Preorder A := latticeA.toPreorder
+  let : Preorder E := instE.toPreorder
+  let e : A ≃o E := h.toEquiv.toOrderIso
+    (fun x y hxy => by
+      exact specializationLe_scott_iff.mp
+        (SpecializationLe.map ((hspec x y).mpr hxy) h.continuous))
+    (fun x y hxy => by
+      exact (hspec (h.symm x) (h.symm y)).mp
+        (SpecializationLe.map (specializationLe_scott_iff.mpr hxy) h.symm.continuous))
+  have hcont : ContinuousLattice A := ContinuousLattice.orderIso e hE
+  refine ⟨hcont, ?_⟩
+  have heqOrder :
+      (@scottTopologicalSpace A latticeA) =
+        TopologicalSpace.induced (e : A → E) (@scottTopologicalSpace E instE) := by
+    let : TopologicalSpace A := @scottTopologicalSpace A latticeA
+    exact (@orderIsoScottHomeomorph A E latticeA instE e).isInducing.eq_induced
+  have heqHome :
+      τA = TopologicalSpace.induced (h : A → E) (@scottTopologicalSpace E instE) :=
+    (@Homeomorph.isInducing A E τA (@scottTopologicalSpace E instE) h).eq_induced
+  exact heqOrder.trans heqHome.symm
+
+end Theorem212Transfer
+
+variable {D : Type*} [CompleteLattice D]
+
+/-- **Scott 1972, Theorem 2.12 (forward direction).** Every continuous lattice is an injective
+space under its Scott topology. This is the substantial half of the equivalence "injective
+spaces = continuous lattices", and is exactly Proposition 2.11. -/
+theorem theorem_2_12.forward {E : Type*} [CompleteLattice E] (hE : ContinuousLattice E) :
+    @InjectiveSpace E scottTopologicalSpace :=
+  proposition_2_11 hE
+
+variable {D : Type*} [CompleteLattice D]
+
+/-- **Scott 1972, Theorem 2.12 (injectivity half, unconditional).** `Prop` is injective
+(Sierpiński); the continuous-lattice half is now `isContinuousLattice_prop`. -/
+theorem theorem_2_12.injective_half : InjectiveSpace Prop :=
+  proposition_1_2
+
+variable {D : Type*} [CompleteLattice D]
+
+/-- **Scott 1972, Theorem 2.12 (backward, Sierpiński base case).** `Prop` is a continuous
+lattice (`isContinuousLattice_prop`), so its injectivity (Proposition 1.2) is an instance of the
+equivalence. -/
+theorem theorem_2_12.sierpinski_backward (_h : ContinuousLattice Prop) : InjectiveSpace Prop :=
+  proposition_1_2
 
 end DomainTheory.ContinuousLattice

@@ -48,7 +48,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_more
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -80,7 +80,7 @@ retract half. Under the paper's extra strictness and `⊑`-monotonicity
 hypotheses, the range of `Y(F)` is order-isomorphic to the inverse
 limit of the ranges of `Fⁿ(⊥)`. Stated without `≃o` so the compared
 type does not mention a `CompleteLattice` instance. -/
-theorem theorem_4_6_limit {F : Pomega → Pomega}
+theorem theorem_4_6.limit {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a))
     (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))
@@ -94,7 +94,7 @@ theorem theorem_4_6_limit {F : Pomega → Pomega}
               (x : Pomega) ⊆ (y : Pomega) ↔
                 ∀ n, (φ x).1 n ⊆ (φ y).1 n := by
   refine ⟨(theorem_4_6 hf hret).1, (theorem_4_6 hf hret).2, ?_⟩
-  let iso := theorem_4_6_inverseLimit hf hret hstrict hmono
+  let iso := theorem_4_6.inverseLimit hf hret hstrict hmono
   refine ⟨iso, iso.bijective, fun x y => ⟨?_, ?_⟩⟩
   · intro hxy n
     exact funOf_monotone_right (iterateBot F n) hxy

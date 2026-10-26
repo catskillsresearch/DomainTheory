@@ -126,21 +126,21 @@
 
 @import "../FunctionSpaces/proposition_3_2.lean"
 
-**[ContinuousLattice/FunctionSpaces/theorem_3_3_isContinuousLattice.lean](../FunctionSpaces/theorem_3_3_isContinuousLattice.lean)**
+**[ContinuousLattice/FunctionSpaces/theorem_3_3.isContinuousLattice.lean](../FunctionSpaces/theorem_3_3.isContinuousLattice.lean)**
 
-@import "../FunctionSpaces/theorem_3_3_isContinuousLattice.lean"
+@import "../FunctionSpaces/theorem_3_3.isContinuousLattice.lean"
 
-**[ContinuousLattice/FunctionSpaces/theorem_3_3_topology.lean](../FunctionSpaces/theorem_3_3_topology.lean)**
+**[ContinuousLattice/FunctionSpaces/theorem_3_3.topology.lean](../FunctionSpaces/theorem_3_3.topology.lean)**
 
-@import "../FunctionSpaces/theorem_3_3_topology.lean"
+@import "../FunctionSpaces/theorem_3_3.topology.lean"
 
 **[ContinuousLattice/FunctionSpaces/theorem_3_3.lean](../FunctionSpaces/theorem_3_3.lean)**
 
 @import "../FunctionSpaces/theorem_3_3.lean"
 
-**[ContinuousLattice/FunctionSpaces/theorem_3_3_topology_induced_pi.lean](../FunctionSpaces/theorem_3_3_topology_induced_pi.lean)**
+**[ContinuousLattice/FunctionSpaces/theorem_3_3.topology_induced_pi.lean](../FunctionSpaces/theorem_3_3.topology_induced_pi.lean)**
 
-@import "../FunctionSpaces/theorem_3_3_topology_induced_pi.lean"
+@import "../FunctionSpaces/theorem_3_3.topology_induced_pi.lean"
 
 **[ContinuousLattice/FunctionSpaces/corollary_3_4_eval_on_C.lean](../FunctionSpaces/corollary_3_4_eval_on_C.lean)**
 

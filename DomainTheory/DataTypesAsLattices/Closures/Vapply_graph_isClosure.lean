@@ -61,7 +61,7 @@ theorem Vapply_graph_isClosure (a : Pomega) :
     intro x
     have happ : funOf (graph (fun z => Vapply a z)) =
         fun z => Vapply a z :=
-      theorem_1_2_i (Vapply_right_isScottContinuous a)
+      theorem_1_2.i (Vapply_right_isScottContinuous a)
     simpa [happ] using (eq_5_17 a x).symm
 
 end DomainTheory.DataTypesAsLattices

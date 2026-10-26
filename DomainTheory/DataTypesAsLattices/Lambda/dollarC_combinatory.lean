@@ -51,7 +51,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
-public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4_closed
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4_more
 public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarC_eq_fix_termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm_interp
@@ -67,6 +68,6 @@ theorem dollarC_combinatory : IsCombinatory dollarC := by
   have hY : funOf Ycomb (interp dollarStepTerm (fun _ => botElem)) = dollarC := by
     rw [dollarStepTerm_interp, theorem_2_5 termDollarStep.isScottContinuous,
       dollarC_eq_fix_termDollarStep]
-  exact hY ▸ IsCombinatory.app Ycomb_combinatory (theorem_2_4_closed dollarStepTerm)
+  exact hY ▸ IsCombinatory.app Ycomb_combinatory (theorem_2_4.closed dollarStepTerm)
 
 end DomainTheory.DataTypesAsLattices

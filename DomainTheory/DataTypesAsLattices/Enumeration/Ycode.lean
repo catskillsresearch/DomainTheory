@@ -15,6 +15,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- A Gödel number of `Y`, used for a Kleene-style fixed point on codes. -/
 noncomputable def Ycode : ℕ :=
-  (theorem_3_2_surjective Ycomb_combinatory).choose
+  (theorem_3_2.surjective Ycomb_combinatory).choose
 
 end DomainTheory.DataTypesAsLattices

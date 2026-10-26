@@ -6,9 +6,9 @@
 
 @import "theorem_4_1.lean"
 
-**[DataTypesAsLattices/Retracts/theorem_4_1_complete.lean](theorem_4_1_complete.lean)**
+**[DataTypesAsLattices/Retracts/theorem_4_1.complete.lean](theorem_4_1.complete.lean)**
 
-@import "theorem_4_1_complete.lean"
+@import "theorem_4_1.complete.lean"
 
 **[DataTypesAsLattices/Retracts/fixpointsCompleteLattice.lean](fixpointsCompleteLattice.lean)**
 
@@ -182,7 +182,7 @@
 
 @import "updateEnv.lean"
 
-**[DataTypesAsLattices/Retracts/theorem_4_1_continuous.lean](theorem_4_1_continuous.lean)**
+**[DataTypesAsLattices/Retracts/theorem_4_1.continuous.lean](theorem_4_1.continuous.lean)**
 
-@import "theorem_4_1_continuous.lean"
+@import "theorem_4_1.continuous.lean"
 

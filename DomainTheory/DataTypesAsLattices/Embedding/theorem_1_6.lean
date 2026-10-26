@@ -10,11 +10,9 @@ public import DomainTheory.DataTypesAsLattices.Embedding.embed
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace Topology Function
-
 
 /-- **Scott 1976, Theorem 1.6 (The embedding theorem).**
 Every T₀ space with a countable basis embeds in `Pω`. -/
@@ -23,5 +21,10 @@ theorem theorem_1_6 {X : Type*} [TopologicalSpace X] [T0Space X]
     IsEmbedding (embed U) where
   toIsInducing := embed.inducing U hbasis
   injective := embed.injective U hbasis
+
+theorem theorem_1_6.injective_continuous {X : Type*} [TopologicalSpace X]
+    [T0Space X] (U : ℕ → Set X) (hbasis : IsTopologicalBasis (Set.range U)) :
+    Injective (embed U) ∧ Continuous (embed U) :=
+  ⟨embed.injective U hbasis, embed.continuous U hbasis⟩
 
 end DomainTheory.DataTypesAsLattices

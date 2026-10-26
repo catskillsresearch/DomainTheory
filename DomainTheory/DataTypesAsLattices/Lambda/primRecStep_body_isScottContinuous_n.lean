@@ -63,11 +63,11 @@ namespace DomainTheory.DataTypesAsLattices
 theorem primRecStep_body_isScottContinuous_n (a f u : Pomega) :
     IsScottContinuous (fun n =>
       condSet n a (funOf (funOf f (predSet n)) (funOf u (predSet n)))) :=
-  theorem_1_3_tuple
+  theorem_1_3.tuple
     (fun y => condSet.isScottContinuous_left a y)
     (fun n => condSet.isScottContinuous_right n a)
     id_isScottContinuous
-    (theorem_1_3_tuple
+    (theorem_1_3.tuple
       (fun y => funOf_isScottContinuous_left y)
       (fun x => funOf_isScottContinuous x)
       (theorem_1_3 (funOf_isScottContinuous f) predSet_isScottContinuous)

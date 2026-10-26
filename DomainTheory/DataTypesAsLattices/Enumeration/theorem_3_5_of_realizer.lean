@@ -126,7 +126,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 3.5 (The completeness theorem for definability),
 realizer form.** If `q` realizes `p` on values, then `val(p n) = q(val n)`. -/
-theorem theorem_3_5_of_realizer {val : ℕ → Pomega} {p : ℕ → ℕ} {q : Pomega}
+theorem theorem_3_5.of_realizer {val : ℕ → Pomega} {p : ℕ → ℕ} {q : Pomega}
     (hq : ∀ n, val (p n) = funOf q (val n)) :
     ∀ n, val (p n) = funOf q (val n) := hq
 

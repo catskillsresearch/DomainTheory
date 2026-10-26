@@ -6,7 +6,7 @@
 
 @import "theorem_5_3.lean"
 
-**[DataTypesAsLattices/Closures/theorem_5_3_closure.lean](theorem_5_3_closure.lean)**
+**[DataTypesAsLattices/Closures/theorem_5_3.closure.lean](theorem_5_3.closure.lean)**
 
-@import "theorem_5_3_closure.lean"
+@import "theorem_5_3.closure.lean"
 

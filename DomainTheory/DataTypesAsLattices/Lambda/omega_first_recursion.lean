@@ -65,7 +65,7 @@ theorem omega_first_recursion {f : Pomega → Pomega} (hf : IsScottContinuous f)
   let d := omegaComb (graph f)
   have hd : ∀ x, funOf d x = f (funOf x x) := by
     intro x
-    simp [d, omegaComb_app, theorem_1_2_i hf]
+    simp [d, omegaComb_app, theorem_1_2.i hf]
   have hθ : funOf d d = f (funOf d d) := hd d
   refine subset_antisymm ?_ ((theorem_1_4 hf).2 _ hθ.symm)
   intro m hm

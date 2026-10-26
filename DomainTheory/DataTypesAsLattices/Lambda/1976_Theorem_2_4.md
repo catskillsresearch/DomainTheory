@@ -6,13 +6,13 @@
 
 @import "theorem_2_4.lean"
 
-**[DataTypesAsLattices/Lambda/theorem_2_4_complete.lean](theorem_2_4_complete.lean)**
+**[DataTypesAsLattices/Lambda/theorem_2_4.complete.lean](theorem_2_4.complete.lean)**
 
-@import "theorem_2_4_complete.lean"
+@import "theorem_2_4.complete.lean"
 
-**[DataTypesAsLattices/Lambda/theorem_2_4_closed.lean](theorem_2_4_closed.lean)**
+**[DataTypesAsLattices/Lambda/theorem_2_4.closed.lean](theorem_2_4.closed.lean)**
 
-@import "theorem_2_4_closed.lean"
+@import "theorem_2_4.closed.lean"
 
 **[DataTypesAsLattices/Lambda/Ycomb_combinatory.lean](Ycomb_combinatory.lean)**
 

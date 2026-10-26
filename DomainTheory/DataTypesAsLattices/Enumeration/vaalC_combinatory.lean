@@ -96,7 +96,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_secondRecSubst
@@ -134,6 +133,6 @@ theorem vaalC_combinatory : IsCombinatory vaalC := by
   have hY : funOf Ycomb (interp vaalStepTerm (fun _ => botElem)) = vaalC := by
     rw [vaalStepTerm_interp, theorem_2_5 vaalF.isScottContinuous]
     rfl
-  exact hY ▸ IsCombinatory.app Ycomb_combinatory (theorem_2_4_closed vaalStepTerm)
+  exact hY ▸ IsCombinatory.app Ycomb_combinatory (theorem_2_4.closed vaalStepTerm)
 
 end DomainTheory.DataTypesAsLattices

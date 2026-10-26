@@ -60,7 +60,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem diagApp_isScottContinuous : IsScottContinuous (fun x => funOf x x) := by
   constructor
   intro x
-  have h := theorem_1_3_diag (x := x)
+  have h := theorem_1_3.diag (x := x)
     (f := fun u y => funOf u y)
     (fun y => funOf_isScottContinuous_left y)
     (fun u => funOf_isScottContinuous u)

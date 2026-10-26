@@ -17,6 +17,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- A Gödel code for the uniform operator in Theorem 3.3. -/
 noncomputable def secondRecOperatorCode : ℕ :=
-  (theorem_3_2_surjective secondRecOperator_combinatory).choose
+  (theorem_3_2.surjective secondRecOperator_combinatory).choose
 
 end DomainTheory.DataTypesAsLattices

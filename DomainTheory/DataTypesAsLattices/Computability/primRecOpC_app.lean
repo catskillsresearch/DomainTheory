@@ -71,7 +71,7 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 
 theorem primRecOpC_app (a f : Pomega) :
     (primRecOpC ⬝ a) ⬝ f = primRecComb a f := by
-  rw [primRecOpC, primRecOpTerm, theorem_2_2_beta, theorem_2_2_beta]
+  rw [primRecOpC, primRecOpTerm, theorem_2_2.beta, theorem_2_2.beta]
   simp [interp, envSet, Function.update, primRecOpEnv, primRecComb]
 
 end DomainTheory.DataTypesAsLattices

@@ -39,9 +39,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff_subset
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 /-- **Scott 1976, Theorem 5.1 (The algebraic lattice theorem).**
 The compact points of a closure range are exactly the `a(e n)`, and every
@@ -54,5 +52,16 @@ theorem theorem_5_1 {a : Pomega} (ha : Closure a) :
         (x : Pomega) = ⋃₀ (Subtype.val '' compactFixedBelow a x) :=
   ⟨compact_fixed_iff_subset ha, fun x =>
     ⟨compactFixedBelow_directedSubset ha x, compactFixedBelow_sUnion ha x⟩⟩
+
+/-- Isolated points of a closure are its values on finite sets, and
+conversely every `a(e n)` is a typed point. -/
+theorem theorem_5_1.isolated {a : Pomega} (_ha : Closure a) {x : Pomega}
+    (hx : typed x a) :
+    Isolated x → ∃ n, x = funOf a (e n) := by
+  intro h
+  obtain ⟨n, hn⟩ := h.out
+  refine ⟨n, ?_⟩
+  rw [hn] at hx ⊢
+  exact hx
 
 end DomainTheory.DataTypesAsLattices

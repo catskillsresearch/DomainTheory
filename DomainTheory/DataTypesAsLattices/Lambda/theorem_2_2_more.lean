@@ -49,19 +49,16 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.erase_correct
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_1
+public import DomainTheory.DataTypesAsLattices.Graph.beta
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 2.4 (The combinator theorem).** Every LAMBDA
-term equals an applicative combination of the six constants and its
-free variables. -/
-theorem theorem_2_4_complete (t : Term) (ρ : ℕ → Pomega) :
-    interp t ρ = ofComb (erase t) ρ :=
-  (erase_correct t ρ).symm
+/-- **Scott 1976, Theorem 2.2 (β).** -/
+theorem theorem_2_2.beta (i : ℕ) (body : Term) (ρ : ℕ → Pomega) (y : Pomega) :
+    funOf (interp (.lam i body) ρ) y = interp body (envSet ρ i y) :=
+  DomainTheory.DataTypesAsLattices.beta (theorem_2_1 body ρ i) y
 
 end DomainTheory.DataTypesAsLattices

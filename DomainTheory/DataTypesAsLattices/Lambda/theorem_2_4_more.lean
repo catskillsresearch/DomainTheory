@@ -49,20 +49,28 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.curry3_app
+public import DomainTheory.DataTypesAsLattices.Lambda.erase_correct
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_6
+public import DomainTheory.DataTypesAsLattices.Lambda.predC_app
+public import DomainTheory.DataTypesAsLattices.Lambda.ofComb_combinatory
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
+/-- **Scott 1976, Theorem 2.4 (The combinator theorem).** Every LAMBDA
+term equals an applicative combination of the six constants and its
+free variables. -/
+theorem theorem_2_4.complete (t : Term) (ρ : ℕ → Pomega) :
+    interp t ρ = ofComb (erase t) ρ :=
+  (erase_correct t ρ).symm
 
-/-- **Scott 1976, Theorem 2.3, ternary case** (the usual reduction of `k`). -/
-theorem theorem_2_3_ternary {f : Pomega → Pomega → Pomega → Pomega}
-    (hf0 : ∀ y z, IsScottContinuous (fun x => f x y z))
-    (hf1 : ∀ x z, IsScottContinuous (fun y => f x y z))
-    (hf2 : ∀ x y, IsScottContinuous (fun z => f x y z)) :
-    ∃ u, ∀ x y z, funOf (funOf (funOf u x) y) z = f x y z :=
-  ⟨curry3 f hf0 hf1 hf2, curry3_app f hf0 hf1 hf2⟩
+theorem theorem_2_4.closed (t : Term) :
+    IsCombinatory (interp t (fun _ => botElem)) := by
+  rw [theorem_2_4.complete]
+  refine ofComb_combinatory _ _ fun _ => ?_
+  have hbot : funOf predC zeroC = botElem := by
+    rw [predC_app]; exact eq_2_6
+  exact hbot ▸ IsCombinatory.app IsCombinatory.pred IsCombinatory.zero
 
 end DomainTheory.DataTypesAsLattices

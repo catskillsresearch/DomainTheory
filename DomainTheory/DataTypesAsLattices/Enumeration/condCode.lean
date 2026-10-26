@@ -20,6 +20,6 @@ open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
 noncomputable def condCode : ℕ :=
-  (theorem_3_2_surjective IsCombinatory.cond).choose
+  (theorem_3_2.surjective IsCombinatory.cond).choose
 
 end DomainTheory.DataTypesAsLattices

@@ -5,7 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_i
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_more
 public import DomainTheory.DataTypesAsLattices.Retracts.eq_4_11_comp
 
 @[expose] public section
@@ -21,7 +21,7 @@ theorem isRetract {a b : Pomega} (ha : Retract a) (hb : Retract b) :
     graph (fun x => funOf (arrowR a b) (funOf (arrowR a b) x))
   apply graph_ext
   intro u
-  rw [theorem_4_3_i ha hb, app]
+  rw [theorem_4_3.i ha hb, app]
 
 theorem mono {a b a' b' : Pomega}
     (hab : _root_.DomainTheory.DataTypesAsLattices.retractLe a a')

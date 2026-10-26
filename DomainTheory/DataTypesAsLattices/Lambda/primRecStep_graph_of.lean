@@ -49,7 +49,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2_beta
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2_more
 
 @[expose] public section
 
@@ -65,7 +66,7 @@ theorem primRecStep_graph_of (a f : Pomega) :
       (.cond (.var 3) (.var 0)
         (.app (.app (.var 1) (.pred (.var 3)))
           (.app (.var 2) (.pred (.var 3))))))))) (fun _ => botElem)) a) f
-  rw [theorem_2_2_beta, theorem_2_2_beta]
+  rw [theorem_2_2.beta, theorem_2_2.beta]
   apply congrArg graph
   funext u
   apply congrArg graph

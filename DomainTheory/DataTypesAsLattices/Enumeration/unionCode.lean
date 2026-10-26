@@ -17,6 +17,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- One fixed Gödel code for the binary union operator. -/
 noncomputable def unionCode : ℕ :=
-  (theorem_3_2_surjective unionOperator_combinatory).choose
+  (theorem_3_2.surjective unionOperator_combinatory).choose
 
 end DomainTheory.DataTypesAsLattices

@@ -85,7 +85,7 @@ theorem abs_correct (i : ℕ) (c : Comb) (ρ : ℕ → Pomega) :
     rw [Scomb_beta2, iu, iv]
     congr 1
     funext x
-    rw [theorem_1_2_i (ofComb_update_isScottContinuous u ρ i)]
-    rw [theorem_1_2_i (ofComb_update_isScottContinuous v ρ i)]
+    rw [theorem_1_2.i (ofComb_update_isScottContinuous u ρ i)]
+    rw [theorem_1_2.i (ofComb_update_isScottContinuous v ρ i)]
 
 end DomainTheory.DataTypesAsLattices

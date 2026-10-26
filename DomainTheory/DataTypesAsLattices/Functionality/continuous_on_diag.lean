@@ -54,7 +54,7 @@ theorem continuous_on_diag {F : Pomega → Pomega → Pomega}
     IsScottContinuous (fun x => F x x) := by
   constructor
   intro x
-  have H := theorem_1_3_diag (x := x) (f := F) h1 h2
+  have H := theorem_1_3.diag (x := x) (f := F) h1 h2
   ext k
   constructor
   · intro hk

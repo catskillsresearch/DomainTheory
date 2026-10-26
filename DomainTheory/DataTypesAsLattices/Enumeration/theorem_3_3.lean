@@ -140,7 +140,7 @@ theorem theorem_3_3 :
       ∀ n, valNat (recNat v n) =
         funOf (valNat n) (ofNat (recNat v n)) :=
   ⟨secondRecV, primrec_secondRecV, primrec_recNat secondRecV primrec_secondRecV,
-    theorem_3_3_i, theorem_3_3_ii secondRecV,
-    fun n => theorem_3_3_from_v secondRecV n (theorem_3_3_i n)⟩
+    theorem_3_3.i, theorem_3_3.ii secondRecV,
+    fun n => theorem_3_3.from_v secondRecV n (theorem_3_3.i n)⟩
 
 end DomainTheory.DataTypesAsLattices

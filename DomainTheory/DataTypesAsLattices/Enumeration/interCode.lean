@@ -15,6 +15,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 noncomputable def interCode : ℕ :=
-  (theorem_3_2_surjective interC_combinatory).choose
+  (theorem_3_2.surjective interC_combinatory).choose
 
 end DomainTheory.DataTypesAsLattices

@@ -11,7 +11,8 @@ public import DomainTheory.ContinuousLattice.Specialization.specializationLe_iff
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.ContinuousLattices.lemma_3_9
-public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12_backward_exact
+public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12
+public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12_more
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
@@ -126,7 +127,7 @@ theorem scottTopology_eq_induced_pi (hD : ∀ n, ContinuousLattice (D n)) :
       inverseLimitTopology D P := by
   let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
   let : T0Space (InverseLimit D P) := t0Space D P
-  exact (theorem_2_12_backward_exact (isInjectiveSpace D P hD)
+  exact (theorem_2_12.backward_exact (isInjectiveSpace D P hD)
     (specializationLe_iff D P)).2
 
 /-- **Scott 1972, §4.** Each `x ∈ D_∞` is the (monotone) lub of its projections:

@@ -73,6 +73,6 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 theorem topElem_combinatory : IsCombinatory topElem := by
   have h : funOf Ycomb (interp topRecTerm (fun _ => botElem)) = topElem := by
     rw [topRecTerm_interp, theorem_2_5 topRec_isScottContinuous, eq_2_16]
-  exact h ▸ IsCombinatory.app Ycomb_combinatory (theorem_2_4_closed topRecTerm)
+  exact h ▸ IsCombinatory.app Ycomb_combinatory (theorem_2_4.closed topRecTerm)
 
 end DomainTheory.DataTypesAsLattices

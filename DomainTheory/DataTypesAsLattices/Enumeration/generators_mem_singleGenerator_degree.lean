@@ -95,7 +95,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_secondRecSubst
@@ -132,6 +131,6 @@ open Nat.Partrec.Code
 
 theorem generators_mem_singleGenerator_degree (xs : List Pomega) :
     ∀ x, x ∈ xs → x ∈ Deg (singleGenerator xs) :=
-  packList_components_mem_Deg (theorem_3_6_finite xs).1
+  packList_components_mem_Deg (theorem_3_6.finite xs).1
 
 end DomainTheory.DataTypesAsLattices

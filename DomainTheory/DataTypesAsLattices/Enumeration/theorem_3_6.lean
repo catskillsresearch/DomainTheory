@@ -155,6 +155,6 @@ theorem theorem_3_6 (A : Set Pomega) :
         subst x
         exact Deg_self a)
   · rintro ⟨xs, rfl⟩
-    exact ⟨singleGenerator xs, theorem_3_6_generated xs⟩
+    exact ⟨singleGenerator xs, theorem_3_6.generated xs⟩
 
 end DomainTheory.DataTypesAsLattices

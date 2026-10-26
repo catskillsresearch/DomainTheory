@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3_nary
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 
 @[expose] public section
@@ -27,13 +27,13 @@ namespace intF
 theorem map_isScottContinuous (f : Pomega) :
     IsScottContinuous (fun u =>
       dcondSet u (ofNat 0) (dcondSet (funOf f (predSet u)) u u)) :=
-  theorem_1_3_nary
+  theorem_1_3.nary
     (fun y z => dcondSet_isScottContinuous_left y z)
     (fun x z => dcondSet_isScottContinuous_mid x z)
     (fun x y => dcondSet_isScottContinuous_right x y)
     id_isScottContinuous
     (const_isScottContinuous (ofNat 0))
-    (theorem_1_3_nary
+    (theorem_1_3.nary
       (fun y z => dcondSet_isScottContinuous_left y z)
       (fun x z => dcondSet_isScottContinuous_mid x z)
       (fun x y => dcondSet_isScottContinuous_right x y)

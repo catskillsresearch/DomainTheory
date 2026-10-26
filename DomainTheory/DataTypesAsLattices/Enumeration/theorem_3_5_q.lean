@@ -125,7 +125,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 3.5 (Myhill–Shepherdson), construction.** -/
-theorem theorem_3_5_q (val : ℕ → Pomega) (p : ℕ → ℕ) (j m : ℕ) :
+theorem theorem_3_5.q (val : ℕ → Pomega) (p : ℕ → ℕ) (j m : ℕ) :
     pair j m ∈ myhillQ val p ↔ m ∈ val (p (fin j)) := by
   constructor
   · intro ⟨j', m', hp, hm⟩

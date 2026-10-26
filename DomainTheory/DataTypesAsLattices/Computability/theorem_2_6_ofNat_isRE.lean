@@ -63,7 +63,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 2.6, r.e. direction for numerals.** -/
-theorem theorem_2_6_ofNat_isRE (n : ℕ) : IsCombinatory (ofNat n) → IsRE (ofNat n) :=
+theorem theorem_2_6.ofNat_isRE (n : ℕ) : IsCombinatory (ofNat n) → IsRE (ofNat n) :=
   fun _ => IsRE.numeral n
 
 end DomainTheory.DataTypesAsLattices

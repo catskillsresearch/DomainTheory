@@ -21,7 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
 public import DomainTheory.DataTypesAsLattices.Retracts.vals
-public import DomainTheory.DataTypesAsLattices.Retracts.fixpointsCompleteLattice
 public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 public import DomainTheory.DataTypesAsLattices.Retracts.diagC
@@ -49,7 +48,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_more
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -68,6 +67,10 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_lat
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_earlier
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
+
+public import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
+
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_more
 
 @[expose] public section
 
@@ -89,12 +92,41 @@ theorem theorem_4_1 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
               (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) := by
   constructor
   · intro A hA
-    exact ⟨theorem_4_1_complete f hf A hA, lfpAbove.mem hf hA⟩
+    exact ⟨theorem_4_1.complete f hf A hA, lfpAbove.mem hf hA⟩
   · intro a ha
     constructor
     · ext x
       simp [Fixpoints, typed, eq_comm]
     · intro x
       exact ⟨retractBasis.directedSubset ha x, retractBasis.eq_sUnion ha x⟩
+
+/-- **Scott 1976, Theorem 4.1, continuous-lattice half.**
+The finite-image points form a directed way-below basis for every point in
+the range of a retract. Stated with subset directedness so the compared
+type does not mention a `CompleteLattice` instance. -/
+theorem theorem_4_1.continuous {a : Pomega} (ha : Retract a) :
+    ∀ x : Fixpoints (funOf a),
+      DirectedSubset (retractBasis a x) ∧
+        (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) ∧
+        ∀ y ∈ retractBasis a x,
+          ∀ s : Set (Fixpoints (funOf a)),
+            DirectedSubset s →
+              (x : Pomega) ⊆ ⋃₀ (Subtype.val '' s) →
+              ∃ z ∈ s, (y : Pomega) ⊆ z := by
+  intro x
+  refine ⟨retractBasis.directedSubset ha x, retractBasis.eq_sUnion ha x, ?_⟩
+  intro y hy s hs hxs
+  obtain ⟨n, hnx, hyn⟩ := hy
+  have hen : e n ⊆ ⋃₀ (Subtype.val '' s) := hnx.trans hxs
+  have hs' : DirectedSet s :=
+    ⟨⟨hs.out.1, fun u hu v hv => by
+      obtain ⟨w, hw, huw, hvw⟩ := hs.out.2 hu hv
+      exact ⟨w, hw, huw, hvw⟩⟩⟩
+  obtain ⟨z, hz, hnz⟩ :=
+    directed_finite_cover hs' (e_finite n) (by simpa [Fixpoints.vals] using hen)
+  refine ⟨z, hz, ?_⟩
+  rw [hyn]
+  have := IsScottContinuous.monotone (funOf_isScottContinuous a) hnz
+  rwa [z.property] at this
 
 end DomainTheory.DataTypesAsLattices

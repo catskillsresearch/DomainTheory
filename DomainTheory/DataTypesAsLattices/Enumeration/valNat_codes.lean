@@ -150,27 +150,27 @@ private abbrev eq217 := _root_.DomainTheory.DataTypesAsLattices.eq_2_17
 
 
 theorem Ycode_eq : valNat Ycode = Ycomb :=
-  (theorem_3_2_surjective Ycomb_combinatory).choose_spec
+  (theorem_3_2.surjective Ycomb_combinatory).choose_spec
 
 theorem botCode_eq : valNat botCode = botElem :=
-  (theorem_3_2_surjective bot_combinatory).choose_spec
+  (theorem_3_2.surjective bot_combinatory).choose_spec
 
 theorem interCode_eq : valNat interCode = interC :=
-  (theorem_3_2_surjective interC_combinatory).choose_spec
+  (theorem_3_2.surjective interC_combinatory).choose_spec
 
 theorem unionCode_eq :
     valNat unionCode = graph (fun x => graph (fun y => x ∪ y)) :=
-  (theorem_3_2_surjective unionOperator_combinatory).choose_spec
+  (theorem_3_2.surjective unionOperator_combinatory).choose_spec
 
 theorem condCode_eq : valNat condCode = condC :=
-  (theorem_3_2_surjective IsCombinatory.cond).choose_spec
+  (theorem_3_2.surjective IsCombinatory.cond).choose_spec
 
 theorem filterOp_eq : valNat filterOp = filterC :=
-  (theorem_3_2_surjective filterC_combinatory).choose_spec
+  (theorem_3_2.surjective filterC_combinatory).choose_spec
 
 theorem secondRecOperatorCode_eq :
     valNat secondRecOperatorCode = secondRecOperator :=
-  (theorem_3_2_surjective secondRecOperator_combinatory).choose_spec
+  (theorem_3_2.surjective secondRecOperator_combinatory).choose_spec
 
 theorem diagonalInterCode_eq (n : ℕ) :
     valNat (diagonalInterCode n) = ofNat n ∩ valNat n := by

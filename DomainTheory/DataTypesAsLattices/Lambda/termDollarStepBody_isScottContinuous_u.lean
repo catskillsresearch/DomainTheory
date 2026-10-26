@@ -67,7 +67,7 @@ theorem termDollarStepBody_isScottContinuous_u (s z : Pomega) :
       (g := fun u => funOf s (termShift u))
       (funOf_isScottContinuous_left (predSet z))
       (theorem_1_3 (funOf_isScottContinuous s) termShift_left_isScottContinuous)
-  exact theorem_1_3_tuple
+  exact theorem_1_3.tuple
     (fun y => condSet.isScottContinuous_mid z y)
     (fun x => condSet.isScottContinuous_right z x)
     (funOf_isScottContinuous_left (ofNat 0)) helse

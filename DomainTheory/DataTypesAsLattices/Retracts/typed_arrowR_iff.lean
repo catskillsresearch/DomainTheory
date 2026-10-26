@@ -31,7 +31,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.treeF
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.fixedToInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimitToFixed
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6_inverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.treeR
 public import DomainTheory.DataTypesAsLattices.Retracts.boolR
 public import DomainTheory.DataTypesAsLattices.Retracts.openR
@@ -48,7 +47,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -68,7 +66,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_ear
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_ii
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_more
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_restrict
 
 @[expose] public section
@@ -82,7 +80,7 @@ theorem typed_arrowR_iff {a b u : Pomega} (ha : Retract a) (_hb : Retract b) :
       u = comp u a ∧ ∀ x, typed x a → typed (funOf u x) b := by
   constructor
   · intro hu
-    exact ⟨typed_arrowR_restrict ha hu, fun x hx => theorem_4_3_ii hu hx⟩
+    exact ⟨typed_arrowR_restrict ha hu, fun x hx => theorem_4_3.ii hu hx⟩
   · intro ⟨hrest, hval⟩
     change u = funOf (arrowR a b) u
     rw [arrowR.app]

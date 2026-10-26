@@ -70,7 +70,7 @@ theorem interC_body_isScottContinuous :
       condSet x (condSet y (ofNat 0) botElem)
         (succSet (funOf (funOf interC (predSet x)) (predSet y))))
     (fun y =>
-      theorem_1_3_tuple
+      theorem_1_3.tuple
         (fun els => condSet.isScottContinuous_left
           (condSet y (ofNat 0) botElem) els)
         (fun tes => condSet.isScottContinuous_right tes

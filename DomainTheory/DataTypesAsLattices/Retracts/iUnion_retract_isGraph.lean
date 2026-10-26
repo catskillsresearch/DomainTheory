@@ -31,7 +31,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.treeF
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.fixedToInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimitToFixed
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6_inverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.treeR
 public import DomainTheory.DataTypesAsLattices.Retracts.boolR
 public import DomainTheory.DataTypesAsLattices.Retracts.openR
@@ -48,7 +47,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -80,7 +78,7 @@ theorem iUnion_retract_isGraph {xs : ℕ → Pomega} (h : ∀ n, Retract (xs n))
   constructor
   intro k m n hkm hkn
   obtain ⟨i, hi⟩ := Set.mem_iUnion.mp hkm
-  have hiG : IsGraph (xs i) := (theorem_1_2_iii (xs i)).mp (retract_isGraph (h i))
+  have hiG : IsGraph (xs i) := (theorem_1_2.iii (xs i)).mp (retract_isGraph (h i))
   exact Set.mem_iUnion.mpr ⟨i, hiG.out hi hkn⟩
 
 end DomainTheory.DataTypesAsLattices

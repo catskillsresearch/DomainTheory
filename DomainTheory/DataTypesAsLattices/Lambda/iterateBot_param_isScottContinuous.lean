@@ -65,7 +65,7 @@ theorem iterateBot_param_isScottContinuous
     ∀ n, IsScottContinuous (fun x => iterateBot (g x) n)
   | 0 => const_isScottContinuous botElem
   | n + 1 =>
-    theorem_1_3_tuple (hgx) (hgy) id_isScottContinuous
+    theorem_1_3.tuple (hgx) (hgy) id_isScottContinuous
       (iterateBot_param_isScottContinuous hgx hgy n)
 
 end DomainTheory.DataTypesAsLattices

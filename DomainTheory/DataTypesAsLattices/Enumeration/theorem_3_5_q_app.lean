@@ -126,7 +126,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- Appendix inclusion of Theorem 3.5: `val(p(fin j)) ⊆ q(e j)`. -/
-theorem theorem_3_5_q_app (p : ℕ → ℕ) (j : ℕ) :
+theorem theorem_3_5.q_app (p : ℕ → ℕ) (j : ℕ) :
     valNat (p (fin j)) ⊆ funOf (myhillQ valNat p) (e j) := by
   intro m hm
   exact ⟨j, subset_rfl, ⟨j, m, rfl, by simpa [valNat.fin_eq] using hm⟩⟩

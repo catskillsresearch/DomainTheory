@@ -60,7 +60,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem Scomb_inner_cont (u v : Pomega) :
     IsScottContinuous (fun x => funOf (funOf u x) (funOf v x)) :=
-  theorem_1_3_tuple
+  theorem_1_3.tuple
     (fun y => funOf_isScottContinuous_left y)
     (fun t => funOf_isScottContinuous t)
     (funOf_isScottContinuous u)

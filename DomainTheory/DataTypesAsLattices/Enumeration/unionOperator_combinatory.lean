@@ -18,6 +18,6 @@ namespace DomainTheory.DataTypesAsLattices
 theorem unionOperator_combinatory :
     IsCombinatory (graph (fun x => graph (fun y => x ∪ y))) := by
   rw [← unionTerm_interp]
-  exact theorem_2_4_closed unionTerm
+  exact theorem_2_4.closed unionTerm
 
 end DomainTheory.DataTypesAsLattices

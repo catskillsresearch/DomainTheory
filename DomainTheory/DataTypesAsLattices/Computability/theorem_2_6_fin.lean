@@ -75,7 +75,7 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 For a `k`-ary continuous `f`, computability of the finite-argument relation,
 recursive enumerability of the nested graph, combinatory definability, and
 closed LAMBDA-definability agree. -/
-theorem theorem_2_6_fin {n : ℕ} {f : (Fin n → Pomega) → Pomega}
+theorem theorem_2_6.fin {n : ℕ} {f : (Fin n → Pomega) → Pomega}
     (hf : ScottContinuousFin f) :
     (ComputableFin f ↔ IsRE (curryFin f)) ∧
       (IsRE (curryFin f) ↔ IsCombinatory (curryFin f)) ∧
@@ -84,7 +84,7 @@ theorem theorem_2_6_fin {n : ℕ} {f : (Fin n → Pomega) → Pomega}
   · exact ⟨fun h => h.out.2, fun h => ⟨⟨hf, h⟩⟩⟩
   · exact ⟨fun h => by
       obtain ⟨t, ht⟩ := h.out
-      simpa [ht] using theorem_2_4_closed t,
+      simpa [ht] using theorem_2_4.closed t,
       combinatory_isLambdaDefinable⟩
 
 end DomainTheory.DataTypesAsLattices

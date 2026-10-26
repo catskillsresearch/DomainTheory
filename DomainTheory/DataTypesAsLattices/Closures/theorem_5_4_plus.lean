@@ -44,7 +44,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 5.4 (sum half).** If `a` and `b` are closure
 operations then so is `a ⊞ b`. -/
-theorem theorem_5_4_plus {a b : Pomega} (ha : Closure a) (hb : Closure b) :
+theorem theorem_5_4.plus {a b : Pomega} (ha : Closure a) (hb : Closure b) :
     Closure (boxPlus a b) :=
   ⟨⟨Icomb_subset_boxPlus ha hb, boxPlus.isRetract ha.out.2 hb.out.2⟩⟩
 

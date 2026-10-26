@@ -28,7 +28,7 @@ namespace valStep
 theorem body_isScottContinuous (v : Pomega) :
     IsScottContinuous (fun k =>
       condSet k Gcomb (minExtend (valStepValue v) k)) :=
-  theorem_1_3_tuple
+  theorem_1_3.tuple
     (fun y => condSet.isScottContinuous_left Gcomb y)
     (fun z => condSet.isScottContinuous_right z Gcomb)
     id_isScottContinuous

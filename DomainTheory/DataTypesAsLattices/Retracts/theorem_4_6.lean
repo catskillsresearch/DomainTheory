@@ -48,7 +48,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_more
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -92,7 +92,7 @@ theorem theorem_4_6 {F : Pomega → Pomega}
   change fix F = graph (fun x => funOf (fix F) (funOf (fix F) x))
   have hG : IsGraph (fix F) :=
     iUnion_retract_isGraph (iterates_areRetracts hret)
-  have hgr : graph (funOf (fix F)) = fix F := (theorem_1_2_iii (fix F)).mpr hG
+  have hgr : graph (funOf (fix F)) = fix F := (theorem_1_2.iii (fix F)).mpr hG
   have hidem' : graph (fun x => funOf (fix F) (funOf (fix F) x)) =
       graph (funOf (fix F)) :=
     graph_ext (fun x => funOf_fix_idem hf hret x)

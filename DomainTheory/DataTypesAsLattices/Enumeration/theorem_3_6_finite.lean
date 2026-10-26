@@ -135,7 +135,7 @@ open Nat.Partrec.Code
 
 /-- **Scott 1976, Theorem 3.6.** `cond(⟨xs⟩)(G)` applied to `0` is the
 packed tuple, and `G` is in its degree. -/
-theorem theorem_3_6_finite (xs : List Pomega) :
+theorem theorem_3_6.finite (xs : List Pomega) :
     packList xs ∈ Deg (singleGenerator xs) ∧
       Gcomb ∈ Deg (singleGenerator xs) := by
   constructor

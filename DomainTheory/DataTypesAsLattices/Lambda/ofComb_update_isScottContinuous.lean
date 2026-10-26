@@ -75,7 +75,7 @@ theorem ofComb_update_isScottContinuous (c : Comb) (ρ : ℕ → Pomega) (i : �
   | K => constructor; intro x; simpa [ofComb] using (const_isScottContinuous Kcomb).out x
   | S => constructor; intro x; simpa [ofComb] using (const_isScottContinuous Scomb).out x
   | app u v iu iv =>
-    exact theorem_1_3_tuple
+    exact theorem_1_3.tuple
       (fun y => funOf_isScottContinuous_left y)
       (fun t => funOf_isScottContinuous t)
       (iu ρ i) (iv ρ i)

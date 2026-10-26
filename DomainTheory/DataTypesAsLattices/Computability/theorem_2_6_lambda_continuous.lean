@@ -63,7 +63,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- LAMBDA-definable maps (in one free variable) are continuous, so
 clause (iii) of Theorem 2.6 lands in the setting of (i)–(ii). -/
-theorem theorem_2_6_lambda_continuous (t : Term) :
+theorem theorem_2_6.lambda_continuous (t : Term) :
     IsScottContinuous (fun v => interp t (envSet (fun _ => botElem) 0 v)) :=
   theorem_2_1 t (fun _ => botElem) 0
 

@@ -45,9 +45,9 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 5.5.** `V` itself is a closure, and its fixed
 points are exactly the closure operations. -/
-theorem theorem_5_5_universe :
+theorem theorem_5_5.universe :
     Closure Vcomb ∧ ∀ a, Closure a ↔ typed a Vcomb :=
   ⟨⟨⟨Icomb_subset_Vcomb, Vcomb_isRetract⟩⟩,
-    fun a => (theorem_5_5_iff a).trans ⟨Eq.symm, Eq.symm⟩⟩
+    fun a => (theorem_5_5.iff a).trans ⟨Eq.symm, Eq.symm⟩⟩
 
 end DomainTheory.DataTypesAsLattices

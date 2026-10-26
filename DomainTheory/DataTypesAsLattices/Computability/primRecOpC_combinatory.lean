@@ -71,7 +71,7 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 
 
 theorem primRecOpC_combinatory : IsCombinatory primRecOpC := by
-  rw [primRecOpC, theorem_2_4_complete]
+  rw [primRecOpC, theorem_2_4.complete]
   exact ofComb_combinatory _ _ primRecOpEnv_combinatory
 
 end DomainTheory.DataTypesAsLattices

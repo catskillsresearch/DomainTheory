@@ -53,8 +53,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.enumFun
 public import DomainTheory.DataTypesAsLattices.Computability.enumRangeC
 public import DomainTheory.DataTypesAsLattices.Computability.ComputableFin
 public import DomainTheory.DataTypesAsLattices.Computability.combinatory_isLambdaDefinable
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_lambda_continuous
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_combinatory_zero
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eempty
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2etrue
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2ecomp
@@ -63,7 +62,6 @@ public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ebot
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2etop
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2enumeral
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ezeroC
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_ofNat_isRE
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_twoPow
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_testBit
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pair
@@ -182,7 +180,10 @@ public import DomainTheory.DataTypesAsLattices.Computability.enumRangeC_combinat
 public import DomainTheory.DataTypesAsLattices.Computability.enumRangeC_eq
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ecombinatory
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2eiff_combinatory
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6
+
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_combinatory_zero
 public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_fin
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_lambda_continuous
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_ofNat_isRE
 
 @[expose] public section

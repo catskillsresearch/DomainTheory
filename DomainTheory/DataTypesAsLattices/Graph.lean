@@ -13,9 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_monotone_right
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_monotone_left
 public import DomainTheory.DataTypesAsLattices.Graph.mu_law
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2_i
-public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2_ii
-public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2_iii
 public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2
 public import DomainTheory.DataTypesAsLattices.Graph.lam_eq_graph
 public import DomainTheory.DataTypesAsLattices.Graph.beta

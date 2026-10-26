@@ -95,7 +95,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_secondRecSubst
@@ -133,12 +132,12 @@ theorem myhillQ_app (p : ℕ → ℕ) (x : Pomega) :
   constructor
   · rintro ⟨j, hj, hpair⟩
     have hm : m ∈ valNat (p (fin j)) :=
-      (theorem_3_5_q valNat p j m).mp hpair
+      (theorem_3_5.q valNat p j m).mp hpair
     exact Set.mem_iUnion.mpr
       ⟨j, Set.mem_iUnion.mpr ⟨hj, hm⟩⟩
   · intro hm
     obtain ⟨j, hm⟩ := Set.mem_iUnion.mp hm
     obtain ⟨hj, hm⟩ := Set.mem_iUnion.mp hm
-    exact ⟨j, hj, (theorem_3_5_q valNat p j m).mpr hm⟩
+    exact ⟨j, hj, (theorem_3_5.q valNat p j m).mpr hm⟩
 
 end DomainTheory.DataTypesAsLattices

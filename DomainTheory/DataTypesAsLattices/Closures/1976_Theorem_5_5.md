@@ -6,9 +6,9 @@
 
 @import "theorem_5_5.lean"
 
-**[DataTypesAsLattices/Closures/theorem_5_5_iff.lean](theorem_5_5_iff.lean)**
+**[DataTypesAsLattices/Closures/theorem_5_5.iff.lean](theorem_5_5.iff.lean)**
 
-@import "theorem_5_5_iff.lean"
+@import "theorem_5_5.iff.lean"
 
 **[DataTypesAsLattices/Closures/eq_5_19.lean](eq_5_19.lean)**
 
@@ -18,9 +18,9 @@
 
 @import "Vcomb_isRetract.lean"
 
-**[DataTypesAsLattices/Closures/theorem_5_5_universe.lean](theorem_5_5_universe.lean)**
+**[DataTypesAsLattices/Closures/theorem_5_5.universe.lean](theorem_5_5.universe.lean)**
 
-@import "theorem_5_5_universe.lean"
+@import "theorem_5_5.universe.lean"
 
 **[DataTypesAsLattices/Closures/eq_5_22.lean](eq_5_22.lean)**
 
@@ -34,7 +34,7 @@
 
 @import "eq_5_24.lean"
 
-**[DataTypesAsLattices/Closures/theorem_5_5_values.lean](theorem_5_5_values.lean)**
+**[DataTypesAsLattices/Closures/theorem_5_5.values.lean](theorem_5_5.values.lean)**
 
-@import "theorem_5_5_values.lean"
+@import "theorem_5_5.values.lean"
 

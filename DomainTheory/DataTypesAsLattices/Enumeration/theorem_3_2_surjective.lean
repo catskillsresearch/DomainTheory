@@ -17,7 +17,7 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Every combinatory element appears in Scott's enumeration. -/
-theorem theorem_3_2_surjective {u : Pomega} (hu : IsCombinatory u) :
+theorem theorem_3_2.surjective {u : Pomega} (hu : IsCombinatory u) :
     ∃ n, valNat n = u := by
   revert hu
   rw [theorem_3_1]

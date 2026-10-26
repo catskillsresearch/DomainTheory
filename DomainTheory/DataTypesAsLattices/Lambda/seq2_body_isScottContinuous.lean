@@ -62,7 +62,7 @@ theorem seq2_body_isScottContinuous (x y : Pomega) :
     IsScottContinuous (fun z => condSet z x (condSet (predSet z) y botElem)) := by
   constructor
   intro z
-  have H := theorem_1_3_diag (x := z)
+  have H := theorem_1_3.diag (x := z)
     (f := fun z w => condSet z x (condSet (predSet w) y botElem))
     (fun _w => condSet.isScottContinuous_left x _)
     (fun _z =>

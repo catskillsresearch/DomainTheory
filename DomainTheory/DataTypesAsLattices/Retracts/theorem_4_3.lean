@@ -31,7 +31,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.treeF
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.fixedToInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimitToFixed
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6_inverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.treeR
 public import DomainTheory.DataTypesAsLattices.Retracts.boolR
 public import DomainTheory.DataTypesAsLattices.Retracts.openR
@@ -48,7 +47,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -69,14 +67,11 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUn
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_iff
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_comp
-
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 /-- **Scott 1976, Theorem 4.3 (The function space theorem).** -/
 theorem theorem_4_3 {a b a' b' c : Pomega}

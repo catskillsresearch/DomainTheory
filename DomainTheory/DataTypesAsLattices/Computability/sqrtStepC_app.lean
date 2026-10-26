@@ -75,7 +75,7 @@ theorem sqrtStepC_app (n i a : ℕ) :
     ((sqrtStepC ⬝ ofNat n) ⬝ ofNat i) ⬝ ofNat a =
       ofNat (if (a + 1) * (a + 1) ≤ n then a + 1 else a) := by
   unfold sqrtStepC sqrtStepTerm
-  rw [theorem_2_2_beta, theorem_2_2_beta, theorem_2_2_beta]
+  rw [theorem_2_2.beta, theorem_2_2.beta, theorem_2_2.beta]
   simp only [interp, envSet, Function.update_self,
     Function.update_of_ne (by decide : (3 : ℕ) ≠ 0),
     Function.update_of_ne (by decide : (4 : ℕ) ≠ 0),

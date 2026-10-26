@@ -72,6 +72,6 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 theorem primRecZeroC_combinatory : IsCombinatory primRecZeroC :=
   .app (.app .S (.app .K dollarC_combinatory))
     (.app (.app .S (.app .K Ycomb_combinatory))
-      (.app (theorem_2_4_closed primRecStepTerm) (ofNat_combinatory 0)))
+      (.app (theorem_2_4.closed primRecStepTerm) (ofNat_combinatory 0)))
 
 end DomainTheory.DataTypesAsLattices

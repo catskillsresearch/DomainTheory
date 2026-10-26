@@ -22,6 +22,6 @@ open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
 noncomputable def filterOp : ℕ :=
-  (theorem_3_2_surjective filterC_combinatory).choose
+  (theorem_3_2.surjective filterC_combinatory).choose
 
 end DomainTheory.DataTypesAsLattices

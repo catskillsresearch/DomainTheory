@@ -71,7 +71,7 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 
 theorem safePredC_zero : funOf safePredC (ofNat 0) = ofNat 0 := by
   simp only [safePredC]
-  rw [theorem_2_2_beta]
+  rw [theorem_2_2.beta]
   simp [interp, envSet, Function.update, eq_2_7_zero]
 
 end DomainTheory.DataTypesAsLattices

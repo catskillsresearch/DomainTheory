@@ -3,11 +3,7 @@ module
 public import DomainTheory.DataTypesAsLattices.Graph
 public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
 public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3_diag
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3_comp
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3_tuple
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3_nary
 public import DomainTheory.DataTypesAsLattices.FixedPoint.chain_mono
 public import DomainTheory.DataTypesAsLattices.FixedPoint.exists_index_of_finset
 public import DomainTheory.DataTypesAsLattices.FixedPoint.chain_lemma

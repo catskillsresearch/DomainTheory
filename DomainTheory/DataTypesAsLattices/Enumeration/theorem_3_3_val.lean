@@ -125,7 +125,7 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem theorem_3_3_val (n : ℕ) :
+theorem theorem_3_3.val (n : ℕ) :
     valNat (recCode n) = funOf (valNat n) (valNat (recCode n)) := by
   rw [recCode, valNat.app, valNat.Ycode_eq]
   exact Ycomb_unfold (valNat n)

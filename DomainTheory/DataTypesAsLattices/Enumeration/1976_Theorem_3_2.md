@@ -6,17 +6,17 @@
 
 @import "theorem_3_2.lean"
 
-**[DataTypesAsLattices/Enumeration/theorem_3_2_i.lean](theorem_3_2_i.lean)**
+**[DataTypesAsLattices/Enumeration/theorem_3_2.i.lean](theorem_3_2.i.lean)**
 
-@import "theorem_3_2_i.lean"
+@import "theorem_3_2.i.lean"
 
-**[DataTypesAsLattices/Enumeration/theorem_3_2_range.lean](theorem_3_2_range.lean)**
+**[DataTypesAsLattices/Enumeration/theorem_3_2.range.lean](theorem_3_2.range.lean)**
 
-@import "theorem_3_2_range.lean"
+@import "theorem_3_2.range.lean"
 
-**[DataTypesAsLattices/Enumeration/theorem_3_2_surjective.lean](theorem_3_2_surjective.lean)**
+**[DataTypesAsLattices/Enumeration/theorem_3_2.surjective.lean](theorem_3_2.surjective.lean)**
 
-@import "theorem_3_2_surjective.lean"
+@import "theorem_3_2.surjective.lean"
 
 **[DataTypesAsLattices/Enumeration/Ycode.lean](Ycode.lean)**
 

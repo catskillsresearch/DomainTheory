@@ -6,13 +6,13 @@
 
 @import "theorem_4_6.lean"
 
-**[DataTypesAsLattices/Retracts/theorem_4_6_inverseLimit.lean](theorem_4_6_inverseLimit.lean)**
+**[DataTypesAsLattices/Retracts/theorem_4_6.inverseLimit.lean](theorem_4_6.inverseLimit.lean)**
 
-@import "theorem_4_6_inverseLimit.lean"
+@import "theorem_4_6.inverseLimit.lean"
 
-**[DataTypesAsLattices/Retracts/theorem_4_6_limit.lean](theorem_4_6_limit.lean)**
+**[DataTypesAsLattices/Retracts/theorem_4_6.limit.lean](theorem_4_6.limit.lean)**
 
-@import "theorem_4_6_limit.lean"
+@import "theorem_4_6.limit.lean"
 
 **[DataTypesAsLattices/Retracts.lean](../Retracts.lean)**
 

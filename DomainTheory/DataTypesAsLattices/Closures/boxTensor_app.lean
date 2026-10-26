@@ -47,7 +47,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem boxTensor_app (a b u : Pomega) :
     funOf (boxTensor a b) u =
       squarePair (funOf a (squareFst u)) (funOf b (squareSnd u)) :=
-  beta (theorem_1_3_tuple
+  beta (theorem_1_3.tuple
     (f := fun x y => squarePair (funOf a x) (funOf b y))
     (fun y => theorem_1_3 (f := fun x => squarePair x (funOf b y)) (g := funOf a)
       (squarePair_isScottContinuous_left (funOf b y))

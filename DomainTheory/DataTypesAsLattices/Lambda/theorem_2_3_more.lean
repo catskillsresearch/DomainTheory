@@ -49,20 +49,26 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.curry2_app
+public import DomainTheory.DataTypesAsLattices.Lambda.curry3_app
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
+/-- **Scott 1976, Theorem 2.3 (The reduction theorem), binary case.** -/
+theorem theorem_2_3.binary {f : Pomega → Pomega → Pomega}
+    (hfx : ∀ y, IsScottContinuous (fun x => f x y))
+    (hfy : ∀ x, IsScottContinuous (fun y => f x y)) :
+    ∃ u, ∀ x y, funOf (funOf u x) y = f x y :=
+  ⟨curry2 f hfx hfy, curry2_app f hfx hfy⟩
 
-/-- **Scott 1976, Table 1 (α).** Bound variables may be renamed when the
-bodies agree after the rename (Scott: "`x` is a bound variable"). -/
-theorem theorem_2_2_alpha (i j : ℕ) (body : Term) (ρ : ℕ → Pomega)
-    (h : ∀ v, interp body (envSet ρ i v) =
-            interp (rename i j body) (envSet ρ j v)) :
-    interp (.lam i body) ρ = interp (.lam j (rename i j body)) ρ := by
-  unfold interp
-  exact congrArg graph (funext h)
+/-- **Scott 1976, Theorem 2.3, ternary case** (the usual reduction of `k`). -/
+theorem theorem_2_3.ternary {f : Pomega → Pomega → Pomega → Pomega}
+    (hf0 : ∀ y z, IsScottContinuous (fun x => f x y z))
+    (hf1 : ∀ x z, IsScottContinuous (fun y => f x y z))
+    (hf2 : ∀ x y, IsScottContinuous (fun z => f x y z)) :
+    ∃ u, ∀ x y z, funOf (funOf (funOf u x) y) z = f x y z :=
+  ⟨curry3 f hf0 hf1 hf2, curry3_app f hf0 hf1 hf2⟩
 
 end DomainTheory.DataTypesAsLattices

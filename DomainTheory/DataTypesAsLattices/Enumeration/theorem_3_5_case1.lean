@@ -133,7 +133,7 @@ open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
 
-theorem theorem_3_5_case1 {u : Pomega} {p : ℕ → ℕ} {n k : ℕ}
+theorem theorem_3_5.case1 {u : Pomega} {p : ℕ → ℕ} {n k : ℕ}
     (hu : IsCombinatory u) (hr : Realizes u p)
     (hext : Extensional valNat p)
     (hk : k ∈ valNat (p n))

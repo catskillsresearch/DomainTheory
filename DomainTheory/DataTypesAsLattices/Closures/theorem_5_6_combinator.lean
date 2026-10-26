@@ -45,13 +45,13 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 5.6, combinator form.**
 `(λf : V∘→V. Y(f)) : (V∘→V) ∘→ V`. -/
-theorem theorem_5_6_combinator :
+theorem theorem_5_6.combinator :
     typed (comp Ycomb (arrowR Vcomb Vcomb))
       (arrowR (arrowR Vcomb Vcomb) Vcomb) := by
   rw [typed, arrowR.app]
   apply graph_ext
   intro f
-  have hV : Closure Vcomb := theorem_5_5_universe.1
+  have hV : Closure Vcomb := theorem_5_5.universe.1
   have harr : Retract (arrowR Vcomb Vcomb) := theorem_5_3 hV hV
   have hf' : typed (funOf (arrowR Vcomb Vcomb) f) (arrowR Vcomb Vcomb) :=
     (retract_app harr f).symm

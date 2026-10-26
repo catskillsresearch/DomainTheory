@@ -135,9 +135,9 @@ open Nat.Partrec.Code
 
 /-- **Scott 1976, Theorem 3.6 converse (singleton).** The packed
 generator recovers `x` in its own degree. -/
-theorem theorem_3_6_converse (x : Pomega) :
+theorem theorem_3_6.converse (x : Pomega) :
     x ∈ Deg (singleGenerator [x]) := by
-  have hp := (theorem_3_6_finite [x]).1
+  have hp := (theorem_3_6.finite [x]).1
   have h0 := combinatory_mem_Deg (singleGenerator [x]) (ofNat_combinatory 0)
   have : funOf (packList [x]) (ofNat 0) ∈ Deg (singleGenerator [x]) :=
     (Deg_isSubalgebra _).out.2 hp h0

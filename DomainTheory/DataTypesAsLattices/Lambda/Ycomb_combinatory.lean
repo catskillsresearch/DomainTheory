@@ -50,7 +50,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4_closed
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4_more
 public import DomainTheory.DataTypesAsLattices.Lambda.Yterm_interp
 
 @[expose] public section
@@ -60,6 +61,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem Ycomb_combinatory : IsCombinatory Ycomb := by
-  simpa [Yterm_interp] using theorem_2_4_closed Yterm
+  simpa [Yterm_interp] using theorem_2_4.closed Yterm
 
 end DomainTheory.DataTypesAsLattices

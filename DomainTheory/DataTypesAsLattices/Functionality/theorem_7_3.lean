@@ -1,4 +1,3 @@
-
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts
@@ -41,18 +40,12 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hApp
 public import DomainTheory.DataTypesAsLattices.Functionality.HF
 public import DomainTheory.DataTypesAsLattices.Functionality.Hfun
 public import DomainTheory.DataTypesAsLattices.Functionality.Hcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_3_i
-public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_3_ii
-public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_3_iii
-public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_3_I_unique
-public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_3_K_unique
-public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_3_S_unique
+
+public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_3_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 /-- **Scott 1976, Theorem 7.3 (The functionality theorem).** -/
 theorem theorem_7_3 :
@@ -72,7 +65,7 @@ theorem theorem_7_3 :
           (arrowE (arrowE A (arrowE B C))
             (arrowE (arrowE A B) (arrowE A C))).mem s) →
         s = Scomb) :=
-  ⟨theorem_7_3_i, theorem_7_3_ii, theorem_7_3_iii,
-    theorem_7_3_I_unique, theorem_7_3_K_unique, theorem_7_3_S_unique⟩
+  ⟨theorem_7_3.i, theorem_7_3.ii, theorem_7_3.iii,
+    theorem_7_3.I_unique, theorem_7_3.K_unique, theorem_7_3.S_unique⟩
 
 end DomainTheory.DataTypesAsLattices

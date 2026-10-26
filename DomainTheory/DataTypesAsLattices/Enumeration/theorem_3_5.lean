@@ -163,7 +163,7 @@ theorem theorem_3_5 {p : ℕ → ℕ}
     have hnin' : ¬∃ j, e j ⊆ valNat n ∧ k ∈ valNat (p (fin j)) := by
       intro ⟨j, hj, hkj⟩
       exact hnin (Set.mem_iUnion.mpr ⟨j, Set.mem_iUnion.mpr ⟨hj, hkj⟩⟩)
-    exact theorem_3_5_case1 hu hr hext hk hnin' hfin
+    exact theorem_3_5.case1 hu hr hext hk hnin' hfin
   · intro hk
     obtain ⟨j, hk⟩ := Set.mem_iUnion.mp hk
     obtain ⟨hj, hk⟩ := Set.mem_iUnion.mp hk
@@ -172,6 +172,6 @@ theorem theorem_3_5 {p : ℕ → ℕ}
       intro hj'
       have := hext.out n (fin j) (by simp [valNat.fin_eq, hj'])
       exact hnin (by simpa [this, valNat.fin_eq] using hk)
-    exact theorem_3_5_case2 hu hr hext hj hne hk hnin
+    exact theorem_3_5.case2 hu hr hext hj hne hk hnin
 
 end DomainTheory.DataTypesAsLattices

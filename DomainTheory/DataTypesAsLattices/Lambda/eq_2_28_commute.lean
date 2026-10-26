@@ -86,7 +86,7 @@ theorem eq_2_28_commute {g : Pomega → Pomega → Pomega}
       intro x
       have hcont : IsScottContinuous
           (fun z => g z (funOf (iterateBot (Fofg g) n) z)) :=
-        theorem_1_3_tuple hgx hgy id_isScottContinuous
+        theorem_1_3.tuple hgx hgy id_isScottContinuous
           (funOf_isScottContinuous (iterateBot (Fofg g) n))
       change funOf (lam (fun z => g z (funOf (iterateBot (Fofg g) n) z))) x =
         g x (iterateBot (g x) n)

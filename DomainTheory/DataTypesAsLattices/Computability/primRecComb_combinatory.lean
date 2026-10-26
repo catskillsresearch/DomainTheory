@@ -74,6 +74,6 @@ theorem primRecComb_combinatory {a f : Pomega}
     IsCombinatory (primRecComb a f) :=
   .app dollarC_combinatory <|
     .app Ycomb_combinatory <|
-      .app (.app (theorem_2_4_closed primRecStepTerm) ha) hf
+      .app (.app (theorem_2_4.closed primRecStepTerm) ha) hf
 
 end DomainTheory.DataTypesAsLattices

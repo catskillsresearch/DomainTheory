@@ -127,7 +127,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 3.3 (i).** -/
-theorem theorem_3_3_i (n : ℕ) :
+theorem theorem_3_3.i (n : ℕ) :
     valNat (secondRecV n) = secondRecVal (valNat n) := by
   rw [secondRecV, valNat.app, valNat.secondRecOperatorCode_eq,
     secondRecOperator_app]

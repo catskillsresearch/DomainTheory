@@ -71,7 +71,7 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 
 
 theorem sqrtStepC_combinatory : IsCombinatory sqrtStepC := by
-  rw [sqrtStepC, theorem_2_4_complete]
+  rw [sqrtStepC, theorem_2_4.complete]
   exact ofComb_combinatory _ _ sqrtEnv_combinatory
 
 end DomainTheory.DataTypesAsLattices

@@ -52,9 +52,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 /-- **Scott 1976, Theorem 2.4 (The combinator theorem).** -/
 theorem theorem_2_4 : IsCombinatory zeroC ∧ IsCombinatory sucC ∧ IsCombinatory predC ∧

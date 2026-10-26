@@ -5,7 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_more
 public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 
@@ -30,7 +30,7 @@ def fixpointsCompleteLattice {f : Pomega → Pomega} (hf : IsScottContinuous f) 
           obtain ⟨w, hwA, rfl⟩ := hy
           exact hz hwA)) with
     sInf := fun A => ⟨gfpBelow f (⋂₀ (Fixpoints.vals A)),
-      theorem_4_1_complete f hf (Fixpoints.vals A) (Fixpoints.vals_subset A)⟩
+      theorem_4_1.complete f hf (Fixpoints.vals A) (Fixpoints.vals_subset A)⟩
     isGLB_sInf := fun A => by
       refine ⟨?lb, ?greatest⟩
       · intro x hx

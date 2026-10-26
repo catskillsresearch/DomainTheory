@@ -74,7 +74,7 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 
 
 theorem unpairFstC_realizes : Realizes unpairFstC (fun n => n.unpair.1) := fun n => by
-  rw [unpairFstC, unpairFstTerm, theorem_2_2_beta]
+  rw [unpairFstC, unpairFstTerm, theorem_2_2.beta]
   simp only [unpairTestTerm, unpairDeltaTerm, unpairSquareTerm, unpairSqrtTerm,
     interp, envSet, Function.update_self,
     Function.update_of_ne (by decide : (1 : ℕ) ≠ 0),

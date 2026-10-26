@@ -3,7 +3,7 @@ module
 public import DomainTheory.DataTypesAsLattices.Retracts
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
-public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2_i
+public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 
 @[expose] public section
@@ -31,7 +31,7 @@ theorem isScottContinuous (j : ℕ) : IsScottContinuous (sigmaJ j) := by
 
 theorem app (j : ℕ) (x : Pomega) :
     funOf (graph (sigmaJ j)) x = sigmaJ j x := by
-  simpa using congrArg (fun g => g x) (theorem_1_2_i (isScottContinuous j))
+  simpa using congrArg (fun g => g x) (theorem_1_2.i (isScottContinuous j))
 
 theorem bot (j : ℕ) : sigmaJ j botElem = botElem := by
   ext p

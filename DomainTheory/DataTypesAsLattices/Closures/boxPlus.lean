@@ -56,7 +56,7 @@ private abbrev squareSnd_of_pair := _root_.DomainTheory.DataTypesAsLattices.eq_5
 
 theorem test_isScottContinuous :
     IsScottContinuous (fun u => boxTag 0 (squareFst u) ∪ boxTag 1 (squareSnd u)) :=
-  theorem_1_3_tuple
+  theorem_1_3.tuple
     (fun y => union_left_isScottContinuous y)
     (fun x => union_const_left_isScottContinuous x)
     (theorem_1_3 (boxTag_isScottContinuous 0) squareFst_isScottContinuous)
@@ -67,7 +67,7 @@ theorem map_isScottContinuous (a b : Pomega) :
       dcondSet (boxTag 0 (squareFst u) ∪ boxTag 1 (squareSnd u))
         (squarePair (funOf (boxShift a) (squareFst u)) botElem)
         (squarePair botElem (funOf (boxShift b) (squareSnd u)))) :=
-  theorem_1_3_nary
+  theorem_1_3.nary
     (fun y z => dcondSet_isScottContinuous_left y z)
     (fun x z => dcondSet_isScottContinuous_mid x z)
     (fun x y => dcondSet_isScottContinuous_right x y)

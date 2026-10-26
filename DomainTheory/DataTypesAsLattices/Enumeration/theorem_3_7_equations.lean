@@ -132,7 +132,7 @@ open Nat.Partrec.Code
 
 
 /-- The pointwise calculations used by Theorem 3.7. -/
-theorem theorem_3_7_equations (u v x : Pomega) :
+theorem theorem_3_7.equations (u v x : Pomega) :
     funOf Lcomb (funOf (funOf barComb u) (funOf Rcomb x)) = funOf u x ∧
       funOf (barPos v (funOf Rcomb x)) (ofNat 1) = v ∧
         funOf (barPos v (funOf Rcomb x)) (ofNat 2) = x :=

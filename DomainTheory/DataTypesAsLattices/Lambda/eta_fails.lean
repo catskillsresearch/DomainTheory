@@ -61,7 +61,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem eta_fails : ∃ u, graph (funOf u) ≠ u := by
   refine ⟨{pair 1 0}, ?_⟩
   intro h
-  have hG : IsGraph {pair 1 0} := (theorem_1_2_iii _).mp h
+  have hG : IsGraph {pair 1 0} := (theorem_1_2.iii _).mp h
   have hsub : e 1 ⊆ e 3 := by
     intro k hk
     have : k = 0 := by

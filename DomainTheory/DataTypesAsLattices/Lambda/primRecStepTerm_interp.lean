@@ -49,7 +49,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2_beta
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2_more
 
 @[expose] public section
 
@@ -61,10 +62,10 @@ theorem primRecStepTerm_interp (a f u n : Pomega) :
     funOf (funOf (funOf (funOf (interp primRecStepTerm (fun _ => botElem)) a) f) u) n =
       condSet n a (funOf (funOf f (predSet n)) (funOf u (predSet n))) := by
   change funOf (funOf (funOf (funOf (interp (.lam 0 _) (fun _ => botElem)) a) f) u) n = _
-  rw [theorem_2_2_beta]
-  rw [theorem_2_2_beta]
-  rw [theorem_2_2_beta]
-  rw [theorem_2_2_beta]
+  rw [theorem_2_2.beta]
+  rw [theorem_2_2.beta]
+  rw [theorem_2_2.beta]
+  rw [theorem_2_2.beta]
   simp [interp, envSet, Function.update]
 
 end DomainTheory.DataTypesAsLattices

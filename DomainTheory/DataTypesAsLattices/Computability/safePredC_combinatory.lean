@@ -70,6 +70,6 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 
 
 theorem safePredC_combinatory : IsCombinatory safePredC :=
-  theorem_2_4_closed _
+  theorem_2_4.closed _
 
 end DomainTheory.DataTypesAsLattices

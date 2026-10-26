@@ -63,7 +63,7 @@ theorem interC_then_else_isScottContinuous (x : Pomega) :
     IsScottContinuous (fun y =>
       condSet x (condSet y (ofNat 0) botElem)
         (succSet (funOf (funOf interC (predSet x)) (predSet y)))) :=
-  theorem_1_3_tuple
+  theorem_1_3.tuple
     (fun els => condSet.isScottContinuous_mid x els)
     (fun th => condSet.isScottContinuous_right x th)
     (condSet.isScottContinuous_left (ofNat 0) botElem)

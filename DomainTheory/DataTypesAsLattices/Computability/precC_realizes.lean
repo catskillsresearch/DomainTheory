@@ -79,7 +79,7 @@ theorem precC_realizes {f g : Pomega} {p q : ℕ → ℕ}
     Realizes (precC f g)
       (Nat.unpaired fun z n => n.rec (p z) fun y ih => q (Nat.pair z (Nat.pair y ih))) := by
   intro w
-  rw [precC, precTerm, theorem_2_2_beta]
+  rw [precC, precTerm, theorem_2_2.beta]
   simp only [interp, envSet, Function.update_self,
     Function.update_of_ne (by decide : (3 : ℕ) ≠ 0),
     Function.update_of_ne (by decide : (4 : ℕ) ≠ 0),
@@ -100,7 +100,7 @@ theorem precC_realizes {f g : Pomega} {p q : ℕ → ℕ}
       (step ⬝ ofNat y) ⬝ ofNat ih =
         ofNat (q (Nat.pair z (Nat.pair y ih))) := by
     dsimp [step, z]
-    rw [theorem_2_2_beta, theorem_2_2_beta]
+    rw [theorem_2_2.beta, theorem_2_2.beta]
     simp [interp, envSet, Function.update, precEnv]
     rw [unpairFstC_realizes, pairComb_app, pairComb_app, hg]
   have hrec : ∀ n,

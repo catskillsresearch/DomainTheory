@@ -53,9 +53,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.curryFin_app
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 /-- **Scott 1976, Theorem 2.3 (The reduction theorem).**
 Any continuous function of `k` variables is represented by an element
@@ -64,5 +62,10 @@ theorem theorem_2_3 {n : ℕ} {f : (Fin n → Pomega) → Pomega}
     (hf : ScottContinuousFin f) :
     ∃ u, ∀ xs, nestApplyFin u xs = f xs :=
   ⟨curryFin f, curryFin_app hf⟩
+
+/-- **Scott 1976, Theorem 2.3, unary case.** -/
+theorem theorem_2_3.unary {f : Pomega → Pomega} (hf : IsScottContinuous f) :
+    ∃ u, ∀ x, funOf u x = f x :=
+  ⟨graph f, fun x => by rw [theorem_1_2.i hf]⟩
 
 end DomainTheory.DataTypesAsLattices

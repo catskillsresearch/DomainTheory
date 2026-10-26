@@ -74,7 +74,7 @@ theorem mulC_combinatory : IsCombinatory mulC :=
   .app (.app .S (.app .K dollarC_combinatory))
     (.app (.app .S (.app .K Ycomb_combinatory))
       (.app (.app .S
-          (.app .K (.app (theorem_2_4_closed primRecStepTerm)
+          (.app .K (.app (theorem_2_4.closed primRecStepTerm)
             (ofNat_combinatory 0))))
         (.app (.app .S (.app .K .K)) addC_combinatory)))
 

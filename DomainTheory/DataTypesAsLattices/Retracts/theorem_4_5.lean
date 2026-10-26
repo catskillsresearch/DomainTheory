@@ -31,7 +31,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.treeF
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.fixedToInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimitToFixed
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6_inverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.treeR
 public import DomainTheory.DataTypesAsLattices.Retracts.boolR
 public import DomainTheory.DataTypesAsLattices.Retracts.openR
@@ -48,7 +47,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -67,13 +65,18 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_lat
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_earlier
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_5_strict
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
+/-- **Scott 1976, Theorem 4.5 (i), strictness of sums.** The zero summand
+is always selected on `⊥`. -/
+theorem theorem_4_5.strict (a b : Pomega) :
+    dcondSet botElem
+      (pairSeq (ofNat 0) (funOf a botElem))
+      (pairSeq (ofNat 1) (funOf b botElem)) = botElem :=
+  dcondSet_bot _ _
 
 /-- **Scott 1976, Theorem 4.5 (The sum theorem), core.** -/
 theorem theorem_4_5 :
@@ -81,6 +84,6 @@ theorem theorem_4_5 :
         (pairSeq (ofNat 0) (funOf a botElem))
         (pairSeq (ofNat 1) (funOf b botElem)) = botElem ∧
       Retract botElem :=
-  ⟨theorem_4_5_strict a b, bot_isRetract⟩
+  ⟨theorem_4_5.strict a b, bot_isRetract⟩
 
 end DomainTheory.DataTypesAsLattices

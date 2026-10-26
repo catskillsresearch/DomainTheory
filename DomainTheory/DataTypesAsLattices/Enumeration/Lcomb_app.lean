@@ -95,7 +95,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_secondRecSubst
@@ -130,7 +129,7 @@ open Nat.Partrec.Code
 
 theorem Lcomb_app (x : Pomega) :
     funOf Lcomb x = funOf (funOf x (ofNat 1)) (funOf x (ofNat 2)) :=
-  beta (theorem_1_3_tuple
+  beta (theorem_1_3.tuple
     (fun y => funOf_isScottContinuous_left y)
     (fun t => funOf_isScottContinuous t)
     (funOf_isScottContinuous_left (ofNat 1))

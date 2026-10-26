@@ -8,7 +8,8 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.barStepTerm_interp
 public import DomainTheory.DataTypesAsLattices.Enumeration.barStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
-public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4_closed
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4_more
 public import DomainTheory.DataTypesAsLattices.Enumeration.barStep_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_zero
@@ -34,7 +35,7 @@ theorem combinatory : IsCombinatory barComb := by
   have hY : funOf Ycomb (interp barStepTerm (fun _ => botElem)) = barComb := by
     rw [barStepTerm_interp, theorem_2_5 barStep_isScottContinuous]
     rfl
-  exact hY ▸ IsCombinatory.app Ycomb_combinatory (theorem_2_4_closed barStepTerm)
+  exact hY ▸ IsCombinatory.app Ycomb_combinatory (theorem_2_4.closed barStepTerm)
 
 theorem on_R (u x : Pomega) :
     funOf (funOf barComb u) (funOf Rcomb x) =

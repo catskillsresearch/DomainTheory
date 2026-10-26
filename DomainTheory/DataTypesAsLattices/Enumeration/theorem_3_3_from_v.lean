@@ -128,7 +128,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 3.3 (iii)** from (i) and (ii):
 `val(rec(n)) = val(n)(rec(n))`. -/
-theorem theorem_3_3_from_v (v : ℕ → ℕ) (n : ℕ)
+theorem theorem_3_3.from_v (v : ℕ → ℕ) (n : ℕ)
     (hv : valNat (v n) = secondRecVal (valNat n)) :
     valNat (recNat v n) = funOf (valNat n) (ofNat (recNat v n)) := by
   rw [recNat, valNat.app, hv, eq_3_12, secondRecVal_app]

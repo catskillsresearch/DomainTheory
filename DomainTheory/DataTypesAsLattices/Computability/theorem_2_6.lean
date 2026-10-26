@@ -82,7 +82,7 @@ theorem theorem_2_6 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
   · exact ⟨fun h => h.2, fun h => ⟨hf, h⟩⟩
   · exact ⟨fun h => by
       obtain ⟨t, ht⟩ := h.out
-      simpa [ht] using theorem_2_4_closed t,
+      simpa [ht] using theorem_2_4.closed t,
       combinatory_isLambdaDefinable⟩
 
 end DomainTheory.DataTypesAsLattices

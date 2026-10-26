@@ -66,12 +66,12 @@ theorem eq_2_14 :
     constructor
     · intro hp
       rcases hp with ⟨n, m, rfl, hm⟩
-      rw [theorem_1_2_i id_isScottContinuous] at hm
+      rw [theorem_1_2.i id_isScottContinuous] at hm
       exact ⟨n, m, rfl, hm⟩
     · intro hp
       rcases hp with ⟨n, m, rfl, hm⟩
       refine ⟨n, m, rfl, ?_⟩
-      rw [theorem_1_2_i id_isScottContinuous]
+      rw [theorem_1_2.i id_isScottContinuous]
       exact hm
   rw [← hω, omega_first_recursion id_isScottContinuous]
   apply subset_antisymm

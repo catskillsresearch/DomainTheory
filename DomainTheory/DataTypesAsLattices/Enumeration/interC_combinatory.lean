@@ -17,7 +17,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem interC_combinatory : IsCombinatory interC := by
   have hbody : IsCombinatory (graph interStep) := by
     rw [← interStepTerm_interp]
-    exact theorem_2_4_closed interStepTerm
+    exact theorem_2_4.closed interStepTerm
   have hfix := IsCombinatory.app Ycomb_combinatory hbody
   rw [theorem_2_5 interStep_isScottContinuous] at hfix
   exact hfix

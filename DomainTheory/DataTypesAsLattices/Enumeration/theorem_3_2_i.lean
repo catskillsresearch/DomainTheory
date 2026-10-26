@@ -126,7 +126,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 /-- **Scott 1976, Theorem 3.2 (i).** The zero test selects `G`. -/
-theorem theorem_3_2_i : condSet (ofNat 0) Gcomb botElem = Gcomb := by
+theorem theorem_3_2.i : condSet (ofNat 0) Gcomb botElem = Gcomb := by
   ext n
   constructor
   · intro hn

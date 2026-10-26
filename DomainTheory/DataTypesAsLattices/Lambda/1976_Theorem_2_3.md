@@ -6,15 +6,15 @@
 
 @import "theorem_2_3.lean"
 
-**[DataTypesAsLattices/Lambda/theorem_2_3_binary.lean](theorem_2_3_binary.lean)**
+**[DataTypesAsLattices/Lambda/theorem_2_3.binary.lean](theorem_2_3.binary.lean)**
 
-@import "theorem_2_3_binary.lean"
+@import "theorem_2_3.binary.lean"
 
-**[DataTypesAsLattices/Lambda/theorem_2_3_ternary.lean](theorem_2_3_ternary.lean)**
+**[DataTypesAsLattices/Lambda/theorem_2_3.ternary.lean](theorem_2_3.ternary.lean)**
 
-@import "theorem_2_3_ternary.lean"
+@import "theorem_2_3.ternary.lean"
 
-**[DataTypesAsLattices/Lambda/theorem_2_3_unary.lean](theorem_2_3_unary.lean)**
+**[DataTypesAsLattices/Lambda/theorem_2_3.unary.lean](theorem_2_3.unary.lean)**
 
-@import "theorem_2_3_unary.lean"
+@import "theorem_2_3.unary.lean"
 

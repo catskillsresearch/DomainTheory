@@ -567,7 +567,7 @@ theorem union_isScottContinuous_right (x : Pomega) :
 
 theorem closedToZero_isScottContinuous (C : Set Pomega) :
     IsScottContinuous (closedToZero C) :=
-  theorem_1_3_tuple (f := fun a b => (a ∪ b : Pomega))
+  theorem_1_3.tuple (f := fun a b => (a ∪ b : Pomega))
     union_isScottContinuous_left union_isScottContinuous_right
     (const_isScottContinuous (ofNat 0)) (charTop_isScottContinuous Cᶜ)
 
@@ -1209,10 +1209,10 @@ theorem theorem_6_7_of_bdelta {U : Set Pomega} (hU : IsBdelta U) :
   let F : ℕ → Pomega → Pomega := fun m x => uvU (f m x) (g m x)
   let G : ℕ → Pomega → Pomega := fun m x => uvV (f m x) (g m x)
   have hF : ∀ m, IsScottContinuous (F m) :=
-    fun m => theorem_1_3_tuple (uvU_isScottContinuous_left) (uvU_isScottContinuous_right)
+    fun m => theorem_1_3.tuple (uvU_isScottContinuous_left) (uvU_isScottContinuous_right)
       (hf m) (hg m)
   have hG : ∀ m, IsScottContinuous (G m) :=
-    fun m => theorem_1_3_tuple (uvV_isScottContinuous_left) (uvV_isScottContinuous_right)
+    fun m => theorem_1_3.tuple (uvV_isScottContinuous_left) (uvV_isScottContinuous_right)
       (hf m) (hg m)
   have hpack : (⋂ n, Bs n) = {x | ∀ m, F m x = G m x} := by
     rw [hUC]
@@ -1260,7 +1260,7 @@ theorem seq2_isScottContinuous_right (x : Pomega) :
 theorem seq2_pair_isScottContinuous {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
     IsScottContinuous (fun x => seq2 (f x) (g x)) :=
-  theorem_1_3_tuple seq2_isScottContinuous_left seq2_isScottContinuous_right hf hg
+  theorem_1_3.tuple seq2_isScottContinuous_left seq2_isScottContinuous_right hf hg
 
 
 /-- **Scott 1976, Table 3 / Theorem 6.7.** `𝔅_δ` is the class of continuous

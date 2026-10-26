@@ -61,7 +61,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem termDollarStepBody_isScottContinuous_z (s u : Pomega) :
     IsScottContinuous (fun z => termDollarStepBody s u z) :=
-  theorem_1_3_tuple
+  theorem_1_3.tuple
     (fun y => condSet.isScottContinuous_left (funOf u (ofNat 0)) y)
     (fun z => condSet.isScottContinuous_right z (funOf u (ofNat 0)))
     id_isScottContinuous

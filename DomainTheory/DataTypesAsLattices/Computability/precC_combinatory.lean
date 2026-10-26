@@ -73,7 +73,7 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 theorem precC_combinatory {f g : Pomega}
     (hf : IsCombinatory f) (hg : IsCombinatory g) :
     IsCombinatory (precC f g) := by
-  rw [precC, theorem_2_4_complete]
+  rw [precC, theorem_2_4.complete]
   exact ofComb_combinatory _ _ (precEnv_combinatory hf hg)
 
 end DomainTheory.DataTypesAsLattices

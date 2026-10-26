@@ -15,6 +15,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 noncomputable def botCode : ℕ :=
-  (theorem_3_2_surjective bot_combinatory).choose
+  (theorem_3_2.surjective bot_combinatory).choose
 
 end DomainTheory.DataTypesAsLattices
