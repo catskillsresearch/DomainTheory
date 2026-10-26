@@ -18,7 +18,7 @@ theorem retractBasis_eq_compactFixedBelow {a : Pomega} (ha : Closure a)
   · rintro ⟨n, hnx, hkn⟩
     refine ⟨⟨n, hkn⟩, ?_⟩
     rw [hkn]
-    have := isScottContinuous_monotone (funOf_isScottContinuous a) hnx
+    have := IsScottContinuous.monotone (funOf_isScottContinuous a) hnx
     rwa [x.property] at this
   · rintro ⟨⟨n, hkn⟩, hkx⟩
     refine ⟨n, ?_, hkn⟩

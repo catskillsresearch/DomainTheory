@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen
 public import DomainTheory.DataTypesAsLattices.Continuous.scottPiece
 public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.memOpen
 
 @[expose] public section

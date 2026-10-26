@@ -4,7 +4,7 @@ public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Order
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Continuous.Basic
-public import DomainTheory.DataTypesAsLattices.Continuous.isScottContinuous_monotone
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 
 @[expose] public section
 
@@ -30,8 +30,8 @@ theorem exists_e_cover_finite {f : Pomega → Pomega} (hf : IsScottContinuous f)
     rw [Finset.coe_insert, Set.mem_insert_iff] at hj
     rcases hj with rfl | hj
     · have : e n ⊆ e (n ||| N) := by rw [e_or]; exact Set.subset_union_left
-      exact isScottContinuous_monotone hf this hk
+      exact IsScottContinuous.monotone hf this hk
     · have : e N ⊆ e (n ||| N) := by rw [e_or]; exact Set.subset_union_right
-      exact isScottContinuous_monotone hf this (hs hj)
+      exact IsScottContinuous.monotone hf this (hs hj)
 
 end DomainTheory.DataTypesAsLattices

@@ -74,6 +74,6 @@ theorem graph_const_isScottContinuous
     exact mem_scottUnion.mpr ⟨p, hp, n, m, rfl, hmp⟩
   · intro hk
     obtain ⟨p, hp, n, m, rfl, hm⟩ := mem_scottUnion.mp hk
-    exact ⟨n, m, rfl, isScottContinuous_monotone (hg (e n)) hp hm⟩
+    exact ⟨n, m, rfl, IsScottContinuous.monotone (hg (e n)) hp hm⟩
 
 end DomainTheory.DataTypesAsLattices

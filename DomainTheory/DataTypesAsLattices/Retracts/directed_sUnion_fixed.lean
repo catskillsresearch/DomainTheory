@@ -99,7 +99,7 @@ theorem directed_sUnion_fixed {f : Pomega → Pomega} (hf : IsScottContinuous f)
     obtain ⟨z, hzA, hnz⟩ :=
       directed_finite_cover hA (e_finite n) hn
     have : k ∈ f z :=
-      isScottContinuous_monotone hf hnz hkn
+      IsScottContinuous.monotone hf hnz hkn
     rw [z.property] at this
     exact Set.mem_sUnion.mpr ⟨z, ⟨z, hzA, rfl⟩, this⟩
   · exact sUnion_Fixpoints_le_image hf (Fixpoints.vals_subset A)

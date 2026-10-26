@@ -15,6 +15,6 @@ theorem sUnion_Fixpoints_le_image {f : Pomega → Pomega} (hf : IsScottContinuou
   obtain ⟨x, hxA, hkx⟩ := Set.mem_sUnion.mp hk
   have hx : f x = x := hA hxA
   have : k ∈ f x := by rwa [hx]
-  exact isScottContinuous_monotone hf (Set.subset_sUnion_of_mem hxA) this
+  exact IsScottContinuous.monotone hf (Set.subset_sUnion_of_mem hxA) this
 
 end DomainTheory.DataTypesAsLattices

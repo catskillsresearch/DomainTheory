@@ -53,7 +53,7 @@ theorem Vapply_eq_Vstep (a x : Pomega) :
         {y | x ⊆ y ∧ funOf a y ⊆ y} :=
       ⟨Set.subset_union_left, fun m hm =>
         Set.subset_union_right
-          (isScottContinuous_monotone (funOf_isScottContinuous a)
+          (IsScottContinuous.monotone (funOf_isScottContinuous a)
             (Vapply_closed a x) hm)⟩
     exact hk (x ∪ funOf a (Vapply a x)) hset
   · exact Vapply_closed a x

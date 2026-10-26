@@ -105,13 +105,13 @@ theorem retractBasis_directed {a : Pomega} (ha : Retract a)
       rw [hyn]
       change funOf a (e n) ⊆ funOf a (e (n ||| m))
       rw [e_or]
-      exact isScottContinuous_monotone (funOf_isScottContinuous a)
+      exact IsScottContinuous.monotone (funOf_isScottContinuous a)
         Set.subset_union_left
     · change (z : Pomega) ⊆ (w : Pomega)
       rw [hzm]
       change funOf a (e m) ⊆ funOf a (e (n ||| m))
       rw [e_or]
-      exact isScottContinuous_monotone (funOf_isScottContinuous a)
+      exact IsScottContinuous.monotone (funOf_isScottContinuous a)
         Set.subset_union_right
 
 end DomainTheory.DataTypesAsLattices

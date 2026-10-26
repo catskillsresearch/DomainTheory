@@ -37,7 +37,7 @@ theorem theorem_1_4 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
       induction n with
       | zero => simp [iterateBot, botElem]
       | succ n ih =>
-        simpa [iterateBot, hx] using isScottContinuous_monotone hf ih
+        simpa [iterateBot, hx] using IsScottContinuous.monotone hf ih
     exact hsub n hkn
 
 end DomainTheory.DataTypesAsLattices

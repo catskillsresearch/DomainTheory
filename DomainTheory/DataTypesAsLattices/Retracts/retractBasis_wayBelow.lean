@@ -107,7 +107,7 @@ theorem retractBasis_wayBelow {a : Pomega} (_ha : Retract a)
   refine ⟨z, hzA, ?_⟩
   change (y : Pomega) ⊆ z
   rw [hyn]
-  have := isScottContinuous_monotone (funOf_isScottContinuous a) hnz
+  have := IsScottContinuous.monotone (funOf_isScottContinuous a) hnz
   rwa [z.property] at this
 
 end DomainTheory.DataTypesAsLattices

@@ -29,11 +29,11 @@ theorem theorem_1_3_diag {f : Pomega → Pomega → Pomega}
     refine ⟨e_or_of_subset hn hm, ?_⟩
     have hle : e n ⊆ e (n ||| m) := by rw [e_or]; exact Set.subset_union_left
     have hre : e m ⊆ e (n ||| m) := by rw [e_or]; exact Set.subset_union_right
-    exact isScottContinuous_monotone (hfy (e (n ||| m))) hre
-      (isScottContinuous_monotone (hfx (e m)) hle hkm)
+    exact IsScottContinuous.monotone (hfy (e (n ||| m))) hre
+      (IsScottContinuous.monotone (hfx (e m)) hle hkm)
   · intro k hk
     obtain ⟨n, hn, hkn⟩ := Set.mem_iUnion.mp hk
-    exact isScottContinuous_monotone (hfy x) hn
-      (isScottContinuous_monotone (hfx (e n)) hn hkn)
+    exact IsScottContinuous.monotone (hfy x) hn
+      (IsScottContinuous.monotone (hfx (e n)) hn hkn)
 
 end DomainTheory.DataTypesAsLattices

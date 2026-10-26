@@ -98,7 +98,7 @@ theorem theorem_7_4_unique (z : Pomega)
         IsScottContinuous (fun y => funOf (funOf z (e p)) y) :=
       funOf_isScottContinuous (funOf z (e p))
     have heq := congrFun
-      (isScottContinuous_determined hleft hright
+      (IsScottContinuous.determined hleft hright
         (fun q => theorem_7_4_finite z hη hz hn p q)) x
     simpa [Zcomb_app2] using heq
   have hall (f : Pomega) : funOf z f = funOf (Zcomb n) f := by
@@ -126,7 +126,7 @@ theorem theorem_7_4_unique (z : Pomega)
     have hright : IsScottContinuous (fun g => Z n g x) :=
       Z_isScottContinuous_left n x
     have heq := congrFun
-      (isScottContinuous_determined hleft hright (fun p => by
+      (IsScottContinuous.determined hleft hright (fun p => by
         have := congrArg (fun w => funOf w x) (hfinite p)
         simpa [Zcomb_app2] using this)) f
     simpa [Zcomb_app2] using heq

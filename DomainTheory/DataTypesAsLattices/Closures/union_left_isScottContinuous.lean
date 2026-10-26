@@ -59,7 +59,7 @@ theorem union_left_isScottContinuous (c : Pomega) :
   · intro hk
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     rcases hkn with hkn | hkn
-    · exact Or.inl (isScottContinuous_monotone id_isScottContinuous hn hkn)
+    · exact Or.inl (IsScottContinuous.monotone id_isScottContinuous hn hkn)
     · exact Or.inr hkn
 
 end DomainTheory.DataTypesAsLattices

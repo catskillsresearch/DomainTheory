@@ -33,10 +33,10 @@ theorem chain_lemma {f : Pomega → Pomega} (hf : IsScottContinuous f)
     have hem : e m ⊆ xs N := by rwa [← hs]
     refine Set.mem_iUnion.mpr ⟨N, ?_⟩
     have : e (2 ^ k) ⊆ f (xs N) :=
-      subset_trans hkm (isScottContinuous_monotone hf hem)
+      subset_trans hkm (IsScottContinuous.monotone hf hem)
     simpa [e_pow2, Set.singleton_subset_iff] using this
   · intro k hk
     obtain ⟨n, hkn⟩ := Set.mem_iUnion.mp hk
-    exact isScottContinuous_monotone hf (Set.subset_iUnion xs n) hkn
+    exact IsScottContinuous.monotone hf (Set.subset_iUnion xs n) hkn
 
 end DomainTheory.DataTypesAsLattices

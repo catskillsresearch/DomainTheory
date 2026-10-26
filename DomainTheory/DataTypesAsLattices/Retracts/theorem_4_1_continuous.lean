@@ -116,7 +116,7 @@ theorem theorem_4_1_continuous {a : Pomega} (ha : Retract a) :
     directed_finite_cover hs' (e_finite n) (by simpa [Fixpoints.vals] using hen)
   refine ⟨z, hz, ?_⟩
   rw [hyn]
-  have := isScottContinuous_monotone (funOf_isScottContinuous a) hnz
+  have := IsScottContinuous.monotone (funOf_isScottContinuous a) hnz
   rwa [z.property] at this
 
 end DomainTheory.DataTypesAsLattices

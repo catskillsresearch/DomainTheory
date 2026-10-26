@@ -30,7 +30,7 @@ theorem theorem_6_1 :
       exact Set.mem_iUnion₂.mpr ⟨n, h0, hn⟩
     · intro hx
       obtain ⟨n, h0, hn⟩ := Set.mem_iUnion₂.mp hx
-      exact isScottContinuous_monotone hf hn h0
+      exact IsScottContinuous.monotone hf hn h0
   · intro U hU
     refine ⟨charOpen U, charOpen_isScottContinuous U, ?_⟩
     ext x

@@ -22,7 +22,7 @@ theorem theorem_4_1_complete (f : Pomega → Pomega) (hf : IsScottContinuous f)
   have hfz : f z ⊆ ⋂₀ A := by
     intro k hk y hy
     have hzy : z ⊆ y := subset_trans hzle (Set.sInter_subset_of_mem hy)
-    have : k ∈ f y := isScottContinuous_monotone hf hzy hk
+    have : k ∈ f y := IsScottContinuous.monotone hf hzy hk
     have hyf : f y = y := hA hy
     rwa [hyf] at this
   have : f z ∩ ⋂₀ A = f z := Set.inter_eq_left.mpr hfz

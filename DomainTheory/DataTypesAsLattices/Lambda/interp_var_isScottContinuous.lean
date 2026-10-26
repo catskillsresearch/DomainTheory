@@ -97,9 +97,9 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
           rw [← (iz ρ i).out w]; exact h0
         obtain ⟨m', hm', h0m⟩ := mem_scottUnion.mp this
         refine mem_scottUnion.mpr ⟨m ||| m', e_or_of_subset hm hm', Or.inl ⟨?_, ?_⟩⟩
-        · exact isScottContinuous_monotone (ix ρ i)
+        · exact IsScottContinuous.monotone (ix ρ i)
             (by rw [e_or]; exact Set.subset_union_left) hnm
-        · exact isScottContinuous_monotone (iz ρ i)
+        · exact IsScottContinuous.monotone (iz ρ i)
             (by rw [e_or]; exact Set.subset_union_right) h0m
       · have : n ∈ scottUnion (fun v => interp y (envSet ρ i v)) w := by
           rw [← (iy ρ i).out w]; exact hny
@@ -108,17 +108,17 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
           rw [← (iz ρ i).out w]; exact ht
         obtain ⟨m', hm', htm⟩ := mem_scottUnion.mp this
         refine mem_scottUnion.mpr ⟨m ||| m', e_or_of_subset hm hm', Or.inr ⟨?_, t, ?_⟩⟩
-        · exact isScottContinuous_monotone (iy ρ i)
+        · exact IsScottContinuous.monotone (iy ρ i)
             (by rw [e_or]; exact Set.subset_union_left) hnm
-        · exact isScottContinuous_monotone (iz ρ i)
+        · exact IsScottContinuous.monotone (iz ρ i)
             (by rw [e_or]; exact Set.subset_union_right) htm
     · intro hn
       obtain ⟨m, hm, hnm⟩ := mem_scottUnion.mp hn
       rcases hnm with ⟨hnx, h0⟩ | ⟨hny, t, ht⟩
-      · exact Or.inl ⟨isScottContinuous_monotone (ix ρ i) hm hnx,
-          isScottContinuous_monotone (iz ρ i) hm h0⟩
-      · exact Or.inr ⟨isScottContinuous_monotone (iy ρ i) hm hny, t,
-          isScottContinuous_monotone (iz ρ i) hm ht⟩
+      · exact Or.inl ⟨IsScottContinuous.monotone (ix ρ i) hm hnx,
+          IsScottContinuous.monotone (iz ρ i) hm h0⟩
+      · exact Or.inr ⟨IsScottContinuous.monotone (iy ρ i) hm hny, t,
+          IsScottContinuous.monotone (iz ρ i) hm ht⟩
   | app u x iu ix =>
     constructor
     intro w
@@ -144,15 +144,15 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
       · have : e p ⊆ interp x (envSet ρ i (e (m ||| N))) := by
           rw [← hs]
           intro t ht
-          exact isScottContinuous_monotone (ix ρ i)
+          exact IsScottContinuous.monotone (ix ρ i)
             (by rw [e_or]; exact Set.subset_union_right) (hsN ht)
         exact this
-      · exact isScottContinuous_monotone (iu ρ i)
+      · exact IsScottContinuous.monotone (iu ρ i)
           (by rw [e_or]; exact Set.subset_union_left) hpm
     · intro hn
       obtain ⟨m, hm, p, hp, hpair⟩ := mem_scottUnion.mp hn
-      exact ⟨p, subset_trans hp (isScottContinuous_monotone (ix ρ i) hm),
-        isScottContinuous_monotone (iu ρ i) hm hpair⟩
+      exact ⟨p, subset_trans hp (IsScottContinuous.monotone (ix ρ i) hm),
+        IsScottContinuous.monotone (iu ρ i) hm hpair⟩
   | lam j body ih =>
     by_cases hj : j = i
     · subst hj

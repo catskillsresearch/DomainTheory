@@ -16,7 +16,7 @@ theorem gfpBelow_fixed_inter {f : Pomega → Pomega} (hf : IsScottContinuous f)
     refine Set.mem_sUnion.mpr ⟨f (gfpBelow f b) ∩ b, ?_, hk⟩
     have hle : gfpBelow f b ⊆ f (gfpBelow f b) ∩ b := gfpBelow_postfixed hf b
     have : f (gfpBelow f b) ⊆ f (f (gfpBelow f b) ∩ b) :=
-      isScottContinuous_monotone hf hle
+      IsScottContinuous.monotone hf hle
     intro m hm
     exact ⟨this hm.1, hm.2⟩
   · exact gfpBelow_postfixed hf b

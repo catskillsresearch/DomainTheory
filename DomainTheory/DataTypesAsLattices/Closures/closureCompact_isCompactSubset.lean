@@ -51,7 +51,7 @@ theorem closureCompact_isCompactSubset {a : Pomega} (ha : Closure a)
     (closure_expansive ha (e n)).trans hsub
   obtain ⟨z, hz, hnz⟩ := directed_finite_cover_subset hs (e_finite n) hen
   refine ⟨z, hz, ?_⟩
-  have := isScottContinuous_monotone (funOf_isScottContinuous a) hnz
+  have := IsScottContinuous.monotone (funOf_isScottContinuous a) hnz
   rwa [z.property] at this
 
 end DomainTheory.DataTypesAsLattices

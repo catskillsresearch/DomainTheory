@@ -15,16 +15,13 @@ flowchart TB
   N10["basicNhhd_zero"]
   N11["isOpen_memOpen"]
   N12["isOpen_basicNhhd"]
-  N13["isScottContinuous_determined"]
   N14["isScottOpen_basic"]
   N15["isScottOpen_isUpper"]
   N16["memOpen_eq_basicNhhd"]
   N17["exists_basicNhhd_subset_of_generateOpen"]
   N18["isScottOpen_iff_isOpen"]
   N19["mem_scottUnion"]
-  N20["isScottContinuous_monotone"]
   N21["exists_e_cover_finite"]
-  N22["isScottContinuous_iff_continuous"]
   N23["theorem_1_1"]
 
   N0 -->|"1"| N1
@@ -42,7 +39,6 @@ flowchart TB
   N3 -->|"1"| N7
   N4 -->|"1"| N7
   N5 -->|"1"| N7
-  N6 -->|"1"| N7
   N0 -->|"1"| N8
   N7 -->|"1"| N8
   N0 -->|"1"| N9
@@ -54,8 +50,6 @@ flowchart TB
   N0 -->|"1"| N12
   N7 -->|"1"| N12
   N11 -->|"1"| N12
-  N0 -->|"1"| N13
-  N7 -->|"1"| N13
   N0 -->|"1"| N14
   N7 -->|"1"| N14
   N0 -->|"1"| N15
@@ -73,23 +67,17 @@ flowchart TB
   N17 -->|"1"| N18
   N0 -->|"1"| N19
   N7 -->|"1"| N19
-  N0 -->|"1"| N20
-  N7 -->|"1"| N20
-  N19 -->|"1"| N20
+  N19 -->|"1"| N6
   N0 -->|"1"| N21
   N7 -->|"1"| N21
-  N20 -->|"1"| N21
-  N0 -->|"1"| N22
-  N7 -->|"1"| N22
-  N11 -->|"1"| N22
-  N15 -->|"1"| N22
-  N18 -->|"1"| N22
-  N19 -->|"1"| N22
-  N20 -->|"1"| N22
+  N6 -->|"1"| N21
+  N11 -->|"1"| N6
+  N15 -->|"1"| N6
+  N18 -->|"1"| N6
   N0 -->|"1"| N23
   N7 -->|"1"| N23
   N19 -->|"1"| N23
-  N20 -->|"1"| N23
+  N6 -->|"1"| N23
   N21 -->|"1"| N23
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
@@ -108,14 +96,11 @@ flowchart TB
   class N10 file
   class N11 file
   class N12 file
-  class N13 file
   class N14 file
   class N15 file
   class N16 file
   class N17 file
   class N18 file
   class N19 file
-  class N20 file
   class N21 file
-  class N22 file
   class N23 file

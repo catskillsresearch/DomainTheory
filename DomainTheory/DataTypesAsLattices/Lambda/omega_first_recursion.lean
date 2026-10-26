@@ -86,7 +86,7 @@ theorem omega_first_recursion {f : Pomega → Pomega} (hf : IsScottContinuous f)
       have : k ∈ funOf d (e n) := ⟨n, subset_rfl, hld hp⟩
       have : k ∈ f (funOf (e n) (e n)) := by
         rwa [hd] at this
-      have : k ∈ f a := isScottContinuous_monotone hf hna this
+      have : k ∈ f a := IsScottContinuous.monotone hf hna this
       rwa [ha] at this
   rw [funOf_diag_iUnion] at hm
   obtain ⟨l, hl, hml⟩ := Set.mem_iUnion.mp hm

@@ -5,7 +5,7 @@ public import Mathlib.Topology.Order
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Continuous.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
-public import DomainTheory.DataTypesAsLattices.Continuous.isScottContinuous_monotone
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.exists_e_cover_finite
 
 @[expose] public section
@@ -38,7 +38,7 @@ theorem theorem_1_1 (f : Pomega → Pomega) :
           rwa [hs] at this))
       exact ⟨N, hN, by simpa [hs] using hsf⟩
     · intro ⟨n, hn, hmf⟩
-      exact subset_trans hmf (isScottContinuous_monotone hf hn)
+      exact subset_trans hmf (IsScottContinuous.monotone hf hn)
   · intro h
     constructor
     intro x

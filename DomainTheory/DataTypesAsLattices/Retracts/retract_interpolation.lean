@@ -101,7 +101,7 @@ theorem retract_interpolation {a x : Pomega} (_ha : Retract a) (hx : typed x a) 
   · intro k hk
     obtain ⟨n, hn, hkn⟩ := Set.mem_iUnion.mp hk
     have : k ∈ funOf a x :=
-      isScottContinuous_monotone (funOf_isScottContinuous a) hn hkn
+      IsScottContinuous.monotone (funOf_isScottContinuous a) hn hkn
     rwa [hx'] at this
 
 end DomainTheory.DataTypesAsLattices

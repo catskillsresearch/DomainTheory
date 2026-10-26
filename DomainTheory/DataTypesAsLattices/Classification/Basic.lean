@@ -79,7 +79,7 @@ theorem mem_preimage_isScottOpen {f : Pomega → Pomega} (hf : IsScottContinuous
     IsScottOpen {x | k ∈ f x} := by
   have : {x | k ∈ f x} = f ⁻¹' memOpen k := rfl
   rw [this, isScottOpen_iff_isOpen]
-  exact IsOpen.preimage ((isScottContinuous_iff_continuous f).mp hf) (isOpen_memOpen k)
+  exact IsOpen.preimage ((IsScottContinuous.iff_continuous f).mp hf) (isOpen_memOpen k)
 
 theorem mem_isScottOpen_iff {U : Set Pomega} (hU : IsScottOpen U) {x : Pomega} :
     x ∈ U ↔ ∃ n, e n ⊆ x ∧ e n ∈ U := by
@@ -154,7 +154,7 @@ theorem pairIndexed_isScottContinuous (fs : ℕ → Pomega → Pomega)
     exact mem_scottUnion.mpr ⟨p, hp, n, m, hk, hmp⟩
   · intro hk
     obtain ⟨p, hp, n, m, hk, hm⟩ := mem_scottUnion.mp hk
-    exact ⟨n, m, hk, isScottContinuous_monotone (hfs n) hp hm⟩
+    exact ⟨n, m, hk, IsScottContinuous.monotone (hfs n) hp hm⟩
 
 
 theorem oddEvenPack_isScottContinuous {f g : Pomega → Pomega}
@@ -175,8 +175,8 @@ theorem oddEvenPack_isScottContinuous {f g : Pomega → Pomega}
   · intro hk
     obtain ⟨p, hp, h⟩ := mem_scottUnion.mp hk
     rcases h with ⟨n, hk, hn⟩ | ⟨n, hk, hn⟩
-    · exact Or.inl ⟨n, hk, isScottContinuous_monotone hf hp hn⟩
-    · exact Or.inr ⟨n, hk, isScottContinuous_monotone hg hp hn⟩
+    · exact Or.inl ⟨n, hk, IsScottContinuous.monotone hf hp hn⟩
+    · exact Or.inr ⟨n, hk, IsScottContinuous.monotone hg hp hn⟩
 
 
 theorem evenPart_oddEven (f g : Pomega → Pomega) (x : Pomega) :

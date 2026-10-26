@@ -56,10 +56,6 @@
 
 @import "isOpen_basicNhhd.lean"
 
-**[DataTypesAsLattices/Continuous/isScottContinuous_determined.lean](isScottContinuous_determined.lean)**
-
-@import "isScottContinuous_determined.lean"
-
 **[DataTypesAsLattices/Continuous/isScottOpen_basic.lean](isScottOpen_basic.lean)**
 
 @import "isScottOpen_basic.lean"
@@ -84,15 +80,7 @@
 
 @import "mem_scottUnion.lean"
 
-**[DataTypesAsLattices/Continuous/isScottContinuous_monotone.lean](isScottContinuous_monotone.lean)**
-
-@import "isScottContinuous_monotone.lean"
-
 **[DataTypesAsLattices/Continuous/exists_e_cover_finite.lean](exists_e_cover_finite.lean)**
 
 @import "exists_e_cover_finite.lean"
-
-**[DataTypesAsLattices/Continuous/isScottContinuous_iff_continuous.lean](isScottContinuous_iff_continuous.lean)**
-
-@import "isScottContinuous_iff_continuous.lean"
 

@@ -15,6 +15,6 @@ theorem iterateBot_mono {f : Pomega → Pomega} (hf : IsScottContinuous f) :
   | 0 => by
     simp [iterateBot, botElem]
   | n + 1 =>
-    isScottContinuous_monotone hf (iterateBot_mono hf n)
+    IsScottContinuous.monotone hf (iterateBot_mono hf n)
 
 end DomainTheory.DataTypesAsLattices

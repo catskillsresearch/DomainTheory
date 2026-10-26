@@ -20,7 +20,7 @@ theorem lfpAbove_le_of_ub {f : Pomega → Pomega} (hf : IsScottContinuous f)
     intro n
     induction n with
     | zero => simpa [iterateFrom] using h0
-    | succ n ih => simpa [iterateFrom, hz] using isScottContinuous_monotone hf ih
+    | succ n ih => simpa [iterateFrom, hz] using IsScottContinuous.monotone hf ih
   intro k hk
   obtain ⟨n, hkn⟩ := Set.mem_iUnion.mp hk
   exact hiter n hkn

@@ -31,7 +31,7 @@ theorem fcapGdeltaPack_isScottContinuous {f g : Pomega → Pomega}
   · intro hk
     obtain ⟨p, hp, h⟩ := mem_scottUnion.mp hk
     rcases h with ⟨hk0, h0⟩ | ⟨n, hk, hn⟩
-    · exact Or.inl ⟨hk0, isScottContinuous_monotone hf hp h0⟩
-    · exact Or.inr ⟨n, hk, isScottContinuous_monotone hg hp hn⟩
+    · exact Or.inl ⟨hk0, IsScottContinuous.monotone hf hp h0⟩
+    · exact Or.inr ⟨n, hk, IsScottContinuous.monotone hg hp hn⟩
 
 end DomainTheory.DataTypesAsLattices

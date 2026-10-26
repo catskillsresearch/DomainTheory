@@ -61,6 +61,6 @@ theorem selfArrowStep_isScottContinuous :
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     rcases hkn with hkn | hkn
     · exact Or.inl hkn
-    · exact Or.inr (isScottContinuous_monotone arrowR_diag_isScottContinuous hn hkn)
+    · exact Or.inr (IsScottContinuous.monotone arrowR_diag_isScottContinuous hn hkn)
 
 end DomainTheory.DataTypesAsLattices

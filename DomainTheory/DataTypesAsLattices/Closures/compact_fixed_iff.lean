@@ -25,7 +25,7 @@ theorem compact_fixed_iff {a : Pomega} (ha : Closure a)
     subst y
     refine ⟨n, le_antisymm hxy ?_⟩
     change funOf a (e n) ⊆ (x : Pomega)
-    have := isScottContinuous_monotone (funOf_isScottContinuous a) hnx
+    have := IsScottContinuous.monotone (funOf_isScottContinuous a) hnx
     rwa [x.property] at this
   · rintro ⟨n, rfl⟩
     exact closureCompact_isCompact ha n

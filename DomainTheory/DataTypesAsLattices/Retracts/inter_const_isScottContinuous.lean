@@ -100,6 +100,6 @@ theorem inter_const_isScottContinuous {f : Pomega → Pomega}
     exact mem_scottUnion.mpr ⟨n, hn, hkn, hkb⟩
   · intro hk
     obtain ⟨n, hn, hkn, hkb⟩ := mem_scottUnion.mp hk
-    exact ⟨isScottContinuous_monotone hf hn hkn, hkb⟩
+    exact ⟨IsScottContinuous.monotone hf hn hkn, hkb⟩
 
 end DomainTheory.DataTypesAsLattices

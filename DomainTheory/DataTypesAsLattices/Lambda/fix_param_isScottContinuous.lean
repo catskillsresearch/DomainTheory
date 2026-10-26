@@ -78,6 +78,6 @@ theorem fix_param_isScottContinuous
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp hk
     obtain ⟨n, hkn⟩ := Set.mem_iUnion.mp hkm
     exact Set.mem_iUnion.mpr ⟨n,
-      isScottContinuous_monotone (iterateBot_param_isScottContinuous hgx hgy n) hm hkn⟩
+      IsScottContinuous.monotone (iterateBot_param_isScottContinuous hgx hgy n) hm hkn⟩
 
 end DomainTheory.DataTypesAsLattices

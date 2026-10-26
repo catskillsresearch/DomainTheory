@@ -13,6 +13,6 @@ theorem gfpBelow_postfixed {f : Pomega → Pomega} (hf : IsScottContinuous f)
   intro k hk
   obtain ⟨x, hx, hkx⟩ := Set.mem_sUnion.mp hk
   have hxz : x ⊆ gfpBelow f b := fun _ hm => Set.mem_sUnion.mpr ⟨x, hx, hm⟩
-  exact ⟨isScottContinuous_monotone hf hxz (hx hkx).1, (hx hkx).2⟩
+  exact ⟨IsScottContinuous.monotone hf hxz (hx hkx).1, (hx hkx).2⟩
 
 end DomainTheory.DataTypesAsLattices

@@ -74,6 +74,6 @@ theorem updateEnvUnion_isScottContinuous_t (x idx : Pomega) :
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp hk
     obtain ⟨n, hn, hkn⟩ := Set.mem_iUnion₂.mp hkm
     exact Set.mem_iUnion₂.mpr ⟨n, hn,
-      isScottContinuous_monotone (updateEnv_isScottContinuous_t x n) hm hkn⟩
+      IsScottContinuous.monotone (updateEnv_isScottContinuous_t x n) hm hkn⟩
 
 end DomainTheory.DataTypesAsLattices

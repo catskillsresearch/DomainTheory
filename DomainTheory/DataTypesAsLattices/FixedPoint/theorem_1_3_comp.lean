@@ -27,10 +27,10 @@ theorem theorem_1_3_comp {f g : Pomega → Pomega}
     obtain ⟨n, hn, hmn⟩ := this.mp hm
     refine mem_scottUnion.mpr ⟨n, hn, ?_⟩
     have : e (2 ^ k) ⊆ f (g (e n)) :=
-      subset_trans hkm (isScottContinuous_monotone hf hmn)
+      subset_trans hkm (IsScottContinuous.monotone hf hmn)
     simpa [e_pow2, Set.singleton_subset_iff] using this
   · intro hk
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
-    exact isScottContinuous_monotone hf (isScottContinuous_monotone hg hn) hkn
+    exact IsScottContinuous.monotone hf (IsScottContinuous.monotone hg hn) hkn
 
 end DomainTheory.DataTypesAsLattices

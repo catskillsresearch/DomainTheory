@@ -74,6 +74,6 @@ theorem seqFun_left_isScottContinuous (x : Pomega) :
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     obtain ⟨i, hi, hki⟩ := Set.mem_iUnion₂.mp hkn
     exact Set.mem_iUnion₂.mpr ⟨i, hi,
-      isScottContinuous_monotone (funOf_isScottContinuous_left (ofNat i)) hn hki⟩
+      IsScottContinuous.monotone (funOf_isScottContinuous_left (ofNat i)) hn hki⟩
 
 end DomainTheory.DataTypesAsLattices
