@@ -126,14 +126,10 @@ flowchart TB
   N121["union_left_isScottContinuous"]
   N122["union_const_left_isScottContinuous"]
 
-  N134["boxShift_map_isScottContinuous"]
-  N135["boxShift_app"]
-  N136["boxShift_expansive"]
   N137["Icomb_subset_boxShift"]
 
   N139["Icomb_subset_boxPlus"]
-  N140["boxShift_isRetract"]
-  N141["boxShift_isClosure"]
+
   N142["union_right_isScottContinuous"]
   N143["Vstep_isScottContinuous"]
   N144["eq_5_14"]
@@ -152,8 +148,6 @@ flowchart TB
   N157["theorem_5_6"]
   N158["theorem_5_6_combinator"]
   N159["typed_of_retract_Vcomb"]
-  N160["zero_mem_boxShift_app"]
-  N161["boxShift_app_ne_bot"]
 
   N167["theorem_5_4_plus"]
   N168["eq_5_23"]
@@ -546,37 +540,22 @@ flowchart TB
   N96 -->|"1"| N33
   N107 -->|"1"| N33
   N117 -->|"1"| N33
-  N0 -->|"1"| N134
-  N35 -->|"1"| N134
-  N122 -->|"1"| N134
-  N0 -->|"1"| N135
-  N35 -->|"1"| N135
-  N134 -->|"1"| N135
-  N0 -->|"1"| N136
-  N35 -->|"1"| N136
-  N135 -->|"1"| N136
+  N35 -->|"1"| N8
+  N122 -->|"1"| N8
   N0 -->|"1"| N137
   N35 -->|"1"| N137
   N37 -->|"1"| N137
-  N135 -->|"1"| N137
-  N136 -->|"1"| N137
+  N8 -->|"1"| N137
   N74 -->|"1"| N33
   N97 -->|"1"| N33
   N101 -->|"1"| N33
-  N136 -->|"1"| N33
   N0 -->|"1"| N139
   N35 -->|"1"| N139
   N37 -->|"1"| N139
   N33 -->|"1"| N139
-  N0 -->|"1"| N140
-  N35 -->|"1"| N140
-  N86 -->|"1"| N140
-  N87 -->|"1"| N140
-  N135 -->|"1"| N140
-  N0 -->|"1"| N141
-  N35 -->|"1"| N141
-  N137 -->|"1"| N141
-  N140 -->|"1"| N141
+  N86 -->|"1"| N8
+  N87 -->|"1"| N8
+  N137 -->|"1"| N8
   N0 -->|"1"| N142
   N35 -->|"1"| N142
   N0 -->|"1"| N143
@@ -655,16 +634,8 @@ flowchart TB
   N63 -->|"1"| N159
   N146 -->|"1"| N159
   N148 -->|"1"| N159
-  N0 -->|"1"| N160
-  N35 -->|"1"| N160
-  N135 -->|"1"| N160
-  N0 -->|"1"| N161
-  N35 -->|"1"| N161
-  N160 -->|"1"| N161
   N58 -->|"1"| N33
   N75 -->|"1"| N33
-  N140 -->|"1"| N33
-  N161 -->|"1"| N33
   N0 -->|"1"| N167
   N35 -->|"1"| N167
   N139 -->|"1"| N167
@@ -801,14 +772,10 @@ flowchart TB
   class N121 file
   class N122 file
 
-  class N134 file
-  class N135 file
-  class N136 file
   class N137 file
 
   class N139 file
-  class N140 file
-  class N141 file
+
   class N142 file
   class N143 file
   class N144 file
@@ -827,8 +794,6 @@ flowchart TB
   class N157 file
   class N158 file
   class N159 file
-  class N160 file
-  class N161 file
 
   class N167 file
   class N168 file

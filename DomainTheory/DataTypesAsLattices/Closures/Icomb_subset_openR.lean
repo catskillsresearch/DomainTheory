@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.squarePair
 public import DomainTheory.DataTypesAsLattices.Closures.squareFst
 public import DomainTheory.DataTypesAsLattices.Closures.squareSnd
 public import DomainTheory.DataTypesAsLattices.Closures.boxTensor
-public import DomainTheory.DataTypesAsLattices.Closures.boxShift
 public import DomainTheory.DataTypesAsLattices.Closures.boxTag
 public import DomainTheory.DataTypesAsLattices.Closures.Vapply
 public import DomainTheory.DataTypesAsLattices.Closures.closureCompact

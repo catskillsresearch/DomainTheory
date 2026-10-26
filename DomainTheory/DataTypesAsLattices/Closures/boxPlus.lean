@@ -26,9 +26,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.squarePair_bot_bot
 public import DomainTheory.DataTypesAsLattices.Closures.union_botElem
 public import DomainTheory.DataTypesAsLattices.Closures.botElem_union
 public import DomainTheory.DataTypesAsLattices.Closures.exists_mem_of_ne_bot
-public import DomainTheory.DataTypesAsLattices.Closures.boxShift_isRetract
-public import DomainTheory.DataTypesAsLattices.Closures.boxShift_app_ne_bot
-public import DomainTheory.DataTypesAsLattices.Closures.boxShift_expansive
 public import DomainTheory.DataTypesAsLattices.Closures.boxTag_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Closures.boxTag_bot
 public import DomainTheory.DataTypesAsLattices.Closures.boxTag_of_mem
@@ -136,12 +133,12 @@ theorem app_app {a b : Pomega} (ha : Retract a) (hb : Retract b)
   · rw [app_empty hx hy, app_bot]
   · rw [app_right hx hy,
       app_right (u := squarePair botElem (funOf (boxShift b) (squareSnd u)))
-        (squareFst_of_pair _ _) (by rw [squareSnd_of_pair]; exact boxShift_app_ne_bot b _),
-      squareSnd_of_pair, retract_app (boxShift_isRetract hb)]
+        (squareFst_of_pair _ _) (by rw [squareSnd_of_pair]; exact boxShift.app_ne_bot b _),
+      squareSnd_of_pair, retract_app (boxShift.isRetract hb)]
   · rw [app_left hx hy,
       app_left (u := squarePair (funOf (boxShift a) (squareFst u)) botElem)
-        (by rw [squareFst_of_pair]; exact boxShift_app_ne_bot a _) (squareSnd_of_pair _ _),
-      squareFst_of_pair, retract_app (boxShift_isRetract ha)]
+        (by rw [squareFst_of_pair]; exact boxShift.app_ne_bot a _) (squareSnd_of_pair _ _),
+      squareFst_of_pair, retract_app (boxShift.isRetract ha)]
   · rw [app_mixed hx hy, app_top]
 
 theorem isRetract {a b : Pomega} (ha : Retract a) (hb : Retract b) :
@@ -163,13 +160,13 @@ theorem expansive {a b : Pomega} (ha : Closure a) (hb : Closure b)
     have hsub : squarePair (squareFst u) (squareSnd u) ⊆
         squarePair botElem (funOf (boxShift b) (squareSnd u)) := by
       rw [hx]
-      exact squarePair_mono subset_rfl (boxShift_expansive hb (squareSnd u))
+      exact squarePair_mono subset_rfl (boxShift.expansive hb (squareSnd u))
     rwa [h8] at hsub
   · rw [app_left hx hy]
     have hsub : squarePair (squareFst u) (squareSnd u) ⊆
         squarePair (funOf (boxShift a) (squareFst u)) botElem := by
       rw [hy]
-      exact squarePair_mono (boxShift_expansive ha (squareFst u)) subset_rfl
+      exact squarePair_mono (boxShift.expansive ha (squareFst u)) subset_rfl
     rwa [h8] at hsub
   · rw [app_mixed hx hy]
     exact fun k _ => Set.mem_univ k
@@ -185,14 +182,14 @@ theorem typed_top (a b : Pomega) :
 theorem typed_inl {a b x : Pomega} (hx : typed x (boxShift a)) :
     typed (squarePair x botElem) (boxPlus a b) := by
   have hx0 : x ≠ botElem := by
-    rw [hx]; exact boxShift_app_ne_bot a x
+    rw [hx]; exact boxShift.app_ne_bot a x
   rw [typed, app_left (by rw [squareFst_of_pair]; exact hx0) (squareSnd_of_pair _ _), squareFst_of_pair,
     ← hx]
 
 theorem typed_inr {a b y : Pomega} (hy : typed y (boxShift b)) :
     typed (squarePair botElem y) (boxPlus a b) := by
   have hy0 : y ≠ botElem := by
-    rw [hy]; exact boxShift_app_ne_bot b y
+    rw [hy]; exact boxShift.app_ne_bot b y
   rw [typed, app_right (squareFst_of_pair _ _) (by rw [squareSnd_of_pair]; exact hy0), squareSnd_of_pair,
     ← hy]
 
@@ -208,10 +205,10 @@ theorem typed_iff {a b u : Pomega} (ha : Retract a) (hb : Retract b) :
     · exact Or.inl (hu'.trans (app_empty hx hy))
     · refine Or.inr (Or.inr (Or.inr ⟨funOf (boxShift b) (squareSnd u), ?_, ?_⟩))
       · exact hu'.trans (app_right hx hy)
-      · exact (retract_app (boxShift_isRetract hb) (squareSnd u)).symm
+      · exact (retract_app (boxShift.isRetract hb) (squareSnd u)).symm
     · refine Or.inr (Or.inr (Or.inl ⟨funOf (boxShift a) (squareFst u), ?_, ?_⟩))
       · exact hu'.trans (app_left hx hy)
-      · exact (retract_app (boxShift_isRetract ha) (squareFst u)).symm
+      · exact (retract_app (boxShift.isRetract ha) (squareFst u)).symm
     · exact Or.inr (Or.inl (hu'.trans (app_mixed hx hy)))
   · intro h
     rcases h with hu | hu | ⟨x, hx, hxt⟩ | ⟨y, hy, hyt⟩

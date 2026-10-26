@@ -469,17 +469,8 @@ Algebraic lattices and closure operations predate the paper: Grätzer (1968) for
 
 
 
-**[DataTypesAsLattices/Closures/boxShift_map_isScottContinuous.lean](boxShift_map_isScottContinuous.lean)**
 
-@import "boxShift_map_isScottContinuous.lean"
 
-**[DataTypesAsLattices/Closures/boxShift_app.lean](boxShift_app.lean)**
-
-@import "boxShift_app.lean"
-
-**[DataTypesAsLattices/Closures/boxShift_expansive.lean](boxShift_expansive.lean)**
-
-@import "boxShift_expansive.lean"
 
 **[DataTypesAsLattices/Closures/Icomb_subset_boxShift.lean](Icomb_subset_boxShift.lean)**
 
@@ -490,13 +481,7 @@ Algebraic lattices and closure operations predate the paper: Grätzer (1968) for
 
 @import "Icomb_subset_boxPlus.lean"
 
-**[DataTypesAsLattices/Closures/boxShift_isRetract.lean](boxShift_isRetract.lean)**
 
-@import "boxShift_isRetract.lean"
-
-**[DataTypesAsLattices/Closures/boxShift_isClosure.lean](boxShift_isClosure.lean)**
-
-@import "boxShift_isClosure.lean"
 
 **[DataTypesAsLattices/Closures/union_right_isScottContinuous.lean](union_right_isScottContinuous.lean)**
 
@@ -538,13 +523,7 @@ Algebraic lattices and closure operations predate the paper: Grätzer (1968) for
 
 @import "typed_of_retract_Vcomb.lean"
 
-**[DataTypesAsLattices/Closures/zero_mem_boxShift_app.lean](zero_mem_boxShift_app.lean)**
 
-@import "zero_mem_boxShift_app.lean"
-
-**[DataTypesAsLattices/Closures/boxShift_app_ne_bot.lean](boxShift_app_ne_bot.lean)**
-
-@import "boxShift_app_ne_bot.lean"
 
 
 
