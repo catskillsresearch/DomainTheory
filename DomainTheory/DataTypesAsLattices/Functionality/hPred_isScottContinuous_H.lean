@@ -69,7 +69,7 @@ theorem hPred_isScottContinuous_H (e t : Pomega) :
     (fun x y => condSet.isScottContinuous_right x y)
     (theorem_1_3 (funOf_isScottContinuous whichC) (hApply_isScottContinuous_H _ t))
     (theorem_1_3 (funOf_isScottContinuous inleftC)
-      (theorem_1_3 predSet_isScottContinuous
+      (theorem_1_3 predSet.isScottContinuous
         (theorem_1_3 (funOf_isScottContinuous outC)
           (hApply_isScottContinuous_H _ t))))
     (const_isScottContinuous botElem)

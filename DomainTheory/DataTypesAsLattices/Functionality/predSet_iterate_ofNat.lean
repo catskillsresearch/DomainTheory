@@ -57,7 +57,7 @@ theorem predSet_iterate_ofNat :
   | k + 1, i => by
     rw [Function.iterate_succ_apply]
     have : k + 1 + i = k + i + 1 := by omega
-    rw [this, predSet_ofNat_succ]
+    rw [this, predSet.ofNat_succ]
     exact predSet_iterate_ofNat k i
 
 end DomainTheory.DataTypesAsLattices

@@ -73,6 +73,6 @@ theorem seqCons_body (x xs : Pomega) :
     (fun _ => condSet.isScottContinuous_left x _)
     (fun z => condSet.isScottContinuous_right z x)
     id_isScottContinuous
-    (theorem_1_3 (funOf_isScottContinuous xs) predSet_isScottContinuous)
+    (theorem_1_3 (funOf_isScottContinuous xs) predSet.isScottContinuous)
 
 end DomainTheory.DataTypesAsLattices

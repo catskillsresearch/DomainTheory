@@ -55,7 +55,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarStep_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarStep_app2
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarStep_fix_app
-
 @[expose] public section
 
 
@@ -65,14 +64,14 @@ namespace DomainTheory.DataTypesAsLattices
 /-- **Scott 1976, (2.24).** `$ = Y(λs λu λz. z ⊃ u₀, s(λt. u_{t+1})(z−1))`. -/
 theorem eq_2_24_Y : dollarC = fix dollarStep := by
   have hfix : dollarStep (fix dollarStep) = fix dollarStep :=
-    (theorem_1_4 dollarStep_isScottContinuous).1
+    (theorem_1_4 dollarStep.isScottContinuous).1
   have hbody : ∀ u z, dollarStepBody (fix dollarStep) u z = seqFun u z := by
     intro u z
     calc dollarStepBody (fix dollarStep) u z
         = funOf (funOf (dollarStep (fix dollarStep)) u) z :=
-          (dollarStep_app2 _ _ _).symm
+          (dollarStep.app2 _ _ _).symm
       _ = funOf (funOf (fix dollarStep) u) z := by rw [hfix]
-      _ = seqFun u z := dollarStep_fix_app u z
+      _ = seqFun u z := dollarStep.fix_app u z
   have : dollarStep (fix dollarStep) =
       graph (fun u => graph (fun z => seqFun u z)) := by
     apply congrArg graph

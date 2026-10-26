@@ -56,7 +56,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem ofComb_combinatory (c : Comb) (ρ : ℕ → Pomega)
+
+namespace ofComb
+
+theorem combinatory (c : Comb) (ρ : ℕ → Pomega)
     (hρ : ∀ i, IsCombinatory (ρ i)) :
     IsCombinatory (ofComb c ρ) := by
   induction c with
@@ -68,5 +71,7 @@ theorem ofComb_combinatory (c : Comb) (ρ : ℕ → Pomega)
   | K => exact .K
   | S => exact .S
   | app _ _ iu iv => exact .app iu iv
+
+end ofComb
 
 end DomainTheory.DataTypesAsLattices

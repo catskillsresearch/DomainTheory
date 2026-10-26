@@ -80,17 +80,17 @@ theorem plusR_typed_iff {a b u : Pomega} (ha : Retract a) (hb : Retract b) :
           (pairSeq (ofNat 0) (funOf a (funOf u (ofNat 1))))
           (pairSeq (ofNat 1) (funOf b (funOf u (ofNat 1)))) := by
       simpa [typed, plusR_app] using hu
-    rcases dcondSet_cases (funOf u (ofNat 0)) with h | h | h | h
+    rcases dcondSet.cases (funOf u (ofNat 0)) with h | h | h | h
     · refine Or.inr (Or.inr (Or.inl ⟨funOf a (funOf u (ofNat 1)), ?_, ?_⟩))
-      · exact hu'.trans (dcondSet_of_zero_not_pos h.1 h.2)
+      · exact hu'.trans (dcondSet.of_zero_not_pos h.1 h.2)
       · exact (retract_app ha (funOf u (ofNat 1))).symm
     · refine Or.inr (Or.inr (Or.inr ⟨funOf b (funOf u (ofNat 1)), ?_, ?_⟩))
-      · exact hu'.trans (dcondSet_of_pos_not_zero h.1 h.2)
+      · exact hu'.trans (dcondSet.of_pos_not_zero h.1 h.2)
       · exact (retract_app hb (funOf u (ofNat 1))).symm
     · refine Or.inr (Or.inl ?_)
-      exact hu'.trans (dcondSet_of_mixed h.1 h.2)
+      exact hu'.trans (dcondSet.of_mixed h.1 h.2)
     · refine Or.inl ?_
-      exact hu'.trans (dcondSet_of_empty h.1 h.2)
+      exact hu'.trans (dcondSet.of_empty h.1 h.2)
   · intro h
     rcases h with hu | hu | ⟨x, hx, hxt⟩ | ⟨y, hy, hyt⟩
     · rw [hu]; exact plusR_typed_bot a b

@@ -140,7 +140,7 @@ theorem secondRecOperator_app (u : Pomega) :
       (Scomb ⬝ (Scomb ⬝ (Kcomb ⬝ Scomb) ⬝ Kcomb) ⬝ (Kcomb ⬝ secondRecSubstC)) ⬝ u =
         Scomb ⬝ (Kcomb ⬝ u) ⬝ secondRecSubstC := by
     rw [Scomb_beta3, Kcomb_beta2, SK_comp]
-  rw [secondRecOperator, SK_comp, hsubst, dollarC_app]
+  rw [secondRecOperator, SK_comp, hsubst, dollarC.app]
   apply congrArg graph
   funext x
   have hreal (m : ℕ) :

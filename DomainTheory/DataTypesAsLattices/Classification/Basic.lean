@@ -1315,7 +1315,7 @@ theorem typicalBdelta_universal (U : Set Pomega) :
     exact (theorem_6_7 _).mpr
       ⟨fun x => funOf (f x) (ofNat 0), fun x => funOf (f x) (ofNat 1),
         theorem_1_3 (f := fun u => funOf u (ofNat 0))
-          (funOf_isScottContinuous_left (ofNat 0)) hf,
+          (funOf.isScottContinuous_left (ofNat 0)) hf,
         theorem_1_3 (f := fun u => funOf u (ofNat 1))
-          (funOf_isScottContinuous_left (ofNat 1)) hf, rfl⟩
+          (funOf.isScottContinuous_left (ofNat 1)) hf, rfl⟩
 end DomainTheory.DataTypesAsLattices

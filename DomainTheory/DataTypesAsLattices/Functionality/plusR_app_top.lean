@@ -55,6 +55,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem plusR_app_top (a b : Pomega) :
     funOf (plusR a b) topElem = topElem := by
-  rw [plusR_app, funOf_top, dcondSet_top]
+  rw [plusR_app, funOf_top, dcondSet.top]
 
 end DomainTheory.DataTypesAsLattices

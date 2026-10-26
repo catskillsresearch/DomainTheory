@@ -51,7 +51,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.interC_app
-
 @[expose] public section
 
 
@@ -66,7 +65,7 @@ theorem eq_2_17 (x y : Pomega) :
     induction n using Nat.strong_induction_on with
     | h n ih =>
       intro x y
-      rw [interC_app]
+      rw [interC.app]
       constructor
       · intro hn
         rcases hn with ⟨hL, h0x⟩ | ⟨⟨k, hk, rfl⟩, _t, _ht⟩

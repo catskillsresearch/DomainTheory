@@ -62,7 +62,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.omegaComb_app
 public import DomainTheory.DataTypesAsLattices.Lambda.funOf_diag_iUnion
-
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
 
@@ -99,7 +98,7 @@ theorem omega_first_recursion {f : Pomega → Pomega} (hf : IsScottContinuous f)
         rwa [hd] at this
       have : k ∈ f a := IsScottContinuous.monotone hf hna this
       rwa [ha] at this
-  rw [funOf_diag_iUnion] at hm
+  rw [funOf.diag_iUnion] at hm
   obtain ⟨l, hl, hml⟩ := Set.mem_iUnion.mp hm
   exact key l hl hml
 

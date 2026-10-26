@@ -31,6 +31,6 @@ theorem unionTerm_interp :
   apply congrArg graph
   funext y
   change condSet (graph fun _ => zeroC) x y = x ∪ y
-  simpa [condC_beta3, Kcomb_beta] using union_via_cond x y
+  simpa [condC.beta3, Kcomb_beta] using union_via_cond x y
 
 end DomainTheory.DataTypesAsLattices

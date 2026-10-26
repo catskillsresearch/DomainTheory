@@ -63,10 +63,10 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem plus7_app_tag5 (a0 a1 a2 a3 a4 a5 a6 x : Pomega) :
     funOf (plus7 a0 a1 a2 a3 a4 a5 a6) (tagInj 5 x) = tagInj 5 (funOf a5 x) := by
-  rw [plus7_app, plus7Body, tagInj_zero, tagInj_one, dcondSet_ofNat_succ,
-    predSet_ofNat_succ, dcondSet_ofNat_succ, predSet_ofNat_succ,
-    dcondSet_ofNat_succ, predSet_iterate_ofNat (k := 3) (i := 2),
-    dcondSet_ofNat_succ, predSet_iterate_ofNat (k := 4) (i := 1),
-    dcondSet_ofNat_one, predSet_iterate_self, dcondSet_ofNat_zero]
+  rw [plus7_app, plus7Body, tagInj_zero, tagInj_one, dcondSet.ofNat_succ,
+    predSet.ofNat_succ, dcondSet.ofNat_succ, predSet.ofNat_succ,
+    dcondSet.ofNat_succ, predSet_iterate_ofNat (k := 3) (i := 2),
+    dcondSet.ofNat_succ, predSet_iterate_ofNat (k := 4) (i := 1),
+    dcondSet.ofNat_one, predSet_iterate_self, dcondSet.ofNat_zero]
 
 end DomainTheory.DataTypesAsLattices

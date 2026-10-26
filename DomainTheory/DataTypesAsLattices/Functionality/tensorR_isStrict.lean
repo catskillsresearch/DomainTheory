@@ -58,6 +58,6 @@ namespace DomainTheory.DataTypesAsLattices
 theorem tensorR_isStrict {a b : Pomega} (ha : IsStrict a) (hb : IsStrict b) :
     IsStrict (tensorR a b) := by
   change funOf (tensorR a b) botElem = botElem
-  rw [tensorR_app, funOf_bot, funOf_bot, ha, hb, pairSeq_bot]
+  rw [tensorR_app, funOf.bot, funOf.bot, ha, hb, pairSeq_bot]
 
 end DomainTheory.DataTypesAsLattices

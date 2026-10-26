@@ -79,7 +79,7 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 theorem primRecComb_combinatory {a f : Pomega}
     (ha : IsCombinatory a) (hf : IsCombinatory f) :
     IsCombinatory (primRecComb a f) :=
-  .app dollarC_combinatory <|
+  .app dollarC.combinatory <|
     .app Ycomb_combinatory <|
       .app (.app (theorem_2_4.closed primRecStepTerm) ha) hf
 

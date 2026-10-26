@@ -74,6 +74,6 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 
 theorem isZeroC_zero : funOf isZeroC (ofNat 0) = ofNat 1 := by
   simp only [isZeroC]
-  rw [condC_beta3, eq_2_7_zero]
+  rw [condC.beta3, eq_2_7_zero]
 
 end DomainTheory.DataTypesAsLattices

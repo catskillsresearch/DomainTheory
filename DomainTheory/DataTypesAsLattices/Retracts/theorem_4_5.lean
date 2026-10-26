@@ -79,7 +79,7 @@ theorem theorem_4_5.strict (a b : Pomega) :
     dcondSet botElem
       (pairSeq (ofNat 0) (funOf a botElem))
       (pairSeq (ofNat 1) (funOf b botElem)) = botElem :=
-  dcondSet_bot _ _
+  dcondSet.bot _ _
 
 /-- **Scott 1976, Theorem 4.5 (The sum theorem), core.** -/
 theorem theorem_4_5 :

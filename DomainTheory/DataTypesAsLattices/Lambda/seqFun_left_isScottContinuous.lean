@@ -58,7 +58,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
-
 @[expose] public section
 
 
@@ -74,13 +73,13 @@ theorem seqFun_left_isScottContinuous (x : Pomega) :
   · intro hk
     obtain ⟨i, hi, hki⟩ := Set.mem_iUnion₂.mp hk
     have : k ∈ scottUnion (fun v => funOf v (ofNat i)) u := by
-      rw [← (funOf_isScottContinuous_left (ofNat i)).out u]; exact hki
+      rw [← (funOf.isScottContinuous_left (ofNat i)).out u]; exact hki
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp this
     exact mem_scottUnion.mpr ⟨n, hn, Set.mem_iUnion₂.mpr ⟨i, hi, hkn⟩⟩
   · intro hk
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     obtain ⟨i, hi, hki⟩ := Set.mem_iUnion₂.mp hkn
     exact Set.mem_iUnion₂.mpr ⟨i, hi,
-      IsScottContinuous.monotone (funOf_isScottContinuous_left (ofNat i)) hn hki⟩
+      IsScottContinuous.monotone (funOf.isScottContinuous_left (ofNat i)) hn hki⟩
 
 end DomainTheory.DataTypesAsLattices

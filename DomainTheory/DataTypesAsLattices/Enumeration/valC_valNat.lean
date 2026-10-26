@@ -129,7 +129,7 @@ namespace DomainTheory.DataTypesAsLattices
 /-- `valC` and the well-founded numerical evaluator denote the same
 enumeration on integer arguments. -/
 theorem valC_valNat (n : ℕ) : funOf valC (ofNat n) = valNat n := by
-  rw [valC, fix, funOf_iUnion]
+  rw [valC, fix, funOf.iUnion]
   apply subset_antisymm
   · intro k hk
     obtain ⟨s, hs⟩ := Set.mem_iUnion.mp hk

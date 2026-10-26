@@ -65,14 +65,19 @@ public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_le
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem dollarStepBody_isScottContinuous_s (u z : Pomega) :
+
+namespace dollarStepBody
+
+theorem isScottContinuous_s (u z : Pomega) :
     IsScottContinuous (fun s => dollarStepBody s u z) := by
   have hinner : IsScottContinuous
       (fun s => funOf (funOf s (seqShift u)) (predSet z)) :=
     theorem_1_3 (f := fun w => funOf w (predSet z))
       (g := fun s => funOf s (seqShift u))
-      (funOf_isScottContinuous_left (predSet z))
-      (funOf_isScottContinuous_left (seqShift u))
+      (funOf.isScottContinuous_left (predSet z))
+      (funOf.isScottContinuous_left (seqShift u))
   exact theorem_1_3 (condSet.isScottContinuous_right z (funOf u (ofNat 0))) hinner
+
+end dollarStepBody
 
 end DomainTheory.DataTypesAsLattices

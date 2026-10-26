@@ -19,7 +19,7 @@ theorem Z.isScottContinuous_left (n : ℕ) (x : Pomega) :
   | succ n ih =>
     simpa [Z] using
       continuous_tuple
-        (fun y => funOf_isScottContinuous_left y)
+        (fun y => funOf.isScottContinuous_left y)
         (fun u => funOf_isScottContinuous u)
         id_isScottContinuous ih
 

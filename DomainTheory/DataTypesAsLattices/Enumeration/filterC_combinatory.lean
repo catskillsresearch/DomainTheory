@@ -25,6 +25,6 @@ open Nat.Partrec.Code
 
 theorem filterC_combinatory : IsCombinatory filterC := by
   rw [filterC, theorem_2_4.complete]
-  exact ofComb_combinatory _ _ filterEnv_combinatory
+  exact ofComb.combinatory _ _ filterEnv_combinatory
 
 end DomainTheory.DataTypesAsLattices

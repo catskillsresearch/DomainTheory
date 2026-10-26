@@ -72,15 +72,15 @@ theorem plusR_map_isScottContinuous (a b : Pomega) :
         (pairSeq (ofNat 0) (funOf a (funOf u (ofNat 1))))
         (pairSeq (ofNat 1) (funOf b (funOf u (ofNat 1))))) :=
   continuous_nary
-    (fun y z => dcondSet_isScottContinuous_left y z)
-    (fun x z => dcondSet_isScottContinuous_mid x z)
-    (fun x y => dcondSet_isScottContinuous_right x y)
-    (funOf_isScottContinuous_left (ofNat 0))
+    (fun y z => dcondSet.isScottContinuous_left y z)
+    (fun x z => dcondSet.isScottContinuous_mid x z)
+    (fun x y => dcondSet.isScottContinuous_right x y)
+    (funOf.isScottContinuous_left (ofNat 0))
     (theorem_1_3 (pairSeq_isScottContinuous_right (ofNat 0))
       (theorem_1_3 (funOf_isScottContinuous a)
-        (funOf_isScottContinuous_left (ofNat 1))))
+        (funOf.isScottContinuous_left (ofNat 1))))
     (theorem_1_3 (pairSeq_isScottContinuous_right (ofNat 1))
       (theorem_1_3 (funOf_isScottContinuous b)
-        (funOf_isScottContinuous_left (ofNat 1))))
+        (funOf.isScottContinuous_left (ofNat 1))))
 
 end DomainTheory.DataTypesAsLattices

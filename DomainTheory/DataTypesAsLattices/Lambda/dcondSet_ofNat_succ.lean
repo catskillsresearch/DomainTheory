@@ -57,8 +57,13 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_of_pos_not_zero
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem dcondSet_ofNat_succ (n : ℕ) (x y : Pomega) :
+
+namespace dcondSet
+
+theorem ofNat_succ (n : ℕ) (x y : Pomega) :
     dcondSet (ofNat (n + 1)) x y = y :=
-  dcondSet_of_pos_not_zero (by simp [ofNat]) ⟨n, by simp [ofNat]⟩
+  dcondSet.of_pos_not_zero (by simp [ofNat]) ⟨n, by simp [ofNat]⟩
+
+end dcondSet
 
 end DomainTheory.DataTypesAsLattices

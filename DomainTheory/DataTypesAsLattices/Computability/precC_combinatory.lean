@@ -78,6 +78,6 @@ theorem precC_combinatory {f g : Pomega}
     (hf : IsCombinatory f) (hg : IsCombinatory g) :
     IsCombinatory (precC f g) := by
   rw [precC, theorem_2_4.complete]
-  exact ofComb_combinatory _ _ (precEnv_combinatory hf hg)
+  exact ofComb.combinatory _ _ (precEnv_combinatory hf hg)
 
 end DomainTheory.DataTypesAsLattices

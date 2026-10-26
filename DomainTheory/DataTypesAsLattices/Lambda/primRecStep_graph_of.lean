@@ -62,7 +62,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2_more
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem primRecStep_graph_of (a f : Pomega) :
+
+namespace primRecStep
+
+theorem graph_of (a f : Pomega) :
     graph (primRecStep a f) =
       funOf (funOf (interp primRecStepTerm (fun _ => botElem)) a) f := by
   change graph (primRecStep a f) =
@@ -76,5 +79,7 @@ theorem primRecStep_graph_of (a f : Pomega) :
   apply congrArg graph
   funext n
   simp [interp, envSet, Function.update]
+
+end primRecStep
 
 end DomainTheory.DataTypesAsLattices

@@ -60,7 +60,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem dollarC_eq_fix_termDollarStep : dollarC = fix termDollarStep := by
+
+namespace dollarC
+
+theorem eq_fix_termDollarStep : dollarC = fix termDollarStep := by
   have hfix : termDollarStep (fix termDollarStep) = fix termDollarStep :=
     (theorem_1_4 termDollarStep.isScottContinuous).1
   have hbody : ∀ u z, termDollarStepBody (fix termDollarStep) u z = seqFun u z := by
@@ -78,5 +81,7 @@ theorem dollarC_eq_fix_termDollarStep : dollarC = fix termDollarStep := by
     funext z
     exact hbody u z
   exact this.symm.trans hfix
+
+end dollarC
 
 end DomainTheory.DataTypesAsLattices

@@ -55,11 +55,11 @@ theorem body_isScottContinuous (f g : Pomega) :
     (fun y z => condSet.isScottContinuous_left y z)
     (fun x z => condSet.isScottContinuous_mid x z)
     (fun x y => condSet.isScottContinuous_right x y)
-    (funOf_isScottContinuous_left (ofNat 0))
+    (funOf.isScottContinuous_left (ofNat 0))
     (theorem_1_3 (funOf_isScottContinuous f)
-      (funOf_isScottContinuous_left (ofNat 1)))
+      (funOf.isScottContinuous_left (ofNat 1)))
     (theorem_1_3 (funOf_isScottContinuous g)
-      (funOf_isScottContinuous_left (ofNat 1)))
+      (funOf.isScottContinuous_left (ofNat 1)))
 
 theorem app (f g u : Pomega) :
     funOf (sumMed f g) u =

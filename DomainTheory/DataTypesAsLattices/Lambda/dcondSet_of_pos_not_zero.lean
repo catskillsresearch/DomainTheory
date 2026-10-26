@@ -56,7 +56,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem dcondSet_of_pos_not_zero {z x y : Pomega}
+
+namespace dcondSet
+
+theorem of_pos_not_zero {z x y : Pomega}
     (h0 : 0 ∉ z) (hp : ∃ k, k + 1 ∈ z) :
     dcondSet z x y = y := by
   have hL : condSet z x topElem = topElem := by
@@ -82,5 +85,7 @@ theorem dcondSet_of_pos_not_zero {z x y : Pomega}
     · exact hy
   · intro hy
     exact Or.inr ⟨hy, hp⟩
+
+end dcondSet
 
 end DomainTheory.DataTypesAsLattices

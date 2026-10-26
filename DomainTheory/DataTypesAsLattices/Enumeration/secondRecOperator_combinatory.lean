@@ -25,7 +25,7 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 theorem secondRecOperator_combinatory : IsCombinatory secondRecOperator :=
-  .app (.app .S (.app .K dollarC_combinatory))
+  .app (.app .S (.app .K dollarC.combinatory))
     (.app
       (.app .S (.app (.app .S (.app .K .S)) .K))
       (.app .K secondRecSubstC_combinatory))

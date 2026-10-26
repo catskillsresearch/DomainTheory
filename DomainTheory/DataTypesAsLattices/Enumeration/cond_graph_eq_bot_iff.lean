@@ -136,10 +136,10 @@ theorem cond_graph_eq_bot_iff (x y : Pomega) :
   · intro h
     constructor
     · have := congrArg (fun w => funOf w (ofNat 0)) h
-      rw [condC_beta3, eq_2_7_zero, funOf_botElem] at this
+      rw [condC.beta3, eq_2_7_zero, funOf_botElem] at this
       exact this
     · have := congrArg (fun w => funOf w (ofNat 1)) h
-      rw [condC_beta3, eq_2_7_succ, funOf_botElem] at this
+      rw [condC.beta3, eq_2_7_succ, funOf_botElem] at this
       exact this
   · intro ⟨hx, hy⟩
     rw [condC_app2, hx, hy]

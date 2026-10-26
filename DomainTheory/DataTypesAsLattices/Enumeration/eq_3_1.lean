@@ -131,7 +131,7 @@ namespace DomainTheory.DataTypesAsLattices
 /-- **Scott 1976, (3.1).** `cond(x)(y)(cond(x)(y)) = y`. -/
 theorem eq_3_1 (x y : Pomega) :
     funOf (funOf (funOf condC x) y) (funOf (funOf condC x) y) = y := by
-  rw [condC_beta3]
+  rw [condC.beta3]
   by_cases hxy : x = botElem ∧ y = botElem
   · rcases hxy with ⟨rfl, rfl⟩
     have : funOf (funOf condC botElem) botElem = botElem :=

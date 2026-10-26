@@ -65,7 +65,7 @@ theorem outrightC_isScottContinuous :
   continuous_tuple
     (fun y => condSet.isScottContinuous_left botElem y)
     (fun tes => condSet.isScottContinuous_right tes botElem)
-    (funOf_isScottContinuous_left (ofNat 0))
-    (funOf_isScottContinuous_left (ofNat 1))
+    (funOf.isScottContinuous_left (ofNat 0))
+    (funOf.isScottContinuous_left (ofNat 1))
 
 end DomainTheory.DataTypesAsLattices

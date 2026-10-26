@@ -17,10 +17,10 @@ namespace intR
 
 theorem app_ofNat : ∀ n, funOf intR (ofNat n) = ofNat n
   | 0 => by
-    rw [app, dcondSet_ofNat_zero]
+    rw [app, dcondSet.ofNat_zero]
   | n + 1 => by
-    rw [app, predSet_ofNat_succ, app_ofNat n, dcondSet_same_ofNat,
-      dcondSet_ofNat_succ]
+    rw [app, predSet.ofNat_succ, app_ofNat n, dcondSet_same_ofNat,
+      dcondSet.ofNat_succ]
 
 theorem top_of_nonsingleton :
     ∀ n u, n ∈ u → (∀ k ∈ u, n ≤ k) → u ≠ botElem → (∀ k, u ≠ ofNat k) →
@@ -44,7 +44,7 @@ theorem top_of_nonsingleton :
           simp [ofNat, this]
         · intro hm
           simpa [ofNat] using hm.symm ▸ h0
-      rw [dcondSet_of_mixed h0 hp]
+      rw [dcondSet.of_mixed h0 hp]
     · have hn0 : n ≠ 0 := fun h => h0 (by simpa [h] using hn)
       obtain ⟨n', rfl⟩ := Nat.exists_eq_succ_of_ne_zero hn0
       have hn' : n' ∈ predSet u := hn
@@ -62,7 +62,7 @@ theorem top_of_nonsingleton :
         exact hns (k + 1) (predSet_eq_ofNat_of_no_zero h0 hk)
       have hpred : funOf intR (predSet u) = topElem :=
         ih n' (Nat.lt_succ_self n') (predSet u) hn' hmin' hne' hns'
-      rw [hpred, dcondSet_top, dcondSet_of_pos_not_zero h0 ⟨n', hn⟩]
+      rw [hpred, dcondSet.top, dcondSet.of_pos_not_zero h0 ⟨n', hn⟩]
 
 theorem top : funOf intR topElem = topElem :=
   top_of_nonsingleton 0 topElem (Set.mem_univ 0)

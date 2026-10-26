@@ -65,7 +65,7 @@ theorem hApply_payload_isScottContinuous_e (H t : Pomega) (i : ℕ) :
     (g := fun e => funOf (expPayload e) (ofNat i))
     (hApply_isScottContinuous_e H t)
     (theorem_1_3 (f := fun u => funOf u (ofNat i)) (g := expPayload)
-      (funOf_isScottContinuous_left (ofNat i))
-      (funOf_isScottContinuous_left (ofNat 1)))
+      (funOf.isScottContinuous_left (ofNat i))
+      (funOf.isScottContinuous_left (ofNat 1)))
 
 end DomainTheory.DataTypesAsLattices

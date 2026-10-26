@@ -78,7 +78,7 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 
 
 theorem mulC_combinatory : IsCombinatory mulC :=
-  .app (.app .S (.app .K dollarC_combinatory))
+  .app (.app .S (.app .K dollarC.combinatory))
     (.app (.app .S (.app .K Ycomb_combinatory))
       (.app (.app .S
           (.app .K (.app (theorem_2_4.closed primRecStepTerm)

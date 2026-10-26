@@ -74,8 +74,11 @@ public import DomainTheory.DataTypesAsLattices.Lambda.envSet_comm
 namespace DomainTheory.DataTypesAsLattices
 
 
+
+namespace interp
+
 /-- Appendix lemma for Theorem 2.1: abstraction preserves continuity in the other variables. -/
-theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) :
+theorem var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) :
     IsScottContinuous (fun v => interp t (envSet ρ i v)) := by
   induction t generalizing ρ i with
   | var j =>
@@ -92,7 +95,7 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
   | succ t ih =>
     exact theorem_1_3 succSet_isScottContinuous (ih ρ i)
   | pred t ih =>
-    exact theorem_1_3 predSet_isScottContinuous (ih ρ i)
+    exact theorem_1_3 predSet.isScottContinuous (ih ρ i)
   | cond z x y iz ix iy =>
     constructor
     intro w
@@ -184,5 +187,7 @@ theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) 
       constructor
       intro w
       simpa [interp] using hmap.out w
+
+end interp
 
 end DomainTheory.DataTypesAsLattices

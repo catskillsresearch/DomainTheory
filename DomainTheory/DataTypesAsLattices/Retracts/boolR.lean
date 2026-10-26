@@ -23,7 +23,7 @@ namespace boolR
 
 theorem app (u : Pomega) :
     funOf boolR u = dcondSet u (ofNat 0) (ofNat 1) :=
-  beta (dcondSet_isScottContinuous_left (ofNat 0) (ofNat 1)) u
+  beta (dcondSet.isScottContinuous_left (ofNat 0) (ofNat 1)) u
 
 end boolR
 

@@ -67,7 +67,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem interC_then_else_isScottContinuous (x : Pomega) :
+
+namespace interC
+
+theorem then_else_isScottContinuous (x : Pomega) :
     IsScottContinuous (fun y =>
       condSet x (condSet y (ofNat 0) botElem)
         (succSet (funOf (funOf interC (predSet x)) (predSet y)))) :=
@@ -77,6 +80,8 @@ theorem interC_then_else_isScottContinuous (x : Pomega) :
     (condSet.isScottContinuous_left (ofNat 0) botElem)
     (theorem_1_3 succSet_isScottContinuous
       (theorem_1_3 (funOf_isScottContinuous (funOf interC (predSet x)))
-        predSet_isScottContinuous))
+        predSet.isScottContinuous))
+
+end interC
 
 end DomainTheory.DataTypesAsLattices

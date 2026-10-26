@@ -59,9 +59,14 @@ public import DomainTheory.DataTypesAsLattices.Lambda.primRecStep_body_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem primRecStep_app (a f u n : Pomega) :
+
+namespace primRecStep
+
+theorem app (a f u n : Pomega) :
     funOf (primRecStep a f u) n =
       condSet n a (funOf (funOf f (predSet n)) (funOf u (predSet n))) :=
-  beta (primRecStep_body_isScottContinuous_n a f u) n
+  beta (primRecStep.body_isScottContinuous_n a f u) n
+
+end primRecStep
 
 end DomainTheory.DataTypesAsLattices

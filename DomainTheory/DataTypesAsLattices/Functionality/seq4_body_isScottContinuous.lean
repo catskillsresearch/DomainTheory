@@ -76,13 +76,13 @@ theorem seq4_body_isScottContinuous (a b c d : Pomega) :
       (fun y t => condSet.isScottContinuous_left y t)
       (fun x t => condSet.isScottContinuous_mid x t)
       (fun x y => condSet.isScottContinuous_right x y)
-      predSet_isScottContinuous (const_isScottContinuous b)
+      predSet.isScottContinuous (const_isScottContinuous b)
       (continuous_nary
         (fun y t => condSet.isScottContinuous_left y t)
         (fun x t => condSet.isScottContinuous_mid x t)
         (fun x y => condSet.isScottContinuous_right x y)
         (theorem_1_3 (f := predSet) (g := predSet)
-          predSet_isScottContinuous predSet_isScottContinuous)
+          predSet.isScottContinuous predSet.isScottContinuous)
         (const_isScottContinuous c)
         (continuous_nary
           (fun y t => condSet.isScottContinuous_left y t)
@@ -90,9 +90,9 @@ theorem seq4_body_isScottContinuous (a b c d : Pomega) :
           (fun x y => condSet.isScottContinuous_right x y)
           (theorem_1_3 (f := predSet)
             (g := fun z => predSet (predSet z))
-            predSet_isScottContinuous
+            predSet.isScottContinuous
             (theorem_1_3 (f := predSet) (g := predSet)
-              predSet_isScottContinuous predSet_isScottContinuous))
+              predSet.isScottContinuous predSet.isScottContinuous))
           (const_isScottContinuous d) (const_isScottContinuous botElem))))
 
 end DomainTheory.DataTypesAsLattices

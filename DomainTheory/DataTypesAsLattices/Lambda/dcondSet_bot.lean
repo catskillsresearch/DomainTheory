@@ -56,8 +56,13 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem dcondSet_bot (x y : Pomega) : dcondSet botElem x y = botElem := by
+
+namespace dcondSet
+
+theorem bot (x y : Pomega) : dcondSet botElem x y = botElem := by
   ext n
   simp [dcondSet, condSet, botElem]
+
+end dcondSet
 
 end DomainTheory.DataTypesAsLattices

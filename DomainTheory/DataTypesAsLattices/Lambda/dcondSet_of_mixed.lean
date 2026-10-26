@@ -56,7 +56,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem dcondSet_of_mixed {z x y : Pomega}
+
+namespace dcondSet
+
+theorem of_mixed {z x y : Pomega}
     (h0 : 0 ∈ z) (hp : ∃ k, k + 1 ∈ z) :
     dcondSet z x y = topElem := by
   have hL : condSet z x topElem = topElem := by
@@ -74,5 +77,7 @@ theorem dcondSet_of_mixed {z x y : Pomega}
   constructor
   · intro _; exact Set.mem_univ n
   · intro _; exact Or.inl ⟨Set.mem_univ n, h0⟩
+
+end dcondSet
 
 end DomainTheory.DataTypesAsLattices

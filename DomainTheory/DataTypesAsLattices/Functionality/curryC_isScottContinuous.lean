@@ -65,6 +65,6 @@ theorem curryC_isScottContinuous :
     (fun x =>
       graph_const_isScottContinuous
         (fun u y => funOf u (pairSeq x y))
-        (fun y => funOf_isScottContinuous_left (pairSeq x y)))
+        (fun y => funOf.isScottContinuous_left (pairSeq x y)))
 
 end DomainTheory.DataTypesAsLattices

@@ -60,9 +60,14 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarStep_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem dollarStep_app2 (s u z : Pomega) :
+
+namespace dollarStep
+
+theorem app2 (s u z : Pomega) :
     funOf (funOf (dollarStep s) u) z = dollarStepBody s u z := by
-  rw [dollarStep_app]
-  exact beta (dollarStepBody_isScottContinuous_z s u) z
+  rw [dollarStep.app]
+  exact beta (dollarStepBody.isScottContinuous_z s u) z
+
+end dollarStep
 
 end DomainTheory.DataTypesAsLattices

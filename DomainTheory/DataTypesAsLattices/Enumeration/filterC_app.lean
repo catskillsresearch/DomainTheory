@@ -166,7 +166,7 @@ theorem filterC_app (m : ℕ) :
       predSet (seqFun
         (graph (fun j => funOf filterRealizer (funOf (funOf pairComb v) j)))
         topElem) :=
-    theorem_1_3 predSet_isScottContinuous
+    theorem_1_3 predSet.isScottContinuous
       (theorem_1_3 (seqFun_left_isScottContinuous topElem)
         filterSeq_isScottContinuous)
   have hbody :

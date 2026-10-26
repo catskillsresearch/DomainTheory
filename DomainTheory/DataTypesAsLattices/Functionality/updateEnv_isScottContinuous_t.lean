@@ -67,6 +67,6 @@ theorem updateEnv_isScottContinuous_t (x : Pomega) (n : ℕ) :
     (fun m => by
       by_cases h : m = ofNat n
       · simpa [h] using const_isScottContinuous (c := x)
-      · simpa [h] using funOf_isScottContinuous_left m)
+      · simpa [h] using funOf.isScottContinuous_left m)
 
 end DomainTheory.DataTypesAsLattices

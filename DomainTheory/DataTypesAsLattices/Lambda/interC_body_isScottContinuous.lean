@@ -68,7 +68,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.interC_else_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem interC_body_isScottContinuous :
+
+namespace interC
+
+theorem body_isScottContinuous :
     IsScottContinuous (fun x =>
       graph (fun y =>
         condSet x (condSet y (ofNat 0) botElem)
@@ -84,6 +87,8 @@ theorem interC_body_isScottContinuous :
         (fun tes => condSet.isScottContinuous_right tes
           (condSet y (ofNat 0) botElem))
         id_isScottContinuous
-        (interC_else_isScottContinuous y))
+        (interC.else_isScottContinuous y))
+
+end interC
 
 end DomainTheory.DataTypesAsLattices

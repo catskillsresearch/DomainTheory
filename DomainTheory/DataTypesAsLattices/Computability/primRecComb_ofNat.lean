@@ -79,8 +79,8 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 
 theorem primRecComb_ofNat (a f : Pomega) (n : ℕ) :
     funOf (primRecComb a f) (ofNat n) = primRecVal a f n := by
-  have hgraph := primRecStep_graph_of a f
-  have hfix := theorem_2_5 (primRecStep_isScottContinuous a f)
+  have hgraph := primRecStep.graph_of a f
+  have hfix := theorem_2_5 (primRecStep.isScottContinuous a f)
   simp only [primRecComb]
   rw [← hgraph, hfix, ← eq_2_27, primRecHat_ofNat]
 

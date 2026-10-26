@@ -65,7 +65,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem curry3_app (f : Pomega → Pomega → Pomega → Pomega)
+
+namespace curry3
+
+theorem app (f : Pomega → Pomega → Pomega → Pomega)
     (hf0 : ∀ y z, IsScottContinuous (fun x => f x y z))
     (hf1 : ∀ x z, IsScottContinuous (fun y => f x y z))
     (hf2 : ∀ x y, IsScottContinuous (fun z => f x y z)) (x y z : Pomega) :
@@ -83,5 +86,7 @@ theorem curry3_app (f : Pomega → Pomega → Pomega → Pomega)
       (fun z => hf1 x z)) y
   rw [h2]
   exact beta (hf2 x y) z
+
+end curry3
 
 end DomainTheory.DataTypesAsLattices

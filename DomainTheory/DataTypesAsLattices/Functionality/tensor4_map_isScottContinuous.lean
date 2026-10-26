@@ -68,9 +68,9 @@ theorem tensor4_map_isScottContinuous (a b c d : Pomega) :
         (funOf c (funOf u (ofNat 2)))
         (funOf d (funOf u (ofNat 3)))) :=
   seq4_comp_isScottContinuous
-    (theorem_1_3 (funOf_isScottContinuous a) (funOf_isScottContinuous_left (ofNat 0)))
-    (theorem_1_3 (funOf_isScottContinuous b) (funOf_isScottContinuous_left (ofNat 1)))
-    (theorem_1_3 (funOf_isScottContinuous c) (funOf_isScottContinuous_left (ofNat 2)))
-    (theorem_1_3 (funOf_isScottContinuous d) (funOf_isScottContinuous_left (ofNat 3)))
+    (theorem_1_3 (funOf_isScottContinuous a) (funOf.isScottContinuous_left (ofNat 0)))
+    (theorem_1_3 (funOf_isScottContinuous b) (funOf.isScottContinuous_left (ofNat 1)))
+    (theorem_1_3 (funOf_isScottContinuous c) (funOf.isScottContinuous_left (ofNat 2)))
+    (theorem_1_3 (funOf_isScottContinuous d) (funOf.isScottContinuous_left (ofNat 3)))
 
 end DomainTheory.DataTypesAsLattices

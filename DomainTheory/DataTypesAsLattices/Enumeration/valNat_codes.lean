@@ -317,7 +317,7 @@ theorem myhillCase2Code_eq (j n m : ℕ) :
     valNat (myhillCase2Code j n m) =
       e j ∪ condSet (valNat m) (valNat n) (valNat n) := by
   simp only [myhillCase2Code, app, unionCode_eq, fin_eq,
-    condCode_eq, condC_beta3]
+    condCode_eq, condC.beta3]
   exact unionOperator_app _ _
 
 theorem myhillCase2Code_bot (j n : ℕ) :

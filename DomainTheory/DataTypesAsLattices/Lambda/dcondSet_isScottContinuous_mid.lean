@@ -63,11 +63,16 @@ public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem dcondSet_isScottContinuous_mid (z y : Pomega) :
+
+namespace dcondSet
+
+theorem isScottContinuous_mid (z y : Pomega) :
     IsScottContinuous (fun x => dcondSet z x y) :=
   theorem_1_3 (f := fun w => condSet z w (condSet z topElem y))
     (g := fun x => condSet z x topElem)
     (condSet.isScottContinuous_mid z (condSet z topElem y))
     (condSet.isScottContinuous_mid z topElem)
+
+end dcondSet
 
 end DomainTheory.DataTypesAsLattices

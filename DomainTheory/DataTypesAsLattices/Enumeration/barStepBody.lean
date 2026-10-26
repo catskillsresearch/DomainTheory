@@ -27,8 +27,8 @@ theorem isScottContinuous_B (u x : Pomega) :
     (theorem_1_3
       (f := fun w => funOf w (funOf x (ofNat 2)))
       (g := fun B => funOf B (funOf u (funOf x (ofNat 1))))
-      (funOf_isScottContinuous_left (funOf x (ofNat 2)))
-      (funOf_isScottContinuous_left (funOf u (funOf x (ofNat 1)))))
+      (funOf.isScottContinuous_left (funOf x (ofNat 2)))
+      (funOf.isScottContinuous_left (funOf u (funOf x (ofNat 1)))))
 
 theorem isScottContinuous_u (B x : Pomega) :
     IsScottContinuous (fun u => barStepBody B u x) :=
@@ -39,9 +39,9 @@ theorem isScottContinuous_u (B x : Pomega) :
     (theorem_1_3
       (f := fun w => funOf w (funOf x (ofNat 2)))
       (g := fun u => funOf B (funOf u (funOf x (ofNat 1))))
-      (funOf_isScottContinuous_left (funOf x (ofNat 2)))
+      (funOf.isScottContinuous_left (funOf x (ofNat 2)))
       (theorem_1_3 (funOf_isScottContinuous B)
-        (funOf_isScottContinuous_left (funOf x (ofNat 1)))))
+        (funOf.isScottContinuous_left (funOf x (ofNat 1)))))
 
 theorem isScottContinuous_x (B u : Pomega) :
     IsScottContinuous (fun x => barStepBody B u x) :=
@@ -49,15 +49,15 @@ theorem isScottContinuous_x (B u : Pomega) :
     (fun y z => condSet.isScottContinuous_left y z)
     (fun tes z => condSet.isScottContinuous_mid tes z)
     (fun tes th => condSet.isScottContinuous_right tes th)
-    (funOf_isScottContinuous_left (ofNat 0))
+    (funOf.isScottContinuous_left (ofNat 0))
     (barPos.isScottContinuous_x u)
     (theorem_1_3.tuple
-      (fun y => funOf_isScottContinuous_left y)
+      (fun y => funOf.isScottContinuous_left y)
       (fun w => funOf_isScottContinuous w)
       (theorem_1_3 (funOf_isScottContinuous B)
         (theorem_1_3 (funOf_isScottContinuous u)
-          (funOf_isScottContinuous_left (ofNat 1))))
-      (funOf_isScottContinuous_left (ofNat 2)))
+          (funOf.isScottContinuous_left (ofNat 1))))
+      (funOf.isScottContinuous_left (ofNat 2)))
 
 end barStepBody
 

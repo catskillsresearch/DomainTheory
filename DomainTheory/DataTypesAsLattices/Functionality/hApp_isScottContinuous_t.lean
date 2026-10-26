@@ -74,7 +74,7 @@ theorem hApp_isScottContinuous_t (H e : Pomega) :
       (funOf_isScottContinuous (funOf H (funOf (expPayload e) (ofNat 0)))))
     (const_isScottContinuous botElem)
     (continuous_tuple
-      (fun y => funOf_isScottContinuous_left y)
+      (fun y => funOf.isScottContinuous_left y)
       (fun u => funOf_isScottContinuous u)
       (theorem_1_3 (f := funOf outC)
         (g := fun t => hApply H (funOf (expPayload e) (ofNat 0)) t)

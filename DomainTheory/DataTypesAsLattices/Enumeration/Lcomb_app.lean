@@ -135,9 +135,9 @@ open Nat.Partrec.Code
 theorem Lcomb_app (x : Pomega) :
     funOf Lcomb x = funOf (funOf x (ofNat 1)) (funOf x (ofNat 2)) :=
   beta (theorem_1_3.tuple
-    (fun y => funOf_isScottContinuous_left y)
+    (fun y => funOf.isScottContinuous_left y)
     (fun t => funOf_isScottContinuous t)
-    (funOf_isScottContinuous_left (ofNat 1))
-    (funOf_isScottContinuous_left (ofNat 2))) x
+    (funOf.isScottContinuous_left (ofNat 1))
+    (funOf.isScottContinuous_left (ofNat 2))) x
 
 end DomainTheory.DataTypesAsLattices

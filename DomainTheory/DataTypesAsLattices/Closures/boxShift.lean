@@ -52,7 +52,7 @@ theorem map_isScottContinuous (a : Pomega) :
     IsScottContinuous (fun x => ofNat 0 ∪ succSet (funOf a (predSet x))) :=
   theorem_1_3 (union_const_left_isScottContinuous (ofNat 0))
     (theorem_1_3 succSet_isScottContinuous
-      (theorem_1_3 (funOf_isScottContinuous a) predSet_isScottContinuous))
+      (theorem_1_3 (funOf_isScottContinuous a) predSet.isScottContinuous))
 
 theorem app (a x : Pomega) :
     funOf (boxShift a) x = ofNat 0 ∪ succSet (funOf a (predSet x)) :=

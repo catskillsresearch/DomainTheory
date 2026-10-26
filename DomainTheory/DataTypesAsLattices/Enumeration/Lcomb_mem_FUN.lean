@@ -133,9 +133,9 @@ open Nat.Partrec.Code
 
 theorem Lcomb_mem_FUN : Lcomb ∈ FUN :=
   graph_mem_FUN (theorem_1_3.tuple
-    (fun y => funOf_isScottContinuous_left y)
+    (fun y => funOf.isScottContinuous_left y)
     (fun t => funOf_isScottContinuous t)
-    (funOf_isScottContinuous_left (ofNat 1))
-    (funOf_isScottContinuous_left (ofNat 2)))
+    (funOf.isScottContinuous_left (ofNat 1))
+    (funOf.isScottContinuous_left (ofNat 2)))
 
 end DomainTheory.DataTypesAsLattices

@@ -63,6 +63,6 @@ namespace DomainTheory.DataTypesAsLattices
 theorem Hstep.tag0 (H x t : Pomega) :
     Hstep H (tagInj 0 x) t = funOf t x := by
   simp only [Hstep, expTag, expPayload, hVar, tagInj_zero, tagInj_one,
-    dcondSet_ofNat_zero]
+    dcondSet.ofNat_zero]
 
 end DomainTheory.DataTypesAsLattices

@@ -22,7 +22,7 @@ open TopologicalSpace
 
 theorem typicalSigma11_isSigma11 : IsSigma11 typicalSigma11 :=
   ⟨fun u => funOf u (ofNat 0), fun u => funOf u (ofNat 1),
-    funOf_isScottContinuous_left (ofNat 0),
-    funOf_isScottContinuous_left (ofNat 1), rfl⟩
+    funOf.isScottContinuous_left (ofNat 0),
+    funOf.isScottContinuous_left (ofNat 1), rfl⟩
 
 end DomainTheory.DataTypesAsLattices

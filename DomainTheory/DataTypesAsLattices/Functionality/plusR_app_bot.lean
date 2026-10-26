@@ -55,6 +55,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem plusR_app_bot (a b : Pomega) :
     funOf (plusR a b) botElem = botElem := by
-  rw [plusR_app, funOf_bot, dcondSet_bot]
+  rw [plusR_app, funOf.bot, dcondSet.bot]
 
 end DomainTheory.DataTypesAsLattices

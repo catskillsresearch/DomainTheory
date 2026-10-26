@@ -34,7 +34,7 @@ theorem isScottContinuous_x (u : Pomega) :
     (g := fun x => seq2 u (funOf x (ofNat 1)))
     (seqCons_right_isScottContinuous (ofNat 1))
     (theorem_1_3 (seq2_right_isScottContinuous u)
-      (funOf_isScottContinuous_left (ofNat 1)))
+      (funOf.isScottContinuous_left (ofNat 1)))
 
 theorem zero (u x : Pomega) :
     funOf (barPos u x) (ofNat 0) = ofNat 1 := by

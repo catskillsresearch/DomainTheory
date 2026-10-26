@@ -55,8 +55,13 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem predSet_ofNat_succ (n : ℕ) : predSet (ofNat (n + 1)) = ofNat n := by
+
+namespace predSet
+
+theorem ofNat_succ (n : ℕ) : predSet (ofNat (n + 1)) = ofNat n := by
   ext k
   simp [predSet, ofNat]
+
+end predSet
 
 end DomainTheory.DataTypesAsLattices

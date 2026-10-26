@@ -67,12 +67,17 @@ public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem primRecStep_isScottContinuous (a f : Pomega) :
+
+namespace primRecStep
+
+theorem isScottContinuous (a f : Pomega) :
     IsScottContinuous (primRecStep a f) :=
   graph_const_isScottContinuous
     (fun u n => condSet n a (funOf (funOf f (predSet n)) (funOf u (predSet n))))
     (fun n => theorem_1_3 (condSet.isScottContinuous_right n a)
       (theorem_1_3 (funOf_isScottContinuous (funOf f (predSet n)))
-        (funOf_isScottContinuous_left (predSet n))))
+        (funOf.isScottContinuous_left (predSet n))))
+
+end primRecStep
 
 end DomainTheory.DataTypesAsLattices

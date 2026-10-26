@@ -64,6 +64,6 @@ theorem envR_map_isScottContinuous :
   graph_const_isScottContinuous
     (fun t n => funOf lambR (funOf t n))
     (fun n => theorem_1_3 (funOf_isScottContinuous lambR)
-      (funOf_isScottContinuous_left n))
+      (funOf.isScottContinuous_left n))
 
 end DomainTheory.DataTypesAsLattices

@@ -74,6 +74,6 @@ theorem Scomb_mid_cont (u : Pomega) :
   graph_const_isScottContinuous
     (fun v x => funOf (funOf u x) (funOf v x))
     (fun x => theorem_1_3 (funOf_isScottContinuous (funOf u x))
-      (funOf_isScottContinuous_left x))
+      (funOf.isScottContinuous_left x))
 
 end DomainTheory.DataTypesAsLattices

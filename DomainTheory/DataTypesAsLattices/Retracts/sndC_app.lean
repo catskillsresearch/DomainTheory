@@ -76,6 +76,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem sndC_app (u : Pomega) : funOf sndC u = funOf u (ofNat 1) :=
-  beta (funOf_isScottContinuous_left (ofNat 1)) u
+  beta (funOf.isScottContinuous_left (ofNat 1)) u
 
 end DomainTheory.DataTypesAsLattices

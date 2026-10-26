@@ -71,7 +71,7 @@ theorem tensorR_diag_isScottContinuous :
       continuous_tuple
         (fun y => pairSeq_isScottContinuous_left y)
         (fun x => pairSeq_isScottContinuous_right x)
-        (funOf_isScottContinuous_left (funOf u (ofNat 0)))
-        (funOf_isScottContinuous_left (funOf u (ofNat 1))))
+        (funOf.isScottContinuous_left (funOf u (ofNat 0)))
+        (funOf.isScottContinuous_left (funOf u (ofNat 1))))
 
 end DomainTheory.DataTypesAsLattices

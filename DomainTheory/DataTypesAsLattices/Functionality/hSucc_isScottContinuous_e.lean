@@ -78,7 +78,7 @@ theorem hSucc.isScottContinuous_e (H t : Pomega) :
   let hrec :=
     theorem_1_3 (f := fun e => hApply H e t) (g := expPayload)
       (hApply_isScottContinuous_e H t)
-      (funOf_isScottContinuous_left (ofNat 1))
+      (funOf.isScottContinuous_left (ofNat 1))
   continuous_nary
     (fun y z => condSet.isScottContinuous_left y z)
     (fun x z => condSet.isScottContinuous_mid x z)

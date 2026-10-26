@@ -64,11 +64,16 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm_interp
 namespace DomainTheory.DataTypesAsLattices
 
 
+
+namespace dollarC
+
 /-- **Scott 1976, (2.24).** `$` is combinatory: `$ = Y(λs λu λz. z ⊃ u₀, s(λt. u_{t+1})(z−1))`. -/
-theorem dollarC_combinatory : IsCombinatory dollarC := by
+theorem combinatory : IsCombinatory dollarC := by
   have hY : funOf Ycomb (interp dollarStepTerm (fun _ => botElem)) = dollarC := by
     rw [dollarStepTerm_interp, theorem_2_5 termDollarStep.isScottContinuous,
-      dollarC_eq_fix_termDollarStep]
+      dollarC.eq_fix_termDollarStep]
   exact hY ▸ IsCombinatory.app Ycomb_combinatory (theorem_2_4.closed dollarStepTerm)
+
+end dollarC
 
 end DomainTheory.DataTypesAsLattices

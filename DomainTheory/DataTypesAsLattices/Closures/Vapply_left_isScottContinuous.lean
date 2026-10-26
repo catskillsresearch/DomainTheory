@@ -58,7 +58,7 @@ theorem Vapply_left_isScottContinuous (x : Pomega) :
     funext a; exact (eq_5_14 a x).symm
   rw [this]
   exact fix_param_isScottContinuous
-    (fun y => union_right_isScottContinuous x (funOf_isScottContinuous_left y))
+    (fun y => union_right_isScottContinuous x (funOf.isScottContinuous_left y))
     (fun a => Vstep_isScottContinuous a x)
 
 end DomainTheory.DataTypesAsLattices

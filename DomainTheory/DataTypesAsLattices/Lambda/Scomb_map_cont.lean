@@ -76,7 +76,7 @@ theorem Scomb_map_cont :
       (fun x => theorem_1_3
         (f := fun t => funOf t (funOf v x))
         (g := fun u => funOf u x)
-        (funOf_isScottContinuous_left (funOf v x))
-        (funOf_isScottContinuous_left x)))
+        (funOf.isScottContinuous_left (funOf v x))
+        (funOf.isScottContinuous_left x)))
 
 end DomainTheory.DataTypesAsLattices

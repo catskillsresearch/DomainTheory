@@ -148,7 +148,7 @@ theorem filterSeq_isScottContinuous :
         (g := fun v => funOf (funOf pairComb v) j)
         (funOf_isScottContinuous filterRealizer)
         (theorem_1_3 (f := fun w => funOf w j) (g := fun v => funOf pairComb v)
-          (funOf_isScottContinuous_left j)
+          (funOf.isScottContinuous_left j)
           (funOf_isScottContinuous pairComb)))
 
 end DomainTheory.DataTypesAsLattices

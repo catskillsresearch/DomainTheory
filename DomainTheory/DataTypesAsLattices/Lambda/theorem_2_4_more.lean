@@ -54,7 +54,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.erase_correct
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_6
 public import DomainTheory.DataTypesAsLattices.Lambda.predC_app
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb_combinatory
-
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -69,7 +68,7 @@ theorem theorem_2_4.complete (t : Term) (ρ : ℕ → Pomega) :
 theorem theorem_2_4.closed (t : Term) :
     IsCombinatory (interp t (fun _ => botElem)) := by
   rw [theorem_2_4.complete]
-  refine ofComb_combinatory _ _ fun _ => ?_
+  refine ofComb.combinatory _ _ fun _ => ?_
   have hbot : funOf predC zeroC = botElem := by
     rw [predC_app]; exact eq_2_6
   exact hbot ▸ IsCombinatory.app IsCombinatory.pred IsCombinatory.zero

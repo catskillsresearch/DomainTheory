@@ -76,7 +76,7 @@ theorem eq_4_32 {a b : Pomega} (ha : Retract a) :
   intro x
   simp only [comp_app, inleftC_app, retract_app ha]
   rw [plusR_app, plusR_app, pairSeq_app_zero, pairSeq_app_one,
-    dcondSet_ofNat_zero, retract_app ha]
-  rw [pairSeq_app_zero, pairSeq_app_one, dcondSet_ofNat_zero, retract_app ha]
+    dcondSet.ofNat_zero, retract_app ha]
+  rw [pairSeq_app_zero, pairSeq_app_one, dcondSet.ofNat_zero, retract_app ha]
 
 end DomainTheory.DataTypesAsLattices

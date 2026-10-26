@@ -41,7 +41,7 @@ def theorem_4_6.inverseLimit {F : Pomega → Pomega}
   left_inv u := by
     apply Subtype.ext
     change (⋃ n, funOf (iterateBot F n) u.1) = u.1
-    rw [← funOf_iUnion, ← fix, u.property]
+    rw [← funOf.iUnion, ← fix, u.property]
   right_inv v := by
     apply Subtype.ext
     funext n
@@ -58,13 +58,13 @@ def theorem_4_6.inverseLimit {F : Pomega → Pomega}
           u.1 = funOf (fix F) u.1 := u.property.symm
           _ = ⋃ n, funOf (iterateBot F n) u.1 := by
             change funOf (⋃ n, iterateBot F n) u.1 = _
-            rw [funOf_iUnion]
+            rw [funOf.iUnion]
       have hw : w.1 = ⋃ n, funOf (iterateBot F n) w.1 := by
         calc
           w.1 = funOf (fix F) w.1 := w.property.symm
           _ = ⋃ n, funOf (iterateBot F n) w.1 := by
             change funOf (⋃ n, iterateBot F n) w.1 = _
-            rw [funOf_iUnion]
+            rw [funOf.iUnion]
       rw [hu, hw]
       intro k hk
       obtain ⟨n, hkn⟩ := Set.mem_iUnion.mp hk

@@ -64,7 +64,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem funOf_isScottContinuous_left (y : Pomega) :
+
+namespace funOf
+
+theorem isScottContinuous_left (y : Pomega) :
     IsScottContinuous (fun u => funOf u y) := by
   constructor
   intro u
@@ -77,5 +80,7 @@ theorem funOf_isScottContinuous_left (y : Pomega) :
   · intro hm
     obtain ⟨k, hk, n, hn, hp⟩ := mem_scottUnion.mp hm
     exact ⟨n, hn, hk hp⟩
+
+end funOf
 
 end DomainTheory.DataTypesAsLattices

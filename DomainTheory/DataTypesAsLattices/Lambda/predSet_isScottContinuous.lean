@@ -62,7 +62,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem predSet_isScottContinuous : IsScottContinuous predSet := by
+
+namespace predSet
+
+theorem isScottContinuous : IsScottContinuous predSet := by
   constructor
   intro x
   ext k
@@ -74,5 +77,7 @@ theorem predSet_isScottContinuous : IsScottContinuous predSet := by
   · intro hk
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp hk
     exact hm hkm
+
+end predSet
 
 end DomainTheory.DataTypesAsLattices

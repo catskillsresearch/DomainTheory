@@ -65,6 +65,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem termShift_left_isScottContinuous : IsScottContinuous termShift :=
   graph_const_isScottContinuous (fun u t => funOf u (succSet t))
-    (fun t => funOf_isScottContinuous_left (succSet t))
+    (fun t => funOf.isScottContinuous_left (succSet t))
 
 end DomainTheory.DataTypesAsLattices

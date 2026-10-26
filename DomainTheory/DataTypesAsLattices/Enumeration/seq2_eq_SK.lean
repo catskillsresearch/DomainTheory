@@ -53,7 +53,7 @@ theorem seq2_eq_SK (x y : Pomega) :
     funext z
     rw [Kcomb_beta2, predC_app, predC_app]
     have : zeroC = ofNat 0 := rfl
-    rw [this, eq_2_6, condC_beta3]
+    rw [this, eq_2_6, condC.beta3]
   have hF :
       funOf (funOf Scomb (funOf Kcomb (funOf condC x)))
         (funOf (funOf Scomb
@@ -67,7 +67,7 @@ theorem seq2_eq_SK (x y : Pomega) :
     rw [Kcomb_beta2]
     apply congrArg (funOf (funOf condC x))
     exact beta (theorem_1_3 (condSet.isScottContinuous_left y botElem)
-      predSet_isScottContinuous) z
+      predSet.isScottContinuous) z
   rw [Scomb_beta2, hF, SKK_eq_I]
   apply congrArg graph
   funext z
@@ -78,7 +78,7 @@ theorem seq2_eq_SK (x y : Pomega) :
       funOf (funOf condC x) (condSet (predSet z) y botElem) :=
     beta (theorem_1_3 (funOf_isScottContinuous (funOf condC x))
       (theorem_1_3 (condSet.isScottContinuous_left y botElem)
-        predSet_isScottContinuous)) z
-  rw [hβ, condC_beta3]
+        predSet.isScottContinuous)) z
+  rw [hβ, condC.beta3]
 
 end DomainTheory.DataTypesAsLattices

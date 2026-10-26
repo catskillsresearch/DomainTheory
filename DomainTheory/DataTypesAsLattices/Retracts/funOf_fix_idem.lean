@@ -106,7 +106,7 @@ theorem funOf_fix_idem {F : Pomega → Pomega} (hf : IsScottContinuous F)
   · intro k hk
     have hk' : k ∈ funOf (⋃ n, iterateBot F n)
         (⋃ m, funOf (iterateBot F m) x) := by
-      simpa [fix, funOf_iUnion] using hk
+      simpa [fix, funOf.iUnion] using hk
     obtain ⟨n, hn, hp⟩ := hk'
     obtain ⟨i, hi⟩ := Set.mem_iUnion.mp hp
     have : k ∈ funOf (iterateBot F i) (⋃ m, funOf (iterateBot F m) x) :=
@@ -122,10 +122,10 @@ theorem funOf_fix_idem {F : Pomega → Pomega} (hf : IsScottContinuous F)
     have : k ∈ funOf (iterateBot F N) x := by
       have : k ∈ funOf (iterateBot F N) (funOf (iterateBot F N) x) := hij hj
       rwa [hidem N] at this
-    simpa [fix, funOf_iUnion] using Set.mem_iUnion.mpr ⟨N, this⟩
+    simpa [fix, funOf.iUnion] using Set.mem_iUnion.mpr ⟨N, this⟩
   · intro k hk
     have : k ∈ ⋃ n, funOf (iterateBot F n) x := by
-      simpa [fix, funOf_iUnion] using hk
+      simpa [fix, funOf.iUnion] using hk
     obtain ⟨n, hkn⟩ := Set.mem_iUnion.mp this
     have : k ∈ funOf (iterateBot F n) (funOf (iterateBot F n) x) := by
       rw [hidem n]
@@ -134,6 +134,6 @@ theorem funOf_fix_idem {F : Pomega → Pomega} (hf : IsScottContinuous F)
       funOf_monotone_right _ (Set.subset_iUnion (fun m => funOf (iterateBot F m) x) n) this
     have : k ∈ funOf (⋃ i, iterateBot F i) (⋃ m, funOf (iterateBot F m) x) :=
       funOf_monotone_left (Set.subset_iUnion (iterateBot F) n) _ this
-    simpa [fix, funOf_iUnion] using this
+    simpa [fix, funOf.iUnion] using this
 
 end DomainTheory.DataTypesAsLattices

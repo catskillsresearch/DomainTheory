@@ -86,7 +86,7 @@ theorem interStep_isScottContinuous :
   exact theorem_1_3
     (f := fun t => funOf t (predSet y))
     (g := fun f => funOf f (predSet x))
-    (funOf_isScottContinuous_left (predSet y))
-    (funOf_isScottContinuous_left (predSet x))
+    (funOf.isScottContinuous_left (predSet y))
+    (funOf.isScottContinuous_left (predSet x))
 
 end DomainTheory.DataTypesAsLattices

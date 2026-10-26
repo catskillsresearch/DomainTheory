@@ -56,7 +56,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem dcondSet_of_empty {z x y : Pomega}
+
+namespace dcondSet
+
+theorem of_empty {z x y : Pomega}
     (h0 : 0 ∉ z) (hp : ¬ ∃ k, k + 1 ∈ z) :
     dcondSet z x y = botElem := by
   ext n
@@ -67,5 +70,7 @@ theorem dcondSet_of_empty {z x y : Pomega}
     · exact (hp ht).elim
   · intro hn
     simp [botElem] at hn
+
+end dcondSet
 
 end DomainTheory.DataTypesAsLattices

@@ -103,9 +103,9 @@ theorem map_isScottContinuous (a b : Pomega) :
         (squarePair (funOf (boxShift a) (squareFst u)) botElem)
         (squarePair botElem (funOf (boxShift b) (squareSnd u)))) :=
   theorem_1_3.nary
-    (fun y z => dcondSet_isScottContinuous_left y z)
-    (fun x z => dcondSet_isScottContinuous_mid x z)
-    (fun x y => dcondSet_isScottContinuous_right x y)
+    (fun y z => dcondSet.isScottContinuous_left y z)
+    (fun x z => dcondSet.isScottContinuous_mid x z)
+    (fun x y => dcondSet.isScottContinuous_right x y)
     test_isScottContinuous
     (theorem_1_3 (f := fun x => squarePair x botElem)
       (g := fun u => funOf (boxShift a) (squareFst u))
@@ -126,7 +126,7 @@ theorem app (a b u : Pomega) :
 theorem app_empty {a b u : Pomega} (hx : squareFst u = botElem)
     (hy : squareSnd u = botElem) :
     funOf (boxPlus a b) u = botElem := by
-  rw [app, hx, hy, boxTag_bot, boxTag_bot, Set.union_self, dcondSet_bot]
+  rw [app, hx, hy, boxTag_bot, boxTag_bot, Set.union_self, dcondSet.bot]
 
 theorem app_left {a b u : Pomega} (hx : squareFst u ≠ botElem)
     (hy : squareSnd u = botElem) :
@@ -134,7 +134,7 @@ theorem app_left {a b u : Pomega} (hx : squareFst u ≠ botElem)
       squarePair (funOf (boxShift a) (squareFst u)) botElem := by
   obtain ⟨m, hm⟩ := exists_mem_of_ne_bot hx
   rw [app, boxTag_of_mem hm, hy, boxTag_bot, union_botElem,
-    dcondSet_ofNat_zero]
+    dcondSet.ofNat_zero]
 
 theorem app_right {a b u : Pomega} (hx : squareFst u = botElem)
     (hy : squareSnd u ≠ botElem) :
@@ -142,7 +142,7 @@ theorem app_right {a b u : Pomega} (hx : squareFst u = botElem)
       squarePair botElem (funOf (boxShift b) (squareSnd u)) := by
   obtain ⟨m, hm⟩ := exists_mem_of_ne_bot hy
   rw [app, boxTag_of_mem hm, hx, boxTag_bot, botElem_union,
-    dcondSet_ofNat_one]
+    dcondSet.ofNat_one]
 
 theorem app_mixed {a b u : Pomega} (hx : squareFst u ≠ botElem)
     (hy : squareSnd u ≠ botElem) :
@@ -150,7 +150,7 @@ theorem app_mixed {a b u : Pomega} (hx : squareFst u ≠ botElem)
   obtain ⟨m, hm⟩ := exists_mem_of_ne_bot hx
   obtain ⟨k, hk⟩ := exists_mem_of_ne_bot hy
   rw [app, boxTag_of_mem hm, boxTag_of_mem hk]
-  exact dcondSet_of_mixed (by simp [ofNat]) ⟨0, by simp [ofNat]⟩
+  exact dcondSet.of_mixed (by simp [ofNat]) ⟨0, by simp [ofNat]⟩
 
 theorem app_bot (a b : Pomega) :
     funOf (boxPlus a b) botElem = botElem :=

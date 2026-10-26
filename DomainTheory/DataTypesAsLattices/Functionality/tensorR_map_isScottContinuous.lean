@@ -69,7 +69,7 @@ theorem tensorR_map_isScottContinuous (a b : Pomega) :
   continuous_tuple
     (fun y => pairSeq_isScottContinuous_left y)
     (fun x => pairSeq_isScottContinuous_right x)
-    (theorem_1_3 (funOf_isScottContinuous a) (funOf_isScottContinuous_left (ofNat 0)))
-    (theorem_1_3 (funOf_isScottContinuous b) (funOf_isScottContinuous_left (ofNat 1)))
+    (theorem_1_3 (funOf_isScottContinuous a) (funOf.isScottContinuous_left (ofNat 0)))
+    (theorem_1_3 (funOf_isScottContinuous b) (funOf.isScottContinuous_left (ofNat 1)))
 
 end DomainTheory.DataTypesAsLattices

@@ -77,10 +77,10 @@ theorem plusR_right_isScottContinuous (a : Pomega) :
           dcondSet (funOf u (ofNat 0))
             (pairSeq (ofNat 0) (funOf a (funOf u (ofNat 1)))) y)
         (g := fun b => pairSeq (ofNat 1) (funOf b (funOf u (ofNat 1))))
-        (dcondSet_isScottContinuous_right
+        (dcondSet.isScottContinuous_right
           (funOf u (ofNat 0))
           (pairSeq (ofNat 0) (funOf a (funOf u (ofNat 1)))))
         (theorem_1_3 (pairSeq_isScottContinuous_right (ofNat 1))
-          (funOf_isScottContinuous_left (funOf u (ofNat 1)))))
+          (funOf.isScottContinuous_left (funOf u (ofNat 1)))))
 
 end DomainTheory.DataTypesAsLattices

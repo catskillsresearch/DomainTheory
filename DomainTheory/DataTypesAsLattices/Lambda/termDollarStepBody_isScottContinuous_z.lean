@@ -74,6 +74,6 @@ theorem termDollarStepBody_isScottContinuous_z (s u : Pomega) :
     (fun z => condSet.isScottContinuous_right z (funOf u (ofNat 0)))
     id_isScottContinuous
     (theorem_1_3 (funOf_isScottContinuous (funOf s (termShift u)))
-      predSet_isScottContinuous)
+      predSet.isScottContinuous)
 
 end DomainTheory.DataTypesAsLattices

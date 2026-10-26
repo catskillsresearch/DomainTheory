@@ -56,7 +56,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_beta
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb_beta2
 public import DomainTheory.DataTypesAsLattices.Lambda.SKK_eq_I
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb_update_isScottContinuous
-
 @[expose] public section
 
 
@@ -87,7 +86,7 @@ theorem abs_correct (i : ℕ) (c : Comb) (ρ : ℕ → Pomega) :
     rw [Scomb_beta2, iu, iv]
     congr 1
     funext x
-    rw [theorem_1_2.i (ofComb_update_isScottContinuous u ρ i)]
-    rw [theorem_1_2.i (ofComb_update_isScottContinuous v ρ i)]
+    rw [theorem_1_2.i (ofComb.update_isScottContinuous u ρ i)]
+    rw [theorem_1_2.i (ofComb.update_isScottContinuous v ρ i)]
 
 end DomainTheory.DataTypesAsLattices

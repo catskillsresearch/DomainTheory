@@ -72,6 +72,6 @@ theorem tensorR_right_isScottContinuous (a : Pomega) :
         (f := fun y => pairSeq (funOf a (funOf u (ofNat 0))) y)
         (g := fun b => funOf b (funOf u (ofNat 1)))
         (pairSeq_isScottContinuous_right (funOf a (funOf u (ofNat 0))))
-        (funOf_isScottContinuous_left (funOf u (ofNat 1))))
+        (funOf.isScottContinuous_left (funOf u (ofNat 1))))
 
 end DomainTheory.DataTypesAsLattices

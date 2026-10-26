@@ -43,16 +43,16 @@ theorem map_isScottContinuous (f : Pomega) :
     IsScottContinuous (fun u =>
       dcondSet u (ofNat 0) (dcondSet (funOf f (predSet u)) u u)) :=
   theorem_1_3.nary
-    (fun y z => dcondSet_isScottContinuous_left y z)
-    (fun x z => dcondSet_isScottContinuous_mid x z)
-    (fun x y => dcondSet_isScottContinuous_right x y)
+    (fun y z => dcondSet.isScottContinuous_left y z)
+    (fun x z => dcondSet.isScottContinuous_mid x z)
+    (fun x y => dcondSet.isScottContinuous_right x y)
     id_isScottContinuous
     (const_isScottContinuous (ofNat 0))
     (theorem_1_3.nary
-      (fun y z => dcondSet_isScottContinuous_left y z)
-      (fun x z => dcondSet_isScottContinuous_mid x z)
-      (fun x y => dcondSet_isScottContinuous_right x y)
-      (theorem_1_3 (funOf_isScottContinuous f) predSet_isScottContinuous)
+      (fun y z => dcondSet.isScottContinuous_left y z)
+      (fun x z => dcondSet.isScottContinuous_mid x z)
+      (fun x y => dcondSet.isScottContinuous_right x y)
+      (theorem_1_3 (funOf_isScottContinuous f) predSet.isScottContinuous)
       id_isScottContinuous
       id_isScottContinuous)
 
@@ -63,12 +63,12 @@ theorem isScottContinuous : IsScottContinuous intF :=
       theorem_1_3
         (f := fun z => dcondSet u (ofNat 0) z)
         (g := fun f => dcondSet (funOf f (predSet u)) u u)
-        (dcondSet_isScottContinuous_right u (ofNat 0))
+        (dcondSet.isScottContinuous_right u (ofNat 0))
         (theorem_1_3
           (f := fun z => dcondSet z u u)
           (g := fun f => funOf f (predSet u))
-          (dcondSet_isScottContinuous_left u u)
-          (funOf_isScottContinuous_left (predSet u))))
+          (dcondSet.isScottContinuous_left u u)
+          (funOf.isScottContinuous_left (predSet u))))
 
 theorem app (f u : Pomega) :
     funOf (intF f) u =

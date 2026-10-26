@@ -56,7 +56,7 @@ theorem iterate (n : ℕ) (u z : Pomega) :
     funOf (funOf (iterateBot termDollarStep n) u) z = seqFunLt u z n := by
   induction n generalizing u z with
   | zero =>
-    simp [iterateBot, funOf_bot, seqFunLt_zero]
+    simp [iterateBot, funOf.bot, seqFunLt_zero]
   | succ n ih =>
     rw [iterateBot, app2, termDollarStepBody, ih, seqFunLt_succ_term]
 
@@ -64,7 +64,7 @@ theorem fix_app (u z : Pomega) :
     funOf (funOf (fix termDollarStep) u) z = seqFun u z := by
   have : funOf (funOf (fix termDollarStep) u) z =
       ⋃ n, funOf (funOf (iterateBot termDollarStep n) u) z := by
-    simp [fix, funOf_iUnion]
+    simp [fix, funOf.iUnion]
   rw [this, seqFun_eq_iUnion_lt]
   ext k
   constructor

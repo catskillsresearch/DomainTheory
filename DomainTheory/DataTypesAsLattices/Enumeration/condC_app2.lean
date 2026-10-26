@@ -128,6 +128,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem condC_app2 (x y : Pomega) :
     funOf (funOf condC x) y = graph (fun z => condSet z x y) :=
-  condC_beta2 x y
+  condC.beta2 x y
 
 end DomainTheory.DataTypesAsLattices

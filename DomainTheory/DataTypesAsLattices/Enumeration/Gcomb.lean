@@ -39,7 +39,7 @@ def Gcomb : Pomega :=
 namespace Gcomb
 
 theorem eq_condC : Gcomb = funOf (funOf condC Gpack) zeroC :=
-  (condC_beta2 Gpack zeroC).symm
+  (condC.beta2 Gpack zeroC).symm
 
 theorem app (z : Pomega) :
     funOf Gcomb z = condSet z Gpack zeroC :=

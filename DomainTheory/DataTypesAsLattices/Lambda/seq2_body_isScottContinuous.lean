@@ -75,7 +75,7 @@ theorem seq2_body_isScottContinuous (x y : Pomega) :
     (fun _z =>
       theorem_1_3 (condSet.isScottContinuous_right _z x)
         (theorem_1_3 (condSet.isScottContinuous_left y botElem)
-          predSet_isScottContinuous))
+          predSet.isScottContinuous))
   ext k
   constructor
   · intro hk

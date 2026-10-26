@@ -56,8 +56,13 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem dcondSet_top (x y : Pomega) : dcondSet topElem x y = topElem := by
+
+namespace dcondSet
+
+theorem top (x y : Pomega) : dcondSet topElem x y = topElem := by
   ext n
   simp [dcondSet, condSet, topElem]
+
+end dcondSet
 
 end DomainTheory.DataTypesAsLattices

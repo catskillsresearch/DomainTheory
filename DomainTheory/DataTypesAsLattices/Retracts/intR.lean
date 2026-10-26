@@ -32,7 +32,7 @@ theorem app (u : Pomega) :
   simpa [intF.app] using h.symm
 
 theorem bot : funOf intR botElem = botElem := by
-  rw [app, dcondSet_bot]
+  rw [app, dcondSet.bot]
 
 end intR
 

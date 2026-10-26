@@ -73,11 +73,11 @@ theorem termDollarStepBody_isScottContinuous_u (s z : Pomega) :
       (fun u => funOf (funOf s (termShift u)) (predSet z)) :=
     theorem_1_3 (f := fun w => funOf w (predSet z))
       (g := fun u => funOf s (termShift u))
-      (funOf_isScottContinuous_left (predSet z))
+      (funOf.isScottContinuous_left (predSet z))
       (theorem_1_3 (funOf_isScottContinuous s) termShift_left_isScottContinuous)
   exact theorem_1_3.tuple
     (fun y => condSet.isScottContinuous_mid z y)
     (fun x => condSet.isScottContinuous_right z x)
-    (funOf_isScottContinuous_left (ofNat 0)) helse
+    (funOf.isScottContinuous_left (ofNat 0)) helse
 
 end DomainTheory.DataTypesAsLattices

@@ -53,6 +53,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem typed_bot_bot : typed botElem botElem := by
   change botElem = funOf botElem botElem
-  rw [funOf_bot]
+  rw [funOf.bot]
 
 end DomainTheory.DataTypesAsLattices

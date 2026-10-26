@@ -27,7 +27,7 @@ open Nat.Partrec.Code
 theorem filterEnv_combinatory : ∀ i, IsCombinatory (filterEnv i)
   | 3 => filterRealizer_combinatory
   | 4 => pairComb_combinatory
-  | 5 => dollarC_combinatory
+  | 5 => dollarC.combinatory
   | 6 => .pred
   | 7 => topElem_combinatory
   | 0 | 1 | 2 => botElem_combinatory

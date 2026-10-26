@@ -79,7 +79,7 @@ theorem Hinterp_isScottContinuous (τ : LambTerm) :
     IsScottContinuous (Hinterp τ) := by
   induction τ with
   | var n =>
-    exact funOf_isScottContinuous_left (ofNat n)
+    exact funOf.isScottContinuous_left (ofNat n)
   | zero =>
     exact const_isScottContinuous _
   | succ τ ih =>
@@ -99,7 +99,7 @@ theorem Hinterp_isScottContinuous (τ : LambTerm) :
       (fun x y => condSet.isScottContinuous_right x y)
       (theorem_1_3 (funOf_isScottContinuous whichC) ih)
       (theorem_1_3 (funOf_isScottContinuous inleftC)
-        (theorem_1_3 predSet_isScottContinuous
+        (theorem_1_3 predSet.isScottContinuous
           (theorem_1_3 (funOf_isScottContinuous outC) ih)))
       (const_isScottContinuous botElem)
   | condq θ τ σ ρ ihθ ihτ ihσ ihρ =>
@@ -128,7 +128,7 @@ theorem Hinterp_isScottContinuous (τ : LambTerm) :
       (theorem_1_3 (funOf_isScottContinuous whichC) ihτ)
       (const_isScottContinuous botElem)
       (continuous_tuple
-        (fun y => funOf_isScottContinuous_left y)
+        (fun y => funOf.isScottContinuous_left y)
         (fun u => funOf_isScottContinuous u)
         (theorem_1_3 (funOf_isScottContinuous outC) ihτ) ihσ)
   | lam n τ ih =>
@@ -143,6 +143,6 @@ theorem Hinterp_isScottContinuous (τ : LambTerm) :
             (fun m => by
               by_cases h : m = ofNat n
               · simpa [h] using const_isScottContinuous (c := x)
-              · simpa [h] using funOf_isScottContinuous_left m))))
+              · simpa [h] using funOf.isScottContinuous_left m))))
 
 end DomainTheory.DataTypesAsLattices

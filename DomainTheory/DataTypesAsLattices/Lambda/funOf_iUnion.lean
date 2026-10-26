@@ -57,7 +57,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem funOf_iUnion (xs : ℕ → Pomega) (x : Pomega) :
+
+namespace funOf
+
+theorem iUnion (xs : ℕ → Pomega) (x : Pomega) :
     funOf (⋃ n, xs n) x = ⋃ n, funOf (xs n) x := by
   ext m
   constructor
@@ -67,5 +70,7 @@ theorem funOf_iUnion (xs : ℕ → Pomega) (x : Pomega) :
   · intro hm
     obtain ⟨k, ⟨n, hn, hmem⟩⟩ := Set.mem_iUnion.mp hm
     exact ⟨n, hn, Set.mem_iUnion.mpr ⟨k, hmem⟩⟩
+
+end funOf
 
 end DomainTheory.DataTypesAsLattices

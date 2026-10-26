@@ -61,9 +61,14 @@ public import DomainTheory.DataTypesAsLattices.Lambda.condC_beta2
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem condC_beta3 (x y z : Pomega) :
+
+namespace condC
+
+theorem beta3 (x y z : Pomega) :
     funOf (funOf (funOf condC x) y) z = condSet z x y := by
-  rw [condC_beta2]
-  exact beta (condSet.isScottContinuous_left x y) z
+  rw [condC.beta2]
+  exact _root_.DomainTheory.DataTypesAsLattices.beta (condSet.isScottContinuous_left x y) z
+
+end condC
 
 end DomainTheory.DataTypesAsLattices

@@ -70,9 +70,9 @@ theorem tensor4_diag_isScottContinuous :
         (funOf z (funOf u (ofNat 3))))
     (fun u =>
       seq4_comp_isScottContinuous
-        (funOf_isScottContinuous_left (funOf u (ofNat 0)))
-        (funOf_isScottContinuous_left (funOf u (ofNat 1)))
-        (funOf_isScottContinuous_left (funOf u (ofNat 2)))
-        (funOf_isScottContinuous_left (funOf u (ofNat 3))))
+        (funOf.isScottContinuous_left (funOf u (ofNat 0)))
+        (funOf.isScottContinuous_left (funOf u (ofNat 1)))
+        (funOf.isScottContinuous_left (funOf u (ofNat 2)))
+        (funOf.isScottContinuous_left (funOf u (ofNat 3))))
 
 end DomainTheory.DataTypesAsLattices

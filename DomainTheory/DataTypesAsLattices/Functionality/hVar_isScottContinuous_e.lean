@@ -62,6 +62,6 @@ namespace DomainTheory.DataTypesAsLattices
 theorem hVar_isScottContinuous_e (t : Pomega) :
     IsScottContinuous (fun e => hVar e t) :=
   theorem_1_3 (f := funOf t) (g := expPayload)
-    (funOf_isScottContinuous t) (funOf_isScottContinuous_left (ofNat 1))
+    (funOf_isScottContinuous t) (funOf.isScottContinuous_left (ofNat 1))
 
 end DomainTheory.DataTypesAsLattices

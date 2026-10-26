@@ -57,8 +57,13 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem funOf_bot (x : Pomega) : funOf botElem x = botElem := by
+
+namespace funOf
+
+theorem bot (x : Pomega) : funOf botElem x = botElem := by
   ext m
   simp [funOf, botElem]
+
+end funOf
 
 end DomainTheory.DataTypesAsLattices

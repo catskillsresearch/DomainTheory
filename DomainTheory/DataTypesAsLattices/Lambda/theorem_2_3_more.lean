@@ -57,7 +57,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.curry2_app
 public import DomainTheory.DataTypesAsLattices.Lambda.curry3_app
-
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -67,7 +66,7 @@ theorem theorem_2_3.binary {f : Pomega → Pomega → Pomega}
     (hfx : ∀ y, IsScottContinuous (fun x => f x y))
     (hfy : ∀ x, IsScottContinuous (fun y => f x y)) :
     ∃ u, ∀ x y, funOf (funOf u x) y = f x y :=
-  ⟨curry2 f hfx hfy, curry2_app f hfx hfy⟩
+  ⟨curry2 f hfx hfy, curry2.app f hfx hfy⟩
 
 /-- **Scott 1976, Theorem 2.3, ternary case** (the usual reduction of `k`). -/
 theorem theorem_2_3.ternary {f : Pomega → Pomega → Pomega → Pomega}
@@ -75,6 +74,6 @@ theorem theorem_2_3.ternary {f : Pomega → Pomega → Pomega → Pomega}
     (hf1 : ∀ x z, IsScottContinuous (fun y => f x y z))
     (hf2 : ∀ x y, IsScottContinuous (fun z => f x y z)) :
     ∃ u, ∀ x y z, funOf (funOf (funOf u x) y) z = f x y z :=
-  ⟨curry3 f hf0 hf1 hf2, curry3_app f hf0 hf1 hf2⟩
+  ⟨curry3 f hf0 hf1 hf2, curry3.app f hf0 hf1 hf2⟩
 
 end DomainTheory.DataTypesAsLattices

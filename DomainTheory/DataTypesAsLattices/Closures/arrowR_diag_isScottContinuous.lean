@@ -66,11 +66,11 @@ theorem arrowR_diag_isScottContinuous :
         (fun x =>
           theorem_1_3.tuple
             (f := fun a b => funOf a (funOf u (funOf b x)))
-            (fun b => funOf_isScottContinuous_left (funOf u (funOf b x)))
+            (fun b => funOf.isScottContinuous_left (funOf u (funOf b x)))
             (fun a =>
               theorem_1_3 (funOf_isScottContinuous a)
                 (theorem_1_3 (funOf_isScottContinuous u)
-                  (funOf_isScottContinuous_left x)))
+                  (funOf.isScottContinuous_left x)))
             id_isScottContinuous id_isScottContinuous)
   have heq : (fun a => arrowR a a) = (fun a =>
       graph (fun u => graph (fun x => funOf a (funOf u (funOf a x))))) := by

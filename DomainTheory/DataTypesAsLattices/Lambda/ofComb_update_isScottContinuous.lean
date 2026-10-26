@@ -66,7 +66,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem ofComb_update_isScottContinuous (c : Comb) (ρ : ℕ → Pomega) (i : ℕ) :
+
+namespace ofComb
+
+theorem update_isScottContinuous (c : Comb) (ρ : ℕ → Pomega) (i : ℕ) :
     IsScottContinuous (fun v => ofComb c (envSet ρ i v)) := by
   induction c generalizing ρ i with
   | var j =>
@@ -83,8 +86,10 @@ theorem ofComb_update_isScottContinuous (c : Comb) (ρ : ℕ → Pomega) (i : �
   | S => constructor; intro x; simpa [ofComb] using (const_isScottContinuous Scomb).out x
   | app u v iu iv =>
     exact theorem_1_3.tuple
-      (fun y => funOf_isScottContinuous_left y)
+      (fun y => funOf.isScottContinuous_left y)
       (fun t => funOf_isScottContinuous t)
       (iu ρ i) (iv ρ i)
+
+end ofComb
 
 end DomainTheory.DataTypesAsLattices

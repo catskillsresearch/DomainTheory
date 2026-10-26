@@ -64,23 +64,23 @@ theorem body_isScottContinuous (v : Pomega) :
     (fun y z => condSet.isScottContinuous_left y z)
     (fun x z => condSet.isScottContinuous_mid x z)
     (fun x y => condSet.isScottContinuous_right x y)
-    (funOf_isScottContinuous_left (ofNat 0))
+    (funOf.isScottContinuous_left (ofNat 0))
     (const_isScottContinuous Gcomb)
     (continuous_tuple
-      (fun y => funOf_isScottContinuous_left y)
+      (fun y => funOf.isScottContinuous_left y)
       (fun u => funOf_isScottContinuous u)
       (theorem_1_3 (funOf_isScottContinuous v)
         (theorem_1_3
           (f := fun u => funOf u (ofNat 0))
           (g := fun x => funOf x (ofNat 1))
-          (funOf_isScottContinuous_left (ofNat 0))
-          (funOf_isScottContinuous_left (ofNat 1))))
+          (funOf.isScottContinuous_left (ofNat 0))
+          (funOf.isScottContinuous_left (ofNat 1))))
       (theorem_1_3 (funOf_isScottContinuous v)
         (theorem_1_3
           (f := fun u => funOf u (ofNat 1))
           (g := fun x => funOf x (ofNat 1))
-          (funOf_isScottContinuous_left (ofNat 1))
-          (funOf_isScottContinuous_left (ofNat 1)))))
+          (funOf.isScottContinuous_left (ofNat 1))
+          (funOf.isScottContinuous_left (ofNat 1)))))
 
 theorem app (v x : Pomega) :
     funOf (vaalF v) x =
@@ -99,11 +99,11 @@ theorem isScottContinuous : IsScottContinuous vaalF :=
       theorem_1_3
         (condSet.isScottContinuous_right (funOf x (ofNat 0)) Gcomb)
         (continuous_tuple
-          (fun y => funOf_isScottContinuous_left y)
+          (fun y => funOf.isScottContinuous_left y)
           (fun u => funOf_isScottContinuous u)
-          (funOf_isScottContinuous_left
+          (funOf.isScottContinuous_left
             (funOf (funOf x (ofNat 1)) (ofNat 0)))
-          (funOf_isScottContinuous_left
+          (funOf.isScottContinuous_left
             (funOf (funOf x (ofNat 1)) (ofNat 1)))))
 
 end vaalF

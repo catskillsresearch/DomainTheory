@@ -34,7 +34,7 @@ theorem inverseLimit_iUnion_typed {F : Pomega → Pomega}
     (v : RetractInverseLimit F) :
     typed (⋃ n, v.1 n) (fix F) := by
   change (⋃ n, v.1 n) = funOf (fix F) (⋃ n, v.1 n)
-  rw [fix, funOf_iUnion]
+  rw [fix, funOf.iUnion]
   apply Eq.symm
   congr 1
   funext n

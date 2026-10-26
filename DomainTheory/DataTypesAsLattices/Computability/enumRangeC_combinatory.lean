@@ -75,6 +75,6 @@ attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
 
 theorem enumRangeC_combinatory {r : Pomega} (hr : IsCombinatory r) :
     IsCombinatory (enumRangeC r) :=
-  .app (.app dollarC_combinatory hr) topElem_combinatory
+  .app (.app dollarC.combinatory hr) topElem_combinatory
 
 end DomainTheory.DataTypesAsLattices

@@ -52,7 +52,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_isScottContinuous
-
 @[expose] public section
 
 
@@ -60,6 +59,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem predC_app (x : Pomega) : funOf predC x = predSet x :=
-  beta predSet_isScottContinuous x
+  beta predSet.isScottContinuous x
 
 end DomainTheory.DataTypesAsLattices

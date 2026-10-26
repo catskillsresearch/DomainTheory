@@ -116,13 +116,13 @@ theorem theorem_4_6.limit {F : Pomega → Pomega}
         (x : Pomega) = funOf (fix F) (x : Pomega) := x.property.symm
         _ = ⋃ n, funOf (iterateBot F n) (x : Pomega) := by
           change funOf (⋃ n, iterateBot F n) (x : Pomega) = _
-          rw [funOf_iUnion]
+          rw [funOf.iUnion]
     have hy : (y : Pomega) = ⋃ n, funOf (iterateBot F n) (y : Pomega) := by
       calc
         (y : Pomega) = funOf (fix F) (y : Pomega) := y.property.symm
         _ = ⋃ n, funOf (iterateBot F n) (y : Pomega) := by
           change funOf (⋃ n, iterateBot F n) (y : Pomega) = _
-          rw [funOf_iUnion]
+          rw [funOf.iUnion]
     change ∀ n, funOf (iterateBot F n) (x : Pomega) ⊆
       funOf (iterateBot F n) (y : Pomega) at h
     rw [hx, hy]

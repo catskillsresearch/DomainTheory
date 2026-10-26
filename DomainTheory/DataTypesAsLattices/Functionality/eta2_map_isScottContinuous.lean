@@ -67,7 +67,7 @@ theorem eta2_map_isScottContinuous (f : Pomega) :
       theorem_1_3
         (f := fun t => funOf t y)
         (g := funOf f)
-        (funOf_isScottContinuous_left y)
+        (funOf.isScottContinuous_left y)
         (funOf_isScottContinuous f))
 
 end DomainTheory.DataTypesAsLattices

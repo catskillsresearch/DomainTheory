@@ -74,11 +74,11 @@ theorem arrowR_diag_isScottContinuous :
       (fun z x => funOf z (funOf u (funOf z x)))
       (fun x =>
         continuous_tuple
-          (fun y => funOf_isScottContinuous_left (funOf u (funOf y x)))
+          (fun y => funOf.isScottContinuous_left (funOf u (funOf y x)))
           (fun z =>
             theorem_1_3 (funOf_isScottContinuous z)
               (theorem_1_3 (funOf_isScottContinuous u)
-                (funOf_isScottContinuous_left x)))
+                (funOf.isScottContinuous_left x)))
           id_isScottContinuous
           id_isScottContinuous)
   convert h using 1

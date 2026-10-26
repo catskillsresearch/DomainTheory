@@ -306,7 +306,7 @@ theorem theorem_7_4.unique (z : Pomega)
     have hleft :
         IsScottContinuous (fun g => funOf (funOf z g) x) :=
       theorem_1_3 (f := fun u => funOf u x) (g := funOf z)
-        (funOf_isScottContinuous_left x)
+        (funOf.isScottContinuous_left x)
         (funOf_isScottContinuous z)
     have hright : IsScottContinuous (fun g => Z n g x) :=
       Z.isScottContinuous_left n x

@@ -59,7 +59,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
-
 @[expose] public section
 
 
@@ -71,7 +70,7 @@ theorem diagApp_isScottContinuous : IsScottContinuous (fun x => funOf x x) := by
   intro x
   have h := theorem_1_3.diag (x := x)
     (f := fun u y => funOf u y)
-    (fun y => funOf_isScottContinuous_left y)
+    (fun y => funOf.isScottContinuous_left y)
     (fun u => funOf_isScottContinuous u)
   ext k
   constructor

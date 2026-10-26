@@ -69,7 +69,7 @@ theorem erase_correct (t : Term) (ρ : ℕ → Pomega) :
   | succ t ih => simp [erase, ofComb, interp, sucC_app, ih]
   | pred t ih => simp [erase, ofComb, interp, predC_app, ih]
   | cond z x y iz ix iy =>
-    simp [erase, ofComb, interp, condC_beta3, iz, ix, iy]
+    simp [erase, ofComb, interp, condC.beta3, iz, ix, iy]
   | app u x iu ix => simp [erase, ofComb, interp, iu, ix]
   | lam i body ih =>
     simp only [erase, interp]

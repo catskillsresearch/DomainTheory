@@ -71,7 +71,7 @@ theorem hApp_isScottContinuous_H (e t : Pomega) :
       (hApply_isScottContinuous_H _ t))
     (const_isScottContinuous botElem)
     (continuous_tuple
-      (fun y => funOf_isScottContinuous_left y)
+      (fun y => funOf.isScottContinuous_left y)
       (fun u => funOf_isScottContinuous u)
       (theorem_1_3 (funOf_isScottContinuous outC)
         (hApply_isScottContinuous_H _ t))

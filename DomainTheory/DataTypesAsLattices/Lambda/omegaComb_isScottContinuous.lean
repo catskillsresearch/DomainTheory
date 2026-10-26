@@ -66,6 +66,6 @@ namespace DomainTheory.DataTypesAsLattices
 theorem omegaComb_isScottContinuous : IsScottContinuous omegaComb :=
   graph_const_isScottContinuous
     (fun u x => funOf u (funOf x x))
-    (fun x => funOf_isScottContinuous_left (funOf x x))
+    (fun x => funOf.isScottContinuous_left (funOf x x))
 
 end DomainTheory.DataTypesAsLattices

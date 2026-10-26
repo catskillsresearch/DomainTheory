@@ -82,7 +82,7 @@ theorem eq_2_28_commute {g : Pomega → Pomega → Pomega}
     fix (Fofg g) = Ymap g := by
   have hF : IsScottContinuous (Fofg g) :=
     graph_const_isScottContinuous (fun f x => g x (funOf f x))
-      (fun x => theorem_1_3 (hgy x) (funOf_isScottContinuous_left x))
+      (fun x => theorem_1_3 (hgy x) (funOf.isScottContinuous_left x))
   have hfix : Fofg g (Ymap g) = Ymap g := by
     apply congrArg graph
     funext x

@@ -60,9 +60,9 @@ namespace DomainTheory.DataTypesAsLattices
 theorem evalC_isScottContinuous :
     IsScottContinuous (fun u => funOf (funOf u (ofNat 0)) (funOf u (ofNat 1))) :=
   continuous_tuple
-    (fun y => funOf_isScottContinuous_left y)
+    (fun y => funOf.isScottContinuous_left y)
     (fun t => funOf_isScottContinuous t)
-    (funOf_isScottContinuous_left (ofNat 0))
-    (funOf_isScottContinuous_left (ofNat 1))
+    (funOf.isScottContinuous_left (ofNat 0))
+    (funOf.isScottContinuous_left (ofNat 1))
 
 end DomainTheory.DataTypesAsLattices

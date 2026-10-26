@@ -59,7 +59,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
-
 @[expose] public section
 
 
@@ -69,7 +68,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem Scomb_inner_cont (u v : Pomega) :
     IsScottContinuous (fun x => funOf (funOf u x) (funOf v x)) :=
   theorem_1_3.tuple
-    (fun y => funOf_isScottContinuous_left y)
+    (fun y => funOf.isScottContinuous_left y)
     (fun t => funOf_isScottContinuous t)
     (funOf_isScottContinuous u)
     (funOf_isScottContinuous v)

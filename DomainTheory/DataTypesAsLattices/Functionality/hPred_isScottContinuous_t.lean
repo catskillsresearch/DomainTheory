@@ -76,7 +76,7 @@ theorem hPred_isScottContinuous_t (H e : Pomega) :
       (funOf_isScottContinuous inleftC)
       (theorem_1_3 (f := predSet)
         (g := fun t => funOf outC (hApply H (expPayload e) t))
-        predSet_isScottContinuous
+        predSet.isScottContinuous
         (theorem_1_3 (f := funOf outC) (g := fun t => hApply H (expPayload e) t)
           (funOf_isScottContinuous outC)
           (funOf_isScottContinuous (funOf H (expPayload e))))))

@@ -64,11 +64,16 @@ public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem condC_map_cont :
+
+namespace condC
+
+theorem map_cont :
     IsScottContinuous (fun x => graph (fun y => graph (fun z => condSet z x y))) :=
   graph_const_isScottContinuous
     (fun x y => graph (fun z => condSet z x y))
     (fun y => graph_const_isScottContinuous (fun x z => condSet z x y)
       (fun z => condSet.isScottContinuous_mid z y))
+
+end condC
 
 end DomainTheory.DataTypesAsLattices

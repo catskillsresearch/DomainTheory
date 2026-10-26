@@ -62,19 +62,24 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqFun_eq_iUnion_lt
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem dollarStep_fix_app (u z : Pomega) :
+
+namespace dollarStep
+
+theorem fix_app (u z : Pomega) :
     funOf (funOf (fix dollarStep) u) z = seqFun u z := by
   have : funOf (funOf (fix dollarStep) u) z =
       ⋃ n, funOf (funOf (iterateBot dollarStep n) u) z := by
-    simp [fix, funOf_iUnion]
+    simp [fix, funOf.iUnion]
   rw [this, seqFun_eq_iUnion_lt]
   ext k
   constructor
   · intro hk
     obtain ⟨n, hn⟩ := Set.mem_iUnion.mp hk
-    exact Set.mem_iUnion.mpr ⟨n, by simpa [dollarStep_iterate] using hn⟩
+    exact Set.mem_iUnion.mpr ⟨n, by simpa [dollarStep.iterate] using hn⟩
   · intro hk
     obtain ⟨n, hn⟩ := Set.mem_iUnion.mp hk
-    exact Set.mem_iUnion.mpr ⟨n, by simpa [dollarStep_iterate] using hn⟩
+    exact Set.mem_iUnion.mpr ⟨n, by simpa [dollarStep.iterate] using hn⟩
+
+end dollarStep
 
 end DomainTheory.DataTypesAsLattices
