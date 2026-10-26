@@ -55,7 +55,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem eq_4_19 {a : Pomega} (ha : Retract a) :
     typed (comp diagC a) (arrowR a (tensorR a a)) := by
   change comp diagC a = funOf (arrowR a (tensorR a a)) (comp diagC a)
-  rw [arrowR_app]
+  rw [arrowR.app]
   apply graph_ext
   intro u
   simp only [comp_app, diagC_app, retract_app ha]

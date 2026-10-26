@@ -130,6 +130,6 @@ open Nat.Partrec.Code
 
 theorem vaalC_typed :
     typed vaalTyped (arrowR treeR Icomb) :=
-  typed_apply_retract (arrowR_isRetract treeR_isRetract Icomb_isRetract)
+  typed_apply_retract (arrowR.isRetract treeR_isRetract Icomb.isRetract)
 
 end DomainTheory.DataTypesAsLattices

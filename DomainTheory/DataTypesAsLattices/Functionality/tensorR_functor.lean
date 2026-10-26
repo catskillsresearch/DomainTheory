@@ -57,11 +57,11 @@ theorem tensorR_functor {a b a' b' f f' : Pomega}
     typed (tensorR f f') (arrowR (tensorR a a') (tensorR b b')) := by
   change tensorR f f' =
     funOf (arrowR (tensorR a a') (tensorR b b')) (tensorR f f')
-  rw [arrowR_app]
+  rw [arrowR.app]
   have h := eq_4_12 b b' f f'
   have h' := eq_4_12 f f' a a'
-  have hf1 := typed_of_arrowR hf
-  have hf2 := typed_of_arrowR hf'
+  have hf1 := arrowR.typed_of hf
+  have hf2 := arrowR.typed_of hf'
   apply Eq.symm
   calc
     comp (tensorR b b') (comp (tensorR f f') (tensorR a a'))

@@ -47,19 +47,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_refl
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_trans
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom_mono
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_fixed
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_le_of_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_mem
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_subset
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_postfixed
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_fixed_inter
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_isGLB
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -79,7 +68,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_ear
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_app
 
 @[expose] public section
 
@@ -94,8 +82,8 @@ theorem eq_4_11_comp (a b a' b' : Pomega) :
   intro u
   calc
     funOf (arrowR a b) (funOf (arrowR a' b') u)
-        = comp b (comp (funOf (arrowR a' b') u) a) := arrowR_app _ _ _
-    _ = comp b (comp (comp b' (comp u a')) a) := by rw [arrowR_app]
+        = comp b (comp (funOf (arrowR a' b') u) a) := arrowR.app _ _ _
+    _ = comp b (comp (comp b' (comp u a')) a) := by rw [arrowR.app]
     _ = comp (comp b b') (comp u (comp a' a)) := by
       apply graph_ext
       intro x

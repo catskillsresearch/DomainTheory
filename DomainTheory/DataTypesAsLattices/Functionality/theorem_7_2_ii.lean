@@ -61,11 +61,11 @@ theorem theorem_7_2_ii {a b : Pomega} (ha : Retract a) (hb : Retract b)
   · intro hfg
     rcases hfg with ⟨hfgraph, hggraph, hpres⟩
     have hftyped : typed (funOf (arrowR a b) f) (arrowR a b) :=
-      (retract_app (arrowR_isRetract ha hb) f).symm
+      (retract_app (arrowR.isRetract ha hb) f).symm
     have hgtyped : typed (funOf (arrowR a b) g) (arrowR a b) :=
-      (retract_app (arrowR_isRetract ha hb) g).symm
+      (retract_app (arrowR.isRetract ha hb) g).symm
     refine ⟨hftyped, hgtyped, ?_⟩
-    rw [arrowR_app, arrowR_app]
+    rw [arrowR.app, arrowR.app]
     apply graph_ext
     intro x
     simp only [comp_app]

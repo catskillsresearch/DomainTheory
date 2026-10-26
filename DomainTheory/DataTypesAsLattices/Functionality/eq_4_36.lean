@@ -53,10 +53,10 @@ theorem eq_4_36 (a b : Pomega) :
     typed (comp whichC (plusR a b)) (arrowR (plusR a b) boolR) := by
   change comp whichC (plusR a b) =
     funOf (arrowR (plusR a b) boolR) (comp whichC (plusR a b))
-  rw [arrowR_app]
+  rw [arrowR.app]
   apply graph_ext
   intro u
   simp only [comp_app, whichC, fstC_app]
-  rw [plusR_fst, boolR_app, plusR_fst, plusR_fst, dcondSet_bool_idem, dcondSet_bool_idem]
+  rw [plusR_fst, boolR.app, plusR_fst, plusR_fst, dcondSet_bool_idem, dcondSet_bool_idem]
 
 end DomainTheory.DataTypesAsLattices

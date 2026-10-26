@@ -48,6 +48,6 @@ theorem theorem_5_3 {a b : Pomega} (ha : Closure a) (hb : Closure b) :
   change arrowR a b = graph (fun x => funOf (arrowR a b) (funOf (arrowR a b) x))
   apply graph_ext
   intro u
-  rw [theorem_4_3_i ha.out.2 hb.out.2, arrowR_app]
+  rw [theorem_4_3_i ha.out.2 hb.out.2, arrowR.app]
 
 end DomainTheory.DataTypesAsLattices

@@ -47,19 +47,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_refl
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_trans
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom_mono
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_fixed
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_le_of_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_mem
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_subset
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_postfixed
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_fixed_inter
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_isGLB
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -78,12 +67,10 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_lat
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_earlier
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_isRetract
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_isStrict
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_iff
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_functor
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_comp
+
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
 @[expose] public section
 
@@ -105,8 +92,8 @@ theorem theorem_4_3 {a b a' b' c : Pomega}
         typed (arrowR f f') (arrowR (arrowR b a') (arrowR a b'))) ∧
       (∀ f f', typed f (arrowR a b) → typed f' (arrowR b c) →
         typed (comp f' f) (arrowR a c)) :=
-  ⟨arrowR_isRetract ha hb, arrowR_isStrict, fun _ => typed_arrowR_iff ha hb,
-    arrowR_retractLe, fun _ _ => arrowR_functor,
+  ⟨arrowR.isRetract ha hb, arrowR.isStrict, fun _ => typed_arrowR_iff ha hb,
+    arrowR.mono, fun _ _ => arrowR.functor,
     fun _ _ hf hf' => typed_comp ha hb hc hf hf'⟩
 
 end DomainTheory.DataTypesAsLattices

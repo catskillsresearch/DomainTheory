@@ -59,20 +59,20 @@ theorem eq_4_24 {b c : Pomega} (hb : Retract b) (hc : Retract c) :
   change comp evalC (tensorR (arrowR b c) b) =
     funOf (arrowR (tensorR (arrowR b c) b) c)
       (comp evalC (tensorR (arrowR b c) b))
-  rw [arrowR_app]
+  rw [arrowR.app]
   apply graph_ext
   intro u
   have hL :
       funOf evalC (funOf (tensorR (arrowR b c) b) u) =
         funOf c (funOf (funOf u (ofNat 0)) (funOf b (funOf u (ofNat 1)))) := by
-    rw [evalC_app, tensorR_app, pairSeq_app_zero, pairSeq_app_one, arrowR_app]
+    rw [evalC_app, tensorR_app, pairSeq_app_zero, pairSeq_app_one, arrowR.app]
     simp only [comp_app]
     rw [retract_app hb]
   have hR :
       funOf c (funOf evalC (funOf (tensorR (arrowR b c) b)
         (funOf (tensorR (arrowR b c) b) u))) =
         funOf c (funOf (funOf u (ofNat 0)) (funOf b (funOf u (ofNat 1)))) := by
-    have hten := retract_app (tensorR_isRetract (arrowR_isRetract hb hc) hb) u
+    have hten := retract_app (tensorR_isRetract (arrowR.isRetract hb hc) hb) u
     rw [hten, hL, retract_app hc]
   simp only [comp_app]
   exact hL.trans hR.symm

@@ -44,6 +44,6 @@ theorem compactFixedBelow_directedSubset {a : Pomega} (ha : Closure a)
     (x : Fixpoints (funOf a)) :
     DirectedSubset (compactFixedBelow a x) := by
   rw [← retractBasis_eq_compactFixedBelow ha x]
-  exact retractBasis_directedSubset ha.out.2 x
+  exact retractBasis.directedSubset ha.out.2 x
 
 end DomainTheory.DataTypesAsLattices

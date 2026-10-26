@@ -60,6 +60,6 @@ theorem theorem_7_3_I_unique (i : Pomega)
   have ha : (singletonE a).mem (funOf i a) :=
     (theorem_7_1 (singletonE a) (singletonE a)).2.1 (hi (singletonE a))
       ((singletonE_mem a a).mpr rfl)
-  simpa [Icomb_app, singletonE_mem] using ha
+  simpa [Icomb.app, singletonE_mem] using ha
 
 end DomainTheory.DataTypesAsLattices

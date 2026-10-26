@@ -53,7 +53,7 @@ theorem eq_4_37 {a : Pomega} (ha : Retract a) :
     typed (comp a (comp outC (plusR a a))) (arrowR (plusR a a) a) := by
   change comp a (comp outC (plusR a a)) =
     funOf (arrowR (plusR a a) a) (comp a (comp outC (plusR a a)))
-  rw [arrowR_app]
+  rw [arrowR.app]
   apply graph_ext
   intro u
   simp only [comp_app]

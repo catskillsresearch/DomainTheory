@@ -37,7 +37,7 @@ theorem expansive {a : Pomega} (ha : Closure a) (x : Pomega) :
     refine Or.inr ⟨k, ?_, rfl⟩
     have hx : predSet x ⊆ funOf a (predSet x) := by
       have := funOf_monotone_left ha.out.1 (predSet x)
-      rwa [Icomb_app] at this
+      rwa [Icomb.app] at this
     exact hx hk
 
 theorem isRetract {a : Pomega} (ha : Retract a) :

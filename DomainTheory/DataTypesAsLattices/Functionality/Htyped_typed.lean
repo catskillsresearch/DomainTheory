@@ -53,6 +53,6 @@ namespace DomainTheory.DataTypesAsLattices
 theorem Htyped_typed (τ : LambTerm) :
     typed (Htyped τ) (arrowR envR lambR) :=
   typed_apply_retract
-    (arrowR_isRetract envR_isRetract lambR_isRetract)
+    (arrowR.isRetract envR_isRetract lambR_isRetract)
 
 end DomainTheory.DataTypesAsLattices

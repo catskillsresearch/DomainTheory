@@ -44,6 +44,6 @@ theorem compactFixedBelow_sUnion {a : Pomega} (ha : Closure a)
     (x : Fixpoints (funOf a)) :
     (x : Pomega) = ⋃₀ (Subtype.val '' compactFixedBelow a x) := by
   rw [← retractBasis_eq_compactFixedBelow ha x]
-  exact retractBasis_sUnion ha.out.2 x
+  exact retractBasis.eq_sUnion ha.out.2 x
 
 end DomainTheory.DataTypesAsLattices

@@ -47,19 +47,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_refl
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_trans
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom_mono
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_fixed
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_le_of_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_mem
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_subset
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_postfixed
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_fixed_inter
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_isGLB
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -78,7 +67,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_lat
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_earlier
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_app
 
 @[expose] public section
 
@@ -92,7 +80,7 @@ theorem theorem_4_3_ii {a b u x : Pomega}
     (hu : typed u (arrowR a b)) (hx : typed x a) :
     typed (funOf u x) b := by
   have hu' : u = comp b (comp u a) := by
-    simpa [typed, arrowR_app] using hu
+    simpa [typed, arrowR.app] using hu
   have : funOf u x = funOf b (funOf u (funOf a x)) := by
     have h1 : funOf u x = funOf (comp b (comp u a)) x :=
       congrArg (fun w => funOf w x) hu'

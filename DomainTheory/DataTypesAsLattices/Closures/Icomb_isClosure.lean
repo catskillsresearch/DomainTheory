@@ -42,6 +42,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem Icomb_isClosure : Closure Icomb :=
-  ⟨⟨subset_rfl, Icomb_isRetract⟩⟩
+  ⟨⟨subset_rfl, Icomb.isRetract⟩⟩
 
 end DomainTheory.DataTypesAsLattices

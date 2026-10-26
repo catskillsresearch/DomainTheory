@@ -55,7 +55,7 @@ theorem eq_4_18 {a b : Pomega} (ha : Retract a) (hb : Retract b) :
     typed (comp sndC (tensorR a b)) (arrowR (tensorR a b) b) := by
   change comp sndC (tensorR a b) =
     funOf (arrowR (tensorR a b) b) (comp sndC (tensorR a b))
-  rw [arrowR_app]
+  rw [arrowR.app]
   apply graph_ext
   intro u
   have hab := tensorR_isRetract ha hb

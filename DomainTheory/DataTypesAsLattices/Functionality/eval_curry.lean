@@ -60,7 +60,7 @@ theorem eval_curry {a b c f : Pomega}
     (_ha : Retract a) (hb : Retract b) (_hc : Retract c)
     (hf : typed f (arrowR (tensorR a b) c)) :
     comp evalC (tensorR (funOf curryC f) b) = f := by
-  have hf' := typed_of_arrowR hf
+  have hf' := arrowR.typed_of hf
   apply graph_funOf_ext (comp_isGraph _ _) (typed_isGraph hf)
   intro u
   simp only [comp_app]

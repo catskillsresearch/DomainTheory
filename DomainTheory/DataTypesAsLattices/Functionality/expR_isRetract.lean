@@ -54,8 +54,8 @@ namespace DomainTheory.DataTypesAsLattices
 /-- **Scott 1976, Theorem 4.6 applied to (4.44).** -/
 theorem expR_isRetract : Retract expR :=
   (theorem_4_6 expF_isScottContinuous (fun _a ha =>
-    plus7_isRetract intR_isRetract bot_isRetract ha ha
+    plus7_isRetract intR.isRetract bot_isRetract ha ha
       (tensor4_isRetract ha ha ha ha) (tensorR_isRetract ha ha)
-      (tensorR_isRetract intR_isRetract ha))).2
+      (tensorR_isRetract intR.isRetract ha))).2
 
 end DomainTheory.DataTypesAsLattices

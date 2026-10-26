@@ -12,7 +12,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem closureCompact_isCompact {a : Pomega} (ha : Closure a) (n : ℕ) :
     IsCompact (closureCompact a ha n) := by
-  apply retractBasis_wayBelow ha.out.2
+  apply retractBasis.wayBelow ha.out.2
   exact ⟨n, closure_expansive ha (e n), rfl⟩
 
 end DomainTheory.DataTypesAsLattices

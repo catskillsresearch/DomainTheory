@@ -65,7 +65,7 @@ theorem theorem_4_4_med_unique {a b c f g h : Pomega}
   apply graph_funOf_ext (typed_isGraph hh)
     (typed_isGraph (theorem_4_4_med ha hb hc hf hg).1)
   intro x
-  have hh' := typed_of_arrowR hh
+  have hh' := arrowR.typed_of hh
   have hx : funOf h x =
       funOf (tensorR a b) (funOf h (funOf c x)) := by
     have := congrArg (fun w => funOf w x) hh'
@@ -82,14 +82,14 @@ theorem theorem_4_4_med_unique {a b c f g h : Pomega}
       have := congrArg (fun w => funOf w (funOf c x)) hfst
       simpa [comp_app, fstC_app] using this
     rw [h0c]
-    have := congrArg (fun w => funOf w x) (typed_of_arrowR hf)
+    have := congrArg (fun w => funOf w x) (arrowR.typed_of hf)
     simpa [comp_app] using this.symm
   have hgx : funOf b (funOf (funOf h (funOf c x)) (ofNat 1)) = funOf g x := by
     have h1c : funOf (funOf h (funOf c x)) (ofNat 1) = funOf g (funOf c x) := by
       have := congrArg (fun w => funOf w (funOf c x)) hsnd
       simpa [comp_app, sndC_app] using this
     rw [h1c]
-    have := congrArg (fun w => funOf w x) (typed_of_arrowR hg)
+    have := congrArg (fun w => funOf w x) (arrowR.typed_of hg)
     simpa [comp_app] using this.symm
   rw [hfx, hgx]
   simp only [pairMed, comp_app, diagC_app, tensorR_app, pairSeq_app_zero,

@@ -48,19 +48,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_refl
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_trans
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom_mono
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_fixed
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_le_of_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_mem
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_subset
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_postfixed
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_fixed_inter
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_isGLB
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -79,8 +68,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_lat
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_earlier
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
-public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_sUnion
-public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_directedSubset
 
 @[expose] public section
 
@@ -102,12 +89,12 @@ theorem theorem_4_1 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
               (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) := by
   constructor
   · intro A hA
-    exact ⟨theorem_4_1_complete f hf A hA, lfpAbove_mem hf hA⟩
+    exact ⟨theorem_4_1_complete f hf A hA, lfpAbove.mem hf hA⟩
   · intro a ha
     constructor
     · ext x
       simp [Fixpoints, typed, eq_comm]
     · intro x
-      exact ⟨retractBasis_directedSubset ha x, retractBasis_sUnion ha x⟩
+      exact ⟨retractBasis.directedSubset ha x, retractBasis.eq_sUnion ha x⟩
 
 end DomainTheory.DataTypesAsLattices

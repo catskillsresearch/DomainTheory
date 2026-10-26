@@ -51,9 +51,9 @@ theorem Icomb_subset_boxTensor {a b : Pomega} (ha : Closure a) (hb : Closure b) 
       squarePair (funOf a (squareFst (e n))) (funOf b (squareSnd (e n))) := by
     refine squarePair_mono ?_ ?_
     · have := funOf_monotone_left ha.out.1 (squareFst (e n))
-      rwa [Icomb_app] at this
+      rwa [Icomb.app] at this
     · have := funOf_monotone_left hb.out.1 (squareSnd (e n))
-      rwa [Icomb_app] at this
+      rwa [Icomb.app] at this
   refine ⟨n, m, rfl, ?_⟩
   exact hsub (by simpa [eq_5_8] using hm)
 

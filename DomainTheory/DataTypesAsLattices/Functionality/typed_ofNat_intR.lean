@@ -49,6 +49,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem typed_ofNat_intR (n : ℕ) : typed (ofNat n) intR :=
-  (intR_ofNat n).symm
+  (intR.app_ofNat n).symm
 
 end DomainTheory.DataTypesAsLattices

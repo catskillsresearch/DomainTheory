@@ -54,7 +54,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem Hcomb_typed :
     typed Hcomb (arrowR expR (arrowR envR lambR)) :=
   typed_apply_retract
-    (arrowR_isRetract expR_isRetract
-      (arrowR_isRetract envR_isRetract lambR_isRetract))
+    (arrowR.isRetract expR_isRetract
+      (arrowR.isRetract envR_isRetract lambR_isRetract))
 
 end DomainTheory.DataTypesAsLattices

@@ -4,8 +4,6 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices
 public import DomainTheory.DataTypesAsLattices.Lambda
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_subset
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_fixed_inter
 
 @[expose] public section
 
@@ -17,8 +15,8 @@ theorem theorem_4_1_complete (f : Pomega → Pomega) (hf : IsScottContinuous f)
     (A : Set Pomega) (hA : A ⊆ Fixpoints f) :
     gfpBelow f (⋂₀ A) ∈ Fixpoints f := by
   let z := gfpBelow f (⋂₀ A)
-  have hinter : f z ∩ ⋂₀ A = z := gfpBelow_fixed_inter hf (⋂₀ A)
-  have hzle : z ⊆ ⋂₀ A := gfpBelow_subset f (⋂₀ A)
+  have hinter : f z ∩ ⋂₀ A = z := gfpBelow.fixed_inter hf (⋂₀ A)
+  have hzle : z ⊆ ⋂₀ A := gfpBelow.subset f (⋂₀ A)
   have hfz : f z ⊆ ⋂₀ A := by
     intro k hk y hy
     have hzy : z ⊆ y := subset_trans hzle (Set.sInter_subset_of_mem hy)

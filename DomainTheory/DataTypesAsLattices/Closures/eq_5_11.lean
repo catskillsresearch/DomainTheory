@@ -45,10 +45,10 @@ theorem eq_5_11 {a b u x : Pomega} (ha : Closure a) (hb : Closure b) :
     funOf u x ⊆ funOf b (funOf u (funOf a x)) := by
   have hx : x ⊆ funOf a x := by
     have := funOf_monotone_left ha.out.1 x
-    rwa [Icomb_app] at this
+    rwa [Icomb.app] at this
   have hy : funOf u (funOf a x) ⊆ funOf b (funOf u (funOf a x)) := by
     have := funOf_monotone_left hb.out.1 (funOf u (funOf a x))
-    rwa [Icomb_app] at this
+    rwa [Icomb.app] at this
   exact subset_trans (funOf_monotone_right u hx) hy
 
 end DomainTheory.DataTypesAsLattices

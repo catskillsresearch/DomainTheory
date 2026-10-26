@@ -46,7 +46,7 @@ theorem eq_5_18 {a : Pomega} (ha : Closure a) (x : Pomega) :
   intro k hk
   have hx : x ⊆ funOf a x := by
     have := funOf_monotone_left ha.out.1 x
-    rwa [Icomb_app] at this
+    rwa [Icomb.app] at this
   have haa : funOf a (funOf a x) ⊆ funOf a x := by
     simp [retract_app ha.out.2]
   exact hk (funOf a x) ⟨hx, haa⟩

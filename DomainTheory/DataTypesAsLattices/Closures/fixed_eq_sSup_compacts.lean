@@ -15,6 +15,6 @@ theorem fixed_eq_sSup_compacts {a : Pomega} (ha : Closure a)
     DirectedSet (compactFixedBelow a x) ∧
       x = sSup (compactFixedBelow a x) := by
   rw [← retractBasis_eq_compactFixedBelow ha x]
-  exact ⟨retractBasis_directed ha.out.2 x, retractBasis_sSup ha.out.2 x⟩
+  exact ⟨retractBasis.directed ha.out.2 x, retractBasis.eq_sSup ha.out.2 x⟩
 
 end DomainTheory.DataTypesAsLattices

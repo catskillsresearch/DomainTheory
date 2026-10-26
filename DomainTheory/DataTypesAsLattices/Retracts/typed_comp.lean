@@ -47,19 +47,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_refl
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_trans
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom_mono
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_fixed
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_le_of_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_mem
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_subset
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_postfixed
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_fixed_inter
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_isGLB
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -79,8 +68,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_ear
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_app
-public import DomainTheory.DataTypesAsLattices.Retracts.typed_of_arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_restrict
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_range
 
@@ -94,10 +81,10 @@ theorem typed_comp {a b c f f' : Pomega}
     (ha : Retract a) (hb : Retract b) (_hc : Retract c)
     (hf : typed f (arrowR a b)) (hf' : typed f' (arrowR b c)) :
     typed (comp f' f) (arrowR a c) := by
-  have hf1 := typed_of_arrowR hf
-  have hf2 := typed_of_arrowR hf'
+  have hf1 := arrowR.typed_of hf
+  have hf2 := arrowR.typed_of hf'
   change comp f' f = funOf (arrowR a c) (comp f' f)
-  rw [arrowR_app]
+  rw [arrowR.app]
   apply graph_ext
   intro x
   have hfx : funOf f x = funOf b (funOf f (funOf a x)) := by

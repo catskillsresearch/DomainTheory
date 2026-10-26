@@ -42,6 +42,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 
 theorem intR_isClosure : Closure intR :=
-  ⟨⟨Icomb_subset_intR, intR_isRetract⟩⟩
+  ⟨⟨Icomb_subset_intR, intR.isRetract⟩⟩
 
 end DomainTheory.DataTypesAsLattices

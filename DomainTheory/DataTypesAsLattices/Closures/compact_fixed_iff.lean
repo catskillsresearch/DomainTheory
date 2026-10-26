@@ -15,9 +15,9 @@ theorem compact_fixed_iff {a : Pomega} (ha : Closure a)
     IsCompact x ↔ ∃ n, x = closureCompact a ha n := by
   constructor
   · intro hx
-    have hdir := retractBasis_directed ha.out.2 x
+    have hdir := retractBasis.directed ha.out.2 x
     obtain ⟨y, hy, hxy⟩ :=
-      hx (retractBasis a x) hdir (le_of_eq (retractBasis_sSup ha.out.2 x))
+      hx (retractBasis a x) hdir (le_of_eq (retractBasis.eq_sSup ha.out.2 x))
     obtain ⟨n, hnx, hyn⟩ := hy
     have hyc : y = closureCompact a ha n := by
       apply Subtype.ext

@@ -62,12 +62,12 @@ theorem theorem_4_4_med {a b c f g : Pomega}
     typed (pairMed f g c) (arrowR c (tensorR a b)) ∧
       comp fstC (pairMed f g c) = f ∧
       comp sndC (pairMed f g c) = g := by
-  have hf' := typed_of_arrowR hf
-  have hg' := typed_of_arrowR hg
+  have hf' := arrowR.typed_of hf
+  have hg' := arrowR.typed_of hg
   refine ⟨?_, ?_, ?_⟩
   · change pairMed f g c =
         funOf (arrowR c (tensorR a b)) (pairMed f g c)
-    rw [arrowR_app, pairMed]
+    rw [arrowR.app, pairMed]
     apply graph_ext
     intro x
     have hfxc : funOf f (funOf c x) =

@@ -4,8 +4,6 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices
 public import DomainTheory.DataTypesAsLattices.Lambda
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_refl
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_trans
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 public import DomainTheory.DataTypesAsLattices.Retracts.iterates_areRetracts
@@ -25,8 +23,8 @@ theorem iterateBot_retractLe {F : Pomega → Pomega}
     retractLe (iterateBot F n) (iterateBot F m) := by
   induction m, hnm using Nat.le_induction with
   | base =>
-      exact retractLe_refl (iterates_areRetracts hret n)
+      exact retractLe.refl (iterates_areRetracts hret n)
   | succ m _ ih =>
-      exact retractLe_trans ih (iterateBot_retractLe_succ hret hstrict hmono m)
+      exact retractLe.trans ih (iterateBot_retractLe_succ hret hstrict hmono m)
 
 end DomainTheory.DataTypesAsLattices

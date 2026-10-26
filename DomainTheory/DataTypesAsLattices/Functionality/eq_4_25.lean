@@ -63,8 +63,8 @@ theorem eq_4_25 {a b c : Pomega}
   change comp curryC (arrowR (tensorR a b) c) =
     funOf (arrowR (arrowR (tensorR a b) c) (arrowR a (arrowR b c)))
       (comp curryC (arrowR (tensorR a b) c))
-  rw [arrowR_app]
-  have harr := arrowR_isRetract (tensorR_isRetract ha hb) hc
+  rw [arrowR.app]
+  have harr := arrowR.isRetract (tensorR_isRetract ha hb) hc
   apply graph_ext
   intro u
   simp only [comp_app]
@@ -78,7 +78,7 @@ theorem eq_4_25 {a b c : Pomega}
     intro x
     apply graph_ext
     intro y
-    rw [arrowR_app]
+    rw [arrowR.app]
     simp only [comp_app]
     rw [tensorR_app, pairSeq_app_zero, pairSeq_app_one]
   have hR :
@@ -86,7 +86,7 @@ theorem eq_4_25 {a b c : Pomega}
         (funOf curryC (funOf (arrowR (tensorR a b) c) u)) =
         graph (fun x => graph (fun y =>
           funOf c (funOf u (pairSeq (funOf a x) (funOf b y))))) := by
-    rw [arrowR_app, hL]
+    rw [arrowR.app, hL]
     apply graph_ext
     intro x
     simp only [comp_app]
@@ -103,7 +103,7 @@ theorem eq_4_25 {a b c : Pomega}
               (g := fun x => funOf a x)
               (pairSeq_isScottContinuous_left (funOf b y))
               (funOf_isScottContinuous a))))) (funOf a x)
-    rw [hmid, retract_app ha, arrowR_app]
+    rw [hmid, retract_app ha, arrowR.app]
     apply graph_ext
     intro y
     simp only [comp_app]

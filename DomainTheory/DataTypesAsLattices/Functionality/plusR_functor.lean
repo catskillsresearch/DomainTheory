@@ -57,9 +57,9 @@ theorem plusR_functor {a b a' b' f f' : Pomega}
     typed (plusR f f') (arrowR (plusR a a') (plusR b b')) := by
   change plusR f f' =
     funOf (arrowR (plusR a a') (plusR b b')) (plusR f f')
-  rw [arrowR_app]
-  have hf1 := typed_of_arrowR hf
-  have hf2 := typed_of_arrowR hf'
+  rw [arrowR.app]
+  have hf1 := arrowR.typed_of hf
+  have hf2 := arrowR.typed_of hf'
   apply Eq.symm
   calc
     comp (plusR b b') (comp (plusR f f') (plusR a a'))

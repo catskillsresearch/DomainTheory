@@ -50,6 +50,6 @@ namespace DomainTheory.DataTypesAsLattices
 theorem Icomb_isGraph : Icomb = graph (fun x => funOf Icomb x) := by
   apply graph_ext
   intro x
-  rw [Icomb_app]
+  rw [Icomb.app]
 
 end DomainTheory.DataTypesAsLattices

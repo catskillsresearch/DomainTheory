@@ -49,7 +49,7 @@ theorem theorem_5_6 {f : Pomega} (hf : typed f (arrowR Vcomb Vcomb)) :
   have hy : y = funOf f y := Ycomb_unfold f
   have hf' : ∀ x, funOf f x = funOf Vcomb (funOf f (funOf Vcomb x)) := by
     intro x
-    simpa [comp_app] using congrArg (fun w => funOf w x) (typed_of_arrowR hf)
+    simpa [comp_app] using congrArg (fun w => funOf w x) (arrowR.typed_of hf)
   have hyV : y = funOf Vcomb (funOf f (funOf Vcomb y)) :=
     hy.trans (hf' y)
   have h1 : funOf Vcomb y = funOf Vcomb (funOf f y) :=

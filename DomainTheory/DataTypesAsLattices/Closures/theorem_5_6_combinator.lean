@@ -48,7 +48,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem theorem_5_6_combinator :
     typed (comp Ycomb (arrowR Vcomb Vcomb))
       (arrowR (arrowR Vcomb Vcomb) Vcomb) := by
-  rw [typed, arrowR_app]
+  rw [typed, arrowR.app]
   apply graph_ext
   intro f
   have hV : Closure Vcomb := theorem_5_5_universe.1

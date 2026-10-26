@@ -51,7 +51,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem theorem_7_2_ii_of_typed {a b f : Pomega} (hf : typed f (arrowR a b)) :
     (arrowE (Ea a) (Ea b)).mem f := by
   have hf' : f = comp b (comp f a) := by
-    simpa [typed, arrowR_app] using hf
+    simpa [typed, arrowR.app] using hf
   have hgraph : f = graph (fun x => funOf f x) := by
     apply Eq.trans hf'
     apply graph_ext

@@ -8,8 +8,6 @@
 
 **[DataTypesAsLattices/Retracts/arrowR_isRetract.lean](arrowR_isRetract.lean)**
 
-@import "arrowR_isRetract.lean"
-
 **[DataTypesAsLattices/Retracts/theorem_4_3_ii.lean](theorem_4_3_ii.lean)**
 
 @import "theorem_4_3_ii.lean"

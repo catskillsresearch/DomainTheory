@@ -56,7 +56,7 @@ theorem eq_4_33 {a b : Pomega} (hb : Retract b) :
     typed (comp (plusR a b) (comp inrightC b)) (arrowR b (plusR a b)) := by
   change comp (plusR a b) (comp inrightC b) =
     funOf (arrowR b (plusR a b)) (comp (plusR a b) (comp inrightC b))
-  rw [arrowR_app]
+  rw [arrowR.app]
   apply graph_ext
   intro x
   simp only [comp_app, inrightC_app, retract_app hb]

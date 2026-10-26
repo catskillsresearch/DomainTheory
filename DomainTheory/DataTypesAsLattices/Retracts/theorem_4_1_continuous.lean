@@ -48,19 +48,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
 public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_refl
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe_trans
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom_mono
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_fixed
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_le_of_ub
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove_mem
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_subset
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_postfixed
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_fixed_inter
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_complete
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_isGLB
 public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -80,8 +69,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_ear
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
 public import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
-public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_sUnion
-public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_directedSubset
 
 @[expose] public section
 
@@ -103,7 +90,7 @@ theorem theorem_4_1_continuous {a : Pomega} (ha : Retract a) :
               (x : Pomega) ⊆ ⋃₀ (Subtype.val '' s) →
               ∃ z ∈ s, (y : Pomega) ⊆ z := by
   intro x
-  refine ⟨retractBasis_directedSubset ha x, retractBasis_sUnion ha x, ?_⟩
+  refine ⟨retractBasis.directedSubset ha x, retractBasis.eq_sUnion ha x, ?_⟩
   intro y hy s hs hxs
   obtain ⟨n, hnx, hyn⟩ := hy
   have hen : e n ⊆ ⋃₀ (Subtype.val '' s) := hnx.trans hxs
