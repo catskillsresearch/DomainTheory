@@ -1,7 +1,6 @@
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
@@ -14,6 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
 public import DomainTheory.DataTypesAsLattices.FixedPoint.chain_lemma
 public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
+public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 @[expose] public section
 

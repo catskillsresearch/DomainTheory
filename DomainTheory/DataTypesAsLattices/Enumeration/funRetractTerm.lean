@@ -2,19 +2,12 @@ module
 
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.Term
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Graph.lam
-public import DomainTheory.DataTypesAsLattices.Functionality.sumMed
-public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
-public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Retracts.intF
-public import DomainTheory.DataTypesAsLattices.Retracts.intR
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
-public import DomainTheory.DataTypesAsLattices.Enumeration.BasicInst85
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Lambda.envSet
+public import DomainTheory.DataTypesAsLattices.Lambda.interp
+public import DomainTheory.DataTypesAsLattices.Retracts.funRetract
+public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 
 @[expose] public section
 
@@ -31,5 +24,18 @@ open Nat.Partrec.Code
 /-- Closed term for Scott's function-space retract `λu λx. u(x)`. -/
 def funRetractTerm : Term :=
   .lam 0 (.lam 1 (.app (.var 0) (.var 1)))
+
+namespace funRetractTerm
+
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
+theorem interp :
+    interp funRetractTerm (fun _ => botElem) = funRetract := by
+  unfold funRetractTerm funRetract
+  simp[_root_.DomainTheory.DataTypesAsLattices.interp, envSet, Function.update]
+
+end funRetractTerm
 
 end DomainTheory.DataTypesAsLattices

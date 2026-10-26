@@ -12,11 +12,10 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
+public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 @[expose] public section
 

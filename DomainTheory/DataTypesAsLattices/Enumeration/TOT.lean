@@ -5,9 +5,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarC
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.e
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
-public import DomainTheory.DataTypesAsLattices.Enumeration.BasicInst85
 
 @[expose] public section
 

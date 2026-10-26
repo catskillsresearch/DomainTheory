@@ -5,6 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.ScottContinuousFin
 public import DomainTheory.DataTypesAsLattices.Lambda.curryFin
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
+public import DomainTheory.DataTypesAsLattices.Graph.graph
 
 @[expose] public section
 

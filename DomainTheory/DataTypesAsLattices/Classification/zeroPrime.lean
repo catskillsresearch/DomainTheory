@@ -9,7 +9,6 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import Mathlib.Data.Set.Finite.Powerset
-public import DomainTheory.DataTypesAsLattices.Classification.IsBooleanOpen
 
 @[expose] public section
 

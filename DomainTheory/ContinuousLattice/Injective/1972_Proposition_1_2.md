@@ -6,7 +6,3 @@
 
 @import "isInjectiveSpace_sierpinski.lean"
 
-**[DomainTheory/ContinuousLattice/Injective/proposition_1_2.lean](proposition_1_2.lean)**
-
-@import "proposition_1_2.lean"
-

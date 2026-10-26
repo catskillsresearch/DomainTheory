@@ -3,14 +3,18 @@ module
 public import DomainTheory.DataTypesAsLattices.Enumeration.seqCons_right_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_left_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_right_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_22
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_succ
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_zero
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app_zero
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app_one
-
+public import DomainTheory.DataTypesAsLattices.Lambda.seq2
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Lambda.seqCons
+public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepBody
+public import DomainTheory.DataTypesAsLattices.Lambda.predSet
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
 set_option maxHeartbeats 2000000
@@ -45,14 +49,14 @@ theorem one (u x : Pomega) :
   rw [barPos, _root_.DomainTheory.DataTypesAsLattices.eq_2_22]
   have hpred : predSet (ofNat 1) = ofNat 0 := by
     ext k; simp [predSet, ofNat]
-  rw [hpred, eq_2_7_succ, seq2_app_zero]
+  rw [hpred, eq_2_7_succ, seq2.zero]
 
 theorem two (u x : Pomega) :
     funOf (barPos u x) (ofNat 2) = funOf x (ofNat 1) := by
   rw [barPos, _root_.DomainTheory.DataTypesAsLattices.eq_2_22]
   have hpred : predSet (ofNat 2) = ofNat 1 := by
     ext k; simp [predSet, ofNat]
-  rw [hpred, eq_2_7_succ, seq2_app_one]
+  rw [hpred, eq_2_7_succ, seq2.one]
 
 end barPos
 

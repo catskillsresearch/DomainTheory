@@ -6,7 +6,3 @@
 
 @import "theorem_1_5.lean"
 
-**[DataTypesAsLattices/Embedding/theorem_1_5.extension.lean](theorem_1_5.extension.lean)**
-
-@import "theorem_1_5.extension.lean"
-

@@ -2,30 +2,24 @@ module
 
 public import Mathlib.Order.CompleteLattice.Defs
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_mid
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_right
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_left
+public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Graph.beta
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
+public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 
 @[expose] public section
 
@@ -52,7 +46,7 @@ theorem map_isScottContinuous (f : Pomega) :
       (fun y z => dcondSet.isScottContinuous_left y z)
       (fun x z => dcondSet.isScottContinuous_mid x z)
       (fun x y => dcondSet.isScottContinuous_right x y)
-      (theorem_1_3 (funOf_isScottContinuous f) predSet.isScottContinuous)
+      (theorem_1_3 (funOf.isScottContinuous f) predSet.isScottContinuous)
       id_isScottContinuous
       id_isScottContinuous)
 

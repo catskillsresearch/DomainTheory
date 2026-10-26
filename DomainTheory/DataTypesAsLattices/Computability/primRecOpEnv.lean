@@ -6,6 +6,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarC
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Computability.primRecComb
+public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
+public import DomainTheory.DataTypesAsLattices.Computability.botElem_combinatory
 @[expose] public section
 
 set_option maxHeartbeats 2000000
@@ -24,5 +28,21 @@ def primRecOpEnv : ℕ → Pomega
   | 3 => Ycomb
   | 4 => interp primRecStepTerm (fun _ => botElem)
   | _ => botElem
+
+namespace primRecOpEnv
+
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
+
+theorem combinatory : ∀ i, IsCombinatory (primRecOpEnv i)
+  | 2 => dollarC.combinatory
+  | 3 => Ycomb.combinatory
+  | 4 => theorem_2_4.closed primRecStepTerm
+  | 0 | 1 => botElem_combinatory
+  | _ + 5 => botElem_combinatory
+
+end primRecOpEnv
 
 end DomainTheory.DataTypesAsLattices

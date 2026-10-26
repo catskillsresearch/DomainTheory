@@ -1,15 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
-public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Retracts.intF
-public import DomainTheory.DataTypesAsLattices.Retracts.intR
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
@@ -19,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.e
-public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 

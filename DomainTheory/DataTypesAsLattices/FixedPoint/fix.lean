@@ -1,7 +1,7 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 

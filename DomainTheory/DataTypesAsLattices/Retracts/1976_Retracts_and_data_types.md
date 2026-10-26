@@ -14,59 +14,10 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 
 @import "../FixedLattices/DirectedSet.lean"
 
-**[DataTypesAsLattices/FixedLattices/completeLatticeLE.lean](../FixedLattices/completeLatticeLE.lean)**
-
-@import "../FixedLattices/completeLatticeLE.lean"
-
-**[DataTypesAsLattices/FixedLattices/completeLatticePreorder.lean](../FixedLattices/completeLatticePreorder.lean)**
-
-@import "../FixedLattices/completeLatticePreorder.lean"
-
-**[DataTypesAsLattices/FixedLattices/completeLatticeSupSet.lean](../FixedLattices/completeLatticeSupSet.lean)**
-
-@import "../FixedLattices/completeLatticeSupSet.lean"
-
-**[DataTypesAsLattices/FixedLattices/WayBelow.lean](../FixedLattices/WayBelow.lean)**
-
-@import "../FixedLattices/WayBelow.lean"
-
-**[DataTypesAsLattices/FixedLattices/IsCompact.lean](../FixedLattices/IsCompact.lean)**
-
-@import "../FixedLattices/IsCompact.lean"
-
-**[DataTypesAsLattices/FixedLattices/CountablyAlgebraic.lean](../FixedLattices/CountablyAlgebraic.lean)**
-
-@import "../FixedLattices/CountablyAlgebraic.lean"
-
-**[DataTypesAsLattices/FixedLattices/ContinuousBasis.lean](../FixedLattices/ContinuousBasis.lean)**
-
-@import "../FixedLattices/ContinuousBasis.lean"
-
-**[DataTypesAsLattices/FixedLattices/finiteBasisSups.lean](../FixedLattices/finiteBasisSups.lean)**
-
-@import "../FixedLattices/finiteBasisSups.lean"
-
-**[DataTypesAsLattices/FixedLattices/finiteBasisSups_directed.lean](../FixedLattices/finiteBasisSups_directed.lean)**
-
-@import "../FixedLattices/finiteBasisSups_directed.lean"
-
-**[DataTypesAsLattices/FixedLattices/sSup_finiteBasisSups.lean](../FixedLattices/sSup_finiteBasisSups.lean)**
-
-@import "../FixedLattices/sSup_finiteBasisSups.lean"
-
-**[DataTypesAsLattices/FixedLattices/CountablyAlgebraicu2ecompact_finite_support.lean](../FixedLattices/CountablyAlgebraicu2ecompact_finite_support.lean)**
-
-@import "../FixedLattices/CountablyAlgebraicu2ecompact_finite_support.lean"
-
-
-**[DataTypesAsLattices/Retracts/Fixpoints.lean](Fixpoints.lean)**
-
-@import "Fixpoints.lean"
-
 **[DataTypesAsLattices/Retracts/Icomb.lean](Icomb.lean)**
 
 @import "Icomb.lean"
-@import "Icomb_more.lean"
+@import "Icomb.lean"
 
 **[DataTypesAsLattices/Retracts/Icomb_app.lean](Icomb_app.lean)**
 
@@ -76,36 +27,16 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 
 @import "DirectedSubset.lean"
 
-**[DataTypesAsLattices/Retracts/IsCompactSubset.lean](IsCompactSubset.lean)**
-
-@import "IsCompactSubset.lean"
-
 **[DataTypesAsLattices/Retracts/boolR_app.lean](boolR_app.lean)**
 
 **[DataTypesAsLattices/Retracts/comp.lean](comp.lean)**
 
 @import "comp.lean"
 
-**[DataTypesAsLattices/Retracts/Retract.lean](Retract.lean)**
-
-@import "Retract.lean"
-
 **[DataTypesAsLattices/Retracts/arrowR.lean](arrowR.lean)**
 
 @import "arrowR.lean"
-@import "arrowR_more.lean"
-
-**[DataTypesAsLattices/Retracts/comp_app.lean](comp_app.lean)**
-
-@import "comp_app.lean"
-
-**[DataTypesAsLattices/Retracts/comp_isScottContinuous_right.lean](comp_isScottContinuous_right.lean)**
-
-@import "comp_isScottContinuous_right.lean"
-
-**[DataTypesAsLattices/Retracts/comp_right_const.lean](comp_right_const.lean)**
-
-@import "comp_right_const.lean"
+@import "arrowR.lean"
 
 **[DataTypesAsLattices/Retracts/arrowR_map_isScottContinuous.lean](arrowR_map_isScottContinuous.lean)**
 
@@ -116,46 +47,6 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 **[DataTypesAsLattices/Retracts/dcondSet_bool_idem.lean](dcondSet_bool_idem.lean)**
 
 @import "dcondSet_bool_idem.lean"
-
-**[DataTypesAsLattices/Retracts/dcondSet_same_ofNat.lean](dcondSet_same_ofNat.lean)**
-
-@import "dcondSet_same_ofNat.lean"
-
-**[DataTypesAsLattices/Retracts/directed_finite_cover.lean](directed_finite_cover.lean)**
-
-@import "directed_finite_cover.lean"
-
-**[DataTypesAsLattices/Retracts/directed_sUnion_fixed.lean](directed_sUnion_fixed.lean)**
-
-@import "directed_sUnion_fixed.lean"
-
-**[DataTypesAsLattices/Retracts/eq_4_11.lean](eq_4_11.lean)**
-
-@import "eq_4_11.lean"
-
-**[DataTypesAsLattices/Retracts/fstC.lean](fstC.lean)**
-
-@import "fstC.lean"
-
-**[DataTypesAsLattices/Retracts/fstC_app.lean](fstC_app.lean)**
-
-@import "fstC_app.lean"
-
-**[DataTypesAsLattices/Retracts/funOf_fix_idem.lean](funOf_fix_idem.lean)**
-
-@import "funOf_fix_idem.lean"
-
-**[DataTypesAsLattices/Retracts/funRetract.lean](funRetract.lean)**
-
-@import "funRetract.lean"
-
-**[DataTypesAsLattices/Retracts/funRetract_app.lean](funRetract_app.lean)**
-
-@import "funRetract_app.lean"
-
-**[DataTypesAsLattices/Retracts/gfpBelow.lean](gfpBelow.lean)**
-
-@import "gfpBelow.lean"
 
 **[DataTypesAsLattices/Retracts/gfpBelow_isGLB.lean](gfpBelow_isGLB.lean)**
 
@@ -173,15 +64,15 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 
 **[DataTypesAsLattices/Retracts/boolR_isRetract.lean](boolR_isRetract.lean)**
 
-**[DataTypesAsLattices/Retracts/eq_4_11_comp.lean](eq_4_11_comp.lean)**
+**[DataTypesAsLattices/Retracts/eq_4_11.lean](eq_4_11.lean)**
 
-@import "eq_4_11_comp.lean"
+@import "eq_4_11.lean"
 
 **[DataTypesAsLattices/Retracts/arrowR_retractLe.lean](arrowR_retractLe.lean)**
 
-**[DataTypesAsLattices/Retracts/funRetract_isRetract.lean](funRetract_isRetract.lean)**
+**[DataTypesAsLattices/Retracts/funRetract.lean](funRetract.lean)**
 
-@import "funRetract_isRetract.lean"
+@import "funRetract.lean"
 
 **[DataTypesAsLattices/Retracts/intF_isScottContinuous.lean](intF_isScottContinuous.lean)**
 
@@ -203,10 +94,6 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 
 @import "inter_const_isScottContinuous.lean"
 
-**[DataTypesAsLattices/Retracts/iterateFrom.lean](iterateFrom.lean)**
-
-@import "iterateFrom.lean"
-
 **[DataTypesAsLattices/Retracts/iterateFrom_bot.lean](iterateFrom_bot.lean)**
 
 **[DataTypesAsLattices/Retracts/iterateFrom_mono.lean](iterateFrom_mono.lean)**
@@ -226,14 +113,6 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 **[DataTypesAsLattices/Retracts/pairSeq.lean](pairSeq.lean)**
 
 @import "pairSeq.lean"
-
-**[DataTypesAsLattices/Retracts/plusR.lean](plusR.lean)**
-
-@import "plusR.lean"
-
-**[DataTypesAsLattices/Retracts/predSet_eq_ofNat_of_no_zero.lean](predSet_eq_ofNat_of_no_zero.lean)**
-
-@import "predSet_eq_ofNat_of_no_zero.lean"
 
 **[DataTypesAsLattices/Retracts/intR_top_of_nonsingleton.lean](intR_top_of_nonsingleton.lean)**
 
@@ -263,18 +142,6 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 
 @import "retract_interpolation.lean"
 
-**[DataTypesAsLattices/Retracts/retract_isGraph.lean](retract_isGraph.lean)**
-
-@import "retract_isGraph.lean"
-
-**[DataTypesAsLattices/Retracts/iUnion_retract_isGraph.lean](iUnion_retract_isGraph.lean)**
-
-@import "iUnion_retract_isGraph.lean"
-
-**[DataTypesAsLattices/Retracts/sSup_fixed_eq_sUnion.lean](sSup_fixed_eq_sUnion.lean)**
-
-@import "sSup_fixed_eq_sUnion.lean"
-
 **[DataTypesAsLattices/Retracts/retractBasis_sSup.lean](retractBasis_sSup.lean)**
 
 **[DataTypesAsLattices/Retracts/retractBasis_sUnion.lean](retractBasis_sUnion.lean)**
@@ -291,39 +158,11 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 
 @import "sndC.lean"
 
-**[DataTypesAsLattices/Retracts/sndC_app.lean](sndC_app.lean)**
-
-@import "sndC_app.lean"
-
-**[DataTypesAsLattices/Retracts/tensorR.lean](tensorR.lean)**
-
-@import "tensorR.lean"
-
-**[DataTypesAsLattices/Retracts/typed.lean](typed.lean)**
-
-@import "typed.lean"
-
 **[DataTypesAsLattices/Retracts/typed_of_arrowR.lean](typed_of_arrowR.lean)**
 
 **[DataTypesAsLattices/Retracts/arrowR_functor.lean](arrowR_functor.lean)**
 
-**[DataTypesAsLattices/Retracts/typed_arrowR_range.lean](typed_arrowR_range.lean)**
+**[DataTypesAsLattices/Retracts/typed.lean](typed.lean)**
 
-@import "typed_arrowR_range.lean"
-
-**[DataTypesAsLattices/Retracts/typed_arrowR_restrict.lean](typed_arrowR_restrict.lean)**
-
-@import "typed_arrowR_restrict.lean"
-
-**[DataTypesAsLattices/Retracts/typed_comp.lean](typed_comp.lean)**
-
-@import "typed_comp.lean"
-
-**[DataTypesAsLattices/Retracts/vals.lean](vals.lean)**
-
-@import "vals.lean"
-
-**[DataTypesAsLattices/Retracts/vals_subset.lean](vals_subset.lean)**
-
-@import "vals_subset.lean"
+@import "typed.lean"
 

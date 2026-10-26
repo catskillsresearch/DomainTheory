@@ -6,4 +6,3 @@
 
 @import "theorem_1_4.lean"
 
-

@@ -1,23 +1,21 @@
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.funOf_iUnion
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 

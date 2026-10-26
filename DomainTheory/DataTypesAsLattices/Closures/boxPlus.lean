@@ -3,38 +3,19 @@ module
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Retracts.Icomb_more
-public import DomainTheory.DataTypesAsLattices.Retracts.intF
-public import DomainTheory.DataTypesAsLattices.Retracts.intR
-public import DomainTheory.DataTypesAsLattices.Retracts.intR_more
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR_more
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 public import Mathlib.Order.CompleteLattice.Defs
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_bot
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_ofNat_zero
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_ofNat_one
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_of_mixed
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_mid
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_right
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_left
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Graph.beta
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Closures.Closure
@@ -48,23 +29,13 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_9
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_10
 public import DomainTheory.DataTypesAsLattices.Closures.union_left_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Closures.union_const_left_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.squareFst_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.squareSnd_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.squarePair_mono
-public import DomainTheory.DataTypesAsLattices.Closures.squarePair_isScottContinuous_left
-public import DomainTheory.DataTypesAsLattices.Closures.squarePair_isScottContinuous_right
-public import DomainTheory.DataTypesAsLattices.Closures.squareFst_bot
-public import DomainTheory.DataTypesAsLattices.Closures.squareFst_top
-public import DomainTheory.DataTypesAsLattices.Closures.squareSnd_bot
-public import DomainTheory.DataTypesAsLattices.Closures.squareSnd_top
-public import DomainTheory.DataTypesAsLattices.Closures.squarePair_bot_bot
 public import DomainTheory.DataTypesAsLattices.Closures.union_botElem
 public import DomainTheory.DataTypesAsLattices.Closures.botElem_union
 public import DomainTheory.DataTypesAsLattices.Closures.exists_mem_of_ne_bot
-public import DomainTheory.DataTypesAsLattices.Closures.boxTag_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.boxTag_bot
-public import DomainTheory.DataTypesAsLattices.Closures.boxTag_of_mem
 public import DomainTheory.DataTypesAsLattices.Closures.topElem_ne_botElem
+public import DomainTheory.DataTypesAsLattices.Closures.squarePair_more
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section
 
@@ -94,8 +65,8 @@ theorem test_isScottContinuous :
   theorem_1_3.tuple
     (fun y => union_left_isScottContinuous y)
     (fun x => union_const_left_isScottContinuous x)
-    (theorem_1_3 (boxTag_isScottContinuous 0) squareFst_isScottContinuous)
-    (theorem_1_3 (boxTag_isScottContinuous 1) squareSnd_isScottContinuous)
+    (theorem_1_3 (boxTag.isScottContinuous 0) squareFst.isScottContinuous)
+    (theorem_1_3 (boxTag.isScottContinuous 1) squareSnd.isScottContinuous)
 
 theorem map_isScottContinuous (a b : Pomega) :
     IsScottContinuous (fun u =>
@@ -109,12 +80,12 @@ theorem map_isScottContinuous (a b : Pomega) :
     test_isScottContinuous
     (theorem_1_3 (f := fun x => squarePair x botElem)
       (g := fun u => funOf (boxShift a) (squareFst u))
-      (squarePair_isScottContinuous_left botElem)
-      (theorem_1_3 (funOf_isScottContinuous (boxShift a)) squareFst_isScottContinuous))
+      (squarePair.isScottContinuous_left botElem)
+      (theorem_1_3 (funOf.isScottContinuous (boxShift a)) squareFst.isScottContinuous))
     (theorem_1_3 (f := fun y => squarePair botElem y)
       (g := fun u => funOf (boxShift b) (squareSnd u))
-      (squarePair_isScottContinuous_right botElem)
-      (theorem_1_3 (funOf_isScottContinuous (boxShift b)) squareSnd_isScottContinuous))
+      (squarePair.isScottContinuous_right botElem)
+      (theorem_1_3 (funOf.isScottContinuous (boxShift b)) squareSnd.isScottContinuous))
 
 theorem app (a b u : Pomega) :
     funOf (boxPlus a b) u =
@@ -126,14 +97,14 @@ theorem app (a b u : Pomega) :
 theorem app_empty {a b u : Pomega} (hx : squareFst u = botElem)
     (hy : squareSnd u = botElem) :
     funOf (boxPlus a b) u = botElem := by
-  rw [app, hx, hy, boxTag_bot, boxTag_bot, Set.union_self, dcondSet.bot]
+  rw [app, hx, hy, boxTag.bot, boxTag.bot, Set.union_self, dcondSet.bot]
 
 theorem app_left {a b u : Pomega} (hx : squareFst u ≠ botElem)
     (hy : squareSnd u = botElem) :
     funOf (boxPlus a b) u =
       squarePair (funOf (boxShift a) (squareFst u)) botElem := by
   obtain ⟨m, hm⟩ := exists_mem_of_ne_bot hx
-  rw [app, boxTag_of_mem hm, hy, boxTag_bot, union_botElem,
+  rw [app, boxTag.of_mem hm, hy, boxTag.bot, union_botElem,
     dcondSet.ofNat_zero]
 
 theorem app_right {a b u : Pomega} (hx : squareFst u = botElem)
@@ -141,7 +112,7 @@ theorem app_right {a b u : Pomega} (hx : squareFst u = botElem)
     funOf (boxPlus a b) u =
       squarePair botElem (funOf (boxShift b) (squareSnd u)) := by
   obtain ⟨m, hm⟩ := exists_mem_of_ne_bot hy
-  rw [app, boxTag_of_mem hm, hx, boxTag_bot, botElem_union,
+  rw [app, boxTag.of_mem hm, hx, boxTag.bot, botElem_union,
     dcondSet.ofNat_one]
 
 theorem app_mixed {a b u : Pomega} (hx : squareFst u ≠ botElem)
@@ -149,17 +120,17 @@ theorem app_mixed {a b u : Pomega} (hx : squareFst u ≠ botElem)
     funOf (boxPlus a b) u = topElem := by
   obtain ⟨m, hm⟩ := exists_mem_of_ne_bot hx
   obtain ⟨k, hk⟩ := exists_mem_of_ne_bot hy
-  rw [app, boxTag_of_mem hm, boxTag_of_mem hk]
+  rw [app, boxTag.of_mem hm, boxTag.of_mem hk]
   exact dcondSet.of_mixed (by simp [ofNat]) ⟨0, by simp [ofNat]⟩
 
 theorem app_bot (a b : Pomega) :
     funOf (boxPlus a b) botElem = botElem :=
-  app_empty squareFst_bot squareSnd_bot
+  app_empty squareFst.bot squareSnd.bot
 
 theorem app_top (a b : Pomega) :
     funOf (boxPlus a b) topElem = topElem :=
-  app_mixed (by rw [squareFst_top]; exact topElem_ne_botElem)
-    (by rw [squareSnd_top]; exact topElem_ne_botElem)
+  app_mixed (by rw [squareFst.top]; exact topElem_ne_botElem)
+    (by rw [squareSnd.top]; exact topElem_ne_botElem)
 
 theorem app_app {a b : Pomega} (ha : Retract a) (hb : Retract b)
     (u : Pomega) :
@@ -189,19 +160,19 @@ theorem expansive {a b : Pomega} (ha : Closure a) (hb : Closure b)
     (u : Pomega) : u ⊆ funOf (boxPlus a b) u := by
   have h8 : squarePair (squareFst u) (squareSnd u) = u := squarePair_eta u
   by_cases hx : squareFst u = botElem <;> by_cases hy : squareSnd u = botElem
-  · rw [hx, hy, squarePair_bot_bot] at h8
+  · rw [hx, hy, squarePair.bot_bot] at h8
     rw [app_empty hx hy, ← h8]
   · rw [app_right hx hy]
     have hsub : squarePair (squareFst u) (squareSnd u) ⊆
         squarePair botElem (funOf (boxShift b) (squareSnd u)) := by
       rw [hx]
-      exact squarePair_mono subset_rfl (boxShift.expansive hb (squareSnd u))
+      exact squarePair.mono subset_rfl (boxShift.expansive hb (squareSnd u))
     rwa [h8] at hsub
   · rw [app_left hx hy]
     have hsub : squarePair (squareFst u) (squareSnd u) ⊆
         squarePair (funOf (boxShift a) (squareFst u)) botElem := by
       rw [hy]
-      exact squarePair_mono (boxShift.expansive ha (squareFst u)) subset_rfl
+      exact squarePair.mono (boxShift.expansive ha (squareFst u)) subset_rfl
     rwa [h8] at hsub
   · rw [app_mixed hx hy]
     exact fun k _ => Set.mem_univ k

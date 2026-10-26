@@ -1,35 +1,80 @@
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
+public import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
+public import DomainTheory.DataTypesAsLattices.Embedding.extend
+public import DomainTheory.DataTypesAsLattices.Embedding.embed
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
+public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
+public import DomainTheory.DataTypesAsLattices.Retracts.typed
+public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
+public import DomainTheory.DataTypesAsLattices.Retracts.vals
+public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis
+public import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 4.1 (The lattice theorem), complete-lattice half.**
-The inf `gfpBelow f (⋂ A)` is a fixed point of `f` itself. -/
-theorem theorem_4_1.complete (f : Pomega → Pomega) (hf : IsScottContinuous f)
-    (A : Set Pomega) (hA : A ⊆ Fixpoints f) :
-    gfpBelow f (⋂₀ A) ∈ Fixpoints f := by
-  let z := gfpBelow f (⋂₀ A)
-  have hinter : f z ∩ ⋂₀ A = z := gfpBelow.fixed_inter hf (⋂₀ A)
-  have hzle : z ⊆ ⋂₀ A := gfpBelow.subset f (⋂₀ A)
-  have hfz : f z ⊆ ⋂₀ A := by
-    intro k hk y hy
-    have hzy : z ⊆ y := subset_trans hzle (Set.sInter_subset_of_mem hy)
-    have : k ∈ f y := IsScottContinuous.monotone hf hzy hk
-    have hyf : f y = y := hA hy
-    rwa [hyf] at this
-  have : f z ∩ ⋂₀ A = f z := Set.inter_eq_left.mpr hfz
-  change f z = z
-  rwa [this] at hinter
+/-- **Scott 1976, Theorem 4.1 (The lattice theorem).**
+Fixed points of a continuous function form a complete lattice under `⊆`;
+those of a retract form a continuous lattice. -/
+theorem theorem_4_1 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
+    (∀ A : Set Pomega, A ⊆ Fixpoints f →
+      gfpBelow f (⋂₀ A) ∈ Fixpoints f ∧
+        lfpAbove f (⋃₀ A) ∈ Fixpoints f) ∧
+      ∀ {a} (_ha : Retract a),
+        Fixpoints (funOf a) = {x | typed x a} ∧
+          ∀ x : Fixpoints (funOf a),
+            DirectedSubset (retractBasis a x) ∧
+              (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) := by
+  constructor
+  · intro A hA
+    exact ⟨theorem_4_1.complete f hf A hA, lfpAbove.mem hf hA⟩
+  · intro a ha
+    constructor
+    · ext x
+      simp [Fixpoints, typed, eq_comm]
+    · intro x
+      exact ⟨retractBasis.directedSubset ha x, retractBasis.eq_sUnion ha x⟩
+
+/-- **Scott 1976, Theorem 4.1, continuous-lattice half.**
+The finite-image points form a directed way-below basis for every point in
+the range of a retract. Stated with subset directedness so the compared
+type does not mention a `CompleteLattice` instance. -/
+theorem theorem_4_1.continuous {a : Pomega} (ha : Retract a) :
+    ∀ x : Fixpoints (funOf a),
+      DirectedSubset (retractBasis a x) ∧
+        (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) ∧
+        ∀ y ∈ retractBasis a x,
+          ∀ s : Set (Fixpoints (funOf a)),
+            DirectedSubset s →
+              (x : Pomega) ⊆ ⋃₀ (Subtype.val '' s) →
+              ∃ z ∈ s, (y : Pomega) ⊆ z := by
+  intro x
+  refine ⟨retractBasis.directedSubset ha x, retractBasis.eq_sUnion ha x, ?_⟩
+  intro y hy s hs hxs
+  obtain ⟨n, hnx, hyn⟩ := hy
+  have hen : e n ⊆ ⋃₀ (Subtype.val '' s) := hnx.trans hxs
+  have hs' : DirectedSet s :=
+    ⟨⟨hs.out.1, fun u hu v hv => by
+      obtain ⟨w, hw, huw, hvw⟩ := hs.out.2 hu hv
+      exact ⟨w, hw, huw, hvw⟩⟩⟩
+  obtain ⟨z, hz, hnz⟩ :=
+    directed_finite_cover hs' (e_finite n) (by simpa [Fixpoints.vals] using hen)
+  refine ⟨z, hz, ?_⟩
+  rw [hyn]
+  have := IsScottContinuous.monotone (funOf.isScottContinuous a) hnz
+  rwa [z.property] at this
 
 end DomainTheory.DataTypesAsLattices

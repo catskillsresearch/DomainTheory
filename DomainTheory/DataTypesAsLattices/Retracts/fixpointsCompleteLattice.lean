@@ -1,7 +1,6 @@
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
@@ -14,10 +13,8 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_more
+public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1
 public import DomainTheory.DataTypesAsLattices.Retracts.vals
-public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
-
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -27,7 +24,7 @@ def fixpointsCompleteLattice {f : Pomega → Pomega} (hf : IsScottContinuous f) 
     CompleteLattice (Fixpoints f) :=
   letI : SupSet (Fixpoints f) :=
     ⟨fun A => ⟨lfpAbove f (⋃₀ (Fixpoints.vals A)),
-      lfpAbove.mem hf (Fixpoints.vals_subset A)⟩⟩
+      lfpAbove.mem hf (Fixpoints.vals.subset A)⟩⟩
   { completeLatticeOfSup (Fixpoints f) (fun A => by
       refine ⟨?ub, ?least⟩
       · intro x hx
@@ -39,7 +36,7 @@ def fixpointsCompleteLattice {f : Pomega → Pomega} (hf : IsScottContinuous f) 
           obtain ⟨w, hwA, rfl⟩ := hy
           exact hz hwA)) with
     sInf := fun A => ⟨gfpBelow f (⋂₀ (Fixpoints.vals A)),
-      theorem_4_1.complete f hf (Fixpoints.vals A) (Fixpoints.vals_subset A)⟩
+      theorem_4_1.complete f hf (Fixpoints.vals A) (Fixpoints.vals.subset A)⟩
     isGLB_sInf := fun A => by
       refine ⟨?lb, ?greatest⟩
       · intro x hx
@@ -48,7 +45,7 @@ def fixpointsCompleteLattice {f : Pomega → Pomega} (hf : IsScottContinuous f) 
           (Set.sInter_subset_of_mem ⟨x, hx, rfl⟩)
       · intro z hz
         change (z : Pomega) ⊆ gfpBelow f (⋂₀ (Fixpoints.vals A))
-        exact gfpBelow.isGLB hf (Fixpoints.vals_subset A) z.property (fun y hy => by
+        exact gfpBelow.isGLB hf (Fixpoints.vals.subset A) z.property (fun y hy => by
           obtain ⟨w, hwA, rfl⟩ := hy
           exact hz hwA)
     bot := ⟨fix f, (theorem_1_4 hf).1⟩

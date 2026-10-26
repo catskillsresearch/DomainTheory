@@ -6,7 +6,3 @@
 
 @import "ScottOpen.lean"
 
-**[ContinuousLattice/WayBelow/ScottOpenu2eisUpperSet.lean](ScottOpenu2eisUpperSet.lean)**
-
-@import "ScottOpenu2eisUpperSet.lean"
-

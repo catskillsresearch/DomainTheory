@@ -4,8 +4,6 @@ module
 public import DomainTheory.DataTypesAsLattices.Retracts.updateEnv
 public import DomainTheory.DataTypesAsLattices.Lambda.minExtend
 public import DomainTheory.DataTypesAsLattices.Pomega.e
-public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 
 @[expose] public section
 

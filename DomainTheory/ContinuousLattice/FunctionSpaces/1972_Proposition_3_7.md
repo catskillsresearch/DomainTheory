@@ -6,7 +6,3 @@
 
 @import "proposition_3_7_projection.lean"
 
-**[ContinuousLattice/FunctionSpaces/proposition_3_7_retraction.lean](proposition_3_7_retraction.lean)**
-
-@import "proposition_3_7_retraction.lean"
-

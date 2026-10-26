@@ -1,9 +1,8 @@
 module
 
-public import Mathlib.Data.Nat.Bitwise
 public import Mathlib.Data.Set.Finite.Basic
-public import Mathlib.Data.Set.Lattice.Bounded
-public import Mathlib.Data.Set.Lattice.Disjoint
+public import Mathlib.Algebra.GroupWithZero.Nat
+public import Mathlib.Order.SetNotation
 
 @[expose] public section
 

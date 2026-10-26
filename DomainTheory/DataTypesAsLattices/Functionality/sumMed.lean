@@ -1,16 +1,7 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
-public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Retracts.intF
-public import DomainTheory.DataTypesAsLattices.Retracts.intR
-public import DomainTheory.DataTypesAsLattices.Retracts.intR_more
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
@@ -22,16 +13,16 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 public import DomainTheory.DataTypesAsLattices.Functionality.arrowE
 public import DomainTheory.DataTypesAsLattices.Functionality.sumE
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Graph.beta
+public import DomainTheory.DataTypesAsLattices.Functionality.mem
+public import DomainTheory.DataTypesAsLattices.Lambda.interC
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
@@ -56,9 +47,9 @@ theorem body_isScottContinuous (f g : Pomega) :
     (fun x z => condSet.isScottContinuous_mid x z)
     (fun x y => condSet.isScottContinuous_right x y)
     (funOf.isScottContinuous_left (ofNat 0))
-    (theorem_1_3 (funOf_isScottContinuous f)
+    (theorem_1_3 (funOf.isScottContinuous f)
       (funOf.isScottContinuous_left (ofNat 1)))
-    (theorem_1_3 (funOf_isScottContinuous g)
+    (theorem_1_3 (funOf.isScottContinuous g)
       (funOf.isScottContinuous_left (ofNat 1)))
 
 theorem app (f g u : Pomega) :

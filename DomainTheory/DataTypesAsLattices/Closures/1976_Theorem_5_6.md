@@ -6,12 +6,3 @@
 
 @import "theorem_5_6.lean"
 
-**[DataTypesAsLattices/Closures/theorem_5_6.combinator.lean](theorem_5_6.combinator.lean)**
-
-@import "theorem_5_6.combinator.lean"
-
-**[DataTypesAsLattices/Closures/theorem_5_6.iterates.lean](theorem_5_6.iterates.lean)**
-
-@import "theorem_5_6.iterates.lean"
-
-

@@ -410,6 +410,15 @@ def build_arxiv_pdf(*, clean: bool = False) -> None:
         raise RuntimeError("arxiv.pdf missing after latexmk")
 
 
+def refresh_note_lean_imports() -> None:
+    """Retarget broken Lean ``@import``s in notes before flattening (Pref folds, etc.)."""
+    from refresh_note_lean_imports import refresh_all
+
+    print("==> Refreshing Lean @imports in notes")
+    n = refresh_all(ROOT / "DomainTheory")
+    print(f"updated {n} notes")
+
+
 def compile_tree_to_pdf(
     root_md: Path = DEFAULT_ROOT_MD,
     *,
@@ -420,6 +429,7 @@ def compile_tree_to_pdf(
     clean: bool = False,
 ) -> Path:
     """Flatten the note tree and build ``arxiv.pdf`` (unless ``md_only`` / ``tex_only``)."""
+    refresh_note_lean_imports()
     out = flatten_md_tree(
         root_md, lean_mode=lean_mode, include_ai_prose=include_ai_prose
     )

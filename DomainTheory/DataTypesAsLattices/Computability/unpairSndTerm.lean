@@ -2,11 +2,11 @@ module
 
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.Term
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Graph.lam
 public import DomainTheory.DataTypesAsLattices.Computability.unpairSqrtTerm
 public import DomainTheory.DataTypesAsLattices.Computability.unpairDeltaTerm
 public import DomainTheory.DataTypesAsLattices.Computability.unpairTestTerm
+public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 
 @[expose] public section
 

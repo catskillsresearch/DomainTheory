@@ -6,41 +6,11 @@ public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.e
-public import DomainTheory.DataTypesAsLattices.Closures.Closure
-public import DomainTheory.DataTypesAsLattices.Closures.Isolated
-public import DomainTheory.DataTypesAsLattices.Closures.squarePair
-public import DomainTheory.DataTypesAsLattices.Closures.squareFst
-public import DomainTheory.DataTypesAsLattices.Closures.squareSnd
-public import DomainTheory.DataTypesAsLattices.Closures.boxTensor
-public import DomainTheory.DataTypesAsLattices.Closures.boxTag
 public import DomainTheory.DataTypesAsLattices.Closures.Vapply
-public import DomainTheory.DataTypesAsLattices.Closures.closureCompact
-public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
-public import DomainTheory.DataTypesAsLattices.Closures.Vstep
-public import DomainTheory.DataTypesAsLattices.Closures.VapplyY
-public import DomainTheory.DataTypesAsLattices.Closures.closureRangeCountablyAlgebraic
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure
-public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode
-public import DomainTheory.DataTypesAsLattices.Closures.representationDecode
-public import DomainTheory.DataTypesAsLattices.Closures.representationOrderIso
 public import DomainTheory.DataTypesAsLattices.Closures.Vcomb
-public import DomainTheory.DataTypesAsLattices.Closures.selfArrowStep
-public import DomainTheory.DataTypesAsLattices.Closures.dEq
-public import DomainTheory.DataTypesAsLattices.Closures.closure_expansive
-public import DomainTheory.DataTypesAsLattices.Closures.closureCompact_isCompact
-public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff
-public import DomainTheory.DataTypesAsLattices.Closures.retractBasis_eq_compactFixedBelow
-public import DomainTheory.DataTypesAsLattices.Closures.fixed_eq_sSup_compacts
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure_mono
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode_app
-public import DomainTheory.DataTypesAsLattices.Closures.representationDecode_encode
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_fixed
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_16
-public import DomainTheory.DataTypesAsLattices.Closures.Vapply_right_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.Vcomb_app
-
+public import DomainTheory.DataTypesAsLattices.Closures.Vapply_more
+public import DomainTheory.DataTypesAsLattices.Closures.Vcomb_more
 @[expose] public section
 
 
@@ -50,9 +20,9 @@ namespace DomainTheory.DataTypesAsLattices
 /-- `V` does not change already-closed points of a retract. -/
 theorem typed_of_retract_Vcomb {a x : Pomega} (hx : typed x a) :
     typed x (funOf Vcomb a) := by
-  rw [typed, Vcomb_app]
+  rw [typed, Vcomb.app]
   have happ : funOf (graph (fun z => Vapply a z)) x = Vapply a x :=
-    beta (Vapply_right_isScottContinuous a) x
+    beta (Vapply.right_isScottContinuous a) x
   rw [happ]
   apply subset_antisymm
   · exact eq_5_16 a x

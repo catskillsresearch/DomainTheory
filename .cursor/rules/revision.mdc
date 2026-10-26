@@ -11,3 +11,13 @@ The vendored formalizations were brute force: a paper statement and its proof li
 - Keep Scott's prose in his order. A proposition, definition, or theorem from the paper is then one statement, verbatim, whose proof calls those tools and does not redo their arguments.
 - Proposition 2.2 is the pattern. Clauses (i)–(vii) are `bot_wayBelow`, `WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, `WayBelow.le`, `WayBelow.self_iff_scottOpen_Ici`, and `WayBelow.sSup_iff`. `proposition_2_2` is Scott's statement, proved by calling those seven lemmas.
 - Notes show the same two layers: the human-English is the source passage, and the formalization shows the named tools and the short proof that assembles them.
+
+# Pref fold (`Pref_suffix` → `Pref.suffix`)
+
+When asked to fold, combine, or namespace `Pref_*` companions into a parent:
+
+1. **Reduce the file count.** Merge every `Pref_suffix.lean` into `Pref.lean` and **delete** the Pref files. Keeping separate Pref files under a namespace is not the fold.
+2. **One namespace block.** In `Pref.lean`, after the parent `def`/`theorem Pref`, open a single `namespace Pref` that holds all former Pref facts as short names (`suffix`), then `end Pref`. Do not wrap each former file in its own `namespace Pref` … `end Pref`.
+3. **Dotted library names.** Callers use `Pref.suffix` (underscore becomes a dot). Retarget imports of deleted modules to `Pref.lean`; update notes/`@import`s the same way.
+4. **Cycles only:** if some lemmas cannot live in `Pref.lean` without an import cycle, put those leftovers in one `Pref_more.lean` under the same `namespace Pref` — still fewer files, still dotted names, not one file per lemma.
+5. **Notes follow the fold.** Retarget `@import`s / Lean links to the surviving parent (or `_more`) file and drop duplicates. Building `arxiv.pdf` always refreshes note Lean imports and re-flattens `arxiv.md` (`scripts/compile_md_tree.py` → `scripts/refresh_note_lean_imports.py`); do not leave the PDF citing deleted Pref paths.

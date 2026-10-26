@@ -10,10 +10,6 @@
 
 @import "eq_2_11.lean"
 
-**[DataTypesAsLattices/Lambda/eq_2_11_graphs.lean](eq_2_11_graphs.lean)**
-
-@import "eq_2_11_graphs.lean"
-
 **[DataTypesAsLattices/Lambda/eq_2_12.lean](eq_2_12.lean)**
 
 @import "eq_2_12.lean"
@@ -29,22 +25,6 @@
 **[DataTypesAsLattices/Lambda/eta_fails.lean](eta_fails.lean)**
 
 @import "eta_fails.lean"
-
-**[DataTypesAsLattices/Lambda/funOf_bot.lean](funOf_bot.lean)**
-
-@import "funOf_bot.lean"
-
-**[DataTypesAsLattices/Lambda/funOf_iUnion.lean](funOf_iUnion.lean)**
-
-@import "funOf_iUnion.lean"
-
-**[DataTypesAsLattices/Lambda/funOf_isScottContinuous_left.lean](funOf_isScottContinuous_left.lean)**
-
-@import "funOf_isScottContinuous_left.lean"
-
-**[DataTypesAsLattices/Lambda/funOf_diag_iUnion.lean](funOf_diag_iUnion.lean)**
-
-@import "funOf_diag_iUnion.lean"
 
 **[DataTypesAsLattices/Lambda/table1_mu.lean](table1_mu.lean)**
 

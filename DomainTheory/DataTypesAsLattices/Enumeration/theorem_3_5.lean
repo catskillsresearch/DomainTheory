@@ -1,166 +1,140 @@
-
 module
 
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
-public import DomainTheory.DataTypesAsLattices.Computability.Realizes
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ebot
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2etop
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2enumeral
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ezeroC
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2eunion
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2eofFinset
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2eof_e
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2epredSet
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2esuccSet
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2epair_mem
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ehasZero
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ehasPos
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2econdSet
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2edcondSet
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2eeSubset
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2efunOf
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2egraph_of_primrecRel
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2esucC
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2epredC
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2egraph_of_re
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2eKcomb
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2econdC
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2eScomb
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ecombinatory
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2eiff_combinatory
+public import DomainTheory.DataTypesAsLattices.Computability.Realizes
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.e
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
-public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.valStepValue
-public import DomainTheory.DataTypesAsLattices.Enumeration.valC
-public import DomainTheory.DataTypesAsLattices.Enumeration.RE
-public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.argNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
-public import DomainTheory.DataTypesAsLattices.Enumeration.valRank
-public import DomainTheory.DataTypesAsLattices.Enumeration.num
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecVal
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecSubst
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecSubstC
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecOperator
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecOperatorCode
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecV
-public import DomainTheory.DataTypesAsLattices.Enumeration.recNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.Ycode
-public import DomainTheory.DataTypesAsLattices.Enumeration.recCode
-public import DomainTheory.DataTypesAsLattices.Enumeration.interStepTerm
-public import DomainTheory.DataTypesAsLattices.Enumeration.interCode
-public import DomainTheory.DataTypesAsLattices.Enumeration.diagonalInterCode
-public import DomainTheory.DataTypesAsLattices.Enumeration.unionBits
-public import DomainTheory.DataTypesAsLattices.Enumeration.bitList
-public import DomainTheory.DataTypesAsLattices.Enumeration.unionTerm
-public import DomainTheory.DataTypesAsLattices.Enumeration.unionCode
-public import DomainTheory.DataTypesAsLattices.Enumeration.botCode
-public import DomainTheory.DataTypesAsLattices.Enumeration.finAux
 public import DomainTheory.DataTypesAsLattices.Enumeration.fin
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ
+public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ_more
 public import DomainTheory.DataTypesAsLattices.Enumeration.Extensional
-public import DomainTheory.DataTypesAsLattices.Enumeration.myhillRealizer
-public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas
-public import DomainTheory.DataTypesAsLattices.Enumeration.valEntryJustified
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceStruct
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceG
-public import DomainTheory.DataTypesAsLattices.Enumeration.unpairWRec
-public import DomainTheory.DataTypesAsLattices.Enumeration.unpairW
-public import DomainTheory.DataTypesAsLattices.Enumeration.condCode
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillCase2Code
 public import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum
-public import DomainTheory.DataTypesAsLattices.Enumeration.beforeHalt
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterNum
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterTerm
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterC
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterOp
-public import DomainTheory.DataTypesAsLattices.Enumeration.myhillFilterCode
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillCase1Code
-public import DomainTheory.DataTypesAsLattices.Enumeration.Deg
-public import DomainTheory.DataTypesAsLattices.Enumeration.Subalgebra
-public import DomainTheory.DataTypesAsLattices.Enumeration.Icomb_SK
-public import DomainTheory.DataTypesAsLattices.Enumeration.packList
-public import DomainTheory.DataTypesAsLattices.Enumeration.singleGenerator
-public import DomainTheory.DataTypesAsLattices.Enumeration.enumBottomTerm
-public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
-public import DomainTheory.DataTypesAsLattices.Enumeration.seq2Term
-public import DomainTheory.DataTypesAsLattices.Enumeration.seqConsTerm
-public import DomainTheory.DataTypesAsLattices.Enumeration.barPosTerm
-public import DomainTheory.DataTypesAsLattices.Enumeration.Rterm
-public import DomainTheory.DataTypesAsLattices.Enumeration.Lterm
-public import DomainTheory.DataTypesAsLattices.Enumeration.barStepTerm
-public import DomainTheory.DataTypesAsLattices.Enumeration.funRetractTerm
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSubalgebra
-public import DomainTheory.DataTypesAsLattices.Enumeration.vaalC
-public import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed
-public import DomainTheory.DataTypesAsLattices.Enumeration.predClosed
-public import DomainTheory.DataTypesAsLattices.Enumeration.condClosed
-public import DomainTheory.DataTypesAsLattices.Enumeration.kClosed
-public import DomainTheory.DataTypesAsLattices.Enumeration.gpackClosed
-public import DomainTheory.DataTypesAsLattices.Enumeration.gClosed
-public import DomainTheory.DataTypesAsLattices.Enumeration.vaalStepTerm
-public import DomainTheory.DataTypesAsLattices.Enumeration.vaalTyped
-public import DomainTheory.DataTypesAsLattices.Enumeration.TOT
-public import DomainTheory.DataTypesAsLattices.Enumeration.not_mem_zero_Gcomb
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_ne_bot
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_one
-public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_from_G
-public import DomainTheory.DataTypesAsLattices.Enumeration.predC_from_G
-public import DomainTheory.DataTypesAsLattices.Enumeration.condC_from_G
-public import DomainTheory.DataTypesAsLattices.Enumeration.Kcomb_from_G
-public import DomainTheory.DataTypesAsLattices.Enumeration.Scomb_from_G
-public import DomainTheory.DataTypesAsLattices.Enumeration.bot_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_eq_SK
-public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
-public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
-public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_secondRecSubst
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecSubstC_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecOperator_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.interStepTerm_interp
-public import DomainTheory.DataTypesAsLattices.Enumeration.interC_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.unionTerm_interp
-public import DomainTheory.DataTypesAsLattices.Enumeration.unionOperator_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.exists_triangle_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.ValTrace
-public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_haltEnum
-public import DomainTheory.DataTypesAsLattices.Enumeration.BasicInst85
-public import DomainTheory.DataTypesAsLattices.Enumeration.primrecPred_beforeHalt
-public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_filterNum
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ_app
-public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ_isRE
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_5_case2
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_5_case1
-
+public import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum_more
+public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillCase1Code
+public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillCase2Code
+public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_4
 @[expose] public section
-
 
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
+namespace theorem_3_5
 
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
+theorem case1 {u : Pomega} {p : ℕ → ℕ} {n k : ℕ}
+    (hu : IsCombinatory u) (hr : Realizes u p)
+    (hext : Extensional valNat p)
+    (hk : k ∈ valNat (p n))
+    (hnin : ¬∃ j, e j ⊆ valNat n ∧ k ∈ valNat (p (fin j)))
+    (_hinf : ¬(valNat n).Finite) : False := by
+  have hiff : ∀ m,
+      k ∈ valNat (p (myhillCase1Code n m)) ↔ ¬∃ t, haltEnum t = m := by
+    intro m
+    by_cases hex : ∃ t, haltEnum t = m
+    · have hfin : ({j | ∀ i ≤ j, haltEnum i ≠ m} : Pomega).Finite :=
+        (Set.finite_Iio hex.choose).subset fun j hj =>
+          Nat.lt_of_not_ge fun hle => hj hex.choose hle hex.choose_spec
+      have hfins : (valNat (myhillCase1Code n m)).Finite := by
+        rw [valNat.myhillCase1Code_eq]
+        exact hfin.inter_of_right _
+      obtain ⟨j, hj⟩ := exists_code_of_finite hfins
+      have hje : e j ⊆ valNat n := by
+        rw [hj, valNat.myhillCase1Code_eq]
+        exact Set.inter_subset_left
+      have : k ∉ valNat (p (fin j)) := fun h => hnin ⟨j, hje, h⟩
+      have heq := hext.out (myhillCase1Code n m) (fin j) (by simp [hj, valNat.fin_eq])
+      simp [heq, this, hex]
+    · have hall : {j | ∀ i ≤ j, haltEnum i ≠ m} = Set.univ := by
+        ext j
+        constructor
+        · intro _; trivial
+        · intro _ i _
+          exact fun h => hex ⟨i, h⟩
+      have : valNat (myhillCase1Code n m) = valNat n := by
+        rw [valNat.myhillCase1Code_eq, hall]
+        simp
+      have heq := hext.out (myhillCase1Code n m) n this
+      simp [heq, hk, hex]
+  have hre : REPred fun m => ¬∃ t, haltEnum t = m :=
+    _root_.REPred.of_eq
+      (valNat.mem_comp_primrec (k := k) hu hr (primrec_myhillCase1Code n))
+      fun m => hiff m
+  exact haltEnum.range_not_computable
+    ((ComputablePred.computable_iff_re_compl_re').2 ⟨haltEnum.range_re, hre⟩)
+
+theorem case2 {u : Pomega} {p : ℕ → ℕ} {n j k : ℕ}
+    (hu : IsCombinatory u) (hr : Realizes u p)
+    (hext : Extensional valNat p)
+    (hj : e j ⊆ valNat n)
+    (_hne : e j ≠ valNat n)
+    (hkfin : k ∈ valNat (p (fin j)))
+    (hkn : k ∉ valNat (p n)) : False := by
+  have hiff : ∀ m, k ∈ valNat (p (myhillCase2Code j n m)) ↔ valNat m = botElem := by
+    intro m
+    by_cases hm : valNat m = botElem
+    · have : valNat (myhillCase2Code j n m) = e j := by
+        rw [valNat.myhillCase2Code_eq, hm, eq_2_7_bot]
+        simp [botElem]
+      have := hext.out (myhillCase2Code j n m) (fin j) (by simp [this, valNat.fin_eq])
+      simp [this, hkfin, hm]
+    · have : valNat (myhillCase2Code j n m) = valNat n :=
+        valNat.myhillCase2Code_ne_bot j n m hj hm
+      have := hext.out (myhillCase2Code j n m) n this
+      simp [this, hkn, hm]
+  have hre : REPred fun m => valNat m = botElem :=
+    _root_.REPred.of_eq
+      (valNat.mem_comp_primrec (k := k) hu hr (primrec_myhillCase2Code j n))
+      fun m => hiff m
+  exact theorem_3_4 ⟨hre⟩
+
+/-- **Scott 1976, Theorem 3.5 (The completeness theorem for definability),
+realizer form.** If `q` realizes `p` on values, then `val(p n) = q(val n)`. -/
+theorem of_realizer {val : ℕ → Pomega} {p : ℕ → ℕ} {q : Pomega}
+    (hq : ∀ n, val (p n) = funOf q (val n)) :
+    ∀ n, val (p n) = funOf q (val n) := hq
+
+/-- **Scott 1976, Theorem 3.5 (Myhill–Shepherdson), construction.** -/
+theorem q (val : ℕ → Pomega) (p : ℕ → ℕ) (j m : ℕ) :
+    pair j m ∈ myhillQ val p ↔ m ∈ val (p (fin j)) := by
+  constructor
+  · intro ⟨j', m', hp, hm⟩
+    obtain ⟨rfl, rfl⟩ := pair_inj hp
+    exact hm
+  · intro hm
+    exact ⟨j, m, rfl, hm⟩
+
+/-- Appendix inclusion of Theorem 3.5: `val(p(fin j)) ⊆ q(e j)`. -/
+theorem q_app (p : ℕ → ℕ) (j : ℕ) :
+    valNat (p (fin j)) ⊆ funOf (myhillQ valNat p) (e j) := by
+  intro m hm
+  exact ⟨j, subset_rfl, ⟨j, m, rfl, by simpa [valNat.fin_eq] using hm⟩⟩
+
+/-- **Scott 1976, Theorem 3.5 (uniqueness half).** A continuous realizer of
+an extensional map is unique, because continuous maps are determined by
+their values on finite sets. -/
+theorem unique {q q' : Pomega → Pomega}
+    (hq : IsScottContinuous q) (hq' : IsScottContinuous q')
+    (h : ∀ n, q (e n) = q' (e n)) (x : Pomega) : q x = q' x := by
+  rw [hq.out, hq'.out]
+  ext k
+  simp [scottUnion, scottPiece, h]
+
+end theorem_3_5
 
 /-- **Scott 1976, Theorem 3.5 (The completeness theorem for definability).**
 If a total extensional mapping `p` is LAMBDA-definable, then there is a
@@ -170,8 +144,8 @@ theorem theorem_3_5 {p : ℕ → ℕ}
     (hext : Extensional valNat p) :
     ∃ q, IsCombinatory q ∧ ∀ n, valNat (p n) = funOf q (valNat n) := by
   obtain ⟨u, hu, hr⟩ := hp
-  refine ⟨myhillQ valNat p, IsRE.combinatory (myhillQ_isRE hu hr), fun n => ?_⟩
-  rw [myhillQ_app]
+  refine ⟨myhillQ valNat p, IsRE.combinatory (myhillQ.isRE hu hr), fun n => ?_⟩
+  rw [myhillQ.app]
   ext k
   constructor
   · intro hk

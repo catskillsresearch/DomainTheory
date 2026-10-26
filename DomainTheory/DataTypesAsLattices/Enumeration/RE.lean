@@ -3,8 +3,6 @@ module
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
 public import DomainTheory.DataTypesAsLattices.Pomega.e
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 
 @[expose] public section
 

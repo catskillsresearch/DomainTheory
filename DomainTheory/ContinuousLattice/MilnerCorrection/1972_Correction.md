@@ -10,15 +10,3 @@
 
 @import "CoarserThanScottTopology.lean"
 
-**[ContinuousLattice/MilnerCorrection/scottLowerSubbasisSet.lean](scottLowerSubbasisSet.lean)**
-
-@import "scottLowerSubbasisSet.lean"
-
-**[ContinuousLattice/MilnerCorrection/scottOpen_of_coarserThanScott.lean](scottOpen_of_coarserThanScott.lean)**
-
-@import "scottOpen_of_coarserThanScott.lean"
-
-**[ContinuousLattice/MilnerCorrection/scottPrincipalUpSet.lean](scottPrincipalUpSet.lean)**
-
-@import "scottPrincipalUpSet.lean"
-

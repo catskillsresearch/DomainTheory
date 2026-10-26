@@ -1,9 +1,10 @@
 module
 
 public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Order
-public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Continuous.Basic
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen
+public import Mathlib.Order.ConditionallyCompleteLattice.Basic
+public import Mathlib.Data.Set.Lattice.Indexed
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 

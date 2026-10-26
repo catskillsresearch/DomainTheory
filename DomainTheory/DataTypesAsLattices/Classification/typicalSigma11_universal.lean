@@ -3,20 +3,20 @@ module
 
 public import Mathlib.Order.CompleteLattice.Defs
 public import DomainTheory.DataTypesAsLattices.Lambda.seq2
-public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app_zero
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app_one
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import Mathlib.Data.Set.Finite.Powerset
+public import DomainTheory.DataTypesAsLattices.Classification.IsSigma11
+public import DomainTheory.DataTypesAsLattices.Classification.typicalSigma11
 public import DomainTheory.DataTypesAsLattices.Classification.Basic
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
@@ -37,10 +37,10 @@ theorem typicalSigma11_universal (U : Set Pomega) :
     constructor
     · intro ⟨y, hy⟩
       refine ⟨y, ?_⟩
-      simpa [seq2_app_zero, seq2_app_one] using hy
+      simpa [seq2.zero, seq2.one] using hy
     · intro ⟨y, hy⟩
       refine ⟨y, ?_⟩
-      simpa [seq2_app_zero, seq2_app_one] using hy
+      simpa [seq2.zero, seq2.one] using hy
   · rintro ⟨f, hf, rfl⟩
     exact ⟨fun x => funOf (f x) (ofNat 0), fun x => funOf (f x) (ofNat 1),
       theorem_1_3 (f := fun u => funOf u (ofNat 0))

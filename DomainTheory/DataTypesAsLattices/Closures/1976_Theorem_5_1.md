@@ -6,7 +6,3 @@
 
 @import "theorem_5_1.lean"
 
-**[DataTypesAsLattices/Closures/theorem_5_1.isolated.lean](theorem_5_1.isolated.lean)**
-
-@import "theorem_5_1.isolated.lean"
-

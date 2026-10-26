@@ -19,23 +19,18 @@ public import DomainTheory.DataTypesAsLattices.Closures.closureRangeCountablyAlg
 public import DomainTheory.DataTypesAsLattices.Closures.representClosure
 public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode
 public import DomainTheory.DataTypesAsLattices.Closures.representationEncode
+public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_more
 public import DomainTheory.DataTypesAsLattices.Closures.representationDecode
 public import DomainTheory.DataTypesAsLattices.Closures.representationOrderIso
 public import DomainTheory.DataTypesAsLattices.Closures.Vcomb
 public import DomainTheory.DataTypesAsLattices.Closures.selfArrowStep
 public import DomainTheory.DataTypesAsLattices.Closures.dEq
 public import DomainTheory.DataTypesAsLattices.Closures.closure_expansive
-public import DomainTheory.DataTypesAsLattices.Closures.closureCompact_isCompact
 public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff
 public import DomainTheory.DataTypesAsLattices.Closures.retractBasis_eq_compactFixedBelow
 public import DomainTheory.DataTypesAsLattices.Closures.fixed_eq_sSup_compacts
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure_mono
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode_app
-public import DomainTheory.DataTypesAsLattices.Closures.representationDecode_encode
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_fixed
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_17
-public import DomainTheory.DataTypesAsLattices.Closures.eq_5_18_eq
+public import DomainTheory.DataTypesAsLattices.Closures.eq_5_18
 
 @[expose] public section
 
@@ -46,6 +41,6 @@ namespace DomainTheory.DataTypesAsLattices
 /-- **Scott 1976, Theorem 5.5 / (5.18).** `V` fixes closures on values. -/
 theorem theorem_5_5 {a : Pomega} (ha : Closure a) (x : Pomega) :
     Vapply a x = funOf a x ∧ Vapply a (Vapply a x) = Vapply a x :=
-  ⟨eq_5_18_eq ha x, eq_5_17 a x⟩
+  ⟨eq_5_18.eq ha x, eq_5_17 a x⟩
 
 end DomainTheory.DataTypesAsLattices

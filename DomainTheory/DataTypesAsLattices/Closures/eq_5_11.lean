@@ -1,48 +1,11 @@
 module
 
 public import Mathlib.Algebra.Ring.Parity
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Retracts.intF
-public import DomainTheory.DataTypesAsLattices.Retracts.intR
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_monotone_right
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_monotone_left
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Closures.Closure
-public import DomainTheory.DataTypesAsLattices.Closures.Isolated
-public import DomainTheory.DataTypesAsLattices.Closures.squarePair
-public import DomainTheory.DataTypesAsLattices.Closures.squareFst
-public import DomainTheory.DataTypesAsLattices.Closures.squareSnd
-public import DomainTheory.DataTypesAsLattices.Closures.boxTensor
-public import DomainTheory.DataTypesAsLattices.Closures.boxTag
-public import DomainTheory.DataTypesAsLattices.Closures.Vapply
-public import DomainTheory.DataTypesAsLattices.Closures.closureCompact
-public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
-public import DomainTheory.DataTypesAsLattices.Closures.Vstep
-public import DomainTheory.DataTypesAsLattices.Closures.VapplyY
-public import DomainTheory.DataTypesAsLattices.Closures.closureRangeCountablyAlgebraic
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure
-public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode
-public import DomainTheory.DataTypesAsLattices.Closures.representationDecode
-public import DomainTheory.DataTypesAsLattices.Closures.representationOrderIso
-public import DomainTheory.DataTypesAsLattices.Closures.Vcomb
-public import DomainTheory.DataTypesAsLattices.Closures.selfArrowStep
-public import DomainTheory.DataTypesAsLattices.Closures.dEq
-public import DomainTheory.DataTypesAsLattices.Closures.closure_expansive
-public import DomainTheory.DataTypesAsLattices.Closures.closureCompact_isCompact
-public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff
-public import DomainTheory.DataTypesAsLattices.Closures.retractBasis_eq_compactFixedBelow
-public import DomainTheory.DataTypesAsLattices.Closures.fixed_eq_sSup_compacts
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure_mono
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode_app
-public import DomainTheory.DataTypesAsLattices.Closures.representationDecode_encode
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_fixed
-
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
 
@@ -53,11 +16,11 @@ namespace DomainTheory.DataTypesAsLattices
 theorem eq_5_11 {a b u x : Pomega} (ha : Closure a) (hb : Closure b) :
     funOf u x ⊆ funOf b (funOf u (funOf a x)) := by
   have hx : x ⊆ funOf a x := by
-    have := funOf_monotone_left ha.out.1 x
+    have := funOf.monotone_left ha.out.1 x
     rwa [Icomb.app] at this
   have hy : funOf u (funOf a x) ⊆ funOf b (funOf u (funOf a x)) := by
-    have := funOf_monotone_left hb.out.1 (funOf u (funOf a x))
+    have := funOf.monotone_left hb.out.1 (funOf u (funOf a x))
     rwa [Icomb.app] at this
-  exact subset_trans (funOf_monotone_right u hx) hy
+  exact subset_trans (funOf.monotone_right u hx) hy
 
 end DomainTheory.DataTypesAsLattices

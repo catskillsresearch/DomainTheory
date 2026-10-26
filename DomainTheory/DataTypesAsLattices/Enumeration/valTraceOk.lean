@@ -2,16 +2,8 @@ module
 
 public import Mathlib.Computability.Halting
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eempty
-public import DomainTheory.DataTypesAsLattices.Computability.REPredu2etrue
-public import DomainTheory.DataTypesAsLattices.Computability.REPredu2ecomp
-public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eand
-public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eor
-public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.e
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.ValTrace
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceStruct
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceG
@@ -20,17 +12,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas
 public import DomainTheory.DataTypesAsLattices.Enumeration.valEntryJustified
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrecPred_valTraceStruct
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceG_re
-
-public import DomainTheory.DataTypesAsLattices.Enumeration.valEntryJustified_mono
-
-public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp_eq
-
 public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp
-
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_left
-
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_right
 
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
@@ -63,8 +45,8 @@ theorem append {tr₁ tr₂ : ValTrace}
   constructor
   · intro e he
     rcases List.mem_append.mp he with he | he
-    · exact valEntryJustified_mono (fun _ _ => valTraceHas_append_left) (h₁.1 e he)
-    · exact valEntryJustified_mono (fun _ _ => valTraceHas_append_right) (h₂.1 e he)
+    · exact valEntryJustified.mono (fun _ _ => valTraceHas.append_left) (h₁.1 e he)
+    · exact valEntryJustified.mono (fun _ _ => valTraceHas.append_right) (h₂.1 e he)
   · intro e he he0
     rcases List.mem_append.mp he with he | he
     · exact h₁.2 e he he0
@@ -78,7 +60,7 @@ theorem cons {tr : ValTrace} {e : ℕ × ℕ × ℕ}
   · intro e' he'
     rcases List.mem_cons.mp he' with rfl | he'
     · exact hjust
-    · exact valEntryJustified_mono
+    · exact valEntryJustified.mono
         (fun c m ⟨t, ht⟩ => ⟨t, List.mem_cons.mpr (Or.inr ht)⟩) (htr.1 e' he')
   · intro e' he' he0
     rcases List.mem_cons.mp he' with rfl | he'
@@ -109,7 +91,7 @@ theorem sound {tr : ValTrace} (hok : valTraceOk tr) :
     | succ p =>
       rcases hjust with h0 | ⟨hop, hbits⟩
       · exact (Nat.succ_ne_zero p h0).elim
-      · simp only [Nat.pred_succ, unpairComp_eq] at hop hbits
+      · simp only [Nat.pred_succ, unpairComp.eq] at hop hbits
         have hop' : (unpair p).1 < p + 1 :=
           (pair_lt_left (unpair p).1 (unpair p).2).trans_le (by
             have := pair_unpair p
@@ -135,8 +117,13 @@ theorem sound {tr : ValTrace} (hok : valTraceOk tr) :
 
 theorem re : REPred valTraceOk :=
   _root_.REPred.of_eq
-    (REPred.and primrecPred_valTraceStruct.computablePred.to_re valTraceG_re)
+    (REPred.and primrecPred_valTraceStruct.computablePred.to_re valTraceG.re)
     fun _ => Iff.rfl
+
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
 
 end valTraceOk
 

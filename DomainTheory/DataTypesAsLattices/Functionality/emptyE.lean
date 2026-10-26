@@ -1,8 +1,7 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
+public import DomainTheory.DataTypesAsLattices.Functionality.mem
 
 @[expose] public section
 

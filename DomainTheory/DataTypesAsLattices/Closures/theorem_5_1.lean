@@ -5,45 +5,15 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
 public import DomainTheory.DataTypesAsLattices.Retracts.IsCompactSubset
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
-public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.Closures.Isolated
-public import DomainTheory.DataTypesAsLattices.Closures.squarePair
-public import DomainTheory.DataTypesAsLattices.Closures.squareFst
-public import DomainTheory.DataTypesAsLattices.Closures.squareSnd
-public import DomainTheory.DataTypesAsLattices.Closures.boxTensor
-public import DomainTheory.DataTypesAsLattices.Closures.boxTag
-public import DomainTheory.DataTypesAsLattices.Closures.Vapply
 public import DomainTheory.DataTypesAsLattices.Closures.closureCompact
 public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
-public import DomainTheory.DataTypesAsLattices.Closures.Vstep
-public import DomainTheory.DataTypesAsLattices.Closures.VapplyY
-public import DomainTheory.DataTypesAsLattices.Closures.closureRangeCountablyAlgebraic
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure
-public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode
-public import DomainTheory.DataTypesAsLattices.Closures.representationDecode
-public import DomainTheory.DataTypesAsLattices.Closures.representationOrderIso
-public import DomainTheory.DataTypesAsLattices.Closures.Vcomb
-public import DomainTheory.DataTypesAsLattices.Closures.selfArrowStep
-public import DomainTheory.DataTypesAsLattices.Closures.dEq
-public import DomainTheory.DataTypesAsLattices.Closures.closure_expansive
-public import DomainTheory.DataTypesAsLattices.Closures.closureCompact_isCompact
 public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff
-public import DomainTheory.DataTypesAsLattices.Closures.retractBasis_eq_compactFixedBelow
-public import DomainTheory.DataTypesAsLattices.Closures.fixed_eq_sSup_compacts
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure_mono
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode_app
-public import DomainTheory.DataTypesAsLattices.Closures.representationDecode_encode
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_fixed
-public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow_directedSubset
-public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow_sUnion
-public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff_subset
-
+public import DomainTheory.DataTypesAsLattices.Retracts.vals
+public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -57,8 +27,8 @@ theorem theorem_5_1 {a : Pomega} (ha : Closure a) :
     ∀ x : Fixpoints (funOf a),
       DirectedSubset (compactFixedBelow a x) ∧
         (x : Pomega) = ⋃₀ (Subtype.val '' compactFixedBelow a x) :=
-  ⟨compact_fixed_iff_subset ha, fun x =>
-    ⟨compactFixedBelow_directedSubset ha x, compactFixedBelow_sUnion ha x⟩⟩
+  ⟨compact_fixed_iff.subset ha, fun x =>
+    ⟨compactFixedBelow.directedSubset ha x, compactFixedBelow.sUnion ha x⟩⟩
 
 /-- Isolated points of a closure are its values on finite sets, and
 conversely every `a(e n)` is a typed point. -/

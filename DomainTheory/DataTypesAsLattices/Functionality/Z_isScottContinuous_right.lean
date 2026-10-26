@@ -1,12 +1,11 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Functionality.Z
-public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
-public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
@@ -17,6 +16,6 @@ theorem Z.isScottContinuous_right (n : ℕ) (f : Pomega) :
   induction n with
   | zero => simpa [Z] using id_isScottContinuous
   | succ n ih =>
-    simpa [Z] using theorem_1_3 (funOf_isScottContinuous f) ih
+    simpa [Z] using theorem_1_3 (funOf.isScottContinuous f) ih
 
 end DomainTheory.DataTypesAsLattices

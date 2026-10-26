@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_interpolation
@@ -18,8 +17,11 @@ public import DomainTheory.DataTypesAsLattices.Retracts.sSup_fixed_eq_sUnion
 public import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
 public import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
 public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
-
+public import DomainTheory.DataTypesAsLattices.Retracts.vals
+public import DomainTheory.DataTypesAsLattices.Retracts.typed
+public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
+public import DomainTheory.DataTypesAsLattices.Retracts.fixpointsCompleteLattice
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -49,13 +51,13 @@ theorem directed {a : Pomega} (ha : Retract a)
       rw [hyn]
       change funOf a (e n) ⊆ funOf a (e (n ||| m))
       rw [e_or]
-      exact IsScottContinuous.monotone (funOf_isScottContinuous a)
+      exact IsScottContinuous.monotone (funOf.isScottContinuous a)
         Set.subset_union_left
     · change (z : Pomega) ⊆ (w : Pomega)
       rw [hzm]
       change funOf a (e m) ⊆ funOf a (e (n ||| m))
       rw [e_or]
-      exact IsScottContinuous.monotone (funOf_isScottContinuous a)
+      exact IsScottContinuous.monotone (funOf.isScottContinuous a)
         Set.subset_union_right
 
 theorem directedSubset {a : Pomega} (ha : Retract a)
@@ -71,7 +73,7 @@ theorem eq_sSup {a : Pomega} (ha : Retract a)
     (x : Fixpoints (funOf a)) :
     x = sSup (retractBasis a x) := by
   apply Subtype.ext
-  rw [sSup_fixed_eq_sUnion (funOf_isScottContinuous a)
+  rw [sSup_fixed_eq_sUnion (funOf.isScottContinuous a)
     (directed ha x)]
   have hx : typed (x : Pomega) a := x.property.symm
   rw [retract_interpolation ha hx]
@@ -92,7 +94,7 @@ theorem eq_sUnion {a : Pomega} (ha : Retract a)
     (x : Fixpoints (funOf a)) :
     (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) := by
   have h := eq_sSup ha x
-  have hsu := sSup_fixed_eq_sUnion (funOf_isScottContinuous a)
+  have hsu := sSup_fixed_eq_sUnion (funOf.isScottContinuous a)
     (directed ha x)
   have : (x : Pomega) = (sSup (retractBasis a x) : Fixpoints (funOf a)) :=
     congrArg Subtype.val h
@@ -106,7 +108,7 @@ theorem wayBelow {a : Pomega} (_ha : Retract a)
   have hsup :
       ((sSup A : Fixpoints (funOf a)) : Pomega) =
         ⋃₀ (Fixpoints.vals A) :=
-    sSup_fixed_eq_sUnion (funOf_isScottContinuous a) hA
+    sSup_fixed_eq_sUnion (funOf.isScottContinuous a) hA
   have hfinite :
       e n ⊆ ⋃₀ (Fixpoints.vals A) := by
     rw [← hsup]
@@ -116,7 +118,7 @@ theorem wayBelow {a : Pomega} (_ha : Retract a)
   refine ⟨z, hzA, ?_⟩
   change (y : Pomega) ⊆ z
   rw [hyn]
-  have := IsScottContinuous.monotone (funOf_isScottContinuous a) hnz
+  have := IsScottContinuous.monotone (funOf.isScottContinuous a) hnz
   rwa [z.property] at this
 
 end retractBasis

@@ -3,14 +3,12 @@ module
 public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.e
-public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
+public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 public import DomainTheory.DataTypesAsLattices.Retracts.iterateBot_retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 
 @[expose] public section
 
@@ -30,7 +28,7 @@ theorem inverseLimit_project_later {F : Pomega → Pomega}
       have hle := iterateBot_retractLe hret hstrict hmono hnm
       have happ :=
         congrArg (fun a => funOf a (v.1 (m + 1))) hle.1
-      rw [comp_app, ← v.property.2 m, ih] at happ
+      rw [comp.app, ← v.property.2 m, ih] at happ
       exact happ
 
 end DomainTheory.DataTypesAsLattices

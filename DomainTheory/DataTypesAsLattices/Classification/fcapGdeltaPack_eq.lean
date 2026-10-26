@@ -9,7 +9,7 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import Mathlib.Data.Set.Finite.Powerset
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
+public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack
 public import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succSet_top
 
 @[expose] public section

@@ -14,15 +14,6 @@
 
 @import "fix_param_isScottContinuous.lean"
 
-**[DataTypesAsLattices/Lambda/Ymap_app.lean](Ymap_app.lean)**
-
-@import "Ymap_app.lean"
-
-**[DataTypesAsLattices/Lambda/eq_2_28_commute.lean](eq_2_28_commute.lean)**
-
-@import "eq_2_28_commute.lean"
-
 **[DataTypesAsLattices/Lambda/Ymap.lean](Ymap.lean)**
 
 @import "Ymap.lean"
-

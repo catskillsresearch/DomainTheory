@@ -2,9 +2,7 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
+public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2
 public import DomainTheory.DataTypesAsLattices.Enumeration.unionOperator_combinatory
 
 @[expose] public section

@@ -3,7 +3,6 @@ module
 public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.bot_isRetract
 
 @[expose] public section

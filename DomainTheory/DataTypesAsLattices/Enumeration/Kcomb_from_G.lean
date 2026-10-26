@@ -1,16 +1,13 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app_zero
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app_one
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.zeroC
 public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_one
+public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
+public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_more
 
 @[expose] public section
 
@@ -23,6 +20,6 @@ theorem Kcomb_from_G :
       funOf (funOf (funOf (funOf (funOf Gcomb zeroC) (ofNat 1)) (ofNat 1))
         (ofNat 1)) zeroC := by
   have : zeroC = ofNat 0 := rfl
-  simp [this, Gcomb.zero, Gpack_one, seq2_app_one, seq2_app_one, seq2_app_zero]
+  simp [this, Gcomb.zero, Gpack.one, seq2.one, seq2.one, seq2.zero]
 
 end DomainTheory.DataTypesAsLattices

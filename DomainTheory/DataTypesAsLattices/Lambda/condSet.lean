@@ -8,6 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import Mathlib.Data.Nat.Bitwise
 
 @[expose] public section
 

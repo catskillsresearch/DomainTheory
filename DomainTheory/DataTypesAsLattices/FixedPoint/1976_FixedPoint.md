@@ -11,23 +11,3 @@
 
 @import "chain_mono.lean"
 
-**[DataTypesAsLattices/FixedPoint/exists_index_of_finset.lean](exists_index_of_finset.lean)**
-
-@import "exists_index_of_finset.lean"
-
-**[DataTypesAsLattices/FixedPoint/chain_lemma.lean](chain_lemma.lean)**
-
-@import "chain_lemma.lean"
-
-**[DataTypesAsLattices/FixedPoint/iterateBot.lean](iterateBot.lean)**
-
-@import "iterateBot.lean"
-
-**[DataTypesAsLattices/FixedPoint/fix.lean](fix.lean)**
-
-@import "fix.lean"
-
-**[DataTypesAsLattices/FixedPoint/iterateBot_mono.lean](iterateBot_mono.lean)**
-
-@import "iterateBot_mono.lean"
-

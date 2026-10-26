@@ -6,11 +6,3 @@
 
 @import "theorem_6_3.lean"
 
-**[DataTypesAsLattices/Classification/typicalGdelta_isScottGdelta.lean](typicalGdelta_isScottGdelta.lean)**
-
-@import "typicalGdelta_isScottGdelta.lean"
-
-**[DataTypesAsLattices/Classification/typicalGdelta_universal.lean](typicalGdelta_universal.lean)**
-
-@import "typicalGdelta_universal.lean"
-

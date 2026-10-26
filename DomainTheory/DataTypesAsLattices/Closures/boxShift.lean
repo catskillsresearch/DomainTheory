@@ -2,41 +2,31 @@ module
 
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Retracts.Icomb_more
-public import DomainTheory.DataTypesAsLattices.Retracts.intF
-public import DomainTheory.DataTypesAsLattices.Retracts.intR
-public import DomainTheory.DataTypesAsLattices.Retracts.intR_more
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR_more
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import DomainTheory.DataTypesAsLattices.Retracts.predSet_ofNat_zero
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
-public import DomainTheory.DataTypesAsLattices.Lambda.succSet_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Lambda.succSet
+public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Graph.beta
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.succSet
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_monotone_left
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.Closures.union_const_left_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Closures.predSet_union
 public import DomainTheory.DataTypesAsLattices.Closures.predSet_succSet
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
+public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
+public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
 
 @[expose] public section
 
@@ -51,8 +41,8 @@ namespace boxShift
 theorem map_isScottContinuous (a : Pomega) :
     IsScottContinuous (fun x => ofNat 0 ∪ succSet (funOf a (predSet x))) :=
   theorem_1_3 (union_const_left_isScottContinuous (ofNat 0))
-    (theorem_1_3 succSet_isScottContinuous
-      (theorem_1_3 (funOf_isScottContinuous a) predSet.isScottContinuous))
+    (theorem_1_3 succSet.isScottContinuous
+      (theorem_1_3 (funOf.isScottContinuous a) predSet.isScottContinuous))
 
 theorem app (a x : Pomega) :
     funOf (boxShift a) x = ofNat 0 ∪ succSet (funOf a (predSet x)) :=
@@ -67,7 +57,7 @@ theorem expansive {a : Pomega} (ha : Closure a) (x : Pomega) :
   | succ k =>
     refine Or.inr ⟨k, ?_, rfl⟩
     have hx : predSet x ⊆ funOf a (predSet x) := by
-      have := funOf_monotone_left ha.out.1 (predSet x)
+      have := funOf.monotone_left ha.out.1 (predSet x)
       rwa [Icomb.app] at this
     exact hx hk
 

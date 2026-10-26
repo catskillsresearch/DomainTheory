@@ -3,6 +3,7 @@ module
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
+public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 @[expose] public section
 

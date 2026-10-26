@@ -1,9 +1,8 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.finAux
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 

@@ -6,7 +6,3 @@
 
 @import "proposition_3_10_converse.lean"
 
-**[ContinuousLattice/FunctionSpaces/proposition_3_10_forward.lean](proposition_3_10_forward.lean)**
-
-@import "proposition_3_10_forward.lean"
-

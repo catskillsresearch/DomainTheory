@@ -15,80 +15,25 @@ public import DomainTheory.DataTypesAsLattices.Graph.IsGraph
 public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
-public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
-public import DomainTheory.DataTypesAsLattices.Retracts.IsCompactSubset
-public import DomainTheory.DataTypesAsLattices.Retracts.typed
-public import DomainTheory.DataTypesAsLattices.Retracts.funRetract
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
-public import DomainTheory.DataTypesAsLattices.Retracts.fstC
-public import DomainTheory.DataTypesAsLattices.Retracts.sndC
-public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
-public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
-public import DomainTheory.DataTypesAsLattices.Retracts.plusR
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom
-public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
-public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
-public import DomainTheory.DataTypesAsLattices.Retracts.fixpointsCompleteLattice
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
-public import DomainTheory.DataTypesAsLattices.Retracts.diagC
-public import DomainTheory.DataTypesAsLattices.Retracts.evalC
-public import DomainTheory.DataTypesAsLattices.Retracts.curryC
-public import DomainTheory.DataTypesAsLattices.Retracts.intF
-public import DomainTheory.DataTypesAsLattices.Retracts.treeF
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.fixedToInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimitToFixed
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6_inverseLimit
-public import DomainTheory.DataTypesAsLattices.Retracts.treeR
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
-public import DomainTheory.DataTypesAsLattices.Retracts.openR
-public import DomainTheory.DataTypesAsLattices.Retracts.lambF
-public import DomainTheory.DataTypesAsLattices.Retracts.lambR
-public import DomainTheory.DataTypesAsLattices.Retracts.envR
-public import DomainTheory.DataTypesAsLattices.Retracts.updateEnv
-public import DomainTheory.DataTypesAsLattices.Retracts.tagInj
-public import DomainTheory.DataTypesAsLattices.Retracts.seq4
-public import DomainTheory.DataTypesAsLattices.Retracts.tensor4
-public import DomainTheory.DataTypesAsLattices.Retracts.plus7Body
-public import DomainTheory.DataTypesAsLattices.Retracts.plus7
-public import DomainTheory.DataTypesAsLattices.Retracts.expF
-public import DomainTheory.DataTypesAsLattices.Retracts.expR
-public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
-public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_more
-public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
-public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
-public import DomainTheory.DataTypesAsLattices.Retracts.funOf_botElem
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_const_bot
-public import DomainTheory.DataTypesAsLattices.Retracts.bot_isRetract
 public import DomainTheory.DataTypesAsLattices.Retracts.iterates_areRetracts
-public import DomainTheory.DataTypesAsLattices.Retracts.bot_retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateBot_isStrict
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateBot_retractLe_succ
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateBot_retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
-public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_mono
-public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_chain
-public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_later
-public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_earlier
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
-public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import DomainTheory.DataTypesAsLattices.Retracts.iUnion_retract_isGraph
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_fix_idem
+public import DomainTheory.DataTypesAsLattices.Retracts.vals
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
+public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 /-- **Scott 1976, Theorem 4.6 (The limit theorem).**
 Kleene iterates of a retract-preserving continuous `F` are retracts, and
@@ -110,5 +55,101 @@ theorem theorem_4_6 {F : Pomega → Pomega}
       graph (funOf (fix F)) :=
     graph_ext (fun x => funOf_fix_idem hf hret x)
   exact (hidem'.trans hgr).symm
+
+namespace theorem_4_6
+
+/-- **Scott 1976, Theorem 4.6, inverse-limit half.** The maps
+`u ↦ (Fⁿ(⊥)(u))ₙ` and `(vₙ) ↦ ⋃ₙ vₙ` are inverse order isomorphisms. -/
+def inverseLimit {F : Pomega → Pomega}
+    (hf : IsScottContinuous F)
+    (hret : ∀ a, Retract a → Retract (F a))
+    (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))
+    (hmono : ∀ {a b}, Retract a → IsStrict a →
+      Retract b → IsStrict b → retractLe a b → retractLe (F a) (F b)) :
+    Fixpoints (funOf (fix F)) ≃o RetractInverseLimit F where
+  toFun := fixedToInverseLimit hf hret hstrict hmono
+  invFun := inverseLimitToFixed hf hret hstrict hmono
+  left_inv u := by
+    apply Subtype.ext
+    change (⋃ n, funOf (iterateBot F n) u.1) = u.1
+    rw [← funOf.iUnion, ← fix, u.property]
+  right_inv v := by
+    apply Subtype.ext
+    funext n
+    exact inverseLimit_project_iUnion hf hret hstrict hmono v n
+  map_rel_iff' := by
+    intro u w
+    constructor
+    · intro h
+      change ∀ n, funOf (iterateBot F n) u.1 ⊆
+        funOf (iterateBot F n) w.1 at h
+      change u.1 ⊆ w.1
+      have hu : u.1 = ⋃ n, funOf (iterateBot F n) u.1 := by
+        calc
+          u.1 = funOf (fix F) u.1 := u.property.symm
+          _ = ⋃ n, funOf (iterateBot F n) u.1 := by
+            change funOf (⋃ n, iterateBot F n) u.1 = _
+            rw [funOf.iUnion]
+      have hw : w.1 = ⋃ n, funOf (iterateBot F n) w.1 := by
+        calc
+          w.1 = funOf (fix F) w.1 := w.property.symm
+          _ = ⋃ n, funOf (iterateBot F n) w.1 := by
+            change funOf (⋃ n, iterateBot F n) w.1 = _
+            rw [funOf.iUnion]
+      rw [hu, hw]
+      intro k hk
+      obtain ⟨n, hkn⟩ := Set.mem_iUnion.mp hk
+      exact Set.mem_iUnion.mpr ⟨n, h n hkn⟩
+    · intro huw
+      change u.1 ⊆ w.1 at huw
+      change ∀ n, funOf (iterateBot F n) u.1 ⊆
+        funOf (iterateBot F n) w.1
+      intro n
+      exact funOf.monotone_right (iterateBot F n) huw
+
+/-- **Scott 1976, Theorem 4.6**, inverse-limit half packaged with the
+retract half. Under the paper's extra strictness and `⊑`-monotonicity
+hypotheses, the range of `Y(F)` is order-isomorphic to the inverse
+limit of the ranges of `Fⁿ(⊥)`. Stated without `≃o` so the compared
+type does not mention a `CompleteLattice` instance. -/
+theorem limit {F : Pomega → Pomega}
+    (hf : IsScottContinuous F)
+    (hret : ∀ a, Retract a → Retract (F a))
+    (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))
+    (hmono : ∀ {a b}, Retract a → IsStrict a →
+      Retract b → IsStrict b → retractLe a b → retractLe (F a) (F b)) :
+    (∀ n, Retract (iterateBot F n)) ∧
+      Retract (funOf Ycomb (graph F)) ∧
+        ∃ φ : Fixpoints (funOf (fix F)) → RetractInverseLimit F,
+          Function.Bijective φ ∧
+            ∀ x y : Fixpoints (funOf (fix F)),
+              (x : Pomega) ⊆ (y : Pomega) ↔
+                ∀ n, (φ x).1 n ⊆ (φ y).1 n := by
+  refine ⟨(theorem_4_6 hf hret).1, (theorem_4_6 hf hret).2, ?_⟩
+  let iso := theorem_4_6.inverseLimit hf hret hstrict hmono
+  refine ⟨iso, iso.bijective, fun x y => ⟨?_, ?_⟩⟩
+  · intro hxy n
+    exact funOf.monotone_right (iterateBot F n) hxy
+  · intro h
+    have hx : (x : Pomega) = ⋃ n, funOf (iterateBot F n) (x : Pomega) := by
+      calc
+        (x : Pomega) = funOf (fix F) (x : Pomega) := x.property.symm
+        _ = ⋃ n, funOf (iterateBot F n) (x : Pomega) := by
+          change funOf (⋃ n, iterateBot F n) (x : Pomega) = _
+          rw [funOf.iUnion]
+    have hy : (y : Pomega) = ⋃ n, funOf (iterateBot F n) (y : Pomega) := by
+      calc
+        (y : Pomega) = funOf (fix F) (y : Pomega) := y.property.symm
+        _ = ⋃ n, funOf (iterateBot F n) (y : Pomega) := by
+          change funOf (⋃ n, iterateBot F n) (y : Pomega) = _
+          rw [funOf.iUnion]
+    change ∀ n, funOf (iterateBot F n) (x : Pomega) ⊆
+      funOf (iterateBot F n) (y : Pomega) at h
+    rw [hx, hy]
+    intro k hk
+    obtain ⟨n, hn⟩ := Set.mem_iUnion.mp hk
+    exact Set.mem_iUnion.mpr ⟨n, h n hn⟩
+
+end theorem_4_6
 
 end DomainTheory.DataTypesAsLattices

@@ -9,21 +9,3 @@ The three conditions meet as follows. Passing from a computable $f$ to its itera
 **[DataTypesAsLattices/Computability/theorem_2_6.lean](theorem_2_6.lean)**
 
 @import "theorem_2_6.lean"
-
-**[DataTypesAsLattices/Computability/theorem_2_6.combinatory_zero.lean](theorem_2_6.combinatory_zero.lean)**
-
-@import "theorem_2_6.combinatory_zero.lean"
-
-**[DataTypesAsLattices/Computability/theorem_2_6.fin.lean](theorem_2_6.fin.lean)**
-
-@import "theorem_2_6.fin.lean"
-
-**[DataTypesAsLattices/Computability/theorem_2_6.lambda_continuous.lean](theorem_2_6.lambda_continuous.lean)**
-
-@import "theorem_2_6.lambda_continuous.lean"
-
-**[DataTypesAsLattices/Computability/theorem_2_6.ofNat_isRE.lean](theorem_2_6.ofNat_isRE.lean)**
-
-@import "theorem_2_6.ofNat_isRE.lean"
-
-

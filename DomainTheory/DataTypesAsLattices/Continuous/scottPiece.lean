@@ -1,8 +1,8 @@
 module
 
 public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Order
-public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import Mathlib.Tactic.Continuity.Init
 
 @[expose] public section
 

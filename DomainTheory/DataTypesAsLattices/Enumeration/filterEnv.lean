@@ -5,9 +5,6 @@ public import DomainTheory.DataTypesAsLattices.Computability.pairComb
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarC
 public import DomainTheory.DataTypesAsLattices.Lambda.predC
 public import DomainTheory.DataTypesAsLattices.Pomega.e
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
-public import DomainTheory.DataTypesAsLattices.Enumeration.BasicInst85
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer
 
 @[expose] public section
@@ -29,5 +26,24 @@ def filterEnv : ℕ → Pomega
   | 6 => predC
   | 7 => topElem
   | _ => botElem
+
+namespace filterEnv
+
+open Encodable
+
+open Nat.Partrec (Code)
+
+open Nat.Partrec.Code
+
+theorem combinatory : ∀ i, IsCombinatory (filterEnv i)
+  | 3 => filterRealizer.combinatory
+  | 4 => pairComb.combinatory
+  | 5 => dollarC.combinatory
+  | 6 => .pred
+  | 7 => topElem_combinatory
+  | 0 | 1 | 2 => botElem_combinatory
+  | _ + 8 => botElem_combinatory
+
+end filterEnv
 
 end DomainTheory.DataTypesAsLattices

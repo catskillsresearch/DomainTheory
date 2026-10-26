@@ -2,14 +2,10 @@ module
 
 public import Mathlib.Computability.Halting
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_haltEnum
 public import DomainTheory.DataTypesAsLattices.Enumeration.beforeHalt
-public import DomainTheory.DataTypesAsLattices.Enumeration.BasicInst85
 
 @[expose] public section
 

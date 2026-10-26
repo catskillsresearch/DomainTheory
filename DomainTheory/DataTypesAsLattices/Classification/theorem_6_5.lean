@@ -10,11 +10,13 @@ public import DomainTheory.DataTypesAsLattices.Lambda.succSet
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import Mathlib.Data.Set.Finite.Powerset
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
 public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_3
 public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succSet_top
 public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack_eq
+public import DomainTheory.DataTypesAsLattices.Classification.IsFcapGdelta
+public import DomainTheory.DataTypesAsLattices.Classification.Basic
+public import DomainTheory.DataTypesAsLattices.Classification.charTop
 
 @[expose] public section
 

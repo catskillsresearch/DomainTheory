@@ -1,16 +1,12 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
 public import Mathlib.Order.CompleteLattice.Defs
 public import DomainTheory.DataTypesAsLattices.Lambda.seq2
 public import DomainTheory.DataTypesAsLattices.Lambda.e_one
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app_zero
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app_one
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
@@ -18,7 +14,6 @@ public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.isScottOpen_isUpper
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
@@ -33,17 +28,12 @@ public import Mathlib.Data.Set.Finite.Powerset
 
 public import DomainTheory.DataTypesAsLattices.Classification.IsBooleanOpen
 public import DomainTheory.DataTypesAsLattices.Classification.charOpen
-public import DomainTheory.DataTypesAsLattices.Classification.ScottG
-public import DomainTheory.DataTypesAsLattices.Classification.ScottF
 public import DomainTheory.DataTypesAsLattices.Classification.ScottB
-public import DomainTheory.DataTypesAsLattices.Classification.IsScottGdelta
 public import DomainTheory.DataTypesAsLattices.Classification.IsFcapG
-public import DomainTheory.DataTypesAsLattices.Classification.IsFcapGdelta
 public import DomainTheory.DataTypesAsLattices.Classification.IsBdelta
 public import DomainTheory.DataTypesAsLattices.Classification.charTop
 public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
 public import DomainTheory.DataTypesAsLattices.Classification.oddEvenPack
-public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack
 public import DomainTheory.DataTypesAsLattices.Classification.evenPart
 public import DomainTheory.DataTypesAsLattices.Classification.oddPart
 public import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
@@ -52,16 +42,9 @@ public import DomainTheory.DataTypesAsLattices.Classification.zeroPrime
 public import DomainTheory.DataTypesAsLattices.Classification.uvU
 public import DomainTheory.DataTypesAsLattices.Classification.uvV
 public import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
-public import DomainTheory.DataTypesAsLattices.Classification.typicalG
-public import DomainTheory.DataTypesAsLattices.Classification.typicalF
-public import DomainTheory.DataTypesAsLattices.Classification.typicalGdelta
-public import DomainTheory.DataTypesAsLattices.Classification.typicalFcapG
-public import DomainTheory.DataTypesAsLattices.Classification.typicalFcapGdelta
 public import DomainTheory.DataTypesAsLattices.Classification.typicalBdelta
-public import DomainTheory.DataTypesAsLattices.Classification.typicalSigma11
-public import DomainTheory.DataTypesAsLattices.Classification.typicalPi11
-public import DomainTheory.DataTypesAsLattices.Classification.IsSigma11
-public import DomainTheory.DataTypesAsLattices.Classification.Pi11
+public import Mathlib.Data.Set.Lattice.Indexed
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
@@ -1304,12 +1287,12 @@ theorem typicalBdelta_universal (U : Set Pomega) :
     · intro h
       change funOf (seq2 (F x) (G x)) (ofNat 0) =
         funOf (seq2 (F x) (G x)) (ofNat 1)
-      rw [seq2_app_zero, seq2_app_one]
+      rw [seq2.zero, seq2.one]
       exact h
     · intro h
       have : funOf (seq2 (F x) (G x)) (ofNat 0) =
           funOf (seq2 (F x) (G x)) (ofNat 1) := h
-      rw [seq2_app_zero, seq2_app_one] at this
+      rw [seq2.zero, seq2.one] at this
       exact this
   · rintro ⟨f, hf, rfl⟩
     exact (theorem_6_7 _).mpr

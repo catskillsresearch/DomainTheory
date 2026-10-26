@@ -6,11 +6,3 @@
 
 @import "IsInjectiveSpaceu2eof_retract.lean"
 
-**[ContinuousLattice/Injective/IsRetractSubspace.lean](IsRetractSubspace.lean)**
-
-@import "IsRetractSubspace.lean"
-
-**[ContinuousLattice/Injective/proposition_1_4.lean](proposition_1_4.lean)**
-
-@import "proposition_1_4.lean"
-

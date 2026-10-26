@@ -6,12 +6,3 @@
 
 @import "theorem_6_5.lean"
 
-**[DataTypesAsLattices/Classification/typicalFcapGdelta_isFcapGdelta.lean](typicalFcapGdelta_isFcapGdelta.lean)**
-
-@import "typicalFcapGdelta_isFcapGdelta.lean"
-
-**[DataTypesAsLattices/Classification/typicalFcapGdelta_universal.lean](typicalFcapGdelta_universal.lean)**
-
-@import "typicalFcapGdelta_universal.lean"
-
-

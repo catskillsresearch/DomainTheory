@@ -1,15 +1,13 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
-
+public import DomainTheory.DataTypesAsLattices.Functionality.mem
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -56,7 +54,7 @@ theorem graph_funOf (n : ℕ) (f x : Pomega) :
   | succ n ih =>
     simp [Z, ih]
     have : funOf (graph (fun y => funOf f y)) (Z n f x) = funOf f (Z n f x) :=
-      beta (funOf_isScottContinuous f) (Z n f x)
+      beta (funOf.isScottContinuous f) (Z n f x)
     exact this
 
 end Z

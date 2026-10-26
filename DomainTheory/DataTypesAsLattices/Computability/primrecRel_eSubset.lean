@@ -1,5 +1,4 @@
 module
-
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.e
@@ -7,10 +6,6 @@ public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsComputable
 public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
-public import DomainTheory.DataTypesAsLattices.Computability.pack4_proj1
-public import DomainTheory.DataTypesAsLattices.Computability.pack4_proj2
-public import DomainTheory.DataTypesAsLattices.Computability.pack4_proj3
-public import DomainTheory.DataTypesAsLattices.Computability.pack4_proj4
 public import DomainTheory.DataTypesAsLattices.Computability.topRecTerm
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes2
@@ -61,12 +56,9 @@ public import DomainTheory.DataTypesAsLattices.Computability.eSubset_e_iff
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code

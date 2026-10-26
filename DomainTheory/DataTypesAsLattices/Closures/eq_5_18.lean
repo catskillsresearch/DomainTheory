@@ -1,63 +1,41 @@
 module
 
 public import Mathlib.Algebra.Ring.Parity
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Retracts.intF
-public import DomainTheory.DataTypesAsLattices.Retracts.intR
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_monotone_left
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Closures.Closure
-public import DomainTheory.DataTypesAsLattices.Closures.Isolated
-public import DomainTheory.DataTypesAsLattices.Closures.squarePair
-public import DomainTheory.DataTypesAsLattices.Closures.squareFst
-public import DomainTheory.DataTypesAsLattices.Closures.squareSnd
-public import DomainTheory.DataTypesAsLattices.Closures.boxTensor
-public import DomainTheory.DataTypesAsLattices.Closures.boxTag
 public import DomainTheory.DataTypesAsLattices.Closures.Vapply
-public import DomainTheory.DataTypesAsLattices.Closures.closureCompact
-public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
-public import DomainTheory.DataTypesAsLattices.Closures.Vstep
-public import DomainTheory.DataTypesAsLattices.Closures.VapplyY
-public import DomainTheory.DataTypesAsLattices.Closures.closureRangeCountablyAlgebraic
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure
-public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode
-public import DomainTheory.DataTypesAsLattices.Closures.representationDecode
-public import DomainTheory.DataTypesAsLattices.Closures.representationOrderIso
-public import DomainTheory.DataTypesAsLattices.Closures.Vcomb
-public import DomainTheory.DataTypesAsLattices.Closures.selfArrowStep
-public import DomainTheory.DataTypesAsLattices.Closures.dEq
-public import DomainTheory.DataTypesAsLattices.Closures.closure_expansive
-public import DomainTheory.DataTypesAsLattices.Closures.closureCompact_isCompact
-public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff
-public import DomainTheory.DataTypesAsLattices.Closures.retractBasis_eq_compactFixedBelow
-public import DomainTheory.DataTypesAsLattices.Closures.fixed_eq_sSup_compacts
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure_mono
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode_app
-public import DomainTheory.DataTypesAsLattices.Closures.representationDecode_encode
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_fixed
-
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 /-- **Scott 1976, (5.18).** If `a` is already a closure, then `V(a)(x) ⊆ a(x)`. -/
 theorem eq_5_18 {a : Pomega} (ha : Closure a) (x : Pomega) :
     Vapply a x ⊆ funOf a x := by
   intro k hk
   have hx : x ⊆ funOf a x := by
-    have := funOf_monotone_left ha.out.1 x
+    have := funOf.monotone_left ha.out.1 x
     rwa [Icomb.app] at this
   have haa : funOf a (funOf a x) ⊆ funOf a x := by
     simp [retract_app ha.out.2]
   exact hk (funOf a x) ⟨hx, haa⟩
+
+namespace eq_5_18
+
+/-- The missing inclusion of (5.18): if `x ⊆ y` and `a(y) ⊆ y` then `a(x) ⊆ y`. -/
+theorem rev (a x : Pomega) :
+    funOf a x ⊆ Vapply a x := by
+  intro k hk y hy
+  exact hy.2 (funOf.monotone_right a hy.1 hk)
+
+/-- **Scott 1976, (5.18).** Closures are fixed by `V` on values. -/
+theorem eq {a : Pomega} (ha : Closure a) (x : Pomega) :
+    Vapply a x = funOf a x :=
+  subset_antisymm (eq_5_18 ha x) (eq_5_18.rev a x)
+
+end eq_5_18
 
 end DomainTheory.DataTypesAsLattices

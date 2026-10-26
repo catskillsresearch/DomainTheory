@@ -3,10 +3,8 @@ module
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.Lcomb
-public import DomainTheory.DataTypesAsLattices.Enumeration.barStep
 public import DomainTheory.DataTypesAsLattices.Enumeration.enumComp
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gbar
 

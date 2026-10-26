@@ -9,8 +9,11 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import Mathlib.Data.Set.Finite.Powerset
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
 public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed_eq_top
+public import DomainTheory.DataTypesAsLattices.Classification.IsScottGdelta
+public import DomainTheory.DataTypesAsLattices.Classification.Basic
+public import DomainTheory.DataTypesAsLattices.Classification.charTop
+public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
 
 @[expose] public section
 

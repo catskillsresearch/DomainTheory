@@ -4,11 +4,10 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-ROOT_MD="DomainTheory.md"
-if [[ ! -f arxiv.md ]] || [[ "$ROOT_MD" -nt arxiv.md ]]; then
-  echo "==> Flattening $ROOT_MD → arxiv.md"
-  python3 scripts/compile_md_tree.py --md-only
-fi
+# Always refresh note @imports and re-flatten. Nested notes change without
+# touching DomainTheory.md; skipping left arxiv.md/PDF pointing at deleted Prefs.
+echo "==> Refreshing notes + flattening DomainTheory.md → arxiv.md"
+python3 scripts/compile_md_tree.py --md-only
 
 echo "==> Regenerating arxiv_with_code.md (from arxiv.md)"
 bash scripts/generate_arxiv_with_code.sh

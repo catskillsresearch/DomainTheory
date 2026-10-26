@@ -11,8 +11,9 @@ public import DomainTheory.DataTypesAsLattices.Continuous.isScottOpen_isUpper
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import Mathlib.Data.Set.Finite.Powerset
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
 public import DomainTheory.DataTypesAsLattices.Classification.oddEvenPack_eq_zero
+public import DomainTheory.DataTypesAsLattices.Classification.IsFcapG
+public import DomainTheory.DataTypesAsLattices.Classification.Basic
 
 @[expose] public section
 

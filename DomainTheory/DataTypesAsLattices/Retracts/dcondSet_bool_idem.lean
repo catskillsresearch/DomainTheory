@@ -1,17 +1,9 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_bot
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_top
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_ofNat_zero
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_ofNat_one
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_of_zero_not_pos
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_of_pos_not_zero
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_of_mixed
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_of_empty
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_cases
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

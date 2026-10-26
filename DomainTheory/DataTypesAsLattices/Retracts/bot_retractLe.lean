@@ -4,7 +4,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_botElem
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_const_bot
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict

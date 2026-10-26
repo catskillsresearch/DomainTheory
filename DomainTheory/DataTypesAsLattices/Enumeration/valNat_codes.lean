@@ -62,9 +62,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.unionCode
 public import DomainTheory.DataTypesAsLattices.Enumeration.botCode
 public import DomainTheory.DataTypesAsLattices.Enumeration.finAux
 public import DomainTheory.DataTypesAsLattices.Enumeration.fin
-public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ
 public import DomainTheory.DataTypesAsLattices.Enumeration.Extensional
-public import DomainTheory.DataTypesAsLattices.Enumeration.myhillRealizer
 public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas
 public import DomainTheory.DataTypesAsLattices.Enumeration.valEntryJustified
@@ -111,9 +109,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.vaalStepTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalTyped
 public import DomainTheory.DataTypesAsLattices.Enumeration.TOT
 public import DomainTheory.DataTypesAsLattices.Enumeration.not_mem_zero_Gcomb
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_ne_bot
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_one
+public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_from_G
 public import DomainTheory.DataTypesAsLattices.Enumeration.predC_from_G
 public import DomainTheory.DataTypesAsLattices.Enumeration.condC_from_G
@@ -122,18 +118,13 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Scomb_from_G
 public import DomainTheory.DataTypesAsLattices.Enumeration.bot_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_eq_SK
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
+public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_secondRecSubst
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecSubstC_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecOperator_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.interStepTerm_interp
 public import DomainTheory.DataTypesAsLattices.Enumeration.interC_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.unionTerm_interp
 public import DomainTheory.DataTypesAsLattices.Enumeration.unionOperator_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.exists_triangle_succ
 public import DomainTheory.DataTypesAsLattices.Enumeration.ValTrace
@@ -141,26 +132,22 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_haltEnum
 public import DomainTheory.DataTypesAsLattices.Enumeration.BasicInst85
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrecPred_beforeHalt
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_filterNum
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_12
 public import DomainTheory.DataTypesAsLattices.Computability.combinatory_isRE
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.condC_beta3
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_bot
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_17
-public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_app
 public import DomainTheory.DataTypesAsLattices.Enumeration.enumerationUnion_left_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Enumeration.enumerationUnion_right_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Enumeration.unionOperator_app
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_complete
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrecRel_valTraceHas
 public import DomainTheory.DataTypesAsLattices.Enumeration.REPredu2eexists_param
 public import DomainTheory.DataTypesAsLattices.Enumeration.realizes_valNat_mem
 public import DomainTheory.DataTypesAsLattices.Enumeration.funOf_ofNat_mem_re
+public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
+public import DomainTheory.DataTypesAsLattices.Lambda.condC_more
+public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_more
 
 @[expose] public section
 
@@ -179,7 +166,7 @@ private abbrev eq217 := _root_.DomainTheory.DataTypesAsLattices.eq_2_17
 
 
 theorem Ycode_eq : valNat Ycode = Ycomb :=
-  (theorem_3_2.surjective Ycomb_combinatory).choose_spec
+  (theorem_3_2.surjective Ycomb.combinatory).choose_spec
 
 theorem botCode_eq : valNat botCode = botElem :=
   (theorem_3_2.surjective bot_combinatory).choose_spec
@@ -195,11 +182,11 @@ theorem condCode_eq : valNat condCode = condC :=
   (theorem_3_2.surjective IsCombinatory.cond).choose_spec
 
 theorem filterOp_eq : valNat filterOp = filterC :=
-  (theorem_3_2.surjective filterC_combinatory).choose_spec
+  (theorem_3_2.surjective filterC.combinatory).choose_spec
 
 theorem secondRecOperatorCode_eq :
     valNat secondRecOperatorCode = secondRecOperator :=
-  (theorem_3_2.surjective secondRecOperator_combinatory).choose_spec
+  (theorem_3_2.surjective secondRecOperator.combinatory).choose_spec
 
 theorem diagonalInterCode_eq (n : ℕ) :
     valNat (diagonalInterCode n) = ofNat n ∩ valNat n := by
@@ -208,7 +195,7 @@ theorem diagonalInterCode_eq (n : ℕ) :
 
 theorem myhillFilterCode_eq (m : ℕ) :
     valNat (myhillFilterCode m) = {j | ∀ i ≤ j, haltEnum i ≠ m} := by
-  rw [myhillFilterCode, app, filterOp_eq, eq312, filterC_app]
+  rw [myhillFilterCode, app, filterOp_eq, eq312, filterC.app]
 
 theorem myhillCase1Code_eq (n m : ℕ) :
     valNat (myhillCase1Code n m) =

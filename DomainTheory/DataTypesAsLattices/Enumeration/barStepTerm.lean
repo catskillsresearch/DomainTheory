@@ -2,20 +2,18 @@ module
 
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.Term
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Graph.lam
-public import DomainTheory.DataTypesAsLattices.Functionality.sumMed
-public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
-public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Retracts.intF
-public import DomainTheory.DataTypesAsLattices.Retracts.intR
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
-public import DomainTheory.DataTypesAsLattices.Enumeration.BasicInst85
 public import DomainTheory.DataTypesAsLattices.Enumeration.barPosTerm
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.envSet
+public import DomainTheory.DataTypesAsLattices.Lambda.succSet
+public import DomainTheory.DataTypesAsLattices.Lambda.interp
+public import DomainTheory.DataTypesAsLattices.Enumeration.barStepBody
+public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
+public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
+public import DomainTheory.DataTypesAsLattices.Enumeration.barStep
 
 @[expose] public section
 
@@ -37,5 +35,26 @@ def barStepTerm : Term :=
         (.app (.var 0)
           (.app (.var 1) (.app (.var 2) (.succ .zero))))
         (.app (.var 2) (.succ (.succ .zero)))))))
+
+namespace barStepTerm
+
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
+theorem interp :
+    interp barStepTerm (fun _ => botElem) = graph barStep := by
+  unfold barStepTerm barStep
+  simp only [_root_.DomainTheory.DataTypesAsLattices.interp, envSet, Function.update_self]
+  apply congrArg graph
+  funext B
+  apply congrArg graph
+  funext u
+  apply congrArg graph
+  funext x
+  simp [barStepBody, barPosTerm.interp, Function.update,
+    succSet.ofNat]
+
+end barStepTerm
 
 end DomainTheory.DataTypesAsLattices

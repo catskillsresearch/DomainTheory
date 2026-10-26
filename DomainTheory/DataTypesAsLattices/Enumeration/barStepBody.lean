@@ -2,11 +2,12 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Enumeration.barPos
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepBody
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
@@ -40,7 +41,7 @@ theorem isScottContinuous_u (B x : Pomega) :
       (f := fun w => funOf w (funOf x (ofNat 2)))
       (g := fun u => funOf B (funOf u (funOf x (ofNat 1))))
       (funOf.isScottContinuous_left (funOf x (ofNat 2)))
-      (theorem_1_3 (funOf_isScottContinuous B)
+      (theorem_1_3 (funOf.isScottContinuous B)
         (funOf.isScottContinuous_left (funOf x (ofNat 1)))))
 
 theorem isScottContinuous_x (B u : Pomega) :
@@ -53,9 +54,9 @@ theorem isScottContinuous_x (B u : Pomega) :
     (barPos.isScottContinuous_x u)
     (theorem_1_3.tuple
       (fun y => funOf.isScottContinuous_left y)
-      (fun w => funOf_isScottContinuous w)
-      (theorem_1_3 (funOf_isScottContinuous B)
-        (theorem_1_3 (funOf_isScottContinuous u)
+      (fun w => funOf.isScottContinuous w)
+      (theorem_1_3 (funOf.isScottContinuous B)
+        (theorem_1_3 (funOf.isScottContinuous u)
           (funOf.isScottContinuous_left (ofNat 1))))
       (funOf.isScottContinuous_left (ofNat 2)))
 

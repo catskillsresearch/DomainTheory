@@ -1,7 +1,6 @@
 module
 
 
-public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 

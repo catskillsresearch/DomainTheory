@@ -9,8 +9,9 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import Mathlib.Data.Set.Finite.Powerset
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
 public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_5
+public import DomainTheory.DataTypesAsLattices.Classification.IsFcapGdelta
+public import DomainTheory.DataTypesAsLattices.Classification.typicalFcapGdelta
 
 @[expose] public section
 

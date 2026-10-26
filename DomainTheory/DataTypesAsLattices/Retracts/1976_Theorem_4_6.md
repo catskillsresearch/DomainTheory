@@ -6,12 +6,3 @@
 
 @import "theorem_4_6.lean"
 
-**[DataTypesAsLattices/Retracts/theorem_4_6.inverseLimit.lean](theorem_4_6.inverseLimit.lean)**
-
-@import "theorem_4_6.inverseLimit.lean"
-
-**[DataTypesAsLattices/Retracts/theorem_4_6.limit.lean](theorem_4_6.limit.lean)**
-
-@import "theorem_4_6.limit.lean"
-
-

@@ -1,13 +1,10 @@
 module
 
-public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Order
-public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Continuous.Basic
-public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd_inter
-public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd_zero
-public import DomainTheory.DataTypesAsLattices.Continuous.memOpen_eq_basicNhhd
-
+public import DomainTheory.DataTypesAsLattices.Continuous.memOpen
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
+public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd_more
 @[expose] public section
 
 
@@ -25,14 +22,14 @@ theorem exists_basicNhhd_subset_of_generateOpen {U : Set Pomega}
     obtain ⟨k, rfl⟩ := hs
     refine ⟨2 ^ k, ?_, ?_⟩
     · simpa [memOpen, e_pow2, Set.singleton_subset_iff] using hx
-    · rw [← memOpen_eq_basicNhhd]
+    · rw [← memOpen.eq_basicNhhd]
   | univ =>
-    exact ⟨0, by simp [e_zero], by simp [basicNhhd_zero]⟩
+    exact ⟨0, by simp [e_zero], by simp [basicNhhd.zero]⟩
   | inter _s _t _hs _ht ihs iht =>
     obtain ⟨n, hn, hnU⟩ := ihs hx.1
     obtain ⟨m, hm, hmU⟩ := iht hx.2
     refine ⟨n ||| m, e_or_of_subset hn hm, ?_⟩
-    rw [← basicNhhd_inter]
+    rw [← basicNhhd.inter]
     exact Set.inter_subset_inter hnU hmU
   | sUnion S _hS ih =>
     obtain ⟨V, hV, hxV⟩ := hx

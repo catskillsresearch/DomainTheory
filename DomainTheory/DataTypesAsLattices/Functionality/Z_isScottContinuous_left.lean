@@ -4,9 +4,10 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
 public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
@@ -20,7 +21,7 @@ theorem Z.isScottContinuous_left (n : ℕ) (x : Pomega) :
     simpa [Z] using
       continuous_tuple
         (fun y => funOf.isScottContinuous_left y)
-        (fun u => funOf_isScottContinuous u)
+        (fun u => funOf.isScottContinuous u)
         id_isScottContinuous ih
 
 end DomainTheory.DataTypesAsLattices

@@ -6,15 +6,3 @@
 
 @import "WayBelow.lean"
 
-**[ContinuousLattice/WayBelow/scottOpen_wayBelow.lean](scottOpen_wayBelow.lean)**
-
-@import "scottOpen_wayBelow.lean"
-
-**[ContinuousLattice/WayBelow/directedOn_wayBelow.lean](directedOn_wayBelow.lean)**
-
-@import "directedOn_wayBelow.lean"
-
-**[ContinuousLattice/WayBelow/sInf_wayBelow.lean](sInf_wayBelow.lean)**
-
-@import "sInf_wayBelow.lean"
-

@@ -6,7 +6,3 @@
 
 @import "proposition_2_4.lean"
 
-**[ContinuousLattice/WayBelow/isContinuousLattice_iff_isLUB_sInf_nhds.lean](../WayBelow/isContinuousLattice_iff_isLUB_sInf_nhds.lean)**
-
-@import "../WayBelow/isContinuousLattice_iff_isLUB_sInf_nhds.lean"
-

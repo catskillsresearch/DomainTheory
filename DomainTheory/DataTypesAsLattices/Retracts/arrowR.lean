@@ -1,30 +1,23 @@
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
-public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Defs.Induced
-public import Mathlib.Topology.Order
-public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
-public import DomainTheory.DataTypesAsLattices.Retracts.comp_isScottContinuous_right
-public import DomainTheory.DataTypesAsLattices.Retracts.comp_right_const
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
+public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_botElem
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_const_bot
-public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-public import DomainTheory.DataTypesAsLattices.Graph.beta
+public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.8).** Function space of retracts `a ∘→ b = λu. b ∘ u ∘ a`. -/
 def arrowR (a b : Pomega) : Pomega :=
   graph (fun u => comp b (comp u a))
 
@@ -32,7 +25,7 @@ namespace arrowR
 
 theorem map_isScottContinuous (a b : Pomega) :
     IsScottContinuous (fun u => comp b (comp u a)) :=
-  theorem_1_3 (comp_isScottContinuous_right b) (comp_right_const a)
+  theorem_1_3 (comp.isScottContinuous_right b) (comp.right_const a)
 
 theorem app (a b u : Pomega) :
     funOf (arrowR a b) u = comp b (comp u a) :=

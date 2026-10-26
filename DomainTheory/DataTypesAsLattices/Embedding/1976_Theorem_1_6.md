@@ -6,8 +6,3 @@
 
 @import "theorem_1_6.lean"
 
-**[DataTypesAsLattices/Embedding/theorem_1_6.injective_continuous.lean](theorem_1_6.injective_continuous.lean)**
-
-@import "theorem_1_6.injective_continuous.lean"
-
-

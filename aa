@@ -1,0 +1,2 @@
+rm arxiv.pdf
+bash scripts/build_arxiv_pdf.sh

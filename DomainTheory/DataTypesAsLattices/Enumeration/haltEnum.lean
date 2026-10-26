@@ -1,5 +1,4 @@
 module
-
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
@@ -11,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 open Encodable
 
 open Nat.Partrec (Code)

@@ -2,9 +2,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.intR
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 public import DomainTheory.DataTypesAsLattices.Retracts.tensor4
 public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 

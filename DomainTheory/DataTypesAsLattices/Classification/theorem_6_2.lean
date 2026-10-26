@@ -10,6 +10,8 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import Mathlib.Data.Set.Finite.Powerset
+public import DomainTheory.DataTypesAsLattices.Classification.ScottF
+public import DomainTheory.DataTypesAsLattices.Classification.charTop
 public import DomainTheory.DataTypesAsLattices.Classification.Basic
 
 @[expose] public section

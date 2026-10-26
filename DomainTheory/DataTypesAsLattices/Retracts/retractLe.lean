@@ -4,7 +4,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
-public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 
 @[expose] public section
@@ -31,8 +30,8 @@ theorem trans {a b c : Pomega}
     calc
       comp a c = graph (fun x => funOf a (funOf c x)) := rfl
       _ = graph (fun x => funOf (comp a b) (funOf c x)) := by simp [← hab₁]
-      _ = graph (fun x => funOf a (funOf b (funOf c x))) := by simp [comp_app]
-      _ = graph (fun x => funOf a (funOf (comp b c) x)) := by simp [comp_app]
+      _ = graph (fun x => funOf a (funOf b (funOf c x))) := by simp [comp.app]
+      _ = graph (fun x => funOf a (funOf (comp b c) x)) := by simp [comp.app]
       _ = graph (fun x => funOf a (funOf b x)) := by simp [← hbc₁]
       _ = comp a b := rfl
   · apply Eq.trans hab₂
@@ -40,8 +39,8 @@ theorem trans {a b c : Pomega}
     calc
       comp c a = graph (fun x => funOf c (funOf a x)) := rfl
       _ = graph (fun x => funOf c (funOf (comp b a) x)) := by simp [← hab₂]
-      _ = graph (fun x => funOf c (funOf b (funOf a x))) := by simp [comp_app]
-      _ = graph (fun x => funOf (comp c b) (funOf a x)) := by simp [comp_app]
+      _ = graph (fun x => funOf c (funOf b (funOf a x))) := by simp [comp.app]
+      _ = graph (fun x => funOf (comp c b) (funOf a x)) := by simp [comp.app]
       _ = graph (fun x => funOf b (funOf a x)) := by simp [← hbc₂]
       _ = comp b a := rfl
 

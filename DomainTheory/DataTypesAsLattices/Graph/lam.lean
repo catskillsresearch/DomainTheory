@@ -12,4 +12,10 @@ namespace DomainTheory.DataTypesAsLattices
 /-- Abstraction: `λ x. τ` as a graph (Table 2). -/
 def lam (τ : Pomega → Pomega) : Pomega := graph τ
 
+namespace lam
+
+theorem eq_graph (τ : Pomega → Pomega) : lam τ = graph τ := rfl
+
+end lam
+
 end DomainTheory.DataTypesAsLattices

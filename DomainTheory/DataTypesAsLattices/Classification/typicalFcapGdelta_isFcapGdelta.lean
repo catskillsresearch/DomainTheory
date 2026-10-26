@@ -8,8 +8,10 @@ public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import Mathlib.Data.Set.Finite.Powerset
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
 public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_5
+public import DomainTheory.DataTypesAsLattices.Classification.IsFcapGdelta
+public import DomainTheory.DataTypesAsLattices.Classification.typicalFcapGdelta
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 
 @[expose] public section
 

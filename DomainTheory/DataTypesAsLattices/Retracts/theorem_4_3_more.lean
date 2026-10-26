@@ -2,6 +2,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
@@ -47,10 +48,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plus7Body
 public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 public import DomainTheory.DataTypesAsLattices.Retracts.expF
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
-public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1
-public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_botElem
@@ -59,7 +58,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.bot_isRetract
 public import DomainTheory.DataTypesAsLattices.Retracts.iterates_areRetracts
 public import DomainTheory.DataTypesAsLattices.Retracts.bot_retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.iterateBot_isStrict
-public import DomainTheory.DataTypesAsLattices.Retracts.iterateBot_retractLe_succ
 public import DomainTheory.DataTypesAsLattices.Retracts.iterateBot_retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_mono
@@ -81,7 +79,7 @@ theorem theorem_4_3.i {a b u : Pomega} (ha : Retract a) (hb : Retract b) :
   rw [arrowR.app, arrowR.app]
   apply graph_ext
   intro x
-  simp [comp_app, retract_app ha, retract_app hb]
+  simp [comp.app, retract_app ha, retract_app hb]
 
 /-- **Scott 1976, Theorem 4.3 (ii).** `u : a ∘→ b` means `u` is restricted
 to `a` and takes values in `b`. -/
@@ -93,7 +91,7 @@ theorem theorem_4_3.ii {a b u x : Pomega}
   have : funOf u x = funOf b (funOf u (funOf a x)) := by
     have h1 : funOf u x = funOf (comp b (comp u a)) x :=
       congrArg (fun w => funOf w x) hu'
-    rw [h1, comp_app, comp_app]
+    rw [h1, comp.app, comp.app]
   rwa [show funOf a x = x from hx.symm] at this
 
 end DomainTheory.DataTypesAsLattices

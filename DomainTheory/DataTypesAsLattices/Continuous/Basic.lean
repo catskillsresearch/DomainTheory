@@ -1,13 +1,8 @@
 module
 
-public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Order
-public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen
-public import DomainTheory.DataTypesAsLattices.Continuous.scottPiece
-public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.memOpen
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 

@@ -2,15 +2,13 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
-public import DomainTheory.DataTypesAsLattices.Retracts.intR_more
+public import DomainTheory.DataTypesAsLattices.Retracts.intR
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import Mathlib.Order.CompleteLattice.Defs
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Graph.beta
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
@@ -18,7 +16,6 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Embedding.extend
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_monotone_right
 public import DomainTheory.DataTypesAsLattices.Graph.mu_law
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
@@ -102,7 +99,7 @@ theorem theorem_7_4.plotkin (z : Pomega)
   have hf'graph : f' = graph (fun y => funOf f' y) := by
     apply graph_ext
     intro y
-    exact (beta (funOf_isScottContinuous f) y).symm
+    exact (beta (funOf.isScottContinuous f) y).symm
   let A := iterateE f' x
   have hf'mem : (arrowE A A).mem f' := by
     refine ⟨hf'graph, hf'graph, ?_⟩
@@ -169,7 +166,7 @@ theorem theorem_7_4.finite (z : Pomega)
       funOf (funOf z (graph (sigmaJ j))) {pair j 0} ⊆
         funOf (funOf z gu) (e q ∪ {pair j 0}) := by
     exact mu_law
-      (funOf_monotone_right z Set.subset_union_right)
+      (funOf.monotone_right z Set.subset_union_right)
       Set.subset_union_right
   have htag : pair j n ∈ Z m (e p) (e q) ∪ {pair j m} := by
     rw [← hright]
@@ -222,7 +219,7 @@ theorem theorem_7_4.sigma_index (z : Pomega)
           (funOf z (graph (sigmaJ 0) ∪ graph (sigmaJ j)))
           (({pair 0 0} : Pomega) ∪ {pair j 0}) :=
     mu_law
-      (funOf_monotone_right z Set.subset_union_left)
+      (funOf.monotone_right z Set.subset_union_left)
       Set.subset_union_left
   have hmonoj :
       funOf (funOf z (graph (sigmaJ j))) {pair j 0} ⊆
@@ -230,7 +227,7 @@ theorem theorem_7_4.sigma_index (z : Pomega)
           (funOf z (graph (sigmaJ 0) ∪ graph (sigmaJ j)))
           (({pair 0 0} : Pomega) ∪ {pair j 0}) :=
     mu_law
-      (funOf_monotone_right z Set.subset_union_right)
+      (funOf.monotone_right z Set.subset_union_right)
       Set.subset_union_right
   have h0mem : pair 0 n ∈ ({pair 0 k} : Pomega) ∪ {pair j k} := by
     rw [← hk']
@@ -281,7 +278,7 @@ theorem theorem_7_4.unique (z : Pomega)
       Z.isScottContinuous_right n (e p)
     have hleft :
         IsScottContinuous (fun y => funOf (funOf z (e p)) y) :=
-      funOf_isScottContinuous (funOf z (e p))
+      funOf.isScottContinuous (funOf z (e p))
     have heq := congrFun
       (IsScottContinuous.determined hleft hright
         (fun q => theorem_7_4.finite z hη hz hn p q)) x
@@ -291,7 +288,7 @@ theorem theorem_7_4.unique (z : Pomega)
     have hgfGraph : gf = graph (fun y => funOf gf y) := by
       apply graph_ext
       intro y
-      exact (beta (funOf_isScottContinuous f) y).symm
+      exact (beta (funOf.isScottContinuous f) y).symm
     have hgfMem : (arrowE emptyE emptyE).mem gf :=
       ⟨hgfGraph, hgfGraph, fun _ _ h => False.elim h⟩
     have hzgfGraph : funOf z gf = graph (fun y => funOf (funOf z gf) y) :=
@@ -307,7 +304,7 @@ theorem theorem_7_4.unique (z : Pomega)
         IsScottContinuous (fun g => funOf (funOf z g) x) :=
       theorem_1_3 (f := fun u => funOf u x) (g := funOf z)
         (funOf.isScottContinuous_left x)
-        (funOf_isScottContinuous z)
+        (funOf.isScottContinuous z)
     have hright : IsScottContinuous (fun g => Z n g x) :=
       Z.isScottContinuous_left n x
     have heq := congrFun

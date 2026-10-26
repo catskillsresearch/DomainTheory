@@ -6,15 +6,7 @@
 
 @import "theorem_2_4.lean"
 
-**[DataTypesAsLattices/Lambda/theorem_2_4.complete.lean](theorem_2_4.complete.lean)**
+**[DataTypesAsLattices/Lambda/Ycomb_more.lean](Ycomb_more.lean)**
 
-@import "theorem_2_4.complete.lean"
-
-**[DataTypesAsLattices/Lambda/theorem_2_4.closed.lean](theorem_2_4.closed.lean)**
-
-@import "theorem_2_4.closed.lean"
-
-**[DataTypesAsLattices/Lambda/Ycomb_combinatory.lean](Ycomb_combinatory.lean)**
-
-@import "Ycomb_combinatory.lean"
+@import "Ycomb_more.lean"
 

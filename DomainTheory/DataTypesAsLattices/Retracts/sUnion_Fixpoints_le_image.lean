@@ -8,6 +8,7 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
+public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 @[expose] public section
 

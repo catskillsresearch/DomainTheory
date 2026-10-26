@@ -8,19 +8,17 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
 public import DomainTheory.DataTypesAsLattices.FixedPoint.chain_lemma
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
-public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_mono
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_chain
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_later
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_earlier
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
@@ -36,7 +34,7 @@ theorem inverseLimit_project_iUnion {F : Pomega → Pomega}
       Retract b → IsStrict b → retractLe a b → retractLe (F a) (F b))
     (v : RetractInverseLimit F) (n : ℕ) :
     funOf (iterateBot F n) (⋃ m, v.1 m) = v.1 n := by
-  rw [chain_lemma (funOf_isScottContinuous (iterateBot F n)) v.1
+  rw [chain_lemma (funOf.isScottContinuous (iterateBot F n)) v.1
     (inverseLimit_mono hf v)]
   apply subset_antisymm
   · intro k hk

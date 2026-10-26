@@ -14,11 +14,3 @@ The pointwise aspect of the topology is immediately apparent in the partial orde
 
 @import "ScottMap.lean"
 
-**[ContinuousLattice/FunctionSpaces/comp.lean](comp.lean)**
-
-@import "comp.lean"
-
-**[ContinuousLattice/FunctionSpaces/monotone.lean](monotone.lean)**
-
-@import "monotone.lean"
-
