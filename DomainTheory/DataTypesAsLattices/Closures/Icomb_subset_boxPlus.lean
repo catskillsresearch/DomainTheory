@@ -38,8 +38,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode_app
 public import DomainTheory.DataTypesAsLattices.Closures.representationDecode_encode
 public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_fixed
 public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_graph
-public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app
-public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_expansive
 
 @[expose] public section
 
@@ -50,7 +48,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem Icomb_subset_boxPlus {a b : Pomega} (ha : Closure a) (hb : Closure b) :
     Icomb ⊆ boxPlus a b :=
   Icomb_subset_graph.mpr fun n => by
-    rw [← boxPlus_app]
-    exact boxPlus_expansive ha hb (e n)
+    rw [← boxPlus.app]
+    exact boxPlus.expansive ha hb (e n)
 
 end DomainTheory.DataTypesAsLattices

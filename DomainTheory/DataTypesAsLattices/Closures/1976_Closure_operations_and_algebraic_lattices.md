@@ -458,49 +458,16 @@ Algebraic lattices and closure operations predate the paper: Grätzer (1968) for
 
 @import "union_const_left_isScottContinuous.lean"
 
-**[DataTypesAsLattices/Closures/boxPlus_test_isScottContinuous.lean](boxPlus_test_isScottContinuous.lean)**
 
-@import "boxPlus_test_isScottContinuous.lean"
 
-**[DataTypesAsLattices/Closures/boxPlus_map_isScottContinuous.lean](boxPlus_map_isScottContinuous.lean)**
 
-@import "boxPlus_map_isScottContinuous.lean"
 
-**[DataTypesAsLattices/Closures/boxPlus_app.lean](boxPlus_app.lean)**
 
-@import "boxPlus_app.lean"
 
-**[DataTypesAsLattices/Closures/boxPlus_app_empty.lean](boxPlus_app_empty.lean)**
 
-@import "boxPlus_app_empty.lean"
 
-**[DataTypesAsLattices/Closures/boxPlus_app_bot.lean](boxPlus_app_bot.lean)**
 
-@import "boxPlus_app_bot.lean"
 
-**[DataTypesAsLattices/Closures/boxPlus_app_left.lean](boxPlus_app_left.lean)**
-
-@import "boxPlus_app_left.lean"
-
-**[DataTypesAsLattices/Closures/boxPlus_app_mixed.lean](boxPlus_app_mixed.lean)**
-
-@import "boxPlus_app_mixed.lean"
-
-**[DataTypesAsLattices/Closures/boxPlus_app_right.lean](boxPlus_app_right.lean)**
-
-@import "boxPlus_app_right.lean"
-
-**[DataTypesAsLattices/Closures/boxPlus_app_top.lean](boxPlus_app_top.lean)**
-
-@import "boxPlus_app_top.lean"
-
-**[DataTypesAsLattices/Closures/boxPlus_typed_bot.lean](boxPlus_typed_bot.lean)**
-
-@import "boxPlus_typed_bot.lean"
-
-**[DataTypesAsLattices/Closures/boxPlus_typed_top.lean](boxPlus_typed_top.lean)**
-
-@import "boxPlus_typed_top.lean"
 
 **[DataTypesAsLattices/Closures/boxShift_map_isScottContinuous.lean](boxShift_map_isScottContinuous.lean)**
 
@@ -518,9 +485,6 @@ Algebraic lattices and closure operations predate the paper: Grätzer (1968) for
 
 @import "Icomb_subset_boxShift.lean"
 
-**[DataTypesAsLattices/Closures/boxPlus_expansive.lean](boxPlus_expansive.lean)**
-
-@import "boxPlus_expansive.lean"
 
 **[DataTypesAsLattices/Closures/Icomb_subset_boxPlus.lean](Icomb_subset_boxPlus.lean)**
 
@@ -582,23 +546,8 @@ Algebraic lattices and closure operations predate the paper: Grätzer (1968) for
 
 @import "boxShift_app_ne_bot.lean"
 
-**[DataTypesAsLattices/Closures/boxPlus_app_app.lean](boxPlus_app_app.lean)**
 
-@import "boxPlus_app_app.lean"
 
-**[DataTypesAsLattices/Closures/boxPlus_isRetract.lean](boxPlus_isRetract.lean)**
 
-@import "boxPlus_isRetract.lean"
 
-**[DataTypesAsLattices/Closures/boxPlus_typed_inl.lean](boxPlus_typed_inl.lean)**
-
-@import "boxPlus_typed_inl.lean"
-
-**[DataTypesAsLattices/Closures/boxPlus_typed_inr.lean](boxPlus_typed_inr.lean)**
-
-@import "boxPlus_typed_inr.lean"
-
-**[DataTypesAsLattices/Closures/boxPlus_typed_iff.lean](boxPlus_typed_iff.lean)**
-
-@import "boxPlus_typed_iff.lean"
 

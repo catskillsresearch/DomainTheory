@@ -36,7 +36,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representClosure_isScott
 public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode_app
 public import DomainTheory.DataTypesAsLattices.Closures.representationDecode_encode
 public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_fixed
-public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_isRetract
 public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_boxPlus
 
 @[expose] public section
@@ -49,6 +48,6 @@ namespace DomainTheory.DataTypesAsLattices
 operations then so is `a ⊞ b`. -/
 theorem theorem_5_4_plus {a b : Pomega} (ha : Closure a) (hb : Closure b) :
     Closure (boxPlus a b) :=
-  ⟨⟨Icomb_subset_boxPlus ha hb, boxPlus_isRetract ha.out.2 hb.out.2⟩⟩
+  ⟨⟨Icomb_subset_boxPlus ha hb, boxPlus.isRetract ha.out.2 hb.out.2⟩⟩
 
 end DomainTheory.DataTypesAsLattices

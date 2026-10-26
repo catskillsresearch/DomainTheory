@@ -125,22 +125,12 @@ flowchart TB
   N120["union_botElem"]
   N121["union_left_isScottContinuous"]
   N122["union_const_left_isScottContinuous"]
-  N123["boxPlus_test_isScottContinuous"]
-  N124["boxPlus_map_isScottContinuous"]
-  N125["boxPlus_app"]
-  N126["boxPlus_app_empty"]
-  N127["boxPlus_app_bot"]
-  N128["boxPlus_app_left"]
-  N129["boxPlus_app_mixed"]
-  N130["boxPlus_app_right"]
-  N131["boxPlus_app_top"]
-  N132["boxPlus_typed_bot"]
-  N133["boxPlus_typed_top"]
+
   N134["boxShift_map_isScottContinuous"]
   N135["boxShift_app"]
   N136["boxShift_expansive"]
   N137["Icomb_subset_boxShift"]
-  N138["boxPlus_expansive"]
+
   N139["Icomb_subset_boxPlus"]
   N140["boxShift_isRetract"]
   N141["boxShift_isClosure"]
@@ -164,11 +154,7 @@ flowchart TB
   N159["typed_of_retract_Vcomb"]
   N160["zero_mem_boxShift_app"]
   N161["boxShift_app_ne_bot"]
-  N162["boxPlus_app_app"]
-  N163["boxPlus_isRetract"]
-  N164["boxPlus_typed_inl"]
-  N165["boxPlus_typed_inr"]
-  N166["boxPlus_typed_iff"]
+
   N167["theorem_5_4_plus"]
   N168["eq_5_23"]
 
@@ -542,63 +528,24 @@ flowchart TB
   N0 -->|"1"| N122
   N35 -->|"1"| N122
   N121 -->|"1"| N122
-  N0 -->|"1"| N123
-  N35 -->|"1"| N123
-  N49 -->|"1"| N123
-  N95 -->|"1"| N123
-  N104 -->|"1"| N123
-  N121 -->|"1"| N123
-  N122 -->|"1"| N123
-  N0 -->|"1"| N124
-  N35 -->|"1"| N124
-  N95 -->|"1"| N124
-  N99 -->|"1"| N124
-  N100 -->|"1"| N124
-  N104 -->|"1"| N124
-  N123 -->|"1"| N124
-  N0 -->|"1"| N125
-  N35 -->|"1"| N125
-  N124 -->|"1"| N125
-  N0 -->|"1"| N126
-  N35 -->|"1"| N126
-  N48 -->|"1"| N126
-  N125 -->|"1"| N126
-  N0 -->|"1"| N127
-  N35 -->|"1"| N127
-  N94 -->|"1"| N127
-  N103 -->|"1"| N127
-  N126 -->|"1"| N127
-  N0 -->|"1"| N128
-  N35 -->|"1"| N128
-  N48 -->|"1"| N128
-  N50 -->|"1"| N128
-  N76 -->|"1"| N128
-  N120 -->|"1"| N128
-  N125 -->|"1"| N128
-  N0 -->|"1"| N129
-  N35 -->|"1"| N129
-  N50 -->|"1"| N129
-  N76 -->|"1"| N129
-  N125 -->|"1"| N129
-  N0 -->|"1"| N130
-  N35 -->|"1"| N130
-  N47 -->|"1"| N130
-  N48 -->|"1"| N130
-  N50 -->|"1"| N130
-  N76 -->|"1"| N130
-  N125 -->|"1"| N130
-  N0 -->|"1"| N131
-  N35 -->|"1"| N131
-  N96 -->|"1"| N131
-  N107 -->|"1"| N131
-  N117 -->|"1"| N131
-  N129 -->|"1"| N131
-  N0 -->|"1"| N132
-  N35 -->|"1"| N132
-  N127 -->|"1"| N132
-  N0 -->|"1"| N133
-  N35 -->|"1"| N133
-  N131 -->|"1"| N133
+  N35 -->|"1"| N33
+  N49 -->|"1"| N33
+  N95 -->|"1"| N33
+  N104 -->|"1"| N33
+  N121 -->|"1"| N33
+  N122 -->|"1"| N33
+  N99 -->|"1"| N33
+  N100 -->|"1"| N33
+  N48 -->|"1"| N33
+  N94 -->|"1"| N33
+  N103 -->|"1"| N33
+  N50 -->|"1"| N33
+  N76 -->|"1"| N33
+  N120 -->|"1"| N33
+  N47 -->|"1"| N33
+  N96 -->|"1"| N33
+  N107 -->|"1"| N33
+  N117 -->|"1"| N33
   N0 -->|"1"| N134
   N35 -->|"1"| N134
   N122 -->|"1"| N134
@@ -613,21 +560,14 @@ flowchart TB
   N37 -->|"1"| N137
   N135 -->|"1"| N137
   N136 -->|"1"| N137
-  N0 -->|"1"| N138
-  N35 -->|"1"| N138
-  N74 -->|"1"| N138
-  N97 -->|"1"| N138
-  N101 -->|"1"| N138
-  N126 -->|"1"| N138
-  N128 -->|"1"| N138
-  N129 -->|"1"| N138
-  N130 -->|"1"| N138
-  N136 -->|"1"| N138
+  N74 -->|"1"| N33
+  N97 -->|"1"| N33
+  N101 -->|"1"| N33
+  N136 -->|"1"| N33
   N0 -->|"1"| N139
   N35 -->|"1"| N139
   N37 -->|"1"| N139
-  N125 -->|"1"| N139
-  N138 -->|"1"| N139
+  N33 -->|"1"| N139
   N0 -->|"1"| N140
   N35 -->|"1"| N140
   N86 -->|"1"| N140
@@ -721,49 +661,14 @@ flowchart TB
   N0 -->|"1"| N161
   N35 -->|"1"| N161
   N160 -->|"1"| N161
-  N0 -->|"1"| N162
-  N35 -->|"1"| N162
-  N58 -->|"1"| N162
-  N75 -->|"1"| N162
-  N126 -->|"1"| N162
-  N127 -->|"1"| N162
-  N128 -->|"1"| N162
-  N129 -->|"1"| N162
-  N130 -->|"1"| N162
-  N131 -->|"1"| N162
-  N140 -->|"1"| N162
-  N161 -->|"1"| N162
-  N0 -->|"1"| N163
-  N35 -->|"1"| N163
-  N125 -->|"1"| N163
-  N162 -->|"1"| N163
-  N0 -->|"1"| N164
-  N35 -->|"1"| N164
-  N58 -->|"1"| N164
-  N75 -->|"1"| N164
-  N128 -->|"1"| N164
-  N161 -->|"1"| N164
-  N0 -->|"1"| N165
-  N35 -->|"1"| N165
-  N58 -->|"1"| N165
-  N75 -->|"1"| N165
-  N130 -->|"1"| N165
-  N161 -->|"1"| N165
-  N0 -->|"1"| N166
-  N35 -->|"1"| N166
-  N126 -->|"1"| N166
-  N128 -->|"1"| N166
-  N129 -->|"1"| N166
-  N130 -->|"1"| N166
-  N132 -->|"1"| N166
-  N133 -->|"1"| N166
-  N140 -->|"1"| N166
-  N164 -->|"1"| N166
-  N165 -->|"1"| N166
+  N58 -->|"1"| N33
+  N75 -->|"1"| N33
+  N140 -->|"1"| N33
+  N161 -->|"1"| N33
   N0 -->|"1"| N167
   N35 -->|"1"| N167
   N139 -->|"1"| N167
-  N163 -->|"1"| N167
+  N33 -->|"1"| N167
   N0 -->|"1"| N168
   N35 -->|"1"| N168
   N154 -->|"1"| N168
@@ -895,22 +800,12 @@ flowchart TB
   class N120 file
   class N121 file
   class N122 file
-  class N123 file
-  class N124 file
-  class N125 file
-  class N126 file
-  class N127 file
-  class N128 file
-  class N129 file
-  class N130 file
-  class N131 file
-  class N132 file
-  class N133 file
+
   class N134 file
   class N135 file
   class N136 file
   class N137 file
-  class N138 file
+
   class N139 file
   class N140 file
   class N141 file
@@ -934,10 +829,6 @@ flowchart TB
   class N159 file
   class N160 file
   class N161 file
-  class N162 file
-  class N163 file
-  class N164 file
-  class N165 file
-  class N166 file
+
   class N167 file
   class N168 file
