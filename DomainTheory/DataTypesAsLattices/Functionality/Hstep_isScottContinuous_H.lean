@@ -19,7 +19,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
 public import DomainTheory.DataTypesAsLattices.Functionality.hPred_isScottContinuous_H
 public import DomainTheory.DataTypesAsLattices.Functionality.hCond_isScottContinuous_H
-public import DomainTheory.DataTypesAsLattices.Functionality.hApp_isScottContinuous_H
+public import DomainTheory.DataTypesAsLattices.Functionality.hApp
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 public import DomainTheory.DataTypesAsLattices.Functionality.hLam_isScottContinuous_H
 public import DomainTheory.DataTypesAsLattices.Functionality.hSucc_isScottContinuous_H
@@ -66,7 +66,7 @@ theorem Hstep.isScottContinuous_H (e t : Pomega) :
               (fun x z => dcondSet.isScottContinuous_mid x z)
               (fun x y => dcondSet.isScottContinuous_right x y)
               (const_isScottContinuous (predSet^[5] (expTag e)))
-              (hApp_isScottContinuous_H e t)
+              (hApp.isScottContinuous_H e t)
               (continuous_nary
                 (fun y z => dcondSet.isScottContinuous_left y z)
                 (fun x z => dcondSet.isScottContinuous_mid x z)
