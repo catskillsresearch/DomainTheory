@@ -1,3 +1,0 @@
-Primitive recursion from the numeral k with step addStepC, run for n steps, equals the numeral k + n.
-
-The case n = 0 is reflexivity. For a successor, the recursive clause writes the value as the application of addStepC at the numeral n to the value at n. The definition of addStepC and the K-combinator law Kcomb_beta2 replace that step by sucC. The inductive hypothesis replaces the previous value by the numeral k + n, and sucC_app together with succSet_ofNat yields the numeral k + n + 1.

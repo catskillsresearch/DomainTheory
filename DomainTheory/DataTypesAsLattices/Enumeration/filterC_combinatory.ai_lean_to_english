@@ -1,3 +1,0 @@
-The filter element filterC is combinatory.
-
-Rewrite by the definition of filterC and by theorem 2.4 in its completeness form. The resulting element is combinatory because it arises by interpretation in the combinatory environment filterEnv.

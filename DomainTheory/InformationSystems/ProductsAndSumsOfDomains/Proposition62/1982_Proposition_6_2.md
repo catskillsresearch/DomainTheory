@@ -1,10 +1,6 @@
 # Proposition 6.2
 
-## Human-English
-
 @import "1982_Proposition_6_2.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/ProductsAndSumsOfDomains/Proposition62/mkLeft.lean](mkLeft.lean)**
 
@@ -110,60 +106,3 @@
 
 @import "../Proposition62.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "mkLeft.ai_lean_to_english" {code_block=false}
-
-@import "instLeftCommutativeMkLeftInsert.ai_lean_to_english" {code_block=false}
-
-@import "mkRight.ai_lean_to_english" {code_block=false}
-
-@import "instLeftCommutativeMkRightInsert.ai_lean_to_english" {code_block=false}
-
-@import "ProdCon_empty.ai_lean_to_english" {code_block=false}
-
-@import "entSet_fst_of_prodEntSet.ai_lean_to_english" {code_block=false}
-
-@import "entSet_snd_of_prodEntSet.ai_lean_to_english" {code_block=false}
-
-@import "fstMap.ai_lean_to_english" {code_block=false}
-
-@import "liftLeft.ai_lean_to_english" {code_block=false}
-
-@import "liftRight.ai_lean_to_english" {code_block=false}
-
-@import "pairMap.ai_lean_to_english" {code_block=false}
-
-@import "sndMap.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
-
-@import "element_eq_of_fst_snd.ai_lean_to_english" {code_block=false}
-
-@import "mem_liftLeft.ai_lean_to_english" {code_block=false}
-
-@import "fstFinset_liftLeft.ai_lean_to_english" {code_block=false}
-
-@import "mem_liftRight.ai_lean_to_english" {code_block=false}
-
-@import "fstFinset_liftRight.ai_lean_to_english" {code_block=false}
-
-@import "sndFinset_liftLeft.ai_lean_to_english" {code_block=false}
-
-@import "ProdCon_liftLeft.ai_lean_to_english" {code_block=false}
-
-@import "comp_fstMap_pairMap.ai_lean_to_english" {code_block=false}
-
-@import "sndFinset_liftRight.ai_lean_to_english" {code_block=false}
-
-@import "ProdCon_liftRight.ai_lean_to_english" {code_block=false}
-
-@import "comp_sndMap_pairMap.ai_lean_to_english" {code_block=false}
-
-@import "pairMap_unique.ai_lean_to_english" {code_block=false}
-
-@import "../Proposition62.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_Proposition_6_2.ai_english_concordance" {code_block=false}

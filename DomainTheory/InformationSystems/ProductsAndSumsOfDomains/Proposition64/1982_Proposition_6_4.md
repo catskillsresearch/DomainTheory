@@ -1,10 +1,6 @@
 # Proposition 6.4
 
-## Human-English
-
 @import "1982_Proposition_6_4.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/ProductsAndSumsOfDomains/Proposition64/SumCon_liftSumLeft.lean](SumCon_liftSumLeft.lean)**
 
@@ -174,92 +170,3 @@
 
 @import "sumElementRht.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "SumCon_liftSumLeft.ai_lean_to_english" {code_block=false}
-
-@import "SumCon_liftSumRight.ai_lean_to_english" {code_block=false}
-
-@import "comp_copairMap_inlMap.ai_lean_to_english" {code_block=false}
-
-@import "comp_copairMap_inrMap.ai_lean_to_english" {code_block=false}
-
-@import "entSet_liftLft_of_left_only.ai_lean_to_english" {code_block=false}
-
-@import "entSet_liftRht_of_right_only.ai_lean_to_english" {code_block=false}
-
-@import "entSet_u_of_inl_witness.ai_lean_to_english" {code_block=false}
-
-@import "entSet_u_of_inr_witness.ai_lean_to_english" {code_block=false}
-
-@import "eq_botElement_of_no_injections.ai_lean_to_english" {code_block=false}
-
-@import "instLeftCommutativeLiftSumLeft.ai_lean_to_english" {code_block=false}
-
-@import "instLeftCommutativeLiftSumRight.ai_lean_to_english" {code_block=false}
-
-@import "copair_union_disj.ai_lean_to_english" {code_block=false}
-
-@import "entSet_lft_of_sumEntSet.ai_lean_to_english" {code_block=false}
-
-@import "entSet_rht_of_sumEntSet.ai_lean_to_english" {code_block=false}
-
-@import "copairMap.ai_lean_to_english" {code_block=false}
-
-@import "lftFinset_eq_empty_or_mem.ai_lean_to_english" {code_block=false}
-
-@import "lft_eq_empty_of_sumEntSet.ai_lean_to_english" {code_block=false}
-
-@import "lft_mem_Con_of_SumCon_rht_empty.ai_lean_to_english" {code_block=false}
-
-@import "liftSumLeft.ai_lean_to_english" {code_block=false}
-
-@import "liftSumRight.ai_lean_to_english" {code_block=false}
-
-@import "mem_foldr_liftSumLeft.ai_lean_to_english" {code_block=false}
-
-@import "mem_foldr_liftSumRight.ai_lean_to_english" {code_block=false}
-
-@import "mem_liftSumLeft.ai_lean_to_english" {code_block=false}
-
-@import "lftFinset_liftSumLeft.ai_lean_to_english" {code_block=false}
-
-@import "mem_liftSumRight.ai_lean_to_english" {code_block=false}
-
-@import "lftFinset_liftSumRight.ai_lean_to_english" {code_block=false}
-
-@import "not_mem_right_of_mem_left.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset_eq_empty_or_mem.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset_liftSumLeft.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset_liftSumRight.ai_lean_to_english" {code_block=false}
-
-@import "rht_eq_empty_of_sumEntSet.ai_lean_to_english" {code_block=false}
-
-@import "inlMap.ai_lean_to_english" {code_block=false}
-
-@import "rht_mem_Con_of_SumCon_lft_empty.ai_lean_to_english" {code_block=false}
-
-@import "inrMap.ai_lean_to_english" {code_block=false}
-
-@import "subset_botElement_of_projections_empty.ai_lean_to_english" {code_block=false}
-
-@import "entSet_empty_of_rel_bot_like.ai_lean_to_english" {code_block=false}
-
-@import "copairMap_unique.ai_lean_to_english" {code_block=false}
-
-@import "../Proposition64.ai_lean_to_english" {code_block=false}
-
-@import "sumLftCarrier.ai_lean_to_english" {code_block=false}
-
-@import "sumElementLft.ai_lean_to_english" {code_block=false}
-
-@import "sumRhtCarrier.ai_lean_to_english" {code_block=false}
-
-@import "sumElementRht.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_Proposition_6_4.ai_english_concordance" {code_block=false}

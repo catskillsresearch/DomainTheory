@@ -1,3 +1,0 @@
-The diagonal map sending z to z ⊗ z is Scott continuous.
-
-Continuity of the graph in the parameter reduces to continuity of the body at each fixed u. There the sequence pair of two continuous maps is continuous by the tuple theorem, and each map is left application at the corresponding component of u.

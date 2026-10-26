@@ -1,1 +1,0 @@
-The bounded scan for the least w such that k is less than the (w + 1)-st triangular number, run for n steps, starts at 0 and at stage w returns the previous value when k is already below the (w + 1)-st triangular number, and otherwise returns w + 1.

@@ -1,1 +1,0 @@
-The abstract-syntax functor at z is the seven-way tagged sum of the integer retract, the empty set, two copies of z, the four-fold product of z with itself, the binary product of z with itself, and the product of the integer retract with z. Scott introduces this functor at (4.44).

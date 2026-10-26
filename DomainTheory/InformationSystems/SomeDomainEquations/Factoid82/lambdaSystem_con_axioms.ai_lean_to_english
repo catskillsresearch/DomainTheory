@@ -1,3 +1,0 @@
-For tokens of the lambda system, consistent finite sets are closed downward under inclusion, every singleton is consistent, every consistent set entails bottom, and every member of a consistent set is entailed by that set. The Scott note presents this as progress on Definition 2.1 for the subset, singleton, bottom, and reflexivity axioms, recording entailment-consistency for bottom and atoms as already in hand and leaving entailment-consistency and transitivity on function tokens still open.
-
-The four conjuncts are the subset lemma for consistency, the singleton lemma for consistency, the bottom lemma for entailment, and the membership lemma for entailment.

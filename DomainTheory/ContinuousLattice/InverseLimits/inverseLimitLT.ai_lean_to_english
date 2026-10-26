@@ -1,1 +1,0 @@
-The strict coordinatewise order on compatible sequences holds when the first sequence lies below the second and the second does not lie below the first. `inverseLimitLT.iff_LE_not_GE` says that order is the conjunction of the coordinatewise order with the failure of the opposite order. The two sides are definitionally the same relation.

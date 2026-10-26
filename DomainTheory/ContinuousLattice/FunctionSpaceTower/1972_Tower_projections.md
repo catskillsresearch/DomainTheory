@@ -2,12 +2,7 @@
 
 `towerProj` is the projection from $D_{n+1}$ onto $D_n$ in the function-space tower. `towerProj.succ` is the successor step, `towerProj.succ_incl_apply` and `towerProj.succ_retr_apply` are its inclusion and retraction, and `towerProj.incl_apply` is preservation of application.
 
-## AI: Human-English to AI-Lean
-
 **[ContinuousLattice/FunctionSpaceTower/towerProj.lean](towerProj.lean)**
 
 @import "towerProj.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "towerProj.ai_lean_to_english" {code_block=false}

@@ -1,10 +1,6 @@
 # A law of Y
 
-## Human-English
-
 @import "1976_Law_of_Y.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[DataTypesAsLattices/Lambda/eq_2_28.lean](eq_2_28.lean)**
 
@@ -30,16 +26,3 @@
 
 @import "Ymap.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "eq_2_28.ai_lean_to_english" {code_block=false}
-
-@import "iterateBot_param_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "fix_param_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "Ymap_app.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_28_commute.ai_lean_to_english" {code_block=false}
-
-@import "Ymap.ai_lean_to_english" {code_block=false}

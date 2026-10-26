@@ -1,3 +1,0 @@
-If a is a retract, the shift of a is a retract.
-
-The retract equation is equality with the graph of double application. Graph extensionality and two unfoldings of the shift reduce the claim to the predecessor of the union of the singleton zero with the successor of a applied to the predecessor of x. That predecessor is the application of a, by the predecessor laws for unions, the singleton zero, and successor sets. The retract equation for a then removes the second application.

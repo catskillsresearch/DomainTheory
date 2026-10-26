@@ -1,7 +1,5 @@
 # Exercise 5.14
 
-## Human-English
-
 **EXERCISE 5.14.** Show that there are approximable mappings
 
 $$
@@ -31,8 +29,6 @@ $$
 $$
 
 where $k$ is variable — meaning all finite sequences are to be considered.)
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_5_14.lean](Exercise_5_14.lean)**
 

@@ -1,7 +1,5 @@
 # Exercise 5.12
 
-## Human-English
-
 **EXERCISE 5.12.** On any domain $D$ introduce (as a least fixed point) a combinator
 
 $$
@@ -27,8 +25,6 @@ $$
 $$
 
 with the meaning "find the first term of the sequence (if any) which satisfies the given precicate."
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_5_12.lean](Exercise_5_12.lean)**
 

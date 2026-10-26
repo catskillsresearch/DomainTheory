@@ -1,3 +1,0 @@
-The inclusion of a continuous-lattice projection preserves arbitrary suprema, is injective, and, when the ambient lattice is continuous, preserves the way-below relation. This packages Scott's Proposition 3.10(i) through (iii).
-
-The three conjuncts are the supremum, injectivity, and way-below properties of the inclusion.

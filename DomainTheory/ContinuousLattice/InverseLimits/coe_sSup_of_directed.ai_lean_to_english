@@ -1,3 +1,0 @@
-For a nonempty directed set of compatible sequences, the underlying sequence of the supremum in the inverse limit is the pointwise supremum of the underlying sequences.
-
-The pointwise supremum is compatible: at each level the next-coordinate image is nonempty and directed, the projection preserves its supremum, and compatibility identifies the projected coordinates with the current coordinates. The resulting sequence is an upper bound because each sequence lies below the pointwise supremum, and it lies below any other upper bound because that bound lies above every underlying sequence. The least upper bound is unique, so the sequence is the supremum.

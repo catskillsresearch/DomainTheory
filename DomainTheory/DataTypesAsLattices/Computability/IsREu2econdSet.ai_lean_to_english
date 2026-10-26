@@ -1,3 +1,0 @@
-The conditional of three recursively enumerable sets is recursively enumerable.
-
-Membership in the conditional is the disjunction of membership in the first branch together with membership of zero in the condition, and membership in the second branch together with the existence of a positive element of the condition. Both sides of the disjunction are recursively enumerable, using that membership of zero and the existence of a positive element are recursively enumerable predicates, and the disjunction is exactly the membership predicate of the conditional.

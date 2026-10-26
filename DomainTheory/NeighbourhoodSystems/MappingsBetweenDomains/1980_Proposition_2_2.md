@@ -1,7 +1,5 @@
 # Proposition 2.2
 
-## Human-English
-
 **PROPOSITION 2.2.** Given neighbourhood systems $D_0$ and $D_1$, an approximable mapping $f : D_0 \to D_1$ always determines a function $f : |D_0| \to |D_1|$ between domains by virtue of the formula:
 
 (i) $f(x) = \{ Y \in D_1 \mid \exists X \in x.\ X f Y \}$
@@ -35,8 +33,6 @@ $$\uparrow Y \subseteq f(\uparrow X),$$
 which can be read as saying that the partial element determined by the neighbourhood $Y$ approximates the function value at the element determined by $X$. This precise relationship of course fits the informal discussion of mapping given earlier. Indeed whenever $x \in [X]$ and $X f Y$ hold, then $f(x) \in [Y]$ always follows, which is another way to construe the mapping character of $f$. Some examples of mappings are now called for.
 
 <!-- page 27 -->
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_2_2.lean](Proposition_2_2.lean)**
 

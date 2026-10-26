@@ -1,7 +1,5 @@
 # Exercise 5.15
 
-## Human-English
-
 **EXERCISE 5.15.** (For algebraists.) We can regard $\langle \{0,1\}^*, \Lambda, \cdot \rangle$ as the free semigroup on two generators $0$ and $1$. The powerset $P\{0,1\}^*$ is taken as a domain as in Exercise 4.17. For "words" $e \in \{0,1\}^*$ define
 
 $$
@@ -36,8 +34,6 @@ where the $\{\cdot\}$ has been dropped off $\{a\}$, $\{b\}$ etc., and where the 
 (Hint: Apply 5.3.)
 
 <!-- page 91 -->
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_5_15.lean](Exercise_5_15.lean)**
 

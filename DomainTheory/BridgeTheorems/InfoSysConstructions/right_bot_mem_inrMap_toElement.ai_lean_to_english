@@ -1,3 +1,0 @@
-The right copy of the bottom token of B belongs to the carrier of the right image of every element of B.
-
-The witness is the singleton of that bottom token. Its only token is the bottom token, which belongs to every element. The singleton is consistent in the sum by the right clause, because its right part is the consistent singleton of the bottom token and its left part is empty, and the entailment of the right bottom token is the entailment, in B, of that consistent singleton.

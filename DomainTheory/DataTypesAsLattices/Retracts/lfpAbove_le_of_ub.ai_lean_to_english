@@ -1,3 +1,0 @@
-If a Scott-continuous map fixes z and every member of a family A is contained in z, then the least upper bound of the iterates above the union of A is contained in z.
-
-The union of A is contained in z. Every iterate from that union is contained in z: the starting iterate is the union, and a successor iterate rewrites by the fixed-point equation and monotonicity. An element of the least upper bound therefore lies in some iterate and hence in z.

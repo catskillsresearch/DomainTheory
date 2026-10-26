@@ -1,3 +1,0 @@
-Scott's Theorem 3.3 (i) asserts that the value of the second recursion function at n equals the second recursion value of val(n).
-
-Rewrite the function as application of the operator code, then use the application equation for val, the value of that code, and the application equation for the second recursion operator.

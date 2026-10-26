@@ -1,3 +1,0 @@
-The typical 𝔉 ∩ 𝔊δ set is an intersection of a Scott-closed set and a Scott Gδ set.
-
-By Theorem 6.5, such a set is the set of x at which some Scott-continuous map takes the value ⊤ + 1. The identity is Scott continuous and takes that value exactly at ⊤ + 1.

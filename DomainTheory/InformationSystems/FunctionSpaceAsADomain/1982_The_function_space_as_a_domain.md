@@ -4,11 +4,7 @@
 
 @import "FunctionSpaceAsADomain.mermaid"
 
-## Human-English
-
 @import "1982_The_function_space_as_a_domain.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/FunToken.lean](FunctionSpace/FunToken.lean)**
 
@@ -98,58 +94,3 @@
 
 @import "FunctionSpace.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "FunctionSpace/FunToken.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/BasicInst7.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/funBot.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/funion_assoc'.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/funion_assoc.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/funion_comm'.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/funion_comm.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/funion_left_comm'.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/funion_left_comm.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/instLeftCommutativeFunInput.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/instLeftCommutativeFunOutput.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/filter_ne_subset_of_subset_insert.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/funInputUnion.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/funOutputUnion.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/FunCon.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/FunEnt.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/insert_filter_ne.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/mem_foldr_funInput.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/mem_foldr_funOutput.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/mem_funInputUnion.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/entSet_inputUnion_of_ent.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/mem_funOutputUnion.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/exists_combined_witness.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace/functionSystem.ai_lean_to_english" {code_block=false}
-
-@import "FunctionSpace.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_The_function_space_as_a_domain.ai_english_concordance" {code_block=false}

@@ -1,7 +1,5 @@
 # Example 1.4
 
-## Human-English
-
 EXAMPLE 1.4. Let $\Delta = \{\Lambda, 0, 1, 00, 01, 10, 11\}$ and let $\mathcal{D} = \{\Delta, \{0, 00, 01\}, \{1, 10, 11\}, \{00\}, \{01\}, \{10\}, \{11\}\}$.
 
 Or more understandably in pictures:
@@ -30,8 +28,6 @@ It should be noted that, in these three examples, the reason that we have a neig
 **Resolutions from the image:** “is unique” (not “in unique”); $\mathcal{D}$ begins with $\Delta$, not $\Lambda$; Pass 1’s nested-box diagram matches the neighborhood boundaries in the scan; em dashes around “in the picture” as in the source.
 
 <!-- page 11 -->
-
-## AI: Human-English to AI-Lean
 
 **[Example_1_4.lean](Example_1_4.lean)**
 

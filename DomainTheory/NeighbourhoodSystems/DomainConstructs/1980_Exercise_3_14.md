@@ -1,7 +1,5 @@
 # Exercise 3.14
 
-## Human-English
-
 **EXERCISE 3.14.** For the most part we can assume that there is at most a countable number of tokens; thus, without loss of generality the underlying sets $\Delta_i$ of given systems $\mathcal{D}_i$ could be assumed to be subsets of $\Sigma^*$ where $\Sigma = \{0, 1\}$. (Any denumerable set would do.) Show that the product $\mathcal{D}_0 \times \mathcal{D}_1$ could be defined as the system over the set $0\Delta_0 \cup 1\Delta_1$ where
 
 $$
@@ -27,8 +25,6 @@ $$
 $$
 
 Note that for a 2-termed product we simplify $10\Delta_1$ to $1\Delta_1$.
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_3_14.lean](Exercise_3_14.lean)**
 

@@ -1,7 +1,5 @@
 # Definition 6.3
 
-## Human-English
-
 **DEFINITION 6.3.** A *functor* on a category (into itself) associates with every domain $X$ in the category another domain $T(X)$ and to every map
 
 $$
@@ -43,8 +41,6 @@ $$
 and this suggests the definition of $T(f)$. The details are left to the exercises. Note that the map $T(f)$ just suggested is always strict, so **T** is a functor also for the category of strict maps.
 
 One good reason for a little of the category-theoretic language is that the next definition becomes very neat indeed.
-
-## AI: Human-English to AI-Lean
 
 **[Definition_6_3.lean](Definition_6_3.lean)**
 

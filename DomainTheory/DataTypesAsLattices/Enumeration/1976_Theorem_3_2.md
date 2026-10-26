@@ -1,10 +1,6 @@
 # Theorem 3.2
 
-## Human-English
-
 @import "1976_Theorem_3_2.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[DataTypesAsLattices/Enumeration/theorem_3_2.lean](theorem_3_2.lean)**
 
@@ -90,50 +86,3 @@
 
 @import "myhillRealizer.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "theorem_3_2.ai_lean_to_english" {code_block=false}
-
-@import "theorem_3_2_i.ai_lean_to_english" {code_block=false}
-
-@import "theorem_3_2_range.ai_lean_to_english" {code_block=false}
-
-@import "theorem_3_2_surjective.ai_lean_to_english" {code_block=false}
-
-@import "Ycode.ai_lean_to_english" {code_block=false}
-
-@import "botCode.ai_lean_to_english" {code_block=false}
-
-@import "condCode.ai_lean_to_english" {code_block=false}
-
-@import "filterOp.ai_lean_to_english" {code_block=false}
-
-@import "interCode.ai_lean_to_english" {code_block=false}
-
-@import "diagonalInterCode.ai_lean_to_english" {code_block=false}
-
-@import "myhillFilterCode.ai_lean_to_english" {code_block=false}
-
-@import "myhillCase1Code.ai_lean_to_english" {code_block=false}
-
-@import "recCode.ai_lean_to_english" {code_block=false}
-
-@import "secondRecOperatorCode.ai_lean_to_english" {code_block=false}
-
-@import "secondRecV.ai_lean_to_english" {code_block=false}
-
-@import "unionCode.ai_lean_to_english" {code_block=false}
-
-@import "finAux.ai_lean_to_english" {code_block=false}
-
-@import "fin.ai_lean_to_english" {code_block=false}
-
-@import "myhillCase2Code.ai_lean_to_english" {code_block=false}
-
-@import "myhillQ.ai_lean_to_english" {code_block=false}
-
-@import "myhillRealizer.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1976_Theorem_3_2.ai_english_concordance" {code_block=false}

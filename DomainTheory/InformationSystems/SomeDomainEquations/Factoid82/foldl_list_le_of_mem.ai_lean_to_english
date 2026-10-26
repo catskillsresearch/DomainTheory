@@ -1,3 +1,0 @@
-The raw depth of a token in a list is at most the left fold, starting from zero, that accumulates the maximum of the accumulator and the raw depth of each token.
-
-The proof inducts on the list. The empty list contains no token. On a nonempty list, the head is at most the maximum of zero and its raw depth, and the fold stays at least as large as that value. A token in the tail is at most the fold of the tail from zero by the inductive hypothesis, and that fold is at most the fold of the tail from the larger initial maximum.

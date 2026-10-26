@@ -1,3 +1,0 @@
-The conditional combinator equals G applied to the zero combinator, then twice to the numeral 1, and then to the zero combinator.
-
-Identify the zero combinator with the numeral 0, and simplify by the zero application of G, the application of the G-pack to the numeral 1, sequencing at the numeral 1, and sequencing at the numeral 0.

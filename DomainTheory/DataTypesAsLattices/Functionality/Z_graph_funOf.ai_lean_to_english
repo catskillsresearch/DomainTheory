@@ -1,3 +1,0 @@
-Iterating the graph of the application of a function agrees with iterating the function itself.
-
-Induct on the stage. Stage zero is the definition of the iterator. At a successor, the inductive hypothesis simplifies the argument, and beta reduction for continuity of application of the function replaces application of the graph by application of the function.

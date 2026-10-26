@@ -1,7 +1,5 @@
 # Exercise 3.26
 
-## Human-English
-
 **EXERCISE 3.26.** Show that for every domain $D$ there is an approximable mapping
 
 $$\mathrm{cond} : T \times D \times D \to D,$$
@@ -43,8 +41,6 @@ such that for all $x \in |D_0 + D_1|$
 $$
 \mathrm{cond}(\mathrm{which}(x), \mathrm{in}_0(\mathrm{out}_0(x)), \mathrm{in}_1(\mathrm{out}_1(x))) = x .
 $$
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_3_26.lean](Exercise_3_26.lean)**
 

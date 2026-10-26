@@ -1,3 +1,0 @@
-Scott 1976, Theorem 4.4 (iv). The product acts as a functor on maps: if f lies in the function space from a to b and f' lies in the function space from a' to b', then f ⊗ f' lies in the function space from a ⊗ a' to b ⊗ b'.
-
-Unfold the function-space equation by the application law for the arrow. Equation (4.12) slides the product inside composition twice, first past the composite with a ⊗ a' and then past the composite with b ⊗ b'. The typing equations replace b ∘ f ∘ a by f and b' ∘ f' ∘ a' by f'.

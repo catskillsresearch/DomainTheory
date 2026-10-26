@@ -1,7 +1,5 @@
 # Proposition 7.10
 
-## Human-English
-
 **PROPOSITION 7.10.** The power domain $\mathbb{P}\mathcal{D}$ is a neighbourhood system if $\mathcal{D}$ is, and it is effectively given if $\mathcal{D}$ is.
 
 *Proof* : The system $\mathcal{D}^\dagger$ is a neighbourhood system as we just remarked; indeed it is a positive neighbourhood system. It is easy to prove that the closure of any positive system under finite unions is a neighbourhood system, because the resulting family of sets is closed under *all* finite intersections. (If we left out the empty union, the result would be a positive system.) The proof is obvious since intersection of sets distributes over finite union. So $\mathbb{P}\mathcal{D}$ is a neighbourhood system.
@@ -41,8 +39,6 @@ By our assumptions on $\mathcal{D}$, this is decidable. (It is this part of the 
 One of the main reasons that $\mathbb{P}\mathcal{D}$ is like a power domain is the possibility of forming "finite sets".
 
 <!-- page 129 -->
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_7_10.lean](Proposition_7_10.lean)**
 

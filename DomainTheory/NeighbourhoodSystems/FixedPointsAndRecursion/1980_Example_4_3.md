@@ -1,7 +1,5 @@
 # Example 4.3
 
-## Human-English
-
 **EXAMPLE 4.3.** The infinite generalization of our original example 1.2 is the system
 
 $$
@@ -195,8 +193,6 @@ $$
 as defined in Exercise 3.26. We do not put cond in as part of the structure of $N$ because (as should be clear from 3.26) it is part of the structure of $T$.
 
 The above equation for $\sigma$ is properly called a *functional equation*; it will be written as a fixed-point equation in Lecture V when we have the notation for the $\lambda$-calculus. $\square$
-
-## AI: Human-English to AI-Lean
 
 **[Example_4_3.lean](Example_4_3.lean)**
 

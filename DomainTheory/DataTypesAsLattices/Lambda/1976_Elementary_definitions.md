@@ -1,10 +1,6 @@
 # Elementary definitions
 
-## Human-English
-
 @import "1976_Elementary_definitions.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[DataTypesAsLattices/Computability/topRecTerm.lean](../Computability/topRecTerm.lean)**
 
@@ -94,48 +90,3 @@
 
 @import "topRec.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "../Computability/topRecTerm.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/topRecTerm_interp.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_16.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_17_step.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_18_bot.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_18_top.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_14.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_15.ai_lean_to_english" {code_block=false}
-
-@import "interC_else_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "interC_body_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "interC_then_else_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "interStep_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "interC_unfold.ai_lean_to_english" {code_block=false}
-
-@import "interC_app_graph.ai_lean_to_english" {code_block=false}
-
-@import "interC_app.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_17.ai_lean_to_english" {code_block=false}
-
-@import "topRec_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_18.ai_lean_to_english" {code_block=false}
-
-@import "union_via_cond.ai_lean_to_english" {code_block=false}
-
-@import "interStep.ai_lean_to_english" {code_block=false}
-
-@import "interC.ai_lean_to_english" {code_block=false}
-
-@import "topRec.ai_lean_to_english" {code_block=false}

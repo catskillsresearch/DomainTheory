@@ -1,3 +1,0 @@
-For a fixed element a, the map sending b to the binary sequence constructor of a and b is Scott continuous.
-
-It is the graph of the family sending b and z to the conditional of z between a and the conditional of the predecessor of z between b and bottom. For each z, Scott continuity of the right conditional, composed by Theorem 1.3 with continuity of the middle conditional at the predecessor of z and at bottom, gives continuity in b.

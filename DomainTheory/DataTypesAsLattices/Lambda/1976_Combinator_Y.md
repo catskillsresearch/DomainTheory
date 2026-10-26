@@ -1,10 +1,6 @@
 # The combinator Y
 
-## Human-English
-
 @import "1976_Combinator_Y.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[DataTypesAsLattices/Lambda/Yterm_interp.lean](Yterm_interp.lean)**
 
@@ -46,24 +42,3 @@
 
 @import "Ycomb.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "Yterm_interp.ai_lean_to_english" {code_block=false}
-
-@import "diagApp_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "omegaComb_app.ai_lean_to_english" {code_block=false}
-
-@import "omegaComb_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "Ycomb_app.ai_lean_to_english" {code_block=false}
-
-@import "Ycomb_unfold.ai_lean_to_english" {code_block=false}
-
-@import "omega_first_recursion.ai_lean_to_english" {code_block=false}
-
-@import "Yterm.ai_lean_to_english" {code_block=false}
-
-@import "omegaComb.ai_lean_to_english" {code_block=false}
-
-@import "Ycomb.ai_lean_to_english" {code_block=false}

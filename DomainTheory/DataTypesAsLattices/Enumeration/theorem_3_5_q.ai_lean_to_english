@@ -1,3 +1,0 @@
-In the Myhill–Shepherdson construction of Theorem 3.5, the pair of j and m belongs to the Myhill operator of val and p if and only if m belongs to val of p at the fin-code of j.
-
-Membership in the operator supplies indices whose pair equals the given pair and whose second index lies in the corresponding value; injectivity of pairing forces the indices to be j and m. Conversely, the pair itself, together with the membership, is a witness.

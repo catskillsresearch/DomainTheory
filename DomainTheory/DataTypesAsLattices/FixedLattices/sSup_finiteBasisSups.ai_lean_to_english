@@ -1,3 +1,0 @@
-The supremum of the finite basis suprema of a sequence d over a set x of indices equals the supremum of the image of x under d.
-
-The two sides are compared by antisymmetry. A finite basis supremum is the supremum of d on a finite subset t of x, and each value of d on t lies below the supremum of d on x by monotonicity of the image. Conversely, each value d n for n in x lies below the supremum of d on the singleton of n, and that singleton supremum is one of the finite basis suprema.

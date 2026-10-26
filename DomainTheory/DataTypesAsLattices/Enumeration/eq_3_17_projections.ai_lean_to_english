@@ -1,3 +1,0 @@
-For the nested positive branch of u at the positive branch of v at R of x, application to the numeral 1 returns u, application of the inner branch to the numeral 1 returns v, and application of the inner branch to the numeral 2 returns x.
-
-The first two conjuncts are the projection of a positive branch at the numeral 1. The third rewrites by the projection of a positive branch at the numeral 2, the application law for R, and sequencing at the numeral 1.

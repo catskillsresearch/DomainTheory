@@ -1,3 +1,0 @@
-Scott 1976, (4.13). The composite of the sum of a and b with the sum of a' and b' equals the sum of the composite of a with a' and the composite of b with b'.
-
-The argument begins with graph extensionality and the sum rule. The four cases of the disjoint conditional are zero but not positive, positive but not zero, mixed, and empty. The first two rewrite by the corresponding disjoint-conditional rules, the sum rule, the pair projections, the numeral rules, and composition of application. The mixed case uses the top rule for the sum and the mixed rule for the disjoint conditional. The empty case uses the bottom rule for the sum and the empty rule for the disjoint conditional.

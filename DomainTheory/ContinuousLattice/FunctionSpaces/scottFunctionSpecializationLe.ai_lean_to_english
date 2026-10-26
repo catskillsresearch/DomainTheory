@@ -1,3 +1,0 @@
-In the Scott function topology, a continuous map f specializes to a continuous map g if and only if, at every point of the domain, the value of f specializes to the value of g.
-
-If the maps are specialized, each evaluation cylinder of maps sending a point into an open set is open in the function topology, so a cylinder containing f contains g. Conversely, a pointwise specialization inequality passes to every open generated from the evaluation subbasis.

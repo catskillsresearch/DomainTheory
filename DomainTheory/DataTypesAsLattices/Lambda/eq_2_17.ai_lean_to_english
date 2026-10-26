@@ -1,3 +1,0 @@
-Scott 1976, (2.17). Intersection is the combinator Y(λf λx λy. x ⊃ (y ⊃ 0, ⊥), f(x − 1)(y − 1) + 1) applied to x and then to y.
-
-By strong induction on n, n lies in that double application if and only if n lies in both arguments. The application equation splits into a zero clause, which copies joint membership of 0, and a successor clause, which reduces to the predecessors and uses the induction hypothesis.

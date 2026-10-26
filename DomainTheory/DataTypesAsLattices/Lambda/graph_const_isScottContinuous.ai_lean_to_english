@@ -1,3 +1,0 @@
-If a binary operation is Scott continuous in its first argument, then the graph of its second-argument slice is Scott continuous in the first argument.
-
-A code in the graph means the value lies in the corresponding slice. Continuity of that slice supplies a Scott-union witness, which is a witness for the graph. Conversely, monotonicity of the continuous slice returns the code from a Scott-union witness to the graph.

@@ -1,3 +1,0 @@
-The value unpairW k is the least natural number w such that k lies strictly below triangle (w + 1).
-
-The least-number characterization asks for that triangle bound at unpairW k and for its failure at every smaller index. The failures are the minimality lemma for unpairWRec. The bound is the first alternative of unpairWRec_lt. In the other alternative, unpairWRec k k equals k. Then k + 1 is at most triangle (k + 1), by the definition of triangle at zero and by the successor equation for triangle together with the bound on a sum at a successor, so the inequality k < k + 1 yields k < triangle (k + 1). Rewriting by the definition of unpairW and by that alternative gives the required bound.

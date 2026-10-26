@@ -1,3 +1,0 @@
-Every combinatory element of Pω is the interpretation of a λ-term. This is the converse of Theorem 2.4.
-
-Induct on the combinatory derivation. Zero is the zero term. Successor, predecessor, conditional, K, and S are the corresponding abstractions, and simplifying their interpretations recovers the combinators. An application is the application of the two witnessing terms.

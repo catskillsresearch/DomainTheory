@@ -1,3 +1,0 @@
-The inclusion of a continuous-lattice projection preserves binary joins. This is the binary case of Scott's Proposition 3.10(i).
-
-Both x and y lie below the retraction of the join of their inclusions, because the retraction inverts the inclusion and is monotone. Their join does too, and the inclusion of that retraction lies below the join of the inclusions. The reverse inequality is monotonicity of the inclusion on each argument of the join.

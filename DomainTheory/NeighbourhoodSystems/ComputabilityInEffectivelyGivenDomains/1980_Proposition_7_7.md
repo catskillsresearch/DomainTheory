@@ -1,7 +1,5 @@
 # Proposition 7.7
 
-## Human-English
-
 **PROPOSITION 7.7.** For any effectively given domain $D$, the domain $D^\S$ is also effectively given, and all the combinators of Example 6.1 prove to be computable.
 
 *Proof:* This proof is essentially an exercise, but it is useful to have an easy-to-grasp example. Indeed, to make things easy to reason about, we can assume that $D$ is a system over $\Delta = \mathbf{N}$, and that in the presentation where
@@ -45,8 +43,6 @@ $$X_n\ (\lambda x.\, x^\S)\ V_k \text{ iff } V_{2n+1} \subseteq V_k$$
 $$V_m \ \mathrm{proj}_0 \ V_k \text{ iff } k = 0 \text{ or } \exists n \in \mathbf{N}.\, m = 2n + 2 \text{ and } V_{p(n)} \subseteq V_k.$$
 
 The reader should write out other cases. $\square$
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_7_7.lean](Proposition_7_7.lean)**
 

@@ -1,3 +1,0 @@
-The finset of right-pair payloads of a singleton left pair is empty.
-
-A left pair contributes no right-pair payload, and the empty finset has no members.

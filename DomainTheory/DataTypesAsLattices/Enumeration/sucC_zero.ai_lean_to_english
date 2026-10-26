@@ -1,3 +1,0 @@
-Applying the successor combinator to zero yields the numeral 1. This is the numerical step recorded with Scott's generator theorem (Theorem 3.1), that every λ-definable element is obtained from G by iterated application.
-
-Rewrite by the successor equation and compare elements. A member of the application is witnessed by a numeral belonging to zero, which must be 0, and the successor equation then puts it in the numeral 1. Conversely, a member of the numeral 1 is witnessed by the pair of 0 with that member.

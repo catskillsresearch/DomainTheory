@@ -1,3 +1,0 @@
-The shifted halting enumerator is primitive recursive.
-
-Step-bounded evaluation of the code decoded from the first component of the unpairing, for the number of steps given by the second component, on input 0, is primitive recursive by composition with the primitive recursive evaluator. The conditional on whether that evaluation returns a value, yielding one more than the first component or else 0, agrees with the enumerator.

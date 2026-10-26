@@ -1,7 +1,5 @@
 # Theorem 8.6
 
-## Human-English
-
 **THEOREM 8.6.** For any domain $E$ define
 
 $$\mathrm{sub} : (E \to E) \to (E \to E)$$
@@ -39,8 +37,6 @@ Finally, to prove that $\mathrm{sub}$ is a finitary projection of $(E \to E)$, w
 These results have almost completely translated the theory of $\triangleleft$-subdomains into $\lambda$-calculus via the sub-combinator. One last step will complete the passage, and then we shall be able to return to solving domain equations.
 
 <!-- page 140 -->
-
-## AI: Human-English to AI-Lean
 
 **[Theorem_8_6.lean](Theorem_8_6.lean)**
 

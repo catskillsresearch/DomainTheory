@@ -1,3 +1,0 @@
-For fixed B and x, the bar step body is Scott continuous in u.
-
-Binary substitution uses middle and right continuity of the conditional at the application of x to the numeral 0, continuity of the positive branch in its first argument at x, and the composite of left application at the application of x to the numeral 2 with the substitution of continuity of application of B into left application at the application of x to the numeral 1.

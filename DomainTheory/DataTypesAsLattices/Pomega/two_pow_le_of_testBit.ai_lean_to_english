@@ -1,3 +1,0 @@
-If the bit of n in position k is set, then the power of two with exponent k is at most n.
-
-The bit test says that n shifted right by k has remainder one on division by two, so the shifted value is positive. A right shift is division by that power of two, so the quotient is at least one. Multiplying through by the positive power of two yields the inequality.

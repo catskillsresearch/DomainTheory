@@ -1,10 +1,6 @@
 # Factoid 8.3
 
-## Human-English
-
 @import "1982_Factoid_8_3.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/SomeDomainEquations/Factoid83/VToken.lean](VToken.lean)**
 
@@ -178,96 +174,3 @@
 
 @import "vUnfold.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "VToken.ai_lean_to_english" {code_block=false}
-
-@import "not_mem_uForget_top.ai_lean_to_english" {code_block=false}
-
-@import "UCon_empty.ai_lean_to_english" {code_block=false}
-
-@import "../Factoid83.ai_lean_to_english" {code_block=false}
-
-@import "vPairLFinset.ai_lean_to_english" {code_block=false}
-
-@import "mem_vPairLFinset.ai_lean_to_english" {code_block=false}
-
-@import "vPairRFinset.ai_lean_to_english" {code_block=false}
-
-@import "VEnt.ai_lean_to_english" {code_block=false}
-
-@import "IsUToken.ai_lean_to_english" {code_block=false}
-
-@import "BasicInst33.ai_lean_to_english" {code_block=false}
-
-@import "UToken.ai_lean_to_english" {code_block=false}
-
-@import "BasicInst35.ai_lean_to_english" {code_block=false}
-
-@import "VCon.ai_lean_to_english" {code_block=false}
-
-@import "mem_vPairRFinset.ai_lean_to_english" {code_block=false}
-
-@import "uBot.ai_lean_to_english" {code_block=false}
-
-@import "uForget.ai_lean_to_english" {code_block=false}
-
-@import "uForgetInsert.ai_lean_to_english" {code_block=false}
-
-@import "BasicInst39.ai_lean_to_english" {code_block=false}
-
-@import "mem_foldr_uForget.ai_lean_to_english" {code_block=false}
-
-@import "uForgetFinset.ai_lean_to_english" {code_block=false}
-
-@import "UCon.ai_lean_to_english" {code_block=false}
-
-@import "UEnt.ai_lean_to_english" {code_block=false}
-
-@import "mem_uForgetFinset.ai_lean_to_english" {code_block=false}
-
-@import "vBot.ai_lean_to_english" {code_block=false}
-
-@import "vPairLFinset_empty.ai_lean_to_english" {code_block=false}
-
-@import "not_VEnt_empty_top.ai_lean_to_english" {code_block=false}
-
-@import "not_VEnt_singleton_ne_top.ai_lean_to_english" {code_block=false}
-
-@import "vPairLFinset_insert_bot.ai_lean_to_english" {code_block=false}
-
-@import "vPairLFinset_insert_pairL.ai_lean_to_english" {code_block=false}
-
-@import "vPairLFinset_insert_pairR.ai_lean_to_english" {code_block=false}
-
-@import "vPairLFinset_mono.ai_lean_to_english" {code_block=false}
-
-@import "vPairRFinset_insert_bot.ai_lean_to_english" {code_block=false}
-
-@import "vPairRFinset_insert_pairL.ai_lean_to_english" {code_block=false}
-
-@import "vPairRFinset_insert_pairR.ai_lean_to_english" {code_block=false}
-
-@import "VEnt_insert_top_imp.ai_lean_to_english" {code_block=false}
-
-@import "not_VEnt_insert_top_of_ent.ai_lean_to_english" {code_block=false}
-
-@import "UCon_insert_of_ent.ai_lean_to_english" {code_block=false}
-
-@import "vPairRFinset_mono.ai_lean_to_english" {code_block=false}
-
-@import "VEnt_mono.ai_lean_to_english" {code_block=false}
-
-@import "uSystem.ai_lean_to_english" {code_block=false}
-
-@import "vSystem.ai_lean_to_english" {code_block=false}
-
-@import "vRhs.ai_lean_to_english" {code_block=false}
-
-@import "vTop.ai_lean_to_english" {code_block=false}
-
-@import "vUnfold.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_Factoid_8_3.ai_english_concordance" {code_block=false}

@@ -1,7 +1,5 @@
 # Definition 7.1
 
-## Human-English
-
 **DEFINITION 7.1.** A neighbourhood system $D$ has a *computable presentation* provided we can write
 
 $$D = \{ X_n \mid n \in N \},$$
@@ -29,8 +27,6 @@ assuming that these basic decisions can be carried out in "finite time". Note th
 $$X_n \subseteq X_m \text{ iff } X_n \cap X_m = X_n,$$
 
 assures us that the inclusion relation between neighbourhoods is itself decidable in terms of the indices. So in (ii) if $k$ exists, *then* it (or the first one) can indeed be found in finite time. The rub is that if it *does not exist*, no finite number of inclusion checks will determine that fact. That is why we have to *assume* that (ii) is always decidable. The information contained in (ii) is a fundamental part of the neighbourhood structure. (An axiomatic characterization of neighbourhood structures is given in Exercise 7.13, which may make clearer what we are assuming and what a presentation is.)
-
-## AI: Human-English to AI-Lean
 
 **[Definition_7_1.lean](Definition_7_1.lean)**
 

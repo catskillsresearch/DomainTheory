@@ -1,3 +1,0 @@
-Inserting bottom preserves consistency at stage n.
-
-Induct on the stage. At stage zero, the atom and function-token projections ignore bottom. At a successor stage, the left alternative uses the inductive hypothesis. The right alternative keeps an empty atom projection, leaves membership of function tokens unchanged, and transports the function clause along that equality.

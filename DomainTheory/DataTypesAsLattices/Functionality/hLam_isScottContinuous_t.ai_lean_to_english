@@ -1,3 +1,0 @@
-For fixed H and e, the map sending an environment t to the abstraction clause hLam H e t is Scott continuous.
-
-Composition applies the right injection, which is Scott continuous, to the graph of the map that evaluates H at the second component of the payload of e, in the environment updated by the bound value at the first component of that payload. That graph is continuous in t because its body is the composite of the constant application of H at that second component with the environment update, and the update is Scott continuous in t.

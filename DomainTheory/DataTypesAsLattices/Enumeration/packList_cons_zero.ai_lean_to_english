@@ -1,3 +1,0 @@
-Applying the packing of a cons cell x :: xs to the numeral 0 yields x.
-
-This is the zero law for binary sequencing of x with the packing of the tail.

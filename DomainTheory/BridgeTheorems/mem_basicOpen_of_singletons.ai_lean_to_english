@@ -1,3 +1,0 @@
-If a filter in the neighbourhood system of an information system meets the basic open of every singleton from a finite set, then it meets the basic open of that set.
-
-The proof is by induction on the finite set. The empty basic open is the master set, which every filter meets. When a token is inserted, the filter meets the basic open of that singleton and, by the inductive hypothesis, the basic open of the remainder; their intersection is the basic open of the enlarged set.

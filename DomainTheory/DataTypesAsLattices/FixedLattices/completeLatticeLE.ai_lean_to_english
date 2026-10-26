@@ -1,1 +1,0 @@
-The abbreviation completeLatticeLE selects the order of a complete lattice by following the instance through the complete-semilattice infimum, the partial order, and the preorder. The path is fixed so that the two elaborations of a countable algebraic lattice use the same order.

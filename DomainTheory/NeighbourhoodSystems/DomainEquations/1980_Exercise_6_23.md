@@ -1,7 +1,5 @@
 # Exercise 6.23
 
-## Human-English
-
 **EXERCISE 6.23.** Construe the initial solution to
 
 $$
@@ -21,8 +19,6 @@ $$
 $$
 
 that can be regarded as the “evaluation of an expression”.
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_6_23.lean](Exercise_6_23.lean)**
 

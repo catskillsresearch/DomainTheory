@@ -1,3 +1,0 @@
-A disjoint pair is typed by a boxed product if and only if its two components are typed by the two factors.
-
-If the pair is typed, the typing equation, the application law, and the two projection equations write it as the pairing of the factors applied to the components, and injectivity of pairing gives the two typing equations. Conversely, the application law and the projection equations, rewritten by the two typing equations, are the typing equation for the pair.

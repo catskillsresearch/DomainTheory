@@ -1,3 +1,0 @@
-Composition of u and v equals the function retract applied to the composition combinator of u and v.
-
-Rewrite by the application law for the retract and the definition of the composition combinator, compare graphs, and at an element x use the symmetric SK composition identity.

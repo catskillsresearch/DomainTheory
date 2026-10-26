@@ -1,3 +1,0 @@
-A finset with no function tokens that is consistent at stage n is consistent at stage zero.
-
-Induct on the stage. Stage zero is the hypothesis. At a successor stage, the left alternative uses the inductive hypothesis, and the right alternative has an empty atom finset, so together with the empty function-token projection it is stage-zero consistency by emptiness of the consistent sets of A.

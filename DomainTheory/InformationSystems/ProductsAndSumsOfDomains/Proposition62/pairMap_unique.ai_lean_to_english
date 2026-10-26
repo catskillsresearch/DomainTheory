@@ -1,3 +1,0 @@
-An approximable map h from C to the product of A and B that satisfies the two projection equations, first projection composed with h equal to f and second projection composed with h equal to g, equals the pairing of f and g. This is the uniqueness clause of Scott's Proposition 6.2.
-
-The elementwise extensionality criterion reduces the equation to agreement on an arbitrary element x of C. The uniqueness lemma for product elements applies once the first projections of the two images agree and the second projections agree. Each agreement is the identity for the element induced by a composite, using the corresponding hypothesis for h and the corresponding projection equation for the pairing.

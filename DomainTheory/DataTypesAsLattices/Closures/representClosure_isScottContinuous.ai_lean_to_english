@@ -1,3 +1,0 @@
-The representing closure of a countably algebraic lattice is Scott continuous.
-
-If an index lies in the representing closure of a set, the finite-support property of the compact enumeration supplies a finite set of indices, still contained in the set, that witnesses the same compact inequality. Coding that finite set as a finite element places the index in the Scott union. Conversely, a Scott-union witness is a finite element contained in the set on which the index lies in the representing closure, and monotonicity of the representing closure lifts that membership to the whole set.

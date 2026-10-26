@@ -1,3 +1,0 @@
-The output union of a finite set of raw-token list pairs with one pair inserted equals the finite set of the inserted pair's second list, joined by choice-free union to the output union of the original set.
-
-A token in the enlarged output union comes from some pair in the insertion. If that pair is the inserted one, the token lies in its second list; otherwise it lies in the original output union. Conversely, a token from the inserted second list comes from the inserted pair, and a token from the original output union comes from a pair that remains a member after insertion.

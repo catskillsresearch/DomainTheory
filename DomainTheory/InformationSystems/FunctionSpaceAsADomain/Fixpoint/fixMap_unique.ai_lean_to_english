@@ -1,3 +1,0 @@
-By Scott's Theorem 7.3, an approximable map from the function space of A to A that sends every endomap to a pre-fixed point, and that lies below every pre-fixed point, equals the fixed-point operator.
-
-Two approximable maps are equal when they agree on elements. For an element g of the function space, pass to the endomap corresponding to g. The round trip from an element to an approximable map and back recovers g, so uniqueness of fixed-point elements, applied to that endomap and the two hypotheses, gives the agreement.

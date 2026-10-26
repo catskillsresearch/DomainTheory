@@ -1,3 +1,0 @@
-The right projection of the right sum lift of a finite set w of tokens of B equals w.
-
-Extensionality, rewritten by the two membership characterizations, identifies a right token of the lift with the right constructor of some member of w, and injectivity of that constructor recovers the member. Conversely, each member of w is the component of its own right constructor in the lift.

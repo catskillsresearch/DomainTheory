@@ -1,3 +1,0 @@
-A finite element lying under an element x is a finite approximant of x.
-
-The finite element is the closure of a consistent finite set of tokens. Every token of that set belongs to the closure and hence to x, so the set consists of tokens of x and the closure is a finite approximant.

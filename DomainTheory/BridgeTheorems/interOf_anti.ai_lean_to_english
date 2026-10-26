@@ -1,3 +1,0 @@
-If a finite set of neighbourhood indices is contained in another, then the folded intersection of the larger set is contained in the folded intersection of the smaller set.
-
-A point of the larger intersection lies in the master set and in every neighbourhood indexed by the larger set, hence in every neighbourhood indexed by the smaller set.

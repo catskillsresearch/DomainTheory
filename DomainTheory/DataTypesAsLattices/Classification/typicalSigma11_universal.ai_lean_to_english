@@ -1,3 +1,0 @@
-Scott's Table 3 states that Σ₁¹ is the class of continuous preimages of the set of u such that u applied to {0} and u applied to {1} agree at some common argument.
-
-If U is the set of x at which two Scott-continuous maps agree somewhere, the pairing of those two values is Scott continuous in x, and the evaluations of the pairing at {0} and at {1} put the pairing in the typical set exactly on U. Conversely, if U is the preimage of the typical set under a Scott-continuous map f, the two maps sending x to f(x) applied to {0} and to f(x) applied to {1} are Scott continuous by the composition theorem, and their agreement set is U.

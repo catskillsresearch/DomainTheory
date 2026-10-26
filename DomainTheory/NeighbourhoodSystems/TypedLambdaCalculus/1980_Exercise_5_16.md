@@ -1,7 +1,5 @@
 # Exercise 5.16
 
-## Human-English
-
 **EXERCISE 5.16.** Return to the discussion of Example 4.4 and the construction of the domain of finite and infinite binary sequences. Give a fixed-point definition of $\mathrm{neg} : C \to C$, where
 
 $$
@@ -29,8 +27,6 @@ $$
 Prove that the $n^{\mathrm{th}}$ digit of $t$ is the sum mod 2 of the digits of the number $n$ written in the binary scale (a suggestion of J. Lambek). Show also that $t \neq u\,a\,a\,a\,v$ where $a$ is any finite sequence $\neq \Lambda$, and where $u$ is finite.
 
 <!-- page 92 -->
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_5_16.lean](Exercise_5_16.lean)**
 

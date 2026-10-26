@@ -1,3 +1,0 @@
-The union of the numerals of a list of natural numbers equals the set of entries of that list.
-
-The empty union is bottom, which is empty. For a nonempty list, extensionality and the inductive equation reduce membership to membership of the head numeral or membership in the tail.

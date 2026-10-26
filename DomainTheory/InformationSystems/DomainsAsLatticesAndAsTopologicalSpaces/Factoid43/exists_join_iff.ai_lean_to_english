@@ -1,3 +1,0 @@
-Two elements have a common upper bound if and only if the union of their carriers is finitely consistent.
-
-A common upper bound contains every token of a finite subset of the union, because each such token lies in one of the two elements, so that finite subset is consistent. If the union is finitely consistent, the binary join lies above both elements.

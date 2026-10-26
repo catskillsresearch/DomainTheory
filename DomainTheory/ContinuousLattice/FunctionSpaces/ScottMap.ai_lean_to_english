@@ -1,5 +1,0 @@
-A Scott map from a complete lattice D to a complete lattice D' is a function from D to D' that is continuous for the Scott topologies. Applying a Scott map applies its underlying function.
-
-Two Scott maps that agree at every argument are equal.
-
-Equality of subtypes follows from equality of the underlying functions, and functions that agree at every point are equal.

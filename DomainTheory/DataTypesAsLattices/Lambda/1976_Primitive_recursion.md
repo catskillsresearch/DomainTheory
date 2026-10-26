@@ -1,10 +1,6 @@
 # Primitive recursion
 
-## Human-English
-
 @import "1976_Primitive_recursion.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[DataTypesAsLattices/Computability/primRecComb.lean](../Computability/primRecComb.lean)**
 
@@ -114,58 +110,3 @@
 
 @import "primRecHat.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "../Computability/primRecComb.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecComb_combinatory.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecComb_ofNat.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecOpC_app.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecOpEnv.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecOpEnv_combinatory.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecOpC_combinatory.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecOpTerm.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecOpC.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecVal_add.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecVal_mul.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecZeroC.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecZeroC_app.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecZeroC_combinatory.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecVal_sub.ai_lean_to_english" {code_block=false}
-
-@import "../Computability/primRecVal_sqrt.ai_lean_to_english" {code_block=false}
-
-@import "primRecHat_zero.ai_lean_to_english" {code_block=false}
-
-@import "primRecHat_ofNat.ai_lean_to_english" {code_block=false}
-
-@import "primRecStep_body_isScottContinuous_n.ai_lean_to_english" {code_block=false}
-
-@import "primRecStep_app.ai_lean_to_english" {code_block=false}
-
-@import "primRecStep_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "primRecVal_fix.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_27.ai_lean_to_english" {code_block=false}
-
-@import "primRecStep.ai_lean_to_english" {code_block=false}
-
-@import "primRecStepTerm.ai_lean_to_english" {code_block=false}
-
-@import "primRecVal.ai_lean_to_english" {code_block=false}
-
-@import "primRecHat.ai_lean_to_english" {code_block=false}

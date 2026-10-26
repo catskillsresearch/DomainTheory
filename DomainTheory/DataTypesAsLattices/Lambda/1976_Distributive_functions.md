@@ -1,10 +1,6 @@
 # Distributive functions
 
-## Human-English
-
 @import "1976_Distributive_functions.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[DataTypesAsLattices/Lambda/dollarStepTerm_interp.lean](dollarStepTerm_interp.lean)**
 
@@ -126,64 +122,3 @@
 
 @import "termDollarStep.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "dollarStepTerm_interp.ai_lean_to_english" {code_block=false}
-
-@import "dollarStepBody_isScottContinuous_s.ai_lean_to_english" {code_block=false}
-
-@import "dollarStep_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "dollarStepBody_isScottContinuous_z.ai_lean_to_english" {code_block=false}
-
-@import "dollarC_app.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_25.ai_lean_to_english" {code_block=false}
-
-@import "dollarStepBody_isScottContinuous_u.ai_lean_to_english" {code_block=false}
-
-@import "dollarStep_app.ai_lean_to_english" {code_block=false}
-
-@import "dollarStep_app2.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_24.ai_lean_to_english" {code_block=false}
-
-@import "dollarStep_iterate.ai_lean_to_english" {code_block=false}
-
-@import "dollarStep_fix_app.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_24_Y.ai_lean_to_english" {code_block=false}
-
-@import "termDollarStepBody_isScottContinuous_s.ai_lean_to_english" {code_block=false}
-
-@import "termDollarStepBody_isScottContinuous_z.ai_lean_to_english" {code_block=false}
-
-@import "termDollarStep_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "termDollarStepBody_isScottContinuous_u.ai_lean_to_english" {code_block=false}
-
-@import "termDollarStep_app.ai_lean_to_english" {code_block=false}
-
-@import "termDollarStep_app2.ai_lean_to_english" {code_block=false}
-
-@import "termDollarStep_iterate.ai_lean_to_english" {code_block=false}
-
-@import "termDollarStep_fix_app.ai_lean_to_english" {code_block=false}
-
-@import "dollarC_eq_fix_termDollarStep.ai_lean_to_english" {code_block=false}
-
-@import "dollarStepTerm.ai_lean_to_english" {code_block=false}
-
-@import "seqFun.ai_lean_to_english" {code_block=false}
-
-@import "dollarC.ai_lean_to_english" {code_block=false}
-
-@import "lamOmega.ai_lean_to_english" {code_block=false}
-
-@import "dollarStepBody.ai_lean_to_english" {code_block=false}
-
-@import "dollarStep.ai_lean_to_english" {code_block=false}
-
-@import "termDollarStepBody.ai_lean_to_english" {code_block=false}
-
-@import "termDollarStep.ai_lean_to_english" {code_block=false}

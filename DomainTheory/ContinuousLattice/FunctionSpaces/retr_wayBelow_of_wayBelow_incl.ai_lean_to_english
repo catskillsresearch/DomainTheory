@@ -1,3 +1,0 @@
-If an ambient element x' is way below the inclusion of an element d of the retract, then the retraction of x' is way below d. The argument uses that the retraction inverts the inclusion and is monotone. This is the heart of Scott's proof of Proposition 2.10.
-
-A Scott-open witness for the ambient way-below relation pulls back along the inclusion to a Scott-open set of the retract, because the inclusion preserves directed suprema, and d lies in that preimage. If z lies in the preimage, then x' lies below the inclusion of z, so monotonicity of the retraction and the inverse equation place the retraction of x' below z.

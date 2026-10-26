@@ -1,10 +1,6 @@
 # A third example
 
-## Human-English
-
 @import "1982_A_third_example.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/InformationSystems/Factoid26/Token.lean](Token.lean)**
 
@@ -46,28 +42,3 @@
 
 @import "partialFunctionSystem.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "Token.ai_lean_to_english" {code_block=false}
-
-@import "Consistent.ai_lean_to_english" {code_block=false}
-
-@import "Ent.ai_lean_to_english" {code_block=false}
-
-@import "consistent_empty.ai_lean_to_english" {code_block=false}
-
-@import "../Factoid26.ai_lean_to_english" {code_block=false}
-
-@import "consistent_insert_bot.ai_lean_to_english" {code_block=false}
-
-@import "consistent_insert_mem.ai_lean_to_english" {code_block=false}
-
-@import "consistent_singleton.ai_lean_to_english" {code_block=false}
-
-@import "consistent_subset.ai_lean_to_english" {code_block=false}
-
-@import "partialFunctionSystem.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_A_third_example.ai_english_concordance" {code_block=false}

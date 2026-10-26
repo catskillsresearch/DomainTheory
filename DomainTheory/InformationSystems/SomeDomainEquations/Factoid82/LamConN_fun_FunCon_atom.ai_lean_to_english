@@ -1,3 +1,0 @@
-At stage n+1, a function clause yields stage-n consistency of the output union of a subcollection whenever the input union is stage-n consistent and contains no function tokens. Nested function tokens in a general input union are left to the general consistency argument.
-
-If the subcollection is empty, the output union is empty and hence consistent at stage n. Otherwise the original finset contains a function token, so some earlier function clause exists, and the atom-input lift applies that clause at stage n.

@@ -1,3 +1,0 @@
-If a lies below b and b lies below c in the retract order, then a equals both composites a ∘ c and c ∘ a.
-
-From a = a ∘ b, the composite a ∘ c expands, by the definitions of composition, through (a ∘ b) ∘ c, a ∘ (b ∘ c), and a ∘ b, using b = b ∘ c. From a = b ∘ a, the composite c ∘ a expands through c ∘ (b ∘ a), (c ∘ b) ∘ a, and b ∘ a, using b = c ∘ b.

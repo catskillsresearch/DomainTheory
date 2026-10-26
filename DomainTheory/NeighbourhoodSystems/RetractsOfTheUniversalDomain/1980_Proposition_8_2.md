@@ -1,7 +1,5 @@
 # Proposition 8.2
 
-## Human-English
-
 **PROPOSITION 8.2.** If $D \triangleleft E$ and if $a : E \to E$ is defined by
 
 $$X \ a \ Z \quad \text{iff} \quad \exists Y \in D.\ X \subseteq Y \subseteq Z$$
@@ -31,8 +29,6 @@ $$a(i(x)) = i \circ j \circ i(x) = i(x).$$
 Thus, $i(x)$ belongs to the fixed-point set of $a$. In the other direction, if $a(y) = y$, then $i(j(y)) = y$. But $j(y) \in |D|$, so $i$ maps $|D|$ one-one and onto the fixed-point set of $a$. As $i$ and $j$ are monotone, the map is an isomorphism with respect to $\sqsubseteq$. $\square$
 
 Not every retraction comes from a relationship like $D \triangleleft E$; in fact, we can see from the definition of $a$ above that $a \sqsubseteq 1_E$. But, as is indicated in Exercise 8.11, even this condition is not sufficient to characterize the kind of retractions provided by 8.2. The characterization is as follows.
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_8_2.lean](Proposition_8_2.lean)**
 

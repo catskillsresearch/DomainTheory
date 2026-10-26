@@ -1,3 +1,0 @@
-Every value of the unpairing environment unpairEnv is combinatory.
-
-At indices 1, 2, 3, and 4 this is the combinatory status of sqrtC, subC, mulC, and leC. At index 0, and at every index of the form n + 5, it is botElem_combinatory.

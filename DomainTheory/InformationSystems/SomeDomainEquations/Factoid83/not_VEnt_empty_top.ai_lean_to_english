@@ -1,3 +1,0 @@
-The empty set of V-tokens does not entail top, because no derivation of top bottoms out at the empty set.
-
-A stronger statement is proved: an entailment of top never has empty premise. Induct on the derivation. A bottom, left-pair, or right-pair conclusion is distinct from top. Membership of top cannot occur in the empty set. A both-projections derivation of top from the empty set would yield a top-entailment from the left projection, and that projection of the empty set is empty. The claim is this statement for the empty set and top.

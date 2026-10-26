@@ -1,7 +1,5 @@
 # Exercise 1.22
 
-## Human-English
-
 **EXERCISE 1.22.** (For topologists). Show that the neighbourhoods $[X]$ for $X \in \mathcal{D}$ make $|\mathcal{D}|$ into a topological space where the open subsets $\mathcal{U} \subseteq |\mathcal{D}|$ can be characterized by the following two conditions:
 
 (i) whenever $x \in \mathcal{U}$ and $x \sqsubseteq y \in |\mathcal{D}|$, then $y \in \mathcal{U}$; and
@@ -23,8 +21,6 @@ $$
 $$
 
 is not only in $|D|$ but is a topological limit point of the sequence. Show that any element $x$ is a limit point of the set $\{\uparrow X \mid X \in x\}$. Are there other limit points?
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_1_22.lean](Exercise_1_22.lean)**
 

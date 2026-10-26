@@ -4,11 +4,7 @@
 
 @import "ElementsOfASystem.mermaid"
 
-## Human-English
-
 @import "1982_The_elements_of_a_system.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/ElementsOfASystem/Factoid32/factoid_3_2.lean](Factoid32/factoid_3_2.lean)**
 
@@ -146,76 +142,3 @@
 
 @import "../InformationSystems/Definition22.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "Factoid32/factoid_3_2.ai_lean_to_english" {code_block=false}
-
-@import "Factoid32.ai_lean_to_english" {code_block=false}
-
-@import "Factoid33/botElement.ai_lean_to_english" {code_block=false}
-
-@import "Factoid33.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/AllConsistent.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/IsTotal.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/eq_of_carrier_univ_of_isTotal.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/exists_top_iff_allConsistent.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/isTotal_of_carrier_univ.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/le_topElement.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/eq_topElement_of_isTotal.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/topElement.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/topElement_isTotal.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/exists_unique_total_of_allConsistent.ai_lean_to_english" {code_block=false}
-
-@import "Factoid34/isTotal_iff_eq_topElement.ai_lean_to_english" {code_block=false}
-
-@import "Factoid35/closure.ai_lean_to_english" {code_block=false}
-
-@import "Factoid35/mem_closure_iff.ai_lean_to_english" {code_block=false}
-
-@import "Factoid35/subset_closure.ai_lean_to_english" {code_block=false}
-
-@import "Factoid35.ai_lean_to_english" {code_block=false}
-
-@import "Factoid36/approxUnion.ai_lean_to_english" {code_block=false}
-
-@import "Factoid36/closure_le_element.ai_lean_to_english" {code_block=false}
-
-@import "Factoid36/closure_le_of_entSet.ai_lean_to_english" {code_block=false}
-
-@import "Factoid36/closure_le_of_subset.ai_lean_to_english" {code_block=false}
-
-@import "Factoid36/closures_directed.ai_lean_to_english" {code_block=false}
-
-@import "Factoid36/mem_element_iff_mem_closure.ai_lean_to_english" {code_block=false}
-
-@import "Factoid36/element_eq_approxUnion.ai_lean_to_english" {code_block=false}
-
-@import "Factoid36.ai_lean_to_english" {code_block=false}
-
-@import "../InformationSystems/InfoSys/Element.ai_lean_to_english" {code_block=false}
-
-@import "../InformationSystems/InfoSys/Basic.ai_lean_to_english" {code_block=false}
-
-@import "../InformationSystems/InfoSys/con_empty.ai_lean_to_english" {code_block=false}
-
-@import "../InformationSystems/InfoSys.ai_lean_to_english" {code_block=false}
-
-@import "../InformationSystems/Factoid26/Basic.ai_lean_to_english" {code_block=false}
-
-@import "../InformationSystems/Definition22.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_The_elements_of_a_system.ai_english_concordance" {code_block=false}

@@ -4,11 +4,7 @@
 
 @import "WorkedExampleSExpr/WorkedExampleSExpr.mermaid"
 
-## Human-English
-
 @import "BridgeTheorems_Worked_example.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[BridgeTheorems/TreeProd.lean](TreeProd.lean)**
 
@@ -202,104 +198,3 @@
 
 @import "SexDomainEquation.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "TreeProd.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/lowerBoundSystem.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/SexSys.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/SexRhs.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/sexAtom.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/sexDomainEquationIso.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/sexRhsSemanticIso.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/Basic.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/exists_sexDomainEquationIso.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/exists_sexIdealIso.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/exists_sexNeighborhoodIso.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/sexAtom_mem_self.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/sexDomainEquationIso_fold.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/sexDomainEquationIso_unfold.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/sexId_toElement.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/sexRhs_eq_sum_product.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr/sexUnfold_atom.ai_lean_to_english" {code_block=false}
-
-@import "WorkedExampleSExpr.ai_lean_to_english" {code_block=false}
-
-@import "treeFold.ai_lean_to_english" {code_block=false}
-
-@import "treeFold_eq_or_pairBots.ai_lean_to_english" {code_block=false}
-
-@import "treeUnfold_treeFold.ai_lean_to_english" {code_block=false}
-
-@import "unfoldInsert.ai_lean_to_english" {code_block=false}
-
-@import "SexDomainEquationInst10.ai_lean_to_english" {code_block=false}
-
-@import "foldInsert.ai_lean_to_english" {code_block=false}
-
-@import "SexDomainEquationInst15.ai_lean_to_english" {code_block=false}
-
-@import "TreeEnt_pairL_bot_of_pairs.ai_lean_to_english" {code_block=false}
-
-@import "TreeEnt_pairR_bot_of_pairs.ai_lean_to_english" {code_block=false}
-
-@import "foldFinset.ai_lean_to_english" {code_block=false}
-
-@import "mem_closed_pair_bots.ai_lean_to_english" {code_block=false}
-
-@import "saturated_of_closed.ai_lean_to_english" {code_block=false}
-
-@import "mem_foldr_fold.ai_lean_to_english" {code_block=false}
-
-@import "mem_foldFinset.ai_lean_to_english" {code_block=false}
-
-@import "mem_foldr_unfold.ai_lean_to_english" {code_block=false}
-
-@import "unfoldFinset.ai_lean_to_english" {code_block=false}
-
-@import "mem_unfoldFinset.ai_lean_to_english" {code_block=false}
-
-@import "lftFinset_image_unfold.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset_image_unfold_mem.ai_lean_to_english" {code_block=false}
-
-@import "SumCon_image_treeCon.ai_lean_to_english" {code_block=false}
-
-@import "SumEnt_treeFold.ai_lean_to_english" {code_block=false}
-
-@import "TreeCon_image_sumCon.ai_lean_to_english" {code_block=false}
-
-@import "TreeEnt_sumEnt.ai_lean_to_english" {code_block=false}
-
-@import "foldElement.ai_lean_to_english" {code_block=false}
-
-@import "unfoldFinset_foldFinset.ai_lean_to_english" {code_block=false}
-
-@import "unfoldElement.ai_lean_to_english" {code_block=false}
-
-@import "foldElement_unfoldElement.ai_lean_to_english" {code_block=false}
-
-@import "unfoldElement_foldElement.ai_lean_to_english" {code_block=false}
-
-@import "treeDomainIso.ai_lean_to_english" {code_block=false}
-
-@import "SexDomainEquation.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "BridgeTheorems_Worked_example.ai_english_concordance" {code_block=false}

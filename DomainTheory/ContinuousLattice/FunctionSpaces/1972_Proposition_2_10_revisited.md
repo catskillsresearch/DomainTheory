@@ -4,8 +4,6 @@
 
 The printed argument is [flawed](1972_Proposition_2_10.md). The repair is discussed in the [Milner correction](../MilnerCorrection/1972_Correction.md).
 
-## AI: Human-English to AI-Lean
-
 **[ContinuousLattice/FunctionSpaces/incl_preservesDirectedSup.lean](incl_preservesDirectedSup.lean)**
 
 @import "incl_preservesDirectedSup.lean"
@@ -38,18 +36,3 @@ The printed argument is [flawed](1972_Proposition_2_10.md). The repair is discus
 
 @import "proposition_2_10.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "incl_preservesDirectedSup.ai_lean_to_english" {code_block=false}
-
-@import "image_retr_wayBelow_nonempty.ai_lean_to_english" {code_block=false}
-
-@import "image_retr_wayBelow_directed.ai_lean_to_english" {code_block=false}
-
-@import "sSup_image_retr_wayBelow.ai_lean_to_english" {code_block=false}
-
-@import "retr_wayBelow_of_wayBelow_incl.ai_lean_to_english" {code_block=false}
-
-@import "proposition_2_10_a.ai_lean_to_english" {code_block=false}
-
-@import "proposition_2_10_b.ai_lean_to_english" {code_block=false}

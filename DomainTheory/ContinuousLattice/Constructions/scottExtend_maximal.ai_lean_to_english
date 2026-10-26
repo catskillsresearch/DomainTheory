@@ -1,3 +1,0 @@
-Any Scott-continuous map that agrees along an embedding with a given map out of the subspace lies below the canonical Scott extension of that map.
-
-Expand the competing map as the supremum of its infima over the open neighbourhoods of the point. Each such infimum lies below the infimum of the original map on the preimage of the neighbourhood, because the two maps agree along the embedding, and that infimum is a term of the extension.

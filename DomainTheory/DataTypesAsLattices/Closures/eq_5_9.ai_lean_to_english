@@ -1,3 +1,0 @@
-Scott 1976, (5.9) and (5.10). The first square projection of a square pair of x and y is x.
-
-By extensionality, a left code in the first projection has index equal to the element and therefore lies in x, while a right code is numerically impossible. Conversely, each member of x is the left code of itself.

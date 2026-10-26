@@ -1,1 +1,0 @@
-For a subset S of a complete lattice D, finsetSupOf S is the set of elements that arise as the join of some finite subset of S. These are the finite sub-joins used in Scott's proof of Proposition 3.10(i).

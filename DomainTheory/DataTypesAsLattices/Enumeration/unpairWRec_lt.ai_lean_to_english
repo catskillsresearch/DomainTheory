@@ -1,3 +1,0 @@
-For every k and n, either k is less than the triangular number one beyond the bounded scan of k for n steps, or that scan equals n.
-
-If n is zero and k is less than the first triangular number, the scan is 0 and the inequality holds; otherwise the scan equals 0. If n is a successor and k is already below the (n + 1)-st triangular number, the successor equation for the scan reduces the claim to the inductive hypothesis, and equality of the earlier scan with n converts the case hypothesis into the desired inequality. If k is not below that triangular number, the successor equation makes the scan equal n + 1.

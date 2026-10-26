@@ -1,3 +1,0 @@
-Scott 1976, Theorem 4.6, the limit theorem. The Kleene iterates of a Scott-continuous retract-preserving map are retracts, and the Y combinator applied to the graph of the map is a retract, by the chain-union calculation.
-
-The iterates are retracts by the iterate lemma. The fixed-point theorem for the Y combinator rewrites its application as the least fixed point. That fixed point equals the graph of its double application. The union of the retract iterates is a graph, so the graph of the application equals the fixed point. Extensionality of graphs and idempotence of the least-fixed-point application identify the graph of the double application with the graph of the single application, and these equalities are the retract equation.

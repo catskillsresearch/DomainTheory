@@ -4,11 +4,7 @@
 
 @import "../ProductsAndSumsOfDomains.mermaid"
 
-## Human-English
-
 @import "1982_Products_and_sums_of_domains.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/ProductsAndSumsOfDomains/Factoid65/toElement_constMap_bot.lean](../Factoid65/toElement_constMap_bot.lean)**
 
@@ -158,90 +154,3 @@
 
 @import "../Sum.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "../Factoid65/toElement_constMap_bot.ai_lean_to_english" {code_block=false}
-
-@import "../Factoid65.ai_lean_to_english" {code_block=false}
-
-@import "../Factoid65/unitElement_eq_bot.ai_lean_to_english" {code_block=false}
-
-@import "../Factoid65/approxMap_from_unit_eq_const.ai_lean_to_english" {code_block=false}
-
-@import "../Factoid65/approxMap_to_unit_eq_const.ai_lean_to_english" {code_block=false}
-
-@import "../Factoid65/unitSystem.ai_lean_to_english" {code_block=false}
-
-@import "../Product/IsProdToken.ai_lean_to_english" {code_block=false}
-
-@import "../Product/BasicInst5.ai_lean_to_english" {code_block=false}
-
-@import "../Product/ProdToken.ai_lean_to_english" {code_block=false}
-
-@import "../Product/BasicInst7.ai_lean_to_english" {code_block=false}
-
-@import "../Product/instLeftCommutativeFstInsert.ai_lean_to_english" {code_block=false}
-
-@import "../Product/instLeftCommutativeSndInsert.ai_lean_to_english" {code_block=false}
-
-@import "../Product/fstFinset.ai_lean_to_english" {code_block=false}
-
-@import "../Product/mem_foldr_fst.ai_lean_to_english" {code_block=false}
-
-@import "../Product/mem_foldr_snd.ai_lean_to_english" {code_block=false}
-
-@import "../Product/mem_fstFinset.ai_lean_to_english" {code_block=false}
-
-@import "../Product/prodBot.ai_lean_to_english" {code_block=false}
-
-@import "../Product/sndFinset.ai_lean_to_english" {code_block=false}
-
-@import "../Product/ProdCon.ai_lean_to_english" {code_block=false}
-
-@import "../Product/ProdEnt.ai_lean_to_english" {code_block=false}
-
-@import "../Product/mem_sndFinset.ai_lean_to_english" {code_block=false}
-
-@import "../Product/productSystem.ai_lean_to_english" {code_block=false}
-
-@import "../Product.ai_lean_to_english" {code_block=false}
-
-@import "SumToken.ai_lean_to_english" {code_block=false}
-
-@import "instDecidableEqSumToken.ai_lean_to_english" {code_block=false}
-
-@import "lftInsert.ai_lean_to_english" {code_block=false}
-
-@import "instLeftCommutativeLftInsert.ai_lean_to_english" {code_block=false}
-
-@import "SumCon_empty.ai_lean_to_english" {code_block=false}
-
-@import "rhtInsert.ai_lean_to_english" {code_block=false}
-
-@import "instLeftCommutativeRhtInsert.ai_lean_to_english" {code_block=false}
-
-@import "lftFinset.ai_lean_to_english" {code_block=false}
-
-@import "mem_foldr_lft.ai_lean_to_english" {code_block=false}
-
-@import "mem_foldr_rht.ai_lean_to_english" {code_block=false}
-
-@import "mem_lftFinset.ai_lean_to_english" {code_block=false}
-
-@import "rhtFinset.ai_lean_to_english" {code_block=false}
-
-@import "SumCon.ai_lean_to_english" {code_block=false}
-
-@import "SumEnt.ai_lean_to_english" {code_block=false}
-
-@import "mem_rhtFinset.ai_lean_to_english" {code_block=false}
-
-@import "sumBot.ai_lean_to_english" {code_block=false}
-
-@import "sumSystem.ai_lean_to_english" {code_block=false}
-
-@import "../Sum.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_Products_and_sums_of_domains.ai_english_concordance" {code_block=false}

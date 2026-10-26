@@ -1,3 +1,0 @@
-A two-element sequence that begins with the numeral zero is distinct from a two-element sequence that begins with the numeral one.
-
-If they were equal, their applications to the numeral zero would agree. Zero belongs to the application of the sequence that begins with zero: the finite set coded by 1 is contained in the numeral zero, because a successor element would require a positive test bit of zero, and the pair of 1 and 0 lies in the graph by the left branch of the conditional. Zero does not belong to the application of the sequence that begins with one. A witnessing pair splits by injectivity of pairing; the left branch would require zero to equal one, and the right branch would place a successor in the numeral zero.

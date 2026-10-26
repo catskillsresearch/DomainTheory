@@ -1,7 +1,5 @@
 # Proposition 5.4
 
-## Human-English
-
 **PROPOSITION 5.4.** Let $x$, $y$, and $\tau(x, y)$ be of the same type $D$ and let $g$ be of type $(D \to D)$, then the equation
 
 $$\lambda x . ! y . \tau(x, y) = ! g . \lambda x . \tau(x, g(x))$$
@@ -38,8 +36,6 @@ The last proof is instructive as it uses equations and inclusions between functi
 > then $\lambda x . \tau \sqsubseteq \lambda x . \sigma$ holds.
 
 This is another form of Theorem 3.13(i).
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_5_4.lean](Proposition_5_4.lean)**
 

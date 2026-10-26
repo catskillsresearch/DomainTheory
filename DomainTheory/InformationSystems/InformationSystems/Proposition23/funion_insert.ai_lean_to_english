@@ -1,3 +1,0 @@
-Constructive union on the left distributes over insertion: the constructive union of u with the insertion of a into t equals the insertion of a into the constructive union of u with t.
-
-Both inclusions are membership chasing. A member of the left-hand union comes from u, hence lies in the inserted union, or comes from the inserted set, hence is a or a member of t, and in each case lies in the inserted union. A member of the inserted union is a, which lies on the inserted side of the original union, or a member of the constructive union, which comes from u or from t and is reassembled on the left.

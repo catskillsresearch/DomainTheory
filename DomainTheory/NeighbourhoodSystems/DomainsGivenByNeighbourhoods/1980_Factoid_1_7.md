@@ -24,8 +24,6 @@ We note that we have now had several occasions to use inclusion relationships be
 
 <!-- page 14 -->
 
-## AI: Human-English to AI-Lean
-
 **[Factoid_1_7.lean](Factoid_1_7.lean)**
 
 @import "Factoid_1_7.lean"

@@ -1,3 +1,0 @@
-For a continuous lattice D there is a continuous map from the function space of Scott maps on D into D which sends each f to a fixed point of f lying below every pre-fixed point of f, and any function with those two properties agrees with it. This is Scott's Proposition 3.14.
-
-The fixed-point operator supplies the continuous map. It satisfies the fixed-point equation and the least-pre-fixed-point inequality, and any function with those two properties agrees with it by the uniqueness lemma.

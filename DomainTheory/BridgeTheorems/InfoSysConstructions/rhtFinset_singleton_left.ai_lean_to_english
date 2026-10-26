@@ -1,3 +1,0 @@
-The right part of a singleton consisting of one left token is empty.
-
-A right token in that right part would be a member of the singleton and hence a left token, which is impossible, and the empty set has no members.

@@ -1,3 +1,0 @@
-Consistency of a finite set of tree tokens passes to every subset.
-
-Induct on the consistency derivation. For a left-consistent set, the subset has atom projection contained in a consistent set, hence consistent in the atom information system, and each pair projection of the subset is empty because a member would already lie in the empty pair projection of the larger set. For a right-consistent set, the subset has empty atom projection for the same reason, and its pair projections are consistent by the inductive hypotheses together with monotonicity of the pair projections.

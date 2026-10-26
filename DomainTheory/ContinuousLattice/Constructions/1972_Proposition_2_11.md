@@ -1,10 +1,6 @@
 # Proposition 2.11
 
-## Human-English
-
 @import "1972_Proposition_2_11.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[ContinuousLattice/WayBelow/ContinuousLattice.lean](../WayBelow/ContinuousLattice.lean)**
 
@@ -62,36 +58,3 @@
 
 @import "proposition_2_11.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "../WayBelow/ContinuousLattice.ai_lean_to_english" {code_block=false}
-
-@import "scottExtend.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
-
-@import "directedOn_finite_sSup_mem.ai_lean_to_english" {code_block=false}
-
-@import "proposition_2_8.ai_lean_to_english" {code_block=false}
-
-@import "proposition_2_9.ai_lean_to_english" {code_block=false}
-
-@import "scottExtend_aux_nonempty.ai_lean_to_english" {code_block=false}
-
-@import "scottExtend_aux_directed.ai_lean_to_english" {code_block=false}
-
-@import "scottExtend_continuous.ai_lean_to_english" {code_block=false}
-
-@import "scottExtend_eq_of_continuous.ai_lean_to_english" {code_block=false}
-
-@import "continuous_eq_sSup_openInfs.ai_lean_to_english" {code_block=false}
-
-@import "scottExtend_maximal.ai_lean_to_english" {code_block=false}
-
-@import "scottExtend_maximal_le.ai_lean_to_english" {code_block=false}
-
-@import "proposition_2_11.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1972_Proposition_2_11.ai_english_concordance" {code_block=false}

@@ -1,3 +1,0 @@
-Scott 1976, Theorem 4.4. The product mediator is unique. If h is a map from c to a ⊗ b whose composites with the two projections are f and g, then h equals the mediator of f, g, and c.
-
-Compare graphs, using the typing of h and the existence of the mediator. Typing of h rewrites h(x) as the product applied to h(c(x)). The projection equations supply the two components, and the typings of f and of g move a and b off those components. The mediator side reduces by its definition, the diagonal, and the product application, and restriction of the typed arrows along c identifies the two values.

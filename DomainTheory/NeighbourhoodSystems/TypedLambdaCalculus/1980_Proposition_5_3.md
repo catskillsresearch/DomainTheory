@@ -1,7 +1,5 @@
 # Proposition 5.3
 
-## Human-English
-
 **PROPOSITION 5.3.** The least fixed point of $\lambda x, y.\ \langle \tau(x, y), \sigma(x, y) \rangle$ is the pair with coordinates
 
 $! x.\ \tau(x,\ ! y.\ \sigma(x, y))$ and
@@ -55,8 +53,6 @@ and
 $$\tau(y) \sqsubseteq y \text{ implies } ! x . \tau(x) \sqsubseteq y,$$
 
 provided, of course, that $x$ is not free in $\tau$. These, together with the monotonicity of all the functions, were just the methods used in the above proof. Here is another example.
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_5_3.lean](Proposition_5_3.lean)**
 

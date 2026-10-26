@@ -1,7 +1,5 @@
 # Proposition 8.10
 
-## Human-English
-
 **PROPOSITION 8.10.** If $a, b : \mathcal{U} \to \mathcal{U}$ are projections, then so are $a + b$, $a \times b$, and $a \to b$. If $a$ and $b$ are finitary, then so are the others; for the fixed-point set of each of them is isomorphic to the corresponding construct applied to the domains determined by $a$ and $b$.
 
 <!-- page 144 -->
@@ -96,8 +94,6 @@ $$\text{true, false} \in |U|$$
 and think of $\mathrm{cond} : U \times U \times U \to U$. No! that is wrong: under the new regime *EVERYTHING IS AN ELEMENT OF U*. With the new meaning of $\lambda$, all functions, all pairs, all combinators, all constructs become elements of $U$.
 
 It takes a little time to get used to "universal conscription" with all elements doing (at least) double duty in the same domain, but there are many advantages, both notational and conceptual.
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_8_10.lean](Proposition_8_10.lean)**
 

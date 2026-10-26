@@ -1,3 +1,0 @@
-The relation which holds when the finite set coded by k is contained in the application of the two finite sets coded by the components of q is primitive recursive.
-
-Apply the bounded universal quantifier forall_lt to primrecRel_eSubset_funOf_e_bit, composed with the first projection and Cantor pairing. After Nat.unpair_pair, the symmetric form of eSubset_funOf_e_iff identifies this quantified relation with the stated inclusion.

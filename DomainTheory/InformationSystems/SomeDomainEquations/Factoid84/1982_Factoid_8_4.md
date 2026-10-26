@@ -1,10 +1,6 @@
 # Factoid 8.4
 
-## Human-English
-
 @import "1982_Factoid_8_4.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/SomeDomainEquations/Factoid84/PEnt.lean](PEnt.lean)**
 
@@ -106,58 +102,3 @@
 
 @import "scottCon.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "PEnt.ai_lean_to_english" {code_block=false}
-
-@import "P.ai_lean_to_english" {code_block=false}
-
-@import "IdemApprox.ai_lean_to_english" {code_block=false}
-
-@import "ReflApprox.ai_lean_to_english" {code_block=false}
-
-@import "bar.ai_lean_to_english" {code_block=false}
-
-@import "barElement.ai_lean_to_english" {code_block=false}
-
-@import "ConsistentApprox.ai_lean_to_english" {code_block=false}
-
-@import "botElement.ai_lean_to_english" {code_block=false}
-
-@import "BotApprox.ai_lean_to_english" {code_block=false}
-
-@import "mem_botElement.ai_lean_to_english" {code_block=false}
-
-@import "barElement_zero_eq_bot.ai_lean_to_english" {code_block=false}
-
-@import "not_RogueApprox_idMap.ai_lean_to_english" {code_block=false}
-
-@import "../Factoid84.ai_lean_to_english" {code_block=false}
-
-@import "scottCon_empty_iff_consistent.ai_lean_to_english" {code_block=false}
-
-@import "topElement.ai_lean_to_english" {code_block=false}
-
-@import "RogueApprox.ai_lean_to_english" {code_block=false}
-
-@import "IsDomainApprox.ai_lean_to_english" {code_block=false}
-
-@import "DomainApprox.ai_lean_to_english" {code_block=false}
-
-@import "flatRel.ai_lean_to_english" {code_block=false}
-
-@import "flatMap.ai_lean_to_english" {code_block=false}
-
-@import "mem_barElement.ai_lean_to_english" {code_block=false}
-
-@import "BotApprox_any.ai_lean_to_english" {code_block=false}
-
-@import "mem_topElement.ai_lean_to_english" {code_block=false}
-
-@import "flatDomainApprox.ai_lean_to_english" {code_block=false}
-
-@import "scottCon.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_Factoid_8_4.ai_english_concordance" {code_block=false}

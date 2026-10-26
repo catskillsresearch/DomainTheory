@@ -1,3 +1,0 @@
-If the test contains 0 and no positive number, the doubly strict conditional returns its left argument.
-
-The left inner conditional equals the left argument, because its right branch is impossible and its left branch copies that argument. The right inner conditional is ⊤ by its left branch. The outer conditional then copies the left argument.

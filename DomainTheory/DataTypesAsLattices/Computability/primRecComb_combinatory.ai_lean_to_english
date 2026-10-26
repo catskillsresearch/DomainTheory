@@ -1,3 +1,0 @@
-If the base a and the step f are combinatory, then so is the primitive-recursion combinator built from them.
-
-It is the dollar combinator applied to Y applied to the closed interpretation of the step term at a and f.

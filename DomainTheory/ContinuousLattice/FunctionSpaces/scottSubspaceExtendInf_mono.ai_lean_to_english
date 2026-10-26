@@ -1,3 +1,0 @@
-If f lies pointwise below g, then the subspace-extension infimum of f on a subset U is at most the subspace-extension infimum of g on U.
-
-The infimum of the values of f on the preimage of U lies below each corresponding value of f, hence below each corresponding value of g, and therefore below the infimum of those values of g.

@@ -1,7 +1,5 @@
 # Theorem 5.2
 
-## Human-English
-
 **THEOREM 5.2.** For suitably typed $\lambda$-terms the following equation is true:
 
 $$(\lambda x_0, \ldots, x_{n-1} \cdot \tau)(\sigma_0, \ldots, \sigma_{n-1}) = \tau [\sigma_0 / x_0, \ldots, \sigma_{n-1} / x_{n-1}].$$
@@ -89,8 +87,6 @@ This completes the proof. $\square$
 We note that if $\tau'$ is the term $\lambda x, y . \tau$, then $\tau'(x, y)$ means the same as $\tau$. This gives a convenient way of indicating free variables: we just write $\sigma(x, y)$ — where $x, y$ are not free in $\sigma$ — and this will have the same values as any term $\tau$ which does involve the extra free variables $x$ and $y$. We use this notational device in the next theorem.
 
 <!-- page 81 -->
-
-## AI: Human-English to AI-Lean
 
 **[Theorem_5_2.lean](Theorem_5_2.lean)**
 

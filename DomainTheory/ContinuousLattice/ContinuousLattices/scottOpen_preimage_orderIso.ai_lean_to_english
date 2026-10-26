@@ -1,3 +1,0 @@
-The preimage of a Scott-open set under an order isomorphism is Scott-open.
-
-The preimage is an upper set because the isomorphism is monotone and the original set is an upper set. If a nonempty directed set has supremum in the preimage, its image is nonempty and directed, and the isomorphism preserves suprema, so the image of the supremum is the supremum of the image and lies in the original set. Scott-openness supplies a point of the image already in the set, and that point is the image of a member of the original set.

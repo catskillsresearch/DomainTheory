@@ -1,3 +1,0 @@
-If a finset of raw lambda tokens has at least one function token, then it is depth-consistent if and only if its atom finset is empty, every function token has depth-consistent input and output finsets, and every subcollection of function tokens with a depth-consistent input union has a depth-consistent output union.
-
-Rewriting the definition of depth consistency selects the nonempty function-token branch.

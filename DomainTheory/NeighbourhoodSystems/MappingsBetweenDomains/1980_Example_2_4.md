@@ -1,7 +1,5 @@
 # Example 2.4
 
-## Human-English
-
 **EXAMPLE 2.4.** Let us briefly describe an approximable mapping $g : B \to B$. Informally, $g$ can be said to "read a sequence from left to right and eliminate the first consecutive run of 1's while copying all the other digits as read." We will have
 
 $$
@@ -20,8 +18,6 @@ $$
 This example is instructive, since it shows that a non-trivial mapping can transform a total element into a partial element. $\square$
 
 Aside from our being able to define particular functions outright, we can combine functions in many different ways; the idea of composition is probably the most basic scheme of combination, and there is a technical name for a family of structures with mappings that can be so combined.
-
-## AI: Human-English to AI-Lean
 
 **[Example_2_4.lean](Example_2_4.lean)**
 

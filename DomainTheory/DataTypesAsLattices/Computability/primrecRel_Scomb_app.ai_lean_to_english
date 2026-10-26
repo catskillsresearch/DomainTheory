@@ -1,3 +1,0 @@
-The relation between k and t which holds when the finite set coded by k is contained in the application of the finite set coded by pack4_proj2 t to the finite set coded by pack4_proj3 t, and the Cantor pair of k with pack4_proj4 t lies in the application of the finite set coded by pack4_proj1 t to the finite set coded by pack4_proj3 t, is primitive recursive.
-
-Membership of that Cantor pair is primitive recursive by composing primrecRel_mem_funOf_e with the pairing of the first and third pack4 projections and with the pairing of k and the fourth projection, transported by Nat.unpair_pair. Conjoining this membership predicate with primrecPred_Scomb_subset, and transporting both directions by eSubset_funOf_e_iff, gives the relation.

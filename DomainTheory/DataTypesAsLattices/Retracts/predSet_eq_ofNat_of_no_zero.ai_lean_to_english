@@ -1,3 +1,0 @@
-If a set omits zero and its predecessor set is the singleton of k, then the set is the singleton of k + 1.
-
-An element of the set is nonzero, hence a successor t + 1, and t belongs to the predecessor set, so t equals k. Conversely, k belongs to the predecessor set, so k + 1 belongs to the set.

@@ -1,3 +1,0 @@
-The closure of a consistent finite set is compact: if it lies below the directed supremum of a nonempty directed family, then it lies below some member of that family.
-
-The finite set is contained in the supremum, hence in the union of the carriers. Some member of the family contains the whole finite set, and the closure of a consistent set contained in an element lies below that element.

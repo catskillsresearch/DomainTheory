@@ -1,3 +1,0 @@
-Scott 1976, Theorem 5.4, sum half, idempotence. If a and b are retracts, their boxed sum is a retract.
-
-The retract equation is equality with the graph of double application. Graph extensionality, the idempotence of application of the boxed sum, and the unfolding of a single application give the equality.

@@ -1,7 +1,5 @@
 # Exercise 3.16
 
-## Human-English
-
 **EXERCISE 3.16.** Let $\mathcal{D}$ be a given neighbourhood system over $\Delta \subseteq \Sigma^*$. Define
 
 $$
@@ -26,8 +24,6 @@ $$
 $$
 
 where from some point on all the $X_m$ are equal to $\Delta$.
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_3_16.lean](Exercise_3_16.lean)**
 

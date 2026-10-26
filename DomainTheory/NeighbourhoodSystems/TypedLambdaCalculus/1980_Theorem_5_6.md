@@ -1,7 +1,5 @@
 # Theorem 5.6
 
-## Human-English
-
 **THEOREM 5.6.** For every partial recursive function $h : \mathbf{N} \to \mathbf{N}$, there is a $\lambda$-term $\tau$ of type $(\mathbf{N} \to \mathbf{N})$ such that the only constants occurring in $\tau$ are
 
 $$
@@ -127,8 +125,6 @@ What is *not* said in 5.6 is that every $\lambda$-term defines a partial recursi
 It should be remarked that the types of variables needed for the proof of 5.6 never get very high. In fact, types like $N$, $N^k$, and $(N^k \to N)$ were the only ones needed (with perhaps $T$ thrown in also).
 
 Recursion on $N$ was the topic of 5.6; further examples of recursion on other domains are included in the exercises.
-
-## AI: Human-English to AI-Lean
 
 **[Theorem_5_6.lean](Theorem_5_6.lean)**
 

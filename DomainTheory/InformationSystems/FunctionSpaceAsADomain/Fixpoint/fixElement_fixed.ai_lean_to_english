@@ -1,3 +1,0 @@
-By Scott's Theorem 7.3, the fixed-point element of an approximable endomap f is a fixed point: applying f to it returns it.
-
-The two sides are compared by antisymmetry. Applying f to the fixed point yields a smaller element. For the other inequality, that image is itself pre-fixed, because f is monotone and the previous inequality holds, so the least-pre-fixed-point property places the fixed point below the image.

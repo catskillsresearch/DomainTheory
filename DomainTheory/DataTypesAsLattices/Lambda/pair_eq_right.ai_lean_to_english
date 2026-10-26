@@ -1,3 +1,0 @@
-If the pair of n and m equals m, then both n and m are zero.
-
-The pair equation, rewritten by the triangle formula for pairing, says that the triangle number of n + m, added to m, equals m, so that triangle number is zero. The lemma that a zero triangle number has zero argument gives n + m = 0, and therefore both n and m are zero.

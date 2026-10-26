@@ -1,3 +1,0 @@
-The left projection of a finite set of sum tokens is empty, or else it contains some token. The argument avoids a decision procedure for equality of finite sets.
-
-Induction on the finite set. The empty set has empty left projection. Inserting a left token puts that token into the left projection. Inserting a right token or the sum bottom leaves the left projection unchanged, so the inductive alternative applies.

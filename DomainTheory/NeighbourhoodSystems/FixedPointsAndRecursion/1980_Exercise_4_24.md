@@ -1,7 +1,5 @@
 # Exercise 4.24
 
-## Human-English
-
 **EXERCISE 4.24.** (For set theorists). Let $f : A \to B$ and $g : B \to A$ be one-one functions (into, not necessarily onto!) Prove the Schroeder - Bernstein theorem to the effect that there exists a one-one correspondence $h : A \leftrightarrow B$. (Hint: (Suggested by A. Tarski). By the fixed-point theorem find $X \subseteq A$ where
 
 $$
@@ -15,8 +13,6 @@ h = f \upharpoonright X \cup g^{-1} \upharpoonright (A - X).
 $$
 
 A picture helps.)
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_4_24.lean](Exercise_4_24.lean)**
 

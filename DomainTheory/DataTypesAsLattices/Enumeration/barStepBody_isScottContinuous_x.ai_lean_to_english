@@ -1,3 +1,0 @@
-For fixed B and u, the bar step body is Scott continuous in x.
-
-Ternary substitution combines left, middle, and right continuity of the conditional with left continuity of application at the numeral 0, continuity of the positive branch in its second argument at u, and a binary substitution. The two arguments of that binary substitution are the nested substitution of continuity of application of B, continuity of application of u, and left application at the numeral 1, together with left application at the numeral 2.

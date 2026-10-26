@@ -1,3 +1,0 @@
-The set of projections is closed under finite joins.
-
-The empty join is the bottom map, which is a projection, and the set is closed under binary joins. Induction on the finite set gives the claim.

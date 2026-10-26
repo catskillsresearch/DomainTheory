@@ -1,3 +1,0 @@
-Every singleton of a tree token is consistent.
-
-Induct on the token. The bottom is left-consistent, with empty atom projection, hence consistent in the atom information system, and with both pair projections empty. An atom is left-consistent, with atom projection the singleton of that atom, consistent by the singleton axiom, and with both pair projections empty. A left-pair token is right-consistent, with empty atom projection, with left pair projection the singleton of the payload, consistent by the inductive hypothesis, and with empty right pair projection. A right-pair token is symmetric.

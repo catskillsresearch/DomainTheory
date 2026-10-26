@@ -1,7 +1,5 @@
 # Exercise 2.11
 
-## Human-English
-
 **EXERCISE 2.11.** Let $(I, \le)$ be a non-empty abstract partially ordered set; suppose it is <u>directed</u> in the sense that whenever $i, j \in I$, then $i \le k$ and $j \le k$ for some $k \in I$. Suppose that $a : I \to |D|$ is such that
 
 $$
@@ -23,8 +21,6 @@ $$
 that is, <u>approximable mappings always preserve directed unions</u>. If an elementwise function preserves directed unions, must it come from an approximable mapping? (Hint: Invoke 2.9.)
 
 <!-- page 33 -->
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_2_11.lean](Exercise_2_11.lean)**
 

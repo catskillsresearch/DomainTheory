@@ -1,7 +1,5 @@
 # Exercise 8.22
 
-## Human-English
-
 **EXERCISE 8.22.** Which of the two relations hold:
 
 $$B \trianglelefteq C \quad \text{or} \quad C \trianglelefteq B \ ?$$
@@ -13,8 +11,6 @@ $$D = T(D) + S(D) \ , \quad \text{and}$$
 $$E = T(E) \ ,$$
 
 will $E \trianglelefteq D$ hold? What projections do you see in the examples in 6.2?
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_8_22.lean](Exercise_8_22.lean)**
 

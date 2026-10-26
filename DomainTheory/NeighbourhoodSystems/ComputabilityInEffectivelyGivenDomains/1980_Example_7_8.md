@@ -1,7 +1,5 @@
 # Example 7.8
 
-## Human-English
-
 **EXAMPLE 7.8.** We have often made reference to the powerset $P\mathbf{N}$ as a domain and we should check here that it is effectively given. One easy way to see this is to note
 
 $$P\mathbf{N} \cong |T^\infty|.$$
@@ -19,8 +17,6 @@ As the relationship $E_n \cup E_m = E_k$ is recursive, there is no trouble in pr
 We end this chapter with an example of another kind of domain construct. This construct is known as the *Smyth Power Domain*. It is defined for any neighbourhood system $\mathcal{D}$ and results in a new system we shall call here $\mathbb{P}\mathcal{D}$. The elements of $\mathbb{P}\mathcal{D}$ behave rather like *sets of elements* of $\mathcal{D}$, but since our elements can be either partial or total, there are certain dangers to pushing the analogy too far. For some purposes a rival construct called the *Plotkin Power Domain* is better, but it leads outside the category of neighbourhood systems as defined in these lectures. Do not confuse $P\mathbf{N}$ with $\mathbb{P}\mathcal{D}$.
 
 <!-- page 127 -->
-
-## AI: Human-English to AI-Lean
 
 **[Example_7_8.lean](Example_7_8.lean)**
 

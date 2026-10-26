@@ -1,3 +1,0 @@
-The function set of a finitary union of finite sets of raw lambda tokens is the finitary union of the function sets.
-
-By extensionality, a pair belongs to the function set of the union exactly when the corresponding function token belongs to the union, hence to one of the two sets. Conversely, a pair of either function set is a function token of that set and therefore of the union.

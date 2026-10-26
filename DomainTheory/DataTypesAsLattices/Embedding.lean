@@ -7,13 +7,8 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.FixedPoint
 public import DomainTheory.DataTypesAsLattices.Embedding.extend
 public import DomainTheory.DataTypesAsLattices.Embedding.embed
-public import DomainTheory.DataTypesAsLattices.Embedding.mem_extend
-public import DomainTheory.DataTypesAsLattices.Embedding.isOpen_extend_mem
 public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_5
 public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_5_extends
-public import DomainTheory.DataTypesAsLattices.Embedding.embed_inducing
-public import DomainTheory.DataTypesAsLattices.Embedding.embed_injective
-public import DomainTheory.DataTypesAsLattices.Embedding.embed_continuous
 public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_6
 public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_6_injective_continuous
 

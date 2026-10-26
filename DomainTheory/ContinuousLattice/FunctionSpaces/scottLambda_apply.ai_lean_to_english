@@ -1,3 +1,0 @@
-The Scott map obtained by abstracting f, evaluated at x and then at y, equals f at the pair (x, y).
-
-The two sides are definitionally equal.

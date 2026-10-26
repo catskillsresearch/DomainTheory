@@ -1,3 +1,0 @@
-Interpreting the bar step term in the constantly bottom environment yields the graph of the bar step.
-
-Unfold both sides and simplify interpretation together with environment update at the bound index. Compare graphs in the three arguments B, u, and x, and simplify by the bar step body, the interpretation of the positive-branch term, environment update, and the successor of a numeral.

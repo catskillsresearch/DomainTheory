@@ -1,7 +1,5 @@
 # Exercise 5.11
 
-## Human-English
-
 **EXERCISE 5.11.** For any domain $\mathcal{D}$ we may regard $\mathcal{D}^\infty$ as consisting of (bottomless) *stacks* of elements of $\mathcal{D}$. With this image in mind, define appropriate combinators with the obvious meanings:
 
 $$
@@ -41,8 +39,6 @@ where for elements of the suitable types:
 $$
 \mathrm{map}(\langle f_n \rangle_{n=0}^\infty, x) = \langle f_n(x) \rangle_{n=0}^\infty.
 $$
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_5_11.lean](Exercise_5_11.lean)**
 

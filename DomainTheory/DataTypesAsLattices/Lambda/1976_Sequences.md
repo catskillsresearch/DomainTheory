@@ -1,10 +1,6 @@
 # Sequences
 
-## Human-English
-
 @import "1976_Sequences.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[DataTypesAsLattices/Lambda/mem_seqFunLt.lean](mem_seqFunLt.lean)**
 
@@ -114,58 +110,3 @@
 
 @import "seqShift.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "mem_seqFunLt.ai_lean_to_english" {code_block=false}
-
-@import "seq2_body_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "seq2_app.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_23_ge.ai_lean_to_english" {code_block=false}
-
-@import "seq2_app_one.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_23_one.ai_lean_to_english" {code_block=false}
-
-@import "seq2_app_zero.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_23_zero.ai_lean_to_english" {code_block=false}
-
-@import "seq2_tag_ne.ai_lean_to_english" {code_block=false}
-
-@import "seqCons_body.ai_lean_to_english" {code_block=false}
-
-@import "eq_2_22.ai_lean_to_english" {code_block=false}
-
-@import "seqFunLt_zero.ai_lean_to_english" {code_block=false}
-
-@import "seqFun_eq_iUnion_lt.ai_lean_to_english" {code_block=false}
-
-@import "seqFun_left_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "seqFun_right_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "seqShift_left_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "seqShift_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "seqShift_app.ai_lean_to_english" {code_block=false}
-
-@import "seqShift_ofNat.ai_lean_to_english" {code_block=false}
-
-@import "seqFunLt_succ.ai_lean_to_english" {code_block=false}
-
-@import "seqFunLt_succ_term.ai_lean_to_english" {code_block=false}
-
-@import "seq0.ai_lean_to_english" {code_block=false}
-
-@import "seq1.ai_lean_to_english" {code_block=false}
-
-@import "seq2.ai_lean_to_english" {code_block=false}
-
-@import "seqCons.ai_lean_to_english" {code_block=false}
-
-@import "seqFunLt.ai_lean_to_english" {code_block=false}
-
-@import "seqShift.ai_lean_to_english" {code_block=false}

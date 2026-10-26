@@ -1,10 +1,6 @@
 # Proposition 7.4
 
-## Human-English
-
 @import "1982_Proposition_7_4.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/FunctionSpaceAsADomain/Proposition74/Basic.lean](Basic.lean)**
 
@@ -46,28 +42,3 @@
 
 @import "../Proposition74.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "Basic.ai_lean_to_english" {code_block=false}
-
-@import "idMap_botElement.ai_lean_to_english" {code_block=false}
-
-@import "proposition_7_4_ii.ai_lean_to_english" {code_block=false}
-
-@import "fixChain_toElement_le_fix.ai_lean_to_english" {code_block=false}
-
-@import "proposition_7_4_unique.ai_lean_to_english" {code_block=false}
-
-@import "toElement_comp_fix_le.ai_lean_to_english" {code_block=false}
-
-@import "fixElement_le_toElement_fix.ai_lean_to_english" {code_block=false}
-
-@import "toElement_fix_le_fixElement.ai_lean_to_english" {code_block=false}
-
-@import "proposition_7_4_iii.ai_lean_to_english" {code_block=false}
-
-@import "../Proposition74.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_Proposition_7_4.ai_english_concordance" {code_block=false}

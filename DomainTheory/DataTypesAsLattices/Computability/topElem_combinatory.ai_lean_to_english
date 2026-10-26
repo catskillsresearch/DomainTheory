@@ -1,3 +1,0 @@
-The top element of Pω is combinatory.
-
-The fixed-point combinator applied to the interpretation of topRecTerm in the constantly bottom environment equals the top element, by topRecTerm_interp, the fixed-point theorem theorem_2_5 for the Scott-continuous map topRec, and equation eq_2_16. Rewriting by this equality exhibits the top element as the application of the combinatory fixed-point combinator to the combinatory closed term topRecTerm.

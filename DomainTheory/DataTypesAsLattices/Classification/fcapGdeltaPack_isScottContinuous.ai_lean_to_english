@@ -1,3 +1,0 @@
-If f and g are Scott continuous, then so is their packing.
-
-A number k lies in the packing at x when either k is 0 and 0 lies in f(x), or k is a successor n + 1 and n lies in g(x). Scott continuity of f or of g supplies a finite piece of x at which the same clause holds, so k lies in the Scott union of the packing. In the other direction, membership at a finite piece of x is carried up to x by monotonicity of f or of g.

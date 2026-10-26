@@ -1,1 +1,0 @@
-Insertion into an input union is left commutative, assuming decidable equality of raw tokens. After unfolding the operation, membership in the union is a three-way disjunction, and the two orders match by rearranging those disjuncts.

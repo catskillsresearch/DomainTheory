@@ -7,7 +7,6 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.FixedPoint
 public import DomainTheory.DataTypesAsLattices.Embedding.extend
 public import DomainTheory.DataTypesAsLattices.Embedding.embed
-public import DomainTheory.DataTypesAsLattices.Embedding.mem_extend
 
 @[expose] public section
 
@@ -23,13 +22,13 @@ theorem theorem_1_5_extends {Y : Type*} [TopologicalSpace Y] {X : Set Y}
     extend (Y := Y) (X := X) f ↑x = f x := by
   apply subset_antisymm
   · intro k hk
-    obtain ⟨U, _, hxU, hall⟩ := (mem_extend f).mp hk
+    obtain ⟨U, _, hxU, hall⟩ := (extend.mem f).mp hk
     exact hall x hxU
   · intro k hk
     have hpre : IsOpen (f ⁻¹' memOpen k) :=
       IsOpen.preimage hf (isOpen_memOpen k)
     obtain ⟨U, hU, hrel⟩ := isOpen_induced_iff.mp hpre
-    refine (mem_extend f).mpr ⟨U, hU, ?_, ?_⟩
+    refine (extend.mem f).mpr ⟨U, hU, ?_, ?_⟩
     · have : x ∈ Subtype.val ⁻¹' U := by
         rwa [hrel]
       exact this

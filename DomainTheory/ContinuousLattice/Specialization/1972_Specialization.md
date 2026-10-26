@@ -1,10 +1,6 @@
 # Specialization
 
-## Human-English
-
 @import "1972_Specialization.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[ContinuousLattice/Specialization/SpecializationLe.lean](SpecializationLe.lean)**
 
@@ -62,36 +58,3 @@
 
 @import "isOpen_scott_iff_scottOpen.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "SpecializationLe.ai_lean_to_english" {code_block=false}
-
-@import "specializationLe_iff_specializes.ai_lean_to_english" {code_block=false}
-
-@import "specializationLe_antisymm.ai_lean_to_english" {code_block=false}
-
-@import "SpecializationLeu2emap.ai_lean_to_english" {code_block=false}
-
-@import "specializationPreorder.ai_lean_to_english" {code_block=false}
-
-@import "MonotoneNet.ai_lean_to_english" {code_block=false}
-
-@import "ScottConvergesTo.ai_lean_to_english" {code_block=false}
-
-@import "scottTopologicalSpace.ai_lean_to_english" {code_block=false}
-
-@import "scottOpen_not_le.ai_lean_to_english" {code_block=false}
-
-@import "ScottOpen_iff_dirSupInacc.ai_lean_to_english" {code_block=false}
-
-@import "isOpen_iff_scottOpen.ai_lean_to_english" {code_block=false}
-
-@import "specializationLe_scott_iff.ai_lean_to_english" {code_block=false}
-
-@import "scottTopology_t0Space.ai_lean_to_english" {code_block=false}
-
-@import "isOpen_scott_iff_scottOpen.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1972_Specialization.ai_english_concordance" {code_block=false}

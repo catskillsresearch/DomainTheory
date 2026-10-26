@@ -1,3 +1,0 @@
-In the fixed-point lattice of a Scott-continuous map, the underlying set of the supremum of a directed set of fixed points equals the union of their underlying sets.
-
-The union of the underlying sets is itself a fixed point. The supremum lies below that fixed point because each member is contained in the union. An element of the union lies in some member, and that member lies below the supremum.

@@ -1,3 +1,0 @@
-A function token belonging to a finset that is consistent at stage n+1 has both component finsets consistent at stage n.
-
-An auxiliary induction produces an earlier stage at which both components are consistent. Stage zero is impossible, because it has no function tokens. The left successor alternative lifts that earlier witness, and the right successor alternative uses the well-formedness clause at the preceding stage. Monotonicity then raises the earlier stage to n.

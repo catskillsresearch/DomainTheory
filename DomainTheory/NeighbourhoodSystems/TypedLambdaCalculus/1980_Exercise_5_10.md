@@ -1,7 +1,5 @@
 # Exercise 5.10
 
-## Human-English
-
 **EXERCISE 5.10.** Suppose $\mathcal{D}_0$ and $\mathcal{D}_1$ are neighbourhood systems over disjoint sets $\Delta_0$ and $\Delta_1$. Define the *smash product* $\mathcal{D}_0 \otimes \mathcal{D}_1$ with neighbourhoods
 
 $$
@@ -15,8 +13,6 @@ $$
 $$
 
 are isomorphic.
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_5_10.lean](Exercise_5_10.lean)**
 

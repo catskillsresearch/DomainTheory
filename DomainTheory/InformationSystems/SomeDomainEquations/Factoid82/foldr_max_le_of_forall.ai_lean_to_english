@@ -1,3 +1,0 @@
-If every token in a multiset of raw lambda tokens has raw depth at most a fixed bound, then the right fold that accumulates the maximum of the raw depth and the accumulator, starting from zero, is at most that bound.
-
-The proof inducts on the multiset. The empty fold is zero. A nonempty fold is the maximum of the head's raw depth and the fold of the tail, and both are at most the bound.

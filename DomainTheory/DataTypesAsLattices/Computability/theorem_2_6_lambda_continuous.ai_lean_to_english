@@ -1,3 +1,0 @@
-A lambda-definable map in one free variable is Scott continuous, so clause (iii) of Theorem 2.6 lands in the setting of clauses (i) and (ii). The one-variable interpretation of a term, with every other variable sent to bottom, is Scott continuous.
-
-This is theorem_2_1 applied to the term, the constantly bottom environment, and the free index 0.

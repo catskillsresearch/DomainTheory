@@ -1,3 +1,0 @@
-Inserting an atom token into a finite set of tree tokens leaves the left pair projection unchanged.
-
-By extensionality and the membership characterization, a left-pair token in the inserted set is either the atom token, which is impossible, or a left-pair token of the original set, and a left-pair token of the original set remains after insertion.

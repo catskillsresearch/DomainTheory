@@ -1,10 +1,6 @@
 # Exercise 4.19
 
-## Human-English
-
 **EXERCISE 4.19.** There are many unproved assertions in Example 4.4! In particular discuss "Peano's Axioms" for $\{0,1\}^*$. Show, moreover, that $\mathrm{one} : C \to T$ can be defined from the rest of the structure by a fixed-point equation.
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_4_19.lean](Exercise_4_19.lean)**
 

@@ -1,7 +1,5 @@
 # Exercise 3.22
 
-## Human-English
-
 **EXERCISE 3.22.** Prove that there is an approximable mapping
 
 $$
@@ -25,8 +23,6 @@ Show this directly by writing down the neighbourhood relation and by building th
 The maps are of course not uniquely determined, but the shifting of brackets ought to suggest the right choice.)
 
 <!-- page 53 -->
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_3_22.lean](Exercise_3_22.lean)**
 

@@ -1,3 +1,0 @@
-The pair-indexed packing of a sequence of maps at x equals ⊤ if and only if every map in the sequence sends x to ⊤.
-
-If the packing is ⊤, every pair code (n, m) lies in it, so every m lies in the nth value. Conversely, if every value is ⊤, every natural number is the code of some pair (n, m) with m in that value, so the packing is ⊤.

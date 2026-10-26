@@ -4,11 +4,7 @@
 
 @import "../ApproximableMappingsBetweenDomains.mermaid"
 
-## Human-English
-
 @import "1982_Approximable_mappings_between_domains.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean](ApproximableMap.lean)**
 
@@ -42,24 +38,3 @@
 
 @import "../Approximable.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "ApproximableMap.ai_lean_to_english" {code_block=false}
-
-@import "ext.ai_lean_to_english" {code_block=false}
-
-@import "singleton_funion_eq.ai_lean_to_english" {code_block=false}
-
-@import "exists_rel_of_subset_image.ai_lean_to_english" {code_block=false}
-
-@import "toElement.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
-
-@import "toElement_mono.ai_lean_to_english" {code_block=false}
-
-@import "../Approximable.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_Approximable_mappings_between_domains.ai_english_concordance" {code_block=false}

@@ -1,1 +1,0 @@
-The map unfoldFinset sends a finite set of tree tokens to its image under tree unfolding. The image is computed by folding unfold insertion over the underlying multiset, starting from the empty finset.

@@ -1,7 +1,5 @@
 # Theorem 4.6
 
-## Human-English
-
 **THEOREM 4.6.** All models of Peano's Axioms are isomorphic.
 
 *Proof:* There are several ways to give the proof, but, for the sake of illustration, an application of the fixed-point theorem is appropriate here. Let $\langle \mathbf{N}, 0, {}^+ \rangle$ be one model, and let $\langle \mathbf{M}, \square, {}^\# \rangle$ be another. Let $\mathbf{N} \times \mathbf{M}$ be the ordinary cartesian product of the two sets and let
@@ -47,8 +45,6 @@ $$
 for some $(n_0, m_0) \in r$. By axiom 4.5(ii), $n = n_0$, and, by uniqueness (remember $n \in x$), $m = m_0$; thus, $m^\#$ is the unique correspondent for $n^+$. We have proved $n^+ \in x$. Therefore, $x^+ \subseteq x$; so by axiom 4.5(iii), $x = \mathbf{N}$ holds. Otherwise said, every element in $\mathbf{N}$ corresponds to a unique element of $\mathbf{M}$.
 
 Note that the rôles of $\mathbf{N}$ and $\mathbf{M}$ are completely symmetric, *and* they satisfy the same axioms as structured sets. It follows, then, that every element of $\mathbf{M}$ corresponds to a unique element of $\mathbf{N}$. The proof that $r$ is a one-one correspondence is now complete. $\square$
-
-## AI: Human-English to AI-Lean
 
 **[Theorem_4_6.lean](Theorem_4_6.lean)**
 

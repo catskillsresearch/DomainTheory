@@ -1,9 +1,0 @@
-This file assembles Factoid 8.2, the lambda-calculus model in which D is congruent to A plus the function space from D to D. Consistency and the token carrier are developed by well-founded depth, entailment is the inductive depth relation of Scott's clauses (8) through (11), and the lambda system is the information system of well-formed tokens, with the domain equation through the unfolding into the sum of A and the function space.
-
-A raw token lies in the fold, from the empty finset, of forgetful insertion along a multiset of lambda tokens if and only if it is the underlying token of some element of that multiset.
-
-The proof inducts on the multiset. Both sides fail for the empty multiset. For a cons cell, membership in the inserted fold is the value of the head or membership in the fold of the tail, and the inductive hypothesis matches the tail with the tail of the multiset.
-
-The union of a finset u with the insertion of a token a into a finset t equals the insertion of a into the union of u and t.
-
-By extensionality, an element of the left side lies in u, hence in the inserted union, or in the insertion, hence equals a or lies in t, and both of those lie in the inserted union. An element of the right side equals a, hence lies in the inserted right-hand summand, or lies in the union, hence lies in u or in t, and both of those lie in the left side.

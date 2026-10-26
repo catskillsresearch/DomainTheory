@@ -1,7 +1,5 @@
 # Exercise 3.18
 
-## Human-English
-
 **EXERCISE 3.18.** Let $\mathcal{D}_0$ and $\mathcal{D}_1$ be neighbourhood systems over $\Delta_0$ and $\Delta_1$, where we again assume that these are subsets of $\Sigma^*$. We assume that in addition *no neighbourhood is empty*. Why is this possible without loss of generality?
 
 Define the *sum system* by:
@@ -19,8 +17,6 @@ in_i : \mathcal{D}_i \to \mathcal{D}_0 + \mathcal{D}_1 \quad \text{and} \quad ou
 $$
 
 where $out_i \circ in_i = I_{\mathcal{D}_i}$. Where does the assumption $\emptyset \notin \mathcal{D}_i$ come in? How can these sums be generalized to $n$-terms? (Hint: As for products use sets $1^i 0 \Delta_i$.) Draw some pictures.
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_3_18.lean](Exercise_3_18.lean)**
 

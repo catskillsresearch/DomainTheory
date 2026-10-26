@@ -1,3 +1,0 @@
-The universe combinator applied to a equals the graph of x ↦ V(a)(x).
-
-For each x the map a ↦ V(a)(x) is Scott continuous, so the inner graph is Scott continuous in a. The β rule for a continuous body therefore evaluates the outer graph at a as that inner graph.

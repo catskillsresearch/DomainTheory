@@ -1,7 +1,5 @@
 # Proposition 7.12
 
-## Human-English
-
 **PROPOSITION 7.12.** The mapping
 
 $$\lambda x_0, \dots, x_{n-1}.\, \{x_0, \dots, x_{n-1}\} : D^n \to \mathbb{P} D$$
@@ -45,8 +43,6 @@ $$D \cong D^\dagger \trianglelefteq \mathbb{P} D$$
 and that the isomorphism involved is just $\lambda x.\,\{x\}$ by what we saw on the finite elements. $\square$
 
 Further combinators on the power domain are given in the exercises.
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_7_12.lean](Proposition_7_12.lean)**
 

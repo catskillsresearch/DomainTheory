@@ -1,3 +1,0 @@
-If f(x) is either ⊥ or ⊤, then the packing of f and g at x equals ⊤ + 1 if and only if f(x) is ⊥ and g(x) is ⊤.
-
-Suppose the packing equals ⊤ + 1. Zero lies outside ⊤ + 1, so zero lies outside the packing and therefore outside f(x). The case f(x) = ⊤ is then impossible, and f(x) is ⊥. For each n the number n + 1 lies in the packing, and it cannot arise from the zero clause, so n belongs to g(x) and g(x) is ⊤. Conversely, if f(x) is ⊥ and g(x) is ⊤, the zero clause of the packing is empty, every successor member is a member of ⊤ + 1, and every member of ⊤ + 1 arises as such a successor.

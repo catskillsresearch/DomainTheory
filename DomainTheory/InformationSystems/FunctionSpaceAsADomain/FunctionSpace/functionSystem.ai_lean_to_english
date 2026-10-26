@@ -1,1 +1,0 @@
-Scott's Definition 7.1 packages the function space as an information system: the token is the bottom function token, consistency is function-space consistency, and entailment is function-space entailment. The information-system axioms are the downward-closure and singleton laws for consistency and the consistency, bottom, reflexivity, and transitivity laws for entailment.

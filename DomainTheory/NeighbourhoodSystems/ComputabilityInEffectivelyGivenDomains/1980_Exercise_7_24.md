@@ -1,7 +1,5 @@
 # Exercise 7.24
 
-## Human-English
-
 **EXERCISE 7.24.** (Suggested by the LUCID language of Ashcroft and Wadge: SIAM Jour. Comp. vol. 5 (1976).)
 
 Define a set $\Gamma$ by
@@ -25,8 +23,6 @@ $$(L \to T) \times (L \to T) \to (L \to T).$$
 Conclude that programs in LUCID define computable maps.
 
 <!-- page 135 -->
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_7_24.lean](Exercise_7_24.lean)**
 

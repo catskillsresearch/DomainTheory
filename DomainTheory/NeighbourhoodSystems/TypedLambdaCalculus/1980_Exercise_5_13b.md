@@ -1,7 +1,5 @@
 # Exercise 5.13
 
-## Human-English
-
 **EXERCISE 5.13.** Prove the existence of a one-one function $\mathrm{num} : \mathbf{N} \times \mathbf{N} \to \mathbf{N}$ such that
 
 $$
@@ -23,8 +21,6 @@ P\mathbf{N},\ P(\mathbf{N} \times \mathbf{N}),\ P\mathbf{N} \times P\mathbf{N}.
 $$
 
 <!-- page 90 -->
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_5_13b.lean](Exercise_5_13b.lean)**
 

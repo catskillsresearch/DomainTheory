@@ -1,10 +1,6 @@
 # Exercise 8.15
 
-## Human-English
-
 **EXERCISE 8.15.** Give a direct proof that the domain $\{X \mid X \triangleleft D\}$ is effectively presented if $D$ is. (Hint: The finite elements of the domain correspond exactly to the finite systems $X \triangleleft D$.) In the case of $D = \mathcal{U}$, show that the computable elements of the domain correspond exactly to the effectively presented domains (up to effective isomorphism).
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_8_15.lean](Exercise_8_15.lean)**
 

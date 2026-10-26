@@ -1,3 +1,0 @@
-A raw token lies in the right fold of forget-insertion over a multiset of depth-well-formed lambda tokens, starting from the empty finset, if and only if some token in the multiset has that raw value.
-
-Induct on the multiset. The empty fold is empty, so neither side has a witness. On a cons, membership in the inserted fold is equality with the head value or membership in the tail fold. The inductive hypothesis turns the tail membership into existence in the tail, and reassembling the disjunction gives existence in the cons. The converse splits multiset membership in the same way.

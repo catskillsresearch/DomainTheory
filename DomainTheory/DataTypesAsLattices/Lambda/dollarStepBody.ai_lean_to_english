@@ -1,1 +1,0 @@
-Scott 1976, (2.24). The body of the step defining $ = Y(λs λu λz. z ⊃ u₀, s(λt. u_{t+1})(z − 1)) is the conditional of z on u applied to 0 and on s applied to the shifted sequence and then to the predecessor of z.

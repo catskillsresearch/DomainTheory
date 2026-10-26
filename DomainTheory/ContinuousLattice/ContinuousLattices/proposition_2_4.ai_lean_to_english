@@ -1,1 +1,0 @@
-Scott 1972, Proposition 2.4. A complete lattice is continuous if and only if every element is the supremum of the infima of its open neighbourhoods. This is a synonym of `isContinuousLattice_iff_isLUB_sInf_nhds`.

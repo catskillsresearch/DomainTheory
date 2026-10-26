@@ -1,3 +1,0 @@
-Erasing the tag one more than the maximum of p and q from the union of that iterate with the singleton of the pair of the tag and m returns the iterate alone.
-
-Membership extensionality. An element of the erased union lies in the iterate or in the singleton, and the singleton is excluded by the erasure condition at index m. Conversely, a member of the iterate lies in the left summand, and the finite-iterate rule says it is not a pair of that tag.

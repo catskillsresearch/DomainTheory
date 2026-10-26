@@ -1,1 +1,0 @@
-An n-ary map is finitely Scott continuous when continuity is taken one argument at a time from the left. The zero-ary case holds outright. An (n + 1)-ary map is finitely Scott continuous when it is Scott continuous in the first argument for every choice of the remaining arguments, and each of those remaining maps is finitely Scott continuous.

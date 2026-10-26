@@ -1,3 +1,0 @@
-The enumeration degree of any element a is a combinatory subalgebra.
-
-The combinator G lies in the degree because the application of K to G is combinatory, and the beta law for K shows that this element applied to a returns G. If x and y lie in the degree, witnessed by combinatory elements r and s, then the application of S to r and then to s is combinatory, and the beta law for S shows that this element applied to a returns the application of x to y.

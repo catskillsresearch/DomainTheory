@@ -1,7 +1,5 @@
 # Example 6.2
 
-## Human-English
-
 **EXAMPLE 6.2.** Our staple examples $B$ and $C$ satisfy “domain equations” in the form of isomorphisms as we have previously seen. Indeed
 
 $$
@@ -116,8 +114,6 @@ T(X) = \{\Gamma'\} \cup \{0X \mid X \in D\} \cup \{10X \cup 11Y \mid X, Y \in X\
 $$
 
 where we have $\Gamma' = 0\Delta \cup 10\Gamma \cup 11\Gamma$. (By the way, here we definitely want to assume $\emptyset \notin D$ and $\emptyset \notin X$ and to get $\emptyset \notin T(X)$.) This construct is an example of a *functor*, a notion that can be defined abstractly on any category.
-
-## AI: Human-English to AI-Lean
 
 **[Example_6_2.lean](Example_6_2.lean)**
 

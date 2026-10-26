@@ -1,3 +1,0 @@
-Scott 1976, (2.28). The least fixed point of λf λx. g(x)(f(x)) is λx. Y(g(x)).
-
-The functional is Scott continuous because it is the graph of a map continuous in x. It fixes the graph of x ↦ Y(g(x)), since each section satisfies its fixed-point equation, so the least fixed point lies below that graph. Applied to any argument, the iterates of the functional from ⊥ are the iterates of the corresponding section. A pair code in the graph of those least fixed points therefore lies in some positive iterate of the functional.

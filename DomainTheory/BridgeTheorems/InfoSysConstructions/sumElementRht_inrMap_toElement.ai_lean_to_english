@@ -1,3 +1,0 @@
-Extracting the right element of the right image of an element y, using the right bottom token as witness, recovers y.
-
-If a token b lies in the extracted element, its witnessing consistent set of tokens of the image entails the right token of b, and after the right part of the singleton of that token is identified with the singleton of b this is an entailment of b in B, so closure of y puts b in y. Conversely, if b lies in y, the singleton of b consists of tokens of y, and it contributes the right token of b to the image by the right consistency clause, the empty left part, and the entailment of that singleton in B.

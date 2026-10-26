@@ -1,7 +1,5 @@
 # Proposition 3.4
 
-## Human-English
-
 **PROPOSITION 3.4.** The mappings $p_0$, $p_1$ and $\langle f, g \rangle$ are approximable mappings, provided $f$ and $g$ are, and we have:
 
 (i) $p_0 \circ \langle f, g \rangle = f$ and $p_1 \circ \langle f, g \rangle = g$.
@@ -51,8 +49,6 @@ equivalent to the old relationship. We can also employ an element-wise notation 
 <!-- page 40 -->
 
 We have discussed several times what it means for a function $f(x)$ to come from an approximable mapping. It is interesting to ask the analogous question for functions of several arguments.
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_3_4.lean](Proposition_3_4.lean)**
 

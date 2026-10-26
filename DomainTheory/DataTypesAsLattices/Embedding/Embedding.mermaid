@@ -5,16 +5,10 @@ flowchart TB
   N0["FixedPoint"]
   N1["embed"]
   N2["extend"]
-  N3["Basic"]
-  N4["embed_continuous"]
-  N5["embed_inducing"]
-  N6["embed_injective"]
-  N7["mem_extend"]
-  N8["isOpen_extend_mem"]
-  N9["theorem_1_5"]
-  N10["theorem_1_5_extends"]
-  N11["theorem_1_6"]
-  N12["theorem_1_6_injective_continuous"]
+  N3["theorem_1_5"]
+  N4["theorem_1_5_extends"]
+  N5["theorem_1_6"]
+  N6["theorem_1_6_injective_continuous"]
 
   N0 -->|"1"| N1
   N0 -->|"1"| N2
@@ -22,30 +16,14 @@ flowchart TB
   N1 -->|"1"| N3
   N2 -->|"1"| N3
   N0 -->|"1"| N4
-  N3 -->|"1"| N4
+  N1 -->|"1"| N4
+  N2 -->|"1"| N4
   N0 -->|"1"| N5
-  N3 -->|"1"| N5
+  N1 -->|"1"| N5
+  N2 -->|"1"| N5
   N0 -->|"1"| N6
-  N3 -->|"1"| N6
-  N0 -->|"1"| N7
-  N3 -->|"1"| N7
-  N0 -->|"1"| N8
-  N3 -->|"1"| N8
-  N7 -->|"1"| N8
-  N0 -->|"1"| N9
-  N3 -->|"1"| N9
-  N8 -->|"1"| N9
-  N0 -->|"1"| N10
-  N3 -->|"1"| N10
-  N7 -->|"1"| N10
-  N0 -->|"1"| N11
-  N3 -->|"1"| N11
-  N5 -->|"1"| N11
-  N6 -->|"1"| N11
-  N0 -->|"1"| N12
-  N3 -->|"1"| N12
-  N4 -->|"1"| N12
-  N6 -->|"1"| N12
+  N1 -->|"1"| N6
+  N2 -->|"1"| N6
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
@@ -57,9 +35,3 @@ flowchart TB
   class N4 file
   class N5 file
   class N6 file
-  class N7 file
-  class N8 file
-  class N9 file
-  class N10 file
-  class N11 file
-  class N12 file

@@ -1,7 +1,5 @@
 # Exercise 4.8
 
-## Human-English
-
 **EXERCISE 4.8.** Suppose $f : D \to D$ and $S \subseteq |D|$ are such that
 
 (i) $\bot \in S$;
@@ -17,8 +15,6 @@ S = \{x \in |D| \mid a(x) = b(x)\},
 $$
 
 where $a, b : D \to D$ are approximable, and where we know $a(\bot) = b(\bot)$, and $f \circ a = a \circ f$ and $f \circ b = b \circ f$.
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_4_8.lean](Exercise_4_8.lean)**
 

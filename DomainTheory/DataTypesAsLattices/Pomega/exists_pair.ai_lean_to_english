@@ -1,3 +1,0 @@
-Every natural number k is the pair of some n and some m.
-
-Take a triangular bucket w with the triangular number of w at most k and k strictly below the triangular number of w + 1. Let m be k minus the triangular number of w, and let n be w minus m. The successor law for triangular numbers puts k strictly below the triangular number of w plus w plus 1, hence at most the triangular number of w plus w, so m is at most w and n + m recovers w. The pairing identity then returns k.

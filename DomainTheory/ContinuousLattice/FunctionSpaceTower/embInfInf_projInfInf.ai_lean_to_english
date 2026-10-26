@@ -1,1 +1,0 @@
-`embInfInf_comp_projInfInf` says the composite of the embedding \(i_\infty\) with the projection \(j_\infty\) is the identity Scott map on \([D_\infty \to D_\infty]\). `embInfInf_projInfInf` is that identity evaluated at a Scott map. `embInfInf_le_iff` says \(i_\infty(x) \le i_\infty(y)\) if and only if \(x \le y\).

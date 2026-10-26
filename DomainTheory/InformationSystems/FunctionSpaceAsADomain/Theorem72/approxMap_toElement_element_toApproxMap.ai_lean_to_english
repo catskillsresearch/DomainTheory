@@ -1,3 +1,0 @@
-Sending a function-space element to the approximable map it determines, and then back to an element, returns the original element.
-
-Antisymmetry is used. A token of the round trip has its input and output related by the recovered map, so the packaged token lies in the carrier, and repackaging returns the original token. A token of the element is related by packaging it with its own consistency data, and repackaging shows that this package is the token itself.

@@ -1,7 +1,5 @@
 # Exercise 6.20
 
-## Human-English
-
 **EXERCISE 6.20.** For any system $\mathcal{D}$ let $\mathrm{tok}(\mathcal{D})$ be the underlying set of tokens, so that $\mathcal{D}$ is a system over $\mathrm{tok}(\mathcal{D})$. For the category of Exercise 6.19 show that the function
 
 $$
@@ -17,8 +15,6 @@ $$
 so that $\{\Gamma\} \triangleleft T(\{\Gamma\})$, and so 6.14 applies.
 
 <!-- page 113 -->
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_6_20.lean](Exercise_6_20.lean)**
 

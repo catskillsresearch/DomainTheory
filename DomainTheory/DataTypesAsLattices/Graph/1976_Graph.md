@@ -7,8 +7,6 @@
 
 @import "Graph.mermaid"
 
-## AI: Human-English to AI-Lean
-
 **[DataTypesAsLattices/Graph/IsGraph.lean](IsGraph.lean)**
 
 @import "IsGraph.lean"
@@ -53,26 +51,3 @@
 
 @import "mu_law.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "IsGraph.ai_lean_to_english" {code_block=false}
-
-@import "funOf.ai_lean_to_english" {code_block=false}
-
-@import "funOf_isScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "funOf_monotone_left.ai_lean_to_english" {code_block=false}
-
-@import "funOf_monotone_right.ai_lean_to_english" {code_block=false}
-
-@import "graph.ai_lean_to_english" {code_block=false}
-
-@import "lam.ai_lean_to_english" {code_block=false}
-
-@import "lam_eq_graph.ai_lean_to_english" {code_block=false}
-
-@import "mem_funOf.ai_lean_to_english" {code_block=false}
-
-@import "mem_graph.ai_lean_to_english" {code_block=false}
-
-@import "mu_law.ai_lean_to_english" {code_block=false}

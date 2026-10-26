@@ -1,3 +1,0 @@
-Scott 1976, Theorem 2.3, unary case. A Scott continuous endomap f of Pω is the application of some element: there is a u such that applying u to x equals f(x) for every x.
-
-Take u to be the graph of f. For each x, clause (i) of Theorem 1.2 rewrites application of that graph as f.

@@ -1,3 +1,0 @@
-If an element x of Pω is recursively enumerable, then so is its successor, the set of numbers of the form n + 1 for n in x.
-
-Equality with zero is a computable predicate, and so is its negation. Conjoined with membership of the predecessor in x, the predicate is recursively enumerable. A number that is nonzero and whose predecessor lies in x is the successor of that predecessor. Conversely, a successor witness is nonzero, and on a successor the predecessor is the witness itself.

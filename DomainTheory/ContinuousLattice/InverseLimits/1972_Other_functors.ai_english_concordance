@@ -1,1 +1,0 @@
-The Human-English solves \(V = T + [V \times V] + [V + V] + [V \to V]\) by an inverse limit of iterates of that functor, and then solves subspace equations in the lattice of proper projections. The pushout sum, the functor \(\mathbb{F}\), and those equations are not formalized. **Theorem:** no — the universe \(V\) and the equations in \(\mathcal{J}_V\) are absent. **Proof:** no.

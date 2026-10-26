@@ -1,3 +1,0 @@
-If a consistent Boolean set entails the true token, then the singleton true token entails every token of that set.
-
-The entailment of true supplies a Boolean point that holds of the set and satisfies true. The undefined and false points do not satisfy true. The true point holds of the token in question, so that token is bottom or true, and in each of those cases the singleton true token entails it by a true-point witness. The token cannot be false.

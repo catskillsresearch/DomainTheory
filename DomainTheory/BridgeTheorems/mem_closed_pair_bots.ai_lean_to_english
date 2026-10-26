@@ -1,3 +1,0 @@
-A tree-system element contains the token pair-left of bottom if and only if it contains pair-right of bottom.
-
-If pair-left of bottom lies in the carrier, its singleton is contained in the carrier, and the entailment of pair-right of bottom from that singleton is absorbed by closure. The converse absorbs the entailment of pair-left of bottom from the singleton of pair-right of bottom in the same way.

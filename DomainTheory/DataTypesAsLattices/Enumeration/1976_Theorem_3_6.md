@@ -1,10 +1,6 @@
 # Theorem 3.6
 
-## Human-English
-
 @import "1976_Theorem_3_6.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[DataTypesAsLattices/Enumeration/theorem_3_6_degree.lean](theorem_3_6_degree.lean)**
 
@@ -30,20 +26,3 @@
 
 @import "theorem_3_6.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "theorem_3_6_degree.ai_lean_to_english" {code_block=false}
-
-@import "theorem_3_6_finite.ai_lean_to_english" {code_block=false}
-
-@import "generators_mem_singleGenerator_degree.ai_lean_to_english" {code_block=false}
-
-@import "theorem_3_6_converse.ai_lean_to_english" {code_block=false}
-
-@import "theorem_3_6_generated.ai_lean_to_english" {code_block=false}
-
-@import "theorem_3_6.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1976_Theorem_3_6.ai_english_concordance" {code_block=false}

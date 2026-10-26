@@ -1,3 +1,0 @@
-For each fixed j and n, the map sending m to the second Myhill case code of j, n, and m is primitive recursive.
-
-It applies the constant union code to the constant finite code of j, and then applies the conditional code to the constant n, again to the constant n, and finally to the identity. Application of codes is primitive recursive.

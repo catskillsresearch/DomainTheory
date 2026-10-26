@@ -1,3 +1,0 @@
-The odd-even packing of f and g at x equals the singleton {0} if and only if f(x) is ⊥ and g(x) is {0}.
-
-If the packing is {0}, no odd number lies in it, so f(x) is empty. An even number 2n lies in the packing only for n in g(x), and the only even member of {0} is 0, so the only possible member of g(x) is 0. The number 0 itself lies in the packing and cannot arise from the odd clause, so 0 belongs to g(x). Conversely, if f(x) is ⊥ and g(x) is {0}, the odd clause contributes nothing and the even clause contributes only 0.

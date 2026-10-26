@@ -1,3 +1,0 @@
-The self-arrow step is Scott continuous.
-
-A member of the step lies in the identity combinator or in the diagonal function-space retract. The identity part lies in the Scott union at the empty finite set. The function-space part lies in the Scott union of the diagonal, which is Scott continuous, and each such piece remains in the corresponding disjunct. Conversely, a Scott-union witness is either already in the identity, or lies in the diagonal and is lifted by monotonicity of the diagonal.

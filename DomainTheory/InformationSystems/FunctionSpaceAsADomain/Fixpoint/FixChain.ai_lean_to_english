@@ -1,1 +1,0 @@
-A fix chain of length n for a finite set w of function tokens, in the sense of the least-fixed-point construction, is defined by recursion on n. The chain of length zero is the empty set. A set v is a chain of length n + 1 when some consistent set u is a chain of length n and w entails the function token with input u and output v.

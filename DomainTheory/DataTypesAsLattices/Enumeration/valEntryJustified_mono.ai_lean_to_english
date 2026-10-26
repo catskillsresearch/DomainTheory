@@ -1,3 +1,0 @@
-If every membership recorded by one valuation trace is recorded by a second trace, then an entry justified in the first trace is justified in the second.
-
-A justification by a zero code is unchanged. A justification by an operator witness and bit witnesses transfers each of those witnesses along the assumed monotonicity of recorded membership.

@@ -1,3 +1,0 @@
-Composing L with the composition of the bar combinator of u and R yields the graph of application of u.
-
-Unfold composition and compare graphs. At an element x the goal is an application of L to a lambda applied to x. Beta reduction applies by the substitution theorem, composing continuity of application of the bar combinator of u with continuity of application of R, and equation (3.16) for the bar combinator gives the pointwise equality.

@@ -1,7 +1,5 @@
 # Example 2.3
 
-## Human-English
-
 **EXAMPLE 2.3.** Let $T$ be the neighbourhood system of the two-token domain of Example 1.2. To avoid confusion with some other domains, we will call the two total elements of $|T|$ respectively true and false. There is only one other finite element here, namely $\perp = \text{undefined}$. We often use these elements as indicators of results: true indicates a positive outcome; false, a negative outcome; and $\perp$ indicates that there is not enough information to decide the outcome totally.
 
 Let $B$ be the system for the binary tree as in the last chapter. What we wish to define is an approximable mapping $f : B \to T$. The intuitive idea of the mapping we have in mind is that the binary sequence is being read from left to right, and we are counting the number of 0's seen before the first 1 is encountered. We then test the parity of this count; if it is even, the output is true; if not, false. Using a suggestive informal notation with three dots, some results of the function that does the counting and testing can be written as:
@@ -44,8 +42,6 @@ $$
 It should be checked that 2.1(i)–(ii) are satisfied. $\square$
 
 <!-- page 28 -->
-
-## AI: Human-English to AI-Lean
 
 **[Example_2_3.lean](Example_2_3.lean)**
 

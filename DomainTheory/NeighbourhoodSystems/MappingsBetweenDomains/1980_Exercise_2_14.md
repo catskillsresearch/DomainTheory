@@ -1,7 +1,5 @@
 # Exercise 2.14
 
-## Human-English
-
 **EXERCISE 2.14.** Let $f : |D_0| \to |D_1|$ be an isomorphism between domains. Let $\varphi : D_0 \to D_1$ be the one-one correspondence between neighbourhoods provided by Theorem 2.7 where
 
 $$
@@ -17,8 +15,6 @@ $$
 <!-- page 34 -->
 
 Remark that the isomorphisms between domains correspond exactly to the isomorphisms between neighbourhood systems (in the sense of one-one inclusion preserving correspondences).
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_2_14.lean](Exercise_2_14.lean)**
 

@@ -1,3 +1,0 @@
-Binary join, as a map on the product of a complete lattice with itself, is Scott-continuous. This is the join clause of Scott's Proposition 2.7, and it holds on every complete lattice.
-
-Continuity follows from preservation of directed suprema. That preservation is the directed-supremum identity for Scott-continuous binary join.

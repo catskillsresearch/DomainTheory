@@ -1,3 +1,0 @@
-The addition combinator is combinatory.
-
-It is the application of S to K applied to the dollar combinator, and to S applied to K applied to Y, and to S applied to the closed interpretation of the primitive-recursion step term and to K applied to the successor step.

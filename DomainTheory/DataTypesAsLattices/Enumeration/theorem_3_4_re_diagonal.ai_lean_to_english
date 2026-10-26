@@ -1,3 +1,0 @@
-If val(v(k)) equals the intersection of the numeral of k with val(k) for every k, and some val(k) equals the set of i for which v(i) denotes bottom, then falsehood follows. This is Scott's Theorem 3.4 for an r.e. undefined-index set; the hypothesis that the set of indices denoting bottom is recursively enumerable is not used.
-
-Apply the diagonal contradiction, taking the set of indices to be those whose value is bottom.

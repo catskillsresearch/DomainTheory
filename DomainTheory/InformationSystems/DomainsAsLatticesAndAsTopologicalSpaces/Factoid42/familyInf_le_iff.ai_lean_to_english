@@ -1,3 +1,0 @@
-An element lies below the meet of a nonempty family if and only if it lies below every member of the family.
-
-A lower bound of the meet is a lower bound of each member by transitivity with the inequality of the meet below that member. A common lower bound of the members is a lower bound of the meet by the universal property.

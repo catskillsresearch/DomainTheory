@@ -1,3 +1,0 @@
-The left lift of a consistent finite set of tokens of the first system is product-consistent.
-
-Rewriting the left projection by the left-lift lemma leaves the hypothesis that the original set is consistent. The right projection is consistent because the right-lift lemma places it inside the consistent singleton of the least token of the second system, and consistency is downward closed.

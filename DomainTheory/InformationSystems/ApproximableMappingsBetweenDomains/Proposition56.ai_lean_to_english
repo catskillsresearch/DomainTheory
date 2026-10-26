@@ -1,3 +1,0 @@
-Proposition 5.6(i) states that the constant mapping of value b sends every element to b. Proposition 5.6(ii) states that composing an approximable mapping after the constant mapping of a given value yields the constant mapping whose value is the image of that element. Proposition 5.6(iii) states that composing the constant mapping of a given value after any approximable mapping yields the constant mapping of that same value.
-
-The numbered name theorem_56 is the conjunction of these statements. The proof is that conjunction.

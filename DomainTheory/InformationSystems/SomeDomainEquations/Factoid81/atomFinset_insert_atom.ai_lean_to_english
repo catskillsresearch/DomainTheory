@@ -1,3 +1,0 @@
-Inserting an atom token into a finite set of tree tokens adjoins the underlying atom to the atom projection.
-
-By extensionality and the membership characterization, membership in the inserted projection is equality of the corresponding atom tokens or membership of the atom token in the original set, set against equality of the atoms or membership in the original projection. Equality of atom tokens yields equality of atoms by injectivity, equality of atoms yields equality of atom tokens by substitution, and membership in the original set is common to both sides.

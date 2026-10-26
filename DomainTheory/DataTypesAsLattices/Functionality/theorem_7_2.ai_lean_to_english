@@ -1,3 +1,0 @@
-Scott 1976, Theorem 7.2, the isomorphism theorem. For retracts a and b, a(x) = a(y) if and only if those values are related by E_a. A map typed in the arrow from a to b lies in the function space from E_a to E_b, relatedness in that function space passes to the maps retracted by the arrow, and relatedness in E of the arrow returns relatedness in the function space. Relatedness in E of a product agrees with the product of E_a and E_b. Relatedness in E of a sum agrees with the sum of E_a and E_b, or with the pair of bottoms, or with the pair of tops.
-
-The four conjuncts are the isomorphism form of clause (i), clause (ii), the exact form of clause (iii), and clause (iv).

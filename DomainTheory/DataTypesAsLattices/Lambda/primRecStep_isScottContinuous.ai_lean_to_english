@@ -1,3 +1,0 @@
-With the base and the step fixed, the primitive-recursion step is Scott continuous in the functional argument.
-
-Graph continuity reduces the claim to continuity of the conditional body. For each argument, Theorem 1.3 composes continuity of the conditional in its right argument with continuity of application at the step applied to the predecessor, and that application is continuous in the functional argument by continuity of application in the function argument.

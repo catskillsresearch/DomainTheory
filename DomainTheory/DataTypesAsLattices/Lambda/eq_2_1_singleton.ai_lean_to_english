@@ -1,3 +1,0 @@
-The maximal extension of the numeral n along a family p is p(n).
-
-The empty clause fails because a numeral is nonempty. A numeral clause for m holds only for m = n, and then it copies p(n). The residual clause fails because the argument is that numeral.

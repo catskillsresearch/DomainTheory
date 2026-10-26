@@ -1,3 +1,0 @@
-For a closure and a fixed point of its application, the retract basis of that fixed point equals the set of compact fixed points below it.
-
-If a finite element is contained in the fixed point and the basis element is the closure applied to that finite element, monotonicity of application along the inclusion, rewritten by the fixed-point equation, puts the basis element below the fixed point. Conversely, if a value of the closure on a finite element lies below the fixed point, expansiveness of the closure puts the finite element inside that value, hence inside the fixed point.

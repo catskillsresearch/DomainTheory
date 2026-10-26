@@ -1,3 +1,0 @@
-A sum element cannot contain both a left token and a right token.
-
-The finite set obtained by inserting the left token into the singleton of the right token is contained in the element, so the element makes it sum-consistent. Both projections of that set are nonempty, because each inserted token lies in the corresponding projection. Each disjunct of sum consistency forces one of those projections to be empty.

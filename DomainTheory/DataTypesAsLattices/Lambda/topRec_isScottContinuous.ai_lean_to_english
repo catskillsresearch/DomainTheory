@@ -1,3 +1,0 @@
-The top recursion step is Scott continuous.
-
-Fix x and a natural number k. If k belongs to the numeral 0, the code 0 has empty finite set contained in x and k lies in that piece of the step. If k is the successor of some n in x, then 2^n codes a singleton contained in x and k lies in the successor of that singleton. Conversely, membership in the Scott union supplies a finite piece contained in x and a disjunct of the step on that piece: either k belongs to the numeral 0, or k is the successor of a witness that still lies in x.

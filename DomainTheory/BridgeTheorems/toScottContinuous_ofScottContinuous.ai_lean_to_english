@@ -1,3 +1,0 @@
-Passing a Scott-continuous map through ofScottContinuous and then toScottContinuous returns the original map.
-
-The two maps agree as functions because the information-system element of a value is recovered from the approximable relation, so extensionality of Scott-continuous maps gives the equality.

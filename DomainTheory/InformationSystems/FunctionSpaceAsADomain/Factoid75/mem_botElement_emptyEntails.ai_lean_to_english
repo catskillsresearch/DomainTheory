@@ -1,3 +1,0 @@
-A token of the bottom element is entailed by the empty set.
-
-Entailment transitivity is applied to the fact that every token of the singleton bottom token is the bottom token, which the empty set entails, together with membership in the bottom element.

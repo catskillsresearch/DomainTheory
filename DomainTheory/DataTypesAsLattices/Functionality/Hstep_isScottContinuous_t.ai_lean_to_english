@@ -1,3 +1,0 @@
-For a fixed interpreter and expression, the interpreter step is Scott continuous in the environment.
-
-The argument is a nest of ternary continuity for the definite conditional. The tag tests and the zero clause are constant in the environment. The variable clause and the successor through abstraction clauses are continuous in the environment, and the final alternative is the constant top element.

@@ -1,3 +1,0 @@
-The finite set coded by the bit-mask of a list is the set of entries of the list.
-
-Proceed by induction on the list. The empty list codes the empty set. For a cons cell, extensionality together with the laws for bitwise disjunction and for a power of two, and the inductive hypothesis, identifies the coded set with membership in the list.

@@ -1,7 +1,5 @@
 # Theorem 5.1
 
-## Human-English
-
 **THEOREM 5.1.** Every typed $\lambda$-term $\tau$ defines an approximable function of its free variables.
 
 *Proof:* We argue by an induction on the complexity of $\tau$; there will only be a few cases to consider since the "syntax" of $\lambda$-terms is limited — even though terms can be of any length.
@@ -59,8 +57,6 @@ We can now say more precisely what it means to call $\sigma = \tau$ a "true equa
 $$\lambda x . \tau = \lambda y . \tau [y / x]$$
 
 is true, provided $y$ does not occur free in the term $\tau$, since the systematic generation of the function defined by $\lambda x . \tau$ does not depend on what the variable $x$ *looks like* but only on its *position* in the term $\tau$. Some other obviously desirable rules for generating true equations are stated in the exercises. But one rule is so basic that we state it here in full generality.
-
-## AI: Human-English to AI-Lean
 
 **[Theorem_5_1.lean](Theorem_5_1.lean)**
 

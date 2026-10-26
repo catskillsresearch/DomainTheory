@@ -7,8 +7,6 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.FixedPoint
 public import DomainTheory.DataTypesAsLattices.Embedding.extend
 public import DomainTheory.DataTypesAsLattices.Embedding.embed
-public import DomainTheory.DataTypesAsLattices.Embedding.embed_injective
-public import DomainTheory.DataTypesAsLattices.Embedding.embed_continuous
 
 @[expose] public section
 
@@ -21,6 +19,6 @@ open TopologicalSpace Topology Function
 theorem theorem_1_6_injective_continuous {X : Type*} [TopologicalSpace X]
     [T0Space X] (U : ℕ → Set X) (hbasis : IsTopologicalBasis (Set.range U)) :
     Injective (embed U) ∧ Continuous (embed U) :=
-  ⟨embed_injective U hbasis, embed_continuous U hbasis⟩
+  ⟨embed.injective U hbasis, embed.continuous U hbasis⟩
 
 end DomainTheory.DataTypesAsLattices

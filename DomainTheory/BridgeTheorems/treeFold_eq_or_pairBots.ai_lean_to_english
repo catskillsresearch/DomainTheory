@@ -1,3 +1,0 @@
-Folding the unfold of a tree token either returns the token, or else the token is pair-right of bottom and the fold of its unfold is pair-left of bottom.
-
-The bottom and atom cases are equalities. A pair-left token folds back to itself. A pair-right token folds back to itself unless its component is tree bottom, in which case the fold is pair-left of bottom; the other constructors are not tree bottom.

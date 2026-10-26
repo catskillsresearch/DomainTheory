@@ -1,7 +1,5 @@
 # Exercise 3.24
 
-## Human-English
-
 **EXERCISE 3.24.** Establish some more isomorphisms :
 
 (i) $(D_0 \to (D_1 \times D_2)) \cong (D_0 \to D_1) \times (D_0 \to D_2)$
@@ -13,8 +11,6 @@
 (iv) $(D_0 + D_1) \to D_2 \cong (D_0 \to D_2) \times (D_1 \to D_2)$ . . .
 
 If some of the above are not true, perhaps at least some mapping relationships can be established.
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_3_24.lean](Exercise_3_24.lean)**
 

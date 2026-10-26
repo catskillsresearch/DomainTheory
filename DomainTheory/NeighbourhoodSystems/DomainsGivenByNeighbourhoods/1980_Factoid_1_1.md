@@ -20,8 +20,6 @@ $$
 
 Some examples will help us understand the notions better.
 
-## AI: Human-English to AI-Lean
-
 **[Factoid_1_1.lean](Factoid_1_1.lean)**
 
 @import "Factoid_1_1.lean"

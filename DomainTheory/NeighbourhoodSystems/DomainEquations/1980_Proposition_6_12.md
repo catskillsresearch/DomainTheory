@@ -1,7 +1,5 @@
 # Proposition 6.12
 
-## Human-English
-
 **PROPOSITION 6.12.** If $D \triangleleft E$, then there exists a projection pair of approximable mappings:
 
 $$
@@ -23,8 +21,6 @@ $$
 for all $x \in |D|$ and $y \in |E|$. $\square$
 
 The proof is left for the exercises.
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_6_12.lean](Proposition_6_12.lean)**
 

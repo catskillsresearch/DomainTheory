@@ -1,3 +1,0 @@
-The interpreter step at a tag-one injection equals the zero clause.
-
-Unfold the step and the expression tag. The tag is the numeral one, so the outer definite conditional takes its second branch. The predecessor of one is zero, so the next definite conditional takes its first branch.

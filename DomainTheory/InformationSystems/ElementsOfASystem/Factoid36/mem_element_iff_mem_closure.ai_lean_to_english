@@ -1,3 +1,0 @@
-A token lies in an element if and only if it lies in the closure of some consistent finite set contained in the element.
-
-If the token lies in the element, its singleton is consistent and contained in the element, and reflexivity puts the token in the closure of that singleton. Conversely, deductive closure of the element applies the entailment witnessing membership in such a closure.

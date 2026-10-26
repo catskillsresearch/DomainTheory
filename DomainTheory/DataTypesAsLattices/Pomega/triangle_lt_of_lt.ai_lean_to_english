@@ -1,3 +1,0 @@
-If a is strictly less than b, then the triangular number of a is strictly less than the triangular number of b.
-
-The successor of a is at most b. The triangular number of a is strictly less than that number plus one more than a, the successor formula identifies the sum with the triangular number of the successor, and monotonicity of the triangular numbers compares that value with the triangular number of b.

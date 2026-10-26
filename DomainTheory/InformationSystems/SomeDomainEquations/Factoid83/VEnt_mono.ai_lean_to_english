@@ -1,3 +1,0 @@
-V-entailment is monotone in the premise: if u is contained in v and u entails c, then v entails c.
-
-Induct on the derivation. Bottom is entailed outright. Membership of top, and the top-membership clauses for left and right pairs, are preserved by the inclusion. A derivation from both projections, and a derivation by either projection, pass to the images of the premise under the monotone left and right pair projections.

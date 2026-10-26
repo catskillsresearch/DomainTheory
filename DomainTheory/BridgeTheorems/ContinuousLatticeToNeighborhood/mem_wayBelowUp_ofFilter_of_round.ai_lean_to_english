@@ -1,3 +1,0 @@
-If a filter f is round, then the way-below neighbourhood of an element a belongs to f if and only if a is way-below the retraction of f.
-
-In the forward direction, roundness supplies a code b with a way-below b, and the characterization of way-below a nonempty directed supremum, applied to the codes, yields the claim. In the reverse direction, that characterization supplies a code b with a way-below b, and upward closure of the filter together with antitonicity of way-below neighbourhoods puts the neighbourhood of a into f.

@@ -1,5 +1,0 @@
-Transporting a map between products to a map between the corresponding tensor products, and evaluating at a tensor element, equals transporting back the evaluation of the original map at the corresponding product element.
-
-Unfold the transports. After substituting the equalities of tensor maps with product maps and of tensor elements with product elements, both sides are definitionally equal.
-
-The file also introduces the closed structure on an information-system object, with right adjoint the exponential functor and with the tensor-exponential adjunction, and the monoidal closed structure on the category of information systems in which every object is closed. This packages the cartesian closed category of information systems and approximable maps.

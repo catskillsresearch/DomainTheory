@@ -1,3 +1,0 @@
-Functional abstraction preserves directed suprema. Both sides, evaluated at a pair, return the supremum of the values of the directed family at that pair, because suprema in the function lattices involved are pointwise.
-
-Extensionality in each function space reduces the claim to an equality at a pair. The evaluation rule for abstraction and the pointwise formula for suprema of Scott maps rewrite both sides to one and the same supremum.

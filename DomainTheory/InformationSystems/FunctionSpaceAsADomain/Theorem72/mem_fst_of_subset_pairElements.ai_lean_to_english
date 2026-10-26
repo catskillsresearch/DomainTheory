@@ -1,3 +1,0 @@
-If a set of product tokens lies in the paired element of x and y, then every token of its first component lies in x.
-
-Consistency of the paired element makes the set product-consistent. Reflexivity of entailment places the token in the first projection of the pair, and the first-projection law rewrites that projection as x.

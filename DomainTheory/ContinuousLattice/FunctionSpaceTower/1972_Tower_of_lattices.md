@@ -2,12 +2,7 @@
 
 The levels of the function-space tower are $D_0$ and $D_{n+1} = [D_n \to D_n]$. `CLat` packages a complete lattice so the tower can be defined by recursion, and `towerType` is that recursion. `towerType_zero` and `towerType_succ` are the two levels, and `towerToMap` with `towerCoeFun` applies a successor level as a Scott map.
 
-## AI: Human-English to AI-Lean
-
 **[ContinuousLattice/FunctionSpaceTower/CLat.lean](CLat.lean)**
 
 @import "CLat.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "CLat.ai_lean_to_english" {code_block=false}

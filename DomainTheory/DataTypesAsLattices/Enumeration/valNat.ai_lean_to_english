@@ -1,1 +1,0 @@
-Scott 1976, (3.7) and Theorem 3.2. The numerical evaluator sends zero to the G combinator, and sends a successor n + 1 to the application of its value at the left component of the unpairing of n to its value at the right component. The clause is strong recursion, using that each unpairing component is strictly smaller than n + 1.

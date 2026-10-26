@@ -1,3 +1,0 @@
-Scott 1972, Proposition 2.2. In a complete lattice, bottom is way below every element, the relation is closed under binary joins on the left and under the lattice order on either side, way-below implies below, an element is way below itself exactly when its principal upset is Scott-open, and an element is way below the supremum of a nonempty directed set exactly when it is way below some member.
-
-The proof calls `bot_wayBelow`, `WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, `WayBelow.le`, `WayBelow.self_iff_scottOpen_Ici`, and `WayBelow.sSup_iff`.

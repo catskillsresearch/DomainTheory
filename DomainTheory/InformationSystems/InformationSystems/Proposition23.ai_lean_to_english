@@ -1,3 +1,0 @@
-The empty set set-entails the singleton of the least token. If u is consistent and u set-entails v, then the constructive union of u with v is consistent. A consistent finite set set-entails itself. Set-level entailment is transitive: if u and v are consistent, u set-entails v, and v set-entails w, then u set-entails w. Set-level entailment is monotone: if u and u' are consistent, u is contained in u', u set-entails v, and v' is contained in v, then u' set-entails v'. If a finite set set-entails both v and v', then it set-entails their constructive union.
-
-The numbered name theorem_23 is the conjunction of these statements. The proof is that conjunction.

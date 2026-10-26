@@ -1,3 +1,0 @@
-A sum token lies in the multiset fold of unfold insertion over a multiset of tree tokens if and only if it is the tree unfold of some member of the multiset.
-
-The proof is by induction on the multiset. The empty fold is empty, so both sides fail. At a cons cell, membership in the inserted fold is equality with the unfold of the head or membership in the fold of the tail, which matches membership in the cons multiset.

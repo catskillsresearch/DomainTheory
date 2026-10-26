@@ -1,3 +1,0 @@
-The union of two sets reachable by w-chains, for a consistent set w of function tokens, is again reachable.
-
-Pad the two chains to a common length by adding the other length, using commutativity of addition for the second chain, and then take the union of the padded chains.

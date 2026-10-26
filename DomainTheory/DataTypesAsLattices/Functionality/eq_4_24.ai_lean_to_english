@@ -1,3 +1,0 @@
-Scott 1976, (4.24). If b and c are retracts, then evaluation composed with the tensor of the arrow from b to c and b is typed as an arrow from that tensor to c.
-
-Typedness unfolds to the arrow equation, which rewrites by the arrow rule. The comparison is graph extensionality at u. The left application rewrites by the evaluation rule, the tensor rule, the pair projections, the arrow rule, composition, and the retract equation of b, reaching application of c to the application of the zeroth component of u to b applied to the first component of u. The right application uses the retract equation of the tensor of that arrow with b, the same left-hand identity, and the retract equation of c. Composition then matches the two sides.

@@ -1,3 +1,0 @@
-The finset of right-pair payloads is monotone: if v is contained in u, then every right-pair payload of v is a right-pair payload of u.
-
-A payload of v comes from a right pair that belongs to v, and that right pair still belongs to u.

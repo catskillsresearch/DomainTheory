@@ -1,3 +1,0 @@
-The second recursion value of u, applied to x, is the union over m in x of u applied to the numeral of apply(m)(num(m)).
-
-This is the β-equation for that graph, whose continuity in the argument is the Scott continuity of the second recursion value.

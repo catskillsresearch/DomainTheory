@@ -1,3 +1,0 @@
-If no code of a pair (j, k) lies in u, then σ_j of the union of u with the singleton of the code of (j, m) is the singleton of the code of (j, m + 1).
-
-Commute the union, then use extensionality. A witness from the singleton forces the index m and the successor code. A witness from u contradicts freshness. The successor code is recovered from the singleton at the index m.

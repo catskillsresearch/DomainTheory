@@ -1,7 +1,5 @@
 # Examples 8.4
 
-## Human-English
-
 **EXAMPLES 8.4.** If a system $D$ over $\Delta$ is not trivial, then the two element system $O = \{\{0\}, \{0,1\}\}$ comes from a retraction on $D$. Specifically, define a combinator
 
 $$\mathrm{check} : D \to O$$
@@ -48,8 +46,6 @@ Similarly, we can find a projection on $D \times E$ with a range isomorphic to $
 $$\mathrm{smash}(x, y) = \mathrm{fade}(\mathrm{check}(x), \mathrm{fade}(\mathrm{check}(y), \langle x, y \rangle)),$$
 
 for $x \in |D|$ and $y \in |E|$. $\square$
-
-## AI: Human-English to AI-Lean
 
 **[Examples_8_4.lean](Examples_8_4.lean)**
 

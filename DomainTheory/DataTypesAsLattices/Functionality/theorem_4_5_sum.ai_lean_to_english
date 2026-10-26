@@ -1,3 +1,0 @@
-Scott 1976, Theorem 4.5, the sum theorem. If a and b are retracts, then a ⊕ b is a retract and is strict, and an element lies in its range if and only if it is bottom, or top, or a sequence pair of the numeral 0 with an element of the range of a, or a sequence pair of the numeral 1 with an element of the range of b.
-
-The three conjuncts are the retract lemma for the sum, the strictness lemma for the sum, and the range characterization of the sum.

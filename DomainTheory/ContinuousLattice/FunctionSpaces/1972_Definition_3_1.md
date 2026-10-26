@@ -10,8 +10,6 @@ where $x \in X$ and $U \subseteq Y$ is open.
 
 The pointwise aspect of the topology is immediately apparent in the partial ordering.
 
-## AI: Human-English to AI-Lean
-
 **[ContinuousLattice/FunctionSpaces/ScottMap.lean](ScottMap.lean)**
 
 @import "ScottMap.lean"
@@ -24,14 +22,3 @@ The pointwise aspect of the topology is immediately apparent in the partial orde
 
 @import "monotone.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "ScottMap.ai_lean_to_english" {code_block=false}
-
-@import "comp.ai_lean_to_english" {code_block=false}
-
-@import "monotone.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1972_Definition_3_1.ai_english_concordance" {code_block=false}

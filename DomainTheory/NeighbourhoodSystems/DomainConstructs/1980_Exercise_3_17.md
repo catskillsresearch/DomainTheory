@@ -1,7 +1,5 @@
 # Exercise 3.17
 
-## Human-English
-
 **EXERCISE 3.17.** Using the $\mathcal{B}$ and $\mathcal{T}$ of Example 2.3 show there is a one-one approximable mapping
 
 $$
@@ -23,8 +21,6 @@ $$
 Are $\mathcal{B}$ and $\mathcal{T}^\infty$ isomorphic? Are $\mathcal{B}$ and $\mathcal{T} \times \mathcal{B}$ isomorphic?
 
 <!-- page 51 -->
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_3_17.lean](Exercise_3_17.lean)**
 

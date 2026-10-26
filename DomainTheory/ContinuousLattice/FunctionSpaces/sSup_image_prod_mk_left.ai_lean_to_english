@@ -1,3 +1,0 @@
-For an element x and a nonempty set S, the supremum of the pairs with left coordinate x and right coordinate in S equals the pair of x with the supremum of S.
-
-The set of such pairs is the product of the singleton of x with S. The supremum of that singleton is x, because every member equals x and x belongs to the singleton. The supremum of a product of nonempty sets is the pair of the suprema.

@@ -1,7 +1,5 @@
 # Exercise 7.13
 
-## Human-English
-
 **EXERCISE 7.13.** Show that an effectively given domain can always be identified with a relation $\mathrm{INCL}(n,m)$ on integers, where the two derived relations
 
 $$\mathrm{CONS}(n,m) \text{ iff } \exists k.\,\mathrm{INCL}(k,n) \text{ and } \mathrm{INCL}(k,m);$$
@@ -23,8 +21,6 @@ are both recursively decidable, and where the following axioms hold:
 $$\mathcal{D} = \big\{ \{m \in \mathbf{N} \mid \mathrm{INCL}(m,n)\} \mid n \in \mathbf{N} \big\}.$$
 
 Is this essentially any effectively given system?)
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_7_13.lean](Exercise_7_13.lean)**
 

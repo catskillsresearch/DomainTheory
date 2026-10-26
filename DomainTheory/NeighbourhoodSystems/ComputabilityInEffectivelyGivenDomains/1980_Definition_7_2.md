@@ -1,7 +1,5 @@
 # Definition 7.2
 
-## Human-English
-
 **DEFINITION 7.2.** Given two recursively presented domains,
 
 $$\mathcal{D} = \{ X_n \mid n \in \mathbf{N} \} \text{ and } E = \{ Y_m \mid m \in \mathbf{N} \},$$
@@ -35,8 +33,6 @@ $$f = \{ (X_{s(i)}, Y_{r(i)}) \mid i \in \mathbf{N} \},$$
 for a suitable pair of primitive recursive functions $s$ and $r$.
 
 Definitions 7.1 and 7.2 may very well irritate the person hearing them for the first time: instead of explaining computability in direct terms, the whole question is thrown into the lap of recursion theory! There are several answers. "You have to start somewhere" is one thing I always say. Recursion on the integers is a well-understood theory, and we shall not need the refined parts of the development, fortunately. In any case, our definitions apply to *many* domains of quite different structure, not just to the domain $\mathbf{N}$. And the next step we shall take is to show how to build up computable functions (and also effectively given domains) from simpler ones. Thus, often it will not be necessary to go back to the seemingly over-precise definitions involving the indices but to appeal to some broad general principles.
-
-## AI: Human-English to AI-Lean
 
 **[Definition_7_2.lean](Definition_7_2.lean)**
 

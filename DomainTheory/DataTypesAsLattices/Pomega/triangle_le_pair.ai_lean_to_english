@@ -1,3 +1,0 @@
-The triangular number of n + m is at most the Cantor pair of n and m, and that pair is strictly less than the triangular number of n + m + 1.
-
-The triangular number is the left-hand summand of the pair, so it lies below the pair. The successor formula rewrites the next triangular number as that triangular number plus one more than n + m. The second component is at most n + m, hence strictly below one more than n + m, and adding the triangular number on the left preserves the strict inequality.

@@ -1,3 +1,0 @@
-The numerical evaluator sends the second Myhill case code of j, n, and m to the union of the finite set coded by j with the conditional of its value at m whose two branches are both its value at n.
-
-Unfold the code and rewrite by the application law, the union code, the finite-set evaluation, the conditional code, and the three-argument beta law for the conditional. The remaining identification is the application law for the union operator.

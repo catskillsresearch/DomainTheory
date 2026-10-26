@@ -1,3 +1,0 @@
-The sequence pair of bottom with bottom is bottom.
-
-Function and set extensionality, together with the definitions of the conditional set and of bottom, show that the body of the two-place sequence is the constant function with value bottom. Unfolding sequence pairing, the graph of that constant function is bottom.

@@ -7,8 +7,6 @@
 
 @import "FixedPoint.mermaid"
 
-## AI: Human-English to AI-Lean
-
 **[DataTypesAsLattices/FixedPoint/chain_mono.lean](chain_mono.lean)**
 
 @import "chain_mono.lean"
@@ -33,16 +31,3 @@
 
 @import "iterateBot_mono.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "chain_mono.ai_lean_to_english" {code_block=false}
-
-@import "exists_index_of_finset.ai_lean_to_english" {code_block=false}
-
-@import "chain_lemma.ai_lean_to_english" {code_block=false}
-
-@import "iterateBot.ai_lean_to_english" {code_block=false}
-
-@import "fix.ai_lean_to_english" {code_block=false}
-
-@import "iterateBot_mono.ai_lean_to_english" {code_block=false}

@@ -1,7 +1,5 @@
 # Exercise 1.23
 
-## Human-English
-
 **EXERCISE 1.23.** Suppose that the neighbourhood system $D$ is countable, say,
 
 $$
@@ -19,8 +17,6 @@ Y_{n+1} &= X_{n+1}, \text{ if this set is consistent with } Y_0, Y_1, \ldots, Y_
 $$
 
 Show that $\{Y_0, Y_1, \ldots, Y_n, \ldots\}$ is a total element of $|D|$. (Hint: Show first that $Y_0, Y_1, \ldots, Y_{n-1}$ is consistent for all $n$.) In such a system show that all filters can be determined by sequences.
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_1_23.lean](Exercise_1_23.lean)**
 

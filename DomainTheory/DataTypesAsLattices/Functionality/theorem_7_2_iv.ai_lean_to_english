@@ -1,3 +1,0 @@
-Scott 1976, Theorem 7.2 (iv). For retracts a and b, relatedness in E of a ⊕ b agrees with relatedness in the sum of E_a and E_b, or with both elements being bottom, or with both elements being top.
-
-A related pair in E of the sum is one element of the sum repeated. The range characterization splits it into bottom, top, a left injection, or a right injection. The extreme cases are the two added pairs. An injection is rewritten as a pair element, and the payload relation is the identity relation of E_a or of E_b. Conversely, a summand gives equal payloads and therefore equal elements, and the left or right typing lemmas place them in the sum. The pair of bottoms and the pair of tops are typed by the bottom and top lemmas.

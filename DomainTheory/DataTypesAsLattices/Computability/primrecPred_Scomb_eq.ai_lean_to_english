@@ -1,3 +1,0 @@
-The predicate on a pair q which holds when the first component equals the nested Cantor pairing of the four pack4 projections of the second component is primitive recursive.
-
-It is the primitive-recursive equality of the first projection with the nested pairing of pack4_proj1, pack4_proj2, pack4_proj3, and pack4_proj4 of the second projection.

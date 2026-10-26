@@ -1,3 +1,0 @@
-A natural number k lies in the extension of f at y if and only if some open U containing y has k in f(x) for every subspace point x of U.
-
-Membership in the union of intersections supplies an open U containing y whose intersection of f-values contains k, so k lies in each of those values. Conversely, that same intersection belongs to the family being united, and the assumption puts k in every value being intersected.

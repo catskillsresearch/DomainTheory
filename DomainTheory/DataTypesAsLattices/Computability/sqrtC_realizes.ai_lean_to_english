@@ -1,3 +1,0 @@
-The combinator sqrtC realizes the natural-number square root.
-
-Unfold sqrtC and apply the S-combinator law Scomb_beta3 three times and the K-combinator law Kcomb_beta2 twice. The identities primRecZeroC_app, primRecComb_ofNat, primRecVal_sqrt, and sqrtIter_self then give the numeral of the square root.

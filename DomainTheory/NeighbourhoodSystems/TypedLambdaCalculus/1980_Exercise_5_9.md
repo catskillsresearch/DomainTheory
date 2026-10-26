@@ -1,10 +1,6 @@
 # Exercise 5.9
 
-## Human-English
-
 **EXERCISE 5.9.** Suppose that $f, g : \mathcal{D} \to \mathcal{D}$ are approximable and $f \circ g = g \circ f$. Show that $f$ and $g$ have a *least common fixed point* $x = f(x) = g(x)$. (Hint: Refer back to Exercise 4.20.) If in addition $f(\bot) = g(\bot)$, show that $\mathrm{fix}(f) = \mathrm{fix}(g)$. In particular, will $\mathrm{fix}(f) = \mathrm{fix}(f^2)$? What if we only assume $f \circ g = g^2 \circ f$?
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_5_9.lean](Exercise_5_9.lean)**
 

@@ -1,7 +1,5 @@
 # Definition 7.9
 
-## Human-English
-
 **DEFINITION 7.9.** Let $\mathcal{D}$ be any neighbourhood system and define
 
 $$\mathbb{P}\mathcal{D} = \left\{ \bigcup_{i < n} (\downarrow X_i) \mid \forall i < n.\, X_i \in \mathcal{D} \right\}.$$
@@ -23,8 +21,6 @@ $$\downarrow X \cap \downarrow Y \neq \emptyset \text{ iff } \{X, Y\} \text{ is 
 and in that case
 
 $$\downarrow X \cap \downarrow Y = \downarrow (X \cap Y).$$
-
-## AI: Human-English to AI-Lean
 
 **[Definition_7_9.lean](Definition_7_9.lean)**
 

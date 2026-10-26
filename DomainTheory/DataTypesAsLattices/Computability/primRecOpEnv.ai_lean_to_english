@@ -1,1 +1,0 @@
-The environment primRecOpEnv is the curried operator sending an initial value and a step to primRecComb of those arguments. It returns the application combinator dollarC at index 2, the fixed-point combinator Ycomb at index 3, the interpretation of primRecStepTerm in the constantly bottom environment at index 4, and the bottom element at every other index.

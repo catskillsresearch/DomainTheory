@@ -1,3 +1,0 @@
-If a is strict, then the empty set lies below a in the retract order. The empty retract is below every strict retract.
-
-Both projection equations unfold composition. Application of the empty set is constantly empty, so one graph equals the empty set. On the other side the same constant empty value is sent to empty by strictness of a, and that graph is again the empty set.

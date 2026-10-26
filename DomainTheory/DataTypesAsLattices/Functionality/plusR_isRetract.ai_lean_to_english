@@ -1,3 +1,0 @@
-Scott 1976, Theorem 4.5 (i). If a and b are retracts, then their sum is a retract.
-
-The retract equation asks that the sum equal the graph of its double application. Graph extensionality and the application equation reduce the claim to a four-way split on the double conditional of the tag. A zero tag rewrites by the application equation, the two sequence-pair projections, the double conditional at zero, and the retract equation of a. A positive tag does the same with the double conditional at one and the retract equation of b. A mixed tag is the full set, and an empty tag is bottom.

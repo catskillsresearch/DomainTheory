@@ -1,1 +1,0 @@
-Scott 1976, (4.46). The functional vaalF, the companion of val on trees, sends a value v to the graph of the map which on a tree code x returns the McCarthy conditional of the application of x to zero, with zero branch the G combinator and positive branch the application of v at the left child of x to the application of v at the right child.

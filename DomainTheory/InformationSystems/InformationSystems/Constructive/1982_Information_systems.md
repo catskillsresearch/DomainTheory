@@ -4,11 +4,7 @@
 
 @import "../InformationSystems.mermaid"
 
-## Human-English
-
 @import "1982_Information_systems.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/InformationSystems/Constructive/coe_funion.lean](coe_funion.lean)**
 
@@ -62,34 +58,3 @@
 
 @import "../Constructive.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "coe_funion.ai_lean_to_english" {code_block=false}
-
-@import "insert_comm'.ai_lean_to_english" {code_block=false}
-
-@import "instLeftCommutativeInsert.ai_lean_to_english" {code_block=false}
-
-@import "funion.ai_lean_to_english" {code_block=false}
-
-@import "Basic/notation5.ai_lean_to_english" {code_block=false}
-
-@import "mem_foldr_insert.ai_lean_to_english" {code_block=false}
-
-@import "mem_funion.ai_lean_to_english" {code_block=false}
-
-@import "funion_empty_right.ai_lean_to_english" {code_block=false}
-
-@import "decidableEq_finset.ai_lean_to_english" {code_block=false}
-
-@import "subset_funion_left.ai_lean_to_english" {code_block=false}
-
-@import "subset_funion_right.ai_lean_to_english" {code_block=false}
-
-@import "funion_subset_iff.ai_lean_to_english" {code_block=false}
-
-@import "../Constructive.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_Information_systems.ai_english_concordance" {code_block=false}

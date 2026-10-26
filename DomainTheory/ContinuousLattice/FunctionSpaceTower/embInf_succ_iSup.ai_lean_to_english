@@ -1,3 +1,0 @@
-The inverse-limit embedding of level n+1 sends the supremum of a monotone sequence in D_{n+1} to the supremum of the embedded terms.
-
-The range of a monotone sequence is directed, because the value at the maximum of two indices lies above both values, and the range is nonempty. The indexed supremum is the supremum of that range. The embedding preserves this directed supremum, and the image of the range is the range of the composite, whose supremum is the indexed supremum of the embedded terms.

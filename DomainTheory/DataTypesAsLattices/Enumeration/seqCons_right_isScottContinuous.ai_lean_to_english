@@ -1,3 +1,0 @@
-For a fixed element x, the map sending xs to the sequence cons of x and xs is Scott continuous.
-
-It is the graph of the family sending xs and z to the conditional of z between x and the application of xs to the predecessor of z. For each z, Scott continuity of the right conditional, composed by Theorem 1.3 with continuity of application in its left argument at that predecessor, gives continuity in xs.

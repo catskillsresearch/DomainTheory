@@ -1,3 +1,0 @@
-If seven maps are Scott continuous, the seven-way sum of their values is Scott continuous in the common parameter.
-
-The graph of a family continuous in a parameter is Scott continuous in that parameter. For each fixed argument, tagged injection of the application of the corresponding map at the second component is continuous, as a composite of tagged injection, application in the function, and the given map. Nested uses of the ternary continuity theorem assemble the seven double conditionals. Each test is constant in the parameter, and the final positive branch is the constant full set.

@@ -1,3 +1,0 @@
-If a is a closure, every set x is contained in the application of the shift of a to x.
-
-The application unfolds as the union of the singleton zero with a successor set. Zero lies in the left summand. A successor lies in the right summand once its predecessor lies in a applied to the predecessor set, and that inclusion is the expansiveness of a coming from left monotonicity of application and the identity action of the identity combinator.

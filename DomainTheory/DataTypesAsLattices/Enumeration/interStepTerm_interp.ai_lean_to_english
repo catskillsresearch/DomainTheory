@@ -1,3 +1,0 @@
-Interpreting the intersection-step term in the constantly bottom environment yields the graph of the intersection step.
-
-Unfold both sides and simplify interpretation under the environment update. The three nested graphs agree once equation 2.14 is used for the inner identity.

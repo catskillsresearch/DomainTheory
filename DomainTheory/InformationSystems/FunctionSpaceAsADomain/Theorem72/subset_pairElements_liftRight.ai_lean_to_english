@@ -1,3 +1,0 @@
-If a finite set lies in an element y, then its right lift lies in the paired element of any element x with y.
-
-A token of the right lift is the right token of a member of the set, hence of y. The second-projection law places that member in the second projection of the pair, so it comes from a product set inside the pair that entails its singleton. Closure of the paired element under that entailment, with the first component sent to the bottom token, yields the right token.

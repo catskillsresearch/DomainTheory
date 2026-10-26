@@ -1,3 +1,0 @@
-In a continuous lattice, if a Scott-open set contains z, it contains every element way above some element a that is way below z.
-
-The set of elements way below z is nonempty, because bottom is way below z, and its supremum equals z, hence lies in the open set. Directedness and Scott-openness supply an element a of that set already in the open set. If a is way below w, then a lies below w, and the upper-set property puts w in the open set.

@@ -1,3 +1,0 @@
-For a continuous-lattice projection, if a family f is the retraction of a family g, then the inclusion of the subspace-extension infimum of f on a set U lies below the subspace-extension infimum of g on U. This is the inclusion half of Scott's Lemma 3.9, used in the inverse-limit argument of Theorem 4.4.
-
-The inequality is the composite of the comparison of the inclusion applied to the extension of f with the extension of that inclusion, and the comparison of the extension of f with the extension of g.

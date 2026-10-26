@@ -1,1 +1,0 @@
-The positive bar branch of u and x is the sequence whose head is the numeral 1 and whose tail sequences u with the application of x to the numeral 1. This is the positive branch of the bar operator in Scott 1976, (3.15), the triple of 1, u, and the first tail of x.

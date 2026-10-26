@@ -1,3 +1,0 @@
-Interpreting Rterm in the constantly bottom environment yields the combinator R.
-
-Unfold both sides and compare graphs at an arbitrary element x. The left side is the interpretation of sequencing the zero term with variable 0 in the environment updated at index 0 by x. The sequencing interpretation lemma applies: one avoidance side condition is immediate, and the other holds because 0 differs from 7. Simplifying interpretation and the environment update then gives sequencing of the numeral 0 with x.

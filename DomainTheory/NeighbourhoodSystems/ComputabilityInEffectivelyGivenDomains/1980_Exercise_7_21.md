@@ -1,7 +1,5 @@
 # Exercise 7.21
 
-## Human-English
-
 **EXERCISE 7.21.** Is there a non-trivial combinator of type
 
 $$\mathbb{P}(D \to E) \to (\mathbb{P} D \to \mathbb{P} E)\ ?$$
@@ -19,8 +17,6 @@ Is there any connection between
 $$\mathbb{P}\mathbf{N} \text{ and } P\mathbf{N}\ ????$$
 
 <!-- page 133 -->
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_7_21.lean](Exercise_7_21.lean)**
 

@@ -1,1 +1,0 @@
-The four-place sequence used by the expanded product of Scott 1976, (4.44), is the graph of the nested conditional that returns its four components on the argument, its predecessor, its second predecessor, and its third predecessor, and returns the bottom element when none of those tests succeed.

@@ -1,7 +1,5 @@
 # Exercise 4.21
 
-## Human-English
-
 **EXERCISE 4.21.** Show that the less-than-or-equal-to relation $\ell \subseteq \mathbf{N} \times \mathbf{N}$ is uniquely determined by the fixed point equation
 
 $$
@@ -17,8 +15,6 @@ n \cdot \mathbf{N} = \{0\} \cup \{n + m \mid m \in n \cdot \mathbf{N}\},
 $$
 
 where $n \in \mathbf{N}$ is fixed.)
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_4_21.lean](Exercise_4_21.lean)**
 

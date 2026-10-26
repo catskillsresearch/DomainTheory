@@ -1,7 +1,5 @@
 # Exercise 8.25
 
-## Human-English
-
 **EXERCISE 8.25.** The problem is to find non-trivial solutions to the domain equation
 $$
 (\spadesuit) \qquad D \cong D \to D.
@@ -23,8 +21,6 @@ $$
 D \times D \cong D,
 $$
 and then show $D$ satisfies $(\spadesuit)$.) Is this $D$ effectively given?
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_8_25.lean](Exercise_8_25.lean)**
 

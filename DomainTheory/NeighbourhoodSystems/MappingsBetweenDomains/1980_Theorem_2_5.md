@@ -1,7 +1,5 @@
 # Theorem 2.5
 
-## Human-English
-
 **THEOREM 2.5.** The class of neighbourhood systems and approximable mappings form a *category*, where the identity mapping $I_D : D \to D$ relates $X, Y \in D$ as follows:
 
 (i) $X\ I_D\ Y$ iff $X \subseteq Y$.
@@ -50,8 +48,6 @@ So, as relations, $h \circ (g \circ f) = (h \circ g) \circ f$. $\square$
 It may seem as though we have, in the definition of composition, written things backwards. But the reason is that when mappings are taken as elementwise functions, then the order is preserved in expressions involving the usual function value notation. We have, for example:
 
 <!-- page 30 -->
-
-## AI: Human-English to AI-Lean
 
 **[Theorem_2_5.lean](Theorem_2_5.lean)**
 

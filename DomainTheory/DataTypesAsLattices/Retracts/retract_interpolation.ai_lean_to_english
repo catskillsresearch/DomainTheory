@@ -1,3 +1,0 @@
-Continuous-lattice interpolation: a set typed by a retract equals the union of the values of the retract on those finite sets e n that are contained in the set. The retract hypothesis is not used.
-
-Typing says the retract fixes the set, and Scott continuity rewrites that value as a Scott union. An element of the set therefore lies in the value on some finite set contained in it. An element of such a value lies in the value on the whole set by monotonicity, hence in the set.

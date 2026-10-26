@@ -1,3 +1,0 @@
-The right curry of a Scott map preserves directed suprema. For a Scott map f from the product of complete lattices D and D' into D'' and an element x of D, the map sending y to f(x, y) preserves directed suprema.
-
-Let S be a nonempty directed subset of D'. The set of pairs (x, y) with y in S is nonempty and directed, because a common upper bound c of two members of S gives the common upper bound (x, c). The value f(x, supremum of S) equals f of the supremum of those pairs, by the product-supremum identity at a fixed left coordinate, and f preserves that directed supremum. The image of the pairs under f is the image of S under the curried map.

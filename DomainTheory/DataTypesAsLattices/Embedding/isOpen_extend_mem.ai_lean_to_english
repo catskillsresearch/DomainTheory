@@ -1,3 +1,0 @@
-For each natural number k, the set of ambient points at which k belongs to the extension of f is open.
-
-By the membership criterion for the extension, that set is the union of those opens U such that k lies in f(x) for every subspace point of U. A union of opens is open.

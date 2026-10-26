@@ -1,7 +1,5 @@
 # Definition 6.10
 
-## Human-English
-
 **DEFINITION 6.10.** For two neighbourhood systems $D$ and $E$ we write
 
 $$
@@ -19,8 +17,6 @@ D_0 \triangleleft D_1 \text{ iff } D_0 \subseteq D_1.
 $$
 
 It is also easy to prove that the union of a directed family of subdomains of $E$ is again a subdomain. As a consequence of this remark we have:
-
-## AI: Human-English to AI-Lean
 
 **[Definition_6_10.lean](Definition_6_10.lean)**
 

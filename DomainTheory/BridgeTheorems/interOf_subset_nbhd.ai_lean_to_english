@@ -1,3 +1,0 @@
-If an index belongs to a finite set of indices, the folded intersection of the corresponding basis neighbourhoods is contained in the neighbourhood of that index.
-
-A point of the folded intersection lies in every neighbourhood indexed by the set, by the membership rule for the folded intersection, and therefore lies in the neighbourhood of the given index.

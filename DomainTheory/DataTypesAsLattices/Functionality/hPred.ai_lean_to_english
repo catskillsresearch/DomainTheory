@@ -1,1 +1,0 @@
-The predecessor clause sends H, an expression e, and an environment t to the conditional set of the tag of the value of H at the payload of e. The zero branch is the left injection of the predecessor of the untagged payload of that value, and the positive branch is bottom.

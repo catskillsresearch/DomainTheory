@@ -1,3 +1,0 @@
-The right image of an element x lies under the right image of an element y if and only if x lies under y.
-
-If the images are ordered and a token belongs to x, the round trip through right-sum extraction puts the corresponding right token in the image of x, hence in the image of y, and transporting back through the extraction for y puts the token in y. The converse is monotonicity of the element map of the right inclusion.

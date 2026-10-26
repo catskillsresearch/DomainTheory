@@ -1,7 +1,5 @@
 # Proposition 3.2
 
-## Human-English
-
 **PROPOSITION 3.2.** The construct $\mathcal{D}_0 \times \mathcal{D}_1$ always gives a neighbourhood system where for elements $x, x' \in |\mathcal{D}_0|$ and $y, y' \in |\mathcal{D}_1|$ we have
 
 (i) $\langle x, y \rangle \subseteq \langle x', y' \rangle$ iff $x \subseteq x'$ and $y \subseteq y'$.
@@ -51,8 +49,6 @@ Moreover, if $z = \langle x, y \rangle$, then $\langle x, y \rangle_0 = x$ and $
 The one-one correspondence required is thus established. $\square$
 
 There is more going on in the proof of 3.2 than just a one-one correspondence between elements and pairs. The extra information is best formalized by introducing a notation for mappings.
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_3_2.lean](Proposition_3_2.lean)**
 

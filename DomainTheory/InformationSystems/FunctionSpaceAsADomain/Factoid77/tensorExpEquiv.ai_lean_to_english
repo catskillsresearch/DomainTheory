@@ -1,1 +1,0 @@
-The hom-set equivalence for the exponential, given by Scott curry after braiding, identifies morphisms from the tensor of A and Y to Z with morphisms from Y to the exponential of A and Z. The forward map is right curry, the inverse is right uncurry, and the two round trips are the curry–uncurry identities.

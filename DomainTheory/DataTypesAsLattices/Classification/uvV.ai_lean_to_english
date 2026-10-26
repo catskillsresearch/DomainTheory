@@ -1,1 +1,0 @@
-Scott's table v, given on {⊥, 0, ⊤} and extended continuously to all of Pω, sends a pair (x, y) to the set of k such that k is 0, or k is 1 and some successor lies in x or in y, or else both 0 and some successor lie in x and both lie in y, in which case every k belongs.

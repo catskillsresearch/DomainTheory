@@ -1,3 +1,0 @@
-Comparable Kleene stages of a strictness-preserving, retract-monotone retract functor stand in the retract order.
-
-Induct along the inequality of indices. Equal stages are related by reflexivity, since each stage is a retract. A successor step composes the inductive inequality with the adjacent projection inequality.

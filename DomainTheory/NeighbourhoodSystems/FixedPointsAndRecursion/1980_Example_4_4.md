@@ -1,7 +1,5 @@
 # Example 4.4
 
-## Human-English
-
 **EXAMPLE 4.4.** The domain $C$ of finite or infinite binary sequences mentioned in Exercise 2.21 may be regarded as a generalization of $N$. This can be made plain by saying how we wish to regard $C$ as a structured domain. To do this we should recall what $C$ is as a neighbourhood system. In the first place
 
 $$
@@ -155,8 +153,6 @@ The examples we have given with $N$ and $C$ are examples of definitions of funct
 But, as is well known, recursion also can be done over sets like $\mathbf{N}$, and we should examine now the connection between the familiar kind of recursion and what we are doing over domains. Of course, one simple connection is already provided by the way we regard $\mathbf{N}$ as a subset of $N$. But there are other useful connections that can be employed in a way that may seem more direct.
 
 <!-- page 65 -->
-
-## AI: Human-English to AI-Lean
 
 **[Example_4_4.lean](Example_4_4.lean)**
 

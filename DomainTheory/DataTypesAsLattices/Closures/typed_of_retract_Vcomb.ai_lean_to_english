@@ -1,3 +1,0 @@
-A point typed by a set remains typed by the universe combinator applied to that set.
-
-After the application law for the universe combinator, typing is equality of the point with the application of the graph of the universe operator. The beta law rewrites that application as the value of the operator. The point is contained in that value by the expansive inclusion. Conversely, every member of the value belongs to the point: the point contains itself, and the original typing equation makes the set applied to the point contained in the point, so the point is one of the sets in the intersection that defines the operator.

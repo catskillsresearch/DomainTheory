@@ -1,3 +1,0 @@
-Scott 1976, (2.11). When both arguments are graphs, application preserves binary intersection.
-
-One inclusion is the general inclusion for application of an intersection. Conversely, finite witnesses for the two applications may be joined by bitwise or. The joined finite set is still contained in the argument, and each graph remains closed when its finite argument is enlarged to that join.

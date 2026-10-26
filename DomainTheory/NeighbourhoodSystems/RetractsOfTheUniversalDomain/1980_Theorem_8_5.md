@@ -1,7 +1,5 @@
 # Theorem 8.5
 
-## Human-English
-
 **THEOREM 8.5.** For an approximable mapping $a : E \to E$ the following are equivalent:
 
 (i) $a$ is a finitary projection;
@@ -37,8 +35,6 @@ Conversely, if $X \ a \ X$ holds, then $\uparrow X \subseteq a(\uparrow X)$. But
 Finally, if we calculate $a = i \circ j$ by the formulae of 6.12 (with $D'$ for $D$, of course), we obtain our formula (ii). $\square$
 
 The criterion for being a finitary projection just obtained provides us with a very interesting new combinator.
-
-## AI: Human-English to AI-Lean
 
 **[Theorem_8_5.lean](Theorem_8_5.lean)**
 

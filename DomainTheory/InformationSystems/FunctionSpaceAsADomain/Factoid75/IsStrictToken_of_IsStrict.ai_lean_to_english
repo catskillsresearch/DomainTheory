@@ -1,3 +1,0 @@
-A function-space token related by a strict approximable map is a strict token.
-
-If the input is entailed by the empty set, it is contained in the bottom element. Monotonicity of the relation, using Proposition 2.3 on the input and reflexivity of entailment on each output singleton, puts the output in the image of the bottom element. Strictness rewrites that image as the bottom element, so the output is entailed by the empty set.

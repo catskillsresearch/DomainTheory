@@ -1,7 +1,5 @@
 # Exercise 2.13
 
-## Human-English
-
 **EXERCISE 2.13.** (For topologists.) Recall Exercise 1.22 where it was shown that any domain $|D|$ is a topological space. Prove from Exercise 2.9 that the functions $f : |D_0| \to |D_1|$ determined by approximable mappings are exactly *the continuous functions between these spaces.* (Hint: To prove continuity, remark that by 2.9
 
 $$
@@ -21,8 +19,6 @@ x = \bigcup \{ \uparrow X \mid X \in x \}
 $$
 
 for all $x \in |D_0|$.)
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_2_13.lean](Exercise_2_13.lean)**
 

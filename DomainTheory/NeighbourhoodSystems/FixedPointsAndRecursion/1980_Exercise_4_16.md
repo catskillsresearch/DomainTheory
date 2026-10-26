@@ -1,7 +1,5 @@
 # Exercise 4.16
 
-## Human-English
-
 **EXERCISE 4.16.** (For fixed-point nuts). Show that a monotone function as in 4.15 has an "optimal" fixed point in the sense that it is the greatest fixed point <u>below</u> all the maximal fixed points and at the same time it is the largest fixed point consistent with all other fixed points. *Consistency* for sets of elements means having a common upper bound. (Hint: Follow these steps:
 
 (1) Show that any non-empty set $S$ of fixed points has a largest fixed point <u>below</u> by using the formula
@@ -13,8 +11,6 @@ $$
 and finding the least fixed point over $\bigcap S$.
 
 (2) Letting $a$ be the fixed point of (1) constructed from the set of maximal fixed points, remark that $a$ is consistent with any other fixed point $x = f(x)$, since $x$ can be extended to a maximal one. Suppose $b$ is consistent with all fixed points, then $b \sqsubseteq y$ if $y$ is maximal. (Why?).)
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_4_16.lean](Exercise_4_16.lean)**
 

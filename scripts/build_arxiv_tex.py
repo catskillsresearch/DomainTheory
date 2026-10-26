@@ -22,6 +22,8 @@ import sys
 import textwrap
 from pathlib import Path
 
+from PIL import Image
+
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
@@ -37,6 +39,11 @@ PUPPETEER_CONFIG = SCRIPTS / "puppeteer-config.json"
 MERMAID_CONFIG = SCRIPTS / "mermaid-config.json"
 LISTING_CHUNK_LINES = 400
 _WRITTEN_LISTINGS: set[Path] = set()
+
+# Letter (8.5x11) content box under fullpage ≈ 6.5in × 9in; leave room for caption.
+LETTER_FIG_MAX_WIDTH_IN = 6.5
+LETTER_FIG_MAX_HEIGHT_IN = 8.0
+LETTER_FIG_DPI = 150
 
 GITHUB_URL = r"https://github.com/catskillsresearch/DomainTheory"
 # CMU SCS tech-report front matter (same authors / style as archive/scott1964).
@@ -65,6 +72,20 @@ def find_chrome() -> str | None:
     return None
 
 
+def fit_png_for_letter(png_path: Path) -> None:
+    """Downscale a PNG so it fits an 8.5×11in content box at ``LETTER_FIG_DPI``."""
+    max_w = int(LETTER_FIG_MAX_WIDTH_IN * LETTER_FIG_DPI)
+    max_h = int(LETTER_FIG_MAX_HEIGHT_IN * LETTER_FIG_DPI)
+    with Image.open(png_path) as im:
+        w, h = im.size
+        if w <= max_w and h <= max_h:
+            return
+        scale = min(max_w / w, max_h / h)
+        new_size = (max(1, int(w * scale)), max(1, int(h * scale)))
+        fitted = im.resize(new_size, Image.Resampling.LANCZOS)
+        fitted.save(png_path, optimize=True)
+
+
 def render_mermaid(code: str, idx: int) -> str:
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     mmd_path = FIGURES_DIR / f"figure-{idx:03d}.mmd"
@@ -73,42 +94,39 @@ def render_mermaid(code: str, idx: int) -> str:
     code_stripped = code.strip() + "\n"
     if pdf_path.is_file():
         pdf_path.unlink()
-    if (
+    cached = (
         mmd_path.is_file()
         and png_path.is_file()
         and mmd_path.read_text(encoding="utf-8") == code_stripped
-    ):
-        return png_path.relative_to(ROOT).as_posix()
-    mmd_path.write_text(code_stripped, encoding="utf-8")
+    )
+    if not cached:
+        mmd_path.write_text(code_stripped, encoding="utf-8")
 
-    mmdc = shutil.which("mmdc")
-    if not mmdc:
-        raise RuntimeError(
-            "mermaid-cli (mmdc) not found; install with "
-            "`npm install -g @mermaid-js/mermaid-cli`"
-        )
-    env = os.environ.copy()
-    chrome = find_chrome()
-    if chrome:
-        env["PUPPETEER_EXECUTABLE_PATH"] = chrome
-    # Raster PNG for arXiv (embedded PDF figures are rejected). Scale 3 keeps
-    # the diagrams sharp on the printed page.
-    cmd = [mmdc, "-i", str(mmd_path), "-o", str(png_path), "-b", "white", "-s", "3"]
-    if MERMAID_CONFIG.is_file():
-        cmd += ["-c", str(MERMAID_CONFIG)]
-    if PUPPETEER_CONFIG.is_file():
-        cmd += ["-p", str(PUPPETEER_CONFIG)]
-    proc = subprocess.run(cmd, env=env, capture_output=True, text=True, check=False)
-    if proc.returncode != 0 or not png_path.is_file():
-        sys.stderr.write(proc.stdout + "\n" + proc.stderr + "\n")
-        # Oversized dependency graphs: keep the source as a listing instead of failing
-        # the whole TeX build.
-        sys.stderr.write(
-            f"warning: mmdc failed on figure {idx}; embedding diagram source as a listing\n"
-        )
-        rel_listing, _ = write_listing(code_stripped, f"mermaid-figure-{idx:03d}.mmd")
-        # Caller expects a PNG path; return a sentinel handled by replace_fences.
-        return f"LISTING:{rel_listing}"
+        mmdc = shutil.which("mmdc")
+        if not mmdc:
+            raise RuntimeError(
+                "mermaid-cli (mmdc) not found; install with "
+                "`npm install -g @mermaid-js/mermaid-cli`"
+            )
+        env = os.environ.copy()
+        chrome = find_chrome()
+        if chrome:
+            env["PUPPETEER_EXECUTABLE_PATH"] = chrome
+        # Raster PNG for arXiv (embedded PDF figures are rejected).
+        cmd = [mmdc, "-i", str(mmd_path), "-o", str(png_path), "-b", "white", "-s", "2"]
+        if MERMAID_CONFIG.is_file():
+            cmd += ["-c", str(MERMAID_CONFIG)]
+        if PUPPETEER_CONFIG.is_file():
+            cmd += ["-p", str(PUPPETEER_CONFIG)]
+        proc = subprocess.run(cmd, env=env, capture_output=True, text=True, check=False)
+        if proc.returncode != 0 or not png_path.is_file():
+            sys.stderr.write(proc.stdout + "\n" + proc.stderr + "\n")
+            sys.stderr.write(
+                f"warning: mmdc failed on figure {idx}; embedding diagram source as a listing\n"
+            )
+            rel_listing, _ = write_listing(code_stripped, f"mermaid-figure-{idx:03d}.mmd")
+            return f"LISTING:{rel_listing}"
+    fit_png_for_letter(png_path)
     return png_path.relative_to(ROOT).as_posix()
 
 
@@ -353,12 +371,29 @@ def extract_mermaid_captions(text: str) -> list[str]:
 
 
 def figure_latex(rel_path: str, caption: str, label: str) -> str:
+    """Numbered float sized to the letter text block (graphicx width/height)."""
+    cap = caption.replace("&", "\\&")
     return (
-        "\\begin{figure}[htbp]\n"
+        "\\begin{figure}[!htbp]\n"
         "\\centering\n"
-        f"\\includegraphics[max width=\\linewidth,"
-        f"max totalheight=0.85\\textheight,keepaspectratio]{{{rel_path}}}\n"
-        f"\\caption{{{caption}}}\n"
+        f"\\includegraphics[width=\\linewidth,height=0.78\\textheight,keepaspectratio]"
+        f"{{{rel_path}}}\n"
+        f"\\caption{{{cap}}}\n"
+        f"\\label{{{label}}}\n"
+        "\\end{figure}\n"
+    )
+
+
+def listing_figure_latex(listing: str, caption: str, label: str) -> str:
+    """Fallback numbered figure when mermaid rasterization fails."""
+    cap = caption.replace("&", "\\&")
+    return (
+        "\\begin{figure}[!htbp]\n"
+        "\\centering\n"
+        "\\begin{minipage}{\\linewidth}\n"
+        f"\\lstinputlisting[style=leanbox]{{{listing}}}\n"
+        "\\end{minipage}\n"
+        f"\\caption{{{cap} (diagram source; PNG rasterization failed.)}}\n"
         f"\\label{{{label}}}\n"
         "\\end{figure}\n"
     )
@@ -459,20 +494,13 @@ def replace_fences(
                 if mermaid_idx < len(mermaid_captions)
                 else f"Module dependency diagram {mermaid_idx + 1}"
             )
-            slug = re.sub(r"[^a-z0-9]+", "-", caption.lower()).strip("-")[:48] or str(
-                mermaid_idx + 1
-            )
-            label = f"fig:mermaid-{slug}"
+            # Index keeps \\label unique when several diagrams share a heading.
+            label = f"fig:mermaid-{mermaid_idx:03d}"
             mermaid_idx += 1
             other_idx += 1
             if rel_path.startswith("LISTING:"):
                 listing = rel_path.removeprefix("LISTING:")
-                placeholders[key] = (
-                    f"\\begin{{quote}}\\textit{{{caption}}} "
-                    f"(diagram omitted: too large to render; source listing.)"
-                    f"\\end{{quote}}\n"
-                    f"\\lstinputlisting[style=leanbox]{{{listing}}}\n"
-                )
+                placeholders[key] = listing_figure_latex(listing, caption, label)
             else:
                 placeholders[key] = figure_latex(rel_path, caption, label)
             return f"\n\n{key}\n\n"

@@ -1,3 +1,0 @@
-A number m lies in the graph of the constant function with value the finite set coded by n if and only if m is a pair code whose second component is a set bit of n.
-
-A graph witness is a pair (a, b) with b in that finite set. The pair code of a and b unpairs to both components, and the bit characterization gives the bit of n. Conversely, unpairing the given code supplies the two components of a graph witness.

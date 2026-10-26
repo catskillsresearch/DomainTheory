@@ -1,3 +1,0 @@
-The canonical Scott extension of a map into a continuous lattice is continuous for the Scott topology on the lattice.
-
-If a Scott-open set contains the value at a point, the way-below basis supplies an element way-below that value whose principal upset lies in the open set. The value is a directed supremum of the defining family, so the element is way-below one of those infima, coming from an open neighbourhood of the point. The same neighbourhood witnesses that the element is way-below the value at every one of its points, so the neighbourhood lies in the preimage of the open set.

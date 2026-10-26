@@ -1,3 +1,0 @@
-The predicate of numbers that lie in the range of the shifted halting enumerator is recursively enumerable.
-
-Membership is existence of a preimage under the enumerator. Equality of the enumerator on the second component with the first component is primitive recursive, hence a computable predicate and therefore recursively enumerable, and existential quantification preserves recursive enumerability.

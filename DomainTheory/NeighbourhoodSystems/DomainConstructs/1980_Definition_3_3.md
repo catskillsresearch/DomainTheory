@@ -1,7 +1,5 @@
 # Definition 3.3
 
-## Human-English
-
 **DEFINITION 3.3.** *Projection mappings*
 
 $$
@@ -29,8 +27,6 @@ $$
 holds for all $X \in \mathcal{D}_0$, $Y \in \mathcal{D}_1$, and $Z \in \mathcal{D}_2$. $\square$
 
 <!-- page 39 -->
-
-## AI: Human-English to AI-Lean
 
 **[Definition_3_3.lean](Definition_3_3.lean)**
 

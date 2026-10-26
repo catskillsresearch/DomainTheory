@@ -1,7 +1,5 @@
 # Exercise 3.19
 
-## Human-English
-
 **EXERCISE 3.19.** Suppose we are given systems and approximable mappings
 
 $$
@@ -29,8 +27,6 @@ In addition prove that
 Do equations (iii) and (iv) uniquely determine $f + g$?
 
 <!-- page 52 -->
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_3_19.lean](Exercise_3_19.lean)**
 

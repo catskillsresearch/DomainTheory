@@ -1,7 +1,5 @@
 # Proposition 6.7
 
-## Human-English
-
 **PROPOSITION 6.7.** If $i : T(D) \to D$ is an initial $T$-algebra, then so is $T(i) : T^2(D) \to T(D)$ and $i$ is the isomorphism from $T(D)$ to $D$.
 
 **Proof:** Clearly since $T$ is a functor, the map $T(i)$ has the right mapping character to make $T(D)$ a $T$-algebra. Since $D$ is initial, we have a commuting diagram:
@@ -53,8 +51,6 @@ D \cong T(D).
 $$
 
 But generally that is not enough to assure that $D$ is initial. There is a condition that our functors satisfy, however, which guarantees the existence of homomorphisms.
-
-## AI: Human-English to AI-Lean
 
 **[Proposition_6_7.lean](Proposition_6_7.lean)**
 

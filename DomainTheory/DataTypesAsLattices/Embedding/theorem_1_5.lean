@@ -7,7 +7,6 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.FixedPoint
 public import DomainTheory.DataTypesAsLattices.Embedding.extend
 public import DomainTheory.DataTypesAsLattices.Embedding.embed
-public import DomainTheory.DataTypesAsLattices.Embedding.isOpen_extend_mem
 
 @[expose] public section
 
@@ -22,6 +21,6 @@ theorem theorem_1_5 {Y : Type*} [TopologicalSpace Y] {X : Set Y}
     (f : X → Pomega) : Continuous (extend (Y := Y) (X := X) f) := by
   refine continuous_generateFrom_iff.2 ?_
   rintro _ ⟨k, rfl⟩
-  exact isOpen_extend_mem f k
+  exact extend.isOpen_mem f k
 
 end DomainTheory.DataTypesAsLattices

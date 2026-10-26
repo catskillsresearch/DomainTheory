@@ -8,8 +8,6 @@
 
 @import "Continuous.mermaid"
 
-## AI: Human-English to AI-Lean
-
 **[DataTypesAsLattices/Continuous/basicNhhd.lean](basicNhhd.lean)**
 
 @import "basicNhhd.lean"
@@ -98,48 +96,3 @@
 
 @import "isScottContinuous_iff_continuous.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "basicNhhd.ai_lean_to_english" {code_block=false}
-
-@import "IsScottOpen.ai_lean_to_english" {code_block=false}
-
-@import "memOpen.ai_lean_to_english" {code_block=false}
-
-@import "scottPiece.ai_lean_to_english" {code_block=false}
-
-@import "scottUnion.ai_lean_to_english" {code_block=false}
-
-@import "IsScottContinuous.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
-
-@import "basicNhhd_eq_iInter.ai_lean_to_english" {code_block=false}
-
-@import "basicNhhd_inter.ai_lean_to_english" {code_block=false}
-
-@import "basicNhhd_zero.ai_lean_to_english" {code_block=false}
-
-@import "isOpen_memOpen.ai_lean_to_english" {code_block=false}
-
-@import "isOpen_basicNhhd.ai_lean_to_english" {code_block=false}
-
-@import "isScottContinuous_determined.ai_lean_to_english" {code_block=false}
-
-@import "isScottOpen_basic.ai_lean_to_english" {code_block=false}
-
-@import "isScottOpen_isUpper.ai_lean_to_english" {code_block=false}
-
-@import "memOpen_eq_basicNhhd.ai_lean_to_english" {code_block=false}
-
-@import "exists_basicNhhd_subset_of_generateOpen.ai_lean_to_english" {code_block=false}
-
-@import "isScottOpen_iff_isOpen.ai_lean_to_english" {code_block=false}
-
-@import "mem_scottUnion.ai_lean_to_english" {code_block=false}
-
-@import "isScottContinuous_monotone.ai_lean_to_english" {code_block=false}
-
-@import "exists_e_cover_finite.ai_lean_to_english" {code_block=false}
-
-@import "isScottContinuous_iff_continuous.ai_lean_to_english" {code_block=false}

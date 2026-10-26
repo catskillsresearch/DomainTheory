@@ -1,10 +1,6 @@
 # Proposition 5.5
 
-## Human-English
-
 @import "1982_Proposition_5_5.english" {code_block=false}
-
-## AI: Human-English to AI-Lean
 
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean](comp.lean)**
 
@@ -14,12 +10,3 @@
 
 @import "../Proposition55.lean"
 
-## AI: AI-Lean to AI-English
-
-@import "comp.ai_lean_to_english" {code_block=false}
-
-@import "../Proposition55.ai_lean_to_english" {code_block=false}
-
-## AI: AI-English to Human-English Concordance
-
-@import "1982_Proposition_5_5.ai_english_concordance" {code_block=false}

@@ -1,3 +1,0 @@
-Erasing the tag one more than the maximum of p and q from the m-fold iterate of the finite element e p started at e q leaves that iterate unchanged.
-
-Membership extensionality. A member of the erased set already lies in the iterate. A member of the iterate remains after erasure because the finite-iterate rule says it is not the pair of that tag with any index.

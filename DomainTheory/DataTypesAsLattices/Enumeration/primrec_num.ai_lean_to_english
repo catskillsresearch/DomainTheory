@@ -1,3 +1,0 @@
-The numeral code is primitive recursive.
-
-It is the primitive recursion with value 1 at zero and with successor step the application of code 12 to the previous value. Agreement with the numeral code is by induction on the argument: the zero case is the constant 1, and the successor case rewrites the recursive clause by the inductive hypothesis.

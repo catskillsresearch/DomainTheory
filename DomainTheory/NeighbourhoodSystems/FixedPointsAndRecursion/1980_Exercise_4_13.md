@@ -1,7 +1,5 @@
 # Exercise 4.13
 
-## Human-English
-
 **EXERCISE 4.13.** The proof of 4.1 uses the integers, whereas the proof of 4.6 uses 4.1. There is a hint of circularity here! It can be eliminated by the following steps:
 
 (1) If a domain $D$ has an element $a$ where, for $f : D \to D$, the relation $f(a) \sqsubseteq a$ holds, then the least fixed point can be defined by
@@ -23,8 +21,6 @@ Note that $\mathrm{fix}(f) \sqsubseteq a$. (Hint: Remark that by 1.17 the formul
 (4) Employ (3) for the proof of 4.1 by identifying $\langle \mathbf{N}, 0, {}^+ \rangle$.
 
 <!-- page 69 -->
-
-## AI: Human-English to AI-Lean
 
 **[Exercise_4_13.lean](Exercise_4_13.lean)**
 
