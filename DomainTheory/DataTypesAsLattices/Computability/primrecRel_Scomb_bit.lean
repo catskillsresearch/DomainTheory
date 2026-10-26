@@ -1,7 +1,8 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsComputable
 public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable
@@ -60,6 +61,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.primrecRel_mem_funO
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj2
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj3
 
+public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
 
 

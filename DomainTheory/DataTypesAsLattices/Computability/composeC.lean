@@ -1,8 +1,10 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda
-
+public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
+public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
 set_option maxHeartbeats 2000000

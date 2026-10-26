@@ -2,7 +2,17 @@
 module
 
 public import Mathlib.Algebra.Ring.Parity
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
+public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
+public import DomainTheory.DataTypesAsLattices.Retracts.Icomb_more
+public import DomainTheory.DataTypesAsLattices.Retracts.intF
+public import DomainTheory.DataTypesAsLattices.Retracts.intR
+public import DomainTheory.DataTypesAsLattices.Retracts.intR_more
+public import DomainTheory.DataTypesAsLattices.Retracts.boolR
+public import DomainTheory.DataTypesAsLattices.Retracts.boolR_more
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
+public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.Closures.Isolated
 public import DomainTheory.DataTypesAsLattices.Closures.squarePair

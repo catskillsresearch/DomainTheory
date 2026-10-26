@@ -1,7 +1,9 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.FixedLattices
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints

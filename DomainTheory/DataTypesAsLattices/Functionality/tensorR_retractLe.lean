@@ -1,7 +1,10 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
+public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.mem

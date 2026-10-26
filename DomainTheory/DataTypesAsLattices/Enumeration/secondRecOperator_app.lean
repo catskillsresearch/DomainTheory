@@ -2,8 +2,17 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Computability
-public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Computability.SK_comp
+public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
+public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_beta2
+public import DomainTheory.DataTypesAsLattices.Lambda.Scomb_beta3
+public import DomainTheory.DataTypesAsLattices.Lambda.dollarC_app
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
+public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
@@ -116,6 +125,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecSubstC_realizes
 
+public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
 
 

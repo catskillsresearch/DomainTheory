@@ -1,8 +1,8 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Continuous
-
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

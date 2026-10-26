@@ -1,6 +1,17 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Embedding
+public import Mathlib.Topology.Bases
+public import Mathlib.Topology.Defs.Induced
+public import Mathlib.Topology.Order
+public import Mathlib.Topology.Separation.Basic
+public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_4
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Lambda.Term
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
 public import DomainTheory.DataTypesAsLattices.Lambda.Comb
@@ -52,6 +63,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.omegaComb_app
 public import DomainTheory.DataTypesAsLattices.Lambda.funOf_diag_iUnion
 
+public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
 
 

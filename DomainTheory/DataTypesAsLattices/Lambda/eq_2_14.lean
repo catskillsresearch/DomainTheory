@@ -1,6 +1,10 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Embedding
+public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Lambda.Term
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
 public import DomainTheory.DataTypesAsLattices.Lambda.Comb

@@ -22,7 +22,4 @@
 
 @import "theorem_1_2.lean"
 
-**[DataTypesAsLattices/Graph.lean](../Graph.lean)**
-
-@import "../Graph.lean"
 

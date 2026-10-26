@@ -1,8 +1,10 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Computability
-public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app_zero
+public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app_one
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat_combinatory
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat

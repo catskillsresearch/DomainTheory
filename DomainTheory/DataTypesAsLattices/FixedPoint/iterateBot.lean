@@ -1,7 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Graph
-
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

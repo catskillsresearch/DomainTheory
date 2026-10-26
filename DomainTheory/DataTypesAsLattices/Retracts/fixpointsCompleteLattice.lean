@@ -1,7 +1,16 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.FixedLattices
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import Mathlib.Order.CompleteLattice.Defs
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
+public import Mathlib.Topology.Bases
+public import Mathlib.Topology.Defs.Induced
+public import Mathlib.Topology.Order
+public import Mathlib.Topology.Separation.Basic
+public import DomainTheory.DataTypesAsLattices.Embedding.extend
+public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_4
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow

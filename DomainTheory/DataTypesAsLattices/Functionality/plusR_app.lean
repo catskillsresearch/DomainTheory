@@ -1,7 +1,13 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
+public import DomainTheory.DataTypesAsLattices.Retracts.plusR
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
+public import DomainTheory.DataTypesAsLattices.Graph.beta
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.mem

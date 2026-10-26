@@ -1,6 +1,32 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
+public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
+public import DomainTheory.DataTypesAsLattices.Retracts.intF
+public import DomainTheory.DataTypesAsLattices.Retracts.intR
+public import DomainTheory.DataTypesAsLattices.Retracts.boolR
+public import DomainTheory.DataTypesAsLattices.Retracts.lambR
+public import DomainTheory.DataTypesAsLattices.Retracts.updateEnv
+public import Mathlib.Order.CompleteLattice.Defs
+public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
+public import DomainTheory.DataTypesAsLattices.Lambda.succSet_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Lambda.predSet_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
+public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
+public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
+public import Mathlib.Topology.Bases
+public import Mathlib.Topology.Defs.Induced
+public import Mathlib.Topology.Order
+public import Mathlib.Topology.Separation.Basic
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Graph.lam
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.mem

@@ -1,7 +1,7 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.FixedLattices
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36

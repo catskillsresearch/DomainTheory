@@ -1,7 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.FixedLattices
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.vals
 

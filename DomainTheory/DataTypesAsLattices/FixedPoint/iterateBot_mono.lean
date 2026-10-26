@@ -1,6 +1,9 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Graph
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+public import Mathlib.Topology.Bases
+public import Mathlib.Topology.Order
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
 public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
 

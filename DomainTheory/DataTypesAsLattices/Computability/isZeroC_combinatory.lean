@@ -1,7 +1,9 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
+public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat_combinatory
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsComputable
 public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable

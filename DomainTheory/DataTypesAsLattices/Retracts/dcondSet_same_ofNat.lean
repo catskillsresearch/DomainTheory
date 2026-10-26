@@ -1,7 +1,10 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.FixedLattices
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_ofNat_zero
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_ofNat_succ
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints

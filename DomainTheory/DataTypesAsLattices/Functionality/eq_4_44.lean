@@ -1,6 +1,10 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Retracts.expF
+public import DomainTheory.DataTypesAsLattices.Retracts.expR
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
+public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_4
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.mem

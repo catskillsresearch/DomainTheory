@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Computability.pairComb
 public import DomainTheory.DataTypesAsLattices.Computability.unpairFstC
 public import DomainTheory.DataTypesAsLattices.Computability.unpairSndC

@@ -14,7 +14,4 @@
 
 @import "typicalFcapGdelta_universal.lean"
 
-**[DataTypesAsLattices/Classification.lean](../Classification.lean)**
-
-@import "../Classification.lean"
 

@@ -10,7 +10,4 @@
 
 @import "theorem_1_6.injective_continuous.lean"
 
-**[DataTypesAsLattices/Embedding.lean](../Embedding.lean)**
-
-@import "../Embedding.lean"
 

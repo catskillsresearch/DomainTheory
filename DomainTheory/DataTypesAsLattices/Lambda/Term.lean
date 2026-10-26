@@ -1,8 +1,7 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Embedding
-
+public import DomainTheory.DataTypesAsLattices.Graph.lam
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

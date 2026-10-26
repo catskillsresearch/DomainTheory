@@ -1,8 +1,8 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Computability
-public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
@@ -119,6 +119,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_le
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_right
 public import DomainTheory.DataTypesAsLattices.Enumeration.exists_concat_traces
 
+public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
 
 

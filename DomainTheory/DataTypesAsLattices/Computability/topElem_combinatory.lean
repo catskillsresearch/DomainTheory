@@ -1,7 +1,18 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
+public import DomainTheory.DataTypesAsLattices.Lambda.interp
+public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
+public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
+public import DomainTheory.DataTypesAsLattices.Lambda.topRec_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_16
+public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_combinatory
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4_more
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsComputable
 public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable

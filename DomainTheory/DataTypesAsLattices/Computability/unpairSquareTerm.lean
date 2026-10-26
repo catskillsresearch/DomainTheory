@@ -1,7 +1,8 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Lambda.Term
+public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Computability.unpairSqrtTerm
 
 @[expose] public section

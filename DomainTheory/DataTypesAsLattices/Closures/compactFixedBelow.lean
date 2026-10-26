@@ -1,8 +1,11 @@
 module
 
 public import Mathlib.Algebra.Ring.Parity
-public import DomainTheory.DataTypesAsLattices.Retracts
-
+public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
+public import DomainTheory.DataTypesAsLattices.Retracts.vals
+public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

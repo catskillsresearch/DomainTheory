@@ -1,6 +1,5 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Embedding
 public import DomainTheory.DataTypesAsLattices.Lambda.Term
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
 public import DomainTheory.DataTypesAsLattices.Lambda.Comb

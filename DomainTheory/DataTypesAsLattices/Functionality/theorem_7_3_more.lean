@@ -1,6 +1,21 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
+public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
+public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
+public import DomainTheory.DataTypesAsLattices.Retracts.intF
+public import DomainTheory.DataTypesAsLattices.Retracts.intR
+public import DomainTheory.DataTypesAsLattices.Retracts.boolR
+public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
+public import DomainTheory.DataTypesAsLattices.Graph.beta
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Embedding.extend
+public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
+public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.mem

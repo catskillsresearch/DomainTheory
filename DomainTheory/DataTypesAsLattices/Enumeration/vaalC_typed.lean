@@ -1,8 +1,16 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Computability
-public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Functionality.treeR_isRetract
+public import DomainTheory.DataTypesAsLattices.Functionality.typed_apply_retract
+public import DomainTheory.DataTypesAsLattices.Retracts.typed
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
+public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
+public import DomainTheory.DataTypesAsLattices.Retracts.Icomb_more
+public import DomainTheory.DataTypesAsLattices.Retracts.intR_more
+public import DomainTheory.DataTypesAsLattices.Retracts.treeR
+public import DomainTheory.DataTypesAsLattices.Retracts.boolR_more
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat

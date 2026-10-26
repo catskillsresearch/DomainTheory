@@ -6,9 +6,6 @@
 
 @import "theorem_1_1.lean"
 
-**[DataTypesAsLattices/Continuous.lean](../Continuous.lean)**
-
-@import "../Continuous.lean"
 
 **[DataTypesAsLattices/Graph/Basic/notation3.lean](../Graph/Basic/notation3.lean)**
 

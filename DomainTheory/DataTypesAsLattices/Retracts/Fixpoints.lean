@@ -1,8 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.FixedLattices
-public import DomainTheory.DataTypesAsLattices.Lambda
-
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

@@ -1,6 +1,18 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import Mathlib.Order.CompleteLattice.Defs
+public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
+public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_mid
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_right
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_left
+public import Mathlib.Topology.Bases
+public import Mathlib.Topology.Defs.Induced
+public import Mathlib.Topology.Order
+public import Mathlib.Topology.Separation.Basic
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.pairElem

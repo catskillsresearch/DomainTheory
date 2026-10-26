@@ -3,6 +3,11 @@ module
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack
 public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app_zero
 
+public import DomainTheory.DataTypesAsLattices.Lambda.sucC_app
+public import DomainTheory.DataTypesAsLattices.Lambda.sucC
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
 set_option maxHeartbeats 2000000

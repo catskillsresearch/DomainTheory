@@ -354,11 +354,7 @@
 
 @import "fixMap.lean"
 
-**[ContinuousLattice/FunctionSpaces/theorem_3_3.sSup.lean](theorem_3_3.sSup.lean)**
+**[ContinuousLattice/FunctionSpaces/theorem_3_3.lean](theorem_3_3.lean)**
 
-@import "theorem_3_3.sSup.lean"
-
-**[ContinuousLattice/FunctionSpaces/theorem_3_3.sup.lean](theorem_3_3.sup.lean)**
-
-@import "theorem_3_3.sup.lean"
+@import "theorem_3_3.lean"
 

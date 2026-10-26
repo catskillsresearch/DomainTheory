@@ -1,7 +1,20 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
+public import DomainTheory.DataTypesAsLattices.Retracts.typed
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
+public import DomainTheory.DataTypesAsLattices.Retracts.fstC
+public import DomainTheory.DataTypesAsLattices.Retracts.sndC
+public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
+public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
+public import DomainTheory.DataTypesAsLattices.Retracts.fstC_app
+public import DomainTheory.DataTypesAsLattices.Retracts.sndC_app
+public import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_restrict
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.mem

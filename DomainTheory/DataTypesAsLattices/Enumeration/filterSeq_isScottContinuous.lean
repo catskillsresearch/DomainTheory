@@ -1,8 +1,19 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Computability
-public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Computability.pairComb
+public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
+public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
+public import Mathlib.Topology.Bases
+public import Mathlib.Topology.Defs.Induced
+public import Mathlib.Topology.Order
+public import Mathlib.Topology.Separation.Basic
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+public import Mathlib.Order.CompleteLattice.Defs
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat

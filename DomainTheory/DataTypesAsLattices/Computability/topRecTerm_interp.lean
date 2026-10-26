@@ -1,7 +1,12 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Lambda.envSet
+public import DomainTheory.DataTypesAsLattices.Lambda.interp
+public import DomainTheory.DataTypesAsLattices.Lambda.topRec
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_15
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsComputable
 public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable

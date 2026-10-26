@@ -1,6 +1,15 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
+public import DomainTheory.DataTypesAsLattices.Retracts.lambR
+public import DomainTheory.DataTypesAsLattices.Retracts.envR
+public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
+public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+public import DomainTheory.DataTypesAsLattices.Graph.beta
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.mem

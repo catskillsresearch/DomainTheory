@@ -26,11 +26,5 @@
 
 @import "theorem_7_4.lean"
 
-**[DataTypesAsLattices/Functionality.lean](../Functionality.lean)**
 
-@import "../Functionality.lean"
-
-**[DataTypesAsLattices/Enumeration.lean](../Enumeration.lean)**
-
-@import "../Enumeration.lean"
 

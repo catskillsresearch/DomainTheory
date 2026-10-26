@@ -1,7 +1,23 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.FixedLattices
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import Mathlib.Order.CompleteLattice.Defs
+public import DomainTheory.DataTypesAsLattices.Lambda.funOf_iUnion
+public import Mathlib.Topology.Bases
+public import Mathlib.Topology.Defs.Induced
+public import Mathlib.Topology.Order
+public import Mathlib.Topology.Separation.Basic
+public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
+public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
+public import DomainTheory.DataTypesAsLattices.FixedPoint.chain_mono
+public import DomainTheory.DataTypesAsLattices.FixedPoint.chain_lemma
+public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot_mono
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_monotone_right
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_monotone_left
+public import DomainTheory.DataTypesAsLattices.Graph.mu_law
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints

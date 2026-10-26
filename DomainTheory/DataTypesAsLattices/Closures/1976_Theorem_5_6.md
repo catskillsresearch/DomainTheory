@@ -14,7 +14,4 @@
 
 @import "theorem_5_6.iterates.lean"
 
-**[DataTypesAsLattices/Closures.lean](../Closures.lean)**
-
-@import "../Closures.lean"
 

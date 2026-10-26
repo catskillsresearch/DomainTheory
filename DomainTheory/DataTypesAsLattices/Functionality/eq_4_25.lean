@@ -1,6 +1,32 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
+public import DomainTheory.DataTypesAsLattices.Retracts.typed
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
+public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
+public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
+public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
+public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
+public import DomainTheory.DataTypesAsLattices.Retracts.Icomb_more
+public import DomainTheory.DataTypesAsLattices.Retracts.curryC
+public import DomainTheory.DataTypesAsLattices.Retracts.intF
+public import DomainTheory.DataTypesAsLattices.Retracts.intR
+public import DomainTheory.DataTypesAsLattices.Retracts.intR_more
+public import DomainTheory.DataTypesAsLattices.Retracts.boolR
+public import DomainTheory.DataTypesAsLattices.Retracts.boolR_more
+public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
+public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
+public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
+public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
+public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+public import DomainTheory.DataTypesAsLattices.Graph.beta
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.mem

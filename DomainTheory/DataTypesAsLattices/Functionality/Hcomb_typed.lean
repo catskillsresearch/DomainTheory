@@ -1,6 +1,14 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Retracts.typed
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
+public import DomainTheory.DataTypesAsLattices.Retracts.Icomb_more
+public import DomainTheory.DataTypesAsLattices.Retracts.intR_more
+public import DomainTheory.DataTypesAsLattices.Retracts.boolR_more
+public import DomainTheory.DataTypesAsLattices.Retracts.lambR
+public import DomainTheory.DataTypesAsLattices.Retracts.envR
+public import DomainTheory.DataTypesAsLattices.Retracts.expR
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.mem

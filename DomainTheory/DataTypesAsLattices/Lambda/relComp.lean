@@ -1,6 +1,7 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Embedding
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Lambda.Term
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
 public import DomainTheory.DataTypesAsLattices.Lambda.Comb

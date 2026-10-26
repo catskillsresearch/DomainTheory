@@ -1,7 +1,17 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Lambda.envSet
+public import DomainTheory.DataTypesAsLattices.Lambda.interp
+public import DomainTheory.DataTypesAsLattices.Lambda.primRecVal
+public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2_more
+public import DomainTheory.DataTypesAsLattices.Graph.beta
+public import DomainTheory.DataTypesAsLattices.Graph.lam
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsComputable
 public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable
@@ -58,6 +68,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.unpairFstC_realizes
 public import DomainTheory.DataTypesAsLattices.Computability.unpairSndC_realizes
 public import DomainTheory.DataTypesAsLattices.Computability.primRecOpC_app
 
+public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
 
 

@@ -1,7 +1,9 @@
 module
 
 public import Mathlib.Algebra.Ring.Parity
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Closures.squarePair
 public import DomainTheory.DataTypesAsLattices.Closures.squareFst
 public import DomainTheory.DataTypesAsLattices.Closures.squareSnd

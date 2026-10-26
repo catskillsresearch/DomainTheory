@@ -1,8 +1,15 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Computability
-public import DomainTheory.DataTypesAsLattices.Functionality
+public import Mathlib.Computability.RE
+public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eempty
+public import DomainTheory.DataTypesAsLattices.Computability.REPredu2etrue
+public import DomainTheory.DataTypesAsLattices.Computability.REPredu2ecomp
+public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eand
+public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eor
+public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.ValTrace
@@ -25,6 +32,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_le
 
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_right
 
+public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
 
 set_option maxHeartbeats 2000000

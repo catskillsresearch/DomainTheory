@@ -1,7 +1,12 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
+public import DomainTheory.DataTypesAsLattices.Retracts.graph_const_bot
+public import DomainTheory.DataTypesAsLattices.Lambda.seq2
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
+public import DomainTheory.DataTypesAsLattices.Lambda.predSet
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.mem

@@ -1,7 +1,7 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Embedding
+public import Mathlib.Data.Nat.Basic
 
 @[expose] public section
 

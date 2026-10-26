@@ -14,7 +14,4 @@
 
 @import "theorem_4_6.limit.lean"
 
-**[DataTypesAsLattices/Retracts.lean](../Retracts.lean)**
-
-@import "../Retracts.lean"
 

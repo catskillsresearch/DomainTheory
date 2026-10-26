@@ -26,7 +26,4 @@ The three conditions meet as follows. Passing from a computable $f$ to its itera
 
 @import "theorem_2_6.ofNat_isRE.lean"
 
-**[DataTypesAsLattices/Computability.lean](../Computability.lean)**
-
-@import "../Computability.lean"
 

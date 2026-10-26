@@ -1,8 +1,7 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda
-
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
 @[expose] public section
 
 set_option maxHeartbeats 2000000

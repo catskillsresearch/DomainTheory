@@ -1,6 +1,7 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Embedding
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 
 @[expose] public section

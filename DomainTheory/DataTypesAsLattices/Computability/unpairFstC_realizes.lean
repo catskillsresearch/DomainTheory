@@ -1,7 +1,15 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Lambda.envSet
+public import DomainTheory.DataTypesAsLattices.Lambda.interp
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_zero
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_succ
+public import DomainTheory.DataTypesAsLattices.Lambda.succSet_ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2_more
+public import DomainTheory.DataTypesAsLattices.Graph.beta
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsComputable
 public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable

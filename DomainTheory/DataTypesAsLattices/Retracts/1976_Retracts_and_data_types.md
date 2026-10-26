@@ -58,9 +58,6 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 
 @import "../FixedLattices/CountablyAlgebraicu2ecompact_finite_support.lean"
 
-**[DataTypesAsLattices/FixedLattices.lean](../FixedLattices.lean)**
-
-@import "../FixedLattices.lean"
 
 **[DataTypesAsLattices/Retracts/Fixpoints.lean](Fixpoints.lean)**
 

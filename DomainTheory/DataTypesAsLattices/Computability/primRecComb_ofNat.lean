@@ -1,7 +1,15 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Lambda.primRecVal
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
+public import DomainTheory.DataTypesAsLattices.Lambda.primRecHat_ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.primRecStep_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_27
+public import DomainTheory.DataTypesAsLattices.Lambda.primRecStep_graph_of
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsComputable
 public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable

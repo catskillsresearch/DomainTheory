@@ -1,7 +1,22 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.FixedLattices
-public import DomainTheory.DataTypesAsLattices.Lambda
+public import Mathlib.Order.CompleteLattice.Defs
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
+public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
+public import DomainTheory.DataTypesAsLattices.Lambda.predSet_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_mid
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_right
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_isScottContinuous_left
+public import Mathlib.Topology.Bases
+public import Mathlib.Topology.Defs.Induced
+public import Mathlib.Topology.Order
+public import Mathlib.Topology.Separation.Basic
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.predSet
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous

@@ -6,7 +6,4 @@
 
 @import "theorem_1_4.lean"
 
-**[DataTypesAsLattices/FixedPoint.lean](../FixedPoint.lean)**
-
-@import "../FixedPoint.lean"
 

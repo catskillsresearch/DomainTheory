@@ -6,6 +6,9 @@ public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_same_ofNat
 public import DomainTheory.DataTypesAsLattices.Retracts.predSet_eq_ofNat_of_no_zero
 
+public import DomainTheory.DataTypesAsLattices.Lambda.predSet_ofNat_succ
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_of_mixed
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_top
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

@@ -14,7 +14,4 @@
 
 @import "eq_2_24_Ycomb.lean"
 
-**[DataTypesAsLattices/Lambda.lean](../Lambda.lean)**
-
-@import "../Lambda.lean"
 
