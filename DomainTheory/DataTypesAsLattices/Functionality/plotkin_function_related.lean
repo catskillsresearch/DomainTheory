@@ -13,8 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.arrowE
 public import DomainTheory.DataTypesAsLattices.Functionality.Z
 public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE
-public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite
-public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite_union
+public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE_erase
 public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_app
 public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_fresh_app
@@ -65,7 +64,7 @@ theorem plotkin_function_related (p q : ℕ) :
     subst u
     subst v
   · have hrs : Z r (e p) (e q) = Z s (e p) (e q) := by
-      simpa [eraseTag_Z_finite] using herase
+      simpa [eraseTag.Z_finite] using herase
     have hrs' : Z (r + 1) (e p) (e q) = Z (s + 1) (e p) (e q) := by
       simpa [Z] using congrArg (fun w => funOf (e p) w) hrs
     have hleft :
@@ -83,8 +82,8 @@ theorem plotkin_function_related (p q : ℕ) :
     exact ⟨⟨r + 1, Or.inl rfl⟩, ⟨r + 1, Or.inl rfl⟩,
       Relation.EqvGen.refl _⟩
   · have hrs : Z r (e p) (e q) = Z s (e p) (e q) := by
-      exact (eraseTag_Z_finite p q r).symm.trans
-        (herase.trans (eraseTag_Z_finite_union p q s))
+      exact (eraseTag.Z_finite p q r).symm.trans
+        (herase.trans (eraseTag.Z_finite_union p q s))
     have hrs' : Z (r + 1) (e p) (e q) = Z (s + 1) (e p) (e q) := by
       simpa [Z] using congrArg (fun w => funOf (e p) w) hrs
     have hleft :
@@ -105,8 +104,8 @@ theorem plotkin_function_related (p q : ℕ) :
       Relation.EqvGen.rel _ _
         ⟨s + 1, Or.inl ⟨rfl, rfl⟩⟩⟩
   · have hrs : Z r (e p) (e q) = Z s (e p) (e q) := by
-      exact (eraseTag_Z_finite_union p q r).symm.trans
-        (herase.trans (eraseTag_Z_finite p q s))
+      exact (eraseTag.Z_finite_union p q r).symm.trans
+        (herase.trans (eraseTag.Z_finite p q s))
     have hrs' : Z (r + 1) (e p) (e q) = Z (s + 1) (e p) (e q) := by
       simpa [Z] using congrArg (fun w => funOf (e p) w) hrs
     have hleft :
@@ -124,8 +123,8 @@ theorem plotkin_function_related (p q : ℕ) :
     exact ⟨⟨r + 1, Or.inl rfl⟩, ⟨r + 1, Or.inl rfl⟩,
       Relation.EqvGen.refl _⟩
   · have hrs : Z r (e p) (e q) = Z s (e p) (e q) := by
-      simpa using (eraseTag_Z_finite_union p q r).symm.trans
-        (herase.trans (eraseTag_Z_finite_union p q s))
+      simpa using (eraseTag.Z_finite_union p q r).symm.trans
+        (herase.trans (eraseTag.Z_finite_union p q s))
     have hrs' : Z (r + 1) (e p) (e q) = Z (s + 1) (e p) (e q) := by
       simpa [Z] using congrArg (fun w => funOf (e p) w) hrs
     have hleft :

@@ -64,8 +64,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hcomb
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
 public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkin_finite_separation
-public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite
-public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite_union
+public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE_erase
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkin_function_related
 public import DomainTheory.DataTypesAsLattices.Functionality.eq_7_18_eq
@@ -160,8 +159,8 @@ theorem theorem_7_4.finite (z : Pomega)
   have herase := plotkinE_erase hout
   have horbit : Z r (e p) (e q) = Z m (e p) (e q) := by
     rw [hleft, hright] at herase
-    exact (eraseTag_Z_finite p q r).symm.trans
-      (herase.trans (eraseTag_Z_finite_union p q m))
+    exact (eraseTag.Z_finite p q r).symm.trans
+      (herase.trans (eraseTag.Z_finite_union p q m))
   have hsigmaSub :
       funOf (funOf z (graph (sigmaJ j))) {pair j 0} ⊆
         funOf (funOf z gu) (e q ∪ {pair j 0}) := by

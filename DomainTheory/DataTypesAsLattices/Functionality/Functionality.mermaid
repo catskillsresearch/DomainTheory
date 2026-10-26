@@ -79,8 +79,6 @@ flowchart TB
   N90["curryC_app"]
   N91["envR_map_isScottContinuous"]
   N92["envR_app"]
-  N93["eraseTag_Z_finite"]
-  N94["eraseTag_Z_finite_union"]
   N95["eta2_map_isScottContinuous"]
   N96["eta2_app"]
   N97["evalC_isScottContinuous"]
@@ -617,12 +615,8 @@ flowchart TB
   N0 -->|"1"| N92
   N49 -->|"1"| N92
   N91 -->|"1"| N92
-  N0 -->|"1"| N93
-  N49 -->|"1"| N93
-  N6 -->|"1"| N93
-  N0 -->|"1"| N94
-  N49 -->|"1"| N94
-  N6 -->|"1"| N94
+  N49 -->|"1"| N11
+  N6 -->|"1"| N11
   N0 -->|"1"| N95
   N49 -->|"1"| N95
   N0 -->|"1"| N96
@@ -788,8 +782,7 @@ flowchart TB
   N144 -->|"1"| N149
   N0 -->|"1"| N150
   N49 -->|"1"| N150
-  N93 -->|"1"| N150
-  N94 -->|"1"| N150
+  N11 -->|"1"| N150
   N0 -->|"1"| N151
   N49 -->|"1"| N151
   N86 -->|"1"| N151
@@ -968,8 +961,7 @@ flowchart TB
   N32 -->|"1"| N203
   N0 -->|"1"| N204
   N49 -->|"1"| N204
-  N93 -->|"1"| N204
-  N94 -->|"1"| N204
+  N11 -->|"1"| N204
   N126 -->|"1"| N204
   N127 -->|"1"| N204
   N150 -->|"1"| N204
@@ -1312,8 +1304,7 @@ flowchart TB
   N0 -->|"1"| N285
   N49 -->|"1"| N285
   N6 -->|"1"| N285
-  N93 -->|"1"| N285
-  N94 -->|"1"| N285
+  N11 -->|"1"| N285
   N150 -->|"1"| N285
   N203 -->|"1"| N285
   N204 -->|"1"| N285
@@ -1633,8 +1624,6 @@ flowchart TB
   class N90 file
   class N91 file
   class N92 file
-  class N93 file
-  class N94 file
   class N95 file
   class N96 file
   class N97 file
