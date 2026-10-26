@@ -104,9 +104,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
@@ -141,9 +138,9 @@ theorem valStage_subset : ∀ s n,
     funOf (iterateBot valStep s) (ofNat n) ⊆ valNat n
   | 0, n => by simp [iterateBot, funOf, botElem]
   | s + 1, 0 => by
-      rw [iterateBot, valStep_app_zero, valNat_zero]
+      rw [iterateBot, valStep_app_zero, valNat.zero]
   | s + 1, p + 1 => by
-      rw [iterateBot, valStep_app_succ, valNat_succ]
+      rw [iterateBot, valStep_app_succ, valNat.succ]
       exact subset_trans
         (funOf_monotone_left
           (valStage_subset s (unpair p).1)

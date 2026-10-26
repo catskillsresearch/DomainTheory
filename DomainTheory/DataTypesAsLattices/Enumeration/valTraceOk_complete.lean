@@ -104,9 +104,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
@@ -156,7 +153,7 @@ theorem valTraceOk_complete :
     intro member hm
     cases code with
     | zero =>
-      obtain ⟨hok0, hhas0⟩ := valTraceOk_zero member (valNat_zero ▸ hm)
+      obtain ⟨hok0, hhas0⟩ := valTraceOk_zero member (valNat.zero ▸ hm)
       exact ⟨[(0, member, 0)], hok0, hhas0⟩
     | succ p =>
       have hop' : (unpair p).1 < p + 1 :=
@@ -168,7 +165,7 @@ theorem valTraceOk_complete :
           have := pair_unpair p
           omega)
       have hm' : member ∈ valNat (unpair p).1 ⬝ valNat (unpair p).2 :=
-        valNat_succ p ▸ hm
+        valNat.succ p ▸ hm
       obtain ⟨t, htSub, htOp⟩ := hm'
       obtain ⟨trOp, hokOp, hhasOp⟩ := ih _ hop' _ htOp
       let bits := (List.range (t + 1)).filter (fun i => t.testBit i = true)

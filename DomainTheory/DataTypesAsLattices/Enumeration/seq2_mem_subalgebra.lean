@@ -105,9 +105,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num

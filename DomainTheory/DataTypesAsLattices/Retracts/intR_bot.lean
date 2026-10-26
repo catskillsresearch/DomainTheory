@@ -22,7 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
 public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Retracts.fixpointsCompleteLattice
-public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 public import DomainTheory.DataTypesAsLattices.Retracts.diagC
 public import DomainTheory.DataTypesAsLattices.Retracts.evalC

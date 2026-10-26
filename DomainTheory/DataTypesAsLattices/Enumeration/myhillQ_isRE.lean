@@ -13,6 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.argNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
 public import DomainTheory.DataTypesAsLattices.Enumeration.valRank
 public import DomainTheory.DataTypesAsLattices.Enumeration.num
 public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecVal
@@ -104,9 +105,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
@@ -129,7 +127,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_fin
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_unpairComp
 public import DomainTheory.DataTypesAsLattices.Enumeration.REPredu2eexists_param
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_mem_re
 public import DomainTheory.DataTypesAsLattices.Enumeration.mem_myhillQ
 public import DomainTheory.DataTypesAsLattices.Enumeration.realizes_valNat_mem
 public import DomainTheory.DataTypesAsLattices.Enumeration.funOf_ofNat_mem_re
@@ -157,7 +154,7 @@ theorem myhillQ_isRE {u : Pomega} {p : ℕ → ℕ}
       REPred.and
         ((funOf_ofNat_mem_re (combinatory_isRE hu)).comp
           (Primrec.pair (primrec_fin.comp (Primrec.fst.comp Primrec.fst)) Primrec.snd).to_comp)
-        (valNat_mem_re.comp (Primrec.pair Primrec.snd (Primrec.snd.comp Primrec.fst)).to_comp)
+        (valNat.mem_re.comp (Primrec.pair Primrec.snd (Primrec.snd.comp Primrec.fst)).to_comp)
     exact _root_.REPred.of_eq (REPred.exists_param (α := ℕ × ℕ) hinner) fun q =>
       (realizes_valNat_mem hr (fin q.1) q.2).symm
   constructor

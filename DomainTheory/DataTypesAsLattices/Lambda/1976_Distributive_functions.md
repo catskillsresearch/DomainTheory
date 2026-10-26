@@ -62,29 +62,14 @@
 
 @import "termDollarStepBody_isScottContinuous_z.lean"
 
-**[DataTypesAsLattices/Lambda/termDollarStep_isScottContinuous.lean](termDollarStep_isScottContinuous.lean)**
-
-@import "termDollarStep_isScottContinuous.lean"
 
 **[DataTypesAsLattices/Lambda/termDollarStepBody_isScottContinuous_u.lean](termDollarStepBody_isScottContinuous_u.lean)**
 
 @import "termDollarStepBody_isScottContinuous_u.lean"
 
-**[DataTypesAsLattices/Lambda/termDollarStep_app.lean](termDollarStep_app.lean)**
 
-@import "termDollarStep_app.lean"
 
-**[DataTypesAsLattices/Lambda/termDollarStep_app2.lean](termDollarStep_app2.lean)**
 
-@import "termDollarStep_app2.lean"
-
-**[DataTypesAsLattices/Lambda/termDollarStep_iterate.lean](termDollarStep_iterate.lean)**
-
-@import "termDollarStep_iterate.lean"
-
-**[DataTypesAsLattices/Lambda/termDollarStep_fix_app.lean](termDollarStep_fix_app.lean)**
-
-@import "termDollarStep_fix_app.lean"
 
 **[DataTypesAsLattices/Lambda/dollarC_eq_fix_termDollarStep.lean](dollarC_eq_fix_termDollarStep.lean)**
 

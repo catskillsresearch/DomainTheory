@@ -9,8 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 
 @[expose] public section
 
@@ -25,10 +23,10 @@ theorem theorem_3_2_surjective {u : Pomega} (hu : IsCombinatory u) :
   rw [theorem_3_1]
   intro h
   induction h with
-  | G => exact ⟨0, valNat_zero⟩
+  | G => exact ⟨0, valNat.zero⟩
   | app _ _ iu iv =>
     obtain ⟨n, hn⟩ := iu
     obtain ⟨m, hm⟩ := iv
-    exact ⟨applyNat n m, by rw [valNat_apply, hn, hm]⟩
+    exact ⟨applyNat n m, by rw [valNat.app, hn, hm]⟩
 
 end DomainTheory.DataTypesAsLattices

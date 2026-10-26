@@ -14,6 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.argNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
 public import DomainTheory.DataTypesAsLattices.Enumeration.valRank
 public import DomainTheory.DataTypesAsLattices.Enumeration.num
 public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecVal
@@ -105,9 +106,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
@@ -127,7 +125,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_filterNum
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_fin
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ_app
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ_isRE
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_5_case2
@@ -163,8 +160,8 @@ theorem theorem_3_5 {p : ℕ → ℕ}
     have hinf : ∀ j, e j = valNat n → False := by
       intro j hj
       have : k ∈ valNat (p (fin j)) := by
-        have := hext.out n (fin j) (by simp [valNat_fin, hj])
-        simpa [this, valNat_fin] using hk
+        have := hext.out n (fin j) (by simp [valNat.fin_eq, hj])
+        simpa [this, valNat.fin_eq] using hk
       exact hnin (Set.mem_iUnion.mpr ⟨j,
         Set.mem_iUnion.mpr ⟨by simp [hj], this⟩⟩)
     -- Case 1: `val n` is infinite; finished after the filter construction.
@@ -182,8 +179,8 @@ theorem theorem_3_5 {p : ℕ → ℕ}
     by_contra hnin
     have hne : e j ≠ valNat n := by
       intro hj'
-      have := hext.out n (fin j) (by simp [valNat_fin, hj'])
-      exact hnin (by simpa [this, valNat_fin] using hk)
+      have := hext.out n (fin j) (by simp [valNat.fin_eq, hj'])
+      exact hnin (by simpa [this, valNat.fin_eq] using hk)
     exact theorem_3_5_case2 hu hr hext hj hne hk hnin
 
 end DomainTheory.DataTypesAsLattices

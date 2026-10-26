@@ -14,6 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.argNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
 public import DomainTheory.DataTypesAsLattices.Enumeration.valRank
 public import DomainTheory.DataTypesAsLattices.Enumeration.num
 public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecVal
@@ -105,9 +106,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
@@ -128,11 +126,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer_combin
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_4
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_fin
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillCase2Code
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_myhillCase2Code
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_myhillCase2Code_ne_bot
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_mem_comp_primrec
 
 @[expose] public section
 
@@ -158,17 +152,17 @@ theorem theorem_3_5_case2 {u : Pomega} {p : ℕ → ℕ} {n j k : ℕ}
     intro m
     by_cases hm : valNat m = botElem
     · have : valNat (myhillCase2Code j n m) = e j := by
-        rw [valNat_myhillCase2Code, hm, eq_2_7_bot]
+        rw [valNat.myhillCase2Code_eq, hm, eq_2_7_bot]
         simp [botElem]
-      have := hext.out (myhillCase2Code j n m) (fin j) (by simp [this, valNat_fin])
+      have := hext.out (myhillCase2Code j n m) (fin j) (by simp [this, valNat.fin_eq])
       simp [this, hkfin, hm]
     · have : valNat (myhillCase2Code j n m) = valNat n :=
-        valNat_myhillCase2Code_ne_bot j n m hj hm
+        valNat.myhillCase2Code_ne_bot j n m hj hm
       have := hext.out (myhillCase2Code j n m) n this
       simp [this, hkn, hm]
   have hre : REPred fun m => valNat m = botElem :=
     _root_.REPred.of_eq
-      (valNat_mem_comp_primrec (k := k) hu hr (primrec_myhillCase2Code j n))
+      (valNat.mem_comp_primrec (k := k) hu hr (primrec_myhillCase2Code j n))
       fun m => hiff m
   exact theorem_3_4 ⟨hre⟩
 

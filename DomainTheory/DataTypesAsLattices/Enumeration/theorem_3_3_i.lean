@@ -14,6 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.argNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
 public import DomainTheory.DataTypesAsLattices.Enumeration.valRank
 public import DomainTheory.DataTypesAsLattices.Enumeration.num
 public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecVal
@@ -105,9 +106,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
@@ -128,7 +126,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer_combin
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecOperator_app
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_secondRecOperatorCode
 
 @[expose] public section
 
@@ -141,7 +138,7 @@ namespace DomainTheory.DataTypesAsLattices
 /-- **Scott 1976, Theorem 3.3 (i).** -/
 theorem theorem_3_3_i (n : ℕ) :
     valNat (secondRecV n) = secondRecVal (valNat n) := by
-  rw [secondRecV, valNat_apply, valNat_secondRecOperatorCode,
+  rw [secondRecV, valNat.app, valNat.secondRecOperatorCode_eq,
     secondRecOperator_app]
 
 end DomainTheory.DataTypesAsLattices

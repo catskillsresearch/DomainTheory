@@ -104,9 +104,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
@@ -138,6 +135,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem eq_3_8_val : valNat 1 = zeroC := by
   have : valNat 1 = valNat (applyNat 0 0) := by simp [eq_3_8_apply]
-  rw [this, valNat_apply, valNat_zero, Gcomb_app_self]
+  rw [this, valNat.app, valNat.zero, Gcomb_app_self]
 
 end DomainTheory.DataTypesAsLattices

@@ -998,81 +998,10 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "valNat.lean"
 
-**[DataTypesAsLattices/Enumeration/valNat_Ycode.lean](valNat_Ycode.lean)**
 
-@import "valNat_Ycode.lean"
+**[DataTypesAsLattices/Enumeration/valNat_codes.lean](valNat_codes.lean)**
 
-**[DataTypesAsLattices/Enumeration/valNat_botCode.lean](valNat_botCode.lean)**
-
-@import "valNat_botCode.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_combinatory.lean](valNat_combinatory.lean)**
-
-@import "valNat_combinatory.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_condCode.lean](valNat_condCode.lean)**
-
-@import "valNat_condCode.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_filterOp.lean](valNat_filterOp.lean)**
-
-@import "valNat_filterOp.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_interCode.lean](valNat_interCode.lean)**
-
-@import "valNat_interCode.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_diagonalInterCode.lean](valNat_diagonalInterCode.lean)**
-
-@import "valNat_diagonalInterCode.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_myhillFilterCode.lean](valNat_myhillFilterCode.lean)**
-
-@import "valNat_myhillFilterCode.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_myhillCase1Code.lean](valNat_myhillCase1Code.lean)**
-
-@import "valNat_myhillCase1Code.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_secondRecOperatorCode.lean](valNat_secondRecOperatorCode.lean)**
-
-@import "valNat_secondRecOperatorCode.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_succ.lean](valNat_succ.lean)**
-
-@import "valNat_succ.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_apply.lean](valNat_apply.lean)**
-
-@import "valNat_apply.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_unionCode.lean](valNat_unionCode.lean)**
-
-@import "valNat_unionCode.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_finAux.lean](valNat_finAux.lean)**
-
-@import "valNat_finAux.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_fin.lean](valNat_fin.lean)**
-
-@import "valNat_fin.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_myhillCase2Code.lean](valNat_myhillCase2Code.lean)**
-
-@import "valNat_myhillCase2Code.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_myhillCase2Code_bot.lean](valNat_myhillCase2Code_bot.lean)**
-
-@import "valNat_myhillCase2Code_bot.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_myhillCase2Code_ne_bot.lean](valNat_myhillCase2Code_ne_bot.lean)**
-
-@import "valNat_myhillCase2Code_ne_bot.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_zero.lean](valNat_zero.lean)**
-
-@import "valNat_zero.lean"
+@import "valNat_codes.lean"
 
 **[DataTypesAsLattices/Enumeration/valRank.lean](valRank.lean)**
 
@@ -1190,21 +1119,9 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "valTraceOk_complete.lean"
 
-**[DataTypesAsLattices/Enumeration/valNat_mem_iff.lean](valNat_mem_iff.lean)**
-
-@import "valNat_mem_iff.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_mem_re.lean](valNat_mem_re.lean)**
-
-@import "valNat_mem_re.lean"
-
 **[DataTypesAsLattices/Enumeration/myhillQ_isRE.lean](myhillQ_isRE.lean)**
 
 @import "myhillQ_isRE.lean"
-
-**[DataTypesAsLattices/Enumeration/valNat_mem_comp_primrec.lean](valNat_mem_comp_primrec.lean)**
-
-@import "valNat_mem_comp_primrec.lean"
 
 **[DataTypesAsLattices/Enumeration/valTraceStruct.lean](valTraceStruct.lean)**
 

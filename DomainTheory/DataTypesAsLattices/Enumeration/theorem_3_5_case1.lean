@@ -14,6 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.argNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
 public import DomainTheory.DataTypesAsLattices.Enumeration.valRank
 public import DomainTheory.DataTypesAsLattices.Enumeration.num
 public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecVal
@@ -105,9 +106,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
@@ -127,12 +125,9 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_filterNum
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_fin
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_mem_comp_primrec
 public import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum_range_re
 public import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum_range_not_computable
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillCase1Code
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_myhillCase1Code
 
 @[expose] public section
 
@@ -161,14 +156,14 @@ theorem theorem_3_5_case1 {u : Pomega} {p : ℕ → ℕ} {n k : ℕ}
         (Set.finite_Iio hex.choose).subset fun j hj =>
           Nat.lt_of_not_ge fun hle => hj hex.choose hle hex.choose_spec
       have hfins : (valNat (myhillCase1Code n m)).Finite := by
-        rw [valNat_myhillCase1Code]
+        rw [valNat.myhillCase1Code_eq]
         exact hfin.inter_of_right _
       obtain ⟨j, hj⟩ := exists_code_of_finite hfins
       have hje : e j ⊆ valNat n := by
-        rw [hj, valNat_myhillCase1Code]
+        rw [hj, valNat.myhillCase1Code_eq]
         exact Set.inter_subset_left
       have : k ∉ valNat (p (fin j)) := fun h => hnin ⟨j, hje, h⟩
-      have heq := hext.out (myhillCase1Code n m) (fin j) (by simp [hj, valNat_fin])
+      have heq := hext.out (myhillCase1Code n m) (fin j) (by simp [hj, valNat.fin_eq])
       simp [heq, this, hex]
     · have hall : {j | ∀ i ≤ j, haltEnum i ≠ m} = Set.univ := by
         ext j
@@ -177,13 +172,13 @@ theorem theorem_3_5_case1 {u : Pomega} {p : ℕ → ℕ} {n k : ℕ}
         · intro _ i _
           exact fun h => hex ⟨i, h⟩
       have : valNat (myhillCase1Code n m) = valNat n := by
-        rw [valNat_myhillCase1Code, hall]
+        rw [valNat.myhillCase1Code_eq, hall]
         simp
       have heq := hext.out (myhillCase1Code n m) n this
       simp [heq, hk, hex]
   have hre : REPred fun m => ¬∃ t, haltEnum t = m :=
     _root_.REPred.of_eq
-      (valNat_mem_comp_primrec (k := k) hu hr (primrec_myhillCase1Code n))
+      (valNat.mem_comp_primrec (k := k) hu hr (primrec_myhillCase1Code n))
       fun m => hiff m
   exact haltEnum_range_not_computable
     ((ComputablePred.computable_iff_re_compl_re').2 ⟨haltEnum_range_re, hre⟩)

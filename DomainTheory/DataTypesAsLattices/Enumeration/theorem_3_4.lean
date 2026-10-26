@@ -14,6 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.argNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
 public import DomainTheory.DataTypesAsLattices.Enumeration.valRank
 public import DomainTheory.DataTypesAsLattices.Enumeration.num
 public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecVal
@@ -105,9 +106,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
@@ -129,7 +127,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_4_diagonal
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_diagonalInterCode
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_diagonalInterCode
 
 @[expose] public section
 
@@ -149,7 +146,7 @@ theorem theorem_3_4 :
   obtain ⟨k, hk⟩ :=
     theorem_3_2_surjective (IsRE.combinatory hpre)
   exact theorem_3_4_diagonal (val := valNat) (v := diagonalInterCode)
-    valNat_diagonalInterCode rfl ⟨k, hk⟩
+    valNat.diagonalInterCode_eq rfl ⟨k, hk⟩
 
 
 end DomainTheory.DataTypesAsLattices

@@ -207,17 +207,15 @@ flowchart TB
   N205["table1_mu"]
   N206["termDollarStepBody_isScottContinuous_s"]
   N207["termDollarStepBody_isScottContinuous_z"]
-  N208["termDollarStep_isScottContinuous"]
+
   N209["termShift_isScottContinuous"]
   N210["termShift_app"]
   N211["termShift_left_isScottContinuous"]
   N212["termDollarStepBody_isScottContinuous_u"]
-  N213["termDollarStep_app"]
-  N214["termDollarStep_app2"]
+
   N215["termShift_ofNat"]
   N216["seqFunLt_succ_term"]
-  N217["termDollarStep_iterate"]
-  N218["termDollarStep_fix_app"]
+
   N219["dollarC_eq_fix_termDollarStep"]
   N220["theorem_2_1"]
   N221["theorem_2_2_alpha"]
@@ -1023,10 +1021,9 @@ flowchart TB
   N5 -->|"1"| N207
   N127 -->|"1"| N207
   N152 -->|"1"| N207
-  N0 -->|"1"| N208
-  N60 -->|"1"| N208
-  N112 -->|"1"| N208
-  N206 -->|"1"| N208
+  N60 -->|"1"| N58
+  N112 -->|"1"| N58
+  N206 -->|"1"| N58
   N0 -->|"1"| N209
   N60 -->|"1"| N209
   N183 -->|"1"| N209
@@ -1042,14 +1039,8 @@ flowchart TB
   N5 -->|"1"| N212
   N107 -->|"1"| N212
   N211 -->|"1"| N212
-  N0 -->|"1"| N213
-  N60 -->|"1"| N213
-  N112 -->|"1"| N213
-  N212 -->|"1"| N213
-  N0 -->|"1"| N214
-  N60 -->|"1"| N214
-  N207 -->|"1"| N214
-  N213 -->|"1"| N214
+  N212 -->|"1"| N58
+  N207 -->|"1"| N58
   N0 -->|"1"| N215
   N60 -->|"1"| N215
   N203 -->|"1"| N215
@@ -1058,22 +1049,14 @@ flowchart TB
   N60 -->|"1"| N216
   N136 -->|"1"| N216
   N215 -->|"1"| N216
-  N0 -->|"1"| N217
-  N60 -->|"1"| N217
-  N105 -->|"1"| N217
-  N172 -->|"1"| N217
-  N214 -->|"1"| N217
-  N216 -->|"1"| N217
-  N0 -->|"1"| N218
-  N60 -->|"1"| N218
-  N106 -->|"1"| N218
-  N173 -->|"1"| N218
-  N217 -->|"1"| N218
+  N105 -->|"1"| N58
+  N172 -->|"1"| N58
+  N216 -->|"1"| N58
+  N106 -->|"1"| N58
+  N173 -->|"1"| N58
   N0 -->|"1"| N219
   N60 -->|"1"| N219
-  N208 -->|"1"| N219
-  N214 -->|"1"| N219
-  N218 -->|"1"| N219
+  N58 -->|"1"| N219
   N0 -->|"1"| N220
   N60 -->|"1"| N220
   N192 -->|"1"| N220
@@ -1128,7 +1111,7 @@ flowchart TB
   N0 -->|"1"| N236
   N60 -->|"1"| N236
   N77 -->|"1"| N236
-  N208 -->|"1"| N236
+  N58 -->|"1"| N236
   N219 -->|"1"| N236
   N233 -->|"1"| N236
   N234 -->|"1"| N236
@@ -1368,17 +1351,15 @@ flowchart TB
   class N205 file
   class N206 file
   class N207 file
-  class N208 file
+
   class N209 file
   class N210 file
   class N211 file
   class N212 file
-  class N213 file
-  class N214 file
+
   class N215 file
   class N216 file
-  class N217 file
-  class N218 file
+
   class N219 file
   class N220 file
   class N221 file

@@ -47,7 +47,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Yterm
 public import DomainTheory.DataTypesAsLattices.Lambda.termShift
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
-public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.seqCons_body

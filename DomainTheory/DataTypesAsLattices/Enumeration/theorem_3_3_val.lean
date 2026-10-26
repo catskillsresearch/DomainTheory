@@ -14,6 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.argNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
 public import DomainTheory.DataTypesAsLattices.Enumeration.valRank
 public import DomainTheory.DataTypesAsLattices.Enumeration.num
 public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecVal
@@ -105,9 +106,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_succ
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
@@ -127,7 +125,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_filterNum
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_Ycode
 
 @[expose] public section
 
@@ -139,7 +136,7 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem theorem_3_3_val (n : ℕ) :
     valNat (recCode n) = funOf (valNat n) (valNat (recCode n)) := by
-  rw [recCode, valNat_apply, valNat_Ycode]
+  rw [recCode, valNat.app, valNat.Ycode_eq]
   exact Ycomb_unfold (valNat n)
 
 end DomainTheory.DataTypesAsLattices
