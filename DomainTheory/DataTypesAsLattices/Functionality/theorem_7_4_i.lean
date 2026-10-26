@@ -4,7 +4,6 @@ module
 public import DomainTheory.DataTypesAsLattices.Retracts
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 public import DomainTheory.DataTypesAsLattices.Functionality.mem
 public import DomainTheory.DataTypesAsLattices.Functionality.emptyE
 public import DomainTheory.DataTypesAsLattices.Functionality.singletonE
@@ -15,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Ea
 public import DomainTheory.DataTypesAsLattices.Functionality.kerE
 public import DomainTheory.DataTypesAsLattices.Functionality.Nrel
 public import DomainTheory.DataTypesAsLattices.Functionality.Nk
-public import DomainTheory.DataTypesAsLattices.Functionality.sumMed
 public import DomainTheory.DataTypesAsLattices.Functionality.inleftC
 public import DomainTheory.DataTypesAsLattices.Functionality.inrightC
 public import DomainTheory.DataTypesAsLattices.Functionality.outleftC
@@ -26,7 +24,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairMed
 public import DomainTheory.DataTypesAsLattices.Functionality.Z
 public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb
 public import DomainTheory.DataTypesAsLattices.Functionality.iterateE
-public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinRel
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinGood
@@ -40,20 +37,13 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hApply
 public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion
 public import DomainTheory.DataTypesAsLattices.Functionality.hVar
 public import DomainTheory.DataTypesAsLattices.Functionality.hZero
-public import DomainTheory.DataTypesAsLattices.Functionality.hSucc
 public import DomainTheory.DataTypesAsLattices.Functionality.hPred
 public import DomainTheory.DataTypesAsLattices.Functionality.hCond
 public import DomainTheory.DataTypesAsLattices.Functionality.hApp
-public import DomainTheory.DataTypesAsLattices.Functionality.hLam
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
 public import DomainTheory.DataTypesAsLattices.Functionality.HF
 public import DomainTheory.DataTypesAsLattices.Functionality.Hfun
 public import DomainTheory.DataTypesAsLattices.Functionality.Hcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_tag_ne
-public import DomainTheory.DataTypesAsLattices.Functionality.Z_rel
-public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_app2
-public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_isGraph
-public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_app_isGraph
+
 
 @[expose] public section
 
@@ -64,10 +54,10 @@ namespace DomainTheory.DataTypesAsLattices
 /-- **Scott 1976, Theorem 7.4 (i).** `Zₙ : (A → A) → (A → A)`. -/
 theorem theorem_7_4_i (A : RestrictedEquiv) (n : ℕ) :
     (arrowE (arrowE A A) (arrowE A A)).mem (Zcomb n) := by
-  refine ⟨Zcomb_isGraph n, Zcomb_isGraph n, ?_⟩
+  refine ⟨Zcomb.isGraph n, Zcomb.isGraph n, ?_⟩
   intro f f' hf
-  refine ⟨Zcomb_app_isGraph n f, Zcomb_app_isGraph n f', ?_⟩
+  refine ⟨Zcomb.app_isGraph n f, Zcomb.app_isGraph n f', ?_⟩
   intro x y hxy
-  simpa [Zcomb_app2] using Z_rel A n hf.2.2 hxy
+  simpa [Zcomb.app2] using Z.rel A n hf.2.2 hxy
 
 end DomainTheory.DataTypesAsLattices

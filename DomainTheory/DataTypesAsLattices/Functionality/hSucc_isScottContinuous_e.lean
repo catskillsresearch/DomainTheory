@@ -49,7 +49,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
 public import DomainTheory.DataTypesAsLattices.Functionality.HF
 public import DomainTheory.DataTypesAsLattices.Functionality.Hfun
 public import DomainTheory.DataTypesAsLattices.Functionality.Hcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_tag_ne
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
 public import DomainTheory.DataTypesAsLattices.Functionality.hApply_isScottContinuous_e
 
@@ -59,7 +58,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hApply_isScottConti
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem hSucc_isScottContinuous_e (H t : Pomega) :
+theorem hSucc.isScottContinuous_e (H t : Pomega) :
     IsScottContinuous (fun e => hSucc H e t) :=
   let hrec :=
     theorem_1_3 (f := fun e => hApply H e t) (g := expPayload)

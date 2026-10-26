@@ -5,7 +5,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_tag_ne
 
 @[expose] public section
 
@@ -30,10 +29,10 @@ def sumE (A B : RestrictedEquiv) : RestrictedEquiv where
     rcases h1 with ⟨hu, hv, hA⟩ | ⟨hu, hv, hB⟩
     · rcases h2 with ⟨hv', hw, hA'⟩ | ⟨hv', hw, _⟩
       · exact Or.inl ⟨hu, hw, A.trans hA hA'⟩
-      · exact (pairElem_tag_ne (funOf v (ofNat 1)) (funOf v (ofNat 1))
+      · exact (pairElem.tag_ne (funOf v (ofNat 1)) (funOf v (ofNat 1))
           (hv.symm.trans hv')).elim
     · rcases h2 with ⟨hv', hw, _⟩ | ⟨hv', hw, hB'⟩
-      · exact (pairElem_tag_ne (funOf v (ofNat 1)) (funOf v (ofNat 1))
+      · exact (pairElem.tag_ne (funOf v (ofNat 1)) (funOf v (ofNat 1))
           (hv'.symm.trans hv)).elim
       · exact Or.inr ⟨hu, hw, B.trans hB hB'⟩
 

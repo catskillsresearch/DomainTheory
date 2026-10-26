@@ -4,7 +4,6 @@ module
 public import DomainTheory.DataTypesAsLattices.Retracts
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 public import DomainTheory.DataTypesAsLattices.Functionality.mem
 public import DomainTheory.DataTypesAsLattices.Functionality.emptyE
 public import DomainTheory.DataTypesAsLattices.Functionality.singletonE
@@ -15,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Ea
 public import DomainTheory.DataTypesAsLattices.Functionality.kerE
 public import DomainTheory.DataTypesAsLattices.Functionality.Nrel
 public import DomainTheory.DataTypesAsLattices.Functionality.Nk
-public import DomainTheory.DataTypesAsLattices.Functionality.sumMed
 public import DomainTheory.DataTypesAsLattices.Functionality.inleftC
 public import DomainTheory.DataTypesAsLattices.Functionality.inrightC
 public import DomainTheory.DataTypesAsLattices.Functionality.outleftC
@@ -24,7 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.whichC
 public import DomainTheory.DataTypesAsLattices.Functionality.outC
 public import DomainTheory.DataTypesAsLattices.Functionality.pairMed
 public import DomainTheory.DataTypesAsLattices.Functionality.Z
-public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb
 public import DomainTheory.DataTypesAsLattices.Functionality.iterateE
 public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag
@@ -40,20 +37,14 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hApply
 public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion
 public import DomainTheory.DataTypesAsLattices.Functionality.hVar
 public import DomainTheory.DataTypesAsLattices.Functionality.hZero
-public import DomainTheory.DataTypesAsLattices.Functionality.hSucc
 public import DomainTheory.DataTypesAsLattices.Functionality.hPred
 public import DomainTheory.DataTypesAsLattices.Functionality.hCond
 public import DomainTheory.DataTypesAsLattices.Functionality.hApp
-public import DomainTheory.DataTypesAsLattices.Functionality.hLam
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
 public import DomainTheory.DataTypesAsLattices.Functionality.HF
 public import DomainTheory.DataTypesAsLattices.Functionality.Hfun
 public import DomainTheory.DataTypesAsLattices.Functionality.Hcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_tag_ne
-public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_app
-public import DomainTheory.DataTypesAsLattices.Functionality.Z_finite_no_tag
 public import DomainTheory.DataTypesAsLattices.Functionality.funOf_e_union_fresh
-public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_union_fresh
+
 
 @[expose] public section
 
@@ -77,8 +68,8 @@ theorem plotkin_finite_separation (p q m : ℕ) :
             funOf (e p) (Z m (e p) (e q) ∪ {pair (max p q + 1) m}) :=
         beta (funOf_isScottContinuous (e p)) _
       rw [hbeta, funOf_e_union_fresh p (max p q + 1) m _
-        (Nat.lt_succ_of_le (Nat.le_max_left p q)), sigmaJ_app,
-        sigmaJ_union_fresh (fun k => Z_finite_no_tag p q m k)]
+        (Nat.lt_succ_of_le (Nat.le_max_left p q)), sigmaJ.app,
+        sigmaJ.union_fresh (fun k => Z.finite_no_tag p q m k)]
       rfl
 
 end DomainTheory.DataTypesAsLattices

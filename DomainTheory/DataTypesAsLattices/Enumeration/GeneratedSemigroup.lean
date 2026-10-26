@@ -6,10 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.Lcomb
-public import DomainTheory.DataTypesAsLattices.Enumeration.barPos
-public import DomainTheory.DataTypesAsLattices.Enumeration.barStepBody
 public import DomainTheory.DataTypesAsLattices.Enumeration.barStep
-public import DomainTheory.DataTypesAsLattices.Enumeration.barComb
 public import DomainTheory.DataTypesAsLattices.Enumeration.enumComp
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gbar
 

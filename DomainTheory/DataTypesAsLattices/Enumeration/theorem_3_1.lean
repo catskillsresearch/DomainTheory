@@ -6,14 +6,14 @@ public import DomainTheory.DataTypesAsLattices.Computability
 public import DomainTheory.DataTypesAsLattices.Functionality
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_app_self
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_from_G
 public import DomainTheory.DataTypesAsLattices.Enumeration.predC_from_G
 public import DomainTheory.DataTypesAsLattices.Enumeration.condC_from_G
 public import DomainTheory.DataTypesAsLattices.Enumeration.Kcomb_from_G
 public import DomainTheory.DataTypesAsLattices.Enumeration.Scomb_from_G
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
+public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
+public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_more
 
 @[expose] public section
 
@@ -24,7 +24,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem theorem_3_1 {u : Pomega} :
     IsCombinatory u ↔ GeneratedFromG u := by
   have hzero : GeneratedFromG zeroC := by
-    simpa [Gcomb_app_self] using
+    simpa [Gcomb.app_self] using
       GeneratedFromG.app GeneratedFromG.G GeneratedFromG.G
   constructor
   · intro hu
@@ -67,7 +67,7 @@ theorem theorem_3_1 {u : Pomega} :
     | app _ _ iu iv => exact .app iu iv
   · intro hu
     induction hu with
-    | G => exact Gcomb_combinatory
+    | G => exact Gcomb.combinatory
     | app _ _ iu iv => exact .app iu iv
 
 end DomainTheory.DataTypesAsLattices

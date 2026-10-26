@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valStepValue
-public import DomainTheory.DataTypesAsLattices.Enumeration.valStep
 public import DomainTheory.DataTypesAsLattices.Enumeration.valC
 public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
@@ -42,7 +41,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas
 public import DomainTheory.DataTypesAsLattices.Enumeration.valEntryJustified
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceStruct
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceG
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk
 public import DomainTheory.DataTypesAsLattices.Enumeration.unpairWRec
 public import DomainTheory.DataTypesAsLattices.Enumeration.unpairW
 public import DomainTheory.DataTypesAsLattices.Enumeration.condCode
@@ -72,23 +70,18 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Lterm
 public import DomainTheory.DataTypesAsLattices.Enumeration.barStepTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.funRetractTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSubalgebra
-public import DomainTheory.DataTypesAsLattices.Enumeration.vaalF
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalC
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.predClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.condClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.kClosed
-public import DomainTheory.DataTypesAsLattices.Enumeration.sClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.gpackClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.gClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalStepTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalTyped
 public import DomainTheory.DataTypesAsLattices.Enumeration.TOT
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_app
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.not_mem_zero_Gcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_ne_bot
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_app_self
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_one
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_from_G
@@ -100,8 +93,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.bot_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_eq_SK
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
@@ -123,14 +114,15 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_filterNum
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.Lcomb_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb_mem_FUN
 public import DomainTheory.DataTypesAsLattices.Enumeration.Lcomb_mem_FUN
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gbar_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gbar_mem_FUN
 public import DomainTheory.DataTypesAsLattices.Enumeration.enumComp_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.enumComp_mem_FUN
+public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb
+
+public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb_more
 
 @[expose] public section
 
@@ -148,7 +140,7 @@ open Nat.Partrec.Code
 theorem generatedSemigroup_mem_RE_FUN {u : Pomega} (hu : GeneratedSemigroup u) :
     u ∈ RE ∩ FUN := by
   induction hu with
-  | R => exact ⟨Rcomb_combinatory, Rcomb_mem_FUN⟩
+  | R => exact ⟨Rcomb.combinatory, Rcomb.mem_FUN⟩
   | L => exact ⟨Lcomb_combinatory, Lcomb_mem_FUN⟩
   | Gbar => exact ⟨Gbar_combinatory, Gbar_mem_FUN⟩
   | comp _ _ ihu ihv =>

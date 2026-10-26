@@ -6,7 +6,8 @@ public import DomainTheory.DataTypesAsLattices.Functionality
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
+public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
+public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_more
 
 @[expose] public section
 
@@ -48,7 +49,7 @@ theorem app (n m : ℕ) :
   rw [applyNat, succ, unpair_pair]
 
 theorem combinatory : ∀ n, IsCombinatory (valNat n)
-  | 0 => zero ▸ Gcomb_combinatory
+  | 0 => zero ▸ Gcomb.combinatory
   | n + 1 =>
     succ n ▸
       .app (combinatory (unpair n).1) (combinatory (unpair n).2)

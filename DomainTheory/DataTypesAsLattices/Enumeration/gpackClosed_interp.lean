@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valStepValue
-public import DomainTheory.DataTypesAsLattices.Enumeration.valStep
 public import DomainTheory.DataTypesAsLattices.Enumeration.valC
 public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
@@ -42,7 +41,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas
 public import DomainTheory.DataTypesAsLattices.Enumeration.valEntryJustified
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceStruct
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceG
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk
 public import DomainTheory.DataTypesAsLattices.Enumeration.unpairWRec
 public import DomainTheory.DataTypesAsLattices.Enumeration.unpairW
 public import DomainTheory.DataTypesAsLattices.Enumeration.condCode
@@ -72,7 +70,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Lterm
 public import DomainTheory.DataTypesAsLattices.Enumeration.barStepTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.funRetractTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSubalgebra
-public import DomainTheory.DataTypesAsLattices.Enumeration.vaalF
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalC
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.predClosed
@@ -84,11 +81,8 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.gClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalStepTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalTyped
 public import DomainTheory.DataTypesAsLattices.Enumeration.TOT
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_app
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.not_mem_zero_Gcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_ne_bot
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_app_self
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_one
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_from_G
@@ -100,8 +94,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.bot_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_eq_SK
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
@@ -128,12 +120,14 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed_avoids8
 public import DomainTheory.DataTypesAsLattices.Enumeration.predClosed_avoids8
 public import DomainTheory.DataTypesAsLattices.Enumeration.condClosed_avoids8
 public import DomainTheory.DataTypesAsLattices.Enumeration.kClosed_avoids8
-public import DomainTheory.DataTypesAsLattices.Enumeration.sClosed_avoids8
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2Term_avoids8
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed_interp
 public import DomainTheory.DataTypesAsLattices.Enumeration.predClosed_interp
 public import DomainTheory.DataTypesAsLattices.Enumeration.condClosed_interp
 public import DomainTheory.DataTypesAsLattices.Enumeration.kClosed_interp
+
+public import DomainTheory.DataTypesAsLattices.Enumeration.sClosed_avoids8
+
 public import DomainTheory.DataTypesAsLattices.Enumeration.sClosed_interp
 
 @[expose] public section

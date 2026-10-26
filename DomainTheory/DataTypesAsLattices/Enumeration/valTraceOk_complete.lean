@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valStepValue
-public import DomainTheory.DataTypesAsLattices.Enumeration.valStep
 public import DomainTheory.DataTypesAsLattices.Enumeration.valC
 public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
@@ -72,23 +71,18 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Lterm
 public import DomainTheory.DataTypesAsLattices.Enumeration.barStepTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.funRetractTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSubalgebra
-public import DomainTheory.DataTypesAsLattices.Enumeration.vaalF
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalC
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.predClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.condClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.kClosed
-public import DomainTheory.DataTypesAsLattices.Enumeration.sClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.gpackClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.gClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalStepTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalTyped
 public import DomainTheory.DataTypesAsLattices.Enumeration.TOT
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_app
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.not_mem_zero_Gcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_ne_bot
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_app_self
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_one
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_from_G
@@ -100,8 +94,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.bot_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_eq_SK
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
@@ -124,11 +116,8 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer_combin
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp_eq
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_left
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_right
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_append
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_cons
 public import DomainTheory.DataTypesAsLattices.Enumeration.exists_concat_traces
 
 @[expose] public section
@@ -144,7 +133,7 @@ open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
 
-theorem valTraceOk_complete :
+theorem valTraceOk.complete :
     ∀ code member, member ∈ valNat code →
       ∃ tr, valTraceOk tr ∧ valTraceHas tr code member := by
   intro code
@@ -153,7 +142,7 @@ theorem valTraceOk_complete :
     intro member hm
     cases code with
     | zero =>
-      obtain ⟨hok0, hhas0⟩ := valTraceOk_zero member (valNat.zero ▸ hm)
+      obtain ⟨hok0, hhas0⟩ := valTraceOk.zero member (valNat.zero ▸ hm)
       exact ⟨[(0, member, 0)], hok0, hhas0⟩
     | succ p =>
       have hop' : (unpair p).1 < p + 1 :=
@@ -177,7 +166,7 @@ theorem valTraceOk_complete :
             exact mem_e.mpr hmem.2
           exact ih _ harg i (htSub this)
       let trRest := trOp ++ trBits
-      have hokRest : valTraceOk trRest := valTraceOk_append hokOp hokBits
+      have hokRest : valTraceOk trRest := valTraceOk.append hokOp hokBits
       have hhasOp' : valTraceHas trRest (unpair p).1 (pair t member) :=
         valTraceHas_append_left hhasOp
       have hhasBits' : ∀ i < t + 1,
@@ -191,7 +180,7 @@ theorem valTraceOk_complete :
       have hcons : ∀ {c m}, valTraceHas trRest c m → valTraceHas (e :: trRest) c m :=
         fun h => valTraceHas_append_right (tr₁ := [e]) h
       refine ⟨e :: trRest,
-        valTraceOk_cons hokRest ?_ (fun h0 => (Nat.succ_ne_zero p h0).elim),
+        valTraceOk.cons hokRest ?_ (fun h0 => (Nat.succ_ne_zero p h0).elim),
         ⟨t, by simp [e]⟩⟩
       · refine Or.inr ⟨?_, ?_⟩
         · simpa [e, Nat.pred_succ, unpairComp_eq] using hcons hhasOp'

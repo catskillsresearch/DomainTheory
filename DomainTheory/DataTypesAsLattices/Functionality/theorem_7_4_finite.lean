@@ -4,7 +4,6 @@ module
 public import DomainTheory.DataTypesAsLattices.Retracts
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 public import DomainTheory.DataTypesAsLattices.Functionality.mem
 public import DomainTheory.DataTypesAsLattices.Functionality.emptyE
 public import DomainTheory.DataTypesAsLattices.Functionality.singletonE
@@ -15,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Ea
 public import DomainTheory.DataTypesAsLattices.Functionality.kerE
 public import DomainTheory.DataTypesAsLattices.Functionality.Nrel
 public import DomainTheory.DataTypesAsLattices.Functionality.Nk
-public import DomainTheory.DataTypesAsLattices.Functionality.sumMed
 public import DomainTheory.DataTypesAsLattices.Functionality.inleftC
 public import DomainTheory.DataTypesAsLattices.Functionality.inrightC
 public import DomainTheory.DataTypesAsLattices.Functionality.outleftC
@@ -24,7 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.whichC
 public import DomainTheory.DataTypesAsLattices.Functionality.outC
 public import DomainTheory.DataTypesAsLattices.Functionality.pairMed
 public import DomainTheory.DataTypesAsLattices.Functionality.Z
-public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb
 public import DomainTheory.DataTypesAsLattices.Functionality.iterateE
 public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag
@@ -40,24 +37,19 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hApply
 public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion
 public import DomainTheory.DataTypesAsLattices.Functionality.hVar
 public import DomainTheory.DataTypesAsLattices.Functionality.hZero
-public import DomainTheory.DataTypesAsLattices.Functionality.hSucc
 public import DomainTheory.DataTypesAsLattices.Functionality.hPred
 public import DomainTheory.DataTypesAsLattices.Functionality.hCond
 public import DomainTheory.DataTypesAsLattices.Functionality.hApp
-public import DomainTheory.DataTypesAsLattices.Functionality.hLam
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
 public import DomainTheory.DataTypesAsLattices.Functionality.HF
 public import DomainTheory.DataTypesAsLattices.Functionality.Hfun
 public import DomainTheory.DataTypesAsLattices.Functionality.Hcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_tag_ne
-public import DomainTheory.DataTypesAsLattices.Functionality.Z_graph_funOf
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_4_plotkin
-public import DomainTheory.DataTypesAsLattices.Functionality.Z_finite_no_tag
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkin_finite_separation
 public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite
 public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite_union
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE_erase
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkin_function_related
+
 
 @[expose] public section
 
@@ -99,7 +91,7 @@ theorem theorem_7_4_finite (z : Pomega)
   have hleft :
       funOf (funOf z gf) (e q) = Z r (e p) (e q) := by
     rw [hr]
-    exact Z_graph_funOf r (e p) (e q)
+    exact Z.graph_funOf r (e p) (e q)
   have hright :
       funOf (funOf z gu) (e q ∪ {pair j 0}) =
         Z m (e p) (e q) ∪ {pair j m} := by
@@ -123,7 +115,7 @@ theorem theorem_7_4_finite (z : Pomega)
     simp
   have hnm : n = m := by
     rcases htag with hbad | htag
-    · exact (Z_finite_no_tag p q m n (by simpa [j] using hbad)).elim
+    · exact (Z.finite_no_tag p q m n (by simpa [j] using hbad)).elim
     · exact (pair_inj htag).2
   rw [hη (e p), hleft, horbit, ← hnm]
 

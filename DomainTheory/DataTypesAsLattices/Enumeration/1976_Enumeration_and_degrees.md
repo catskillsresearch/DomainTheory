@@ -14,18 +14,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "Deg_isSubalgebra.lean"
 
-**[DataTypesAsLattices/Enumeration/Gcomb_bot.lean](Gcomb_bot.lean)**
-
-@import "Gcomb_bot.lean"
-
-**[DataTypesAsLattices/Enumeration/Gcomb_isRE.lean](Gcomb_isRE.lean)**
-
-@import "Gcomb_isRE.lean"
-
-**[DataTypesAsLattices/Enumeration/Gcomb_succ.lean](Gcomb_succ.lean)**
-
-@import "Gcomb_succ.lean"
-
 **[DataTypesAsLattices/Enumeration/GeneratedSubalgebra_generator.lean](GeneratedSubalgebra_generator.lean)**
 
 @import "GeneratedSubalgebra_generator.lean"
@@ -41,6 +29,11 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 **[DataTypesAsLattices/Enumeration/Gcomb.lean](Gcomb.lean)**
 
 @import "Gcomb.lean"
+
+
+**[DataTypesAsLattices/Enumeration/Gcomb_more.lean](Gcomb_more.lean)**
+
+@import "Gcomb_more.lean"
 
 **[DataTypesAsLattices/Enumeration/GeneratedFromG.lean](GeneratedFromG.lean)**
 
@@ -77,22 +70,11 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 **[DataTypesAsLattices/Enumeration/Rcomb.lean](Rcomb.lean)**
 
 @import "Rcomb.lean"
+@import "Rcomb_more.lean"
 
 **[DataTypesAsLattices/Enumeration/barPos.lean](barPos.lean)**
 
 @import "barPos.lean"
-
-**[DataTypesAsLattices/Enumeration/barPos_one.lean](barPos_one.lean)**
-
-@import "barPos_one.lean"
-
-**[DataTypesAsLattices/Enumeration/barPos_two.lean](barPos_two.lean)**
-
-@import "barPos_two.lean"
-
-**[DataTypesAsLattices/Enumeration/barPos_zero.lean](barPos_zero.lean)**
-
-@import "barPos_zero.lean"
 
 **[DataTypesAsLattices/Enumeration/barStepBody.lean](barStepBody.lean)**
 
@@ -105,14 +87,11 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 **[DataTypesAsLattices/Enumeration/barComb.lean](barComb.lean)**
 
 @import "barComb.lean"
+@import "barComb_more.lean"
 
 **[DataTypesAsLattices/Enumeration/Gbar.lean](Gbar.lean)**
 
 @import "Gbar.lean"
-
-**[DataTypesAsLattices/Enumeration/barStepBody_isScottContinuous_B.lean](barStepBody_isScottContinuous_B.lean)**
-
-@import "barStepBody_isScottContinuous_B.lean"
 
 **[DataTypesAsLattices/Enumeration/barStep_isScottContinuous.lean](barStep_isScottContinuous.lean)**
 
@@ -161,18 +140,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 **[DataTypesAsLattices/Enumeration/GeneratedSemigroup.lean](GeneratedSemigroup.lean)**
 
 @import "GeneratedSemigroup.lean"
-
-**[DataTypesAsLattices/Enumeration/Gcomb_app.lean](Gcomb_app.lean)**
-
-@import "Gcomb_app.lean"
-
-**[DataTypesAsLattices/Enumeration/Gcomb_eq_condC.lean](Gcomb_eq_condC.lean)**
-
-@import "Gcomb_eq_condC.lean"
-
-**[DataTypesAsLattices/Enumeration/Gcomb_zero.lean](Gcomb_zero.lean)**
-
-@import "Gcomb_zero.lean"
 
 **[DataTypesAsLattices/Enumeration/Gpack_ne_bot.lean](Gpack_ne_bot.lean)**
 
@@ -438,10 +405,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "not_mem_zero_Gcomb.lean"
 
-**[DataTypesAsLattices/Enumeration/Gcomb_app_self.lean](Gcomb_app_self.lean)**
-
-@import "Gcomb_app_self.lean"
-
 **[DataTypesAsLattices/Enumeration/not_mem_zero_cond_graph.lean](not_mem_zero_cond_graph.lean)**
 
 @import "not_mem_zero_cond_graph.lean"
@@ -582,14 +545,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "sClosed.lean"
 
-**[DataTypesAsLattices/Enumeration/sClosed_avoids8.lean](sClosed_avoids8.lean)**
-
-@import "sClosed_avoids8.lean"
-
-**[DataTypesAsLattices/Enumeration/sClosed_interp.lean](sClosed_interp.lean)**
-
-@import "sClosed_interp.lean"
-
 **[DataTypesAsLattices/Enumeration/secondRecSubst.lean](secondRecSubst.lean)**
 
 @import "secondRecSubst.lean"
@@ -654,10 +609,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "Rterm_interp.lean"
 
-**[DataTypesAsLattices/Enumeration/Rcomb_combinatory.lean](Rcomb_combinatory.lean)**
-
-@import "Rcomb_combinatory.lean"
-
 **[DataTypesAsLattices/Enumeration/seq2_eq_SK.lean](seq2_eq_SK.lean)**
 
 @import "seq2_eq_SK.lean"
@@ -669,10 +620,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 **[DataTypesAsLattices/Enumeration/Gpack_combinatory.lean](Gpack_combinatory.lean)**
 
 @import "Gpack_combinatory.lean"
-
-**[DataTypesAsLattices/Enumeration/Gcomb_combinatory.lean](Gcomb_combinatory.lean)**
-
-@import "Gcomb_combinatory.lean"
 
 **[DataTypesAsLattices/Enumeration/seq2_left_isScottContinuous.lean](seq2_left_isScottContinuous.lean)**
 
@@ -689,18 +636,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 **[DataTypesAsLattices/Enumeration/seq2_right_isScottContinuous.lean](seq2_right_isScottContinuous.lean)**
 
 @import "seq2_right_isScottContinuous.lean"
-
-**[DataTypesAsLattices/Enumeration/Rcomb_app.lean](Rcomb_app.lean)**
-
-@import "Rcomb_app.lean"
-
-**[DataTypesAsLattices/Enumeration/Rcomb_app_zero.lean](Rcomb_app_zero.lean)**
-
-@import "Rcomb_app_zero.lean"
-
-**[DataTypesAsLattices/Enumeration/Rcomb_mem_FUN.lean](Rcomb_mem_FUN.lean)**
-
-@import "Rcomb_mem_FUN.lean"
 
 **[DataTypesAsLattices/Enumeration/eq_3_16.lean](eq_3_16.lean)**
 
@@ -738,10 +673,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "barStepTerm_interp.lean"
 
-**[DataTypesAsLattices/Enumeration/barComb_combinatory.lean](barComb_combinatory.lean)**
-
-@import "barComb_combinatory.lean"
-
 **[DataTypesAsLattices/Enumeration/Gbar_combinatory.lean](Gbar_combinatory.lean)**
 
 @import "Gbar_combinatory.lean"
@@ -749,22 +680,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 **[DataTypesAsLattices/Enumeration/seqCons_right_isScottContinuous.lean](seqCons_right_isScottContinuous.lean)**
 
 @import "seqCons_right_isScottContinuous.lean"
-
-**[DataTypesAsLattices/Enumeration/barPos_isScottContinuous_u.lean](barPos_isScottContinuous_u.lean)**
-
-@import "barPos_isScottContinuous_u.lean"
-
-**[DataTypesAsLattices/Enumeration/barPos_isScottContinuous_x.lean](barPos_isScottContinuous_x.lean)**
-
-@import "barPos_isScottContinuous_x.lean"
-
-**[DataTypesAsLattices/Enumeration/barStepBody_isScottContinuous_u.lean](barStepBody_isScottContinuous_u.lean)**
-
-@import "barStepBody_isScottContinuous_u.lean"
-
-**[DataTypesAsLattices/Enumeration/barStepBody_isScottContinuous_x.lean](barStepBody_isScottContinuous_x.lean)**
-
-@import "barStepBody_isScottContinuous_x.lean"
 
 **[DataTypesAsLattices/Enumeration/barStep_app.lean](barStep_app.lean)**
 
@@ -777,18 +692,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 **[DataTypesAsLattices/Enumeration/Gbar_mem_FUN.lean](Gbar_mem_FUN.lean)**
 
 @import "Gbar_mem_FUN.lean"
-
-**[DataTypesAsLattices/Enumeration/barComb_app2.lean](barComb_app2.lean)**
-
-@import "barComb_app2.lean"
-
-**[DataTypesAsLattices/Enumeration/barComb_on_R.lean](barComb_on_R.lean)**
-
-@import "barComb_on_R.lean"
-
-**[DataTypesAsLattices/Enumeration/barComb_on_barPos_R.lean](barComb_on_barPos_R.lean)**
-
-@import "barComb_on_barPos_R.lean"
 
 **[DataTypesAsLattices/Enumeration/eq_3_16_bar.lean](eq_3_16_bar.lean)**
 
@@ -950,18 +853,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "vaalC.lean"
 
-**[DataTypesAsLattices/Enumeration/vaalF_body_isScottContinuous.lean](vaalF_body_isScottContinuous.lean)**
-
-@import "vaalF_body_isScottContinuous.lean"
-
-**[DataTypesAsLattices/Enumeration/vaalF_app.lean](vaalF_app.lean)**
-
-@import "vaalF_app.lean"
-
-**[DataTypesAsLattices/Enumeration/vaalF_isScottContinuous.lean](vaalF_isScottContinuous.lean)**
-
-@import "vaalF_isScottContinuous.lean"
-
 **[DataTypesAsLattices/Enumeration/vaalC_fixedPoint.lean](vaalC_fixedPoint.lean)**
 
 @import "vaalC_fixedPoint.lean"
@@ -1019,22 +910,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "valC.lean"
 
-**[DataTypesAsLattices/Enumeration/valStep_body_isScottContinuous.lean](valStep_body_isScottContinuous.lean)**
-
-@import "valStep_body_isScottContinuous.lean"
-
-**[DataTypesAsLattices/Enumeration/valStep_app.lean](valStep_app.lean)**
-
-@import "valStep_app.lean"
-
-**[DataTypesAsLattices/Enumeration/valStep_app_succ.lean](valStep_app_succ.lean)**
-
-@import "valStep_app_succ.lean"
-
-**[DataTypesAsLattices/Enumeration/valStep_app_zero.lean](valStep_app_zero.lean)**
-
-@import "valStep_app_zero.lean"
-
 **[DataTypesAsLattices/Enumeration/valStage_eq_of_rank_le.lean](valStage_eq_of_rank_le.lean)**
 
 @import "valStage_eq_of_rank_le.lean"
@@ -1087,33 +962,9 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "primrecPred_valTraceStruct.lean"
 
-**[DataTypesAsLattices/Enumeration/valTraceOk_append.lean](valTraceOk_append.lean)**
-
-@import "valTraceOk_append.lean"
-
-**[DataTypesAsLattices/Enumeration/valTraceOk_cons.lean](valTraceOk_cons.lean)**
-
-@import "valTraceOk_cons.lean"
-
-**[DataTypesAsLattices/Enumeration/valTraceOk_empty.lean](valTraceOk_empty.lean)**
-
-@import "valTraceOk_empty.lean"
-
 **[DataTypesAsLattices/Enumeration/exists_concat_traces.lean](exists_concat_traces.lean)**
 
 @import "exists_concat_traces.lean"
-
-**[DataTypesAsLattices/Enumeration/valTraceOk_re.lean](valTraceOk_re.lean)**
-
-@import "valTraceOk_re.lean"
-
-**[DataTypesAsLattices/Enumeration/valTraceOk_sound.lean](valTraceOk_sound.lean)**
-
-@import "valTraceOk_sound.lean"
-
-**[DataTypesAsLattices/Enumeration/valTraceOk_zero.lean](valTraceOk_zero.lean)**
-
-@import "valTraceOk_zero.lean"
 
 **[DataTypesAsLattices/Enumeration/valTraceOk_complete.lean](valTraceOk_complete.lean)**
 

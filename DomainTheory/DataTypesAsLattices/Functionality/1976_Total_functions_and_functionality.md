@@ -84,23 +84,15 @@ Functionality had long been studied in combinatory logic. Hindley, Lercher, and 
 
 **[DataTypesAsLattices/Functionality/Z_finite_bound.lean](Z_finite_bound.lean)**
 
-@import "Z_finite_bound.lean"
-
 **[DataTypesAsLattices/Functionality/Z_finite_no_tag.lean](Z_finite_no_tag.lean)**
 
-@import "Z_finite_no_tag.lean"
-
 **[DataTypesAsLattices/Functionality/Z_graph_funOf.lean](Z_graph_funOf.lean)**
-
-@import "Z_graph_funOf.lean"
 
 **[DataTypesAsLattices/Functionality/Z_isScottContinuous_right.lean](Z_isScottContinuous_right.lean)**
 
 @import "Z_isScottContinuous_right.lean"
 
 **[DataTypesAsLattices/Functionality/Z_rel.lean](Z_rel.lean)**
-
-@import "Z_rel.lean"
 
 **[DataTypesAsLattices/Functionality/Zcomb.lean](Zcomb.lean)**
 
@@ -140,23 +132,13 @@ Functionality had long been studied in combinatory logic. Hindley, Lercher, and 
 
 **[DataTypesAsLattices/Functionality/Zcomb_map_isScottContinuous.lean](Zcomb_map_isScottContinuous.lean)**
 
-@import "Zcomb_map_isScottContinuous.lean"
-
 **[DataTypesAsLattices/Functionality/Zcomb_app.lean](Zcomb_app.lean)**
-
-@import "Zcomb_app.lean"
 
 **[DataTypesAsLattices/Functionality/Zcomb_app2.lean](Zcomb_app2.lean)**
 
-@import "Zcomb_app2.lean"
-
 **[DataTypesAsLattices/Functionality/Zcomb_app_isGraph.lean](Zcomb_app_isGraph.lean)**
 
-@import "Zcomb_app_isGraph.lean"
-
 **[DataTypesAsLattices/Functionality/Zcomb_isGraph.lean](Zcomb_isGraph.lean)**
-
-@import "Zcomb_isGraph.lean"
 
 **[DataTypesAsLattices/Functionality/arrowR_diag_isScottContinuous.lean](arrowR_diag_isScottContinuous.lean)**
 
@@ -418,22 +400,6 @@ Functionality had long been studied in combinatory logic. Hindley, Lercher, and 
 
 @import "pairElem.lean"
 
-**[DataTypesAsLattices/Functionality/pairElem_eq_pairSeq.lean](pairElem_eq_pairSeq.lean)**
-
-@import "pairElem_eq_pairSeq.lean"
-
-**[DataTypesAsLattices/Functionality/pairElem_fst.lean](pairElem_fst.lean)**
-
-@import "pairElem_fst.lean"
-
-**[DataTypesAsLattices/Functionality/pairElem_snd.lean](pairElem_snd.lean)**
-
-@import "pairElem_snd.lean"
-
-**[DataTypesAsLattices/Functionality/pairElem_tag_ne.lean](pairElem_tag_ne.lean)**
-
-@import "pairElem_tag_ne.lean"
-
 **[DataTypesAsLattices/Functionality/pairMed.lean](pairMed.lean)**
 
 @import "pairMed.lean"
@@ -680,19 +646,11 @@ Functionality had long been studied in combinatory logic. Hindley, Lercher, and 
 
 **[DataTypesAsLattices/Functionality/sigmaJ_bot.lean](sigmaJ_bot.lean)**
 
-@import "sigmaJ_bot.lean"
-
 **[DataTypesAsLattices/Functionality/sigmaJ_isScottContinuous.lean](sigmaJ_isScottContinuous.lean)**
-
-@import "sigmaJ_isScottContinuous.lean"
 
 **[DataTypesAsLattices/Functionality/sigmaJ_app.lean](sigmaJ_app.lean)**
 
-@import "sigmaJ_app.lean"
-
 **[DataTypesAsLattices/Functionality/sigmaJ_of_no_tag.lean](sigmaJ_of_no_tag.lean)**
-
-@import "sigmaJ_of_no_tag.lean"
 
 **[DataTypesAsLattices/Functionality/finite_sigma_plain_app.lean](finite_sigma_plain_app.lean)**
 
@@ -700,19 +658,13 @@ Functionality had long been studied in combinatory logic. Hindley, Lercher, and 
 
 **[DataTypesAsLattices/Functionality/sigmaJ_pair_union.lean](sigmaJ_pair_union.lean)**
 
-@import "sigmaJ_pair_union.lean"
-
 **[DataTypesAsLattices/Functionality/sigmaJ_succ_ne.lean](sigmaJ_succ_ne.lean)**
-
-@import "sigmaJ_succ_ne.lean"
 
 **[DataTypesAsLattices/Functionality/eq_7_18_ne.lean](eq_7_18_ne.lean)**
 
 @import "eq_7_18_ne.lean"
 
 **[DataTypesAsLattices/Functionality/sigmaJ_succ_singleton.lean](sigmaJ_succ_singleton.lean)**
-
-@import "sigmaJ_succ_singleton.lean"
 
 **[DataTypesAsLattices/Functionality/eq_7_18_eq.lean](eq_7_18_eq.lean)**
 
@@ -723,8 +675,6 @@ Functionality had long been studied in combinatory logic. Hindley, Lercher, and 
 @import "eq_7_19.lean"
 
 **[DataTypesAsLattices/Functionality/sigmaJ_union_fresh.lean](sigmaJ_union_fresh.lean)**
-
-@import "sigmaJ_union_fresh.lean"
 
 **[DataTypesAsLattices/Functionality/finite_sigma_union_app.lean](finite_sigma_union_app.lean)**
 
@@ -756,31 +706,17 @@ Functionality had long been studied in combinatory logic. Hindley, Lercher, and 
 
 **[DataTypesAsLattices/Functionality/sumMed_body_isScottContinuous.lean](sumMed_body_isScottContinuous.lean)**
 
-@import "sumMed_body_isScottContinuous.lean"
-
 **[DataTypesAsLattices/Functionality/sumMed_app.lean](sumMed_app.lean)**
-
-@import "sumMed_app.lean"
 
 **[DataTypesAsLattices/Functionality/sumMed_app_inl.lean](sumMed_app_inl.lean)**
 
-@import "sumMed_app_inl.lean"
-
 **[DataTypesAsLattices/Functionality/sumMed_app_inr.lean](sumMed_app_inr.lean)**
-
-@import "sumMed_app_inr.lean"
 
 **[DataTypesAsLattices/Functionality/sumMed_isGraph.lean](sumMed_isGraph.lean)**
 
-@import "sumMed_isGraph.lean"
-
 **[DataTypesAsLattices/Functionality/sumMed_rel.lean](sumMed_rel.lean)**
 
-@import "sumMed_rel.lean"
-
 **[DataTypesAsLattices/Functionality/sumMed_rel_unique.lean](sumMed_rel_unique.lean)**
-
-@import "sumMed_rel_unique.lean"
 
 **[DataTypesAsLattices/Functionality/tagInj_isScottContinuous.lean](tagInj_isScottContinuous.lean)**
 

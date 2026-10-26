@@ -48,7 +48,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
 public import DomainTheory.DataTypesAsLattices.Functionality.HF
 public import DomainTheory.DataTypesAsLattices.Functionality.Hfun
 public import DomainTheory.DataTypesAsLattices.Functionality.Hcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_tag_ne
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
 public import DomainTheory.DataTypesAsLattices.Functionality.hVar_isScottContinuous_t
 public import DomainTheory.DataTypesAsLattices.Functionality.hSucc_isScottContinuous_t
@@ -63,7 +62,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hLam_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem Hstep_isScottContinuous_t (H e : Pomega) :
+theorem Hstep.isScottContinuous_t (H e : Pomega) :
     IsScottContinuous (fun t => Hstep H e t) :=
   continuous_nary
     (fun y z => dcondSet_isScottContinuous_left y z)
@@ -82,7 +81,7 @@ theorem Hstep_isScottContinuous_t (H e : Pomega) :
         (fun x z => dcondSet_isScottContinuous_mid x z)
         (fun x y => dcondSet_isScottContinuous_right x y)
         (const_isScottContinuous (predSet (predSet (expTag e))))
-        (hSucc_isScottContinuous_t H e)
+        (hSucc.isScottContinuous_t H e)
         (continuous_nary
           (fun y z => dcondSet_isScottContinuous_left y z)
           (fun x z => dcondSet_isScottContinuous_mid x z)
@@ -106,7 +105,7 @@ theorem Hstep_isScottContinuous_t (H e : Pomega) :
                 (fun x z => dcondSet_isScottContinuous_mid x z)
                 (fun x y => dcondSet_isScottContinuous_right x y)
                 (const_isScottContinuous (predSet^[6] (expTag e)))
-                (hLam_isScottContinuous_t H e)
+                (hLam.isScottContinuous_t H e)
                 (const_isScottContinuous topElem)))))))
 
 end DomainTheory.DataTypesAsLattices

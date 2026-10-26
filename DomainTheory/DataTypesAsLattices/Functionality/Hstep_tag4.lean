@@ -48,7 +48,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
 public import DomainTheory.DataTypesAsLattices.Functionality.HF
 public import DomainTheory.DataTypesAsLattices.Functionality.Hfun
 public import DomainTheory.DataTypesAsLattices.Functionality.Hcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_tag_ne
 public import DomainTheory.DataTypesAsLattices.Functionality.predSet_iterate_ofNat
 public import DomainTheory.DataTypesAsLattices.Functionality.predSet_iterate_self
 public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_zero
@@ -59,7 +58,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_zero
 namespace DomainTheory.DataTypesAsLattices
 
 
-theorem Hstep_tag4 (H x t : Pomega) :
+theorem Hstep.tag4 (H x t : Pomega) :
     Hstep H (tagInj 4 x) t = hCond H (tagInj 4 x) t := by
   simp only [Hstep, expTag, tagInj_zero, dcondSet_ofNat_succ,
     predSet_ofNat_succ, predSet_iterate_ofNat (k := 3) (i := 1),

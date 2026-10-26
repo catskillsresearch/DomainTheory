@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valStepValue
-public import DomainTheory.DataTypesAsLattices.Enumeration.valStep
 public import DomainTheory.DataTypesAsLattices.Enumeration.valC
 public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.opNat
@@ -72,23 +71,18 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Lterm
 public import DomainTheory.DataTypesAsLattices.Enumeration.barStepTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.funRetractTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSubalgebra
-public import DomainTheory.DataTypesAsLattices.Enumeration.vaalF
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalC
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.predClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.condClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.kClosed
-public import DomainTheory.DataTypesAsLattices.Enumeration.sClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.gpackClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.gClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalStepTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalTyped
 public import DomainTheory.DataTypesAsLattices.Enumeration.TOT
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_app
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.not_mem_zero_Gcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_ne_bot
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_app_self
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_one
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_from_G
@@ -100,8 +94,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.bot_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_eq_SK
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack_combinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2_surjective
@@ -125,8 +117,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_left
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_right
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_append
-public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_empty
 
 @[expose] public section
 
@@ -145,11 +135,11 @@ theorem exists_concat_traces {c : ℕ} (ks : List ℕ)
     (h : ∀ i ∈ ks, ∃ tr, valTraceOk tr ∧ valTraceHas tr c i) :
     ∃ tr, valTraceOk tr ∧ ∀ i ∈ ks, valTraceHas tr c i := by
   induction ks with
-  | nil => exact ⟨[], valTraceOk_empty, fun _ hi => by simp at hi⟩
+  | nil => exact ⟨[], valTraceOk.empty, fun _ hi => by simp at hi⟩
   | cons i is ih =>
       obtain ⟨tr₁, hok₁, hhas₁⟩ := h i (by simp)
       obtain ⟨tr₂, hok₂, hhas₂⟩ := ih fun j hj => h j (by simp [hj])
-      refine ⟨tr₁ ++ tr₂, valTraceOk_append hok₁ hok₂, fun j hj => ?_⟩
+      refine ⟨tr₁ ++ tr₂, valTraceOk.append hok₁ hok₂, fun j hj => ?_⟩
       rcases List.mem_cons.mp hj with rfl | hj
       · exact valTraceHas_append_left hhas₁
       · exact valTraceHas_append_right (hhas₂ j hj)
