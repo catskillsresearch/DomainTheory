@@ -23,7 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representationOrderIso
 public import DomainTheory.DataTypesAsLattices.Closures.Vcomb
 public import DomainTheory.DataTypesAsLattices.Closures.selfArrowStep
 public import DomainTheory.DataTypesAsLattices.Closures.dEq
-public import DomainTheory.DataTypesAsLattices.Closures.boool
 public import DomainTheory.DataTypesAsLattices.Closures.closure_expansive
 public import DomainTheory.DataTypesAsLattices.Closures.closureCompact_isCompact
 public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff

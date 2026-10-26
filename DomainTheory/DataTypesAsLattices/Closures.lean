@@ -132,13 +132,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.arrowR_diag_isScottConti
 public import DomainTheory.DataTypesAsLattices.Closures.selfArrowStep_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_25
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_25_arrow
-public import DomainTheory.DataTypesAsLattices.Closures.boool_map_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.boool_app
-public import DomainTheory.DataTypesAsLattices.Closures.boool_expansive
-public import DomainTheory.DataTypesAsLattices.Closures.boool_idem
 public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_boool
-public import DomainTheory.DataTypesAsLattices.Closures.boool_isRetract
-public import DomainTheory.DataTypesAsLattices.Closures.boool_isClosure
 public import DomainTheory.DataTypesAsLattices.Closures.openR_map_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Closures.openR_app
 public import DomainTheory.DataTypesAsLattices.Closures.openR_expansive

@@ -54,33 +54,15 @@ Algebraic lattices and closure operations predate the paper: Grätzer (1968) for
 
 @import "boool.lean"
 
-**[DataTypesAsLattices/Closures/boool_expansive.lean](boool_expansive.lean)**
-
-@import "boool_expansive.lean"
 
 **[DataTypesAsLattices/Closures/Icomb_subset_boool.lean](Icomb_subset_boool.lean)**
 
 @import "Icomb_subset_boool.lean"
 
-**[DataTypesAsLattices/Closures/boool_idem.lean](boool_idem.lean)**
 
-@import "boool_idem.lean"
 
-**[DataTypesAsLattices/Closures/boool_map_isScottContinuous.lean](boool_map_isScottContinuous.lean)**
 
-@import "boool_map_isScottContinuous.lean"
 
-**[DataTypesAsLattices/Closures/boool_app.lean](boool_app.lean)**
-
-@import "boool_app.lean"
-
-**[DataTypesAsLattices/Closures/boool_isRetract.lean](boool_isRetract.lean)**
-
-@import "boool_isRetract.lean"
-
-**[DataTypesAsLattices/Closures/boool_isClosure.lean](boool_isClosure.lean)**
-
-@import "boool_isClosure.lean"
 
 **[DataTypesAsLattices/Closures/botElem_union.lean](botElem_union.lean)**
 

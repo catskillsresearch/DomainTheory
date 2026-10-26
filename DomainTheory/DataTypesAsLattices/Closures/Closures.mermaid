@@ -42,13 +42,9 @@ flowchart TB
   N37["Icomb_subset_graph"]
   N38["Icomb_subset_intR"]
   N39["arrowR_diag_isScottContinuous"]
-  N40["boool_expansive"]
+
   N41["Icomb_subset_boool"]
-  N42["boool_idem"]
-  N43["boool_map_isScottContinuous"]
-  N44["boool_app"]
-  N45["boool_isRetract"]
-  N46["boool_isClosure"]
+
   N47["botElem_union"]
   N48["boxTag_bot"]
   N49["boxTag_isScottContinuous"]
@@ -281,26 +277,11 @@ flowchart TB
   N35 -->|"1"| N38
   N0 -->|"1"| N39
   N35 -->|"1"| N39
-  N0 -->|"1"| N40
-  N35 -->|"1"| N40
+  N35 -->|"1"| N7
   N0 -->|"1"| N41
   N35 -->|"1"| N41
-  N40 -->|"1"| N41
-  N0 -->|"1"| N42
-  N35 -->|"1"| N42
-  N0 -->|"1"| N43
-  N35 -->|"1"| N43
-  N0 -->|"1"| N44
-  N35 -->|"1"| N44
-  N43 -->|"1"| N44
-  N0 -->|"1"| N45
-  N35 -->|"1"| N45
-  N42 -->|"1"| N45
-  N44 -->|"1"| N45
-  N0 -->|"1"| N46
-  N35 -->|"1"| N46
-  N41 -->|"1"| N46
-  N45 -->|"1"| N46
+  N7 -->|"1"| N41
+  N41 -->|"1"| N7
   N0 -->|"1"| N47
   N35 -->|"1"| N47
   N0 -->|"1"| N48
@@ -688,13 +669,9 @@ flowchart TB
   class N37 file
   class N38 file
   class N39 file
-  class N40 file
+
   class N41 file
-  class N42 file
-  class N43 file
-  class N44 file
-  class N45 file
-  class N46 file
+
   class N47 file
   class N48 file
   class N49 file

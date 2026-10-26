@@ -35,7 +35,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representClosure_isScott
 public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode_app
 public import DomainTheory.DataTypesAsLattices.Closures.representationDecode_encode
 public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_fixed
-public import DomainTheory.DataTypesAsLattices.Closures.boool_expansive
 
 @[expose] public section
 
@@ -46,6 +45,10 @@ namespace DomainTheory.DataTypesAsLattices
 theorem Icomb_subset_boool : Icomb ⊆ boool := by
   intro p hp
   rcases hp with ⟨n, m, rfl, hm⟩
-  exact ⟨n, m, rfl, boool_expansive (e n) hm⟩
+  exact ⟨n, m, rfl, boool.expansive (e n) hm⟩
+
+/-- **Scott 1976, (5.3).** `boool` is a closure. -/
+theorem boool.isClosure : Closure boool :=
+  ⟨⟨Icomb_subset_boool, boool.isRetract⟩⟩
 
 end DomainTheory.DataTypesAsLattices
