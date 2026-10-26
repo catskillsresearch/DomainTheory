@@ -67,9 +67,9 @@ theorem Hinterp_isScottContinuous (τ : LambTerm) :
     exact const_isScottContinuous _
   | succ τ ih =>
     exact continuous_nary
-      (fun y z => condSet_isScottContinuous_left y z)
-      (fun x z => condSet_isScottContinuous_mid x z)
-      (fun x y => condSet_isScottContinuous_right x y)
+      (fun y z => condSet.isScottContinuous_left y z)
+      (fun x z => condSet.isScottContinuous_mid x z)
+      (fun x y => condSet.isScottContinuous_right x y)
       (theorem_1_3 (funOf_isScottContinuous whichC) ih)
       (theorem_1_3 (funOf_isScottContinuous inleftC)
         (theorem_1_3 succSet_isScottContinuous
@@ -77,9 +77,9 @@ theorem Hinterp_isScottContinuous (τ : LambTerm) :
       (const_isScottContinuous botElem)
   | pred τ ih =>
     exact continuous_nary
-      (fun y z => condSet_isScottContinuous_left y z)
-      (fun x z => condSet_isScottContinuous_mid x z)
-      (fun x y => condSet_isScottContinuous_right x y)
+      (fun y z => condSet.isScottContinuous_left y z)
+      (fun x z => condSet.isScottContinuous_mid x z)
+      (fun x y => condSet.isScottContinuous_right x y)
       (theorem_1_3 (funOf_isScottContinuous whichC) ih)
       (theorem_1_3 (funOf_isScottContinuous inleftC)
         (theorem_1_3 predSet_isScottContinuous
@@ -93,21 +93,21 @@ theorem Hinterp_isScottContinuous (τ : LambTerm) :
           (Hinterp ρ t))
       (funOf_isScottContinuous lambR)
       (continuous_nary
-        (fun y z => condSet_isScottContinuous_left y z)
-        (fun x z => condSet_isScottContinuous_mid x z)
-        (fun x y => condSet_isScottContinuous_right x y)
+        (fun y z => condSet.isScottContinuous_left y z)
+        (fun x z => condSet.isScottContinuous_mid x z)
+        (fun x y => condSet.isScottContinuous_right x y)
         (theorem_1_3 (funOf_isScottContinuous whichC) ihθ)
         (continuous_nary
-          (fun y z => condSet_isScottContinuous_left y z)
-          (fun x z => condSet_isScottContinuous_mid x z)
-          (fun x y => condSet_isScottContinuous_right x y)
+          (fun y z => condSet.isScottContinuous_left y z)
+          (fun x z => condSet.isScottContinuous_mid x z)
+          (fun x y => condSet.isScottContinuous_right x y)
           (theorem_1_3 (funOf_isScottContinuous outC) ihθ) ihτ ihσ)
         ihρ)
   | app τ σ ihτ ihσ =>
     exact continuous_nary
-      (fun y z => condSet_isScottContinuous_left y z)
-      (fun x z => condSet_isScottContinuous_mid x z)
-      (fun x y => condSet_isScottContinuous_right x y)
+      (fun y z => condSet.isScottContinuous_left y z)
+      (fun x z => condSet.isScottContinuous_mid x z)
+      (fun x y => condSet.isScottContinuous_right x y)
       (theorem_1_3 (funOf_isScottContinuous whichC) ihτ)
       (const_isScottContinuous botElem)
       (continuous_tuple

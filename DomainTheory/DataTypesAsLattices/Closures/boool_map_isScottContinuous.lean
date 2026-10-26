@@ -45,6 +45,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem boool_map_isScottContinuous :
     IsScottContinuous (fun u => condSet u (ofNat 0) (succSet topElem)) :=
-  condSet_isScottContinuous_left (ofNat 0) (succSet topElem)
+  condSet.isScottContinuous_left (ofNat 0) (succSet topElem)
 
 end DomainTheory.DataTypesAsLattices

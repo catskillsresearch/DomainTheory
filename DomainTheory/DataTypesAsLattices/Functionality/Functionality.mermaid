@@ -70,12 +70,6 @@ flowchart TB
   N65["Z_isScottContinuous_right"]
   N66["Z_rel"]
   N67["comp_isGraph"]
-  N68["condSet_bot"]
-  N69["condSet_ofNat_one"]
-  N70["condSet_ofNat_succ"]
-  N71["condSet_ofNat_zero"]
-  N72["condSet_same_bot"]
-  N73["condSet_same_of_mem"]
   N74["continuous_on_diag"]
   N75["continuous_tuple"]
   N76["Scomb_inner_isScottContinuous"]
@@ -332,6 +326,7 @@ flowchart TB
   N327["Hcomb_decode"]
   N328["whichC_app"]
 
+  N329["Lambda"]
   N0 -->|"1"| N1
   N0 -->|"1"| N2
   N1 -->|"1"| N2
@@ -618,19 +613,6 @@ flowchart TB
   N49 -->|"1"| N66
   N0 -->|"1"| N67
   N49 -->|"1"| N67
-  N0 -->|"1"| N68
-  N49 -->|"1"| N68
-  N0 -->|"1"| N69
-  N49 -->|"1"| N69
-  N0 -->|"1"| N70
-  N49 -->|"1"| N70
-  N0 -->|"1"| N71
-  N49 -->|"1"| N71
-  N0 -->|"1"| N72
-  N49 -->|"1"| N72
-  N68 -->|"1"| N72
-  N0 -->|"1"| N73
-  N49 -->|"1"| N73
   N0 -->|"1"| N74
   N49 -->|"1"| N74
   N0 -->|"1"| N75
@@ -999,25 +981,20 @@ flowchart TB
   N182 -->|"1"| N183
   N0 -->|"1"| N184
   N49 -->|"1"| N184
-  N69 -->|"1"| N184
-  N71 -->|"1"| N184
+  N329 -->|"1"| N184
   N183 -->|"1"| N184
   N0 -->|"1"| N185
   N49 -->|"1"| N185
-  N69 -->|"1"| N185
-  N70 -->|"1"| N185
-  N71 -->|"1"| N185
+  N329 -->|"1"| N185
   N181 -->|"1"| N185
   N183 -->|"1"| N185
   N0 -->|"1"| N186
   N49 -->|"1"| N186
-  N69 -->|"1"| N186
-  N70 -->|"1"| N186
-  N71 -->|"1"| N186
+  N329 -->|"1"| N186
   N183 -->|"1"| N186
   N0 -->|"1"| N187
   N49 -->|"1"| N187
-  N71 -->|"1"| N187
+  N329 -->|"1"| N187
   N183 -->|"1"| N187
   N0 -->|"1"| N188
   N49 -->|"1"| N188
@@ -1093,13 +1070,13 @@ flowchart TB
   N206 -->|"1"| N207
   N0 -->|"1"| N208
   N49 -->|"1"| N208
-  N71 -->|"1"| N208
+  N329 -->|"1"| N208
   N134 -->|"1"| N208
   N135 -->|"1"| N208
   N207 -->|"1"| N208
   N0 -->|"1"| N209
   N49 -->|"1"| N209
-  N69 -->|"1"| N209
+  N329 -->|"1"| N209
   N134 -->|"1"| N209
   N135 -->|"1"| N209
   N207 -->|"1"| N209
@@ -1753,12 +1730,6 @@ flowchart TB
   class N65 file
   class N66 file
   class N67 file
-  class N68 file
-  class N69 file
-  class N70 file
-  class N71 file
-  class N72 file
-  class N73 file
   class N74 file
   class N75 file
   class N76 file
@@ -2014,3 +1985,4 @@ flowchart TB
   class N326 file
   class N327 file
   class N328 file
+  class N329 ext

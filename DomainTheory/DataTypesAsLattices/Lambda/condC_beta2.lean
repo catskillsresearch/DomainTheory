@@ -51,7 +51,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_right
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.condC_beta
 
@@ -65,6 +65,6 @@ theorem condC_beta2 (x y : Pomega) :
     funOf (funOf condC x) y = graph (fun z => condSet z x y) := by
   rw [condC_beta]
   exact beta (graph_const_isScottContinuous (fun y z => condSet z x y)
-    (fun z => condSet_isScottContinuous_right z x)) y
+    (fun z => condSet.isScottContinuous_right z x)) y
 
 end DomainTheory.DataTypesAsLattices

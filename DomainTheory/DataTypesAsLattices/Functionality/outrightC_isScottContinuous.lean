@@ -62,8 +62,8 @@ theorem outrightC_isScottContinuous :
     IsScottContinuous (fun u =>
       condSet (funOf u (ofNat 0)) botElem (funOf u (ofNat 1))) :=
   continuous_tuple
-    (fun y => condSet_isScottContinuous_left botElem y)
-    (fun tes => condSet_isScottContinuous_right tes botElem)
+    (fun y => condSet.isScottContinuous_left botElem y)
+    (fun tes => condSet.isScottContinuous_right tes botElem)
     (funOf_isScottContinuous_left (ofNat 0))
     (funOf_isScottContinuous_left (ofNat 1))
 

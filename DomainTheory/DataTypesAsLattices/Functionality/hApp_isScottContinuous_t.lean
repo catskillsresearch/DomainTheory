@@ -61,9 +61,9 @@ namespace DomainTheory.DataTypesAsLattices
 theorem hApp_isScottContinuous_t (H e : Pomega) :
     IsScottContinuous (fun t => hApp H e t) :=
   continuous_nary
-    (fun y z => condSet_isScottContinuous_left y z)
-    (fun x z => condSet_isScottContinuous_mid x z)
-    (fun x y => condSet_isScottContinuous_right x y)
+    (fun y z => condSet.isScottContinuous_left y z)
+    (fun x z => condSet.isScottContinuous_mid x z)
+    (fun x y => condSet.isScottContinuous_right x y)
     (theorem_1_3 (f := funOf whichC)
       (g := fun t => hApply H (funOf (expPayload e) (ofNat 0)) t)
       (funOf_isScottContinuous whichC)

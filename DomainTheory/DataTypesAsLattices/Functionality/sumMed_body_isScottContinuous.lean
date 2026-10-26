@@ -64,9 +64,9 @@ theorem sumMed_body_isScottContinuous (f g : Pomega) :
         (funOf f (funOf u (ofNat 1)))
         (funOf g (funOf u (ofNat 1)))) :=
   continuous_nary
-    (fun y z => condSet_isScottContinuous_left y z)
-    (fun x z => condSet_isScottContinuous_mid x z)
-    (fun x y => condSet_isScottContinuous_right x y)
+    (fun y z => condSet.isScottContinuous_left y z)
+    (fun x z => condSet.isScottContinuous_mid x z)
+    (fun x y => condSet.isScottContinuous_right x y)
     (funOf_isScottContinuous_left (ofNat 0))
     (theorem_1_3 (funOf_isScottContinuous f)
       (funOf_isScottContinuous_left (ofNat 1)))

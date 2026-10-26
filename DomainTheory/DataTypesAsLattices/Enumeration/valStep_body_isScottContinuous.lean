@@ -139,8 +139,8 @@ theorem valStep_body_isScottContinuous (v : Pomega) :
     IsScottContinuous (fun k =>
       condSet k Gcomb (minExtend (valStepValue v) k)) :=
   theorem_1_3_tuple
-    (fun y => condSet_isScottContinuous_left Gcomb y)
-    (fun z => condSet_isScottContinuous_right z Gcomb)
+    (fun y => condSet.isScottContinuous_left Gcomb y)
+    (fun z => condSet.isScottContinuous_right z Gcomb)
     id_isScottContinuous
     (minExtend_isScottContinuous (valStepValue v))
 

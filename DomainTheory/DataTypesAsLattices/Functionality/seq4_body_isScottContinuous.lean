@@ -65,26 +65,26 @@ theorem seq4_body_isScottContinuous (a b c d : Pomega) :
           (condSet (predSet (predSet z)) c
             (condSet (predSet^[3] z) d botElem)))) :=
   continuous_nary
-    (fun y t => condSet_isScottContinuous_left y t)
-    (fun x t => condSet_isScottContinuous_mid x t)
-    (fun x y => condSet_isScottContinuous_right x y)
+    (fun y t => condSet.isScottContinuous_left y t)
+    (fun x t => condSet.isScottContinuous_mid x t)
+    (fun x y => condSet.isScottContinuous_right x y)
     id_isScottContinuous (const_isScottContinuous a)
     (continuous_nary
-      (fun y t => condSet_isScottContinuous_left y t)
-      (fun x t => condSet_isScottContinuous_mid x t)
-      (fun x y => condSet_isScottContinuous_right x y)
+      (fun y t => condSet.isScottContinuous_left y t)
+      (fun x t => condSet.isScottContinuous_mid x t)
+      (fun x y => condSet.isScottContinuous_right x y)
       predSet_isScottContinuous (const_isScottContinuous b)
       (continuous_nary
-        (fun y t => condSet_isScottContinuous_left y t)
-        (fun x t => condSet_isScottContinuous_mid x t)
-        (fun x y => condSet_isScottContinuous_right x y)
+        (fun y t => condSet.isScottContinuous_left y t)
+        (fun x t => condSet.isScottContinuous_mid x t)
+        (fun x y => condSet.isScottContinuous_right x y)
         (theorem_1_3 (f := predSet) (g := predSet)
           predSet_isScottContinuous predSet_isScottContinuous)
         (const_isScottContinuous c)
         (continuous_nary
-          (fun y t => condSet_isScottContinuous_left y t)
-          (fun x t => condSet_isScottContinuous_mid x t)
-          (fun x y => condSet_isScottContinuous_right x y)
+          (fun y t => condSet.isScottContinuous_left y t)
+          (fun x t => condSet.isScottContinuous_mid x t)
+          (fun x y => condSet.isScottContinuous_right x y)
           (theorem_1_3 (f := predSet)
             (g := fun z => predSet (predSet z))
             predSet_isScottContinuous

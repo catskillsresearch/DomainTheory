@@ -144,8 +144,8 @@ open Nat.Partrec.Code
 theorem barStepBody_isScottContinuous_u (B x : Pomega) :
     IsScottContinuous (fun u => barStepBody B u x) :=
   theorem_1_3_tuple
-    (fun y => condSet_isScottContinuous_mid (funOf x (ofNat 0)) y)
-    (fun w => condSet_isScottContinuous_right (funOf x (ofNat 0)) w)
+    (fun y => condSet.isScottContinuous_mid (funOf x (ofNat 0)) y)
+    (fun w => condSet.isScottContinuous_right (funOf x (ofNat 0)) w)
     (barPos_isScottContinuous_u x)
     (theorem_1_3
       (f := fun w => funOf w (funOf x (ofNat 2)))

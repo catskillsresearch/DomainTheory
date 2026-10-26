@@ -114,30 +114,6 @@ Functionality had long been studied in combinatory logic. Hindley, Lercher, and 
 
 @import "comp_isGraph.lean"
 
-**[DataTypesAsLattices/Functionality/condSet_bot.lean](condSet_bot.lean)**
-
-@import "condSet_bot.lean"
-
-**[DataTypesAsLattices/Functionality/condSet_ofNat_one.lean](condSet_ofNat_one.lean)**
-
-@import "condSet_ofNat_one.lean"
-
-**[DataTypesAsLattices/Functionality/condSet_ofNat_succ.lean](condSet_ofNat_succ.lean)**
-
-@import "condSet_ofNat_succ.lean"
-
-**[DataTypesAsLattices/Functionality/condSet_ofNat_zero.lean](condSet_ofNat_zero.lean)**
-
-@import "condSet_ofNat_zero.lean"
-
-**[DataTypesAsLattices/Functionality/condSet_same_bot.lean](condSet_same_bot.lean)**
-
-@import "condSet_same_bot.lean"
-
-**[DataTypesAsLattices/Functionality/condSet_same_of_mem.lean](condSet_same_of_mem.lean)**
-
-@import "condSet_same_of_mem.lean"
-
 **[DataTypesAsLattices/Functionality/continuous_on_diag.lean](continuous_on_diag.lean)**
 
 @import "continuous_on_diag.lean"

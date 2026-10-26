@@ -71,24 +71,24 @@ theorem seq4_comp_isScottContinuous
             (condSet (predSet (predSet (predSet z))) (i u) botElem))))
     (fun z =>
       continuous_nary
-        (fun y t => condSet_isScottContinuous_left y t)
-        (fun x t => condSet_isScottContinuous_mid x t)
-        (fun x y => condSet_isScottContinuous_right x y)
+        (fun y t => condSet.isScottContinuous_left y t)
+        (fun x t => condSet.isScottContinuous_mid x t)
+        (fun x y => condSet.isScottContinuous_right x y)
         (const_isScottContinuous z) hf
         (continuous_nary
-          (fun y t => condSet_isScottContinuous_left y t)
-          (fun x t => condSet_isScottContinuous_mid x t)
-          (fun x y => condSet_isScottContinuous_right x y)
+          (fun y t => condSet.isScottContinuous_left y t)
+          (fun x t => condSet.isScottContinuous_mid x t)
+          (fun x y => condSet.isScottContinuous_right x y)
           (const_isScottContinuous (predSet z)) hg
           (continuous_nary
-            (fun y t => condSet_isScottContinuous_left y t)
-            (fun x t => condSet_isScottContinuous_mid x t)
-            (fun x y => condSet_isScottContinuous_right x y)
+            (fun y t => condSet.isScottContinuous_left y t)
+            (fun x t => condSet.isScottContinuous_mid x t)
+            (fun x y => condSet.isScottContinuous_right x y)
             (const_isScottContinuous (predSet (predSet z))) hh
             (continuous_nary
-              (fun y t => condSet_isScottContinuous_left y t)
-              (fun x t => condSet_isScottContinuous_mid x t)
-              (fun x y => condSet_isScottContinuous_right x y)
+              (fun y t => condSet.isScottContinuous_left y t)
+              (fun x t => condSet.isScottContinuous_mid x t)
+              (fun x y => condSet.isScottContinuous_right x y)
               (const_isScottContinuous (predSet (predSet (predSet z))))
               hi (const_isScottContinuous botElem)))))
 

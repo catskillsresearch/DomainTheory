@@ -227,7 +227,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.funOf_ofNat_mem_re
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ_isRE
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_condCode
 public import DomainTheory.DataTypesAsLattices.Enumeration.unionOperator_app
-public import DomainTheory.DataTypesAsLattices.Enumeration.condSet_same
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillCase2Code
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_myhillCase2Code
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_myhillCase2Code_bot

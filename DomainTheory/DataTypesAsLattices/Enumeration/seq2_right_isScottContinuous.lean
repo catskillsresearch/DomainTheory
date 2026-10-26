@@ -145,7 +145,7 @@ theorem seq2_right_isScottContinuous (a : Pomega) :
     IsScottContinuous (fun b => seq2 a b) :=
   graph_const_isScottContinuous
     (fun b z => condSet z a (condSet (predSet z) b botElem))
-    (fun z => theorem_1_3 (condSet_isScottContinuous_right z a)
-      (condSet_isScottContinuous_mid (predSet z) botElem))
+    (fun z => theorem_1_3 (condSet.isScottContinuous_right z a)
+      (condSet.isScottContinuous_mid (predSet z) botElem))
 
 end DomainTheory.DataTypesAsLattices

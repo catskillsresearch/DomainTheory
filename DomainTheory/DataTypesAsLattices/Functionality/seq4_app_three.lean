@@ -50,9 +50,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.HF
 public import DomainTheory.DataTypesAsLattices.Functionality.Hfun
 public import DomainTheory.DataTypesAsLattices.Functionality.Hcomb
 public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_tag_ne
-public import DomainTheory.DataTypesAsLattices.Functionality.condSet_ofNat_zero
-public import DomainTheory.DataTypesAsLattices.Functionality.condSet_ofNat_one
-public import DomainTheory.DataTypesAsLattices.Functionality.condSet_ofNat_succ
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Functionality.predSet_iterate_self
 public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app
 
@@ -64,8 +62,8 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem seq4_app_three (a b c d : Pomega) :
     funOf (seq4 a b c d) (ofNat 3) = d := by
-  rw [seq4_app, condSet_ofNat_succ, predSet_ofNat_succ, condSet_ofNat_succ,
-    predSet_ofNat_succ, condSet_ofNat_one, predSet_iterate_self,
-    condSet_ofNat_zero]
+  rw [seq4_app, condSet.ofNat_succ, predSet_ofNat_succ, condSet.ofNat_succ,
+    predSet_ofNat_succ, condSet.ofNat_one, predSet_iterate_self,
+    condSet.ofNat_zero]
 
 end DomainTheory.DataTypesAsLattices

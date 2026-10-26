@@ -50,7 +50,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_right
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 
 @[expose] public section
 
@@ -62,7 +62,7 @@ theorem dcondSet_isScottContinuous_right (z x : Pomega) :
     IsScottContinuous (fun y => dcondSet z x y) :=
   theorem_1_3 (f := fun w => condSet z (condSet z x topElem) w)
     (g := fun y => condSet z topElem y)
-    (condSet_isScottContinuous_right z (condSet z x topElem))
-    (condSet_isScottContinuous_right z topElem)
+    (condSet.isScottContinuous_right z (condSet z x topElem))
+    (condSet.isScottContinuous_right z topElem)
 
 end DomainTheory.DataTypesAsLattices

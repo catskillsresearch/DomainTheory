@@ -96,7 +96,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.lt_two_pow_of_high_
 public import DomainTheory.DataTypesAsLattices.Computability.bits_subset_lt_two_pow
 public import DomainTheory.DataTypesAsLattices.Computability.mem_funOf_e_iff
 public import DomainTheory.DataTypesAsLattices.Computability.pos_bit_iff
-public import DomainTheory.DataTypesAsLattices.Computability.condSet_e_iff
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2egraph_of_re
 public import DomainTheory.DataTypesAsLattices.Computability.mem_graph_const_iff
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2eKcomb

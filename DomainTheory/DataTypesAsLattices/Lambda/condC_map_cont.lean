@@ -51,7 +51,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_mid
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 
 @[expose] public section
@@ -65,6 +65,6 @@ theorem condC_map_cont :
   graph_const_isScottContinuous
     (fun x y => graph (fun z => condSet z x y))
     (fun y => graph_const_isScottContinuous (fun x z => condSet z x y)
-      (fun z => condSet_isScottContinuous_mid z y))
+      (fun z => condSet.isScottContinuous_mid z y))
 
 end DomainTheory.DataTypesAsLattices

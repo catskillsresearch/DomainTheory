@@ -52,7 +52,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.precC
 public import DomainTheory.DataTypesAsLattices.Computability.enumFun
 public import DomainTheory.DataTypesAsLattices.Computability.enumRangeC
 public import DomainTheory.DataTypesAsLattices.Computability.ComputableFin
-public import DomainTheory.DataTypesAsLattices.Computability.condSet_e_iff
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 
 @[expose] public section
 
@@ -76,10 +76,10 @@ theorem mem_condC_iff (p : ℕ) :
     obtain ⟨n1, p2, hp1', hp2⟩ := hp1
     obtain ⟨n2, m, hp2', hm⟩ := hp2
     exact ⟨n0, n1, n2, m, by simp [hp, hp1', hp2'],
-      (condSet_e_iff n0 n1 n2 m).mp hm⟩
+      (condSet.e_iff n0 n1 n2 m).mp hm⟩
   · intro ⟨n0, n1, n2, m, hp, hm⟩
     exact ⟨n0, pair n1 (pair n2 m), hp,
       ⟨n1, pair n2 m, rfl,
-        ⟨n2, m, rfl, (condSet_e_iff n0 n1 n2 m).mpr hm⟩⟩⟩
+        ⟨n2, m, rfl, (condSet.e_iff n0 n1 n2 m).mpr hm⟩⟩⟩
 
 end DomainTheory.DataTypesAsLattices

@@ -30,14 +30,6 @@
 
 @import "condC.lean"
 
-**[DataTypesAsLattices/Lambda/condSet_isScottContinuous_mid.lean](condSet_isScottContinuous_mid.lean)**
-
-@import "condSet_isScottContinuous_mid.lean"
-
-**[DataTypesAsLattices/Lambda/condSet_isScottContinuous_right.lean](condSet_isScottContinuous_right.lean)**
-
-@import "condSet_isScottContinuous_right.lean"
-
 **[DataTypesAsLattices/Lambda/const_isScottContinuous.lean](const_isScottContinuous.lean)**
 
 @import "const_isScottContinuous.lean"
@@ -93,10 +85,6 @@
 **[DataTypesAsLattices/Lambda/e_one.lean](e_one.lean)**
 
 @import "e_one.lean"
-
-**[DataTypesAsLattices/Lambda/condSet_isScottContinuous_left.lean](condSet_isScottContinuous_left.lean)**
-
-@import "condSet_isScottContinuous_left.lean"
 
 **[DataTypesAsLattices/Lambda/envSet_comm.lean](envSet_comm.lean)**
 

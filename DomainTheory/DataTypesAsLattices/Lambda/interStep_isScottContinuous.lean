@@ -51,7 +51,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_right
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 
@@ -74,7 +74,7 @@ theorem interStep_isScottContinuous :
         (succSet (funOf (funOf f (predSet x)) (predSet y)))) ?_
   intro y
   refine theorem_1_3
-    (condSet_isScottContinuous_right x (condSet y (ofNat 0) botElem)) ?_
+    (condSet.isScottContinuous_right x (condSet y (ofNat 0) botElem)) ?_
   refine theorem_1_3 succSet_isScottContinuous ?_
   exact theorem_1_3
     (f := fun t => funOf t (predSet y))

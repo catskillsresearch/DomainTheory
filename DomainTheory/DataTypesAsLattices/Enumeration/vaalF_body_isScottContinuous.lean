@@ -146,9 +146,9 @@ theorem vaalF_body_isScottContinuous (v : Pomega) :
         (funOf (funOf v (funOf (funOf x (ofNat 1)) (ofNat 0)))
           (funOf v (funOf (funOf x (ofNat 1)) (ofNat 1))))) :=
   continuous_nary
-    (fun y z => condSet_isScottContinuous_left y z)
-    (fun x z => condSet_isScottContinuous_mid x z)
-    (fun x y => condSet_isScottContinuous_right x y)
+    (fun y z => condSet.isScottContinuous_left y z)
+    (fun x z => condSet.isScottContinuous_mid x z)
+    (fun x y => condSet.isScottContinuous_right x y)
     (funOf_isScottContinuous_left (ofNat 0))
     (const_isScottContinuous Gcomb)
     (continuous_tuple

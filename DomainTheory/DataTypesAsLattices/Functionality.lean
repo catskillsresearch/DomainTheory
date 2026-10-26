@@ -56,10 +56,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
 public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
 public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_inj
 public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_inj
-public import DomainTheory.DataTypesAsLattices.Functionality.condSet_bot
-public import DomainTheory.DataTypesAsLattices.Functionality.condSet_ofNat_zero
-public import DomainTheory.DataTypesAsLattices.Functionality.condSet_ofNat_one
-public import DomainTheory.DataTypesAsLattices.Functionality.condSet_ofNat_succ
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Functionality.funOf_top
 public import DomainTheory.DataTypesAsLattices.Functionality.singletonE_mem
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
@@ -141,8 +138,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_35
 public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_37
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_4_med
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_4_med_unique
-public import DomainTheory.DataTypesAsLattices.Functionality.condSet_same_bot
-public import DomainTheory.DataTypesAsLattices.Functionality.condSet_same_of_mem
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_2_ii_of_typed
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_2_ii
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_2_iii

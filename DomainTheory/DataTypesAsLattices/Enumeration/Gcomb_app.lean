@@ -14,6 +14,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 theorem Gcomb_app (z : Pomega) :
     funOf Gcomb z = condSet z Gpack zeroC :=
-  beta (condSet_isScottContinuous_left Gpack zeroC) z
+  beta (condSet.isScottContinuous_left Gpack zeroC) z
 
 end DomainTheory.DataTypesAsLattices

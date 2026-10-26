@@ -148,7 +148,7 @@ theorem vaalF_isScottContinuous : IsScottContinuous vaalF :=
           (funOf v (funOf (funOf x (ofNat 1)) (ofNat 1)))))
     (fun x =>
       theorem_1_3
-        (condSet_isScottContinuous_right (funOf x (ofNat 0)) Gcomb)
+        (condSet.isScottContinuous_right (funOf x (ofNat 0)) Gcomb)
         (continuous_tuple
           (fun y => funOf_isScottContinuous_left y)
           (fun u => funOf_isScottContinuous u)

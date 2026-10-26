@@ -51,7 +51,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_left
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.condC_beta2
 
 @[expose] public section
@@ -63,6 +63,6 @@ namespace DomainTheory.DataTypesAsLattices
 theorem condC_beta3 (x y z : Pomega) :
     funOf (funOf (funOf condC x) y) z = condSet z x y := by
   rw [condC_beta2]
-  exact beta (condSet_isScottContinuous_left x y) z
+  exact beta (condSet.isScottContinuous_left x y) z
 
 end DomainTheory.DataTypesAsLattices

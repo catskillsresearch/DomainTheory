@@ -45,7 +45,7 @@ theorem seq2_eq_SK (x y : Pomega) :
     funext z
     rw [Kcomb_beta2]
     apply congrArg (funOf (funOf condC x))
-    exact beta (theorem_1_3 (condSet_isScottContinuous_left y botElem)
+    exact beta (theorem_1_3 (condSet.isScottContinuous_left y botElem)
       predSet_isScottContinuous) z
   rw [Scomb_beta2, hF, SKK_eq_I]
   apply congrArg graph
@@ -56,7 +56,7 @@ theorem seq2_eq_SK (x y : Pomega) :
       funOf (funOf condC x) (condSet (predSet z) y botElem))) z =
       funOf (funOf condC x) (condSet (predSet z) y botElem) :=
     beta (theorem_1_3 (funOf_isScottContinuous (funOf condC x))
-      (theorem_1_3 (condSet_isScottContinuous_left y botElem)
+      (theorem_1_3 (condSet.isScottContinuous_left y botElem)
         predSet_isScottContinuous)) z
   rw [hβ, condC_beta3]
 

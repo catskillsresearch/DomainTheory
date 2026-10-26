@@ -51,8 +51,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_left
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_right
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 
@@ -66,8 +65,8 @@ theorem primRecStep_body_isScottContinuous_n (a f u : Pomega) :
     IsScottContinuous (fun n =>
       condSet n a (funOf (funOf f (predSet n)) (funOf u (predSet n)))) :=
   theorem_1_3_tuple
-    (fun y => condSet_isScottContinuous_left a y)
-    (fun n => condSet_isScottContinuous_right n a)
+    (fun y => condSet.isScottContinuous_left a y)
+    (fun n => condSet.isScottContinuous_right n a)
     id_isScottContinuous
     (theorem_1_3_tuple
       (fun y => funOf_isScottContinuous_left y)

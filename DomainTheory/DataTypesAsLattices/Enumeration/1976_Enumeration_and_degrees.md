@@ -138,10 +138,6 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "condClosed_interp.lean"
 
-**[DataTypesAsLattices/Enumeration/condSet_same.lean](condSet_same.lean)**
-
-@import "condSet_same.lean"
-
 **[DataTypesAsLattices/Enumeration/cond_graph_eq_bot_iff.lean](cond_graph_eq_bot_iff.lean)**
 
 @import "cond_graph_eq_bot_iff.lean"

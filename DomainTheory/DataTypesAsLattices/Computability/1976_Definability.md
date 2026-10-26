@@ -128,10 +128,6 @@
 
 @import "pairTerm.lean"
 
-**[DataTypesAsLattices/Computability/condSet_e_iff.lean](condSet_e_iff.lean)**
-
-@import "condSet_e_iff.lean"
-
 **[DataTypesAsLattices/Computability/precTerm.lean](precTerm.lean)**
 
 @import "precTerm.lean"

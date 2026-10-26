@@ -50,8 +50,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_left
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_right
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.interC_else_isScottContinuous
@@ -73,9 +72,9 @@ theorem interC_body_isScottContinuous :
         (succSet (funOf (funOf interC (predSet x)) (predSet y))))
     (fun y =>
       theorem_1_3_tuple
-        (fun els => condSet_isScottContinuous_left
+        (fun els => condSet.isScottContinuous_left
           (condSet y (ofNat 0) botElem) els)
-        (fun tes => condSet_isScottContinuous_right tes
+        (fun tes => condSet.isScottContinuous_right tes
           (condSet y (ofNat 0) botElem))
         id_isScottContinuous
         (interC_else_isScottContinuous y))

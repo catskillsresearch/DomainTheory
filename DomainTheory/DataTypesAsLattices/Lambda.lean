@@ -57,9 +57,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.minExtend_isScottContinuou
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.e_one
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_left
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_mid
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_right
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_bot
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_top
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_ofNat_zero

@@ -1247,15 +1247,15 @@ theorem seq2_isScottContinuous_left (y : Pomega) :
     IsScottContinuous (fun x => seq2 x y) :=
   graph_const_isScottContinuous
     (fun x z => condSet z x (condSet (predSet z) y botElem))
-    (fun z => condSet_isScottContinuous_mid z _)
+    (fun z => condSet.isScottContinuous_mid z _)
 
 theorem seq2_isScottContinuous_right (x : Pomega) :
     IsScottContinuous (fun y => seq2 x y) :=
   graph_const_isScottContinuous
     (fun y z => condSet z x (condSet (predSet z) y botElem))
     (fun z =>
-      theorem_1_3 (condSet_isScottContinuous_right z x)
-        (condSet_isScottContinuous_mid (predSet z) botElem))
+      theorem_1_3 (condSet.isScottContinuous_right z x)
+        (condSet.isScottContinuous_mid (predSet z) botElem))
 
 theorem seq2_pair_isScottContinuous {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :

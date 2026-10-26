@@ -145,7 +145,7 @@ theorem seqCons_right_isScottContinuous (x : Pomega) :
     IsScottContinuous (fun xs => seqCons x xs) :=
   graph_const_isScottContinuous
     (fun xs z => condSet z x (funOf xs (predSet z)))
-    (fun z => theorem_1_3 (condSet_isScottContinuous_right z x)
+    (fun z => theorem_1_3 (condSet.isScottContinuous_right z x)
       (funOf_isScottContinuous_left (predSet z)))
 
 end DomainTheory.DataTypesAsLattices
