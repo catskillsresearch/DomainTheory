@@ -19,7 +19,6 @@ namespace affine
 
 open NeighborhoodSystem
 
-
 end affine
 end DomainTheory.NeighbourhoodSystems
 end
@@ -42,11 +41,6 @@ theorem diff_eq_diff_of_subset {γ : Type*} {A M Z : Set γ} (h : A ⊆ M) :
   constructor
   · rintro ⟨hxA, -, hxZ⟩; exact ⟨hxA, hxZ⟩
   · rintro ⟨hxA, hxZ⟩; exact ⟨hxA, h hxA, hxZ⟩
-end
-
-section
-theorem diff_self_eq_empty {γ : Type*} (P Q : Set γ) : (P ∩ Q) ∩ (P \ Q) = ∅ := by
-  ext x; simp only [Set.mem_inter_iff, Set.mem_sdiff, Set.mem_empty_iff_false, iff_false]; tauto
 end
 
 section
@@ -271,42 +265,6 @@ theorem NeighborhoodSystem.NoMinimal.mem_ne_empty {α : Type*} {D : Neighborhood
 end
 
 section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
-
-omit hD₀pos hD₀diff hD₁pos hD₁diff hD₁nomin hYmem hD₀mne hD₁mne in
-theorem X_ne_empty (n : ℕ) : X n ≠ ∅ := hD₀nomin.mem_ne_empty (hXmem n)
-
-end AtomPair
-end
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
-
-omit hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hXmem hD₀mne hD₁mne in
-theorem Y_ne_empty (n : ℕ) : Y n ≠ ∅ := hD₁nomin.mem_ne_empty (hYmem n)
-
-end AtomPair
-end
-
-section
 /-- Restrict `δ : ℕ → Bool × Bool` to `Fin n → Bool × Bool`. -/
 def restrictFinPair (δ : ℕ → Bool × Bool) (n : ℕ) : Fin n → Bool × Bool := fun i => δ i.val
 end
@@ -358,7 +316,9 @@ theorem xyStep_disjoint_of_ne {α γ : Type*} {E : NeighborhoodSystem γ}
     {b b' : Bool} (hbb' : b ≠ b') :
     (xyStep split A B Xn b).1 ∩ (xyStep split A B Xn b').1 = ∅ ∧
       (xyStep split A B Xn b).2 ∩ (xyStep split A B Xn b').2 = ∅ :=
-  ⟨if_swap_disjoint (inter.diff_self_eq_empty A Xn) hbb',
+  ⟨if_swap_disjoint (by
+      ext x; simp only [Set.mem_inter_iff, Set.mem_sdiff, Set.mem_empty_iff_false, iff_false]; tauto)
+      hbb',
     if_swap_disjoint (hsplit hAB hBE Xn).2.2.2.2.2 hbb'⟩
 end
 
@@ -376,16 +336,6 @@ end
 end diff
 namespace union
 open NeighborhoodSystem
-
-section
-theorem eq_master_diff_inter_compl {γ : Type*} (M X Y : Set γ) (hX : X ⊆ M) (hY : Y ⊆ M) :
-    X ∪ Y = M \ ((M \ X) ∩ (M \ Y)) := by
-  ext x
-  have hXx : x ∈ X → x ∈ M := @hX x
-  have hYx : x ∈ Y → x ∈ M := @hY x
-  simp only [Set.mem_union, Set.mem_sdiff, Set.mem_inter_iff]
-  tauto
-end
 
 section
 /-- **Union-closure from `IsPositive` + `DiffClosed` alone**: if `X` and `Y` are each mem-or-∅ in a
@@ -410,7 +360,13 @@ theorem mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositi
           have hYeqM : Y = M := Set.Subset.antisymm hYM (Set.sdiff_eq_empty.mp hMY0)
           rw [Set.Subset.antisymm (Set.union_subset hXM hYM) (hYeqM ▸ Set.subset_union_right)]
           exact D.master_mem
-        · rw [union.eq_master_diff_inter_compl M X Y hXM hYM]
+        · have eq_master : X ∪ Y = M \ ((M \ X) ∩ (M \ Y)) := by
+            ext x
+            have hXx : x ∈ X → x ∈ M := @hXM x
+            have hYx : x ∈ Y → x ∈ M := @hYM x
+            simp only [Set.mem_union, Set.mem_sdiff, Set.mem_inter_iff]
+            tauto
+          rw [eq_master]
           rcases Set.eq_empty_or_nonempty ((M \ X) ∩ (M \ Y)) with hcap0 | hcapne
           · rw [hcap0, Set.sdiff_empty]; exact Or.inr D.master_mem
           · exact hdiff D.master_mem ((hpos hMXm hMYm).mpr hcapne)
@@ -2277,33 +2233,6 @@ end Iso
 end
 
 section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
-
-theorem inter_empty_iff_Y_inter_empty (i j : ℕ) :
-    YPseq D₀ D₁ hD₀nomin hD₁nomin X Y i ∩ YPseq D₀ D₁ hD₀nomin hD₁nomin X Y j = ∅ ↔
-      Y i ∩ Y j = ∅ := by
-  have key := transfer.inter_empty_combined D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin
-    X Y hXmem hYmem hD₀mne hD₁mne (2 * i + 1) (2 * j + 1)
-  rw [combinedX.odd, combinedX.odd, combinedY.odd, combinedY.odd,
-    Set.inter_eq_self_of_subset_right
-      (YPseq.subset_master D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem
-        hD₀mne hD₁mne i),
-    Set.inter_eq_self_of_subset_right (D₁.sub_master (hYmem i))] at key
-  exact key
-
-end AtomPair
-end
-
-section
 section Iso
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -2475,6 +2404,9 @@ end
 end YPseq
 open NeighborhoodSystem
 
+namespace XPseq
+open NeighborhoodSystem
+
 section
 section AtomPair
 
@@ -2499,47 +2431,14 @@ theorem X_inter_empty_iff_XPseq_inter_empty (i j : ℕ) :
         hD₀mne hD₁mne i)] at key
   exact key
 
-end AtomPair
-end
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
-
 theorem X_eq_empty_iff_XPseq_eq_empty (n : ℕ) :
     X n = ∅ ↔ XPseq D₀ D₁ hD₀nomin hD₁nomin X Y n = ∅ := by
   have := X_inter_empty_iff_XPseq_inter_empty D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff
     hD₁nomin X Y hXmem hYmem hD₀mne hD₁mne n n
   rwa [Set.inter_self, Set.inter_self] at this
 
-end AtomPair
-end
-
-namespace XPseq
-open NeighborhoodSystem
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
-
 theorem ne_empty (n : ℕ) : XPseq D₀ D₁ hD₀nomin hD₁nomin X Y n ≠ ∅ := fun h =>
-  X_ne_empty D₀ hD₀nomin X hXmem n
+  hD₀nomin.mem_ne_empty (hXmem n)
     ((X_eq_empty_iff_XPseq_eq_empty D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem
       hYmem hD₀mne hD₁mne n).mpr h)
 
@@ -2572,28 +2471,6 @@ end
 end XPseq
 open NeighborhoodSystem
 
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
-
-theorem Y_eq_empty_iff_YPseq_eq_empty (n : ℕ) :
-    Y n = ∅ ↔ YPseq D₀ D₁ hD₀nomin hD₁nomin X Y n = ∅ := by
-  have := YPseq.inter_empty_iff_Y_inter_empty D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff
-    hD₁nomin X Y hXmem hYmem hD₀mne hD₁mne n n
-  rw [Set.inter_self, Set.inter_self] at this
-  exact this.symm
-
-end AtomPair
-end
-
 namespace YPseq
 open NeighborhoodSystem
 
@@ -2609,8 +2486,27 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
+theorem inter_empty_iff_Y_inter_empty (i j : ℕ) :
+    YPseq D₀ D₁ hD₀nomin hD₁nomin X Y i ∩ YPseq D₀ D₁ hD₀nomin hD₁nomin X Y j = ∅ ↔
+      Y i ∩ Y j = ∅ := by
+  have key := transfer.inter_empty_combined D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin
+    X Y hXmem hYmem hD₀mne hD₁mne (2 * i + 1) (2 * j + 1)
+  rw [combinedX.odd, combinedX.odd, combinedY.odd, combinedY.odd,
+    Set.inter_eq_self_of_subset_right
+      (YPseq.subset_master D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem
+        hD₀mne hD₁mne i),
+    Set.inter_eq_self_of_subset_right (D₁.sub_master (hYmem i))] at key
+  exact key
+
+theorem Y_eq_empty_iff_YPseq_eq_empty (n : ℕ) :
+    Y n = ∅ ↔ YPseq D₀ D₁ hD₀nomin hD₁nomin X Y n = ∅ := by
+  have := inter_empty_iff_Y_inter_empty D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff
+    hD₁nomin X Y hXmem hYmem hD₀mne hD₁mne n n
+  rw [Set.inter_self, Set.inter_self] at this
+  exact this.symm
+
 theorem ne_empty (n : ℕ) : YPseq D₀ D₁ hD₀nomin hD₁nomin X Y n ≠ ∅ := fun h =>
-  Y_ne_empty D₁ hD₁nomin Y hYmem n
+  hD₁nomin.mem_ne_empty (hYmem n)
     ((Y_eq_empty_iff_YPseq_eq_empty D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem
       hYmem hD₀mne hD₁mne n).mpr h)
 
@@ -2968,29 +2864,6 @@ end Iso
 end
 
 section
-theorem genAtom_mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositive)
-    (hdiff : D.DiffClosed) {Z : ℕ → Set γ} (hZ : ∀ n, D.mem (Z n)) (δ : ℕ → Bool) :
-    ∀ n, genAtom Z D.master δ n = ∅ ∨ D.mem (genAtom Z D.master δ n) := by
-  intro n
-  induction n with
-  | zero => exact Or.inr D.master_mem
-  | succ n ih =>
-    have hbranch : (if δ n then Z n else D.master \ Z n) = ∅ ∨
-        D.mem (if δ n then Z n else D.master \ Z n) := by
-      by_cases hδ : δ n = true
-      · simp only [hδ, ite_true]; exact Or.inr (hZ n)
-      · simp only [hδ]; exact hdiff D.master_mem (hZ n)
-    show genAtom Z D.master δ n ∩ (if δ n then Z n else D.master \ Z n) = ∅ ∨
-      D.mem (genAtom Z D.master δ n ∩ (if δ n then Z n else D.master \ Z n))
-    rcases ih with ihA | ihA
-    · exact Or.inl (by rw [ihA, Set.empty_inter])
-    rcases hbranch with hb | hb
-    · exact Or.inl (by rw [hb, Set.inter_empty])
-    rcases Set.eq_empty_or_nonempty (genAtom Z D.master δ n ∩ (if δ n then Z n else D.master \ Z n))
-      with he | hne
-    · exact Or.inl he
-    · exact Or.inr ((hpos ihA hb).mpr hne)
-
 
 /-- **Generalization of `Theorem88.lean`'s `split_fst_subset`**: a splitting operation's first
 output is a subset of `B` (from `I ∪ J = B`). -/
@@ -3008,7 +2881,6 @@ theorem split_snd_subset' {α γ : Type*} {E : NeighborhoodSystem γ}
     (split A B Xn).2 ⊆ B :=
   Set.subset_union_right.trans_eq (hsplit hAB hBE Xn).2.2.2.2.1
 
-
 section AtomPair
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -3016,22 +2888,8 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
 
-
 variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
-
-
-theorem YPseq_subset_iff_Y_subset (i j : ℕ) :
-    YPseq D₀ D₁ hD₀nomin hD₁nomin X Y i ⊆ YPseq D₀ D₁ hD₀nomin hD₁nomin X Y j ↔ Y i ⊆ Y j := by
-  have key := transfer.subset_combined D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y
-    hXmem hYmem hD₀mne hD₁mne (2 * i + 1) (2 * j + 1)
-  rw [combinedX.odd, combinedX.odd, combinedY.odd, combinedY.odd,
-    Set.inter_eq_self_of_subset_right
-      (YPseq.subset_master D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem
-        hD₀mne hD₁mne i),
-    Set.inter_eq_self_of_subset_right (D₁.sub_master (hYmem i))] at key
-  exact key
-
 
 end AtomPair
 
@@ -3044,7 +2902,6 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hXcover : ∀ S, D₀.mem S ↔ ∃ n, S = X n) (hYcover : ∀ S, D₁.mem S ↔ ∃ n, S = Y n)
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
-
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem hD₀mne hD₁mne hXcover
   hYcover hX0 hY0 in
@@ -3254,7 +3111,6 @@ theorem atomE_succ_subset (δ : ℕ → Bool) (n : ℕ) :
   · simp only [hδ, ite_true]; exact split_fst_subset' hsplit (hmatch δ) (hmem δ) (X n)
   · simp only [hδ]; exact split_snd_subset' hsplit (hmatch δ) (hmem δ) (X n)
 
-
 omit hΔ hEmne hsplit in
 theorem subset_YseqE {n : ℕ} (δ' : Fin n → Bool) :
     atomE E split X Δ (extendTrue δ') (n + 1) ⊆ YseqE E split X Δ n :=
@@ -3398,163 +3254,6 @@ theorem transfer_subset_iffE (i j : ℕ) :
     ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
 
-/-- Intersection transfer, generalized to `E`: `X i ∩ X j` is empty on `Δ` iff `YseqE i ∩ YseqE j`
-is empty on `E.master`. Mirrors `transfer_inter_empty_iff`. -/
-theorem transfer_inter_empty_iffE (i j : ℕ) :
-    Δ ∩ X i ∩ X j = ∅ ↔ E.master ∩ YseqE E split X Δ i ∩ YseqE E split X Δ j = ∅ := by
-  have key := transfer_empty_iffE E split X Δ hΔ hEmne hsplit (cs := [(i, true), (j, true)])
-    (n := max i j + 1)
-    (by simp only [List.mem_cons, List.not_mem_nil, or_false]
-        rintro p (rfl | rfl) <;> simp)
-  have hLHS : {x ∈ Δ | ∀ p ∈ [(i, true), (j, true)], (p.2 = true ↔ x ∈ X p.1)}
-      = Δ ∩ X i ∩ X j := by
-    ext x
-    simp only [Set.mem_ofPred_eq, List.mem_cons, List.not_mem_nil, or_false,
-      forall_eq_or_imp, forall_eq, Set.mem_inter_iff]
-    tauto
-  have hRHS : {y ∈ E.master |
-      ∀ p ∈ [(i, true), (j, true)], (p.2 = true ↔ y ∈ YseqE E split X Δ p.1)}
-      = E.master ∩ YseqE E split X Δ i ∩ YseqE E split X Δ j := by
-    ext y
-    simp only [Set.mem_ofPred_eq, List.mem_cons, List.not_mem_nil, or_false,
-      forall_eq_or_imp, forall_eq, Set.mem_inter_iff]
-    tauto
-  rw [hLHS, hRHS] at key
-  rw [← Set.not_nonempty_iff_eq_empty, ← Set.not_nonempty_iff_eq_empty, not_iff_not]
-  exact key
-
-/-- Three-term subset transfer, generalized to `E`: `X i ∩ X j ⊆ X k` (restricted to `Δ`) iff
-`YseqE i ∩ YseqE j ⊆ YseqE k` (restricted to `E.master`). Mirrors `transfer_double_subset_iff`. -/
-theorem transfer_double_subset_iffE (i j k : ℕ) :
-    Δ ∩ X i ∩ X j ⊆ X k ↔
-      E.master ∩ YseqE E split X Δ i ∩ YseqE E split X Δ j ⊆ YseqE E split X Δ k := by
-  have key := transfer_empty_iffE E split X Δ hΔ hEmne hsplit
-    (cs := [(i, true), (j, true), (k, false)]) (n := max i (max j k) + 1)
-    (by simp only [List.mem_cons, List.not_mem_nil, or_false]
-        rintro p (rfl | rfl | rfl) <;>
-          simp [
-            (Nat.le_max_left j k).trans (Nat.le_max_right i (max j k)),
-            (Nat.le_max_right j k).trans (Nat.le_max_right i (max j k))])
-  have hLHS : {x ∈ Δ | ∀ p ∈ [(i, true), (j, true), (k, false)], (p.2 = true ↔ x ∈ X p.1)}
-      = (Δ ∩ X i ∩ X j) \ X k := by
-    ext x
-    simp only [Set.mem_ofPred_eq, List.mem_cons, List.not_mem_nil, or_false,
-      forall_eq_or_imp, forall_eq, Set.mem_sdiff, Set.mem_inter_iff]
-    tauto
-  have hRHS : {y ∈ E.master |
-      ∀ p ∈ [(i, true), (j, true), (k, false)], (p.2 = true ↔ y ∈ YseqE E split X Δ p.1)}
-      = (E.master ∩ YseqE E split X Δ i ∩ YseqE E split X Δ j) \ YseqE E split X Δ k := by
-    ext y
-    simp only [Set.mem_ofPred_eq, List.mem_cons, List.not_mem_nil, or_false,
-      forall_eq_or_imp, forall_eq, Set.mem_sdiff, Set.mem_inter_iff]
-    tauto
-  rw [hLHS, hRHS] at key
-  rw [← Set.sdiff_eq_empty, ← Set.sdiff_eq_empty, ← Set.not_nonempty_iff_eq_empty,
-    ← Set.not_nonempty_iff_eq_empty, not_iff_not]
-  exact key
-
-/-- `YseqE E split X Δ n` is always a subset of `E.master`. Needed by `transfer_inter_eq_iffE`
-below; mirrors `Yseq_subset_master` (`Theorem88.lean`), pulled forward from 8.12(c)(vi)(3)'s
-planned scope since `transfer_inter_eq_iff`'s proof genuinely depends on it. -/
-theorem YseqE_subset_master (n : ℕ) : YseqE E split X Δ n ⊆ E.master :=
-  Set.iUnion_subset fun δ' =>
-    atomE_subset_master E split X Δ hΔ hEmne hsplit (extendTrue δ') (n + 1)
-
-/-- **Equation transfer, generalized to `E`.** If `X k = X i ∩ X j` on `D`'s side (with all three
-sets `⊆ Δ`), then `YseqE k = YseqE i ∩ YseqE j` on `E`'s side, and conversely. Mirrors
-`transfer_inter_eq_iff`. -/
-theorem transfer_inter_eq_iffE (i j k : ℕ) (hi : X i ⊆ Δ) (_hj : X j ⊆ Δ) (hk : X k ⊆ Δ) :
-    X i ∩ X j = X k ↔ YseqE E split X Δ i ∩ YseqE E split X Δ j = YseqE E split X Δ k := by
-  have h1 : X k ⊆ X i ↔ YseqE E split X Δ k ⊆ YseqE E split X Δ i := by
-    have := transfer_subset_iffE E split X Δ hΔ hEmne hsplit k i
-    rwa [Set.inter_eq_self_of_subset_right hk,
-      Set.inter_eq_self_of_subset_right (YseqE_subset_master E split X Δ hΔ hEmne hsplit k)] at this
-  have h2 : X k ⊆ X j ↔ YseqE E split X Δ k ⊆ YseqE E split X Δ j := by
-    have := transfer_subset_iffE E split X Δ hΔ hEmne hsplit k j
-    rwa [Set.inter_eq_self_of_subset_right hk,
-      Set.inter_eq_self_of_subset_right (YseqE_subset_master E split X Δ hΔ hEmne hsplit k)] at this
-  have h3 : X i ∩ X j ⊆ X k ↔
-      YseqE E split X Δ i ∩ YseqE E split X Δ j ⊆ YseqE E split X Δ k := by
-    have := transfer_double_subset_iffE E split X Δ hΔ hEmne hsplit i j k
-    rwa [Set.inter_eq_self_of_subset_right hi,
-      Set.inter_eq_self_of_subset_right (YseqE_subset_master E split X Δ hΔ hEmne hsplit i)] at this
-  constructor
-  · intro heq
-    have hki : X k ⊆ X i := heq ▸ Set.inter_subset_left
-    have hkj : X k ⊆ X j := heq ▸ Set.inter_subset_right
-    have hijk : X i ∩ X j ⊆ X k := heq ▸ subset_rfl
-    exact Set.Subset.antisymm (h3.mp hijk) (Set.subset_inter (h1.mp hki) (h2.mp hkj))
-  · intro heq
-    have hki : YseqE E split X Δ k ⊆ YseqE E split X Δ i := heq ▸ Set.inter_subset_left
-    have hkj : YseqE E split X Δ k ⊆ YseqE E split X Δ j := heq ▸ Set.inter_subset_right
-    have hijk : YseqE E split X Δ i ∩ YseqE E split X Δ j ⊆ YseqE E split X Δ k :=
-      heq ▸ subset_rfl
-    exact Set.Subset.antisymm (h3.mpr hijk) (Set.subset_inter (h1.mpr hki) (h2.mpr hkj))
-
-/-- **`YseqE E split X Δ 0 = E.master` whenever `X 0 = Δ`** (Scott's convention `X₀ = Δ`). Mirrors
-`Yseq_zero_eq_master`. -/
-theorem YseqE_zero_eq_master (h0 : X 0 = Δ) : YseqE E split X Δ 0 = E.master := by
-  set δ : ℕ → Bool := extendTrue (fun i : Fin 0 => i.elim0) with hδdef
-  have hδ0 : δ 0 = true := by simp [hδdef, extendTrue]
-  have hAB : genAtom X Δ δ 0 = ∅ ↔ atomE E split X Δ δ 0 = ∅ :=
-    ⟨fun h => absurd h hΔ.ne_empty, fun h => absurd h hEmne.ne_empty⟩
-  have hBE : atomE E split X Δ δ 0 = ∅ ∨ E.mem (atomE E split X Δ δ 0) := Or.inr E.master_mem
-  have hspec := hsplit hAB hBE (X 0)
-  have hJ : (split (genAtom X Δ δ 0) (atomE E split X Δ δ 0) (X 0)).2 = ∅ := by
-    rw [← hspec.2.2.2.1]
-    show genAtom X Δ δ 0 \ X 0 = ∅
-    rw [show genAtom X Δ δ 0 = Δ from rfl, h0]
-    exact Set.sdiff_self
-  have hI : (split (genAtom X Δ δ 0) (atomE E split X Δ δ 0) (X 0)).1 = E.master := by
-    have hunion := hspec.2.2.2.2.1
-    rw [hJ, Set.union_empty] at hunion
-    exact hunion
-  have hkey : atomE E split X Δ δ 1 = E.master := by rw [atomE_succ, hδ0, ite_eq_left rfl]; exact hI
-  apply Set.Subset.antisymm (YseqE_subset_master E split X Δ hΔ hEmne hsplit 0)
-  calc E.master = atomE E split X Δ δ 1 := hkey.symm
-    _ ⊆ YseqE E split X Δ 0 := subset_YseqE E split X Δ (fun i : Fin 0 => i.elim0)
-
-/-- `YseqE E split X Δ n` is always either empty or a genuine `E`-neighbourhood: it is a finite
-union (`Fin n → Bool`) of `atomE` pieces, each of which is `∅` or `E.mem` by `atomE_invariant`, and
-`E` is closed under such finite unions by `Exercise812c.lean`'s generic `iUnion_mem_or_empty`
-(needing the extra hypotheses `hEpos`/`hEdiff`, absent from `Theorem88.lean`'s hardcoded
-`U_iUnion_mem`). Mirrors `Yseq_empty_or_mem`. -/
-theorem YseqE_empty_or_mem (hEpos : E.IsPositive) (hEdiff : E.DiffClosed) (n : ℕ) :
-    YseqE E split X Δ n = ∅ ∨ E.mem (YseqE E split X Δ n) := by
-  by_cases hne : (YseqE E split X Δ n).Nonempty
-  · exact Or.inr ((iUnion_mem_or_empty hEpos hEdiff
-      (fun δ' => (atomE_invariant E split X Δ hΔ hEmne hsplit (n + 1)).2.1 (extendTrue δ'))
-      ).resolve_left hne.ne_empty)
-  · exact Or.inl (Set.not_nonempty_iff_eq_empty.mp hne)
-
-/-- If `x ∈ X n` (and `x ∈ Δ`), then `YseqE E split X Δ n` is non-empty. Mirrors
-`Yseq_nonempty_of_mem`. -/
-theorem YseqE_nonempty_of_mem {n : ℕ} {x : α} (hxΔ : x ∈ Δ) (hxn : x ∈ X n) :
-    (YseqE E split X Δ n).Nonempty := by
-  classical
-  set δ0 : ℕ → Bool := fun k => decide (x ∈ X k) with hδ0def
-  have hδ0n : δ0 n = true := by show decide (x ∈ X n) = true; rw [decide_eq_true_iff]; exact hxn
-  have hxA : x ∈ genAtom X Δ δ0 n := genAtom_self X Δ hxΔ n
-  have hAX : x ∈ genAtom X Δ δ0 n ∩ X n := ⟨hxA, hxn⟩
-  have hAne : (genAtom X Δ δ0 n ∩ X n).Nonempty := ⟨x, hAX⟩
-  obtain ⟨hmatch, hmem, -⟩ := atomE_invariant E split X Δ hΔ hEmne hsplit n
-  have hspec := hsplit (hmatch δ0) (hmem δ0) (X n)
-  have hIne : (split (genAtom X Δ δ0 n) (atomE E split X Δ δ0 n) (X n)).1 ≠ ∅ :=
-    fun h => hAne.ne_empty (hspec.2.2.1.mpr h)
-  have hI_eq_atomE : (split (genAtom X Δ δ0 n) (atomE E split X Δ δ0 n) (X n)).1 =
-      atomE E split X Δ δ0 (n + 1) := by rw [atomE_succ, hδ0n, ite_eq_left rfl]
-  set δ2 : ℕ → Bool := extendTrue (restrictFin δ0 n) with hδ2def
-  have hagree : ∀ i < n + 1, δ2 i = δ0 i := by
-    intro i hi
-    rcases Nat.lt_succ_iff_lt_or_eq.mp hi with hi' | rfl
-    · exact extendTrue_restrictFin_agree δ0 n i hi'
-    · simp [hδ2def, extendTrue, hδ0n]
-  have hδ2_eq : atomE E split X Δ δ2 (n + 1) = atomE E split X Δ δ0 (n + 1) :=
-    atomE_congr E split X Δ hagree
-  have hne2 : (atomE E split X Δ δ2 (n + 1)).Nonempty := by
-    rw [hδ2_eq, ← hI_eq_atomE]
-    exact Set.nonempty_iff_ne_empty.mpr hIne
-  exact hne2.mono (subset_YseqE E split X Δ (restrictFin δ0 n))
 end
 
 namespace testBit
@@ -12090,85 +11789,6 @@ noncomputable def effectiveIso812d : EffectiveIso P₀ P₁ where
 
 end EffectiveIso812d
 
-namespace IsComputableSplit
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  {P : ComputablePresentation V} {Q : ComputablePresentation W}
-  {split : Set α → Set γ → Set α → Set γ × Set γ}
-
-end IsComputableSplit
-
-namespace IsComputableDiff
-
-variable {α : Type*} {V : NeighborhoodSystem α} {P : ComputablePresentation V}
-
-end IsComputableDiff
-
-section AtomPairCorrect2
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-/-- **Validity**: `atomPairIdx0`/`atomPairIdx1`'s recorded indices are always genuine `D₀`-side/
-`D₁`-side neighbourhoods — junk or not — since `ComputablePresentation.mem_X` holds unconditionally
-for every index (mirroring `Theorem88d.lean`'s `atomUCode_mem`/`U_mem_UX`, itself unconditional for
-the same reason). -/
-theorem atomPairIdx0_mem (n k : ℕ) :
-    D₀.mem (P₀.X (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k)) :=
-  P₀.mem_X _
-
-theorem atomPairIdx1_mem (n k : ℕ) :
-    D₁.mem (P₁.X (atomPairIdx1 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k)) :=
-  P₁.mem_X _
-
-end AtomPairCorrect2
-
-namespace IsComputableUnion
-
-variable {α : Type*} {V : NeighborhoodSystem α} {P : ComputablePresentation V}
-
-end IsComputableUnion
-
-section CombinedCodeTransfer
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-
-include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
-  hUnion1 in
-theorem YPseqCode_subset_iff_Y_subset (i j : ℕ) :
-    P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 i) ⊆
-        P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 j) ↔
-      P₁.X i ⊆ P₁.X j := by
-  have key := transfer.subset_combinedCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos
-    hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1
-    (2 * i + 1) (2 * j + 1)
-  rw [combinedXCode.odd, combinedXCode.odd, combinedYCode.odd, combinedYCode.odd,
-    Set.inter_eq_self_of_subset_right
-      (D₀.sub_master (P₀.mem_X
-        (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 i))),
-    Set.inter_eq_self_of_subset_right (D₁.sub_master (P₁.mem_X i))] at key
-  exact key
-
-end CombinedCodeTransfer
-
 section DomainIsoCode812d
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -12221,31 +11841,6 @@ end EffectiveIso812d
 end
 
 section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-namespace IsComputableSplit
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  {P : ComputablePresentation V} {Q : ComputablePresentation W}
-
-/-- The split's second output is a genuine `W`-neighbourhood whenever it is non-empty. -/
-theorem negIdx_mem (h : IsComputableSplit P Q split) (n m k : ℕ)
-    (hne : (split (P.X n) (Q.X m) (P.X k)).2 ≠ ∅) :
-    W.mem (split (P.X n) (Q.X m) (P.X k)).2 := by
-  rw [h.negIdx_spec n m k hne]; exact Q.mem_X _
-
-/-- The split's first output is a genuine `W`-neighbourhood whenever it is non-empty (immediate
-from `posIdx_spec` and `Q.mem_X`). Unlike the structure's original (unconditional) design, this is
-now conditional on `(split …).1 ≠ ∅` — see `posIdx_spec`'s docstring. -/
-theorem posIdx_mem (h : IsComputableSplit P Q split) (n m k : ℕ)
-    (hne : (split (P.X n) (Q.X m) (P.X k)).1 ≠ ∅) :
-    W.mem (split (P.X n) (Q.X m) (P.X k)).1 := by
-  rw [h.posIdx_spec n m k hne]; exact Q.mem_X _
-
-end IsComputableSplit
-end
-
-section
 open Domain.Recursive NeighborhoodSystem
 
 /-- **A union of two genuine `U`-neighbourhoods is again genuine, unconditionally** — no
@@ -12280,12 +11875,6 @@ theorem decodeQPairList_appendListCode (c1 c2 : ℕ) :
 mod `2`. -/
 def lowXor (x y : ℕ) : ℕ := (x % 2 + y % 2) % 2
 
-/-- `lowXor x y = (x ^^^ y) % 2`. -/
-theorem lowXor_eq_mod (x y : ℕ) : lowXor x y = (x ^^^ y) % 2 := by
-  unfold lowXor
-  rw [Nat.xor_mod_two_eq]
-  exact (Nat.add_mod x y 2).symm
-
 /-- Packed iteration state `pair (pair curA curB) (pair weight acc)` for the bitwise-XOR fold. -/
 def xorStep (s : ℕ) : ℕ :=
   Nat.pair (Nat.pair (s.unpair.1.unpair.1 / 2) (s.unpair.1.unpair.2 / 2))
@@ -12311,61 +11900,61 @@ def VdiffRaw (n m : ℕ) : ℕ :=
       (myUpsample (canonIdx m).unpair.1 (max (canonIdx n).unpair.1 (canonIdx m).unpair.1)
         (canonIdx m).unpair.2))
 
-/-- One recursion step for `Nat.xor` on the low bit: `x ^^^ y = 2 (x/2 ^^^ y/2) + lowXor x y`. -/
-theorem xor_low_rec (x y : ℕ) : x ^^^ y = 2 * (x / 2 ^^^ y / 2) + lowXor x y := by
-  have hdiv : (x ^^^ y) / 2 = x / 2 ^^^ y / 2 := by
-    apply Nat.eq_of_testBit_eq
-    intro i
-    rw [← Nat.testBit_add_one, Nat.testBit_xor, Nat.testBit_xor, Nat.testBit_add_one,
-      Nat.testBit_add_one]
-  have hmod := lowXor_eq_mod x y
-  conv_lhs => rw [← Nat.div_add_mod (x ^^^ y) 2]
-  rw [hdiv, hmod]
-
-/-- **Invariant of the bitwise-XOR iteration.** After `k` steps the two running arguments are
-`a / 2^k`, `b / 2^k`, the weight is `2^k`, and `acc + 2^k · (a/2^k ^^^ b/2^k) = a ^^^ b`. -/
-theorem xorStep_iter_spec (a b : ℕ) : ∀ k,
-    (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.1 = a / 2 ^ k ∧
-    (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.2 = b / 2 ^ k ∧
-    (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.1 = 2 ^ k ∧
-    (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.2 +
-        2 ^ k * (a / 2 ^ k ^^^ b / 2 ^ k) = a ^^^ b := by
-  intro k
-  induction k with
-  | zero =>
-    simp only [Function.iterate_zero_apply, unpair_pair_fst, unpair_pair_snd, pow_zero,
-      Nat.div_one, Nat.one_mul, Nat.zero_add, true_and]
-  | succ k ih =>
-    obtain ⟨hA, hB, hW, hAcc⟩ := ih
-    rw [Function.iterate_succ_apply']
-    have hdd : a / 2 ^ (k + 1) = (a / 2 ^ k) / 2 := by rw [Nat.div_div_eq_div_mul, ← pow_succ]
-    have hdd' : b / 2 ^ (k + 1) = (b / 2 ^ k) / 2 := by rw [Nat.div_div_eq_div_mul, ← pow_succ]
-    have p11 : (xorStep (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0)))).unpair.1.unpair.1
-        = (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.1 / 2 := by
-      unfold xorStep; rw [unpair_pair_fst, unpair_pair_fst]
-    have p12 : (xorStep (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0)))).unpair.1.unpair.2
-        = (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.2 / 2 := by
-      unfold xorStep; rw [unpair_pair_fst, unpair_pair_snd]
-    have p21 : (xorStep (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0)))).unpair.2.unpair.1
-        = 2 * (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.1 := by
-      unfold xorStep; rw [unpair_pair_snd, unpair_pair_fst]
-    have p22 : (xorStep (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0)))).unpair.2.unpair.2
-        = (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.2
-          + (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.1
-            * lowXor (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.1
-                (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.2 := by
-      unfold xorStep; rw [unpair_pair_snd, unpair_pair_snd]
-    refine ⟨?_, ?_, ?_, ?_⟩
-    · rw [p11, hA, Nat.div_div_eq_div_mul, ← pow_succ]
-    · rw [p12, hB, Nat.div_div_eq_div_mul, ← pow_succ]
-    · rw [p21, hW, ← pow_succ']
-    · rw [p22, hA, hB, hW, hdd, hdd', pow_succ, ← hAcc, xor_low_rec (a / 2 ^ k) (b / 2 ^ k)]
-      ring
-
-/-- **Correctness of the iterative bitwise XOR.** `myXor a b = a ^^^ b`. -/
+/-- **Correctness of the iterative bitwise XOR.** Inlines the former `lowXor_eq_mod` /
+`xor_low_rec` / `xorStep_iter_spec` scaffold. -/
 theorem myXor_eq_xor (a b : ℕ) : myXor a b = a ^^^ b := by
+  have xor_low_rec : ∀ x y : ℕ, x ^^^ y = 2 * (x / 2 ^^^ y / 2) + lowXor x y := by
+    intro x y
+    have hdiv : (x ^^^ y) / 2 = x / 2 ^^^ y / 2 := by
+      apply Nat.eq_of_testBit_eq
+      intro i
+      rw [← Nat.testBit_add_one, Nat.testBit_xor, Nat.testBit_xor, Nat.testBit_add_one,
+        Nat.testBit_add_one]
+    have hmod : lowXor x y = (x ^^^ y) % 2 := by
+      unfold lowXor
+      rw [Nat.xor_mod_two_eq]
+      exact (Nat.add_mod x y 2).symm
+    conv_lhs => rw [← Nat.div_add_mod (x ^^^ y) 2]
+    rw [hdiv, hmod]
+  have xorStep_iter_spec : ∀ k,
+      (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.1 = a / 2 ^ k ∧
+      (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.2 = b / 2 ^ k ∧
+      (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.1 = 2 ^ k ∧
+      (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.2 +
+          2 ^ k * (a / 2 ^ k ^^^ b / 2 ^ k) = a ^^^ b := by
+    intro k
+    induction k with
+    | zero =>
+      simp only [Function.iterate_zero_apply, unpair_pair_fst, unpair_pair_snd, pow_zero,
+        Nat.div_one, Nat.one_mul, Nat.zero_add, true_and]
+    | succ k ih =>
+      obtain ⟨hA, hB, hW, hAcc⟩ := ih
+      rw [Function.iterate_succ_apply']
+      have hdd : a / 2 ^ (k + 1) = (a / 2 ^ k) / 2 := by rw [Nat.div_div_eq_div_mul, ← pow_succ]
+      have hdd' : b / 2 ^ (k + 1) = (b / 2 ^ k) / 2 := by rw [Nat.div_div_eq_div_mul, ← pow_succ]
+      have p11 : (xorStep (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0)))).unpair.1.unpair.1
+          = (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.1 / 2 := by
+        unfold xorStep; rw [unpair_pair_fst, unpair_pair_fst]
+      have p12 : (xorStep (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0)))).unpair.1.unpair.2
+          = (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.2 / 2 := by
+        unfold xorStep; rw [unpair_pair_fst, unpair_pair_snd]
+      have p21 : (xorStep (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0)))).unpair.2.unpair.1
+          = 2 * (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.1 := by
+        unfold xorStep; rw [unpair_pair_snd, unpair_pair_fst]
+      have p22 : (xorStep (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0)))).unpair.2.unpair.2
+          = (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.2
+            + (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.1
+              * lowXor (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.1
+                  (xorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.2 := by
+        unfold xorStep; rw [unpair_pair_snd, unpair_pair_snd]
+      refine ⟨?_, ?_, ?_, ?_⟩
+      · rw [p11, hA, Nat.div_div_eq_div_mul, ← pow_succ]
+      · rw [p12, hB, Nat.div_div_eq_div_mul, ← pow_succ]
+      · rw [p21, hW, ← pow_succ']
+      · rw [p22, hA, hB, hW, hdd, hdd', pow_succ, ← hAcc, xor_low_rec (a / 2 ^ k) (b / 2 ^ k)]
+        ring
   unfold myXor
-  obtain ⟨_, _, _, hAcc⟩ := xorStep_iter_spec a b (a + b)
+  obtain ⟨_, _, _, hAcc⟩ := xorStep_iter_spec (a + b)
   have ha0 : a / 2 ^ (a + b) = 0 :=
     Nat.div_eq_of_lt (Nat.lt_of_lt_of_le Nat.lt_two_pow_self (Nat.pow_le_pow_right (by decide)
       (Nat.le_add_right a b)))
@@ -12380,56 +11969,6 @@ theorem myAndNot_eq (a b : ℕ) : myAndNot a b = a ^^^ (a &&& b) := by
 
 end
 
-namespace atomPairG
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section
-section Recover
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀nomin : D₀.NoMinimal) (hD₁nomin : D₁.NoMinimal)
-
-theorem splitChoice_eq (δ : ℕ → Bool × Bool) :
-    ∀ n, atomPairG D₀ D₁ (splitChoice' D₀ hD₀nomin) (splitChoice' D₁ hD₁nomin) X Y δ n =
-      atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n := by
-  intro n
-  induction n with
-  | zero => rfl
-  | succ n ih =>
-    show
-      (let A := (atomPairG D₀ D₁ (splitChoice' D₀ hD₀nomin) (splitChoice' D₁ hD₁nomin) X Y δ n).1
-       let B := (atomPairG D₀ D₁ (splitChoice' D₀ hD₀nomin) (splitChoice' D₁ hD₁nomin) X Y δ n).2
-       let IJ1 := splitChoice' D₁ hD₁nomin A B (X n)
-       let A1 := if (δ n).1 then A ∩ X n else A \ X n
-       let B1 := if (δ n).1 then IJ1.1 else IJ1.2
-       let IJ2 := splitChoice' D₀ hD₀nomin B1 A1 (Y n)
-       let B2 := if (δ n).2 then B1 ∩ Y n else B1 \ Y n
-       let A2 := if (δ n).2 then IJ2.1 else IJ2.2
-       (A2, B2)) = atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ (n + 1)
-    rw [atomPair.succ_eq]
-    show
-      (let A := (atomPairG D₀ D₁ (splitChoice' D₀ hD₀nomin) (splitChoice' D₁ hD₁nomin) X Y δ n).1
-       let B := (atomPairG D₀ D₁ (splitChoice' D₀ hD₀nomin) (splitChoice' D₁ hD₁nomin) X Y δ n).2
-       let IJ1 := splitChoice' D₁ hD₁nomin A B (X n)
-       let A1 := if (δ n).1 then A ∩ X n else A \ X n
-       let B1 := if (δ n).1 then IJ1.1 else IJ1.2
-       let IJ2 := splitChoice' D₀ hD₀nomin B1 A1 (Y n)
-       let B2 := if (δ n).2 then B1 ∩ Y n else B1 \ Y n
-       let A2 := if (δ n).2 then IJ2.1 else IJ2.2
-       (A2, B2)) =
-        yStep D₀ hD₀nomin
-          (xStep D₁ hD₁nomin (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1
-            (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 (X n) (δ n).1).1
-          (xStep D₁ hD₁nomin (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1
-            (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 (X n) (δ n).1).2
-          (Y n) (δ n).2
-    rw [ih]
-    rfl
-
-end Recover
-end
-
-end atomPairG
 namespace atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
@@ -12438,7 +11977,9 @@ section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
   (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-
+  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
+  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
+  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
 /-- **Junk propagates forward** (once a bit-source's state is junk at depth `n`, it stays junk at
 every later depth): the contrapositive of `atomPairJunk.eq_zero_of_succ`, using
@@ -12475,44 +12016,6 @@ theorem found_le_one {γ : Type*} {W : NeighborhoodSystem γ}
 end
 
 end combineFound2
-namespace deltaPair
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section
-theorem fst_eq_true_iff (k i : ℕ) : (deltaPair k i).1 = true ↔ (k / 4 ^ i) % 2 = 1 := by
-  unfold deltaPair; simp
-end
-
-section
-theorem snd_eq_true_iff (k i : ℕ) : (deltaPair k i).2 = true ↔ (k / 4 ^ i / 2) % 2 = 1 := by
-  unfold deltaPair; simp
-end
-
-end deltaPair
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-namespace IsComputableUnion
-
-variable {α : Type*} {V : NeighborhoodSystem α} {P : ComputablePresentation V}
-
-namespace union
-/-- **Under `UnionClosed`, the existential is unconditionally true** — every `X n ∪ X m` is a
-genuine neighbourhood, hence indexed by `P.surj`. Mirrors
-`IsComputableDiff.diff.exists_iff_ne_empty`, but simpler: `∪` has no "-or-empty" branch to rule
-out, so this is a plain existence fact rather than an `iff`. Not needed to *state*
-`IsComputableUnion` (kept off the structure itself, matching how `DiffClosed`/`UnionClosed` are
-separate hypotheses from `ComputablePresentation` elsewhere in this file); recorded here for
-convenience, though the eventual `(d)(4)(c)`/`(d)` instantiation is expected to discharge
-`unionIdx_spec`'s hypothesis directly from `XPseq.mem`/`YPseq.mem`-style facts specific to the
-atoms actually in play, rather than from a blanket `UnionClosed` on all of `D`. -/
-theorem «exists» (hunion : V.UnionClosed) (n m : ℕ) :
-    ∃ k, P.X k = P.X n ∪ P.X m :=
-  P.surj (hunion (P.mem_X n) (P.mem_X m))
-
-end union
-end IsComputableUnion
-end
 
 section
 open Domain.Recursive
@@ -12706,36 +12209,6 @@ noncomputable def posIdxFromBisection (n m k : ℕ) : ℕ :=
   selectFn (emptyInterDec P (Nat.pair n k)) m
     (selectFn (emptyDiffDec P hDiff (Nat.pair n k)) m (B.left m))
 
-section Congr
-
-variable {n n' k k' m m' : ℕ}
-
-
-/-- **`posIdxFromBisection` is a well-defined function of sets**: its *output set*
-`Q.X (posIdxFromBisection …)` depends only on `P.X n`, `Q.X m`, `P.X k` as sets, not on the raw
-indices `n, m, k` chosen to present them. Four-way case split on the two `{0,1}`-valued deciders:
-three of the four cases collapse to the shared fallback value `m`/`m'` (needing only `hm`); only the
-"both deciders silent" case needs `B.left_congr`. -/
-theorem posIdxFromBisection_congr (hpos : V.IsPositive) (hnomin : V.NoMinimal)
-    (hdiffClosed : V.DiffClosed) (hn : P.X n = P.X n') (hk : P.X k = P.X k')
-    (hm : Q.X m = Q.X m') :
-    Q.X (posIdxFromBisection P hDiff B n m k) = Q.X (posIdxFromBisection P hDiff B n' m' k') := by
-  unfold posIdxFromBisection
-  rw [emptyInterDec.congr P hpos hnomin hn hk, emptyDiffDec.congr P hDiff hdiffClosed hnomin hn hk]
-  have hle1 := emptyInterDec.le_one P (Nat.pair n' k')
-  have hle2 := emptyDiffDec.le_one P hDiff (Nat.pair n' k')
-  have h1 : emptyInterDec P (Nat.pair n' k') = 0 ∨ emptyInterDec P (Nat.pair n' k') = 1 := by omega
-  have h2 : emptyDiffDec P hDiff (Nat.pair n' k') = 0 ∨
-      emptyDiffDec P hDiff (Nat.pair n' k') = 1 := by omega
-  rcases h1 with h1 | h1
-  · simp only [h1, selectFn_zero]
-    rcases h2 with h2 | h2
-    · simp only [h2, selectFn_zero]; exact B.left_congr m m' hm
-    · simp only [h2, selectFn_one]; exact hm
-  · simp only [h1, selectFn_one]; exact hm
-
-end Congr
-
 end ComputableBisection
 end
 
@@ -12867,33 +12340,6 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
   (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
   {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
-
-section Congr
-
-variable {n n' k k' m m' : ℕ}
-
-
-/-- **`negIdxFromBisection` is a well-defined function of sets**, the same argument as
-`posIdxFromBisection_congr` with `B.right_congr` in place of `B.left_congr`. -/
-theorem negIdxFromBisection_congr (hpos : V.IsPositive) (hnomin : V.NoMinimal)
-    (hdiffClosed : V.DiffClosed) (hn : P.X n = P.X n') (hk : P.X k = P.X k')
-    (hm : Q.X m = Q.X m') :
-    Q.X (negIdxFromBisection P hDiff B n m k) = Q.X (negIdxFromBisection P hDiff B n' m' k') := by
-  unfold negIdxFromBisection
-  rw [emptyInterDec.congr P hpos hnomin hn hk, emptyDiffDec.congr P hDiff hdiffClosed hnomin hn hk]
-  have hle1 := emptyInterDec.le_one P (Nat.pair n' k')
-  have hle2 := emptyDiffDec.le_one P hDiff (Nat.pair n' k')
-  have h1 : emptyInterDec P (Nat.pair n' k') = 0 ∨ emptyInterDec P (Nat.pair n' k') = 1 := by omega
-  have h2 : emptyDiffDec P hDiff (Nat.pair n' k') = 0 ∨
-      emptyDiffDec P hDiff (Nat.pair n' k') = 1 := by omega
-  rcases h1 with h1 | h1
-  · simp only [h1, selectFn_zero]
-    rcases h2 with h2 | h2
-    · simp only [h2, selectFn_zero]; exact B.right_congr m m' hm
-    · simp only [h2, selectFn_one]; exact hm
-  · simp only [h1, selectFn_one]; exact hm
-
-end Congr
 end ComputableBisection
 end
 
@@ -12956,17 +12402,6 @@ end
 end Udiff
 open Domain.Recursive NeighborhoodSystem
 
-section
-/-- **7.1(i)-for-`\`, for `𝒰`**: `Xₙ \ Xₘ = X_k` for some `k` is recursively decidable — mirrors
-`U_cons_computable` exactly, substituting `Udiff` for the raw `combineCode` composite. -/
-theorem U_diff_computable : RecDecidable₂ (fun n m => ∃ k, UX k = UX n \ UX m) := by
-  unfold RecDecidable₂
-  refine RecDecidable.of_iff (fun t => ?_)
-    (recDecidable_presentedIntervals_nonempty.comp Udiff.primrec)
-  show (∃ k, UX k = UX t.unpair.1 \ UX t.unpair.2) ↔ _
-  rw [U_diff_iff_nonempty, ← Udiff.eq_diff]
-end
-
 namespace Udiff
 open Domain.Recursive NeighborhoodSystem
 
@@ -12993,7 +12428,12 @@ def U_isComputableDiff : IsComputableDiff UComputablePresentation where
   diffIdx := Udiff
   diffIdx_primrec := Udiff.primrec
   diffIdx_spec := Udiff.spec
-  diff_computable := U_diff_computable
+  diff_computable := by
+    unfold RecDecidable₂
+    refine RecDecidable.of_iff (fun t => ?_)
+      (recDecidable_presentedIntervals_nonempty.comp Udiff.primrec)
+    show (∃ k, UX k = UX t.unpair.1 \ UX t.unpair.2) ↔ _
+    rw [U_diff_iff_nonempty, ← Udiff.eq_diff]
 end
 
 section
