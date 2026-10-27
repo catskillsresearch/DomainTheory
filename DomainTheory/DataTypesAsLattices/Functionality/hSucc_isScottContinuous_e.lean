@@ -21,7 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.expPayload
 public import DomainTheory.DataTypesAsLattices.Functionality.hApply
 public import DomainTheory.DataTypesAsLattices.Functionality.hSucc
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
-public import DomainTheory.DataTypesAsLattices.Functionality.hApply_isScottContinuous_e
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
 
@@ -35,7 +34,7 @@ theorem hSucc.isScottContinuous_e (H t : Pomega) :
     IsScottContinuous (fun e => hSucc H e t) :=
   let hrec :=
     theorem_1_3 (f := fun e => hApply H e t) (g := expPayload)
-      (hApply_isScottContinuous_e H t)
+      (hApply.isScottContinuous_e H t)
       (funOf.isScottContinuous_left (ofNat 1))
   continuous_nary
     (fun y z => condSet.isScottContinuous_left y z)

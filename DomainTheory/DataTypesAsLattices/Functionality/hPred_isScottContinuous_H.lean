@@ -18,9 +18,9 @@ public import DomainTheory.DataTypesAsLattices.Functionality.whichC
 public import DomainTheory.DataTypesAsLattices.Functionality.outC
 public import DomainTheory.DataTypesAsLattices.Functionality.hPred
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
-public import DomainTheory.DataTypesAsLattices.Functionality.hApply_isScottContinuous_H
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
+public import DomainTheory.DataTypesAsLattices.Functionality.hApply
 
 @[expose] public section
 
@@ -34,11 +34,11 @@ theorem hPred_isScottContinuous_H (e t : Pomega) :
     (fun y z => condSet.isScottContinuous_left y z)
     (fun x z => condSet.isScottContinuous_mid x z)
     (fun x y => condSet.isScottContinuous_right x y)
-    (theorem_1_3 (funOf.isScottContinuous whichC) (hApply_isScottContinuous_H _ t))
+    (theorem_1_3 (funOf.isScottContinuous whichC) (hApply.isScottContinuous_H _ t))
     (theorem_1_3 (funOf.isScottContinuous inleftC)
       (theorem_1_3 predSet.isScottContinuous
         (theorem_1_3 (funOf.isScottContinuous outC)
-          (hApply_isScottContinuous_H _ t))))
+          (hApply.isScottContinuous_H _ t))))
     (const_isScottContinuous botElem)
 
 end DomainTheory.DataTypesAsLattices

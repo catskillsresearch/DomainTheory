@@ -18,8 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.expPayload
 public import DomainTheory.DataTypesAsLattices.Functionality.hApply
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
-public import DomainTheory.DataTypesAsLattices.Functionality.hApply_isScottContinuous_H
-public import DomainTheory.DataTypesAsLattices.Functionality.hApply_payload_isScottContinuous_e
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
@@ -40,14 +38,14 @@ theorem isScottContinuous_H (e t : Pomega) :
     (fun x z => condSet.isScottContinuous_mid x z)
     (fun x y => condSet.isScottContinuous_right x y)
     (theorem_1_3 (funOf.isScottContinuous whichC)
-      (hApply_isScottContinuous_H _ t))
+      (hApply.isScottContinuous_H _ t))
     (const_isScottContinuous botElem)
     (continuous_tuple
       (fun y => funOf.isScottContinuous_left y)
       (fun u => funOf.isScottContinuous u)
       (theorem_1_3 (funOf.isScottContinuous outC)
-        (hApply_isScottContinuous_H _ t))
-      (hApply_isScottContinuous_H _ t))
+        (hApply.isScottContinuous_H _ t))
+      (hApply.isScottContinuous_H _ t))
 
 theorem isScottContinuous_t (H e : Pomega) :
     IsScottContinuous (fun t => hApp H e t) :=
@@ -78,7 +76,7 @@ theorem isScottContinuous_e (H t : Pomega) :
     (theorem_1_3 (f := funOf whichC)
       (g := fun e => hApply H (funOf (expPayload e) (ofNat 0)) t)
       (funOf.isScottContinuous whichC)
-      (hApply_payload_isScottContinuous_e H t 0))
+      (hApply.payload_isScottContinuous_e H t 0))
     (const_isScottContinuous botElem)
     (continuous_tuple
       (fun y => funOf.isScottContinuous_left y)
@@ -86,8 +84,8 @@ theorem isScottContinuous_e (H t : Pomega) :
       (theorem_1_3 (f := funOf outC)
         (g := fun e => hApply H (funOf (expPayload e) (ofNat 0)) t)
         (funOf.isScottContinuous outC)
-        (hApply_payload_isScottContinuous_e H t 0))
-      (hApply_payload_isScottContinuous_e H t 1))
+        (hApply.payload_isScottContinuous_e H t 0))
+      (hApply.payload_isScottContinuous_e H t 1))
 
 end hApp
 

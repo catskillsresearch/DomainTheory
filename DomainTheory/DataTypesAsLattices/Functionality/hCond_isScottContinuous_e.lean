@@ -18,7 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.expPayload
 public import DomainTheory.DataTypesAsLattices.Functionality.hApply
 public import DomainTheory.DataTypesAsLattices.Functionality.hCond
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
-public import DomainTheory.DataTypesAsLattices.Functionality.hApply_payload_isScottContinuous_e
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
@@ -44,7 +43,7 @@ theorem hCond_isScottContinuous_e (H t : Pomega) :
       (theorem_1_3 (f := funOf whichC)
         (g := fun e => hApply H (funOf (expPayload e) (ofNat 0)) t)
         (funOf.isScottContinuous whichC)
-        (hApply_payload_isScottContinuous_e H t 0))
+        (hApply.payload_isScottContinuous_e H t 0))
       (continuous_nary
         (fun y z => condSet.isScottContinuous_left y z)
         (fun x z => condSet.isScottContinuous_mid x z)
@@ -52,9 +51,9 @@ theorem hCond_isScottContinuous_e (H t : Pomega) :
         (theorem_1_3 (f := funOf outC)
           (g := fun e => hApply H (funOf (expPayload e) (ofNat 0)) t)
           (funOf.isScottContinuous outC)
-          (hApply_payload_isScottContinuous_e H t 0))
-        (hApply_payload_isScottContinuous_e H t 1)
-        (hApply_payload_isScottContinuous_e H t 2))
-      (hApply_payload_isScottContinuous_e H t 3))
+          (hApply.payload_isScottContinuous_e H t 0))
+        (hApply.payload_isScottContinuous_e H t 1)
+        (hApply.payload_isScottContinuous_e H t 2))
+      (hApply.payload_isScottContinuous_e H t 3))
 
 end DomainTheory.DataTypesAsLattices

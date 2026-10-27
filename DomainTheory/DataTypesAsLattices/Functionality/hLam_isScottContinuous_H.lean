@@ -16,7 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.expPayload
 public import DomainTheory.DataTypesAsLattices.Functionality.hApply
 public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion
 public import DomainTheory.DataTypesAsLattices.Functionality.hLam
-public import DomainTheory.DataTypesAsLattices.Functionality.hApply_isScottContinuous_H
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
@@ -32,6 +31,6 @@ theorem hLam.isScottContinuous_H (e t : Pomega) :
       (fun H x =>
         hApply H (funOf (expPayload e) (ofNat 1))
           (updateEnvUnion t x (funOf (expPayload e) (ofNat 0))))
-      (fun _ => hApply_isScottContinuous_H _ _))
+      (fun _ => hApply.isScottContinuous_H _ _))
 
 end DomainTheory.DataTypesAsLattices

@@ -88,9 +88,6 @@ flowchart TB
   N101["funOf_top"]
   N102["funOf_dcondSet"]
   N103["graph_funOf_ext"]
-  N105["hApply_isScottContinuous_H"]
-  N107["hApply_isScottContinuous_e"]
-  N108["hApply_payload_isScottContinuous_e"]
   N110["hCond_isScottContinuous_H"]
   N111["hCond_isScottContinuous_e"]
   N112["hCond_isScottContinuous_t"]
@@ -640,44 +637,37 @@ flowchart TB
   N49 -->|"1"| N41
   N75 -->|"1"| N41
   N86 -->|"1"| N41
-  N0 -->|"1"| N105
-  N49 -->|"1"| N105
-  N105 -->|"1"| N41
-  N0 -->|"1"| N107
-  N49 -->|"1"| N107
-  N0 -->|"1"| N108
-  N49 -->|"1"| N108
-  N107 -->|"1"| N108
-  N108 -->|"1"| N41
+  N49 -->|"1"| N14
+  N14 -->|"1"| N14
   N0 -->|"1"| N110
   N49 -->|"1"| N110
   N86 -->|"1"| N110
-  N105 -->|"1"| N110
+  N14 -->|"1"| N110
   N0 -->|"1"| N111
   N49 -->|"1"| N111
   N86 -->|"1"| N111
-  N108 -->|"1"| N111
+  N14 -->|"1"| N111
   N0 -->|"1"| N112
   N49 -->|"1"| N112
   N86 -->|"1"| N112
   N0 -->|"1"| N113
   N49 -->|"1"| N113
-  N105 -->|"1"| N113
+  N14 -->|"1"| N113
   N0 -->|"1"| N114
   N49 -->|"1"| N114
   N86 -->|"1"| N114
-  N105 -->|"1"| N114
+  N14 -->|"1"| N114
   N0 -->|"1"| N115
   N49 -->|"1"| N115
   N86 -->|"1"| N115
-  N107 -->|"1"| N115
+  N14 -->|"1"| N115
   N0 -->|"1"| N116
   N49 -->|"1"| N116
   N86 -->|"1"| N116
   N0 -->|"1"| N117
   N49 -->|"1"| N117
   N86 -->|"1"| N117
-  N105 -->|"1"| N117
+  N14 -->|"1"| N117
   N0 -->|"1"| N118
   N49 -->|"1"| N118
   N86 -->|"1"| N118
@@ -695,7 +685,7 @@ flowchart TB
   N0 -->|"1"| N121
   N49 -->|"1"| N121
   N86 -->|"1"| N121
-  N107 -->|"1"| N121
+  N14 -->|"1"| N121
   N0 -->|"1"| N122
   N49 -->|"1"| N122
   N86 -->|"1"| N122
@@ -1621,9 +1611,6 @@ flowchart TB
   class N101 file
   class N102 file
   class N103 file
-  class N105 file
-  class N107 file
-  class N108 file
   class N110 file
   class N111 file
   class N112 file
