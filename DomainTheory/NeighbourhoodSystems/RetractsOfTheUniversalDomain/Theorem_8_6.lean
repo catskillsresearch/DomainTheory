@@ -725,7 +725,7 @@ theorem exists_split {A : Set α} {B : Set ℚ} (hAB : A = ∅ ↔ B = ∅)
         exact Set.empty_inter Xn
       have hBne : B ≠ ∅ := fun hB => hAne (hAB.mpr hB)
       have hBU' : U.mem B := hBU.resolve_left hBne
-      obtain ⟨Y, Z, hY, hZ, hYZinter, hYZunion, -, -⟩ := U_no_minimal hBU'
+      obtain ⟨Y, Z, hY, hZ, hYZinter, hYZunion, -, -⟩ := U.no_minimal hBU'
       have hYne : Y ≠ ∅ := hY.2.1.ne_empty
       have hZne : Z ≠ ∅ := hZ.2.1.ne_empty
       exact ⟨Y, Z, Or.inr hY, Or.inr hZ, iff_of_false h1 hYne, iff_of_false h2 hZne,
@@ -1286,7 +1286,7 @@ theorem transfer_inter_eq_iff (i j k : ℕ) (hi : X i ⊆ Δ) (_hj : X j ⊆ Δ)
 (`Fin n → Bool`) of `atomU` pieces, each of which is `∅` or `U.mem` by `atomU_invariant`. -/
 theorem Yseq_empty_or_mem (n : ℕ) : Yseq split X Δ n = ∅ ∨ U.mem (Yseq split X Δ n) := by
   by_cases hne : (Yseq split X Δ n).Nonempty
-  · exact Or.inr (U_iUnion_mem
+  · exact Or.inr (U.iUnion_mem
       (fun δ' => (atomU_invariant split X Δ hΔ hsplit (n + 1)).2.1 (extendTrue δ')) hne)
   · exact Or.inl (Set.not_nonempty_iff_eq_empty.mp hne)
 

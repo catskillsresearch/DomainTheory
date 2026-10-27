@@ -13,6 +13,17 @@ system is *positive* when Scott's (ii) is strengthened to the biconditional **(i
 def NeighborhoodSystem.IsPositive {α : Type*} (V : NeighborhoodSystem α) : Prop :=
   ∀ ⦃X Y : Set α⦄, V.mem X → V.mem Y → (V.mem (X ∩ Y) ↔ (X ∩ Y).Nonempty)
 
+/-- **Difference-closure**: the set-difference of two neighbourhoods is again a neighbourhood, or
+empty. -/
+def NeighborhoodSystem.DiffClosed {α : Type*} (D : NeighborhoodSystem α) : Prop :=
+  ∀ {X Y : Set α}, D.mem X → D.mem Y → X \ Y = ∅ ∨ D.mem (X \ Y)
+
+/-- **Atomlessness** ("no minimal neighbourhoods"): every neighbourhood splits into two disjoint,
+non-empty neighbourhood pieces whose union recovers it. -/
+def NeighborhoodSystem.NoMinimal {α : Type*} (D : NeighborhoodSystem α) : Prop :=
+  ∀ {X : Set α}, D.mem X →
+    ∃ Y Z : Set α, D.mem Y ∧ D.mem Z ∧ Y.Nonempty ∧ Z.Nonempty ∧ Y ∩ Z = ∅ ∧ Y ∪ Z = X
+
 /-- Scott's *"very special circumstance"* (the prose after Examples 1.2–1.4): a family `𝒟`
 is **nested-or-disjoint** when any two of its members are either nested (one included in the
 other) or disjoint. -/

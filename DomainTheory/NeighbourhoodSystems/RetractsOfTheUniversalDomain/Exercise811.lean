@@ -673,7 +673,7 @@ def V : NeighborhoodSystem ℕ where
   sub_master := by rintro X _; exact Set.subset_univ X
 
 /-- **`V` is closed under binary union**, as long as the result is non-empty — mirrors
-`Definition87.lean`'s `U_union_mem`, needed to reassemble Scott's literal finite unions. -/
+`Definition87.lean`'s `U.union_mem`, needed to reassemble Scott's literal finite unions. -/
 theorem V_union_mem {X Y : Set ℕ} (hX : X = ∅ ∨ V.mem X) (hY : Y = ∅ ∨ V.mem Y) :
     X ∪ Y = ∅ ∨ V.mem (X ∪ Y) := by
   rcases hX with rfl | hX
@@ -689,7 +689,7 @@ theorem V_union_mem {X Y : Set ℕ} (hX : X = ∅ ∨ V.mem X) (hY : Y = ∅ ∨
   exact Or.inr ⟨max k₁ k₂, _, heq, hXne.mono Set.subset_union_left⟩
 
 /-- **`V` is closed under finite (`Fintype`-indexed) unions**, as long as the result is
-non-empty — mirrors `Definition87.lean`'s `U_iUnion_mem` verbatim. -/
+non-empty — mirrors `Definition87.lean`'s `U.iUnion_mem` verbatim. -/
 theorem V_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℕ} (hf : ∀ i, f i = ∅ ∨ V.mem (f i))
     (hne : (⋃ i, f i).Nonempty) : V.mem (⋃ i, f i) := by
   classical
@@ -706,7 +706,7 @@ theorem V_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℕ} (hf : ∀ i,
 
 /-- **`V.mem` literally matches Scott's "non-empty finite unions of `2^k ℕ + ℓ`, `ℓ < 2^k`"** —
 reconciles the bookkeeping-free `levelSet` encoding with Exercise 8.12's literal description,
-mirroring `Definition87.lean`'s `U_mem_iff_scott`. -/
+mirroring `Definition87.lean`'s `U.mem_iff_scott`. -/
 theorem V_mem_iff_finiteUnion {X : Set ℕ} :
     V.mem X ↔
       ∃ F : Finset (ℕ × ℕ), (∀ p ∈ F, p.2 < 2 ^ p.1) ∧ X = ⋃ p ∈ F, affine p.1 p.2 ∧ X.Nonempty := by

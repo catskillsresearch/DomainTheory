@@ -502,10 +502,6 @@ def diffOneCode (t : ℕ) : ℕ :=
     (Nat.pair (Nat.pair (ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.2))
       t.unpair.2.unpair.2) 0 + 1) + 1
 
-/-- **Difference of a single interval-pair by another**, as a `≤ 2`-element list, via the
-unconditional `Ico_diff_Ico`. -/
-def diffOneList (p q : ℚ × ℚ) : List (ℚ × ℚ) := [(p.1, p.2 ⊓ q.1), (p.1 ⊔ q.2, p.2)]
-
 /-- `diffSingleCode accL q` subtracts the single interval-pair coded by `q` from the whole
 QPair-list coded by `accL`. -/
 def diffSingleCode (accL q : ℕ) : ℕ := flatMapCode diffOneCode q accL
@@ -520,18 +516,6 @@ def diffAllCode (pc L2 : ℕ) : ℕ := foldCode diffAllStep 0 (Nat.pair pc 0 + 1
 
 /-- `diffCode c1 c2` subtracts the QPair-list coded by `c2` from the QPair-list coded by `c1`. -/
 def diffCode (c1 c2 : ℕ) : ℕ := flatMapCode (fun t => diffAllCode t.unpair.2 t.unpair.1) c2 c1
-
-/-- **Subtract a single interval-pair `q` from a whole presenting list `L`.** -/
-def diffSingleList (L : List (ℚ × ℚ)) (q : ℚ × ℚ) : List (ℚ × ℚ) :=
-  L.flatMap (fun p => diffOneList p q)
-
-/-- **Subtract a whole presenting list `L2` from a single interval-pair `p`**, by folding
-`diffSingleList` over `L2`, starting from `[p]`. -/
-def diffAllList (p : ℚ × ℚ) (L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L2.foldl diffSingleList [p]
-
-/-- **Subtract `L2` from `L1`**, presenting the set difference `presentedIntervals L1 \\
-presentedIntervals L2`. -/
-def diffLists (L1 L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L1.flatMap (fun p => diffAllList p L2)
 
 /-- The per-pair-code operation `(pc, qc) ↦ (max, min)` realizing `(p.1 ⊔ q.1, p.2 ⊓ q.2)`. -/
 def qpCombineBop (t : ℕ) : ℕ :=
@@ -548,51 +532,6 @@ def qpNonemptyBop (e : ℕ) : ℕ := ratLtCode (Nat.pair e.unpair.1 e.unpair.2)
 `decodeList c` via `Recursive.lean`'s `existsListChar` (the second argument of `existsListChar` is
 an unused parameter, fixed to `0`). -/
 def qpNonemptyChar (c : ℕ) : ℕ := existsListChar (fun t => qpNonemptyBop t.unpair.1) 0 c
-
-/-- Two lists with the same **elements** present the same set. -/
-theorem presentedIntervals_congr {L1 L2 : List (ℚ × ℚ)} (h : ∀ p, p ∈ L1 ↔ p ∈ L2) :
-    presentedIntervals L1 = presentedIntervals L2 := by
-  ext x
-  simp only [mem_presentedIntervals]
-  constructor
-  · rintro ⟨p, hp, h1, h2⟩; exact ⟨p, (h p).mp hp, h1, h2⟩
-  · rintro ⟨p, hp, h1, h2⟩; exact ⟨p, (h p).mpr hp, h1, h2⟩
-
-/-- **Unconditional interval difference**: `Ico a b \ Ico c d = Ico a (b ⊓ c) ∪ Ico (a ⊔ d) b`, with
-no ordering hypotheses on `a, b, c, d` (mirrors `Set.Ico_inter_Ico`'s unconditional intersection
-formula). -/
-theorem Ico_diff_Ico (a b c d : ℚ) :
-    Set.Ico a b \ Set.Ico c d = Set.Ico a (b ⊓ c) ∪ Set.Ico (a ⊔ d) b := by
-  ext x
-  simp only [Set.mem_sdiff, Set.mem_Ico, Set.mem_union, lt_inf_iff, sup_le_iff]
-  constructor
-  · rintro ⟨⟨ha, hb⟩, hcd⟩
-    rcases lt_or_ge x c with hc | hc
-    · exact Or.inl ⟨ha, hb, hc⟩
-    · rcases lt_or_ge x d with hd | hd
-      · exact absurd ⟨hc, hd⟩ hcd
-      · exact Or.inr ⟨⟨ha, hd⟩, hb⟩
-  · rintro (⟨ha, hb, hc⟩ | ⟨⟨ha, hd⟩, hb⟩)
-    · exact ⟨⟨ha, hb⟩, fun ⟨hc', _⟩ => absurd hc' (not_le.mpr hc)⟩
-    · exact ⟨⟨ha, hb⟩, fun ⟨_, hd'⟩ => absurd hd' (not_lt.mpr hd)⟩
-
-
-theorem presentedIntervals_diffOneList (p q : ℚ × ℚ) :
-    presentedIntervals (diffOneList p q) = Set.Ico p.1 p.2 \ Set.Ico q.1 q.2 := by
-  unfold diffOneList
-  rw [presentedIntervals_cons, presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]
-  exact (Ico_diff_Ico p.1 p.2 q.1 q.2).symm
-
-
-theorem presentedIntervals_diffSingleList (L : List (ℚ × ℚ)) (q : ℚ × ℚ) :
-    presentedIntervals (diffSingleList L q) = presentedIntervals L \ Set.Ico q.1 q.2 := by
-  induction L with
-  | nil => simp [diffSingleList]
-  | cons a l ih =>
-    rw [show diffSingleList (a :: l) q = diffOneList a q ++ diffSingleList l q from rfl,
-      presentedIntervals_append, presentedIntervals_diffOneList, ih, presentedIntervals_cons,
-      Set.union_sdiff_distrib]
-
 
 theorem decodeQPairList_diffOneCode (qc pc : ℕ) :
     decodeQPairList (diffOneCode (Nat.pair qc pc)) = diffOneList (decodeRatPair pc) (decodeRatPair qc) := by
@@ -745,31 +684,6 @@ theorem presentedIntervals_decodeQPairList_subset_iff (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList c1) ⊆ presentedIntervals (decodeQPairList c2) ↔
       ¬ (presentedIntervals (decodeQPairList (diffCode c1 c2))).Nonempty := by
   rw [presentedIntervals_decodeQPairList_diffCode, Set.not_nonempty_iff_eq_empty, Set.sdiff_eq_empty]
-
-theorem presentedIntervals_foldl_diffSingleList (L2 : List (ℚ × ℚ)) :
-    ∀ acc : List (ℚ × ℚ),
-      presentedIntervals (L2.foldl diffSingleList acc) = presentedIntervals acc \ presentedIntervals L2 := by
-  induction L2 with
-  | nil => intro acc; simp
-  | cons a l ih =>
-    intro acc
-    rw [List.foldl_cons, ih (diffSingleList acc a), presentedIntervals_diffSingleList,
-      presentedIntervals_cons, Set.sdiff_sdiff]
-
-theorem presentedIntervals_diffAllList (p : ℚ × ℚ) (L2 : List (ℚ × ℚ)) :
-    presentedIntervals (diffAllList p L2) = Set.Ico p.1 p.2 \ presentedIntervals L2 := by
-  unfold diffAllList
-  rw [presentedIntervals_foldl_diffSingleList, presentedIntervals_cons, presentedIntervals_nil,
-    Set.union_empty]
-
-theorem presentedIntervals_diffLists (L1 L2 : List (ℚ × ℚ)) :
-    presentedIntervals (diffLists L1 L2) = presentedIntervals L1 \ presentedIntervals L2 := by
-  induction L1 with
-  | nil => simp [diffLists]
-  | cons a l ih =>
-    rw [show diffLists (a :: l) L2 = diffAllList a L2 ++ diffLists l L2 from rfl,
-      presentedIntervals_append, presentedIntervals_diffAllList, ih, presentedIntervals_cons,
-      Set.union_sdiff_distrib]
 
 theorem primrec_diffOneCode : Nat.Primrec diffOneCode := by
   have ha : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.right

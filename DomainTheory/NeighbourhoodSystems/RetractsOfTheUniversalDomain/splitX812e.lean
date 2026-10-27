@@ -22,7 +22,7 @@ itself (`(e)(c)(ii)`). -/
 noncomputable def «812e» :
     IsComputableSplit UComputablePresentation VComputablePresentation splitX812e :=
   ComputableBisection.isComputableSplit.ofBisection UComputablePresentation U_isComputableDiff
-    B812e V_noMinimal U_isPositive U_noMinimal U_diffClosed
+    B812e V_noMinimal U.isPositive U.noMinimal U.diffClosed
 
 end isComputableSplit
 

@@ -11,32 +11,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_26
 
 namespace DomainTheory.NeighbourhoodSystems
 
-/-- **`U` is closed under set-difference of two of its own neighbourhoods** (or the difference is
-empty): `IntervalPrimrec.lean`'s `diffLists`/`presentedIntervals_diffLists`, built unconditionally
-from `Ico_diff_Ico`, already witnesses presentability of the raw difference; only non-emptiness can
-fail. -/
-theorem U_diff_mem {X Y : Set ℚ} (hX : U.mem X) (hY : U.mem Y) : X \ Y = ∅ ∨ U.mem (X \ Y) := by
-  obtain ⟨⟨L1, rfl⟩, -, hXsub⟩ := hX
-  obtain ⟨⟨L2, rfl⟩, -, -⟩ := hY
-  rcases Set.eq_empty_or_nonempty (presentedIntervals L1 \ presentedIntervals L2) with h | h
-  · exact Or.inl h
-  · exact Or.inr ⟨⟨diffLists L1 L2, (presentedIntervals_diffLists L1 L2).symm⟩, h,
-      Set.sdiff_subset.trans hXsub⟩
-
-theorem U_diffClosed : U.DiffClosed := fun hX hY => U_diff_mem hX hY
-
-/-- **`U` is Positive**: since `combineIntervals` presents *any* raw intersection of two presented
-lists unconditionally, and `X ∩ Y ⊆ [0,1)` is automatic whenever `X ⊆ [0,1)`, only non-emptiness
-can ever obstruct `U.mem (X ∩ Y)`. -/
-theorem U_isPositive : U.IsPositive := by
-  rintro X Y ⟨⟨L1, rfl⟩, -, hXsub⟩ ⟨⟨L2, rfl⟩, -, -⟩
-  refine ⟨fun h => h.2.1, fun hne => ⟨⟨combineIntervals L1 L2, presentedIntervals_inter L1 L2⟩,
-    hne, Set.inter_subset_left.trans hXsub⟩⟩
-
-theorem U_noMinimal : U.NoMinimal := by
-  intro X hX
-  obtain ⟨Y, Z, hY, hZ, hYZinter, hYZunion, -, -⟩ := U_no_minimal hX
-  exact ⟨Y, Z, hY, hZ, hY.2.1, hZ.2.1, hYZinter, hYZunion⟩
 
 /-- **`V` is Positive**: `levelSet.inter` presents *any* raw intersection unconditionally, so only
 non-emptiness can obstruct `V.mem (X ∩ Y)`. -/
@@ -9330,7 +9304,7 @@ further canonicalization is needed here — mirrors `Uinter`). -/
 def Udiff (n m : ℕ) : ℕ := diffCode (canonCode n) (canonCode m)
 
 /-- **Scott's consistency condition for `\` reduces to non-emptiness**, exactly mirroring
-`U_cons_iff_nonempty_inter`: `U_diff_mem` (`Exercise812c.lean`) shows `UX n \ UX m` is always either
+`U_cons_iff_nonempty_inter`: `U.diff_mem` (`Exercise812c.lean`) shows `UX n \ UX m` is always either
 empty or a genuine `U`-neighbourhood, and every `UX k` is non-empty (`U.mem` forces
 `Set.Nonempty`), so "presentable" and "non-empty" coincide. -/
 theorem U_diff_iff_nonempty (n m : ℕ) :
@@ -9339,7 +9313,7 @@ theorem U_diff_iff_nonempty (n m : ℕ) :
   · rintro ⟨k, hk⟩
     rw [← hk]; exact (U_mem_UX k).2.1
   · intro hne
-    rcases U_diff_mem (U_mem_UX n) (U_mem_UX m) with hempty | hmem
+    rcases U.diff_mem (U_mem_UX n) (U_mem_UX m) with hempty | hmem
     · exact absurd hempty hne.ne_empty
     · exact U_surj_UX hmem
 

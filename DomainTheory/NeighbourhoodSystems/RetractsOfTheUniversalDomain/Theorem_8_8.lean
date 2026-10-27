@@ -1303,10 +1303,10 @@ theorem U_mem_UX (n : ℕ) : U.mem (UX n) := by
   rw [UX_eq]; exact U_mem_presentedIntervals_canonList _
 
 /-- `UX` is onto `U`'s neighbourhoods: every `U`-neighbourhood already has a Scott-literal
-presenting list (`U_mem_iff_scott`), on which `canonList` is a no-op (`canonList_fixed`). -/
+presenting list (`U.mem_iff_scott`), on which `canonList` is a no-op (`canonList_fixed`). -/
 theorem U_surj_UX : ∀ {Y : Set ℚ}, U.mem Y → ∃ n, UX n = Y := by
   intro Y hY
-  obtain ⟨L, -, hYeq, -⟩ := U_mem_iff_scott.mp hY
+  obtain ⟨L, -, hYeq, -⟩ := U.mem_iff_scott.mp hY
   have hUL : U.mem (presentedIntervals L) := by rw [← hYeq]; exact hY
   exact ⟨encodeQPairList L, by
     rw [UX_eq, decodeQPairList_encodeQPairList, canonList_fixed hUL, ← hYeq]⟩

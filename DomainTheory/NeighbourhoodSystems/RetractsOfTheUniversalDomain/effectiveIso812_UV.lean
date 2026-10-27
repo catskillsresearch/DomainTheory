@@ -679,7 +679,7 @@ def V_isComputableDiff : IsComputableDiff VComputablePresentation where
 bisection (`UBisection2`). -/
 noncomputable def splitX812f : Set ℕ → Set ℚ → Set ℕ → Set ℚ × Set ℚ :=
   ComputableBisection.splitFromBisection VComputablePresentation V_isComputableDiff UBisection2
-    U_noMinimal
+    U.noMinimal
 
 namespace isComputableSplit
 open Domain.Recursive NeighborhoodSystem
@@ -691,7 +691,7 @@ mirror image of `Exercise812eD.lean`'s `isComputableSplit.812e`. `noncomputable 
 noncomputable def «812f» :
     IsComputableSplit VComputablePresentation UComputablePresentation splitX812f :=
   ComputableBisection.isComputableSplit.ofBisection VComputablePresentation V_isComputableDiff
-    UBisection2 U_noMinimal V_isPositive V_noMinimal V_diffClosed
+    UBisection2 U.noMinimal V_isPositive V_noMinimal V_diffClosed
 
 end isComputableSplit
 open Domain.Recursive NeighborhoodSystem
@@ -821,14 +821,14 @@ image of `Exercise812eD.lean`'s `hxSplit812e`. The extra hypothesis it needs, `�
 immediate from `U_mem_UX`/`U.mem`'s own `X.Nonempty` conjunct (`Definition87.lean` line 96). -/
 theorem hySplit812f : SplitSpec' U splitX812f :=
   ComputableBisection.splitFromBisection.isSplitSpec' VComputablePresentation V_isComputableDiff
-    UBisection2 U_noMinimal V_isPositive V_noMinimal V_diffClosed
+    UBisection2 U.noMinimal V_isPositive V_noMinimal V_diffClosed
     (fun j => (U_mem_UX j).2.1.ne_empty)
 
 namespace Uunion
 open Domain.Recursive NeighborhoodSystem
 
 /-- **`Uunion n m` genuinely indexes `UX n ∪ UX m`** — mirrors `Udiff.spec`'s shape exactly, but the
-hypothesis is never used (the union is already unconditionally genuine, `U_union_mem`): the raw
+hypothesis is never used (the union is already unconditionally genuine, `U.union_mem`): the raw
 `appendListCode` output is already a genuine `U`-neighbourhood, so re-canonicalizing it (`canonCode`'s
 own lookup, `UX`'s definition) is a no-op (`canonList_fixed`). -/
 theorem spec {n m : ℕ} (_ : ∃ k, UX k = UX n ∪ UX m) : UX (Uunion n m) = UX n ∪ UX m := by
@@ -847,7 +847,7 @@ every `VX j` is `V.mem`-genuine (`VComputablePresentation.mem_X`) and `V.mem` st
 `∅` (`V.mem X := ∃ k m, X = levelSet k m ∧ X.Nonempty`, `Exercise812.lean` line 199). -/
 theorem hxSplit812e : SplitSpec' V splitX812e :=
   ComputableBisection.splitFromBisection.isSplitSpec' UComputablePresentation U_isComputableDiff
-    B812e V_noMinimal U_isPositive U_noMinimal U_diffClosed (fun j => (VX_nonempty j).ne_empty)
+    B812e V_noMinimal U.isPositive U.noMinimal U.diffClosed (fun j => (VX_nonempty j).ne_empty)
 
 /-- **`Xₙ ∪ Xₘ` is always presentable as some `X_k`**, for `𝒰` — via `U_surj_UX` on
 `U_union_UX_mem` (mirroring `U_diff_iff_nonempty`'s use of `U_surj_UX`, but unconditional). -/
@@ -1015,7 +1015,7 @@ neighbourhood systems. -/
 noncomputable def effectiveIso812_UV : EffectiveIso UComputablePresentation VComputablePresentation :=
   effectiveIso812d UComputablePresentation VComputablePresentation U_isComputableDiff
     V_isComputableDiff splitX812e isComputableSplit.«812e» splitX812f isComputableSplit.«812f»
-    U_isPositive U_diffClosed U_noMinimal hxSplit812e V_isPositive V_diffClosed V_noMinimal
+    U.isPositive U.diffClosed U.noMinimal hxSplit812e V_isPositive V_diffClosed V_noMinimal
     hySplit812f U_master_nonempty V_master_nonempty U_isComputableUnion V_isComputableUnion UX_zero
     VX_zero
 

@@ -52,20 +52,6 @@ theorem mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositi
 end inter
 open NeighborhoodSystem
 
-/-- **Difference-closure**, generalizing `U_diff_mem`/`V_diff_mem`: the set-difference of two
-neighbourhoods is again a neighbourhood, or empty. -/
-def NeighborhoodSystem.DiffClosed {α : Type*} (D : NeighborhoodSystem α) : Prop :=
-  ∀ {X Y : Set α}, D.mem X → D.mem Y → X \ Y = ∅ ∨ D.mem (X \ Y)
-
-/-- **Atomlessness** ("no minimal neighbourhoods"), generalizing `U_no_minimal`/`V_no_minimal`:
-every non-empty neighbourhood splits into two disjoint, non-empty neighbourhood pieces whose union
-recovers it. (Phrased with explicit `Nonempty` clauses, equivalent given `Y ∩ Z = ∅`/`Y ∪ Z = X` to
-`U_no_minimal`/`V_no_minimal`'s own `Y ≠ X`/`Z ≠ X` phrasing, but directly what `exists_split'`
-needs — an *abstract* `D.mem` need not itself carry nonemptiness the way `U.mem`/`V.mem` do.) -/
-def NeighborhoodSystem.NoMinimal {α : Type*} (D : NeighborhoodSystem α) : Prop :=
-  ∀ {X : Set α}, D.mem X →
-    ∃ Y Z : Set α, D.mem Y ∧ D.mem Z ∧ Y.Nonempty ∧ Z.Nonempty ∧ Y ∩ Z = ∅ ∧ Y ∪ Z = X
-
 /-- **Generalization of `Theorem88.lean`'s `SplitSpec`.** -/
 def SplitSpec' {α γ : Type*} (E : NeighborhoodSystem γ)
     (split : Set α → Set γ → Set α → Set γ × Set γ) : Prop :=
@@ -342,7 +328,7 @@ end union
 open NeighborhoodSystem
 
 /-- **`Fintype`-indexed union-closure from `IsPositive` + `DiffClosed` alone**, generalizing
-`Definition87.lean`'s `U_iUnion_mem`/`Exercise812.lean`'s `V_iUnion_mem` to an abstract `D`. Proved
+`Definition87.lean`'s `U.iUnion_mem`/`Exercise812.lean`'s `V_iUnion_mem` to an abstract `D`. Proved
 identically (fold `union.mem_or_empty` over `Finset.univ`), just with the generic one-step lemma in
 place of `U`/`V`'s hardcoded binary-union facts. -/
 theorem iUnion_mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositive)
