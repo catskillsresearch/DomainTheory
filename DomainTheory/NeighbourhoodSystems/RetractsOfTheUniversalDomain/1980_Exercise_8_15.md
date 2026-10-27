@@ -8,7 +8,13 @@ The tip states that if `D` is effectively given then so is (a presentation of) t
 
 ## Development
 
-Constructs an effectively given presentation of the domain of subsystems.
+Library tools: finitely generated subsystems and the reconstructed system `SubD`.
+
+**[finGen.lean](finGen.lean)** — `finGen`, `finGenSys`, `SubD`
+
+@import "finGen.lean"
+
+Assembles those tools into the Exercise 8.15 development (order iso, presentations, U-case).
 
 **[SubsystemDomain.lean](SubsystemDomain.lean)**
 
