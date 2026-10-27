@@ -20,13 +20,6 @@ namespace affine
 open NeighborhoodSystem
 
 
-theorem eq_empty_of_ge {k ℓ : ℕ} (hℓ : 2 ^ k ≤ ℓ) : affine k ℓ = ∅ := by
-  ext n
-  simp only [mem_affine, Set.mem_empty_iff_false, iff_false]
-  intro h
-  have hlt : n % 2 ^ k < 2 ^ k := Nat.mod_lt n (by positivity)
-  omega
-
 end affine
 end DomainTheory.NeighbourhoodSystems
 end
@@ -13026,6 +13019,25 @@ noncomputable def «812e» :
 end
 
 end isComputableSplit
+
+/-! ### Exercise 8.12 tip (a)–(e)
+
+Scott's paper statement is one sentence; the (a)–(e) labels were a formalization scaffold.
+These tips are already one-line assemblies of named library tools. The full `U ≅ᵉ V`
+(needs the dual split (f) and assembly (g)) is `exercise_8_12` in `Exercise_8_12_more`. -/
+
+section
+open Exercise718
+
+/-- **Exercise 8.12 (a)–(e) tip.** `V` is effectively given ((a)/(b)), and the U-as-prober
+computable split `splitX812e` is an `IsComputableSplit` ((e), via «812e»). Abstract iso
+headlines `isomorphic_812c` / `isomorphic_812d` / `effectivelyIsomorphic_812d` sit above as
+reusable tools for the general `D₀`/`D₁` argument. -/
+theorem exercise_8_12_ae :
+    V.IsEffectivelyGiven ∧
+      Nonempty (IsComputableSplit UComputablePresentation VComputablePresentation splitX812e) :=
+  ⟨V_isEffectivelyGiven, ⟨isComputableSplit.«812e»⟩⟩
+end
 
 end DomainTheory.NeighbourhoodSystems
 end

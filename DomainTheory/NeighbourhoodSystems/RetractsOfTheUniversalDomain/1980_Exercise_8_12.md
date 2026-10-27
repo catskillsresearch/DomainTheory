@@ -9,3 +9,7 @@ Let $V$ be the non-empty finite unions of sets $2^k \mathbb{N} + \ell$. Show tha
 **[Exercise_8_12.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean)**
 
 @import "Exercise_8_12.lean"
+
+**[Exercise_8_12_more.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12_more.lean)** — Scott tip `exercise_8_12` (`U ≅ᵉ V`)
+
+@import "Exercise_8_12_more.lean"
