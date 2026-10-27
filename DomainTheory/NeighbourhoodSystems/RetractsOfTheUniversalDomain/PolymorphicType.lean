@@ -30,7 +30,7 @@ open NeighborhoodSystem ApproximableMap
 conjugate Theorem 8.6(b)'s `subApprox : (𝒰→𝒰)→(𝒰→𝒰)` through the fixed pair `i_→, j_→`
 (Definition 8.9), exactly as `a→b` is built from `λf.b∘f∘a` in `Definition89.lean`. -/
 noncomputable def subU : ApproximableMap U U :=
-  iArrow.comp (Sub8_6.subApprox.comp jArrow)
+  iArrow.comp (subApprox.comp jArrow)
 
 /-- **A polymorphic type** (Scott 1981, PRG-19, Exercise 8.27): `d = sub∘d∘sub`, `sub` here being
 `subU` (Step 1's "`sub` regarded as a combinator on `𝒰`"). -/
@@ -79,7 +79,7 @@ def scPrincipal {t : U.Element} (i : scFamily t) : U.Element :=
 
 /-- `subU`'s defining formula unfolded at the element level. -/
 theorem toElementMap_subU (w : U.Element) :
-    subU.toElementMap w = iArrow.toElementMap (Sub8_6.subApprox.toElementMap
+    subU.toElementMap w = iArrow.toElementMap (subApprox.toElementMap
       (jArrow.toElementMap w)) := by
   unfold subU
   rw [toElementMap_comp, toElementMap_comp]
@@ -88,13 +88,13 @@ theorem toElementMap_subU (w : U.Element) :
 `j_→(w)` is already a fixed point of `subApprox`. Used for both `subUFixIso.toFun`'s well-typing
 and its `left_inv`. -/
 theorem subApprox_fix_of_subU_fix {w : U.Element} (hw : subU.toElementMap w = w) :
-    Sub8_6.subApprox.toElementMap (jArrow.toElementMap w) = jArrow.toElementMap w := by
+    subApprox.toElementMap (jArrow.toElementMap w) = jArrow.toElementMap w := by
   rw [toElementMap_subU] at hw
   have hstep := congrArg jArrow.toElementMap hw
   rwa [jArrow_comp_iArrow_apply] at hstep
 
 theorem subU_fix_of_subApprox_fix {φ : (funSpace U U).Element}
-    (hφ : Sub8_6.subApprox.toElementMap φ = φ) :
+    (hφ : subApprox.toElementMap φ = φ) :
     subU.toElementMap (iArrow.toElementMap φ) = iArrow.toElementMap φ := by
   rw [toElementMap_subU, jArrow_comp_iArrow_apply, hφ]
 
@@ -102,7 +102,7 @@ theorem subU_fix_of_subApprox_fix {φ : (funSpace U U).Element}
 `j_→∘i_→ = I` (no inequality on `i_→∘j_→`). -/
 noncomputable def subUFixIso :
     {w : U.Element // subU.toElementMap w = w} ≃o
-      {φ : (funSpace U U).Element // Sub8_6.subApprox.toElementMap φ = φ} where
+      {φ : (funSpace U U).Element // subApprox.toElementMap φ = φ} where
   toFun w := ⟨jArrow.toElementMap w.1, subApprox_fix_of_subU_fix w.2⟩
   invFun φ := ⟨iArrow.toElementMap φ.1, subU_fix_of_subApprox_fix φ.2⟩
   left_inv w := by
@@ -134,13 +134,13 @@ noncomputable def subUFixIso :
       exact jArrow.toElementMap_mono hle
 
 /-- **`subU`'s fixed points are exactly the finitary projections of `𝒰`** (Exercise 8.27's
-opening sentence, precisely): composing `subUFixIso` with Theorem 8.6(b)(ii)'s `subApproxFixIso`
+opening sentence, precisely): composing `subUFixIso` with Theorem 8.6(b)(ii)'s `subApprox.fixIso`
 identifies `Fix(subU)` with `{f : 𝒰→𝒰 ∣ sub f = f}`, which by Theorem 8.6(a)'s
 `sub_eq_self_iff_isFinitaryProjection` is exactly `{f ∣ FinitaryProjection f}`. -/
 noncomputable def subUFixIsoSubFixed :
     {w : U.Element // subU.toElementMap w = w} ≃o
       {f : ApproximableMap U U // sub f = f} :=
-  subUFixIso.trans Sub8_6.subApproxFixIso
+  subUFixIso.trans subApprox.fixIso
 
 /-- **Conjugating a retraction of `(𝒰→𝒰)` through `i_→, j_→` gives a retraction of `𝒰`.** Pure
 associativity plus `j_→∘i_→ = I` (`jArrow_comp_iArrow`) and `H∘H=H`. -/
@@ -174,9 +174,9 @@ theorem isProjection_subU : IsProjection subU :=
   isProjection_conjArrow Sub8_6.isProjection_subApprox
 
 
-/-- **`subU` is finitary.** Composes `subUFixIso` with Theorem 8.6(b)(ii)'s `isFinitary_subApprox`. -/
+/-- **`subU` is finitary.** Composes `subUFixIso` with Theorem 8.6(b)(ii)'s `subApprox.isFinitary`. -/
 theorem isFinitary_subU : IsFinitary subU := by
-  obtain ⟨β, F, ⟨iso⟩⟩ := Sub8_6.isFinitary_subApprox (E := U)
+  obtain ⟨β, F, ⟨iso⟩⟩ := subApprox.isFinitary (E := U)
   exact ⟨β, F, ⟨subUFixIso.trans iso⟩⟩
 
 /-- **`sub`, regarded as a combinator on `𝒰` itself, is a finitary projection** (Exercise 8.27's
@@ -209,7 +209,7 @@ theorem isFinitaryProjection_toApproxMap_jArrow_of_fix {w : U.Element}
   apply isFinitaryProjection_of_sub_eq_self
   have hfix := subApprox_fix_of_subU_fix hw
   have hstep := congrArg toApproxMap hfix
-  rwa [Sub8_6.toElementMap_subApprox, Sub8_6.toApproxMap_subFilter] at hstep
+  rwa [subApprox.toElementMap_eq, Sub8_6.toApproxMap_subFilter] at hstep
 
 /-- **The key lemma: `j_→(subU(z))` is always a finitary projection of `𝒰`, for any `z`.** -/
 theorem isFinitaryProjection_decode_subU (z : U.Element) :

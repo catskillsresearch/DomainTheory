@@ -6,6 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Examples_8_4
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.sub
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.subApprox
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.U
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
@@ -27,171 +28,6 @@ open Domain.Recursive NeighborhoodSystem
 open Domain.Recursive NeighborhoodSystem
 open Domain.Recursive NeighborhoodSystem
 open Domain.Recursive NeighborhoodSystem
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
-/-- **`sub`, transported to the function space's own `Element` type via `funSpaceEquiv`.** -/
-def subFilter (φ : (funSpace E E).Element) : (funSpace E E).Element :=
-  toFilter (sub (toApproxMap φ))
-
-end Sub8_6
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-/-- **The finitary projections on `E` are order-isomorphic to the subsystems of `E`.** Forward:
-`f ↦ ⟨fixedNbhd f, fixedNbhd_subsystem f⟩`; backward: `D ↦ retractionOfSubsystem D` (a fixed point
-of `sub`, by `sub.retractionOfSubsystem`). Round trips are `fixedNbhd_retractionOfSubsystem` and
-(definitionally) `sub`'s own defining equation; order is preserved/reflected via `sub`'s formula
-being monotone in the underlying subsystem (`retractionOfSubsystem_rel`'s witness clause) together
-with `Subsystem.subsystem_iff_subset_of_common`. -/
-def finitaryProjectionSubsystemEquiv (E : NeighborhoodSystem α) :
-    {f : ApproximableMap E E // sub f = f} ≃o {D : NeighborhoodSystem α // D ◁ E} where
-  toFun f := ⟨fixedNbhd f.1, fixedNbhd_subsystem f.1⟩
-  invFun D := ⟨Subsystem.retractionOfSubsystem D.2, sub.retractionOfSubsystem D.2⟩
-  left_inv f := Subtype.ext f.2
-  right_inv D := Subtype.ext (fixedNbhd_retractionOfSubsystem D.2)
-  map_rel_iff' := by
-    intro f g
-    constructor
-    · intro hle
-      have hleD : fixedNbhd f.1 ◁ fixedNbhd g.1 := hle
-      have hsub : sub f.1 ≤ sub g.1 := by
-        rintro X Z hXZ
-        rw [sub.rel] at hXZ ⊢
-        obtain ⟨hX, hZ, Y, hY, hXY, hYZ⟩ := hXZ
-        exact ⟨hX, hZ, Y, hleD.sub hY, hXY, hYZ⟩
-      rwa [f.2, g.2] at hsub
-    · intro hfg
-      show fixedNbhd f.1 ◁ fixedNbhd g.1
-      refine (Subsystem.subsystem_iff_subset_of_common
-        (fixedNbhd_subsystem f.1) (fixedNbhd_subsystem g.1)).mpr ?_
-      intro X hX
-      exact ⟨hX.1, hfg X X hX.2⟩
-
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
-namespace Sub8_6
-
-theorem toApproxMap_monotone {φ ψ : (funSpace E E).Element} (h : φ ≤ ψ) :
-    toApproxMap φ ≤ toApproxMap ψ := by
-  have := (funSpaceEquiv E E).monotone h
-  simpa using this
-
-theorem subFilter_mono {φ ψ : (funSpace E E).Element} (h : φ ≤ ψ) : subFilter φ ≤ subFilter ψ :=
-  toFilter_le_iff.mpr (sub.mono (toApproxMap_monotone h))
-
-theorem subFilter_monotone : Monotone (subFilter (E := E)) := fun _ _ h => subFilter_mono h
-
-/-- Directed unions of filters correspond, under `toApproxMap`, to the raw (pointwise) union of the
-underlying maps' relations — immediate from `mem_iSupDirected` unfolded through `toApproxMap_rel`.
-No consistency/directedness argument is needed for this direction. -/
-theorem toApproxMap_rel_iSupDirected {I : Type u} [Nonempty I] (φ : I → (funSpace E E).Element)
-    (hdir : ∀ i j, ∃ k, φ i ≤ φ k ∧ φ j ≤ φ k) {X Z : Set α} :
-    (toApproxMap (iSupDirected φ hdir)).rel X Z ↔ ∃ i, (toApproxMap (φ i)).rel X Z := by
-  simp only [toApproxMap_rel, mem_iSupDirected]
-
-/-- **`sub` commutes with directed unions of relations.** `sub`'s formula (`sub.rel`) is a positive
-existential in `f`'s relation (`∃Y, ... ∧ f.rel Y Y ∧ ...`), so it commutes with an arbitrary union
-of relations by pure logic (swapping the order of two existentials) — no directedness needed here
-either, only for `iSupDirected` to be well-formed in the first place. -/
-theorem sub_toApproxMap_iSupDirected {I : Type u} [Nonempty I] (φ : I → (funSpace E E).Element)
-    (hdir : ∀ i j, ∃ k, φ i ≤ φ k ∧ φ j ≤ φ k) {X Z : Set α} :
-    (sub (toApproxMap (iSupDirected φ hdir))).rel X Z ↔
-      ∃ i, (sub (toApproxMap (φ i))).rel X Z := by
-  simp only [sub.rel, toApproxMap_rel_iSupDirected]
-  constructor
-  · rintro ⟨hX, hZ, Y, ⟨hYE, i, hYi⟩, hXY, hYZ⟩
-    exact ⟨i, hX, hZ, Y, ⟨hYE, hYi⟩, hXY, hYZ⟩
-  · rintro ⟨i, hX, hZ, Y, ⟨hYE, hYi⟩, hXY, hYZ⟩
-    exact ⟨hX, hZ, Y, ⟨hYE, i, hYi⟩, hXY, hYZ⟩
-
-theorem toApproxMap_toFilter (f : ApproximableMap E E) : toApproxMap (toFilter f) = f :=
-  (funSpaceEquiv E E).right_inv f
-
-theorem toApproxMap_subFilter (φ : (funSpace E E).Element) :
-    toApproxMap (subFilter φ) = sub (toApproxMap φ) :=
-  toApproxMap_toFilter _
-
-theorem toFilter_toApproxMap (φ : (funSpace E E).Element) : toFilter (toApproxMap φ) = φ :=
-  (funSpaceEquiv E E).left_inv φ
-
-theorem toApproxMap_injective {φ ψ : (funSpace E E).Element} (h : toApproxMap φ = toApproxMap ψ) :
-    φ = ψ := by
-  rw [← toFilter_toApproxMap φ, ← toFilter_toApproxMap ψ, h]
-
-/-- **`subFilter` preserves directed unions.** Assembled from `sub_toApproxMap_iSupDirected` and
-`toApproxMap_rel_iSupDirected` via `toApproxMap`'s injectivity. -/
-theorem subFilter_iSupDirected {I : Type u} [Nonempty I] (φ : I → (funSpace E E).Element)
-    (hdir : ∀ i j, ∃ k, φ i ≤ φ k ∧ φ j ≤ φ k)
-    (hdir' : ∀ i j, ∃ k, subFilter (φ i) ≤ subFilter (φ k) ∧ subFilter (φ j) ≤ subFilter (φ k)) :
-    subFilter (iSupDirected φ hdir) = iSupDirected (fun i => subFilter (φ i)) hdir' := by
-  apply toApproxMap_injective
-  rw [toApproxMap_subFilter]
-  apply ApproximableMap.ext
-  intro X Z
-  rw [sub_toApproxMap_iSupDirected, toApproxMap_rel_iSupDirected]
-  simp only [toApproxMap_subFilter]
-
-/-- **`subFilter` is (topologically) continuous**, via the domain-theoretic bridge
-`continuous_of_monotone_iSupDirected` (monotone + preserves directed unions). -/
-theorem continuous_subFilter : Continuous (subFilter (E := E)) :=
-  continuous_of_monotone_iSupDirected subFilter_monotone subFilter_iSupDirected
-
-/-- **`sub`, packaged as a genuine approximable map on the function space `(E → E)`** (Scott's
-remark that `f ↦ sub(f)` is itself approximable), via Exercise 2.13's `ofContinuous`. -/
-def subApprox : ApproximableMap (funSpace E E) (funSpace E E) :=
-  ofContinuous subFilter continuous_subFilter
-
-theorem toElementMap_subApprox (φ : (funSpace E E).Element) :
-    subApprox.toElementMap φ = subFilter φ :=
-  toElementMap_ofContinuous subFilter continuous_subFilter φ
-
-/-- **`Fix(subApprox) ≃o {f ∣ sub f = f}`.** `subApprox.toElementMap φ = φ` unfolds (via
-`toElementMap_subApprox`/`subFilter`) to `toFilter (sub (toApproxMap φ)) = φ`, i.e. exactly
-`sub (toApproxMap φ) = toApproxMap φ` after transporting through `toApproxMap`/`toFilter`'s round
-trips. -/
-def subApproxFixIso :
-    {φ : (funSpace E E).Element // subApprox.toElementMap φ = φ} ≃o
-      {f : ApproximableMap E E // sub f = f} where
-  toFun φ := ⟨toApproxMap φ.1, by
-    have h1 : subFilter φ.1 = φ.1 := (toElementMap_subApprox φ.1).symm.trans φ.2
-    have h2 : toApproxMap (subFilter φ.1) = toApproxMap φ.1 := congrArg toApproxMap h1
-    rwa [toApproxMap_subFilter] at h2⟩
-  invFun f := ⟨toFilter f.1, by
-    rw [toElementMap_subApprox]
-    show subFilter (toFilter f.1) = toFilter f.1
-    unfold subFilter
-    rw [toApproxMap_toFilter, f.2]⟩
-  left_inv φ := Subtype.ext (toFilter_toApproxMap φ.1)
-  right_inv f := Subtype.ext (toApproxMap_toFilter f.1)
-  map_rel_iff' := by
-    intro φ ψ
-    show toApproxMap φ.1 ≤ toApproxMap ψ.1 ↔ φ.1 ≤ ψ.1
-    exact (funSpaceEquiv E E).map_rel_iff
-
-/-- **Theorem 8.6(b)(ii) (Scott 1981, PRG-19).** `subApprox` is finitary: composing
-`subApproxFixIso` with `finitaryProjectionSubsystemEquiv` and Proposition 6.11's
-`subsystemReprIso` witnesses `Fix(subApprox)` as (order-isomorphic to) a genuine domain. -/
-theorem isFinitary_subApprox : IsFinitary (subApprox (E := E)) :=
-  ⟨_, _, ⟨subApproxFixIso.trans
-    ((finitaryProjectionSubsystemEquiv E).trans (Proposition611.subsystemReprIso E))⟩⟩
-
-end Sub8_6
-end
-
 section
 open NeighborhoodSystem ApproximableMap
 universe u
@@ -247,7 +83,7 @@ inherited from `sub_le`. -/
 theorem subApprox_le_idMap : subApprox ≤ idMap (funSpace E E) := by
   rw [le_iff_toElementMap_le]
   intro φ
-  rw [toElementMap_subApprox, toElementMap_idMap]
+  rw [subApprox.toElementMap_eq, toElementMap_idMap]
   calc subFilter φ = toFilter (sub (toApproxMap φ)) := rfl
     _ ≤ toFilter (toApproxMap φ) := toFilter_le_iff.mpr (sub_le _)
     _ = φ := toFilter_toApproxMap φ
@@ -316,18 +152,18 @@ theorem subFilter_subFilter (φ : (funSpace E E).Element) :
   unfold subFilter
   rw [toApproxMap_toFilter, sub_sub]
 
-theorem toElementMap_subApprox_comp (φ : (funSpace E E).Element) :
+theorem subApprox.toElementMap_eq_comp (φ : (funSpace E E).Element) :
     (subApprox.comp subApprox).toElementMap φ = subApprox.toElementMap φ := by
   rw [toElementMap_comp]
-  simp only [toElementMap_subApprox]
+  simp only [subApprox.toElementMap_eq]
   exact subFilter_subFilter φ
 
 /-- **`subApprox` is a retraction**: `subApprox ∘ subApprox = subApprox`, from `subFilter`'s own
 idempotency (`subFilter_subFilter`), itself inherited from `sub_sub`. Proved via `le_antisymm` on
 `le_iff_toElementMap_le` (choice-free), rather than the classical `ext_of_toElementMap`. -/
 theorem isRetraction_subApprox : Retraction (subApprox (E := E)) :=
-  ⟨le_antisymm (le_iff_toElementMap_le.mpr fun φ => (toElementMap_subApprox_comp φ).le)
-    (le_iff_toElementMap_le.mpr fun φ => (toElementMap_subApprox_comp φ).ge)⟩
+  ⟨le_antisymm (le_iff_toElementMap_le.mpr fun φ => (subApprox.toElementMap_eq_comp φ).le)
+    (le_iff_toElementMap_le.mpr fun φ => (subApprox.toElementMap_eq_comp φ).ge)⟩
 
 /-- **`sub` is itself a *projection* on the function space `(E → E)`** (half of Theorem 8.6's
 second clause; the other half, `IsFinitary subApprox`, is below). -/
@@ -336,7 +172,7 @@ theorem isProjection_subApprox : IsProjection (subApprox (E := E)) :=
 
 /-- **Theorem 8.6(b), in full.** `subApprox` is a finitary projection on `(E → E)`. -/
 theorem isFinitaryProjection_subApprox : FinitaryProjection (subApprox (E := E)) :=
-  ⟨⟨isProjection_subApprox, isFinitary_subApprox⟩⟩
+  ⟨⟨isProjection_subApprox, subApprox.isFinitary⟩⟩
 
 end Sub8_6
 end
@@ -354,10 +190,10 @@ theorem theorem_86.{u} : And
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
       @DomainTheory.NeighbourhoodSystems.IsFinitary (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
         (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
-        (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E)))
+        (@DomainTheory.NeighbourhoodSystems.subApprox α E)))
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
     @DomainTheory.NeighbourhoodSystems.FinitaryProjection (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-      (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E)) :=
+      (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.subApprox α E)) :=
   @And.intro
   (And
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
@@ -369,10 +205,10 @@ theorem theorem_86.{u} : And
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
       @DomainTheory.NeighbourhoodSystems.IsFinitary (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
         (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
-        (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E)))
+        (@DomainTheory.NeighbourhoodSystems.subApprox α E)))
   (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
     @DomainTheory.NeighbourhoodSystems.FinitaryProjection (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-      (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E))
+      (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.subApprox α E))
   (@And.intro
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
       {f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
@@ -382,9 +218,9 @@ theorem theorem_86.{u} : And
         (@DomainTheory.NeighbourhoodSystems.FinitaryProjection α E f))
     (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
       @DomainTheory.NeighbourhoodSystems.IsFinitary (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-        (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E))
+        (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.subApprox α E))
     @DomainTheory.NeighbourhoodSystems.sub_eq_self_iff_isFinitaryProjection
-    @DomainTheory.NeighbourhoodSystems.Sub8_6.isFinitary_subApprox)
+    @DomainTheory.NeighbourhoodSystems.subApprox.isFinitary)
   @DomainTheory.NeighbourhoodSystems.Sub8_6.isFinitaryProjection_subApprox
 
 section
@@ -572,7 +408,7 @@ theorem theorem_86_c.{u_1} : And
         heq heqp)
       (@DomainTheory.NeighbourhoodSystems.funPresentation α α E E P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp
         heq heqp)
-      (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E))
+      (@DomainTheory.NeighbourhoodSystems.subApprox α E))
   (∀ {α : Type u_1} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
     @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α E →
       ∃ (Pfun :
@@ -582,7 +418,7 @@ theorem theorem_86_c.{u_1} : And
         @DomainTheory.NeighbourhoodSystems.ComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
-          Pfun Pfun (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E)) :=
+          Pfun Pfun (@DomainTheory.NeighbourhoodSystems.subApprox α E)) :=
   @And.intro
   (∀ {α : Type u_1} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
     (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α E) (gN : Nat → Nat)
@@ -614,7 +450,7 @@ theorem theorem_86_c.{u_1} : And
         heq heqp)
       (@DomainTheory.NeighbourhoodSystems.funPresentation α α E E P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp
         heq heqp)
-      (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E))
+      (@DomainTheory.NeighbourhoodSystems.subApprox α E))
   (∀ {α : Type u_1} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
     @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α E →
       ∃ (Pfun :
@@ -624,7 +460,7 @@ theorem theorem_86_c.{u_1} : And
         @DomainTheory.NeighbourhoodSystems.ComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
           (@DomainTheory.NeighbourhoodSystems.funSpace α α E E) (@DomainTheory.NeighbourhoodSystems.funSpace α α E E)
-          Pfun Pfun (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E))
+          Pfun Pfun (@DomainTheory.NeighbourhoodSystems.subApprox α E))
   @DomainTheory.NeighbourhoodSystems.subApprox_isComputable
   @DomainTheory.NeighbourhoodSystems.sub_isComputable_of_isEffectivelyGiven
 
