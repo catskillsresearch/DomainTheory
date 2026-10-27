@@ -14,6 +14,10 @@ Library tools: finitely generated subsystems and the reconstructed system `SubD`
 
 @import "finGen.lean"
 
+**[TreeVal.lean](TreeVal.lean)** — `QBody`, `QFuel`, `TreeVal`, `Q'X`
+
+@import "TreeVal.lean"
+
 Assembles those tools into the Exercise 8.15 development (order iso, presentations, U-case).
 
 **[SubsystemDomain.lean](SubsystemDomain.lean)**
