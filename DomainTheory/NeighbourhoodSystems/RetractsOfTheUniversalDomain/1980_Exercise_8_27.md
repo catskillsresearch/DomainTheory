@@ -30,6 +30,12 @@ Defines polymorphic types and proves `Π(d)` is a finitary projection.
 
 @import "PolymorphicType.lean"
 
+Packs those facts for the tip.
+
+**[Exercise827.lean](Exercise827.lean)** — `example_827`
+
+@import "Exercise827.lean"
+
 The tip then assembles those tools into Scott’s statement.
 
 **[Exercise_8_27.lean](Exercise_8_27.lean)** — `exercise_8_27`

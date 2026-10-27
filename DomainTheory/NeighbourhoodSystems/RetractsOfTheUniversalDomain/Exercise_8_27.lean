@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.PolymorphicType
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827
 
 @[expose] public section
 
