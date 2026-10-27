@@ -22,5 +22,8 @@ jobs:
       - name: Configure Lake cache
         run: lake exe cache get || true
 
+      - name: Check DomainTheory.lean barrel is complete
+        run: python3 scripts/check_domaintheory_barrel.py
+
       - name: Build project
         run: lake build

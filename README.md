@@ -60,17 +60,17 @@ setup files).
 
 ```bash
 lake exe cache get
-lake build   # DomainTheory.lean + all 316 submodule files
+python3 scripts/check_domaintheory_barrel.py   # every DomainTheory/**/*.lean in DomainTheory.lean
+lake build   # elaborates DomainTheory.lean (the sole barrel) and thus every submodule
 ```
 
 The single `DomainTheory` library assembles the five vendored
 developments under renamed modules/namespaces — `DomainTheory.ContinuousLattice`
 (ex-`Scott1972.ContinuousLattice`), `DomainTheory.DataTypesAsLattices`
-(ex-`Scott1976.DataTypesAsLattices`), `DomainTheory.Neighborhood`
+(ex-`Scott1976.DataTypesAsLattices`), `DomainTheory.NeighbourhoodSystems`
 (ex-`Scott1980.Neighborhood`), `DomainTheory.InformationSystems`
 (ex-`Scott1982`), `DomainTheory.BridgeTheorems` (ex-`ScottModels`) —
-imported by the root `DomainTheory.lean`. Clean build verified
-2026-10-20 (3505 jobs, no `sorry`). Ported v4.35 compatibility patches
+each leaf imported by the root `DomainTheory.lean`. Ported v4.35 compatibility patches
 are listed in `PROVENANCE.md` (“Assembly”).
 
 ## Not copied — needs authoring / adaptation
