@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition_8_9
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.sumComb
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
@@ -21,19 +22,6 @@ theorem isProjection_arrowComb {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) : IsProjection (arrowComb a b) :=
   ⟨isRetraction_arrowComb ha.1 hb.1, le_idMap_arrowComb ha.2 hb.2⟩
 
-/-- **`j₊` sends `𝒰`'s bottom to `𝒰+𝒰`'s bottom.** General fact: if `j ∘ i = I_D`, then `j(E.bot)`
-is a global lower bound of `|D|` (via `D.bot ≤ i(v)` monotone through `j`, landing on
-`j(i(D.bot)) = D.bot` for `v := D.bot`), hence equals `D.bot` by antisymmetry with `bot_le`. -/
-theorem toElementMap_bot_eq_bot_of_comp_eq_idMap {i : ApproximableMap D E} {j : ApproximableMap E D}
-    (hji : j.comp i = idMap D) : j.toElementMap E.bot = D.bot := by
-  apply le_antisymm
-  · have h2 := j.toElementMap_mono (E.bot_le (i.toElementMap D.bot))
-    rwa [toElementMap_of_comp_eq_idMap hji] at h2
-  · exact D.bot_le _
-
-theorem jPlus_bot_eq_bot :
-    jPlus.toElementMap U.bot = (sum U U U_mem_nonempty U_mem_nonempty).bot :=
-  toElementMap_bot_eq_bot_of_comp_eq_idMap jPlus_comp_iPlus
 
 theorem toElementMap_prodComb (a b : ApproximableMap U U) (x : U.Element) :
     (prodComb a b).toElementMap x =
@@ -75,172 +63,13 @@ theorem isProjection_prodComb {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) : IsProjection (prodComb a b) :=
   ⟨isRetraction_prodComb ha.1 hb.1, le_idMap_prodComb ha.2 hb.2⟩
 
-/-- **Elementwise unfolding of `sumComb`.** Chains `sumComb_eq`, `toElementMap_comp`, and
-`toElementMap_paired`, landing exactly on `cond_toElementMap_mem`'s pattern. -/
-theorem toElementMap_sumComb_mem (a b : ApproximableMap U U) (x : U.Element) {Z : Set ℚ} :
-    ((sumComb a b).toElementMap x).mem Z ↔
-      (((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap (jPlus.toElementMap x)).mem
-          Example12.zero ∧
-        (iPlus.toElementMap ((inMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-          (a.toElementMap ((outMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-            (jPlus.toElementMap x))))).mem Z) ∨
-      (((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap (jPlus.toElementMap x)).mem
-          Example12.one ∧
-        (iPlus.toElementMap ((inMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-          (b.toElementMap ((outMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-            (jPlus.toElementMap x))))).mem Z) ∨
-      Z = U.master := by
-  rw [sumComb_eq]
-  simp only [toElementMap_comp, toElementMap_paired]
-  rw [cond_toElementMap_mem]
-
-/-- **On a "left" point** (`jPlus x` reaches the left copy), `sumComb a b` evaluates to Scott's
-literal `i₊∘in₀∘a∘out₀` formula. -/
-theorem toElementMap_sumComb_of_left {a b : ApproximableMap U U} {x : U.Element}
-    (hL : ∃ X, U.mem X ∧ (jPlus.toElementMap x).mem (inj₀ X)) :
-    (sumComb a b).toElementMap x =
-      iPlus.toElementMap ((inMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-        (a.toElementMap ((outMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-          (jPlus.toElementMap x)))) := by
-  have hz : ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.zero := which_mem_zero.mpr hL
-  have hno : ¬ ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.one :=
-    fun h => not_sum_reaches_both hL (which_mem_one.mp h)
-  apply Element.ext
-  intro Z
-  rw [toElementMap_sumComb_mem]
-  constructor
-  · rintro (⟨_, h⟩ | ⟨h1, _⟩ | rfl)
-    · exact h
-    · exact absurd h1 hno
-    · exact Element.master_mem _
-  · intro h
-    exact Or.inl ⟨hz, h⟩
-
-/-- **On a point reaching neither copy** (in particular, `𝒰`'s own `⊥`, via `jPlus_bot_eq_bot`),
-`sumComb a b` sends it to `𝒰`'s `⊥`. -/
-theorem toElementMap_sumComb_of_neither {a b : ApproximableMap U U} {x : U.Element}
-    (hN : ∀ W, (jPlus.toElementMap x).mem W → W = (sum U U U_mem_nonempty U_mem_nonempty).master) :
-    (sumComb a b).toElementMap x = U.bot := by
-  have hnz : ¬ ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.zero := by
-    rw [which_mem_zero]
-    rintro ⟨X, _, hX⟩
-    exact inj₀_ne_sumMaster (hN _ hX)
-  have hno : ¬ ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.one := by
-    rw [which_mem_one]
-    rintro ⟨Y, _, hY⟩
-    exact inj₁_ne_sumMaster (hN _ hY)
-  apply Element.ext
-  intro Z
-  rw [toElementMap_sumComb_mem, mem_bot]
-  constructor
-  · rintro (⟨h, _⟩ | ⟨h, _⟩ | h)
-    · exact absurd h hnz
-    · exact absurd h hno
-    · exact h
-  · intro h
-    exact Or.inr (Or.inr h)
-
-/-- **On a "right" point**, symmetric to `toElementMap_sumComb_of_left`. -/
-theorem toElementMap_sumComb_of_right {a b : ApproximableMap U U} {x : U.Element}
-    (hR : ∃ Y, U.mem Y ∧ (jPlus.toElementMap x).mem (inj₁ Y)) :
-    (sumComb a b).toElementMap x =
-      iPlus.toElementMap ((inMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-        (b.toElementMap ((outMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-          (jPlus.toElementMap x)))) := by
-  have ho : ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.one := which_mem_one.mpr hR
-  have hnz : ¬ ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.zero :=
-    fun h => not_sum_reaches_both (which_mem_zero.mp h) hR
-  apply Element.ext
-  intro Z
-  rw [toElementMap_sumComb_mem]
-  constructor
-  · rintro (⟨h1, _⟩ | ⟨_, h⟩ | rfl)
-    · exact absurd h1 hnz
-    · exact h
-    · exact Element.master_mem _
-  · intro h
-    exact Or.inr (Or.inl ⟨ho, h⟩)
-
-/-- **Proposition 8.10, `+`-case, retraction half.** -/
-theorem isRetraction_sumComb {a b : ApproximableMap U U} (ha : Retraction a)
-    (hb : Retraction b) : Retraction (sumComb a b) := by
-  constructor
-  apply ext_of_toElementMap
-  intro x
-  rw [toElementMap_comp]
-  rcases sum_element_trichotomy (jPlus.toElementMap x) with hL | hR | hN
-  · rw [toElementMap_sumComb_of_left hL]
-    set v := a.toElementMap (outMap₀.toElementMap (jPlus.toElementMap x)) with hv
-    have hjy : jPlus.toElementMap (iPlus.toElementMap (inMap₀.toElementMap v))
-        = inMap₀.toElementMap v := toElementMap_of_comp_eq_idMap jPlus_comp_iPlus _
-    have hLy : ∃ X, U.mem X ∧
-        (jPlus.toElementMap (iPlus.toElementMap (inMap₀.toElementMap v))).mem (inj₀ X) := by
-      rw [hjy]; exact inMap₀_toElementMap_reaches_left v
-    rw [toElementMap_sumComb_of_left hLy, hjy,
-      toElementMap_of_comp_eq_idMap outMap₀_comp_inMap₀ v, toElementMap_idem_of_isRetraction ha]
-  · rw [toElementMap_sumComb_of_right hR]
-    set v := b.toElementMap (outMap₁.toElementMap (jPlus.toElementMap x)) with hv
-    have hjy : jPlus.toElementMap (iPlus.toElementMap (inMap₁.toElementMap v))
-        = inMap₁.toElementMap v := toElementMap_of_comp_eq_idMap jPlus_comp_iPlus _
-    have hRy : ∃ Y, U.mem Y ∧
-        (jPlus.toElementMap (iPlus.toElementMap (inMap₁.toElementMap v))).mem (inj₁ Y) := by
-      rw [hjy]; exact inMap₁_toElementMap_reaches_right v
-    rw [toElementMap_sumComb_of_right hRy, hjy,
-      toElementMap_of_comp_eq_idMap outMap₁_comp_inMap₁ v, toElementMap_idem_of_isRetraction hb]
-  · rw [toElementMap_sumComb_of_neither hN]
-    apply toElementMap_sumComb_of_neither
-    intro W hW
-    rw [jPlus_bot_eq_bot, mem_bot] at hW
-    exact hW
-
-/-- **Proposition 8.10, `+`-case, projection half.** -/
-theorem le_idMap_sumComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : b ≤ idMap U) :
-    sumComb a b ≤ idMap U := by
-  rw [le_iff_toElementMap_le]
-  intro x
-  rw [toElementMap_idMap]
-  rcases sum_element_trichotomy (jPlus.toElementMap x) with hL | hR | hN
-  · calc (sumComb a b).toElementMap x
-        = iPlus.toElementMap ((inMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-            (a.toElementMap ((outMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-              (jPlus.toElementMap x)))) := toElementMap_sumComb_of_left hL
-      _ ≤ iPlus.toElementMap ((inMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-            ((outMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-              (jPlus.toElementMap x))) :=
-          iPlus.toElementMap_mono (inMap₀.toElementMap_mono (toElementMap_le_self_of_le_idMap ha _))
-      _ = iPlus.toElementMap (jPlus.toElementMap x) := by rw [inMap₀_outMap₀_eq_of_left hL]
-      _ ≤ x := toElementMap_le_of_comp_le_idMap iPlus_comp_jPlus_le x
-  · calc (sumComb a b).toElementMap x
-        = iPlus.toElementMap ((inMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-            (b.toElementMap ((outMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-              (jPlus.toElementMap x)))) := toElementMap_sumComb_of_right hR
-      _ ≤ iPlus.toElementMap ((inMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-            ((outMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
-              (jPlus.toElementMap x))) :=
-          iPlus.toElementMap_mono (inMap₁.toElementMap_mono (toElementMap_le_self_of_le_idMap hb _))
-      _ = iPlus.toElementMap (jPlus.toElementMap x) := by rw [inMap₁_outMap₁_eq_of_right hR]
-      _ ≤ x := toElementMap_le_of_comp_le_idMap iPlus_comp_jPlus_le x
-  · rw [toElementMap_sumComb_of_neither hN]
-    exact U.bot_le x
-
-/-- **Proposition 8.10 (Scott 1981, PRG-19), `+`-case.** `a, b` projections `⟹` `a + b` a
-projection. -/
-theorem isProjection_sumComb {a b : ApproximableMap U U}
-    (ha : IsProjection a) (hb : IsProjection b) : IsProjection (sumComb a b) :=
-  ⟨isRetraction_sumComb ha.1 hb.1, le_idMap_sumComb ha.2 hb.2⟩
 
 /-- **Proposition 8.10 (Scott 1981, PRG-19), first half.** If `a, b : 𝒰 → 𝒰` are projections,
 then so are `a+b`, `a×b`, and `a→b`. -/
 theorem isProjection_combinators {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) :
     IsProjection (sumComb a b) ∧ IsProjection (prodComb a b) ∧ IsProjection (arrowComb a b) :=
-  ⟨isProjection_sumComb ha hb, isProjection_prodComb ha hb, isProjection_arrowComb ha hb⟩
+  ⟨sumComb.isProjection ha hb, isProjection_prodComb ha hb, isProjection_arrowComb ha hb⟩
 
 end
 
@@ -1732,15 +1561,15 @@ theorem theorem_810 : And
                       @DomainTheory.NeighbourhoodSystems.isProjection_arrowComb
                       @DomainTheory.NeighbourhoodSystems.isProjection_combinators)
                     @DomainTheory.NeighbourhoodSystems.isProjection_prodComb)
-                  @DomainTheory.NeighbourhoodSystems.isProjection_sumComb)
+                  @DomainTheory.NeighbourhoodSystems.sumComb.isProjection)
                 @DomainTheory.NeighbourhoodSystems.isRetraction_arrowComb)
               @DomainTheory.NeighbourhoodSystems.isRetraction_lamComb)
             @DomainTheory.NeighbourhoodSystems.isRetraction_prodComb)
-          @DomainTheory.NeighbourhoodSystems.isRetraction_sumComb)
+          @DomainTheory.NeighbourhoodSystems.sumComb.isRetraction)
         @DomainTheory.NeighbourhoodSystems.le_idMap_arrowComb)
       @DomainTheory.NeighbourhoodSystems.le_idMap_lamComb)
     @DomainTheory.NeighbourhoodSystems.le_idMap_prodComb)
-  @DomainTheory.NeighbourhoodSystems.le_idMap_sumComb
+  @DomainTheory.NeighbourhoodSystems.sumComb.le_idMap
 
 section
 open NeighborhoodSystem ApproximableMap Exercise326
@@ -1876,30 +1705,6 @@ theorem expMap_eq (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1') :
 theorem expMap_eq_lamComb (a b : ApproximableMap U U) : expMap a b = lamComb a b := rfl
 
 end ExpMap
-
-/-- Every neighbourhood of `D_a := fixedNbhd a` is non-empty (inherited from `𝒰`). -/
-theorem fixedNbhd_mem_nonempty (a : ApproximableMap U U) :
-    ∀ X, (fixedNbhd a).mem X → X.Nonempty :=
-  fun X hX => U_mem_nonempty X ((fixedNbhd_subsystem a).sub hX)
-
-section SumCase
-
-variable (a b : ApproximableMap U U)
-
-/-- **`I_+ : D_a + D_b → 𝒰`**, built by transporting `i₊` (Definition 8.9) through the functorial
-action of `+` (Exercise 3.19's `sumMap`) on the injections `i_a : D_a → 𝒰`, `i_b : D_b → 𝒰`. -/
-noncomputable def ISumComb : ApproximableMap (sum (fixedNbhd a) (fixedNbhd b)
-    (fixedNbhd_mem_nonempty a) (fixedNbhd_mem_nonempty b)) U :=
-  iPlus.comp (sumMap (h₀' := U_mem_nonempty) (h₁' := U_mem_nonempty)
-    (fixedNbhd_subsystem a).inj (fixedNbhd_subsystem b).inj)
-
-/-- **`J_+ : 𝒰 → D_a + D_b`**, symmetric to `ISumComb`, via the projections `j_a`, `j_b`. -/
-noncomputable def JSumComb : ApproximableMap U (sum (fixedNbhd a) (fixedNbhd b)
-    (fixedNbhd_mem_nonempty a) (fixedNbhd_mem_nonempty b)) :=
-  (sumMap (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)
-    (fixedNbhd_subsystem a).proj (fixedNbhd_subsystem b).proj).comp jPlus
-
-end SumCase
 
 /-- **`i_a ∘ j_a = a`, for a finitary projection `a`.** Theorem 8.6's `sub_eq_self_of_isFinitaryProjection`,
 restated via `retractionOfSubsystem`'s definition. -/
@@ -2199,13 +2004,15 @@ section SumCase
 
 variable (a b : ApproximableMap U U)
 
+namespace sumComb
+
 /-- **`sumComb a b = i₊ ∘ (a+b) ∘ j₊`, at the level of approximable maps**, where `a+b` on the
 right is Exercise 3.19's `sumMap`. Proved by case-splitting on `sum_element_trichotomy` of
 `jPlus.toElementMap x`, matching `sumMap`'s elementwise formulas
 (`toElementMap_sumMap_of_left/right`, `sumMap_bot`) against `sumComb`'s own
-(`toElementMap_sumComb_of_left/right/neither`, `Proposition810.lean`). The bottom case additionally
+(`sumComb.toElementMap_of_left/right/neither`, `Proposition810.lean`). The bottom case additionally
 needs `iPlus.toElementMap (sum U U ..).bot = U.bot`, from `iPlus_comp_jPlus_le`. -/
-theorem sumComb_eq_iPlus_sumMap_jPlus :
+theorem eq_iPlus_sumMap_jPlus :
     sumComb a b = iPlus.comp
       ((sumMap (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty) (h₀' := U_mem_nonempty)
           (h₁' := U_mem_nonempty) a b).comp jPlus) := by
@@ -2213,10 +2020,12 @@ theorem sumComb_eq_iPlus_sumMap_jPlus :
   intro x
   rw [toElementMap_comp, toElementMap_comp]
   rcases sum_element_trichotomy (jPlus.toElementMap x) with hL | hR | hN
-  · rw [toElementMap_sumComb_of_left hL, toElementMap_sumMap_of_left hL]
-  · rw [toElementMap_sumComb_of_right hR, toElementMap_sumMap_of_right hR]
-  · rw [toElementMap_sumComb_of_neither hN, reaches_neither_iff_eq_bot.mp hN, sumMap_bot,
+  · rw [sumComb.toElementMap_of_left hL, toElementMap_sumMap_of_left hL]
+  · rw [sumComb.toElementMap_of_right hR, toElementMap_sumMap_of_right hR]
+  · rw [sumComb.toElementMap_of_neither hN, reaches_neither_iff_eq_bot.mp hN, sumMap_bot,
       toElementMap_bot_eq_bot_of_comp_le_idMap iPlus_comp_jPlus_le]
+
+end sumComb
 
 end SumCase
 
@@ -2261,12 +2070,16 @@ section SumCase
 
 variable (a b : ApproximableMap U U)
 
-theorem ISumComb_comp_JSumComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
-    (ISumComb a b).comp (JSumComb a b) = sumComb a b := by
-  unfold ISumComb JSumComb
+namespace sumComb
+
+theorem I_comp_J (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    (sumComb.I a b).comp (sumComb.J a b) = sumComb a b := by
+  unfold I J
   rw [comp_assoc, ← comp_assoc (sumMap _ _) (sumMap _ _) jPlus, ← sumMap_comp,
     inj_comp_proj_eq_self ha, inj_comp_proj_eq_self hb, ← comp_assoc,
-    sumComb_eq_iPlus_sumMap_jPlus, comp_assoc]
+    eq_iPlus_sumMap_jPlus, comp_assoc]
+
+end sumComb
 
 end SumCase
 
@@ -2304,21 +2117,25 @@ section SumCase
 
 variable (a b : ApproximableMap U U)
 
-theorem JSumComb_comp_ISumComb :
-    (JSumComb a b).comp (ISumComb a b) =
+namespace sumComb
+
+theorem J_comp_I :
+    (sumComb.J a b).comp (sumComb.I a b) =
       idMap (sum (fixedNbhd a) (fixedNbhd b) (fixedNbhd_mem_nonempty a)
         (fixedNbhd_mem_nonempty b)) := by
-  unfold JSumComb ISumComb
+  unfold J I
   rw [comp_assoc, ← comp_assoc jPlus iPlus (sumMap _ _), jPlus_comp_iPlus, idMap_comp,
     ← sumMap_comp, (fixedNbhd_subsystem a).proj_comp_inj, (fixedNbhd_subsystem b).proj_comp_inj,
     sumMap_id]
 
 /-- **Proposition 8.10(b), `+`-case, the isomorphism `D_{a+b} ≅ D_a + D_b`.** -/
-noncomputable def sumComb_elementIso (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+noncomputable def elementIso (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (sum (fixedNbhd a) (fixedNbhd b) (fixedNbhd_mem_nonempty a) (fixedNbhd_mem_nonempty b)).Element
       ≃o {y : U.Element // (sumComb a b).toElementMap y = y} :=
-  elementIsoOfProjectionPair (ISumComb a b) (JSumComb a b) (JSumComb_comp_ISumComb a b)
-    (ISumComb_comp_JSumComb a b ha hb).symm
+  elementIsoOfProjectionPair (sumComb.I a b) (sumComb.J a b) (sumComb.J_comp_I a b)
+    (sumComb.I_comp_J a b ha hb).symm
+
+end sumComb
 
 end SumCase
 
@@ -2386,19 +2203,23 @@ section SumCase
 
 variable (a b : ApproximableMap U U)
 
+namespace sumComb
+
 
 /-- **Proposition 8.10(b), `+`-case.** `a, b` finitary projections `⟹` `a + b` is finitary, with
 witnessing domain `D_a + D_b`. -/
-theorem finitary_sumComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+theorem finitary (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     IsFinitary (sumComb a b) :=
-  isFinitary_of_projectionPair (ISumComb a b) (JSumComb a b) (JSumComb_comp_ISumComb a b)
-    (ISumComb_comp_JSumComb a b ha hb).symm
+  isFinitary_of_projectionPair (sumComb.I a b) (sumComb.J a b) (sumComb.J_comp_I a b)
+    (sumComb.I_comp_J a b ha hb).symm
 
 /-- **Proposition 8.10(b), `+`-case, in full.** `a, b` finitary projections `⟹` `a + b` is a
 finitary projection, and its fixed-point set is order-isomorphic to `D_a + D_b`. -/
-theorem finitaryProjection_sumComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+theorem finitaryProjection (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     FinitaryProjection (sumComb a b) :=
-  ⟨⟨isProjection_sumComb ha.out.1 hb.out.1, finitary_sumComb a b ha hb⟩⟩
+  ⟨⟨sumComb.isProjection ha.out.1 hb.out.1, sumComb.finitary a b ha hb⟩⟩
+
+end sumComb
 
 end SumCase
 
@@ -2409,7 +2230,7 @@ theorem finitaryProjection_combinators {a b : ApproximableMap U U}
     (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     FinitaryProjection (sumComb a b) ∧ FinitaryProjection (prodComb a b) ∧
       FinitaryProjection (arrowComb a b) :=
-  ⟨finitaryProjection_sumComb a b ha hb, finitaryProjection_prodComb a b ha hb,
+  ⟨sumComb.finitaryProjection a b ha hb, finitaryProjection_prodComb a b ha hb,
     finitaryProjection_arrowComb a b ha hb⟩
 
 end
@@ -2433,8 +2254,8 @@ theorem proposition_8_10 {a b : ApproximableMap U U}
       Nonempty
         ((funSpace (fixedNbhd a) (fixedNbhd b)).Element ≃o
           {y : U.Element // (arrowComb a b).toElementMap y = y}) :=
-  ⟨finitaryProjection_sumComb a b ha hb, finitaryProjection_prodComb a b ha hb,
-    finitaryProjection_arrowComb a b ha hb, ⟨sumComb_elementIso a b ha hb⟩,
+  ⟨sumComb.finitaryProjection a b ha hb, finitaryProjection_prodComb a b ha hb,
+    finitaryProjection_arrowComb a b ha hb, ⟨sumComb.elementIso a b ha hb⟩,
     ⟨prodComb_elementIso a b ha hb⟩, ⟨arrowComb_elementIso a b ha hb⟩⟩
 
 set_option linter.unusedVariables false
@@ -4720,9 +4541,9 @@ theorem theorem_810_b : And
               DomainTheory.NeighbourhoodSystems.finitaryProjection_arrowComb)
             @DomainTheory.NeighbourhoodSystems.finitaryProjection_combinators)
           DomainTheory.NeighbourhoodSystems.finitaryProjection_prodComb)
-        DomainTheory.NeighbourhoodSystems.finitaryProjection_sumComb)
+        DomainTheory.NeighbourhoodSystems.sumComb.finitaryProjection)
       DomainTheory.NeighbourhoodSystems.finitary_arrowComb)
     DomainTheory.NeighbourhoodSystems.finitary_prodComb)
-  DomainTheory.NeighbourhoodSystems.finitary_sumComb
+  DomainTheory.NeighbourhoodSystems.sumComb.finitary
 
 end DomainTheory.NeighbourhoodSystems
