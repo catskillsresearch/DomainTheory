@@ -9,7 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap Exercise326
@@ -245,7 +244,6 @@ theorem isProjection_combinators {a b : ApproximableMap U U}
 
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem theorem_810 : And
@@ -1743,7 +1741,6 @@ theorem theorem_810 : And
       @DomainTheory.NeighbourhoodSystems.le_idMap_lamComb)
     @DomainTheory.NeighbourhoodSystems.le_idMap_prodComb)
   @DomainTheory.NeighbourhoodSystems.le_idMap_sumComb
-end
 
 section
 open NeighborhoodSystem ApproximableMap Exercise326
@@ -2417,7 +2414,6 @@ theorem finitaryProjection_combinators {a b : ApproximableMap U U}
 
 end
 
-section
 open NeighborhoodSystem ApproximableMap
 
 /-- **Proposition 8.10 (Scott 1981, PRG-19).** If `a, b : 𝒰 → 𝒰` are finitary projections, then
@@ -2440,9 +2436,7 @@ theorem proposition_8_10 {a b : ApproximableMap U U}
   ⟨finitaryProjection_sumComb a b ha hb, finitaryProjection_prodComb a b ha hb,
     finitaryProjection_arrowComb a b ha hb, ⟨sumComb_elementIso a b ha hb⟩,
     ⟨prodComb_elementIso a b ha hb⟩, ⟨arrowComb_elementIso a b ha hb⟩⟩
-end
 
-section
 set_option linter.unusedVariables false
 
 theorem theorem_810_b : And
@@ -4730,7 +4724,5 @@ theorem theorem_810_b : And
       DomainTheory.NeighbourhoodSystems.finitary_arrowComb)
     DomainTheory.NeighbourhoodSystems.finitary_prodComb)
   DomainTheory.NeighbourhoodSystems.finitary_sumComb
-end
 
 end DomainTheory.NeighbourhoodSystems
-end

@@ -36,7 +36,6 @@ structure ProjPair (D : NeighborhoodSystem α) (E : NeighborhoodSystem β) where
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap Subsystem
@@ -161,7 +160,6 @@ theorem sumUU_trianglelefteq_U : sum U U U_mem_nonempty U_mem_nonempty ⊴ U :=
 
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_817.{u} : And
@@ -227,7 +225,6 @@ theorem example_817.{u} : And
       DomainTheory.NeighbourhoodSystems.funSpaceUU_trianglelefteq_U)
     DomainTheory.NeighbourhoodSystems.prodUU_trianglelefteq_U)
   DomainTheory.NeighbourhoodSystems.sumUU_trianglelefteq_U
-end
 
 section
 open NeighborhoodSystem ApproximableMap Exercise326
@@ -699,4 +696,3 @@ end Sum
 
 end
 end DomainTheory.NeighbourhoodSystems
-end

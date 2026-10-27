@@ -13,7 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-section
 /- concordance: source L5195 EXERCISE 8.22 comparing B and C -/
 -- Exercise822/C_nonempty.lean
 namespace DomainTheory.NeighbourhoodSystems
@@ -31,13 +30,10 @@ theorem C_nonempty : ∀ X, C.mem X → X.Nonempty := by
 end Exercise822
 
 end DomainTheory.NeighbourhoodSystems
-end
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 
-section
 namespace Exercise822
 
 /-- Doubles every bit of a string: `enc [] = []`, `enc (b :: σ) = b :: b :: enc σ`. -/
@@ -501,18 +497,15 @@ embeds as a subdomain of `B` (infinite binary sequences) via the bit-doubling re
 theorem C_trianglelefteq_B : C ⊴ B := ⟨D', D'_subsystem_B, C_isomorphic_D'⟩
 
 end Exercise822
-end
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise822
-section
 set_option linter.unusedVariables false
 
 theorem example_822 : @DomainTheory.NeighbourhoodSystems.Trianglelefteq DomainTheory.NeighbourhoodSystems.ExampleB.Str
   DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example44.C
   DomainTheory.NeighbourhoodSystems.ExampleB.B :=
   DomainTheory.NeighbourhoodSystems.Exercise822.C_trianglelefteq_B
-end
 
 end DomainTheory.NeighbourhoodSystems.Exercise822
 namespace DomainTheory.NeighbourhoodSystems
@@ -559,4 +552,3 @@ theorem head_comp_embedIntoPow : (head V).comp (embedIntoPow V) = idMap V :=
 
 end
 end DomainTheory.NeighbourhoodSystems
-end

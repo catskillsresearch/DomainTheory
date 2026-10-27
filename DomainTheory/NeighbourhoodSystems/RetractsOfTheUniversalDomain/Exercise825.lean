@@ -21,7 +21,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
@@ -34,13 +33,11 @@ theorem trianglelefteq_iterSys : V ⊴ iterSys V :=
     (head_comp_embedIntoPow V) (embedIntoPow_comp_head_le V)
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_825_embed.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
   @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Prod Nat α) V (@DomainTheory.NeighbourhoodSystems.iterSys α V) :=
   @DomainTheory.NeighbourhoodSystems.trianglelefteq_iterSys
-end
 
 section
 open NeighborhoodSystem
@@ -102,7 +99,6 @@ theorem pow_prod_isomorphic (V : NeighborhoodSystem α) :
 
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_825_pow.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
@@ -111,7 +107,6 @@ theorem example_825_pow.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.Neighbourh
       (@DomainTheory.NeighbourhoodSystems.iterSys α V))
     (@DomainTheory.NeighbourhoodSystems.iterSys α V) :=
   @DomainTheory.NeighbourhoodSystems.pow_prod_isomorphic
-end
 
 section
 open NeighborhoodSystem ApproximableMap
@@ -154,7 +149,6 @@ theorem funSpace_unitSys_isomorphic : funSpace unitSys unitSys ≅ᴰ unitSys :=
 
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_825_unit : @DomainTheory.NeighbourhoodSystems.Isomorphic
@@ -165,10 +159,8 @@ theorem example_825_unit : @DomainTheory.NeighbourhoodSystems.Isomorphic
     DomainTheory.NeighbourhoodSystems.unitSys)
   DomainTheory.NeighbourhoodSystems.unitSys :=
   DomainTheory.NeighbourhoodSystems.funSpace_unitSys_isomorphic
-end
 
 
-section
 open NeighborhoodSystem ApproximableMap
 
 /-- The domain `(𝒰→𝒰) × ((𝒰→𝒰) × 𝒰)` of the joint evaluator: an element `⟨ψ, ⟨φ, x⟩⟩` packages
@@ -356,9 +348,7 @@ theorem exercise_8_25_main :
         (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
   funSpace_self_isomorphic Dsol_isomorphic_funSpace_cCombinator hVV_cCombinator
 
-end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_825_fixed_point : @DomainTheory.NeighbourhoodSystems.Isomorphic Rat
@@ -380,9 +370,7 @@ theorem example_825_fixed_point : @DomainTheory.NeighbourhoodSystems.Isomorphic 
       (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
         (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))) :=
   DomainTheory.NeighbourhoodSystems.exercise_8_25_main
-end
 
-section
 /-- **Exercise 8.25 (Scott 1981, PRG-19), the answer.** The concrete domain
 `D := fixedNbhd (fixOp (tOpMap cCombinator))` (built in `Exercise825FixedPoint.lean` by the
 fixed-point method of Exercise 8.23, applied to `T(a) := a → 𝒰^∞`) satisfies `D ≅ D → D`. -/
@@ -391,18 +379,14 @@ theorem exercise_8_25 :
       funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))
         (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
   exercise_8_25_main
-end
 
-section
 /-- **Exercise 8.25 (Scott 1981, PRG-19), non-triviality/universality.** The solution domain `D`
 of `exercise_8_25` contains a genuine embedded copy of the universal domain `𝒰` (`𝒰 ⊴ D`), so it is
 certainly not the one-point domain, and is in fact universal: every countable neighbourhood system
 embeds (up to isomorphism) into `𝒰`, hence into `D`. -/
 theorem exercise_8_25_universal : U ⊴ fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) :=
   U_trianglelefteq_Dsol
-end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_825 : And
@@ -452,7 +436,5 @@ theorem example_825 : And
       (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
         (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator))))
   DomainTheory.NeighbourhoodSystems.exercise_8_25 DomainTheory.NeighbourhoodSystems.exercise_8_25_universal
-end
 
 end DomainTheory.NeighbourhoodSystems
-end

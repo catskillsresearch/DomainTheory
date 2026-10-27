@@ -39,7 +39,6 @@ end FinGen
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem Domain.Recursive
@@ -1714,4 +1713,3 @@ theorem subsystem_isEffectivelyGiven_of_isEffectivelyGiven (hD : D.IsEffectively
 end
 
 end DomainTheory.NeighbourhoodSystems
-end

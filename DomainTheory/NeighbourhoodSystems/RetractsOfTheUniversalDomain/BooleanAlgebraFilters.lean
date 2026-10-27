@@ -9,7 +9,6 @@ public import Mathlib.Data.Nat.Bitwise
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 open Domain.Recursive NeighborhoodSystem
@@ -28,7 +27,6 @@ open Domain.Recursive NeighborhoodSystem
 open Domain.Recursive NeighborhoodSystem
 open Domain.Recursive NeighborhoodSystem
 open Domain.Recursive NeighborhoodSystem
-section
 open NeighborhoodSystem
 /- concordance: source L5153 EXERCISE 8.13 Boolean-algebra filters -/
 /-- **Exercise 8.13(a).** `U` is isomorphic to `V`'s domain of elements, and `V`'s domain of
@@ -37,17 +35,13 @@ proper filters of the free Boolean algebra on `ℵ₀` generators. No new back-a
 needed: `effectiveIso812_UV` (`Exercise812g4.lean`, already `Pass`) already supplies the
 isomorphism (in fact an *effective* one, stronger than what `8.13` asks for). -/
 theorem exercise813a : U ≅ᴰ V := ⟨effectiveIso812_UV.toDomainIso⟩
-end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_813_a : @DomainTheory.NeighbourhoodSystems.Isomorphic Rat Nat DomainTheory.NeighbourhoodSystems.U
   DomainTheory.NeighbourhoodSystems.V :=
   DomainTheory.NeighbourhoodSystems.exercise813a
-end
 
-section
 open NeighborhoodSystem
 
 theorem generator_nonempty (i : ℕ) : (generator i).Nonempty := ⟨2 ^ i, by simp⟩
@@ -203,9 +197,7 @@ theorem V_mem_iff_generatedBy {X : Set ℕ} : V.mem X ↔ GeneratedBy generator 
   · rintro ⟨hgen, hne⟩
     exact (generatedBy_generator_imp hgen).resolve_left hne.ne_empty
 
-end
 
-section
 /-- A minimal propositional-logic syntax over `ℵ₀` variables (indexed by `ℕ`). -/
 inductive Formula : Type
   | var (i : ℕ) : Formula
@@ -214,9 +206,7 @@ inductive Formula : Type
   | neg (φ : Formula) : Formula
   | and (φ ψ : Formula) : Formula
   | or (φ ψ : Formula) : Formula
-end
 
-section
 /-- The *same* recursion, but interpreted in `Set ℕ` via `generator` (`Exercise813a.lean`) instead
 of an abstract Boolean — i.e. the specific homomorphism `var i ↦ generator i`. -/
 def evalSet : Formula → Set ℕ
@@ -226,9 +216,7 @@ def evalSet : Formula → Set ℕ
   | .neg φ => (evalSet φ)ᶜ
   | .and φ ψ => evalSet φ ∩ evalSet ψ
   | .or φ ψ => evalSet φ ∪ evalSet ψ
-end
 
-section
 /-- The standard truth-valuation semantics: `v : ℕ → Bool` assigns each variable a truth value. -/
 def evalV (v : ℕ → Bool) : Formula → Bool
   | .var i => v i
@@ -237,14 +225,10 @@ def evalV (v : ℕ → Bool) : Formula → Bool
   | .neg φ => !(evalV v φ)
   | .and φ ψ => evalV v φ && evalV v ψ
   | .or φ ψ => evalV v φ || evalV v ψ
-end
 
-section
 /-- **Scott's Lindenbaum equivalence**: `φ ~ ψ` iff they agree under every truth valuation. -/
 def SemanticEquiv (φ ψ : Formula) : Prop := ∀ v, evalV v φ = evalV v ψ
-end
 
-section
 /-- Given any (finite) target set of variables and any valuation `v`, some `n : ℕ` matches `v` on
 exactly that set — witnessed directly via `bitmaskOf` (`Exercise813a.lean`). -/
 theorem exists_bitsOf_agree (S : Finset ℕ) (v : ℕ → Bool) :
@@ -254,21 +238,15 @@ theorem exists_bitsOf_agree (S : Finset ℕ) (v : ℕ → Bool) :
     rw [testBit_bitmaskOf]; simp [Finset.mem_filter, hi]
   rcases hv : v i with - | - <;> rcases hn : (bitmaskOf (S.filter (fun i => v i))).testBit i
     with - | - <;> simp_all
-end
 
-section
 instance formulaSetoid : Setoid Formula where
   r := SemanticEquiv
   iseqv := ⟨fun _ _ => rfl, fun h v => (h v).symm, fun h1 h2 v => (h1 v).trans (h2 v)⟩
-end
 
-section
 /-- **The Lindenbaum algebra of propositional calculus**: `Formula` quotiented by semantic
 equivalence. -/
 def Lindenbaum : Type := Quotient formulaSetoid
-end
 
-section
 /-- **The bridge between the two evaluations**: `evalSet` at `n : ℕ` agrees with `evalV` at `n`'s
 own bit-sequence `fun i => n.testBit i`. -/
 theorem mem_evalSet_iff (n : ℕ) (φ : Formula) :
@@ -280,9 +258,7 @@ theorem mem_evalSet_iff (n : ℕ) (φ : Formula) :
   | neg φ ih => simp [evalSet, evalV, ih]
   | and φ ψ ihφ ihψ => simp [evalSet, evalV, ihφ, ihψ]
   | or φ ψ ihφ ihψ => simp [evalSet, evalV, ihφ, ihψ]
-end
 
-section
 /-- The (finite) set of variables occurring in a formula. -/
 def vars : Formula → Finset ℕ
   | .var i => {i}
@@ -291,9 +267,7 @@ def vars : Formula → Finset ℕ
   | .neg φ => vars φ
   | .and φ ψ => vars φ ∪ vars ψ
   | .or φ ψ => vars φ ∪ vars ψ
-end
 
-section
 theorem evalV_eq_of_agree {φ : Formula} {v v' : ℕ → Bool} (h : ∀ i ∈ vars φ, v i = v' i) :
     evalV v φ = evalV v' φ := by
   induction φ with
@@ -309,9 +283,7 @@ theorem evalV_eq_of_agree {φ : Formula} {v v' : ℕ → Bool} (h : ∀ i ∈ va
     simp only [evalV, vars] at h ⊢
     rw [ihφ (fun i hi => h i (Finset.mem_union_left _ hi)),
       ihψ (fun i hi => h i (Finset.mem_union_right _ hi))]
-end
 
-section
 /-- **The one substantive lemma**: semantic equivalence (quantifying over *all* valuations) agrees
 with `evalSet`-equality (which only ever "tests" the countably many bit-derived valuations) —
 because a formula only mentions finitely many variables, any valuation can be swapped for a
@@ -333,25 +305,17 @@ theorem semanticEquiv_iff_evalSet_eq {φ ψ : Formula} :
     rw [h1, h2]
     rcases hφ : evalV (fun i => n.testBit i) φ with - | - <;>
       rcases hψ : evalV (fun i => n.testBit i) ψ with - | - <;> simp_all
-end
 
-section
 /-- The canonical map to `Set ℕ`, well-defined by `semanticEquiv_iff_evalSet_eq`. -/
 def Lindenbaum.toSet : Lindenbaum → Set ℕ :=
   Quotient.lift evalSet fun _ _ h => semanticEquiv_iff_evalSet_eq.mp h
-end
 
-section
 @[simp] theorem Lindenbaum.toSet_mk (φ : Formula) :
     Lindenbaum.toSet ⟦φ⟧ = evalSet φ := rfl
-end
 
-section
 /-- Semantic entailment: `φ ⊨ ψ` iff every valuation satisfying `φ` satisfies `ψ`. -/
 def Entails (φ ψ : Formula) : Prop := ∀ v, evalV v φ = true → evalV v ψ = true
-end
 
-section
 /-- **`Lindenbaum.toSet` is injective.** -/
 theorem Lindenbaum.toSet_injective : Function.Injective Lindenbaum.toSet := by
   intro x y
@@ -361,9 +325,7 @@ theorem Lindenbaum.toSet_injective : Function.Injective Lindenbaum.toSet := by
     | _ ψ =>
       intro h
       exact Quotient.sound (semanticEquiv_iff_evalSet_eq.mpr h)
-end
 
-section
 /-- **The bijection is an order correspondence, not just a set bijection**: semantic entailment
 matches `⊆` of the corresponding `evalSet`s, by the same finitary argument as
 `semanticEquiv_iff_evalSet_eq`. -/
@@ -381,9 +343,7 @@ theorem entails_iff_evalSet_subset {φ ψ : Formula} :
       evalV_eq_of_agree fun i hi => (hn i (Finset.mem_union_right _ hi)).symm
     rw [h2, ← mem_evalSet_iff]
     exact h (by rw [mem_evalSet_iff, ← h1]; exact hv)
-end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_813_b : ∀ {φ ψ : DomainTheory.NeighbourhoodSystems.Formula},
@@ -391,9 +351,7 @@ theorem example_813_b : ∀ {φ ψ : DomainTheory.NeighbourhoodSystems.Formula},
     (@LE.le (Set Nat) (@Set.instLE Nat) (DomainTheory.NeighbourhoodSystems.evalSet φ)
       (DomainTheory.NeighbourhoodSystems.evalSet ψ)) :=
   @DomainTheory.NeighbourhoodSystems.entails_iff_evalSet_subset
-end
 
-section
 /-- **`evalSet`'s range is exactly `GeneratedBy generator`** — the algebra generated by `generator`
 (`Exercise813a.lean`) is precisely "the Boolean combinations expressible as a `Formula`." -/
 theorem generatedBy_iff_exists_evalSet {X : Set ℕ} :
@@ -420,9 +378,7 @@ theorem generatedBy_iff_exists_evalSet {X : Set ℕ} :
     | neg φ ih => exact ih.compl
     | and φ ψ ihφ ihψ => exact ihφ.inter ihψ
     | or φ ψ ihφ ihψ => exact ihφ.union ihψ
-end
 
-section
 /-- **Headline: `Lindenbaum.toSet`'s range is exactly `Exercise813a.lean`'s free Boolean algebra on
 `ℵ₀` generators, `{X | GeneratedBy generator X}`.** Together with injectivity, `Lindenbaum.toSet`
 is a bijection `Lindenbaum ≃ {X : Set ℕ // GeneratedBy generator X}` — i.e. `Lindenbaum` *is* (a
@@ -438,37 +394,25 @@ theorem Lindenbaum.range_toSet : Set.range Lindenbaum.toSet = {X | GeneratedBy g
     | _ φ => exact ⟨φ, rfl⟩
   · rintro ⟨φ, rfl⟩
     exact ⟨⟦φ⟧, rfl⟩
-end
 
-section
 /-- The `i`-th coordinate-projection basic clopen of Cantor space `ℕ → Bool`: the literal
 transcription, on this carrier, of `8.13(a)`'s `generator i`. -/
 def genPoint (i : ℕ) : Set (ℕ → Bool) := (fun x : ℕ → Bool => x i) ⁻¹' {true}
-end
 
-section
 @[simp] theorem mem_genPoint {i : ℕ} {x : ℕ → Bool} : x ∈ genPoint i ↔ x i = true := Iff.rfl
-end
 
-section
 /-- The basic clopen pinning every coordinate in `I` to match `f`, and leaving the rest free —
 the standard basis element of the product topology on `ℕ → Bool`. -/
 def box (I : Finset ℕ) (f : ℕ → Bool) : Set (ℕ → Bool) := {x | ∀ i ∈ I, x i = f i}
-end
 
-section
 /-- `GeneratedBy genPoint ∅` — recorded separately since `GeneratedBy`'s only route to `∅` is via
 `compl` of `univ`. -/
 theorem generatedBy_genPoint_empty : GeneratedBy genPoint (∅ : Set (ℕ → Bool)) := by
   simpa using GeneratedBy.univ.compl
-end
 
-section
 @[simp] theorem mem_box {I : Finset ℕ} {f x : ℕ → Bool} :
     x ∈ box I f ↔ ∀ i ∈ I, x i = f i := Iff.rfl
-end
 
-section
 /-- The *same* recursion as `evalSet`, but interpreted via `genPoint` instead of `generator`. -/
 def evalSet' : Formula → Set (ℕ → Bool)
   | .var i => genPoint i
@@ -477,9 +421,7 @@ def evalSet' : Formula → Set (ℕ → Bool)
   | .neg φ => (evalSet' φ)ᶜ
   | .and φ ψ => evalSet' φ ∩ evalSet' ψ
   | .or φ ψ => evalSet' φ ∪ evalSet' ψ
-end
 
-section
 theorem generatedBy_iff_exists_evalSet' {Y : Set (ℕ → Bool)} :
     GeneratedBy genPoint Y ↔ ∃ φ : Formula, evalSet' φ = Y := by
   constructor
@@ -504,9 +446,7 @@ theorem generatedBy_iff_exists_evalSet' {Y : Set (ℕ → Bool)} :
     | neg φ ih => exact ih.compl
     | and φ ψ ihφ ihψ => exact ihφ.inter ihψ
     | or φ ψ ihφ ihψ => exact ihφ.union ihψ
-end
 
-section
 /-- Cantor space's own points already *are* valuations, so this bridge is definitional-level
 simple: no bit-encoding step is needed (contrast `8.13(b)`'s `mem_evalSet_iff`). -/
 theorem mem_evalSet'_iff (x : ℕ → Bool) (φ : Formula) :
@@ -518,9 +458,7 @@ theorem mem_evalSet'_iff (x : ℕ → Bool) (φ : Formula) :
   | neg φ ih => simp [evalSet', evalV, ih]
   | and φ ψ ihφ ihψ => simp [evalSet', evalV, ihφ, ihψ]
   | or φ ψ ihφ ihψ => simp [evalSet', evalV, ihφ, ihψ]
-end
 
-section
 /-- The same finitary-free argument as `semanticEquiv_iff_evalSet'_eq`, for entailment. -/
 theorem entails_iff_evalSet'_subset {φ ψ : Formula} :
     Entails φ ψ ↔ evalSet' φ ⊆ evalSet' ψ := by
@@ -530,9 +468,7 @@ theorem entails_iff_evalSet'_subset {φ ψ : Formula} :
     exact h _ hx
   · intro h v hv
     exact (mem_evalSet'_iff v ψ).mp (h ((mem_evalSet'_iff v φ).mpr hv))
-end
 
-section
 /-- No finitary agreement argument is needed here (contrast `8.13(b)`'s `semanticEquiv_iff_
 evalSet_eq`): `evalV`'s own domain `ℕ → Bool` already *is* Cantor space's points. -/
 theorem semanticEquiv_iff_evalSet'_eq {φ ψ : Formula} :
@@ -545,46 +481,32 @@ theorem semanticEquiv_iff_evalSet'_eq {φ ψ : Formula} :
     have hmem : v ∈ evalSet' φ ↔ v ∈ evalSet' ψ := by rw [h]
     rw [mem_evalSet'_iff, mem_evalSet'_iff] at hmem
     rcases hφ : evalV v φ with - | - <;> rcases hψ : evalV v ψ with - | - <;> simp_all
-end
 
-section
 /-- `Lindenbaum`'s canonical map to Cantor-space clopens, the counterpart of `8.13(b)`'s
 `Lindenbaum.toSet`. -/
 def Lindenbaum.toSet' : Lindenbaum → Set (ℕ → Bool) :=
   Quotient.lift evalSet' fun _ _ h => semanticEquiv_iff_evalSet'_eq.mp h
-end
 
-section
 @[simp] theorem Lindenbaum.toSet'_mk (φ : Formula) :
     Lindenbaum.toSet' ⟦φ⟧ = evalSet' φ := rfl
-end
 
-section
 /-- **`8.13(c2)`, the headline.** `X` and `Y` are the `evalSet`/`evalSet'` images of a *common*
 `Formula` — i.e. the same node of the (unique, up to `SemanticEquiv`) Lindenbaum algebra. -/
 def Corresponds (X : Set ℕ) (Y : Set (ℕ → Bool)) : Prop :=
   ∃ φ : Formula, evalSet φ = X ∧ evalSet' φ = Y
-end
 
-section
 /-- `Y ↦ Yᶜ`, applied to a whole family: turns an ideal into (the membership predicate of) a
 filter, and vice versa (`dualFilter` is its own inverse, `dualFilter_dualFilter`). -/
 def dualFilter {α : Type*} (x : Set (Set α)) : Set (Set α) := {Y | Yᶜ ∈ x}
-end
 
-section
 theorem Corresponds.generatedBy_left {X : Set ℕ} {Y : Set (ℕ → Bool)} (h : Corresponds X Y) :
     GeneratedBy generator X := by
   obtain ⟨φ, rfl, -⟩ := h; exact generatedBy_iff_exists_evalSet.mpr ⟨φ, rfl⟩
-end
 
-section
 theorem Corresponds.generatedBy_right {X : Set ℕ} {Y : Set (ℕ → Bool)} (h : Corresponds X Y) :
     GeneratedBy genPoint Y := by
   obtain ⟨φ, -, rfl⟩ := h; exact generatedBy_iff_exists_evalSet'.mpr ⟨φ, rfl⟩
-end
 
-section
 theorem Corresponds.inter {X₁ X₂ : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}
     (h1 : Corresponds X₁ Y₁) (h2 : Corresponds X₂ Y₂) :
     Corresponds (X₁ ∩ X₂) (Y₁ ∩ Y₂) := by
@@ -593,35 +515,23 @@ theorem Corresponds.inter {X₁ X₂ : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}
   refine ⟨.and φ ψ, ?_, ?_⟩
   · show evalSet φ ∩ evalSet ψ = X₁ ∩ X₂; rw [hφX, hψX]
   · show evalSet' φ ∩ evalSet' ψ = Y₁ ∩ Y₂; rw [hφY, hψY]
-end
 
-section
 @[simp] theorem mem_dualFilter {α : Type*} {x : Set (Set α)} {Y : Set α} :
     Y ∈ dualFilter x ↔ Yᶜ ∈ x := Iff.rfl
-end
 
-section
 @[simp] theorem dualFilter_dualFilter {α : Type*} (x : Set (Set α)) :
     dualFilter (dualFilter x) = x := by
   ext Y; simp [dualFilter]
-end
 
-section
 /-- The clopens contained in `O`: a proper ideal of `GeneratedBy genPoint` whenever `O ≠ univ`. -/
 def idealOf (O : Set (ℕ → Bool)) : Set (Set (ℕ → Bool)) := {Y | GeneratedBy genPoint Y ∧ Y ⊆ O}
-end
 
-section
 theorem down_mem_idealOf {O Y Z : Set (ℕ → Bool)} (hY : Y ∈ idealOf O)
     (hZg : GeneratedBy genPoint Z) (hZY : Z ⊆ Y) : Z ∈ idealOf O := ⟨hZg, hZY.trans hY.2⟩
-end
 
-section
 theorem empty_mem_idealOf (O : Set (ℕ → Bool)) : (∅ : Set (ℕ → Bool)) ∈ idealOf O :=
   ⟨generatedBy_genPoint_empty, Set.empty_subset _⟩
-end
 
-section
 /-- An ideal closed under (binary, hence finite) union dualizes to a filter closed under
 intersection (`(Y ∩ Z)ᶜ = Yᶜ ∪ Zᶜ`, De Morgan). -/
 theorem inter_mem_dualFilter {α : Type*} {x : Set (Set α)}
@@ -629,9 +539,7 @@ theorem inter_mem_dualFilter {α : Type*} {x : Set (Set α)}
     (hY : Y ∈ dualFilter x) (hZ : Z ∈ dualFilter x) : Y ∩ Z ∈ dualFilter x := by
   have h := hx _ hY _ hZ
   simpa [dualFilter, Set.compl_inter] using h
-end
 
-section
 /-- `Corresponds` matches `Set.Nonempty` — via `n ↦ fun i => n.testBit i` directly for `→`, and
 `exists_bitsOf_agree` (`8.13(b)`) for `←`, since a formula's satisfying valuation can always be
 swapped for a matching bit-derived one on its own (finite) variables. -/
@@ -646,15 +554,11 @@ theorem Corresponds.nonempty_iff {X : Set ℕ} {Y : Set (ℕ → Bool)} (h : Cor
     refine ⟨n, (mem_evalSet_iff n φ).mpr ?_⟩
     rw [evalV_eq_of_agree hn]
     exact (mem_evalSet'_iff v φ).mp hv
-end
 
-section
 /-- An ideal excluding `univ` dualizes to a filter excluding `∅`. -/
 theorem not_empty_mem_dualFilter {α : Type*} {x : Set (Set α)} (h : Set.univ ∉ x) :
     (∅ : Set α) ∉ dualFilter x := by simpa [dualFilter] using h
-end
 
-section
 /-- `Corresponds` also matches `⊆` — i.e. it is an order-isomorphism between the two concrete
 algebras, not just a bijection. -/
 theorem Corresponds.subset_iff {X₁ X₂ : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}
@@ -664,25 +568,17 @@ theorem Corresponds.subset_iff {X₁ X₂ : Set ℕ} {Y₁ Y₂ : Set (ℕ → B
   subst hφX; subst hφY; subst hψX; subst hψY
   exact ⟨fun hsub => entails_iff_evalSet'_subset.mp (entails_iff_evalSet_subset.mpr hsub),
     fun hsub => entails_iff_evalSet_subset.mp (entails_iff_evalSet'_subset.mpr hsub)⟩
-end
 
-section
 theorem union_mem_idealOf {O Y Z : Set (ℕ → Bool)} (hY : Y ∈ idealOf O) (hZ : Z ∈ idealOf O) :
     Y ∪ Z ∈ idealOf O := ⟨hY.1.union hZ.1, Set.union_subset hY.2 hZ.2⟩
-end
 
-section
 /-- An ideal containing `∅` dualizes to a filter containing `univ`. -/
 theorem univ_mem_dualFilter {α : Type*} {x : Set (Set α)} (h : (∅ : Set α) ∈ x) :
     Set.univ ∈ dualFilter x := by simpa [dualFilter] using h
-end
 
-section
 theorem univ_not_mem_idealOf {O : Set (ℕ → Bool)} (hO : O ≠ Set.univ) : Set.univ ∉ idealOf O :=
   fun h => hO (Set.univ_subset_iff.mp h.2)
-end
 
-section
 /-- An ideal downward-closed within `GeneratedBy g` dualizes to a filter upward-closed within
 `GeneratedBy g` (De Morgan again: `Z ⊆ Y ↔ Yᶜ ⊆ Zᶜ`). -/
 theorem up_mem_dualFilter {α : Type*} {g : ℕ → Set α} {x : Set (Set α)}
@@ -690,9 +586,7 @@ theorem up_mem_dualFilter {α : Type*} {g : ℕ → Set α} {x : Set (Set α)}
     (hY : Y ∈ dualFilter x) (hZg : GeneratedBy g Z) (hYZ : Y ⊆ Z) : Z ∈ dualFilter x := by
   have hcompl : Zᶜ ⊆ Yᶜ := Set.compl_subset_compl.mpr hYZ
   simpa [dualFilter] using hx _ hY _ hZg.compl hcompl
-end
 
-section
 /-- **`8.13(c4)`, the headline connection.** Every open `O ≠ Set.univ` of Cantor space `2^ℕ`
 determines a genuine element of `V` (hence of `U`, via `exercise813a`) — the proper filter "dual"
 to the ideal of clopens inside `O`, transported to `ℕ`-clopens via `Corresponds`. This is the
@@ -720,9 +614,7 @@ def elementOfOpen {O : Set (ℕ → Bool)} (hO : O ≠ Set.univ) : V.Element whe
       up_mem_dualFilter (fun Y hY Z hZg hZY => down_mem_idealOf hY hZg hZY) hY₁
         hC₂.generatedBy_right ((hC₁.subset_iff hC₂).mp hX₁X₂),
       hC₂⟩
-end
 
-section
 theorem exists_corresponds_of_generatedBy_generator {X : Set ℕ} (hX : GeneratedBy generator X) :
     ∃ Y, Corresponds X Y := by
   obtain ⟨φ, hφ⟩ := generatedBy_iff_exists_evalSet.mp hX
@@ -734,18 +626,14 @@ theorem Corresponds.unique_left {X₁ X₂ : Set ℕ} {Y : Set (ℕ → Bool)}
   obtain ⟨ψ, hψX, hψY⟩ := h2
   have hse : SemanticEquiv φ ψ := semanticEquiv_iff_evalSet'_eq.mpr (hφY.trans hψY.symm)
   rw [← hφX, ← hψX, semanticEquiv_iff_evalSet_eq.mp hse]
-end
 
-section
 theorem Corresponds.unique_right {X : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}
     (h1 : Corresponds X Y₁) (h2 : Corresponds X Y₂) : Y₁ = Y₂ := by
   obtain ⟨φ, hφX, hφY⟩ := h1
   obtain ⟨ψ, hψX, hψY⟩ := h2
   have hse : SemanticEquiv φ ψ := semanticEquiv_iff_evalSet_eq.mpr (hφX.trans hψX.symm)
   rw [← hφY, ← hψY, semanticEquiv_iff_evalSet'_eq.mp hse]
-end
 
-section
 theorem Lindenbaum.range_toSet' :
     Set.range Lindenbaum.toSet' = {Y | GeneratedBy genPoint Y} := by
   ext Y
@@ -756,9 +644,7 @@ theorem Lindenbaum.range_toSet' :
     | _ φ => exact ⟨φ, rfl⟩
   · rintro ⟨φ, rfl⟩
     exact ⟨⟦φ⟧, rfl⟩
-end
 
-section
 theorem Lindenbaum.toSet'_injective : Function.Injective Lindenbaum.toSet' := by
   intro x y
   induction x using Quotient.ind with
@@ -767,16 +653,12 @@ theorem Lindenbaum.toSet'_injective : Function.Injective Lindenbaum.toSet' := by
     | _ ψ =>
       intro h
       exact Quotient.sound (semanticEquiv_iff_evalSet'_eq.mpr h)
-end
 
-section
 theorem exists_corresponds_of_generatedBy_genPoint {Y : Set (ℕ → Bool)}
     (hY : GeneratedBy genPoint Y) : ∃ X, Corresponds X Y := by
   obtain ⟨φ, hφ⟩ := generatedBy_iff_exists_evalSet'.mp hY
   exact ⟨evalSet φ, φ, rfl, hφ⟩
-end
 
-section
 theorem generatedBy_genPoint_box (I : Finset ℕ) (f : ℕ → Bool) :
     GeneratedBy genPoint (box I f) := by
   induction I using Finset.induction_on with
@@ -793,9 +675,7 @@ theorem generatedBy_genPoint_box (I : Finset ℕ) (f : ℕ → Bool) :
     split_ifs with hfa
     · exact (GeneratedBy.of a).inter ih
     · exact (GeneratedBy.of a).compl.inter ih
-end
 
-section
 /-- Finite unions of `box`es (over any index type) are `GeneratedBy genPoint` — the same
 `Finset.induction_on`/`Finset.set_biUnion_insert` idiom as `8.13(a)`'s `generatedBy_biUnion_affine`. -/
 theorem generatedBy_genPoint_biUnion {β : Type*} (t : Finset β) (I : β → Finset ℕ)
@@ -806,17 +686,13 @@ theorem generatedBy_genPoint_biUnion {β : Type*} (t : Finset β) (I : β → Fi
   | insert a s ha ih =>
     rw [Finset.set_biUnion_insert]
     exact (generatedBy_genPoint_box _ _).union ih
-end
 
-section
 /-- Dualizing preserves membership in the algebra generated by `g` (using that `GeneratedBy g` is
 closed under `compl`). -/
 theorem generatedBy_of_mem_dualFilter {α : Type*} {g : ℕ → Set α} {x : Set (Set α)}
     (hx : ∀ Y ∈ x, GeneratedBy g Y) {Y : Set α} (hY : Y ∈ dualFilter x) : GeneratedBy g Y := by
   simpa using (hx _ hY).compl
-end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_813_c.{u_1} : ∀ {α : Type u_1} {g : Nat → Set α} {x : Set (Set α)},
@@ -828,14 +704,10 @@ theorem example_813_c.{u_1} : ∀ {α : Type u_1} {g : Nat → Set α} {x : Set 
           (@DomainTheory.NeighbourhoodSystems.dualFilter α x) Y →
         @DomainTheory.NeighbourhoodSystems.GeneratedBy α g Y :=
   @DomainTheory.NeighbourhoodSystems.generatedBy_of_mem_dualFilter
-end
 
-section
 theorem isClopen_genPoint (i : ℕ) : IsClopen (genPoint i) :=
   (isClopen_discrete ({true} : Set Bool)).preimage (continuous_apply i)
-end
 
-section
 /-- **Easy direction**: everything `GeneratedBy genPoint` is clopen. -/
 theorem generatedBy_genPoint_isClopen {Y : Set (ℕ → Bool)} (h : GeneratedBy genPoint Y) :
     IsClopen Y := by
@@ -845,22 +717,14 @@ theorem generatedBy_genPoint_isClopen {Y : Set (ℕ → Bool)} (h : GeneratedBy 
   | inter _ _ ih1 ih2 => exact ih1.inter ih2
   | union _ _ ih1 ih2 => exact ih1.union ih2
   | compl _ ih => exact ih.compl
-end
 
-section
 theorem isOpen_box (I : Finset ℕ) (f : ℕ → Bool) : IsOpen (box I f) :=
   (generatedBy_genPoint_isClopen (generatedBy_genPoint_box I f)).isOpen
-end
 
-section
 theorem isOpen_genPoint (i : ℕ) : IsOpen (genPoint i) := (isClopen_genPoint i).isOpen
-end
 
-section
 theorem self_mem_box (I : Finset ℕ) (f : ℕ → Bool) : f ∈ box I f := fun _ _ => rfl
-end
 
-section
 /-- **`8.13(c1)`.** Cantor space's clopen algebra is exactly `GeneratedBy genPoint` — the free
 Boolean algebra on `ℵ₀` generators (`8.13(a)`), transported to carrier `ℕ → Bool`. -/
 theorem isClopen_iff_generatedBy_genPoint {Y : Set (ℕ → Bool)} :
@@ -885,9 +749,7 @@ theorem isClopen_iff_generatedBy_genPoint {Y : Set (ℕ → Bool)} :
     refine Set.Subset.antisymm ht (Set.iUnion₂_subset fun f _ => hIfn (f : ℕ → Bool) f.2)
   rw [heq]
   exact generatedBy_genPoint_biUnion t Ig fg
-end
 
-section
 /-- Immediate corollary: **opens** (not just clopens) of Cantor space are exactly unions of
 `GeneratedBy genPoint` clopens — the "topological basis" fact underlying the scoping row's
 candidate `(ii)`. -/
@@ -908,8 +770,6 @@ theorem isOpen_iff_exists_iUnion_generatedBy {O : Set (ℕ → Bool)} :
       exact hYO hxY
   · rintro ⟨S, hS, rfl⟩
     exact isOpen_biUnion fun Y hY => (generatedBy_genPoint_isClopen (hS Y hY)).isOpen
-end
 
 end DomainTheory.NeighbourhoodSystems
-end
 

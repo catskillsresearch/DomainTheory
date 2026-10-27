@@ -8,9 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
-section
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /- concordance: source L5028 DEFINITION 8.9 constructs on projections -/
@@ -96,7 +94,6 @@ theorem jTimes_isComputableMap :
     ComputableMap UComputablePresentation prodUUPresentation jTimes :=
   (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose_spec.2.2.2
 
-end
 
 section
 open NeighborhoodSystem ApproximableMap Exercise326
@@ -236,4 +233,3 @@ theorem isRetraction_arrowComb {a b : ApproximableMap U U} (ha : Retraction a)
 
 end
 end DomainTheory.NeighbourhoodSystems
-end

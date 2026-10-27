@@ -8,7 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap
@@ -363,7 +362,6 @@ end FiniteDomain
 
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_814.{u} : And
@@ -403,7 +401,5 @@ theorem example_814.{u} : And
     {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
     @DomainTheory.NeighbourhoodSystems.ClosureOperator α E a → @DomainTheory.NeighbourhoodSystems.IsFinitary α E a)
   @DomainTheory.NeighbourhoodSystems.isCompactFix_iff @DomainTheory.NeighbourhoodSystems.isFinitary_of_isClosureOperator
-end
 
 end DomainTheory.NeighbourhoodSystems
-end

@@ -12,7 +12,6 @@ public import Mathlib.Data.Rat.Defs
 
 namespace DomainTheory.NeighbourhoodSystems
 
-section
 open Domain.Recursive
 
 /-- Decode a natural code as an integer: `pair a b ↦ a - b`. -/
@@ -250,62 +249,44 @@ theorem ratLtCode_recDecidable₂ : RecDecidable₂ (fun c1 c2 => decodeRat c1 <
     (fun t => by have := ratLtCode_le_one t; omega) (fun n m => ?_)
   exact (ratLtCode_eq_one_iff n m).symm
 
-end
 
 end DomainTheory.NeighbourhoodSystems
 namespace Domain.Recursive
-section
 /-- `foldCode`'s step for consing the popped element `x` onto the accumulator (ignoring the
 threaded parameter). -/
 def consStep2 (w : ℕ) : ℕ := Nat.pair w.unpair.1 w.unpair.2.unpair.1 + 1
-end
 
-section
 /-- `appendCode c1 c2` codes a list with the same **elements** as `decodeList c1 ++ decodeList c2`
 (reversed on the `c1` side, since `foldCode` conses left-to-right; irrelevant for set-level uses). -/
 def appendCode (c1 c2 : ℕ) : ℕ := foldCode consStep2 0 c2 c1
-end
 
-section
 /-- `foldCode`'s step for the inner loop: pops `y` from `c2`, applies `bop (pair x y)` (`x` threaded
 as the fixed parameter), conses onto the accumulator. -/
 def crossInnerStep (bop : ℕ → ℕ) (w : ℕ) : ℕ :=
   Nat.pair (bop (Nat.pair w.unpair.2.unpair.2 w.unpair.1)) w.unpair.2.unpair.1 + 1
-end
 
-section
 /-- `crossInner bop x c2` codes `[bop (x, y) ∣ y ∈ decodeList c2]` (up to order). -/
 def crossInner (bop : ℕ → ℕ) (x c2 : ℕ) : ℕ := foldCode (crossInnerStep bop) x 0 c2
-end
 
-section
 /-- `foldCode`'s outer step: pops `x` from `c1`, appends `crossInner bop x c2` onto the
 accumulator (`c2` threaded as the fixed parameter). -/
 def crossOuterStep (bop : ℕ → ℕ) (w : ℕ) : ℕ :=
   appendCode (crossInner bop w.unpair.1 w.unpair.2.unpair.2) w.unpair.2.unpair.1
-end
 
-section
 /-- **`crossCombine bop c1 c2`** codes `[bop (x, y) ∣ x ∈ decodeList c1, y ∈ decodeList c2]`
 (up to order/duplicates), i.e. the code-level analogue of `L1.flatMap (fun x => L2.map (bop x ·))`.
 This is the workhorse behind `Definition87.lean`'s `combineIntervals` at the code level. -/
 def crossCombine (bop : ℕ → ℕ) (c1 c2 : ℕ) : ℕ := foldCode (crossOuterStep bop) c2 0 c1
-end
 
-section
 /-- `foldCode`'s step for `flatMapCode`: pops `y` from the folded list, appends `f (pair x y)`
 (`x` threaded as the fixed parameter) onto the accumulator. -/
 def flatMapStep (f : ℕ → ℕ) (w : ℕ) : ℕ :=
   appendCode (f (Nat.pair w.unpair.2.unpair.2 w.unpair.1)) w.unpair.2.unpair.1
-end
 
-section
 /-- **`flatMapCode f x c`** codes `(decodeList c).flatMap (fun y => decodeList (f (pair x y)))`
 (up to order/duplicates). -/
 def flatMapCode (f : ℕ → ℕ) (x c : ℕ) : ℕ := foldCode (flatMapStep f) x 0 c
-end
 
-section
 theorem consStep2_eq (x acc params : ℕ) :
     consStep2 (Nat.pair x (Nat.pair acc params)) = Nat.pair x acc + 1 := by
   unfold consStep2; simp only [unpair_pair_fst, unpair_pair_snd]
@@ -416,40 +397,30 @@ theorem mem_decodeList_flatMapCode_aux (f : ℕ → ℕ) (x : ℕ) :
       · exact Or.inr (Or.inl hz)
       · exact Or.inl ⟨y, hy, hz⟩
       · exact Or.inr (Or.inr hacc)
-end
 
-section
 theorem mem_decodeList_crossCombine {bop : ℕ → ℕ} (c1 c2 z : ℕ) :
     z ∈ decodeList (crossCombine bop c1 c2) ↔
       ∃ x ∈ decodeList c1, ∃ y ∈ decodeList c2, z = bop (Nat.pair x y) := by
   unfold crossCombine
   rw [foldCode_eq', mem_decodeList_crossCombine_aux bop c2 (decodeList c1) 0 z]
   simp only [decodeList_zero, List.not_mem_nil, or_false]
-end
 
-section
 theorem mem_decodeList_flatMapCode {f : ℕ → ℕ} (x c z : ℕ) :
     z ∈ decodeList (flatMapCode f x c) ↔ ∃ y ∈ decodeList c, z ∈ decodeList (f (Nat.pair x y)) := by
   unfold flatMapCode
   rw [foldCode_eq', mem_decodeList_flatMapCode_aux f x (decodeList c) 0 z]
   simp only [decodeList_zero, List.not_mem_nil, or_false]
-end
 
-section
 theorem primrec_consStep2 : Nat.Primrec consStep2 := by
   have h1 : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
   have h21 : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
     Nat.Primrec.left.comp Nat.Primrec.right
   exact (Nat.Primrec.succ.comp (h1.pair h21)).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_appendCode : Nat.Primrec (fun t => appendCode t.unpair.1 t.unpair.2) :=
   (primrec_foldCode primrec_consStep2 (Nat.Primrec.const 0) Nat.Primrec.right
     Nat.Primrec.left).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_crossInnerStep {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
     Nat.Primrec (crossInnerStep bop) := by
   have hy : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
@@ -458,16 +429,12 @@ theorem primrec_crossInnerStep {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
   have hx : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.2) :=
     Nat.Primrec.right.comp Nat.Primrec.right
   exact (Nat.Primrec.succ.comp ((hbop.comp (hx.pair hy)).pair hacc)).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_crossInner {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
     Nat.Primrec (fun t => crossInner bop t.unpair.1 t.unpair.2) :=
   (primrec_foldCode (primrec_crossInnerStep hbop) Nat.Primrec.left (Nat.Primrec.const 0)
     Nat.Primrec.right).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_crossOuterStep {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
     Nat.Primrec (crossOuterStep bop) := by
   have hx : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
@@ -481,16 +448,12 @@ theorem primrec_crossOuterStep {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
   exact (primrec_appendCode.comp (hinner.pair hacc)).of_eq fun w => by
     unfold crossOuterStep
     simp only [unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem primrec_crossCombine {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
     Nat.Primrec (fun t => crossCombine bop t.unpair.1 t.unpair.2) :=
   (primrec_foldCode (primrec_crossOuterStep hbop) Nat.Primrec.right (Nat.Primrec.const 0)
     Nat.Primrec.left).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_flatMapStep {f : ℕ → ℕ} (hf : Nat.Primrec f) : Nat.Primrec (flatMapStep f) := by
   have hy : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
   have hacc : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
@@ -499,18 +462,14 @@ theorem primrec_flatMapStep {f : ℕ → ℕ} (hf : Nat.Primrec f) : Nat.Primrec
     Nat.Primrec.right.comp Nat.Primrec.right
   exact (primrec_appendCode.comp ((hf.comp (hx.pair hy)).pair hacc)).of_eq fun w => by
     unfold flatMapStep; simp only [unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem primrec_flatMapCode {f : ℕ → ℕ} (hf : Nat.Primrec f) :
     Nat.Primrec (fun t => flatMapCode f t.unpair.1 t.unpair.2) :=
   (primrec_foldCode (primrec_flatMapStep hf) Nat.Primrec.left (Nat.Primrec.const 0)
     Nat.Primrec.right).of_eq fun _ => rfl
-end
 
 end Domain.Recursive
 namespace DomainTheory.NeighbourhoodSystems
-section
 open Domain.Recursive
 
 /-- Decode a natural as a pair of rationals. -/
@@ -927,7 +886,6 @@ theorem recDecidable₂_presentedIntervals_eq :
     (recDecidable₂_presentedIntervals_subset.and recDecidable₂_presentedIntervals_subset.swap)
   exact Set.Subset.antisymm_iff
 
-end
 
 end DomainTheory.NeighbourhoodSystems
 end

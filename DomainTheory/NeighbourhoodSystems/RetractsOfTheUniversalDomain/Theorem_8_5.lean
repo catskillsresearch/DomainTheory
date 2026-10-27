@@ -6,7 +6,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exa
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap
@@ -21,7 +20,6 @@ theorem finitaryProjection_iff_formula (a : ApproximableMap E E) :
   ⟨fun h => formula_of_isFinitaryProjection h, fun hii => isFinitaryProjection_of_formula a hii⟩
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem theorem_85.{u} : And
@@ -128,8 +126,6 @@ theorem theorem_85.{u} : And
     @DomainTheory.NeighbourhoodSystems.formula_of_isFinitaryProjection
     @DomainTheory.NeighbourhoodSystems.finitaryProjection_iff_formula)
   @DomainTheory.NeighbourhoodSystems.isFinitaryProjection_of_formula
-end
 
 end DomainTheory.NeighbourhoodSystems
-end
 

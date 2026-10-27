@@ -6,7 +6,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap
@@ -97,4 +96,3 @@ theorem isRetraction_retractionOfSubsystem (h : D ◁ E) :
 end Subsystem
 end
 end DomainTheory.NeighbourhoodSystems
-end

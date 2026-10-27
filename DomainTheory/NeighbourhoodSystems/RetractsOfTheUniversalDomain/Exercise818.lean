@@ -6,9 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Pro
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
-section
 open NeighborhoodSystem ApproximableMap
 /- concordance: source L5177 EXERCISE 8.18 missing proofs of 8.10 -/
 /-- **Exercise 8.18 (Scott 1981, PRG-19), in full: Proposition 8.10, both halves, all three
@@ -24,9 +22,7 @@ theorem exercise_8_18_assembly {a b : ApproximableMap U U} (ha : IsProjection a)
         FinitaryProjection (sumComb a b) ∧ FinitaryProjection (prodComb a b) ∧
           FinitaryProjection (arrowComb a b)) :=
   ⟨isProjection_combinators ha hb, fun hfa hfb => finitaryProjection_combinators hfa hfb⟩
-end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_818 : ∀
@@ -55,8 +51,6 @@ theorem example_818 : ∀
                 (@DomainTheory.NeighbourhoodSystems.FinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U
                   (DomainTheory.NeighbourhoodSystems.arrowComb a b)))) :=
   @DomainTheory.NeighbourhoodSystems.exercise_8_18_assembly
-end
 
 end DomainTheory.NeighbourhoodSystems
-end
 

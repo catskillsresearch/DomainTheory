@@ -14,9 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
-section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 /- concordance: source L4807 EXAMPLES 8.4 check, fade, and smash -/
@@ -52,7 +50,6 @@ def Otop : O.Element := O.principal O_mem_zero
 @[simp] theorem mem_Otop {Y : Set (Fin 2)} : Otop.mem Y ↔ O.mem Y ∧ ({0} : Set (Fin 2)) ⊆ Y :=
   Iff.rfl
 
-end
 
 section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
@@ -393,7 +390,6 @@ def fixIso (hu : u ≠ D.bot) : O.Element ≃o {y : D.Element // (a u).toElement
 
 end
 
-section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 theorem Otop_ne_Obot : Otop ≠ O.bot := by
@@ -402,7 +398,6 @@ theorem Otop_ne_Obot : Otop ≠ O.bot := by
   rw [h, mem_bot, O_master_eq] at h1
   have h2 : (1 : Fin 2) ∈ ({0} : Set (Fin 2)) := by rw [h1]; simp
   simp at h2
-end
 
 section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
@@ -1391,4 +1386,3 @@ end HardDirection
 
 end
 end DomainTheory.NeighbourhoodSystems
-end

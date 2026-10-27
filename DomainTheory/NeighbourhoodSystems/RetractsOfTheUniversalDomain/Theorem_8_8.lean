@@ -12,7 +12,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_26
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 open Domain.Recursive NeighborhoodSystem
@@ -1024,7 +1023,6 @@ theorem D_X_inter_spec
   rfl
 end
 
-section
 open Domain.Recursive NeighborhoodSystem
 
 /-- A fixed code for the rational pair `(0,1)`, presenting `U.master`. -/
@@ -1475,11 +1473,9 @@ theorem forall_lt_decodeQPairList_canonCode (c : ℕ) :
     rw [hzero, selectFn_zero]
     exact forall_lt_decodeQPairList_canonListCode c
 
-end
 
 /-! ### Theorem 8.8(b)–(c) (moved from Exercise_8_15 monolith) -/
 
-section
 open Domain.Recursive NeighborhoodSystem
 
 /-- Clip a rational-pair code `e` to `[decodeRat m, ∞)`, given `t = pair m e`. -/
@@ -1746,7 +1742,6 @@ theorem splitU_union (n : ℕ) : UX (splitULeft n) ∪ UX (splitURight n) = UX n
     · exact Or.inl ⟨h, hlt⟩
     · exact Or.inr ⟨h, hge⟩
 
-end
 
 section
 open NeighborhoodSystem Domain.Recursive
@@ -3874,7 +3869,6 @@ theorem DprimeUCode_projectionPair_isComputable :
 
 end
 
-section
 open NeighborhoodSystem Domain.Recursive
 
 /-- **Theorem 8.8(b) (Scott 1981, PRG-19), final assembly.** If `D` is effectively given (via a
@@ -3890,7 +3884,6 @@ theorem theorem_8_8_b {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePr
         ComputableMap UComputablePresentation P' h.proj :=
   ⟨DprimeUCode P, DprimeUCodePresentation P, DprimeUCode_subsystem P,
     isomorphic_DprimeUCode P, DprimeUCode_inj_isComputableMap P, DprimeUCode_proj_isComputableMap P⟩
-end
 
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
@@ -3936,7 +3929,6 @@ theorem theorem_8_8_c {a : ApproximableMap U U} (_hfin : FinitaryProjection a)
   ⟨fixedNbhd_isEffectivelyGiven hcomp, fixedNbhd_subsystem a⟩
 
 end
-section
 open NeighborhoodSystem ApproximableMap Exercise326
 
 /-- Every `𝒰`-neighbourhood is non-empty (built into Definition 8.7). -/
@@ -3972,7 +3964,6 @@ theorem sumUU_isEffectivelyGiven :
 noncomputable def sumUUPresentation : ComputablePresentation (sum U U U_mem_nonempty U_mem_nonempty) :=
   sumUU_isEffectivelyGiven.some
 
-end
 
 
 
@@ -4088,4 +4079,3 @@ theorem theorem_8_8_b_strong :
 end
 
 end DomainTheory.NeighbourhoodSystems
-end

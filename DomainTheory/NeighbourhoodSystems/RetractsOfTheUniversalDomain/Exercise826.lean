@@ -7,7 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-section
 /- concordance: source L5246 EXERCISE 8.26 untyped calculus in U -/
 -- Exercise826/Uapply.lean
 namespace DomainTheory.NeighbourhoodSystems
@@ -21,19 +20,15 @@ noncomputable def Uapply (u x : U.Element) : U.Element :=
   (evalMap U U).toElementMap (pair (jArrow.toElementMap u) x)
 
 end DomainTheory.NeighbourhoodSystems
-end
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
-section
 /-- **Self-abstraction inside `𝒰`** (the end-of-lecture equation `λx.τ ≅ i_→(λx.τ)`): given the
 "outside" function `f : 𝒰 → 𝒰` (`τ`'s ordinary denotation as an approximable map), encode it into
 `𝒰` via `i_→` (`iArrow`, Definition 8.9). -/
 noncomputable def Ulam (f : ApproximableMap U U) : U.Element :=
   iArrow.toElementMap (toFilter f)
-end
 
 section
 universe u
@@ -48,7 +43,6 @@ def translateAbs (a b body : ApproximableMap E E) : ApproximableMap E E :=
   b.comp (body.comp a)
 end
 
-section
 /-- **Faithfulness (`β`-soundness) of the self-hosted encoding.** Applying the self-hosted
 abstraction of `f` recovers `f` itself: `Uapply (Ulam f) x = f(x)`. The internal `λ`-calculus of
 `𝒰` literally computes the same thing as the "outside" one it is modelling — this is the actual
@@ -65,7 +59,6 @@ theorem Uapply_Ulam (f : ApproximableMap U U) (x : U.Element) :
       = (jArrow.comp iArrow).toElementMap (toFilter f) :=
     (toElementMap_comp jArrow iArrow (toFilter f)).symm
   rw [h1, jArrow_comp_iArrow, toElementMap_idMap, evalMap_apply, hround]
-end
 
 section
 universe u
@@ -81,7 +74,6 @@ theorem translateAbs_idMap {a b : ApproximableMap E E} : translateAbs a b (idMap
   rw [idMap_comp]
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_826.{u} : ∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
@@ -91,7 +83,6 @@ theorem example_826.{u} : ∀ {α : Type u} {E : DomainTheory.NeighbourhoodSyste
       (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap α E))
     (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α α α E E E b a) :=
   @DomainTheory.NeighbourhoodSystems.translateAbs_idMap
-end
 
 section
 universe u
@@ -122,5 +113,4 @@ theorem translateApp_hasType {a b f : ApproximableMap E E} (hsandwich : b.comp (
 end
 
 end DomainTheory.NeighbourhoodSystems
-end
 

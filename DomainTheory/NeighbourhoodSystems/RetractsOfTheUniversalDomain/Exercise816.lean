@@ -8,7 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 open NeighborhoodSystem ApproximableMap
@@ -58,5 +57,4 @@ end
 
 
 end DomainTheory.NeighbourhoodSystems
-end
 

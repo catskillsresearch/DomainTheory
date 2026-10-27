@@ -12,7 +12,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap
@@ -26,7 +25,6 @@ theorem exercise_8_20_assembly : D ⊴ prod D D ∧ D ⊴ funSpace D D :=
   ⟨D_trianglelefteq_prod D, D_trianglelefteq_funSpace D⟩
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_820.{u} : And
@@ -70,7 +68,6 @@ theorem example_820.{u} : And
         (@DomainTheory.NeighbourhoodSystems.funSpace α α D D))
     @DomainTheory.NeighbourhoodSystems.exercise_8_20_assembly @DomainTheory.NeighbourhoodSystems.D_trianglelefteq_funSpace)
   @DomainTheory.NeighbourhoodSystems.D_trianglelefteq_prod
-end
 
 section
 open NeighborhoodSystem ApproximableMap
@@ -90,4 +87,3 @@ end Prod
 end
 
 end DomainTheory.NeighbourhoodSystems
-end

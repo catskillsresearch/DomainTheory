@@ -4,7 +4,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Pro
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap
@@ -60,7 +59,6 @@ theorem isFinitaryProjection_retractionOfSubsystem (h : D ◁ E) :
 end Subsystem
 end
 
-section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 theorem fin2_zero_ne_zero_one : ({0} : Set (Fin 2)) ≠ ({0, 1} : Set (Fin 2)) := by
@@ -72,6 +70,4 @@ theorem fin2_zero_ne_zero_one : ({0} : Set (Fin 2)) ≠ ({0, 1} : Set (Fin 2)) :
 theorem fin2_zero_subset_zero_one : ({0} : Set (Fin 2)) ⊆ ({0, 1} : Set (Fin 2)) := by
   intro x hx; simp only [Set.mem_singleton_iff] at hx; subst hx; simp
 
-end
 end DomainTheory.NeighbourhoodSystems
-end

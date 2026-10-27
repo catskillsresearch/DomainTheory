@@ -14,7 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 open Domain.Recursive NeighborhoodSystem
@@ -391,7 +390,6 @@ theorem isFinitaryProjection_subApprox : FinitaryProjection (subApprox (E := E))
 end Sub8_6
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem theorem_86.{u} : And
@@ -437,7 +435,6 @@ theorem theorem_86.{u} : And
     @DomainTheory.NeighbourhoodSystems.sub_eq_self_iff_isFinitaryProjection
     @DomainTheory.NeighbourhoodSystems.Sub8_6.isFinitary_subApprox)
   @DomainTheory.NeighbourhoodSystems.Sub8_6.isFinitaryProjection_subApprox
-end
 
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
@@ -591,7 +588,6 @@ theorem sub_isComputable_of_isEffectivelyGiven (h : E.IsEffectivelyGiven) :
 
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem theorem_86_c.{u_1} : And
@@ -680,7 +676,6 @@ theorem theorem_86_c.{u_1} : And
           Pfun Pfun (@DomainTheory.NeighbourhoodSystems.Sub8_6.subApprox α E))
   @DomainTheory.NeighbourhoodSystems.subApprox_isComputable
   @DomainTheory.NeighbourhoodSystems.sub_isComputable_of_isEffectivelyGiven
-end
 
 section
 open NeighborhoodSystem
@@ -1651,4 +1646,3 @@ end Iso
 
 end
 end DomainTheory.NeighbourhoodSystems
-end

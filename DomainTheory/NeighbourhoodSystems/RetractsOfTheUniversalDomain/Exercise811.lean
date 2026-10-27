@@ -8,7 +8,6 @@ public import Mathlib.Combinatorics.Colex
 
 @[expose] public section
 
-section
 /- concordance: source L5135 EXERCISES — Lecture VIII exercises -/
 -- Exercise811/R.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise811
@@ -34,22 +33,15 @@ def R : NeighborhoodSystem ℚ :=
       exact Set.Ico_subset_Ico le_rfl hr1)
 
 end DomainTheory.NeighbourhoodSystems.Exercise811
-end
 
-section
 namespace DomainTheory.NeighbourhoodSystems.Exercise811
 open NeighborhoodSystem ApproximableMap
 
-section
 @[simp] theorem R_mem_iff {X : Set ℚ} :
     R.mem X ↔ ∃ r : ℚ, 0 < r ∧ r ≤ 1 ∧ X = Set.Ico (0 : ℚ) r := Iff.rfl
-end
 
-section
 @[simp] theorem R_master : R.master = Set.Ico (0 : ℚ) 1 := rfl
-end
 
-section
 /-- The parametrization `r ↦ [0,r)` is injective on positive `r`: if `r < s` then `r` itself
 witnesses the difference (`r ∈ [0,s)` but `r ∉ [0,r)`). -/
 theorem Ico0_inj {r s : ℚ} (hr : 0 < r) (hs : 0 < s)
@@ -62,16 +54,12 @@ theorem Ico0_inj {r s : ℚ} (hr : 0 < r) (hs : 0 < s)
   · have hmem : s ∈ Set.Ico (0 : ℚ) r := ⟨hs.le, hgt⟩
     rw [h] at hmem
     exact absurd hmem.2 (lt_irrefl s)
-end
 
-section
 /-- Two `[0,·)`-intervals intersect to a third, with the endpoint `min r s`. -/
 theorem Ico0_inter (r s : ℚ) :
     Set.Ico (0 : ℚ) r ∩ Set.Ico (0 : ℚ) s = Set.Ico (0 : ℚ) (min r s) := by
   rw [Set.Ico_inter_Ico, sup_idem]
-end
 
-section
 /-- If `[0,p) ⊆ [0,q)` and `p > 0`, then `p ≤ q`. (The converse direction of nestedness; note `q > 0`
 is *derived*, from `0 ∈ [0,p) ⊆ [0,q)`, not assumed.) -/
 theorem Ico0_le_of_subset {p q : ℚ} (hp : 0 < p)
@@ -80,16 +68,12 @@ theorem Ico0_le_of_subset {p q : ℚ} (hp : 0 < p)
   by_contra hlt
   rw [not_le] at hlt
   exact absurd (hsub ⟨hq.le, hlt⟩).2 (lt_irrefl q)
-end
 
-section
 /-- Scott's relation: `[0,r) a [0,s)` iff `r < s` or `r = s = 1`. -/
 def aRel (X Y : Set ℚ) : Prop :=
   ∃ r s : ℚ, 0 < r ∧ r ≤ 1 ∧ 0 < s ∧ s ≤ 1 ∧
     X = Set.Ico (0 : ℚ) r ∧ Y = Set.Ico (0 : ℚ) s ∧ (r < s ∨ (r = 1 ∧ s = 1))
-end
 
-section
 /-- **Scott's combinator law**: if `X a Y` and `X a Y'` then `X a (Y ∩ Y')`, unwound to endpoints. -/
 theorem aRel_combine {r s s' : ℚ} (hs1 : s ≤ 1) (hs1' : s' ≤ 1)
     (h1 : r < s ∨ (r = 1 ∧ s = 1)) (h2 : r < s' ∨ (r = 1 ∧ s' = 1)) :
@@ -101,15 +85,11 @@ theorem aRel_combine {r s s' : ℚ} (hs1 : s ≤ 1) (hs1' : s' ≤ 1)
   · rcases h2 with h2 | ⟨-, rfl⟩
     · exact absurd (h2.trans_le hs1') (lt_irrefl _)
     · exact Or.inr ⟨rfl, min_self 1⟩
-end
 
 end DomainTheory.NeighbourhoodSystems.Exercise811
-end
 
-section
 namespace DomainTheory.NeighbourhoodSystems.Exercise811
 open NeighborhoodSystem ApproximableMap
-section
 /- concordance: source L5137 EXERCISE 8.11 retraction on intervals -/
 /-- **Exercise 8.11 (first part).** `aRel` defines an approximable map `a : R → R`. -/
 def a : ApproximableMap R R where
@@ -136,9 +116,7 @@ def a : ApproximableMap R R where
     · rcases hr1'.lt_or_eq with h | h
       · exact Or.inl (h.trans_le hss')
       · exact Or.inr ⟨h, le_antisymm hs1' hss'⟩
-end
 
-section
 /-- `aRel` unwound at concrete endpoints: exactly Scott's displayed condition. -/
 theorem aRel_iff {r s : ℚ} (hr0 : 0 < r) (hr1 : r ≤ 1) (hs0 : 0 < s) (hs1 : s ≤ 1) :
     aRel (Set.Ico (0 : ℚ) r) (Set.Ico (0 : ℚ) s) ↔ (r < s ∨ (r = 1 ∧ s = 1)) := by
@@ -148,13 +126,9 @@ theorem aRel_iff {r s : ℚ} (hr0 : 0 < r) (hr1 : r ≤ 1) (hs0 : 0 < s) (hs1 : 
     exact hcond
   · intro h
     exact ⟨r, s, hr0, hr1, hs0, hs1, rfl, rfl, h⟩
-end
 
-section
 @[simp] theorem a_rel {X Y : Set ℚ} : a.rel X Y ↔ aRel X Y := Iff.rfl
-end
 
-section
 /-- `R`'s elements are entirely determined by their membership at the endpoints `[0,r)`: two
 elements agreeing on every `r` agree everywhere (any other `X` with `x.mem X` is forced, by
 `x.sub`, to already be some `[0,r)`). -/
@@ -169,9 +143,7 @@ theorem Element.ext_U {x y : R.Element} (h : ∀ r : ℚ, x.mem (Set.Ico 0 r) �
   · intro hy
     obtain ⟨r, _, _, rfl⟩ := y.sub hy
     exact (h r).mpr hy
-end
 
-section
 /-- **Building an `R.Element` from an "up-set" predicate `U`.** `U` must contain `1`, be bounded
 to `(0,1]`, and be upward closed within `(0,1]` — exactly Definition 1.6's filter conditions,
 transported along the bijection `r ↦ [0,r)`. -/
@@ -190,14 +162,10 @@ def mkElement (U : ℚ → Prop) (hU1 : U 1) (hUpos : ∀ r, U r → 0 < r) (hUl
     rintro X Y ⟨r, hr, rfl⟩ hY hsub
     obtain ⟨s, hs0, hs1, rfl⟩ := hY
     exact ⟨s, hUup r s hr (Ico0_le_of_subset (hUpos r hr) hsub) hs1, rfl⟩
-end
 
-section
 @[simp] theorem mkElement_mem {U hU1 hUpos hUle1 hUup} {X : Set ℚ} :
     (mkElement U hU1 hUpos hUle1 hUup).mem X ↔ ∃ r, U r ∧ X = Set.Ico (0 : ℚ) r := Iff.rfl
-end
 
-section
 /-- Any `R`-neighbourhood `[0,s)` forces `0 < s ≤ 1` (even though `R_mem_iff` phrases `R.mem X` as
 an existential over a *possibly different* endpoint, injectivity pins it down to `s` itself). -/
 theorem R_mem_Ico0 {s : ℚ} (h : R.mem (Set.Ico (0 : ℚ) s)) : 0 < s ∧ s ≤ 1 := by
@@ -207,32 +175,22 @@ theorem R_mem_Ico0 {s : ℚ} (h : R.mem (Set.Ico (0 : ℚ) s)) : 0 < s ∧ s ≤
   have hs0 : 0 < s := lt_of_le_of_lt hx0 hxs
   have hsr : s = r := Ico0_inj hs0 hr0 heq
   exact ⟨hs0, hsr ▸ hr1⟩
-end
 
-section
 /-- **The Dedekind-cut up-set for `t ∈ [0,1]`.** `cutU t r` holds at `r ≤ 1` with `1 - t < r`
 (strictly), or at the single endpoint `r = 1`; `1 - t` is Scott's "cut point" `c`, chosen so the
 represented real `t` increases exactly as the up-set does (Scott's hint: `⊆` matches `≤`). -/
 def cutU (t : ℝ) (r : ℚ) : Prop := r ≤ 1 ∧ ((1 - t : ℝ) < (r : ℝ) ∨ r = 1)
-end
 
-section
 theorem cutU_le1 {t : ℝ} {r : ℚ} (h : cutU t r) : r ≤ 1 := h.1
-end
 
-section
 theorem cutU_one {t : ℝ} : cutU t 1 := ⟨le_rfl, Or.inr rfl⟩
-end
 
-section
 theorem cutU_pos {t : ℝ} (ht1 : t ≤ 1) {r : ℚ} (h : cutU t r) : 0 < r := by
   rcases h.2 with h2 | rfl
   · have hc : (0 : ℝ) ≤ 1 - t := by linarith
     exact_mod_cast lt_of_le_of_lt hc h2
   · norm_num
-end
 
-section
 theorem cutU_up {r s : ℚ} {t : ℝ} (h : cutU t r) (hrs : r ≤ s) (hs1 : s ≤ 1) : cutU t s := by
   refine ⟨hs1, ?_⟩
   rcases h.2 with h2 | rfl
@@ -240,16 +198,12 @@ theorem cutU_up {r s : ℚ} {t : ℝ} (h : cutU t r) (hrs : r ≤ s) (hs1 : s �
     have hcast : (r : ℝ) ≤ (s : ℝ) := by exact_mod_cast hrs
     linarith
   · exact Or.inr (le_antisymm hs1 hrs)
-end
 
-section
 /-- The fixed point of `a` corresponding to `t ∈ [0,1]` (Scott's Dedekind cut). -/
 def cutElt (t : ℝ) (ht1 : t ≤ 1) : R.Element :=
   mkElement (cutU t) cutU_one (fun _ h => cutU_pos ht1 h) (fun _ h => cutU_le1 h)
     (fun _ _ h hrs hs1 => cutU_up h hrs hs1)
-end
 
-section
 @[simp] theorem cutElt_mem {t : ℝ} {ht1 : t ≤ 1} {r : ℚ} :
     (cutElt t ht1).mem (Set.Ico 0 r) ↔ cutU t r := by
   simp only [cutElt, mkElement_mem]
@@ -261,46 +215,32 @@ section
     have hr0 : 0 < r := lt_of_le_of_lt hx0 hxr
     rwa [Ico0_inj hr0 hr'0 heq]
   · exact fun h => ⟨r, h, rfl⟩
-end
 
-section
 /-- The (real-valued) image of `x`'s up-set: `{(r:ℝ) ∣ x.mem [0,r)}`. -/
 def cutS (x : R.Element) : Set ℝ := (fun r : ℚ => (r : ℝ)) '' {r | x.mem (Set.Ico 0 r)}
-end
 
-section
 /-- **The canonical Dedekind cut point** `1 - c` of a fixed element `x`, `c := sInf (cutS x)`. -/
 noncomputable def cutPoint (x : R.Element) : ℝ := 1 - sInf (cutS x)
-end
 
-section
 theorem cutS_bddBelow (x : R.Element) : BddBelow (cutS x) := by
   refine ⟨0, ?_⟩
   rintro y ⟨r, hr, rfl⟩
   dsimp only
   exact_mod_cast (R_mem_Ico0 (x.sub hr)).1.le
-end
 
-section
 theorem cutPoint_nonneg (x : R.Element) : 0 ≤ cutPoint x := by
   have hmem1 : x.mem (Set.Ico (0 : ℚ) 1) := by rw [← R_master]; exact x.master_mem
   have hc1 : sInf (cutS x) ≤ 1 := csInf_le (cutS_bddBelow x) ⟨1, hmem1, by norm_num⟩
   unfold cutPoint; linarith
-end
 
-section
 theorem cutS_nonempty (x : R.Element) : (cutS x).Nonempty :=
   ⟨1, 1, show x.mem (Set.Ico (0 : ℚ) 1) by rw [← R_master]; exact x.master_mem, by norm_num⟩
-end
 
-section
 theorem cutPoint_le_one (x : R.Element) : cutPoint x ≤ 1 := by
   have hc0 : (0:ℝ) ≤ sInf (cutS x) := le_csInf (cutS_nonempty x)
     (by rintro y ⟨r, hr, rfl⟩; dsimp only; exact_mod_cast (R_mem_Ico0 (x.sub hr)).1.le)
   unfold cutPoint; linarith
-end
 
-section
 /-- **Surjectivity**: every fixed point of `a` equals `cutElt (cutPoint x) _`; the fixed-point
 equation supplies exactly the "openness" (no minimum, aside from `r = 1`) that makes this work. -/
 theorem cutElt_cutPoint {x : R.Element} (hfix : a.toElementMap x = x) :
@@ -344,9 +284,7 @@ theorem cutElt_cutPoint {x : R.Element} (hfix : a.toElementMap x = x) :
       have hr0pos : 0 < r0 := (R_mem_Ico0 (x.sub hr0mem)).1
       exact x.up_mem hr0mem ⟨r, hr0pos.trans hr0r, hr1, rfl⟩ (Set.Ico_subset_Ico le_rfl hr0r.le)
     · rw [← R_master]; exact x.master_mem
-end
 
-section
 /-- `cutU` is monotone in `t`: raising `t` only weakens the cut point `1 - t`, so it only
 *enlarges* the up-set. -/
 theorem cutU_mono {t t' : ℝ} (htt' : t ≤ t') {r : ℚ} (h : cutU t r) : cutU t' r := by
@@ -354,17 +292,13 @@ theorem cutU_mono {t t' : ℝ} (htt' : t ≤ t') {r : ℚ} (h : cutU t r) : cutU
   rcases h.2 with hc | rfl
   · exact Or.inl (by linarith)
   · exact Or.inr rfl
-end
 
-section
 /-- Domain order reduces to a statement about `mem` at the endpoints `[0,r)` alone. -/
 theorem le_iff_U {x y : R.Element} :
     x ≤ y ↔ ∀ r : ℚ, x.mem (Set.Ico 0 r) → y.mem (Set.Ico 0 r) :=
   ⟨fun h r => h (Set.Ico 0 r), fun h X hX => by
     obtain ⟨r, _, _, rfl⟩ := x.sub hX; exact h r hX⟩
-end
 
-section
 /-- **Scott's hint made precise:** `⊆` (the up-sets, i.e. `⊑` on `R.Element`) matches `≤` (on the
 represented reals) — `cutElt` is order-preserving *both ways*. -/
 theorem cutElt_le_iff {t t' : ℝ} (_ht0 : 0 ≤ t) (ht1 : t ≤ 1) (ht0' : 0 ≤ t') (ht1' : t' ≤ 1) :
@@ -384,16 +318,12 @@ theorem cutElt_le_iff {t t' : ℝ} (_ht0 : 0 ≤ t) (ht1 : t ≤ 1) (ht0' : 0 �
     · linarith
     · rw [hreq] at hr2; norm_num at hr2; linarith
   · exact fun htt' r hr => cutU_mono htt' hr
-end
 
-section
 /-- `cutElt` is injective on `[0,1]` (antisymmetry of `cutElt_le_iff`). -/
 theorem cutElt_injective {t t' : ℝ} (ht0 : 0 ≤ t) (ht1 : t ≤ 1) (ht0' : 0 ≤ t') (ht1' : t' ≤ 1)
     (h : cutElt t ht1 = cutElt t' ht1') : t = t' :=
   le_antisymm ((cutElt_le_iff ht0 ht1 ht0' ht1').mp h.le) ((cutElt_le_iff ht0' ht1' ht0 ht1).mp h.ge)
-end
 
-section
 /-- **`cutElt t` is a fixed point of `a`**, for every `t ∈ [0,1]`: this is exactly the "open cut"
 computation — `a` shifts `[0,r)` strictly forward, so `s` re-enters the up-set from below iff some
 smaller `r` was already in it, i.e. iff `1 - t < s` (density of `ℚ` supplies the witness `r`). -/
@@ -426,9 +356,7 @@ theorem toElementMap_cutElt {t : ℝ} (ht1 : t ≤ 1) :
         cutU_le1 hs, rfl, rfl, Or.inl (by exact_mod_cast hr2)⟩
     · exact ⟨Set.Ico 0 1, ⟨1, cutU_one, rfl⟩, 1, 1, one_pos, le_rfl, one_pos, le_rfl, rfl, rfl,
         Or.inr ⟨rfl, rfl⟩⟩
-end
 
-section
 /-- **Exercise 8.11 (Dedekind-cut correspondence).** The fixed-point set of `a` is order
 isomorphic to `Set.Icc (0 : ℝ) 1` — a one-one correspondence with the reals between `0` and `1`
 inclusive, under which `⊆` (domain order) matches `≤` (Scott's hint). -/
@@ -450,16 +378,12 @@ noncomputable def fixOrderIso : {y : R.Element // a.toElementMap y = y} ≃o Set
       rw [← cutElt_cutPoint y.2, ← cutElt_cutPoint y'.2] at h
       exact (cutElt_le_iff (cutPoint_nonneg y.1) (cutPoint_le_one y.1) (cutPoint_nonneg y'.1)
         (cutPoint_le_one y'.1)).mp h
-end
 
-section
 theorem aRel_le {r s : ℚ} (h : r < s ∨ (r = 1 ∧ s = 1)) : r ≤ s := by
   rcases h with h | ⟨rfl, rfl⟩
   · exact h.le
   · exact le_rfl
-end
 
-section
 /-- **Exercise 8.11 (second part, retraction).** `a ∘ a = a`. -/
 theorem isRetraction_a : Retraction a := by
   constructor
@@ -487,17 +411,13 @@ theorem isRetraction_a : Retraction a := by
         ⟨s, t, hs0, hs1, ht0, ht1, rfl, rfl, Or.inl hst⟩⟩
     · exact ⟨Set.Ico 0 1, ⟨1, 1, one_pos, le_rfl, one_pos, le_rfl, rfl, rfl, Or.inr ⟨rfl, rfl⟩⟩,
         ⟨1, 1, one_pos, le_rfl, one_pos, le_rfl, rfl, rfl, Or.inr ⟨rfl, rfl⟩⟩⟩
-end
 
-section
 /-- **Exercise 8.11 (second part, projection).** `a ⊑ I_R`. -/
 theorem isProjection_a : IsProjection a := by
   refine ⟨isRetraction_a, ?_⟩
   rintro X Y ⟨r, s, hr0, hr1, hs0, hs1, rfl, rfl, hcond⟩
   exact ⟨⟨r, hr0, hr1, rfl⟩, ⟨s, hs0, hs1, rfl⟩, Set.Ico_subset_Ico le_rfl (aRel_le hcond)⟩
-end
 
-section
 /-- **No point `g ⟨t,_,_⟩` with `t > 0` is compact**, for *any* neighbourhood system `F` and order
 isomorphism `g : Set.Icc (0:ℝ) 1 ≃o F.Element`: the directed family `{g ⟨s,_,_⟩ ∣ 0 ≤ s < t}` has
 supremum exactly `g ⟨t,_,_⟩` (`isLUB_Ico` transported through `g`), yet `g ⟨t,_,_⟩` sits strictly
@@ -538,9 +458,7 @@ theorem not_isCompactElt_pos {β : Type} {F : NeighborhoodSystem β}
   obtain ⟨i, hi⟩ := hcompact fam hdir (le_of_eq heq.symm)
   have hle : (⟨t, ht0, ht1⟩ : Set.Icc (0 : ℝ) 1) ≤ i.1 := g.le_iff_le.mp hi
   exact absurd hle (not_le.mpr i.2.2)
-end
 
-section
 /-- **Exercise 8.11 (conclusion).** `a` is *not* finitary: were it, its fixed-point set — order
 isomorphic to `Set.Icc (0:ℝ) 1` via `fixOrderIso` — would also be order isomorphic to some `F.Element`,
 which is algebraic (`eq_iSupDirected_principal`); but every principal approximant of `g ⟨1,_,_⟩`
@@ -584,9 +502,7 @@ theorem not_isFinitary_a : ¬ IsFinitary a := by
   have : (⟨1, zero_le_one, le_refl 1⟩ : Set.Icc (0:ℝ) 1) = ⟨0, le_refl 0, zero_le_one⟩ :=
     g.injective hxeq
   exact absurd (congrArg Subtype.val this) one_ne_zero
-end
 
-section
 set_option linter.unusedVariables false
 
 
@@ -622,57 +538,43 @@ theorem example_811 : And
     DomainTheory.NeighbourhoodSystems.Exercise811.isProjection_a
     DomainTheory.NeighbourhoodSystems.Exercise811.isRetraction_a)
   DomainTheory.NeighbourhoodSystems.Exercise811.not_isFinitary_a
-end
 
 end DomainTheory.NeighbourhoodSystems.Exercise811
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
-section
 /-- **`2^k ℕ + ℓ`** (for `ℓ < 2^k`): the residue class of `ℓ` modulo `2^k`. Automatically `∅` when
 `ℓ ≥ 2^k` (no `n` can leave a remainder that large), matching Scott's side condition `ℓ < 2^k`
 without needing to bake it into the definition. -/
 def affine (k ℓ : ℕ) : Set ℕ := {n : ℕ | n % 2 ^ k = ℓ}
-end
 
-section
 @[simp] theorem mem_affine {k ℓ n : ℕ} : n ∈ affine k ℓ ↔ n % 2 ^ k = ℓ := Iff.rfl
-end
 
 namespace affine
 open NeighborhoodSystem
 
-section
 theorem nonempty {k ℓ : ℕ} (hℓ : ℓ < 2 ^ k) : (affine k ℓ).Nonempty :=
   ⟨ℓ, Nat.mod_eq_of_lt hℓ⟩
-end
 
 end affine
 open NeighborhoodSystem
 
-section
 /-- The union of the residue classes `affine k ℓ` for `ℓ < 2^k` with `m.testBit ℓ = true`. Every
 finite union of `affine`-sets sharing the *same* level `k` is of this form for a unique `m`
 (`Finset.range (2^k)` residues partition `ℕ`, unlike arbitrary rational intervals), so a single
 natural number `m` replaces the `List` bookkeeping `Definition87.lean` needs for `𝒰`. -/
 def levelSet (k m : ℕ) : Set ℕ := {n : ℕ | m.testBit (n % 2 ^ k) = true}
-end
 
-section
 @[simp] theorem mem_levelSet {k m n : ℕ} : n ∈ levelSet k m ↔ m.testBit (n % 2 ^ k) = true :=
   Iff.rfl
-end
 
 namespace levelSet
 open NeighborhoodSystem
 
-section
 theorem inter_same_level (k m₁ m₂ : ℕ) :
     levelSet k m₁ ∩ levelSet k m₂ = levelSet k (m₁ &&& m₂) := by
   ext n; simp [levelSet, Nat.testBit_and]
-end
 
-section
 theorem nonempty_iff {k m : ℕ} :
     (levelSet k m).Nonempty ↔ ∃ ℓ < 2 ^ k, m.testBit ℓ = true := by
   constructor
@@ -680,15 +582,11 @@ theorem nonempty_iff {k m : ℕ} :
     exact ⟨n % 2 ^ k, Nat.mod_lt n (by positivity), hn⟩
   · rintro ⟨ℓ, hℓ, hm⟩
     exact ⟨ℓ, by rw [mem_levelSet, Nat.mod_eq_of_lt hℓ]; exact hm⟩
-end
 
-section
 theorem union_same_level (k m₁ m₂ : ℕ) :
     levelSet k m₁ ∪ levelSet k m₂ = levelSet k (m₁ ||| m₂) := by
   ext n; simp [levelSet, Nat.testBit_or]
-end
 
-section
 /-- `levelSet k m` is exactly the union of `affine k ℓ` over `ℓ` with `m.testBit ℓ`. -/
 theorem eq_biUnion (k m : ℕ) :
     levelSet k m = ⋃ ℓ ∈ (Finset.range (2 ^ k)).filter (fun ℓ => m.testBit ℓ), affine k ℓ := by
@@ -698,63 +596,51 @@ theorem eq_biUnion (k m : ℕ) :
   constructor
   · intro h; exact ⟨n % 2 ^ k, ⟨Nat.mod_lt n (by positivity), h⟩, rfl⟩
   · rintro ⟨ℓ, ⟨-, hm⟩, rfl⟩; exact hm
-end
 
 end levelSet
 namespace affine
 open NeighborhoodSystem
 
-section
 /-- `affine k ℓ` itself is the singleton-bitmask `levelSet`. -/
 theorem eq_levelSet (k ℓ : ℕ) : affine k ℓ = levelSet k (2 ^ ℓ) := by
   ext n
   simp [mem_affine, mem_levelSet, Nat.testBit_two_pow, eq_comm]
-end
 
 end affine
 open NeighborhoodSystem
 
-section
 /-- Re-express a level-`k` bitmask `m` at a finer level `k' ≥ k`: residue `r` (mod `2^k'`) is
 included iff `r`'s coarser residue `r % 2^k` was. Built via `Nat.equivBitIndices` (the bijection
 `ℕ ≃ Finset ℕ` sending `n` to its set bits) rather than raw shifting arithmetic. -/
 def upsample (k k' m : ℕ) : ℕ :=
   ∑ r ∈ (Finset.range (2 ^ k')).filter (fun r => m.testBit (r % 2 ^ k)), 2 ^ r
-end
 
 namespace testBit
 open NeighborhoodSystem
 
-section
 theorem upsample {k k' m r : ℕ} (hr : r < 2 ^ k') :
     (_root_.DomainTheory.NeighbourhoodSystems.upsample k k' m).testBit r ↔ m.testBit (r % 2 ^ k) := by
   unfold _root_.DomainTheory.NeighbourhoodSystems.upsample
   rw [← Nat.mem_bitIndices, ← List.mem_toFinset, Finset.toFinset_bitIndices_sum_two_pow,
     Finset.mem_filter, Finset.mem_range]
   simp [hr]
-end
 
 end testBit
 namespace levelSet
 open NeighborhoodSystem
 
-section
 /-- `levelSet 0 1 = ℕ`: at level `0` there is a single residue class (everything is `≡ 0 mod 1`),
 and `1` (bit `0` set) selects it. This is `V`'s master neighbourhood. -/
 theorem zero_one : levelSet 0 1 = Set.univ := by
   ext n; simp [levelSet, Nat.mod_one]
-end
 
-section
 /-- **`upsample` preserves the set `levelSet` represents.** -/
 theorem upsample {k k' m : ℕ} (hk : k ≤ k') : levelSet k' (_root_.DomainTheory.NeighbourhoodSystems.upsample k k' m) = levelSet k m := by
   ext n
   simp only [mem_levelSet]
   rw [testBit.upsample (Nat.mod_lt n (by positivity)),
     Nat.mod_mod_of_dvd n (pow_dvd_pow 2 hk)]
-end
 
-section
 /-- **`levelSet` is closed under intersection, unconditionally** (unlike `Definition87.lean`'s `U`,
 which genuinely needs a consistency hypothesis): upsample both masks to the common level
 `max k₁ k₂` and take the bitwise `AND`. -/
@@ -764,12 +650,10 @@ theorem inter (k₁ m₁ k₂ m₂ : ℕ) :
   rw [← levelSet.upsample (le_max_left k₁ k₂) (m := m₁), ← levelSet.upsample (le_max_right k₁ k₂) (m := m₂)]
   ext n
   simp only [mem_levelSet, Set.mem_inter_iff, Nat.testBit_and, Bool.and_eq_true]
-end
 
 end levelSet
 open NeighborhoodSystem
 
-section
 /-- **Exercise 8.12's `V`**: the neighbourhood system over `ℕ` whose neighbourhoods are the
 non-empty finite unions of residue classes `2^k ℕ + ℓ` (`ℓ < 2^k`). Bookkeeping-free via
 `levelSet`: every finite union of `affine`-sets — even at *different* levels `kᵢ` — refines
@@ -787,9 +671,7 @@ def V : NeighborhoodSystem ℕ where
     exact ⟨max k₁ k₂, upsample k₁ (max k₁ k₂) m₁ &&& upsample k₂ (max k₁ k₂) m₂,
       levelSet.inter k₁ m₁ k₂ m₂, hZne.mono hZsub⟩
   sub_master := by rintro X _; exact Set.subset_univ X
-end
 
-section
 /-- **`V` is closed under binary union**, as long as the result is non-empty — mirrors
 `Definition87.lean`'s `U_union_mem`, needed to reassemble Scott's literal finite unions. -/
 theorem V_union_mem {X Y : Set ℕ} (hX : X = ∅ ∨ V.mem X) (hY : Y = ∅ ∨ V.mem Y) :
@@ -805,9 +687,7 @@ theorem V_union_mem {X Y : Set ℕ} (hX : X = ∅ ∨ V.mem X) (hY : Y = ∅ ∨
     rw [← levelSet.union_same_level, levelSet.upsample (le_max_left k₁ k₂),
       levelSet.upsample (le_max_right k₁ k₂)]
   exact Or.inr ⟨max k₁ k₂, _, heq, hXne.mono Set.subset_union_left⟩
-end
 
-section
 /-- **`V` is closed under finite (`Fintype`-indexed) unions**, as long as the result is
 non-empty — mirrors `Definition87.lean`'s `U_iUnion_mem` verbatim. -/
 theorem V_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℕ} (hf : ∀ i, f i = ∅ ∨ V.mem (f i))
@@ -823,9 +703,7 @@ theorem V_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℕ} (hf : ∀ i,
   have hall : (⋃ i, f i) = ⋃ i ∈ (Finset.univ : Finset ι), f i := by simp
   rw [hall] at hne ⊢
   exact (hstep Finset.univ).resolve_left hne.ne_empty
-end
 
-section
 /-- **`V.mem` literally matches Scott's "non-empty finite unions of `2^k ℕ + ℓ`, `ℓ < 2^k`"** —
 reconciles the bookkeeping-free `levelSet` encoding with Exercise 8.12's literal description,
 mirroring `Definition87.lean`'s `U_mem_iff_scott`. -/
@@ -853,9 +731,7 @@ theorem V_mem_iff_finiteUnion {X : Set ℕ} :
       ext n; simp only [Set.mem_iUnion, exists_prop, Subtype.exists]
     rw [hrw] at hne ⊢
     exact V_iUnion_mem hf hne
-end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_812 : ∀ {X : Set Nat},
@@ -879,9 +755,7 @@ theorem example_812 : ∀ {X : Set Nat},
                 DomainTheory.NeighbourhoodSystems.affine (@Prod.fst Nat Nat p) (@Prod.snd Nat Nat p)))
           (@Set.Nonempty Nat X))) :=
   @DomainTheory.NeighbourhoodSystems.V_mem_iff_finiteUnion
-end
 
-section
 /-- **Scott's remark after Definition 8.7, transplanted to `V`**: every `V`-neighbourhood splits
 into two disjoint proper `V`-neighbourhoods. Refine to one level finer via `upsample`, which
 duplicates every set bit `ℓ` of `m` into a matching pair `(ℓ, ℓ + 2^k)`; peeling off *one*
@@ -939,8 +813,6 @@ theorem V_no_minimal {X : Set ℕ} (hX : V.mem X) :
     apply hYne.ne_empty
     have hYsub : Y ⊆ Z := by rw [hEq]; exact hUnion ▸ Set.subset_union_left
     rw [← hInter, Set.inter_eq_left.mpr hYsub]
-end
 
 end DomainTheory.NeighbourhoodSystems
-end
 

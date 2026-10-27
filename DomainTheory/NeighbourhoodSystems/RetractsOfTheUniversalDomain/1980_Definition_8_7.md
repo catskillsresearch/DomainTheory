@@ -6,10 +6,26 @@ and similarly for $[r, s)$ for any $r < s$ in $\mathbb{Q}$. The neighbourhood sy
 
 A picture of a typical element of $\mathcal{U}$ could be drawn like this:
 
-```
-0    r_0  r_1     r_2  r_3     r_4  r_5     1
-[======)       [=====)       [=====)
-```
+$$
+\begin{array}{c}
+[\!\rule[0.45ex]{1.5em}{0.32pt}\!)
+[\!\rule[0.35ex]{2.9em}{1.2ex}\!)
+[\!\rule[0.45ex]{3.4em}{0.32pt}\!)
+[\!\rule[0.35ex]{2.5em}{1.2ex}\!)
+[\!\rule[0.45ex]{3.4em}{0.32pt}\!)
+[\!\rule[0.35ex]{2.5em}{1.2ex}\!)
+[\!\rule[0.45ex]{1.7em}{0.32pt}\!)
+\\[0.4em]
+0
+\hspace{1.35em} r_0
+\hspace{2.35em} r_1
+\hspace{2.85em} r_2
+\hspace{1.95em} r_3
+\hspace{2.85em} r_4
+\hspace{1.95em} r_5
+\hspace{1.45em} 1
+\end{array}
+$$
 
 Note that any union can be taken as a *disjoint* union of the form
 $$\bigcup_{i \le n} [r_{2i}, r_{2i+1})$$

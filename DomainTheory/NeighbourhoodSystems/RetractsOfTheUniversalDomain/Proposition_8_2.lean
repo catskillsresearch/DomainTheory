@@ -4,7 +4,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Def
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap
@@ -23,7 +22,6 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Subsystem
-section
 set_option linter.unusedVariables false
 
 theorem theorem_82.{u_1} : And
@@ -88,7 +86,6 @@ theorem theorem_82.{u_1} : And
               y))))
   @DomainTheory.NeighbourhoodSystems.Subsystem.isRetraction_retractionOfSubsystem
   @DomainTheory.NeighbourhoodSystems.Subsystem.retraction_of_subsystem
-end
 
 end DomainTheory.NeighbourhoodSystems.Subsystem
 namespace DomainTheory.NeighbourhoodSystems
@@ -106,4 +103,3 @@ def IsFinitary (a : ApproximableMap E E) : Prop :=
 
 end
 end DomainTheory.NeighbourhoodSystems
-end

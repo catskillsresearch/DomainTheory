@@ -30,7 +30,6 @@ end Exercise824
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
 
@@ -348,7 +347,6 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise824
-section
 set_option linter.unusedVariables false
 
 theorem example_824 : And
@@ -1073,14 +1071,12 @@ theorem example_824 : And
     @DomainTheory.NeighbourhoodSystems.Exercise824.fixedDomain_aStar_bStar_iso
     @DomainTheory.NeighbourhoodSystems.Exercise824.fixedNbhd_aStar_bStar_subsystem)
   @DomainTheory.NeighbourhoodSystems.Exercise824.isFinitaryProjection_aStar_bStar
-end
 
 end DomainTheory.NeighbourhoodSystems.Exercise824
 namespace DomainTheory.NeighbourhoodSystems.Example15
 
 end DomainTheory.NeighbourhoodSystems.Example15
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
-section
 /-- Countability of the neighbourhoods of `S`, via the `SExpr` presentation.
 Picking a preimage uses Mathlib's `Surjective.countable` (hence `Classical.choice`);
 the syntax `SExpr` itself is countable choice-free. -/
@@ -1099,25 +1095,19 @@ instance Ssys_countable : Countable {S : Set (List Bool) // Ssys.mem S} := by
       exact Subtype.ext he
   exact Countable.of_equiv ({S : Set (List Bool) // InS S})
     (Equiv.subtypeEquivRight fun _ => Ssys_mem.symm)
-end
 
 end DomainTheory.NeighbourhoodSystems.Exercise722
 namespace DomainTheory.NeighbourhoodSystems.Example15
-section
 /-- **New corollary for Example 1.5.** The finite powerset system is countable, so the first
 sentence of Theorem 8.8 applies. Scott does not separately state this embedding. -/
 theorem P4_embeds : neighborhoodSystem ⊴ U :=
   theorem_8_8 neighborhoodSystem
-end
 
 end DomainTheory.NeighbourhoodSystems.Example15
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
-section
 /-- **New corollary for Exercise 7.22.** Countability is `Ssys_countable` (via `SExpr`), so the
 first sentence of Theorem 8.8 applies. Scott does not separately state this embedding. -/
 theorem Ssys_embeds : Ssys ⊴ U :=
   theorem_8_8 Ssys
-end
 
 end DomainTheory.NeighbourhoodSystems.Exercise722
-end

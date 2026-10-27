@@ -31,7 +31,6 @@ end Exercise823
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap Sub8_6
 
@@ -231,7 +230,6 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise823
-section
 set_option linter.unusedVariables false
 
 theorem example_823 : And
@@ -576,8 +574,6 @@ theorem example_823 : And
     @DomainTheory.NeighbourhoodSystems.Exercise823.fixedDomain_fixOp_iso_T
     @DomainTheory.NeighbourhoodSystems.Exercise823.fixedNbhd_fixOp_subsystem)
   @DomainTheory.NeighbourhoodSystems.Exercise823.isFinitaryProjection_fixOp
-end
 
 end DomainTheory.NeighbourhoodSystems.Exercise823
-end
 

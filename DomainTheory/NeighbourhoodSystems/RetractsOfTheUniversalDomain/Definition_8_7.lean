@@ -9,83 +9,55 @@ public import Mathlib.Order.Interval.Set.Defs
 @[expose] public section
 
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
-section
 /-- The set presented by a list of interval endpoint-pairs: the union `⋃ (r,s) ∈ L, [r,s)`. -/
 def presentedIntervals (L : List (ℚ × ℚ)) : Set ℚ := ⋃ p ∈ L, Set.Ico p.1 p.2
-end
 
-section
 @[simp] theorem mem_presentedIntervals {L : List (ℚ × ℚ)} {x : ℚ} :
     x ∈ presentedIntervals L ↔ ∃ p ∈ L, p.1 ≤ x ∧ x < p.2 := by
   simp only [presentedIntervals, Set.mem_iUnion, Set.mem_Ico, exists_prop]
-end
 
-section
 @[simp] theorem presentedIntervals_nil : presentedIntervals ([] : List (ℚ × ℚ)) = ∅ := by
   ext x; simp
-end
 
-section
 /-- Scott's master neighbourhood `Δ = [0,1)` for `𝒰`. -/
 abbrev UMaster : Set ℚ := Set.Ico (0 : ℚ) 1
-end
 
-section
 /-- Scott's token set `[0,1)` is non-empty. -/
 theorem UMaster_nonempty : UMaster.Nonempty := by
   exact ⟨0, by simp [UMaster]⟩
-end
 
-section
 /-- Membership in Scott's universal family: non-empty subsets of `[0,1)` presentable as a
 finite union of rational half-open intervals. -/
 def UMem (X : Set ℚ) : Prop :=
   (∃ L : List (ℚ × ℚ), X = presentedIntervals L) ∧ X.Nonempty ∧ X ⊆ Set.Ico (0 : ℚ) 1
-end
 
-section
 /-- Every `UMem` set is contained in `[0,1)`. -/
 theorem U_sub_master {X : Set ℚ} (hX : UMem X) : X ⊆ UMaster := hX.2.2
-end
 
-section
 /-- Clip an interval-pair to `[0,1)`, moving `r` up to `0` and `s` down to `1` when needed. -/
 def clip (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ 0, p.2 ⊓ 1)
-end
 
-section
 def clipGe (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ m, p.2)
-end
 
-section
 def clipLt (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1, p.2 ⊓ m)
-end
 
-section
 /-- Pairwise-combine two endpoint-lists via `Set.Ico_inter_Ico`, realizing the intersection of the
 two presented unions as another presented union. -/
 def combineIntervals (L1 L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) :=
   L1.flatMap (fun p => L2.map (fun q => (p.1 ⊔ q.1, p.2 ⊓ q.2)))
-end
 
-section
 theorem presentedIntervals_cons (p : ℚ × ℚ) (L : List (ℚ × ℚ)) :
     presentedIntervals (p :: L) = Set.Ico p.1 p.2 ∪ presentedIntervals L := by
   ext x; simp [Set.mem_Ico, or_and_right, exists_or]
-end
 
-section
 /-- `[0,1)` is presented by the single interval `[0,1)`. -/
 theorem U_master_mem : UMem UMaster :=
   ⟨⟨[(0, 1)], by rw [presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]⟩,
     ⟨0, by norm_num⟩, subset_rfl⟩
-end
 
-section
 /-- **The presented family is closed under intersection**, with no side conditions on endpoints:
 `Set.Ico_inter_Ico` handles crossed bounds automatically by returning the empty interval. -/
 theorem presentedIntervals_inter (L1 L2 : List (ℚ × ℚ)) :
@@ -99,9 +71,7 @@ theorem presentedIntervals_inter (L1 L2 : List (ℚ × ℚ)) :
   · rintro ⟨r, ⟨p, hp, q, hq, rfl⟩, hx1, hx2⟩
     exact ⟨⟨p, hp, le_sup_left.trans hx1, hx2.trans_le inf_le_left⟩,
       ⟨q, hq, le_sup_right.trans hx1, hx2.trans_le inf_le_right⟩⟩
-end
 
-section
 /-- Intersection of two presentable sets is presentable, via `combineIntervals`. -/
 theorem U_inter_mem {X Y Z : Set ℚ} (hX : UMem X) (hY : UMem Y) (hZ : UMem Z)
     (hZsub : Z ⊆ X ∩ Y) : UMem (X ∩ Y) := by
@@ -110,9 +80,7 @@ theorem U_inter_mem {X Y Z : Set ℚ} (hX : UMem X) (hY : UMem Y) (hZ : UMem Z)
   rcases hZ with ⟨-, hZne, -⟩
   exact ⟨⟨combineIntervals L1 L2, presentedIntervals_inter L1 L2⟩,
     hZne.mono hZsub, Set.inter_subset_left.trans hXsub⟩
-end
 
-section
 /- concordance: source L4928 DEFINITION 8.7 interval presentation of U -/
 /-- **Definition 8.7 (Scott 1981, PRG-19).** The neighbourhood system `𝒰` over `[0,1) ⊆ ℚ`: its
 neighbourhoods are the non-empty subsets of `[0,1)` presentable as a finite union of rational
@@ -126,9 +94,7 @@ def U : NeighborhoodSystem ℚ where
   master_mem := U_master_mem
   inter_mem := U_inter_mem
   sub_master := U_sub_master
-end
 
-section
 theorem presentedIntervals_map_clip (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map clip) = presentedIntervals L ∩ Set.Ico (0 : ℚ) 1 := by
   ext x
@@ -193,9 +159,7 @@ theorem presentedIntervals_map_clipGe (m : ℚ) (L : List (ℚ × ℚ)) :
     exact ⟨⟨q, hq, le_sup_left.trans hx1, hx2⟩, le_sup_right.trans hx1⟩
   · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hxm⟩
     exact ⟨(q.1 ⊔ m, q.2), ⟨q, hq, rfl⟩, sup_le hxq1 hxm, hxq2⟩
-end
 
-section
 /-- **Scott's remark after Definition 8.7**: "`U` has no minimal neighbourhoods: every set in `U`
 can be written as the union of two disjoint sets in `U`." Splitting at the rational midpoint `m`
 of any interval witnessing `X`'s non-emptiness realizes `X` as `Y ⊔ Z` for `U`-neighbourhoods
@@ -241,17 +205,13 @@ theorem U_no_minimal {X : Set ℚ} (hX : U.mem X) :
     have hYsub : presentedIntervals L ∩ Set.Iio m ⊆ presentedIntervals L ∩ Set.Ici m := by
       rw [hEq]; exact Set.inter_subset_left
     exact hYne.ne_empty ((Set.inter_eq_left.mpr hYsub).symm.trans hYZinter)
-end
 
-section
 theorem presentedIntervals_append (L1 L2 : List (ℚ × ℚ)) :
     presentedIntervals (L1 ++ L2) = presentedIntervals L1 ∪ presentedIntervals L2 := by
   induction L1 with
   | nil => simp
   | cons p L1 ih => simp [List.cons_append, presentedIntervals_cons, ih, Set.union_assoc]
-end
 
-section
 /-- **`U` is closed under binary union**, as long as the result is non-empty: if `X` and `Y` are
 each either empty or `U`-neighbourhoods, so is `X ∪ Y`. Unlike intersection (Definition 8.7's
 `inter_mem`), this needs no consistency witness — `U`'s neighbourhoods are *by definition* finite
@@ -268,9 +228,7 @@ theorem U_union_mem {X Y : Set ℚ} (hX : X = ∅ ∨ U.mem X) (hY : Y = ∅ ∨
       obtain ⟨⟨L2, rfl⟩, hYne, hYsub⟩ := hY
       refine Or.inr ⟨⟨L1 ++ L2, (presentedIntervals_append L1 L2).symm⟩,
         hXne.mono Set.subset_union_left, Set.union_subset hXsub hYsub⟩
-end
 
-section
 /-- **`U` is closed under finite (`Fintype`-indexed) unions**, as long as the result is
 non-empty: if every `f i` is either empty or a `U`-neighbourhood, so is `⋃ i, f i` (given it is
 non-empty). Proved by folding `U_union_mem` over `Finset.univ` (`Finset.induction_on`). -/
@@ -287,8 +245,6 @@ theorem U_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℚ} (hf : ∀ i,
   have hall : (⋃ i, f i) = ⋃ i ∈ (Finset.univ : Finset ι), f i := by simp
   rw [hall] at hne ⊢
   exact (hstep Finset.univ).resolve_left hne.ne_empty
-end
 
 end DomainTheory.NeighbourhoodSystems
-end
 

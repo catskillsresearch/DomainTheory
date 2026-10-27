@@ -11,7 +11,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_26
 
 namespace DomainTheory.NeighbourhoodSystems
 
-section
 /-- **`U` is closed under set-difference of two of its own neighbourhoods** (or the difference is
 empty): `IntervalPrimrec.lean`'s `diffLists`/`presentedIntervals_diffLists`, built unconditionally
 from `Ico_diff_Ico`, already witnesses presentability of the raw difference; only non-emptiness can
@@ -23,13 +22,9 @@ theorem U_diff_mem {X Y : Set ℚ} (hX : U.mem X) (hY : U.mem Y) : X \ Y = ∅ �
   · exact Or.inl h
   · exact Or.inr ⟨⟨diffLists L1 L2, (presentedIntervals_diffLists L1 L2).symm⟩, h,
       Set.sdiff_subset.trans hXsub⟩
-end
 
-section
 theorem U_diffClosed : U.DiffClosed := fun hX hY => U_diff_mem hX hY
-end
 
-section
 /-- **`U` is Positive**: since `combineIntervals` presents *any* raw intersection of two presented
 lists unconditionally, and `X ∩ Y ⊆ [0,1)` is automatic whenever `X ⊆ [0,1)`, only non-emptiness
 can ever obstruct `U.mem (X ∩ Y)`. -/
@@ -37,34 +32,25 @@ theorem U_isPositive : U.IsPositive := by
   rintro X Y ⟨⟨L1, rfl⟩, -, hXsub⟩ ⟨⟨L2, rfl⟩, -, -⟩
   refine ⟨fun h => h.2.1, fun hne => ⟨⟨combineIntervals L1 L2, presentedIntervals_inter L1 L2⟩,
     hne, Set.inter_subset_left.trans hXsub⟩⟩
-end
 
-section
 theorem U_noMinimal : U.NoMinimal := by
   intro X hX
   obtain ⟨Y, Z, hY, hZ, hYZinter, hYZunion, -, -⟩ := U_no_minimal hX
   exact ⟨Y, Z, hY, hZ, hY.2.1, hZ.2.1, hYZinter, hYZunion⟩
-end
 
-section
 /-- **`V` is Positive**: `levelSet.inter` presents *any* raw intersection unconditionally, so only
 non-emptiness can obstruct `V.mem (X ∩ Y)`. -/
 theorem V_isPositive : V.IsPositive := by
   rintro X Y ⟨k₁, m₁, rfl, -⟩ ⟨k₂, m₂, rfl, -⟩
   refine ⟨fun ⟨k, m, heq, hne⟩ => hne, fun hne => ⟨max k₁ k₂, _, levelSet.inter k₁ m₁ k₂ m₂, hne⟩⟩
-end
 
-section
 theorem V_mem_nonempty {X : Set ℕ} (hX : V.mem X) : X.Nonempty := by
   obtain ⟨k, m, -, hne⟩ := hX; exact hne
-end
 
-section
 theorem V_noMinimal : V.NoMinimal := by
   intro X hX
   obtain ⟨Y, Z, hY, hZ, hYZinter, hYZunion, -, -⟩ := V_no_minimal hX
   exact ⟨Y, Z, hY, hZ, V_mem_nonempty hY, V_mem_nonempty hZ, hYZinter, hYZunion⟩
-end
 
 section
 variable {α γ : Type*}
@@ -329,7 +315,6 @@ end
 namespace testBit
 open NeighborhoodSystem
 
-section
 /-- **The bitwise "and-not" identity**: `a ^^^ (a &&& b) = a` on bits where `b`'s bit is `0`, and
 `= 0` on bits where `b`'s bit is `1` (whether or not `a`'s bit is set) — i.e. exactly "`a`'s bits
 with `b`'s bits cleared". Mirrors `levelSet.inter`'s own `&&&`-formula; here `^^^` combines with
@@ -339,13 +324,11 @@ theorem xor_and_self (a b : ℕ) (i : ℕ) :
     (a ^^^ (a &&& b)).testBit i = (a.testBit i && !b.testBit i) := by
   rw [Nat.testBit_xor, Nat.testBit_and]
   cases a.testBit i <;> cases b.testBit i <;> rfl
-end
 
 end testBit
 namespace levelSet
 open NeighborhoodSystem
 
-section
 /-- **`levelSet` is closed under set-difference, unconditionally** — mirrors `levelSet.inter`
 exactly, combining `upsample`-to-a-common-level with the "and-not" bit identity
 `testBit.xor_and_self` in place of plain `&&&`. -/
@@ -360,10 +343,8 @@ theorem diff (k₁ m₁ k₂ m₂ : ℕ) :
   ext n
   simp only [mem_levelSet, Set.mem_sdiff, testBit.xor_and_self, Bool.and_eq_true, Bool.not_eq_true,
     Bool.not_eq_true']
-end
 
 end levelSet
-section
 open NeighborhoodSystem
 
 /-- **`V` is closed under set-difference of two of its own neighbourhoods** (or the difference is
@@ -377,7 +358,6 @@ theorem V_diff_mem {X Y : Set ℕ} (hX : V.mem X) (hY : V.mem Y) : X \ Y = ∅ �
 
 theorem V_diffClosed : V.DiffClosed := fun hX hY => V_diff_mem hX hY
 
-end
 
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
@@ -773,34 +753,24 @@ end
 end emptyInterDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 def stateRemC (t : ℕ) : ℕ := t.unpair.1
-end
 
 namespace stateRemC
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 @[simp] theorem packStateC (a b : ℕ) : stateRemC (_root_.DomainTheory.NeighbourhoodSystems.packStateC a b) = a := by
   unfold stateRemC _root_.DomainTheory.NeighbourhoodSystems.packStateC; simp only [unpair_pair_fst]
-end
 
 end stateRemC
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 /-- The base (depth-`0`) state: `A₀ = D₀.master`, `B₀ = D₁.master`, never junk. -/
 def stateBase2 (masterIdx0 masterIdx1 : ℕ) : ℕ := packState2 masterIdx0 masterIdx1 0
-end
 
-section
 def stateInnerC (t : ℕ) : ℕ := t.unpair.2
-end
 
-section
 @[simp] theorem stateInnerC_packStateC (a b : ℕ) : stateInnerC (packStateC a b) = b := by
   unfold stateInnerC packStateC; simp only [unpair_pair_snd]
-end
 
 section
 section AtomPairCode
@@ -818,7 +788,6 @@ def atomPairBase (k : ℕ) : ℕ := packStateC k (stateBase2 P₀.masterIdx P₁
 end AtomPairCode
 end
 
-section
 /-- **Genuine `\`-index equality**, given the emptiness decider reads `0`: the raw existence fact
 (`existsDiffDec.spec`) plugged straight into `hDiff.diffIdx_spec` — unconditional. -/
 theorem diffIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} {Q : ComputablePresentation W}
@@ -828,16 +797,12 @@ theorem diffIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} {Q : C
   have hle := existsDiffDec.le_one Q hDiff (Nat.pair idx0 n0)
   have h1 : existsDiffDec Q hDiff (Nat.pair idx0 n0) = 1 := by unfold emptyDiffDec at h; omega
   exact (existsDiffDec.spec Q hDiff idx0 n0).mp h1
-end
 
-section
 def encodeDeltaPair (δ : ℕ → Bool × Bool) : ℕ → ℕ
   | 0 => 0
   | n + 1 => encodeDeltaPair δ n +
       ((if (δ n).1 then 1 else 0) + (if (δ n).2 then 2 else 0)) * 4 ^ n
-end
 
-section
 theorem encodeDeltaPair_lt (δ : ℕ → Bool × Bool) : ∀ n, encodeDeltaPair δ n < 4 ^ n
   | 0 => by simp [encodeDeltaPair]
   | n + 1 => by
@@ -848,9 +813,7 @@ theorem encodeDeltaPair_lt (δ : ℕ → Bool × Bool) : ∀ n, encodeDeltaPair 
       rcases Bool.eq_false_or_eq_true (δ n).1 with h1 | h1 <;>
         rcases Bool.eq_false_or_eq_true (δ n).2 with h2 | h2 <;>
         simp only [h1, h2, ite_true, ite_false, Bool.false_eq_true] <;> omega
-end
 
-section
 /-- **Genuine `∩`-index equality**, given the emptiness decider reads `0`: the raw existence fact
 (`existsInterDec.spec`) plugged straight into `Q.inter_spec` — unconditional, no `IsPositive`/
 `NoMinimal` needed. -/
@@ -861,7 +824,6 @@ theorem interIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} (Q : 
   have hle := existsInterDec.le_one Q (Nat.pair idx0 n0)
   have h1 : existsInterDec Q (Nat.pair idx0 n0) = 1 := by unfold emptyInterDec at h; omega
   exact (existsInterDec.spec Q idx0 n0).mp h1
-end
 
 section
 section AtomPairCorrect
@@ -882,7 +844,6 @@ theorem junk_eq_zero_of_selectFn_eq_zero {junk X : ℕ} (h : selectFn junk 1 X =
 end AtomPairCorrect
 end
 
-section
 /-- **A union of two already-genuine neighbourhoods is again genuine** (sharper than
 `union.mem_or_empty`'s bare dichotomy): under `NoMinimal`, a `mem` set is never empty
 (`NoMinimal.mem_ne_empty`), so `X ∪ Y ⊇ X ≠ ∅` rules out the dichotomy's `∅` branch outright. -/
@@ -891,9 +852,7 @@ theorem NeighborhoodSystem.mem_union_of_mem {γ : Type*} {D : NeighborhoodSystem
     (hX : D.mem X) (hY : D.mem Y) : D.mem (X ∪ Y) :=
   (union.mem_or_empty hpos hdiff (Or.inr hX) (Or.inr hY)).resolve_left fun h =>
     hnomin.mem_ne_empty hX (Set.subset_eq_empty Set.subset_union_left h)
-end
 
-section
 /-- **Combine two `(found, code)` packed fold results into one**: union their codes via `hUnion`
 when both found something, and simply propagate whichever single side found something otherwise
 (mirroring `XFoldStep`/`YFoldStep`'s own "skip junk, else union" shape one level up). Generic in any
@@ -904,12 +863,10 @@ noncomputable def combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
   selectFn r0.unpair.1
     (selectFn r1.unpair.1 (Nat.pair 1 (hUnion.unionIdx r0.unpair.2 r1.unpair.2)) r0)
     r1
-end
 
 namespace combineFound2
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 theorem found_iff {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
     (h0 : r0.unpair.1 ≤ 1) (h1 : r1.unpair.1 ≤ 1) :
@@ -921,9 +878,7 @@ theorem found_iff {γ : Type*} {W : NeighborhoodSystem γ}
     rcases Nat.eq_zero_or_pos r1.unpair.1 with hr1 | hr1
     · rw [hr1, selectFn_zero]; omega
     · rw [show r1.unpair.1 = 1 from by omega, selectFn_one, unpair_pair_fst]; omega
-end
 
-section
 theorem mem_iff {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hpos : W.IsPositive) (hdiff : W.DiffClosed)
     (hnomin : W.NoMinimal) (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
@@ -962,9 +917,7 @@ theorem mem_iff {γ : Type*} {W : NeighborhoodSystem γ}
       · rintro (⟨-, hz⟩ | ⟨-, hz⟩)
         · exact Or.inl hz
         · exact Or.inr hz
-end
 
-section
 theorem mem_of_found {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hpos : W.IsPositive) (hdiff : W.DiffClosed)
     (hnomin : W.NoMinimal) (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
@@ -989,38 +942,30 @@ theorem mem_of_found {γ : Type*} {W : NeighborhoodSystem γ}
         Q.surj (NeighborhoodSystem.mem_union_of_mem hpos hdiff hnomin hmem0' hmem1')
       rw [hUnion.unionIdx_spec hex]
       exact NeighborhoodSystem.mem_union_of_mem hpos hdiff hnomin hmem0' hmem1'
-end
 
 end combineFound2
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 /-- **The two-bits-per-depth sign sequence** read off a bit-source `k`, the `atomPairG`-shaped
 analogue of `Theorem88d.lean`'s `deltaOf`: the depth-`i` nibble `(k / 4 ^ i) % 2` supplies `(δ i).1`,
 and `(k / 4 ^ i / 2) % 2` supplies `(δ i).2` — matching exactly how `atomPairStep` peels two bits
 per depth from `rem` (`rem % 2`, `(rem / 2) % 2`, then `rem / 4`). -/
 def deltaPair (k : ℕ) : ℕ → Bool × Bool :=
   fun i => (decide ((k / 4 ^ i) % 2 = 1), decide ((k / 4 ^ i / 2) % 2 = 1))
-end
 
 namespace deltaPair
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 theorem fst_eq_testBit (k i : ℕ) : (deltaPair k i).1 = k.testBit (2 * i) := by
   show decide ((k / 4 ^ i) % 2 = 1) = k.testBit (2 * i)
   rw [Nat.testBit_eq_decide_div_mod_eq, show (4 : ℕ) ^ i = 2 ^ (2 * i) by
     rw [show (4 : ℕ) = 2 ^ 2 from rfl, ← pow_mul]]
-end
 
-section
 theorem snd_eq_testBit (k i : ℕ) : (deltaPair k i).2 = k.testBit (2 * i + 1) := by
   show decide ((k / 4 ^ i / 2) % 2 = 1) = k.testBit (2 * i + 1)
   rw [Nat.div_div_eq_div_mul, Nat.testBit_eq_decide_div_mod_eq, show (4 : ℕ) ^ i * 2 = 2 ^ (2 * i + 1)
     by rw [show (4 : ℕ) = 2 ^ 2 from rfl, ← pow_mul, pow_succ]]
-end
 
-section
 /-- **The inversion property**: `deltaPair (encodeDeltaPair δ n)` agrees with `δ` on every position
 strictly below `n`. Combined with `atomPairG.congr` (`(d)(1)`, already `Pass`), this is exactly
 what transports `(c)(ii)`'s `Fin n → Bool × Bool`-indexed classical covering fact into the
@@ -1072,7 +1017,6 @@ theorem encodeDeltaPair (δ : ℕ → Bool × Bool) :
       rcases Bool.eq_false_or_eq_true (δ i).1 with h1 | h1 <;>
         rcases Bool.eq_false_or_eq_true (δ i).2 with h2 | h2 <;>
         simp [h1, h2, Prod.ext_iff]
-end
 
 end deltaPair
 namespace selectFn
@@ -2610,7 +2554,6 @@ end
 end atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 /-- **Contrapositive form**: two distinct bit-sources both `< 4 ^ n` must disagree somewhere below
 `n` — the form actually consumed by `(d)(5)(b)`'s I-formula lemmas (ruling out cross-terms from a
 *different* bit-source witnessing the same point). Inlines the former
@@ -2639,7 +2582,6 @@ theorem exists_deltaPair_ne_of_lt_of_ne {n k k' : ℕ} (hk : k < 4 ^ n) (hk' : k
       have hile : (2 : ℕ) ^ (2 * n) ≤ 2 ^ l := Nat.pow_le_pow_right (by norm_num) hl
       rw [Nat.testBit_lt_two_pow ((h4n ▸ hk).trans_le hile),
         Nat.testBit_lt_two_pow ((h4n ▸ hk').trans_le hile)])
-end
 
 section
 section AtomPairCorrect4
@@ -5223,17 +5165,11 @@ theorem emptyInterDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.em
 end DirectDec
 end
 
-section
 theorem stateIdx0 : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateIdx0 := Nat.Primrec.left
-end
 
-section
 theorem stateIdx1 : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateIdx1 := Nat.Primrec.left.comp Nat.Primrec.right
-end
 
-section
 theorem stateJunk : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateJunk := Nat.Primrec.right.comp Nat.Primrec.right
-end
 
 section
 section AtomPairCode
@@ -5251,7 +5187,6 @@ theorem atomPairBase : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.ato
 end AtomPairCode
 end
 
-section
 theorem combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) :
     Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.combineFound2 hUnion t.unpair.1 t.unpair.2) := by
@@ -5269,15 +5204,10 @@ theorem combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
       (Nat.pair 1 (hUnion.unionIdx t.unpair.1.unpair.2 t.unpair.2.unpair.2)) t.unpair.1) :=
     primrec_selectFn hf1 ((Nat.Primrec.const 1).pair hunion) h0
   exact (primrec_selectFn hf0 hinner h1).of_eq fun t => by unfold _root_.DomainTheory.NeighbourhoodSystems.combineFound2; simp only []
-end
 
-section
 theorem stateInnerC : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateInnerC := Nat.Primrec.right
-end
 
-section
 theorem stateRemC : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateRemC := Nat.Primrec.left
-end
 
 section
 section XSubStep
@@ -8887,7 +8817,6 @@ end EffectiveIso812d
 
 end
 
-section
 open Domain.Recursive NeighborhoodSystem
 
 /-- **A union of two genuine `U`-neighbourhoods is again genuine, unconditionally** — no
@@ -9014,7 +8943,6 @@ theorem myXor_eq_xor (a b : ℕ) : myXor a b = a ^^^ b := by
 theorem myAndNot_eq (a b : ℕ) : myAndNot a b = a ^^^ (a &&& b) := by
   unfold myAndNot; rw [myXor_eq_xor, myLand_eq_land]
 
-end
 
 namespace atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
@@ -9048,7 +8976,6 @@ end atomPairJunk
 namespace combineFound2
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 theorem found_le_one {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
     (h0 : r0.unpair.1 ≤ 1) (h1 : r1.unpair.1 ≤ 1) :
@@ -9060,11 +8987,9 @@ theorem found_le_one {γ : Type*} {W : NeighborhoodSystem γ}
     rcases Nat.eq_zero_or_pos r1.unpair.1 with hr1 | hr1
     · rw [hr1, selectFn_zero]; exact h0
     · rw [show r1.unpair.1 = 1 from by omega, selectFn_one, unpair_pair_fst]
-end
 
 end combineFound2
 
-section
 open Domain.Recursive
 
 /-- **A computable canonical bisection of a `ComputablePresentation`'s own neighbourhoods**: two
@@ -9102,7 +9027,6 @@ structure ComputableBisection {γ : Type*} {W : NeighborhoodSystem γ} (Q : Comp
   left_congr : ∀ k k', Q.X k = Q.X k' → Q.X (left k) = Q.X (left k')
   /-- `right`'s *output set* depends only on `Q.X k` as a set, not on which raw index represents it. -/
   right_congr : ∀ k k', Q.X k = Q.X k' → Q.X (right k) = Q.X (right k')
-end
 
 section
 open Domain.Recursive
@@ -9390,7 +9314,6 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
 end ComputableBisection
 end
 
-section
 /-- **`B812e`: `V`'s computable canonical bisection, packaged as a `ComputableBisection`.** -/
 def B812e : ComputableBisection VComputablePresentation where
   left := splitVLeft
@@ -9401,15 +9324,11 @@ def B812e : ComputableBisection VComputablePresentation where
   union := splitV_union
   left_congr := fun _ _ h => splitVLeft_congr h
   right_congr := fun _ _ h => splitVRight_congr h
-end
 
-section
 /-- The difference index: `diffCode` on canonicalized codes (`UX` re-canonicalizes on lookup, so no
 further canonicalization is needed here — mirrors `Uinter`). -/
 def Udiff (n m : ℕ) : ℕ := diffCode (canonCode n) (canonCode m)
-end
 
-section
 /-- **Scott's consistency condition for `\` reduces to non-emptiness**, exactly mirroring
 `U_cons_iff_nonempty_inter`: `U_diff_mem` (`Exercise812c.lean`) shows `UX n \ UX m` is always either
 empty or a genuine `U`-neighbourhood, and every `UX k` is non-empty (`U.mem` forces
@@ -9423,12 +9342,10 @@ theorem U_diff_iff_nonempty (n m : ℕ) :
     rcases U_diff_mem (U_mem_UX n) (U_mem_UX m) with hempty | hmem
     · exact absurd hempty hne.ne_empty
     · exact U_surj_UX hmem
-end
 
 namespace Udiff
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`Udiff` realizes set difference at the raw (uncanonicalized) `presentedIntervals` level**,
 unconditionally — the one respect in which `\` is *simpler* than `∩` here (no consistency case
 split needed at this stage). -/
@@ -9436,15 +9353,12 @@ theorem eq_diff (n m : ℕ) :
     presentedIntervals (decodeQPairList (Udiff n m)) = UX n \ UX m := by
   unfold Udiff
   exact presentedIntervals_decodeQPairList_diffCode (canonCode n) (canonCode m)
-end
 
-section
 theorem primrec : Nat.Primrec (fun t : ℕ => Udiff t.unpair.1 t.unpair.2) := by
   unfold Udiff
   exact (primrec_diffCode.comp ((primrec_canonCode.comp Nat.Primrec.left).pair
     (primrec_canonCode.comp Nat.Primrec.right))).of_eq
     fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
-end
 
 end Udiff
 open Domain.Recursive NeighborhoodSystem
@@ -9452,7 +9366,6 @@ open Domain.Recursive NeighborhoodSystem
 namespace Udiff
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`Udiff n m` genuinely indexes `UX n \ UX m` whenever that difference is a genuine
 neighbourhood** — mirrors `Uinter_spec` exactly: the raw `diffCode` output is already a genuine
 `U`-neighbourhood (by hypothesis via `Udiff.eq_diff`), so re-canonicalizing it (`canonCode`'s own
@@ -9464,12 +9377,10 @@ theorem spec {n m : ℕ} (h : ∃ k, UX k = UX n \ UX m) : UX (Udiff n m) = UX n
     rw [← hk]; exact U_mem_UX k
   show presentedIntervals (decodeQPairList (canonCode (Udiff n m))) = _
   rw [presentedIntervals_decodeQPairList_canonCode, canonList_fixed hUL, Udiff.eq_diff]
-end
 
 end Udiff
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`U` has a computable `\`**, completing the missing prerequisite this section opened with. -/
 def U_isComputableDiff : IsComputableDiff UComputablePresentation where
   diffIdx := Udiff
@@ -9481,7 +9392,6 @@ def U_isComputableDiff : IsComputableDiff UComputablePresentation where
       (recDecidable_presentedIntervals_nonempty.comp Udiff.primrec)
     show (∃ k, UX k = UX t.unpair.1 \ UX t.unpair.2) ↔ _
     rw [U_diff_iff_nonempty, ← Udiff.eq_diff]
-end
 
 end DomainTheory.NeighbourhoodSystems
 end

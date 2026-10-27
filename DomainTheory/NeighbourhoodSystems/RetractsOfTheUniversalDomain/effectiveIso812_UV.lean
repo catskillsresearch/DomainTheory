@@ -13,7 +13,6 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace decodeRat
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem foldl_ratMax (l : List ℕ) (z : ℕ) :
     decodeRat (l.foldl (fun acc x => ratMaxCode (Nat.pair acc x.unpair.2)) z)
       = (l.map decodeRatPair).foldl (fun acc p => max acc p.2) (decodeRat z) := by
@@ -22,13 +21,11 @@ theorem foldl_ratMax (l : List ℕ) (z : ℕ) :
   | cons a l ih =>
     rw [List.foldl_cons, List.map_cons, List.foldl_cons, ih, decodeRat_ratMaxCode]
     rfl
-end
 
 end decodeRat
 namespace foldl
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem maxSnd_mem_or_eq_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
     L.foldl (fun acc p => max acc p.2) seed = seed ∨
       ∃ p ∈ L, L.foldl (fun acc q => max acc q.2) seed = p.2 := by
@@ -45,12 +42,10 @@ theorem maxSnd_mem_or_eq_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
       rcases ih a.2 with h | ⟨p, hp, h⟩
       · exact Or.inr ⟨a, List.mem_cons_self .., h⟩
       · exact Or.inr ⟨p, List.mem_cons_of_mem a hp, h⟩
-end
 
 end foldl
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **Every pair of `decodeQPairList (canonCode c)` has both endpoints in `[0, 1]`** — mirrors
 `forall_lt_decodeQPairList_canonCode` (nondegeneracy), giving the companion boundedness fact. -/
 theorem forall_bounds_decodeQPairList_canonCode (c : ℕ) :
@@ -70,23 +65,17 @@ theorem forall_bounds_decodeQPairList_canonCode (c : ℕ) :
     intro p hp
     obtain ⟨p0, -, -, rfl⟩ := (mem_decodeQPairList_canonListCode c p).mp hp
     exact ⟨le_sup_right, inf_le_right⟩
-end
 
-section
 /-- `max_i pᵢ.2` over a presenting list, folded with seed `0`. -/
 def listMaxSnd (L : List (ℚ × ℚ)) : ℚ := L.foldl (fun acc p => max acc p.2) 0
-end
 
-section
 /-- `min_i pᵢ.1` over a presenting list, folded with seed `1` (safe: every genuine pair has
 `p.1 < 1` once bounded, `forall_bounds_decodeQPairList_canonCode`). -/
 def listMinFst (L : List (ℚ × ℚ)) : ℚ := L.foldl (fun acc p => min acc p.1) 1
-end
 
 namespace decodeRat
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- Bridging `List.foldl` over raw pair-codes (via `ratMinCode`) to `List.foldl` over decoded
 pairs (via `min ·.1`), one step at a time. -/
 theorem foldl_ratMin (l : List ℕ) (z : ℕ) :
@@ -97,13 +86,11 @@ theorem foldl_ratMin (l : List ℕ) (z : ℕ) :
   | cons a l ih =>
     rw [List.foldl_cons, List.map_cons, List.foldl_cons, ih, decodeRat_ratMinCode]
     rfl
-end
 
 end decodeRat
 namespace foldl
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem maxSnd_seed_le (L : List (ℚ × ℚ)) (seed : ℚ) :
     seed ≤ L.foldl (fun acc p => max acc p.2) seed := by
   induction L generalizing seed with
@@ -111,21 +98,17 @@ theorem maxSnd_seed_le (L : List (ℚ × ℚ)) (seed : ℚ) :
   | cons a l ih =>
     rw [List.foldl_cons]
     exact (le_max_left seed a.2).trans (ih (max seed a.2))
-end
 
 end foldl
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- The code-level `listMaxSnd`: fold `ratMaxCode` over `c`'s pair-codes, seeded at `zeroCode`. -/
 def listMaxSndCode (c : ℕ) : ℕ :=
   foldCode (fun t => ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.2)) 0 zeroCode c
-end
 
 namespace decodeRat
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem listMaxSndCode (c : ℕ) :
     decodeRat (_root_.DomainTheory.NeighbourhoodSystems.listMaxSndCode c) = listMaxSnd (decodeQPairList c) := by
   unfold _root_.DomainTheory.NeighbourhoodSystems.listMaxSndCode listMaxSnd decodeQPairList
@@ -136,13 +119,11 @@ theorem listMaxSndCode (c : ℕ) :
       = (fun acc x : ℕ => ratMaxCode (Nat.pair acc x.unpair.2)) := by
     funext acc x; simp only [unpair_pair_fst, unpair_pair_snd]
   rw [hstep, decodeRat.foldl_ratMax, decodeRat_zeroCode]
-end
 
 end decodeRat
 namespace foldl
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem maxSnd_ge (L : List (ℚ × ℚ)) (seed : ℚ) (p : ℚ × ℚ) (hp : p ∈ L) :
     p.2 ≤ L.foldl (fun acc q => max acc q.2) seed := by
   induction L generalizing seed with
@@ -152,39 +133,31 @@ theorem maxSnd_ge (L : List (ℚ × ℚ)) (seed : ℚ) (p : ℚ × ℚ) (hp : p 
     rcases List.mem_cons.mp hp with rfl | hp'
     · exact (le_max_right seed p.2).trans (foldl.maxSnd_seed_le l (max seed p.2))
     · exact ih (max seed a.2) hp'
-end
 
 end foldl
 namespace listMaxSnd
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem ge {L : List (ℚ × ℚ)} {p : ℚ × ℚ} (hp : p ∈ L) : p.2 ≤ listMaxSnd L :=
   foldl.maxSnd_ge L 0 p hp
-end
 
-section
 theorem attained {L : List (ℚ × ℚ)} (hne : L ≠ []) (hlb : ∀ p ∈ L, 0 < p.2) :
     ∃ p ∈ L, p.2 = listMaxSnd L := by
   rcases foldl.maxSnd_mem_or_eq_seed L 0 with h1 | ⟨p, hp, h1⟩
   · obtain ⟨p0, hp0⟩ := List.exists_mem_of_ne_nil L hne
     exact absurd (h1 ▸ listMaxSnd.ge hp0) (not_le.mpr (hlb p0 hp0))
   · exact ⟨p, hp, h1.symm⟩
-end
 
 end listMaxSnd
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- The code-level `listMinFst`: fold `ratMinCode` over `c`'s pair-codes, seeded at `oneCode`. -/
 def listMinFstCode (c : ℕ) : ℕ :=
   foldCode (fun t => ratMinCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.1)) 0 oneCode c
-end
 
 namespace decodeRat
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem listMinFstCode (c : ℕ) :
     decodeRat (_root_.DomainTheory.NeighbourhoodSystems.listMinFstCode c) = listMinFst (decodeQPairList c) := by
   unfold _root_.DomainTheory.NeighbourhoodSystems.listMinFstCode listMinFst decodeQPairList
@@ -195,13 +168,11 @@ theorem listMinFstCode (c : ℕ) :
       = (fun acc x : ℕ => ratMinCode (Nat.pair acc x.unpair.1)) := by
     funext acc x; simp only [unpair_pair_fst, unpair_pair_snd]
   rw [hstep, decodeRat.foldl_ratMin, decodeRat_oneCode]
-end
 
 end decodeRat
 namespace foldl
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem minFst_le_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
     L.foldl (fun acc p => min acc p.1) seed ≤ seed := by
   induction L generalizing seed with
@@ -209,13 +180,11 @@ theorem minFst_le_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
   | cons a l ih =>
     rw [List.foldl_cons]
     exact (ih (min seed a.1)).trans (min_le_left seed a.1)
-end
 
 end foldl
 namespace listMaxSnd
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`listMaxSnd L` is arbitrarily approached from below by `presentedIntervals L`.** -/
 theorem tight {L : List (ℚ × ℚ)} (hne : L ≠ [])
     (hpos : ∀ p ∈ L, p.1 < p.2) (hb : ∀ p ∈ L, 0 ≤ p.1 ∧ p.2 ≤ 1) {y : ℚ}
@@ -227,21 +196,17 @@ theorem tight {L : List (ℚ × ℚ)} (hne : L ≠ [])
   · exact ⟨p.1, mem_presentedIntervals.mpr ⟨p, hp, le_refl _, hpos p hp⟩, hlt⟩
   · exact ⟨(y + p.2) / 2, mem_presentedIntervals.mpr ⟨p, hp, hge.trans (left_lt_add_div_two.mpr hy).le,
       add_div_two_lt_right.mpr hy⟩, left_lt_add_div_two.mpr hy⟩
-end
 
 end listMaxSnd
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- The midpoint code of `canonCode n`'s intrinsic `(min, max)` pair. -/
 def splitU2MidCode (n : ℕ) : ℕ :=
   ratMidCode (Nat.pair (listMinFstCode (canonCode n)) (listMaxSndCode (canonCode n)))
-end
 
 namespace decodeRat
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem splitU2MidCode (n : ℕ) :
     decodeRat (_root_.DomainTheory.NeighbourhoodSystems.splitU2MidCode n) =
       (listMinFst (decodeQPairList (canonCode n)) + listMaxSnd (decodeQPairList (canonCode n)))
@@ -249,13 +214,11 @@ theorem splitU2MidCode (n : ℕ) :
   unfold _root_.DomainTheory.NeighbourhoodSystems.splitU2MidCode
   rw [decodeRat_ratMidCode', unpair_pair_fst, unpair_pair_snd, decodeRat.listMinFstCode,
     decodeRat.listMaxSndCode]
-end
 
 end decodeRat
 namespace foldl
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem minFst_le (L : List (ℚ × ℚ)) (seed : ℚ) (p : ℚ × ℚ) (hp : p ∈ L) :
     L.foldl (fun acc q => min acc q.1) seed ≤ p.1 := by
   induction L generalizing seed with
@@ -265,22 +228,18 @@ theorem minFst_le (L : List (ℚ × ℚ)) (seed : ℚ) (p : ℚ × ℚ) (hp : p 
     rcases List.mem_cons.mp hp with rfl | hp'
     · exact (foldl.minFst_le_seed l (min seed p.1)).trans (min_le_right seed p.1)
     · exact ih (min seed a.1) hp'
-end
 
 end foldl
 namespace listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem le {L : List (ℚ × ℚ)} {p : ℚ × ℚ} (hp : p ∈ L) : listMinFst L ≤ p.1 :=
   foldl.minFst_le L 1 p hp
-end
 
 end listMinFst
 namespace splitU2
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`Xₙ`'s intrinsic minimum is strictly below its intrinsic maximum**, via any single
 witnessing pair of `canonCode n`'s presenting list (nonempty, `forall_lt_...`). -/
 theorem min_lt_max (n : ℕ) :
@@ -288,57 +247,45 @@ theorem min_lt_max (n : ℕ) :
   obtain ⟨p, hp⟩ := List.exists_mem_of_ne_nil _ (decodeQPairList_canonCode_ne_nil n)
   exact lt_of_le_of_lt (listMinFst.le hp)
     (lt_of_lt_of_le (forall_lt_decodeQPairList_canonCode n p hp) (listMaxSnd.ge hp))
-end
 
-section
 theorem mid_lt_max (n : ℕ) :
     decodeRat (splitU2MidCode n) < listMaxSnd (decodeQPairList (canonCode n)) := by
   rw [decodeRat.splitU2MidCode]; exact add_div_two_lt_right.mpr (splitU2.min_lt_max n)
-end
 
-section
 theorem min_lt_mid (n : ℕ) :
     listMinFst (decodeQPairList (canonCode n)) < decodeRat (splitU2MidCode n) := by
   rw [decodeRat.splitU2MidCode]; exact left_lt_add_div_two.mpr (splitU2.min_lt_max n)
-end
 
 end splitU2
 namespace listMaxSnd
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`listMaxSnd L` strictly upper-bounds `presentedIntervals L`.** -/
 theorem upper_bound {L : List (ℚ × ℚ)} {x : ℚ} (hx : x ∈ presentedIntervals L) :
     x < listMaxSnd L := by
   obtain ⟨p, hp, -, hx2⟩ := mem_presentedIntervals.mp hx
   exact hx2.trans_le (listMaxSnd.ge hp)
-end
 
 end listMaxSnd
 namespace listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`listMinFst L` lower-bounds `presentedIntervals L`.** -/
 theorem lower_bound {L : List (ℚ × ℚ)} {x : ℚ} (hx : x ∈ presentedIntervals L) :
     listMinFst L ≤ x := by
   obtain ⟨p, hp, hx1, -⟩ := _root_.DomainTheory.NeighbourhoodSystems.mem_presentedIntervals.mp hx
   exact (listMinFst.le hp).trans hx1
-end
 
 end listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- The "left" half of the canonical split of `Xₙ`: `Xₙ ∩ (-∞, m)` for `m` the midpoint of `Xₙ`'s
 intrinsic `(min, max)`. -/
 def splitU2Left (n : ℕ) : ℕ := clipLtListCode (splitU2MidCode n) (canonCode n)
-end
 
 namespace foldl
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem minFst_mem_or_eq_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
     L.foldl (fun acc p => min acc p.1) seed = seed ∨
       ∃ p ∈ L, L.foldl (fun acc q => min acc q.1) seed = p.1 := by
@@ -355,26 +302,22 @@ theorem minFst_mem_or_eq_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
       rcases ih a.1 with h | ⟨p, hp, h⟩
       · exact Or.inr ⟨a, List.mem_cons_self .., h⟩
       · exact Or.inr ⟨p, List.mem_cons_of_mem a hp, h⟩
-end
 
 end foldl
 namespace listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem attained {L : List (ℚ × ℚ)} (hne : L ≠ []) (hub : ∀ p ∈ L, p.1 < 1) :
     ∃ p ∈ L, p.1 = listMinFst L := by
   rcases foldl.minFst_mem_or_eq_seed L 1 with h1 | ⟨p, hp, h1⟩
   · obtain ⟨p0, hp0⟩ := List.exists_mem_of_ne_nil L hne
     exact absurd (h1 ▸ listMinFst.le hp0) (not_le.mpr (hub p0 hp0))
   · exact ⟨p, hp, h1.symm⟩
-end
 
 end listMinFst
 namespace listMaxSnd
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`listMaxSnd` is a well-defined function of the presented set alone.** -/
 theorem congr {L1 L2 : List (ℚ × ℚ)} (hne1 : L1 ≠ []) (hne2 : L2 ≠ [])
     (hpos1 : ∀ p ∈ L1, p.1 < p.2) (hb1 : ∀ p ∈ L1, 0 ≤ p.1 ∧ p.2 ≤ 1)
@@ -389,13 +332,11 @@ theorem congr {L1 L2 : List (ℚ × ℚ)} (hne1 : L1 ≠ []) (hne2 : L2 ≠ [])
   · obtain ⟨x, hx, hyx⟩ := listMaxSnd.tight hne1 hpos1 hb1 hlt
     have hx2 : x ∈ presentedIntervals L2 := heq ▸ hx
     exact absurd (listMaxSnd.upper_bound hx2) (not_lt.mpr hyx.le)
-end
 
 end listMaxSnd
 namespace listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`listMinFst L` is the genuine minimum of `presentedIntervals L`** (membership half). -/
 theorem mem_presentedIntervals {L : List (ℚ × ℚ)} (hne : L ≠ [])
     (hpos : ∀ p ∈ L, p.1 < p.2) (hb : ∀ p ∈ L, 0 ≤ p.1 ∧ p.2 ≤ 1) :
@@ -403,9 +344,7 @@ theorem mem_presentedIntervals {L : List (ℚ × ℚ)} (hne : L ≠ [])
   have hub : ∀ p ∈ L, p.1 < 1 := fun p hp => (hpos p hp).trans_le (hb p hp).2
   obtain ⟨p, hp, hpeq⟩ := listMinFst.attained hne hub
   exact _root_.DomainTheory.NeighbourhoodSystems.mem_presentedIntervals.mpr ⟨p, hp, hpeq.le, hpeq ▸ hpos p hp⟩
-end
 
-section
 /-- **`listMinFst` is a well-defined function of the presented set alone**, mirroring
 `MinLevel.lean`'s `minLevel_unique` for `V`: two (nonempty, nondegenerate, `[0,1]`-bounded)
 presenting lists of the *same* set have the same `listMinFst`. -/
@@ -419,12 +358,10 @@ theorem congr {L1 L2 : List (ℚ × ℚ)} (hne1 : L1 ≠ []) (hne2 : L2 ≠ [])
   have hm2 : listMinFst L2 ∈ presentedIntervals L1 :=
     heq ▸ listMinFst.mem_presentedIntervals hne2 hpos2 hb2
   exact le_antisymm (listMinFst.lower_bound hm2) (listMinFst.lower_bound hm1)
-end
 
 end listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`splitU2Left`/`splitU2Right`'s midpoint depends only on `UX n` as a set** — the key lemma
 that `SplitU.lean`'s `splitULeft`/`splitURight` lack, via `listMinFst.congr`/`listMaxSnd.congr`. -/
 theorem splitU2MidCode_congr {n n' : ℕ} (h : UX n = UX n') :
@@ -440,14 +377,10 @@ theorem splitU2MidCode_congr {n n' : ℕ} (h : UX n = UX n') :
     (forall_bounds_decodeQPairList_canonCode n) (forall_lt_decodeQPairList_canonCode n')
     (forall_bounds_decodeQPairList_canonCode n') heqP
   rw [decodeRat.splitU2MidCode, decodeRat.splitU2MidCode, hminEq, hmaxEq]
-end
 
-section
 /-- The "right" half of the canonical split of `Xₙ`: `Xₙ ∩ [m, ∞)`. -/
 def splitU2Right (n : ℕ) : ℕ := clipGeListCode (splitU2MidCode n) (canonCode n)
-end
 
-section
 theorem UX_splitU2Right (n : ℕ) :
     UX (splitU2Right n) = UX n ∩ Set.Ici (decodeRat (splitU2MidCode n)) := by
   have hUL : U.mem (presentedIntervals (decodeQPairList (splitU2Right n))) := by
@@ -466,16 +399,12 @@ theorem UX_splitU2Right (n : ℕ) :
   show presentedIntervals (decodeQPairList (clipGeListCode (splitU2MidCode n) (canonCode n))) = _
   rw [presentedIntervals_decodeQPairList_clipGeListCode]
   rfl
-end
 
-section
 /-- **`splitU2Right`'s output set is a well-defined function of `UX k` as a set.** -/
 theorem splitU2Right_congr {n n' : ℕ} (h : UX n = UX n') :
     UX (splitU2Right n) = UX (splitU2Right n') := by
   rw [UX_splitU2Right, UX_splitU2Right, h, splitU2MidCode_congr h]
-end
 
-section
 theorem UX_splitU2Left (n : ℕ) :
     UX (splitU2Left n) = UX n ∩ Set.Iio (decodeRat (splitU2MidCode n)) := by
   have hUL : U.mem (presentedIntervals (decodeQPairList (splitU2Left n))) := by
@@ -493,12 +422,10 @@ theorem UX_splitU2Left (n : ℕ) :
   show presentedIntervals (decodeQPairList (clipLtListCode (splitU2MidCode n) (canonCode n))) = _
   rw [presentedIntervals_decodeQPairList_clipLtListCode]
   rfl
-end
 
 namespace splitU2
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **Disjointness**: `splitU2Left`/`splitU2Right` cover disjoint pieces. -/
 theorem disjoint (n : ℕ) : UX (splitU2Left n) ∩ UX (splitU2Right n) = ∅ := by
   rw [UX_splitU2Left, UX_splitU2Right]
@@ -506,9 +433,7 @@ theorem disjoint (n : ℕ) : UX (splitU2Left n) ∩ UX (splitU2Right n) = ∅ :=
   simp only [Set.mem_inter_iff, Set.mem_Iio, Set.mem_Ici, Set.mem_empty_iff_false, iff_false]
   rintro ⟨⟨-, h1⟩, -, h2⟩
   exact absurd h1 (not_lt.mpr h2)
-end
 
-section
 /-- **Covering**: `splitU2Left`/`splitU2Right` reunite to `Xₙ`. -/
 theorem union (n : ℕ) : UX (splitU2Left n) ∪ UX (splitU2Right n) = UX n := by
   rw [UX_splitU2Left, UX_splitU2Right]
@@ -520,26 +445,20 @@ theorem union (n : ℕ) : UX (splitU2Left n) ∪ UX (splitU2Right n) = UX n := b
     rcases lt_or_ge x (decodeRat (splitU2MidCode n)) with hlt | hge
     · exact Or.inl ⟨h, hlt⟩
     · exact Or.inr ⟨h, hge⟩
-end
 
 end splitU2
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`splitU2Left`'s output set is a well-defined function of `UX k` as a set.** -/
 theorem splitU2Left_congr {n n' : ℕ} (h : UX n = UX n') :
     UX (splitU2Left n) = UX (splitU2Left n') := by
   rw [UX_splitU2Left, UX_splitU2Left, h, splitU2MidCode_congr h]
-end
 
-section
 theorem zero_le_listMaxSnd (L : List (ℚ × ℚ)) : 0 ≤ listMaxSnd L := foldl.maxSnd_seed_le L 0
-end
 
 namespace primrec
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem listMaxSndCode : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.listMaxSndCode := by
   have hstp : Nat.Primrec
       (fun t : ℕ => ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.2)) :=
@@ -547,9 +466,7 @@ theorem listMaxSndCode : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.li
       (Nat.Primrec.right.comp Nat.Primrec.left))).of_eq fun _ => rfl
   exact (primrec_foldCode hstp (Nat.Primrec.const 0) (Nat.Primrec.const zeroCode) primrec_id).of_eq
     fun _ => rfl
-end
 
-section
 theorem listMinFstCode : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.listMinFstCode := by
   have hstp : Nat.Primrec
       (fun t : ℕ => ratMinCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.1)) :=
@@ -557,32 +474,24 @@ theorem listMinFstCode : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.li
       (Nat.Primrec.left.comp Nat.Primrec.left))).of_eq fun _ => rfl
   exact (primrec_foldCode hstp (Nat.Primrec.const 0) (Nat.Primrec.const oneCode) primrec_id).of_eq
     fun _ => rfl
-end
 
-section
 theorem splitU2MidCode : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.splitU2MidCode :=
   (primrec_ratMidCode.comp
     ((primrec.listMinFstCode.comp primrec_canonCode).pair
       (primrec.listMaxSndCode.comp primrec_canonCode))).of_eq fun n => by
     simp only [_root_.DomainTheory.NeighbourhoodSystems.splitU2MidCode]
-end
 
-section
 theorem splitU2Left : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.splitU2Left :=
   (primrec_clipLtListCode.comp (primrec.splitU2MidCode.pair primrec_canonCode)).of_eq
     fun n => by simp only [_root_.DomainTheory.NeighbourhoodSystems.splitU2Left, unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem splitU2Right : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.splitU2Right :=
   (primrec_clipGeListCode.comp (primrec.splitU2MidCode.pair primrec_canonCode)).of_eq
     fun n => by simp only [_root_.DomainTheory.NeighbourhoodSystems.splitU2Right, unpair_pair_fst, unpair_pair_snd]
-end
 
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`U`'s computable canonical bisection, packaged as a `ComputableBisection`** — the missing
 `(f)`-side prerequisite, fixing `SplitU.lean`'s `left_congr`/`right_congr` gap (see the module
 docstring). -/
@@ -595,36 +504,28 @@ def UBisection2 : ComputableBisection UComputablePresentation where
   union := splitU2.union
   left_congr := fun _ _ h => splitU2Left_congr h
   right_congr := fun _ _ h => splitU2Right_congr h
-end
 
 namespace listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem le_one (L : List (ℚ × ℚ)) : listMinFst L ≤ 1 := foldl.minFst_le_seed L 1
-end
 
 end listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- The difference index: `canonIdx` of the raw difference code `VdiffRaw`. -/
 def Vdiff (n m : ℕ) : ℕ := canonIdx (VdiffRaw n m)
-end
 
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **The "same level" set-difference formula**, mirroring `Exercise812.lean`'s
 `levelSet.inter_same_level` exactly (`&&&` becomes the "and-not" combinator `a ^^^ (a &&& b)`,
 via `testBit.xor_and_self`). -/
 theorem diff_same_level (k m₁ m₂ : ℕ) :
     levelSet k m₁ \ levelSet k m₂ = levelSet k (m₁ ^^^ (m₁ &&& m₂)) := by
   ext n; simp [levelSet]
-end
 
-section
 /-- **Computable version of `levelSet.diff_same_level`, upsampled to a common level** — mirrors
 `levelSet.myInter` exactly, substituting `myAndNot` for `myLand`. -/
 theorem myDiff (k1 m1 k2 m2 : ℕ) :
@@ -633,9 +534,7 @@ theorem myDiff (k1 m1 k2 m2 : ℕ) :
   conv_lhs => rw [← levelSet.myUpsample (Nat.le_max_left k1 k2) (m := m1),
     ← levelSet.myUpsample (Nat.le_max_right k1 k2) (m := m2)]
   rw [levelSet.diff_same_level, myAndNot_eq]
-end
 
-section
 /-- **`VdiffRaw` realizes `VX n \ VX m`** at the `levelSet` level (unconditionally). -/
 theorem VdiffRaw (n m : ℕ) :
     levelSet (_root_.DomainTheory.NeighbourhoodSystems.VdiffRaw n m).unpair.1 (_root_.DomainTheory.NeighbourhoodSystems.VdiffRaw n m).unpair.2 = VX n \ VX m := by
@@ -643,13 +542,11 @@ theorem VdiffRaw (n m : ℕ) :
   rw [unpair_pair_fst, unpair_pair_snd]
   exact (levelSet.myDiff (canonIdx n).unpair.1 (canonIdx n).unpair.2
     (canonIdx m).unpair.1 (canonIdx m).unpair.2).symm
-end
 
 end levelSet
 namespace Vdiff
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **Scott's consistency condition for `\` reduces to non-emptiness**, mirroring
 `Vcons_iff_nonempty_inter`. -/
 theorem iff_nonempty (n m : ℕ) :
@@ -664,9 +561,7 @@ theorem iff_nonempty (n m : ℕ) :
       exact ⟨(VdiffRaw n m).unpair.1, (VdiffRaw n m).unpair.2, rfl, hne⟩
     obtain ⟨k, hk⟩ := V_surj_VX hVmem
     exact ⟨k, hk⟩
-end
 
-section
 theorem spec {n m : ℕ} (h : ∃ k, VX k = VX n \ VX m) : VX (Vdiff n m) = VX n \ VX m := by
   have hne : (levelSet (VdiffRaw n m).unpair.1 (VdiffRaw n m).unpair.2).Nonempty := by
     rw [levelSet.VdiffRaw]; obtain ⟨k, hk⟩ := h; rw [← hk]; exact VX_nonempty k
@@ -674,20 +569,16 @@ theorem spec {n m : ℕ} (h : ∃ k, VX k = VX n \ VX m) : VX (Vdiff n m) = VX n
   rw [VX_canonIdx]
   show levelSet (canonIdx (VdiffRaw n m)).unpair.1 (canonIdx (VdiffRaw n m)).unpair.2 = VX n \ VX m
   rw [canonIdx.eq_self_of_nonempty hne, levelSet.VdiffRaw]
-end
 
 end Vdiff
 namespace primrec
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem lowXor : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.lowXor t.unpair.1 t.unpair.2) :=
   (primrec_mod2.comp
     (primrec_add₂ (primrec_mod2.comp Nat.Primrec.left) (primrec_mod2.comp Nat.Primrec.right))).of_eq
     fun _ => rfl
-end
 
-section
 theorem xorStep : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.xorStep := by
   have hA : Nat.Primrec (fun s : ℕ => s.unpair.1.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.left
   have hB : Nat.Primrec (fun s : ℕ => s.unpair.1.unpair.2) := Nat.Primrec.right.comp Nat.Primrec.left
@@ -699,9 +590,7 @@ theorem xorStep : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.xorStep :
   exact (((primrec_div2.comp hA).pair (primrec_div2.comp hB)).pair
     ((primrec_mul₂ (Nat.Primrec.const 2) hW).pair
       (primrec_add₂ hAcc (primrec_mul₂ hW hlow)))).of_eq fun _ => rfl
-end
 
-section
 theorem myXor : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.myXor t.unpair.1 t.unpair.2) := by
   have hbase : Nat.Primrec
       (fun z => Nat.pair (Nat.pair z.unpair.1 z.unpair.2) (Nat.pair 1 0)) :=
@@ -717,16 +606,12 @@ theorem myXor : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.m
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
   rw [rec_const_iterate]
   rfl
-end
 
-section
 theorem myAndNot : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.myAndNot t.unpair.1 t.unpair.2) := by
   have hland : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.myLand t.unpair.1 t.unpair.2) := primrec.myLand
   exact (primrec.myXor.comp (Nat.Primrec.left.pair hland)).of_eq fun t => by
     simp only [_root_.DomainTheory.NeighbourhoodSystems.myAndNot, unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem VdiffRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.VdiffRaw t.unpair.1 t.unpair.2) := by
   have hcn : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.canonIdx t.unpair.1) := primrec.canonIdx.comp Nat.Primrec.left
   have hcm : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.canonIdx t.unpair.2) := primrec.canonIdx.comp Nat.Primrec.right
@@ -754,12 +639,10 @@ theorem VdiffRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystem
     (primrec.myAndNot.comp (hup1.pair hup2)).of_eq fun t => by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (hkJ.pair handnot).of_eq fun _ => rfl
-end
 
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **7.1(i)-for-`\`, for `V`**: `Xₙ \ Xₘ = X_k` for some `k` is recursively decidable. -/
 theorem V_diff_computable : RecDecidable₂ (fun n m => ∃ k, VX k = VX n \ VX m) := by
   have hvr : Nat.Primrec (fun t : ℕ => VdiffRaw t.unpair.1 t.unpair.2) := primrec.VdiffRaw
@@ -775,40 +658,32 @@ theorem V_diff_computable : RecDecidable₂ (fun n m => ∃ k, VX k = VX n \ VX 
   · intro n m
     rw [unpair_pair_fst, unpair_pair_snd, Vdiff.iff_nonempty, ← levelSet.VdiffRaw,
       myLevelSetNonempty.eq_one_iff]
-end
 
 namespace primrec
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem Vdiff : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.Vdiff t.unpair.1 t.unpair.2) :=
   (primrec.canonIdx.comp primrec.VdiffRaw).of_eq fun _ => rfl
-end
 
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`V` has a computable `\`**, the missing prerequisite for Exercise 8.12(f). -/
 def V_isComputableDiff : IsComputableDiff VComputablePresentation where
   diffIdx := Vdiff
   diffIdx_primrec := primrec.Vdiff
   diffIdx_spec := Vdiff.spec
   diff_computable := V_diff_computable
-end
 
-section
 /-- **`splitX812f`: the exercise's literal target split**, `V` as prober against `U`'s canonical
 bisection (`UBisection2`). -/
 noncomputable def splitX812f : Set ℕ → Set ℚ → Set ℕ → Set ℚ × Set ℚ :=
   ComputableBisection.splitFromBisection VComputablePresentation V_isComputableDiff UBisection2
     U_noMinimal
-end
 
 namespace isComputableSplit
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **Exercise 8.12(f), completed in full**: `splitX812f` satisfies `IsComputableSplit`, the
 mirror image of `Exercise812eD.lean`'s `isComputableSplit.812e`. `noncomputable def`, not
 `theorem` — `IsComputableSplit` is a data-carrying structure (its `posIdx`/`negIdx` fields are
@@ -817,23 +692,17 @@ noncomputable def «812f» :
     IsComputableSplit VComputablePresentation UComputablePresentation splitX812f :=
   ComputableBisection.isComputableSplit.ofBisection VComputablePresentation V_isComputableDiff
     UBisection2 U_noMinimal V_isPositive V_noMinimal V_diffClosed
-end
 
 end isComputableSplit
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- The union index: list-concatenate the two canonicalized presenting lists. `UX` re-canonicalizes
 on lookup, so no further canonicalization of the inputs is needed here (mirrors `Udiff`). -/
 def Uunion (n m : ℕ) : ℕ := appendListCode (canonCode n) (canonCode m)
-end
 
-section
 /-- The union index: `canonIdx` of the raw union code `VunionRaw`. -/
 def Vunion (n m : ℕ) : ℕ := canonIdx (VunionRaw n m)
-end
 
-section
 /-- `hX0`: index `0` presents `U`'s master neighbourhood. `decodeQPairList 0 = []`
 (`decodeList_zero`), so `canonList` falls back to its `[(0,1)]` branch, which presents
 `U.master` exactly as in `U_mem_presentedIntervals_canonList`. -/
@@ -844,36 +713,28 @@ theorem UX_zero : UX 0 = U.master := by
   rw [hL, canonList_eq_of_filter_eq_nil (by simp), presentedIntervals_cons, presentedIntervals_nil,
     Set.union_empty]
   rfl
-end
 
 namespace Uunion
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem primrec : Nat.Primrec (fun t : ℕ => Uunion t.unpair.1 t.unpair.2) := by
   unfold Uunion
   exact (primrec_appendListCode.comp ((primrec_canonCode.comp Nat.Primrec.left).pair
     (primrec_canonCode.comp Nat.Primrec.right))).of_eq
     fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
-end
 
 end Uunion
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- `hD₁mne` for `V`: the master neighbourhood `V.master = Set.univ` is non-empty. -/
 theorem V_master_nonempty : V.master.Nonempty := Set.univ_nonempty
-end
 
-section
 /-- `hD₀mne` for `U`: the master neighbourhood `U.master = Set.Ico 0 1` is non-empty. -/
 theorem U_master_nonempty : U.master.Nonempty := ⟨0, by norm_num [U]⟩
-end
 
 namespace Uunion
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`Uunion` realizes set union at the raw (uncanonicalized) `presentedIntervals` level**,
 unconditionally — concatenating presenting lists always presents the union, no consistency case
 split needed (the one respect in which `∪` is even simpler than `\`'s `Udiff.eq_diff`). -/
@@ -882,7 +743,6 @@ theorem eq_union (n m : ℕ) :
   unfold Uunion
   rw [decodeQPairList_appendListCode, presentedIntervals_append]
   rfl
-end
 
 end Uunion
 section
@@ -954,7 +814,6 @@ end splitFromBisection
 end ComputableBisection
 end
 
-section
 open Domain.Recursive NeighborhoodSystem
 
 /-- **`8.12(g)(3)`, `V`-as-prober half**: `splitX812f` also satisfies `SplitSpec'`, the mirror
@@ -964,12 +823,10 @@ theorem hySplit812f : SplitSpec' U splitX812f :=
   ComputableBisection.splitFromBisection.isSplitSpec' VComputablePresentation V_isComputableDiff
     UBisection2 U_noMinimal V_isPositive V_noMinimal V_diffClosed
     (fun j => (U_mem_UX j).2.1.ne_empty)
-end
 
 namespace Uunion
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`Uunion n m` genuinely indexes `UX n ∪ UX m`** — mirrors `Udiff.spec`'s shape exactly, but the
 hypothesis is never used (the union is already unconditionally genuine, `U_union_mem`): the raw
 `appendListCode` output is already a genuine `U`-neighbourhood, so re-canonicalizing it (`canonCode`'s
@@ -979,12 +836,10 @@ theorem spec {n m : ℕ} (_ : ∃ k, UX k = UX n ∪ UX m) : UX (Uunion n m) = U
     rw [Uunion.eq_union]; exact U_union_UX_mem n m
   show presentedIntervals (decodeQPairList (canonCode (Uunion n m))) = _
   rw [presentedIntervals_decodeQPairList_canonCode, canonList_fixed hUL, Uunion.eq_union]
-end
 
 end Uunion
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`8.12(g)(3)`, `U`-as-prober half**: `splitX812e` also satisfies `SplitSpec'` — completing the
 concrete-construction half of `8.12(g)(3)` left open by `Exercise812e.lean`'s generic
 `splitFromBisection.isSplitSpec'`. The extra hypothesis it needs, `∀ j, VX j ≠ ∅`, is immediate:
@@ -993,34 +848,26 @@ every `VX j` is `V.mem`-genuine (`VComputablePresentation.mem_X`) and `V.mem` st
 theorem hxSplit812e : SplitSpec' V splitX812e :=
   ComputableBisection.splitFromBisection.isSplitSpec' UComputablePresentation U_isComputableDiff
     B812e V_noMinimal U_isPositive U_noMinimal U_diffClosed (fun j => (VX_nonempty j).ne_empty)
-end
 
-section
 /-- **`Xₙ ∪ Xₘ` is always presentable as some `X_k`**, for `𝒰` — via `U_surj_UX` on
 `U_union_UX_mem` (mirroring `U_diff_iff_nonempty`'s use of `U_surj_UX`, but unconditional). -/
 theorem U_union_exists (n m : ℕ) : ∃ k, UX k = UX n ∪ UX m := U_surj_UX (U_union_UX_mem n m)
-end
 
-section
 /-- **7.1(i)-for-`∪`, for `𝒰`**: trivially recursively decidable (the always-`1` constant), since
 `U_union_exists` shows the underlying predicate is unconditionally `True`. -/
 theorem U_union_computable : RecDecidable₂ (fun n m => ∃ k, UX k = UX n ∪ UX m) :=
   ⟨fun _ => 1, Nat.Primrec.const 1, fun t => iff_of_true (U_union_exists t.unpair.1 t.unpair.2) rfl⟩
-end
 
-section
 /-- **`U` has a computable `∪`.** -/
 def U_isComputableUnion : IsComputableUnion UComputablePresentation where
   unionIdx := Uunion
   unionIdx_primrec := Uunion.primrec
   unionIdx_spec := Uunion.spec
   union_computable := U_union_computable
-end
 
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **Computable version of `levelSet.union_same_level` at differing levels** — the bitwise-`OR`
 analogue of `levelSet.myInter`, mirroring its proof verbatim with `myLor`/`Nat.testBit_or` in place
 of `myLand`/`Nat.testBit_and`. -/
@@ -1030,9 +877,7 @@ theorem myUnion (k1 m1 k2 m2 : ℕ) :
   conv_lhs => rw [← levelSet.myUpsample (Nat.le_max_left k1 k2) m1,
     ← levelSet.myUpsample (Nat.le_max_right k1 k2) m2]
   rw [levelSet.union_same_level, myLor_eq_lor]
-end
 
-section
 /-- **`VunionRaw` realizes `VX n ∪ VX m`** at the `levelSet` level (unconditionally). -/
 theorem VunionRaw (n m : ℕ) :
     levelSet (_root_.DomainTheory.NeighbourhoodSystems.VunionRaw n m).unpair.1 (_root_.DomainTheory.NeighbourhoodSystems.VunionRaw n m).unpair.2 = VX n ∪ VX m := by
@@ -1040,13 +885,11 @@ theorem VunionRaw (n m : ℕ) :
   rw [unpair_pair_fst, unpair_pair_snd]
   exact (levelSet.myUnion (canonIdx n).unpair.1 (canonIdx n).unpair.2
     (canonIdx m).unpair.1 (canonIdx m).unpair.2).symm
-end
 
 end levelSet
 namespace Vunion
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`Vunion n m` genuinely indexes `VX n ∪ VX m`**, unconditionally — `VunionRaw n m` is already
 non-empty (both `VX n`, `VX m` are non-empty, `VX_nonempty`, and a union of a non-empty set with
 anything is non-empty), so `canonIdx` is a no-op on it (`canonIdx.eq_self_of_nonempty`), mirroring
@@ -1058,41 +901,31 @@ theorem spec (n m : ℕ) : VX (Vunion n m) = VX n ∪ VX m := by
   rw [VX_canonIdx]
   show levelSet (canonIdx (VunionRaw n m)).unpair.1 (canonIdx (VunionRaw n m)).unpair.2 = VX n ∪ VX m
   rw [canonIdx.eq_self_of_nonempty hne, levelSet.VunionRaw]
-end
 
-section
 /-- `Vunion.spec`, repackaged to accept (and discard) `IsComputableUnion`'s hypothesis. -/
 theorem spec' {n m : ℕ} (_ : ∃ k, VX k = VX n ∪ VX m) : VX (Vunion n m) = VX n ∪ VX m :=
   Vunion.spec n m
-end
 
 end Vunion
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- **`Xₙ ∪ Xₘ` is always presentable as some `X_k`**, for `V` — witnessed directly by `Vunion`. -/
 theorem V_union_exists (n m : ℕ) : ∃ k, VX k = VX n ∪ VX m := ⟨Vunion n m, Vunion.spec n m⟩
-end
 
-section
 /-- **7.1(i)-for-`∪`, for `V`**: trivially recursively decidable (the always-`1` constant). -/
 theorem V_union_computable : RecDecidable₂ (fun n m => ∃ k, VX k = VX n ∪ VX m) :=
   ⟨fun _ => 1, Nat.Primrec.const 1, fun t => iff_of_true (V_union_exists t.unpair.1 t.unpair.2) rfl⟩
-end
 
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- `levelSet 0 0 = ∅`: at level `0`, mask `0` has no set bits. -/
 theorem zero_zero : levelSet 0 0 = ∅ := by
   ext n; simp [levelSet, Nat.zero_testBit]
-end
 
 end levelSet
 open Domain.Recursive NeighborhoodSystem
 
-section
 /-- `hY0`: index `0` presents `V`'s master neighbourhood. `Nat.unpair 0 = (0, 0)` and
 `levelSet 0 0 = ∅`, so `canonIdx 0` falls back to `VmasterIdx = Nat.pair 0 1`
 (`canonIdx.eq_master_of_empty`), whose `VX`-image is `V.master` (`VX_VmasterIdx`). -/
@@ -1101,9 +934,7 @@ theorem VX_zero : VX 0 = V.master := by
     canonIdx.eq_master_of_empty (by rw [Nat.unpair_zero]; exact levelSet.zero_zero)
   rw [← VX_canonIdx 0, hc0]
   exact VX_VmasterIdx
-end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_812_e_d : @DomainTheory.NeighbourhoodSystems.SplitSpec' Rat Nat DomainTheory.NeighbourhoodSystems.V
@@ -1132,12 +963,10 @@ theorem example_812_g2 : ∀ {n m : Nat},
         (DomainTheory.NeighbourhoodSystems.VX m)) :=
   @DomainTheory.NeighbourhoodSystems.Vunion.spec'
 
-end
 
 namespace primrec
 open Domain.Recursive NeighborhoodSystem
 
-section
 theorem VunionRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.VunionRaw t.unpair.1 t.unpair.2) := by
   have hcn : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.canonIdx t.unpair.1) := primrec.canonIdx.comp Nat.Primrec.left
   have hcm : Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.canonIdx t.unpair.2) := primrec.canonIdx.comp Nat.Primrec.right
@@ -1165,15 +994,11 @@ theorem VunionRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSyste
     (primrec_myLor.comp (hup1.pair hup2)).of_eq fun t => by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (hkJ.pair hlor).of_eq fun _ => rfl
-end
 
-section
 theorem Vunion : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.Vunion t.unpair.1 t.unpair.2) :=
   (primrec.canonIdx.comp primrec.VunionRaw).of_eq fun _ => rfl
-end
 
 end primrec
-section
 open Domain.Recursive NeighborhoodSystem
 
 /-- **`V` has a computable `∪`.** -/
@@ -1182,9 +1007,7 @@ def V_isComputableUnion : IsComputableUnion VComputablePresentation where
   unionIdx_primrec := primrec.Vunion
   unionIdx_spec := Vunion.spec'
   union_computable := V_union_computable
-end
 
-section
 open Domain.Recursive NeighborhoodSystem Exercise718
 
 /-- **Exercise 8.12, completed in full**: `U` and `V` are effectively isomorphic
@@ -1195,7 +1018,6 @@ noncomputable def effectiveIso812_UV : EffectiveIso UComputablePresentation VCom
     U_isPositive U_diffClosed U_noMinimal hxSplit812e V_isPositive V_diffClosed V_noMinimal
     hySplit812f U_master_nonempty V_master_nonempty U_isComputableUnion V_isComputableUnion UX_zero
     VX_zero
-end
 
 end DomainTheory.NeighbourhoodSystems
 end

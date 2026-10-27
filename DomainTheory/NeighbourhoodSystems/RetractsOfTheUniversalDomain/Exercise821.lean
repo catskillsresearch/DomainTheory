@@ -35,7 +35,6 @@ noncomputable def aSharpInner (a : ApproximableMap U U) :
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
@@ -618,7 +617,6 @@ theorem isFinitaryProjection_aSharp {a : ApproximableMap U U} (ha : FinitaryProj
 
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_821.{u_1} : And
@@ -902,7 +900,6 @@ theorem example_821.{u_1} : And
       @DomainTheory.NeighbourhoodSystems.aSharpInner_idem_of_isRetraction)
     @DomainTheory.NeighbourhoodSystems.isProjection_aSharp)
   @DomainTheory.NeighbourhoodSystems.isRetraction_aSharp
-end
 
 section
 open NeighborhoodSystem ApproximableMap
@@ -972,7 +969,6 @@ theorem curry_isomorphic (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSyst
 
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_825_congr.{u_1, u_2, u_3} : ∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} (V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
@@ -987,7 +983,6 @@ theorem example_825_congr.{u_1, u_2, u_3} : ∀ {α : Type u_1} {β : Type u_2} 
     (@DomainTheory.NeighbourhoodSystems.funSpace α (@DomainTheory.NeighbourhoodSystems.ApproximableMap β γ V₁ V₂) V₀
       (@DomainTheory.NeighbourhoodSystems.funSpace β γ V₁ V₂)) :=
   @DomainTheory.NeighbourhoodSystems.curry_isomorphic
-end
 
 section
 open NeighborhoodSystem ApproximableMap
@@ -1033,7 +1028,6 @@ theorem funSpace_self_isomorphic (hDV : D ≅ᴰ funSpace D V) (hVV : prod V V �
 
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_825_closing.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
@@ -1044,8 +1038,6 @@ theorem example_825_closing.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {D 
       @DomainTheory.NeighbourhoodSystems.Isomorphic α (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
         (@DomainTheory.NeighbourhoodSystems.funSpace α α D D) :=
   @DomainTheory.NeighbourhoodSystems.funSpace_self_isomorphic
-end
 
 end DomainTheory.NeighbourhoodSystems
-end
 

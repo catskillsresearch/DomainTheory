@@ -11,7 +11,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap Exercise326
@@ -24,7 +23,6 @@ theorem exercise_8_19_assembly {α : Type u} {E : NeighborhoodSystem α}
   ⟨sum_trianglelefteq_of hE hT hArrow, prod_trianglelefteq_of hT hArrow⟩
 end
 
-section
 set_option linter.unusedVariables false
 
 theorem example_819.{u} : And
@@ -104,7 +102,6 @@ theorem example_819.{u} : And
             (@DomainTheory.NeighbourhoodSystems.prod α α E E) E)
     @DomainTheory.NeighbourhoodSystems.exercise_8_19_assembly @DomainTheory.NeighbourhoodSystems.prod_trianglelefteq_of)
   @DomainTheory.NeighbourhoodSystems.sum_trianglelefteq_of
-end
 
 section
 open NeighborhoodSystem ApproximableMap
@@ -288,4 +285,3 @@ theorem D_trianglelefteq_prod : D ⊴ prod D D := trianglelefteq_prod_fst D D
 
 end
 end DomainTheory.NeighbourhoodSystems
-end
