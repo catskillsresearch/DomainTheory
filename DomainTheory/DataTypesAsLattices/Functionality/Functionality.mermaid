@@ -98,7 +98,6 @@ flowchart TB
   N117["hSucc_isScottContinuous_H"]
   N118["Hstep_isScottContinuous_H"]
   N119["HF_isScottContinuous"]
-  N120["Hfun_fixed"]
   N121["hSucc_isScottContinuous_e"]
   N122["hSucc_isScottContinuous_t"]
   N123["hVar_isScottContinuous_e"]
@@ -283,9 +282,6 @@ flowchart TB
   N320["hLam_isScottContinuous_t"]
   N321["Hstep_isScottContinuous_t"]
   N322["HF_app2"]
-  N323["Hfun_app2"]
-  N324["Hfun_interp"]
-  N325["Hfun_decode"]
   N326["eq_4_45"]
   N327["Hcomb_decode"]
   N328["whichC_app"]
@@ -679,9 +675,8 @@ flowchart TB
   N0 -->|"1"| N119
   N49 -->|"1"| N119
   N118 -->|"1"| N119
-  N0 -->|"1"| N120
-  N49 -->|"1"| N120
-  N119 -->|"1"| N120
+  N49 -->|"1"| N47
+  N119 -->|"1"| N47
   N0 -->|"1"| N121
   N49 -->|"1"| N121
   N86 -->|"1"| N121
@@ -1472,40 +1467,30 @@ flowchart TB
   N49 -->|"1"| N322
   N316 -->|"1"| N322
   N321 -->|"1"| N322
-  N0 -->|"1"| N323
-  N49 -->|"1"| N323
-  N120 -->|"1"| N323
-  N322 -->|"1"| N323
-  N0 -->|"1"| N324
-  N49 -->|"1"| N324
-  N136 -->|"1"| N324
-  N137 -->|"1"| N324
-  N184 -->|"1"| N324
-  N185 -->|"1"| N324
-  N186 -->|"1"| N324
-  N187 -->|"1"| N324
-  N219 -->|"1"| N324
-  N221 -->|"1"| N324
-  N222 -->|"1"| N324
-  N223 -->|"1"| N324
-  N224 -->|"1"| N324
-  N225 -->|"1"| N324
-  N226 -->|"1"| N324
-  N227 -->|"1"| N324
-  N317 -->|"1"| N324
-  N323 -->|"1"| N324
-  N0 -->|"1"| N325
-  N49 -->|"1"| N325
-  N120 -->|"1"| N325
-  N316 -->|"1"| N325
-  N323 -->|"1"| N325
-  N324 -->|"1"| N325
+  N47 -->|"1"| N47
+  N322 -->|"1"| N47
+  N136 -->|"1"| N47
+  N137 -->|"1"| N47
+  N184 -->|"1"| N47
+  N185 -->|"1"| N47
+  N186 -->|"1"| N47
+  N187 -->|"1"| N47
+  N219 -->|"1"| N47
+  N221 -->|"1"| N47
+  N222 -->|"1"| N47
+  N223 -->|"1"| N47
+  N224 -->|"1"| N47
+  N225 -->|"1"| N47
+  N226 -->|"1"| N47
+  N227 -->|"1"| N47
+  N317 -->|"1"| N47
+  N316 -->|"1"| N47
   N0 -->|"1"| N326
   N49 -->|"1"| N326
   N50 -->|"1"| N326
   N295 -->|"1"| N326
   N309 -->|"1"| N326
-  N325 -->|"1"| N326
+  N47 -->|"1"| N326
   N0 -->|"1"| N327
   N49 -->|"1"| N327
   N326 -->|"1"| N327
@@ -1621,7 +1606,6 @@ flowchart TB
   class N117 file
   class N118 file
   class N119 file
-  class N120 file
   class N121 file
   class N122 file
   class N123 file
@@ -1824,9 +1808,6 @@ flowchart TB
   class N320 file
   class N321 file
   class N322 file
-  class N323 file
-  class N324 file
-  class N325 file
   class N326 file
   class N327 file
   class N328 file

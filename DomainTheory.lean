@@ -714,8 +714,6 @@ import DomainTheory.DataTypesAsLattices.Functionality.HF_inner_isScottContinuous
 import DomainTheory.DataTypesAsLattices.Functionality.HF_isScottContinuous
 import DomainTheory.DataTypesAsLattices.Functionality.HF_app
 import DomainTheory.DataTypesAsLattices.Functionality.HF_app2
-import DomainTheory.DataTypesAsLattices.Functionality.Hfun_fixed
-import DomainTheory.DataTypesAsLattices.Functionality.Hfun_app2
 import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag0
 import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag1
 import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag2
@@ -723,8 +721,6 @@ import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag3
 import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag4
 import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag5
 import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag6
-import DomainTheory.DataTypesAsLattices.Functionality.Hfun_interp
-import DomainTheory.DataTypesAsLattices.Functionality.Hfun_decode
 import DomainTheory.DataTypesAsLattices.Functionality.Hcomb_typed
 import DomainTheory.DataTypesAsLattices.Functionality.Hcomb_app
 import DomainTheory.DataTypesAsLattices.Functionality.eq_4_45
