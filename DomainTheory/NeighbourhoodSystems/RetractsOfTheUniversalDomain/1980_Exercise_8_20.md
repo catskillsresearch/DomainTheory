@@ -6,6 +6,6 @@ $$D \trianglelefteq D \times D \quad \text{and} \quad D \trianglelefteq D \to D 
 
 Would these projections be computable if $D$ is effectively given? Are there more than one projection pair in each case?
 
-**[Exercise_8_20.lean](Exercise_8_20.lean)**
+**[Exercise_8_20.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_20.lean)**
 
 @import "Exercise_8_20.lean"

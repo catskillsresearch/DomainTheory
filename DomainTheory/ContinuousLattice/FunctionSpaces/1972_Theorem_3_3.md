@@ -14,7 +14,7 @@ $$(\bigsqcup \mathcal{F})(x) = \bigsqcup f(x) : f \in \mathcal{F},$$
 
 for all $x \in D$. If we can show that $\bigsqcup \mathcal{F}$ is continuous, then being in $[D \to D']$ it has to be the lub. Consider $U \subseteq D'$, an open subset. Taking the inverse image and remembering that $\mathcal{F}$ is directed, we find:
 
-$$x : (\bigsqcup \mathcal{F})(x) \in U = \bigcup x : f(x) \in U : f \in \mathcal{F}.$$
+$$\{ x : (\bigsqcup \mathcal{F})(x) \in U \} = \bigcup \{ \{ x : f(x) \in U \} : f \in \mathcal{F} \}.$$
 
 This is an open set, and so $\bigsqcup \mathcal{F}$ is indeed continuous. (Warning: the infinite $\sqcap \mathcal{F}$ are not in general computed pointwise; however, it is easy to extend the above argument to show that arbitrary $\bigsqcup \mathcal{F}$ are.)
 
@@ -29,15 +29,15 @@ $$\overrightarrow{e}[e, e'](x) = \begin{cases} e' & \text{if } e \ll x,  \bot & 
 for all $x \in D$. Call the function on the right $f'$. Calculate:
 
 $$
-f'(x) = \bigsqcup \overrightarrow{e}[e, e'](x) : e' \ll f(e)
+f'(x) = \bigsqcup \{ \overrightarrow{e}[e, e'](x) : e' \ll f(e) \}
 $$
 
 $$
-= \bigsqcup  e' : \exists e \ll x\ [e' \ll f(e)] 
+= \bigsqcup \{ e' : \exists e \ll x,\; e' \ll f(e) \}
 $$
 
 $$
-= \bigsqcup  e' : e' \ll f(x)  = f(x).
+= \bigsqcup \{ e' : e' \ll f(x) \} = f(x).
 $$
 
-With the equation for $f$ proved, note next that for all $g \in [D \to D']$, $e' \ll g(e)$ implies $\overrightarrow{e}[e, e'] \sqsubseteq g$ by an easy pointwise argument. If we let $V =  g : e' \ll g(e) $, we see then that $V$ is open in the product topology and that $\overrightarrow{e}[e, e'] \sqsubseteq \sqcap V$. We may then conclude that $f = \bigsqcup  \sqcap V : f \in V $, which proves both that $[D \to D']$ is a continuous lattice and that the two topologies agree by the remark following 2.4. $\square$
+With the equation for $f$ proved, note next that for all $g \in [D \to D']$, $e' \ll g(e)$ implies $\overrightarrow{e}[e, e'] \sqsubseteq g$ by an easy pointwise argument. If we let $V = \{ g : e' \ll g(e) \}$, we see then that $V$ is open in the product topology and that $\overrightarrow{e}[e, e'] \sqsubseteq \sqcap V$. We may then conclude that $f = \bigsqcup \{ \sqcap V : f \in V \}$, which proves both that $[D \to D']$ is a continuous lattice and that the two topologies agree by the remark following 2.4. $\square$

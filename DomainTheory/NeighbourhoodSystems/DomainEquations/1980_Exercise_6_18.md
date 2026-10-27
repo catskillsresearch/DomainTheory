@@ -8,6 +8,6 @@ $$
 
 (I do not know whether all solutions must be of the form $\mathcal{D}^\infty \times E$.)
 
-**[Exercise_6_18.lean](Exercise_6_18.lean)**
+**[Exercise_6_18.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_18.lean)**
 
 @import "Exercise_6_18.lean"

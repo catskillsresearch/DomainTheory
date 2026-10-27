@@ -5,6 +5,6 @@ $$
 D \cong S(D, E) \quad \text{and} \quad E \cong T(D, E).
 $$
 
-**[Exercise_8_24.lean](Exercise_8_24.lean)**
+**[Exercise_8_24.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_24.lean)**
 
 @import "Exercise_8_24.lean"

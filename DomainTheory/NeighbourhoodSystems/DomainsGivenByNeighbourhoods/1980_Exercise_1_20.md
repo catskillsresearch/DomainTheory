@@ -14,6 +14,6 @@ $$
 
 Show that $\mathcal{D}'$ is a positive neighbourhood system and that $|\mathcal{D}|$ and $|\mathcal{D}'|$ are isomorphic. Note that for $\mathcal{D}'$ finite elements and tokens are in a one-one correspondence.
 
-**[Exercise_1_20.lean](Exercise_1_20.lean)**
+**[Exercise_1_20.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_20.lean)**
 
 @import "Exercise_1_20.lean"

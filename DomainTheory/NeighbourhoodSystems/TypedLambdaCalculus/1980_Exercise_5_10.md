@@ -14,6 +14,6 @@ $$
 
 are isomorphic.
 
-**[Exercise_5_10.lean](Exercise_5_10.lean)**
+**[Exercise_5_10.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise_5_10.lean)**
 
 @import "Exercise_5_10.lean"

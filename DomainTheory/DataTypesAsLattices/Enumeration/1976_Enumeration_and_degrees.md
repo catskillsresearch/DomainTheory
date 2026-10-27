@@ -10,25 +10,22 @@ Reduction to a few combinators is old in combinatory logic. The device special t
 
 @import "1976_Enumeration_and_degrees.english" {code_block=false}
 
-**[DataTypesAsLattices/Enumeration/Deg.lean](Deg.lean)**
+**[DataTypesAsLattices/Enumeration/Deg.lean](DomainTheory/DataTypesAsLattices/Enumeration/Deg.lean)**
 
 @import "Deg.lean"
-
-**[DataTypesAsLattices/Enumeration/Rcomb.lean](Rcomb.lean)**
+**[DataTypesAsLattices/Enumeration/Rcomb.lean](DomainTheory/DataTypesAsLattices/Enumeration/Rcomb.lean)**
 
 @import "Rcomb.lean"
 @import "Rcomb.lean"
 
-**[DataTypesAsLattices/Enumeration/barPos.lean](barPos.lean)**
+**[DataTypesAsLattices/Enumeration/barPos.lean](DomainTheory/DataTypesAsLattices/Enumeration/barPos.lean)**
 
 @import "barPos.lean"
-
-**[DataTypesAsLattices/Enumeration/barComb.lean](barComb.lean)**
+**[DataTypesAsLattices/Enumeration/barComb.lean](DomainTheory/DataTypesAsLattices/Enumeration/barComb.lean)**
 
 @import "barComb.lean"
 @import "barComb.lean"
 
-**[DataTypesAsLattices/Enumeration/Gbar.lean](Gbar.lean)**
+**[DataTypesAsLattices/Enumeration/Gbar.lean](DomainTheory/DataTypesAsLattices/Enumeration/Gbar.lean)**
 
 @import "Gbar.lean"
-

@@ -18,6 +18,6 @@ We end this chapter with an example of another kind of domain construct. This co
 
 <!-- page 127 -->
 
-**[Example_7_8.lean](Example_7_8.lean)**
+**[Example_7_8.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example_7_8.lean)**
 
 @import "Example_7_8.lean"

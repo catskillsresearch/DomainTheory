@@ -2,85 +2,50 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["Constructive/"]
+
   N1["Constructive"]
-  N2["InfoSys/"]
-  N3["InfoSys"]
-  N4["Definition22/"]
   N5["Definition22"]
-  N6["Factoid25/"]
-  N7["Factoid26/"]
-  N8["Factoid26"]
-  N9["Proposition23/"]
-  N10["Proposition23"]
-  N11["instDecidableEq"]
-  N12["Sat"]
-  N13["lowerBoundEnt"]
   N14["Factoid24"]
+  N18["Factoid25"]
+  N8["Factoid26"]
+  N3["InfoSys"]
+  N11["instDecidableEq"]
+  N13["lowerBoundEnt"]
+  N17["ofSatisfaction"]
+  N10["Proposition23"]
+  N12["Sat"]
   N15["sat_midpoint"]
   N16["sat_sing"]
-  N17["ofSatisfaction"]
-  N18["Factoid25"]
 
-  N0 -->|"5"| N1
-  N2 -->|"2"| N3
-  N3 -->|"4"| N4
-  N4 -->|"3"| N5
-  N3 -->|"1"| N6
-  N3 -->|"10"| N7
-  N7 -->|"1"| N8
-  N1 -->|"8"| N9
-  N5 -->|"8"| N9
-  N9 -->|"6"| N10
+  N18 -->|"1"| N11
   N3 -->|"1"| N11
-  N6 -->|"1"| N11
-  N3 -->|"1"| N12
-  N6 -->|"1"| N12
   N11 -->|"1"| N12
+  N18 -->|"1"| N12
+  N3 -->|"1"| N12
   N3 -->|"1"| N13
-  N3 -->|"1"| N14
   N13 -->|"1"| N14
-  N3 -->|"1"| N15
-  N6 -->|"1"| N15
+  N3 -->|"1"| N14
   N11 -->|"1"| N15
   N12 -->|"1"| N15
-  N3 -->|"1"| N16
-  N6 -->|"1"| N16
+  N18 -->|"1"| N15
+  N3 -->|"1"| N15
   N11 -->|"1"| N16
   N12 -->|"1"| N16
   N15 -->|"1"| N16
-  N3 -->|"1"| N17
-  N6 -->|"1"| N17
+  N18 -->|"1"| N16
+  N3 -->|"1"| N16
   N11 -->|"1"| N17
   N12 -->|"1"| N17
   N16 -->|"1"| N17
-  N3 -->|"1"| N18
-  N6 -->|"1"| N18
+  N18 -->|"1"| N17
+  N3 -->|"1"| N17
   N11 -->|"1"| N18
   N12 -->|"1"| N18
   N15 -->|"1"| N18
   N16 -->|"1"| N18
   N17 -->|"1"| N18
+  N3 -->|"1"| N18
+  N3 -->|"1"| N5
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 file
-  class N1 file
-  class N2 file
-  class N3 file
-  class N4 file
-  class N5 file
-  class N6 file
-  class N7 file
-  class N8 file
-  class N9 file
-  class N10 file
-  class N11 file
-  class N12 file
-  class N13 file
-  class N14 file
-  class N15 file
-  class N16 file
-  class N17 file
-  class N18 file

@@ -12,8 +12,8 @@ where
 
 $$
 y_m = \begin{cases}
-j_m(y_{m+1}) & \text{if } m < n, 
-x & \text{if } m = n, 
+j_m(y_{m+1}) & \text{if } m < n, \\
+x & \text{if } m = n, \\
 i_m(y_{m-1}) & \text{if } m > n.
 \end{cases}
 $$

@@ -10,7 +10,6 @@ The classification of these subsets by notions from descriptive set theory, and 
 
 @import "1976_Subsets_and_their_classification.english" {code_block=false}
 
-**[DataTypesAsLattices/Classification/IsBooleanOpen.lean](IsBooleanOpen.lean)**
+**[DataTypesAsLattices/Classification/IsBooleanOpen.lean](DomainTheory/DataTypesAsLattices/Classification/IsBooleanOpen.lean)**
 
 @import "IsBooleanOpen.lean"
-

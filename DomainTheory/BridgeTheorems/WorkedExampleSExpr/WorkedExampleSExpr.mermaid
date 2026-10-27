@@ -2,173 +2,168 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["BridgeTheorems"]
-  N1["InfoSysConstructions"]
-  N2["InfoSysToIdealCompletion"]
-  N3["InfoSysToNeighborhood"]
-  N4["InformationSystems"]
-  N5["PresentationDomains"]
-  N6["lowerBoundSystem"]
-  N7["SexSys"]
-  N8["SexRhs"]
-  N9["sexAtom"]
-  N10["sexDomainEquationIso"]
-  N11["sexRhsSemanticIso"]
+
   N12["Basic"]
   N13["exists_sexDomainEquationIso"]
   N14["exists_sexIdealIso"]
   N15["exists_sexNeighborhoodIso"]
+  N4["InformationSystems"]
+  InfoSysConstructions_lean["InfoSysConstructions.lean"]
+  InfoSysToIdealCompletion_lean["InfoSysToIdealCompletion.lean"]
+  InfoSysToNeighborhood_lean["InfoSysToNeighborhood.lean"]
+  N6["lowerBoundSystem"]
+  PresentationDomains_lean["PresentationDomains.lean"]
+  ScottMapBridge_lean["ScottMapBridge.lean"]
+  N9["sexAtom"]
   N16["sexAtom_mem_self"]
+  SexDomainEquation_lean["SexDomainEquation.lean"]
+  N10["sexDomainEquationIso"]
   N17["sexDomainEquationIso_fold"]
   N18["sexDomainEquationIso_unfold"]
   N19["sexId_toElement"]
+  N8["SexRhs"]
   N20["sexRhs_eq_sum_product"]
+  N11["sexRhsSemanticIso"]
+  N7["SexSys"]
   N21["sexUnfold_atom"]
 
-  N0 -->|"2"| N6
-  N1 -->|"1"| N6
-  N2 -->|"1"| N6
-  N3 -->|"1"| N6
-  N4 -->|"3"| N6
-  N5 -->|"1"| N6
-  N0 -->|"2"| N7
-  N1 -->|"1"| N7
-  N2 -->|"1"| N7
-  N3 -->|"1"| N7
-  N4 -->|"3"| N7
-  N5 -->|"1"| N7
-  N6 -->|"1"| N7
-  N0 -->|"2"| N8
-  N1 -->|"1"| N8
-  N2 -->|"1"| N8
-  N3 -->|"1"| N8
-  N4 -->|"3"| N8
-  N5 -->|"1"| N8
-  N6 -->|"1"| N8
-  N7 -->|"1"| N8
-  N0 -->|"2"| N9
-  N1 -->|"1"| N9
-  N2 -->|"1"| N9
-  N3 -->|"1"| N9
-  N4 -->|"3"| N9
-  N5 -->|"1"| N9
-  N7 -->|"1"| N9
-  N0 -->|"2"| N10
-  N1 -->|"1"| N10
-  N2 -->|"1"| N10
-  N3 -->|"1"| N10
+  InfoSysConstructions_lean -->|"1"| N10
+  InfoSysToIdealCompletion_lean -->|"1"| N10
+  InfoSysToNeighborhood_lean -->|"1"| N10
   N4 -->|"3"| N10
-  N5 -->|"1"| N10
   N6 -->|"1"| N10
   N7 -->|"1"| N10
   N8 -->|"1"| N10
-  N0 -->|"2"| N11
-  N1 -->|"1"| N11
-  N2 -->|"1"| N11
-  N3 -->|"1"| N11
+  PresentationDomains_lean -->|"1"| N10
+  ScottMapBridge_lean -->|"1"| N10
+  SexDomainEquation_lean -->|"1"| N10
+  InfoSysConstructions_lean -->|"1"| N11
+  InfoSysToIdealCompletion_lean -->|"1"| N11
+  InfoSysToNeighborhood_lean -->|"1"| N11
   N4 -->|"3"| N11
-  N5 -->|"1"| N11
   N6 -->|"1"| N11
   N7 -->|"1"| N11
   N8 -->|"1"| N11
-  N0 -->|"2"| N12
-  N1 -->|"1"| N12
-  N2 -->|"1"| N12
-  N3 -->|"1"| N12
+  PresentationDomains_lean -->|"1"| N11
+  ScottMapBridge_lean -->|"1"| N11
+  SexDomainEquation_lean -->|"1"| N11
+  InfoSysConstructions_lean -->|"1"| N12
+  InfoSysToIdealCompletion_lean -->|"1"| N12
+  InfoSysToNeighborhood_lean -->|"1"| N12
+  N10 -->|"1"| N12
+  N11 -->|"1"| N12
   N4 -->|"3"| N12
-  N5 -->|"1"| N12
   N6 -->|"1"| N12
   N7 -->|"1"| N12
   N8 -->|"1"| N12
   N9 -->|"1"| N12
-  N10 -->|"1"| N12
-  N11 -->|"1"| N12
-  N0 -->|"2"| N13
-  N1 -->|"1"| N13
-  N2 -->|"1"| N13
-  N3 -->|"1"| N13
-  N4 -->|"3"| N13
-  N5 -->|"1"| N13
+  PresentationDomains_lean -->|"1"| N12
+  ScottMapBridge_lean -->|"1"| N12
+  SexDomainEquation_lean -->|"1"| N12
+  InfoSysConstructions_lean -->|"1"| N13
+  InfoSysToIdealCompletion_lean -->|"1"| N13
+  InfoSysToNeighborhood_lean -->|"1"| N13
   N12 -->|"1"| N13
-  N0 -->|"2"| N14
-  N1 -->|"1"| N14
-  N2 -->|"1"| N14
-  N3 -->|"1"| N14
-  N4 -->|"3"| N14
-  N5 -->|"1"| N14
+  N4 -->|"3"| N13
+  PresentationDomains_lean -->|"1"| N13
+  ScottMapBridge_lean -->|"1"| N13
+  SexDomainEquation_lean -->|"1"| N13
+  InfoSysConstructions_lean -->|"1"| N14
+  InfoSysToIdealCompletion_lean -->|"1"| N14
+  InfoSysToNeighborhood_lean -->|"1"| N14
   N12 -->|"1"| N14
-  N0 -->|"2"| N15
-  N1 -->|"1"| N15
-  N2 -->|"1"| N15
-  N3 -->|"1"| N15
-  N4 -->|"3"| N15
-  N5 -->|"1"| N15
+  N4 -->|"3"| N14
+  PresentationDomains_lean -->|"1"| N14
+  ScottMapBridge_lean -->|"1"| N14
+  SexDomainEquation_lean -->|"1"| N14
+  InfoSysConstructions_lean -->|"1"| N15
+  InfoSysToIdealCompletion_lean -->|"1"| N15
+  InfoSysToNeighborhood_lean -->|"1"| N15
   N12 -->|"1"| N15
-  N0 -->|"2"| N16
-  N1 -->|"1"| N16
-  N2 -->|"1"| N16
-  N3 -->|"1"| N16
-  N4 -->|"3"| N16
-  N5 -->|"1"| N16
+  N4 -->|"3"| N15
+  PresentationDomains_lean -->|"1"| N15
+  ScottMapBridge_lean -->|"1"| N15
+  SexDomainEquation_lean -->|"1"| N15
+  InfoSysConstructions_lean -->|"1"| N16
+  InfoSysToIdealCompletion_lean -->|"1"| N16
+  InfoSysToNeighborhood_lean -->|"1"| N16
   N12 -->|"1"| N16
-  N0 -->|"2"| N17
-  N1 -->|"1"| N17
-  N2 -->|"1"| N17
-  N3 -->|"1"| N17
-  N4 -->|"3"| N17
-  N5 -->|"1"| N17
+  N4 -->|"3"| N16
+  PresentationDomains_lean -->|"1"| N16
+  ScottMapBridge_lean -->|"1"| N16
+  SexDomainEquation_lean -->|"1"| N16
+  InfoSysConstructions_lean -->|"1"| N17
+  InfoSysToIdealCompletion_lean -->|"1"| N17
+  InfoSysToNeighborhood_lean -->|"1"| N17
   N12 -->|"1"| N17
-  N0 -->|"2"| N18
-  N1 -->|"1"| N18
-  N2 -->|"1"| N18
-  N3 -->|"1"| N18
-  N4 -->|"3"| N18
-  N5 -->|"1"| N18
+  N4 -->|"3"| N17
+  PresentationDomains_lean -->|"1"| N17
+  ScottMapBridge_lean -->|"1"| N17
+  SexDomainEquation_lean -->|"1"| N17
+  InfoSysConstructions_lean -->|"1"| N18
+  InfoSysToIdealCompletion_lean -->|"1"| N18
+  InfoSysToNeighborhood_lean -->|"1"| N18
   N12 -->|"1"| N18
-  N0 -->|"2"| N19
-  N1 -->|"1"| N19
-  N2 -->|"1"| N19
-  N3 -->|"1"| N19
-  N4 -->|"3"| N19
-  N5 -->|"1"| N19
+  N4 -->|"3"| N18
+  PresentationDomains_lean -->|"1"| N18
+  ScottMapBridge_lean -->|"1"| N18
+  SexDomainEquation_lean -->|"1"| N18
+  InfoSysConstructions_lean -->|"1"| N19
+  InfoSysToIdealCompletion_lean -->|"1"| N19
+  InfoSysToNeighborhood_lean -->|"1"| N19
   N12 -->|"1"| N19
-  N0 -->|"2"| N20
-  N1 -->|"1"| N20
-  N2 -->|"1"| N20
-  N3 -->|"1"| N20
-  N4 -->|"3"| N20
-  N5 -->|"1"| N20
+  N4 -->|"3"| N19
+  PresentationDomains_lean -->|"1"| N19
+  ScottMapBridge_lean -->|"1"| N19
+  SexDomainEquation_lean -->|"1"| N19
+  InfoSysConstructions_lean -->|"1"| N20
+  InfoSysToIdealCompletion_lean -->|"1"| N20
+  InfoSysToNeighborhood_lean -->|"1"| N20
   N12 -->|"1"| N20
-  N0 -->|"2"| N21
-  N1 -->|"1"| N21
-  N2 -->|"1"| N21
-  N3 -->|"1"| N21
-  N4 -->|"4"| N21
-  N5 -->|"1"| N21
+  N4 -->|"3"| N20
+  PresentationDomains_lean -->|"1"| N20
+  ScottMapBridge_lean -->|"1"| N20
+  SexDomainEquation_lean -->|"1"| N20
+  InfoSysConstructions_lean -->|"1"| N21
+  InfoSysToIdealCompletion_lean -->|"1"| N21
+  InfoSysToNeighborhood_lean -->|"1"| N21
   N12 -->|"1"| N21
+  N4 -->|"4"| N21
+  PresentationDomains_lean -->|"1"| N21
+  ScottMapBridge_lean -->|"1"| N21
+  SexDomainEquation_lean -->|"1"| N21
+  InfoSysConstructions_lean -->|"1"| N6
+  InfoSysToIdealCompletion_lean -->|"1"| N6
+  InfoSysToNeighborhood_lean -->|"1"| N6
+  N4 -->|"3"| N6
+  PresentationDomains_lean -->|"1"| N6
+  ScottMapBridge_lean -->|"1"| N6
+  SexDomainEquation_lean -->|"1"| N6
+  InfoSysConstructions_lean -->|"1"| N7
+  InfoSysToIdealCompletion_lean -->|"1"| N7
+  InfoSysToNeighborhood_lean -->|"1"| N7
+  N4 -->|"3"| N7
+  N6 -->|"1"| N7
+  PresentationDomains_lean -->|"1"| N7
+  ScottMapBridge_lean -->|"1"| N7
+  SexDomainEquation_lean -->|"1"| N7
+  InfoSysConstructions_lean -->|"1"| N8
+  InfoSysToIdealCompletion_lean -->|"1"| N8
+  InfoSysToNeighborhood_lean -->|"1"| N8
+  N4 -->|"3"| N8
+  N6 -->|"1"| N8
+  N7 -->|"1"| N8
+  PresentationDomains_lean -->|"1"| N8
+  ScottMapBridge_lean -->|"1"| N8
+  SexDomainEquation_lean -->|"1"| N8
+  InfoSysConstructions_lean -->|"1"| N9
+  InfoSysToIdealCompletion_lean -->|"1"| N9
+  InfoSysToNeighborhood_lean -->|"1"| N9
+  N4 -->|"3"| N9
+  N7 -->|"1"| N9
+  PresentationDomains_lean -->|"1"| N9
+  ScottMapBridge_lean -->|"1"| N9
+  SexDomainEquation_lean -->|"1"| N9
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 ext
-  class N1 ext
-  class N2 ext
-  class N3 ext
-  class N4 ext
-  class N5 ext
-  class N6 file
-  class N7 file
-  class N8 file
-  class N9 file
-  class N10 file
-  class N11 file
-  class N12 file
-  class N13 file
-  class N14 file
-  class N15 file
-  class N16 file
-  class N17 file
-  class N18 file
-  class N19 file
-  class N20 file
-  class N21 file

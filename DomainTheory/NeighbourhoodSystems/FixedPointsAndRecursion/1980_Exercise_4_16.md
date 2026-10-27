@@ -12,6 +12,6 @@ and finding the least fixed point over $\bigcap S$.
 
 (2) Letting $a$ be the fixed point of (1) constructed from the set of maximal fixed points, remark that $a$ is consistent with any other fixed point $x = f(x)$, since $x$ can be extended to a maximal one. Suppose $b$ is consistent with all fixed points, then $b \sqsubseteq y$ if $y$ is maximal. (Why?).)
 
-**[Exercise_4_16.lean](Exercise_4_16.lean)**
+**[Exercise_4_16.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_16.lean)**
 
 @import "Exercise_4_16.lean"

@@ -115,6 +115,6 @@ $$
 
 where we have $\Gamma' = 0\Delta \cup 10\Gamma \cup 11\Gamma$. (By the way, here we definitely want to assume $\emptyset \notin D$ and $\emptyset \notin X$ and to get $\emptyset \notin T(X)$.) This construct is an example of a *functor*, a notion that can be defined abstractly on any category.
 
-**[Example_6_2.lean](Example_6_2.lean)**
+**[Example_6_2.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Example_6_2.lean)**
 
 @import "Example_6_2.lean"

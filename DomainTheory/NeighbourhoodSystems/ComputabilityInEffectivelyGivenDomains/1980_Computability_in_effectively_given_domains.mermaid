@@ -1,21 +1,13 @@
 %% Each box is one item. The arrowhead is on the item that imports.
 %% An arrow already implied by a longer path is omitted.
 %% The introduction has no Lean file, so it is not shown.
-%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
 flowchart TB
 
+  Definition_7_11["Def 7.11<br>finite element sets"]
   Definition_7_1["Def 7.1<br>computable presentation"]
   Definition_7_2["Def 7.2<br>computable mapping"]
-  Proposition_7_3["Prop 7.3<br>computable map category"]
-  Theorem_7_4["Theorem 7.4<br>sum and product"]
-  Theorem_7_5["Theorem 7.5<br>function space"]
-  Theorem_7_6["Theorem 7.6<br>computable fix"]
-  Proposition_7_7["Prop 7.7<br>lists given"]
-  Example_7_8["Example 7.8<br>powerset given"]
   Definition_7_9["Def 7.9<br>power domain"]
-  Proposition_7_10["Prop 7.10<br>power domain effective"]
-  Definition_7_11["Def 7.11<br>finite element sets"]
-  Proposition_7_12["Prop 7.12<br>finite sets approximable"]
+  Example_7_8["Example 7.8<br>powerset given"]
   Exercise_7_13["Exercise 7.13<br>neighbourhood axioms"]
   Exercise_7_14["Exercise 7.14<br>primitive recursive"]
   Exercise_7_15["Exercise 7.15<br>more constructs"]
@@ -28,62 +20,45 @@ flowchart TB
   Exercise_7_22["Exercise 7.22<br>formal languages"]
   Exercise_7_23["Exercise 7.23<br>graph and fun"]
   Exercise_7_24["Exercise 7.24<br>LUCID histories"]
+  Proposition_7_10["Prop 7.10<br>power domain effective"]
+  Proposition_7_12["Prop 7.12<br>finite sets approximable"]
+  Proposition_7_3["Prop 7.3<br>computable map category"]
+  Proposition_7_7["Prop 7.7<br>lists given"]
+  Theorem_7_4["Theorem 7.4<br>sum and product"]
+  Theorem_7_5["Theorem 7.5<br>function space"]
+  Theorem_7_6["Theorem 7.6<br>computable fix"]
 
+  Exercise_7_22 --> Definition_7_1
+  Proposition_7_10 --> Definition_7_11
   Definition_7_1 --> Definition_7_2
   Definition_7_1 --> Example_7_8
   Definition_7_1 --> Exercise_7_13
-  Definition_7_11 --> Exercise_7_19
   Definition_7_2 --> Exercise_7_14
-  Definition_7_2 --> Proposition_7_3
   Definition_7_9 --> Exercise_7_14
-  Example_7_8 --> Exercise_7_23
-  Exercise_7_14 --> Proposition_7_10
-  Exercise_7_15 --> Theorem_7_6
+  Theorem_7_4 --> Exercise_7_15
+  Theorem_7_5 --> Exercise_7_16
   Exercise_7_18 --> Exercise_7_17
-  Exercise_7_18 --> Theorem_7_6
+  Theorem_7_4 --> Exercise_7_18
+  Definition_7_11 --> Exercise_7_19
   Exercise_7_19 --> Exercise_7_20
   Exercise_7_19 --> Exercise_7_21
-  Exercise_7_21 --> Proposition_7_7
-  Exercise_7_22 --> Definition_7_1
-  Exercise_7_24 --> Theorem_7_6
-  Proposition_7_10 --> Definition_7_11
-  Proposition_7_12 --> Theorem_7_5
-  Proposition_7_3 --> Theorem_7_4
-  Proposition_7_7 --> Theorem_7_4
-  Theorem_7_4 --> Exercise_7_15
-  Theorem_7_4 --> Exercise_7_18
-  Theorem_7_4 --> Proposition_7_12
-  Theorem_7_5 --> Exercise_7_16
+  Example_7_8 --> Exercise_7_23
   Theorem_7_5 --> Exercise_7_23
   Theorem_7_5 --> Exercise_7_24
+  Exercise_7_14 --> Proposition_7_10
+  Theorem_7_4 --> Proposition_7_12
+  Definition_7_2 --> Proposition_7_3
+  Exercise_7_21 --> Proposition_7_7
+  Proposition_7_3 --> Theorem_7_4
+  Proposition_7_7 --> Theorem_7_4
+  Proposition_7_12 --> Theorem_7_5
+  Exercise_7_15 --> Theorem_7_6
+  Exercise_7_18 --> Theorem_7_6
+  Exercise_7_24 --> Theorem_7_6
 
+%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef cprop fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef cexs fill:#fef3c7,stroke:#b45309,color:#78350f
   classDef cex fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef cthm fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
-
-  class Definition_7_1 cdef
-  class Definition_7_2 cdef
-  class Proposition_7_3 cprop
-  class Theorem_7_4 cthm
-  class Theorem_7_5 cthm
-  class Theorem_7_6 cthm
-  class Proposition_7_7 cprop
-  class Example_7_8 cexs
-  class Definition_7_9 cdef
-  class Proposition_7_10 cprop
-  class Definition_7_11 cdef
-  class Proposition_7_12 cprop
-  class Exercise_7_13 cex
-  class Exercise_7_14 cex
-  class Exercise_7_15 cex
-  class Exercise_7_16 cex
-  class Exercise_7_17 cex
-  class Exercise_7_18 cex
-  class Exercise_7_19 cex
-  class Exercise_7_20 cex
-  class Exercise_7_21 cex
-  class Exercise_7_22 cex
-  class Exercise_7_23 cex
-  class Exercise_7_24 cex

@@ -32,6 +32,17 @@ def resolve_import(note_dir: Path, rel: str) -> Path:
     return (note_dir / rel).resolve()
 
 
+def canonical_lean_href(note_dir: Path, rel: str) -> str | None:
+    """Repo-relative path for PDF / file hyperlinks (``DomainTheory/...``)."""
+    target = resolve_import(note_dir, rel)
+    if not target.is_file():
+        return None
+    try:
+        return target.relative_to(ROOT).as_posix()
+    except ValueError:
+        return None
+
+
 def retarget_missing(note_dir: Path, rel: str) -> str | None:
     """If ``rel`` is missing, return a replacement relative path, else None."""
     target = resolve_import(note_dir, rel)
@@ -81,20 +92,27 @@ def refresh_note(path: Path) -> bool:
         # Prefer retarget of the import path; keep link in sync
         target = new_imp or (None if new_link is None and resolve_import(note_dir, imp).is_file() else new_link)
         if target is None:
-            # still missing with no retarget — drop the block
             if not resolve_import(note_dir, imp).is_file():
                 changed = True
                 return ""
-            return m.group(0)
+            target = imp
         if target != imp or (new_link and new_link != link):
             changed = True
             link_out = new_link or target
             # label: replace basename in label if present
             label = m.group("label")
             label = sync_label(label, imp, target)
+            href = canonical_lean_href(note_dir, target) or link_out
             return (
-                f"**[{label}]({link_out})**\n\n"
+                f"**[{label}]({href})**\n\n"
                 f'@import "{target}"\n'
+            )
+        href = canonical_lean_href(note_dir, imp)
+        if href and href != link:
+            changed = True
+            return (
+                f"**[{m.group('label')}]({href})**\n\n"
+                f'@import "{imp}"\n'
             )
         return m.group(0)
 
@@ -102,6 +120,10 @@ def refresh_note(path: Path) -> bool:
         nonlocal changed
         link = m.group("link")
         if resolve_import(note_dir, link).is_file():
+            href = canonical_lean_href(note_dir, link)
+            if href and href != link:
+                changed = True
+                return f"**[{m.group('label')}]({href})**"
             return m.group(0)
         target = retarget_missing(note_dir, link)
         if target is None:
@@ -110,7 +132,8 @@ def refresh_note(path: Path) -> bool:
         if target != link:
             changed = True
             label = sync_label(m.group("label"), link, target)
-            return f"**[{label}]({target})**"
+            href = canonical_lean_href(note_dir, target) or target
+            return f"**[{label}]({href})**"
         return m.group(0)
 
     new_text = LEAN_LINK_RE.sub(repl_link, text)

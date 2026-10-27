@@ -1,33 +1,37 @@
 %% Each box is one folder under BridgeTheorems. BridgeTheorems is the Lean files in that folder, not in a subfolder.
 %% The arrowhead points at the folder that imports. The label is how many direct imports.
 flowchart TB
+
+  N6["BridgeTheorems"]
   N0["ContinuousLatticeToNeighborhood"]
   N1["InfoSysConstructions"]
   N2["InfoSysToIdealCompletion"]
   N3["InfoSysToNeighborhood"]
   N4["NeighborhoodToInfoSys"]
   N5["PresentationDomains"]
-  N6["BridgeTheorems"]
   N7["WorkedExampleSExpr"]
 
+  N0 -->|"96"| N0
+  N1 -->|"84"| N1
+  N2 -->|"79"| N2
   N6 -->|"6"| N3
   N6 -->|"7"| N4
-  N0 -->|"18"| N5
-  N2 -->|"16"| N5
-  N3 -->|"14"| N5
-  N4 -->|"15"| N5
-  N6 -->|"14"| N5
-  N0 -->|"1"| N6
-  N1 -->|"16"| N6
-  N2 -->|"1"| N6
+  N0 -->|"5"| N5
+  N2 -->|"3"| N5
+  N3 -->|"1"| N5
+  N4 -->|"2"| N5
+  N5 -->|"30"| N5
+  N6 -->|"66"| N5
+  N0 -->|"3"| N6
+  N1 -->|"6"| N6
+  N2 -->|"3"| N6
   N3 -->|"1"| N6
   N4 -->|"1"| N6
-  N5 -->|"15"| N6
-  N1 -->|"16"| N7
-  N2 -->|"16"| N7
-  N3 -->|"16"| N7
-  N5 -->|"16"| N7
-  N6 -->|"32"| N7
+  N5 -->|"3"| N6
+  N6 -->|"363"| N6
+  N7 -->|"10"| N6
+  N6 -->|"96"| N7
+  N7 -->|"25"| N7
 
   classDef c0 fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
@@ -37,12 +41,3 @@ flowchart TB
   classDef c5 fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef c6 fill:#cffafe,stroke:#0e7490,color:#164e63
   classDef c7 fill:#fae8ff,stroke:#a21caf,color:#701a75
-
-  class N0 c0
-  class N1 c1
-  class N2 c2
-  class N3 c3
-  class N4 c4
-  class N5 c5
-  class N6 c6
-  class N7 c7

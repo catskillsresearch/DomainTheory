@@ -6,35 +6,27 @@
 
 @import "1982_Approximable_mappings_between_domains.english" {code_block=false}
 
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean](ApproximableMap.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean)**
 
 @import "ApproximableMap.lean"
-
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext.lean](ext.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext.lean)**
 
 @import "ext.lean"
-
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/singleton_funion_eq.lean](singleton_funion_eq.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/singleton_funion_eq.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/singleton_funion_eq.lean)**
 
 @import "singleton_funion_eq.lean"
-
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/exists_rel_of_subset_image.lean](exists_rel_of_subset_image.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/exists_rel_of_subset_image.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/exists_rel_of_subset_image.lean)**
 
 @import "exists_rel_of_subset_image.lean"
-
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement.lean](toElement.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement.lean)**
 
 @import "toElement.lean"
-
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Basic.lean](Basic.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Basic.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Basic.lean)**
 
 @import "Basic.lean"
-
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement_mono.lean](toElement_mono.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement_mono.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement_mono.lean)**
 
 @import "toElement_mono.lean"
-
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable.lean](../Approximable.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable.lean)**
 
 @import "../Approximable.lean"
-

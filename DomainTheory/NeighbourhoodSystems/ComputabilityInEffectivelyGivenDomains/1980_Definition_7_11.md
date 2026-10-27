@@ -6,6 +6,6 @@ $$\{x_0, \dots, x_{n-1}\} = \{z \in \mathbb{P} D \mid \exists X_0 \in x_0 \dots 
 
 (Note, we could also write $\forall i < n.\, X_i \in z$.) $\square$
 
-**[Definition_7_11.lean](Definition_7_11.lean)**
+**[Definition_7_11.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_11.lean)**
 
 @import "Definition_7_11.lean"

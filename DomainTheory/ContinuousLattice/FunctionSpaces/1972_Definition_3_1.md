@@ -10,7 +10,6 @@ where $x \in X$ and $U \subseteq Y$ is open.
 
 The pointwise aspect of the topology is immediately apparent in the partial ordering.
 
-**[ContinuousLattice/FunctionSpaces/ScottMap.lean](ScottMap.lean)**
+**[ContinuousLattice/FunctionSpaces/ScottMap.lean](DomainTheory/ContinuousLattice/FunctionSpaces/ScottMap.lean)**
 
 @import "ScottMap.lean"
-

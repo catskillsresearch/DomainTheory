@@ -11,6 +11,6 @@ $$k \circ h = I_{\mathbb{B}},$$
 
 and is $k$ one-one?
 
-**[Exercise_2_18.lean](Exercise_2_18.lean)**
+**[Exercise_2_18.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_18.lean)**
 
 @import "Exercise_2_18.lean"

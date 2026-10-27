@@ -2,775 +2,600 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["Retracts"]
-  N1["Closure"]
-  N2["Isolated"]
-  N3["Vapply"]
-  N4["Vcomb"]
-  N5["Vstep"]
-  N6["VapplyY"]
+
+  N39["arrowR_diag_isScottContinuous"]
   N7["boool"]
+  N47["botElem_union"]
+  N33["boxPlus"]
   N8["boxShift"]
   N9["boxTag"]
-  N10["closureCompact"]
-  N11["closure_expansive"]
-  N12["closureCompact.isCompact"]
-  N13["compactFixedBelow"]
-  N14["compact_fixed_iff"]
-  N15["representClosure"]
-  N16["representClosureCode"]
-  N17["representClosure.mono"]
-  N18["representClosure.isScottContinuous"]
-  N19["representClosureCode.app"]
-  N20["representationDecode"]
-  N21["representationEncode"]
-  N22["representationDecode.encode"]
-  N23["representationEncode.fixed"]
-  N24["representationOrderIso"]
-  N25["retractBasis_eq_compactFixedBelow"]
-  N26["fixed_eq_sSup_compacts"]
-  N27["closureRangeCountablyAlgebraic"]
-  N28["selfArrowStep"]
-  N29["dEq"]
-  N30["squareFst"]
-  N31["squarePair"]
-  N32["squareSnd"]
-  N33["boxPlus"]
   N34["boxTensor"]
-  N35["Basic"]
-  N36["Icomb_isClosure"]
-  N37["Icomb_subset_graph"]
-  N38["Icomb_subset_intR"]
-  N39["arrowR_diag_isScottContinuous"]
-
-  N41["Icomb_subset_boool"]
-
-  N47["botElem_union"]
-  N48["boxTag.bot"]
-  N49["boxTag.isScottContinuous"]
-  N50["boxTag.of_mem"]
-  N51["compactFixedBelow.directedSubset"]
-  N52["compactFixedBelow.sUnion"]
+  N1["Closure"]
+  N11["closure_expansive"]
+  N10["closureCompact"]
+  N27["closureRangeCountablyAlgebraic"]
+  N14["compact_fixed_iff"]
+  N13["compactFixedBelow"]
+  compactFixedBelow_more["compactFixedBelow_more"]
+  Continuous["Continuous"]
+  N29["dEq"]
   N53["directed_finite_cover_subset"]
-  N54["closureCompact.isCompactSubset"]
-  N55["compact_fixed_iff.subset"]
   N56["eq_5_1"]
-  N57["Icomb_subset_funRetract"]
   N58["eq_5_10"]
   N59["eq_5_11"]
-  N60["Icomb_subset_arrowR"]
   N61["eq_5_12"]
   N62["eq_5_13"]
+  N144["eq_5_14"]
   N63["eq_5_16"]
-  N64["Vapply.eq_imp_expansive"]
-  N65["Vapply.prefixpoint"]
-  N66["Vapply.closed"]
-  N67["Vapply.eq_Vstep"]
   N68["eq_5_17"]
-  N69["Vapply.eq_imp_idem"]
   N70["eq_5_18"]
-  N71["eq_5_18.rev"]
-  N72["eq_5_18.eq"]
+  N152["eq_5_19"]
   N73["eq_5_2"]
+  N149["eq_5_21"]
+  N155["eq_5_22"]
+  N168["eq_5_23"]
+  N156["eq_5_24"]
+  N92["eq_5_25"]
   N74["eq_5_8"]
   N75["eq_5_9"]
   N76["exists_mem_of_ne_bot"]
+  N26["fixed_eq_sSup_compacts"]
+  FixedLattices["FixedLattices"]
+  FixedPoint["FixedPoint"]
   N77["funRetract_isClosure"]
+  Graph["Graph"]
+  N36["Icomb_isClosure"]
+  N60["Icomb_subset_arrowR"]
+  N41["Icomb_subset_boool"]
+  N139["Icomb_subset_boxPlus"]
+  N137["Icomb_subset_boxShift"]
+  N102["Icomb_subset_boxTensor"]
+  N57["Icomb_subset_funRetract"]
+  N37["Icomb_subset_graph"]
+  N38["Icomb_subset_intR"]
+  N82["Icomb_subset_openR"]
+  N150["Icomb_subset_Vcomb"]
   N78["intR_isClosure"]
-  N79["openR_map_isScottContinuous"]
+  N2["Isolated"]
+  Lambda["Lambda"]
   N80["openR_app"]
   N81["openR_expansive"]
-  N82["Icomb_subset_openR"]
   N83["openR_idem"]
-  N84["openR_isRetract"]
   N85["openR_isClosure"]
+  N84["openR_isRetract"]
+  N79["openR_map_isScottContinuous"]
+  Pomega["Pomega"]
   N86["predSet_succSet"]
   N87["predSet_union"]
-  N88["representClosure.expansive"]
-  N89["representClosure.idem"]
-  N90["representClosureCode.isClosure"]
-  N91["selfArrowStep.isScottContinuous"]
-  N92["eq_5_25"]
-  N93["eq_5_25.arrow"]
-  N94["squareFst.bot"]
-  N95["squareFst.isScottContinuous"]
-  N96["squareFst.top"]
-  N97["squarePair.bot_bot"]
-  N98["squarePair.inj"]
-  N99["squarePair.dcondSet.isScottContinuous_left"]
-  N100["squarePair.dcondSet.isScottContinuous_right"]
-  N101["squarePair.mono"]
-  N102["Icomb_subset_boxTensor"]
-  N103["squareSnd.bot"]
-  N104["squareSnd.isScottContinuous"]
-  N105["boxTensor.app"]
-  N106["boxTensor.isRetract"]
-  N107["squareSnd.top"]
+  N20["representationDecode"]
+  N21["representationEncode"]
+  representationEncode_more["representationEncode_more"]
+  N24["representationOrderIso"]
+  N15["representClosure"]
+  N16["representClosureCode"]
+  N25["retractBasis_eq_compactFixedBelow"]
+  N0["Retracts"]
+  N28["selfArrowStep"]
+  N30["squareFst"]
+  N31["squarePair"]
+  squarePair_more["squarePair_more"]
+  N32["squareSnd"]
   N108["theorem_5_1"]
-  N109["theorem_5_1.isolated"]
   N110["theorem_5_2"]
   N111["theorem_5_3"]
-  N112["theorem_5_3.closure"]
   N113["theorem_5_4"]
   N114["theorem_5_5"]
-  N115["theorem_5_5.values"]
-  N116["theorem_5_6.iterates"]
+  theorem_5_5_more["theorem_5_5_more"]
+  theorem_5_5_universe["theorem_5_5_universe"]
+  N157["theorem_5_6"]
   N117["topElem_ne_botElem"]
   N118["typed_of_boxTensor"]
+  N159["typed_of_retract_Vcomb"]
   N119["typed_squarePair_boxTensor"]
   N120["union_botElem"]
-  N121["union_left_isScottContinuous"]
   N122["union_const_left_isScottContinuous"]
-
-  N137["Icomb_subset_boxShift"]
-
-  N139["Icomb_subset_boxPlus"]
-
+  N121["union_left_isScottContinuous"]
   N142["union_right_isScottContinuous"]
-  N143["Vstep.isScottContinuous"]
-  N144["eq_5_14"]
-  N145["Vapply.left_isScottContinuous"]
-  N146["Vapply.right_isScottContinuous"]
-  N147["Vapply.graph_isClosure"]
-  N148["Vcomb.app"]
-  N149["eq_5_21"]
-  N150["Icomb_subset_Vcomb"]
-  N151["theorem_5_5.iff"]
-  N152["eq_5_19"]
-  N153["Vcomb.isRetract"]
-  N154["theorem_5_5.universe"]
-  N155["eq_5_22"]
-  N156["eq_5_24"]
-  N157["theorem_5_6"]
-  N158["theorem_5_6.combinator"]
-  N159["typed_of_retract_Vcomb"]
+  N3["Vapply"]
+  Vapply_more["Vapply_more"]
+  N6["VapplyY"]
+  N4["Vcomb"]
+  Vcomb_more["Vcomb_more"]
+  N5["Vstep"]
 
-  N167["theorem_5_4.plus"]
-  N168["eq_5_23"]
-
-  N0 -->|"1"| N1
-  N0 -->|"1"| N2
-  N0 -->|"1"| N3
-  N0 -->|"1"| N4
-  N3 -->|"1"| N4
-  N0 -->|"1"| N5
-  N0 -->|"1"| N6
-  N5 -->|"1"| N6
-  N0 -->|"1"| N7
-  N0 -->|"1"| N8
-  N0 -->|"1"| N9
-  N0 -->|"1"| N10
+  N0 -->|"2"| N1
+  Pomega -->|"1"| N1
+  Continuous -->|"1"| N10
+  FixedLattices -->|"1"| N10
+  FixedPoint -->|"1"| N10
+  Graph -->|"3"| N10
+  N0 -->|"5"| N10
   N1 -->|"1"| N10
+  N11 -->|"1"| N10
+  N53 -->|"1"| N10
+  Pomega -->|"1"| N10
+  Graph -->|"2"| N102
+  N0 -->|"1"| N102
+  N1 -->|"1"| N102
+  N30 -->|"1"| N102
+  N31 -->|"1"| N102
+  N32 -->|"1"| N102
+  N34 -->|"1"| N102
+  N74 -->|"1"| N102
+  Pomega -->|"1"| N102
+  squarePair_more -->|"1"| N102
+  Graph -->|"1"| N108
+  N0 -->|"5"| N108
+  N1 -->|"1"| N108
+  N10 -->|"1"| N108
+  N13 -->|"1"| N108
+  N14 -->|"1"| N108
+  N2 -->|"1"| N108
+  Pomega -->|"1"| N108
+  compactFixedBelow_more -->|"1"| N108
+  Graph -->|"2"| N11
   N0 -->|"1"| N11
   N1 -->|"1"| N11
-  N0 -->|"1"| N12
-  N1 -->|"1"| N12
-  N10 -->|"1"| N12
-  N11 -->|"1"| N12
+  Pomega -->|"1"| N11
+  Continuous -->|"1"| N110
+  FixedLattices -->|"2"| N110
+  Graph -->|"1"| N110
+  N0 -->|"2"| N110
+  N1 -->|"1"| N110
+  N15 -->|"1"| N110
+  N16 -->|"1"| N110
+  N24 -->|"1"| N110
+  Pomega -->|"1"| N110
+  Graph -->|"2"| N111
+  N0 -->|"5"| N111
+  N1 -->|"1"| N111
+  N60 -->|"1"| N111
+  Pomega -->|"1"| N111
+  N1 -->|"1"| N113
+  N102 -->|"1"| N113
+  N139 -->|"1"| N113
+  N33 -->|"1"| N113
+  N34 -->|"1"| N113
+  Pomega -->|"1"| N113
+  Graph -->|"1"| N114
+  N1 -->|"1"| N114
+  N10 -->|"1"| N114
+  N11 -->|"1"| N114
+  N13 -->|"1"| N114
+  N14 -->|"1"| N114
+  N15 -->|"1"| N114
+  N16 -->|"1"| N114
+  N2 -->|"1"| N114
+  N20 -->|"1"| N114
+  N21 -->|"1"| N114
+  N24 -->|"1"| N114
+  N25 -->|"1"| N114
+  N26 -->|"1"| N114
+  N27 -->|"1"| N114
+  N28 -->|"1"| N114
+  N29 -->|"1"| N114
+  N3 -->|"1"| N114
+  N30 -->|"1"| N114
+  N31 -->|"1"| N114
+  N32 -->|"1"| N114
+  N34 -->|"1"| N114
+  N4 -->|"1"| N114
+  N5 -->|"1"| N114
+  N6 -->|"1"| N114
+  N68 -->|"1"| N114
+  N70 -->|"1"| N114
+  N9 -->|"1"| N114
+  Pomega -->|"1"| N114
+  representationEncode_more -->|"1"| N114
+  Pomega -->|"1"| N117
+  Graph -->|"1"| N118
+  N0 -->|"1"| N118
+  N30 -->|"1"| N118
+  N31 -->|"1"| N118
+  N32 -->|"1"| N118
+  N34 -->|"1"| N118
+  N58 -->|"1"| N118
+  N75 -->|"1"| N118
+  Pomega -->|"1"| N118
+  Graph -->|"1"| N119
+  N0 -->|"1"| N119
+  N31 -->|"1"| N119
+  N34 -->|"1"| N119
+  N58 -->|"1"| N119
+  N75 -->|"1"| N119
+  Pomega -->|"2"| N119
+  squarePair_more -->|"1"| N119
+  Pomega -->|"1"| N120
+  Continuous -->|"3"| N121
+  Lambda -->|"1"| N121
+  Pomega -->|"1"| N121
+  Continuous -->|"1"| N122
+  N121 -->|"1"| N122
+  Pomega -->|"1"| N122
+  Graph -->|"1"| N13
   N0 -->|"1"| N13
-  N0 -->|"1"| N14
+  Pomega -->|"1"| N13
+  N0 -->|"1"| N137
+  N1 -->|"1"| N137
+  N37 -->|"1"| N137
+  N8 -->|"1"| N137
+  Pomega -->|"1"| N137
+  N0 -->|"1"| N139
+  N1 -->|"1"| N139
+  N33 -->|"1"| N139
+  N37 -->|"1"| N139
+  Pomega -->|"1"| N139
+  Continuous -->|"1"| N14
+  FixedLattices -->|"1"| N14
+  Graph -->|"2"| N14
+  N0 -->|"4"| N14
   N1 -->|"1"| N14
   N10 -->|"1"| N14
-  N12 -->|"1"| N14
-  N0 -->|"1"| N15
+  N13 -->|"1"| N14
+  Pomega -->|"1"| N14
+  compactFixedBelow_more -->|"1"| N14
+  Continuous -->|"3"| N142
+  Pomega -->|"1"| N142
+  N3 -->|"1"| N144
+  N6 -->|"1"| N144
+  Pomega -->|"1"| N144
+  Vapply_more -->|"1"| N144
+  Graph -->|"1"| N149
+  Lambda -->|"1"| N149
+  N4 -->|"1"| N149
+  N56 -->|"1"| N149
+  N70 -->|"1"| N149
+  Pomega -->|"1"| N149
+  Vcomb_more -->|"1"| N149
+  Continuous -->|"3"| N15
+  FixedLattices -->|"2"| N15
+  Pomega -->|"1"| N15
+  Graph -->|"2"| N150
+  N0 -->|"1"| N150
+  N149 -->|"1"| N150
+  N3 -->|"1"| N150
+  N4 -->|"1"| N150
+  Pomega -->|"1"| N150
+  Vcomb_more -->|"1"| N150
+  Graph -->|"2"| N152
+  N3 -->|"1"| N152
+  N4 -->|"1"| N152
+  Pomega -->|"1"| N152
+  Vapply_more -->|"1"| N152
+  theorem_5_5_more -->|"1"| N152
+  N0 -->|"1"| N155
+  N113 -->|"1"| N155
+  N114 -->|"1"| N155
+  N34 -->|"1"| N155
+  N4 -->|"1"| N155
+  Pomega -->|"1"| N155
+  theorem_5_5_universe -->|"1"| N155
+  N0 -->|"2"| N156
+  N111 -->|"1"| N156
+  N114 -->|"1"| N156
+  N4 -->|"1"| N156
+  Pomega -->|"1"| N156
+  theorem_5_5_universe -->|"1"| N156
+  Continuous -->|"1"| N157
+  Graph -->|"1"| N157
+  Lambda -->|"2"| N157
+  N0 -->|"9"| N157
+  N1 -->|"1"| N157
+  N111 -->|"1"| N157
+  N114 -->|"1"| N157
+  N36 -->|"1"| N157
+  N4 -->|"1"| N157
+  Pomega -->|"1"| N157
+  Vcomb_more -->|"1"| N157
+  theorem_5_5_universe -->|"1"| N157
+  Graph -->|"3"| N159
+  N0 -->|"1"| N159
+  N3 -->|"1"| N159
+  N4 -->|"1"| N159
+  N63 -->|"1"| N159
+  Pomega -->|"1"| N159
+  Vapply_more -->|"1"| N159
+  Vcomb_more -->|"1"| N159
+  Continuous -->|"1"| N16
+  FixedLattices -->|"2"| N16
+  Graph -->|"3"| N16
   N0 -->|"1"| N16
+  N1 -->|"1"| N16
   N15 -->|"1"| N16
-  N0 -->|"1"| N17
-  N15 -->|"1"| N17
-  N0 -->|"1"| N18
-  N15 -->|"1"| N18
-  N17 -->|"1"| N18
-  N0 -->|"1"| N19
-  N15 -->|"1"| N19
-  N16 -->|"1"| N19
-  N18 -->|"1"| N19
-  N0 -->|"1"| N20
-  N0 -->|"1"| N21
-  N0 -->|"1"| N22
-  N20 -->|"1"| N22
-  N21 -->|"1"| N22
-  N0 -->|"1"| N23
-  N16 -->|"1"| N23
-  N19 -->|"1"| N23
-  N20 -->|"1"| N23
-  N21 -->|"1"| N23
-  N22 -->|"1"| N23
-  N0 -->|"1"| N24
+  Pomega -->|"1"| N16
+  N0 -->|"1"| N168
+  N113 -->|"1"| N168
+  N114 -->|"1"| N168
+  N33 -->|"1"| N168
+  N4 -->|"1"| N168
+  Pomega -->|"1"| N168
+  theorem_5_5_universe -->|"1"| N168
+  Pomega -->|"1"| N2
+  FixedLattices -->|"3"| N20
+  N21 -->|"1"| N20
+  Pomega -->|"1"| N20
+  FixedLattices -->|"2"| N21
+  Pomega -->|"1"| N21
+  FixedLattices -->|"2"| N24
+  Graph -->|"1"| N24
+  N0 -->|"2"| N24
   N15 -->|"1"| N24
   N16 -->|"1"| N24
-  N19 -->|"1"| N24
   N20 -->|"1"| N24
   N21 -->|"1"| N24
-  N22 -->|"1"| N24
-  N23 -->|"1"| N24
-  N0 -->|"1"| N25
+  representationEncode_more -->|"1"| N24
+  Continuous -->|"1"| N25
+  Graph -->|"2"| N25
+  N0 -->|"3"| N25
   N1 -->|"1"| N25
   N11 -->|"1"| N25
   N13 -->|"1"| N25
-  N0 -->|"1"| N26
+  Pomega -->|"1"| N25
+  FixedLattices -->|"1"| N26
+  Graph -->|"1"| N26
+  N0 -->|"3"| N26
   N1 -->|"1"| N26
   N13 -->|"1"| N26
   N25 -->|"1"| N26
-  N0 -->|"1"| N27
+  Pomega -->|"1"| N26
+  FixedLattices -->|"3"| N27
+  Graph -->|"1"| N27
+  N0 -->|"2"| N27
   N1 -->|"1"| N27
   N10 -->|"1"| N27
-  N12 -->|"1"| N27
   N13 -->|"1"| N27
   N14 -->|"1"| N27
   N26 -->|"1"| N27
-  N0 -->|"1"| N28
-  N0 -->|"1"| N29
+  Pomega -->|"1"| N27
+  Continuous -->|"3"| N28
+  N0 -->|"2"| N28
+  N39 -->|"1"| N28
+  Pomega -->|"1"| N28
+  FixedPoint -->|"1"| N29
   N28 -->|"1"| N29
-  N0 -->|"1"| N30
-  N0 -->|"1"| N31
-  N0 -->|"1"| N32
-  N0 -->|"1"| N33
-  N8 -->|"1"| N33
-  N9 -->|"1"| N33
+  Pomega -->|"1"| N29
+  Graph -->|"1"| N3
+  Pomega -->|"1"| N3
+  Continuous -->|"2"| N30
+  Pomega -->|"1"| N30
+  Pomega -->|"1"| N31
+  Continuous -->|"2"| N32
+  Pomega -->|"1"| N32
+  Continuous -->|"1"| N33
+  FixedPoint -->|"1"| N33
+  Graph -->|"4"| N33
+  Lambda -->|"3"| N33
+  N0 -->|"4"| N33
+  N1 -->|"1"| N33
+  N117 -->|"1"| N33
+  N120 -->|"1"| N33
+  N121 -->|"1"| N33
+  N122 -->|"1"| N33
   N30 -->|"1"| N33
   N31 -->|"1"| N33
   N32 -->|"1"| N33
-  N0 -->|"1"| N34
+  N47 -->|"1"| N33
+  N58 -->|"1"| N33
+  N74 -->|"1"| N33
+  N75 -->|"1"| N33
+  N76 -->|"1"| N33
+  N8 -->|"1"| N33
+  N9 -->|"1"| N33
+  Pomega -->|"1"| N33
+  squarePair_more -->|"1"| N33
+  FixedPoint -->|"1"| N34
+  Graph -->|"4"| N34
+  N0 -->|"3"| N34
   N30 -->|"1"| N34
   N31 -->|"1"| N34
   N32 -->|"1"| N34
-  N0 -->|"1"| N35
-  N1 -->|"1"| N35
-  N2 -->|"1"| N35
-  N3 -->|"1"| N35
-  N4 -->|"1"| N35
-  N5 -->|"1"| N35
-  N6 -->|"1"| N35
-  N7 -->|"1"| N35
-  N8 -->|"1"| N35
-  N9 -->|"1"| N35
-  N10 -->|"1"| N35
-  N11 -->|"1"| N35
-  N12 -->|"1"| N35
-  N13 -->|"1"| N35
-  N14 -->|"1"| N35
-  N15 -->|"1"| N35
-  N16 -->|"1"| N35
-  N17 -->|"1"| N35
-  N18 -->|"1"| N35
-  N19 -->|"1"| N35
-  N20 -->|"1"| N35
-  N21 -->|"1"| N35
-  N22 -->|"1"| N35
-  N23 -->|"1"| N35
-  N24 -->|"1"| N35
-  N25 -->|"1"| N35
-  N26 -->|"1"| N35
-  N27 -->|"1"| N35
-  N28 -->|"1"| N35
-  N29 -->|"1"| N35
-  N30 -->|"1"| N35
-  N31 -->|"1"| N35
-  N32 -->|"1"| N35
-  N33 -->|"1"| N35
-  N34 -->|"1"| N35
+  N58 -->|"1"| N34
+  N75 -->|"1"| N34
+  Pomega -->|"1"| N34
+  squarePair_more -->|"1"| N34
   N0 -->|"1"| N36
-  N35 -->|"1"| N36
+  N1 -->|"1"| N36
+  Graph -->|"1"| N37
   N0 -->|"1"| N37
-  N35 -->|"1"| N37
-  N0 -->|"1"| N38
-  N35 -->|"1"| N38
-  N0 -->|"1"| N39
-  N35 -->|"1"| N39
-  N35 -->|"1"| N7
+  Pomega -->|"2"| N37
+  Graph -->|"1"| N38
+  Lambda -->|"1"| N38
+  N0 -->|"2"| N38
+  Pomega -->|"1"| N38
+  Continuous -->|"1"| N39
+  FixedPoint -->|"1"| N39
+  Graph -->|"3"| N39
+  Lambda -->|"2"| N39
+  N0 -->|"2"| N39
+  Continuous -->|"1"| N4
+  Graph -->|"3"| N4
+  Lambda -->|"1"| N4
+  N3 -->|"1"| N4
+  Pomega -->|"1"| N4
+  Vapply_more -->|"1"| N4
   N0 -->|"1"| N41
-  N35 -->|"1"| N41
+  N1 -->|"1"| N41
   N7 -->|"1"| N41
-  N41 -->|"1"| N7
-  N0 -->|"1"| N47
-  N35 -->|"1"| N47
-  N0 -->|"1"| N48
-  N35 -->|"1"| N48
-  N0 -->|"1"| N49
-  N35 -->|"1"| N49
-  N0 -->|"1"| N50
-  N35 -->|"1"| N50
-  N0 -->|"1"| N51
-  N35 -->|"1"| N51
-  N0 -->|"1"| N52
-  N35 -->|"1"| N52
-  N0 -->|"1"| N53
-  N35 -->|"1"| N53
-  N0 -->|"1"| N54
-  N35 -->|"1"| N54
-  N53 -->|"1"| N54
-  N0 -->|"1"| N55
-  N35 -->|"1"| N55
-  N51 -->|"1"| N55
-  N52 -->|"1"| N55
-  N54 -->|"1"| N55
-  N0 -->|"1"| N56
-  N35 -->|"1"| N56
-  N0 -->|"1"| N57
-  N35 -->|"1"| N57
+  Pomega -->|"1"| N41
+  Pomega -->|"1"| N47
+  Continuous -->|"1"| N5
+  Graph -->|"2"| N5
+  N142 -->|"1"| N5
+  Pomega -->|"1"| N5
+  FixedLattices -->|"1"| N53
+  N0 -->|"4"| N53
+  Pomega -->|"1"| N53
+  Graph -->|"3"| N56
+  Pomega -->|"1"| N56
+  N0 -->|"2"| N57
   N56 -->|"1"| N57
-  N0 -->|"1"| N58
-  N35 -->|"1"| N58
+  Pomega -->|"1"| N57
+  N31 -->|"1"| N58
+  N32 -->|"1"| N58
+  Pomega -->|"1"| N58
+  Graph -->|"2"| N59
   N0 -->|"1"| N59
-  N35 -->|"1"| N59
-  N0 -->|"1"| N60
-  N35 -->|"1"| N60
+  N1 -->|"1"| N59
+  Pomega -->|"1"| N59
+  FixedPoint -->|"1"| N6
+  N5 -->|"1"| N6
+  Pomega -->|"1"| N6
+  Graph -->|"2"| N60
+  Lambda -->|"1"| N60
+  N0 -->|"3"| N60
+  N1 -->|"1"| N60
   N56 -->|"1"| N60
   N59 -->|"1"| N60
-  N0 -->|"1"| N61
-  N35 -->|"1"| N61
-  N0 -->|"1"| N62
-  N35 -->|"1"| N62
-  N0 -->|"1"| N63
-  N35 -->|"1"| N63
-  N0 -->|"1"| N64
-  N35 -->|"1"| N64
-  N63 -->|"1"| N64
-  N0 -->|"1"| N65
-  N35 -->|"1"| N65
-  N63 -->|"1"| N65
-  N0 -->|"1"| N66
-  N35 -->|"1"| N66
-  N63 -->|"1"| N66
-  N65 -->|"1"| N66
-  N0 -->|"1"| N67
-  N35 -->|"1"| N67
-  N66 -->|"1"| N67
-  N0 -->|"1"| N68
-  N35 -->|"1"| N68
+  Pomega -->|"1"| N60
+  Graph -->|"2"| N61
+  N30 -->|"1"| N61
+  N31 -->|"1"| N61
+  N32 -->|"1"| N61
+  N34 -->|"1"| N61
+  Pomega -->|"1"| N61
+  Graph -->|"2"| N62
+  Lambda -->|"3"| N62
+  N30 -->|"1"| N62
+  N31 -->|"1"| N62
+  N32 -->|"1"| N62
+  N33 -->|"1"| N62
+  N8 -->|"1"| N62
+  Pomega -->|"1"| N62
+  N3 -->|"1"| N63
+  Pomega -->|"1"| N63
+  N3 -->|"1"| N68
   N63 -->|"1"| N68
-  N0 -->|"1"| N69
-  N35 -->|"1"| N69
-  N68 -->|"1"| N69
-  N0 -->|"1"| N70
-  N35 -->|"1"| N70
-  N0 -->|"1"| N71
-  N35 -->|"1"| N71
-  N0 -->|"1"| N72
-  N35 -->|"1"| N72
-  N70 -->|"1"| N72
-  N71 -->|"1"| N72
-  N0 -->|"1"| N73
-  N35 -->|"1"| N73
+  Pomega -->|"1"| N68
+  Continuous -->|"1"| N7
+  Graph -->|"3"| N7
+  Lambda -->|"3"| N7
+  N0 -->|"2"| N7
+  Pomega -->|"1"| N7
+  Graph -->|"2"| N70
+  N0 -->|"2"| N70
+  N1 -->|"1"| N70
+  N3 -->|"1"| N70
+  Pomega -->|"1"| N70
+  N0 -->|"2"| N73
   N36 -->|"1"| N73
   N60 -->|"1"| N73
-  N0 -->|"1"| N74
-  N35 -->|"1"| N74
-  N0 -->|"1"| N75
-  N35 -->|"1"| N75
-  N0 -->|"1"| N76
-  N35 -->|"1"| N76
+  N30 -->|"1"| N74
+  N31 -->|"1"| N74
+  N32 -->|"1"| N74
+  Pomega -->|"1"| N74
+  N30 -->|"1"| N75
+  N31 -->|"1"| N75
+  Pomega -->|"1"| N75
+  Pomega -->|"1"| N76
   N0 -->|"1"| N77
-  N35 -->|"1"| N77
+  N1 -->|"1"| N77
   N57 -->|"1"| N77
   N0 -->|"1"| N78
-  N35 -->|"1"| N78
+  N1 -->|"1"| N78
   N38 -->|"1"| N78
-  N0 -->|"1"| N79
-  N35 -->|"1"| N79
+  Continuous -->|"2"| N79
+  Pomega -->|"1"| N79
+  Continuous -->|"1"| N8
+  FixedPoint -->|"1"| N8
+  Graph -->|"4"| N8
+  Lambda -->|"5"| N8
+  N0 -->|"5"| N8
+  N1 -->|"1"| N8
+  N122 -->|"1"| N8
+  N86 -->|"1"| N8
+  N87 -->|"1"| N8
+  Pomega -->|"1"| N8
+  Graph -->|"2"| N80
   N0 -->|"1"| N80
-  N35 -->|"1"| N80
   N79 -->|"1"| N80
+  Pomega -->|"1"| N80
+  Graph -->|"1"| N81
   N0 -->|"1"| N81
-  N35 -->|"1"| N81
   N80 -->|"1"| N81
-  N0 -->|"1"| N82
-  N35 -->|"1"| N82
+  Pomega -->|"1"| N81
+  N0 -->|"2"| N82
   N37 -->|"1"| N82
   N80 -->|"1"| N82
   N81 -->|"1"| N82
+  Pomega -->|"1"| N82
+  Graph -->|"1"| N83
   N0 -->|"1"| N83
-  N35 -->|"1"| N83
   N80 -->|"1"| N83
   N81 -->|"1"| N83
-  N0 -->|"1"| N84
-  N35 -->|"1"| N84
+  Pomega -->|"1"| N83
+  Graph -->|"2"| N84
+  N0 -->|"3"| N84
   N80 -->|"1"| N84
   N83 -->|"1"| N84
   N0 -->|"1"| N85
-  N35 -->|"1"| N85
+  N1 -->|"1"| N85
   N82 -->|"1"| N85
   N84 -->|"1"| N85
-  N0 -->|"1"| N86
-  N35 -->|"1"| N86
-  N0 -->|"1"| N87
-  N35 -->|"1"| N87
-  N0 -->|"1"| N88
-  N35 -->|"1"| N88
-  N0 -->|"1"| N89
-  N35 -->|"1"| N89
-  N88 -->|"1"| N89
-  N0 -->|"1"| N90
-  N35 -->|"1"| N90
-  N88 -->|"1"| N90
-  N89 -->|"1"| N90
-  N0 -->|"1"| N91
-  N35 -->|"1"| N91
-  N39 -->|"1"| N91
-  N0 -->|"1"| N92
-  N35 -->|"1"| N92
-  N91 -->|"1"| N92
-  N0 -->|"1"| N93
-  N35 -->|"1"| N93
-  N92 -->|"1"| N93
-  N0 -->|"1"| N94
-  N35 -->|"1"| N94
-  N0 -->|"1"| N95
-  N35 -->|"1"| N95
-  N0 -->|"1"| N96
-  N35 -->|"1"| N96
-  N0 -->|"1"| N97
-  N35 -->|"1"| N97
-  N0 -->|"1"| N98
-  N35 -->|"1"| N98
-  N58 -->|"1"| N98
-  N75 -->|"1"| N98
-  N0 -->|"1"| N99
-  N35 -->|"1"| N99
-  N0 -->|"1"| N100
-  N35 -->|"1"| N100
-  N0 -->|"1"| N101
-  N35 -->|"1"| N101
-  N0 -->|"1"| N102
-  N35 -->|"1"| N102
-  N74 -->|"1"| N102
-  N101 -->|"1"| N102
-  N0 -->|"1"| N103
-  N35 -->|"1"| N103
-  N0 -->|"1"| N104
-  N35 -->|"1"| N104
-  N0 -->|"1"| N105
-  N35 -->|"1"| N105
-  N95 -->|"1"| N105
-  N99 -->|"1"| N105
-  N100 -->|"1"| N105
-  N104 -->|"1"| N105
-  N0 -->|"1"| N106
-  N35 -->|"1"| N106
-  N58 -->|"1"| N106
-  N75 -->|"1"| N106
-  N105 -->|"1"| N106
-  N0 -->|"1"| N107
-  N35 -->|"1"| N107
-  N0 -->|"1"| N108
-  N35 -->|"1"| N108
-  N51 -->|"1"| N108
-  N52 -->|"1"| N108
-  N55 -->|"1"| N108
-  N0 -->|"1"| N109
-  N35 -->|"1"| N109
-  N0 -->|"1"| N110
-  N35 -->|"1"| N110
-  N90 -->|"1"| N110
-  N0 -->|"1"| N111
-  N35 -->|"1"| N111
-  N0 -->|"1"| N112
-  N35 -->|"1"| N112
-  N60 -->|"1"| N112
-  N111 -->|"1"| N112
-  N0 -->|"1"| N113
-  N35 -->|"1"| N113
-  N102 -->|"1"| N113
-  N106 -->|"1"| N113
-  N0 -->|"1"| N114
-  N35 -->|"1"| N114
-  N68 -->|"1"| N114
-  N72 -->|"1"| N114
-  N0 -->|"1"| N115
-  N35 -->|"1"| N115
-  N63 -->|"1"| N115
-  N68 -->|"1"| N115
-  N0 -->|"1"| N116
-  N35 -->|"1"| N116
-  N36 -->|"1"| N116
-  N0 -->|"1"| N117
-  N35 -->|"1"| N117
-  N0 -->|"1"| N118
-  N35 -->|"1"| N118
-  N58 -->|"1"| N118
-  N75 -->|"1"| N118
-  N105 -->|"1"| N118
-  N0 -->|"1"| N119
-  N35 -->|"1"| N119
-  N58 -->|"1"| N119
-  N75 -->|"1"| N119
-  N98 -->|"1"| N119
-  N105 -->|"1"| N119
-  N0 -->|"1"| N120
-  N35 -->|"1"| N120
-  N0 -->|"1"| N121
-  N35 -->|"1"| N121
-  N0 -->|"1"| N122
-  N35 -->|"1"| N122
-  N121 -->|"1"| N122
-  N35 -->|"1"| N33
-  N49 -->|"1"| N33
-  N95 -->|"1"| N33
-  N104 -->|"1"| N33
-  N121 -->|"1"| N33
-  N122 -->|"1"| N33
-  N99 -->|"1"| N33
-  N100 -->|"1"| N33
-  N48 -->|"1"| N33
-  N94 -->|"1"| N33
-  N103 -->|"1"| N33
-  N50 -->|"1"| N33
-  N76 -->|"1"| N33
-  N120 -->|"1"| N33
-  N47 -->|"1"| N33
-  N96 -->|"1"| N33
-  N107 -->|"1"| N33
-  N117 -->|"1"| N33
-  N35 -->|"1"| N8
-  N122 -->|"1"| N8
-  N0 -->|"1"| N137
-  N35 -->|"1"| N137
-  N37 -->|"1"| N137
-  N8 -->|"1"| N137
-  N74 -->|"1"| N33
-  N97 -->|"1"| N33
-  N101 -->|"1"| N33
-  N0 -->|"1"| N139
-  N35 -->|"1"| N139
-  N37 -->|"1"| N139
-  N33 -->|"1"| N139
-  N86 -->|"1"| N8
-  N87 -->|"1"| N8
-  N137 -->|"1"| N8
-  N0 -->|"1"| N142
-  N35 -->|"1"| N142
-  N0 -->|"1"| N143
-  N35 -->|"1"| N143
-  N142 -->|"1"| N143
-  N0 -->|"1"| N144
-  N35 -->|"1"| N144
-  N67 -->|"1"| N144
-  N143 -->|"1"| N144
-  N0 -->|"1"| N145
-  N35 -->|"1"| N145
-  N142 -->|"1"| N145
-  N143 -->|"1"| N145
-  N144 -->|"1"| N145
-  N0 -->|"1"| N146
-  N35 -->|"1"| N146
-  N121 -->|"1"| N146
-  N143 -->|"1"| N146
-  N144 -->|"1"| N146
-  N0 -->|"1"| N147
-  N35 -->|"1"| N147
-  N63 -->|"1"| N147
-  N68 -->|"1"| N147
-  N146 -->|"1"| N147
-  N0 -->|"1"| N148
-  N35 -->|"1"| N148
-  N145 -->|"1"| N148
-  N0 -->|"1"| N149
-  N35 -->|"1"| N149
-  N56 -->|"1"| N149
-  N71 -->|"1"| N149
-  N148 -->|"1"| N149
-  N0 -->|"1"| N150
-  N35 -->|"1"| N150
-  N148 -->|"1"| N150
-  N149 -->|"1"| N150
-  N0 -->|"1"| N151
-  N35 -->|"1"| N151
-  N63 -->|"1"| N151
-  N68 -->|"1"| N151
-  N72 -->|"1"| N151
-  N146 -->|"1"| N151
-  N148 -->|"1"| N151
-  N0 -->|"1"| N152
-  N35 -->|"1"| N152
-  N147 -->|"1"| N152
-  N148 -->|"1"| N152
-  N151 -->|"1"| N152
-  N0 -->|"1"| N153
-  N35 -->|"1"| N153
-  N148 -->|"1"| N153
-  N152 -->|"1"| N153
-  N0 -->|"1"| N154
-  N35 -->|"1"| N154
-  N150 -->|"1"| N154
-  N151 -->|"1"| N154
-  N153 -->|"1"| N154
-  N0 -->|"1"| N155
-  N35 -->|"1"| N155
-  N113 -->|"1"| N155
-  N154 -->|"1"| N155
-  N0 -->|"1"| N156
-  N35 -->|"1"| N156
-  N112 -->|"1"| N156
-  N154 -->|"1"| N156
-  N0 -->|"1"| N157
-  N35 -->|"1"| N157
-  N153 -->|"1"| N157
-  N0 -->|"1"| N158
-  N35 -->|"1"| N158
-  N111 -->|"1"| N158
-  N154 -->|"1"| N158
-  N157 -->|"1"| N158
-  N0 -->|"1"| N159
-  N35 -->|"1"| N159
-  N63 -->|"1"| N159
-  N146 -->|"1"| N159
-  N148 -->|"1"| N159
-  N58 -->|"1"| N33
-  N75 -->|"1"| N33
-  N0 -->|"1"| N167
-  N35 -->|"1"| N167
-  N139 -->|"1"| N167
-  N33 -->|"1"| N167
-  N0 -->|"1"| N168
-  N35 -->|"1"| N168
-  N154 -->|"1"| N168
-  N167 -->|"1"| N168
+  Lambda -->|"2"| N86
+  Pomega -->|"1"| N86
+  Lambda -->|"1"| N87
+  Pomega -->|"1"| N87
+  Lambda -->|"2"| N9
+  Pomega -->|"1"| N9
+  FixedPoint -->|"1"| N92
+  N0 -->|"2"| N92
+  N28 -->|"1"| N92
+  N29 -->|"1"| N92
+  Continuous -->|"1"| Vapply_more
+  FixedPoint -->|"1"| Vapply_more
+  Graph -->|"4"| Vapply_more
+  Lambda -->|"1"| Vapply_more
+  N0 -->|"1"| Vapply_more
+  N1 -->|"1"| Vapply_more
+  N121 -->|"1"| Vapply_more
+  N142 -->|"1"| Vapply_more
+  N3 -->|"1"| Vapply_more
+  N5 -->|"1"| Vapply_more
+  N6 -->|"1"| Vapply_more
+  N63 -->|"1"| Vapply_more
+  N68 -->|"1"| Vapply_more
+  Pomega -->|"1"| Vapply_more
+  Graph -->|"2"| Vcomb_more
+  N0 -->|"2"| Vcomb_more
+  N152 -->|"1"| Vcomb_more
+  N4 -->|"1"| Vcomb_more
+  Graph -->|"1"| compactFixedBelow_more
+  N0 -->|"3"| compactFixedBelow_more
+  N1 -->|"1"| compactFixedBelow_more
+  N13 -->|"1"| compactFixedBelow_more
+  N25 -->|"1"| compactFixedBelow_more
+  Pomega -->|"1"| compactFixedBelow_more
+  FixedLattices -->|"2"| representationEncode_more
+  Graph -->|"1"| representationEncode_more
+  N16 -->|"1"| representationEncode_more
+  N20 -->|"1"| representationEncode_more
+  N21 -->|"1"| representationEncode_more
+  Pomega -->|"1"| representationEncode_more
+  Continuous -->|"2"| squarePair_more
+  N30 -->|"1"| squarePair_more
+  N31 -->|"1"| squarePair_more
+  N32 -->|"1"| squarePair_more
+  N58 -->|"1"| squarePair_more
+  N75 -->|"1"| squarePair_more
+  Pomega -->|"1"| squarePair_more
+  Graph -->|"3"| theorem_5_5_more
+  N0 -->|"2"| theorem_5_5_more
+  N1 -->|"1"| theorem_5_5_more
+  N114 -->|"1"| theorem_5_5_more
+  N3 -->|"1"| theorem_5_5_more
+  N4 -->|"1"| theorem_5_5_more
+  N63 -->|"1"| theorem_5_5_more
+  N68 -->|"1"| theorem_5_5_more
+  N70 -->|"1"| theorem_5_5_more
+  Pomega -->|"2"| theorem_5_5_more
+  Vapply_more -->|"1"| theorem_5_5_more
+  Graph -->|"1"| theorem_5_5_universe
+  N0 -->|"1"| theorem_5_5_universe
+  N1 -->|"1"| theorem_5_5_universe
+  N150 -->|"1"| theorem_5_5_universe
+  N4 -->|"1"| theorem_5_5_universe
+  Vcomb_more -->|"1"| theorem_5_5_universe
+  theorem_5_5_more -->|"1"| theorem_5_5_universe
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 ext
-  class N1 file
-  class N2 file
-  class N3 file
-  class N4 file
-  class N5 file
-  class N6 file
-  class N7 file
-  class N8 file
-  class N9 file
-  class N10 file
-  class N11 file
-  class N12 file
-  class N13 file
-  class N14 file
-  class N15 file
-  class N16 file
-  class N17 file
-  class N18 file
-  class N19 file
-  class N20 file
-  class N21 file
-  class N22 file
-  class N23 file
-  class N24 file
-  class N25 file
-  class N26 file
-  class N27 file
-  class N28 file
-  class N29 file
-  class N30 file
-  class N31 file
-  class N32 file
-  class N33 file
-  class N34 file
-  class N35 file
-  class N36 file
-  class N37 file
-  class N38 file
-  class N39 file
-
-  class N41 file
-
-  class N47 file
-  class N48 file
-  class N49 file
-  class N50 file
-  class N51 file
-  class N52 file
-  class N53 file
-  class N54 file
-  class N55 file
-  class N56 file
-  class N57 file
-  class N58 file
-  class N59 file
-  class N60 file
-  class N61 file
-  class N62 file
-  class N63 file
-  class N64 file
-  class N65 file
-  class N66 file
-  class N67 file
-  class N68 file
-  class N69 file
-  class N70 file
-  class N71 file
-  class N72 file
-  class N73 file
-  class N74 file
-  class N75 file
-  class N76 file
-  class N77 file
-  class N78 file
-  class N79 file
-  class N80 file
-  class N81 file
-  class N82 file
-  class N83 file
-  class N84 file
-  class N85 file
-  class N86 file
-  class N87 file
-  class N88 file
-  class N89 file
-  class N90 file
-  class N91 file
-  class N92 file
-  class N93 file
-  class N94 file
-  class N95 file
-  class N96 file
-  class N97 file
-  class N98 file
-  class N99 file
-  class N100 file
-  class N101 file
-  class N102 file
-  class N103 file
-  class N104 file
-  class N105 file
-  class N106 file
-  class N107 file
-  class N108 file
-  class N109 file
-  class N110 file
-  class N111 file
-  class N112 file
-  class N113 file
-  class N114 file
-  class N115 file
-  class N116 file
-  class N117 file
-  class N118 file
-  class N119 file
-  class N120 file
-  class N121 file
-  class N122 file
-
-  class N137 file
-
-  class N139 file
-
-  class N142 file
-  class N143 file
-  class N144 file
-  class N145 file
-  class N146 file
-  class N147 file
-  class N148 file
-  class N149 file
-  class N150 file
-  class N151 file
-  class N152 file
-  class N153 file
-  class N154 file
-  class N155 file
-  class N156 file
-  class N157 file
-  class N158 file
-  class N159 file
-
-  class N167 file
-  class N168 file

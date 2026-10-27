@@ -43,6 +43,8 @@ echo "==> Compiling arxiv.pdf (pdfLaTeX; see .latexmkrc)"
 need_main=1
 if pdf_valid "$PDF" \
   && [[ ! "$TEX" -nt "$PDF" ]] \
+  && [[ ! arxiv.md -nt "$PDF" ]] \
+  && [[ ! arxiv_with_code.md -nt "$PDF" ]] \
   && [[ ! lean-listings -nt "$PDF" ]] \
   && [[ ! figures -nt "$PDF" ]]; then
   need_main=0

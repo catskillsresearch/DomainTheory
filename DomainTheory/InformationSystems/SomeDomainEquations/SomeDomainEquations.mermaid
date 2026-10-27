@@ -2,46 +2,15 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["ApproximableMappingsBetweenDomains"]
-  N1["ElementsOfASystem"]
-  N2["FunctionSpaceAsADomain"]
-  N3["ProductsAndSumsOfDomains"]
-  N4["Factoid81/"]
-  N5["Factoid81"]
-  N6["Factoid82/"]
-  N7["Factoid82"]
+
   N8["DomainEquation"]
-  N9["Factoid83/"]
+  N5["Factoid81"]
+  N7["Factoid82"]
   N10["Factoid83"]
-  N11["Factoid84/"]
   N12["Factoid84"]
 
-  N3 -->|"138"| N4
-  N4 -->|"1"| N5
-  N2 -->|"172"| N6
-  N3 -->|"172"| N6
-  N6 -->|"1"| N7
   N5 -->|"1"| N8
   N7 -->|"1"| N8
-  N3 -->|"66"| N9
-  N9 -->|"1"| N10
-  N0 -->|"34"| N11
-  N1 -->|"70"| N11
-  N11 -->|"1"| N12
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 ext
-  class N1 ext
-  class N2 ext
-  class N3 ext
-  class N4 file
-  class N5 file
-  class N6 file
-  class N7 file
-  class N8 file
-  class N9 file
-  class N10 file
-  class N11 file
-  class N12 file

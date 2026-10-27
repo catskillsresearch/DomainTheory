@@ -12,6 +12,7 @@ __pycache__/
 
 # Scratch / local junk
 .tmp/
+.build/
 
 # Generated from arxiv.md by scripts/build_arxiv_tex.sh (do not commit)
 arxiv_with_code.md

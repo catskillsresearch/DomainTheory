@@ -2,26 +2,25 @@
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
-  LAT["The tower of lattices"]
+
   CONJ["Conjugation"]
-  FSP["The projection on a function space"]
-  PROJ["Projections of the tower"]
   DINF["DInf"]
-  DFN["DInfFn"]
+  PROJ["Projections of the tower"]
   INV["Proof that the limit and its function space are inverse"]
   SCOTT["scottTopology"]
   SOURCE["sourceTopology"]
+  FSP["The projection on a function space"]
+  LAT["The tower of lattices"]
   THM["theorem_4_4"]
-  LAT -->|"1"| CONJ
-  CONJ -->|"2"| FSP
-  FSP -->|"1"| PROJ
-  PROJ -->|"1"| DINF
-  DINF -->|"1"| DFN
-  DFN -->|"1"| INV
-  INV -->|"2"| SCOTT
-  SCOTT -->|"1"| SOURCE
-  SOURCE -->|"1"| THM
+
+  INV -->|"1"| CONJ
+  INV -->|"2"| DINF
+  INV -->|"37"| FSP
+  INV -->|"2"| PROJ
+  INV -->|"3"| SCOTT
+  INV -->|"3"| SOURCE
+  INV -->|"3"| THM
+
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
-  class LAT,CONJ,FSP,PROJ,DINF,DFN,INV,SCOTT,SOURCE concept
-  class THM numbered
+  class LAT,CONJ,FSP,PROJ,DINF,INV,SCOTT,SOURCE concept

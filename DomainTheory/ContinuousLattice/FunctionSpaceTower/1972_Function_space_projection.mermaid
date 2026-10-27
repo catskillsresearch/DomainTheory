@@ -2,10 +2,9 @@
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
+
   INCL["functionSpaceInclFun"]
-  RETR["functionSpaceRetrFun"]
-  PROJ["functionSpaceProjection"]
-  INCL -->|"1"| PROJ
-  RETR -->|"1"| PROJ
+
+
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
-  class INCL,RETR,PROJ concept
+  class INCL,PROJ concept

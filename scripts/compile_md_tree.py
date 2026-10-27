@@ -5,6 +5,11 @@ Walks markdown links from a root note (default ``DomainTheory.md``), expands
 ``@import`` directives relative to each note, writes a single ``arxiv.md``, and
 optionally runs the existing TeX/PDF pipeline.
 
+Outline structure follows TOC bullets (and numbered lists like ``1. [Section](…)``):
+each link hop adds one markdown heading level so LaTeX numbering runs
+1 → 1.1 → 1.1.1. Section titles come from the link text, not the linked file's
+``#`` heading.
+
 Lean imports default to path citations (the tree has ~2500 Lean modules). Pass
 ``--lean=inline`` to embed source listings.
 
@@ -29,11 +34,12 @@ DEFAULT_ROOT_MD = ROOT / "DomainTheory.md"
 ARXIV_MD = ROOT / "arxiv.md"
 
 MD_LINK_RE = re.compile(r"\[([^\]]*)\]\(([^)]+\.md)\)")
-# Bullet list item whose only content is a markdown link (TOC entry).
+# Outline entry: bullet or numbered list item linking to another note.
 TOC_BULLET_RE = re.compile(
-    r"^[ \t]*[-*][ \t]+\[([^\]]*)\]\(([^)]+\.md)\)[ \t]*$",
+    r"^(?P<indent>[ \t]*)(?:[-*][ \t]+|\d+\.\s+)\[(?P<title>[^\]]*)\]\((?P<href>[^)]+\.md)\)[ \t]*$",
     re.MULTILINE,
 )
+FIRST_H1_RE = re.compile(r"^#\s+.+?(?:\n+|$)", re.MULTILINE)
 IMPORT_RE = re.compile(
     r'^@import[ \t]+"([^"]+)"(?:[ \t]*\{([^}]*)\})?[ \t]*$',
     re.MULTILINE,
@@ -129,6 +135,102 @@ def repair_broken_display_math(text: str) -> str:
     return "".join(out)
 
 
+def repair_cases_row_breaks(text: str) -> str:
+    """Insert ``\\\\`` between ``cases`` rows when Scott source omitted the line break."""
+    out: list[str] = []
+    i = 0
+    marker = "\\begin{cases}"
+    end_marker = "\\end{cases}"
+    while i < len(text):
+        start = text.find(marker, i)
+        if start == -1:
+            out.append(text[i:])
+            break
+        out.append(text[i:start])
+        end = text.find(end_marker, start)
+        if end == -1:
+            out.append(text[start:])
+            break
+        block = text[start : end + len(end_marker)]
+        block = re.sub(
+            r"([;,])\s+(\\(?:bot|perp|top|[A-Za-z{])) &",
+            r"\1 \\\\ \2 &",
+            block,
+        )
+        block = re.sub(
+            r",(?!\s*\\\\)\s*\n(\s*)(?=[^\n]+&)",
+            r", \\\\\n\1",
+            block,
+        )
+        out.append(block)
+        i = end + len(end_marker)
+    return "".join(out)
+
+
+def repair_array_row_breaks(text: str) -> str:
+    """Insert ``\\\\`` between ``array`` rows when Scott source omitted them."""
+    out: list[str] = []
+    i = 0
+    marker = "\\begin{array}"
+    end_marker = "\\end{array}"
+    while i < len(text):
+        start = text.find(marker, i)
+        if start == -1:
+            out.append(text[i:])
+            break
+        out.append(text[i:start])
+        end = text.find(end_marker, start)
+        if end == -1:
+            out.append(text[start:])
+            break
+        block = text[start : end + len(end_marker)]
+        block = re.sub(
+            r"(?<!\n)(?<!\$)(?<![\\])\n(\s*)([^\n\\]+&[^\n]*)\n(\s*)([^\n\\]+&)",
+            r"\n\1\2 \\\\\n\3\4",
+            block,
+        )
+        out.append(block)
+        i = end + len(end_marker)
+    return "".join(out)
+
+
+_SET_COMP = re.compile(
+    r"(?<![\\{])"
+    r"(?:\\sqcap\s+)?"
+    r"[A-Za-z0-9_'\\]+\s+\\in\s+[A-Za-z0-9_{}\\']+\s*:\s*"
+    r"[^,;\n$]+?"
+    r"(?=[,;.\\]|$|\s+will|\s+is|\s+are|\s+form|\s+remain|\s+can|\s+where|\s+for|\s+and|\s+or|\s+as|\s+—|\s+–|\s+-|\s+\\)",
+)
+
+
+def _wrap_set_comprehensions_in_math(body: str) -> str:
+    if "\\{" in body and not _SET_COMP.search(body):
+        return body
+
+    def repl(m: re.Match[str]) -> str:
+        inner = m.group(0).strip()
+        if inner.startswith("{") or inner.startswith("\\{"):
+            return m.group(0)
+        return "{ " + inner + " }"
+
+    return _SET_COMP.sub(repl, body)
+
+
+def repair_bare_set_comprehensions(text: str) -> str:
+    """Scott prose often writes ``$y \\in D : P$`` without set braces."""
+
+    def fix_inline(m: re.Match[str]) -> str:
+        return "$" + _wrap_set_comprehensions_in_math(m.group(1)) + "$"
+
+    text = re.sub(r"(?<!\$)\$(?!\$)([^\n$]+?)(?<!\$)\$(?!\$)", fix_inline, text)
+
+    def fix_display(m: re.Match[str]) -> str:
+        return "$$" + _wrap_set_comprehensions_in_math(m.group(1)) + "$$"
+
+    text = re.sub(r"\$\$([^\$]+?)\$\$", fix_display, text, flags=re.DOTALL)
+    return text
+
+
 def wrap_orphan_tex_display(text: str) -> str:
     """Wrap contiguous bare TeX math lines in ``$$...$$`` when not already fenced."""
     lines = text.splitlines(keepends=True)
@@ -189,13 +291,83 @@ def demote_headings(text: str, by: int) -> str:
     return HEADING_RE.sub(repl, text)
 
 
+def indent_columns(indent: str) -> int:
+    return len(indent.expandtabs(4))
+
+
+def shift_headings(text: str, delta: int) -> str:
+    if delta == 0:
+        return text
+
+    def repl(m: re.Match[str]) -> str:
+        level = len(m.group(1))
+        new_level = min(max(level + delta, 1), 6)
+        return "#" * new_level + " " + m.group(2)
+
+    return HEADING_RE.sub(repl, text)
+
+
+def align_body_headings(text: str, base_level: int) -> str:
+    """Shift headings so the shallowest one in ``text`` is ``base_level``."""
+    levels = [len(m.group(1)) for m in HEADING_RE.finditer(text)]
+    if not levels:
+        return text
+    delta = base_level - min(levels)
+    return shift_headings(text, delta)
+
+
+def strip_first_h1(text: str) -> str:
+    return FIRST_H1_RE.sub("", text, count=1)
+
+
 # AI-generated prose sidecars often contain raw TeX math macros outside math
 # mode; omit them from the PDF by default (human English + Lean links remain).
 AI_PROSE_SUFFIXES = {".ai_lean_to_english", ".ai_english_concordance"}
 
 
+BOLD_LEAN_CITATION_ABOVE = re.compile(
+    r"\*\*\[[^\]]*\]\([^)]+\.lean\)\*\*\s*\n+\s*$"
+)
+BOLD_LEAN_CITATION_LINE = re.compile(
+    r"^\s*\*\*\[[^\]]*\]\(([^)]+\.lean)\)\*\*\s*$",
+    re.MULTILINE,
+)
+
+
+def resolve_lean_target(md_path: Path, href_or_rel: str) -> Path:
+    s = href_or_rel.split("#", 1)[0].strip()
+    if s.startswith("DomainTheory/"):
+        return (ROOT / s).resolve()
+    p = Path(s)
+    if p.is_absolute():
+        return p.resolve()
+    return (md_path.parent / s).resolve()
+
+
+def strip_duplicate_lean_citations(
+    md_path: Path, text: str, included_lean: set[Path]
+) -> str:
+    """Drop repeated ``**[…](*.lean)**`` lines once that module is already in the PDF."""
+    if not included_lean:
+        return text
+
+    def repl(m: re.Match[str]) -> str:
+        target = resolve_lean_target(md_path, m.group(1))
+        if target in included_lean:
+            return ""
+        return m.group(0)
+
+    return BOLD_LEAN_CITATION_LINE.sub(repl, text)
+
+
 def expand_import(
-    md_path: Path, rel: str, opts: str, *, lean_mode: str, include_ai_prose: bool
+    md_path: Path,
+    rel: str,
+    opts: str,
+    *,
+    lean_mode: str,
+    include_ai_prose: bool,
+    cited_above: bool = False,
 ) -> str:
     target = (md_path.parent / rel).resolve()
     code_block = "code_block=false" not in (opts or "").replace(" ", "")
@@ -215,9 +387,13 @@ def expand_import(
             rel_repo = target.name
         if lean_mode == "omit":
             return "\n\n"
-        if lean_mode == "link":
-            return f"\n\n*Lean source:* [`{rel_repo}`]({rel_repo})\n\n"
         source = target.read_text(encoding="utf-8").rstrip() + "\n"
+        fenced = f"\n\n```lean\n{source}```\n\n"
+        if lean_mode == "link":
+            # Notes cite the file with ** [label](path) **; @import supplies the listing only.
+            if cited_above:
+                return fenced
+            return f"\n\n**[{rel_repo}]({rel_repo})**\n\n{fenced.lstrip()}"
         return f"\n\n### {rel_repo}\n\n```lean\n{source}```\n\n"
 
     if suffix in AI_PROSE_SUFFIXES and not include_ai_prose:
@@ -232,30 +408,58 @@ def expand_import(
 
 
 def expand_imports(
-    md_path: Path, text: str, *, lean_mode: str, include_ai_prose: bool
+    md_path: Path,
+    text: str,
+    *,
+    lean_mode: str,
+    include_ai_prose: bool,
+    included_lean: set[Path],
 ) -> str:
+    text = strip_duplicate_lean_citations(md_path, text, included_lean)
+
     def repl(m: re.Match[str]) -> str:
-        return expand_import(
+        rel = m.group(1)
+        target = resolve_lean_target(md_path, rel)
+        if (
+            target.suffix.lower() == ".lean"
+            and lean_mode != "omit"
+            and target in included_lean
+        ):
+            return ""
+        before = text[max(0, m.start() - 500) : m.start()]
+        cited_above = bool(BOLD_LEAN_CITATION_ABOVE.search(before))
+        chunk = expand_import(
             md_path,
-            m.group(1),
+            rel,
             m.group(2) or "",
             lean_mode=lean_mode,
             include_ai_prose=include_ai_prose,
+            cited_above=cited_above,
         )
+        if target.suffix.lower() == ".lean" and lean_mode != "omit" and target.is_file():
+            included_lean.add(target)
+        return chunk
 
     return IMPORT_RE.sub(repl, text)
 
 
-def child_md_targets(md_path: Path, text: str) -> list[tuple[str, Path]]:
-    """TOC children in document order (first occurrence of each path)."""
+def child_md_targets(md_path: Path, text: str) -> list[tuple[int, str, Path]]:
+    """TOC children in document order: ``(relative_indent, title, path)``."""
+    matches = list(TOC_BULLET_RE.finditer(text))
+    if not matches:
+        return []
+    base_indent = min(indent_columns(m.group("indent")) for m in matches)
     seen: set[Path] = set()
-    out: list[tuple[str, Path]] = []
-    for title, href in TOC_BULLET_RE.findall(text):
+    out: list[tuple[int, str, Path]] = []
+    for m in matches:
+        rel = (indent_columns(m.group("indent")) - base_indent) // 2
+        href = m.group("href")
+        title = m.group("title").strip()
         tgt = (md_path.parent / href).resolve()
         if tgt in seen or not tgt.is_file():
             continue
         seen.add(tgt)
-        out.append((title, tgt))
+        out.append((rel, title, tgt))
     return out
 
 
@@ -266,10 +470,12 @@ def strip_toc_bullets(text: str) -> str:
 def flatten_file(
     md_path: Path,
     *,
-    depth: int,
+    section_level: int,
+    section_title: str | None,
     lean_mode: str,
     include_ai_prose: bool,
     visited: set[Path],
+    included_lean: set[Path],
 ) -> str:
     """Recursively flatten one note and its TOC-linked children."""
     resolved = md_path.resolve()
@@ -277,30 +483,48 @@ def flatten_file(
         return f"\n\n*(Already included: `{md_path.name}`.)*\n\n"
     visited.add(resolved)
 
+    section_level = min(max(section_level, 1), 6)
+
     raw = resolved.read_text(encoding="utf-8")
     children = child_md_targets(resolved, raw)
     body = strip_toc_bullets(raw) if children else raw
+    if section_title is not None:
+        body = strip_first_h1(body)
     body = expand_imports(
-        resolved, body, lean_mode=lean_mode, include_ai_prose=include_ai_prose
+        resolved,
+        body,
+        lean_mode=lean_mode,
+        include_ai_prose=include_ai_prose,
+        included_lean=included_lean,
     )
-    # Cap demotion at 2 so leaf `# Title` becomes `###` (not `####`, which the
-    # TeX pipeline may flatten to bold inventory rows).
-    body = demote_headings(body, min(depth, 2))
+    if section_title is not None:
+        body = align_body_headings(body, min(section_level + 1, 6))
+    body = repair_cases_row_breaks(body)
+    body = repair_array_row_breaks(body)
+    body = repair_bare_set_comprehensions(body)
     # Repair `$$` / heading inversions, then wrap remaining bare TeX displays.
     body = repair_broken_display_math(body)
     body = wrap_orphan_tex_display(body)
-    # Collapse excess blank lines left by stripped TOC bullets / omitted AI prose.
     body = re.sub(r"\n{3,}", "\n\n", body).strip() + "\n"
 
-    parts = [body]
-    for _title, child in children:
+    parts: list[str] = []
+    if section_title is not None:
+        parts.append(f"{'#' * section_level} {section_title}\n\n{body}")
+    else:
+        parts.append(body)
+
+    for rel_indent, title, child in children:
+        # One outline link = one deeper section (1 → 1.1 → 1.1.1); indent nests further.
+        child_level = min(section_level + 1 + rel_indent, 6)
         parts.append(
             flatten_file(
                 child,
-                depth=depth + 1,
+                section_level=child_level,
+                section_title=title,
                 lean_mode=lean_mode,
                 include_ai_prose=include_ai_prose,
                 visited=visited,
+                included_lean=included_lean,
             )
         )
     return "\n".join(parts)
@@ -354,12 +578,15 @@ def flatten_md_tree(
         raise ValueError(f"unknown lean_mode: {lean_mode!r}")
 
     visited: set[Path] = set()
+    included_lean: set[Path] = set()
     body = flatten_file(
         root_md,
-        depth=0,
+        section_level=1,
+        section_title=None,
         lean_mode=lean_mode,
         include_ai_prose=include_ai_prose,
         visited=visited,
+        included_lean=included_lean,
     )
     body = ensure_abstract(body)
     body = ensure_model_card_markers(body)

@@ -2,56 +2,45 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["InformationSystems"]
-  N1["assembleSum"]
-  N2["assembleSum_mono"]
-  N3["instPartialOrderApproximableMap"]
+
   N4["approxMap_toElement_le_iff"]
+  N1["assembleSum"]
+  N24["assembleSum_classifySum"]
+  N19["assembleSum_injective"]
+  N2["assembleSum_mono"]
+  N30["Basic"]
+  N23["classifySum"]
+  N25["classifySum_assembleSum"]
+  N22["exists_assembleSum_eq"]
   N5["functionSpaceDomainIso"]
+  N0["InformationSystems"]
+  N15["inlMap_toElement_injective"]
+  N16["inlMap_toElement_le_iff"]
+  N18["inrMap_toElement_injective"]
+  N20["inrMap_toElement_le_iff"]
+  N3["instPartialOrderApproximableMap"]
+  N12["left_bot_mem_inlMap_toElement"]
   N6["lftFinset_singleton_right"]
   N7["not_left_mem_sum_botElement"]
   N8["not_right_mem_sum_botElement"]
   N9["pairElements_mono"]
   N10["pairElements_unpair"]
-  N11["rhtFinset_singleton_left"]
-  N12["left_bot_mem_inlMap_toElement"]
-  N13["right_bot_mem_inrMap_toElement"]
-  N14["sumElementLft_inlMap_toElement"]
-  N15["inlMap_toElement_injective"]
-  N16["inlMap_toElement_le_iff"]
-  N17["sumElementRht_inrMap_toElement"]
-  N18["inrMap_toElement_injective"]
-  N19["assembleSum_injective"]
-  N20["inrMap_toElement_le_iff"]
-  N21["sum_element_trichotomy"]
-  N22["exists_assembleSum_eq"]
-  N23["classifySum"]
-  N24["assembleSum_classifySum"]
-  N25["classifySum_assembleSum"]
-  N26["sumDomainIso"]
-  N27["unpair"]
-  N28["unpair_pairElements"]
   N29["productDomainIso"]
-  N30["Basic"]
+  N11["rhtFinset_singleton_left"]
+  N13["right_bot_mem_inrMap_toElement"]
+  N21["sum_element_trichotomy"]
+  N26["sumDomainIso"]
   N31["sumElementLft_eq"]
+  N14["sumElementLft_inlMap_toElement"]
   N32["sumElementRht_eq"]
+  N17["sumElementRht_inrMap_toElement"]
+  N27["unpair"]
   N33["unpair_mono"]
+  N28["unpair_pairElements"]
 
   N0 -->|"6"| N1
-  N0 -->|"5"| N2
-  N1 -->|"1"| N2
-  N0 -->|"4"| N3
-  N0 -->|"6"| N4
-  N3 -->|"1"| N4
-  N0 -->|"5"| N5
-  N3 -->|"1"| N5
-  N4 -->|"1"| N5
-  N0 -->|"4"| N6
-  N0 -->|"5"| N7
-  N0 -->|"5"| N8
-  N0 -->|"4"| N9
   N0 -->|"9"| N10
-  N0 -->|"4"| N11
+  N0 -->|"3"| N11
   N0 -->|"7"| N12
   N11 -->|"1"| N12
   N0 -->|"7"| N13
@@ -66,23 +55,25 @@ flowchart TB
   N12 -->|"1"| N16
   N14 -->|"1"| N16
   N0 -->|"6"| N17
-  N6 -->|"1"| N17
   N13 -->|"1"| N17
+  N6 -->|"1"| N17
   N0 -->|"5"| N18
   N13 -->|"1"| N18
   N17 -->|"1"| N18
   N0 -->|"3"| N19
   N1 -->|"1"| N19
-  N7 -->|"1"| N19
-  N8 -->|"1"| N19
   N12 -->|"1"| N19
   N13 -->|"1"| N19
   N15 -->|"1"| N19
   N18 -->|"1"| N19
+  N7 -->|"1"| N19
+  N8 -->|"1"| N19
+  N0 -->|"5"| N2
+  N1 -->|"1"| N2
   N0 -->|"7"| N20
   N13 -->|"1"| N20
   N17 -->|"1"| N20
-  N0 -->|"9"| N21
+  N0 -->|"7"| N21
   N0 -->|"2"| N22
   N1 -->|"1"| N22
   N21 -->|"1"| N22
@@ -99,34 +90,27 @@ flowchart TB
   N24 -->|"1"| N25
   N0 -->|"4"| N26
   N1 -->|"1"| N26
-  N2 -->|"1"| N26
-  N7 -->|"1"| N26
-  N8 -->|"1"| N26
   N12 -->|"1"| N26
   N13 -->|"1"| N26
   N16 -->|"1"| N26
+  N2 -->|"1"| N26
   N20 -->|"1"| N26
   N23 -->|"1"| N26
   N24 -->|"1"| N26
   N25 -->|"1"| N26
+  N7 -->|"1"| N26
+  N8 -->|"1"| N26
   N0 -->|"5"| N27
   N0 -->|"5"| N28
   N27 -->|"1"| N28
   N0 -->|"6"| N29
-  N9 -->|"1"| N29
   N10 -->|"1"| N29
   N27 -->|"1"| N29
   N28 -->|"1"| N29
+  N9 -->|"1"| N29
+  N0 -->|"4"| N3
   N0 -->|"2"| N30
   N1 -->|"1"| N30
-  N2 -->|"1"| N30
-  N3 -->|"1"| N30
-  N4 -->|"1"| N30
-  N5 -->|"1"| N30
-  N6 -->|"1"| N30
-  N7 -->|"1"| N30
-  N8 -->|"1"| N30
-  N9 -->|"1"| N30
   N10 -->|"1"| N30
   N11 -->|"1"| N30
   N12 -->|"1"| N30
@@ -137,6 +121,7 @@ flowchart TB
   N17 -->|"1"| N30
   N18 -->|"1"| N30
   N19 -->|"1"| N30
+  N2 -->|"1"| N30
   N20 -->|"1"| N30
   N21 -->|"1"| N30
   N22 -->|"1"| N30
@@ -147,6 +132,13 @@ flowchart TB
   N27 -->|"1"| N30
   N28 -->|"1"| N30
   N29 -->|"1"| N30
+  N3 -->|"1"| N30
+  N4 -->|"1"| N30
+  N5 -->|"1"| N30
+  N6 -->|"1"| N30
+  N7 -->|"1"| N30
+  N8 -->|"1"| N30
+  N9 -->|"1"| N30
   N0 -->|"4"| N31
   N30 -->|"1"| N31
   N0 -->|"4"| N32
@@ -154,41 +146,15 @@ flowchart TB
   N0 -->|"4"| N33
   N27 -->|"1"| N33
   N30 -->|"1"| N33
+  N0 -->|"6"| N4
+  N3 -->|"1"| N4
+  N0 -->|"5"| N5
+  N3 -->|"1"| N5
+  N4 -->|"1"| N5
+  N0 -->|"3"| N6
+  N0 -->|"5"| N7
+  N0 -->|"5"| N8
+  N0 -->|"4"| N9
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 ext
-  class N1 file
-  class N2 file
-  class N3 file
-  class N4 file
-  class N5 file
-  class N6 file
-  class N7 file
-  class N8 file
-  class N9 file
-  class N10 file
-  class N11 file
-  class N12 file
-  class N13 file
-  class N14 file
-  class N15 file
-  class N16 file
-  class N17 file
-  class N18 file
-  class N19 file
-  class N20 file
-  class N21 file
-  class N22 file
-  class N23 file
-  class N24 file
-  class N25 file
-  class N26 file
-  class N27 file
-  class N28 file
-  class N29 file
-  class N30 file
-  class N31 file
-  class N32 file
-  class N33 file

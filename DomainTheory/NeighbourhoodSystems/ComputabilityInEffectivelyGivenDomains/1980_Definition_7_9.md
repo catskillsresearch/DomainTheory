@@ -22,6 +22,6 @@ and in that case
 
 $$\downarrow X \cap \downarrow Y = \downarrow (X \cap Y).$$
 
-**[Definition_7_9.lean](Definition_7_9.lean)**
+**[Definition_7_9.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_9.lean)**
 
 @import "Definition_7_9.lean"

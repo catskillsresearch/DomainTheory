@@ -1,22 +1,11 @@
 %% Each box is one item. The arrowhead is on the item that imports.
 %% An arrow already implied by a longer path is omitted.
 %% The introduction has no Lean file, so it is not shown.
-%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
 flowchart TB
 
   Definition_3_1["Def 3.1<br>product"]
-  Proposition_3_2["Prop 3.2<br>product elements"]
   Definition_3_3["Def 3.3<br>projections"]
-  Proposition_3_4["Prop 3.4<br>pairing"]
-  Theorem_3_5["Theorem 3.5<br>separate maps"]
-  Lemma_3_6["Lemma 3.6<br>constant maps"]
-  Proposition_3_7["Prop 3.7<br>substitution"]
   Definition_3_8["Def 3.8<br>function space"]
-  Proposition_3_9["Prop 3.9<br>step neighbourhoods"]
-  Theorem_3_10["Theorem 3.10<br>maps as elements"]
-  Theorem_3_11["Theorem 3.11<br>evaluation"]
-  Theorem_3_12["Theorem 3.12<br>currying"]
-  Theorem_3_13["Theorem 3.13<br>pointwise order"]
   Exercise_3_14["Exercise 3.14<br>tagged product"]
   Exercise_3_15["Exercise 3.15<br>product isos"]
   Exercise_3_16["Exercise 3.16<br>infinite sequences"]
@@ -32,72 +21,54 @@ flowchart TB
   Exercise_3_26["Exercise 3.26<br>conditional"]
   Exercise_3_27["Exercise 3.27<br>closure space"]
   Exercise_3_28["Exercise 3.28<br>minimal step"]
+  Lemma_3_6["Lemma 3.6<br>constant maps"]
+  Proposition_3_2["Prop 3.2<br>product elements"]
+  Proposition_3_4["Prop 3.4<br>pairing"]
+  Proposition_3_7["Prop 3.7<br>substitution"]
+  Proposition_3_9["Prop 3.9<br>step neighbourhoods"]
+  Theorem_3_10["Theorem 3.10<br>maps as elements"]
+  Theorem_3_11["Theorem 3.11<br>evaluation"]
+  Theorem_3_12["Theorem 3.12<br>currying"]
+  Theorem_3_13["Theorem 3.13<br>pointwise order"]
+  Theorem_3_5["Theorem 3.5<br>separate maps"]
 
-  Definition_3_1 --> Proposition_3_2
   Definition_3_1 --> Definition_3_3
-  Definition_3_1 --> Lemma_3_6
-  Definition_3_3 --> Theorem_3_5
-  Proposition_3_2 --> Theorem_3_5
-  Lemma_3_6 --> Theorem_3_5
-  Theorem_3_5 --> Proposition_3_4
-  Proposition_3_4 --> Proposition_3_7
+  Lemma_3_6 --> Definition_3_8
   Proposition_3_4 --> Exercise_3_14
-  Proposition_3_2 --> Exercise_3_14
   Exercise_3_14 --> Exercise_3_15
   Exercise_3_15 --> Exercise_3_16
+  Definition_3_8 --> Exercise_3_17
+  Exercise_3_16 --> Exercise_3_17
   Exercise_3_18 --> Exercise_3_19
-  Definition_3_3 --> Exercise_3_19
   Proposition_3_4 --> Exercise_3_19
   Exercise_3_19 --> Exercise_3_20
-  Exercise_3_18 --> Exercise_3_26
-  Exercise_3_19 --> Exercise_3_26
-  Lemma_3_6 --> Definition_3_8
-  Definition_3_8 --> Theorem_3_10
-  Theorem_3_10 --> Theorem_3_11
-  Theorem_3_11 --> Theorem_3_12
-  Theorem_3_12 --> Theorem_3_13
-  Definition_3_8 --> Proposition_3_9
   Proposition_3_9 --> Exercise_3_21
-  Proposition_3_9 --> Exercise_3_28
-  Exercise_3_16 --> Exercise_3_17
-  Definition_3_8 --> Exercise_3_17
   Theorem_3_12 --> Exercise_3_22
   Exercise_3_15 --> Exercise_3_23
   Theorem_3_12 --> Exercise_3_23
-  Theorem_3_13 --> Exercise_3_24
+  Exercise_3_16 --> Exercise_3_24
   Exercise_3_19 --> Exercise_3_24
+  Theorem_3_13 --> Exercise_3_24
   Theorem_3_12 --> Exercise_3_25
+  Exercise_3_19 --> Exercise_3_26
   Theorem_3_12 --> Exercise_3_27
+  Proposition_3_9 --> Exercise_3_28
+  Definition_3_1 --> Lemma_3_6
+  Definition_3_1 --> Proposition_3_2
+  Theorem_3_5 --> Proposition_3_4
+  Proposition_3_4 --> Proposition_3_7
+  Definition_3_8 --> Proposition_3_9
+  Definition_3_8 --> Theorem_3_10
+  Theorem_3_10 --> Theorem_3_11
+  Theorem_3_5 --> Theorem_3_11
+  Theorem_3_11 --> Theorem_3_12
+  Theorem_3_12 --> Theorem_3_13
+  Definition_3_3 --> Theorem_3_5
+  Lemma_3_6 --> Theorem_3_5
+  Proposition_3_2 --> Theorem_3_5
 
+%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef cprop fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef cex fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef cthm fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
-  class Definition_3_1 cdef
-  class Definition_3_3 cdef
-  class Definition_3_8 cdef
-  class Proposition_3_2 cprop
-  class Proposition_3_4 cprop
-  class Proposition_3_7 cprop
-  class Proposition_3_9 cprop
-  class Lemma_3_6 cprop
-  class Theorem_3_5 cthm
-  class Theorem_3_10 cthm
-  class Theorem_3_11 cthm
-  class Theorem_3_12 cthm
-  class Theorem_3_13 cthm
-  class Exercise_3_14 cex
-  class Exercise_3_15 cex
-  class Exercise_3_16 cex
-  class Exercise_3_17 cex
-  class Exercise_3_18 cex
-  class Exercise_3_19 cex
-  class Exercise_3_20 cex
-  class Exercise_3_21 cex
-  class Exercise_3_22 cex
-  class Exercise_3_23 cex
-  class Exercise_3_24 cex
-  class Exercise_3_25 cex
-  class Exercise_3_26 cex
-  class Exercise_3_27 cex
-  class Exercise_3_28 cex

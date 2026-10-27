@@ -3,19 +3,18 @@
 %% The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
-  CONT["Continuous functions"]
-  COMP["Computability and definability"]
-  RET["Retracts and data types"]
+
   CLO["Closure operations and algebraic lattices"]
+  COMP["Computability and definability"]
+  CONT["Continuous functions"]
+  ENUM["Enumeration and degrees"]
+  RET["Retracts and data types"]
   CLASS["Subsets and their classification"]
   FUN["Total functions and functionality"]
-  ENUM["Enumeration and degrees"]
-  CONT -->|"243"| COMP
-  COMP -->|"147"| RET
-  RET -->|"168"| CLO
-  RET -->|"61"| CLASS
-  RET -->|"328"| FUN
-  FUN -->|"350"| ENUM
+
+  CLASS -->|"91"| CONT
+  CLO -->|"253"| CONT
+
   classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef c2 fill:#cffafe,stroke:#0e7490,color:#164e63
   classDef c3 fill:#ffedd5,stroke:#c2410c,color:#7c2d12
@@ -23,10 +22,3 @@ flowchart TB
   classDef c5 fill:#f3e8ff,stroke:#7e22ce,color:#581c87
   classDef c6 fill:#fde68a,stroke:#a16207,color:#713f12
   classDef c7 fill:#e2e8f0,stroke:#334155,color:#0f172a
-  class CONT c1
-  class COMP c2
-  class RET c3
-  class CLO c4
-  class CLASS c5
-  class FUN c6
-  class ENUM c7

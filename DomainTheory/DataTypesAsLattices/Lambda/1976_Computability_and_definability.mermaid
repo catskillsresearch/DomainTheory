@@ -4,44 +4,42 @@
 %% An arrow already implied by a longer path is omitted.
 %% Imports of a folder barrel are not counted.
 flowchart TB
-  MEAN["Meaning"]
+
+  LY["A law of Y"]
+  REC["Computable functions"]
+  DEF["Definability"]
+  DOL["Distributive functions"]
+  EL["Elementary definitions"]
   LAM["LAMBDA"]
+  MEAN["Meaning"]
+  PR["Primitive recursion"]
+  SEQ["Sequences"]
+  YC["The combinator Y"]
+  GRA["The graph model"]
   T21["Theorem 2.1"]
   T22["Theorem 2.2"]
   T23["Theorem 2.3"]
   T24["Theorem 2.4"]
-  YC["The combinator Y"]
   T25["Theorem 2.5"]
-  GRA["The graph model"]
-  EL["Elementary definitions"]
-  SEQ["Sequences"]
-  DOL["Distributive functions"]
-  PR["Primitive recursion"]
-  REC["Computable functions"]
-  DEF["Definability"]
   T26["Theorem 2.6"]
-  LY["A law of Y"]
-  LAM -->|"16"| MEAN
-  LAM -->|"1"| T21
+
+  LAM -->|"2"| DEF
+  T25 -->|"2"| DOL
+  LAM -->|"1"| GRA
+  MEAN -->|"2"| LAM
+  REC -->|"1"| LAM
+  SEQ -->|"1"| LAM
+  LAM -->|"4"| LY
+  LAM -->|"4"| MEAN
+  T22 -->|"2"| PR
+  LAM -->|"2"| REC
+  DOL -->|"3"| SEQ
+  LAM -->|"3"| T21
+  PR -->|"1"| T22
   T21 -->|"1"| T22
-  LAM -->|"3"| T23
-  LAM -->|"4"| T24
-  LAM -->|"13"| YC
-  YC -->|"2"| T25
-  YC -->|"1"| EL
-  LAM -->|"5"| GRA
-  GRA -->|"5"| LAM
-  GRA -->|"1"| SEQ
-  GRA -->|"1"| LY
-  SEQ -->|"11"| DOL
-  DOL -->|"1"| SEQ
-  DOL -->|"1"| PR
-  EL -->|"1"| DEF
-  PR -->|"15"| DEF
-  DEF -->|"6"| PR
-  REC -->|"8"| DEF
-  DEF -->|"16"| REC
-  REC -->|"3"| T26
+  LAM -->|"5"| T23
+  T21 -->|"1"| T26
+
   classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef c2 fill:#cffafe,stroke:#0e7490,color:#164e63
   classDef c3 fill:#fef3c7,stroke:#b45309,color:#78350f
@@ -50,20 +48,3 @@ flowchart TB
   classDef c6 fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef c7 fill:#ffedd5,stroke:#c2410c,color:#7c2d12
   classDef c8 fill:#ecfccb,stroke:#4d7c0f,color:#365314
-  class MEAN c1
-  class LAM c2
-  class T21 c3
-  class T22 c3
-  class T23 c3
-  class T24 c3
-  class YC c4
-  class T25 c3
-  class GRA c5
-  class EL c6
-  class SEQ c7
-  class DOL c7
-  class PR c8
-  class REC c1
-  class DEF c2
-  class T26 c3
-  class LY c4

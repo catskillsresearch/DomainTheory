@@ -12,6 +12,6 @@ $$
 
 Are these correct up to isomorphism? Now generate all constructs $T(X)$ formed by the constants (that is, $T(X) = \mathcal{D}$ for a fixed $\mathcal{D}$), by the identity ($T(X) = X$), and by sums and products ($T_0(X) + T_1(X)$, etc.). Show that these are all functors, continuous on maps, and monotone and continuous on domains.
 
-**[Exercise_6_19.lean](Exercise_6_19.lean)**
+**[Exercise_6_19.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_19.lean)**
 
 @import "Exercise_6_19.lean"

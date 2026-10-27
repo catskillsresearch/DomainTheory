@@ -2,1034 +2,772 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["Lambda"]
-  N1["IsRE"]
-  N2["ComputableFin"]
-  N3["IsComputable"]
-  N4["LambdaDefinable"]
-  N5["Realizes"]
-  N6["Realizes2"]
-  N7["addStepC"]
+
   N8["addC"]
-  N9["composeC"]
-  N10["constComb"]
-  N11["enumFun"]
-  N12["enumRangeC"]
-  N13["isZeroC"]
-  N14["mulC"]
-  N15["pack4"]
-  N16["pack4.proj1"]
-  N17["pack4.proj2"]
-  N18["pack4.proj3"]
-  N19["pack4.proj4"]
-  N20["pairTerm"]
-  N21["precTerm"]
-  N22["primRecComb"]
-  N23["primRecOpEnv"]
-  N24["primRecOpTerm"]
-  N25["primRecOpC"]
-  N26["primRecZeroC"]
-  N27["safePredC"]
-  N28["sqrtIter"]
-  N29["sqrtStepTerm"]
-  N30["subStepC"]
-  N31["subC"]
+  N7["addStepC"]
   N32["arithEnv"]
-  N33["leC"]
-  N34["pairComb"]
-  N35["pairRealizer"]
-  N36["sqrtEnv"]
-  N37["sqrtStepC"]
-  N38["sqrtC"]
-  N39["topRecTerm"]
-  N40["unpairEnv"]
-  N41["unpairSqrtTerm"]
-  N42["unpairSquareTerm"]
-  N43["unpairDeltaTerm"]
-  N44["unpairTestTerm"]
-  N45["unpairFstTerm"]
-  N46["unpairFstC"]
-  N47["unpairSndTerm"]
-  N48["unpairSndC"]
-  N49["precEnv"]
-  N50["precC"]
-  N51["Basic"]
-  N52["REPredu2ecomp"]
-  N53["IsREu2ehasZero"]
-  N54["IsREu2enumeral"]
-  N55["IsREu2epredSet"]
-  N56["IsREu2ezeroC"]
-  N57["REPredu2eand"]
-  N58["IsREu2esuccSet"]
-  N59["REPredu2eempty"]
-  N60["IsREu2ebot"]
-  N61["REPredu2eexists"]
-  N62["IsREu2ehasPos"]
-  N63["REPredu2eor"]
-  N64["IsREu2econdSet"]
-  N65["IsREu2eunion"]
-  N66["IsREu2eofFinset"]
-  N67["IsREu2eof_e"]
-  N68["REPredu2etrue"]
-  N69["IsREu2etop"]
-  N70["IsREu2edcondSet"]
-  N71["SK_comp"]
-  N72["addC.app"]
-  N73["addStepC.combinatory"]
-  N74["addC.combinatory"]
+  N89["bits_subset_lt_two_pow"]
   N75["botElem_combinatory"]
   N76["combinatory_isLambdaDefinable"]
-  N77["composeC.combinatory"]
-  N78["composeC.realizes"]
-  N79["constComb.combinatory"]
-  N80["constComb.realizes"]
+  N141["combinatory_isRE"]
+  N9["composeC"]
+  N2["ComputableFin"]
+  N10["constComb"]
+  Continuous["Continuous"]
+  Enumeration["Enumeration"]
+  N11["enumFun"]
+  N12["enumRangeC"]
   N81["eSubset_e_iff"]
   N82["eSubset_funOf_e_iff"]
   N83["eSubset_iff_stage"]
-  N84["enumRangeC.eq"]
-  N85["isZeroC.combinatory"]
-  N86["isZeroC.succ"]
-  N87["isZeroC.zero"]
+  Graph["Graph"]
+  N3["IsComputable"]
+  N1["IsRE"]
+  N60["IsREu2ebot"]
+  N180["IsREu2ecombinatory"]
+  N125["IsREu2econdC"]
+  N64["IsREu2econdSet"]
+  N70["IsREu2edcondSet"]
+  N129["IsREu2eeSubset"]
+  N130["IsREu2efunOf"]
+  N119["IsREu2egraph_of_primrecRel"]
+  N120["IsREu2egraph_of_re"]
+  N62["IsREu2ehasPos"]
+  N53["IsREu2ehasZero"]
+  N181["IsREu2eiff_combinatory"]
+  N124["IsREu2eKcomb"]
+  N54["IsREu2enumeral"]
+  N67["IsREu2eof_e"]
+  N66["IsREu2eofFinset"]
+  N116["IsREu2epair_mem"]
+  N126["IsREu2epredC"]
+  N55["IsREu2epredSet"]
+  N140["IsREu2eScomb"]
+  N127["IsREu2esucC"]
+  N58["IsREu2esuccSet"]
+  N69["IsREu2etop"]
+  N65["IsREu2eunion"]
+  N56["IsREu2ezeroC"]
+  N13["isZeroC"]
+  N0["Lambda"]
+  N4["LambdaDefinable"]
+  N33["leC"]
   N88["lt_two_pow_of_high_bits"]
-  N89["bits_subset_lt_two_pow"]
-  N90["mem_Scomb_iff"]
+  N97["mem_condC_iff"]
   N91["mem_funOf_e_iff"]
   N92["mem_graph_const_iff"]
-  N93["mulC.app"]
-  N94["mulC.combinatory"]
+  N90["mem_Scomb_iff"]
+  N14["mulC"]
+  N15["pack4"]
+  N34["pairComb"]
+  N35["pairRealizer"]
+  N20["pairTerm"]
+  Pomega["Pomega"]
   N95["pos_bit_iff"]
-  N97["mem_condC_iff"]
-  N98["primRecComb.combinatory"]
-  N99["primRecComb.ofNat"]
-  N100["primRecOpC.app"]
-  N101["primRecOpEnv.combinatory"]
-  N102["primRecOpC.combinatory"]
-  N103["primRecVal_add"]
-  N104["addC.realizes2"]
-  N105["primRecVal_mul"]
-  N106["mulC.realizes2"]
-  N107["primRecZeroC.app"]
-  N108["primRecZeroC.combinatory"]
-  N109["primrecPred_bool"]
+  N50["precC"]
+  N49["precEnv"]
+  N21["precTerm"]
   N110["primrec_enumFun"]
   N111["primrec_pack4_proj1"]
   N112["primrec_pack4_proj2"]
   N113["primrec_pack4_proj3"]
   N114["primrec_pack4_proj4"]
   N115["primrec_pair"]
-  N116["IsREu2epair_mem"]
-  N117["primrecPred_Scomb_eq"]
-  N118["primrecPred_eq_scott_pair"]
-  N119["IsREu2egraph_of_primrecRel"]
-  N120["IsREu2egraph_of_re"]
-  N121["primrec_succ_sq"]
-  N122["primrec_twoPow"]
-  N123["primrec_testBit"]
-  N124["IsREu2eKcomb"]
-  N125["IsREu2econdC"]
-  N126["IsREu2epredC"]
-  N127["IsREu2esucC"]
-  N128["primrecPred_common_stage"]
-  N129["IsREu2eeSubset"]
-  N130["IsREu2efunOf"]
-  N131["primrecRel_eSubset"]
-  N132["primrecRel_mem_funOf_e"]
-  N133["primrecRel_Scomb_bit"]
-  N134["primrecPred_Scomb_subset"]
-  N135["primrecRel_Scomb_app"]
-  N136["primrecRel_eSubset.bit"]
-  N137["primrecRel_eSubset.funOf_e"]
-  N138["primrecRel_testBit"]
-  N139["rePred_Scomb_nested"]
-  N140["IsREu2eScomb"]
-  N141["combinatory_isRE"]
-  N142["safePredC.combinatory"]
-  N143["safePredC.succ"]
-  N144["safePredC.zero"]
-  N145["primRecVal_sub"]
-  N146["sqrtIter.eq_min"]
-  N147["sqrtIter.self"]
-  N148["subC.app"]
-  N149["subC.realizes2"]
-  N150["leC.realizes2"]
-  N151["pairComb.app"]
-  N152["pairRealizer.realizes"]
-  N153["sqrtStepC.app"]
-  N154["primRecVal_sqrt"]
-  N155["sqrtC.realizes"]
-  N156["subStepC.combinatory"]
-  N157["subC.combinatory"]
-  N158["arithEnv.combinatory"]
-  N159["leC.combinatory"]
-  N160["pairComb.combinatory"]
-  N161["pairRealizer.combinatory"]
-  N162["sqrtEnv.combinatory"]
-  N163["sqrtStepC.combinatory"]
-  N164["sqrtC.combinatory"]
-  N165["theorem_2_6.combinatory_zero"]
-  N166["theorem_2_6.lambda_continuous"]
-  N167["theorem_2_6.ofNat_isRE"]
-  N168["topRecTerm.interp"]
-  N169["topElem_combinatory"]
-  N170["enumRangeC.combinatory"]
-  N171["unpairEnv.combinatory"]
-  N172["unpairFstC.combinatory"]
-  N173["unpairFstC.realizes"]
-  N174["unpairSndC.combinatory"]
-  N175["precEnv.combinatory"]
-  N176["precC.combinatory"]
-  N177["unpairSndC.realizes"]
-  N178["precC.realizes"]
   N179["primrec_realized"]
-  N180["IsREu2ecombinatory"]
-  N181["IsREu2eiff_combinatory"]
+  N121["primrec_succ_sq"]
+  N123["primrec_testBit"]
+  N122["primrec_twoPow"]
+  N22["primRecComb"]
+  N25["primRecOpC"]
+  N23["primRecOpEnv"]
+  N24["primRecOpTerm"]
+  N109["primrecPred_bool"]
+  N128["primrecPred_common_stage"]
+  N118["primrecPred_eq_scott_pair"]
+  N117["primrecPred_Scomb_eq"]
+  N134["primrecPred_Scomb_subset"]
+  N131["primrecRel_eSubset"]
+  primrecRel_eSubset_more["primrecRel_eSubset_more"]
+  N132["primrecRel_mem_funOf_e"]
+  N135["primrecRel_Scomb_app"]
+  N133["primrecRel_Scomb_bit"]
+  N138["primrecRel_testBit"]
+  N103["primRecVal_add"]
+  N105["primRecVal_mul"]
+  N154["primRecVal_sqrt"]
+  N145["primRecVal_sub"]
+  N26["primRecZeroC"]
+  N5["Realizes"]
+  N6["Realizes2"]
+  N139["rePred_Scomb_nested"]
+  N57["REPredu2eand"]
+  N52["REPredu2ecomp"]
+  N59["REPredu2eempty"]
+  N61["REPredu2eexists"]
+  N63["REPredu2eor"]
+  N68["REPredu2etrue"]
+  Retracts["Retracts"]
+  N27["safePredC"]
+  N71["SK_comp"]
+  N38["sqrtC"]
+  N36["sqrtEnv"]
+  N28["sqrtIter"]
+  N37["sqrtStepC"]
+  N29["sqrtStepTerm"]
+  N31["subC"]
+  N30["subStepC"]
   N182["theorem_2_6"]
-  N183["theorem_2_6.fin"]
+  N169["topElem_combinatory"]
+  N39["topRecTerm"]
+  N43["unpairDeltaTerm"]
+  N40["unpairEnv"]
+  N46["unpairFstC"]
+  N45["unpairFstTerm"]
+  N48["unpairSndC"]
+  N47["unpairSndTerm"]
+  N41["unpairSqrtTerm"]
+  N42["unpairSquareTerm"]
+  N44["unpairTestTerm"]
 
-  N0 -->|"1"| N1
-  N0 -->|"1"| N2
-  N1 -->|"1"| N2
-  N0 -->|"1"| N3
-  N1 -->|"1"| N3
-  N0 -->|"1"| N4
-  N0 -->|"1"| N5
-  N0 -->|"1"| N6
-  N0 -->|"1"| N7
-  N0 -->|"1"| N8
-  N7 -->|"1"| N8
-  N0 -->|"1"| N9
-  N0 -->|"1"| N10
-  N0 -->|"1"| N11
-  N0 -->|"1"| N12
-  N0 -->|"1"| N13
-  N0 -->|"1"| N14
-  N8 -->|"1"| N14
-  N0 -->|"1"| N15
-  N0 -->|"1"| N16
-  N0 -->|"1"| N17
-  N0 -->|"1"| N18
-  N0 -->|"1"| N19
-  N0 -->|"1"| N20
-  N0 -->|"1"| N21
-  N0 -->|"1"| N22
-  N0 -->|"1"| N23
-  N0 -->|"1"| N24
-  N0 -->|"1"| N25
-  N23 -->|"1"| N25
-  N24 -->|"1"| N25
-  N0 -->|"1"| N26
-  N0 -->|"1"| N27
-  N0 -->|"1"| N28
-  N0 -->|"1"| N29
-  N0 -->|"1"| N30
-  N27 -->|"1"| N30
-  N0 -->|"1"| N31
-  N30 -->|"1"| N31
-  N0 -->|"1"| N32
-  N8 -->|"1"| N32
-  N14 -->|"1"| N32
-  N31 -->|"1"| N32
-  N0 -->|"1"| N33
-  N13 -->|"1"| N33
-  N31 -->|"1"| N33
-  N0 -->|"1"| N34
-  N20 -->|"1"| N34
-  N32 -->|"1"| N34
-  N0 -->|"1"| N35
-  N34 -->|"1"| N35
-  N0 -->|"1"| N36
-  N14 -->|"1"| N36
-  N33 -->|"1"| N36
-  N0 -->|"1"| N37
-  N29 -->|"1"| N37
-  N36 -->|"1"| N37
-  N0 -->|"1"| N38
-  N26 -->|"1"| N38
-  N37 -->|"1"| N38
-  N0 -->|"1"| N39
-  N0 -->|"1"| N40
-  N14 -->|"1"| N40
-  N31 -->|"1"| N40
-  N33 -->|"1"| N40
-  N38 -->|"1"| N40
-  N0 -->|"1"| N41
-  N0 -->|"1"| N42
-  N41 -->|"1"| N42
-  N0 -->|"1"| N43
-  N42 -->|"1"| N43
-  N0 -->|"1"| N44
-  N41 -->|"1"| N44
-  N43 -->|"1"| N44
-  N0 -->|"1"| N45
-  N41 -->|"1"| N45
-  N43 -->|"1"| N45
-  N44 -->|"1"| N45
-  N0 -->|"1"| N46
-  N40 -->|"1"| N46
-  N45 -->|"1"| N46
-  N0 -->|"1"| N47
-  N41 -->|"1"| N47
-  N43 -->|"1"| N47
-  N44 -->|"1"| N47
-  N0 -->|"1"| N48
-  N40 -->|"1"| N48
-  N47 -->|"1"| N48
-  N0 -->|"1"| N49
-  N25 -->|"1"| N49
-  N34 -->|"1"| N49
-  N46 -->|"1"| N49
-  N48 -->|"1"| N49
-  N0 -->|"1"| N50
-  N21 -->|"1"| N50
-  N49 -->|"1"| N50
-  N0 -->|"1"| N51
-  N1 -->|"1"| N51
-  N2 -->|"1"| N51
-  N3 -->|"1"| N51
-  N4 -->|"1"| N51
-  N5 -->|"1"| N51
-  N6 -->|"1"| N51
-  N7 -->|"1"| N51
-  N8 -->|"1"| N51
-  N9 -->|"1"| N51
-  N10 -->|"1"| N51
-  N11 -->|"1"| N51
-  N12 -->|"1"| N51
-  N13 -->|"1"| N51
-  N14 -->|"1"| N51
-  N15 -->|"1"| N51
-  N16 -->|"1"| N51
-  N17 -->|"1"| N51
-  N18 -->|"1"| N51
-  N19 -->|"1"| N51
-  N20 -->|"1"| N51
-  N21 -->|"1"| N51
-  N22 -->|"1"| N51
-  N23 -->|"1"| N51
-  N24 -->|"1"| N51
-  N25 -->|"1"| N51
-  N26 -->|"1"| N51
-  N27 -->|"1"| N51
-  N28 -->|"1"| N51
-  N29 -->|"1"| N51
-  N30 -->|"1"| N51
-  N31 -->|"1"| N51
-  N32 -->|"1"| N51
-  N33 -->|"1"| N51
-  N34 -->|"1"| N51
-  N35 -->|"1"| N51
-  N36 -->|"1"| N51
-  N37 -->|"1"| N51
-  N38 -->|"1"| N51
-  N39 -->|"1"| N51
-  N40 -->|"1"| N51
-  N41 -->|"1"| N51
-  N42 -->|"1"| N51
-  N43 -->|"1"| N51
-  N44 -->|"1"| N51
-  N45 -->|"1"| N51
-  N46 -->|"1"| N51
-  N47 -->|"1"| N51
-  N48 -->|"1"| N51
-  N49 -->|"1"| N51
-  N50 -->|"1"| N51
-  N0 -->|"1"| N52
-  N51 -->|"1"| N52
-  N0 -->|"1"| N53
-  N51 -->|"1"| N53
-  N52 -->|"1"| N53
-  N0 -->|"1"| N54
-  N51 -->|"1"| N54
-  N52 -->|"1"| N54
-  N0 -->|"1"| N55
-  N51 -->|"1"| N55
-  N52 -->|"1"| N55
-  N0 -->|"1"| N56
-  N51 -->|"1"| N56
-  N54 -->|"1"| N56
-  N0 -->|"1"| N57
-  N51 -->|"1"| N57
-  N52 -->|"1"| N57
-  N0 -->|"1"| N58
-  N51 -->|"1"| N58
-  N52 -->|"1"| N58
-  N57 -->|"1"| N58
-  N0 -->|"1"| N59
-  N51 -->|"1"| N59
-  N0 -->|"1"| N60
-  N51 -->|"1"| N60
-  N59 -->|"1"| N60
-  N0 -->|"1"| N61
-  N51 -->|"1"| N61
-  N52 -->|"1"| N61
-  N0 -->|"1"| N62
-  N51 -->|"1"| N62
-  N52 -->|"1"| N62
-  N61 -->|"1"| N62
-  N0 -->|"1"| N63
-  N51 -->|"1"| N63
-  N0 -->|"1"| N64
-  N51 -->|"1"| N64
-  N53 -->|"1"| N64
-  N57 -->|"1"| N64
-  N62 -->|"1"| N64
-  N63 -->|"1"| N64
-  N0 -->|"1"| N65
-  N51 -->|"1"| N65
-  N63 -->|"1"| N65
-  N0 -->|"1"| N66
-  N51 -->|"1"| N66
-  N54 -->|"1"| N66
-  N60 -->|"1"| N66
-  N65 -->|"1"| N66
-  N0 -->|"1"| N67
-  N51 -->|"1"| N67
-  N66 -->|"1"| N67
-  N0 -->|"1"| N68
-  N51 -->|"1"| N68
-  N0 -->|"1"| N69
-  N51 -->|"1"| N69
-  N68 -->|"1"| N69
-  N0 -->|"1"| N70
-  N51 -->|"1"| N70
-  N64 -->|"1"| N70
-  N69 -->|"1"| N70
-  N0 -->|"1"| N71
-  N51 -->|"1"| N71
-  N0 -->|"1"| N72
-  N51 -->|"1"| N72
-  N0 -->|"1"| N73
-  N51 -->|"1"| N73
-  N0 -->|"1"| N74
-  N51 -->|"1"| N74
-  N73 -->|"1"| N74
-  N0 -->|"1"| N75
-  N51 -->|"1"| N75
-  N0 -->|"1"| N76
-  N51 -->|"1"| N76
-  N0 -->|"1"| N77
-  N51 -->|"1"| N77
-  N0 -->|"1"| N78
-  N51 -->|"1"| N78
-  N0 -->|"1"| N79
-  N51 -->|"1"| N79
-  N0 -->|"1"| N80
-  N51 -->|"1"| N80
-  N0 -->|"1"| N81
-  N51 -->|"1"| N81
-  N0 -->|"1"| N82
-  N51 -->|"1"| N82
-  N0 -->|"1"| N83
-  N51 -->|"1"| N83
-  N0 -->|"1"| N84
-  N51 -->|"1"| N84
-  N0 -->|"1"| N85
-  N51 -->|"1"| N85
-  N0 -->|"1"| N86
-  N51 -->|"1"| N86
-  N0 -->|"1"| N87
-  N51 -->|"1"| N87
-  N0 -->|"1"| N88
-  N51 -->|"1"| N88
-  N0 -->|"1"| N89
-  N51 -->|"1"| N89
-  N88 -->|"1"| N89
-  N0 -->|"1"| N90
-  N51 -->|"1"| N90
-  N0 -->|"1"| N91
-  N51 -->|"1"| N91
-  N89 -->|"1"| N91
-  N0 -->|"1"| N92
-  N51 -->|"1"| N92
-  N0 -->|"1"| N93
-  N51 -->|"1"| N93
-  N71 -->|"1"| N93
-  N0 -->|"1"| N94
-  N51 -->|"1"| N94
-  N74 -->|"1"| N94
-  N0 -->|"1"| N95
-  N51 -->|"1"| N95
-  N88 -->|"1"| N95
-  N0 -->|"1"| N97
-  N51 -->|"1"| N97
-  N0 -->|"1"| N98
-  N51 -->|"1"| N98
-  N0 -->|"1"| N99
-  N51 -->|"1"| N99
-  N0 -->|"1"| N100
-  N51 -->|"1"| N100
-  N0 -->|"1"| N101
-  N51 -->|"1"| N101
-  N75 -->|"1"| N101
-  N0 -->|"1"| N102
-  N51 -->|"1"| N102
-  N101 -->|"1"| N102
-  N0 -->|"1"| N103
-  N51 -->|"1"| N103
-  N0 -->|"1"| N104
-  N51 -->|"1"| N104
-  N72 -->|"1"| N104
-  N99 -->|"1"| N104
-  N103 -->|"1"| N104
-  N0 -->|"1"| N105
-  N51 -->|"1"| N105
-  N104 -->|"1"| N105
-  N0 -->|"1"| N106
-  N51 -->|"1"| N106
-  N93 -->|"1"| N106
-  N99 -->|"1"| N106
-  N105 -->|"1"| N106
-  N0 -->|"1"| N107
-  N51 -->|"1"| N107
-  N71 -->|"1"| N107
-  N0 -->|"1"| N108
-  N51 -->|"1"| N108
-  N0 -->|"1"| N109
-  N51 -->|"1"| N109
-  N52 -->|"1"| N109
-  N0 -->|"1"| N110
-  N51 -->|"1"| N110
-  N52 -->|"1"| N110
-  N0 -->|"1"| N111
-  N51 -->|"1"| N111
-  N52 -->|"1"| N111
-  N0 -->|"1"| N112
-  N51 -->|"1"| N112
-  N52 -->|"1"| N112
-  N0 -->|"1"| N113
-  N51 -->|"1"| N113
-  N52 -->|"1"| N113
-  N0 -->|"1"| N114
-  N51 -->|"1"| N114
-  N52 -->|"1"| N114
-  N0 -->|"1"| N115
-  N51 -->|"1"| N115
-  N52 -->|"1"| N115
-  N0 -->|"1"| N116
-  N51 -->|"1"| N116
-  N52 -->|"1"| N116
+  Pomega -->|"1"| N1
+  Graph -->|"1"| N10
+  N0 -->|"4"| N10
+  N15 -->|"1"| N10
+  N5 -->|"1"| N10
+  Pomega -->|"1"| N10
+  Graph -->|"1"| N103
+  N0 -->|"8"| N103
+  N15 -->|"1"| N103
+  N7 -->|"1"| N103
+  Graph -->|"1"| N105
+  N0 -->|"4"| N105
+  N15 -->|"1"| N105
+  N8 -->|"1"| N105
+  Retracts -->|"1"| N109
+  Pomega -->|"1"| N11
+  N11 -->|"1"| N110
+  N15 -->|"1"| N110
+  Pomega -->|"1"| N110
+  Retracts -->|"1"| N110
+  N15 -->|"1"| N111
+  Pomega -->|"1"| N111
+  Retracts -->|"1"| N111
+  N15 -->|"1"| N112
+  Pomega -->|"1"| N112
+  Retracts -->|"1"| N112
+  N15 -->|"1"| N113
+  Pomega -->|"1"| N113
+  Retracts -->|"1"| N113
+  N15 -->|"1"| N114
+  Pomega -->|"1"| N114
+  Retracts -->|"1"| N114
+  Pomega -->|"1"| N115
+  Retracts -->|"1"| N115
+  N1 -->|"1"| N116
   N115 -->|"1"| N116
-  N0 -->|"1"| N117
-  N51 -->|"1"| N117
-  N52 -->|"1"| N117
+  Pomega -->|"2"| N116
+  Retracts -->|"1"| N116
   N111 -->|"1"| N117
   N112 -->|"1"| N117
   N113 -->|"1"| N117
   N114 -->|"1"| N117
   N115 -->|"1"| N117
-  N0 -->|"1"| N118
-  N51 -->|"1"| N118
-  N52 -->|"1"| N118
+  N15 -->|"1"| N117
+  Pomega -->|"1"| N117
+  Retracts -->|"1"| N117
   N115 -->|"1"| N118
-  N0 -->|"1"| N119
-  N51 -->|"1"| N119
-  N52 -->|"1"| N119
-  N57 -->|"1"| N119
-  N61 -->|"1"| N119
+  Pomega -->|"1"| N118
+  Retracts -->|"1"| N118
+  Graph -->|"1"| N119
+  N1 -->|"1"| N119
   N118 -->|"1"| N119
-  N0 -->|"1"| N120
-  N51 -->|"1"| N120
-  N52 -->|"1"| N120
+  N61 -->|"1"| N119
+  Pomega -->|"2"| N119
+  Retracts -->|"1"| N119
+  Graph -->|"1"| N12
+  N0 -->|"3"| N12
+  N15 -->|"1"| N12
+  N169 -->|"1"| N12
+  N5 -->|"1"| N12
+  Pomega -->|"1"| N12
+  Graph -->|"1"| N120
+  N1 -->|"1"| N120
+  N118 -->|"1"| N120
   N57 -->|"1"| N120
   N61 -->|"1"| N120
-  N118 -->|"1"| N120
-  N0 -->|"1"| N121
-  N51 -->|"1"| N121
-  N52 -->|"1"| N121
-  N0 -->|"1"| N122
-  N51 -->|"1"| N122
-  N52 -->|"1"| N122
-  N0 -->|"1"| N123
-  N51 -->|"1"| N123
-  N52 -->|"1"| N123
+  Pomega -->|"2"| N120
+  Retracts -->|"1"| N120
+  Retracts -->|"1"| N121
+  Retracts -->|"1"| N122
   N122 -->|"1"| N123
+  Retracts -->|"1"| N123
+  Graph -->|"1"| N124
   N0 -->|"1"| N124
-  N51 -->|"1"| N124
-  N52 -->|"1"| N124
-  N57 -->|"1"| N124
-  N61 -->|"1"| N124
-  N92 -->|"1"| N124
+  N1 -->|"1"| N124
   N109 -->|"1"| N124
   N115 -->|"1"| N124
   N120 -->|"1"| N124
   N123 -->|"1"| N124
+  N52 -->|"1"| N124
+  N57 -->|"1"| N124
+  N59 -->|"1"| N124
+  N61 -->|"1"| N124
+  N63 -->|"1"| N124
+  N68 -->|"1"| N124
+  N92 -->|"1"| N124
+  Pomega -->|"1"| N124
+  Retracts -->|"1"| N124
   N0 -->|"1"| N125
-  N51 -->|"1"| N125
-  N52 -->|"1"| N125
-  N57 -->|"1"| N125
-  N61 -->|"1"| N125
-  N63 -->|"1"| N125
-  N97 -->|"1"| N125
+  N1 -->|"1"| N125
   N109 -->|"1"| N125
   N115 -->|"1"| N125
   N123 -->|"1"| N125
-  N0 -->|"1"| N126
-  N51 -->|"1"| N126
-  N52 -->|"1"| N126
-  N55 -->|"1"| N126
+  N52 -->|"1"| N125
+  N57 -->|"1"| N125
+  N59 -->|"1"| N125
+  N61 -->|"1"| N125
+  N63 -->|"1"| N125
+  N68 -->|"1"| N125
+  N97 -->|"1"| N125
+  Pomega -->|"1"| N125
+  Retracts -->|"1"| N125
+  N0 -->|"2"| N126
+  N1 -->|"1"| N126
   N109 -->|"1"| N126
   N119 -->|"1"| N126
   N123 -->|"1"| N126
-  N0 -->|"1"| N127
-  N51 -->|"1"| N127
-  N52 -->|"1"| N127
-  N57 -->|"1"| N127
-  N58 -->|"1"| N127
+  Pomega -->|"1"| N126
+  Retracts -->|"1"| N126
+  N0 -->|"2"| N127
+  N1 -->|"1"| N127
   N109 -->|"1"| N127
   N119 -->|"1"| N127
   N123 -->|"1"| N127
-  N0 -->|"1"| N128
-  N51 -->|"1"| N128
-  N52 -->|"1"| N128
-  N63 -->|"1"| N128
+  Pomega -->|"1"| N127
+  Retracts -->|"1"| N127
   N109 -->|"1"| N128
   N123 -->|"1"| N128
-  N0 -->|"1"| N129
-  N51 -->|"1"| N129
+  Pomega -->|"2"| N128
+  Retracts -->|"1"| N128
+  N1 -->|"1"| N129
+  N128 -->|"1"| N129
   N61 -->|"1"| N129
   N83 -->|"1"| N129
-  N128 -->|"1"| N129
-  N0 -->|"1"| N130
-  N51 -->|"1"| N130
-  N52 -->|"1"| N130
-  N57 -->|"1"| N130
-  N61 -->|"1"| N130
+  Pomega -->|"1"| N129
+  Graph -->|"1"| N13
+  N0 -->|"6"| N13
+  N15 -->|"1"| N13
+  Pomega -->|"1"| N13
+  Graph -->|"2"| N130
+  N1 -->|"1"| N130
   N116 -->|"1"| N130
   N129 -->|"1"| N130
-  N0 -->|"1"| N131
-  N51 -->|"1"| N131
-  N52 -->|"1"| N131
-  N63 -->|"1"| N131
-  N81 -->|"1"| N131
+  N52 -->|"1"| N130
+  N57 -->|"1"| N130
+  N59 -->|"1"| N130
+  N61 -->|"1"| N130
+  N63 -->|"1"| N130
+  N68 -->|"1"| N130
+  Pomega -->|"2"| N130
+  Retracts -->|"1"| N130
+  N1 -->|"1"| N131
+  N10 -->|"1"| N131
   N109 -->|"1"| N131
+  N11 -->|"1"| N131
+  N12 -->|"1"| N131
   N123 -->|"1"| N131
-  N0 -->|"1"| N132
-  N51 -->|"1"| N132
-  N52 -->|"1"| N132
-  N57 -->|"1"| N132
-  N91 -->|"1"| N132
+  N13 -->|"1"| N131
+  N14 -->|"1"| N131
+  N15 -->|"1"| N131
+  N2 -->|"1"| N131
+  N20 -->|"1"| N131
+  N21 -->|"1"| N131
+  N22 -->|"1"| N131
+  N23 -->|"1"| N131
+  N24 -->|"1"| N131
+  N25 -->|"1"| N131
+  N26 -->|"1"| N131
+  N27 -->|"1"| N131
+  N28 -->|"1"| N131
+  N29 -->|"1"| N131
+  N3 -->|"1"| N131
+  N30 -->|"1"| N131
+  N31 -->|"1"| N131
+  N32 -->|"1"| N131
+  N33 -->|"1"| N131
+  N34 -->|"1"| N131
+  N35 -->|"1"| N131
+  N36 -->|"1"| N131
+  N37 -->|"1"| N131
+  N38 -->|"1"| N131
+  N39 -->|"1"| N131
+  N4 -->|"1"| N131
+  N40 -->|"1"| N131
+  N41 -->|"1"| N131
+  N42 -->|"1"| N131
+  N43 -->|"1"| N131
+  N44 -->|"1"| N131
+  N45 -->|"1"| N131
+  N46 -->|"1"| N131
+  N47 -->|"1"| N131
+  N48 -->|"1"| N131
+  N49 -->|"1"| N131
+  N5 -->|"1"| N131
+  N50 -->|"1"| N131
+  N52 -->|"1"| N131
+  N6 -->|"1"| N131
+  N63 -->|"1"| N131
+  N7 -->|"1"| N131
+  N8 -->|"1"| N131
+  N81 -->|"1"| N131
+  N9 -->|"1"| N131
+  Pomega -->|"2"| N131
+  Graph -->|"1"| N132
   N109 -->|"1"| N132
   N115 -->|"1"| N132
   N122 -->|"1"| N132
   N123 -->|"1"| N132
   N131 -->|"1"| N132
-  N0 -->|"1"| N133
-  N51 -->|"1"| N133
-  N52 -->|"1"| N133
-  N63 -->|"1"| N133
+  N91 -->|"1"| N132
+  Pomega -->|"2"| N132
+  Retracts -->|"1"| N132
+  Graph -->|"1"| N133
   N109 -->|"1"| N133
   N112 -->|"1"| N133
   N113 -->|"1"| N133
   N123 -->|"1"| N133
   N132 -->|"1"| N133
-  N0 -->|"1"| N134
-  N51 -->|"1"| N134
-  N52 -->|"1"| N134
+  N15 -->|"1"| N133
+  Pomega -->|"2"| N133
+  Retracts -->|"1"| N133
+  Graph -->|"1"| N134
   N133 -->|"1"| N134
-  N0 -->|"1"| N135
-  N51 -->|"1"| N135
-  N52 -->|"1"| N135
-  N57 -->|"1"| N135
-  N82 -->|"1"| N135
+  N15 -->|"1"| N134
+  Pomega -->|"2"| N134
+  Retracts -->|"1"| N134
+  Graph -->|"1"| N135
   N111 -->|"1"| N135
   N113 -->|"1"| N135
   N114 -->|"1"| N135
   N115 -->|"1"| N135
   N132 -->|"1"| N135
   N134 -->|"1"| N135
-  N0 -->|"1"| N136
-  N51 -->|"1"| N136
-  N52 -->|"1"| N136
-  N63 -->|"1"| N136
-  N109 -->|"1"| N136
-  N123 -->|"1"| N136
-  N132 -->|"1"| N136
-  N0 -->|"1"| N137
-  N51 -->|"1"| N137
-  N52 -->|"1"| N137
-  N82 -->|"1"| N137
-  N136 -->|"1"| N137
-  N0 -->|"1"| N138
-  N51 -->|"1"| N138
+  N15 -->|"1"| N135
+  N82 -->|"1"| N135
+  Pomega -->|"2"| N135
+  Retracts -->|"1"| N135
   N109 -->|"1"| N138
   N123 -->|"1"| N138
-  N0 -->|"1"| N139
-  N51 -->|"1"| N139
-  N61 -->|"1"| N139
+  Graph -->|"1"| N139
   N135 -->|"1"| N139
+  N15 -->|"1"| N139
+  N61 -->|"1"| N139
+  Pomega -->|"2"| N139
+  Graph -->|"2"| N14
+  N0 -->|"9"| N14
+  N105 -->|"1"| N14
+  N15 -->|"1"| N14
+  N22 -->|"1"| N14
+  N6 -->|"1"| N14
+  N71 -->|"1"| N14
+  N8 -->|"1"| N14
+  Pomega -->|"1"| N14
+  Graph -->|"1"| N140
   N0 -->|"1"| N140
-  N51 -->|"1"| N140
-  N52 -->|"1"| N140
-  N57 -->|"1"| N140
-  N61 -->|"1"| N140
-  N90 -->|"1"| N140
+  N1 -->|"1"| N140
   N117 -->|"1"| N140
   N139 -->|"1"| N140
-  N0 -->|"1"| N141
-  N51 -->|"1"| N141
-  N56 -->|"1"| N141
+  N15 -->|"1"| N140
+  N52 -->|"1"| N140
+  N57 -->|"1"| N140
+  N59 -->|"1"| N140
+  N61 -->|"1"| N140
+  N63 -->|"1"| N140
+  N68 -->|"1"| N140
+  N90 -->|"1"| N140
+  Pomega -->|"2"| N140
+  Retracts -->|"1"| N140
+  Graph -->|"1"| N141
+  N0 -->|"7"| N141
+  N1 -->|"1"| N141
   N124 -->|"1"| N141
   N125 -->|"1"| N141
   N126 -->|"1"| N141
   N127 -->|"1"| N141
   N130 -->|"1"| N141
   N140 -->|"1"| N141
-  N0 -->|"1"| N142
-  N51 -->|"1"| N142
-  N0 -->|"1"| N143
-  N51 -->|"1"| N143
-  N0 -->|"1"| N144
-  N51 -->|"1"| N144
-  N0 -->|"1"| N145
-  N51 -->|"1"| N145
-  N143 -->|"1"| N145
-  N144 -->|"1"| N145
-  N0 -->|"1"| N146
-  N51 -->|"1"| N146
-  N0 -->|"1"| N147
-  N51 -->|"1"| N147
-  N146 -->|"1"| N147
-  N0 -->|"1"| N148
-  N51 -->|"1"| N148
-  N0 -->|"1"| N149
-  N51 -->|"1"| N149
-  N99 -->|"1"| N149
-  N145 -->|"1"| N149
-  N148 -->|"1"| N149
-  N0 -->|"1"| N150
-  N51 -->|"1"| N150
-  N86 -->|"1"| N150
-  N87 -->|"1"| N150
-  N149 -->|"1"| N150
-  N0 -->|"1"| N151
-  N51 -->|"1"| N151
-  N104 -->|"1"| N151
-  N106 -->|"1"| N151
-  N149 -->|"1"| N151
-  N0 -->|"1"| N152
-  N51 -->|"1"| N152
-  N151 -->|"1"| N152
-  N0 -->|"1"| N153
-  N51 -->|"1"| N153
-  N106 -->|"1"| N153
-  N150 -->|"1"| N153
-  N0 -->|"1"| N154
-  N51 -->|"1"| N154
-  N153 -->|"1"| N154
-  N0 -->|"1"| N155
-  N51 -->|"1"| N155
-  N99 -->|"1"| N155
-  N107 -->|"1"| N155
-  N147 -->|"1"| N155
-  N154 -->|"1"| N155
-  N0 -->|"1"| N156
-  N51 -->|"1"| N156
-  N142 -->|"1"| N156
-  N0 -->|"1"| N157
-  N51 -->|"1"| N157
-  N156 -->|"1"| N157
-  N0 -->|"1"| N158
-  N51 -->|"1"| N158
-  N74 -->|"1"| N158
-  N94 -->|"1"| N158
-  N157 -->|"1"| N158
-  N0 -->|"1"| N159
-  N51 -->|"1"| N159
-  N85 -->|"1"| N159
-  N157 -->|"1"| N159
-  N0 -->|"1"| N160
-  N51 -->|"1"| N160
-  N158 -->|"1"| N160
-  N0 -->|"1"| N161
-  N51 -->|"1"| N161
-  N160 -->|"1"| N161
-  N0 -->|"1"| N162
-  N51 -->|"1"| N162
-  N75 -->|"1"| N162
-  N94 -->|"1"| N162
-  N159 -->|"1"| N162
-  N0 -->|"1"| N163
-  N51 -->|"1"| N163
-  N162 -->|"1"| N163
-  N0 -->|"1"| N164
-  N51 -->|"1"| N164
-  N108 -->|"1"| N164
-  N163 -->|"1"| N164
-  N0 -->|"1"| N165
-  N51 -->|"1"| N165
-  N0 -->|"1"| N166
-  N51 -->|"1"| N166
-  N0 -->|"1"| N167
-  N51 -->|"1"| N167
-  N54 -->|"1"| N167
-  N0 -->|"1"| N168
-  N51 -->|"1"| N168
-  N0 -->|"1"| N169
-  N51 -->|"1"| N169
-  N168 -->|"1"| N169
-  N0 -->|"1"| N170
-  N51 -->|"1"| N170
-  N169 -->|"1"| N170
-  N0 -->|"1"| N171
-  N51 -->|"1"| N171
-  N75 -->|"1"| N171
-  N94 -->|"1"| N171
-  N157 -->|"1"| N171
-  N159 -->|"1"| N171
-  N164 -->|"1"| N171
-  N0 -->|"1"| N172
-  N51 -->|"1"| N172
-  N171 -->|"1"| N172
-  N0 -->|"1"| N173
-  N51 -->|"1"| N173
-  N106 -->|"1"| N173
-  N149 -->|"1"| N173
-  N150 -->|"1"| N173
-  N155 -->|"1"| N173
-  N0 -->|"1"| N174
-  N51 -->|"1"| N174
-  N171 -->|"1"| N174
-  N0 -->|"1"| N175
-  N51 -->|"1"| N175
-  N75 -->|"1"| N175
-  N102 -->|"1"| N175
-  N160 -->|"1"| N175
-  N172 -->|"1"| N175
-  N174 -->|"1"| N175
-  N0 -->|"1"| N176
-  N51 -->|"1"| N176
-  N175 -->|"1"| N176
-  N0 -->|"1"| N177
-  N51 -->|"1"| N177
-  N106 -->|"1"| N177
-  N149 -->|"1"| N177
-  N150 -->|"1"| N177
-  N155 -->|"1"| N177
-  N0 -->|"1"| N178
-  N51 -->|"1"| N178
-  N99 -->|"1"| N178
-  N100 -->|"1"| N178
-  N151 -->|"1"| N178
-  N173 -->|"1"| N178
-  N177 -->|"1"| N178
-  N0 -->|"1"| N179
-  N51 -->|"1"| N179
-  N77 -->|"1"| N179
-  N78 -->|"1"| N179
-  N79 -->|"1"| N179
-  N80 -->|"1"| N179
-  N152 -->|"1"| N179
-  N161 -->|"1"| N179
-  N172 -->|"1"| N179
-  N173 -->|"1"| N179
-  N174 -->|"1"| N179
-  N176 -->|"1"| N179
-  N177 -->|"1"| N179
-  N178 -->|"1"| N179
-  N0 -->|"1"| N180
-  N51 -->|"1"| N180
-  N55 -->|"1"| N180
-  N84 -->|"1"| N180
+  N15 -->|"1"| N141
+  N56 -->|"1"| N141
+  Pomega -->|"1"| N141
+  Graph -->|"1"| N145
+  N0 -->|"4"| N145
+  N15 -->|"1"| N145
+  N27 -->|"1"| N145
+  N30 -->|"1"| N145
+  Pomega -->|"1"| N15
+  Graph -->|"1"| N154
+  N0 -->|"2"| N154
+  N15 -->|"1"| N154
+  N28 -->|"1"| N154
+  N37 -->|"1"| N154
+  Graph -->|"1"| N169
+  N0 -->|"8"| N169
+  N15 -->|"1"| N169
+  N39 -->|"1"| N169
+  Pomega -->|"1"| N169
+  N0 -->|"6"| N179
+  N10 -->|"1"| N179
+  N15 -->|"1"| N179
+  N35 -->|"1"| N179
+  N46 -->|"1"| N179
+  N48 -->|"1"| N179
+  N5 -->|"1"| N179
+  N50 -->|"1"| N179
+  N9 -->|"1"| N179
+  Pomega -->|"1"| N179
+  Retracts -->|"1"| N179
+  Graph -->|"1"| N180
+  N0 -->|"4"| N180
+  N1 -->|"1"| N180
+  N11 -->|"1"| N180
   N110 -->|"1"| N180
-  N126 -->|"1"| N180
-  N170 -->|"1"| N180
+  N12 -->|"1"| N180
+  N15 -->|"1"| N180
   N179 -->|"1"| N180
+  Pomega -->|"2"| N180
   N0 -->|"1"| N181
-  N51 -->|"1"| N181
+  N1 -->|"1"| N181
   N141 -->|"1"| N181
+  N15 -->|"1"| N181
   N180 -->|"1"| N181
-  N0 -->|"1"| N182
-  N51 -->|"1"| N182
-  N76 -->|"1"| N182
+  Pomega -->|"1"| N181
+  Continuous -->|"1"| N182
+  Enumeration -->|"2"| N182
+  Graph -->|"1"| N182
+  N0 -->|"10"| N182
+  N1 -->|"1"| N182
   N181 -->|"1"| N182
-  N0 -->|"1"| N183
-  N51 -->|"1"| N183
-  N76 -->|"1"| N183
-  N181 -->|"1"| N183
+  N2 -->|"1"| N182
+  N3 -->|"1"| N182
+  N4 -->|"1"| N182
+  N76 -->|"1"| N182
+  Pomega -->|"1"| N182
+  Graph -->|"1"| N2
+  N0 -->|"2"| N2
+  N1 -->|"1"| N2
+  Pomega -->|"1"| N2
+  Enumeration -->|"1"| N20
+  Graph -->|"1"| N20
+  N0 -->|"1"| N20
+  Enumeration -->|"1"| N21
+  Graph -->|"1"| N21
+  N0 -->|"1"| N21
+  Pomega -->|"1"| N21
+  Graph -->|"1"| N22
+  N0 -->|"10"| N22
+  N15 -->|"1"| N22
+  Pomega -->|"1"| N22
+  N0 -->|"5"| N23
+  N15 -->|"1"| N23
+  N22 -->|"1"| N23
+  N75 -->|"1"| N23
+  Pomega -->|"1"| N23
+  Enumeration -->|"1"| N24
+  Graph -->|"1"| N24
+  N0 -->|"1"| N24
+  Graph -->|"2"| N25
+  N0 -->|"3"| N25
+  N15 -->|"1"| N25
+  N22 -->|"1"| N25
+  N23 -->|"1"| N25
+  N24 -->|"1"| N25
+  Pomega -->|"1"| N25
+  Graph -->|"1"| N26
+  N0 -->|"9"| N26
+  N15 -->|"1"| N26
+  N22 -->|"1"| N26
+  N71 -->|"1"| N26
+  Pomega -->|"1"| N26
+  Graph -->|"3"| N27
+  N0 -->|"10"| N27
+  N15 -->|"1"| N27
+  Pomega -->|"1"| N27
+  N15 -->|"1"| N28
+  Enumeration -->|"1"| N29
+  Graph -->|"1"| N29
+  N0 -->|"1"| N29
+  Continuous -->|"1"| N3
+  Graph -->|"1"| N3
+  N1 -->|"1"| N3
+  Pomega -->|"1"| N3
+  Graph -->|"1"| N30
+  N0 -->|"1"| N30
+  N15 -->|"1"| N30
+  N27 -->|"1"| N30
+  Pomega -->|"1"| N30
+  Graph -->|"1"| N31
+  N0 -->|"10"| N31
+  N145 -->|"1"| N31
+  N15 -->|"1"| N31
+  N22 -->|"1"| N31
+  N30 -->|"1"| N31
+  N6 -->|"1"| N31
+  Pomega -->|"1"| N31
+  Graph -->|"1"| N32
+  N0 -->|"4"| N32
+  N14 -->|"1"| N32
+  N15 -->|"1"| N32
+  N31 -->|"1"| N32
+  N8 -->|"1"| N32
+  Pomega -->|"1"| N32
+  Graph -->|"2"| N33
+  N0 -->|"5"| N33
+  N13 -->|"1"| N33
+  N15 -->|"1"| N33
+  N31 -->|"1"| N33
+  Pomega -->|"1"| N33
+  Graph -->|"2"| N34
+  N0 -->|"4"| N34
+  N14 -->|"1"| N34
+  N15 -->|"1"| N34
+  N20 -->|"1"| N34
+  N31 -->|"1"| N34
+  N32 -->|"1"| N34
+  N8 -->|"1"| N34
+  Pomega -->|"2"| N34
+  Graph -->|"1"| N35
+  N0 -->|"4"| N35
+  N15 -->|"1"| N35
+  N34 -->|"1"| N35
+  N5 -->|"1"| N35
+  Pomega -->|"2"| N35
+  N14 -->|"1"| N36
+  N15 -->|"1"| N36
+  N33 -->|"1"| N36
+  N75 -->|"1"| N36
+  Pomega -->|"1"| N36
+  Graph -->|"2"| N37
+  N0 -->|"6"| N37
+  N14 -->|"1"| N37
+  N15 -->|"1"| N37
+  N29 -->|"1"| N37
+  N33 -->|"1"| N37
+  N36 -->|"1"| N37
+  Pomega -->|"1"| N37
+  Graph -->|"1"| N38
+  N0 -->|"5"| N38
+  N15 -->|"1"| N38
+  N154 -->|"1"| N38
+  N22 -->|"1"| N38
+  N26 -->|"1"| N38
+  N28 -->|"1"| N38
+  N37 -->|"1"| N38
+  N5 -->|"1"| N38
+  Pomega -->|"1"| N38
+  Enumeration -->|"1"| N39
+  Graph -->|"2"| N39
+  N0 -->|"5"| N39
+  N15 -->|"1"| N39
+  Pomega -->|"1"| N39
+  Enumeration -->|"1"| N4
+  N0 -->|"2"| N4
+  Pomega -->|"1"| N4
+  N14 -->|"1"| N40
+  N15 -->|"1"| N40
+  N31 -->|"1"| N40
+  N33 -->|"1"| N40
+  N38 -->|"1"| N40
+  Pomega -->|"1"| N40
+  Enumeration -->|"1"| N41
+  N0 -->|"1"| N41
+  Enumeration -->|"1"| N42
+  N0 -->|"1"| N42
+  N41 -->|"1"| N42
+  Enumeration -->|"1"| N43
+  N0 -->|"1"| N43
+  N42 -->|"1"| N43
+  Enumeration -->|"1"| N44
+  N0 -->|"1"| N44
+  N41 -->|"1"| N44
+  N43 -->|"1"| N44
+  Enumeration -->|"1"| N45
+  Graph -->|"1"| N45
+  N0 -->|"1"| N45
+  N41 -->|"1"| N45
+  N43 -->|"1"| N45
+  N44 -->|"1"| N45
+  Graph -->|"1"| N46
+  N0 -->|"6"| N46
+  N14 -->|"1"| N46
+  N15 -->|"1"| N46
+  N31 -->|"1"| N46
+  N33 -->|"1"| N46
+  N38 -->|"1"| N46
+  N40 -->|"1"| N46
+  N41 -->|"1"| N46
+  N42 -->|"1"| N46
+  N43 -->|"1"| N46
+  N44 -->|"1"| N46
+  N45 -->|"1"| N46
+  N5 -->|"1"| N46
+  Pomega -->|"2"| N46
+  Enumeration -->|"1"| N47
+  Graph -->|"1"| N47
+  N0 -->|"1"| N47
+  N41 -->|"1"| N47
+  N43 -->|"1"| N47
+  N44 -->|"1"| N47
+  Graph -->|"1"| N48
+  N0 -->|"6"| N48
+  N14 -->|"1"| N48
+  N15 -->|"1"| N48
+  N31 -->|"1"| N48
+  N33 -->|"1"| N48
+  N38 -->|"1"| N48
+  N40 -->|"1"| N48
+  N41 -->|"1"| N48
+  N42 -->|"1"| N48
+  N43 -->|"1"| N48
+  N44 -->|"1"| N48
+  N47 -->|"1"| N48
+  N5 -->|"1"| N48
+  Pomega -->|"2"| N48
+  N15 -->|"1"| N49
+  N25 -->|"1"| N49
+  N34 -->|"1"| N49
+  N46 -->|"1"| N49
+  N48 -->|"1"| N49
+  Pomega -->|"1"| N49
+  Graph -->|"1"| N5
+  N0 -->|"1"| N5
+  Pomega -->|"1"| N5
+  Graph -->|"3"| N50
+  N0 -->|"5"| N50
+  N15 -->|"1"| N50
+  N21 -->|"1"| N50
+  N22 -->|"1"| N50
+  N25 -->|"1"| N50
+  N34 -->|"1"| N50
+  N46 -->|"1"| N50
+  N48 -->|"1"| N50
+  N49 -->|"1"| N50
+  N5 -->|"1"| N50
+  Pomega -->|"2"| N50
+  Retracts -->|"1"| N52
+  N1 -->|"1"| N53
+  Pomega -->|"1"| N53
+  Retracts -->|"1"| N53
+  N0 -->|"1"| N54
+  N1 -->|"1"| N54
+  Retracts -->|"1"| N54
+  N0 -->|"1"| N55
+  N1 -->|"1"| N55
+  Pomega -->|"1"| N55
+  Retracts -->|"1"| N55
+  N0 -->|"1"| N56
+  N1 -->|"1"| N56
+  N54 -->|"1"| N56
+  Retracts -->|"1"| N57
+  N0 -->|"1"| N58
+  N1 -->|"1"| N58
+  N57 -->|"1"| N58
+  Pomega -->|"1"| N58
+  Retracts -->|"1"| N58
+  Graph -->|"1"| N6
+  N0 -->|"1"| N6
+  Pomega -->|"1"| N6
+  N1 -->|"1"| N60
+  N59 -->|"1"| N60
+  Pomega -->|"1"| N60
+  Pomega -->|"2"| N61
+  Retracts -->|"1"| N61
+  N1 -->|"1"| N62
+  N61 -->|"1"| N62
+  Pomega -->|"1"| N62
+  Retracts -->|"1"| N62
+  N0 -->|"1"| N64
+  N1 -->|"1"| N64
+  N53 -->|"1"| N64
+  N57 -->|"1"| N64
+  N62 -->|"1"| N64
+  N63 -->|"1"| N64
+  Pomega -->|"1"| N64
+  N1 -->|"1"| N65
+  N63 -->|"1"| N65
+  Pomega -->|"1"| N65
+  N0 -->|"1"| N66
+  N1 -->|"1"| N66
+  N54 -->|"1"| N66
+  N60 -->|"1"| N66
+  N65 -->|"1"| N66
+  Pomega -->|"1"| N66
+  N1 -->|"1"| N67
+  N66 -->|"1"| N67
+  Pomega -->|"1"| N67
+  N1 -->|"1"| N69
+  N68 -->|"1"| N69
+  Pomega -->|"1"| N69
+  Continuous -->|"1"| N7
+  Graph -->|"1"| N7
+  N0 -->|"3"| N7
+  N15 -->|"1"| N7
+  Pomega -->|"1"| N7
+  N0 -->|"2"| N70
+  N1 -->|"1"| N70
+  N64 -->|"1"| N70
+  N69 -->|"1"| N70
+  Pomega -->|"1"| N70
+  Graph -->|"1"| N71
+  N0 -->|"4"| N71
+  N15 -->|"1"| N71
+  Pomega -->|"1"| N71
+  Graph -->|"1"| N75
+  N0 -->|"5"| N75
+  N15 -->|"1"| N75
+  Pomega -->|"1"| N75
+  Graph -->|"1"| N76
+  N0 -->|"8"| N76
+  N4 -->|"1"| N76
+  Pomega -->|"1"| N76
+  Graph -->|"1"| N8
+  N0 -->|"10"| N8
+  N103 -->|"1"| N8
+  N15 -->|"1"| N8
+  N22 -->|"1"| N8
+  N6 -->|"1"| N8
+  N7 -->|"1"| N8
+  Pomega -->|"1"| N8
+  Pomega -->|"1"| N81
+  Graph -->|"1"| N82
+  Pomega -->|"1"| N82
+  Pomega -->|"1"| N83
+  N88 -->|"1"| N89
+  Pomega -->|"1"| N89
+  Graph -->|"1"| N9
+  N0 -->|"5"| N9
+  N15 -->|"1"| N9
+  N5 -->|"1"| N9
+  Pomega -->|"1"| N9
+  Graph -->|"1"| N90
+  N0 -->|"1"| N90
+  Pomega -->|"2"| N90
+  Graph -->|"1"| N91
+  N89 -->|"1"| N91
+  Pomega -->|"2"| N91
+  Graph -->|"1"| N92
+  Pomega -->|"2"| N92
+  N88 -->|"1"| N95
+  Pomega -->|"1"| N95
+  N0 -->|"2"| N97
+  Pomega -->|"1"| N97
+  Graph -->|"1"| primrecRel_eSubset_more
+  N109 -->|"1"| primrecRel_eSubset_more
+  N123 -->|"1"| primrecRel_eSubset_more
+  N131 -->|"1"| primrecRel_eSubset_more
+  N132 -->|"1"| primrecRel_eSubset_more
+  N81 -->|"1"| primrecRel_eSubset_more
+  N82 -->|"1"| primrecRel_eSubset_more
+  Pomega -->|"2"| primrecRel_eSubset_more
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 ext
-  class N1 file
-  class N2 file
-  class N3 file
-  class N4 file
-  class N5 file
-  class N6 file
-  class N7 file
-  class N8 file
-  class N9 file
-  class N10 file
-  class N11 file
-  class N12 file
-  class N13 file
-  class N14 file
-  class N15 file
-  class N16 file
-  class N17 file
-  class N18 file
-  class N19 file
-  class N20 file
-  class N21 file
-  class N22 file
-  class N23 file
-  class N24 file
-  class N25 file
-  class N26 file
-  class N27 file
-  class N28 file
-  class N29 file
-  class N30 file
-  class N31 file
-  class N32 file
-  class N33 file
-  class N34 file
-  class N35 file
-  class N36 file
-  class N37 file
-  class N38 file
-  class N39 file
-  class N40 file
-  class N41 file
-  class N42 file
-  class N43 file
-  class N44 file
-  class N45 file
-  class N46 file
-  class N47 file
-  class N48 file
-  class N49 file
-  class N50 file
-  class N51 file
-  class N52 file
-  class N53 file
-  class N54 file
-  class N55 file
-  class N56 file
-  class N57 file
-  class N58 file
-  class N59 file
-  class N60 file
-  class N61 file
-  class N62 file
-  class N63 file
-  class N64 file
-  class N65 file
-  class N66 file
-  class N67 file
-  class N68 file
-  class N69 file
-  class N70 file
-  class N71 file
-  class N72 file
-  class N73 file
-  class N74 file
-  class N75 file
-  class N76 file
-  class N77 file
-  class N78 file
-  class N79 file
-  class N80 file
-  class N81 file
-  class N82 file
-  class N83 file
-  class N84 file
-  class N85 file
-  class N86 file
-  class N87 file
-  class N88 file
-  class N89 file
-  class N90 file
-  class N91 file
-  class N92 file
-  class N93 file
-  class N94 file
-  class N95 file
-  class N97 file
-  class N98 file
-  class N99 file
-  class N100 file
-  class N101 file
-  class N102 file
-  class N103 file
-  class N104 file
-  class N105 file
-  class N106 file
-  class N107 file
-  class N108 file
-  class N109 file
-  class N110 file
-  class N111 file
-  class N112 file
-  class N113 file
-  class N114 file
-  class N115 file
-  class N116 file
-  class N117 file
-  class N118 file
-  class N119 file
-  class N120 file
-  class N121 file
-  class N122 file
-  class N123 file
-  class N124 file
-  class N125 file
-  class N126 file
-  class N127 file
-  class N128 file
-  class N129 file
-  class N130 file
-  class N131 file
-  class N132 file
-  class N133 file
-  class N134 file
-  class N135 file
-  class N136 file
-  class N137 file
-  class N138 file
-  class N139 file
-  class N140 file
-  class N141 file
-  class N142 file
-  class N143 file
-  class N144 file
-  class N145 file
-  class N146 file
-  class N147 file
-  class N148 file
-  class N149 file
-  class N150 file
-  class N151 file
-  class N152 file
-  class N153 file
-  class N154 file
-  class N155 file
-  class N156 file
-  class N157 file
-  class N158 file
-  class N159 file
-  class N160 file
-  class N161 file
-  class N162 file
-  class N163 file
-  class N164 file
-  class N165 file
-  class N166 file
-  class N167 file
-  class N168 file
-  class N169 file
-  class N170 file
-  class N171 file
-  class N172 file
-  class N173 file
-  class N174 file
-  class N175 file
-  class N176 file
-  class N177 file
-  class N178 file
-  class N179 file
-  class N180 file
-  class N181 file
-  class N182 file
-  class N183 file

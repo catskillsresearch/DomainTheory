@@ -4,6 +4,6 @@
 
 <!-- page 148 -->
 
-**[Exercise_8_17.lean](Exercise_8_17.lean)**
+**[Exercise_8_17.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_17.lean)**
 
 @import "Exercise_8_17.lean"

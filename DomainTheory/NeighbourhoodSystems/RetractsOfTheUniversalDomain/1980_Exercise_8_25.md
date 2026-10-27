@@ -22,6 +22,6 @@ D \times D \cong D,
 $$
 and then show $D$ satisfies $(\spadesuit)$.) Is this $D$ effectively given?
 
-**[Exercise_8_25.lean](Exercise_8_25.lean)**
+**[Exercise_8_25.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_25.lean)**
 
 @import "Exercise_8_25.lean"

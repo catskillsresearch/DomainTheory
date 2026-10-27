@@ -8,6 +8,6 @@ is effective.
 
 <!-- page 132 -->
 
-**[Exercise_7_18.lean](Exercise_7_18.lean)**
+**[Exercise_7_18.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_18.lean)**
 
 @import "Exercise_7_18.lean"

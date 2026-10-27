@@ -1,18 +1,8 @@
 %% Each box is one item. The arrowhead is on the item that imports.
 %% An arrow already implied by a longer path is omitted.
 %% The introduction has no Lean file, so it is not shown.
-%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
-flowchart LR
+flowchart TB
 
-  Theorem_5_1["Theorem 5.1: terms as maps"]
-  Theorem_5_2["Theorem 5.2: beta conversion"]
-  Proposition_5_3["Prop 5.3: simultaneous fixes"]
-  Proposition_5_4["Prop 5.4: fixed under parameter"]
-  Table_5_5["Table 5.5: combinator table"]
-  Theorem_5_6["Theorem 5.6: partial recursive"]
-  Exercise_5_7["Exercise 5.7: curried lambda"]
-  Exercise_5_8["Exercise 5.8: combinatory complete"]
-  Exercise_5_9["Exercise 5.9: common fixed points"]
   Exercise_5_10["Exercise 5.10: smash product"]
   Exercise_5_11["Exercise 5.11: stack combinators"]
   Exercise_5_12["Exercise 5.12: while combinator"]
@@ -21,32 +11,24 @@ flowchart LR
   Exercise_5_14["Exercise 5.14: functions as graphs"]
   Exercise_5_15["Exercise 5.15: star of a word"]
   Exercise_5_16["Exercise 5.16: negated sequences"]
+  Exercise_5_7["Exercise 5.7: curried lambda"]
+  Exercise_5_8["Exercise 5.8: combinatory complete"]
+  Exercise_5_9["Exercise 5.9: common fixed points"]
+  Proposition_5_3["Prop 5.3: simultaneous fixes"]
+  Proposition_5_4["Prop 5.4: fixed under parameter"]
+  Table_5_5["Table 5.5: combinator table"]
+  Theorem_5_1["Theorem 5.1: terms as maps"]
+  Theorem_5_2["Theorem 5.2: beta conversion"]
+  Theorem_5_6["Theorem 5.6: partial recursive"]
 
+  Exercise_5_13 --> Exercise_5_13b
+  Exercise_5_13 --> Exercise_5_14
   Table_5_5 --> Proposition_5_3
   Exercise_5_16 --> Proposition_5_4
   Exercise_5_11 --> Theorem_5_6
-  Exercise_5_13 --> Exercise_5_13b
-  Exercise_5_13 --> Exercise_5_14
 
+%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cprop fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef cexs fill:#fef3c7,stroke:#b45309,color:#78350f
   classDef cex fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef cthm fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
-
-  class Theorem_5_1 cthm
-  class Theorem_5_2 cthm
-  class Proposition_5_3 cprop
-  class Proposition_5_4 cprop
-  class Table_5_5 cexs
-  class Theorem_5_6 cthm
-  class Exercise_5_7 cex
-  class Exercise_5_8 cex
-  class Exercise_5_9 cex
-  class Exercise_5_10 cex
-  class Exercise_5_11 cex
-  class Exercise_5_12 cex
-  class Exercise_5_13 cex
-  class Exercise_5_13b cex
-  class Exercise_5_14 cex
-  class Exercise_5_15 cex
-  class Exercise_5_16 cex

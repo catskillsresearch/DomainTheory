@@ -2,7 +2,6 @@
 
 @import "1976_Theorem_5_5.english" {code_block=false}
 
-**[DataTypesAsLattices/Closures/theorem_5_5.lean](theorem_5_5.lean)**
+**[DataTypesAsLattices/Closures/theorem_5_5.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_5.lean)**
 
 @import "theorem_5_5.lean"
-

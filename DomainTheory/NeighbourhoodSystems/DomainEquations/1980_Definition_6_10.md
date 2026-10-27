@@ -18,6 +18,6 @@ $$
 
 It is also easy to prove that the union of a directed family of subdomains of $E$ is again a subdomain. As a consequence of this remark we have:
 
-**[Definition_6_10.lean](Definition_6_10.lean)**
+**[Definition_6_10.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition_6_10.lean)**
 
 @import "Definition_6_10.lean"

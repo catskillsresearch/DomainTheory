@@ -46,6 +46,6 @@ for some $(n_0, m_0) \in r$. By axiom 4.5(ii), $n = n_0$, and, by uniqueness (re
 
 Note that the rôles of $\mathbf{N}$ and $\mathbf{M}$ are completely symmetric, *and* they satisfy the same axioms as structured sets. It follows, then, that every element of $\mathbf{M}$ corresponds to a unique element of $\mathbf{N}$. The proof that $r$ is a one-one correspondence is now complete. $\square$
 
-**[Theorem_4_6.lean](Theorem_4_6.lean)**
+**[Theorem_4_6.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem_4_6.lean)**
 
 @import "Theorem_4_6.lean"

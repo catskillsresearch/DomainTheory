@@ -2,26 +2,26 @@
 %% An arrow already implied by a longer path is omitted.
 %% The label is the number of direct import lines.
 %% The introduction has no Lean file, so it has no arrow.
-%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
-flowchart TD
+flowchart TB
 
-  DOM["Domains given<br>by neighbourhoods"]
-  MAP["Mappings<br>between domains"]
-  CON["Domain<br>constructs"]
-  FIX["Fixed points<br>and recursion"]
-  LAM["Typed<br>λ-calculus"]
-  EQ["Domain<br>equations"]
   COMP["Computability<br>effectively given"]
+  CON["Domain<br>constructs"]
+  EQ["Domain<br>equations"]
+  DOM["Domains given<br>by neighbourhoods"]
+  FIX["Fixed points<br>and recursion"]
+  MAP["Mappings<br>between domains"]
   RET["Retracts of<br>universal domain"]
+  LAM["Typed<br>λ-calculus"]
 
-  DOM -->|"27"| MAP
-  MAP -->|"16"| CON
-  CON -->|"5"| FIX
-  FIX -->|"13"| LAM
-  LAM -->|"4"| EQ
   EQ -->|"3"| COMP
+  MAP -->|"18"| CON
+  LAM -->|"4"| EQ
+  CON -->|"6"| FIX
+  FIX -->|"12"| LAM
+  DOM -->|"27"| MAP
   COMP -->|"14"| RET
 
+%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef c1 fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef c2 fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef c3 fill:#fef3c7,stroke:#b45309,color:#78350f
@@ -30,12 +30,3 @@ flowchart TD
   classDef c6 fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef c7 fill:#cffafe,stroke:#0e7490,color:#164e63
   classDef c8 fill:#fae8ff,stroke:#a21caf,color:#701a75
-
-  class DOM c1
-  class MAP c2
-  class CON c3
-  class FIX c4
-  class LAM c5
-  class EQ c6
-  class COMP c7
-  class RET c8

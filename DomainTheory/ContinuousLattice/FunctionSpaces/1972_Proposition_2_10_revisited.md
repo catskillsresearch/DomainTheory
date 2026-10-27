@@ -4,7 +4,6 @@
 
 The printed argument is [flawed](1972_Proposition_2_10.md). The repair is discussed in the [Milner correction](../MilnerCorrection/1972_Correction.md).
 
-**[ContinuousLattice/FunctionSpaces/incl_preservesDirectedSup.lean](incl_preservesDirectedSup.lean)**
+**[ContinuousLattice/FunctionSpaces/incl_preservesDirectedSup.lean](DomainTheory/ContinuousLattice/FunctionSpaces/incl_preservesDirectedSup.lean)**
 
 @import "incl_preservesDirectedSup.lean"
-

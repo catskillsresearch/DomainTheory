@@ -16,6 +16,6 @@ $$
 
 Remark that the isomorphisms between domains correspond exactly to the isomorphisms between neighbourhood systems (in the sense of one-one inclusion preserving correspondences).
 
-**[Exercise_2_14.lean](Exercise_2_14.lean)**
+**[Exercise_2_14.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_14.lean)**
 
 @import "Exercise_2_14.lean"

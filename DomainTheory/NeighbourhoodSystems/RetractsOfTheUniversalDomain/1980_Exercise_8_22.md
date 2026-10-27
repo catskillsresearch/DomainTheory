@@ -12,6 +12,6 @@ $$E = T(E) \ ,$$
 
 will $E \trianglelefteq D$ hold? What projections do you see in the examples in 6.2?
 
-**[Exercise_8_22.lean](Exercise_8_22.lean)**
+**[Exercise_8_22.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_22.lean)**
 
 @import "Exercise_8_22.lean"

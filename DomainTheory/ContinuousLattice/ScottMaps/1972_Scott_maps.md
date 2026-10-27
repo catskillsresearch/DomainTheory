@@ -8,7 +8,6 @@
 - [Proposition 2.6](1972_Proposition_2_6.md)
 - [Proposition 2.7](1972_Proposition_2_7.md)
 
-**[ContinuousLattice/ScottMaps/PreservesDirectedSup.lean](PreservesDirectedSup.lean)**
+**[ContinuousLattice/ScottMaps/PreservesDirectedSup.lean](DomainTheory/ContinuousLattice/ScottMaps/PreservesDirectedSup.lean)**
 
 @import "PreservesDirectedSup.lean"
-

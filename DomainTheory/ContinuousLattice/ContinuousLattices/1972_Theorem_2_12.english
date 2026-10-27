@@ -12,9 +12,9 @@ then $x \sqsubseteq z$ for some $z \in Z$.
 
 Finally we assume that for all $y \in D$:
 
-$$y = \bigsqcup  x \in D : x \ll y .$$
+$$y = \bigsqcup \{ x \in D : x \ll y \}.$$
 
-That makes $D$ a continuous lattice with the sets $ y \in D : x \ll y $ as a basis for the topology. Such $T_0$-spaces are injective and every injective space can be obtained in this way with the lattice structure being uniquely determined by the topology. Furthermore, as we have seen, the injective property can be exhibited, as in the proof of 2.11, by an explicit formula for extending functions.
+That makes $D$ a continuous lattice with the sets $\{ y \in D : x \ll y \}$ as a basis for the topology. Such $T_0$-spaces are injective and every injective space can be obtained in this way with the lattice structure being uniquely determined by the topology. Furthermore, as we have seen, the injective property can be exhibited, as in the proof of 2.11, by an explicit formula for extending functions.
 
 The retract approach to injective spaces should also be considered. The Cartesian powers $\mathbb{O}^I$ are very simple spaces; indeed, as lattices these are just the Boolean algebras of *all subsets* of $I$ (that is, isomorphic thereto). The topology has as a basis the classes of sets containing given finite sets (the *weak topology*, cf. Nerode (1959)). A continuous function
 
@@ -22,7 +22,7 @@ $$j : \mathcal{P}I \to \mathcal{P}I$$
 
 is one of "finite character" so that
 
-$$j(X) = \bigcup  j(F) : F \subseteq X $$
+$$j(X) = \bigcup \{ j(F) : F \subseteq X \}$$
 
 where $X \subseteq I$ and $F$ ranges over *finite sets*. Such a function $j$ is a *retraction* iff it is an *idempotent*:
 
@@ -30,7 +30,7 @@ $$j \circ j = j,$$
 
 which means that the range of $j$ is the set of fixed points of $j$. As we have seen
 
-$$D =  X \in \mathcal{P}I : j(X) = X $$
+$$D = \{ X \in \mathcal{P}I : j(X) = X \}$$
 
 is a continuous lattice (under $\subseteq$ in this case), and *every* continuous lattice is isomorphic to one obtained in this way. This provides a representation theorem of sorts for continuous lattices, but it does not seem to be of too much help in proving theorems.
 

@@ -1,31 +1,39 @@
 %% Each box is one folder under InformationSystems.
 %% The arrowhead points at the folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["InformationSystems"]
-  N1["ElementsOfASystem"]
+
   N2["ApproximableMappingsBetweenDomains"]
   N3["DomainsAsLatticesAndAsTopologicalSpaces"]
-  N4["ProductsAndSumsOfDomains"]
+  N1["ElementsOfASystem"]
   N5["FunctionSpaceAsADomain"]
+  N0["InformationSystems"]
+  N4["ProductsAndSumsOfDomains"]
   N6["SomeDomainEquations"]
 
-  N0 -->|"27"| N1
-  N1 -->|"7"| N2
+  N0 -->|"165"| N0
+  N0 -->|"23"| N1
+  N1 -->|"56"| N1
   N0 -->|"7"| N2
-  N2 -->|"11"| N3
-  N1 -->|"39"| N3
-  N0 -->|"27"| N3
-  N2 -->|"148"| N4
-  N1 -->|"51"| N4
-  N0 -->|"134"| N4
-  N2 -->|"123"| N5
-  N1 -->|"193"| N5
-  N0 -->|"145"| N5
-  N4 -->|"95"| N5
-  N2 -->|"34"| N6
-  N1 -->|"70"| N6
-  N5 -->|"172"| N6
-  N4 -->|"376"| N6
+  N1 -->|"7"| N2
+  N2 -->|"40"| N2
+  N0 -->|"20"| N3
+  N1 -->|"32"| N3
+  N2 -->|"9"| N3
+  N3 -->|"183"| N3
+  N0 -->|"62"| N4
+  N1 -->|"46"| N4
+  N2 -->|"139"| N4
+  N4 -->|"771"| N4
+  N0 -->|"87"| N5
+  N1 -->|"141"| N5
+  N2 -->|"91"| N5
+  N4 -->|"72"| N5
+  N5 -->|"1116"| N5
+  N1 -->|"50"| N6
+  N2 -->|"24"| N6
+  N4 -->|"305"| N6
+  N5 -->|"153"| N6
+  N6 -->|"1582"| N6
 
   classDef c0 fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
@@ -34,11 +42,3 @@ flowchart TB
   classDef c4 fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
   classDef c5 fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef c6 fill:#cffafe,stroke:#0e7490,color:#164e63
-
-  class N0 c0
-  class N1 c1
-  class N2 c2
-  class N3 c3
-  class N4 c4
-  class N5 c5
-  class N6 c6

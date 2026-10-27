@@ -12,6 +12,6 @@ $$D_{\|t\|} \cong T(D_{\|t\|})$$
 
 really is the initial solution of the domain equation with respect to projections? Since $t$ is computable, will this solution be effectively given?
 
-**[Exercise_8_23.lean](Exercise_8_23.lean)**
+**[Exercise_8_23.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_23.lean)**
 
 @import "Exercise_8_23.lean"

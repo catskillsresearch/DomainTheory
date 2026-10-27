@@ -40,6 +40,6 @@ One of the main reasons that $\mathbb{P}\mathcal{D}$ is like a power domain is t
 
 <!-- page 129 -->
 
-**[Proposition_7_10.lean](Proposition_7_10.lean)**
+**[Proposition_7_10.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_10.lean)**
 
 @import "Proposition_7_10.lean"

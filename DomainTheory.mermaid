@@ -2,13 +2,17 @@
 %% The arrowhead is on the chapter that imports. The number is a direct-import count.
 %% Datatypes as lattices and the references have no Lean imports across these chapters.
 flowchart TB
+
+  BR["Bridge Theorems"]
   CL["Continuous Lattices\n1972"]
   DT["Datatypes as Lattices\n1976"]
-  NS["Neighborhood Systems\n1980"]
   IS["Information Systems\n1982"]
-  BR["Bridge Theorems"]
-  CL -->|"1127"| BR
-  NS -->|"80"| BR
-  IS -->|"449"| BR
+  NS["Neighborhood Systems\n1980"]
+
+  BR -->|"890"| BR
+  CL -->|"1062"| BR
+  IS -->|"451"| BR
+  NS -->|"61"| BR
+
   classDef chapter fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   class CL,DT,NS,IS,BR chapter

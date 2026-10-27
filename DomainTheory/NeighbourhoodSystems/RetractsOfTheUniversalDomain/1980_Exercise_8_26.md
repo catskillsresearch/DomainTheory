@@ -21,6 +21,6 @@ $$\lambda x.\, b(\sigma'[a(x)/x]),$$
 
 where $\sigma'$ is the further translation of $\sigma$ into untyped $\lambda$-calculus. Be sure to show that this result "has the right type" in the sense defined above.)
 
-**[Exercise_8_26.lean](Exercise_8_26.lean)**
+**[Exercise_8_26.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_26.lean)**
 
 @import "Exercise_8_26.lean"

@@ -30,6 +30,6 @@ Thus, $i(x)$ belongs to the fixed-point set of $a$. In the other direction, if $
 
 Not every retraction comes from a relationship like $D \triangleleft E$; in fact, we can see from the definition of $a$ above that $a \sqsubseteq 1_E$. But, as is indicated in Exercise 8.11, even this condition is not sufficient to characterize the kind of retractions provided by 8.2. The characterization is as follows.
 
-**[Proposition_8_2.lean](Proposition_8_2.lean)**
+**[Proposition_8_2.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition_8_2.lean)**
 
 @import "Proposition_8_2.lean"

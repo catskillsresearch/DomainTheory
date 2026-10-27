@@ -2,7 +2,6 @@
 
 @import "1972_Proposition_1_3.english" {code_block=false}
 
-**[ContinuousLattice/Injective/IsInjectiveSpaceu2epi.lean](IsInjectiveSpaceu2epi.lean)**
+**[ContinuousLattice/Injective/IsInjectiveSpaceu2epi.lean](DomainTheory/ContinuousLattice/Injective/IsInjectiveSpaceu2epi.lean)**
 
 @import "IsInjectiveSpaceu2epi.lean"
-

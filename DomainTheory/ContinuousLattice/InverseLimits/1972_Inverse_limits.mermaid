@@ -2,33 +2,17 @@
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
-  SYS["Inverse system"]
-  PLE["projLE"]
-  ELE["Embeddings along the tower"]
-  LE["inverseLimitLE"]
-  ICOMP["Coordinates of an embedding"]
-  LT["inverseLimitLT"]
-  PROJ["projection"]
-  LAT["Limit lattice"]
-  PINF["Projections from the limit"]
-  EINF["Embeddings into the limit"]
-  COC["Mediating map"]
-  SUP["Directed suprema"]
-  ITOP["inverseLimitTopology"]
-  SYS -->|"1"| PLE
-  SYS -->|"1"| ELE
-  SYS -->|"1"| LE
-  PLE -->|"1"| ICOMP
-  ELE -->|"1"| ICOMP
-  ICOMP -->|"2"| EINF
-  LE -->|"1"| LT
-  LT -->|"1"| LAT
-  PROJ -->|"1"| LAT
-  LAT -->|"3"| PINF
-  LAT -->|"3"| EINF
-  PINF -->|"1"| COC
-  EINF -->|"1"| COC
-  COC -->|"1"| ITOP
-  ITOP -->|"1"| SUP
+
+  Corollary_4_3["Corollary 4.3"]
+  Inverse_limits["Inverse limits"]
+  Lemma_4_5["Lemma 4.5"]
+  Proposition_4_1["Proposition 4.1"]
+  Theorem_4_4__Function_sp["Theorem 4.4: Function space tower"]
+
+  Inverse_limits -->|"3"| Corollary_4_3
+  Inverse_limits -->|"5"| Lemma_4_5
+  Inverse_limits -->|"5"| Proposition_4_1
+  Lemma_4_5 -->|"1"| Theorem_4_4__Function_sp
+  Proposition_4_1 -->|"3"| Theorem_4_4__Function_sp
+
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
-  class SYS,PLE,PROJ,ELE,ICOMP,PINF,EINF,LE,LT,LAT,SUP,COC,ITOP concept

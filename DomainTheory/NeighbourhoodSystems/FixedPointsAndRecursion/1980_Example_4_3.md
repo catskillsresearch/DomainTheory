@@ -194,6 +194,6 @@ as defined in Exercise 3.26. We do not put cond in as part of the structure of $
 
 The above equation for $\sigma$ is properly called a *functional equation*; it will be written as a fixed-point equation in Lecture V when we have the notation for the $\lambda$-calculus. $\square$
 
-**[Example_4_3.lean](Example_4_3.lean)**
+**[Example_4_3.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Example_4_3.lean)**
 
 @import "Example_4_3.lean"

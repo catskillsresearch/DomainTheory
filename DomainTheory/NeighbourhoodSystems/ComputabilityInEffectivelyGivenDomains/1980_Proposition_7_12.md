@@ -44,6 +44,6 @@ and that the isomorphism involved is just $\lambda x.\,\{x\}$ by what we saw on 
 
 Further combinators on the power domain are given in the exercises.
 
-**[Proposition_7_12.lean](Proposition_7_12.lean)**
+**[Proposition_7_12.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_12.lean)**
 
 @import "Proposition_7_12.lean"

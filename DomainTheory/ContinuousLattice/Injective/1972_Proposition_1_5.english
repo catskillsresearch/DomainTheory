@@ -11,16 +11,16 @@ $$
 be the Cartesian power of $\mathbb{O}$. Then $D$ is injective by 1.3. Define the map $e: X \to D$ by:
 
 $$
-e(x)(U) = \begin{cases} \top & \text{if } x \in U,  \bot & \text{if } x \notin U, \end{cases}
+e(x)(U) = \begin{cases} \top & \text{if } x \in U, \\ \bot & \text{if } x \notin U, \end{cases}
 $$
 
 for $x \in X$ and $U \in \mathfrak{O}$. This map $e$ is continuous in view of the topology given to $\mathbb{O}$ and to $D$. The map $e$ is one-one, because $X$ is $T_0$. Finally, if $U \subseteq X$ is open, then
 
 $$
 \begin{aligned}
-e(U) &= e(x) : x \in U 
-&= e(x) : e(x)(U) = \top 
-&= e(X) \cap t \in D : t(U) \in \top,
+e(U) &= \{ e(x) : x \in U \} \\
+&= \{ e(x) : e(x)(U) = \top \} \\
+&= e(X) \cap \{ t \in D : t(U) = \top \},
 \end{aligned}
 $$
 

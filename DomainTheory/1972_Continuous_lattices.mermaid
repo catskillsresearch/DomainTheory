@@ -4,39 +4,23 @@
 %% An arrow already implied by a longer path is omitted.
 %% The flawed proof of Proposition 2.10 has no Lean files.
 flowchart TB
-  SP["Specialization"]
-  SO["Scott open"]
-  P21["Proposition 2.1"]
-  WB["Way-below relation"]
-  P22["Proposition 2.2"]
+
   D23["Definition 2.3\nContinuous Lattice"]
-  P24["Proposition 2.4"]
-  SM["Scott Maps"]
   MC["Milner Correction"]
-  P25["Proposition 2.5"]
-  P26["Proposition 2.6"]
-  P27["Proposition 2.7"]
-  P28["Proposition 2.8"]
-  P29["Proposition 2.9"]
-  P211["Proposition 2.11"]
-  SO -->|"5"| SP
-  SO -->|"1"| WB
-  SP -->|"6"| P21
-  SP -->|"3"| SM
+  P21["Proposition 2.1"]
+  SM["Scott Maps"]
+  SO["Scott open"]
+  SP["Specialization"]
+  WB["Way-below relation"]
+
+  WB -->|"1"| D23
   SP -->|"2"| MC
-  WB -->|"1"| P22
-  WB -->|"2"| D23
-  D23 -->|"2"| P24
-  D23 -->|"1"| SM
-  D23 -->|"1"| P28
-  SM -->|"3"| P25
-  SM -->|"2"| P26
-  SM -->|"5"| P27
-  P25 -->|"1"| P29
-  P25 -->|"1"| P211
+  SM -->|"2"| P21
+  P21 -->|"1"| SP
+  SO -->|"1"| WB
+
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef definition fill:#fae8ff,stroke:#a21caf,color:#701a75
   class SP,SO,WB,SM,MC concept
-  class D23 definition
-  class P21,P22,P24,P25,P26,P27,P28,P29,P211 numbered
+  class P21,P211 numbered

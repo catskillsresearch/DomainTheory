@@ -2,48 +2,16 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["ApproximableMappingsBetweenDomains"]
-  N1["ElementsOfASystem"]
-  N2["InformationSystems"]
-  N3["Factoid65/"]
-  N4["Factoid65"]
-  N5["Product/"]
-  N6["Product"]
-  N7["Proposition62/"]
-  N8["Proposition62"]
-  N9["Sum/"]
-  N10["Sum"]
-  N11["Proposition64/"]
-  N12["Proposition64"]
 
-  N0 -->|"8"| N3
-  N1 -->|"6"| N3
-  N3 -->|"1"| N4
-  N2 -->|"58"| N5
-  N5 -->|"3"| N6
-  N0 -->|"50"| N7
-  N6 -->|"25"| N7
-  N7 -->|"1"| N8
-  N2 -->|"76"| N9
-  N9 -->|"6"| N10
-  N0 -->|"90"| N11
-  N1 -->|"45"| N11
-  N10 -->|"45"| N11
-  N11 -->|"1"| N12
+  N4["Factoid65"]
+  N2["InformationSystems"]
+  N6["Product"]
+  N8["Proposition62"]
+  N12["Proposition64"]
+  N10["Sum"]
+
+  N2 -->|"2"| N10
+  N2 -->|"2"| N6
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 ext
-  class N1 ext
-  class N2 ext
-  class N3 file
-  class N4 file
-  class N5 file
-  class N6 file
-  class N7 file
-  class N8 file
-  class N9 file
-  class N10 file
-  class N11 file
-  class N12 file

@@ -2,34 +2,28 @@
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
-  IINF["iInfTerm"]
-  EINF["embInfInf"]
-  JINF["jInfTerm"]
-  INCL["incl_projInf"]
-  IMONO["iInfTerm_monotone"]
-  ESUP["embInf_succ_iSup"]
-  ISUP["iSup₂"]
-  CMAP["conjMap"]
+
   CONJX["conj"]
-  TPROJ["towerProj"]
+  ESUP["embInf_succ_iSup"]
+  EINF["embInfInf"]
+  IINF["iInfTerm"]
+  INCL["incl_projInf"]
+  ISUP["iSup₂"]
+  JINF["jInfTerm"]
   PINF["projInfInf"]
-  ECOMP["embInfInf_projInfInf"]
-  IINF -->|"1"| EINF
-  IINF -->|"1"| JINF
-  EINF -->|"1"| PINF
-  JINF -->|"1"| INCL
+  TPROJ["towerProj"]
+
+  PINF -->|"1"| EINF
+  TPROJ -->|"1"| EINF
   JINF -->|"1"| ESUP
+  INCL -->|"1"| IINF
+  JINF -->|"1"| INCL
   JINF -->|"1"| ISUP
-  JINF -->|"1"| CONJX
-  JINF -->|"1"| TPROJ
-  INCL -->|"1"| IMONO
-  INCL -->|"1"| CMAP
-  IMONO -->|"1"| PINF
+  IINF -->|"1"| JINF
+  CONJX -->|"2"| PINF
+  EINF -->|"1"| PINF
   ESUP -->|"1"| PINF
-  ISUP -->|"1"| PINF
-  CMAP -->|"1"| PINF
-  CONJX -->|"1"| PINF
-  TPROJ -->|"1"| ECOMP
-  PINF -->|"1"| ECOMP
+  JINF -->|"1"| TPROJ
+
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
-  class IINF,EINF,JINF,INCL,IMONO,ESUP,ISUP,CMAP,CONJX,TPROJ,PINF,ECOMP concept
+  class IINF,EINF,JINF,INCL,ESUP,ISUP,CONJX,TPROJ,PINF,ECOMP concept

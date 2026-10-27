@@ -24,6 +24,6 @@ by our assumption on $T$. Thus, the desired homomorphism exists. $\square$
 
 The final question we have to answer is why in our category the minimal $D$ exist. The reason is that the functors $T$ that we have in mind possess further continuity properties on domains. This is conveniently expressed in terms of a notion of "subdomain".
 
-**[Theorem_6_9.lean](Theorem_6_9.lean)**
+**[Theorem_6_9.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Theorem_6_9.lean)**
 
 @import "Theorem_6_9.lean"

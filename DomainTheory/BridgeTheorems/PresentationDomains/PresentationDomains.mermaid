@@ -2,108 +2,97 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["BridgeTheorems"]
+
+  N17["Basic"]
   N1["ContinuousLattice"]
-  N2["ContinuousLatticeToNeighborhood"]
-  N3["InfoSysToIdealCompletion"]
-  N4["InfoSysToNeighborhood"]
-  N5["NeighborhoodToInfoSys"]
   N6["continuousLattice_roundFilter_iso"]
+  N13["continuousLattice_roundInfoSys_iso"]
+  N2["ContinuousLatticeToNeighborhood"]
+  ContinuousLatticeToNeighborhood_lean["ContinuousLatticeToNeighborhood.lean"]
+  IdealCompletionToContinuousLattice_lean["IdealCompletionToContinuousLattice.lean"]
+  N3["InfoSysToIdealCompletion"]
+  InfoSysToIdealCompletion_lean["InfoSysToIdealCompletion.lean"]
+  N4["InfoSysToNeighborhood"]
+  InfoSysToNeighborhood_lean["InfoSysToNeighborhood.lean"]
+  N10["IsRoundInfoSysElement"]
+  NbhdBasis_lean["NbhdBasis.lean"]
   N7["nbhdBasis_ideal_iso"]
   N8["neighborhood_ideal_iso"]
-  N9["wayBelowNbhdBasis"]
-  N10["IsRoundInfoSysElement"]
-  N11["RoundInfoSysElement"]
-  N12["roundFilter_infoSys_iso"]
-  N13["continuousLattice_roundInfoSys_iso"]
+  N5["NeighborhoodToInfoSys"]
+  NeighborhoodToInfoSys_lean["NeighborhoodToInfoSys.lean"]
   N14["presentation_domains_equiv"]
-  N15["roundInfoSys_ideal_iso"]
   N16["presentation_domains_equiv_ideal"]
-  N17["Basic"]
+  N12["roundFilter_infoSys_iso"]
+  N15["roundInfoSys_ideal_iso"]
+  N11["RoundInfoSysElement"]
+  N9["wayBelowNbhdBasis"]
   N18["wayBelowNbhdBasis_system"]
 
-  N0 -->|"1"| N6
-  N2 -->|"2"| N6
-  N3 -->|"1"| N6
-  N4 -->|"1"| N6
-  N5 -->|"1"| N6
-  N0 -->|"1"| N7
-  N2 -->|"1"| N7
-  N3 -->|"2"| N7
-  N4 -->|"1"| N7
-  N5 -->|"2"| N7
-  N0 -->|"1"| N8
-  N2 -->|"1"| N8
-  N3 -->|"2"| N8
-  N4 -->|"2"| N8
-  N5 -->|"1"| N8
-  N0 -->|"2"| N9
-  N2 -->|"3"| N9
-  N3 -->|"1"| N9
-  N4 -->|"1"| N9
-  N5 -->|"1"| N9
-  N0 -->|"1"| N10
-  N2 -->|"2"| N10
-  N3 -->|"1"| N10
-  N4 -->|"1"| N10
-  N5 -->|"2"| N10
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N10
+  IdealCompletionToContinuousLattice_lean -->|"1"| N10
+  InfoSysToIdealCompletion_lean -->|"1"| N10
+  InfoSysToNeighborhood_lean -->|"1"| N10
+  N2 -->|"1"| N10
+  N5 -->|"1"| N10
   N9 -->|"1"| N10
-  N0 -->|"1"| N11
-  N2 -->|"1"| N11
-  N3 -->|"1"| N11
-  N4 -->|"1"| N11
-  N5 -->|"1"| N11
-  N9 -->|"1"| N11
+  NeighborhoodToInfoSys_lean -->|"1"| N10
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N11
+  IdealCompletionToContinuousLattice_lean -->|"1"| N11
+  InfoSysToIdealCompletion_lean -->|"1"| N11
+  InfoSysToNeighborhood_lean -->|"1"| N11
   N10 -->|"1"| N11
-  N0 -->|"1"| N12
-  N2 -->|"2"| N12
-  N3 -->|"1"| N12
-  N4 -->|"1"| N12
-  N5 -->|"1"| N12
-  N9 -->|"1"| N12
+  N9 -->|"1"| N11
+  NeighborhoodToInfoSys_lean -->|"1"| N11
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N12
+  IdealCompletionToContinuousLattice_lean -->|"1"| N12
+  InfoSysToIdealCompletion_lean -->|"1"| N12
+  InfoSysToNeighborhood_lean -->|"1"| N12
   N11 -->|"1"| N12
-  N0 -->|"1"| N13
-  N2 -->|"1"| N13
-  N3 -->|"1"| N13
-  N4 -->|"1"| N13
-  N5 -->|"1"| N13
-  N6 -->|"1"| N13
+  N2 -->|"1"| N12
+  N9 -->|"1"| N12
+  NeighborhoodToInfoSys_lean -->|"1"| N12
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N13
+  IdealCompletionToContinuousLattice_lean -->|"1"| N13
+  InfoSysToIdealCompletion_lean -->|"1"| N13
+  InfoSysToNeighborhood_lean -->|"1"| N13
+  N1 -->|"1"| N13
   N11 -->|"1"| N13
   N12 -->|"1"| N13
-  N0 -->|"1"| N14
-  N2 -->|"1"| N14
-  N3 -->|"1"| N14
-  N4 -->|"1"| N14
-  N5 -->|"1"| N14
+  N6 -->|"1"| N13
+  NeighborhoodToInfoSys_lean -->|"1"| N13
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N14
+  IdealCompletionToContinuousLattice_lean -->|"1"| N14
+  InfoSysToIdealCompletion_lean -->|"1"| N14
+  InfoSysToNeighborhood_lean -->|"1"| N14
+  N1 -->|"1"| N14
   N11 -->|"1"| N14
   N13 -->|"1"| N14
-  N0 -->|"1"| N15
-  N2 -->|"1"| N15
-  N3 -->|"2"| N15
-  N4 -->|"1"| N15
-  N5 -->|"1"| N15
-  N9 -->|"1"| N15
+  NeighborhoodToInfoSys_lean -->|"1"| N14
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N15
+  IdealCompletionToContinuousLattice_lean -->|"1"| N15
+  InfoSysToIdealCompletion_lean -->|"1"| N15
+  InfoSysToNeighborhood_lean -->|"1"| N15
+  N1 -->|"1"| N15
   N10 -->|"1"| N15
   N11 -->|"1"| N15
-  N0 -->|"1"| N16
-  N2 -->|"1"| N16
-  N3 -->|"1"| N16
-  N4 -->|"1"| N16
-  N5 -->|"1"| N16
-  N9 -->|"1"| N16
+  N3 -->|"1"| N15
+  N9 -->|"1"| N15
+  NeighborhoodToInfoSys_lean -->|"1"| N15
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N16
+  IdealCompletionToContinuousLattice_lean -->|"1"| N16
+  InfoSysToIdealCompletion_lean -->|"1"| N16
+  InfoSysToNeighborhood_lean -->|"1"| N16
+  N1 -->|"1"| N16
   N10 -->|"1"| N16
   N14 -->|"1"| N16
   N15 -->|"1"| N16
-  N0 -->|"1"| N17
+  N9 -->|"1"| N16
+  NeighborhoodToInfoSys_lean -->|"1"| N16
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N17
+  IdealCompletionToContinuousLattice_lean -->|"1"| N17
+  InfoSysToIdealCompletion_lean -->|"1"| N17
+  InfoSysToNeighborhood_lean -->|"1"| N17
   N1 -->|"1"| N17
-  N2 -->|"1"| N17
-  N3 -->|"1"| N17
-  N4 -->|"1"| N17
-  N5 -->|"1"| N17
-  N6 -->|"1"| N17
-  N7 -->|"1"| N17
-  N8 -->|"1"| N17
-  N9 -->|"1"| N17
   N10 -->|"1"| N17
   N11 -->|"1"| N17
   N12 -->|"1"| N17
@@ -111,38 +100,46 @@ flowchart TB
   N14 -->|"1"| N17
   N15 -->|"1"| N17
   N16 -->|"1"| N17
-  N0 -->|"1"| N18
-  N2 -->|"1"| N18
-  N3 -->|"1"| N18
-  N4 -->|"1"| N18
-  N5 -->|"1"| N18
-  N9 -->|"1"| N18
+  N6 -->|"1"| N17
+  N7 -->|"1"| N17
+  N8 -->|"1"| N17
+  N9 -->|"1"| N17
+  NeighborhoodToInfoSys_lean -->|"1"| N17
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N18
+  IdealCompletionToContinuousLattice_lean -->|"1"| N18
+  InfoSysToIdealCompletion_lean -->|"1"| N18
+  InfoSysToNeighborhood_lean -->|"1"| N18
   N17 -->|"1"| N18
-
+  N9 -->|"1"| N18
+  NeighborhoodToInfoSys_lean -->|"1"| N18
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N6
+  IdealCompletionToContinuousLattice_lean -->|"1"| N6
+  InfoSysToIdealCompletion_lean -->|"1"| N6
+  InfoSysToNeighborhood_lean -->|"1"| N6
   N1 -->|"1"| N6
-  N1 -->|"1"| N13
-  N1 -->|"1"| N14
-  N1 -->|"1"| N15
-  N1 -->|"1"| N16
+  N2 -->|"1"| N6
+  NeighborhoodToInfoSys_lean -->|"1"| N6
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N7
+  IdealCompletionToContinuousLattice_lean -->|"1"| N7
+  InfoSysToIdealCompletion_lean -->|"1"| N7
+  InfoSysToNeighborhood_lean -->|"1"| N7
+  N3 -->|"1"| N7
+  N5 -->|"1"| N7
+  NeighborhoodToInfoSys_lean -->|"1"| N7
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N8
+  IdealCompletionToContinuousLattice_lean -->|"1"| N8
+  InfoSysToIdealCompletion_lean -->|"1"| N8
+  InfoSysToNeighborhood_lean -->|"1"| N8
+  N3 -->|"1"| N8
+  N4 -->|"1"| N8
+  NeighborhoodToInfoSys_lean -->|"1"| N8
+  ContinuousLatticeToNeighborhood_lean -->|"1"| N9
+  IdealCompletionToContinuousLattice_lean -->|"1"| N9
+  InfoSysToIdealCompletion_lean -->|"1"| N9
+  InfoSysToNeighborhood_lean -->|"1"| N9
+  N2 -->|"2"| N9
+  NbhdBasis_lean -->|"1"| N9
+  NeighborhoodToInfoSys_lean -->|"1"| N9
+
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 ext
-  class N1 ext
-  class N2 ext
-  class N3 ext
-  class N4 ext
-  class N5 ext
-  class N6 file
-  class N7 file
-  class N8 file
-  class N9 file
-  class N10 file
-  class N11 file
-  class N12 file
-  class N13 file
-  class N14 file
-  class N15 file
-  class N16 file
-  class N17 file
-  class N18 file

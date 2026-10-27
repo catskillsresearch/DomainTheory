@@ -10,6 +10,6 @@ is approximable.
 
 <!-- page 105 -->
 
-**[Definition_6_8.lean](Definition_6_8.lean)**
+**[Definition_6_8.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition_6_8.lean)**
 
 @import "Definition_6_8.lean"

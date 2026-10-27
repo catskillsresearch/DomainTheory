@@ -2,386 +2,121 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
+
+  N9["coconeInf"]
+  N59["coe_sSup_of_directed"]
+  N7["Compatible"]
   N0["Constructions"]
   N1["ContinuousLattices"]
-  N2["FunctionSpaces"]
-  N3["Injective"]
-  N4["ScottMaps"]
-  N5["Specialization"]
-  N6["WayBelow"]
-  N7["Compatible"]
-  N8["InverseLimit"]
-  N9["coconeInf"]
-  N10["coconeInf_apply"]
+  N69["corollary_4_3"]
+  N61["embInf"]
+  N49["embInfFun"]
   N11["embLE"]
-  N12["embLE_self"]
-  N13["embLE_succ"]
-  N14["coconeInf_climb"]
-  N15["embLE_le"]
-  N16["embLE_mono"]
-  N17["embLE_preservesDirectedSup"]
-  N18["embLE_succ_left"]
+  N2["FunctionSpaces"]
+  N34["iComp"]
+  N74["idInf_eq_iSup"]
+  N3["Injective"]
+  N58["instCompleteLattice"]
+  instInfSet["instInfSet"]
+  N8["InverseLimit"]
   N19["inverseLimitLE"]
-  N20["inverseLimitLE_antisymm"]
-  N21["inverseLimitLE_refl"]
-  N22["inverseLimitLE_trans"]
   N23["inverseLimitLT"]
-  N24["inverseLimitLT_iff_LE_not_GE"]
   N25["inverseLimitPartialOrder"]
   N26["inverseLimitSInfCoe"]
   N27["inverseLimitTopology"]
-  N28["inverseLimit_coordinate_continuous"]
-  N29["inverseLimit_isInjectiveSpace"]
-  N30["inverseLimit_specializationLe_iff"]
-  N31["inverseLimit_t0Space"]
-  N32["projInfFun"]
-  N33["projLE"]
-  N34["iComp"]
-  N35["iComp_of_ge"]
-  N36["iComp_of_le"]
-  N37["iComp_self"]
-  N38["projLE_self"]
-  N39["projLE_succ"]
-  N40["coconeInf_descend"]
-  N41["projLE_compatible"]
-  N42["iComp_incl_le"]
-  N43["projLE_mono"]
-  N44["projLE_preservesDirectedSup"]
-  N45["iComp_preservesDirectedSup"]
-  N46["iComp_monotone"]
-  N47["projLE_retr"]
-  N48["iComp_compatible"]
-  N49["embInfFun"]
-  N50["embInfFun_coe"]
-  N51["embInf_monotone"]
-  N52["projection_galoisConnection"]
-  N53["retr_sInf"]
-  N54["compatible_sInf"]
-  N55["BasicInst20"]
-  N56["coe_sInf"]
-  N57["isGLB_sInf'"]
-  N58["instCompleteLattice"]
-  N59["coe_sSup_of_directed"]
-  N60["embInf_preservesDirectedSup"]
-  N61["embInf"]
-  N62["coconeInf_comp_embInf"]
-  N63["embInf_succ"]
-  N64["embInf_le_succ"]
-  N65["embInf_family_directed"]
-  N66["eval_preservesDirectedSup"]
-  N67["coconeInf_preservesDirectedSup"]
-  N68["inverseLimit_eq_iSup"]
-  N69["corollary_4_3"]
-  N70["inverseLimit_scottTopology_eq_induced_pi"]
-  N71["coconeInf_inverseLimitTopology_continuous"]
-  N72["embInf_inverseLimitTopology_continuous"]
-  N73["projInf"]
-  N74["idInf_eq_iSup"]
   N75["lemma_4_5"]
-  N76["projInf_inverseLimitTopology_continuous"]
+  N52["projection_galoisConnection"]
+  N73["projInf"]
+  N33["projLE"]
   N77["proposition_4_1"]
   N78["proposition_4_2"]
+  N4["ScottMaps"]
+  N5["Specialization"]
+  N6["WayBelow"]
 
-  N2 -->|"1"| N7
-  N7 -->|"1"| N8
-  N8 -->|"1"| N9
-  N9 -->|"1"| N10
-  N2 -->|"1"| N11
-  N11 -->|"1"| N12
-  N11 -->|"1"| N13
-  N11 -->|"1"| N14
-  N12 -->|"1"| N14
-  N13 -->|"1"| N14
-  N2 -->|"1"| N15
-  N8 -->|"1"| N15
-  N11 -->|"1"| N15
-  N12 -->|"1"| N15
-  N13 -->|"1"| N15
-  N2 -->|"1"| N16
-  N11 -->|"1"| N16
-  N12 -->|"1"| N16
-  N13 -->|"1"| N16
-  N2 -->|"2"| N17
-  N4 -->|"1"| N17
-  N11 -->|"1"| N17
-  N12 -->|"1"| N17
-  N13 -->|"1"| N17
-  N11 -->|"1"| N18
+  N2 -->|"4"| N11
+  N4 -->|"1"| N11
+  N8 -->|"1"| N11
   N8 -->|"1"| N19
-  N19 -->|"1"| N20
-  N19 -->|"1"| N21
-  N19 -->|"1"| N22
   N19 -->|"1"| N23
-  N23 -->|"1"| N24
-  N20 -->|"1"| N25
-  N21 -->|"1"| N25
-  N22 -->|"1"| N25
-  N24 -->|"1"| N25
+  N19 -->|"1"| N25
+  N23 -->|"1"| N25
   N8 -->|"1"| N26
+  N0 -->|"2"| N27
+  N1 -->|"3"| N27
+  N2 -->|"1"| N27
+  N3 -->|"1"| N27
+  N4 -->|"1"| N27
+  N5 -->|"4"| N27
+  N58 -->|"1"| N27
+  N6 -->|"1"| N27
+  N61 -->|"1"| N27
+  N73 -->|"1"| N27
   N8 -->|"1"| N27
-  N27 -->|"1"| N28
-  N0 -->|"2"| N29
-  N1 -->|"1"| N29
-  N3 -->|"1"| N29
-  N6 -->|"1"| N29
-  N27 -->|"1"| N29
-  N28 -->|"1"| N29
-  N5 -->|"3"| N30
-  N27 -->|"1"| N30
-  N5 -->|"1"| N31
-  N27 -->|"1"| N31
-  N8 -->|"1"| N32
-  N2 -->|"1"| N33
+  N9 -->|"1"| N27
+  N2 -->|"4"| N33
+  N4 -->|"1"| N33
+  N8 -->|"1"| N33
   N11 -->|"1"| N34
   N33 -->|"1"| N34
-  N34 -->|"1"| N35
-  N34 -->|"1"| N36
-  N12 -->|"1"| N37
-  N34 -->|"1"| N37
-  N36 -->|"1"| N37
-  N33 -->|"1"| N38
-  N33 -->|"1"| N39
-  N2 -->|"1"| N40
-  N33 -->|"1"| N40
-  N38 -->|"1"| N40
-  N39 -->|"1"| N40
-  N8 -->|"1"| N41
-  N33 -->|"1"| N41
-  N38 -->|"1"| N41
-  N39 -->|"1"| N41
-  N8 -->|"1"| N42
-  N15 -->|"1"| N42
-  N34 -->|"1"| N42
-  N35 -->|"1"| N42
-  N36 -->|"1"| N42
-  N41 -->|"1"| N42
-  N2 -->|"1"| N43
-  N33 -->|"1"| N43
-  N38 -->|"1"| N43
-  N39 -->|"1"| N43
-  N2 -->|"2"| N44
-  N4 -->|"1"| N44
-  N33 -->|"1"| N44
-  N38 -->|"1"| N44
-  N39 -->|"1"| N44
-  N4 -->|"1"| N45
-  N17 -->|"1"| N45
-  N34 -->|"1"| N45
-  N35 -->|"1"| N45
-  N36 -->|"1"| N45
-  N44 -->|"1"| N45
-  N4 -->|"1"| N46
-  N34 -->|"1"| N46
-  N45 -->|"1"| N46
-  N33 -->|"1"| N47
-  N38 -->|"1"| N47
-  N39 -->|"1"| N47
-  N7 -->|"1"| N48
-  N12 -->|"1"| N48
-  N13 -->|"1"| N48
-  N34 -->|"1"| N48
-  N35 -->|"1"| N48
-  N36 -->|"1"| N48
-  N38 -->|"1"| N48
-  N39 -->|"1"| N48
-  N47 -->|"1"| N48
+  N4 -->|"2"| N34
+  N7 -->|"1"| N34
+  N8 -->|"1"| N34
+  N34 -->|"1"| N49
+  N4 -->|"1"| N49
+  N58 -->|"1"| N49
+  N59 -->|"1"| N49
   N8 -->|"1"| N49
-  N48 -->|"1"| N49
-  N49 -->|"1"| N50
-  N46 -->|"1"| N51
-  N49 -->|"1"| N51
   N2 -->|"2"| N52
-  N2 -->|"1"| N53
-  N52 -->|"1"| N53
-  N26 -->|"1"| N54
-  N53 -->|"1"| N54
-  N54 -->|"1"| N55
-  N55 -->|"1"| N56
-  N25 -->|"1"| N57
-  N55 -->|"1"| N57
-  N57 -->|"1"| N58
+  instInfSet -->|"1"| N58
   N2 -->|"1"| N59
   N58 -->|"1"| N59
-  N4 -->|"1"| N60
-  N45 -->|"1"| N60
-  N49 -->|"1"| N60
-  N50 -->|"1"| N60
-  N51 -->|"1"| N60
-  N58 -->|"1"| N60
-  N59 -->|"1"| N60
+  N11 -->|"1"| N61
+  N33 -->|"1"| N61
+  N34 -->|"1"| N61
   N4 -->|"1"| N61
   N49 -->|"1"| N61
   N58 -->|"1"| N61
-  N60 -->|"1"| N61
-  N9 -->|"1"| N62
-  N14 -->|"1"| N62
-  N35 -->|"1"| N62
-  N36 -->|"1"| N62
-  N37 -->|"1"| N62
-  N40 -->|"1"| N62
-  N61 -->|"1"| N62
-  N18 -->|"1"| N63
-  N35 -->|"1"| N63
-  N36 -->|"1"| N63
-  N37 -->|"1"| N63
-  N38 -->|"1"| N63
-  N39 -->|"1"| N63
-  N61 -->|"1"| N63
-  N51 -->|"1"| N64
-  N61 -->|"1"| N64
-  N63 -->|"1"| N64
-  N61 -->|"1"| N65
-  N64 -->|"1"| N65
-  N4 -->|"1"| N66
-  N32 -->|"1"| N66
-  N58 -->|"1"| N66
-  N59 -->|"1"| N66
-  N2 -->|"1"| N67
-  N4 -->|"1"| N67
-  N9 -->|"1"| N67
-  N10 -->|"1"| N67
-  N58 -->|"1"| N67
-  N66 -->|"1"| N67
-  N37 -->|"1"| N68
-  N42 -->|"1"| N68
-  N59 -->|"1"| N68
-  N61 -->|"1"| N68
-  N65 -->|"1"| N68
   N2 -->|"1"| N69
+  N27 -->|"1"| N69
   N4 -->|"1"| N69
   N61 -->|"1"| N69
-  N62 -->|"1"| N69
-  N65 -->|"1"| N69
-  N67 -->|"1"| N69
-  N68 -->|"1"| N69
-  N1 -->|"1"| N70
-  N6 -->|"1"| N70
-  N27 -->|"1"| N70
-  N29 -->|"1"| N70
-  N30 -->|"1"| N70
-  N31 -->|"1"| N70
-  N58 -->|"1"| N70
-  N4 -->|"1"| N71
-  N6 -->|"1"| N71
-  N9 -->|"1"| N71
-  N27 -->|"1"| N71
-  N67 -->|"1"| N71
-  N70 -->|"1"| N71
-  N2 -->|"1"| N72
-  N6 -->|"1"| N72
-  N27 -->|"1"| N72
-  N61 -->|"1"| N72
-  N70 -->|"1"| N72
-  N4 -->|"1"| N73
-  N32 -->|"1"| N73
+  N9 -->|"1"| N69
+  N2 -->|"1"| N7
+  N4 -->|"2"| N73
   N58 -->|"1"| N73
-  N66 -->|"1"| N73
+  N59 -->|"1"| N73
   N2 -->|"5"| N74
+  N27 -->|"1"| N74
   N61 -->|"1"| N74
-  N68 -->|"1"| N74
   N73 -->|"1"| N74
   N2 -->|"1"| N75
-  N35 -->|"1"| N75
-  N37 -->|"1"| N75
-  N38 -->|"1"| N75
-  N39 -->|"1"| N75
-  N51 -->|"1"| N75
+  N33 -->|"1"| N75
+  N34 -->|"1"| N75
+  N49 -->|"1"| N75
   N61 -->|"1"| N75
-  N63 -->|"1"| N75
   N73 -->|"1"| N75
-  N27 -->|"1"| N76
-  N28 -->|"1"| N76
-  N73 -->|"1"| N76
-  N1 -->|"1"| N77
-  N6 -->|"1"| N77
-  N29 -->|"1"| N77
-  N30 -->|"1"| N77
-  N31 -->|"1"| N77
+  N1 -->|"2"| N77
+  N27 -->|"1"| N77
   N58 -->|"1"| N77
-  N37 -->|"1"| N78
-  N42 -->|"1"| N78
+  N6 -->|"1"| N77
+  N34 -->|"1"| N78
   N61 -->|"1"| N78
   N73 -->|"1"| N78
+  N7 -->|"1"| N8
+  N11 -->|"1"| N9
+  N2 -->|"2"| N9
+  N33 -->|"1"| N9
+  N34 -->|"1"| N9
+  N4 -->|"1"| N9
+  N58 -->|"1"| N9
+  N61 -->|"1"| N9
+  N73 -->|"1"| N9
+  N8 -->|"1"| N9
+  N2 -->|"1"| instInfSet
+  N25 -->|"1"| instInfSet
+  N26 -->|"1"| instInfSet
+  N52 -->|"1"| instInfSet
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 ext
-  class N1 ext
-  class N2 ext
-  class N3 ext
-  class N4 ext
-  class N5 ext
-  class N6 ext
-  class N7 file
-  class N8 file
-  class N9 file
-  class N10 file
-  class N11 file
-  class N12 file
-  class N13 file
-  class N14 file
-  class N15 file
-  class N16 file
-  class N17 file
-  class N18 file
-  class N19 file
-  class N20 file
-  class N21 file
-  class N22 file
-  class N23 file
-  class N24 file
-  class N25 file
-  class N26 file
-  class N27 file
-  class N28 file
-  class N29 file
-  class N30 file
-  class N31 file
-  class N32 file
-  class N33 file
-  class N34 file
-  class N35 file
-  class N36 file
-  class N37 file
-  class N38 file
-  class N39 file
-  class N40 file
-  class N41 file
-  class N42 file
-  class N43 file
-  class N44 file
-  class N45 file
-  class N46 file
-  class N47 file
-  class N48 file
-  class N49 file
-  class N50 file
-  class N51 file
-  class N52 file
-  class N53 file
-  class N54 file
-  class N55 file
-  class N56 file
-  class N57 file
-  class N58 file
-  class N59 file
-  class N60 file
-  class N61 file
-  class N62 file
-  class N63 file
-  class N64 file
-  class N65 file
-  class N66 file
-  class N67 file
-  class N68 file
-  class N69 file
-  class N70 file
-  class N71 file
-  class N72 file
-  class N73 file
-  class N74 file
-  class N75 file
-  class N76 file
-  class N77 file
-  class N78 file

@@ -44,6 +44,6 @@ $$V_m \ \mathrm{proj}_0 \ V_k \text{ iff } k = 0 \text{ or } \exists n \in \math
 
 The reader should write out other cases. $\square$
 
-**[Proposition_7_7.lean](Proposition_7_7.lean)**
+**[Proposition_7_7.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_7.lean)**
 
 @import "Proposition_7_7.lean"

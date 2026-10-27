@@ -11,6 +11,6 @@ or are some missing?
 
 <!-- page 35 -->
 
-**[Exercise_2_17b.lean](Exercise_2_17b.lean)**
+**[Exercise_2_17b.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_17b.lean)**
 
 @import "Exercise_2_17b.lean"

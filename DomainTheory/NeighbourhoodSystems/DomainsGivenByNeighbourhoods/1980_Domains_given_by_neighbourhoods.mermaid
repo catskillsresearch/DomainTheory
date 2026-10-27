@@ -2,14 +2,10 @@
 %% An arrow already implied by a longer path is omitted.
 %% The introduction has no Lean file, so it is not shown.
 %% Lettered parts of one Scott number share one box.
-%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
 flowchart TB
 
   NeighborhoodSystem["Def 1.1<br>neighbourhood system"]
   Element["Def 1.6<br>ideal elements"]
-  Exercise_1_19["Exercise 1.19<br>positive systems"]
-  Factoid_1_1["Factoid 1.1<br>empty meet is delta"]
-  Factoid_1_4["Factoid 1.4a<br>nested or disjoint"]
   principal["Def 1.7<br>principal filter"]
   bot["Def 1.8<br>approximation<br>totality"]
   DomainIso["Def 1.9<br>isomorphic domains"]
@@ -18,100 +14,71 @@ flowchart TB
   Example_1_4["Example 1.4<br>finite binary tree"]
   Example_1_5["Example 1.5<br>all nonempty subsets"]
   Examples_1_2_1_5_revisited["Examples 1.2–1.5<br>examples revisited"]
-  Factoid_1_5["Factoid 1.5<br>iff nonempty<br>same limit"]
-  Factoid_1_7["Factoid 1.7<br>one-one"]
-  Factoid_1_8["Factoid 1.8<br>bottom element"]
   Exercise_1_12["Exercise 1.12<br>integer segments"]
+  Exercise_1_13["Exercise 1.13<br>infinite binary tree"]
   Exercise_1_14["Exercise 1.14<br>nonempty subsets"]
   Exercise_1_15["Exercise 1.15<br>without chains"]
   Exercise_1_16["Exercise 1.16<br>cofinite subsets"]
   Exercise_1_17["Exercise 1.17<br>rational open intervals"]
   Exercise_1_18["Exercise 1.18<br>consistent families"]
+  Exercise_1_19["Exercise 1.19<br>positive systems"]
   Exercise_1_20["Exercise 1.20<br>upward closed"]
+  Exercise_1_21["Exercise 1.21<br>complete systems"]
   Exercise_1_22["Exercise 1.22<br>topology of a domain"]
+  Exercise_1_23["Exercise 1.23<br>decidable elements"]
   Exercise_1_24["Exercise 1.24<br>partial elements"]
   Exercise_1_25["Exercise 1.25<br>ordinal segments"]
   Exercise_1_26["Exercise 1.26<br>ideals of a ring"]
   Exercise_1_27["Exercise 1.27<br>bounded suprema"]
+  Factoid_1_1["Factoid 1.1<br>empty meet is delta"]
+  Factoid_1_4["Factoid 1.4a<br>nested or disjoint"]
+  Factoid_1_5["Factoid 1.5<br>iff nonempty<br>same limit"]
+  Factoid_1_7["Factoid 1.7<br>one-one"]
+  Factoid_1_8["Factoid 1.8<br>bottom element"]
   Theorem_1_10["Thm 1.10<br>basic opens"]
-  Exercise_1_21["Exercise 1.21<br>complete systems"]
   Theorem_1_11["Thm 1.11<br>intersections"]
-  Exercise_1_13["Exercise 1.13<br>infinite binary tree"]
-  Exercise_1_23["Exercise 1.23<br>decidable elements"]
 
-  NeighborhoodSystem --> Element
-  Element --> Exercise_1_19
-  Element --> Exercise_1_17
-  Exercise_1_19 --> Factoid_1_1
-  Factoid_1_1 --> Factoid_1_4
-  Factoid_1_1 --> Exercise_1_26
-  Factoid_1_4 --> principal
-  principal --> bot
   bot --> DomainIso
+  NeighborhoodSystem --> Element
   DomainIso --> Example_1_2
   DomainIso --> Example_1_3
   DomainIso --> Example_1_4
   DomainIso --> Example_1_5
-  DomainIso --> Exercise_1_14
-  DomainIso --> Exercise_1_16
-  DomainIso --> Exercise_1_20
-  DomainIso --> Exercise_1_24
   Example_1_2 --> Examples_1_2_1_5_revisited
   Example_1_3 --> Examples_1_2_1_5_revisited
   Example_1_4 --> Examples_1_2_1_5_revisited
   Example_1_5 --> Examples_1_2_1_5_revisited
+  Factoid_1_7 --> Exercise_1_12
+  Theorem_1_11 --> Exercise_1_13
+  DomainIso --> Exercise_1_14
+  Factoid_1_8 --> Exercise_1_15
+  DomainIso --> Exercise_1_16
+  Element --> Exercise_1_17
+  Factoid_1_5 --> Exercise_1_18
+  Element --> Exercise_1_19
+  DomainIso --> Exercise_1_20
+  Theorem_1_10 --> Exercise_1_21
+  Exercise_1_20 --> Exercise_1_22
+  Exercise_1_13 --> Exercise_1_23
+  DomainIso --> Exercise_1_24
+  Factoid_1_7 --> Exercise_1_25
+  Factoid_1_1 --> Exercise_1_26
+  Exercise_1_18 --> Exercise_1_27
+  Factoid_1_7 --> Exercise_1_27
+  Exercise_1_19 --> Factoid_1_1
+  Factoid_1_1 --> Factoid_1_4
   Example_1_5 --> Factoid_1_5
   Factoid_1_5 --> Factoid_1_7
-  Factoid_1_5 --> Exercise_1_18
-  Factoid_1_7 --> Factoid_1_8
-  Factoid_1_7 --> Exercise_1_12
-  Factoid_1_7 --> Exercise_1_25
-  Factoid_1_7 --> Exercise_1_27
   Examples_1_2_1_5_revisited --> Factoid_1_8
-  Factoid_1_8 --> Exercise_1_15
-  Factoid_1_8 --> Theorem_1_11
-  Exercise_1_18 --> Exercise_1_27
-  Exercise_1_20 --> Exercise_1_22
+  Factoid_1_7 --> Factoid_1_8
   Exercise_1_27 --> Theorem_1_10
-  Theorem_1_10 --> Exercise_1_21
-  Theorem_1_11 --> Exercise_1_13
-  Exercise_1_13 --> Exercise_1_23
+  Factoid_1_8 --> Theorem_1_11
+  principal --> bot
+  Factoid_1_4 --> principal
 
+%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef cfac fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef cexs fill:#fef3c7,stroke:#b45309,color:#78350f
   classDef cex fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef cthm fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
-  class NeighborhoodSystem cdef
-  class Element cdef
-  class Exercise_1_19 cex
-  class Factoid_1_1 cfac
-  class Factoid_1_4 cfac
-  class principal cdef
-  class bot cdef
-  class DomainIso cdef
-  class Example_1_2 cexs
-  class Example_1_3 cexs
-  class Example_1_4 cexs
-  class Example_1_5 cexs
-  class Examples_1_2_1_5_revisited cexs
-  class Factoid_1_5 cfac
-  class Factoid_1_7 cfac
-  class Factoid_1_8 cfac
-  class Exercise_1_12 cex
-  class Exercise_1_14 cex
-  class Exercise_1_15 cex
-  class Exercise_1_16 cex
-  class Exercise_1_17 cex
-  class Exercise_1_18 cex
-  class Exercise_1_20 cex
-  class Exercise_1_22 cex
-  class Exercise_1_24 cex
-  class Exercise_1_25 cex
-  class Exercise_1_26 cex
-  class Exercise_1_27 cex
-  class Theorem_1_10 cthm
-  class Exercise_1_21 cex
-  class Theorem_1_11 cthm
-  class Exercise_1_13 cex
-  class Exercise_1_23 cex

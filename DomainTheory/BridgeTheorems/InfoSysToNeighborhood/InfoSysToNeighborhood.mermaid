@@ -2,19 +2,25 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["BridgeTheorems"]
-  N1["InformationSystems"]
-  N2["NeighbourhoodSystems"]
-  N3["domainOrderIso"]
 
-  N0 -->|"6"| N3
+  N3["domainOrderIso"]
+  N1["InformationSystems"]
+  mem_basicOpen_singleton_lean["mem_basicOpen_singleton.lean"]
+  N2["NeighbourhoodSystems"]
+  ofFilter_lean["ofFilter.lean"]
+  ofFilter_toFilter_lean["ofFilter_toFilter.lean"]
+  toFilter_lean["toFilter.lean"]
+  toFilter_ofFilter_lean["toFilter_ofFilter.lean"]
+  toNeighborhoodSystem_lean["toNeighborhoodSystem.lean"]
+
   N1 -->|"5"| N3
-  N2 -->|"2"| N3
+  N2 -->|"1"| N3
+  mem_basicOpen_singleton_lean -->|"1"| N3
+  ofFilter_lean -->|"1"| N3
+  ofFilter_toFilter_lean -->|"1"| N3
+  toFilter_lean -->|"1"| N3
+  toFilter_ofFilter_lean -->|"1"| N3
+  toNeighborhoodSystem_lean -->|"1"| N3
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 ext
-  class N1 ext
-  class N2 ext
-  class N3 file

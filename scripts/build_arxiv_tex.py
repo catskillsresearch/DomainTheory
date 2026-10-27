@@ -147,6 +147,9 @@ def extract_title() -> str:
 TITLE = extract_title()
 
 GITHUB_INLINE_MATH = re.compile(r"\$`([^`\n]+?)`\$")
+# Pandoc markdown does not treat ``\(...\)`` as math; convert before pandoc.
+LATEX_INLINE_MATH = re.compile(r"\\\((.+?)\\\)")
+LATEX_DISPLAY_MATH = re.compile(r"\\\[(.+?)\\\]", re.DOTALL)
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 FENCE_RE = re.compile(r"^```([^\n]*)\n(.*?)^```\s*$", re.MULTILINE | re.DOTALL)
 MANUAL_SECTION_NUM = re.compile(r"^(#{1,6})[ \t]+\d+(?:\.\d+)*\.?[ \t]+", re.MULTILINE)
@@ -261,8 +264,34 @@ def apply_pdflatex_unicode_fixes(text: str) -> str:
     return re.sub(r"[\u2500-\u257F\u2580-\u259F\u25A0-\u25FF]", "?", text)
 
 
+_LEAN_HREF_RE = re.compile(r"\]\(([^)]+\.lean)\)")
+
+
+def canon_lean_hrefs_in_markdown(md: str) -> str:
+    """Use repo-relative ``DomainTheory/...`` targets so PDF file links resolve."""
+    by_name: dict[str, list[str]] = {}
+    for path in (ROOT / "DomainTheory").rglob("*.lean"):
+        rel = path.relative_to(ROOT).as_posix()
+        by_name.setdefault(path.name, []).append(rel)
+
+    def repl(m: re.Match[str]) -> str:
+        href = m.group(1)
+        if href.startswith("DomainTheory/"):
+            return m.group(0)
+        name = Path(href).name
+        cands = by_name.get(name, [])
+        if len(cands) == 1:
+            return f"]({cands[0]})"
+        return m.group(0)
+
+    return _LEAN_HREF_RE.sub(repl, md)
+
+
 def github_math_to_tex(text: str) -> str:
-    return GITHUB_INLINE_MATH.sub(r"$\1$", text)
+    text = GITHUB_INLINE_MATH.sub(r"$\1$", text)
+    text = LATEX_INLINE_MATH.sub(r"$\1$", text)
+    text = LATEX_DISPLAY_MATH.sub(r"$$\1$$", text)
+    return text
 
 
 def strip_html_comments(text: str) -> str:
@@ -742,6 +771,7 @@ def main() -> int:
     if "compile_md_tree.py" not in raw:
         body = demote_inventory_headings(body)
     body = github_math_to_tex(body)
+    body = canon_lean_hrefs_in_markdown(body)
     body, placeholders = replace_fences(body, mermaid_captions)
     prune_stale_listings()
     for stale_pdf in FIGURES_DIR.glob("*.pdf"):

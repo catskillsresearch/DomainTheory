@@ -7,7 +7,6 @@
 
 @import "FixedPoint.mermaid"
 
-**[DataTypesAsLattices/FixedPoint/chain_mono.lean](chain_mono.lean)**
+**[DataTypesAsLattices/FixedPoint/chain_mono.lean](DomainTheory/DataTypesAsLattices/FixedPoint/chain_mono.lean)**
 
 @import "chain_mono.lean"
-

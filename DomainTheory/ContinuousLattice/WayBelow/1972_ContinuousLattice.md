@@ -2,7 +2,6 @@
 
 @import "1972_ContinuousLattice.english" {code_block=false}
 
-**[ContinuousLattice/WayBelow/ContinuousLattice.lean](ContinuousLattice.lean)**
+**[ContinuousLattice/WayBelow/ContinuousLattice.lean](DomainTheory/ContinuousLattice/WayBelow/ContinuousLattice.lean)**
 
 @import "ContinuousLattice.lean"
-

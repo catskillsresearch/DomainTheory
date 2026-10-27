@@ -8,6 +8,6 @@ $$
 
 Prove that the sets of the form $I(F)$ form a neighbourhood system, and that the corresponding domain is isomorphic to the set of ring-theoretic ideals of $A$ partially ordered by inclusion. What would happen if we excluded from $\Delta$ all $F$ with $I(F) = I(\{1\})$, where $1$ is the unit of $A$?
 
-**[Exercise_1_26.lean](Exercise_1_26.lean)**
+**[Exercise_1_26.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_26.lean)**
 
 @import "Exercise_1_26.lean"

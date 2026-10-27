@@ -2,36 +2,23 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["FixedPoint"]
+
+  Continuous["Continuous"]
   N1["embed"]
   N2["extend"]
+  Pomega["Pomega"]
   N3["theorem_1_5"]
-  N4["theorem_1_5.extension"]
   N5["theorem_1_6"]
-  N6["theorem_1_6.injective_continuous"]
 
-  N0 -->|"1"| N1
-  N0 -->|"1"| N2
-  N0 -->|"1"| N3
+  Continuous -->|"2"| N1
+  Pomega -->|"1"| N1
+  Pomega -->|"1"| N2
+  Continuous -->|"2"| N3
   N1 -->|"1"| N3
   N2 -->|"1"| N3
-  N0 -->|"1"| N4
-  N1 -->|"1"| N4
-  N2 -->|"1"| N4
-  N0 -->|"1"| N5
+  Pomega -->|"1"| N3
   N1 -->|"1"| N5
   N2 -->|"1"| N5
-  N0 -->|"1"| N6
-  N1 -->|"1"| N6
-  N2 -->|"1"| N6
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 ext
-  class N1 file
-  class N2 file
-  class N3 file
-  class N4 file
-  class N5 file
-  class N6 file

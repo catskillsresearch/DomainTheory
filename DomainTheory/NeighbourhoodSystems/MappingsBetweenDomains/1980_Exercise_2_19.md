@@ -14,6 +14,6 @@ $$X, Y\ f\ Z$$
 
 for the relationship among neighbourhoods.) What is the corresponding version of Proposition 2.2 for functions of two variables?
 
-**[Exercise_2_19.lean](Exercise_2_19.lean)**
+**[Exercise_2_19.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_19.lean)**
 
 @import "Exercise_2_19.lean"

@@ -1,18 +1,11 @@
 %% Each box is one item. The arrowhead is on the item that imports.
 %% An arrow already implied by a longer path is omitted.
 %% The introduction has no Lean file, so it is not shown.
-%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
 flowchart TB
 
   Definition_2_1["Def 2.1<br>approximable map"]
-  Proposition_2_2["Prop 2.2<br>elementwise action"]
   Example_2_3["Example 2.3<br>parity of zeros"]
   Example_2_4["Example 2.4<br>erase a run"]
-  Theorem_2_5["Theorem 2.5<br>category of maps"]
-  Proposition_2_6["Prop 2.6<br>identity, composition"]
-  Theorem_2_7["Theorem 2.7<br>isos approximable"]
-  Exercise_2_8["Exercise 2.8<br>finite elements"]
-  Exercise_2_9["Exercise 2.9<br>union formula"]
   Exercise_2_10["Exercise 2.10<br>intersect maps"]
   Exercise_2_11["Exercise 2.11<br>directed unions"]
   Exercise_2_12["Exercise 2.12<br>unions of maps"]
@@ -27,57 +20,41 @@ flowchart TB
   Exercise_2_20["Exercise 2.20<br>integer powerset"]
   Exercise_2_21["Exercise 2.21<br>sequences"]
   Exercise_2_22["Exercise 2.22<br>closure domains"]
+  Exercise_2_8["Exercise 2.8<br>finite elements"]
+  Exercise_2_9["Exercise 2.9<br>union formula"]
+  Proposition_2_2["Prop 2.2<br>elementwise action"]
+  Proposition_2_6["Prop 2.6<br>identity, composition"]
+  Theorem_2_5["Theorem 2.5<br>category of maps"]
+  Theorem_2_7["Theorem 2.7<br>isos approximable"]
 
-  Definition_2_1 --> Proposition_2_2
-  Proposition_2_2 --> Theorem_2_5
   Proposition_2_2 --> Example_2_3
-  Proposition_2_2 --> Exercise_2_8
-  Proposition_2_2 --> Exercise_2_9
+  Exercise_2_17 --> Example_2_4
   Proposition_2_2 --> Exercise_2_10
   Proposition_2_2 --> Exercise_2_11
   Proposition_2_2 --> Exercise_2_12
-  Proposition_2_2 --> Exercise_2_17
-  Proposition_2_2 --> Exercise_2_20
-  Proposition_2_2 --> Theorem_2_7
-  Theorem_2_5 --> Proposition_2_6
-  Example_2_3 --> Exercise_2_16
+  Exercise_2_11 --> Exercise_2_13
+  Exercise_2_17b --> Exercise_2_13
   Exercise_2_8 --> Exercise_2_13
   Exercise_2_9 --> Exercise_2_13
-  Exercise_2_11 --> Exercise_2_13
-  Exercise_2_17 --> Example_2_4
-  Example_2_4 --> Exercise_2_17b
-  Exercise_2_17b --> Exercise_2_13
-  Exercise_2_13 --> Exercise_2_15
   Theorem_2_7 --> Exercise_2_14
+  Exercise_2_13 --> Exercise_2_15
+  Example_2_3 --> Exercise_2_16
+  Proposition_2_2 --> Exercise_2_17
+  Example_2_4 --> Exercise_2_17b
   Proposition_2_6 --> Exercise_2_18
   Exercise_2_19 --> Exercise_2_20
+  Proposition_2_2 --> Exercise_2_20
   Exercise_2_19 --> Exercise_2_21
+  Proposition_2_2 --> Exercise_2_8
+  Proposition_2_2 --> Exercise_2_9
+  Definition_2_1 --> Proposition_2_2
+  Theorem_2_5 --> Proposition_2_6
+  Proposition_2_2 --> Theorem_2_5
+  Proposition_2_2 --> Theorem_2_7
 
+%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef cprop fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef cexs fill:#fef3c7,stroke:#b45309,color:#78350f
   classDef cex fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef cthm fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
-  class Definition_2_1 cdef
-  class Proposition_2_2 cprop
-  class Proposition_2_6 cprop
-  class Example_2_3 cexs
-  class Example_2_4 cexs
-  class Theorem_2_5 cthm
-  class Theorem_2_7 cthm
-  class Exercise_2_8 cex
-  class Exercise_2_9 cex
-  class Exercise_2_10 cex
-  class Exercise_2_11 cex
-  class Exercise_2_12 cex
-  class Exercise_2_13 cex
-  class Exercise_2_14 cex
-  class Exercise_2_15 cex
-  class Exercise_2_16 cex
-  class Exercise_2_17 cex
-  class Exercise_2_17b cex
-  class Exercise_2_18 cex
-  class Exercise_2_19 cex
-  class Exercise_2_20 cex
-  class Exercise_2_21 cex
-  class Exercise_2_22 cex

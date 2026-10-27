@@ -6,6 +6,6 @@ $$
 \bigcap_{i < n} [ X_i ] \neq \emptyset.
 $$
 
-**[Exercise_1_21.lean](Exercise_1_21.lean)**
+**[Exercise_1_21.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_21.lean)**
 
 @import "Exercise_1_21.lean"

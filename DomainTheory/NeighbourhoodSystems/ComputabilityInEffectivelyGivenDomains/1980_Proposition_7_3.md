@@ -6,6 +6,6 @@ The proofs for 7.3 are so trivial they are hardly worth an exercise. Note the im
 
 <!-- page 120 -->
 
-**[Proposition_7_3.lean](Proposition_7_3.lean)**
+**[Proposition_7_3.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_3.lean)**
 
 @import "Proposition_7_3.lean"

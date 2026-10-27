@@ -18,6 +18,6 @@ Show that for $d$ a polymorphic type, $\Pi(d)$ is a type. (Hint: It is easy to c
 
 <!-- page 151 -->
 
-**[Exercise_8_27.lean](Exercise_8_27.lean)**
+**[Exercise_8_27.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_27.lean)**
 
 @import "Exercise_8_27.lean"

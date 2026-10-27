@@ -2,72 +2,17 @@
 %% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
-  N0["ApproximableMappingsBetweenDomains"]
-  N1["ElementsOfASystem"]
-  N2["InformationSystems"]
-  N3["ProductsAndSumsOfDomains"]
-  N4["FunctionSpace/"]
-  N5["FunctionSpace"]
-  N6["Theorem72/"]
-  N7["Theorem72"]
-  N8["Factoid75/"]
-  N9["Factoid75"]
-  N10["Factoid76/"]
-  N11["Factoid76"]
-  N12["Factoid77/"]
-  N13["Factoid77"]
-  N14["Fixpoint/"]
-  N15["Fixpoint"]
-  N16["Proposition74/"]
-  N17["Proposition74"]
 
-  N2 -->|"91"| N4
-  N4 -->|"3"| N5
-  N0 -->|"88"| N6
-  N1 -->|"44"| N6
-  N3 -->|"44"| N6
-  N5 -->|"44"| N6
-  N6 -->|"4"| N7
-  N1 -->|"108"| N8
-  N2 -->|"54"| N8
-  N5 -->|"54"| N8
-  N7 -->|"54"| N8
-  N8 -->|"1"| N9
-  N0 -->|"17"| N10
-  N6 -->|"17"| N10
-  N7 -->|"16"| N10
-  N10 -->|"1"| N11
-  N3 -->|"51"| N12
-  N6 -->|"5"| N12
-  N7 -->|"50"| N12
-  N12 -->|"1"| N13
-  N1 -->|"23"| N14
-  N6 -->|"1"| N14
-  N7 -->|"23"| N14
-  N14 -->|"8"| N15
-  N0 -->|"18"| N16
-  N1 -->|"18"| N16
-  N15 -->|"9"| N16
-  N16 -->|"3"| N17
+  N9["Factoid75"]
+  N11["Factoid76"]
+  N13["Factoid77"]
+  N15["Fixpoint"]
+  N5["FunctionSpace"]
+  N2["InformationSystems"]
+  N17["Proposition74"]
+  N7["Theorem72"]
+
+  N2 -->|"2"| N5
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
-
-  class N0 ext
-  class N1 ext
-  class N2 ext
-  class N3 ext
-  class N4 file
-  class N5 file
-  class N6 file
-  class N7 file
-  class N8 file
-  class N9 file
-  class N10 file
-  class N11 file
-  class N12 file
-  class N13 file
-  class N14 file
-  class N15 file
-  class N16 file
-  class N17 file

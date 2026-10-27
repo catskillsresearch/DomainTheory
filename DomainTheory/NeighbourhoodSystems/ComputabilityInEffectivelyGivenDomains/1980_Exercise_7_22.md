@@ -20,6 +20,6 @@ $$\vec{\sigma}\,\vec{\sigma} = \vec{\sigma}, \quad \vec{\sigma}\,\vec{\sigma}\,\
 
 and $\vec{01}\,\vec{01}\,\vec{01}\,\vec{01} = \vec{01}\,\vec{01}$ ?
 
-**[Exercise_7_22.lean](Exercise_7_22.lean)**
+**[Exercise_7_22.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_22.lean)**
 
 @import "Exercise_7_22.lean"

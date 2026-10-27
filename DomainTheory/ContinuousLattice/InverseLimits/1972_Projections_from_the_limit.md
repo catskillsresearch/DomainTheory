@@ -4,7 +4,6 @@
 
 @import "1972_Projections_from_the_limit.english" {code_block=false}
 
-**[ContinuousLattice/InverseLimits/projInf.lean](projInf.lean)**
+**[ContinuousLattice/InverseLimits/projInf.lean](DomainTheory/ContinuousLattice/InverseLimits/projInf.lean)**
 
 @import "projInf.lean"
-

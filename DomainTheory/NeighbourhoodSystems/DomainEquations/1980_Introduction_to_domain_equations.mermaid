@@ -1,25 +1,16 @@
 %% Each box is one item. The arrowhead is on the item that imports.
 %% An arrow already implied by a longer path is omitted.
 %% The introduction has no Lean file, so it is not shown.
-%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
 flowchart TB
 
-  Example_6_1["Example 6.1<br>indefinite product"]
-  Example_6_2["Example 6.2<br>sequence equations"]
+  Definition_6_10["Def 6.10<br>subdomain"]
+  Definition_6_13["Def 6.13<br>domain continuity"]
   Definition_6_3["Def 6.3<br>functor"]
   Definition_6_4["Def 6.4<br>functor algebra"]
   Definition_6_5["Def 6.5<br>initial algebra"]
-  Proposition_6_6["Prop 6.6<br>unique initial"]
-  Proposition_6_7["Prop 6.7<br>preserves initiality"]
   Definition_6_8["Def 6.8<br>map continuity"]
-  Theorem_6_9["Theorem 6.9<br>initial hom"]
-  Definition_6_10["Def 6.10<br>subdomain"]
-  Proposition_6_11["Prop 6.11<br>subsystem lattice"]
-  Proposition_6_12["Prop 6.12<br>projection pair"]
-  Definition_6_13["Def 6.13<br>domain continuity"]
-  Theorem_6_14["Theorem 6.14<br>initial algebras"]
-  Lemma_6_15["Lemma 6.15<br>projection subdomains"]
-  Theorem_6_16["Theorem 6.16<br>minimal algebra"]
+  Example_6_1["Example 6.1<br>indefinite product"]
+  Example_6_2["Example 6.2<br>sequence equations"]
   Exercise_6_17["Exercise 6.17<br>sequence algebras"]
   Exercise_6_18["Exercise 6.18<br>infinite product"]
   Exercise_6_19["Exercise 6.19<br>strict sum"]
@@ -33,69 +24,48 @@ flowchart TB
   Exercise_6_27["Exercise 6.27<br>which embeddings"]
   Exercise_6_28["Exercise 6.28<br>embeddings cancel"]
   Exercise_6_29["Exercise 6.29<br>infinitary product"]
+  Lemma_6_15["Lemma 6.15<br>projection subdomains"]
+  Proposition_6_11["Prop 6.11<br>subsystem lattice"]
+  Proposition_6_12["Prop 6.12<br>projection pair"]
+  Proposition_6_6["Prop 6.6<br>unique initial"]
+  Proposition_6_7["Prop 6.7<br>preserves initiality"]
+  Theorem_6_14["Theorem 6.14<br>initial algebras"]
+  Theorem_6_16["Theorem 6.16<br>minimal algebra"]
+  Theorem_6_9["Theorem 6.9<br>initial hom"]
 
-  Definition_6_10 --> Example_6_1
-  Definition_6_10 --> Proposition_6_11
-  Definition_6_13 --> Exercise_6_20
+  Theorem_6_9 --> Definition_6_13
+  Exercise_6_28 --> Definition_6_3
   Definition_6_3 --> Definition_6_4
   Definition_6_4 --> Definition_6_5
   Definition_6_5 --> Definition_6_8
-  Definition_6_8 --> Proposition_6_6
+  Definition_6_10 --> Example_6_1
   Example_6_1 --> Example_6_2
-  Example_6_2 --> Exercise_6_19
+  Theorem_6_16 --> Exercise_6_17
   Exercise_6_17 --> Exercise_6_18
-  Exercise_6_19 --> Exercise_6_29
+  Example_6_2 --> Exercise_6_19
+  Definition_6_13 --> Exercise_6_20
   Exercise_6_20 --> Exercise_6_21
   Exercise_6_21 --> Exercise_6_22
   Exercise_6_22 --> Exercise_6_23
   Exercise_6_23 --> Exercise_6_24
-  Exercise_6_24 --> Exercise_6_26
-  Exercise_6_25 --> Exercise_6_28
-  Exercise_6_26 --> Exercise_6_27
-  Exercise_6_27 --> Theorem_6_14
-  Exercise_6_28 --> Definition_6_3
-  Exercise_6_29 --> Lemma_6_15
-  Exercise_6_29 --> Proposition_6_12
   Lemma_6_15 --> Exercise_6_25
+  Exercise_6_24 --> Exercise_6_26
+  Exercise_6_26 --> Exercise_6_27
   Proposition_6_12 --> Exercise_6_27
-  Proposition_6_6 --> Theorem_6_9
-  Proposition_6_7 --> Theorem_6_16
+  Exercise_6_25 --> Exercise_6_28
+  Exercise_6_19 --> Exercise_6_29
+  Exercise_6_29 --> Lemma_6_15
+  Definition_6_10 --> Proposition_6_11
+  Exercise_6_29 --> Proposition_6_12
+  Definition_6_8 --> Proposition_6_6
   Theorem_6_14 --> Proposition_6_7
-  Theorem_6_16 --> Exercise_6_17
-  Theorem_6_9 --> Definition_6_13
+  Exercise_6_27 --> Theorem_6_14
+  Proposition_6_7 --> Theorem_6_16
+  Proposition_6_6 --> Theorem_6_9
 
+%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef cprop fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef cexs fill:#fef3c7,stroke:#b45309,color:#78350f
   classDef cex fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef cthm fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
-
-  class Example_6_1 cexs
-  class Example_6_2 cexs
-  class Definition_6_3 cdef
-  class Definition_6_4 cdef
-  class Definition_6_5 cdef
-  class Proposition_6_6 cprop
-  class Proposition_6_7 cprop
-  class Definition_6_8 cdef
-  class Theorem_6_9 cthm
-  class Definition_6_10 cdef
-  class Proposition_6_11 cprop
-  class Proposition_6_12 cprop
-  class Definition_6_13 cdef
-  class Theorem_6_14 cthm
-  class Lemma_6_15 cprop
-  class Theorem_6_16 cthm
-  class Exercise_6_17 cex
-  class Exercise_6_18 cex
-  class Exercise_6_19 cex
-  class Exercise_6_20 cex
-  class Exercise_6_21 cex
-  class Exercise_6_22 cex
-  class Exercise_6_23 cex
-  class Exercise_6_24 cex
-  class Exercise_6_25 cex
-  class Exercise_6_26 cex
-  class Exercise_6_27 cex
-  class Exercise_6_28 cex
-  class Exercise_6_29 cex

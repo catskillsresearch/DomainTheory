@@ -2,8 +2,11 @@
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
+
   COMP["Compatible"]
   LIM["InverseLimit"]
+
   COMP -->|"1"| LIM
+
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
   class COMP,LIM concept

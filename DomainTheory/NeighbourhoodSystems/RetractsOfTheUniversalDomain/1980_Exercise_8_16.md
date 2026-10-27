@@ -10,6 +10,6 @@ $$a \sqsubseteq b \quad \text{iff} \quad D_a \triangleleft D_b.$$
 
 (This fills in the gap at the end of the proof of 8.6.) Also finish off the proof of 8.8 by showing that if $E$ is effectively given and $a : E \to E$ is computable, then $D_a$ is effectively given.
 
-**[Exercise_8_16.lean](Exercise_8_16.lean)**
+**[Exercise_8_16.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_16.lean)**
 
 @import "Exercise_8_16.lean"

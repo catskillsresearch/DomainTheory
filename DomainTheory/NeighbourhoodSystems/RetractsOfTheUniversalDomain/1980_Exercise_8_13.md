@@ -6,6 +6,6 @@
 
 representation of $\mathcal{U}$ with the collection of non-empty open subsets of the product space $2^{\mathbf{N}}$ (= Cantor space).
 
-**[Exercise_8_13.lean](Exercise_8_13.lean)**
+**[Exercise_8_13.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_13.lean)**
 
 @import "Exercise_8_13.lean"

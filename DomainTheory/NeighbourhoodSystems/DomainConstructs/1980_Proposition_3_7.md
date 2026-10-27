@@ -40,6 +40,6 @@ It has to be admitted that there is a slight point overlooked in forming product
 
 The construct that makes the whole theory of domains work so smoothly is the function-space construct: it is possible to regard functions as *objects* which form a domain. Look back at Definition 2.1 and compare it with the original definition of element in 1.6. There are obvious formal similarities, except that filters are sets of neighbourhoods and mappings are sets of pairs of neighbourhoods (relations). But as we saw in 1.10 it is possible to turn the filters into tokens via a simple definition of neighbourhood. We apply the same kind of definition to the mappings.
 
-**[Proposition_3_7.lean](Proposition_3_7.lean)**
+**[Proposition_3_7.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Proposition_3_7.lean)**
 
 @import "Proposition_3_7.lean"

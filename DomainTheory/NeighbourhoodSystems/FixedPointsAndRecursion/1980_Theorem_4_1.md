@@ -58,6 +58,6 @@ We also note that if $X \in x$ and $X\ f\ Y$ then $Y \in x$. Therefore, $f(x) \s
 
 Because the element we have shown to exist in 4.1 is a least element, it is unique. That is, we have associated with each $f : D \to D$ a special element $x_f \in |D|$ determined by the choice of $f$. A function has therefore been defined mapping the set $|D \to D|$ into $|D|$. The next result shows that this function, or operator on functions, is in fact approximable.
 
-**[Theorem_4_1.lean](Theorem_4_1.lean)**
+**[Theorem_4_1.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem_4_1.lean)**
 
 @import "Theorem_4_1.lean"

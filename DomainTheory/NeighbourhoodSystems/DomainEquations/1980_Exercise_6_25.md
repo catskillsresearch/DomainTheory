@@ -12,6 +12,6 @@ $$g(x) = \bigsqcap \{y \in |\mathcal{E}| \mid x \sqsubseteq h(y)\},$$
 
 for all $x \in |\mathcal{D}|$ and $y \in |\mathcal{E}|$. So each of the functions determines the other. In the first equation check that the set on the right is directed, and in the second equation that the set on the right is non empty. Prove also that $g$ maps consistent sets to consistent sets and preserves $\bigsqcup$ (not just directed unions).
 
-**[Exercise_6_25.lean](Exercise_6_25.lean)**
+**[Exercise_6_25.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_25.lean)**
 
 @import "Exercise_6_25.lean"
