@@ -87,4 +87,25 @@ noncomputable def atomPairIdx1 (n k : ℕ) : ℕ :=
 
 end AtomPairCode
 
+namespace atomPairJunk
+open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+
+variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
+  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
+  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
+  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
+  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
+
+theorem mono {n k : ℕ}
+    (h : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k = 1) :
+    atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY (n + 1) k = 1 := by
+  have hle := atomPairJunk.le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY k (n + 1)
+  by_contra hne
+  have h0 : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY (n + 1) k = 0 := by
+    omega
+  have := atomPairJunk.eq_zero_of_succ (h := h0)
+  omega
+
+end atomPairJunk
+
 end DomainTheory.NeighbourhoodSystems

@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Vunion
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.effectiveIso812d
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_18
 public import Mathlib.Combinatorics.Colex
 public import Mathlib.Data.Nat.Bitwise

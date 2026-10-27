@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Vdiff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsComputableUnion
 
 @[expose] public section
 

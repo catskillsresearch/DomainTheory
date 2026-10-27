@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.effectiveIso812d
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Udiff
 
 @[expose] public section
 
