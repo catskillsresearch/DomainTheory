@@ -29,13 +29,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_one
 public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_two
 public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_three
 public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion_ofNat
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag0
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag1
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag2
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag3
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag4
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag5
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag6
 
 @[expose] public section
 

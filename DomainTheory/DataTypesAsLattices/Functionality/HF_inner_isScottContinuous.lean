@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_isScottContinuous_e
 
 
 @[expose] public section

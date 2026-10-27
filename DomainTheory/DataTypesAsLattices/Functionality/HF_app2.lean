@@ -6,7 +6,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
 public import DomainTheory.DataTypesAsLattices.Functionality.HF
 public import DomainTheory.DataTypesAsLattices.Functionality.HF_app
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_isScottContinuous_t
 
 
 @[expose] public section

@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
 public import DomainTheory.DataTypesAsLattices.Functionality.HF
-public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_isScottContinuous_H
-
 
 @[expose] public section
 
