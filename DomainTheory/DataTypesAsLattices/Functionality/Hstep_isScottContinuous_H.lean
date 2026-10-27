@@ -21,7 +21,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hPred_isScottContin
 public import DomainTheory.DataTypesAsLattices.Functionality.hCond_isScottContinuous_H
 public import DomainTheory.DataTypesAsLattices.Functionality.hApp
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
-public import DomainTheory.DataTypesAsLattices.Functionality.hLam_isScottContinuous_H
+public import DomainTheory.DataTypesAsLattices.Functionality.hLam
 public import DomainTheory.DataTypesAsLattices.Functionality.hSucc_isScottContinuous_H
 
 @[expose] public section

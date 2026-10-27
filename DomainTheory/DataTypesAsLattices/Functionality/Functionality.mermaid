@@ -91,7 +91,6 @@ flowchart TB
   N110["hCond_isScottContinuous_H"]
   N111["hCond_isScottContinuous_e"]
   N112["hCond_isScottContinuous_t"]
-  N113["hLam_isScottContinuous_H"]
   N114["hPred_isScottContinuous_H"]
   N115["hPred_isScottContinuous_e"]
   N116["hPred_isScottContinuous_t"]
@@ -272,14 +271,12 @@ flowchart TB
   N310["theorem_7_2.iii"]
   N311["tree_node"]
   N312["updateEnvUnion_isScottContinuous_idx"]
-  N313["hLam_isScottContinuous_e"]
   N314["Hstep_isScottContinuous_e"]
   N315["HF_inner_isScottContinuous"]
   N316["HF_app"]
   N317["updateEnvUnion_ofNat"]
   N318["updateEnv_isScottContinuous_t"]
   N319["updateEnvUnion_isScottContinuous_t"]
-  N320["hLam_isScottContinuous_t"]
   N321["Hstep_isScottContinuous_t"]
   N322["HF_app2"]
   N326["eq_4_45"]
@@ -646,9 +643,7 @@ flowchart TB
   N0 -->|"1"| N112
   N49 -->|"1"| N112
   N86 -->|"1"| N112
-  N0 -->|"1"| N113
-  N49 -->|"1"| N113
-  N14 -->|"1"| N113
+  N49 -->|"1"| N37
   N0 -->|"1"| N114
   N49 -->|"1"| N114
   N86 -->|"1"| N114
@@ -669,7 +664,7 @@ flowchart TB
   N86 -->|"1"| N118
   N41 -->|"1"| N118
   N110 -->|"1"| N118
-  N113 -->|"1"| N118
+  N37 -->|"1"| N118
   N114 -->|"1"| N118
   N117 -->|"1"| N118
   N0 -->|"1"| N119
@@ -1424,10 +1419,8 @@ flowchart TB
   N308 -->|"1"| N311
   N0 -->|"1"| N312
   N49 -->|"1"| N312
-  N0 -->|"1"| N313
-  N49 -->|"1"| N313
-  N75 -->|"1"| N313
-  N312 -->|"1"| N313
+  N75 -->|"1"| N37
+  N312 -->|"1"| N37
   N0 -->|"1"| N314
   N49 -->|"1"| N314
   N86 -->|"1"| N314
@@ -1437,7 +1430,7 @@ flowchart TB
   N121 -->|"1"| N314
   N123 -->|"1"| N314
   N179 -->|"1"| N314
-  N313 -->|"1"| N314
+  N37 -->|"1"| N314
   N0 -->|"1"| N315
   N49 -->|"1"| N315
   N314 -->|"1"| N315
@@ -1451,9 +1444,7 @@ flowchart TB
   N0 -->|"1"| N319
   N49 -->|"1"| N319
   N318 -->|"1"| N319
-  N0 -->|"1"| N320
-  N49 -->|"1"| N320
-  N319 -->|"1"| N320
+  N319 -->|"1"| N37
   N0 -->|"1"| N321
   N49 -->|"1"| N321
   N86 -->|"1"| N321
@@ -1462,7 +1453,7 @@ flowchart TB
   N116 -->|"1"| N321
   N122 -->|"1"| N321
   N124 -->|"1"| N321
-  N320 -->|"1"| N321
+  N37 -->|"1"| N321
   N0 -->|"1"| N322
   N49 -->|"1"| N322
   N316 -->|"1"| N322
@@ -1599,7 +1590,6 @@ flowchart TB
   class N110 file
   class N111 file
   class N112 file
-  class N113 file
   class N114 file
   class N115 file
   class N116 file
@@ -1798,14 +1788,12 @@ flowchart TB
   class N310 file
   class N311 file
   class N312 file
-  class N313 file
   class N314 file
   class N315 file
   class N316 file
   class N317 file
   class N318 file
   class N319 file
-  class N320 file
   class N321 file
   class N322 file
   class N326 file
