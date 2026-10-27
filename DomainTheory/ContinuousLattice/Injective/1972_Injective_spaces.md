@@ -1,6 +1,6 @@
 # 1. Injective spaces
 
-**Dependencies.** Inside Injective, each box is one Lean file. A box named as another folder in this chapter is that whole folder. A box named as another chapter is that whole chapter. The arrowhead points at the file or folder that imports, and the number is how many direct imports.
+**Dependencies.** Each box is one outline note below. The arrowhead points at the note that imports, and the number is how many direct imports. An arrow already implied by a longer path is left out.
 
 @import "Injective.mermaid"
 

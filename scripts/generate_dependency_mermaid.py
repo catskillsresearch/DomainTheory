@@ -692,7 +692,11 @@ def classify(mermaid: Path, text: str) -> str:
         return "ns_items"
     if "Continuous functions on Pω" in text:
         return "note_outline"
-    if "Each box is a note" in text or "Each box is one construction" in text:
+    if (
+        "Each box is a note" in text
+        or "Each box is one outline note" in text
+        or "Each box is one construction" in text
+    ):
         return "note_outline"
     if "Each box is a section" in text or "Data types as lattices" in text:
         return "note_outline"
@@ -751,8 +755,25 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
     if kind == "note_outline":
         skip = "Imports of a folder barrel are not counted" in old
         reduce = "transitive" in old.lower() or "longer path" in old.lower()
+        extra_ids: dict[str, str] | None = None
+        if mermaid.name == "Injective.mermaid":
+            extra_ids = {
+                "Definition 1.1: Injective Space": "D11",
+                "Proposition 1.2": "P12",
+                "Proposition 1.3": "P13",
+                "Proposition 1.4": "P14",
+                "Proposition 1.5": "P15",
+                "Corollary 1.6": "C16",
+                "Corollary 1.7": "C17",
+            }
         return gen_note_outline(
-            mermaid, modules, old, skip_aggregators=skip, reduce=reduce, labeled=True
+            mermaid,
+            modules,
+            old,
+            skip_aggregators=skip,
+            reduce=reduce,
+            labeled=True,
+            extra_title_ids=extra_ids,
         )
     return None
 
