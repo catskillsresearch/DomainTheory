@@ -300,15 +300,15 @@ theorem hT_TArrow (a : ApproximableMap U U) (ha : FinitaryProjection a) :
     Nonempty (Exercise823.Fix (Exercise823.tOp (tOpMap cCombinator) a) ≃o
       (TArrow a).2.Element) := by
   rw [tOp_tOpMap]
-  exact ⟨(arrowComb_elementIso a cCombinator ha isFinitaryProjection_cCombinator).symm⟩
+  exact ⟨(arrowComb.elementIso a cCombinator ha isFinitaryProjection_cCombinator).symm⟩
 
 /-- **`t` sends finitary projections to finitary projections** (Exercise 8.23's hypothesis `ht`),
-via `tOp_tOpMap` and Proposition 8.10(b)'s `finitaryProjection_arrowComb`. -/
+via `tOp_tOpMap` and Proposition 8.10(b)'s `arrowComb.finitaryProjection`. -/
 theorem ht_tOpMap (c : ApproximableMap U U) (hc : FinitaryProjection c) :
     ∀ a, FinitaryProjection a → FinitaryProjection (Exercise823.tOp (tOpMap c) a) := by
   intro a ha
   rw [tOp_tOpMap]
-  exact finitaryProjection_arrowComb a c ha hc
+  exact arrowComb.finitaryProjection a c ha hc
 
 /-- **`D ≅ D → 𝒰^∞` for `D := fixedNbhd (fixOp t)`.** Exercise 8.23's `fixedDomain_fixOp_iso_T`
 gives `Fix(‖t‖) ≅ D → D_c`; `fixedNbhd_elementIso_fix` identifies `D`'s own element type with

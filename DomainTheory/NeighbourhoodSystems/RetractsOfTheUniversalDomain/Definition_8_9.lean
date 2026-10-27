@@ -28,10 +28,6 @@ noncomputable def iTimes : ApproximableMap (prod U U) U :=
 noncomputable def jArrow : ApproximableMap U (funSpace U U) :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose_spec.choose
 
-/-- **`a → b : 𝒰 → 𝒰`** (Definition 8.9): `i_→ ∘ (λf. b∘f∘a) ∘ j_→`. -/
-noncomputable def arrowComb (a b : ApproximableMap U U) : ApproximableMap U U :=
-  iArrow.comp ((lamComb a b).comp jArrow)
-
 /-- **`j₊ : 𝒰 → 𝒰+𝒰`** (Definition 8.9). -/
 noncomputable def jPlus : ApproximableMap U (sum U U U_mem_nonempty U_mem_nonempty) :=
   (theorem_8_8_b_strong sumUUPresentation).choose_spec.choose
@@ -84,9 +80,6 @@ theorem jTimes_isComputableMap :
 section
 open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
-theorem arrowComb_eq (a b : ApproximableMap U U) :
-    arrowComb a b = iArrow.comp ((lamComb a b).comp jArrow) := rfl
 
 /-- The image of `in₀` always reaches the left copy (witnessed by `V₀.master`, since `v.master_mem`
 always holds and `in₀`'s relation only needs `inj₀ X ⊆ inj₀ V₀.master`). -/
@@ -156,12 +149,6 @@ theorem le_idMap_lamComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : 
         comp_mono_gen hb (comp_mono_gen le_rfl ha)
     _ = toApproxMap φ := by rw [comp_idMap, idMap_comp]
 
-theorem toElementMap_arrowComb (a b : ApproximableMap U U) (x : U.Element) :
-    (arrowComb a b).toElementMap x =
-      iArrow.toElementMap ((lamComb a b).toElementMap (jArrow.toElementMap x)) := by
-  rw [arrowComb_eq]
-  simp only [toElementMap_comp]
-
 /-- `a ∘ a = a` unwound at the element level: `a(a(x)) = a(x)` for every `x`. -/
 theorem toElementMap_idem_of_isRetraction {a : ApproximableMap E E} (ha : Retraction a)
     (x : E.Element) : a.toElementMap (a.toElementMap x) = a.toElementMap x := by
@@ -179,32 +166,10 @@ theorem toElementMap_le_self_of_le_idMap {a : ApproximableMap E E} (ha : a ≤ i
   have h := (le_iff_toElementMap_le.mp ha) x
   rwa [toElementMap_idMap] at h
 
-/-- **Proposition 8.10, `→`-case, projection half.** -/
-theorem le_idMap_arrowComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : b ≤ idMap U) :
-    arrowComb a b ≤ idMap U := by
-  rw [le_iff_toElementMap_le]
-  intro x
-  rw [toElementMap_arrowComb, toElementMap_idMap]
-  calc iArrow.toElementMap ((lamComb a b).toElementMap (jArrow.toElementMap x))
-      ≤ iArrow.toElementMap (jArrow.toElementMap x) :=
-        iArrow.toElementMap_mono
-          (toElementMap_le_self_of_le_idMap (le_idMap_lamComb ha hb) _)
-    _ ≤ x := toElementMap_le_of_comp_le_idMap iArrow_comp_jArrow_le x
-
 /-- If `j ∘ i = I_D`, then `j(i(v)) = v` for every `v ∈ |D|`. -/
 theorem toElementMap_of_comp_eq_idMap {i : ApproximableMap D E} {j : ApproximableMap E D}
     (hji : j.comp i = idMap D) (v : D.Element) : j.toElementMap (i.toElementMap v) = v := by
   rw [← toElementMap_comp, hji, toElementMap_idMap]
-
-/-- **Proposition 8.10, `→`-case, retraction half.** -/
-theorem isRetraction_arrowComb {a b : ApproximableMap U U} (ha : Retraction a)
-    (hb : Retraction b) : Retraction (arrowComb a b) := by
-  constructor
-  apply ext_of_toElementMap
-  intro x
-  rw [toElementMap_comp, toElementMap_arrowComb a b ((arrowComb a b).toElementMap x),
-    toElementMap_arrowComb a b x, toElementMap_of_comp_eq_idMap jArrow_comp_iArrow,
-    toElementMap_idem_of_isRetraction (isRetraction_lamComb ha hb)]
 
 end
 end DomainTheory.NeighbourhoodSystems
