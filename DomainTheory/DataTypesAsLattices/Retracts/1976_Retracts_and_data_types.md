@@ -17,17 +17,14 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 **[DataTypesAsLattices/Retracts/Icomb.lean](Icomb.lean)**
 
 @import "Icomb.lean"
-@import "Icomb.lean"
-
-**[DataTypesAsLattices/Retracts/Icomb_app.lean](Icomb_app.lean)**
-
-**[DataTypesAsLattices/Retracts/Icomb_isRetract.lean](Icomb_isRetract.lean)**
 
 **[DataTypesAsLattices/Retracts/DirectedSubset.lean](DirectedSubset.lean)**
 
 @import "DirectedSubset.lean"
 
-**[DataTypesAsLattices/Retracts/boolR_app.lean](boolR_app.lean)**
+**[DataTypesAsLattices/Retracts/boolR.lean](boolR.lean)**
+
+@import "boolR.lean"
 
 **[DataTypesAsLattices/Retracts/comp.lean](comp.lean)**
 
@@ -36,133 +33,83 @@ A retract is an ordinary notion of topology. The use of computable retracts as d
 **[DataTypesAsLattices/Retracts/arrowR.lean](arrowR.lean)**
 
 @import "arrowR.lean"
-@import "arrowR.lean"
 
-**[DataTypesAsLattices/Retracts/arrowR_map_isScottContinuous.lean](arrowR_map_isScottContinuous.lean)**
+**[DataTypesAsLattices/Retracts/arrowR_more.lean](arrowR_more.lean)**
 
-**[DataTypesAsLattices/Retracts/arrowR_app.lean](arrowR_app.lean)**
-
-**[DataTypesAsLattices/Retracts/arrowR_isStrict.lean](arrowR_isStrict.lean)**
+@import "arrowR_more.lean"
 
 **[DataTypesAsLattices/Retracts/dcondSet_bool_idem.lean](dcondSet_bool_idem.lean)**
 
 @import "dcondSet_bool_idem.lean"
 
-**[DataTypesAsLattices/Retracts/gfpBelow_isGLB.lean](gfpBelow_isGLB.lean)**
+**[DataTypesAsLattices/Retracts/gfpBelow.lean](gfpBelow.lean)**
 
-**[DataTypesAsLattices/Retracts/gfpBelow_le.lean](gfpBelow_le.lean)**
-
-**[DataTypesAsLattices/Retracts/gfpBelow_postfixed.lean](gfpBelow_postfixed.lean)**
-
-**[DataTypesAsLattices/Retracts/gfpBelow_fixed_inter.lean](gfpBelow_fixed_inter.lean)**
-
-**[DataTypesAsLattices/Retracts/gfpBelow_subset.lean](gfpBelow_subset.lean)**
+@import "gfpBelow.lean"
 
 **[DataTypesAsLattices/Retracts/graph_ext.lean](graph_ext.lean)**
 
 @import "graph_ext.lean"
 
-**[DataTypesAsLattices/Retracts/boolR_isRetract.lean](boolR_isRetract.lean)**
-
 **[DataTypesAsLattices/Retracts/eq_4_11.lean](eq_4_11.lean)**
 
 @import "eq_4_11.lean"
-
-**[DataTypesAsLattices/Retracts/arrowR_retractLe.lean](arrowR_retractLe.lean)**
 
 **[DataTypesAsLattices/Retracts/funRetract.lean](funRetract.lean)**
 
 @import "funRetract.lean"
 
-**[DataTypesAsLattices/Retracts/intF_isScottContinuous.lean](intF_isScottContinuous.lean)**
+**[DataTypesAsLattices/Retracts/intF.lean](intF.lean)**
 
-**[DataTypesAsLattices/Retracts/intF_map_isScottContinuous.lean](intF_map_isScottContinuous.lean)**
+@import "intF.lean"
 
-**[DataTypesAsLattices/Retracts/intF_app.lean](intF_app.lean)**
+**[DataTypesAsLattices/Retracts/intR.lean](intR.lean)**
 
-**[DataTypesAsLattices/Retracts/intR_eq_intF.lean](intR_eq_intF.lean)**
-
-**[DataTypesAsLattices/Retracts/intR_app.lean](intR_app.lean)**
-
-**[DataTypesAsLattices/Retracts/intR_bot.lean](intR_bot.lean)**
-
-**[DataTypesAsLattices/Retracts/intR_isGraph.lean](intR_isGraph.lean)**
-
-**[DataTypesAsLattices/Retracts/intR_ofNat.lean](intR_ofNat.lean)**
+@import "intR.lean"
 
 **[DataTypesAsLattices/Retracts/inter_const_isScottContinuous.lean](inter_const_isScottContinuous.lean)**
 
 @import "inter_const_isScottContinuous.lean"
 
-**[DataTypesAsLattices/Retracts/iterateFrom_bot.lean](iterateFrom_bot.lean)**
+**[DataTypesAsLattices/Retracts/iterateFrom.lean](iterateFrom.lean)**
 
-**[DataTypesAsLattices/Retracts/iterateFrom_mono.lean](iterateFrom_mono.lean)**
+@import "iterateFrom.lean"
 
 **[DataTypesAsLattices/Retracts/lfpAbove.lean](lfpAbove.lean)**
 
 @import "lfpAbove.lean"
 
-**[DataTypesAsLattices/Retracts/lfpAbove_bot.lean](lfpAbove_bot.lean)**
-
-**[DataTypesAsLattices/Retracts/lfpAbove_fixed.lean](lfpAbove_fixed.lean)**
-
-**[DataTypesAsLattices/Retracts/lfpAbove_le_of_ub.lean](lfpAbove_le_of_ub.lean)**
-
-**[DataTypesAsLattices/Retracts/lfpAbove_ub.lean](lfpAbove_ub.lean)**
-
 **[DataTypesAsLattices/Retracts/pairSeq.lean](pairSeq.lean)**
 
 @import "pairSeq.lean"
-
-**[DataTypesAsLattices/Retracts/intR_top_of_nonsingleton.lean](intR_top_of_nonsingleton.lean)**
-
-**[DataTypesAsLattices/Retracts/intR_top.lean](intR_top.lean)**
-
-**[DataTypesAsLattices/Retracts/intR_idem.lean](intR_idem.lean)**
-
-**[DataTypesAsLattices/Retracts/intR_isRetract.lean](intR_isRetract.lean)**
 
 **[DataTypesAsLattices/Retracts/predSet_ofNat_zero.lean](predSet_ofNat_zero.lean)**
 
 @import "predSet_ofNat_zero.lean"
 
-**[DataTypesAsLattices/Retracts/retractBasis_directed.lean](retractBasis_directed.lean)**
+**[DataTypesAsLattices/Retracts/retractBasis.lean](retractBasis.lean)**
 
-**[DataTypesAsLattices/Retracts/retractBasis_directedSubset.lean](retractBasis_directedSubset.lean)**
+@import "retractBasis.lean"
 
 **[DataTypesAsLattices/Retracts/retractLe.lean](retractLe.lean)**
 
 @import "retractLe.lean"
 
-**[DataTypesAsLattices/Retracts/retractLe_refl.lean](retractLe_refl.lean)**
-
-**[DataTypesAsLattices/Retracts/retractLe_trans.lean](retractLe_trans.lean)**
-
 **[DataTypesAsLattices/Retracts/retract_interpolation.lean](retract_interpolation.lean)**
 
 @import "retract_interpolation.lean"
-
-**[DataTypesAsLattices/Retracts/retractBasis_sSup.lean](retractBasis_sSup.lean)**
-
-**[DataTypesAsLattices/Retracts/retractBasis_sUnion.lean](retractBasis_sUnion.lean)**
-
-**[DataTypesAsLattices/Retracts/retractBasis_wayBelow.lean](retractBasis_wayBelow.lean)**
 
 **[DataTypesAsLattices/Retracts/sUnion_Fixpoints_le_image.lean](sUnion_Fixpoints_le_image.lean)**
 
 @import "sUnion_Fixpoints_le_image.lean"
 
-**[DataTypesAsLattices/Retracts/lfpAbove_mem.lean](lfpAbove_mem.lean)**
-
 **[DataTypesAsLattices/Retracts/sndC.lean](sndC.lean)**
 
 @import "sndC.lean"
 
-**[DataTypesAsLattices/Retracts/typed_of_arrowR.lean](typed_of_arrowR.lean)**
+**[DataTypesAsLattices/Retracts/typed_more.lean](typed_more.lean)**
 
-**[DataTypesAsLattices/Retracts/arrowR_functor.lean](arrowR_functor.lean)**
+@import "typed_more.lean"
 
 **[DataTypesAsLattices/Retracts/typed.lean](typed.lean)**
 
 @import "typed.lean"
-

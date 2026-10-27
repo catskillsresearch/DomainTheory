@@ -21,6 +21,12 @@ LEAN_BLOCK_RE = re.compile(
     r'@import\s+"(?P<imp>[^"]+\.lean)"\s*\n',
 )
 
+# Link without a following @import (chapter index lists).
+LEAN_LINK_RE = re.compile(
+    r"\*\*\[(?P<label>[^\]]*)\]\((?P<link>[^)]+\.lean)\)\*\*"
+    r"(?!\n+@import)",
+)
+
 
 def resolve_import(note_dir: Path, rel: str) -> Path:
     return (note_dir / rel).resolve()
@@ -53,6 +59,14 @@ def retarget_missing(note_dir: Path, rel: str) -> str | None:
     return None
 
 
+def sync_label(label: str, old_rel: str, new_rel: str) -> str:
+    old_base = Path(old_rel).name
+    new_base = Path(new_rel).name
+    if old_base in label:
+        return label.replace(old_base, new_base)
+    return re.sub(r"[^/\]]+\.lean$", new_base, label)
+
+
 def refresh_note(path: Path) -> bool:
     text = path.read_text(encoding="utf-8")
     note_dir = path.parent
@@ -77,20 +91,30 @@ def refresh_note(path: Path) -> bool:
             link_out = new_link or target
             # label: replace basename in label if present
             label = m.group("label")
-            old_base = Path(imp).name
-            new_base = Path(target).name
-            if old_base in label:
-                label = label.replace(old_base, new_base)
-            else:
-                # common pattern DataTypesAsLattices/.../file.lean
-                label = re.sub(r"[^/\]]+\.lean$", new_base, label)
+            label = sync_label(label, imp, target)
             return (
                 f"**[{label}]({link_out})**\n\n"
                 f'@import "{target}"\n'
             )
         return m.group(0)
 
-    new_text = LEAN_BLOCK_RE.sub(repl_block, text)
+    def repl_link(m: re.Match[str]) -> str:
+        nonlocal changed
+        link = m.group("link")
+        if resolve_import(note_dir, link).is_file():
+            return m.group(0)
+        target = retarget_missing(note_dir, link)
+        if target is None:
+            changed = True
+            return ""
+        if target != link:
+            changed = True
+            label = sync_label(m.group("label"), link, target)
+            return f"**[{label}]({target})**"
+        return m.group(0)
+
+    new_text = LEAN_LINK_RE.sub(repl_link, text)
+    new_text = LEAN_BLOCK_RE.sub(repl_block, new_text)
 
     # Deduplicate identical consecutive Lean import blocks
     seen_order: list[str] = []
@@ -112,6 +136,22 @@ def refresh_note(path: Path) -> bool:
     if nonlocal_changed:
         changed = True
         new_text = deduped
+
+    # Deduplicate link-only lines pointing at the same .lean (after retarget).
+    seen_links: set[str] = set()
+
+    def dedupe_link(m: re.Match[str]) -> str:
+        nonlocal changed
+        link = m.group("link")
+        if link in seen_links:
+            changed = True
+            return ""
+        seen_links.add(link)
+        return m.group(0)
+
+    deduped_links = LEAN_LINK_RE.sub(dedupe_link, new_text)
+    if deduped_links != new_text:
+        new_text = deduped_links
 
     # Collapse excess blank lines
     collapsed = re.sub(r"\n{3,}", "\n\n", new_text)

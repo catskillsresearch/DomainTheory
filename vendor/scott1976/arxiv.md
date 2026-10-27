@@ -351,7 +351,7 @@ Compared numbered theorems and selected companions:
 | (4.38) `tree` | `treeR`, `eq_4_38`, `tree_atom`, `tree_node` | faithful — `tree = nil ⊕ (tree ⊗ tree)`; atom and binary nodes |
 | (4.39)–(4.43) `lamb` | `lambR`, `envR`, `updateEnv`, `LambTerm`, `Hinterp` | faithful — data types and `ℋ` by recursion on finite terms |
 | (4.44) `exp` | `expR`, `eq_4_44`, `expR_isRetract` | faithful — seven-tag syntax functor; `exp = Y(expF)` is a retract |
-| (4.45) `ℋ` | `eq_4_45`, `HF`, `Hfun`, `Hcomb`, `Htyped`, `Hcomb_decode` | faithful — `ℋ` is the retract of the least fixed point of a continuous seven-tag operator; `Hcomb(encodeExp τ) = Htyped τ` |
+| (4.45) `ℋ` | `eq_4_45`, `HF`, `Hfun`, `Hcomb`, `Htyped`, `Hcomb.decode` | faithful — `ℋ` is the retract of the least fixed point of a continuous seven-tag operator; `Hcomb(encodeExp τ) = Htyped τ` |
 | (4.46) `vaal` | `vaalC`, `vaalC_unfold`, `vaalC_combinatory`, `vaalC_typed` | faithful — `vaal : tree → id` as the least fixed point of (4.46), combinatory and typed |
 
 ### §5 Closures
