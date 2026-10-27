@@ -15,84 +15,49 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-/-- **`IsComputableDiff P`**: set-difference relative to the presentation `P` is computable — a
-primitive-recursive `diffIdx : ℕ → ℕ → ℕ` indexing `X n \ X m` whenever that difference is a
-genuine neighbourhood (`diffIdx_spec`, mirroring `inter_spec` exactly), together with a decider
-for that very side-condition (`diff_computable`, mirroring `cons_computable`). Only `diffIdx` is
-data; the rest are `Prop`s, so this stays choice-free to *state* (any particular instance may of
-course need `Classical.choice` to *construct*, exactly like `inter`/`cons_computable` themselves
-would for an arbitrary effectively-given system). -/
+
 structure IsComputableDiff {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V) where
-  /-- Index of `X n \ X m`, as a function of the two input indices. -/
+
   diffIdx : ℕ → ℕ → ℕ
-  /-- `diffIdx` is primitive recursive (on the `Nat.pair` coding of `n, m`). -/
+
   diffIdx_primrec : Nat.Primrec (fun t => diffIdx t.unpair.1 t.unpair.2)
-  /-- `diffIdx n m` genuinely indexes `X n \ X m` whenever that difference is (exactly) some
-  `X k` — i.e. whenever it is a genuine neighbourhood. -/
+
   diffIdx_spec : ∀ {n m : ℕ}, (∃ k, P.X k = P.X n \ P.X m) → P.X (diffIdx n m) = P.X n \ P.X m
-  /-- **7.1(i)-for-`\`**: "`X n \ X m` is a genuine neighbourhood" is recursively decidable in
-  `n, m`, mirroring `cons_computable`'s role for `∩`. -/
+
   diff_computable : RecDecidable₂ (fun n m => ∃ k, P.X k = P.X n \ P.X m)
 
-/-- **A split function is computable relative to two presentations** `P` (`α`-side), `Q` (`γ`-side)
-when its two outputs are indexed by primitive-recursive functions of the three input indices
-(indices of `A` in `P`, `B` in `Q`, `Xn` in `P`). Only the two index functions are data; primitive-
-recursiveness and correctness (`posIdx_spec`/`negIdx_spec`) are `Prop`s, so this is choice-free. -/
+
 structure IsComputableSplit {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
     (P : ComputablePresentation V) (Q : ComputablePresentation W)
     (split : Set α → Set γ → Set α → Set γ × Set γ) where
-  /-- Index (in `Q`) of `(split (P.X n) (Q.X m) (P.X k)).1`, as a function of the three input
-  indices `n, m, k`. -/
+
   posIdx : ℕ → ℕ → ℕ → ℕ
-  /-- Index (in `Q`) of `(split (P.X n) (Q.X m) (P.X k)).2`. -/
+
   negIdx : ℕ → ℕ → ℕ → ℕ
-  /-- `posIdx` is primitive recursive (on the `Nat.pair n (Nat.pair m k)` coding, matching
-  `RecDecidable₃`'s convention). -/
+
   posIdx_primrec : Nat.Primrec (fun t => posIdx t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2)
-  /-- `negIdx` is primitive recursive. -/
+
   negIdx_primrec : Nat.Primrec (fun t => negIdx t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2)
-  /-- `posIdx n m k` genuinely indexes the split's first output **whenever that output is
-  non-empty**. This is conditional (not `∀ n m k, … = Q.X (posIdx n m k)` outright) for a load-
-  bearing reason found 2026-07-06 while repairing 8.12(g): `Q.X j` is *never* literally `∅` (every
-  `ComputablePresentation` index is `Q.mem`-genuine, `Q.mem_X`), yet `SplitSpec'` (`Exercise812c.lean`)
-  — the abstract correctness contract `atomPairG`'s classical layer needs `splitX`/`splitY` to
-  satisfy — *requires* `(split A B Xn).1 = ∅` exactly when `A ∩ Xn = ∅`. An *unconditional*
-  `posIdx_spec` is therefore jointly unsatisfiable with `SplitSpec'` for *any* split function
-  whatsoever (not just a specific concrete one) — see `arxiv.md`'s 8.12(g) rows for the full
-  argument. Weakening to "conditional on non-emptiness" is the fix: it costs nothing at any call
-  site that already knows (from context, typically via `SplitSpec'`'s own emptiness ↔ clause) that
-  the relevant output is non-empty — which is every existing use in this file — while making the
-  structure satisfiable by a genuine `Set`-valued split whose output is sometimes literally `∅`. -/
+
   posIdx_spec : ∀ n m k, (split (P.X n) (Q.X m) (P.X k)).1 ≠ ∅ →
     (split (P.X n) (Q.X m) (P.X k)).1 = Q.X (posIdx n m k)
-  /-- `negIdx n m k` genuinely indexes the split's second output whenever that output is
-  non-empty. See `posIdx_spec`'s docstring for why this is conditional. -/
+
   negIdx_spec : ∀ n m k, (split (P.X n) (Q.X m) (P.X k)).2 ≠ ∅ →
     (split (P.X n) (Q.X m) (P.X k)).2 = Q.X (negIdx n m k)
 
-/-- **`IsComputableUnion P`**: set-union relative to the presentation `P` is computable — a
-primitive-recursive `unionIdx : ℕ → ℕ → ℕ` indexing `X n ∪ X m` whenever that union is a genuine
-neighbourhood (`unionIdx_spec`, mirroring `inter_spec`/`IsComputableDiff.diffIdx_spec` exactly),
-together with a decider for that side-condition (`union_computable`, mirroring
-`cons_computable`/`IsComputableDiff.diff_computable`). Only `unionIdx` is data; the rest are
-`Prop`s, so this stays choice-free to *state* (any particular instance may of course need
-`Classical.choice` to *construct*, exactly like `inter`/`cons_computable`/`IsComputableDiff`
-themselves would for an arbitrary effectively-given system). -/
+
 structure IsComputableUnion {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
     where
-  /-- Index of `X n ∪ X m`, as a function of the two input indices. -/
+
   unionIdx : ℕ → ℕ → ℕ
-  /-- `unionIdx` is primitive recursive (on the `Nat.pair` coding of `n, m`). -/
+
   unionIdx_primrec : Nat.Primrec (fun t => unionIdx t.unpair.1 t.unpair.2)
-  /-- `unionIdx n m` genuinely indexes `X n ∪ X m` whenever that union is (exactly) some `X k` —
-  i.e. whenever it is a genuine neighbourhood. -/
+
   unionIdx_spec : ∀ {n m : ℕ}, (∃ k, P.X k = P.X n ∪ P.X m) → P.X (unionIdx n m) = P.X n ∪ P.X m
-  /-- **7.1(i)-for-`∪`**: "`X n ∪ X m` is a genuine neighbourhood" is recursively decidable in
-  `n, m`, mirroring `cons_computable`'s role for `∩`. -/
+
   union_computable : RecDecidable₂ (fun n m => ∃ k, P.X k = P.X n ∪ P.X m)
 
-/-- Pack a two-sided code state: `idx0` (`P₀`-index of `A_n`), `idx1` (`P₁`-index of `B_n`),
-`junk` (`1` iff `A_n = B_n = ∅` already). -/
+
 def packState2 (idx0 idx1 junk : ℕ) : ℕ := Nat.pair idx0 (Nat.pair idx1 junk)
 
 def stateIdx0 (s : ℕ) : ℕ := s.unpair.1
@@ -110,8 +75,7 @@ def stateJunk (s : ℕ) : ℕ := s.unpair.2.unpair.2
 @[simp] theorem stateJunk_packState2 (a b c : ℕ) : stateJunk (packState2 a b c) = c := by
   unfold stateJunk packState2; simp only [unpair_pair_snd]
 
-/-- Pack the persistent bit-source remainder `rem` alongside the current two-sided
-`packState2`-shaped inner state `s`. -/
+
 def packStateC (rem s : ℕ) : ℕ := Nat.pair rem s
 
 section XSubStep
@@ -134,13 +98,7 @@ namespace IsComputableDiff
 variable {α : Type*} {V : NeighborhoodSystem α} {P : ComputablePresentation V}
 
 namespace diff
-/-- **The emptiness/genuineness dichotomy**, transported through `DiffClosed` +
-`NoMinimal.mem_ne_empty`: for a `DiffClosed`, `NoMinimal` system, "`X n \ X m` is a genuine
-neighbourhood" and "`X n \ X m` is non-empty" are the *same* proposition — so `diff_computable`
-may equally be read as an emptiness decider. Not needed to *state* `IsComputableDiff` (kept off
-the structure itself, matching how `DiffClosed`/`NoMinimal` are separate hypotheses from
-`ComputablePresentation` elsewhere in this file), but recorded here once for later sub-parts to
-reuse directly instead of re-deriving. -/
+
 theorem exists_iff_ne_empty (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
     (∃ k, P.X k = P.X n \ P.X m) ↔ P.X n \ P.X m ≠ ∅ := by
   constructor
@@ -161,8 +119,7 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 variable (hDiff : IsComputableDiff P)
 
-/-- **Extracted existence decider for `\`**: `1` iff `∃ k, X k = X n \ X m`
-(`IsComputableDiff.diff_computable`'s own predicate). -/
+
 noncomputable def existsDiffDec : ℕ → ℕ := fun t => isOne (hDiff.diff_computable.choose t)
 
 end DirectDec
@@ -190,7 +147,6 @@ theorem spec (n m : ℕ) :
   exact h.symm
 
 
-/-- **The `\`-existence decider matches non-emptiness**, via `IsComputableDiff.diff.exists_iff_ne_empty`. -/
 theorem eq_zero_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
     existsDiffDec P hDiff (Nat.pair n m) = 0 ↔ P.X n \ P.X m = ∅ := by
   have hle := existsDiffDec.le_one P hDiff (Nat.pair n m)
@@ -217,7 +173,7 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 variable (hDiff : IsComputableDiff P)
 
-/-- **The `\`-emptiness decider** (`1` iff `X n \ X m = ∅`). -/
+
 noncomputable def emptyDiffDec : ℕ → ℕ := fun t => 1 - existsDiffDec P hDiff t
 
 end DirectDec
@@ -253,8 +209,7 @@ section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-/-- **Extracted existence decider for `∩`**: `1` iff `∃ k, X k ⊆ X n ∩ X m` (`cons_computable`'s
-own predicate). -/
+
 noncomputable def existsInterDec : ℕ → ℕ := fun t => isOne (P.cons_computable.choose t)
 
 end DirectDec
@@ -279,9 +234,6 @@ theorem spec (n m : ℕ) :
   exact h.symm
 
 
-/-- **The `∩`-existence decider matches non-emptiness**, given `IsPositive` + `NoMinimal`: any
-consistency witness is itself a non-empty neighbourhood (`NoMinimal.mem_ne_empty`), and conversely
-a non-empty intersection is a neighbourhood by `IsPositive`, hence indexed by `surj`. -/
 theorem eq_zero_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
     existsInterDec P (Nat.pair n m) = 0 ↔ P.X n ∩ P.X m = ∅ := by
   have hle := existsInterDec.le_one P (Nat.pair n m)
@@ -309,8 +261,7 @@ section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-/-- **The `∩`-emptiness decider** (`1` iff `X n ∩ X m = ∅`): the complementary flag to
-`existsInterDec`. -/
+
 noncomputable def emptyInterDec : ℕ → ℕ := fun t => 1 - existsInterDec P t
 
 end DirectDec
@@ -351,7 +302,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 end stateRemC
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-/-- The base (depth-`0`) state: `A₀ = D₀.master`, `B₀ = D₁.master`, never junk. -/
+
 def stateBase2 (masterIdx0 masterIdx1 : ℕ) : ℕ := packState2 masterIdx0 masterIdx1 0
 
 def stateInnerC (t : ℕ) : ℕ := t.unpair.2
@@ -368,15 +319,13 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- The initial state at depth `0`: `A₀ = D₀.master`, `B₀ = D₁.master` (never junk), bit-source
-remainder `k` untouched. -/
+
 def atomPairBase (k : ℕ) : ℕ := packStateC k (stateBase2 P₀.masterIdx P₁.masterIdx)
 
 end AtomPairCode
 end
 
-/-- **Genuine `\`-index equality**, given the emptiness decider reads `0`: the raw existence fact
-(`existsDiffDec.spec`) plugged straight into `hDiff.diffIdx_spec` — unconditional. -/
+
 theorem diffIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} {Q : ComputablePresentation W}
     (hDiff : IsComputableDiff Q) {idx0 n0 : ℕ} (h : emptyDiffDec Q hDiff (Nat.pair idx0 n0) = 0) :
     Q.X (hDiff.diffIdx idx0 n0) = Q.X idx0 \ Q.X n0 := by
@@ -401,9 +350,7 @@ theorem encodeDeltaPair_lt (δ : ℕ → Bool × Bool) : ∀ n, encodeDeltaPair 
         rcases Bool.eq_false_or_eq_true (δ n).2 with h2 | h2 <;>
         simp only [h1, h2, ite_true, ite_false, Bool.false_eq_true] <;> omega
 
-/-- **Genuine `∩`-index equality**, given the emptiness decider reads `0`: the raw existence fact
-(`existsInterDec.spec`) plugged straight into `Q.inter_spec` — unconditional, no `IsPositive`/
-`NoMinimal` needed. -/
+
 theorem interIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} (Q : ComputablePresentation W)
     {idx0 n0 : ℕ} (h : emptyInterDec Q (Nat.pair idx0 n0) = 0) :
     Q.X (Q.inter idx0 n0) = Q.X idx0 ∩ Q.X n0 := by
@@ -421,8 +368,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- If the outgoing `selectFn junk 1 X` reads `0`, the incoming `junk` was already `0` (a `1`
-would force the result to `1` regardless of `X`, via `selectFn`'s definition). -/
+
 theorem junk_eq_zero_of_selectFn_eq_zero {junk X : ℕ} (h : selectFn junk 1 X = 0) : junk = 0 := by
   rcases Nat.eq_zero_or_pos junk with h0 | h0
   · exact h0
@@ -431,20 +377,14 @@ theorem junk_eq_zero_of_selectFn_eq_zero {junk X : ℕ} (h : selectFn junk 1 X =
 end AtomPairCorrect
 end
 
-/-- **A union of two already-genuine neighbourhoods is again genuine** (sharper than
-`union.mem_or_empty`'s bare dichotomy): under `NoMinimal`, a `mem` set is never empty
-(`NoMinimal.mem_ne_empty`), so `X ∪ Y ⊇ X ≠ ∅` rules out the dichotomy's `∅` branch outright. -/
+
 theorem NeighborhoodSystem.mem_union_of_mem {γ : Type*} {D : NeighborhoodSystem γ}
     (hpos : D.IsPositive) (hdiff : D.DiffClosed) (hnomin : D.NoMinimal) {X Y : Set γ}
     (hX : D.mem X) (hY : D.mem Y) : D.mem (X ∪ Y) :=
   (union.mem_or_empty hpos hdiff (Or.inr hX) (Or.inr hY)).resolve_left fun h =>
     hnomin.mem_ne_empty hX (Set.subset_eq_empty Set.subset_union_left h)
 
-/-- **Combine two `(found, code)` packed fold results into one**: union their codes via `hUnion`
-when both found something, and simply propagate whichever single side found something otherwise
-(mirroring `XFoldStep`/`YFoldStep`'s own "skip junk, else union" shape one level up). Generic in any
-`IsComputableUnion`, reused below for `YPseqCode`'s "outer 2-way union" of its two `bx`-fixed inner
-folds. -/
+
 noncomputable def combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) (r0 r1 : ℕ) : ℕ :=
   selectFn r0.unpair.1
@@ -533,10 +473,7 @@ theorem mem_of_found {γ : Type*} {W : NeighborhoodSystem γ}
 end combineFound2
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-/-- **The two-bits-per-depth sign sequence** read off a bit-source `k`, the `atomPairG`-shaped
-analogue of `Theorem88d.lean`'s `deltaOf`: the depth-`i` nibble `(k / 4 ^ i) % 2` supplies `(δ i).1`,
-and `(k / 4 ^ i / 2) % 2` supplies `(δ i).2` — matching exactly how `atomPairStep` peels two bits
-per depth from `rem` (`rem % 2`, `(rem / 2) % 2`, then `rem / 4`). -/
+
 def deltaPair (k : ℕ) : ℕ → Bool × Bool :=
   fun i => (decide ((k / 4 ^ i) % 2 = 1), decide ((k / 4 ^ i / 2) % 2 = 1))
 
@@ -553,11 +490,7 @@ theorem snd_eq_testBit (k i : ℕ) : (deltaPair k i).2 = k.testBit (2 * i + 1) :
   rw [Nat.div_div_eq_div_mul, Nat.testBit_eq_decide_div_mod_eq, show (4 : ℕ) ^ i * 2 = 2 ^ (2 * i + 1)
     by rw [show (4 : ℕ) = 2 ^ 2 from rfl, ← pow_mul, pow_succ]]
 
-/-- **The inversion property**: `deltaPair (encodeDeltaPair δ n)` agrees with `δ` on every position
-strictly below `n`. Combined with `atomPairG.congr` (`(d)(1)`, already `Pass`), this is exactly
-what transports `(c)(ii)`'s `Fin n → Bool × Bool`-indexed classical covering fact into the
-`deltaPair`/bit-source-indexed one `XPseqCode`'s fold actually uses (`atomPairG.master_covered_deltaPair`
-below). -/
+
 theorem encodeDeltaPair (δ : ℕ → Bool × Bool) :
     ∀ n i, i < n → deltaPair (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n) i = δ i := by
   intro n
@@ -571,7 +504,6 @@ theorem encodeDeltaPair (δ : ℕ → Bool × Bool) :
       have key : _root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (n + 1) / 4 ^ i % 4 = _root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n / 4 ^ i % 4 := by
         show (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n +
           ((if (δ n).1 then 1 else 0) + (if (δ n).2 then 2 else 0)) * 4 ^ n) / 4 ^ i % 4 = _
-        -- was digit.add_mul_pow_of_lt
         obtain ⟨j, rfl⟩ := Nat.exists_eq_add_of_lt hi'
         have heq : ((if (δ (i + j + 1)).1 then 1 else 0) + (if (δ (i + j + 1)).2 then 2 else 0)) *
             4 ^ (i + j + 1) = 4 ^ i * (4 * 4 ^ j *
@@ -593,7 +525,6 @@ theorem encodeDeltaPair (δ : ℕ → Bool × Bool) :
       exact ih i hi'
     · have hd : _root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (i + 1) / 4 ^ i =
           (if (δ i).1 then 1 else 0) + (if (δ i).2 then 2 else 0) := by
-        -- was digit.eq_of_encodeDeltaPair
         show (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ i +
             ((if (δ i).1 then 1 else 0) + (if (δ i).2 then 2 else 0)) * 4 ^ i) / 4 ^ i = _
         rw [Nat.add_mul_div_right _ _ (pow_pos (by norm_num) i),
@@ -623,9 +554,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hySplit : SplitSpec' D₀ splitY)
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
-/-- **`selectFn` of two `{0,1}`-bounded values, gated by a `{0,1}`-bounded flag, is itself
-`{0,1}`-bounded** — `selectFn c a b` is literally `a` or `b` once `c ≤ 1`, so this is immediate by
-splitting on `c`. -/
+
 theorem le_one {c a b : ℕ} (hc : c ≤ 1) (ha : a ≤ 1) (hb : b ≤ 1) :
     selectFn c a b ≤ 1 := by
   rcases (show c = 0 ∨ c = 1 from by omega) with h | h <;> rw [h]
@@ -644,8 +573,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- `selectFn c 1 X = 0` forces **both** `c = 0` and `X = 0` (not just `c = 0`): with `c = 0`,
-`selectFn` reduces to the "else" branch `X` outright. -/
+
 theorem one_eq_zero_iff {c X : ℕ} : selectFn c 1 X = 0 ↔ c = 0 ∧ X = 0 := by
   constructor
   · intro h
@@ -666,8 +594,7 @@ section StepGen
 
 variable {α β : Type*}
 
-/-- **Generalized `xStep`**: split `D₁`'s side (via the abstract `splitX`) while directly refining
-`D₀`'s side. Literally `xyStep splitX`; `xStep D₁ hD₁nomin = xStepG (splitChoice' D₁ hD₁nomin)`. -/
+
 noncomputable def xStepG (splitX : Set α → Set β → Set α → Set β × Set β)
     (A : Set α) (B : Set β) (Xn : Set α) (b : Bool) : Set α × Set β :=
   xyStep splitX A B Xn b
@@ -713,10 +640,7 @@ section StepGen
 
 variable {α β : Type*}
 
-/-- **`xStepG`'s two direct-refine outputs reunion to exactly the parent**: the trivial two-set
-identity `(A ∩ Xn) ∪ (A \ Xn) = A`, restated through `xStepG`'s `.1`. Needed for
-**8.12(d)(4)(c)(i)**'s one-step 4-way reunion (the `b1`-level half of the argument); no `SplitSpec'`
-hypotheses needed at all, unlike every other fact about `xStepG`/`yStepG` in this section. -/
+
 theorem fst_union (splitX : Set α → Set β → Set α → Set β × Set β)
     (A : Set α) (B : Set β) (Xn : Set α) :
     (xStepG splitX A B Xn true).1 ∪ (xStepG splitX A B Xn false).1 = A := by
@@ -748,10 +672,7 @@ section StepGen
 
 variable {α β : Type*}
 
-/-- **`xStepG`'s two split-side outputs reunion to exactly its own input `B`**: from `SplitSpec'`'s
-unconditional `(split A B Xn).1 ∪ (split A B Xn).2 = B` field, applied directly (no `.swap`, unlike
-`yStepG.fst_union`'s use of the same field). Needed for **8.12(d)(4)(d)(i)**'s one-step 4-way
-reunion (the `D₁`-side mirror of `yStepG.fst_union`'s `b2`-level half). -/
+
 theorem snd_union {D₁ : NeighborhoodSystem β}
     {splitX : Set α → Set β → Set α → Set β × Set β} (hxSplit : SplitSpec' D₁ splitX)
     {A : Set α} {B : Set β} (hAB : A = ∅ ↔ B = ∅) (hBmem : B = ∅ ∨ D₁.mem B) (Xn : Set α) :
@@ -774,10 +695,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hDiff0 : IsComputableDiff P₀)
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
 
-/-- **The `X`-sub-step.** Refines `D₀`'s side (`idx0`) directly against `P₀.X n` (intersect if
-`b1 = 1`, diff if `b1 = 0`, via `P₀.inter`/`hDiff0.diffIdx`), and `D₁`'s side (`idx1`) via the
-matching branch of the split `hSplitX` — freezing both at the junk sentinel `0` the moment either
-the incoming state was already junk, or this step's direct refinement is found empty. -/
+
 noncomputable def xSubStep (w : ℕ) : ℕ :=
   let n := xwN w
   let b1 := xwB1 w
@@ -875,12 +793,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀nomin hD₀diff hxSplit in
-/-- **The `X`-sub-step matches `xStepG` exactly**, given the previous state's indices already match
-`A`/`B` and the sub-step's output is non-junk. **No longer fully unconditional in `A`/`B`** (2026-
-07-06, repairing 8.12(g)): now that `posIdx_spec`/`negIdx_spec` are conditional on non-emptiness,
-deriving the split side needs `SplitSpec'`'s "empty iff empty" conjunct, which itself needs the
-`atomPairG.invariant`-style precondition on `A`/`B` (`hAB`/`hBmem`) to fire. At every call site
-these come straight from `atomPairG.invariant`/`xStepG.spec`. -/
+
 theorem correct {s n : ℕ} {A : Set α} {B : Set β}
     (hA : P₀.X (stateIdx0 s) = A) (hB : P₁.X (stateIdx1 s) = B)
     (hAB : A = ∅ ↔ B = ∅) (hBmem : B = ∅ ∨ D₁.mem B) (b : Bool)
@@ -931,9 +844,7 @@ section StepGen
 
 variable {α β : Type*}
 
-/-- **Generalized `yStep`**: split `D₀`'s side (via the abstract `splitY`) while directly refining
-`D₁`'s side. Literally `(xyStep splitY _ _ _ _).swap`; `yStep D₀ hD₀nomin = yStepG (splitChoice' D₀
-hD₀nomin)`. -/
+
 noncomputable def yStepG (splitY : Set β → Set α → Set β → Set α × Set α)
     (A1 : Set α) (B1 : Set β) (Yn : Set β) (b : Bool) : Set α × Set β :=
   (xyStep splitY B1 A1 Yn b).swap
@@ -985,10 +896,7 @@ section StepGen
 
 variable {α β : Type*}
 
-/-- **`yStepG`'s two split-side outputs reunion to exactly the split's own input `A1`**: from
-`SplitSpec'`'s unconditional `(split A B Xn).1 ∪ (split A B Xn).2 = B` field (here with `B := A1`,
-`A := B1`, matching `yStepG`'s `.swap`-ed argument order). Needed for **8.12(d)(4)(c)(i)**'s
-one-step 4-way reunion (the `b2`-level half). -/
+
 theorem fst_union {D₀ : NeighborhoodSystem α}
     {splitY : Set β → Set α → Set β → Set α × Set α} (hySplit : SplitSpec' D₀ splitY)
     {A1 : Set α} {B1 : Set β} (hBA : B1 = ∅ ↔ A1 = ∅) (hAmem : A1 = ∅ ∨ D₀.mem A1) (Yn : Set β) :
@@ -1019,11 +927,7 @@ section StepGen
 
 variable {α β : Type*}
 
-/-- **`yStepG`'s two direct-refine outputs reunion to exactly its own input `B1`**: the trivial
-two-set identity `(B1 ∩ Yn) ∪ (B1 \ Yn) = B1`, restated through `yStepG`'s `.2` (the `.swap`-ed
-direct-refine side, on `D₁`'s side). Needed for **8.12(d)(4)(d)(i)**'s one-step 4-way reunion (the
-`D₁`-side mirror of `xStepG.fst_union`'s `b1`-level half); no `SplitSpec'` hypotheses needed, exactly
-like `xStepG.fst_union`. -/
+
 theorem snd_union (splitY : Set β → Set α → Set β → Set α × Set α)
     (A1 : Set α) (B1 : Set β) (Yn : Set β) :
     (yStepG splitY A1 B1 Yn true).2 ∪ (yStepG splitY A1 B1 Yn false).2 = B1 := by
@@ -1046,8 +950,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hxSplit : SplitSpec' D₁ splitX)
   (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
 
-/-- **Generalized `atomPair`**, taking the split functions directly instead of deriving them from
-`NoMinimal` witnesses. -/
+
 noncomputable def atomPairG (δ : ℕ → Bool × Bool) : ℕ → Set α × Set β
   | 0 => (D₀.master, D₁.master)
   | (n + 1) =>
@@ -1082,7 +985,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
 omit hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne in
-/-- Extending/changing `δ` at or beyond position `n` does not change `atomPairG δ n`. -/
+
 theorem congr {δ δ' : ℕ → Bool × Bool} {n : ℕ} (h : ∀ i < n, δ i = δ' i) :
     atomPairG D₀ D₁ splitY splitX X Y δ n = atomPairG D₀ D₁ splitY splitX X Y δ' n := by
   induction n with
@@ -1129,7 +1032,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
-/-- **The core invariant, generalized.** Direct transcription of `atomPair.invariant`. -/
+
 theorem invariant (δ : ℕ → Bool × Bool) :
     ∀ n, ((atomPairG D₀ D₁ splitY splitX X Y δ n).1 = ∅ ↔
         (atomPairG D₀ D₁ splitY splitX X Y δ n).2 = ∅) ∧
@@ -1223,14 +1126,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
-/-- **8.12(d)(4)(c)(i): the one-step 4-way classical reunion.** Ranging over all four
-`(b1, b2) : Bool × Bool` sign choices at depth `n`, the resulting depth-`(n+1)` `D₀`-pieces
-reunion to *exactly* the depth-`n` parent's `D₀`-piece — the algebraic core of the covering
-argument closing `XPseqCode`'s deferred unconditional-"found" gap (`(d)(4)(c)`'s nested sub-goals).
-Two facts chained: `xStepG.fst_union` at the `b1`-level (no hypotheses needed) and `yStepG.fst_union`
-at the `b2`-level (needs `xStepG`'s output to satisfy `SplitSpec'`'s preconditions, supplied by the
-same case analysis `xStepG.spec` already does, inlined here since `xStepG.spec` itself is hardcoded
-to `(δ n).1` rather than a free `b1`). -/
+
 theorem fst_union_step (δ : ℕ → Bool × Bool) (n : ℕ) :
     ((yStepG splitY (xStepG splitX (atomPairG D₀ D₁ splitY splitX X Y δ n).1
           (atomPairG D₀ D₁ splitY splitX X Y δ n).2 (X n) true).1
@@ -1283,15 +1179,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
-/-- **8.12(d)(4)(c)(ii): classical covering induction.** The classical `atomPairG` pieces at depth
-`n`, ranged over all sign-histories `δ' : Fin n → Bool × Bool` (padded to `ℕ → Bool × Bool` via
-`extendTruePair`), cover `D₀.master`. Induction on `n` chaining `atomPairG.fst_union_step` at every
-step; base case `n = 0` is trivial (`atomPairG _ 0 = (D₀.master, D₁.master)`, one piece covering
-itself). The successor step extends a covering history `δ'₀ : Fin n → Bool × Bool` for `z` by one
-more `(b1, b2) : Bool × Bool` bit via the usual `Function.update`-based device (`extendTruePair
-δ'₀` updated at `n`, then `restrictFinPair`'d back down to `Fin (n + 1) → Bool × Bool`; mirrors
-`Exercise812c.lean`'s `xStep.spec_bit`/`yStep.fst_eq_inter_YPseq` proofs), picking whichever of the
-four `atomPairG.fst_union_step` branches `z` actually landed in. -/
+
 theorem master_covered (n : ℕ) :
     ∀ z ∈ D₀.master, ∃ δ' : Fin n → Bool × Bool,
       z ∈ (atomPairG D₀ D₁ splitY splitX X Y (extendTruePair δ') n).1 := by
@@ -1344,11 +1232,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne in
-/-- **8.12(d)(4)(c)(iii): transporting the covering fact to a `deltaPair`-indexed one.** Combines
-`(c)(ii)`'s `atomPairG.master_covered` (covering by `Fin n → Bool × Bool` histories) with
-`encodeDeltaPair`/`deltaPair.encodeDeltaPair` (realizing any such history, padded via
-`extendTruePair`, as a genuine bit-source) and `atomPairG.congr` (depth-`n` value depends only on
-history strictly below `n`) to land on exactly the indexing `XPseqCode`'s fold uses. -/
+
 theorem master_covered_deltaPair (n : ℕ) :
     ∀ z ∈ D₀.master, ∃ i < 4 ^ n, z ∈ (atomPairG D₀ D₁ splitY splitX X Y (deltaPair i) n).1 := by
   intro z hz
@@ -1376,16 +1260,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
-/-- **8.12(d)(4)(d)(i): the one-step 4-way classical reunion, `D₁`-side.** The `D₁`-side mirror of
-`atomPairG.fst_union_step`: ranging over all four `(b1, b2) : Bool × Bool` sign choices at depth
-`n`, the resulting depth-`(n+1)` `D₁`-pieces reunion to *exactly* the depth-`n` parent's `D₁`-piece.
-Genuinely *simpler* to prove than the `D₀`-side version: here the *inner* (`b2`-level) collapse is
-the hypothesis-free one (`yStepG.snd_union`, `D₁`'s side is `yStep`'s own direct-refine side) and
-the *outer* (`b1`-level) collapse is the one needing `hxSplit` (`xStepG.snd_union`, `D₁`'s side is
-`xStep`'s split side) — exactly the reverse pairing from the `D₀`-side proof, so no per-branch
-`have`s (`hBAtrue`/`hAmemtrue`/etc.) are needed at all: `yStepG.snd_union` takes no `SplitSpec'`
-hypotheses, so both inner collapses are immediate rewrites, leaving only the outer `xStepG.snd_union`
-call. -/
+
 theorem snd_union_step (δ : ℕ → Bool × Bool) (n : ℕ) :
     ((yStepG splitY (xStepG splitX (atomPairG D₀ D₁ splitY splitX X Y δ n).1
           (atomPairG D₀ D₁ splitY splitX X Y δ n).2 (X n) true).1
@@ -1431,14 +1306,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
-/-- **8.12(d)(4)(d)(ii): classical covering induction, `D₁`-side.** The `D₁`-side mirror of
-`atomPairG.master_covered`: the classical `atomPairG` pieces at depth `n`, ranged over all
-sign-histories `δ' : Fin n → Bool × Bool` (padded via `extendTruePair`), cover `D₁.master`. Verbatim
-transcription of `atomPairG.master_covered`'s proof with `.1`→`.2`, `D₀.master`→`D₁.master`, and
-`atomPairG.fst_union_step`→`atomPairG.snd_union_step`: induction on `n`, base case trivial
-(`atomPairG _ 0 = (D₀.master, D₁.master)`), successor step extending a covering history by one more
-`(b1, b2)` bit via the same `Function.update`/`restrictFinPair` device, picking whichever of the
-four `atomPairG.snd_union_step` branches `z` landed in. -/
+
 theorem master_covered_snd (n : ℕ) :
     ∀ z ∈ D₁.master, ∃ δ' : Fin n → Bool × Bool,
       z ∈ (atomPairG D₀ D₁ splitY splitX X Y (extendTruePair δ') n).2 := by
@@ -1491,15 +1359,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne in
-/-- **8.12(d)(4)(d)(iii): transporting the covering fact to a `deltaPair`-indexed one, `D₁`-side.**
-The `D₁`-side mirror of `atomPairG.master_covered_deltaPair`: combines `(d)(ii)`'s
-`atomPairG.master_covered_snd` (covering by `Fin n → Bool × Bool` histories) with
-`encodeDeltaPair`/`deltaPair.encodeDeltaPair` (realizing any such history, padded via
-`extendTruePair`, as a genuine bit-source) and `atomPairG.congr` to land on exactly the indexing
-`YPseqCode`'s fold uses. Verbatim transcription of `atomPairG.master_covered_deltaPair`'s proof,
-swapping `.1`→`.2`, `D₀.master`→`D₁.master`, `atomPairG.master_covered`→`atomPairG.master_covered_snd`
-— no new base-4 encoding needed, since `encodeDeltaPair`/`deltaPair` are already symmetric in
-`.1`/`.2`. -/
+
 theorem master_covered_deltaPair_snd (n : ℕ) :
     ∀ z ∈ D₁.master, ∃ i < 4 ^ n, z ∈ (atomPairG D₀ D₁ splitY splitX X Y (deltaPair i) n).2 := by
   intro z hz
@@ -1531,7 +1391,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
-/-- **`xStepG`'s output satisfies the preconditions `yStepG` needs**, generalizing `xStep.spec`. -/
+
 theorem spec (δ : ℕ → Bool × Bool) (n : ℕ) :
     ((xStepG splitX (atomPairG D₀ D₁ splitY splitX X Y δ n).1
         (atomPairG D₀ D₁ splitY splitX X Y δ n).2 (X n) (δ n).1).2 = ∅ ↔
@@ -1575,7 +1435,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
-/-- **`atomPairG`'s `α`-side only shrinks from depth `n` to `n + 1`.** -/
+
 theorem fst_subset (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPairG D₀ D₁ splitY splitX X Y δ (n + 1)).1 ⊆
       (atomPairG D₀ D₁ splitY splitX X Y δ n).1 := by
@@ -1602,7 +1462,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
-/-- **`atomPairG`'s `α`-side is always `⊆ D₀.master`.** -/
+
 theorem fst_subset_master (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPairG D₀ D₁ splitY splitX X Y δ n).1 ⊆ D₀.master := by
   induction n with
@@ -1627,7 +1487,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
-/-- **`atomPairG`'s `β`-side only shrinks from depth `n` to `n + 1`.** -/
+
 theorem snd_subset (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPairG D₀ D₁ splitY splitX X Y δ (n + 1)).2 ⊆
       (atomPairG D₀ D₁ splitY splitX X Y δ n).2 := by
@@ -1654,8 +1514,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
-/-- **Pairwise disjointness of `atomPairG` on both sides at once**, generalizing
-`atomPair.disjoint`. -/
+
 theorem disjoint (δ δ' : ℕ → Bool × Bool) :
     ∀ n, (∃ i < n, δ i ≠ δ' i) →
       (atomPairG D₀ D₁ splitY splitX X Y δ n).1 ∩
@@ -1750,7 +1609,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
 
-/-- **`atomPairG`'s `β`-side is always `⊆ D₁.master`**. -/
+
 theorem snd_subset_master (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPairG D₀ D₁ splitY splitX X Y δ n).2 ⊆ D₁.master := by
   induction n with
@@ -1772,9 +1631,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hDiff1 : IsComputableDiff P₁)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- **The `Y`-sub-step.** Symmetric to `xSubStep`: refines `D₁`'s side (`idx1`) directly against
-`P₁.X n`, and `D₀`'s side (`idx0`) via the matching branch of the split `hSplitY`. Same packed
-argument convention `w = pair n (pair b2 s)`. -/
+
 noncomputable def ySubStep (w : ℕ) : ℕ :=
   let n := xwN w
   let b2 := xwB1 w
@@ -1872,7 +1729,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₁pos hD₁nomin hD₁diff hySplit in
-/-- **The `Y`-sub-step matches `yStepG` exactly**, symmetric to `xSubStep.correct`. -/
+
 theorem correct {s n : ℕ} {A : Set α} {B : Set β}
     (hA : P₀.X (stateIdx0 s) = A) (hB : P₁.X (stateIdx1 s) = B)
     (hBA : B = ∅ ↔ A = ∅) (hAmem : A = ∅ ∨ D₀.mem A) (b : Bool)
@@ -1927,9 +1784,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- Extract the depth `n` from the *outer* packed argument `w = pair k (pair n state)` (the
-bit-source `k` itself is unused inside `atomPairStep`'s body — it is only threaded through by the
-shape of `Nat.Primrec.prec`, exactly as `Theorem88d.lean`'s own `k` is unused inside `atomStep`). -/
+
 def pcN (w : ℕ) : ℕ := xwB1 w
 
 end AtomPairCode
@@ -1944,7 +1799,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- Extract the current packed `(rem, s)` state from `w = pair k (pair n state)`. -/
+
 def pcT (w : ℕ) : ℕ := xwS w
 
 end AtomPairCode
@@ -1959,10 +1814,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- **The full per-depth step**: one `xSubStep` (bit `rem % 2`) followed by one `ySubStep` (bit
-`(rem / 2) % 2`) at the same depth `n`, then peel both consumed bits from `rem` (`rem / 4`).
-Packed-argument convention `w = pair k (pair n state)`, mirroring `Theorem88d.lean`'s `atomStep`
-convention `w = pair k (pair y state)`. -/
+
 noncomputable def atomPairStep (w : ℕ) : ℕ :=
   let n := pcN w
   let T := pcT w
@@ -1986,9 +1838,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- **`atomPairCodeState`, the full recursion.** `atomPairCodeState (pair k n)` is the depth-`n`
-packed state for bit-source `k` (whose bits `(k / 4ʸ) % 2`/`((k / 4ʸ) / 2) % 2` supply `(δ y).1`/
-`(δ y).2` at every depth `y < n`) — mirroring `Theorem88d.lean`'s `atomUCodeState` exactly. -/
+
 noncomputable def atomPairCodeState (t : ℕ) : ℕ :=
   t.unpair.2.rec (atomPairBase P₀ P₁ t.unpair.1) (fun y IH =>
     atomPairStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
@@ -2009,7 +1859,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- **Unfolding `atomPairCodeState` one step.** -/
+
 theorem succ (k n : ℕ) :
     atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY (Nat.pair k (n + 1)) =
       atomPairStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
@@ -2033,7 +1883,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- **The depth-`n` shared junk flag**, for bit-source `k` (`1` iff both sides are already `∅`). -/
+
 noncomputable def atomPairJunk (n k : ℕ) : ℕ :=
   stateJunk (stateInnerC (atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
     (Nat.pair k n)))
@@ -2060,8 +1910,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
   (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
 
-/-- **The depth-`0` state is never junk**, for any bit-source `k`: `atomPairCodeState`'s own base
-clause (`stateBase2`) hardcodes junk `0`, regardless of `k`. -/
+
 theorem zero (k : ℕ) :
     atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY 0 k = 0 := by
   unfold atomPairJunk
@@ -2079,10 +1928,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- **`atomPairJunk` propagates**: once a bit-source's depth-`(n+1)` state is non-junk, its
-depth-`n` state already was (the contrapositive of "junk is frozen forever", a one-step algebraic
-fact needing no induction: `xSubStep`/`ySubStep` both force their *output* junk flag to `1`
-whenever their *input* junk flag already was, via `selectFn junk 1 _`). -/
+
 theorem eq_zero_of_succ {k n : ℕ}
     (h : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY (n + 1) k = 0) :
     atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k = 0 := by
@@ -2112,10 +1958,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hySplit : SplitSpec' D₀ splitY)
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
-/-- **`atomPairJunk` is always `0` or `1`** (never any other natural number), by induction through
-the nested `selectFn`s: the base case is the literal `0` of `stateBase2`, and each step is a chain
-of `selectFn.le_one` applications — the outer flag bounded by the outer induction hypothesis, the
-inner emptiness deciders bounded by `emptyInterDec.le_one`/`emptyDiffDec.le_one`. -/
+
 theorem le_one (k n : ℕ) :
     atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k ≤ 1 := by
   induction n with
@@ -2141,10 +1984,7 @@ end
 end atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-/-- **Contrapositive form**: two distinct bit-sources both `< 4 ^ n` must disagree somewhere below
-`n` — the form actually consumed by `(d)(5)(b)`'s I-formula lemmas (ruling out cross-terms from a
-*different* bit-source witnessing the same point). Inlines the former
-`eq_of_deltaPair_agree_of_lt_four_pow` scaffold. -/
+
 theorem exists_deltaPair_ne_of_lt_of_ne {n k k' : ℕ} (hk : k < 4 ^ n) (hk' : k' < 4 ^ n)
     (hne : k ≠ k') : ∃ i < n, deltaPair k i ≠ deltaPair k' i := by
   by_contra hcon
@@ -2183,14 +2023,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hD₀nomin : D₀.NoMinimal)
 
 include hD₀pos hD₀diff hxSplit hD₁pos hD₁diff hySplit hD₀mne hD₁mne hD₀nomin in
-/-- **8.12(d)(4)(c)(iv): non-trivial intersection with `P₀.X n`, still classical.** Combines
-`(c)(iii)`'s `atomPairG.master_covered_deltaPair` with `P₀.X n ⊆ D₀.master` (`sub_master`) and
-`P₀.X n ≠ ∅` (fresh here: `hD₀nomin.mem_ne_empty`, the one place in `(d)(4)(c)`'s whole closure that
-needs `NoMinimal` itself, rather than just `SplitSpec'`/`IsPositive`/`DiffClosed` — `(d)(1)`'s
-generalized layer deliberately dropped `NoMinimal`, but this specific fact ("every genuine
-neighbourhood, not just the master, is non-empty") has no substitute among the weaker hypotheses).
-Picks any `z ∈ P₀.X n` (exists by the above), lands it in some covering piece via `(c)(iii)`, and
-that piece's `i` is exactly the witness. -/
+
 theorem exists_atomPairG_deltaPair_inter_Xn_ne_empty (n : ℕ) :
     ∃ i < 4 ^ n, (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).1 ∩ P₀.X n ≠ ∅ := by
   obtain ⟨z, hz⟩ := Set.nonempty_iff_ne_empty.mpr (hD₀nomin.mem_ne_empty (P₀.mem_X n))
@@ -2215,13 +2048,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hD₁nomin : D₁.NoMinimal)
 
 include hD₀pos hD₀diff hxSplit hD₁pos hD₁diff hySplit hD₀mne hD₁mne hD₁nomin in
-/-- **8.12(d)(4)(d)(iv): non-trivial intersection with `P₁.X n`, still classical, `D₁`-side.** The
-`D₁`-side mirror of `(c)(iv)`'s `exists_atomPairG_deltaPair_inter_Xn_ne_empty`: combines `(d)(iii)`'s
-`atomPairG.master_covered_deltaPair_snd` with `P₁.X n ⊆ D₁.master` (`sub_master`) and `P₁.X n ≠ ∅`
-(fresh `hD₁nomin.mem_ne_empty`, the `D₁`-side analogue of `(c)(iv)`'s one genuinely new hypothesis).
-Picks any `z ∈ P₁.X n` (exists by the above), lands it in some covering piece via `(d)(iii)`, and
-that piece's `i` is exactly the witness. Note this alone doesn't fix the `bx` bit `YPseqCode`'s fold
-also needs — that's resolved only in `(d)(vi)`. -/
+
 theorem exists_atomPairG_deltaPair_inter_Yn_ne_empty (n : ℕ) :
     ∃ i < 4 ^ n, (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).2 ∩ P₁.X n ≠ ∅ := by
   obtain ⟨z, hz⟩ := Set.nonempty_iff_ne_empty.mpr (hD₁nomin.mem_ne_empty (P₁.mem_X n))
@@ -2242,7 +2069,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- **The depth-`n` `D₀`-side index**, for bit-source `k`. -/
+
 noncomputable def atomPairIdx0 (n k : ℕ) : ℕ :=
   stateIdx0 (stateInnerC (atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
     (Nat.pair k n)))
@@ -2259,7 +2086,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- **The depth-`n` `D₁`-side index**, for bit-source `k`. -/
+
 noncomputable def atomPairIdx1 (n k : ℕ) : ℕ :=
   stateIdx1 (stateInnerC (atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
     (Nat.pair k n)))
@@ -2278,12 +2105,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hUnion1 : IsComputableUnion P₁)
 
-/-- **The `X`-side half-step atom's packed state** at depth `n`, index `i` (`i` playing the role of
-a length-`n` prefix of sign-pairs, via its own base-4 digits, matching `(d)(3)(d)`'s `deltaPair`
-convention): re-run `xSubStep` on the depth-`n` two-sided state at bit-source `i`, with the
-`X`-sub-step's own bit forced to `1` — the `"+"`/`true` branch `XPseq`'s classical definition
-(`Exercise812c.lean`) always selects, regardless of what the *paired* direct-refinement of the
-`D₀`-side would otherwise do with a different bit. -/
+
 noncomputable def xPseqAtomState (n i : ℕ) : ℕ :=
   xSubStep P₀ P₁ hDiff0 splitX hSplitX (Nat.pair n (Nat.pair 1
     (packState2 (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)
@@ -2304,11 +2126,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
   (hUnion0 : IsComputableUnion P₀)
 
-/-- **The `Y`-side half-step atom's packed state** at depth `n`, index `i`, and free `X`-sub-step
-bit `bx`: run `xSubStep` first at bit `bx` (arbitrary — `YPseq`'s classical definition
-(`Exercise812c.lean`) unions over *both* `δ' : Fin n → Bool × Bool` and a free `bx : Bool` for
-position `n`'s own `X`-sub-step bit, since `yStep`'s own inputs already depend on it), then
-`ySubStep` with its own bit forced to `1` (the `"+"`/`true` branch). -/
+
 noncomputable def yPseqAtomState (n i bx : ℕ) : ℕ :=
   ySubStep P₀ P₁ hDiff1 splitY hSplitY (Nat.pair n (Nat.pair 1
     (xSubStep P₀ P₁ hDiff0 splitX hSplitX (Nat.pair n (Nat.pair bx
@@ -2331,7 +2149,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- The unconsumed bit-source at depth `n` is exactly `k / 4 ^ n` (peeling two bits per depth). -/
+
 theorem atomPairCodeState (k n : ℕ) :
     stateRemC (_root_.DomainTheory.NeighbourhoodSystems.atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
       (Nat.pair k n)) = k / 4 ^ n := by
@@ -2365,10 +2183,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **Per-step correctness against `atomPairG`** (the two-sided analogue of `Theorem88d.lean`'s
-`genAtom_atomUCode`): whenever depth `n`'s recorded state (for bit-source `k`) is non-junk, its
-packed `D₀`-side/`D₁`-side indices literally index `atomPairG`'s depth-`n` component,
-instantiated at `X := P₀.X`, `Y := P₁.X`, `δ := deltaPair k`. -/
+
 theorem correct (k n : ℕ)
     (hjunk : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k = 0) :
     P₀.X (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k) =
@@ -2443,10 +2258,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **Disjointness at the code level**: two bit-sources `k`/`k'` disagreeing (via `deltaPair`)
-somewhere below depth `n`, with *both* recorded states still non-junk at `n`, index disjoint sets
-on both the `D₀`-side and the `D₁`-side. Immediate from `atomPairCodeState.correct` (rewriting both
-sides' indexed sets as `atomPairG` components) plus `atomPairG.disjoint` (from `(d)(1)`). -/
+
 theorem disjoint {n k k' : ℕ}
     (hk : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k = 0)
     (hk' : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k' = 0)
@@ -2485,15 +2297,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **8.12(d)(4)(c)(v): the converse-biconditional.** Once a bit-source `i`'s recorded state at
-depth `n` is genuinely junk, the classical `atomPairG`-component at that depth is already `∅` (the
-`D₀`-side; contrapositive-equivalent to `(atomPairG ... n).1 ≠ ∅ → atomPairJunk n i = 0`). Proved
-by induction on `n`: a junk state at depth `n + 1` either (i) was *already* junk at depth `n` (the
-induction hypothesis, then propagated forward via `atomPairG.fst_subset`), or (ii) is *freshly*
-created at this very step by exactly one of the two half-steps' direct-refine checks tripping —
-the `X`-sub-step's check trips the `D₀`-side directly (mirrored onto `atomPairG`'s own `A1`, then
-propagated to `A2` via `yStepG.fst_subset`), or the `Y`-sub-step's check trips the `D₁`-side
-directly (`B2`, transferred to the `D₀`-side via `atomPairG.invariant`'s dichotomy at `n + 1`). -/
+
 theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
     atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 1 →
       (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).1 = ∅ := by
@@ -2509,7 +2313,7 @@ theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
     intro hjunk1
     rcases Nat.eq_zero_or_pos (atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)
       with hn0 | hnpos
-    · -- freshly junk at this step: chase the per-step algebra
+    ·
       obtain ⟨hidx0, hidx1⟩ := atomPairCodeState.correct P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
         hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne i n
         hn0
@@ -2540,7 +2344,6 @@ theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
       rw [hb1, hb2] at hjunk1
       rw [ySubStep.junk_eq] at hjunk1
       rw [xSubStep.junk_eq, hn0, selectFn_zero] at hjunk1
-      -- `hjunk1 : selectFn xcheck 1 ycheck = 1`, `xcheck`/`ycheck` the two direct-refine checks
       have hb1le : (if (deltaPair i n).1 then (1 : ℕ) else 0) ≤ 1 := by
         rcases Bool.eq_false_or_eq_true (deltaPair i n).1 with h | h <;> simp [h]
       have hxle : selectFn (if (deltaPair i n).1 then 1 else 0)
@@ -2550,7 +2353,7 @@ theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
       rcases Nat.eq_zero_or_pos (selectFn (if (deltaPair i n).1 then 1 else 0)
           (emptyInterDec P₀ (Nat.pair (stateIdx0 (stateInnerC T)) n))
           (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n))) with hx0 | hxpos
-      · -- the `X`-sub-step's check didn't trip: it's genuinely non-junk, so chase the `Y`-check
+      ·
         rw [hx0, selectFn_zero] at hjunk1
         have hxnonjunk : stateJunk (xSubStep P₀ P₁ hDiff0 splitX hSplitX
             (Nat.pair n (Nat.pair (if (deltaPair i n).1 then 1 else 0) (stateInnerC T)))) = 0 := by
@@ -2576,7 +2379,7 @@ theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
             exact hBe
         exact (atomPairG.invariant D₀ D₁ hD₀pos hD₀diff splitY hySplit hD₁pos hD₁diff splitX
           hxSplit P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deltaPair i) (n + 1)).1.mpr hB2
-      · -- the `X`-sub-step's check tripped: the direct-refine component is already `∅`
+      ·
         have hx1 : selectFn (if (deltaPair i n).1 then 1 else 0)
             (emptyInterDec P₀ (Nat.pair (stateIdx0 (stateInnerC T)) n))
             (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n)) = 1 := by omega
@@ -2600,7 +2403,7 @@ theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
         rw [atomPairG.succ_eq]
         exact Set.subset_eq_empty
           (yStepG.fst_subset hySplit hspecAB hspecAmem (P₁.X n) (deltaPair i n).2) hA1eq
-    · -- already junk at depth `n`: propagate forward
+    ·
       have hn1 : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 1 := by
         have := atomPairJunk.le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY i n
         omega
@@ -2625,24 +2428,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **8.12(d)(4)(d)(v): the converse-biconditional, `D₁`-side.** The `D₁`-side mirror of
-`atomPairG.fst_eq_empty_of_junk_eq_one` — but **not** a naive `.1`↔`.2` transcription: the two
-per-step sub-cases' roles *swap* relative to the `D₀`-side proof. A junk state at depth `n + 1`
-either (i) was already junk at depth `n` (propagated forward via `atomPairG.snd_subset`), or
-(ii) freshly created this step, splitting on the exact same `xcheck`/`ycheck` decomposition
-(`selectFn xcheck 1 ycheck = 1`, tied to `P₀`/`A1` and `P₁`/`B2` respectively, shared verbatim with
-the `D₀`-side proof — the underlying per-step algebra doesn't know which side we're targeting):
-**`xcheck = 0`** (`X`-sub-step non-junk) — the *`Y`-sub-step's own direct-refine check* trips the
-`D₁`-side (`B2`) *directly*, and since `B2` **is** this branch's target, **no
-`atomPairG.invariant` hop is needed** (unlike the `D₀`-side proof, where this same branch's direct
-trigger is `B2` but the target is `A2`, needing the invariant to hop across). **`xcheck = 1`**
-(`X`-sub-step's own check trips) — this gives `A1 = ∅` directly (identical derivation to the
-`D₀`-side proof), but now the target `B2` needs a hop *from* `A1` *to* `B1` via `xStepG.spec`'s own
-half-step biconditional `hspecAB` (not the depth-crossing `atomPairG.invariant` — this is a purely
-local one-step fact, already in scope), then propagates via the *trivial* `yStepG.snd_subset` (no
-`SplitSpec'` hypotheses needed at all) rather than the `D₀`-side's `SplitSpec'`-needing
-`yStepG.fst_subset`. Net effect: this `D₁`-side proof needs `atomPairG.invariant` in *neither*
-branch, genuinely simpler than `(c)(v)`'s own proof. -/
+
 theorem snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
     atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 1 →
       (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).2 = ∅ := by
@@ -2658,7 +2444,7 @@ theorem snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
     intro hjunk1
     rcases Nat.eq_zero_or_pos (atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)
       with hn0 | hnpos
-    · -- freshly junk at this step: chase the per-step algebra (identical unfolding to `(c)(v)`)
+    ·
       obtain ⟨hidx0, hidx1⟩ := atomPairCodeState.correct P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
         hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne i n
         hn0
@@ -2689,7 +2475,6 @@ theorem snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
       rw [hb1, hb2] at hjunk1
       rw [ySubStep.junk_eq] at hjunk1
       rw [xSubStep.junk_eq, hn0, selectFn_zero] at hjunk1
-      -- `hjunk1 : selectFn xcheck 1 ycheck = 1`, `xcheck`/`ycheck` the two direct-refine checks
       have hb1le : (if (deltaPair i n).1 then (1 : ℕ) else 0) ≤ 1 := by
         rcases Bool.eq_false_or_eq_true (deltaPair i n).1 with h | h <;> simp [h]
       have hxle : selectFn (if (deltaPair i n).1 then 1 else 0)
@@ -2699,7 +2484,7 @@ theorem snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
       rcases Nat.eq_zero_or_pos (selectFn (if (deltaPair i n).1 then 1 else 0)
           (emptyInterDec P₀ (Nat.pair (stateIdx0 (stateInnerC T)) n))
           (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n))) with hx0 | hxpos
-      · -- `xcheck = 0`: `X`-sub-step non-junk, chase the `Y`-check — hits `B2` *directly*
+      ·
         rw [hx0, selectFn_zero] at hjunk1
         have hxnonjunk : stateJunk (xSubStep P₀ P₁ hDiff0 splitX hSplitX
             (Nat.pair n (Nat.pair (if (deltaPair i n).1 then 1 else 0) (stateInnerC T)))) = 0 := by
@@ -2722,8 +2507,7 @@ theorem snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
           rw [hxB1] at hBe
           simp only [yStepG, xyStep, Prod.swap, hδ2, Bool.false_eq_true, ite_false]
           exact hBe
-      · -- `xcheck = 1`: the `A1`-check tripped; hop to `B1` via `xStepG.spec`'s local biconditional,
-        -- then propagate via the trivial `yStepG.snd_subset` (no `SplitSpec'` needed)
+      ·
         have hx1 : selectFn (if (deltaPair i n).1 then 1 else 0)
             (emptyInterDec P₀ (Nat.pair (stateIdx0 (stateInnerC T)) n))
             (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n)) = 1 := by omega
@@ -2747,7 +2531,7 @@ theorem snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
         rw [atomPairG.succ_eq]
         exact Set.subset_eq_empty
           (yStepG.snd_subset splitY _ _ (P₁.X n) (deltaPair i n).2) (hspecAB.mpr hA1eq)
-    · -- already junk at depth `n`: propagate forward
+    ·
       have hn1 : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 1 := by
         have := atomPairJunk.le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY i n
         omega
@@ -2776,9 +2560,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **The contrapositive form, `D₁`-side.** The exact `D₁`-side analogue of
-`atomPairJunk.eq_zero_of_ne_empty`: a non-empty classical `D₁`-side component forces the recorded
-state to be non-junk. -/
+
 theorem eq_zero_of_snd_ne_empty {i n : ℕ}
     (h : (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).2 ≠ ∅) :
     atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 0 := by
@@ -2806,8 +2588,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
   (hUnion0 : IsComputableUnion P₀)
 
-/-- The half-step atom's `D₀`-side index (`ySubStep`'s `"+"`/pos branch is the *split* side, since
-`ySubStep` refines `D₁` directly and `D₀` via `hSplitY`). -/
+
 noncomputable def yPseqAtomIdx (n i bx : ℕ) : ℕ :=
   stateIdx0 (yPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx)
 
@@ -2828,7 +2609,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
   (hUnion0 : IsComputableUnion P₀)
 
-/-- **The half-step atom is always genuine** on `D₀`'s side, regardless of junk status. -/
+
 theorem mem (n i bx : ℕ) :
     D₀.mem (P₀.X (yPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx)) :=
   P₀.mem_X _
@@ -2850,7 +2631,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
   (hUnion0 : IsComputableUnion P₀)
 
-/-- The half-step atom's junk flag. -/
+
 noncomputable def yPseqAtomJunk (n i bx : ℕ) : ℕ :=
   stateJunk (yPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx)
 
@@ -2918,15 +2699,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion0 : IsComputableUnion P₀)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **The half-step-`bx` atom is non-junk, given the classical split piece meets `P₁.X n`.** The
-one-bit-generic engine behind `yPseqAtomJunk.exists_zero`: given the incoming depth-`n` state is
-non-junk (`hjunk0`) and, for a *chosen* bit `b`, both the direct-refine piece `A1(b) ≠ ∅` (`hne`)
-and the split piece meets `P₁.X n` non-trivially (`hinter`), the half-step atom
-`yPseqAtomJunk n i (if b then 1 else 0)` is `0`. Chases `xSubStep`'s own junk formula down to
-`emptyInterDec`/`emptyDiffDec` (`P₀`-side, from `hne` via `atomPairCodeState.correct`'s forward
-identification) to get `xSubStep`'s output non-junk, then `xSubStep.correct` to identify its
-`D₁`-side index with the classical split piece, then the same `emptyInterDec` reading (`P₁`-side,
-from `hinter`) collapses `ySubStep`'s own forced-`"+"` junk check to `0`. -/
+
 theorem eq_zero_of_bit {i n : ℕ}
     (hjunk0 : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 0) (b : Bool)
     (hne : (xStepG splitX (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).1
@@ -3012,12 +2785,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion0 : IsComputableUnion P₀)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **8.12(d)(4)(d)(vi), step 1: the unconditional "found" existential, doubled over `bx`.**
-Combines `(d)(iv)`'s `exists_atomPairG_deltaPair_inter_Yn_ne_empty` with `xStepG.snd_union`
-(`(d)(i)`) to locate a bit `bx ∈ {0, 1}` whose split piece meets `P₁.X n`, the `SplitSpec'`-level
-dichotomy (`hxSplit`, applied directly rather than via the depth-crossing `atomPairG.invariant`)
-to promote that to the direct-refine piece being non-empty, and
-`yPseqAtomJunk.eq_zero_of_bit` to land the half-step atom's junk flag at `0`. -/
+
 theorem exists_zero (n : ℕ) :
     ∃ i < 4 ^ n, ∃ bx ≤ 1,
       yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx = 0 := by
@@ -3086,11 +2854,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hUnion0 : IsComputableUnion P₀)
 
-/-- **The half-step-`bx` atom's junk flag propagates back to `atomPairJunk`** (any `bx`, any
-`b`-choice at the outer `y`-sub-step, which is always forced to `1` inside `yPseqAtomState`): the
-`Y`-side twin of the chase already inlined inside `yPseqAtomJunk.eq_zero_of_bit`, factored out here
-since the I-formula below needs it independently at *two* different bit-sources. Needs no
-`SplitSpec'`/`IsPositive`-style hypotheses at all — purely a `selectFn`-unfolding fact. -/
+
 theorem eq_zero_of_yPseqAtomJunk {n i : ℕ} (b : Bool)
     (hjunk : yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i
       (if b then 1 else 0) = 0) :
@@ -3131,8 +2895,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **The contrapositive form**, matching `(d)(4)(c)`'s originally-flagged gap statement exactly:
-a non-empty classical `D₀`-side component forces the recorded state to be non-junk. -/
+
 theorem eq_zero_of_ne_empty {i n : ℕ}
     (h : (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).1 ≠ ∅) :
     atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 0 := by
@@ -3160,8 +2923,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hUnion1 : IsComputableUnion P₁)
 
-/-- The half-step atom's junk flag (`1` iff the incoming depth-`n` state was already junk, or its
-`D₀`-side direct-refine against `P₀.X n` is itself empty). -/
+
 noncomputable def xPseqAtomJunk (n i : ℕ) : ℕ :=
   stateJunk (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)
 
@@ -3248,15 +3010,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion1 : IsComputableUnion P₁)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **8.12(d)(4)(c)(vi), step 1: the unconditional "found" existential.** Combines
-`exists_atomPairG_deltaPair_inter_Xn_ne_empty` (some bit-source `i < 4ⁿ` whose depth-`n` `D₀`-side
-classical piece meets `P₀.X n`) with `atomPairJunk.eq_zero_of_ne_empty` (a non-empty classical
-piece forces its recorded state non-junk) and `atomPairCodeState.correct`'s forward half (rewriting
-the now-known-non-junk classical piece as the code-indexed `P₀.X (atomPairIdx0 ...)`) to land the
-non-trivial intersection at the *code* level, `P₀.X (atomPairIdx0 ... n i) ∩ P₀.X n ≠ ∅`. Reading
-this off `emptyInterDec`'s converse (`emptyInterDec.eq_one_iff`, contrapositive via
-`emptyInterDec.le_one`) gives exactly `emptyInterDec P₀ (atomPairIdx0 ... n i, n) = 0`, which is
-`xPseqAtomJunk.eq`'s defining condition once `atomPairJunk n i = 0` collapses the `selectFn`. -/
+
 theorem exists_zero (n : ℕ) :
     ∃ i < 4 ^ n, xPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 0 := by
   obtain ⟨i, hi, hne⟩ := exists_atomPairG_deltaPair_inter_Xn_ne_empty P₀ P₁ splitX splitY
@@ -3296,7 +3050,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hUnion1 : IsComputableUnion P₁)
 
-/-- The half-step atom's `D₁`-side index. -/
+
 noncomputable def xPseqAtomIdx (n i : ℕ) : ℕ :=
   stateIdx1 (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)
 
@@ -3317,8 +3071,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hUnion1 : IsComputableUnion P₁)
 
-/-- **The half-step atom is always genuine** on `D₁`'s side, regardless of junk status: any code
-index of a `ComputablePresentation` is `mem`-genuine (`ComputablePresentation.mem_X` is total). -/
+
 theorem mem (n i : ℕ) :
     D₁.mem (P₁.X (xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)) :=
   P₁.mem_X _
@@ -3337,8 +3090,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hUnion1 : IsComputableUnion P₁)
 
-/-- **The half-step atom's index, in closed form, when non-junk**: exactly the `X`-sub-step split's
-`"+"`/positive branch, `hSplitX.posIdx`, applied to the incoming depth-`n` two-sided indices. -/
+
 theorem eq {n i : ℕ}
     (h : xPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 0) :
     xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i =
@@ -3369,10 +3121,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hUnion1 : IsComputableUnion P₁)
 
-/-- One step of the depth-`n` union fold over `i < N`: silently skip over half-step-junk atoms
-(frozen at a sentinel that would otherwise contribute nonsense to the union), and union in every
-genuine (non-junk) atom's index via `(d)(4)(a)`'s `hUnion1.unionIdx`. The accumulator is packed as
-`(found, code)`, exactly mirroring `Theorem88d.lean`'s `yFoldStep`. -/
+
 noncomputable def XFoldStep (w : ℕ) : ℕ :=
   let n := w.unpair.1
   let i := w.unpair.2.unpair.1
@@ -3427,9 +3176,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
   (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
 
-/-- **The half-step atom's `D₀`-direct-refine index, in closed form, when non-junk**: the
-`D₀`-side twin of `xPseqAtomIdx.eq`, reading off `xSubStep`'s *other* output (`stateIdx0`, the
-direct `∩`/`\` refinement against `P₀.X n`, rather than `stateIdx1`'s split branch). -/
+
 theorem xPseqAtomIdx0_eq {n i : ℕ}
     (h : xPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 0) :
     stateIdx0 (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i) =
@@ -3456,8 +3203,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
   (hUnion0 : IsComputableUnion P₀)
 
-/-- One step of the depth-`n`, bit-`bx` union fold over `i < N`: identical shape to `XFoldStep`,
-folding via `(d)(4)(a)`'s `hUnion0.unionIdx` on `D₀`'s side instead of `D₁`'s. -/
+
 noncomputable def YFoldStep (w : ℕ) : ℕ :=
   let n := w.unpair.1.unpair.1
   let bx := w.unpair.1.unpair.2
@@ -3483,13 +3229,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
   (hUnion0 : IsComputableUnion P₀)
 
-/-- **Auxiliary single-argument-`z` repackaging of `YFoldInner`**, matching `Nat.Primrec.prec`'s
-own shape exactly (`z := nb` used *directly*, with no `Nat.pair`/`unpair` round-trip needed for
-`rfl` to see through) — mirroring `XFold`'s own successful pattern, where `z := n` needed no
-repackaging at all since `XFold` has only one "held-fixed" parameter. `YFoldInner` needs *two*
-(`n`, `bx`), so this auxiliary exists purely to keep `primrec.YFoldInner`'s own proof cheap: the
-`Nat.pair`/`unpair` round-trip (`pair_unpair`, *not* definitionally `rfl` — it needs the `Nat.sqrt`
-case split) is pushed into `unpair_pair_fst`/`_snd`-driven `simp`, not the kernel's `whnf`. -/
+
 noncomputable def YFoldInnerPair (nb N : ℕ) : ℕ :=
   N.rec (Nat.pair 0 0) (fun i acc => YFoldStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
     hUnion0 (Nat.pair nb (Nat.pair i acc)))
@@ -3533,8 +3273,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hUnion1 : IsComputableUnion P₁)
 
-/-- The depth-`n` union fold over `i < N`, starting from the "nothing found yet" accumulator
-`(0, 0)`. -/
+
 noncomputable def XFold (n N : ℕ) : ℕ :=
   N.rec (Nat.pair 0 0) (fun i acc => XFoldStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
     hUnion1 (Nat.pair n (Nat.pair i acc)))
@@ -3626,7 +3365,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hUnion1 : IsComputableUnion P₁)
 
-/-- **The "found" flag exactly tracks existence of a non-junk half-step atom below `N`.** -/
+
 theorem found_iff (n : ℕ) :
     ∀ N, (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n N).unpair.1 = 1 ↔
       ∃ i < N, xPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 0 := by
@@ -3678,13 +3417,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion1 : IsComputableUnion P₁)
 
 include hD₁pos hD₁diff hD₁nomin in
-/-- **Once "found", the running union's code is always `D₁`-genuine.** New content beyond
-`Theorem88d.lean`'s precedent (there, `unionUX`'s output is unconditionally genuine, since `U` is
-unconditionally union-closed): here `hUnion1.unionIdx_spec`'s conclusion is conditional on its
-existential hypothesis, discharged at each step via `(d)(4)(b)`'s `mem_union_of_mem` applied to the
-running union (genuine, by this very induction) and the new atom (genuine, `xPseqAtomIdx.mem`,
-unconditionally). This is exactly the fact `XFold.mem_iff` below needs to legally rewrite through
-`unionIdx_spec` at its own inductive step. -/
+
 theorem mem_of_found (n : ℕ) :
     ∀ N, (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n N).unpair.1 = 1 →
       D₁.mem (P₁.X (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n N).unpair.2) := by
@@ -3733,10 +3466,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion1 : IsComputableUnion P₁)
 
 include hD₁pos hD₁diff hD₁nomin in
-/-- **The membership form of `XFold`'s correctness**: once a non-junk half-step atom has been found
-below `N`, the running code's `P₁`-image is exactly the union of the genuine (non-junk) atoms seen
-so far. Mirrors `yFold_mem_iff`, with `unionIdx_spec`'s conditional rewrite (discharged via
-`XFold.mem_of_found`/`mem_union_of_mem`) in place of `unionUX`'s unconditional `UX_unionUX`. -/
+
 theorem mem_iff (n : ℕ) :
     ∀ N, (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n N).unpair.1 = 1 →
       ∀ z : β, z ∈ P₁.X (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n N).unpair.2 ↔
@@ -3810,9 +3540,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion1 : IsComputableUnion P₁)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **Step 2: the fold's "found" flag is unconditionally `1` at `N = 4ⁿ`**, mirroring
-`Theorem88d.lean`'s `yFold_two_pow_found` — transport `xPseqAtomJunk.exists_zero` through
-`XFold.found_iff`. -/
+
 theorem four_pow_found (n : ℕ) :
     (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n (4 ^ n)).unpair.1 = 1 :=
   (XFold.found_iff P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n (4 ^ n)).mpr
@@ -3836,9 +3564,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hUnion1 : IsComputableUnion P₁)
 
-/-- **`XPseqCode`, the code-level analogue of `Exercise812c.lean`'s `XPseq`.** The `Nat.Primrec`
-union, over the `4ⁿ` bit-sources `i < 4ⁿ`, of the genuine (non-junk) half-step atoms
-`xPseqAtomIdx n i`. -/
+
 noncomputable def XPseqCode (n : ℕ) : ℕ :=
   (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n (4 ^ n)).unpair.2
 
@@ -3860,8 +3586,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion1 : IsComputableUnion P₁)
 
 include hD₁pos hD₁diff hD₁nomin in
-/-- **Once "found" at `N = 4ⁿ`, `XPseqCode n` is `D₁`-genuine.** Conditional exactly as
-`XFold.mem_of_found` is; see the section's closing docstring for the deferred unconditional gap. -/
+
 theorem mem {n : ℕ}
     (hfound : (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n (4 ^ n)).unpair.1
       = 1) :
@@ -3887,8 +3612,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion1 : IsComputableUnion P₁)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **Step 3a: `XPseqCode n` is unconditionally `D₁`-genuine** — `XPseqCode.mem` specialized at
-`XFold.four_pow_found`'s unconditional witness, dropping the `hfound` hypothesis entirely. -/
+
 theorem mem_unconditional (n : ℕ) :
     D₁.mem (P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n)) :=
   XPseqCode.mem P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₁pos hD₁diff hD₁nomin hUnion1
@@ -3912,8 +3636,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
   (hUnion0 : IsComputableUnion P₀)
 
-/-- The depth-`n`, bit-`bx` union fold over `i < N`, starting from `(0, 0)`. `n`/`bx` are held
-fixed across the recursion by packing them together as `Nat.Primrec.prec`'s own outer parameter. -/
+
 noncomputable def YFoldInner (n bx N : ℕ) : ℕ :=
   N.rec (Nat.pair 0 0) (fun i acc => YFoldStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
     hUnion0 (Nat.pair (Nat.pair n bx) (Nat.pair i acc)))
@@ -4026,7 +3749,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
   (hUnion0 : IsComputableUnion P₀)
 
-/-- **The "found" flag exactly tracks existence of a non-junk half-step atom below `N`.** -/
+
 theorem found_iff {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
     ∀ N, (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n bx N).unpair.1 = 1
       ↔ ∃ i < N, yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx = 0 := by
@@ -4079,8 +3802,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion0 : IsComputableUnion P₀)
 
 include hD₀pos hD₀diff hD₀nomin in
-/-- **Once "found", the running union's code is always `D₀`-genuine.** Exactly mirrors
-`XFold.mem_of_found`, with `hUnion0`/`D₀` in place of `hUnion1`/`D₁`. -/
+
 theorem mem_of_found {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
     ∀ N, (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n bx N).unpair.1 = 1
       → D₀.mem (P₀.X (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
@@ -4132,7 +3854,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion0 : IsComputableUnion P₀)
 
 include hD₀pos hD₀diff hD₀nomin in
-/-- **The membership form of `YFoldInner`'s correctness**, exactly mirroring `XFold.mem_iff`. -/
+
 theorem mem_iff {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
     ∀ N, (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n bx N).unpair.1 = 1
       → ∀ z : α, z ∈ P₀.X (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
@@ -4209,7 +3931,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion0 : IsComputableUnion P₀)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 in
-/-- **Step 2: at least one of the two `bx`-fixed inner folds' "found" flag is `1` at `N = 4ⁿ`.** -/
+
 theorem or_found (n : ℕ) :
     (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n)).unpair.1 = 1
       ∨ (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n)
@@ -4239,8 +3961,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
   (hUnion0 : IsComputableUnion P₀)
 
-/-- **`YPseqCode`, the code-level analogue of `Exercise812c.lean`'s `YPseq`.** The outer `2`-way
-`combineFound2` union of the two `bx`-fixed inner folds `YFoldInner n 0 (4ⁿ)`/`YFoldInner n 1 (4ⁿ)`. -/
+
 noncomputable def YPseqCode (n : ℕ) : ℕ :=
   (combineFound2 hUnion0
     (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
@@ -4264,7 +3985,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion0 : IsComputableUnion P₀)
 
 include hD₀pos hD₀diff hD₀nomin in
-/-- **Once "found" at `N = 4ⁿ`** (on either `bx`-branch), **`YPseqCode n` is `D₀`-genuine.** -/
+
 theorem mem {n : ℕ}
     (hfound : (combineFound2 hUnion0
       (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
@@ -4300,7 +4021,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion0 : IsComputableUnion P₀)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 in
-/-- **Step 3: `YPseqCode`'s own outer `combineFound2` "found" flag is unconditionally `1`.** -/
+
 theorem four_pow_found (n : ℕ) :
     (combineFound2 hUnion0
       (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
@@ -4332,7 +4053,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion0 : IsComputableUnion P₀)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 in
-/-- **Step 4a: `YPseqCode n` is unconditionally `D₀`-genuine.** -/
+
 theorem mem_unconditional (n : ℕ) :
     D₀.mem (P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n)) :=
   YPseqCode.mem P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff hD₀nomin hUnion0
@@ -4360,8 +4081,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
 
-/-- The interleaved family testing `D₀`'s side, code-level analogue of `combinedX`: at even
-positions, `P₀`'s own enumeration; at odd positions, `YPseqCode`'s recovered `D₀`-side pieces. -/
+
 noncomputable def combinedXCode (n : ℕ) : Set α :=
   if n % 2 = 0 then P₀.X (n / 2)
   else P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 (n / 2))
@@ -4434,10 +4154,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
 
-/-- `combinedXCode i` is always `⊆ D₀.master`: every value, at either parity, is literally
-`P₀.X _` for some index, so `D₀.sub_master`/`P₀.mem_X` closes both branches uniformly (unlike
-`Exercise812c.lean`'s `combinedX.subset_master`, no case split on parity or `hXmem`/`YPseq_subset_
-master`-style helper theorem is needed). -/
+
 theorem subset_master (i : ℕ) :
     combinedXCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 i ⊆ D₀.master := by
   unfold combinedXCode
@@ -4464,8 +4181,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
 
-/-- The interleaved family testing `D₁`'s side, code-level analogue of `combinedY`: at even
-positions, `XPseqCode`'s recovered `D₁`-side pieces; at odd positions, `P₁`'s own enumeration. -/
+
 noncomputable def combinedYCode (n : ℕ) : Set β :=
   if n % 2 = 0 then
     P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 (n / 2))
@@ -4540,7 +4256,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
 
-/-- `combinedYCode i` is always `⊆ D₁.master`, symmetric to `combinedXCode.subset_master`. -/
+
 theorem subset_master (i : ℕ) :
     combinedYCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 i ⊆ D₁.master := by
   unfold combinedYCode
@@ -4564,9 +4280,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion1 : IsComputableUnion P₁)
 
 include hD₁pos hD₁diff hD₁nomin in
-/-- **The closed-form membership characterization of `XPseqCode`, conditional on "found" at
-`N = 4ⁿ`**: a point lies in `P₁.X (XPseqCode n)` iff it lies in some genuine (non-junk) half-step
-atom `xPseqAtomIdx n i`, `i < 4ⁿ`. -/
+
 theorem mem_XPseqCode_iff {n : ℕ}
     (hfound : (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n (4 ^ n)).unpair.1
       = 1) (z : β) :
@@ -4591,9 +4305,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion0 : IsComputableUnion P₀)
 
 include hD₀pos hD₀diff hD₀nomin in
-/-- **The closed-form membership characterization of `YPseqCode`, conditional on "found" at
-`N = 4ⁿ`**: a point lies in `P₀.X (YPseqCode n)` iff it lies in some genuine (non-junk) half-step
-atom `yPseqAtomIdx n i bx`, for `i < 4ⁿ` on *either* `bx`-branch. -/
+
 theorem mem_YPseqCode_iff {n : ℕ}
     (hfound : (combineFound2 hUnion0
       (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
@@ -4656,9 +4368,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion1 : IsComputableUnion P₁)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **Step 3b: the closed-form membership characterization of `XPseqCode`, unconditionally** —
-`mem_XPseqCode_iff` specialized the same way. This is `(d)(4)(c)`'s headline closed form, matching
-Scott's `X`-side recursion with no residual "found" side-condition. -/
+
 theorem mem_XPseqCode_iff_unconditional (n : ℕ) (z : β) :
     z ∈ P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n) ↔
       ∃ i < 4 ^ n, xPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 0 ∧
@@ -4685,9 +4395,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion0 : IsComputableUnion P₀)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 in
-/-- **Step 4b: the closed-form membership characterization of `YPseqCode`, unconditionally** —
-`(d)(4)(d)`'s headline closed form, matching Scott's `Y`-side recursion with no residual "found"
-side-condition. -/
+
 theorem mem_YPseqCode_iff_unconditional (n : ℕ) (z : α) :
     z ∈ P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n) ↔
       (∃ i < 4 ^ n, yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i 0 = 0 ∧
@@ -5551,10 +5259,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
 set_option maxHeartbeats 800000 in
 
-/-- **The `X`-side I-formula, generic in the bit-source**: a genuine (non-junk) half-step atom's
-`hSplitX.posIdx` value is always `⊆` its own `D₁`-side companion `atomPairIdx1`. Factored out of
-`xPseqAtomIdx.eq_inter_XPseqCode`'s proof so it can be reused verbatim at the *other* bit-source `k'`
-arising from `mem_XPseqCode_iff_unconditional`'s existential witness. -/
+
 theorem subset_atomPairIdx1 {n m : ℕ}
     (hjunk : xPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n m = 0) :
     P₁.X (xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n m) ⊆
@@ -5614,9 +5319,7 @@ set_option maxHeartbeats 800000 in
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
 set_option maxHeartbeats 800000 in
 
-/-- **8.12(d)(5)(b)(i): the `X`-side I-formula for `XPseqCode`**, the code-level, bounded-existential
-analogue of `Exercise812c.lean`'s `xStep.snd_eq_inter_XPseq`. See the section docstring above for why
-the `⊇` direction needs no δ'-agreement case split, unlike the classical proof. -/
+
 theorem eq_inter_XPseqCode {n k : ℕ} (hk : k < 4 ^ n)
     (hjunk : xPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k = 0) :
     P₁.X (xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k) =
@@ -5678,15 +5381,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
 set_option maxHeartbeats 1000000 in
 
-/-- **The `X`-side I-formula, generalized to an arbitrary `δ`** (not just a bounded bit-source `k <
-4 ^ n`): the `X`-sub-step's own `"+"`/`true` branch, run on `atomPairG`'s depth-`n` component for
-*any* history `δ`, is exactly the intersection of that component's `D₁`-side with `XPseqCode n`.
-Bridges `(b)(i)`'s bounded-existential `xPseqAtomIdx.eq_inter_XPseqCode` up to the fully general
-statement `Exercise812c.lean`'s own `xStep.snd_eq_inter_XPseq` makes, via `encodeDeltaPair δ n` as
-the bounded representative: if the represented component is already `∅`, both sides are `∅`
-directly from `SplitSpec'`; otherwise `(d)(4)(c)(v)`'s `atomPairJunk.eq_zero_of_snd_ne_empty` gives
-a non-junk bit-source to feed `(b)(i)`'s headline, *unless* the fresh half-step atom is itself junk
-— handled by the "junk-mismatch" trick documented at the section level. -/
+
 theorem snd_eq_inter_XPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) :
     (xStepG splitX (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).1
         (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).2 (P₀.X n) true).2 =
@@ -5798,11 +5493,7 @@ include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySp
 set_option maxHeartbeats 1000000 in
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **Two-branch closed form, generalized to an arbitrary `δ`**: completes
-`xStepG.snd_eq_inter_XPseqCode`'s `true`-only fact into a full `genAtom`-shaped closed step at
-*either* sign, exactly mirroring `Exercise812c.lean`'s `xStep.snd_succ_eq` — the `false` branch is
-derived algebraically from the `true` branch plus `SplitSpec'`'s `I ∪ J = B`/`I ∩ J = ∅`, with no
-new disjointness content. -/
+
 theorem snd_succ_eq_XPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     (xStepG splitX (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).1
         (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).2 (P₀.X n) b).2 =
@@ -5874,12 +5565,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hxSplit hD₁pos hD₁diff hySplit hD₀mne hD₁mne in
 set_option maxHeartbeats 4000000 in
-/-- **The odd-depth half-step identity for `combinedXCode`**, code-level analogue of
-`Exercise812c.lean`'s `genAtom.combinedX_succ_eq`: given `atomPairG δ n`'s `α`-side agrees with
-`genAtom combinedXCode` at the even depth `2 * n`, it also agrees at the odd depth `2 * n + 1` with
-the `X`-sub-step's own split-side output — elementary algebra plus `atomPairG.fst_subset_master`,
-no new disjointness content (the `Y`-sub-step closed form `yStepG.fst_succ_eq_YPseqCode` is what
-supplies the genuinely new content, used one level up in `atomPairG.fst_eq_genAtomCode`). -/
+
 theorem combinedXCode_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
     (hn : (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).1 =
       genAtom (combinedXCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0) D₀.master
@@ -5918,10 +5604,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion1 in
 set_option maxHeartbeats 4000000 in
-/-- **The odd-depth half-step identity for `combinedYCode`**, code-level analogue of
-`Exercise812c.lean`'s `genAtom.combinedY_succ_eq`: given `atomPairG δ n`'s `β`-side agrees with
-`genAtom combinedYCode` at the even depth `2 * n`, it also agrees at the odd depth `2 * n + 1` with
-the `X`-sub-step's own direct-refine `β`-side output, via `xStepG.snd_succ_eq_XPseqCode`. -/
+
 theorem combinedYCode_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
     (hn : (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).2 =
       genAtom (combinedYCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1) D₁.master
@@ -5959,11 +5642,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
 set_option maxHeartbeats 800000 in
 
-/-- **The `Y`-side atom's `D₀`-index, subset of the depth-`n`-plus-half-step `X`-sub-step output.**
-The `Y`-side twin of `(b)(i)`'s `xPseqAtomIdx.subset_atomPairIdx1`, but one half-step deeper:
-`yPseqAtomIdx`'s genuine value is always `⊆` the `xStepG`-level set the inner (free-`bx`) `X`-sub-step
-produces at depth `n`, via `hySplit`'s unconditional `∪ = A1`-field applied to that inner
-`xSubStep.correct`/`ySubStep.correct` identification. -/
+
 theorem subset_xStepGFst {n i : ℕ} (b : Bool)
     (hjunk : yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i
       (if b then 1 else 0) = 0) :
@@ -6052,10 +5731,7 @@ include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySp
 set_option maxHeartbeats 800000 in
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **Widening to the depth-`n` parent's own `D₀`-piece**: composing `yPseqAtomIdx.subset_xStepGFst`
-with `xStepG.fst_subset` and `atomPairCodeState.correct`'s forward identification. Needed by the
-I-formula's `⊇` direction to compare *two different* bit-sources' atoms, since
-`atomPairCodeState.disjoint` only speaks about the parent `atomPairIdx0`-level sets. -/
+
 theorem subset_atomPairIdx0 {n i : ℕ} (b : Bool)
     (hjunk : yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i
       (if b then 1 else 0) = 0) :
@@ -6092,13 +5768,7 @@ include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySp
 set_option maxHeartbeats 800000 in
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
-/-- **The two-source disjointness dichotomy** feeding the I-formula's `⊇` direction: given a
-witness bit-source/bit pair `(i', b')` whose atom contains `z` and a target pair `(i, b)` with `z`
-already known to lie in the *classical* `xStepG`-level piece at `(i, b)`, either `(i', b') = (i, b)`
-(so the witness atom already *is* the target atom) or the two atoms are disjoint — from either
-`atomPairCodeState.disjoint` (if `i' ≠ i`, transported up through
-`yPseqAtomIdx.subset_atomPairIdx0`) or `xStepG.disjoint_of_ne` (if `i' = i` but `b' ≠ b`, transported
-up through `yPseqAtomIdx.subset_xStepGFst`) — a contradiction with the disjointness in either case. -/
+
 theorem eq_of_dichotomy {n i i' : ℕ} {z : α} (b b' : Bool)
     (hi : i < 4 ^ n) (hi' : i' < 4 ^ n)
     (hjunk : yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i
@@ -6172,9 +5842,7 @@ set_option maxHeartbeats 800000 in
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 in
 set_option maxHeartbeats 800000 in
 
-/-- **8.12(d)(5)(b)(ii): the `Y`-side I-formula for `YPseqCode`**, the code-level analogue of
-`Exercise812c.lean`'s `yStep.fst_eq_inter_YPseq`. See the section docstring above for the extra
-`bx`-level case split this needs beyond `(b)(i)`'s own `X`-side argument. -/
+
 theorem eq_inter_YPseqCode {n i : ℕ} (hi : i < 4 ^ n) (b : Bool)
     (hjunk : yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i
       (if b then 1 else 0) = 0) :
@@ -6232,22 +5900,7 @@ set_option maxHeartbeats 1000000 in
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 in
 set_option maxHeartbeats 4000000 in
 
-/-- **The `Y`-side I-formula, generalized to an arbitrary `δ`** (not just a bounded bit-source
-`k < 4 ^ n`) **and a free `bx : Bool`** (not just the bit `δ n).1` itself, matching
-`Exercise812c.lean`'s own `yStep.fst_eq_inter_YPseq`): the `Y`-sub-step's `"+"`/`true` branch, run
-on `xStepG`'s own output at *any* bit `bx` and *any* history `δ`, is exactly the intersection of
-that output's `D₀`-side with `YPseqCode n`. Same overall strategy as
-`xStepG.snd_eq_inter_XPseqCode`: encode `δ`'s depth-`n` prefix as `k := encodeDeltaPair δ n`, handle
-`A1 = ∅` directly via `SplitSpec'`, and otherwise split on `yPseqAtomJunk n k (if bx then 1 else 0)`
-— zero feeds `(b)(ii)`'s headline (after bridging its `yPseqAtomIdx` back to the `yStepG`-level via
-`xSubStep.correct`/`ySubStep.correct`, mirroring `yPseqAtomIdx.subset_xStepGFst`'s own internal
-`hgoaleq`); one is "fresh junk" at *this* extra half-step, handled by first showing the `X`-sub-step
-itself must still be non-junk (else `A1 = ∅`, contradicting the case hypothesis), so the freshness
-must come from the `Y`-sub-step's own direct-refine check, giving `B1 ∩ Yn = ∅` and hence the goal's
-`true`-branch output is `∅` directly; the `∩ YPseqCode` side is then `∅` via the same
-"junk-mismatch" disjointness trick as the `X`-side, now with an extra case split on the witness's
-own `bx'`-bit (`xStepG.disjoint_of_ne` when the bit differs at the same `k`, else
-`atomPairCodeState.disjoint` as before). -/
+
 theorem fst_eq_inter_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (bx : Bool) :
     (yStepG splitY
         (xStepG splitX (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).1
@@ -6492,12 +6145,7 @@ include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySp
 set_option maxHeartbeats 4000000 in
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 in
-/-- **Two-branch closed form, generalized to an arbitrary `δ`** (not just a bounded bit-source `k <
-4 ^ n`): completes `yStepG.fst_eq_inter_YPseqCode`'s `true`-only fact (specialized to the `X`-side
-bit `(δ n).1`, exactly as `Exercise812c.lean`'s `yStep.fst_succ_eq` fixes it) into a full
-`genAtom`-shaped closed step at *either* sign of the `Y`-sub-step — the `false` branch is derived
-algebraically from the `true` branch plus `SplitSpec'`'s `I ∪ J = A1`/`I ∩ J = ∅`, mirroring
-`xStepG.snd_succ_eq_XPseqCode` exactly (with the roles of `hySplit`/`hxSplit` swapped). -/
+
 theorem fst_succ_eq_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     (yStepG splitY
         (xStepG splitX (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).1
@@ -6589,10 +6237,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion1 in
 set_option maxHeartbeats 4000000 in
-/-- **Headline closed form, `β`-side** (code-level analogue of `Exercise812c.lean`'s
-`atomPair.snd_eq_genAtom`): `atomPairG δ n`'s `β`-side coincides with `genAtom` over the interleaved
-family `combinedYCode` at depth `2 * n`, via `genAtom.combinedYCode_succ_eq` then the `Y`-sub-step's
-elementary direct `β`-side output. -/
+
 theorem snd_eq_genAtomCode (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).2 =
       genAtom (combinedYCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1) D₁.master
@@ -6641,11 +6286,7 @@ include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySp
 set_option maxHeartbeats 4000000 in
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 in
-/-- **Headline closed form, `α`-side** (code-level analogue of `Exercise812c.lean`'s
-`atomPair.fst_eq_genAtom`): `atomPairG δ n`'s `α`-side coincides with `genAtom` over the interleaved
-family `combinedXCode` at the doubled depth `2 * n`. Proved by induction, each step performing the
-`X`-sub-step half-step rewrite (`genAtom.combinedXCode_succ_eq`, elementary) then the `Y`-sub-step's
-closed form (`yStepG.fst_succ_eq_YPseqCode`). -/
+
 theorem fst_eq_genAtomCode (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).1 =
       genAtom (combinedXCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0) D₀.master
@@ -6691,11 +6332,7 @@ set_option maxHeartbeats 4000000 in
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 in
-/-- **The even-index case of `hcore`**, code-level analogue of `Exercise812c.lean`'s `hcore.even`:
-for any `δ' : ℕ → Bool` and any `n`, `genAtom combinedXCode δ' (2*n) = ∅ ↔
-genAtom combinedYCode δ' (2*n) = ∅`. De-interleave `δ'`, rewrite both `genAtom`s back to
-`atomPairG (deinterleaveδ δ') n`'s two sides via `atomPairG.fst_eq_genAtomCode`/
-`atomPairG.snd_eq_genAtomCode`, then close with `atomPairG.invariant`'s clause (a). -/
+
 theorem even (δ' : ℕ → Bool) (n : ℕ) :
     genAtom (combinedXCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0) D₀.master δ'
         (2 * n) = ∅ ↔
@@ -6735,10 +6372,7 @@ set_option maxHeartbeats 4000000 in
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 in
-/-- **The odd-index case of `hcore`**, code-level analogue of `Exercise812c.lean`'s `hcore.odd`:
-de-interleave `δ'`, rewrite both `genAtom`s at the odd depth `2 * n + 1` down to the `X`-sub-step's
-own two sides via the odd-depth half-step identities (fed by the even-depth closed forms for their
-`hn` hypotheses), then close directly with `xStepG.spec`'s matching-emptiness clause. -/
+
 theorem odd (δ' : ℕ → Bool) (n : ℕ) :
     genAtom (combinedXCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0) D₀.master δ'
         (2 * n + 1) = ∅ ↔
@@ -6787,11 +6421,7 @@ set_option maxHeartbeats 4000000 in
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 in
-/-- **`hcore`**, code-level analogue of `Exercise812c.lean`'s `hcore`, final assembly: for any
-`δ' : ℕ → Bool` and any `n`, `genAtom combinedXCode δ' n = ∅ ↔ genAtom combinedYCode δ' n = ∅` — the
-`hcore` hypothesis `Theorem88.lean`'s `transfer_dir` needs for the interleaved code families
-`combinedXCode`/`combinedYCode`. Pure glue: a parity case split on `n` matching `hcore.even`/
-`hcore.odd`. -/
+
 theorem hcoreCode (δ' : ℕ → Bool) (n : ℕ) :
     genAtom (combinedXCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0) D₀.master δ'
         n = ∅ ↔
@@ -7072,7 +6702,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hX0 hY0 in
-/-- **8.12(d)(5)(a), `Y`-side.** `P₀.X (YPseqCode … 0) = D₀.master`. -/
+
 theorem zero :
     P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 0) = D₀.master := by
   have hjunk0 := atomPairJunk.zero P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY 0
@@ -7114,7 +6744,6 @@ theorem zero :
   rw [hA0, hB0, hX0] at hposspec
   have hzeroeq : P₁.X (xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY 0 0) =
       D₁.master := by rw [hidxeq, ← hposspec]; exact hunion1
-  -- The `D₀`-direct-refine companion value at the same depth/bit-source is also the full master.
   have hidx0eq : stateIdx0 (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY 0 0) =
       P₀.inter (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY 0 0) 0 :=
     xPseqAtomIdx0_eq P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hxjunk0
@@ -7125,11 +6754,8 @@ theorem zero :
   have hidx0set : P₀.X (stateIdx0 (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
       hSplitY 0 0)) = D₀.master := by
     rw [hidx0eq, P₀.inter_spec hinterex, hA0, hX0, Set.inter_self]
-  -- `stateIdx1` of the incoming `X`-sub-step state is definitionally `xPseqAtomIdx`.
   have hstateIdx1 : stateIdx1 (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
       0 0) = xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY 0 0 := rfl
-  -- `yPseqAtomState`'s inner `X`-sub-step call at `bx = 1` is definitionally `xPseqAtomState`, so
-  -- its own "found" condition reduces to the already-established `hxjunk0`/`hzeroeq`.
   have hraw : selectFn (stateJunk (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
       hSplitY 0 0)) 1 (selectFn 1
         (emptyInterDec P₁ (Nat.pair (stateIdx1 (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX
@@ -7210,10 +6836,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 in
-/-- **Exercise 8.12(d)(5)(c)(ii), cross-parity order fact, other mix.** `P₀.X (YPseqCode … i) ⊆
-P₀.X j ↔ P₁.X i ⊆ P₁.X (XPseqCode … j)`: code-level analogue of `Exercise812c.lean`'s
-`YPseq.subset_X_iff_Y_subset_XPseq` — the symmetric specialization of
-`transfer.subset_combinedCode` at `(2i + 1, 2j)`. -/
+
 theorem subset_X_iff_Y_subset_XPseqCode (i j : ℕ) :
     P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 i) ⊆ P₀.X j ↔
       P₁.X i ⊆ P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 j) := by
@@ -7286,13 +6909,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 in
-/-- **Exercise 8.12(d)(5)(c)(i), cross-parity order fact (`even`/`odd` mix).** `P₀.X i ⊆ P₀.X
-(YPseqCode … j) ↔ P₁.X (XPseqCode … i) ⊆ P₁.X j`: code-level analogue of `Exercise812c.lean`'s
-`X_subset_YPseq_iff_XPseq_subset_Y` — a direct specialization of `transfer.subset_combinedCode` at
-the mixed indices `(2i, 2j+1)` (`combinedXCode`/`combinedYCode` at an even and an odd index
-respectively), simplified by the same `Set.inter_eq_self_of_subset_right` bookkeeping as
-`(d)(5)(b)(iv)`'s same-parity headline facts. No new proof machinery —
-`transfer.subset_combinedCode` already holds for arbitrary index pairs. -/
+
 theorem X_subset_YPseqCode_iff_XPseqCode_subset_Y (i j : ℕ) :
     P₀.X i ⊆ P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 j) ↔
       P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 i) ⊆ P₁.X j := by
@@ -7360,12 +6977,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 in
-/-- **Exercise 8.12(d)(5)(e)(i).** The same-family `embed_eq_iff` companion, generalizing
-`Exercise812c.lean`'s `X_eq_iff_XPseq_eq` to the code level: `P₀.X i = P₀.X j ↔ P₁.X (XPseqCode
-… i) = P₁.X (XPseqCode … j)`, needed by `(e)(iv)`'s `domainIsoCode812d.map_rel_iff'`. Pure
-packaging, no new mathematical content: each direction is `Set.Subset.antisymm` of
-`(d)(5)(b)(iv)`'s `X_subset_iff_XPseqCode_subset` applied at `(i, j)` and `(j, i)`, exactly
-mirroring `X_eq_iff_XPseq_eq`'s proof line-for-line. -/
+
 theorem X_eq_iff_XPseqCode_eq (i j : ℕ) :
     P₀.X i = P₀.X j ↔
       P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 i) =
@@ -7445,7 +7057,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hX0 in
-/-- **8.12(d)(5)(a), `X`-side.** `P₁.X (XPseqCode … 0) = D₁.master`. -/
+
 theorem zero :
     P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 0) = D₁.master := by
   have hjunk0 := atomPairJunk.zero P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY 0
@@ -7519,12 +7131,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 in
-/-- **Exercise 8.12(d)(5)(c)(iii), the cross-parity `embed_eq_iff` analogue.** `P₁.X (XPseqCode …
-j) = P₁.X k ↔ P₀.X j = P₀.X (YPseqCode … k)`: code-level analogue of `Exercise812c.lean`'s
-`XPseq.eq_Y_iff_X_eq_YPseq` — pure packaging of `(c)(i)`/`(c)(ii)` via `Set.Subset.antisymm` in
-each direction, no new mathematical content. Needed because `(d)(5)(d)`'s `toD1Code`/`toD0Code`
-`up_mem` case must rename a covering witness produced by `P₀.surj`/`P₁.surj` back into the
-`XPseqCode`/`YPseqCode` "coordinates" that the filter `x`/`y` actually testifies about. -/
+
 theorem eq_Y_iff_X_eq_YPseqCode (j k : ℕ) :
     P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 j) = P₁.X k ↔
       P₀.X j = P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 k) := by
@@ -7570,15 +7177,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 in
-/-- **Exercise 8.12(d)(5)(d)(i).** The standalone `up_mem` obligation for `toD1Code`'s membership
-predicate `fun T => ∃ n, T = P₁.X (XPseqCode … n) ∧ x.mem (P₀.X n)`, stated at the exact type
-`Element.up_mem` needs so it plugs directly into the final structure literal. Code-level analogue
-of `Exercise812c.lean`'s `toD1.up_mem`, but needing only **one** `surj` call (not two): `P₁.surj`
-names the arbitrary target `T2` as some `P₁.X k`; `(d)(5)(c)(i)`'s cross-parity order fact then
-transports `x.mem (P₀.X i)` across to `x.mem (P₀.X (YPseqCode … k))` — already literally
-`x.mem (P₀.X j)` for the explicit witness `j := YPseqCode … k`, no further covering search needed;
-`(d)(5)(c)(iii)`'s `XPseqCode.eq_Y_iff_X_eq_YPseqCode`, applied at the self-referential pair
-`(YPseqCode … k, k)` whose "other side" is `rfl`, supplies the closing index equation for free. -/
+
 theorem up_mem (x : D₀.Element) {T1 T2 : Set β}
     (h1 : ∃ n, T1 = P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n) ∧
       x.mem (P₀.X n))
@@ -7628,17 +7227,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 in
-/-- **Exercise 8.12(d)(5)(d)(ii).** `toD1Code : D₀.Element → D₁.Element`, the code-level pushforward
-filter `{T | ∃ n, T = P₁.X (XPseqCode … n) ∧ x.mem (P₀.X n)}` — generalizes `Exercise812c.lean`'s
-`toD1` ((c)(vii)(4)). `sub` cites `(d)(4)`'s `XPseqCode.mem_unconditional` directly; `master_mem`
-cites `(d)(5)(a)`'s `XPseqCode.zero` at the witness `n = 0`, using `hX0` to identify `P₀.X 0` with
-`D₀.master`. `inter_mem` needs **no** covering search (unlike `toD1`'s `exists_inter_index_X`):
-given `hxi : x.mem (P₀.X i)`/`hxj : x.mem (P₀.X j)`, `x.inter_mem hxi hxj`/`x.sub` shows
-`P₀.X i ∩ P₀.X j` is already `D₀`-genuine, so `P₀.surj` names it as some `P₀.X m` outright,
-`P₀.inter_spec` reads this off as the closed-form index equation `P₀.X (P₀.inter i j) = P₀.X i ∩
-P₀.X j`, and `(d)(5)(b)(iv)`'s `X_inter_eq_iff_XPseqCode_inter_eq` transports the same equation
-across to `XPseqCode`, so `P₀.inter i j` is directly the witness index needed. `up_mem` is exactly
-`(d)(5)(d)(i)`'s `toD1Code.up_mem`. -/
+
 def toD1Code (x : D₀.Element) : D₁.Element where
   mem T := ∃ n, T = P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n) ∧
     x.mem (P₀.X n)
@@ -7685,18 +7274,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 in
-/-- **Exercise 8.12(d)(5)(d)(iii).** The standalone `up_mem` obligation for `toD0Code`'s membership
-predicate `fun S => ∃ n, S = P₀.X (YPseqCode … n) ∧ y.mem (P₁.X n)`, the exact mirror of
-`(d)(5)(d)(i)`'s `toD1Code.up_mem` for the `D₁ → D₀` direction: destructure `h1` as `⟨i, rfl, hyi⟩`;
-`P₀.surj` names the arbitrary target `S2` as some `P₀.X k`; `(d)(5)(c)(ii)`'s
-`YPseqCode.subset_X_iff_Y_subset_XPseqCode` turns `hS1S2 : P₀.X (YPseqCode … i) ⊆ P₀.X k` into
-`P₁.X i ⊆ P₁.X (XPseqCode … k)`; `y.up_mem hyi (XPseqCode.mem_unconditional k) this` gives
-`y.mem (P₁.X (XPseqCode … k))` — already literally `y.mem (P₁.X j)` for the explicit witness
-`j := XPseqCode … k`, no covering search needed; `(d)(5)(c)(iii)`'s
-`XPseqCode.eq_Y_iff_X_eq_YPseqCode`, applied at the self-referential pair `(k, XPseqCode … k)`
-whose "other side" is `rfl`, supplies the closing index equation `P₀.X k = P₀.X (YPseqCode …
-(XPseqCode … k))` for free — note no `.symm` is needed here, unlike `toD1Code.up_mem`, since the
-goal orientation already matches `XPseqCode.eq_Y_iff_X_eq_YPseqCode`'s `.mp` output directly. -/
+
 theorem up_mem (y : D₁.Element) {S1 S2 : Set α}
     (h1 : ∃ n, S1 = P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n) ∧
       y.mem (P₁.X n))
@@ -7746,19 +7324,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(5)(d)(iv).** `toD0Code : D₁.Element → D₀.Element`, the code-level pullback
-filter `{S | ∃ n, S = P₀.X (YPseqCode … n) ∧ y.mem (P₁.X n)}` — exact mirror of `(d)(5)(d)(ii)`'s
-`toD1Code` for the `D₁ → D₀` direction. `sub` cites `(d)(4)`'s `YPseqCode.mem_unconditional`
-directly; `master_mem` cites `(d)(5)(a)`'s `YPseqCode.zero` at the witness `n = 0`, using `hY0` to
-identify `P₁.X 0` with `D₁.master`. `inter_mem` mirrors `toD1Code`'s corrected version exactly, with
-the roles of `P₀`/`P₁` swapped: given `hyi : y.mem (P₁.X i)`/`hyj : y.mem (P₁.X j)`, `y.inter_mem`/
-`y.sub` shows `P₁.X i ∩ P₁.X j` is already `D₁`-genuine, so `P₁.surj` names it as some `P₁.X m`
-outright, `P₁.inter_spec` reads this off as the closed-form index equation `P₁.X (P₁.inter i j) =
-P₁.X i ∩ P₁.X j`, and `(d)(5)(b)(iv)`'s `YPseqCode.inter_eq_iff_Y_inter_eq` transports the same
-equation across to `YPseqCode`, so `P₁.inter i j` is directly the witness index needed (**note the
-iff's orientation is reversed relative to `X_inter_eq_iff_XPseqCode_inter_eq`**: `YPseqCode`-stuff is
-on the *left*, so this uses `.mpr` with `hinterEq.symm`, not `.mp` with `hinterEq` as `toD1Code`
-did). `up_mem` is exactly `(d)(5)(d)(iii)`'s `toD0Code.up_mem`. -/
+
 def toD0Code (y : D₁.Element) : D₀.Element where
   mem S := ∃ n, S = P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n) ∧
     y.mem (P₁.X n)
@@ -7806,17 +7372,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(5)(e)(ii).** The `left_inv` content feeding `domainIsoCode812d`:
-`toD0Code (toD1Code x) = x`. Via `Element.ext`, unfolds to `∀ S, (∃ m n, S = P₀.X (YPseqCode …
-m) ∧ P₁.X m = P₁.X (XPseqCode … n) ∧ x.mem (P₀.X n)) ↔ x.mem S`. Forward (`mp`): given the witness
-`⟨m, hS, n, hmn, hxn⟩`, `(d)(5)(c)(iii)`'s `XPseqCode.eq_Y_iff_X_eq_YPseqCode n m` transports
-`hmn.symm` into `hXeq : P₀.X n = P₀.X (YPseqCode … m)`; `rw [hS, ← hXeq]` reduces the goal `x.mem
-S` to `x.mem (P₀.X n)`, closed by `hxn`. Backward (`mpr`): given `hxS : x.mem S`, `x.sub`/`P₀.surj`
-names `S` as some `P₀.X n` outright (`subst`); take `m := XPseqCode … n` (handed over for free, no
-search — `P₁.X m = P₁.X (XPseqCode … n)` is `rfl`); the closing equation `P₀.X n = P₀.X (YPseqCode
-… m)` is `XPseqCode.eq_Y_iff_X_eq_YPseqCode n (XPseqCode … n) |>.mp rfl` applied at the
-self-referential pair `(n, XPseqCode … n)`, exactly `toD1Code.up_mem`'s pattern — no
-`hXcover`/`hYcover`-style double search needed, unlike `domainIso812c.left_inv`'s own proof. -/
+
 theorem toD1Code (x : D₀.Element) :
     toD0Code P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff hD₀nomin hxSplit
       hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0
@@ -7867,20 +7423,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(5)(e)(iii).** The `right_inv` content feeding `domainIsoCode812d`:
-`toD1Code (toD0Code y) = y`, the exact mirror of `(e)(ii)`'s `toD0Code.toD1Code` with `P₀`/`P₁`,
-`XPseqCode`/`YPseqCode` swapped throughout. Via `Element.ext`, unfolds to `∀ T, (∃ m n, T = P₁.X
-(XPseqCode … m) ∧ P₀.X m = P₀.X (YPseqCode … n) ∧ y.mem (P₁.X n)) ↔ y.mem T`. Forward (`mp`, given
-`⟨m, hT, n, hmn, hyn⟩`): `(d)(5)(c)(iii)`'s `XPseqCode.eq_Y_iff_X_eq_YPseqCode m n` applied
-directly to `hmn` (no `.symm` needed here, unlike `toD0Code.toD1Code`'s forward direction — `hmn`'s
-orientation already matches the lemma's RHS) gives `hYeq : P₁.X (XPseqCode … m) = P₁.X n`; `rw [hT,
-hYeq]; exact hyn` closes it. Backward (`intro hyT`): `y.sub`/`P₁.surj` names `T` as some `P₁.X n`
-(`subst`); witness `m := YPseqCode … n` handed over for free (`P₀.X m = P₀.X (YPseqCode … n)` is
-`rfl`); the closing equation `T = P₁.X (XPseqCode … m)` (post-`subst`, `P₁.X n = P₁.X (XPseqCode …
-(YPseqCode … n))`) needs `XPseqCode.eq_Y_iff_X_eq_YPseqCode (YPseqCode … n) n |>.mpr rfl`, then
-**`.symm`** (unlike `toD0Code.toD1Code`'s backward direction, whose analogous closing equation
-needed no `.symm` — the orientation asymmetry mirrors `toD1Code.up_mem`/`toD0Code.up_mem`'s own
-`.symm`/no-`.symm` split). -/
+
 theorem toD0Code (y : D₁.Element) :
     toD1Code P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff hD₀nomin hxSplit
       hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0
@@ -7930,17 +7473,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(5)(e)(iv), final assembly.** The order isomorphism `D₀.Element ≃o
-D₁.Element`, generalizing `Exercise812c.lean`'s `domainIso812c` ((c)(vii)(6)) to the code level.
-`toFun`/`invFun`/`left_inv`/`right_inv` are direct citations of `(d)(5)(d)`'s `toD1Code`/`toD0Code`
-and `(e)(ii)`/`(e)(iii)`'s `toD0Code.toD1Code`/`toD1Code.toD0Code`. `map_rel_iff'` is a direct
-transcription of `domainIso812c.map_rel_iff'` (lines 2094–2108), substituting the code-level
-apparatus throughout: the easy `mpr` direction (`x ≤ x2 → toD1Code x ≤ toD1Code x2`) is pure
-unfolding, no search; the harder `mp` direction (`toD1Code x ≤ toD1Code x2 → x ≤ x2`) needs only
-*one* `P₀.surj` call (replacing `hXcover`, `subst`-ing the target `S` as some `P₀.X n` directly)
-plus `(e)(i)`'s `X_eq_iff_XPseqCode_eq` to transport the resulting `XPseqCode`-index equality back
-to `P₀.X`-coordinates — confirming the same "no covering search" simplification found throughout
-`(d)(5)`. -/
+
 noncomputable def domainIsoCode812d : DomainIso D₀ D₁ where
   toFun := toD1Code P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff hD₀nomin
     hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0
@@ -7992,11 +7525,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(5)(f)(iii).** `(ofIso domainIsoCode812d.symm).rel` at raw indices reduces to
-a single reindexed inclusion, the exact mirror of `(f)(i)`'s `toD1Code.rel_iff` (`P₀`/`P₁`,
-`D₀`/`D₁`, `toD1Code`/`toD0Code`, `XPseqCode`/`YPseqCode` swapped throughout): since
-`domainIsoCode812d.symm.toFun = domainIsoCode812d.invFun = toD0Code …`, the same `ofIso`/
-`mem_principal` unfolding applies verbatim, mirroring `Theorem88n.lean`'s `isoProj_rel_iff_incl`. -/
+
 theorem rel_iff (m n : ℕ) :
     (ofIso (domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0
@@ -8039,12 +7568,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(5)(f)(i).** `(ofIso domainIsoCode812d).rel` at raw indices reduces to a
-single reindexed inclusion, exactly mirroring `Theorem88n.lean`'s `isoInj_rel_iff_incl`:
-`ofIso`'s relation is `∃ _ : D₀.mem X, (e (D₀.principal ‹_›)).mem Y`; since `domainIsoCode812d`'s
-`toFun` is literally `toD1Code …`, `(e (D₀.principal (P₀.mem_X n))).mem T` unfolds (via `toD1Code`'s
-`mem` field and `mem_principal`) to `∃ k, T = P₁.X (XPseqCode … k) ∧ D₀.mem (P₀.X k) ∧ P₀.X n ⊆
-P₀.X k`, and `D₀.mem (P₀.X k)` is always true (`P₀.mem_X k`), so it drops. -/
+
 theorem rel_iff (n m : ℕ) :
     (ofIso (domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0)).rel
@@ -8087,14 +7611,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(5)(f)(iv), the last of the four `(f)` sub-parts.** `ofIso
-domainIsoCode812d.symm` is computable relative to `P₁`/`P₀`, the exact mirror of `(f)(ii)`'s
-`domainIsoCode812d.isComputableMap` via `(f)(iii)`'s `toD0Code.rel_iff`, swapping `P₀`↔`P₁` and
-`XPseqCode`↔`YPseqCode`/`primrec.YPseqCode` throughout: `P₀.eq_computable` reindexed along the
-primitive-recursive `YPseqCode` supplies the equality conjunct, `P₁.incl_computable` reindexed
-directly supplies the inclusion conjunct, `RecDecidable.and`/`.re`/`REPred.proj` close the outer
-`∃ k`, and `REPred.of_iff` matches the exact `ComputableMap P₁ P₀` shape via `toD0Code.rel_iff`.
-Completes `8.12(d)(5)(f)` — hence `8.12(d)(5)` — in full. -/
+
 theorem symm_isComputableMap :
     ComputableMap P₁ P₀ (ofIso (domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
       hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
@@ -8147,15 +7664,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(5)(f)(ii).** `ofIso domainIsoCode812d` is computable relative to `P₀`/`P₁`:
-via `(f)(i)`'s `toD1Code.rel_iff`, `ComputableMap P₀ P₁ (ofIso domainIsoCode812d)` reduces to
-`REPred₂ (fun n m => ∃ k, P₁.X m = P₁.X (XPseqCode … k) ∧ P₀.X n ⊆ P₀.X k)`. Unlike
-`Theorem88n.lean`'s `isoInj_isComputableMap` (whose `eIdx` supplies a *unique* witness, no genuine
-existential), the `∃ k` here is unbounded, so this mirrors `Definition72.lean`'s
-`comp_isComputable`/`apply_isComputableElement` existential-closure recipe instead: the two
-conjuncts are separately `RecDecidable` (`P₁.eq_computable` reindexed along the primitive-recursive
-`XPseqCode` in the first coordinate; `P₀.incl_computable` reindexed directly), conjoined
-(`RecDecidable.and`), lifted to `REPred` (`.re`), and closed by `REPred.proj` over the outer `∃ k`. -/
+
 theorem isComputableMap :
     ComputableMap P₀ P₁ (ofIso (domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
       hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
@@ -8194,10 +7703,7 @@ end domainIsoCode812d
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-/-- **Union-closure**, the `∪` analogue of `NeighborhoodSystem.DiffClosed`: the union of two
-neighbourhoods is again a neighbourhood. Unlike `DiffClosed`, no "`-or-∅`" branch is needed — a
-union of two `NoMinimal`-nonempty neighbourhoods is automatically itself non-empty, so the only
-question `UnionClosed` settles is whether the union stays inside `V.mem`. -/
+
 def NeighborhoodSystem.UnionClosed {α : Type*} (D : NeighborhoodSystem α) : Prop :=
   ∀ {X Y : Set α}, D.mem X → D.mem Y → D.mem (X ∪ Y)
 
@@ -8218,14 +7724,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(6)(a).** The `left_inv` content for `EffectiveIso P₀ P₁`: `ofIso
-domainIsoCode812d.symm` is a left inverse of `ofIso domainIsoCode812d`, at the `ApproximableMap`
-level. Direct transcription of `Theorem88n.lean`'s `isoProj_comp_isoInj` for the arbitrary
-`OrderIso` `e := domainIsoCode812d …` (no case split, no search, needs nothing about
-`domainIsoCode812d` beyond its bare `OrderIso` structure): `ext_of_toElementMap` reduces map
-equality to a pointwise `Element` equality, `toElementMap_comp` unfolds the composite,
-`toElementMap_ofIso` identifies each side with plain `OrderIso` application, and
-`OrderIso.symm_apply_apply` closes it. -/
+
 theorem invMap_comp_toMap :
     (ofIso (domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0
@@ -8263,12 +7762,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(6)(b).** The `right_inv` content for `EffectiveIso P₀ P₁`: `ofIso
-domainIsoCode812d` is a left inverse of `ofIso domainIsoCode812d.symm`, at the `ApproximableMap`
-level — the exact mirror of `(a)`'s `invMap_comp_toMap`, independent of it. Direct transcription
-of `Theorem88n.lean`'s `isoInj_comp_isoProj` for `e := domainIsoCode812d …`: same shape as `(a)`
-with `e`/`e.symm` swapped and `OrderIso.apply_symm_apply` in place of
-`OrderIso.symm_apply_apply`. -/
+
 theorem toMap_comp_invMap :
     (ofIso (domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0)).comp
@@ -8306,14 +7800,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0
   hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(6)(c), final assembly.** The effective isomorphism `P₀ ≅ᵉ P₁` (in the sense
-of `Exercise718.lean`'s `EffectiveIso`), completing `8.12(d)(6)` — hence `8.12(d)` as a whole.
-Every field is a direct citation: `toMap`/`invMap` from `(d)(5)(e)(iv)`'s `domainIsoCode812d`
-(via `ofIso`/`.symm`), `toMap_computable`/`invMap_computable` from `(d)(5)(f)`'s
-`domainIsoCode812d.isComputableMap`/`domainIsoCode812d.symm_isComputableMap`, and
-`left_inv`/`right_inv` from `(a)`/`(b)`'s `invMap_comp_toMap`/`toMap_comp_invMap` — exactly
-mirroring `(d)(5)(e)(iv)`'s `domainIsoCode812d` assembly pattern, and `Exercise718.lean`'s own
-`iterIterEffectiveIso`. -/
+
 noncomputable def effectiveIso812d : EffectiveIso P₀ P₁ where
   toMap := ofIso (domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos
     hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0)
@@ -8350,8 +7837,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hDiff0 hDiff1 hSplitX hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin
   hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(5)(e)(iv), headline.** `D₀ ≅ᴰ D₁`, generalizing `isomorphic_812c` to the
-code level; completes `8.12(d)(5)(e)` in full. -/
+
 theorem isomorphic_812d : D₀ ≅ᴰ D₁ :=
   ⟨domainIsoCode812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff hD₀nomin
     hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0⟩
@@ -8375,8 +7861,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 include hDiff0 hDiff1 hSplitX hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin
   hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0 in
-/-- **Exercise 8.12(d)(6)(c), headline.** `P₀`/`P₁` are effectively isomorphic; completes
-`8.12(d)(6)` — hence `8.12(d)` in full. -/
+
 theorem effectivelyIsomorphic_812d : EffectivelyIsomorphic P₀ P₁ :=
   ⟨effectiveIso812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff hD₀nomin
     hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0⟩
@@ -8386,19 +7871,14 @@ end
 
 open Domain.Recursive NeighborhoodSystem
 
-/-- **A union of two genuine `U`-neighbourhoods is again genuine, unconditionally** — no
-`NoMinimal`/`DiffClosed` detour needed for `U` specifically: `U.mem`'s three conjuncts (presentable,
-non-empty, `⊆ [0,1)`) each transfer directly across `∪` (presentability via list `++`; non-emptiness
-since one side alone is already non-empty; the subset bound is monotone in `∪`). -/
+
 theorem U_union_UX_mem (n m : ℕ) : U.mem (UX n ∪ UX m) := by
   obtain ⟨⟨L1, hL1⟩, hne1, hsub1⟩ := U_mem_UX n
   obtain ⟨⟨L2, hL2⟩, -, hsub2⟩ := U_mem_UX m
   exact ⟨⟨L1 ++ L2, by rw [presentedIntervals_append, hL1, hL2]⟩,
     hne1.mono Set.subset_union_left, Set.union_subset hsub1 hsub2⟩
 
-/-- The **raw** `(level, mask)` code for `VX n ∪ VX m`, before re-canonicalization: upsample both
-`canonIdx`-normalized masks to the common level `max k₁ k₂` and take `myLor`. Mirrors `VinterRaw`
-verbatim, substituting `myLor` for `myLand`. -/
+
 def VunionRaw (n m : ℕ) : ℕ :=
   Nat.pair (max (canonIdx n).unpair.1 (canonIdx m).unpair.1)
     (myLor
@@ -8407,34 +7887,29 @@ def VunionRaw (n m : ℕ) : ℕ :=
       (myUpsample (canonIdx m).unpair.1 (max (canonIdx n).unpair.1 (canonIdx m).unpair.1)
         (canonIdx m).unpair.2))
 
-/-- `decodeQPairList` commutes with `appendListCode` (it is just `decodeList` followed by a fixed
-`map`, and `List.map` commutes with `++`). -/
+
 theorem decodeQPairList_appendListCode (c1 c2 : ℕ) :
     decodeQPairList (appendListCode c1 c2) = decodeQPairList c1 ++ decodeQPairList c2 := by
   unfold decodeQPairList
   rw [appendListCode_eq, List.map_append]
 
-/-- The low-bit XOR `(x ^^^ y) % 2`, in arithmetic `{0,1}`-valued form: the sum of the low bits,
-mod `2`. -/
+
 def lowXor (x y : ℕ) : ℕ := (x % 2 + y % 2) % 2
 
-/-- Packed iteration state `pair (pair curA curB) (pair weight acc)` for the bitwise-XOR fold. -/
+
 def xorStep (s : ℕ) : ℕ :=
   Nat.pair (Nat.pair (s.unpair.1.unpair.1 / 2) (s.unpair.1.unpair.2 / 2))
     (Nat.pair (2 * s.unpair.2.unpair.1)
       (s.unpair.2.unpair.2 + s.unpair.2.unpair.1 * lowXor s.unpair.1.unpair.1 s.unpair.1.unpair.2))
 
-/-- The iterative bitwise XOR: iterate `xorStep` `a + b` times from the initial state, and read off
-the accumulator. -/
+
 def myXor (a b : ℕ) : ℕ :=
   (xorStep^[a + b] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.2
 
-/-- `a` with `b`'s bits cleared: `a ^^^ (a &&& b)` (`testBit.xor_and_self`), computed via `myXor`
-composed with the already-`Pass` `myLand`. -/
+
 def myAndNot (a b : ℕ) : ℕ := myXor a (myLand a b)
 
-/-- The **raw** `(level, mask)` code for `VX n \ VX m`, before re-canonicalization: upsample both
-`canonIdx`-normalized masks to the common level `max k₁ k₂` and take `myAndNot`. -/
+
 def VdiffRaw (n m : ℕ) : ℕ :=
   Nat.pair (max (canonIdx n).unpair.1 (canonIdx m).unpair.1)
     (myAndNot
@@ -8443,8 +7918,7 @@ def VdiffRaw (n m : ℕ) : ℕ :=
       (myUpsample (canonIdx m).unpair.1 (max (canonIdx n).unpair.1 (canonIdx m).unpair.1)
         (canonIdx m).unpair.2))
 
-/-- **Correctness of the iterative bitwise XOR.** Inlines the former `lowXor_eq_mod` /
-`xor_low_rec` / `xorStep_iter_spec` scaffold. -/
+
 theorem myXor_eq_xor (a b : ℕ) : myXor a b = a ^^^ b := by
   have xor_low_rec : ∀ x y : ℕ, x ^^^ y = 2 * (x / 2 ^^^ y / 2) + lowXor x y := by
     intro x y
@@ -8523,9 +7997,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
-/-- **Junk propagates forward** (once a bit-source's state is junk at depth `n`, it stays junk at
-every later depth): the contrapositive of `atomPairJunk.eq_zero_of_succ`, using
-`atomPairJunk.le_one` to convert "`≠ 0`" into "`= 1`" on both sides. -/
+
 theorem mono {n k : ℕ}
     (h : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k = 1) :
     atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY (n + 1) k = 1 := by
@@ -8559,40 +8031,23 @@ end combineFound2
 
 open Domain.Recursive
 
-/-- **A computable canonical bisection of a `ComputablePresentation`'s own neighbourhoods**: two
-`Nat.Primrec` index functions `left`/`right` such that `Q.X (left k)`/`Q.X (right k)` are always
-disjoint and reunite to `Q.X k`. (Nonemptiness of both pieces is *not* required here — for the
-concrete `U`/`V` instances this file eventually builds (`(e)(b)`/`SplitU.lean`), it is automatic
-from `mem → Set.Nonempty`, so is proved separately rather than carried as a field.)
 
-**`left_congr`/`right_congr`** are a well-definedness requirement discovered while scoping `(e)(c)`
-(2026-07-05), *not* present in the earlier `arxiv.md` draft of this structure: `ComputablePresentation.X`
-is generally many-to-one (distinct raw indices `k`, `k'` can present the *same* set `Q.X k = Q.X k'`),
-so building a genuine classical `split : Set α → Set γ → Set α → Set γ × Set γ` *function of sets*
-out of an index-level `left`/`right` needs `left`/`right`'s *output sets* — not necessarily the raw
-output indices themselves — to only depend on `Q.X k` as a set, or `(e)(c)`'s `posIdx_spec`/
-`negIdx_spec` obligations (stated `∀ n m k`, not just for one fixed representative) would not be
-provable. Satisfied by any canonicalizing construction (e.g. `SplitU.lean`'s `splitULeft`/
-`splitURight`, built via `canonCode`, which already collapses every representative of a given set to
-one canonical index) — expected free for both `(e)(b)`'s `SplitV.lean` and `(f)(a)`'s reuse of
-`SplitU.lean`, but must be checked (or reduced to an existing `canonCode`/`canonIdx`-invariance lemma)
-when those are actually built, not merely assumed. -/
 structure ComputableBisection {γ : Type*} {W : NeighborhoodSystem γ} (Q : ComputablePresentation W) where
-  /-- Index of the "left" half of `Q.X k`. -/
+
   left : ℕ → ℕ
-  /-- Index of the "right" half of `Q.X k`. -/
+
   right : ℕ → ℕ
-  /-- `left` is primitive recursive. -/
+
   left_primrec : Nat.Primrec left
-  /-- `right` is primitive recursive. -/
+
   right_primrec : Nat.Primrec right
-  /-- The two halves are disjoint. -/
+
   disjoint : ∀ k, Q.X (left k) ∩ Q.X (right k) = ∅
-  /-- The two halves reunite to the whole. -/
+
   union : ∀ k, Q.X (left k) ∪ Q.X (right k) = Q.X k
-  /-- `left`'s *output set* depends only on `Q.X k` as a set, not on which raw index represents it. -/
+
   left_congr : ∀ k k', Q.X k = Q.X k' → Q.X (left k) = Q.X (left k')
-  /-- `right`'s *output set* depends only on `Q.X k` as a set, not on which raw index represents it. -/
+
   right_congr : ∀ k k', Q.X k = Q.X k' → Q.X (right k) = Q.X (right k')
 
 section
@@ -8605,27 +8060,7 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
   {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
 open scoped Classical in
-/-- **The classical split, built from a `ComputableBisection`**: fall back to the prober-side
-deciders (`(d)(2)`'s `emptyInterDec`/`emptyDiffDec`) whenever the input triple presents as `(P.X n,
-Q.X m, P.X k)` for some indices, and to the abstract choice-based `splitChoice'` (`Exercise812c.lean`)
-otherwise. **Redesigned 2026-07-06 (repairing `8.12(g)(3)`)**: the *original* design (below, kept for
-the record) always returned `(Q.X (posIdxFromBisection …), Q.X (negIdxFromBisection …))` — literally
-never `∅` — on the presented branch, which is jointly unsatisfiable with `SplitSpec'` (see
-`Exercise812d.lean`'s `IsComputableSplit.posIdx_spec` docstring for the full argument). The fix:
-route the *set-level* value through the same two deciders `posIdxFromBisection`/
-`negIdxFromBisection` already consult, but let the two "one decider fires" branches produce the
-literal `∅`/`B'` pair directly (matching what `SplitSpec'` demands: `A ∩ Xn = ∅` forces `.1 = ∅` and
-gives `.2` all of `B'`, symmetrically for `A \ Xn = ∅`), only falling through to the genuine
-bisection (`B.left`/`B.right`) when *neither* decider fires (the case `exists_split'` itself needs
-`E.NoMinimal` to bisect `B'` into two nonempty halves). `posIdxFromBisection`/`negIdxFromBisection`
-themselves need **no** change: they already compute exactly the right *index* in the "genuinely
-nonempty" branch of each field and an unread junk placeholder (`m`) in the "should be `∅`" branch —
-the bug was purely in `splitFromBisection` wrapping *both* branches in `Q.X (⋯)`, which can never
-literally be `∅`. Also generalizes the previous "not presented → junk `(B', B')`" fallback (wrong in
-general — `.1 ∩ .2 = B' ∩ B' = B'`, not `∅`, unless `B' = ∅`) to the always-correct `splitChoice'`,
-needed for `SplitSpec'` to hold on *every* `A`/`Xn`, not just presented ones (`(e)(c)`'s own
-`posIdx_spec`/`negIdx_spec` only ever constrain the presented case, so this choice of fallback is
-free to fix without touching `IsComputableSplit`'s side at all). -/
+
 noncomputable def splitFromBisection (A : Set α) (B' : Set γ) (Xn : Set α) : Set γ × Set γ :=
   if h : ∃ n m k, A = P.X n ∧ B' = Q.X m ∧ Xn = P.X k then
     if emptyInterDec P (Nat.pair h.choose h.choose_spec.choose_spec.choose) = 1 then
@@ -8637,8 +8072,7 @@ noncomputable def splitFromBisection (A : Set α) (B' : Set γ) (Xn : Set α) : 
   else
     splitChoice' W hWnomin A B' Xn
 
-/-- **The split's "negative" (`\`-branch) index.** Same outer shape as `posIdxFromBisection`,
-falling back to the bisection's *right* half instead of its left. -/
+
 noncomputable def negIdxFromBisection (n m k : ℕ) : ℕ :=
   selectFn (emptyInterDec P (Nat.pair n k)) m
     (selectFn (emptyDiffDec P hDiff (Nat.pair n k)) m (B.right m))
@@ -8648,10 +8082,7 @@ section Congr
 variable {n n' k k' m m' : ℕ}
 
 namespace emptyDiffDec
-/-- `emptyDiffDec` is a well-defined function of the two *sets* `P.X n`, `P.X k`: it does not
-distinguish between different raw indices presenting the same set. Needs `V.DiffClosed`, not just
-`IsComputableDiff P` — a hypothesis gap found while scoping `(e)(c)` (2026-07-05), absent from
-`(e)(c)`'s original draft signature. -/
+
 theorem congr (hdiffClosed : V.DiffClosed) (hnomin : V.NoMinimal)
     (hn : P.X n = P.X n') (hk : P.X k = P.X k') :
     emptyDiffDec P hDiff (Nat.pair n k) = emptyDiffDec P hDiff (Nat.pair n' k') := by
@@ -8667,8 +8098,7 @@ theorem congr (hdiffClosed : V.DiffClosed) (hnomin : V.NoMinimal)
 end emptyDiffDec
 
 namespace emptyInterDec
-/-- `emptyInterDec` is a well-defined function of the two *sets* `P.X n`, `P.X k`: it does not
-distinguish between different raw indices presenting the same set. -/
+
 theorem congr (hpos : V.IsPositive) (hnomin : V.NoMinimal)
     (hn : P.X n = P.X n') (hk : P.X k = P.X k') :
     emptyInterDec P (Nat.pair n k) = emptyInterDec P (Nat.pair n' k') := by
@@ -8694,11 +8124,7 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
   {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
 namespace splitFromBisection
-/-- **`splitFromBisection`, unfolded at a literal presented triple `(P.X n, Q.X m, P.X k)`**,
-bridging `Classical.choose`'s own (possibly different) witness back to the literal `n, m, k` given,
-via `(e)(c)(i)`'s `emptyInterDec.congr`/`emptyDiffDec.congr` (for the two decider branches) and
-`B.left_congr`/`B.right_congr` (for the bisection branch). The one lemma both `posIdx_spec`/
-`negIdx_spec` and `splitFromBisection.isSplitSpec'` are built from. -/
+
 theorem eq (hpos : V.IsPositive) (hnomin : V.NoMinimal)
     (hdiffClosed : V.DiffClosed) (n m k : ℕ) :
     splitFromBisection P hDiff B hWnomin (P.X n) (Q.X m) (P.X k) =
@@ -8731,10 +8157,7 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
   (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
   {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
-/-- **The split's "positive" (`∩`-branch) index**, as a genuine `Nat`-valued function of the three
-raw indices `n` (of `A` in `P`), `m` (of `B` in `Q`), `k` (of `Xn` in `P`): fall back to `m` (i.e.
-literally `B`) the moment either prober-side decider fires, and to the bisection's left half
-otherwise. -/
+
 noncomputable def posIdxFromBisection (n m k : ℕ) : ℕ :=
   selectFn (emptyInterDec P (Nat.pair n k)) m
     (selectFn (emptyDiffDec P hDiff (Nat.pair n k)) m (B.left m))
@@ -8808,13 +8231,7 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
   {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
 namespace isComputableSplit
-/-- **`splitFromBisection` satisfies `IsComputableSplit`**, completing `8.12(e)(c)`. `posIdx`/
-`negIdx` are literally `posIdxFromBisection`/`negIdxFromBisection`, unchanged from the original
-design; the two (now-conditional, `Exercise812d.lean` `(d)(2)`) `_spec` fields case on
-`splitFromBisection.eq`'s three branches — the first is immediately vacuous (`.1 = ∅` there,
-contradicting `posIdx_spec`'s `≠ ∅` hypothesis, symmetrically for `negIdx_spec`'s second branch), the
-other two unfold `posIdxFromBisection`/`negIdxFromBisection`'s own `selectFn` definition against the
-same decider values. -/
+
 noncomputable def ofBisection (hpos : V.IsPositive) (hnomin : V.NoMinimal)
     (hdiffClosed : V.DiffClosed) :
     IsComputableSplit P Q (splitFromBisection P hDiff B hWnomin) where
@@ -8857,7 +8274,7 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
 end ComputableBisection
 end
 
-/-- **`B812e`: `V`'s computable canonical bisection, packaged as a `ComputableBisection`.** -/
+
 def B812e : ComputableBisection VComputablePresentation where
   left := splitVLeft
   right := splitVRight
@@ -8868,14 +8285,10 @@ def B812e : ComputableBisection VComputablePresentation where
   left_congr := fun _ _ h => splitVLeft_congr h
   right_congr := fun _ _ h => splitVRight_congr h
 
-/-- The difference index: `diffCode` on canonicalized codes (`UX` re-canonicalizes on lookup, so no
-further canonicalization is needed here — mirrors `Uinter`). -/
+
 def Udiff (n m : ℕ) : ℕ := diffCode (canonCode n) (canonCode m)
 
-/-- **Scott's consistency condition for `\` reduces to non-emptiness**, exactly mirroring
-`U_cons_iff_nonempty_inter`: `U.diff_mem` (`Exercise812c.lean`) shows `UX n \ UX m` is always either
-empty or a genuine `U`-neighbourhood, and every `UX k` is non-empty (`U.mem` forces
-`Set.Nonempty`), so "presentable" and "non-empty" coincide. -/
+
 theorem U_diff_iff_nonempty (n m : ℕ) :
     (∃ k, UX k = UX n \ UX m) ↔ (UX n \ UX m).Nonempty := by
   constructor
@@ -8889,9 +8302,7 @@ theorem U_diff_iff_nonempty (n m : ℕ) :
 namespace Udiff
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`Udiff` realizes set difference at the raw (uncanonicalized) `presentedIntervals` level**,
-unconditionally — the one respect in which `\` is *simpler* than `∩` here (no consistency case
-split needed at this stage). -/
+
 theorem eq_diff (n m : ℕ) :
     presentedIntervals (decodeQPairList (Udiff n m)) = UX n \ UX m := by
   unfold Udiff
@@ -8909,10 +8320,7 @@ open Domain.Recursive NeighborhoodSystem
 namespace Udiff
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`Udiff n m` genuinely indexes `UX n \ UX m` whenever that difference is a genuine
-neighbourhood** — mirrors `Uinter_spec` exactly: the raw `diffCode` output is already a genuine
-`U`-neighbourhood (by hypothesis via `Udiff.eq_diff`), so re-canonicalizing it (`canonCode`'s own
-lookup, `UX`'s definition) is a no-op (`canonList_fixed`). -/
+
 theorem spec {n m : ℕ} (h : ∃ k, UX k = UX n \ UX m) : UX (Udiff n m) = UX n \ UX m := by
   have hUL : U.mem (presentedIntervals (decodeQPairList (Udiff n m))) := by
     rw [Udiff.eq_diff]
@@ -8924,7 +8332,7 @@ theorem spec {n m : ℕ} (h : ∃ k, UX k = UX n \ UX m) : UX (Udiff n m) = UX n
 end Udiff
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`U` has a computable `\`**, completing the missing prerequisite this section opened with. -/
+
 def U_isComputableDiff : IsComputableDiff UComputablePresentation where
   diffIdx := Udiff
   diffIdx_primrec := Udiff.primrec
