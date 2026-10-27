@@ -5,6 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_11
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_13
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Examples_8_4
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.sub
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.U
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
@@ -31,40 +32,6 @@ open NeighborhoodSystem ApproximableMap
 universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
-/- concordance: source L4890 THEOREM 8.6 sub combinator -/
-/-- **Theorem 8.6's combinator `sub(f)` (Scott 1981, PRG-19), per token `f`.** Scott's formula
-`X sub(f) Z ↔ ∃Y ∈ E, X⊆Y ∧ f.rel Y Y ∧ Y⊆Z` is literally `retractionOfSubsystem` applied to
-`fixedNbhd f = {Y ∈ E ∣ Y f Y}` (Theorem 8.5's subsystem, built for *any* `f`). -/
-def sub (f : ApproximableMap E E) : ApproximableMap E E :=
-  Subsystem.retractionOfSubsystem (fixedNbhd_subsystem f)
-
-@[simp] theorem sub_rel {f : ApproximableMap E E} {X Z : Set α} :
-    (sub f).rel X Z ↔ E.mem X ∧ E.mem Z ∧ ∃ Y, (E.mem Y ∧ f.rel Y Y) ∧ X ⊆ Y ∧ Y ⊆ Z :=
-  Subsystem.retractionOfSubsystem_rel (fixedNbhd_subsystem f)
-
-/-- `fixedNbhd (retractionOfSubsystem h) = D`: the round trip recovering a subsystem `D` from the
-retraction it induces. `Y (retractionOfSubsystem h) Y ↔ ∃W∈D, Y⊆W⊆Y`, and `Y⊆W⊆Y` forces `W=Y`, so
-this says exactly `D.mem Y` (using `E.mem Y` for free from `D ⊆ E`). -/
-theorem fixedNbhd_retractionOfSubsystem {D : NeighborhoodSystem α} (h : D ◁ E) :
-    fixedNbhd (Subsystem.retractionOfSubsystem h) = D := by
-  apply NeighborhoodSystem.ext
-  · intro X
-    rw [fixedNbhd_mem, Subsystem.retractionOfSubsystem_rel]
-    constructor
-    · rintro ⟨hXE, -, -, Y, hY, hXY, hYX⟩
-      rw [Set.Subset.antisymm hXY hYX]
-      exact hY
-    · intro hX
-      exact ⟨h.sub hX, h.sub hX, h.sub hX, X, hX, subset_rfl, subset_rfl⟩
-  · exact h.master_eq.symm
-
-end
-
-section
-open NeighborhoodSystem ApproximableMap
-universe u
-variable {α : Type u} {E : NeighborhoodSystem α}
-
 namespace Sub8_6
 
 /-- **`sub`, transported to the function space's own `Element` type via `funSpaceEquiv`.** -/
@@ -79,32 +46,16 @@ open NeighborhoodSystem ApproximableMap
 universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
-/-- **`sub` is monotone.** `f ≤ g → sub f ≤ sub g`: immediate from `fixedNbhd`'s definition, since
-`f.rel Y Y → g.rel Y Y` whenever `f ≤ g`. -/
-theorem sub_mono {f g : ApproximableMap E E} (h : f ≤ g) : sub f ≤ sub g := by
-  rintro X Z hr
-  obtain ⟨hX, hZ, Y, ⟨hYE, hYf⟩, hXY, hYZ⟩ := sub_rel.mp hr
-  exact sub_rel.mpr ⟨hX, hZ, Y, ⟨hYE, h Y Y hYf⟩, hXY, hYZ⟩
-
-/-- Every `retractionOfSubsystem h` is already a fixed point of `sub` — immediate from the round
-trip `fixedNbhd_retractionOfSubsystem`, since `sub` is *defined* as `retractionOfSubsystem` applied
-to `fixedNbhd`. -/
-theorem sub_retractionOfSubsystem {D : NeighborhoodSystem α} (h : D ◁ E) :
-    sub (Subsystem.retractionOfSubsystem h) = Subsystem.retractionOfSubsystem h := by
-  unfold sub
-  congr 1
-  exact fixedNbhd_retractionOfSubsystem h
-
 /-- **The finitary projections on `E` are order-isomorphic to the subsystems of `E`.** Forward:
 `f ↦ ⟨fixedNbhd f, fixedNbhd_subsystem f⟩`; backward: `D ↦ retractionOfSubsystem D` (a fixed point
-of `sub`, by `sub_retractionOfSubsystem`). Round trips are `fixedNbhd_retractionOfSubsystem` and
+of `sub`, by `sub.retractionOfSubsystem`). Round trips are `fixedNbhd_retractionOfSubsystem` and
 (definitionally) `sub`'s own defining equation; order is preserved/reflected via `sub`'s formula
 being monotone in the underlying subsystem (`retractionOfSubsystem_rel`'s witness clause) together
 with `Subsystem.subsystem_iff_subset_of_common`. -/
 def finitaryProjectionSubsystemEquiv (E : NeighborhoodSystem α) :
     {f : ApproximableMap E E // sub f = f} ≃o {D : NeighborhoodSystem α // D ◁ E} where
   toFun f := ⟨fixedNbhd f.1, fixedNbhd_subsystem f.1⟩
-  invFun D := ⟨Subsystem.retractionOfSubsystem D.2, sub_retractionOfSubsystem D.2⟩
+  invFun D := ⟨Subsystem.retractionOfSubsystem D.2, sub.retractionOfSubsystem D.2⟩
   left_inv f := Subtype.ext f.2
   right_inv D := Subtype.ext (fixedNbhd_retractionOfSubsystem D.2)
   map_rel_iff' := by
@@ -114,7 +65,7 @@ def finitaryProjectionSubsystemEquiv (E : NeighborhoodSystem α) :
       have hleD : fixedNbhd f.1 ◁ fixedNbhd g.1 := hle
       have hsub : sub f.1 ≤ sub g.1 := by
         rintro X Z hXZ
-        rw [sub_rel] at hXZ ⊢
+        rw [sub.rel] at hXZ ⊢
         obtain ⟨hX, hZ, Y, hY, hXY, hYZ⟩ := hXZ
         exact ⟨hX, hZ, Y, hleD.sub hY, hXY, hYZ⟩
       rwa [f.2, g.2] at hsub
@@ -140,7 +91,7 @@ theorem toApproxMap_monotone {φ ψ : (funSpace E E).Element} (h : φ ≤ ψ) :
   simpa using this
 
 theorem subFilter_mono {φ ψ : (funSpace E E).Element} (h : φ ≤ ψ) : subFilter φ ≤ subFilter ψ :=
-  toFilter_le_iff.mpr (sub_mono (toApproxMap_monotone h))
+  toFilter_le_iff.mpr (sub.mono (toApproxMap_monotone h))
 
 theorem subFilter_monotone : Monotone (subFilter (E := E)) := fun _ _ h => subFilter_mono h
 
@@ -152,7 +103,7 @@ theorem toApproxMap_rel_iSupDirected {I : Type u} [Nonempty I] (φ : I → (funS
     (toApproxMap (iSupDirected φ hdir)).rel X Z ↔ ∃ i, (toApproxMap (φ i)).rel X Z := by
   simp only [toApproxMap_rel, mem_iSupDirected]
 
-/-- **`sub` commutes with directed unions of relations.** `sub`'s formula (`sub_rel`) is a positive
+/-- **`sub` commutes with directed unions of relations.** `sub`'s formula (`sub.rel`) is a positive
 existential in `f`'s relation (`∃Y, ... ∧ f.rel Y Y ∧ ...`), so it commutes with an arbitrary union
 of relations by pure logic (swapping the order of two existentials) — no directedness needed here
 either, only for `iSupDirected` to be well-formed in the first place. -/
@@ -160,7 +111,7 @@ theorem sub_toApproxMap_iSupDirected {I : Type u} [Nonempty I] (φ : I → (funS
     (hdir : ∀ i j, ∃ k, φ i ≤ φ k ∧ φ j ≤ φ k) {X Z : Set α} :
     (sub (toApproxMap (iSupDirected φ hdir))).rel X Z ↔
       ∃ i, (sub (toApproxMap (φ i))).rel X Z := by
-  simp only [sub_rel, toApproxMap_rel_iSupDirected]
+  simp only [sub.rel, toApproxMap_rel_iSupDirected]
   constructor
   · rintro ⟨hX, hZ, Y, ⟨hYE, i, hYi⟩, hXY, hYZ⟩
     exact ⟨i, hX, hZ, Y, ⟨hYE, hYi⟩, hXY, hYZ⟩
@@ -254,13 +205,13 @@ theorem fixedNbhd_sub (f : ApproximableMap E E) : fixedNbhd (sub f) = fixedNbhd 
     constructor
     · intro hmem
       have hr : (sub f).rel Y Y := hmem.2
-      obtain ⟨hYE, -, Y', hY', hYY', hY'Y⟩ := sub_rel.mp hr
+      obtain ⟨hYE, -, Y', hY', hYY', hY'Y⟩ := sub.rel.mp hr
       obtain ⟨hY'E, hY'f⟩ := hY'
       have hYY'eq : Y' = Y := Set.Subset.antisymm hY'Y hYY'
       exact ⟨hYE, hYY'eq ▸ hY'f⟩
     · intro hmem
       obtain ⟨hYE, hYf⟩ := hmem
-      refine ⟨hYE, sub_rel.mpr ⟨hYE, hYE, Y, ⟨hYE, hYf⟩, subset_rfl, subset_rfl⟩⟩
+      refine ⟨hYE, sub.rel.mpr ⟨hYE, hYE, Y, ⟨hYE, hYf⟩, subset_rfl, subset_rfl⟩⟩
   · rfl
 
 /-- **The easy half of Theorem 8.6's range characterization.** If `f` is a fixed point of `sub`,
@@ -277,7 +228,7 @@ theorem isFinitaryProjection_of_sub_eq_self {f : ApproximableMap E E} (h : sub f
 `X f Z`" — a bare narrow-input/widen-output monotonicity calculation, needing nothing about `f`. -/
 theorem sub_le (f : ApproximableMap E E) : sub f ≤ f := by
   rintro X Z hr
-  obtain ⟨hX, hZ, Y, ⟨hYE, hYf⟩, hXY, hYZ⟩ := sub_rel.mp hr
+  obtain ⟨hX, hZ, Y, ⟨hYE, hYf⟩, hXY, hYZ⟩ := sub.rel.mp hr
   have h1 : f.rel X Y := f.mono hYf hXY subset_rfl hX hYE
   exact f.mono h1 subset_rfl hYZ hX hZ
 
@@ -312,7 +263,7 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 /-- **The hard half of Theorem 8.6's range characterization, now unblocked by Theorem 8.5.** Every
 finitary projection is a fixed point of `sub`: `⊇` is `sub_le`; `⊆` unwinds `X f Z` via
 `rel_iff_mem_principal` into `Z ∈ f(↑X)`, and Theorem 8.5's formula
-(`formula_of_isFinitaryProjection`) rewrites this as exactly `sub_rel`'s defining formula. -/
+(`formula_of_isFinitaryProjection`) rewrites this as exactly `sub.rel`'s defining formula. -/
 theorem sub_eq_self_of_isFinitaryProjection {f : ApproximableMap E E}
     (h : FinitaryProjection f) : sub f = f := by
   apply ApproximableMap.ext
@@ -325,7 +276,7 @@ theorem sub_eq_self_of_isFinitaryProjection {f : ApproximableMap E E}
     have hmem : (f.toElementMap (E.principal hX)).mem Z := (f.rel_iff_mem_principal hX).mp hXZ
     obtain ⟨-, W, hW, hWZ, hWf⟩ := (formula_of_isFinitaryProjection h (E.principal hX)).mp hmem
     obtain ⟨hWE, hXW⟩ := (E.mem_principal hX).mp hW
-    exact sub_rel.mpr ⟨hX, hZ, W, ⟨hWE, hWf⟩, hXW, hWZ⟩
+    exact sub.rel.mpr ⟨hX, hZ, W, ⟨hWE, hWf⟩, hXW, hWZ⟩
 
 /-- **Theorem 8.6's range characterization, in full.** `sub f = f ↔ f` is a finitary projection. -/
 theorem sub_eq_self_iff_isFinitaryProjection {f : ApproximableMap E E} :
@@ -500,11 +451,11 @@ theorem subStep_recDecidable (fincl incl : ℕ → ℕ)
 
 /-- **`sub`'s defining existential, reindexed to presentation indices.** `sub f` relates presented
 neighbourhoods `X_a`, `X_b` iff some presented `X_y` witnesses Scott's formula (`P.surj` turns the
-arbitrary witness neighbourhood `Y` of `sub_rel` into an index `y`). -/
+arbitrary witness neighbourhood `Y` of `sub.rel` into an index `y`). -/
 theorem sub_rel_iff_exists_index {f : ApproximableMap E E} {a b : ℕ} :
     (sub f).rel (P.X a) (P.X b) ↔
       ∃ y : ℕ, f.rel (P.X y) (P.X y) ∧ P.X a ⊆ P.X y ∧ P.X y ⊆ P.X b := by
-  rw [sub_rel, and_iff_right (P.mem_X a), and_iff_right (P.mem_X b)]
+  rw [sub.rel, and_iff_right (P.mem_X a), and_iff_right (P.mem_X b)]
   constructor
   · rintro ⟨Y, ⟨hYE, hYf⟩, haY, hYb⟩
     obtain ⟨y, rfl⟩ := P.surj hYE
