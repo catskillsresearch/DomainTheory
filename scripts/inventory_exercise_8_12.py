@@ -43,7 +43,7 @@ SEED_API = {
     "V_noMinimal",
     "U_union_UX_mem",
     "VunionRaw",
-    "exercise_8_12_ae",
+    "exercise_8_12",
     "U_isPositive",
     "U_diffClosed",
     "U_noMinimal",

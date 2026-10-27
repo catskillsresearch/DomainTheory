@@ -6,7 +6,7 @@ $$2^k X + \ell, \quad \text{where } \ell < 2^k.$$
 
 Let $V$ be the non-empty finite unions of sets $2^k \mathbb{N} + \ell$. Show that $U \cong V$ and that the isomorphism is effective, thus obtaining another presentation of $U$.
 
-**[Exercise_8_12.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean)** — Scott tips `exercise_8_12_ae` / `exercise_8_12` (`U ≅ᵉ V`)
+**[Exercise_8_12.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean)** — Scott tip `exercise_8_12` (`U ≅ᵉ V`)
 
 @import "Exercise_8_12.lean"
 
