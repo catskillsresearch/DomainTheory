@@ -217,4 +217,150 @@ theorem nbhdGen_eq_iff {a b : List ℕ} : nbhdGen P a = nbhdGen P b ↔ finGen P
 
 @[simp] theorem SubD_master : (SubD P).master = nbhdGen P [] := rfl
 
+
+/-! ## Subsystem ↔ SubD.Element (order-iso building blocks) -/
+
+/-- **The finite-fold lemma.** If every generator `P.X i` (`i ∈ js`) is individually confirmed by
+`x` via some witness list, the witnesses can be concatenated (fold over the finite list `js`,
+combining via `x.inter_mem`) into a *single* list `js₀` confirmed by `x` with `Fin(js) ⊆
+Fin(js₀)`. -/
+theorem exists_common_witness (x : (SubD P).Element) {js : List ℕ}
+    (h : ∀ i ∈ js, ∃ js', x.mem (nbhdGen P js') ∧ P.X i ∈ finGen P js') :
+    ∃ js0, x.mem (nbhdGen P js0) ∧ finGen P js ⊆ finGen P js0 := by
+  induction js with
+  | nil => exact ⟨[], SubD_master P ▸ x.master_mem, subset_rfl⟩
+  | cons j js' ih =>
+    obtain ⟨jsj, hxj, hjmem⟩ := h j List.mem_cons_self
+    obtain ⟨js0', hx0', hsub0'⟩ := ih (fun i hi => h i (List.mem_cons_of_mem j hi))
+    refine ⟨jsj ++ js0', nbhdGen_inter P jsj js0' ▸ x.inter_mem hxj hx0',
+      (finGen_le_iff_forall_mem P (finGenSys_subsystem P (jsj ++ js0')) (j :: js')).mpr
+        (List.forall_mem_cons.mpr ⟨?_, ?_⟩)⟩
+    · exact finGen_mono P (List.sublist_append_left jsj js0') hjmem
+    · exact fun i hi =>
+        finGen_mono P (List.sublist_append_right jsj js0') (hsub0' (principal_mem_finGen P hi))
+
+
+/-- **`interFrom` splits over list concatenation.** A pure membership-characterization fact
+(`mem_interFrom` + `List.forall_mem_append`), independent of consistency. -/
+theorem interFrom_append_eq (A : Set α) (l1 l2 : List ℕ) :
+    interFrom P A (l1 ++ l2) = interFrom P A l1 ∩ interFrom P A l2 := by
+  apply Set.ext
+  intro z
+  rw [Set.mem_inter_iff, mem_interFrom, mem_interFrom, mem_interFrom, List.forall_mem_append]
+  tauto
+
+
+/-- **Forward direction: a subsystem induces a filter of `SubD`.** Given `D' ◁ D`, the filter
+`ofSubsystem P D' hD'` consists of the neighbourhoods `nbhd(js)` such that `D'` already contains
+every singleton generator `P.X i` for `i ∈ js`. -/
+def ofSubsystem (D' : NeighborhoodSystem α) (hD' : D' ◁ D) : (SubD P).Element where
+  mem N := ∃ js, N = nbhdGen P js ∧ ∀ i ∈ js, D'.mem (P.X i)
+  sub := fun ⟨js, hN, _⟩ => ⟨js, hN⟩
+  master_mem := ⟨[], rfl, fun i hi => absurd hi List.not_mem_nil⟩
+  inter_mem := by
+    rintro N1 N2 ⟨js1, rfl, h1⟩ ⟨js2, rfl, h2⟩
+    exact ⟨js1 ++ js2, nbhdGen_inter P js1 js2, List.forall_mem_append.mpr ⟨h1, h2⟩⟩
+  up_mem := by
+    rintro N1 N2 ⟨js1, rfl, h1⟩ ⟨js2, rfl⟩ hsub
+    have hle : finGen P js2 ⊆ finGen P js1 := hsub (self_mem_nbhdGen P js1)
+    exact ⟨js2, rfl, (finGen_le_iff_forall_mem P hD' js2).mp
+      (hle.trans ((finGen_le_iff_forall_mem P hD' js1).mpr h1))⟩
+
+/-- **A reusable membership characterization**, generalizing the forward half of
+`toSubsystem_ofSubsystem_mem`: for *any* `D' ◁ D`, `ofSubsystem P D' hD'` confirms `nbhd(js)`
+exactly when `D'` confirms every generator in `js`. -/
+theorem mem_ofSubsystem_nbhdGen {D' : NeighborhoodSystem α} (hD' : D' ◁ D) (js : List ℕ) :
+    (ofSubsystem P D' hD').mem (nbhdGen P js) ↔ ∀ i ∈ js, D'.mem (P.X i) := by
+  constructor
+  · rintro ⟨js', hjseq, hall⟩
+    have hfin : finGen P js = finGen P js' := (nbhdGen_eq_iff P).mp hjseq
+    refine (finGen_le_iff_forall_mem P hD' js).mp ?_
+    rw [hfin]
+    exact (finGen_le_iff_forall_mem P hD' js').mpr hall
+  · exact fun hall => ⟨js, rfl, hall⟩
+
+
+/-- **Backward direction: a filter of `SubD` induces a subsystem.** The neighbourhoods are the
+`Fin(js)`-members for lists `js` confirmed by the filter `x`. -/
+def toSubsystemSys (x : (SubD P).Element) : NeighborhoodSystem α where
+  mem Y := ∃ js, x.mem (nbhdGen P js) ∧ Y ∈ finGen P js
+  master := D.master
+  master_nonempty := D.master_nonempty
+  master_mem := ⟨[], x.master_mem, master_mem_finGen P []⟩
+  inter_mem := by
+    rintro X Y Z ⟨js1, hx1, hX⟩ ⟨js2, hx2, hY⟩ ⟨js3, _, hZ⟩ hZsub
+    have hDX := finGen_sub_mem P hX
+    have hDY := finGen_sub_mem P hY
+    have hDZ := finGen_sub_mem P hZ
+    obtain ⟨sub1, hsub1, _, hXeq⟩ := hX
+    obtain ⟨sub2, hsub2, _, hYeq⟩ := hY
+    refine ⟨js1 ++ js2, nbhdGen_inter P js1 js2 ▸ x.inter_mem hx1 hx2,
+      sub1 ++ sub2, hsub1.append hsub2, D.inter_mem hDX hDY hDZ hZsub, ?_⟩
+    rw [interFrom_append_eq, hXeq, hYeq]
+  sub_master := fun ⟨_, _, hY⟩ => finGen_sub_master P hY
+
+
+/-- **`toSubsystemSys x` is a genuine subsystem of `D`.** Uses the same `interFrom_append_eq`
+witness-combination argument as `inter_mem`, without needing the extra `Z`-witness. -/
+theorem toSubsystemSys_subsystem (x : (SubD P).Element) : toSubsystemSys P x ◁ D where
+  master_eq := rfl
+  sub := fun ⟨_, _, hY⟩ => finGen_sub_mem P hY
+  inter_closed := by
+    rintro X Y ⟨js1, hx1, hX⟩ ⟨js2, hx2, hY⟩ hXY
+    obtain ⟨sub1, hsub1, _, hXeq⟩ := hX
+    obtain ⟨sub2, hsub2, _, hYeq⟩ := hY
+    refine ⟨js1 ++ js2, nbhdGen_inter P js1 js2 ▸ x.inter_mem hx1 hx2,
+      sub1 ++ sub2, hsub1.append hsub2, hXY, ?_⟩
+    rw [interFrom_append_eq, hXeq, hYeq]
+
+/-- **Round trip 2.** `ofSubsystem P (toSubsystem P x).1 (toSubsystem P x).2 = x`. -/
+theorem ofSubsystem_toSubsystem (x : (SubD P).Element) :
+    ofSubsystem P (toSubsystemSys P x) (toSubsystemSys_subsystem P x) = x := by
+  apply Element.ext
+  intro N
+  constructor
+  · rintro ⟨js, rfl, hall⟩
+    obtain ⟨js0, hx0, hsub0⟩ := exists_common_witness P x hall
+    exact x.up_mem hx0 ⟨js, rfl⟩ (nbhdGen_antitone P hsub0)
+  · intro hx
+    obtain ⟨js, rfl⟩ := x.sub hx
+    exact ⟨js, rfl, fun i hi => ⟨js, hx, principal_mem_finGen P hi⟩⟩
+
+/-- **Membership transfer, filter form.** Combines round trip 2 with `mem_ofSubsystem_nbhdGen`:
+a filter `x` confirms `nbhd(js)` exactly when the reconstructed subsystem `toSubsystemSys P x`
+confirms every generator in `js`. The key bridge for `map_rel_iff'` below. -/
+theorem mem_nbhdGen_iff (x : (SubD P).Element) (js : List ℕ) :
+    x.mem (nbhdGen P js) ↔ ∀ i ∈ js, (toSubsystemSys P x).mem (P.X i) := by
+  conv_lhs => rw [← ofSubsystem_toSubsystem P x]
+  exact mem_ofSubsystem_nbhdGen P (toSubsystemSys_subsystem P x) js
+
+
+/-- **The backward map, packaged as a subsystem.** -/
+def toSubsystem (x : (SubD P).Element) : {D' : NeighborhoodSystem α // D' ◁ D} :=
+  ⟨toSubsystemSys P x, toSubsystemSys_subsystem P x⟩
+
+/-- **Round trip, membership form.** `toSubsystemSys (ofSubsystem D')` has exactly the same
+neighbourhoods as `D'` itself. `→`: unwind the double existential via `nbhdGen_eq_iff` and the
+workhorse lemma. `←`: `P.surj` finds an index `n` with `P.X n = Y`; the singleton list `[n]`
+witnesses membership on both sides. -/
+theorem toSubsystem_ofSubsystem_mem (D' : NeighborhoodSystem α) (hD' : D' ◁ D) (Y : Set α) :
+    (toSubsystemSys P (ofSubsystem P D' hD')).mem Y ↔ D'.mem Y := by
+  constructor
+  · rintro ⟨js, ⟨js', hjseq, hall⟩, hY⟩
+    have hfin : finGen P js = finGen P js' := (nbhdGen_eq_iff P).mp hjseq
+    exact (finGen_le_iff_forall_mem P hD' js').mpr hall (hfin ▸ hY)
+  · intro hY
+    obtain ⟨n, hn⟩ := P.surj (hD'.sub hY)
+    refine ⟨[n], ⟨[n], rfl, fun i hi => ?_⟩, hn ▸ principal_mem_finGen P (List.mem_singleton.mpr rfl)⟩
+    rw [List.mem_singleton] at hi
+    subst hi
+    rw [hn]
+    exact hY
+
+/-- **Round trip 1.** `toSubsystem P (ofSubsystem P D' hD') = ⟨D', hD'⟩`. -/
+theorem toSubsystem_ofSubsystem (D' : NeighborhoodSystem α) (hD' : D' ◁ D) :
+    toSubsystem P (ofSubsystem P D' hD') = ⟨D', hD'⟩ :=
+  Subtype.ext (NeighborhoodSystem.ext (toSubsystem_ofSubsystem_mem P D' hD') hD'.master_eq.symm)
+
+
 end DomainTheory.NeighbourhoodSystems
