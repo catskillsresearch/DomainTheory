@@ -569,7 +569,7 @@ theorem mem_decodeQPairList_diffSingleCode (accL q : ℕ) (p : ℚ × ℚ) :
 theorem presentedIntervals_decodeQPairList_diffSingleCode (accL q : ℕ) :
     presentedIntervals (decodeQPairList (diffSingleCode accL q))
       = presentedIntervals (decodeQPairList accL) \ Set.Ico (decodeRatPair q).1 (decodeRatPair q).2 := by
-  rw [presentedIntervals_congr (mem_decodeQPairList_diffSingleCode accL q), presentedIntervals_diffSingleList]
+  rw [presentedIntervals.congr (mem_decodeQPairList_diffSingleCode accL q), presentedIntervals.diffSingleList]
 
 
 theorem diffAllStep_eq (acc x : ℕ) : diffAllStep (Nat.pair x (Nat.pair acc 0)) = diffSingleCode acc x := by
@@ -584,7 +584,7 @@ theorem presentedIntervals_decodeQPairList_foldl_diffAllStep (L2list : List ℕ)
   | cons a l ih =>
     intro acc
     rw [List.foldl_cons, diffAllStep_eq, ih (diffSingleCode acc a),
-      presentedIntervals_decodeQPairList_diffSingleCode, List.map_cons, presentedIntervals_cons,
+      presentedIntervals_decodeQPairList_diffSingleCode, List.map_cons, presentedIntervals.cons,
       Set.sdiff_sdiff]
 
 theorem presentedIntervals_decodeQPairList_diffAllCode (pc L2 : ℕ) :
@@ -594,7 +594,7 @@ theorem presentedIntervals_decodeQPairList_diffAllCode (pc L2 : ℕ) :
   rw [foldCode_eq', presentedIntervals_decodeQPairList_foldl_diffAllStep]
   unfold decodeQPairList
   simp only [decodeList_succ, unpair_pair_fst, unpair_pair_snd, decodeList_zero, List.map_cons,
-    List.map_nil, presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]
+    List.map_nil, presentedIntervals.cons, presentedIntervals.nil, Set.union_empty]
 
 
 theorem mem_decodeQPairList_diffCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
@@ -610,15 +610,15 @@ theorem presentedIntervals_decodeQPairList_flatMap_diffAllCode (c1list : List �
   induction c1list with
   | nil => simp
   | cons a l ih =>
-    rw [List.flatMap_cons, List.map_cons, presentedIntervals_append,
-      presentedIntervals_decodeQPairList_diffAllCode, ih, presentedIntervals_cons,
+    rw [List.flatMap_cons, List.map_cons, presentedIntervals.append,
+      presentedIntervals_decodeQPairList_diffAllCode, ih, presentedIntervals.cons,
       Set.union_sdiff_distrib]
 
 /-- **`diffCode` realizes `diffLists` (hence set difference) at the set level.** -/
 theorem presentedIntervals_decodeQPairList_diffCode (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList (diffCode c1 c2))
       = presentedIntervals (decodeQPairList c1) \ presentedIntervals (decodeQPairList c2) := by
-  rw [presentedIntervals_congr
+  rw [presentedIntervals.congr
       (fun p => (mem_decodeQPairList_diffCode c1 c2 p).trans (List.mem_flatMap).symm),
     presentedIntervals_decodeQPairList_flatMap_diffAllCode]
   rfl
@@ -630,10 +630,10 @@ theorem presentedIntervals_nonempty_iff (L : List (ℚ × ℚ)) :
     (presentedIntervals L).Nonempty ↔ ∃ p ∈ L, p.1 < p.2 := by
   constructor
   · rintro ⟨x, hx⟩
-    obtain ⟨p, hp, hx1, hx2⟩ := mem_presentedIntervals.mp hx
+    obtain ⟨p, hp, hx1, hx2⟩ := presentedIntervals.mem.mp hx
     exact ⟨p, hp, lt_of_le_of_lt hx1 hx2⟩
   · rintro ⟨p, hp, hlt⟩
-    exact ⟨p.1, mem_presentedIntervals.mpr ⟨p, hp, le_refl _, hlt⟩⟩
+    exact ⟨p.1, presentedIntervals.mem.mpr ⟨p, hp, le_refl _, hlt⟩⟩
 
 theorem decodeRatPair_qpCombineBop (e1 e2 : ℕ) :
     decodeRatPair (qpCombineBop (Nat.pair e1 e2))
@@ -674,8 +674,8 @@ theorem mem_decodeQPairList_combineCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
 theorem presentedIntervals_decodeQPairList_combineCode (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList (combineCode c1 c2))
       = presentedIntervals (decodeQPairList c1) ∩ presentedIntervals (decodeQPairList c2) := by
-  rw [presentedIntervals_inter]
-  apply presentedIntervals_congr
+  rw [presentedIntervals.inter]
+  apply presentedIntervals.congr
   intro p
   rw [mem_decodeQPairList_combineCode, mem_combineIntervals]
 

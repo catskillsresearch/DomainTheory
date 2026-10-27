@@ -1051,15 +1051,15 @@ theorem presentedIntervals_eq_empty_iff_of_forall_lt {L' : List (ℚ × ℚ)}
   · intro h
     rcases L' with _ | ⟨a, l⟩
     · rfl
-    · exact absurd h (Set.Nonempty.ne_empty ⟨a.1, mem_presentedIntervals.mpr
+    · exact absurd h (Set.Nonempty.ne_empty ⟨a.1, presentedIntervals.mem.mpr
         ⟨a, List.mem_cons.mpr (Or.inl rfl), le_refl _,
           hpos a (List.mem_cons.mpr (Or.inl rfl))⟩⟩)
-  · rintro rfl; exact presentedIntervals_nil
+  · rintro rfl; exact presentedIntervals.nil
 
 theorem presentedIntervals_filter_qpPos (L : List (ℚ × ℚ)) :
     presentedIntervals (L.filter (fun p => decide (p.1 < p.2))) = presentedIntervals L := by
   ext x
-  simp only [mem_presentedIntervals, List.mem_filter, decide_eq_true_eq]
+  simp only [presentedIntervals.mem, List.mem_filter, decide_eq_true_eq]
   constructor
   · rintro ⟨p, ⟨hp, -⟩, hx⟩
     exact ⟨p, hp, hx⟩
@@ -1068,7 +1068,7 @@ theorem presentedIntervals_filter_qpPos (L : List (ℚ × ℚ)) :
 
 theorem presentedIntervals_singleton_zero_one :
     presentedIntervals ([((0 : ℚ), (1 : ℚ))]) = U.master := by
-  rw [presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]; rfl
+  rw [presentedIntervals.cons, presentedIntervals.nil, Set.union_empty]; rfl
 
 /-- Clip a rational pair to `[0,1)`, moving `r` up to `0` and `s` down to `1` when needed. Mirrors
 `Definition87.lean`'s `private def clip`, redefined here (public) since `canonList`/`canonCode` need
@@ -1099,7 +1099,7 @@ theorem canonList_eq_of_filter_eq_nil {L : List (ℚ × ℚ)}
 theorem presentedIntervals_map_qpClip (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map qpClip) = presentedIntervals L ∩ Set.Ico (0 : ℚ) 1 := by
   ext x
-  simp only [mem_presentedIntervals, List.mem_map, Set.mem_inter_iff, Set.mem_Ico, qpClip]
+  simp only [presentedIntervals.mem, List.mem_map, Set.mem_inter_iff, Set.mem_Ico, qpClip]
   constructor
   · rintro ⟨p, ⟨q, hq, rfl⟩, hx1, hx2⟩
     exact ⟨⟨q, hq, le_sup_left.trans hx1, hx2.trans_le inf_le_left⟩,
@@ -1108,12 +1108,12 @@ theorem presentedIntervals_map_qpClip (L : List (ℚ × ℚ)) :
     exact ⟨(q.1 ⊔ 0, q.2 ⊓ 1), ⟨q, hq, rfl⟩, sup_le hxq1 hx0, lt_inf_iff.mpr ⟨hxq2, hx1⟩⟩
 
 /-- **`canonList` always presents a genuine `U`-neighbourhood.** -/
-theorem U_mem_presentedIntervals_canonList (L : List (ℚ × ℚ)) :
+theorem U_presentedIntervals.mem_canonList (L : List (ℚ × ℚ)) :
     U.mem (presentedIntervals (canonList L)) := by
   rcases hL : (L.map qpClip).filter (fun p => decide (p.1 < p.2)) with _ | ⟨a, l⟩
   · rw [canonList_eq_of_filter_eq_nil hL]
     have heq : presentedIntervals ([((0 : ℚ), (1 : ℚ))]) = U.master := by
-      rw [presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]; rfl
+      rw [presentedIntervals.cons, presentedIntervals.nil, Set.union_empty]; rfl
     rw [heq]; exact U.master_mem
   · rw [canonList_eq_of_filter_eq_cons hL]
     have hL'eq : presentedIntervals (a :: l) = presentedIntervals L ∩ Set.Ico (0 : ℚ) 1 := by
@@ -1122,7 +1122,7 @@ theorem U_mem_presentedIntervals_canonList (L : List (ℚ × ℚ)) :
       rw [hL]; exact List.mem_cons.mpr (Or.inl rfl)
     have ha : a.1 < a.2 := by simpa using (List.mem_filter.mp hmem).2
     refine ⟨⟨a :: l, rfl⟩, ?_, hL'eq ▸ Set.inter_subset_right⟩
-    exact ⟨a.1, mem_presentedIntervals.mpr ⟨a, List.mem_cons.mpr (Or.inl rfl), le_refl _, ha⟩⟩
+    exact ⟨a.1, presentedIntervals.mem.mpr ⟨a, List.mem_cons.mpr (Or.inl rfl), le_refl _, ha⟩⟩
 
 /-- **`canonList` is a no-op (as a set) on a list that already presents a `U`-neighbourhood.** -/
 theorem canonList_fixed {L : List (ℚ × ℚ)} (h : U.mem (presentedIntervals L)) :
@@ -1132,7 +1132,7 @@ theorem canonList_fixed {L : List (ℚ × ℚ)} (h : U.mem (presentedIntervals L
   · exfalso
     have hcontra : presentedIntervals L ∩ Set.Ico (0 : ℚ) 1 = ∅ := by
       rw [← presentedIntervals_map_qpClip, ← presentedIntervals_filter_qpPos (L.map qpClip), hL,
-        presentedIntervals_nil]
+        presentedIntervals.nil]
     rw [Set.inter_eq_left.mpr hsub] at hcontra
     exact hne.ne_empty hcontra
   · rw [canonList_eq_of_filter_eq_cons hL, ← hL, presentedIntervals_filter_qpPos,
@@ -1233,7 +1233,7 @@ theorem presentedIntervals_decodeQPairList_canonListCode (c : ℕ) :
     presentedIntervals (decodeQPairList (canonListCode c))
       = presentedIntervals (decodeQPairList c) ∩ Set.Ico (0 : ℚ) 1 := by
   rw [← presentedIntervals_map_qpClip, ← presentedIntervals_filter_qpPos ((decodeQPairList c).map qpClip)]
-  apply presentedIntervals_congr
+  apply presentedIntervals.congr
   intro p
   rw [mem_decodeQPairList_canonListCode, List.mem_filter, List.mem_map]
   constructor
@@ -1257,7 +1257,7 @@ theorem presentedIntervals_decodeQPairList_canonCode (c : ℕ) :
       apply hnc.ne_empty
       unfold decodeQPairList
       rw [h, decodeList_zero, List.map_nil]
-      exact presentedIntervals_nil
+      exact presentedIntervals.nil
     have hzero : isZero (canonListCode c) = 0 := by
       by_contra hz
       have h1 := isZero_le_one (canonListCode c)
@@ -1300,7 +1300,7 @@ theorem UX_UmasterIdx : UX UmasterIdx = U.master := by
 
 /-- Every `UX n` is a genuine `U`-neighbourhood. -/
 theorem U_mem_UX (n : ℕ) : U.mem (UX n) := by
-  rw [UX_eq]; exact U_mem_presentedIntervals_canonList _
+  rw [UX_eq]; exact U_presentedIntervals.mem_canonList _
 
 /-- `UX` is onto `U`'s neighbourhoods: every `U`-neighbourhood already has a Scott-literal
 presenting list (`U.mem_iff_scott`), on which `canonList` is a no-op (`canonList_fixed`). -/
@@ -1568,7 +1568,7 @@ theorem mem_decodeQPairList_firstElemCode {c : ℕ} (hc : c ≠ 0) :
 theorem presentedIntervals_map_qpClipGe (m : ℚ) (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map (qpClipGe m)) = presentedIntervals L ∩ Set.Ici m := by
   ext x
-  simp only [mem_presentedIntervals, List.mem_map, Set.mem_inter_iff, Set.mem_Ici, qpClipGe]
+  simp only [presentedIntervals.mem, List.mem_map, Set.mem_inter_iff, Set.mem_Ici, qpClipGe]
   constructor
   · rintro ⟨p, ⟨q, hq, rfl⟩, hx1, hx2⟩
     exact ⟨⟨q, hq, le_sup_left.trans hx1, hx2⟩, le_sup_right.trans hx1⟩
@@ -1579,7 +1579,7 @@ theorem presentedIntervals_decodeQPairList_clipGeListCode (m c : ℕ) :
     presentedIntervals (decodeQPairList (clipGeListCode m c)) =
       presentedIntervals (decodeQPairList c) ∩ Set.Ici (decodeRat m) := by
   rw [← presentedIntervals_map_qpClipGe]
-  apply presentedIntervals_congr
+  apply presentedIntervals.congr
   intro p
   rw [mem_decodeQPairList_clipGeListCode, List.mem_map]
   simp only [eq_comm]
@@ -1587,7 +1587,7 @@ theorem presentedIntervals_decodeQPairList_clipGeListCode (m c : ℕ) :
 theorem presentedIntervals_map_qpClipLt (m : ℚ) (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map (qpClipLt m)) = presentedIntervals L ∩ Set.Iio m := by
   ext x
-  simp only [mem_presentedIntervals, List.mem_map, Set.mem_inter_iff, Set.mem_Iio, qpClipLt]
+  simp only [presentedIntervals.mem, List.mem_map, Set.mem_inter_iff, Set.mem_Iio, qpClipLt]
   constructor
   · rintro ⟨p, ⟨q, hq, rfl⟩, hx1, hx2⟩
     exact ⟨⟨q, hq, hx1, hx2.trans_le inf_le_left⟩, hx2.trans_le inf_le_right⟩
@@ -1598,7 +1598,7 @@ theorem presentedIntervals_decodeQPairList_clipLtListCode (m c : ℕ) :
     presentedIntervals (decodeQPairList (clipLtListCode m c)) =
       presentedIntervals (decodeQPairList c) ∩ Set.Iio (decodeRat m) := by
   rw [← presentedIntervals_map_qpClipLt]
-  apply presentedIntervals_congr
+  apply presentedIntervals.congr
   intro p
   rw [mem_decodeQPairList_clipLtListCode, List.mem_map]
   simp only [eq_comm]
@@ -1669,7 +1669,7 @@ theorem UX_splitULeft (n : ℕ) :
     refine ⟨⟨(decodeQPairList (canonCode n)).map (qpClipLt (decodeRat (splitMidCode n))),
       (presentedIntervals_map_qpClipLt _ _).symm⟩, ?_, ?_⟩
     · refine ⟨(decodeRatPair (firstElemCode (canonCode n))).1, ?_, splitU_mid_gt n⟩
-      exact mem_presentedIntervals.mpr ⟨decodeRatPair (firstElemCode (canonCode n)),
+      exact presentedIntervals.mem.mpr ⟨decodeRatPair (firstElemCode (canonCode n)),
         mem_decodeQPairList_firstElemCode (canonCode_ne_zero n), le_refl _, splitU_p0_lt n⟩
     · exact Set.inter_subset_left.trans (U_mem_UX n).2.2
   show presentedIntervals (decodeQPairList (canonCode (splitULeft n))) = _
@@ -1695,7 +1695,7 @@ theorem UX_splitURight (n : ℕ) :
     refine ⟨⟨(decodeQPairList (canonCode n)).map (qpClipGe (decodeRat (splitMidCode n))),
       (presentedIntervals_map_qpClipGe _ _).symm⟩, ?_, ?_⟩
     · refine ⟨decodeRat (splitMidCode n), ?_, Set.self_mem_Ici⟩
-      exact mem_presentedIntervals.mpr ⟨decodeRatPair (firstElemCode (canonCode n)),
+      exact presentedIntervals.mem.mpr ⟨decodeRatPair (firstElemCode (canonCode n)),
         mem_decodeQPairList_firstElemCode (canonCode_ne_zero n), (splitU_mid_gt n).le, splitU_mid_lt n⟩
     · exact Set.inter_subset_left.trans (U_mem_UX n).2.2
   show presentedIntervals (decodeQPairList (canonCode (splitURight n))) = _
@@ -2635,7 +2635,7 @@ theorem U_mem_union_UX (n m : ℕ) : U.mem (UX n ∪ UX m) := by
   obtain ⟨-, hne1, hsub1⟩ := U_mem_UX n
   obtain ⟨-, -, hsub2⟩ := U_mem_UX m
   exact ⟨⟨decodeQPairList (canonCode n) ++ decodeQPairList (canonCode m),
-      (presentedIntervals_append _ _).symm⟩, hne1.mono Set.subset_union_left,
+      (presentedIntervals.append _ _).symm⟩, hne1.mono Set.subset_union_left,
     Set.union_subset hsub1 hsub2⟩
 end
 
@@ -2720,7 +2720,7 @@ theorem presentedIntervals_decodeQPairList_appendCode (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList (Domain.Recursive.appendCode c1 c2))
       = presentedIntervals (decodeQPairList c1) ∪ presentedIntervals (decodeQPairList c2) := by
   ext x
-  simp only [mem_presentedIntervals, Set.mem_union]
+  simp only [presentedIntervals.mem, Set.mem_union]
   constructor
   · rintro ⟨p, hp, h1, h2⟩
     rcases (mem_decodeQPairList_appendCode c1 c2 p).mp hp with hp' | hp'

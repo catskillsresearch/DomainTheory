@@ -1,27 +1,13 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NeighborhoodSystem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.presentedIntervals
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_19
 public import Mathlib.Data.Fintype.Defs
-public import Mathlib.Algebra.Order.Ring.Unbundled.Rat
-public import Mathlib.Order.SetNotation
-public import Mathlib.Order.Interval.Set.Defs
 
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
-
-/-- The set presented by a list of interval endpoint-pairs: the union `⋃ (r,s) ∈ L, [r,s)`. -/
-def presentedIntervals (L : List (ℚ × ℚ)) : Set ℚ := ⋃ p ∈ L, Set.Ico p.1 p.2
-
-@[simp] theorem mem_presentedIntervals {L : List (ℚ × ℚ)} {x : ℚ} :
-    x ∈ presentedIntervals L ↔ ∃ p ∈ L, p.1 ≤ x ∧ x < p.2 := by
-  simp only [presentedIntervals, Set.mem_iUnion, Set.mem_Ico, exists_prop]
-
-@[simp] theorem presentedIntervals_nil : presentedIntervals ([] : List (ℚ × ℚ)) = ∅ := by
-  ext x; simp
-
 /-- Scott's master neighbourhood `Δ = [0,1)` for `𝒰`. -/
 abbrev UMaster : Set ℚ := Set.Ico (0 : ℚ) 1
 
@@ -34,120 +20,6 @@ finite union of rational half-open intervals. -/
 def UMem (X : Set ℚ) : Prop :=
   (∃ L : List (ℚ × ℚ), X = presentedIntervals L) ∧ X.Nonempty ∧ X ⊆ Set.Ico (0 : ℚ) 1
 
-/-- Clip an interval-pair to `[0,1)`, moving `r` up to `0` and `s` down to `1` when needed. -/
-def clip (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ 0, p.2 ⊓ 1)
-
-def clipGe (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ m, p.2)
-
-def clipLt (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1, p.2 ⊓ m)
-
-/-- Pairwise-combine two endpoint-lists via `Set.Ico_inter_Ico`, realizing the intersection of the
-two presented unions as another presented union. -/
-def combineIntervals (L1 L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) :=
-  L1.flatMap (fun p => L2.map (fun q => (p.1 ⊔ q.1, p.2 ⊓ q.2)))
-
-theorem presentedIntervals_cons (p : ℚ × ℚ) (L : List (ℚ × ℚ)) :
-    presentedIntervals (p :: L) = Set.Ico p.1 p.2 ∪ presentedIntervals L := by
-  ext x; simp [Set.mem_Ico, or_and_right, exists_or]
-
-theorem presentedIntervals_append (L1 L2 : List (ℚ × ℚ)) :
-    presentedIntervals (L1 ++ L2) = presentedIntervals L1 ∪ presentedIntervals L2 := by
-  induction L1 with
-  | nil => simp
-  | cons p L1 ih => simp [List.cons_append, presentedIntervals_cons, ih, Set.union_assoc]
-
-/-- Two lists with the same **elements** present the same set. -/
-theorem presentedIntervals_congr {L1 L2 : List (ℚ × ℚ)} (h : ∀ p, p ∈ L1 ↔ p ∈ L2) :
-    presentedIntervals L1 = presentedIntervals L2 := by
-  ext x
-  simp only [mem_presentedIntervals]
-  constructor
-  · rintro ⟨p, hp, h1, h2⟩; exact ⟨p, (h p).mp hp, h1, h2⟩
-  · rintro ⟨p, hp, h1, h2⟩; exact ⟨p, (h p).mpr hp, h1, h2⟩
-
-/-- **The presented family is closed under intersection**, with no side conditions on endpoints:
-`Set.Ico_inter_Ico` handles crossed bounds automatically by returning the empty interval. -/
-theorem presentedIntervals_inter (L1 L2 : List (ℚ × ℚ)) :
-    presentedIntervals L1 ∩ presentedIntervals L2 = presentedIntervals (combineIntervals L1 L2) := by
-  ext x
-  simp only [mem_presentedIntervals, combineIntervals, List.mem_flatMap, List.mem_map,
-    Set.mem_inter_iff]
-  constructor
-  · rintro ⟨⟨p, hp, hxp1, hxp2⟩, ⟨q, hq, hxq1, hxq2⟩⟩
-    exact ⟨(p.1 ⊔ q.1, p.2 ⊓ q.2), ⟨p, hp, q, hq, rfl⟩, sup_le hxp1 hxq1, lt_inf_iff.mpr ⟨hxp2, hxq2⟩⟩
-  · rintro ⟨r, ⟨p, hp, q, hq, rfl⟩, hx1, hx2⟩
-    exact ⟨⟨p, hp, le_sup_left.trans hx1, hx2.trans_le inf_le_left⟩,
-      ⟨q, hq, le_sup_right.trans hx1, hx2.trans_le inf_le_right⟩⟩
-
-/-- **Unconditional interval difference**: `Ico a b \ Ico c d = Ico a (b ⊓ c) ∪ Ico (a ⊔ d) b`. -/
-theorem Ico_diff_Ico (a b c d : ℚ) :
-    Set.Ico a b \ Set.Ico c d = Set.Ico a (b ⊓ c) ∪ Set.Ico (a ⊔ d) b := by
-  ext x
-  simp only [Set.mem_sdiff, Set.mem_Ico, Set.mem_union, lt_inf_iff, sup_le_iff]
-  constructor
-  · rintro ⟨⟨ha, hb⟩, hcd⟩
-    rcases lt_or_ge x c with hc | hc
-    · exact Or.inl ⟨ha, hb, hc⟩
-    · rcases lt_or_ge x d with hd | hd
-      · exact absurd ⟨hc, hd⟩ hcd
-      · exact Or.inr ⟨⟨ha, hd⟩, hb⟩
-  · rintro (⟨ha, hb, hc⟩ | ⟨⟨ha, hd⟩, hb⟩)
-    · exact ⟨⟨ha, hb⟩, fun ⟨hc', _⟩ => absurd hc' (not_le.mpr hc)⟩
-    · exact ⟨⟨ha, hb⟩, fun ⟨_, hd'⟩ => absurd hd' (not_lt.mpr hd)⟩
-
-/-- **Difference of a single interval-pair by another**, as a `≤ 2`-element list. -/
-def diffOneList (p q : ℚ × ℚ) : List (ℚ × ℚ) := [(p.1, p.2 ⊓ q.1), (p.1 ⊔ q.2, p.2)]
-
-/-- **Subtract a single interval-pair `q` from a whole presenting list `L`.** -/
-def diffSingleList (L : List (ℚ × ℚ)) (q : ℚ × ℚ) : List (ℚ × ℚ) :=
-  L.flatMap (fun p => diffOneList p q)
-
-/-- **Subtract a whole presenting list `L2` from a single interval-pair `p`.** -/
-def diffAllList (p : ℚ × ℚ) (L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L2.foldl diffSingleList [p]
-
-/-- **Subtract `L2` from `L1`**, presenting `presentedIntervals L1 \ presentedIntervals L2`. -/
-def diffLists (L1 L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L1.flatMap (fun p => diffAllList p L2)
-
-theorem presentedIntervals_diffOneList (p q : ℚ × ℚ) :
-    presentedIntervals (diffOneList p q) = Set.Ico p.1 p.2 \ Set.Ico q.1 q.2 := by
-  unfold diffOneList
-  rw [presentedIntervals_cons, presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]
-  exact (Ico_diff_Ico p.1 p.2 q.1 q.2).symm
-
-theorem presentedIntervals_diffSingleList (L : List (ℚ × ℚ)) (q : ℚ × ℚ) :
-    presentedIntervals (diffSingleList L q) = presentedIntervals L \ Set.Ico q.1 q.2 := by
-  induction L with
-  | nil => simp [diffSingleList]
-  | cons a l ih =>
-    rw [show diffSingleList (a :: l) q = diffOneList a q ++ diffSingleList l q from rfl,
-      presentedIntervals_append, presentedIntervals_diffOneList, ih, presentedIntervals_cons,
-      Set.union_sdiff_distrib]
-
-theorem presentedIntervals_foldl_diffSingleList (L2 : List (ℚ × ℚ)) :
-    ∀ acc : List (ℚ × ℚ),
-      presentedIntervals (L2.foldl diffSingleList acc) = presentedIntervals acc \ presentedIntervals L2 := by
-  induction L2 with
-  | nil => intro acc; simp
-  | cons a l ih =>
-    intro acc
-    rw [List.foldl_cons, ih (diffSingleList acc a), presentedIntervals_diffSingleList,
-      presentedIntervals_cons, Set.sdiff_sdiff]
-
-theorem presentedIntervals_diffAllList (p : ℚ × ℚ) (L2 : List (ℚ × ℚ)) :
-    presentedIntervals (diffAllList p L2) = Set.Ico p.1 p.2 \ presentedIntervals L2 := by
-  unfold diffAllList
-  rw [presentedIntervals_foldl_diffSingleList, presentedIntervals_cons, presentedIntervals_nil,
-    Set.union_empty]
-
-theorem presentedIntervals_diffLists (L1 L2 : List (ℚ × ℚ)) :
-    presentedIntervals (diffLists L1 L2) = presentedIntervals L1 \ presentedIntervals L2 := by
-  induction L1 with
-  | nil => simp [diffLists]
-  | cons a l ih =>
-    rw [show diffLists (a :: l) L2 = diffAllList a L2 ++ diffLists l L2 from rfl,
-      presentedIntervals_append, presentedIntervals_diffAllList, ih, presentedIntervals_cons,
-      Set.union_sdiff_distrib]
-
 namespace UMem
 
 /-- Every `UMem` set is contained in `[0,1)`. -/
@@ -155,7 +27,7 @@ theorem sub_master {X : Set ℚ} (hX : UMem X) : X ⊆ UMaster := hX.2.2
 
 /-- `[0,1)` is presented by the single interval `[0,1)`. -/
 theorem master_mem : UMem UMaster :=
-  ⟨⟨[(0, 1)], by rw [presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]⟩,
+  ⟨⟨[(0, 1)], by rw [presentedIntervals.cons, presentedIntervals.nil, Set.union_empty]⟩,
     ⟨0, by norm_num⟩, subset_rfl⟩
 
 /-- Intersection of two presentable sets is presentable, via `combineIntervals`. -/
@@ -164,9 +36,8 @@ theorem inter_mem {X Y Z : Set ℚ} (hX : UMem X) (hY : UMem Y) (hZ : UMem Z)
   rcases hX with ⟨⟨L1, rfl⟩, -, hXsub⟩
   rcases hY with ⟨⟨L2, rfl⟩, -, -⟩
   rcases hZ with ⟨-, hZne, -⟩
-  exact ⟨⟨combineIntervals L1 L2, presentedIntervals_inter L1 L2⟩,
+  exact ⟨⟨combineIntervals L1 L2, presentedIntervals.inter L1 L2⟩,
     hZne.mono hZsub, Set.inter_subset_left.trans hXsub⟩
-
 end UMem
 
 /- concordance: source L4928 DEFINITION 8.7 interval presentation of U -/
@@ -183,47 +54,6 @@ def U : NeighborhoodSystem ℚ where
   inter_mem := UMem.inter_mem
   sub_master := UMem.sub_master
 
-theorem presentedIntervals_map_clip (L : List (ℚ × ℚ)) :
-    presentedIntervals (L.map clip) = presentedIntervals L ∩ Set.Ico (0 : ℚ) 1 := by
-  ext x
-  simp only [mem_presentedIntervals, List.mem_map, Set.mem_inter_iff, Set.mem_Ico, clip]
-  constructor
-  · rintro ⟨p, ⟨q, hq, rfl⟩, hx1, hx2⟩
-    exact ⟨⟨q, hq, le_sup_left.trans hx1, hx2.trans_le inf_le_left⟩,
-      le_sup_right.trans hx1, hx2.trans_le inf_le_right⟩
-  · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hx0, hx1⟩
-    exact ⟨(q.1 ⊔ 0, q.2 ⊓ 1), ⟨q, hq, rfl⟩, sup_le hxq1 hx0, lt_inf_iff.mpr ⟨hxq2, hx1⟩⟩
-
-private theorem presentedIntervals_filter_lt (L : List (ℚ × ℚ)) :
-    presentedIntervals (L.filter (fun p => decide (p.1 < p.2))) = presentedIntervals L := by
-  ext x
-  simp only [mem_presentedIntervals, List.mem_filter, decide_eq_true_eq]
-  constructor
-  · rintro ⟨p, ⟨hp, -⟩, hx⟩
-    exact ⟨p, hp, hx⟩
-  · rintro ⟨p, hp, hx1, hx2⟩
-    exact ⟨p, ⟨hp, lt_of_le_of_lt hx1 hx2⟩, hx1, hx2⟩
-
-theorem presentedIntervals_map_clipLt (m : ℚ) (L : List (ℚ × ℚ)) :
-    presentedIntervals (L.map (clipLt m)) = presentedIntervals L ∩ Set.Iio m := by
-  ext x
-  simp only [mem_presentedIntervals, List.mem_map, Set.mem_inter_iff, Set.mem_Iio, clipLt]
-  constructor
-  · rintro ⟨p, ⟨q, hq, rfl⟩, hx1, hx2⟩
-    exact ⟨⟨q, hq, hx1, hx2.trans_le inf_le_left⟩, hx2.trans_le inf_le_right⟩
-  · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hxm⟩
-    exact ⟨(q.1, q.2 ⊓ m), ⟨q, hq, rfl⟩, hxq1, lt_inf_iff.mpr ⟨hxq2, hxm⟩⟩
-
-theorem presentedIntervals_map_clipGe (m : ℚ) (L : List (ℚ × ℚ)) :
-    presentedIntervals (L.map (clipGe m)) = presentedIntervals L ∩ Set.Ici m := by
-  ext x
-  simp only [mem_presentedIntervals, List.mem_map, Set.mem_inter_iff, Set.mem_Ici, clipGe]
-  constructor
-  · rintro ⟨p, ⟨q, hq, rfl⟩, hx1, hx2⟩
-    exact ⟨⟨q, hq, le_sup_left.trans hx1, hx2⟩, le_sup_right.trans hx1⟩
-  · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hxm⟩
-    exact ⟨(q.1 ⊔ m, q.2), ⟨q, hq, rfl⟩, sup_le hxq1 hxm, hxq2⟩
-
 namespace U
 
 /-- **`U` really is Scott's literal family**: a set is a `U`-neighbourhood iff it is presentable
@@ -239,13 +69,13 @@ theorem mem_iff_scott {X : Set ℚ} :
       obtain ⟨hp1, hp2⟩ := List.mem_filter.mp hp
       obtain ⟨q, hq, rfl⟩ := List.mem_map.mp hp1
       exact ⟨le_sup_right, decide_eq_true_eq.mp hp2, inf_le_right⟩
-    · rw [presentedIntervals_filter_lt, presentedIntervals_map_clip,
+    · rw [presentedIntervals.filter_lt, presentedIntervals.map_clip,
         Set.inter_eq_left.mpr hsub]
     · exact hne
   · rintro ⟨L, hbound, rfl, hne⟩
     refine ⟨⟨L, rfl⟩, hne, ?_⟩
     rintro x hx
-    obtain ⟨p, hp, hx1, hx2⟩ := mem_presentedIntervals.mp hx
+    obtain ⟨p, hp, hx1, hx2⟩ := presentedIntervals.mem.mp hx
     obtain ⟨hp0, -, hp1⟩ := hbound p hp
     exact ⟨hp0.trans hx1, hx2.trans_le hp1⟩
 
@@ -254,7 +84,7 @@ theorem no_minimal {X : Set ℚ} (hX : U.mem X) :
     ∃ Y Z : Set ℚ, U.mem Y ∧ U.mem Z ∧ Y ∩ Z = ∅ ∧ Y ∪ Z = X ∧ Y ≠ X ∧ Z ≠ X := by
   obtain ⟨⟨L, rfl⟩, hne, hsub⟩ := hX
   obtain ⟨x, hx⟩ := hne
-  obtain ⟨p, hp, hx1, hx2⟩ := mem_presentedIntervals.mp hx
+  obtain ⟨p, hp, hx1, hx2⟩ := presentedIntervals.mem.mp hx
   have hlt : p.1 < p.2 := lt_of_le_of_lt hx1 hx2
   set m := (p.1 + p.2) / 2 with hm
   have hpm1 : p.1 < m := left_lt_add_div_two.mpr hlt
@@ -276,12 +106,12 @@ theorem no_minimal {X : Set ℚ} (hX : U.mem X) :
       · exact Or.inl ⟨h, hlt'⟩
       · exact Or.inr ⟨h, hge'⟩
   have hYne : (presentedIntervals L ∩ Set.Iio m).Nonempty :=
-    ⟨p.1, mem_presentedIntervals.mpr ⟨p, hp, le_refl _, hlt⟩, hpm1⟩
+    ⟨p.1, presentedIntervals.mem.mpr ⟨p, hp, le_refl _, hlt⟩, hpm1⟩
   have hZne : (presentedIntervals L ∩ Set.Ici m).Nonempty :=
-    ⟨m, mem_presentedIntervals.mpr ⟨p, hp, hpm1.le, hpm2⟩, le_refl m⟩
-  refine ⟨_, _, ⟨⟨_, (presentedIntervals_map_clipLt m L).symm⟩, hYne,
+    ⟨m, presentedIntervals.mem.mpr ⟨p, hp, hpm1.le, hpm2⟩, le_refl m⟩
+  refine ⟨_, _, ⟨⟨_, (presentedIntervals.map_clipLt m L).symm⟩, hYne,
       Set.inter_subset_left.trans hsub⟩,
-    ⟨⟨_, (presentedIntervals_map_clipGe m L).symm⟩, hZne, Set.inter_subset_left.trans hsub⟩,
+    ⟨⟨_, (presentedIntervals.map_clipGe m L).symm⟩, hZne, Set.inter_subset_left.trans hsub⟩,
     hYZinter, hYZunion, ?_, ?_⟩
   · intro hEq
     have hZsub : presentedIntervals L ∩ Set.Ici m ⊆ presentedIntervals L ∩ Set.Iio m := by
@@ -291,7 +121,6 @@ theorem no_minimal {X : Set ℚ} (hX : U.mem X) :
     have hYsub : presentedIntervals L ∩ Set.Iio m ⊆ presentedIntervals L ∩ Set.Ici m := by
       rw [hEq]; exact Set.inter_subset_left
     exact hYne.ne_empty ((Set.inter_eq_left.mpr hYsub).symm.trans hYZinter)
-
 /-- **`U` is closed under binary union**, as long as the result is non-empty. -/
 theorem union_mem {X Y : Set ℚ} (hX : X = ∅ ∨ U.mem X) (hY : Y = ∅ ∨ U.mem Y) :
     X ∪ Y = ∅ ∨ U.mem (X ∪ Y) := by
@@ -303,9 +132,8 @@ theorem union_mem {X Y : Set ℚ} (hX : X = ∅ ∨ U.mem X) (hY : Y = ∅ ∨ U
     · exact Or.inr (by simpa using hX)
     · obtain ⟨⟨L1, rfl⟩, hXne, hXsub⟩ := hX
       obtain ⟨⟨L2, rfl⟩, hYne, hYsub⟩ := hY
-      refine Or.inr ⟨⟨L1 ++ L2, (presentedIntervals_append L1 L2).symm⟩,
+      refine Or.inr ⟨⟨L1 ++ L2, (presentedIntervals.append L1 L2).symm⟩,
         hXne.mono Set.subset_union_left, Set.union_subset hXsub hYsub⟩
-
 /-- **`U` is closed under finite (`Fintype`-indexed) unions**, as long as the result is non-empty. -/
 theorem iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℚ} (hf : ∀ i, f i = ∅ ∨ U.mem (f i))
     (hne : (⋃ i, f i).Nonempty) : U.mem (⋃ i, f i) := by
@@ -328,7 +156,7 @@ theorem diff_mem {X Y : Set ℚ} (hX : U.mem X) (hY : U.mem Y) : X \ Y = ∅ ∨
   obtain ⟨⟨L2, rfl⟩, -, -⟩ := hY
   rcases Set.eq_empty_or_nonempty (presentedIntervals L1 \ presentedIntervals L2) with h | h
   · exact Or.inl h
-  · exact Or.inr ⟨⟨diffLists L1 L2, (presentedIntervals_diffLists L1 L2).symm⟩, h,
+  · exact Or.inr ⟨⟨diffLists L1 L2, (presentedIntervals.diffLists L1 L2).symm⟩, h,
       Set.sdiff_subset.trans hXsub⟩
 
 theorem diffClosed : U.DiffClosed := fun hX hY => diff_mem hX hY
@@ -337,9 +165,8 @@ theorem diffClosed : U.DiffClosed := fun hX hY => diff_mem hX hY
 non-emptiness can obstruct `U.mem (X ∩ Y)`. -/
 theorem isPositive : U.IsPositive := by
   rintro X Y ⟨⟨L1, rfl⟩, -, hXsub⟩ ⟨⟨L2, rfl⟩, -, -⟩
-  refine ⟨fun h => h.2.1, fun hne => ⟨⟨combineIntervals L1 L2, presentedIntervals_inter L1 L2⟩,
+  refine ⟨fun h => h.2.1, fun hne => ⟨⟨combineIntervals L1 L2, presentedIntervals.inter L1 L2⟩,
     hne, Set.inter_subset_left.trans hXsub⟩⟩
-
 theorem noMinimal : U.NoMinimal := by
   intro X hX
   obtain ⟨Y, Z, hY, hZ, hYZinter, hYZunion, -, -⟩ := no_minimal hX

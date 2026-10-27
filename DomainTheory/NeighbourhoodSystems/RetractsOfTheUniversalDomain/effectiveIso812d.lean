@@ -4302,7 +4302,7 @@ open Domain.Recursive NeighborhoodSystem
 theorem U_union_UX_mem (n m : ℕ) : U.mem (UX n ∪ UX m) := by
   obtain ⟨⟨L1, hL1⟩, hne1, hsub1⟩ := U_mem_UX n
   obtain ⟨⟨L2, hL2⟩, -, hsub2⟩ := U_mem_UX m
-  exact ⟨⟨L1 ++ L2, by rw [presentedIntervals_append, hL1, hL2]⟩,
+  exact ⟨⟨L1 ++ L2, by rw [presentedIntervals.append, hL1, hL2]⟩,
     hne1.mono Set.subset_union_left, Set.union_subset hsub1 hsub2⟩
 
 def VunionRaw (n m : ℕ) : ℕ :=

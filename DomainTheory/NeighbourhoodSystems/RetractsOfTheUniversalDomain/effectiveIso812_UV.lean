@@ -193,8 +193,8 @@ theorem tight {L : List (ℚ × ℚ)} (hne : L ≠ [])
   obtain ⟨p, hp, hpeq⟩ := listMaxSnd.attained hne hlb
   rw [← hpeq] at hy
   rcases lt_or_ge y p.1 with hlt | hge
-  · exact ⟨p.1, mem_presentedIntervals.mpr ⟨p, hp, le_refl _, hpos p hp⟩, hlt⟩
-  · exact ⟨(y + p.2) / 2, mem_presentedIntervals.mpr ⟨p, hp, hge.trans (left_lt_add_div_two.mpr hy).le,
+  · exact ⟨p.1, presentedIntervals.mem.mpr ⟨p, hp, le_refl _, hpos p hp⟩, hlt⟩
+  · exact ⟨(y + p.2) / 2, presentedIntervals.mem.mpr ⟨p, hp, hge.trans (left_lt_add_div_two.mpr hy).le,
       add_div_two_lt_right.mpr hy⟩, left_lt_add_div_two.mpr hy⟩
 
 end listMaxSnd
@@ -263,7 +263,7 @@ open Domain.Recursive NeighborhoodSystem
 /-- **`listMaxSnd L` strictly upper-bounds `presentedIntervals L`.** -/
 theorem upper_bound {L : List (ℚ × ℚ)} {x : ℚ} (hx : x ∈ presentedIntervals L) :
     x < listMaxSnd L := by
-  obtain ⟨p, hp, -, hx2⟩ := mem_presentedIntervals.mp hx
+  obtain ⟨p, hp, -, hx2⟩ := presentedIntervals.mem.mp hx
   exact hx2.trans_le (listMaxSnd.ge hp)
 
 end listMaxSnd
@@ -273,7 +273,7 @@ open Domain.Recursive NeighborhoodSystem
 /-- **`listMinFst L` lower-bounds `presentedIntervals L`.** -/
 theorem lower_bound {L : List (ℚ × ℚ)} {x : ℚ} (hx : x ∈ presentedIntervals L) :
     listMinFst L ≤ x := by
-  obtain ⟨p, hp, hx1, -⟩ := _root_.DomainTheory.NeighbourhoodSystems.mem_presentedIntervals.mp hx
+  obtain ⟨p, hp, hx1, -⟩ := _root_.DomainTheory.NeighbourhoodSystems.presentedIntervals.mem.mp hx
   exact (listMinFst.le hp).trans hx1
 
 end listMinFst
@@ -338,12 +338,12 @@ namespace listMinFst
 open Domain.Recursive NeighborhoodSystem
 
 /-- **`listMinFst L` is the genuine minimum of `presentedIntervals L`** (membership half). -/
-theorem mem_presentedIntervals {L : List (ℚ × ℚ)} (hne : L ≠ [])
+theorem presentedIntervals.mem {L : List (ℚ × ℚ)} (hne : L ≠ [])
     (hpos : ∀ p ∈ L, p.1 < p.2) (hb : ∀ p ∈ L, 0 ≤ p.1 ∧ p.2 ≤ 1) :
     listMinFst L ∈ presentedIntervals L := by
   have hub : ∀ p ∈ L, p.1 < 1 := fun p hp => (hpos p hp).trans_le (hb p hp).2
   obtain ⟨p, hp, hpeq⟩ := listMinFst.attained hne hub
-  exact _root_.DomainTheory.NeighbourhoodSystems.mem_presentedIntervals.mpr ⟨p, hp, hpeq.le, hpeq ▸ hpos p hp⟩
+  exact _root_.DomainTheory.NeighbourhoodSystems.presentedIntervals.mem.mpr ⟨p, hp, hpeq.le, hpeq ▸ hpos p hp⟩
 
 /-- **`listMinFst` is a well-defined function of the presented set alone**, mirroring
 `MinLevel.lean`'s `minLevel_unique` for `V`: two (nonempty, nondegenerate, `[0,1]`-bounded)
@@ -354,9 +354,9 @@ theorem congr {L1 L2 : List (ℚ × ℚ)} (hne1 : L1 ≠ []) (hne2 : L2 ≠ [])
     (heq : presentedIntervals L1 = presentedIntervals L2) :
     listMinFst L1 = listMinFst L2 := by
   have hm1 : listMinFst L1 ∈ presentedIntervals L2 :=
-    heq ▸ listMinFst.mem_presentedIntervals hne1 hpos1 hb1
+    heq ▸ listMinFst.presentedIntervals.mem hne1 hpos1 hb1
   have hm2 : listMinFst L2 ∈ presentedIntervals L1 :=
-    heq ▸ listMinFst.mem_presentedIntervals hne2 hpos2 hb2
+    heq ▸ listMinFst.presentedIntervals.mem hne2 hpos2 hb2
   exact le_antisymm (listMinFst.lower_bound hm2) (listMinFst.lower_bound hm1)
 
 end listMinFst
@@ -414,7 +414,7 @@ theorem UX_splitU2Left (n : ℕ) :
     refine ⟨⟨(decodeQPairList (canonCode n)).map (qpClipLt (decodeRat (splitU2MidCode n))),
       (presentedIntervals_map_qpClipLt _ _).symm⟩, ?_, ?_⟩
     · refine ⟨listMinFst (decodeQPairList (canonCode n)), ?_, splitU2.min_lt_mid n⟩
-      exact listMinFst.mem_presentedIntervals (decodeQPairList_canonCode_ne_nil n)
+      exact listMinFst.presentedIntervals.mem (decodeQPairList_canonCode_ne_nil n)
         (forall_lt_decodeQPairList_canonCode n) (forall_bounds_decodeQPairList_canonCode n)
     · exact Set.inter_subset_left.trans (U_mem_UX n).2.2
   show presentedIntervals (decodeQPairList (canonCode (splitU2Left n))) = _
@@ -705,12 +705,12 @@ def Vunion (n m : ℕ) : ℕ := canonIdx (VunionRaw n m)
 
 /-- `hX0`: index `0` presents `U`'s master neighbourhood. `decodeQPairList 0 = []`
 (`decodeList_zero`), so `canonList` falls back to its `[(0,1)]` branch, which presents
-`U.master` exactly as in `U_mem_presentedIntervals_canonList`. -/
+`U.master` exactly as in `U_presentedIntervals.mem_canonList`. -/
 theorem UX_zero : UX 0 = U.master := by
   rw [UX_eq]
   have hL : decodeQPairList 0 = [] := by
     unfold decodeQPairList; rw [decodeList_zero]; rfl
-  rw [hL, canonList_eq_of_filter_eq_nil (by simp), presentedIntervals_cons, presentedIntervals_nil,
+  rw [hL, canonList_eq_of_filter_eq_nil (by simp), presentedIntervals.cons, presentedIntervals.nil,
     Set.union_empty]
   rfl
 
@@ -741,7 +741,7 @@ split needed (the one respect in which `∪` is even simpler than `\`'s `Udiff.e
 theorem eq_union (n m : ℕ) :
     presentedIntervals (decodeQPairList (Uunion n m)) = UX n ∪ UX m := by
   unfold Uunion
-  rw [decodeQPairList_appendListCode, presentedIntervals_append]
+  rw [decodeQPairList_appendListCode, presentedIntervals.append]
   rfl
 
 end Uunion
