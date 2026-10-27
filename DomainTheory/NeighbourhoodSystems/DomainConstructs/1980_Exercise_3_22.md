@@ -24,6 +24,6 @@ The maps are of course not uniquely determined, but the shifting of brackets oug
 
 <!-- page 53 -->
 
-**[Exercise_3_22.lean](Exercise_3_22.lean)**
+**[Exercise_3_22.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise_3_22.lean)**
 
 @import "Exercise_3_22.lean"

@@ -10,12 +10,11 @@ The tip asserts that the sum/product/arrow combinators preserve projections and 
 
 Shows sum/product/arrow combinators preserve (finitary) projections.
 
-**[ProjectionCombinators.lean](ProjectionCombinators.lean)**
+**[ProjectionCombinators.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/ProjectionCombinators.lean)**
 
 @import "ProjectionCombinators.lean"
-
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_18.lean](Exercise_8_18.lean)** — `exercise_8_18`
+ — `exercise_8_18`
 
 @import "Exercise_8_18.lean"

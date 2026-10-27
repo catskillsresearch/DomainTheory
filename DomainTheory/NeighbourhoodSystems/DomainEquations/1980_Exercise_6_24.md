@@ -14,6 +14,6 @@ by using a double fixed-point method. First decide what the underlying set of to
 
 <!-- page 114 -->
 
-**[Exercise_6_24.lean](Exercise_6_24.lean)**
+**[Exercise_6_24.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_24.lean)**
 
 @import "Exercise_6_24.lean"

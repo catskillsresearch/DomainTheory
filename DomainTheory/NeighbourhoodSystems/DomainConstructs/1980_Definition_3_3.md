@@ -28,6 +28,6 @@ holds for all $X \in \mathcal{D}_0$, $Y \in \mathcal{D}_1$, and $Z \in \mathcal{
 
 <!-- page 39 -->
 
-**[Definition_3_3.lean](Definition_3_3.lean)**
+**[Definition_3_3.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Definition_3_3.lean)**
 
 @import "Definition_3_3.lean"

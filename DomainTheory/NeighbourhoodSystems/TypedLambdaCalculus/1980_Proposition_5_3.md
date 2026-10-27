@@ -54,6 +54,6 @@ $$\tau(y) \sqsubseteq y \text{ implies } ! x . \tau(x) \sqsubseteq y,$$
 
 provided, of course, that $x$ is not free in $\tau$. These, together with the monotonicity of all the functions, were just the methods used in the above proof. Here is another example.
 
-**[Proposition_5_3.lean](Proposition_5_3.lean)**
+**[Proposition_5_3.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition_5_3.lean)**
 
 @import "Proposition_5_3.lean"

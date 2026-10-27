@@ -22,6 +22,6 @@ for all $x \in |D|$ and $y \in |E|$. $\square$
 
 The proof is left for the exercises.
 
-**[Proposition_6_12.lean](Proposition_6_12.lean)**
+**[Proposition_6_12.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Proposition_6_12.lean)**
 
 @import "Proposition_6_12.lean"

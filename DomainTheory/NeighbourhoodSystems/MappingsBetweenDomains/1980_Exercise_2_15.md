@@ -10,6 +10,6 @@ $$U = \{ x \in |D| \mid f(x) = \top \}.$$
 
 What are the open subsets of $|\mathcal{O}|$? of $|\mathbb{T}|$? of $|\mathbb{B}|$?
 
-**[Exercise_2_15.lean](Exercise_2_15.lean)**
+**[Exercise_2_15.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_15.lean)**
 
 @import "Exercise_2_15.lean"

@@ -29,12 +29,11 @@ The tip asserts β-soundness of the self-hosted encoding: `Uapply (Ulam f) x = f
 
 Encodes self-application and self-abstraction inside `U` and proves β-soundness.
 
-**[UapplyUlam.lean](UapplyUlam.lean)**
+**[UapplyUlam.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/UapplyUlam.lean)**
 
 @import "UapplyUlam.lean"
-
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_26.lean](Exercise_8_26.lean)** — `exercise_8_26`
+ — `exercise_8_26`
 
 @import "Exercise_8_26.lean"

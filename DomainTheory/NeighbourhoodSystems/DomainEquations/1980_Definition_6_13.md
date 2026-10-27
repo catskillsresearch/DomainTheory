@@ -12,6 +12,6 @@ is approximable. $\square$
 
 We can now state an existence theorem that covers in fairly wide generality the examples of this lecture.
 
-**[Definition_6_13.lean](Definition_6_13.lean)**
+**[Definition_6_13.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition_6_13.lean)**
 
 @import "Definition_6_13.lean"

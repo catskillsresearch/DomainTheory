@@ -43,6 +43,6 @@ It should be checked that 2.1(i)–(ii) are satisfied. $\square$
 
 <!-- page 28 -->
 
-**[Example_2_3.lean](Example_2_3.lean)**
+**[Example_2_3.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Example_2_3.lean)**
 
 @import "Example_2_3.lean"

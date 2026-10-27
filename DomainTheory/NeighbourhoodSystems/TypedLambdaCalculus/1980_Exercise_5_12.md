@@ -26,6 +26,6 @@ $$
 
 with the meaning "find the first term of the sequence (if any) which satisfies the given precicate."
 
-**[Exercise_5_12.lean](Exercise_5_12.lean)**
+**[Exercise_5_12.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise_5_12.lean)**
 
 @import "Exercise_5_12.lean"

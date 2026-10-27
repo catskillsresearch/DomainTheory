@@ -7,18 +7,17 @@ $$
 
 ## Tip summary
 
-The tip asserts that the coupled solutions `a★`, `b★` are finitary projections.
+The tip asserts that the coupled solutions `aStar`, `bStar` are finitary projections.
 
 ## Development
 
-Solves the coupled domain equations with finitary projections `a★`, `b★`.
+Solves the coupled domain equations with finitary projections `aStar`, `bStar`.
 
-**[CoupledFixedPoints.lean](CoupledFixedPoints.lean)**
+**[CoupledFixedPoints.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/CoupledFixedPoints.lean)**
 
 @import "CoupledFixedPoints.lean"
-
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_24.lean](Exercise_8_24.lean)** — `exercise_8_24`
+ — `exercise_8_24`
 
 @import "Exercise_8_24.lean"

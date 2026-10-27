@@ -42,6 +42,6 @@ $$
 \mathrm{cond}(\mathrm{which}(x), \mathrm{in}_0(\mathrm{out}_0(x)), \mathrm{in}_1(\mathrm{out}_1(x))) = x .
 $$
 
-**[Exercise_3_26.lean](Exercise_3_26.lean)**
+**[Exercise_3_26.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise_3_26.lean)**
 
 @import "Exercise_3_26.lean"

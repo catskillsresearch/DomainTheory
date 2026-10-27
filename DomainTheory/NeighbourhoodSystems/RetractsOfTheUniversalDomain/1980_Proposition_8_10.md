@@ -95,6 +95,6 @@ and think of $\mathrm{cond} : U \times U \times U \to U$. No! that is wrong: und
 
 It takes a little time to get used to "universal conscription" with all elements doing (at least) double duty in the same domain, but there are many advantages, both notational and conceptual.
 
-**[Proposition_8_10.lean](Proposition_8_10.lean)**
+**[Proposition_8_10.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition_8_10.lean)**
 
 @import "Proposition_8_10.lean"

@@ -12,16 +12,16 @@ The tip asserts universality of `V` together with the product/sum/function-space
 
 Proves `V` is universal and records the standard embeddings into `U`.
 
-**[ProjPair.lean](ProjPair.lean)** — `ProjPair` and composition/iso/subsystem constructors
+ — `ProjPair` and composition/iso/subsystem constructors
 
 @import "ProjPair.lean"
 
-**[EmbeddingsIntoU.lean](EmbeddingsIntoU.lean)** — universality and the concrete `U`/`V` embeddings
+ — universality and the concrete `U`/`V` embeddings
 
 @import "EmbeddingsIntoU.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_17.lean](Exercise_8_17.lean)** — `exercise_8_17`
+ — `exercise_8_17`
 
 @import "Exercise_8_17.lean"

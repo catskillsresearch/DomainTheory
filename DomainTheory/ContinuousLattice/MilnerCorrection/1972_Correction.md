@@ -6,6 +6,6 @@
 
 @import "1972_Correction.english" {code_block=false}
 
-**[ContinuousLattice/MilnerCorrection/CoarserThanScottTopology.lean](CoarserThanScottTopology.lean)**
+**[ContinuousLattice/MilnerCorrection/CoarserThanScottTopology.lean](DomainTheory/ContinuousLattice/MilnerCorrection/CoarserThanScottTopology.lean)**
 
 @import "CoarserThanScottTopology.lean"

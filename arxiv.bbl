@@ -1,0 +1,1547 @@
+\begin{thebibliography}{100}
+
+\bibitem{Sco72}
+D.~Scott.
+\newblock Continuous lattices, 1972.
+\newblock in F. W. Lawvere (ed.), Toposes, Algebraic Geometry and Logic,
+  Lecture Notes in Mathematics, vol. 274, Springer-Verlag, pp. 97–136. [Also:
+  Tech. Monograph PRG-7, Oxford Univ. Computing Lab., Programming Research
+  Group (1971).].
+
+\bibitem{Sco81}
+D.~Scott.
+\newblock Lectures on a mathematical theory of computation, 1981.
+\newblock Technical Monograph PRG-19, May 1981, Oxford University Computing
+  Laboratory, Programming Research Group (neighbourhood systems).
+
+\bibitem{Sco82}
+D.~Scott.
+\newblock Domains for denotational semantics, 1982.
+\newblock ICALP 1982, LNCS 140, Springer, pp. 577–613.
+
+\bibitem{PALOMAR26}
+Palomar Registry.
+\newblock entry \texttt{PALOMAR-2026-08-25-000003}, version 1, 2026.
+\newblock Verified claim: order isomorphisms relating Scott’s three
+  presentations of domains — continuous lattices (1972), neighbourhood
+  systems (PRG-19), and information systems (1982) — including the round
+  identification \texttt{D ≃o RoundFilter ≃o RoundInfoSysElement} and the
+  S-expression equation \texttt{T ≅ A + (T × T)} as \texttt{|T| ≃o |A + (T
+  × T)|} (\texttt{SexSys.Element ≃o SexRhs.Element}).
+  \url{https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000003&version=1}.
+
+\bibitem{COPE24}
+Committee on~Publication Ethics~(COPE).
+\newblock Authorship and ai tools: Cope position statement, 2024.
+\newblock 2024.
+  \url{https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools}.
+
+\bibitem{Cmp25}
+{Anysphere, Inc.}
+\newblock Composer 2.5.
+\newblock Model announcement and documentation,
+  \url{https://cursor.com/blog/composer-2-5}; model card as integrated in
+  Cursor, \url{https://cursor.com/docs/models}, 2026.
+\newblock accessed 2026.
+
+\bibitem{Grk47}
+xAI and {Anysphere, Inc.}
+\newblock Grok 4.7.
+\newblock Model documentation, \url{https://docs.x.ai/docs/models}; Cursor
+  model catalog, \url{https://cursor.com/docs/models}, 2026.
+\newblock accessed 2026.
+
+\bibitem{Gem38}
+{Google DeepMind}.
+\newblock Gemini 3.8.
+\newblock Technical documentation and model cards,
+  \url{https://ai.google.dev/gemini-api/docs/models}, 2026.
+\newblock accessed 2026.
+
+\bibitem{Abbott70}
+ed~J.~C.~Abbott.
+\newblock Trends in lattice theory, 1970.
+\newblock Van Nostrand Reinhold Mathematical Studies, vol. 31 (1970).
+
+\bibitem{AJ94}
+S.~Abramsky and A.~Jung.
+\newblock Domain theory, 1994.
+\newblock In Handbook of Logic in Computer Science, Vol. 3, Oxford University
+  Press, 1994.
+
+\bibitem{Aiello74}
+M.~Aiello L.~Aiello and R.~W. Weyhrauch.
+\newblock The semantics of pascal in lcf, 1974.
+\newblock Artificial Intelligence Lab. Memo. AIM-221, Stanford Univ., Stanford,
+  Calif.
+
+\bibitem{Alagi74}
+S.~Alagić.
+\newblock Categorical theory of tree processing, 1974.
+\newblock Category Theory Applied to Computation and Control, E. Manes, ed.,
+  Univ. of Mass., pp. 80–99.
+
+\bibitem{Alexandroff35}
+P.~Alexandroff and H.~Hopf.
+\newblock Topologie i, 1935.
+\newblock Springer-Verlag, (1935).
+
+\bibitem{Arbib74a}
+M.~A. Arbib and E.~G. Manes.
+\newblock Fuzzy morphisms in automata theory, 1974.
+\newblock 1974a; , Category Theory Applied to Computation and Control, E.
+  Manes, ed., Univ. of Mass., pp. 98–105.
+
+\bibitem{Arbib74b}
+M.~A. Arbib and E.~G. Manes.
+\newblock Categorists' view of automata and systems, 1974.
+\newblock 1974b; , Category Theory Applied to Computation and Control, E.
+  Manes, ed., Univ. of Mass., pp. 62–79.
+
+\bibitem{Arbib74c}
+M.~A. Arbib and E.~G. Manes.
+\newblock Basic concepts of category theory applicable to computation and
+  control, 1974.
+\newblock 1974c; , Category Theory Applied to Computation and Control, E.
+  Manes, ed., Univ. of Mass., pp. 2–41.
+
+\bibitem{Bakker69}
+J.~W. de~Bakker.
+\newblock Semantics of programming languages, 1969.
+\newblock Advances in Information Systems Science, vol. 2, Plenum Press, New
+  York.
+
+\bibitem{Bakker692}
+J.~W. de~Bakker and D.~Scott.
+\newblock A theory of programs, 1969.
+\newblock Unpublished notes, IBM Seminar, Vienna, 1969.
+
+\bibitem{Bakker71a}
+J.~W. de~Bakker.
+\newblock Recursive procedures, 1971.
+\newblock 1971a; , Mathematical Centre Tracts, vol. 24, Amsterdam.
+
+\bibitem{Bakker71b}
+J.~W. de~Bakker.
+\newblock Recursion, induction and symbol manipulation, 1971.
+\newblock 1971b; , Proc. MC-25 Informatica Symposium, Mathematical Centre
+  Tracts, vol. 38, Amsterdam.
+
+\bibitem{Bakker72}
+J.~W. de~Bakker and W.~P. de~Roever.
+\newblock A calculus for recursive program schemes, 1972.
+\newblock Proc. IRIA Colloq. on Automata, North-Holland, Amsterdam.
+
+\bibitem{Bakker73}
+J.~W. de~Bakker and L.~G. L.~T. Meertens.
+\newblock On the completeness of the inductive assertion method, 1973.
+\newblock Mathematical Centre Rep. IW 12/72, Amsterdam.
+
+\bibitem{Bakker74}
+J.~W. de~Bakker and L.~G. L.~T. Meertens.
+\newblock Fixed points in programming theory, 1974.
+\newblock Foundations of Computer Science, J. W. de Bakker, ed., Mathematical
+  Centre Tract, vol. 63, Amsterdam.
+
+\bibitem{Barendregt71}
+H.~P. Barendregt.
+\newblock Some extensional term models for combinatory logics and
+  $\lambda$-calculi, 1971.
+\newblock Ph.D. thesis, Univ. of Utrecht.
+
+\bibitem{Beki69}
+H.~Bekić.
+\newblock Definable operations in general algebra, and the theory of automata
+  and flowcharts, 1969.
+\newblock Rep., IBM Lab., Vienna.
+
+\bibitem{Beki71}
+H.~Bekić.
+\newblock Towards a mathematical theory of processes, 1971.
+\newblock Tech. Rep. TR 25.125, IBM Lab., Vienna.
+
+\bibitem{al74}
+H.~Bekić et~al.
+\newblock A formal definition of a pl/i subset, parts i and ii, 1974.
+\newblock Tech. Rep. TR 25.139, IBM Lab., Vienna.
+
+\bibitem{Binz66}
+E.~Binz and H.~H. Keller.
+\newblock Funktionenräume in der kategorie der limesräume, 1966.
+\newblock Annales Academiae Scientiarum Fennicae, Series A, I. Mathematica, no.
+  383 (1966), 21 pp.
+
+\bibitem{Bird74}
+R.~S. Bird.
+\newblock Unsolvability of the inclusion problem for dbs schemas, 1974.
+\newblock Rep. RCS22, Dept. of Computer Sci., Univ. of Reading.
+
+\bibitem{Birkhoff67}
+G.~Birkhoff.
+\newblock Lattice theory, 1967.
+\newblock 3rd ed., American Mathematical Society Colloquium Publications, vol.
+  25, Providence, R.I.
+
+\bibitem{Blikle71}
+A.~Blikle.
+\newblock Algorithmically definable functions: A contribution towards the
+  semantics of programming languages, 1971.
+\newblock Dissertationes Math. Rozprawy Mat., 85.
+
+\bibitem{Blikle72}
+A.~Blikle.
+\newblock Equational languages, 1972.
+\newblock Information Control, pp. 134–147.
+
+\bibitem{Blikle722}
+A.~Blikle and A.~Mazurkiewicz.
+\newblock An algebraic approach to the theory of programs, algorithms,
+  languages and recursiveness, 1972.
+\newblock Proc. Internat. Sympos. and Summer School on the Mathematical
+  Foundations of Computer Sci., Warsaw-Jabłonna.
+
+\bibitem{Blikle73}
+A.~Blikle.
+\newblock An algebraic approach to programs and their computations, 1973.
+\newblock Proc. Symp. and Summer School on the Mathematical Foundations of
+  Computer Sci., High Tatras, Czechoslovakia.
+
+\bibitem{Blikle74}
+A.~Blikle.
+\newblock Proving programs by sets of computations, 1974.
+\newblock Proc. 3rd Symp. on the Mathematical Foundation of Computer Sci.,
+  Jadwisin, Poland; Lecture Notes in Computer Science, Springer-Verlag, Berlin,
+  1974.
+
+\bibitem{Bhm66}
+C.~Böhm.
+\newblock The cuch as a formal and descriptive language, 1966.
+\newblock Formal Language Description Languages for Computer Programming, T. B.
+  Steel, ed., North-Holland, Amsterdam, pp. 179–197.
+
+\bibitem{Bhm68}
+C.~Böhm.
+\newblock Alcune proprietà delle forme $\beta$-$\eta$-normali nel
+  $\lambda$-$\kappa$-calcolo, 1968.
+\newblock Consiglio Nazionale delle Ricerche: Pubblicazione 696 dell' Istituto
+  per le Applicazioni del Calcolo, Roma.
+
+\bibitem{Bhm75}
+C.~Böhm.
+\newblock $\lambda$-calculus and computer science theory, 1975.
+\newblock Proc. Rome Symp., March 1975, Lecture Notes in Computer Science, vol.
+  37, Springer-Verlag, Berlin.
+
+\bibitem{Burstall69}
+R.~M. Burstall.
+\newblock Proving properties of programs by structural induction, 1969.
+\newblock Comput. J., 12, pp. 41–48.
+
+\bibitem{Burstall72a}
+R.~M. Burstall.
+\newblock Some techniques for proving the correctness of programs which alter
+  data structures, 1972.
+\newblock 1972a; , Machine Intelligence vol. 7, B. Meltzer and D. Michie, eds.,
+  Edinburgh, pp. 23–50.
+
+\bibitem{Burstall72b}
+R.~M. Burstall.
+\newblock An algebraic description of programs with assertions, verification
+  and simulation, 1972.
+\newblock 1972b; , Proc. ACM Conf. on Proving Assertions about Programs, Las
+  Cruces, New Mexico, pp. 7–14.
+
+\bibitem{Burstall74}
+R.~Burstall and J.~W. Thatcher.
+\newblock The algebraic theory of recursive program schemes, 1974.
+\newblock Category Theory Applied to Computation and Control, E. Manes, ed.,
+  Univ. of Mass., pp. 154–160.
+
+\bibitem{Cadiou73}
+J.~M. Cadiou.
+\newblock Recursive definitions of partial functions and their computations,
+  1973.
+\newblock Ph.D. thesis, Computer Sci. Dept., Stanford Univ., Stanford, Calif.
+
+\bibitem{Cadiou732}
+J.~M. Cadiou and J.~J. Levy.
+\newblock Mechanizable proofs about parallel processes, 1973.
+\newblock Presented at the 14th Ann. Symp. on Switching and Automata Theory.
+
+\bibitem{Case71}
+J.~W. Case.
+\newblock Enumeration reducibility and the partial degrees, 1971.
+\newblock Ann. Math. Logic, 2, pp. 419–440.
+
+\bibitem{ech66}
+E.~Čech.
+\newblock Topological spaces, 1966.
+\newblock (revised by Z. Frolík and M. Katětov), Prague.
+
+\bibitem{Chandra73}
+A.~K. Chandra and Z.~Manna.
+\newblock On the power of programming features, 1973.
+\newblock Artificial Intelligence Memo. AIM-185, Stanford Univ., Stanford,
+  Calif.
+
+\bibitem{Chandra74}
+A.~K. Chandra.
+\newblock Degrees of translatability and canonical forms in program schemas
+  part i, 1974.
+\newblock IBM Res. Rep. RC4733, Yorktown Heights, N.Y.
+
+\bibitem{Chandra74a}
+A.~K. Chandra.
+\newblock The power of parallelism and nondeterminism in programming, 1974.
+\newblock 1974a; , IBM Res. Rep. RC4776, Yorktown Heights, N.Y.
+
+\bibitem{Chandra74b}
+A.~K. Chandra.
+\newblock Generalized program schemas, 1974.
+\newblock 1974b; , IBM Res. Rep. RC4827, Yorktown Heights, N.Y.
+
+\bibitem{Church51}
+A.~Church.
+\newblock The calculi of $\lambda$-conversion, 1951.
+\newblock Annals of Mathematical Studies, vol. 6, Princeton University Press,
+  Princeton, N.J.
+
+\bibitem{Clint72}
+M.~J. Clint.
+\newblock Program proving: Co-routines, 1972.
+\newblock Acta Informatica, 2, pp. 50–63.
+
+\bibitem{Constable72}
+R.~C. Constable and D.~Gries.
+\newblock On classes of program schemata, 1972.
+\newblock this Journal, 1, pp. 66–118.
+
+\bibitem{Cooper66}
+D.~C. Cooper.
+\newblock The equivalence of certain computations, 1966.
+\newblock Comput. J., 9, pp. 45–52.
+
+\bibitem{Courcelle74}
+B.~Courcelle and J.~Vuillemin.
+\newblock Complétude d'un système formel pour des équations récursives
+  simples, 1974.
+\newblock Compte-Rendu du Colloque de Paris.
+
+\bibitem{Courcelle742}
+B.~Courcelle and J.~Vuillemin.
+\newblock Semantics and axiomatics of a simple recursive language, 1974.
+\newblock Rapport Laboria, vol. 60, IRIA; Also: 6th Ann. ACM Symp. on the
+  Theory of Computing, Seattle, Washington.
+
+\bibitem{Courcelle743}
+G.~Kahn B.~Courcelle and J.~Vuillemin.
+\newblock Algorithmes d'équivalence pour des équations récursives simples,
+  1974.
+\newblock Proc. 2nd Colloq. on Automata Languages and Programming,
+  Saarbrücken; Lecture Notes in Computer Science, Springer-Verlag, Berlin, pp.
+  213–220.
+
+\bibitem{Curry58}
+H.~B. Curry and R.~Feys.
+\newblock Combinatory logic, 1958.
+\newblock vol. 1, North-Holland, Amsterdam.
+
+\bibitem{Curry71}
+J.~R.~Hindley H.~B.~Curry and J.~Seldin.
+\newblock Combinatory logic, 1971.
+\newblock vol. 2, North-Holland, Amsterdam.
+
+\bibitem{Davis58}
+M.~Davis.
+\newblock Computability and unsolvability, 1958.
+\newblock McGraw-Hill, New York.
+
+\bibitem{Dijkstra72}
+E.~W. Dijkstra.
+\newblock Notes on structured programming, 1972.
+\newblock Structural Programming, C. A. R. Hoare, E. W. Dijkstra and O. J.
+  Dahl, Academic Press, New York.
+
+\bibitem{Dijkstra74}
+E.~W. Dijkstra.
+\newblock A simple axiomatic basis for programming language constructs, 1974.
+\newblock Indag. Math., 36, pp. 1–15.
+
+\bibitem{Dijkstra76}
+E.~W. Dijkstra.
+\newblock A discipline of programming, 1976.
+\newblock Prentice-Hall, Englewood Cliffs, N.J., to appear.
+
+\bibitem{Donahue74}
+J.~Donahue.
+\newblock Scottery child's guide no. 1, 1974.
+\newblock Dept. of Comput. Sci., Univ. of Toronto.
+
+\bibitem{Duong74}
+B.~N. Duong.
+\newblock A high level, variable free calculus for recursive programming, 1974.
+\newblock Comput. Sci. Dept. Rep. CS 74 03, Univ. of Waterloo.
+
+\bibitem{Eilenberg70}
+S.~Eilenberg and C.~C. Elgot.
+\newblock Recursiveness, 1970.
+\newblock Academic Press, New York.
+
+\bibitem{Eilenberg74}
+S.~Eilenberg and C.~C. Elgot.
+\newblock Automata, languages and machines, 1974.
+\newblock vol. A, Academic Press, New York (vol. B in press).
+
+\bibitem{Elgot66}
+A.~Robinson C.~C.~Elgot and J.~D. Rutledge.
+\newblock Multiple control computer models, 1966.
+\newblock IBM Res. Rep. RC 1622, Yorktown Heights, N.Y.
+
+\bibitem{Elgot67}
+C.~C. Elgot.
+\newblock Abstract algorithms and diagram closure, 1967.
+\newblock IBM Res. Rep. RC 1750, Yorktown Heights, N.Y.
+
+\bibitem{Elgot71}
+C.~C. Elgot.
+\newblock Algebraic theories and program schemes, 1971.
+\newblock Symposium on Semantics of Algorithmic Languages, E. Engeler, ed.,
+  Lecture Notes in Mathematics, vol. 188, Springer-Verlag, New York.
+
+\bibitem{Emden74}
+M.~H. van Emden and R.~A. Kowalski.
+\newblock The semantics of predicate logic as a programming language, 1974.
+\newblock Memo. no. 83 (MIP-R-103), Dept of Machine Intelligence, Univ. of
+  Edinburgh.
+
+\bibitem{Engeler67}
+E.~Engeler.
+\newblock Algorithmic properties of structures, 1967.
+\newblock Mathematical Systems Theory, 1, pp. 183–195.
+
+\bibitem{Engeler68}
+E.~Engeler.
+\newblock Formal languages: Automata and structures, 1968.
+\newblock Lectures in Advanced Mathematics, Markham.
+
+\bibitem{Engeler74}
+E.~Engeler.
+\newblock Algorithmic logic, 1974.
+\newblock Foundations of Computer Science, J. W. de Bakker, ed., Mathematical
+  Centre Tract MCT 63, Amsterdam.
+
+\bibitem{Engelfriet74}
+J.~Engelfriet.
+\newblock Simple program schemes and formal languages, 1974.
+\newblock Springer Lecture Notes in Computer Science, vol. 20.
+
+\bibitem{Engelfriet75}
+J.~Engelfriet and E.~M. Schmidt.
+\newblock Io and oi, 1975.
+\newblock DAIMI PB-47, Matematisk Institut, Aarhus Universitet, Datalogisk
+  Afdeling, Denmark.
+
+\bibitem{Ershov71}
+Ju.~L. Ershov.
+\newblock Computable numerations of morphisms, 1971.
+\newblock Algebra and Logic, 10, pp. 247–308.
+
+\bibitem{Ershov72a}
+Ju.~L. Ershov.
+\newblock Computable functions of finite types, 1972.
+\newblock 1972a; Algebra and Logic, 11, pp. 367–437.
+
+\bibitem{Ershov72b}
+Ju.~L. Ershov.
+\newblock Everywhere defined (total) continuous functionals, 1972.
+\newblock 1972b; Algebra and Logic, 11, pp. 656–665.
+
+\bibitem{Ershov72d}
+Ju.~L. Ershov.
+\newblock Continuous lattices and $a$-spaces, 1972.
+\newblock 1972d; , Dokl. Akad. Nauk USSR, 207, pp. 523–526.
+
+\bibitem{Ershov72e}
+Ju.~L. Ershov.
+\newblock Theory of $a$-spaces, 1972.
+\newblock 1972e; , Algebra and Logic, 12, pp. 369–416.
+
+\bibitem{Ershov73}
+Ju.~L. Ershov.
+\newblock Theorie der numerierungen, 1973.
+\newblock Veb Deutscher Verlag der Wissenschaften, Berlin.
+
+\bibitem{Fischer72}
+M.~J. Fischer.
+\newblock $\lambda$-calculus schemata, 1972.
+\newblock Proc. ACM Conf. Proving Assertions about Programs, Las Cruces, N.M.,
+  pp. 104–109.
+
+\bibitem{Fischer73}
+A.~E. Fischer and M.~J. Fischer.
+\newblock Mode modules as representations of domains, 1973.
+\newblock Proc. ACM Symp. on Principles of Programming Languages, Boston, pp.
+  139–143.
+
+\bibitem{Floyd67}
+R.~W. Floyd.
+\newblock Assigning meanings to programs, 1967.
+\newblock Proc. Symp. in Appl. Math., vol. 19, Mathematical Aspects of Computer
+  Science, J. T. Schwartz, ed., pp. 33–41.
+
+\bibitem{Fokkinga74}
+M.~M. Fokkinga.
+\newblock Inductive assertion patterns for recursive procedures, 1974.
+\newblock Compte-Rendu de Colloque de Paris.
+
+\bibitem{Friedberg59}
+R.~M. Friedberg and H.~R. Rogers.
+\newblock Reducibility and completeness for sets of integers, 1959.
+\newblock Z. Math. Logik Grundlagen Math., 5, pp. 117–125.
+
+\bibitem{Friedman71}
+H.~Friedman.
+\newblock Algorithmic procedures, generalized turing algorithms, and elementary
+  recursion theory, 1971.
+\newblock Logic Colloquium 1969, North-Holland, Amsterdam, pp. 361–389.
+
+\bibitem{Garland72}
+S.~J. Garland and D.~C. Luckham.
+\newblock Translating recursion schemes into program schemes, 1972.
+\newblock Proc. ACM Conf. on Proving Assertions about Programs, Las Cruces,
+  N.M., pp. 83–96.
+
+\bibitem{Gericke66}
+H.~Gericke.
+\newblock Lattice theory, 1966.
+\newblock Harrap.
+
+\bibitem{GHKLMS03}
+G.~Gierz et~al.
+\newblock Continuous lattices and domains, 2003.
+\newblock Cambridge University Press, 2003.
+
+\bibitem{Goguen67}
+J.~A. Goguen.
+\newblock $l$-fuzzy sets, 1967.
+\newblock J. Math. Anal. Appl., 18, pp. 145–174.
+
+\bibitem{Goguen69}
+J.~A. Goguen.
+\newblock Categories of $l$-sets, 1969.
+\newblock Bull. Amer. Math. Soc., 75, pp. 524–622.
+
+\bibitem{Goguen72}
+J.~A. Goguen.
+\newblock On homomorphisms, simulations, correctness, subroutines and
+  termination for programs and program schemes, 1972.
+\newblock Proc. 13th IEEE Conf. on Switching and Automata Theory, pp. 52–60.
+
+\bibitem{Goguen74}
+J.~A. Goguen.
+\newblock Semantics of computation, 1974.
+\newblock Category Theory Applied to Computation and Control, E. Manes, ed.,
+  Univ. of Mass., pp. 234–249.
+
+\bibitem{al75}
+J.~A.~Goguen et~al.
+\newblock Initial algebra semantics, 1975.
+\newblock IBM Res. Rep. RC 5243, Yorktown Heights, N.Y.
+
+\bibitem{Gordon73a}
+M.~J.~C. Gordon.
+\newblock Models of pure lisp, 1973.
+\newblock 1973a; , Experimental Programming Rep. 31, School of Artificial
+  Intelligence, Univ. of Edinburgh. (Also Ph.D. thesis, Evaluation and
+  denotation of pure LISP programs: A worked example in semantics.).
+
+\bibitem{Gordon73b}
+M.~J.~C. Gordon.
+\newblock An extended abstract of "models of pure lisp", 1973.
+\newblock 1973b; , Memo. SAI-RM-7, School of Artificial Intelligence, Univ. of
+  Edinburgh.
+
+\bibitem{Gordon75a}
+M.~J.~C. Gordon.
+\newblock Operational reasoning and denotational semantics, 1975.
+\newblock 1975a; , Artificial Intelligence Memo. 264, Stanford Univ., Stanford,
+  Calif.
+
+\bibitem{Gordon75b}
+M.~J.~C. Gordon.
+\newblock Towards a semantic theory of dynamic binding, 1975.
+\newblock 1975b; , Artificial Intelligence Memo. 265, Stanford Univ., Stanford,
+  Calif.
+
+\bibitem{Grtzer68}
+G.~Grätzer.
+\newblock Universal algebra, 1968.
+\newblock Van Nostrand, New York.
+
+\bibitem{Guessarian74}
+I.~Guessarian.
+\newblock Sur une réduction des schémas de programmes polyadiques à des
+  schémas monadiques et ses applications, 1974.
+\newblock Compte-Rendu de Colloque de Paris.
+
+\bibitem{Gutteridge71}
+L.~Gutteridge.
+\newblock Some results on enumeration reducibility, 1971.
+\newblock Ph.D. dissertation, Simon Fraser Univ., Burnaby, B.C., Canada.
+
+\bibitem{Hindley72}
+B.~Lercher J.~R.~Hindley and J.~P. Seldin.
+\newblock Introduction to combinatory logic, 1972.
+\newblock London Mathematical Society Lecture Note Series, vol. 7, Cambridge
+  University Press, Cambridge, England.
+
+\bibitem{Hindley75}
+J.~R. Hindley and G.~Mitschke.
+\newblock Some remarks about the connections between combinatory logic and
+  axiomatic recursion theory, 1975.
+\newblock Preprint 203, Fachbereich Mathematik, Technische Hochschule
+  Darmstadt.
+
+\bibitem{Hitchcock72}
+P.~Hitchcock and D.~M.~R. Park.
+\newblock Induction rules and proofs of termination, 1972.
+\newblock Proc. Colloques IRIA, Theorie des Automates des Languages et de la
+  Programmation.
+
+\bibitem{Hitchcock74}
+P.~Hitchcock.
+\newblock An approach to formal reasoning about programs, 1974.
+\newblock Ph.D. thesis, Univ. of Warwick, England.
+
+\bibitem{Hoare69}
+C.~A.~R. Hoare.
+\newblock An axiomatic basis of computer programming, 1969.
+\newblock Comm. ACM, 12, pp. 576–580, 583.
+
+\bibitem{Hoare71a}
+C.~A.~R. Hoare.
+\newblock Proof of a program: Find, 1971.
+\newblock 1971a; , Comm. ACM, 14, pp. 39–45.
+
+\bibitem{Hoare71b}
+C.~A.~R. Hoare.
+\newblock Procedures and parameters: An axiomatic approach, 1971.
+\newblock 1971b; , Symposium on Semantics of Programming Languages, E. Engeler,
+  ed., Lecture Notes in Mathematics, vol. 188, Springer-Verlag, New York, pp.
+  102–116.
+
+\bibitem{Hoare72}
+C.~A.~R. Hoare.
+\newblock Notes on data structuring, 1972.
+\newblock Structured Programming, C. A. R. Hoare, E. W. Dijkstra and O. J.
+  Dahl, Academic Press, New York.
+
+\bibitem{Hoare722}
+C.~A.~R. Hoare and N.~Wirth.
+\newblock An axiomatic definition of the programming language pascal, 1972.
+\newblock Bericht der Fachgruppe Computer-Wissenschaften 6, Eidgenössische
+  Technische Hochschule, Zürich.
+
+\bibitem{Hoare74}
+C.~A.~R. Hoare and P.~Lauer.
+\newblock Consistent and complementary formal theories of the semantics of
+  programming languages, 1974.
+\newblock Acta Informatica, 3, pp. 135–153.
+
+\bibitem{Hosono75}
+C.~Hosono and M.~Sato.
+\newblock A solution to scott's problem: "do the retracts in $p\omega$ form a
+  continuous lattice?", 1975.
+\newblock Research Inst. for Mathematical Sci., Kyoto (preprint).
+
+\bibitem{Hotz66}
+G.~Hotz.
+\newblock Eindeutigkeit und mehrdeutigkeit formaler sprachen, 1966.
+\newblock Electron. Informationsverarbeit. Kybernetik (Berlin), 2, pp.
+  235–246.
+
+\bibitem{Hyland75a}
+J.~M.~E. Hyland.
+\newblock Recursion theory on the countable functionals, 1975.
+\newblock 1975a; , D. Phil. thesis, Oxford Univ., Oxford, England.
+
+\bibitem{Hyland75b}
+J.~M.~E. Hyland.
+\newblock A survey of some useful partial order relations in terms of the
+  lambda calculus, 1975.
+\newblock 1975b; , Proc. Conf. on $\lambda$-Calculus and Computer Science
+  Theory, Rome, pp. 83–95.
+
+\bibitem{HylandTA}
+J.~M.~E. Hyland.
+\newblock A syntactic characterization of the equality in some models for the
+  lambda calculus.
+\newblock to appear; , J. London Math. Soc.
+
+\bibitem{Ianov70}
+Y.~I. Ianov.
+\newblock The logical scheme of algorithms, 1970.
+\newblock Problems in Cybernetics, vol. 1, Pergamon Press, New York.
+
+\bibitem{Igarashi72}
+S.~Igarashi.
+\newblock Admissibility of fixed point induction in first order logic of typed
+  theories, 1972.
+\newblock Artificial Intelligence Memo. AIM-168, Computer Sci. Dept., Stanford
+  Univ., Stanford, Calif.
+
+\bibitem{Indermark74}
+K.~Indermark.
+\newblock Gleichungsdefinierbarkeit in relationalstrukturen, 1974.
+\newblock Habilitationsschrift, Mathematisch-Naturwissenschaftlichen Fakultät
+  der Rheinischen Freidrich-Wilhelms-Universatat, Bonn, W. Germany.
+
+\bibitem{Jones74}
+C.~B. Jones.
+\newblock Mathematical semantics of goto: Exit formulation and its relation to
+  continuations, 1974.
+\newblock preprint.
+
+\bibitem{Kahn73}
+G.~Kahn.
+\newblock A preliminary theory of parallel programs, 1973.
+\newblock Rapport Laboria IRIA.
+
+\bibitem{Kaplan69}
+D.~M. Kaplan.
+\newblock Regular expressions and the equivalence of programs, 1969.
+\newblock J. Comput. System Sci., 3, pp. 361–385.
+
+\bibitem{Karp69}
+R.~M. Karp and R.~E. Miller.
+\newblock Parallel program schemata, 1969.
+\newblock J. Comput. System Sci., 3, pp. 147–195.
+
+\bibitem{Kelley55}
+J.~L. Kelley.
+\newblock General topology, 1955.
+\newblock Van Nostrand, (1955).
+
+\bibitem{Kfoury72}
+D.~J. Kfoury.
+\newblock Comparing algebraic structures up to algorithmic equivalence, 1972.
+\newblock Automata, Languages and Programming, M. Nivat, ed., North-Holland,
+  Amsterdam, pp. 253–263.
+
+\bibitem{Kfoury74}
+D.~J. Kfoury.
+\newblock Translatability of schemas over restricted interpretations, 1974.
+\newblock J. Comput. System Sci., 8, pp. 387–408.
+
+\bibitem{Kleene50}
+S.~C. Kleene.
+\newblock Introduction to metamathematics, 1950.
+\newblock Van Nostrand, New York.
+
+\bibitem{Knaster28}
+B.~Knaster.
+\newblock Un théorème sur les fonctions d'ensembles, 1928.
+\newblock Ann. Soc. Polon. de Math., 8, pp. 133–134.
+
+\bibitem{Landin64}
+P.~J. Landin.
+\newblock The mechanical evaluation of expressions, 1964.
+\newblock Comput. J., 6, pp. 308–320.
+
+\bibitem{Landin65}
+P.~J. Landin.
+\newblock A correspondence between algol 60 and church's lambda notation, 1965.
+\newblock Comm. ACM, 8, pp. 89–101.
+
+\bibitem{Landin66a}
+P.~J. Landin.
+\newblock A $\lambda$-calculus approach, 1966.
+\newblock 1966a; , Advances in Programming and Non-numerical Computation, L.
+  Fox, ed., Pergamon Press, New York, pp. 97–141.
+
+\bibitem{Landin66a2}
+P.~J. Landin.
+\newblock A formal description of algol 60, 1966.
+\newblock 1966a; , Formal Language Description Languages for Computer
+  Programming, T. B. Steel, ed., North-Holland, Amsterdam, pp. 266–294.
+
+\bibitem{Landin66b}
+P.~J. Landin.
+\newblock The next 700 programming languages, 1966.
+\newblock 1966b; , Comm. ACM, 9, pp. 157–164.
+
+\bibitem{Landin69}
+P.~J. Landin.
+\newblock A program/machine symmetric automata theory, 1969.
+\newblock Machine Intelligence, vol. 5, B. Meltzer and D. Michie, eds.,
+  Edinburgh University Press, pp. 99–120.
+
+\bibitem{Landin692}
+P.~J. Landin and R.~M. Burstall.
+\newblock Programs and their proofs: An algebraic approach, 1969.
+\newblock Machine Intelligence, vol. 4, American Elsevier, New York, pp.
+  17–44.
+
+\bibitem{Leszczykowsk71}
+J.~Leszczykowski.
+\newblock A theorem on resolving equations in the space of languages, 1971.
+\newblock Bull. Acad. Polon. Sci. Sér. Sci. Math. Astronom. Phys., 19, pp.
+  967–970.
+
+\bibitem{Lewis73}
+C.~H. Lewis and B.~K. Rosen.
+\newblock Recursively defined data types, parts i and ii, 1973.
+\newblock 1973–74; IBM Res. Reps. RC 4429 (1973), RC 4713 (1974), Yorktown
+  Heights, N.Y.
+
+\bibitem{Liskov73}
+B.~Liskov and S.~Zilles.
+\newblock An approach to abstraction, 1973.
+\newblock Group Memo. 88, Project MAC, Mass. Inst. of Tech., Cambridge, Mass.
+
+\bibitem{Luckham70}
+D.~M. R.~Park D.~Luckham and M.~Paterson.
+\newblock On formalized computer programs, 1970.
+\newblock J. Comput. System Sci., 4, pp. 220–249.
+
+\bibitem{Lane72}
+S.~Mac Lane.
+\newblock Categories for the working mathematician, 1972.
+\newblock Springer-Verlag, New York.
+
+\bibitem{Manes74}
+E.~Manes.
+\newblock Category theory applied to computation and control, 1974.
+\newblock Proc. 1st Internat. Symp. Math. Dept. and the Dept. of Computer and
+  Information Sci., Univ. Mass., Amherst. Also: Lecture Notes in Computer
+  Science, vol. 26, Springer-Verlag, New York.
+
+\bibitem{Manna69}
+Z.~Manna.
+\newblock The correctness of programs, 1969.
+\newblock J. Comput. System Sci., 3, pp. 119–127.
+
+\bibitem{Manna70}
+Z.~Manna and A.~Pnueli.
+\newblock Formalization of properties of functional programs, 1970.
+\newblock J. Assoc. Comput. Mach., 17, pp. 555–569.
+
+\bibitem{Manna702}
+Z.~Manna and J.~McCarthy.
+\newblock Properties of programs and partial function logic, 1970.
+\newblock Machine Intelligence 5, B. Meltzer and D. Michie, eds., Edinburgh
+  University Press, pp. 27–38.
+
+\bibitem{Manna72}
+Z.~Manna and A.~Pnueli.
+\newblock Axiomatic approach to total correctness of programs, 1972.
+\newblock Artificial Intelligence Lab. Memo. AIM-210, Stanford Univ., Stanford,
+  Calif.
+
+\bibitem{Manna722}
+Z.~Manna and J.~M. Cadiou.
+\newblock Recursive definitions of partial functions and their computations,
+  1972.
+\newblock Proc. ACM Conf. on Proving Assertions about Programs, Las Cruces,
+  N.M., pp. 58–65.
+
+\bibitem{Manna723}
+Z.~Manna and J.~Vuillemin.
+\newblock Fixpoint approach to the theory of computation, 1972.
+\newblock Comm. ACM, 15, pp. 528–536.
+
+\bibitem{Manna724}
+Z.~Ness Z.~Manna and J.~Vuillemin.
+\newblock Inductive methods for proving properties of programs, 1972.
+\newblock Proc. ACM Conf. on Proving Assertions about Programs, Las Cruces,
+  N.M., pp. 27–50.
+
+\bibitem{Manna74}
+Z.~Manna.
+\newblock Mathematical theory of computation, 1974.
+\newblock McGraw-Hill, New York.
+
+\bibitem{Markowsky74}
+G.~Markowsky.
+\newblock Categories of chain-complete posets, 1974.
+\newblock RC 5100, Comput. Sci. Dept. IBM T. J. Watson Research Center,
+  Yorktown Heights, N.Y.
+
+\bibitem{Markowsky742}
+G.~Markowsky.
+\newblock Chain-complete posets and directed sets with applications, 1974.
+\newblock RC 5024, IBM T. J. Watson Research Center, Yorktown Heights, N. Y.
+
+\bibitem{Mazurkiewicz71}
+A.~Mazurkiewicz.
+\newblock Proving algorithms by tail functions, 1971.
+\newblock Working Paper for IFIP WG2.2, Feb. 1970. Since published in:
+  Information and Control, 18 (1971), pp. 220–226.
+
+\bibitem{Mazurkiewicz73}
+A.~Mazurkiewicz.
+\newblock Proving properties of processes, 1973.
+\newblock PRACE CO PAN-CC PAS Reports, vol. 134, Warsaw.
+
+\bibitem{McCarthy62}
+J.~McCarthy.
+\newblock The lisp 1.5 programmers' manual, 1962.
+\newblock MIT Press, Cambridge, Mass.
+
+\bibitem{McCarthy63a}
+J.~McCarthy.
+\newblock A basis for a mathematical theory of computation, 1963.
+\newblock 1963a; , Computer Programming and Formal Systems, D. Braffort and D.
+  Hirshberg, eds., North-Holland, Amsterdam, pp. 33–70.
+
+\bibitem{McCarthy63b}
+J.~McCarthy.
+\newblock Towards a mathematical science of computation, 1963.
+\newblock 1963b; , Information Processing 1962, Proc. IFIP Congress 1962, C. M.
+  Poppleworth, ed., North-Holland, Amsterdam, pp. 21–28.
+
+\bibitem{McCarthy66}
+J.~McCarthy.
+\newblock A formal description of a subset of algol, 1966.
+\newblock Formal Language Description Languages for Computer Programming, R. B.
+  Steel, ed., North-Holland, Amsterdam, pp. 1–12.
+
+\bibitem{McCarthy67}
+J.~McCarthy and J.~Painter.
+\newblock Correctness of a computer for arithmetic expressions, 1967.
+\newblock Mathematical Aspects of Computer Science, J. T. Schwartz, ed., Proc.
+  of a Symposium in Applied Mathematics, vol. 19, pp. 33–41.
+
+\bibitem{Michael51}
+E.~Michael.
+\newblock Topologies on spaces of subsets, 1951.
+\newblock Transactions of the American Mathematical Society, vol. 77 (1951),
+  pp. 152-182.
+
+\bibitem{Milne74}
+R.~E. Milne.
+\newblock The formal semantics of computer languages and their implementations,
+  1974.
+\newblock Ph.D. thesis, Cambridge Univ., Cambridge, England. [Also: Technical
+  Monograph PRG-13, Oxford Univ. Computing Lab., Programming Research Group].
+
+\bibitem{Milner69}
+R.~Milner.
+\newblock Program schemes and recursive function theory, 1969.
+\newblock Machine Intelligence 5, B. Meltzer and D. Michie, eds., Edinburgh
+  University Press, pp. 39–58.
+
+\bibitem{Milner70a}
+R.~Milner.
+\newblock Algebraic theory of computable polyadic functions, 1970.
+\newblock 1970a; , Computer Sci. Memo., vol. 12, University College, Swansea.
+
+\bibitem{Milner70b}
+R.~Milner.
+\newblock Equivalences on program schemes, 1970.
+\newblock 1970b; , J. Comput. System Sci., 4, pp. 205–219.
+
+\bibitem{Milner72}
+R.~Milner.
+\newblock Implementation and application of scott's logic for computable
+  functions, 1972.
+\newblock Proc. ACM Conf., Las Cruces, N.M., pp. 1–6.
+
+\bibitem{Milner722}
+R.~Milner and R.~Weyhrauch.
+\newblock Proving compiler correctness in a mechanized logic, 1972.
+\newblock Machine Intelligence, 7, pp. 51–72.
+
+\bibitem{Milner73}
+R.~Milner.
+\newblock Models of lcf, 1973.
+\newblock Artificial Intelligence Memo. AIM-186, Computer Sci. Dept., Stanford
+  Univ., Stanford, Calif.
+
+\bibitem{Milner73a}
+R.~Milner.
+\newblock An approach to the semantics of parallel programs, 1973.
+\newblock 1973a; , Proc. Convegno di Informatica Teorica, Instituto di
+  Elaborazione delle Informazione, Pisa, Italy.
+
+\bibitem{Milner73b}
+R.~Milner.
+\newblock Processes: A mathematical model of computing agents, 1973.
+\newblock 1973b; , Proc. Colloq in Mathematical Logic, Bristol, England.
+
+\bibitem{Morris68}
+J.~H. Morris.
+\newblock $\lambda$-calculus models of programming languages, 1968.
+\newblock Ph.D. thesis, Sloan School of Management, MIT MAC Reprint TR-57,
+  Mass. Inst. of Tech., Cambridge, Mass.
+
+\bibitem{Morris70}
+F.~Lockwood Morris.
+\newblock The next 700 programming language descriptions, 1970.
+\newblock Computer Center, Univ. of Essex (typescript).
+
+\bibitem{Morris71}
+J.~H. Morris.
+\newblock Another recursion induction principle, 1971.
+\newblock Comm. ACM, 14, pp. 351–354.
+
+\bibitem{Morris72}
+F.~Lockwood Morris.
+\newblock Correctness of translations of programming languages, 1972.
+\newblock Computer Sci. Memo. CS 72-303, Stanford Univ., Stanford, Calif.
+
+\bibitem{Morris722}
+J.~H. Morris.
+\newblock A correctness proof using recursively defined functions, 1972.
+\newblock Formal Semantics of Programming Languages, R. Rustin, ed.,
+  Prentice-Hall, Englewood Cliffs, N.J., pp. 107–224.
+
+\bibitem{Morris73}
+F.~Lockwood Morris.
+\newblock Advice on structuring compilers and proving them correct, 1973.
+\newblock Proc. SIGACT/SIGPLAN Symp. on Principles of Programming Languages,
+  Boston, pp. 144–152.
+
+\bibitem{Morris732}
+J.~H. Morris.
+\newblock Types are not sets, 1973.
+\newblock Proc. ACM Symp. on Principles of Programming Languages, Boston, pp.
+  120–124.
+
+\bibitem{Morris733}
+J.~Morris and R.~Nakajima.
+\newblock Mechanical characterisation of the partial order in lattice models of
+  $\lambda$-calculus, 1973.
+\newblock Tech. Rep. 18, Univ. of Calif., Berkeley.
+
+\bibitem{Mosses74}
+P.~D. Mosses.
+\newblock The mathematical semantics of algol 60, 1974.
+\newblock Tech. Monograph PRG-12, Oxford Univ. Computing Lab., Programming
+  Research Group.
+
+\bibitem{Mosses75a}
+P.~D. Mosses.
+\newblock The semantics of semantic equations, 1975.
+\newblock 1975a; , Mathematical Foundations of Computer Science, Goos and
+  Hartmanis, eds., Lecture Notes in Computer Science, vol. 28, Springer-Verlag,
+  New York, pp. 409–422.
+
+\bibitem{Mosses75b}
+P.~D. Mosses.
+\newblock Mathematical semantics and compiler generation, 1975.
+\newblock 1975b; , Thesis, Oxford Univ., Oxford, England.
+
+\bibitem{Myhill55}
+J.~Myhill and J.~C. Shepherdson.
+\newblock Effective operations on partial recursive functions, 1955.
+\newblock Z. Math. Logik Grundlagen Math., 1, pp. 310–317.
+
+\bibitem{Nakajima75}
+R.~Nakajima.
+\newblock Infinite normal forms for $\lambda$-calculus, 1975.
+\newblock $\lambda$-Calculus and Computer Science Theory, C. Böhm, ed.,
+  Springer-Verlag, Berlin, pp. 62–82.
+
+\bibitem{Nerode59}
+A.~Nerode.
+\newblock Some stone spaces and recursion theory, 1959.
+\newblock Duke Mathematical Journal, vol. 26, pp. 397–406.
+
+\bibitem{Nivat72}
+M.~Nivat.
+\newblock Langages algébriques sur le magma libre et sémantique des schémas
+  de programmes, 1972.
+\newblock Proc. IRIA Symposium on Automata Formal Languages and Programming,
+  North-Holland, Amsterdam.
+
+\bibitem{Oppen75}
+D.~C. Oppen.
+\newblock On logic and program verification, 1975.
+\newblock Tech. Rep. 82, Dept. Computer Sci., Univ. of Toronto.
+
+\bibitem{Park70a}
+D.~M.~R. Park.
+\newblock Fixpoint induction and proofs of program properties, 1970.
+\newblock 1970a; , Machine Intelligence, 5, B. Meltzer and D. Michie, eds.,
+  American Elsevier, New York, pp. 59–78.
+
+\bibitem{Park70b}
+D.~M.~R. Park.
+\newblock Notes on a formalism for reasoning about schemes, 1970.
+\newblock 1970b; , Univ. of Warwick, unpublished notes.
+
+\bibitem{Park70c}
+D.~M.~R. Park.
+\newblock The y combinator scott's lambda-calculus models, 1970.
+\newblock 1970c; , Univ. of Warwick, unpublished notes.
+
+\bibitem{Park70d}
+D.~M.~R. Park.
+\newblock Finiteness is mu-ineffable, 1970.
+\newblock 1970d; , Theory of Computation Report, No. 3, Dept. of Computer Sci.,
+  Univ. of Warwick (1974).
+
+\bibitem{Paterson63}
+M.~S. Paterson.
+\newblock Program schemata, 1963.
+\newblock Machine Intelligence, 3, D. Michie, ed., American Elsevier, New York,
+  pp. 19–32.
+
+\bibitem{Paterson70}
+M.~S. Paterson and C.~S. Hewitt.
+\newblock Comparative schematology, 1970.
+\newblock Record of Project MAC Conf. on Concurrent Systems and Parallel
+  Computation, Association for Computing Machinery, New York, pp. 119ff.
+
+\bibitem{Platek64}
+R.~Platek.
+\newblock New foundations for recursion theory, 1964.
+\newblock Thesis, Stanford Univ., Stanford, Calif., unpublished.
+
+\bibitem{Plotkin72}
+G.~D. Plotkin.
+\newblock A set-theoretical definition of application, 1972.
+\newblock Memo. MIP-R-95, School of Artificial Intelligence, University of
+  Edinburgh.
+
+\bibitem{Plotkin73a}
+G.~D. Plotkin.
+\newblock The $\lambda$-calculus is $\omega$-incomplete, 1973.
+\newblock 1973a; , Res. Memo. SAI-RM-2, School of Artificial Intelligence,
+  Univ. of Edinburgh.
+
+\bibitem{Plotkin73b}
+G.~D. Plotkin.
+\newblock Lambda-definability and logical relations, 1973.
+\newblock 1973b; , Memo. SAI-RM-4, School of Artificial Intelligence, Univ. of
+  Edinburgh.
+
+\bibitem{Plotkin73c}
+G.~D. Plotkin.
+\newblock Call-by-name, call-by-value and the $\lambda$-calculus, 1973.
+\newblock 1973c; , J. Res. Memo. SAI-RM-6, School of Artificial Intelligence,
+  Univ. of Edinburgh.
+
+\bibitem{Plotkin75}
+G.~D. Plotkin.
+\newblock A powerdomain construction, 1975.
+\newblock Dept. of Artificial Intelligence Res. Rep. 3, Univ. of Edinburgh.
+
+\bibitem{Rasiowa73}
+H.~Rasiowa.
+\newblock On $\omega^, 1973.
+\newblock $-valued algorithmic logic and related problems*, Supplement to Proc.
+  Symp. and Summer School on Mathematical Foundations of Computer Sci., High
+  Tatras, Czechoslovakia.
+
+\bibitem{Raulefs75a}
+P.~Raulefs.
+\newblock The overtyped lambda calculus, 1975.
+\newblock 1975a; , Interner Bericht Nr. 2, Institut für Informatik,
+  Universität Karlsruhe.
+
+\bibitem{Raulefs75b}
+P.~Raulefs.
+\newblock Standard models of the overtyped lambda-calculus, 1975.
+\newblock 1975b; , Interner Bericht Nr. 3, Institut für Informatik,
+  Universität Karlsruhe.
+
+\bibitem{Redziejowski72}
+R.~R. Redziejowski.
+\newblock The theory of general events and its application to parallel
+  programming, 1972.
+\newblock T.P. 18.220 IBM Nordic Laboratory, Sweden.
+
+\bibitem{Reynolds69}
+J.~C. Reynolds.
+\newblock Gedanken: A simple typeless language, 1969.
+\newblock Reprint 7621, Argonne National Laboratory, Argonne, Ill.
+
+\bibitem{Reynolds72a}
+J.~C. Reynolds.
+\newblock Definitional interpreters for higher order programming languages,
+  1972.
+\newblock 1972a; , Proc. ACM 25th Nat. Conf., Boston, vol. 2, pp. 717–740.
+
+\bibitem{Reynolds72b}
+J.~C. Reynolds.
+\newblock Notes on a lattice-theoretic approach to the theory of computation,
+  1972.
+\newblock 1972b; , Systems and Information Sci. Dept., Syracuse Univ.,
+  Syracuse, N.Y.
+
+\bibitem{Reynolds74a}
+J.~C. Reynolds.
+\newblock On the relation between direct and continuation semantics, 1974.
+\newblock 1974a; , Proc. 2nd Colloq. on Automata, Languages and Programming,
+  Saarbrücken, Lecture Notes in Computer Science, vol. 14, Springer-Verlag,
+  Berlin, pp. 141–156.
+
+\bibitem{Reynolds74b}
+J.~C. Reynolds.
+\newblock Semantics of the lattice of flow diagrams, 1974.
+\newblock 1974b; , Systems and Information Science Dept., Syracuse Univ.,
+  Syracuse, N.Y. (preprint).
+
+\bibitem{ReynoldsTA}
+J.~C. Reynolds.
+\newblock On the interpretations of scott's domains.
+\newblock to appear; Symposia Mathematica.
+
+\bibitem{ReynoldsTA2}
+J.~C. Reynolds.
+\newblock Towards a theory of type structure.
+\newblock to appear; , Colloq. on Programming, Paris, April 1974, Lecture Notes
+  in Computer Science, Springer-Verlag, Berlin.
+
+\bibitem{Roever74a}
+W.~P. de~Roever.
+\newblock Recursion and parameter mechanisms: An axiomatic approach, 1974.
+\newblock 1974a; Proc. 2nd Colloq. on Automata Languages and Programming,
+  Saarbrucken, Lecture Notes in Computer Science, vol. 14, Springer-Verlag,
+  Berlin, pp. 34–65.
+
+\bibitem{Roever74b}
+W.~P. de~Roever.
+\newblock Operational, mathematical and axiomatized semantics for recursive
+  procedures and data structures, 1974.
+\newblock 1974b; , Mathematical Centre Report ID/1, Amsterdam.
+
+\bibitem{Rogers67}
+H.~R. Rogers.
+\newblock Theory of recursive functions and effective computability, 1967.
+\newblock McGraw-Hill, New York.
+
+\bibitem{Rosen73}
+B.~K. Rosen.
+\newblock Tree-manipulating systems and church-rosser theorems, 1973.
+\newblock J. Assoc. Comput. Mach., 20.
+
+\bibitem{Rutledge70a}
+J.~D. Rutledge.
+\newblock Program schemata as automata, part i, 1970.
+\newblock 1970a; IBM Res. RC 3098. J. Comput and System Sci., 7 (1973), pp.
+  543–578.
+
+\bibitem{Rutledge70b}
+J.~D. Rutledge.
+\newblock Parallel processes . . . schemata and transformation, 1970.
+\newblock 1970b; , IBM Res. Rep. RC 2912, Yorktown Heights, N.Y.
+
+\bibitem{Salwicki70a}
+A.~Salwicki.
+\newblock Formalized algorithmic languages, 1970.
+\newblock 1970a; , Bull. Acad. Polon. Sci. Sér. Math. Astronom. Phys., 18, pp.
+  227–232.
+
+\bibitem{Salwicki70b}
+A.~Salwicki.
+\newblock On the equivalence of fs-expressions and programs, 1970.
+\newblock 1970b; , Bull. Acad. Polon. Sci. Sér. Math. Astronom. Phys., 18, pp.
+  275–278.
+
+\bibitem{Salwicki70c}
+A.~Salwicki.
+\newblock On the predicate calculi with iteration quantifiers, 1970.
+\newblock 1970c; , Bull. Acad. Polon. Sci. Sér. Math. Astronom. Phys., 18, pp.
+  279–286.
+
+\bibitem{Sanderson73}
+J.~G. Sanderson.
+\newblock The $\lambda$ calculus, lattice theory and reflexive domains, 1973.
+\newblock Mathematical Institute Lecture Notes, Oxford, England.
+
+\bibitem{Sasso71}
+L.~P. Sasso.
+\newblock Degrees of unsolvability of partial functions, 1971.
+\newblock Ph.D. dissertation, Univ. of Calif., Berkeley.
+
+\bibitem{Sasso73}
+L.~P. Sasso.
+\newblock A minimal partial degree, 1973.
+\newblock Proc. Amer. Math. Soc., 38, pp. 388–392.
+
+\bibitem{Sasso75}
+L.~P. Sasso.
+\newblock A survey of partial degrees, 1975.
+\newblock J. Symbolic Logic, 40, pp. 130–140.
+
+\bibitem{Scott69}
+D.~Scott.
+\newblock A type-theoretical alternative to iswim, cuch, owhy, 1969.
+\newblock Unpublished notes, Oxford, England.
+
+\bibitem{Scott70}
+D.~Scott.
+\newblock Outline of a mathematical theory of computation, 1970.
+\newblock Proceedings of the Fourth Annual Princeton Conference on Information
+  Sciences and Systems, pp. 169–176. [Also: Tech. Monograph PRG-2, Oxford
+  Univ. Computing Lab., Programming Research Group (1970).].
+
+\bibitem{Scott71}
+D.~Scott.
+\newblock Lattice theory, data types, and semantics, 1971.
+\newblock New York University Symposia in Areas of Current Interest in Computer
+  Science (Randall Rustin ed.) (1971) to appear.
+
+\bibitem{Scott712}
+D.~Scott.
+\newblock The lattice of flow diagrams, 1971.
+\newblock Symposium on Semantics of Algorithmic Languages, E. Engeler, ed.,
+  Lecture Notes in Mathematics, vol. 188, Springer-Verlag, New York, pp.
+  311–366. [Also: Tech. Monograph PRG-3, Oxford Univ. Computing Lab.,
+  Programming Research Group (1970).].
+
+\bibitem{Scott713}
+D.~Scott and C.~Strachey.
+\newblock Toward a mathematical semantics for computer languages, 1971.
+\newblock Proc. Symposium on Computers and Automata, Polytechnic Inst. of
+  Brooklyn, vol. 21, pp. 19–46. [Also: Technical Monograph PRG-6, Oxford
+  Univ. Computing Lab., Programming Research Group (1971).].
+
+\bibitem{Scott72b}
+D.~Scott.
+\newblock Mathematical concepts in programming language semantics, 1972.
+\newblock 1972b; , AFIPS Conf. Proc., vol. 40, pp. 225–234.
+
+\bibitem{Scott73a}
+D.~Scott.
+\newblock Data types as lattices, 1973.
+\newblock 1973a; , Unpublished lecture notes, Mathematical Centre, Amsterdam,
+  1973.
+
+\bibitem{Scott73b}
+D.~Scott.
+\newblock Models for various type-free calculi, 1973.
+\newblock 1973b; , Proc. IVth Internat. Cong. for Logic, Methodology and the
+  Philosophy of Science, Bucharest, P. Suppes et al., eds., North-Holland,
+  Amsterdam, pp. 157–187.
+
+\bibitem{Scott75a}
+D.~Scott.
+\newblock Lambda calculus and recursion theory, 1975.
+\newblock 1975a; , Proc. 3rd Scandinavian Logic Symposium, Stig Kanger, ed.,
+  North-Holland, Amsterdam, pp. 154–193.
+
+\bibitem{Scott75b}
+D.~Scott.
+\newblock Combinators and classes, 1975.
+\newblock 1975b; , $\lambda$-Calculus and computer science theory, Proc. Rome
+  Symp., March 1975; Lecture Notes in Computer Science, vol. 37,
+  Springer-Verlag, Berlin, pp. 1–26.
+
+\bibitem{Scott75c}
+D.~Scott.
+\newblock Some philosophical issues concerning theories of combinators, 1975.
+\newblock 1975c; , $\lambda$-Calculus and computer science theory, Proc. Rome
+  Symp., March 1975; Lecture Notes in Computer Science, vol. 37,
+  Springer-Verlag, Berlin, pp. 346–366.
+
+\bibitem{Shepherdson75}
+J.~C. Shepherdson.
+\newblock Computation over abstract structures: Serial and parallel procedures
+  and friedman's effective definitional schemes, 1975.
+\newblock Logic Colloquium 1973, H. E. Rose and J. C. Shepherdson, eds.,
+  North-Holland, Amsterdam, pp. 445–513.
+
+\bibitem{Spanier63}
+E.~Spanier.
+\newblock Quasi-topologies, 1963.
+\newblock Duke Mathematical Journal, vol. 30 (1963) pp. 1-14.
+
+\bibitem{Strachey66}
+C.~Strachey.
+\newblock Towards a formal semantics, 1966.
+\newblock Formal Language Description Languages for Computer Programming, T. B.
+  Steel, ed., North-Holland, Amsterdam, pp. 198–220.
+
+\bibitem{Strachey67}
+C.~Strachey.
+\newblock Fundamental concepts in programming languages, 1967.
+\newblock Unpublished lecture notes for the NATO Summer School, Copenhagen.
+
+\bibitem{Strachey72}
+C.~Strachey.
+\newblock Varieties of programming languages, 1972.
+\newblock Proc. Internat. Computing Symp., Cini Foundation, Venice, pp.
+  222–233. [Also: Tech. Monograph PRG-10, Oxford Univ. Computing Lab.,
+  Programming Research Group (1972).].
+
+\bibitem{Strachey74}
+C.~Strachey and C.~Wadsworth.
+\newblock Continuations: A mathematical semantics for handling full jumps,
+  1974.
+\newblock Tech. Monograph PRG-11, Oxford Univ. Computing Lab., Programming
+  Research Group.
+
+\bibitem{Strother55}
+W.~Strother.
+\newblock Fixed points, fixed sets, and m-retracts, 1955.
+\newblock Duke Mathematical Journal, vol. 22 (1955), pp. 551-556.
+
+\bibitem{Tang74}
+A.~Tang.
+\newblock Recursion theory and descriptive set theory in effectively given
+  $t_0$ spaces, 1974.
+\newblock Ph.D. thesis, Princeton Univ., Princeton, N.J.
+
+\bibitem{Tang75a}
+A.~Tang.
+\newblock Borel sets in $p\omega$, 1975.
+\newblock 1975a; , IRIA-Laboria, preprint.
+
+\bibitem{Tang75b}
+A.~Tang.
+\newblock Notes on subsets on $p\omega$ with extra-finitary property, 1975.
+\newblock 1975b; , IRIA, preprint.
+
+\bibitem{Tang75c}
+A.~Tang.
+\newblock A hierarchy of $b_\delta$ sets in $p\omega$, 1975.
+\newblock 1975c; , IRIA, preprint.
+
+\bibitem{Tang75c2}
+A.~Tang.
+\newblock Sets of the form $\{x \mid R(x) = T\}$ in $p\omega$, 1975.
+\newblock 1975c; , IRIA, preprint.
+
+\bibitem{Tang75d}
+A.~Tang.
+\newblock $\leqq_e$ degrees in p, iria, preprint, 1975.
+\newblock 1975d.
+
+\bibitem{Tarski30}
+A.~Tarski.
+\newblock On some fundamental concepts of mathematics, 1930.
+\newblock ; translated by J. H. Woodger in Logic, Semantics, Metamathematics,
+  Cambridge, 1956, pp. 30–37.
+
+\bibitem{Tarski55}
+A.~Tarski.
+\newblock A lattice-theoretical fixpoint theorem and its applications, 1955.
+\newblock Pacific J. Math., 5, pp. 285–309.
+
+\bibitem{Tennent73}
+R.~D. Tennent.
+\newblock Mathematical semantics and design of programming languages, 1973.
+\newblock Ph.D. thesis, Univ. of Toronto. [Also: Tech. Rep. 59, Univ. of
+  Toronto (1973).].
+
+\bibitem{Tennent74a}
+R.~D. Tennent.
+\newblock The mathematical semantics of programming languages, 1974.
+\newblock 1974a; , Dept. of Computing and Information Sci., Queen's Univ.,
+  Kingston, Ontario, Canada (preprint).
+
+\bibitem{Tennent74b}
+R.~D. Tennent.
+\newblock A contribution to the development of pascal-like languages, 1974.
+\newblock 1974b; , Tech. Rep. 74-25, Dept. of Computing and Information Sci.,
+  Queen's Univ., Kingston, Ontario, Canada.
+
+\bibitem{Tennent75}
+R.~D. Tennent.
+\newblock Pasqual: A proposed generalization of pascal, 1975.
+\newblock Tech. Rep. 75-32, Dept. of Computing and Information Sci., Queen's
+  Univ., Kingston, Ontario, Canada.
+
+\bibitem{Vuillemin73a}
+J.~Vuillemin.
+\newblock Proof techniques for recursive programs, 1973.
+\newblock 1973a; , IRIA—Laboria Rep.
+
+\bibitem{Vuillemin73b}
+J.~Vuillemin.
+\newblock Correct and optimal implementations of recursion in a simple
+  programming language, 1973.
+\newblock 1973b; , IRIA—Laboria Rep. 24.
+
+\bibitem{Wadsworth71}
+C.~P. Wadsworth.
+\newblock Semantics and pragmatics of the lambda-calculus, 1971.
+\newblock D. Phil. thesis, Oxford Univ., Oxford, England.
+
+\bibitem{Wadsworth75a}
+C.~P. Wadsworth.
+\newblock The relation between lambda-expressions and their denotation, 1975.
+\newblock 1975a; , Dept. of Systems and Information Sci., Syracuse Univ.,
+  Syracuse, N.Y. (preprint).
+
+\bibitem{Wadsworth75b}
+C.~P. Wadsworth.
+\newblock Approximate reduction and lambda-calculus models, 1975.
+\newblock 1975b; , Dept. of Systems and Information Sci., Syracuse Univ.,
+  Syracuse, N.Y.
+
+\bibitem{Wadsworth75c}
+C.~P. Wadsworth.
+\newblock Some unusual $\lambda$-calculus numeral systems, 1975.
+\newblock 1975c; , in preparation.
+
+\bibitem{WadsworthTA}
+C.~P. Wadsworth.
+\newblock On the topological ordering in the $d$-model of the lambda-calculus.
+\newblock to appear; , in preparation.
+
+\bibitem{Wagner71a}
+E.~G. Wagner.
+\newblock Languages for defining sets in arbitrary algebras, 1971.
+\newblock 1971a; , Proc. of the 11th IEEE Conf. on Switching and Automata
+  Theory, pp. 192–201.
+
+\bibitem{Wagner71b}
+E.~G. Wagner.
+\newblock An algebraic theory of recursive definitions and recursive languages,
+  1971.
+\newblock 1971b; , Proc. of the 3rd ACM Symp. on Theory of Computing.
+
+\bibitem{Wagner74}
+E.~G. Wagner.
+\newblock Notes on categories, algebras and programming languages, 1974.
+\newblock Unpublished lecture notes, London.
+
+\bibitem{Wand73}
+M.~Wand.
+\newblock Mathematical foundations of formal language theory, 1973.
+\newblock MAC-TR-108, Project MAC, Mass. Inst. of Tech., Cambridge, Mass.
+
+\bibitem{Wand74a}
+M.~Wand.
+\newblock An algebraic formulation of the chomsky hierarchy, 1974.
+\newblock 1974a; , Category Theory Applied to Computation and Control, E.
+  Manes, ed., Univ. of Mass., pp. 216–221.
+
+\bibitem{Wand74b}
+M.~Wand.
+\newblock On the recursive specification of data types, 1974.
+\newblock 1974b; , Category Theory Applied to Computation and Control, E.
+  Manes, ed., Univ. of Mass., pp. 222–225.
+
+\bibitem{Wand74c}
+M.~Wand.
+\newblock Realizing data structures as lattices, 1974.
+\newblock 1974c; , Tech. Rep. 11, Computer Sci. Dept., Indiana Univ.
+
+\bibitem{Wand75}
+M.~Wand.
+\newblock Fixed-point constructions in order-enriched categories, 1975.
+\newblock Tech. Rep. 23, Computer Sci. Dept., Indiana Univ.
+
+\bibitem{Wegner72}
+P.~Wegner and D.~Lehmann.
+\newblock Algebraic and topological prerequisites to scott's theory of
+  computation, 1972.
+\newblock Tech. Rep. 72-2, Dept. of Computer Sci., Hebrew Univ. of Jerusalem.
+
+\bibitem{Weyrauch72}
+R.~W. Weyrauch and R.~Milner.
+\newblock Program correctness in a mechanized logic, 1972.
+\newblock Proc. of the 1st USA-JAPAN Computer Conf., pp. 384–390.
+
+\bibitem{Wright72}
+J.~B. Wright.
+\newblock Characterization of recursively enumerable sets, 1972.
+\newblock J. Symbolic Logic, 37, pp. 507–511.
+
+\end{thebibliography}

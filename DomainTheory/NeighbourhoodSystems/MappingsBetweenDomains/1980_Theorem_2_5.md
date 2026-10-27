@@ -49,6 +49,6 @@ It may seem as though we have, in the definition of composition, written things 
 
 <!-- page 30 -->
 
-**[Theorem_2_5.lean](Theorem_2_5.lean)**
+**[Theorem_2_5.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Theorem_2_5.lean)**
 
 @import "Theorem_2_5.lean"

@@ -34,6 +34,6 @@ which can be read as saying that the partial element determined by the neighbour
 
 <!-- page 27 -->
 
-**[Proposition_2_2.lean](Proposition_2_2.lean)**
+**[Proposition_2_2.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Proposition_2_2.lean)**
 
 @import "Proposition_2_2.lean"

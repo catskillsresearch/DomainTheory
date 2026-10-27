@@ -38,6 +38,6 @@ These results have almost completely translated the theory of $\triangleleft$-su
 
 <!-- page 140 -->
 
-**[Theorem_8_6.lean](Theorem_8_6.lean)**
+**[Theorem_8_6.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem_8_6.lean)**
 
 @import "Theorem_8_6.lean"

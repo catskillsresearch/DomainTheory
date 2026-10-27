@@ -5,22 +5,20 @@
 %% The flawed proof of Proposition 2.10 has no Lean files.
 flowchart TB
 
-  D23["Definition 2.3\nContinuous Lattice"]
-  MC["Milner Correction"]
-  P21["Proposition 2.1"]
-  SM["Scott Maps"]
-  SO["Scott open"]
-  SP["Specialization"]
-  WB["Way-below relation"]
+  Definition_2_3["Definition 2.3"]
+  Milner_Correction["Milner Correction"]
+  Proposition_2_1["Proposition 2.1"]
+  Scott_Maps["Scott Maps"]
+  Scott_open["Scott open"]
+  Specialization["Specialization"]
+  Way_below_relation["Way-below relation"]
 
-  WB -->|"1"| D23
-  SP -->|"2"| MC
-  SM -->|"2"| P21
-  P21 -->|"1"| SP
-  SO -->|"1"| WB
+  Way_below_relation -->|"1"| Definition_2_3
+  Specialization -->|"2"| Milner_Correction
+  Scott_Maps -->|"2"| Proposition_2_1
+  Proposition_2_1 -->|"1"| Specialization
+  Scott_open -->|"1"| Way_below_relation
 
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef definition fill:#fae8ff,stroke:#a21caf,color:#701a75
-  class SP,SO,WB,SM,MC concept
-  class P21,P211 numbered

@@ -320,6 +320,43 @@ def strip_first_h1(text: str) -> str:
     return FIRST_H1_RE.sub("", text, count=1)
 
 
+EXERCISE_TITLE_RE = re.compile(
+    r"^Exercise\s+(\d+(?:\.\d+)*)\b",
+    re.IGNORECASE,
+)
+EXERCISE_BODY_LABEL_RE = re.compile(
+    r"^\*\*EXERCISE\s+(\d+(?:\.\d+)*)\.\*\*\s*",
+    re.IGNORECASE,
+)
+
+
+def strip_redundant_exercise_label(body: str, section_title: str) -> str:
+    """Drop a leading ``**EXERCISE X.YZ.**`` when the section title already says Exercise X.YZ."""
+    tm = EXERCISE_TITLE_RE.match(section_title.strip())
+    if not tm:
+        return body
+    title_num = tm.group(1)
+    # Skip leading blank lines, then strip matching all-caps label.
+    lines = body.splitlines(keepends=True)
+    i = 0
+    while i < len(lines) and not lines[i].strip():
+        i += 1
+    if i >= len(lines):
+        return body
+    bm = EXERCISE_BODY_LABEL_RE.match(lines[i].lstrip())
+    if not bm or bm.group(1) != title_num:
+        return body
+    # Keep any remainder of the first content line after the label.
+    indent_len = len(lines[i]) - len(lines[i].lstrip())
+    remainder = EXERCISE_BODY_LABEL_RE.sub("", lines[i].lstrip(), count=1)
+    new_first = ((" " * indent_len) + remainder) if remainder.strip() else ""
+    rebuilt = lines[:i]
+    if new_first:
+        rebuilt.append(new_first if new_first.endswith("\n") else new_first + "\n")
+    rebuilt.extend(lines[i + 1 :])
+    return "".join(rebuilt)
+
+
 # AI-generated prose sidecars often contain raw TeX math macros outside math
 # mode; omit them from the PDF by default (human English + Lean links remain).
 AI_PROSE_SUFFIXES = {".ai_lean_to_english", ".ai_english_concordance"}
@@ -499,6 +536,7 @@ def flatten_file(
     )
     if section_title is not None:
         body = align_body_headings(body, min(section_level + 1, 6))
+        body = strip_redundant_exercise_label(body, section_title)
     body = repair_cases_row_breaks(body)
     body = repair_array_row_breaks(body)
     body = repair_bare_set_comprehensions(body)
@@ -548,20 +586,19 @@ def ensure_abstract(text: str) -> str:
 
 
 def ensure_model_card_markers(text: str) -> str:
-    """Ensure References has AI model-card placeholders expected by ``ai_model_cards``."""
-    if "<!-- AI_MODEL_REFERENCES -->" in text:
-        return text
-    m = re.search(r"^(#{1,6}\s+References)\s*$", text, re.MULTILINE)
-    if not m:
-        text = text.rstrip() + "\n\n## References\n\n"
-        m = re.search(r"^(#{1,6}\s+References)\s*$", text, re.MULTILINE)
-        assert m is not None
-    insert_at = m.end()
-    return (
-        text[:insert_at]
-        + "\n\n<!-- AI_MODEL_REFERENCES -->\n<!-- /AI_MODEL_REFERENCES -->\n"
-        + text[insert_at:]
+    """Ensure a ``## References`` heading exists (bibliography comes from ``references.bib``).
+
+    Legacy ``AI_MODEL_REFERENCES`` markers are cleared; model-card BibTeX lives in
+    ``references.bib`` and is cited from Acknowledgments.
+    """
+    text = re.sub(
+        r"<!-- AI_MODEL_REFERENCES -->\s*<!-- /AI_MODEL_REFERENCES -->\s*",
+        "",
+        text,
     )
+    if re.search(r"^#{1,6}\s+References\s*$", text, re.MULTILINE):
+        return text
+    return text.rstrip() + "\n\n## References\n\n"
 
 
 def flatten_md_tree(

@@ -19,6 +19,6 @@ This example is instructive, since it shows that a non-trivial mapping can trans
 
 Aside from our being able to define particular functions outright, we can combine functions in many different ways; the idea of composition is probably the most basic scheme of combination, and there is a technical name for a family of structures with mappings that can be so combined.
 
-**[Example_2_4.lean](Example_2_4.lean)**
+**[Example_2_4.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Example_2_4.lean)**
 
 @import "Example_2_4.lean"

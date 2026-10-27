@@ -10,26 +10,25 @@ The tip states that if `D` is effectively given then so is (a presentation of) t
 
 Library tools: finitely generated subsystems and the reconstructed system `SubD`.
 
-**[finGen.lean](finGen.lean)** — `finGen`, `finGenSys`, `SubD`
+ — `finGen`, `finGenSys`, `SubD`
 
 @import "finGen.lean"
 
-**[TreeVal.lean](TreeVal.lean)** — `QBody`, `QFuel`, `TreeVal`, `Q'X`
+ — `QBody`, `QFuel`, `TreeVal`, `Q'X`
 
 @import "TreeVal.lean"
 
-**[TreeVal_more.lean](TreeVal_more.lean)** — `Q2X`, `Q'xPresentation`
+ — `Q2X`, `Q'xPresentation`
 
 @import "TreeVal_more.lean"
 
 Assembles those tools into the Exercise 8.15 development (order iso, presentations, U-case).
 
-**[SubsystemDomain.lean](SubsystemDomain.lean)**
+**[SubsystemDomain.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/SubsystemDomain.lean)**
 
 @import "SubsystemDomain.lean"
-
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_15.lean](Exercise_8_15.lean)** — `exercise_8_15`
+ — `exercise_8_15`
 
 @import "Exercise_8_15.lean"

@@ -15,6 +15,10 @@ IMPORT = re.compile(
     r"^(?:public\s+|private\s+|meta\s+)?import\s+(?:all\s+)?(\S+)\s*$"
 )
 BULLET_MD = re.compile(r"^\s*-\s+\[[^\]]*\]\(([^)]+)\)\s*$")
+# Chapter indexes use ``0. [Title](path)``; section indexes use ``- [Title](path)``.
+OUTLINE_LINK = re.compile(r"^\s*(?:-\s+|\d+\.\s+)\[[^\]]*\]\(([^)]+)\)\s*$")
+OUTLINE_TITLE = re.compile(r"^\s*(?:-\s+|\d+\.\s+)\[([^\]]*)\]")
+DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
 MERMAID_IMPORT = re.compile(r'@import\s+"([^"]+\.mermaid)"')
 LEAN_IMPORT = re.compile(r'@import\s+"([^"]+\.lean)"')
 NODE_DEF = re.compile(r'^\s*(\w+)\["([^"]*)"\]\s*$')
@@ -107,10 +111,26 @@ def lean_modules_from_note(md: Path) -> set[str]:
     return mods
 
 
+def modules_from_section_outline(md: Path) -> set[str]:
+    """Lean modules for a section index whose children are linked outline notes."""
+    mods: set[str] = set()
+    for line in md.read_text(encoding="utf-8", errors="ignore").splitlines():
+        m = OUTLINE_LINK.match(line)
+        if not m:
+            continue
+        child = resolve_md(md, m.group(1))
+        if child is None:
+            continue
+        mods |= note_module_set(child)
+    return mods
+
+
 def note_module_set(md: Path) -> set[str]:
     """Modules belonging to one outline box (note or whole topic folder)."""
     text = md.read_text(encoding="utf-8", errors="ignore")
     if re.search(r'@import\s+"[^"]+\.mermaid"', text):
+        if md.parent.resolve() == DT.resolve():
+            return modules_from_section_outline(md)
         folder = md.parent
         return {module_of(p) for p in folder.rglob("*.lean") if p.is_file()}
     return lean_modules_from_note(md)
@@ -450,13 +470,13 @@ def gen_note_outline(
 
     boxes: list[tuple[str, set[str]]] = []
     for line in index_md.read_text(encoding="utf-8", errors="ignore").splitlines():
-        m = BULLET_MD.match(line)
+        m = OUTLINE_LINK.match(line)
         if not m:
             continue
         child = resolve_md(index_md, m.group(1))
         if child is None:
             continue
-        title_m = re.match(r"^\s*-\s+\[([^\]]*)\]", line)
+        title_m = OUTLINE_TITLE.match(line)
         title = title_m.group(1) if title_m else child.stem
         if re.search(r"(?i)^introduction$", title.strip(), re.I) and not lean_modules_from_note(child):
             continue
@@ -484,6 +504,11 @@ def gen_note_outline(
             "Subsets and their classification": "CLASS",
             "Total functions and functionality": "FUN",
             "Enumeration and degrees": "ENUM",
+            "Introduction": "INTRO",
+            "Injective spaces": "INJ",
+            "Continuous lattices": "CL",
+            "Function spaces": "FS",
+            "Inverse limits": "LIM",
             "0. Introduction": "INTRO",
             "1. Injective spaces": "INJ",
             "2. Continuous lattices": "CL",
@@ -732,6 +757,24 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
     return None
 
 
+def remove_deprecated_mermaid() -> None:
+    """Drop the ambiguous ``1972_Continuous_lattices`` file; use ``1972_ContinuousLattices``."""
+    if not DEPRECATED_MERMAID.is_file():
+        return
+    for md in list(DT.rglob("*.md")) + [ROOT / "DomainTheory.md"]:
+        if not md.is_file():
+            continue
+        text = md.read_text(encoding="utf-8", errors="ignore")
+        if f'@import "{DEPRECATED_MERMAID.name}"' in text:
+            raise SystemExit(
+                f"{md.relative_to(ROOT)} still imports {DEPRECATED_MERMAID.name}; "
+                f"use 1972_ContinuousLattices.mermaid (chapter) or "
+                f"1972_2_Continuous_lattices.mermaid (section 2 notes)."
+            )
+    DEPRECATED_MERMAID.unlink()
+    print(f"removed deprecated {DEPRECATED_MERMAID.relative_to(ROOT)}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true")
@@ -769,6 +812,7 @@ def main() -> None:
         raise SystemExit(1)
     if args.write:
         print(f"updated {changed} diagrams")
+        remove_deprecated_mermaid()
     if unknown:
         print("unknown kinds:", ", ".join(str(p.relative_to(ROOT)) for p in unknown))
 

@@ -446,24 +446,63 @@ def prune_stale_listings() -> None:
             path.unlink()
 
 
-def lean_block_latex(code: str, listing_name: str) -> str:
+_LEAN_MD_LINK_RE = re.compile(
+    r"(?:\n|^)\*\*\[([^\]]+\.lean)\]\(([^)]+\.lean)\)\*\*\s*$"
+)
+
+
+def lean_file_href(repo_rel: str) -> str:
+    """GitHub blob URL for a repo-relative ``.lean`` path."""
+    rel = repo_rel.lstrip("./")
+    return f"{GITHUB_URL}/blob/main/{rel}"
+
+
+def tex_escape_texttt(s: str) -> str:
+    """Escape characters that are special inside ``\\texttt{...}``."""
+    return (
+        s.replace("\\", "\\textbackslash{}")
+        .replace("_", "\\_")
+        .replace("#", "\\#")
+        .replace("%", "\\%")
+        .replace("&", "\\&")
+        .replace("{", "\\{")
+        .replace("}", "\\}")
+    )
+
+
+def lean_block_latex(
+    code: str,
+    listing_name: str,
+    *,
+    link_label: str | None = None,
+    link_href: str | None = None,
+) -> str:
     rel_path, line_count = write_listing(code, listing_name)
     ranges = chunk_line_ranges(line_count, LISTING_CHUNK_LINES)
 
-    parts: list[str] = []
+    # Prefer the markdown citation label/href; fall back to the listing basename.
+    label = link_label or Path(listing_name).name
+    href = lean_file_href(link_href) if link_href else lean_file_href(
+        listing_name if listing_name.startswith("DomainTheory/") else f"DomainTheory/{listing_name}"
+    )
+    header = (
+        "\\vspace{0.5\\baselineskip}\n"
+        f"\\noindent\\href{{{href}}}{{\\texttt{{{tex_escape_texttt(label)}}}}}"
+        "\\par\\vspace{0.25\\baselineskip}\n"
+    )
+
+    parts: list[str] = [header]
     for first, last in ranges:
         if first == 1 and last == line_count:
             parts.append(
-                "\\vspace{0.5\\baselineskip}\n"
-                "\\noindent\\textcolor{green!40!black}{\\textbf{Lean 4 source}}"
-                "\\par\\vspace{0.25\\baselineskip}\n"
                 f"\\lstinputlisting[style=leanbox]{{{rel_path}}}\n"
                 "\\vspace{0.5\\baselineskip}\n\n"
             )
         else:
+            # Chunked listings: filename once above; subsequent chunks need no label.
+            if first != 1:
+                parts.append("\\vspace{0.25\\baselineskip}\n")
             parts.append(
-                f"\\noindent\\textcolor{{green!40!black}}{{\\textbf{{Lean 4 source "
-                f"(lines {first}--{last})}}}}\\par\\vspace{{0.25\\baselineskip}}\n"
                 f"\\lstinputlisting[style=leanbox,firstline={first},lastline={last}]"
                 f"{{{rel_path}}}\n\n"
             )
@@ -497,8 +536,13 @@ def replace_fences(
     other_idx = 0
     mermaid_idx = 0
 
-    def repl(match: re.Match[str]) -> str:
-        nonlocal lean_idx, other_idx, mermaid_idx
+    # Walk fences left-to-right so a preceding ``**[file.lean](path)**`` can be
+    # consumed into the listing header (\\noindent\\href) instead of surviving
+    # as a duplicate markdown link.
+    out: list[str] = []
+    last = 0
+    for match in FENCE_RE.finditer(text):
+        prefix = text[last : match.start()]
         lang = match.group(1).strip().lower()
         body = match.group(2)
         if lang == "lean":
@@ -508,14 +552,32 @@ def replace_fences(
             safe_name = module.replace("/", "-")
             if not safe_name.endswith(".lean"):
                 safe_name += ".lean"
-            placeholders[key] = lean_block_latex(body, safe_name)
-            return f"\n\n{key}\n\n"
-        if lang == "math":
+            link_label: str | None = None
+            link_href: str | None = None
+            lm = _LEAN_MD_LINK_RE.search(prefix)
+            if lm and prefix[lm.end() :].strip() == "":
+                link_label = Path(lm.group(1)).name
+                link_href = lm.group(2)
+                prefix = prefix[: lm.start()].rstrip() + "\n\n"
+            elif module.endswith(".lean") and "/" in module:
+                # ### DomainTheory/.../File.lean heading (inline lean mode).
+                link_label = Path(module).name
+                link_href = module
+            placeholders[key] = lean_block_latex(
+                body,
+                safe_name,
+                link_label=link_label or Path(safe_name).name,
+                link_href=link_href,
+            )
+            out.append(prefix)
+            out.append(f"\n\n{key}\n\n")
+        elif lang == "math":
             key = f"MATHINCLUDE{other_idx:03d}"
             other_idx += 1
             placeholders[key] = f"\\[\n{body.strip()}\n\\]\n"
-            return f"\n\n{key}\n\n"
-        if lang == "mermaid":
+            out.append(prefix)
+            out.append(f"\n\n{key}\n\n")
+        elif lang == "mermaid":
             key = f"FIGINCLUDE{other_idx:03d}"
             rel_path = render_mermaid(body, mermaid_idx)
             caption = (
@@ -523,7 +585,6 @@ def replace_fences(
                 if mermaid_idx < len(mermaid_captions)
                 else f"Module dependency diagram {mermaid_idx + 1}"
             )
-            # Index keeps \\label unique when several diagrams share a heading.
             label = f"fig:mermaid-{mermaid_idx:03d}"
             mermaid_idx += 1
             other_idx += 1
@@ -532,15 +593,34 @@ def replace_fences(
                 placeholders[key] = listing_figure_latex(listing, caption, label)
             else:
                 placeholders[key] = figure_latex(rel_path, caption, label)
-            return f"\n\n{key}\n\n"
-        key = f"CODEINCLUDE{other_idx:03d}"
-        rel_path, _ = write_listing(body, f"snippet-{other_idx:03d}.txt")
-        other_idx += 1
-        placeholders[key] = f"\\lstinputlisting[style=leanbox]{{{rel_path}}}\n"
-        return f"\n\n{key}\n\n"
+            out.append(prefix)
+            out.append(f"\n\n{key}\n\n")
+        else:
+            key = f"CODEINCLUDE{other_idx:03d}"
+            rel_path, _ = write_listing(body, f"snippet-{other_idx:03d}.txt")
+            other_idx += 1
+            placeholders[key] = f"\\lstinputlisting[style=leanbox]{{{rel_path}}}\n"
+            out.append(prefix)
+            out.append(f"\n\n{key}\n\n")
+        last = match.end()
+    out.append(text[last:])
+    return "".join(out), placeholders
 
-    converted = FENCE_RE.sub(repl, text)
-    return converted, placeholders
+
+def inject_bibliography(text: str) -> str:
+    """Replace the References section body with BibTeX processing commands."""
+    m = re.search(r"^##\s+References\s*$", text, re.MULTILINE)
+    if not m:
+        raise RuntimeError("missing ## References; needed for BibTeX bibliography")
+    # Keep the heading for pandoc → \\section{References}; drop any stub prose.
+    # Everything after References is the bibliography (end of document).
+    return (
+        text[: m.end()]
+        + "\n\n"
+        + "\\nocite{*}\n"
+        + "\\bibliographystyle{unsrt}\n"
+        + "\\bibliography{references}\n"
+    )
 
 
 def pandoc_to_latex(markdown: str, shift: bool = True) -> str:
@@ -762,6 +842,7 @@ def main() -> int:
     mermaid_captions = extract_mermaid_captions(body)
     body = apply_prose_ascii_fallbacks(body)
     body = inject_model_cards(body)
+    body = inject_bibliography(body)
     body = strip_html_comments(body)
     body = normalize_appendix_headings(body)
     abstract_md, body = extract_abstract(body)

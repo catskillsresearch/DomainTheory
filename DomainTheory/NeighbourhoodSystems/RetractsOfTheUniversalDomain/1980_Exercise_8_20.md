@@ -8,18 +8,17 @@ Would these projections be computable if $D$ is effectively given? Are there mor
 
 ## Tip summary
 
-The tip asserts `D ⊴ D×D` and `D ⊴ D→D` for every domain `D`.
+The tip asserts $D \trianglelefteq D\times D$ and $D \trianglelefteq D\to D$ for every domain $D$.
 
 ## Development
 
-Proves the unconditional self-embeddings `D ⊴ D×D` and `D ⊴ D→D`.
+Proves the unconditional self-embeddings $D \trianglelefteq D\times D$ and $D \trianglelefteq D\to D$.
 
-**[DiagonalRetracts.lean](DiagonalRetracts.lean)**
+**[DiagonalRetracts.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/DiagonalRetracts.lean)**
 
 @import "DiagonalRetracts.lean"
-
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_20.lean](Exercise_8_20.lean)** — `exercise_8_20`
+ — `exercise_8_20`
 
 @import "Exercise_8_20.lean"

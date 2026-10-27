@@ -12,16 +12,15 @@ The tip asserts that the sharp of a finitary projection is again a finitary proj
 
 Develops the sharp construction and shows it yields a finitary projection.
 
-**[ASharp.lean](ASharp.lean)**
+**[ASharp.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/ASharp.lean)**
 
 @import "ASharp.lean"
-
-**[ASharp_more.lean](ASharp_more.lean)** — `aSharp` projection/computability companions and Ex 8.25 closing
+ — `aSharp` projection/computability companions and Ex 8.25 closing
 
 @import "ASharp_more.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_21.lean](Exercise_8_21.lean)** — `exercise_8_21`
+ — `exercise_8_21`
 
 @import "Exercise_8_21.lean"

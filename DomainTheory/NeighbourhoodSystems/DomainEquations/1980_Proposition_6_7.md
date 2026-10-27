@@ -52,6 +52,6 @@ $$
 
 But generally that is not enough to assure that $D$ is initial. There is a condition that our functors satisfy, however, which guarantees the existence of homomorphisms.
 
-**[Proposition_6_7.lean](Proposition_6_7.lean)**
+**[Proposition_6_7.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Proposition_6_7.lean)**
 
 @import "Proposition_6_7.lean"

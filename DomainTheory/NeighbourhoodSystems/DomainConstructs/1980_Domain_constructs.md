@@ -18,7 +18,6 @@
 - [Theorem 3.11 — evaluation combinator](1980_Theorem_3_11.md)
 - [Theorem 3.12 — currying](1980_Theorem_3_12.md)
 - [Theorem 3.13 — pointwise order of maps](1980_Theorem_3_13.md)
-- [Lecture III exercises](1980_Lecture_III_exercises.md)
 - [Exercise 3.14 — tagged product of tokens](1980_Exercise_3_14.md)
 - [Exercise 3.15 — product isomorphisms](1980_Exercise_3_15.md)
 - [Exercise 3.16 — infinite sequences of elements](1980_Exercise_3_16.md)

@@ -6,6 +6,6 @@ $$
 \mathrm{fix}(f \circ g) = f(\mathrm{fix}(g \circ f)).
 $$
 
-**[Exercise_4_20.lean](Exercise_4_20.lean)**
+**[Exercise_4_20.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_20.lean)**
 
 @import "Exercise_4_20.lean"

@@ -18,6 +18,6 @@ $$
 
 where $out_i \circ in_i = I_{\mathcal{D}_i}$. Where does the assumption $\emptyset \notin \mathcal{D}_i$ come in? How can these sums be generalized to $n$-terms? (Hint: As for products use sets $1^i 0 \Delta_i$.) Draw some pictures.
 
-**[Exercise_3_18.lean](Exercise_3_18.lean)**
+**[Exercise_3_18.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise_3_18.lean)**
 
 @import "Exercise_3_18.lean"

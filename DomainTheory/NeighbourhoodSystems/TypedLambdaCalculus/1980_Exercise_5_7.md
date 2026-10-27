@@ -8,6 +8,6 @@ which use only $\lambda v$ with one variable and applications only to one argume
 
 <!-- page 88 -->
 
-**[Exercise_5_7.lean](Exercise_5_7.lean)**
+**[Exercise_5_7.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise_5_7.lean)**
 
 @import "Exercise_5_7.lean"

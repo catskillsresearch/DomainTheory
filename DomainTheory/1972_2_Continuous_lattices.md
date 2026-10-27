@@ -2,7 +2,7 @@
 
 The section follows the paper from specialization through Proposition 2.11. The printed proof of Proposition 2.10 is flawed. Its corrected proof and Theorem 2.12, which calls that proof, are in [section 3](1972_3_Function_spaces.md) with their original numbers.
 
-@import "1972_Continuous_lattices.mermaid"
+@import "1972_2_Continuous_lattices.mermaid"
 
 The arrowhead is on the note that imports. The number is how many direct imports. An arrow already implied by a longer path is left out. The flawed proof has no Lean files, so it is not on the diagram. Theorem 2.12 is on the section 3 diagram.
 

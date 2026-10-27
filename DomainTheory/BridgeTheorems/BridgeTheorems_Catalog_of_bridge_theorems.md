@@ -23,7 +23,7 @@ coding, the round three-way identification, and the Factoid 8.1 instance; the ot
 catalog rows are proved in `ScottModels/` but are not Comparator targets. This
 package was verified and registered in the Palomar registry as
 [PALOMAR-2026-08-25-000003](https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000003&version=1)
-v1 **[PALOMAR26]**. What Palomar verified is the claim:
+v1 \cite{PALOMAR26}. What Palomar verified is the claim:
 
 > Order isomorphisms relating Scott’s three presentations of domains — continuous
 > lattices (1972), neighbourhood systems (PRG-19), and information systems (1982) —

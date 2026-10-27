@@ -8,6 +8,6 @@ It is certain that the property of 1.9 is necessary, but it may not be so clear 
 
 In some of the examples tokens corresponded to total elements and in some to partial elements; it is not difficult to see (ex post facto) that every domain can be presented with tokens exactly corresponding to partial elements.
 
-**[DomainIso.lean](DomainIso.lean)**
+**[DomainIso.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/DomainIso.lean)**
 
 @import "DomainIso.lean"

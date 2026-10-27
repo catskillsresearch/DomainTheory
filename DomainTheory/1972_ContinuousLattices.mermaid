@@ -3,6 +3,13 @@
 %% Section 0 has no Lean code, so it has no arrow.
 flowchart TB
 
+  CL["Continuous lattices"]
+  FS["Function spaces"]
+  INJ["Injective spaces"]
+  LIM["Inverse limits"]
 
+  CL -->|"10"| FS
+  FS -->|"2"| LIM
+  INJ -->|"1"| LIM
 
   classDef section fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a

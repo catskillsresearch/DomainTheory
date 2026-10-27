@@ -18,6 +18,6 @@ $$
 
 Show that $\{Y_0, Y_1, \ldots, Y_n, \ldots\}$ is a total element of $|D|$. (Hint: Show first that $Y_0, Y_1, \ldots, Y_{n-1}$ is consistent for all $n$.) In such a system show that all filters can be determined by sequences.
 
-**[Exercise_1_23.lean](Exercise_1_23.lean)**
+**[Exercise_1_23.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_23.lean)**
 
 @import "Exercise_1_23.lean"

@@ -16,6 +16,6 @@ $$
 
 where $a, b : D \to D$ are approximable, and where we know $a(\bot) = b(\bot)$, and $f \circ a = a \circ f$ and $f \circ b = b \circ f$.
 
-**[Exercise_4_8.lean](Exercise_4_8.lean)**
+**[Exercise_4_8.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_8.lean)**
 
 @import "Exercise_4_8.lean"

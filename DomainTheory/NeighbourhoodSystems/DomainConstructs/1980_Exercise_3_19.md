@@ -28,10 +28,9 @@ Do equations (iii) and (iv) uniquely determine $f + g$?
 
 <!-- page 52 -->
 
-**[Exercise_3_19.lean](Exercise_3_19.lean)**
+**[Exercise_3_19.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise_3_19.lean)**
 
 @import "Exercise_3_19.lean"
-
-**[../RetractsOfTheUniversalDomain/sumMap.lean](../RetractsOfTheUniversalDomain/sumMap.lean)** — Pref-folded `sumMap` companions
+ — Pref-folded `sumMap` companions
 
 @import "../RetractsOfTheUniversalDomain/sumMap.lean"

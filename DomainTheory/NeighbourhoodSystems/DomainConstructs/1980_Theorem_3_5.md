@@ -8,6 +8,6 @@ come from approximable mappings of one argument.
 
 *Proof:* As this is the first time we have had to deal with constants in functions, a lemma is useful.
 
-**[Theorem_3_5.lean](Theorem_3_5.lean)**
+**[Theorem_3_5.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Theorem_3_5.lean)**
 
 @import "Theorem_3_5.lean"

@@ -18,6 +18,6 @@ that is, $f$ might be the least informative relation and nothing more. But if it
 
 One indication that the conditions of 2.1 are sufficient for a definition is that they are exactly what we need to show that $f$ as a neighbourhood relation determines an equivalent elementwise mapping from $|D_0|$ into $|D_1|$. (Owing to the equivalence, we use the same symbol $f$ for both.)
 
-**[Definition_2_1.lean](Definition_2_1.lean)**
+**[Definition_2_1.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Definition_2_1.lean)**
 
 @import "Definition_2_1.lean"

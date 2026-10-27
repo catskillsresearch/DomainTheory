@@ -2,13 +2,9 @@
 
 Injected into `arxiv.md` / `arxiv.tex` by `build_arxiv_tex.py` at:
   <!-- AI_MODEL_TOOL_BULLETS --> … <!-- /AI_MODEL_TOOL_BULLETS -->
-  <!-- AI_MODEL_REFERENCES --> … <!-- /AI_MODEL_REFERENCES -->
 
-Because this development may borrow Lean and proof patterns from the vendored
-sibling formalizations (`scott1972`, `scott1976`, `scott1980`, `scott1982`,
-`scott_models` — see `vendor/FROZEN.txt`), **every model listed here is
-treated as used** for acknowledgement purposes, whether or not it was invoked in a
-particular DomainTheory session.
+This revision acknowledges three models only. Source packages under `vendor/`
+keep the model cards in their own writeups.
 """
 
 from __future__ import annotations
@@ -22,99 +18,70 @@ class ModelCard:
     label: str
     cite_key: str
     tool_note: str
-    reference: str
+    # BibTeX fields for references.bib (same format as the rest of the bibliography).
+    bib_entry_type: str
+    bib_fields: dict[str, str]
 
 
 MODEL_CARDS: tuple[ModelCard, ...] = (
     ModelCard(
-        label="Cursor",
-        cite_key="Cur26",
-        tool_note=(
-            "agent-assisted editing in the Cursor IDE: domain-theory theorems in "
-            "Lean 4 / mathlib, `lake build` "
-            "repair, drafting this narrative (`arxiv.md`), and tracking the formalized "
-            "inventory. Generated Lean was provisional until it compiled under the pinned "
-            "toolchain. Also used in the sibling formalizations whose portable work may be "
-            "copied into this repo."
-        ),
-        reference=(
-            "Anysphere, Inc. *Cursor: AI-native code editor and agent environment*. "
-            "<https://cursor.com> (accessed 2026)."
-        ),
-    ),
-    ModelCard(
-        label="Cursor Composer 2.5 Fast",
+        label="Cursor Composer 2.5",
         cite_key="Cmp25",
         tool_note=(
             "routine multi-step work: module scaffolding, dependency-ordered wiring of "
             "`DomainTheory/`, documentation and Mermaid blueprints, and medium proof "
-            "obligations where the strategy was already fixed (`composer-2.5`). Also used "
-            "in sibling repos whose portable Lean may be adapted here."
+            "obligations where the strategy was already fixed (`composer-2.5`)."
         ),
-        reference=(
-            "Anysphere, Inc. *Composer 2.5*. Model announcement and documentation, "
-            "<https://cursor.com/blog/composer-2-5>; model card as integrated in Cursor, "
-            "<https://cursor.com/docs/models> (accessed 2026)."
-        ),
+        bib_entry_type="misc",
+        bib_fields={
+            "author": "{Anysphere, Inc.}",
+            "title": "Composer 2.5",
+            "howpublished":
+                "Model announcement and documentation, "
+                "\\url{https://cursor.com/blog/composer-2-5}; "
+                "model card as integrated in Cursor, "
+                "\\url{https://cursor.com/docs/models}",
+            "year": "2026",
+            "note": "accessed 2026",
+        },
     ),
     ModelCard(
-        label="Cursor Grok 4.5",
-        cite_key="Grk45",
+        label="Cursor Grok 4.7",
+        cite_key="Grk47",
         tool_note=(
             "primary agent model for the DomainTheory sessions: domain-theory "
-            "constructions, inventory design "
-            "in `arxiv.md`, constructivity audits, and adaptation of portable patterns from "
-            "prior Scott formalizations. Jointly trained by SpaceXAI and Cursor; used here "
-            "via the Cursor agent environment."
+            "constructions, inventory design in `arxiv.md`, constructivity audits, "
+            "and adaptation of portable patterns from prior Scott formalizations. "
+            "Used here via the Cursor agent environment."
         ),
-        reference=(
-            "SpaceXAI and Anysphere, Inc. *Grok 4.5*. Model documentation, "
-            "<https://docs.x.ai/developers/models/grok-4.5>; Cursor announcement, "
-            "<https://cursor.com/blog/grok-4-5> (accessed 2026)."
-        ),
+        bib_entry_type="misc",
+        bib_fields={
+            "author": "xAI and {Anysphere, Inc.}",
+            "title": "Grok 4.7",
+            "howpublished":
+                "Model documentation, \\url{https://docs.x.ai/docs/models}; "
+                "Cursor model catalog, \\url{https://cursor.com/docs/models}",
+            "year": "2026",
+            "note": "accessed 2026",
+        },
     ),
     ModelCard(
-        label="Anthropic Claude Sonnet 5 (medium reasoning)",
-        cite_key="Son26",
+        label="Google Gemini 3.8",
+        cite_key="Gem38",
         tool_note=(
-            "day-to-day formalization and proof-engineering in Cursor at the medium reasoning "
-            "tier in sibling Scott formalizations (and available for this repo): inventory and "
-            "narrative maintenance, module wiring, and medium-complexity Lean obligations where "
-            "the proof strategy was already fixed. Listed because portable prior work may be "
-            "copied into DomainTheory."
+            "exploratory and support passes (typographic conventions, scope decisions, "
+            "and cross-checks against the narrative inventory)."
         ),
-        reference=(
-            "Anthropic. *Claude Sonnet 5* (medium reasoning variant). System card, "
-            "<https://www.anthropic.com/claude-sonnet-5-system-card>; model documentation as "
-            "integrated in Cursor, <https://cursor.com/docs/models> (accessed 2026)."
-        ),
-    ),
-    ModelCard(
-        label="Anthropic Claude Opus 4.8 (high reasoning)",
-        cite_key="Ant26",
-        tool_note=(
-            "selective use for the heaviest proof work in sibling formalizations (e.g. continuous "
-            "lattices and PRG-19). Every emitted proof term was checked by the Lean kernel. "
-            "Listed because portable prior work may be copied into DomainTheory."
-        ),
-        reference=(
-            "Anthropic. *Claude Opus 4.8* (high thinking/reasoning variant). System card and "
-            "announcement, <https://www.anthropic.com/news/claude-opus-4-8>; model documentation "
-            "as integrated in Cursor, <https://cursor.com/docs/models/claude-opus-4-8> "
-            "(accessed 2026)."
-        ),
-    ),
-    ModelCard(
-        label="Google Gemini 3.5 Flash",
-        cite_key="Gem25",
-        tool_note=(
-            "exploratory passes in sibling formalizations (typographic conventions, scope "
-            "decisions). Listed because portable prior work may be copied into DomainTheory."
-        ),
-        reference=(
-            "Google DeepMind. *Gemini 3.5 Flash*. Technical documentation and model cards. "
-            "<https://ai.google.dev/gemini-api/docs/models> (accessed 2026)."
-        ),
+        bib_entry_type="misc",
+        bib_fields={
+            "author": "{Google DeepMind}",
+            "title": "Gemini 3.8",
+            "howpublished":
+                "Technical documentation and model cards, "
+                "\\url{https://ai.google.dev/gemini-api/docs/models}",
+            "year": "2026",
+            "note": "accessed 2026",
+        },
     ),
 )
 
@@ -124,28 +91,19 @@ REFERENCES_BEGIN = "<!-- AI_MODEL_REFERENCES -->"
 REFERENCES_END = "<!-- /AI_MODEL_REFERENCES -->"
 
 # Acknowledgments live outside `arxiv.md` and are spliced in when building `arxiv.tex`.
-ACKNOWLEDGMENTS_MARKDOWN = """## Acknowledgments
-
-- **Dana Scott** — *Continuous Lattices* **[Sco72]**, *Lectures on a Mathematical Theory of
-  Computation* (PRG-19) **[Sco81]**, and *Domains for Denotational Semantics* **[Sco82]**, the
-  foundations this development builds on.
+ACKNOWLEDGMENTS_MARKDOWN = r"""## Acknowledgments
 
 ### AI-assisted development
 
 The human author retains sole responsibility for the mathematical content, the choice of
 formalization route, and every formal claim in this work. Following standard publisher practice
-(e.g., COPE guidance on authorship and AI tools **[COPE24]**), **no large language model is listed
+(e.g., COPE guidance on authorship and AI tools \cite{COPE24}), **no large language model is listed
 as a co-author** — authorship implies an accountability that automated systems cannot bear.
 
-Because this development may borrow Lean and proof patterns from the vendored sibling
-formalizations [`scott1972`](https://github.com/catskillsresearch/scott1972),
-[`scott1976`](https://github.com/catskillsresearch/scott1976),
-[`scott1980`](https://github.com/catskillsresearch/scott1980),
-[`scott1982`](https://github.com/catskillsresearch/scott1982), and
-[`scott_models`](https://github.com/catskillsresearch/scott_models), **every model in the
-registry is treated as used** for acknowledgement purposes. We gratefully acknowledge assistance
-from the following tools (auto-generated from `scripts/ai_model_cards.py` when building
-`arxiv.tex`):
+We gratefully acknowledge assistance from the following tools in this revision
+(auto-generated from `scripts/ai_model_cards.py` when building `arxiv.tex`). Source versions of
+the four Scott papers and the bridge theorems record their own model cards in their respective
+writeups under `vendor/`:
 
 <!-- AI_MODEL_TOOL_BULLETS -->
 <!-- /AI_MODEL_TOOL_BULLETS -->
@@ -185,12 +143,21 @@ bash scripts/build_arxiv_pdf.sh      # compile PDF + package dist/arxiv_submit.z
 
 def render_tool_bullets() -> str:
     return "\n".join(
-        f"- **{card.label}** **[{card.cite_key}]** — {card.tool_note}" for card in MODEL_CARDS
+        f"- **{card.label}** \\cite{{{card.cite_key}}} — {card.tool_note}"
+        for card in MODEL_CARDS
     )
 
 
-def render_model_references() -> str:
-    return "\n".join(f"- **[{card.cite_key}]** {card.reference}" for card in MODEL_CARDS)
+def render_model_bibtex() -> str:
+    """BibTeX entries for the three model cards (same shape as references.bib)."""
+    blocks: list[str] = []
+    for card in MODEL_CARDS:
+        lines = [f"@{card.bib_entry_type}{{{card.cite_key},"]
+        for key, value in card.bib_fields.items():
+            lines.append(f"  {key} = {{{value}}},")
+        lines.append("}")
+        blocks.append("\n".join(lines))
+    return "\n\n".join(blocks)
 
 
 def inject_acknowledgments(text: str) -> str:
@@ -206,19 +173,20 @@ def inject_acknowledgments(text: str) -> str:
 
 
 def inject_model_cards(text: str) -> str:
-    """Insert Acknowledgments (if needed), then expand AI model-card markers."""
+    """Insert Acknowledgments (if needed), then expand AI model-card tool bullets.
+
+    Model-card bibliographic entries live in ``references.bib``; the old
+    ``AI_MODEL_REFERENCES`` marker block is cleared if present.
+    """
     text = inject_acknowledgments(text)
     if TOOL_BULLETS_BEGIN not in text:
         raise RuntimeError(
             f"missing {TOOL_BULLETS_BEGIN} after Acknowledgments injection"
         )
-    if REFERENCES_BEGIN not in text:
-        raise RuntimeError(
-            f"missing {REFERENCES_BEGIN} in narrative; add markers to arxiv.md References"
-        )
 
     text = _replace_between(text, TOOL_BULLETS_BEGIN, TOOL_BULLETS_END, render_tool_bullets())
-    text = _replace_between(text, REFERENCES_BEGIN, REFERENCES_END, render_model_references())
+    if REFERENCES_BEGIN in text and REFERENCES_END in text:
+        text = _replace_between(text, REFERENCES_BEGIN, REFERENCES_END, "")
     return text
 
 
@@ -232,4 +200,6 @@ def _replace_between(text: str, begin: str, end: str, body: str) -> str:
         inner_start += 1
     if inner_start < stop and text[stop - 1 : stop] == "\n":
         stop -= 1
-    return text[:start] + begin + "\n" + body + "\n" + end + text[stop_end:]
+    if body:
+        return text[:start] + begin + "\n" + body + "\n" + end + text[stop_end:]
+    return text[:start] + begin + "\n" + end + text[stop_end:]

@@ -49,6 +49,9 @@ import json
 from pathlib import Path
 
 sources = [{"filename": "arxiv.tex", "usage": "toplevel"}]
+bib = Path("references.bib")
+if bib.is_file():
+    sources.append({"filename": bib.as_posix(), "usage": "include"})
 for path in sorted(p for p in Path("lean-listings").iterdir() if p.is_file()):
     sources.append({"filename": path.as_posix(), "usage": "include"})
 for path in sorted(Path("figures").glob("*.png")):
@@ -59,10 +62,16 @@ Path("00README.json").write_text(json.dumps(readme, indent=2) + "\n")
 print(f"  {len(sources)} sources")
 PY
 
+if [[ ! -f references.bib ]]; then
+  echo "error: missing references.bib" >&2
+  exit 1
+fi
+
 echo "==> Packaging"
 zip -r "$ZIP" \
   00README.json \
   "$TEX" \
+  references.bib \
   "$LISTINGS_DIR" \
   "$FIGURES_DIR"/*.png
 

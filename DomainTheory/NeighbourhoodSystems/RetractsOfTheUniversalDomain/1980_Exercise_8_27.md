@@ -20,24 +20,23 @@ Show that for $d$ a polymorphic type, $\Pi(d)$ is a type. (Hint: It is easy to c
 
 ## Tip summary
 
-The tip asserts that for any polymorphic type `d`, `Π(d)` is a finitary projection.
+The tip asserts that for any polymorphic type `d`, $\Pi(d)$ is a finitary projection.
 
 ## Development
 
 Defines polymorphic types and proves the `piD` side of finitariness.
 
-**[PolymorphicType.lean](PolymorphicType.lean)**
+**[PolymorphicType.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/PolymorphicType.lean)**
 
 @import "PolymorphicType.lean"
-
 Carves `piU` and folds `XXX_piU` companions as `XXX.piU`.
 
-**[piU.lean](piU.lean)** — `piU`, `toElementMap.piU`, `isProjection.piU`, `isFinitaryProjection.piU`, …
+ — `piU`, `toElementMap.piU`, `isProjection.piU`, `isFinitaryProjection.piU`, …
 
 @import "piU.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_27.lean](Exercise_8_27.lean)** — `exercise_8_27`
+ — `exercise_8_27`
 
 @import "Exercise_8_27.lean"

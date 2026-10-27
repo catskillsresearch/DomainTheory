@@ -12,6 +12,6 @@
 
 If some of the above are not true, perhaps at least some mapping relationships can be established.
 
-**[Exercise_3_24.lean](Exercise_3_24.lean)**
+**[Exercise_3_24.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise_3_24.lean)**
 
 @import "Exercise_3_24.lean"

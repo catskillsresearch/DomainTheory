@@ -4,6 +4,6 @@
 
 <!-- page 21 -->
 
-**[Exercise_1_19.lean](Exercise_1_19.lean)**
+**[Exercise_1_19.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_19.lean)**
 
 @import "Exercise_1_19.lean"
