@@ -1,7 +1,5 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_11
-
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_17
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_12
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_29
@@ -14,7 +12,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 @[expose] public section
 
 /- concordance: source L5195 EXERCISE 8.22 comparing B and C -/
--- Exercise822/C_nonempty.lean
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
@@ -26,15 +23,6 @@ theorem C_nonempty : ∀ X, C.mem X → X.Nonempty := by
   rintro X (⟨σ, rfl⟩ | ⟨σ, rfl⟩)
   · exact ⟨σ, List.prefix_rfl⟩
   · exact ⟨σ, rfl⟩
-
-end Exercise822
-
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-
-namespace Exercise822
 
 /-- Doubles every bit of a string: `enc [] = []`, `enc (b :: σ) = b :: b :: enc σ`. -/
 def enc : Str → Str
@@ -498,57 +486,4 @@ theorem C_trianglelefteq_B : C ⊴ B := ⟨D', D'_subsystem_B, C_isomorphic_D'�
 
 end Exercise822
 
-end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Exercise822
-set_option linter.unusedVariables false
-
-theorem example_822 : @DomainTheory.NeighbourhoodSystems.Trianglelefteq DomainTheory.NeighbourhoodSystems.ExampleB.Str
-  DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example44.C
-  DomainTheory.NeighbourhoodSystems.ExampleB.B :=
-  DomainTheory.NeighbourhoodSystems.Exercise822.C_trianglelefteq_B
-
-end DomainTheory.NeighbourhoodSystems.Exercise822
-namespace DomainTheory.NeighbourhoodSystems
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-/-- The "singleton stack" embedding `D → D^∞`: `x ↦ ⟨x, ⊥, ⊥, …⟩`, i.e. `x` prepended to the all-`⊥`
-stack. -/
-def embedIntoPow : ApproximableMap V (iterSys V) :=
-  (push V).comp (paired (idMap V) (constMap V (iterSys V).bot))
-
-theorem toElementMap_embedIntoPow (x : V.Element) :
-    (embedIntoPow V).toElementMap x = (push V).toElementMap (pair x (iterSys V).bot) := by
-  rw [embedIntoPow, toElementMap_comp, toElementMap_paired, toElementMap_idMap,
-    toElementMap_constMap]
-
-/-- Every coordinate past the head of `⟨x, ⊥, ⊥, …⟩` is `⊥`. -/
-theorem component_embedIntoPow_succ (x : V.Element) (n : ℕ) :
-    component ((embedIntoPow V).toElementMap x) (n + 1) = V.bot := by
-  rw [toElementMap_embedIntoPow, ← component_tail, tail_push, Exercise618.component_bot]
-
-/-- The head of the singleton stack `⟨x, ⊥, ⊥, …⟩` is `x`. -/
-theorem component_embedIntoPow_zero (x : V.Element) :
-    component ((embedIntoPow V).toElementMap x) 0 = x := by
-  rw [toElementMap_embedIntoPow, ← head_apply, head_push]
-
-/-- **`embedIntoPow ∘ head ≤ id`**: re-stacking after reading only the head can only forget
-information (all coordinates past the head collapse to `⊥`). -/
-theorem embedIntoPow_comp_head_le : (embedIntoPow V).comp (head V) ≤ idMap (iterSys V) := by
-  rw [le_iff_toElementMap_le]
-  intro z
-  rw [toElementMap_comp, toElementMap_idMap]
-  apply le_of_component_le
-  intro n
-  cases n with
-  | zero => rw [component_embedIntoPow_zero, head_apply]
-  | succ m => rw [component_embedIntoPow_succ]; exact NeighborhoodSystem.bot_le V _
-
-/-- **`head` retracts `embedIntoPow`.** -/
-theorem head_comp_embedIntoPow : (head V).comp (embedIntoPow V) = idMap V :=
-  ApproximableMap.ext_of_toElementMap fun x => by
-    rw [toElementMap_comp, toElementMap_idMap, head_apply, component_embedIntoPow_zero]
-
-end
 end DomainTheory.NeighbourhoodSystems

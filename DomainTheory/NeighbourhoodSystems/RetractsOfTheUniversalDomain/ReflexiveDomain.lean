@@ -5,6 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.U
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_29
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.EmbedIntoPow
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ExampleC_le_B
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition_7_12
 
