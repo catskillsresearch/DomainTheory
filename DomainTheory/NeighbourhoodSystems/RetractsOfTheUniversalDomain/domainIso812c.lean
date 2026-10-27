@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise811
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.V
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem_8_8
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.VComputablePresentation
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_18
@@ -328,7 +328,7 @@ end union
 open NeighborhoodSystem
 
 /-- **`Fintype`-indexed union-closure from `IsPositive` + `DiffClosed` alone**, generalizing
-`Definition87.lean`'s `U.iUnion_mem`/`Exercise812.lean`'s `V_iUnion_mem` to an abstract `D`. Proved
+`Definition87.lean`'s `U.iUnion_mem`/`Exercise812.lean`'s `V.iUnion_mem` to an abstract `D`. Proved
 identically (fold `union.mem_or_empty` over `Finset.univ`), just with the generic one-step lemma in
 place of `U`/`V`'s hardcoded binary-union facts. -/
 theorem iUnion_mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositive)

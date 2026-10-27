@@ -10,7 +10,7 @@ namespace DomainTheory.NeighbourhoodSystems
 bisection. -/
 noncomputable def splitX812e : Set ℚ → Set ℕ → Set ℚ → Set ℕ × Set ℕ :=
   ComputableBisection.splitFromBisection UComputablePresentation U_isComputableDiff B812e
-    V_noMinimal
+    V.noMinimal
 
 namespace isComputableSplit
 open Domain.Recursive NeighborhoodSystem
@@ -22,7 +22,7 @@ itself (`(e)(c)(ii)`). -/
 noncomputable def «812e» :
     IsComputableSplit UComputablePresentation VComputablePresentation splitX812e :=
   ComputableBisection.isComputableSplit.ofBisection UComputablePresentation U_isComputableDiff
-    B812e V_noMinimal U.isPositive U.noMinimal U.diffClosed
+    B812e V.noMinimal U.isPositive U.noMinimal U.diffClosed
 
 end isComputableSplit
 

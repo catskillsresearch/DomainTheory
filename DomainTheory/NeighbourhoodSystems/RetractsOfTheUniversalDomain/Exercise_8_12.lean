@@ -12,6 +12,6 @@ to `U`, hence another presentation of `U`. --/
 theorem exercise_8_12 :
     V.IsEffectivelyGiven ∧
       EffectivelyIsomorphic UComputablePresentation VComputablePresentation :=
-  ⟨V_isEffectivelyGiven, ⟨effectiveIso812_UV⟩⟩
+  ⟨V.isEffectivelyGiven, ⟨effectiveIso812_UV⟩⟩
 
 end

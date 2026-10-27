@@ -17,9 +17,15 @@ Scott gives no written proof—only the construction of $V$ and the demand that 
 
 ### Presenting $V$
 
-The integer neighbourhood system $V$ is built from affine residue classes $2^k\mathbb{N}+\ell$ and their non-empty finite unions. Its computable presentation (indices, decoding, intersection/union/difference codes, and the canonical bisection `splitV*`) lives in a dedicated library module so earlier Scott numbers can use it without importing Exercise 8.14’s tip.
+The integer neighbourhood system $V$ is built from affine residue classes $2^k\mathbb{N}+\ell$ and their non-empty finite unions (`affine` / `levelSet` / `upsample`). Pure neighbourhood facts live under `namespace V` (`V.union_mem`, `V.diff_mem`, `V.isPositive`, …).
 
-**[VComputablePresentation.lean](VComputablePresentation.lean)** — computable presentation of $V$, including `VComputablePresentation` and `V_isEffectivelyGiven`
+**[V.lean](V.lean)** — `V` and Pref-folded neighbourhood lemmas
+
+@import "V.lean"
+
+Its computable presentation (indices, decoding, intersection/union/difference codes, and the canonical bisection `splitV*`) lives in a dedicated library module.
+
+**[VComputablePresentation.lean](VComputablePresentation.lean)** — computable presentation of $V`, including `VComputablePresentation` and `V.isEffectivelyGiven`
 
 @import "VComputablePresentation.lean"
 

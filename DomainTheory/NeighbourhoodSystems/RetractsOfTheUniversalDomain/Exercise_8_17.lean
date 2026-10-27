@@ -13,6 +13,6 @@ theorem exercise_8_17 :
       (prod U U ⊴ U) ∧
       (sum U U U_mem_nonempty U_mem_nonempty ⊴ U) ∧
       (funSpace U U ⊴ U) :=
-  ⟨V_isUniversal, prodUU_trianglelefteq_U, sumUU_trianglelefteq_U, funSpaceUU_trianglelefteq_U⟩
+  ⟨V.isUniversal, prodUU_trianglelefteq_U, sumUU_trianglelefteq_U, funSpaceUU_trianglelefteq_U⟩
 
 end

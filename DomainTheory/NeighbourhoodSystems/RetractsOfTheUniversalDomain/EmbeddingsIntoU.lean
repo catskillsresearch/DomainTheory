@@ -146,7 +146,7 @@ theorem isUniversal_of_isomorphic {W : NeighborhoodSystem β} {W' : Neighborhood
 literally a *different* neighbourhood system from `U : NeighborhoodSystem ℚ`, not merely a
 relabelling) is a universal domain, since it is effectively isomorphic to `𝒰` (`effectiveIso812_UV`,
 Exercise 8.12's headline) and universality transports along isomorphism. -/
-theorem V_isUniversal : IsUniversal.{u} V :=
+theorem V.isUniversal : IsUniversal.{u} V :=
   isUniversal_of_isomorphic U_isUniversal ⟨effectiveIso812_UV.toDomainIso⟩
 
 /-- **Exercise 8.17, Part 1 (`×`).** `iTimes/jTimes` already are the pair `𝒰×𝒰 ⇄ 𝒰`; bonus `⊴`. -/
@@ -221,7 +221,7 @@ theorem example_817.{u} : And
         (@DomainTheory.NeighbourhoodSystems.funSpace.{0, 0} Rat Rat DomainTheory.NeighbourhoodSystems.U
           DomainTheory.NeighbourhoodSystems.U)
         DomainTheory.NeighbourhoodSystems.U)
-      (@DomainTheory.NeighbourhoodSystems.V_isUniversal.{u})
+      (@DomainTheory.NeighbourhoodSystems.V.isUniversal.{u})
       DomainTheory.NeighbourhoodSystems.funSpaceUU_trianglelefteq_U)
     DomainTheory.NeighbourhoodSystems.prodUU_trianglelefteq_U)
   DomainTheory.NeighbourhoodSystems.sumUU_trianglelefteq_U

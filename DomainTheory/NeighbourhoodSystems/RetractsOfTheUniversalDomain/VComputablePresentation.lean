@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition_7_1
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise811
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.V
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import Mathlib.Data.Nat.Bitwise
@@ -371,7 +371,7 @@ theorem VX_VmasterIdx : VX VmasterIdx = V.master := by
 
 /-- `VX` is onto `V`'s neighbourhoods: every `V`-neighbourhood is already `levelSet k m` for some
 non-empty pair `(k, m)`, on which `canonIdx` is a no-op. -/
-theorem V_surj_VX : ∀ {Y : Set ℕ}, V.mem Y → ∃ n, VX n = Y := by
+theorem V.surj_VX : ∀ {Y : Set ℕ}, V.mem Y → ∃ n, VX n = Y := by
   rintro Y ⟨k, m, rfl, hne⟩
   refine ⟨Nat.pair k m, ?_⟩
   have hne' : (levelSet (Nat.pair k m).unpair.1 (Nat.pair k m).unpair.2).Nonempty := by
@@ -382,7 +382,7 @@ theorem V_surj_VX : ∀ {Y : Set ℕ}, V.mem Y → ∃ n, VX n = Y := by
 theorem VX_nonempty (c : ℕ) : (VX c).Nonempty := levelSet.canonIdx_nonempty c
 
 /-- Every `VX n` is a genuine `V`-neighbourhood. -/
-theorem V_mem_VX (c : ℕ) : V.mem (VX c) :=
+theorem V.mem_VX (c : ℕ) : V.mem (VX c) :=
   ⟨(canonIdx c).unpair.1, (canonIdx c).unpair.2, rfl, levelSet.canonIdx_nonempty c⟩
 
 /-- `VX` factors through `canonIdx` (canonicalizing twice changes nothing). -/
@@ -607,7 +607,7 @@ theorem Vcons_iff_nonempty_inter (n m : ℕ) :
     have hVmem : V.mem (VX n ∩ VX m) := by
       rw [← levelSet.VinterRaw]
       exact ⟨(VinterRaw n m).unpair.1, (VinterRaw n m).unpair.2, rfl, hne⟩
-    obtain ⟨k, hk⟩ := V_surj_VX hVmem
+    obtain ⟨k, hk⟩ := V.surj_VX hVmem
     exact ⟨k, by rw [hk]⟩
 
 theorem Vinter_spec {n m : ℕ} (h : ∃ k, VX k ⊆ VX n ∩ VX m) : VX (Vinter n m) = VX n ∩ VX m := by
@@ -644,7 +644,7 @@ open Domain.Recursive NeighborhoodSystem
 
 /-- **7.1(ii) for `V`**: consistency `∃k. X_k ⊆ Xₙ ∩ Xₘ` is recursively decidable, via
 `Vcons_iff_nonempty_inter` and `myLevelSetNonempty`. -/
-theorem V_cons_computable : RecDecidable₂ (fun n m => ∃ k, VX k ⊆ VX n ∩ VX m) := by
+theorem V.cons_computable : RecDecidable₂ (fun n m => ∃ k, VX k ⊆ VX n ∩ VX m) := by
   have hvr : Nat.Primrec (fun t : ℕ => VinterRaw t.unpair.1 t.unpair.2) := primrec.VinterRaw
   have hfprim : Nat.Primrec (fun t : ℕ => myLevelSetNonempty (VinterRaw t.unpair.1 t.unpair.2).unpair.1
       (VinterRaw t.unpair.1 t.unpair.2).unpair.2) :=
@@ -661,7 +661,7 @@ theorem V_cons_computable : RecDecidable₂ (fun n m => ∃ k, VX k ⊆ VX n ∩
 
 /-- **7.1(i) for `V`**: `Xₙ ∩ Xₘ = X_k` is recursively decidable, reduced to `myUpsample` equality
 of the raw intersection code against `X_k`'s own code (`levelSet.eq_iff_myUpsample_eq`). -/
-theorem V_interEq_computable : RecDecidable₃ (fun n m k => VX n ∩ VX m = VX k) := by
+theorem V.interEq_computable : RecDecidable₃ (fun n m k => VX n ∩ VX m = VX k) := by
   unfold RecDecidable₃
   have hvr : Nat.Primrec (fun t : ℕ => VinterRaw t.unpair.1 t.unpair.2.unpair.1) :=
     (primrec.VinterRaw.comp (Nat.Primrec.left.pair
@@ -698,10 +698,10 @@ theorem V_interEq_computable : RecDecidable₃ (fun n m k => VX n ∩ VX m = VX 
 /-- **Exercise 8.12(b).** `V` (Exercise 8.12(a)) has a genuine `ComputablePresentation`. -/
 def VComputablePresentation : ComputablePresentation V where
   X := VX
-  mem_X := V_mem_VX
-  surj := V_surj_VX
-  interEq_computable := V_interEq_computable
-  cons_computable := V_cons_computable
+  mem_X := V.mem_VX
+  surj := V.surj_VX
+  interEq_computable := V.interEq_computable
+  cons_computable := V.cons_computable
   inter := Vinter
   inter_primrec := primrec.Vinter
   inter_spec := Vinter_spec
@@ -709,7 +709,7 @@ def VComputablePresentation : ComputablePresentation V where
   masterIdx_spec := VX_VmasterIdx
 
 /-- **Exercise 8.12(b) (Scott 1981, PRG-19).** `V` is effectively given. -/
-theorem V_isEffectivelyGiven : V.IsEffectivelyGiven := ⟨VComputablePresentation⟩
+theorem V.isEffectivelyGiven : V.IsEffectivelyGiven := ⟨VComputablePresentation⟩
 
 namespace myTestBit
 open Domain.Recursive NeighborhoodSystem
@@ -999,7 +999,7 @@ def splitVMinLevel (n : ℕ) : ℕ := minLevel (canonIdx n).unpair.1 (canonIdx n
 def splitVMinMask (n : ℕ) : ℕ := minMask (canonIdx n).unpair.1 (canonIdx n).unpair.2
 
 /-- The upsampled mask `M := myUpsample k (k+1) m` for `(k, m) := (splitVMinLevel n, splitVMinMask
-n)` — Scott's `M` from `V_no_minimal`, at the code level, fed the *minimal* presentation. -/
+n)` — Scott's `M` from `V.no_minimal`, at the code level, fed the *minimal* presentation. -/
 def splitVUpsampled (n : ℕ) : ℕ :=
   myUpsample (splitVMinLevel n) (splitVMinLevel n + 1) (splitVMinMask n)
 
@@ -1007,10 +1007,10 @@ def splitVUpsampled (n : ℕ) : ℕ :=
 def splitVBit (n : ℕ) : ℕ :=
   myFirstBit (splitVUpsampled n) (2 ^ (splitVMinLevel n + 1))
 
-/-- **`splitVLeft`**: the code for `Y := levelSet (k+1) (2 ^ ℓ₀)`, `V_no_minimal`'s "left" half. -/
+/-- **`splitVLeft`**: the code for `Y := levelSet (k+1) (2 ^ ℓ₀)`, `V.no_minimal`'s "left" half. -/
 def splitVLeft (n : ℕ) : ℕ := Nat.pair (splitVMinLevel n + 1) (2 ^ splitVBit n)
 
-/-- **`splitVRight`**: the code for `Z := levelSet (k+1) (M ^^^ 2 ^ ℓ₀)`, `V_no_minimal`'s "right"
+/-- **`splitVRight`**: the code for `Z := levelSet (k+1) (M ^^^ 2 ^ ℓ₀)`, `V.no_minimal`'s "right"
 half — `myClearBit` stands in for `^^^` (justified since `ℓ₀` is, by construction, a genuinely set
 bit of `M`; `myClearBit_eq_xor`, `(e)(b)(ii)`). -/
 def splitVRight (n : ℕ) : ℕ :=
@@ -1228,7 +1228,7 @@ theorem splitV_right_nonempty (n : ℕ) :
     decide_eq_false_iff_not.mpr (xor_two_pow_ne_self (splitVBit n) (splitVMinLevel n)).symm]
   rfl
 
-/-- **`splitVLeft` realizes `Y := levelSet (k+1) (2^ℓ₀)`**, `V_no_minimal`'s "left" half. -/
+/-- **`splitVLeft` realizes `Y := levelSet (k+1) (2^ℓ₀)`**, `V.no_minimal`'s "left" half. -/
 theorem VX_splitVLeft (n : ℕ) :
     VX (splitVLeft n) = levelSet (splitVMinLevel n + 1) (2 ^ splitVBit n) := by
   have hne : (levelSet (splitVLeft n).unpair.1 (splitVLeft n).unpair.2).Nonempty := by
@@ -1240,7 +1240,7 @@ theorem VX_splitVLeft (n : ℕ) :
   unfold splitVLeft
   rw [unpair_pair_fst, unpair_pair_snd]
 
-/-- **`splitVRight` realizes `Z := levelSet (k+1) (M ^^^ 2^ℓ₀)`**, `V_no_minimal`'s "right" half. -/
+/-- **`splitVRight` realizes `Z := levelSet (k+1) (M ^^^ 2^ℓ₀)`**, `V.no_minimal`'s "right" half. -/
 theorem VX_splitVRight (n : ℕ) :
     VX (splitVRight n) =
       levelSet (splitVMinLevel n + 1) (myClearBit (splitVUpsampled n) (splitVBit n)) := by
@@ -1254,7 +1254,7 @@ theorem VX_splitVRight (n : ℕ) :
   rw [unpair_pair_fst, unpair_pair_snd]
 
 /-- **Exercise 8.12(e)(b), disjointness**: `splitVLeft`/`splitVRight` cover disjoint pieces —
-transcribes `V_no_minimal`'s `hInter` verbatim. -/
+transcribes `V.no_minimal`'s `hInter` verbatim. -/
 theorem splitV_disjoint (n : ℕ) : VX (splitVLeft n) ∩ VX (splitVRight n) = ∅ := by
   rw [VX_splitVLeft, VX_splitVRight, myClearBit_eq_xor (splitV_bit_testBit n),
     levelSet.inter_same_level]
@@ -1269,7 +1269,7 @@ theorem splitV_disjoint (n : ℕ) : VX (splitVLeft n) ∩ VX (splitVRight n) = �
   simp at h2
 
 /-- **Exercise 8.12(e)(b), covering**: `splitVLeft`/`splitVRight` reunite to `VX n` — transcribes
-`V_no_minimal`'s `hUnion` verbatim. -/
+`V.no_minimal`'s `hUnion` verbatim. -/
 theorem splitV_union (n : ℕ) : VX (splitVLeft n) ∪ VX (splitVRight n) = VX n := by
   have hML : levelSet (splitVMinLevel n + 1) (splitVUpsampled n) = VX n := by
     unfold splitVUpsampled

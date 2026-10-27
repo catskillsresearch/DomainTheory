@@ -3,7 +3,8 @@ module
 public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 public import Mathlib.Data.Nat.Bitwise
 public import Mathlib.Data.Nat.Bits
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise811
+public import Mathlib.Data.Nat.BitIndices
+public import Mathlib.Combinatorics.Colex
 
 @[expose] public section
 
