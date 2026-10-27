@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ASharp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ASharp_more
 
 @[expose] public section
 
