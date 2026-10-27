@@ -40,10 +40,6 @@ noncomputable def jPlus : ApproximableMap U (sum U U U_mem_nonempty U_mem_nonemp
 noncomputable def jTimes : ApproximableMap U (prod U U) :=
   (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose
 
-/-- **`a × b : 𝒰 → 𝒰`** (Definition 8.9): `i_× ∘ ⟨a∘proj₀, b∘proj₁⟩ ∘ j_×`. -/
-noncomputable def prodComb (a b : ApproximableMap U U) : ApproximableMap U U :=
-  iTimes.comp ((paired (a.comp (proj₀ U U)) (b.comp (proj₁ U U))).comp jTimes)
-
 theorem iArrow_comp_jArrow_le : iArrow.comp jArrow ≤ idMap U :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose_spec.choose_spec.2.1
 
@@ -122,8 +118,6 @@ theorem not_sum_reaches_both {γ δ} {V₀ : NeighborhoodSystem γ} {V₁ : Neig
   rw [inj₀_inter_inj₁] at h
   exact not_sum_mem_empty (w.sub h)
 
-theorem prodComb_eq (a b : ApproximableMap U U) :
-    prodComb a b = iTimes.comp ((prodMap a b).comp jTimes) := rfl
 
 /-- **`lamComb a b`, transported through `funSpaceEquiv`, is exactly `λf. b∘f∘a`.** Chains
 `toElementMap_curry_apply` (Theorem 3.12(i)), `toElementMap_prodMap_pair`/`toElementMap_idMap`,

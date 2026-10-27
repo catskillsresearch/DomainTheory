@@ -2,6 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition_8_9
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.sumComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.prodComb
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
@@ -23,45 +24,6 @@ theorem isProjection_arrowComb {a b : ApproximableMap U U}
   ⟨isRetraction_arrowComb ha.1 hb.1, le_idMap_arrowComb ha.2 hb.2⟩
 
 
-theorem toElementMap_prodComb (a b : ApproximableMap U U) (x : U.Element) :
-    (prodComb a b).toElementMap x =
-      iTimes.toElementMap (pair (a.toElementMap (jTimes.toElementMap x).fst)
-        (b.toElementMap (jTimes.toElementMap x).snd)) := by
-  rw [prodComb_eq]
-  simp only [toElementMap_comp, toElementMap_prodMap]
-
-/-- **Proposition 8.10, `×`-case, retraction half.** -/
-theorem isRetraction_prodComb {a b : ApproximableMap U U} (ha : Retraction a)
-    (hb : Retraction b) : Retraction (prodComb a b) := by
-  constructor
-  apply ext_of_toElementMap
-  intro x
-  rw [toElementMap_comp, toElementMap_prodComb a b ((prodComb a b).toElementMap x),
-    toElementMap_prodComb a b x, toElementMap_of_comp_eq_idMap jTimes_comp_iTimes, fst_pair,
-    snd_pair, toElementMap_idem_of_isRetraction ha, toElementMap_idem_of_isRetraction hb]
-
-/-- **Proposition 8.10, `×`-case, projection half.** -/
-theorem le_idMap_prodComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : b ≤ idMap U) :
-    prodComb a b ≤ idMap U := by
-  rw [le_iff_toElementMap_le]
-  intro x
-  rw [toElementMap_prodComb, toElementMap_idMap]
-  have hpair : pair (a.toElementMap (jTimes.toElementMap x).fst)
-      (b.toElementMap (jTimes.toElementMap x).snd)
-      ≤ pair (jTimes.toElementMap x).fst (jTimes.toElementMap x).snd :=
-    pair_le_pair_iff.mpr
-      ⟨toElementMap_le_self_of_le_idMap ha _, toElementMap_le_self_of_le_idMap hb _⟩
-  rw [pair_fst_snd] at hpair
-  calc iTimes.toElementMap (pair (a.toElementMap (jTimes.toElementMap x).fst)
-        (b.toElementMap (jTimes.toElementMap x).snd))
-      ≤ iTimes.toElementMap (jTimes.toElementMap x) := iTimes.toElementMap_mono hpair
-    _ ≤ x := toElementMap_le_of_comp_le_idMap iTimes_comp_jTimes_le x
-
-/-- **Proposition 8.10 (Scott 1981, PRG-19), `×`-case.** `a, b` projections `⟹` `a × b` a
-projection. -/
-theorem isProjection_prodComb {a b : ApproximableMap U U}
-    (ha : IsProjection a) (hb : IsProjection b) : IsProjection (prodComb a b) :=
-  ⟨isRetraction_prodComb ha.1 hb.1, le_idMap_prodComb ha.2 hb.2⟩
 
 
 /-- **Proposition 8.10 (Scott 1981, PRG-19), first half.** If `a, b : 𝒰 → 𝒰` are projections,
@@ -69,7 +31,7 @@ then so are `a+b`, `a×b`, and `a→b`. -/
 theorem isProjection_combinators {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) :
     IsProjection (sumComb a b) ∧ IsProjection (prodComb a b) ∧ IsProjection (arrowComb a b) :=
-  ⟨sumComb.isProjection ha hb, isProjection_prodComb ha hb, isProjection_arrowComb ha hb⟩
+  ⟨sumComb.isProjection ha hb, prodComb.isProjection ha hb, isProjection_arrowComb ha hb⟩
 
 end
 
@@ -1560,15 +1522,15 @@ theorem theorem_810 : And
                                   (DomainTheory.NeighbourhoodSystems.arrowComb a b))))
                       @DomainTheory.NeighbourhoodSystems.isProjection_arrowComb
                       @DomainTheory.NeighbourhoodSystems.isProjection_combinators)
-                    @DomainTheory.NeighbourhoodSystems.isProjection_prodComb)
+                    @DomainTheory.NeighbourhoodSystems.prodComb.isProjection)
                   @DomainTheory.NeighbourhoodSystems.sumComb.isProjection)
                 @DomainTheory.NeighbourhoodSystems.isRetraction_arrowComb)
               @DomainTheory.NeighbourhoodSystems.isRetraction_lamComb)
-            @DomainTheory.NeighbourhoodSystems.isRetraction_prodComb)
+            @DomainTheory.NeighbourhoodSystems.prodComb.isRetraction)
           @DomainTheory.NeighbourhoodSystems.sumComb.isRetraction)
         @DomainTheory.NeighbourhoodSystems.le_idMap_arrowComb)
       @DomainTheory.NeighbourhoodSystems.le_idMap_lamComb)
-    @DomainTheory.NeighbourhoodSystems.le_idMap_prodComb)
+    @DomainTheory.NeighbourhoodSystems.prodComb.le_idMap)
   @DomainTheory.NeighbourhoodSystems.sumComb.le_idMap
 
 section
@@ -1576,28 +1538,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 universe u
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 variable {a b : ApproximableMap U U}
-
-section ProdCase
-
-variable (a b : ApproximableMap U U)
-
-/-- **`I_× : D_a × D_b → 𝒰`**, built by transporting `i_×` (Definition 8.9) through the functorial
-action of `×` (Exercise 3.19's `prodMap`) on the injections `i_a : D_a → 𝒰`, `i_b : D_b → 𝒰`. -/
-noncomputable def IProdComb : ApproximableMap (prod (fixedNbhd a) (fixedNbhd b)) U :=
-  iTimes.comp (prodMap (fixedNbhd_subsystem a).inj (fixedNbhd_subsystem b).inj)
-
-/-- **`J_× : 𝒰 → D_a × D_b`**, symmetric to `IProdComb`, via the projections `j_a`, `j_b`. -/
-noncomputable def JProdComb : ApproximableMap U (prod (fixedNbhd a) (fixedNbhd b)) :=
-  (prodMap (fixedNbhd_subsystem a).proj (fixedNbhd_subsystem b).proj).comp jTimes
-
-theorem JProdComb_comp_IProdComb :
-    (JProdComb a b).comp (IProdComb a b) = idMap (prod (fixedNbhd a) (fixedNbhd b)) := by
-  unfold JProdComb IProdComb
-  rw [comp_assoc, ← comp_assoc jTimes iTimes (prodMap _ _), jTimes_comp_iTimes, idMap_comp,
-    ← prodMap_comp, (fixedNbhd_subsystem a).proj_comp_inj, (fixedNbhd_subsystem b).proj_comp_inj,
-    prodMap_id]
-
-end ProdCase
 
 end
 
@@ -1716,18 +1656,22 @@ section ProdCase
 
 variable (a b : ApproximableMap U U)
 
-theorem IProdComb_comp_JProdComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
-    (IProdComb a b).comp (JProdComb a b) = prodComb a b := by
-  unfold IProdComb JProdComb
+namespace prodComb
+
+theorem I_comp_J (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    (prodComb.I a b).comp (prodComb.J a b) = prodComb a b := by
+  unfold I J
   rw [comp_assoc, ← comp_assoc (prodMap _ _) (prodMap _ _) jTimes, ← prodMap_comp,
-    inj_comp_proj_eq_self ha, inj_comp_proj_eq_self hb, ← comp_assoc, prodComb_eq, comp_assoc]
+    inj_comp_proj_eq_self ha, inj_comp_proj_eq_self hb, ← comp_assoc, prodComb.eq, comp_assoc]
 
 /-- **Proposition 8.10(b), `×`-case, the isomorphism `D_{a×b} ≅ D_a × D_b`.** -/
-noncomputable def prodComb_elementIso (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+noncomputable def elementIso (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (prod (fixedNbhd a) (fixedNbhd b)).Element ≃o
       {y : U.Element // (prodComb a b).toElementMap y = y} :=
-  elementIsoOfProjectionPair (IProdComb a b) (JProdComb a b) (JProdComb_comp_IProdComb a b)
-    (IProdComb_comp_JProdComb a b ha hb).symm
+  elementIsoOfProjectionPair (prodComb.I a b) (prodComb.J a b) (prodComb.J_comp_I a b)
+    (prodComb.I_comp_J a b ha hb).symm
+
+end prodComb
 
 end ProdCase
 
@@ -2183,19 +2127,23 @@ section ProdCase
 
 variable (a b : ApproximableMap U U)
 
+namespace prodComb
+
 
 /-- **Proposition 8.10(b), `×`-case.** `a, b` finitary projections `⟹` `a × b` is finitary, with
 witnessing domain `D_a × D_b`. -/
-theorem finitary_prodComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+theorem finitary (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     IsFinitary (prodComb a b) :=
-  isFinitary_of_projectionPair (IProdComb a b) (JProdComb a b) (JProdComb_comp_IProdComb a b)
-    (IProdComb_comp_JProdComb a b ha hb).symm
+  isFinitary_of_projectionPair (prodComb.I a b) (prodComb.J a b) (prodComb.J_comp_I a b)
+    (prodComb.I_comp_J a b ha hb).symm
 
 /-- **Proposition 8.10(b), `×`-case, in full.** `a, b` finitary projections `⟹` `a × b` is a
 finitary projection, and its fixed-point set is order-isomorphic to `D_a × D_b`. -/
-theorem finitaryProjection_prodComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+theorem finitaryProjection (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     FinitaryProjection (prodComb a b) :=
-  ⟨⟨isProjection_prodComb ha.out.1 hb.out.1, finitary_prodComb a b ha hb⟩⟩
+  ⟨⟨prodComb.isProjection ha.out.1 hb.out.1, prodComb.finitary a b ha hb⟩⟩
+
+end prodComb
 
 end ProdCase
 
@@ -2230,7 +2178,7 @@ theorem finitaryProjection_combinators {a b : ApproximableMap U U}
     (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     FinitaryProjection (sumComb a b) ∧ FinitaryProjection (prodComb a b) ∧
       FinitaryProjection (arrowComb a b) :=
-  ⟨sumComb.finitaryProjection a b ha hb, finitaryProjection_prodComb a b ha hb,
+  ⟨sumComb.finitaryProjection a b ha hb, prodComb.finitaryProjection a b ha hb,
     finitaryProjection_arrowComb a b ha hb⟩
 
 end
@@ -2254,9 +2202,9 @@ theorem proposition_8_10 {a b : ApproximableMap U U}
       Nonempty
         ((funSpace (fixedNbhd a) (fixedNbhd b)).Element ≃o
           {y : U.Element // (arrowComb a b).toElementMap y = y}) :=
-  ⟨sumComb.finitaryProjection a b ha hb, finitaryProjection_prodComb a b ha hb,
+  ⟨sumComb.finitaryProjection a b ha hb, prodComb.finitaryProjection a b ha hb,
     finitaryProjection_arrowComb a b ha hb, ⟨sumComb.elementIso a b ha hb⟩,
-    ⟨prodComb_elementIso a b ha hb⟩, ⟨arrowComb_elementIso a b ha hb⟩⟩
+    ⟨prodComb.elementIso a b ha hb⟩, ⟨arrowComb_elementIso a b ha hb⟩⟩
 
 set_option linter.unusedVariables false
 
@@ -4540,10 +4488,10 @@ theorem theorem_810_b : And
               (@DomainTheory.NeighbourhoodSystems.proposition_8_10)
               DomainTheory.NeighbourhoodSystems.finitaryProjection_arrowComb)
             @DomainTheory.NeighbourhoodSystems.finitaryProjection_combinators)
-          DomainTheory.NeighbourhoodSystems.finitaryProjection_prodComb)
+          DomainTheory.NeighbourhoodSystems.prodComb.finitaryProjection)
         DomainTheory.NeighbourhoodSystems.sumComb.finitaryProjection)
       DomainTheory.NeighbourhoodSystems.finitary_arrowComb)
-    DomainTheory.NeighbourhoodSystems.finitary_prodComb)
+    DomainTheory.NeighbourhoodSystems.prodComb.finitary)
   DomainTheory.NeighbourhoodSystems.sumComb.finitary
 
 end DomainTheory.NeighbourhoodSystems

@@ -12,10 +12,14 @@ for all $a, b : \mathcal{U} \to \mathcal{U}$. $\square$
 
 These interesting(computable!) combinators on elements of $\mathcal{U} \to \mathcal{U}$ have many, many properties. We shall, however, only see what they do to projections.
 
-**[Definition_8_9.lean](Definition_8_9.lean)** — embeddings and `prodComb` / `arrowComb`
+**[Definition_8_9.lean](Definition_8_9.lean)** — embeddings and `arrowComb`
 
 @import "Definition_8_9.lean"
 
 **[sumComb.lean](sumComb.lean)** — `sumComb` and Pref-folded companions
 
 @import "sumComb.lean"
+
+**[prodComb.lean](prodComb.lean)** — `prodComb` and Pref-folded companions
+
+@import "prodComb.lean"
