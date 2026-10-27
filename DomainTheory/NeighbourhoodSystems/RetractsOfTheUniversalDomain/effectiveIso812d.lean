@@ -19,9 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-
-
-
 def packState2 (idx0 idx1 junk : ℕ) : ℕ := Nat.pair idx0 (Nat.pair idx1 junk)
 
 def stateIdx0 (s : ℕ) : ℕ := s.unpair.1
@@ -38,7 +35,6 @@ def stateJunk (s : ℕ) : ℕ := s.unpair.2.unpair.2
 
 @[simp] theorem stateJunk_packState2 (a b c : ℕ) : stateJunk (packState2 a b c) = c := by
   unfold stateJunk packState2; simp only [unpair_pair_snd]
-
 
 def packStateC (rem s : ℕ) : ℕ := Nat.pair rem s
 
@@ -78,7 +74,6 @@ def stateInnerC (t : ℕ) : ℕ := t.unpair.2
 @[simp] theorem stateInnerC_packStateC (a b : ℕ) : stateInnerC (packStateC a b) = b := by
   unfold stateInnerC packStateC; simp only [unpair_pair_snd]
 
-section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -91,8 +86,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 def atomPairBase (k : ℕ) : ℕ := packStateC k (stateBase2 P₀.masterIdx P₁.masterIdx)
 
 end AtomPairCode
-end
-
 
 theorem diffIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} {Q : ComputablePresentation W}
     (hDiff : IsComputableDiff Q) {idx0 n0 : ℕ} (h : IsComputableDiff.emptyDiffDec Q hDiff (Nat.pair idx0 n0) = 0) :
@@ -118,7 +111,6 @@ theorem encodeDeltaPair_lt (δ : ℕ → Bool × Bool) : ∀ n, encodeDeltaPair 
         rcases Bool.eq_false_or_eq_true (δ n).2 with h2 | h2 <;>
         simp only [h1, h2, ite_true, ite_false, Bool.false_eq_true] <;> omega
 
-
 theorem interIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} (Q : ComputablePresentation W)
     {idx0 n0 : ℕ} (h : emptyInterDec Q (Nat.pair idx0 n0) = 0) :
     Q.X (Q.inter idx0 n0) = Q.X idx0 ∩ Q.X n0 := by
@@ -127,7 +119,6 @@ theorem interIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} (Q : 
   have h1 : existsInterDec Q (Nat.pair idx0 n0) = 1 := by unfold emptyInterDec at h; omega
   exact (existsInterDec.spec Q idx0 n0).mp h1
 
-section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -143,11 +134,8 @@ theorem junk_eq_zero_of_selectFn_eq_zero {junk X : ℕ} (h : selectFn junk 1 X =
   · exfalso; unfold selectFn at h; have : 1 ≤ junk := h0; nlinarith
 
 end AtomPairCorrect
-end
-
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 
 def deltaPair (k : ℕ) : ℕ → Bool × Bool :=
   fun i => (decide ((k / 4 ^ i) % 2 = 1), decide ((k / 4 ^ i / 2) % 2 = 1))
@@ -164,7 +152,6 @@ theorem snd_eq_testBit (k i : ℕ) : (deltaPair k i).2 = k.testBit (2 * i + 1) :
   show decide ((k / 4 ^ i / 2) % 2 = 1) = k.testBit (2 * i + 1)
   rw [Nat.div_div_eq_div_mul, Nat.testBit_eq_decide_div_mod_eq, show (4 : ℕ) ^ i * 2 = 2 ^ (2 * i + 1)
     by rw [show (4 : ℕ) = 2 ^ 2 from rfl, ← pow_mul, pow_succ]]
-
 
 theorem encodeDeltaPair (δ : ℕ → Bool × Bool) :
     ∀ n i, i < n → deltaPair (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n) i = δ i := by
@@ -215,7 +202,6 @@ end deltaPair
 namespace selectFn
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -237,9 +223,7 @@ theorem le_one {c a b : ℕ} (hc : c ≤ 1) (ha : a ≤ 1) (hb : b ≤ 1) :
   · rw [selectFn_one]; exact ha
 
 end AtomPairCorrect2
-end
 
-section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -259,12 +243,10 @@ theorem one_eq_zero_iff {c X : ℕ} : selectFn c 1 X = 0 ↔ c = 0 ∧ X = 0 := 
     simp [selectFn_zero]
 
 end AtomPairCorrect
-end
 
 end selectFn
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section StepGen
 
 variable {α β : Type*}
@@ -275,12 +257,10 @@ noncomputable def xStepG (splitX : Set α → Set β → Set α → Set β × Se
   xyStep splitX A B Xn b
 
 end StepGen
-end
 
 namespace xStepG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section StepGen
 
 variable {α β : Type*}
@@ -293,42 +273,17 @@ theorem disjoint_of_ne {D₁ : NeighborhoodSystem β}
       (xStepG splitX A B Xn b).2 ∩ (xStepG splitX A B Xn b').2 = ∅ :=
   xyStep_disjoint_of_ne hxSplit hAB hBmem Xn hbb'
 
-end StepGen
-end
-
-section
-section StepGen
-
-variable {α β : Type*}
-
 theorem fst_subset (splitX : Set α → Set β → Set α → Set β × Set β)
     (A : Set α) (B : Set β) (Xn : Set α) (b : Bool) : (xStepG splitX A B Xn b).1 ⊆ A := by
   by_cases hb : b = true
   · simp only [xStepG, xyStep, hb, ite_true]; exact Set.inter_subset_left
   · simp only [xStepG, xyStep, hb]; exact Set.sdiff_subset
 
-end StepGen
-end
-
-section
-section StepGen
-
-variable {α β : Type*}
-
-
 theorem fst_union (splitX : Set α → Set β → Set α → Set β × Set β)
     (A : Set α) (B : Set β) (Xn : Set α) :
     (xStepG splitX A B Xn true).1 ∪ (xStepG splitX A B Xn false).1 = A := by
   simp only [xStepG, xyStep]
   exact Set.inter_union_sdiff A Xn
-
-end StepGen
-end
-
-section
-section StepGen
-
-variable {α β : Type*}
 
 theorem snd_subset {D₁ : NeighborhoodSystem β}
     {splitX : Set α → Set β → Set α → Set β × Set β} (hxSplit : SplitSpec' D₁ splitX)
@@ -339,15 +294,6 @@ theorem snd_subset {D₁ : NeighborhoodSystem β}
   · simp only [xStepG, xyStep, hb, ite_true]; exact Set.subset_union_left.trans_eq hspec.2.2.2.2.1
   · simp only [xStepG, xyStep, hb]; exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
 
-end StepGen
-end
-
-section
-section StepGen
-
-variable {α β : Type*}
-
-
 theorem snd_union {D₁ : NeighborhoodSystem β}
     {splitX : Set α → Set β → Set α → Set β × Set β} (hxSplit : SplitSpec' D₁ splitX)
     {A : Set α} {B : Set β} (hAB : A = ∅ ↔ B = ∅) (hBmem : B = ∅ ∨ D₁.mem B) (Xn : Set α) :
@@ -357,12 +303,10 @@ theorem snd_union {D₁ : NeighborhoodSystem β}
   exact hspec.2.2.2.2.1
 
 end StepGen
-end
 
 end xStepG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -386,12 +330,10 @@ noncomputable def xSubStep (w : ℕ) : ℕ :=
   packState2 (selectFn newJunk 0 directIdx) (selectFn newJunk 0 splitIdx) newJunk
 
 end XSubStep
-end
 
 namespace xSubStep
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -409,18 +351,6 @@ theorem idx0_eq {s n b1 : ℕ}
   simp only [xwN, xwB1, xwS, unpair_pair_fst, unpair_pair_snd, stateIdx0_packState2, h,
     selectFn_zero]
 
-end AtomPairCorrect
-end
-
-section
-section AtomPairCorrect
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
 theorem idx1_eq {s n b1 : ℕ}
     (h : selectFn (stateJunk s) 1 (selectFn b1 (emptyInterDec P₀ (Nat.pair (stateIdx0 s) n))
       (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 s) n))) = 0) :
@@ -431,18 +361,6 @@ theorem idx1_eq {s n b1 : ℕ}
   simp only [xwN, xwB1, xwS, unpair_pair_fst, unpair_pair_snd, stateIdx1_packState2, h,
     selectFn_zero]
 
-end AtomPairCorrect
-end
-
-section
-section AtomPairCorrect
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
 theorem junk_eq (s n b1 : ℕ) :
     stateJunk (xSubStep P₀ P₁ hDiff0 splitX hSplitX (Nat.pair n (Nat.pair b1 s))) =
       selectFn (stateJunk s) 1 (selectFn b1 (emptyInterDec P₀ (Nat.pair (stateIdx0 s) n))
@@ -451,9 +369,7 @@ theorem junk_eq (s n b1 : ℕ) :
   simp only [xwN, xwB1, xwS, unpair_pair_fst, unpair_pair_snd, stateJunk_packState2]
 
 end AtomPairCorrect
-end
 
-section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -509,12 +425,10 @@ theorem correct {s n : ℕ} {A : Set α} {B : Set β}
       exact (hSplitX.negIdx_spec (stateIdx0 s) (stateIdx1 s) n hne).symm
 
 end AtomPairCorrect2
-end
 
 end xSubStep
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section StepGen
 
 variable {α β : Type*}
@@ -525,12 +439,10 @@ noncomputable def yStepG (splitY : Set β → Set α → Set β → Set α × Se
   (xyStep splitY B1 A1 Yn b).swap
 
 end StepGen
-end
 
 namespace yStepG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section StepGen
 
 variable {α β : Type*}
@@ -544,14 +456,6 @@ theorem disjoint_of_ne {D₀ : NeighborhoodSystem α}
   have h := xyStep_disjoint_of_ne hySplit hBA hAmem Yn hbb'
   exact ⟨h.2, h.1⟩
 
-end StepGen
-end
-
-section
-section StepGen
-
-variable {α β : Type*}
-
 theorem fst_subset {D₀ : NeighborhoodSystem α}
     {splitY : Set β → Set α → Set β → Set α × Set α} (hySplit : SplitSpec' D₀ splitY)
     {A1 : Set α} {B1 : Set β} (hBA : B1 = ∅ ↔ A1 = ∅) (hAmem : A1 = ∅ ∨ D₀.mem A1) (Yn : Set β)
@@ -563,15 +467,6 @@ theorem fst_subset {D₀ : NeighborhoodSystem α}
   · simp only [yStepG, xyStep, Prod.swap, hb]
     exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
 
-end StepGen
-end
-
-section
-section StepGen
-
-variable {α β : Type*}
-
-
 theorem fst_union {D₀ : NeighborhoodSystem α}
     {splitY : Set β → Set α → Set β → Set α × Set α} (hySplit : SplitSpec' D₀ splitY)
     {A1 : Set α} {B1 : Set β} (hBA : B1 = ∅ ↔ A1 = ∅) (hAmem : A1 = ∅ ∨ D₀.mem A1) (Yn : Set β) :
@@ -580,28 +475,11 @@ theorem fst_union {D₀ : NeighborhoodSystem α}
   simp only [yStepG, xyStep, Prod.swap]
   exact hspec.2.2.2.2.1
 
-end StepGen
-end
-
-section
-section StepGen
-
-variable {α β : Type*}
-
 theorem snd_subset (splitY : Set β → Set α → Set β → Set α × Set α)
     (A1 : Set α) (B1 : Set β) (Yn : Set β) (b : Bool) : (yStepG splitY A1 B1 Yn b).2 ⊆ B1 := by
   by_cases hb : b = true
   · simp only [yStepG, xyStep, Prod.swap, hb, ite_true]; exact Set.inter_subset_left
   · simp only [yStepG, xyStep, Prod.swap, hb]; exact Set.sdiff_subset
-
-end StepGen
-end
-
-section
-section StepGen
-
-variable {α β : Type*}
-
 
 theorem snd_union (splitY : Set β → Set α → Set β → Set α × Set α)
     (A1 : Set α) (B1 : Set β) (Yn : Set β) :
@@ -610,12 +488,10 @@ theorem snd_union (splitY : Set β → Set α → Set β → Set α × Set α)
   exact Set.inter_union_sdiff B1 Yn
 
 end StepGen
-end
 
 end yStepG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -640,12 +516,10 @@ noncomputable def atomPairG (δ : ℕ → Bool × Bool) : ℕ → Set α × Set 
       (A2, B2)
 
 end AtomPairGen
-end
 
 namespace atomPairG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -691,9 +565,7 @@ theorem congr {δ δ' : ℕ → Bool × Bool} {n : ℕ} (h : ∀ i < n, δ i = �
     rw [hprev, hn]
 
 end AtomPairGen
-end
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -763,9 +635,7 @@ theorem invariant (δ : ℕ → Bool × Bool) :
     exact ⟨hB2A2.symm, hA2mem, hB2mem⟩
 
 end AtomPairGen
-end
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -785,9 +655,7 @@ theorem succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) :
         (Y n) (δ n).2 := rfl
 
 end AtomPairGen
-end
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -838,9 +706,7 @@ theorem fst_union_step (δ : ℕ → Bool × Bool) (n : ℕ) :
   exact xStepG.fst_union splitX A B (X n)
 
 end AtomPairGen
-end
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -893,9 +759,7 @@ theorem master_covered (n : ℕ) :
     · exact step false false h4
 
 end AtomPairGen
-end
 
-section
 section AtomPairGenDelta
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -919,9 +783,7 @@ theorem master_covered_deltaPair (n : ℕ) :
   exact hδ'
 
 end AtomPairGenDelta
-end
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -965,9 +827,7 @@ theorem snd_union_step (δ : ℕ → Bool × Bool) (n : ℕ) :
   exact xStepG.snd_union hxSplit ihAB ihB (X n)
 
 end AtomPairGen
-end
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -1020,9 +880,7 @@ theorem master_covered_snd (n : ℕ) :
     · exact step false false h4
 
 end AtomPairGen
-end
 
-section
 section AtomPairGenDelta
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -1046,13 +904,11 @@ theorem master_covered_deltaPair_snd (n : ℕ) :
   exact hδ'
 
 end AtomPairGenDelta
-end
 
 end atomPairG
 namespace xStepG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -1090,13 +946,11 @@ theorem spec (δ : ℕ → Bool × Bool) (n : ℕ) :
     · simp only [xStepG, xyStep, hδ1]; exact diff.mem_or_empty hD₀diff ihA (hXmem n)
 
 end AtomPairGen
-end
 
 end xStepG
 namespace atomPairG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -1121,9 +975,7 @@ theorem fst_subset (δ : ℕ → Bool × Bool) (n : ℕ) :
     (xStepG.fst_subset splitX _ _ (X n) (δ n).1)
 
 end AtomPairGen
-end
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -1146,9 +998,7 @@ theorem fst_subset_master (δ : ℕ → Bool × Bool) (n : ℕ) :
       splitX hxSplit X Y hXmem hYmem hD₀mne hD₁mne δ n).trans ih
 
 end AtomPairGen
-end
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -1173,9 +1023,7 @@ theorem snd_subset (δ : ℕ → Bool × Bool) (n : ℕ) :
     (xStepG.snd_subset hxSplit ihAB ihB (X n) (δ n).1)
 
 end AtomPairGen
-end
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -1268,9 +1116,7 @@ theorem disjoint (δ δ' : ℕ → Bool × Bool) :
         Set.subset_eq_empty (Set.inter_subset_inter h2 h2') hd2⟩
 
 end AtomPairGen
-end
 
-section
 section AtomPairGen
 
 variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
@@ -1293,12 +1139,10 @@ theorem snd_subset_master (δ : ℕ → Bool × Bool) (n : ℕ) :
       splitX hxSplit X Y hXmem hYmem hD₀mne hD₁mne δ n).trans ih
 
 end AtomPairGen
-end
 
 end atomPairG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section YSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1322,12 +1166,10 @@ noncomputable def ySubStep (w : ℕ) : ℕ :=
   packState2 (selectFn newJunk 0 splitIdx) (selectFn newJunk 0 directIdx) newJunk
 
 end YSubStep
-end
 
 namespace ySubStep
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1346,18 +1188,6 @@ theorem idx0_eq {s n b2 : ℕ}
   simp only [xwN, xwB1, xwS, unpair_pair_fst, unpair_pair_snd, stateIdx0_packState2, h,
     selectFn_zero]
 
-end AtomPairCorrect
-end
-
-section
-section AtomPairCorrect
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
 theorem idx1_eq {s n b2 : ℕ}
     (h : selectFn (stateJunk s) 1 (selectFn b2 (emptyInterDec P₁ (Nat.pair (stateIdx1 s) n))
       (IsComputableDiff.emptyDiffDec P₁ hDiff1 (Nat.pair (stateIdx1 s) n))) = 0) :
@@ -1367,18 +1197,6 @@ theorem idx1_eq {s n b2 : ℕ}
   simp only [xwN, xwB1, xwS, unpair_pair_fst, unpair_pair_snd, stateIdx1_packState2, h,
     selectFn_zero]
 
-end AtomPairCorrect
-end
-
-section
-section AtomPairCorrect
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
 theorem junk_eq (s n b2 : ℕ) :
     stateJunk (ySubStep P₀ P₁ hDiff1 splitY hSplitY (Nat.pair n (Nat.pair b2 s))) =
       selectFn (stateJunk s) 1 (selectFn b2 (emptyInterDec P₁ (Nat.pair (stateIdx1 s) n))
@@ -1387,9 +1205,7 @@ theorem junk_eq (s n b2 : ℕ) :
   simp only [xwN, xwB1, xwS, unpair_pair_fst, unpair_pair_snd, stateJunk_packState2]
 
 end AtomPairCorrect
-end
 
-section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1445,12 +1261,10 @@ theorem correct {s n : ℕ} {A : Set α} {B : Set β}
       exact diffIdx_eq_of_empty_zero hDiff1 hemp
 
 end AtomPairCorrect2
-end
 
 end ySubStep
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1462,33 +1276,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 def pcN (w : ℕ) : ℕ := xwB1 w
 
-end AtomPairCode
-end
-
-section
-section AtomPairCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
-
 def pcT (w : ℕ) : ℕ := xwS w
-
-end AtomPairCode
-end
-
-section
-section AtomPairCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
 
 noncomputable def atomPairStep (w : ℕ) : ℕ :=
   let n := pcN w
@@ -1501,31 +1289,16 @@ noncomputable def atomPairStep (w : ℕ) : ℕ :=
   let s2 := ySubStep P₀ P₁ hDiff1 splitY hSplitY (Nat.pair n (Nat.pair b2 s1))
   packStateC (rem / 4) s2
 
-end AtomPairCode
-end
-
-section
-section AtomPairCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
-
 noncomputable def atomPairCodeState (t : ℕ) : ℕ :=
   t.unpair.2.rec (atomPairBase P₀ P₁ t.unpair.1) (fun y IH =>
     atomPairStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
       (Nat.pair t.unpair.1 (Nat.pair y IH)))
 
 end AtomPairCode
-end
 
 namespace atomPairCodeState
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1544,12 +1317,10 @@ theorem succ (k n : ℕ) :
   simp only [unpair_pair_fst, unpair_pair_snd]
 
 end AtomPairCorrect
-end
 
 end atomPairCodeState
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1564,12 +1335,10 @@ noncomputable def atomPairJunk (n k : ℕ) : ℕ :=
     (Nat.pair k n)))
 
 end AtomPairCode
-end
 
 namespace atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XYPseqCodeZero
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1592,9 +1361,7 @@ theorem zero (k : ℕ) :
   simp [atomPairCodeState, atomPairBase, stateBase2]
 
 end XYPseqCodeZero
-end
 
-section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1617,9 +1384,7 @@ theorem eq_zero_of_succ {k n : ℕ}
   exact junk_eq_zero_of_selectFn_eq_zero h1
 
 end AtomPairCorrect
-end
 
-section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1654,7 +1419,6 @@ theorem le_one (k n : ℕ) :
       (selectFn.le_one hb2 (emptyInterDec.le_one P₁ _) (IsComputableDiff.emptyDiffDec.le_one P₁ hDiff1 _))
 
 end AtomPairCorrect2
-end
 
 end atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
@@ -1685,7 +1449,6 @@ theorem exists_deltaPair_ne_of_lt_of_ne {n k k' : ℕ} (hk : k < 4 ^ n) (hk' : k
       rw [Nat.testBit_lt_two_pow ((h4n ▸ hk).trans_le hile),
         Nat.testBit_lt_two_pow ((h4n ▸ hk').trans_le hile)])
 
-section
 section AtomPairCorrect4
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1708,9 +1471,7 @@ theorem exists_atomPairG_deltaPair_inter_Xn_ne_empty (n : ℕ) :
   exact ⟨i, hi, Set.nonempty_iff_ne_empty.mp ⟨z, hzcover, hz⟩⟩
 
 end AtomPairCorrect4
-end
 
-section
 section AtomPairCorrect4Snd
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1733,9 +1494,7 @@ theorem exists_atomPairG_deltaPair_inter_Yn_ne_empty (n : ℕ) :
   exact ⟨i, hi, Set.nonempty_iff_ne_empty.mp ⟨z, hzcover, hz⟩⟩
 
 end AtomPairCorrect4Snd
-end
 
-section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1749,27 +1508,12 @@ noncomputable def atomPairIdx0 (n k : ℕ) : ℕ :=
   stateIdx0 (stateInnerC (atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
     (Nat.pair k n)))
 
-end AtomPairCode
-end
-
-section
-section AtomPairCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
-
 noncomputable def atomPairIdx1 (n k : ℕ) : ℕ :=
   stateIdx1 (stateInnerC (atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
     (Nat.pair k n)))
 
 end AtomPairCode
-end
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1788,9 +1532,7 @@ noncomputable def xPseqAtomState (n i : ℕ) : ℕ :=
       (atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i))))
 
 end XPseqCode
-end
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1810,12 +1552,10 @@ noncomputable def yPseqAtomState (n i bx : ℕ) : ℕ :=
         (atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)))))))
 
 end YPseqCode
-end
 
 namespace stateRemC
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairCorrect
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1837,13 +1577,11 @@ theorem atomPairCodeState (k n : ℕ) :
       Nat.div_div_eq_div_mul, ← pow_succ]
 
 end AtomPairCorrect
-end
 
 end stateRemC
 namespace atomPairCodeState
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1916,9 +1654,7 @@ theorem correct (k n : ℕ)
       hxspec.1 hxspec.2 (deltaPair k n).2 hjunk
 
 end AtomPairCorrect2
-end
 
-section
 section AtomPairCorrect3
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -1951,13 +1687,11 @@ theorem disjoint {n k k' : ℕ}
     P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deltaPair k) (deltaPair k') n hne
 
 end AtomPairCorrect3
-end
 
 end atomPairCodeState
 namespace atomPairG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairCorrect5
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2086,9 +1820,7 @@ theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
         hD₁diff splitX hxSplit P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deltaPair i) n) (ih hn1)
 
 end AtomPairCorrect5
-end
 
-section
 section AtomPairCorrect5
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2214,13 +1946,11 @@ theorem snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
         hD₁diff splitX hxSplit P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deltaPair i) n) (ih hn1)
 
 end AtomPairCorrect5
-end
 
 end atomPairG
 namespace atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairCorrect5
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2247,12 +1977,10 @@ theorem eq_zero_of_snd_ne_empty {i n : ℕ}
     hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne i n h1)
 
 end AtomPairCorrect5
-end
 
 end atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2268,12 +1996,10 @@ noncomputable def yPseqAtomIdx (n i bx : ℕ) : ℕ :=
   stateIdx0 (yPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx)
 
 end YPseqCode
-end
 
 namespace yPseqAtomIdx
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2290,12 +2016,10 @@ theorem mem (n i bx : ℕ) :
   P₀.mem_X _
 
 end YPseqCode
-end
 
 end yPseqAtomIdx
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2311,12 +2035,10 @@ noncomputable def yPseqAtomJunk (n i bx : ℕ) : ℕ :=
   stateJunk (yPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx)
 
 end YPseqCode
-end
 
 namespace yPseqAtomJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2336,20 +2058,6 @@ theorem le_one {bx : ℕ} (hbx : bx ≤ 1) (n i : ℕ) :
   exact selectFn.le_one (atomPairJunk.le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY i n)
     (le_refl 1) (selectFn.le_one hbx (emptyInterDec.le_one P₀ _) (IsComputableDiff.emptyDiffDec.le_one P₀ hDiff0 _))
 
-end YPseqCode
-end
-
-section
-section YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
-
 theorem zero_or_one {bx : ℕ} (hbx : bx ≤ 1) (n i : ℕ) :
     yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx = 0 ∨
       yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx = 1 := by
@@ -2357,9 +2065,7 @@ theorem zero_or_one {bx : ℕ} (hbx : bx ≤ 1) (n i : ℕ) :
   omega
 
 end YPseqCode
-end
 
-section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2443,9 +2149,7 @@ theorem eq_zero_of_bit {i n : ℕ}
   exact hyc0
 
 end YPseqCodeUnconditional
-end
 
-section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2508,13 +2212,11 @@ theorem exists_zero (n : ℕ) :
     exact ⟨i, hi, 0, Nat.zero_le 1, hzero⟩
 
 end YPseqCodeUnconditional
-end
 
 end yPseqAtomJunk
 namespace atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section YPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2553,9 +2255,7 @@ theorem eq_zero_of_yPseqAtomJunk {n i : ℕ} (b : Bool)
   exact junk_eq_zero_of_selectFn_eq_zero h3
 
 end YPseqCodeIFormula
-end
 
-section
 section AtomPairCorrect5
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2582,12 +2282,10 @@ theorem eq_zero_of_ne_empty {i n : ℕ}
     hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne i n h1)
 
 end AtomPairCorrect5
-end
 
 end atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2603,12 +2301,10 @@ noncomputable def xPseqAtomJunk (n i : ℕ) : ℕ :=
   stateJunk (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)
 
 end XPseqCode
-end
 
 namespace xPseqAtomJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2627,39 +2323,11 @@ theorem eq (n i : ℕ) :
   unfold xPseqAtomJunk xPseqAtomState
   rw [xSubStep.junk_eq, stateIdx0_packState2, stateJunk_packState2, selectFn_one]
 
-end XPseqCode
-end
-
-section
-section XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
-
 theorem le_one (n i : ℕ) :
     xPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i ≤ 1 := by
   rw [xPseqAtomJunk.eq]
   exact selectFn.le_one (atomPairJunk.le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY i n)
     (le_refl 1) (emptyInterDec.le_one P₀ _)
-
-end XPseqCode
-end
-
-section
-section XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
 
 theorem zero_or_one (n i : ℕ) :
     xPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 0 ∨
@@ -2668,9 +2336,7 @@ theorem zero_or_one (n i : ℕ) :
   omega
 
 end XPseqCode
-end
 
-section
 section XPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2709,12 +2375,10 @@ theorem exists_zero (n : ℕ) :
   exact hne' ((emptyInterDec.eq_one_iff P₀ hD₀pos hD₀nomin _ _).mp h1)
 
 end XPseqCodeUnconditional
-end
 
 end xPseqAtomJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2730,12 +2394,10 @@ noncomputable def xPseqAtomIdx (n i : ℕ) : ℕ :=
   stateIdx1 (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)
 
 end XPseqCode
-end
 
 namespace xPseqAtomIdx
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2751,21 +2413,6 @@ theorem mem (n i : ℕ) :
     D₁.mem (P₁.X (xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)) :=
   P₁.mem_X _
 
-end XPseqCode
-end
-
-section
-section XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
-
-
 theorem eq {n i : ℕ}
     (h : xPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i = 0) :
     xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i =
@@ -2780,12 +2427,10 @@ theorem eq {n i : ℕ}
   rw [xSubStep.idx1_eq (h := h'), stateIdx0_packState2, stateIdx1_packState2, selectFn_one]
 
 end XPseqCode
-end
 
 end xPseqAtomIdx
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2807,20 +2452,6 @@ noncomputable def XFoldStep (w : ℕ) : ℕ :=
         (xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)))
       (Nat.pair 1 (xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)))
 
-end XPseqCode
-end
-
-section
-section XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
-
 theorem XFoldStep_eq (n i acc : ℕ) :
     XFoldStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1
         (Nat.pair n (Nat.pair i acc)) =
@@ -2833,9 +2464,7 @@ theorem XFoldStep_eq (n i acc : ℕ) :
   simp only [unpair_pair_fst, unpair_pair_snd]
 
 end XPseqCode
-end
 
-section
 section XYPseqCodeZero
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2865,9 +2494,7 @@ theorem xPseqAtomIdx0_eq {n i : ℕ}
   rw [xSubStep.idx0_eq (h := h'), stateIdx0_packState2, selectFn_one]
 
 end XYPseqCodeZero
-end
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2890,38 +2517,9 @@ noncomputable def YFoldStep (w : ℕ) : ℕ :=
         (yPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx)))
       (Nat.pair 1 (yPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i bx)))
 
-end YPseqCode
-end
-
-section
-section YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
-
-
 noncomputable def YFoldInnerPair (nb N : ℕ) : ℕ :=
   N.rec (Nat.pair 0 0) (fun i acc => YFoldStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
     hUnion0 (Nat.pair nb (Nat.pair i acc)))
-
-end YPseqCode
-end
-
-section
-section YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
 
 theorem YFoldStep_eq (n bx i acc : ℕ) :
     YFoldStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
@@ -2935,9 +2533,7 @@ theorem YFoldStep_eq (n bx i acc : ℕ) :
   simp only [unpair_pair_fst, unpair_pair_snd]
 
 end YPseqCode
-end
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2954,12 +2550,10 @@ noncomputable def XFold (n N : ℕ) : ℕ :=
     hUnion1 (Nat.pair n (Nat.pair i acc)))
 
 end XPseqCode
-end
 
 namespace XFold
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -2976,36 +2570,8 @@ theorem succ (n N : ℕ) :
         (Nat.pair n (Nat.pair N (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1
           n N))) := rfl
 
-end XPseqCode
-end
-
-section
-section XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
-
 theorem zero (n : ℕ) : XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n 0 =
     Nat.pair 0 0 := rfl
-
-end XPseqCode
-end
-
-section
-section XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
 
 theorem found_le_one (n : ℕ) :
     ∀ N, (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n N).unpair.1 ≤ 1 := by
@@ -3025,21 +2591,6 @@ theorem found_le_one (n : ℕ) :
       · rw [show (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n N).unpair.1
           = 1 from by omega, selectFn_one, unpair_pair_fst]
     · rw [h1, selectFn_one]; exact ih
-
-end XPseqCode
-end
-
-section
-section XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
-
 
 theorem found_iff (n : ℕ) :
     ∀ N, (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n N).unpair.1 = 1 ↔
@@ -3078,9 +2629,7 @@ theorem found_iff (n : ℕ) :
         · exact absurd hie (by omega)
 
 end XPseqCode
-end
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3127,9 +2676,7 @@ theorem mem_of_found (n : ℕ) :
       exact ih hfound1
 
 end XPseqCode
-end
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3198,9 +2745,7 @@ theorem mem_iff (n : ℕ) :
         · exact absurd hie (by omega)
 
 end XPseqCode
-end
 
-section
 section XPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3223,12 +2768,10 @@ theorem four_pow_found (n : ℕ) :
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne n)
 
 end XPseqCodeUnconditional
-end
 
 end XFold
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3244,12 +2787,10 @@ noncomputable def XPseqCode (n : ℕ) : ℕ :=
   (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n (4 ^ n)).unpair.2
 
 end XPseqCode
-end
 
 namespace XPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3270,9 +2811,7 @@ theorem mem {n : ℕ}
     hUnion1 n (4 ^ n) hfound
 
 end XPseqCode
-end
 
-section
 section XPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3295,12 +2834,10 @@ theorem mem_unconditional (n : ℕ) :
       hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion1 n)
 
 end XPseqCodeUnconditional
-end
 
 end XPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3317,12 +2854,10 @@ noncomputable def YFoldInner (n bx N : ℕ) : ℕ :=
     hUnion0 (Nat.pair (Nat.pair n bx) (Nat.pair i acc)))
 
 end YPseqCode
-end
 
 namespace YFoldInner
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3338,57 +2873,15 @@ theorem eq_pair (n bx N : ℕ) :
       YFoldInnerPair P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
         (Nat.pair n bx) N := rfl
 
-end YPseqCode
-end
-
-section
-section YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
-
 theorem succ (n bx N : ℕ) :
     YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n bx (N + 1) =
       YFoldStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
         (Nat.pair (Nat.pair n bx) (Nat.pair N (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX
           splitY hSplitY hUnion0 n bx N))) := rfl
 
-end YPseqCode
-end
-
-section
-section YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
-
 theorem zero (n bx : ℕ) :
     YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n bx 0 =
       Nat.pair 0 0 := rfl
-
-end YPseqCode
-end
-
-section
-section YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
 
 theorem found_le_one {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
     ∀ N, (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n bx N).unpair.1
@@ -3409,21 +2902,6 @@ theorem found_le_one {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
       · rw [show (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n bx N
           ).unpair.1 = 1 from by omega, selectFn_one, unpair_pair_fst]
     · rw [h1, selectFn_one]; exact ih
-
-end YPseqCode
-end
-
-section
-section YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
-
 
 theorem found_iff {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
     ∀ N, (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n bx N).unpair.1 = 1
@@ -3463,9 +2941,7 @@ theorem found_iff {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
         · exact absurd hie (by omega)
 
 end YPseqCode
-end
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3515,9 +2991,7 @@ theorem mem_of_found {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
       exact ih hfound1
 
 end YPseqCode
-end
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3589,9 +3063,7 @@ theorem mem_iff {bx : ℕ} (hbx : bx ≤ 1) (n : ℕ) :
         · exact absurd hie (by omega)
 
 end YPseqCode
-end
 
-section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3620,12 +3092,10 @@ theorem or_found (n : ℕ) :
       (le_refl 1) n (4 ^ n)).mpr ⟨i, hi, hzero⟩)
 
 end YPseqCodeUnconditional
-end
 
 end YFoldInner
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3643,12 +3113,10 @@ noncomputable def YPseqCode (n : ℕ) : ℕ :=
     (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))).unpair.2
 
 end YPseqCode
-end
 
 namespace YPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3679,9 +3147,7 @@ theorem mem {n : ℕ}
     hfound
 
 end YPseqCode
-end
 
-section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3711,9 +3177,7 @@ theorem four_pow_found (n : ℕ) :
       hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 n)
 
 end YPseqCodeUnconditional
-end
 
-section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3736,12 +3200,10 @@ theorem mem_unconditional (n : ℕ) :
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 n)
 
 end YPseqCodeUnconditional
-end
 
 end YPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3762,12 +3224,10 @@ noncomputable def combinedXCode (n : ℕ) : Set α :=
   else P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 (n / 2))
 
 end CombinedCode
-end
 
 namespace combinedXCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3787,24 +3247,6 @@ theorem even (k : ℕ) :
   unfold combinedXCode
   rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
-end CombinedCode
-end
-
-section
-section CombinedCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-
 theorem odd (k : ℕ) :
     combinedXCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 (2 * k + 1) =
       P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 k) := by
@@ -3812,9 +3254,7 @@ theorem odd (k : ℕ) :
   rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 end CombinedCode
-end
 
-section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3836,12 +3276,10 @@ theorem subset_master (i : ℕ) :
   split <;> exact D₀.sub_master (P₀.mem_X _)
 
 end CombinedCodeTransfer
-end
 
 end combinedXCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3863,12 +3301,10 @@ noncomputable def combinedYCode (n : ℕ) : Set β :=
   else P₁.X (n / 2)
 
 end CombinedCode
-end
 
 namespace combinedYCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3889,24 +3325,6 @@ theorem even (k : ℕ) :
   unfold combinedYCode
   rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
-end CombinedCode
-end
-
-section
-section CombinedCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-  (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-
 theorem odd (k : ℕ) :
     combinedYCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 (2 * k + 1) =
       P₁.X k := by
@@ -3914,9 +3332,7 @@ theorem odd (k : ℕ) :
   rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 end CombinedCode
-end
 
-section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3938,12 +3354,10 @@ theorem subset_master (i : ℕ) :
   split <;> exact D₁.sub_master (P₁.mem_X _)
 
 end CombinedCodeTransfer
-end
 
 end combinedYCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -3966,9 +3380,7 @@ theorem mem_XPseqCode_iff {n : ℕ}
     n (4 ^ n) hfound z
 
 end XPseqCode
-end
 
-section
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4026,9 +3438,7 @@ theorem mem_YPseqCode_iff {n : ℕ}
         hD₀pos hD₀diff hD₀nomin hUnion0 (le_refl 1) n (4 ^ n) hf1 z).mpr ⟨i, hi, hie, hz⟩⟩
 
 end YPseqCode
-end
 
-section
 section XPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4053,9 +3463,7 @@ theorem mem_XPseqCode_iff_unconditional (n : ℕ) (z : β) :
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion1 n) z
 
 end XPseqCodeUnconditional
-end
 
-section
 section YPseqCodeUnconditional
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4082,7 +3490,6 @@ theorem mem_YPseqCode_iff_unconditional (n : ℕ) (z : α) :
       hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 n) z
 
 end YPseqCodeUnconditional
-end
 
 namespace primrec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
@@ -4094,7 +3501,6 @@ theorem stateIdx1 : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateId
 
 theorem stateJunk : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateJunk := Nat.Primrec.right.comp Nat.Primrec.right
 
-section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4108,7 +3514,6 @@ theorem atomPairBase : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.ato
     fun k => by unfold _root_.DomainTheory.NeighbourhoodSystems.atomPairBase packStateC; simp only [id_eq]
 
 end AtomPairCode
-end
 
 theorem IsComputableUnion.combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) :
@@ -4132,7 +3537,6 @@ theorem stateInnerC : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.state
 
 theorem stateRemC : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateRemC := Nat.Primrec.left
 
-section
 section XSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4143,9 +3547,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 theorem xwB1 : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.xwB1 := Nat.Primrec.left.comp Nat.Primrec.right
 
 end XSubStep
-end
 
-section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4157,9 +3559,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 theorem pcN : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.pcN := primrec.xwB1
 
 end AtomPairCode
-end
 
-section
 section XSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4169,23 +3569,10 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 theorem xwN : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.xwN := Nat.Primrec.left
 
-end XSubStep
-end
-
-section
-section XSubStep
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-
 theorem xwS : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.xwS := Nat.Primrec.right.comp Nat.Primrec.right
 
 end XSubStep
-end
 
-section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4197,9 +3584,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 theorem pcT : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.pcT := primrec.xwS
 
 end AtomPairCode
-end
 
-section
 section XSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4265,9 +3650,7 @@ theorem xSubStep : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.xSubSte
     simp only []
 
 end XSubStep
-end
 
-section
 section YSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4333,9 +3716,7 @@ theorem ySubStep : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.ySubSte
     simp only []
 
 end YSubStep
-end
 
-section
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4375,34 +3756,10 @@ theorem atomPairStep :
     unfold _root_.DomainTheory.NeighbourhoodSystems.atomPairStep packStateC
     simp only []
 
-end AtomPairCode
-end
-
-section
-section AtomPairCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
 theorem atomPairCodeState :
     Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY) :=
   (Nat.Primrec.prec (primrec.atomPairBase P₀ P₁)
     (primrec.atomPairStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY)).of_eq fun _ => rfl
-
-end AtomPairCode
-end
-
-section
-section AtomPairCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
 theorem atomPairIdx0 : Nat.Primrec
     (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY t.unpair.1 t.unpair.2) :=
@@ -4410,35 +3767,11 @@ theorem atomPairIdx0 : Nat.Primrec
     ((primrec.atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY).comp
       (Nat.Primrec.right.pair Nat.Primrec.left)))).of_eq fun _ => rfl
 
-end AtomPairCode
-end
-
-section
-section AtomPairCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
 theorem atomPairIdx1 : Nat.Primrec
     (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.atomPairIdx1 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY t.unpair.1 t.unpair.2) :=
   (primrec.stateIdx1.comp (primrec.stateInnerC.comp
     ((primrec.atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY).comp
       (Nat.Primrec.right.pair Nat.Primrec.left)))).of_eq fun _ => rfl
-
-end AtomPairCode
-end
-
-section
-section AtomPairCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
 theorem atomPairJunk : Nat.Primrec
     (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY t.unpair.1 t.unpair.2) :=
@@ -4447,9 +3780,7 @@ theorem atomPairJunk : Nat.Primrec
       (Nat.Primrec.right.pair Nat.Primrec.left)))).of_eq fun _ => rfl
 
 end AtomPairCode
-end
 
-section
 section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4485,59 +3816,17 @@ theorem xPseqAtomState : Nat.Primrec
     (Nat.Primrec.const 1).pair hpacked
   exact ((primrec.xSubStep P₀ P₁ hDiff0 splitX hSplitX).comp (hn.pair hinner)).of_eq fun _ => rfl
 
-end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
-end
-
-section
-section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
-
 theorem xPseqAtomIdx : Nat.Primrec
     (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.xPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
       t.unpair.1 t.unpair.2) :=
   (primrec.stateIdx1.comp (primrec.xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
     hSplitY)).of_eq fun _ => rfl
 
-end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
-end
-
-section
-section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
-
 theorem xPseqAtomJunk : Nat.Primrec
     (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.xPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
       t.unpair.1 t.unpair.2) :=
   (primrec.stateJunk.comp (primrec.xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
     hSplitY)).of_eq fun _ => rfl
-
-end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
-end
-
-section
-section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
 
 theorem XFoldStep :
     Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.XFoldStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1) := by
@@ -4575,40 +3864,12 @@ theorem XFoldStep :
     primrec_selectFn hfound ((Nat.Primrec.const 1).pair hunion) ((Nat.Primrec.const 1).pair hidx)
   exact (primrec_selectFn hjunk hacc hinner).of_eq fun w => by unfold _root_.DomainTheory.NeighbourhoodSystems.XFoldStep; simp only []
 
-end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
-end
-
-section
-section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
-
 theorem XFold : Nat.Primrec
     (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1
       t.unpair.1 t.unpair.2) :=
   (Nat.Primrec.prec (Nat.Primrec.const (Nat.pair 0 0))
     (primrec.XFoldStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1)).of_eq
     fun _ => rfl
-
-end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
-end
-
-section
-section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hUnion1 : IsComputableUnion P₁)
 
 theorem XPseqCode : Nat.Primrec
     (_root_.DomainTheory.NeighbourhoodSystems.XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1) := by
@@ -4622,9 +3883,7 @@ theorem XPseqCode : Nat.Primrec
   rw [unpair_pair_fst, unpair_pair_snd]; rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.XPseqCode
-end
 
-section
 section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4703,59 +3962,17 @@ theorem yPseqAtomState : Nat.Primrec
     hn.pair ((Nat.Primrec.const 1).pair hxstep)
   exact ((primrec.ySubStep P₀ P₁ hDiff1 splitY hSplitY).comp hystep_arg).of_eq fun _ => rfl
 
-end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-end
-
-section
-section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
-
 theorem yPseqAtomIdx : Nat.Primrec
     (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.yPseqAtomIdx P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
       t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) :=
   (primrec.stateIdx0.comp (primrec.yPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
     hSplitY)).of_eq fun _ => rfl
 
-end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-end
-
-section
-section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
-
 theorem yPseqAtomJunk : Nat.Primrec
     (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
       t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) :=
   (primrec.stateJunk.comp (primrec.yPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
     hSplitY)).of_eq fun _ => rfl
-
-end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-end
-
-section
-section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
 
 theorem YFoldStep :
     Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.YFoldStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0) := by
@@ -4797,40 +4014,12 @@ theorem YFoldStep :
     primrec_selectFn hfound ((Nat.Primrec.const 1).pair hunion) ((Nat.Primrec.const 1).pair hidx)
   exact (primrec_selectFn hjunk hacc hinner).of_eq fun w => by unfold _root_.DomainTheory.NeighbourhoodSystems.YFoldStep; simp only []
 
-end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-end
-
-section
-section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
-
 theorem YFoldInnerPair : Nat.Primrec
     (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.YFoldInnerPair P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
       t.unpair.1 t.unpair.2) :=
   (Nat.Primrec.prec (Nat.Primrec.const (Nat.pair 0 0))
     (primrec.YFoldStep P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0)).of_eq
     fun _ => rfl
-
-end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-end
-
-section
-section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
 
 theorem YFoldInner : Nat.Primrec
     (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
@@ -4845,20 +4034,6 @@ theorem YFoldInner : Nat.Primrec
       simp only [unpair_pair_fst, unpair_pair_snd]
       exact (YFoldInner.eq_pair P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
         t.unpair.1.unpair.1 t.unpair.1.unpair.2 t.unpair.2).symm
-
-end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-end
-
-section
-section _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
 
 theorem YPseqCode : Nat.Primrec
     (_root_.DomainTheory.NeighbourhoodSystems.YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0) := by
@@ -4883,13 +4058,11 @@ theorem YPseqCode : Nat.Primrec
   exact (Nat.Primrec.right.comp hcomb).of_eq fun _ => rfl
 
 end _root_.DomainTheory.NeighbourhoodSystems.YPseqCode
-end
 
 end primrec
 namespace xPseqAtomIdx
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -4944,9 +4117,7 @@ theorem subset_atomPairIdx1 {n m : ℕ}
     _ = (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair m) n).2 := hspec.2.2.2.2.1
 
 end XPseqCodeIFormula
-end
 
-section
 section XPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5005,13 +4176,11 @@ theorem eq_inter_XPseqCode {n k : ℕ} (hk : k < 4 ^ n)
       exact absurd (Set.mem_inter hz'' hzB) (by rw [hdisj]; simp)
 
 end XPseqCodeIFormula
-end
 
 end xPseqAtomIdx
 namespace xStepG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5120,9 +4289,7 @@ theorem snd_eq_inter_XPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) :
       rw [h2empty, hdisjXP]
 
 end CombinedCode
-end
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5190,13 +4357,11 @@ theorem snd_succ_eq_XPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     · rintro ⟨hx1, -, hx2⟩; exact ⟨hx1, hx2⟩
 
 end CombinedCode
-end
 
 end xStepG
 namespace genAtom
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5233,9 +4398,7 @@ theorem combinedXCode_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
     exact inter.diff_eq_diff_of_subset hAsub
 
 end CombinedCode
-end
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5266,13 +4429,11 @@ theorem combinedYCode_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
     hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion1 δ n (δ n).1).symm
 
 end CombinedCode
-end
 
 end genAtom
 namespace yPseqAtomIdx
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section YPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5358,9 +4519,7 @@ theorem subset_xStepGFst {n i : ℕ} (b : Bool)
   exact yStepG.fst_subset hySplit hBA hAmem (P₁.X n) true
 
 end YPseqCodeIFormula
-end
 
-section
 section YPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5395,9 +4554,7 @@ theorem subset_atomPairIdx0 {n i : ℕ} (b : Bool)
     (xStepG.fst_subset splitX _ _ (P₀.X n) b)
 
 end YPseqCodeIFormula
-end
 
-section
 section YPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5467,9 +4624,7 @@ theorem eq_of_dichotomy {n i i' : ℕ} {z : α} (b b' : Bool)
     exact absurd (Set.mem_inter hzA' hzA) (by rw [hdisj]; simp)
 
 end YPseqCodeIFormula
-end
 
-section
 section YPseqCodeIFormula
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5521,13 +4676,11 @@ theorem eq_inter_YPseqCode {n i : ℕ} (hi : i < 4 ^ n) (b : Bool)
         hjunk hjunk' hzA1 hz'
 
 end YPseqCodeIFormula
-end
 
 end yPseqAtomIdx
 namespace yStepG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5769,9 +4922,7 @@ theorem fst_eq_inter_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (bx : Bool)
       rw [h1empty, hdisjYP]
 
 end CombinedCode
-end
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5862,13 +5013,11 @@ theorem fst_succ_eq_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     · rintro ⟨hx1, -, hx2⟩; exact ⟨hx1, hx2⟩
 
 end CombinedCode
-end
 
 end yStepG
 namespace atomPairG
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5910,9 +5059,7 @@ theorem snd_eq_genAtomCode (δ : ℕ → Bool × Bool) (n : ℕ) :
         exact (inter.diff_eq_diff_of_subset hB1sub).symm
 
 end CombinedCode
-end
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5951,13 +5098,11 @@ theorem fst_eq_genAtomCode (δ : ℕ → Bool × Bool) (n : ℕ) :
       rw [atomPairG.succ_eq, hstep, h2, genAtom.succ', combinedδ_odd, combinedXCode.odd, hodd]
 
 end CombinedCode
-end
 
 end atomPairG
 namespace hcoreCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -5995,9 +5140,7 @@ theorem even (δ' : ℕ → Bool) (n : ℕ) :
     P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deinterleaveδ δ') n).1
 
 end CombinedCode
-end
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6041,12 +5184,10 @@ theorem odd (δ' : ℕ → Bool) (n : ℕ) :
     P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deinterleaveδ δ') n).1.symm
 
 end CombinedCode
-end
 
 end hcoreCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6084,12 +5225,10 @@ theorem hcoreCode (δ' : ℕ → Bool) (n : ℕ) :
       hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 δ' (n / 2)
 
 end CombinedCode
-end
 
 namespace transfer
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6129,9 +5268,7 @@ theorem empty_combinedCode {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ c
       hc' hn⟩
 
 end CombinedCodeTransfer
-end
 
-section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6188,9 +5325,7 @@ theorem double_subset_combinedCode (i j k : ℕ) :
   exact key
 
 end CombinedCodeTransfer
-end
 
-section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6241,9 +5376,7 @@ theorem subset_combinedCode (i j : ℕ) :
   exact key
 
 end CombinedCodeTransfer
-end
 
-section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6327,13 +5460,11 @@ theorem inter_eq_combinedCode (i j k : ℕ)
     exact Set.Subset.antisymm (h3.mpr hijk) (Set.subset_inter (h1.mpr hki) (h2.mpr hkj))
 
 end CombinedCodeTransfer
-end
 
 end transfer
 namespace YPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XYPseqCodeZero
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6465,9 +5596,7 @@ theorem zero :
     rwa [hyzeroeq]
 
 end XYPseqCodeZero
-end
 
-section
 section CombinedCodeCrossFamily
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6499,9 +5628,7 @@ theorem subset_X_iff_Y_subset_XPseqCode (i j : ℕ) :
   exact key
 
 end CombinedCodeCrossFamily
-end
 
-section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6535,12 +5662,10 @@ theorem inter_eq_iff_Y_inter_eq (i j k : ℕ) :
   exact key
 
 end CombinedCodeTransfer
-end
 
 end YPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section CombinedCodeCrossFamily
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6572,9 +5697,7 @@ theorem X_subset_YPseqCode_iff_XPseqCode_subset_Y (i j : ℕ) :
   exact key
 
 end CombinedCodeCrossFamily
-end
 
-section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6606,9 +5729,7 @@ theorem X_subset_iff_XPseqCode_subset (i j : ℕ) :
   exact key
 
 end CombinedCodeTransfer
-end
 
-section
 section XEqIffXPseqCodeEq
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6649,9 +5770,7 @@ theorem X_eq_iff_XPseqCode_eq (i j : ℕ) :
         i).mpr h.symm.subset)
 
 end XEqIffXPseqCodeEq
-end
 
-section
 section CombinedCodeTransfer
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6683,12 +5802,10 @@ theorem X_inter_eq_iff_XPseqCode_inter_eq (i j k : ℕ) :
   exact key
 
 end CombinedCodeTransfer
-end
 
 namespace XPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section XYPseqCodeZero
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6760,9 +5877,7 @@ theorem zero :
     rwa [hzeroeq]
 
 end XYPseqCodeZero
-end
 
-section
 section CombinedCodeCrossFamily
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6802,13 +5917,11 @@ theorem eq_Y_iff_X_eq_YPseqCode (j k : ℕ) :
         hUnion0 hUnion1 k j).mp h.symm.subset)
 
 end CombinedCodeCrossFamily
-end
 
 end XPseqCode
 namespace toD1Code
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section ToD1CodeUpMem
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6852,12 +5965,10 @@ theorem up_mem (x : D₀.Element) {T1 T2 : Set β}
     (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 k) k).mpr rfl).symm
 
 end ToD1CodeUpMem
-end
 
 end toD1Code
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section ToD1Code
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6900,12 +6011,10 @@ def toD1Code (x : D₀.Element) : D₁.Element where
     hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 x
 
 end ToD1Code
-end
 
 namespace toD0Code
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section ToD0CodeUpMem
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6949,12 +6058,10 @@ theorem up_mem (y : D₁.Element) {S1 S2 : Set α}
     k (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 k)).mp rfl
 
 end ToD0CodeUpMem
-end
 
 end toD0Code
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section ToD0Code
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -6997,12 +6104,10 @@ def toD0Code (y : D₁.Element) : D₀.Element where
     hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 y
 
 end ToD0Code
-end
 
 namespace toD0Code
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section ToD0CodeToD1Code
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -7047,13 +6152,11 @@ theorem toD1Code (x : D₀.Element) :
       n, rfl, hxS⟩
 
 end ToD0CodeToD1Code
-end
 
 end toD0Code
 namespace toD1Code
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section ToD1CodeToD0Code
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -7098,12 +6201,10 @@ theorem toD0Code (y : D₁.Element) :
       n, rfl, hyT⟩
 
 end ToD1CodeToD0Code
-end
 
 end toD1Code
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section DomainIsoCode812d
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -7150,12 +6251,10 @@ noncomputable def domainIsoCode812d : DomainIso D₀ D₁ where
       exact ⟨n, hn, hle _ hxn⟩
 
 end DomainIsoCode812d
-end
 
 namespace toD0Code
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section ToD0CodeRelIff
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -7192,13 +6291,11 @@ theorem rel_iff (m n : ℕ) :
     exact ⟨P₁.mem_X m, k, hk, P₁.mem_X k, hsub⟩
 
 end ToD0CodeRelIff
-end
 
 end toD0Code
 namespace toD1Code
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section ToD1CodeRelIff
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -7235,13 +6332,11 @@ theorem rel_iff (n m : ℕ) :
     exact ⟨P₀.mem_X n, k, hk, P₀.mem_X k, hsub⟩
 
 end ToD1CodeRelIff
-end
 
 end toD1Code
 namespace domainIsoCode812d
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section DomainIsoCode812dSymmIsComputableMap
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -7292,9 +6387,7 @@ theorem symm_isComputableMap :
     exact ⟨k, hk.1, hk.2⟩
 
 end DomainIsoCode812dSymmIsComputableMap
-end
 
-section
 section DomainIsoCode812dIsComputableMap
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -7345,7 +6438,6 @@ theorem isComputableMap :
     exact ⟨k, hk.1, hk.2⟩
 
 end DomainIsoCode812dIsComputableMap
-end
 
 end domainIsoCode812d
 section
@@ -7636,7 +6728,6 @@ theorem myAndNot_eq (a b : ℕ) : myAndNot a b = a ^^^ (a &&& b) := by
 namespace atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -7657,13 +6748,10 @@ theorem mono {n k : ℕ}
   omega
 
 end AtomPairCorrect2
-end
 
 end atomPairJunk
 
 open Domain.Recursive
-
-
 
 
 def B812e : ComputableBisection VComputablePresentation where

@@ -10,20 +10,15 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 structure IsComputableDiff {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V) where
-
   diffIdx : ℕ → ℕ → ℕ
-
   diffIdx_primrec : Nat.Primrec (fun t => diffIdx t.unpair.1 t.unpair.2)
-
   diffIdx_spec : ∀ {n m : ℕ}, (∃ k, P.X k = P.X n \ P.X m) → P.X (diffIdx n m) = P.X n \ P.X m
-
   diff_computable : RecDecidable₂ (fun n m => ∃ k, P.X k = P.X n \ P.X m)
 
 namespace IsComputableDiff
 
-variable {α : Type*} {V : NeighborhoodSystem α} {P : ComputablePresentation V}
-
-namespace diff
+variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
+variable (hDiff : IsComputableDiff P)
 
 theorem exists_iff_ne_empty (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
     (∃ k, P.X k = P.X n \ P.X m) ↔ P.X n \ P.X m ≠ ∅ := by
@@ -35,28 +30,11 @@ theorem exists_iff_ne_empty (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m :
     · exact absurd hempty hne
     · exact P.surj hmem
 
-end diff
-
-
-section DirectDec
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-variable (hDiff : IsComputableDiff P)
-
 noncomputable def existsDiffDec : ℕ → ℕ := fun t => isOne (hDiff.diff_computable.choose t)
 
-end DirectDec
-
 namespace existsDiffDec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable (hDiff : IsComputableDiff P)
 
 theorem le_one (t : ℕ) : existsDiffDec P hDiff t ≤ 1 := isOne_le_one _
-
 
 theorem spec (n m : ℕ) :
     existsDiffDec P hDiff (Nat.pair n m) = 1 ↔ ∃ k, P.X k = P.X n \ P.X m := by
@@ -67,12 +45,11 @@ theorem spec (n m : ℕ) :
   rw [unpair_pair_fst, unpair_pair_snd] at h
   exact h.symm
 
-
 theorem eq_zero_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
     existsDiffDec P hDiff (Nat.pair n m) = 0 ↔ P.X n \ P.X m = ∅ := by
   have hle := existsDiffDec.le_one P hDiff (Nat.pair n m)
   have h1 := existsDiffDec.spec P hDiff n m
-  have h2 := diff.exists_iff_ne_empty (P := P) hdiff hnomin n m
+  have h2 := exists_iff_ne_empty P hdiff hnomin n m
   constructor
   · intro h0
     by_contra hne
@@ -83,31 +60,14 @@ theorem eq_zero_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
     have h1' : existsDiffDec P hDiff (Nat.pair n m) = 1 := by omega
     exact (h2.mp (h1.mp h1')) hempty
 
-end DirectDec
-
 end existsDiffDec
-
-
-section DirectDec
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-variable (hDiff : IsComputableDiff P)
 
 noncomputable def emptyDiffDec : ℕ → ℕ := fun t => 1 - existsDiffDec P hDiff t
 
-end DirectDec
-
 namespace emptyDiffDec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable (hDiff : IsComputableDiff P)
 
 theorem le_one (t : ℕ) : emptyDiffDec P hDiff t ≤ 1 := by
   unfold emptyDiffDec; have := existsDiffDec.le_one P hDiff t; omega
-
 
 theorem eq_one_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
     emptyDiffDec P hDiff (Nat.pair n m) = 1 ↔ P.X n \ P.X m = ∅ := by
@@ -118,29 +78,27 @@ theorem eq_one_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
   · intro h1; apply h0.mp; omega
   · intro hempty; have := h0.mpr hempty; omega
 
-end DirectDec
-
 end emptyDiffDec
+
+namespace primrec
+
+theorem existsDiffDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.existsDiffDec P hDiff) :=
+  (primrec_isOne.comp hDiff.diff_computable.choose_spec.1).of_eq fun _ => rfl
+
+theorem emptyDiffDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P hDiff) :=
+  primrec_sub₂ (Nat.Primrec.const 1) (primrec.existsDiffDec P hDiff)
+
+end primrec
 
 end IsComputableDiff
 
-
-section DirectDec
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 noncomputable def existsInterDec : ℕ → ℕ := fun t => isOne (P.cons_computable.choose t)
 
-end DirectDec
-
 namespace existsInterDec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 theorem le_one (t : ℕ) : existsInterDec P t ≤ 1 := isOne_le_one _
-
 
 theorem spec (n m : ℕ) :
     existsInterDec P (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m := by
@@ -150,7 +108,6 @@ theorem spec (n m : ℕ) :
   dsimp only at h
   rw [unpair_pair_fst, unpair_pair_snd] at h
   exact h.symm
-
 
 theorem eq_zero_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
     existsInterDec P (Nat.pair n m) = 0 ↔ P.X n ∩ P.X m = ∅ := by
@@ -170,28 +127,14 @@ theorem eq_zero_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
     obtain ⟨k, hk⟩ := (existsInterDec.spec P n m).mp h1
     exact absurd (Set.subset_eq_empty hk hempty) (hnomin.mem_ne_empty (P.mem_X k))
 
-end DirectDec
-
 end existsInterDec
-
-
-section DirectDec
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 noncomputable def emptyInterDec : ℕ → ℕ := fun t => 1 - existsInterDec P t
 
-end DirectDec
-
 namespace emptyInterDec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 theorem le_one (t : ℕ) : emptyInterDec P t ≤ 1 := by
   unfold emptyInterDec; have := existsInterDec.le_one P t; omega
-
 
 theorem eq_one_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
     emptyInterDec P (Nat.pair n m) = 1 ↔ P.X n ∩ P.X m = ∅ := by
@@ -202,34 +145,9 @@ theorem eq_one_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
   · intro h1; apply h0.mp; omega
   · intro hempty; have := h0.mpr hempty; omega
 
-end DirectDec
-
 end emptyInterDec
 
-
-namespace IsComputableDiff
 namespace primrec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-variable (hDiff : IsComputableDiff P)
-
-theorem existsDiffDec : Nat.Primrec (existsDiffDec P hDiff) :=
-  (primrec_isOne.comp hDiff.diff_computable.choose_spec.1).of_eq fun _ => rfl
-
-theorem emptyDiffDec : Nat.Primrec (emptyDiffDec P hDiff) :=
-  primrec_sub₂ (Nat.Primrec.const 1) (primrec.existsDiffDec P hDiff)
-
-end DirectDec
-end primrec
-end IsComputableDiff
-
-namespace primrec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 theorem existsInterDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.existsInterDec P) :=
   (primrec_isOne.comp P.cons_computable.choose_spec.1).of_eq fun _ => rfl
@@ -237,7 +155,6 @@ theorem existsInterDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.e
 theorem emptyInterDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P) :=
   primrec_sub₂ (Nat.Primrec.const 1) (primrec.existsInterDec P)
 
-end DirectDec
 end primrec
 
 end DomainTheory.NeighbourhoodSystems

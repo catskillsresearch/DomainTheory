@@ -12,25 +12,14 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 structure ComputableBisection {γ : Type*} {W : NeighborhoodSystem γ} (Q : ComputablePresentation W) where
-
   left : ℕ → ℕ
-
   right : ℕ → ℕ
-
   left_primrec : Nat.Primrec left
-
   right_primrec : Nat.Primrec right
-
   disjoint : ∀ k, Q.X (left k) ∩ Q.X (right k) = ∅
-
   union : ∀ k, Q.X (left k) ∪ Q.X (right k) = Q.X k
-
   left_congr : ∀ k k', Q.X k = Q.X k' → Q.X (left k) = Q.X (left k')
-
   right_congr : ∀ k k', Q.X k = Q.X k' → Q.X (right k) = Q.X (right k')
-
-section
-open Domain.Recursive
 
 namespace ComputableBisection
 
@@ -39,7 +28,6 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
   {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
 open scoped Classical in
-
 noncomputable def splitFromBisection (A : Set α) (B' : Set γ) (Xn : Set α) : Set γ × Set γ :=
   if h : ∃ n m k, A = P.X n ∧ B' = Q.X m ∧ Xn = P.X k then
     if emptyInterDec P (Nat.pair h.choose h.choose_spec.choose_spec.choose) = 1 then
@@ -51,24 +39,25 @@ noncomputable def splitFromBisection (A : Set α) (B' : Set γ) (Xn : Set α) : 
   else
     splitChoice' W hWnomin A B' Xn
 
-
 noncomputable def negIdxFromBisection (n m k : ℕ) : ℕ :=
   selectFn (emptyInterDec P (Nat.pair n k)) m
     (selectFn (IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n k)) m (B.right m))
 
-section Congr
-
-variable {n n' k k' m m' : ℕ}
+noncomputable def posIdxFromBisection (n m k : ℕ) : ℕ :=
+  selectFn (emptyInterDec P (Nat.pair n k)) m
+    (selectFn (IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n k)) m (B.left m))
 
 namespace emptyDiffDec
 
-theorem congr (hdiffClosed : V.DiffClosed) (hnomin : V.NoMinimal)
+theorem congr {n n' k k' : ℕ} (hdiffClosed : V.DiffClosed) (hnomin : V.NoMinimal)
     (hn : P.X n = P.X n') (hk : P.X k = P.X k') :
-    IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n k) = IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n' k') := by
+    IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n k) =
+      IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n' k') := by
   have h1 := IsComputableDiff.emptyDiffDec.eq_one_iff P hDiff hdiffClosed hnomin n k
   have h2 := IsComputableDiff.emptyDiffDec.eq_one_iff P hDiff hdiffClosed hnomin n' k'
   rw [hn, hk] at h1
-  have hiff : IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n k) = 1 ↔ IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n' k') = 1 :=
+  have hiff : IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n k) = 1 ↔
+      IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n' k') = 1 :=
     h1.trans h2.symm
   have hle1 := IsComputableDiff.emptyDiffDec.le_one P hDiff (Nat.pair n k)
   have hle2 := IsComputableDiff.emptyDiffDec.le_one P hDiff (Nat.pair n' k')
@@ -78,7 +67,7 @@ end emptyDiffDec
 
 namespace emptyInterDec
 
-theorem congr (hpos : V.IsPositive) (hnomin : V.NoMinimal)
+theorem congr {n n' k k' : ℕ} (hpos : V.IsPositive) (hnomin : V.NoMinimal)
     (hn : P.X n = P.X n') (hk : P.X k = P.X k') :
     emptyInterDec P (Nat.pair n k) = emptyInterDec P (Nat.pair n' k') := by
   have h1 := emptyInterDec.eq_one_iff P hpos hnomin n k
@@ -91,16 +80,6 @@ theorem congr (hpos : V.IsPositive) (hnomin : V.NoMinimal)
   omega
 
 end emptyInterDec
-
-end Congr
-
-end ComputableBisection
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
 namespace splitFromBisection
 
@@ -115,7 +94,8 @@ theorem eq (hpos : V.IsPositive) (hnomin : V.NoMinimal)
   obtain ⟨hn', hm', hk'⟩ := hex.choose_spec.choose_spec.choose_spec
   have hInterEq : emptyInterDec P (Nat.pair hex.choose hex.choose_spec.choose_spec.choose) =
       emptyInterDec P (Nat.pair n k) := (emptyInterDec.congr P hpos hnomin hn' hk').symm
-  have hDiffEq : IsComputableDiff.emptyDiffDec P hDiff (Nat.pair hex.choose hex.choose_spec.choose_spec.choose) =
+  have hDiffEq : IsComputableDiff.emptyDiffDec P hDiff
+      (Nat.pair hex.choose hex.choose_spec.choose_spec.choose) =
       IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n k) :=
     (emptyDiffDec.congr P hDiff hdiffClosed hnomin hn' hk').symm
   unfold splitFromBisection
@@ -128,28 +108,9 @@ theorem eq (hpos : V.IsPositive) (hnomin : V.NoMinimal)
     rw [hl, hr]
 
 end splitFromBisection
-end ComputableBisection
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
-
-
-noncomputable def posIdxFromBisection (n m k : ℕ) : ℕ :=
-  selectFn (emptyInterDec P (Nat.pair n k)) m
-    (selectFn (IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n k)) m (B.left m))
-
-end ComputableBisection
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
 namespace primrec
+
 theorem negIdxFromBisection :
     Nat.Primrec (fun t => negIdxFromBisection P hDiff B
       t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) := by
@@ -158,28 +119,21 @@ theorem negIdxFromBisection :
   have hk : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.2) := Nat.Primrec.right.comp Nat.Primrec.right
   have hnk : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1 t.unpair.2.unpair.2) := hn.pair hk
   have hinter : Nat.Primrec
-      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
+      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P
+        (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
     (primrec.emptyInterDec P).comp hnk
   have hdiffD : Nat.Primrec
-      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P hDiff (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
+      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P hDiff
+        (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
     (IsComputableDiff.primrec.emptyDiffDec P hDiff).comp hnk
   have hright : Nat.Primrec (fun t : ℕ => B.right t.unpair.2.unpair.1) := B.right_primrec.comp hm
   have hinner : Nat.Primrec (fun t : ℕ => selectFn
-      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P hDiff (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) t.unpair.2.unpair.1
+      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P hDiff
+        (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) t.unpair.2.unpair.1
       (B.right t.unpair.2.unpair.1)) :=
     primrec_selectFn hdiffD hm hright
   exact (primrec_selectFn hinter hm hinner).of_eq fun _ => rfl
 
-end primrec
-end ComputableBisection
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
-
-namespace primrec
 theorem posIdxFromBisection :
     Nat.Primrec (fun t => posIdxFromBisection P hDiff B
       t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) := by
@@ -188,26 +142,22 @@ theorem posIdxFromBisection :
   have hk : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.2) := Nat.Primrec.right.comp Nat.Primrec.right
   have hnk : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1 t.unpair.2.unpair.2) := hn.pair hk
   have hinter : Nat.Primrec
-      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
+      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P
+        (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
     (primrec.emptyInterDec P).comp hnk
   have hdiffD : Nat.Primrec
-      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P hDiff (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
+      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P hDiff
+        (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
     (IsComputableDiff.primrec.emptyDiffDec P hDiff).comp hnk
   have hleft : Nat.Primrec (fun t : ℕ => B.left t.unpair.2.unpair.1) := B.left_primrec.comp hm
   have hinner : Nat.Primrec (fun t : ℕ => selectFn
-      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P hDiff (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) t.unpair.2.unpair.1
+      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P hDiff
+        (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) t.unpair.2.unpair.1
       (B.left t.unpair.2.unpair.1)) :=
     primrec_selectFn hdiffD hm hleft
   exact (primrec_selectFn hinter hm hinner).of_eq fun _ => rfl
 
 end primrec
-end ComputableBisection
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
 namespace isComputableSplit
 
@@ -242,8 +192,7 @@ noncomputable def ofBisection (hpos : V.IsPositive) (hnomin : V.NoMinimal)
       simp [negIdxFromBisection, h1', h2']
 
 end isComputableSplit
-end ComputableBisection
 
-end
+end ComputableBisection
 
 end DomainTheory.NeighbourhoodSystems
