@@ -196,7 +196,7 @@ line,keyword,number,label,file
 4807,EXAMPLES,8.4,"check, fade, and smash",RetractsOfTheUniversalDomain/Examples_8_4.lean
 4854,THEOREM,8.5,finitary projection test,RetractsOfTheUniversalDomain/Theorem_8_5.lean
 4890,THEOREM,8.6,sub combinator,RetractsOfTheUniversalDomain/Theorem_8_6.lean
-4928,DEFINITION,8.7,interval presentation of U,RetractsOfTheUniversalDomain/Definition_8_7.lean
+4928,DEFINITION,8.7,interval presentation of U,RetractsOfTheUniversalDomain/U.lean
 4943,THEOREM,8.8,universality of U,RetractsOfTheUniversalDomain/Theorem_8_8.lean
 5028,DEFINITION,8.9,constructs on projections,RetractsOfTheUniversalDomain/Definition_8_9.lean
 5040,PROPOSITION,8.10,constructs preserve projections,RetractsOfTheUniversalDomain/Proposition_8_10.lean

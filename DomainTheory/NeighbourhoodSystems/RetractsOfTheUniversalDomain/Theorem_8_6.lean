@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_11
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_13
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Examples_8_4
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition_8_7
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.U
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 
