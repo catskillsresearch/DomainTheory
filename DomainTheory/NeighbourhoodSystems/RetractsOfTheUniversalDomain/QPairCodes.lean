@@ -341,6 +341,29 @@ theorem recDecidable₂_presentedIntervals_eq :
     (recDecidable₂_presentedIntervals_subset.and recDecidable₂_presentedIntervals_subset.swap)
   exact Set.Subset.antisymm_iff
 
+theorem mem_decodeQPairList_appendCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
+    p ∈ decodeQPairList (Domain.Recursive.appendCode c1 c2) ↔ p ∈ decodeQPairList c1 ∨ p ∈ decodeQPairList c2 := by
+  simp only [mem_decodeQPairList, mem_decodeList_appendCode]
+  constructor
+  · rintro ⟨v, (hv | hv), rfl⟩
+    · exact Or.inl ⟨v, hv, rfl⟩
+    · exact Or.inr ⟨v, hv, rfl⟩
+  · rintro (⟨v, hv, rfl⟩ | ⟨v, hv, rfl⟩)
+    · exact ⟨v, Or.inl hv, rfl⟩
+    · exact ⟨v, Or.inr hv, rfl⟩
+
+theorem presentedIntervals_decodeQPairList_appendCode (c1 c2 : ℕ) :
+    presentedIntervals (decodeQPairList (Domain.Recursive.appendCode c1 c2))
+      = presentedIntervals (decodeQPairList c1) ∪ presentedIntervals (decodeQPairList c2) := by
+  ext x
+  simp only [presentedIntervals.mem, Set.mem_union]
+  constructor
+  · rintro ⟨p, hp, h1, h2⟩
+    rcases (mem_decodeQPairList_appendCode c1 c2 p).mp hp with hp' | hp'
+    · exact Or.inl ⟨p, hp', h1, h2⟩
+    · exact Or.inr ⟨p, hp', h1, h2⟩
+  · rintro (⟨p, hp, h1, h2⟩ | ⟨p, hp, h1, h2⟩)
+    · exact ⟨p, (mem_decodeQPairList_appendCode c1 c2 p).mpr (Or.inl hp), h1, h2⟩
+    · exact ⟨p, (mem_decodeQPairList_appendCode c1 c2 p).mpr (Or.inr hp), h1, h2⟩
 
 end DomainTheory.NeighbourhoodSystems
-
