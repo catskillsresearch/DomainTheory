@@ -2,6 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.domainIso812c
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.atomE
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.deltaPair
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsComputableDiff
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsComputableSplit
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsComputableUnion
@@ -93,22 +94,6 @@ theorem diffIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} {Q : C
   have h1 : IsComputableDiff.existsDiffDec Q hDiff (Nat.pair idx0 n0) = 1 := by unfold IsComputableDiff.emptyDiffDec at h; omega
   exact (IsComputableDiff.existsDiffDec.spec Q hDiff idx0 n0).mp h1
 
-def encodeDeltaPair (δ : ℕ → Bool × Bool) : ℕ → ℕ
-  | 0 => 0
-  | n + 1 => encodeDeltaPair δ n +
-      ((if (δ n).1 then 1 else 0) + (if (δ n).2 then 2 else 0)) * 4 ^ n
-
-theorem encodeDeltaPair_lt (δ : ℕ → Bool × Bool) : ∀ n, encodeDeltaPair δ n < 4 ^ n
-  | 0 => by simp [encodeDeltaPair]
-  | n + 1 => by
-      have ih := encodeDeltaPair_lt δ n
-      have h4 : (4 : ℕ) ^ (n + 1) = 4 ^ n * 4 := pow_succ 4 n
-      show encodeDeltaPair δ n +
-        ((if (δ n).1 then 1 else 0) + (if (δ n).2 then 2 else 0)) * 4 ^ n < 4 ^ (n + 1)
-      rcases Bool.eq_false_or_eq_true (δ n).1 with h1 | h1 <;>
-        rcases Bool.eq_false_or_eq_true (δ n).2 with h2 | h2 <;>
-        simp only [h1, h2, ite_true, ite_false, Bool.false_eq_true] <;> omega
-
 theorem interIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} (Q : ComputablePresentation W)
     {idx0 n0 : ℕ} (h : emptyInterDec Q (Nat.pair idx0 n0) = 0) :
     Q.X (Q.inter idx0 n0) = Q.X idx0 ∩ Q.X n0 := by
@@ -124,68 +109,6 @@ theorem junk_eq_zero_of_selectFn_eq_zero {junk X : ℕ} (h : selectFn junk 1 X =
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-def deltaPair (k : ℕ) : ℕ → Bool × Bool :=
-  fun i => (decide ((k / 4 ^ i) % 2 = 1), decide ((k / 4 ^ i / 2) % 2 = 1))
-
-namespace deltaPair
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-theorem fst_eq_testBit (k i : ℕ) : (deltaPair k i).1 = k.testBit (2 * i) := by
-  show decide ((k / 4 ^ i) % 2 = 1) = k.testBit (2 * i)
-  rw [Nat.testBit_eq_decide_div_mod_eq, show (4 : ℕ) ^ i = 2 ^ (2 * i) by
-    rw [show (4 : ℕ) = 2 ^ 2 from rfl, ← pow_mul]]
-
-theorem snd_eq_testBit (k i : ℕ) : (deltaPair k i).2 = k.testBit (2 * i + 1) := by
-  show decide ((k / 4 ^ i / 2) % 2 = 1) = k.testBit (2 * i + 1)
-  rw [Nat.div_div_eq_div_mul, Nat.testBit_eq_decide_div_mod_eq, show (4 : ℕ) ^ i * 2 = 2 ^ (2 * i + 1)
-    by rw [show (4 : ℕ) = 2 ^ 2 from rfl, ← pow_mul, pow_succ]]
-
-theorem encodeDeltaPair (δ : ℕ → Bool × Bool) :
-    ∀ n i, i < n → deltaPair (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n) i = δ i := by
-  intro n
-  induction n with
-  | zero => intro i hi; exact absurd hi (Nat.not_lt_zero i)
-  | succ n ih =>
-    intro i hi
-    rcases Nat.lt_succ_iff_lt_or_eq.mp hi with hi' | rfl
-    · show (decide ((_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (n + 1) / 4 ^ i) % 2 = 1),
-          decide ((_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (n + 1) / 4 ^ i / 2) % 2 = 1)) = δ i
-      have key : _root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (n + 1) / 4 ^ i % 4 = _root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n / 4 ^ i % 4 := by
-        show (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n +
-          ((if (δ n).1 then 1 else 0) + (if (δ n).2 then 2 else 0)) * 4 ^ n) / 4 ^ i % 4 = _
-        obtain ⟨j, rfl⟩ := Nat.exists_eq_add_of_lt hi'
-        have heq : ((if (δ (i + j + 1)).1 then 1 else 0) + (if (δ (i + j + 1)).2 then 2 else 0)) *
-            4 ^ (i + j + 1) = 4 ^ i * (4 * 4 ^ j *
-              ((if (δ (i + j + 1)).1 then 1 else 0) + (if (δ (i + j + 1)).2 then 2 else 0))) := by
-          ring
-        rw [heq, Nat.add_mul_div_left _ _ (pow_pos (by norm_num) i)]
-        rw [show 4 * 4 ^ j *
-            ((if (δ (i + j + 1)).1 then 1 else 0) + (if (δ (i + j + 1)).2 then 2 else 0)) =
-            4 * (4 ^ j * ((if (δ (i + j + 1)).1 then 1 else 0) +
-              (if (δ (i + j + 1)).2 then 2 else 0))) by ring]
-        exact Nat.add_mul_mod_self_left _ _ _
-      have h1 : (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (n + 1) / 4 ^ i) % 2 =
-          (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n / 4 ^ i) % 2 := by omega
-      have h2 : (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (n + 1) / 4 ^ i / 2) % 2 =
-          (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n / 4 ^ i / 2) % 2 := by omega
-      rw [h1, h2]
-      show (decide ((_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n / 4 ^ i) % 2 = 1),
-          decide ((_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n / 4 ^ i / 2) % 2 = 1)) = δ i
-      exact ih i hi'
-    · have hd : _root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (i + 1) / 4 ^ i =
-          (if (δ i).1 then 1 else 0) + (if (δ i).2 then 2 else 0) := by
-        show (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ i +
-            ((if (δ i).1 then 1 else 0) + (if (δ i).2 then 2 else 0)) * 4 ^ i) / 4 ^ i = _
-        rw [Nat.add_mul_div_right _ _ (pow_pos (by norm_num) i),
-          Nat.div_eq_of_lt (encodeDeltaPair_lt δ i), Nat.zero_add]
-      show (decide ((_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (i + 1) / 4 ^ i) % 2 = 1),
-          decide ((_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (i + 1) / 4 ^ i / 2) % 2 = 1)) = δ i
-      rw [hd]
-      rcases Bool.eq_false_or_eq_true (δ i).1 with h1 | h1 <;>
-        rcases Bool.eq_false_or_eq_true (δ i).2 with h2 | h2 <;>
-        simp [h1, h2, Prod.ext_iff]
-
-end deltaPair
 namespace selectFn
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
@@ -716,7 +639,7 @@ theorem master_covered_deltaPair (n : ℕ) :
   intro z hz
   obtain ⟨δ', hδ'⟩ := atomPairG.master_covered D₀ D₁ hD₀pos hD₀diff splitY hySplit hD₁pos hD₁diff
     splitX hxSplit X Y hXmem hYmem hD₀mne hD₁mne n z hz
-  refine ⟨encodeDeltaPair (extendTruePair δ') n, encodeDeltaPair_lt _ n, ?_⟩
+  refine ⟨encodeDeltaPair (extendTruePair δ') n, encodeDeltaPair.lt _ n, ?_⟩
   rw [atomPairG.congr D₀ D₁ splitY splitX X Y
     (fun i hi => deltaPair.encodeDeltaPair (extendTruePair δ') n i hi)]
   exact hδ'
@@ -835,7 +758,7 @@ theorem master_covered_deltaPair_snd (n : ℕ) :
   intro z hz
   obtain ⟨δ', hδ'⟩ := atomPairG.master_covered_snd D₀ D₁ hD₀pos hD₀diff splitY hySplit hD₁pos
     hD₁diff splitX hxSplit X Y hXmem hYmem hD₀mne hD₁mne n z hz
-  refine ⟨encodeDeltaPair (extendTruePair δ') n, encodeDeltaPair_lt _ n, ?_⟩
+  refine ⟨encodeDeltaPair (extendTruePair δ') n, encodeDeltaPair.lt _ n, ?_⟩
   rw [atomPairG.congr D₀ D₁ splitY splitX X Y
     (fun i hi => deltaPair.encodeDeltaPair (extendTruePair δ') n i hi)]
   exact hδ'
@@ -1292,31 +1215,6 @@ theorem le_one (k n : ℕ) :
 
 end atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-theorem exists_deltaPair_ne_of_lt_of_ne {n k k' : ℕ} (hk : k < 4 ^ n) (hk' : k' < 4 ^ n)
-    (hne : k ≠ k') : ∃ i < n, deltaPair k i ≠ deltaPair k' i := by
-  by_contra hcon
-  push Not at hcon
-  exact hne (by
-    apply Nat.eq_of_testBit_eq
-    intro l
-    rcases Nat.lt_or_ge l (2 * n) with hl | hl
-    · rcases Nat.mod_two_eq_zero_or_one l with hmod | hmod
-      · have hl2 : l = 2 * (l / 2) := by omega
-        have hi : l / 2 < n := by omega
-        have heq := congrArg Prod.fst (hcon (l / 2) hi)
-        rw [deltaPair.fst_eq_testBit, deltaPair.fst_eq_testBit] at heq
-        rwa [hl2]
-      · have hl2 : l = 2 * (l / 2) + 1 := by omega
-        have hi : l / 2 < n := by omega
-        have heq := congrArg Prod.snd (hcon (l / 2) hi)
-        rw [deltaPair.snd_eq_testBit, deltaPair.snd_eq_testBit] at heq
-        rwa [hl2]
-    · have h4n : (4 : ℕ) ^ n = 2 ^ (2 * n) := by
-        rw [show (4 : ℕ) = 2 ^ 2 from rfl, ← pow_mul]
-      have hile : (2 : ℕ) ^ (2 * n) ≤ 2 ^ l := Nat.pow_le_pow_right (by norm_num) hl
-      rw [Nat.testBit_lt_two_pow ((h4n ▸ hk).trans_le hile),
-        Nat.testBit_lt_two_pow ((h4n ▸ hk').trans_le hile)])
 
 section
 
@@ -3948,7 +3846,7 @@ theorem eq_inter_XPseqCode {n k : ℕ} (hk : k < 4 ^ n)
         have h := hjunk'
         rw [xPseqAtomJunk.eq] at h
         exact junk_eq_zero_of_selectFn_eq_zero h
-      obtain ⟨i, hi, hne⟩ := exists_deltaPair_ne_of_lt_of_ne hk' hk hkk'
+      obtain ⟨i, hi, hne⟩ := deltaPair.exists_ne_of_lt_of_ne hk' hk hkk'
       have hdisj := (atomPairCodeState.disjoint P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
         hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne
         (n := n) (k := k') (k' := k) hAjunk' hAjunk ⟨i, hi, hne⟩).2
@@ -3987,7 +3885,7 @@ theorem snd_eq_inter_XPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) :
         P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n) := by
   simp only [xStepG, xyStep, ite_true]
   set k := encodeDeltaPair δ n with hkdef
-  have hklt : k < 4 ^ n := encodeDeltaPair_lt δ n
+  have hklt : k < 4 ^ n := encodeDeltaPair.lt δ n
   have hagree : ∀ i < n, δ i = deltaPair k i := fun i hi =>
     (deltaPair.encodeDeltaPair δ n i hi).symm
   have hcongr : atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n =
@@ -4062,7 +3960,7 @@ theorem snd_eq_inter_XPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) :
             hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hjunk' hz'
         have hzB' : z ∈ P₁.X (atomPairIdx1 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k) :=
           hcs.2 ▸ hzB
-        obtain ⟨i, hi, hne⟩ := exists_deltaPair_ne_of_lt_of_ne hklt hk'lt hkk'.symm
+        obtain ⟨i, hi, hne⟩ := deltaPair.exists_ne_of_lt_of_ne hklt hk'lt hkk'.symm
         have hdisj := (atomPairCodeState.disjoint P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
           hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne
           (n := n) (k := k) (k' := k') hAjunk hAjunk' ⟨i, hi, hne⟩).2
@@ -4388,7 +4286,7 @@ theorem eq_of_dichotomy {n i i' : ℕ} {z : α} (b b' : Bool)
     have hAjunk' : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i' = 0 :=
       atomPairJunk.eq_zero_of_yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY b'
         hjunk'
-    obtain ⟨j, hj, hne⟩ := exists_deltaPair_ne_of_lt_of_ne hi' hi hii'
+    obtain ⟨j, hj, hne⟩ := deltaPair.exists_ne_of_lt_of_ne hi' hi hii'
     have hdisj := (atomPairCodeState.disjoint P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
       hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne (n := n)
       (k := i') (k' := i) hAjunk' hAjunk ⟨j, hj, hne⟩).1
@@ -4491,7 +4389,7 @@ theorem fst_eq_inter_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (bx : Bool)
           (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).2 (P₀.X n) bx).1 ∩
         P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n) := by
   set k := encodeDeltaPair δ n with hkdef
-  have hklt : k < 4 ^ n := encodeDeltaPair_lt δ n
+  have hklt : k < 4 ^ n := encodeDeltaPair.lt δ n
   have hagree : ∀ i < n, δ i = deltaPair k i := fun i hi =>
     (deltaPair.encodeDeltaPair δ n i hi).symm
   have hcongr : atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n =
@@ -4650,7 +4548,7 @@ theorem fst_eq_inter_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (bx : Bool)
           · have hAjunk' : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k' = 0 :=
               atomPairJunk.eq_zero_of_yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
                 hSplitY false hjunk'
-            obtain ⟨j, hj, hne⟩ := exists_deltaPair_ne_of_lt_of_ne hk'lt hklt hkk'
+            obtain ⟨j, hj, hne⟩ := deltaPair.exists_ne_of_lt_of_ne hk'lt hklt hkk'
             have hdisj := (atomPairCodeState.disjoint P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
               hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne
               hD₁mne (n := n) (k := k') (k' := k) hAjunk' hAjunk ⟨j, hj, hne⟩).1
@@ -4683,7 +4581,7 @@ theorem fst_eq_inter_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (bx : Bool)
           · have hAjunk' : atomPairJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n k' = 0 :=
               atomPairJunk.eq_zero_of_yPseqAtomJunk P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
                 hSplitY true hjunk'
-            obtain ⟨j, hj, hne⟩ := exists_deltaPair_ne_of_lt_of_ne hk'lt hklt hkk'
+            obtain ⟨j, hj, hne⟩ := deltaPair.exists_ne_of_lt_of_ne hk'lt hklt hkk'
             have hdisj := (atomPairCodeState.disjoint P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
               hSplitY hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne
               hD₁mne (n := n) (k := k') (k' := k) hAjunk' hAjunk ⟨j, hj, hne⟩).1
