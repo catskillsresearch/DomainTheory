@@ -37,6 +37,14 @@ Given two positive, difference-closed, atomless neighbourhood systems with enume
 
 @import "domainIso812c.lean"
 
+### Abstract `E`-side atoms
+
+The one-sided atom apparatus against an abstract neighbourhood system `E` (the `atomU` analogue) lives under `atomE`, with Pref-folded companions `atomE.zero`, `atomE.succ`, `atomE.congr`, `atomE.invariant`, …
+
+**[atomE.lean](atomE.lean)** — `atomE`, `YseqE`, and Pref-folded `atomE.xxx` lemmas
+
+@import "atomE.lean"
+
 ### Effective isomorphism (8.12(d))
 
 The same back-and-forth is carried out on computable presentations: coded atom sequences, primitivity of the step maps, and the order isomorphism `domainIsoCode812d` lift to an `EffectiveIso`. The generic assembly is `effectiveIso812d`.
