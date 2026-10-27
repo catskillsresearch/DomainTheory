@@ -4,20 +4,40 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Examples_8_4
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise_8_15
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem_8_8
 
 @[expose] public section
 
 section
 namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
-open Domain.Recursive NeighborhoodSystem
-open Domain.Recursive NeighborhoodSystem
 open NeighborhoodSystem ApproximableMap
 section
 universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 /- concordance: source L5163 EXERCISE 8.16 order of projections -/
+/-- **Exercise 8.16, Part 1 (Scott 1981, PRG-19).** For finitary projections `a, b : E → E`,
+`a ≤ b ↔ D_a ◁ D_b` where `D_a := fixedNbhd a = {X ∈ E ∣ X a X}` (Theorem 8.5's subdomain). This is
+exactly Theorem 8.6(a)'s order-isomorphism `finitaryProjectionSubsystemEquiv`, restricted from
+`sub`-fixed points to finitary projections via `sub_eq_self_iff_isFinitaryProjection`, and fills the
+gap Scott leaves at the end of the proof of Theorem 8.6. -/
+theorem isFinitaryProjection_le_iff_fixedNbhd_subsystem {a b : ApproximableMap E E}
+    (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    a ≤ b ↔ fixedNbhd a ◁ fixedNbhd b := by
+  have hsa : sub a = a := sub_eq_self_iff_isFinitaryProjection.mpr ha
+  have hsb : sub b = b := sub_eq_self_iff_isFinitaryProjection.mpr hb
+  set fa : {f : ApproximableMap E E // sub f = f} := ⟨a, hsa⟩ with hfa_def
+  set fb : {f : ApproximableMap E E // sub f = f} := ⟨b, hsb⟩ with hfb_def
+  constructor
+  · intro hab
+    have hfab : fa ≤ fb := hab
+    exact (finitaryProjectionSubsystemEquiv E).monotone hfab
+  · intro hD
+    have hle : (finitaryProjectionSubsystemEquiv E) fa ≤ (finitaryProjectionSubsystemEquiv E) fb :=
+      hD
+    have hback := (finitaryProjectionSubsystemEquiv E).symm.monotone hle
+    rwa [OrderIso.symm_apply_apply, OrderIso.symm_apply_apply] at hback
+
 /-- **Exercise 8.16 (Scott 1981, PRG-19), in full.**
 
 Part 1: for finitary projections `a, b : E → E`, `a ≤ b ↔ D_a ◁ D_b` (fills the gap at the end of
@@ -36,74 +56,6 @@ theorem exercise_8_16 :
     fun hcomp => fixedNbhd_isEffectivelyGiven hcomp⟩
 end
 
-section
-set_option linter.unusedVariables false
-
-theorem example_816.{u} : And
-  (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
-    And
-      (∀ {a b : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-        @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
-          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E b →
-            Iff
-              (@LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-                (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-                  (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap α α E E)))
-                a b)
-              (@DomainTheory.NeighbourhoodSystems.Subsystem α (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E a)
-                (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E b)))
-      (∀ {P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α E}
-        {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-        @DomainTheory.NeighbourhoodSystems.ComputableMap α α E E P P a →
-          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α
-            (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E a)))
-  (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {a b : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-    @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
-      @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E b →
-        Iff
-          (@LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-            (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-              (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap α α E E)))
-            a b)
-          (@DomainTheory.NeighbourhoodSystems.Subsystem α (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E a)
-            (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E b))) :=
-  @And.intro
-  (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
-    And
-      (∀ {a b : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-        @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
-          @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E b →
-            Iff
-              (@LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-                (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-                  (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap α α E E)))
-                a b)
-              (@DomainTheory.NeighbourhoodSystems.Subsystem α (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E a)
-                (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E b)))
-      (∀ {P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α E}
-        {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-        @DomainTheory.NeighbourhoodSystems.ComputableMap α α E E P P a →
-          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α
-            (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E a)))
-  (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {a b : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-    @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E a →
-      @DomainTheory.NeighbourhoodSystems.FinitaryProjection α E b →
-        Iff
-          (@LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-            (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-              (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap α α E E)))
-            a b)
-          (@DomainTheory.NeighbourhoodSystems.Subsystem α (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E a)
-            (@DomainTheory.NeighbourhoodSystems.fixedNbhd α E b)))
-  @DomainTheory.NeighbourhoodSystems.exercise_8_16
-  @DomainTheory.NeighbourhoodSystems.isFinitaryProjection_le_iff_fixedNbhd_subsystem
-end
 
 end DomainTheory.NeighbourhoodSystems
 end

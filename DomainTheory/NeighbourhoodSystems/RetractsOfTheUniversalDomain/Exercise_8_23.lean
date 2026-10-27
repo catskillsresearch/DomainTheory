@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise_8_15
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise_8_16
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Examples_8_4
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
