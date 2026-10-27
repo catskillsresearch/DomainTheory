@@ -72,4 +72,5 @@ def atomStep (datomDec : ℕ → ℕ) (w : ℕ) : ℕ :=
       (selectFn emptyI 0 (selectFn emptyJ (stateCode s) (splitULeft (stateCode s))))
       (selectFn emptyJ 0 (selectFn emptyI (stateCode s) (splitURight (stateCode s)))))
 
+
 end DomainTheory.NeighbourhoodSystems

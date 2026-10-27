@@ -457,4 +457,12 @@ theorem forall_lt_decodeQPairList_canonCode (c : ℕ) :
     rw [hzero, selectFn_zero]
     exact forall_lt_decodeQPairList_canonListCode c
 
+theorem U_mem_union_UX (n m : ℕ) : U.mem (UX n ∪ UX m) := by
+  obtain ⟨-, hne1, hsub1⟩ := U_mem_UX n
+  obtain ⟨-, -, hsub2⟩ := U_mem_UX m
+  exact ⟨⟨decodeQPairList (canonCode n) ++ decodeQPairList (canonCode m),
+      (presentedIntervals.append _ _).symm⟩, hne1.mono Set.subset_union_left,
+    Set.union_subset hsub1 hsub2⟩
+
+
 end DomainTheory.NeighbourhoodSystems

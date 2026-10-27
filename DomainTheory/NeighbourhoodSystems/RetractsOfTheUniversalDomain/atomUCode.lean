@@ -287,4 +287,16 @@ theorem subset {n k : ℕ} (h : atomUEmpty P (n + 1) k = 0) :
 theorem mem (n k : ℕ) : U.mem (UX (atomUCode P n k)) := U_mem_UX _
 end atomUCode
 
+theorem atomUEmpty_congr {n k k' : ℕ} (h : ∀ i < n, deltaOf k i = deltaOf k' i) :
+    atomUEmpty P n k = atomUEmpty P n k' := by
+  obtain ⟨hpos, hneg, -⟩ := atomUCodeState_congr P h
+  unfold atomUEmpty
+  rw [hpos, hneg]
+
+theorem atomUEmpty_zero_or_one (n k : ℕ) : atomUEmpty P n k = 0 ∨ atomUEmpty P n k = 1 := by
+  have h := datomDec_le_one P (Nat.pair (atomUPos P n k) (atomUNeg P n k))
+  unfold atomUEmpty
+  omega
+
+
 end DomainTheory.NeighbourhoodSystems
