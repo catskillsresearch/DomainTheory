@@ -204,8 +204,12 @@ noncomputable def JSharpComb (a : ApproximableMap U U) :
 noncomputable def aSharp (a : ApproximableMap U U) : ApproximableMap U U :=
   iSharp.comp ((aSharpInner a).comp jSharp)
 
-theorem aSharp_eq (a : ApproximableMap U U) :
+namespace aSharp
+
+theorem eq (a : ApproximableMap U U) :
     aSharp a = iSharp.comp ((aSharpInner a).comp jSharp) := rfl
+
+end aSharp
 
 theorem jSharp_comp_iSharp : jSharp.comp iSharp = idMap _ :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.1
@@ -390,7 +394,7 @@ theorem ISharpComb_comp_JSharpComb {a : ApproximableMap U U} (ha : FinitaryProje
   unfold ISharpComb JSharpComb
   rw [comp_assoc, ← comp_assoc (dsharpMap _ _ _) (dsharpMap _ _ _) jSharp, ← dsharpMap_comp,
     inj_comp_proj_eq_self ha, dsharpMap_self_eq_aSharpInner]
-  exact (aSharp_eq a).symm
+  exact (aSharp.eq a).symm
 
 /-- **`J ∘ I = I_{(D_a)§}`**, unconditionally (no finitary/projection hypothesis on `a` needed). -/
 theorem JSharpComb_comp_ISharpComb (a : ApproximableMap U U) :
@@ -523,9 +527,11 @@ variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 theorem iSharp_comp_jSharp_le : iSharp.comp jSharp ≤ idMap U :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.2.1
 
+namespace aSharp
+
 /-- **`a ≤ I ⟹ a§ ≤ I`** (half of "`a` a projection ⟹ `a§` a projection", Proposition 8.10's
 proof recipe transcribed to `§`). -/
-theorem aSharp_le_idMap_of_le {a : ApproximableMap U U} (ha : a ≤ idMap U) :
+theorem le_idMap_of_le {a : ApproximableMap U U} (ha : a ≤ idMap U) :
     aSharp a ≤ idMap U := by
   have h1 : (inSharpMap U_mem_nonempty).comp a ≤ inSharpMap U_mem_nonempty := by
     calc (inSharpMap U_mem_nonempty).comp a
@@ -536,11 +542,13 @@ theorem aSharp_le_idMap_of_le {a : ApproximableMap U U} (ha : a ≤ idMap U) :
         ≤ gMap (inSharpMap U_mem_nonempty) (pairSharpMap U_mem_nonempty) U_mem_nonempty :=
           gMap_mono U_mem_nonempty h1 le_rfl
       _ = idMap (Dsharp U U_mem_nonempty) := gMap_inSharp_pairSharp_eq_idMap
-  calc aSharp a = iSharp.comp ((aSharpInner a).comp jSharp) := aSharp_eq a
+  calc aSharp a = iSharp.comp ((aSharpInner a).comp jSharp) := eq a
     _ ≤ iSharp.comp ((idMap (Dsharp U U_mem_nonempty)).comp jSharp) :=
         comp_mono_gen le_rfl (comp_mono_gen h2 le_rfl)
     _ = iSharp.comp jSharp := by rw [idMap_comp]
     _ ≤ idMap U := iSharp_comp_jSharp_le
+
+end aSharp
 
 /-- **`U§ ⊴ U`.** -/
 theorem dsharpU_trianglelefteq_U : Dsharp U U_mem_nonempty ⊴ U :=
@@ -551,19 +559,25 @@ theorem iSharp_isComputableMap :
       UComputablePresentation iSharp :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.2.2.1
 
+namespace aSharp
+
 /-- **`a§` is finitary whenever `a` is a finitary projection.** -/
-theorem isFinitary_aSharp {a : ApproximableMap U U} (ha : FinitaryProjection a) :
+theorem isFinitary {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     IsFinitary (aSharp a) :=
   isFinitary_of_projectionPair (ISharpComb a) (JSharpComb a) (JSharpComb_comp_ISharpComb a)
     (ISharpComb_comp_JSharpComb ha).symm
+
+end aSharp
 
 theorem jSharp_isComputableMap :
     ComputableMap UComputablePresentation
       (dsharpPresentation UComputablePresentation U_mem_nonempty) jSharp :=
   (theorem_8_8_b_strong (dsharpPresentation UComputablePresentation U_mem_nonempty)).choose_spec.choose_spec.2.2.2
 
+namespace aSharp
+
 /-- **`a§` is computable whenever `a` is.** -/
-theorem aSharp_isComputable {a : ApproximableMap U U}
+theorem isComputable {a : ApproximableMap U U}
     (ha : ComputableMap UComputablePresentation UComputablePresentation a) :
     ComputableMap UComputablePresentation UComputablePresentation (aSharp a) := by
   have hu : ComputableMap UComputablePresentation
@@ -577,12 +591,14 @@ theorem aSharp_isComputable {a : ApproximableMap U U}
       (pairSharp_isComputable U_mem_nonempty UComputablePresentation)
   exact comp_isComputable (comp_isComputable jSharp_isComputableMap hInner) iSharp_isComputableMap
 
+end aSharp
+
 /-- **`a§`, unfolded one step through the `U§ ⊴ U` projection pair.** Mirrors
 `Proposition810.lean`'s `toElementMap_prodComb`/`toElementMap_arrowComb` pattern. -/
 theorem toElementMap_aSharp (a : ApproximableMap U U) (x : U.Element) :
     (aSharp a).toElementMap x
       = iSharp.toElementMap ((aSharpInner a).toElementMap (jSharp.toElementMap x)) := by
-  rw [aSharp_eq]
+  rw [aSharp.eq]
   simp only [toElementMap_comp]
 
 /-- **Exercise 8.21(b)(3).** Idempotence of `aSharpInner a` transports through the projection pair
@@ -600,20 +616,20 @@ theorem isRetraction_aSharp {a : ApproximableMap U U} (ha2 : Retraction (aSharpI
     toElementMap_idem_of_isRetraction ha2]
 
 /-- **Exercise 8.21(b), assembled.** `a` a projection of `U` `⟹` `a§` a projection: the `≤ I` half
-is 8.21(a)'s `aSharp_le_idMap_of_le`; the retraction half chains `aSharpInner_idem_of_isRetraction`
+is 8.21(a)'s `aSharp.le_idMap_of_le`; the retraction half chains `aSharpInner_idem_of_isRetraction`
 (the `gMap`-level idempotence, via the catamorphism-uniqueness lemma `gMap_eq_of_satisfies`) with
 `isRetraction_aSharp` (transport through `U§ ⊴ U`). This completes "`a` a projection ⟹ `a§` a
 projection" in full, matching `Proposition810.lean`'s `isProjection_sumComb`/`isProjection_prodComb`/
 `isProjection_arrowComb`. -/
 theorem isProjection_aSharp {a : ApproximableMap U U} (ha : IsProjection a) :
     IsProjection (aSharp a) :=
-  ⟨isRetraction_aSharp (aSharpInner_idem_of_isRetraction ha.1), aSharp_le_idMap_of_le ha.2⟩
+  ⟨isRetraction_aSharp (aSharpInner_idem_of_isRetraction ha.1), aSharp.le_idMap_of_le ha.2⟩
 
 /-- **Exercise 8.21, in full (Scott 1981, PRG-19).** `a` a finitary projection of `U` `⟹` `a§` is
 a finitary projection of `U`, with `D_{a§} ≅ (D_a)§`. -/
 theorem isFinitaryProjection_aSharp {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     FinitaryProjection (aSharp a) :=
-  ⟨⟨isProjection_aSharp ha.out.1, isFinitary_aSharp ha⟩⟩
+  ⟨⟨isProjection_aSharp ha.out.1, aSharp.isFinitary ha⟩⟩
 
 end
 
