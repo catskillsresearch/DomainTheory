@@ -16,14 +16,6 @@ The tip records that Scott’s map `a` on `R` is a projection and is not finitar
 
 ## Development
 
-Builds the Dedekind-cut system `R` and proves the projection `a` is not finitary.
-
-**[Exercise811.lean](Exercise811.lean)**
-
-@import "Exercise811.lean"
-
-The tip then assembles those tools into Scott’s statement.
-
 **[Exercise_8_11.lean](Exercise_8_11.lean)** — `exercise_8_11`
 
 @import "Exercise_8_11.lean"

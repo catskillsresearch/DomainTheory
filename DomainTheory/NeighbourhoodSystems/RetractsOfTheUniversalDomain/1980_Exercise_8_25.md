@@ -36,12 +36,6 @@ Rational-interval coding used by effective presentations.
 
 Builds a non-trivial reflexive domain `D ≅ D→D` containing `U`.
 
-**[Exercise825.lean](Exercise825.lean)**
-
-@import "Exercise825.lean"
-
-The tip then assembles those tools into Scott’s statement.
-
 **[Exercise_8_25.lean](Exercise_8_25.lean)** — `exercise_8_25`
 
 @import "Exercise_8_25.lean"

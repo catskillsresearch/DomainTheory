@@ -12,14 +12,6 @@ The tip asserts closure of `⊴` under sum and product under Scott’s hypothese
 
 ## Development
 
-Closes `⊴` under sum and product given a terminal object and a function-space retract.
-
-**[Exercise819.lean](Exercise819.lean)**
-
-@import "Exercise819.lean"
-
-The tip then assembles those tools into Scott’s statement.
-
 **[Exercise_8_19.lean](Exercise_8_19.lean)** — `exercise_8_19`
 
 @import "Exercise_8_19.lean"

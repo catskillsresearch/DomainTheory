@@ -18,14 +18,6 @@ The tip asserts the concrete embedding relation between Scott’s examples `C` a
 
 ## Development
 
-Compares Scott’s concrete examples `B` and `C`.
-
-**[Exercise822.lean](Exercise822.lean)**
-
-@import "Exercise822.lean"
-
-The tip then assembles those tools into Scott’s statement.
-
 **[Exercise_8_22.lean](Exercise_8_22.lean)** — `exercise_8_22`
 
 @import "Exercise_8_22.lean"

@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition_7_1
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise811
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise_8_11
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 
