@@ -786,9 +786,9 @@ theorem isSplitSpec' (hpos : V.IsPositive) (hnomin : V.NoMinimal)
       refine ⟨Or.inl rfl, hBW, iff_of_true hInterEmpty rfl, ?_, Set.empty_union _,
         Set.empty_inter _⟩
       rw [hdiffEq]; exact hAB
-    · by_cases h2 : emptyDiffDec P hDiff (Nat.pair n k) = 1
+    · by_cases h2 : IsComputableDiff.emptyDiffDec P hDiff (Nat.pair n k) = 1
       · have hDiffEmpty : P.X n \ P.X k = ∅ :=
-          (emptyDiffDec.eq_one_iff P hDiff hdiffClosed hnomin n k).mp h2
+          (IsComputableDiff.emptyDiffDec.eq_one_iff P hDiff hdiffClosed hnomin n k).mp h2
         have hInterEq : P.X n ∩ P.X k = P.X n := by
           ext x
           simp only [Set.mem_inter_iff]
@@ -802,7 +802,7 @@ theorem isSplitSpec' (hpos : V.IsPositive) (hnomin : V.NoMinimal)
       · have h1' : P.X n ∩ P.X k ≠ ∅ :=
           fun he => h1 ((emptyInterDec.eq_one_iff P hpos hnomin n k).mpr he)
         have h2' : P.X n \ P.X k ≠ ∅ :=
-          fun he => h2 ((emptyDiffDec.eq_one_iff P hDiff hdiffClosed hnomin n k).mpr he)
+          fun he => h2 ((IsComputableDiff.emptyDiffDec.eq_one_iff P hDiff hdiffClosed hnomin n k).mpr he)
         rw [ite_eq_right h1, ite_eq_right h2]
         exact ⟨Or.inr (Q.mem_X _), Or.inr (Q.mem_X _), iff_of_false h1' (hQne _),
           iff_of_false h2' (hQne _), B.union m, B.disjoint m⟩

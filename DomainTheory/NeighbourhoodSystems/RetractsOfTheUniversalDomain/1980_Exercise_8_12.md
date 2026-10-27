@@ -45,6 +45,26 @@ The one-sided atom apparatus against an abstract neighbourhood system `E` (the `
 
 @import "atomE.lean"
 
+### Computable presentation predicates
+
+The data-carrying structures for computable difference, split, union, and bisection each live in their own library module, with Pref-folded companions under the structure namespace.
+
+**[IsComputableDiff.lean](IsComputableDiff.lean)** — `IsComputableDiff` and Diff-side deciders
+
+@import "IsComputableDiff.lean"
+
+**[IsComputableSplit.lean](IsComputableSplit.lean)** — `IsComputableSplit`
+
+@import "IsComputableSplit.lean"
+
+**[IsComputableUnion.lean](IsComputableUnion.lean)** — `IsComputableUnion` and `combineFound2`
+
+@import "IsComputableUnion.lean"
+
+**[ComputableBisection.lean](ComputableBisection.lean)** — `ComputableBisection` and bisection-derived splits
+
+@import "ComputableBisection.lean"
+
 ### Effective isomorphism (8.12(d))
 
 The same back-and-forth is carried out on computable presentations: coded atom sequences, primitivity of the step maps, and the order isomorphism `domainIsoCode812d` lift to an `EffectiveIso`. The generic assembly is `effectiveIso812d`.

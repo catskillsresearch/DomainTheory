@@ -2,6 +2,10 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.domainIso812c
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.atomE
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsComputableDiff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsComputableSplit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsComputableUnion
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ComputableBisection
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_18
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem_7_5
 public import Mathlib.Data.Nat.Bitwise
@@ -16,46 +20,6 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 
-structure IsComputableDiff {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V) where
-
-  diffIdx : ℕ → ℕ → ℕ
-
-  diffIdx_primrec : Nat.Primrec (fun t => diffIdx t.unpair.1 t.unpair.2)
-
-  diffIdx_spec : ∀ {n m : ℕ}, (∃ k, P.X k = P.X n \ P.X m) → P.X (diffIdx n m) = P.X n \ P.X m
-
-  diff_computable : RecDecidable₂ (fun n m => ∃ k, P.X k = P.X n \ P.X m)
-
-
-structure IsComputableSplit {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-    (P : ComputablePresentation V) (Q : ComputablePresentation W)
-    (split : Set α → Set γ → Set α → Set γ × Set γ) where
-
-  posIdx : ℕ → ℕ → ℕ → ℕ
-
-  negIdx : ℕ → ℕ → ℕ → ℕ
-
-  posIdx_primrec : Nat.Primrec (fun t => posIdx t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2)
-
-  negIdx_primrec : Nat.Primrec (fun t => negIdx t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2)
-
-  posIdx_spec : ∀ n m k, (split (P.X n) (Q.X m) (P.X k)).1 ≠ ∅ →
-    (split (P.X n) (Q.X m) (P.X k)).1 = Q.X (posIdx n m k)
-
-  negIdx_spec : ∀ n m k, (split (P.X n) (Q.X m) (P.X k)).2 ≠ ∅ →
-    (split (P.X n) (Q.X m) (P.X k)).2 = Q.X (negIdx n m k)
-
-
-structure IsComputableUnion {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-    where
-
-  unionIdx : ℕ → ℕ → ℕ
-
-  unionIdx_primrec : Nat.Primrec (fun t => unionIdx t.unpair.1 t.unpair.2)
-
-  unionIdx_spec : ∀ {n m : ℕ}, (∃ k, P.X k = P.X n ∪ P.X m) → P.X (unionIdx n m) = P.X n ∪ P.X m
-
-  union_computable : RecDecidable₂ (fun n m => ∃ k, P.X k = P.X n ∪ P.X m)
 
 
 def packState2 (idx0 idx1 junk : ℕ) : ℕ := Nat.pair idx0 (Nat.pair idx1 junk)
@@ -93,202 +57,6 @@ def xwS (w : ℕ) : ℕ := w.unpair.2.unpair.2
 
 end XSubStep
 
-namespace IsComputableDiff
-
-variable {α : Type*} {V : NeighborhoodSystem α} {P : ComputablePresentation V}
-
-namespace diff
-
-theorem exists_iff_ne_empty (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
-    (∃ k, P.X k = P.X n \ P.X m) ↔ P.X n \ P.X m ≠ ∅ := by
-  constructor
-  · rintro ⟨k, hk⟩ hempty
-    exact NoMinimal.mem_ne_empty hnomin (P.mem_X k) (hk.trans hempty)
-  · intro hne
-    rcases hdiff (P.mem_X n) (P.mem_X m) with hempty | hmem
-    · exact absurd hempty hne
-    · exact P.surj hmem
-
-end diff
-end IsComputableDiff
-
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable (hDiff : IsComputableDiff P)
-
-
-noncomputable def existsDiffDec : ℕ → ℕ := fun t => isOne (hDiff.diff_computable.choose t)
-
-end DirectDec
-end
-
-namespace existsDiffDec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable (hDiff : IsComputableDiff P)
-
-theorem le_one (t : ℕ) : existsDiffDec P hDiff t ≤ 1 := isOne_le_one _
-
-
-theorem spec (n m : ℕ) :
-    existsDiffDec P hDiff (Nat.pair n m) = 1 ↔ ∃ k, P.X k = P.X n \ P.X m := by
-  unfold existsDiffDec
-  rw [isOne_eq_one_iff]
-  have h := hDiff.diff_computable.choose_spec.2 (Nat.pair n m)
-  dsimp only at h
-  rw [unpair_pair_fst, unpair_pair_snd] at h
-  exact h.symm
-
-
-theorem eq_zero_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
-    existsDiffDec P hDiff (Nat.pair n m) = 0 ↔ P.X n \ P.X m = ∅ := by
-  have hle := existsDiffDec.le_one P hDiff (Nat.pair n m)
-  have h1 := existsDiffDec.spec P hDiff n m
-  have h2 := IsComputableDiff.diff.exists_iff_ne_empty (P := P) hdiff hnomin n m
-  constructor
-  · intro h0
-    by_contra hne
-    have h1' : existsDiffDec P hDiff (Nat.pair n m) = 1 := h1.mpr (h2.mpr hne)
-    omega
-  · intro hempty
-    by_contra hne0
-    have h1' : existsDiffDec P hDiff (Nat.pair n m) = 1 := by omega
-    exact (h2.mp (h1.mp h1')) hempty
-
-end DirectDec
-
-end existsDiffDec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable (hDiff : IsComputableDiff P)
-
-
-noncomputable def emptyDiffDec : ℕ → ℕ := fun t => 1 - existsDiffDec P hDiff t
-
-end DirectDec
-
-namespace emptyDiffDec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable (hDiff : IsComputableDiff P)
-
-theorem le_one (t : ℕ) : emptyDiffDec P hDiff t ≤ 1 := by
-  unfold emptyDiffDec; have := existsDiffDec.le_one P hDiff t; omega
-
-
-theorem eq_one_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
-    emptyDiffDec P hDiff (Nat.pair n m) = 1 ↔ P.X n \ P.X m = ∅ := by
-  unfold emptyDiffDec
-  have hle := existsDiffDec.le_one P hDiff (Nat.pair n m)
-  have h0 := existsDiffDec.eq_zero_iff P hDiff hdiff hnomin n m
-  constructor
-  · intro h1; apply h0.mp; omega
-  · intro hempty; have := h0.mpr hempty; omega
-
-end DirectDec
-
-end emptyDiffDec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-
-noncomputable def existsInterDec : ℕ → ℕ := fun t => isOne (P.cons_computable.choose t)
-
-end DirectDec
-
-namespace existsInterDec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-theorem le_one (t : ℕ) : existsInterDec P t ≤ 1 := isOne_le_one _
-
-
-theorem spec (n m : ℕ) :
-    existsInterDec P (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m := by
-  unfold existsInterDec
-  rw [isOne_eq_one_iff]
-  have h := P.cons_computable.choose_spec.2 (Nat.pair n m)
-  dsimp only at h
-  rw [unpair_pair_fst, unpair_pair_snd] at h
-  exact h.symm
-
-
-theorem eq_zero_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
-    existsInterDec P (Nat.pair n m) = 0 ↔ P.X n ∩ P.X m = ∅ := by
-  have hle := existsInterDec.le_one P (Nat.pair n m)
-  constructor
-  · intro h0
-    by_contra hne
-    have hmem : V.mem (P.X n ∩ P.X m) :=
-      (hpos (P.mem_X n) (P.mem_X m)).mpr (Set.nonempty_iff_ne_empty.mpr hne)
-    obtain ⟨k, hk⟩ := P.surj hmem
-    have h1 : existsInterDec P (Nat.pair n m) = 1 :=
-      (existsInterDec.spec P n m).mpr ⟨k, by rw [hk]⟩
-    omega
-  · intro hempty
-    by_contra hne1
-    have h1 : existsInterDec P (Nat.pair n m) = 1 := by omega
-    obtain ⟨k, hk⟩ := (existsInterDec.spec P n m).mp h1
-    exact absurd (Set.subset_eq_empty hk hempty) (hnomin.mem_ne_empty (P.mem_X k))
-
-end DirectDec
-
-end existsInterDec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-
-noncomputable def emptyInterDec : ℕ → ℕ := fun t => 1 - existsInterDec P t
-
-end DirectDec
-
-namespace emptyInterDec
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-theorem le_one (t : ℕ) : emptyInterDec P t ≤ 1 := by
-  unfold emptyInterDec; have := existsInterDec.le_one P t; omega
-
-
-theorem eq_one_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
-    emptyInterDec P (Nat.pair n m) = 1 ↔ P.X n ∩ P.X m = ∅ := by
-  unfold emptyInterDec
-  have hle := existsInterDec.le_one P (Nat.pair n m)
-  have h0 := existsInterDec.eq_zero_iff P hpos hnomin n m
-  constructor
-  · intro h1; apply h0.mp; omega
-  · intro hempty; have := h0.mpr hempty; omega
-
-end DirectDec
-
-end emptyInterDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 def stateRemC (t : ℕ) : ℕ := t.unpair.1
@@ -327,12 +95,12 @@ end
 
 
 theorem diffIdx_eq_of_empty_zero {γ : Type*} {W : NeighborhoodSystem γ} {Q : ComputablePresentation W}
-    (hDiff : IsComputableDiff Q) {idx0 n0 : ℕ} (h : emptyDiffDec Q hDiff (Nat.pair idx0 n0) = 0) :
+    (hDiff : IsComputableDiff Q) {idx0 n0 : ℕ} (h : IsComputableDiff.emptyDiffDec Q hDiff (Nat.pair idx0 n0) = 0) :
     Q.X (hDiff.diffIdx idx0 n0) = Q.X idx0 \ Q.X n0 := by
   apply hDiff.diffIdx_spec
-  have hle := existsDiffDec.le_one Q hDiff (Nat.pair idx0 n0)
-  have h1 : existsDiffDec Q hDiff (Nat.pair idx0 n0) = 1 := by unfold emptyDiffDec at h; omega
-  exact (existsDiffDec.spec Q hDiff idx0 n0).mp h1
+  have hle := IsComputableDiff.existsDiffDec.le_one Q hDiff (Nat.pair idx0 n0)
+  have h1 : IsComputableDiff.existsDiffDec Q hDiff (Nat.pair idx0 n0) = 1 := by unfold IsComputableDiff.emptyDiffDec at h; omega
+  exact (IsComputableDiff.existsDiffDec.spec Q hDiff idx0 n0).mp h1
 
 def encodeDeltaPair (δ : ℕ → Bool × Bool) : ℕ → ℕ
   | 0 => 0
@@ -378,99 +146,6 @@ end AtomPairCorrect
 end
 
 
-theorem NeighborhoodSystem.mem_union_of_mem {γ : Type*} {D : NeighborhoodSystem γ}
-    (hpos : D.IsPositive) (hdiff : D.DiffClosed) (hnomin : D.NoMinimal) {X Y : Set γ}
-    (hX : D.mem X) (hY : D.mem Y) : D.mem (X ∪ Y) :=
-  (union.mem_or_empty hpos hdiff (Or.inr hX) (Or.inr hY)).resolve_left fun h =>
-    hnomin.mem_ne_empty hX (Set.subset_eq_empty Set.subset_union_left h)
-
-
-noncomputable def combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
-    {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) (r0 r1 : ℕ) : ℕ :=
-  selectFn r0.unpair.1
-    (selectFn r1.unpair.1 (Nat.pair 1 (hUnion.unionIdx r0.unpair.2 r1.unpair.2)) r0)
-    r1
-
-namespace combineFound2
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-theorem found_iff {γ : Type*} {W : NeighborhoodSystem γ}
-    {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
-    (h0 : r0.unpair.1 ≤ 1) (h1 : r1.unpair.1 ≤ 1) :
-    (combineFound2 hUnion r0 r1).unpair.1 = 1 ↔ r0.unpair.1 = 1 ∨ r1.unpair.1 = 1 := by
-  unfold combineFound2
-  rcases Nat.eq_zero_or_pos r0.unpair.1 with hr0 | hr0
-  · rw [hr0, selectFn_zero]; omega
-  · rw [show r0.unpair.1 = 1 from by omega, selectFn_one]
-    rcases Nat.eq_zero_or_pos r1.unpair.1 with hr1 | hr1
-    · rw [hr1, selectFn_zero]; omega
-    · rw [show r1.unpair.1 = 1 from by omega, selectFn_one, unpair_pair_fst]; omega
-
-theorem mem_iff {γ : Type*} {W : NeighborhoodSystem γ}
-    {Q : ComputablePresentation W} (hpos : W.IsPositive) (hdiff : W.DiffClosed)
-    (hnomin : W.NoMinimal) (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
-    (h0 : r0.unpair.1 ≤ 1) (h1 : r1.unpair.1 ≤ 1)
-    (hmem0 : r0.unpair.1 = 1 → W.mem (Q.X r0.unpair.2))
-    (hmem1 : r1.unpair.1 = 1 → W.mem (Q.X r1.unpair.2))
-    (hfound : (combineFound2 hUnion r0 r1).unpair.1 = 1) (z : γ) :
-    z ∈ Q.X (combineFound2 hUnion r0 r1).unpair.2 ↔
-      (r0.unpair.1 = 1 ∧ z ∈ Q.X r0.unpair.2) ∨ (r1.unpair.1 = 1 ∧ z ∈ Q.X r1.unpair.2) := by
-  unfold combineFound2 at hfound ⊢
-  rcases Nat.eq_zero_or_pos r0.unpair.1 with hr0 | hr0
-  · rw [hr0, selectFn_zero] at hfound ⊢
-    constructor
-    · intro hz; exact Or.inr ⟨hfound, hz⟩
-    · rintro (⟨h, -⟩ | ⟨-, hz⟩)
-      · omega
-      · exact hz
-  · rw [show r0.unpair.1 = 1 from by omega, selectFn_one] at hfound ⊢
-    have hmem0' := hmem0 (by omega)
-    rcases Nat.eq_zero_or_pos r1.unpair.1 with hr1 | hr1
-    · rw [hr1, selectFn_zero] at hfound ⊢
-      constructor
-      · intro hz; exact Or.inl ⟨by omega, hz⟩
-      · rintro (⟨-, hz⟩ | ⟨h, -⟩)
-        · exact hz
-        · omega
-    · rw [show r1.unpair.1 = 1 from by omega, selectFn_one, unpair_pair_snd]
-      have hmem1' := hmem1 (by omega)
-      have hex : ∃ k, Q.X k = Q.X r0.unpair.2 ∪ Q.X r1.unpair.2 :=
-        Q.surj (NeighborhoodSystem.mem_union_of_mem hpos hdiff hnomin hmem0' hmem1')
-      rw [hUnion.unionIdx_spec hex, Set.mem_union]
-      constructor
-      · rintro (hz | hz)
-        · exact Or.inl ⟨by omega, hz⟩
-        · exact Or.inr ⟨by omega, hz⟩
-      · rintro (⟨-, hz⟩ | ⟨-, hz⟩)
-        · exact Or.inl hz
-        · exact Or.inr hz
-
-theorem mem_of_found {γ : Type*} {W : NeighborhoodSystem γ}
-    {Q : ComputablePresentation W} (hpos : W.IsPositive) (hdiff : W.DiffClosed)
-    (hnomin : W.NoMinimal) (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
-    (h0 : r0.unpair.1 ≤ 1) (h1 : r1.unpair.1 ≤ 1)
-    (hmem0 : r0.unpair.1 = 1 → W.mem (Q.X r0.unpair.2))
-    (hmem1 : r1.unpair.1 = 1 → W.mem (Q.X r1.unpair.2)) :
-    (combineFound2 hUnion r0 r1).unpair.1 = 1 →
-      W.mem (Q.X (combineFound2 hUnion r0 r1).unpair.2) := by
-  unfold combineFound2
-  rcases Nat.eq_zero_or_pos r0.unpair.1 with hr0 | hr0
-  · rw [hr0, selectFn_zero]
-    exact hmem1
-  · rw [show r0.unpair.1 = 1 from by omega, selectFn_one]
-    have hmem0' := hmem0 (by omega)
-    rcases Nat.eq_zero_or_pos r1.unpair.1 with hr1 | hr1
-    · rw [hr1, selectFn_zero]
-      exact fun _ => hmem0'
-    · rw [show r1.unpair.1 = 1 from by omega, selectFn_one, unpair_pair_snd]
-      intro _
-      have hmem1' := hmem1 (by omega)
-      have hex : ∃ k, Q.X k = Q.X r0.unpair.2 ∪ Q.X r1.unpair.2 :=
-        Q.surj (NeighborhoodSystem.mem_union_of_mem hpos hdiff hnomin hmem0' hmem1')
-      rw [hUnion.unionIdx_spec hex]
-      exact NeighborhoodSystem.mem_union_of_mem hpos hdiff hnomin hmem0' hmem1'
-
-end combineFound2
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 
@@ -705,7 +380,7 @@ noncomputable def xSubStep (w : ℕ) : ℕ :=
   let junk := stateJunk s
   let directIdx := selectFn b1 (P₀.inter idx0 n) (hDiff0.diffIdx idx0 n)
   let directEmpty := selectFn b1 (emptyInterDec P₀ (Nat.pair idx0 n))
-    (emptyDiffDec P₀ hDiff0 (Nat.pair idx0 n))
+    (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair idx0 n))
   let splitIdx := selectFn b1 (hSplitX.posIdx idx0 idx1 n) (hSplitX.negIdx idx0 idx1 n)
   let newJunk := selectFn junk 1 directEmpty
   packState2 (selectFn newJunk 0 directIdx) (selectFn newJunk 0 splitIdx) newJunk
@@ -727,7 +402,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 theorem idx0_eq {s n b1 : ℕ}
     (h : selectFn (stateJunk s) 1 (selectFn b1 (emptyInterDec P₀ (Nat.pair (stateIdx0 s) n))
-      (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 s) n))) = 0) :
+      (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 s) n))) = 0) :
     stateIdx0 (xSubStep P₀ P₁ hDiff0 splitX hSplitX (Nat.pair n (Nat.pair b1 s))) =
       selectFn b1 (P₀.inter (stateIdx0 s) n) (hDiff0.diffIdx (stateIdx0 s) n) := by
   unfold xSubStep
@@ -748,7 +423,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 theorem idx1_eq {s n b1 : ℕ}
     (h : selectFn (stateJunk s) 1 (selectFn b1 (emptyInterDec P₀ (Nat.pair (stateIdx0 s) n))
-      (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 s) n))) = 0) :
+      (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 s) n))) = 0) :
     stateIdx1 (xSubStep P₀ P₁ hDiff0 splitX hSplitX (Nat.pair n (Nat.pair b1 s))) =
       selectFn b1 (hSplitX.posIdx (stateIdx0 s) (stateIdx1 s) n)
         (hSplitX.negIdx (stateIdx0 s) (stateIdx1 s) n) := by
@@ -771,7 +446,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 theorem junk_eq (s n b1 : ℕ) :
     stateJunk (xSubStep P₀ P₁ hDiff0 splitX hSplitX (Nat.pair n (Nat.pair b1 s))) =
       selectFn (stateJunk s) 1 (selectFn b1 (emptyInterDec P₀ (Nat.pair (stateIdx0 s) n))
-        (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 s) n))) := by
+        (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 s) n))) := by
   unfold xSubStep
   simp only [xwN, xwB1, xwS, unpair_pair_fst, unpair_pair_snd, stateJunk_packState2]
 
@@ -824,7 +499,7 @@ theorem correct {s n : ℕ} {A : Set α} {B : Set β}
     obtain ⟨-, hemp⟩ := selectFn.one_eq_zero_iff.mp hnonjunk
     rw [selectFn_zero] at hemp
     have hemp' : P₀.X (stateIdx0 s) \ P₀.X n ≠ ∅ :=
-      (emptyDiffDec.eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin (stateIdx0 s) n).not.mp (by omega)
+      (IsComputableDiff.emptyDiffDec.eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin (stateIdx0 s) n).not.mp (by omega)
     have hne : (splitX (P₀.X (stateIdx0 s)) (P₁.X (stateIdx1 s)) (P₀.X n)).2 ≠ ∅ :=
       hspec1.2.2.2.1.not.mp hemp'
     refine ⟨?_, ?_⟩
@@ -1641,7 +1316,7 @@ noncomputable def ySubStep (w : ℕ) : ℕ :=
   let junk := stateJunk s
   let directIdx := selectFn b2 (P₁.inter idx1 n) (hDiff1.diffIdx idx1 n)
   let directEmpty := selectFn b2 (emptyInterDec P₁ (Nat.pair idx1 n))
-    (emptyDiffDec P₁ hDiff1 (Nat.pair idx1 n))
+    (IsComputableDiff.emptyDiffDec P₁ hDiff1 (Nat.pair idx1 n))
   let splitIdx := selectFn b2 (hSplitY.posIdx idx1 idx0 n) (hSplitY.negIdx idx1 idx0 n)
   let newJunk := selectFn junk 1 directEmpty
   packState2 (selectFn newJunk 0 splitIdx) (selectFn newJunk 0 directIdx) newJunk
@@ -1663,7 +1338,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 theorem idx0_eq {s n b2 : ℕ}
     (h : selectFn (stateJunk s) 1 (selectFn b2 (emptyInterDec P₁ (Nat.pair (stateIdx1 s) n))
-      (emptyDiffDec P₁ hDiff1 (Nat.pair (stateIdx1 s) n))) = 0) :
+      (IsComputableDiff.emptyDiffDec P₁ hDiff1 (Nat.pair (stateIdx1 s) n))) = 0) :
     stateIdx0 (ySubStep P₀ P₁ hDiff1 splitY hSplitY (Nat.pair n (Nat.pair b2 s))) =
       selectFn b2 (hSplitY.posIdx (stateIdx1 s) (stateIdx0 s) n)
         (hSplitY.negIdx (stateIdx1 s) (stateIdx0 s) n) := by
@@ -1685,7 +1360,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 theorem idx1_eq {s n b2 : ℕ}
     (h : selectFn (stateJunk s) 1 (selectFn b2 (emptyInterDec P₁ (Nat.pair (stateIdx1 s) n))
-      (emptyDiffDec P₁ hDiff1 (Nat.pair (stateIdx1 s) n))) = 0) :
+      (IsComputableDiff.emptyDiffDec P₁ hDiff1 (Nat.pair (stateIdx1 s) n))) = 0) :
     stateIdx1 (ySubStep P₀ P₁ hDiff1 splitY hSplitY (Nat.pair n (Nat.pair b2 s))) =
       selectFn b2 (P₁.inter (stateIdx1 s) n) (hDiff1.diffIdx (stateIdx1 s) n) := by
   unfold ySubStep
@@ -1707,7 +1382,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 theorem junk_eq (s n b2 : ℕ) :
     stateJunk (ySubStep P₀ P₁ hDiff1 splitY hSplitY (Nat.pair n (Nat.pair b2 s))) =
       selectFn (stateJunk s) 1 (selectFn b2 (emptyInterDec P₁ (Nat.pair (stateIdx1 s) n))
-        (emptyDiffDec P₁ hDiff1 (Nat.pair (stateIdx1 s) n))) := by
+        (IsComputableDiff.emptyDiffDec P₁ hDiff1 (Nat.pair (stateIdx1 s) n))) := by
   unfold ySubStep
   simp only [xwN, xwB1, xwS, unpair_pair_fst, unpair_pair_snd, stateJunk_packState2]
 
@@ -1760,7 +1435,7 @@ theorem correct {s n : ℕ} {A : Set α} {B : Set β}
     obtain ⟨-, hemp⟩ := selectFn.one_eq_zero_iff.mp hnonjunk
     rw [selectFn_zero] at hemp
     have hemp' : P₁.X (stateIdx1 s) \ P₁.X n ≠ ∅ :=
-      (emptyDiffDec.eq_one_iff P₁ hDiff1 hD₁diff hD₁nomin (stateIdx1 s) n).not.mp (by omega)
+      (IsComputableDiff.emptyDiffDec.eq_one_iff P₁ hDiff1 hD₁diff hD₁nomin (stateIdx1 s) n).not.mp (by omega)
     have hne : (splitY (P₁.X (stateIdx1 s)) (P₀.X (stateIdx0 s)) (P₁.X n)).2 ≠ ∅ :=
       hspec2.2.2.2.1.not.mp hemp'
     refine ⟨?_, ?_⟩
@@ -1974,9 +1649,9 @@ theorem le_one (k n : ℕ) :
     have hb2 : stateRemC T / 2 % 2 ≤ 1 := Nat.le_of_lt_succ (by omega)
     exact selectFn.le_one
       (selectFn.le_one ih (le_refl 1)
-        (selectFn.le_one hb1 (emptyInterDec.le_one P₀ _) (emptyDiffDec.le_one P₀ hDiff0 _)))
+        (selectFn.le_one hb1 (emptyInterDec.le_one P₀ _) (IsComputableDiff.emptyDiffDec.le_one P₀ hDiff0 _)))
       (le_refl 1)
-      (selectFn.le_one hb2 (emptyInterDec.le_one P₁ _) (emptyDiffDec.le_one P₁ hDiff1 _))
+      (selectFn.le_one hb2 (emptyInterDec.le_one P₁ _) (IsComputableDiff.emptyDiffDec.le_one P₁ hDiff1 _))
 
 end AtomPairCorrect2
 end
@@ -2348,11 +2023,11 @@ theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
         rcases Bool.eq_false_or_eq_true (deltaPair i n).1 with h | h <;> simp [h]
       have hxle : selectFn (if (deltaPair i n).1 then 1 else 0)
           (emptyInterDec P₀ (Nat.pair (stateIdx0 (stateInnerC T)) n))
-          (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n)) ≤ 1 :=
-        selectFn.le_one hb1le (emptyInterDec.le_one P₀ _) (emptyDiffDec.le_one P₀ hDiff0 _)
+          (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n)) ≤ 1 :=
+        selectFn.le_one hb1le (emptyInterDec.le_one P₀ _) (IsComputableDiff.emptyDiffDec.le_one P₀ hDiff0 _)
       rcases Nat.eq_zero_or_pos (selectFn (if (deltaPair i n).1 then 1 else 0)
           (emptyInterDec P₀ (Nat.pair (stateIdx0 (stateInnerC T)) n))
-          (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n))) with hx0 | hxpos
+          (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n))) with hx0 | hxpos
       ·
         rw [hx0, selectFn_zero] at hjunk1
         have hxnonjunk : stateJunk (xSubStep P₀ P₁ hDiff0 splitX hSplitX
@@ -2373,7 +2048,7 @@ theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
             exact hBe
           · simp only [hδ2, Bool.false_eq_true, ite_false] at hjunk1
             rw [selectFn_zero] at hjunk1
-            have hBe := (emptyDiffDec.eq_one_iff P₁ hDiff1 hD₁diff hD₁nomin _ _).mp hjunk1
+            have hBe := (IsComputableDiff.emptyDiffDec.eq_one_iff P₁ hDiff1 hD₁diff hD₁nomin _ _).mp hjunk1
             rw [hxB1] at hBe
             simp only [yStepG, xyStep, Prod.swap, hδ2, Bool.false_eq_true, ite_false]
             exact hBe
@@ -2382,7 +2057,7 @@ theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
       ·
         have hx1 : selectFn (if (deltaPair i n).1 then 1 else 0)
             (emptyInterDec P₀ (Nat.pair (stateIdx0 (stateInnerC T)) n))
-            (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n)) = 1 := by omega
+            (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n)) = 1 := by omega
         have hA1eq : (xStepG splitX
             (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).1
             (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).2 (P₀.X n)
@@ -2395,7 +2070,7 @@ theorem fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
             exact hAe
           · simp only [xStepG, xyStep, hδ1, Bool.false_eq_true, ite_false] at hx1 ⊢
             rw [selectFn_zero] at hx1
-            have hAe := (emptyDiffDec.eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin _ _).mp hx1
+            have hAe := (IsComputableDiff.emptyDiffDec.eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin _ _).mp hx1
             rw [hidx0] at hAe
             exact hAe
         obtain ⟨hspecAB, hspecAmem⟩ := xStepG.spec D₀ D₁ hD₀pos hD₀diff splitY hySplit hD₁pos
@@ -2479,11 +2154,11 @@ theorem snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
         rcases Bool.eq_false_or_eq_true (deltaPair i n).1 with h | h <;> simp [h]
       have hxle : selectFn (if (deltaPair i n).1 then 1 else 0)
           (emptyInterDec P₀ (Nat.pair (stateIdx0 (stateInnerC T)) n))
-          (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n)) ≤ 1 :=
-        selectFn.le_one hb1le (emptyInterDec.le_one P₀ _) (emptyDiffDec.le_one P₀ hDiff0 _)
+          (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n)) ≤ 1 :=
+        selectFn.le_one hb1le (emptyInterDec.le_one P₀ _) (IsComputableDiff.emptyDiffDec.le_one P₀ hDiff0 _)
       rcases Nat.eq_zero_or_pos (selectFn (if (deltaPair i n).1 then 1 else 0)
           (emptyInterDec P₀ (Nat.pair (stateIdx0 (stateInnerC T)) n))
-          (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n))) with hx0 | hxpos
+          (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n))) with hx0 | hxpos
       ·
         rw [hx0, selectFn_zero] at hjunk1
         have hxnonjunk : stateJunk (xSubStep P₀ P₁ hDiff0 splitX hSplitX
@@ -2503,14 +2178,14 @@ theorem snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
           exact hBe
         · simp only [hδ2, Bool.false_eq_true, ite_false] at hjunk1
           rw [selectFn_zero] at hjunk1
-          have hBe := (emptyDiffDec.eq_one_iff P₁ hDiff1 hD₁diff hD₁nomin _ _).mp hjunk1
+          have hBe := (IsComputableDiff.emptyDiffDec.eq_one_iff P₁ hDiff1 hD₁diff hD₁nomin _ _).mp hjunk1
           rw [hxB1] at hBe
           simp only [yStepG, xyStep, Prod.swap, hδ2, Bool.false_eq_true, ite_false]
           exact hBe
       ·
         have hx1 : selectFn (if (deltaPair i n).1 then 1 else 0)
             (emptyInterDec P₀ (Nat.pair (stateIdx0 (stateInnerC T)) n))
-            (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n)) = 1 := by omega
+            (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 (stateInnerC T)) n)) = 1 := by omega
         have hA1eq : (xStepG splitX
             (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).1
             (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).2 (P₀.X n)
@@ -2523,7 +2198,7 @@ theorem snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
             exact hAe
           · simp only [xStepG, xyStep, hδ1, Bool.false_eq_true, ite_false] at hx1 ⊢
             rw [selectFn_zero] at hx1
-            have hAe := (emptyDiffDec.eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin _ _).mp hx1
+            have hAe := (IsComputableDiff.emptyDiffDec.eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin _ _).mp hx1
             rw [hidx0] at hAe
             exact hAe
         obtain ⟨hspecAB, -⟩ := xStepG.spec D₀ D₁ hD₀pos hD₀diff splitY hySplit hD₁pos
@@ -2659,7 +2334,7 @@ theorem le_one {bx : ℕ} (hbx : bx ≤ 1) (n i : ℕ) :
   refine selectFn.le_one ?_ (le_refl 1) (emptyInterDec.le_one P₁ _)
   rw [xSubStep.junk_eq, stateJunk_packState2]
   exact selectFn.le_one (atomPairJunk.le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY i n)
-    (le_refl 1) (selectFn.le_one hbx (emptyInterDec.le_one P₀ _) (emptyDiffDec.le_one P₀ hDiff0 _))
+    (le_refl 1) (selectFn.le_one hbx (emptyInterDec.le_one P₀ _) (IsComputableDiff.emptyDiffDec.le_one P₀ hDiff0 _))
 
 end YPseqCode
 end
@@ -2713,7 +2388,7 @@ theorem eq_zero_of_bit {i n : ℕ}
   have hxc0 : selectFn (if b then 1 else 0)
       (emptyInterDec P₀ (Nat.pair (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
         n i) n))
-      (emptyDiffDec P₀ hDiff0 (Nat.pair (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
+      (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
         hSplitY n i) n)) = 0 := by
     by_cases hb : b = true
     · simp only [xStepG, xyStep, hb, ite_true] at hne
@@ -2731,11 +2406,11 @@ theorem eq_zero_of_bit {i n : ℕ}
           P₀.X n ≠ ∅ := by rw [hidx0]; exact hne
       simp only [hb, Bool.false_eq_true, ite_false, selectFn_zero]
       by_contra hcon
-      have hle := emptyDiffDec.le_one P₀ hDiff0 (Nat.pair
+      have hle := IsComputableDiff.emptyDiffDec.le_one P₀ hDiff0 (Nat.pair
         (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i) n)
-      have h1 : emptyDiffDec P₀ hDiff0 (Nat.pair
+      have h1 : IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair
           (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i) n) = 1 := by omega
-      exact hne' ((emptyDiffDec.eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin _ _).mp h1)
+      exact hne' ((IsComputableDiff.emptyDiffDec.eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin _ _).mp h1)
   set s0 := packState2
       (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)
       (atomPairIdx1 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i)
@@ -3963,7 +3638,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 
 
 noncomputable def YPseqCode (n : ℕ) : ℕ :=
-  (combineFound2 hUnion0
+  (IsComputableUnion.combineFound2 hUnion0
     (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
     (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))).unpair.2
 
@@ -3987,12 +3662,12 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 include hD₀pos hD₀diff hD₀nomin in
 
 theorem mem {n : ℕ}
-    (hfound : (combineFound2 hUnion0
+    (hfound : (IsComputableUnion.combineFound2 hUnion0
       (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
       (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))
       ).unpair.1 = 1) :
     D₀.mem (P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n)) :=
-  combineFound2.mem_of_found hD₀pos hD₀diff hD₀nomin hUnion0
+  IsComputableUnion.combineFound2.mem_of_found hD₀pos hD₀diff hD₀nomin hUnion0
     (YFoldInner.found_le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
       (Nat.zero_le 1) n (4 ^ n))
     (YFoldInner.found_le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
@@ -4023,11 +3698,11 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 in
 
 theorem four_pow_found (n : ℕ) :
-    (combineFound2 hUnion0
+    (IsComputableUnion.combineFound2 hUnion0
       (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
       (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))
       ).unpair.1 = 1 :=
-  (combineFound2.found_iff hUnion0
+  (IsComputableUnion.combineFound2.found_iff hUnion0
     (YFoldInner.found_le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
       (Nat.zero_le 1) n (4 ^ n))
     (YFoldInner.found_le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
@@ -4307,7 +3982,7 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
 include hD₀pos hD₀diff hD₀nomin in
 
 theorem mem_YPseqCode_iff {n : ℕ}
-    (hfound : (combineFound2 hUnion0
+    (hfound : (IsComputableUnion.combineFound2 hUnion0
       (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
       (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))
       ).unpair.1 = 1) (z : α) :
@@ -4325,11 +4000,11 @@ theorem mem_YPseqCode_iff {n : ℕ}
   have hmem1 := YFoldInner.mem_of_found P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos
     hD₀diff hD₀nomin hUnion0 (le_refl 1) n (4 ^ n)
   have heq : YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n =
-      (combineFound2 hUnion0
+      (IsComputableUnion.combineFound2 hUnion0
         (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
         (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))
         ).unpair.2 := rfl
-  rw [heq, combineFound2.mem_iff hD₀pos hD₀diff hD₀nomin hUnion0 hle0 hle1 hmem0 hmem1 hfound z]
+  rw [heq, IsComputableUnion.combineFound2.mem_iff hD₀pos hD₀diff hD₀nomin hUnion0 hle0 hle1 hmem0 hmem1 hfound z]
   constructor
   · rintro (⟨hf0, hz⟩ | ⟨hf1, hz⟩)
     · exact Or.inl ((YFoldInner.mem_iff P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos
@@ -4412,33 +4087,6 @@ end
 namespace primrec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable (hDiff : IsComputableDiff P)
-
-theorem existsDiffDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.existsDiffDec P hDiff) :=
-  (primrec_isOne.comp hDiff.diff_computable.choose_spec.1).of_eq fun _ => rfl
-
-
-theorem emptyDiffDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P hDiff) :=
-  primrec_sub₂ (Nat.Primrec.const 1) (primrec.existsDiffDec P hDiff)
-
-end DirectDec
-
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-theorem existsInterDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.existsInterDec P) :=
-  (primrec_isOne.comp P.cons_computable.choose_spec.1).of_eq fun _ => rfl
-
-
-theorem emptyInterDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P) :=
-  primrec_sub₂ (Nat.Primrec.const 1) (primrec.existsInterDec P)
-
-end DirectDec
 
 theorem stateIdx0 : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateIdx0 := Nat.Primrec.left
 
@@ -4462,9 +4110,9 @@ theorem atomPairBase : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.ato
 end AtomPairCode
 end
 
-theorem combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
+theorem IsComputableUnion.combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) :
-    Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.combineFound2 hUnion t.unpair.1 t.unpair.2) := by
+    Nat.Primrec (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.IsComputableUnion.combineFound2 hUnion t.unpair.1 t.unpair.2) := by
   have h0 : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
   have h1 : Nat.Primrec (fun t : ℕ => t.unpair.2) := Nat.Primrec.right
   have hf0 : Nat.Primrec (fun t : ℕ => t.unpair.1.unpair.1) := Nat.Primrec.left.comp h0
@@ -4478,7 +4126,7 @@ theorem combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
   have hinner : Nat.Primrec (fun t : ℕ => selectFn t.unpair.2.unpair.1
       (Nat.pair 1 (hUnion.unionIdx t.unpair.1.unpair.2 t.unpair.2.unpair.2)) t.unpair.1) :=
     primrec_selectFn hf1 ((Nat.Primrec.const 1).pair hunion) h0
-  exact (primrec_selectFn hf0 hinner h1).of_eq fun t => by unfold _root_.DomainTheory.NeighbourhoodSystems.combineFound2; simp only []
+  exact (primrec_selectFn hf0 hinner h1).of_eq fun t => by unfold _root_.DomainTheory.NeighbourhoodSystems.IsComputableUnion.combineFound2; simp only []
 
 theorem stateInnerC : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateInnerC := Nat.Primrec.right
 
@@ -4575,8 +4223,8 @@ theorem xSubStep : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.xSubSte
   have hemptyInter : Nat.Primrec (fun w => _root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P₀ (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))) :=
     (primrec.emptyInterDec P₀).comp (hidx0.pair hn)
   have hemptyDiff : Nat.Primrec
-      (fun w => _root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P₀ hDiff0 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))) :=
-    (primrec.emptyDiffDec P₀ hDiff0).comp (hidx0.pair hn)
+      (fun w => _root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))) :=
+    (IsComputableDiff.primrec.emptyDiffDec P₀ hDiff0).comp (hidx0.pair hn)
   have hposIdx : Nat.Primrec
       (fun w => hSplitX.posIdx (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)) :=
     (hSplitX.posIdx_primrec.comp (hidx0.pair (hidx1.pair hn))).of_eq
@@ -4590,7 +4238,7 @@ theorem xSubStep : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.xSubSte
     primrec_selectFn hb1 hinter hdiffidx
   have hdirectEmpty : Nat.Primrec (fun w => selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w)
       (_root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P₀ (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))
-      (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P₀ hDiff0 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))) :=
+      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))) :=
     primrec_selectFn hb1 hemptyInter hemptyDiff
   have hsplitIdx : Nat.Primrec (fun w => selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w)
       (hSplitX.posIdx (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))
@@ -4598,17 +4246,17 @@ theorem xSubStep : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.xSubSte
     primrec_selectFn hb1 hposIdx hnegIdx
   have hnewJunk : Nat.Primrec (fun w => selectFn (_root_.DomainTheory.NeighbourhoodSystems.stateJunk (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) 1 (selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w)
       (_root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P₀ (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))
-      (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P₀ hDiff0 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) :=
+      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) :=
     primrec_selectFn hjunk (Nat.Primrec.const 1) hdirectEmpty
   have hidx0' : Nat.Primrec (fun w => selectFn (selectFn (_root_.DomainTheory.NeighbourhoodSystems.stateJunk (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) 1 (selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w)
       (_root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P₀ (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))
-      (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P₀ hDiff0 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) 0
+      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) 0
       (selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w) (P₀.inter (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))
         (hDiff0.diffIdx (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))) :=
     primrec_selectFn hnewJunk (Nat.Primrec.const 0) hdirectIdx
   have hidx1' : Nat.Primrec (fun w => selectFn (selectFn (_root_.DomainTheory.NeighbourhoodSystems.stateJunk (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) 1 (selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w)
       (_root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P₀ (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))
-      (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P₀ hDiff0 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) 0
+      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) 0
       (selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w) (hSplitX.posIdx (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))
         (hSplitX.negIdx (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))) :=
     primrec_selectFn hnewJunk (Nat.Primrec.const 0) hsplitIdx
@@ -4643,8 +4291,8 @@ theorem ySubStep : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.ySubSte
   have hemptyInter : Nat.Primrec (fun w => _root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P₁ (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))) :=
     (primrec.emptyInterDec P₁).comp (hidx1.pair hn)
   have hemptyDiff : Nat.Primrec
-      (fun w => _root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P₁ hDiff1 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))) :=
-    (primrec.emptyDiffDec P₁ hDiff1).comp (hidx1.pair hn)
+      (fun w => _root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P₁ hDiff1 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))) :=
+    (IsComputableDiff.primrec.emptyDiffDec P₁ hDiff1).comp (hidx1.pair hn)
   have hposIdx : Nat.Primrec
       (fun w => hSplitY.posIdx (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)) :=
     (hSplitY.posIdx_primrec.comp (hidx1.pair (hidx0.pair hn))).of_eq
@@ -4658,7 +4306,7 @@ theorem ySubStep : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.ySubSte
     primrec_selectFn hb2 hinter hdiffidx
   have hdirectEmpty : Nat.Primrec (fun w => selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w)
       (_root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P₁ (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))
-      (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P₁ hDiff1 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))) :=
+      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P₁ hDiff1 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))) :=
     primrec_selectFn hb2 hemptyInter hemptyDiff
   have hsplitIdx : Nat.Primrec (fun w => selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w)
       (hSplitY.posIdx (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))
@@ -4666,17 +4314,17 @@ theorem ySubStep : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.ySubSte
     primrec_selectFn hb2 hposIdx hnegIdx
   have hnewJunk : Nat.Primrec (fun w => selectFn (_root_.DomainTheory.NeighbourhoodSystems.stateJunk (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) 1 (selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w)
       (_root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P₁ (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))
-      (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P₁ hDiff1 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) :=
+      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P₁ hDiff1 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) :=
     primrec_selectFn hjunk (Nat.Primrec.const 1) hdirectEmpty
   have hidx0' : Nat.Primrec (fun w => selectFn (selectFn (_root_.DomainTheory.NeighbourhoodSystems.stateJunk (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) 1 (selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w)
       (_root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P₁ (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))
-      (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P₁ hDiff1 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) 0
+      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P₁ hDiff1 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) 0
       (selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w) (hSplitY.posIdx (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))
         (hSplitY.negIdx (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.stateIdx0 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))) :=
     primrec_selectFn hnewJunk (Nat.Primrec.const 0) hsplitIdx
   have hidx1' : Nat.Primrec (fun w => selectFn (selectFn (_root_.DomainTheory.NeighbourhoodSystems.stateJunk (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) 1 (selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w)
       (_root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P₁ (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))
-      (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P₁ hDiff1 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) 0
+      (_root_.DomainTheory.NeighbourhoodSystems.IsComputableDiff.emptyDiffDec P₁ hDiff1 (Nat.pair (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))))) 0
       (selectFn (_root_.DomainTheory.NeighbourhoodSystems.xwB1 w) (P₁.inter (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w))
         (hDiff1.diffIdx (_root_.DomainTheory.NeighbourhoodSystems.stateIdx1 (_root_.DomainTheory.NeighbourhoodSystems.xwS w)) (_root_.DomainTheory.NeighbourhoodSystems.xwN w)))) :=
     primrec_selectFn hnewJunk (Nat.Primrec.const 0) hdirectIdx
@@ -5227,10 +4875,10 @@ theorem YPseqCode : Nat.Primrec
       (Nat.Primrec.id.pair (Nat.Primrec.const 1)).pair h4n
     exact ((primrec.YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0).comp
       harg).of_eq fun n => by simp only [unpair_pair_fst, unpair_pair_snd]
-  have hcomb : Nat.Primrec (fun n : ℕ => _root_.DomainTheory.NeighbourhoodSystems.combineFound2 hUnion0
+  have hcomb : Nat.Primrec (fun n : ℕ => _root_.DomainTheory.NeighbourhoodSystems.IsComputableUnion.combineFound2 hUnion0
       (_root_.DomainTheory.NeighbourhoodSystems.YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
       (_root_.DomainTheory.NeighbourhoodSystems.YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))) :=
-    ((primrec.combineFound2 hUnion0).comp (hr0.pair hr1)).of_eq
+    ((primrec.IsComputableUnion.combineFound2 hUnion0).comp (hr0.pair hr1)).of_eq
       fun n => by simp only [unpair_pair_fst, unpair_pair_snd]
   exact (Nat.Primrec.right.comp hcomb).of_eq fun _ => rfl
 
@@ -6001,16 +5649,16 @@ theorem fst_eq_inter_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (bx : Bool)
         omega
       have hs1junk_eq : stateJunk s1 = selectFn (if bx then 1 else 0)
           (emptyInterDec P₀ (Nat.pair (stateIdx0 s0) n))
-          (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 s0) n)) := by
+          (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 s0) n)) := by
         rw [hs1def, xSubStep.junk_eq, hs0def, stateJunk_packState2, hAjunk, selectFn_zero]
       have hs1le : stateJunk s1 ≤ 1 := by
         rw [hs1junk_eq]
         exact selectFn.le_one (by cases bx <;> simp) (emptyInterDec.le_one P₀ _)
-          (emptyDiffDec.le_one P₀ hDiff0 _)
+          (IsComputableDiff.emptyDiffDec.le_one P₀ hDiff0 _)
       have hxnonjunk : stateJunk s1 = 0 := by
         by_contra hne
         have h3 : selectFn (if bx then 1 else 0) (emptyInterDec P₀ (Nat.pair (stateIdx0 s0) n))
-            (emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 s0) n)) = 1 := by
+            (IsComputableDiff.emptyDiffDec P₀ hDiff0 (Nat.pair (stateIdx0 s0) n)) = 1 := by
           rw [← hs1junk_eq]; omega
         have hA1e : A1 = ∅ := by
           rw [hA1def]
@@ -6022,7 +5670,7 @@ theorem fst_eq_inter_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (bx : Bool)
           · simp only [xStepG, xyStep, hbx, Bool.false_eq_true, ite_false]
             simp only [hbx, Bool.false_eq_true, ite_false, selectFn_zero] at h3
             rw [← hidx0']
-            exact (emptyDiffDec.eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin _ _).mp h3
+            exact (IsComputableDiff.emptyDiffDec.eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin _ _).mp h3
         exact hA1 hA1e
       have h : stateJunk (ySubStep P₀ P₁ hDiff1 splitY hSplitY (Nat.pair n (Nat.pair 1 s1))) = 1 := by
         have h' := hyj1
@@ -6760,7 +6408,7 @@ theorem zero :
       hSplitY 0 0)) 1 (selectFn 1
         (emptyInterDec P₁ (Nat.pair (stateIdx1 (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX
           splitY hSplitY 0 0)) 0))
-        (emptyDiffDec P₁ hDiff1 (Nat.pair (stateIdx1 (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX
+        (IsComputableDiff.emptyDiffDec P₁ hDiff1 (Nat.pair (stateIdx1 (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX
           hSplitX splitY hSplitY 0 0)) 0))) = 0 := by
     have hxjunk0' : stateJunk (xPseqAtomState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
         0 0) = 0 := hxjunk0
@@ -8012,267 +7660,10 @@ end AtomPairCorrect2
 end
 
 end atomPairJunk
-namespace combineFound2
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-theorem found_le_one {γ : Type*} {W : NeighborhoodSystem γ}
-    {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}
-    (h0 : r0.unpair.1 ≤ 1) (h1 : r1.unpair.1 ≤ 1) :
-    (combineFound2 hUnion r0 r1).unpair.1 ≤ 1 := by
-  unfold combineFound2
-  rcases Nat.eq_zero_or_pos r0.unpair.1 with hr0 | hr0
-  · rw [hr0, selectFn_zero]; exact h1
-  · rw [show r0.unpair.1 = 1 from by omega, selectFn_one]
-    rcases Nat.eq_zero_or_pos r1.unpair.1 with hr1 | hr1
-    · rw [hr1, selectFn_zero]; exact h0
-    · rw [show r1.unpair.1 = 1 from by omega, selectFn_one, unpair_pair_fst]
-
-end combineFound2
 
 open Domain.Recursive
 
 
-structure ComputableBisection {γ : Type*} {W : NeighborhoodSystem γ} (Q : ComputablePresentation W) where
-
-  left : ℕ → ℕ
-
-  right : ℕ → ℕ
-
-  left_primrec : Nat.Primrec left
-
-  right_primrec : Nat.Primrec right
-
-  disjoint : ∀ k, Q.X (left k) ∩ Q.X (right k) = ∅
-
-  union : ∀ k, Q.X (left k) ∪ Q.X (right k) = Q.X k
-
-  left_congr : ∀ k k', Q.X k = Q.X k' → Q.X (left k) = Q.X (left k')
-
-  right_congr : ∀ k k', Q.X k = Q.X k' → Q.X (right k) = Q.X (right k')
-
-section
-open Domain.Recursive
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
-
-open scoped Classical in
-
-noncomputable def splitFromBisection (A : Set α) (B' : Set γ) (Xn : Set α) : Set γ × Set γ :=
-  if h : ∃ n m k, A = P.X n ∧ B' = Q.X m ∧ Xn = P.X k then
-    if emptyInterDec P (Nat.pair h.choose h.choose_spec.choose_spec.choose) = 1 then
-      (∅, B')
-    else if emptyDiffDec P hDiff (Nat.pair h.choose h.choose_spec.choose_spec.choose) = 1 then
-      (B', ∅)
-    else
-      (Q.X (B.left h.choose_spec.choose), Q.X (B.right h.choose_spec.choose))
-  else
-    splitChoice' W hWnomin A B' Xn
-
-
-noncomputable def negIdxFromBisection (n m k : ℕ) : ℕ :=
-  selectFn (emptyInterDec P (Nat.pair n k)) m
-    (selectFn (emptyDiffDec P hDiff (Nat.pair n k)) m (B.right m))
-
-section Congr
-
-variable {n n' k k' m m' : ℕ}
-
-namespace emptyDiffDec
-
-theorem congr (hdiffClosed : V.DiffClosed) (hnomin : V.NoMinimal)
-    (hn : P.X n = P.X n') (hk : P.X k = P.X k') :
-    emptyDiffDec P hDiff (Nat.pair n k) = emptyDiffDec P hDiff (Nat.pair n' k') := by
-  have h1 := emptyDiffDec.eq_one_iff P hDiff hdiffClosed hnomin n k
-  have h2 := emptyDiffDec.eq_one_iff P hDiff hdiffClosed hnomin n' k'
-  rw [hn, hk] at h1
-  have hiff : emptyDiffDec P hDiff (Nat.pair n k) = 1 ↔ emptyDiffDec P hDiff (Nat.pair n' k') = 1 :=
-    h1.trans h2.symm
-  have hle1 := emptyDiffDec.le_one P hDiff (Nat.pair n k)
-  have hle2 := emptyDiffDec.le_one P hDiff (Nat.pair n' k')
-  omega
-
-end emptyDiffDec
-
-namespace emptyInterDec
-
-theorem congr (hpos : V.IsPositive) (hnomin : V.NoMinimal)
-    (hn : P.X n = P.X n') (hk : P.X k = P.X k') :
-    emptyInterDec P (Nat.pair n k) = emptyInterDec P (Nat.pair n' k') := by
-  have h1 := emptyInterDec.eq_one_iff P hpos hnomin n k
-  have h2 := emptyInterDec.eq_one_iff P hpos hnomin n' k'
-  rw [hn, hk] at h1
-  have hiff : emptyInterDec P (Nat.pair n k) = 1 ↔ emptyInterDec P (Nat.pair n' k') = 1 :=
-    h1.trans h2.symm
-  have hle1 := emptyInterDec.le_one P (Nat.pair n k)
-  have hle2 := emptyInterDec.le_one P (Nat.pair n' k')
-  omega
-
-end emptyInterDec
-
-end Congr
-
-end ComputableBisection
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
-
-namespace splitFromBisection
-
-theorem eq (hpos : V.IsPositive) (hnomin : V.NoMinimal)
-    (hdiffClosed : V.DiffClosed) (n m k : ℕ) :
-    splitFromBisection P hDiff B hWnomin (P.X n) (Q.X m) (P.X k) =
-      if emptyInterDec P (Nat.pair n k) = 1 then (∅, Q.X m)
-      else if emptyDiffDec P hDiff (Nat.pair n k) = 1 then (Q.X m, ∅)
-      else (Q.X (B.left m), Q.X (B.right m)) := by
-  have hex : ∃ n' m' k', P.X n = P.X n' ∧ Q.X m = Q.X m' ∧ P.X k = P.X k' :=
-    ⟨n, m, k, rfl, rfl, rfl⟩
-  obtain ⟨hn', hm', hk'⟩ := hex.choose_spec.choose_spec.choose_spec
-  have hInterEq : emptyInterDec P (Nat.pair hex.choose hex.choose_spec.choose_spec.choose) =
-      emptyInterDec P (Nat.pair n k) := (emptyInterDec.congr P hpos hnomin hn' hk').symm
-  have hDiffEq : emptyDiffDec P hDiff (Nat.pair hex.choose hex.choose_spec.choose_spec.choose) =
-      emptyDiffDec P hDiff (Nat.pair n k) :=
-    (emptyDiffDec.congr P hDiff hdiffClosed hnomin hn' hk').symm
-  unfold splitFromBisection
-  rw [dite_eq_left hex, hInterEq, hDiffEq]
-  split_ifs with h1 h2
-  · rfl
-  · rfl
-  · have hl := (B.left_congr m hex.choose_spec.choose hm').symm
-    have hr := (B.right_congr m hex.choose_spec.choose hm').symm
-    rw [hl, hr]
-
-end splitFromBisection
-end ComputableBisection
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
-
-
-noncomputable def posIdxFromBisection (n m k : ℕ) : ℕ :=
-  selectFn (emptyInterDec P (Nat.pair n k)) m
-    (selectFn (emptyDiffDec P hDiff (Nat.pair n k)) m (B.left m))
-
-end ComputableBisection
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
-
-namespace primrec
-theorem negIdxFromBisection :
-    Nat.Primrec (fun t => negIdxFromBisection P hDiff B
-      t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) := by
-  have hn : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
-  have hm : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.right
-  have hk : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.2) := Nat.Primrec.right.comp Nat.Primrec.right
-  have hnk : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1 t.unpair.2.unpair.2) := hn.pair hk
-  have hinter : Nat.Primrec
-      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
-    (primrec.emptyInterDec P).comp hnk
-  have hdiffD : Nat.Primrec
-      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P hDiff (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
-    (primrec.emptyDiffDec P hDiff).comp hnk
-  have hright : Nat.Primrec (fun t : ℕ => B.right t.unpair.2.unpair.1) := B.right_primrec.comp hm
-  have hinner : Nat.Primrec (fun t : ℕ => selectFn
-      (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P hDiff (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) t.unpair.2.unpair.1
-      (B.right t.unpair.2.unpair.1)) :=
-    primrec_selectFn hdiffD hm hright
-  exact (primrec_selectFn hinter hm hinner).of_eq fun _ => rfl
-
-end primrec
-end ComputableBisection
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
-
-namespace primrec
-theorem posIdxFromBisection :
-    Nat.Primrec (fun t => posIdxFromBisection P hDiff B
-      t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) := by
-  have hn : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
-  have hm : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.right
-  have hk : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.2) := Nat.Primrec.right.comp Nat.Primrec.right
-  have hnk : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1 t.unpair.2.unpair.2) := hn.pair hk
-  have hinter : Nat.Primrec
-      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
-    (primrec.emptyInterDec P).comp hnk
-  have hdiffD : Nat.Primrec
-      (fun t : ℕ => _root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P hDiff (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) :=
-    (primrec.emptyDiffDec P hDiff).comp hnk
-  have hleft : Nat.Primrec (fun t : ℕ => B.left t.unpair.2.unpair.1) := B.left_primrec.comp hm
-  have hinner : Nat.Primrec (fun t : ℕ => selectFn
-      (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P hDiff (Nat.pair t.unpair.1 t.unpair.2.unpair.2)) t.unpair.2.unpair.1
-      (B.left t.unpair.2.unpair.1)) :=
-    primrec_selectFn hdiffD hm hleft
-  exact (primrec_selectFn hinter hm hinner).of_eq fun _ => rfl
-
-end primrec
-end ComputableBisection
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
-
-namespace isComputableSplit
-
-noncomputable def ofBisection (hpos : V.IsPositive) (hnomin : V.NoMinimal)
-    (hdiffClosed : V.DiffClosed) :
-    IsComputableSplit P Q (splitFromBisection P hDiff B hWnomin) where
-  posIdx := posIdxFromBisection P hDiff B
-  negIdx := negIdxFromBisection P hDiff B
-  posIdx_primrec := primrec.posIdxFromBisection P hDiff B
-  negIdx_primrec := primrec.negIdxFromBisection P hDiff B
-  posIdx_spec n m k hne := by
-    rw [splitFromBisection.eq P hDiff B hWnomin hpos hnomin hdiffClosed n m k] at hne ⊢
-    split_ifs at hne ⊢ with h1 h2
-    · exact absurd rfl hne
-    · have h1' : emptyInterDec P (Nat.pair n k) = 0 := by
-        have := emptyInterDec.le_one P (Nat.pair n k); omega
-      simp [posIdxFromBisection, h1', h2]
-    · have h1' : emptyInterDec P (Nat.pair n k) = 0 := by
-        have := emptyInterDec.le_one P (Nat.pair n k); omega
-      have h2' : emptyDiffDec P hDiff (Nat.pair n k) = 0 := by
-        have := emptyDiffDec.le_one P hDiff (Nat.pair n k); omega
-      simp [posIdxFromBisection, h1', h2']
-  negIdx_spec n m k hne := by
-    rw [splitFromBisection.eq P hDiff B hWnomin hpos hnomin hdiffClosed n m k] at hne ⊢
-    split_ifs at hne ⊢ with h1 h2
-    · simp [negIdxFromBisection, h1]
-    · exact absurd rfl hne
-    · have h1' : emptyInterDec P (Nat.pair n k) = 0 := by
-        have := emptyInterDec.le_one P (Nat.pair n k); omega
-      have h2' : emptyDiffDec P hDiff (Nat.pair n k) = 0 := by
-        have := emptyDiffDec.le_one P hDiff (Nat.pair n k); omega
-      simp [negIdxFromBisection, h1', h2']
-
-end isComputableSplit
-end ComputableBisection
-
-namespace ComputableBisection
-
-variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
-  (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
-  {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
-
-end ComputableBisection
-end
 
 
 def B812e : ComputableBisection VComputablePresentation where
@@ -8343,6 +7734,8 @@ def U_isComputableDiff : IsComputableDiff UComputablePresentation where
       (recDecidable_presentedIntervals_nonempty.comp Udiff.primrec)
     show (∃ k, UX k = UX t.unpair.1 \ UX t.unpair.2) ↔ _
     rw [U_diff_iff_nonempty, ← Udiff.eq_diff]
+
+end
 
 end DomainTheory.NeighbourhoodSystems
 end

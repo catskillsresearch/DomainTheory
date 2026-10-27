@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise_8_12
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ProjPair
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition_8_10
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
@@ -10,34 +11,9 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
+namespace DomainTheory.NeighbourhoodSystems
 section
 /- concordance: source L5173 EXERCISE 8.17 explicit embeddings into U -/
--- Exercise817/ProjPair.lean
-universe u v w
-
-namespace DomainTheory.NeighbourhoodSystems
-
-open NeighborhoodSystem ApproximableMap Subsystem
-
-variable {α : Type u} {β : Type v} {γ : Type w}
-
-/-- **A heterogeneous projection pair** — the raw data `Lemma615.trianglelefteq_of_projectionPair`
-consumes, bundled for easy composition. -/
-structure ProjPair (D : NeighborhoodSystem α) (E : NeighborhoodSystem β) where
-  /-- The injection `i : D → E`. -/
-  inj : ApproximableMap D E
-  /-- The projection `j : E → D`. -/
-  proj : ApproximableMap E D
-  /-- `j ∘ i = I_D`. -/
-  proj_comp_inj : proj.comp inj = idMap D
-  /-- `i ∘ j ⊆ I_E`. -/
-  inj_comp_proj_le : inj.comp proj ≤ idMap E
-
-end DomainTheory.NeighbourhoodSystems
-end
-
-namespace DomainTheory.NeighbourhoodSystems
-section
 open NeighborhoodSystem ApproximableMap Subsystem
 universe u v w
 variable {α : Type u} {β : Type v} {γ : Type w}
@@ -47,58 +23,6 @@ variable {α : Type u} {β : Type v} {γ : Type w}
 domain `𝒰` to an arbitrary `W`. -/
 def IsUniversal {δ : Type w} (W : NeighborhoodSystem δ) : Prop :=
   ∀ {α : Type u} (D : NeighborhoodSystem α) [Countable {S : Set α // D.mem S}], D ⊴ W
-
-/-- **`ProjPair`s compose.** If `D ⇄ E` and `E ⇄ F` are projection pairs, so is `D ⇄ F`
-(`inj := p2.inj ∘ p1.inj`, `proj := p1.proj ∘ p2.proj`). The first law composes as an equality
-chain; the second only needs `≤`, transported through `comp_mono_gen`. -/
-def ProjPair.comp {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-    {F : NeighborhoodSystem γ} (p1 : ProjPair D E) (p2 : ProjPair E F) :
-    ProjPair D F where
-  inj := p2.inj.comp p1.inj
-  proj := p1.proj.comp p2.proj
-  proj_comp_inj := by
-    show (p1.proj.comp p2.proj).comp (p2.inj.comp p1.inj) = idMap D
-    rw [comp_assoc, ← comp_assoc p2.proj p2.inj p1.inj, p2.proj_comp_inj, idMap_comp,
-      p1.proj_comp_inj]
-  inj_comp_proj_le := by
-    show (p2.inj.comp p1.inj).comp (p1.proj.comp p2.proj) ≤ idMap F
-    rw [comp_assoc, ← comp_assoc p1.inj p1.proj p2.proj]
-    calc p2.inj.comp ((p1.inj.comp p1.proj).comp p2.proj)
-        ≤ p2.inj.comp ((idMap E).comp p2.proj) :=
-          comp_mono_gen le_rfl (comp_mono_gen p1.inj_comp_proj_le le_rfl)
-      _ = p2.inj.comp p2.proj := by rw [idMap_comp]
-      _ ≤ idMap F := p2.inj_comp_proj_le
-
-/-- **A `DomainIso` gives a `ProjPair`, via Theorem 2.7's `ofIso`.** Both round trips are genuine
-*equalities* (not just `≤`), since `e` is a full isomorphism, not merely a retraction. Uses
-`le_iff_toElementMap_le` (choice-free) rather than the classical `ext_of_toElementMap` — matching
-`Theorem86.lean`'s `isRetraction_subApprox`, which flags the same discipline. -/
-def ProjPair.ofIso {D : NeighborhoodSystem α} {E : NeighborhoodSystem β} (e : DomainIso D E) :
-    ProjPair D E where
-  inj := ApproximableMap.ofIso e
-  proj := ApproximableMap.ofIso e.symm
-  proj_comp_inj := by
-    have heq : ∀ x, ((ApproximableMap.ofIso e.symm).comp (ApproximableMap.ofIso e)).toElementMap x
-        = (idMap D).toElementMap x := by
-      intro x
-      rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, OrderIso.symm_apply_apply,
-        toElementMap_idMap]
-    exact le_antisymm (le_iff_toElementMap_le.mpr fun x => (heq x).le)
-      (le_iff_toElementMap_le.mpr fun x => (heq x).ge)
-  inj_comp_proj_le := by
-    have heq : ∀ y, ((ApproximableMap.ofIso e).comp (ApproximableMap.ofIso e.symm)).toElementMap y
-        = (idMap E).toElementMap y := by
-      intro y
-      rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply,
-        toElementMap_idMap]
-    exact le_iff_toElementMap_le.mpr fun y => (heq y).le
-
-/-- **A subsystem relation `D ◁ E` gives a `ProjPair`** (Proposition 6.12, rebundled). -/
-def ProjPair.ofSubsystem {D E : NeighborhoodSystem α} (h : D ◁ E) : ProjPair D E where
-  inj := h.inj
-  proj := h.proj
-  proj_comp_inj := h.proj_comp_inj
-  inj_comp_proj_le := h.inj_comp_proj_le
 
 /-- **`D ⊴ E` composed with an isomorphism `D ≅ᴰ D'` on the left is still `D ⊴ E`** — immediate
 from unfolding `⊴` and composing the two `DomainIso`s (`OrderIso.trans`). -/

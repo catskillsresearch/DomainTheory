@@ -12,7 +12,11 @@ The tip asserts universality of `V` together with the product/sum/function-space
 
 Proves `V` is universal and records the standard embeddings into `U`.
 
-**[EmbeddingsIntoU.lean](EmbeddingsIntoU.lean)**
+**[ProjPair.lean](ProjPair.lean)** — `ProjPair` and composition/iso/subsystem constructors
+
+@import "ProjPair.lean"
+
+**[EmbeddingsIntoU.lean](EmbeddingsIntoU.lean)** — universality and the concrete `U`/`V` embeddings
 
 @import "EmbeddingsIntoU.lean"
 
