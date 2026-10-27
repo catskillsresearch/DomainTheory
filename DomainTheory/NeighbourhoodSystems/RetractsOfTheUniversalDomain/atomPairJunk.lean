@@ -68,4 +68,23 @@ theorem le_one (k n : ℕ) :
 
 end atomPairJunk
 
+
+section AtomPairCode
+
+variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
+  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
+  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
+  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
+  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
+
+noncomputable def atomPairIdx0 (n k : ℕ) : ℕ :=
+  stateIdx0 (stateInnerC (atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
+    (Nat.pair k n)))
+
+noncomputable def atomPairIdx1 (n k : ℕ) : ℕ :=
+  stateIdx1 (stateInnerC (atomPairCodeState P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY
+    (Nat.pair k n)))
+
+end AtomPairCode
+
 end DomainTheory.NeighbourhoodSystems
