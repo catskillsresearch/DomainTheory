@@ -7,6 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.EmbeddingsIntoU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.EmbeddingsIntoU_more
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 @[expose] public section
