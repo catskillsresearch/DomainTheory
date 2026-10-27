@@ -17,8 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.expPayload
 public import DomainTheory.DataTypesAsLattices.Functionality.hApply
 public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
-public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion_isScottContinuous_t
-public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion_isScottContinuous_idx
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
@@ -59,7 +57,7 @@ theorem isScottContinuous_t (H e : Pomega) :
           (f := funOf (funOf H (funOf (expPayload e) (ofNat 1))))
           (g := fun t => updateEnvUnion t x (funOf (expPayload e) (ofNat 0)))
           (funOf.isScottContinuous (funOf H (funOf (expPayload e) (ofNat 1))))
-          (updateEnvUnion_isScottContinuous_t x
+          (updateEnvUnion.isScottContinuous_t x
             (funOf (expPayload e) (ofNat 0)))))
 
 theorem isScottContinuous_e (H t : Pomega) :
@@ -85,7 +83,7 @@ theorem isScottContinuous_e (H t : Pomega) :
             (funOf.isScottContinuous_left (ofNat 1)))
           (theorem_1_3 (f := updateEnvUnion t x)
             (g := fun e => funOf (expPayload e) (ofNat 0))
-            (updateEnvUnion_isScottContinuous_idx t x)
+            (updateEnvUnion.isScottContinuous_idx t x)
             (theorem_1_3 (f := fun u => funOf u (ofNat 0)) (g := expPayload)
               (funOf.isScottContinuous_left (ofNat 0))
               (funOf.isScottContinuous_left (ofNat 1))))))

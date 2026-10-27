@@ -35,7 +35,7 @@ theorem plusR_typed_iff {a b u : Pomega} (ha : Retract a) (hb : Retract b) :
         dcondSet (funOf u (ofNat 0))
           (pairSeq (ofNat 0) (funOf a (funOf u (ofNat 1))))
           (pairSeq (ofNat 1) (funOf b (funOf u (ofNat 1)))) := by
-      simpa [typed, plusR_app] using hu
+      simpa [typed, plusR_app.app] using hu
     rcases dcondSet.cases (funOf u (ofNat 0)) with h | h | h | h
     · refine Or.inr (Or.inr (Or.inl ⟨funOf a (funOf u (ofNat 1)), ?_, ?_⟩))
       · exact hu'.trans (dcondSet.of_zero_not_pos h.1 h.2)

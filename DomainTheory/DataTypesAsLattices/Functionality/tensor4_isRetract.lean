@@ -9,10 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.tensor4_app
-public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_zero
-public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_one
-public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_two
-public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_three
+public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app
 
 @[expose] public section
 
@@ -28,7 +25,7 @@ theorem tensor4_isRetract {a b c d : Pomega}
     graph (fun u => funOf (tensor4 a b c d) (funOf (tensor4 a b c d) u))
   apply graph_ext
   intro u
-  rw [tensor4_app, tensor4_app, seq4_app_zero, seq4_app_one, seq4_app_two,
-    seq4_app_three, retract_app ha, retract_app hb, retract_app hc, retract_app hd]
+  rw [tensor4_app, tensor4_app, seq4_app.zero, seq4_app.one, seq4_app.two,
+    seq4_app.three, retract_app ha, retract_app hb, retract_app hc, retract_app hd]
 
 end DomainTheory.DataTypesAsLattices

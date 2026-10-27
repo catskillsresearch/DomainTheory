@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.Z
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Graph.beta
-public import DomainTheory.DataTypesAsLattices.Functionality.Z_isScottContinuous_right
-public import DomainTheory.DataTypesAsLattices.Functionality.Z_isScottContinuous_left
 
 @[expose] public section
 

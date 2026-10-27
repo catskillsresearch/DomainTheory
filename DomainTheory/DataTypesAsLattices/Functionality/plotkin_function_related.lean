@@ -14,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z
 public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE
 public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag
-public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE_erase
 public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_app
 public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_fresh_app
 public import DomainTheory.DataTypesAsLattices.Functionality.finite_sigma_union_app
@@ -57,7 +56,7 @@ theorem plotkin_function_related (p q : ℕ) :
     rw [eq_2_9, normalized_finite_app, sigmaJ.app]
   refine ⟨hgf, hgu, ?_⟩
   intro u v huv
-  have herase := plotkinE_erase huv
+  have herase := plotkinE.erase huv
   rcases huv.1 with ⟨r, hur | hur⟩
   <;> rcases huv.2.1 with ⟨s, hvs | hvs⟩
   all_goals

@@ -10,20 +10,18 @@ Functionality had long been studied in combinatory logic. Hindley, Lercher, and 
 
 @import "1976_Total_functions_and_functionality.english" {code_block=false}
 
-**[DataTypesAsLattices/Functionality/Hcomb_app.lean](Hcomb_app.lean)**
+**[DataTypesAsLattices/Functionality/Hcomb_more.lean](Hcomb_more.lean)**
 
-@import "Hcomb_app.lean"
-
+@import "Hcomb_more.lean"
 **[DataTypesAsLattices/Functionality/Z_finite_bound.lean](Z_finite_bound.lean)**
 
 **[DataTypesAsLattices/Functionality/Z_finite_no_tag.lean](Z_finite_no_tag.lean)**
 
 **[DataTypesAsLattices/Functionality/Z_graph_funOf.lean](Z_graph_funOf.lean)**
 
-**[DataTypesAsLattices/Functionality/Z_isScottContinuous_right.lean](Z_isScottContinuous_right.lean)**
+**[DataTypesAsLattices/Functionality/Z.lean](Z.lean)**
 
-@import "Z_isScottContinuous_right.lean"
-
+@import "Z.lean"
 **[DataTypesAsLattices/Functionality/Z_rel.lean](Z_rel.lean)**
 
 **[DataTypesAsLattices/Functionality/Zcomb.lean](Zcomb.lean)**

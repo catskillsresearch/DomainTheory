@@ -1,13 +1,17 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Graph.beta
-public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
+public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
 public import DomainTheory.DataTypesAsLattices.Functionality.mem
+public import DomainTheory.DataTypesAsLattices.Graph.beta
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -56,6 +60,25 @@ theorem graph_funOf (n : ℕ) (f x : Pomega) :
     have : funOf (graph (fun y => funOf f y)) (Z n f x) = funOf f (Z n f x) :=
       beta (funOf.isScottContinuous f) (Z n f x)
     exact this
+
+
+theorem isScottContinuous_left (n : ℕ) (x : Pomega) :
+    IsScottContinuous (fun f => Z n f x) := by
+  induction n with
+  | zero => simpa [Z] using const_isScottContinuous x
+  | succ n ih =>
+    simpa [Z] using
+      continuous_tuple
+        (fun y => funOf.isScottContinuous_left y)
+        (fun u => funOf.isScottContinuous u)
+        id_isScottContinuous ih
+
+theorem isScottContinuous_right (n : ℕ) (f : Pomega) :
+    IsScottContinuous (fun x => Z n f x) := by
+  induction n with
+  | zero => simpa [Z] using id_isScottContinuous
+  | succ n ih =>
+    simpa [Z] using theorem_1_3 (funOf.isScottContinuous f) ih
 
 end Z
 

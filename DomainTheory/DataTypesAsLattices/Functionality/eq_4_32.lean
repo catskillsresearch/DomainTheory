@@ -14,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.inleftC
 public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
 public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_app
-public import DomainTheory.DataTypesAsLattices.Functionality.inleftC_app
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
@@ -32,8 +31,8 @@ theorem eq_4_32 {a b : Pomega} (ha : Retract a) :
   rw [arrowR.app]
   apply graph_ext
   intro x
-  simp only [comp.app, inleftC_app, retract_app ha]
-  rw [plusR_app, plusR_app, pairSeq_app_zero, pairSeq_app_one,
+  simp only [comp.app, inleftC.app, retract_app ha]
+  rw [plusR_app.app, plusR_app.app, pairSeq_app_zero, pairSeq_app_one,
     dcondSet.ofNat_zero, retract_app ha]
   rw [pairSeq_app_zero, pairSeq_app_one, dcondSet.ofNat_zero, retract_app ha]
 

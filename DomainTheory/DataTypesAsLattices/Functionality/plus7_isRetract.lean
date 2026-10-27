@@ -40,7 +40,7 @@ theorem plus7_isRetract {a0 a1 a2 a3 a4 a5 a6 : Pomega}
       (funOf (plus7 a0 a1 a2 a3 a4 a5 a6) u))
   apply graph_ext
   intro u
-  rw [plus7_app, plus7_app]
+  rw [plus7_app.app, plus7_app.app]
   have hbody0 (x : Pomega) :
       plus7Body a0 a1 a2 a3 a4 a5 a6 (tagInj 0 x) = tagInj 0 (funOf a0 x) := by
     rw [plus7Body, tagInj_zero, tagInj_one, dcondSet.ofNat_zero]

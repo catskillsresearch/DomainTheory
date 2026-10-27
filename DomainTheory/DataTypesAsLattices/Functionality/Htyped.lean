@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Functionality.Hinterp
-public import DomainTheory.DataTypesAsLattices.Functionality.Hinterp_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.envR_isRetract
 public import DomainTheory.DataTypesAsLattices.Functionality.lambR_isRetract
@@ -31,7 +30,7 @@ theorem app (τ : LambTerm) (t : Pomega) :
   rw [Htyped, arrowR.app]
   simp only [comp.app]
   apply congrArg (funOf lambR)
-  exact beta (Hinterp_isScottContinuous τ) (funOf envR t)
+  exact beta (Hinterp.isScottContinuous τ) (funOf envR t)
 
 theorem typed (τ : LambTerm) :
     typed (Htyped τ) (arrowR envR lambR) :=

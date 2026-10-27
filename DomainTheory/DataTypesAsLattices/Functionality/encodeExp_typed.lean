@@ -8,10 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.encodeExp
 public import DomainTheory.DataTypesAsLattices.Functionality.typed_pairSeq_tensorR
 public import DomainTheory.DataTypesAsLattices.Functionality.tensor4_app
-public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_zero
-public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_one
-public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_two
-public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_three
+public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app
 public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_44
 public import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl0
 public import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl1
@@ -47,8 +44,8 @@ theorem encodeExp_typed : ∀ τ : LambTerm, typed (encodeExp τ) expR := by
   | condq θ τ σ ρ ihθ ihτ ihσ ihρ =>
     rw [encodeExp, eq_4_44]
     refine plus7_typed_inl4 ?_
-    rw [typed, tensor4_app, seq4_app_zero, seq4_app_one, seq4_app_two,
-      seq4_app_three, ← ihθ, ← ihτ, ← ihσ, ← ihρ]
+    rw [typed, tensor4_app, seq4_app.zero, seq4_app.one, seq4_app.two,
+      seq4_app.three, ← ihθ, ← ihτ, ← ihσ, ← ihρ]
   | app τ σ ihτ ihσ =>
     rw [encodeExp, eq_4_44]
     refine plus7_typed_inl5 ?_

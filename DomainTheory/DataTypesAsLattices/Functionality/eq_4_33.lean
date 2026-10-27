@@ -33,7 +33,7 @@ theorem eq_4_33 {a b : Pomega} (hb : Retract b) :
   apply graph_ext
   intro x
   simp only [comp.app, inrightC_app, retract_app hb]
-  rw [plusR_app, plusR_app, pairSeq_app_zero, pairSeq_app_one,
+  rw [plusR_app.app, plusR_app.app, pairSeq_app_zero, pairSeq_app_one,
     dcondSet.ofNat_one, retract_app hb]
   rw [pairSeq_app_zero, pairSeq_app_one, dcondSet.ofNat_one, retract_app hb]
 

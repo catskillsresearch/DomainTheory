@@ -11,9 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.expPayload
 public import DomainTheory.DataTypesAsLattices.Functionality.expTag
 public import DomainTheory.DataTypesAsLattices.Functionality.hApp
 public import DomainTheory.DataTypesAsLattices.Functionality.hCond
-public import DomainTheory.DataTypesAsLattices.Functionality.hCond_isScottContinuous_H
-public import DomainTheory.DataTypesAsLattices.Functionality.hCond_isScottContinuous_e
-public import DomainTheory.DataTypesAsLattices.Functionality.hCond_isScottContinuous_t
 public import DomainTheory.DataTypesAsLattices.Functionality.hLam
 public import DomainTheory.DataTypesAsLattices.Functionality.hPred
 public import DomainTheory.DataTypesAsLattices.Functionality.hSucc
@@ -123,7 +120,7 @@ theorem isScottContinuous_H (e t : Pomega) :
             (fun x z => dcondSet.isScottContinuous_mid x z)
             (fun x y => dcondSet.isScottContinuous_right x y)
             (const_isScottContinuous (predSet^[4] (expTag e)))
-            (hCond_isScottContinuous_H e t)
+            (hCond.isScottContinuous_H e t)
             (continuous_nary
               (fun y z => dcondSet.isScottContinuous_left y z)
               (fun x z => dcondSet.isScottContinuous_mid x z)
@@ -169,7 +166,7 @@ theorem isScottContinuous_t (H e : Pomega) :
             (fun x z => dcondSet.isScottContinuous_mid x z)
             (fun x y => dcondSet.isScottContinuous_right x y)
             (const_isScottContinuous (predSet^[4] (expTag e)))
-            (hCond_isScottContinuous_t H e)
+            (hCond.isScottContinuous_t H e)
             (continuous_nary
               (fun y z => dcondSet.isScottContinuous_left y z)
               (fun x z => dcondSet.isScottContinuous_mid x z)
@@ -215,7 +212,7 @@ theorem isScottContinuous_e (H t : Pomega) :
             (fun x z => dcondSet.isScottContinuous_mid x z)
             (fun x y => dcondSet.isScottContinuous_right x y)
             (predSet_iterate_expTag_isScottContinuous 4)
-            (hCond_isScottContinuous_e H t)
+            (hCond.isScottContinuous_e H t)
             (continuous_nary
               (fun y z => dcondSet.isScottContinuous_left y z)
               (fun x z => dcondSet.isScottContinuous_mid x z)

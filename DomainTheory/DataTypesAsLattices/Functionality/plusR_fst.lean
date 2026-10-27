@@ -19,6 +19,6 @@ namespace DomainTheory.DataTypesAsLattices
 theorem plusR_fst (a b u : Pomega) :
     funOf (funOf (plusR a b) u) (ofNat 0) =
       dcondSet (funOf u (ofNat 0)) (ofNat 0) (ofNat 1) := by
-  rw [plusR_app, funOf_dcondSet, pairSeq_app_zero, pairSeq_app_zero]
+  rw [plusR_app.app, funOf_dcondSet, pairSeq_app_zero, pairSeq_app_zero]
 
 end DomainTheory.DataTypesAsLattices

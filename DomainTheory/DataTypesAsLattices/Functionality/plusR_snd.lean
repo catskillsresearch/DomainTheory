@@ -20,6 +20,6 @@ theorem plusR_snd (a b u : Pomega) :
     funOf (funOf (plusR a b) u) (ofNat 1) =
       dcondSet (funOf u (ofNat 0))
         (funOf a (funOf u (ofNat 1))) (funOf b (funOf u (ofNat 1))) := by
-  rw [plusR_app, funOf_dcondSet, pairSeq_app_one, pairSeq_app_one]
+  rw [plusR_app.app, funOf_dcondSet, pairSeq_app_one, pairSeq_app_one]
 
 end DomainTheory.DataTypesAsLattices

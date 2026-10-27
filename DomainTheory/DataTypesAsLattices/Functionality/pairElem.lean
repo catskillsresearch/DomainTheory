@@ -1,11 +1,12 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_inj
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.seq2
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -26,6 +27,11 @@ theorem fst (x y : Pomega) : funOf (pairElem x y) (ofNat 0) = x :=
 
 theorem snd (x y : Pomega) : funOf (pairElem x y) (ofNat 1) = y :=
   seq2.one x y
+
+
+theorem inj {x y x' y' : Pomega} (h : pairElem x y = pairElem x' y') :
+    x = x' ∧ y = y' :=
+  pairSeq_inj h
 
 end pairElem
 
