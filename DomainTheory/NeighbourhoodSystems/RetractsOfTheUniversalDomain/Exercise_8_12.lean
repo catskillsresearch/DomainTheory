@@ -3111,11 +3111,6 @@ theorem atomE_succ_subset (δ : ℕ → Bool) (n : ℕ) :
   · simp only [hδ, ite_true]; exact split_fst_subset' hsplit (hmatch δ) (hmem δ) (X n)
   · simp only [hδ]; exact split_snd_subset' hsplit (hmatch δ) (hmem δ) (X n)
 
-omit hΔ hEmne hsplit in
-theorem subset_YseqE {n : ℕ} (δ' : Fin n → Bool) :
-    atomE E split X Δ (extendTrue δ') (n + 1) ⊆ YseqE E split X Δ n :=
-  Set.subset_iUnion (fun δ' => atomE E split X Δ (extendTrue δ') (n + 1)) δ'
-
 /-- **The "I-formula", generalizing `split_fst_eq_inter_Yseq`**: the "+"-piece chosen when
 splitting the depth-`n` atom for `δ` against `X n` is *exactly* the intersection of that atom with
 `YseqE E split X Δ n`. -/
@@ -3144,7 +3139,9 @@ theorem split_fst_eq_inter_YseqE (δ : ℕ → Bool) (n : ℕ) :
   have hδ3_eq : atomE E split X Δ δ3 (n + 1) = I := (atomE_congr E split X Δ hagreefull).trans hI_eq
   apply Set.Subset.antisymm
   · have hIsubB : I ⊆ B := split_fst_subset' hsplit (hmatch δ) (hmem δ) (X n)
-    have hIsubY : I ⊆ YseqE E split X Δ n := hδ3_eq ▸ subset_YseqE E split X Δ (restrictFin δ2 n)
+    have hIsubY : I ⊆ YseqE E split X Δ n :=
+      hδ3_eq ▸ Set.subset_iUnion (fun δ' => atomE E split X Δ (extendTrue δ') (n + 1))
+        (restrictFin δ2 n)
     exact Set.subset_inter hIsubB hIsubY
   · rintro z ⟨hzB, hzY⟩
     obtain ⟨δ', hz'⟩ := Set.mem_iUnion.mp hzY
@@ -3227,32 +3224,6 @@ theorem transfer_empty_iffE {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ 
     fun δ n => (hcore δ n).symm
   exact ⟨transfer_dir X Δ (YseqE E split X Δ) E.master hcore hn,
     transfer_dir (YseqE E split X Δ) E.master X Δ hcore' hn⟩
-
-/-- Subset transfer, generalized to `E`: `X i ⊆ X j` (restricted to `Δ`) iff `YseqE i ⊆ YseqE j`
-(restricted to `E.master`). Mirrors `transfer_subset_iff`. -/
-theorem transfer_subset_iffE (i j : ℕ) :
-    Δ ∩ X i ⊆ X j ↔ E.master ∩ YseqE E split X Δ i ⊆ YseqE E split X Δ j := by
-  have key := transfer_empty_iffE E split X Δ hΔ hEmne hsplit (cs := [(i, true), (j, false)])
-    (n := max i j + 1)
-    (by simp only [List.mem_cons, List.not_mem_nil, or_false]
-        rintro p (rfl | rfl) <;> simp)
-  have hLHS : {x ∈ Δ | ∀ p ∈ [(i, true), (j, false)], (p.2 = true ↔ x ∈ X p.1)}
-      = (Δ ∩ X i) \ X j := by
-    ext x
-    simp only [Set.mem_ofPred_eq, List.mem_cons, List.not_mem_nil, or_false,
-      forall_eq_or_imp, forall_eq, Set.mem_sdiff, Set.mem_inter_iff]
-    tauto
-  have hRHS : {y ∈ E.master |
-      ∀ p ∈ [(i, true), (j, false)], (p.2 = true ↔ y ∈ YseqE E split X Δ p.1)}
-      = (E.master ∩ YseqE E split X Δ i) \ YseqE E split X Δ j := by
-    ext y
-    simp only [Set.mem_ofPred_eq, List.mem_cons, List.not_mem_nil, or_false,
-      forall_eq_or_imp, forall_eq, Set.mem_sdiff, Set.mem_inter_iff]
-    tauto
-  rw [hLHS, hRHS] at key
-  rw [← Set.sdiff_eq_empty, ← Set.sdiff_eq_empty, ← Set.not_nonempty_iff_eq_empty,
-    ← Set.not_nonempty_iff_eq_empty, not_iff_not]
-  exact key
 
 end
 
@@ -3922,35 +3893,6 @@ theorem mem_of_found {γ : Type*} {W : NeighborhoodSystem γ}
 end
 
 end combineFound2
-namespace digit
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section
-/-- Adding a higher digit (`d * 4 ^ n`, `n > i`) never disturbs a `deltaPair`-digit strictly
-below `n`. The purely-arithmetic core making `encodeDeltaPair`'s induction go through. -/
-theorem add_mul_pow_of_lt (m d i n : ℕ) (hi : i < n) :
-    (m + d * 4 ^ n) / 4 ^ i % 4 = m / 4 ^ i % 4 := by
-  obtain ⟨j, rfl⟩ := Nat.exists_eq_add_of_lt hi
-  have heq : d * 4 ^ (i + j + 1) = 4 ^ i * (4 * 4 ^ j * d) := by ring
-  rw [heq, Nat.add_mul_div_left m _ (pow_pos (by norm_num) i)]
-  rw [show 4 * 4 ^ j * d = 4 * (4 ^ j * d) by ring]
-  exact Nat.add_mul_mod_self_left _ _ _
-end
-
-section
-/-- `encodeDeltaPair`'s freshly-added digit at position `n` is read straight back off by dividing
-out the lower `4 ^ n` (which is exactly `encodeDeltaPair δ n`, `< 4 ^ n` by `encodeDeltaPair_lt`,
-hence contributes `0` to the quotient). -/
-theorem eq_of_encodeDeltaPair (δ : ℕ → Bool × Bool) (n : ℕ) :
-    encodeDeltaPair δ (n + 1) / 4 ^ n =
-      (if (δ n).1 then 1 else 0) + (if (δ n).2 then 2 else 0) := by
-  show (encodeDeltaPair δ n +
-      ((if (δ n).1 then 1 else 0) + (if (δ n).2 then 2 else 0)) * 4 ^ n) / 4 ^ n = _
-  rw [Nat.add_mul_div_right _ _ (pow_pos (by norm_num) n),
-    Nat.div_eq_of_lt (encodeDeltaPair_lt δ n), Nat.zero_add]
-end
-
-end digit
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 section
@@ -3998,7 +3940,18 @@ theorem encodeDeltaPair (δ : ℕ → Bool × Bool) :
       have key : _root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (n + 1) / 4 ^ i % 4 = _root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n / 4 ^ i % 4 := by
         show (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n +
           ((if (δ n).1 then 1 else 0) + (if (δ n).2 then 2 else 0)) * 4 ^ n) / 4 ^ i % 4 = _
-        exact digit.add_mul_pow_of_lt _ _ _ _ hi'
+        -- was digit.add_mul_pow_of_lt
+        obtain ⟨j, rfl⟩ := Nat.exists_eq_add_of_lt hi'
+        have heq : ((if (δ (i + j + 1)).1 then 1 else 0) + (if (δ (i + j + 1)).2 then 2 else 0)) *
+            4 ^ (i + j + 1) = 4 ^ i * (4 * 4 ^ j *
+              ((if (δ (i + j + 1)).1 then 1 else 0) + (if (δ (i + j + 1)).2 then 2 else 0))) := by
+          ring
+        rw [heq, Nat.add_mul_div_left _ _ (pow_pos (by norm_num) i)]
+        rw [show 4 * 4 ^ j *
+            ((if (δ (i + j + 1)).1 then 1 else 0) + (if (δ (i + j + 1)).2 then 2 else 0)) =
+            4 * (4 ^ j * ((if (δ (i + j + 1)).1 then 1 else 0) +
+              (if (δ (i + j + 1)).2 then 2 else 0))) by ring]
+        exact Nat.add_mul_mod_self_left _ _ _
       have h1 : (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (n + 1) / 4 ^ i) % 2 =
           (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n / 4 ^ i) % 2 := by omega
       have h2 : (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (n + 1) / 4 ^ i / 2) % 2 =
@@ -4007,7 +3960,13 @@ theorem encodeDeltaPair (δ : ℕ → Bool × Bool) :
       show (decide ((_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n / 4 ^ i) % 2 = 1),
           decide ((_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ n / 4 ^ i / 2) % 2 = 1)) = δ i
       exact ih i hi'
-    · have hd := digit.eq_of_encodeDeltaPair δ i
+    · have hd : _root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (i + 1) / 4 ^ i =
+          (if (δ i).1 then 1 else 0) + (if (δ i).2 then 2 else 0) := by
+        -- was digit.eq_of_encodeDeltaPair
+        show (_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ i +
+            ((if (δ i).1 then 1 else 0) + (if (δ i).2 then 2 else 0)) * 4 ^ i) / 4 ^ i = _
+        rw [Nat.add_mul_div_right _ _ (pow_pos (by norm_num) i),
+          Nat.div_eq_of_lt (encodeDeltaPair_lt δ i), Nat.zero_add]
       show (decide ((_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (i + 1) / 4 ^ i) % 2 = 1),
           decide ((_root_.DomainTheory.NeighbourhoodSystems.encodeDeltaPair δ (i + 1) / 4 ^ i / 2) % 2 = 1)) = δ i
       rw [hd]
@@ -5553,45 +5512,34 @@ end atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 section
-/-- **Distinctness of bounded bit-sources**: two bit-sources both `< 4 ^ n` and unequal must
-disagree (via `deltaPair`) at some position strictly below `n`. Unlike `Theorem88d.lean`'s
-`eq_of_deltaOf_agree_of_lt_two_pow` (which this directly mirrors), agreement of `deltaPair k`/
-`deltaPair k'` on `[0, n)` means agreement of `k.testBit`/`k'.testBit` on *every* bit `< 2 * n` (both
-the `2 * i` and `2 * i + 1` readings) — covering all of `testBit`'s bits below the bound `4 ^ n =
-2 ^ (2 * n)`, so `Nat.eq_of_testBit_eq` still finishes in one step once every bit position is routed
-through `deltaPair.fst_eq_testBit`/`deltaPair.snd_eq_testBit`. -/
-theorem eq_of_deltaPair_agree_of_lt_four_pow {n k k' : ℕ} (hk : k < 4 ^ n) (hk' : k' < 4 ^ n)
-    (hagree : ∀ i < n, deltaPair k i = deltaPair k' i) : k = k' := by
-  apply Nat.eq_of_testBit_eq
-  intro l
-  rcases Nat.lt_or_ge l (2 * n) with hl | hl
-  · rcases Nat.mod_two_eq_zero_or_one l with hmod | hmod
-    · have hl2 : l = 2 * (l / 2) := by omega
-      have hi : l / 2 < n := by omega
-      have heq := congrArg Prod.fst (hagree (l / 2) hi)
-      rw [deltaPair.fst_eq_testBit, deltaPair.fst_eq_testBit] at heq
-      rwa [hl2]
-    · have hl2 : l = 2 * (l / 2) + 1 := by omega
-      have hi : l / 2 < n := by omega
-      have heq := congrArg Prod.snd (hagree (l / 2) hi)
-      rw [deltaPair.snd_eq_testBit, deltaPair.snd_eq_testBit] at heq
-      rwa [hl2]
-  · have h4n : (4 : ℕ) ^ n = 2 ^ (2 * n) := by
-      rw [show (4 : ℕ) = 2 ^ 2 from rfl, ← pow_mul]
-    have hile : (2 : ℕ) ^ (2 * n) ≤ 2 ^ l := Nat.pow_le_pow_right (by norm_num) hl
-    rw [Nat.testBit_lt_two_pow ((h4n ▸ hk).trans_le hile),
-      Nat.testBit_lt_two_pow ((h4n ▸ hk').trans_le hile)]
-end
-
-section
 /-- **Contrapositive form**: two distinct bit-sources both `< 4 ^ n` must disagree somewhere below
 `n` — the form actually consumed by `(d)(5)(b)`'s I-formula lemmas (ruling out cross-terms from a
-*different* bit-source witnessing the same point). -/
+*different* bit-source witnessing the same point). Inlines the former
+`eq_of_deltaPair_agree_of_lt_four_pow` scaffold. -/
 theorem exists_deltaPair_ne_of_lt_of_ne {n k k' : ℕ} (hk : k < 4 ^ n) (hk' : k' < 4 ^ n)
     (hne : k ≠ k') : ∃ i < n, deltaPair k i ≠ deltaPair k' i := by
   by_contra hcon
   push Not at hcon
-  exact hne (eq_of_deltaPair_agree_of_lt_four_pow hk hk' hcon)
+  exact hne (by
+    apply Nat.eq_of_testBit_eq
+    intro l
+    rcases Nat.lt_or_ge l (2 * n) with hl | hl
+    · rcases Nat.mod_two_eq_zero_or_one l with hmod | hmod
+      · have hl2 : l = 2 * (l / 2) := by omega
+        have hi : l / 2 < n := by omega
+        have heq := congrArg Prod.fst (hcon (l / 2) hi)
+        rw [deltaPair.fst_eq_testBit, deltaPair.fst_eq_testBit] at heq
+        rwa [hl2]
+      · have hl2 : l = 2 * (l / 2) + 1 := by omega
+        have hi : l / 2 < n := by omega
+        have heq := congrArg Prod.snd (hcon (l / 2) hi)
+        rw [deltaPair.snd_eq_testBit, deltaPair.snd_eq_testBit] at heq
+        rwa [hl2]
+    · have h4n : (4 : ℕ) ^ n = 2 ^ (2 * n) := by
+        rw [show (4 : ℕ) = 2 ^ 2 from rfl, ← pow_mul]
+      have hile : (2 : ℕ) ^ (2 * n) ≤ 2 ^ l := Nat.pow_le_pow_right (by norm_num) hl
+      rw [Nat.testBit_lt_two_pow ((h4n ▸ hk).trans_le hile),
+        Nat.testBit_lt_two_pow ((h4n ▸ hk').trans_le hile)])
 end
 
 section
