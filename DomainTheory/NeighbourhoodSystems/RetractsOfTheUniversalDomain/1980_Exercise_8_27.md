@@ -24,11 +24,17 @@ The tip asserts that for any polymorphic type `d`, `Π(d)` is a finitary project
 
 ## Development
 
-Defines polymorphic types and proves `Π(d)` is a finitary projection.
+Defines polymorphic types and proves the `piD` side of finitariness.
 
 **[PolymorphicType.lean](PolymorphicType.lean)**
 
 @import "PolymorphicType.lean"
+
+Carves `piU` and folds `XXX_piU` companions as `XXX.piU`.
+
+**[piU.lean](piU.lean)** — `piU`, `toElementMap.piU`, `isProjection.piU`, `isFinitaryProjection.piU`, …
+
+@import "piU.lean"
 
 Packs those facts for the tip.
 

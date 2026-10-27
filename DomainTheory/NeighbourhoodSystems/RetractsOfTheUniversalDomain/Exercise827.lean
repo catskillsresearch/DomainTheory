@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.PolymorphicType
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.piU
 
 @[expose] public section
 
@@ -56,7 +56,7 @@ theorem example_827 :
         (piD d).rel X X ↔ ∃ hX : (funSpace U U).mem X, gSection (piDUncurried d) hX ∈ X) :=
   ⟨exists_X_of_mem_step, piD_rel_iff, gSection_piDUncurried_rel_iff, piD_toElementMap_mem_iff,
     hii_easy_direction, exists_X_of_mem_stepFun, hii_hard_direction, hii_piD,
-    isFinitaryProjection_piD, isFinitaryProjection_piD_of_formula, isFinitaryProjection_piU,
-    isFinitary_piU_of_formula, isFinitary_piU_of_isFinitary_piD, piD_rel_self_iff⟩
+    isFinitaryProjection_piD, isFinitaryProjection_piD_of_formula, isFinitaryProjection.piU,
+    isFinitary.piU_of_formula, isFinitary.piU_of_isFinitary_piD, piD_rel_self_iff⟩
 
 end DomainTheory.NeighbourhoodSystems
