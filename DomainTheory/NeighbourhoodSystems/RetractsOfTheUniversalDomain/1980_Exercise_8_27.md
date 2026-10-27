@@ -18,6 +18,20 @@ Show that for $d$ a polymorphic type, $\Pi(d)$ is a type. (Hint: It is easy to c
 
 <!-- page 151 -->
 
-**[Exercise_8_27.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_27.lean)**
+## Tip summary
+
+The tip asserts that for any polymorphic type `d`, `Π(d)` is a finitary projection.
+
+## Development
+
+Defines polymorphic types and proves `Π(d)` is a finitary projection.
+
+**[PolymorphicType.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/PolymorphicType.lean)**
+
+@import "PolymorphicType.lean"
+
+The tip then assembles those tools into Scott’s statement.
+
+**[Exercise_8_27.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_27.lean)** — `exercise_8_27`
 
 @import "Exercise_8_27.lean"

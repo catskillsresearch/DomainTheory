@@ -12,6 +12,20 @@ $$E = T(E) \ ,$$
 
 will $E \trianglelefteq D$ hold? What projections do you see in the examples in 6.2?
 
-**[Exercise_8_22.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_22.lean)**
+## Tip summary
+
+The tip asserts the concrete embedding relation between Scott’s examples `C` and `B`.
+
+## Development
+
+Compares Scott’s concrete examples `B` and `C`.
+
+**[Exercise822.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise822.lean)**
+
+@import "Exercise822.lean"
+
+The tip then assembles those tools into Scott’s statement.
+
+**[Exercise_8_22.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_22.lean)** — `exercise_8_22`
 
 @import "Exercise_8_22.lean"

@@ -21,6 +21,20 @@ $$\lambda x.\, b(\sigma'[a(x)/x]),$$
 
 where $\sigma'$ is the further translation of $\sigma$ into untyped $\lambda$-calculus. Be sure to show that this result "has the right type" in the sense defined above.)
 
-**[Exercise_8_26.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_26.lean)**
+## Tip summary
+
+The tip asserts β-soundness of the self-hosted encoding: `Uapply (Ulam f) x = f(x)`.
+
+## Development
+
+Encodes self-application and self-abstraction inside `U` and proves β-soundness.
+
+**[Exercise826.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826.lean)**
+
+@import "Exercise826.lean"
+
+The tip then assembles those tools into Scott’s statement.
+
+**[Exercise_8_26.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_26.lean)** — `exercise_8_26`
 
 @import "Exercise_8_26.lean"

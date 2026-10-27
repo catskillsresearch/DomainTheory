@@ -6,6 +6,20 @@ $$D \trianglelefteq D \times D \quad \text{and} \quad D \trianglelefteq D \to D 
 
 Would these projections be computable if $D$ is effectively given? Are there more than one projection pair in each case?
 
-**[Exercise_8_20.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_20.lean)**
+## Tip summary
+
+The tip asserts `D ⊴ D×D` and `D ⊴ D→D` for every domain `D`.
+
+## Development
+
+Proves the unconditional self-embeddings `D ⊴ D×D` and `D ⊴ D→D`.
+
+**[Exercise820.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820.lean)**
+
+@import "Exercise820.lean"
+
+The tip then assembles those tools into Scott’s statement.
+
+**[Exercise_8_20.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_20.lean)** — `exercise_8_20`
 
 @import "Exercise_8_20.lean"

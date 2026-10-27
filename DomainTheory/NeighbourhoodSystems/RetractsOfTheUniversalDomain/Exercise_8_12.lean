@@ -1,13 +1,11 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise_8_27
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.effectiveIso812_UV
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_18
 
 @[expose] public section
 
-/- concordance: source L5147 EXERCISE 8.12 integer presentation of U -/
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Exercise718
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Exercise718
 
 /-- **Exercise 8.12 (Scott 1981, PRG-19).** `V` is effectively given and effectively isomorphic
 to `U`, hence another presentation of `U`. --/
@@ -16,5 +14,4 @@ theorem exercise_8_12 :
       EffectivelyIsomorphic UComputablePresentation VComputablePresentation :=
   ⟨V_isEffectivelyGiven, ⟨effectiveIso812_UV⟩⟩
 
-end DomainTheory.NeighbourhoodSystems
 end

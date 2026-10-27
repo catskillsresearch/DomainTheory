@@ -2,9 +2,9 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem_8_6
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise_8_25
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.QPairCodes
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_18
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise_8_14
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.VComputablePresentation
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem_7_5
 public import Mathlib.Data.Nat.Bitwise
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
@@ -3974,6 +3974,118 @@ noncomputable def sumUUPresentation : ComputablePresentation (sum U U U_mem_none
 
 end
 
+
+
+section
+open NeighborhoodSystem Domain.Recursive ApproximableMap
+variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
+
+/-- **`isoInj : D → D''`**, Theorem 2.7 applied to `domainIsoCode P`. -/
+noncomputable def isoInj : ApproximableMap D (DprimeUCode P) := ofIso (domainIsoCode P)
+
+/-- **`isoProj : D'' → D`**, Theorem 2.7 applied to the inverse iso. -/
+noncomputable def isoProj : ApproximableMap (DprimeUCode P) D := ofIso (domainIsoCode P).symm
+
+/-- `isoInj ∘ isoProj = I_D''`. -/
+theorem isoInj_comp_isoProj : (isoInj P).comp (isoProj P) = idMap (DprimeUCode P) := by
+  apply ext_of_toElementMap
+  intro y
+  rw [toElementMap_comp]
+  show (isoInj P).toElementMap ((isoProj P).toElementMap y) = _
+  rw [isoInj, isoProj, toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply,
+    toElementMap_idMap]
+
+/-- **`isoInj`'s relation at raw indices reduces to a single reindexed inclusion.** `n := b` is always
+a valid witness (`Yc P b = Yc P b`), and any *other* witness `n` with `Yc P b = Yc P n` forces
+`e P b = e P n` (`embed_eq_iff_raw_code`), so it gives no new information. -/
+theorem isoInj_rel_iff_incl {a b : ℕ} :
+    (isoInj P).rel (P.X a) (Yc P b) ↔ P.X a ⊆ P.X (eIdx P b) := by
+  show (∃ _ : D.mem (P.X a), (toDprimeUCode P (D.principal (P.mem_X a))).mem (Yc P b)) ↔ _
+  simp only [toDprimeUCode, mem_principal]
+  have hb : e P b = P.X (eIdx P b) := rfl
+  constructor
+  · rintro ⟨-, n, hn, -, hsub⟩
+    rwa [← hb, (embed_eq_iff_raw_code P b n).mpr hn]
+  · intro hsub
+    exact ⟨P.mem_X a, b, rfl, (P0 P).mem_X b, hb ▸ hsub⟩
+
+/-- **`isoInj` is computable** relative to `P`/`DprimeUCodePresentation P`: its raw-index relation is
+`incl_computable` reindexed by the primitive-recursive `eIdx P` in the second argument. -/
+theorem isoInj_isComputableMap : ComputableMap P (DprimeUCodePresentation P) (isoInj P) := by
+  constructor
+  have hg : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1 (eIdx P t.unpair.2)) :=
+    Nat.Primrec.pair Nat.Primrec.left ((eIdx_primrec P).comp Nat.Primrec.right)
+  have hp : RecDecidable (fun t : ℕ => P.X t.unpair.1 ⊆ P.X (eIdx P t.unpair.2)) := by
+    refine RecDecidable.of_iff (fun t => ?_) (P.incl_computable.comp hg)
+    simp only [unpair_pair_fst, unpair_pair_snd]
+  refine REPred.of_iff (fun t => ?_) hp.re
+  show (isoInj P).rel (P.X t.unpair.1) ((DprimeUCodePresentation P).X t.unpair.2) ↔ _
+  exact isoInj_rel_iff_incl P
+
+/-- `isoProj ∘ isoInj = I_D` (Theorem 2.7's `toElementMap_ofIso`, both ways, plus `OrderIso.symm_apply_apply`). -/
+theorem isoProj_comp_isoInj : (isoProj P).comp (isoInj P) = idMap D := by
+  apply ext_of_toElementMap
+  intro x
+  rw [toElementMap_comp]
+  show (isoProj P).toElementMap ((isoInj P).toElementMap x) = _
+  rw [isoInj, isoProj, toElementMap_ofIso, toElementMap_ofIso, OrderIso.symm_apply_apply,
+    toElementMap_idMap]
+
+/-- **`isoProj`'s relation at raw indices reduces to a single reindexed inclusion.** `m := eIdx P a`
+is always a valid witness (`e P (eIdx P a) = P.X a` by involutivity), and any *other* witness `m`
+with `P.X a = e P m` forces `Yc P (eIdx P a) = Yc P m` (via `embed_eq_iff_raw_code` and
+`eIdx_involutive`), so it gives no new information. -/
+theorem isoProj_rel_iff_incl {b a : ℕ} :
+    (isoProj P).rel (Yc P b) (P.X a) ↔ Yc P b ⊆ Yc P (eIdx P a) := by
+  show (∃ _ : (DprimeUCode P).mem (Yc P b),
+      (toDCode P ((DprimeUCode P).principal ⟨b, rfl⟩)).mem (P.X a)) ↔ _
+  simp only [toDCode]
+  have hea : e P (eIdx P a) = P.X a := by
+    show P.X (eIdx P (eIdx P a)) = P.X a
+    rw [eIdx_involutive P a]
+  constructor
+  · rintro ⟨-, m, hm, -, hsub⟩
+    have heq : e P (eIdx P a) = e P m := hea.trans hm
+    rw [(embed_eq_iff_raw_code P (eIdx P a) m).mp heq]
+    exact hsub
+  · intro hsub
+    exact ⟨⟨b, rfl⟩, eIdx P a, hea.symm, ⟨eIdx P a, rfl⟩, hsub⟩
+
+/-- **`isoProj` is computable** relative to `DprimeUCodePresentation P`/`P`: its raw-index relation is
+`DprimeUCodePresentation`'s `incl_computable` reindexed by `eIdx P` in the second argument. -/
+theorem isoProj_isComputableMap : ComputableMap (DprimeUCodePresentation P) P (isoProj P) := by
+  constructor
+  have hg : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1 (eIdx P t.unpair.2)) :=
+    Nat.Primrec.pair Nat.Primrec.left ((eIdx_primrec P).comp Nat.Primrec.right)
+  have hp : RecDecidable (fun t : ℕ => Yc P t.unpair.1 ⊆ Yc P (eIdx P t.unpair.2)) := by
+    refine RecDecidable.of_iff (fun t => ?_) ((DprimeUCodePresentation P).incl_computable.comp hg)
+    simp only [unpair_pair_fst, unpair_pair_snd]
+    rfl
+  refine REPred.of_iff (fun t => ?_) hp.re
+  show (isoProj P).rel ((DprimeUCodePresentation P).X t.unpair.1) (P.X t.unpair.2) ↔ _
+  exact isoProj_rel_iff_incl P
+
+/-- **`theorem_8_8_b`, strengthened.** For any effectively given `D` (via `P`), there is a
+*single* computable projection pair `i : D → U`, `j : U → D` directly (no intermediate isomorphic
+copy): compose `isoInj`/`isoProj` (the code-level iso, computable) with `DprimeUCode`'s own projection pair
+into `U` (Theorem 8.8(b)(vii), computable). -/
+theorem theorem_8_8_b_strong :
+    ∃ (i : ApproximableMap D U) (j : ApproximableMap U D),
+      j.comp i = idMap D ∧ i.comp j ≤ idMap U ∧
+        ComputableMap P UComputablePresentation i ∧
+        ComputableMap UComputablePresentation P j := by
+  set h := DprimeUCode_subsystem P with hh
+  refine ⟨h.inj.comp (isoInj P), (isoProj P).comp h.proj, ?_, ?_, ?_, ?_⟩
+  · rw [comp_assoc, ← comp_assoc h.proj h.inj (isoInj P), h.proj_comp_inj, idMap_comp]
+    exact isoProj_comp_isoInj P
+  · have heq : (h.inj.comp (isoInj P)).comp ((isoProj P).comp h.proj) = h.inj.comp h.proj := by
+      rw [comp_assoc, ← comp_assoc (isoInj P) (isoProj P) h.proj, isoInj_comp_isoProj, idMap_comp]
+    rw [heq]
+    exact h.inj_comp_proj_le
+  · exact comp_isComputable (isoInj_isComputableMap P) (DprimeUCode_inj_isComputableMap P)
+  · exact comp_isComputable (DprimeUCode_proj_isComputableMap P) (isoProj_isComputableMap P)
+
+end
 
 end DomainTheory.NeighbourhoodSystems
 end

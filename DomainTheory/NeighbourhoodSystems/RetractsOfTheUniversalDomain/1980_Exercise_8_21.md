@@ -4,6 +4,20 @@
 
 $$D_{a^{\S}} \cong (D_a)^{\S} \ .$$
 
-**[Exercise_8_21.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_21.lean)**
+## Tip summary
+
+The tip asserts that the sharp of a finitary projection is again a finitary projection.
+
+## Development
+
+Develops the sharp construction and shows it yields a finitary projection.
+
+**[Exercise821.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise821.lean)**
+
+@import "Exercise821.lean"
+
+The tip then assembles those tools into Scott’s statement.
+
+**[Exercise_8_21.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_21.lean)** — `exercise_8_21`
 
 @import "Exercise_8_21.lean"
