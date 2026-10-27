@@ -54,25 +54,11 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 omit hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne in
+
 theorem even (k : ℕ) :
     combinedY D₀ D₁ hD₀nomin hD₁nomin X Y (2 * k) = XPseq D₀ D₁ hD₀nomin hD₁nomin X Y k := by
   unfold combinedY
   rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
-
-end AtomPair
-end
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 omit hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne in
 theorem odd (k : ℕ) : combinedY D₀ D₁ hD₀nomin hD₁nomin X Y (2 * k + 1) = Y k := by
@@ -125,6 +111,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
+
 /-- **The "I-formula" for `XPseq`**: the `D₁`-piece chosen by the depth-`n` `X`-sub-step's "+"
 branch (for *any* history `δ`) is exactly the intersection of `atomPair δ n`'s `D₁`-side with
 `XPseq n`. Mirrors `Theorem88.lean`'s `split_fst_eq_inter_Yseq`, but proved directly against
@@ -166,20 +153,6 @@ theorem snd_eq_inter_XPseq (δ : ℕ → Bool × Bool) (n : ℕ) :
         xStep.snd_subset hD₁nomin hAB' hBmem' (X n) true hz'
       exact absurd (Set.mem_inter hzB' hzB) (by rw [hdisjBB]; simp)
 
-end AtomPair
-end
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 /-- **Two-branch closed form for the `X`-sub-step's `D₁`-side output** (Exercise 8.12(c)(vi)(5)(a)):
 completes `xStep.snd_eq_inter_XPseq`'s `true`-only I-formula into a full `genAtom`-shaped recursive
@@ -229,7 +202,6 @@ theorem snd_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     constructor
     · rintro ⟨hx1, hx2⟩; exact ⟨hx1, hsub hx1, hx2⟩
     · rintro ⟨hx1, -, hx2⟩; exact ⟨hx1, hx2⟩
-
 end AtomPair
 end
 
@@ -256,6 +228,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
+
 /-- **The odd-depth half-step identity for `combinedX`**: given `atomPair δ n`'s `α`-side agrees
 with `genAtom combinedX` at the even depth `2 * n`, it also agrees at the odd depth `2 * n + 1` with
 the `Y`-sub-step's own (choice-split) `α`-side output — via (vi)(5)(a)'s closed form
@@ -276,20 +249,6 @@ theorem combinedX_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
   · simp only [hb, Bool.false_eq_true, ite_false]
     exact inter.diff_eq_diff_of_subset hAsub
 
-end AtomPair
-end
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 /-- **The odd-depth half-step identity for `combinedY`**: given `atomPair δ n`'s `β`-side agrees
 with `genAtom combinedY` at the even depth `2 * n`, it also agrees at the odd depth `2 * n + 1` with
@@ -304,7 +263,6 @@ theorem combinedY_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
   rw [genAtom.succ', ← hn, combinedδ_even, combinedY.even]
   exact (xStep.snd_succ_eq D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem
     hD₀mne hD₁mne δ n (δ n).1).symm
-
 end AtomPair
 end
 
@@ -323,6 +281,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
 variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
+
 
 /-- **The "I-formula" for `YPseq`** (8.12(c)(vi)(4)(d)): the `D₀`-piece chosen by the `Y`-sub-step's
 "+" branch (applied to the post-`X`-sub-step values at *any* history `δ`'s own bit `(δ n).1`) is
@@ -390,20 +349,6 @@ theorem fst_eq_inter_YPseq (δ : ℕ → Bool × Bool) (n : ℕ) :
         xStep.fst_subset D₁ hD₁nomin _ _ (X n) (δ n).1 hzA1
       exact absurd (Set.mem_inter hzA1' hzAfull) (by rw [hdisjAA]; simp)
 
-end AtomPair
-end
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 /-- **Two-branch closed form for the `Y`-sub-step's `D₀`-side output** (Exercise 8.12(c)(vi)(5)(a)):
 completes `yStep.fst_eq_inter_YPseq`'s `true`-only I-formula into a full `genAtom`-shaped recursive
@@ -464,7 +409,6 @@ theorem fst_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     constructor
     · rintro ⟨hx1, hx2⟩; exact ⟨hx1, hsub hx1, hx2⟩
     · rintro ⟨hx1, -, hx2⟩; exact ⟨hx1, hx2⟩
-
 end AtomPair
 end
 
@@ -483,6 +427,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
 variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
+
 
 /-- **Headline closed form, `β`-side** (Exercise 8.12(c)(vi)(5)(b)), symmetric to
 `atomPair.fst_eq_genAtom`: `atomPair δ n`'s `β`-side coincides with `genAtom` over the interleaved
@@ -511,20 +456,6 @@ theorem snd_eq_genAtom (δ : ℕ → Bool × Bool) (n : ℕ) :
       · simp only [hb, Bool.false_eq_true, ite_false]
         exact (inter.diff_eq_diff_of_subset hB1sub).symm
 
-end AtomPair
-end
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 /-- **Headline closed form, `α`-side** (Exercise 8.12(c)(vi)(5)(b)): `atomPair δ n`'s `α`-side
 coincides with `genAtom` over the interleaved family `combinedX` at the doubled depth `2 * n`.
@@ -544,7 +475,6 @@ theorem fst_eq_genAtom (δ : ℕ → Bool × Bool) (n : ℕ) :
         hXmem hYmem hD₀mne hD₁mne δ n (δ n).2
       have h2 : 2 * (n + 1) = 2 * n + 1 + 1 := by ring
       rw [atomPair.succ_eq, hstep, h2, genAtom.succ', combinedδ_odd, combinedX.odd, hodd]
-
 end AtomPair
 end
 

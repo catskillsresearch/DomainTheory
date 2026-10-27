@@ -35,6 +35,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
+
 theorem empty_combined {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ cs, p.1 < n) :
     {x ∈ D₀.master | ∀ p ∈ cs, (p.2 = true ↔ x ∈ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y p.1)}.Nonempty ↔
       {y ∈ D₁.master |
@@ -49,20 +50,6 @@ theorem empty_combined {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ cs, p
     transfer_dir (combinedY D₀ D₁ hD₀nomin hD₁nomin X Y) D₁.master
       (combinedX D₀ D₁ hD₀nomin hD₁nomin X Y) D₀.master hc' hn⟩
 
-end AtomPair
-end
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 theorem double_subset_combined (i j k : ℕ) :
     D₀.master ∩ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y i ∩ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y j ⊆
@@ -97,20 +84,6 @@ theorem double_subset_combined (i j k : ℕ) :
     ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
 
-end AtomPair
-end
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 theorem inter_empty_combined (i j : ℕ) :
     D₀.master ∩ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y i ∩ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y j =
@@ -141,20 +114,6 @@ theorem inter_empty_combined (i j : ℕ) :
   rw [← Set.not_nonempty_iff_eq_empty, ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
 
-end AtomPair
-end
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 theorem subset_combined (i j : ℕ) :
     D₀.master ∩ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y i ⊆ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y j ↔
@@ -185,20 +144,6 @@ theorem subset_combined (i j : ℕ) :
     ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
 
-end AtomPair
-end
-
-section
-section AtomPair
-
-variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSystem β)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
-
-variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 theorem inter_eq_combined (i j k : ℕ)
     (hi : combinedX D₀ D₁ hD₀nomin hD₁nomin X Y i ⊆ D₀.master)
@@ -250,7 +195,6 @@ theorem inter_eq_combined (i j k : ℕ)
     have hijk : combinedY D₀ D₁ hD₀nomin hD₁nomin X Y i ∩ combinedY D₀ D₁ hD₀nomin hD₁nomin X Y j ⊆
         combinedY D₀ D₁ hD₀nomin hD₁nomin X Y k := heq ▸ subset_rfl
     exact Set.Subset.antisymm (h3.mpr hijk) (Set.subset_inter (h1.mpr hki) (h2.mpr hkj))
-
 end AtomPair
 end
 
