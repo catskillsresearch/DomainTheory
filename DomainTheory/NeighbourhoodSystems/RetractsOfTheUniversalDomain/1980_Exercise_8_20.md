@@ -12,6 +12,14 @@ The tip asserts `D ⊴ D×D` and `D ⊴ D→D` for every domain `D`.
 
 ## Development
 
+Proves the unconditional self-embeddings `D ⊴ D×D` and `D ⊴ D→D`.
+
+**[DiagonalRetracts.lean](DiagonalRetracts.lean)**
+
+@import "DiagonalRetracts.lean"
+
+The tip then assembles those tools into Scott’s statement.
+
 **[Exercise_8_20.lean](Exercise_8_20.lean)** — `exercise_8_20`
 
 @import "Exercise_8_20.lean"

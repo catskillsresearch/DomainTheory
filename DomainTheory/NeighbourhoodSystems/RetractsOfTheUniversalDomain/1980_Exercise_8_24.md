@@ -11,6 +11,14 @@ The tip asserts that the coupled solutions `a★`, `b★` are finitary projectio
 
 ## Development
 
+Solves the coupled domain equations with finitary projections `a★`, `b★`.
+
+**[CoupledFixedPoints.lean](CoupledFixedPoints.lean)**
+
+@import "CoupledFixedPoints.lean"
+
+The tip then assembles those tools into Scott’s statement.
+
 **[Exercise_8_24.lean](Exercise_8_24.lean)** — `exercise_8_24`
 
 @import "Exercise_8_24.lean"

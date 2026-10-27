@@ -10,6 +10,14 @@ The tip asserts that the sharp of a finitary projection is again a finitary proj
 
 ## Development
 
+Develops the sharp construction and shows it yields a finitary projection.
+
+**[ASharp.lean](ASharp.lean)**
+
+@import "ASharp.lean"
+
+The tip then assembles those tools into Scott’s statement.
+
 **[Exercise_8_21.lean](Exercise_8_21.lean)** — `exercise_8_21`
 
 @import "Exercise_8_21.lean"

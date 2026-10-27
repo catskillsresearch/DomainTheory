@@ -16,6 +16,14 @@ The tip packages the order correspondence for finitary projections with the effe
 
 ## Development
 
+Matches the order of finitary projections with subdomain order and records effectivity of `D_a`.
+
+**[FixedNbhdFinitaryOrder.lean](FixedNbhdFinitaryOrder.lean)**
+
+@import "FixedNbhdFinitaryOrder.lean"
+
+The tip then assembles those tools into Scott’s statement.
+
 **[Exercise_8_16.lean](Exercise_8_16.lean)** — `exercise_8_16`
 
 @import "Exercise_8_16.lean"
