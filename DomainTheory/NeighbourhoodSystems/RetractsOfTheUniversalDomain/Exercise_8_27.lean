@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.piU
 
 @[expose] public section
 

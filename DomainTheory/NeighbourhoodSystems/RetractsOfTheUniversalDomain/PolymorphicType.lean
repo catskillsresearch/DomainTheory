@@ -12,7 +12,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 @[expose] public section
 
 /- concordance: source L5267 EXERCISE 8.27 infinite cartesian products -/
--- Exercise827/jArrow_comp_iArrow_apply.lean
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
