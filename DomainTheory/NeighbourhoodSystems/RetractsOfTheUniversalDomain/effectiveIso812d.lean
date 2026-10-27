@@ -414,10 +414,6 @@ theorem exists_iff_ne_empty (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m :
 end diff
 end IsComputableDiff
 
-end
-
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 section DirectDec
 
@@ -435,7 +431,6 @@ end
 namespace existsDiffDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -444,15 +439,6 @@ variable (hDiff : IsComputableDiff P)
 
 theorem le_one (t : ℕ) : existsDiffDec P hDiff t ≤ 1 := isOne_le_one _
 
-end DirectDec
-end
-
-section
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable (hDiff : IsComputableDiff P)
 
 theorem spec (n m : ℕ) :
     existsDiffDec P hDiff (Nat.pair n m) = 1 ↔ ∃ k, P.X k = P.X n \ P.X m := by
@@ -463,15 +449,6 @@ theorem spec (n m : ℕ) :
   rw [unpair_pair_fst, unpair_pair_snd] at h
   exact h.symm
 
-end DirectDec
-end
-
-section
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable (hDiff : IsComputableDiff P)
 
 /-- **The `\`-existence decider matches non-emptiness**, via `IsComputableDiff.diff.exists_iff_ne_empty`. -/
 theorem eq_zero_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
@@ -490,12 +467,10 @@ theorem eq_zero_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
     exact (h2.mp (h1.mp h1')) hempty
 
 end DirectDec
-end
 
 end existsDiffDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -506,12 +481,10 @@ variable (hDiff : IsComputableDiff P)
 noncomputable def emptyDiffDec : ℕ → ℕ := fun t => 1 - existsDiffDec P hDiff t
 
 end DirectDec
-end
 
 namespace emptyDiffDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -521,15 +494,6 @@ variable (hDiff : IsComputableDiff P)
 theorem le_one (t : ℕ) : emptyDiffDec P hDiff t ≤ 1 := by
   unfold emptyDiffDec; have := existsDiffDec.le_one P hDiff t; omega
 
-end DirectDec
-end
-
-section
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable (hDiff : IsComputableDiff P)
 
 theorem eq_one_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
     emptyDiffDec P hDiff (Nat.pair n m) = 1 ↔ P.X n \ P.X m = ∅ := by
@@ -541,12 +505,10 @@ theorem eq_one_iff (hdiff : V.DiffClosed) (hnomin : V.NoMinimal) (n m : ℕ) :
   · intro hempty; have := h0.mpr hempty; omega
 
 end DirectDec
-end
 
 end emptyDiffDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -556,25 +518,16 @@ own predicate). -/
 noncomputable def existsInterDec : ℕ → ℕ := fun t => isOne (P.cons_computable.choose t)
 
 end DirectDec
-end
 
 namespace existsInterDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 theorem le_one (t : ℕ) : existsInterDec P t ≤ 1 := isOne_le_one _
 
-end DirectDec
-end
-
-section
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 theorem spec (n m : ℕ) :
     existsInterDec P (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m := by
@@ -585,13 +538,6 @@ theorem spec (n m : ℕ) :
   rw [unpair_pair_fst, unpair_pair_snd] at h
   exact h.symm
 
-end DirectDec
-end
-
-section
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 /-- **The `∩`-existence decider matches non-emptiness**, given `IsPositive` + `NoMinimal`: any
 consistency witness is itself a non-empty neighbourhood (`NoMinimal.mem_ne_empty`), and conversely
@@ -615,12 +561,10 @@ theorem eq_zero_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
     exact absurd (Set.subset_eq_empty hk hempty) (hnomin.mem_ne_empty (P.mem_X k))
 
 end DirectDec
-end
 
 end existsInterDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -630,12 +574,10 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 noncomputable def emptyInterDec : ℕ → ℕ := fun t => 1 - existsInterDec P t
 
 end DirectDec
-end
 
 namespace emptyInterDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -643,13 +585,6 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 theorem le_one (t : ℕ) : emptyInterDec P t ≤ 1 := by
   unfold emptyInterDec; have := existsInterDec.le_one P t; omega
 
-end DirectDec
-end
-
-section
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 theorem eq_one_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
     emptyInterDec P (Nat.pair n m) = 1 ↔ P.X n ∩ P.X m = ∅ := by
@@ -661,7 +596,6 @@ theorem eq_one_iff (hpos : V.IsPositive) (hnomin : V.NoMinimal) (n m : ℕ) :
   · intro hempty; have := h0.mpr hempty; omega
 
 end DirectDec
-end
 
 end emptyInterDec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
@@ -5030,7 +4964,6 @@ end
 namespace primrec
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -5040,23 +4973,12 @@ variable (hDiff : IsComputableDiff P)
 theorem existsDiffDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.existsDiffDec P hDiff) :=
   (primrec_isOne.comp hDiff.diff_computable.choose_spec.1).of_eq fun _ => rfl
 
-end DirectDec
-end
-
-section
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-variable (hDiff : IsComputableDiff P)
 
 theorem emptyDiffDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.emptyDiffDec P hDiff) :=
   primrec_sub₂ (Nat.Primrec.const 1) (primrec.existsDiffDec P hDiff)
 
 end DirectDec
-end
 
-section
 section DirectDec
 
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -5064,19 +4986,11 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 theorem existsInterDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.existsInterDec P) :=
   (primrec_isOne.comp P.cons_computable.choose_spec.1).of_eq fun _ => rfl
 
-end DirectDec
-end
-
-section
-section DirectDec
-
-variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 theorem emptyInterDec : Nat.Primrec (_root_.DomainTheory.NeighbourhoodSystems.emptyInterDec P) :=
   primrec_sub₂ (Nat.Primrec.const 1) (primrec.existsInterDec P)
 
 end DirectDec
-end
 
 theorem stateIdx0 : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.stateIdx0 := Nat.Primrec.left
 
@@ -9032,10 +8946,6 @@ end emptyInterDec
 end Congr
 
 end ComputableBisection
-end
-
-section
-open Domain.Recursive
 
 namespace ComputableBisection
 
@@ -9074,10 +8984,6 @@ theorem eq (hpos : V.IsPositive) (hnomin : V.NoMinimal)
 
 end splitFromBisection
 end ComputableBisection
-end
-
-section
-open Domain.Recursive
 
 namespace ComputableBisection
 
@@ -9094,10 +9000,6 @@ noncomputable def posIdxFromBisection (n m k : ℕ) : ℕ :=
     (selectFn (emptyDiffDec P hDiff (Nat.pair n k)) m (B.left m))
 
 end ComputableBisection
-end
-
-section
-open Domain.Recursive
 
 namespace ComputableBisection
 
@@ -9128,10 +9030,6 @@ theorem negIdxFromBisection :
 
 end primrec
 end ComputableBisection
-end
-
-section
-open Domain.Recursive
 
 namespace ComputableBisection
 
@@ -9162,10 +9060,6 @@ theorem posIdxFromBisection :
 
 end primrec
 end ComputableBisection
-end
-
-section
-open Domain.Recursive
 
 namespace ComputableBisection
 
@@ -9213,10 +9107,6 @@ noncomputable def ofBisection (hpos : V.IsPositive) (hnomin : V.NoMinimal)
 
 end isComputableSplit
 end ComputableBisection
-end
-
-section
-open Domain.Recursive
 
 namespace ComputableBisection
 
