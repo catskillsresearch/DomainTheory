@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Classify decls in Exercise_8_12.lean: API / multi-internal / use-once / dead.
+"""Classify decls in Exercise_8_12_more.lean: API / multi-internal / use-once / dead.
 
 Usage:
   python3 scripts/inventory_exercise_8_12.py
@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 TARGET = (
     ROOT
-    / "DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean"
+    / "DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12_more.lean"
 )
 
 # Seed whitelist from the whittle plan (kept even if classification is soft).

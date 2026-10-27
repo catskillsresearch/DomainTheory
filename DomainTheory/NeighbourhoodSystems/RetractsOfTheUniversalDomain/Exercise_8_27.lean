@@ -8,7 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Fac
 
 public import Mathlib.Combinatorics.Colex
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise_8_12
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise_8_12_more
 
 @[expose] public section
 
