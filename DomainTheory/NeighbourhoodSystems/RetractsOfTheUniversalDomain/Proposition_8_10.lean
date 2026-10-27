@@ -4,6 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Def
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.sumComb
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.prodComb
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.sumMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.expMap
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
@@ -1593,25 +1594,6 @@ universe u
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 variable {a b : ApproximableMap U U}
 
-section ExpMap
-
-variable {γ δ γ' δ' γ'' δ'' : Type*}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
-/-- **The Hom-functor's action on maps**, `f ↦ k∘f∘h`, transported to the function-space
-neighbourhood systems via `curry`/`evalMap`/`prodMap`, exactly as `lamComb` (`Definition89.lean`)
-does for the self-map case. -/
-noncomputable def expMap (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1') :
-    ApproximableMap (funSpace V0 V1) (funSpace V0' V1') :=
-  curry (k.comp ((evalMap V0 V1).comp (prodMap (idMap (funSpace V0 V1)) h)))
-
-end ExpMap
-
 section ArrowCase
 
 variable (a b : ApproximableMap U U)
@@ -1628,24 +1610,6 @@ noncomputable def JArrowComb : ApproximableMap U (funSpace (fixedNbhd a) (fixedN
   (expMap (fixedNbhd_subsystem a).inj (fixedNbhd_subsystem b).proj).comp jArrow
 
 end ArrowCase
-
-section ExpMap
-
-variable {γ δ γ' δ' γ'' δ'' : Type*}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
-theorem expMap_eq (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1') :
-    expMap h k = curry (k.comp ((evalMap V0 V1).comp (prodMap (idMap (funSpace V0 V1)) h))) := rfl
-
-/-- `expMap` specializes to `lamComb` on self-maps of `𝒰`. -/
-theorem expMap_eq_lamComb (a b : ApproximableMap U U) : expMap a b = lamComb a b := rfl
-
-end ExpMap
 
 /-- **`i_a ∘ j_a = a`, for a finitary projection `a`.** Theorem 8.6's `sub_eq_self_of_isFinitaryProjection`,
 restated via `retractionOfSubsystem`'s definition. -/
@@ -1677,42 +1641,6 @@ end prodComb
 end ProdCase
 
 
-section ExpMap
-
-variable {γ δ γ' δ' γ'' δ'' : Type*}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
-/-- **`expMap h k`, transported through `funSpaceEquiv`, is exactly `f ↦ k∘f∘h`.** Verbatim
-`toApproxMap_toElementMap_lamComb`'s proof (`Proposition810.lean`), generalized away from
-self-maps. -/
-theorem toApproxMap_toElementMap_expMap (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1')
-    (φ : (funSpace V0 V1).Element) :
-    toApproxMap ((expMap h k).toElementMap φ) = k.comp ((toApproxMap φ).comp h) := by
-  apply ext_of_toElementMap
-  intro z
-  rw [expMap_eq, toElementMap_curry_apply, toElementMap_comp, toElementMap_comp,
-    toElementMap_prodMap_pair, toElementMap_idMap, evalMap_apply, toElementMap_comp,
-    toElementMap_comp]
-
-/-- **`expMap` preserves composition, contravariantly in `h`:
-`expMap (h∘h') (k'∘k) = expMap h' k' ∘ expMap h k`.** -/
-theorem expMap_comp (h : ApproximableMap V0' V0) (k : ApproximableMap V1 V1')
-    (h' : ApproximableMap V0'' V0') (k' : ApproximableMap V1' V1'') :
-    expMap (h.comp h') (k'.comp k) = (expMap h' k').comp (expMap h k) := by
-  apply ext_of_toElementMap
-  intro φ
-  apply (funSpaceEquiv V0'' V1'').injective
-  rw [funSpaceEquiv_apply, funSpaceEquiv_apply, toApproxMap_toElementMap_expMap, toElementMap_comp,
-    toApproxMap_toElementMap_expMap, toApproxMap_toElementMap_expMap]
-  simp only [comp_assoc]
-
-end ExpMap
-
 section ArrowCase
 
 variable (a b : ApproximableMap U U)
@@ -1720,31 +1648,11 @@ variable (a b : ApproximableMap U U)
 theorem IArrowComb_comp_JArrowComb (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (IArrowComb a b).comp (JArrowComb a b) = arrowComb a b := by
   unfold IArrowComb JArrowComb
-  rw [comp_assoc, ← comp_assoc (expMap _ _) (expMap _ _) jArrow, ← expMap_comp,
-    inj_comp_proj_eq_self ha, inj_comp_proj_eq_self hb, expMap_eq_lamComb, ← comp_assoc,
+  rw [comp_assoc, ← comp_assoc (expMap _ _) (expMap _ _) jArrow, ← expMap.comp,
+    inj_comp_proj_eq_self ha, inj_comp_proj_eq_self hb, expMap.eq_lamComb, ← comp_assoc,
     arrowComb_eq, comp_assoc]
 
 end ArrowCase
-
-section ExpMap
-
-variable {γ δ γ' δ' γ'' δ'' : Type*}
-
-variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
-
-variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
-
-variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
-
-/-- **`expMap` preserves identities: `expMap I I = I`.** -/
-theorem expMap_id : expMap (idMap V0) (idMap V1) = idMap (funSpace V0 V1) := by
-  apply ext_of_toElementMap
-  intro φ
-  apply (funSpaceEquiv V0 V1).injective
-  rw [funSpaceEquiv_apply, funSpaceEquiv_apply, toElementMap_idMap,
-    toApproxMap_toElementMap_expMap, comp_idMap, idMap_comp]
-
-end ExpMap
 
 section ArrowCase
 
@@ -1755,8 +1663,8 @@ theorem JArrowComb_comp_IArrowComb :
       idMap (funSpace (fixedNbhd a) (fixedNbhd b)) := by
   unfold JArrowComb IArrowComb
   rw [comp_assoc, ← comp_assoc jArrow iArrow (expMap _ _), jArrow_comp_iArrow, idMap_comp,
-    ← expMap_comp, (fixedNbhd_subsystem a).proj_comp_inj, (fixedNbhd_subsystem b).proj_comp_inj,
-    expMap_id]
+    ← expMap.comp, (fixedNbhd_subsystem a).proj_comp_inj, (fixedNbhd_subsystem b).proj_comp_inj,
+    expMap.id]
 
 /-- **Proposition 8.10(b), `→`-case, the isomorphism `D_{a→b} ≅ (D_a → D_b)`.** -/
 noncomputable def arrowComb_elementIso (ha : FinitaryProjection a) (hb : FinitaryProjection b) :

@@ -235,7 +235,7 @@ theorem toElementMap_piDApply (d f : ApproximableMap U U) (t : U.Element) :
   simp only [piDApply, toElementMap_comp, toElementMap_paired, evalMap_apply]
 
 /-- **`piD d`, transported through `funSpaceEquiv`, is exactly `piDApply d`.** Mirrors
-`toApproxMap_toElementMap_lamComb`/`toApproxMap_toElementMap_expMap`. -/
+`toApproxMap_toElementMap_lamComb`/`expMap.toApproxMap_toElementMap`. -/
 theorem toApproxMap_toElementMap_piD (d : ApproximableMap U U) (φ : (funSpace U U).Element) :
     toApproxMap ((piD d).toElementMap φ) = piDApply d (toApproxMap φ) := by
   apply ApproximableMap.ext_of_toElementMap

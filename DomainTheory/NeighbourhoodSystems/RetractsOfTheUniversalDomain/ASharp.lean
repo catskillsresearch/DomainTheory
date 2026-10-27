@@ -917,7 +917,7 @@ theorem ofIso_comp_ofIso_symm (e : V₀.Element ≃o V₀'.Element) :
 theorem funSpaceCongr_hij (e0 : V₀.Element ≃o V₀'.Element) (e1 : V₁.Element ≃o V₁'.Element) :
     (expMap (ofIso e0.symm) (ofIso e1)).comp (expMap (ofIso e0) (ofIso e1.symm)) =
       idMap (funSpace V₀' V₁') := by
-  rw [← expMap_comp, ofIso_comp_ofIso_symm, ofIso_comp_ofIso_symm, expMap_id]
+  rw [← expMap.comp, ofIso_comp_ofIso_symm, ofIso_comp_ofIso_symm, expMap.id]
 
 theorem ofIso_symm_comp_ofIso (e : V₀.Element ≃o V₀'.Element) :
     (ofIso e.symm).comp (ofIso e) = idMap V₀ := by
@@ -929,7 +929,7 @@ theorem ofIso_symm_comp_ofIso (e : V₀.Element ≃o V₀'.Element) :
 theorem funSpaceCongr_hji (e0 : V₀.Element ≃o V₀'.Element) (e1 : V₁.Element ≃o V₁'.Element) :
     (expMap (ofIso e0) (ofIso e1.symm)).comp (expMap (ofIso e0.symm) (ofIso e1)) =
       idMap (funSpace V₀ V₁) := by
-  rw [← expMap_comp, ofIso_symm_comp_ofIso, ofIso_symm_comp_ofIso, expMap_id]
+  rw [← expMap.comp, ofIso_symm_comp_ofIso, ofIso_symm_comp_ofIso, expMap.id]
 
 /-- **Two approximable maps that are *exact* (not merely `≤`) mutual inverses give an
 order-isomorphism of element types.** The generic upgrade behind `elementIsoOfProjectionPair`

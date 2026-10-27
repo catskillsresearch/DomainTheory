@@ -223,20 +223,6 @@ section General
 
 variable {α β γ δ : Type*}
 
-/-- **`expMap` is monotone in its contravariant argument** (`k` fixed): `h ≤ h' ⟹ expMap h k ≤
-expMap h' k`. Proved choice-freely from `comp_mono_gen` and the order-isomorphism `funSpaceEquiv`,
-transported through the elementwise formula `toApproxMap_toElementMap_expMap`. -/
-theorem expMap_mono_left {V0 : NeighborhoodSystem α} {V1 : NeighborhoodSystem β}
-    {V0' : NeighborhoodSystem γ} {V1' : NeighborhoodSystem δ}
-    {h h' : ApproximableMap V0' V0} (hh : h ≤ h') (k : ApproximableMap V1 V1') :
-    expMap h k ≤ expMap h' k := by
-  rw [le_iff_toElementMap_le]
-  intro φ
-  apply (funSpaceEquiv V0' V1').map_rel_iff.mp
-  rw [funSpaceEquiv_apply, funSpaceEquiv_apply, toApproxMap_toElementMap_expMap,
-    toApproxMap_toElementMap_expMap]
-  exact comp_mono_gen le_rfl (comp_mono_gen le_rfl hh)
-
 /-- **Contravariant functoriality of `⊴` in the function-space's domain argument.** `A ⊴ B ⟹
 (A → C) ⊴ (B → C)` for any `C`: precompose/postcompose with the given projection pair via
 `expMap`. -/
@@ -246,16 +232,16 @@ theorem funSpace_dom_trianglelefteq {A : NeighborhoodSystem α} {B : Neighborhoo
   set p : ProjPair A B := (ProjPair.ofIso eAD').comp (ProjPair.ofSubsystem hD'B) with hp
   refine trianglelefteq_of_projectionPair (expMap p.proj (idMap C)) (expMap p.inj (idMap C))
     ?_ ?_
-  · have hcomp := (expMap_comp p.proj (idMap C) p.inj (idMap C)).symm
+  · have hcomp := (expMap.comp p.proj (idMap C) p.inj (idMap C)).symm
     rw [hcomp, p.proj_comp_inj, idMap_comp]
-    exact expMap_id
+    exact expMap.id
   · calc (expMap p.proj (idMap C)).comp (expMap p.inj (idMap C))
         = expMap (p.inj.comp p.proj) ((idMap C).comp (idMap C)) :=
-          (expMap_comp p.inj (idMap C) p.proj (idMap C)).symm
+          (expMap.comp p.inj (idMap C) p.proj (idMap C)).symm
       _ ≤ expMap (idMap B) ((idMap C).comp (idMap C)) :=
-          expMap_mono_left p.inj_comp_proj_le _
+          expMap.mono_left p.inj_comp_proj_le _
       _ = expMap (idMap B) (idMap C) := by rw [idMap_comp]
-      _ = idMap (funSpace B C) := expMap_id
+      _ = idMap (funSpace B C) := expMap.id
 
 end General
 

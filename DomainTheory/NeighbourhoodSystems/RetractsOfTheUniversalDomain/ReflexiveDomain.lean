@@ -271,7 +271,7 @@ theorem toElementMap_RMap (c : ApproximableMap U U) (ψ φ : (funSpace U U).Elem
 /-- **`lamOp c` recovers `expMap (-) c = lamComb (-) c` at every `a`.** The heart of the
 continuity argument: unwinding both curry layers (`curryC_toApproxMap`, `toElementMap_curry_apply`
 twice) and `RMap`'s value formula (`toElementMap_RMap`) against `expMap`'s own value formula
-(`toApproxMap_toElementMap_expMap`) shows both sides send `φ` to (the element representing)
+(`expMap.toApproxMap_toElementMap`) shows both sides send `φ` to (the element representing)
 `x ↦ c(φ(a(x)))`. -/
 theorem toApproxMap_lamOp (c a : ApproximableMap U U) :
     toApproxMap ((lamOp c).toElementMap (toFilter a)) = expMap a c := by
@@ -285,15 +285,15 @@ theorem toApproxMap_lamOp (c a : ApproximableMap U U) :
     = (toApproxMap ((expMap a c).toElementMap φ)).toElementMap x
   rw [lamOp, toElementMap_comp, curryC_toApproxMap, toElementMap_curry_apply, curryOnceC,
     toElementMap_curry_apply, toElementMap_RMap, Sub8_6.toApproxMap_toFilter,
-    toApproxMap_toElementMap_expMap, toElementMap_comp, toElementMap_comp]
+    expMap.toApproxMap_toElementMap, toElementMap_comp, toElementMap_comp]
 
 /-- **`tOp (tOpMap c) a = arrowComb a c`**, for every `a`: `t` really does implement
 `a ↦ arrowComb a c`, continuously. -/
 theorem tOp_tOpMap (c a : ApproximableMap U U) :
     Exercise823.tOp (tOpMap c) a = arrowComb a c := by
   show toApproxMap ((tOpMap c).toElementMap (toFilter a)) = arrowComb a c
-  rw [tOpMap, toElementMap_comp, toApproxMap_toElementMap_expMap, toApproxMap_lamOp,
-    expMap_eq_lamComb]
+  rw [tOpMap, toElementMap_comp, expMap.toApproxMap_toElementMap, toApproxMap_lamOp,
+    expMap.eq_lamComb]
   rfl
 
 theorem hT_TArrow (a : ApproximableMap U U) (ha : FinitaryProjection a) :
