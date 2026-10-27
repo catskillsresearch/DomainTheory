@@ -19,7 +19,7 @@ Scott gives no written proof—only the construction of $V$ and the demand that 
 
 The integer neighbourhood system $V$ is built from affine residue classes $2^k\mathbb{N}+\ell$ and their non-empty finite unions. Its computable presentation (indices, decoding, intersection/union/difference codes, and the canonical bisection `splitV*`) lives in a dedicated library module so earlier Scott numbers can use it without importing Exercise 8.14’s tip.
 
-**[VComputablePresentation.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/VComputablePresentation.lean)** — computable presentation of $V$, including `VComputablePresentation` and `V_isEffectivelyGiven`
+**[VComputablePresentation.lean](VComputablePresentation.lean)** — computable presentation of $V$, including `VComputablePresentation` and `V_isEffectivelyGiven`
 
 @import "VComputablePresentation.lean"
 
@@ -27,7 +27,7 @@ The integer neighbourhood system $V$ is built from affine residue classes $2^k\m
 
 Given two positive, difference-closed, atomless neighbourhood systems with enumerations that cover every neighbourhood and start at the master set, one builds paired atom sequences (`XPseq`/`YPseq`) from mutual `SplitSpec'` probes and obtains a domain isomorphism. The headline is `isomorphic_812c`.
 
-**[domainIso812c.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/domainIso812c.lean)** — difference-closure / no-minimal apparatus, atom pairing, and `isomorphic_812c`
+**[domainIso812c.lean](domainIso812c.lean)** — difference-closure / no-minimal apparatus, atom pairing, and `isomorphic_812c`
 
 @import "domainIso812c.lean"
 
@@ -35,7 +35,7 @@ Given two positive, difference-closed, atomless neighbourhood systems with enume
 
 The same back-and-forth is carried out on computable presentations: coded atom sequences, primitivity of the step maps, and the order isomorphism `domainIsoCode812d` lift to an `EffectiveIso`. The generic assembly is `effectiveIso812d`.
 
-**[effectiveIso812d.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/effectiveIso812d.lean)** — coded pairing, primrec witnesses, and `effectiveIso812d`
+**[effectiveIso812d.lean](effectiveIso812d.lean)** — coded pairing, primrec witnesses, and `effectiveIso812d`
 
 @import "effectiveIso812d.lean"
 
@@ -43,7 +43,7 @@ The same back-and-forth is carried out on computable presentations: coded atom s
 
 With `U`’s computable difference and $V$’s bisection in hand, `splitX812e` is the concrete `IsComputableSplit` of $U$ probing $V$ (`isComputableSplit.«812e»`).
 
-**[splitX812e.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitX812e.lean)** — `U_isComputableDiff`, `splitX812e`, and `isComputableSplit.«812e»`
+**[splitX812e.lean](splitX812e.lean)** — `U_isComputableDiff`, `splitX812e`, and `isComputableSplit.«812e»`
 
 @import "splitX812e.lean"
 
@@ -51,12 +51,12 @@ With `U`’s computable difference and $V$’s bisection in hand, `splitX812e` i
 
 The mirror split `splitX812f` ( $V$ probing $U$ via `UBisection2`), both `SplitSpec'` halves, computable unions, and the final `EffectiveIso U V` are assembled as `effectiveIso812_UV`.
 
-**[effectiveIso812_UV.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/effectiveIso812_UV.lean)** — `«812f»`, `hxSplit812e`/`hySplit812f`, unions, and `effectiveIso812_UV`
+**[effectiveIso812_UV.lean](effectiveIso812_UV.lean)** — `«812f»`, `hxSplit812e`/`hySplit812f`, unions, and `effectiveIso812_UV`
 
 @import "effectiveIso812_UV.lean"
 
 The tip then simply pairs effective givenness of $V$ with that isomorphism, which is Exercise 8.12 in Scott’s sense.
 
-**[Exercise_8_12.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean)** — Scott tip `exercise_8_12`
+**[Exercise_8_12.lean](Exercise_8_12.lean)** — Scott tip `exercise_8_12`
 
 @import "Exercise_8_12.lean"

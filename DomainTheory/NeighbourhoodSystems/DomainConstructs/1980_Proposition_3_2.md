@@ -50,6 +50,6 @@ The one-one correspondence required is thus established. $\square$
 
 There is more going on in the proof of 3.2 than just a one-one correspondence between elements and pairs. The extra information is best formalized by introducing a notation for mappings.
 
-**[Proposition_3_2.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Proposition_3_2.lean)**
+**[Proposition_3_2.lean](Proposition_3_2.lean)**
 
 @import "Proposition_3_2.lean"

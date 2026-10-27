@@ -14,6 +14,6 @@ $$
 
 A picture helps.)
 
-**[Exercise_4_24.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_24.lean)**
+**[Exercise_4_24.lean](Exercise_4_24.lean)**
 
 @import "Exercise_4_24.lean"

@@ -30,18 +30,18 @@ The tip asserts existence of a non-trivial domain isomorphic to its function spa
 
 Rational-interval coding used by effective presentations.
 
-**[QPairCodes.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/QPairCodes.lean)**
+**[QPairCodes.lean](QPairCodes.lean)**
 
 @import "QPairCodes.lean"
 
 Builds a non-trivial reflexive domain `D ≅ D→D` containing `U`.
 
-**[Exercise825.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise825.lean)**
+**[Exercise825.lean](Exercise825.lean)**
 
 @import "Exercise825.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_25.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_25.lean)** — `exercise_8_25`
+**[Exercise_8_25.lean](Exercise_8_25.lean)** — `exercise_8_25`
 
 @import "Exercise_8_25.lean"

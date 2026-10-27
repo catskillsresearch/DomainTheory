@@ -12,6 +12,6 @@ How does the product of no factors fit in? Prove also:
 
 <!-- page 50 -->
 
-**[Exercise_3_15.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise_3_15.lean)**
+**[Exercise_3_15.lean](Exercise_3_15.lean)**
 
 @import "Exercise_3_15.lean"

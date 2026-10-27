@@ -7,6 +7,6 @@ $$x - 1 = \{n \mid n + 1 \in x\}.$$
 
 <!-- page 36 -->
 
-**[Exercise_2_20.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_20.lean)**
+**[Exercise_2_20.lean](Exercise_2_20.lean)**
 
 @import "Exercise_2_20.lean"

@@ -10,12 +10,12 @@ The tip states that the fixed-point set of any closure operator is a finitary do
 
 Defines closure operators and shows `Fix(a)` is a finitary domain.
 
-**[ClosureOperatorDomain.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/ClosureOperatorDomain.lean)**
+**[ClosureOperatorDomain.lean](ClosureOperatorDomain.lean)**
 
 @import "ClosureOperatorDomain.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_14.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_14.lean)** — `exercise_8_14`
+**[Exercise_8_14.lean](Exercise_8_14.lean)** — `exercise_8_14`
 
 @import "Exercise_8_14.lean"

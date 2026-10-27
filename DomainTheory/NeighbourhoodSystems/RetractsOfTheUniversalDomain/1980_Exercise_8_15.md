@@ -10,12 +10,12 @@ The tip states that if `D` is effectively given then so is (a presentation of) t
 
 Constructs an effectively given presentation of the domain of subsystems.
 
-**[SubsystemDomain.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/SubsystemDomain.lean)**
+**[SubsystemDomain.lean](SubsystemDomain.lean)**
 
 @import "SubsystemDomain.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_15.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_15.lean)** — `exercise_8_15`
+**[Exercise_8_15.lean](Exercise_8_15.lean)** — `exercise_8_15`
 
 @import "Exercise_8_15.lean"

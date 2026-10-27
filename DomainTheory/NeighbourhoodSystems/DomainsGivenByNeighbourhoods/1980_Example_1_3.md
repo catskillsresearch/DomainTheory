@@ -18,6 +18,6 @@ In pictures we have:
 
 Instead of stepping to the total element (here represented by 2) in one big step, the passage is divided into two steps. (Note 0 and 1 cannot be taken as representing total elements.) This example is not very interesting because the direction of approximation is unique. We need an example with some choice. $\square$
 
-**[Example_1_3.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_3.lean)**
+**[Example_1_3.lean](Example_1_3.lean)**
 
 @import "Example_1_3.lean"

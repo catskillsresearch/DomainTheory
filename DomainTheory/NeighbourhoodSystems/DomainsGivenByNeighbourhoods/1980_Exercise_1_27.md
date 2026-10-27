@@ -10,6 +10,6 @@ Prove that if $X$ is bounded, then $\bigsqcup X$ is the *least upper bound* for 
 
 <!-- page 24 -->
 
-**[Exercise_1_27.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_27.lean)**
+**[Exercise_1_27.lean](Exercise_1_27.lean)**
 
 @import "Exercise_1_27.lean"

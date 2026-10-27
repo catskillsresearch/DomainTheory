@@ -20,12 +20,12 @@ The tip asserts that `fixOp t` is a finitary projection whenever `t` preserves t
 
 Defines `fixOp` and proves it is finitary when the transformer preserves finitary projections.
 
-**[Exercise823.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise823.lean)**
+**[Exercise823.lean](Exercise823.lean)**
 
 @import "Exercise823.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_23.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_23.lean)** — `exercise_8_23`
+**[Exercise_8_23.lean](Exercise_8_23.lean)** — `exercise_8_23`
 
 @import "Exercise_8_23.lean"

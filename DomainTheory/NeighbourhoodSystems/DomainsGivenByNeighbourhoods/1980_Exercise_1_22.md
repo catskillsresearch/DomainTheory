@@ -22,6 +22,6 @@ $$
 
 is not only in $|D|$ but is a topological limit point of the sequence. Show that any element $x$ is a limit point of the set $\{\uparrow X \mid X \in x\}$. Are there other limit points?
 
-**[Exercise_1_22.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_22.lean)**
+**[Exercise_1_22.lean](Exercise_1_22.lean)**
 
 @import "Exercise_1_22.lean"

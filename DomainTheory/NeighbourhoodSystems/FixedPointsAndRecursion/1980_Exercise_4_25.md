@@ -10,6 +10,6 @@ What structure should be put on $C_1$ strictly analogous to that on $C (= C_2)$?
 
 <!-- page 72 -->
 
-**[Exercise_4_25.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_25.lean)**
+**[Exercise_4_25.lean](Exercise_4_25.lean)**
 
 @import "Exercise_4_25.lean"

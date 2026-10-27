@@ -85,6 +85,6 @@ $$\mathcal{U}_\bot, \quad \mathcal{U}^\infty, \quad \mathcal{U}^\S, \quad \mathb
 
 That all of these are $\trianglelefteq \mathcal{U}$ follows from knowing that they are all effectively presented. What we wish to check next is that they all combine well with respect to projections. To this end the explicit definitions are given for the constructs $+$, $\times$, and $\to$, and the details of the others are left for the exercises.
 
-**[Theorem_8_8.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem_8_8.lean)**
+**[Theorem_8_8.lean](Theorem_8_8.lean)**
 
 @import "Theorem_8_8.lean"

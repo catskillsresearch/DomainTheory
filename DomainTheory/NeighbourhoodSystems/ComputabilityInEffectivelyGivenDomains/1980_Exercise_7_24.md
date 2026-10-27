@@ -24,6 +24,6 @@ Conclude that programs in LUCID define computable maps.
 
 <!-- page 135 -->
 
-**[Exercise_7_24.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_24.lean)**
+**[Exercise_7_24.lean](Exercise_7_24.lean)**
 
 @import "Exercise_7_24.lean"

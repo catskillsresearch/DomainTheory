@@ -25,6 +25,6 @@ $$
 
 where from some point on all the $X_m$ are equal to $\Delta$.
 
-**[Exercise_3_16.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise_3_16.lean)**
+**[Exercise_3_16.lean](Exercise_3_16.lean)**
 
 @import "Exercise_3_16.lean"

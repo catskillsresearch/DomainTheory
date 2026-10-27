@@ -10,39 +10,39 @@ Functionality had long been studied in combinatory logic. Hindley, Lercher, and 
 
 @import "1976_Total_functions_and_functionality.english" {code_block=false}
 
-**[DataTypesAsLattices/Functionality/Hcomb.lean](DomainTheory/DataTypesAsLattices/Functionality/Hcomb.lean)**
+**[DataTypesAsLattices/Functionality/Hcomb.lean](Hcomb.lean)**
 
 @import "Hcomb.lean"
-**[DataTypesAsLattices/Functionality/Hcomb_more.lean](DomainTheory/DataTypesAsLattices/Functionality/Hcomb_more.lean)**
+**[DataTypesAsLattices/Functionality/Hcomb_more.lean](Hcomb_more.lean)**
 
 @import "Hcomb_more.lean"
-**[DataTypesAsLattices/Functionality/Z.lean](DomainTheory/DataTypesAsLattices/Functionality/Z.lean)**
+**[DataTypesAsLattices/Functionality/Z.lean](Z.lean)**
 
 @import "Z.lean"
-**[DataTypesAsLattices/Functionality/Zcomb.lean](DomainTheory/DataTypesAsLattices/Functionality/Zcomb.lean)**
+**[DataTypesAsLattices/Functionality/Zcomb.lean](Zcomb.lean)**
 
 @import "Zcomb.lean"
-**[DataTypesAsLattices/Functionality/arrowR_diag_isScottContinuous.lean](DomainTheory/DataTypesAsLattices/Functionality/arrowR_diag_isScottContinuous.lean)**
+**[DataTypesAsLattices/Functionality/arrowR_diag_isScottContinuous.lean](arrowR_diag_isScottContinuous.lean)**
 
 @import "arrowR_diag_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/sigmaJ.lean](DomainTheory/DataTypesAsLattices/Functionality/sigmaJ.lean)**
+**[DataTypesAsLattices/Functionality/sigmaJ.lean](sigmaJ.lean)**
 
 @import "sigmaJ.lean"
-**[DataTypesAsLattices/Functionality/finite_sigma_plain_app.lean](DomainTheory/DataTypesAsLattices/Functionality/finite_sigma_plain_app.lean)**
+**[DataTypesAsLattices/Functionality/finite_sigma_plain_app.lean](finite_sigma_plain_app.lean)**
 
 @import "finite_sigma_plain_app.lean"
-**[DataTypesAsLattices/Functionality/eq_7_18_ne.lean](DomainTheory/DataTypesAsLattices/Functionality/eq_7_18_ne.lean)**
+**[DataTypesAsLattices/Functionality/eq_7_18_ne.lean](eq_7_18_ne.lean)**
 
 @import "eq_7_18_ne.lean"
-**[DataTypesAsLattices/Functionality/eq_7_18_eq.lean](DomainTheory/DataTypesAsLattices/Functionality/eq_7_18_eq.lean)**
+**[DataTypesAsLattices/Functionality/eq_7_18_eq.lean](eq_7_18_eq.lean)**
 
 @import "eq_7_18_eq.lean"
-**[DataTypesAsLattices/Functionality/finite_sigma_union_app.lean](DomainTheory/DataTypesAsLattices/Functionality/finite_sigma_union_app.lean)**
+**[DataTypesAsLattices/Functionality/finite_sigma_union_app.lean](finite_sigma_union_app.lean)**
 
 @import "finite_sigma_union_app.lean"
-**[DataTypesAsLattices/Functionality/sumMed.lean](DomainTheory/DataTypesAsLattices/Functionality/sumMed.lean)**
+**[DataTypesAsLattices/Functionality/sumMed.lean](sumMed.lean)**
 
 @import "sumMed.lean"
-**[DataTypesAsLattices/Functionality/tagInj_isScottContinuous.lean](DomainTheory/DataTypesAsLattices/Functionality/tagInj_isScottContinuous.lean)**
+**[DataTypesAsLattices/Functionality/tagInj_isScottContinuous.lean](tagInj_isScottContinuous.lean)**
 
 @import "tagInj_isScottContinuous.lean"

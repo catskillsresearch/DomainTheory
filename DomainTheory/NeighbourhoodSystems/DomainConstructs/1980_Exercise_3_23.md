@@ -2,6 +2,6 @@
 
 **EXERCISE 3.23.** (For category theorists.) Show that the results of 3.11 and 3.12 prove that the category of domains and approximable mappings is a *cartesian closed category*. (Mac Lane [1971] pp. 95–96 may be consulted for a very brief introduction.) What is the *terminal domain* in this category? What sort of functor is $(D_0 \to D_1)$?
 
-**[Exercise_3_23.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise_3_23.lean)**
+**[Exercise_3_23.lean](Exercise_3_23.lean)**
 
 @import "Exercise_3_23.lean"

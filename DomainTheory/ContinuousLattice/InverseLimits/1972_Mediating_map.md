@@ -4,6 +4,6 @@
 
 @import "1972_Mediating_map.english" {code_block=false}
 
-**[ContinuousLattice/InverseLimits/coconeInf.lean](DomainTheory/ContinuousLattice/InverseLimits/coconeInf.lean)**
+**[ContinuousLattice/InverseLimits/coconeInf.lean](coconeInf.lean)**
 
 @import "coconeInf.lean"

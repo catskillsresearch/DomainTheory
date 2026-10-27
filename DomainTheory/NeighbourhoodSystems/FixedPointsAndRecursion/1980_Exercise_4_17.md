@@ -16,6 +16,6 @@ Need the fixed point be unique?
 
 <!-- page 70 -->
 
-**[Exercise_4_17.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_17.lean)**
+**[Exercise_4_17.lean](Exercise_4_17.lean)**
 
 @import "Exercise_4_17.lean"

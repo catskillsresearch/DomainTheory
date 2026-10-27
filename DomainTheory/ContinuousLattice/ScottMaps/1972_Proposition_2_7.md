@@ -2,6 +2,6 @@
 
 @import "1972_Proposition_2_7.english" {code_block=false}
 
-**[ContinuousLattice/ScottMaps/meet_preservesDirectedSup.lean](DomainTheory/ContinuousLattice/ScottMaps/meet_preservesDirectedSup.lean)**
+**[ContinuousLattice/ScottMaps/meet_preservesDirectedSup.lean](meet_preservesDirectedSup.lean)**
 
 @import "meet_preservesDirectedSup.lean"

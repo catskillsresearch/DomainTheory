@@ -8,6 +8,6 @@
 
 @import "Continuous.mermaid"
 
-**[DataTypesAsLattices/Continuous/basicNhhd.lean](DomainTheory/DataTypesAsLattices/Continuous/basicNhhd.lean)**
+**[DataTypesAsLattices/Continuous/basicNhhd.lean](basicNhhd.lean)**
 
 @import "basicNhhd.lean"

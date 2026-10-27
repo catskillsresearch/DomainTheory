@@ -8,6 +8,6 @@ Would a similar generalization be possible for $\oplus$ and $\otimes$?
 
 <!-- page 116 -->
 
-**[Exercise_6_29.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_29.lean)**
+**[Exercise_6_29.lean](Exercise_6_29.lean)**
 
 @import "Exercise_6_29.lean"

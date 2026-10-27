@@ -8,6 +8,6 @@ $$
 
 for all $x \in |D_0|$. Conversely, show that every elementwise function satisfying this equation comes from an approximable mapping as defined in 2.2.
 
-**[Exercise_2_9.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_9.lean)**
+**[Exercise_2_9.lean](Exercise_2_9.lean)**
 
 @import "Exercise_2_9.lean"

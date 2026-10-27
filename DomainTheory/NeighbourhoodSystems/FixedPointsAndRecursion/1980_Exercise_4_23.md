@@ -12,6 +12,6 @@
 
 Prove that $f$ has a unique fixed point. (Hint: Show that if $x = f(x)$, then $a_n(x) \sqsubseteq a_n(\mathrm{fix}(f))$ for all $n \in \mathbf{N}$ by induction on $n$.)
 
-**[Exercise_4_23.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_23.lean)**
+**[Exercise_4_23.lean](Exercise_4_23.lean)**
 
 @import "Exercise_4_23.lean"

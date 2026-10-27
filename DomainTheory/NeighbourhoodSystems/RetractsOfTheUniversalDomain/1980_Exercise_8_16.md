@@ -18,12 +18,12 @@ The tip packages the order correspondence for finitary projections with the effe
 
 Matches the order of finitary projections with subdomain order and records effectivity of `D_a`.
 
-**[Exercise816.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise816.lean)**
+**[Exercise816.lean](Exercise816.lean)**
 
 @import "Exercise816.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_16.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_16.lean)** — `exercise_8_16`
+**[Exercise_8_16.lean](Exercise_8_16.lean)** — `exercise_8_16`
 
 @import "Exercise_8_16.lean"

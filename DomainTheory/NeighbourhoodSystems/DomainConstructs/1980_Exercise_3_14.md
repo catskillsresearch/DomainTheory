@@ -26,6 +26,6 @@ $$
 
 Note that for a 2-termed product we simplify $10\Delta_1$ to $1\Delta_1$.
 
-**[Exercise_3_14.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise_3_14.lean)**
+**[Exercise_3_14.lean](Exercise_3_14.lean)**
 
 @import "Exercise_3_14.lean"

@@ -7,9 +7,9 @@
 
 @import "Embedding.mermaid"
 
-**[DataTypesAsLattices/Embedding/embed.lean](DomainTheory/DataTypesAsLattices/Embedding/embed.lean)**
+**[DataTypesAsLattices/Embedding/embed.lean](embed.lean)**
 
 @import "embed.lean"
-**[DataTypesAsLattices/Embedding/extend.lean](DomainTheory/DataTypesAsLattices/Embedding/extend.lean)**
+**[DataTypesAsLattices/Embedding/extend.lean](extend.lean)**
 
 @import "extend.lean"

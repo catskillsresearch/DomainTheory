@@ -30,6 +30,6 @@ $$
 
 where $k$ is variable — meaning all finite sequences are to be considered.)
 
-**[Exercise_5_14.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise_5_14.lean)**
+**[Exercise_5_14.lean](Exercise_5_14.lean)**
 
 @import "Exercise_5_14.lean"

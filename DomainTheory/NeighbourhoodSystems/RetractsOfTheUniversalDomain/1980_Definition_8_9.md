@@ -12,6 +12,6 @@ for all $a, b : \mathcal{U} \to \mathcal{U}$. $\square$
 
 These interesting(computable!) combinators on elements of $\mathcal{U} \to \mathcal{U}$ have many, many properties. We shall, however, only see what they do to projections.
 
-**[Definition_8_9.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition_8_9.lean)**
+**[Definition_8_9.lean](Definition_8_9.lean)**
 
 @import "Definition_8_9.lean"

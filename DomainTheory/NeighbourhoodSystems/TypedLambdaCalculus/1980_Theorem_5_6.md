@@ -126,6 +126,6 @@ It should be remarked that the types of variables needed for the proof of 5.6 ne
 
 Recursion on $N$ was the topic of 5.6; further examples of recursion on other domains are included in the exercises.
 
-**[Theorem_5_6.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Theorem_5_6.lean)**
+**[Theorem_5_6.lean](Theorem_5_6.lean)**
 
 @import "Theorem_5_6.lean"

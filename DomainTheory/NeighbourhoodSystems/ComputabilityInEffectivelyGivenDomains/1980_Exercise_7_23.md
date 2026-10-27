@@ -12,6 +12,6 @@ What are the computable elements of $P\mathbf{N}$ ?
 
 <!-- page 134 -->
 
-**[Exercise_7_23.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_23.lean)**
+**[Exercise_7_23.lean](Exercise_7_23.lean)**
 
 @import "Exercise_7_23.lean"

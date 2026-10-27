@@ -18,6 +18,6 @@ $$\mathbb{P}\mathbf{N} \text{ and } P\mathbf{N}\ ????$$
 
 <!-- page 133 -->
 
-**[Exercise_7_21.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_21.lean)**
+**[Exercise_7_21.lean](Exercise_7_21.lean)**
 
 @import "Exercise_7_21.lean"

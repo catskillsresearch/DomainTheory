@@ -4,6 +4,6 @@
 
 The word "other" here is not meant to imply "distinct". For an initial algebra there is one and only one homomorphism into itself: the identity map. As we already indicated in 6.1 it is a general fact that the next proposition holds.
 
-**[Definition_6_5.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition_6_5.lean)**
+**[Definition_6_5.lean](Definition_6_5.lean)**
 
 @import "Definition_6_5.lean"

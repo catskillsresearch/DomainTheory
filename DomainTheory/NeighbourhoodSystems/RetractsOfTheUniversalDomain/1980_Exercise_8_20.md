@@ -14,12 +14,12 @@ The tip asserts `D ⊴ D×D` and `D ⊴ D→D` for every domain `D`.
 
 Proves the unconditional self-embeddings `D ⊴ D×D` and `D ⊴ D→D`.
 
-**[Exercise820.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820.lean)**
+**[Exercise820.lean](Exercise820.lean)**
 
 @import "Exercise820.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_20.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_20.lean)** — `exercise_8_20`
+**[Exercise_8_20.lean](Exercise_8_20.lean)** — `exercise_8_20`
 
 @import "Exercise_8_20.lean"

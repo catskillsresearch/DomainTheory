@@ -8,6 +8,6 @@ $$
 
 is approximable without bringing in the neighbourhoods in such an explicit way? (Hint: Use 3.5 and the idea of Exercise 2.12.)
 
-**[Exercise_3_27.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise_3_27.lean)**
+**[Exercise_3_27.lean](Exercise_3_27.lean)**
 
 @import "Exercise_3_27.lean"

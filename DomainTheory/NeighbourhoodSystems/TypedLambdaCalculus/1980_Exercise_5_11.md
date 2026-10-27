@@ -40,6 +40,6 @@ $$
 \mathrm{map}(\langle f_n \rangle_{n=0}^\infty, x) = \langle f_n(x) \rangle_{n=0}^\infty.
 $$
 
-**[Exercise_5_11.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise_5_11.lean)**
+**[Exercise_5_11.lean](Exercise_5_11.lean)**
 
 @import "Exercise_5_11.lean"

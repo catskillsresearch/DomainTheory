@@ -12,12 +12,12 @@ The tip asserts universality of `V` together with the product/sum/function-space
 
 Proves `V` is universal and records the standard embeddings into `U`.
 
-**[EmbeddingsIntoU.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/EmbeddingsIntoU.lean)**
+**[EmbeddingsIntoU.lean](EmbeddingsIntoU.lean)**
 
 @import "EmbeddingsIntoU.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_17.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_17.lean)** — `exercise_8_17`
+**[Exercise_8_17.lean](Exercise_8_17.lean)** — `exercise_8_17`
 
 @import "Exercise_8_17.lean"

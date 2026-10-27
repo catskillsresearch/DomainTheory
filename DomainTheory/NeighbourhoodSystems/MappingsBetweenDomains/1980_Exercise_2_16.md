@@ -6,6 +6,6 @@ $$f(1x) = \text{true},$$
 $$f(01x) = \text{false, and}$$
 $$f(00x) = f(x).$$
 
-**[Exercise_2_16.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_16.lean)**
+**[Exercise_2_16.lean](Exercise_2_16.lean)**
 
 @import "Exercise_2_16.lean"

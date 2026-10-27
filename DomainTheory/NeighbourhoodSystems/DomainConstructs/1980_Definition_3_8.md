@@ -12,6 +12,6 @@ We have been calling our mappings "approximable" for a long time now without say
 
 <!-- page 43 -->
 
-**[Definition_3_8.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Definition_3_8.lean)**
+**[Definition_3_8.lean](Definition_3_8.lean)**
 
 @import "Definition_3_8.lean"

@@ -26,12 +26,12 @@ The tip asserts that for any polymorphic type `d`, `Π(d)` is a finitary project
 
 Defines polymorphic types and proves `Π(d)` is a finitary projection.
 
-**[PolymorphicType.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/PolymorphicType.lean)**
+**[PolymorphicType.lean](PolymorphicType.lean)**
 
 @import "PolymorphicType.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
-**[Exercise_8_27.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_27.lean)** — `exercise_8_27`
+**[Exercise_8_27.lean](Exercise_8_27.lean)** — `exercise_8_27`
 
 @import "Exercise_8_27.lean"

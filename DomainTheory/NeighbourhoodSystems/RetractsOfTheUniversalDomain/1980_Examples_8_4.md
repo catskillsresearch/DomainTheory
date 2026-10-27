@@ -47,6 +47,6 @@ $$\mathrm{smash}(x, y) = \mathrm{fade}(\mathrm{check}(x), \mathrm{fade}(\mathrm{
 
 for $x \in |D|$ and $y \in |E|$. $\square$
 
-**[Examples_8_4.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Examples_8_4.lean)**
+**[Examples_8_4.lean](Examples_8_4.lean)**
 
 @import "Examples_8_4.lean"

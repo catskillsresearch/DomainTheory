@@ -8,6 +8,6 @@ then $\mathcal{D} \cong \mathcal{E}$. Need the same be true of infinite systems?
 
 <!-- page 115 -->
 
-**[Exercise_6_28.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_28.lean)**
+**[Exercise_6_28.lean](Exercise_6_28.lean)**
 
 @import "Exercise_6_28.lean"

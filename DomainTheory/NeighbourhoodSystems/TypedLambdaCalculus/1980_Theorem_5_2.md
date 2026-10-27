@@ -88,6 +88,6 @@ We note that if $\tau'$ is the term $\lambda x, y . \tau$, then $\tau'(x, y)$ me
 
 <!-- page 81 -->
 
-**[Theorem_5_2.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Theorem_5_2.lean)**
+**[Theorem_5_2.lean](Theorem_5_2.lean)**
 
 @import "Theorem_5_2.lean"

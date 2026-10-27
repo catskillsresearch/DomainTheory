@@ -50,6 +50,6 @@ Relations in the indices. For this purpose it may be convenient to recall some c
 
 Products give us a way of providing an immediate meaning to the notion of a computable function of several variables. Note that the proof of 3.7 is “effective” and shows that substitution of computable functions of several variables into each other always gives computable functions. We turn next to the function spaces.
 
-**[Theorem_7_4.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_4.lean)**
+**[Theorem_7_4.lean](Theorem_7_4.lean)**
 
 @import "Theorem_7_4.lean"

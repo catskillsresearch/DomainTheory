@@ -7,6 +7,6 @@
 
 @import "Graph.mermaid"
 
-**[DataTypesAsLattices/Graph/IsGraph.lean](DomainTheory/DataTypesAsLattices/Graph/IsGraph.lean)**
+**[DataTypesAsLattices/Graph/IsGraph.lean](IsGraph.lean)**
 
 @import "IsGraph.lean"

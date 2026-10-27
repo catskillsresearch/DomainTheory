@@ -10,6 +10,6 @@ Show that if $f : D \to D$ is approximable, then $f$ can be restricted to an app
 
 <!-- page 68 -->
 
-**[Exercise_4_10.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_10.lean)**
+**[Exercise_4_10.lean](Exercise_4_10.lean)**
 
 @import "Exercise_4_10.lean"

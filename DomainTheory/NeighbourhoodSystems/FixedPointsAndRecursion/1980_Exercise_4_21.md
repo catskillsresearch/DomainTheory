@@ -16,6 +16,6 @@ $$
 
 where $n \in \mathbf{N}$ is fixed.)
 
-**[Exercise_4_21.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_21.lean)**
+**[Exercise_4_21.lean](Exercise_4_21.lean)**
 
 @import "Exercise_4_21.lean"

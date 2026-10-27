@@ -2,6 +2,6 @@
 
 @import "InfoSys.english" {code_block=false}
 
-**[InformationSystems/InformationSystems/InfoSys/InfoSys.lean](DomainTheory/InformationSystems/InformationSystems/InfoSys/InfoSys.lean)**
+**[InformationSystems/InformationSystems/InfoSys/InfoSys.lean](InfoSys.lean)**
 
 @import "InfoSys.lean"

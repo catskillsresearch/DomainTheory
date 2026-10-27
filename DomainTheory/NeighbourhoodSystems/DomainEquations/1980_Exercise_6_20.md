@@ -16,6 +16,6 @@ so that $\{\Gamma\} \triangleleft T(\{\Gamma\})$, and so 6.14 applies.
 
 <!-- page 113 -->
 
-**[Exercise_6_20.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_20.lean)**
+**[Exercise_6_20.lean](Exercise_6_20.lean)**
 
 @import "Exercise_6_20.lean"

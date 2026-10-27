@@ -8,6 +8,6 @@ $$
 
 for all $x \in |D_0|$.
 
-**[Exercise_2_10.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_10.lean)**
+**[Exercise_2_10.lean](Exercise_2_10.lean)**
 
 @import "Exercise_2_10.lean"

@@ -10,6 +10,6 @@ Algebraic lattices and closure operations predate the paper: Grätzer (1968) for
 
 @import "1976_Closure_operations_and_algebraic_lattices.english" {code_block=false}
 
-**[DataTypesAsLattices/Closures/Icomb_isClosure.lean](DomainTheory/DataTypesAsLattices/Closures/Icomb_isClosure.lean)**
+**[DataTypesAsLattices/Closures/Icomb_isClosure.lean](Icomb_isClosure.lean)**
 
 @import "Icomb_isClosure.lean"
