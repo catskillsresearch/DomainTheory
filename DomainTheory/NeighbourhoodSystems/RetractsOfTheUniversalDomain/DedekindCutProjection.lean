@@ -9,7 +9,6 @@ public import Mathlib.Combinatorics.Colex
 @[expose] public section
 
 /- concordance: source L5135 EXERCISES — Lecture VIII exercises -/
--- Exercise811/R.lean
 namespace DomainTheory.NeighbourhoodSystems.Exercise811
 
 open NeighborhoodSystem ApproximableMap
@@ -31,11 +30,6 @@ def R : NeighborhoodSystem ℚ :=
     (sub_master := by
       rintro X ⟨r, hr0, hr1, rfl⟩
       exact Set.Ico_subset_Ico le_rfl hr1)
-
-end DomainTheory.NeighbourhoodSystems.Exercise811
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-open NeighborhoodSystem ApproximableMap
 
 @[simp] theorem R_mem_iff {X : Set ℚ} :
     R.mem X ↔ ∃ r : ℚ, 0 < r ∧ r ≤ 1 ∧ X = Set.Ico (0 : ℚ) r := Iff.rfl
@@ -86,10 +80,6 @@ theorem aRel_combine {r s s' : ℚ} (hs1 : s ≤ 1) (hs1' : s' ≤ 1)
     · exact absurd (h2.trans_le hs1') (lt_irrefl _)
     · exact Or.inr ⟨rfl, min_self 1⟩
 
-end DomainTheory.NeighbourhoodSystems.Exercise811
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
-open NeighborhoodSystem ApproximableMap
 /- concordance: source L5137 EXERCISE 8.11 retraction on intervals -/
 /-- **Exercise 8.11 (first part).** `aRel` defines an approximable map `a : R → R`. -/
 def a : ApproximableMap R R where
@@ -503,41 +493,5 @@ theorem not_isFinitary_a : ¬ IsFinitary a := by
     g.injective hxeq
   exact absurd (congrArg Subtype.val this) one_ne_zero
 
-set_option linter.unusedVariables false
-
-
-/-- **exercise_8_11 (Scott tip).** -/
-theorem exercise_8_11 :
-    IsProjection (Exercise811.a) ∧ Retraction (Exercise811.a) ∧
-      ¬IsFinitary (Exercise811.a) :=
-  ⟨Exercise811.isProjection_a, Exercise811.isRetraction_a, Exercise811.not_isFinitary_a⟩
-
-theorem example_811 : And
-  (And
-    (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
-      DomainTheory.NeighbourhoodSystems.Exercise811.a)
-    (@DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
-      DomainTheory.NeighbourhoodSystems.Exercise811.a))
-  (Not
-    (@DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
-      DomainTheory.NeighbourhoodSystems.Exercise811.a)) :=
-  @And.intro
-  (And
-    (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
-      DomainTheory.NeighbourhoodSystems.Exercise811.a)
-    (@DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
-      DomainTheory.NeighbourhoodSystems.Exercise811.a))
-  (Not
-    (@DomainTheory.NeighbourhoodSystems.IsFinitary Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
-      DomainTheory.NeighbourhoodSystems.Exercise811.a))
-  (@And.intro
-    (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
-      DomainTheory.NeighbourhoodSystems.Exercise811.a)
-    (@DomainTheory.NeighbourhoodSystems.Retraction Rat DomainTheory.NeighbourhoodSystems.Exercise811.R
-      DomainTheory.NeighbourhoodSystems.Exercise811.a)
-    DomainTheory.NeighbourhoodSystems.Exercise811.isProjection_a
-    DomainTheory.NeighbourhoodSystems.Exercise811.isRetraction_a)
-  DomainTheory.NeighbourhoodSystems.Exercise811.not_isFinitary_a
 
 end DomainTheory.NeighbourhoodSystems.Exercise811
-
