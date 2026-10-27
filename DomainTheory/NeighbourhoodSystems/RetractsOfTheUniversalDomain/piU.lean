@@ -16,7 +16,7 @@ noncomputable def piU (d : ApproximableMap U U) : ApproximableMap U U :=
 
 namespace toElementMap
 
-/-- `piU d`'s defining formula unfolded at the element level (mirrors `toElementMap_subU`). -/
+/-- `piU d`'s defining formula unfolded at the element level (mirrors `subU.toElementMap_eq`). -/
 theorem piU (d : ApproximableMap U U) (w : U.Element) :
     (DomainTheory.NeighbourhoodSystems.piU d).toElementMap w =
       iArrow.toElementMap ((piD d).toElementMap (jArrow.toElementMap w)) := by
@@ -28,7 +28,7 @@ end toElementMap
 namespace piD
 
 /-- Unfolds `(piU d).toElementMap w = w` into the statement that `j_→(w)` is already a fixed
-point of `piD d` (mirrors `subApprox_fix_of_subU_fix`). -/
+point of `piD d` (mirrors `subU.subApprox_fix_of_fix`). -/
 theorem fix_of_piU_fix {d : ApproximableMap U U} {w : U.Element}
     (hw : (piU d).toElementMap w = w) :
     (piD d).toElementMap (jArrow.toElementMap w) = jArrow.toElementMap w := by
@@ -40,14 +40,14 @@ end piD
 
 namespace piU
 
-/-- Mirrors `subU_fix_of_subApprox_fix`. -/
+/-- Mirrors `subU.fix_of_subApprox_fix`. -/
 theorem fix_of_piD_fix {d : ApproximableMap U U} {φ : (funSpace U U).Element}
     (hφ : (piD d).toElementMap φ = φ) :
     (piU d).toElementMap (iArrow.toElementMap φ) = iArrow.toElementMap φ := by
   rw [toElementMap.piU, jArrow_comp_iArrow_apply, hφ]
 
 /-- **Exercise 8.27(b)(0): `Fix(piU d) ≃o Fix(piD d)`.** Forward: `w ↦ j_→(w)`; backward:
-`φ ↦ i_→(φ)`. Needs only `j_→∘i_→ = I` (no inequality on `i_→∘j_→`) — mirrors `subUFixIso`
+`φ ↦ i_→(φ)`. Needs only `j_→∘i_→ = I` (no inequality on `i_→∘j_→`) — mirrors `subU.fixIso`
 verbatim, with `piD d`/`piU d` in place of `subApprox`/`subU`. -/
 noncomputable def FixIso (d : ApproximableMap U U) :
     {w : U.Element // (piU d).toElementMap w = w} ≃o
@@ -87,7 +87,7 @@ end piU
 namespace isFinitary
 
 /-- **Exercise 8.27(b)(0), corollary: if `piD d` is finitary then so is `piU d`.** Mirrors
-`isFinitary_subU`'s use of `subUFixIso`. This is the reduction Exercise 8.27(b)(1)–(b)(4) will
+`subU.isFinitary`'s use of `subU.fixIso`. This is the reduction Exercise 8.27(b)(1)–(b)(4) will
 target: it suffices to prove `IsFinitary (piD d)` for `d` polymorphic. -/
 theorem piU_of_isFinitary_piD {d : ApproximableMap U U} (h : IsFinitary (piD d)) :
     IsFinitary (piU d) := by
@@ -110,10 +110,10 @@ namespace isProjection
 /-- **`Π(d)`, regarded as living in `𝒰` (`piU d`), is a projection, for every `d`.** Half of "for
 `d` a polymorphic type, `Π(d)` is a type" (Definition 8.3's `IsProjection` clause) — Scott's own
 "it is easy to check" — obtained "for free" from `isProjection_piD` via the same conjugation
-gadget (`isProjection_conjArrow`) used for `subU` in Step 1. Note this does not even need `d` to
+gadget (`subU.isProjection_conjArrow`) used for `subU` in Step 1. Note this does not even need `d` to
 be a polymorphic type. -/
 theorem piU (d : ApproximableMap U U) : IsProjection (DomainTheory.NeighbourhoodSystems.piU d) :=
-  isProjection_conjArrow (isProjection_piD d)
+  subU.isProjection_conjArrow (isProjection_piD d)
 
 end isProjection
 

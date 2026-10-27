@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ASharp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.subU
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition_8_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
@@ -13,24 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 /- concordance: source L5267 EXERCISE 8.27 infinite cartesian products -/
 namespace DomainTheory.NeighbourhoodSystems
-
 open NeighborhoodSystem ApproximableMap
-
-theorem jArrow_comp_iArrow_apply (v : (funSpace U U).Element) :
-    jArrow.toElementMap (iArrow.toElementMap v) = v := by
-  rw [show jArrow.toElementMap (iArrow.toElementMap v) = (jArrow.comp iArrow).toElementMap v from
-    (toElementMap_comp jArrow iArrow v).symm, jArrow_comp_iArrow, toElementMap_idMap]
-
-end DomainTheory.NeighbourhoodSystems
-
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap
-
-/-- **`sub`, regarded as a finitary projection of `𝒰` itself** (the exercise's opening sentence):
-conjugate Theorem 8.6(b)'s `subApprox : (𝒰→𝒰)→(𝒰→𝒰)` through the fixed pair `i_→, j_→`
-(Definition 8.9), exactly as `a→b` is built from `λf.b∘f∘a` in `Definition89.lean`. -/
-noncomputable def subU : ApproximableMap U U :=
-  iArrow.comp (subApprox.comp jArrow)
 
 /-- **A polymorphic type** (Scott 1981, PRG-19, Exercise 8.27): `d = sub∘d∘sub`, `sub` here being
 `subU` (Step 1's "`sub` regarded as a combinator on `𝒰`"). -/
@@ -77,114 +61,6 @@ noncomputable def piDType (d : ApproximableMap U U) (s : U.Element) : Approximab
 def scPrincipal {t : U.Element} (i : scFamily t) : U.Element :=
   U.principal (t.sub i.2.2)
 
-/-- `subU`'s defining formula unfolded at the element level. -/
-theorem toElementMap_subU (w : U.Element) :
-    subU.toElementMap w = iArrow.toElementMap (subApprox.toElementMap
-      (jArrow.toElementMap w)) := by
-  unfold subU
-  rw [toElementMap_comp, toElementMap_comp]
-
-/-- Unfolds `subU.toElementMap w = w` (via `jArrow_comp_iArrow`) into the statement that
-`j_→(w)` is already a fixed point of `subApprox`. Used for both `subUFixIso.toFun`'s well-typing
-and its `left_inv`. -/
-theorem subApprox_fix_of_subU_fix {w : U.Element} (hw : subU.toElementMap w = w) :
-    subApprox.toElementMap (jArrow.toElementMap w) = jArrow.toElementMap w := by
-  rw [toElementMap_subU] at hw
-  have hstep := congrArg jArrow.toElementMap hw
-  rwa [jArrow_comp_iArrow_apply] at hstep
-
-theorem subU_fix_of_subApprox_fix {φ : (funSpace U U).Element}
-    (hφ : subApprox.toElementMap φ = φ) :
-    subU.toElementMap (iArrow.toElementMap φ) = iArrow.toElementMap φ := by
-  rw [toElementMap_subU, jArrow_comp_iArrow_apply, hφ]
-
-/-- **`Fix(subU) ≃o Fix(subApprox)`.** Forward: `w ↦ j_→(w)`; backward: `φ ↦ i_→(φ)`. Needs only
-`j_→∘i_→ = I` (no inequality on `i_→∘j_→`). -/
-noncomputable def subUFixIso :
-    {w : U.Element // subU.toElementMap w = w} ≃o
-      {φ : (funSpace U U).Element // subApprox.toElementMap φ = φ} where
-  toFun w := ⟨jArrow.toElementMap w.1, subApprox_fix_of_subU_fix w.2⟩
-  invFun φ := ⟨iArrow.toElementMap φ.1, subU_fix_of_subApprox_fix φ.2⟩
-  left_inv w := by
-    apply Subtype.ext
-    show iArrow.toElementMap (jArrow.toElementMap w.1) = w.1
-    have hw := toElementMap_subU w.1
-    rw [w.2] at hw
-    rw [subApprox_fix_of_subU_fix w.2] at hw
-    exact hw.symm
-  right_inv φ := by
-    apply Subtype.ext
-    exact jArrow_comp_iArrow_apply φ.1
-  map_rel_iff' := by
-    intro w w'
-    show jArrow.toElementMap w.1 ≤ jArrow.toElementMap w'.1 ↔ w.1 ≤ w'.1
-    constructor
-    · intro hle
-      have h2 := iArrow.toElementMap_mono hle
-      have e1 : iArrow.toElementMap (jArrow.toElementMap w.1) = w.1 := by
-        have hw := toElementMap_subU w.1
-        rw [w.2, subApprox_fix_of_subU_fix w.2] at hw
-        exact hw.symm
-      have e2 : iArrow.toElementMap (jArrow.toElementMap w'.1) = w'.1 := by
-        have hw' := toElementMap_subU w'.1
-        rw [w'.2, subApprox_fix_of_subU_fix w'.2] at hw'
-        exact hw'.symm
-      rwa [e1, e2] at h2
-    · intro hle
-      exact jArrow.toElementMap_mono hle
-
-/-- **`subU`'s fixed points are exactly the finitary projections of `𝒰`** (Exercise 8.27's
-opening sentence, precisely): composing `subUFixIso` with Theorem 8.6(b)(ii)'s `subApprox.fixIso`
-identifies `Fix(subU)` with `{f : 𝒰→𝒰 ∣ sub f = f}`, which by Theorem 8.6(a)'s
-`sub_eq_self_iff_isFinitaryProjection` is exactly `{f ∣ FinitaryProjection f}`. -/
-noncomputable def subUFixIsoSubFixed :
-    {w : U.Element // subU.toElementMap w = w} ≃o
-      {f : ApproximableMap U U // sub f = f} :=
-  subUFixIso.trans subApprox.fixIso
-
-/-- **Conjugating a retraction of `(𝒰→𝒰)` through `i_→, j_→` gives a retraction of `𝒰`.** Pure
-associativity plus `j_→∘i_→ = I` (`jArrow_comp_iArrow`) and `H∘H=H`. -/
-theorem isRetraction_conjArrow {H : ApproximableMap (funSpace U U) (funSpace U U)}
-    (hH : Retraction H) : Retraction (iArrow.comp (H.comp jArrow)) := by
-  constructor
-  show (iArrow.comp (H.comp jArrow)).comp (iArrow.comp (H.comp jArrow)) =
-    iArrow.comp (H.comp jArrow)
-  rw [comp_assoc iArrow (H.comp jArrow) (iArrow.comp (H.comp jArrow)),
-    comp_assoc H jArrow (iArrow.comp (H.comp jArrow)),
-    ← comp_assoc jArrow iArrow (H.comp jArrow), jArrow_comp_iArrow, idMap_comp,
-    ← comp_assoc H H jArrow, hH.out]
-
-/-- **Conjugating a `≤ I`-map of `(𝒰→𝒰)` through `i_→, j_→` gives a `≤ I`-map of `𝒰`.** Chains
-`comp_mono_gen` with `i_→∘j_→ ≤ I` (`iArrow_comp_jArrow_le`, Definition 8.9). -/
-theorem le_idMap_conjArrow {H : ApproximableMap (funSpace U U) (funSpace U U)}
-    (hH : H ≤ idMap (funSpace U U)) : iArrow.comp (H.comp jArrow) ≤ idMap U :=
-  calc iArrow.comp (H.comp jArrow)
-      ≤ iArrow.comp ((idMap (funSpace U U)).comp jArrow) :=
-        comp_mono_gen le_rfl (comp_mono_gen hH le_rfl)
-    _ = iArrow.comp jArrow := by rw [idMap_comp]
-    _ ≤ idMap U := iArrow_comp_jArrow_le
-
-/-- **Conjugating a projection of `(𝒰→𝒰)` through `i_→, j_→` gives a projection of `𝒰`.** -/
-theorem isProjection_conjArrow {H : ApproximableMap (funSpace U U) (funSpace U U)}
-    (hH : IsProjection H) : IsProjection (iArrow.comp (H.comp jArrow)) :=
-  ⟨isRetraction_conjArrow hH.1, le_idMap_conjArrow hH.2⟩
-
-/-- **`subU` is a projection.** -/
-theorem isProjection_subU : IsProjection subU :=
-  isProjection_conjArrow Sub8_6.isProjection_subApprox
-
-
-/-- **`subU` is finitary.** Composes `subUFixIso` with Theorem 8.6(b)(ii)'s `subApprox.isFinitary`. -/
-theorem isFinitary_subU : IsFinitary subU := by
-  obtain ⟨β, F, ⟨iso⟩⟩ := subApprox.isFinitary (E := U)
-  exact ⟨β, F, ⟨subUFixIso.trans iso⟩⟩
-
-/-- **`sub`, regarded as a combinator on `𝒰` itself, is a finitary projection** (Exercise 8.27's
-opening sentence, in full). -/
-theorem isFinitaryProjection_subU : FinitaryProjection subU :=
-  ⟨⟨isProjection_subU, isFinitary_subU⟩⟩
-
-
 /-- If `a` is idempotent and `f = a∘g∘a` for *some* `g`, then `a(f(z)) = f(z)` for *every* `z` —
 i.e. any map "sandwiched" between two copies of an idempotent `a` always lands in `Fix(a)`,
 regardless of what `g` is. (General form of the pattern behind Exercise 8.26's
@@ -199,7 +75,7 @@ so is `d(t)`" — in fact, for `d` a polymorphic type, `d(z) ∈ Fix(subU)` for 
 for `z` a "type". -/
 theorem polymorphicType_apply_mem_fix {d : ApproximableMap U U} (hd : PolymorphicType d)
     (z : U.Element) : subU.toElementMap (d.toElementMap z) = d.toElementMap z := by
-  have h := toElementMap_mem_fix_of_isRetraction_sandwich isProjection_subU.1 (g := d) z
+  have h := toElementMap_mem_fix_of_isRetraction_sandwich subU.isProjection.1 (g := d) z
   rwa [hd.out] at h
 
 /-- **Any `j_→`-decoded fixed point of `subU` is a finitary projection of `𝒰`.** -/
@@ -207,7 +83,7 @@ theorem isFinitaryProjection_toApproxMap_jArrow_of_fix {w : U.Element}
     (hw : subU.toElementMap w = w) :
     FinitaryProjection (toApproxMap (jArrow.toElementMap w)) := by
   apply isFinitaryProjection_of_sub_eq_self
-  have hfix := subApprox_fix_of_subU_fix hw
+  have hfix := subU.subApprox_fix_of_fix hw
   have hstep := congrArg toApproxMap hfix
   rwa [subApprox.toElementMap_eq, Sub8_6.toApproxMap_subFilter] at hstep
 
@@ -215,7 +91,7 @@ theorem isFinitaryProjection_toApproxMap_jArrow_of_fix {w : U.Element}
 theorem isFinitaryProjection_decode_subU (z : U.Element) :
     FinitaryProjection (toApproxMap (jArrow.toElementMap (subU.toElementMap z))) :=
   isFinitaryProjection_toApproxMap_jArrow_of_fix
-    (toElementMap_idem_of_isRetraction isProjection_subU.1 z)
+    (toElementMap_idem_of_isRetraction subU.isProjection.1 z)
 
 
 theorem toElementMap_piDUncurried (d : ApproximableMap U U) (φ : (funSpace U U).Element)
@@ -292,7 +168,7 @@ the "witnessing element" `↑T` is *exactly* fixed by `subU` (not merely approxi
 theorem subU_principal_eq_of_rel_self {T : Set ℚ} (hT : U.mem T) (hTT : subU.rel T T) :
     subU.toElementMap (U.principal hT) = U.principal hT := by
   apply le_antisymm
-  · exact toElementMap_le_self_of_le_idMap isProjection_subU.2 _
+  · exact toElementMap_le_self_of_le_idMap subU.isProjection.2 _
   · exact principal_le_of_mem ((subU.rel_iff_mem_principal hT).mp hTT)
 
 /-- **Descending to a self-consistent approximant.** For `t` already `subU`-fixed, formula (ii) for
@@ -303,7 +179,7 @@ theorem exists_rel_self_subset_of_mem {t : U.Element} (ht : subU.toElementMap t 
     {T₀ : Set ℚ} (hT₀ : t.mem T₀) : ∃ T, subU.rel T T ∧ t.mem T ∧ T ⊆ T₀ := by
   have hmem : (subU.toElementMap t).mem T₀ := by rw [ht]; exact hT₀
   obtain ⟨_, T, hTt, hTT₀, hTT⟩ :=
-    (formula_of_isFinitaryProjection isFinitaryProjection_subU t).mp hmem
+    (formula_of_isFinitaryProjection subU.isFinitaryProjection t).mp hmem
   exact ⟨T, hTT, hTt, hTT₀⟩
 
 
@@ -360,7 +236,7 @@ theorem le_idMap_piD (d : ApproximableMap U U) : piD d ≤ idMap (funSpace U U) 
         toElementMap_le_self_of_le_idMap hP _
     _ ≤ (toApproxMap φ).toElementMap t :=
         (toApproxMap φ).toElementMap_mono
-          (toElementMap_le_self_of_le_idMap isProjection_subU.2 t)
+          (toElementMap_le_self_of_le_idMap subU.isProjection.2 t)
 
 /-- Evaluating `piDApply d f` at an already-`subU`-projected point simplifies (via `subU`'s
 idempotency) exactly to `toElementMap_piDApply`'s formula with `t` replaced by `subU.toElementMap
@@ -369,7 +245,7 @@ theorem piDApply_toElementMap_eq (d f : ApproximableMap U U) (t : U.Element) :
     (piDApply d f).toElementMap (subU.toElementMap t) =
       (toApproxMap (jArrow.toElementMap (subU.toElementMap (d.toElementMap
           (subU.toElementMap t))))).toElementMap (f.toElementMap (subU.toElementMap t)) := by
-  rw [toElementMap_piDApply, toElementMap_idem_of_isRetraction isProjection_subU.1 t]
+  rw [toElementMap_piDApply, toElementMap_idem_of_isRetraction subU.isProjection.1 t]
 
 /-- **`Π(d)` is a retraction, for any `d`.** -/
 theorem isRetraction_piD (d : ApproximableMap U U) : Retraction (piD d) := by
@@ -445,7 +321,7 @@ theorem exists_X_of_mem_step (d : ApproximableMap U U) (x : (funSpace U U).Eleme
   have hY₀ : U.mem Y₀ := (piDApply d (toApproxMap x)).rel_dom hrelY0Z0
   have hZ₀ : U.mem Z₀ := (piDApply d (toApproxMap x)).rel_cod hrelY0Z0
   set t : U.Element := subU.toElementMap (U.principal hY₀) with ht_def
-  have ht : subU.toElementMap t = t := toElementMap_idem_of_isRetraction isProjection_subU.1 _
+  have ht : subU.toElementMap t = t := toElementMap_idem_of_isRetraction subU.isProjection.1 _
   have hmem' : ((piDType d t).toElementMap ((toApproxMap x).toElementMap t)).mem Z₀ := by
     have h := ((piDApply d (toApproxMap x)).rel_iff_mem_principal hY₀).mp hrelY0Z0
     rwa [toElementMap_piDApply'] at h
@@ -482,7 +358,7 @@ theorem exists_X_of_mem_step (d : ApproximableMap U U) (x : (funSpace U U).Eleme
   · -- `x.mem X`
     exact toApproxMap_rel.mp hrelTfinal
   · -- `X ⊆ step Y₀ Z₀`
-    have hle : t ≤ U.principal hY₀ := toElementMap_le_self_of_le_idMap isProjection_subU.2 _
+    have hle : t ≤ U.principal hY₀ := toElementMap_le_self_of_le_idMap subU.isProjection.2 _
     have hY0sub : Y₀ ⊆ k.1 := ((U.mem_principal hY₀).mp (hle k.1 k.2.2)).2
     exact step_subset hY₀ hZ₀ hY0sub hWZ₀
   · -- `(piD d).rel X X`
