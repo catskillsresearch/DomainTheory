@@ -13,6 +13,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.xPs
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.XFold
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.YFoldInner
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.XPseqCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.YPseqCode
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.yPseqAtomJunk
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.yPseqAtomIdx
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsComputableDiff
@@ -687,6 +688,40 @@ end YPseqCodeUnconditional
 
 end YFoldInner
 
+namespace YPseqCode
+open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+
+section YPseqCodeUnconditional
+
+variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
+  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
+  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
+  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
+  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
+  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
+  (hxSplit : SplitSpec' D₁ splitX)
+  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
+  (hySplit : SplitSpec' D₀ splitY)
+  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion0 : IsComputableUnion P₀)
+
+include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 in
+
+theorem four_pow_found (n : ℕ) :
+    (IsComputableUnion.combineFound2 hUnion0
+      (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
+      (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))
+      ).unpair.1 = 1 :=
+  (IsComputableUnion.combineFound2.found_iff hUnion0
+    (YFoldInner.found_le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
+      (Nat.zero_le 1) n (4 ^ n))
+    (YFoldInner.found_le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
+      (le_refl 1) n (4 ^ n))).mpr
+    (YFoldInner.or_found P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff hD₀nomin
+      hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 n)
+
+end YPseqCodeUnconditional
+
+end YPseqCode
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
@@ -840,86 +875,8 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-section YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
-
-noncomputable def YPseqCode (n : ℕ) : ℕ :=
-  (IsComputableUnion.combineFound2 hUnion0
-    (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
-    (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))).unpair.2
-
-end YPseqCode
-
 namespace YPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-section YPseqCode
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hUnion0 : IsComputableUnion P₀)
-
-include hD₀pos hD₀diff hD₀nomin in
-
-theorem mem {n : ℕ}
-    (hfound : (IsComputableUnion.combineFound2 hUnion0
-      (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
-      (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))
-      ).unpair.1 = 1) :
-    D₀.mem (P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n)) :=
-  IsComputableUnion.combineFound2.mem_of_found hD₀pos hD₀diff hD₀nomin hUnion0
-    (YFoldInner.found_le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
-      (Nat.zero_le 1) n (4 ^ n))
-    (YFoldInner.found_le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
-      (le_refl 1) n (4 ^ n))
-    (YFoldInner.mem_of_found P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff
-      hD₀nomin hUnion0 (Nat.zero_le 1) n (4 ^ n))
-    (YFoldInner.mem_of_found P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff
-      hD₀nomin hUnion0 (le_refl 1) n (4 ^ n))
-    hfound
-
-end YPseqCode
-
-section YPseqCodeUnconditional
-
-variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
-  (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-  (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
-  (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-  (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-  (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
-  (hxSplit : SplitSpec' D₁ splitX)
-  (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
-  (hySplit : SplitSpec' D₀ splitY)
-  (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion0 : IsComputableUnion P₀)
-
-include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 in
-
-theorem four_pow_found (n : ℕ) :
-    (IsComputableUnion.combineFound2 hUnion0
-      (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 0 (4 ^ n))
-      (YFoldInner P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 n 1 (4 ^ n))
-      ).unpair.1 = 1 :=
-  (IsComputableUnion.combineFound2.found_iff hUnion0
-    (YFoldInner.found_le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
-      (Nat.zero_le 1) n (4 ^ n))
-    (YFoldInner.found_le_one P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0
-      (le_refl 1) n (4 ^ n))).mpr
-    (YFoldInner.or_found P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff hD₀nomin
-      hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 n)
-
-end YPseqCodeUnconditional
 
 section YPseqCodeUnconditional
 
