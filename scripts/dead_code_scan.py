@@ -121,18 +121,20 @@ def triage_section(candidates: list[Candidate]) -> str:
         parts = Path(c.rel).parts
         sub = parts[2] if len(parts) > 3 else "?"
         by_sub[sub] += 1
-    dt_lines = [
-        "",
-        "#### DataTypesAsLattices — 54 modules not in any note (by subfolder)",
-        "",
-        "| Subfolder | Count | Suggested action |",
-        "|-----------|------:|------------------|",
-    ]
-    for sub, n in sorted(by_sub.items(), key=lambda x: (-x[1], x[0])):
-        dt_lines.append(
-            f"| `{sub}/` | {n} | **delete** or **fold** into parent if split was file-size only |"
-        )
-    dt_block = "\n".join(dt_lines)
+    dt_block = ""
+    if by_sub:
+        dt_lines = [
+            "",
+            "#### DataTypesAsLattices — barrel-only, not in notes (by subfolder)",
+            "",
+            "| Subfolder | Count | Suggested action |",
+            "|-----------|------:|------------------|",
+        ]
+        for sub, n in sorted(by_sub.items(), key=lambda x: (-x[1], x[0])):
+            dt_lines.append(
+                f"| `{sub}/` | {n} | **delete** or **fold** into parent if split was file-size only |"
+            )
+        dt_block = "\n".join(dt_lines)
 
     return f"""\
 ## Triage guide (manual review)
@@ -140,28 +142,10 @@ def triage_section(candidates: list[Candidate]) -> str:
 Actions: **delete** (unused + redundant), **merge** (into an importing sibling module),
 **wire** (call from proofs), **keep** (notes/PDF or Palomar barrel only).
 
-### ContinuousLattice
-
-The former barrel-only dozen (Sierpiński conjunction, `orderIso_wayBelow_iff`, note-only FunctionSpaces/Milner/Specialization splits) was **deleted**; proofs use sibling modules (`orderIso_wayBelow`, `*_apply`, `isOpen_iff_scottOpen`, etc.).
-
-### DataTypesAsLattices
-
-Barrel-only DTA splits (87 modules total across two passes) were **deleted**; numbered `theorem_*` / paper modules and wired library files remain.
-
-### DataTypesAsLattices (historical subfolder table)
+Past bulk cleanups (already applied): ContinuousLattice note splits, DataTypesAsLattices barrel-only modules, NeighbourhoodSystems `*_lock`, InformationSystems `DomainEquation.lean`, Bridge aggregators `Equivalence.lean` / `WorkedExampleSExpr.lean`.
 {dt_block}
 
-### NeighbourhoodSystems
-
-Six barrel-only `*_lock` / `BooleanAlgebraFilters_more` modules were **deleted**; retracts proofs use `*_more` and numbered exercise modules directly.
-
-### BridgeTheorems
-
-Bridge aggregator modules (`Equivalence.lean`, `WorkedExampleSExpr.lean`) were removed; leaf imports live in `DomainTheory.lean`. SExpr content remains under `WorkedExampleSExpr/` and in bridge notes.
-
-### InformationSystems
-
-`SomeDomainEquations/DomainEquation.lean` (empty re-export of Factoid 8.1–8.2) was **deleted**; `Factoid81` / `Factoid82` stay in `DomainTheory.lean`.
+Remaining **BridgeTheorems** SExpr leaves and **note-cited** barrel-only modules are intentional until merged or wired.
 """  # noqa: E501
 
 

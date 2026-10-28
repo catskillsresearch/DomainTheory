@@ -170,10 +170,6 @@
 
 @import "pointwise_sSup_preservesDirectedSup.lean"
 
-**[DomainTheory/ContinuousLattice/FunctionSpaces/pointwise_sup_preservesDirectedSup.lean](pointwise_sup_preservesDirectedSup.lean)**
-
-@import "pointwise_sup_preservesDirectedSup.lean"
-
 **[DomainTheory/ContinuousLattice/FunctionSpaces/preservesDirectedSup_coe.lean](preservesDirectedSup_coe.lean)**
 
 @import "preservesDirectedSup_coe.lean"
