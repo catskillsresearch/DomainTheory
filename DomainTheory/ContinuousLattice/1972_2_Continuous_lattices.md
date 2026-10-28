@@ -19,4 +19,5 @@
 - [Proof of 2.9](Constructions/1972_Proof_of_2_9.md)
 - [Proof of 2.10](FunctionSpaces/1972_Proposition_2_10_revisited.md)
 - [Proof of 2.11](Constructions/1972_Proof_of_2_11.md)
+- [Proof of 2.12](ContinuousLattices/1972_Proof_of_2_12.md)
 - [After Theorem 2.12](ContinuousLattices/1972_After_theorem_2_12.md)

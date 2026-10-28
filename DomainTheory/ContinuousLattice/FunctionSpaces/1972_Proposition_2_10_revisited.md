@@ -5,9 +5,6 @@
 **[DomainTheory/ContinuousLattice/FunctionSpaces/incl_preservesDirectedSup.lean](DomainTheory/ContinuousLattice/FunctionSpaces/incl_preservesDirectedSup.lean)**
 
 @import "incl_preservesDirectedSup.lean"
-**[DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10_a.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10_a.lean)**
+**[DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10.lean)**
 
-@import "proposition_2_10_a.lean"
-**[DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10_b.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10_b.lean)**
-
-@import "proposition_2_10_b.lean"
+@import "proposition_2_10.lean"

@@ -553,14 +553,9 @@ def gen_note_outline(
             return mapping[title]
         tnorm = title.strip().lower()
         for oid, lab in old_labels.items():
-            plain = lab.replace("<br>", " ").replace("\\n", " ")
-            if plain.strip().lower() == tnorm or tnorm.startswith(plain.split("—")[0].strip().lower()):
-                return oid
-            if tnorm.startswith(plain[: min(12, len(plain))].lower()):
-                return oid
-        # match by first word (Proposition 2.1 -> P21 style from old ids)
-        for oid, lab in old_labels.items():
-            if title.split("(")[0].strip() in plain or plain in title:
+            plain = lab.replace("<br>", " ").replace("\\n", " ").strip().lower()
+            head = plain.split("—")[0].strip()
+            if plain == tnorm or head == tnorm:
                 return oid
         return mermaid_id(title[:24], used)
 

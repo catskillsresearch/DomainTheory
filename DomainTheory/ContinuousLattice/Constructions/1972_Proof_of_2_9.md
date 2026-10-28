@@ -8,3 +8,6 @@
 **[DomainTheory/ContinuousLattice/Constructions/sierpinskiPower_isContinuousLattice.lean](DomainTheory/ContinuousLattice/Constructions/sierpinskiPower_isContinuousLattice.lean)**
 
 @import "sierpinskiPower_isContinuousLattice.lean"
+**[DomainTheory/ContinuousLattice/Constructions/proposition_2_9.lean](DomainTheory/ContinuousLattice/Constructions/proposition_2_9.lean)**
+
+@import "proposition_2_9.lean"

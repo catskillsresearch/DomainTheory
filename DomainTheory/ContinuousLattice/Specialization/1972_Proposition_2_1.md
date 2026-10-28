@@ -5,9 +5,3 @@
 **[DomainTheory/ContinuousLattice/Specialization/proposition_2_1.lean](DomainTheory/ContinuousLattice/Specialization/proposition_2_1.lean)**
 
 @import "proposition_2_1.lean"
-**[DomainTheory/ContinuousLattice/Specialization/proposition_2_1_le_of_converges.lean](DomainTheory/ContinuousLattice/Specialization/proposition_2_1_le_of_converges.lean)**
-
-@import "proposition_2_1_le_of_converges.lean"
-**[DomainTheory/ContinuousLattice/Specialization/proposition_2_1_of_le.lean](DomainTheory/ContinuousLattice/Specialization/proposition_2_1_of_le.lean)**
-
-@import "proposition_2_1_of_le.lean"

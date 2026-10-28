@@ -5,12 +5,6 @@
 **[DomainTheory/ContinuousLattice/ScottMaps/meet_preservesDirectedSup.lean](DomainTheory/ContinuousLattice/ScottMaps/meet_preservesDirectedSup.lean)**
 
 @import "meet_preservesDirectedSup.lean"
-**[DomainTheory/ContinuousLattice/ScottMaps/proposition_2_7_inf_left.lean](DomainTheory/ContinuousLattice/ScottMaps/proposition_2_7_inf_left.lean)**
+**[DomainTheory/ContinuousLattice/ScottMaps/proposition_2_7.lean](DomainTheory/ContinuousLattice/ScottMaps/proposition_2_7.lean)**
 
-@import "proposition_2_7_inf_left.lean"
-**[DomainTheory/ContinuousLattice/ScottMaps/proposition_2_7_inf_right.lean](DomainTheory/ContinuousLattice/ScottMaps/proposition_2_7_inf_right.lean)**
-
-@import "proposition_2_7_inf_right.lean"
-**[DomainTheory/ContinuousLattice/ScottMaps/proposition_2_7_sup.lean](DomainTheory/ContinuousLattice/ScottMaps/proposition_2_7_sup.lean)**
-
-@import "proposition_2_7_sup.lean"
+@import "proposition_2_7.lean"
