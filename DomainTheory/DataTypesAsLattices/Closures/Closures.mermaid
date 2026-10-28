@@ -42,26 +42,21 @@ flowchart TB
   N26["fixed_eq_sSup_compacts"]
   FixedLattices["FixedLattices"]
   FixedPoint["FixedPoint"]
-  N77["funRetract_isClosure"]
   Graph["Graph"]
   N36["Icomb_isClosure"]
   N60["Icomb_subset_arrowR"]
-  N41["Icomb_subset_boool"]
   N139["Icomb_subset_boxPlus"]
-  N137["Icomb_subset_boxShift"]
   N102["Icomb_subset_boxTensor"]
   N57["Icomb_subset_funRetract"]
   N37["Icomb_subset_graph"]
   N38["Icomb_subset_intR"]
   N82["Icomb_subset_openR"]
   N150["Icomb_subset_Vcomb"]
-  N78["intR_isClosure"]
   N2["Isolated"]
   Lambda["Lambda"]
   N80["openR_app"]
   N81["openR_expansive"]
   N83["openR_idem"]
-  N85["openR_isClosure"]
   N84["openR_isRetract"]
   N79["openR_map_isScottContinuous"]
   Pomega["Pomega"]
@@ -89,9 +84,6 @@ flowchart TB
   theorem_5_5_universe["theorem_5_5_universe"]
   N157["theorem_5_6"]
   N117["topElem_ne_botElem"]
-  N118["typed_of_boxTensor"]
-  N159["typed_of_retract_Vcomb"]
-  N119["typed_squarePair_boxTensor"]
   N120["union_botElem"]
   N122["union_const_left_isScottContinuous"]
   N121["union_left_isScottContinuous"]
@@ -188,23 +180,6 @@ flowchart TB
   Pomega -->|"1"| N114
   representationEncode_more -->|"1"| N114
   Pomega -->|"1"| N117
-  Graph -->|"1"| N118
-  N0 -->|"1"| N118
-  N30 -->|"1"| N118
-  N31 -->|"1"| N118
-  N32 -->|"1"| N118
-  N34 -->|"1"| N118
-  N58 -->|"1"| N118
-  N75 -->|"1"| N118
-  Pomega -->|"1"| N118
-  Graph -->|"1"| N119
-  N0 -->|"1"| N119
-  N31 -->|"1"| N119
-  N34 -->|"1"| N119
-  N58 -->|"1"| N119
-  N75 -->|"1"| N119
-  Pomega -->|"2"| N119
-  squarePair_more -->|"1"| N119
   Pomega -->|"1"| N120
   Continuous -->|"3"| N121
   Lambda -->|"1"| N121
@@ -215,11 +190,6 @@ flowchart TB
   Graph -->|"1"| N13
   N0 -->|"1"| N13
   Pomega -->|"1"| N13
-  N0 -->|"1"| N137
-  N1 -->|"1"| N137
-  N37 -->|"1"| N137
-  N8 -->|"1"| N137
-  Pomega -->|"1"| N137
   N0 -->|"1"| N139
   N1 -->|"1"| N139
   N33 -->|"1"| N139
@@ -288,14 +258,6 @@ flowchart TB
   Pomega -->|"1"| N157
   Vcomb_more -->|"1"| N157
   theorem_5_5_universe -->|"1"| N157
-  Graph -->|"3"| N159
-  N0 -->|"1"| N159
-  N3 -->|"1"| N159
-  N4 -->|"1"| N159
-  N63 -->|"1"| N159
-  Pomega -->|"1"| N159
-  Vapply_more -->|"1"| N159
-  Vcomb_more -->|"1"| N159
   Continuous -->|"1"| N16
   FixedLattices -->|"2"| N16
   Graph -->|"3"| N16
@@ -413,10 +375,6 @@ flowchart TB
   N3 -->|"1"| N4
   Pomega -->|"1"| N4
   Vapply_more -->|"1"| N4
-  N0 -->|"1"| N41
-  N1 -->|"1"| N41
-  N7 -->|"1"| N41
-  Pomega -->|"1"| N41
   Pomega -->|"1"| N47
   Continuous -->|"1"| N5
   Graph -->|"2"| N5
@@ -487,12 +445,6 @@ flowchart TB
   N31 -->|"1"| N75
   Pomega -->|"1"| N75
   Pomega -->|"1"| N76
-  N0 -->|"1"| N77
-  N1 -->|"1"| N77
-  N57 -->|"1"| N77
-  N0 -->|"1"| N78
-  N1 -->|"1"| N78
-  N38 -->|"1"| N78
   Continuous -->|"2"| N79
   Pomega -->|"1"| N79
   Continuous -->|"1"| N8
@@ -527,10 +479,6 @@ flowchart TB
   N0 -->|"3"| N84
   N80 -->|"1"| N84
   N83 -->|"1"| N84
-  N0 -->|"1"| N85
-  N1 -->|"1"| N85
-  N82 -->|"1"| N85
-  N84 -->|"1"| N85
   Lambda -->|"2"| N86
   Pomega -->|"1"| N86
   Lambda -->|"1"| N87

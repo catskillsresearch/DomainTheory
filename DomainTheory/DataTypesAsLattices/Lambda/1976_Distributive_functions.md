@@ -26,9 +26,6 @@
 **[DataTypesAsLattices/Lambda/seqFun.lean](DomainTheory/DataTypesAsLattices/Lambda/seqFun.lean)**
 
 @import "seqFun.lean"
-**[DataTypesAsLattices/Lambda/lamOmega.lean](DomainTheory/DataTypesAsLattices/Lambda/lamOmega.lean)**
-
-@import "lamOmega.lean"
 **[DataTypesAsLattices/Lambda/termDollarStep.lean](DomainTheory/DataTypesAsLattices/Lambda/termDollarStep.lean)**
 
 @import "termDollarStep.lean"

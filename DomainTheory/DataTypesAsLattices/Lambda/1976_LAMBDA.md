@@ -170,9 +170,6 @@
 **[DataTypesAsLattices/Lambda/ScottContinuousFin.lean](DomainTheory/DataTypesAsLattices/Lambda/ScottContinuousFin.lean)**
 
 @import "ScottContinuousFin.lean"
-**[DataTypesAsLattices/Lambda/Occurs.lean](DomainTheory/DataTypesAsLattices/Lambda/Occurs.lean)**
-
-@import "Occurs.lean"
 **[DataTypesAsLattices/Lambda/nestApplyFin.lean](DomainTheory/DataTypesAsLattices/Lambda/nestApplyFin.lean)**
 
 @import "nestApplyFin.lean"

@@ -32,12 +32,6 @@
 **[DataTypesAsLattices/Lambda/seqShift_more.lean](DomainTheory/DataTypesAsLattices/Lambda/seqShift_more.lean)**
 
 @import "seqShift_more.lean"
-**[DataTypesAsLattices/Lambda/seq0.lean](DomainTheory/DataTypesAsLattices/Lambda/seq0.lean)**
-
-@import "seq0.lean"
-**[DataTypesAsLattices/Lambda/seq1.lean](DomainTheory/DataTypesAsLattices/Lambda/seq1.lean)**
-
-@import "seq1.lean"
 **[DataTypesAsLattices/Lambda/seqFunLt.lean](DomainTheory/DataTypesAsLattices/Lambda/seqFunLt.lean)**
 
 @import "seqFunLt.lean"

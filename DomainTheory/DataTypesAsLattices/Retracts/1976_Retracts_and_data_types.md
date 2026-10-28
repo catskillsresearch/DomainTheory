@@ -50,9 +50,6 @@
 **[DataTypesAsLattices/Retracts/intR.lean](DomainTheory/DataTypesAsLattices/Retracts/intR.lean)**
 
 @import "intR.lean"
-**[DataTypesAsLattices/Retracts/inter_const_isScottContinuous.lean](DomainTheory/DataTypesAsLattices/Retracts/inter_const_isScottContinuous.lean)**
-
-@import "inter_const_isScottContinuous.lean"
 **[DataTypesAsLattices/Retracts/iterateFrom.lean](DomainTheory/DataTypesAsLattices/Retracts/iterateFrom.lean)**
 
 @import "iterateFrom.lean"

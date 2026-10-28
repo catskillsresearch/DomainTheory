@@ -11,9 +11,3 @@
 **[DataTypesAsLattices/Lambda/maxExtend.lean](DomainTheory/DataTypesAsLattices/Lambda/maxExtend.lean)**
 
 @import "maxExtend.lean"
-**[DataTypesAsLattices/Lambda/relComp.lean](DomainTheory/DataTypesAsLattices/Lambda/relComp.lean)**
-
-@import "relComp.lean"
-**[DataTypesAsLattices/Lambda/setSum.lean](DomainTheory/DataTypesAsLattices/Lambda/setSum.lean)**
-
-@import "setSum.lean"

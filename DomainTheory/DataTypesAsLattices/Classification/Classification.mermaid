@@ -17,7 +17,6 @@ flowchart TB
   Graph["Graph"]
   N3["IsBdelta"]
   N34["isBdelta_inter"]
-  N35["isBdelta_union"]
   N1["IsBooleanOpen"]
   N4["IsFcapG"]
   N6["IsFcapGdelta"]
@@ -41,30 +40,14 @@ flowchart TB
   N59["theorem_6_5"]
   N12["ThreeValued"]
   N21["typicalBdelta"]
-  N42["typicalBdelta_isBdelta"]
   N22["typicalF"]
-  N43["typicalF_mem_ScottF"]
-  N44["typicalF_universal"]
   N23["typicalFcapG"]
-  N45["typicalFcapG_isFcapG"]
-  N46["typicalFcapG_universal"]
   N24["typicalFcapGdelta"]
-  N60["typicalFcapGdelta_isFcapGdelta"]
-  N61["typicalFcapGdelta_universal"]
   N25["typicalG"]
   N47["typicalG_isScottOpen"]
-  N48["typicalG_mem_ScottG"]
-  N49["typicalG_universal"]
   N26["typicalGdelta"]
-  N50["typicalGdelta_eq"]
-  N51["typicalGdelta_isScottGdelta"]
-  N52["typicalGdelta_universal"]
   N27["typicalPi11"]
-  N53["typicalPi11_isPi11"]
-  N54["typicalPi11_universal"]
   N28["typicalSigma11"]
-  N55["typicalSigma11_isSigma11"]
-  N56["typicalSigma11_universal"]
   N29["uvU"]
   N30["uvV"]
   N57["zero_not_mem_succSet_top"]
@@ -139,8 +122,6 @@ flowchart TB
   Pomega -->|"1"| N33
   N3 -->|"1"| N34
   Pomega -->|"2"| N34
-  N34 -->|"1"| N35
-  Pomega -->|"2"| N35
   Lambda -->|"1"| N36
   N18 -->|"1"| N36
   Pomega -->|"1"| N36
@@ -170,71 +151,12 @@ flowchart TB
   N36 -->|"1"| N41
   N4 -->|"1"| N41
   Pomega -->|"1"| N41
-  Graph -->|"2"| N42
-  Lambda -->|"1"| N42
-  N21 -->|"1"| N42
-  N3 -->|"1"| N42
-  N32 -->|"1"| N42
-  Lambda -->|"1"| N43
-  N10 -->|"1"| N43
-  N22 -->|"1"| N43
-  N39 -->|"1"| N43
-  Continuous -->|"1"| N44
-  N10 -->|"1"| N44
-  N22 -->|"1"| N44
-  N39 -->|"1"| N44
-  Pomega -->|"1"| N44
-  Lambda -->|"1"| N45
-  N23 -->|"1"| N45
-  N4 -->|"1"| N45
-  N41 -->|"1"| N45
-  Continuous -->|"1"| N46
-  N23 -->|"1"| N46
-  N4 -->|"1"| N46
-  N41 -->|"1"| N46
-  Pomega -->|"1"| N46
   Continuous -->|"1"| N47
   Lambda -->|"1"| N47
   N25 -->|"1"| N47
   N38 -->|"1"| N47
-  N11 -->|"1"| N48
-  N47 -->|"1"| N48
-  Continuous -->|"2"| N49
-  N25 -->|"1"| N49
-  N38 -->|"1"| N49
-  Pomega -->|"1"| N49
   Continuous -->|"1"| N5
   Pomega -->|"1"| N5
-  N26 -->|"1"| N50
-  Pomega -->|"1"| N50
-  Lambda -->|"1"| N51
-  N26 -->|"1"| N51
-  N40 -->|"1"| N51
-  N5 -->|"1"| N51
-  Continuous -->|"1"| N52
-  N26 -->|"1"| N52
-  N40 -->|"1"| N52
-  N5 -->|"1"| N52
-  Pomega -->|"1"| N52
-  Lambda -->|"1"| N53
-  N27 -->|"1"| N53
-  N8 -->|"1"| N53
-  Continuous -->|"1"| N54
-  N27 -->|"1"| N54
-  N8 -->|"1"| N54
-  Pomega -->|"1"| N54
-  Graph -->|"2"| N55
-  Lambda -->|"1"| N55
-  N28 -->|"1"| N55
-  N7 -->|"1"| N55
-  Continuous -->|"1"| N56
-  FixedPoint -->|"1"| N56
-  Graph -->|"2"| N56
-  Lambda -->|"2"| N56
-  N28 -->|"1"| N56
-  N32 -->|"1"| N56
-  N7 -->|"1"| N56
-  Pomega -->|"1"| N56
   Lambda -->|"1"| N57
   Pomega -->|"1"| N57
   Lambda -->|"1"| N58
@@ -254,16 +176,6 @@ flowchart TB
   Continuous -->|"1"| N6
   N5 -->|"1"| N6
   Pomega -->|"1"| N6
-  Continuous -->|"1"| N60
-  Lambda -->|"1"| N60
-  N24 -->|"1"| N60
-  N59 -->|"1"| N60
-  N6 -->|"1"| N60
-  Continuous -->|"1"| N61
-  N24 -->|"1"| N61
-  N59 -->|"1"| N61
-  N6 -->|"1"| N61
-  Pomega -->|"1"| N61
   Continuous -->|"1"| N7
   Graph -->|"1"| N7
   Pomega -->|"1"| N7

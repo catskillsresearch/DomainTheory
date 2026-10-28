@@ -11,9 +11,6 @@
 **[DataTypesAsLattices/Functionality/Hcomb.lean](DomainTheory/DataTypesAsLattices/Functionality/Hcomb.lean)**
 
 @import "Hcomb.lean"
-**[DataTypesAsLattices/Functionality/Hcomb_more.lean](DomainTheory/DataTypesAsLattices/Functionality/Hcomb_more.lean)**
-
-@import "Hcomb_more.lean"
 **[DataTypesAsLattices/Functionality/Z.lean](DomainTheory/DataTypesAsLattices/Functionality/Z.lean)**
 
 @import "Z.lean"

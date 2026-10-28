@@ -52,7 +52,6 @@ flowchart TB
   N100["eq_2_7_zero"]
   N101["eq_2_9"]
   N28["erase"]
-  N102["eta_fails"]
   N103["exists_least_mem"]
   N104["exists_least_not_mem"]
   N133["fix_param_isScottContinuous"]
@@ -69,13 +68,11 @@ flowchart TB
   N132["iterateBot_param_isScottContinuous"]
   N2["Kcomb"]
   Kcomb_more["Kcomb_more"]
-  N50["lamOmega"]
   N32["maxExtend"]
   N14["mem_ofNat"]
   N136["mem_seqFunLt"]
   N33["minExtend"]
   N34["nestApplyFin"]
-  N17["Occurs"]
   N35["ofComb"]
   N7["ofNat"]
   ofNat_more["ofNat_more"]
@@ -93,13 +90,10 @@ flowchart TB
   N38["primRecStep"]
   N39["primRecStepTerm"]
   N40["primRecVal"]
-  N42["relComp"]
   N43["rename"]
   N3["Scomb"]
   Scomb_more["Scomb_more"]
   N18["ScottContinuousFin"]
-  N44["seq0"]
-  N45["seq1"]
   N46["seq2"]
   N47["seqCons"]
   N48["seqFun"]
@@ -108,13 +102,11 @@ flowchart TB
   seqFunLt_more["seqFunLt_more"]
   N52["seqShift"]
   seqShift_more["seqShift_more"]
-  N55["setSum"]
   N130["SKK_eq_I"]
   N11["sucC"]
   sucC_more["sucC_more"]
   N10["succSet"]
   succSet_more["succSet_more"]
-  N205["table1_mu"]
   N4["Term"]
   N58["termDollarStep"]
   N57["termDollarStepBody"]
@@ -147,9 +139,6 @@ flowchart TB
   Pomega -->|"1"| N100
   Graph -->|"1"| N101
   Pomega -->|"1"| N101
-  Graph -->|"4"| N102
-  N78 -->|"1"| N102
-  Pomega -->|"2"| N102
   Pomega -->|"1"| N103
   Pomega -->|"1"| N104
   Continuous -->|"2"| N109
@@ -235,8 +224,6 @@ flowchart TB
   N46 -->|"1"| N168
   N7 -->|"1"| N168
   Pomega -->|"1"| N168
-  Graph -->|"1"| N17
-  N4 -->|"1"| N17
   Graph -->|"2"| N171
   N47 -->|"1"| N171
   N5 -->|"1"| N171
@@ -295,8 +282,6 @@ flowchart TB
   N37 -->|"1"| N20
   N4 -->|"1"| N20
   Pomega -->|"1"| N20
-  Graph -->|"2"| N205
-  Pomega -->|"1"| N205
   Graph -->|"3"| N21
   Kcomb_more -->|"1"| N21
   N1 -->|"1"| N21
@@ -534,14 +519,9 @@ flowchart TB
   N40 -->|"1"| N41
   N7 -->|"1"| N41
   Pomega -->|"1"| N41
-  Pomega -->|"2"| N42
   Enumeration -->|"1"| N43
   Graph -->|"1"| N43
   N4 -->|"1"| N43
-  Pomega -->|"1"| N44
-  Graph -->|"1"| N45
-  N5 -->|"1"| N45
-  Pomega -->|"1"| N45
   Continuous -->|"3"| N46
   FixedPoint -->|"1"| N46
   Graph -->|"3"| N46
@@ -583,9 +563,6 @@ flowchart TB
   Continuous -->|"2"| N5
   N7 -->|"1"| N5
   Pomega -->|"1"| N5
-  Graph -->|"2"| N50
-  N49 -->|"1"| N50
-  Pomega -->|"1"| N50
   Graph -->|"1"| N51
   N1 -->|"1"| N51
   N13 -->|"1"| N51
@@ -621,7 +598,6 @@ flowchart TB
   Pomega -->|"1"| N54
   seqFunLt_more -->|"1"| N54
   seqFun_more -->|"1"| N54
-  Pomega -->|"1"| N55
   Continuous -->|"1"| N56
   Enumeration -->|"1"| N56
   FixedPoint -->|"1"| N56

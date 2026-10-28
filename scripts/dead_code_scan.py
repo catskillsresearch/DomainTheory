@@ -144,10 +144,11 @@ Actions: **delete** (unused + redundant), **merge** (into an importing sibling m
 
 The former barrel-only dozen (Sierpiński conjunction, `orderIso_wayBelow_iff`, note-only FunctionSpaces/Milner/Specialization splits) was **deleted**; proofs use sibling modules (`orderIso_wayBelow`, `*_apply`, `isOpen_iff_scottOpen`, etc.).
 
-### DataTypesAsLattices (64)
+### DataTypesAsLattices
 
-- **54 with no `.md` cite:** see subfolder table below.
-- **10 with notes** (`Lambda/` examples, `Retracts/inter_const_isScottContinuous`, `Functionality/Hcomb_more`): **keep** for narrative unless merged into numbered notes.
+The scan’s former **64** barrel-only modules under Classification / Closures / Computability / Functionality / Lambda / … were **deleted** in bulk; numbered `theorem_*` / paper modules and wired library files remain.
+
+### DataTypesAsLattices (historical subfolder table)
 {dt_block}
 
 ### NeighbourhoodSystems (6 `*_lock.lean`)

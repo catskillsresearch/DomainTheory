@@ -27,7 +27,6 @@ flowchart TB
   N180["IsREu2ecombinatory"]
   N125["IsREu2econdC"]
   N64["IsREu2econdSet"]
-  N70["IsREu2edcondSet"]
   N129["IsREu2eeSubset"]
   N130["IsREu2efunOf"]
   N119["IsREu2egraph_of_primrecRel"]
@@ -37,14 +36,11 @@ flowchart TB
   N181["IsREu2eiff_combinatory"]
   N124["IsREu2eKcomb"]
   N54["IsREu2enumeral"]
-  N67["IsREu2eof_e"]
   N66["IsREu2eofFinset"]
   N116["IsREu2epair_mem"]
   N126["IsREu2epredC"]
-  N55["IsREu2epredSet"]
   N140["IsREu2eScomb"]
   N127["IsREu2esucC"]
-  N58["IsREu2esuccSet"]
   N69["IsREu2etop"]
   N65["IsREu2eunion"]
   N56["IsREu2ezeroC"]
@@ -63,7 +59,6 @@ flowchart TB
   N35["pairRealizer"]
   N20["pairTerm"]
   Pomega["Pomega"]
-  N95["pos_bit_iff"]
   N50["precC"]
   N49["precEnv"]
   N21["precTerm"]
@@ -74,7 +69,6 @@ flowchart TB
   N114["primrec_pack4_proj4"]
   N115["primrec_pair"]
   N179["primrec_realized"]
-  N121["primrec_succ_sq"]
   N123["primrec_testBit"]
   N122["primrec_twoPow"]
   N22["primRecComb"]
@@ -87,11 +81,9 @@ flowchart TB
   N117["primrecPred_Scomb_eq"]
   N134["primrecPred_Scomb_subset"]
   N131["primrecRel_eSubset"]
-  primrecRel_eSubset_more["primrecRel_eSubset_more"]
   N132["primrecRel_mem_funOf_e"]
   N135["primrecRel_Scomb_app"]
   N133["primrecRel_Scomb_bit"]
-  N138["primrecRel_testBit"]
   N103["primRecVal_add"]
   N105["primRecVal_mul"]
   N154["primRecVal_sqrt"]
@@ -197,7 +189,6 @@ flowchart TB
   N61 -->|"1"| N120
   Pomega -->|"2"| N120
   Retracts -->|"1"| N120
-  Retracts -->|"1"| N121
   Retracts -->|"1"| N122
   N122 -->|"1"| N123
   Retracts -->|"1"| N123
@@ -356,8 +347,6 @@ flowchart TB
   N82 -->|"1"| N135
   Pomega -->|"2"| N135
   Retracts -->|"1"| N135
-  N109 -->|"1"| N138
-  N123 -->|"1"| N138
   Graph -->|"1"| N139
   N135 -->|"1"| N139
   N15 -->|"1"| N139
@@ -660,19 +649,10 @@ flowchart TB
   N0 -->|"1"| N54
   N1 -->|"1"| N54
   Retracts -->|"1"| N54
-  N0 -->|"1"| N55
-  N1 -->|"1"| N55
-  Pomega -->|"1"| N55
-  Retracts -->|"1"| N55
   N0 -->|"1"| N56
   N1 -->|"1"| N56
   N54 -->|"1"| N56
   Retracts -->|"1"| N57
-  N0 -->|"1"| N58
-  N1 -->|"1"| N58
-  N57 -->|"1"| N58
-  Pomega -->|"1"| N58
-  Retracts -->|"1"| N58
   Graph -->|"1"| N6
   N0 -->|"1"| N6
   Pomega -->|"1"| N6
@@ -701,9 +681,6 @@ flowchart TB
   N60 -->|"1"| N66
   N65 -->|"1"| N66
   Pomega -->|"1"| N66
-  N1 -->|"1"| N67
-  N66 -->|"1"| N67
-  Pomega -->|"1"| N67
   N1 -->|"1"| N69
   N68 -->|"1"| N69
   Pomega -->|"1"| N69
@@ -712,11 +689,6 @@ flowchart TB
   N0 -->|"3"| N7
   N15 -->|"1"| N7
   Pomega -->|"1"| N7
-  N0 -->|"2"| N70
-  N1 -->|"1"| N70
-  N64 -->|"1"| N70
-  N69 -->|"1"| N70
-  Pomega -->|"1"| N70
   Graph -->|"1"| N71
   N0 -->|"4"| N71
   N15 -->|"1"| N71
@@ -756,18 +728,8 @@ flowchart TB
   Pomega -->|"2"| N91
   Graph -->|"1"| N92
   Pomega -->|"2"| N92
-  N88 -->|"1"| N95
-  Pomega -->|"1"| N95
   N0 -->|"2"| N97
   Pomega -->|"1"| N97
-  Graph -->|"1"| primrecRel_eSubset_more
-  N109 -->|"1"| primrecRel_eSubset_more
-  N123 -->|"1"| primrecRel_eSubset_more
-  N131 -->|"1"| primrecRel_eSubset_more
-  N132 -->|"1"| primrecRel_eSubset_more
-  N81 -->|"1"| primrecRel_eSubset_more
-  N82 -->|"1"| primrecRel_eSubset_more
-  Pomega -->|"2"| primrecRel_eSubset_more
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

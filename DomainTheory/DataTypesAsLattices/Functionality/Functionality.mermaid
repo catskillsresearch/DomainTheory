@@ -50,7 +50,6 @@ flowchart TB
   N11["eraseTag"]
   N96["eta2_app"]
   N95["eta2_map_isScottContinuous"]
-  N304["eval_curry"]
   N98["evalC_app"]
   N97["evalC_isScottContinuous"]
   N263["expF_isScottContinuous"]
@@ -69,7 +68,6 @@ flowchart TB
   N41["hApp"]
   N14["hApply"]
   N48["Hcomb"]
-  Hcomb_more["Hcomb_more"]
   N42["hCond"]
   N46["HF"]
   N47["Hfun"]
@@ -93,7 +91,6 @@ flowchart TB
   N20["kerE"]
   N329["Lambda"]
   N168["lambF_isScottContinuous"]
-  N170["lambR_fixedPoint"]
   N171["lambR_isRetract"]
   N2["LambTerm"]
   N21["mem"]
@@ -102,7 +99,6 @@ flowchart TB
   N127["normalized_finite_fresh_app"]
   N5["Nrel"]
   N22["outC"]
-  N128["outC_app"]
   N23["outleftC"]
   N24["outrightC"]
   N25["pairElem"]
@@ -131,13 +127,10 @@ flowchart TB
   N242["plus7_typed_inl6"]
   N152["plusR_app"]
   N158["plusR_fst"]
-  N160["plusR_functor"]
   N161["plusR_isRetract"]
   N165["plusR_isStrict"]
   N151["plusR_map_isScottContinuous"]
-  N166["plusR_retractLe"]
   N167["plusR_right_isScottContinuous"]
-  N173["plusR_snd"]
   N174["plusR_typed_bot"]
   N178["plusR_typed_iff"]
   N175["plusR_typed_inl"]
@@ -162,7 +155,6 @@ flowchart TB
   N183["seq4_app"]
   N182["seq4_body_isScottContinuous"]
   N188["seq4_comp_isScottContinuous"]
-  N189["seq4_isScottContinuous_each"]
   N32["sigmaJ"]
   N33["singletonE"]
   N205["singletonE_mem"]
@@ -177,11 +169,8 @@ flowchart TB
   N244["tensor4_map_isScottContinuous"]
   N249["tensorR_app"]
   N247["tensorR_diag_isScottContinuous"]
-  N254["tensorR_functor"]
   N255["tensorR_isRetract"]
-  N260["tensorR_isStrict"]
   N248["tensorR_map_isScottContinuous"]
-  N261["tensorR_retractLe"]
   N262["tensorR_right_isScottContinuous"]
   N305["theorem_4_4_med"]
   N306["theorem_4_4_med_unique"]
@@ -191,18 +180,11 @@ flowchart TB
   N275["theorem_7_2"]
   N282["theorem_7_3"]
   N288["theorem_7_4"]
-  N297["tree_atom"]
-  N311["tree_node"]
   N289["treeF_isScottContinuous"]
-  N291["treeR_fixedPoint"]
   N292["treeR_isRetract"]
   N293["typed_apply_retract"]
   N296["typed_bot_bot"]
   N298["typed_bot_botElem"]
-  N299["typed_bot_lamb"]
-  N300["typed_env_nth"]
-  N301["typed_inleft_int_lamb"]
-  N302["typed_inright_arrow_lamb"]
   N303["typed_isGraph"]
   N307["typed_ofNat_intR"]
   N308["typed_pairSeq_tensorR"]
@@ -212,13 +194,6 @@ flowchart TB
   N6["Z"]
   N7["Zcomb"]
 
-  Graph -->|"1"| Hcomb_more
-  N10 -->|"1"| Hcomb_more
-  N2 -->|"1"| Hcomb_more
-  N326 -->|"1"| Hcomb_more
-  N40 -->|"1"| Hcomb_more
-  N48 -->|"1"| Hcomb_more
-  Pomega -->|"1"| Hcomb_more
   Pomega -->|"1"| N1
   Graph -->|"1"| N10
   N0 -->|"3"| N10
@@ -249,11 +224,6 @@ flowchart TB
   N126 -->|"1"| N127
   N6 -->|"1"| N127
   Pomega -->|"2"| N127
-  Graph -->|"1"| N128
-  N0 -->|"1"| N128
-  N22 -->|"1"| N128
-  N329 -->|"1"| N128
-  Pomega -->|"1"| N128
   Graph -->|"1"| N13
   N329 -->|"1"| N13
   Pomega -->|"1"| N13
@@ -385,10 +355,6 @@ flowchart TB
   N144 -->|"1"| N16
   N329 -->|"1"| N16
   Pomega -->|"1"| N16
-  Graph -->|"1"| N160
-  N0 -->|"6"| N160
-  N157 -->|"1"| N160
-  Pomega -->|"1"| N160
   Graph -->|"2"| N161
   N0 -->|"4"| N161
   N136 -->|"1"| N161
@@ -414,9 +380,6 @@ flowchart TB
   N0 -->|"2"| N165
   N152 -->|"1"| N165
   Pomega -->|"1"| N165
-  N0 -->|"3"| N166
-  N157 -->|"1"| N166
-  Pomega -->|"1"| N166
   Continuous -->|"1"| N167
   FixedPoint -->|"1"| N167
   Graph -->|"2"| N167
@@ -437,8 +400,6 @@ flowchart TB
   N16 -->|"1"| N17
   N329 -->|"1"| N17
   Pomega -->|"1"| N17
-  N0 -->|"2"| N170
-  N169 -->|"1"| N170
   N0 -->|"6"| N171
   N161 -->|"1"| N171
   N168 -->|"1"| N171
@@ -447,13 +408,6 @@ flowchart TB
   N0 -->|"5"| N172
   N171 -->|"1"| N172
   N92 -->|"1"| N172
-  Graph -->|"1"| N173
-  N0 -->|"1"| N173
-  N102 -->|"1"| N173
-  N136 -->|"1"| N173
-  N152 -->|"1"| N173
-  N329 -->|"2"| N173
-  Pomega -->|"1"| N173
   Graph -->|"2"| N174
   N0 -->|"2"| N174
   N152 -->|"1"| N174
@@ -512,11 +466,6 @@ flowchart TB
   N329 -->|"4"| N188
   N86 -->|"1"| N188
   Pomega -->|"1"| N188
-  Continuous -->|"1"| N189
-  FixedPoint -->|"1"| N189
-  N0 -->|"1"| N189
-  N329 -->|"3"| N189
-  Pomega -->|"1"| N189
   N1 -->|"1"| N19
   N6 -->|"1"| N19
   Pomega -->|"1"| N19
@@ -728,10 +677,6 @@ flowchart TB
   N136 -->|"1"| N253
   N249 -->|"1"| N253
   Pomega -->|"1"| N253
-  Graph -->|"1"| N254
-  N0 -->|"6"| N254
-  N250 -->|"1"| N254
-  Pomega -->|"1"| N254
   Graph -->|"2"| N255
   N0 -->|"4"| N255
   N136 -->|"1"| N255
@@ -771,14 +716,6 @@ flowchart TB
   N329 -->|"1"| N259
   N90 -->|"1"| N259
   Pomega -->|"1"| N259
-  Graph -->|"2"| N260
-  N0 -->|"2"| N260
-  N138 -->|"1"| N260
-  N249 -->|"1"| N260
-  Pomega -->|"1"| N260
-  N0 -->|"3"| N261
-  N250 -->|"1"| N261
-  Pomega -->|"1"| N261
   Continuous -->|"1"| N262
   FixedPoint -->|"1"| N262
   Graph -->|"2"| N262
@@ -939,8 +876,6 @@ flowchart TB
   N289 -->|"1"| N290
   N329 -->|"1"| N290
   Pomega -->|"1"| N290
-  N0 -->|"2"| N291
-  N290 -->|"1"| N291
   N0 -->|"4"| N292
   N161 -->|"1"| N292
   N255 -->|"1"| N292
@@ -951,19 +886,9 @@ flowchart TB
   Graph -->|"2"| N296
   N0 -->|"1"| N296
   Pomega -->|"1"| N296
-  N0 -->|"3"| N297
-  N175 -->|"1"| N297
-  N290 -->|"1"| N297
-  N296 -->|"1"| N297
-  N329 -->|"1"| N297
-  Pomega -->|"1"| N297
   Graph -->|"2"| N298
   N0 -->|"1"| N298
   Pomega -->|"1"| N298
-  N0 -->|"2"| N299
-  N169 -->|"1"| N299
-  N174 -->|"1"| N299
-  Pomega -->|"1"| N299
   N0 -->|"1"| N3
   N1 -->|"1"| N3
   N21 -->|"1"| N3
@@ -973,40 +898,9 @@ flowchart TB
   N28 -->|"1"| N30
   N29 -->|"1"| N30
   Pomega -->|"1"| N30
-  FixedPoint -->|"1"| N300
-  Graph -->|"4"| N300
-  N0 -->|"3"| N300
-  N329 -->|"1"| N300
-  N92 -->|"1"| N300
-  Pomega -->|"1"| N300
-  Graph -->|"1"| N301
-  N0 -->|"3"| N301
-  N16 -->|"1"| N301
-  N169 -->|"1"| N301
-  N175 -->|"1"| N301
-  Pomega -->|"1"| N301
-  Graph -->|"1"| N302
-  N0 -->|"3"| N302
-  N149 -->|"1"| N302
-  N169 -->|"1"| N302
-  N176 -->|"1"| N302
-  N18 -->|"1"| N302
-  Pomega -->|"1"| N302
   Graph -->|"2"| N303
   N0 -->|"5"| N303
   Pomega -->|"1"| N303
-  Graph -->|"1"| N304
-  N0 -->|"10"| N304
-  N103 -->|"1"| N304
-  N136 -->|"1"| N304
-  N137 -->|"1"| N304
-  N146 -->|"1"| N304
-  N249 -->|"1"| N304
-  N303 -->|"1"| N304
-  N329 -->|"1"| N304
-  N67 -->|"1"| N304
-  N98 -->|"1"| N304
-  Pomega -->|"1"| N304
   Graph -->|"1"| N305
   N0 -->|"13"| N305
   N103 -->|"1"| N305
@@ -1060,12 +954,6 @@ flowchart TB
   N1 -->|"1"| N31
   N25 -->|"1"| N31
   N329 -->|"1"| N31
-  N0 -->|"3"| N311
-  N176 -->|"1"| N311
-  N290 -->|"1"| N311
-  N308 -->|"1"| N311
-  N329 -->|"1"| N311
-  Pomega -->|"1"| N311
   Continuous -->|"1"| N318
   Graph -->|"2"| N318
   N0 -->|"1"| N318

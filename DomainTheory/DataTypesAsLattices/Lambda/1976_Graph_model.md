@@ -17,12 +17,6 @@
 **[DataTypesAsLattices/Lambda/eq_2_9.lean](DomainTheory/DataTypesAsLattices/Lambda/eq_2_9.lean)**
 
 @import "eq_2_9.lean"
-**[DataTypesAsLattices/Lambda/eta_fails.lean](DomainTheory/DataTypesAsLattices/Lambda/eta_fails.lean)**
-
-@import "eta_fails.lean"
-**[DataTypesAsLattices/Lambda/table1_mu.lean](DomainTheory/DataTypesAsLattices/Lambda/table1_mu.lean)**
-
-@import "table1_mu.lean"
 **[DataTypesAsLattices/Lambda/xi_star.lean](DomainTheory/DataTypesAsLattices/Lambda/xi_star.lean)**
 
 @import "xi_star.lean"
