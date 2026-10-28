@@ -3,19 +3,19 @@
 **Proof:** It is trivial to show that $\sqcup$ is continuous in every complete lattice; this is not so for $\sqcap$. In view of 2.6 we need only show
 
 $$
-x \sqcap \bigsqcup S = \bigsqcup x \sqcap y : y \in S
+x \sqcap \bigsqcup S = \bigsqcup \{ x \sqcap y : y \in S \}
 $$
 
 for every directed $S \subseteq D$. In fact it is enough to show
 
 $$
-x \sqcap \bigsqcup S \sqsubseteq \bigsqcup x \sqcap y : y \in S
+x \sqcap \bigsqcup S \sqsubseteq \bigsqcup \{ x \sqcap y : y \in S \}
 $$
 
 because the opposite inequality is valid in all complete lattices. In view of the fact that $D$ is continuous, it is enough to show that
 
 $$
-t \ll x \sqcap \bigsqcup S \text{ implies } t \sqsubseteq \bigsqcup x \sqcap y : y \in S.
+t \ll x \sqcap \bigsqcup S \text{ implies } t \sqsubseteq \bigsqcup \{ x \sqcap y : y \in S \}.
 $$
 
 So assume $t \ll x \sqcap \bigsqcup S$. Then $t \sqsubseteq x \sqcap \bigsqcup S \sqsubseteq x$. Also $t \ll \bigsqcup S$ because $x \sqcap \bigsqcup S \sqsubseteq \bigsqcup S$. Thus $t \ll y$ for some $y \in S$ since the set

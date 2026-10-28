@@ -30,8 +30,8 @@ sys.path.insert(0, str(SCRIPTS))
 from ai_model_cards import inject_model_cards
 from lean_listing_sanitize import chunk_line_ranges, sanitize_lean_for_arxiv
 
-SRC = ROOT / "arxiv_with_code.md"
-OUT = ROOT / "arxiv.tex"
+SRC = Path(os.environ.get("ARXIV_WITH_CODE", ROOT / "arxiv_with_code.md"))
+OUT = Path(os.environ.get("ARXIV_TEX", ROOT / "arxiv.tex"))
 PREAMBLE = SCRIPTS / "tex_preamble_arxiv.tex"
 LISTINGS_DIR = ROOT / "lean-listings"
 FIGURES_DIR = ROOT / "figures"
@@ -352,6 +352,7 @@ def extract_abstract(text: str) -> tuple[str, str]:
         r"\n(?=\*\*Dependency diagram\.\*\*|^```)",
         abstract_block,
         maxsplit=1,
+        flags=re.MULTILINE,
     )
     abstract_md = parts[0].strip()
     leftover = parts[1].strip() if len(parts) > 1 else ""
@@ -695,6 +696,8 @@ def _math_fonts_outside_math(latex: str) -> str:
 
 def cleanup_pandoc_latex(latex: str) -> str:
     latex = latex.replace("\\pandocbounded{", "{")
+    # Pandoc escapes `$...$` it does not parse as math; TeX should still see math.
+    latex = latex.replace("\\$", "$")
     latex = re.sub(r"\\tightlist\n", "", latex)
     # Pandoc's `\textquotesingle{}` inside `\texttt{...}` can recurse until
     # TeX's input stack overflows (e.g. Lean files named `insert_comm'.lean`).
@@ -769,6 +772,7 @@ def write_if_changed(path: Path, content: str) -> bool:
 def cleanup_abstract_latex(latex: str) -> str:
     """Keep the abstract LaTeX-safe: ASCII plus standard LaTeX escapes."""
     latex = latex.replace("\\pandocbounded{", "{")
+    latex = latex.replace("\\$", "$")
     latex = latex.replace("\\textbf{{[}", "\\textbf{[")
     latex = latex.replace("\\texttt{{[}", "\\texttt{[")
     latex = latex.replace("{]}}", "]}")
@@ -886,8 +890,12 @@ def main() -> int:
     n_listings = sum(1 for p in LISTINGS_DIR.iterdir() if p.is_file()) if LISTINGS_DIR.is_dir() else 0
     n_figures = sum(1 for p in FIGURES_DIR.glob("*.png"))
     note = "updated" if changed else "unchanged"
+    try:
+        out_label = OUT.relative_to(ROOT).as_posix()
+    except ValueError:
+        out_label = OUT.as_posix()
     print(
-        f"wrote {OUT.relative_to(ROOT)} ({OUT.stat().st_size:,} bytes, "
+        f"wrote {out_label} ({OUT.stat().st_size:,} bytes, "
         f"Palomar-archive appendix, {n_listings} listings, "
         f"{n_figures} mermaid figures, {note})"
     )

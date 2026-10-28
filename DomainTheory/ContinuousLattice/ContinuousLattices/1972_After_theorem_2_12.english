@@ -8,9 +8,9 @@ then $x \sqsubseteq z$ for some $z \in Z$.
 
 Finally we assume that for all $y \in D$:
 
-$$y = \bigsqcup  x \in D : x \ll y .$$
+$$y = \bigsqcup \{ x \in D : x \ll y \}.$$
 
-That makes $D$ a continuous lattice with the sets $ y \in D : x \ll y $ as a basis for the topology. Such $T_0$-spaces are injective and every injective space can be obtained in this way with the lattice structure being uniquely determined by the topology. Furthermore, as we have seen, the injective property can be exhibited, as in the proof of 2.11, by an explicit formula for extending functions.
+That makes $D$ a continuous lattice with the sets $\{ y \in D : x \ll y \}$ as a basis for the topology. Such $T_0$-spaces are injective and every injective space can be obtained in this way with the lattice structure being uniquely determined by the topology. Furthermore, as we have seen, the injective property can be exhibited, as in the proof of 2.11, by an explicit formula for extending functions.
 
 The retract approach to injective spaces should also be considered. The Cartesian powers $\mathbb{O}^I$ are very simple spaces; indeed, as lattices these are just the Boolean algebras of *all subsets* of $I$ (that is, isomorphic thereto). The topology has as a basis the
 

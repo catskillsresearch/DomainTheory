@@ -10,8 +10,8 @@ for example. Here $T = \bot, 0, 1, \top$ is the four-element lattice with $0$ an
 
 $$
 \begin{array}{ccc}
-D + D' & \longleftarrow & D' 
-\uparrow & & \uparrow 
+D + D' & \longleftarrow & D' \\
+\uparrow & & \uparrow \\
 D & \longleftarrow & 0
 \end{array}
 $$

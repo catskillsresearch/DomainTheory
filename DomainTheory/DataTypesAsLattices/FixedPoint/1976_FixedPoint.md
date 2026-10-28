@@ -7,6 +7,12 @@
 
 @import "FixedPoint.mermaid"
 
+**[DataTypesAsLattices/FixedPoint/iterateBot.lean](DomainTheory/DataTypesAsLattices/FixedPoint/iterateBot.lean)**
+
+@import "iterateBot.lean"
+**[DataTypesAsLattices/FixedPoint/fix.lean](DomainTheory/DataTypesAsLattices/FixedPoint/fix.lean)**
+
+@import "fix.lean"
 **[DataTypesAsLattices/FixedPoint/chain_mono.lean](DomainTheory/DataTypesAsLattices/FixedPoint/chain_mono.lean)**
 
 @import "chain_mono.lean"

@@ -3,7 +3,7 @@
 Let $D'$ be a continuous lattice and let $D \subseteq D'$ be a subspace which is a retract. We have for a suitable $j : D' \to D$,
 
 $$
-D =  x \in D' : j(x) = x ,
+D = \{ x \in D' : j(x) = x \} ,
 $$
 
 where of course $j$ is continuous.
@@ -30,7 +30,7 @@ and this is a limit of a monotone net. So by 2.1, and the continuity of $j$:
 
 $$
 \begin{aligned}
-j(\bigsqcup S') &= \bigsqcup  j(x) : x \in S  
+j(\bigsqcup S') &= \bigsqcup \{ j(x) : x \in S \}  
 &= \bigsqcup S
 \end{aligned}
 $$
@@ -43,7 +43,7 @@ still show that $D$ is continuous.
 
 Suppose $y \in D$. In $D'$ we can write:
 
-$$y = \bigsqcup  x \in D' : x \ll y '$$
+$$y = \bigsqcup \{ x \in D' : x \ll y ' \}$$
 
 and this is the limit of a monotone net. Thus
 
@@ -51,7 +51,7 @@ $$j(y) = y = \bigsqcup  j(x) : x \ll y, x \in D' ,$$
 
 where the lub is taken in $D$. Note that the sets
 
-$$U =  z \in D : x \ll z $$
+$$U = \{ z \in D : x \ll z \} $$
 
 are open in $D$ for each $x \in D'$. Note too that if $z \in U$, then $x \sqsubseteq z$ and so $j(x) \sqsubseteq j(z) = z$. This means that
 
@@ -59,7 +59,7 @@ $$j(x) \sqsubseteq \sqcap U$$
 
 in $D$. We can then write in $D$:
 
-$$y = \bigsqcup \sqcap U : y \in U $$
+$$y = \bigsqcup \{ \sqcap U : y \in U \} $$
 
 where $U$ ranges over the open subsets of $D$, and so the lattice is continuous by 2.4. Inasmuch as the open sets $U$ just used were open in the subspace topology, it follows by the remark after 2.4 that the subspace and the lattice-induced topologies coincide. $\square$
 

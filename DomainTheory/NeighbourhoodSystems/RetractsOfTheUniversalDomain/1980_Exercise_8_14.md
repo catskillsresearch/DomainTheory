@@ -13,6 +13,9 @@ Defines closure operators and shows `Fix(a)` is a finitary domain.
 **[ClosureOperatorDomain.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/ClosureOperatorDomain.lean)**
 
 @import "ClosureOperatorDomain.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_14.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_14.lean)**
+
+@import "Exercise_8_14.lean"
 The tip then assembles those tools into Scott’s statement.
 
  — `exercise_8_14`

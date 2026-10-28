@@ -14,3 +14,6 @@ or are some missing?
 **[Exercise_2_17.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_17.lean)**
 
 @import "Exercise_2_17.lean"
+**[NeighbourhoodSystems/MappingsBetweenDomains/Example_2_4.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Example_2_4.lean)**
+
+@import "Example_2_4.lean"

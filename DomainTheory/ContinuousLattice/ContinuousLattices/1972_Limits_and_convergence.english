@@ -23,7 +23,7 @@ From the formula of 2.4 it at once follows that $y \sqsubseteq \lim \langle x_i 
 Finally, suppose that the two notions coincide for a complete lattice $D$. Define a directed set $I = (U, z) : y, z \in U$, where $z$ ranges over $D$ and $U$ over open subsets of $D$. This set is directed by the relation: $(U, z) \le (V, w)$ iff $U \supseteq V$. Let $x : I \to D$ be given by: $x(U, z) = z$. Then $x$ is a net converging to $y$ topologically. But
 
 $$
-\lim \langle x_i : i \in I \rangle = \bigsqcup \sqcap U : y \in U.
+\lim \langle x_i : i \in I \rangle = \bigsqcup \{ \sqcap U : y \in U \}.
 $$
 
 In this way we see that the assumption about the two styles of convergence implies that $D$ is a continuous lattice in view of 2.4.
@@ -39,7 +39,7 @@ for all nets $x : I \to D$. This is all very fine, but general limits are messy 
 Before going any deeper, however, we should clear up another point about topologies. Suppose that $D$ is any $T_0$-space which becomes a complete lattice under its induced partial ordering. Then it is evident from our definitions that every set open in the given topology is also open in the topology induced from the lattice structure. Question: when do the two topologies agree? Answer: a sufficient condition is that the equation:
 
 $$
-y = \bigsqcup \sqcap U : y \in U
+y = \bigsqcup \{ \sqcap U : y \in U \}
 $$
 
 hold for all $y \in D$, where $U$ ranges over the given open sets. Because in that case if $V$ is open in the lattice sense and $y \in V$, then $\sqcap U \in V$ for some set $U$, open in the given sense, where $y \in U$. But $U \subseteq V$ follows, and so $V$ is a union of given open sets and is itself open in the given topology. Of course this equation implies that $D$ is a continuous lattice by virtue of 2.4. Notice that by the same token the sets of the form $y \in D : x \ll y$ will form a basis for the open sets of a continuous lattice.

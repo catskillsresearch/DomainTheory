@@ -2,6 +2,6 @@
 
 @import "1976_Theorem_1_4.english" {code_block=false}
 
-**[DataTypesAsLattices/FixedPoint/theorem_1_4.lean](DomainTheory/DataTypesAsLattices/FixedPoint/theorem_1_4.lean)**
+**[DataTypesAsLattices/FixedPoint/exists_index_of_finset.lean](DomainTheory/DataTypesAsLattices/FixedPoint/exists_index_of_finset.lean)**
 
-@import "theorem_1_4.lean"
+@import "exists_index_of_finset.lean"

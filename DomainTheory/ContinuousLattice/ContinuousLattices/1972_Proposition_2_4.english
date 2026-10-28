@@ -1,7 +1,7 @@
 **2.4 Proposition.** A complete lattice $D$ is continuous iff for every $y \in D$ we have:
 
 $$
-y = \bigsqcup \sqcap U : y \in U,
+y = \bigsqcup \{ \sqcap U : y \in U \},
 $$
 
 where $U$ ranges over the open subsets of $D$.

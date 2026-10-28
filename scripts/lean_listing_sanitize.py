@@ -1,14 +1,25 @@
 #!/usr/bin/env python3
-"""ASCII sanitization for Lean sources included via listings on arXiv (pdfLaTeX).
+"""Sanitize Lean sources for ``\\lstinputlisting`` in the arXiv pdfLaTeX build.
 
-The arXiv AutoTeX pipeline runs pdfLaTeX, which chokes on arbitrary UTF-8 inside
-`lstinputlisting` files. We therefore render the logical/mathematical operators to
-readable ASCII and drop anything still non-ASCII to `?` rather than break the build.
+Listings use the ``leanbox`` ``listings`` style in ``tex_preamble_arxiv.tex``: each
+Lean operator that appears in source should stay as UTF-8 and is rendered via a
+``literate`` mapping.  Characters *not* in that table are either rewritten to
+readable ASCII or replaced with ``?`` so pdfLaTeX never sees unsupported bytes.
+
+The allowlist is parsed from the preamble so it stays in sync with ``leanbox``.
 """
 
 from __future__ import annotations
 
+import re
 import unicodedata
+from functools import lru_cache
+from pathlib import Path
+
+_SCRIPTS = Path(__file__).resolve().parent
+_PREAMBLE = _SCRIPTS / "tex_preamble_arxiv.tex"
+
+_LEANBOX_LITERATE_RE = re.compile(r"\{([^}]+)\}\{\{")
 
 # Order matters: longer / composite replacements first where needed.
 LEAN_UNICODE_REPLACEMENTS: tuple[tuple[str, str], ...] = (
@@ -100,7 +111,7 @@ LEAN_UNICODE_REPLACEMENTS: tuple[tuple[str, str], ...] = (
     # double-struck / blackboard
     ("ℕ", "Nat"),
     ("ℤ", "Int"),
-    # sub/superscripts
+    # sub/superscripts (fallback when not using literate — normally skipped)
     ("₀", "_0"),
     ("₁", "_1"),
     ("₂", "_2"),
@@ -145,17 +156,53 @@ LEAN_UNICODE_REPLACEMENTS: tuple[tuple[str, str], ...] = (
     ("╲", "\\"),
     ("○", "o"),
     ("∿", "~"),
+    ("≃", " ~= "),
 )
 
 
-def sanitize_lean_for_arxiv(text: str) -> str:
-    out = text
+@lru_cache(maxsize=1)
+def leanbox_literate_chars(*, preamble_path: Path | None = None) -> frozenset[str]:
+    """Characters the ``leanbox`` listing style renders via ``literate``."""
+    path = preamble_path or _PREAMBLE
+    text = path.read_text(encoding="utf-8")
+    start = text.find("\\lstdefinestyle{leanbox}")
+    if start < 0:
+        raise RuntimeError(f"leanbox style not found in {path}")
+    end = text.find("\\lstset{style=leanbox}", start)
+    if end < 0:
+        raise RuntimeError(f"leanbox literate block not terminated in {path}")
+    block = text[start:end]
+    chars: set[str] = set()
+    for key in _LEANBOX_LITERATE_RE.findall(block):
+        for ch in key:
+            chars.add(ch)
+    return frozenset(chars)
+
+
+def _replacements_for_listings(allowed: frozenset[str]) -> tuple[tuple[str, str], ...]:
+    """Drop ASCII fallbacks for glyphs ``leanbox`` already typesets."""
+    out: list[tuple[str, str]] = []
     for src, dst in LEAN_UNICODE_REPLACEMENTS:
+        if len(src) == 1 and src in allowed:
+            continue
+        out.append((src, dst))
+    return tuple(out)
+
+
+def sanitize_lean_for_arxiv(
+    text: str,
+    *,
+    preamble_path: Path | None = None,
+) -> str:
+    allowed = leanbox_literate_chars(preamble_path=preamble_path)
+    replacements = _replacements_for_listings(allowed)
+
+    out = text
+    for src, dst in replacements:
         out = out.replace(src, dst)
     out = unicodedata.normalize("NFD", out)
     out = "".join(c for c in out if unicodedata.category(c) != "Mn")
-    # Drop any remaining non-ASCII (comments / docstrings) rather than break pdfLaTeX.
-    return "".join(ch if ord(ch) < 128 else "?" for ch in out)
+    return "".join(ch if ord(ch) < 128 or ch in allowed else "?" for ch in out)
 
 
 def chunk_line_ranges(line_count: int, chunk_size: int = 350) -> list[tuple[int, int]]:

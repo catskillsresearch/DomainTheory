@@ -17,7 +17,7 @@ $$
 and
 
 $$
-f(x, \bigsqcup S') = \bigsqcup f(x, y) : y \in S'
+f(x, \bigsqcup S') = \bigsqcup \{ f(x, y) : y \in S' \}
 $$
 
 where $S \subseteq D$ and $S' \subseteq D'$ are directed and $x \in D$ and $y \in D'$. Let now
@@ -35,13 +35,13 @@ $$
 Thus by assumption
 
 $$
-f(\bigsqcup S^*) = \bigsqcup f(x, y) : x \in S, y \in S'.
+f(\bigsqcup S^*) = \bigsqcup \{ f(x, y) : x \in S, y \in S' \}.
 $$
 
 But since $S^*$ is directed, $x \in S$ and $y \in S'$ implies $x \sqsubseteq u$ and $y \sqsubseteq v$ for $(u, v) \in S^*$. Thus by monotonicity of $f$ we can show
 
 $$
-f(\bigsqcup S^*) = \bigsqcup f(u, v) : (u, v) \in S^*
+f(\bigsqcup S^*) = \bigsqcup \{ f(u, v) : (u, v) \in S^* \}
 $$
 
 and that gives the joint continuity. $\square$

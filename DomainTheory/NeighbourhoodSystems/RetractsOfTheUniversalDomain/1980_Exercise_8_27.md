@@ -26,9 +26,21 @@ The tip asserts that for any polymorphic type `d`, $\Pi(d)$ is a finitary projec
 
 Defines polymorphic types and proves the `piD` side of finitariness.
 
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/subU.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/subU.lean)**
+
+@import "subU.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/piD.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/piD.lean)**
+
+@import "piD.lean"
 **[PolymorphicType.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/PolymorphicType.lean)**
 
 @import "PolymorphicType.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/piU.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/piU.lean)**
+
+@import "piU.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_27.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_27.lean)**
+
+@import "Exercise_8_27.lean"
 Carves `piU` and folds `XXX_piU` companions as `XXX.piU`.
 
  — `piU`, `toElementMap.piU`, `isProjection.piU`, `isFinitaryProjection.piU`, …

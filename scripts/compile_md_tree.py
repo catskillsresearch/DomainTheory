@@ -194,38 +194,87 @@ def repair_array_row_breaks(text: str) -> str:
     return "".join(out)
 
 
+_SET_COMP_TAIL = (
+    r"(?=[,;.]|$|\s+will|\s+is|\s+are|\s+form|\s+remain|\s+can|\s+where|\s+for|\s+and|\s+or|\s+as|\s+—|\s+–|\s+-|\s+\\quad|\s+\\text)"
+)
 _SET_COMP = re.compile(
     r"(?<![\\{])"
-    r"(?:\\sqcap\s+)?"
-    r"[A-Za-z0-9_'\\]+\s+\\in\s+[A-Za-z0-9_{}\\']+\s*:\s*"
-    r"[^,;\n$]+?"
-    r"(?=[,;.\\]|$|\s+will|\s+is|\s+are|\s+form|\s+remain|\s+can|\s+where|\s+for|\s+and|\s+or|\s+as|\s+—|\s+–|\s+-|\s+\\)",
+    r"(?:"
+    r"\\sqcap\s+[A-Za-z0-9_'\\]+\s*:\s*.+?"
+    r"|"
+    r"[A-Za-z0-9_'\\]+\s+\\in\s+[A-Za-z0-9_{}\\']+\s*:\s*.+?"
+    r")"
+    + _SET_COMP_TAIL,
+)
+# ``z : z_i \in U`` (no leading ``\in`` on the left of ``:``)
+_SET_COMP_COLON = re.compile(
+    r"(?<![\\{])"
+    r"(?<!\\in\s)"
+    r"[]A-Za-z0-9_'^{}\\]+\s*:\s*"
+    r".+?"
+    + _SET_COMP_TAIL,
+)
+
+_RELATION_IN_MATH = re.compile(
+    r"\\(?:in|ll|sqsubseteq|sqsupseteq|sqcap|sqcup|bigcap|bigcup|subseteq|supseteq|ge|le)\b"
 )
 
 
-def _wrap_set_comprehensions_in_math(body: str) -> str:
-    if "\\{" in body and not _SET_COMP.search(body):
+def _wrap_comprehension_fragment(fragment: str) -> str:
+    inner = fragment.strip()
+    if inner.startswith("\\{") or inner.startswith("{"):
+        return fragment
+    return r"\{ " + inner + r" \}"
+
+
+def _is_pure_set_comprehension(s: str) -> bool:
+    s = s.strip()
+    if ":" not in s or not _RELATION_IN_MATH.search(s):
+        return False
+    if any(tok in s for tok in ("=", r"\bigsqcup", r"\bigcap", r"\sqcup", r"\lim")):
+        return False
+    return True
+
+
+def _repair_math_body(body: str) -> str:
+    """Make Scott-style set comprehensions valid for Pandoc/LaTeX math."""
+    if re.search(r"\\{", body):
         return body
 
-    def repl(m: re.Match[str]) -> str:
-        inner = m.group(0).strip()
-        if inner.startswith("{") or inner.startswith("\\{"):
-            return m.group(0)
-        return "{ " + inner + " }"
+    stripped = body.strip()
+    if _is_pure_set_comprehension(stripped):
+        wrapped = _wrap_comprehension_fragment(stripped)
+        pad_left = body[: len(body) - len(body.lstrip())]
+        pad_right = body[len(body.rstrip()) :]
+        return pad_left + wrapped + pad_right
 
-    return _SET_COMP.sub(repl, body)
+    def repl(m: re.Match[str]) -> str:
+        frag = m.group(0)
+        if r"\in" not in frag and r"\ll" not in frag and r"\sqsubseteq" not in frag:
+            return frag
+        return _wrap_comprehension_fragment(frag)
+
+    out = _SET_COMP.sub(repl, body)
+    if out != body:
+        return out
+    return _SET_COMP_COLON.sub(repl, body)
 
 
 def repair_bare_set_comprehensions(text: str) -> str:
     """Scott prose often writes ``$y \\in D : P$`` without set braces."""
 
     def fix_inline(m: re.Match[str]) -> str:
-        return "$" + _wrap_set_comprehensions_in_math(m.group(1)) + "$"
+        inner = _repair_math_body(m.group(1)).strip()
+        return "$" + inner + "$"
 
     text = re.sub(r"(?<!\$)\$(?!\$)([^\n$]+?)(?<!\$)\$(?!\$)", fix_inline, text)
 
     def fix_display(m: re.Match[str]) -> str:
-        return "$$" + _wrap_set_comprehensions_in_math(m.group(1)) + "$$"
+        body = m.group(1)
+        if re.search(r"\\begin\{", body):
+            return m.group(0)
+        inner = _repair_math_body(body).strip()
+        return "$$" + inner + "$$"
 
     text = re.sub(r"\$\$([^\$]+?)\$\$", fix_display, text, flags=re.DOTALL)
     return text
@@ -504,6 +553,64 @@ def strip_toc_bullets(text: str) -> str:
     return TOC_BULLET_RE.sub("", text)
 
 
+_FENCE_LINE_RE = re.compile(r"^\s*(`{3,})")
+_LEAN_HREF_RE = re.compile(r"\[[^\]]*\]\(([^)]+\.lean)\)")
+
+
+def lean_targets_in_note_text(md_path: Path, text: str) -> set[Path]:
+    """``.lean`` paths cited via ``@import`` or markdown links (outside fenced blocks)."""
+    found: set[Path] = set()
+    for m in IMPORT_RE.finditer(text):
+        rel = m.group(1)
+        if not rel.lower().endswith(".lean"):
+            continue
+        target = resolve_lean_target(md_path, rel)
+        if target.is_file():
+            found.add(target.resolve())
+    in_fence = False
+    fence_mark = ""
+    for line in text.splitlines():
+        fm = _FENCE_LINE_RE.match(line)
+        if fm:
+            mark = fm.group(1)
+            if not in_fence:
+                in_fence = True
+                fence_mark = mark
+            elif line.lstrip().startswith(fence_mark):
+                in_fence = False
+            continue
+        if in_fence:
+            continue
+        for m in _LEAN_HREF_RE.finditer(line):
+            target = resolve_lean_target(md_path, m.group(1))
+            if target.is_file():
+                found.add(target.resolve())
+    return found
+
+
+def collect_md_hierarchy_lean(
+    root_md: Path = DEFAULT_ROOT_MD,
+) -> tuple[set[Path], set[Path]]:
+    """Walk the TOC tree from ``root_md``; return ``(notes, lean modules linked)``."""
+    visited_notes: set[Path] = set()
+    lean_paths: set[Path] = set()
+
+    def walk(md_path: Path) -> None:
+        resolved = md_path.resolve()
+        if resolved in visited_notes:
+            return
+        visited_notes.add(resolved)
+        raw = resolved.read_text(encoding="utf-8")
+        lean_paths.update(lean_targets_in_note_text(resolved, raw))
+        for _rel_indent, _title, child in child_md_targets(resolved, raw):
+            walk(child)
+
+    if not root_md.is_file():
+        raise FileNotFoundError(f"missing root markdown: {root_md}")
+    walk(root_md)
+    return visited_notes, lean_paths
+
+
 def flatten_file(
     md_path: Path,
     *,
@@ -719,6 +826,12 @@ def main(argv: list[str] | None = None) -> int:
         help="root markdown file (default: DomainTheory.md)",
     )
     parser.add_argument(
+        "--out",
+        type=Path,
+        default=ARXIV_MD,
+        help="flattened markdown output (default: arxiv.md at repo root)",
+    )
+    parser.add_argument(
         "--lean",
         choices=("link", "inline", "omit"),
         default="link",
@@ -746,6 +859,21 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     root = args.root if args.root.is_absolute() else ROOT / args.root
+    out = args.out if args.out.is_absolute() else ROOT / args.out
+    if args.md_only:
+        refresh_note_lean_imports()
+        flatten_md_tree(
+            root,
+            lean_mode=args.lean,
+            include_ai_prose=args.ai_prose,
+            out_path=out,
+        )
+        try:
+            out_label = out.relative_to(ROOT).as_posix()
+        except ValueError:
+            out_label = out.as_posix()
+        print(f"wrote {out_label} ({out.stat().st_size:,} bytes)")
+        return 0
     compile_tree_to_pdf(
         root,
         lean_mode=args.lean,

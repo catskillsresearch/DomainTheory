@@ -5,7 +5,7 @@
 100
 
 $$
-D' = x \in D : j(x) = x.
+D' = \{ x \in D : j(x) = x \}.
 $$
 
 Then if $f: X \to D'$ and $X \subseteq Y$, we have $f: X \to D$ as a continuous map also. Taking $\bar{f}: Y \to D$, we have only to form

@@ -21,6 +21,9 @@ Builds the Dedekind-cut system `R` and proves the projection `a` is not finitary
 **[DedekindCutProjection.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/DedekindCutProjection.lean)**
 
 @import "DedekindCutProjection.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_11.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_11.lean)**
+
+@import "Exercise_8_11.lean"
 The tip then assembles those tools into Scott’s statement.
 
  — `exercise_8_11`

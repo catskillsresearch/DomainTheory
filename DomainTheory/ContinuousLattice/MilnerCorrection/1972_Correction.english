@@ -1,6 +1,6 @@
 *Correction* (Added March, 1972). Robin Milner has pointed out to me that there is an error in the remark in the paragraph immediately preceding Proposition 2.5. I was mistaken in saying that if $D$ is a $T_0$-space which becomes a complete lattice under its induced partial ordering, then every set open in the given topology is also open in the induced topology. There are many counterexamples to this statement. Let $D$ be any complete lattice. There are two extreme $T_0$-topologies which will induce the given partial ordering. The smallest such topology has as a sub-base for its open sets those sets of the form:
 
-$$x \in D : x \not\sqsubseteq y.$$
+$$\{ x \in D : x \not\sqsubseteq y \}.$$
 
 These sets are easily proved to be open in any $T_0$-topology which induces the partial ordering. At the other extreme consider sets of the form:
 
@@ -12,7 +12,7 @@ Such sets will give a base for a $T_0$-topology that is the maximal topology ind
 
 The remark was employed in the proof of three different propositions: 2.9, 2.10, and 3.3. In the case of 2.9 one must verify that the product topology is contained within the lattice topology. This need only be done for the basis for the product topology, and for such basic open sets the result needed is obvious. In the case of proposition 2.10 the question concerns a relationship between the topologies of a space and a subspace; the spaces in question are also lattices. Note in passing that a lub in the subspace is generally *larger* in the partial ordering than the corresponding lub relative to the whole space. This puts the inequalities in the wrong direction, and so it is not immediate that a relativized open set for the subspace is open in the lattice topology of the subspace. However, in this case we can appeal to the continuous retraction. Recall that the relativized open sets of the kind that we used in the proof of 2.10 are of the form:
 
-$$U =  z \in D : x < z  \ .$$
+$$U = \{ z \in D : x < z \}  \ .$$
 
 Suppose then that $S$ is a directed set, and that using the lub in the sense of $D$ we have
 

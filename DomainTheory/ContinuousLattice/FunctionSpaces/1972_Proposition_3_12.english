@@ -12,13 +12,13 @@ because $j(x) \sqcup k(x) \sqsubseteq x$. Similarly for $k(x)$. Therefore, we fi
 
 Suppose finally that $S \subseteq J_D$ is directed. We wish to show that $\bigsqcup S \in J_D$. Clearly $\bigsqcup S \sqsubseteq \mathrm{id}$, so compute by continuity of $\circ$:
 
-$$\bigsqcup S \circ \bigsqcup S = \bigsqcup j \circ j : j \in S = \bigsqcup j : j \in S = \bigsqcup S.$$
+$$\bigsqcup S \circ \bigsqcup S = \bigsqcup \{ j \circ j : j \in S \} = \bigsqcup \{ j : j \in S \} = \bigsqcup S.$$
 
 It follows that $J_D$ is $\bigsqcup$-closed and hence is a complete lattice. $\square$
 
 The significance of the above result becomes clearer if we consider the connection between projections and subspaces. Let us write:
 
-$$D(j) = x \in D : j(x) = x.$$
+$$D(j) = \{ x \in D : j(x) = x \}.$$
 
 For $j \in J_D$, each $D(j)$ is a projection of $D$ onto a subspace. We show first that
 

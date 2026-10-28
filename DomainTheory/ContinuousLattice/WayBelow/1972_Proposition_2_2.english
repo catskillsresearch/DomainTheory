@@ -10,7 +10,7 @@
 
 (v) $x \ll y$ implies $x \sqsubseteq y$;
 
-(vi) $x \ll x$ iff $z \in D : x \sqsubseteq z$ is open;
+(vi) $x \ll x$ iff $\{ z \in D : x \sqsubseteq z \}$ is open;
 
 (vii) if $S \subseteq D$ is directed, then $x \ll \bigsqcup S$ iff $x \ll y$ for some $y \in S$. $\square$
 

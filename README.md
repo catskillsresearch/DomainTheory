@@ -61,6 +61,8 @@ setup files).
 ```bash
 lake exe cache get
 python3 scripts/check_domaintheory_barrel.py   # every DomainTheory/**/*.lean in DomainTheory.lean
+python3 scripts/check_md_hierarchy_lean.py   # every DomainTheory/**/*.lean linked from DomainTheory.md
+python3 scripts/sync_missing_lean_hierarchy.py  # attach unlinked Lean via import graph + note blocks
 lake build   # elaborates DomainTheory.lean (the sole barrel) and thus every submodule
 ```
 

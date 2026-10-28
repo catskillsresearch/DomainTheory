@@ -6,9 +6,6 @@
 
 @import "1982_Information_systems.english" {code_block=false}
 
-**[InformationSystems/InformationSystems/Constructive/coe_funion.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/coe_funion.lean)**
-
-@import "coe_funion.lean"
 **[InformationSystems/InformationSystems/Constructive/insert_comm'.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/insert_comm'.lean)**
 
 @import "insert_comm'.lean"
@@ -33,15 +30,24 @@
 **[InformationSystems/InformationSystems/Constructive/decidableEq_finset.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/decidableEq_finset.lean)**
 
 @import "decidableEq_finset.lean"
-**[InformationSystems/InformationSystems/Constructive/subset_funion_left.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/subset_funion_left.lean)**
-
-@import "subset_funion_left.lean"
 **[InformationSystems/InformationSystems/Constructive/subset_funion_right.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/subset_funion_right.lean)**
 
 @import "subset_funion_right.lean"
+**[InformationSystems/InformationSystems/Constructive/subset_funion_left.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/subset_funion_left.lean)**
+
+@import "subset_funion_left.lean"
 **[InformationSystems/InformationSystems/Constructive/funion_subset_iff.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/funion_subset_iff.lean)**
 
 @import "funion_subset_iff.lean"
+**[InformationSystems/InformationSystems/Constructive/coe_funion.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/coe_funion.lean)**
+
+@import "coe_funion.lean"
 **[InformationSystems/InformationSystems/Constructive.lean](DomainTheory/InformationSystems/InformationSystems/Constructive.lean)**
 
 @import "../Constructive.lean"
+**[InformationSystems/InformationSystems/Factoid26/consistent_empty.lean](DomainTheory/InformationSystems/InformationSystems/Factoid26/consistent_empty.lean)**
+
+@import "../Factoid26/consistent_empty.lean"
+**[InformationSystems/InformationSystems/Factoid26.lean](DomainTheory/InformationSystems/InformationSystems/Factoid26.lean)**
+
+@import "../Factoid26.lean"

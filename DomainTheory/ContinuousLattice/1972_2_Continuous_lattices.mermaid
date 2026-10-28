@@ -1,9 +1,12 @@
-%% Lean files imported under this note.
+%% Outline notes in this section; INJ/CL/FS/LIM are other 1972 chapter sections.
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
 
   Definition_2_3["Definition 2.3"]
+  FS["Function spaces"]
+  INJ["Injective spaces"]
+  LIM["Inverse limits"]
   Proof_of_2_10["Proof of 2.10"]
   Proof_of_2_9["Proof of 2.9"]
   Proposition_2_10["Proposition 2.10"]
@@ -13,10 +16,15 @@ flowchart TB
   Way_below_relation["Way-below relation"]
 
   Way_below_relation -->|"2"| Definition_2_3
+  FS -->|"10"| Proof_of_2_10
   Scott_maps -->|"4"| Proof_of_2_10
   Theorem_2_12 -->|"2"| Proof_of_2_9
+  FS -->|"1"| Proposition_2_10
+  INJ -->|"1"| Proposition_2_10
   Proof_of_2_10 -->|"5"| Proposition_2_10
   Way_below_relation -->|"1"| Specialization_SpecializationLe
+  FS -->|"1"| Theorem_2_12
+  INJ -->|"5"| Theorem_2_12
   Proof_of_2_9 -->|"2"| Theorem_2_12
   Definition_2_3 -->|"3"| Way_below_relation
   Specialization_SpecializationLe -->|"1"| Way_below_relation

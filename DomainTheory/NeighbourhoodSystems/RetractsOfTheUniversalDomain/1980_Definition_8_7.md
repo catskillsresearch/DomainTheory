@@ -31,6 +31,21 @@ Note that any union can be taken as a *disjoint* union of the form
 $$\bigcup_{i \le n} [r_{2i}, r_{2i+1})$$
 where $0 \le r_0 < r_1 < r_2 < \cdots < r_{2n} < r_{2n+1} \le 1$. (Hint: Any overlapping intervals or abutting intervals can always be combined into one long interval.) It is a most elementary exercise to show that, by virtue of this representation, the system $\mathcal{U}$ has a computable presentation. (Some isomorphic versions of $\mathcal{U}$ — equally effective — are recorded in the exercises.) Note that $\mathcal{U}$ has no minimal neighbourhoods: every set in $\mathcal{U}$ can be written as the union of two disjoint sets in $\mathcal{U}$. (Hint: Use the density of the ordering of $\mathbb{Q}$.) The significance of $\mathcal{U}$ can now be explained.
 
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/presentedIntervals.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/presentedIntervals.lean)**
+
+@import "presentedIntervals.lean"
 **[U.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/U.lean)**
 
 @import "U.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/SplitSpec.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/SplitSpec.lean)**
+
+@import "SplitSpec.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/atomU.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/atomU.lean)**
+
+@import "atomU.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Yseq.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Yseq.lean)**
+
+@import "Yseq.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem_8_6.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem_8_6.lean)**
+
+@import "Theorem_8_6.lean"

@@ -2,6 +2,9 @@
 
 @import "1976_Theorem_1_1.english" {code_block=false}
 
-**[DataTypesAsLattices/Continuous/theorem_1_1.lean](DomainTheory/DataTypesAsLattices/Continuous/theorem_1_1.lean)**
+**[DataTypesAsLattices/Continuous/scottPiece.lean](DomainTheory/DataTypesAsLattices/Continuous/scottPiece.lean)**
 
-@import "theorem_1_1.lean"
+@import "scottPiece.lean"
+**[DataTypesAsLattices/Continuous/scottUnion.lean](DomainTheory/DataTypesAsLattices/Continuous/scottUnion.lean)**
+
+@import "scottUnion.lean"

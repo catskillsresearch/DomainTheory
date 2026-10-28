@@ -8,78 +8,48 @@
 
 @import "1976_Retracts_and_data_types.english" {code_block=false}
 
-**[DataTypesAsLattices/FixedLattices/DirectedSet.lean](DomainTheory/DataTypesAsLattices/FixedLattices/DirectedSet.lean)**
-
-@import "../FixedLattices/DirectedSet.lean"
-**[DataTypesAsLattices/Retracts/Icomb.lean](DomainTheory/DataTypesAsLattices/Retracts/Icomb.lean)**
-
-@import "Icomb.lean"
-**[DataTypesAsLattices/Retracts/DirectedSubset.lean](DomainTheory/DataTypesAsLattices/Retracts/DirectedSubset.lean)**
-
-@import "DirectedSubset.lean"
-**[DataTypesAsLattices/Retracts/boolR.lean](DomainTheory/DataTypesAsLattices/Retracts/boolR.lean)**
-
-@import "boolR.lean"
-**[DataTypesAsLattices/Retracts/comp.lean](DomainTheory/DataTypesAsLattices/Retracts/comp.lean)**
-
-@import "comp.lean"
-**[DataTypesAsLattices/Retracts/arrowR.lean](DomainTheory/DataTypesAsLattices/Retracts/arrowR.lean)**
-
-@import "arrowR.lean"
-**[DataTypesAsLattices/Retracts/arrowR_more.lean](DomainTheory/DataTypesAsLattices/Retracts/arrowR_more.lean)**
-
-@import "arrowR_more.lean"
-**[DataTypesAsLattices/Retracts/dcondSet_bool_idem.lean](DomainTheory/DataTypesAsLattices/Retracts/dcondSet_bool_idem.lean)**
-
-@import "dcondSet_bool_idem.lean"
-**[DataTypesAsLattices/Retracts/gfpBelow.lean](DomainTheory/DataTypesAsLattices/Retracts/gfpBelow.lean)**
-
-@import "gfpBelow.lean"
 **[DataTypesAsLattices/Retracts/graph_ext.lean](DomainTheory/DataTypesAsLattices/Retracts/graph_ext.lean)**
 
 @import "graph_ext.lean"
-**[DataTypesAsLattices/Retracts/eq_4_11.lean](DomainTheory/DataTypesAsLattices/Retracts/eq_4_11.lean)**
+**[DataTypesAsLattices/FixedLattices/DirectedSet.lean](DomainTheory/DataTypesAsLattices/FixedLattices/DirectedSet.lean)**
 
-@import "eq_4_11.lean"
-**[DataTypesAsLattices/Retracts/funRetract.lean](DomainTheory/DataTypesAsLattices/Retracts/funRetract.lean)**
-
-@import "funRetract.lean"
-**[DataTypesAsLattices/Retracts/intF.lean](DomainTheory/DataTypesAsLattices/Retracts/intF.lean)**
-
-@import "intF.lean"
-**[DataTypesAsLattices/Retracts/intR.lean](DomainTheory/DataTypesAsLattices/Retracts/intR.lean)**
-
-@import "intR.lean"
-**[DataTypesAsLattices/Retracts/iterateFrom.lean](DomainTheory/DataTypesAsLattices/Retracts/iterateFrom.lean)**
-
-@import "iterateFrom.lean"
-**[DataTypesAsLattices/Retracts/lfpAbove.lean](DomainTheory/DataTypesAsLattices/Retracts/lfpAbove.lean)**
-
-@import "lfpAbove.lean"
-**[DataTypesAsLattices/Retracts/pairSeq.lean](DomainTheory/DataTypesAsLattices/Retracts/pairSeq.lean)**
-
-@import "pairSeq.lean"
+@import "../FixedLattices/DirectedSet.lean"
 **[DataTypesAsLattices/Retracts/predSet_ofNat_zero.lean](DomainTheory/DataTypesAsLattices/Retracts/predSet_ofNat_zero.lean)**
 
 @import "predSet_ofNat_zero.lean"
-**[DataTypesAsLattices/Retracts/retractBasis.lean](DomainTheory/DataTypesAsLattices/Retracts/retractBasis.lean)**
+**[DataTypesAsLattices/FixedLattices/completeLatticeLE.lean](DomainTheory/DataTypesAsLattices/FixedLattices/completeLatticeLE.lean)**
 
-@import "retractBasis.lean"
-**[DataTypesAsLattices/Retracts/retractLe.lean](DomainTheory/DataTypesAsLattices/Retracts/retractLe.lean)**
+@import "../FixedLattices/completeLatticeLE.lean"
+**[DataTypesAsLattices/FixedLattices/completeLatticePreorder.lean](DomainTheory/DataTypesAsLattices/FixedLattices/completeLatticePreorder.lean)**
 
-@import "retractLe.lean"
-**[DataTypesAsLattices/Retracts/retract_interpolation.lean](DomainTheory/DataTypesAsLattices/Retracts/retract_interpolation.lean)**
+@import "../FixedLattices/completeLatticePreorder.lean"
+**[DataTypesAsLattices/FixedLattices/completeLatticeSupSet.lean](DomainTheory/DataTypesAsLattices/FixedLattices/completeLatticeSupSet.lean)**
 
-@import "retract_interpolation.lean"
-**[DataTypesAsLattices/Retracts/sUnion_Fixpoints_le_image.lean](DomainTheory/DataTypesAsLattices/Retracts/sUnion_Fixpoints_le_image.lean)**
+@import "../FixedLattices/completeLatticeSupSet.lean"
+**[DataTypesAsLattices/FixedLattices/WayBelow.lean](DomainTheory/DataTypesAsLattices/FixedLattices/WayBelow.lean)**
 
-@import "sUnion_Fixpoints_le_image.lean"
-**[DataTypesAsLattices/Retracts/sndC.lean](DomainTheory/DataTypesAsLattices/Retracts/sndC.lean)**
+@import "../FixedLattices/WayBelow.lean"
+**[DataTypesAsLattices/Retracts/Fixpoints.lean](DomainTheory/DataTypesAsLattices/Retracts/Fixpoints.lean)**
 
-@import "sndC.lean"
-**[DataTypesAsLattices/Retracts/typed_more.lean](DomainTheory/DataTypesAsLattices/Retracts/typed_more.lean)**
+@import "Fixpoints.lean"
+**[DataTypesAsLattices/Retracts/graph_const_bot.lean](DomainTheory/DataTypesAsLattices/Retracts/graph_const_bot.lean)**
 
-@import "typed_more.lean"
-**[DataTypesAsLattices/Retracts/typed.lean](DomainTheory/DataTypesAsLattices/Retracts/typed.lean)**
+@import "graph_const_bot.lean"
+**[DataTypesAsLattices/Retracts/predSet_eq_ofNat_of_no_zero.lean](DomainTheory/DataTypesAsLattices/Retracts/predSet_eq_ofNat_of_no_zero.lean)**
 
-@import "typed.lean"
+@import "predSet_eq_ofNat_of_no_zero.lean"
+**[DataTypesAsLattices/Retracts/vals.lean](DomainTheory/DataTypesAsLattices/Retracts/vals.lean)**
+
+@import "vals.lean"
+**[DataTypesAsLattices/Retracts/DirectedSubset.lean](DomainTheory/DataTypesAsLattices/Retracts/DirectedSubset.lean)**
+
+@import "DirectedSubset.lean"
+**[DataTypesAsLattices/Retracts/directed_finite_cover.lean](DomainTheory/DataTypesAsLattices/Retracts/directed_finite_cover.lean)**
+
+@import "directed_finite_cover.lean"
+**[DataTypesAsLattices/Retracts/IsCompactSubset.lean](DomainTheory/DataTypesAsLattices/Retracts/IsCompactSubset.lean)**
+
+@import "IsCompactSubset.lean"
+**[DataTypesAsLattices/Retracts/openR.lean](DomainTheory/DataTypesAsLattices/Retracts/openR.lean)**
+
+@import "openR.lean"

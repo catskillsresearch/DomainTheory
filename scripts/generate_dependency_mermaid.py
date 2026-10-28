@@ -26,6 +26,17 @@ CL1972_SECTION_MERMAIDS = frozenset(
         "1972_4_Inverse_limits.mermaid",
     }
 )
+CL1972_MERMAID_SECTION: dict[str, str] = {
+    "1972_2_Continuous_lattices.mermaid": "CL",
+    "1972_Function_spaces.mermaid": "FS",
+    "1972_4_Inverse_limits.mermaid": "LIM",
+}
+CL1972_SECTION_LABELS: dict[str, str] = {
+    "INJ": "Injective spaces",
+    "CL": "Continuous lattices",
+    "FS": "Function spaces",
+    "LIM": "Inverse limits",
+}
 MERMAID_IMPORT = re.compile(r'@import\s+"([^"]+\.mermaid)"')
 LEAN_IMPORT = re.compile(r'@import\s+"([^"]+\.lean)"')
 NODE_DEF = re.compile(r'^\s*(\w+)\["([^"]*)"\]\s*$')
@@ -469,8 +480,18 @@ def gen_note_outline(
     labeled: bool = True,
     box_modules_fn=None,
     extra_title_ids: dict[str, str] | None = None,
+    external_sections: dict[str, tuple[str, set[str]]] | None = None,
+    header_lines: list[str] | None = None,
 ) -> str:
     header, old_labels, style = parse_preserve_tail(old)
+    if header_lines is not None:
+        header = header_lines
+    elif external_sections:
+        header = [
+            "%% Outline notes in this section; INJ/CL/FS/LIM are other 1972 chapter sections.",
+            "%% Arrowhead on the importer. The number is a direct-import count.",
+            "%% An arrow already implied by a longer path is omitted.",
+        ]
     index_md = find_index_md(mermaid)
     if index_md is None:
         raise ValueError(f"no index md for {mermaid}")
@@ -551,6 +572,11 @@ def gen_note_outline(
         for mod in mods:
             mod_to_nid[mod] = nid
 
+    if external_sections:
+        for sec_id, (sec_title, _sec_mods) in external_sections.items():
+            used.add(sec_id)
+            node_labels[sec_id] = old_labels.get(sec_id, sec_title)
+
     edges: dict[tuple[str, str], int] = defaultdict(int)
     for _title, dst_mods in boxes:
         dst_nid = title_to_nid[_title]
@@ -561,6 +587,13 @@ def gen_note_outline(
                     if ip and is_aggregator(ip):
                         continue
                 src_nid = mod_to_nid.get(imp)
+                if src_nid is None and external_sections:
+                    for sec_id in CL1972_SECTION_LABELS:
+                        if sec_id not in external_sections:
+                            continue
+                        if imp in external_sections[sec_id][1]:
+                            src_nid = sec_id
+                            break
                 if src_nid is None:
                     continue
                 if src_nid == dst_nid:
@@ -568,9 +601,21 @@ def gen_note_outline(
                 edges[(src_nid, dst_nid)] += 1
 
     if reduce:
-        pairs = {e for e, c in edges.items() if c > 0}
-        kept = transitive_reduce(pairs)
-        edges = {(a, b): edges[(a, b)] for a, b in kept}
+        external_ids = set(external_sections or {})
+        internal_ids = {nid for nid in node_labels if nid not in external_ids}
+        internal_pairs = {
+            (a, b) for (a, b), c in edges.items() if c > 0 and a in internal_ids and b in internal_ids
+        }
+        kept = transitive_reduce(internal_pairs)
+        reduced: dict[tuple[str, str], int] = {
+            (a, b): edges[(a, b)] for a, b in kept
+        }
+        for (a, b), c in edges.items():
+            if c <= 0:
+                continue
+            if a in external_ids or b in external_ids:
+                reduced[(a, b)] = c
+        edges = reduced
 
     return emit_flowchart(header, node_labels, edges, style, labeled=labeled)
 
@@ -693,6 +738,31 @@ def cl1972_outline_box_modules(child: Path, title: str) -> set[str]:
     return lean_modules_from_note(child)
 
 
+def cl1972_chapter_section_modules() -> dict[str, set[str]]:
+    """Lean modules owned by each numbered section of the 1972 chapter (by outline tree)."""
+    index_paths = {
+        "INJ": DT / "ContinuousLattice" / "Injective" / "1972_Injective_spaces.md",
+        "CL": DT / "ContinuousLattice" / "1972_2_Continuous_lattices.md",
+        "FS": DT / "ContinuousLattice" / "1972_3_Function_spaces.md",
+        "LIM": DT / "ContinuousLattice" / "1972_4_Inverse_limits.md",
+    }
+    out: dict[str, set[str]] = {}
+    for sec_id, md in index_paths.items():
+        if md.is_file():
+            out[sec_id] = modules_from_section_outline(md)
+    return out
+
+
+def cl1972_external_sections(for_section: str) -> dict[str, tuple[str, set[str]]]:
+    """Other chapter sections as importer sources (title, module set)."""
+    all_mods = cl1972_chapter_section_modules()
+    return {
+        sec_id: (CL1972_SECTION_LABELS[sec_id], all_mods[sec_id])
+        for sec_id in all_mods
+        if sec_id != for_section
+    }
+
+
 def classify(mermaid: Path, text: str) -> str:
     if mermaid.name in CL1972_SECTION_MERMAIDS:
         return "cl1972_section"
@@ -747,14 +817,29 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
     if kind == "top_chapters":
         return gen_top_chapters(mermaid, modules, old)
     if kind == "cl1972_section":
-        return gen_note_outline(
+        sec_id = CL1972_MERMAID_SECTION[mermaid.name]
+        style = list(parse_preserve_tail(old)[2])
+        if not any("classDef section" in s for s in style):
+            style.extend(
+                [
+                    "  classDef section fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a",
+                ]
+            )
+        external = cl1972_external_sections(sec_id)
+        text = gen_note_outline(
             mermaid,
             modules,
             old,
             reduce=True,
             labeled=True,
             box_modules_fn=cl1972_outline_box_modules,
+            external_sections=external,
         )
+        # Style sibling section boxes like the chapter diagram.
+        ext_ids = ",".join(sorted(external))
+        if ext_ids and "classDef section" in text:
+            text = text.rstrip() + f"\n  class {ext_ids},section\n"
+        return text
     if kind == "cl1972_chapter":
         cl_ids = {
             "Injective spaces": "INJ",
@@ -767,10 +852,14 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             mermaid,
             modules,
             old,
-            reduce=True,
+            reduce=False,
             labeled=True,
             box_modules_fn=cl1972_outline_box_modules,
             extra_title_ids=cl_ids,
+            header_lines=[
+                "%% Each box is one section from 1972_ContinuousLattices.md (Introduction omitted).",
+                "%% Arrowhead on the importer. The number is a direct-import count between sections.",
+            ],
         )
     if kind == "ns_sections":
         ns_ids = {

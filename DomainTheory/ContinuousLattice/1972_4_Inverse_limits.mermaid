@@ -1,13 +1,15 @@
-%% Notes of section 4, inverse limits, in barrel order.
-%% Each box is one outline note from 1972_4_Inverse_limits.md.
+%% Outline notes in this section; INJ/CL/FS/LIM are other 1972 chapter sections.
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
 
+  CL["Continuous lattices"]
   Coordinates_of_an_embedd["Coordinates of an embedding"]
   Corollary_4_3["Corollary 4.3"]
   Embeddings_along_the_tow["Embeddings along the tower"]
   Embeddings_into_the_limi["Embeddings into the limit"]
+  FS["Function spaces"]
+  INJ["Injective spaces"]
   inverseLimitLE["inverseLimitLE"]
   projection["projection"]
   projLE["projLE"]
@@ -17,12 +19,32 @@ flowchart TB
   The_limit_lattice["The limit lattice"]
   The_mediating_map["The mediating map"]
 
+  CL -->|"2"| Coordinates_of_an_embedd
   Embeddings_along_the_tow -->|"1"| Coordinates_of_an_embedd
   projLE -->|"1"| Coordinates_of_an_embedd
+  CL -->|"1"| Corollary_4_3
+  FS -->|"1"| Corollary_4_3
+  CL -->|"1"| Embeddings_along_the_tow
+  FS -->|"4"| Embeddings_along_the_tow
   The_inverse_system -->|"1"| Embeddings_along_the_tow
+  CL -->|"2"| Embeddings_into_the_limi
   The_limit_lattice -->|"3"| Embeddings_into_the_limi
+  CL -->|"3"| Proposition_4_1
+  CL -->|"5"| The_function_space_tower
+  FS -->|"40"| The_function_space_tower
   Proposition_4_1 -->|"3"| The_function_space_tower
+  FS -->|"1"| The_inverse_system
+  FS -->|"2"| The_limit_lattice
   inverseLimitLE -->|"2"| The_limit_lattice
+  CL -->|"1"| The_mediating_map
+  FS -->|"2"| The_mediating_map
+  CL -->|"10"| inverseLimitLE
+  FS -->|"2"| inverseLimitLE
+  INJ -->|"1"| inverseLimitLE
   The_mediating_map -->|"1"| inverseLimitLE
+  CL -->|"1"| projLE
+  FS -->|"4"| projLE
   The_inverse_system -->|"1"| projLE
+  CL -->|"2"| projection
+  FS -->|"2"| projection
   The_limit_lattice -->|"2"| projection

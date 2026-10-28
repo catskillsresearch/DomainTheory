@@ -1,13 +1,13 @@
 **2.5 Proposition.** *If $D$ and $D'$ are complete lattices with their induced topologies, then a function $f : D \to D'$ is continuous iff for all directed subsets $S \subseteq D$:*
 
 $$
-f(\bigsqcup S) = \bigsqcup f(x) : x \in S.
+f(\bigsqcup S) = \bigsqcup \{ f(x) : x \in S \}.
 $$
 
 **Proof:** If $f : D \to D'$ is continuous, the equation follows from the definition of continuous function and the fact that lubs are limits. Assume then that the equation holds for all directed sets $S$. Let $U' \subseteq D'$ be open in $D'$ and let
 
 $$
-U = x \in D : f(x) \in U'.
+U = \{ x \in D : f(x) \in U' \}.
 $$
 
 We must show that $U$ is open in $D$. Note first that if $x \sqsubseteq y$, then $S = x, y$ is directed; hence,

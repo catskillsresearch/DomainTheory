@@ -8,6 +8,7 @@ descriptions. This script no longer inlines source.
 from __future__ import annotations
 
 from datetime import date
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -32,7 +33,7 @@ def narrative_body(arxiv_text: str) -> str:
 
 
 def main() -> None:
-    arxiv_path = ROOT / "arxiv.md"
+    arxiv_path = Path(os.environ.get("ARXIV_MD", ROOT / "arxiv.md"))
     arxiv = arxiv_path.read_text(encoding="utf-8")
     title = paper_title(arxiv)
     body = narrative_body(arxiv)
@@ -71,7 +72,7 @@ def main() -> None:
     parts.append(body)
     parts.append("\n")
 
-    out = ROOT / "arxiv_with_code.md"
+    out = Path(os.environ.get("ARXIV_WITH_CODE", ROOT / "arxiv_with_code.md"))
     out.write_text("".join(parts), encoding="utf-8")
     print(f"wrote {out} (narrative + Palomar-archive appendix, no inlined Lean)")
 

@@ -1,4 +1,28 @@
 # Exercise 8.12
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/V.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/V.lean)**
+
+@import "V.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableSplit.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableSplit.lean)**
+
+@import "IsComputableSplit.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VX.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/VX.lean)**
+
+@import "VX.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Vinter.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Vinter.lean)**
+
+@import "Vinter.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean)**
+
+@import "deltaPair.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/minLevel.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/minLevel.lean)**
+
+@import "minLevel.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitV.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitV.lean)**
+
+@import "splitV.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VComputablePresentation.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/VComputablePresentation.lean)**
+
+@import "VComputablePresentation.lean"
 
 **EXERCISE 8.12.** Generalize the notation $2X + 1$ for subsets $X \subseteq \mathbb{N}$ to sets of the form
 

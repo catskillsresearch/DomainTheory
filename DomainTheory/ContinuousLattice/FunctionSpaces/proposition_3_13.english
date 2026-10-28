@@ -32,7 +32,7 @@ $$i(x)(u) = \bot$$
 
 by substituting $\vec{e}[v,x]$ for $f$ in the second equation above, where $v$ is chosen so that $v \ll t$ but not $v \ll u$. But then note that
 
-$$i(x)(t) = \bigsqcup i(x)(u) : u \ll t.$$
+$$i(x)(t) = \bigsqcup \{ i(x)(u) : u \ll t \}.$$
 
 If not $t \ll t$, then $u \ll t$ implies $t \not\sqsubseteq u$, which leads to absurdity. Hence $t$ must be isolated, and, as we noted earlier, the function $i$ is uniquely determined as being the one we already knew. Aside from these pairs of projections one could obtain others by combinations with automorphisms. I was unable to determine whether there are further pairs of an essentially different nature.
 

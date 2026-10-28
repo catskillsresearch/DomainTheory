@@ -7,9 +7,21 @@
 
 @import "Embedding.mermaid"
 
-**[DataTypesAsLattices/Embedding/embed.lean](DomainTheory/DataTypesAsLattices/Embedding/embed.lean)**
-
-@import "embed.lean"
 **[DataTypesAsLattices/Embedding/extend.lean](DomainTheory/DataTypesAsLattices/Embedding/extend.lean)**
 
 @import "extend.lean"
+**[DataTypesAsLattices/Continuous/memOpen.lean](DomainTheory/DataTypesAsLattices/Continuous/memOpen.lean)**
+
+@import "../Continuous/memOpen.lean"
+**[DataTypesAsLattices/Continuous/Basic.lean](DomainTheory/DataTypesAsLattices/Continuous/Basic.lean)**
+
+@import "../Continuous/Basic.lean"
+**[DataTypesAsLattices/Embedding/embed.lean](DomainTheory/DataTypesAsLattices/Embedding/embed.lean)**
+
+@import "embed.lean"
+**[DataTypesAsLattices/Continuous/basicNhhd_more.lean](DomainTheory/DataTypesAsLattices/Continuous/basicNhhd_more.lean)**
+
+@import "../Continuous/basicNhhd_more.lean"
+**[DataTypesAsLattices/Continuous/exists_basicNhhd_subset_of_generateOpen.lean](DomainTheory/DataTypesAsLattices/Continuous/exists_basicNhhd_subset_of_generateOpen.lean)**
+
+@import "../Continuous/exists_basicNhhd_subset_of_generateOpen.lean"
