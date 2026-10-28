@@ -23,9 +23,9 @@
 **[DomainTheory/ContinuousLattice/FunctionSpaces/ScottMapProjection.lean](DomainTheory/ContinuousLattice/FunctionSpaces/ScottMapProjection.lean)**
 
 @import "ScottMapProjection.lean"
-**[DomainTheory/ContinuousLattice/FunctionSpaces/ScottMapRetraction.lean](DomainTheory/ContinuousLattice/FunctionSpaces/ScottMapRetraction.lean)**
+**[DomainTheory/ContinuousLattice/FunctionSpaces/ScottMap_more.lean](DomainTheory/ContinuousLattice/FunctionSpaces/ScottMap_more.lean)**
 
-@import "ScottMapRetraction.lean"
+@import "ScottMap_more.lean"
 **[DomainTheory/ContinuousLattice/FunctionSpaces/ambientSSup.lean](DomainTheory/ContinuousLattice/FunctionSpaces/ambientSSup.lean)**
 
 @import "ambientSSup.lean"

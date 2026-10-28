@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapRetraction
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap_more
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -20,7 +20,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 def proposition_3_7_retraction (R₀ : IsContinuousLatticeRetraction D₀ D₀')
     (R₁ : IsContinuousLatticeRetraction D₁ D₁') :
-    ScottMapRetraction D₀ D₀' D₁ D₁' :=
-  ScottMapRetraction.functionSpace R₀ R₁
+    ScottMap.retraction D₀ D₀' D₁ D₁' :=
+  ScottMap.retraction.functionSpace R₀ R₁
 
 end DomainTheory.ContinuousLattice

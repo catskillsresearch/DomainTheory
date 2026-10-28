@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
 public import DomainTheory.ContinuousLattice.FunctionSpaces.comp
 public import Mathlib.Topology.Defs.Basic
@@ -19,20 +20,24 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-structure ScottMapRetraction (D₀ D₀' D₁ D₁' : Type*)
+namespace ScottMap
+
+structure retraction (D₀ D₀' D₁ D₁' : Type*)
     [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁'] where
   incl : ScottMap D₀ D₁ → ScottMap D₀' D₁'
   retr : ScottMap D₀' D₁' → ScottMap D₀ D₁
   retr_incl : ∀ f, retr (incl f) = f
 
-namespace ScottMapRetraction
+namespace retraction
 
 def functionSpace (R₀ : IsContinuousLatticeRetraction D₀ D₀') (R₁ : IsContinuousLatticeRetraction D₁ D₁') :
-    ScottMapRetraction D₀ D₀' D₁ D₁' where
+    ScottMap.retraction D₀ D₀' D₁ D₁' where
   incl f := ScottMap.comp R₁.incl (ScottMap.comp f R₀.retr)
   retr f' := ScottMap.comp R₁.retr (ScottMap.comp f' R₀.incl)
   retr_incl f := ScottMap.ext fun x => by simp [ScottMap.comp, R₀.retr_incl, R₁.retr_incl]
 
-end ScottMapRetraction
+end retraction
+
+end ScottMap
 
 end DomainTheory.ContinuousLattice

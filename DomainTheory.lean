@@ -266,8 +266,8 @@ import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetracti
 import DomainTheory.ContinuousLattice.FunctionSpaces.IsProjection
 import DomainTheory.ContinuousLattice.FunctionSpaces.Projections
 import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
+import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap_more
 import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapProjection
-import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapRetraction
 import DomainTheory.ContinuousLattice.FunctionSpaces.ambientSSup
 import DomainTheory.ContinuousLattice.FunctionSpaces.bot_apply
 import DomainTheory.ContinuousLattice.FunctionSpaces.comp
