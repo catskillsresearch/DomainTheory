@@ -140,15 +140,9 @@ def triage_section(candidates: list[Candidate]) -> str:
 Actions: **delete** (unused + redundant), **merge** (into an importing sibling module),
 **wire** (call from proofs), **keep** (notes/PDF or Palomar barrel only).
 
-### ContinuousLattice (12) — all cited in `.md` notes
+### ContinuousLattice
 
-| File | Suggested action | Rationale |
-|------|------------------|-----------|
-| `Constructions/sierpinski_isInjective_and_isContinuousLattice.lean` | **delete** or **merge** | Conjunction of `proposition_1_2` + `isContinuousLattice_prop`; no Lean importer. |
-| `ContinuousLattices/orderIso_wayBelow_iff.lean` | **merge** → `orderIso_wayBelow.lean` | Thin iff wrapper; forward direction is imported elsewhere. |
-| `FunctionSpaces/bot.lean`, `sup.lean`, `con_apply.lean`, `min_apply.lean` | **keep** (notes) or **merge** into `*_apply` / Basic | Proofs use `bot_apply`, `sup_apply`, etc.; these are note-facing ScottMap defs. |
-| `MilnerCorrection/scottLowerSubbasisSet.lean`, `scottOpen_of_coarserThanScott.lean`, `scottPrincipalUpSet.lean` | **keep** (notes) | Correction section display; check if `CoarserThanScottTopology` could re-export. |
-| `Specialization/specializationPreorder.lean`, `specializationLe_antisymm.lean`, `isOpen_scott_iff_scottOpen.lean` | **keep** or **merge** into `specializationLe.lean` | Instances/lemmas for specialization notes; not imported by other modules. |
+The former barrel-only dozen (Sierpiński conjunction, `orderIso_wayBelow_iff`, note-only FunctionSpaces/Milner/Specialization splits) was **deleted**; proofs use sibling modules (`orderIso_wayBelow`, `*_apply`, `isOpen_iff_scottOpen`, etc.).
 
 ### DataTypesAsLattices (64)
 

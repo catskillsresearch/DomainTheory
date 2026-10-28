@@ -38,10 +38,6 @@
 
 @import "ambientSSup.lean"
 
-**[DomainTheory/ContinuousLattice/FunctionSpaces/bot.lean](bot.lean)**
-
-@import "bot.lean"
-
 **[DomainTheory/ContinuousLattice/FunctionSpaces/bot_apply.lean](bot_apply.lean)**
 
 @import "bot_apply.lean"
@@ -265,10 +261,6 @@
 **[DomainTheory/ContinuousLattice/FunctionSpaces/stepMap_wayBelow.lean](stepMap_wayBelow.lean)**
 
 @import "stepMap_wayBelow.lean"
-
-**[DomainTheory/ContinuousLattice/FunctionSpaces/sup.lean](sup.lean)**
-
-@import "sup.lean"
 
 **[DomainTheory/ContinuousLattice/FunctionSpaces/sup_apply.lean](sup_apply.lean)**
 

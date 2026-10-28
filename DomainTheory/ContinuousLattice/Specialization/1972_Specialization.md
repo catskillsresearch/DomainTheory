@@ -24,10 +24,6 @@
 
 @import "isOpen_iff_scottOpen.lean"
 
-**[DomainTheory/ContinuousLattice/Specialization/isOpen_scott_iff_scottOpen.lean](isOpen_scott_iff_scottOpen.lean)**
-
-@import "isOpen_scott_iff_scottOpen.lean"
-
 **[DomainTheory/ContinuousLattice/Specialization/scottOpen_not_le.lean](scottOpen_not_le.lean)**
 
 @import "scottOpen_not_le.lean"
@@ -40,10 +36,6 @@
 
 @import "scottTopology_t0Space.lean"
 
-**[DomainTheory/ContinuousLattice/Specialization/specializationLe_antisymm.lean](specializationLe_antisymm.lean)**
-
-@import "specializationLe_antisymm.lean"
-
 **[DomainTheory/ContinuousLattice/Specialization/specializationLe_iff_specializes.lean](specializationLe_iff_specializes.lean)**
 
 @import "specializationLe_iff_specializes.lean"
@@ -51,7 +43,3 @@
 **[DomainTheory/ContinuousLattice/Specialization/specializationLe_scott_iff.lean](specializationLe_scott_iff.lean)**
 
 @import "specializationLe_scott_iff.lean"
-
-**[DomainTheory/ContinuousLattice/Specialization/specializationPreorder.lean](specializationPreorder.lean)**
-
-@import "specializationPreorder.lean"
