@@ -378,7 +378,7 @@ def build_tree(spine: dict[Path, Leaf]) -> Barrel:
             S(P("Injective/1972_Powers_of_O_are_injective.md")),
             S(P("Injective/1972_Proposition_1_4.md")),
             S(P("Injective/1972_Proposition_1_5.md")),
-            S(P("Injective/1972_IsRetractSubspace.md")),
+            S(P("Injective/1972_RetractSubspace.md")),
             S(P("Injective/1972_Corollary_1_6.md")),
             S(P("Injective/1972_Corollary_1_7.md")),
             S(P("Injective/1972_Absolute_retracts.md")),

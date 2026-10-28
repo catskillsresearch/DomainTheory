@@ -915,7 +915,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Powers of 𝕆 are injective": "PO",
                 "Proposition 1.4": "P14",
                 "Proposition 1.5": "P15",
-                "IsRetractSubspace": "IRS",
+                "RetractSubspace": "IRS",
                 "Corollary 1.6": "C16",
                 "Corollary 1.7": "C17",
             }

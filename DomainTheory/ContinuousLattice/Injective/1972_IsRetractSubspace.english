@@ -1,3 +1,0 @@
-**Corollary 1.6** characterizes injective spaces as retracts of powers of 𝕆. The Lean development packages “`D` is a subspace of a larger space and the inclusion splits by a continuous retraction” as `IsRetractSubspace D' D`: a continuous section `D' → D` that is an embedding, together with a retraction `D → D'` fixing the subspace pointwise.
-
-Corollary 1.6 then states that `D` is injective if and only if it is such a retract of some power `ι → Prop`.

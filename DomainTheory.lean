@@ -408,7 +408,7 @@ import DomainTheory.ContinuousLattice.FunctionSpaces.toOrderHom
 import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
 import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_le_finset_sup_step
 import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
-import DomainTheory.ContinuousLattice.Injective.IsRetractSubspace
+import DomainTheory.ContinuousLattice.Injective.RetractSubspace
 import DomainTheory.ContinuousLattice.Injective.corollary_1_6
 import DomainTheory.ContinuousLattice.Injective.corollary_1_7
 import DomainTheory.ContinuousLattice.Injective.isInjectiveSpace_sierpinski_power

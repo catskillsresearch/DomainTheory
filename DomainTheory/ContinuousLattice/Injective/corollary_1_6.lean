@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.Injective.IsRetractSubspace
+public import DomainTheory.ContinuousLattice.Injective.RetractSubspace
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
 public import Mathlib.Topology.Separation.Basic
 import DomainTheory.ContinuousLattice.Injective.isInjectiveSpace_sierpinski_power
@@ -16,7 +16,7 @@ universe u
 
 /-- **Scott 1972, Corollary 1.6.** Injective spaces are exactly retracts of powers of 𝕆. -/
 theorem corollary_1_6 (D : Type u) [TopologicalSpace D] [T0Space D] :
-    InjectiveSpace.{u,u} D ↔ ∃ (ι : Type u), Nonempty (IsRetractSubspace D (ι → Prop)) := by
+    InjectiveSpace.{u,u} D ↔ ∃ (ι : Type u), Nonempty (RetractSubspace D (ι → Prop)) := by
   constructor
   · intro hD
     obtain ⟨r, hr⟩ := hD.extension (productOfMemOpens D) (proposition_1_5 D).2 (ContinuousMap.id D)
