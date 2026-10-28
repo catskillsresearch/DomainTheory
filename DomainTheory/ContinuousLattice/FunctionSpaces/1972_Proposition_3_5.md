@@ -20,9 +20,6 @@
 **[DomainTheory/ContinuousLattice/FunctionSpaces/scottLambda.lean](DomainTheory/ContinuousLattice/FunctionSpaces/scottLambda.lean)**
 
 @import "scottLambda.lean"
-**[DomainTheory/ContinuousLattice/FunctionSpaces/scottLambdaAt.lean](DomainTheory/ContinuousLattice/FunctionSpaces/scottLambdaAt.lean)**
-
-@import "scottLambdaAt.lean"
 **[DomainTheory/ContinuousLattice/FunctionSpaces/scottLambda_apply.lean](DomainTheory/ContinuousLattice/FunctionSpaces/scottLambda_apply.lean)**
 
 @import "scottLambda_apply.lean"
