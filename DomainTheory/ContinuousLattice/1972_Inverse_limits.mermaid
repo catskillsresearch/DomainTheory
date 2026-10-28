@@ -1,0 +1,115 @@
+%% Lean files imported under this note.
+%% Arrowhead on the importer. The number is a direct-import count.
+%% An arrow already implied by a longer path is omitted.
+flowchart TB
+
+  FunctionSpaceTower_CLat["CLat"]
+  InverseLimits_coconeInf["coconeInf"]
+  InverseLimits_coe_sSup_of_directed["coe_sSup_of_directed"]
+  InverseLimits_Compatible["Compatible"]
+  FunctionSpaceTower_conj_iInfTerm_eq["conj_iInfTerm_eq"]
+  FunctionSpaceTower_conjMap["conjMap"]
+  FunctionSpaceTower_conjMap_iSup["conjMap_iSup"]
+  InverseLimits_corollary_4_3["corollary_4_3"]
+  FunctionSpaceTower_DInf["DInf"]
+  FunctionSpaceTower_DInfFn["DInfFn"]
+  InverseLimits_embInf["embInf"]
+  FunctionSpaceTower_embInf_succ_iSup["embInf_succ_iSup"]
+  InverseLimits_embInfFun["embInfFun"]
+  FunctionSpaceTower_embInfInf["embInfInf"]
+  FunctionSpaceTower_embInfInf_projInfInf["embInfInf_projInfInf"]
+  InverseLimits_embLE["embLE"]
+  FunctionSpaceTower_functionSpaceInclFun["functionSpaceInclFun"]
+  FunctionSpaceTower_functionSpaceProjection["functionSpaceProjection"]
+  FunctionSpaceTower_functionSpaceRetrFun["functionSpaceRetrFun"]
+  InverseLimits_iComp["iComp"]
+  InverseLimits_idInf_eq_iSup["idInf_eq_iSup"]
+  FunctionSpaceTower_iInfTerm["iInfTerm"]
+  FunctionSpaceTower_iInfTerm_monotone["iInfTerm_monotone"]
+  FunctionSpaceTower_incl_projInf_le_projInf_succ["incl_projInf_le_projInf_succ"]
+  InverseLimits_instCompleteLattice["instCompleteLattice"]
+  InverseLimits_instInfSet["instInfSet"]
+  InverseLimits_InverseLimit["InverseLimit"]
+  InverseLimits_inverseLimitLE["inverseLimitLE"]
+  InverseLimits_inverseLimitLT["inverseLimitLT"]
+  InverseLimits_inverseLimitPartialOrder["inverseLimitPartialOrder"]
+  InverseLimits_inverseLimitSInfCoe["inverseLimitSInfCoe"]
+  InverseLimits_inverseLimitTopology["inverseLimitTopology"]
+  FunctionSpaceTower_iSup__monotone_eq_diagonal["iSup₂_monotone_eq_diagonal"]
+  FunctionSpaceTower_jInfTerm["jInfTerm"]
+  InverseLimits_lemma_4_5["lemma_4_5"]
+  InverseLimits_projection_galoisConnection["projection_galoisConnection"]
+  InverseLimits_projInf["projInf"]
+  FunctionSpaceTower_projInfInf["projInfInf"]
+  InverseLimits_projLE["projLE"]
+  InverseLimits_proposition_4_1["proposition_4_1"]
+  InverseLimits_proposition_4_2["proposition_4_2"]
+  FunctionSpaceTower_theorem_4_4["theorem_4_4"]
+  FunctionSpaceTower_theorem_4_4_more["theorem_4_4_more"]
+  FunctionSpaceTower_towerProj["towerProj"]
+  FunctionSpaceTower_towerProj_retr_conjMap_succ["towerProj_retr_conjMap_succ"]
+
+  InverseLimits_embInf -->|"1"| InverseLimits_coconeInf
+  InverseLimits_projInf -->|"1"| InverseLimits_coconeInf
+  InverseLimits_instCompleteLattice -->|"1"| InverseLimits_coe_sSup_of_directed
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
+  InverseLimits_proposition_4_2 -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
+  FunctionSpaceTower_CLat -->|"1"| FunctionSpaceTower_conjMap
+  FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_conjMap_iSup
+  InverseLimits_inverseLimitTopology -->|"1"| InverseLimits_corollary_4_3
+  InverseLimits_InverseLimit -->|"1"| FunctionSpaceTower_DInf
+  FunctionSpaceTower_towerProj -->|"1"| FunctionSpaceTower_DInf
+  FunctionSpaceTower_DInf -->|"1"| FunctionSpaceTower_DInfFn
+  InverseLimits_instCompleteLattice -->|"1"| FunctionSpaceTower_DInfFn
+  InverseLimits_embInfFun -->|"1"| InverseLimits_embInf
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_embInf_succ_iSup
+  InverseLimits_coe_sSup_of_directed -->|"1"| InverseLimits_embInfFun
+  InverseLimits_iComp -->|"1"| InverseLimits_embInfFun
+  FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_embInfInf
+  InverseLimits_lemma_4_5 -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaceTower_projInfInf -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaceTower_towerProj_retr_conjMap_succ -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
+  InverseLimits_InverseLimit -->|"1"| InverseLimits_embLE
+  FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_functionSpaceInclFun
+  FunctionSpaceTower_functionSpaceInclFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
+  FunctionSpaceTower_functionSpaceRetrFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
+  FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
+  InverseLimits_embLE -->|"1"| InverseLimits_iComp
+  InverseLimits_projLE -->|"1"| InverseLimits_iComp
+  InverseLimits_inverseLimitTopology -->|"1"| InverseLimits_idInf_eq_iSup
+  FunctionSpaceTower_DInfFn -->|"1"| FunctionSpaceTower_iInfTerm
+  InverseLimits_embInf -->|"1"| FunctionSpaceTower_iInfTerm
+  InverseLimits_projInf -->|"1"| FunctionSpaceTower_iInfTerm
+  FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_iInfTerm_monotone
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_incl_projInf_le_projInf_succ
+  InverseLimits_instInfSet -->|"1"| InverseLimits_instCompleteLattice
+  InverseLimits_inverseLimitPartialOrder -->|"1"| InverseLimits_instInfSet
+  InverseLimits_inverseLimitSInfCoe -->|"1"| InverseLimits_instInfSet
+  InverseLimits_projection_galoisConnection -->|"1"| InverseLimits_instInfSet
+  InverseLimits_Compatible -->|"1"| InverseLimits_InverseLimit
+  InverseLimits_InverseLimit -->|"1"| InverseLimits_inverseLimitLE
+  InverseLimits_inverseLimitLE -->|"1"| InverseLimits_inverseLimitLT
+  InverseLimits_inverseLimitLT -->|"1"| InverseLimits_inverseLimitPartialOrder
+  InverseLimits_InverseLimit -->|"1"| InverseLimits_inverseLimitSInfCoe
+  InverseLimits_coconeInf -->|"1"| InverseLimits_inverseLimitTopology
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_iSup__monotone_eq_diagonal
+  FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_jInfTerm
+  InverseLimits_embInf -->|"1"| InverseLimits_lemma_4_5
+  InverseLimits_projInf -->|"1"| InverseLimits_lemma_4_5
+  InverseLimits_coe_sSup_of_directed -->|"1"| InverseLimits_projInf
+  FunctionSpaceTower_conj_iInfTerm_eq -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_conjMap_iSup -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_embInf_succ_iSup -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_embInfInf -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_iInfTerm_monotone -->|"1"| FunctionSpaceTower_projInfInf
+  InverseLimits_inverseLimitTopology -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_iSup__monotone_eq_diagonal -->|"1"| FunctionSpaceTower_projInfInf
+  InverseLimits_InverseLimit -->|"1"| InverseLimits_projLE
+  InverseLimits_inverseLimitTopology -->|"1"| InverseLimits_proposition_4_1
+  InverseLimits_embInf -->|"1"| InverseLimits_proposition_4_2
+  InverseLimits_projInf -->|"1"| InverseLimits_proposition_4_2
+  FunctionSpaceTower_theorem_4_4_more -->|"1"| FunctionSpaceTower_theorem_4_4
+  FunctionSpaceTower_embInfInf_projInfInf -->|"1"| FunctionSpaceTower_theorem_4_4_more
+  InverseLimits_proposition_4_1 -->|"1"| FunctionSpaceTower_theorem_4_4_more
+  FunctionSpaceTower_functionSpaceProjection -->|"1"| FunctionSpaceTower_towerProj
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_towerProj_retr_conjMap_succ

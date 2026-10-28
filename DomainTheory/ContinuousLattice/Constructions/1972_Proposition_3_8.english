@@ -1,5 +1,3 @@
-Returning now to $\bar{f}$ we can prove:
-
 **3.8 Proposition.** If $D$ is a continuous lattice and $e : X \rightarrow Y$ a subspace embedding, then for each $f : X \rightarrow D$, the function $\bar{f} : Y \rightarrow D$ given by the formula
 
 $$\bar{f}(y) = \bigsqcup  \sqcap  f(x) : e(x) \in U  : y \in U ,$$
@@ -24,6 +22,13 @@ $$
 
 which establishes that $f' \sqsubseteq \bar{f}$. $\square$
 
-The reader should not forget that any space (any *given* number of spaces $X$, $Y$, $\ldots$) can be found as a *subspace* of a continuous lattice $D$. Since $D$ is injective any continuous function $f : X \to Y$ can be extended to a continuous function $\bar{f} : D \to D$. Thus the continuous functions from $D$ into $D$ are a rich totality including *all* the structure of continuous functions on *all* the subspaces. And this remark brings us to the study of [function spaces](../FunctionSpaces/1972_Definition_3_1.md).
+By the same argument we could show that $\bar{f}$ is the maximal solution of $\bar{f} \circ e \sqsubseteq f$. An interesting question is whether the correspondence $f \rightsquigarrow \bar{f}$ is continuous. I very much doubt it, but at this moment a counterexample escapes me. It is clear that the correspondence is monotonic, for if $f \sqsubseteq g$, then the formula of 3.8 shows that $\bar{f} \sqsubseteq \bar{g}$. This gives us a neat argument for the previous remark: if $g \circ e \sqsubseteq f$, then
 
-**Subspace.** There is no separate subspace type. A subspace is Mathlib’s `IsEmbedding`. `IsRetractSubspace` requires its section to be an embedding, and this proposition extends a continuous map along an embedding into a continuous lattice by `scottExtend`. The function-space development writes the same formula as `scottSubspaceExtend`.
+$$\overline{g \circ e} \sqsubseteq \bar{f}.$$
+
+But $g \circ e = \overline{g \circ e} \circ e$, so by 3.8, $g \sqsubseteq \overline{g \circ e}$, and $\bar{f}$ is thus maximal.
+
+117
+
+In the case that the range spaces are being extended, the following lemma relating the extensions will be very useful when we consider inverse limits.
+

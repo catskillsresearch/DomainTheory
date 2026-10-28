@@ -1,0 +1,26 @@
+What will be useful will be to return at this point to a discussion of the injective properties of continuous lattices. If one continuous lattice is a subspace of another it is of course a retract. This relationship between spaces can be given by a pair of continuous maps
+
+115
+
+$$i : D \to D' \quad \text{and} \quad j : D' \to D,$$
+
+where
+
+$$j \circ i = \text{id}_D = \lambda x : D . x.$$
+
+The composition $i \circ j : D' \to i(D)$ is the retraction onto the subspace corresponding to $D$ under $i$. Now if we have a diagram:
+
+$$
+\begin{gathered}
+D \xrightarrow[\ j\ ]{i} D' 
+f \searrow \qquad \swarrow \tilde{f} = f \circ j 
+D''
+\end{gathered}
+$$
+
+the given continuous $f$ is at once extendable from $D$ to $D'$ by the obvious definition of $\tilde{f}$. This $\tilde{f}$ is not the $\bar{f}$ used in the proof of 2.11, and it will be well to sort out the connections. On one side note that if $f'$ is any function which extends $f$, then we have $f = f' \circ i$. But this implies
+
+$$\tilde{f} = f \circ j = f' \circ i \circ j,$$
+
+which shows that $\tilde{f}$ is a "degraded" version of $f'$. There is one situation where this type of degrading is especially nice.
+

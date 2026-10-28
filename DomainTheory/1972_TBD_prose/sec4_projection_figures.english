@@ -1,93 +1,3 @@
-**4. INVERSE LIMITS.** By an *inverse system of spaces* we understand as usual a sequence
-
-$$\langle X_n, j_n \rangle_{n=0}^{\infty}$$
-
-of $T_0$-spaces and continuous maps $j_n : X_{n+1} \to X_n$. The space $X_{\infty}$, called the *inverse limit* of the sequence, is constructed in the familiar way as that subspace of the product space consisting of exactly those infinite sequences
-
-$$x = \langle x_n \rangle_{n=0}^{\infty},$$
-
-where for each $n$ we have $x_n \in X_n$, and
-
-$$j_n(x_{n+1}) = x_n.$$
-
-The space $X_{\infty}$ is given the product topology, and the maps $j_{\infty n} : X_{\infty} \to X_n$ such that
-
-$$j_{\infty n}(x) = x_n$$
-
-are of course continous and satisfy the recursion equation:
-
-$$j_{\infty n} = j_n \circ j_{\infty(n+1)}.$$
-
-Besides this we have the expected extension property for any system of continuous maps
-
-$$f_n : Y \to X_n$$
-
-where for each $n$
-
-$$f_n = j_n \circ f_{n+1}.$$
-
-Because, we can define
-
-$$f_{\infty} : Y \to X_{\infty}$$
-
-by the equation
-
-$$f_{\infty}(y) = \langle f_n(y) \rangle_{n=0}^{\infty}$$
-
-for all $y \in Y$; whence
-
-$$f_n = j_{\infty n} \circ f_{\infty}$$
-
-holds. So much for a review of inverse limits. In this paper our interest will center on rather special inverse systems and their limits.
-
-- [Proposition 4.1](1972_Proposition_4_1.md)
-- [Proposition 4.2](1972_Proposition_4_2.md)
-- [Corollary 4.3](1972_Corollary_4_3.md)
-- [Lemma 4.5](1972_Lemma_4_5.md)
-
-We can explain the idea of this proof in other terms using a suggestion made to me by F. W. Lawvere. Consider the category of
-
-We can explain the idea of this proof in other terms using a suggestion made to me by F. W. Lawvere. Consider the category of continuous lattices and projections. In that category our $D_\infty$ is, as we have remarked, both a *direct* and an *inverse* limit. Note too that with regard to projections $[D \to D']$ is a *functor*, for we can also define $[j \to j']$ when the maps are projections. In this language our particular inverse system is defined by the recursion:
-
-$$D_{n+1} = [D_n \to D_n] \quad \text{and} \quad j_{n+1} = [j_n \to j_n],$$
-
-where $D_0$ and $j_0$ are given in advance. Now the function space construction is continuous in its two arguments, turning an inverse limit on the right into an inverse limit and a direct limit on the *left* also into an *inverse* limit. A repeated limit can be made into a simple limit, so we can write:
-
-$$
-\begin{aligned}
-D_\infty &= \varprojlim \langle D_n, j_n \rangle_{n=0}^{\infty} 
-&= \varinjlim \langle D_n, i_n \rangle_{n=0}^{\infty}
-\end{aligned}
-$$
-
-and
-
-$$
-\begin{aligned}
-[D_\infty \to D_\infty] &= \varprojlim \langle [D_n \to D_n], [j_n \to j_n] \rangle_{n=0}^{\infty} 
-&= \varprojlim \langle D_{n+1}, j_{n+1} \rangle_{n=0}^{\infty} 
-&= D_\infty \quad \textit{(up to isomorphism).}
-\end{aligned}
-$$
-
-A full checking of the details involved would not make the argument appreciably simpler over the more "element-by-element" argument I have presented. In fact, the proofs are actually the same. But thinking of the result in terms of properties of functors does seem to isolate very well the essential idea and to show how simple it is.
-
-One must only add here a note of caution: the proper choice of category must be done with care. Thus it seems to me that the use of projections rather than arbitrary continuous maps is necessary.
-
-Inasmuch as I have not checked all details in this form, I hope what I say is correct.
-
-Since we have shown $[D_\infty \to D_\infty]$ to be homeomorphic to $D_\infty$, we can begin to regard them as the same. In particular there ought to be some function space structure to transfer to $D_\infty$. This can be done by defining functional application for any elements $x, y \in D_\infty$ by the equation:
-
-$$x(y) = \bigsqcup_{n=0}^{\infty} i_{n\infty}(x_{n+1}(y_n)).$$
-
-Similarly we can define $\lambda$-abstraction on continuous expressions:
-
-$$\lambda x.[\ldots x \ldots] = j_\infty(\lambda x : D_\infty.[\ldots x \ldots]),$$
-
-and in this way $D_\infty$ becomes a model for the $\lambda$-calculus of Church and Curry. The model-theoretic and proof-theoretic aspects of this result will be explained in another paper (Scott (1972)).
-
-Suppose we were to start with the least, non-trivial lattice $0 = \top, \bot$ for $D_0$. Now $D_1 = [0 \to 0]$ has exactly three elements and there are just two ways of defining a projection $j_0 : D_1 \to D_0$. They are illustrated in the figure:
-
 **Left projection**
 
 ```
@@ -108,6 +18,8 @@ Hence our construction gives two limit spaces $D_\infty$ and $D'*\infty$. Are th
 
 The reader will have surely remarked that by virtue of 1.5, every $T_0$-space $X$ whatsoever can be embedded as a subspace in a $D_\infty$. Besides this all the continuous functions on $X$ (oh, into $D_\infty$, say) can be extended to $D_\infty$; whence they can be regarded as *elements* of $D_\infty$. Thus we have been able to embed not only the topology of $X$ into $D_\infty$ but also all of the continuous function theory over $X$. So far this is only a "logical" construction. For more interesting "mathematical" results we shall have to investigate whether any useful theorems about the usual function spaces $[X \to X]$ can be obtained with the aid of $D_\infty$. This method can easily be employed for real- or complex-valued continuous functions, though it seems more oriented toward pointwise convergence than anything else. Still, there seems to be a chance it might be useful—especially if one wished to consider continuous *operators* on function spaces.
 
+131
+
 The idea of forming the limit space can also be applied to *other* functors besides $[D \to D]$. Thus instead of solving the “equation”
 
 $$D = [D \to D]$$
@@ -120,8 +32,8 @@ for example. Here $T = \bot, 0, 1, \top$ is the four-element lattice with $0$ an
 
 $$
 \begin{array}{ccc}
-D + D' & \longleftarrow & D' \\
-\uparrow & & \uparrow \\
+D + D' & \longleftarrow & D' 
+\uparrow & & \uparrow 
 D & \longleftarrow & 0
 \end{array}
 $$
@@ -141,6 +53,8 @@ The space $V$ constructed in the way just indicated is very rich in subspaces. T
 $$(j \times k)\ ,\ (j + k)\ ,\ \text{and}\ (j \to k)$$
 
 on the projections obtaining again elements of $\mathcal{J}_V$. The projections so obtained correspond to the indicated constructions of subspaces, of course. (Indeed, if we had the time and space, we could show that $\mathcal{J}_V$ becomes a very interesting category). There will be a particular
+
+132
 
 projection $t$ corresponding to $T$, and reason for doing all this is to show that the existence of subspaces of $V$ can now be established by solving equations in $\mathcal{J}_V$. For example, by the fixed-point construction we could find a $j \in \mathcal{J}_V$ such that
 

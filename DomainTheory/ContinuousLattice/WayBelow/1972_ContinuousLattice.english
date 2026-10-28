@@ -1,17 +1,8 @@
-**Definition 2.3.** A *continuous lattice* is a complete lattice $D$ in which for every $y \in D$ we have:
+**2.3 Definition.** A *continuous lattice* is a complete lattice $D$ in which for every $y \in D$ we have:
 
 $$
 y = \bigsqcup x \in D : x \ll y.
 $$
 
-Every element is the least upper bound of the elements way below it.
+As an alternate definition we find:
 
-Interpolation property of `≪`. WayBelow.interpolate. In a continuous lattice, the way-below relation
-interpolates: `a ≪ c` implies there is some `b` with `a ≪ b ≪ c`.
-
-The proof runs Scott's standard argument: the set `M = {m | ∃ x, m ≪ x ∧ x ≪ c}` is directed
-(using directedness of `{· ≪ x}` twice) and has supremum `c` (using continuity twice). Hence
-`a ≪ c = ⊔M` with `M` directed forces `a ≪ m` for some `m ∈ M`, say `m ≪ x ≪ c`; then
-`a ≪ m ≤ x` gives `a ≪ x ≪ c`, so `b := x` works.
-
-In a continuous lattice, `WayBelow.interpolate` produces an element strictly between the two.

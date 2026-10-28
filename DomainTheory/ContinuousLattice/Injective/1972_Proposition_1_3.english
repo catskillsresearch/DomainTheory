@@ -1,3 +1,6 @@
 **1.3 Proposition.** The Cartesian product of any number of injective spaces is injective under the product topology.
 
 **Proof:** The argument is standard. A map into the product can be projected onto each of the factors. Each of these projections can be extended. Then the separate maps can be put together again to make the required extended map into the product. $\square$
+
+We now have a large number of injective spaces, and further examples could be found using the next fact.
+

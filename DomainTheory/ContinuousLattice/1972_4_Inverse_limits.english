@@ -1,0 +1,44 @@
+By an *inverse system of spaces* we understand as usual a sequence
+
+$$\langle X_n, j_n \rangle_{n=0}^{\infty}$$
+
+of $T_0$-spaces and continuous maps $j_n : X_{n+1} \to X_n$. The space $X_{\infty}$, called the *inverse limit* of the sequence, is constructed in the familiar way as that subspace of the product space consisting of exactly those infinite sequences
+
+$$x = \langle x_n \rangle_{n=0}^{\infty},$$
+
+where for each $n$ we have $x_n \in X_n$, and
+
+$$j_n(x_{n+1}) = x_n.$$
+
+The space $X_{\infty}$ is given the product topology, and the maps $j_{\infty n} : X_{\infty} \to X_n$ such that
+
+$$j_{\infty n}(x) = x_n$$
+
+are of course continous and satisfy the recursion equation:
+
+$$j_{\infty n} = j_n \circ j_{\infty(n+1)}.$$
+
+Besides this we have the expected extension property for any system of continuous maps
+
+$$f_n : Y \to X_n$$
+
+where for each $n$
+
+$$f_n = j_n \circ f_{n+1}.$$
+
+125
+
+Because, we can define
+
+$$f_{\infty} : Y \to X_{\infty}$$
+
+by the equation
+
+$$f_{\infty}(y) = \langle f_n(y) \rangle_{n=0}^{\infty}$$
+
+for all $y \in Y$; whence
+
+$$f_n = j_{\infty n} \circ f_{\infty}$$
+
+holds. So much for a review of inverse limits. In this paper our interest will center on rather special inverse systems and their limits.
+

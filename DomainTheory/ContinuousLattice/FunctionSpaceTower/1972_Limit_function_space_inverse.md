@@ -1,9 +1,5 @@
 # Proof that the limit and its function space are inverse
 
-These notes construct the embedding of the limit into its function space and the projection back, and show that the two composites are the identity.
-
-**Dependency diagram.** Each box is one of these notes. The arrowhead is on the note that imports. The number is how many direct imports. An arrow already implied by a longer path is left out.
-
 @import "1972_Limit_function_space_inverse.mermaid"
 
 - [iInfTerm](1972_iInfTerm.md)
@@ -17,4 +13,4 @@ These notes construct the embedding of the limit into its function space and the
 - [conj](1972_conj_iInfTerm_eq.md)
 - [towerProj](1972_towerProj_retr_conjMap_succ.md)
 - [projInfInf](1972_projInfInf.md)
-- [embInfInf_projInfInf](1972_embInfInf_projInfInf.md)
+- [embInfInf](1972_embInfInf_projInfInf.md)

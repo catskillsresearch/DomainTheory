@@ -6,6 +6,4 @@ For a partially ordered set $X$, a subset $U \subseteq X$ is open in the *induce
 
 Directed sets are non-empty. The sets satisfying (i) and (ii) are the open sets of the induced topology.
 
-`ScottOpen` is that predicate on a complete lattice. `ScottOpen.isUpperSet` is (i). `ScottOpen.univ`, `ScottOpen.inter`, and `ScottOpen.sUnion` are the topology laws: the universe is open, binary intersections are open, and arbitrary unions are open.
-
-The discussion that leads to (i) and (ii) is [Specialization](../Specialization/1972_Specialization.md).
+The discussion that leads to (i) and (ii) is in [Specialization](../Specialization/1972_Specialization.md).

@@ -1,11 +1,3 @@
-By the same argument we could show that $\bar{f}$ is the maximal solution of $\bar{f} \circ e \sqsubseteq f$. An interesting question is whether the correspondence $f \rightsquigarrow \bar{f}$ is continuous. I very much doubt it, but at this moment a counterexample escapes me. It is clear that the correspondence is monotonic, for if $f \sqsubseteq g$, then the formula of 3.8 shows that $\bar{f} \sqsubseteq \bar{g}$. This gives us a neat argument for the previous remark: if $g \circ e \sqsubseteq f$, then
-
-$$\overline{g \circ e} \sqsubseteq \bar{f}.$$
-
-But $g \circ e = \overline{g \circ e} \circ e$, so by 3.8, $g \sqsubseteq \overline{g \circ e}$, and $\bar{f}$ is thus maximal.
-
-In the case that the range spaces are being extended, the following lemma relating the extensions will be very useful when we consider inverse limits.
-
 **3.9 Lemma.** Consider the diagram:
 
 $$
@@ -49,3 +41,14 @@ $$
 $$
 
 which proves the equality. $\square$
+
+Whether this lemma is true for retractions in any form, I do not know. My proof seems to require the stronger projection relationship. I suspect there may be difficulties. In general projections are better behaved than retractions. By the way the word projection seems to be properly used in 3.6, for the projection $j : D \times D' \to D$ of the Cartesian product of two continuous lattices onto the first factor *is* a projection with partial inverse $i : D \to D \times D'$ defined by
+
+$$
+i(x) = (x, \bot)
+$$
+
+for $x \in D$.
+
+118
+

@@ -1,53 +1,47 @@
-%% Inside Specialization. A box is one Lean file in this folder, or one subfolder.
-%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
-%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+%% Lean files imported under this note.
+%% Arrowhead on the importer. The number is a direct-import count.
+%% An arrow already implied by a longer path is omitted.
 flowchart TB
 
-  N11["isOpen_iff_scottOpen"]
-  N12["isOpen_scott_iff_scottOpen"]
-  N1["MonotoneNet"]
-  N9["proposition_2_1"]
-  N8["proposition_2_1_le_of_converges"]
-  N6["proposition_2_1_of_le"]
-  N2["ScottConvergesTo"]
-  N3["ScottOpen_iff_dirSupInacc"]
-  N7["scottOpen_not_le"]
-  N10["scottTopologicalSpace"]
-  N16["scottTopology_t0Space"]
-  N4["SpecializationLe"]
-  N13["specializationLe_antisymm"]
-  N14["specializationLe_iff_specializes"]
-  N15["specializationLe_scott_iff"]
-  N5["SpecializationLeu2emap"]
-  N17["specializationPreorder"]
-  N0["WayBelow"]
+  Specialization_isOpen_iff_scottOpen["isOpen_iff_scottOpen"]
+  Specialization_isOpen_scott_iff_scottOpen["isOpen_scott_iff_scottOpen"]
+  Specialization_MonotoneNet["MonotoneNet"]
+  Specialization_proposition_2_1["proposition_2_1"]
+  Specialization_proposition_2_1_le_of_converges["proposition_2_1_le_of_converges"]
+  Specialization_proposition_2_1_of_le["proposition_2_1_of_le"]
+  Specialization_ScottConvergesTo["ScottConvergesTo"]
+  WayBelow_ScottOpen["ScottOpen"]
+  Specialization_ScottOpen_iff_dirSupInacc["ScottOpen_iff_dirSupInacc"]
+  Specialization_scottOpen_not_le["scottOpen_not_le"]
+  WayBelow_scottOpen_wayBelow["scottOpen_wayBelow"]
+  WayBelow_ScottOpenu2eisUpperSet["ScottOpenu2eisUpperSet"]
+  Specialization_scottTopologicalSpace["scottTopologicalSpace"]
+  Specialization_scottTopology_t0Space["scottTopology_t0Space"]
+  Specialization_SpecializationLe["SpecializationLe"]
+  Specialization_specializationLe_antisymm["specializationLe_antisymm"]
+  Specialization_specializationLe_iff_specializes["specializationLe_iff_specializes"]
+  Specialization_specializationLe_scott_iff["specializationLe_scott_iff"]
+  Specialization_SpecializationLeu2emap["SpecializationLeu2emap"]
+  Specialization_specializationPreorder["specializationPreorder"]
 
-  N0 -->|"1"| N11
-  N10 -->|"1"| N11
-  N3 -->|"1"| N11
-  N0 -->|"1"| N12
-  N11 -->|"1"| N12
-  N4 -->|"1"| N13
-  N4 -->|"1"| N14
-  N10 -->|"1"| N15
-  N11 -->|"1"| N15
-  N4 -->|"1"| N15
-  N7 -->|"1"| N15
-  N10 -->|"1"| N16
-  N15 -->|"1"| N16
-  N4 -->|"1"| N17
-  N0 -->|"1"| N2
-  N0 -->|"1"| N3
-  N4 -->|"1"| N5
-  N1 -->|"1"| N6
-  N2 -->|"1"| N6
-  N0 -->|"1"| N7
-  N2 -->|"1"| N8
-  N7 -->|"1"| N8
-  N1 -->|"1"| N9
-  N2 -->|"1"| N9
-  N6 -->|"1"| N9
-  N8 -->|"1"| N9
-
-  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
-  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
+  Specialization_ScottOpen_iff_dirSupInacc -->|"1"| Specialization_isOpen_iff_scottOpen
+  Specialization_scottTopologicalSpace -->|"1"| Specialization_isOpen_iff_scottOpen
+  Specialization_isOpen_iff_scottOpen -->|"1"| Specialization_isOpen_scott_iff_scottOpen
+  Specialization_proposition_2_1_le_of_converges -->|"1"| Specialization_proposition_2_1
+  Specialization_proposition_2_1_of_le -->|"1"| Specialization_proposition_2_1
+  Specialization_ScottConvergesTo -->|"1"| Specialization_proposition_2_1_le_of_converges
+  Specialization_scottOpen_not_le -->|"1"| Specialization_proposition_2_1_le_of_converges
+  Specialization_MonotoneNet -->|"1"| Specialization_proposition_2_1_of_le
+  Specialization_ScottConvergesTo -->|"1"| Specialization_proposition_2_1_of_le
+  WayBelow_ScottOpen -->|"1"| Specialization_ScottConvergesTo
+  WayBelow_ScottOpen -->|"1"| Specialization_ScottOpen_iff_dirSupInacc
+  WayBelow_ScottOpen -->|"1"| Specialization_scottOpen_not_le
+  WayBelow_ScottOpen -->|"1"| WayBelow_ScottOpenu2eisUpperSet
+  Specialization_specializationLe_scott_iff -->|"1"| Specialization_scottTopology_t0Space
+  Specialization_SpecializationLe -->|"1"| Specialization_specializationLe_antisymm
+  Specialization_SpecializationLe -->|"1"| Specialization_specializationLe_iff_specializes
+  Specialization_isOpen_iff_scottOpen -->|"1"| Specialization_specializationLe_scott_iff
+  Specialization_scottOpen_not_le -->|"1"| Specialization_specializationLe_scott_iff
+  Specialization_SpecializationLe -->|"1"| Specialization_specializationLe_scott_iff
+  Specialization_SpecializationLe -->|"1"| Specialization_SpecializationLeu2emap
+  Specialization_SpecializationLe -->|"1"| Specialization_specializationPreorder

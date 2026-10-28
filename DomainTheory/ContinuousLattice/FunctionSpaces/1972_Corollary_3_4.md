@@ -1,13 +1,23 @@
 # Corollary 3.4
 
-The above theorem might possibly be generalized to $[X \to D]$ where $X$ is merely a $T_0$-space, but I was unable to see the argument. In any case we are mostly interested in the continuous lattices. Note as a consequence of our proof:
+@import "1972_Corollary_3_4.english" {code_block=false}
 
-**3.4 Corollary.** For continuous lattices $D$ and $D'$, the evaluation map:
+**[DomainTheory/ContinuousLattice/FunctionSpaces/corollary_3_4.lean](corollary_3_4.lean)**
 
-$$
-\mathrm{eval} : [D \to D'] \times D \to D'
-$$
+@import "corollary_3_4.lean"
 
-is continuous.
+**[DomainTheory/ContinuousLattice/FunctionSpaces/corollary_3_4_eval_on_C.lean](corollary_3_4_eval_on_C.lean)**
 
-**Proof:** Here $\mathrm{eval}(f, x) = f(x)$. With $f$ fixed, this is obviously continuous. With $x$ fixed, we proved the continuity above with our calculation of $\bigsqcup \mathcal{F}$ in view of 2.5. Hence applying 5.3 and 2.6, we conclude that $\mathrm{eval}$ is jointly continuous. $\square$
+@import "corollary_3_4_eval_on_C.lean"
+
+**[DomainTheory/ContinuousLattice/FunctionSpaces/corollary_3_4_jointly_continuous.lean](corollary_3_4_jointly_continuous.lean)**
+
+@import "corollary_3_4_jointly_continuous.lean"
+
+**[DomainTheory/ContinuousLattice/FunctionSpaces/corollary_3_4_preservesDirectedSup.lean](corollary_3_4_preservesDirectedSup.lean)**
+
+@import "corollary_3_4_preservesDirectedSup.lean"
+
+**[DomainTheory/ContinuousLattice/FunctionSpaces/scottFunctionEvalSubbasis.lean](scottFunctionEvalSubbasis.lean)**
+
+@import "scottFunctionEvalSubbasis.lean"

@@ -1,10 +1,11 @@
-%% The projection induced on a function space.
+%% Lean files imported under this note.
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
 
-  INCL["functionSpaceInclFun"]
+  FunctionSpaceTower_functionSpaceInclFun["functionSpaceInclFun"]
+  FunctionSpaceTower_functionSpaceProjection["functionSpaceProjection"]
+  FunctionSpaceTower_functionSpaceRetrFun["functionSpaceRetrFun"]
 
-
-  classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
-  class INCL,PROJ concept
+  FunctionSpaceTower_functionSpaceInclFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
+  FunctionSpaceTower_functionSpaceRetrFun -->|"1"| FunctionSpaceTower_functionSpaceProjection

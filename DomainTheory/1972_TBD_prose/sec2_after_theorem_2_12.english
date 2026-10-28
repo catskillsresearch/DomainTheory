@@ -1,0 +1,208 @@
+**2.12 Theorem.** The injective spaces are exactly the continuous lattices.
+
+This theorem is an immediate consequence of the preceding results: an injective space is a retract of a power of $\mathbb{O}$. But $\mathbb{O}$ is a finite lattice $(\perp \sqsubseteq \top)$, and so the given space is a continuous lattice under its induced topology. On the other hand a continuous lattice is injective. It remains then to prove 2.9–2.11.
+
+**Proof of 2.9**
+
+Let $D_i$ for $i \in I$ be a system of continuous lattices. The product
+
+$$
+D^* = \prod_{i \in I} D_i
+$$
+
+is a complete lattice in the usual way and has its induced topology. Suppose $y \in D^*$ and let $i \in I$. Then $y_i \in D_i$. Since $D_i$ is a continuous lattice
+
+$$
+y_i = \bigsqcup x \in D_i : x \ll y_i.
+$$
+
+For $x \in D_i$, let $[x]^i \in D^*$ be defined by:
+
+$$
+[x]^i_j = \begin{cases} x & \text{if } i = j,  \perp & \text{if } i \neq j. \end{cases}
+$$
+
+Note that since $D_i$ is continuous we have:
+
+$$
+[y_i]^i = \bigsqcup [x]^i : x \ll y_i,
+$$
+
+and
+
+$$
+y = \bigsqcup [y_i]^i : i \in I.
+$$
+
+108
+
+It follows that
+
+$$
+y = \bigsqcup \bigcap \{ z : z_i \in U \text{ for all } i \in I,\, y_i \in U \},
+$$
+
+where $i$ ranges over $I$ and $U$ over the open subsets of $D_i$, because
+
+$$
+[x]^i \sqsubseteq \bigcap  z : z_i \in U , \quad \text{where } U =  u \in D_i : x \ll u .
+$$
+
+But the sets $ z : z_i \in U $ are open in the product sense, and so
+
+$$
+y = \bigsqcup  \bigcap U : y \in U ,
+$$
+
+where $U$ ranges now over the open subsets of the product topology on $D^*$. By the remark following 2.4 we conclude that $D^*$ is continuous with the lattice-induced topology being the product topology. $\square$
+
+**Proof of 2.10**
+
+Let $D'$ be a continuous lattice and let $D \subseteq D'$ be a subspace which is a retract. We have for a suitable $j : D' \to D$,
+
+$$
+D =  x \in D' : j(x) = x ,
+$$
+
+where of course $j$ is continuous.
+
+*First a note of warning:* though $D$ is a subspace it is not a sublattice; that is, the partial ordering on $D$ is the restriction of that of $D'$, but the lubs of $D$ are not those of $D'$. We shall have to distinguish operations by adding a prime ($'$) for those of $D'$.
+
+Suppose $x, y \in D$. Let $z' = x \sqcup y \in D'$ (join taken in $D'$) and define $z = j(z') \in D$. Now $x \sqsubseteq z'$ and $y \sqsubseteq z'$, and $j$ is monotonic, so $x \sqsubseteq z$ and $y \sqsubseteq z$. Suppose $x \sqsubseteq w$ and $y \sqsubseteq w$ with $w \in D$. Then in $D'$ we have $x \sqcup y \sqsubseteq w$; so $z \sqsubseteq w$ also. Hence we have shown that $z = x \sqcup y$ in $D$.
+
+To show that $D$ has a least element $\bot$ (which may be larger than the $\bot' \in D'$), we need a well-known lemma about monotonic functions: Every monotonic function on a complete lattice into itself has a least fixed point. (Cf. Birkhoff (1970), p. 115.) In our case $j$ is monotonic and
+
+$$
+\bot = \sqcap \ x \in D' : j(x) \sqsubseteq x
+$$
+
+is the desired element in $D$.
+
+Thus $D$ is at least a semilattice with $\bot$ and $\sqcup$. To show that $D$ is a lattice we need to show that every directed $S \subseteq D$ has a lub in $D$. Now we know ($S' = S$, join taken in the ambient lattice $D'$):
+
+$$
+\bigsqcup S' \in D',
+$$
+
+and this is a limit of a monotone net. So by 2.1, and the continuity of $j$:
+
+$$
+\begin{aligned}
+j(\bigsqcup S') &= \bigsqcup  j(x) : x \in S  
+&= \bigsqcup S
+\end{aligned}
+$$
+
+in $D$. In this way we now know that $D$ is a complete lattice. We must
+
+109
+
+still show that $D$ is continuous.
+
+Suppose $y \in D$. In $D'$ we can write:
+
+$$y = \bigsqcup  x \in D' : x \ll y '$$
+
+and this is the limit of a monotone net. Thus
+
+$$j(y) = y = \bigsqcup  j(x) : x \ll y, x \in D' ,$$
+
+where the lub is taken in $D$. Note that the sets
+
+$$U =  z \in D : x \ll z $$
+
+are open in $D$ for each $x \in D'$. Note too that if $z \in U$, then $x \sqsubseteq z$ and so $j(x) \sqsubseteq j(z) = z$. This means that
+
+$$j(x) \sqsubseteq \sqcap U$$
+
+in $D$. We can then write in $D$:
+
+$$y = \bigsqcup \sqcap U : y \in U $$
+
+where $U$ ranges over the open subsets of $D$, and so the lattice is continuous by 2.4. Inasmuch as the open sets $U$ just used were open in the subspace topology, it follows by the remark after 2.4 that the subspace and the lattice-induced topologies coincide. $\square$
+
+*Proof of 2.11*: Let $D$ be a continuous lattice with its induced topology, and let $X \subseteq Y$ be two $T_0$-spaces in the subspace relation. Suppose
+
+$$f : X \to D$$
+
+is continuous. Define
+
+$$\bar{f} : Y \to D$$
+
+by the formula:
+
+$$\bar{f}(y) = \bigsqcup \sqcap f(x) : x \in X \cap U : y \in U ,$$
+
+where $U$ ranges over the open subsets of $Y$. We need to show that $\bar{f}$ extends $f$ and that it is continuous.
+
+First, the continuity: Suppose that $d \in D$ and $d \ll \bar{f}(y)$; that is, $\bar{f}(y)$ belongs to a typical basic open subset of $D$. Since $D$ is continuous, we can also find
+
+$$d \ll d' \ll \bar{f}(y)$$
+
+with $d' \in D$. From the definition of $\bar{f}$ it follows that
+
+$$d' \sqsubseteq \sqcap f(x) : x \in X \cap U $$
+
+for some open $U \subseteq Y$ with $y \in U$. Thus
+
+110
+
+$$d' \sqsubseteq \bar{f}(y')$$
+
+for all $y' \in U$ by virtue of the definition of $\bar{f}$. Since $d \ll d'$, we have also
+
+$$d \ll \bar{f}(y')$$
+
+for all $y' \in U$; in other words, the inverse image of the open subset of $D$ determined by $d$ under $\bar{f}$ is indeed open in $Y$, and $\bar{f}$ is thus continuous.
+
+Next, the extension property: Note that the relationship
+
+$$\bar{f}(x') \sqsubseteq f(x')$$
+
+for all $x' \in X$ comes directly out of the definition of $\bar{f}$. For the converse, suppose $d \ll f(x')$ where $d \in D$. By assumption $f : X \to D$ is continuous, so
+
+$$d \ll f(x'')$$
+
+for all $x'' \in X \cap U$ where $U$ is a suitable open subset of $Y$ with $x' \in U$. In particular we have:
+
+$$d \sqsubseteq \sqcap f(x'') : x'' \in X \cap U ,$$
+
+and so $d \sqsubseteq \bar{f}(x')$. Since $d \ll f(x')$ always implies $d \sqsubseteq \bar{f}(x')$, we see that $f(x') \sqsubseteq \bar{f}(x')$ follows by the continuity of $D$, and the proof is complete. $\square$
+
+The lattice approach to injective spaces gives a completely "internal" characterization of them: in the first place the lattices are complete. Next we can define lattice theoretically:
+
+$$
+x \ll y \quad \text{iff} \quad \text{whenever } y \sqsubseteq \bigsqcup Z \text{ and } Z \subseteq D \text{ is directed,}
+$$
+
+then $x \sqsubseteq z$ for some $z \in Z$.
+
+Finally we assume that for all $y \in D$:
+
+$$y = \bigsqcup  x \in D : x \ll y .$$
+
+That makes $D$ a continuous lattice with the sets $ y \in D : x \ll y $ as a basis for the topology. Such $T_0$-spaces are injective and every injective space can be obtained in this way with the lattice structure being uniquely determined by the topology. Furthermore, as we have seen, the injective property can be exhibited, as in the proof of 2.11, by an explicit formula for extending functions.
+
+The retract approach to injective spaces should also be considered. The Cartesian powers $\mathbb{O}^I$ are very simple spaces; indeed, as lattices these are just the Boolean algebras of *all subsets* of $I$ (that is, isomorphic thereto). The topology has as a basis the
+
+111
+
+classes of sets containing given finite sets (the *weak topology*, cf. Nerode (1959)). A continuous function
+
+$$j : \mathcal{P}I \to \mathcal{P}I$$
+
+is one of "finite character" so that
+
+$$j(X) = \bigcup  j(F) : F \subseteq X $$
+
+where $X \subseteq I$ and $F$ ranges over *finite sets*. Such a function $j$ is a *retraction* iff it is an *idempotent*:
+
+$$j \circ j = j,$$
+
+which means that the range of $j$ is the set of fixed points of $j$. As we have seen
+
+$$D =  X \in \mathcal{P}I : j(X) = X $$
+
+is a continuous lattice (under $\subseteq$ in this case), and *every* continuous lattice is isomorphic to one obtained in this way. This provides a representation theorem of sorts for continuous lattices, but it does not seem to be of too much help in proving theorems.
+
+The reader should not forget that any space (any *given* number of spaces $X$, $Y$, $\ldots$) can be found as a *subspace* of a continuous lattice $D$. Since $D$ is injective any continuous function $f : X \to Y$ can be extended to a continuous function $\bar{f} : D \to D$. Thus the continuous functions from $D$ into $D$ are a rich totality including *all* the structure of continuous functions on *all* the subspaces. And this remark brings us to the study of function spaces.

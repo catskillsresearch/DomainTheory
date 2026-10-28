@@ -1,12 +1,9 @@
-# 1. Injective spaces
+# Injective spaces
 
-**Dependencies.** Each box is one outline note below. The arrowhead points at the note that imports, and the number is how many direct imports. An arrow already implied by a longer path is left out.
+@import "1972_Injective_spaces.english" {code_block=false}
 
 @import "Injective.mermaid"
 
-$T_0$ spaces and absolute retracts have no Lean files of their own.
-
-- [T0 spaces](1972_T0_spaces.md)
 - [Definition 1.1: Injective Space](1972_Definition_1_1.md)
 - [Proposition 1.2](1972_Proposition_1_2.md)
 - [Proposition 1.3](1972_Proposition_1_3.md)

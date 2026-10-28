@@ -1,29 +1,35 @@
-%% The proof that the limit and its function space are inverse.
+%% Lean files imported under this note.
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
 
-  CONJX["conj"]
-  ESUP["embInf_succ_iSup"]
-  EINF["embInfInf"]
-  IINF["iInfTerm"]
-  INCL["incl_projInf"]
-  ISUP["iSup₂"]
-  JINF["jInfTerm"]
-  PINF["projInfInf"]
-  TPROJ["towerProj"]
+  FunctionSpaceTower_conj_iInfTerm_eq["conj_iInfTerm_eq"]
+  FunctionSpaceTower_conjMap_iSup["conjMap_iSup"]
+  FunctionSpaceTower_embInf_succ_iSup["embInf_succ_iSup"]
+  FunctionSpaceTower_embInfInf["embInfInf"]
+  FunctionSpaceTower_embInfInf_projInfInf["embInfInf_projInfInf"]
+  FunctionSpaceTower_iInfTerm["iInfTerm"]
+  FunctionSpaceTower_iInfTerm_monotone["iInfTerm_monotone"]
+  FunctionSpaceTower_incl_projInf_le_projInf_succ["incl_projInf_le_projInf_succ"]
+  FunctionSpaceTower_iSup__monotone_eq_diagonal["iSup₂_monotone_eq_diagonal"]
+  FunctionSpaceTower_jInfTerm["jInfTerm"]
+  FunctionSpaceTower_projInfInf["projInfInf"]
+  FunctionSpaceTower_towerProj_retr_conjMap_succ["towerProj_retr_conjMap_succ"]
 
-  PINF -->|"1"| EINF
-  TPROJ -->|"1"| EINF
-  JINF -->|"1"| ESUP
-  INCL -->|"1"| IINF
-  JINF -->|"1"| INCL
-  JINF -->|"1"| ISUP
-  IINF -->|"1"| JINF
-  CONJX -->|"2"| PINF
-  EINF -->|"1"| PINF
-  ESUP -->|"1"| PINF
-  JINF -->|"1"| TPROJ
-
-  classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
-  class IINF,EINF,JINF,INCL,ESUP,ISUP,CONJX,TPROJ,PINF,ECOMP concept
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
+  FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_conjMap_iSup
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_embInf_succ_iSup
+  FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_embInfInf
+  FunctionSpaceTower_projInfInf -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaceTower_towerProj_retr_conjMap_succ -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_iInfTerm_monotone
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_incl_projInf_le_projInf_succ
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_iSup__monotone_eq_diagonal
+  FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_jInfTerm
+  FunctionSpaceTower_conj_iInfTerm_eq -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_conjMap_iSup -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_embInf_succ_iSup -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_embInfInf -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_iInfTerm_monotone -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_iSup__monotone_eq_diagonal -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_towerProj_retr_conjMap_succ

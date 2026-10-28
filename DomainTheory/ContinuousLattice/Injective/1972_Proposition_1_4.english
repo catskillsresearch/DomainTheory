@@ -1,8 +1,8 @@
-We now have a large number of injective spaces, and further examples could be found using the next fact.
-
 **1.4 Proposition.** A retract of an injective space is injective.
 
 **Proof:** Let $D$ be injective. By a retract of $D$ we understand a subspace $D' \subseteq D$ for which there exists a retraction map $j: D \to D'$ such that
+
+100
 
 $$
 D' = x \in D : j(x) = x.
@@ -16,4 +16,5 @@ $$
 
 to show that $D'$ is injective. $\square$
 
-**Retract.** `IsRetractSubspace` is a subspace with a continuous retraction, and this proposition uses it to show a retract of an injective space is injective. The continuous-lattice form of the same idea is [Definition 3.6](../FunctionSpaces/1972_Definition_3_6.md). The representation by an idempotent on a power of $\mathbb{O}$ is [Theorem 2.12](../ContinuousLattices/1972_Theorem_2_12.md).
+The relationship between arbitrary $T_0$-spaces and the injective spaces is given by the embedding theorem.
+

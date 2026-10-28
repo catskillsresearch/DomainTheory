@@ -1,0 +1,15 @@
+**Proof of 4.4 concluded:** The lemma applies at once to our calculation, for we find:
+
+$$
+\begin{aligned}
+i_\infty(j_\infty(f)) &= \bigsqcup_{n=0}^{\infty} (i_{n\infty} \circ j_{\infty n} \circ f \circ i_{n\infty} \circ j_{\infty n}) 
+&= \bigsqcup_{n=0}^{\infty} (i_{n\infty} \circ j_{\infty n}) \circ f \circ \bigsqcup_{n=0}^{\infty} (i_{n\infty} \circ j_{\infty n}).
+\end{aligned}
+$$
+
+Here we have just applied the continuity of $f$ to be able to confine the lub on the right. But now by the remark following 4.2, we note the functional equation:
+
+$$\mathrm{id} = \bigsqcup_{n=0}^{\infty} (i_{n\infty} \circ j_{\infty n}),$$
+
+and the proof that $i_\infty$ and $j_\infty$ are inverse to one another is complete. $\square$
+

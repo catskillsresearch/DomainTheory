@@ -1,0 +1,12 @@
+**3.2 Proposition.** *The induced partial ordering on $[X \to Y]$ is such that:*
+
+$$f \sqsubseteq g \quad \text{iff} \quad f(x) \sqsubseteq g(x) \text{ for all } x \in X,$$
+
+where $f, g \in [X \to Y]$. $\square$
+
+112
+
+where $f, g \in [X \to Y]$. $\square$
+
+The first question, of course, is what kind of a partial ordering this is.
+

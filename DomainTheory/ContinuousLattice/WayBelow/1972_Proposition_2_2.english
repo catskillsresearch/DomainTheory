@@ -16,4 +16,3 @@
 
 The proofs of these statements can be safely left to the reader.
 
-The relation is [the way-below relation](1972_WayBelow.md). `proposition_2_2` is this statement. Its proof calls `bot_wayBelow`, `WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, `WayBelow.le`, `WayBelow.self_iff_scottOpen_Ici`, and `WayBelow.sSup_iff`, which are in `WayBelow.lean`.

@@ -1,0 +1,4 @@
+**2.10 Proposition.** A retract of a continuous lattice is a continuous lattice with the subspace topology agreeing with the induced topology.
+
+It would seem that the continuous lattices are starting to sound suspiciously like the injective spaces. Indeed, if we can prove the following, the circle will be complete.
+

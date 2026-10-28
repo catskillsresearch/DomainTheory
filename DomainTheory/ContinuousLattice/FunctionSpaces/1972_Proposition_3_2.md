@@ -1,9 +1,7 @@
 # Proposition 3.2
 
-**3.2 Proposition.** *The induced partial ordering on $[X \to Y]$ is such that:*
+@import "1972_Proposition_3_2.english" {code_block=false}
 
-$$f \sqsubseteq g \quad \text{iff} \quad f(x) \sqsubseteq g(x) \text{ for all } x \in X,$$
+**[DomainTheory/ContinuousLattice/FunctionSpaces/proposition_3_2.lean](proposition_3_2.lean)**
 
-where $f, g \in [X \to Y]$. $\square$
-
-where $f, g \in [X \to Y]$. $\square$
+@import "proposition_3_2.lean"

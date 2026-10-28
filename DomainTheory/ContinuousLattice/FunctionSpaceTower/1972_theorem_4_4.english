@@ -1,0 +1,28 @@
+**4.4 Theorem.** *The inverse limit $D_\infty$ of the recursively defined sequence $\langle D_n, j_n \rangle_{n=0}^{\infty}$ of function spaces is not only a continuous lattice, but it is also homeomorphic to its own function space $[D_\infty \to D_\infty]$.*
+
+**Proof:** We can write down directly the pair of maps $i_\infty, j_\infty$ that provide the homeomorphism:
+
+$$
+i_\infty(x) = \bigsqcup_{n=0}^{\infty} (i_{n\infty} \circ x_{n+1} \circ j_{\infty n}),
+$$
+
+$$
+j_\infty(f) = \bigsqcup_{n=0}^{\infty} i_{(n+1)\infty}(j_{\infty n} \circ f \circ i_{n\infty}).
+$$
+
+Note that these formulae are simply generalizations at the limit for the formulae we used to define $i_n, j_n$ in the first place. Thus it is not surprising that they would provide a projection of $[D_\infty \to D_\infty]$ upon $D_\infty$. Indeed we can compute out $j_\infty(i_\infty(x))$, noting that all the lubs are monotone and that a double monotone limit can always be replaced by a single one in view of the continuity of the operations involved, obtaining
+
+$$
+\begin{aligned}
+j_\infty(i_\infty(x)) &= \bigsqcup_{n=0}^{\infty} i_{(n+1)\infty}(j_{\infty n} \circ i_{n\infty} \circ x_{n+1} \circ j_{\infty n} \circ i_{n\infty}) 
+&= \bigsqcup_{n=0}^{\infty} i_{(n+1)\infty}(x_{n+1}) 
+&= x.
+\end{aligned}
+$$
+
+In the converse order the calculation is only a bit more complicated. The idea is that since all the functions $f$ are continuous and since the elements $x$ are the limits of their approximations, then each $f$ is actually completely determined by its
+
+128
+
+In the converse order the calculation is only a bit more complicated. The idea is that since all the functions $f$ are continuous and since the elements $x$ are the limits of their approximations, then each $f$ is actually completely determined by its sequence of restrictions $j_{\infty n} \circ f \circ i_{n\infty} \in D_{n+1}$. This simple idea can be made more precise with the aid of a lemma about $D_\infty$, which allows us in certain cases to recognize projections from limits.
+

@@ -1,0 +1,12 @@
+**3.4 Corollary.** For continuous lattices $D$ and $D'$, the evaluation map:
+
+$$
+\mathrm{eval} : [D \to D'] \times D \to D'
+$$
+
+is continuous.
+
+**Proof:** Here $\mathrm{eval}(f, x) = f(x)$. With $f$ fixed, this is obviously continuous. With $x$ fixed, we proved the continuity above with our calculation of $\bigsqcup \mathcal{F}$ in view of 2.5. Hence applying 5.3 and 2.6, we conclude that $\mathrm{eval}$ is jointly continuous. $\square$
+
+This result gives only one example of the masses of continuous functions that are available on continuous lattices. As another fundamental example we have:
+

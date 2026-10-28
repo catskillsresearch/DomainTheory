@@ -1,0 +1,36 @@
+**4.3 Corollary.** Let the spaces be as in 4.1 and 4.2. Let $D'$ be any complete lattice and suppose continuous functions $f_n : D_n \to D'$ are given so that $f_n = f_{n+1} \circ i_n$. Then we can define $f_\infty : D_\infty \to D'$ by the equation:
+
+$$
+f_\infty(x) = \bigsqcup_{n=0}^{\infty} f_n(x_n)
+$$
+
+for $x \in D_\infty$, and we have $f_n = f_\infty \circ i_{n\infty}$. $\square$
+
+The import of this last result is that within the category of complete lattices, the space $D_\infty$ is not only the inverse limit of the $D_n$, but it is also the *direct* limit. (One system of spaces here uses the $j_n$ as connecting maps, the other the $i_n$.) This is the algebraic result that lies at the heart of our main result about inverse limits of function spaces.
+
+Turning to function spaces, let $D = D_0$ be a given continuous lattice. As we have seen in 3.13, there are many ways of making $D_0$ a projection of $D_1 = [D_0 \to D_0]$. Choose one such given by a pair $i_0, j_0$. Define recursively:
+
+$$
+D_{n+1} = [D_n \to D_n]
+$$
+
+and introduce the pairs $i_{n+1}, j_{n+1}$ making $D_{n+1}$ a projection of $D_{n+2}$ by the method of 3.7. Specifically we shall have for $x \in D_{n+1}$ and $x' \in D_{n+2}$:
+
+127
+
+$$
+i_{n+1}(x) = i_n \circ x \circ j_n,
+$$
+
+$$
+j_{n+1}(x') = j_n \circ x' \circ i_n.
+$$
+
+Since these spaces are more than continuous lattices being function spaces, it is interesting to note that the maps $i_n$ preserve function value as an algebraic operation as follows:
+
+$$
+i_n(f(x)) = i_{n+1}(f)(i_n(x)),
+$$
+
+where $x \in D_n$ and $f \in D_{n+1}$. Thus in passing to the limit space $D_\infty$ something of functional application must also be preserved. The precise result shows that indeed $D_\infty$ becomes its own function space.
+

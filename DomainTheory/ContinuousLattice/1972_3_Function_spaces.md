@@ -1,0 +1,21 @@
+# Function spaces
+
+@import "1972_3_Function_spaces.english" {code_block=false}
+
+@import "1972_Function_spaces.mermaid"
+
+- [Definition 3.1: Function space](FunctionSpaces/1972_Definition_3_1.md)
+- [Proposition 3.2](FunctionSpaces/1972_Proposition_3_2.md)
+- [Theorem 3.3](FunctionSpaces/1972_Theorem_3_3.md)
+- [Corollary 3.4](FunctionSpaces/1972_Corollary_3_4.md)
+- [Proposition 3.5](FunctionSpaces/1972_Proposition_3_5.md)
+- [Retractions and extensions](FunctionSpaces/1972_Before_definition_3_6.md)
+- [Definition 3.6](FunctionSpaces/1972_Definition_3_6.md)
+- [Proposition 3.7](FunctionSpaces/1972_Proposition_3_7.md)
+- [Proposition 3.8](Constructions/1972_Proposition_3_8.md)
+- [Lemma 3.9](FunctionSpaces/1972_Lemma_3_9.md)
+- [Proposition 3.10](FunctionSpaces/1972_Proposition_3_10.md)
+- [Definition 3.11: Projection space](FunctionSpaces/1972_Definition_3_11.md)
+- [Proposition 3.12](FunctionSpaces/1972_Proposition_3_12.md)
+- [Proposition 3.13](FunctionSpaces/1972_Proposition_3_13.md)
+- [Proposition 3.14](FunctionSpaces/1972_Proposition_3_14.md)

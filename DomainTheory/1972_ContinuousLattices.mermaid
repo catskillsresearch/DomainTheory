@@ -1,15 +1,799 @@
+%% Lean files imported under this note.
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
-%% Section 0 has no Lean code, so it has no arrow.
 flowchart TB
 
-  CL["Continuous lattices"]
-  FS["Function spaces"]
-  INJ["Injective spaces"]
-  LIM["Inverse limits"]
+  FunctionSpaces_ambientSSup["ambientSSup"]
+  Constructions_Basic["Basic"]
+  FunctionSpaces_Basic["Basic"]
+  FunctionSpaces_BasicInst28["BasicInst28"]
+  FunctionSpaces_BasicInst30["BasicInst30"]
+  FunctionSpaces_BasicInst33["BasicInst33"]
+  FunctionSpaces_bot["bot"]
+  FunctionSpaces_bot_apply["bot_apply"]
+  FunctionSpaceTower_CLat["CLat"]
+  MilnerCorrection_CoarserThanScottTopology["CoarserThanScottTopology"]
+  InverseLimits_coconeInf["coconeInf"]
+  ContinuousLattices_coe_sSup["coe_sSup"]
+  InverseLimits_coe_sSup_of_directed["coe_sSup_of_directed"]
+  FunctionSpaces_comp["comp"]
+  FunctionSpaces_comp_apply["comp_apply"]
+  InverseLimits_Compatible["Compatible"]
+  ContinuousLattices_completeLattice["completeLattice"]
+  FunctionSpaces_con["con_"]
+  FunctionSpaces_con_apply["con_apply"]
+  FunctionSpaceTower_conj_iInfTerm_eq["conj_iInfTerm_eq"]
+  FunctionSpaceTower_conjMap["conjMap"]
+  FunctionSpaceTower_conjMap_iSup["conjMap_iSup"]
+  FunctionSpaces_const["const"]
+  FunctionSpaces_const_apply["const_apply"]
+  Constructions_continuous_eq_sSup_openInfs["continuous_eq_sSup_openInfs"]
+  ScottMaps_continuous_of_preservesDirectedSup["continuous_of_preservesDirectedSup"]
+  ScottMaps_continuous_preservesDirectedSup["continuous_preservesDirectedSup"]
+  WayBelow_ContinuousLattice["ContinuousLattice"]
+  FunctionSpaces_continuousMapInducedPiTopology["continuousMapInducedPiTopology"]
+  FunctionSpaces_converseProjection["converseProjection"]
+  FunctionSpaces_converseRetr["converseRetr"]
+  FunctionSpaces_converseRetr_incl["converseRetr_incl"]
+  FunctionSpaces_converseRetr_mono["converseRetr_mono"]
+  FunctionSpaces_converseRetr_preservesDirectedSup["converseRetr_preservesDirectedSup"]
+  Injective_corollary_1_6["corollary_1_6"]
+  Injective_corollary_1_7["corollary_1_7"]
+  FunctionSpaces_corollary_3_4["corollary_3_4"]
+  FunctionSpaces_corollary_3_4_eval_on_C["corollary_3_4_eval_on_C"]
+  FunctionSpaces_corollary_3_4_jointly_continuous["corollary_3_4_jointly_continuous"]
+  FunctionSpaces_corollary_3_4_preservesDirectedSup["corollary_3_4_preservesDirectedSup"]
+  InverseLimits_corollary_4_3["corollary_4_3"]
+  FunctionSpaces_curry_left_preservesDirectedSup["curry_left_preservesDirectedSup"]
+  FunctionSpaces_curry_right_preservesDirectedSup["curry_right_preservesDirectedSup"]
+  FunctionSpaceTower_DInf["DInf"]
+  FunctionSpaceTower_DInfFn["DInfFn"]
+  Constructions_directedOn_finite_sSup_mem["directedOn_finite_sSup_mem"]
+  FunctionSpaces_directedOn_finsetSupOf["directedOn_finsetSupOf"]
+  WayBelow_directedOn_wayBelow["directedOn_wayBelow"]
+  InverseLimits_embInf["embInf"]
+  FunctionSpaceTower_embInf_succ_iSup["embInf_succ_iSup"]
+  InverseLimits_embInfFun["embInfFun"]
+  FunctionSpaceTower_embInfInf["embInfInf"]
+  FunctionSpaceTower_embInfInf_projInfInf["embInfInf_projInfInf"]
+  InverseLimits_embLE["embLE"]
+  WayBelow_exists_wayBelow_Ici_subset["exists_wayBelow_Ici_subset"]
+  WayBelow_exists_wayBelow_subset["exists_wayBelow_subset"]
+  FunctionSpaces_finsetSupOf["finsetSupOf"]
+  FunctionSpaces_fix["fix"]
+  FunctionSpaces_fix_eq["fix_eq"]
+  FunctionSpaces_fix_le["fix_le"]
+  FunctionSpaces_fix_mono["fix_mono"]
+  FunctionSpaces_fix_preservesDirectedSup["fix_preservesDirectedSup"]
+  FunctionSpaces_fix_unique["fix_unique"]
+  FunctionSpaces_fixMap["fixMap"]
+  FunctionSpaceTower_functionSpaceInclFun["functionSpaceInclFun"]
+  FunctionSpaceTower_functionSpaceProjection["functionSpaceProjection"]
+  FunctionSpaceTower_functionSpaceRetrFun["functionSpaceRetrFun"]
+  InverseLimits_iComp["iComp"]
+  ContinuousLattices_IdemFix["IdemFix"]
+  ContinuousLattices_idemFix_incl_preservesDirectedSup["idemFix_incl_preservesDirectedSup"]
+  ContinuousLattices_idemFix_isContinuousLattice["idemFix_isContinuousLattice"]
+  ContinuousLattices_idemFix_retr_preservesDirectedSup["idemFix_retr_preservesDirectedSup"]
+  ContinuousLattices_idemFix_scottTopology["idemFix_scottTopology"]
+  ContinuousLattices_idemFixRetraction["idemFixRetraction"]
+  InverseLimits_idInf_eq_iSup["idInf_eq_iSup"]
+  FunctionSpaces_idMap["idMap"]
+  FunctionSpaces_idMap_apply["idMap_apply"]
+  FunctionSpaceTower_iInfTerm["iInfTerm"]
+  FunctionSpaceTower_iInfTerm_monotone["iInfTerm_monotone"]
+  FunctionSpaces_image_retr_wayBelow_directed["image_retr_wayBelow_directed"]
+  FunctionSpaces_image_retr_wayBelow_nonempty["image_retr_wayBelow_nonempty"]
+  FunctionSpaces_incl_bot["incl_bot"]
+  FunctionSpaces_incl_converseRetr_le["incl_converseRetr_le"]
+  FunctionSpaces_incl_finset_sup["incl_finset_sup"]
+  FunctionSpaces_incl_injective["incl_injective"]
+  FunctionSpaces_incl_mono_of_preservesSSup["incl_mono_of_preservesSSup"]
+  FunctionSpaces_incl_preservesDirectedSup["incl_preservesDirectedSup"]
+  FunctionSpaceTower_incl_projInf_le_projInf_succ["incl_projInf_le_projInf_succ"]
+  FunctionSpaces_incl_sSup["incl_sSup"]
+  FunctionSpaces_incl_sup["incl_sup"]
+  FunctionSpaces_incl_sup_of_preservesSSup["incl_sup_of_preservesSSup"]
+  FunctionSpaces_incl_wayBelow["incl_wayBelow"]
+  Injective_InjectiveSpace["InjectiveSpace"]
+  FunctionSpaces_instCompleteLattice["instCompleteLattice"]
+  InverseLimits_instCompleteLattice["instCompleteLattice"]
+  InverseLimits_instInfSet["instInfSet"]
+  FunctionSpaces_instSupSet["instSupSet"]
+  InverseLimits_InverseLimit["InverseLimit"]
+  InverseLimits_inverseLimitLE["inverseLimitLE"]
+  InverseLimits_inverseLimitLT["inverseLimitLT"]
+  InverseLimits_inverseLimitPartialOrder["inverseLimitPartialOrder"]
+  InverseLimits_inverseLimitSInfCoe["inverseLimitSInfCoe"]
+  InverseLimits_inverseLimitTopology["inverseLimitTopology"]
+  WayBelow_isContinuousLattice_iff_isLUB_sInf_nhds["isContinuousLattice_iff_isLUB_sInf_nhds"]
+  Constructions_isContinuousLattice_prop["isContinuousLattice_prop"]
+  FunctionSpaces_IsContinuousLatticeProjection["IsContinuousLatticeProjection"]
+  FunctionSpaces_IsContinuousLatticeRetraction["IsContinuousLatticeRetraction"]
+  ContinuousLattices_IsContinuousLatticeu2eorderIso["IsContinuousLatticeu2eorderIso"]
+  Injective_isInjectiveSpace_sierpinski["isInjectiveSpace_sierpinski"]
+  Injective_isInjectiveSpace_sierpinski_power["isInjectiveSpace_sierpinski_power"]
+  Injective_IsInjectiveSpaceu2eof_retract["IsInjectiveSpaceu2eof_retract"]
+  Injective_IsInjectiveSpaceu2epi["IsInjectiveSpaceu2epi"]
+  Basic_isLUB_sSup["isLUB_sSup"]
+  ContinuousLattices_isLUB_sSup["isLUB_sSup"]
+  FunctionSpaces_isLUB_sSup["isLUB_sSup"]
+  Specialization_isOpen_iff_scottOpen["isOpen_iff_scottOpen"]
+  Specialization_isOpen_scott_iff_scottOpen["isOpen_scott_iff_scottOpen"]
+  FunctionSpaces_IsProjection["IsProjection"]
+  FunctionSpaces_isProjection_bot["isProjection_bot"]
+  FunctionSpaces_isProjection_directedSup["isProjection_directedSup"]
+  FunctionSpaces_isProjection_finsetSup["isProjection_finsetSup"]
+  FunctionSpaces_isProjection_iff["isProjection_iff"]
+  FunctionSpaces_isProjection_sSup["isProjection_sSup"]
+  FunctionSpaces_isProjection_sup["isProjection_sup"]
+  Injective_IsRetractSubspace["IsRetractSubspace"]
+  FunctionSpaceTower_iSup__monotone_eq_diagonal["iSup₂_monotone_eq_diagonal"]
+  FunctionSpaceTower_jInfTerm["jInfTerm"]
+  FunctionSpaces_lambda_outer_preservesDirectedSup["lambda_outer_preservesDirectedSup"]
+  FunctionSpaces_le["le"]
+  FunctionSpaces_le_antisymm["le_antisymm'"]
+  FunctionSpaces_le_def["le_def"]
+  FunctionSpaces_le_of_incl_le["le_of_incl_le"]
+  FunctionSpaces_le_refl["le_refl'"]
+  FunctionSpaces_le_sSup_finsetSupOf["le_sSup_finsetSupOf"]
+  FunctionSpaces_le_trans["le_trans'"]
+  ContinuousLattices_lemma_3_9["lemma_3_9"]
+  FunctionSpaces_lemma_3_9_incl_inf["lemma_3_9_incl_inf"]
+  FunctionSpaces_lemma_3_9_retr_inf["lemma_3_9_retr_inf"]
+  InverseLimits_lemma_4_5["lemma_4_5"]
+  FunctionSpaces_lt["lt"]
+  FunctionSpaces_lt_iff_le_not_ge["lt_iff_le_not_ge'"]
+  ScottMaps_meet_preservesDirectedSup["meet_preservesDirectedSup"]
+  FunctionSpaces_mem_finsetSupOf_of_mem["mem_finsetSupOf_of_mem"]
+  FunctionSpaces_min["min"]
+  FunctionSpaces_min_apply["min_apply"]
+  FunctionSpaces_monotone["monotone"]
+  Specialization_MonotoneNet["MonotoneNet"]
+  ContinuousLattices_orderIso_wayBelow["orderIso_wayBelow"]
+  ContinuousLattices_orderIso_wayBelow_iff["orderIso_wayBelow_iff"]
+  ContinuousLattices_orderIsoScottHomeomorph["orderIsoScottHomeomorph"]
+  FunctionSpaces_pointwise_sSup_preservesDirectedSup["pointwise_sSup_preservesDirectedSup"]
+  FunctionSpaces_pointwise_sup_preservesDirectedSup["pointwise_sup_preservesDirectedSup"]
+  FunctionSpaces_pointwiseSubbasic_isOpen["pointwiseSubbasic_isOpen"]
+  FunctionSpaces_pointwiseSubbasic_scottOpen["pointwiseSubbasic_scottOpen"]
+  ScottMaps_PreservesDirectedSup["PreservesDirectedSup"]
+  FunctionSpaces_preservesDirectedSup_coe["preservesDirectedSup_coe"]
+  ScottMaps_preservesDirectedSup_monotone["preservesDirectedSup_monotone"]
+  FunctionSpaces_projection["projection"]
+  InverseLimits_projection_galoisConnection["projection_galoisConnection"]
+  FunctionSpaces_Projections["Projections"]
+  InverseLimits_projInf["projInf"]
+  FunctionSpaceTower_projInfInf["projInfInf"]
+  InverseLimits_projLE["projLE"]
+  Injective_proposition_1_2["proposition_1_2"]
+  Injective_proposition_1_3["proposition_1_3"]
+  Injective_proposition_1_4["proposition_1_4"]
+  Injective_proposition_1_5["proposition_1_5"]
+  Specialization_proposition_2_1["proposition_2_1"]
+  FunctionSpaces_proposition_2_10["proposition_2_10"]
+  FunctionSpaces_proposition_2_10_a["proposition_2_10_a"]
+  FunctionSpaces_proposition_2_10_b["proposition_2_10_b"]
+  Constructions_proposition_2_11["proposition_2_11"]
+  Specialization_proposition_2_1_le_of_converges["proposition_2_1_le_of_converges"]
+  Specialization_proposition_2_1_of_le["proposition_2_1_of_le"]
+  WayBelow_proposition_2_2["proposition_2_2"]
+  ContinuousLattices_proposition_2_4["proposition_2_4"]
+  ScottMaps_proposition_2_5["proposition_2_5"]
+  ScottMaps_proposition_2_6["proposition_2_6"]
+  ScottMaps_proposition_2_7_inf_left["proposition_2_7_inf_left"]
+  ScottMaps_proposition_2_7_inf_right["proposition_2_7_inf_right"]
+  ScottMaps_proposition_2_7_sup["proposition_2_7_sup"]
+  Constructions_proposition_2_8["proposition_2_8"]
+  Constructions_proposition_2_9["proposition_2_9"]
+  FunctionSpaces_proposition_3_10_converse["proposition_3_10_converse"]
+  FunctionSpaces_proposition_3_10_forward["proposition_3_10_forward"]
+  FunctionSpaces_proposition_3_12["proposition_3_12"]
+  FunctionSpaces_proposition_3_13["proposition_3_13"]
+  FunctionSpaces_proposition_3_14["proposition_3_14"]
+  FunctionSpaces_proposition_3_2["proposition_3_2"]
+  FunctionSpaces_proposition_3_5["proposition_3_5"]
+  FunctionSpaces_proposition_3_5_preservesDirectedSup["proposition_3_5_preservesDirectedSup"]
+  FunctionSpaces_proposition_3_7_projection["proposition_3_7_projection"]
+  FunctionSpaces_proposition_3_7_retraction["proposition_3_7_retraction"]
+  Constructions_proposition_3_8["proposition_3_8"]
+  InverseLimits_proposition_4_1["proposition_4_1"]
+  InverseLimits_proposition_4_2["proposition_4_2"]
+  FunctionSpaces_retr_ambientSSup_eq_sSup["retr_ambientSSup_eq_sSup"]
+  FunctionSpaces_retr_bot["retr_bot"]
+  FunctionSpaces_retr_eq_sSup["retr_eq_sSup"]
+  FunctionSpaces_retr_wayBelow_of_wayBelow_incl["retr_wayBelow_of_wayBelow_incl"]
+  Specialization_ScottConvergesTo["ScottConvergesTo"]
+  Constructions_scottExtend["scottExtend"]
+  Constructions_scottExtend_aux_directed["scottExtend_aux_directed"]
+  Constructions_scottExtend_aux_nonempty["scottExtend_aux_nonempty"]
+  Constructions_scottExtend_continuous["scottExtend_continuous"]
+  Constructions_scottExtend_eq_of_continuous["scottExtend_eq_of_continuous"]
+  Constructions_scottExtend_maximal["scottExtend_maximal"]
+  Constructions_scottExtend_maximal_le["scottExtend_maximal_le"]
+  FunctionSpaces_scottFunctionEvalSubbasis["scottFunctionEvalSubbasis"]
+  FunctionSpaces_scottFunctionSpecializationLe["scottFunctionSpecializationLe"]
+  FunctionSpaces_scottFunctionSubbasis_isOpen["scottFunctionSubbasis_isOpen"]
+  FunctionSpaces_scottFunctionSubbasis_isOpen_scott["scottFunctionSubbasis_isOpen_scott"]
+  FunctionSpaces_scottFunctionTopology["scottFunctionTopology"]
+  FunctionSpaces_scottFunctionTopology_eq_induced_pi["scottFunctionTopology_eq_induced_pi"]
+  FunctionSpaces_scottLambda["scottLambda"]
+  FunctionSpaces_scottLambda_apply["scottLambda_apply"]
+  FunctionSpaces_scottLambdaAt["scottLambdaAt"]
+  MilnerCorrection_scottLowerSubbasisSet["scottLowerSubbasisSet"]
+  FunctionSpaces_ScottMap["ScottMap"]
+  FunctionSpaces_scottMap_eq_sSup_openInfs["scottMap_eq_sSup_openInfs"]
+  FunctionSpaces_scottMapInducedPiTopology["scottMapInducedPiTopology"]
+  FunctionSpaces_scottMapPointwiseSubbasis["scottMapPointwiseSubbasis"]
+  FunctionSpaces_scottMapPointwiseTopology["scottMapPointwiseTopology"]
+  FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi["scottMapPointwiseTopology_eq_induced_pi"]
+  FunctionSpaces_ScottMapProjection["ScottMapProjection"]
+  FunctionSpaces_ScottMapRetraction["ScottMapRetraction"]
+  WayBelow_ScottOpen["ScottOpen"]
+  Specialization_ScottOpen_iff_dirSupInacc["ScottOpen_iff_dirSupInacc"]
+  Specialization_scottOpen_not_le["scottOpen_not_le"]
+  MilnerCorrection_scottOpen_of_coarserThanScott["scottOpen_of_coarserThanScott"]
+  ScottMaps_scottOpen_preimage["scottOpen_preimage"]
+  ContinuousLattices_scottOpen_preimage_orderIso["scottOpen_preimage_orderIso"]
+  WayBelow_scottOpen_wayBelow["scottOpen_wayBelow"]
+  WayBelow_ScottOpenu2eisUpperSet["ScottOpenu2eisUpperSet"]
+  MilnerCorrection_scottPrincipalUpSet["scottPrincipalUpSet"]
+  FunctionSpaces_scottSubspaceExtend["scottSubspaceExtend"]
+  FunctionSpaces_scottSubspaceExtend_eq_of_ext["scottSubspaceExtend_eq_of_ext"]
+  FunctionSpaces_scottSubspaceExtend_maximal["scottSubspaceExtend_maximal"]
+  FunctionSpaces_scottSubspaceExtend_mono["scottSubspaceExtend_mono"]
+  FunctionSpaces_scottSubspaceExtendInf["scottSubspaceExtendInf"]
+  FunctionSpaces_scottSubspaceExtendInf_eq_of_comp["scottSubspaceExtendInf_eq_of_comp"]
+  FunctionSpaces_scottSubspaceExtendInf_eq_of_ext["scottSubspaceExtendInf_eq_of_ext"]
+  FunctionSpaces_scottSubspaceExtendInf_le_of_mem["scottSubspaceExtendInf_le_of_mem"]
+  FunctionSpaces_scottSubspaceExtendInf_mono["scottSubspaceExtendInf_mono"]
+  FunctionSpaces_scottSubspaceExtendInf_mono_incl["scottSubspaceExtendInf_mono_incl"]
+  FunctionSpaces_scottSubspaceExtendInf_mono_incl_apply["scottSubspaceExtendInf_mono_incl_apply"]
+  FunctionSpaces_scottSubspaceExtendInf_mono_retr["scottSubspaceExtendInf_mono_retr"]
+  Specialization_scottTopologicalSpace["scottTopologicalSpace"]
+  Constructions_scottTopology_prop["scottTopology_prop"]
+  Constructions_scottTopology_sierpinskiPower["scottTopology_sierpinskiPower"]
+  Specialization_scottTopology_t0Space["scottTopology_t0Space"]
+  Constructions_sierpinski_isInjective_and_isContinuousLattice["sierpinski_isInjective_and_isContinuousLattice"]
+  Constructions_sierpinskiPower_isContinuousLattice["sierpinskiPower_isContinuousLattice"]
+  FunctionSpaces_sInf_image_le_sInf_image_of_subset["sInf_image_le_sInf_image_of_subset"]
+  WayBelow_sInf_wayBelow["sInf_wayBelow"]
+  Specialization_SpecializationLe["SpecializationLe"]
+  Specialization_specializationLe_antisymm["specializationLe_antisymm"]
+  FunctionSpaces_specializationLe_generateOpen["specializationLe_generateOpen"]
+  Specialization_specializationLe_iff_specializes["specializationLe_iff_specializes"]
+  Specialization_specializationLe_scott_iff["specializationLe_scott_iff"]
+  Specialization_SpecializationLeu2emap["SpecializationLeu2emap"]
+  Specialization_specializationPreorder["specializationPreorder"]
+  FunctionSpaces_sSup_apply["sSup_apply"]
+  FunctionSpaces_sSup_finsetSupOf["sSup_finsetSupOf"]
+  FunctionSpaces_sSup_image_prod_mk_left["sSup_image_prod_mk_left"]
+  FunctionSpaces_sSup_image_prod_mk_right["sSup_image_prod_mk_right"]
+  FunctionSpaces_sSup_image_retr_wayBelow["sSup_image_retr_wayBelow"]
+  FunctionSpaces_sSup_le_finsetSupOf["sSup_le_finsetSupOf"]
+  FunctionSpaces_sSupMaps["sSupMaps"]
+  FunctionSpaces_sSupMaps_apply["sSupMaps_apply"]
+  FunctionSpaces_sSupMaps_continuous["sSupMaps_continuous"]
+  FunctionSpaces_stepFun["stepFun"]
+  FunctionSpaces_stepFun_of_not_wayBelow["stepFun_of_not_wayBelow"]
+  FunctionSpaces_stepFun_of_wayBelow["stepFun_of_wayBelow"]
+  FunctionSpaces_stepFun_preservesDirectedSup["stepFun_preservesDirectedSup"]
+  FunctionSpaces_stepMap["stepMap"]
+  FunctionSpaces_stepMap_apply_of_wayBelow["stepMap_apply_of_wayBelow"]
+  FunctionSpaces_stepMap_le_of_wayBelow["stepMap_le_of_wayBelow"]
+  FunctionSpaces_stepMap_pointwise_sSup["stepMap_pointwise_sSup"]
+  FunctionSpaces_stepMap_wayBelow["stepMap_wayBelow"]
+  FunctionSpaces_sup["sup"]
+  FunctionSpaces_sup_apply["sup_apply"]
+  ContinuousLattices_supSet["supSet"]
+  Injective_t0_isEmbedding_into_sierpinski_power["t0_isEmbedding_into_sierpinski_power"]
+  ContinuousLattices_theorem_2_12["theorem_2_12"]
+  ContinuousLattices_theorem_2_12_more["theorem_2_12_more"]
+  FunctionSpaces_theorem_3_3["theorem_3_3"]
+  FunctionSpaces_theorem_3_3_more["theorem_3_3_more"]
+  FunctionSpaceTower_theorem_4_4["theorem_4_4"]
+  FunctionSpaceTower_theorem_4_4_more["theorem_4_4_more"]
+  FunctionSpaces_toOrderHom["toOrderHom"]
+  FunctionSpaceTower_towerProj["towerProj"]
+  FunctionSpaceTower_towerProj_retr_conjMap_succ["towerProj_retr_conjMap_succ"]
+  WayBelow_WayBelow["WayBelow"]
+  FunctionSpaces_wayBelow_finset_sup["wayBelow_finset_sup"]
+  FunctionSpaces_wayBelow_le_finset_sup_step["wayBelow_le_finset_sup_step"]
 
-  CL -->|"10"| FS
-  FS -->|"2"| LIM
-  INJ -->|"1"| LIM
-
-  classDef section fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  FunctionSpaces_IsContinuousLatticeRetraction -->|"1"| FunctionSpaces_ambientSSup
+  FunctionSpaces_fixMap -->|"1"| FunctionSpaces_Basic
+  Basic_isLUB_sSup -->|"1"| FunctionSpaces_Basic
+  ScottMaps_scottOpen_preimage -->|"1"| Constructions_Basic
+  WayBelow_WayBelow -->|"1"| FunctionSpaces_Basic
+  WayBelow_WayBelow -->|"1"| Constructions_Basic
+  FunctionSpaces_le_antisymm -->|"1"| FunctionSpaces_BasicInst28
+  FunctionSpaces_le_refl -->|"1"| FunctionSpaces_BasicInst28
+  FunctionSpaces_le_trans -->|"1"| FunctionSpaces_BasicInst28
+  FunctionSpaces_lt_iff_le_not_ge -->|"1"| FunctionSpaces_BasicInst28
+  FunctionSpaces_sSupMaps -->|"1"| FunctionSpaces_BasicInst30
+  FunctionSpaces_isLUB_sSup -->|"1"| FunctionSpaces_BasicInst33
+  FunctionSpaces_const -->|"1"| FunctionSpaces_bot
+  FunctionSpaces_BasicInst33 -->|"1"| FunctionSpaces_bot_apply
+  FunctionSpaces_BasicInst33 -->|"1"| FunctionSpaceTower_CLat
+  Specialization_scottTopologicalSpace -->|"1"| MilnerCorrection_CoarserThanScottTopology
+  InverseLimits_embInf -->|"1"| InverseLimits_coconeInf
+  InverseLimits_projInf -->|"1"| InverseLimits_coconeInf
+  ContinuousLattices_completeLattice -->|"1"| ContinuousLattices_coe_sSup
+  InverseLimits_instCompleteLattice -->|"1"| InverseLimits_coe_sSup_of_directed
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| InverseLimits_coe_sSup_of_directed
+  ScottMaps_proposition_2_5 -->|"1"| FunctionSpaces_comp
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_comp
+  FunctionSpaces_comp -->|"1"| FunctionSpaces_comp_apply
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| InverseLimits_Compatible
+  ContinuousLattices_isLUB_sSup -->|"1"| ContinuousLattices_completeLattice
+  FunctionSpaces_BasicInst33 -->|"1"| FunctionSpaces_con
+  FunctionSpaces_const_apply -->|"1"| FunctionSpaces_con
+  FunctionSpaces_con -->|"1"| FunctionSpaces_con_apply
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
+  InverseLimits_proposition_4_2 -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
+  FunctionSpaceTower_CLat -->|"1"| FunctionSpaceTower_conjMap
+  FunctionSpaces_comp -->|"1"| FunctionSpaceTower_conjMap
+  FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_conjMap_iSup
+  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| FunctionSpaces_const
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_const
+  FunctionSpaces_const -->|"1"| FunctionSpaces_const_apply
+  WayBelow_ContinuousLattice -->|"1"| Constructions_continuous_eq_sSup_openInfs
+  Specialization_isOpen_iff_scottOpen -->|"1"| Constructions_continuous_eq_sSup_openInfs
+  WayBelow_scottOpen_wayBelow -->|"1"| Constructions_continuous_eq_sSup_openInfs
+  Specialization_isOpen_iff_scottOpen -->|"1"| ScottMaps_continuous_of_preservesDirectedSup
+  ScottMaps_scottOpen_preimage -->|"1"| ScottMaps_continuous_of_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_continuous_preservesDirectedSup
+  Specialization_scottTopologicalSpace -->|"1"| ScottMaps_continuous_preservesDirectedSup
+  WayBelow_directedOn_wayBelow -->|"1"| WayBelow_ContinuousLattice
+  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| FunctionSpaces_converseProjection
+  FunctionSpaces_converseRetr_incl -->|"1"| FunctionSpaces_converseProjection
+  FunctionSpaces_converseRetr_preservesDirectedSup -->|"1"| FunctionSpaces_converseProjection
+  FunctionSpaces_incl_converseRetr_le -->|"1"| FunctionSpaces_converseProjection
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaces_converseProjection
+  FunctionSpaces_converseRetr -->|"1"| FunctionSpaces_converseRetr_incl
+  FunctionSpaces_incl_mono_of_preservesSSup -->|"1"| FunctionSpaces_converseRetr_incl
+  FunctionSpaces_le_of_incl_le -->|"1"| FunctionSpaces_converseRetr_incl
+  FunctionSpaces_converseRetr -->|"1"| FunctionSpaces_converseRetr_mono
+  WayBelow_ContinuousLattice -->|"1"| FunctionSpaces_converseRetr_preservesDirectedSup
+  FunctionSpaces_converseRetr_mono -->|"1"| FunctionSpaces_converseRetr_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup -->|"1"| FunctionSpaces_converseRetr_preservesDirectedSup
+  Injective_IsInjectiveSpaceu2eof_retract -->|"1"| Injective_corollary_1_6
+  Injective_IsRetractSubspace -->|"1"| Injective_corollary_1_6
+  Injective_proposition_1_5 -->|"1"| Injective_corollary_1_6
+  Injective_IsInjectiveSpaceu2eof_retract -->|"1"| Injective_corollary_1_7
+  Injective_proposition_1_5 -->|"1"| Injective_corollary_1_7
+  FunctionSpaces_corollary_3_4_eval_on_C -->|"1"| FunctionSpaces_corollary_3_4
+  FunctionSpaces_scottFunctionSubbasis_isOpen_scott -->|"1"| FunctionSpaces_corollary_3_4_eval_on_C
+  FunctionSpaces_corollary_3_4_preservesDirectedSup -->|"1"| FunctionSpaces_corollary_3_4_jointly_continuous
+  FunctionSpaces_Basic -->|"1"| FunctionSpaces_corollary_3_4_preservesDirectedSup
+  ScottMaps_proposition_2_6 -->|"1"| FunctionSpaces_corollary_3_4_preservesDirectedSup
+  InverseLimits_inverseLimitTopology -->|"1"| InverseLimits_corollary_4_3
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| FunctionSpaces_curry_left_preservesDirectedSup
+  FunctionSpaces_sSup_image_prod_mk_right -->|"1"| FunctionSpaces_curry_left_preservesDirectedSup
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| FunctionSpaces_curry_right_preservesDirectedSup
+  FunctionSpaces_sSup_image_prod_mk_left -->|"1"| FunctionSpaces_curry_right_preservesDirectedSup
+  InverseLimits_InverseLimit -->|"1"| FunctionSpaceTower_DInf
+  FunctionSpaceTower_towerProj -->|"1"| FunctionSpaceTower_DInf
+  FunctionSpaceTower_DInf -->|"1"| FunctionSpaceTower_DInfFn
+  InverseLimits_instCompleteLattice -->|"1"| FunctionSpaceTower_DInfFn
+  FunctionSpaces_finsetSupOf -->|"1"| FunctionSpaces_directedOn_finsetSupOf
+  WayBelow_WayBelow -->|"1"| WayBelow_directedOn_wayBelow
+  InverseLimits_embInfFun -->|"1"| InverseLimits_embInf
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_embInf_succ_iSup
+  InverseLimits_coe_sSup_of_directed -->|"1"| InverseLimits_embInfFun
+  InverseLimits_iComp -->|"1"| InverseLimits_embInfFun
+  FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_embInfInf
+  InverseLimits_lemma_4_5 -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaceTower_projInfInf -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaceTower_towerProj_retr_conjMap_succ -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaces_comp -->|"1"| InverseLimits_embLE
+  InverseLimits_InverseLimit -->|"1"| InverseLimits_embLE
+  FunctionSpaces_monotone -->|"1"| InverseLimits_embLE
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| InverseLimits_embLE
+  WayBelow_ContinuousLattice -->|"1"| WayBelow_exists_wayBelow_Ici_subset
+  WayBelow_ContinuousLattice -->|"1"| WayBelow_exists_wayBelow_subset
+  FunctionSpaces_toOrderHom -->|"1"| FunctionSpaces_fix
+  FunctionSpaces_fix -->|"1"| FunctionSpaces_fix_eq
+  FunctionSpaces_fix -->|"1"| FunctionSpaces_fix_le
+  FunctionSpaces_fix_eq -->|"1"| FunctionSpaces_fix_mono
+  FunctionSpaces_fix_le -->|"1"| FunctionSpaces_fix_mono
+  FunctionSpaces_le_def -->|"1"| FunctionSpaces_fix_mono
+  FunctionSpaces_BasicInst33 -->|"1"| FunctionSpaces_fix_preservesDirectedSup
+  FunctionSpaces_fix_mono -->|"1"| FunctionSpaces_fix_preservesDirectedSup
+  FunctionSpaces_fix_eq -->|"1"| FunctionSpaces_fix_unique
+  FunctionSpaces_fix_le -->|"1"| FunctionSpaces_fix_unique
+  FunctionSpaces_fix_preservesDirectedSup -->|"1"| FunctionSpaces_fixMap
+  FunctionSpaces_Basic -->|"1"| FunctionSpaceTower_functionSpaceInclFun
+  FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_functionSpaceInclFun
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaceTower_functionSpaceInclFun
+  FunctionSpaceTower_functionSpaceInclFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
+  FunctionSpaceTower_functionSpaceRetrFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
+  FunctionSpaces_proposition_3_7_projection -->|"1"| FunctionSpaceTower_functionSpaceProjection
+  FunctionSpaces_Basic -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
+  FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
+  InverseLimits_embLE -->|"1"| InverseLimits_iComp
+  InverseLimits_projLE -->|"1"| InverseLimits_iComp
+  ContinuousLattices_completeLattice -->|"1"| ContinuousLattices_idemFix_incl_preservesDirectedSup
+  ScottMaps_preservesDirectedSup_monotone -->|"1"| ContinuousLattices_idemFix_incl_preservesDirectedSup
+  ContinuousLattices_idemFixRetraction -->|"1"| ContinuousLattices_idemFix_isContinuousLattice
+  FunctionSpaces_proposition_2_10_a -->|"1"| ContinuousLattices_idemFix_isContinuousLattice
+  ContinuousLattices_coe_sSup -->|"1"| ContinuousLattices_idemFix_retr_preservesDirectedSup
+  ScottMaps_preservesDirectedSup_monotone -->|"1"| ContinuousLattices_idemFix_retr_preservesDirectedSup
+  ContinuousLattices_idemFixRetraction -->|"1"| ContinuousLattices_idemFix_scottTopology
+  FunctionSpaces_proposition_2_10_b -->|"1"| ContinuousLattices_idemFix_scottTopology
+  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| ContinuousLattices_idemFixRetraction
+  ContinuousLattices_idemFix_incl_preservesDirectedSup -->|"1"| ContinuousLattices_idemFixRetraction
+  ContinuousLattices_idemFix_retr_preservesDirectedSup -->|"1"| ContinuousLattices_idemFixRetraction
+  FunctionSpaces_IsContinuousLatticeRetraction -->|"1"| ContinuousLattices_idemFixRetraction
+  InverseLimits_inverseLimitTopology -->|"1"| InverseLimits_idInf_eq_iSup
+  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| FunctionSpaces_idMap
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_idMap
+  FunctionSpaces_idMap -->|"1"| FunctionSpaces_idMap_apply
+  FunctionSpaceTower_DInfFn -->|"1"| FunctionSpaceTower_iInfTerm
+  InverseLimits_embInf -->|"1"| FunctionSpaceTower_iInfTerm
+  InverseLimits_projInf -->|"1"| FunctionSpaceTower_iInfTerm
+  FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_iInfTerm_monotone
+  FunctionSpaces_IsContinuousLatticeRetraction -->|"1"| FunctionSpaces_image_retr_wayBelow_directed
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_image_retr_wayBelow_directed
+  WayBelow_WayBelow -->|"1"| FunctionSpaces_image_retr_wayBelow_directed
+  FunctionSpaces_IsContinuousLatticeRetraction -->|"1"| FunctionSpaces_image_retr_wayBelow_nonempty
+  WayBelow_WayBelow -->|"1"| FunctionSpaces_image_retr_wayBelow_nonempty
+  FunctionSpaces_retr_bot -->|"1"| FunctionSpaces_incl_bot
+  FunctionSpaces_converseRetr -->|"1"| FunctionSpaces_incl_converseRetr_le
+  FunctionSpaces_incl_bot -->|"1"| FunctionSpaces_incl_finset_sup
+  FunctionSpaces_incl_sup -->|"1"| FunctionSpaces_incl_finset_sup
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaces_incl_injective
+  FunctionSpaces_incl_sup_of_preservesSSup -->|"1"| FunctionSpaces_incl_mono_of_preservesSSup
+  FunctionSpaces_IsContinuousLatticeRetraction -->|"1"| FunctionSpaces_incl_preservesDirectedSup
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| FunctionSpaces_incl_preservesDirectedSup
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_incl_projInf_le_projInf_succ
+  FunctionSpaces_directedOn_finsetSupOf -->|"1"| FunctionSpaces_incl_sSup
+  FunctionSpaces_incl_finset_sup -->|"1"| FunctionSpaces_incl_sSup
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| FunctionSpaces_incl_sSup
+  FunctionSpaces_sSup_finsetSupOf -->|"1"| FunctionSpaces_incl_sSup
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaces_incl_sup
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_incl_sup
+  WayBelow_ContinuousLattice -->|"1"| FunctionSpaces_incl_wayBelow
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaces_incl_wayBelow
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_incl_wayBelow
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| FunctionSpaces_incl_wayBelow
+  InverseLimits_instInfSet -->|"1"| InverseLimits_instCompleteLattice
+  Basic_isLUB_sSup -->|"1"| FunctionSpaces_instCompleteLattice
+  InverseLimits_inverseLimitPartialOrder -->|"1"| InverseLimits_instInfSet
+  InverseLimits_inverseLimitSInfCoe -->|"1"| InverseLimits_instInfSet
+  InverseLimits_projection_galoisConnection -->|"1"| InverseLimits_instInfSet
+  FunctionSpaces_isProjection_sSup -->|"1"| FunctionSpaces_instSupSet
+  FunctionSpaces_Projections -->|"1"| FunctionSpaces_instSupSet
+  InverseLimits_Compatible -->|"1"| InverseLimits_InverseLimit
+  InverseLimits_InverseLimit -->|"1"| InverseLimits_inverseLimitLE
+  InverseLimits_inverseLimitLE -->|"1"| InverseLimits_inverseLimitLT
+  InverseLimits_inverseLimitLT -->|"1"| InverseLimits_inverseLimitPartialOrder
+  InverseLimits_InverseLimit -->|"1"| InverseLimits_inverseLimitSInfCoe
+  InverseLimits_coconeInf -->|"1"| InverseLimits_inverseLimitTopology
+  ContinuousLattices_lemma_3_9 -->|"1"| InverseLimits_inverseLimitTopology
+  Specialization_scottTopology_t0Space -->|"1"| InverseLimits_inverseLimitTopology
+  Specialization_specializationLe_iff_specializes -->|"1"| InverseLimits_inverseLimitTopology
+  ContinuousLattices_theorem_2_12 -->|"1"| InverseLimits_inverseLimitTopology
+  WayBelow_ContinuousLattice -->|"1"| WayBelow_isContinuousLattice_iff_isLUB_sInf_nhds
+  WayBelow_sInf_wayBelow -->|"1"| WayBelow_isContinuousLattice_iff_isLUB_sInf_nhds
+  Constructions_proposition_2_8 -->|"1"| Constructions_isContinuousLattice_prop
+  FunctionSpaces_IsContinuousLatticeRetraction -->|"1"| FunctionSpaces_IsContinuousLatticeProjection
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_IsContinuousLatticeRetraction
+  WayBelow_ContinuousLattice -->|"1"| ContinuousLattices_IsContinuousLatticeu2eorderIso
+  ContinuousLattices_orderIso_wayBelow -->|"1"| ContinuousLattices_IsContinuousLatticeu2eorderIso
+  Injective_InjectiveSpace -->|"1"| Injective_isInjectiveSpace_sierpinski
+  Injective_proposition_1_2 -->|"1"| Injective_isInjectiveSpace_sierpinski_power
+  Injective_proposition_1_3 -->|"1"| Injective_isInjectiveSpace_sierpinski_power
+  Injective_InjectiveSpace -->|"1"| Injective_IsInjectiveSpaceu2eof_retract
+  Injective_InjectiveSpace -->|"1"| Injective_IsInjectiveSpaceu2epi
+  FunctionSpaces_instSupSet -->|"1"| Basic_isLUB_sSup
+  FunctionSpaces_le_def -->|"1"| FunctionSpaces_isLUB_sSup
+  FunctionSpaces_sSup_apply -->|"1"| FunctionSpaces_isLUB_sSup
+  ContinuousLattices_supSet -->|"1"| ContinuousLattices_isLUB_sSup
+  Specialization_ScottOpen_iff_dirSupInacc -->|"1"| Specialization_isOpen_iff_scottOpen
+  Specialization_scottTopologicalSpace -->|"1"| Specialization_isOpen_iff_scottOpen
+  Specialization_isOpen_iff_scottOpen -->|"1"| Specialization_isOpen_scott_iff_scottOpen
+  FunctionSpaces_BasicInst28 -->|"1"| FunctionSpaces_IsProjection
+  FunctionSpaces_comp -->|"1"| FunctionSpaces_IsProjection
+  FunctionSpaces_idMap -->|"1"| FunctionSpaces_IsProjection
+  FunctionSpaces_bot_apply -->|"1"| FunctionSpaces_isProjection_bot
+  FunctionSpaces_isProjection_iff -->|"1"| FunctionSpaces_isProjection_bot
+  FunctionSpaces_isProjection_iff -->|"1"| FunctionSpaces_isProjection_directedSup
+  FunctionSpaces_sSup_apply -->|"1"| FunctionSpaces_isProjection_directedSup
+  FunctionSpaces_isProjection_bot -->|"1"| FunctionSpaces_isProjection_finsetSup
+  FunctionSpaces_isProjection_sup -->|"1"| FunctionSpaces_isProjection_finsetSup
+  FunctionSpaces_comp_apply -->|"1"| FunctionSpaces_isProjection_iff
+  FunctionSpaces_idMap_apply -->|"1"| FunctionSpaces_isProjection_iff
+  FunctionSpaces_IsProjection -->|"1"| FunctionSpaces_isProjection_iff
+  FunctionSpaces_le_def -->|"1"| FunctionSpaces_isProjection_iff
+  FunctionSpaces_directedOn_finsetSupOf -->|"1"| FunctionSpaces_isProjection_sSup
+  FunctionSpaces_isProjection_directedSup -->|"1"| FunctionSpaces_isProjection_sSup
+  FunctionSpaces_isProjection_finsetSup -->|"1"| FunctionSpaces_isProjection_sSup
+  FunctionSpaces_sSup_finsetSupOf -->|"1"| FunctionSpaces_isProjection_sSup
+  FunctionSpaces_isProjection_iff -->|"1"| FunctionSpaces_isProjection_sup
+  FunctionSpaces_sup_apply -->|"1"| FunctionSpaces_isProjection_sup
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_iSup__monotone_eq_diagonal
+  FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_jInfTerm
+  FunctionSpaces_BasicInst33 -->|"1"| FunctionSpaces_lambda_outer_preservesDirectedSup
+  FunctionSpaces_curry_left_preservesDirectedSup -->|"1"| FunctionSpaces_lambda_outer_preservesDirectedSup
+  FunctionSpaces_scottLambdaAt -->|"1"| FunctionSpaces_lambda_outer_preservesDirectedSup
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_le
+  FunctionSpaces_le -->|"1"| FunctionSpaces_le_antisymm
+  FunctionSpaces_BasicInst28 -->|"1"| FunctionSpaces_le_def
+  FunctionSpaces_incl_sup_of_preservesSSup -->|"1"| FunctionSpaces_le_of_incl_le
+  FunctionSpaces_le -->|"1"| FunctionSpaces_le_refl
+  FunctionSpaces_mem_finsetSupOf_of_mem -->|"1"| FunctionSpaces_le_sSup_finsetSupOf
+  FunctionSpaces_le -->|"1"| FunctionSpaces_le_trans
+  FunctionSpaces_Basic -->|"1"| ContinuousLattices_lemma_3_9
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| ContinuousLattices_lemma_3_9
+  Constructions_scottExtend_continuous -->|"1"| ContinuousLattices_lemma_3_9
+  Constructions_scottExtend_eq_of_continuous -->|"1"| ContinuousLattices_lemma_3_9
+  Constructions_scottExtend_maximal -->|"1"| ContinuousLattices_lemma_3_9
+  Constructions_scottExtend_maximal_le -->|"1"| ContinuousLattices_lemma_3_9
+  FunctionSpaces_scottSubspaceExtendInf_mono_incl -->|"1"| FunctionSpaces_lemma_3_9_incl_inf
+  FunctionSpaces_scottSubspaceExtendInf_mono_incl_apply -->|"1"| FunctionSpaces_lemma_3_9_incl_inf
+  FunctionSpaces_scottSubspaceExtendInf_mono_retr -->|"1"| FunctionSpaces_lemma_3_9_retr_inf
+  InverseLimits_embInf -->|"1"| InverseLimits_lemma_4_5
+  InverseLimits_projInf -->|"1"| InverseLimits_lemma_4_5
+  FunctionSpaces_le -->|"1"| FunctionSpaces_lt
+  FunctionSpaces_lt -->|"1"| FunctionSpaces_lt_iff_le_not_ge
+  WayBelow_ContinuousLattice -->|"1"| ScottMaps_meet_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_meet_preservesDirectedSup
+  FunctionSpaces_finsetSupOf -->|"1"| FunctionSpaces_mem_finsetSupOf_of_mem
+  FunctionSpaces_BasicInst33 -->|"1"| FunctionSpaces_min
+  FunctionSpaces_min -->|"1"| FunctionSpaces_min_apply
+  ScottMaps_proposition_2_5 -->|"1"| FunctionSpaces_monotone
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_monotone
+  ContinuousLattices_scottOpen_preimage_orderIso -->|"1"| ContinuousLattices_orderIso_wayBelow
+  WayBelow_WayBelow -->|"1"| ContinuousLattices_orderIso_wayBelow
+  ContinuousLattices_orderIso_wayBelow -->|"1"| ContinuousLattices_orderIso_wayBelow_iff
+  Specialization_isOpen_iff_scottOpen -->|"1"| ContinuousLattices_orderIsoScottHomeomorph
+  ContinuousLattices_scottOpen_preimage_orderIso -->|"1"| ContinuousLattices_orderIsoScottHomeomorph
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_pointwise_sSup_preservesDirectedSup
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| FunctionSpaces_pointwise_sSup_preservesDirectedSup
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| FunctionSpaces_pointwise_sup_preservesDirectedSup
+  FunctionSpaces_scottMapPointwiseTopology -->|"1"| FunctionSpaces_pointwiseSubbasic_isOpen
+  FunctionSpaces_BasicInst33 -->|"1"| FunctionSpaces_pointwiseSubbasic_scottOpen
+  ScottMaps_proposition_2_5 -->|"1"| FunctionSpaces_preservesDirectedSup_coe
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_preservesDirectedSup_coe
+  ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_preservesDirectedSup_monotone
+  FunctionSpaces_con -->|"1"| FunctionSpaces_projection
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaces_projection
+  FunctionSpaces_min -->|"1"| FunctionSpaces_projection
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| InverseLimits_projection_galoisConnection
+  FunctionSpaces_monotone -->|"1"| InverseLimits_projection_galoisConnection
+  FunctionSpaces_IsProjection -->|"1"| FunctionSpaces_Projections
+  InverseLimits_coe_sSup_of_directed -->|"1"| InverseLimits_projInf
+  FunctionSpaceTower_conj_iInfTerm_eq -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_conjMap_iSup -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_embInf_succ_iSup -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_embInfInf -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_iInfTerm_monotone -->|"1"| FunctionSpaceTower_projInfInf
+  InverseLimits_inverseLimitTopology -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_iSup__monotone_eq_diagonal -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaces_comp -->|"1"| InverseLimits_projLE
+  InverseLimits_InverseLimit -->|"1"| InverseLimits_projLE
+  FunctionSpaces_monotone -->|"1"| InverseLimits_projLE
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| InverseLimits_projLE
+  Injective_isInjectiveSpace_sierpinski -->|"1"| Injective_proposition_1_2
+  Injective_IsInjectiveSpaceu2epi -->|"1"| Injective_proposition_1_3
+  Injective_IsInjectiveSpaceu2eof_retract -->|"1"| Injective_proposition_1_4
+  Injective_isInjectiveSpace_sierpinski_power -->|"1"| Injective_proposition_1_5
+  Specialization_proposition_2_1_le_of_converges -->|"1"| Specialization_proposition_2_1
+  Specialization_proposition_2_1_of_le -->|"1"| Specialization_proposition_2_1
+  FunctionSpaces_proposition_2_10_a -->|"1"| FunctionSpaces_proposition_2_10
+  FunctionSpaces_proposition_2_10_b -->|"1"| FunctionSpaces_proposition_2_10
+  FunctionSpaces_retr_wayBelow_of_wayBelow_incl -->|"1"| FunctionSpaces_proposition_2_10_a
+  FunctionSpaces_sSup_image_retr_wayBelow -->|"1"| FunctionSpaces_proposition_2_10_a
+  FunctionSpaces_image_retr_wayBelow_directed -->|"1"| FunctionSpaces_proposition_2_10_b
+  FunctionSpaces_image_retr_wayBelow_nonempty -->|"1"| FunctionSpaces_proposition_2_10_b
+  FunctionSpaces_incl_preservesDirectedSup -->|"1"| FunctionSpaces_proposition_2_10_b
+  WayBelow_scottOpen_wayBelow -->|"1"| FunctionSpaces_proposition_2_10_b
+  FunctionSpaces_sSup_image_retr_wayBelow -->|"1"| FunctionSpaces_proposition_2_10_b
+  Injective_InjectiveSpace -->|"1"| Constructions_proposition_2_11
+  Constructions_scottExtend_continuous -->|"1"| Constructions_proposition_2_11
+  Constructions_scottExtend_eq_of_continuous -->|"1"| Constructions_proposition_2_11
+  Specialization_ScottConvergesTo -->|"1"| Specialization_proposition_2_1_le_of_converges
+  Specialization_scottOpen_not_le -->|"1"| Specialization_proposition_2_1_le_of_converges
+  Specialization_MonotoneNet -->|"1"| Specialization_proposition_2_1_of_le
+  Specialization_ScottConvergesTo -->|"1"| Specialization_proposition_2_1_of_le
+  WayBelow_WayBelow -->|"1"| WayBelow_proposition_2_2
+  WayBelow_isContinuousLattice_iff_isLUB_sInf_nhds -->|"1"| ContinuousLattices_proposition_2_4
+  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| ScottMaps_proposition_2_5
+  ScottMaps_continuous_preservesDirectedSup -->|"1"| ScottMaps_proposition_2_5
+  ScottMaps_preservesDirectedSup_monotone -->|"1"| ScottMaps_proposition_2_6
+  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| ScottMaps_proposition_2_7_inf_left
+  ScottMaps_meet_preservesDirectedSup -->|"1"| ScottMaps_proposition_2_7_inf_left
+  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| ScottMaps_proposition_2_7_inf_right
+  ScottMaps_meet_preservesDirectedSup -->|"1"| ScottMaps_proposition_2_7_inf_right
+  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| ScottMaps_proposition_2_7_sup
+  WayBelow_ContinuousLattice -->|"1"| Constructions_proposition_2_8
+  Constructions_directedOn_finite_sSup_mem -->|"1"| Constructions_proposition_2_8
+  Constructions_Basic -->|"1"| Constructions_proposition_2_9
+  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| Constructions_proposition_2_9
+  WayBelow_exists_wayBelow_Ici_subset -->|"1"| Constructions_proposition_2_9
+  FunctionSpaces_converseProjection -->|"1"| FunctionSpaces_proposition_3_10_converse
+  FunctionSpaces_incl_injective -->|"1"| FunctionSpaces_proposition_3_10_forward
+  FunctionSpaces_incl_sSup -->|"1"| FunctionSpaces_proposition_3_10_forward
+  FunctionSpaces_incl_wayBelow -->|"1"| FunctionSpaces_proposition_3_10_forward
+  FunctionSpaces_instCompleteLattice -->|"1"| FunctionSpaces_proposition_3_12
+  WayBelow_ContinuousLattice -->|"1"| FunctionSpaces_proposition_3_13
+  FunctionSpaces_projection -->|"1"| FunctionSpaces_proposition_3_13
+  WayBelow_ContinuousLattice -->|"1"| FunctionSpaces_proposition_3_14
+  FunctionSpaces_fix_unique -->|"1"| FunctionSpaces_proposition_3_14
+  FunctionSpaces_fixMap -->|"1"| FunctionSpaces_proposition_3_14
+  FunctionSpaces_scottFunctionSpecializationLe -->|"1"| FunctionSpaces_proposition_3_2
+  FunctionSpaces_proposition_3_5_preservesDirectedSup -->|"1"| FunctionSpaces_proposition_3_5
+  FunctionSpaces_scottLambda_apply -->|"1"| FunctionSpaces_proposition_3_5_preservesDirectedSup
+  FunctionSpaces_ScottMapProjection -->|"1"| FunctionSpaces_proposition_3_7_projection
+  FunctionSpaces_ScottMapRetraction -->|"1"| FunctionSpaces_proposition_3_7_retraction
+  Constructions_scottExtend_continuous -->|"1"| Constructions_proposition_3_8
+  Constructions_scottExtend_eq_of_continuous -->|"1"| Constructions_proposition_3_8
+  Constructions_scottExtend_maximal -->|"1"| Constructions_proposition_3_8
+  InverseLimits_inverseLimitTopology -->|"1"| InverseLimits_proposition_4_1
+  InverseLimits_embInf -->|"1"| InverseLimits_proposition_4_2
+  InverseLimits_projInf -->|"1"| InverseLimits_proposition_4_2
+  FunctionSpaces_ambientSSup -->|"1"| FunctionSpaces_retr_ambientSSup_eq_sSup
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_retr_ambientSSup_eq_sSup
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| FunctionSpaces_retr_ambientSSup_eq_sSup
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaces_retr_bot
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_retr_bot
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaces_retr_eq_sSup
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_retr_eq_sSup
+  FunctionSpaces_incl_preservesDirectedSup -->|"1"| FunctionSpaces_retr_wayBelow_of_wayBelow_incl
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_retr_wayBelow_of_wayBelow_incl
+  WayBelow_WayBelow -->|"1"| FunctionSpaces_retr_wayBelow_of_wayBelow_incl
+  WayBelow_ScottOpen -->|"1"| Specialization_ScottConvergesTo
+  WayBelow_exists_wayBelow_subset -->|"1"| Constructions_scottExtend_continuous
+  Specialization_isOpen_iff_scottOpen -->|"1"| Constructions_scottExtend_continuous
+  Constructions_scottExtend -->|"1"| Constructions_scottExtend_continuous
+  Constructions_scottExtend_aux_directed -->|"1"| Constructions_scottExtend_continuous
+  Constructions_scottExtend_aux_nonempty -->|"1"| Constructions_scottExtend_continuous
+  WayBelow_ContinuousLattice -->|"1"| Constructions_scottExtend_eq_of_continuous
+  Specialization_isOpen_iff_scottOpen -->|"1"| Constructions_scottExtend_eq_of_continuous
+  Constructions_scottExtend -->|"1"| Constructions_scottExtend_eq_of_continuous
+  WayBelow_scottOpen_wayBelow -->|"1"| Constructions_scottExtend_eq_of_continuous
+  Constructions_continuous_eq_sSup_openInfs -->|"1"| Constructions_scottExtend_maximal
+  Constructions_scottExtend -->|"1"| Constructions_scottExtend_maximal
+  Constructions_continuous_eq_sSup_openInfs -->|"1"| Constructions_scottExtend_maximal_le
+  Constructions_scottExtend -->|"1"| Constructions_scottExtend_maximal_le
+  FunctionSpaces_scottFunctionSubbasis_isOpen -->|"1"| FunctionSpaces_scottFunctionSpecializationLe
+  FunctionSpaces_specializationLe_generateOpen -->|"1"| FunctionSpaces_scottFunctionSpecializationLe
+  FunctionSpaces_scottFunctionTopology -->|"1"| FunctionSpaces_scottFunctionSubbasis_isOpen
+  FunctionSpaces_Basic -->|"1"| FunctionSpaces_scottFunctionSubbasis_isOpen_scott
+  FunctionSpaces_scottFunctionTopology -->|"1"| FunctionSpaces_scottFunctionSubbasis_isOpen_scott
+  FunctionSpaces_scottFunctionEvalSubbasis -->|"1"| FunctionSpaces_scottFunctionTopology
+  FunctionSpaces_continuousMapInducedPiTopology -->|"1"| FunctionSpaces_scottFunctionTopology_eq_induced_pi
+  FunctionSpaces_scottFunctionSubbasis_isOpen -->|"1"| FunctionSpaces_scottFunctionTopology_eq_induced_pi
+  FunctionSpaces_lambda_outer_preservesDirectedSup -->|"1"| FunctionSpaces_scottLambda
+  FunctionSpaces_scottLambda -->|"1"| FunctionSpaces_scottLambda_apply
+  FunctionSpaces_curry_right_preservesDirectedSup -->|"1"| FunctionSpaces_scottLambdaAt
+  Specialization_scottTopologicalSpace -->|"1"| FunctionSpaces_ScottMap
+  WayBelow_ContinuousLattice -->|"1"| FunctionSpaces_scottMap_eq_sSup_openInfs
+  ScottMaps_proposition_2_5 -->|"1"| FunctionSpaces_scottMap_eq_sSup_openInfs
+  FunctionSpaces_scottSubspaceExtendInf_le_of_mem -->|"1"| FunctionSpaces_scottMap_eq_sSup_openInfs
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_scottMapInducedPiTopology
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_scottMapPointwiseSubbasis
+  FunctionSpaces_scottMapPointwiseSubbasis -->|"1"| FunctionSpaces_scottMapPointwiseTopology
+  FunctionSpaces_pointwiseSubbasic_isOpen -->|"1"| FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi
+  FunctionSpaces_scottMapInducedPiTopology -->|"1"| FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaces_ScottMapProjection
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_ScottMapProjection
+  FunctionSpaces_ScottMapRetraction -->|"1"| FunctionSpaces_ScottMapProjection
+  FunctionSpaces_comp -->|"1"| FunctionSpaces_ScottMapRetraction
+  FunctionSpaces_IsContinuousLatticeRetraction -->|"1"| FunctionSpaces_ScottMapRetraction
+  WayBelow_ScottOpen -->|"1"| Specialization_ScottOpen_iff_dirSupInacc
+  WayBelow_ScottOpen -->|"1"| Specialization_scottOpen_not_le
+  MilnerCorrection_CoarserThanScottTopology -->|"1"| MilnerCorrection_scottOpen_of_coarserThanScott
+  Specialization_isOpen_iff_scottOpen -->|"1"| MilnerCorrection_scottOpen_of_coarserThanScott
+  ScottMaps_preservesDirectedSup_monotone -->|"1"| ScottMaps_scottOpen_preimage
+  WayBelow_ScottOpen -->|"1"| ScottMaps_scottOpen_preimage
+  WayBelow_ScottOpen -->|"1"| ContinuousLattices_scottOpen_preimage_orderIso
+  WayBelow_WayBelow -->|"1"| WayBelow_scottOpen_wayBelow
+  WayBelow_ScottOpen -->|"1"| WayBelow_ScottOpenu2eisUpperSet
+  FunctionSpaces_scottSubspaceExtendInf -->|"1"| FunctionSpaces_scottSubspaceExtend
+  Specialization_scottTopologicalSpace -->|"1"| FunctionSpaces_scottSubspaceExtend
+  FunctionSpaces_scottSubspaceExtend -->|"1"| FunctionSpaces_scottSubspaceExtend_eq_of_ext
+  FunctionSpaces_scottSubspaceExtendInf_eq_of_ext -->|"1"| FunctionSpaces_scottSubspaceExtend_eq_of_ext
+  FunctionSpaces_scottMap_eq_sSup_openInfs -->|"1"| FunctionSpaces_scottSubspaceExtend_maximal
+  FunctionSpaces_scottSubspaceExtend -->|"1"| FunctionSpaces_scottSubspaceExtend_maximal
+  FunctionSpaces_scottSubspaceExtendInf_eq_of_comp -->|"1"| FunctionSpaces_scottSubspaceExtend_maximal
+  FunctionSpaces_sInf_image_le_sInf_image_of_subset -->|"1"| FunctionSpaces_scottSubspaceExtend_maximal
+  FunctionSpaces_scottSubspaceExtend -->|"1"| FunctionSpaces_scottSubspaceExtend_mono
+  FunctionSpaces_scottSubspaceExtendInf_mono -->|"1"| FunctionSpaces_scottSubspaceExtend_mono
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_scottSubspaceExtendInf_eq_of_comp
+  FunctionSpaces_scottSubspaceExtendInf -->|"1"| FunctionSpaces_scottSubspaceExtendInf_eq_of_comp
+  FunctionSpaces_scottSubspaceExtendInf -->|"1"| FunctionSpaces_scottSubspaceExtendInf_eq_of_ext
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_scottSubspaceExtendInf_le_of_mem
+  FunctionSpaces_scottSubspaceExtendInf -->|"1"| FunctionSpaces_scottSubspaceExtendInf_mono
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaces_scottSubspaceExtendInf_mono_incl
+  FunctionSpaces_scottSubspaceExtendInf -->|"1"| FunctionSpaces_scottSubspaceExtendInf_mono_incl
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaces_scottSubspaceExtendInf_mono_incl_apply
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_scottSubspaceExtendInf_mono_incl_apply
+  FunctionSpaces_scottSubspaceExtendInf -->|"1"| FunctionSpaces_scottSubspaceExtendInf_mono_incl_apply
+  FunctionSpaces_IsContinuousLatticeProjection -->|"1"| FunctionSpaces_scottSubspaceExtendInf_mono_retr
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_scottSubspaceExtendInf_mono_retr
+  FunctionSpaces_scottSubspaceExtendInf -->|"1"| FunctionSpaces_scottSubspaceExtendInf_mono_retr
+  Specialization_isOpen_iff_scottOpen -->|"1"| Constructions_scottTopology_prop
+  Constructions_isContinuousLattice_prop -->|"1"| Constructions_scottTopology_sierpinskiPower
+  Constructions_proposition_2_9 -->|"1"| Constructions_scottTopology_sierpinskiPower
+  Constructions_scottTopology_prop -->|"1"| Constructions_scottTopology_sierpinskiPower
+  Specialization_specializationLe_scott_iff -->|"1"| Specialization_scottTopology_t0Space
+  Constructions_isContinuousLattice_prop -->|"1"| Constructions_sierpinski_isInjective_and_isContinuousLattice
+  Injective_proposition_1_2 -->|"1"| Constructions_sierpinski_isInjective_and_isContinuousLattice
+  Constructions_isContinuousLattice_prop -->|"1"| Constructions_sierpinskiPower_isContinuousLattice
+  Constructions_proposition_2_9 -->|"1"| Constructions_sierpinskiPower_isContinuousLattice
+  WayBelow_WayBelow -->|"1"| WayBelow_sInf_wayBelow
+  Specialization_SpecializationLe -->|"1"| Specialization_specializationLe_antisymm
+  FunctionSpaces_scottFunctionEvalSubbasis -->|"1"| FunctionSpaces_specializationLe_generateOpen
+  Specialization_SpecializationLe -->|"1"| FunctionSpaces_specializationLe_generateOpen
+  Specialization_SpecializationLe -->|"1"| Specialization_specializationLe_iff_specializes
+  Specialization_isOpen_iff_scottOpen -->|"1"| Specialization_specializationLe_scott_iff
+  Specialization_scottOpen_not_le -->|"1"| Specialization_specializationLe_scott_iff
+  Specialization_SpecializationLe -->|"1"| Specialization_specializationLe_scott_iff
+  Specialization_SpecializationLe -->|"1"| Specialization_SpecializationLeu2emap
+  Specialization_SpecializationLe -->|"1"| Specialization_specializationPreorder
+  FunctionSpaces_BasicInst30 -->|"1"| FunctionSpaces_sSup_apply
+  FunctionSpaces_le_sSup_finsetSupOf -->|"1"| FunctionSpaces_sSup_finsetSupOf
+  FunctionSpaces_sSup_le_finsetSupOf -->|"1"| FunctionSpaces_sSup_finsetSupOf
+  WayBelow_ContinuousLattice -->|"1"| FunctionSpaces_sSup_image_retr_wayBelow
+  FunctionSpaces_IsContinuousLatticeRetraction -->|"1"| FunctionSpaces_sSup_image_retr_wayBelow
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| FunctionSpaces_sSup_image_retr_wayBelow
+  FunctionSpaces_finsetSupOf -->|"1"| FunctionSpaces_sSup_le_finsetSupOf
+  FunctionSpaces_sSupMaps_continuous -->|"1"| FunctionSpaces_sSupMaps
+  FunctionSpaces_sSupMaps -->|"1"| FunctionSpaces_sSupMaps_apply
+  FunctionSpaces_pointwise_sSup_preservesDirectedSup -->|"1"| FunctionSpaces_sSupMaps_continuous
+  WayBelow_WayBelow -->|"1"| FunctionSpaces_stepFun
+  FunctionSpaces_stepFun -->|"1"| FunctionSpaces_stepFun_of_not_wayBelow
+  FunctionSpaces_stepFun -->|"1"| FunctionSpaces_stepFun_of_wayBelow
+  ScottMaps_PreservesDirectedSup -->|"1"| FunctionSpaces_stepFun_preservesDirectedSup
+  WayBelow_scottOpen_wayBelow -->|"1"| FunctionSpaces_stepFun_preservesDirectedSup
+  FunctionSpaces_stepFun_of_not_wayBelow -->|"1"| FunctionSpaces_stepFun_preservesDirectedSup
+  FunctionSpaces_stepFun_of_wayBelow -->|"1"| FunctionSpaces_stepFun_preservesDirectedSup
+  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| FunctionSpaces_stepMap
+  FunctionSpaces_ScottMap -->|"1"| FunctionSpaces_stepMap
+  FunctionSpaces_stepFun_preservesDirectedSup -->|"1"| FunctionSpaces_stepMap
+  FunctionSpaces_stepMap -->|"1"| FunctionSpaces_stepMap_apply_of_wayBelow
+  FunctionSpaces_le_def -->|"1"| FunctionSpaces_stepMap_le_of_wayBelow
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_stepMap_le_of_wayBelow
+  FunctionSpaces_stepMap_apply_of_wayBelow -->|"1"| FunctionSpaces_stepMap_le_of_wayBelow
+  WayBelow_ContinuousLattice -->|"1"| FunctionSpaces_stepMap_pointwise_sSup
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_stepMap_pointwise_sSup
+  FunctionSpaces_preservesDirectedSup_coe -->|"1"| FunctionSpaces_stepMap_pointwise_sSup
+  FunctionSpaces_BasicInst33 -->|"1"| FunctionSpaces_stepMap_wayBelow
+  FunctionSpaces_stepMap_le_of_wayBelow -->|"1"| FunctionSpaces_stepMap_wayBelow
+  FunctionSpaces_pointwise_sup_preservesDirectedSup -->|"1"| FunctionSpaces_sup
+  FunctionSpaces_BasicInst33 -->|"1"| FunctionSpaces_sup_apply
+  ContinuousLattices_IdemFix -->|"1"| ContinuousLattices_supSet
+  Injective_proposition_1_5 -->|"1"| Injective_t0_isEmbedding_into_sierpinski_power
+  ContinuousLattices_theorem_2_12_more -->|"1"| ContinuousLattices_theorem_2_12
+  Injective_corollary_1_6 -->|"1"| ContinuousLattices_theorem_2_12_more
+  ContinuousLattices_idemFix_isContinuousLattice -->|"1"| ContinuousLattices_theorem_2_12_more
+  ContinuousLattices_idemFix_scottTopology -->|"1"| ContinuousLattices_theorem_2_12_more
+  ContinuousLattices_IsContinuousLatticeu2eorderIso -->|"1"| ContinuousLattices_theorem_2_12_more
+  ContinuousLattices_orderIsoScottHomeomorph -->|"1"| ContinuousLattices_theorem_2_12_more
+  Constructions_proposition_2_11 -->|"1"| ContinuousLattices_theorem_2_12_more
+  Constructions_scottTopology_sierpinskiPower -->|"1"| ContinuousLattices_theorem_2_12_more
+  Constructions_sierpinskiPower_isContinuousLattice -->|"1"| ContinuousLattices_theorem_2_12_more
+  Specialization_specializationLe_scott_iff -->|"1"| ContinuousLattices_theorem_2_12_more
+  Specialization_SpecializationLeu2emap -->|"1"| ContinuousLattices_theorem_2_12_more
+  FunctionSpaces_theorem_3_3_more -->|"1"| FunctionSpaces_theorem_3_3
+  WayBelow_exists_wayBelow_subset -->|"1"| FunctionSpaces_theorem_3_3_more
+  FunctionSpaces_pointwiseSubbasic_scottOpen -->|"1"| FunctionSpaces_theorem_3_3_more
+  FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi -->|"1"| FunctionSpaces_theorem_3_3_more
+  FunctionSpaces_stepMap_wayBelow -->|"1"| FunctionSpaces_theorem_3_3_more
+  FunctionSpaces_wayBelow_finset_sup -->|"1"| FunctionSpaces_theorem_3_3_more
+  FunctionSpaces_wayBelow_le_finset_sup_step -->|"1"| FunctionSpaces_theorem_3_3_more
+  FunctionSpaceTower_theorem_4_4_more -->|"1"| FunctionSpaceTower_theorem_4_4
+  FunctionSpaceTower_embInfInf_projInfInf -->|"1"| FunctionSpaceTower_theorem_4_4_more
+  InverseLimits_proposition_4_1 -->|"1"| FunctionSpaceTower_theorem_4_4_more
+  FunctionSpaces_theorem_3_3 -->|"1"| FunctionSpaceTower_theorem_4_4_more
+  FunctionSpaces_monotone -->|"1"| FunctionSpaces_toOrderHom
+  FunctionSpaceTower_functionSpaceProjection -->|"1"| FunctionSpaceTower_towerProj
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_towerProj_retr_conjMap_succ
+  WayBelow_ScottOpen -->|"1"| WayBelow_WayBelow
+  WayBelow_WayBelow -->|"1"| FunctionSpaces_wayBelow_finset_sup
+  FunctionSpaces_BasicInst33 -->|"1"| FunctionSpaces_wayBelow_le_finset_sup_step
+  FunctionSpaces_stepMap_le_of_wayBelow -->|"1"| FunctionSpaces_wayBelow_le_finset_sup_step
+  FunctionSpaces_stepMap_pointwise_sSup -->|"1"| FunctionSpaces_wayBelow_le_finset_sup_step

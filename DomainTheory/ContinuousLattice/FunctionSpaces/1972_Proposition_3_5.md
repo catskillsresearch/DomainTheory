@@ -1,44 +1,35 @@
 # Proposition 3.5
 
-This result gives only one example of the masses of continuous functions that are available on continuous lattices. As another fundamental example we have:
+@import "1972_Proposition_3_5.english" {code_block=false}
 
-**3.5 Proposition.** For continuous lattices $D$, $D'$, and $D''$, the map of functional abstraction:
+**[DomainTheory/ContinuousLattice/FunctionSpaces/curry_left_preservesDirectedSup.lean](curry_left_preservesDirectedSup.lean)**
 
-$$
-\mathrm{lambda} : [[D \times D'] \to D''] \to [D \to [D' \to D'']]
-$$
+@import "curry_left_preservesDirectedSup.lean"
 
-is continuous.
+**[DomainTheory/ContinuousLattice/FunctionSpaces/curry_right_preservesDirectedSup.lean](curry_right_preservesDirectedSup.lean)**
 
-**Proof:** Here lambda is defined by:
+@import "curry_right_preservesDirectedSup.lean"
 
-$$
-\mathrm{lambda}(f)(x)(y) = f(x,y)
-$$
+**[DomainTheory/ContinuousLattice/FunctionSpaces/lambda_outer_preservesDirectedSup.lean](lambda_outer_preservesDirectedSup.lean)**
 
-where $f \in [[D \times D'] \to D'']$ and $x \in D$ and $y \in D'$. What is particularly interesting here is that by virtue of 3.3 we are making use of $[D \to [D' \to D'']]$ as a continuous lattice. The principle being stated here can be formulated more broadly in this way:
+@import "lambda_outer_preservesDirectedSup.lean"
 
-> If an expression $\mathcal{E}(x, y, z, \dots)$ is continuous in all its variables $x, y, z, \dots$ with values in $D'$ as $x$ ranges in $D$, then the expression
->
-> $$\lambda x : D . \mathcal{E}(x, y, z, \dots)$$
->
-> with values in $[D \to D']$ is continuous in the remaining variables $y, z, \dots$ .
+**[DomainTheory/ContinuousLattice/FunctionSpaces/proposition_3_5.lean](proposition_3_5.lean)**
 
-The $\lambda$-notation is a notation for functions, where in the above the variable after the $\lambda$ is the *argument* and the expression after the $.$ is the *value* (as a function of the argument). Thus we could write:
+@import "proposition_3_5.lean"
 
-$$
-\mathrm{lambda} = \lambda f : [[D \times D'] \to D''] . \lambda x : D . \lambda y : D' . f(x,y),
-$$
+**[DomainTheory/ContinuousLattice/FunctionSpaces/proposition_3_5_preservesDirectedSup.lean](proposition_3_5_preservesDirectedSup.lean)**
 
-and, because $f(x,y)$ is continuous in $f$, $x$, and $y$, our conclusion follows. But often it is more readable not to write equations between functions but rather equations between values for definitional purposes.
+@import "proposition_3_5_preservesDirectedSup.lean"
 
-The proof of the principle is easy. For let the variable $y$, say range over $D''$ and let $S \subseteq D''$ be a directed subset. Then
+**[DomainTheory/ContinuousLattice/FunctionSpaces/scottLambda.lean](scottLambda.lean)**
 
-$$
-\begin{aligned}
-\lambda x : D . \mathcal{E}(x, \bigsqcup S, z, \dots) &= \lambda x : D . \bigsqcup  \mathcal{E}(x, y, z, \dots) : y \in S  
-&= \bigsqcup  \lambda x : D . \mathcal{E}(x, y, z, \dots) : y \in S ,
-\end{aligned}
-$$
+@import "scottLambda.lean"
 
-because the lubs of functions are computed pointwise. $\square$
+**[DomainTheory/ContinuousLattice/FunctionSpaces/scottLambdaAt.lean](scottLambdaAt.lean)**
+
+@import "scottLambdaAt.lean"
+
+**[DomainTheory/ContinuousLattice/FunctionSpaces/scottLambda_apply.lean](scottLambda_apply.lean)**
+
+@import "scottLambda_apply.lean"

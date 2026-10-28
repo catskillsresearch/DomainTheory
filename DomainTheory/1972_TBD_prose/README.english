@@ -1,0 +1,478 @@
+**TBD — prose not yet mapped to a single outline note**
+
+
+---
+
+### `contents.english`
+
+
+## CONTENTS
+
+0. Introduction
+1. Injective Spaces
+2. Continuous Lattices
+3. Function Spaces
+4. Inverse Limits
+
+References
+
+98
+
+
+
+---
+
+### `frag_3_9_lemma_consider_the_diagram.english`
+
+
+**3.9 Lemma.** Consider the diagram:
+
+$$
+\begin{gathered}
+X \xrightarrow{\quad e\quad} Y 
+f \Big\downarrow \qquad\qquad g \searrow \qquad \bar{f} \swarrow \qquad \downarrow \bar{g} 
+D \xrightarrow[\ j\ ]{\quad i\quad} D'
+\end{gathered}
+$$
+
+where the upper row is a subspace embedding and the lower is a projection. If the given functions $f$ and $g$ are extended to $\bar{f}$ and $\bar{g}$ as in 3.8, and if $f = j \circ g$, then $\bar{f} = j \circ \bar{g}$ also.
+
+*Proof:* $\bar{f}$ and $\bar{g}$ are maximal solutions of $f = \bar{f} \circ e$ and $g = \bar{g} \circ e$. Therefore since
+
+$$
+f = j \circ g = j \circ \bar{g} \circ e,
+$$
+
+we see that
+
+$$
+j \circ \bar{g} \sqsubseteq \bar{f}.
+$$
+
+Note also that
+
+$$
+i \circ \bar{f} \circ e = i \circ f = i \circ j \circ g \sqsubseteq g,
+$$
+
+and so by the remark following 3.8, we have
+
+$$
+i \circ \bar{f} \sqsubseteq \bar{g}.
+$$
+
+Therefore
+
+$$
+\bar{f} = j \circ i \circ \bar{f} \sqsubseteq j \circ \bar{g},
+$$
+
+which proves the equality. $\square$
+
+Whether this lemma is true for retractions in any form, I do not know. My proof seems to require the stronger projection relationship. I suspect there may be difficulties. In general projections are better behaved than retractions. By the way the word projection seems to be properly used in 3.6, for the projection $j : D \times D' \to D$ of the Cartesian product of two continuous lattices onto the first factor *is* a projection with partial inverse $i : D \to D \times D'$ defined by
+
+$$
+i(x) = (x, \bot)
+$$
+
+for $x \in D$.
+
+118
+
+
+
+---
+
+### `frag_4_5_lemma_suppose_for_each_n_we_have_u_n_1_in_d.english`
+
+
+**4.5 Lemma.** Suppose for each $n$ we have $u_{(n+1)} \in D_{n+1}$ and we let:
+
+$$u = \bigsqcup_{n=0}^{\infty} i_{(n+1)\infty}(u_{(n+1)}).$$
+
+Then if
+
+$$j_{n+1}(u_{(n+2)}) = u_{(n+1)}$$
+
+for each $n$, we can conclude that:
+
+$$j_{\infty(n+1)}(u) = u_{(n+1)}.$$
+
+**Proof:** If the sequence $u_{(n+1)}$ satisfies the recursion, then the limit defining $u$ is monotonic. Therefore by continuity of projection it suffices to prove that
+
+$$j_{\infty(n+1)}(i_{(m+1)\infty}(u_{(m+1)})) = u_{(n+1)}$$
+
+for all $m \geqslant n$. This is obvious for $m = n$, and it can be readily proved by induction for larger $m$ using the various recursion equations. (Properly speaking the induction is done on the quantity $(m - n)$ using both $n$ and $m$ as variables.) $\square$
+
+
+
+---
+
+### `sec2_after_theorem_2_12.english`
+
+
+**2.12 Theorem.** The injective spaces are exactly the continuous lattices.
+
+This theorem is an immediate consequence of the preceding results: an injective space is a retract of a power of $\mathbb{O}$. But $\mathbb{O}$ is a finite lattice $(\perp \sqsubseteq \top)$, and so the given space is a continuous lattice under its induced topology. On the other hand a continuous lattice is injective. It remains then to prove 2.9–2.11.
+
+**Proof of 2.9**
+
+Let $D_i$ for $i \in I$ be a system of continuous lattices. The product
+
+$$
+D^* = \prod_{i \in I} D_i
+$$
+
+is a complete lattice in the usual way and has its induced topology. Suppose $y \in D^*$ and let $i \in I$. Then $y_i \in D_i$. Since $D_i$ is a continuous lattice
+
+$$
+y_i = \bigsqcup x \in D_i : x \ll y_i.
+$$
+
+For $x \in D_i$, let $[x]^i \in D^*$ be defined by:
+
+$$
+[x]^i_j = \begin{cases} x & \text{if } i = j,  \perp & \text{if } i \neq j. \end{cases}
+$$
+
+Note that since $D_i$ is continuous we have:
+
+$$
+[y_i]^i = \bigsqcup [x]^i : x \ll y_i,
+$$
+
+and
+
+$$
+y = \bigsqcup [y_i]^i : i \in I.
+$$
+
+108
+
+It follows that
+
+$$
+y = \bigsqcup \bigcap \{ z : z_i \in U \text{ for all } i \in I,\, y_i \in U \},
+$$
+
+where $i$ ranges over $I$ and $U$ over the open subsets of $D_i$, because
+
+$$
+[x]^i \sqsubseteq \bigcap  z : z_i \in U , \quad \text{where } U =  u \in D_i : x \ll u .
+$$
+
+But the sets $ z : z_i \in U $ are open in the product sense, and so
+
+$$
+y = \bigsqcup  \bigcap U : y \in U ,
+$$
+
+where $U$ ranges now over the open subsets of the product topology on $D^*$. By the remark following 2.4 we conclude that $D^*$ is continuous with the lattice-induced topology being the product topology. $\square$
+
+**Proof of 2.10**
+
+Let $D'$ be a continuous lattice and let $D \subseteq D'$ be a subspace which is a retract. We have for a suitable $j : D' \to D$,
+
+$$
+D =  x \in D' : j(x) = x ,
+$$
+
+where of course $j$ is continuous.
+
+*First a note of warning:* though $D$ is a subspace it is not a sublattice; that is, the partial ordering on $D$ is the restriction of that of $D'$, but the lubs of $D$ are not those of $D'$. We shall have to distinguish operations by adding a prime ($'$) for those of $D'$.
+
+Suppose $x, y \in D$. Let $z' = x \sqcup y \in D'$ (join taken in $D'$) and define $z = j(z') \in D$. Now $x \sqsubseteq z'$ and $y \sqsubseteq z'$, and $j$ is monotonic, so $x \sqsubseteq z$ and $y \sqsubseteq z$. Suppose $x \sqsubseteq w$ and $y \sqsubseteq w$ with $w \in D$. Then in $D'$ we have $x \sqcup y \sqsubseteq w$; so $z \sqsubseteq w$ also. Hence we have shown that $z = x \sqcup y$ in $D$.
+
+To show that $D$ has a least element $\bot$ (which may be larger than the $\bot' \in D'$), we need a well-known lemma about monotonic functions: Every monotonic function on a complete lattice into itself has a least fixed point. (Cf. Birkhoff (1970), p. 115.) In our case $j$ is monotonic and
+
+$$
+\bot = \sqcap \ x \in D' : j(x) \sqsubseteq x
+$$
+
+is the desired element in $D$.
+
+Thus $D$ is at least a semilattice with $\bot$ and $\sqcup$. To show that $D$ is a lattice we need to show that every directed $S \subseteq D$ has a lub in $D$. Now we know ($S' = S$, join taken in the ambient lattice $D'$):
+
+$$
+\bigsqcup S' \in D',
+$$
+
+and this is a limit of a monotone net. So by 2.1, and the continuity of $j$:
+
+$$
+\begin{aligned}
+j(\bigsqcup S') &= \bigsqcup  j(x) : x \in S  
+&= \bigsqcup S
+\end{aligned}
+$$
+
+in $D$. In this way we now know that $D$ is a complete lattice. We must
+
+109
+
+still show that $D$ is continuous.
+
+Suppose $y \in D$. In $D'$ we can write:
+
+$$y = \bigsqcup  x \in D' : x \ll y '$$
+
+and this is the limit of a monotone net. Thus
+
+$$j(y) = y = \bigsqcup  j(x) : x \ll y, x \in D' ,$$
+
+where the lub is taken in $D$. Note that the sets
+
+$$U =  z \in D : x \ll z $$
+
+are open in $D$ for each $x \in D'$. Note too that if $z \in U$, then $x \sqsubseteq z$ and so $j(x) \sqsubseteq j(z) = z$. This means that
+
+$$j(x) \sqsubseteq \sqcap U$$
+
+in $D$. We can then write in $D$:
+
+$$y = \bigsqcup \sqcap U : y \in U $$
+
+where $U$ ranges over the open subsets of $D$, and so the lattice is continuous by 2.4. Inasmuch as the open sets $U$ just used were open in the subspace topology, it follows by the remark after 2.4 that the subspace and the lattice-induced topologies coincide. $\square$
+
+*Proof of 2.11*: Let $D$ be a continuous lattice with its induced topology, and let $X \subseteq Y$ be two $T_0$-spaces in the subspace relation. Suppose
+
+$$f : X \to D$$
+
+is continuous. Define
+
+$$\bar{f} : Y \to D$$
+
+by the formula:
+
+$$\bar{f}(y) = \bigsqcup \sqcap f(x) : x \in X \cap U : y \in U ,$$
+
+where $U$ ranges over the open subsets of $Y$. We need to show that $\bar{f}$ extends $f$ and that it is continuous.
+
+First, the continuity: Suppose that $d \in D$ and $d \ll \bar{f}(y)$; that is, $\bar{f}(y)$ belongs to a typical basic open subset of $D$. Since $D$ is continuous, we can also find
+
+$$d \ll d' \ll \bar{f}(y)$$
+
+with $d' \in D$. From the definition of $\bar{f}$ it follows that
+
+$$d' \sqsubseteq \sqcap f(x) : x \in X \cap U $$
+
+for some open $U \subseteq Y$ with $y \in U$. Thus
+
+110
+
+$$d' \sqsubseteq \bar{f}(y')$$
+
+for all $y' \in U$ by virtue of the definition of $\bar{f}$. Since $d \ll d'$, we have also
+
+$$d \ll \bar{f}(y')$$
+
+for all $y' \in U$; in other words, the inverse image of the open subset of $D$ determined by $d$ under $\bar{f}$ is indeed open in $Y$, and $\bar{f}$ is thus continuous.
+
+Next, the extension property: Note that the relationship
+
+$$\bar{f}(x') \sqsubseteq f(x')$$
+
+for all $x' \in X$ comes directly out of the definition of $\bar{f}$. For the converse, suppose $d \ll f(x')$ where $d \in D$. By assumption $f : X \to D$ is continuous, so
+
+$$d \ll f(x'')$$
+
+for all $x'' \in X \cap U$ where $U$ is a suitable open subset of $Y$ with $x' \in U$. In particular we have:
+
+$$d \sqsubseteq \sqcap f(x'') : x'' \in X \cap U ,$$
+
+and so $d \sqsubseteq \bar{f}(x')$. Since $d \ll f(x')$ always implies $d \sqsubseteq \bar{f}(x')$, we see that $f(x') \sqsubseteq \bar{f}(x')$ follows by the continuity of $D$, and the proof is complete. $\square$
+
+The lattice approach to injective spaces gives a completely "internal" characterization of them: in the first place the lattices are complete. Next we can define lattice theoretically:
+
+$$
+x \ll y \quad \text{iff} \quad \text{whenever } y \sqsubseteq \bigsqcup Z \text{ and } Z \subseteq D \text{ is directed,}
+$$
+
+then $x \sqsubseteq z$ for some $z \in Z$.
+
+Finally we assume that for all $y \in D$:
+
+$$y = \bigsqcup  x \in D : x \ll y .$$
+
+That makes $D$ a continuous lattice with the sets $ y \in D : x \ll y $ as a basis for the topology. Such $T_0$-spaces are injective and every injective space can be obtained in this way with the lattice structure being uniquely determined by the topology. Furthermore, as we have seen, the injective property can be exhibited, as in the proof of 2.11, by an explicit formula for extending functions.
+
+The retract approach to injective spaces should also be considered. The Cartesian powers $\mathbb{O}^I$ are very simple spaces; indeed, as lattices these are just the Boolean algebras of *all subsets* of $I$ (that is, isomorphic thereto). The topology has as a basis the
+
+111
+
+classes of sets containing given finite sets (the *weak topology*, cf. Nerode (1959)). A continuous function
+
+$$j : \mathcal{P}I \to \mathcal{P}I$$
+
+is one of "finite character" so that
+
+$$j(X) = \bigcup  j(F) : F \subseteq X $$
+
+where $X \subseteq I$ and $F$ ranges over *finite sets*. Such a function $j$ is a *retraction* iff it is an *idempotent*:
+
+$$j \circ j = j,$$
+
+which means that the range of $j$ is the set of fixed points of $j$. As we have seen
+
+$$D =  X \in \mathcal{P}I : j(X) = X $$
+
+is a continuous lattice (under $\subseteq$ in this case), and *every* continuous lattice is isomorphic to one obtained in this way. This provides a representation theorem of sorts for continuous lattices, but it does not seem to be of too much help in proving theorems.
+
+The reader should not forget that any space (any *given* number of spaces $X$, $Y$, $\ldots$) can be found as a *subspace* of a continuous lattice $D$. Since $D$ is injective any continuous function $f : X \to Y$ can be extended to a continuous function $\bar{f} : D \to D$. Thus the continuous functions from $D$ into $D$ are a rich totality including *all* the structure of continuous functions on *all* the subspaces. And this remark brings us to the study of function spaces.
+
+
+
+---
+
+### `sec3_before_3_6.english`
+
+
+**3.5 Proposition.** For continuous lattices $D$, $D'$, and $D''$, the map of functional abstraction:
+
+$$
+\mathrm{lambda} : [[D \times D'] \to D''] \to [D \to [D' \to D'']]
+$$
+
+is continuous.
+
+114
+
+**Proof:** Here lambda is defined by:
+
+$$
+\mathrm{lambda}(f)(x)(y) = f(x,y)
+$$
+
+where $f \in [[D \times D'] \to D'']$ and $x \in D$ and $y \in D'$. What is particularly interesting here is that by virtue of 3.3 we are making use of $[D \to [D' \to D'']]$ as a continuous lattice. The principle being stated here can be formulated more broadly in this way:
+
+> If an expression $\mathcal{E}(x, y, z, \dots)$ is continuous in all its variables $x, y, z, \dots$ with values in $D'$ as $x$ ranges in $D$, then the expression
+>
+> $$\lambda x : D . \mathcal{E}(x, y, z, \dots)$$
+>
+> with values in $[D \to D']$ is continuous in the remaining variables $y, z, \dots$ .
+
+The $\lambda$-notation is a notation for functions, where in the above the variable after the $\lambda$ is the *argument* and the expression after the $.$ is the *value* (as a function of the argument). Thus we could write:
+
+$$
+\mathrm{lambda} = \lambda f : [[D \times D'] \to D''] . \lambda x : D . \lambda y : D' . f(x,y),
+$$
+
+and, because $f(x,y)$ is continuous in $f$, $x$, and $y$, our conclusion follows. But often it is more readable not to write equations between functions but rather equations between values for definitional purposes.
+
+The proof of the principle is easy. For let the variable $y$, say range over $D''$ and let $S \subseteq D''$ be a directed subset. Then
+
+$$
+\begin{aligned}
+\lambda x : D . \mathcal{E}(x, \bigsqcup S, z, \dots) &= \lambda x : D . \bigsqcup  \mathcal{E}(x, y, z, \dots) : y \in S  
+&= \bigsqcup  \lambda x : D . \mathcal{E}(x, y, z, \dots) : y \in S ,
+\end{aligned}
+$$
+
+because the lubs of functions are computed pointwise. $\square$
+
+We need not enumerate the many corollaries that follow easily now from this result. We mention, however, that composition $f \circ g$ of functions (on continuous lattices) is continuous in the two function variables, where we write
+
+$$
+(f \circ g)(x) = f(g(x)).
+$$
+
+What will be useful will be to return at this point to a discussion of the injective properties of continuous lattices. If one continuous lattice is a subspace of another it is of course a retract. This relationship between spaces can be given by a pair of continuous maps
+
+115
+
+$$i : D \to D' \quad \text{and} \quad j : D' \to D,$$
+
+where
+
+$$j \circ i = \text{id}_D = \lambda x : D . x.$$
+
+The composition $i \circ j : D' \to i(D)$ is the retraction onto the subspace corresponding to $D$ under $i$. Now if we have a diagram:
+
+$$
+\begin{gathered}
+D \xrightarrow[\ j\ ]{i} D' 
+f \searrow \qquad \swarrow \tilde{f} = f \circ j 
+D''
+\end{gathered}
+$$
+
+the given continuous $f$ is at once extendable from $D$ to $D'$ by the obvious definition of $\tilde{f}$. This $\tilde{f}$ is not the $\bar{f}$ used in the proof of 2.11, and it will be well to sort out the connections. On one side note that if $f'$ is any function which extends $f$, then we have $f = f' \circ i$. But this implies
+
+$$\tilde{f} = f \circ j = f' \circ i \circ j,$$
+
+which shows that $\tilde{f}$ is a "degraded" version of $f'$. There is one situation where this type of degrading is especially nice.
+
+
+
+---
+
+### `sec4_projection_figures.english`
+
+
+**Left projection**
+
+```
+      ⊤  ←── j₀ ──  [⊤,⊤]
+      ⊥  ←── j₀ ──  [⊥,⊤]
+      ⊥  ←── j₀ ──  [⊥,⊥]
+```
+
+**Right projection**
+
+```
+      ⊤  ←── j₀ ──  [⊤,⊤]
+      ⊤  ←── j₀ ──  [⊥,⊤]
+      ⊥  ←── j₀ ──  [⊥,⊥]
+```
+
+Hence our construction gives two limit spaces $D_\infty$ and $D'*\infty$. Are they the same? No, they are not. It can be shown, for example, that the $\top$ of $D*\infty$ is *isolated* (that is, $\top \ll \top$), while the same is not true of $D'*\infty$. More interestingly, David Park has proved that the fixed-point operator fix mentioned in 3.14 has algebraic properties in $D*\infty$ quite different from those in $D'*\infty$. By algebraic here, we of course have reference to the functional algebra embodied in the application operation $x(y)$ defined on these limit spaces. Note, by the way, that in view of our isomorphism result we can regard fix (or any other similar continuous function for that matter) as an element of $D*\infty$. This makes the "algebra" of $D_\infty$ quite a rich field for study.
+
+The reader will have surely remarked that by virtue of 1.5, every $T_0$-space $X$ whatsoever can be embedded as a subspace in a $D_\infty$. Besides this all the continuous functions on $X$ (oh, into $D_\infty$, say) can be extended to $D_\infty$; whence they can be regarded as *elements* of $D_\infty$. Thus we have been able to embed not only the topology of $X$ into $D_\infty$ but also all of the continuous function theory over $X$. So far this is only a "logical" construction. For more interesting "mathematical" results we shall have to investigate whether any useful theorems about the usual function spaces $[X \to X]$ can be obtained with the aid of $D_\infty$. This method can easily be employed for real- or complex-valued continuous functions, though it seems more oriented toward pointwise convergence than anything else. Still, there seems to be a chance it might be useful—especially if one wished to consider continuous *operators* on function spaces.
+
+131
+
+The idea of forming the limit space can also be applied to *other* functors besides $[D \to D]$. Thus instead of solving the “equation”
+
+$$D = [D \to D]$$
+
+as we have done with the $D_\infty$ construction, we could also solve:
+
+$$V = T + [V \times V] + [V + V] + [V \to V],$$
+
+for example. Here $T = \bot, 0, 1, \top$ is the four-element lattice with $0$ and $1$ as incomparable elements. By $[V \times V]$ and $[V \to V]$ we understand the usual Cartesian product and function space construction. The $+$ operator, on the other hand works only in the category of lattices with $\top$ as an isolated element. It is defined so as to make:
+
+$$
+\begin{array}{ccc}
+D + D' & \longleftarrow & D' 
+\uparrow & & \uparrow 
+D & \longleftarrow & 0
+\end{array}
+$$
+
+a push-out diagram, where the maps from $0$ are meant to match $\bot$ with $\bot$ and $\top$ with $\top$. The point of requiring $\top$ to be isolated is that both $D$ and $D'$ become projections of $D + D'$. This construction, though not quite a disjoint union, has many properties in common with that operation on spaces. In particular, if we consider the category with projections as maps, the construction
+
+$$\mathbb{F}(D) = T + [D \times D] + [D + D] + [D \to D]$$
+
+is a *functor*. Furthermore, we can project $\mathbb{F}(T)$ onto $T$ in an obvious way, thereby setting things up for an inverse limit construction:
+
+$$V = \varprojlim \langle \mathbb{F}^n(T), j_n \rangle_{n=0}^{\infty}.$$
+
+The resulting continuous lattice satisfies the desired equation up to isomorphism.
+
+The space $V$ constructed in the way just indicated is very rich in subspaces. To see this, consider the space $\mathcal{J}_V$ of proper projections $j$ where $j(\top) = \top$. As in 3.12 this is a complete lattice. Now that $[V \times V]$ and $[V + V]$ and $[V \to V]$ are regarded as *subspaces* of this “universe” $V$ itself, we can easily define *continuous operations*
+
+$$(j \times k)\ ,\ (j + k)\ ,\ \text{and}\ (j \to k)$$
+
+on the projections obtaining again elements of $\mathcal{J}_V$. The projections so obtained correspond to the indicated constructions of subspaces, of course. (Indeed, if we had the time and space, we could show that $\mathcal{J}_V$ becomes a very interesting category). There will be a particular
+
+132
+
+projection $t$ corresponding to $T$, and reason for doing all this is to show that the existence of subspaces of $V$ can now be established by solving equations in $\mathcal{J}_V$. For example, by the fixed-point construction we could find a $j \in \mathcal{J}_V$ such that
+
+$$j = t + (t \times j) + ((j \times j) \to j).$$
+
+The range of $j$ would then be a subspace $W \subseteq V$ such that $W$ solves the equation:
+
+$$W = T + [T \times W] + [[W \times W] \to W].$$
+
+And these are only a few examples: simultaneous equations are possible, and many other operators are waiting for discovery and application.

@@ -1,6 +1,4 @@
-Our main interest will lie with those partially ordered sets in which every subset has a lub: namely, *complete lattices*. We use Mathlib’s `CompleteLattice` typeclass to express that “lattices are complete”.
-
-If $D$ is such a space we write $\bot = \bigsqcup \emptyset$ and $\top = \bigsqcup D$ for the smallest and largest elements (read: bottom and top). As is well known, greatest lower bounds must exist, for:
+Our main interest will lie with those partially ordered sets in which every subset has a lub: namely, *complete lattices*. If $D$ is such a space we write $\bot = \bigsqcup \emptyset$ and $\top = \bigsqcup D$ for the smallest and largest elements (read: bottom and top). As is well known, greatest lower bounds must exist, for:
 
 $$
 \sqcap S = \bigsqcup x \in D : x \sqsubseteq y \text{ for all } y \in S
@@ -10,10 +8,13 @@ gives the definition.
 
 Given a complete lattice $D$ we define
 
+103
+
 $$
 x \ll y \text{ iff } y \in \text{Int}z \in D : x \sqsubseteq z,
 $$
 
 where the interior is taken in the sense of the induced topology. The relation $x \ll y$ behaves somewhat like a strict ordering relation; at least its meaning is clearly that $y$ should be definitely larger than $x$ in the partial ordering. Such a relation has many pleasant properties.
 
-The primary purpose of introducing it is to provide a simple definition for the kind of spaces that are most useful to us. We first mention the most elementary features of this relation in [Proposition 2.2](1972_Proposition_2_2.md).
+The primary purpose of introducing it is to provide a simple definition for the kind of spaces that are most useful to us. We first mention the most elementary features of this relation.
+

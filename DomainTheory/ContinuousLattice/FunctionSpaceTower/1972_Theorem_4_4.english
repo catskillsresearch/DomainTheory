@@ -1,29 +1,3 @@
-The import of this last result is that within the category of complete lattices, the space $D_\infty$ is not only the inverse limit of the $D_n$, but it is also the *direct* limit. (One system of spaces here uses the $j_n$ as connecting maps, the other the $i_n$.) This is the algebraic result that lies at the heart of our main result about inverse limits of function spaces.
-
-Turning to function spaces, let $D = D_0$ be a given continuous lattice. As we have seen in 3.13, there are many ways of making $D_0$ a projection of $D_1 = [D_0 \to D_0]$. Choose one such given by a pair $i_0, j_0$. Define recursively:
-
-$$
-D_{n+1} = [D_n \to D_n]
-$$
-
-and introduce the pairs $i_{n+1}, j_{n+1}$ making $D_{n+1}$ a projection of $D_{n+2}$ by the method of 3.7. Specifically we shall have for $x \in D_{n+1}$ and $x' \in D_{n+2}$:
-
-$$
-i_{n+1}(x) = i_n \circ x \circ j_n,
-$$
-
-$$
-j_{n+1}(x') = j_n \circ x' \circ i_n.
-$$
-
-Since these spaces are more than continuous lattices being function spaces, it is interesting to note that the maps $i_n$ preserve function value as an algebraic operation as follows:
-
-$$
-i_n(f(x)) = i_{n+1}(f)(i_n(x)),
-$$
-
-where $x \in D_n$ and $f \in D_{n+1}$. Thus in passing to the limit space $D_\infty$ something of functional application must also be preserved. The precise result shows that indeed $D_\infty$ becomes its own function space.
-
 **4.4 Theorem.** *The inverse limit $D_\infty$ of the recursively defined sequence $\langle D_n, j_n \rangle_{n=0}^{\infty}$ of function spaces is not only a continuous lattice, but it is also homeomorphic to its own function space $[D_\infty \to D_\infty]$.*
 
 **Proof:** We can write down directly the pair of maps $i_\infty, j_\infty$ that provide the homeomorphism:
@@ -48,6 +22,8 @@ $$
 
 In the converse order the calculation is only a bit more complicated. The idea is that since all the functions $f$ are continuous and since the elements $x$ are the limits of their approximations, then each $f$ is actually completely determined by its
 
+128
+
 In the converse order the calculation is only a bit more complicated. The idea is that since all the functions $f$ are continuous and since the elements $x$ are the limits of their approximations, then each $f$ is actually completely determined by its sequence of restrictions $j_{\infty n} \circ f \circ i_{n\infty} \in D_{n+1}$. This simple idea can be made more precise with the aid of a lemma about $D_\infty$, which allows us in certain cases to recognize projections from limits.
 
 **Proof of 4.4 concluded:** The lemma applies at once to our calculation, for we find:
@@ -64,3 +40,50 @@ Here we have just applied the continuity of $f$ to be able to confine the lub on
 $$\mathrm{id} = \bigsqcup_{n=0}^{\infty} (i_{n\infty} \circ j_{\infty n}),$$
 
 and the proof that $i_\infty$ and $j_\infty$ are inverse to one another is complete. $\square$
+
+We can explain the idea of this proof in other terms using a suggestion made to me by F. W. Lawvere. Consider the category of
+
+129
+
+We can explain the idea of this proof in other terms using a suggestion made to me by F. W. Lawvere. Consider the category of continuous lattices and projections. In that category our $D_\infty$ is, as we have remarked, both a *direct* and an *inverse* limit. Note too that with regard to projections $[D \to D']$ is a *functor*, for we can also define $[j \to j']$ when the maps are projections. In this language our particular inverse system is defined by the recursion:
+
+$$D_{n+1} = [D_n \to D_n] \quad \text{and} \quad j_{n+1} = [j_n \to j_n],$$
+
+where $D_0$ and $j_0$ are given in advance. Now the function space construction is continuous in its two arguments, turning an inverse limit on the right into an inverse limit and a direct limit on the *left* also into an *inverse* limit. A repeated limit can be made into a simple limit, so we can write:
+
+$$
+\begin{aligned}
+D_\infty &= \varprojlim \langle D_n, j_n \rangle_{n=0}^{\infty} 
+&= \varinjlim \langle D_n, i_n \rangle_{n=0}^{\infty}
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+[D_\infty \to D_\infty] &= \varprojlim \langle [D_n \to D_n], [j_n \to j_n] \rangle_{n=0}^{\infty} 
+&= \varprojlim \langle D_{n+1}, j_{n+1} \rangle_{n=0}^{\infty} 
+&= D_\infty \quad \textit{(up to isomorphism).}
+\end{aligned}
+$$
+
+A full checking of the details involved would not make the argument appreciably simpler over the more "element-by-element" argument I have presented. In fact, the proofs are actually the same. But thinking of the result in terms of properties of functors does seem to isolate very well the essential idea and to show how simple it is.
+
+One must only add here a note of caution: the proper choice of category must be done with care. Thus it seems to me that the use of projections rather than arbitrary continuous maps is necessary.
+
+Inasmuch as I have not checked all details in this form, I hope what I say is correct.
+
+Since we have shown $[D_\infty \to D_\infty]$ to be homeomorphic to $D_\infty$, we can begin to regard them as the same. In particular there ought to be some function space structure to transfer to $D_\infty$. This can be done by defining functional application for any elements $x, y \in D_\infty$ by the equation:
+
+$$x(y) = \bigsqcup_{n=0}^{\infty} i_{n\infty}(x_{n+1}(y_n)).$$
+
+130
+
+Similarly we can define $\lambda$-abstraction on continuous expressions:
+
+$$\lambda x.[\ldots x \ldots] = j_\infty(\lambda x : D_\infty.[\ldots x \ldots]),$$
+
+and in this way $D_\infty$ becomes a model for the $\lambda$-calculus of Church and Curry. The model-theoretic and proof-theoretic aspects of this result will be explained in another paper (Scott (1972)).
+
+Suppose we were to start with the least, non-trivial lattice $0 = \top, \bot$ for $D_0$. Now $D_1 = [0 \to 0]$ has exactly three elements and there are just two ways of defining a projection $j_0 : D_1 \to D_0$. They are illustrated in the figure:

@@ -1,5 +1,3 @@
-One of the justifications (by euphony at least) of the term *continuous lattice* is the fact that such spaces allow for so many continuous functions. One indication of this is the result:
-
 **2.7 Proposition.** *In a continuous lattice $D$ the finitary lattice operations $\sqcup$ and $\sqcap$ are continuous.*
 
 **Proof:** It is trivial to show that $\sqcup$ is continuous in every complete lattice; this is not so for $\sqcap$. In view of 2.6 we need only show
@@ -27,3 +25,8 @@ z \in D : t \ll z
 $$
 
 is open. But then $t \sqsubseteq y$, and so $t \sqsubseteq x \sqcap y$, and the result follows. $\square$
+
+It is now time to provide some examples of continuous lattices.
+
+107
+

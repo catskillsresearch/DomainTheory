@@ -1,0 +1,4 @@
+**3.11 Definition.** Given a continuous lattice $D$, we let the space of projections be denoted by:
+
+$$J_D = j \in [D \to D] : j = j \circ j \sqsubseteq \mathrm{id}.$$
+

@@ -1,16 +1,15 @@
-%% Notes of the limit lattice.
+%% Lean files imported under this note.
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
 
-  SSUP["coe_sSup_of_directed"]
-  INF["InfSet"]
-  CLAT["instCompleteLattice"]
-  PO["inverseLimitPartialOrder"]
+  InverseLimits_coe_sSup_of_directed["coe_sSup_of_directed"]
+  InverseLimits_instCompleteLattice["instCompleteLattice"]
+  InverseLimits_instInfSet["instInfSet"]
+  InverseLimits_inverseLimitPartialOrder["inverseLimitPartialOrder"]
+  InverseLimits_inverseLimitSInfCoe["inverseLimitSInfCoe"]
 
-  INF -->|"1"| CLAT
-  PO -->|"2"| INF
-  CLAT -->|"1"| SSUP
-
-  classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
-  class PO,INF,CLAT,SSUP concept
+  InverseLimits_instCompleteLattice -->|"1"| InverseLimits_coe_sSup_of_directed
+  InverseLimits_instInfSet -->|"1"| InverseLimits_instCompleteLattice
+  InverseLimits_inverseLimitPartialOrder -->|"1"| InverseLimits_instInfSet
+  InverseLimits_inverseLimitSInfCoe -->|"1"| InverseLimits_instInfSet

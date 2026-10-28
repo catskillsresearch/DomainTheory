@@ -12,6 +12,8 @@ $$
 f(\bigsqcup S, y) = \bigsqcup f(x, y) : x \in S
 $$
 
+106
+
 and
 
 $$
@@ -43,3 +45,5 @@ f(\bigsqcup S^*) = \bigsqcup f(u, v) : (u, v) \in S^*
 $$
 
 and that gives the joint continuity. $\square$
+
+One of the justifications (by euphony at least) of the term *continuous lattice* is the fact that such spaces allow for so many continuous functions. One indication of this is the result:

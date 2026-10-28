@@ -1,26 +1,58 @@
-%% Notes of the function space tower.
+%% Lean files imported under this note.
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
 
-  CONJ["Conjugation"]
-  DINF["DInf"]
-  PROJ["Projections of the tower"]
-  INV["Proof that the limit and its function space are inverse"]
-  SCOTT["scottTopology"]
-  SOURCE["sourceTopology"]
-  FSP["The projection on a function space"]
-  LAT["The tower of lattices"]
-  THM["theorem_4_4"]
+  FunctionSpaceTower_CLat["CLat"]
+  FunctionSpaceTower_conj_iInfTerm_eq["conj_iInfTerm_eq"]
+  FunctionSpaceTower_conjMap["conjMap"]
+  FunctionSpaceTower_conjMap_iSup["conjMap_iSup"]
+  FunctionSpaceTower_DInf["DInf"]
+  FunctionSpaceTower_DInfFn["DInfFn"]
+  FunctionSpaceTower_embInf_succ_iSup["embInf_succ_iSup"]
+  FunctionSpaceTower_embInfInf["embInfInf"]
+  FunctionSpaceTower_embInfInf_projInfInf["embInfInf_projInfInf"]
+  FunctionSpaceTower_functionSpaceInclFun["functionSpaceInclFun"]
+  FunctionSpaceTower_functionSpaceProjection["functionSpaceProjection"]
+  FunctionSpaceTower_functionSpaceRetrFun["functionSpaceRetrFun"]
+  FunctionSpaceTower_iInfTerm["iInfTerm"]
+  FunctionSpaceTower_iInfTerm_monotone["iInfTerm_monotone"]
+  FunctionSpaceTower_incl_projInf_le_projInf_succ["incl_projInf_le_projInf_succ"]
+  FunctionSpaceTower_iSup__monotone_eq_diagonal["iSup₂_monotone_eq_diagonal"]
+  FunctionSpaceTower_jInfTerm["jInfTerm"]
+  InverseLimits_lemma_4_5["lemma_4_5"]
+  FunctionSpaceTower_projInfInf["projInfInf"]
+  FunctionSpaceTower_theorem_4_4["theorem_4_4"]
+  FunctionSpaceTower_theorem_4_4_more["theorem_4_4_more"]
+  FunctionSpaceTower_towerProj["towerProj"]
+  FunctionSpaceTower_towerProj_retr_conjMap_succ["towerProj_retr_conjMap_succ"]
 
-  INV -->|"1"| CONJ
-  INV -->|"2"| DINF
-  INV -->|"37"| FSP
-  INV -->|"2"| PROJ
-  INV -->|"3"| SCOTT
-  INV -->|"3"| SOURCE
-  INV -->|"3"| THM
-
-  classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
-  classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
-  class LAT,CONJ,FSP,PROJ,DINF,INV,SCOTT,SOURCE concept
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
+  FunctionSpaceTower_CLat -->|"1"| FunctionSpaceTower_conjMap
+  FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_conjMap_iSup
+  FunctionSpaceTower_towerProj -->|"1"| FunctionSpaceTower_DInf
+  FunctionSpaceTower_DInf -->|"1"| FunctionSpaceTower_DInfFn
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_embInf_succ_iSup
+  FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_embInfInf
+  InverseLimits_lemma_4_5 -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaceTower_projInfInf -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaceTower_towerProj_retr_conjMap_succ -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_functionSpaceInclFun
+  FunctionSpaceTower_functionSpaceInclFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
+  FunctionSpaceTower_functionSpaceRetrFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
+  FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
+  FunctionSpaceTower_DInfFn -->|"1"| FunctionSpaceTower_iInfTerm
+  FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_iInfTerm_monotone
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_incl_projInf_le_projInf_succ
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_iSup__monotone_eq_diagonal
+  FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_jInfTerm
+  FunctionSpaceTower_conj_iInfTerm_eq -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_conjMap_iSup -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_embInf_succ_iSup -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_embInfInf -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_iInfTerm_monotone -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_iSup__monotone_eq_diagonal -->|"1"| FunctionSpaceTower_projInfInf
+  FunctionSpaceTower_theorem_4_4_more -->|"1"| FunctionSpaceTower_theorem_4_4
+  FunctionSpaceTower_embInfInf_projInfInf -->|"1"| FunctionSpaceTower_theorem_4_4_more
+  FunctionSpaceTower_functionSpaceProjection -->|"1"| FunctionSpaceTower_towerProj
+  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_towerProj_retr_conjMap_succ

@@ -15,3 +15,4 @@ $$j_{\infty(n+1)}(u) = u_{(n+1)}.$$
 $$j_{\infty(n+1)}(i_{(m+1)\infty}(u_{(m+1)})) = u_{(n+1)}$$
 
 for all $m \geqslant n$. This is obvious for $m = n$, and it can be readily proved by induction for larger $m$ using the various recursion equations. (Properly speaking the induction is done on the quantity $(m - n)$ using both $n$ and $m$ as variables.) $\square$
+

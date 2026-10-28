@@ -10,8 +10,8 @@ for example. Here $T = \bot, 0, 1, \top$ is the four-element lattice with $0$ an
 
 $$
 \begin{array}{ccc}
-D + D' & \longleftarrow & D' \\
-\uparrow & & \uparrow \\
+D + D' & \longleftarrow & D' 
+\uparrow & & \uparrow 
 D & \longleftarrow & 0
 \end{array}
 $$
@@ -26,18 +26,3 @@ $$V = \varprojlim \langle \mathbb{F}^n(T), j_n \rangle_{n=0}^{\infty}.$$
 
 The resulting continuous lattice satisfies the desired equation up to isomorphism.
 
-The space $V$ constructed in the way just indicated is very rich in subspaces. To see this, consider the space $\mathcal{J}_V$ of proper projections $j$ where $j(\top) = \top$. As in 3.12 this is a complete lattice. Now that $[V \times V]$ and $[V + V]$ and $[V \to V]$ are regarded as *subspaces* of this “universe” $V$ itself, we can easily define *continuous operations*
-
-$$(j \times k)\ ,\ (j + k)\ ,\ \text{and}\ (j \to k)$$
-
-on the projections obtaining again elements of $\mathcal{J}_V$. The projections so obtained correspond to the indicated constructions of subspaces, of course. (Indeed, if we had the time and space, we could show that $\mathcal{J}_V$ becomes a very interesting category). There will be a particular
-
-projection $t$ corresponding to $T$, and reason for doing all this is to show that the existence of subspaces of $V$ can now be established by solving equations in $\mathcal{J}_V$. For example, by the fixed-point construction we could find a $j \in \mathcal{J}_V$ such that
-
-$$j = t + (t \times j) + ((j \times j) \to j).$$
-
-The range of $j$ would then be a subspace $W \subseteq V$ such that $W$ solves the equation:
-
-$$W = T + [T \times W] + [[W \times W] \to W].$$
-
-And these are only a few examples: simultaneous equations are possible, and many other operators are waiting for discovery and application.
