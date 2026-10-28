@@ -1943,18 +1943,18 @@ alignment:
         Raw |𝒟| / full |A| remain larger. The Prop-level claim is exists_presentation_domains_equiv.
     - source: '|T| ≃o filters of [u] on the S-expression domain (view.pdf, §5.5)'
       lean: sexNeighborhoodIso
-      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.WorkedExampleSExpr (proof)
+      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.WorkedExampleSExpr.exists_sexNeighborhoodIso (proof)
       status: proved
       note: Instance of InfoSysToNeighborhood.domainOrderIso at Factoid 8.1 SexSys. Compared by Comparator
         as a definition.
     - source: '|T| ≃o Ideal(K(T)) on the S-expression domain (view.pdf, §5.5)'
       lean: sexIdealIso
-      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.WorkedExampleSExpr (proof)
+      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.WorkedExampleSExpr.exists_sexIdealIso (proof)
       status: proved
       note: Instance of InfoSysToIdealCompletion.domainOrderIso at SexSys.
     - source: '|T| ≃o |A + (T × T)| (view.pdf, §5.6)'
       lean: sexDomainEquationIso
-      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.WorkedExampleSExpr (proof)
+      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.WorkedExampleSExpr.exists_sexDomainEquationIso (proof)
       status: proved
       note: Order isomorphism SexSys.Element ≃o SexRhs.Element induced by treeUnfold / treeFold (treeDomainIso).
         The generic semantic factor WithBot (|A| ⊕ (|T| × |T|)) ≃o |A + (T × T)| remains as the uncompared

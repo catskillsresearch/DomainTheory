@@ -57,9 +57,6 @@
 **[BridgeTheorems/WorkedExampleSExpr/sexUnfold_atom.lean](DomainTheory/BridgeTheorems/WorkedExampleSExpr/sexUnfold_atom.lean)**
 
 @import "WorkedExampleSExpr/sexUnfold_atom.lean"
-**[BridgeTheorems/WorkedExampleSExpr.lean](DomainTheory/BridgeTheorems/WorkedExampleSExpr.lean)**
-
-@import "WorkedExampleSExpr.lean"
 **[BridgeTheorems/treeFold.lean](DomainTheory/BridgeTheorems/treeFold.lean)**
 
 @import "treeFold.lean"

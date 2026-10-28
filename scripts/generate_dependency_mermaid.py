@@ -19,6 +19,13 @@ BULLET_MD = re.compile(r"^\s*-\s+\[[^\]]*\]\(([^)]+)\)\s*$")
 OUTLINE_LINK = re.compile(r"^\s*(?:-\s+|\d+\.\s+)\[[^\]]*\]\(([^)]+)\)\s*$")
 OUTLINE_TITLE = re.compile(r"^\s*(?:-\s+|\d+\.\s+)\[([^\]]*)\]")
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
+CL1972_SECTION_MERMAIDS = frozenset(
+    {
+        "1972_2_Continuous_lattices.mermaid",
+        "1972_Function_spaces.mermaid",
+        "1972_4_Inverse_limits.mermaid",
+    }
+)
 MERMAID_IMPORT = re.compile(r'@import\s+"([^"]+\.mermaid)"')
 LEAN_IMPORT = re.compile(r'@import\s+"([^"]+\.lean)"')
 NODE_DEF = re.compile(r'^\s*(\w+)\["([^"]*)"\]\s*$')
@@ -677,7 +684,20 @@ def gen_top_chapters(mermaid: Path, modules: dict[str, Path], old: str) -> str:
     return emit_flowchart(header, node_labels, edges, style, labeled=True)
 
 
+def cl1972_outline_box_modules(child: Path, title: str) -> set[str]:
+    if re.match(r"(?i)introduction\s*$", title.strip()):
+        return set()
+    text = child.read_text(encoding="utf-8", errors="ignore")
+    if any(OUTLINE_LINK.match(ln) for ln in text.splitlines()):
+        return modules_from_section_outline(child)
+    return lean_modules_from_note(child)
+
+
 def classify(mermaid: Path, text: str) -> str:
+    if mermaid.name in CL1972_SECTION_MERMAIDS:
+        return "cl1972_section"
+    if mermaid.name == "1972_ContinuousLattices.mermaid":
+        return "cl1972_chapter"
     if mermaid.name == "DomainTheory.mermaid":
         return "top_chapters"
     if "Inside " in text.split("flowchart")[0]:
@@ -726,6 +746,32 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_folder_aggregate(mermaid, modules, old, parent_dir=DT / "InformationSystems")
     if kind == "top_chapters":
         return gen_top_chapters(mermaid, modules, old)
+    if kind == "cl1972_section":
+        return gen_note_outline(
+            mermaid,
+            modules,
+            old,
+            reduce=True,
+            labeled=True,
+            box_modules_fn=cl1972_outline_box_modules,
+        )
+    if kind == "cl1972_chapter":
+        cl_ids = {
+            "Injective spaces": "INJ",
+            "Continuous lattices": "CL",
+            "Function spaces": "FS",
+            "Inverse limits": "LIM",
+            "Correction": "COR",
+        }
+        return gen_note_outline(
+            mermaid,
+            modules,
+            old,
+            reduce=True,
+            labeled=True,
+            box_modules_fn=cl1972_outline_box_modules,
+            extra_title_ids=cl_ids,
+        )
     if kind == "ns_sections":
         ns_ids = {
             "Domains given by neighbourhoods": "DOM",

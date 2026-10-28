@@ -339,7 +339,7 @@ def build_tree(spine: dict[Path, Leaf]) -> Barrel:
     sec4 = Barrel(
         P("1972_4_Inverse_limits.md"),
         "Inverse limits",
-        "1972_Inverse_limits.mermaid",
+        "1972_4_Inverse_limits.mermaid",
         [
             S(P("InverseLimits/1972_Inverse_limits.md")),
             inverse_system,
@@ -353,7 +353,6 @@ def build_tree(spine: dict[Path, Leaf]) -> Barrel:
             L("InverseLimits/1972_inverseLimitLE.md"),
             L("InverseLimits/1972_inverseLimitLT.md"),
             limit_lattice,
-            L("InverseLimits/1972_Directed_suprema.md"),
             L("InverseLimits/1972_inverseLimitTopology.md"),
             L("InverseLimits/1972_inverseLimit.md"),
             S(P("InverseLimits/1972_Proposition_4_1.md")),
@@ -775,6 +774,13 @@ def subtree_leaves(node: Leaf | Barrel) -> list[Leaf]:
 
 
 def write_mermaid(barrel: Barrel) -> None:
+    if barrel.path.name in {
+        "1972_ContinuousLattices.md",
+        "1972_2_Continuous_lattices.md",
+        "1972_3_Function_spaces.md",
+        "1972_4_Inverse_limits.md",
+    }:
+        return
     leans: list[Path] = []
     for leaf in subtree_leaves(barrel):
         leans.extend(leaf.leans)

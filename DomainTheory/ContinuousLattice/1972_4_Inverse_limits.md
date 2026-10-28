@@ -2,7 +2,7 @@
 
 @import "1972_4_Inverse_limits.english" {code_block=false}
 
-@import "1972_Inverse_limits.mermaid"
+@import "1972_4_Inverse_limits.mermaid"
 
 - [The inverse system](InverseLimits/1972_Inverse_system.md)
 - [projLE](InverseLimits/1972_projLE.md)
@@ -15,7 +15,6 @@
 - [inverseLimitLE](InverseLimits/1972_inverseLimitLE.md)
 - [inverseLimitLT](InverseLimits/1972_inverseLimitLT.md)
 - [The limit lattice](InverseLimits/1972_Limit_lattice.md)
-- [Directed suprema](InverseLimits/1972_Directed_suprema.md)
 - [inverseLimitTopology](InverseLimits/1972_inverseLimitTopology.md)
 - [Proposition 4.1](InverseLimits/1972_Proposition_4_1.md)
 - [Proposition 4.2](InverseLimits/1972_Proposition_4_2.md)

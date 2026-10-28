@@ -32,7 +32,6 @@ import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp
 import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp_anti
 import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp_bot
 import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp_inter
-import DomainTheory.BridgeTheorems.Equivalence
 import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
 import DomainTheory.BridgeTheorems.InfoSysConstructions
 import DomainTheory.BridgeTheorems.InfoSysConstructions.Basic
@@ -125,7 +124,6 @@ import DomainTheory.BridgeTheorems.TreeEnt_pairL_bot_of_pairs
 import DomainTheory.BridgeTheorems.TreeEnt_pairR_bot_of_pairs
 import DomainTheory.BridgeTheorems.TreeEnt_sumEnt
 import DomainTheory.BridgeTheorems.TreeProd
-import DomainTheory.BridgeTheorems.WorkedExampleSExpr
 import DomainTheory.BridgeTheorems.WorkedExampleSExpr.Basic
 import DomainTheory.BridgeTheorems.WorkedExampleSExpr.SexRhs
 import DomainTheory.BridgeTheorems.WorkedExampleSExpr.SexSys
@@ -440,7 +438,6 @@ import DomainTheory.ContinuousLattice.InverseLimits.embInf
 import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
 import DomainTheory.ContinuousLattice.InverseLimits.embLE
 import DomainTheory.ContinuousLattice.InverseLimits.iComp
-import DomainTheory.ContinuousLattice.InverseLimits.idInf_eq_iSup
 import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 import DomainTheory.ContinuousLattice.InverseLimits.instInfSet
 import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE

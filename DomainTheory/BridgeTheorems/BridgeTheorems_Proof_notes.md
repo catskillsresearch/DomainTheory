@@ -449,6 +449,3 @@
 **[BridgeTheorems/ScottMapBridge.lean](DomainTheory/BridgeTheorems/ScottMapBridge.lean)**
 
 @import "ScottMapBridge.lean"
-**[BridgeTheorems/Equivalence.lean](DomainTheory/BridgeTheorems/Equivalence.lean)**
-
-@import "Equivalence.lean"

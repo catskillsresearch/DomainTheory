@@ -1,11 +1,11 @@
-%% Notes of the inverse-limit construction.
+%% Notes of section 4, inverse limits, in barrel order.
+%% Each box is one outline note from 1972_4_Inverse_limits.md.
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
 
   Coordinates_of_an_embedd["Coordinates of an embedding"]
   Corollary_4_3["Corollary 4.3"]
-  Directed_suprema["Directed suprema"]
   Embeddings_along_the_tow["Embeddings along the tower"]
   Embeddings_into_the_limi["Embeddings into the limit"]
   inverseLimitLE["inverseLimitLE"]
@@ -17,13 +17,12 @@ flowchart TB
   The_limit_lattice["The limit lattice"]
   The_mediating_map["The mediating map"]
 
-  The_limit_lattice -->|"4"| Coordinates_of_an_embedd
-  The_limit_lattice -->|"1"| Embeddings_along_the_tow
+  Embeddings_along_the_tow -->|"1"| Coordinates_of_an_embedd
+  projLE -->|"1"| Coordinates_of_an_embedd
+  The_inverse_system -->|"1"| Embeddings_along_the_tow
+  The_limit_lattice -->|"3"| Embeddings_into_the_limi
   Proposition_4_1 -->|"3"| The_function_space_tower
-  inverseLimitLE -->|"3"| The_limit_lattice
-  The_limit_lattice -->|"7"| The_mediating_map
-  The_limit_lattice -->|"7"| inverseLimitLE
-  The_limit_lattice -->|"1"| projLE
+  inverseLimitLE -->|"2"| The_limit_lattice
+  The_mediating_map -->|"1"| inverseLimitLE
+  The_inverse_system -->|"1"| projLE
   The_limit_lattice -->|"2"| projection
-
-  classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
