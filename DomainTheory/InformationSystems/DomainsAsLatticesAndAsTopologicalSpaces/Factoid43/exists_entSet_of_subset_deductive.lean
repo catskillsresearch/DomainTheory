@@ -15,7 +15,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Witness: some finite `w ⊆ U` entails every member of `Y ⊆ deductiveClosure U`. -/
 theorem exists_entSet_of_subset_deductive
     (U : Set α) (hU : sys.IsFinitelyConsistent U) (Y : Finset α)
     (hY : (Y : Set α) ⊆ {a | ∃ u : Finset α, (u : Set α) ⊆ U ∧ sys.Ent u a}) :

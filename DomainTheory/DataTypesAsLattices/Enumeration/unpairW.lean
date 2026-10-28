@@ -18,7 +18,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Least `w` with `k < triangle (w+1)`, computed by bounded recursion. -/
 def unpairW (k : ℕ) : ℕ := unpairWRec k k
 
 namespace unpairW

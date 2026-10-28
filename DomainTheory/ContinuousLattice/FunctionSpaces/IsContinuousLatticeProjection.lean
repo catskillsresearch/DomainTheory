@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
 public import Mathlib.Order.BourbakiWitt
 public import Mathlib.Topology.Defs.Basic
@@ -22,8 +21,6 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- **Scott 1972, Definition 3.6.** A *projection* of continuous lattices: a retract with
-`i ∘ j ⊑ id`. -/
 structure IsContinuousLatticeProjection (D : Type u) (D' : Type v)
     [CompleteLattice D] [CompleteLattice D']
     extends IsContinuousLatticeRetraction D D' where

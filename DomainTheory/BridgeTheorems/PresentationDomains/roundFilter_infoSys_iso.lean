@@ -30,7 +30,6 @@ universe u
 
 variable {D : Type u} [CompleteLattice D] [DecidableEq D]
 
-/-- Round `↟`-filters ↔ round elements of the coded InfoSys. -/
 noncomputable def roundFilter_infoSys_iso :
     RoundFilter (D := D) ≃o RoundInfoSysElement (D := D) where
   toFun := fun f =>

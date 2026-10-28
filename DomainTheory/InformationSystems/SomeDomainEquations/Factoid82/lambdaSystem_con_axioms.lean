@@ -11,7 +11,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamT
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -20,12 +19,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
 
-
-/-- Def 2.1 progress: `con_subset`, `con_sing`, `ent_bot`, `ent_refl`;
-`ent_con` for bot/atom; `ent_con`/`ent_trans` on `funTok` remain. -/
 theorem lambdaSystem_con_axioms :
     (∀ {u v : Finset (LamToken A)}, LamTokenCon A u → v ⊆ u → LamTokenCon A v) ∧
       (∀ p : LamToken A, LamTokenCon A {p}) ∧
@@ -36,7 +31,6 @@ theorem lambdaSystem_con_axioms :
     LamTokenCon_singleton A,
     fun hu => LamTokenEnt_bot A hu,
     fun hu hp => LamTokenEnt_of_mem A hu hp⟩
-
 
 end InfoSys
 end DomainTheory.InformationSystems

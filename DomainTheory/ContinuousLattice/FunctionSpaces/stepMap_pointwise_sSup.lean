@@ -5,27 +5,20 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-
-/-- **Pointwise reconstruction.** For a Scott map `f`, the supremum of the values of the step
-functions below `f` recovers `f x`: `f x = ⊔ {e' | ∃ e ≪ x, e' ≪ f e}`. Uses continuity of `D`
-(`x = ⊔{e | e ≪ x}`), Scott-continuity of `f`, and continuity of `D'`. -/
 theorem stepMap_pointwise_sSup (hD : ContinuousLattice D) (hD' : ContinuousLattice D')
     (f : ScottMap D D') (x : D) :
     sSup {e' : D' | ∃ e, e ≪ x ∧ e' ≪ (f : D → D') e} = (f : D → D') x := by

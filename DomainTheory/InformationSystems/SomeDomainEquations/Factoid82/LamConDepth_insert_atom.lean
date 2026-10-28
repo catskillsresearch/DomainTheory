@@ -23,7 +23,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Inserting an entailed atom preserves depth-Con. -/
 theorem LamConDepth_insert_atom {u : Finset (RawLamToken α)} {x : α}
     (ht : LamEntDepth A u (.atom x)) :
     LamConDepth A (insert (.atom x) u) := by

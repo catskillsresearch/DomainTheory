@@ -17,9 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem directed_sUnion_fixed {f : Pomega → Pomega} (hf : IsScottContinuous f)
     {A : Set (Fixpoints f)} (hA : DirectedSet A) :

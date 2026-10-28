@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Rename free `i` to a completely fresh `j`. -/
 def rename (i j : ℕ) : Term → Term
   | .var k => if k = i then .var j else .var k
   | .zero => .zero

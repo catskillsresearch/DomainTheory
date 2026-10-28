@@ -16,11 +16,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (4.36).** `which ∘ (a ⊕ b) : (a ⊕ b) ∘→ bool`. -/
 theorem eq_4_36 (a b : Pomega) :
     typed (comp whichC (plusR a b)) (arrowR (plusR a b) boolR) := by
   change comp whichC (plusR a b) =

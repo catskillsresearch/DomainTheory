@@ -24,8 +24,6 @@ variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Entailment for the function space (Scott 7.1(iv), constructive witness form).
-Includes `FunCon` so `ent_con` has the ambient consistency hypothesis. -/
 def FunEnt (w : Finset (FunToken A B)) (p : FunToken A B) : Prop :=
   FunCon A B w ∧
     ∃ s ⊆ w, (∀ q ∈ s, A.EntSet p.val.1 q.val.1) ∧

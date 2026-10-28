@@ -20,7 +20,6 @@ namespace InfoSys
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Consistency for the separated sum (Scott 6.3(iii)). -/
 def SumCon (u : Finset (SumToken α β)) : Prop :=
   (lftFinset u ∈ A.Con ∧ rhtFinset u = ∅) ∨
     (lftFinset u = ∅ ∧ rhtFinset u ∈ B.Con)
@@ -50,6 +49,5 @@ theorem SumCon.rht_empty_of_lft_nonempty {u : Finset (SumToken α β)}
   · exact False.elim (hne hl)
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

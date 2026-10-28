@@ -10,17 +10,13 @@ public import DomainTheory.DataTypesAsLattices.Computability.primrecRel_Scomb_ap
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
-
 
 theorem rePred_Scomb_nested :
     REPred fun t : ℕ =>

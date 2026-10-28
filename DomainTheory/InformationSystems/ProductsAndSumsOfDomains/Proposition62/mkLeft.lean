@@ -16,7 +16,6 @@ variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Left-tagged product token `(X, Δ_B)`. -/
 def mkLeft (x : α) : ProdToken A B :=
   ⟨(x, B.bot), ⟨Or.inr rfl⟩⟩
 

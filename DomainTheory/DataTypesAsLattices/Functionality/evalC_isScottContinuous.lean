@@ -13,9 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem evalC_isScottContinuous :
     IsScottContinuous (fun u => funOf (funOf u (ofNat 0)) (funOf u (ofNat 1))) :=

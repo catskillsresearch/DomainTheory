@@ -17,7 +17,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Computable inverse of Scott pairing, equal to `unpair`. -/
 def unpairComp (k : ℕ) : ℕ × ℕ :=
   let w := Nat.find (exists_triangle_succ k)
   let m := k - triangle w

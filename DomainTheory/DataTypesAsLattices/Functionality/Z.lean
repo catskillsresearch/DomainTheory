@@ -16,7 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (7.15)–(7.16).** Iterators `Zₙ`. -/
 def Z : ℕ → Pomega → Pomega → Pomega
   | 0, _, x => x
   | n + 1, f, x => funOf f (Z n f x)
@@ -60,7 +59,6 @@ theorem graph_funOf (n : ℕ) (f x : Pomega) :
     have : funOf (graph (fun y => funOf f y)) (Z n f x) = funOf f (Z n f x) :=
       beta (funOf.isScottContinuous f) (Z n f x)
     exact this
-
 
 theorem isScottContinuous_left (n : ℕ) (x : Pomega) :
     IsScottContinuous (fun f => Z n f x) := by

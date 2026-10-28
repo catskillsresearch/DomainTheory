@@ -15,11 +15,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_3
 public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_universe
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (5.24).** Function space of closures is a closure. -/
 theorem eq_5_24 {a b : Pomega} (ha : typed a Vcomb) (hb : typed b Vcomb) :
     typed (arrowR a b) Vcomb :=
   (theorem_5_5.universe.2 (arrowR a b)).mp

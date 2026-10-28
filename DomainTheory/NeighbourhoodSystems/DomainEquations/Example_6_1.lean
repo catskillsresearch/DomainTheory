@@ -13,11 +13,7 @@ section
 open NeighborhoodSystem
 namespace Example61
 variable {α : Type*}
-/- concordance: source L3218 EXAMPLE 6.1 indefinite product -/
-/-- **Example 6.1 (Scott 1981, PRG-19).** The neighbourhoods of `D^§`, defined inductively as the
-*least* family of subsets of `Γ` containing (i) `Γ`, (ii) `0X` for `X ∈ 𝒟`, and (iii) `1P ∪ 2Q`
-whenever it already contains `P` and `Q`. This is Scott's fixed-point family
-`𝒟^§ = {Γ} ∪ {0X ∣ X ∈ 𝒟} ∪ {1P ∪ 2Q ∣ P, Q ∈ 𝒟^§}`. -/
+
 inductive MemS (D : NeighborhoodSystem α) : Set (List Bool × α) → Prop
   | gamma : MemS D (Gamma D)
   | zero {X : Set α} : D.mem X → MemS D (embZero X)
@@ -31,22 +27,16 @@ open NeighborhoodSystem ApproximableMap ExampleB
 
 namespace Example62
 
-/-- `bX = {b :: w' ∣ w' ∈ X}`: the `b`-prefixed copy of a neighbourhood `X` (Scott's `0X` for
-`b = false` and `1X` for `b = true`). -/
 def embBit (b : Bool) (X : Set Str) : Set Str := {w | ∃ w', w = b :: w' ∧ w' ∈ X}
 
 @[simp] theorem mem_embBit {b : Bool} {X : Set Str} {w : Str} :
     w ∈ embBit b X ↔ ∃ w', w = b :: w' ∧ w' ∈ X := Iff.rfl
 
-/-- Scott's standing assumption `∅ ∉ B`: every neighbourhood of `B` is nonempty (cones contain their
-generating prefix). -/
 theorem B_nonempty : ∀ X, B.mem X → X.Nonempty := by
   rintro X ⟨σ, rfl⟩; exact ⟨σ, List.prefix_rfl⟩
 
-/-- The right-hand side of Scott's domain equation: the sum system `B + B` (Exercise 3.18). -/
 abbrev BB : NeighborhoodSystem (Option (Str ⊕ Str)) := sum B B B_nonempty B_nonempty
 
-/-- `bX = b·X` is exactly the single-bit prepend of Example 1.B. -/
 theorem embBit_eq_prepend (b : Bool) (X : Set Str) : embBit b X = prepend [b] X := by
   ext w
   simp only [mem_embBit, mem_prepend]
@@ -54,7 +44,6 @@ theorem embBit_eq_prepend (b : Bool) (X : Set Str) : embBit b X = prepend [b] X 
   · rintro ⟨w', rfl, hX⟩; exact ⟨w', hX, rfl⟩
   · rintro ⟨τ, hX, rfl⟩; exact ⟨τ, rfl, hX⟩
 
-/-- `b(σΣ*) = (bσ)Σ*`: prepending a bit to a cone gives the cone of the longer prefix. -/
 theorem embBit_cone (b : Bool) (σ : Str) : embBit b (cone σ) = cone (b :: σ) := by
   rw [embBit_eq_prepend, prepend_cone]; rfl
 

@@ -28,7 +28,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Singleton funTok is Con when components are (Scott (7) on a singleton). -/
 theorem LamConDepth_singleton_funTok (xs ys : List (RawLamToken α))
     (hxs : LamConDepth A (listToFinset xs)) (hys : LamConDepth A (listToFinset ys)) :
     LamConDepth A ({.funTok xs ys} : Finset (RawLamToken α)) := by

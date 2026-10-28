@@ -12,25 +12,24 @@ public import Mathlib.Tactic.ToAdditive
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 section
-/-- One step of the diagonal walk: the cell holding `num c + 1`. Moving up-right within a diagonal,
-or to the start of the next diagonal at the top edge. -/
+
 def nextCell : ℕ × ℕ → ℕ × ℕ
   | (n + 1, m) => (n, m + 1)
   | (0, m) => (m + 1, 0)
 end
 
 section
-/-- The `k`-th triangular number `T(k) = k(k+1)/2`. -/
+
 def tri (k : ℕ) : ℕ := k * (k + 1) / 2
 end
 
 section
-/-- The pairing function `num n m = (n+m)(n+m+1)/2 + m` (Cantor's diagonal enumeration). -/
+
 def num (n m : ℕ) : ℕ := tri (n + m) + m
 end
 
 section
-/-- Its uncurried form, the actual `N × N → N` of the exercise. -/
+
 def numP (p : ℕ × ℕ) : ℕ := num p.1 p.2
 end
 
@@ -46,7 +45,7 @@ theorem num_zero_zero : num 0 0 = 0 := rfl
 end
 
 section
-/-- `k(k+1)` is even (choice-free, by induction). -/
+
 theorem two_dvd_mul_succ (k : ℕ) : 2 ∣ k * (k + 1) := by
   induction k with
   | zero => exact ⟨0, by ring⟩
@@ -58,15 +57,14 @@ theorem two_dvd_mul_succ (k : ℕ) : 2 ∣ k * (k + 1) := by
 end
 
 section
-/-- The defining doubling identity `2·T(k) = k(k+1)` — the division is exact because `k(k+1)` is
-even. -/
+
 theorem tri_mul_two (k : ℕ) : tri k * 2 = k * (k + 1) := by
   unfold tri
   exact Nat.div_mul_cancel (two_dvd_mul_succ k)
 end
 
 section
-/-- The triangular recurrence `T(k+1) = T(k) + (k+1)`. -/
+
 theorem tri_succ (k : ℕ) : tri (k + 1) = tri k + (k + 1) := by
   have e1 : tri k * 2 = k * (k + 1) := tri_mul_two k
   have e2 : tri (k + 1) * 2 = (k + 1) * (k + 1 + 1) := tri_mul_two (k + 1)
@@ -77,7 +75,7 @@ theorem tri_succ (k : ℕ) : tri (k + 1) = tri k + (k + 1) := by
 end
 
 section
-/-- The value `num n m` sits in the half-open diagonal block `[T(n+m), T(n+m+1))`: the upper bound. -/
+
 theorem num_lt_tri_succ (n m : ℕ) : num n m < tri (n + m + 1) := by
   rw [tri_succ]; unfold num; omega
 end
@@ -104,7 +102,7 @@ theorem tri_le_succ (k : ℕ) : tri k ≤ tri (k + 1) := by
 end
 
 section
-/-- `T` is monotone (proved by hand on `≤` to stay choice-free). -/
+
 theorem tri_mono {a b : ℕ} (h : a ≤ b) : tri a ≤ tri b := by
   induction h with
   | refl => exact le_refl _
@@ -112,8 +110,7 @@ theorem tri_mono {a b : ℕ} (h : a ≤ b) : tri a ≤ tri b := by
 end
 
 section
-/-- **The function is one-one.** The diagonal `s = n+m` is recovered as the unique `s` with
-`T(s) ≤ num n m < T(s+1)`; then `m` is the offset and `n = s - m`. -/
+
 theorem num_injective : Function.Injective numP := by
   rintro ⟨n₁, m₁⟩ ⟨n₂, m₂⟩ h
   have h' : num n₁ m₁ = num n₂ m₂ := h
@@ -138,7 +135,7 @@ theorem num_injective : Function.Injective numP := by
 end
 
 section
-/-- The inverse `unnum v = nextCellᵛ (0, 0)`. -/
+
 def unnum : ℕ → ℕ × ℕ
   | 0 => (0, 0)
   | v + 1 => nextCell (unnum v)
@@ -159,4 +156,3 @@ theorem unnum_numP (c : ℕ × ℕ) : unnum (numP c) = c :=
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise513
-

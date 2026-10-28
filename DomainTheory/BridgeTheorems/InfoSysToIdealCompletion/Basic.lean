@@ -35,10 +35,8 @@ namespace InfoSysToIdealCompletion
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-
 end InfoSysToIdealCompletion
 
-/-- Blueprint name: `|A|` as the ideal completion of its finite elements. -/
 noncomputable abbrev infoSys_to_idealCompletion {α : Type*} [DecidableEq α] (A : InfoSys α) :
     A.Element ≃o Ideal (InfoSysToIdealCompletion.FiniteElement A) :=
   InfoSysToIdealCompletion.domainOrderIso A

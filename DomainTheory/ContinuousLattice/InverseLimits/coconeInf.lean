@@ -28,14 +28,12 @@ variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 variable {D' : Type*} [CompleteLattice D']
 
-/-- The mediating map of Corollary 4.3: `f∞(x) = ⨆ₙ fₙ(xₙ)`. -/
 def coconeInf (f : ∀ n, ScottMap (D n) D') (x : InverseLimit D P) : D' :=
   ⨆ n, f n (x.1 n)
 
 theorem coconeInf_apply (f : ∀ n, ScottMap (D n) D') (x : InverseLimit D P) :
     coconeInf D P f x = ⨆ n, f n (x.1 n) := rfl
 
-/-- Climbing then applying `f` is constant: `f_m(i_{m-1}…iₙ x) = fₙ(x)`. -/
 theorem coconeInf_climb (f : ∀ n, ScottMap (D n) D')
     (hf : ∀ n x, f n x = f (n + 1) ((P n).incl x)) {n : ℕ} (x : D n) :
     ∀ {m : ℕ} (h : n ≤ m), f m (embLE D P h x) = f n x := by
@@ -44,7 +42,6 @@ theorem coconeInf_climb (f : ∀ n, ScottMap (D n) D')
   | base => rw [embLE_self]
   | succ k hk ih => rw [embLE_succ D P hk (Nat.le_succ_of_le hk), ← hf k, ih]
 
-/-- Descending then applying `f` only decreases: `f_m(j_m…j_{n-1} x) ⊑ fₙ(x)`. -/
 theorem coconeInf_descend (f : ∀ n, ScottMap (D n) D')
     (hf : ∀ n x, f n x = f (n + 1) ((P n).incl x)) {m : ℕ} :
     ∀ {n : ℕ} (h : m ≤ n) (x : D n), f m (projLE D P h x) ≤ f n x := by
@@ -58,7 +55,6 @@ theorem coconeInf_descend (f : ∀ n, ScottMap (D n) D')
         _ = f (k + 1) ((P k).incl ((P k).retr x)) := hf k _
         _ ≤ f (k + 1) x := (f (k + 1)).monotone ((P k).incl_retr_le x)
 
-/-- **Scott 1972, Corollary 4.3 (factorization).** `fₙ = f∞ ∘ i_{n∞}`. -/
 theorem coconeInf_comp_embInf (f : ∀ n, ScottMap (D n) D')
     (hf : ∀ n x, f n x = f (n + 1) ((P n).incl x)) (n : ℕ) (x : D n) :
     coconeInf D P f (embInf D P n x) = f n x := by
@@ -72,8 +68,6 @@ theorem coconeInf_comp_embInf (f : ∀ n, ScottMap (D n) D')
   · refine le_trans (le_of_eq ?_) (le_iSup (fun m => f m ((embInf D P n x).1 m)) n)
     rw [show (embInf D P n x).1 n = x from iComp_self D P n x]
 
-/-- `f∞` is Scott-continuous: `f∞(⊔S) = ⊔ f∞(S)` for directed `S` (each `fₙ` is continuous and a
-double `⨆` over `ℕ × S` commutes). -/
 theorem coconeInf_preservesDirectedSup (f : ∀ n, ScottMap (D n) D') :
     PreservesDirectedSup (coconeInf D P f) := by
   intro S hS hSdir

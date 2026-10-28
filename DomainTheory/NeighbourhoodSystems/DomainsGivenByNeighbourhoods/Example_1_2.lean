@@ -6,10 +6,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Dom
 
 section
 namespace DomainTheory.NeighbourhoodSystems.Example12
-/-- Tokens for Example 1.2: `Δ = {0, 1}`. -/
+
 abbrev Token := Fin 2
 
-/-- The master neighbourhood `Δ = {0, 1}`. -/
 def master : Set Token := Set.univ
 
 theorem inter_master (A : Set Token) : A ∩ master = A := by
@@ -18,7 +17,6 @@ theorem inter_master (A : Set Token) : A ∩ master = A := by
 theorem master_inter (A : Set Token) : master ∩ A = A := by
   rw [master]; exact Set.univ_inter A
 
-/-- The neighbourhood `{1}`. -/
 def one : Set Token := {1}
 
 theorem master_not_subset_one : ¬master ⊆ one := by
@@ -26,7 +24,6 @@ theorem master_not_subset_one : ¬master ⊆ one := by
   have : (0 : Token) ∈ one := h (by simp [master])
   simp [one] at this
 
-/-- The neighbourhood `{0}`. -/
 def zero : Set Token := {0}
 
 theorem master_not_subset_zero : ¬master ⊆ zero := by
@@ -34,10 +31,8 @@ theorem master_not_subset_zero : ¬master ⊆ zero := by
   have : (1 : Token) ∈ zero := h (by simp [master])
   simp [zero] at this
 
-/-- The three neighbourhoods of Example 1.2. -/
 def memSet : Set (Set Token) := {master, zero, one}
 
-/-- Membership in the neighbourhood system `𝒟` of Example 1.2. -/
 def mem (X : Set Token) : Prop := X ∈ memSet
 
 theorem mem_master : mem master := by simp [mem, memSet, master, zero, one]
@@ -46,7 +41,6 @@ theorem mem_one : mem one := by simp [mem, memSet, master, zero, one]
 
 theorem mem_zero : mem zero := by simp [mem, memSet, master, zero, one]
 
-/-- A neighbourhood of Example 1.2 is exactly one of `Δ`, `{0}`, or `{1}`. -/
 theorem mem_iff (X : Set Token) : mem X ↔ X = master ∨ X = zero ∨ X = one := by
   constructor
   · intro h
@@ -99,8 +93,6 @@ theorem inter_eq (X Y : Set Token) (h : mem X) (h' : mem Y) :
   · exact Or.inr (Or.inr (Or.inr one_inter_zero))
   · exact Or.inr (Or.inr (Or.inl (Set.inter_self _)))
 
-/- concordance: source L146 EXAMPLE 1.2 two-token domain -/
-/-- **Example 1.2.** The neighbourhood system on `Δ = {0, 1}`. -/
 def neighborhoodSystem : NeighborhoodSystem Token where
   mem
   master
@@ -123,7 +115,6 @@ section
 
 open NeighborhoodSystem
 
-/-- The bottom element `⊥ = {Δ}`. -/
 def bot : neighborhoodSystem.Element where
   mem X := X = master
   sub h := by rw [h]; exact mem_master
@@ -136,7 +127,6 @@ def bot : neighborhoodSystem.Element where
     rw [hX] at hXY
     exact eq_of_master_subset hY hXY
 
-/-- The total element determined by `{1}`. -/
 def elemOne : neighborhoodSystem.Element where
   mem X := X = master ∨ X = one
   sub h := by
@@ -172,7 +162,6 @@ section
 
 open NeighborhoodSystem
 
-/-- The total element determined by `{0}`. -/
 def elemZero : neighborhoodSystem.Element where
   mem X := X = master ∨ X = zero
   sub h := by
@@ -207,7 +196,6 @@ theorem one_ne_master : one ≠ master := by
   intro h
   have : (0 : Token) ∈ one := h ▸ (by simp [master])
   simp [one] at this
-
 
 namespace neighborhoodSystem
 
@@ -267,7 +255,6 @@ theorem bot_lt_elemOne : bot < elemOne := by
     have hm : one = master := this
     exact one_ne_master hm
 
-/-- The bottom filter is the only partial element: it is strictly below both total elements. -/
 theorem bot_lt_elemZero : bot < elemZero := by
   constructor
   · intro X hx; exact Or.inl hx
@@ -276,7 +263,6 @@ theorem bot_lt_elemZero : bot < elemZero := by
     have hm : zero = master := this
     exact zero_ne_master hm
 
-/-- Every element of Example 1.2 is one of the three filters `⊥`, `{0}`-total, `{1}`-total. -/
 theorem element_classification (x : neighborhoodSystem.Element) :
     x = bot ∨ x = elemZero ∨ x = elemOne := by
   by_cases h0 : x.mem zero
@@ -310,20 +296,12 @@ theorem not_elemOne_le_elemZero : ¬ elemOne ≤ elemZero := by
   · exact one_ne_master h'
   · exact zero_ne_one h'.symm
 
-/-- **`elemZero` and `elemOne` are incomparable.** Neither total element approximates the other:
-if it did, its finite neighbourhood `{i}` would have to belong to the other's filter too, which
-is neither `Δ` nor its own singleton `{1-i}`. Used to show `⊥` is the *only* common lower bound
-of `elemZero` and `elemOne` (Exercise 2.16's uniqueness argument for the parity map). -/
 theorem not_elemZero_le_elemOne : ¬ elemZero ≤ elemOne := by
   intro h
   rcases h zero (Or.inr rfl) with h' | h'
   · exact zero_ne_master h'
   · exact zero_ne_one h'
 
-/-- **`⊥` is the unique common lower bound of `elemZero` and `elemOne`.** Any element approximated
-by *both* total elements is exactly `⊥`: `element_classification` puts it at `bot`, `elemZero`, or
-`elemOne`, and the latter two are excluded by incomparability. This is the order-theoretic
-ingredient (continuity/flatness of `𝒯`) behind the uniqueness half of Exercise 2.16. -/
 theorem eq_bot_of_le_elemZero_of_le_elemOne {a : neighborhoodSystem.Element}
     (h0 : a ≤ elemZero) (h1 : a ≤ elemOne) : a = bot := by
   rcases element_classification a with rfl | rfl | rfl
@@ -336,4 +314,3 @@ end neighborhoodSystem
 
 end DomainTheory.NeighbourhoodSystems.Example12
 end
-

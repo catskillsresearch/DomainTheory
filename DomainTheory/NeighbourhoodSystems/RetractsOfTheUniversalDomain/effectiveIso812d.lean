@@ -53,15 +53,11 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
+open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
-
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
@@ -232,5 +228,3 @@ end EffectiveIso812d
 end
 
 open Domain.Recursive NeighborhoodSystem
-
-

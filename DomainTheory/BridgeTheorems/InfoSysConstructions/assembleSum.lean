@@ -10,7 +10,6 @@ public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -27,7 +26,6 @@ namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
-/-- Assemble a sum-domain element from a separated-sum code. -/
 def assembleSum : WithBot (A.Element ⊕ B.Element) → (sumSystem A B).Element
   | ⊥ => (sumSystem A B).botElement
   | some (.inl x) => (inlMap A B).toElement x

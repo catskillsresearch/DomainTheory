@@ -33,7 +33,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem combinatory : ∀ i, IsCombinatory (unpairEnv i)
   | 1 => sqrtC.combinatory
   | 2 => subC.combinatory

@@ -10,7 +10,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -21,7 +20,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace Proposition314
 
-/-- `fix f` is a fixed point of `f`. -/
 theorem fix_eq (f : ScottMap D D) : (f : D → D) (fix f) = fix f :=
   (toOrderHom f).map_lfp
 

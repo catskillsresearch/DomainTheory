@@ -33,7 +33,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -47,8 +46,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-
-/-- Choice-free emptiness dichotomy for `lftFinset` (avoids `Finset.decidableEq`). -/
 theorem lftFinset_eq_empty_or_mem (u : Finset (SumToken α β)) :
     lftFinset u = ∅ ∨ ∃ x, x ∈ lftFinset u := by
   induction u using Finset.induction_on with

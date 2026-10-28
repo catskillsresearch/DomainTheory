@@ -10,7 +10,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -20,13 +19,10 @@ namespace InfoSys
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
 
-
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-
-/-- `snd ∘ ⟨f, g⟩ = g`. -/
 theorem comp_sndMap_pairMap (f : ApproximableMap C A) (g : ApproximableMap C B) :
     comp (sndMap A B) (pairMap A B f g) = g := by
   refine ApproximableMap.ext fun s w => ?_

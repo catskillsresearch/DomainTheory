@@ -9,7 +9,6 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems

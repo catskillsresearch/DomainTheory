@@ -14,12 +14,9 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 namespace NeighborhoodSystem
 
-/- concordance: source L2285 EXERCISE 4.15 maximal fixed points -/
-/-- **Exercise 4.15 (Scott 1981, PRG-19).** A monotone `f : |𝒟| → |𝒟|` has a *maximal* fixed point:
-some `m` with `f(m) = m` that admits no strictly larger fixed point. -/
 theorem exists_maximal_fixedPoint (f : V.Element → V.Element) (hf : Monotone f) :
     ∃ m, f m = m ∧ ∀ y, f y = y → m ≤ y → y ≤ m := by
-  -- Zorn on the set of post-fixed points.
+
   set S : Set V.Element := {x | x ≤ f x} with hS
   have ih : ∀ c ⊆ S, IsChain (· ≤ ·) c → ∃ ub ∈ S, ∀ z ∈ c, z ≤ ub := by
     intro c hcS hchain
@@ -28,7 +25,7 @@ theorem exists_maximal_fixedPoint (f : V.Element → V.Element) (hf : Monotone f
       show (⊥ : V.Element) ≤ f ⊥
       exact _root_.bot_le
     · refine ⟨V.chainUnion c hne hchain, ?_, fun z hz => V.le_chainUnion c hne hchain hz⟩
-      -- `⊔c` is post-fixed: each `x ∈ c` has `x ⊑ f x ⊑ f(⊔c)`.
+
       show V.chainUnion c hne hchain ≤ f (V.chainUnion c hne hchain)
       intro Z hZ
       obtain ⟨x, hxc, hxZ⟩ := hZ
@@ -40,9 +37,6 @@ theorem exists_maximal_fixedPoint (f : V.Element → V.Element) (hf : Monotone f
   refine ⟨m, le_antisymm hfm_le_m hms, fun y hy hmy => hm.2 ?_ hmy⟩
   exact le_of_eq hy.symm
 
-/-- **Exercise 4.15 (Scott 1981, PRG-19).** A monotone `f : |𝒟| → |𝒟|` has a *least* fixed point.
-(Having a maximal fixed point `m` gives a pre-fixed point `f(m) ⊑ m`; Exercise 4.13(1)'s `monoFix`
-then constructs the least fixed point `⋂{x ∣ f(x) ⊑ x}`.) -/
 theorem exists_least_fixedPoint (f : V.Element → V.Element) (hf : Monotone f) :
     ∃ b, f b = b ∧ ∀ y, f y = y → b ≤ y := by
   obtain ⟨m, hfm, _⟩ := exists_maximal_fixedPoint f hf
@@ -162,8 +156,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
 
-/-- **Exercise 4.16(1) (Scott 1981, PRG-19).** Scott's formula: for a non-empty set `S` of fixed
-points, `f(⋂S) ⊑ ⋂S`. (`f(⋂S) ⊑ f(s) = s` for each `s ∈ S`, then take the glb.) -/
 theorem f_sInf_le (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Element)
     (hS : S.Nonempty) (hfix : ∀ s ∈ S, f s = s) : f (V.sInf S hS) ≤ V.sInf S hS := by
   apply V.le_sInf

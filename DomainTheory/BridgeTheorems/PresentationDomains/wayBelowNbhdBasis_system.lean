@@ -8,9 +8,7 @@ public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
 public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
 public import DomainTheory.BridgeTheorems.PresentationDomains.Basic
 
-
 @[expose] public section
-
 
 namespace DomainTheory.BridgeTheorems
 
@@ -21,10 +19,8 @@ open Order
 open scoped DomainTheory.ContinuousLattice
 open ContinuousLatticeToNeighborhood
 
-
 universe u
 variable {D : Type u} [CompleteLattice D] [DecidableEq D]
-
 
 theorem wayBelowNbhdBasis_system :
     (wayBelowNbhdBasis (D := D)).system = toNeighborhoodSystem :=

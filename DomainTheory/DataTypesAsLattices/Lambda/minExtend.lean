@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (2.2).** Minimal (distributive) extension `p̂(x) = ⋃ {p(n) | n ∈ x}`. -/
 def minExtend (p : ℕ → Pomega) (x : Pomega) : Pomega :=
   ⋃ n ∈ x, p n
 

@@ -13,7 +13,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace Topology Function
 
-/-- **Scott 1976, Theorem 1.6.** The embedding `ε(x) = {n | x ∈ U n}`. -/
 def embed {X : Type*} (U : ℕ → Set X) (x : X) : Pomega :=
   {n | x ∈ U n}
 

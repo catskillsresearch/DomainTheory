@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
-import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
@@ -21,7 +21,48 @@ class ContinuousLattice (D : Type u) [CompleteLattice D] : Prop where
 
 open ContinuousLattice
 
-theorem ContinuousLattice.WayBelow.interpolate (hD : ContinuousLattice D) {a c : D} (hac : a ≪ c) :
+namespace ContinuousLattice
+
+theorem exists_wayBelow_subset (hD : ContinuousLattice D) {U : Set D} (hU : ScottOpen U)
+    {z : D} (hz : z ∈ U) : ∃ a, a ≪ z ∧ {w | a ≪ w} ⊆ U := by
+  have hne : {a | a ≪ z}.Nonempty := ⟨⊥, bot_wayBelow z⟩
+  have hsup : sSup {a | a ≪ z} ∈ U := by rw [hD.sSup_wayBelow z]; exact hz
+  obtain ⟨a, haz, haU⟩ := hU.2 hne (directedOn_wayBelow z) hsup
+  exact ⟨a, haz, fun w hw => hU.1 hw.le haU⟩
+
+theorem exists_wayBelow_Ici_subset (hD : ContinuousLattice D) {U : Set D} (hU : ScottOpen U)
+    {z : D} (hz : z ∈ U) : ∃ a, a ≪ z ∧ Set.Ici a ⊆ U := by
+  have hne : {a | a ≪ z}.Nonempty := ⟨⊥, bot_wayBelow z⟩
+  have hsup : sSup {a | a ≪ z} ∈ U := by rw [hD.sSup_wayBelow z]; exact hz
+  obtain ⟨a, haz, haU⟩ := hU.2 hne (directedOn_wayBelow z) hsup
+  exact ⟨a, haz, fun w hw => hU.1 (Set.mem_Ici.1 hw) haU⟩
+
+theorem isContinuousLattice_iff_isLUB_sInf_nhds :
+    ContinuousLattice D ↔
+      ∀ y : D, IsLUB {a : D | ∃ U, ScottOpen U ∧ y ∈ U ∧ a = sInf U} y := by
+  constructor
+  · intro h y
+    refine ⟨?_, ?_⟩
+    · rintro a ⟨U, hU, hyU, rfl⟩
+      exact (sInf_wayBelow hU hyU).le
+    · intro b hb
+      refine (h.out y).2 ?_
+      intro x hx
+      obtain ⟨U, hU, hyU, hsub⟩ := hx
+      have hxle : x ≤ sInf U := le_sInf fun _ hz => Set.mem_Ici.1 (hsub hz)
+      exact hxle.trans (hb ⟨U, hU, hyU, rfl⟩)
+  · intro h
+    refine { out := ?_ }
+    intro y
+    refine ⟨fun x hx => hx.le, ?_⟩
+    intro b hb
+    refine (h y).2 ?_
+    rintro a ⟨U, hU, hyU, rfl⟩
+    exact hb (sInf_wayBelow hU hyU)
+
+namespace WayBelow
+
+theorem interpolate (hD : ContinuousLattice D) {a c : D} (hac : a ≪ c) :
     ∃ b, a ≪ b ∧ b ≪ c := by
   set M : Set D := {m | ∃ x, m ≪ x ∧ x ≪ c} with hM
   have hMdir : DirectedOn (· ≤ ·) M := by
@@ -42,5 +83,9 @@ theorem ContinuousLattice.WayBelow.interpolate (hD : ContinuousLattice D) {a c :
   rw [← hsupM] at hac
   obtain ⟨m, ⟨x, hmx, hxc⟩, ham⟩ := (WayBelow.sSup_iff hMne hMdir).1 hac
   exact ⟨x, ham.trans_le hmx.le, hxc⟩
+
+end WayBelow
+
+end ContinuousLattice
 
 end DomainTheory

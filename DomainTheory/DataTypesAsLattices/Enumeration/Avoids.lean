@@ -16,7 +16,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- `t` does not depend on environment slot `i`. -/
 def Term.Avoids (i : ℕ) : Term → Prop
   | .var j => j ≠ i
   | .zero => True

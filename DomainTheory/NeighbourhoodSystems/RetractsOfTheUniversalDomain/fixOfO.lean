@@ -17,9 +17,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
-/- concordance: source L4807 EXAMPLES 8.4 check, fade, and smash -/
-/-- **Example 8.4's two-point system `O = {{0},{0,1}}`.** Tokens `Δ = {0,1} : Fin 2`; the only
-neighbourhoods are `{0}` (most informative) and `{0,1}` (the master, least informative). -/
 def O : NeighborhoodSystem (Fin 2) where
   mem X := X = ({0} : Set (Fin 2)) ∨ X = ({0, 1} : Set (Fin 2))
   master := ({0, 1} : Set (Fin 2))
@@ -43,8 +40,6 @@ theorem O_master_eq : O.master = ({0, 1} : Set (Fin 2)) := rfl
 
 theorem O_mem_zero : O.mem ({0} : Set (Fin 2)) := Or.inl rfl
 
-/-- `O`'s top element `⊤ = ↑{0}` (the more informative of the two elements; `O.bot = ↑{0,1}` is the
-generic `NeighborhoodSystem.bot`). -/
 def Otop : O.Element := O.principal O_mem_zero
 
 @[simp] theorem mem_Otop {Y : Set (Fin 2)} : Otop.mem Y ↔ O.mem Y ∧ ({0} : Set (Fin 2)) ⊆ Y :=
@@ -53,7 +48,6 @@ def Otop : O.Element := O.principal O_mem_zero
 section
 variable {α : Type*} {D : NeighborhoodSystem α}
 
-/-- **Example 8.4's `check` combinator.** `X check Y ↔ Y = {0,1} ∨ X ≠ Δ_D`. -/
 def check : ApproximableMap D O where
   rel X Y := D.mem X ∧ O.mem Y ∧ (Y = ({0, 1} : Set (Fin 2)) ∨ X ≠ D.master)
   rel_dom h := h.1
@@ -94,8 +88,6 @@ def check : ApproximableMap D O where
       D.mem X ∧ O.mem Y ∧ (Y = ({0, 1} : Set (Fin 2)) ∨ X ≠ D.master) :=
   Iff.rfl
 
-/-- A non-bottom element of `D` always has *some* member neighbourhood other than the master.
-(Classical: uses `by_contra`/`push_neg`, an allowed `Prop`-level use of `Classical.choice`.) -/
 theorem exists_mem_ne_master_of_ne_bot {y : D.Element} (hy : y ≠ D.bot) :
     ∃ Z, y.mem Z ∧ Z ≠ D.master := by
   by_contra hcon
@@ -106,9 +98,6 @@ theorem exists_mem_ne_master_of_ne_bot {y : D.Element} (hy : y ≠ D.bot) :
   rw [mem_bot]
   exact ⟨fun hZ => hcon Z hZ, fun hZ => hZ ▸ y.master_mem⟩
 
-/-- **Example 8.4's `fade` combinator, as a two-variable map.** `X, Y fade Z ↔ Z = Δ_D ∨ (X = {0}
-∧ Y ⊆ Z)`: the master is always a safe output; `X = {0}` (the informative `O`-input) lets `Y` pass
-straight through. -/
 def fade₂ : ApproximableMap₂ O D D where
   rel X Y Z := O.mem X ∧ D.mem Y ∧ D.mem Z ∧ (Z = D.master ∨ (X = ({0} : Set (Fin 2)) ∧ Y ⊆ Z))
   rel_dom₀ h := h.1
@@ -152,8 +141,6 @@ def fade₂ : ApproximableMap₂ O D D where
       right
       exact ⟨hX'eq, hYY'.trans (hYZ.trans hZZ')⟩
 
-/-- **Example 8.4's `fade` combinator**, packaged as a genuine `ApproximableMap (prod O D) D`
-via the Theorem 3.5 bridge (`ofMap₂`). -/
 def fade : ApproximableMap (prod O D) D := ofMap₂ fade₂
 
 end
@@ -162,11 +149,8 @@ section
 variable {α : Type*} {D : NeighborhoodSystem α}
 variable (u : D.Element) (hu : u ≠ D.bot)
 
-/-- **Example 8.4(a)'s retraction** `a(x) = fade(check(x), u)`. -/
 def a : ApproximableMap D D := fade.comp (paired check (constMap D u))
 
-/-- The `D`-element corresponding to `t : O.Element` under `a`'s formula: `Z ↦ Z = Δ_D ∨ (t ∋ {0}
-∧ u ∋ Z)`. This is a genuine `Element` (filter), built with no case-split on `t`. -/
 def fixOfO (t : O.Element) : D.Element where
   mem Z := D.mem Z ∧ (Z = D.master ∨ (t.mem ({0} : Set (Fin 2)) ∧ u.mem Z))
   sub h := h.1
@@ -245,8 +229,6 @@ end
 section
 variable {α : Type*} {D : NeighborhoodSystem α}
 
-/-- The closed form of `check`'s elementwise action: `check(x) ∋ Y ↔ Y ∈ O ∧ (Y = {0,1} ∨ x ≠ ⊥)`.
-So `check(x) = ⊥_O` when `x = ⊥_D`, and `check(x) = ⊤_O` otherwise. -/
 theorem mem_toElementMap_check {x : D.Element} {Y : Set (Fin 2)} :
     (check.toElementMap x).mem Y ↔ O.mem Y ∧ (Y = ({0, 1} : Set (Fin 2)) ∨ x ≠ D.bot) := by
   rw [mem_toElementMap]
@@ -291,8 +273,6 @@ end
 section
 variable {α : Type*} {D : NeighborhoodSystem α}
 
-/-- The closed form of `fade`'s elementwise action on a pair `⟨t, y⟩`: `fade(t,y) ∋ Z ↔ Z = Δ_D ∨
-(t ∋ {0} ∧ y ∋ Z)`. -/
 theorem mem_toElementMap₂_fade (t : O.Element) (y : D.Element) {Z : Set α} :
     (fade₂.toElementMap₂ t y).mem Z ↔
       D.mem Z ∧ (Z = D.master ∨ (t.mem ({0} : Set (Fin 2)) ∧ y.mem Z)) := by
@@ -308,7 +288,6 @@ theorem mem_toElementMap₂_fade (t : O.Element) (y : D.Element) {Z : Set α} :
         Or.inl hZeq⟩
     · exact ⟨({0} : Set (Fin 2)), Z, ht0, hyZ, O_mem_zero, hZD, hZD, Or.inr ⟨rfl, subset_rfl⟩⟩
 
-/-- The two-variable elementwise bridge for a general `ApproximableMap₂`, specialized to a pair. -/
 theorem toElementMap_ofMap₂_pair {β γ δ : Type*} {V₀ : NeighborhoodSystem β}
     {V₁ : NeighborhoodSystem γ} {V₂ : NeighborhoodSystem δ} (f₂ : ApproximableMap₂ V₀ V₁ V₂)
     (p : V₀.Element) (q : V₁.Element) :
@@ -340,8 +319,6 @@ theorem mem_toElementMap_a {x : D.Element} {Z : Set α} :
     · exact ⟨hZD, Or.inl hZeq⟩
     · exact ⟨hZD, Or.inr ⟨⟨O_mem_zero, Or.inr hxne⟩, huZ⟩⟩
 
-/-- `fixOfO` and `check.toElementMap` intertwine `a` and the identity on `D`: applying `fixOfO`
-after `check.toElementMap` recovers `a` itself. -/
 theorem fixOfO_check_toElementMap (x : D.Element) :
     fixOfO u (check.toElementMap x) = (a u).toElementMap x := by
   apply Element.ext
@@ -362,8 +339,6 @@ theorem toElementMap_a_fixOfO (hu : u ≠ D.bot) (t : O.Element) :
   intro Z
   rw [mem_toElementMap_a, mem_fixOfO, fixOfO_ne_bot_iff u hu]
 
-/-- **Example 8.4(a) (Scott 1981, PRG-19), packaged.** The range (fixed-point set) of `a` is
-order-isomorphic to `O`. -/
 def fixIso (hu : u ≠ D.bot) : O.Element ≃o {y : D.Element // (a u).toElementMap y = y} where
   toFun t := ⟨fixOfO u t, toElementMap_a_fixOfO u hu t⟩
   invFun y := check.toElementMap y.1
@@ -412,7 +387,6 @@ theorem a_of_ne_bot {x : D.Element} (hx : x ≠ D.bot) : (a u).toElementMap x = 
   · intro huZ
     exact ⟨u.sub huZ, Or.inr ⟨hx, huZ⟩⟩
 
-/-- **Example 8.4(a) (Scott 1981, PRG-19).** `a` is a retraction. -/
 theorem isRetraction_a (hu : u ≠ D.bot) : Retraction (a u) := by
   constructor
   apply ext_of_toElementMap
@@ -422,8 +396,6 @@ theorem isRetraction_a (hu : u ≠ D.bot) : Retraction (a u) := by
   · subst hx; rw [a_bot, a_bot]
   · rw [a_of_ne_bot u hx, a_of_ne_bot u hu]
 
-/-- **Example 8.4(a) (Scott 1981, PRG-19), final statement.** If `D` is not trivial (`u ≠ ⊥`),
-`a(x) = fade(check(x), u)` is a retraction on `D` whose range is isomorphic to `O = {{0},{0,1}}`. -/
 theorem example84a (hu : u ≠ D.bot) :
     Retraction (a u) ∧ Nonempty (O.Element ≃o {y : D.Element // (a u).toElementMap y = y}) :=
   ⟨isRetraction_a u hu, ⟨fixIso u hu⟩⟩
@@ -433,7 +405,6 @@ end
 section
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
-/-- `check(x) ∋ {0} ↔ x ≠ ⊥`: the clean, non-set-theoretic form of `mem_toElementMap_check`. -/
 theorem check_toElementMap_mem_zero_iff {x : D.Element} :
     (check.toElementMap x).mem ({0} : Set (Fin 2)) ↔ x ≠ D.bot := by
   rw [mem_toElementMap_check]
@@ -443,8 +414,6 @@ theorem check_toElementMap_mem_zero_iff {x : D.Element} :
     · exact h
   · intro h; exact ⟨O_mem_zero, Or.inr h⟩
 
-/-- The closed form of `fade`'s elementwise action, generalized (via `mem_toElementMap₂_fade`) from
-Example 8.4(a)'s ambient `D` to an arbitrary neighbourhood system `G`. -/
 theorem mem_toElementMap_fade {γ : Type*} {G : NeighborhoodSystem γ} (t : O.Element) (w : G.Element)
     {Z : Set γ} :
     ((fade (D := G)).toElementMap (pair t w)).mem Z ↔

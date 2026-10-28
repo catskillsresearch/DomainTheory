@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 
@@ -15,7 +14,6 @@ open DomainTheory.InformationSystems.Constructive
 
 variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
 
-/-- **Definition 5.1 (Scott 1982).** Approximable mapping between information systems. -/
 structure ApproximableMap (A : InfoSys α) (B : InfoSys β) where
   rel : Finset α → Finset β → Prop
   rel_dom : ∀ {u v}, rel u v → u ∈ A.Con

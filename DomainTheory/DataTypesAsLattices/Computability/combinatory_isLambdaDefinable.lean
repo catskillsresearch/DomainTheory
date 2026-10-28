@@ -15,13 +15,10 @@ public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- Combinatory elements are LAMBDA-definable (converse of Theorem 2.4). -/
 theorem combinatory_isLambdaDefinable {u : Pomega} (hu : IsCombinatory u) :
     LambdaDefinable u := by
   induction hu with

@@ -20,7 +20,6 @@ open ApproximableMap
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
-/-- **Factoid 7.6.** Operator `const : B → (A → B)`, as `curry fst`. -/
 def constOp : ApproximableMap B (functionSystem A B) :=
   curryMap B A B (fstMap B A)
 
@@ -56,6 +55,5 @@ theorem constOp.toElement (b : B.Element) :
   rw [← huniq, approxMap_toElement_element_toApproxMap]
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

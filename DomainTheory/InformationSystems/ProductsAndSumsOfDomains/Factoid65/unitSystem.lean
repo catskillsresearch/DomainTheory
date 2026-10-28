@@ -11,7 +11,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-/-- **Factoid 6.5.** The unit information system on a singleton token type. -/
 def unitSystem : InfoSys PUnit where
   bot := ⟨⟩
   Con := Set.univ

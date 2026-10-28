@@ -83,9 +83,6 @@ theorem i (A : RestrictedEquiv) (n : ℕ) :
   intro x y hxy
   simpa [Zcomb.app2] using Z.rel A n hf.2.2 hxy
 
-/-- Plotkin: if `z` is typed as an iterator and is extensional in its first
-argument, then `z(f)(x)` is some iterate `fⁿ(x)`. -/
-
 theorem plotkin (z : Pomega)
     (hη : ∀ f, funOf z f = funOf z (graph (fun y => funOf f y)))
     (hz : ∀ A, (arrowE (arrowE A A) (arrowE A A)).mem z)
@@ -174,9 +171,6 @@ theorem finite (z : Pomega)
     · exact (Z.finite_no_tag p q m n (by simpa [j] using hbad)).elim
     · exact (pair_inj htag).2
   rw [hη (e p), hleft, horbit, ← hnm]
-
-/-- Plotkin's independent successors force one common iterate count on all
-tagged successor tests. -/
 
 theorem sigma_index (z : Pomega)
     (hη : ∀ f, funOf z f = funOf z (graph (fun y => funOf f y)))
@@ -313,9 +307,6 @@ theorem unique (z : Pomega)
 
 end theorem_7_4
 
-/-- **Scott 1976, Theorem 7.4 (The iterator theorem).**
-The functionality is both satisfied by and globally characterizes the
-iterators. -/
 theorem theorem_7_4 :
     (∀ A n, (arrowE (arrowE A A) (arrowE A A)).mem (Zcomb n)) ∧
       ∀ z,

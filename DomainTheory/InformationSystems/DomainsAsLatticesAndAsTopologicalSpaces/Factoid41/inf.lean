@@ -9,7 +9,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- **Factoid 4.1.** Binary meet of elements is set-theoretic intersection. -/
 def inf (x y : sys.Element) : sys.Element where
   carrier := x.carrier ∩ y.carrier
   consistent := fun Y hY =>

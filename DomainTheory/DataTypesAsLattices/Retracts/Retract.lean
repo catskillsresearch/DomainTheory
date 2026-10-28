@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, §4, Definition.** `a` is a retract iff `a = a ∘ a`. -/
 class Retract (a : Pomega) : Prop where
   out : a = comp a a
 

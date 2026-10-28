@@ -18,7 +18,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hUnion1 : IsComputableUnion P₁)
 
-
 noncomputable def XPseqCode (n : ℕ) : ℕ :=
   (XFold P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n (4 ^ n)).unpair.2
 

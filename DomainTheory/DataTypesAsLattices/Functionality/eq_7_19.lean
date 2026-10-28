@@ -8,15 +8,10 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z
 public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.eq_7_18_eq
 
-
 @[expose] public section
-
 
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (7.19).**
-Independent successor powers advance both tagged atoms in lockstep. -/
 theorem eq_7_19 (j j' m : ℕ) :
     Z m (graph (sigmaJ j) ∪ graph (sigmaJ j'))
         (({pair j 0} : Pomega) ∪ {pair j' 0}) =

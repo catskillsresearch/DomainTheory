@@ -49,14 +49,10 @@ namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-
 variable (A : InfoSys α) (B : InfoSys β)
-
 
 open ApproximableMap
 
-
-/-- Every strict BOOL-map is `cond` of its values at true and false. -/
 theorem condMap.unique (f : ApproximableMap boolSystem A) (hf : IsStrict boolSystem A f) :
     f = condMap A (f.toElement boolTrue) (f.toElement boolFalse) := by
   refine ApproximableMap.ext fun u v => ?_

@@ -33,15 +33,12 @@ namespace DomainTheory.BridgeTheorems
 open DomainTheory.NeighbourhoodSystems
 open DomainTheory.InformationSystems
 
-
 namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)
 
-
 end NbhdBasis
 
-/-- Blueprint name: neighbourhood system (with decidable basis) → information system. -/
 abbrev neighborhoodSystem_to_infoSys {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α) :
     InfoSys ι :=
   B.toInfoSys

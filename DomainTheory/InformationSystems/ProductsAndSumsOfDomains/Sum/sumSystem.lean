@@ -24,7 +24,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- **Definition 6.3.** The separated sum information system `A + B`. -/
 def sumSystem : InfoSys (SumToken α β) where
   bot := sumBot
   Con := {u | SumCon A B u}

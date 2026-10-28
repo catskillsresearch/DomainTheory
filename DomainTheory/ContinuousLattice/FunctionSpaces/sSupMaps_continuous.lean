@@ -24,8 +24,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace ScottMap
 
-/-- The pointwise supremum function is Scott-continuous. Kept as a named
-proof boundary so the Challenge fixes the function while leaving this proof open. -/
 theorem sSupMaps_continuous {D : Type u} {D' : Type v}
     [CompleteLattice D] [CompleteLattice D'] (F : Set (ScottMap D D')) :
     @Continuous D D' scottTopologicalSpace scottTopologicalSpace

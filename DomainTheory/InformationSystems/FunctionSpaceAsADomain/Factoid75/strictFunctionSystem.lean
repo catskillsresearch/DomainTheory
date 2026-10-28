@@ -31,7 +31,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- **Factoid 7.5.** The strict function-space information system `A →ₛ B`. -/
 def strictFunctionSystem : InfoSys (StrictFunToken A B) where
   bot := strictBot A B
   Con := {w | StrictFunCon A B w}

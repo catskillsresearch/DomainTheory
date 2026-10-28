@@ -12,11 +12,8 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- Diagonal continuity, packaged from Theorem 1.3. -/
 theorem continuous_on_diag {F : Pomega → Pomega → Pomega}
     (h1 : ∀ y, IsScottContinuous (fun x => F x y))
     (h2 : ∀ x, IsScottContinuous (fun y => F x y)) :

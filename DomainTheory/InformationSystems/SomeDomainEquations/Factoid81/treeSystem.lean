@@ -22,12 +22,10 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- **Factoid 8.1.** Tree information system solving `T ≅ A + (T × T)` by construction. -/
 def treeSystem : InfoSys (TreeToken α) where
   bot := treeBot
   Con := {u | TreeCon A u}

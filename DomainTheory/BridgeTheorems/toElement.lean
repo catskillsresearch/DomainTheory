@@ -23,7 +23,6 @@ namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)
 
-/-- Filter → InfoSys element. -/
 def toElement (x : B.system.Element) : B.toInfoSys.Element where
   carrier := {i | x.mem (B.nbhd i)}
   consistent := fun Y hY => x.sub (B.filter_mem_interOf x hY)

@@ -15,12 +15,8 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hfun
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (4.45).** Encoded terms live in `exp`, `ℋ⟦τ⟧` is typed
-`env → lamb`, and the continuous `ℋ` decodes `encodeExp τ` to `ℋ⟦τ⟧`. -/
 theorem eq_4_45 (τ : LambTerm) :
     typed (encodeExp τ) expR ∧
       typed (Htyped τ) (arrowR envR lambR) ∧

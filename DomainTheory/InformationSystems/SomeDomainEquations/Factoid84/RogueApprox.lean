@@ -19,7 +19,6 @@ open InfoSys
 
 open ApproximableMap
 
-/-- (4) `⊤ = r(\bar 1)` — `1` plays the rôle of the rogue `∇`. -/
 def RogueApprox (r : ApproximableMap P P) : Prop :=
   r.toElement (barElement 1) = topElement
 

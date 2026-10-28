@@ -239,13 +239,11 @@ theorem condMap_toElement_boolTrue (x y : A.Element) :
 
 alias condMap.toElement_boolTrue := condMap_toElement_boolTrue
 
-/-- One direction of the conditional isomorphism on pairs. -/
 theorem condMap.pair_roundtrip (x y : A.Element) :
     (condMap A x y).toElement boolTrue = x ∧
     (condMap A x y).toElement boolFalse = y :=
   ⟨condMap.toElement_boolTrue A x y, condMap.toElement_boolFalse A x y⟩
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

@@ -35,7 +35,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-
 theorem empty_combined {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ cs, p.1 < n) :
     {x ∈ D₀.master | ∀ p ∈ cs, (p.2 = true ↔ x ∈ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y p.1)}.Nonempty ↔
       {y ∈ D₁.master |
@@ -49,7 +48,6 @@ theorem empty_combined {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ cs, p
       (combinedY D₀ D₁ hD₀nomin hD₁nomin X Y) D₁.master hc hn,
     transfer_dir (combinedY D₀ D₁ hD₀nomin hD₁nomin X Y) D₁.master
       (combinedX D₀ D₁ hD₀nomin hD₁nomin X Y) D₀.master hc' hn⟩
-
 
 theorem double_subset_combined (i j k : ℕ) :
     D₀.master ∩ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y i ∩ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y j ⊆
@@ -84,7 +82,6 @@ theorem double_subset_combined (i j k : ℕ) :
     ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
 
-
 theorem inter_empty_combined (i j : ℕ) :
     D₀.master ∩ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y i ∩ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y j =
         ∅ ↔
@@ -114,7 +111,6 @@ theorem inter_empty_combined (i j : ℕ) :
   rw [← Set.not_nonempty_iff_eq_empty, ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
 
-
 theorem subset_combined (i j : ℕ) :
     D₀.master ∩ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y i ⊆ combinedX D₀ D₁ hD₀nomin hD₁nomin X Y j ↔
       D₁.master ∩ combinedY D₀ D₁ hD₀nomin hD₁nomin X Y i ⊆
@@ -143,7 +139,6 @@ theorem subset_combined (i j : ℕ) :
   rw [← Set.sdiff_eq_empty, ← Set.sdiff_eq_empty, ← Set.not_nonempty_iff_eq_empty,
     ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
-
 
 theorem inter_eq_combined (i j k : ℕ)
     (hi : combinedX D₀ D₁ hD₀nomin hD₁nomin X Y i ⊆ D₀.master)
@@ -214,7 +209,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`YPseq n` is always `⊆ D₀.master`.** -/
 theorem subset_master (n : ℕ) : YPseq D₀ D₁ hD₀nomin hD₁nomin X Y n ⊆ D₀.master := by
   apply Set.iUnion_subset
   intro δ'
@@ -242,9 +236,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
 
 include hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne hX0 hY0 in
-/-- **Exercise 8.12(c)(vii)(2), symmetric half.** `YPseq 0 = D₀.master`, by the same `SplitSpec'`
-argument applied to the *second* (`Y`-)sub-step, now feeding off `XPseq.zero`'s already-computed
-`D₁`-side value at the first sub-step. -/
+
 theorem zero : YPseq D₀ D₁ hD₀nomin hD₁nomin X Y 0 = D₀.master := by
   apply Set.Subset.antisymm
     (YPseq.subset_master D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem
@@ -291,8 +283,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
 
 include hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne in
-/-- **Exercise 8.12(c)(vii)(3), cross-parity order fact, other mix.** `YPseq i ⊆ X j ↔
-Y i ⊆ XPseq j`: the symmetric specialization of `transfer.subset_combined` at `(2i+1, 2j)`. -/
+
 theorem subset_X_iff_Y_subset_XPseq (i j : ℕ) :
     YPseq D₀ D₁ hD₀nomin hD₁nomin X Y i ⊆ X j ↔
       Y i ⊆ XPseq D₀ D₁ hD₀nomin hD₁nomin X Y j := by
@@ -323,11 +314,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
 
 include hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne in
-/-- **Exercise 8.12(c)(vii)(3), cross-parity order fact (`even`/`odd` mix).** `X i ⊆ YPseq j ↔
-XPseq i ⊆ Y j`: a direct specialization of `transfer.subset_combined` at the mixed indices
-`(2i, 2j+1)` (`combinedX`/`combinedY` at an even and an odd index respectively), simplified by the
-same `Set.inter_eq_self_of_subset_right` bookkeeping as (5)(d)'s same-parity headline facts. No new
-proof machinery — `transfer.subset_combined` already holds for arbitrary index pairs. -/
+
 theorem X_subset_YPseq_iff_XPseq_subset_Y (i j : ℕ) :
     X i ⊆ YPseq D₀ D₁ hD₀nomin hD₁nomin X Y j ↔
       XPseq D₀ D₁ hD₀nomin hD₁nomin X Y i ⊆ Y j := by
@@ -358,14 +345,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
 
 include hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne in
-/-- **Exercise 8.12(c)(vii)(4), the cross-parity `embed_eq_iff` analogue.** `XPseq j = Y k ↔
-X j = YPseq k`: unlike `Theorem88a.lean`'s single-enumeration `embed_eq_iff` (a direct corollary of
-one `embed_subset_iff` applied twice), this two-family version packages **both** cross-parity order
-facts from (vii)(3) (`X_subset_YPseq_iff_XPseq_subset_Y` at `(j, k)` and
-`YPseq.subset_X_iff_Y_subset_XPseq` at `(k, j)`) via antisymmetry on each side. Needed because
-`toD1`/`toD0`'s `up_mem` case must rename a `D₁`-mem (resp. `D₀`-mem) witness produced by
-`hYcover`/`hXcover` as some `Y k`/`X k` back into the `XPseq`/`YPseq` "coordinates" that the filter
-`x`/`y` actually testifies about. -/
+
 theorem eq_Y_iff_X_eq_YPseq (j k : ℕ) :
     XPseq D₀ D₁ hD₀nomin hD₁nomin X Y j = Y k ↔ X j = YPseq D₀ D₁ hD₀nomin hD₁nomin X Y k := by
   constructor
@@ -401,8 +381,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- `combinedX i` is always `⊆ D₀.master`: at even positions it is `X (i/2)`, a `D₀.mem` set
-(via `D₀.sub_master`); at odd positions it is `YPseq (i/2)`, already known `⊆ D₀.master`. -/
 theorem subset_master (i : ℕ) :
     combinedX D₀ D₁ hD₀nomin hD₁nomin X Y i ⊆ D₀.master := by
   rcases (by omega : i % 2 = 0 ∨ i % 2 = 1) with hi | hi

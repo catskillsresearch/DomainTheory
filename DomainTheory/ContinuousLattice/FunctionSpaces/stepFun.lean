@@ -14,13 +14,11 @@ public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Order
 public import Mathlib.Order.FixedPoints
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
@@ -30,7 +28,6 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- The (value of the) step function `ē[e, e']` at `x`: `e'` if `e ≪ x`, else `⊥`. -/
 noncomputable def stepFun (e : D) (e' : D') (x : D) : D' := ⨆ _ : e ≪ x, e'
 
 end DomainTheory.ContinuousLattice

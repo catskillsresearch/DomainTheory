@@ -13,9 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem iterateBot_param_isScottContinuous
     {g : Pomega → Pomega → Pomega}

@@ -12,7 +12,6 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -21,14 +20,10 @@ namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-
 namespace ApproximableMap
 
 variable {A : InfoSys α} {B : InfoSys β}
 
-
-/-- **Factoid 4.6 (←).** Scott-continuous maps recover as `toElement` of the induced
-approximable relation. -/
 theorem toElement_ofScottContinuous (g : ScottContinuous A B) (x : A.Element) :
     (ofScottContinuous g).toElement x = g.toFun x := by
   refine le_antisymm ?_ ?_

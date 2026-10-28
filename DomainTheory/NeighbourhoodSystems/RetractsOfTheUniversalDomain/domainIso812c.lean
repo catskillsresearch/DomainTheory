@@ -21,8 +21,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.hco
 
 @[expose] public section
 
-/- concordance: source L5147 EXERCISE 8.12 integer presentation of U -/
--- Exercise812/affine_2.lean
 namespace DomainTheory.NeighbourhoodSystems
 namespace affine
 
@@ -30,8 +28,6 @@ open NeighborhoodSystem
 
 end affine
 end DomainTheory.NeighbourhoodSystems
-
-/-! ### Exercise 8.12(c)–(e) (moved from Exercise_8_15 monolith) -/
 
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
@@ -45,12 +41,6 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hXcover : ∀ S, D₀.mem S ↔ ∃ n, S = X n) (hYcover : ∀ S, D₁.mem S ↔ ∃ n, S = Y n)
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
-
-/-- **Exercise 8.12(c)(vii)(6), final assembly.** The order isomorphism `D₀.Element ≃o D₁.Element`.
-`toD1`/`toD0` are mutually inverse (via (4)'s `XPseq.eq_Y_iff_X_eq_YPseq`, resolving which index in
-the *other* family represents a given neighbourhood) and preserve/reflect `≤` (via
-`X_eq_iff_XPseq_eq`) — direct transcription of `Theorem88a.lean`'s `domainIso`, generalized from one
-shared index family (`e`/`Yidx`) to genuinely two (`X`/`XPseq` and `Y`/`YPseq`). -/
 
 noncomputable def domainIso812c : DomainIso D₀ D₁ where
   toFun := toD1 D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem hD₀mne hD₁mne
@@ -118,16 +108,12 @@ end
 
 section
 
-/-- **Generalization of `Theorem88.lean`'s `split_fst_subset`**: a splitting operation's first
-output is a subset of `B` (from `I ∪ J = B`). -/
 theorem split_fst_subset' {α γ : Type*} {E : NeighborhoodSystem γ}
     {split : Set α → Set γ → Set α → Set γ × Set γ} (hsplit : SplitSpec' E split)
     {A : Set α} {B : Set γ} (hAB : A = ∅ ↔ B = ∅) (hBE : B = ∅ ∨ E.mem B) (Xn : Set α) :
     (split A B Xn).1 ⊆ B :=
   Set.subset_union_left.trans_eq (hsplit hAB hBE Xn).2.2.2.2.1
 
-/-- **Generalization of `Theorem88.lean`'s `split_snd_subset`**: a splitting operation's second
-output is a subset of `B` (from `I ∪ J = B`). -/
 theorem split_snd_subset' {α γ : Type*} {E : NeighborhoodSystem γ}
     {split : Set α → Set γ → Set α → Set γ × Set γ} (hsplit : SplitSpec' E split)
     {A : Set α} {B : Set γ} (hAB : A = ∅ ↔ B = ∅) (hBE : B = ∅ ∨ E.mem B) (Xn : Set α) :
@@ -158,7 +144,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem hD₀mne hD₁mne hXcover
   hYcover hX0 hY0 in
-/-- **Exercise 8.12(c)(vii)(6), headline.** `D₀ ≅ᴰ D₁`: completes Exercise 8.12(c) in full. -/
+
 theorem isomorphic_812c : D₀ ≅ᴰ D₁ :=
   ⟨domainIso812c D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem hD₀mne
     hD₁mne hXcover hYcover hX0 hY0⟩

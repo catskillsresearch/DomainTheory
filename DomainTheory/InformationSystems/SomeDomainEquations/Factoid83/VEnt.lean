@@ -14,7 +14,7 @@ namespace DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-/-- Entailment on `V` (Scott (3)–(6)). -/
+
 inductive VEnt : Finset VToken → VToken → Prop where
   | bot {u : Finset VToken} : VEnt u .bot
   | top_mem {u : Finset VToken} (h : .top ∈ u) : VEnt u .top
@@ -28,7 +28,6 @@ inductive VEnt : Finset VToken → VToken → Prop where
   | pairR_proj {u : Finset VToken} {y : VToken}
       (h : VEnt (vPairRFinset u) y) : VEnt u (.pairR y)
 
-/-- If `u ⊢ ∇`, then `u` entails every token (rogue top). -/
 theorem VEnt.of_ent_top {u : Finset VToken} (h : VEnt u .top) (c : VToken) :
     VEnt u c := by
   match c with
@@ -53,14 +52,12 @@ theorem VEnt.of_mem {u : Finset VToken} {c : VToken}
   | pairR y ih =>
     exact VEnt.pairR_proj (ih (mem_vPairRFinset.2 hc))
 
-/-- From `v ⊢ (X, Δ)`, either `∇ ∈ v` or the left projection entails `X`. -/
 theorem VEnt.pairL_inv {v : Finset VToken} {x : VToken}
     (h : VEnt v (.pairL x)) : .top ∈ v ∨ VEnt (vPairLFinset v) x := by
   cases h with
   | pairL_top hm => exact Or.inl hm
   | pairL_proj h' => exact Or.inr h'
 
-/-- Push an `EntSet` through the left projection (or absorb via top). -/
 theorem VEnt.pairLFinset_of_EntSet {u v : Finset VToken}
     (hEnts : ∀ y ∈ u, VEnt v y) :
     .top ∈ v ∨ (∀ y ∈ vPairLFinset u, VEnt (vPairLFinset v) y) := by
@@ -114,6 +111,5 @@ theorem VEnt.trans {u v : Finset VToken} {c : VToken}
     · exact VEnt.pairR_proj (ih hR)
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

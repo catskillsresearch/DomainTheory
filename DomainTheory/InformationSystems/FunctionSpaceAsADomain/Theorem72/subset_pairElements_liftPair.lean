@@ -28,7 +28,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.s
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -41,9 +40,7 @@ variable {α : Type u} {β : Type v} {γ : Type w}
   [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
-
 open ApproximableMap
-
 
 theorem subset_pairElements_liftPair {x : A.Element} {y : B.Element}
     {u : Finset α} {v : Finset β} (hu : ↑u ⊆ x.carrier) (hv : ↑v ⊆ y.carrier) :

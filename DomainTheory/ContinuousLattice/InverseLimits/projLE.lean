@@ -7,7 +7,6 @@ public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import Mathlib.Data.Set.Basic
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
@@ -22,7 +21,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- Descend the tower of projections: for `m ≤ n`, `projLE h = j_m ∘ … ∘ j_{n-1} : D_n → Dₘ`. -/
 def projLE {m n : ℕ} (h : m ≤ n) (x : D n) : D m :=
   Nat.leRecOn (C := fun k => D k → D m) h
     (fun {k} (g : D k → D m) (w : D (k + 1)) => g ((P k).retr w)) id x
@@ -47,7 +45,6 @@ theorem mono {m n : ℕ} (h : m ≤ n) {x y : D n} (hxy : x ≤ y) :
       rw [succ D P hk (Nat.le_succ_of_le hk), succ D P hk (Nat.le_succ_of_le hk)]
       exact ih ((P k).retr.monotone hxy)
 
-/-- For a compatible sequence `y`, descending from level `n` to `m ≤ n` recovers `yₘ`. -/
 theorem compatible {m : ℕ} (y : InverseLimit D P) :
     ∀ {n : ℕ} (h : m ≤ n), projLE D P h (y.1 n) = y.1 m := by
   intro n h
@@ -55,7 +52,6 @@ theorem compatible {m : ℕ} (y : InverseLimit D P) :
   | base => rw [self]
   | succ k hk ih => rw [succ D P hk (Nat.le_succ_of_le hk), y.2 k, ih]
 
-/-- Peeling the last projection: `(P m).retr ∘ projLE (m+1 ≤ n) = projLE (m ≤ n)`. -/
 theorem retr {m : ℕ} : ∀ {n : ℕ} (h : m + 1 ≤ n) (x : D n),
     (P m).retr (projLE D P h x) = projLE D P (Nat.le_of_succ_le h) x := by
   intro n h
@@ -69,7 +65,6 @@ theorem retr {m : ℕ} : ∀ {n : ℕ} (h : m + 1 ≤ n) (x : D n),
       rw [succ D P hk (Nat.le_succ_of_le hk) x, ih ((P k).retr x),
         succ D P (Nat.le_of_succ_le hk) (Nat.le_of_succ_le (Nat.le_succ_of_le hk)) x]
 
-/-- The tower of projections is Scott-continuous (a composite of the `jₖ`). -/
 theorem preservesDirectedSup {m n : ℕ} (h : m ≤ n) :
     PreservesDirectedSup (projLE D P h) := by
   induction n, h using Nat.le_induction with

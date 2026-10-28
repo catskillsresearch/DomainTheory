@@ -10,7 +10,6 @@ section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-/-- Membership: `X` is a neighbourhood iff `X = ℕ` (the master `Δ`) or `X` is finite and non-empty. -/
 def mem (X : Set ℕ) : Prop := X = Set.univ ∨ (X.Finite ∧ X.Nonempty)
 
 theorem nonempty_of_mem {X : Set ℕ} (h : mem X) : X.Nonempty := by
@@ -18,8 +17,6 @@ theorem nonempty_of_mem {X : Set ℕ} (h : mem X) : X.Nonempty := by
   · exact Set.univ_nonempty
   · exact h.2
 
-/- concordance: source L456 EXERCISE 1.14 finite nonempty subsets -/
-/-- **Exercise 1.14.** The neighbourhood system of finite non-empty subsets of `ℕ` (plus `Δ = ℕ`). -/
 def neighborhoodSystem : NeighborhoodSystem ℕ where
   mem
   master := Set.univ
@@ -37,10 +34,8 @@ def neighborhoodSystem : NeighborhoodSystem ℕ where
 
 @[simp] theorem ns_mem {X : Set ℕ} : neighborhoodSystem.mem X ↔ mem X := Iff.rfl
 
-/-- `⊥ = ↑Δ = ↑ℕ`, the least element. -/
 def bot : neighborhoodSystem.Element := neighborhoodSystem.bot
 
-/-- The finite element `↑X` for a neighbourhood `X` (Scott's finite elements). -/
 def fin {X : Set ℕ} (h : neighborhoodSystem.mem X) : neighborhoodSystem.Element :=
   neighborhoodSystem.principal h
 
@@ -52,9 +47,6 @@ theorem empty_not_mem : ¬ mem (∅ : Set ℕ) := by
 theorem mem_singleton (n : ℕ) : mem {n} :=
   Or.inr ⟨Set.finite_singleton n, Set.singleton_nonempty n⟩
 
-/-- **Exercise 1.14 (total elements).** The principal filter of a *singleton* `{n}` is a total
-(maximal) element: any `y` it approximates approximates it back. (A `y ⊋ ↑{n}` would contain some
-`W ∌ n`; then `{n} ∩ W = ∅ ∈ y ⊆ 𝒟`, impossible.) These are exactly the total elements. -/
 theorem singleton_isTotal (n : ℕ) :
     neighborhoodSystem.IsTotal (neighborhoodSystem.principal (mem_singleton n)) := by
   intro y hy W hW

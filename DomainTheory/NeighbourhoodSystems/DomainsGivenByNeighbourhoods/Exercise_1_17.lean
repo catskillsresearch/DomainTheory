@@ -12,15 +12,9 @@ section
 
 open NeighborhoodSystem
 
-/-- A neighbourhood of `ratIntervalSystem`: either `Δ = ℝ`, or a non-empty open interval with
-rational endpoints. -/
 def ratIntervalMem (X : Set ℝ) : Prop :=
   X = Set.univ ∨ ∃ a b : ℚ, a < b ∧ X = Set.Ioo (a : ℝ) (b : ℝ)
 
-/- concordance: source L464 EXERCISE 1.17 rational open intervals -/
-/-- **Exercise 1.17 — intersections.** The intersection of two neighbourhoods that share a point
-is again a neighbourhood: `Ioo a b ∩ Ioo c d = Ioo (max a c) (min b d)`, with rational endpoints,
-non-empty because it contains the shared point. -/
 theorem inter_mem' {X Y : Set ℝ} (hX : ratIntervalMem X) (hY : ratIntervalMem Y)
     (hne : (X ∩ Y).Nonempty) : ratIntervalMem (X ∩ Y) := by
   rcases hX with rfl | ⟨a, b, hab, rfl⟩
@@ -38,13 +32,11 @@ theorem inter_mem' {X Y : Set ℝ} (hX : ratIntervalMem X) (hY : ratIntervalMem 
         rw [Set.Ioo_inter_Ioo, Rat.cast_max, Rat.cast_min]
       exact Or.inr ⟨max a c, min b d, hlt, hset⟩
 
-/-- Every neighbourhood is non-empty (`Δ`, or `Ioo a b` with `a < b`). -/
 theorem ratIntervalMem_nonempty {X : Set ℝ} (hX : ratIntervalMem X) : X.Nonempty := by
   rcases hX with rfl | ⟨a, b, hab, rfl⟩
   · exact ⟨0, Set.mem_univ 0⟩
   · rw [Set.nonempty_Ioo]; exact_mod_cast hab
 
-/-- **Exercise 1.17 — the rational-interval neighbourhood system over `ℝ`.** -/
 def ratIntervalSystem : NeighborhoodSystem ℝ where
   mem := ratIntervalMem
   master := Set.univ
@@ -58,8 +50,6 @@ def ratIntervalSystem : NeighborhoodSystem ℝ where
 @[simp] theorem ratIntervalSystem_mem {X : Set ℝ} :
     ratIntervalSystem.mem X ↔ ratIntervalMem X := Iff.rfl
 
-/-- **Exercise 1.17 — the point filter `{X ∈ 𝒟 ∣ t ∈ X}`.** For any real `t` this is a filter:
-closure under `∩` uses `inter_mem'` with `t` itself as the shared point. -/
 def filterAt (t : ℝ) : ratIntervalSystem.Element where
   mem X := ratIntervalMem X ∧ t ∈ X
   sub h := h.1
@@ -74,8 +64,6 @@ def filterAt (t : ℝ) : ratIntervalSystem.Element where
 @[simp] theorem mem_filterAt {t : ℝ} {X : Set ℝ} :
     (filterAt t).mem X ↔ ratIntervalMem X ∧ t ∈ X := Iff.rfl
 
-/-- **Exercise 1.17 — `ℝ ↪ |𝒟|`.** Distinct reals give distinct point filters: between any two
-reals lies a rational interval separating them. -/
 theorem filterAt_injective {s t : ℝ} (h : filterAt s = filterAt t) : s = t := by
   by_contra hst
   rcases lt_or_gt_of_ne hst with hlt | hlt

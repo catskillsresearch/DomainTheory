@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.lambR
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.40).** `env = λt. lamb ∘ seq(t)`. -/
 def envR : Pomega :=
   graph (fun t => graph (fun n => funOf lambR (funOf t n)))
 

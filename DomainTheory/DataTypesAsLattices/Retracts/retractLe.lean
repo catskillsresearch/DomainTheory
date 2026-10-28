@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, §4, Definition.** `a ⊑ b` iff `a = a ∘ b = b ∘ a`. -/
 def retractLe (a b : Pomega) : Prop :=
   a = comp a b ∧ a = comp b a
 

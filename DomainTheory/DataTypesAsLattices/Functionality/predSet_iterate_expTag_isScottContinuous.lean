@@ -18,9 +18,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem predSet_iterate_expTag_isScottContinuous (k : ℕ) :
     IsScottContinuous (fun e => predSet^[k] (expTag e)) := by

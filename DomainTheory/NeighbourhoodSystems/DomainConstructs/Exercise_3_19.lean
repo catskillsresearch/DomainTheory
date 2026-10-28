@@ -15,10 +15,7 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 variable {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
-/- concordance: source L1513 EXERCISE 3.19 induced maps on constructs -/
-/-- **Exercise 3.19 (Scott 1981, PRG-19).** The *sum mapping* `f + g : 𝒟₀ + 𝒟₁ → 𝒟₀' + 𝒟₁'`. As a
-relation between sum-neighbourhoods, `W (f+g) W'` holds iff `W'` is the codomain master, or `W = 0X`
-with `W' = 0Y'` and `X f Y'`, or `W = 1Y` with `W' = 1Y'` and `Y g Y'`. -/
+
 def sumMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
     ApproximableMap (sum V₀ V₁ h₀ h₁) (sum V₀' V₁' h₀' h₁') where
   rel W W' := (sum V₀ V₁ h₀ h₁).mem W ∧ (sum V₀' V₁' h₀' h₁').mem W' ∧
@@ -30,7 +27,7 @@ def sumMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
   master_rel := ⟨(sum V₀ V₁ h₀ h₁).master_mem, (sum V₀' V₁' h₀' h₁').master_mem, Or.inl rfl⟩
   inter_right := by
     rintro W W'₁ W'₂ ⟨hW, hW'₁, hd₁⟩ ⟨_, hW'₂, hd₂⟩
-    -- membership of any disjunction-satisfying set
+
     have hmem : ∀ W'' : Set (Option (α' ⊕ β')),
         (W'' = sumMaster V₀' V₁' ∨
           (∃ X Y', W = inj₀ X ∧ W'' = inj₀ Y' ∧ f.rel X Y') ∨
@@ -40,7 +37,7 @@ def sumMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
       · exact (sum V₀' V₁' h₀' h₁').master_mem
       · exact Or.inr (Or.inl ⟨Y', f.rel_cod hf, rfl⟩)
       · exact Or.inr (Or.inr ⟨Y', g.rel_cod hg, rfl⟩)
-    -- the disjunction is preserved by intersection
+
     have key : (W'₁ ∩ W'₂ = sumMaster V₀' V₁' ∨
         (∃ X Y', W = inj₀ X ∧ W'₁ ∩ W'₂ = inj₀ Y' ∧ f.rel X Y') ∨
         (∃ Y Y', W = inj₁ Y ∧ W'₁ ∩ W'₂ = inj₁ Y' ∧ g.rel Y Y')) := by
@@ -69,9 +66,9 @@ def sumMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
     rintro W W₂ W' W'₂ ⟨hW, hW', hd⟩ hW₂W hW'W'₂ hW₂mem hW'₂mem
     refine ⟨hW₂mem, hW'₂mem, ?_⟩
     rcases hd with rfl | ⟨X, Y', rfl, rfl, hf⟩ | ⟨Y, Y', rfl, rfl, hg⟩
-    · -- W' = master; W'₂ ⊇ master so W'₂ = master
+    ·
       left; exact eq_sumMaster_of_subset hW'₂mem hW'W'₂
-    · -- left copy: W₂ ⊆ 0X, W'₂ ⊇ 0Y'
+    ·
       obtain ⟨X₂, hX₂, rfl⟩ := mem_subset_inj₀ hW₂mem hW₂W
       have hXX₂ : X₂ ⊆ X := inj₀_subset_inj₀.mp hW₂W
       rcases hW'₂mem with rfl | ⟨Y'₂, hY'₂, rfl⟩ | ⟨Z'₂, hZ'₂, rfl⟩
@@ -80,7 +77,7 @@ def sumMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
         exact Or.inr (Or.inl ⟨X₂, Y'₂, rfl, rfl,
           f.mono hf hXX₂ hY'Y'₂ hX₂ hY'₂⟩)
       · exact (not_inj₀_subset_inj₁ (h₀' Y' (f.rel_cod hf)) hW'W'₂).elim
-    · -- right copy: W₂ ⊆ 1Y, W'₂ ⊇ 1Y'
+    ·
       obtain ⟨Y₂, hY₂, rfl⟩ := mem_subset_inj₁ hW₂mem hW₂W
       have hYY₂ : Y₂ ⊆ Y := inj₁_subset_inj₁.mp hW₂W
       rcases hW'₂mem with rfl | ⟨X'₂, hX'₂, rfl⟩ | ⟨Y'₂, hY'₂, rfl⟩
@@ -90,7 +87,6 @@ def sumMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
         exact Or.inr (Or.inr ⟨Y₂, Y'₂, rfl, rfl,
           g.mono hg hYY₂ hY'Y'₂ hY₂ hY'₂⟩)
 
-/-- **Exercise 3.19(iii) (Scott 1981, PRG-19).** `out₀ ∘ (f + g) ∘ in₀ = f`. -/
 theorem outMap₀_comp_sumMap_comp_inMap₀ (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
     (outMap₀ (h₀ := h₀') (h₁ := h₁')).comp
       ((sumMap (h₀ := h₀) (h₁ := h₁) (h₀' := h₀') (h₁' := h₁') f g).comp
@@ -100,16 +96,16 @@ theorem outMap₀_comp_sumMap_comp_inMap₀ (f : ApproximableMap V₀ V₀') (g 
   constructor
   · rintro ⟨W', ⟨W, ⟨hX, _, hinj⟩, hWmem, _, hd⟩, _, hZ, hleft⟩
     rcases hd with rfl | ⟨X₀, Y', hWX₀, rfl, hf⟩ | ⟨Y₀, Y', hWY₀, rfl, hg⟩
-    · -- output master: leftPart = Δ₀', and Z ⊇ Δ₀' so Z = Δ₀'
+    ·
       rw [leftPart_sumMaster] at hleft
       have : Z = V₀'.master := Set.Subset.antisymm (V₀'.sub_master hZ) hleft
       subst this
       exact f.mono f.master_rel (V₀.sub_master hX) subset_rfl hX V₀'.master_mem
-    · -- output 0Y': X ⊆ X₀ and Y' ⊆ Z
+    ·
       rw [leftPart_inj₀] at hleft
       have hXX₀ : X ⊆ X₀ := inj₀_subset_inj₀.mp (hWX₀ ▸ hinj)
       exact f.mono hf hXX₀ hleft hX hZ
-    · -- impossible: in₀ forces 0X ⊆ W = 1Y₀
+    ·
       exact (not_inj₀_subset_inj₁ (h₀ X hX) (hWY₀ ▸ hinj)).elim
   · intro hf
     refine ⟨inj₀ Z, ⟨inj₀ X, ⟨f.rel_dom hf, ?_, subset_rfl⟩, ?_, ?_, ?_⟩, ?_, f.rel_cod hf, ?_⟩
@@ -120,7 +116,6 @@ theorem outMap₀_comp_sumMap_comp_inMap₀ (f : ApproximableMap V₀ V₀') (g 
     · exact Or.inr (Or.inl ⟨Z, f.rel_cod hf, rfl⟩)
     · exact (leftPart_inj₀ V₀' Z).subset
 
-/-- **Exercise 3.19(iv) (Scott 1981, PRG-19).** `out₁ ∘ (f + g) ∘ in₁ = g`. -/
 theorem outMap₁_comp_sumMap_comp_inMap₁ (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
     (outMap₁ (h₀ := h₀') (h₁ := h₁')).comp
       ((sumMap (h₀ := h₀) (h₁ := h₁) (h₀' := h₀') (h₁' := h₁') f g).comp
@@ -247,20 +242,16 @@ variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
-/-- **Exercise 3.19(ii) (Scott 1981, PRG-19).** The product mapping `f × g = ⟨f ∘ p₀, g ∘ p₁⟩`. -/
 def prodMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
     ApproximableMap (prod V₀ V₁) (prod V₀' V₁') :=
   paired (f.comp (proj₀ V₀ V₁)) (g.comp (proj₁ V₀ V₁))
 
-/-- **Exercise 3.19 (Scott 1981, PRG-19).** `(f × g)(w) = ⟨f(w₀), g(w₁)⟩` for every product element
-`w` (so in particular `(f × g)(⟨x, y⟩) = ⟨f(x), g(y)⟩`, equation (i)). -/
 theorem toElementMap_prodMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁')
     (w : (prod V₀ V₁).Element) :
     (prodMap f g).toElementMap w = pair (f.toElementMap w.fst) (g.toElementMap w.snd) := by
   rw [prodMap, toElementMap_paired, toElementMap_comp, toElementMap_comp, toElementMap_proj₀,
     toElementMap_proj₁]
 
-/-- **Exercise 3.19(i) (Scott 1981, PRG-19).** `(f × g)(⟨x, y⟩) = ⟨f(x), g(y)⟩`. -/
 theorem toElementMap_prodMap_pair (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁')
     (x : V₀.Element) (y : V₁.Element) :
     (prodMap f g).toElementMap (pair x y) = pair (f.toElementMap x) (g.toElementMap y) := by

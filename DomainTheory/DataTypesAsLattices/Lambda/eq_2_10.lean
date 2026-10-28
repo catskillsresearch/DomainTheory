@@ -5,11 +5,8 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (2.10).** Abstraction distributes over union. -/
 theorem eq_2_10 (τ σ : Pomega → Pomega) :
     graph τ ∪ graph σ = graph (fun x => τ x ∪ σ x) := by
   ext p

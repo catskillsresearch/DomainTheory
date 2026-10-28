@@ -41,7 +41,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Prop 2.1(iii): inserting an entailed token preserves depth-Con. -/
 theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken α}
     (ht : LamEntDepth A u t) : LamConDepth A (insert t u) := by
   have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
@@ -193,7 +192,7 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
                 | .atom x =>
                   exact LamEntDepth_weaken_atom A hsubO hout_union hFo hzx
                 | .funTok xs1 ys1 =>
-                  -- Ent out_s funTok needs fun out_s ≠ ∅, but out_s ⊆ atom-world union
+
                   cases hzx with
                   | funTok _ _ _ _ hsO hWo _ _ _ =>
                     have hOsF : lamFunFinset (lamOutputUnion s) = ∅ :=

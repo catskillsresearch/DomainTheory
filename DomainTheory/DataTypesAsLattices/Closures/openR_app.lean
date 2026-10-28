@@ -9,9 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.openR_map_isScottContinu
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem openR_app (u : Pomega) :
     funOf openR u = {m | ∃ n, e n ⊆ e m ∧ n ∈ u} :=

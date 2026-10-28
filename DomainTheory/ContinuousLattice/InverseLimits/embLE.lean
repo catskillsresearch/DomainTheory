@@ -22,7 +22,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- Climb the tower of embeddings: for `n ≤ m`, `embLE h = i_{m-1} ∘ … ∘ iₙ : Dₙ → D_m`. -/
 def embLE {n m : ℕ} (h : n ≤ m) (x : D n) : D m :=
   Nat.leRecOn h (fun {k} (y : D k) => (P k).incl y) x
 
@@ -39,7 +38,6 @@ theorem embLE_succ_left {n m : ℕ} (h1 : n ≤ m) (h2 : n + 1 ≤ m) (x : D n) 
   simp only [embLE]
   exact Nat.leRecOn_succ_left x h1 h2
 
-/-- For a compatible sequence `y`, climbing `yₙ` up to level `m ≥ n` stays below `yₘ`. -/
 theorem embLE_le {n : ℕ} (y : InverseLimit D P) {m : ℕ} (h : n ≤ m) :
     embLE D P h (y.1 n) ≤ y.1 m := by
   induction m, h using Nat.le_induction with
@@ -61,7 +59,6 @@ theorem embLE_mono {n m : ℕ} (h : n ≤ m) {x y : D n} (hxy : x ≤ y) :
       rw [embLE_succ D P hk (Nat.le_succ_of_le hk), embLE_succ D P hk (Nat.le_succ_of_le hk)]
       exact (P k).incl.monotone ih
 
-/-- The tower of embeddings is Scott-continuous (a composite of the `iₖ`). -/
 theorem embLE_preservesDirectedSup {n m : ℕ} (h : n ≤ m) :
     PreservesDirectedSup (embLE D P h) := by
   induction m, h using Nat.le_induction with

@@ -19,19 +19,11 @@ open NeighborhoodSystem ApproximableMap Exercise326
 universe u
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
-/- concordance: source L5040 PROPOSITION 8.10 constructs preserve projections -/
-/-- **Proposition 8.10 (Scott 1981, PRG-19), first half.** If `a, b : 𝒰 → 𝒰` are projections,
-then so are `a+b`, `a×b`, and `a→b`. -/
 theorem isProjection_combinators {a b : ApproximableMap U U}
     (ha : IsProjection a) (hb : IsProjection b) :
     IsProjection (sumComb a b) ∧ IsProjection (prodComb a b) ∧ IsProjection (arrowComb a b) :=
   ⟨sumComb.isProjection ha hb, prodComb.isProjection ha hb, arrowComb.isProjection ha hb⟩
 
-/-- **Generalized Proposition 8.2 `elementIso`.** Given an approximable projection pair
-`i : D → E`, `j : E → D` with `j ∘ i = I_D` (no requirement `i ∘ j ≤ I_E`, and `D`, `E` need not
-share a token type — unlike `Subsystem.elementIso`, which requires a literal `D ◁ E`), and
-`g : E → E` with `g = i ∘ j`, then `D.Element ≃o Fix(g)`. The proof is verbatim
-`Subsystem.elementIso`'s, generalized. -/
 def elementIsoOfProjectionPair (i : ApproximableMap D E) (j : ApproximableMap E D)
     (hji : j.comp i = idMap D) {g : ApproximableMap E E} (hg : g = i.comp j) :
     D.Element ≃o {y : E.Element // g.toElementMap y = y} where
@@ -66,13 +58,10 @@ def elementIsoOfProjectionPair (i : ApproximableMap D E) (j : ApproximableMap E 
     · intro hle
       exact i.toElementMap_mono hle
 
-/-- **`i_a ∘ j_a = a`, for a finitary projection `a`.** Theorem 8.6's `sub_eq_self_of_isFinitaryProjection`,
-restated via `retractionOfSubsystem`'s definition. -/
 theorem inj_comp_proj_eq_self {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     (fixedNbhd_subsystem a).inj.comp (fixedNbhd_subsystem a).proj = a :=
   sub_eq_self_of_isFinitaryProjection ha
 
-/-- If `i ∘ j ≤ I_E`, then `i` sends `D`'s bottom to `E`'s bottom. -/
 theorem toElementMap_bot_eq_bot_of_comp_le_idMap {i : ApproximableMap D E} {j : ApproximableMap E D}
     (hij : i.comp j ≤ idMap E) : i.toElementMap D.bot = E.bot := by
   apply le_antisymm
@@ -81,7 +70,6 @@ theorem toElementMap_bot_eq_bot_of_comp_le_idMap {i : ApproximableMap D E} {j : 
       _ ≤ E.bot := toElementMap_le_of_comp_le_idMap hij E.bot
   · exact E.bot_le _
 
-/-- **`IsFinitary` from a concrete projection-pair witness.** -/
 theorem isFinitary_of_projectionPair (i : ApproximableMap D E) (j : ApproximableMap E D)
     (hji : j.comp i = idMap D) {g : ApproximableMap E E} (hg : g = i.comp j) :
     IsFinitary g :=
@@ -95,7 +83,6 @@ theorem I_comp_J (a b : ApproximableMap U U) (ha : FinitaryProjection a) (hb : F
   rw [comp_assoc, ← comp_assoc (prodMap _ _) (prodMap _ _) jTimes, ← prodMap_comp,
     inj_comp_proj_eq_self ha, inj_comp_proj_eq_self hb, ← comp_assoc, prodComb.eq, comp_assoc]
 
-/-- **Proposition 8.10(b), `×`-case, the isomorphism `D_{a×b} ≅ D_a × D_b`.** -/
 noncomputable def elementIso (a b : ApproximableMap U U)
     (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (prod (fixedNbhd a) (fixedNbhd b)).Element ≃o
@@ -124,7 +111,6 @@ theorem I_comp_J (a b : ApproximableMap U U) (ha : FinitaryProjection a) (hb : F
     inj_comp_proj_eq_self ha, inj_comp_proj_eq_self hb, expMap.eq_lamComb, ← comp_assoc,
     arrowComb.eq, comp_assoc]
 
-/-- **Proposition 8.10(b), `→`-case, the isomorphism `D_{a→b} ≅ (D_a → D_b)`.** -/
 noncomputable def elementIso (a b : ApproximableMap U U)
     (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (funSpace (fixedNbhd a) (fixedNbhd b)).Element ≃o
@@ -146,7 +132,6 @@ end arrowComb
 
 namespace sumComb
 
-/-- **`sumComb a b = i₊ ∘ (a+b) ∘ j₊`, at the level of approximable maps.** -/
 theorem eq_iPlus_sumMap_jPlus (a b : ApproximableMap U U) :
     sumComb a b = iPlus.comp
       ((sumMap (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty) (h₀' := U_mem_nonempty)
@@ -176,7 +161,6 @@ theorem J_comp_I (a b : ApproximableMap U U) :
     ← sumMap.comp, (fixedNbhd_subsystem a).proj_comp_inj, (fixedNbhd_subsystem b).proj_comp_inj,
     sumMap.id]
 
-/-- **Proposition 8.10(b), `+`-case, the isomorphism `D_{a+b} ≅ D_a + D_b`.** -/
 noncomputable def elementIso (a b : ApproximableMap U U)
     (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     (sum (fixedNbhd a) (fixedNbhd b) (fixedNbhd_mem_nonempty a) (fixedNbhd_mem_nonempty b)).Element
@@ -196,7 +180,6 @@ theorem finitaryProjection (a b : ApproximableMap U U)
 
 end sumComb
 
-/-- **Proposition 8.10(b) (Scott 1981, PRG-19), in full.** -/
 theorem finitaryProjection_combinators {a b : ApproximableMap U U}
     (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     FinitaryProjection (sumComb a b) ∧ FinitaryProjection (prodComb a b) ∧
@@ -204,9 +187,6 @@ theorem finitaryProjection_combinators {a b : ApproximableMap U U}
   ⟨sumComb.finitaryProjection a b ha hb, prodComb.finitaryProjection a b ha hb,
     arrowComb.finitaryProjection a b ha hb⟩
 
-/-- **Proposition 8.10 (Scott 1981, PRG-19).** If `a, b : 𝒰 → 𝒰` are finitary projections, then
-so are `a+b`, `a×b`, and `a→b`, and `D_{a+b} ≅ D_a + D_b`, `D_{a×b} ≅ D_a × D_b`,
-`D_{a→b} ≅ (D_a → D_b)`, where `D_a = fixedNbhd a` and `D_b = fixedNbhd b`. -/
 theorem proposition_8_10 {a b : ApproximableMap U U}
     (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     FinitaryProjection (sumComb a b) ∧ FinitaryProjection (prodComb a b) ∧

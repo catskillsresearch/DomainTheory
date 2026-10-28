@@ -34,7 +34,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -48,7 +47,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-
 theorem comp_copairMap_inlMap (f : ApproximableMap A C) (g : ApproximableMap B C) :
     comp (copairMap A B f g) (inlMap A B) = f := by
   refine ApproximableMap.ext fun v s => ?_
@@ -59,8 +57,7 @@ theorem comp_copairMap_inlMap (f : ApproximableMap A C) (g : ApproximableMap B C
     · exact f.mono hf hEnt (proposition_2_3_iii C hs) hv hs
     · exact False.elim (hne hr)
   · intro hf
-    -- Always lift `insert Δ v` so the left branch of copair is nonempty (avoids
-    -- classical `by_cases` on `v = ∅`).
+
     let vBot := insert A.bot v
     have hvBot : vBot ∈ A.Con := A.ent_con (A.ent_bot (f.rel_dom hf))
     have hEntBot : A.EntSet vBot v :=

@@ -7,13 +7,10 @@ public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
 public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd_more
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-
-/-- Every open neighbourhood of `x` contains a basic neighbourhood of `x`. -/
 theorem exists_basicNhhd_subset_of_generateOpen {U : Set Pomega}
     (hU : GenerateOpen (Set.range memOpen) U) {x : Pomega} (hx : x ∈ U) :
     ∃ n, e n ⊆ x ∧ basicNhhd n ⊆ U := by

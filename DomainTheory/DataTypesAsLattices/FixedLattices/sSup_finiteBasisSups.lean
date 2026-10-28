@@ -8,9 +8,7 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.finiteBasisSups
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem sSup_finiteBasisSups {α : Type u} [CompleteLattice α]
     (d : ℕ → α) (x : Set ℕ) :

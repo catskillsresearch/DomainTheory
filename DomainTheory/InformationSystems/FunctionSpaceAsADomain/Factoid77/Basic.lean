@@ -43,7 +43,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.p
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -64,9 +63,7 @@ end ApproximableMap
 
 open ApproximableMap
 
-
 attribute [instance] instCategoryInfoSysObj
-
 
 theorem productMapToTensorMap_toElement (A Y Y' : InfoSysObj.{u})
     (f : ApproximableMap (productSystem A.sys Y.sys) (productSystem A.sys Y'.sys))
@@ -83,7 +80,6 @@ theorem productMapToTensorMap_toElement (A Y Y' : InfoSysObj.{u})
   cases et
   rfl
 
-
 noncomputable instance (A : InfoSysObj.{u}) : Closed A where
   rightAdj := expFunctor A
   adj := tensorExpAdjunction A
@@ -91,8 +87,6 @@ noncomputable instance (A : InfoSysObj.{u}) : Closed A where
 noncomputable instance : MonoidalClosed InfoSysObj.{u} where
   closed _ := inferInstance
 
-
 end InfoSys
-
 
 end DomainTheory.InformationSystems

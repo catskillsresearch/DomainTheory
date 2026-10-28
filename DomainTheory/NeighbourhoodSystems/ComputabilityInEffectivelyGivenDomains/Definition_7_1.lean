@@ -17,9 +17,7 @@ open Sum Set
 section
 variable {σ₁ σ₂ : Type}
 variable {σ : Type}
-/- concordance: source L4243 DEFINITION 7.1 computable presentation -/
-/-- **Definition 7.1 (ii) for encoded neighbourhoods:** when `denote a`, `denote b ∈ S`,
-`consistentB` agrees with membership of the intersection in `S`. -/
+
 theorem consistentB_iff_Ssys (a b : SExpr) (ha : InS (denote a)) (hb : InS (denote b)) :
     consistentB a b = true ↔ InS (denote a ∩ denote b) := by
   rw [← denote_cap, consistentB_iff]
@@ -53,9 +51,6 @@ section
 variable {σ₁ σ₂ : Type}
 variable {σ : Type}
 
-/-- **Definition 7.1 relation (ii) as a reachability problem.** `denote e` is empty iff no accept
-state of its `Fintype` automaton is reachable. The right-hand side ranges over the finite state set
-`autState e`; the only non-finite-looking quantifier (`∀ x`) is what a reachability search eliminates. -/
 theorem denote_eq_empty_iff (e : SExpr) :
     denote e = ∅ ↔ ∀ s ∈ (toNFA e).accept, ∀ x, s ∉ (toNFA e).eval x := by
   rw [Set.eq_empty_iff_forall_notMem]
@@ -67,7 +62,6 @@ theorem denote_eq_empty_iff (e : SExpr) :
     obtain ⟨s, hs, hse⟩ := hx
     exact h s hs x hse
 
-/-- A nonempty accepted language ⟺ some accept state is reachable by reading some word. -/
 theorem nfa_accepts_nonempty_iff (M : NFA Bool σ) :
     M.accepts.Nonempty ↔ ∃ s ∈ M.accept, ∃ x, s ∈ M.eval x := by
   constructor
@@ -77,7 +71,6 @@ theorem nfa_accepts_nonempty_iff (M : NFA Bool σ) :
 section ShortWord
 
 variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
-
 
 theorem nfa_accepts_nonempty_iff_short :
     M.accepts.Nonempty ↔ ∃ w, w ∈ wordsUpTo (Fintype.card σ) ∧ w ∈ M.accepts := by
@@ -104,7 +97,7 @@ end ShortWord
 end
 
 section
-/-- The accept states of `toNFA e`, as a `Finset`. -/
+
 def acceptFin : (e : SExpr) → Finset (autState e)
   | .sigma => Finset.univ
   | .single σ => {(some ⟨σ.length, Nat.lt_succ_self _⟩ : SingleState σ)}
@@ -113,10 +106,7 @@ def acceptFin : (e : SExpr) → Finset (autState e)
 end
 
 section
-/-- The start states of `toNFA e`, as a `Finset`. The `.cat` case handles the one-hop
-ε-closure directly (`catEps`'s only ε-edges go from an `M₁`-accept state to `M₂`-start states,
-`catEps_mem_εClosure_iff`): if some start state of `a` is already accepting, `b`'s start states
-are also immediately live. -/
+
 def startFin : (e : SExpr) → Finset (autState e)
   | .sigma => Finset.univ
   | .single σ => {(some ⟨0, Nat.succ_pos _⟩ : SingleState σ)}
@@ -129,9 +119,7 @@ def startFin : (e : SExpr) → Finset (autState e)
 end
 
 section
-/-- The step function of `toNFA e` from a single state, as a `Finset`. The `.cat` case's `inl`
-branch mirrors `startFin`'s epsilon-closure handling exactly (one hop, on reaching an `a`-accept
-state after the step). -/
+
 def stepFinSingle : (e : SExpr) → autState e → Bool → Finset (autState e)
   | .sigma => fun _ _ => Finset.univ
   | .single σ => fun s c => {(singleDFA σ).step s c}
@@ -147,14 +135,13 @@ def stepFinSingle : (e : SExpr) → autState e → Bool → Finset (autState e)
 end
 
 section
-/-- The `Finset`-lifted step (mirrors `NFA.stepSet`). -/
+
 def stepFin (e : SExpr) (S : Finset (autState e)) (c : Bool) : Finset (autState e) :=
   S.biUnion (fun s => stepFinSingle e s c)
 end
 
 section
-/-- Tracks `(evalFin e₁ w, evalFin e₂ w)` deterministically; accepts `w` iff `e₁` is live-accepting
-and `e₂` is not — i.e. `w ∈ denote e₁ \ denote e₂`. -/
+
 def diffNFA (e1 e2 : SExpr) : NFA Bool (Finset (autState e1) × Finset (autState e2)) where
   step S c := {(stepFin e1 S.1 c, stepFin e2 S.2 c)}
   start := {(startFin e1, startFin e2)}
@@ -162,23 +149,20 @@ def diffNFA (e1 e2 : SExpr) : NFA Bool (Finset (autState e1) × Finset (autState
 end
 
 section
-/-- The live-state `Finset` after reading `w` (mirrors `NFA.eval`, folding `stepFin` left to
-right from `startFin`). -/
+
 def evalFin (e : SExpr) (w : List Bool) : Finset (autState e) :=
   w.foldl (stepFin e) (startFin e)
 end
 
 section
-/-- `denote e₁ ⊆ denote e₂`, decided by a bounded search: if no word up to the `diffNFA` state
-bound witnesses `e₁ \ e₂`, none exists at all (`exists_diff_word_short`). -/
+
 def subsetB (e1 e2 : SExpr) : Bool :=
   (wordsUpTo (Fintype.card (Finset (autState e1) × Finset (autState e2)))).all
     (fun w => !matchesB e1 w || matchesB e2 w)
 end
 
 section
-/-- **Exercise 7.22k.** Relation (i) on `SExpr` syntax — language equivalence — decided by
-`subsetB` in both directions. -/
+
 def interEqB (e1 e2 : SExpr) : Bool := subsetB e1 e2 && subsetB e2 e1
 end
 
@@ -356,8 +340,7 @@ theorem coe_evalFin (e : SExpr) (w : List Bool) :
 end
 
 section
-/-- **`denote e` via the `Finset` simulation.** `w` matches `e` iff some live state after reading
-`w` is accepting — a decidable `Finset` intersection test. -/
+
 theorem denote_iff_evalFin (e : SExpr) (w : List Bool) :
     w ∈ denote e ↔ (evalFin e w ∩ acceptFin e).Nonempty := by
   rw [← toNFA_accepts e]
@@ -397,7 +380,7 @@ theorem diffNFA_eval (e1 e2 : SExpr) (w : List Bool) :
 end
 
 section
-/-- **`diffNFA` accepts exactly `denote e₁ \ denote e₂`.** -/
+
 theorem diffNFA_mem_accepts_iff (e1 e2 : SExpr) (w : List Bool) :
     w ∈ (diffNFA e1 e2).accepts ↔ w ∈ denote e1 ∧ w ∉ denote e2 := by
   constructor
@@ -418,8 +401,7 @@ theorem diffNFA_mem_accepts_iff (e1 e2 : SExpr) (w : List Bool) :
 end
 
 section
-/-- **The shortest witness of `denote e₁ ⊄ denote e₂`, if any, is short.** Generic
-`exists_accepted_word_short` applied to `diffNFA`. -/
+
 theorem exists_diff_word_short {e1 e2 : SExpr} (h : ¬ denote e1 ⊆ denote e2) :
     ∃ w, w.length < Fintype.card (Finset (autState e1) × Finset (autState e2)) ∧
       w ∈ denote e1 ∧ w ∉ denote e2 := by
@@ -482,8 +464,7 @@ open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
 section
-/-- **AM–GM for naturals (choice-free).** `4 a b ≤ (a+b)²`. Faithful port of mathlib's `private`
-`Nat.AM_GM` (no classical tactics). -/
+
 theorem amGM : ∀ {a b : ℕ}, 4 * a * b ≤ (a + b) * (a + b)
   | 0, _ => by rw [Nat.mul_zero, Nat.zero_mul]; exact Nat.zero_le _
   | _, 0 => by rw [Nat.mul_zero]; exact Nat.zero_le _
@@ -494,8 +475,7 @@ theorem amGM : ∀ {a b : ℕ}, 4 * a * b ≤ (a + b) * (a + b)
 end
 
 section
-/-- **Choice-free `sqrt.iter` lower bound.** `iter n guess ² ≤ n`. Faithful port of
-`Nat.sqrt.iter_sq_le`, with `grind` replaced by `omega`. -/
+
 theorem iter_sq_le (n guess : ℕ) : Nat.sqrt.iter n guess * Nat.sqrt.iter n guess ≤ n := by
   unfold Nat.sqrt.iter
   if h : (guess + n / guess) / 2 < guess then
@@ -510,8 +490,7 @@ theorem iter_sq_le (n guess : ℕ) : Nat.sqrt.iter n guess * Nat.sqrt.iter n gue
 end
 
 section
-/-- Choice-free left-cancellation for `<` under `*` (mathlib's `Nat.lt_of_mul_lt_mul_left` is
-classical). From `a*b < a*c` deduce `b < c`, by the contrapositive `c ≤ b → a*c ≤ a*b`. -/
+
 theorem lt_of_mul_lt_mul_left' {a b c : ℕ} (h : a * b < a * c) : b < c := by
   rcases Nat.lt_or_ge b c with hbc | hbc
   · exact hbc
@@ -519,8 +498,7 @@ theorem lt_of_mul_lt_mul_left' {a b c : ℕ} (h : a * b < a * c) : b < c := by
 end
 
 section
-/-- **Choice-free `sqrt.iter` upper bound.** If `n < (guess+1)²` then `n < (iter n guess + 1)²`.
-Faithful port of `Nat.sqrt.lt_iter_succ_sq`, with `lia` replaced by `omega`. -/
+
 theorem lt_iter_succ_sq (n guess : ℕ) (hn : n < (guess + 1) * (guess + 1)) :
     n < (Nat.sqrt.iter n guess + 1) * (Nat.sqrt.iter n guess + 1) := by
   unfold Nat.sqrt.iter
@@ -548,8 +526,7 @@ theorem lt_iter_succ_sq (n guess : ℕ) (hn : n < (guess + 1) * (guess + 1)) :
 end
 
 section
-/-- `n < (sqrt n + 1)²` (choice-free; mathlib's `Nat.lt_succ_sqrt` is classical). The initial guess
-`2 ^ (log₂ n / 2 + 1)` over-shoots `√n`, which feeds `lt_iter_succ_sq`. -/
+
 theorem lt_succ_sqrt (n : ℕ) : n < (Nat.sqrt n + 1) * (Nat.sqrt n + 1) := by
   rcases Nat.lt_or_ge 1 n with h | h
   · rw [Nat.sqrt, ite_eq_right (Nat.not_le.mpr h)]
@@ -568,7 +545,7 @@ theorem lt_succ_sqrt (n : ℕ) : n < (Nat.sqrt n + 1) * (Nat.sqrt n + 1) := by
 end
 
 section
-/-- `sqrt n` squared is `≤ n` (choice-free; mathlib's `Nat.sqrt_le` is classical). -/
+
 theorem sqrt_le (n : ℕ) : Nat.sqrt n * Nat.sqrt n ≤ n := by
   rcases Nat.lt_or_ge 1 n with h | h
   · rw [Nat.sqrt, ite_eq_right (Nat.not_le.mpr h)]
@@ -579,8 +556,7 @@ theorem sqrt_le (n : ℕ) : Nat.sqrt n * Nat.sqrt n ≤ n := by
 end
 
 section
-/-- **The square-root characterization (choice-free).** If `q² ≤ m < (q+1)²` then `sqrt m = q`. The
-uniqueness step is `omega` from the two bounds plus `sqrt_le`/`lt_succ_sqrt`. -/
+
 theorem sqrt_eq_of {m q : ℕ} (h1 : q * q ≤ m) (h2 : m < (q + 1) * (q + 1)) : Nat.sqrt m = q := by
   have hle := sqrt_le m
   have hlt := lt_succ_sqrt m
@@ -602,7 +578,7 @@ theorem sqrt_eq_of {m q : ℕ} (h1 : q * q ≤ m) (h2 : m < (q + 1) * (q + 1)) :
 end
 
 section
-/-- `sqrt (q² + a) = q` whenever `a ≤ 2q` (choice-free; mathlib's `Nat.sqrt_add_eq` is classical). -/
+
 theorem sqrt_add_eq (q a : ℕ) (h : a ≤ q + q) : Nat.sqrt (q * q + a) = q := by
   refine sqrt_eq_of (Nat.le_add_right _ _) ?_
   have expand : (q + 1) * (q + 1) = q * q + q + q + 1 := Nat.succ_mul_succ q q
@@ -610,7 +586,7 @@ theorem sqrt_add_eq (q a : ℕ) (h : a ≤ q + q) : Nat.sqrt (q * q + a) = q := 
 end
 
 section
-/-- **`unpair ∘ pair = id` (choice-free).** Mirrors `Nat.unpair_pair`. -/
+
 theorem unpair_pair (a b : ℕ) : Nat.unpair (Nat.pair a b) = (a, b) := by
   rw [Nat.pair]
   if h : a < b then
@@ -639,8 +615,7 @@ section
 end
 
 section
-/-- Choice-free primitive-recursive **selection**: `selectFn c a b = a` if `c = 1`, `= b` if `c = 0`
-(for a `{0,1}`-valued `c`), via `c * a + (1 - c) * b`. -/
+
 def selectFn (c a b : ℕ) : ℕ := c * a + (1 - c) * b
 end
 
@@ -659,48 +634,44 @@ section
 end
 
 section
-/-- A unary predicate `p : ℕ → Prop` is **recursively decidable**. -/
+
 def RecDecidable (p : ℕ → Prop) : Prop :=
   ∃ f : ℕ → ℕ, Nat.Primrec f ∧ ∀ n, p n ↔ f n = 1
 end
 
 section
-/-- A unary predicate `p : ℕ → Prop` is **recursively enumerable**: it is the projection of a
-recursively decidable relation, `p n ↔ ∃ i, q (Nat.pair i n)`. -/
+
 def REPred (p : ℕ → Prop) : Prop :=
   ∃ q : ℕ → Prop, RecDecidable q ∧ ∀ n, p n ↔ ∃ i, q (Nat.pair i n)
 end
 
 section
-/-- A binary relation is recursively enumerable when its `Nat.pair`-coding is. -/
+
 def REPred₂ (r : ℕ → ℕ → Prop) : Prop :=
   REPred fun t => r t.unpair.1 t.unpair.2
 end
 
 section
-/-- A binary relation is recursively decidable when its `Nat.pair`-coding is. -/
+
 def RecDecidable₂ (r : ℕ → ℕ → Prop) : Prop :=
   RecDecidable fun t => r t.unpair.1 t.unpair.2
 end
 
 section
-/-- A ternary relation is recursively decidable when its `Nat.pair`-coding (`pair n (pair m k)`) is. -/
+
 def RecDecidable₃ (r : ℕ → ℕ → ℕ → Prop) : Prop :=
   RecDecidable fun t => r t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2
 end
 
 section
-/-- Encode a list of naturals as a single natural: `[] ↦ 0`, `a :: l ↦ pair a (encodeList l) + 1`.
-The `+1` keeps the empty list (code `0`) distinguishable from any nonempty list. -/
+
 def encodeList : List ℕ → ℕ
   | [] => 0
   | a :: l => Nat.pair a (encodeList l) + 1
 end
 
 section
-/-- One step of the code-walking fold. The state `s = pair rc acc` carries the remaining code `rc`
-and accumulator `acc`. If `rc = 0` the state is a fixed point; otherwise `rc - 1 = pair head tail`,
-and the step pops `head`, recurses on `tail`, and updates `acc := stp (pair head (pair acc params))`. -/
+
 def foldStep (stp : ℕ → ℕ) (params s : ℕ) : ℕ :=
   selectFn (1 - s.unpair.1) s
     (Nat.pair (s.unpair.1 - 1).unpair.2
@@ -708,22 +679,20 @@ def foldStep (stp : ℕ → ℕ) (params s : ℕ) : ℕ :=
 end
 
 section
-/-- Fold the list coded by `c`, threading accumulator `z` and parameter `params`. Implemented as
-`c`-fold iteration of `foldStep` from the initial state `pair c z`, projecting out the accumulator. -/
+
 def foldCode (stp : ℕ → ℕ) (params z c : ℕ) : ℕ :=
   ((foldStep stp params)^[c] (Nat.pair c z)).unpair.2
 end
 
 section
-/-- `halfParity n = pair (n / 2) (n % 2)`, built by structural recursion: from `(h, p)` for `n`, the
-value for `n+1` is `(h + p, 1 - p)` (carry on odd→even). -/
+
 def halfParity (n : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0
     (fun _ ih => Nat.pair (ih.unpair.1 + ih.unpair.2) (1 - ih.unpair.2)) n
 end
 
 section
-/-- Indicator of `v = 1`, as a `{0,1}`-valued primitive-recursive function. -/
+
 def isOne (v : ℕ) : ℕ := 1 - ((v - 1) + (1 - v))
 end
 
@@ -741,60 +710,58 @@ section
 end
 
 section
-/-- AND-fold step (`foldCode` shape): `acc ↦ acc ∧ isOne (g ⟨head, params⟩)`. -/
+
 def allListStp (g : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn w.unpair.2.unpair.1 (isOne (g (Nat.pair w.unpair.1 w.unpair.2.unpair.2))) 0
 end
 
 section
-/-- The `{0,1}` flag of the bounded `∀ e ∈ decodeList c, g ⟨e, p⟩ = 1`. -/
+
 def allListChar (g : ℕ → ℕ) (p c : ℕ) : ℕ := foldCode (allListStp g) p 1 c
 end
 
 section
-/-- The `{0,1}`-valued bounded-`∃` indicator: `1` iff `∃ i < N, g (pair i n) = 1`. Folded
-right-to-left with `selectFn` so the result stays in `{0,1}`. -/
+
 def bExistsFn (g : ℕ → ℕ) (n N : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0 (fun i ih => selectFn ih 1 (isOne (g (Nat.pair i n)))) N
 end
 
 section
-/-- The `{0,1}`-valued bounded-`∀` indicator: `1` iff `g (pair i n) = 1` for all `i < N`. Folded
-right-to-left with `selectFn` so the result stays in `{0,1}`. -/
+
 def bForallFn (g : ℕ → ℕ) (n N : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 1 (fun i ih => selectFn ih (isOne (g (Nat.pair i n))) 0) N
 end
 
 section
-/-- OR-fold step (`foldCode` shape): `acc ↦ acc ∨ isOne (g ⟨head, params⟩)`. -/
+
 def existsListStp (g : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn w.unpair.2.unpair.1 1 (isOne (g (Nat.pair w.unpair.1 w.unpair.2.unpair.2)))
 end
 
 section
-/-- The `{0,1}` flag of the bounded `∃ e ∈ decodeList c, g ⟨e, p⟩ = 1`. -/
+
 def existsListChar (g : ℕ → ℕ) (p c : ℕ) : ℕ := foldCode (existsListStp g) p 0 c
 end
 
 section
-/-- `{0,1}` flag: `1` iff `n` encodes a binary digit (`0` or `1`). -/
+
 def isBinDigit (n : ℕ) : ℕ :=
   selectFn (isOne (1 - n)) 1 (selectFn (isOne (2 - n)) 1 0)
 end
 
 section
-/-- `{0,1}` flag: every entry of `decodeList c` is a binary digit. -/
+
 def allBinDigitsChar (c : ℕ) : ℕ :=
   allListChar (fun t => isBinDigit t.unpair.1) 0 c
 end
 
 section
-/-- `{0,1}` test for `n = 0`. -/
+
 def isZero (n : ℕ) : ℕ := 1 - min n 1
 end
 
 section
-/-- `b ≤ pair a b` (choice-free; avoids mathlib's `Nat.right_le_pair` to keep the axiom set clean). -/
+
 theorem le_pair_right (a b : ℕ) : b ≤ Nat.pair a b := by
   have hbb : b ≤ b * b := by
     rcases Nat.eq_zero_or_pos b with h | h
@@ -807,25 +774,22 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- Length fold step: ignore head/params, increment accumulator. -/
 def listLenStp (w : ℕ) : ℕ := w.unpair.2.unpair.1 + 1
 end
 
 section
 set_option maxHeartbeats 800000 in
 
-/-- Coded list length: `(decodeList c).length`. -/
 def listLenChar (c : ℕ) : ℕ := foldCode listLenStp 0 0 c
 end
 
 section
-/-- The low-bit OR `(x ||| y) % 2`, in arithmetic `{0,1}`-valued form (so it is primitive recursive
-without referring to `Nat.lor`). Equal to `(x ||| y) % 2` by `lowOr_eq_mod`. -/
+
 def lowOr (x y : ℕ) : ℕ := 1 - (1 - (x % 2 + y % 2))
 end
 
 section
-/-- Packed iteration state `pair (pair curA curB) (pair weight acc)` for the bitwise-OR fold. -/
+
 def lorStep (s : ℕ) : ℕ :=
   Nat.pair (Nat.pair (s.unpair.1.unpair.1 / 2) (s.unpair.1.unpair.2 / 2))
     (Nat.pair (2 * s.unpair.2.unpair.1)
@@ -833,32 +797,30 @@ def lorStep (s : ℕ) : ℕ :=
 end
 
 section
-/-- Prepend the *pair* `⟨n, x⟩` onto the list coded by `acc`. -/
+
 def mapPairStep (n acc x : ℕ) : ℕ := Nat.pair (Nat.pair n x) acc + 1
 end
 
 section
-/-- `foldCode`-shaped wrapper of `mapPairStep` (parameter `n` threaded via the `params` slot). -/
+
 def mapPairStp (w : ℕ) : ℕ :=
   mapPairStep w.unpair.2.unpair.2 w.unpair.2.unpair.1 w.unpair.1
 end
 
 section
-/-- **`mapPairCode n c`** codes the list `(decodeList c).map ⟨n, ·⟩` (reversed). -/
+
 def mapPairCode (n c : ℕ) : ℕ := foldCode mapPairStp n 0 c
 end
 
 section
 set_option maxHeartbeats 800000 in
 
-/-- `{0,1}` AND on flags (both must be `1`). -/
 def mulBit (a b : ℕ) : ℕ := a * b
 end
 
 section
 set_option maxHeartbeats 800000 in
 
-/-- One step of fuel-bounded decode-ok (previous fuel level supplied as `prev`). -/
 def decodeFuelOkCharBody (prev : ℕ → ℕ) (c : ℕ) : ℕ :=
   let sub := mulBit (prev c.unpair.2.unpair.1) (prev c.unpair.2.unpair.2)
   selectFn (isOne (1 - c.unpair.1))
@@ -871,15 +833,13 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- `{0,1}` flag: `1` iff fuel-bounded `SExpr` decode succeeds on code `c`. -/
 def decodeFuelOkChar : ℕ → ℕ → ℕ
   | 0, _ => 0
   | fuel + 1, c => decodeFuelOkCharBody (decodeFuelOkChar fuel) c
 end
 
 section
-/-- The iterative bitwise OR: iterate `lorStep` `a + b` times (enough to consume every set bit of `a`
-and `b`) from the initial state, and read off the accumulator. -/
+
 def myLor (a b : ℕ) : ℕ :=
   (lorStep^[a + b] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.2
 end
@@ -887,7 +847,6 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- `{0,1}` nat-equality char (reused in C9b tag/element comparisons). -/
 def natEqChar (a b : ℕ) : ℕ := 1 - ((a - b) + (b - a))
 end
 
@@ -908,7 +867,6 @@ set_option maxHeartbeats 800000 in
 open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
-/-- One fuel step of state-card counting (previous fuel level as `prev`). -/
 def autStateCardFuelCharBody (prev : ℕ → ℕ) (c : ℕ) : ℕ :=
   let subAdd := prev c.unpair.2.unpair.1 + prev c.unpair.2.unpair.2
   let subMul := prev c.unpair.2.unpair.1 * prev c.unpair.2.unpair.2
@@ -931,7 +889,6 @@ set_option maxHeartbeats 800000 in
 open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
-/-- Fuel-bounded mirror of `autStateCard` on Gödel codes. -/
 def autStateCardFuelChar : ℕ → ℕ → ℕ
   | 0, _ => 0
   | fuel + 1, c => autStateCardFuelCharBody (autStateCardFuelChar fuel) c
@@ -947,9 +904,6 @@ set_option maxHeartbeats 800000 in
 open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
-/-- **Not** `private`: `Exercise722Presentation.lean` (downstream of this file via `Definition71`)
-bridges this to its own `boolNat` in Session **C9b7**, since `Recursive.lean` cannot import
-`Exercise722Presentation.lean` (would cycle) and so cannot state that bridge itself. -/
 def c9b5_boolNat (b : Bool) : ℕ := if b then 1 else 0
 end
 
@@ -993,7 +947,6 @@ set_option maxHeartbeats 800000 in
 open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
-/-- Gödel code mirroring `SExpr.encode` in `Exercise722Presentation.lean`. -/
 def c9b5_sexprGodelEncode : SExpr → ℕ
   | .sigma => Nat.pair 0 0
   | .single σ => Nat.pair 1 (c9b5_encodeListBool σ)
@@ -1017,7 +970,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- Tag-3 cap code matching `SExpr.encode` / `c9b5_sexprGodelEncode`. -/
 def capCode (a b : ℕ) : ℕ := Nat.pair 3 (Nat.pair a b)
 end
 
@@ -1037,7 +989,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- Upper bound on Gödel codes of `{0,1}`-lists of length at most `n`. -/
 def codeBound : ℕ → ℕ
   | 0 => 1
   | n + 1 => Nat.pair 1 (codeBound n) + 1
@@ -1046,7 +997,6 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- Non-empty-`remC2` branch of `listEqStp`. -/
 def listEqStpNonzero (w : ℕ) : ℕ :=
   Nat.pair
     (selectFn w.unpair.2.unpair.1.unpair.1
@@ -1057,7 +1007,6 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- Fold step: state `pair flag remC2`; consume one head of `c1`, peel one cons off `remC2`. -/
 def listEqStp (w : ℕ) : ℕ :=
   selectFn (isZero w.unpair.2.unpair.1.unpair.2) (Nat.pair 0 0) (listEqStpNonzero w)
 end
@@ -1065,7 +1014,6 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- `listEqChar c1 c2 = 1 ↔ decodeList c1 = decodeList c2`. -/
 def listEqChar (c1 c2 : ℕ) : ℕ :=
   let r := foldCode listEqStp 0 (Nat.pair 1 c2) c1
   mulBit r.unpair.1 (isZero r.unpair.2)
@@ -1080,9 +1028,6 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- `foldCode`-shaped indexing step. State `pair counter result`, parameter the target index `i`;
-bump the counter and overwrite the result exactly when `counter = i` (via the `{0,1}` equality bit
-`1 - ((counter - i) + (i - counter))`). -/
 def nthStp (w : ℕ) : ℕ :=
   Nat.pair (w.unpair.2.unpair.1.unpair.1 + 1)
     (selectFn (1 - ((w.unpair.2.unpair.1.unpair.1 - w.unpair.2.unpair.2)
@@ -1093,7 +1038,6 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- **Primitive-recursive indexing into a coded list.** `nthCode c i d = (decodeList c).getD i d`. -/
 def nthCode (c i d : ℕ) : ℕ := (foldCode nthStp i (Nat.pair 0 d) c).unpair.2
 end
 
@@ -1104,7 +1048,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- Tabulation lookup for `appendListCode`: params `pair c1 (pair c2 len1)`. -/
 def appendListTabFn (w : ℕ) : ℕ :=
   let i := w.unpair.1
   let p := w.unpair.2
@@ -1124,7 +1067,6 @@ set_option maxHeartbeats 800000 in
 open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
-/-- `autStateCardFuelCharBody`'s step, with `prev` replaced by table lookup. -/
 def autStateCardFuelCharLookup (w : ℕ) : ℕ :=
   autStateCardFuelCharBody (fun c' => nthCode w.unpair.1 c' 0) w.unpair.2
 end
@@ -1132,8 +1074,6 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- `decodeFuelOkCharBody`'s step, with `prev` replaced by table lookup: `w.unpair.1` is the
-previous fuel level's table, `w.unpair.2` is the code being queried. -/
 def decodeFuelOkCharLookup (w : ℕ) : ℕ :=
   decodeFuelOkCharBody (fun c' => nthCode w.unpair.1 c' 0) w.unpair.2
 end
@@ -1145,23 +1085,19 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- Tabulation lookup for `dropCode`: params `pair n c`. -/
 def dropListTabFn (w : ℕ) : ℕ :=
   nthCode (w.unpair.2.unpair.2) (w.unpair.1 + w.unpair.2.unpair.1) 0
 end
 
 section
-/-- The pure (set-theoretic) witness-threading fold step. The accumulator is `pair remWitness flag`:
-at the list head `x` we pop a witness `i` (the `decodeList` head of `remWitness`, i.e.
-`(remWitness - 1).unpair.1`) with new remaining code `(remWitness - 1).unpair.2`, and `AND` the flag
-with `isOne (qc ⟨i, x⟩)`. -/
+
 def reForallF (qc : ℕ → ℕ) (acc x : ℕ) : ℕ :=
   Nat.pair (acc.unpair.1 - 1).unpair.2
     (selectFn acc.unpair.2 (isOne (qc (Nat.pair (acc.unpair.1 - 1).unpair.1 x))) 0)
 end
 
 section
-/-- The `foldCode`-form step (parameter unused), used to package `reForallF` primitive-recursively. -/
+
 def reForallStp (qc : ℕ → ℕ) (w : ℕ) : ℕ :=
   Nat.pair (w.unpair.2.unpair.1.unpair.1 - 1).unpair.2
     (selectFn w.unpair.2.unpair.1.unpair.2
@@ -1169,13 +1105,13 @@ def reForallStp (qc : ℕ → ℕ) (w : ℕ) : ℕ :=
 end
 
 section
-/-- The `{0,1}`-flag computed by threading witness code `w` through the list coded by `c`. -/
+
 def reForallChar (qc : ℕ → ℕ) (w c : ℕ) : ℕ :=
   (foldCode (reForallStp qc) 0 (Nat.pair w 1) c).unpair.2
 end
 
 section
-/-- `n ≤ (sqrt n)² + 2·sqrt n` (choice-free; needed for `pair_unpair`). -/
+
 theorem sqrt_le_add (n : ℕ) : n ≤ Nat.sqrt n * Nat.sqrt n + Nat.sqrt n + Nat.sqrt n := by
   have h := lt_succ_sqrt n
   have e : (Nat.sqrt n + 1) * (Nat.sqrt n + 1)
@@ -1184,7 +1120,7 @@ theorem sqrt_le_add (n : ℕ) : n ≤ Nat.sqrt n * Nat.sqrt n + Nat.sqrt n + Nat
 end
 
 section
-/-- **`pair ∘ unpair = id` (choice-free).** Mirrors `Nat.pair_unpair`. -/
+
 theorem pair_unpair (n : ℕ) : Nat.pair (Nat.unpair n).1 (Nat.unpair n).2 = n := by
   have sm : Nat.sqrt n * Nat.sqrt n + (n - Nat.sqrt n * Nat.sqrt n) = n :=
     Nat.add_sub_cancel' (sqrt_le _)
@@ -1220,9 +1156,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- Numeric mirror of `Fintype.card (Finset (autState e₁) × Finset (autState e₂))`
-(`exists_diff_word_short`'s state-count bound), via `autStateCard_eq_card` +
-`Fintype.card_finset`/`card_prod`. -/
 def subsetBoundChar (fuel c1 c2 : ℕ) : ℕ :=
   2 ^ (autStateCardFuelChar fuel c1) * 2 ^ (autStateCardFuelChar fuel c2)
 end
@@ -1243,9 +1176,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- `{0,1}` gate: code `i` is a valid bit-string of length `≤ subsetBoundChar fuel c1 c2`. Screens
-out both non-bit-string codes (`allBinDigitsChar`) and over-long ones (`listLenChar` vs the bound),
-so the bounded-forall search below never needs the (false) converse of `codeBound_ge`. -/
 def subsetGuardChar (fuel c1 c2 i : ℕ) : ℕ :=
   mulBit (allBinDigitsChar i) (isOne (1 - (listLenChar i - subsetBoundChar fuel c1 c2)))
 end
@@ -1253,8 +1183,6 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- `tabCode`'s recursion step, in the `Nat.Primrec.prec` packaging: the state is
-`pair a (pair y IH)` with `a = pair B p`; it prepends `g⟨B-1-y, p⟩` onto the tail `IH`. -/
 def tabStep (g : ℕ → ℕ) (w : ℕ) : ℕ :=
   Nat.pair (g (Nat.pair (w.unpair.1.unpair.1 - 1 - w.unpair.2.unpair.1) w.unpair.1.unpair.2))
     w.unpair.2.unpair.2 + 1
@@ -1263,8 +1191,6 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- **Primitive-recursive tabulation.** With `a = pair B p`, `tabCode g a B` codes the list
-`[g⟨0,p⟩, g⟨1,p⟩, …, g⟨B-1,p⟩]` (length `B`). Built directly from the `prec` step `tabStep`. -/
 def tabCode (g : ℕ → ℕ) (a B : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0 (fun y IH => tabStep g (Nat.pair a (Nat.pair y IH))) B
 end
@@ -1276,7 +1202,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- Coded list append: `decodeList (appendListCode c1 c2) = decodeList c1 ++ decodeList c2`. -/
 def appendListCode (c1 c2 : ℕ) : ℕ :=
   let len1 := listLenChar c1
   let len2 := listLenChar c2
@@ -1290,7 +1215,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- Coded list drop: `decodeList (dropCode n c) = (decodeList c).drop n`. -/
 def dropCode (n c : ℕ) : ℕ :=
   let len := listLenChar c
   tabCode dropListTabFn (Nat.pair (len - n) (Nat.pair n c)) (len - n)
@@ -1299,9 +1223,6 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- One fuel-recursion step, applied to every code in `[0, bound]` at once. `bodyLookup`
-represents `Body`'s step with `prev` replaced by table lookup: semantically `bodyLookup (pair
-table c) = Body (fun c' => nthCode table c' 0) c` (see `fuelTable_eq_of_recursion`). -/
 def fuelTableStep (bodyLookup : ℕ → ℕ) (bound prevTable : ℕ) : ℕ :=
   tabCode (fun w => bodyLookup (Nat.pair w.unpair.2 w.unpair.1))
     (Nat.pair (bound + 1) prevTable) (bound + 1)
@@ -1310,8 +1231,6 @@ end
 section
 set_option maxHeartbeats 800000 in
 
-/-- Tabulates the fuel-recursive function with base value `0` and step `bodyLookup` at every code
-in `[0, bound]`, as a coded list, for `fuel` iterations. -/
 def fuelTable (bodyLookup : ℕ → ℕ) (bound fuel : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) (tabCode (fun _ => 0) (Nat.pair (bound + 1) 0) (bound + 1))
     (fun _ prevTable => fuelTableStep bodyLookup bound prevTable) fuel
@@ -1324,7 +1243,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- Tabulation lookup for `takeCode`: params `pair n c`. -/
 def takeListTabFn (w : ℕ) : ℕ := nthCode (w.unpair.2.unpair.2) w.unpair.1 0
 end
 
@@ -1335,7 +1253,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- Coded list take: `decodeList (takeCode n c) = (decodeList c).take n`. -/
 def takeCode (n c : ℕ) : ℕ :=
   let len := listLenChar c
   let B := Nat.min n len
@@ -1352,7 +1269,6 @@ set_option maxHeartbeats 800000 in
 open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
-/-- Cat-branch step for `matchesBCharBody` (`p` = `pair cutPoint (pair c cw)`). -/
 def matchesBCatG (prev : ℕ → ℕ) (p : ℕ) : ℕ :=
   let i := p.unpair.1
   let c := p.unpair.2.unpair.1
@@ -1377,8 +1293,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- `matchesBCatG`'s step, with `prev` replaced by table lookup: `w.unpair.1` is the table,
-`w.unpair.2` is the packed `pair i (pair c cw)`. -/
 def matchesBCatGLookup (w : ℕ) : ℕ :=
   matchesBCatG (fun p' => nthCode w.unpair.1 p' 0) w.unpair.2
 end
@@ -1393,7 +1307,6 @@ set_option maxHeartbeats 800000 in
 open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
-/-- One fuel step of `matchesB` (packed subcode+word at `prev`). -/
 def matchesBCharBody (prev : ℕ → ℕ) (c cw : ℕ) : ℕ :=
   let catExist := bExistsFn (matchesBCatG prev) (Nat.pair c cw) (listLenChar cw + 1)
   let capAnd := mulBit (prev (Nat.pair c.unpair.2.unpair.1 cw))
@@ -1417,7 +1330,6 @@ set_option maxHeartbeats 800000 in
 open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
-/-- Fuel-bounded `{0,1}` mirror of `matchesB`. -/
 def matchesBChar : ℕ → ℕ → ℕ → ℕ
   | 0, _, _ => 0
   | fuel + 1, c, cw =>
@@ -1440,10 +1352,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- `{0,1}` non-emptiness decider: bounded search over valid bit-list codes. The candidate
-word's Gödel code `i` and the target `c_e` are threaded through `bExistsFn`'s own parameter slot
-(`n := c_e`) rather than a fixed `0`, so `primrec_decideNonemptyBChar` composes directly out of
-`primrec_bExistsFn`. -/
 def decideNonemptyBChar (fuel : ℕ) (c_e : ℕ) : ℕ :=
   bExistsFn (fun p =>
       mulBit (allBinDigitsChar p.unpair.1) (matchesBChar fuel p.unpair.2 p.unpair.1))
@@ -1466,7 +1374,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- `{0,1}` cap-consistency decider on Gödel codes. -/
 def consistentBChar (fuel : ℕ) (c1 c2 : ℕ) : ℕ :=
   decideNonemptyBChar fuel (capCode c1 c2)
 end
@@ -1487,7 +1394,6 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-/-- `matchesBCharBody`'s step, with `prev` replaced by table lookup. -/
 def matchesBCharBodyLookup (w : ℕ) : ℕ :=
   matchesBCharBody (fun p' => nthCode w.unpair.1 p' 0) w.unpair.2.unpair.1 w.unpair.2.unpair.2
 end
@@ -1540,15 +1446,14 @@ set_option maxHeartbeats 800000 in
 end
 
 section
-/-- `n.unpair.2 ≤ n` (choice-free); the decreasing measure for `decodeList`. -/
+
 theorem unpair_snd_le (n : ℕ) : n.unpair.2 ≤ n := by
   have h := le_pair_right n.unpair.1 n.unpair.2
   rwa [pair_unpair] at h
 end
 
 section
-/-- Decode a natural back into a list of naturals, inverting `encodeList`. Well-founded on the
-remaining code (`c.unpair.2 ≤ c < c + 1`). -/
+
 def decodeList : ℕ → List ℕ
   | 0 => []
   | (c + 1) => c.unpair.1 :: decodeList c.unpair.2
@@ -1576,17 +1481,15 @@ def c9b6_decodeListBool (c : ℕ) : List Bool :=
 end
 
 section
-/-- `id` is primitive recursive (choice-free). -/
+
 theorem primrec_id : Nat.Primrec id :=
   (Nat.Primrec.left.pair Nat.Primrec.right).of_eq fun n => pair_unpair n
 
-/-- The `prec` recursor for addition computes the sum. -/
 theorem rec_add (a b : ℕ) : Nat.rec a (fun _ IH => IH + 1) b = a + b := by
   induction b with
   | zero => rfl
   | succ k ih => show Nat.rec a (fun _ IH => IH + 1) k + 1 = a + (k + 1); omega
 
-/-- The `prec` recursor for multiplication computes the product. -/
 private theorem rec_mul (a b : ℕ) : Nat.rec 0 (fun _ IH => a + IH) b = a * b := by
   induction b with
   | zero => rfl
@@ -1594,14 +1497,12 @@ private theorem rec_mul (a b : ℕ) : Nat.rec 0 (fun _ IH => a + IH) b = a * b :
     show a + Nat.rec 0 (fun _ IH => a + IH) k = a * (k + 1)
     rw [Nat.mul_succ]; omega
 
-/-- Addition is primitive recursive (choice-free). -/
 theorem primrec_add : Nat.Primrec (Nat.unpaired (· + ·)) :=
   (Nat.Primrec.prec primrec_id
       ((Nat.Primrec.succ.comp Nat.Primrec.right).comp Nat.Primrec.right)).of_eq fun p => by
     simp only [unpair_pair_snd, id_eq]
     exact rec_add _ _
 
-/-- Multiplication is primitive recursive (choice-free). -/
 theorem primrec_mul : Nat.Primrec (Nat.unpaired (· * ·)) :=
   (Nat.Primrec.prec Nat.Primrec.zero
       (primrec_add.comp (Nat.Primrec.pair Nat.Primrec.left
@@ -1609,78 +1510,61 @@ theorem primrec_mul : Nat.Primrec (Nat.unpaired (· * ·)) :=
     simp only [unpair_pair_fst, unpair_pair_snd, Nat.unpaired]
     exact rec_mul _ _
 
-/-- The `prec` recursor for predecessor computes `n - 1`. -/
 private theorem rec_pred (n : ℕ) : Nat.rec 0 (fun y _ => y) n = n - 1 := by
   cases n with
   | zero => rfl
   | succ k => rfl
 
-/-- Predecessor `n ↦ n - 1` is primitive recursive (choice-free; mathlib's `Nat.Primrec.pred` is
-classical). -/
 theorem primrec_pred : Nat.Primrec (fun n => n - 1) :=
   ((Nat.Primrec.prec Nat.Primrec.zero (Nat.Primrec.left.comp Nat.Primrec.right)).comp
     (primrec_id.pair primrec_id)).of_eq fun n => by
     simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
     exact rec_pred n
 
-/-- The `prec` recursor for truncated subtraction computes `a - b`. -/
 private theorem rec_sub (a b : ℕ) : Nat.rec a (fun _ IH => IH - 1) b = a - b := by
   induction b with
   | zero => rfl
   | succ k ih => show Nat.rec a (fun _ IH => IH - 1) k - 1 = a - (k + 1); rw [ih]; omega
 
-/-- Truncated subtraction is primitive recursive (choice-free; mathlib's `Nat.Primrec.sub` is
-classical). -/
 theorem primrec_sub : Nat.Primrec (Nat.unpaired (· - ·)) :=
   (Nat.Primrec.prec primrec_id
     ((primrec_pred.comp Nat.Primrec.right).comp Nat.Primrec.right)).of_eq fun p => by
     simp only [unpair_pair_snd, id_eq]
     exact rec_sub _ _
 
-/-- `a * b = 1 ↔ a = 1 ∧ b = 1` over `ℕ` (choice-free; avoids the classical generic `mul_eq_one`). -/
 theorem nat_mul_eq_one {a b : ℕ} : a * b = 1 ↔ a = 1 ∧ b = 1 := by
   refine ⟨fun h => ⟨Nat.dvd_one.mp ⟨b, h.symm⟩, Nat.dvd_one.mp ⟨a, ?_⟩⟩, fun h => by rw [h.1, h.2]⟩
   rw [Nat.mul_comm] at h; exact h.symm
 
-/-- `fun n => f n + g n` is primitive recursive. -/
 theorem primrec_add₂ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => f n + g n) :=
   (primrec_add.comp (hf.pair hg)).of_eq fun n => by
     simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
 
-/-- `fun n => f n * g n` is primitive recursive. -/
 theorem primrec_mul₂ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => f n * g n) :=
   (primrec_mul.comp (hf.pair hg)).of_eq fun n => by
     simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
 
-/-- `fun n => f n - g n` (truncated) is primitive recursive. -/
 theorem primrec_sub₂ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => f n - g n) :=
   (primrec_sub.comp (hf.pair hg)).of_eq fun n => by
     simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
 
-
-/-- `selectFn` of primitive-recursive `c, a, b` is primitive recursive. -/
 theorem primrec_selectFn {c a b : ℕ → ℕ} (hc : Nat.Primrec c) (ha : Nat.Primrec a)
     (hb : Nat.Primrec b) : Nat.Primrec (fun n => selectFn (c n) (a n) (b n)) :=
   primrec_add₂ (primrec_mul₂ hc ha) (primrec_mul₂ (primrec_sub₂ (Nat.Primrec.const 1) hc) hb)
 
-
-/-- Recursive decidability transfers across a pointwise logical equivalence. -/
 theorem RecDecidable.of_iff {p q : ℕ → Prop} (h : ∀ n, q n ↔ p n) (hp : RecDecidable p) :
     RecDecidable q := by
   obtain ⟨f, hf, hfe⟩ := hp
   exact ⟨f, hf, fun n => (h n).trans (hfe n)⟩
 
-/-- **Reindexing.** If `p` is recursively decidable and `g` is primitive recursive, then
-`fun n => p (g n)` is recursively decidable. -/
 theorem RecDecidable.comp {p : ℕ → Prop} (hp : RecDecidable p) {g : ℕ → ℕ}
     (hg : Nat.Primrec g) : RecDecidable (fun n => p (g n)) := by
   obtain ⟨f, hf, hfe⟩ := hp
   exact ⟨fun n => f (g n), hf.comp hg, fun n => hfe (g n)⟩
 
-/-- **Conjunction.** Recursive decidability is closed under `∧` (multiply the `{0,1}` deciders). -/
 theorem RecDecidable.and {p q : ℕ → Prop} (hp : RecDecidable p) (hq : RecDecidable q) :
     RecDecidable (fun n => p n ∧ q n) := by
   obtain ⟨f, hf, hfe⟩ := hp
@@ -1690,10 +1574,6 @@ theorem RecDecidable.and {p q : ℕ → Prop} (hp : RecDecidable p) (hq : RecDec
       simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
   · rw [nat_mul_eq_one]; exact and_congr (hfe n) (hge n)
 
-/-- **Equality of two primitive-recursive functions is recursively decidable.** The `{0,1}`-valued
-characteristic function is `1 - ((a t - b t) + (b t - a t))` (truncated subtraction), which is `1`
-exactly when `a t = b t`; primitive recursive via `primrec_sub`/`primrec_add`, and the biconditional
-is `omega` (which understands truncated subtraction). -/
 theorem RecDecidable.natEq {a b : ℕ → ℕ} (ha : Nat.Primrec a) (hb : Nat.Primrec b) :
     RecDecidable (fun t => a t = b t) := by
   refine ⟨fun t => Nat.unpaired (· - ·) (Nat.pair 1 (Nat.unpaired (· + ·)
@@ -1704,7 +1584,6 @@ theorem RecDecidable.natEq {a b : ℕ → ℕ} (ha : Nat.Primrec a) (hb : Nat.Pr
   · simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
     constructor <;> intro h <;> omega
 
-/-- **Negation.** Recursive decidability is closed under `¬` (negate the `{0,1}` decider). -/
 theorem RecDecidable.not {p : ℕ → Prop} (hp : RecDecidable p) : RecDecidable (fun n => ¬ p n) := by
   obtain ⟨f, hf, hfe⟩ := hp
   refine ⟨fun n => Nat.unpaired (· - ·) (Nat.pair 1 (Nat.unpaired (· - ·) (Nat.pair 1
@@ -1719,16 +1598,12 @@ theorem RecDecidable.not {p : ℕ → Prop} (hp : RecDecidable p) : RecDecidable
     simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
     constructor <;> intro h <;> omega
 
-/-- Every recursively decidable predicate is **decidable** (the decider is `f n = 1`, decidable
-equality on `ℕ`); useful for choice-free De Morgan. -/
 theorem RecDecidable.em {p : ℕ → Prop} (hp : RecDecidable p) (n : ℕ) : p n ∨ ¬ p n := by
   obtain ⟨f, _, hfe⟩ := hp
   by_cases h : f n = 1
   · exact Or.inl ((hfe n).mpr h)
   · exact Or.inr (fun hp => h ((hfe n).mp hp))
 
-/-- **Disjunction.** Recursive decidability is closed under `∨`, via choice-free De Morgan
-`p ∨ q ↔ ¬(¬p ∧ ¬q)` (the non-constructive direction uses `RecDecidable.em`). -/
 theorem RecDecidable.or {p q : ℕ → Prop} (hp : RecDecidable p) (hq : RecDecidable q) :
     RecDecidable (fun n => p n ∨ q n) := by
   refine RecDecidable.of_iff (fun n => ?_) (hp.not.and hq.not).not
@@ -1743,26 +1618,18 @@ theorem RecDecidable.or {p q : ℕ → Prop} (hp : RecDecidable p) (hq : RecDeci
       · exact Or.inr hq'
       · exact absurd ⟨hp', hq'⟩ h
 
-
-/-- **Every recursively decidable predicate is recursively enumerable.** Use the decider as the
-relation `q ⟨i, n⟩ := p n` (a reindex of `p` along `unpair.2`, dropping the search variable `i`); the
-witness `i = 0` makes the projection trivial. -/
 theorem RecDecidable.re {p : ℕ → Prop} (hp : RecDecidable p) : REPred p := by
   refine ⟨fun t => p t.unpair.2, hp.comp Nat.Primrec.right, fun n => ?_⟩
   simp only [unpair_pair_snd]
   exact ⟨fun h => ⟨0, h⟩, fun ⟨_, h⟩ => h⟩
 
-/-- A recursively decidable binary relation is recursively enumerable. -/
 theorem RecDecidable₂.re {r : ℕ → ℕ → Prop} (hr : RecDecidable₂ r) : REPred₂ r :=
   RecDecidable.re hr
 
-/-- Recursive enumerability transfers across a pointwise logical equivalence. -/
 theorem REPred.of_iff {p q : ℕ → Prop} (h : ∀ n, q n ↔ p n) (hp : REPred p) : REPred q := by
   obtain ⟨r, hr, hre⟩ := hp
   exact ⟨r, hr, fun n => (h n).trans (hre n)⟩
 
-/-- **Reindexing.** If `p` is r.e. and `g` is primitive recursive, then `fun n => p (g n)` is r.e.
-(absorb `g` into the decidable relation along `unpair.2`). -/
 theorem REPred.comp {p : ℕ → Prop} (hp : REPred p) {g : ℕ → ℕ} (hg : Nat.Primrec g) :
     REPred (fun n => p (g n)) := by
   obtain ⟨q, hq, hqe⟩ := hp
@@ -1771,8 +1638,6 @@ theorem REPred.comp {p : ℕ → Prop} (hp : REPred p) {g : ℕ → ℕ} (hg : N
   simp only [unpair_pair_fst, unpair_pair_snd]
   exact hqe (g n)
 
-/-- **Conjunction.** Recursive enumerability is closed under `∧`: combine the two decidable relations
-and run the two searches in parallel (pairing the search variables `i, j` into a single `w`). -/
 theorem REPred.and {p q : ℕ → Prop} (hp : REPred p) (hq : REPred q) :
     REPred (fun n => p n ∧ q n) := by
   obtain ⟨a, ha, hae⟩ := hp
@@ -1789,9 +1654,6 @@ theorem REPred.and {p q : ℕ → Prop} (hp : REPred p) (hq : REPred q) :
   · rintro ⟨w, hw1, hw2⟩
     exact ⟨⟨w.unpair.1, hw1⟩, ⟨w.unpair.2, hw2⟩⟩
 
-/-- **Existential projection.** If `p` is r.e. then so is `fun n => ∃ i, p ⟨i, n⟩`: fold the new
-existential variable `i` into the search variable (pairing it with the decidable relation's own
-search variable `j`). -/
 theorem REPred.proj {p : ℕ → Prop} (hp : REPred p) :
     REPred (fun n => ∃ i, p (Nat.pair i n)) := by
   obtain ⟨q, hq, hqe⟩ := hp
@@ -1809,9 +1671,6 @@ theorem REPred.proj {p : ℕ → Prop} (hp : REPred p) :
     rw [hqe (Nat.pair w.unpair.1 n)]
     exact ⟨w.unpair.2, hw⟩
 
-/-- **Disjunction of r.e. predicates is r.e.** A witness `w` carries a tag `w.1 ∈ {0,1}` selecting
-which disjunct's search index `w.2` to use; the underlying relation is recursively decidable by
-`RecDecidable.or`/`.and`/`.natEq`. (Used for the sum-mapping `f + g` of Theorem 7.4.) -/
 theorem REPred.or {p q : ℕ → Prop} (hp : REPred p) (hq : REPred q) :
     REPred (fun n => p n ∨ q n) := by
   obtain ⟨a, ha, hae⟩ := hp
@@ -1839,15 +1698,10 @@ theorem REPred.or {p q : ℕ → Prop} (hp : REPred p) (hq : REPred q) :
       · exact Or.inl ⟨w.unpair.2, hi⟩
       · exact Or.inr ⟨w.unpair.2, hi⟩
 
-
-/-- `a ≤ pair a b` (choice-free). -/
 theorem le_pair_left (a b : ℕ) : a ≤ Nat.pair a b := by
   unfold Nat.pair
   split <;> omega
 
-
-/-- The length of a list is bounded by its code; this is the fuel bound that lets a `c`-fold iterate
-enough times to consume the whole list coded by `c`. -/
 theorem encodeList_length_le : ∀ l : List ℕ, l.length ≤ encodeList l
   | [] => Nat.le_refl 0
   | a :: l => by
@@ -1856,14 +1710,11 @@ theorem encodeList_length_le : ∀ l : List ℕ, l.length ≤ encodeList l
     have hle : encodeList l ≤ Nat.pair a (encodeList l) := le_pair_right a (encodeList l)
     omega
 
-
-/-- Empty remaining code: the fold state is unchanged. -/
 theorem foldStep_zero (stp : ℕ → ℕ) (params acc : ℕ) :
     foldStep stp params (Nat.pair 0 acc) = Nat.pair 0 acc := by
   unfold foldStep
   simp only [unpair_pair_fst, unpair_pair_snd, Nat.sub_zero, selectFn_one]
 
-/-- Nonempty remaining code `pair a t + 1`: pop `a`, recurse on `t`, update the accumulator. -/
 theorem foldStep_pos (stp : ℕ → ℕ) (params a t acc : ℕ) :
     foldStep stp params (Nat.pair (Nat.pair a t + 1) acc)
       = Nat.pair t (stp (Nat.pair a (Nat.pair acc params))) := by
@@ -1873,9 +1724,6 @@ theorem foldStep_pos (stp : ℕ → ℕ) (params a t acc : ℕ) :
   have h2 : Nat.pair a t + 1 - 1 = Nat.pair a t := by omega
   rw [h1, h2, selectFn_zero, unpair_pair_fst, unpair_pair_snd]
 
-
-/-- `Nat.rec` with a counter-independent step is just function iteration (choice-free). Needed to
-bridge the `Nat.Primrec.prec` form (a `Nat.rec`) with `foldCode`'s `Function.iterate` form. -/
 theorem rec_const_iterate (f : ℕ → ℕ) (s : ℕ) :
     ∀ k : ℕ, Nat.rec (motive := fun _ => ℕ) s (fun _ ih => f ih) k = f^[k] s
   | 0 => rfl
@@ -1883,8 +1731,6 @@ theorem rec_const_iterate (f : ℕ → ℕ) (s : ℕ) :
       rw [Function.iterate_succ_apply']
       exact congrArg f (rec_const_iterate f s k)
 
-/-- Core correctness of the iteration: starting from `pair (encodeList l) acc`, after at least
-`l.length` steps the accumulator equals the `List.foldl` of the step over `l`. -/
 theorem foldStep_iterate (stp : ℕ → ℕ) (params : ℕ) :
     ∀ (k : ℕ) (l : List ℕ) (acc : ℕ), l.length ≤ k →
       ((foldStep stp params)^[k] (Nat.pair (encodeList l) acc)).unpair.2
@@ -1908,35 +1754,29 @@ theorem foldStep_iterate (stp : ℕ → ℕ) (params : ℕ) :
       rw [show encodeList (a :: l') = Nat.pair a (encodeList l') + 1 from rfl, foldStep_pos,
         ih l' (stp (Nat.pair a (Nat.pair acc params))) hlen', List.foldl_cons]
 
-/-- **Correctness of `foldCode`.** Folding the code of `l` equals the corresponding `List.foldl`. -/
 theorem foldCode_eq (stp : ℕ → ℕ) (params z : ℕ) (l : List ℕ) :
     foldCode stp params z (encodeList l)
       = List.foldl (fun acc x => stp (Nat.pair x (Nat.pair acc params))) z l := by
   unfold foldCode
   exact foldStep_iterate stp params (encodeList l) l z (encodeList_length_le l)
 
-
 theorem unpair_left_le (n : ℕ) : n.unpair.1 ≤ n := by
   have h := le_pair_left n.unpair.1 n.unpair.2
   rwa [pair_unpair] at h
 
-/-- Weak version of mathlib's `Nat.pair_lt_pair_left`. -/
 theorem pair_le_pair_left (b : ℕ) {a a' : ℕ} (h : a ≤ a') : Nat.pair a b ≤ Nat.pair a' b := by
   rcases eq_or_lt_of_le h with rfl | hlt
   · exact le_refl _
   · exact le_of_lt (Nat.pair_lt_pair_left b hlt)
 
-/-- Weak version of mathlib's `Nat.pair_lt_pair_right`. -/
 theorem pair_le_pair_right' (a : ℕ) {b b' : ℕ} (h : b ≤ b') : Nat.pair a b ≤ Nat.pair a b' := by
   rcases eq_or_lt_of_le h with rfl | hlt
   · exact le_refl _
   · exact le_of_lt (Nat.pair_lt_pair_right a hlt)
 
-/-- `Nat.pair` is weakly monotone in both arguments jointly. -/
 theorem pair_le_pair {a b a' b' : ℕ} (ha : a ≤ a') (hb : b ≤ b') :
     Nat.pair a b ≤ Nat.pair a' b' :=
   le_trans (pair_le_pair_left b ha) (pair_le_pair_right' a' hb)
-
 
 theorem decodeList_zero : decodeList 0 = [] := by rw [decodeList]
 
@@ -1944,7 +1784,6 @@ theorem decodeList_succ (c : ℕ) :
     decodeList (c + 1) = c.unpair.1 :: decodeList c.unpair.2 := by
   rw [decodeList]
 
-/-- `encodeList ∘ decodeList = id`: every natural is the code of its decoded list. -/
 theorem encodeList_decodeList (c : ℕ) : encodeList (decodeList c) = c := by
   induction c using Nat.strong_induction_on with
   | _ c ih =>
@@ -1954,16 +1793,12 @@ theorem encodeList_decodeList (c : ℕ) : encodeList (decodeList c) = c := by
       rw [decodeList_succ, encodeList, ih d.unpair.2 (Nat.lt_succ_of_le (unpair_snd_le d)),
         pair_unpair]
 
-/-- **Correctness of `foldCode` on an arbitrary code.** `foldCode` over any natural `c` equals the
-`List.foldl` over the list `c` decodes to. -/
 theorem foldCode_eq' (stp : ℕ → ℕ) (params z c : ℕ) :
     foldCode stp params z c
       = List.foldl (fun acc x => stp (Nat.pair x (Nat.pair acc params))) z (decodeList c) := by
   conv_lhs => rw [← encodeList_decodeList c]
   rw [foldCode_eq]
 
-/-- `foldStep` (with the parameter packed into the state as `pair params state`) is primitive
-recursive whenever the step `stp` is. This is the workhorse for `primrec_foldCode`. -/
 theorem primrec_foldStepPacked {stp : ℕ → ℕ} (hstp : Nat.Primrec stp) :
     Nat.Primrec (fun w => foldStep stp w.unpair.1 w.unpair.2) := by
   have hparams : Nat.Primrec (fun w => w.unpair.1) := Nat.Primrec.left
@@ -1991,7 +1826,6 @@ theorem primrec_foldStepPacked {stp : ℕ → ℕ} (hstp : Nat.Primrec stp) :
           (Nat.pair w.unpair.2.unpair.2 w.unpair.1)))) := htail.pair hstpv
   exact (primrec_selectFn hcond hstate helse).of_eq fun _ => rfl
 
-/-- **`foldCode` is primitive recursive** in all of its (primitive-recursive) inputs. -/
 theorem primrec_foldCode {stp : ℕ → ℕ} (hstp : Nat.Primrec stp)
     {params z c : ℕ → ℕ} (hp : Nat.Primrec params) (hz : Nat.Primrec z) (hc : Nat.Primrec c) :
     Nat.Primrec (fun n => foldCode stp (params n) (z n) (c n)) := by
@@ -2008,9 +1842,7 @@ theorem primrec_foldCode {stp : ℕ → ℕ} (hstp : Nat.Primrec stp)
   rw [rec_const_iterate]
   rfl
 
-
 theorem isOne_le_one (v : ℕ) : isOne v ≤ 1 := by unfold isOne; omega
-
 
 theorem isOne_of_ne_one {v : ℕ} (h : v ≠ 1) : isOne v = 0 := by
   unfold isOne
@@ -2020,7 +1852,6 @@ theorem primrec_isOne : Nat.Primrec isOne :=
   primrec_sub₂ (Nat.Primrec.const 1)
     (primrec_add₂ (primrec_sub₂ primrec_id (Nat.Primrec.const 1))
       (primrec_sub₂ (Nat.Primrec.const 1) primrec_id))
-
 
 theorem isZero_eq_one_iff (n : ℕ) : isZero n = 1 ↔ n = 0 := by
   unfold isZero; omega
@@ -2037,11 +1868,9 @@ theorem primrec_isZero : Nat.Primrec isZero := by
         omega
   exact primrec_sub₂ (Nat.Primrec.const 1) hmin
 
-/-- `{0,1}` test for `f n ≤ g n` (truncated subtraction). -/
 theorem primrec_le {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => isZero (f n - g n)) :=
   primrec_isZero.comp (primrec_sub₂ hf hg)
-
 
 theorem bForallFn_le_one (g : ℕ → ℕ) (n N : ℕ) : bForallFn g n N ≤ 1 := by
   induction N with
@@ -2079,7 +1908,6 @@ theorem bForallFn_eq_one_iff (g : ℕ → ℕ) (n N : ℕ) :
         · subst heq; exact hgN
       · intro hall; exact hall N (Nat.lt_succ_self N)
 
-
 theorem bExistsFn_le_one (g : ℕ → ℕ) (n N : ℕ) : bExistsFn g n N ≤ 1 := by
   induction N with
   | zero => simp [bExistsFn]
@@ -2090,7 +1918,6 @@ theorem bExistsFn_le_one (g : ℕ → ℕ) (n N : ℕ) : bExistsFn g n N ≤ 1 :
       exact isOne_le_one _
     · rw [h, selectFn_one]
 
-/-- `bExistsFn` only depends on `g` through its values on the search range `{pair i n | i < N}`. -/
 theorem bExistsFn_congr {g1 g2 : ℕ → ℕ} {n N : ℕ}
     (h : ∀ i < N, g1 (Nat.pair i n) = g2 (Nat.pair i n)) : bExistsFn g1 n N = bExistsFn g2 n N := by
   induction N with
@@ -2139,9 +1966,6 @@ theorem primrec_bExistsFn {g : ℕ → ℕ} (hg : Nat.Primrec g) :
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
   rfl
 
-/-- Parametrized variant of `primrec_bExistsFn`: `g` may also depend on an external `param`
-(e.g. `fuel`) held fixed throughout the search, packed as `t.unpair.1.unpair.1`. Needed once `g`
-itself is only jointly (not per-fixed-`param`) primitive recursive. -/
 theorem primrec_bExistsFn_param {g : ℕ → ℕ} (hg : Nat.Primrec g) :
     Nat.Primrec (fun t => bExistsFn (fun p => g (Nat.pair t.unpair.1.unpair.1 p))
       t.unpair.1.unpair.2 t.unpair.2) := by
@@ -2160,12 +1984,10 @@ theorem primrec_bExistsFn_param {g : ℕ → ℕ} (hg : Nat.Primrec g) :
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
   rfl
 
-/-- `decodeList ∘ encodeList = id` (the round-trip the other way from `encodeList_decodeList`). -/
 theorem decodeList_encodeList : ∀ l : List ℕ, decodeList (encodeList l) = l
   | [] => by rw [encodeList, decodeList_zero]
   | a :: l => by
     rw [encodeList, decodeList_succ, unpair_pair_fst, unpair_pair_snd, decodeList_encodeList l]
-
 
 theorem reForallStp_eq (qc : ℕ → ℕ) (acc x : ℕ) :
     reForallStp qc (Nat.pair x (Nat.pair acc 0)) = reForallF qc acc x := by
@@ -2180,8 +2002,6 @@ theorem reForallChar_eq (qc : ℕ → ℕ) (w c : ℕ) :
   unfold reForallChar
   rw [foldCode_eq', hfun]
 
-/-- **Core induction.** Threading witness code `w` through `l`, the final flag is `1` iff the start
-flag was `1` and, position by position, the `k`-th witness of `decodeList w` satisfies `qc`. -/
 theorem reForallF_foldl_eq_one_iff (qc : ℕ → ℕ) :
     ∀ (l : List ℕ) (w flag : ℕ), flag ≤ 1 →
       ((List.foldl (reForallF qc) (Nat.pair w flag) l).unpair.2 = 1 ↔
@@ -2282,17 +2102,14 @@ theorem primrec_reForallChar {qc : ℕ → ℕ} (hqc : Nat.Primrec qc) :
     (Nat.Primrec.left.pair (Nat.Primrec.const 1)) Nat.Primrec.right
   exact (Nat.Primrec.right.comp hfold).of_eq (fun _ => rfl)
 
-/-- **Bounded `∀` over a coded list preserves recursive enumerability.** If `p` is r.e. then so is
-`fun c => ∀ e ∈ decodeList c, p e`: the finite tuple of per-entry witnesses is packed into a single
-search code `w`, and the `{0,1}` flag `reForallChar` makes the body recursively decidable. -/
 theorem REPred.forall_mem_decodeList {p : ℕ → Prop} (hp : REPred p) :
     REPred (fun c => ∀ e ∈ decodeList c, p e) := by
   obtain ⟨q, hq, hqe⟩ := hp
   obtain ⟨qc, hqcp, hqcs⟩ := hq
-  -- per-entry: `p e ↔ ∃ j, qc ⟨j, e⟩ = 1`
+
   have hpe : ∀ e, p e ↔ ∃ j, qc (Nat.pair j e) = 1 := by
     intro e; rw [hqe e]; exact exists_congr (fun j => hqcs (Nat.pair j e))
-  -- membership gives an index whose `getD` recovers the element
+
   have hmemgetD : ∀ (l : List ℕ) (e : ℕ), e ∈ l → ∃ k, k < l.length ∧ l.getD k 0 = e := by
     intro l
     induction l with
@@ -2309,7 +2126,7 @@ theorem REPred.forall_mem_decodeList {p : ℕ → Prop} (hp : REPred p) :
   simp only [unpair_pair_fst, unpair_pair_snd]
   constructor
   · intro hall
-    -- build a witness list for `decodeList c`
+
     have hwit : ∀ (l : List ℕ), (∀ e ∈ l, ∃ j, qc (Nat.pair j e) = 1) →
         ∃ iws : List ℕ, ∀ k, k < l.length →
           qc (Nat.pair (iws.getD k 0) (l.getD k 0)) = 1 := by
@@ -2337,8 +2154,6 @@ theorem REPred.forall_mem_decodeList {p : ℕ → Prop} (hp : REPred p) :
     have := hw k hk
     rwa [hek] at this
 
-
-/-- `lowOr x y = (x ||| y) % 2`: both sides depend only on the low bits `x % 2`, `y % 2`. -/
 theorem lowOr_eq_mod (x y : ℕ) : lowOr x y = (x ||| y) % 2 := by
   have key : ((x ||| y) % 2 = 1) ↔ (x % 2 = 1 ∨ y % 2 = 1) := by
     have hb := Nat.testBit_lor x y 0
@@ -2346,21 +2161,19 @@ theorem lowOr_eq_mod (x y : ℕ) : lowOr x y = (x ||| y) % 2 := by
     rw [← decide_eq_decide, hb, Bool.decide_or]
   have e1 : (x ||| y) % 2 < 2 := Nat.mod_lt _ (by decide)
   unfold lowOr
-  -- explicit case split avoids feeding `omega` an `↔`/disjunction (which pulls `Classical.choice`)
+
   rcases Nat.mod_two_eq_zero_or_one x with hx | hx <;>
     rcases Nat.mod_two_eq_zero_or_one y with hy | hy <;> rw [hx, hy]
-  · -- x%2=0, y%2=0 : `(x|||y)%2 ≠ 1`
+  ·
     have hne : (x ||| y) % 2 ≠ 1 := fun h => by rcases key.mp h with h' | h' <;> omega
     omega
-  · -- x%2=0, y%2=1
+  ·
     rw [key.mpr (Or.inr hy)]
-  · -- x%2=1, y%2=0
+  ·
     rw [key.mpr (Or.inl hx)]
-  · -- x%2=1, y%2=1
+  ·
     rw [key.mpr (Or.inl hx)]
 
-
-/-- One recursion step for `Nat.lor` on the low bit: `x ||| y = 2 (x/2 ||| y/2) + lowOr x y`. -/
 theorem lor_low_rec (x y : ℕ) : x ||| y = 2 * (x / 2 ||| y / 2) + lowOr x y := by
   have hdiv : (x ||| y) / 2 = x / 2 ||| y / 2 := by
     apply Nat.eq_of_testBit_eq
@@ -2371,8 +2184,6 @@ theorem lor_low_rec (x y : ℕ) : x ||| y = 2 * (x / 2 ||| y / 2) + lowOr x y :=
   conv_lhs => rw [← Nat.div_add_mod (x ||| y) 2]
   rw [hdiv, hmod]
 
-/-- **Invariant of the bitwise-OR iteration.** After `k` steps the two running arguments are
-`a / 2^k`, `b / 2^k`, the weight is `2^k`, and `acc + 2^k · (a/2^k ||| b/2^k) = a ||| b`. -/
 theorem lorStep_iter_spec (a b : ℕ) : ∀ k,
     (lorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.1 = a / 2 ^ k ∧
     (lorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.2 = b / 2 ^ k ∧
@@ -2389,7 +2200,7 @@ theorem lorStep_iter_spec (a b : ℕ) : ∀ k,
     rw [Function.iterate_succ_apply']
     have hdd : a / 2 ^ (k + 1) = (a / 2 ^ k) / 2 := by rw [Nat.div_div_eq_div_mul, ← pow_succ]
     have hdd' : b / 2 ^ (k + 1) = (b / 2 ^ k) / 2 := by rw [Nat.div_div_eq_div_mul, ← pow_succ]
-    -- compute the four projections of one `lorStep`
+
     have p11 : (lorStep (lorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0)))).unpair.1.unpair.1
         = (lorStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.1 / 2 := by
       unfold lorStep; rw [unpair_pair_fst, unpair_pair_fst]
@@ -2412,7 +2223,6 @@ theorem lorStep_iter_spec (a b : ℕ) : ∀ k,
     · rw [p22, hA, hB, hW, hdd, hdd', pow_succ, ← hAcc, lor_low_rec (a / 2 ^ k) (b / 2 ^ k)]
       ring
 
-/-- **Correctness of the iterative bitwise OR.** `myLor a b = a ||| b`. -/
 theorem myLor_eq_lor (a b : ℕ) : myLor a b = a ||| b := by
   unfold myLor
   obtain ⟨_, _, _, hAcc⟩ := lorStep_iter_spec a b (a + b)
@@ -2424,7 +2234,6 @@ theorem myLor_eq_lor (a b : ℕ) : myLor a b = a ||| b := by
       (Nat.le_add_left b a)))
   rw [ha0, hb0] at hAcc
   simpa using hAcc
-
 
 theorem allListStp_eq (g : ℕ → ℕ) (acc x p : ℕ) :
     allListStp g (Nat.pair x (Nat.pair acc p)) = selectFn acc (isOne (g (Nat.pair x p))) 0 := by
@@ -2438,8 +2247,6 @@ theorem allListChar_eq (g : ℕ → ℕ) (p c : ℕ) :
     funext acc x; exact allListStp_eq g acc x p
   unfold allListChar; rw [foldCode_eq', hfun]
 
-/-- Core induction for the AND-fold: starting from `acc ≤ 1`, the fold is `1` iff `acc = 1` and every
-list entry passes the decider `g`. -/
 theorem allList_foldl_eq_one_iff (g : ℕ → ℕ) (p : ℕ) :
     ∀ (l : List ℕ) (acc : ℕ), acc ≤ 1 →
       (List.foldl (fun acc x => selectFn acc (isOne (g (Nat.pair x p))) 0) acc l = 1 ↔
@@ -2507,7 +2314,6 @@ theorem primrec_allListStp {g : ℕ → ℕ} (hg : Nat.Primrec g) : Nat.Primrec 
     primrec_isOne.comp (hg.comp (hx.pair hp))
   exact (primrec_selectFn hacc hcall (Nat.Primrec.const 0)).of_eq fun _ => rfl
 
-
 theorem isBinDigit_eq_one_iff (n : ℕ) : isBinDigit n = 1 ↔ n = 0 ∨ n = 1 := by
   unfold isBinDigit selectFn isOne
   match n with | 0 | 1 => simp | n + 2 => simp
@@ -2517,7 +2323,6 @@ theorem primrec_isBinDigit : Nat.Primrec isBinDigit := by
   have h12 := primrec_isOne.comp (primrec_sub₂ (Nat.Primrec.const 2) primrec_id)
   refine (primrec_selectFn h01 (Nat.Primrec.const 1)
     (primrec_selectFn h12 (Nat.Primrec.const 1) (Nat.Primrec.const 0))).of_eq fun _ => rfl
-
 
 theorem allBinDigitsChar_eq_one_iff (c : ℕ) :
     allBinDigitsChar c = 1 ↔ ∀ x ∈ decodeList c, x = 0 ∨ x = 1 := by
@@ -2534,12 +2339,10 @@ theorem primrec_allBinDigitsChar : Nat.Primrec allBinDigitsChar := by
   exact (primrec_foldCode (primrec_allListStp (primrec_isBinDigit.comp Nat.Primrec.left))
     (Nat.Primrec.const 0) (Nat.Primrec.const 1) primrec_id).of_eq fun _ => rfl
 
-
 theorem nthStp_val (i x s r : ℕ) :
     nthStp (Nat.pair x (Nat.pair (Nat.pair s r) i))
       = Nat.pair (s + 1) (selectFn (1 - ((s - i) + (i - s))) x r) := by
   unfold nthStp; simp only [unpair_pair_fst, unpair_pair_snd]
-
 
 theorem nthCode_foldl (i : ℕ) : ∀ (l : List ℕ) (s r : ℕ),
     (List.foldl (fun acc x => nthStp (Nat.pair x (Nat.pair acc i))) (Nat.pair s r) l).unpair.2
@@ -2583,21 +2386,17 @@ theorem primrec_nthStp : Nat.Primrec nthStp := by
       (primrec_add₂ (primrec_sub₂ hcount hi) (primrec_sub₂ hi hcount))
   exact ((Nat.Primrec.succ.comp hcount).pair (primrec_selectFn hbit hx hres)).of_eq fun _ => rfl
 
-/-- `nthCode` is primitive recursive in `(c, i, d)` (coded as `pair c (pair i d)`). -/
 theorem primrec_nthCode : Nat.Primrec
     (fun t => nthCode t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) := by
   have hfold := primrec_foldCode primrec_nthStp (Nat.Primrec.left.comp Nat.Primrec.right)
     ((Nat.Primrec.const 0).pair (Nat.Primrec.right.comp Nat.Primrec.right)) Nat.Primrec.left
   exact (Nat.Primrec.right.comp hfold).of_eq fun _ => rfl
 
-
 theorem tabStep_val (g : ℕ → ℕ) (a y IH : ℕ) :
     tabStep g (Nat.pair a (Nat.pair y IH))
       = Nat.pair (g (Nat.pair (a.unpair.1 - 1 - y) a.unpair.2)) IH + 1 := by
   unfold tabStep; simp only [unpair_pair_fst, unpair_pair_snd]
 
-
-/-- After `K ≤ B` steps the accumulated code decodes to the indices `B-K, …, B-1`. -/
 theorem decodeList_tabCode_aux (g : ℕ → ℕ) (B p : ℕ) :
     ∀ K, K ≤ B → decodeList (Nat.rec (motive := fun _ => ℕ) 0
         (fun y IH => tabStep g (Nat.pair (Nat.pair B p) (Nat.pair y IH))) K)
@@ -2623,7 +2422,6 @@ theorem decodeList_tabCode (g : ℕ → ℕ) (B p : ℕ) :
   rw [Nat.sub_self, ← List.range_eq_range'] at h
   exact h
 
-/-- Choice-free `getD`-as-`getElem` in range. -/
 theorem getD_eq_getElem_cf {β : Type*} (l : List β) (d : β) :
     ∀ {n : ℕ} (h : n < l.length), l.getD n d = l[n] := by
   induction l with
@@ -2634,7 +2432,6 @@ theorem getD_eq_getElem_cf {β : Type*} (l : List β) (d : β) :
     | zero => rw [List.getD_cons_zero, List.getElem_cons_zero]
     | succ m => rw [List.getD_cons_succ, List.getElem_cons_succ]; exact ih _
 
-/-- Choice-free default-out-of-range. -/
 theorem getD_eq_default_cf {β : Type*} (l : List β) (d : β) :
     ∀ {n : ℕ}, l.length ≤ n → l.getD n d = d := by
   induction l with
@@ -2645,7 +2442,6 @@ theorem getD_eq_default_cf {β : Type*} (l : List β) (d : β) :
     | zero => exact absurd h (by rw [List.length_cons]; exact Nat.not_succ_le_zero _)
     | succ m => rw [List.getD_cons_succ]; exact ih (by rw [List.length_cons] at h; omega)
 
-/-- Choice-free `getD` of a mapped `range`. -/
 theorem getD_map_range_cf {β : Type*} (h : ℕ → β) (d : β) {B i : ℕ} (hi : i < B) :
     ((List.range B).map h).getD i d = h i := by
   have hlen : ((List.range B).map h).length = B := by rw [List.length_map, List.length_range]
@@ -2673,14 +2469,11 @@ theorem primrec_tabStep {g : ℕ → ℕ} (hg : Nat.Primrec g) : Nat.Primrec (ta
     primrec_sub₂ (primrec_sub₂ hB (Nat.Primrec.const 1)) hk
   exact (Nat.Primrec.succ.comp ((hg.comp (hidx.pair hp)).pair hih)).of_eq fun _ => rfl
 
-/-- `tabCode g · ·` is primitive recursive in `(a, B)` (coded `pair a B`), whenever `g` is. -/
 theorem primrec_tabCode {g : ℕ → ℕ} (hg : Nat.Primrec g) :
     Nat.Primrec (fun t => tabCode g t.unpair.1 t.unpair.2) :=
   (Nat.Primrec.prec (Nat.Primrec.const 0) (primrec_tabStep hg)).of_eq fun t => by
     simp only [Nat.unpaired]; rfl
 
-
-/-- Tag-dispatch on `e.unpair.1 ∈ {0,1,2,3}` (else `fdef e`). -/
 theorem primrec_tagCase4 {f0 f1 f2 f3 fdef : ℕ → ℕ}
     (hf0 : Nat.Primrec f0) (hf1 : Nat.Primrec f1) (hf2 : Nat.Primrec f2) (hf3 : Nat.Primrec f3)
     (hfdef : Nat.Primrec fdef) :
@@ -2704,7 +2497,6 @@ theorem primrec_tagCase4 {f0 f1 f2 f3 fdef : ℕ → ℕ}
       (primrec_selectFn h23 hf2
         (primrec_selectFn h34 hf3 hfdef)))).of_eq fun e => rfl
 
-
 theorem mulBit_eq_one_iff (a b : ℕ) : mulBit a b = 1 ↔ a = 1 ∧ b = 1 := by
   simp [mulBit]
 
@@ -2716,8 +2508,6 @@ theorem mulBit_le_one {a b : ℕ} (ha : a ≤ 1) (hb : b ≤ 1) : mulBit a b ≤
 theorem primrec_mulBit : Nat.Primrec (fun t => mulBit t.unpair.1 t.unpair.2) :=
   primrec_mul₂ Nat.Primrec.left Nat.Primrec.right
 
-
-/-- Tag-dispatch form of `decodeFuelOkCharBody` (**7.22i(b)1(c)**). -/
 theorem decodeFuelOkCharBody_eq (prev : ℕ → ℕ) (c : ℕ) :
     decodeFuelOkCharBody prev c =
       match c.unpair.1 with
@@ -2752,7 +2542,6 @@ theorem decodeFuelOkCharBody_eq (prev : ℕ → ℕ) (c : ℕ) :
     have hne4 : isOne (4 - (t + 4)) = 0 := isOne_of_ne_one (by omega)
     simp only [hne1, hne2, hne3, hne4, selectFn_zero]
 
-
 theorem primrec_decodeFuelOkCharBody {prev : ℕ → ℕ} (hprev : Nat.Primrec prev) :
     Nat.Primrec (fun c => decodeFuelOkCharBody prev c) := by
   unfold decodeFuelOkCharBody
@@ -2779,11 +2568,9 @@ theorem decodeFuelOkCharBody_local (f g : ℕ → ℕ) (c : ℕ) (h : ∀ c' ≤
   have h2 : c.unpair.2.unpair.2 ≤ c := le_trans (unpair_snd_le c.unpair.2) (unpair_snd_le c)
   rw [h _ h1, h _ h2]
 
-
 theorem listLenStp_eq (acc x p : ℕ) :
     listLenStp (Nat.pair x (Nat.pair acc p)) = acc + 1 := by
   unfold listLenStp; simp only [unpair_pair_fst, unpair_pair_snd]
-
 
 theorem listLenChar_eq (c : ℕ) : listLenChar c = (decodeList c).length := by
   have hfun : (fun acc x => listLenStp (Nat.pair x (Nat.pair acc 0))) = fun acc _ => acc + 1 := by
@@ -2806,7 +2593,6 @@ theorem primrec_listLenChar : Nat.Primrec listLenChar := by
   exact (primrec_foldCode primrec_listLenStp (Nat.Primrec.const 0) (Nat.Primrec.const 0)
     primrec_id).of_eq fun _ => rfl
 
-
 theorem natEqChar_le_one (a b : ℕ) : natEqChar a b ≤ 1 := by unfold natEqChar; omega
 
 theorem natEqChar_eq_zero_or_one (a b : ℕ) : natEqChar a b = 0 ∨ natEqChar a b = 1 := by
@@ -2817,14 +2603,12 @@ theorem primrec_natEqChar : Nat.Primrec (fun t => natEqChar t.unpair.1 t.unpair.
     (primrec_add₂ (primrec_sub₂ Nat.Primrec.left Nat.Primrec.right)
       (primrec_sub₂ Nat.Primrec.right Nat.Primrec.left))).of_eq fun _ => rfl
 
-
 theorem listEqStp_acc (flag rem x : ℕ) :
     listEqStp (Nat.pair x (Nat.pair (Nat.pair flag rem) 0)) =
       selectFn (isZero rem) (Nat.pair 0 0)
         (Nat.pair (selectFn flag (natEqChar x ((rem - 1).unpair.1)) 0) ((rem - 1).unpair.2)) := by
   unfold listEqStp listEqStpNonzero
   simp only [unpair_pair_fst, unpair_pair_snd]
-
 
 theorem decodeList_eq_nil_iff (c : ℕ) : decodeList c = [] ↔ c = 0 := by
   constructor
@@ -2974,9 +2758,6 @@ theorem primrec_listEqChar : Nat.Primrec (fun t => listEqChar t.unpair.1 t.unpai
   exact (primrec_mulBit.comp (hflag.pair (primrec_isZero.comp hrem))).of_eq fun t => by
     simp [listEqChar]
 
-
-/-- Two lists agree when every `getD` index does. (Choice-free: `by_contra`/`Classical.choice` is
-avoided by case-splitting on `Nat.lt_trichotomy` — a decidable fact — instead.) -/
 theorem list_eq_of_getD {l1 l2 : List ℕ} (h : ∀ i d, l1.getD i d = l2.getD i d) : l1 = l2 := by
   have hlen : l1.length = l2.length := by
     rcases Nat.lt_trichotomy l1.length l2.length with hlt | heq | hgt
@@ -3091,8 +2872,6 @@ theorem dropCode_eq (n c : ℕ) :
     rw [getD_eq_default_cf _ d (by rw [List.length_map, List.length_range]; exact hge),
       getD_eq_default_cf _ d (by rw [List.length_drop]; exact hge)]
 
-/-- Taking a prefix never increases the Gödel code (`Nat.pair`'s monotonicity in the second
-argument, chained through `encodeList`'s recursive `pair`). -/
 theorem encodeList_take_le (l : List ℕ) : ∀ n, encodeList (l.take n) ≤ encodeList l := by
   induction l with
   | nil => intro n; simp [encodeList]
@@ -3105,7 +2884,6 @@ theorem encodeList_take_le (l : List ℕ) : ∀ n, encodeList (l.take n) ≤ enc
       simp only [encodeList]
       exact Nat.add_le_add_right (pair_le_pair_right' a (ih n)) 1
 
-/-- Dropping a suffix never increases the Gödel code. -/
 theorem encodeList_drop_le (l : List ℕ) : ∀ n, encodeList (l.drop n) ≤ encodeList l := by
   induction l with
   | nil => intro n; simp [encodeList]
@@ -3178,7 +2956,6 @@ theorem primrec_dropCode : Nat.Primrec (fun t => dropCode t.unpair.1 t.unpair.2)
 open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
-
 private theorem c9b5_decodeList_encodeListBool (σ : List Bool) :
     decodeList (c9b5_encodeListBool σ) = σ.map c9b5_boolNat := by
   simp [c9b5_encodeListBool, decodeList_encodeList]
@@ -3230,7 +3007,6 @@ private theorem c9b5_listEqChar_encodeListBool (w σ : List Bool) :
     listEqChar (c9b5_encodeListBool w) (c9b5_encodeListBool σ) = 1 ↔ w = σ := by
   simp only [listEqChar_eq_one_iff, c9b5_decodeList_encodeListBool, c9b5_map_boolNat_eq_iff]
 
-
 theorem autStateCardFuelCharBody_eq (prev : ℕ → ℕ) (c : ℕ) :
     autStateCardFuelCharBody prev c =
       match c.unpair.1 with
@@ -3265,7 +3041,6 @@ theorem autStateCardFuelCharBody_eq (prev : ℕ → ℕ) (c : ℕ) :
     have hne3 : isOne (3 - (t + 4)) = 0 := isOne_of_ne_one (by omega)
     have hne4 : isOne (4 - (t + 4)) = 0 := isOne_of_ne_one (by omega)
     simp only [hne1, hne2, hne3, hne4, selectFn_zero]
-
 
 theorem autStateCardFuelChar_eq_autStateCard {fuel : ℕ} {e : SExpr}
     (h : c9b5_sexprDepth e ≤ fuel) :
@@ -3324,7 +3099,6 @@ theorem autStateCardFuelCharBody_local (f g : ℕ → ℕ) (c : ℕ) (h : ∀ c'
   have h2 : c.unpair.2.unpair.2 ≤ c := le_trans (unpair_snd_le c.unpair.2) (unpair_snd_le c)
   rw [h _ h1, h _ h2]
 
-
 theorem matchesBCharBody_eq (prev : ℕ → ℕ) (c cw : ℕ) :
     matchesBCharBody prev c cw =
       match c.unpair.1 with
@@ -3362,7 +3136,6 @@ theorem matchesBCharBody_eq (prev : ℕ → ℕ) (c cw : ℕ) :
     have hne3 : isOne (3 - (t + 4)) = 0 := isOne_of_ne_one (by omega)
     have hne4 : isOne (4 - (t + 4)) = 0 := isOne_of_ne_one (by omega)
     simp only [hne1, hne2, hne3, hne4, selectFn_zero]
-
 
 private theorem c9b5_matchesBCatG_char (fuel : ℕ) (a b : SExpr) (w : List Bool) (i : ℕ) :
     matchesBCatG (fun p => matchesBChar fuel p.unpair.1 p.unpair.2)
@@ -3525,9 +3298,6 @@ theorem matchesBCharBody_local (f g : ℕ → ℕ) (c cw : ℕ)
     rw [h _ h1, h _ h2]
   | _ + 4 => rfl
 
-
-/-- `Nat.pair 0 t < Nat.pair 1 b` whenever `t < b`, via mathlib's `Nat.pair` monotonicity
-in each argument (`pair_lt_pair_right` then `pair_lt_pair_left`). -/
 private theorem pair_lt_pair_zero_right {t b : ℕ} (ht : t < b) :
     Nat.pair 0 t < Nat.pair 1 b :=
   lt_trans (Nat.pair_lt_pair_right 0 ht) (Nat.pair_lt_pair_left b Nat.zero_lt_one)
@@ -3579,13 +3349,10 @@ private theorem c9b6_encodeListBool_lt_codeBound {n : ℕ} {w : List Bool} (hw :
     obtain ⟨b, _, hb⟩ := hx
     cases b <;> simp [c9b5_boolNat] at hb <;> omega
 
-
 private theorem c9b6_boolNat_decide_eq (x : ℕ) (hx : x = 0 ∨ x = 1) :
     c9b5_boolNat (decide (x = 1)) = x := by
   rcases hx with rfl | rfl <;> simp [c9b5_boolNat]
 
-/-- Round-trip through `c9b5_encodeListBool`/`c9b6_decodeListBool` for a code known to consist
-only of binary digits (i.e. `allBinDigitsChar c = 1`). -/
 private theorem c9b6_encodeListBool_decodeListBool_of_allBin {c : ℕ}
     (hall : allBinDigitsChar c = 1) :
     c9b5_encodeListBool (c9b6_decodeListBool c) = c := by
@@ -3602,7 +3369,6 @@ private theorem c9b6_matchesBChar_of_allBin {fuel : ℕ} {e : SExpr} {c : ℕ}
   apply (matchesBChar_eq_one_iff (w := c9b6_decodeListBool c) h).1
   rwa [c9b6_encodeListBool_decodeListBool_of_allBin hall]
 
-
 theorem decideNonemptyBChar_eq_one_iff {fuel : ℕ} {e : SExpr}
     (h : c9b5_sexprDepth e ≤ fuel) :
     decideNonemptyBChar fuel (c9b5_sexprGodelEncode e) = 1 ↔ (denote e).Nonempty := by
@@ -3618,15 +3384,12 @@ theorem decideNonemptyBChar_eq_one_iff {fuel : ℕ} {e : SExpr}
     rw [autStateCardFuelChar_eq_autStateCard h]
     exact c9b6_encodeListBool_lt_codeBound (by rwa [mem_wordsUpTo] at hwmem)
 
-
 theorem c9b6_sexprGodelEncode_cap (a b : SExpr) :
     c9b5_sexprGodelEncode (.cap a b) = capCode (c9b5_sexprGodelEncode a) (c9b5_sexprGodelEncode b) :=
   rfl
 
-
 theorem subsetGuardChar_le_one (fuel c1 c2 i : ℕ) : subsetGuardChar fuel c1 c2 i ≤ 1 :=
   mulBit_le_one (allBinDigitsChar_le_one _) (isOne_le_one _)
-
 
 set_option maxHeartbeats 800000 in
 theorem subsetBChar_eq_one_iff {fuel : ℕ} {e1 e2 : SExpr}
@@ -3706,7 +3469,7 @@ theorem subsetBChar_eq_one_iff {fuel : ℕ} {e1 e2 : SExpr}
 end
 
 section
-/-- **Swap the two arguments** of a recursively decidable binary relation. -/
+
 theorem RecDecidable₂.swap {r : ℕ → ℕ → Prop} (hr : RecDecidable₂ r) :
     RecDecidable₂ (fun a b => r b a) := by
   have hswap : Nat.Primrec (fun t => Nat.pair t.unpair.2 t.unpair.1) :=
@@ -3716,8 +3479,7 @@ theorem RecDecidable₂.swap {r : ℕ → ℕ → Prop} (hr : RecDecidable₂ r)
 end
 
 section
-/-- **Bounded existential quantifier preserves recursive decidability.** Mirrors
-`RecDecidable.bForall`, swapping `bForallFn` for `bExistsFn`. -/
+
 theorem RecDecidable.bExists {p : ℕ → Prop} (hp : RecDecidable p) {bound : ℕ → ℕ}
     (hb : Nat.Primrec bound) :
     RecDecidable (fun n => ∃ i, i < bound n ∧ p (Nat.pair i n)) := by
@@ -3739,9 +3501,7 @@ theorem RecDecidable.bExists {p : ℕ → Prop} (hp : RecDecidable p) {bound : �
 end
 
 section
-/-- **Bounded universal quantifier preserves recursive decidability.** If `p` is recursively decidable
-and `bound` is primitive recursive, then `fun n => ∀ i < bound n, p (pair i n)` is recursively
-decidable (choice-free). -/
+
 theorem RecDecidable.bForall {p : ℕ → Prop} (hp : RecDecidable p) {bound : ℕ → ℕ}
     (hb : Nat.Primrec bound) :
     RecDecidable (fun n => ∀ i, i < bound n → p (Nat.pair i n)) := by
@@ -3764,17 +3524,14 @@ theorem RecDecidable.bForall {p : ℕ → Prop} (hp : RecDecidable p) {bound : �
 end
 
 section
-/-- **From a primitive-recursive `{0,1}` characteristic to `RecDecidable`.** This is the standard
-bridge when an executable Bool decider has already been realized as a numeric `{0,1}` function; the
-logical equivalence is supplied separately (do not reprove the mathematics). -/
+
 theorem RecDecidable.of_zero_one_char {p : ℕ → Prop} {f : ℕ → ℕ} (hf : Nat.Primrec f)
     (_h01 : ∀ n, f n = 0 ∨ f n = 1) (hfe : ∀ n, p n ↔ f n = 1) : RecDecidable p :=
   ⟨f, hf, hfe⟩
 end
 
 section
-/-- **Paired `{0,1}` characteristic.** When the Bool decider has been packaged as a unary
-primitive-recursive function on `Nat.pair n m`, reindex to `RecDecidable₂`. -/
+
 theorem RecDecidable₂.of_paired_zero_one_char {r : ℕ → ℕ → Prop} {f : ℕ → ℕ} (hf : Nat.Primrec f)
     (h01 : ∀ t, f t = 0 ∨ f t = 1) (hfe : ∀ n m, r n m ↔ f (Nat.pair n m) = 1) :
     RecDecidable₂ r := by
@@ -3784,8 +3541,7 @@ theorem RecDecidable₂.of_paired_zero_one_char {r : ℕ → ℕ → Prop} {f : 
 end
 
 section
-/-- **Triple `{0,1}` characteristic.** When the Bool decider has been packaged as a unary
-primitive-recursive function on `Nat.pair n (Nat.pair m k)`, reindex to `RecDecidable₃`. -/
+
 theorem RecDecidable₃.of_triple_zero_one_char {r : ℕ → ℕ → ℕ → Prop} {f : ℕ → ℕ}
     (hf : Nat.Primrec f) (h01 : ∀ t, f t = 0 ∨ f t = 1)
     (hfe : ∀ n m k, r n m k ↔ f (Nat.pair n (Nat.pair m k)) = 1) :
@@ -3818,9 +3574,7 @@ theorem decideNonemptyBChar_le_one (fuel c_e : ℕ) : decideNonemptyBChar fuel c
 end
 
 section
-/-- Fuel is sized for the *outer* `.cap a b` expression (matching the convention of
-`decideNonemptyBChar_eq_one_iff` / `matchesBChar_eq_one_iff`), one more than either child alone
-needs, since `c9b5_sexprDepth (.cap a b) = 1 + max (c9b5_sexprDepth a) (c9b5_sexprDepth b)`. -/
+
 theorem consistentBChar_le_one (fuel c1 c2 : ℕ) : consistentBChar fuel c1 c2 ≤ 1 :=
   decideNonemptyBChar_le_one _ _
 end
@@ -3849,7 +3603,7 @@ theorem decodeFuelOkChar_le_one : ∀ fuel c, decodeFuelOkChar fuel c ≤ 1
 end
 
 section
-/-- The decoded list is no longer than its code. -/
+
 theorem decodeList_length_le (c : ℕ) : (decodeList c).length ≤ c := by
   induction c using Nat.strong_induction_on with
   | _ c ih =>
@@ -3869,12 +3623,12 @@ theorem decodeList_mapPairStep (n acc x : ℕ) :
 end
 
 section
-/-- The `{0,1}` indicator of `a = 0`, written via truncated subtraction. -/
+
 theorem eqZero_bit (a : ℕ) : 1 - a = if a = 0 then 1 else 0 := by split <;> omega
 end
 
 section
-/-- Two `{0,1}`-bounded naturals agreeing on "`= 1`" are equal. -/
+
 theorem eq_of_le_one_iff_one {x y : ℕ} (hx : x ≤ 1) (hy : y ≤ 1) (h : x = 1 ↔ y = 1) : x = y := by
   by_cases hx1 : x = 1
   · have hy1 := h.mp hx1; omega
@@ -3919,8 +3673,7 @@ theorem existsListChar_le_one (g : ℕ → ℕ) (p c : ℕ) : existsListChar g p
 end
 
 section
-/-- Core induction for the OR-fold: starting from `acc ≤ 1`, the fold is `1` iff `acc = 1` or some
-list entry passes the decider `g`. -/
+
 theorem existsList_foldl_eq_one_iff (g : ℕ → ℕ) (p : ℕ) :
     ∀ (l : List ℕ) (acc : ℕ), acc ≤ 1 →
       (List.foldl (fun acc x => selectFn acc 1 (isOne (g (Nat.pair x p)))) acc l = 1 ↔
@@ -3988,10 +3741,7 @@ theorem fuelTable_zero_nth {bodyLookup : ℕ → ℕ} {bound i : ℕ} (hi : i �
 end
 
 section
-/-- **Course-of-values correctness.** If `bodyLookup` faithfully implements `Body` via table
-lookup (`hlookup`), and `Body`'s result at `c` only depends on `prev` restricted to `[0, c]`
-(`hlocal` — true whenever `Body`'s own recursive calls are all `≤ c`, e.g. via `Nat.unpair`
-projections), then `fuelTable` correctly tabulates the `0`/`Body` fuel recursion on `[0, bound]`. -/
+
 theorem fuelTable_eq_of_recursion {F : ℕ → ℕ → ℕ} {Body : (ℕ → ℕ) → ℕ → ℕ} {bodyLookup : ℕ → ℕ}
     (hF0 : ∀ c, F 0 c = 0) (hFsucc : ∀ fuel c, F (fuel + 1) c = Body (F fuel) c)
     (hlookup : ∀ table c, bodyLookup (Nat.pair table c) = Body (fun c' => nthCode table c' 0) c)
@@ -4027,12 +3777,12 @@ theorem decodeFuelOkChar_fuelTable_eq :
 end
 
 section
-/-- The `{0,1}` indicator of `2 ≤ a`, written via truncated subtraction. -/
+
 theorem geTwo_bit (a : ℕ) : 1 - (2 - a) = if 2 ≤ a then 1 else 0 := by split <;> omega
 end
 
 section
-/-- Choice-free `getD` of a left append. -/
+
 theorem getD_append_cf {β : Type*} (l l' : List β) (d : β) :
     ∀ {n : ℕ}, n < l.length → (l ++ l').getD n d = l.getD n d := by
   induction l with
@@ -4047,7 +3797,7 @@ theorem getD_append_cf {β : Type*} (l l' : List β) (d : β) :
 end
 
 section
-/-- Choice-free `getD` of a right append. -/
+
 theorem getD_append_right_cf {β : Type*} (l l' : List β) (d : β) :
     ∀ {n : ℕ}, l.length ≤ n → (l ++ l').getD n d = l'.getD (n - l.length) d := by
   induction l with
@@ -4160,9 +3910,7 @@ theorem primrec_allListChar {g : ℕ → ℕ} (hg : Nat.Primrec g) :
 end
 
 section
-/-- **Bounded `∀` over a coded list preserves recursive decidability.** If `q` is a recursively
-decidable binary relation then `fun c p => ∀ e ∈ decodeList c, q e p` is too (the list is coded by
-the first argument, `p` is a free parameter). Choice-free. -/
+
 theorem RecDecidable₂.bForallList {q : ℕ → ℕ → Prop} (hq : RecDecidable₂ q) :
     RecDecidable₂ (fun c p => ∀ e ∈ decodeList c, q e p) := by
   obtain ⟨g, hgp, hgs⟩ := hq
@@ -4279,8 +4027,7 @@ theorem primrec_autStateCardFuelCharLookup : Nat.Primrec autStateCardFuelCharLoo
 end
 
 section
-/-- Parametrized variant of `bForallFn`'s joint primrec (mirrors `primrec_bExistsFn_param`,
-swapping `selectFn`'s branches to match `bForallFn`'s `1`-base / AND-style step). -/
+
 theorem primrec_bForallFn_param {g : ℕ → ℕ} (hg : Nat.Primrec g) :
     Nat.Primrec (fun t => bForallFn (fun p => g (Nat.pair t.unpair.1.unpair.1 p))
       t.unpair.1.unpair.2 t.unpair.2) := by
@@ -4407,8 +4154,7 @@ theorem primrec_existsListChar {g : ℕ → ℕ} (hg : Nat.Primrec g) :
 end
 
 section
-/-- **Bounded `∃` over a coded list preserves recursive decidability.** If `q` is a recursively
-decidable binary relation then `fun c p => ∃ e ∈ decodeList c, q e p` is too. Choice-free. -/
+
 theorem RecDecidable₂.bExistsList {q : ℕ → ℕ → Prop} (hq : RecDecidable₂ q) :
     RecDecidable₂ (fun c p => ∃ e ∈ decodeList c, q e p) := by
   obtain ⟨g, hgp, hgs⟩ := hq
@@ -4423,8 +4169,7 @@ end
 
 section
 set_option maxHeartbeats 1000000 in
-/-- `fuelTable bodyLookup · ·` is primitive recursive in `(bound, fuel)` (coded `pair bound
-fuel`), whenever `bodyLookup` is. Mirrors `primrec_tabCode`'s `Nat.Primrec.prec` packaging. -/
+
 theorem primrec_fuelTable {bodyLookup : ℕ → ℕ} (hbodyLookup : Nat.Primrec bodyLookup) :
     Nat.Primrec (fun t => fuelTable bodyLookup t.unpair.1 t.unpair.2) := by
   have hgLookup : Nat.Primrec (fun v => bodyLookup (Nat.pair v.unpair.2 v.unpair.1)) :=
@@ -4456,7 +4201,7 @@ theorem primrec_fuelTable {bodyLookup : ℕ → ℕ} (hbodyLookup : Nat.Primrec 
 end
 
 section
-/-- **`autStateCardFuelChar` is jointly primitive recursive in `(fuel, code)`.** -/
+
 theorem primrec_autStateCardFuelChar2 :
     Nat.Primrec (fun s => autStateCardFuelChar s.unpair.1 s.unpair.2) := by
   have hft := primrec_fuelTable primrec_autStateCardFuelCharLookup
@@ -4474,7 +4219,7 @@ theorem primrec_autStateCardFuelChar2 :
 end
 
 section
-/-- **`decodeFuelOkChar` is jointly primitive recursive in `(fuel, code)`.** -/
+
 theorem primrec_decodeFuelOkChar2 : Nat.Primrec (fun s => decodeFuelOkChar s.unpair.1 s.unpair.2) := by
   have hft := primrec_fuelTable primrec_decodeFuelOkCharLookup
   have hpack : Nat.Primrec (fun s : ℕ => Nat.pair s.unpair.2 s.unpair.1) :=
@@ -4509,7 +4254,7 @@ theorem primrec_div2 : Nat.Primrec (fun n => n / 2) :=
 end
 
 section
-/-- Primitive-recursive `if` on a `{0,1}` condition. -/
+
 theorem primrec_ite {c t f : ℕ → ℕ} (hc : Nat.Primrec c) (ht : Nat.Primrec t) (hf : Nat.Primrec f) :
     Nat.Primrec (fun n => selectFn (c n) (t n) (f n)) :=
   primrec_selectFn hc ht hf
@@ -4532,9 +4277,7 @@ theorem primrec_mapPairCode : Nat.Primrec (fun t => mapPairCode t.unpair.1 t.unp
 end
 
 section
-/-- **Parameterised bounded `∀` over a coded list preserves recursive enumerability.** If `p` is an
-r.e. binary relation then `fun t => ∀ e ∈ decodeList t.2, p t.1 e` is r.e.: re-code the list into the
-pairs `⟨t.1, e⟩` (`mapPairCode`) and apply the unparameterised `forall_mem_decodeList`. -/
+
 theorem REPred.forall_mem_decodeList₂ {p : ℕ → ℕ → Prop} (hp : REPred₂ p) :
     REPred (fun t => ∀ e ∈ decodeList t.unpair.2, p t.unpair.1 e) := by
   have hp' : REPred (fun s => p s.unpair.1 s.unpair.2) := hp
@@ -4702,7 +4445,7 @@ theorem primrec_matchesBCharBodyLookup : Nat.Primrec matchesBCharBodyLookup := b
 end
 
 section
-/-- **`matchesBChar` is jointly primitive recursive in `(fuel, sexprCode, wordCode)`.** -/
+
 theorem primrec_matchesBChar2 :
     Nat.Primrec (fun s => matchesBChar s.unpair.1 s.unpair.2.unpair.1 s.unpair.2.unpair.2) := by
   have hft := primrec_fuelTable primrec_matchesBCharBodyLookup
@@ -4740,7 +4483,7 @@ theorem primrec_decideNonemptyBChar2 :
 end
 
 section
-/-- **`consistentBChar` is jointly primitive recursive in `(fuel, c1, c2)`.** -/
+
 theorem primrec_consistentBChar2 :
     Nat.Primrec (fun s => consistentBChar s.unpair.1 s.unpair.2.unpair.1 s.unpair.2.unpair.2) := by
   have hpack : Nat.Primrec (fun s => Nat.pair s.unpair.1
@@ -4754,7 +4497,7 @@ theorem primrec_consistentBChar2 :
 end
 
 section
-/-- `{0,1}`-valued `max` of two primitive-recursive functions. -/
+
 theorem primrec_max {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => Nat.max (f n) (g n)) := by
   refine (primrec_selectFn (primrec_le hf hg) hg hf).of_eq fun n => by
@@ -4768,7 +4511,7 @@ theorem primrec_max {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g
 end
 
 section
-/-- `Nat.max n 1` is primitive recursive. -/
+
 theorem primrec_max_one : Nat.Primrec (fun n => Nat.max n 1) := by
   refine (primrec_selectFn (primrec_isOne.comp (primrec_sub₂ (Nat.Primrec.const 1) primrec_id))
     (Nat.Primrec.const 1) primrec_id).of_eq fun n => by
@@ -4805,7 +4548,7 @@ theorem primrec_lorStep : Nat.Primrec lorStep := by
 end
 
 section
-/-- **Bitwise OR is primitive recursive** (the `Nat.unpaired` form), choice-free. -/
+
 theorem primrec_myLor : Nat.Primrec (fun t => myLor t.unpair.1 t.unpair.2) := by
   have hbase : Nat.Primrec
       (fun z => Nat.pair (Nat.pair z.unpair.1 z.unpair.2) (Nat.pair 1 0)) :=
@@ -4824,25 +4567,25 @@ theorem primrec_myLor : Nat.Primrec (fun t => myLor t.unpair.1 t.unpair.2) := by
 end
 
 section
-/-- An always-true predicate is recursively decidable (constant decider `1`). -/
+
 theorem recDecidable_of_forall {p : ℕ → Prop} (h : ∀ n, p n) : RecDecidable p :=
   ⟨fun _ => 1, Nat.Primrec.const 1, fun n => ⟨fun _ => rfl, fun _ => h n⟩⟩
 end
 
 section
-/-- An always-true predicate is recursively enumerable. -/
+
 theorem rePred_of_forall {p : ℕ → Prop} (h : ∀ n, p n) : REPred p :=
   (recDecidable_of_forall h).re
 end
 
 section
-/-- An always-true binary relation is recursively decidable (constant decider `1`). -/
+
 theorem recDecidable₂_of_forall {r : ℕ → ℕ → Prop} (h : ∀ n m, r n m) : RecDecidable₂ r :=
   recDecidable_of_forall (fun t => h t.unpair.1 t.unpair.2)
 end
 
 section
-/-- `Nat.rec 1 (· * b)` computes `b ^ e` (choice-free). -/
+
 theorem recPow_eq (b : ℕ) :
     ∀ e, Nat.rec (motive := fun _ => ℕ) 1 (fun _ ih => ih * b) e = b ^ e
   | 0 => (pow_zero b).symm
@@ -4850,7 +4593,7 @@ theorem recPow_eq (b : ℕ) :
 end
 
 section
-/-- **Exponentiation is primitive recursive** (`unpaired (b, e) ↦ b ^ e`), choice-free. -/
+
 theorem primrec_pow : Nat.Primrec (Nat.unpaired fun b e => b ^ e) := by
   have hg : Nat.Primrec (fun w => w.unpair.2.unpair.2 * w.unpair.1) :=
     primrec_mul₂ (Nat.Primrec.right.comp Nat.Primrec.right) Nat.Primrec.left
@@ -4860,7 +4603,7 @@ theorem primrec_pow : Nat.Primrec (Nat.unpaired fun b e => b ^ e) := by
 end
 
 section
-/-- `fun n => f n ^ g n` is primitive recursive. -/
+
 theorem primrec_pow₂ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => f n ^ g n) :=
   (primrec_pow.comp (hf.pair hg)).of_eq fun n => by
@@ -4958,7 +4701,7 @@ theorem primrec_interEqChar :
 end
 
 section
-/-- `n ↦ 2 ^ g n` is primitive recursive when `g` is. -/
+
 theorem primrec_two_pow {g : ℕ → ℕ} (hg : Nat.Primrec g) : Nat.Primrec (fun n => 2 ^ g n) :=
   (primrec_pow.comp ((Nat.Primrec.const 2).pair hg)).of_eq fun n => by
     simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
@@ -4995,46 +4738,28 @@ open NeighborhoodSystem Domain.Recursive
 section
 variable {α : Type*}
 
-/-- **Definition 7.1 (Scott 1981, PRG-19).** A *computable presentation* of a neighbourhood system
-`V` over a token type `α`: an enumeration `X : ℕ → Set α` whose range is exactly `𝒟` (`mem_X` and
-`surj`), such that Scott's two relations on the integer indices are recursively decidable:
-
-* `interEq_computable` is (i): the ternary relation `Xₙ ∩ Xₘ = X_k`;
-* `cons_computable` is (ii): the binary consistency relation `∃ k. X_k ⊆ Xₙ ∩ Xₘ`
-  (Scott's `X_k ⊆ Xₙ and X_k ⊆ Xₘ`).
-
-Only the enumeration `X` is data; the remaining fields are `Prop`s, so a presentation is built
-choice-free. -/
 structure ComputablePresentation (V : NeighborhoodSystem α) where
-  /-- The enumeration `𝒟 = {Xₙ ∣ n ∈ ℕ}`. -/
+
   X : ℕ → Set α
-  /-- Every `Xₙ` is a neighbourhood. -/
+
   mem_X : ∀ n, V.mem (X n)
-  /-- The enumeration is onto `𝒟`: every neighbourhood appears as some `Xₙ`. -/
+
   surj : ∀ {Y : Set α}, V.mem Y → ∃ n, X n = Y
-  /-- **7.1(i)** — `Xₙ ∩ Xₘ = X_k` is recursively decidable in `n, m, k`. -/
+
   interEq_computable : RecDecidable₃ (fun n m k => X n ∩ X m = X k)
-  /-- **7.1(ii)** — consistency `∃ k. X_k ⊆ Xₙ ∩ Xₘ` is recursively decidable in `n, m`. -/
+
   cons_computable : RecDecidable₂ (fun n m => ∃ k, X k ⊆ X n ∩ X m)
-  /-- A **primitive-recursive intersection function**: an index of `Xₙ ∩ Xₘ` whenever that
-  intersection is a neighbourhood (i.e. consistent). This makes explicit the operation that 7.1(i)
-  is *about*: in Scott's general-recursive reading of "recursively decidable" the index can be
-  recovered from `interEq_computable` by an (unbounded) search `μk. Xₙ ∩ Xₘ = X_k`, but that search
-  is not *primitive* recursive; for the function-space presentation (Theorem 7.5) we need to
-  *form* component intersections primitively, so we carry the function as part of the data of an
-  ("acceptable") computable presentation. Off the consistent domain `inter n m` may be junk. -/
+
   inter : ℕ → ℕ → ℕ
-  /-- The intersection function is primitive recursive (on the `Nat.pair` coding of `n, m`). -/
+
   inter_primrec : Nat.Primrec (fun t => inter t.unpair.1 t.unpair.2)
-  /-- `inter n m` indexes `Xₙ ∩ Xₘ` whenever that intersection is consistent. -/
+
   inter_spec : ∀ {n m : ℕ}, (∃ k, X k ⊆ X n ∩ X m) → X (inter n m) = X n ∩ X m
-  /-- A fixed index of the master neighbourhood `Δ` (used to seed finite intersections). -/
+
   masterIdx : ℕ
-  /-- `X masterIdx = Δ`. -/
+
   masterIdx_spec : X masterIdx = V.master
 
-/-- **Definition 7.1 (Scott 1981, PRG-19) — effectively given.** A neighbourhood system is
-*effectively given* when it admits a computable presentation. -/
 def NeighborhoodSystem.IsEffectivelyGiven (V : NeighborhoodSystem α) : Prop :=
   Nonempty (ComputablePresentation V)
 
@@ -5042,16 +4767,8 @@ namespace ComputablePresentation
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-/-- Reindexing `(n, m) ↦ (n, m, n)` on `Nat.pair` codes: `t ↦ pair n (pair m n)`. -/
 def inclShuffle (t : ℕ) : ℕ := Nat.pair t.unpair.1 (Nat.pair t.unpair.2 t.unpair.1)
 
-/-- **Reindexing a computable presentation along a primitive-recursive involution.** Given
-`φ : ℕ → ℕ` with `φ ∘ φ = id` (so `φ` is automatically a bijection, with itself as inverse) and
-`Nat.Primrec φ`, transport `P`'s enumeration and both deciders along `φ`: `X' n := P.X (φ n)`.
-Every one of Scott's structural fields transfers by straightforward reindexing (`RecDecidable.comp`
-against the pairwise-`φ`-reindexing code), so this is a genuinely choice-free construction — used
-to re-point a presentation's `0`-th index at an arbitrary target (Theorem 8.8(b)'s `D₀ ≅ D` shift,
-via `eIdx`). -/
 def reindexInvolutive (P : ComputablePresentation V) (φ : ℕ → ℕ)
     (hφinv : Function.Involutive φ) (hφp : Nat.Primrec φ) : ComputablePresentation V where
   X n := P.X (φ n)
@@ -5090,7 +4807,6 @@ def reindexInvolutive (P : ComputablePresentation V) (φ : ℕ → ℕ)
   masterIdx := φ P.masterIdx
   masterIdx_spec := by show P.X (φ (φ P.masterIdx)) = V.master; rw [hφinv]; exact P.masterIdx_spec
 
-/-- Swap the two components of a `Nat.pair` code: `t ↦ pair m n`. -/
 def swapPair (t : ℕ) : ℕ := Nat.pair t.unpair.2 t.unpair.1
 
 end ComputablePresentation
@@ -5100,9 +4816,6 @@ end
 section
 variable {α : Type*}
 
-/-- The trivial presentation of the one-point system `𝟙 = unitSys`: the constant enumeration
-`Xₙ = Δ = univ`. Both of Scott's relations are *always true* here (any two neighbourhoods are equal
-and consistent), hence trivially recursively decidable via the constant `1` decider. -/
 def unitPresentation : ComputablePresentation unitSys where
   X _ := Set.univ
   mem_X _ := rfl
@@ -5120,30 +4833,22 @@ namespace ComputablePresentation
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-
 theorem primrec_inclShuffle : Nat.Primrec inclShuffle :=
   Nat.Primrec.pair Nat.Primrec.left (Nat.Primrec.pair Nat.Primrec.right Nat.Primrec.left)
-
 
 private theorem primrec_swapPair : Nat.Primrec swapPair :=
   Nat.Primrec.pair Nat.Primrec.right Nat.Primrec.left
 
-/-- **Scott's biconditional after 7.1.** "The inclusion relation between neighbourhoods is itself
-decidable in terms of the indices", because `Xₙ ⊆ Xₘ ↔ Xₙ ∩ Xₘ = Xₙ`. We obtain the decision by
-reindexing `(n, m) ↦ (n, m, n)` into relation (i). -/
 theorem incl_computable : RecDecidable₂ (fun n m => P.X n ⊆ P.X m) := by
   refine RecDecidable.of_iff (fun t => ?_) (P.interEq_computable.comp primrec_inclShuffle)
   simp only [inclShuffle, unpair_pair_fst, unpair_pair_snd]
   exact Set.inter_eq_left.symm
 
-/-- **Equality of neighbourhoods is decidable** from the indices: `Xₙ = Xₘ ↔ Xₙ ⊆ Xₘ ∧ Xₘ ⊆ Xₙ`,
-so equality is the conjunction of `incl_computable` with its swap. -/
 theorem eq_computable : RecDecidable₂ (fun n m => P.X n = P.X m) := by
   refine RecDecidable.of_iff (fun t => ?_)
     (P.incl_computable.and (P.incl_computable.comp primrec_swapPair))
   simp only [swapPair, unpair_pair_fst, unpair_pair_snd]
   exact Set.Subset.antisymm_iff
-
 
 end ComputablePresentation
 
@@ -5152,7 +4857,6 @@ end
 section
 variable {α : Type*}
 
-/-- **The one-point domain `𝟙` is effectively given.** -/
 theorem unitSys_isEffectivelyGiven : unitSys.IsEffectivelyGiven :=
   ⟨unitPresentation⟩
 end
@@ -5161,17 +4865,15 @@ namespace Exercise722
 open Set Domain.Recursive
 
 section
-/-- Definition 7.1 restricted to relation (ii) only (no `interEq_computable`, unlike
-`ComputablePresentation`/`ScottPresentation` in `Definition71.lean`/`Exercise715.lean`, whose
-pattern this mirrors). -/
+
 structure ConsistencyPresentation (V : NeighborhoodSystem α) where
-  /-- The enumeration `𝒟 = {Xₙ ∣ n ∈ ℕ}`. -/
+
   X : ℕ → Set α
-  /-- Every `Xₙ` is a neighbourhood. -/
+
   mem_X : ∀ n, V.mem (X n)
-  /-- The enumeration is onto `𝒟`. -/
+
   surj : ∀ {Y : Set α}, V.mem Y → ∃ n, X n = Y
-  /-- **7.1(ii)** — consistency `∃ k. X_k ⊆ Xₙ ∩ Xₘ` is recursively decidable in `n, m`. -/
+
   cons_computable : RecDecidable₂ (fun n m => ∃ k, X k ⊆ X n ∩ X m)
 end
 

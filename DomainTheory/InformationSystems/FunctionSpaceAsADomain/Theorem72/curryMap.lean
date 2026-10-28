@@ -28,7 +28,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- **Theorem 7.2.** Approximable `curry h : A → (B → C)`. -/
 def curryMap (h : ApproximableMap (productSystem A B) C) :
     ApproximableMap A (functionSystem B C) where
   rel u s :=
@@ -47,7 +46,7 @@ def curryMap (h : ApproximableMap (productSystem A B) C) :
     rintro u u' s s' ⟨hu, hps⟩ hEntu hEnts hu' hs'
     refine ⟨hu', ?_⟩
     intro p hp
-    -- FunEnt s p from EntSet
+
     have hEntp : FunEnt B C s p := hEnts p hp
     obtain ⟨_, t, ht, hIn, hOut⟩ := hEntp
     have hps_t : ∀ q ∈ t, h.rel (liftPair A B u q.val.1) q.val.2 :=

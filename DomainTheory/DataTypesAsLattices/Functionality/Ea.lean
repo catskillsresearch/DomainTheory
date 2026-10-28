@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.mem
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (7.4).** Identity relation on the range of a retract. -/
 def Ea (a : Pomega) : RestrictedEquiv where
   rel := fun x y => typed x a ∧ typed y a ∧ x = y
   symm := by

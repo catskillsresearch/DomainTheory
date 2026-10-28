@@ -76,8 +76,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`XPseq n` is always a genuine `D₁`-neighbourhood** (never merely `∅`-or-`mem`): the actual
-"other side" of `X n`. -/
 theorem mem (n : ℕ) : D₁.mem (XPseq D₀ D₁ hD₀nomin hD₁nomin X Y n) :=
   (XPseq.empty_or_mem D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem hD₀mne
     hD₁mne n).resolve_left
@@ -144,7 +142,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`YPseq n` is always a genuine `D₀`-neighbourhood**, symmetric to `XPseq.mem`. -/
 theorem mem (n : ℕ) : D₀.mem (YPseq D₀ D₁ hD₀nomin hD₁nomin X Y n) :=
   (YPseq.empty_or_mem D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem hD₀mne
     hD₁mne n).resolve_left
@@ -196,12 +193,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
 
 include hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne in
-/-- **Exercise 8.12(c)(vii)(6), the same-family `embed_eq_iff` companion.** `X i = X j ↔
-XPseq i = XPseq j`, needed by `domainIso812c`'s `map_rel_iff'`. Unlike `up_mem`'s two-*family* renaming
-(needing (4)'s `XPseq.eq_Y_iff_X_eq_YPseq`), `map_rel_iff'` only ever compares two `XPseq`-indices
-against each other, so the ordinary same-family pattern — `X_subset_iff_XPseq_subset` applied in
-each direction, packaged via `Set.Subset.antisymm` — suffices, exactly as `Theorem88a.lean`'s own
-`embed_eq_iff` (single index family). -/
+
 theorem X_eq_iff_XPseq_eq (i j : ℕ) :
     X i = X j ↔ XPseq D₀ D₁ hD₀nomin hD₁nomin X Y i = XPseq D₀ D₁ hD₀nomin hD₁nomin X Y j := by
   constructor
@@ -262,10 +254,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
 
 include hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne hXcover in
-/-- **Exercise 8.12(c)(vii)(3), `exists_inter_index` (`D₀ → D₁` direction).** Given a `D₀`-side
-witness that `X i ∩ X j` is itself a neighbourhood, `hXcover` names it as some `X m`, and (5)(d)'s
-`X_inter_eq_iff_XPseq_inter_eq` pushes the same equation across to `XPseq`. Direct transcription of
-`Theorem88a.lean`'s `exists_inter_index_of_dmem`. -/
+
 theorem exists_inter_index_X {i j : ℕ} (hDij : D₀.mem (X i ∩ X j)) :
     ∃ m, X i ∩ X j = X m ∧
       XPseq D₀ D₁ hD₀nomin hD₁nomin X Y i ∩ XPseq D₀ D₁ hD₀nomin hD₁nomin X Y j =
@@ -289,8 +278,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
 
 include hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne hYcover in
-/-- **Exercise 8.12(c)(vii)(3), `exists_inter_index` (`D₁ → D₀` direction).** Symmetric to
-`exists_inter_index_X`, using `hYcover` and `YPseq.inter_eq_iff_Y_inter_eq`. -/
+
 theorem exists_inter_index_Y {i j : ℕ} (hDij : D₁.mem (Y i ∩ Y j)) :
     ∃ m, Y i ∩ Y j = Y m ∧
       YPseq D₀ D₁ hD₀nomin hD₁nomin X Y i ∩ YPseq D₀ D₁ hD₀nomin hD₁nomin X Y j =
@@ -313,10 +301,6 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hXcover : ∀ S, D₀.mem S ↔ ∃ n, S = X n) (hYcover : ∀ S, D₁.mem S ↔ ∃ n, S = Y n)
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
 
-/-- **Exercise 8.12(c)(vii)(5).** `toD0 : D₁.Element → D₀.Element`, the pullback filter
-`{S | ∃ n, S = YPseq n ∧ y.mem (Y n)}` — exact mirror of `toD1` with the two sides' roles swapped
-(`YPseq.mem`/`YPseq.zero`/`exists_inter_index_Y` for `sub`/`master_mem`/`inter_mem`;
-`YPseq.subset_X_iff_Y_subset_XPseq`/`hXcover`/`hYcover`/`XPseq.eq_Y_iff_X_eq_YPseq` for `up_mem`). -/
 def toD0 (y : D₁.Element) : D₀.Element where
   mem S := ∃ n, S = YPseq D₀ D₁ hD₀nomin hD₁nomin X Y n ∧ y.mem (Y n)
   sub := fun ⟨n, hn, _⟩ =>
@@ -361,14 +345,6 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hXcover : ∀ S, D₀.mem S ↔ ∃ n, S = X n) (hYcover : ∀ S, D₁.mem S ↔ ∃ n, S = Y n)
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
 
-/-- **Exercise 8.12(c)(vii)(4).** `toD1 : D₀.Element → D₁.Element`, the pushforward filter
-`{T | ∃ n, T = XPseq n ∧ x.mem (X n)}` — direct transcription of `Theorem88a.lean`'s `toDprimeU`.
-`sub`/`master_mem`/`inter_mem` are immediate from `XPseq.mem`/`XPseq.zero`/`exists_inter_index_X`
-exactly as there; `up_mem` is the one genuinely two-sided step: given `x.mem (X i)` and a `D₁.mem`
-target `T₂ ⊇ XPseq i`, `hYcover` names `T₂` as some `Y k`, the cross-parity order fact
-`X_subset_YPseq_iff_XPseq_subset_Y` turns `XPseq i ⊆ Y k` into `X i ⊆ YPseq k`, `x.up_mem` (on the
-`D₀`-side, using `YPseq.mem`) then gives `x.mem (YPseq k)`, `hXcover` renames `YPseq k` as some
-`X j`, and `XPseq.eq_Y_iff_X_eq_YPseq` finally certifies `Y k = XPseq j`. -/
 def toD1 (x : D₀.Element) : D₁.Element where
   mem T := ∃ n, T = XPseq D₀ D₁ hD₀nomin hD₁nomin X Y n ∧ x.mem (X n)
   sub := fun ⟨n, hn, _⟩ =>

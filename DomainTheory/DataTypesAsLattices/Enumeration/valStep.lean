@@ -29,9 +29,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (3.7).** One step of the enumerator.  The positive
-branch is written as `minExtend`; this is extensionally Scott's existential
-clause and exposes its continuity. -/
 def valStep (v : Pomega) : Pomega :=
   graph (fun k => condSet k Gcomb (minExtend (valStepValue v) k))
 

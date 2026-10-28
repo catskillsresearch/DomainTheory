@@ -26,7 +26,6 @@ theorem NeighborhoodSystem.mem_union_of_mem {γ : Type*} {D : NeighborhoodSystem
   (union.mem_or_empty hpos hdiff (Or.inr hX) (Or.inr hY)).resolve_left fun h =>
     hnomin.mem_ne_empty hX (Set.subset_eq_empty Set.subset_union_left h)
 
-
 namespace IsComputableUnion
 
 noncomputable def combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
@@ -127,7 +126,6 @@ theorem found_le_one {γ : Type*} {W : NeighborhoodSystem γ}
     · rw [show r1.unpair.1 = 1 from by omega, selectFn_one, unpair_pair_fst]
 
 end combineFound2
-
 
 end IsComputableUnion
 

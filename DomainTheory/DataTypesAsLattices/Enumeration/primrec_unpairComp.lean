@@ -10,16 +10,13 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_triangle
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_unpairW
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem primrec_unpairComp : Primrec unpairComp := by
   have h : Primrec fun k : ℕ =>

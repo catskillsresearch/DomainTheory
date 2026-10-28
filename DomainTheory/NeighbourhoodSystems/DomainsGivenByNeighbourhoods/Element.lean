@@ -5,27 +5,22 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Nei
 @[expose] public section
 
 section
--- Element.lean
+
 namespace DomainTheory.NeighbourhoodSystems
 namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/- concordance: source L240 DEFINITION 1.6 ideal elements -/
-/-- **Definition 1.6 (Scott 1981, PRG-19).** An (ideal) *element* of a neighbourhood system:
-a subfamily `x ⊆ 𝒟` that is a *filter* — (i) `Δ ∈ x`, (ii) closed under intersection, (iii)
-upward closed within `𝒟`. The domain is the type `Element` of all such filters, ordered by
-inclusion. -/
 structure Element where
-  /-- `mem X` holds iff the neighbourhood `X` belongs to the filter `x`. -/
+
   mem : Set α → Prop
-  /-- `x` is a subfamily of `𝒟`. -/
+
   sub : ∀ {X}, mem X → V.mem X
-  /-- (i) `Δ ∈ x`. -/
+
   master_mem : mem V.master
-  /-- (ii) `X, Y ∈ x ⟹ X ∩ Y ∈ x`. -/
+
   inter_mem : ∀ {X Y}, mem X → mem Y → mem (X ∩ Y)
-  /-- (iii) `X ∈ x` and `X ⊆ Y ∈ 𝒟 ⟹ Y ∈ x`. -/
+
   up_mem : ∀ {X Y}, mem X → V.mem Y → X ⊆ Y → mem Y
 
 end NeighborhoodSystem

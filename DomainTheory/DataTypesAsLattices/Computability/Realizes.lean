@@ -16,7 +16,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- A combinator realizes a number-theoretic function on numerals. -/
 def Realizes (u : Pomega) (p : ℕ → ℕ) : Prop :=
   ∀ n, funOf u (ofNat n) = ofNat (p n)
 

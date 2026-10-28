@@ -18,9 +18,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem seq4_body_isScottContinuous (a b c d : Pomega) :
     IsScottContinuous (fun z =>

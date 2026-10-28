@@ -13,13 +13,11 @@ public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Order
 public import Mathlib.Order.FixedPoints
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
@@ -29,7 +27,6 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- Subbasic sets for Scott's function-space topology (pointwise convergence). -/
 def scottFunctionEvalSubbasis (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y] :
     Set (Set (C(X, Y))) :=
   { W | ∃ (x : X) (U : Set Y), IsOpen U ∧ W = {f : C(X, Y) | f x ∈ U} }

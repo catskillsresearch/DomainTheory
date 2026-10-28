@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Examples_1_2_1_5_revisited
@@ -11,7 +10,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise218
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 section
-/-- The guaranteed output of `h` on a finite prefix: each symbol `b` becomes the block `b0`. -/
+
 def hOut : Str → Str
   | [] => []
   | b :: t => b :: false :: hOut t
@@ -26,7 +25,7 @@ section
 end
 
 section
-/-- `hOut` grows under extension: `hOut σ <+: hOut (σ ++ t)`. -/
+
 theorem hOut_append (σ t : Str) : hOut σ <+: hOut (σ ++ t) := by
   induction σ with
   | nil => simp
@@ -37,15 +36,14 @@ theorem hOut_append (σ t : Str) : hOut σ <+: hOut (σ ++ t) := by
 end
 
 section
-/-- **Prefix-monotonicity of `hOut`.** `σ <+: σ' → hOut σ <+: hOut σ'`. -/
+
 theorem hOut_mono {σ σ' : Str} (h : σ <+: σ') : hOut σ <+: hOut σ' := by
   obtain ⟨t, rfl⟩ := h
   exact hOut_append σ t
 end
 
 section
-/-- The guaranteed output of `k` on a finite prefix: keep the first bit of every *complete* pair,
-discard the inserted `0`. A trailing odd bit is an incomplete pair, hence dropped. -/
+
 def kOut : Str → Str
   | [] => []
   | [_] => []
@@ -65,9 +63,7 @@ section
 end
 
 section
-/- concordance: source L888 EXERCISE 2.18 doubling binary digits -/
-/-- **Exercise 2.18 — the spacing map `h : 𝔹 → 𝔹`.** `X h Y ↔ ∃ σ, X = σΣ* ∧ Y ∈ 𝔹 ∧ (hOut σ)Σ* ⊆ Y`.
-Same shape as `Example24.runMap`, with the doubling `hOut` (`hOut_mono` gives Definition 2.1(iii)). -/
+
 def hMap : ApproximableMap B B where
   rel X Y := ∃ σ, X = cone σ ∧ B.mem Y ∧ cone (hOut σ) ⊆ Y
   rel_dom := fun ⟨σ, hX, _, _⟩ => ⟨σ, hX⟩
@@ -91,7 +87,7 @@ def hMap : ApproximableMap B B where
 end
 
 section
-/-- `kOut` grows under extension: `kOut σ <+: kOut (σ ++ t)`. -/
+
 theorem kOut_append (σ t : Str) : kOut σ <+: kOut (σ ++ t) := by
   induction σ using kOut.induct with
   | case1 => simp
@@ -103,14 +99,14 @@ theorem kOut_append (σ t : Str) : kOut σ <+: kOut (σ ++ t) := by
 end
 
 section
-/-- **Prefix-monotonicity of `kOut`.** `σ <+: σ' → kOut σ <+: kOut σ'`. -/
+
 theorem kOut_mono {σ σ' : Str} (h : σ <+: σ') : kOut σ <+: kOut σ' := by
   obtain ⟨t, rfl⟩ := h
   exact kOut_append σ t
 end
 
 section
-/-- **Exercise 2.18 — the left inverse `k : 𝔹 → 𝔹`.** `X k Y ↔ ∃ σ, X = σΣ* ∧ Y ∈ 𝔹 ∧ (kOut σ)Σ* ⊆ Y`. -/
+
 def kMap : ApproximableMap B B where
   rel X Y := ∃ σ, X = cone σ ∧ B.mem Y ∧ cone (kOut σ) ⊆ Y
   rel_dom := fun ⟨σ, hX, _, _⟩ => ⟨σ, hX⟩
@@ -134,7 +130,7 @@ def kMap : ApproximableMap B B where
 end
 
 section
-/-- **`k` inverts `h` on prefixes.** `kOut (hOut σ) = σ`. -/
+
 theorem kOut_hOut (σ : Str) : kOut (hOut σ) = σ := by
   induction σ with
   | nil => rfl
@@ -142,8 +138,7 @@ theorem kOut_hOut (σ : Str) : kOut (hOut σ) = σ := by
 end
 
 section
-/-- **Exercise 2.18 — `k ∘ h = I_𝔹`.** The composite recovers the identity: reading `kOut (hOut σ) = σ`
-through the cone relations. -/
+
 theorem kMap_comp_hMap : kMap.comp hMap = idMap B := by
   apply ApproximableMap.ext
   intro X Z
@@ -163,7 +158,7 @@ theorem kMap_comp_hMap : kMap.comp hMap = idMap B := by
 end
 
 section
-/-- The elementwise value of `hMap` on the finite element `↑(σΣ*)` is `↑((hOut σ)Σ*)`. -/
+
 theorem toElementMap_hMap_cone (σ : Str) :
     hMap.toElementMap (B.principal (memB_cone σ)) = B.principal (memB_cone (hOut σ)) := by
   apply Element.ext
@@ -179,7 +174,7 @@ theorem toElementMap_hMap_cone (σ : Str) :
 end
 
 section
-/-- The elementwise value of `kMap` on the finite element `↑(σΣ*)` is `↑((kOut σ)Σ*)`. -/
+
 theorem toElementMap_kMap_cone (σ : Str) :
     kMap.toElementMap (B.principal (memB_cone σ)) = B.principal (memB_cone (kOut σ)) := by
   apply Element.ext
@@ -195,8 +190,7 @@ theorem toElementMap_kMap_cone (σ : Str) :
 end
 
 section
-/-- **Exercise 2.18 — `h` is not an isomorphism.** It is not surjective: `↑(01Σ*)` is not in the
-range (any preimage `x` satisfies `x = k(h(x))`, forcing `h(x) = ↑(00Σ*) ≠ ↑(01Σ*)`). -/
+
 theorem hMap_not_surjective : ¬ Function.Surjective hMap.toElementMap := by
   intro hsurj
   obtain ⟨x, hx⟩ := hsurj (B.principal (memB_cone [false, true]))
@@ -209,8 +203,7 @@ theorem hMap_not_surjective : ¬ Function.Surjective hMap.toElementMap := by
 end
 
 section
-/-- **Exercise 2.18 — `k` is not one-one.** `↑(0Σ*)` and `↑(1Σ*)` are distinct finite elements that
-`k` collapses to `⊥` (a length-1 prefix is an incomplete pair, so its bit is dropped). -/
+
 theorem kMap_not_injective : ¬ Function.Injective kMap.toElementMap := by
   intro hinj
   have h1 : kMap.toElementMap (B.principal (memB_cone [false]))

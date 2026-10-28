@@ -15,9 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.directed_sUnion_fixed
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem sSup_fixed_eq_sUnion {f : Pomega → Pomega} (hf : IsScottContinuous f)
     {A : Set (Fixpoints f)} (hA : DirectedSet A) :

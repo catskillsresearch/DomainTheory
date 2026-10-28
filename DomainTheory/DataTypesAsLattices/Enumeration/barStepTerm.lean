@@ -27,7 +27,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Closed term for the functional whose least fixed point is `barComb`. -/
 def barStepTerm : Term :=
   .lam 0 (.lam 1 (.lam 2
     (.cond (.app (.var 2) .zero) barPosTerm

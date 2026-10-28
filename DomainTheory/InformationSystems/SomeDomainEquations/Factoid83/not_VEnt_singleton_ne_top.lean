@@ -20,7 +20,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-/-- Singleton of a non-top token does not entail top. -/
 theorem not_VEnt_singleton_ne_top {t : VToken} (ht : t ≠ .top) :
     ¬ VEnt ({t} : Finset VToken) .top := by
   intro h

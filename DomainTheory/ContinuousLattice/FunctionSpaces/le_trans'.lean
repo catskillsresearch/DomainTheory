@@ -22,7 +22,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace ScottMap
 
-/-- Transitivity of the pointwise order. -/
 theorem le_trans' {D : Type u} {D' : Type v}
     [CompleteLattice D] [CompleteLattice D'] (f g h : ScottMap D D')
     (hfg : ScottMap.le f g)

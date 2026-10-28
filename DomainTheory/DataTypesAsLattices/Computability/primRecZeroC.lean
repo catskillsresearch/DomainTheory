@@ -27,7 +27,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Primitive recursion with zero initial value, viewed as an operator on its step. -/
 def primRecZeroC : Pomega :=
   Scomb ⬝ (Kcomb ⬝ dollarC) ⬝
     (Scomb ⬝ (Kcomb ⬝ Ycomb) ⬝
@@ -39,12 +38,10 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem app (f : Pomega) :
     primRecZeroC ⬝ f = primRecComb (ofNat 0) f := by
   rw [primRecZeroC, SK_comp, SK_comp]
   rfl
-
 
 theorem combinatory : IsCombinatory primRecZeroC :=
   .app (.app .S (.app .K dollarC.combinatory))

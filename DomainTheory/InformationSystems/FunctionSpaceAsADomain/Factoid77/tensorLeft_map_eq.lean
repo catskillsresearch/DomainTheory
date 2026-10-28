@@ -14,7 +14,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.i
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -35,7 +34,6 @@ attribute [instance] instCategoryInfoSysObj
 
 attribute [instance] instCartesianMonoidalCategoryInfoSysObj
 
-/-- `A ◁ f` is the pairing `⟨fst, snd ≫ f⟩`. -/
 theorem tensorLeft_map_eq (A : InfoSysObj.{u}) {Y Y' : InfoSysObj.{u}} (f : Y ⟶ Y') :
     (tensorLeft A).map f =
       productMapToTensorMap A Y Y'

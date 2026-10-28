@@ -8,18 +8,13 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
-
-
 
 theorem primrec_enumFun (c : Code) : Nat.Primrec (enumFun c) := by
   have heval : Primrec fun t : ℕ => evaln t.unpair.2 c t.unpair.1 :=

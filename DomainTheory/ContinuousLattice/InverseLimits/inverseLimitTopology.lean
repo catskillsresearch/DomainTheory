@@ -36,8 +36,7 @@ variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
     (@Pi.topologicalSpace ℕ D (fun _ => scottTopologicalSpace))
 
 namespace inverseLimit
-/-- Every coordinate projection from the explicit product/subspace inverse-limit topology is
-continuous. -/
+
 theorem coordinate_continuous (n : ℕ) :
     @Continuous (InverseLimit D P) (D n) (inverseLimitTopology D P)
       scottTopologicalSpace (fun x => x.1 n) := by
@@ -48,8 +47,6 @@ theorem coordinate_continuous (n : ℕ) :
   exact ⟨{x : ∀ n, D n | x n ∈ U},
     (@continuous_apply ℕ D (fun _ => scottTopologicalSpace) n).isOpen_preimage U hU, rfl⟩
 
-/-- The explicit inverse-limit topology is `T₀`, since the inclusion into the product of the
-stage Scott spaces is an embedding. -/
 theorem t0Space :
     @T0Space (InverseLimit D P) (inverseLimitTopology D P) := by
   let : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
@@ -59,7 +56,6 @@ theorem t0Space :
     ⟨⟨rfl⟩, Subtype.val_injective⟩
   exact hval.t0Space
 
-/-- The specialization order of the explicit inverse-limit topology is the componentwise order. -/
 theorem specializationLe_iff (x y : InverseLimit D P) :
     @SpecializationLe (InverseLimit D P) (inverseLimitTopology D P) x y ↔ x ≤ y := by
   let stageOrder : ∀ n, Preorder (D n) := fun _ => inferInstance
@@ -79,9 +75,6 @@ theorem specializationLe_iff (x y : InverseLimit D P) :
     rw [← SpecializationLe.iff_specializes, SpecializationLe.scott_iff]
     exact h n
 
-/-- **Scott 1972, Proposition 4.1 (injectivity step).** Coordinatewise maximal extensions
-assemble to an extension into the inverse limit. Lemma 3.9 is exactly what supplies compatibility
-of adjacent coordinates. -/
 theorem isInjectiveSpace (hD : ∀ n, ContinuousLattice (D n)) :
     @InjectiveSpace.{u, u} (InverseLimit D P) (inverseLimitTopology D P) := by
   let stageOrder : ∀ n, Preorder (D n) := fun _ => inferInstance
@@ -118,8 +111,6 @@ theorem isInjectiveSpace (hD : ∀ n, ContinuousLattice (D n)) :
   funext n
   exact scottExtend_eq_of_continuous (hD n) e he (fcoord n) (hfcoord n) x
 
-/-- The Scott lattice topology constructed on `D∞` agrees with Scott's literal inverse-limit
-topology: the subspace topology inherited from the Pi product of the stage Scott topologies. -/
 theorem scottTopology_eq_induced_pi (hD : ∀ n, ContinuousLattice (D n)) :
     (scottTopologicalSpace : TopologicalSpace (InverseLimit D P)) =
       inverseLimitTopology D P := by
@@ -128,8 +119,6 @@ theorem scottTopology_eq_induced_pi (hD : ∀ n, ContinuousLattice (D n)) :
   exact (theorem_2_12.backward_exact (isInjectiveSpace D P hD)
     (specializationLe_iff D P)).2
 
-/-- **Scott 1972, §4.** Each `x ∈ D_∞` is the (monotone) lub of its projections:
-`x = ⨆ₙ i_{n∞}(xₙ)`. -/
 theorem eq_iSup (x : InverseLimit D P) :
     x = ⨆ n, embInf D P n (x.1 n) := by
   have hdir := embInf_family_directed D P x
@@ -152,23 +141,18 @@ theorem eq_iSup (x : InverseLimit D P) :
 
 end inverseLimit
 namespace inverseLimitTopology
-/-- Proposition 4.2's projection `j_{∞n}` is a continuous coordinate map for the explicit
-product/subspace inverse-limit topology. -/
+
 theorem projInf_continuous (n : ℕ) :
     @Continuous (InverseLimit D P) (D n) (inverseLimitTopology D P)
       scottTopologicalSpace (projInf D P n) :=
   inverseLimit.coordinate_continuous D P n
 
-/-- Proposition 4.2's embedding `i_{n∞}` is also continuous for Scott's literal inverse-limit
-topology, namely the subspace topology inherited from the product `∏ₘ Dₘ`. -/
 theorem embInf_continuous (hD : ∀ n, ContinuousLattice (D n)) (n : ℕ) :
     @Continuous (D n) (InverseLimit D P) scottTopologicalSpace
       (inverseLimitTopology D P) (embInf D P n) := by
   rw [← inverseLimit.scottTopology_eq_induced_pi D P hD]
   exact (embInf D P n).continuous
 
-/-- Corollary 4.3's formula `f∞(x) = ⨆ₙ fₙ(xₙ)` is continuous not only for the reconstructed Scott
-topology on `D∞`, but explicitly for Scott's product/subspace inverse-limit topology. -/
 theorem coconeInf_continuous (hD : ∀ n, ContinuousLattice (D n))
     {D' : Type*} [CompleteLattice D']
     (f : ∀ n, ScottMap (D n) D') :
@@ -180,6 +164,5 @@ theorem coconeInf_continuous (hD : ∀ n, ContinuousLattice (D n))
 end inverseLimitTopology
 
 end InverseLimit
-
 
 end DomainTheory.ContinuousLattice

@@ -24,7 +24,6 @@ namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
-/-- Every sum-domain element has a separated-sum code. -/
 theorem exists_assembleSum_eq (z : (sumSystem A B).Element) :
     ∃ w : WithBot (A.Element ⊕ B.Element), assembleSum A B w = z := by
   rcases sum_element_trichotomy A B z with hbot | ⟨x, hx⟩ | ⟨y, hy⟩

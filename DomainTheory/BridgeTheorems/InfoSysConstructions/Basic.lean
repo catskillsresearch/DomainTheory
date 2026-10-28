@@ -48,22 +48,18 @@ namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
-
 end InfoSysConstructions
 
-/-- Blueprint-facing name for the 1982 product domain isomorphism. -/
 noncomputable abbrev infoSys_product_domain_equiv {α β : Type*} [DecidableEq α] [DecidableEq β]
     (A : InfoSys α) (B : InfoSys β) :
     A.Element × B.Element ≃o (productSystem A B).Element :=
   InfoSysConstructions.productDomainIso A B
 
-/-- Blueprint-facing name for the 1982 separated-sum domain isomorphism (classical). -/
 noncomputable abbrev infoSys_sum_domain_equiv {α β : Type*} [DecidableEq α] [DecidableEq β]
     (A : InfoSys α) (B : InfoSys β) :
     WithBot (A.Element ⊕ B.Element) ≃o (sumSystem A B).Element :=
   InfoSysConstructions.sumDomainIso A B
 
-/-- Blueprint-facing name for the 1982 function-space domain isomorphism. -/
 noncomputable abbrev infoSys_function_space_domain_equiv {α β : Type*}
     [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β) :
     ApproximableMap A B ≃o (functionSystem A B).Element :=

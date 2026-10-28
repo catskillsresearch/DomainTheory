@@ -12,13 +12,9 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
-/-- A fixed index of `V.master = Set.univ`. -/
 def VmasterIdx : ℕ := Nat.pair 0 1
 
-/-- The low-bit AND `(x &&& y) % 2`, in arithmetic `{0,1}`-valued form: simply the product of the
-low bits (`1` iff both are `1`). -/
 def lowAnd (x y : ℕ) : ℕ := x % 2 * (y % 2)
-
 
 namespace primrec
 open Domain.Recursive NeighborhoodSystem
@@ -30,7 +26,6 @@ theorem lowAnd : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-/-- Packed iteration state `pair (pair curA curB) (pair weight acc)` for the bitwise-AND fold. -/
 def landStep (s : ℕ) : ℕ :=
   Nat.pair (Nat.pair (s.unpair.1.unpair.1 / 2) (s.unpair.1.unpair.2 / 2))
     (Nat.pair (2 * s.unpair.2.unpair.1)
@@ -70,7 +65,6 @@ theorem inj_of_lt {k a b : ℕ} (ha : a < 2 ^ (2 ^ k)) (hb : b < 2 ^ (2 ^ k))
 end levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- `lowAnd x y = (x &&& y) % 2`. -/
 theorem lowAnd_eq_mod (x y : ℕ) : lowAnd x y = (x &&& y) % 2 := by
   have key : ((x &&& y) % 2 = 1) ↔ (x % 2 = 1 ∧ y % 2 = 1) := by
     have hb := Nat.testBit_and x y 0
@@ -87,7 +81,6 @@ theorem lowAnd_eq_mod (x y : ℕ) : lowAnd x y = (x &&& y) % 2 := by
     omega
   · exact (key.mpr ⟨hx, hy⟩).symm
 
-/-- One recursion step for `Nat.land` on the low bit: `x &&& y = 2 (x/2 &&& y/2) + lowAnd x y`. -/
 theorem land_low_rec (x y : ℕ) : x &&& y = 2 * (x / 2 &&& y / 2) + lowAnd x y := by
   have hdiv : (x &&& y) / 2 = x / 2 &&& y / 2 := by
     apply Nat.eq_of_testBit_eq
@@ -98,8 +91,6 @@ theorem land_low_rec (x y : ℕ) : x &&& y = 2 * (x / 2 &&& y / 2) + lowAnd x y 
   conv_lhs => rw [← Nat.div_add_mod (x &&& y) 2]
   rw [hdiv, hmod]
 
-/-- **Invariant of the bitwise-AND iteration.** After `k` steps the two running arguments are
-`a / 2^k`, `b / 2^k`, the weight is `2^k`, and `acc + 2^k · (a/2^k &&& b/2^k) = a &&& b`. -/
 theorem landStep_iter_spec (a b : ℕ) : ∀ k,
     (landStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.1 = a / 2 ^ k ∧
     (landStep^[k] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.1.unpair.2 = b / 2 ^ k ∧
@@ -138,7 +129,6 @@ theorem landStep_iter_spec (a b : ℕ) : ∀ k,
     · rw [p22, hA, hB, hW, hdd, hdd', pow_succ, ← hAcc, land_low_rec (a / 2 ^ k) (b / 2 ^ k)]
       ring
 
-/-- `j % s = j - s` when `s ≤ j < 2 * s` (the single-wraparound case of `%`). -/
 theorem mod_eq_sub_of_le_of_lt_two_mul {j s : ℕ} (h1 : s ≤ j) (h2 : j < 2 * s) :
     j % s = j - s := by
   have heq : j = (j - s) + s := by omega
@@ -146,18 +136,10 @@ theorem mod_eq_sub_of_le_of_lt_two_mul {j s : ℕ} (h1 : s ≤ j) (h2 : j < 2 * 
     _ = (j - s) % s := Nat.add_mod_right _ _
     _ = j - s := Nat.mod_eq_of_lt (by omega)
 
-/-- `Nat.rec`-based iterate of "halve", i.e. `myDivPow2 m ℓ = m / 2 ^ ℓ`
-(`myDivPow2_eq`), built via `Nat.Primrec.prec` on the count `ℓ` (params `m` fixed throughout the
-recursion), mirroring `primrec_foldCode`'s "iterate a step a data-dependent number of times" idiom. -/
 def myDivPow2 (m ℓ : ℕ) : ℕ := Nat.unpaired (fun z n => n.rec z (fun _ ih => ih / 2)) (Nat.pair m ℓ)
 
-/-- `myModPow2 m s = m % 2 ^ s`, derived from `myDivPow2` via `Nat.div_add_mod`
-(`myModPow2.eq`): no separate general-purpose primitive-recursive `mod` is needed. -/
 def myModPow2 (m s : ℕ) : ℕ := m - myDivPow2 m s * 2 ^ s
 
-/-- `myTestBit m ℓ ∈ {0,1}` is a `Nat.Primrec` version of `m.testBit ℓ`
-(`myTestBit.eq_one_iff`), via `myDivPow2` and mathlib's own
-`Nat.testBit_eq_decide_div_mod_eq : m.testBit ℓ = decide (m / 2 ^ ℓ % 2 = 1)`. -/
 def myTestBit (m ℓ : ℕ) : ℕ := myDivPow2 m ℓ % 2
 
 namespace primrec
@@ -219,10 +201,6 @@ end myModPow2
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- `levelSet k (myModPow2 x (2^k)) = levelSet k x`: truncating a mask to its meaningful low
-`2^k` bits never changes the `levelSet` it presents (`levelSet k _` only ever reads bit positions
-`< 2^k`). Used to keep `myUpsample`'s output *bounded* (`myUpsample_lt`) even when no genuine
-upsampling step occurs (`k = k'`), which the raw iteration alone would not guarantee. -/
 theorem myModPow2 (k x : ℕ) : levelSet k (_root_.DomainTheory.NeighbourhoodSystems.myModPow2 x (2 ^ k)) = levelSet k x := by
   ext n
   simp only [mem_levelSet, myModPow2.eq, Nat.testBit_mod_two_pow]
@@ -232,8 +210,6 @@ theorem myModPow2 (k x : ℕ) : levelSet k (_root_.DomainTheory.NeighbourhoodSys
 end levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- The iterative bitwise AND: iterate `landStep` `a + b` times from the initial state, and read off
-the accumulator. -/
 def myLand (a b : ℕ) : ℕ :=
   (landStep^[a + b] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.2
 
@@ -259,7 +235,6 @@ theorem myLand : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-/-- **Correctness of the iterative bitwise AND.** `myLand a b = a &&& b`. -/
 theorem myLand_eq_land (a b : ℕ) : myLand a b = a &&& b := by
   unfold myLand
   obtain ⟨_, _, _, hAcc⟩ := landStep_iter_spec a b (a + b)
@@ -272,15 +247,10 @@ theorem myLand_eq_land (a b : ℕ) : myLand a b = a &&& b := by
   rw [ha0, hb0] at hAcc
   simpa using hAcc
 
-/-- The `bExistsFn` body `pair ℓ m ↦ myTestBit m ℓ`. -/
 def levelSetNonemptyBody (t : ℕ) : ℕ := myTestBit t.unpair.2 t.unpair.1
 
-/-- **`myLevelSetNonempty k m ∈ {0,1}`** decides `(levelSet k m).Nonempty`
-(`myLevelSetNonempty.eq_one_iff`). -/
 def myLevelSetNonempty (k m : ℕ) : ℕ := bExistsFn levelSetNonemptyBody m (2 ^ k)
 
-/-- Keep a code `c = pair k m` unchanged when `levelSet k m` is non-empty; otherwise fall back to
-the fixed master code `pair 0 1` (`levelSet 0 1 = univ`, `levelSet.zero_one`). -/
 def canonIdx (c : ℕ) : ℕ :=
   selectFn (myLevelSetNonempty c.unpair.1 c.unpair.2) c (Nat.pair 0 1)
 
@@ -318,7 +288,6 @@ end canonIdx
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- `canonIdx` always lands on a code presenting a non-empty `levelSet`. -/
 theorem canonIdx_nonempty (c : ℕ) :
     (levelSet (canonIdx c).unpair.1 (canonIdx c).unpair.2).Nonempty := by
   by_cases h : (levelSet c.unpair.1 c.unpair.2).Nonempty
@@ -331,7 +300,6 @@ end levelSet
 namespace canonIdx
 open Domain.Recursive NeighborhoodSystem
 
-/-- `canonIdx` is idempotent (a fixed point once applied). -/
 theorem idempotent (c : ℕ) : canonIdx (canonIdx c) = canonIdx c :=
   canonIdx.eq_self_of_nonempty (levelSet.canonIdx_nonempty c)
 
@@ -359,7 +327,6 @@ theorem canonIdx : Nat.Primrec _root_.DomainTheory.NeighbourhoodSystems.canonIdx
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`V`'s enumeration**: canonicalize the `(level, mask)` pair coded by `n`. -/
 def VX (c : ℕ) : Set ℕ := levelSet (canonIdx c).unpair.1 (canonIdx c).unpair.2
 
 theorem VX_VmasterIdx : VX VmasterIdx = V.master := by
@@ -369,8 +336,6 @@ theorem VX_VmasterIdx : VX VmasterIdx = V.master := by
   rw [canonIdx.eq_self_of_nonempty hne, unpair_pair_fst, unpair_pair_snd, levelSet.zero_one]
   rfl
 
-/-- `VX` is onto `V`'s neighbourhoods: every `V`-neighbourhood is already `levelSet k m` for some
-non-empty pair `(k, m)`, on which `canonIdx` is a no-op. -/
 theorem V.surj_VX : ∀ {Y : Set ℕ}, V.mem Y → ∃ n, VX n = Y := by
   rintro Y ⟨k, m, rfl, hne⟩
   refine ⟨Nat.pair k m, ?_⟩
@@ -381,11 +346,9 @@ theorem V.surj_VX : ∀ {Y : Set ℕ}, V.mem Y → ∃ n, VX n = Y := by
 
 theorem VX_nonempty (c : ℕ) : (VX c).Nonempty := levelSet.canonIdx_nonempty c
 
-/-- Every `VX n` is a genuine `V`-neighbourhood. -/
 theorem V.mem_VX (c : ℕ) : V.mem (VX c) :=
   ⟨(canonIdx c).unpair.1, (canonIdx c).unpair.2, rfl, levelSet.canonIdx_nonempty c⟩
 
-/-- `VX` factors through `canonIdx` (canonicalizing twice changes nothing). -/
 theorem VX_canonIdx (c : ℕ) : VX (canonIdx c) = VX c := by unfold VX; rw [canonIdx.idempotent]
 
 end DomainTheory.NeighbourhoodSystems

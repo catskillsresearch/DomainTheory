@@ -11,7 +11,6 @@ public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Topology Set
@@ -20,13 +19,8 @@ section FixedPoints
 
 variable {L : Type*} [CompleteLattice L]
 
-
 variable {e : L → L}
 
-
-/-- **Scott topology of the fixed-point lattice = subspace topology.** Proposition 2.10(b) applied
-to `idemFixRetraction`: the Scott topology of `IdemFix e` is the topology induced by the inclusion
-from the Scott topology of `L`. -/
 theorem idemFix_scottTopology (hidem : ∀ x, e (e x) = e x) (hsc : PreservesDirectedSup e)
     (hL : ContinuousLattice L) :
     @scottTopologicalSpace (IdemFix e)

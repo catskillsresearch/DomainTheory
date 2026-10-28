@@ -10,9 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_graph
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem Icomb_subset_boxPlus {a b : Pomega} (ha : Closure a) (hb : Closure b) :
     Icomb ⊆ boxPlus a b :=

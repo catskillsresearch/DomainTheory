@@ -17,7 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (7.17).** Independent successor functions. -/
 def sigmaJ (j : ℕ) (x : Pomega) : Pomega :=
   {p | ∃ k, pair j (k + 1) = p ∧ pair j k ∈ x}
 

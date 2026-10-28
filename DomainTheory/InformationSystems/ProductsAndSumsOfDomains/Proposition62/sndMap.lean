@@ -24,7 +24,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-/-- **Proposition 6.2(2).** Approximable second projection. -/
 def sndMap : ApproximableMap (productSystem A B) B where
   rel u w := u ∈ (productSystem A B).Con ∧ w ∈ B.Con ∧ B.EntSet (sndFinset A B u) w
   rel_dom h := h.1

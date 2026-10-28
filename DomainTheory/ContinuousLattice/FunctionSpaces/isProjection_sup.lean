@@ -14,7 +14,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -25,8 +24,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 section Projections
 
-/-- `J_D` is closed under binary joins (Scott 1972, 3.12). The key step: since `j x ⊔ k x ⊑ x`,
-monotonicity and idempotency force `j (j x ⊔ k x) = j x` and `k (j x ⊔ k x) = k x`. -/
 theorem isProjection_sup {j k : ScottMap D D} (hj : IsProjection j) (hk : IsProjection k) :
     IsProjection (j ⊔ k) := by
   rw [isProjection_iff] at hj hk ⊢

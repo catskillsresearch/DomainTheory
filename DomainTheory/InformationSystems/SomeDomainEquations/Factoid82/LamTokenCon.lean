@@ -23,7 +23,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Bundled consistency on `LamToken` finsets. -/
 def LamTokenCon (u : Finset (LamToken A)) : Prop :=
   LamCon A (lamForgetFinset A u)
 

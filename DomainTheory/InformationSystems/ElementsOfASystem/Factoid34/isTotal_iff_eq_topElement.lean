@@ -10,13 +10,11 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid34.eq_top
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
 
 theorem isTotal_iff_eq_topElement (h : sys.AllConsistent) {x : sys.Element} :
     sys.IsTotal x ↔ x = sys.topElement h :=

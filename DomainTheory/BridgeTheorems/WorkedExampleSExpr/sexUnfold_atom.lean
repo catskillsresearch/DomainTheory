@@ -18,7 +18,6 @@ public import DomainTheory.BridgeTheorems.WorkedExampleSExpr.Basic
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.treeUnfold
 @[expose] public section
 
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
@@ -27,8 +26,6 @@ open DomainTheory.InformationSystems.InfoSys
 open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 
-
-/-- Unfolding tokens into the sum-of-product carrier (Factoid 8.1). -/
 theorem sexUnfold_atom (n : ℕ) :
     treeUnfold lowerBoundSystem (.atom n) = SumToken.left n :=
   treeUnfold.atom lowerBoundSystem n

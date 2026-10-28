@@ -14,16 +14,13 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import Mathlib.Order.CompleteLattice.Defs
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem graph_mem_FUN {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     graph f ∈ FUN := by

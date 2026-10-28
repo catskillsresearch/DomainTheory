@@ -14,11 +14,6 @@ section
 variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-/- concordance: source L4311 THEOREM 7.4 sum and product effective -/
-/-- **Theorem 7.4 (Scott 1981, PRG-19) — `𝒟₀ × 𝒟₁` is effectively given.** The presentation
-`W_k = X⁰_{p k} ∪ X¹_{q k}`. Scott's 7.1(i) and (ii) each split, via `prodNbhd_inter` /
-`prodNbhd_subset_iff`, into the *conjunction* of the two factors' relations on the projected
-indices — recursively decidable by `RecDecidable.and`/`.comp`/`.of_iff`. -/
 def prodPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
     ComputablePresentation (prod V₀ V₁) where
   X := prodEnum P₀ P₁
@@ -93,8 +88,6 @@ section Sum
 
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
-/-- Scott's `Z₀ = Δ, Z_{2n+1} = X⁰ₙ, Z_{2n+2} = X¹ₙ`, realized with a `Nat.pair` tag: `tag = 0 ↦ 0X⁰`,
-`tag = 1 ↦ 1X¹`, else the master. -/
 def sumEnum (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) (t : ℕ) :
     Set (Option (α ⊕ β)) :=
   if t.unpair.1 = 0 then inj₀ (P₀.X t.unpair.2)
@@ -120,7 +113,6 @@ variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V�
 theorem inj₀_eq_iff {A B : Set α} : (inj₀ A : Set (Option (α ⊕ β))) = inj₀ B ↔ A = B :=
   ⟨inj₀_injective, fun h => h ▸ rfl⟩
 
-/-- A nonempty left copy cannot equal a right copy. -/
 theorem inj₀_eq_inj₁_elim {A : Set α} {B : Set β} (hA : A.Nonempty)
     (h : (inj₀ A : Set (Option (α ⊕ β))) = inj₁ B) : False := by
   obtain ⟨a, ha⟩ := hA; exact il_mem_inj₁ (h ▸ il_mem_inj₀.mpr ha)
@@ -139,8 +131,6 @@ theorem inj₁_eq_iff {A B : Set β} : (inj₁ A : Set (Option (α ⊕ β))) = i
 theorem inj₁_ne_sumMaster {B : Set β} : (inj₁ B : Set (Option (α ⊕ β))) ≠ sumMaster V₀ V₁ :=
   fun h => none_mem_inj₁ (h.symm ▸ none_mem_sumMaster)
 
-/-- Equality of two enumerated `𝒟₀`-neighbourhoods is recursively decidable (antisymmetry of `⊆`,
-decided by `incl_computable`). -/
 theorem recDec_setEq₀ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     RecDecidable (fun u => P₀.X (f u) = P₀.X (g u)) := by
   have hincl : RecDecidable (fun s => P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2) := P₀.incl_computable
@@ -175,7 +165,6 @@ theorem sumEnum_nonempty (t : ℕ) : (sumEnum P₀ P₁ t).Nonempty := by
     · exact inj₁_nonempty (h₁ _ (P₁.mem_X _))
     · exact ⟨none, none_mem_sumMaster⟩
 
-/-- Every enumerated sum-neighbourhood lies under the master (no non-emptiness needed). -/
 theorem sumEnum_subset_sumMaster (n : ℕ) :
     sumEnum P₀ P₁ n ⊆ sumMaster V₀ V₁ := by
   unfold sumEnum
@@ -185,19 +174,16 @@ theorem sumEnum_subset_sumMaster (n : ℕ) :
     · exact inj₁_subset_sumMaster (P₁.mem_X _)
     · exact subset_rfl
 
-/-- `Z ∩ M = Z`: the master absorbs on the right. -/
 theorem sumEnum_inter_sumMaster (n : ℕ) :
     sumEnum P₀ P₁ n ∩ sumMaster V₀ V₁ = sumEnum P₀ P₁ n :=
   Set.inter_eq_left.mpr (sumEnum_subset_sumMaster n)
 
-/-- `M ∩ Z = Z`: the master absorbs on the left. -/
 theorem sumMaster_inter_sumEnum (m : ℕ) :
     sumMaster V₀ V₁ ∩ sumEnum P₀ P₁ m = sumEnum P₀ P₁ m :=
   Set.inter_eq_right.mpr (sumEnum_subset_sumMaster m)
 
 end Sum
 
-/-- Choice-free three-way split of a tag `n ∈ {0, 1, ≥2}` (via `Nat.decEq`, not classical `em`). -/
 theorem tag_trichotomy (n : ℕ) : n = 0 ∨ n = 1 ∨ (n ≠ 0 ∧ n ≠ 1) := by
   have h_dec : (n ≠ 0) ∨ (n = 0) := by
     by_cases h : n = 0
@@ -220,8 +206,7 @@ variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y →
 variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
 
 include h₁ in
-/-- **Equality of two sum-neighbourhoods, in the indices.** Both master, or same tag with equal
-component. -/
+
 theorem sumEnum_eq_iff (x y : ℕ) :
     sumEnum P₀ P₁ x = sumEnum P₀ P₁ y ↔
       ((x.unpair.1 ≠ 0 ∧ x.unpair.1 ≠ 1) ∧ (y.unpair.1 ≠ 0 ∧ y.unpair.1 ≠ 1))
@@ -229,7 +214,7 @@ theorem sumEnum_eq_iff (x y : ℕ) :
           ∨ ((x.unpair.1 = 1 ∧ y.unpair.1 = 1) ∧ P₁.X x.unpair.2 = P₁.X y.unpair.2)) := by
   rcases tag_trichotomy x.unpair.1 with hx | hx | ⟨hx0, hx1⟩ <;>
     rcases tag_trichotomy y.unpair.1 with hy | hy | ⟨hy0, hy1⟩
-  · -- x0 y0
+  ·
     rw [sumEnum_zero hx, sumEnum_zero hy, inj₀_eq_iff]
     constructor
     · intro he; exact Or.inr (Or.inl ⟨⟨hx, hy⟩, he⟩)
@@ -237,22 +222,22 @@ theorem sumEnum_eq_iff (x y : ℕ) :
       · exfalso; omega
       · exact he
       · exfalso; omega
-  · -- x0 y1
+  ·
     rw [sumEnum_zero hx, sumEnum_one hy]
     constructor
     · intro h; exact absurd h (inj₀_ne_inj₁_of_nonempty (h₁ _ (P₁.mem_X _)))
     · rintro (⟨⟨e1, e2⟩, _⟩ | ⟨⟨e1, e2⟩, _⟩ | ⟨⟨e1, e2⟩, _⟩) <;> exfalso <;> omega
-  · -- x0 yM
+  ·
     rw [sumEnum_zero hx, sumEnum_master hy0 hy1]
     constructor
     · intro h; exact absurd h inj₀_ne_sumMaster
     · rintro (⟨⟨e1, e2⟩, _⟩ | ⟨⟨e1, e2⟩, _⟩ | ⟨⟨e1, e2⟩, _⟩) <;> exfalso <;> omega
-  · -- x1 y0
+  ·
     rw [sumEnum_one hx, sumEnum_zero hy]
     constructor
     · intro h; exact absurd h.symm (inj₀_ne_inj₁_of_nonempty (h₁ _ (P₁.mem_X _)))
     · rintro (⟨⟨e1, e2⟩, _⟩ | ⟨⟨e1, e2⟩, _⟩ | ⟨⟨e1, e2⟩, _⟩) <;> exfalso <;> omega
-  · -- x1 y1
+  ·
     rw [sumEnum_one hx, sumEnum_one hy, inj₁_eq_iff]
     constructor
     · intro he; exact Or.inr (Or.inr ⟨⟨hx, hy⟩, he⟩)
@@ -260,28 +245,27 @@ theorem sumEnum_eq_iff (x y : ℕ) :
       · exfalso; omega
       · exfalso; omega
       · exact he
-  · -- x1 yM
+  ·
     rw [sumEnum_one hx, sumEnum_master hy0 hy1]
     constructor
     · intro h; exact absurd h inj₁_ne_sumMaster
     · rintro (⟨⟨e1, e2⟩, _⟩ | ⟨⟨e1, e2⟩, _⟩ | ⟨⟨e1, e2⟩, _⟩) <;> exfalso <;> omega
-  · -- xM y0
+  ·
     rw [sumEnum_master hx0 hx1, sumEnum_zero hy]
     constructor
     · intro h; exact absurd h.symm inj₀_ne_sumMaster
     · rintro (⟨⟨e1, e2⟩, ⟨e3, e4⟩⟩ | ⟨⟨e1, e2⟩, _⟩ | ⟨⟨e1, e2⟩, _⟩) <;> exfalso <;> omega
-  · -- xM y1
+  ·
     rw [sumEnum_master hx0 hx1, sumEnum_one hy]
     constructor
     · intro h; exact absurd h.symm inj₁_ne_sumMaster
     · rintro (⟨⟨e1, e2⟩, ⟨e3, e4⟩⟩ | ⟨⟨e1, e2⟩, _⟩ | ⟨⟨e1, e2⟩, _⟩) <;> exfalso <;> omega
-  · -- xM yM
+  ·
     rw [sumEnum_master hx0 hx1, sumEnum_master hy0 hy1]
     exact ⟨fun _ => Or.inl ⟨⟨hx0, hx1⟩, ⟨hy0, hy1⟩⟩, fun _ => rfl⟩
 
 include h₁ in
-/-- **`sumEnum u.1 = sumEnum u.2` is recursively decidable** (the `of_iff` translation of
-`sumEnum_eq_iff` into the tag/component deciders). -/
+
 theorem eqSEdec :
     RecDecidable (fun u => sumEnum P₀ P₁ u.unpair.1 = sumEnum P₀ P₁ u.unpair.2) := by
   have hX0 : RecDecidable (fun u => u.unpair.1.unpair.1 = 0) :=
@@ -302,11 +286,6 @@ theorem eqSEdec :
 
 include h₀ h₁
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19) — `𝒟₀ + 𝒟₁` is effectively given.** The tag enumeration
-`Z (pair 0 n) = 0X⁰ₙ`, `Z (pair 1 n) = 1X¹ₙ`, `Z (pair (≥2) _) = M`. Scott's 7.1(i)/(ii) follow the
-intersection table: master absorbs, `0X ∩ 0X' = 0(X∩X')` reduces to `𝒟₀`, `0X ∩ 1Y = ∅` is
-impossible (non-emptiness). The deciders are assembled from `eqSEdec`, the tag deciders
-(`natEq`/`not`/`and`/`or`), and the components' `interEq`/`cons`. -/
 def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
     ComputablePresentation (sum V₀ V₁ h₀ h₁) where
   X := sumEnum P₀ P₁
@@ -367,7 +346,7 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
     dsimp only
     rcases tag_trichotomy t.unpair.1.unpair.1 with hna | hna | ⟨hna0, hna1⟩
     · rcases tag_trichotomy t.unpair.2.unpair.1.unpair.1 with hnb | hnb | ⟨hnb0, hnb1⟩
-      · -- na = 0, nb = 0
+      ·
         rw [sumEnum_zero hna, sumEnum_zero hnb, inj₀_inter]
         rcases tag_trichotomy t.unpair.2.unpair.2.unpair.1 with hnc | hnc | ⟨hnc0, hnc1⟩
         · rw [sumEnum_zero hnc, inj₀_eq_iff]
@@ -386,7 +365,7 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
           constructor
           · intro h; exact absurd h inj₀_ne_sumMaster
           · rintro (⟨⟨e1, _⟩, _⟩ | ⟨⟨e1, _⟩, _⟩ | ⟨⟨⟨_, _⟩, e3⟩, _⟩ | ⟨⟨⟨e1, _⟩, _⟩, _⟩) <;> exfalso <;> omega
-      · -- na = 0, nb = 1: ∅
+      ·
         rw [sumEnum_zero hna, sumEnum_one hnb, inj₀_inter_inj₁]
         constructor
         · intro h
@@ -394,7 +373,7 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
           rw [← h] at hx
           exact absurd hx (Set.notMem_empty x)
         · rintro (⟨⟨e1, _⟩, _⟩ | ⟨⟨_, e2⟩, _⟩ | ⟨⟨⟨_, e2⟩, _⟩, _⟩ | ⟨⟨⟨e1, _⟩, _⟩, _⟩) <;> exfalso <;> omega
-      · -- na = 0, nb = M: master on the right
+      ·
         rw [sumEnum_master hnb0 hnb1, sumEnum_inter_sumMaster]
         constructor
         · intro h; exact Or.inr (Or.inl ⟨⟨hnb0, hnb1⟩, h⟩)
@@ -404,7 +383,7 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
           · exfalso; omega
           · exfalso; omega
     · rcases tag_trichotomy t.unpair.2.unpair.1.unpair.1 with hnb | hnb | ⟨hnb0, hnb1⟩
-      · -- na = 1, nb = 0: ∅
+      ·
         rw [sumEnum_one hna, sumEnum_zero hnb, Set.inter_comm, inj₀_inter_inj₁]
         constructor
         · intro h
@@ -412,7 +391,7 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
           rw [← h] at hx
           exact absurd hx (Set.notMem_empty x)
         · rintro (⟨⟨_, e2⟩, _⟩ | ⟨⟨e1, _⟩, _⟩ | ⟨⟨⟨e1, _⟩, _⟩, _⟩ | ⟨⟨⟨_, e2⟩, _⟩, _⟩) <;> exfalso <;> omega
-      · -- na = 1, nb = 1
+      ·
         rw [sumEnum_one hna, sumEnum_one hnb, inj₁_inter]
         rcases tag_trichotomy t.unpair.2.unpair.2.unpair.1 with hnc | hnc | ⟨hnc0, hnc1⟩
         · rw [sumEnum_zero hnc]
@@ -431,7 +410,7 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
           constructor
           · intro h; exact absurd h inj₁_ne_sumMaster
           · rintro (⟨⟨_, e2⟩, _⟩ | ⟨⟨_, e2⟩, _⟩ | ⟨⟨⟨e1, _⟩, _⟩, _⟩ | ⟨⟨⟨_, _⟩, e3⟩, _⟩) <;> exfalso <;> omega
-      · -- na = 1, nb = M
+      ·
         rw [sumEnum_master hnb0 hnb1, sumEnum_inter_sumMaster]
         constructor
         · intro h; exact Or.inr (Or.inl ⟨⟨hnb0, hnb1⟩, h⟩)
@@ -440,7 +419,7 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
           · exact h
           · exfalso; omega
           · exfalso; omega
-    · -- na = M: master on the left (any nb)
+    ·
       rw [sumEnum_master hna0 hna1, sumMaster_inter_sumEnum]
       constructor
       · intro h; exact Or.inl ⟨⟨hna0, hna1⟩, h⟩
@@ -475,7 +454,7 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
     dsimp only
     rcases tag_trichotomy s.unpair.1.unpair.1 with hna | hna | ⟨hna0, hna1⟩
     · rcases tag_trichotomy s.unpair.2.unpair.1 with hnb | hnb | ⟨hnb0, hnb1⟩
-      · -- na = 0, nb = 0
+      ·
         rw [sumEnum_zero hna, sumEnum_zero hnb, inj₀_inter]
         constructor
         · rintro ⟨k, hk⟩
@@ -492,25 +471,25 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
             rw [sumEnum_zero (by rw [unpair_pair_fst]), unpair_pair_snd]
             exact inj₀_subset_inj₀.mpr hj
           · exfalso; omega
-      · -- na = 0, nb = 1: ∅
+      ·
         rw [sumEnum_zero hna, sumEnum_one hnb, inj₀_inter_inj₁]
         constructor
         · rintro ⟨k, hk⟩
           obtain ⟨x, hx⟩ := sumEnum_nonempty (h₀ := h₀) (h₁ := h₁) k
           exact absurd (hk hx) (Set.notMem_empty x)
         · rintro (⟨e1, _⟩ | ⟨_, e2⟩ | ⟨⟨_, e2⟩, _⟩ | ⟨⟨e1, _⟩, _⟩) <;> exfalso <;> omega
-      · -- na = 0, nb = M: right master
+      ·
         rw [sumEnum_master hnb0 hnb1, sumEnum_inter_sumMaster]
         exact ⟨fun _ => Or.inr (Or.inl ⟨hnb0, hnb1⟩), fun _ => ⟨s.unpair.1, subset_rfl⟩⟩
     · rcases tag_trichotomy s.unpair.2.unpair.1 with hnb | hnb | ⟨hnb0, hnb1⟩
-      · -- na = 1, nb = 0: ∅
+      ·
         rw [sumEnum_one hna, sumEnum_zero hnb, Set.inter_comm, inj₀_inter_inj₁]
         constructor
         · rintro ⟨k, hk⟩
           obtain ⟨x, hx⟩ := sumEnum_nonempty (h₀ := h₀) (h₁ := h₁) k
           exact absurd (hk hx) (Set.notMem_empty x)
         · rintro (⟨_, e2⟩ | ⟨e1, _⟩ | ⟨⟨e1, _⟩, _⟩ | ⟨⟨_, e2⟩, _⟩) <;> exfalso <;> omega
-      · -- na = 1, nb = 1
+      ·
         rw [sumEnum_one hna, sumEnum_one hnb, inj₁_inter]
         constructor
         · rintro ⟨k, hk⟩
@@ -527,10 +506,10 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
           · refine ⟨Nat.pair 1 j, ?_⟩
             rw [sumEnum_one (by rw [unpair_pair_fst]), unpair_pair_snd]
             exact inj₁_subset_inj₁.mpr hj
-      · -- na = 1, nb = M: right master
+      ·
         rw [sumEnum_master hnb0 hnb1, sumEnum_inter_sumMaster]
         exact ⟨fun _ => Or.inr (Or.inl ⟨hnb0, hnb1⟩), fun _ => ⟨s.unpair.1, subset_rfl⟩⟩
-    · -- na = M: left master (any nb)
+    ·
       rw [sumEnum_master hna0 hna1, sumMaster_inter_sumEnum]
       exact ⟨fun _ => Or.inl ⟨hna0, hna1⟩, fun _ => ⟨s.unpair.2, subset_rfl⟩⟩
   inter n m :=
@@ -566,10 +545,10 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
   inter_spec := by
     rintro n m ⟨k, hk⟩
     rcases tag_trichotomy n.unpair.1 with hna | hna | ⟨hna0, hna1⟩
-    · -- n is a left copy (tag 0)
+    ·
       rw [show 1 - (2 - n.unpair.1) = 0 by omega, selectFn_zero]
       rcases tag_trichotomy m.unpair.1 with hmb | hmb | ⟨hmb0, hmb1⟩
-      · -- m left copy: consistent left ∩ left
+      ·
         rw [show 1 - (2 - m.unpair.1) = 0 by omega, selectFn_zero,
           show 1 - n.unpair.1 = 1 by omega, selectFn_one,
           sumEnum_zero (by rw [unpair_pair_fst]), unpair_pair_snd,
@@ -581,23 +560,23 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
         have hjsub : P₀.X j ⊆ P₀.X n.unpair.2 ∩ P₀.X m.unpair.2 := by
           rw [hj]; exact inj₀_subset_inj₀.mp hk
         rw [P₀.inter_spec ⟨j, hjsub⟩]
-      · -- m right copy: inconsistent (∅), refute consistency
+      ·
         exfalso
         rw [sumEnum_zero hna, sumEnum_one hmb, inj₀_inter_inj₁] at hk
         obtain ⟨x, hx⟩ := sumEnum_nonempty (h₀ := h₀) (h₁ := h₁) k
         exact absurd (hk hx) (Set.notMem_empty x)
-      · -- m master
+      ·
         rw [show 1 - (2 - m.unpair.1) = 1 by omega, selectFn_one,
           sumEnum_master hmb0 hmb1, sumEnum_inter_sumMaster]
-    · -- n is a right copy (tag 1)
+    ·
       rw [show 1 - (2 - n.unpair.1) = 0 by omega, selectFn_zero]
       rcases tag_trichotomy m.unpair.1 with hmb | hmb | ⟨hmb0, hmb1⟩
-      · -- m left copy: inconsistent
+      ·
         exfalso
         rw [sumEnum_one hna, sumEnum_zero hmb, Set.inter_comm, inj₀_inter_inj₁] at hk
         obtain ⟨x, hx⟩ := sumEnum_nonempty (h₀ := h₀) (h₁ := h₁) k
         exact absurd (hk hx) (Set.notMem_empty x)
-      · -- m right copy: consistent right ∩ right
+      ·
         rw [show 1 - (2 - m.unpair.1) = 0 by omega, selectFn_zero,
           show 1 - n.unpair.1 = 0 by omega, selectFn_zero,
           sumEnum_one (by rw [unpair_pair_fst]), unpair_pair_snd,
@@ -609,10 +588,10 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
         have hjsub : P₁.X j ⊆ P₁.X n.unpair.2 ∩ P₁.X m.unpair.2 := by
           rw [hj]; exact inj₁_subset_inj₁.mp hk
         rw [P₁.inter_spec ⟨j, hjsub⟩]
-      · -- m master
+      ·
         rw [show 1 - (2 - m.unpair.1) = 1 by omega, selectFn_one,
           sumEnum_master hmb0 hmb1, sumEnum_inter_sumMaster]
-    · -- n master
+    ·
       rw [show 1 - (2 - n.unpair.1) = 1 by omega, selectFn_one,
         sumEnum_master hna0 hna1, sumMaster_inter_sumEnum]
   masterIdx := Nat.pair 2 0
@@ -620,7 +599,6 @@ def sumPresentation (P₀ : ComputablePresentation V₀) (P₁ : ComputablePrese
     rw [sumEnum_master (by rw [unpair_pair_fst]; decide) (by rw [unpair_pair_fst]; decide)]
     rfl
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19).** The sum of effectively given domains is effectively given. -/
 theorem sum_isEffectivelyGiven (g₀ : V₀.IsEffectivelyGiven) (g₁ : V₁.IsEffectivelyGiven) :
     (sum V₀ V₁ h₀ h₁).IsEffectivelyGiven := by
   obtain ⟨P₀⟩ := g₀; obtain ⟨P₁⟩ := g₁
@@ -629,8 +607,6 @@ theorem sum_isEffectivelyGiven (g₀ : V₀.IsEffectivelyGiven) (g₁ : V₁.IsE
 @[simp] theorem sumPresentation_X (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
     (t : ℕ) : (sumPresentation P₀ P₁ (h₀ := h₀) (h₁ := h₁)).X t = sumEnum P₀ P₁ t := rfl
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19) — `in₀` is computable.** `X⁰ₙ (in₀) Z_m ↔ 0X⁰ₙ ⊆ Z_m`, which
-tag-decodes to `(m = 0X⁰ ∧ X⁰ₙ ⊆ X⁰_{m.2}) ∨ (m = master)` (`m = 1X¹` is impossible as `X⁰ₙ ≠ ∅`). -/
 theorem inMap₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
     ComputableMap P₀ (sumPresentation P₀ P₁) (inMap₀ (h₀ := h₀) (h₁ := h₁)) := by
   constructor
@@ -665,7 +641,6 @@ theorem inMap₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : Compu
       refine ⟨P₀.mem_X _, sumEnum_mem _, ?_⟩
       rw [sumEnum_master hm0 hm1]; exact inj₀_subset_sumMaster (P₀.mem_X _)
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19) — `in₁` is computable.** Symmetric to `in₀`. -/
 theorem inMap₁_isComputable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
     ComputableMap P₁ (sumPresentation P₀ P₁) (inMap₁ (h₀ := h₀) (h₁ := h₁)) := by
   constructor
@@ -700,9 +675,6 @@ theorem inMap₁_isComputable (P₀ : ComputablePresentation V₀) (P₁ : Compu
       refine ⟨P₁.mem_X _, sumEnum_mem _, ?_⟩
       rw [sumEnum_master hm0 hm1]; exact inj₁_subset_sumMaster (P₁.mem_X _)
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19) — `out₀` is computable.** `Z_n (out₀) X⁰_m ↔ leftPart Z_n ⊆
-X⁰_m`; tag-decoded, `leftPart` is `X⁰_{n.2}` on a left copy and `Δ₀` on a right copy/master, so the
-relation is `incl` against either `n.2` or the master index `k₀` (`X⁰_{k₀} = Δ₀`). -/
 theorem outMap₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
     ComputableMap (sumPresentation P₀ P₁) P₀ (outMap₀ (h₀ := h₀) (h₁ := h₁)) := by
   constructor
@@ -747,7 +719,6 @@ theorem outMap₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : Comp
       · refine ⟨sumEnum_mem _, P₀.mem_X _, ?_⟩
         rw [sumEnum_master hn0 hn1, leftPart_sumMaster, ← hk0]; exact hsub
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19) — `out₁` is computable.** Symmetric to `out₀` via `rightPart`. -/
 theorem outMap₁_isComputable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
     ComputableMap (sumPresentation P₀ P₁) P₁ (outMap₁ (h₀ := h₀) (h₁ := h₁)) := by
   constructor
@@ -792,11 +763,6 @@ theorem outMap₁_isComputable (P₀ : ComputablePresentation V₀) (P₁ : Comp
       · refine ⟨sumEnum_mem _, P₁.mem_X _, ?_⟩
         rw [sumEnum_master hn0 hn1, rightPart_sumMaster, ← hk1]; exact hsub
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19) — `f + g` is computable.** Tag-decoding the sum relation,
-`Zₙ (f+g) W_m` holds iff `W_m` is the codomain master (decidable in `m`'s tag), or both are left
-copies (tag `0`) with `X⁰_{n.2} f Y⁰_{m.2}`, or both are right copies (tag `1`) with
-`X¹_{n.2} g Y¹_{m.2}`. The three disjuncts are r.e. (`REPred.or`): each copy case conjoins a decidable
-tag test with the reindexed r.e. relation of `f`/`g`. -/
 theorem sumMap_isComputable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
     {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
     (Q₀ : ComputablePresentation V₀') (Q₁ : ComputablePresentation V₁')
@@ -883,8 +849,6 @@ theorem sumMap_isComputable {V₀' : NeighborhoodSystem α'} {V₁' : Neighborho
 
 end Sum
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19) — the paired map `⟨f, g⟩` is computable.** `Zₙ ⟨f, g⟩ (X⁰_k ∪
-X¹_l) ↔ Zₙ f X⁰_k ∧ Zₙ g X¹_l`, the conjunction of two r.e. relations. -/
 theorem paired_isComputable {V₂ : NeighborhoodSystem γ}
     {P₂ : ComputablePresentation V₂} {P₀ : ComputablePresentation V₀}
     {P₁ : ComputablePresentation V₁} {a : ApproximableMap V₂ V₀} {b : ApproximableMap V₂ V₁}
@@ -903,15 +867,11 @@ theorem paired_isComputable {V₂ : NeighborhoodSystem γ}
   exact ⟨fun h => ⟨h.2.1, h.2.2⟩,
     fun h => ⟨prod_mem_prodNbhd (P₀.mem_X _) (P₁.mem_X _), h.1, h.2⟩⟩
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19).** The product of effectively given domains is effectively
-given. -/
 theorem prod_isEffectivelyGiven (h₀ : V₀.IsEffectivelyGiven) (h₁ : V₁.IsEffectivelyGiven) :
     (prod V₀ V₁).IsEffectivelyGiven := by
   obtain ⟨P₀⟩ := h₀; obtain ⟨P₁⟩ := h₁
   exact ⟨prodPresentation P₀ P₁⟩
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19) — `proj₀` is computable.** `(Xₙ⁰ ∪ Xₘ¹) p₀ X⁰_k ↔ Xₙ⁰ ⊆ X⁰_k`,
-a recursive slice of `incl_computable`, hence r.e. -/
 theorem proj₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
     ComputableMap (prodPresentation P₀ P₁) P₀ (proj₀ V₀ V₁) := by
   constructor
@@ -923,8 +883,6 @@ theorem proj₀_isComputable (P₀ : ComputablePresentation V₀) (P₁ : Comput
   exact ⟨fun h => h.2.2,
     fun h => ⟨prod_mem_prodNbhd (P₀.mem_X _) (P₁.mem_X _), P₀.mem_X _, h⟩⟩
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19) — `proj₁` is computable.** `(Xₙ⁰ ∪ Xₘ¹) p₁ X¹_k ↔ Xₘ¹ ⊆ X¹_k`
-(Scott's worked example), a recursive slice of `incl_computable`. -/
 theorem proj₁_isComputable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) :
     ComputableMap (prodPresentation P₀ P₁) P₁ (proj₁ V₀ V₁) := by
   constructor
@@ -936,9 +894,6 @@ theorem proj₁_isComputable (P₀ : ComputablePresentation V₀) (P₁ : Comput
   exact ⟨fun h => h.2.2,
     fun h => ⟨prod_mem_prodNbhd (P₀.mem_X _) (P₁.mem_X _), P₁.mem_X _, h⟩⟩
 
-/-- **Theorem 7.4 (Scott 1981, PRG-19) — the product functor `f × g` is computable.** Using
-`f × g = ⟨f ∘ p₀, g ∘ p₁⟩` (Exercise 3.19) together with computability of `projᵢ` and `comp`
-(Proposition 7.3). -/
 theorem prodMap_isComputable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
     {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
     {P₀' : ComputablePresentation V₀'} {P₁' : ComputablePresentation V₁'}
@@ -2078,29 +2033,22 @@ end
 section
 variable {α β γ : Type*}
 
-/-- **Scott's Definition 7.1 (literal).** A *bare* computable presentation: an enumeration
-`X : ℕ → Set α` onto `𝒟`, with relations (i) `Xₙ ∩ Xₘ = X_k` and (ii) consistency recursively
-decidable. No primitive-recursive intersection function is carried (cf. the docstring above). -/
 structure ScottPresentation (V : NeighborhoodSystem α) where
-  /-- The enumeration `𝒟 = {Xₙ ∣ n ∈ ℕ}`. -/
+
   X : ℕ → Set α
-  /-- Every `Xₙ` is a neighbourhood. -/
+
   mem_X : ∀ n, V.mem (X n)
-  /-- The enumeration is onto `𝒟`. -/
+
   surj : ∀ {Y : Set α}, V.mem Y → ∃ n, X n = Y
-  /-- **7.1(i)** `Xₙ ∩ Xₘ = X_k` recursively decidable. -/
+
   interEq_computable : RecDecidable₃ (fun n m k => X n ∩ X m = X k)
-  /-- **7.1(ii)** consistency `∃k. X_k ⊆ Xₙ ∩ Xₘ` recursively decidable. -/
+
   cons_computable : RecDecidable₂ (fun n m => ∃ k, X k ⊆ X n ∩ X m)
 
-/-- **Definition 7.2 relative to bare presentations.** A computable map between bare presentations is
-one whose neighbourhood relation `Xₙ f Yₘ` is r.e. (identical to `ComputableMap`, which only uses
-the enumerations). -/
 class ComputableMapS {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
     (P : ScottPresentation V) (Q : ScottPresentation W) (f : ApproximableMap V W) : Prop where
   out : REPred₂ (fun n m => f.rel (P.X n) (Q.X m))
 
-/-- **Effectively given (Scott's literal Definition 7.1).** -/
 def NeighborhoodSystem.IsEffectivelyGivenS (V : NeighborhoodSystem α) : Prop :=
   Nonempty (ScottPresentation V)
 
@@ -2108,13 +2056,11 @@ namespace ScottPresentation
 
 variable {V : NeighborhoodSystem α} (P : ScottPresentation V)
 
-/-- Reindexing `(n, m) ↦ (n, m, n)`. -/
 def inclShuffle (t : ℕ) : ℕ := Nat.pair t.unpair.1 (Nat.pair t.unpair.2 t.unpair.1)
 
 theorem primrec_inclShuffle : Nat.Primrec inclShuffle :=
   Nat.Primrec.pair Nat.Primrec.left (Nat.Primrec.pair Nat.Primrec.right Nat.Primrec.left)
 
-/-- The inclusion relation is decidable: `Xₙ ⊆ Xₘ ↔ Xₙ ∩ Xₘ = Xₙ`. -/
 theorem incl_computable : RecDecidable₂ (fun n m => P.X n ⊆ P.X m) := by
   refine RecDecidable.of_iff (fun t => ?_) (P.interEq_computable.comp primrec_inclShuffle)
   simp only [inclShuffle, unpair_pair_fst, unpair_pair_snd]
@@ -2134,9 +2080,7 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 open scoped Classical in
-/-- **Smash enumeration.** Index `t ↦` the proper product `prodNbhd X⁰_{t.1} X¹_{t.2}` when both
-factors are proper, otherwise the master. The classical `if` (deciding `Xₙ = Δ₀`) is the *only*
-classical input of the smash presentation. -/
+
 noncomputable def smashEnum (t : ℕ) : Set (α ⊕ β) :=
   if P₀.X t.unpair.1 ≠ V₀.master ∧ P₁.X t.unpair.2 ≠ V₁.master then
     prodNbhd (P₀.X t.unpair.1) (P₁.X t.unpair.2)
@@ -2161,10 +2105,6 @@ theorem smashEnum_proper {t : ℕ}
     (h : P₀.X t.unpair.1 ≠ V₀.master ∧ P₁.X t.unpair.2 ≠ V₁.master) :
     smashEnum P₀ P₁ t = prodNbhd (P₀.X t.unpair.1) (P₁.X t.unpair.2) := ite_eq_left h
 
-/-- **The smash enumeration as a product neighbourhood with *effective* factors.** Given `{0,1}`
-deciders `c₀`, `c₁` of properness, `smashEnum t = prodNbhd X⁰_{effL} X¹_{effR}` where the effective
-index `effL = (proper? t.1 : masterIdx₀)` is computed primitively by `selectFn`. This is the bridge
-that turns the smash relations into the components' relations on the effective indices. -/
 theorem smashEnum_eq_eff {c₀ c₁ : ℕ → ℕ} (hc₀le : ∀ n, c₀ n ≤ 1) (hc₁le : ∀ n, c₁ n ≤ 1)
     (hc₀ : ∀ n, P₀.X n ≠ V₀.master ↔ c₀ n = 1) (hc₁ : ∀ n, P₁.X n ≠ V₁.master ↔ c₁ n = 1) (t : ℕ) :
     smashEnum P₀ P₁ t =
@@ -2191,8 +2131,6 @@ theorem smashEnum_eq_eff {c₀ c₁ : ℕ → ℕ} (hc₀le : ∀ n, c₀ n ≤ 
         rw [hz, Nat.mul_zero]
     rw [hpf, selectFn_zero, selectFn_zero, P₀.masterIdx_spec, P₁.masterIdx_spec]
 
-/-- Every enumerated smash neighbourhood is a product `prodNbhd A B` of component neighbourhoods
-(the proper form, or the master `prodNbhd Δ₀ Δ₁`). -/
 theorem smashEnum_eq_prodNbhd_mem (k : ℕ) :
     ∃ A B, V₀.mem A ∧ V₁.mem B ∧ smashEnum P₀ P₁ k = prodNbhd A B := by
   by_cases h : P₀.X k.unpair.1 ≠ V₀.master ∧ P₁.X k.unpair.2 ≠ V₁.master
@@ -2225,7 +2163,6 @@ def swapPair (t : ℕ) : ℕ := Nat.pair t.unpair.2 t.unpair.1
 theorem primrec_swapPair : Nat.Primrec swapPair :=
   Nat.Primrec.pair Nat.Primrec.right Nat.Primrec.left
 
-/-- Equality of neighbourhoods is decidable. -/
 theorem eq_computable : RecDecidable₂ (fun n m => P.X n = P.X m) := by
   refine RecDecidable.of_iff (fun t => ?_)
     (P.incl_computable.and (P.incl_computable.comp primrec_swapPair))
@@ -2248,8 +2185,6 @@ variable {P₀ P₁}
 
 variable (P₀ P₁)
 
-/-- The properness predicate `Xₙ ≠ Δ₀` is recursively decidable (negation of `eq_computable`
-against the master index). -/
 theorem proper₀_dec : RecDecidable (fun n => P₀.X n ≠ V₀.master) := by
   have heq : RecDecidable (fun n => P₀.X n = V₀.master) := by
     refine RecDecidable.of_iff (fun n => ?_)

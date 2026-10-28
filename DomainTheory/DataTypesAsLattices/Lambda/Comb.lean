@@ -7,7 +7,6 @@ public import Mathlib.Data.Nat.Basic
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Combinatory expressions generated from the six constants and variables. -/
 inductive Comb where
   | var : ℕ → Comb
   | zero | suc | pred | cond | K | S

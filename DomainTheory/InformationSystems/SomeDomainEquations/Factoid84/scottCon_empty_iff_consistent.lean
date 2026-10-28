@@ -16,7 +16,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.barE
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -24,7 +23,6 @@ open InfoSys
 open ApproximableMap
 
 namespace Factoid84
-
 
 theorem scottCon_empty_iff_consistent (r : ApproximableMap P P) :
     scottCon r ∅ ↔ ConsistentApprox r := by

@@ -21,9 +21,6 @@ variable {L : Type*} [CompleteLattice L]
 
 variable {e : L → L}
 
-/-- The fixed-point set of a Scott-continuous idempotent `e` on `L`, with the
-ambient-supremum-corrected complete-lattice structure, is a *retract of `L`*: the inclusion and the
-corestriction of `e` are Scott-continuous and compose to the identity. -/
 noncomputable def idemFixRetraction (hidem : ∀ x, e (e x) = e x) (hsc : PreservesDirectedSup e) :
     @IsContinuousLatticeRetraction (IdemFix e) L
       (IdemFix.completeLattice hidem (preservesDirectedSup_monotone hsc)) _ :=

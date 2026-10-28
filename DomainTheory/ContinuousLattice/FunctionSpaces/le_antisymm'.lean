@@ -22,7 +22,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace ScottMap
 
-/-- Antisymmetry of the pointwise order. -/
 theorem le_antisymm' {D : Type u} {D' : Type v}
     [CompleteLattice D] [CompleteLattice D'] (f g : ScottMap D D')
     (hfg : ScottMap.le f g)

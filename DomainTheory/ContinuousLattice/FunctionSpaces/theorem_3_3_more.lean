@@ -15,7 +15,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_is
 public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapPointwiseTopology
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapPointwiseTopology_eq_induced_pi
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
@@ -31,9 +30,6 @@ variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- **Scott 1972, Theorem 3.3 (order content).** If `D` and `D'` are continuous lattices, then so
-is `[D → D']` under the pointwise order. Every `f` is the supremum of the step functions way below
-it: `f = ⊔ {ē[e,e'] | e' ≪ f e}`, and each such step function is way below `f`. -/
 theorem theorem_3_3.isContinuousLattice (hD : ContinuousLattice D)
     (hD' : ContinuousLattice D') : ContinuousLattice (ScottMap D D') := by
   refine { out := ?_ }
@@ -53,17 +49,15 @@ variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- **Scott 1972, Theorem 3.3(b).** The Scott (lattice) topology on `[D → D']` agrees with the
-topology of pointwise convergence. -/
 theorem theorem_3_3.topology (hD : ContinuousLattice D) (hD' : ContinuousLattice D') :
     (scottTopologicalSpace : TopologicalSpace (ScottMap D D')) = scottMapPointwiseTopology D D' := by
   have hL : ContinuousLattice (ScottMap D D') := theorem_3_3.isContinuousLattice hD hD'
   apply le_antisymm
-  · -- pointwise ⊆ Scott: each subbasic set is Scott-open in the lattice
+  ·
     apply le_generateFrom_iff_subset_isOpen.2
     rintro W ⟨x, U, hUopen, rfl⟩
     exact ScottOpen.isOpen_iff.mpr (pointwiseSubbasic_scottOpen x (ScottOpen.isOpen_iff.mp hUopen))
-  · -- Scott ⊆ pointwise: each Scott-open lattice set is pointwise-open, via the `↟φ` basis
+  ·
     intro U hU
     rw [ScottOpen.isOpen_iff] at hU
     rw [@isOpen_iff_forall_mem_open (ScottMap D D') (scottMapPointwiseTopology D D')]
@@ -83,8 +77,6 @@ variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- The literal product/subspace form of Theorem 3.3: the Scott lattice topology on `[D → D']`
-is induced from Mathlib's Pi topology on the underlying functions. -/
 theorem theorem_3_3.topology_induced_pi (hD : ContinuousLattice D)
     (hD' : ContinuousLattice D') :
     (scottTopologicalSpace : TopologicalSpace (ScottMap D D')) =

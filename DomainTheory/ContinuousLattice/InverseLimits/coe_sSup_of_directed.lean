@@ -18,9 +18,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- For a directed, nonempty family, the inverse-limit supremum is computed pointwise (each `jₙ`
-is Scott-continuous, so the pointwise sup of compatible sequences is compatible and is the least
-upper bound in `D_∞`). -/
 theorem coe_sSup_of_directed (S : Set (InverseLimit D P)) (hSne : S.Nonempty)
     (hSdir : DirectedOn (· ≤ ·) S) :
     ((sSup S : InverseLimit D P) : ∀ n, D n) = sSup (Subtype.val '' S) := by

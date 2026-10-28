@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Singleton identity `{⟨a, a⟩}`. -/
 def singletonE (a : Pomega) : RestrictedEquiv where
   rel := fun x y => x = a ∧ y = a
   symm := by

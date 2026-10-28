@@ -28,7 +28,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Coproduct mediator in the category of restricted equivalences. -/
 def sumMed (f g : Pomega) : Pomega :=
   graph (fun u =>
     condSet (funOf u (ofNat 0))

@@ -7,12 +7,6 @@ public import Mathlib.Order.Directed
 public import Mathlib.Order.UpperLower.Basic
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
-public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
-public import DomainTheory.ContinuousLattice.WayBelow.sInf_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.isContinuousLattice_iff_isLUB_sInf_nhds
-
 
 @[expose] public section
 
@@ -26,7 +20,6 @@ namespace IdealCompletionToContinuousLattice
 
 variable {D : Type*} [CompleteLattice D]
 
-/-- Order-theoretic compactness: inaccessible by nonempty directed suprema. -/
 def IsCompactElement (k : D) : Prop :=
   ∀ ⦃S : Set D⦄, S.Nonempty → DirectedOn (· ≤ ·) S → k ≤ sSup S → ∃ s ∈ S, k ≤ s
 

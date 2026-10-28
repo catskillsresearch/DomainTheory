@@ -16,7 +16,6 @@ section LimitMaps
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-/-- The inverse limit `D_∞` of the function-space tower `⟨Dₙ, jₙ⟩`. -/
 abbrev DInf : Type u := InverseLimit (towerType D₀) (towerProj D₀ j₀)
 
 end LimitMaps

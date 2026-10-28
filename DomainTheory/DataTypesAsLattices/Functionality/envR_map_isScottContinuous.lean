@@ -15,9 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem envR_map_isScottContinuous :
     IsScottContinuous (fun t => graph (fun n => funOf lambR (funOf t n))) :=

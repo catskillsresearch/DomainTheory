@@ -15,8 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 5.3 (The function space theorem for algebraic
-lattices).** The function-space retract of two closures is a retract. -/
 theorem theorem_5_3 {a b : Pomega} (ha : Closure a) (hb : Closure b) :
     Retract (arrowR a b) := by
   constructor

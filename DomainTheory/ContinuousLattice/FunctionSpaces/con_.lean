@@ -15,7 +15,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -26,7 +25,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace Proposition313
 
-/-- **Scott 1972, Proposition 3.13.** `con : D → [D → D]` sends `x` to the constant function `x`. -/
 noncomputable def con : ScottMap D (ScottMap D D) :=
   ⟨fun x => ScottMap.const x, continuous_of_preservesDirectedSup (by
     intro S _ _

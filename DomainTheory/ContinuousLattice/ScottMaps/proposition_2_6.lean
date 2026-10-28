@@ -7,25 +7,18 @@ public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology
 
 variable {D D' D'' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
-
-/-- **Scott 1972, Proposition 2.6.** A function of several variables between complete lattices is
-(Scott-)continuous jointly iff it is continuous in each variable separately. Continuity is phrased
-as preservation of directed suprema (Proposition 2.5); it suffices to treat two variables, the
-product `D × D'` carrying the componentwise complete-lattice structure (whose induced topology is
-the product topology). -/
 theorem proposition_2_6 (f : D × D' → D'') :
     PreservesDirectedSup f ↔
       (∀ y, PreservesDirectedSup fun x => f (x, y)) ∧
         (∀ x, PreservesDirectedSup fun y => f (x, y)) := by
   constructor
-  · -- joint continuity ⟹ separate continuity (precompose with the continuous slice maps)
+  ·
     intro hf
     refine ⟨fun y S hS hSdir => ?_, fun x S hS hSdir => ?_⟩
     · set T : Set (D × D') := (fun x => (x, y)) '' S with hT
@@ -58,7 +51,7 @@ theorem proposition_2_6 (f : D × D' → D'') :
       have h := hf hTne hTdir
       rw [hsupT, hT, Set.image_image] at h
       simpa using h
-  · -- separate continuity ⟹ joint continuity (Scott 1972's directedness argument)
+  ·
     rintro ⟨h1, h2⟩ Sstar hne hdir
     have hmono1 : ∀ y, Monotone fun x => f (x, y) := fun y => preservesDirectedSup_monotone (h1 y)
     have hmono2 : ∀ x, Monotone fun y => f (x, y) := fun x => preservesDirectedSup_monotone (h2 x)

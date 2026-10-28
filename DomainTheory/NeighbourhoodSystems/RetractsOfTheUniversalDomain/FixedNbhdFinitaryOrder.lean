@@ -14,12 +14,7 @@ open NeighborhoodSystem ApproximableMap
 section
 universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
-/- concordance: source L5163 EXERCISE 8.16 order of projections -/
-/-- **Exercise 8.16, Part 1 (Scott 1981, PRG-19).** For finitary projections `a, b : E → E`,
-`a ≤ b ↔ D_a ◁ D_b` where `D_a := fixedNbhd a = {X ∈ E ∣ X a X}` (Theorem 8.5's subdomain). This is
-exactly Theorem 8.6(a)'s order-isomorphism `finitaryProjectionSubsystemEquiv`, restricted from
-`sub`-fixed points to finitary projections via `sub_eq_self_iff_isFinitaryProjection`, and fills the
-gap Scott leaves at the end of the proof of Theorem 8.6. -/
+
 theorem isFinitaryProjection_le_iff_fixedNbhd_subsystem {a b : ApproximableMap E E}
     (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
     a ≤ b ↔ fixedNbhd a ◁ fixedNbhd b := by
@@ -37,15 +32,6 @@ theorem isFinitaryProjection_le_iff_fixedNbhd_subsystem {a b : ApproximableMap E
     have hback := (finitaryProjectionSubsystemEquiv E).symm.monotone hle
     rwa [OrderIso.symm_apply_apply, OrderIso.symm_apply_apply] at hback
 
-/-- **Exercise 8.16 (Scott 1981, PRG-19), in full.**
-
-Part 1: for finitary projections `a, b : E → E`, `a ≤ b ↔ D_a ◁ D_b` (fills the gap at the end of
-Theorem 8.6's proof).
-
-Part 2: if `a : E → E` is computable relative to a `ComputablePresentation P` of `E` — i.e. `E` is
-effectively given (via `P`) and `a` is computable (relative to `P`) — then `D_a` is effectively
-given (finishes off Theorem 8.8's proof). This is `Theorem88m.lean`'s `fixedNbhd_isEffectivelyGiven`,
-cited here under the exercise's name. -/
 theorem exercise_8_16_assembly :
     (∀ {a b : ApproximableMap E E}, FinitaryProjection a → FinitaryProjection b →
         (a ≤ b ↔ fixedNbhd a ◁ fixedNbhd b)) ∧
@@ -55,6 +41,4 @@ theorem exercise_8_16_assembly :
     fun hcomp => fixedNbhd_isEffectivelyGiven hcomp⟩
 end
 
-
 end DomainTheory.NeighbourhoodSystems
-

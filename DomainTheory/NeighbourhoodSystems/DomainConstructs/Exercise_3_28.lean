@@ -10,15 +10,11 @@ section
 open NeighborhoodSystem ApproximableMap
 section
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-/- concordance: source L1635 EXERCISE 3.28 minimal step function -/
-/-- **Exercise 3.28 — the active values.** The set `{ ↑Yᵢ ∣ x ∈ [Xᵢ] }` of principal filters whose
-input `Xᵢ` is a member of `x`. -/
+
 def leastMapVals (L : List (Set α × Set β)) (hL : ∀ p ∈ L, V₀.mem p.1 ∧ V₁.mem p.2)
     (x : V₀.Element) : Set V₁.Element :=
   {z | ∃ (p : Set α × Set β) (hp : p ∈ L), x.mem p.1 ∧ z = V₁.principal (hL p hp).2}
 
-/-- A filter `z` contains the finite intersection `⋂{Yᵢ ∣ X ⊆ Xᵢ}` (inside `Δ₁`) as soon as it
-contains each `Yᵢ` whose input `Xᵢ ⊇ X`. (The element-side analogue of `rel_interYs`.) -/
 theorem Element.mem_interYs_of (z : V₁.Element) {L : List (Set α × Set β)} {X : Set α}
     (hall : ∀ p ∈ L, X ⊆ p.1 → z.mem p.2) : z.mem (interYs V₁.master L X) := by
   induction L with
@@ -40,8 +36,6 @@ theorem Element.mem_interYs_of (z : V₁.Element) {L : List (Set α × Set β)} 
       rw [heq]
       exact ih htail
 
-/-- `f₀(x)` is a *lower* bound of the upper bounds: any upper bound `z` of the active values
-dominates `f₀(x)`. (Uses that `z` then contains `⋂{Yᵢ ∣ X ⊆ Xᵢ}`.) -/
 theorem leastMap_toElementMap_le_of_ub {L : List (Set α × Set β)}
     (hL : ∀ p ∈ L, V₀.mem p.1 ∧ V₁.mem p.2)
     (hcons : ∀ {X}, V₀.mem X → V₁.mem (interYs V₁.master L X)) {x : V₀.Element} {z : V₁.Element}
@@ -56,7 +50,6 @@ theorem leastMap_toElementMap_le_of_ub {L : List (Set α × Set β)}
     exact hle p.2 ⟨(hL p hp).2, subset_rfl⟩
   exact z.up_mem hzint hY'mem hsub
 
-/-- Each active value `↑Yᵢ` (with `Xᵢ ∈ x`) approximates `f₀(x)`, because `Yᵢ ∈ f₀(x)`. -/
 theorem val_le_leastMap_toElementMap {L : List (Set α × Set β)}
     (hL : ∀ p ∈ L, V₀.mem p.1 ∧ V₁.mem p.2)
     (hcons : ∀ {X}, V₀.mem X → V₁.mem (interYs V₁.master L X)) {x : V₀.Element}
@@ -67,7 +60,6 @@ theorem val_le_leastMap_toElementMap {L : List (Set α × Set β)}
   intro Z hZ
   exact ((leastMap L hL hcons).toElementMap x).up_mem hmem hZ.1 hZ.2
 
-/-- The active values are bounded (by `f₀(x)`). -/
 theorem leastMapVals_bounded {L : List (Set α × Set β)} (hL : ∀ p ∈ L, V₀.mem p.1 ∧ V₁.mem p.2)
     (hcons : ∀ {X}, V₀.mem X → V₁.mem (interYs V₁.master L X)) (x : V₀.Element) :
     V₁.Bounded (leastMapVals L hL x) := by
@@ -75,8 +67,6 @@ theorem leastMapVals_bounded {L : List (Set α × Set β)} (hL : ∀ p ∈ L, V�
   rintro w ⟨p, hp, hp1x, rfl⟩
   exact val_le_leastMap_toElementMap hL hcons hp hp1x
 
-/-- **Exercise 3.28 (Scott 1981, PRG-19).** The least map's elementwise action is the least upper
-bound of the active principal filters: `f₀(x) = ⊔ { ↑Yᵢ ∣ x ∈ [Xᵢ] }`. -/
 theorem toElementMap_leastMap_eq_sSup (L : List (Set α × Set β))
     (hL : ∀ p ∈ L, V₀.mem p.1 ∧ V₁.mem p.2)
     (hcons : ∀ {X}, V₀.mem X → V₁.mem (interYs V₁.master L X)) (x : V₀.Element) :

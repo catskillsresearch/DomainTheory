@@ -20,17 +20,13 @@ public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
-
 
 theorem IsRE.Scomb : IsRE Scomb := by
   have hmem : REPred fun q : ℕ × ℕ =>

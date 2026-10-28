@@ -9,9 +9,7 @@ section
 open NeighborhoodSystem ApproximableMap
 variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem
-/- concordance: source L4771 PROPOSITION 8.2 retractions from subdomains -/
-/-- **Proposition 8.2 (Scott 1981, PRG-19), packaged.** `D ◁ E` induces a retraction `a` on `E`
-whose fixed-point set is (order-isomorphic to) `|D|`. -/
+
 theorem retraction_of_subsystem (h : D ◁ E) :
     Retraction (retractionOfSubsystem h) ∧
       Nonempty (D.Element ≃o {y : E.Element // (retractionOfSubsystem h).toElementMap y = y}) :=
@@ -94,9 +92,6 @@ open NeighborhoodSystem ApproximableMap
 universe u
 variable {α : Type u} {D E : NeighborhoodSystem α}
 
-/-- **Definition 8.3, second clause (Scott 1981, PRG-19).** A retraction `a : E → E` is *finitary*
-iff its fixed-point set `{y ∈ |E| ∣ a(y) = y}` — ordered by the inherited inclusion `⊑` — is
-isomorphic to (the element poset of) some neighbourhood system. -/
 def IsFinitary (a : ApproximableMap E E) : Prop :=
   ∃ (β : Type u) (F : NeighborhoodSystem β),
     Nonempty ({y : E.Element // a.toElementMap y = y} ≃o F.Element)

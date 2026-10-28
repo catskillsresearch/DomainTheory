@@ -15,7 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-/-- Combinatory primitive-recursion step `λa λf λu λn. n ⊃ a, f(n−1)(u(n−1))`. -/
+
 def primRecStepTerm : Term :=
   .lam 0 (.lam 1 (.lam 2 (.lam 3
     (.cond (.var 3) (.var 0)

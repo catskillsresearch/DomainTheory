@@ -14,9 +14,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise510
 section
 namespace Exercise619
 variable {D₀ D₁ : NeighborhoodSystem Str}
-/- concordance: source L4115 EXERCISE 6.21 coalesced sum and smash -/
-/-- **Exercise 6.21 — the coalesced sum system `𝒟₀ ⊕ 𝒟₁` over `{0,1}*`.** As `sumTok`, but the
-improper copies `0Δ₀`, `1Δ₁` are removed (`X ≠ Δ₀`, `Y ≠ Δ₁`), so the two bottoms are identified. -/
+
 def oplusTok (D₀ D₁ : NeighborhoodSystem Str)
     (h₀ : ∀ X, D₀.mem X → X.Nonempty) (h₁ : ∀ Y, D₁.mem Y → Y.Nonempty) :
     NeighborhoodSystem Str where
@@ -92,7 +90,6 @@ theorem oplusTok_nonempty : ∀ W, (oplusTok D₀ D₁ h₀ h₁).mem W → W.No
   · exact embBit_nonempty (h₀ X hX)
   · exact embBit_nonempty (h₁ Y hY)
 
-/-- The **coalesced sum object** `𝒟₀ ⊕ 𝒟₁`. -/
 def ScottSys.oplus (A₀ A₁ : ScottSys) : ScottSys :=
   ⟨oplusTok A₀.sys A₁.sys A₀.ne A₁.ne, oplusTok_nonempty⟩
 
@@ -110,10 +107,8 @@ variable {A₀ A₁ B₀ B₁ : ScottSys}
 
 variable {C₀ C₁ : ScottSys}
 
-/-- n-ary coalesced sum `T₀ ⊕ T₁ ⊕ ⋯ ⊕ Tₙ`. -/
 def GExpr.naryOplus : GExpr → List GExpr → GExpr := GExpr.naryOp GExpr.oplus
 
-/-- **`f₀ ⊕ f₁`, the action of the coalesced sum on maps.** -/
 def oplusMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys) :
     ApproximableMap (A₀.oplus A₁).sys (B₀.oplus B₁).sys where
   rel W W' :=
@@ -193,9 +188,6 @@ variable {D₀ D₁ : NeighborhoodSystem Str}
 
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
-/-- **Exercise 6.21 — the smash product system `𝒟₀ ⊗ 𝒟₁` over `{0,1}*`.** As `prodTok`, but proper
-rectangles must avoid both top coordinates (`X ≠ Δ₀`, `Y ≠ Δ₁`); the full top `M = prodTokNbhd Δ₀ Δ₁`
-is kept as the master. -/
 def otimesTok (D₀ D₁ : NeighborhoodSystem Str) : NeighborhoodSystem Str where
   mem W := W = prodTokNbhd D₀.master D₁.master ∨
     (∃ X Y, D₀.mem X ∧ D₁.mem Y ∧ X ≠ D₀.master ∧ Y ≠ D₁.master ∧ W = prodTokNbhd X Y)
@@ -237,7 +229,6 @@ theorem otimesTok_mem_prod {X Y : Set Str} (hX : D₀.mem X) (hY : D₁.mem Y)
 theorem otimesTok_nonempty : ∀ W, (otimesTok D₀ D₁).mem W → W.Nonempty := by
   rintro W (rfl | ⟨X, Y, -, -, -, -, rfl⟩) <;> exact ⟨[], mem_prodTokNbhd_nil⟩
 
-/-- The **smash product object** `𝒟₀ ⊗ 𝒟₁`. -/
 def ScottSys.otimes (A₀ A₁ : ScottSys) : ScottSys :=
   ⟨otimesTok A₀.sys A₁.sys, otimesTok_nonempty⟩
 
@@ -255,7 +246,6 @@ variable {A₀ A₁ B₀ B₁ : ScottSys}
 
 variable {C₀ C₁ : ScottSys}
 
-/-- **`Λ ∈ tok(C)` for every constant `C` occurring in `T`.** -/
 def GExpr.RootedConst : GExpr → Prop
   | .const C => ([] : Str) ∈ C.sys.master
   | .var => True
@@ -264,8 +254,6 @@ def GExpr.RootedConst : GExpr → Prop
   | .oplus a b => a.RootedConst ∧ b.RootedConst
   | .otimes a b => a.RootedConst ∧ b.RootedConst
 
-/-- **The token-level master recursion for `GExpr`.** All four binary operations share the same body
-(`sumTokMaster = prodTokNbhd` on masters). -/
 def gFun : GExpr → Set Str → Set Str
   | .const C, _ => C.sys.master
   | .var, Γ => Γ
@@ -274,15 +262,12 @@ def gFun : GExpr → Set Str → Set Str
   | .oplus a b, Γ => insert ([] : Str) (embBit false (gFun a Γ) ∪ embBit true (gFun b Γ))
   | .otimes a b, Γ => insert ([] : Str) (embBit false (gFun a Γ) ∪ embBit true (gFun b Γ))
 
-/-- The **Kleene iteration** `gFunⁿ({Λ})`. -/
 def gIter (T : GExpr) : ℕ → Set Str
   | 0 => {([] : Str)}
   | n + 1 => gFun T (gIter T n)
 
-/-- n-ary smash product `T₀ ⊗ T₁ ⊗ ⋯ ⊗ Tₙ`. -/
 def GExpr.naryOtimes : GExpr → List GExpr → GExpr := GExpr.naryOp GExpr.otimes
 
-/-- **The action of `T` on objects.** -/
 def GExpr.obj : GExpr → ScottSys → ScottSys
   | .const D, _ => D
   | .var, X => X
@@ -291,7 +276,6 @@ def GExpr.obj : GExpr → ScottSys → ScottSys
   | .oplus a b, X => (a.obj X).oplus (b.obj X)
   | .otimes a b, X => (a.obj X).otimes (b.obj X)
 
-/-- **`f₀ ⊗ f₁`, the action of the smash product on maps.** -/
 def otimesMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys) :
     ApproximableMap (A₀.otimes A₁).sys (B₀.otimes B₁).sys where
   rel W W' :=
@@ -340,7 +324,6 @@ def otimesMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : Approximable
           exact Or.inr ⟨Xz, Yz, Xz', Yz', f₀.mono hr0 hXzX hX'Xz' hXz hXz',
             f₁.mono hr1 hYzY hY'Yz' hYz hYz', hXzne, hYzne, hXz'ne, hYz'ne, rfl, rfl⟩
 
-/-- **The action of `T` on maps.** -/
 def GExpr.map : (T : GExpr) → {X Y : ScottSys} → ApproximableMap X.sys Y.sys →
     ApproximableMap (T.obj X).sys (T.obj Y).sys
   | .const D, _, _, _ => idMap D.sys
@@ -350,7 +333,6 @@ def GExpr.map : (T : GExpr) → {X Y : ScottSys} → ApproximableMap X.sys Y.sys
   | .oplus a b, _, _, f => oplusMapTok (a.map f) (b.map f)
   | .otimes a b, _, _, f => otimesMapTok (a.map f) (b.map f)
 
-/-- `gFun T Γ = tok(T({Γ}))`. -/
 theorem gFun_eq_master : (T : GExpr) → {Γ : Set Str} → (h : Γ.Nonempty) →
     gFun T Γ = (T.obj (singletonSys Γ h)).sys.master
   | .const _, _, _ => rfl
@@ -376,7 +358,6 @@ theorem gFun_eq_master : (T : GExpr) → {Γ : Set Str} → (h : Γ.Nonempty) �
             ∪ embBit true ((b.obj (singletonSys Γ h)).sys.master))
       rw [gFun_eq_master a h, gFun_eq_master b h]
 
-/-- **`λΓ. tok(T({Γ}))` is monotone.** -/
 theorem gFun_mono (T : GExpr) {Γ Γ' : Set Str} (h : Γ ⊆ Γ') : gFun T Γ ⊆ gFun T Γ' := by
   induction T with
   | const C => exact subset_rfl
@@ -386,7 +367,6 @@ theorem gFun_mono (T : GExpr) {Γ Γ' : Set Str} (h : Γ ⊆ Γ') : gFun T Γ �
   | oplus a b ih₀ ih₁ => exact insertTag_mono ih₀ ih₁
   | otimes a b ih₀ ih₁ => exact insertTag_mono ih₀ ih₁
 
-/-- **`λΓ. tok(T({Γ}))` is continuous on `{Γ ∣ Λ ∈ Γ}`.** -/
 theorem gFun_continuous (T : GExpr) {ℱ : Set (Set Str)} {U : Set Str}
     (_hdir : DirectedOn (· ⊆ ·) ℱ) (hne : ℱ.Nonempty)
     (hU : ∀ w, w ∈ U ↔ ∃ Γ ∈ ℱ, w ∈ Γ) :
@@ -429,7 +409,6 @@ theorem gIter_mono (T : GExpr) (hT : T.RootedConst) {m n : ℕ} (hmn : m ≤ n) 
   | refl => exact subset_rfl
   | step _ ih => intro x hx; exact gIter_mono_step T hT _ (ih hx)
 
-/-- The Kleene union is a **fixed point** of `λΓ. tok(T({Γ}))`. -/
 theorem gFun_iter_fixed (T : GExpr) (hT : T.RootedConst) :
     gFun T (⋃ n, gIter T n) = ⋃ n, gIter T n := by
   have hstep := gIter_mono_step T hT
@@ -452,14 +431,10 @@ theorem gFun_iter_fixed (T : GExpr) (hT : T.RootedConst) :
     rw [Set.mem_iUnion] at hw; obtain ⟨n, hn⟩ := hw
     exact ⟨gIter T n, ⟨n, rfl⟩, hstep n hn⟩
 
-/-- **Exercise 6.21/6.20 (token level).** For any `GExpr` `T` whose constants contain `Λ`, there is a
-set `Γ` with `Λ ∈ Γ` and `Γ = tok(T({Γ}))`. -/
 theorem gExists_tok_fixedPoint (T : GExpr) (hT : T.RootedConst) :
     ∃ Γ : Set Str, ([] : Str) ∈ Γ ∧ gFun T Γ = Γ :=
   ⟨⋃ n, gIter T n, Set.mem_iUnion.mpr ⟨0, nil_mem_gIter T hT 0⟩, gFun_iter_fixed T hT⟩
 
-/-- **Exercise 6.21/6.20 (object level): `{Γ} ◁ T({Γ})`, so Theorem 6.14 applies** for any construct
-`T` built from constants, identity, `+`, `×`, `⊕`, `⊗`. -/
 theorem gExists_singleton_subsystem (T : GExpr) (hT : T.RootedConst) :
     ∃ (Γ : Set Str) (h : Γ.Nonempty),
       (singletonSys Γ h).sys ◁ (T.obj (singletonSys Γ h)).sys := by
@@ -538,8 +513,6 @@ variable {A₀ A₁ B₀ B₁ : ScottSys}
 
 variable {C₀ C₁ : ScottSys}
 
-/-- The `Λ ∈ tok` side-condition is preserved by any n-ary fold whose binary operation preserves it
-(all four of `+`, `×`, `⊕`, `⊗` do, definitionally). -/
 theorem GExpr.naryOp_rootedConst {op : GExpr → GExpr → GExpr}
     (hop : ∀ x y, (op x y).RootedConst ↔ x.RootedConst ∧ y.RootedConst) :
     ∀ (a : GExpr) (l : List GExpr), a.RootedConst → (∀ b ∈ l, b.RootedConst) →
@@ -594,17 +567,12 @@ theorem naryProd_singleton_subsystem (a : GExpr) (l : List GExpr)
       (singletonSys Γ h).sys ◁ ((GExpr.naryProd a l).obj (singletonSys Γ h)).sys :=
   gExists_singleton_subsystem _ (GExpr.naryOp_rootedConst (fun _ _ => Iff.rfl) a l ha hl)
 
-/-- **Every n-ary construct has a solution `Γ = tok(T({Γ}))`** (so `{Γ} ◁ T({Γ})` and 6.14 applies),
-illustrated for the n-ary separated sum; identical for `naryProd`/`naryOplus`/`naryOtimes`. -/
 theorem narySum_singleton_subsystem (a : GExpr) (l : List GExpr)
     (ha : a.RootedConst) (hl : ∀ b ∈ l, b.RootedConst) :
     ∃ (Γ : Set Str) (h : Γ.Nonempty),
       (singletonSys Γ h).sys ◁ ((GExpr.narySum a l).obj (singletonSys Γ h)).sys :=
   gExists_singleton_subsystem _ (GExpr.naryOp_rootedConst (fun _ _ => Iff.rfl) a l ha hl)
 
-/-- **`(g₀ ∘ f₀) ⊕ (g₁ ∘ f₁) = (g₀ ⊕ g₁) ∘ (f₀ ⊕ f₁)`** for **strict** `g₀, g₁`. (Strictness of the
-outer maps is exactly what prevents an intermediate top `f₀(X) = Δ₀'` from being re-expanded — that
-is the categorical reason `⊕` is a functor only on the strict-map category Scott restricts to.) -/
 theorem oplusMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys)
     {g₀ : ApproximableMap B₀.sys C₀.sys} {g₁ : ApproximableMap B₁.sys C₁.sys}
     (hg₀ : IsStrict g₀) (hg₁ : IsStrict g₁) :
@@ -639,7 +607,6 @@ theorem oplusMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : Appr
       · obtain rfl := embBit_injective heq
         exact Or.inr (Or.inr ⟨Y, Y'', ⟨Y', hf, hg⟩, hYne, hY''ne, rfl, rfl⟩)
 
-/-- **`(I ⊕ I) = I`.** -/
 theorem oplusMapTok_id :
     oplusMapTok (idMap A₀.sys) (idMap A₁.sys) = idMap (A₀.oplus A₁).sys := by
   apply ApproximableMap.ext
@@ -664,7 +631,6 @@ theorem oplusMapTok_id :
       · exact absurd hsub (fun h => embBit_not_subset_cross (by decide) (A₀.ne X hX) h)
       · exact Or.inr (Or.inr ⟨Y, Y', ⟨hY, hY', embBit_subset.mp hsub⟩, hYne, hY'ne, rfl, rfl⟩)
 
-/-- **`oplusMapTok` is always strict.** -/
 theorem oplusMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
     (f₁ : ApproximableMap A₁.sys B₁.sys) : IsStrict (oplusMapTok f₀ f₁) := by
   rintro Y (⟨-, rfl⟩ | ⟨X, X', -, -, -, heq, -⟩ | ⟨Y0, Y', -, -, -, heq, -⟩)
@@ -674,7 +640,6 @@ theorem oplusMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
   · have heq' : sumTokMaster A₀.sys A₁.sys = embBit true Y0 := heq
     exact absurd (heq' ▸ nil_mem_sumTokMaster) nil_not_mem_embBit
 
-/-- `oplusMapTok` is monotone in both arguments. -/
 theorem oplusMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
     {f₁ f₁' : ApproximableMap A₁.sys B₁.sys} (h0 : f₀ ≤ f₀') (h1 : f₁ ≤ f₁') :
     oplusMapTok f₀ f₁ ≤ oplusMapTok f₀' f₁' := by
@@ -723,7 +688,6 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-/-- The coalesced sum carries the subsystem relation componentwise. -/
 theorem oplusTok_subsystem (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
     (A₀.oplus A₁).sys ◁ (B₀.oplus B₁).sys := by
   have heqm : sumTokMaster A₀.sys A₁.sys = sumTokMaster B₀.sys B₁.sys := by
@@ -767,7 +731,6 @@ variable {A₀ A₁ B₀ B₁ : ScottSys}
 
 variable {C₀ C₁ : ScottSys}
 
-/-- **`(g₀ ∘ f₀) ⊗ (g₁ ∘ f₁) = (g₀ ⊗ g₁) ∘ (f₀ ⊗ f₁)`** for **strict** `g₀, g₁`. -/
 theorem otimesMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys)
     {g₀ : ApproximableMap B₀.sys C₀.sys} {g₁ : ApproximableMap B₁.sys C₁.sys}
     (hg₀ : IsStrict g₀) (hg₁ : IsStrict g₁) :
@@ -798,7 +761,6 @@ theorem otimesMapTok_comp (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : App
         exact Or.inr ⟨X, Y, X'', Y'', ⟨X', hf0, hg0⟩, ⟨Y', hf1, hg1⟩,
           hXne, hYne, hX''ne, hY''ne, rfl, rfl⟩
 
-/-- **`(I ⊗ I) = I`.** -/
 theorem otimesMapTok_id :
     otimesMapTok (idMap A₀.sys) (idMap A₁.sys) = idMap (A₀.otimes A₁).sys := by
   apply ApproximableMap.ext
@@ -819,7 +781,6 @@ theorem otimesMapTok_id :
         exact Or.inr ⟨X, Y, X', Y', ⟨hX, hX', hsX⟩, ⟨hY, hY', hsY⟩,
           hXne, hYne, hX'ne, hY'ne, rfl, rfl⟩
 
-/-- **Functor law 1 — `T(I_X) = I_{T(X)}`.** -/
 theorem GExpr.map_id : (T : GExpr) → (X : ScottSys) → T.map (idMap X.sys) = idMap (T.obj X).sys
   | .const _, _ => rfl
   | .var, _ => rfl
@@ -838,7 +799,6 @@ theorem GExpr.map_id : (T : GExpr) → (X : ScottSys) → T.map (idMap X.sys) = 
           = idMap ((a.obj X).otimes (b.obj X)).sys
       rw [a.map_id X, b.map_id X, otimesMapTok_id]
 
-/-- **`otimesMapTok` is always strict.** -/
 theorem otimesMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
     (f₁ : ApproximableMap A₁.sys B₁.sys) : IsStrict (otimesMapTok f₀ f₁) := by
   rintro Y (⟨-, rfl⟩ | ⟨X, Y0, X', Y', -, -, hXne, -, -, -, heq, -⟩)
@@ -847,7 +807,6 @@ theorem otimesMapTok_isStrict (f₀ : ApproximableMap A₀.sys B₀.sys)
     obtain ⟨h, -⟩ := prodTokNbhd_injective heq'
     exact absurd h.symm hXne
 
-/-- **Every `T` preserves strictness.** -/
 theorem GExpr.map_isStrict : (T : GExpr) → {X Y : ScottSys} → (f : ApproximableMap X.sys Y.sys) →
     IsStrict f → IsStrict (T.map f)
   | .const _, _, _, _, _ => isStrict_idMap
@@ -857,9 +816,6 @@ theorem GExpr.map_isStrict : (T : GExpr) → {X Y : ScottSys} → (f : Approxima
   | .oplus a b, _, _, f, _ => oplusMapTok_isStrict (a.map f) (b.map f)
   | .otimes a b, _, _, f, _ => otimesMapTok_isStrict (a.map f) (b.map f)
 
-/-- **Functor law 2 — `T(g ∘ f) = T(g) ∘ T(f)` for strict `g`.** Together with `map_id`, *these are
-all functors* of the strict-map category. The strictness of `g` is needed (and only) for the
-coalesced `⊕`/`⊗`, whose composition law `oplusMapTok_comp`/`otimesMapTok_comp` requires it. -/
 theorem GExpr.map_comp : (T : GExpr) → {X Y Z : ScottSys} → (f : ApproximableMap X.sys Y.sys) →
     {g : ApproximableMap Y.sys Z.sys} → IsStrict g → T.map (g.comp f) = (T.map g).comp (T.map f)
   | .const D, _, _, _, _, _, _ => (idMap_comp (idMap D.sys)).symm
@@ -885,7 +841,6 @@ theorem GExpr.map_comp : (T : GExpr) → {X Y Z : ScottSys} → (f : Approximabl
       rw [a.map_comp f hg, b.map_comp f hg]
       · exact otimesMapTok_comp _ _ (a.map_isStrict g hg) (b.map_isStrict g hg)
 
-/-- `otimesMapTok` is monotone in both arguments. -/
 theorem otimesMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
     {f₁ f₁' : ApproximableMap A₁.sys B₁.sys} (h0 : f₀ ≤ f₀') (h1 : f₁ ≤ f₁') :
     otimesMapTok f₀ f₁ ≤ otimesMapTok f₀' f₁' := by
@@ -894,7 +849,6 @@ theorem otimesMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
   · exact Or.inl ⟨hW, rfl⟩
   · exact Or.inr ⟨X, Y, X', Y', h0 X X' hr0, h1 Y Y' hr1, hXne, hYne, hX'ne, hY'ne, rfl, rfl⟩
 
-/-- **`λf. T(f)` is monotone** (the order half of *continuous on maps*). -/
 theorem GExpr.map_mono : (T : GExpr) → {X Y : ScottSys} → {f f' : ApproximableMap X.sys Y.sys} →
     f ≤ f' → T.map f ≤ T.map f'
   | .const _, _, _, _, _, _ => le_rfl
@@ -904,7 +858,6 @@ theorem GExpr.map_mono : (T : GExpr) → {X Y : ScottSys} → {f f' : Approximab
   | .oplus a b, _, _, _, _, h => oplusMapTok_mono (a.map_mono h) (b.map_mono h)
   | .otimes a b, _, _, _, _, h => otimesMapTok_mono (a.map_mono h) (b.map_mono h)
 
-/-- Forward direction of continuity on maps for `GExpr`. -/
 theorem GExpr.map_continuous_mp : (T : GExpr) → {I : Type} → {X Y : ScottSys} →
     {g : I → ApproximableMap X.sys Y.sys} → {f : ApproximableMap X.sys Y.sys} →
     [Nonempty I] → (∀ i j, ∃ k, g i ≤ g k ∧ g j ≤ g k) →
@@ -943,7 +896,6 @@ theorem GExpr.map_continuous_mp : (T : GExpr) → {I : Type} → {X Y : ScottSys
         exact ⟨k, Or.inr ⟨P, Q, P', Q', (a.map_mono hik) P P' hi, (b.map_mono hjk) Q Q' hj,
           hPne, hQne, hP'ne, hQ'ne, rfl, rfl⟩⟩
 
-/-- **`λf. T(f)` is continuous on maps.** -/
 theorem GExpr.map_continuous (T : GExpr) {I : Type} [Nonempty I] {X Y : ScottSys}
     (g : I → ApproximableMap X.sys Y.sys) (f : ApproximableMap X.sys Y.sys)
     (hdir : ∀ i j, ∃ k, g i ≤ g k ∧ g j ≤ g k)
@@ -983,7 +935,6 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-/-- The smash product carries the subsystem relation componentwise. -/
 theorem otimesTok_subsystem (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
     (A₀.otimes A₁).sys ◁ (B₀.otimes B₁).sys := by
   have heqm : prodTokNbhd A₀.sys.master A₁.sys.master
@@ -1023,7 +974,6 @@ variable {A₀ A₁ B₀ B₁ : ScottSys}
 
 variable {C₀ C₁ : ScottSys}
 
-/-- **`λX. T(X)` is monotone on domains.** -/
 theorem GExpr.obj_subsystem : (T : GExpr) → {X Y : ScottSys} → X.sys ◁ Y.sys →
     (T.obj X).sys ◁ (T.obj Y).sys
   | .const D, _, _, _ => Subsystem.refl D.sys
@@ -1033,7 +983,6 @@ theorem GExpr.obj_subsystem : (T : GExpr) → {X Y : ScottSys} → X.sys ◁ Y.s
   | .oplus a b, _, _, h => oplusTok_subsystem (a.obj_subsystem h) (b.obj_subsystem h)
   | .otimes a b, _, _, h => otimesTok_subsystem (a.obj_subsystem h) (b.obj_subsystem h)
 
-/-- Forward direction of continuity on domains for `GExpr`. -/
 theorem GExpr.obj_continuous_mp : (T : GExpr) → {ℱ : Set ScottSys} → {U : ScottSys} →
     DirectedOn (fun a b => a.sys ◁ b.sys) ℱ → ℱ.Nonempty →
     (∀ D ∈ ℱ, D.sys ◁ U.sys) → (∀ X, U.sys.mem X ↔ ∃ D ∈ ℱ, D.sys.mem X) →
@@ -1077,7 +1026,6 @@ theorem GExpr.obj_continuous_mp : (T : GExpr) → {ℱ : Set ScottSys} → {U : 
         · exact fun heq => hXne (heq.trans (a.obj_subsystem (hsub D₃ hD₃)).master_eq)
         · exact fun heq => hYne (heq.trans (b.obj_subsystem (hsub D₃ hD₃)).master_eq)
 
-/-- **`λD. T(D)` is continuous on domains.** -/
 theorem GExpr.obj_continuous (T : GExpr) {ℱ : Set ScottSys} {U : ScottSys}
     (hdir : DirectedOn (fun a b => a.sys ◁ b.sys) ℱ) (hne : ℱ.Nonempty)
     (hsub : ∀ D ∈ ℱ, D.sys ◁ U.sys) (hU : ∀ X, U.sys.mem X ↔ ∃ D ∈ ℱ, D.sys.mem X)
@@ -1091,4 +1039,3 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 end
-

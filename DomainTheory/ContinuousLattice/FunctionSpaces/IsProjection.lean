@@ -12,7 +12,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -23,8 +22,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 section Projections
 
-/-- **Scott 1972, Definition 3.11.** `J_D = { j ∈ [D → D] : j = j ∘ j ⊑ id }`: the Scott-continuous
-projections of `D` (idempotent self-maps below the identity), as a predicate on `[D → D]`. -/
 def IsProjection (j : ScottMap D D) : Prop :=
   j.comp j = j ∧ j ≤ ScottMap.idMap
 

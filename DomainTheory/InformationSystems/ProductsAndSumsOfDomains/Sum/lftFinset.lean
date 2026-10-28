@@ -20,7 +20,6 @@ namespace InfoSys
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Left projection `lft u` (Scott 6.3). -/
 def lftFinset (u : Finset (SumToken α β)) : Finset α :=
   Multiset.foldr lftInsert (∅ : Finset α) u.1
 
@@ -37,7 +36,6 @@ theorem mem_lftFinset {u : Finset (SumToken α β)} {x : α} :
     exact ⟨.left x, hx, rfl⟩
 
 omit [DecidableEq β] in
-
 
 theorem lftFinset.empty : lftFinset (∅ : Finset (SumToken α β)) = ∅ := by
   ext x
@@ -128,6 +126,5 @@ theorem lftFinset.singleton_left (x : α) :
   exact ⟨SumToken.left.inj, fun h => h ▸ rfl⟩
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

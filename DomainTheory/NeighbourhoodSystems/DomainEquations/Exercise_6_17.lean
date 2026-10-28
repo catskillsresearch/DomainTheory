@@ -20,9 +20,7 @@ section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 open Example62C in
-/- concordance: source L4077 EXERCISE 6.17 algebras for sequence domains -/
-/-- **Exercise 6.17 — the functor `T(X) = 𝟙 + X + X`** on the category of `∅`-free domains and strict
-maps. On objects, `T(D) = 𝟙 + D + D` (Example 6.2's three-way sum); on maps, `T(f) = I_𝟙 + f + f`. -/
+
 abbrev Tc : Endofunctor StrictDomainObj.{w} where
   obj := tcObj
   map := tcMapHom
@@ -47,7 +45,7 @@ abbrev Tc : Endofunctor StrictDomainObj.{w} where
       (idMap unitSys) f.1 f.1 := rfl
 
 open Example44 Example62C ExampleB in
-/-- `C` (Example 4.4: finite-or-infinite binary sequences) as an object of the `∅`-free category. -/
+
 abbrev Cobj : StrictDomainObj.{0} := ⟨Str, C, C_nonempty⟩
 
 end
@@ -61,7 +59,6 @@ open Example44 ExampleB Example62
 
 @[simp] theorem ccEquiv_apply (x : C.Element) : ccEquiv x = toCC x := rfl
 
-/-- `(b·z).mem (bX) ↔ z.mem X`: the `b`-successor's filter restricted to the `b`-copy is `z`. -/
 theorem consMap_mem_embBit {b : Bool} {z : C.Element} {X : Set Str} (hX : C.mem X) :
     ((consMap b).toElementMap z).mem (embBit b X) ↔ z.mem X := by
   constructor
@@ -72,8 +69,6 @@ theorem consMap_mem_embBit {b : Bool} {z : C.Element} {X : Set Str} (hX : C.mem 
     refine ⟨X, hz, z.sub hz, memC_embBit b hX, ?_⟩
     rw [← embBit_eq_prepend]
 
-/-- `(b·z)` never meets the `(¬b)`-copy: `0z` avoids the `1`-copies and vice versa (used to discharge
-the cross-tag cases in `toCC_consMap`). -/
 theorem consMap_not_mem_embBit_ne {b c : Bool} (hbc : b ≠ c) {z : C.Element} {X : Set Str} :
     ¬ ((consMap b).toElementMap z).mem (embBit c X) := by
   rintro ⟨X', hzX', hX'mem, _, hsub⟩
@@ -82,7 +77,6 @@ theorem consMap_not_mem_embBit_ne {b c : Bool} (hbc : b ≠ c) {z : C.Element} {
   obtain ⟨w, hw, heq⟩ := hsub ⟨a, rfl, ha⟩
   rw [List.cons.injEq] at hw; exact hbc hw.1
 
-/-- `(b·z)` avoids the terminator `{Λ}` (since `bσ ≠ Λ`). -/
 theorem consMap_not_mem_nil {b : Bool} {z : C.Element} :
     ¬ ((consMap b).toElementMap z).mem ({[]} : Set Str) := by
   rintro ⟨X', hzX', hX'mem, _, hsub⟩
@@ -103,13 +97,10 @@ open Example44 Example62C ExampleB Exercise419 Exercise516
 
 variable (B : TAlgebra Tc)
 
-/-- The distinguished point `e = k(Λ)`: the image under `k` of the terminator (`𝟙`-injection). -/
 def descE : B.carrier.sys.Element :=
   B.str.1.toElementMap (sinj0 (h₀ := Example62C.unitSys_nonempty) (h₁ := B.carrier.nonempty)
     (h₂ := B.carrier.nonempty) unitSys.bot)
 
-/-- The `b`-th successor operation `f_b = k ∘ inj_b`: `f₀` via the `0`-copy (`inj₁`), `f₁` via the
-`1`-copy (`inj₂`). -/
 def descF (b : Bool) (y : B.carrier.sys.Element) : B.carrier.sys.Element :=
   B.str.1.toElementMap (cond b
     (sinj2 (h₀ := Example62C.unitSys_nonempty) (h₁ := B.carrier.nonempty) (h₂ := B.carrier.nonempty) y)
@@ -121,7 +112,6 @@ theorem descF_mono (b : Bool) {y y' : B.carrier.sys.Element} (h : y ≤ y') :
   · exact B.str.1.toElementMap_mono (sinj1_mono h)
   · exact B.str.1.toElementMap_mono (sinj2_mono h)
 
-/-- The recursion `φ(Λ)=z`, `φ(b·σ)=f_b(φ(σ))` on a finite string, with base value `z`. -/
 def descVal (z : B.carrier.sys.Element) : Str → B.carrier.sys.Element
   | [] => z
   | b :: σ => descF B b (descVal z σ)
@@ -157,8 +147,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
-/- concordance: source L4075 EXERCISES — Lecture VI exercises -/
--- Exercise617/descMap.lean
+
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
@@ -169,8 +158,6 @@ open Example44 Example62C ExampleB Exercise419 Exercise516
 
 variable (B : TAlgebra Tc)
 
-/-- **The homomorphism `C → E`.** Built by `liftC` from the head-recursion: `φ(σ⊥) = f_{σ}(⊥)` and
-`φ(σ) = f_{σ}(e)`, interpreting `b₀b₁… ↦ f_{b₀}(f_{b₁}(…))`. -/
 def descMap : ApproximableMap C B.carrier.sys :=
   liftC B.carrier.sys (descVal B B.carrier.sys.bot) (descVal B (descE B))
     (fun {_ _} => descMap_hcone B) (fun {_ _} => descMap_hsing B)
@@ -283,7 +270,6 @@ open Example44 Example62C ExampleB Exercise419 Exercise516
 
 variable (B : TAlgebra Tc)
 
-/-- The bundled strict homomorphism `C → E`. -/
 def descStrict : (Cobj ⟶ B.carrier) := ⟨descMap B, descMap_strict B⟩
 
 end Initial
@@ -296,7 +282,6 @@ open Example44 Example62C ExampleB Exercise419 Exercise516
 
 variable (B : TAlgebra Tc)
 
-/-- `T(g)` on `⊥` is `⊥`; precomposed with `k` it is `⊥` (both maps are strict). -/
 theorem genKeyBot (g : ApproximableMap C B.carrier.sys) :
     B.str.1.toElementMap ((sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := Example62C.C_nonempty)
         (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty) (h₁' := B.carrier.nonempty)
@@ -313,7 +298,7 @@ end Initial
 end
 
 section
-/-- The map of an order-isomorphism is strict (an iso of domains preserves `⊥`). -/
+
 theorem isStrict_ofIso {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
     (e : V₀.Element ≃o V₁.Element) : IsStrict (ofIso e) := by
   rw [isStrict_iff_apply_bot, toElementMap_ofIso]
@@ -322,17 +307,14 @@ end
 
 section
 open Example44 Example62C in
-/-- **The `T`-algebra structure on `C`.** `(tcObj Cobj).sys = 𝟙 + C + C` (definitionally Example 6.2's
-`CC`), and the structure map `i : 𝟙 + C + C → C` is the inverse of the domain-equation isomorphism
-`ccEquiv` (Example 6.2), realised as an approximable map by `ofIso`; it is strict by `isStrict_ofIso`.
-Concretely `i` sends the terminator to `Λ̂` and each `b`-copy of `x` to `b·x`. -/
+
 abbrev cStr : ((Tc.obj Cobj) ⟶ Cobj) :=
   ⟨ofIso (by exact ccEquiv.symm), isStrict_ofIso _⟩
 end
 
 section
 open Example44 Example62C in
-/-- **`C` is a `T`-algebra**, `(C, i)` with `T(X) = 𝟙 + X + X`. -/
+
 abbrev Calg : TAlgebra Tc := ⟨Cobj, cStr⟩
 end
 
@@ -341,8 +323,6 @@ namespace Example62C
 
 open Example44 ExampleB Example62
 
-/-- **`toCC ∘ (0·) = inj₁` and `toCC ∘ (1·) = inj₂`.** Prepending the bit `b` to `z` is, across the
-isomorphism `C ≅ 𝟙+C+C`, the injection of `z` into the `b`-th `C`-summand. -/
 theorem toCC_consMap (b : Bool) (z : C.Element) :
     toCC ((consMap b).toElementMap z)
       = cond b
@@ -384,8 +364,6 @@ open Example44 Example62C ExampleB Exercise419 Exercise516
 
 variable (B : TAlgebra Tc)
 
-/-- The composite `inj₀∘(...)` of `T(g)` applied to a successor reduces to the operation `f_b`. The
-single computational step behind both existence and uniqueness, for an *arbitrary* `g`. -/
 theorem genKey (g : ApproximableMap C B.carrier.sys) (b : Bool) (w : C.Element) :
     B.str.1.toElementMap ((sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := Example62C.C_nonempty)
         (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty) (h₁' := B.carrier.nonempty)
@@ -405,7 +383,6 @@ namespace Example62C
 
 open Example44 ExampleB Example62
 
-/-- **`toCC Λ̂ = inj₀`.** The finished empty sequence is the terminator (the `𝟙`-summand). -/
 theorem toCC_strElem_nil :
     toCC (strElem []) = sinj0 (V₁ := C) (V₂ := C) (h₀ := unitSys_nonempty) (h₁ := C_nonempty)
       (h₂ := C_nonempty) unitSys.bot := by
@@ -432,7 +409,6 @@ open Example44 Example62C ExampleB Exercise419 Exercise516
 
 variable (B : TAlgebra Tc)
 
-/-- `T(g)` on the terminator is the terminator; precomposed with `k` it is `e`. -/
 theorem genKey0 (g : ApproximableMap C B.carrier.sys) :
     B.str.1.toElementMap ((sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := Example62C.C_nonempty)
         (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty) (h₁' := B.carrier.nonempty)
@@ -451,7 +427,6 @@ open Example44 Example62C ExampleB Exercise419 Exercise516
 
 variable (B : TAlgebra Tc)
 
-/-- `C`'s algebra map satisfies the recursion. -/
 theorem descMap_satisfiesRec :
     descMap B = (B.str.1.comp (sumMap3 (h₀ := Example62C.unitSys_nonempty)
         (h₁ := Example62C.C_nonempty) (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty)
@@ -487,8 +462,6 @@ open Example44 Example62C ExampleB Exercise419 Exercise516
 
 variable (B : TAlgebra Tc)
 
-/-- **The homomorphism square**, read off at the level of underlying approximable maps:
-`desc ∘ i = k ∘ T(desc)`. -/
 theorem descComm : (descMap B).comp (ofIso ccEquiv.symm)
     = B.str.1.comp (sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := Example62C.C_nonempty)
         (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty) (h₁' := B.carrier.nonempty)
@@ -506,7 +479,6 @@ open Example44 Example62C ExampleB Exercise419 Exercise516
 
 variable (B : TAlgebra Tc)
 
-/-- **The descent homomorphism `(C, i) → (E, k)`** as a `T`-algebra homomorphism. -/
 def descAlgHom : AlgHom Calg B where
   hom := descStrict B
   comm := by
@@ -524,8 +496,6 @@ open Example44 Example62C ExampleB Exercise419 Exercise516
 
 variable (B : TAlgebra Tc)
 
-/-- **Any map satisfying the homomorphism recursion equals `descMap`.** This is *both* the existence
-witness (`descMap` satisfies it) and the uniqueness driver. -/
 theorem rec_determines (g : ApproximableMap C B.carrier.sys)
     (hg : g = (B.str.1.comp (sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := Example62C.C_nonempty)
         (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty) (h₁' := B.carrier.nonempty)
@@ -573,7 +543,6 @@ open Example44 Example62C ExampleB Exercise419 Exercise516
 
 variable (B : TAlgebra Tc)
 
-/-- **Uniqueness.** Any `T`-algebra homomorphism out of `(C, i)` equals `descAlgHom`. -/
 theorem descAlgHom_uniq (h' : AlgHom Calg B) : h' = descAlgHom B := by
   obtain ⟨hom, comm⟩ := h'
   have hg : hom.1 = descMap B := by
@@ -596,10 +565,7 @@ end Initial
 end
 
 section
-/-- **Exercise 6.17 (existence half) — `(C, i)` is an initial `T`-algebra for `T(X) = 𝟙 + X + X`.**
-The descent map `φ : C → E` is the closed-form head-recursion `φ(Λ) = e`, `φ(b·x) = f_b(φ x)`
-(`f_b = k ∘ inj_b`), built choice-free via `liftC`; it is the unique `T`-algebra homomorphism, so `C`
-is determined (up to iso, Proposition 6.6) as the initial algebra of `X ↦ 𝟙 + X + X`. -/
+
 def CisInitial : IsInitial Calg where
   desc := descAlgHom
   uniq := fun B h => descAlgHom_uniq B h
@@ -631,10 +597,8 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Domain
 section
 variable {A : Type} [DecidableEq A]
 
-/-- The token type `A*` of finite `A`-strings. -/
 abbrev Strn (A : Type) := List A
 
-/-- The cone `σA*`: all extensions of `σ`. -/
 def coneN (σ : Strn A) : Set (Strn A) := {w | σ <+: w}
 
 omit [DecidableEq A] in
@@ -671,7 +635,6 @@ theorem coneN_trichotomy (σ τ : Strn A) :
     · exact hστ h
     · exact hτσ h))
 
-/-- Membership in `Cₐ`: a cone `σA*` or a singleton `{σ}`. -/
 def memCn (X : Set (Strn A)) : Prop := (∃ σ, X = coneN σ) ∨ (∃ σ, X = {σ})
 
 omit [DecidableEq A] in
@@ -718,7 +681,6 @@ theorem nestedOrDisjointN : NestedOrDisjoint (memCn (A := A)) := by
       rintro rfl h2
       exact h h2
 
-/-- **The generic domain `Cₐ`** of finite-or-infinite `A`-sequences. -/
 abbrev Cn (A : Type) [DecidableEq A] : NeighborhoodSystem (Strn A) :=
   NeighborhoodSystem.ofNestedOrDisjoint memCn Set.univ
     ⟨[], Set.mem_univ _⟩ (Or.inl ⟨[], coneN_nil.symm⟩) nestedOrDisjointN
@@ -728,13 +690,11 @@ abbrev Cn (A : Type) [DecidableEq A] : NeighborhoodSystem (Strn A) :=
 
 @[simp] theorem Cn_master : (Cn A).master = (Set.univ : Set (Strn A)) := rfl
 
-/-- `Cₐ` is `∅`-free: every neighbourhood is non-empty (cones and singletons are inhabited). -/
 theorem Cn_nonempty : ∀ X, (Cn A).mem X → X.Nonempty := by
   rintro X (⟨σ, rfl⟩ | ⟨σ, rfl⟩)
   · exact ⟨σ, List.prefix_rfl⟩
   · exact ⟨σ, rfl⟩
 
-/-- `σX = {στ ∣ τ ∈ X}`. -/
 def prependN (σ : Strn A) (X : Set (Strn A)) : Set (Strn A) := {w | ∃ τ, τ ∈ X ∧ w = σ ++ τ}
 
 omit [DecidableEq A] in
@@ -774,7 +734,6 @@ theorem memCn_prependN (σ : Strn A) {X : Set (Strn A)} (hX : memCn X) : memCn (
   · exact Or.inl ⟨σ ++ ρ, prependN_coneN σ ρ⟩
   · exact Or.inr ⟨σ ++ ρ, prependN_singleton σ ρ⟩
 
-/-- **The successor `x ↦ a·x`** prepending the letter `a`: `X (a·x) Y ↔ aX ⊆ Y`. -/
 def consMapN (a : A) : ApproximableMap (Cn A) (Cn A) where
   rel X Y := memCn X ∧ memCn Y ∧ prependN [a] X ⊆ Y
   rel_dom h := h.1
@@ -799,12 +758,10 @@ universe v
 
 variable {β : Type v} {γ : Type v}
 
-/-- Tokens of the indexed sum `𝟙 + Σ_a β`. -/
 abbrev SigTok (A : Type) (β : Type v) := Option (Unit ⊕ (A × β))
 
 end SumSig
 
-/-- The partial element `σ⊥ = ↑σA*`. -/
 def strBotN (σ : Strn A) : (Cn A).Element := (Cn A).principal (Cn_mem.mpr (memCn_coneN σ))
 
 theorem consMapN_strBot (a : A) (σ : Strn A) :
@@ -822,7 +779,6 @@ theorem consMapN_strBot (a : A) (σ : Strn A) :
     rw [show prependN [a] (coneN σ) = coneN (a :: σ) by rw [prependN_coneN]; rfl]
     exact hsub
 
-/-- The total element `σ = ↑{σ}`. -/
 def strElemN (σ : Strn A) : (Cn A).Element := (Cn A).principal (Cn_mem.mpr (memCn_singleton σ))
 
 theorem consMapN_strElem (a : A) (σ : Strn A) :
@@ -846,10 +802,8 @@ universe v
 
 variable {β : Type v} {γ : Type v}
 
-/-- The token `t` in the `a`-indexed copy. -/
 def tc (a : A) (t : β) : SigTok A β := some (Sum.inr (a, t))
 
-/-- The `a`-indexed tagged copy `aX`. -/
 def jc (a : A) (X : Set β) : Set (SigTok A β) := {w | ∃ t, w = tc a t ∧ t ∈ X}
 
 omit [DecidableEq A] in
@@ -866,10 +820,8 @@ omit [DecidableEq A] in
   · rintro ⟨t', heq, ht'⟩; obtain ⟨-, rfl⟩ := tc_injective heq; exact ht'
   · intro ht; exact ⟨t, rfl, ht⟩
 
-/-- The lone `𝟙`-token. -/
 def tu : SigTok A β := some (Sum.inl ())
 
-/-- The `𝟙`-copy neighbourhood (the image of `univ : Set Unit`). -/
 def jU : Set (SigTok A β) := {tu}
 
 omit [DecidableEq A] in
@@ -945,8 +897,7 @@ theorem jc_injective {a : A} {X X' : Set β} (h : (jc a X : Set (SigTok A β)) =
   Set.Subset.antisymm (jc_subset_jc.mp h.subset) (jc_subset_jc.mp h.symm.subset)
 
 omit [DecidableEq A] in
-/-- Tagged copies determine both index and set: `aX = a'X'` (with `X` non-empty) forces `a=a'`,
-`X=X'`. -/
+
 theorem jc_eq_jc {a a' : A} {X X' : Set β} (hXne : X.Nonempty)
     (heq : (jc a X : Set (SigTok A β)) = jc a' X') : a = a' ∧ X = X' := by
   obtain ⟨t, ht⟩ := hXne
@@ -964,7 +915,6 @@ variable {β : Type v} {γ : Type v}
 
 variable (V : NeighborhoodSystem β)
 
-/-- The master neighbourhood `{Λ} ∪ {tu} ∪ ⋃_a aΔ`. -/
 def masterSig : Set (SigTok A β) :=
   {w | w = none ∨ w = tu ∨ ∃ a t, t ∈ V.master ∧ w = tc a t}
 
@@ -1042,9 +992,6 @@ theorem masterSig_inter_jc {a : A} {X : Set β} (hX : V.mem X) :
     (masterSig V ∩ jc a X : Set (SigTok A β)) = jc a X :=
   Set.inter_eq_right.mpr (jc_subset_masterSig hX)
 
-/-- **The `A`-indexed separated sum `𝟙 + Σ_a V`** over `{Λ} ∪ {tu} ∪ ⋃_a aΔ`, under the standing
-assumption that no neighbourhood of `V` is empty. The alphabet-generic analogue of `sum3 unitSys V V`
-(Example 6.2). -/
 def sumSig (A : Type) [DecidableEq A] (V : NeighborhoodSystem β)
     (h : ∀ X, V.mem X → X.Nonempty) :
     NeighborhoodSystem (SigTok A β) where
@@ -1110,7 +1057,6 @@ variable {V}
 
 variable {h : ∀ X, V.mem X → X.Nonempty}
 
-/-- A `sumSig`-neighbourhood contained in the `𝟙`-copy `jU` is `jU`. -/
 theorem mem_subset_jU_inv {W : Set (SigTok A β)}
     (hW : (sumSig A V h).mem W) (hsub : W ⊆ jU) : W = jU := by
   rcases hW with rfl | rfl | ⟨a', X₂, hX₂, rfl⟩
@@ -1119,7 +1065,6 @@ theorem mem_subset_jU_inv {W : Set (SigTok A β)}
   · obtain ⟨t, ht⟩ := h X₂ hX₂
     exact absurd (hsub (tc_mem_jc.mpr ht)) tc_not_mem_jU
 
-/-- A `sumSig`-neighbourhood contained in an `a`-copy `aX` is itself an `a`-copy. -/
 theorem mem_subset_jc_inv {W : Set (SigTok A β)} {a : A} {X : Set β}
     (hW : (sumSig A V h).mem W) (hsub : W ⊆ jc a X) : ∃ X₂, V.mem X₂ ∧ W = jc a X₂ := by
   rcases hW with rfl | rfl | ⟨a', X₂, hX₂, rfl⟩
@@ -1130,8 +1075,6 @@ theorem mem_subset_jc_inv {W : Set (SigTok A β)} {a : A} {X : Set β}
     obtain ⟨rfl, -⟩ := tc_injective heq
     exact ⟨X₂, hX₂, rfl⟩
 
-/-- The `a`-th copy injection `V ↪ 𝟙+Σ_a V`: send `x∈|V|` to the sum element whose proper
-neighbourhoods are the `a`-copies `aX` with `X∈x`. -/
 def sinjC (a : A) (x : V.Element) : (sumSig A V h).Element where
   mem W := W = masterSig V ∨ ∃ X, V.mem X ∧ W = jc a X ∧ x.mem X
   sub := by
@@ -1157,8 +1100,6 @@ def sinjC (a : A) (x : V.Element) : (sumSig A V h).Element where
         obtain ⟨rfl, -⟩ := tc_injective heq
         exact Or.inr ⟨X', hX', rfl, x.up_mem hx hX' (jc_subset_jc.mp hsub)⟩
 
-/-- The basepoint/`𝟙`-injection: the image of the unique point of `𝟙`. Its proper neighbourhood is
-the `𝟙`-copy `jU`. -/
 def sinjU : (sumSig A V h).Element where
   mem W := W = masterSig V ∨ W = jU
   sub := by
@@ -1207,8 +1148,6 @@ variable {β₀ β₁ β₂ : Type v}
   {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
   {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
 
-/-- **The indexed sum map `Σf = I_𝟙 + Σ_a f`** acting as the identity on the `𝟙`-summand and as `f`
-on each `a`-copy. The generic analogue of `sumMap3 (idMap unitSys) f f`. -/
 def sumMapSig (f : ApproximableMap V₀ V₁) :
     ApproximableMap (sumSig A V₀ h₀) (sumSig A V₁ h₁) where
   rel W W' := (sumSig A V₀ h₀).mem W ∧ (sumSig A V₁ h₁).mem W' ∧
@@ -1267,7 +1206,6 @@ def sumMapSig (f : ApproximableMap V₀ V₁) :
         exact Or.inr (Or.inr ⟨a, X₂, Y'₂, rfl, rfl,
           f.mono hf hX₂X (jc_subset_jc.mp hW'W'₂) hX₂ hY'₂⟩)
 
-/-- The sum map is strict: it sends `⊥ = master` only to `master`. -/
 theorem isStrict_sumMapSig (f : ApproximableMap V₀ V₁) :
     IsStrict (sumMapSig (A := A) (h₀ := h₀) (h₁ := h₁) f) := by
   rintro W' ⟨-, -, hd⟩
@@ -1284,7 +1222,6 @@ theorem isStrict_sumMapSig (f : ApproximableMap V₀ V₁) :
         (W' = masterSig V₁ ∨ (W = jU ∧ W' = jU) ∨
           ∃ a X Y', W = jc a X ∧ W' = jc a Y' ∧ f.rel X Y') := Iff.rfl
 
-/-- **Functoriality (composition): `Σ(g∘f) = Σg ∘ Σf`.** -/
 theorem sumMapSig_comp (g : ApproximableMap V₁ V₂) (f : ApproximableMap V₀ V₁) :
     sumMapSig (A := A) (h₀ := h₀) (h₁ := h₂) (g.comp f)
       = (sumMapSig (A := A) (h₀ := h₁) (h₁ := h₂) g).comp
@@ -1318,7 +1255,6 @@ theorem sumMapSig_comp (g : ApproximableMap V₁ V₂) (f : ApproximableMap V₀
       · obtain ⟨rfl, rfl⟩ := jc_eq_jc (h₁ Y'₀ (f.rel_cod hf)) (hW'eq.symm.trans hW'Y')
         exact Or.inr (Or.inr ⟨a', X, Z'', rfl, rfl, ⟨Y'₀, hf, hg⟩⟩)
 
-/-- **Functoriality (identities): `Σ(I) = I`.** -/
 theorem sumMapSig_id :
     sumMapSig (A := A) (V₀ := V₀) (V₁ := V₀) (h₀ := h₀) (h₁ := h₀) (idMap V₀)
       = idMap (sumSig A V₀ h₀) := by
@@ -1347,7 +1283,6 @@ theorem sumMapSig_id :
         obtain ⟨rfl, -⟩ := tc_injective he
         exact Or.inr (Or.inr ⟨a, X, X', rfl, rfl, hX, hX', jc_subset_jc.mp hsub⟩)
 
-/-- `Σf` on the `a`-copy injection: `(Σf)(inj_a x) = inj_a (f x)`. -/
 theorem sumMapSig_sinjC (f : ApproximableMap V₀ V₁) (a : A) (x : V₀.Element) :
     (sumMapSig (A := A) (h₀ := h₀) (h₁ := h₁) f).toElementMap (sinjC (h := h₀) a x)
       = sinjC (h := h₁) a (f.toElementMap x) := by
@@ -1372,7 +1307,6 @@ theorem sumMapSig_sinjC (f : ApproximableMap V₀ V₁) (a : A) (x : V₀.Elemen
       exact ⟨jc a X, Or.inr ⟨X, x.sub hx, rfl, hx⟩, Or.inr (Or.inr ⟨a, X, x.sub hx, rfl⟩),
         Or.inr (Or.inr ⟨a, Y', f.rel_cod hf, rfl⟩), Or.inr (Or.inr ⟨a, X, Y', rfl, rfl, hf⟩)⟩
 
-/-- `Σf` fixes the basepoint injection. -/
 theorem sumMapSig_sinjU (f : ApproximableMap V₀ V₁) :
     (sumMapSig (A := A) (h₀ := h₀) (h₁ := h₁) f).toElementMap (sinjU (h := h₀))
       = sinjU (h := h₁) := by
@@ -1413,7 +1347,6 @@ theorem sumSig_nonempty {h : ∀ X, V.mem X → X.Nonempty} :
 
 end SumSig
 
-/-- `Tsig` on objects: `Tsig(D) = 𝟙 + Σ_a D`, again `∅`-free (`sumSig_nonempty`). -/
 abbrev tsigObj (A : Type) [DecidableEq A] (D : StrictDomainObj.{0}) : StrictDomainObj.{0} where
   carrier := SigTok A D.carrier
   sys := sumSig A D.sys D.nonempty
@@ -1422,7 +1355,6 @@ abbrev tsigObj (A : Type) [DecidableEq A] (D : StrictDomainObj.{0}) : StrictDoma
 @[simp] theorem tsigObj_sys (A : Type) [DecidableEq A] (D : StrictDomainObj.{0}) :
     (tsigObj A D).sys = sumSig A D.sys D.nonempty := rfl
 
-/-- `Tsig` on maps: `Tsig(f) = I_𝟙 + Σ_a f`, strict by `isStrict_sumMapSig`. -/
 def tsigMapHom (A : Type) [DecidableEq A] {D E : StrictDomainObj.{0}} (f : (D ⟶ E)) :
     ((tsigObj A D) ⟶ (tsigObj A E)) :=
   ⟨sumMapSig (A := A) (h₀ := D.nonempty) (h₁ := E.nonempty) f.1, isStrict_sumMapSig _⟩
@@ -1431,7 +1363,6 @@ def tsigMapHom (A : Type) [DecidableEq A] {D E : StrictDomainObj.{0}} (f : (D �
     (f : (D ⟶ E)) :
     (tsigMapHom A f).1 = sumMapSig (A := A) (h₀ := D.nonempty) (h₁ := E.nonempty) f.1 := rfl
 
-/-- **The functor `Tsig(X) = 𝟙 + Σ_{a:A} X`** on the category of `∅`-free domains and strict maps. -/
 abbrev Tsig (A : Type) [DecidableEq A] : Endofunctor StrictDomainObj.{0} where
   obj := tsigObj A
   map := tsigMapHom A
@@ -1449,7 +1380,6 @@ section Iso
 
 variable {A : Type} [DecidableEq A] [Inhabited A]
 
-/-- `aX = {a :: w' ∣ w' ∈ X}`: the `a`-prefixed copy of a neighbourhood. -/
 def embA (a : A) (X : Set (Strn A)) : Set (Strn A) := {w | ∃ w', w = a :: w' ∧ w' ∈ X}
 
 omit [DecidableEq A] [Inhabited A] in
@@ -1457,7 +1387,6 @@ omit [DecidableEq A] [Inhabited A] in
 @[simp] theorem mem_embA {a : A} {X : Set (Strn A)} {w : Strn A} :
     w ∈ embA a X ↔ ∃ w', w = a :: w' ∧ w' ∈ X := Iff.rfl
 
-/-- The right-hand side of the domain equation: the `A`-indexed sum `𝟙 + Σ_a Cₐ`. -/
 abbrev CCn (A : Type) [DecidableEq A] : NeighborhoodSystem (SigTok A (Strn A)) :=
   sumSig A (Cn A) Cn_nonempty
 
@@ -1514,8 +1443,7 @@ theorem embA_injective {a : A} {X X' : Set (Strn A)} (h : embA a X = embA a X') 
   Set.Subset.antisymm (embA_subset.mp h.subset) (embA_subset.mp h.symm.subset)
 
 omit [DecidableEq A] [Inhabited A] in
-/-- **The shape of a `Cₐ`-neighbourhood.** Every neighbourhood is the master `Σ*`, the terminator
-`{Λ}`, or an `a`-copy `aX` with `X ∈ Cₐ`. -/
+
 theorem memCn_cases {W : Set (Strn A)} (hW : memCn W) :
     W = Set.univ ∨ W = ({[]} : Set (Strn A)) ∨ ∃ a X, memCn X ∧ W = embA a X := by
   rcases hW with ⟨σ, rfl⟩ | ⟨σ, rfl⟩
@@ -1590,8 +1518,6 @@ theorem sumSig_mem_jc_inv {a : A} {X : Set (Strn A)} (h : (CCn A).mem (jc a X)) 
     · obtain ⟨t, ht⟩ := Cn_nonempty X' hX'
       exact absurd (heq.symm ▸ (tc_mem_jc.mpr ht)) (tc_mem_jc_ne (Ne.symm haa))
 
-/-- **Forward half of `Cₐ ≅ 𝟙 + Σ_a Cₐ`.** Records, for each branch, whether `x` finishes at `Λ`
-(the `𝟙`-summand) or reaches the `a`-copy `aX` (the `a`-th summand). -/
 def toCC (x : (Cn A).Element) : (CCn A).Element where
   mem W := W = masterSig (Cn A)
     ∨ (W = jU ∧ x.mem ({[]} : Set (Strn A)))
@@ -1666,7 +1592,7 @@ omit [Inhabited A] in
   · intro hz; exact Or.inr (Or.inr ⟨a, X, hX, rfl, hz⟩)
 
 omit [DecidableEq A] [Inhabited A] in
-/-- Prefixed copies determine index and set: `aX = a'X'` (with `X` non-empty) forces `a=a'`, `X=X'`. -/
+
 theorem embA_eq_embA {a a' : A} {X X' : Set (Strn A)} (hXne : X.Nonempty)
     (h : embA a X = embA a' X') : a = a' ∧ X = X' := by
   obtain ⟨w', hw'⟩ := hXne
@@ -1676,7 +1602,6 @@ theorem embA_eq_embA {a a' : A} {X X' : Set (Strn A)} (hXne : X.Nonempty)
   rw [List.cons.injEq] at he; obtain ⟨rfl, -⟩ := he
   exact ⟨rfl, embA_injective h⟩
 
-/-- **Inverse half of `Cₐ ≅ 𝟙 + Σ_a Cₐ`.** -/
 def fromCC (s : (CCn A).Element) : (Cn A).Element where
   mem W := W = Set.univ
     ∨ (W = ({[]} : Set (Strn A)) ∧ s.mem jU)
@@ -1779,7 +1704,6 @@ theorem toCC_fromCC (s : (CCn A).Element) : toCC (fromCC s) = s := by
     · exact Or.inr (Or.inl ⟨rfl, fromCC_mem_nil.mpr hW⟩)
     · exact Or.inr (Or.inr ⟨a, X, hX, rfl, (fromCC_mem_embA hX).mpr hW⟩)
 
-/-- **The isomorphism `|Cₐ| ≃o |𝟙 + Σ_a Cₐ|`.** -/
 def ccEquiv : (Cn A).Element ≃o (CCn A).Element where
   toFun := toCC
   invFun := fromCC
@@ -1807,17 +1731,13 @@ section Algebra
 
 variable {A : Type} [DecidableEq A] [Inhabited A]
 
-/-- `Cₐ` as an object of the `∅`-free category. -/
 abbrev Cnobj (A : Type) [DecidableEq A] : StrictDomainObj.{0} := ⟨Strn A, Cn A, Cn_nonempty⟩
 
 @[simp] theorem Cnobj_sys (A : Type) [DecidableEq A] : (Cnobj A).sys = Cn A := rfl
 
-/-- **The `Tsig`-algebra structure on `Cₐ`.** The structure map `i : 𝟙+Σ_a Cₐ → Cₐ` is the inverse of
-the domain-equation isomorphism `ccEquiv`, strict by `isStrict_ofIso`. -/
 abbrev cnStr : (((Tsig A).obj (Cnobj A)) ⟶ (Cnobj A)) :=
   ⟨ofIso ccEquiv.symm, isStrict_ofIso _⟩
 
-/-- **`Cₐ` is a `Tsig`-algebra** for `Tsig(X) = 𝟙 + Σ_a X`. -/
 abbrev Cnalg (A : Type) [DecidableEq A] [Inhabited A] : TAlgebra (Tsig A) := ⟨Cnobj A, cnStr⟩
 
 end Algebra
@@ -1864,11 +1784,9 @@ section Initial
 
 variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
-/-- The distinguished point `e = k(inj_𝟙)`: the image under `k` of the terminator. -/
 def descE : B.carrier.sys.Element :=
   B.str.1.toElementMap (sinjU (h := B.carrier.nonempty))
 
-/-- The `a`-th successor operation `f_a = k ∘ inj_a`. -/
 def descF (a : A) (y : B.carrier.sys.Element) : B.carrier.sys.Element :=
   B.str.1.toElementMap (sinjC (h := B.carrier.nonempty) a y)
 
@@ -1878,7 +1796,6 @@ theorem descF_mono (a : A) {y y' : B.carrier.sys.Element} (h : y ≤ y') :
     descF B a y ≤ descF B a y' :=
   B.str.1.toElementMap_mono (sinjC_mono h)
 
-/-- The recursion `φ(Λ)=z`, `φ(a·σ)=f_a(φ(σ))` on a finite string, with base value `z`. -/
 def descVal (z : B.carrier.sys.Element) : Strn A → B.carrier.sys.Element
   | [] => z
   | a :: σ => descF B a (descVal z σ)
@@ -1921,7 +1838,7 @@ section Lift
 variable {A : Type} [DecidableEq A] [Inhabited A] {β : Type}
 
 omit [Inhabited A] in
-/-- Two maps out of `Cₐ` agree once they agree on every `σ⊥` and `σ` (generic `Exercise516.map_ext_C`). -/
+
 theorem map_ext_Cn {V : NeighborhoodSystem β} {f g : ApproximableMap (Cn A) V}
     (hbot : ∀ σ, f.toElementMap (strBotN σ) = g.toElementMap (strBotN σ))
     (helem : ∀ σ, f.toElementMap (strElemN σ) = g.toElementMap (strElemN σ)) : f = g := by
@@ -1932,7 +1849,7 @@ theorem map_ext_Cn {V : NeighborhoodSystem β} {f g : ApproximableMap (Cn A) V}
   · exact helem σ
 
 omit [DecidableEq A] in
-/-- A cone is never contained in a singleton: it has the two distinct elements `τ` and `τ·default`. -/
+
 theorem not_coneN_subset_singleton (τ σ : Strn A) : ¬ coneN τ ⊆ ({σ} : Set (Strn A)) := by
   intro h
   have h1 : τ ∈ ({σ} : Set (Strn A)) := h (show τ ∈ coneN τ from List.prefix_rfl)
@@ -1946,8 +1863,6 @@ omit [DecidableEq A] in
 theorem coneN_ne_singleton (τ σ : Strn A) : coneN τ ≠ ({σ} : Set (Strn A)) := fun h =>
   not_coneN_subset_singleton τ σ (h ▸ subset_rfl)
 
-/-- A map `Cₐ → V` determined by its value `coneVal σ` on each partial element `σ⊥` and `singVal σ`
-on each total element `σ`. (The alphabet-generic copy of `Exercise419.liftC`.) -/
 def liftCn (V : NeighborhoodSystem β) (coneVal singVal : Strn A → V.Element)
     (hcone : ∀ {σ τ : Strn A}, σ <+: τ → coneVal σ ≤ coneVal τ)
     (hsing : ∀ {σ τ : Strn A}, σ <+: τ → coneVal σ ≤ singVal τ) :
@@ -1995,7 +1910,6 @@ section Initial
 
 variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
-/-- **The homomorphism `Cₐ → E`**, built by `liftCn` from the head-recursion. -/
 def descMap : ApproximableMap (Cn A) B.carrier.sys :=
   liftCn B.carrier.sys (descVal B B.carrier.sys.bot) (descVal B (descE B))
     (fun {_ _} => descMap_hcone B) (fun {_ _} => descMap_hsing B)
@@ -2092,7 +2006,6 @@ theorem descMap_strict : IsStrict (descMap B) := by
   rw [isStrict_iff_apply_bot, Cn_bot_eq_strBotN_nil, descMap_strBot]
   rfl
 
-/-- The bundled strict homomorphism `Cₐ → E`. -/
 def descStrict : ((Cnobj A) ⟶ B.carrier) := ⟨descMap B, descMap_strict B⟩
 
 theorem genKeyBot (g : ApproximableMap (Cn A) B.carrier.sys) :
@@ -2112,8 +2025,6 @@ section Iso
 variable {A : Type} [DecidableEq A] [Inhabited A]
 omit [Inhabited A] in
 
-/-- **`toCC ∘ (a·) = inj_a`.** Prepending the letter `a` to `z` is, across `Cₐ ≅ 𝟙+Σ_a Cₐ`, the
-injection of `z` into the `a`-th summand. -/
 theorem toCC_consMapN (a : A) (z : (Cn A).Element) :
     toCC ((consMapN a).toElementMap z) = sinjC (h := Cn_nonempty) a z := by
   apply NeighborhoodSystem.Element.ext
@@ -2150,7 +2061,6 @@ section Iso
 variable {A : Type} [DecidableEq A] [Inhabited A]
 omit [Inhabited A] in
 
-/-- **`toCC Λ̂ = inj_𝟙`.** The finished empty sequence is the terminator (the `𝟙`-summand). -/
 theorem toCC_strElemN_nil :
     toCC (strElemN ([] : Strn A)) = sinjU (h := Cn_nonempty) := by
   apply NeighborhoodSystem.Element.ext
@@ -2178,7 +2088,6 @@ theorem genKey0 (g : ApproximableMap (Cn A) B.carrier.sys) :
       = descE B := by
   rw [toCC_strElemN_nil, sumMapSig_sinjU]; rfl
 
-/-- `Cₐ`'s algebra map satisfies the recursion. -/
 theorem descMap_satisfiesRec :
     descMap B = (B.str.1.comp (sumMapSig (A := A) (h₀ := Cn_nonempty) (h₁ := B.carrier.nonempty)
         (descMap B))).comp (ofIso ccEquiv) := by
@@ -2202,14 +2111,12 @@ theorem descMap_satisfiesRec :
       rw [descMap_strElem] at h
       exact h.symm
 
-/-- **The homomorphism square** `desc ∘ i = k ∘ T(desc)`. -/
 theorem descComm : (descMap B).comp (ofIso ccEquiv.symm)
     = B.str.1.comp (sumMapSig (A := A) (h₀ := Cn_nonempty) (h₁ := B.carrier.nonempty)
         (descMap B)) := by
   conv_lhs => rw [descMap_satisfiesRec B]
   rw [comp_assoc, ccEquiv_comp_symm, comp_idMap]
 
-/-- **The descent homomorphism `(Cₐ, i) → (E, k)`** as a `Tsig`-algebra homomorphism. -/
 def descAlgHom : AlgHom (Cnalg A) B where
   hom := descStrict B
   comm := by
@@ -2217,7 +2124,6 @@ def descAlgHom : AlgHom (Cnalg A) B where
     simp only [StrictDomainObj.comp_val]
     exact descComm B
 
-/-- **Any map satisfying the homomorphism recursion equals `descMap`.** -/
 theorem rec_determines (g : ApproximableMap (Cn A) B.carrier.sys)
     (hg : g = (B.str.1.comp (sumMapSig (A := A) (h₀ := Cn_nonempty) (h₁ := B.carrier.nonempty)
         g)).comp (ofIso ccEquiv)) :
@@ -2254,7 +2160,6 @@ theorem rec_determines (g : ApproximableMap (Cn A) B.carrier.sys)
   · intro σ; rw [hbot, descMap_strBot]
   · intro σ; rw [helem, descMap_strElem]
 
-/-- **Uniqueness.** Any `Tsig`-algebra homomorphism out of `(Cₐ, i)` equals `descAlgHom`. -/
 theorem descAlgHom_uniq (h' : AlgHom (Cnalg A) B) : h' = descAlgHom B := by
   obtain ⟨hom, comm⟩ := h'
   have hg : hom.1 = descMap B := by
@@ -2273,18 +2178,12 @@ theorem descAlgHom_uniq (h' : AlgHom (Cnalg A) B) : h' = descAlgHom B := by
 
 end Initial
 
-/-- **Exercise 6.17 part 2 — `(Cₐ, i)` is an initial `Tsig`-algebra for `Tsig(X) = 𝟙 + Σ_a X`.**
-The descent map `φ : Cₐ → E` is the closed-form head-recursion `φ(Λ) = e`, `φ(a·x) = f_a(φ x)`
-(`f_a = k ∘ inj_a`), built choice-free via `liftCn`; it is the unique `Tsig`-algebra homomorphism, so
-`Cₐ` is the initial algebra of `X ↦ 𝟙 + Σ_a X`. -/
 def CnisInitial (A : Type) [DecidableEq A] [Inhabited A] : IsInitial (Cnalg A) where
   desc := descAlgHom
   uniq := fun B h => descAlgHom_uniq B h
 
-/-- **`Cₙ` is the initial algebra** of `X ↦ 𝟙 + Σ_{Fin (n+1)} X`. -/
 def CfinIsInitial (n : ℕ) : IsInitial (Cnalg (Fin (n + 1))) := CnisInitial (Fin (n + 1))
 
-/-- **Exercise 6.17 part 2 — the domain equation `Cₐ ≅ 𝟙 + Σ_a Cₐ`.** -/
 theorem Cn_domain_equation (A : Type) [DecidableEq A] [Inhabited A] :
     Cn A ≅ᴰ CCn A := ⟨ccEquiv⟩
 
@@ -2305,7 +2204,6 @@ end
 section
 variable {A : Type} [DecidableEq A]
 
-/-- **`Cₙ ≅ 𝟙 + (n+1)·Cₙ`** over the alphabet `Fin (n+1)`. -/
 theorem Cfin_domain_equation (n : ℕ) : Cn (Fin (n + 1)) ≅ᴰ CCn (Fin (n + 1)) :=
   Cn_domain_equation (Fin (n + 1))
 end
@@ -2343,7 +2241,6 @@ namespace Exercise618
 
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- The "cons" of a head `a : |𝒟|` and a tail `b : |𝒟^∞|`, as a sequence `⟨a, b₀, b₁, …⟩`. -/
 def consSeq (a : V.Element) (b : (iterSys V).Element) : ℕ → V.Element :=
   fun i => Nat.casesOn i a (fun k => component b k)
 
@@ -2352,7 +2249,6 @@ def consSeq (a : V.Element) (b : (iterSys V).Element) : ℕ → V.Element :=
 @[simp] theorem consSeq_succ (a : V.Element) (b : (iterSys V).Element) (k : ℕ) :
     consSeq a b (k + 1) = component b k := rfl
 
-/-- `⊥` of `𝒟^∞` is the all-`⊥` sequence. -/
 theorem iterBot_eq : (iterSys V).bot = ofSeq (fun _ : ℕ => V.bot) := by
   apply Element.ext
   intro W
@@ -2368,11 +2264,9 @@ theorem iterBot_eq : (iterSys V).bot = ofSeq (fun _ : ℕ => V.bot) := by
     rw [fiber_iterSys_master]
     rwa [mem_bot] at hi
 
-/-- The `n`-th coordinate of `⊥` is `⊥`. -/
 @[simp] theorem component_bot (n : ℕ) : component (iterSys V).bot n = V.bot := by
   rw [iterBot_eq, component_ofSeq]
 
-/-- A successor-increasing chain is increasing. -/
 theorem chain_le_of_succ {β : Type*} {W : NeighborhoodSystem β} {a : ℕ → W.Element}
     (h : ∀ n, a n ≤ a (n + 1)) {i j : ℕ} (hij : i ≤ j) : a i ≤ a j := by
   induction hij with
@@ -2383,7 +2277,6 @@ section Target
 
 variable {γ : Type*} {E : NeighborhoodSystem γ}
 
-/-- The bottom map is below everything. -/
 theorem constBot_le (f : ApproximableMap (iterSys V) E) :
     constMap (iterSys V) E.bot ≤ f := by
   intro X Y hrel
@@ -2393,18 +2286,14 @@ theorem constBot_le (f : ApproximableMap (iterSys V) E) :
 
 end Target
 
-/-- `i : 𝒟 × 𝒟^∞ → 𝒟^∞`, the "cons" iso (`iterProdIso⁻¹`); the `T`-algebra structure map. -/
 def imap (V : NeighborhoodSystem α) : ApproximableMap (prod V (iterSys V)) (iterSys V) :=
   ofIso (iterProdIso V).symm
 
 theorem isStrict_imap : IsStrict (imap V) := isStrict_ofIso _
 
-/-- **The forward iso reads off head and tail.** `iterProdIso z = ⟨z₀, ⟨z₁,z₂,…⟩⟩`: the first
-component is the `0`-coordinate `component z 0`, the second is the shifted sequence. -/
 theorem iterProdIso_apply (z : (iterSys V).Element) :
     iterProdIso V z = pair (component z 0) (ofSeq (fun n => component z (n + 1))) := rfl
 
-/-- **The inverse iso is "cons".** `iterProdIso⁻¹ ⟨a, b⟩ = ⟨a, b₀, b₁, …⟩`. -/
 theorem iterProdIso_symm_pair (a : V.Element) (b : (iterSys V).Element) :
     (iterProdIso V).symm (pair a b) = ofSeq (consSeq a b) := by
   have hkey : iterProdIso V (ofSeq (consSeq a b)) = pair a b := by
@@ -2422,7 +2311,6 @@ end
 section
 namespace Exercise618
 
-/-- The infinite iterate of an `∅`-free system is `∅`-free (each fibre is a non-empty neighbourhood). -/
 theorem iterSys_nonempty {α : Type*} {V : NeighborhoodSystem α}
     (h : ∀ X, V.mem X → X.Nonempty) :
     ∀ W, (iterSys V).mem W → W.Nonempty := by
@@ -2438,13 +2326,11 @@ namespace Exercise618
 
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- `𝒟^∞` (Exercise 3.16's `iterSys`) as an `∅`-free object. -/
 def iterObj (Dom : StrictDomainObj.{w}) : StrictDomainObj.{w} where
   carrier := ℕ × Dom.carrier
   sys := iterSys Dom.sys
   nonempty := iterSys_nonempty Dom.nonempty
 
-/-- `j : 𝒟^∞ → 𝒟 × 𝒟^∞`, the splitting iso (`iterProdIso`). -/
 def jmap (V : NeighborhoodSystem α) : ApproximableMap (iterSys V) (prod V (iterSys V)) :=
   ofIso (iterProdIso V)
 
@@ -2452,12 +2338,10 @@ section Target
 
 variable {γ : Type*} {E : NeighborhoodSystem γ}
 
-/-- The homomorphism operator `Op(f) = k ∘ T(f) ∘ j`. -/
 def descOp (k : ApproximableMap (prod V E) E) (f : ApproximableMap (iterSys V) E) :
     ApproximableMap (iterSys V) E :=
   k.comp ((prodMap (idMap V) f).comp (jmap V))
 
-/-- The defining action of the operator: `Op(f)(z) = k(z₀, f(⟨z₁,z₂,…⟩))`. -/
 theorem descOp_apply (k : ApproximableMap (prod V E) E) (f : ApproximableMap (iterSys V) E)
     (z : (iterSys V).Element) :
     (descOp k f).toElementMap z
@@ -2467,7 +2351,6 @@ theorem descOp_apply (k : ApproximableMap (prod V E) E) (f : ApproximableMap (it
   rw [toElementMap_comp, toElementMap_comp, toElementMap_ofIso, iterProdIso_apply,
     toElementMap_prodMap_pair, toElementMap_idMap]
 
-/-- The descent chain `h₀ = ⊥`, `hₙ₊₁ = Op(hₙ)`. -/
 def descSeq (k : ApproximableMap (prod V E) E) : ℕ → ApproximableMap (iterSys V) E
   | 0 => constMap (iterSys V) E.bot
   | (n + 1) => descOp k (descSeq k n)
@@ -2478,8 +2361,6 @@ section Uniq
 
 variable {γ : Type*} {E : NeighborhoodSystem γ}
 
-/-- **`g`-independence step.** If `g` is a homomorphism (`g ∘ i = k ∘ T(g)`) then
-`g ∘ ρₙ₊₁ = k ∘ T(g ∘ ρₙ) ∘ j = Op_k(g ∘ ρₙ)`: the composite depends only on `g ∘ ρₙ`. -/
 theorem gcomp_rho_succ (k : ApproximableMap (prod V E) E) (g : ApproximableMap (iterSys V) E)
     (hc : g.comp (imap V) = k.comp (prodMap (idMap V) g)) (n : ℕ) :
     g.comp (descSeq (imap V) (n + 1)) = descOp k (g.comp (descSeq (imap V) n)) := by
@@ -2489,7 +2370,6 @@ theorem gcomp_rho_succ (k : ApproximableMap (prod V E) E) (g : ApproximableMap (
   congr 1
   rw [← comp_assoc, ← prodMap_comp, idMap_comp]
 
-/-- The descent chain for any strict `g` starts at the constant `⊥`: `g ∘ ρ₀ = ⊥`. -/
 theorem gcomp_rho_zero (g : ApproximableMap (iterSys V) E) (hg : IsStrict g) :
     g.comp (descSeq (imap V) 0) = constMap (iterSys V) E.bot := by
   apply ext_of_toElementMap
@@ -2500,7 +2380,6 @@ theorem gcomp_rho_zero (g : ApproximableMap (iterSys V) E) (hg : IsStrict g) :
 
 end Uniq
 
-/-- `j ∘ i = I` on `𝒟 × 𝒟^∞`. -/
 theorem jmap_comp_imap : (jmap V).comp (imap V) = idMap (prod V (iterSys V)) := by
   apply ext_of_toElementMap
   intro w
@@ -2512,7 +2391,6 @@ section Target
 
 variable {γ : Type*} {E : NeighborhoodSystem γ}
 
-/-- The continuity helper `k(a, ·) : E → E` as an approximable map. -/
 def kHead (k : ApproximableMap (prod V E) E) (a : V.Element) :
     ApproximableMap E E :=
   k.comp (paired (constMap E a) (idMap E))
@@ -2523,7 +2401,6 @@ theorem kHead_apply (k : ApproximableMap (prod V E) E) (a : V.Element) (u : E.El
 
 end Target
 
-/-- `⊥` of a product is the pair of `⊥`s. -/
 theorem pair_bot {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} :
     pair V₀.bot V₁.bot = (prod V₀ V₁).bot := by
   apply Element.ext
@@ -2555,7 +2432,6 @@ theorem descSeq_strict (k : ApproximableMap (prod V E) E) (hk : IsStrict k) :
 
 end Target
 
-/-- `T(f₀ × f₁)` is strict when both factors are: `(f₀ × f₁)(⊥,⊥) = (f₀ ⊥, f₁ ⊥) = (⊥,⊥)`. -/
 theorem isStrict_prodMap {α β α' β' : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
     {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
     {f₀ : ApproximableMap V₀ V₀'} {f₁ : ApproximableMap V₁ V₁'}
@@ -2596,7 +2472,6 @@ namespace Exercise618
 
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- `T(·) = (id_𝒟 × ·)` is monotone. -/
 theorem prodMap_idMap_mono {γ : Type*} {E : NeighborhoodSystem γ}
     {f f' : ApproximableMap (iterSys V) E} (h : f ≤ f') :
     prodMap (idMap V) f ≤ prodMap (idMap V) f' := by
@@ -2630,7 +2505,6 @@ theorem descSeq_dir (k : ApproximableMap (prod V E) E) :
   fun i j => ⟨max i j, fun _ _ => descSeq_mono k (le_max_left i j) _ _,
     fun _ _ => descSeq_mono k (le_max_right i j) _ _⟩
 
-/-- **The descent map `h = ⋃ₙ hₙ : 𝒟^∞ → E`.** -/
 def descMap (k : ApproximableMap (prod V E) E) : ApproximableMap (iterSys V) E :=
   iSupMap (descSeq k) (descSeq_dir k)
 
@@ -2666,7 +2540,6 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exerci
 
 namespace Exercise618
 
-/-- The product of two `∅`-free systems is `∅`-free. -/
 theorem prod_nonempty {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
     (h₀ : ∀ X, V₀.mem X → X.Nonempty) (_h₁ : ∀ Y, V₁.mem Y → Y.Nonempty) :
     ∀ W, (prod V₀ V₁).mem W → W.Nonempty := by
@@ -2684,19 +2557,15 @@ namespace Exercise618
 
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- The fixed domain `𝒟` times an object `X`, again an `∅`-free domain. -/
 def prodObj (Dom X : StrictDomainObj.{w}) : StrictDomainObj.{w} where
   carrier := Dom.carrier ⊕ X.carrier
   sys := prod Dom.sys X.sys
   nonempty := prod_nonempty Dom.nonempty X.nonempty
 
-/-- The morphism action `T(f) = id_𝒟 × f`, strict by `isStrict_prodMap`. -/
 def prodMapHom (Dom : StrictDomainObj.{w}) {X Y : StrictDomainObj.{w}} (f : (X ⟶ Y)) :
     ((prodObj Dom X) ⟶ (prodObj Dom Y)) :=
   ⟨prodMap (idMap Dom.sys) f.1, isStrict_prodMap isStrict_idMap f.2⟩
 
-/-- **The product endofunctor `T(X) = 𝒟 × X`** on `∅`-free domains and strict maps, for a fixed
-domain `𝒟`. On objects `T(X) = 𝒟 × X`; on maps `T(f) = id_𝒟 × f`. -/
 def prodFunctor (Dom : StrictDomainObj.{w}) : Endofunctor StrictDomainObj.{w} where
   obj := prodObj Dom
   map := prodMapHom Dom
@@ -2710,13 +2579,10 @@ def prodFunctor (Dom : StrictDomainObj.{w}) : Endofunctor StrictDomainObj.{w} wh
     rw [idMap_comp] at h
     exact h)
 
-/-- **`𝒟^∞` as a `T`-algebra**, `(𝒟^∞, i)` with `i : 𝒟 × 𝒟^∞ → 𝒟^∞` the "cons" iso (`imap`,
-Exercise 3.16's `iterProdIso⁻¹`), strict by `isStrict_imap`. -/
 def iterAlg (Dom : StrictDomainObj.{w}) : TAlgebra (prodFunctor Dom) where
   carrier := iterObj Dom
   str := ⟨imap Dom.sys, isStrict_imap⟩
 
-/-- **The truncation formula** `ρₙ(⟨x₀,x₁,…⟩) = ⟨x₀,…,x_{n-1},⊥,⊥,…⟩`. -/
 theorem rho_apply (n : ℕ) (z : (iterSys V).Element) :
     (descSeq (imap V) n).toElementMap z
       = ofSeq (fun i => if i < n then component z i else V.bot) := by
@@ -2744,8 +2610,6 @@ theorem rho_apply (n : ℕ) (z : (iterSys V).Element) :
       · rw [ite_eq_left h, ite_eq_left (Nat.succ_lt_succ h)]
       · rw [ite_eq_right h, ite_eq_right (fun hc => h (Nat.lt_of_succ_lt_succ hc))]
 
-/-- **`⋃ₙ ρₙ = I`.** Every `z` is the directed union of its truncations: the cofinite-`Δ` structure
-of `𝒟^∞` means each neighbourhood of `z` is already realised by a finite truncation. -/
 theorem iSupRho_eq_id : descMap (imap V) = idMap (iterSys V) := by
   apply ext_of_toElementMap
   intro z
@@ -2786,9 +2650,6 @@ section Uniq
 
 variable {γ : Type*} {E : NeighborhoodSystem γ}
 
-/-- **Uniqueness.** Any two strict homomorphisms `g, g' : 𝒟^∞ → E` into a `T`-algebra `(E,k)` are
-equal. By `g`-independence they agree on every truncation (`g ∘ ρₙ = g' ∘ ρₙ`), and `⋃ₙ ρₙ = I`
-forces `g = g'`. -/
 theorem comm_unique (k : ApproximableMap (prod V E) E)
     {g g' : ApproximableMap (iterSys V) E} (hg : IsStrict g) (hg' : IsStrict g')
     (hc : g.comp (imap V) = k.comp (prodMap (idMap V) g))
@@ -2818,12 +2679,10 @@ theorem comm_unique (k : ApproximableMap (prod V E) E)
 
 end Uniq
 
-/-- Directedness of a successor-increasing chain. -/
 theorem succChainDir {β : Type*} {W : NeighborhoodSystem β} (a : ℕ → W.Element)
     (h : ∀ n, a n ≤ a (n + 1)) : ∀ i j, ∃ l, a i ≤ a l ∧ a j ≤ a l :=
   fun i j => ⟨max i j, chain_le_of_succ h (le_max_left i j), chain_le_of_succ h (le_max_right i j)⟩
 
-/-- Approximable maps are monotone in the map argument: `f ≤ g ⟹ f(x) ≤ g(x)`. -/
 theorem toElementMap_le_of_le {β₀ β₁ : Type*} {W₀ : NeighborhoodSystem β₀}
     {W₁ : NeighborhoodSystem β₁} {f g : ApproximableMap W₀ W₁} (h : f ≤ g) (x : W₀.Element) :
     f.toElementMap x ≤ g.toElementMap x := by
@@ -2834,12 +2693,10 @@ section Target
 
 variable {γ : Type*} {E : NeighborhoodSystem γ}
 
-/-- The descent chain is increasing element-wise. -/
 theorem descSeqEltMono (k : ApproximableMap (prod V E) E) (x : (iterSys V).Element) :
     ∀ n, (descSeq k n).toElementMap x ≤ (descSeq k (n + 1)).toElementMap x :=
   fun n => toElementMap_le_of_le (descSeq_mono_succ k n) x
 
-/-- **The descent map as a directed union.** `h(x) = ⋃ₙ hₙ(x)`. -/
 theorem descMap_eq (k : ApproximableMap (prod V E) E) (x : (iterSys V).Element) :
     (descMap k).toElementMap x
       = iSupDirected (fun n => (descSeq k n).toElementMap x)
@@ -2848,13 +2705,12 @@ theorem descMap_eq (k : ApproximableMap (prod V E) E) (x : (iterSys V).Element) 
   intro Y
   rw [descMap_toElementMap, mem_iSupDirected]
 
-/-- **The descent map is a fixed point** of `Op = k ∘ T(·) ∘ j`. -/
 theorem descMap_fix (k : ApproximableMap (prod V E) E) : descMap k = descOp k (descMap k) := by
   apply ext_of_toElementMap
   intro z
   rw [descOp_apply, descMap_eq k (ofSeq (fun n => component z (n + 1))),
     ← kHead_apply k (component z 0), toElementMap_iSupDirected, descMap_eq k z]
-  -- both sides are directed unions; compare the (reindexed) families term-wise
+
   apply Element.ext
   intro Y
   rw [mem_iSupDirected, mem_iSupDirected]
@@ -2872,8 +2728,6 @@ theorem descMap_fix (k : ApproximableMap (prod V E) E) : descMap k = descOp k (d
     rw [hstep m] at hm
     exact ⟨m + 1, hm⟩
 
-/-- **Existence of the algebra homomorphism.** The descent map makes the square commute:
-`descMap ∘ i = k ∘ T(descMap)` (using `j ∘ i = I` and the fixed-point equation). -/
 theorem descMap_comm (k : ApproximableMap (prod V E) E) :
     (descMap k).comp (imap V) = k.comp (prodMap (idMap V) (descMap k)) := by
   conv_lhs => rw [descMap_fix k]
@@ -2883,8 +2737,6 @@ theorem descMap_comm (k : ApproximableMap (prod V E) E) :
 
 end Target
 
-/-- **The descent homomorphism `(𝒟^∞, i) → (E, k)`**: the strict map `descMap k` (existence half),
-with the homomorphism square supplied by `descMap_comm`. -/
 def descAlgHom (Dom : StrictDomainObj.{w}) (B : TAlgebra (prodFunctor Dom)) :
     AlgHom (iterAlg Dom) B where
   hom := ⟨descMap B.str.1, descMap_strict B.str.1 B.str.2⟩

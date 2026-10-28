@@ -28,10 +28,8 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Bundled entailment on `LamDToken`. -/
 def LamDEnt (u : Finset (LamDToken A)) (p : LamDToken A) : Prop :=
   LamEntDepth A (lamDForgetFinset A u) p.val
-
 
 theorem LamDEnt.bot {u : Finset (LamDToken A)} (hu : LamDCon A u) :
     LamDEnt A u (lamDBot A) :=

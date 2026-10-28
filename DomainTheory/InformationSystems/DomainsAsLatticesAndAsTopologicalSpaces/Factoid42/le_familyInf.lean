@@ -6,13 +6,11 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
 
 theorem le_familyInf (S : Set sys.Element) (hne : S.Nonempty) {z : sys.Element}
     (h : ∀ x ∈ S, z ≤ x) : z ≤ sys.familyInf S hne :=

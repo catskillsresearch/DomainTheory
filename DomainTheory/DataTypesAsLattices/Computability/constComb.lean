@@ -30,10 +30,8 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem combinatory (k : ℕ) : IsCombinatory (constComb k) :=
   .app .K (ofNat.combinatory k)
-
 
 theorem realizes (k : ℕ) : Realizes (constComb k) fun _ => k := fun _ => by
   simp [constComb, Kcomb.beta2]

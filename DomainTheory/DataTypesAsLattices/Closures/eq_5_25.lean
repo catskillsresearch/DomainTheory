@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.dEq
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (5.25).** `d = I ∪ (d ∘→ d)`. -/
 theorem eq_5_25 : dEq = Icomb ∪ arrowR dEq dEq :=
   (theorem_1_4 selfArrowStep.isScottContinuous).1.symm
 

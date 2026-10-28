@@ -8,8 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_6
 @[expose] public section
 
 section
-/- concordance: source L4127 EXERCISE 6.22 equations for the integers -/
--- Exercise622/Cnat.lean
+
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
@@ -18,9 +17,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-/-- **The two-point generator `{{0},{0,Λ}}`.** Its tokens are `Δ = {0,Λ}`, with the one proper
-neighbourhood `{0}` sitting strictly below the master `{0,Λ} = Δ`. As a domain this is the chain
-`{0} ⊏ Δ` (one point above the bottom). Here `0 = [false]` and `Λ = []`. -/
 def Cnat : ScottSys where
   sys :=
     { mem := fun X => X = {([false] : Str)} ∨ X = {([false] : Str), ([] : Str)}
@@ -59,37 +55,26 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 section
 namespace Exercise619
 
-/-- **The one-point domain `{{Λ}} = 𝟙`** (the terminal object of Scott's category). -/
 def Cone : ScottSys := singletonSys ({([] : Str)} : Set Str) ⟨[], rfl⟩
 
-/-- `T(X) = {{Λ}} + X` — the right-hand side of `M ≅ {{Λ}} + M`. -/
 def MExpr : GExpr := .sum (.const Cone) .var
 
-/-- `T(X) = {{0},{0,Λ}} ⊕ X` — the right-hand side of `N ≅ {{0},{0,Λ}} ⊕ N`. -/
 def NExpr : GExpr := .oplus (.const Cnat) .var
 
-/-- `T(X) = N ⊕ (N ⊗ X)` — the right-hand side of `N* ≅ N ⊕ (N ⊗ N*)`, parametrised by the (rooted)
-datum domain `N`. -/
 def NStarExpr (N : ScottSys) : GExpr := .oplus (.const N) (.otimes (.const N) .var)
 
 theorem NStarExpr_rooted {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) :
     (NStarExpr N).RootedConst := ⟨hN, hN, trivial⟩
 
-/-- **`N* ≅ N ⊕ (N ⊗ N*)` has a solution** for any rooted datum domain `N` (the strict streams over
-`N`). -/
 theorem NStar_eq_solution (N : ScottSys) (hN : ([] : Str) ∈ N.sys.master) :
     ∃ (Γ : Set Str) (h : Γ.Nonempty),
       (singletonSys Γ h).sys ◁ ((NStarExpr N).obj (singletonSys Γ h)).sys :=
   gExists_singleton_subsystem (NStarExpr N) (NStarExpr_rooted hN)
 
-/-- `Λ ∈ tok(Cnat)`, so `Cnat` is a rooted constant. -/
 theorem nil_mem_Cnat : ([] : Str) ∈ Cnat.sys.master := Set.mem_insert_iff.mpr (Or.inr rfl)
 
 theorem NExpr_rooted : NExpr.RootedConst := ⟨nil_mem_Cnat, trivial⟩
 
-/-- **Chaining the equations.** The solution `N` to the first equation is itself a rooted domain
-(`Λ ∈ tok(N)`, since its token set is the fixed point `Γ₁ ∋ Λ`), so it is a legitimate datum domain
-for the third: `N*` exists *over the very `N` produced by* `N ≅ {{0},{0,Λ}} ⊕ N`. -/
 theorem NStar_over_N_exists :
     ∃ N : ScottSys, ([] : Str) ∈ N.sys.master ∧
       ∃ (Γ : Set Str) (h : Γ.Nonempty),
@@ -130,19 +115,15 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-/-- **`N ≅ {{0},{0,Λ}} ⊕ N` has a solution.** There is `Γ` (the vertical naturals' token set) with
-`Γ = tok(NExpr({Γ}))`, so `{Γ} ◁ NExpr({Γ})` and Theorem 6.14 applies. -/
 theorem N_eq_solution :
     ∃ (Γ : Set Str) (h : Γ.Nonempty),
       (singletonSys Γ h).sys ◁ (NExpr.obj (singletonSys Γ h)).sys :=
   gExists_singleton_subsystem NExpr NExpr_rooted
 
-/-- `Λ ∈ tok(Cone)`. -/
 theorem nil_mem_Cone : ([] : Str) ∈ Cone.sys.master := rfl
 
 theorem MExpr_rooted : MExpr.RootedConst := ⟨nil_mem_Cone, trivial⟩
 
-/-- **`M ≅ {{Λ}} + M` has a solution** (the lazy naturals). -/
 theorem M_eq_solution :
     ∃ (Γ : Set Str) (h : Γ.Nonempty),
       (singletonSys Γ h).sys ◁ (MExpr.obj (singletonSys Γ h)).sys :=
@@ -156,11 +137,8 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-/-- **The fixed-point token set `Γ = tok(T({Γ}))`**, as the explicit Kleene union `⋃ₙ gIter T n`
-(no `Classical.choice`). -/
 def gFix (T : GExpr) : Set Str := ⋃ n, gIter T n
 
-/-- `Γ = tok(T({Γ}))` at the token level: `gFun T Γ = Γ`. -/
 theorem gFix_fixed (T : GExpr) (hT : T.RootedConst) : gFun T (gFix T) = gFix T :=
   gFun_iter_fixed T hT
 
@@ -169,13 +147,10 @@ theorem gFix_nil_mem (T : GExpr) : ([] : Str) ∈ gFix T :=
 
 theorem gFix_nonempty (T : GExpr) : (gFix T).Nonempty := ⟨[], gFix_nil_mem T⟩
 
-/-- **The one-point generator `{Γ}`** as an object of the category. -/
 def gGen (T : GExpr) : ScottSys := singletonSys (gFix T) (gFix_nonempty T)
 
 @[simp] theorem gGen_master (T : GExpr) : (gGen T).sys.master = gFix T := rfl
 
-/-- **`{Γ} ◁ T({Γ})`** — Scott's hypothesis for Theorem 6.14, the base of the tower. (This is the
-content of `gExists_singleton_subsystem`, here at the *explicit* generator `Γ = gFix T`.) -/
 theorem gBase (T : GExpr) (hT : T.RootedConst) : (gGen T).sys ◁ (T.obj (gGen T)).sys := by
   have hmaster : (T.obj (gGen T)).sys.master = gFix T :=
     (gFun_eq_master T (gFix_nonempty T)).symm.trans (gFix_fixed T hT)
@@ -187,8 +162,6 @@ theorem gBase (T : GExpr) (hT : T.RootedConst) : (gGen T).sys ◁ (T.obj (gGen T
     show X ∩ Y = gFix T
     rw [show X = gFix T from hX, show Y = gFix T from hY, Set.inter_self]
 
-/-- **The tower `Tⁿ({Γ})`** of `∅`-free systems over `Str`: `T⁰({Γ}) = {Γ}`, `Tⁿ⁺¹({Γ}) =
-T(Tⁿ({Γ}))`. -/
 def gTower (T : GExpr) : ℕ → ScottSys
   | 0 => gGen T
   | n + 1 => T.obj (gTower T n)
@@ -197,29 +170,22 @@ def gTower (T : GExpr) : ℕ → ScottSys
 
 @[simp] theorem gTower_succ (T : GExpr) (n : ℕ) : gTower T (n + 1) = T.obj (gTower T n) := rfl
 
-/-- **The basic chain step `Tⁿ({Γ}) ◁ Tⁿ⁺¹({Γ})`.** Base: `gBase`. Step: `T` is monotone on domains
-(`obj_subsystem`). -/
 theorem gChain (T : GExpr) (hT : T.RootedConst) :
     ∀ n, (gTower T n).sys ◁ (gTower T (n + 1)).sys
   | 0 => gBase T hT
   | n + 1 => T.obj_subsystem (gChain T hT n)
 
-/-- The tower is a `◁`-chain: `Tⁿ({Γ}) ◁ Tᵐ({Γ})` whenever `n ≤ m`. -/
 theorem gTower_le (T : GExpr) (hT : T.RootedConst) {n m : ℕ} (h : n ≤ m) :
     (gTower T n).sys ◁ (gTower T m).sys := by
   induction h with
   | refl => exact Subsystem.refl _
   | step _ ih => exact ih.trans (gChain T hT _)
 
-/-- Every level of the tower has the same master `Δ = Γ`. -/
 theorem gTower_master (T : GExpr) (hT : T.RootedConst) :
     ∀ n, (gTower T n).sys.master = gFix T
   | 0 => rfl
   | n + 1 => ((gChain T hT n).master_eq).symm.trans (gTower_master T hT n)
 
-/-- **The colimit system `𝒟 = ⋃ₙ Tⁿ({Γ})`** as an `∅`-free system over `Str`. A set is a
-neighbourhood exactly when it is a neighbourhood of some level; closure under consistent intersection
-uses that the tower is a chain (any finite collection sits inside one level). -/
 def gColim (T : GExpr) (hT : T.RootedConst) : ScottSys where
   sys :=
     { mem := fun X => ∃ n, (gTower T n).sys.mem X
@@ -247,31 +213,18 @@ def gColim (T : GExpr) (hT : T.RootedConst) : ScottSys where
 @[simp] theorem gColim_master (T : GExpr) (hT : T.RootedConst) :
     (gColim T hT).sys.master = gFix T := rfl
 
-/-- **The functor `T(X) = N ⊕ ((X×X) + (X×X))`** of Exercise 6.23, as a `GExpr` over the variable
-domain `N`. The `⊕ N` carries the variables, and the two `(X×X)` summands (combined by `+`) carry the
-two binary operation symbols. -/
 def Texp (N : ScottSys) : GExpr :=
   .oplus (.const N) (.sum (.prod .var .var) (.prod .var .var))
 
-/-- `Texp N` is rooted iff the variable domain `N` is (`Λ ∈ tok(N)`, automatic for the fixed-point
-solutions of 6.19–6.22). -/
 theorem Texp_rooted {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) : (Texp N).RootedConst :=
   ⟨hN, ⟨trivial, trivial⟩, ⟨trivial, trivial⟩⟩
 
-/-- **The syntactic domain of expressions** `Exp = ⋃ₙ Texpⁿ({Γ})`, the initial solution of
-`Exp ≅ N ⊕ ((Exp×Exp)+(Exp×Exp))`. -/
 def Exp (N : ScottSys) (hN : ([] : Str) ∈ N.sys.master) : ScottSys :=
   gColim (Texp N) (Texp_rooted hN)
 
-/-- Two objects of the category with the same underlying system are equal (the `∅`-freeness field is
-a `Prop`). -/
 theorem ScottSys.ext {A B : ScottSys} (h : A.sys = B.sys) : A = B := by
   cases A; cases B; cases h; rfl
 
-/-- **The category of `∅`-free domains over `Str` and strict maps.** Morphisms are strict approximable
-maps (`StrictMap`); identities and associative composition are Theorem 2.5, with strictness preserved
-by `isStrict_idMap`/`isStrict_comp`. The fixed carrier `Str` is what removes all the carrier-transport
-`HEq` that burdens the abstract `Endofunctor DomainObj`. -/
 instance : Category ScottSys where
   Hom A B := StrictMap A.sys B.sys
   id A := ⟨idMap A.sys, isStrict_idMap⟩
@@ -280,7 +233,6 @@ instance : Category ScottSys where
   comp_id f := Subtype.ext (idMap_comp f.1)
   assoc f g h := Subtype.ext (comp_assoc h.1 g.1 f.1).symm
 
-/-- Each level of the tower is a subdomain of the colimit: `Tⁿ({Γ}) ◁ 𝒟`. -/
 theorem gTower_sub_colim (T : GExpr) (hT : T.RootedConst) (n : ℕ) :
     (gTower T n).sys ◁ (gColim T hT).sys where
   master_eq := by rw [gColim_master, gTower_master T hT]
@@ -291,10 +243,6 @@ theorem gTower_sub_colim (T : GExpr) (hT : T.RootedConst) (n : ℕ) :
       (gTower_le T hT (le_max_right n m)).sub hXY
     exact (gTower_le T hT (le_max_left n m)).inter_closed hX hY hN
 
-/-- **`T(𝒟) = 𝒟` at the level of neighbourhood systems.** Membership: continuity on domains
-(`obj_continuous`) along the directed tower turns `T(⋃ₙ Tⁿ({Γ}))` into `⋃ₙ Tⁿ⁺¹({Γ})`, which has the
-same neighbourhoods as `⋃ₙ Tⁿ({Γ})` (the extra `n=0` level `T⁰({Γ})` is absorbed by the chain step).
-Master: both are `Γ` (`gTower_master` through `obj_subsystem` of `Tⁿ({Γ}) ◁ 𝒟`). -/
 theorem gColim_obj_sys_eq (T : GExpr) (hT : T.RootedConst) :
     (T.obj (gColim T hT)).sys = (gColim T hT).sys := by
   set ℱ : Set ScottSys := Set.range (gTower T) with hℱ
@@ -314,24 +262,20 @@ theorem gColim_obj_sys_eq (T : GExpr) (hT : T.RootedConst) :
     rw [T.obj_continuous hdir hne hsub hU W]
     constructor
     · rintro ⟨D, ⟨n, rfl⟩, hn⟩
-      -- `T(Tⁿ({Γ})) = Tⁿ⁺¹({Γ})`, a level of the colimit.
+
       exact ⟨n + 1, hn⟩
     · rintro ⟨n, hn⟩
-      -- a colimit neighbourhood at level `n` is, after one chain step, at `T(Tⁿ({Γ}))`.
+
       exact ⟨gTower T n, ⟨n, rfl⟩, (gChain T hT n).sub hn⟩
-  · -- masters: `(T 𝒟).master = (Tⁿ⁺¹({Γ})).master = Γ = 𝒟.master`, via `obj_subsystem` at `n=0`.
+  ·
     have h := (T.obj_subsystem (gTower_sub_colim T hT 0)).master_eq
     rw [gColim_master]
     rw [show (T.obj (gTower T 0)) = gTower T 1 from rfl] at h
     rw [← h, gTower_master T hT]
 
-/-- **The structure isomorphism `T(𝒟) ≅ 𝒟` is the identity** (the two objects are literally equal). -/
 theorem gColim_obj_eq (T : GExpr) (hT : T.RootedConst) : T.obj (gColim T hT) = gColim T hT :=
   ScottSys.ext (gColim_obj_sys_eq T hT)
 
-/-- **The domain equation `Exp ≅ N ⊕ ((Exp×Exp)+(Exp×Exp))`**, realised as an equality of systems
-(the structure map is the identity). This is the "construe the initial solution" half of
-Exercise 6.23. -/
 theorem Exp_structure_eq (N : ScottSys) (hN : ([] : Str) ∈ N.sys.master) :
     (Texp N).obj (Exp N hN) = Exp N hN :=
   gColim_obj_eq (Texp N) (Texp_rooted hN)
@@ -342,17 +286,10 @@ theorem Exp_structure_eq (N : ScottSys) (hN : ([] : Str) ∈ N.sys.master) :
 @[simp] theorem ScottSys.comp_val {A B C : ScottSys} (g : (B ⟶ C)) (f : (A ⟶ B)) :
     ((g ⊚ f : StrictMap A.sys C.sys)).1 = g.1.comp f.1 := rfl
 
-/-- The morphism action of `gFunctor T`: a strict `f` is sent to the strict map `T(f)`. (Typed via
-`StrictMap`, which is defeq to the category's `Hom`; this avoids the class-projection that blocks the
-anonymous `.1` on `Category.Hom`.) -/
 def gFunctorMap (T : GExpr) {X Y : ScottSys} (f : StrictMap X.sys Y.sys) :
     StrictMap (T.obj X).sys (T.obj Y).sys :=
   ⟨T.map f.1, T.map_isStrict f.1 f.2⟩
 
-/-- **Every `GExpr` is an `Endofunctor` of the strict-map category.** On objects it is `GExpr.obj`;
-on a strict map `f` it is the strict map `T(f)` (`GExpr.map_isStrict`). Functoriality is
-`GExpr.map_id` and `GExpr.map_comp` (the latter needs `g` strict — automatic here, since every
-morphism of this category is strict). -/
 abbrev gFunctor (T : GExpr) : Endofunctor ScottSys where
   obj := T.obj
   map := gFunctorMap T
@@ -365,11 +302,8 @@ abbrev gFunctor (T : GExpr) : Endofunctor ScottSys where
 @[simp] theorem gFunctorMap_val (T : GExpr) {X Y : ScottSys} (f : StrictMap X.sys Y.sys) :
     (gFunctorMap T f).1 = T.map f.1 := rfl
 
-/-- **The endofunctor `T(X) = N ⊕ ((X×X) + (X×X))`** of Exercise 6.23. -/
 abbrev TexpF (N : ScottSys) : Endofunctor ScottSys := gFunctor (Texp N)
 
-/-- The structure map of an algebra `B`, as a raw approximable map (its strictness is `algStr_strict`).
-The ascription to `StrictMap` forces the categorical `Hom` to its underlying subtype. -/
 def algStr (B : TAlgebra (TexpF N)) :
     ApproximableMap ((TexpF N).obj B.carrier).sys B.carrier.sys :=
   (B.str : StrictMap ((TexpF N).obj B.carrier).sys B.carrier.sys).1
@@ -377,30 +311,22 @@ def algStr (B : TAlgebra (TexpF N)) :
 theorem algStr_strict (B : TAlgebra (TexpF N)) : IsStrict (algStr B) :=
   (B.str : StrictMap ((TexpF N).obj B.carrier).sys B.carrier.sys).2
 
-/-- The identity isomorphism in any category induced by an object equality. -/
 def isoOfObjEq {Obj : Type*} [Category Obj] {X Y : Obj} (h : X = Y) : Iso X Y := by
   cases h
   exact ⟨(𝟙 X), (𝟙 X), CategoryTheory.Category.id_comp _, CategoryTheory.Category.id_comp _⟩
 
-/-- **The structure isomorphism `T(Exp) ≅ Exp`.** Since Phase 1 proved `T(Exp) = Exp` as objects
-(`Exp_structure_eq`), this is the identity isomorphism. -/
 def ExpIso (N : ScottSys) (hN : ([] : Str) ∈ N.sys.master) :
     Iso ((TexpF N).obj (Exp N hN)) (Exp N hN) :=
   isoOfObjEq (Exp_structure_eq N hN)
 
-/-- **`Exp` as a `T`-algebra** with structure map the isomorphism `T(Exp) ≅ Exp` (the identity, since
-`T(Exp) = Exp`). This realises Scott's "construe the initial solution as a syntactic domain of
-expressions": `Exp` is an algebra of `T(X) = N ⊕ ((X×X)+(X×X))`. -/
 abbrev ExpAlg (N : ScottSys) (hN : ([] : Str) ∈ N.sys.master) : TAlgebra (TexpF N) where
   carrier := Exp N hN
   str := (ExpIso N hN).hom
 
-/-- The structure map `i : T(Exp) → Exp` as a raw map (the identity, since `T(Exp) = Exp`). -/
 def expHom (N : ScottSys) (hN : ([] : Str) ∈ N.sys.master) :
     ApproximableMap ((TexpF N).obj (Exp N hN)).sys (Exp N hN).sys :=
   ((ExpIso N hN).hom : StrictMap ((TexpF N).obj (Exp N hN)).sys (Exp N hN).sys).1
 
-/-- The inverse `j = i⁻¹ : Exp → T(Exp)` of the structure isomorphism, as a raw map. -/
 def expInv (N : ScottSys) (hN : ([] : Str) ∈ N.sys.master) :
     ApproximableMap (Exp N hN).sys ((TexpF N).obj (Exp N hN)).sys :=
   ((ExpIso N hN).inv : StrictMap (Exp N hN).sys ((TexpF N).obj (Exp N hN)).sys).1
@@ -409,8 +335,6 @@ section Existence
 
 variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))
 
-/-- **The Kleene iterates `valₙ : Exp → D`** of the operator `λh. k ∘ T(h) ∘ j`. `val₀ = ⊥`,
-`valₙ₊₁ = k ∘ T(valₙ) ∘ j`. -/
 def descRel : ℕ → ApproximableMap (Exp N hN).sys B.carrier.sys
   | 0 => constMap (Exp N hN).sys B.carrier.sys.bot
   | n + 1 => (algStr B).comp (((Texp N).map (descRel n)).comp (expInv N hN))
@@ -437,7 +361,6 @@ variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master)
 
 variable (B : TAlgebra (TexpF N))
 
-/-- Two algebra homomorphisms with equal underlying maps are equal. -/
 theorem algHom_ext {A C : TAlgebra (TexpF N)} {g g' : AlgHom A C} (h : g.hom = g'.hom) : g = g' := by
   cases g; cases g'; cases h; rfl
 
@@ -455,8 +378,6 @@ section Existence
 
 variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))
 
-/-- The constant `⊥` map is below every approximable map (it relates each domain neighbourhood only
-to the codomain master, which every map produces by monotonicity from `master_rel`). -/
 theorem constBot_le {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
     (g : ApproximableMap V₀ V₁) : constMap V₀ V₁.bot ≤ g := by
   intro X Y hr
@@ -465,7 +386,6 @@ theorem constBot_le {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Neigh
   subst hY
   exact g.mono g.master_rel (V₀.sub_master hX) subset_rfl hX V₁.master_mem
 
-/-- The iterates increase: `valₙ ≤ valₙ₊₁`. -/
 theorem descRel_le_succ : ∀ n, descRel hN B n ≤ descRel hN B (n + 1)
   | 0 => constBot_le _
   | n + 1 => by
@@ -473,33 +393,25 @@ theorem descRel_le_succ : ∀ n, descRel hN B n ≤ descRel hN B (n + 1)
       exact comp_mono_gen le_rfl
         (comp_mono_gen ((Texp N).map_mono (descRel_le_succ n)) le_rfl)
 
-/-- The iterates form a `≤`-chain. -/
 theorem descRel_mono {i j : ℕ} (h : i ≤ j) : descRel hN B i ≤ descRel hN B j := by
   induction h with
   | refl => exact le_rfl
   | step _ ih => exact ih.trans (descRel_le_succ hN B _)
 
-/-- Directedness witness for the union (any two iterates are dominated by the later one). -/
 theorem descDir (i j : ℕ) : ∃ k, (∀ X Y, (descRel hN B i).rel X Y → (descRel hN B k).rel X Y) ∧
     (∀ X Y, (descRel hN B j).rel X Y → (descRel hN B k).rel X Y) :=
   ⟨max i j, descRel_mono hN B (le_max_left i j), descRel_mono hN B (le_max_right i j)⟩
 
-/-- Directedness of the iterates in `≤`-form (for `map_continuous`). -/
 theorem descDirLe (i j : ℕ) :
     ∃ k, descRel hN B i ≤ descRel hN B k ∧ descRel hN B j ≤ descRel hN B k :=
   ⟨max i j, descRel_mono hN B (le_max_left i j), descRel_mono hN B (le_max_right i j)⟩
 
-/-- **The evaluation map `val = ⋃ₙ valₙ`** as an approximable map. -/
 def descMap : ApproximableMap (Exp N hN).sys B.carrier.sys :=
   iSupMap (descRel hN B) (descDir hN B)
 
-/-- `val` is the relational union of the iterates (the hypothesis for `map_continuous`). -/
 theorem descMap_is_sup (A E : Set Str) :
     (descMap hN B).rel A E ↔ ∃ n, (descRel hN B n).rel A E := Iff.rfl
 
-/-- **The fixed-point equation `val = k ∘ T(val) ∘ j`.** Forward: an iterate `valₙ` is, after the
-recursion, `k ∘ T(valₙ₋₁) ∘ j`, and `T(valₙ₋₁) ⊆ T(val)` by continuity on maps. Backward: a witness
-factoring through `T(valₙ)` lands in `valₙ₊₁`. -/
 theorem descMap_fix :
     descMap hN B = (algStr B).comp (((Texp N).map (descMap hN B)).comp (expInv N hN)) := by
   have hmc : ∀ Y C, ((Texp N).map (descMap hN B)).rel Y C
@@ -530,7 +442,6 @@ theorem descMap_rel {A E : Set Str} :
 
 end Existence
 
-/-- `j ∘ i = I_{T(Exp)}` at the raw level (from the iso's `hom_inv_id`). -/
 theorem expInv_comp_expHom (N : ScottSys) (hN : ([] : Str) ∈ N.sys.master) :
     (expInv N hN).comp (expHom N hN) = idMap ((TexpF N).obj (Exp N hN)).sys := by
   have h := congrArg (Subtype.val) (ExpIso N hN).hom_inv_id
@@ -540,8 +451,6 @@ section Existence
 
 variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))
 
-/-- **The homomorphism square `val ∘ i = k ∘ T(val)`** at the raw level (conjugating the fixed-point
-equation by `i`, using `j ∘ i = I`). -/
 theorem descComm :
     (descMap hN B).comp (expHom N hN) = (algStr B).comp ((Texp N).map (descMap hN B)) := by
   calc (descMap hN B).comp (expHom N hN)
@@ -564,7 +473,6 @@ section Existence
 
 variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))
 
-/-- Every iterate is strict. -/
 theorem descRel_isStrict : ∀ n, IsStrict (descRel hN B n)
   | 0 => isStrict_constBot
   | n + 1 => by
@@ -572,13 +480,10 @@ theorem descRel_isStrict : ∀ n, IsStrict (descRel hN B n)
       exact isStrict_comp (algStr_strict B)
         (isStrict_comp ((Texp N).map_isStrict _ (descRel_isStrict n)) (expInv_strict N hN))
 
-/-- `val` is strict (a union of strict maps). -/
 theorem descMap_isStrict : IsStrict (descMap hN B) := by
   rintro Y ⟨n, hn⟩
   exact descRel_isStrict hN B n hn
 
-/-- **The evaluation homomorphism `val(s) : Exp → D`** as a `T`-algebra homomorphism — Scott's
-existence of the evaluation map. -/
 def descAlgHom : AlgHom (ExpAlg N hN) B where
   hom := ⟨descMap hN B, descMap_isStrict hN B⟩
   comm := by
@@ -602,7 +507,6 @@ section Uniqueness
 
 variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master)
 
-/-- The subdomain `Texpⁿ({Γ}) ◁ Exp` (Proposition 6.12's pair lives here). -/
 theorem expSub (n : ℕ) : (gTower (Texp N) n).sys ◁ (Exp N hN).sys :=
   gTower_sub_colim (Texp N) (Texp_rooted hN) n
 
@@ -616,7 +520,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-/-- The injection `i : D → E` of a subsystem is **strict**: `i` sends `Δ_D` only to `Δ_E`. -/
 theorem Subsystem.inj_isStrict {α : Type*} {D E : NeighborhoodSystem α} (h : D ◁ E) :
     IsStrict h.inj := by
   intro Y hrel
@@ -634,30 +537,24 @@ namespace Exercise619
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-/-- The forward map of the identity iso `isoOfObjEq e` is the inclusion `X ↪ Y` (= `idMap` across the
-object equality `e`). -/
 theorem isoOfObjEq_hom_rel {X Y : ScottSys} (e : X = Y) {A E : Set Str} :
     ((isoOfObjEq e).hom).1.rel A E ↔ X.sys.mem A ∧ Y.sys.mem E ∧ A ⊆ E := by
   cases e; exact idMap_rel
 
-/-- **Relational description of the structure map `i = expHom`** (the identity `T(Exp) = Exp`). -/
 theorem expHom_rel {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) {A E : Set Str} :
     (expHom N hN).rel A E ↔
       ((Texp N).obj (Exp N hN)).sys.mem A ∧ (Exp N hN).sys.mem E ∧ A ⊆ E :=
   isoOfObjEq_hom_rel (Exp_structure_eq N hN)
 
-/-- The inverse map of the identity iso `isoOfObjEq e`. -/
 theorem isoOfObjEq_inv_rel {X Y : ScottSys} (e : X = Y) {A E : Set Str} :
     ((isoOfObjEq e).inv).1.rel A E ↔ Y.sys.mem A ∧ X.sys.mem E ∧ A ⊆ E := by
   cases e; exact idMap_rel
 
-/-- **Relational description of the inverse structure map `j = expInv`**. -/
 theorem expInv_rel {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) {A E : Set Str} :
     (expInv N hN).rel A E ↔
       (Exp N hN).sys.mem A ∧ ((Texp N).obj (Exp N hN)).sys.mem E ∧ A ⊆ E :=
   isoOfObjEq_inv_rel (Exp_structure_eq N hN)
 
-/-- **Coalesced sum carries the injection.** -/
 theorem oplusMapTok_inj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
     oplusMapTok h0.inj h1.inj = (oplusTok_subsystem h0 h1).inj := by
   have hsubM : ∀ {W : Set Str}, (A₀.oplus A₁).sys.mem W → W ⊆ sumTokMaster B₀.sys B₁.sys := by
@@ -689,7 +586,6 @@ theorem oplusMapTok_inj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys
       · exact absurd hsub (fun h => embBit_not_subset_cross (by decide) (A₀.ne X hX) h)
       · exact Or.inr (Or.inr ⟨Y, Y', ⟨hY, hY', embBit_subset.mp hsub⟩, hYne, hY'ne, rfl, rfl⟩)
 
-/-- **Coalesced sum carries the projection.** -/
 theorem oplusMapTok_proj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
     oplusMapTok h0.proj h1.proj = (oplusTok_subsystem h0 h1).proj := by
   have hsubM : ∀ {W : Set Str}, (B₀.oplus B₁).sys.mem W → W ⊆ sumTokMaster A₀.sys A₁.sys := by
@@ -723,7 +619,6 @@ theorem oplusMapTok_proj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sy
       · exact absurd hsub (fun h => embBit_not_subset_cross (by decide) (B₀.ne X hX) h)
       · exact Or.inr (Or.inr ⟨Y, Y', ⟨hY, hY', embBit_subset.mp hsub⟩, hYne, hY'ne, rfl, rfl⟩)
 
-/-- **Smash product carries the injection.** -/
 theorem otimesMapTok_inj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
     otimesMapTok h0.inj h1.inj = (otimesTok_subsystem h0 h1).inj := by
   apply ApproximableMap.ext
@@ -751,7 +646,6 @@ theorem otimesMapTok_inj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sy
         exact Or.inr ⟨X, Y, X', Y', ⟨hX, hX', hXs⟩, ⟨hY, hY', hYs⟩,
           hXne, hYne, hX'ne, hY'ne, rfl, rfl⟩
 
-/-- **Smash product carries the projection.** -/
 theorem otimesMapTok_proj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
     otimesMapTok h0.proj h1.proj = (otimesTok_subsystem h0 h1).proj := by
   apply ApproximableMap.ext
@@ -779,7 +673,6 @@ theorem otimesMapTok_proj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.s
         exact Or.inr ⟨X, Y, X', Y', ⟨hX, hX', hXs⟩, ⟨hY, hY', hYs⟩,
           hXne, hYne, hX'ne, hY'ne, rfl, rfl⟩
 
-/-- **Product carries the injection.** -/
 theorem prodMapTok_inj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
     prodMapTok h0.inj h1.inj = (prodTok_subsystem h0 h1).inj := by
   apply ApproximableMap.ext
@@ -793,7 +686,6 @@ theorem prodMapTok_inj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys)
     obtain ⟨hXs, hYs⟩ := prodTokNbhd_subset_iff.mp hsub
     exact ⟨X, Y, X', Y', ⟨hX, hX', hXs⟩, ⟨hY, hY', hYs⟩, rfl, rfl⟩
 
-/-- **Product carries the projection.** -/
 theorem prodMapTok_proj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
     prodMapTok h0.proj h1.proj = (prodTok_subsystem h0 h1).proj := by
   apply ApproximableMap.ext
@@ -811,11 +703,9 @@ section Uniqueness
 
 variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master)
 
-/-- **`ρₙ = iₙ ∘ jₙ : Exp → Exp`**, the retraction onto `Texpⁿ({Γ})`. -/
 def rho (n : ℕ) : ApproximableMap (Exp N hN).sys (Exp N hN).sys :=
   (expSub hN n).inj.comp (expSub hN n).proj
 
-/-- Scott's relational description `A ρₙ E ↔ ∃ z ∈ Texpⁿ({Γ}), A ⊆ z ⊆ E`. -/
 theorem rho_rel (n : ℕ) {A E : Set Str} :
     (rho hN n).rel A E ↔ (Exp N hN).sys.mem A ∧ (Exp N hN).sys.mem E ∧
       ∃ z, (gTower (Texp N) n).sys.mem z ∧ A ⊆ z ∧ z ⊆ E := by
@@ -832,20 +722,17 @@ theorem rho_rel (n : ℕ) {A E : Set Str} :
     exact ⟨z, by rw [Subsystem.proj_rel]; exact ⟨hcA, hTz, hAz⟩,
       by rw [Subsystem.inj_rel]; exact ⟨hTz, hcE, hzE⟩⟩
 
-/-- `ρₙ ⊆ ρₘ` for `n ≤ m`. -/
 theorem rho_mono {n m : ℕ} (h : n ≤ m) {A E : Set Str} (hr : (rho hN n).rel A E) :
     (rho hN m).rel A E := by
   rw [rho_rel] at hr ⊢
   obtain ⟨hcA, hcE, z, hTz, hAz, hzE⟩ := hr
   exact ⟨hcA, hcE, z, (gTower_le (Texp N) (Texp_rooted hN) h).sub hTz, hAz, hzE⟩
 
-/-- The pointwise union `⋃ₙ ρₙ`. -/
 def iSupRho : ApproximableMap (Exp N hN).sys (Exp N hN).sys :=
   iSupMap (rho hN) (fun i j => ⟨max i j,
     fun _ _ h => rho_mono hN (le_max_left i j) h,
     fun _ _ h => rho_mono hN (le_max_right i j) h⟩)
 
-/-- **`⋃ₙ ρₙ = I_Exp`** (Scott's key identity). -/
 theorem iSupRho_eq_id : iSupRho hN = idMap (Exp N hN).sys := by
   apply ApproximableMap.ext
   intro A E
@@ -859,7 +746,6 @@ theorem iSupRho_eq_id : iSupRho hN = idMap (Exp N hN).sys := by
     obtain ⟨n, hA⟩ := hcA
     exact ⟨n, (rho_rel hN n).mpr ⟨⟨n, hA⟩, hcE, A, hA, subset_rfl, hAE⟩⟩
 
-/-- **`ρ₀ = ⊥`** (the generator `{Γ}` is one-point): `ρ₀` relates `A` only to the master. -/
 theorem rho_zero_rel {A E : Set Str} :
     (rho hN 0).rel A E ↔ (Exp N hN).sys.mem A ∧ E = (Exp N hN).sys.master := by
   rw [rho_rel]
@@ -881,7 +767,6 @@ variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master)
 
 variable (B : TAlgebra (TexpF N))
 
-/-- The base of the recursion: `g ∘ ρ₀ = ⊥ = val₀`, independent of `g`. -/
 theorem gcomp_rho_zero (g : AlgHom (ExpAlg N hN) B) :
     g.hom.1.comp (rho hN 0) = descRel hN B 0 := by
   apply ApproximableMap.ext
@@ -908,15 +793,12 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 
 namespace Exercise619
 
-/-- On `D ◁ D` (e.g. `Subsystem.refl`), the injection is the identity (both relations are
-`X ∈ D ∧ Y ∈ D ∧ X ⊆ Y`). -/
 theorem Subsystem.self_inj {α : Type*} {D : NeighborhoodSystem α} (h : D ◁ D) :
     h.inj = idMap D := by
   apply ApproximableMap.ext
   intro X Y
   rw [Subsystem.inj_rel, idMap_rel]
 
-/-- On `D ◁ D`, the projection is the identity. -/
 theorem Subsystem.self_proj {α : Type*} {D : NeighborhoodSystem α} (h : D ◁ D) :
     h.proj = idMap D := by
   apply ApproximableMap.ext
@@ -933,8 +815,6 @@ namespace Exercise619
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-/-- **Sum carries the injection.** `(i₀ + i₁) = i` for the sum subsystem: both relate `W ↦ W'` iff
-`W ∈ 𝒟₀+𝒟₁`, `W' ∈ ℰ₀+ℰ₁`, `W ⊆ W'`. -/
 theorem sumMapTok_inj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
     sumMapTok h0.inj h1.inj = (sumTok_subsystem h0 h1).inj := by
   have hsubM : ∀ {W : Set Str}, (A₀.sum A₁).sys.mem W → W ⊆ sumTokMaster B₀.sys B₁.sys := by
@@ -963,7 +843,6 @@ theorem sumMapTok_inj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) 
       · exact absurd hsub (fun h => embBit_not_subset_cross (by decide) (A₀.ne X hX) h)
       · exact Or.inr (Or.inr ⟨Y, Y', ⟨hY, hY', embBit_subset.mp hsub⟩, rfl, rfl⟩)
 
-/-- **`T(i) = i'`** — the functor carries the injection of `D ◁ E` to that of `T(D) ◁ T(E)`. -/
 theorem GExpr.map_inj : (T : GExpr) → {X Y : ScottSys} → (h : X.sys ◁ Y.sys) →
     T.map h.inj = (T.obj_subsystem h).inj
   | .const D, _, _, _ => (Subsystem.self_inj (Subsystem.refl D.sys)).symm
@@ -985,7 +864,6 @@ theorem GExpr.map_inj : (T : GExpr) → {X Y : ScottSys} → (h : X.sys ◁ Y.sy
           = (otimesTok_subsystem (a.obj_subsystem h) (b.obj_subsystem h)).inj
       rw [a.map_inj h, b.map_inj h, otimesMapTok_inj]
 
-/-- **Sum carries the projection.** -/
 theorem sumMapTok_proj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
     sumMapTok h0.proj h1.proj = (sumTok_subsystem h0 h1).proj := by
   have hsubM : ∀ {W : Set Str}, (B₀.sum B₁).sys.mem W → W ⊆ sumTokMaster A₀.sys A₁.sys := by
@@ -1016,7 +894,6 @@ theorem sumMapTok_proj (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys)
       · exact absurd hsub (fun h => embBit_not_subset_cross (by decide) (B₀.ne X hX) h)
       · exact Or.inr (Or.inr ⟨Y, Y', ⟨hY, hY', embBit_subset.mp hsub⟩, rfl, rfl⟩)
 
-/-- **`T(j) = j'`** — the functor carries the projection of `D ◁ E` to that of `T(D) ◁ T(E)`. -/
 theorem GExpr.map_proj : (T : GExpr) → {X Y : ScottSys} → (h : X.sys ◁ Y.sys) →
     T.map h.proj = (T.obj_subsystem h).proj
   | .const D, _, _, _ => (Subsystem.self_proj (Subsystem.refl D.sys)).symm
@@ -1042,7 +919,6 @@ section Uniqueness
 
 variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master)
 
-/-- `T(ρₙ) = T(iₙ) ∘ T(jₙ) = i'ₙ ∘ j'ₙ`, the projection pair of `T(Texpⁿ{Γ}) ◁ T(Exp)`. -/
 theorem map_rho_eq (n : ℕ) :
     (Texp N).map (rho hN n)
       = ((Texp N).obj_subsystem (expSub hN n)).inj.comp
@@ -1051,7 +927,6 @@ theorem map_rho_eq (n : ℕ) :
   rw [(Texp N).map_comp (expSub hN n).proj (Subsystem.inj_isStrict (expSub hN n)),
       (Texp N).map_inj, (Texp N).map_proj]
 
-/-- **`ρₙ₊₁ = i ∘ T(ρₙ) ∘ j`** (Scott's `T(ρₙ) = ρₙ₊₁`, conjugated by the structure iso). -/
 theorem key_rho (n : ℕ) :
     rho hN (n + 1)
       = (expHom N hN).comp (((Texp N).map (rho hN n)).comp (expInv N hN)) := by
@@ -1077,7 +952,6 @@ variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master)
 
 variable (B : TAlgebra (TexpF N))
 
-/-- **The fixed-point recursion `gₙ₊₁ = k ∘ T(gₙ) ∘ j`** (`key_rho` + the homomorphism square). -/
 theorem gcomp_rho_succ (g : AlgHom (ExpAlg N hN) B) (n : ℕ) :
     g.hom.1.comp (rho hN (n + 1))
       = (algStr B).comp (((Texp N).map (g.hom.1.comp (rho hN n))).comp (expInv N hN)) := by
@@ -1102,15 +976,11 @@ theorem gcomp_rho_succ (g : AlgHom (ExpAlg N hN) B) (n : ℕ) :
         congrArg (fun m => (algStr B).comp (m.comp (expInv N hN)))
           ((Texp N).map_comp (rho hN n) g.hom.2).symm
 
-/-- **`g ∘ ρₙ = val₀ₙ`**: every homomorphism `g` agrees with the canonical Kleene iterate after the
-`n`-th projection — the sequence is forced by the recursion, independent of `g`. -/
 theorem gcomp_rho_eq (g : AlgHom (ExpAlg N hN) B) :
     ∀ n, g.hom.1.comp (rho hN n) = descRel hN B n
   | 0 => gcomp_rho_zero hN B g
   | n + 1 => by rw [gcomp_rho_succ hN B g n, gcomp_rho_eq g n, ← descRel_succ]
 
-/-- **The underlying map of any homomorphism `g : Exp → D` is `val = descMap`.** Hence `descAlgHom`
-is the *unique* homomorphism. -/
 theorem descMap_eq_algHom (g : AlgHom (ExpAlg N hN) B) : g.hom.1 = descMap hN B := by
   have hcomp : g.hom.1.comp (iSupRho hN) = descMap hN B := by
     apply ApproximableMap.ext

@@ -9,11 +9,9 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrecu2082_finAux
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem primrec_fin : Primrec fin := by
   unfold fin

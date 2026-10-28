@@ -20,9 +20,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem plusR_map_isScottContinuous (a b : Pomega) :
     IsScottContinuous (fun u =>

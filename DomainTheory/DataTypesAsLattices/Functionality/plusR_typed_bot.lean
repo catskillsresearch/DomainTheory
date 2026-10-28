@@ -12,9 +12,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem plusR_typed_bot (a b : Pomega) : typed botElem (plusR a b) := by
   rw [typed, plusR_app.app, funOf.bot, dcondSet.bot]

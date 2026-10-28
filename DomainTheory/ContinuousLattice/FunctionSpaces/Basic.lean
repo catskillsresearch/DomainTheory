@@ -16,11 +16,9 @@ variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- Scott's notation `[X → Y]`: continuous maps with the pointwise (product) topology. -/
 abbrev ScottFunctionSpace (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y] :=
   C(X, Y)
 
-/-- Continuous maps `D → D'` with Scott topologies on domain and codomain. -/
 abbrev ScottC (D D' : Type*) [CompleteLattice D] [CompleteLattice D'] :=
   @ContinuousMap D D' scottTopologicalSpace scottTopologicalSpace
 
@@ -57,6 +55,5 @@ namespace Proposition314
 @[simp] theorem fixMap_apply (f : ScottMap D D) : (fixMap f : D) = fix f := rfl
 
 end Proposition314
-
 
 end DomainTheory.ContinuousLattice

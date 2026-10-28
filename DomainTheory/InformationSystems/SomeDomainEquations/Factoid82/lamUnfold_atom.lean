@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.Basi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,9 +15,7 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
-
 
 theorem lamUnfold_atom (x : α) :
     lamUnfold A ⟨.atom x, ⟨trivial⟩⟩ = SumToken.left x := rfl

@@ -21,7 +21,6 @@ open DomainTheory.InformationSystems.InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- **Factoid 8.1 at domain level.** `|T| ≃o |A + (T × T)|` via `treeUnfold`. -/
 def treeDomainIso : (treeSystem A).Element ≃o (treeRhs A).Element where
   toFun := unfoldElement A
   invFun := foldElement A

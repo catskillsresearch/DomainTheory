@@ -29,7 +29,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Closed term for the functional whose least fixed point is `vaal`. -/
 def vaalStepTerm : Term :=
   .lam 0 (.lam 1
     (.cond (.app (.var 1) .zero) gClosed
@@ -46,7 +45,7 @@ open Nat.Partrec.Code
 theorem interp :
     _root_.DomainTheory.DataTypesAsLattices.interp vaalStepTerm (fun _ => botElem) = graph vaalF := by
   unfold vaalStepTerm vaalF
-  -- `interp (.lam i t)` is definitionally a graph; keep `gClosed` packed.
+
   apply congrArg graph
   funext v
   apply congrArg graph

@@ -17,7 +17,6 @@ open DomainTheory.InformationSystems.InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Choice-free image of a tree finset under `treeUnfold`. -/
 def unfoldFinset (u : Finset (TreeToken α)) :
     Finset (SumToken α (ProdToken (treeSystem A) (treeSystem A))) :=
   Multiset.foldr (unfoldInsert A) ∅ u.1

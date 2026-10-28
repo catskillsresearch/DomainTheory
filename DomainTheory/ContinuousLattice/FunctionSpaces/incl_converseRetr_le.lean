@@ -10,7 +10,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -25,7 +24,6 @@ open Finset
 
 variable {i : D → D'}
 
-/-- `i ∘ j ⊑ id` (uses only (i)). -/
 theorem incl_converseRetr_le (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S)) (x' : D') :
     i (converseRetr i x') ≤ x' := by
   show i (sSup {x | i x ≤ x'}) ≤ x'

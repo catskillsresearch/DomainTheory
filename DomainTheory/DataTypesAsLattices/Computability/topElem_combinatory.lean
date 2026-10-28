@@ -15,18 +15,13 @@ public import DomainTheory.DataTypesAsLattices.Computability.topRecTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
-
-
 
 theorem topElem_combinatory : IsCombinatory topElem := by
   have h : funOf Ycomb (interp topRecTerm (fun _ => botElem)) = topElem := by

@@ -9,22 +9,17 @@ public import Mathlib.Order.Interval.Set.Defs
 
 namespace DomainTheory.NeighbourhoodSystems
 
-/-- The set presented by a list of interval endpoint-pairs: the union `⋃ (r,s) ∈ L, [r,s)`. -/
 def presentedIntervals (L : List (ℚ × ℚ)) : Set ℚ := ⋃ p ∈ L, Set.Ico p.1 p.2
 
-/-- Clip an interval-pair to `[0,1)`, moving `r` up to `0` and `s` down to `1` when needed. -/
 def clip (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ 0, p.2 ⊓ 1)
 
 def clipGe (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ m, p.2)
 
 def clipLt (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1, p.2 ⊓ m)
 
-/-- Pairwise-combine two endpoint-lists via `Set.Ico_inter_Ico`, realizing the intersection of the
-two presented unions as another presented union. -/
 def combineIntervals (L1 L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) :=
   L1.flatMap (fun p => L2.map (fun q => (p.1 ⊔ q.1, p.2 ⊓ q.2)))
 
-/-- **Unconditional interval difference**: `Ico a b \ Ico c d = Ico a (b ⊓ c) ∪ Ico (a ⊔ d) b`. -/
 theorem Ico_diff_Ico (a b c d : ℚ) :
     Set.Ico a b \ Set.Ico c d = Set.Ico a (b ⊓ c) ∪ Set.Ico (a ⊔ d) b := by
   ext x
@@ -40,17 +35,13 @@ theorem Ico_diff_Ico (a b c d : ℚ) :
     · exact ⟨⟨ha, hb⟩, fun ⟨hc', _⟩ => absurd hc' (not_le.mpr hc)⟩
     · exact ⟨⟨ha, hb⟩, fun ⟨_, hd'⟩ => absurd hd' (not_lt.mpr hd)⟩
 
-/-- **Difference of a single interval-pair by another**, as a `≤ 2`-element list. -/
 def diffOneList (p q : ℚ × ℚ) : List (ℚ × ℚ) := [(p.1, p.2 ⊓ q.1), (p.1 ⊔ q.2, p.2)]
 
-/-- **Subtract a single interval-pair `q` from a whole presenting list `L`.** -/
 def diffSingleList (L : List (ℚ × ℚ)) (q : ℚ × ℚ) : List (ℚ × ℚ) :=
   L.flatMap (fun p => diffOneList p q)
 
-/-- **Subtract a whole presenting list `L2` from a single interval-pair `p`.** -/
 def diffAllList (p : ℚ × ℚ) (L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L2.foldl diffSingleList [p]
 
-/-- **Subtract `L2` from `L1`**, presenting `presentedIntervals L1 \ presentedIntervals L2`. -/
 def diffLists (L1 L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L1.flatMap (fun p => diffAllList p L2)
 
 namespace presentedIntervals
@@ -72,7 +63,6 @@ theorem append (L1 L2 : List (ℚ × ℚ)) :
   | nil => simp
   | cons p L1 ih => simp [List.cons_append, cons, ih, Set.union_assoc]
 
-/-- Two lists with the same **elements** present the same set. -/
 theorem congr {L1 L2 : List (ℚ × ℚ)} (h : ∀ p, p ∈ L1 ↔ p ∈ L2) :
     presentedIntervals L1 = presentedIntervals L2 := by
   ext x
@@ -81,8 +71,6 @@ theorem congr {L1 L2 : List (ℚ × ℚ)} (h : ∀ p, p ∈ L1 ↔ p ∈ L2) :
   · rintro ⟨p, hp, h1, h2⟩; exact ⟨p, (h p).mp hp, h1, h2⟩
   · rintro ⟨p, hp, h1, h2⟩; exact ⟨p, (h p).mpr hp, h1, h2⟩
 
-/-- **The presented family is closed under intersection**, with no side conditions on endpoints:
-`Set.Ico_inter_Ico` handles crossed bounds automatically by returning the empty interval. -/
 theorem inter (L1 L2 : List (ℚ × ℚ)) :
     presentedIntervals L1 ∩ presentedIntervals L2 = presentedIntervals (combineIntervals L1 L2) := by
   ext x

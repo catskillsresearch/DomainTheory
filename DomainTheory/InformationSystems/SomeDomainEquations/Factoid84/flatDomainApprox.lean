@@ -19,7 +19,6 @@ open ApproximableMap
 
 namespace Factoid84
 
-/-- Witness that Scott’s (1)–(5) are inhabited. -/
 def flatDomainApprox : DomainApprox :=
   ⟨flatMap, flatMap.isDomain⟩
 

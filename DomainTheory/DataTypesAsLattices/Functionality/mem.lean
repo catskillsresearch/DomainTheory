@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- `x : A` means `x A x`. -/
 def RestrictedEquiv.mem (A : RestrictedEquiv) (x : Pomega) : Prop :=
   A.rel x x
 

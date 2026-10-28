@@ -12,11 +12,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 4.6 applied to (4.39).** -/
 theorem lambR_isRetract : Retract lambR :=
   (theorem_4_6 lambF_isScottContinuous (fun _a ha =>
     plusR_isRetract intR.isRetract (arrowR.isRetract ha ha))).2

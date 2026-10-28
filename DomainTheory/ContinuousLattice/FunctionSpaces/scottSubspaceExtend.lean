@@ -11,7 +11,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -24,7 +23,6 @@ section SubspaceExtension
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y]
 
-/-- **Scott 1972, Proposition 3.8.** Scott's maximal subspace extension `f̄ : Y → D`. -/
 noncomputable def scottSubspaceExtend (e : X → Y) (f : X → D) (y : Y) : D :=
   sSup { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧ d = scottSubspaceExtendInf e f U }
 

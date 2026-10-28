@@ -4,20 +4,16 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 
-
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
-
 
 section Proposition310
 
@@ -25,7 +21,6 @@ open Finset
 
 namespace IsContinuousLatticeProjection
 
-/-- **Scott 1972, Proposition 3.10(i), binary case.** `i(x ⊔ y) = i(x) ⊔ i(y)`. -/
 theorem incl_sup (P : IsContinuousLatticeProjection D D') (x y : D) :
     P.incl (x ⊔ y) = P.incl x ⊔ P.incl y := by
   apply le_antisymm

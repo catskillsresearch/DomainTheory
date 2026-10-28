@@ -13,13 +13,11 @@ public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Order
 public import Mathlib.Order.FixedPoints
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
@@ -35,7 +33,6 @@ open Finset
 
 variable {i : D → D'}
 
-/-- From (i): `i` preserves binary joins (Scott checks (i) on two-element sets). -/
 theorem incl_sup_of_preservesSSup (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S)) (x y : D) :
     i (x ⊔ y) = i x ⊔ i y := by
   calc i (x ⊔ y) = i (sSup {x, y}) := by rw [sSup_pair]

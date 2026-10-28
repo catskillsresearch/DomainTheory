@@ -99,7 +99,6 @@ namespace ConjScottMap
 variable {D' E' : Type*} [PartialOrder D'] [PartialOrder E']
 variable (ιD : D ≃o D') (ιE : E ≃o E')
 
-
 end ConjScottMap
 
 section ContinuousRoundFilter
@@ -107,7 +106,6 @@ section ContinuousRoundFilter
 variable (hD : ContinuousLattice D) (hE : ContinuousLattice E)
 include hD hE
 
-/-- Conjugation along round `↟`-filters (no `DecidableEq` needed). -/
 noncomputable abbrev scottMap_roundFilter_iso :
     ScottMap D E ≃o
       ConjScottMap (continuousLattice_roundFilter_iso hD)
@@ -123,7 +121,6 @@ variable (hD : ContinuousLattice D) (hE : ContinuousLattice E)
 variable [DecidableEq D] [DecidableEq E]
 include hD hE
 
-/-- Conjugation along round InfoSys elements of the `↟`-basis. -/
 noncomputable abbrev scottMap_roundInfoSys_iso :
     ScottMap D E ≃o
       ConjScottMap (presentation_domains_equiv hD) (presentation_domains_equiv hE) :=

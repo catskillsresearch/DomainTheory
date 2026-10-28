@@ -14,9 +14,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
-/- concordance: source L2239 EXERCISE 4.10 domain above an element -/
-/-- **Exercise 4.10 (Scott 1981, PRG-19).** The relativized neighbourhood system `Dₐ`: same tokens
-and master, neighbourhoods exactly the members of the filter `a`. -/
 def relSystem (a : V.Element) : NeighborhoodSystem α where
   mem X := a.mem X
   master := V.master
@@ -30,7 +27,6 @@ def relSystem (a : V.Element) : NeighborhoodSystem α where
 
 @[simp] theorem relSystem_master (a : V.Element) : (relSystem a).master = V.master := rfl
 
-/-- The `𝒟`-element obtained from a `Dₐ`-filter by upward closure in `𝒟`. -/
 def embed (a : V.Element) (g : (relSystem a).Element) : V.Element where
   mem X := V.mem X ∧ ∃ W, a.mem W ∧ g.mem W ∧ W ⊆ X
   sub := fun h => h.1
@@ -45,7 +41,6 @@ def embed (a : V.Element) (g : (relSystem a).Element) : V.Element where
     rintro X Y ⟨hVX, W, haW, hgW, hWX⟩ hVY hXY
     exact ⟨hVY, W, haW, hgW, subset_trans hWX hXY⟩
 
-/-- `embed a g ⊑ a`: the embedding lands below `a`. -/
 theorem embed_le (a : V.Element) (g : (relSystem a).Element) : embed a g ≤ a := by
   rintro X ⟨hVX, W, haW, _, hWX⟩
   exact a.up_mem haW hVX hWX
@@ -63,8 +58,6 @@ theorem le_of_embed_le (a : V.Element) {g₁ g₂ : (relSystem a).Element}
   obtain ⟨_, W, haW, hg₂W, hWX⟩ := this
   exact g₂.up_mem hg₂W (g₁.sub hg₁X) hWX
 
-/-- **Exercise 4.10 (Scott 1981, PRG-19).** When `f(a) = a`, the restriction `f' : Dₐ → Dₐ`
-(`f'(x) = f(x)`). The codomain condition uses `↑X ⊑ a ⟹ f(↑X) ⊑ f(a) = a`. -/
 def relMap (f : ApproximableMap V V) {a : V.Element} (ha : f.toElementMap a = a) :
     ApproximableMap (relSystem a) (relSystem a) where
   rel X Y := a.mem X ∧ f.rel X Y
@@ -86,7 +79,6 @@ def relMap (f : ApproximableMap V V) {a : V.Element} (ha : f.toElementMap a = a)
     rintro X X' Y Y' ⟨_, hXY⟩ hX'X hYY' haX' haY'
     exact ⟨haX', f.mono hXY hX'X hYY' (a.sub haX') (a.sub haY')⟩
 
-/-- The `Dₐ`-filter obtained from an element `x ⊑ a` by restriction (same membership). -/
 def restrict (a : V.Element) (x : V.Element) (hx : x ≤ a) : (relSystem a).Element where
   mem X := x.mem X
   sub := fun h => hx _ h
@@ -114,8 +106,6 @@ theorem restrict_embed (a : V.Element) (g : (relSystem a).Element) :
   · intro hgX
     exact ⟨a.sub (g.sub hgX), X, g.sub hgX, hgX, subset_rfl⟩
 
-/-- **Exercise 4.10 (Scott 1981, PRG-19).** `|Dₐ| ≃o {x ∈ |𝒟| ∣ x ⊑ a}`: the relativized domain has
-exactly the elements below `a` as its points, with the inherited order. -/
 def relIso (a : V.Element) : (relSystem a).Element ≃o {x : V.Element // x ≤ a} where
   toFun g := ⟨embed a g, embed_le a g⟩
   invFun x := restrict a x.1 x.2
@@ -127,14 +117,11 @@ def relIso (a : V.Element) : (relSystem a).Element ≃o {x : V.Element // x ≤ 
     · intro h; exact le_of_embed_le a h
     · intro h; exact embed_mono a h
 
-/-- **Exercise 4.10 (Scott 1981, PRG-19).** Any fixed point of `f` below `fix(f)` *is* `fix(f)`:
-a fixed point is a pre-fixed point, so leastness forces `fix(f) ⊑ x`. -/
 theorem fixElement_below_unique (f : ApproximableMap V V) {x : V.Element}
     (hxle : x ≤ f.fixElement) (hxfix : f.toElementMap x = x) : x = f.fixElement := by
   have hge : f.fixElement ≤ x := fixElement_le_of_toElementMap_le f (le_of_eq hxfix)
   exact le_antisymm hxle hge
 
-/-- The restriction `f'` has the same action as `f`: `embed a (f'(g)) = f(embed a g)`. -/
 theorem relMap_toElementMap_embed (f : ApproximableMap V V) {a : V.Element}
     (ha : f.toElementMap a = a) (g : (relSystem a).Element) :
     embed a ((relMap f ha).toElementMap g) = f.toElementMap (embed a g) := by
@@ -142,11 +129,11 @@ theorem relMap_toElementMap_embed (f : ApproximableMap V V) {a : V.Element}
   intro X
   constructor
   · rintro ⟨hVX, W, haW, ⟨U, hgU, haU, hUW⟩, hWX⟩
-    -- `U ∈ g`, `U f W`, `W ⊆ X`; so `X ∈ f(embed g)` via the member `U` of `embed g`.
+
     refine ⟨U, ⟨a.sub haU, U, haU, hgU, subset_rfl⟩, ?_⟩
     exact f.mono hUW subset_rfl hWX (a.sub haU) hVX
   · rintro ⟨U, ⟨hVU, W, haW, hgW, hWU⟩, hUX⟩
-    -- `W ∈ g`, `W ⊆ U`, `U f X`; so `W f X` and `X ∈ embed a (f'(g))`.
+
     have hVX : V.mem X := f.rel_cod hUX
     have hWX : f.rel W X := f.mono hUX hWU subset_rfl (a.sub haW) hVX
     have haX : a.mem X := by
@@ -157,22 +144,19 @@ theorem relMap_toElementMap_embed (f : ApproximableMap V V) {a : V.Element}
       rw [ha] at this; exact this
     exact ⟨hVX, X, haX, ⟨W, hgW, haW, hWX⟩, subset_rfl⟩
 
-/-- **Exercise 4.10 (Scott 1981, PRG-19).** With `a = fix(f)`, the restricted map `f'` has *exactly
-one* fixed point: the top element of `D_{fix f}`, namely `restrict (fix f)` of `fix f` itself. Every
-`Dₐ`-fixed point `g` of `f'` satisfies `embed a g = fix f`, hence is this top element. -/
 theorem relMap_unique_fixed (f : ApproximableMap V V)
     (ha : f.toElementMap f.fixElement = f.fixElement) (g : (relSystem f.fixElement).Element)
     (hg : (relMap f ha).toElementMap g = g) :
     g = restrict f.fixElement f.fixElement (le_refl _) := by
-  -- `embed g` is a fixed point of `f` below `fix f`, hence equals `fix f`.
+
   have hembfix : f.toElementMap (embed f.fixElement g) = embed f.fixElement g := by
     rw [← relMap_toElementMap_embed f ha g, hg]
   have heq : embed f.fixElement g = f.fixElement :=
     fixElement_below_unique f (embed_le f.fixElement g) hembfix
-  -- transport along the iso.
+
   have h1 : restrict f.fixElement (embed f.fixElement g) (embed_le f.fixElement g) = g :=
     restrict_embed f.fixElement g
-  -- both restricts agree because their underlying elements agree.
+
   have h2 : restrict f.fixElement (embed f.fixElement g) (embed_le f.fixElement g)
       = restrict f.fixElement f.fixElement (le_refl _) := by
     apply Element.ext
@@ -300,8 +284,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-/-- The inclusion `𝒟ₐ → 𝒟` as an approximable map: an `a`-neighbourhood `X` relates to any larger
-`𝒟`-neighbourhood `Y ⊇ X`. Its elementwise action is `embed a` (`inclMap_toElementMap`). -/
 def inclMap (a : V.Element) : ApproximableMap (relSystem a) V where
   rel X Y := a.mem X ∧ V.mem Y ∧ X ⊆ Y
   rel_dom := fun h => h.1
@@ -315,7 +297,6 @@ def inclMap (a : V.Element) : ApproximableMap (relSystem a) V where
     rintro X X' Y Y' ⟨_, _, hXY⟩ hX'X hYY' haX' hVY'
     exact ⟨haX', hVY', (hX'X.trans hXY).trans hYY'⟩
 
-/-- The inclusion's elementwise action is `embed a` (Exercise 4.10). -/
 theorem inclMap_toElementMap (a : V.Element) (g : (relSystem a).Element) :
     (inclMap a).toElementMap g = embed a g := by
   apply Element.ext
@@ -326,7 +307,6 @@ theorem inclMap_toElementMap (a : V.Element) (g : (relSystem a).Element) :
   · rintro ⟨hVY, W, haW, hgW, hWY⟩
     exact ⟨W, hgW, haW, hVY, hWY⟩
 
-/-- The inclusion is strict: `ι(⊥) = ⊥`. -/
 theorem inclMap_bot (a : V.Element) : (inclMap a).toElementMap (relSystem a).bot = V.bot := by
   rw [inclMap_toElementMap]
   apply Element.ext
@@ -340,7 +320,6 @@ theorem inclMap_bot (a : V.Element) : (inclMap a).toElementMap (relSystem a).bot
   · rintro rfl
     exact ⟨V.master_mem, V.master, a.master_mem, (relSystem a).bot.master_mem, subset_rfl⟩
 
-/-- The inclusion intertwines `f'` with `f`: `ι ∘ f' = f ∘ ι` (from `relMap_toElementMap_embed`). -/
 theorem inclMap_intertwine (f : ApproximableMap V V) {a : V.Element} (ha : f.toElementMap a = a)
     (g : (relSystem a).Element) :
     (inclMap a).toElementMap ((relMap f ha).toElementMap g) =

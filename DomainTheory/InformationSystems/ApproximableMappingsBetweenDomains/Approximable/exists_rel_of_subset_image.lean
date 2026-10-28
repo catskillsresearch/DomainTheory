@@ -21,7 +21,6 @@ namespace ApproximableMap
 
 variable {A : InfoSys α} {B : InfoSys β}
 
-/-- Given `↑Y ⊆ f(x).carrier`, produce `u ⊆ x` with `u f Y`. -/
 theorem exists_rel_of_subset_image (f : ApproximableMap A B) (x : A.Element)
     (Y : Finset β)
     (hY : ↑Y ⊆ ({Y : β | ∃ u : Finset α, ↑u ⊆ x.carrier ∧ f.rel u {Y}} : Set β)) :

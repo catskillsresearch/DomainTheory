@@ -30,7 +30,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 
 open Order
 
-/-- Official right-hand side `A + (T × T)`. -/
 abbrev SexRhs : InfoSys (SumToken ℕ (ProdToken SexSys SexSys)) :=
   treeRhs lowerBoundSystem
 

@@ -68,7 +68,6 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions
 public import DomainTheory.BridgeTheorems.PresentationDomains
 public import DomainTheory.BridgeTheorems.ConjScottMap
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -87,7 +86,6 @@ open ContinuousLatticeToNeighborhood
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-/-- Pointwise order on Scott-continuous maps of InfoSys domains. -/
 instance instPartialOrderScottContinuous (A : InfoSys α) (B : InfoSys β) :
     PartialOrder (ScottContinuous A B) where
   le f g := ∀ x, f.toFun x ≤ g.toFun x

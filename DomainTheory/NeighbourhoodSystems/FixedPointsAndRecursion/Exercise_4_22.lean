@@ -11,13 +11,8 @@ open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercis
 section
 variable {M : Type*} (zero : M) (succ : M → M)
 
-/-- Scott's operator `g(x) = {0} ∪ x⁺` on `P(N*)`, whose least fixed point is the smallest subset
-containing `0` and closed under the successor. -/
 def genOp (x : Set M) : Set M := {zero} ∪ succ '' x
 
-/-- *(For set theorists.)* The standard natural numbers `⟨ℕ, 0, ⁺⟩` form a model of Peano's Axioms;
-their existence is the **axiom of infinity**. (This witnesses that an `N*` satisfying (i)/(ii) — in
-fact all three — exists in the first place.) -/
 def natPeano : PeanoModel ℕ where
   zero := 0
   succ := Nat.succ
@@ -29,15 +24,10 @@ def natPeano : PeanoModel ℕ where
     | zero => exact h0
     | succ k ih => exact hstep k ih
 
-/-- The carved-out subset `N ⊆ N*`: the least fixed point of `g` (Exercise 4.13(2)/4.14). -/
 def nats : Set M := lfpSet (genOp zero succ)
 
-/-- The subtype `N = {m // m ∈ nats}` carrying the carved-out Peano structure. -/
 abbrev Nat' : Type _ := {m : M // m ∈ nats zero succ}
 
-/-- **Induction by minimality.** Any subset `s ⊆ N*` containing `0` and closed under `⁺` contains
-all of `N`. (This is the heart of axiom (iii): `s` is a pre-fixed point of `g`, hence dominates the
-least fixed point `nats`.) -/
 theorem nats_induction (s : Set M) (h0 : zero ∈ s) (hsucc : ∀ n ∈ s, succ n ∈ s) :
     nats zero succ ⊆ s := by
   apply lfpSet_subset (genOp zero succ)
@@ -45,21 +35,16 @@ theorem nats_induction (s : Set M) (h0 : zero ∈ s) (hsucc : ∀ n ∈ s, succ 
   · exact h0
   · exact hsucc n hn
 
-/-- `N` is closed under the successor: `n ∈ N ⟹ n⁺ ∈ N` — again directly from `lfpSet`. -/
 theorem succ_mem_nats {n : M} (hn : n ∈ nats zero succ) : succ n ∈ nats zero succ := by
   intro x hx
   exact hx (Or.inr ⟨n, hn x hx, rfl⟩)
 
-/-- The successor of the subtype (well-defined by closure `succ_mem_nats`). -/
 def subSucc (n : Nat' zero succ) : Nat' zero succ := ⟨succ n.1, succ_mem_nats zero succ n.2⟩
 
-/-- `0 ∈ N` — directly from the `lfpSet` definition (no monotonicity needed), keeping the
-construction choice-free. -/
 theorem zero_mem_nats : zero ∈ nats zero succ := by
   intro x hx
   exact hx (Or.inl rfl)
 
-/-- The zero of the subtype. -/
 def subZero : Nat' zero succ := ⟨zero, zero_mem_nats zero succ⟩
 end
 end DomainTheory.NeighbourhoodSystems.Exercise422
@@ -70,10 +55,6 @@ open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercis
 section
 variable {M : Type*} (zero : M) (succ : M → M)
 
-/- concordance: source L2347 EXERCISE 4.22 inductive subset of a model -/
-/-- **Exercise 4.22 (Scott 1981, PRG-19).** The carved-out subset `N ⊆ N*`, with the inherited
-`0` and `⁺`, is a model of **all three** Peano axioms — even though `N*` was only assumed to satisfy
-(i) and (ii). Axioms (i)/(ii) are inherited; (iii) holds by minimality of the least fixed point. -/
 def peanoSub (hzero : ∀ n, zero ≠ succ n) (hinj : Function.Injective succ) :
     PeanoModel (Nat' zero succ) where
   zero := subZero zero succ
@@ -81,7 +62,7 @@ def peanoSub (hzero : ∀ n, zero ≠ succ n) (hinj : Function.Injective succ) :
   zero_ne_succ n h := hzero n.1 (Subtype.ext_iff.mp h)
   succ_injective a b h := Subtype.ext (hinj (Subtype.ext_iff.mp h))
   induction s h0 hstep := by
-    -- pull `s` back to a subset of `N*`, show it is closed under `0`/`⁺`, apply `nats_induction`
+
     intro n
     have hsub : nats zero succ ⊆
         {m | ∃ h : m ∈ nats zero succ, (⟨m, h⟩ : Nat' zero succ) ∈ s} := by
@@ -92,8 +73,6 @@ def peanoSub (hzero : ∀ n, zero ≠ succ n) (hinj : Function.Injective succ) :
     obtain ⟨_, hns⟩ := hsub n.2
     exact hns
 
-/-- **Exercise 4.22 (Scott 1981, PRG-19).** *Yes:* whenever `N*` satisfies (i) and (ii), there is a
-subset `N ⊆ N*` (carrying the inherited structure) satisfying (i), (ii), and (iii). -/
 theorem exists_peano_submodel (hzero : ∀ n, zero ≠ succ n) (hinj : Function.Injective succ) :
     Nonempty (PeanoModel (Nat' zero succ)) :=
   ⟨peanoSub zero succ hzero hinj⟩

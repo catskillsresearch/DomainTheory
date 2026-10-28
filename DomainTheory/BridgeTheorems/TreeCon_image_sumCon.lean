@@ -39,7 +39,7 @@ theorem TreeCon_image_sumCon {u : Finset (TreeToken α)} (hu : TreeCon A u) :
     refine Or.inr ⟨?_, ?_⟩
     · rw [lftFinset_image_unfold]; exact hA
     · refine ⟨?_, ?_⟩
-      · -- fst of the product tokens is a TreeCon set (pairL, plus bot if needed)
+      ·
         have hsub :
             fstFinset (treeSystem A) (treeSystem A)
                 (rhtFinset (unfoldFinset A u)) ⊆

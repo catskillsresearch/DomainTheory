@@ -29,7 +29,7 @@ theorem directed_finiteApproximants (x : A.Element) :
   obtain ⟨v, hv, hvX, hy₂eq⟩ := hy₂
   obtain ⟨w, hw, hwX, huw, hvw⟩ := A.closures_directed x hu hv huX hvX
   refine ⟨⟨A.closure w hw, ⟨w, hw, rfl⟩⟩, ⟨w, hw, hwX, rfl⟩, ?_, ?_⟩
-  · -- y₁ ≤ closure w
+  ·
     change (y₁ : A.Element) ≤ A.closure w hw
     exact hy₁eq ▸ huw
   · change (y₂ : A.Element) ≤ A.closure w hw

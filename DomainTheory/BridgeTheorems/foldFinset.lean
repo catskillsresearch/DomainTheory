@@ -18,7 +18,6 @@ open DomainTheory.InformationSystems.InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Choice-free image of an RHS finset under `treeFold`. -/
 def foldFinset (Y : Finset (SumToken α (ProdToken (treeSystem A) (treeSystem A)))) :
     Finset (TreeToken α) :=
   Multiset.foldr (foldInsert A) ∅ Y.1

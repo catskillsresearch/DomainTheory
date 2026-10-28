@@ -7,8 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Exercise718
 
-/-- **Exercise 8.12 (Scott 1981, PRG-19).** `V` is effectively given and effectively isomorphic
-to `U`, hence another presentation of `U`. --/
 theorem exercise_8_12 :
     V.IsEffectivelyGiven ∧
       EffectivelyIsomorphic UComputablePresentation VComputablePresentation :=

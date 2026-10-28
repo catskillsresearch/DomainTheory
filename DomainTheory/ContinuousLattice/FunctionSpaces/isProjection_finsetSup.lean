@@ -13,7 +13,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -24,7 +23,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 section Projections
 
-/-- `J_D` is closed under finite joins. -/
 theorem isProjection_finsetSup {T : Finset (ScottMap D D)} (hT : ∀ j ∈ T, IsProjection j) :
     IsProjection (T.sup id) :=
   Finset.sup_induction isProjection_bot (fun _ ha _ hb => isProjection_sup ha hb) hT

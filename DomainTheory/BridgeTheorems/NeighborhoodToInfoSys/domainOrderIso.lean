@@ -26,8 +26,6 @@ namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)
 
-/-- Order isomorphism between the neighbourhood-system domain and the induced
-information-system domain. -/
 def domainOrderIso : B.system.Element ≃o B.toInfoSys.Element where
   toFun := B.toElement
   invFun := B.ofElement

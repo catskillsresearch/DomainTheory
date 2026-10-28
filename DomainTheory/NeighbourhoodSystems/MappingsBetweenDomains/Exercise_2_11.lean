@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
 public import Mathlib.Data.Set.Operations
 @[expose] public section
@@ -13,11 +12,6 @@ namespace NeighborhoodSystem
 section
 variable {α β γ : Type*}
 
-
-/- concordance: source L789 EXERCISE 2.11 directed unions of elements -/
-/-- **Exercise 2.11 — directed union (indexed form).** For a directed family `a : I → |𝒟|` (any two
-`a i, a j` have a common upper bound `a k`), the union `⋃ᵢ a i` is again an element of `|𝒟|`. Built
-on `sSupDirected` over the range. -/
 def iSupDirected {α : Type*} {V : NeighborhoodSystem α} {I : Type*} [Nonempty I]
     (a : I → V.Element) (hdir : ∀ i j, ∃ k, a i ≤ a k ∧ a j ≤ a k) : V.Element :=
   V.sSupDirected (Set.range a) (Set.range_nonempty a) (by
@@ -54,9 +48,6 @@ namespace ApproximableMap
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
-
-/-- **Exercise 2.11 (Scott 1981, PRG-19).** Approximable mappings *preserve directed unions*:
-`f(⋃ᵢ a i) = ⋃ᵢ f(a i)`. Both sides have member `Y` iff `∃ i X, X ∈ a i ∧ X f Y`. -/
 theorem toElementMap_iSupDirected (f : ApproximableMap V₀ V₁) {I : Type*} [Nonempty I]
     (a : I → V₀.Element) (hdir : ∀ i j, ∃ k, a i ≤ a k ∧ a j ≤ a k) :
     f.toElementMap (NeighborhoodSystem.iSupDirected a hdir) =

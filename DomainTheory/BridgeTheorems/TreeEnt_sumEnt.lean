@@ -48,7 +48,7 @@ theorem TreeEnt_sumEnt {u : Finset (TreeToken α)} {p : TreeToken α}
     refine ⟨hr, ?_⟩
     refine ⟨hCon.elim (fun hL => False.elim (hr hL.2)) (fun hR => hR.2), ?_, ?_⟩
     · intro
-      -- T.Ent fst t
+
       have hsub : pairLFinset u ⊆
           fstFinset (treeSystem A) (treeSystem A)
             (rhtFinset (unfoldFinset A u)) := by

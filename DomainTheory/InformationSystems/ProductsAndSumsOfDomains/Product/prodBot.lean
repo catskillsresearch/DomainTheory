@@ -18,7 +18,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Product bottom `Δ_{A×B} = (Δ_A, Δ_B)`. -/
 def prodBot : ProdToken A B :=
   ⟨(A.bot, B.bot), ⟨Or.inl rfl⟩⟩
 

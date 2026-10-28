@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The strict bottom retract is below every strict retract in Scott's
-projection order. -/
 theorem bot_retractLe {a : Pomega} (ha : IsStrict a) :
     retractLe botElem a := by
   constructor

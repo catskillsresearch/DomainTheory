@@ -27,7 +27,6 @@ namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
-/-- **Function-space domain iso (1982, Thm 7.2).** `|A → B| ≃o ApproximableMap A B`. -/
 noncomputable def functionSpaceDomainIso :
     ApproximableMap A B ≃o (functionSystem A B).Element where
   toFun := approxMap_toElement A B

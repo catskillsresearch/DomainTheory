@@ -7,17 +7,14 @@ public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
-
 
 theorem specializationLe_generateOpen (f g : C(X, Y)) (hfg : ∀ x, SpecializationLe (f x) (g x))
     {V : Set (C(X, Y))} (hV : GenerateOpen (scottFunctionEvalSubbasis X Y) V) (hf : f ∈ V) :

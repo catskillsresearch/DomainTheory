@@ -33,7 +33,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.l
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -54,11 +53,9 @@ attribute [instance] instCategoryInfoSysObj
 
 attribute [instance] instCartesianMonoidalCategoryInfoSysObj
 
-/-- Inverse of `curryRight`. -/
 noncomputable def uncurryRight (A Y Z : InfoSysObj.{u}) (k : Y ⟶ InfoSysObj.exp A Z) :
     A ⊗ Y ⟶ Z :=
   prodHomToTensorHom A Y Z (uncurryProduct A Y Z k)
-
 
 theorem uncurryRight.toElement (A Y Z : InfoSysObj.{u})
     (φ : Y ⟶ InfoSysObj.exp A Z) (q : (A ⊗ Y).sys.Element) :

@@ -5,14 +5,12 @@ public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- **Factoid 3.2.** Every element contains `Δ`. -/
 theorem factoid_3_2 (x : sys.Element) : sys.bot ∈ x.carrier := by
   have hempty : (↑(∅ : Finset α) : Set α) ⊆ x.carrier := by
     intro a ha

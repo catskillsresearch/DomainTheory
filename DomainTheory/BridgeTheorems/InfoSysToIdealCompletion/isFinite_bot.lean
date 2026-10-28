@@ -6,7 +6,6 @@ public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems

@@ -29,7 +29,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 
 open Order
 
-/-- Tree / S-expression information system over lower-bound atoms. -/
 abbrev SexSys : InfoSys (TreeToken ℕ) :=
   treeSystem lowerBoundSystem
 

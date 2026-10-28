@@ -20,12 +20,10 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- `jₙ` preserves arbitrary infima (it is the upper adjoint of `iₙ`). -/
 theorem retr_sInf (n : ℕ) (A : Set (D (n + 1))) :
     (P n).retr (sInf A) = sInf ((P n).retr '' A) := by
   rw [(projection_galoisConnection D P n).u_sInf, sInf_image]
 
-/-- The pointwise infimum of compatible sequences is compatible. -/
 theorem compatible_sInf (S : Set (InverseLimit D P)) :
     Compatible D P (inverseLimitSInfCoe D P S) := by
   intro n

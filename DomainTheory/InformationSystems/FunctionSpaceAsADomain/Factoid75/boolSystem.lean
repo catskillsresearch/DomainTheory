@@ -23,7 +23,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- **Factoid 7.5.** Flat BOOL information system. -/
 def boolSystem : InfoSys BoolToken :=
   Factoid25.ofSatisfaction boolSat .bot boolSat.bot boolSat.sing
 

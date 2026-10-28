@@ -24,7 +24,6 @@ public import Mathlib.Data.Set.Basic
 
 namespace DomainTheory.ContinuousLattice
 
-
 attribute [instance] CLat.str
 
 section LimitMaps
@@ -32,27 +31,21 @@ section LimitMaps
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-/-- **Scott 1972, §4 (Theorem 4.4).** The projection `j_∞ : [D_∞ → D_∞] → D_∞`,
-`j_∞(f) = ⨆ₙ i_{(n+1)∞}(j_{∞n} ∘ f ∘ i_{n∞})`. Scott-continuous as a supremum of the Scott maps
-`jInfTerm n`. -/
 noncomputable def projInfInf : ScottMap (DInfFn D₀ j₀) (DInf D₀ j₀) :=
   ⨆ n, jInfTerm D₀ j₀ n
 
 namespace projInfInf
 
-/-- `j_∞` evaluated at `f` is the supremum of the summands `jInfTerm n f`. -/
 theorem apply (f : DInfFn D₀ j₀) :
     projInfInf D₀ j₀ f = ⨆ n, jInfTerm D₀ j₀ n f := by
   show (sSup (Set.range (jInfTerm D₀ j₀)) : ScottMap _ _) f = _
   rw [ScottMap.sSup_apply, ← Set.range_comp, sSup_range]
   rfl
 
-/-- `j_∞` is Scott-continuous (it is a bundled `ScottMap`). -/
 theorem preservesDirectedSup :
     PreservesDirectedSup (projInfInf D₀ j₀ : DInfFn D₀ j₀ → DInf D₀ j₀) :=
   (proposition_2_5 _).mp (projInfInf D₀ j₀).continuous
 
-/-- `j_∞(i_∞(x)) = ⨆ₙ i_{(n+1)∞}(x_{n+1})`. -/
 theorem embInfInf_eq (x : DInf D₀ j₀) :
     projInfInf D₀ j₀ (embInfInf D₀ j₀ x) = ⨆ n, embInf (towerType D₀) (towerProj D₀ j₀) (n + 1) (x.1 (n + 1)) := by
   rw [apply]
@@ -114,7 +107,6 @@ theorem embInfInf_eq (x : DInf D₀ j₀) :
   dsimp only
   rw [conj_iInfTerm_eq D₀ j₀ n x]
 
-/-- **Scott 1972, §4 (Theorem 4.4, first half).** `j_∞ ∘ i_∞ = id` on `D_∞`. -/
 theorem comp_embInfInf :
     (projInfInf D₀ j₀).comp (embInfInf D₀ j₀) = ScottMap.idMap := by
   apply ScottMap.ext

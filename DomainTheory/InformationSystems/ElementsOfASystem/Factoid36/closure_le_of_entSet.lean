@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.approx
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,7 +15,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- If `w` entails every member of `u`, then `ū ⊆ w̄`. -/
 theorem closure_le_of_entSet {u w : Finset α} (hu : u ∈ sys.Con) (hw : w ∈ sys.Con)
     (h : sys.EntSet w u) : sys.closure u hu ≤ sys.closure w hw := by
   intro a ha

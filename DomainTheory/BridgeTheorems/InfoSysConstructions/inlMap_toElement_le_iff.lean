@@ -12,7 +12,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.left_bot_mem_inlMap_toElement
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -34,9 +33,9 @@ theorem inlMap_toElement_le_iff {x y : A.Element} :
   constructor
   · intro h a ha
     have : SumToken.left a ∈ ((inlMap A B).toElement x).carrier := by
-      -- from sumElementLft_inl round-trip carrier
+
       have hx := sumElementLft_inlMap_toElement A B x
-      -- a ∈ x = sumElementLft ⇒ left a ∈ inl x
+
       have : a ∈ (sumElementLft A B ((inlMap A B).toElement x) A.bot
           (left_bot_mem_inlMap_toElement A B x)).carrier := by
         simpa [hx] using ha

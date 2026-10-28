@@ -12,12 +12,9 @@ public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.funOf_e_union_fresh
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
-
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem plotkin_finite_separation (p q m : ℕ) :
     Z m

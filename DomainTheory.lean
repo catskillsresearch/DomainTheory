@@ -455,12 +455,7 @@ import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 import DomainTheory.ContinuousLattice.WayBelow.WayBelow
-import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
-import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
-import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
-import DomainTheory.ContinuousLattice.WayBelow.isContinuousLattice_iff_isLUB_sInf_nhds
 import DomainTheory.ContinuousLattice.WayBelow.proposition_2_2
-import DomainTheory.ContinuousLattice.WayBelow.sInf_wayBelow
 import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
 import DomainTheory.DataTypesAsLattices.Classification.Basic
 import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
@@ -2330,3 +2325,4 @@ import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table_5_5
 import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_1
 import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_2
 import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow

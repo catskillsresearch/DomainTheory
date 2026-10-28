@@ -20,7 +20,6 @@ namespace InfoSysToIdealCompletion
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Underlying set of elements of an ideal of finite elements. -/
 def idealCarrier (I : Ideal (FiniteElement A)) : Set A.Element :=
   Subtype.val '' (I : Set (FiniteElement A))
 

@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.9).** Product of retracts `a ⊗ b = λu. ⟨a(u₀), b(u₁)⟩`. -/
 def tensorR (a b : Pomega) : Pomega :=
   graph (fun u =>
     pairSeq (funOf a (funOf u (ofNat 0))) (funOf b (funOf u (ofNat 1))))

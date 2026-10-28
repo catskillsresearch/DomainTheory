@@ -9,9 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem eq_2_16 : fix topRec = topElem := by
   apply subset_antisymm

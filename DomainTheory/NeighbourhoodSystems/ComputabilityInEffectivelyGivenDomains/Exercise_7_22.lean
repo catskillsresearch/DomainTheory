@@ -11,24 +11,17 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 section
-/-- Scott's `XY = {στ ∣ σ ∈ X and τ ∈ Y}`: the concatenation of two languages. -/
+
 def concat (X Y : Set (List Bool)) : Set (List Bool) := {w | ∃ a ∈ X, ∃ b ∈ Y, a ++ b = w}
 end
 
 section
-/-- **Scott's family `S`**, as the least fixed point (an inductive predicate). A language `X` is *in
-`S`* iff it is built from the four generators:
 
-* `Σ = {0,1}*` itself (`Set.univ`);
-* a singleton `{σ}`;
-* a concatenation `XY` of two members;
-* a *non-empty* intersection `X ∩ Y` of two members. -/
 inductive InS : Set (List Bool) → Prop
   | univ : InS Set.univ
   | singleton (σ : List Bool) : InS {σ}
@@ -42,31 +35,31 @@ section
 end
 
 section
-/-- `Σ` is a neighbourhood of `S`. -/
+
 theorem Ssys_master_mem : InS Set.univ := InS.univ
 end
 
 section
-/-- The token set `Σ = {0,1}*` is non-empty. -/
+
 theorem Ssys_master_nonempty : (Set.univ : Set (List Bool)).Nonempty := by
   exact ⟨[], Set.mem_univ []⟩
 end
 
 section
-/-- Every member of `S` is a subset of `Σ`. -/
+
 theorem Ssys_sub_master {X : Set (List Bool)} (_h : InS X) : X ⊆ Set.univ :=
   Set.subset_univ _
 end
 
 section
-/-- Concatenation is monotone in both arguments. -/
+
 theorem concat_mono {X X' Y Y' : Set (List Bool)} (hX : X ⊆ X') (hY : Y ⊆ Y') :
     concat X Y ⊆ concat X' Y' := by
   rintro w ⟨a, ha, b, hb, rfl⟩; exact ⟨a, hX ha, b, hY hb, rfl⟩
 end
 
 section
-/-- The concatenation of two non-empty languages is non-empty. -/
+
 theorem concat_nonempty {X Y : Set (List Bool)} (hX : X.Nonempty) (hY : Y.Nonempty) :
     (concat X Y).Nonempty := by
   obtain ⟨a, ha⟩ := hX
@@ -75,9 +68,7 @@ theorem concat_nonempty {X Y : Set (List Bool)} (hX : X.Nonempty) (hY : Y.Nonemp
 end
 
 section
-/-- **Every member of `S` is non-empty.** (`Σ` and singletons are non-empty; concatenation preserves
-non-emptiness; intersections are only admitted to `S` when non-empty.) This is what makes `S`
-*positive*. -/
+
 theorem InS.nonempty {X : Set (List Bool)} (h : InS X) : X.Nonempty := by
   induction h with
   | univ => exact ⟨[], trivial⟩
@@ -87,7 +78,7 @@ theorem InS.nonempty {X : Set (List Bool)} (h : InS X) : X.Nonempty := by
 end
 
 section
-/-- Intersection of two members of `S` is again in `S` when a consistency witness exists. -/
+
 theorem Ssys_inter_mem {X Y Z : Set (List Bool)}
     (hX : InS X) (hY : InS Y) (hZ : InS Z) (hZsub : Z ⊆ X ∩ Y) : InS (X ∩ Y) :=
   InS.inter hX hY (hZ.nonempty.mono hZsub)
@@ -101,10 +92,7 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 section
-/- concordance: source L4707 EXERCISE 7.22 domain of formal languages -/
-/-- **Exercise 7.22 (neighbourhood-system part).** `S` is a *positive* neighbourhood system over the
-token type `Σ = {0,1}*`, with master neighbourhood `Δ = Σ = Set.univ`. Proof fields are named so
-Palomar can lock this value. -/
+
 def Ssys : NeighborhoodSystem (List Bool) where
   mem := InS
   master := Set.univ
@@ -119,14 +107,7 @@ section
 end
 
 section
-/-- **Scott's multiplication on `|S|`.** `xy = {Z ∈ S ∣ ∃ X ∈ x ∃ Y ∈ y. XY ⊆ Z}`. The filter
-conditions:
 
-* `master_mem`: take `X = Y = Σ` (both in any filter), `Σ·Σ ⊆ Σ`;
-* `inter_mem`: from witnesses `X₁Y₁ ⊆ Z₁`, `X₂Y₂ ⊆ Z₂`, the pair `X₁ ∩ X₂ ∈ x`, `Y₁ ∩ Y₂ ∈ y` (filter
-  closure) gives `(X₁ ∩ X₂)(Y₁ ∩ Y₂) ⊆ Z₁ ∩ Z₂` by monotonicity of `concat`, and `Z₁ ∩ Z₂ ∈ S`
-  because this non-empty witness sits inside it (positivity);
-* `up_mem`: transitivity of `⊆`. -/
 def mulElem (x y : Ssys.Element) : Ssys.Element where
   mem Z := InS Z ∧ ∃ X, x.mem X ∧ ∃ Y, y.mem Y ∧ concat X Y ⊆ Z
   sub h := h.1
@@ -154,9 +135,7 @@ section
 end
 
 section
-/-- **Scott's embedding** `σ ↦ {X ∈ S ∣ σ ∈ X}`. This is a filter (an element of `|S|`): it contains
-`Σ`, is closed under intersection (the intersection is non-empty since it still contains `σ`, so it
-lies in `S` by positivity), and is upward closed. -/
+
 def emb (σ : List Bool) : Ssys.Element where
   mem X := InS X ∧ σ ∈ X
   sub h := h.1
@@ -175,8 +154,7 @@ section
 end
 
 section
-/-- **`x ↦ σ·x`, realised as an approximable self-map on `|S|`.** Mirrors `Example44.lean`'s
-`consMap`, generalised from a single bit `b` to an arbitrary word `σ`. -/
+
 def prependMap (σ : List Bool) : ApproximableMap Ssys Ssys where
   rel Y Z := InS Y ∧ InS Z ∧ concat {σ} Y ⊆ Z
   rel_dom h := h.1
@@ -194,7 +172,7 @@ def prependMap (σ : List Bool) : ApproximableMap Ssys Ssys where
 end
 
 section
-/-- `wⁿ`: `w` concatenated with itself `n` times (`w⁰ = []`). -/
+
 def repeatWord (w : List Bool) : ℕ → List Bool
   | 0 => []
   | n + 1 => w ++ repeatWord w n
@@ -205,7 +183,7 @@ section
 end
 
 section
-/-- `{wⁿ ∣ n}` — the language of all finite powers of `w`. -/
+
 def powerLang (w : List Bool) : Set (List Bool) :=
   {u | ∃ n, repeatWord w n = u}
 end
@@ -216,19 +194,18 @@ section
 end
 
 section
-/-- **Scott's `σ⃗`, as a genuine least fixed point** (Theorem 4.1) of `x ↦ σ·x` in `|S|`. -/
+
 def streamArrow (σ : List Bool) : Ssys.Element := (prependMap σ).fixElement
 end
 
 section
-/-- Membership in Scott's **`w⃗`**: every power `wⁿ` lies in `Z`. Concatenation-closure of `Z`
-  is not required for membership, but holds for neighbourhoods in `mulElem (streamElem w) (streamElem w)`. -/
+
 def streamElemMem (w : List Bool) (Z : Set (List Bool)) : Prop :=
   InS Z ∧ ∀ n, repeatWord w n ∈ Z
 end
 
 section
-/-- Scott's **`w⃗`** as a domain element. -/
+
 def streamElem (w : List Bool) : Ssys.Element where
   mem Z := streamElemMem w Z
   sub h := h.1
@@ -245,12 +222,10 @@ def streamElem (w : List Bool) : Ssys.Element where
 end
 
 section
-/-- `a ∈ X`, `b ∈ Y ⟹ a ++ b ∈ XY`. -/
+
 theorem append_mem_concat {X Y : Set (List Bool)} {a b : List Bool} (ha : a ∈ X) (hb : b ∈ Y) :
     a ++ b ∈ concat X Y := ⟨a, ha, b, hb, rfl⟩
 
-
-/-- Concatenation is associative (inherited from `List.append_assoc`). -/
 theorem concat_assoc (X Y Z : Set (List Bool)) :
     concat (concat X Y) Z = concat X (concat Y Z) := by
   ext w
@@ -260,10 +235,6 @@ theorem concat_assoc (X Y Z : Set (List Bool)) :
   · rintro ⟨a, ha, bc, ⟨b, hb, c, hc, rfl⟩, rfl⟩
     exact ⟨a ++ b, ⟨a, ha, b, hb, rfl⟩, c, hc, by rw [List.append_assoc]⟩
 
-
-/-- **Exercise 7.22 (semigroup part): multiplication on `|S|` is associative**, so `|S|` is a
-semigroup. The forward inclusion rewrites `X(YZ) = (XY)Z` (`concat_assoc`) and uses monotonicity of
-`concat` to push the witnesses through; the converse is symmetric. -/
 theorem mulElem_assoc (x y z : Ssys.Element) :
     mulElem (mulElem x y) z = mulElem x (mulElem y z) := by
   apply NeighborhoodSystem.Element.ext
@@ -280,7 +251,6 @@ theorem mulElem_assoc (x y z : Ssys.Element) :
     rw [concat_assoc]
     exact (concat_mono (Set.Subset.refl _) hYZ).trans hXQ
 
-
 theorem repeatWord_add (w : List Bool) (a b : ℕ) :
     repeatWord w (a + b) = repeatWord w a ++ repeatWord w b := by
   induction a with
@@ -288,7 +258,6 @@ theorem repeatWord_add (w : List Bool) (a b : ℕ) :
   | succ a ih =>
       simp only [Nat.succ_add, repeatWord]
       rw [ih, List.append_assoc]
-
 
 theorem repeatWord_eq_empty (w : List Bool) (n : ℕ) (hw : w = []) :
     repeatWord w n = [] := by
@@ -306,11 +275,9 @@ theorem InS_powerLang_empty : InS (powerLang []) := by
     · intro hu; subst hu; exact ⟨0, rfl⟩
   simpa [h] using InS.singleton []
 
-
 @[simp] theorem mem_streamElem {w : List Bool} {Z : Set (List Bool)} :
     (streamElem w).mem Z ↔ streamElemMem w Z := Iff.rfl
 
-/-- From **`w⃗ · w⃗`**, every power `wⁿ` still lies in `Z`. -/
 theorem streamElem_powers_of_mul (w : List Bool) (Z : Set (List Bool))
     (h : (mulElem (streamElem w) (streamElem w)).mem Z) :
     streamElemMem w Z := by
@@ -321,7 +288,6 @@ theorem streamElem_powers_of_mul (w : List Bool) (Z : Set (List Bool))
   have h1 := hsub (append_mem_concat (hXw n) (hYw 0))
   simpa [repeatWord_zero, List.append_nil] using h1
 
-/-- **`w⃗ · w⃗` is in `Z` whenever `w⃗` is**, using the witness `powerLang w ∈ S`. -/
 theorem streamElem_mul_self_mem (w : List Bool) (Z : Set (List Bool))
     (h : streamElemMem w Z) (hPL : InS (powerLang w)) :
     (mulElem (streamElem w) (streamElem w)).mem Z := by
@@ -330,13 +296,11 @@ theorem streamElem_mul_self_mem (w : List Bool) (Z : Set (List Bool))
   obtain ⟨a, ⟨m, hm⟩, b, ⟨n, hn⟩, rfl⟩ := hu
   simpa [hm, hn, repeatWord_add] using h.2 (m + n)
 
-/-- Scott's stream equation **`w⃗ · w⃗ = w⃗`** (filter equality), when `{wⁿ}` lies in `S`. -/
 theorem streamElem_idempotent (w : List Bool) (hPL : InS (powerLang w)) :
     mulElem (streamElem w) (streamElem w) = streamElem w := by
   apply NeighborhoodSystem.Element.ext
   intro Z
   exact ⟨streamElem_powers_of_mul w Z, fun h => streamElem_mul_self_mem w Z h hPL⟩
-
 
 example : mulElem (streamElem []) (streamElem []) = streamElem [] :=
   streamElem_idempotent [] InS_powerLang_empty
@@ -363,7 +327,7 @@ example (h : InS (powerLang [false, true])) :
 end
 
 section
-/-- `S` is indeed positive (Exercise 1.19's `IsPositive`). -/
+
 theorem Ssys_isPositive : Ssys.IsPositive := by
   intro X Y hX hY
   exact ⟨fun h => h.nonempty, fun h => InS.inter hX hY h⟩
@@ -374,7 +338,7 @@ theorem Ssys_master : Ssys.master = Set.univ := rfl
 end
 
 section
-/-- `{a}{b} = {a ++ b}`: concatenation of singletons is the singleton of the concatenation. -/
+
 theorem concat_singleton (a b : List Bool) : concat {a} {b} = {a ++ b} := by
   ext w
   simp only [mem_concat, Set.mem_singleton_iff]
@@ -384,8 +348,7 @@ theorem concat_singleton (a b : List Bool) : concat {a} {b} = {a ++ b} := by
 end
 
 section
-/-- The embedding is **injective**: distinct words give distinct elements of `|S|`. (If
-`emb σ = emb τ` then `emb τ` contains `{σ}`, forcing `τ = σ`.) So `Σ` genuinely *embeds* into `|S|`. -/
+
 theorem emb_injective : Function.Injective emb := by
   intro σ τ h
   have hmem : (emb τ).mem {σ} := h ▸ (⟨InS.singleton σ, rfl⟩ : (emb σ).mem {σ})
@@ -393,10 +356,7 @@ theorem emb_injective : Function.Injective emb := by
 end
 
 section
-/-- **Exercise 7.22 (homomorphism part): `emb` is a semigroup homomorphism**,
-`emb (σ ++ τ) = emb σ · emb τ`. Forward: from `σ ++ τ ∈ Z`, the witnesses `X = {σ}`, `Y = {τ}` give
-`{σ}{τ} = {σ ++ τ} ⊆ Z`. Converse: if `{σ}` ∈ `emb σ`, `{τ}` ∈ `emb τ` with `XY ⊆ Z` then
-`σ ++ τ ∈ XY ⊆ Z`. -/
+
 theorem emb_mul (σ τ : List Bool) : emb (σ ++ τ) = mulElem (emb σ) (emb τ) := by
   apply NeighborhoodSystem.Element.ext
   intro Z
@@ -412,8 +372,7 @@ theorem emb_mul (σ τ : List Bool) : emb (σ ++ τ) = mulElem (emb σ) (emb τ)
 end
 
 section
-/-- **`⊥` is a left-annihilator up to `≤`**: `⊥·y ≤ y`. (`⊥`'s only neighbourhood is `Δ = Σ`, and
-`Y ⊆ Σ·Y` via the empty-word split, so any witness collapses onto `y` itself.) -/
+
 theorem mulElem_bot_le (y : Ssys.Element) : mulElem Ssys.bot y ≤ y := by
   rintro Z ⟨hInS, X, hX, Y, hY, hsub⟩
   rw [NeighborhoodSystem.mem_bot, Ssys_master] at hX
@@ -423,7 +382,7 @@ theorem mulElem_bot_le (y : Ssys.Element) : mulElem Ssys.bot y ≤ y := by
 end
 
 section
-/-- `mulElem` is monotone in its right argument. -/
+
 theorem mulElem_mono_right (x : Ssys.Element) : Monotone (mulElem x) := by
   rintro y y' hyy' Z ⟨hInS, X, hX, Y, hY, hsub⟩
   exact ⟨hInS, X, hX, Y, hyy' Y hY, hsub⟩
@@ -437,9 +396,7 @@ theorem powerLang_concat (w : List Bool) :
 end
 
 section
-/-- `(prependMap σ).toElementMap y = σ · y`: the approximable-map action agrees with Scott's
-multiplication `mulElem`, using `{σ} ⊆ X` (any valid witness `X` for `emb σ` contains `σ`) to
-tighten the witness set to `{σ}` without loss. -/
+
 theorem prependMap_toElementMap (σ : List Bool) (y : Ssys.Element) :
     (prependMap σ).toElementMap y = mulElem (emb σ) y := by
   apply NeighborhoodSystem.Element.ext
@@ -458,7 +415,7 @@ theorem repeatWord_succ (w : List Bool) (n : ℕ) :
 end
 
 section
-/-- **`σ⃗ = σ·σ⃗`** (Scott's defining equation), unconditionally. -/
+
 theorem streamArrow_eq (σ : List Bool) :
     mulElem (emb σ) (streamArrow σ) = streamArrow σ := by
   rw [← prependMap_toElementMap]
@@ -466,8 +423,7 @@ theorem streamArrow_eq (σ : List Bool) :
 end
 
 section
-/-- **Per-approximant bound**: `fⁿ(⊥) · σ⃗ ≤ σ⃗`, by induction using `mulElem_bot_le` (base case)
-and associativity + monotonicity + `streamArrow_eq` (step). -/
+
 theorem prependMap_iterElem_mul_streamArrow_le (σ : List Bool) :
     ∀ n, mulElem ((prependMap σ).iterElem n) (streamArrow σ) ≤ streamArrow σ
   | 0 => by
@@ -490,8 +446,7 @@ theorem prependMap_iterElem_mul_streamArrow_le (σ : List Bool) :
 end
 
 section
-/-- **`σ⃗ ≤ σ⃗·σ⃗`**: `σ⃗·σ⃗` is itself a fixed point of `x ↦ σ·x` (by associativity and `σ⃗ = σ·σ⃗`),
-and `σ⃗` is the *least* such fixed point (`fixElement_le_of_toElementMap_le`). -/
+
 theorem streamArrow_le_mul_self (σ : List Bool) :
     streamArrow σ ≤ mulElem (streamArrow σ) (streamArrow σ) := by
   apply fixElement_le_of_toElementMap_le
@@ -502,8 +457,7 @@ theorem streamArrow_le_mul_self (σ : List Bool) :
 end
 
 section
-/-- **`σ⃗·σ⃗ ≤ σ⃗`**: `σ⃗`'s membership witnesses come from *some* finite approximant `fⁿ(⊥)`
-(`mem_fixElement`/`mem_iterElem`), and every approximant satisfies the per-`n` bound above. -/
+
 theorem streamArrow_mul_self_le (σ : List Bool) :
     mulElem (streamArrow σ) (streamArrow σ) ≤ streamArrow σ := by
   rintro Z ⟨hInSZ, X, hX, Y, hY, hsub⟩
@@ -513,8 +467,7 @@ theorem streamArrow_mul_self_le (σ : List Bool) :
 end
 
 section
-/-- **Exercise 7.22l (Scott's first equation, unconditional).** `σ⃗·σ⃗ = σ⃗`, for the genuine
-least-fixed-point `σ⃗`, with no side-condition. -/
+
 theorem streamArrow_mul_self (σ : List Bool) :
     mulElem (streamArrow σ) (streamArrow σ) = streamArrow σ :=
   le_antisymm (streamArrow_mul_self_le σ) (streamArrow_le_mul_self σ)
@@ -617,8 +570,7 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 section
-/-- **Scott's fourth equation (the concrete numeric instance).** `01⃗·01⃗·01⃗·01⃗ = 01⃗·01⃗`, for
-`01⃗ := streamArrow [false, true]`. Follows from `streamArrow_mul_self` applied twice. -/
+
 theorem streamArrow_containsZero_pow_four :
     mulElem
         (mulElem (streamArrow [false, true]) (streamArrow [false, true]))
@@ -628,10 +580,7 @@ theorem streamArrow_containsZero_pow_four :
 end
 
 section
-/-- **Scott's third equation.** `σ1⃗ · σ1⃗ = σ1⃗`, where `σ1⃗ := streamArrow (σ ++ [true])` is the
-arrow of the *combined* token `σ1` (Scott's notation `σ⃗1⃗` names the infinite repetition of the
-word `σ` followed by `1`, not a product of two separate arrows — matching how the file's earlier
-`streamElem`-based examples read the same equation). An instance of `streamArrow_mul_self`. -/
+
 theorem streamArrow_mul_self_append_true (σ : List Bool) :
     mulElem (streamArrow (σ ++ [true])) (streamArrow (σ ++ [true])) =
       streamArrow (σ ++ [true]) :=
@@ -639,16 +588,14 @@ theorem streamArrow_mul_self_append_true (σ : List Bool) :
 end
 
 section
-/-- **Scott's second equation.** `σ⃗·σ⃗·σ⃗ = σ⃗`. -/
+
 theorem streamArrow_mul_self_self (σ : List Bool) :
     mulElem (mulElem (streamArrow σ) (streamArrow σ)) (streamArrow σ) = streamArrow σ := by
   rw [streamArrow_mul_self, streamArrow_mul_self]
 end
 
 section
-/-- **The syntax of `S`-terms** (Scott's four generators): `Σ`, a singleton `{σ}`, concatenation
-`X·Y`, and intersection `X ∩ Y`. A fragment of regular expressions with `·` and `∩` and the
-universal language `Σ`, but no union / complement / star. -/
+
 inductive SExpr : Type
   | sigma : SExpr
   | single : List Bool → SExpr
@@ -658,7 +605,7 @@ inductive SExpr : Type
 end
 
 section
-/-- Decode with an explicit fuel bound so the recursion is structural. -/
+
 def sexprOfNatFuel : ℕ → ℕ → Option SExpr
   | 0, _ => none
   | fuel + 1, n =>
@@ -761,7 +708,7 @@ instance : Encodable SExpr where
 end
 
 section
-/-- The language denoted by an `S`-term. -/
+
 def denote : SExpr → Set (List Bool)
   | .sigma => Set.univ
   | .single σ => {σ}
@@ -786,8 +733,7 @@ section
 end
 
 section
-/-- The **`Bool` matcher** for `S`-terms: a structurally-recursive decision of word membership. The
-concatenation case tries every cut point `i ∈ {0,…,|w|}`; the intersection case is the conjunction. -/
+
 def matchesB : SExpr → List Bool → Bool
   | .sigma, _ => true
   | .single σ, w => decide (w = σ)
@@ -796,9 +742,7 @@ def matchesB : SExpr → List Bool → Bool
 end
 
 section
-/-- A word `w` lies in a concatenation `X·Y` iff it splits as `w = w.take i ++ w.drop i` with the
-prefix in `X` and the suffix in `Y` for some cut point `i ≤ |w|`. (The cut point is the length of
-the `X`-part.) -/
+
 theorem mem_concat_iff_split {X Y : Set (List Bool)} {w : List Bool} :
     w ∈ concat X Y ↔ ∃ i, i ≤ w.length ∧ w.take i ∈ X ∧ w.drop i ∈ Y := by
   constructor
@@ -811,8 +755,7 @@ theorem mem_concat_iff_split {X Y : Set (List Bool)} {w : List Bool} :
 end
 
 section
-/-- **The matcher is correct**: `matchesB e w = true ↔ w ∈ denote e`. By structural induction on `e`;
-the concatenation case unfolds `List.any` over the cut points and applies `mem_concat_iff_split`. -/
+
 theorem matchesB_iff (e : SExpr) (w : List Bool) : matchesB e w = true ↔ w ∈ denote e := by
   induction e generalizing w with
   | sigma => simp [matchesB]
@@ -831,7 +774,7 @@ theorem matchesB_iff (e : SExpr) (w : List Bool) : matchesB e w = true ↔ w ∈
 end
 
 section
-/-- **Membership in a regular event is decidable** (choice-free), via the matcher. -/
+
 instance decidableMemDenote (e : SExpr) : DecidablePred (· ∈ denote e) :=
   fun w => decidable_of_iff (matchesB e w = true) (matchesB_iff e w)
 end
@@ -841,9 +784,7 @@ instance : Countable SExpr := inferInstance
 end
 
 section
-/-- The empty language is denotable in the fragment (it is **not** a member of `S`, which is
-positive): `{0} ∩ {1} = ∅`. This is the canonical "`∅`" expression used to phrase emptiness as an
-equivalence query. -/
+
 def emptyExpr : SExpr := .cap (.single [false]) (.single [true])
 end
 
@@ -857,14 +798,12 @@ section
 end
 
 section
-/-- "Contains a `0`" as a fragment expression: `Σ · {0} · Σ`. -/
+
 def containsZero : SExpr := .cat .sigma (.cat (.single [false]) .sigma)
 end
 
 section
-/-- **Soundness.** A *non-empty* denotation is a member of `S`. (Non-emptiness is needed only for the
-intersection generator, where `InS.inter` demands it; it propagates down to subterms because
-`concat`/`∩` are non-empty only when their parts are.) -/
+
 theorem InS_denote_of_nonempty : ∀ {e : SExpr}, (denote e).Nonempty → InS (denote e)
   | .sigma, _ => InS.univ
   | .single σ, _ => InS.singleton σ
@@ -880,7 +819,7 @@ theorem InS_denote_of_nonempty : ∀ {e : SExpr}, (denote e).Nonempty → InS (d
 end
 
 section
-/-- **Completeness.** Every member of `S` is the denotation of some `S`-term. -/
+
 theorem InS_exists_denote {X : Set (List Bool)} (h : InS X) : ∃ e : SExpr, denote e = X := by
   induction h with
   | univ => exact ⟨.sigma, rfl⟩
@@ -896,9 +835,7 @@ theorem InS_exists_denote {X : Set (List Bool)} (h : InS X) : ∃ e : SExpr, den
 end
 
 section
-/-- **`denote` is far from injective: `Σ · Σ = Σ`.** A nontrivial language identity (with distinct
-syntax), so relation (i) `Xₙ∩Xₘ = X_k` is *not* syntactic equality of codes — it is genuine
-regular-language equivalence, the whole difficulty of the exercise. -/
+
 theorem denote_catSigmaSigma : denote (.cat .sigma .sigma) = denote .sigma := by
   ext w
   simp only [denote_cat, denote_sigma, mem_concat, Set.mem_univ, iff_true]
@@ -906,11 +843,7 @@ theorem denote_catSigmaSigma : denote (.cat .sigma .sigma) = denote .sigma := by
 end
 
 section
-/-- **Definition 7.1(ii), syntactically.** Inconsistency of `eₙ, eₘ` — emptiness of `Xₙ ∩ Xₘ` — is
-exactly *language-equivalence of `cap eₙ eₘ` with `emptyExpr`*. Consistency (relation (ii)) is its
-**negation**, so even (ii) is an instance of deciding language equivalence on `SExpr` (here:
-equivalence to `∅`). Stated as an emptiness-equivalence to keep it choice-free (recovering a witnessing
-element from `≠ ∅` is the one genuinely non-constructive step, and is not needed for the decision). -/
+
 theorem empty_iff_equiv_emptyExpr (a b : SExpr) :
     denote (.cap a b) = (∅ : Set (List Bool)) ↔ denote (.cap a b) = denote emptyExpr := by
   rw [denote_emptyExpr]
@@ -929,9 +862,7 @@ theorem inS_eq_range_denote : {X | InS X} = denote '' {e | (denote e).Nonempty} 
 end
 
 section
-/-- **Characterization of `S` as the regular events of this fragment.** A language `X` is in `S`
-exactly when it is the *non-empty* denotation of some `Σ`/`{σ}`/`·`/`∩` expression. This is the
-precise content of Scott's "the sets in `S` are each regular events". -/
+
 theorem inS_iff_exists_denote {X : Set (List Bool)} :
     InS X ↔ ∃ e : SExpr, denote e = X ∧ X.Nonempty := by
   constructor
@@ -943,25 +874,19 @@ theorem inS_iff_exists_denote {X : Set (List Bool)} :
 end
 
 section
-/-- **Definition 7.1(i), syntactically**, is *exactly language equivalence on `SExpr`*:
-`Xₙ ∩ Xₘ = X_k ↔ denote (cap eₙ eₘ) = denote e_k`. -/
+
 theorem interEq_iff (a b k : SExpr) :
     denote a ∩ denote b = denote k ↔ denote (.cap a b) = denote k := by
   rw [denote_cap]
 end
 
 section
-/-- `denote .sigma = Σ` contains every word. -/
+
 theorem mem_denote_sigma (w : List Bool) : w ∈ denote .sigma := Set.mem_univ w
 end
 
 section
-/-- **The emptiness decider cannot decide relation (i).** `Σ ≠ "contains 0"`, witnessed by `[1] ∈ Σ`
-but `[1] ∉ Σ·{0}·Σ`. To *decide* this inequality one must detect a word in `Σ ∩ ("contains 0")ᶜ` —
-i.e. in the complement language `{1}*` — but `{1}*` is **not** expressible in the fragment (no
-complement, no star other than the full `Σ`). Hence no fragment-emptiness query exposes the
-difference: deciding equivalence needs machinery (a product/complement DFA, or a derivative
-bisimulation) that goes strictly beyond emptiness of fragment expressions. -/
+
 theorem sigma_ne_containsZero : denote .sigma ≠ denote containsZero := by
   intro h
   have h1 : ([true] : List Bool) ∈ denote .sigma := mem_denote_sigma _
@@ -990,7 +915,6 @@ open Sum Set
 section
 variable {σ₁ σ₂ : Type}
 
-/-- The concatenation `εNFA`: `M₁` on `inl`, `M₂` on `inr`, ε-edges from `M₁`-accept to `M₂`-start. -/
 def catEps (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂) : εNFA Bool (σ₁ ⊕ σ₂) where
   step s a :=
     match s, a with
@@ -1019,8 +943,6 @@ variable (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂)
 
 example [Fintype σ₁] [Fintype σ₂] : Fintype (σ₁ ⊕ σ₂) := inferInstance
 
-/-- ε-closure: the only ε-edges go from an `inl`-accept state to `inr`-start states, so the closure
-of `T` adds `inr '' M₂.start` exactly when `T` already contains some `inl`-accept state. -/
 theorem catEps_mem_εClosure_iff (T : Set (σ₁ ⊕ σ₂)) (s : σ₁ ⊕ σ₂) :
     s ∈ (catEps M₁ M₂).εClosure T ↔
       s ∈ T ∨ ((∃ q ∈ M₁.accept, (inl q : σ₁ ⊕ σ₂) ∈ T) ∧ s ∈ inr '' M₂.start) := by
@@ -1029,7 +951,7 @@ theorem catEps_mem_εClosure_iff (T : Set (σ₁ ⊕ σ₂)) (s : σ₁ ⊕ σ�
     induction h using εNFA.εClosure_induction with
     | base x hx => exact Or.inl hx
     | step x y hyx _hclos ih =>
-      -- a `none`-step `x → y`; nonempty only when `x = inl q`, `q ∈ M₁.accept`, `y ∈ inr '' start`
+
       cases x with
       | inl q =>
         rcases ih with hT | ⟨_, hmem⟩
@@ -1046,9 +968,6 @@ theorem catEps_mem_εClosure_iff (T : Set (σ₁ ⊕ σ₂)) (s : σ₁ ⊕ σ�
       simp only [catEps_step_inl_none, mem_ofPred_eq]
       exact ⟨hq, t, ht, rfl⟩
 
-/-- **Closed form for `eval`.** After reading `x`, the reachable `inl`-states mirror `M₁.eval x`, and
-the reachable `inr`-states are exactly the `M₂`-states reachable from some prefix-split `x = u ++ v`
-with the `M₁`-prefix `u` accepted. This is the engine behind `catEps_accepts`. -/
 theorem catEps_mem_eval_iff (x : List Bool) (s : σ₁ ⊕ σ₂) :
     s ∈ (catEps M₁ M₂).eval x ↔
       (∃ s₁, s = inl s₁ ∧ s₁ ∈ M₁.eval x) ∨
@@ -1077,13 +996,13 @@ theorem catEps_mem_eval_iff (x : List Bool) (s : σ₁ ⊕ σ₂) :
     · rintro ⟨t, ht, hs⟩
       rw [ih] at ht
       rcases ht with ⟨s₁, rfl, hs₁⟩ | ⟨t₂, rfl, u, v, hx, hu, hv⟩
-      · -- came from an `inl` state of `M₁`
+      ·
         rw [catEps_step_inl_some, catEps_mem_εClosure_iff] at hs
         rcases hs with hs | ⟨⟨q, hq, hqmem⟩, hs⟩
-        · -- still in `M₁`: extends the `inl` form
+        ·
           obtain ⟨s', hs', rfl⟩ := hs
           exact Or.inl ⟨s', rfl, by rw [NFA.eval_append_singleton, NFA.mem_stepSet]; exact ⟨s₁, hs₁, hs'⟩⟩
-        · -- `M₁` just reached an accept state on reading `a`: cross to `M₂` (split `v = []`)
+        ·
           obtain ⟨q', hq', hqq⟩ := hqmem
           cases hqq
           obtain ⟨t', ht', rfl⟩ := hs
@@ -1093,7 +1012,7 @@ theorem catEps_mem_eval_iff (x : List Bool) (s : σ₁ ⊕ σ₂) :
           change q ∈ M₁.eval (x ++ [a])
           rw [NFA.eval_append_singleton, NFA.mem_stepSet]
           exact ⟨s₁, hs₁, hq'⟩
-      · -- came from an `inr` state of `M₂`: extends the `inr` form (split `v ↦ v ++ [a]`)
+      ·
         rw [catEps_step_inr_some, catEps_mem_εClosure_iff] at hs
         rcases hs with hs | ⟨⟨q, _, hqmem⟩, _⟩
         · obtain ⟨t', ht', rfl⟩ := hs
@@ -1101,14 +1020,14 @@ theorem catEps_mem_eval_iff (x : List Bool) (s : σ₁ ⊕ σ₂) :
           rw [NFA.eval_append_singleton, NFA.mem_stepSet]; exact ⟨t₂, hv, ht'⟩
         · exact absurd hqmem (by simp)
     · rintro (⟨s', rfl, hs'⟩ | ⟨t', rfl, u, v, hx, hu, hv⟩)
-      · -- `inl` form: step `M₁` one more
+      ·
         rw [NFA.eval_append_singleton, NFA.mem_stepSet] at hs'
         obtain ⟨s₁, hs₁, hstep⟩ := hs'
         exact ⟨inl s₁, (ih (inl s₁)).mpr (Or.inl ⟨s₁, rfl, hs₁⟩),
           by rw [catEps_step_inl_some, catEps_mem_εClosure_iff]; exact Or.inl ⟨s', hstep, rfl⟩⟩
-      · -- `inr` form: the split `x ++ [a] = u ++ v`; cases on whether `v` is empty
+      ·
         rcases List.eq_nil_or_concat v with rfl | ⟨v', c, rfl⟩
-        · -- `v = []`: `u = x ++ [a] ∈ L₁`; cross via the ε-edge after reading `a`
+        ·
           rw [List.append_nil] at hx; subst hx
           rw [NFA.mem_accepts] at hu
           obtain ⟨q, hq, hqe⟩ := hu
@@ -1118,7 +1037,7 @@ theorem catEps_mem_eval_iff (x : List Bool) (s : σ₁ ⊕ σ₂) :
           refine ⟨inl s₁, (ih (inl s₁)).mpr (Or.inl ⟨s₁, rfl, hs₁⟩), ?_⟩
           rw [catEps_step_inl_some, catEps_mem_εClosure_iff]
           exact Or.inr ⟨⟨q, hq, q, hstep, rfl⟩, t', hv, rfl⟩
-        · -- `v = v' ++ [c]`: necessarily `c = a`, `x = u ++ v'`; step `M₂` one more
+        ·
           rw [List.concat_eq_append] at hx hv
           rw [← List.append_assoc] at hx
           obtain ⟨hxe, hac⟩ := List.append_inj' hx rfl
@@ -1130,7 +1049,6 @@ theorem catEps_mem_eval_iff (x : List Bool) (s : σ₁ ⊕ σ₂) :
           rw [catEps_step_inr_some, catEps_mem_εClosure_iff]
           exact Or.inl ⟨t', hstep, rfl⟩
 
-/-- **The concatenation automaton recognises exactly the concatenation language.** -/
 theorem catEps_accepts :
     (catEps M₁ M₂).accepts = concat M₁.accepts M₂.accepts := by
   ext x
@@ -1169,7 +1087,7 @@ namespace Exercise722
 open scoped Computability
 
 section
-/-- The one-state DFA recognising `Σ = {0,1}*` (every word accepted). -/
+
 def sigmaDFA : DFA Bool Unit where
   step _ _ := ()
   start := ()
@@ -1182,15 +1100,12 @@ section
 end
 
 section
-/-- States of the single-word DFA for `σ`: `some i` means "the input so far is the length-`i` prefix
-of `σ`" (`i ≤ |σ|`); `none` is the dead/sink state (input has diverged from `σ`). -/
+
 abbrev SingleState (σ : List Bool) : Type := Option (Fin (σ.length + 1))
 end
 
 section
-/-- The single-word DFA recognising `{σ}`. From `some i` (`i < |σ|`) reading the correct next
-character advances to `some (i+1)`; any mismatch — or any character once `σ` is fully consumed — goes
-to the dead state `none`. -/
+
 def singleDFA (σ : List Bool) : DFA Bool (SingleState σ) where
   step s b := s.bind fun i =>
     if h : (i : ℕ) < σ.length then
@@ -1201,8 +1116,7 @@ def singleDFA (σ : List Bool) : DFA Bool (SingleState σ) where
 end
 
 section
-/-- The complement DFA recognises the set-complement of the original language (over all of `Σ*`).
-(Choice-free; avoids mathlib's classical `accepts_compl`.) -/
+
 theorem complDFA_accepts {σ : Type} (M : DFA Bool σ) (a : SExpr) (h : M.accepts = denote a) :
     (Mᶜ).accepts = (denote a)ᶜ := by
   rw [← h]
@@ -1218,8 +1132,7 @@ example {σ₁ σ₂ : Type} [DecidableEq σ₁] [DecidableEq σ₂] : Decidable
 end
 
 section
-/-- The product DFA evaluates componentwise. (Choice-free; avoids mathlib's classical
-`accepts_inter`.) -/
+
 theorem inter_eval {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DFA Bool σ₂) (w : List Bool) :
     (M₁.inter M₂).eval w = (M₁.eval w, M₂.eval w) := by
   induction w using List.reverseRecOn with
@@ -1230,7 +1143,7 @@ theorem inter_eval {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DFA Bool
 end
 
 section
-/-- If `M₁`, `M₂` recognise `denote a`, `denote b`, their product DFA recognises `denote (a ∩ b)`. -/
+
 theorem interDFA_accepts {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DFA Bool σ₂)
     (a b : SExpr) (h₁ : M₁.accepts = denote a) (h₂ : M₂.accepts = denote b) :
     (M₁.inter M₂).accepts = denote (.cap a b) := by
@@ -1272,7 +1185,7 @@ theorem sigmaDFA_accepts_denote : sigmaDFA.accepts = denote .sigma := by
 end
 
 section
-/-- The dead state `none` is a sink. -/
+
 theorem singleDFA_evalFrom_none (σ : List Bool) (w : List Bool) :
     (singleDFA σ).evalFrom none w = none := by
   induction w with
@@ -1281,8 +1194,7 @@ theorem singleDFA_evalFrom_none (σ : List Bool) (w : List Bool) :
 end
 
 section
-/-- From state `some k`, reading `w` reaches `some (k+|w|)` exactly when `w` is a prefix of the
-suffix `σ.drop k` (i.e. `w` continues `σ` from position `k` without diverging); otherwise it dies. -/
+
 theorem singleDFA_evalFrom (σ : List Bool) (w : List Bool) (k : Fin (σ.length + 1)) :
     (singleDFA σ).evalFrom (some k) w =
       if h : w <+: List.drop (k : ℕ) σ
@@ -1329,7 +1241,7 @@ theorem singleDFA_evalFrom (σ : List Bool) (w : List Bool) (k : Fin (σ.length 
 end
 
 section
-/-- **The single-word DFA recognises exactly `{σ}`.** -/
+
 theorem singleDFA_accepts (σ : List Bool) : (singleDFA σ).accepts = {σ} := by
   ext w
   show (singleDFA σ).evalFrom (some ⟨0, by omega⟩) w ∈ (singleDFA σ).accept ↔ _
@@ -1355,7 +1267,7 @@ theorem singleDFA_accepts_denote (σ : List Bool) : (singleDFA σ).accepts = den
 end
 
 section
-/-- Every word over `{false,true}` of length at most `n`, listed without duplicates. -/
+
 def wordsUpTo : ℕ → List (List Bool)
   | 0 => [[]]
   | n + 1 =>
@@ -1363,10 +1275,10 @@ def wordsUpTo : ℕ → List (List Bool)
 end
 
 section
-/-- True iff some word in `ws` is accepted by `matchesB e`. -/
+
 def anyMatchesB (e : SExpr) (ws : List (List Bool)) : Bool := ws.any (matchesB e)
 
-#eval anyMatchesB .sigma (wordsUpTo 0) -- should be `true` (the empty word lies in Σ)
+#eval anyMatchesB .sigma (wordsUpTo 0)
 end
 
 section
@@ -1432,7 +1344,6 @@ variable {σ₁ σ₂ : Type}
 variable {σ : Type}
 variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
 
-/-- State after reading the first `n` symbols along a concrete path (`n ≤ x.length`). -/
 def pathStateAtAux {s t : σ} {x : List Bool} : M.Path s t x → ∀ n, n ≤ x.length → σ
   | .nil s, 0, _ => s
   | .nil _, n + 1, hn => (Nat.not_succ_le_zero n hn).elim
@@ -1456,8 +1367,6 @@ variable {σ₁ σ₂ : Type}
 
 section NFAinterLemmas
 
-/-- Product NFA recognising the intersection: states `σ₁ × σ₂`, stepping/starting/accepting
-componentwise. -/
 def NFAinter (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂) : NFA Bool (σ₁ × σ₂) where
   step s a := {t | t.1 ∈ M₁.step s.1 a ∧ t.2 ∈ M₂.step s.2 a}
   start := {s | s.1 ∈ M₁.start ∧ s.2 ∈ M₂.start}
@@ -1497,14 +1406,12 @@ theorem NFAinter_mem_accepts_iff (x : List Bool) :
 
 end NFAinterLemmas
 
-/-- State type of the automaton for an `SExpr` (a `Fintype`, see `instFintypeAutState`). -/
 def autState : SExpr → Type
   | .sigma => Unit
   | .single σ => Option (Fin (σ.length + 1))
   | .cap a b => autState a × autState b
   | .cat a b => autState a ⊕ autState b
 
-/-- The NFA from a DFA tracks the single deterministic state as a singleton. -/
 theorem dfaToNFA_eval {σ : Type} (M : DFA Bool σ) (x : List Bool) :
     M.toNFA.eval x = {M.eval x} := by
   induction x using List.reverseRecOn with
@@ -1523,7 +1430,6 @@ theorem dfaToNFA_eval {σ : Type} (M : DFA Bool σ) (x : List Bool) :
       rw [Set.mem_singleton_iff, DFA.eval_append_singleton] at hs
       exact ⟨M.eval x, Set.mem_singleton _, hs⟩
 
-/-- Choice-free version of `DFA.toNFA_correct`. -/
 theorem dfaToNFA_accepts {σ : Type} (M : DFA Bool σ) : M.toNFA.accepts = M.accepts := by
   ext x
   constructor
@@ -1555,7 +1461,6 @@ instance instDecidableEqAutState : (e : SExpr) → DecidableEq (autState e)
       letI := instDecidableEqAutState a; letI := instDecidableEqAutState b
       exact inferInstanceAs (DecidableEq (autState a ⊕ autState b))
 
-/-- A crude upper bound on `Fintype.card (autState e)` (used to bound word search length). -/
 def autStateCard : SExpr → ℕ
   | .sigma => 1
   | .single σ => σ.length + 2
@@ -1615,11 +1520,9 @@ theorem autStateCard_eq_card (e : SExpr) : autStateCard e = Fintype.card (autSta
 
 end ShortWord
 
-/-- Search `wordsUpTo (autStateCard e)` for a word accepted by `matchesB e`. -/
 def decideNonemptyB (e : SExpr) : Bool :=
   anyMatchesB e (wordsUpTo (autStateCard e))
 
-/-- Decidable emptiness of `denote e` via bounded word search. -/
 def decideEmptyB (e : SExpr) : Bool := !decideNonemptyB e
 
 section ShortWord
@@ -1632,7 +1535,6 @@ theorem mem_accepts_of_path {s t : σ} {x : List Bool} (hs : s ∈ M.start) (ht 
   rw [NFA.accepts_iff_exists_path]
   exact ⟨s, hs, t, ht, ⟨p⟩⟩
 
-/-- Append two paths meeting at the middle state. -/
 def pathAppend {s u t : σ} {a b : List Bool} (p : M.Path s u a) (p' : M.Path u t b) :
     M.Path s t (a ++ b) :=
   match p with
@@ -1728,15 +1630,12 @@ end
 section
 variable {σ₁ σ₂ : Type}
 
-/-- The uniform automaton for a fragment expression: leaves from `Exercise722DFA.lean`, `cap` by the
-product construction, `cat` by the concatenation automaton (`Exercise722Cat.lean`). -/
 def toNFA : (e : SExpr) → NFA Bool (autState e)
   | .sigma => sigmaDFA.toNFA
   | .single σ => (singleDFA σ).toNFA
   | .cap a b => NFAinter (toNFA a) (toNFA b)
   | .cat a b => (catEps (toNFA a) (toNFA b)).toNFA
 
-/-- **The automaton recognises exactly the language it should.** -/
 theorem toNFA_accepts : (e : SExpr) → (toNFA e).accepts = denote e
   | .sigma => by
       change sigmaDFA.toNFA.accepts = denote .sigma
@@ -1793,9 +1692,8 @@ instance decidableEmptyDenote (e : SExpr) : Decidable (denote e = ∅) :=
   if h : decideEmptyB e then .isTrue (decideEmptyB_iff e |>.mp h)
   else .isFalse fun he => h (decideEmptyB_iff e |>.mpr he)
 
-#eval decideEmptyB (.cap (.single [false]) (.single [true])) -- should be `true` (disjoint singletons)
+#eval decideEmptyB (.cap (.single [false]) (.single [true]))
 
-/-- Decides relation (ii) on a pair of expressions: `true` iff `denote a ∩ denote b` is non-empty. -/
 def consistentB (a b : SExpr) : Bool := !decideEmptyB (.cap a b)
 
 end

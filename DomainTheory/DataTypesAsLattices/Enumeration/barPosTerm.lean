@@ -28,7 +28,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Term for the positive branch `⟨1,u,x₁⟩` of Scott's bar operator. -/
 def barPosTerm : Term :=
   seqConsTerm (.succ .zero)
     (seq2Term (.var 1) (.app (.var 2) (.succ .zero)))

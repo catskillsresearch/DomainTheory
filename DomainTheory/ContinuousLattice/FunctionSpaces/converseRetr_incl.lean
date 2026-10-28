@@ -12,7 +12,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -27,7 +26,6 @@ open Finset
 
 variable {i : D → D'}
 
-/-- `j ∘ i = id` (uses (i)+(ii)): `{x | i x ⊑ i y} = Iic y`, whose join is `y`. -/
 theorem converseRetr_incl (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
     (hinj : Function.Injective i) (y : D) : converseRetr i (i y) = y := by
   have hset : {x | i x ≤ i y} = Set.Iic y := by

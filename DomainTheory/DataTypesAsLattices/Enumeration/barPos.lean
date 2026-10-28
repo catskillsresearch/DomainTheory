@@ -21,7 +21,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (3.15).** Positive branch of `ū`: `⟨1, u, x₁⟩`. -/
 def barPos (u x : Pomega) : Pomega :=
   seqCons (ofNat 1) (seq2 u (funOf x (ofNat 1)))
 

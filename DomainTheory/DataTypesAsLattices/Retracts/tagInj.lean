@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Tag injection `⟨i, x⟩` used by the expanded n-ary sum of (4.44). -/
 def tagInj (i : ℕ) (x : Pomega) : Pomega := pairSeq (ofNat i) x
 
 end DomainTheory.DataTypesAsLattices

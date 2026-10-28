@@ -6,7 +6,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm
 
 namespace DomainTheory.ContinuousLattice
 
-
 attribute [instance] CLat.str
 
 section LimitMaps
@@ -19,7 +18,6 @@ section Thm44b
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-/-- `i_{n∞}(yₙ) ⊑ y_{n+1}`: climbing one level and embedding stays below the next component. -/
 theorem incl_projInf_le_projInf_succ (n : ℕ) (w : DInf D₀ j₀) :
     (towerProj D₀ j₀ n).incl (projInf (towerType D₀) (towerProj D₀ j₀) n w)
       ≤ projInf (towerType D₀) (towerProj D₀ j₀) (n + 1) w := by

@@ -5,11 +5,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (2.7), remaining cases.** -/
 theorem eq_2_7_pos (x y z : Pomega) (h0 : 0 ∉ z) (hne : z ≠ botElem) :
     condSet z x y = y := by
   have hpos : ∃ t, t + 1 ∈ z := by

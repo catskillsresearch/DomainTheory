@@ -12,8 +12,6 @@ universe u
 
 variable {α : Type u} [DecidableEq α] (sys : InfoSys α)
 
-/-- **Definition 2.2 (Scott 1982).** Set-level entailment: `EntSet u v` means
-`u ⊢ X` for every `X ∈ v`. -/
 def EntSet (u v : Finset α) : Prop := ∀ X ∈ v, sys.Ent u X
 
 end InfoSys

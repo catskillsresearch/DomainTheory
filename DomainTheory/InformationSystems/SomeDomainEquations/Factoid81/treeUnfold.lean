@@ -21,7 +21,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
 
-/-- Unfold a tree token into the sum-of-product carrier. -/
 def treeUnfold (t : TreeToken α) :
     SumToken α (ProdToken (treeSystem A) (treeSystem A)) :=
   match t with
@@ -44,6 +43,5 @@ theorem treeUnfold.pairL_bot_eq_pairR_bot :
     treeUnfold A (.pairL treeBot) = treeUnfold A (.pairR treeBot) := rfl
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

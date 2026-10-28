@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.41).** Environment update `t[x/n]`. -/
 def updateEnv (t x : Pomega) (n : ℕ) : Pomega :=
   graph (fun m => if m = ofNat n then x else funOf t m)
 

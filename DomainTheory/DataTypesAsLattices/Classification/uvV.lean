@@ -15,7 +15,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-/-- Scott's table `v` on `{⊥, 0, ⊤}`, extended continuously to all of `Pω`. -/
 def uvV (x y : Pomega) : Pomega :=
   {k | k = 0 ∨
        (k = 1 ∧ ((∃ n, n + 1 ∈ x) ∨ (∃ n, n + 1 ∈ y))) ∨

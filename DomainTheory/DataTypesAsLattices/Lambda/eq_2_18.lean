@@ -13,7 +13,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 namespace eq_2_18
 
-/-- **Scott 1976, (2.18).** Constants as graphs of constant maps. -/
 theorem bot : botElem = graph (fun _ => botElem) := by
   ext p
   constructor
@@ -32,7 +31,6 @@ theorem top : topElem = graph (fun _ => topElem) := by
 
 end eq_2_18
 
-/-- **Scott 1976, (2.18).** `a = λx. a` iff `a = ⊥` or `a = ⊤`. -/
 theorem eq_2_18 (a : Pomega) :
     a = graph (fun _ => a) ↔ a = botElem ∨ a = topElem := by
   constructor

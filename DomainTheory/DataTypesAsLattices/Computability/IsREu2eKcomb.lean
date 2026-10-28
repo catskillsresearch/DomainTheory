@@ -20,11 +20,9 @@ public import DomainTheory.DataTypesAsLattices.Computability.IsREu2egraph_of_re
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)

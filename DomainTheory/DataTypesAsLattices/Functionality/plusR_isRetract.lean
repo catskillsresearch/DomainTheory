@@ -17,11 +17,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 4.5 (i).** `a ⊕ b` is a retract when `a` and `b` are. -/
 theorem plusR_isRetract {a b : Pomega} (ha : Retract a) (hb : Retract b) :
     Retract (plusR a b) := by
   constructor

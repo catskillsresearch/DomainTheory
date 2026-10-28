@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.Ba
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,11 +15,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-
 namespace ApproximableMap
 
-
-/-- A `w`-chain under tokens from `f` stays inside a pre-fixed point. -/
 theorem fixChain_subset_pre_fixed (f : ApproximableMap A A) (x : A.Element)
     (hpre : f.toElement x ≤ x) {w : Finset (FunToken A A)}
     (hw : ↑w ⊆ (approxMap_toElement A A f).carrier) {n : Nat} {u : Finset α}

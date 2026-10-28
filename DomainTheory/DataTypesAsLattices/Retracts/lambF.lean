@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.intR
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.39).** `lamb = int ⊕ (lamb ∘→ lamb)`. -/
 def lambF (z : Pomega) : Pomega := plusR intR (arrowR z z)
 
 end DomainTheory.DataTypesAsLattices

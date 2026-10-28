@@ -12,11 +12,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 2.1 (The continuity theorem).** -/
 theorem theorem_2_1 (t : Term) (ρ : ℕ → Pomega) (i : ℕ) :
     IsScottContinuous (fun v => interp t (envSet ρ i v)) :=
   interp.var_isScottContinuous t ρ i

@@ -9,7 +9,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -20,7 +19,6 @@ namespace ApproximableMap
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- **Proposition 7.4(ii).** -/
 theorem proposition_7_4_ii (f : ApproximableMap A A) :
     f.toElement (fixElement A f) = fixElement A f :=
   fixElement_fixed A f

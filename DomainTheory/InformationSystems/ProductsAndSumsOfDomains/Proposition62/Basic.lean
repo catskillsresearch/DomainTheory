@@ -27,7 +27,6 @@ namespace InfoSys
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
 
-
 theorem mem_foldr_liftLeft (s : Multiset α) (p : ProdToken A B) :
     p ∈ Multiset.foldr (fun x : α => insert (mkLeft A B x)) (∅ : Finset (ProdToken A B)) s ↔
       ∃ x ∈ s, p = mkLeft A B x := by
@@ -68,13 +67,10 @@ theorem mem_foldr_liftRight (s : Multiset β) (p : ProdToken A B) :
       · exact Or.inl hp
       · exact Or.inr ⟨z, hz, hp⟩
 
-
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-
-/-- Helper: `g` relates `s` to any subset of `{Δ_B}` once it relates to `∅`. -/
 theorem rel_bot_subset {D : InfoSys β} {s : Finset γ} {w : Finset β}
     (g : ApproximableMap C D) (hs : s ∈ C.Con)
     (hg : g.rel s (∅ : Finset β)) (hw : w ⊆ ({D.bot} : Finset β)) :
@@ -87,7 +83,6 @@ theorem rel_bot_subset {D : InfoSys β} {s : Finset γ} {w : Finset β}
     exact D.ent_bot D.con_empty
   exact g.mono hg (proposition_2_3_iii C hs) hEnt hs hwCon
 
-/-- Helper: `f` relates `s` to any subset of `{Δ_A}` once it relates to `∅`. -/
 theorem rel_bot_subset_left {D : InfoSys α} {s : Finset γ} {v : Finset α}
     (f : ApproximableMap C D) (hs : s ∈ C.Con)
     (hf : f.rel s (∅ : Finset α)) (hv : v ⊆ ({D.bot} : Finset α)) :

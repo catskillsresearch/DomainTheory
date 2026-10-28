@@ -13,11 +13,9 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_10_apply
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem eq_3_10_val : valNat 12 = sucC := by
   have : valNat 12 = valNat (applyNat 3 1) := by simp [eq_3_10_apply]

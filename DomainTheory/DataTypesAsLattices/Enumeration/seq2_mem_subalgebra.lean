@@ -12,16 +12,13 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.combinatory_mem_subal
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem seq2_mem_subalgebra {A : Set Pomega} (hA : Subalgebra A)
     {x y : Pomega} (hx : x ∈ A) (hy : y ∈ A) : seq2 x y ∈ A := by

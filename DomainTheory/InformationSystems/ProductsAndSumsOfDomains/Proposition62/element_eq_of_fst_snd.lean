@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -17,13 +16,10 @@ namespace InfoSys
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
 
-
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-
-/-- Product elements are determined by their projections (Scott’s uniqueness lemma). -/
 theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
     (hfst : (fstMap A B).toElement z = (fstMap A B).toElement z')
     (hsnd : (sndMap A B).toElement z = (sndMap A B).toElement z') :
@@ -37,7 +33,7 @@ theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
       exact hp
     have hCon : ProdCon A B {p} := z.consistent {p} hpz
     rcases p.property.out with h1 | h2
-    · -- right-tagged (or bottom): use `snd`
+    ·
       have hy : p.val.2 ∈ ((sndMap A B).toElement z).carrier := by
         refine ⟨{p}, hpz, ?_⟩
         refine ⟨hCon, B.con_sing p.val.2, ?_⟩
@@ -56,7 +52,7 @@ theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
         · intro _
           exact hEnt p.val.2 (Finset.mem_singleton_self _)
       exact z'.closed u p hu hEntp
-    · -- left-tagged: use `fst`
+    ·
       have hx : p.val.1 ∈ ((fstMap A B).toElement z).carrier := by
         refine ⟨{p}, hpz, ?_⟩
         refine ⟨hCon, A.con_sing p.val.1, ?_⟩

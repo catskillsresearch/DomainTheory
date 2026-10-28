@@ -8,43 +8,28 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.QPa
 namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
-/-! ### Theorem 8.8(b)–(c) (moved from Exercise_8_15 monolith) -/
-
 open Domain.Recursive NeighborhoodSystem
 
-/-- Clip a rational-pair code `e` to `[decodeRat m, ∞)`, given `t = pair m e`. -/
 def clipGeCode (t : ℕ) : ℕ :=
   Nat.pair (ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1)) t.unpair.2.unpair.2
 
-/-- Clip every pair of the list-code `c` into `[decodeRat m, ∞)`. -/
 def clipGeListCode (m c : ℕ) : ℕ := flatMapCode (fun t => Nat.pair (clipGeCode t) 0 + 1) m c
 
-/-- Clip a rational-pair code `e` to `(-∞, decodeRat m)`, given `t = pair m e`. -/
 def clipLtCode (t : ℕ) : ℕ :=
   Nat.pair t.unpair.2.unpair.1 (ratMinCode (Nat.pair t.unpair.2.unpair.2 t.unpair.1))
 
-/-- Clip every pair of the list-code `c` into `(-∞, decodeRat m)`. -/
 def clipLtListCode (m c : ℕ) : ℕ := flatMapCode (fun t => Nat.pair (clipLtCode t) 0 + 1) m c
 
-/-- The code of the head element of a non-empty list-code `c` (`decodeList c`'s head). Junk
-(`0`'s `unpair.1`) when `c = 0`, but we only ever apply it to `canonCode n ≠ 0`
-(`canonCode_ne_zero`). -/
 def firstElemCode (c : ℕ) : ℕ := (c - 1).unpair.1
 
-/-- Clip a pair up to `[m, ∞)`: clamp the left endpoint at `m`, leave the right endpoint. -/
 def qpClipGe (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ m, p.2)
 
-/-- Clip a pair down to `(-∞, m)`: leave the left endpoint, clamp the right endpoint at `m`. -/
 def qpClipLt (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1, p.2 ⊓ m)
 
-/-- The midpoint code of the first pair of `canonCode n`'s presenting list. -/
 def splitMidCode (n : ℕ) : ℕ := ratMidCode (firstElemCode (canonCode n))
 
-/-- The "left" half of the canonical split of `Xₙ`: `Xₙ ∩ (-∞, m)` for `m` the midpoint of `Xₙ`'s
-first presenting pair. -/
 def splitULeft (n : ℕ) : ℕ := clipLtListCode (splitMidCode n) (canonCode n)
 
-/-- The "right" half of the canonical split of `Xₙ`: `Xₙ ∩ [m, ∞)`. -/
 def splitURight (n : ℕ) : ℕ := clipGeListCode (splitMidCode n) (canonCode n)
 
 theorem decodeQPairList_singletonCode (v : ℕ) :
@@ -180,7 +165,6 @@ theorem primrec_splitURight : Nat.Primrec splitURight :=
   (primrec_clipGeListCode.comp (primrec_splitMidCode.pair primrec_canonCode)).of_eq
     fun n => by simp only [splitURight, unpair_pair_fst, unpair_pair_snd]
 
-/-- The first pair `p₀` of `canonCode n`'s presenting list is non-degenerate, `p₀.1 < p₀.2`. -/
 theorem splitU_p0_lt (n : ℕ) :
     (decodeRatPair (firstElemCode (canonCode n))).1 < (decodeRatPair (firstElemCode (canonCode n))).2 :=
   forall_lt_decodeQPairList_canonCode n _
@@ -238,7 +222,6 @@ theorem UX_splitURight (n : ℕ) :
   rw [presentedIntervals_decodeQPairList_clipGeListCode]
   rfl
 
-/-- **Theorem 8.8(b) Part 4, disjointness**: `splitULeft`/`splitURight` cover disjoint pieces. -/
 theorem splitU_disjoint (n : ℕ) : UX (splitULeft n) ∩ UX (splitURight n) = ∅ := by
   rw [UX_splitULeft, UX_splitURight]
   ext x
@@ -246,7 +229,6 @@ theorem splitU_disjoint (n : ℕ) : UX (splitULeft n) ∩ UX (splitURight n) = �
   rintro ⟨⟨-, h1⟩, -, h2⟩
   exact absurd h1 (not_lt.mpr h2)
 
-/-- **Theorem 8.8(b) Part 4, properness (left)**: `splitULeft n` is a *proper* subset of `Xₙ`. -/
 theorem splitU_left_ne (n : ℕ) : UX (splitULeft n) ≠ UX n := by
   intro hEq
   have hZsub : UX (splitURight n) ⊆ UX (splitULeft n) := by
@@ -255,7 +237,6 @@ theorem splitU_left_ne (n : ℕ) : UX (splitULeft n) ≠ UX n := by
     rw [← splitU_disjoint n]; exact Set.subset_inter hZsub subset_rfl
   exact (U_mem_UX (splitURight n)).2.1.ne_empty (Set.subset_empty_iff.mp hZempty)
 
-/-- **Theorem 8.8(b) Part 4, properness (right)**: `splitURight n` is a *proper* subset of `Xₙ`. -/
 theorem splitU_right_ne (n : ℕ) : UX (splitURight n) ≠ UX n := by
   intro hEq
   have hYsub : UX (splitULeft n) ⊆ UX (splitURight n) := by
@@ -264,7 +245,6 @@ theorem splitU_right_ne (n : ℕ) : UX (splitURight n) ≠ UX n := by
     rw [← splitU_disjoint n]; exact Set.subset_inter subset_rfl hYsub
   exact (U_mem_UX (splitULeft n)).2.1.ne_empty (Set.subset_empty_iff.mp hYempty)
 
-/-- **Theorem 8.8(b) Part 4, covering**: `splitULeft`/`splitURight` reunite to `Xₙ`. -/
 theorem splitU_union (n : ℕ) : UX (splitULeft n) ∪ UX (splitURight n) = UX n := by
   rw [UX_splitULeft, UX_splitURight]
   ext x

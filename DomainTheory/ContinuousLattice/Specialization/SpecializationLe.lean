@@ -23,13 +23,11 @@ universe u
 
 variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 
-/-- **Scott 1972, §2.** The *specialization order*: `x ⊑ y` when `x ∈ U` open implies `y ∈ U`. -/
 def SpecializationLe (x y : X) : Prop :=
   ∀ U, IsOpen U → x ∈ U → y ∈ U
 
 namespace SpecializationLe
 
-/-- Scott's specialization order is the reverse of Mathlib's `Specializes` convention. -/
 theorem iff_specializes {x y : X} :
     SpecializationLe x y ↔ y ⤳ x :=
   specializes_iff_forall_open.symm
@@ -38,7 +36,6 @@ variable {ι : Type u} [Preorder ι] [IsDirected ι (· ≤ ·)]
 
 variable {x : ι → D} {L y : D}
 
-/-- The specialization order of the Scott topology is the original lattice order. -/
 theorem scott_iff {x y : D} :
     @SpecializationLe D scottTopologicalSpace x y ↔ x ≤ y := by
   constructor
@@ -48,7 +45,6 @@ theorem scott_iff {x y : D} :
   · intro hxy U hU hxU
     exact (ScottOpen.isOpen_iff.mp hU).1 hxy hxU
 
-/-- Continuous maps preserve Scott's specialization order. -/
 theorem map {Y : Type*} [TopologicalSpace Y] {x y : X}
     (hxy : SpecializationLe x y) {f : X → Y} (hf : Continuous f) :
     SpecializationLe (f x) (f y) := by

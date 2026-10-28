@@ -15,23 +15,20 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
-/- concordance: source L2203 EXERCISE 4.7 fixed point above a seed -/
-/- concordance: source L2201 EXERCISES — Lecture IV exercises -/
-/-- **Exercise 4.7 (Scott 1981, PRG-19).** `fixAbove f ha` is a fixed point: `f(x) = x`. -/
 theorem fixAbove_isFixed (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toElementMap a) :
     f.toElementMap (f.fixAbove ha) = f.fixAbove ha := by
   set hdir := (fun i j => ⟨max i j, iterFrom_mono f ha (le_max_left i j),
     iterFrom_mono f ha (le_max_right i j)⟩ :
     ∀ i j, ∃ k, f.iterFrom a i ≤ f.iterFrom a k ∧ f.iterFrom a j ≤ f.iterFrom a k) with hdir_def
   apply le_antisymm
-  · -- `f(x) = ⊔ₙ f(fⁿ(a)) = ⊔ₙ f^{n+1}(a) ⊑ x` since each `f^{n+1}(a) ⊑ x`.
+  ·
     rw [fixAbove, toElementMap_iSupDirected]
     apply NeighborhoodSystem.iSupDirected_le
     intro n
     have : f.toElementMap (f.iterFrom a n) = f.iterFrom a (n + 1) := (iterFrom_succ f a n).symm
     rw [this]
     exact NeighborhoodSystem.le_iSupDirected (f.iterFrom a) hdir (n + 1)
-  · -- `x ⊑ f(x)`: each `fⁿ(a) ⊑ fⁿ⁺¹(a) = f(fⁿ(a)) ⊑ f(x)`.
+  ·
     apply NeighborhoodSystem.iSupDirected_le
     intro n
     calc f.iterFrom a n
@@ -40,8 +37,6 @@ theorem fixAbove_isFixed (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f
       _ ≤ f.toElementMap (f.fixAbove ha) :=
           f.toElementMap_mono (NeighborhoodSystem.le_iSupDirected (f.iterFrom a) hdir n)
 
-/-- **Exercise 4.7 (Scott 1981, PRG-19).** `fixAbove f ha` is the *least* fixed point above `a`:
-any `z` with `a ⊑ z` and `f(z) ⊑ z` lies above it. (Relativized form of 4.2(iii).) -/
 theorem fixAbove_least (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toElementMap a)
     {z : V.Element} (haz : a ≤ z) (hz : f.toElementMap z ≤ z) : f.fixAbove ha ≤ z := by
   apply NeighborhoodSystem.iSupDirected_le
@@ -151,7 +146,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-/-- `a ⊑ fixAbove f ha`: the constructed fixed point lies above `a` (it is the `n = 0` term). -/
 theorem le_fixAbove (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toElementMap a) :
     a ≤ f.fixAbove ha := by
   have := NeighborhoodSystem.le_iSupDirected (f.iterFrom a)
@@ -159,16 +153,13 @@ theorem le_fixAbove (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toEl
       iterFrom_mono f ha (le_max_right i j)⟩) 0
   rwa [iterFrom_zero] at this
 
-/-- The sup of a monotone `ω`-chain, realized as a directed union (`max`-directedness). -/
 def supChain (s : ℕ → V.Element) (hmono : Monotone s) : V.Element :=
   NeighborhoodSystem.iSupDirected s
     (fun i j => ⟨max i j, hmono (le_max_left i j), hmono (le_max_right i j)⟩)
 
-/-- The approximants form a monotone `ω`-chain (the `Monotone` packaging of `iterElem_mono`). -/
 theorem iterElem_monotone (f : ApproximableMap V V) : Monotone f.iterElem :=
   fun _ _ hab => iterElem_mono f hab
 
-/-- `fⁿ⁺¹(⊥) = f(fⁿ(⊥))`. -/
 theorem iterElem_succ (f : ApproximableMap V V) (n : ℕ) :
     f.iterElem (n + 1) = f.toElementMap (f.iterElem n) := by
   show (f.comp (f.iterMap n)).toElementMap V.bot
@@ -178,7 +169,6 @@ theorem iterElem_succ (f : ApproximableMap V V) (n : ℕ) :
 theorem iterElem_zero (f : ApproximableMap V V) : f.iterElem 0 = V.bot :=
   toElementMap_idMap V.bot
 
-/-- `(f²)ⁿ(⊥) = f^{2n}(⊥)`. -/
 theorem comp_self_iterElem (f : ApproximableMap V V) (n : ℕ) :
     (f.comp f).iterElem n = f.iterElem (2 * n) := by
   induction n with
@@ -191,7 +181,6 @@ theorem mem_supChain (s : ℕ → V.Element) (hmono : Monotone s) {Z : Set α} :
     (supChain s hmono).mem Z ↔ ∃ n, (s n).mem Z :=
   NeighborhoodSystem.mem_iSupDirected s _
 
-/-- The approximants `fⁿ(⊥)` form a monotone chain whose sup is `fix(f)`. -/
 theorem fixElement_eq_supChain (f : ApproximableMap V V) :
     f.fixElement = supChain f.iterElem (iterElem_monotone f) := by
   apply Element.ext

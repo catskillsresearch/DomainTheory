@@ -14,13 +14,11 @@ public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Order
 public import Mathlib.Order.FixedPoints
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
@@ -36,7 +34,6 @@ open Finset
 
 variable {i : D → D'}
 
-/-- **Scott 1972, Proposition 3.10(iv).** Scott's candidate retraction `j(x') = ⊔ { x | i(x) ⊑ x' }`. -/
 noncomputable def converseRetr (i : D → D') (x' : D') : D :=
   sSup {x | i x ≤ x'}
 

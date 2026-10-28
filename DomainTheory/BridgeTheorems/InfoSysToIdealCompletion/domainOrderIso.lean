@@ -26,7 +26,6 @@ namespace InfoSysToIdealCompletion
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Order isomorphism: domain elements ↔ ideals of finite elements. -/
 noncomputable def domainOrderIso : A.Element ≃o Ideal (FiniteElement A) where
   toFun := toIdeal A
   invFun := ofIdeal A
@@ -36,7 +35,7 @@ noncomputable def domainOrderIso : A.Element ≃o Ideal (FiniteElement A) where
     intro x y
     constructor
     · intro h
-      -- x ≤ y from toIdeal x ≤ toIdeal y via algebraicity
+
       rw [← ofIdeal_toIdeal A x, ← ofIdeal_toIdeal A y]
       refine InfoSys.directedSup.le A _ _ _ ?_
       intro z hz

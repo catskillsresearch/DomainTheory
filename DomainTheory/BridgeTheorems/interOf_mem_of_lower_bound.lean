@@ -22,7 +22,6 @@ namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)
 
-/-- If a neighbourhood sits below `interOf u`, then `interOf u ∈ 𝒟`. -/
 theorem interOf_mem_of_lower_bound {u : Finset ι} {Z : Set α}
     (hZ : B.system.mem Z) (hsub : Z ⊆ B.interOf u) : B.system.mem (B.interOf u) := by
   induction u using Finset.induction with

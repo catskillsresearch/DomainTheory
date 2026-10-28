@@ -30,7 +30,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 namespace Vapply
 
-/-- `V(a)(x)` is a prefixpoint of `y ↦ x ∪ a(y)`. -/
 theorem prefixpoint (a x : Pomega) :
     x ⊆ Vapply a x ∧ funOf a (Vapply a x) ⊆ Vapply a x := by
   refine ⟨_root_.DomainTheory.DataTypesAsLattices.eq_5_16 a x, ?_⟩
@@ -38,8 +37,6 @@ theorem prefixpoint (a x : Pomega) :
   have hV : Vapply a x ⊆ y := fun m hm => hm y hy
   exact hy.2 (funOf.monotone_right a hV hk)
 
-/-- **Scott 1976, Theorem 5.6 / (5.15).** The universe applied to `x` is
-closed under `a` and contains `x`. -/
 theorem closed (a x : Pomega) :
     x ∪ funOf a (Vapply a x) ⊆ Vapply a x := by
   intro k hk
@@ -60,9 +57,6 @@ theorem eq_Vstep (a x : Pomega) :
     exact hk (x ∪ funOf a (Vapply a x)) hset
   · exact Vapply.closed a x
 
-/-- **Scott 1976, Theorem 5.5.** `V(a)(x) = a(x)` for every `x` implies
-`a` is expansive and idempotent on values, hence a closure once `a` is
-already a graph retract. -/
 theorem eq_imp_expansive {a : Pomega}
     (h : ∀ x, Vapply a x = funOf a x) (x : Pomega) :
     x ⊆ funOf a x :=
@@ -74,7 +68,6 @@ theorem eq_imp_idem {a : Pomega}
   have := _root_.DomainTheory.DataTypesAsLattices.eq_5_17 a x
   rwa [h (Vapply a x), h x] at this
 
-/-- Library form of Scott (5.14): `Y(Vstep a x) = Vapply a x`. -/
 theorem eq_Y (a x : Pomega) : VapplyY a x = Vapply a x := by
   have hfix : Vstep a x (VapplyY a x) = VapplyY a x :=
     (theorem_1_4 (Vstep.isScottContinuous a x)).1
@@ -110,7 +103,6 @@ theorem right_isScottContinuous (a : Pomega) :
     (fun y => union_left_isScottContinuous (funOf a y))
     (fun x => Vstep.isScottContinuous a x)
 
-/-- **Scott 1976, (5.19).** `V(a)` is always a closure, so `V(V(a)) = V(a)`. -/
 theorem graph_isClosure (a : Pomega) :
     Closure (graph (fun x => Vapply a x)) := by
   constructor

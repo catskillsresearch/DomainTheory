@@ -28,7 +28,6 @@ variable (A : InfoSys α) (B : InfoSys β)
 
 open ApproximableMap
 
-/-- Scott’s retract map `|A → B| → |A →ₛ B|` induced by `strictify`. -/
 def strictifyElement (x : (functionSystem A B).Element) :
     (strictFunctionSystem A B).Element :=
   approxMap_toStrictElement A B (strictify A B (element_toApproxMap A B x))

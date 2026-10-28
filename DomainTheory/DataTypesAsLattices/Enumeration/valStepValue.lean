@@ -12,7 +12,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The application selected by one positive Gödel code. -/
 def valStepValue (v : Pomega) : ℕ → Pomega
   | 0 => botElem
   | p + 1 =>

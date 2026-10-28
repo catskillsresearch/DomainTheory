@@ -22,7 +22,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Curried operator `λa f. primRecComb a f`. -/
 def primRecOpEnv : ℕ → Pomega
   | 2 => dollarC
   | 3 => Ycomb
@@ -34,7 +33,6 @@ namespace primRecOpEnv
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem combinatory : ∀ i, IsCombinatory (primRecOpEnv i)
   | 2 => dollarC.combinatory

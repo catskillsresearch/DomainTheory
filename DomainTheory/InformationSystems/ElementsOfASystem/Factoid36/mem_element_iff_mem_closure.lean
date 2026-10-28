@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.approx
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,8 +15,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-
-/-- **Factoid 3.6.** Membership in `x` iff membership in some finite approximation `ū ⊆ x`. -/
 theorem mem_element_iff_mem_closure (x : sys.Element) (a : α) :
     a ∈ x.carrier ↔ a ∈ sys.approxUnion x := by
   constructor

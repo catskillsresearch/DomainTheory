@@ -28,7 +28,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem combinatory : IsCombinatory addStepC :=
   .app .K .suc
 

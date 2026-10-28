@@ -9,7 +9,6 @@ public import Mathlib.Topology.Order.ScottTopology
 public import Mathlib.Order.DirSupClosed
 public import Mathlib.Data.Set.Basic
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

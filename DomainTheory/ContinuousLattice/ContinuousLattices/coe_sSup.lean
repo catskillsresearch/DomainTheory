@@ -18,7 +18,6 @@ namespace IdemFix
 
 variable {e : L → L}
 
-/-- The ambient supremum corrected by `e` is the supremum in `IdemFix e`. -/
 theorem coe_sSup (hidem : ∀ x, e (e x) = e x) (hmono : Monotone e) (S : Set (IdemFix e)) :
     letI := completeLattice hidem hmono
     ((sSup S : IdemFix e) : L) = e (sSup (Subtype.val '' S)) := rfl

@@ -9,9 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.evalC_isScottContin
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem evalC_app (u : Pomega) :
     funOf evalC u = funOf (funOf u (ofNat 0)) (funOf u (ofNat 1)) :=

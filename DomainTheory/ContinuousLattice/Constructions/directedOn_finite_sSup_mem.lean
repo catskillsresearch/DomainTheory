@@ -14,9 +14,7 @@ public import Mathlib.Topology.ContinuousMap.T0Sierpinski
 public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Sets.Opens
 
-
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
@@ -24,9 +22,6 @@ open Topology Set
 
 variable {D : Type*} [CompleteLattice D]
 
-/-- A non-empty **finite** directed set attains its supremum: `⊔S ∈ S`. A maximal element of
-`S` (which exists by finiteness) is, by directedness, the greatest element, hence the
-supremum. This is the order-theoretic heart of "finite ⟹ continuous" (Scott 1972, 2.8). -/
 theorem directedOn_finite_sSup_mem {S : Set D} (hSfin : S.Finite) (hSne : S.Nonempty)
     (hSdir : DirectedOn (· ≤ ·) S) : sSup S ∈ S := by
   obtain ⟨m, hm⟩ := hSfin.exists_maximal hSne

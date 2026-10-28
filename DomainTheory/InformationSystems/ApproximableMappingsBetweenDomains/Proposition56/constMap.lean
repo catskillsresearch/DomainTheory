@@ -15,7 +15,6 @@ namespace ApproximableMap
 variable {α β γ δ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ] [DecidableEq δ]
 variable {A : InfoSys α} {B : InfoSys β} {C : InfoSys γ} {D : InfoSys δ}
 
-/-- **Proposition 5.6.** Constant map: `u (const b) v` means `v ⊆ b`. -/
 def constMap (b : B.Element) : ApproximableMap A B where
   rel u v := u ∈ A.Con ∧ (v : Set β) ⊆ b.carrier
   rel_dom h := h.1
@@ -35,7 +34,6 @@ def constMap (b : B.Element) : ApproximableMap A B where
     have hEnt : B.Ent v y := hEntv y hy
     exact b.closed v y hv hEnt
 
-/-- **Proposition 5.6(i).** `(const b)(x) = b`. -/
 theorem constMap.toElement (b : B.Element) (x : A.Element) :
     (constMap (A := A) b).toElement x = b := by
   apply le_antisymm
@@ -52,13 +50,11 @@ theorem constMap.toElement (b : B.Element) (x : A.Element) :
       subst hZ'
       exact hY
 
-/-- **Proposition 5.6(iii).** `(const b) ∘ g = const b`. -/
 theorem constMap.comp (b : B.Element) (g : ApproximableMap D A) :
     ApproximableMap.comp (constMap (A := A) b) g = constMap (A := D) b :=
   (ext_iff_toElement _ _).2 fun x => by
     rw [ApproximableMap.comp.toElement, constMap.toElement, constMap.toElement]
 
-/-- Uniqueness: any map with constant value `b` equals `const b`. -/
 theorem constMap.unique (b : B.Element) (f : ApproximableMap A B)
     (h : ∀ x : A.Element, f.toElement x = b) :
     f = constMap (A := A) b :=

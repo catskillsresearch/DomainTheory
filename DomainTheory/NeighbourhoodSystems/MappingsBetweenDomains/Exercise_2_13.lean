@@ -18,21 +18,11 @@ open NeighborhoodSystem
 universe u
 variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-
-/- concordance: source L825 EXERCISE 2.13 approximable means continuous -/
-/-- **Exercise 2.13 (reverse).** The approximable mapping determined by a continuous function `c`:
-its action on the finite element `↑X` is the value `c(↑X)`, extended to all of `𝒟₀` via `ofMono`.
-Monotonicity of `X ↦ c(↑X)` is `continuous_monotone` together with the inclusion-reversal
-`X' ⊆ X ↔ ↑X ⊑ ↑X'`. -/
 def ofContinuous (c : V₀.Element → V₁.Element) (hc : Continuous c) : ApproximableMap V₀ V₁ :=
   ofMono (fun _X hX => c (V₀.principal hX))
     (fun _X _X' hX hX' hX'X =>
       NeighborhoodSystem.continuous_monotone hc ((V₀.principal_le_iff hX hX').mpr hX'X))
 
-/-- **Exercise 2.13 (forward).** The elementwise function of an approximable mapping is continuous.
-For an open `U` and `x` with `f(x) ∈ U`, openness gives `Y` with `Y ∈ f(x)` and `[Y] ⊆ U`; unfolding
-`Y ∈ f(x)` produces `X ∈ x` with `X f Y`; then `[X] ⊆ f⁻¹U`, since any `x' ∈ [X]` has `Y ∈ f(x')`
-(via `X f Y`). -/
 theorem continuous_toElementMap (f : ApproximableMap V₀ V₁) :
     Continuous (fun x => f.toElementMap x) := by
   rw [continuous_def]
@@ -55,14 +45,6 @@ open NeighborhoodSystem
 universe u
 variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-
-
-/-- **Exercise 2.13 — Scott's union formula for a continuous map.** For continuous `c` and any
-`x ∈ |𝒟₀|`: `Y ∈ c(x) ↔ ∃ X ∈ x, Y ∈ c(↑X)`.
-
-* `→` : `c⁻¹[[Y]]` is open and contains `x`, so it contains a basic neighbourhood `[X]` with `X ∈ x`;
-  since `↑X ∈ [X]`, `Y ∈ c(↑X)`.
-* `←` : `↑X ⊑ x` and `c` monotone (`continuous_monotone`) give `c(↑X) ⊑ c(x)`, transporting `Y`. -/
 theorem mem_iff_principal_of_continuous {c : V₀.Element → V₁.Element} (hc : Continuous c)
     (x : V₀.Element) {Y : Set β} :
     (c x).mem Y ↔ ∃ (X : Set α) (hx : x.mem X), (c (V₀.principal (x.sub hx))).mem Y := by
@@ -97,13 +79,6 @@ theorem eq_iSupDirected_principal (x : V₀.Element) :
     obtain ⟨hZmem, hXZ⟩ := (V₀.mem_principal _).mp hZ'
     exact x.up_mem hX hZmem hXZ
 
-/-- **The converse of `continuous_toElementMap`/`continuous_monotone`, in domain-theoretic form.**
-A monotone function that also preserves directed unions is topologically continuous — the standard
-"Scott continuity ⟺ order-theoretic continuity" bridge, proved directly from algebraicity rather
-than through a general topological-basis argument: given `x ∈ c⁻¹U`, decompose `x` as the directed
-union of its principal approximants (`eq_iSupDirected_principal`); `c` preserving the union puts
-`c x` there too, so openness of `U` finds a witness `Y` in *some* `c(↑X)` (`X ∈ x`); monotonicity of
-`c` then transfers `Y ∈ c(↑X)` up to every `x' ∈ [X]`, giving `[X] ⊆ c⁻¹U`. -/
 theorem continuous_of_monotone_iSupDirected {c : V₀.Element → V₁.Element} (hmono : Monotone c)
     (hsup : ∀ {I : Type u} [Nonempty I] (d : I → V₀.Element)
       (hdir : ∀ i j, ∃ k, d i ≤ d k ∧ d j ≤ d k)
@@ -141,11 +116,6 @@ variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Neigh
 
 namespace ApproximableMap
 
-
-/-- **Exercise 2.13 — the round trip.** `ofContinuous c hc` induces exactly `c`:
-`(ofContinuous c hc)(x) = c(x)` for all `x`. Exercise 2.9 reduces `f(x)` to a union over finite
-approximants `↑X` (`X ∈ x`), where `ofMono` evaluates to `c(↑X)`; the union formula
-`mem_iff_principal_of_continuous` then re-assembles `c(x)`. -/
 theorem toElementMap_ofContinuous (c : V₀.Element → V₁.Element) (hc : Continuous c)
     (x : V₀.Element) : (ofContinuous c hc).toElementMap x = c x := by
   apply Element.ext

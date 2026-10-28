@@ -9,9 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Scomb_map_isScottCo
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem Scomb_app (f : Pomega) :
     funOf Scomb f =

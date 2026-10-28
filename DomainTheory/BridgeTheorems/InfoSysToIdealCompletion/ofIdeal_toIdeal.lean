@@ -24,7 +24,7 @@ namespace InfoSysToIdealCompletion
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 theorem ofIdeal_toIdeal (x : A.Element) : ofIdeal A (toIdeal A x) = x := by
-  -- idealCarrier (toIdeal x) = finiteApproximants as Elements = A.finiteApproximants x
+
   have hset : idealCarrier A (toIdeal A x) = A.finiteApproximants x := by
     ext z
     constructor
@@ -35,7 +35,7 @@ theorem ofIdeal_toIdeal (x : A.Element) : ofIdeal A (toIdeal A x) = x := by
       refine ⟨⟨z, ?_⟩, hz, rfl⟩
       obtain ⟨u, hu, _, rfl⟩ := hz
       exact ⟨u, hu, rfl⟩
-  -- directedSup of that set is x
+
   change A.directedSup (idealCarrier A (toIdeal A x)) _ _ = x
   simp_rw [hset]
   exact (A.eq_directedSup_finiteApproximants x).symm

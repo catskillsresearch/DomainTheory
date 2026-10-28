@@ -11,11 +11,7 @@ open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.Exercise619
 open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
 section
 namespace Exercise624
-/- concordance: source L4161 EXERCISE 6.24 recursive domain equations -/
-/-- **Exercise 6.24 (object level).** By the double fixed-point method there exist `∅`-free systems
-`D`, `E` over `{0,1}*` such that `{D} ◁ D + (D×E)` and `{E} ◁ D + E` **simultaneously**. These two
-facts are exactly the joint hypothesis of the simultaneous Theorem 6.14, which then yields the
-required isomorphisms `D ≅ D + (D×E)` and `E ≅ D + E`. -/
+
 theorem exists_simultaneous_subsystems :
     ∃ D E : ScottSys, D.sys ◁ (D.sum (D.prod E)).sys ∧ E.sys ◁ (D.sum E).sys :=
   ⟨Dsol, Esol, Dsol_subsystem, Esol_subsystem⟩
@@ -48,7 +44,6 @@ namespace Exercise619
 
 variable {D : NeighborhoodSystem Str}
 
-/-- The master neighbourhood `{Λ} ∪ 0Δ` of the lift. -/
 def liftTokMaster (D : NeighborhoodSystem Str) : Set Str := insert [] (embBit false D.master)
 
 theorem embF_subset_liftTokMaster {X : Set Str} (hX : D.mem X) :

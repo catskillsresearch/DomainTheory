@@ -10,9 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem id_isScottContinuous : IsScottContinuous (fun x : Pomega => x) := by
   constructor

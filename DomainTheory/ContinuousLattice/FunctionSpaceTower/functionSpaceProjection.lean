@@ -15,14 +15,12 @@ attribute [instance] CLat.str
 
 namespace functionSpaceProjection
 
-/-- Projection inequality for the diagonal Proposition 3.7 construction. -/
 theorem inclRetrLe {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
     (P : IsContinuousLatticeProjection D D') :
     ∀ g, functionSpaceInclFun P (functionSpaceRetrFun P g) ≤ g := by
   intro g
   exact ScottMap.le_def.mpr ((proposition_3_7_projection P P).incl_retr_le g)
 
-/-- Retraction law for the diagonal Proposition 3.7 construction. -/
 theorem retrIncl {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
     (P : IsContinuousLatticeProjection D D') :
     ∀ f, functionSpaceRetrFun P (functionSpaceInclFun P f) = f :=
@@ -30,7 +28,6 @@ theorem retrIncl {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
 
 end functionSpaceProjection
 
-/-- Scott's Proposition 3.7 construction specialized diagonally. -/
 noncomputable def functionSpaceProjection
     {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
     (P : IsContinuousLatticeProjection D D') :

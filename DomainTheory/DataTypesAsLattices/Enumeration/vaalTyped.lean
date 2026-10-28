@@ -24,9 +24,7 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- **Scott 1976, (4.46).** `vaal : tree → id` as a typed map. -/
 def vaalTyped : Pomega := funOf (arrowR treeR Icomb) vaalC
-
 
 theorem vaalTyped_typed :
     typed vaalTyped (arrowR treeR Icomb) := by

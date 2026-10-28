@@ -7,11 +7,9 @@ public import DomainTheory.DataTypesAsLattices.Lambda.union_via_cond
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem union_combinatory {x y : Pomega}
     (hx : IsCombinatory x) (hy : IsCombinatory y) :

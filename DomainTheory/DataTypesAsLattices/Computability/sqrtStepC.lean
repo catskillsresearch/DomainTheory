@@ -36,7 +36,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem app (n i a : ℕ) :
     ((sqrtStepC ⬝ ofNat n) ⬝ ofNat i) ⬝ ofNat a =
       ofNat (if (a + 1) * (a + 1) ≤ n then a + 1 else a) := by
@@ -54,7 +53,6 @@ theorem app (n i a : ℕ) :
   by_cases h : (a + 1) * (a + 1) ≤ n
   · simp [h, eq_2_7_succ]
   · simp [h, eq_2_7_zero]
-
 
 theorem combinatory : IsCombinatory sqrtStepC := by
   rw [sqrtStepC, theorem_2_4.complete]

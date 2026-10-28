@@ -15,20 +15,11 @@ universe w
 namespace Theorem614
 variable {α : Type w}
 
-/- concordance: source L3861 THEOREM 6.14 existence of initial algebras -/
-/-- **Theorem 6.14 (Scott 1981, PRG-19) — the canonical fixed point.** Under the hypotheses
-(continuous on maps, monotone and continuous on domains, with a generating set `{Γ} ◁ T({Γ})`), the
-iterated colimit `𝒟 = ⋃ₙ Tⁿ({Γ})` is a `T`-algebra whose structure map is an isomorphism
-`T(𝒟) ≅ 𝒟` (the identity, since `T(𝒟) = 𝒟`), and there is a homomorphism from `𝒟` into every
-`T`-algebra with a strict structure map (Theorem 6.9). This is Scott's *existence* of the initial
-`T`-algebra. -/
 theorem exists_algebra_with_hom (s : Setup.{w}) :
     ∃ A : TAlgebra s.T, Nonempty (Iso (s.T.obj A.carrier) A.carrier) ∧
       ∀ B : TAlgebra s.T, IsStrict B.str → Nonempty (AlgHom A B) :=
   ⟨colimAlg s, ⟨colimIso s⟩, fun B hk => nonempty_algHom s B hk⟩
 
-/-- **`ρ₀ = ⊥`** when `{Γ}` is the trivial one-point system: `ρ₀` relates `X` only to the master.
-This is where Scott's `{Γ}` (a *one-point* domain) is used. -/
 theorem rho_zero_rel (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
     {X Y : Set s.Tok} :
     (rho s 0).rel X Y ↔ (colim s).mem X ∧ Y = (colim s).master := by
@@ -44,14 +35,11 @@ theorem rho_zero_rel (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.maste
     · have h := (colim s).sub_master hcX; rwa [colim_master] at h
     · rw [colim_master]
 
-/-- For a strict map `g`, `g(⊥) = ⊥` relationally: `g` sends `Δ` only to `Δ`. -/
 theorem strict_rel_master {β₀ β₁ : Type w} {V₀ : NeighborhoodSystem β₀}
     {V₁ : NeighborhoodSystem β₁} {g : ApproximableMap V₀ V₁} (hg : IsStrict g) {Z : Set β₁} :
     g.rel V₀.master Z ↔ Z = V₁.master :=
   ⟨fun h => hg h, fun h => h ▸ g.master_rel⟩
 
-/-- For a strict homomorphism `g`, the base `g ∘ ρ₀` is the least map: it relates `X` only to the
-master of `E`, independent of `g`. -/
 theorem gcomp_rho_zero_rel (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
     (B : TAlgebra s.T) {g : ApproximableMap (colim s) B.carrier.sys} (hg : IsStrict g)
     {X : Set s.Tok} {Z : Set B.carrier.carrier} :
@@ -65,7 +53,6 @@ theorem gcomp_rho_zero_rel (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ
   · rintro ⟨hcX, rfl⟩
     exact ⟨(colim s).master, (rho_zero_rel s hΓ).mpr ⟨hcX, rfl⟩, g.master_rel⟩
 
-/-- The base case of `g`-independence: any two strict maps agree after `∘ ρ₀`. -/
 theorem gcomp_rho_zero_indep (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
     (B : TAlgebra s.T) {g g' : ApproximableMap (colim s) B.carrier.sys}
     (hg : IsStrict g) (hg' : IsStrict g') :
@@ -74,14 +61,10 @@ theorem gcomp_rho_zero_indep (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.
   intro X Z
   rw [gcomp_rho_zero_rel s hΓ B hg, gcomp_rho_zero_rel s hΓ B hg']
 
-/-- Transport of a `Hom X X` along an object equality is heterogeneously equal to itself. -/
 theorem transport_heq {Obj : Type*} [Category Obj] {X Y : Obj} (e : X = Y)
     (f : (X ⟶ X)) : HEq (e ▸ f : (Y ⟶ Y)) f := by
   cases e; rfl
 
-/-- **`ρₙ₊₁ = i ∘ T(ρₙ) ∘ j`** (Scott's `T(ρₙ) = ρₙ₊₁`, conjugated by the structure iso). Since the
-iso `𝒟 ≅ T(𝒟)` is the identity, this is the carrier transport of `T(ρₙ)`; combined with
-`map_rho_heq` it pins `ρₙ₊₁`. -/
 theorem key_rho (s : Setup.{w}) (n : ℕ) :
     rho s (n + 1) = (colimIso s).hom ⊚ Tmap_rho s n ⊚ (colimIso s).inv := by
   rw [show (colimIso s).hom = (isoOfEq (colimObj_eq s)).hom from rfl,
@@ -91,8 +74,6 @@ theorem key_rho (s : Setup.{w}) (n : ℕ) :
   exact HEq.trans (map_rho_heq s n).symm
     (transport_heq (colimObj_eq s) (Tmap_rho s n)).symm
 
-/-- **The fixed-point recursion `gₙ₊₁ = k ∘ T(gₙ) ∘ j`.** Using `key_rho` (`ρₙ₊₁ = i∘T(ρₙ)∘j`) and the
-homomorphism square `g ∘ i = k ∘ T(g)`. -/
 theorem gcomp_rho_succ (s : Setup.{w}) (B : TAlgebra s.T) (g : AlgHom (colimAlg s) B) (n : ℕ) :
     g.hom.comp (rho s (n + 1))
       = B.str.comp ((s.T.map (X := objColim s) (Y := B.carrier)
@@ -123,8 +104,6 @@ theorem gcomp_rho_succ (s : Setup.{w}) (B : TAlgebra s.T) (g : AlgHom (colimAlg 
             (s.T.map_comp (X := objColim s) (Y := objColim s) (Z := B.carrier) g.hom
               (rho s n)).symm
 
-/-- **`g`-independence of `gₙ = g ∘ ρₙ`.** For any two strict homomorphisms into the same algebra,
-`g ∘ ρₙ = g' ∘ ρₙ` for all `n` — the sequence is determined by the recursion, not by `g`. -/
 theorem gcomp_rho_indep (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
     (B : TAlgebra s.T) (g g' : AlgHom (colimAlg s) B)
     (hg : IsStrict g.hom) (hg' : IsStrict g'.hom) (n : ℕ) :
@@ -133,8 +112,6 @@ theorem gcomp_rho_indep (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.ma
   | zero => exact gcomp_rho_zero_indep s hΓ B hg hg'
   | succ k ih => rw [gcomp_rho_succ s B g k, gcomp_rho_succ s B g' k, ih]
 
-/-- **The underlying maps of two strict homomorphisms coincide**: `g = g ∘ I = g ∘ ⋃ₙ ρₙ =
-⋃ₙ (g ∘ ρₙ)`, and the latter is `g`-independent. -/
 theorem gcomp_eq (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
     (B : TAlgebra s.T) (g g' : AlgHom (colimAlg s) B)
     (hg : IsStrict g.hom) (hg' : IsStrict g'.hom) :
@@ -159,17 +136,11 @@ theorem gcomp_eq (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
   rw [← e, ← e', ← iSupRho_eq_id]
   exact key
 
-/-- **Uniqueness of strict homomorphisms out of `𝒟`.** Any two strict `T`-algebra homomorphisms from
-the canonical solution into the same algebra are equal. -/
 theorem algHom_unique (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
     (B : TAlgebra s.T) (g g' : AlgHom (colimAlg s) B)
     (hg : IsStrict g.hom) (hg' : IsStrict g'.hom) : g = g' :=
   algHom_ext (gcomp_eq s hΓ B g g' hg hg')
 
-/-- **Theorem 6.14 (Scott 1981, PRG-19) — initial `T`-algebra.** When `{Γ}` is the one-point
-generating system, the canonical solution `𝒟 = ⋃ₙ Tⁿ({Γ})` is the **initial** `T`-algebra among the
-strict algebras: for every `T`-algebra `B` with a strict structure map there is a *unique* strict
-homomorphism `𝒟 → B`. (Existence is Theorem 6.9; uniqueness is the `ρₙ` projection-chain argument.) -/
 theorem exists_unique_strict_algHom (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
     (B : TAlgebra s.T) (hk : IsStrict B.str) :
     ∃ g : AlgHom (colimAlg s) B, IsStrict g.hom ∧
@@ -455,8 +426,7 @@ section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 open Example62C in
-/-- Every neighbourhood of the three-way separated sum `sum3` is non-empty (so `sum3` is again an
-object of the `∅`-free category). -/
+
 theorem sum3_nonempty {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
     {V₂ : NeighborhoodSystem γ} {h₀ : ∀ X, V₀.mem X → X.Nonempty}
     {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty} {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty} :
@@ -481,11 +451,9 @@ variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
 
 include hD
 
-/-- The right-hand side of Scott's domain equation: the sum system `D + (D^§ × D^§)`. -/
 def sumSys : NeighborhoodSystem (Option (α ⊕ ((List Bool × α) ⊕ (List Bool × α)))) :=
   sum D (prod (Dsharp D hD) (Dsharp D hD)) hD (prod_dsharp_nonempty D hD)
 
-/-- No neighbourhood of the sum `D + (D^§ × D^§)` is empty. -/
 theorem sumSys_mem_nonempty {W : Set (Option (α ⊕ ((List Bool × α) ⊕ (List Bool × α))))}
     (h : (sumSys D hD).mem W) : W.Nonempty := by
   rcases h with rfl | ⟨X, hX, rfl⟩ | ⟨Y, hY, rfl⟩
@@ -493,7 +461,6 @@ theorem sumSys_mem_nonempty {W : Set (Option (α ⊕ ((List Bool × α) ⊕ (Lis
   · exact inj₀_nonempty (hD X hX)
   · exact inj₁_nonempty (prod_dsharp_nonempty D hD Y hY)
 
-/-- A sum-neighbourhood of the form `0X` arises only from the left factor, so `X ∈ 𝒟`. -/
 theorem sum_mem_inj₀_inv {X : Set α} (h : (sumSys D hD).mem (inj₀ X)) : D.mem X := by
   rcases h with h0 | ⟨X', hX', heq⟩ | ⟨Y', hY', heq⟩
   · exact absurd (h0 ▸ none_mem_sumMaster) none_mem_inj₀
@@ -501,7 +468,6 @@ theorem sum_mem_inj₀_inv {X : Set α} (h : (sumSys D hD).mem (inj₀ X)) : D.m
   · obtain ⟨b, hb⟩ := prod_dsharp_nonempty D hD Y' hY'
     exact absurd (heq ▸ ir_mem_inj₁.mpr hb) ir_mem_inj₀
 
-/-- A sum-neighbourhood of the form `1V` arises only from the right factor, so `V ∈ 𝒟^§ × 𝒟^§`. -/
 theorem sum_mem_inj₁_inv {V : Set ((List Bool × α) ⊕ (List Bool × α))}
     (h : (sumSys D hD).mem (inj₁ V)) : (prod (Dsharp D hD) (Dsharp D hD)).mem V := by
   rcases h with h0 | ⟨X', hX', heq⟩ | ⟨Y', hY', heq⟩
@@ -519,20 +485,14 @@ section
 universe u
 variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj}
 
-/-- For an algebra `A = (D, i)`, the functor turns the structure map into a new `T`-algebra
-`(T(D), T(i))`. -/
 abbrev tStr (A : TAlgebra T) : TAlgebra T where
   carrier := T.obj A.carrier
   str := T.map A.str
 
-/-- The structure map `i : T(D) → D` is itself a homomorphism `(T(D), T(i)) → (D, i)`: the square
-`i ∘ T(i) = i ∘ T(i)` commutes trivially. -/
 def strHom (A : TAlgebra T) : AlgHom (tStr A) A where
   hom := A.str
   comm := rfl
 
-/-- The composite `i ∘ j` of `i` with the descent homomorphism `j : (D,i) → (T(D),T(i))` is the
-identity on `D`. -/
 theorem str_comp_desc (A : TAlgebra T) (hA : IsInitial A) :
     A.str ⊚ (hA.desc (tStr A)).hom = (𝟙 A.carrier) := by
   have h : (strHom A).comp (hA.desc (tStr A)) = AlgHom.id A := by
@@ -569,8 +529,6 @@ end
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-/-- The strict map represented by `⊥` of the strict function space relates `X` to `Y` exactly when
-`X` is a neighbourhood and `Y` is the master output: it is the constant-`⊥` (least) strict map. -/
 theorem botStrict_rel {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
     {X : Set α} {Y : Set β} :
     (toStrictMap (strictFun V₀ V₁).bot).1.rel X Y ↔ V₀.mem X ∧ Y = V₁.master := by
@@ -584,9 +542,6 @@ theorem botStrict_rel {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Nei
   · rintro ⟨hX, rfl⟩
     exact sstep_cod_master hX
 
-/-- **The per-step computation of Theorem 6.9's operator.** For the operator `Op = (k ∘ · ∘ j) ∘ Φ`
-on the strict function space, `Op(x)` is the strict map `k ∘ T(toStrictMap x) ∘ j`. This is the
-content of `homOp_apply_filter` plus the defining property `hΦ` of the Definition 6.8 witness `Φ`. -/
 theorem opStep (T : Endofunctor DomainObj.{w}) (D E : DomainObj.{w})
     (j : ApproximableMap D.sys (T.obj D).sys) (k : ApproximableMap (T.obj E).sys E.sys)
     (hj : IsStrict j) (hk : IsStrict k)

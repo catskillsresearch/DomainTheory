@@ -15,7 +15,6 @@ open DomainTheory.InformationSystems.InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Canonical section of `treeUnfold`. Product bottom folds to `pairL bot`. -/
 def treeFold :
     SumToken α (ProdToken (treeSystem A) (treeSystem A)) → TreeToken α
   | .bot => .bot

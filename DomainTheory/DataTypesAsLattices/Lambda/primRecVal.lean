@@ -17,15 +17,12 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (2.27).** Primitive recursion as a distributive function. -/
 def primRecVal (a f : Pomega) : ℕ → Pomega
   | 0 => a
   | n + 1 => funOf (funOf f (ofNat n)) (primRecVal a f n)
 
 namespace primRecVal
 
-/-- **Scott 1976, (2.27).** The fixed point of the primrec step agrees
-with integer recursion. -/
 theorem fix (a f : Pomega) : ∀ n,
     funOf (DomainTheory.DataTypesAsLattices.fix (primRecStep a f)) (ofNat n) =
       primRecVal a f n

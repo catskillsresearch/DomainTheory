@@ -11,7 +11,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- One fixed Gödel code for the binary union operator. -/
 noncomputable def unionCode : ℕ :=
   (theorem_3_2.surjective unionOperator_combinatory).choose
 

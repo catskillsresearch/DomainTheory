@@ -23,7 +23,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Right-hand side of the domain equation: `A + (D → D)`. -/
 def lamRhs : InfoSys (SumToken α (FunToken (lambdaSystem A) (lambdaSystem A))) :=
   sumSystem A (functionSystem (lambdaSystem A) (lambdaSystem A))
 

@@ -15,16 +15,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   {V₂ : NeighborhoodSystem γ}
 
-/- concordance: source L4645 EXERCISE 7.16 curry as an enumeration -/
-/-- **Exercise 7.16 — `curry` is a *recursive* set.** Relative to the function-space presentations
-`PA` of `(𝒟₀×𝒟₁→𝒟₂)` and `PB` of `(𝒟₀→(𝒟₁→𝒟₂))` (and the inner one `Pc` of `(𝒟₁→𝒟₂)`) built by
-Theorem 7.5, the `curry` combinator's neighbourhood relation is **recursively decidable**:
-
-  `Xenum_PA n curryComb Xenum_PB m  ⟺  gNb m = 1 → ∀ e ∈ ⟦m⟧, gNc e₂ = 1 →
-                                          ∀ e' ∈ ⟦e₂⟧, X_PA n ⊆ X_PA (curryStepCode e₁ e')`,
-
-a bounded double-`∀` over the coded entry-lists of the recursively *decidable* function-space
-inclusion. So `curry` is a recursive set — exactly as for `eval`. -/
 theorem curryComb_rel_recDecidable
     (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
     (P₂ : ComputablePresentation V₂) (gNa gNb gNc : ℕ → ℕ)
@@ -41,7 +31,7 @@ theorem curryComb_rel_recDecidable
       (stepFun (funListOf P₁ P₂ (decodeList c)) : Set (ApproximableMap V₁ V₂)).Nonempty)
     (hgNbp : Nat.Primrec gNb) (hgNcp : Nat.Primrec gNc) :
     RecDecidable₂ (fun n m => (curryC V₀ V₁ V₂).rel (PA.X n) (PB.X m)) := by
-  -- The explicit neighbourhood relation, written out over the coded entries.
+
   have hcomb : ∀ n m, (curryC V₀ V₁ V₂).rel (PA.X n) (PB.X m) ↔
       (gNb m = 1 → ∀ e ∈ decodeList m, gNc e.unpair.2 = 1 →
         ∀ e' ∈ decodeList e.unpair.2, PA.X n ⊆ PA.X (curryStepCode e.unpair.1 e')) := by
@@ -72,7 +62,7 @@ theorem curryComb_rel_recDecidable
       rw [hPAX]; exact hs.symm
     rw [toApproxMap_rel, mem_principal, hstepeq]
     exact ⟨fun h => h.2, fun h => ⟨PA.mem_X _, h⟩⟩
-  -- The right-hand side is recursively decidable.
+
   have q1_dec : RecDecidable₂ (fun e' p =>
       PA.X p.unpair.1 ⊆ PA.X (curryStepCode p.unpair.2 e')) := by
     have hr : Nat.Primrec (fun w => Nat.pair w.unpair.2.unpair.1
@@ -111,11 +101,6 @@ theorem curryComb_rel_recDecidable
   refine RecDecidable.of_iff (fun t => ?_) (guard2.not.or B2)
   exact Decidable.imp_iff_not_or
 
-/-- **Exercise 7.16 — `curry` is computable, and in fact a recursive set.** If `𝒟₀, 𝒟₁, 𝒟₂` are
-effectively given, then there are computable presentations of `(𝒟₀×𝒟₁→𝒟₂)` and `(𝒟₀→(𝒟₁→𝒟₂))`
-relative to which the `curry` combinator's neighbourhood relation is **recursively decidable**
-(`RecDecidable₂`) — hence `curry` is a computable map (`ComputableMap`, the r.e. condition of
-Definition 7.2). The answer to Scott's question: `curry` is a *recursive* set, not merely r.e. -/
 theorem curryComb_isComputable
     (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
     (P₂ : ComputablePresentation V₂) :
@@ -132,7 +117,7 @@ theorem curryComb_isComputable
   obtain ⟨fc2, hfc2p, hfc2s⟩ := P₂.cons_computable
   obtain ⟨inclpr, hinclprp, hinclprs⟩ := (prodPresentation P₀ P₁).incl_computable
   obtain ⟨fcpr, hfcprp, hfcprs⟩ := (prodPresentation P₀ P₁).cons_computable
-  -- inner function space `Pc = (𝒟₁ → 𝒟₂)`
+
   let Pc : ComputablePresentation (funSpace V₁ V₂) :=
     funPresentation P₁ P₂ (funConsChar P₁ P₂ fc1 fc2) incl1 incl2 eq2
       (funConsChar_spec P₁ P₂ fc1 fc2 (fun s => (hfc1s s).symm) (fun s => (hfc2s s).symm))
@@ -142,7 +127,7 @@ theorem curryComb_isComputable
   obtain ⟨inclc, hinclcp, hinclcs⟩ := Pc.incl_computable
   obtain ⟨eqc, heqcp, heqcs⟩ := Pc.eq_computable
   obtain ⟨fcc, hfccp, hfccs⟩ := Pc.cons_computable
-  -- domain function space `PA = (𝒟₀×𝒟₁ → 𝒟₂)`
+
   let PA : ComputablePresentation (funSpace (prod V₀ V₁) V₂) :=
     funPresentation (prodPresentation P₀ P₁) P₂
       (funConsChar (prodPresentation P₀ P₁) P₂ fcpr fc2) inclpr incl2 eq2
@@ -151,7 +136,7 @@ theorem curryComb_isComputable
       (primrec_funConsChar (prodPresentation P₀ P₁) P₂ fcpr fc2 hfcprp hfc2p)
       (fun s => (hinclprs s).symm) hinclprp (fun s => (hincl2s s).symm) hincl2p
       (fun s => (heq2s s).symm) heq2p
-  -- codomain function space `PB = (𝒟₀ → (𝒟₁ → 𝒟₂))`
+
   let PB : ComputablePresentation (funSpace V₀ (funSpace V₁ V₂)) :=
     funPresentation P₀ Pc (funConsChar P₀ Pc fc0 fcc) incl0 inclc eqc
       (funConsChar_spec P₀ Pc fc0 fcc (fun s => (hfc0s s).symm) (fun s => (hfccs s).symm))
@@ -169,7 +154,6 @@ theorem curryComb_isComputable
       (primrec_funConsChar P₁ P₂ fc1 fc2 hfc1p hfc2p)
   exact ⟨PA, PB, hRec, ⟨hRec.re⟩⟩
 
-/-- The least map of a function-space neighbourhood `G` — `toApproxMap ↑G` — belongs to `G`. -/
 theorem toApproxMap_principal_mem {G : Set (ApproximableMap V₀ V₁)}
     (hG : (funSpace V₀ V₁).mem G) : toApproxMap ((funSpace V₀ V₁).principal hG) ∈ G := by
   obtain ⟨L, hL, rfl⟩ := hG.1
@@ -178,9 +162,6 @@ theorem toApproxMap_principal_mem {G : Set (ApproximableMap V₀ V₁)}
   rw [toApproxMap_rel, mem_principal]
   exact ⟨step_mem (hL p hp).1 (hL p hp).2, fun f hf => hf p hp⟩
 
-/-- **Exercise 7.16 — `curry` written out as a relation between neighbourhoods.** The combinator
-relates a neighbourhood `G` of `(𝒟₀×𝒟₁→𝒟₂)` to a neighbourhood `H` of `(𝒟₀→(𝒟₁→𝒟₂))` exactly when
-`curry g ∈ H` for every `g ∈ G`. -/
 theorem curryComb_rel {G : Set (ApproximableMap (prod V₀ V₁) V₂)}
     {H : Set (ApproximableMap V₀ (funSpace V₁ V₂))} :
     (curryC V₀ V₁ V₂).rel G H ↔ (funSpace (prod V₀ V₁) V₂).mem G ∧
@@ -803,4 +784,3 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 end
-

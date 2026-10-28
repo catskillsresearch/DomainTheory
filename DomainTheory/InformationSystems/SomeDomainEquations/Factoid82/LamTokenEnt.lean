@@ -23,7 +23,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Bundled entailment on `LamToken`. -/
 def LamTokenEnt (u : Finset (LamToken A)) (p : LamToken A) : Prop :=
   LamEnt A (lamForgetFinset A u) p.val
 

@@ -16,9 +16,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise510
 section
 namespace Exercise619
 variable {D : NeighborhoodSystem Str}
-/- concordance: source L4187 EXERCISE 6.26 lifting a domain -/
-/-- **Exercise 6.26 — the lifted system `𝒟_⊥` over `{0,1}*`.** A neighbourhood is the master
-`{Λ} ∪ 0Δ` or a tagged copy `0X` (`X ∈ 𝒟`). `∅`-freeness of `𝒟` (`hD`) keeps it `∅`-free. -/
+
 def liftTok (D : NeighborhoodSystem Str) (_hD : ∀ X, D.mem X → X.Nonempty) :
     NeighborhoodSystem Str where
   mem W := W = liftTokMaster D ∨ ∃ X, D.mem X ∧ W = embBit false X
@@ -52,7 +50,6 @@ variable {D : NeighborhoodSystem Str}
 
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
-/-- The **fresh bottom** of `𝒟_⊥`: the element whose only neighbourhood is the master `{Λ} ∪ 0Δ`. -/
 def liftBot (D : NeighborhoodSystem Str) (hD : ∀ X, D.mem X → X.Nonempty) :
     (liftTok D hD).Element where
   mem W := W = liftTokMaster D
@@ -85,7 +82,6 @@ theorem liftTok_nonempty (hD : ∀ X, D.mem X → X.Nonempty) :
   · exact ⟨[], nil_mem_liftTokMaster⟩
   · exact embBit_nonempty (hD X hX)
 
-/-- The **lift object** `𝒟_⊥` of Scott's category. -/
 def ScottSys.lift (A : ScottSys) : ScottSys := ⟨liftTok A.sys A.ne, liftTok_nonempty A.ne⟩
 
 end Exercise619
@@ -98,8 +94,6 @@ variable {D : NeighborhoodSystem Str}
 
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
-/-- The **embedding** `|𝒟| ↪ |𝒟_⊥|`: `liftUp x = {{Λ} ∪ 0Δ} ∪ {0X ∣ X ∈ x}`, the image of `x`
-sitting above the fresh bottom. -/
 def liftUp {D : NeighborhoodSystem Str} {hD : ∀ X, D.mem X → X.Nonempty} (x : D.Element) :
     (liftTok D hD).Element where
   mem W := W = liftTokMaster D ∨ ∃ X, x.mem X ∧ W = embBit false X
@@ -138,8 +132,6 @@ variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 variable {A B C : ScottSys}
 
-/-- **`f_⊥`, the action of lifting on (approximable) maps.** It carries the master to the master (so
-it is strict) and a copy `0X` to `0X'` whenever `X f X'`. -/
 def liftMapTok (f : ApproximableMap A.sys B.sys) :
     ApproximableMap (ScottSys.lift A).sys (ScottSys.lift B).sys where
   rel W W' :=
@@ -212,7 +204,6 @@ theorem o_mem_embTF {Y' : Set Str} (hY' : E.sys.mem Y') :
   oplusTok_mem_embT (h₀ := D.lift.ne) (h₁ := E.lift.ne)
     (liftTok_mem_embF (hD := E.ne) hY') (embF_ne_liftTokMaster (D := E.sys))
 
-/-- The forward half `|𝒟_⊥ ⊕ ℰ_⊥| → |𝒟 + ℰ|`: delete the inner `0`. -/
 def toSumLift (z : (D.lift.oplus E.lift).sys.Element) : (D.sum E).sys.Element where
   mem W := W = sumTokMaster D.sys E.sys
     ∨ (∃ X, D.sys.mem X ∧ W = embBit false X ∧ z.mem (embBit false (embBit false X)))
@@ -285,7 +276,6 @@ def toSumLift (z : (D.lift.oplus E.lift).sys.Element) : (D.sum E).sys.Element wh
     · rwa [embBit_injective heq]
   · intro hz; exact Or.inr (Or.inr ⟨Y, hY, rfl, hz⟩)
 
-/-- The inverse half `|𝒟 + ℰ| → |𝒟_⊥ ⊕ ℰ_⊥|`: reinstate the inner `0`. -/
 def fromSumLift (s : (D.sum E).sys.Element) : (D.lift.oplus E.lift).sys.Element where
   mem W := W = sumTokMaster D.lift.sys E.lift.sys
     ∨ (∃ X, D.sys.mem X ∧ W = embBit false (embBit false X) ∧ s.mem (embBit false X))
@@ -416,7 +406,6 @@ theorem ot_mem_prod_inv {X' Y' : Set Str}
     (embF_ne_liftTokMaster (D := D.sys))
   exact ⟨liftTok_mem_embF_inv (hD := D.ne) h1, liftTok_mem_embF_inv (hD := E.ne) h2⟩
 
-/-- The forward half `|𝒟_⊥ ⊗ ℰ_⊥| → |(𝒟 × ℰ)_⊥|`. -/
 def toLiftProd (z : (D.lift.otimes E.lift).sys.Element) : (D.prod E).lift.sys.Element where
   mem W := W = liftTokMaster (prodTok D.sys E.sys)
     ∨ (∃ X Y, D.sys.mem X ∧ E.sys.mem Y ∧ W = embBit false (prodTokNbhd X Y) ∧
@@ -459,7 +448,6 @@ def toLiftProd (z : (D.lift.otimes E.lift).sys.Element) : (D.prod E).lift.sys.El
     · obtain ⟨rfl, rfl⟩ := prodTokNbhd_injective (embBit_injective heq); exact hz
   · intro hz; exact Or.inr ⟨X, Y, hX, hY, rfl, hz⟩
 
-/-- The inverse half `|(𝒟 × ℰ)_⊥| → |𝒟_⊥ ⊗ ℰ_⊥|`. -/
 def fromLiftProd (s : (D.prod E).lift.sys.Element) : (D.lift.otimes E.lift).sys.Element where
   mem W := W = prodTokNbhd (liftTokMaster D.sys) (liftTokMaster E.sys)
     ∨ (∃ X Y, D.sys.mem X ∧ E.sys.mem Y ∧ W = prodTokNbhd (embBit false X) (embBit false Y) ∧
@@ -540,7 +528,6 @@ theorem toLiftProd_fromLiftProd (s : (D.prod E).lift.sys.Element) :
     · obtain ⟨X, Y, hX, hY, rfl⟩ := hZ
       exact Or.inr ⟨X, Y, hX, hY, rfl, (fromLiftProd_mem_prod hX hY).mpr hW⟩
 
-/-- The order-isomorphism `|𝒟_⊥ ⊗ ℰ_⊥| ≃o |(𝒟 × ℰ)_⊥|`. -/
 def liftProdEquiv : (D.lift.otimes E.lift).sys.Element ≃o (D.prod E).lift.sys.Element where
   toFun := toLiftProd
   invFun := fromLiftProd
@@ -578,7 +565,6 @@ theorem toSumLift_fromSumLift (s : (D.sum E).sys.Element) :
     · exact Or.inr (Or.inl ⟨X, hX, rfl, (fromSumLift_mem_embFF hX).mpr hW⟩)
     · exact Or.inr (Or.inr ⟨Y, hY, rfl, (fromSumLift_mem_embTF hY).mpr hW⟩)
 
-/-- The order-isomorphism `|𝒟_⊥ ⊕ ℰ_⊥| ≃o |𝒟 + ℰ|`. -/
 def sumLiftEquiv : (D.lift.oplus E.lift).sys.Element ≃o (D.sum E).sys.Element where
   toFun := toSumLift
   invFun := fromSumLift
@@ -612,8 +598,6 @@ variable {D : NeighborhoodSystem Str}
 
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
-/-- The **unlift** of an element that lies above the fresh bottom (i.e. contains `0Δ`): the
-`𝒟`-element `{X ∣ 0X ∈ z}`. -/
 def unlift (z : (liftTok D hD).Element) (hz : z.mem (embBit false D.master)) : D.Element where
   mem X := z.mem (embBit false X)
   sub := fun hX => liftTok_mem_embF_inv (z.sub hX)
@@ -626,11 +610,9 @@ def unlift (z : (liftTok D hD).Element) (hz : z.mem (embBit false D.master)) : D
     intro X Y hX hY hXY
     exact z.up_mem hX (liftTok_mem_embF hY) (embBit_subset.mpr hXY)
 
-/-- `liftBot` is the least element of `𝒟_⊥`. -/
 theorem liftBot_le (z : (liftTok D hD).Element) : liftBot D hD ≤ z := by
   rintro W rfl; exact z.master_mem
 
-/-- The fresh bottom is *strictly* below every lifted element. -/
 theorem liftBot_lt_liftUp (x : D.Element) : liftBot D hD < liftUp (hD := hD) x := by
   refine lt_of_le_of_ne (liftBot_le _) (fun heq => ?_)
   have hmem : (liftBot D hD).mem (embBit false D.master) := by
@@ -649,7 +631,6 @@ variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 variable {A B C : ScottSys}
 
-/-- **`(g ∘ f)_⊥ = g_⊥ ∘ f_⊥`.** -/
 theorem liftMapTok_comp (f : ApproximableMap A.sys B.sys) (g : ApproximableMap B.sys C.sys) :
     liftMapTok (g.comp f) = (liftMapTok g).comp (liftMapTok f) := by
   apply ApproximableMap.ext
@@ -669,7 +650,6 @@ theorem liftMapTok_comp (f : ApproximableMap A.sys B.sys) (g : ApproximableMap B
       · obtain rfl := embBit_injective heq
         exact Or.inr ⟨X, X'', ⟨X', hf, hg⟩, rfl, rfl⟩
 
-/-- **`(I_𝒟)_⊥ = I_{𝒟_⊥}`.** -/
 theorem liftMapTok_id : liftMapTok (idMap A.sys) = idMap (ScottSys.lift A).sys := by
   apply ApproximableMap.ext
   intro W W'
@@ -685,7 +665,6 @@ theorem liftMapTok_id : liftMapTok (idMap A.sys) = idMap (ScottSys.lift A).sys :
       · exact absurd (hsub nil_mem_liftTokMaster) nil_not_mem_embBit
       · exact Or.inr ⟨X, X', ⟨hX, hX', embBit_subset.mp hsub⟩, rfl, rfl⟩
 
-/-- **`f_⊥` is strict** for *any* `f`: the master `Λ`-bearing input relates only to the master. -/
 theorem liftMapTok_isStrict (f : ApproximableMap A.sys B.sys) : IsStrict (liftMapTok f) := by
   rintro Y (⟨-, rfl⟩ | ⟨X, X', -, heq, -⟩)
   · rfl
@@ -705,7 +684,6 @@ variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 theorem liftTok_mem_master : (liftTok D hD).mem (liftTokMaster D) := Or.inl rfl
 
-/-- `liftUp` is an order embedding: `liftUp x ⊑ liftUp y ↔ x ⊑ y`. -/
 theorem liftUp_le_liftUp_iff {x y : D.Element} :
     liftUp (hD := hD) x ≤ liftUp (hD := hD) y ↔ x ≤ y := by
   constructor
@@ -731,9 +709,6 @@ theorem liftUp_unlift (z : (liftTok D hD).Element) (hz : z.mem (embBit false D.m
     · exact Or.inl rfl
     · exact Or.inr ⟨X, hW, rfl⟩
 
-/-- **Exercise 6.26 — "describe in terms of elements".** Every element of `𝒟_⊥` is either the fresh
-bottom or a lifted `𝒟`-element: `|𝒟_⊥| ≅ |𝒟|_⊥`. (`Prop`-level; the case split on "does `z` contain
-`0Δ`?" uses excluded middle — the only non-constructive step in this module.) -/
 theorem eq_liftBot_or_exists_liftUp (z : (liftTok D hD).Element) :
     z = liftBot D hD ∨ ∃ x : D.Element, z = liftUp (hD := hD) x := by
   by_cases hz : z.mem (embBit false D.master)
@@ -763,13 +738,9 @@ variable {A B C : ScottSys}
 
 variable {D E : ScottSys}
 
-/-- **Exercise 6.26 — `𝒟_⊥ ⊕ ℰ_⊥ ≅ 𝒟 + ℰ`.** Coalescing the fresh bottoms of the two lifts
-reproduces the separated sum. -/
 theorem lift_oplus_lift_iso_sum :
     (D.lift.oplus E.lift).sys ≅ᴰ (D.sum E).sys := ⟨sumLiftEquiv⟩
 
-/-- **Exercise 6.26 — `𝒟_⊥ ⊗ ℰ_⊥ ≅ (𝒟 × ℰ)_⊥`** (the answer to Scott's `??`). The smash product of
-two lifts is the lift of the product. -/
 theorem lift_otimes_lift_iso_lift_prod :
     (D.lift.otimes E.lift).sys ≅ᴰ (D.prod E).lift.sys := ⟨liftProdEquiv⟩
 
@@ -880,7 +851,6 @@ namespace Exercise627
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-/-- The injection `i : 𝒟 → 𝒟 × ℰ`: `X i W ↔ X ∈ 𝒟 ∧ W ∈ 𝒟×ℰ ∧ (X,Δ₁) ⊆ W`. -/
 def fstInj (D₀ D₁ : NeighborhoodSystem Str) : ApproximableMap D₀ (prodTok D₀ D₁) where
   rel X W := D₀.mem X ∧ (prodTok D₀ D₁).mem W ∧ prodTokNbhd X D₁.master ⊆ W
   rel_dom h := h.1
@@ -894,7 +864,6 @@ def fstInj (D₀ D₁ : NeighborhoodSystem Str) : ApproximableMap D₀ (prodTok 
     rintro X X' W W' ⟨_, _, hsub⟩ hX'X hWW' hX' hW'
     exact ⟨hX', hW', ((prodTokNbhd_subset_iff.mpr ⟨hX'X, subset_rfl⟩).trans hsub).trans hWW'⟩
 
-/-- The projection `j : 𝒟 × ℰ → 𝒟`: `W j X ↔ W ∈ 𝒟×ℰ ∧ X ∈ 𝒟 ∧ W ⊆ (X,Δ₁)`. -/
 def fstProj (D₀ D₁ : NeighborhoodSystem Str) : ApproximableMap (prodTok D₀ D₁) D₀ where
   rel W X := (prodTok D₀ D₁).mem W ∧ D₀.mem X ∧ W ⊆ prodTokNbhd X D₁.master
   rel_dom h := h.1
@@ -925,7 +894,6 @@ section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-/-- Element-level inclusion `|𝒟 →⊥ ℰ| → |𝒟 → ℰ|`. -/
 def incl (φ : (strictFun V₀ V₁).Element) : (funSpace V₀ V₁).Element :=
   toFilter (toStrictMap φ).1
 
@@ -938,15 +906,12 @@ theorem incl_mono : Monotone (incl (V₀ := V₀) (V₁ := V₁)) := by
   have hle : (toStrictMap a).1 ≤ (toStrictMap b).1 := (strictFunEquiv V₀ V₁).monotone hab
   exact hle p.1 p.2 (haM p hp)
 
-/-- The inclusion `i : 𝒟 →⊥ ℰ ↪ 𝒟 → ℰ`. -/
 def inclMap : ApproximableMap (strictFun V₀ V₁) (funSpace V₀ V₁) :=
   ofMono (fun _ hW => incl ((strictFun V₀ V₁).principal hW))
     (fun _ _ hW hW' hW'W => incl_mono (((strictFun V₀ V₁).principal_le_iff hW hW').mpr hW'W))
 
 end Part5
 
-/-- The left-copy generator: `0X` for proper `X`, the shared bottom `sumTokMaster` for `X = Δ₀`. The
-set-builder `{w ∣ w ∈ sumTokMaster ∧ X = Δ₀}` keeps the *definition* choice-free. -/
 def leftN (D₀ D₁ : NeighborhoodSystem Str) (X : Set Str) : Set Str :=
   embBit false X ∪ {w | w ∈ sumTokMaster D₀ D₁ ∧ X = D₀.master}
 
@@ -980,8 +945,6 @@ theorem leftN_proper {X : Set Str} (hne : X ≠ D₀.master) : leftN D₀ D₁ X
     · exact absurd hXm hne
   · exact embF_subset_leftN
 
-/-- The **only** classical step in Exercise 6.27: `leftN X` is an `𝒟 ⊕ ℰ`-neighbourhood. The proof
-splits on the (undecidable for arbitrary `X`) test `X = Δ₀`. -/
 theorem oplus_mem_leftN {X : Set Str} (hX : D₀.mem X) :
     (oplusTok D₀ D₁ h₀ h₁).mem (leftN D₀ D₁ X) := by
   by_cases h : X = D₀.master
@@ -992,8 +955,6 @@ section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-/-- **Strictification of a map** (on relations): keep `f` but force the master input to the master
-output. The resulting map is strict, lies below `f`, and is the identity on strict maps. -/
 def strictifyMap (g : ApproximableMap V₀ V₁) : ApproximableMap V₀ V₁ where
   rel X Y := g.rel X Y ∧ (X = V₀.master → Y = V₁.master)
   rel_dom h := g.rel_dom h.1
@@ -1012,10 +973,8 @@ def strictifyMap (g : ApproximableMap V₀ V₁) : ApproximableMap V₀ V₁ whe
 theorem strictifyMap_isStrict (g : ApproximableMap V₀ V₁) : IsStrict (strictifyMap g) :=
   fun _ h => h.2 rfl
 
-/-- The strictification as an element of the *strict* function space's token type. -/
 def strictify (g : ApproximableMap V₀ V₁) : StrictMap V₀ V₁ := ⟨strictifyMap g, strictifyMap_isStrict g⟩
 
-/-- Element-level strictification `|𝒟 → ℰ| → |𝒟 →⊥ ℰ|`. -/
 def strct (ψ : (funSpace V₀ V₁).Element) : (strictFun V₀ V₁).Element :=
   toStrictFilter (strictify (toApproxMap ψ))
 
@@ -1028,7 +987,6 @@ theorem strct_mono : Monotone (strct (V₀ := V₀) (V₁ := V₁)) := by
   have hle : toApproxMap a ≤ toApproxMap b := (funSpaceEquiv V₀ V₁).monotone hab
   exact ⟨hle p.1 p.2 (haW p hp).1, (haW p hp).2⟩
 
-/-- The strictification retraction `j : 𝒟 → ℰ → 𝒟 →⊥ ℰ`. -/
 def strctMap : ApproximableMap (funSpace V₀ V₁) (strictFun V₀ V₁) :=
   ofMono (fun _ hM => strct ((funSpace V₀ V₁).principal hM))
     (fun _ _ hM hM' hM'M => strct_mono (((funSpace V₀ V₁).principal_le_iff hM hM').mpr hM'M))
@@ -1052,7 +1010,6 @@ theorem leftN_subset_iff {X X' : Set Str} (hX : D₀.mem X) (hX' : D₀.mem X') 
     · exact embF_subset_leftN ⟨w', rfl, hXX' hw'⟩
     · exact Or.inr ⟨hw, Set.Subset.antisymm (D₀.sub_master hX') (hXm ▸ hXX')⟩
 
-/-- The injection `i : 𝒟 → 𝒟 ⊕ ℰ`: `X i W ↔ X ∈ 𝒟 ∧ W ∈ 𝒟⊕ℰ ∧ leftN X ⊆ W`. -/
 def inlInj : ApproximableMap D₀ (oplusTok D₀ D₁ h₀ h₁) where
   rel X W := D₀.mem X ∧ (oplusTok D₀ D₁ h₀ h₁).mem W ∧ leftN D₀ D₁ X ⊆ W
   rel_dom h := h.1
@@ -1066,7 +1023,6 @@ def inlInj : ApproximableMap D₀ (oplusTok D₀ D₁ h₀ h₁) where
     rintro X X' W W' ⟨hX, _, hsub⟩ hX'X hWW' hX' hW'
     exact ⟨hX', hW', ((leftN_subset_iff hX' hX).mpr hX'X).trans (hsub.trans hWW')⟩
 
-/-- The projection `j : 𝒟 ⊕ ℰ → 𝒟`: `W j X ↔ W ∈ 𝒟⊕ℰ ∧ X ∈ 𝒟 ∧ W ⊆ leftN X`. -/
 def inlProj : ApproximableMap (oplusTok D₀ D₁ h₀ h₁) D₀ where
   rel W X := (oplusTok D₀ D₁ h₀ h₁).mem W ∧ D₀.mem X ∧ W ⊆ leftN D₀ D₁ X
   rel_dom h := h.1
@@ -1092,7 +1048,6 @@ def inlProj : ApproximableMap (oplusTok D₀ D₁ h₀ h₁) D₀ where
     rintro W W' X X' ⟨_, hX, hsub⟩ hW'W hXX' hW' hX'
     exact ⟨hW', hX', hW'W.trans (hsub.trans ((leftN_subset_iff hX hX').mpr hXX'))⟩
 
-/-- A concrete two-point domain over `{0,1}*`: neighbourhoods `Set.univ` (`= ⊥`) and `{[]}`. -/
 def twoPt : NeighborhoodSystem Str where
   mem X := X = Set.univ ∨ X = {[]}
   master := Set.univ
@@ -1109,7 +1064,6 @@ def twoPt : NeighborhoodSystem Str where
     · rw [Set.inter_univ]; exact Or.inr rfl
     · rw [Set.inter_self]; exact Or.inr rfl
 
-/-- The one-point unit domain `𝟙` over `{0,1}*` (only neighbourhood `{[]}`). -/
 def unitPt : NeighborhoodSystem Str := (singletonSys ({[]} : Set Str) ⟨[], rfl⟩).sys
 
 theorem inlProj_comp_inlInj :

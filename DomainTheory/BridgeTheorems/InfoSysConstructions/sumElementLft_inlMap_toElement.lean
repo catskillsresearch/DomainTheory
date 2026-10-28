@@ -33,7 +33,7 @@ theorem sumElementLft_inlMap_toElement (x : A.Element) :
       (left_bot_mem_inlMap_toElement A B x) = x := by
   apply le_antisymm
   · intro a ha
-    -- ha : left a ∈ inl(x)
+
     obtain ⟨u, hu, ⟨huCon, hSum, hr, hEnt⟩⟩ := ha
     have hEntA : A.Ent u a := by
       have : lftFinset ({SumToken.left a} : Finset (SumToken α β)) = {a} :=

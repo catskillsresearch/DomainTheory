@@ -13,9 +13,6 @@ section
 open NeighborhoodSystem
 variable {A : Type*} [CommRing A]
 
-/- concordance: source L538 EXERCISE 1.26 ideals of a ring -/
-/-- **Exercise 1.26 — the basic neighbourhood `I(F)`.** `I(F) = {G ∣ F ⊆ ⟨G⟩}`, the finite sets `G`
-whose generated ideal contains `F`. -/
 def IFamily (F : Finset A) : Set (Finset A) := {G | (↑F : Set A) ⊆ Ideal.span (↑G : Set A)}
 
 @[simp] theorem mem_IFamily {F G : Finset A} :
@@ -24,14 +21,12 @@ def IFamily (F : Finset A) : Set (Finset A) := {G | (↑F : Set A) ⊆ Ideal.spa
 section
 variable [DecidableEq A]
 
-/-- `I(F₁) ∩ I(F₂) = I(F₁ ∪ F₂)`: the system is closed under all binary intersections. -/
 theorem IFamily_inter (F₁ F₂ : Finset A) :
     IFamily F₁ ∩ IFamily F₂ = IFamily (F₁ ∪ F₂) := by
   ext G
   simp only [IFamily, Set.mem_inter_iff, Set.mem_ofPred_eq, Finset.coe_union, Set.union_subset_iff]
 end
 
-/-- Inclusion of neighbourhoods reversed to ideal generation: `I(F₁) ⊆ I(F₂) ↔ F₂ ⊆ ⟨F₁⟩`. -/
 theorem IFamily_subset_iff (F₁ F₂ : Finset A) :
     IFamily F₁ ⊆ IFamily F₂ ↔ (↑F₂ : Set A) ⊆ Ideal.span (↑F₁ : Set A) := by
   constructor
@@ -45,9 +40,6 @@ theorem IFamily_subset_iff (F₁ F₂ : Finset A) :
 section
 variable [DecidableEq A]
 
-/-- **Exercise 1.26 — the neighbourhood system of a commutative ring.** Tokens are finite subsets
-`F ⊆ A`; neighbourhoods are the sets `I(F)`. The master is `I(∅)` (all of `Δ`), and intersections
-`I(F₁) ∩ I(F₂) = I(F₁ ∪ F₂)` are always neighbourhoods. -/
 def ringSystem : NeighborhoodSystem (Finset A) where
   mem S := ∃ F, S = IFamily F
   master := IFamily ∅
@@ -65,9 +57,6 @@ def ringSystem : NeighborhoodSystem (Finset A) where
 
 theorem IFamily_mem (F : Finset A) : (ringSystem (A := A)).mem (IFamily F) := ⟨F, rfl⟩
 
-/-- **Exercise 1.26 — the ideal of a filter.** `idealOf x = {a ∣ I({a}) ∈ x}`. The closure
-properties of an ideal come from the filter axioms: `0` from the master, `+` from `∩`-closure
-(`I({a}) ∩ I({b}) = I({a,b}) ⊆ I({a+b})`), and `•` from upward closure (`I({a}) ⊆ I({c·a})`). -/
 def idealOf (x : (ringSystem (A := A)).Element) : Ideal A where
   carrier := {a | x.mem (IFamily {a})}
   zero_mem' := by
@@ -97,7 +86,6 @@ def idealOf (x : (ringSystem (A := A)).Element) : Ideal A where
 @[simp] theorem mem_idealOf {x : (ringSystem (A := A)).Element} {a : A} :
     a ∈ idealOf x ↔ x.mem (IFamily {a}) := Iff.rfl
 
-/-- A filter contains `I(F)` whenever it contains `I({a})` for every `a ∈ F` (by `∩`-closure). -/
 theorem mem_IFamily_of_forall (x : (ringSystem (A := A)).Element) (F : Finset A)
     (h : ∀ a ∈ F, x.mem (IFamily {a})) : x.mem (IFamily F) := by
   classical
@@ -109,7 +97,6 @@ theorem mem_IFamily_of_forall (x : (ringSystem (A := A)).Element) (F : Finset A)
     rw [hins, ← IFamily_inter]
     exact x.inter_mem (h a (by simp)) (ih (fun b hb => h b (by simp [hb])))
 
-/-- **Exercise 1.26 — the filter of an ideal.** `ofIdeal J = {I(F) ∣ ↑F ⊆ J}`. -/
 def ofIdeal (J : Ideal A) : (ringSystem (A := A)).Element where
   mem S := ∃ F, S = IFamily F ∧ Ideal.span (↑F : Set A) ≤ J
   sub := by rintro S ⟨F, rfl, _⟩; exact ⟨F, rfl⟩
@@ -173,8 +160,6 @@ theorem idealOf_ofIdeal (J : Ideal A) : idealOf (ofIdeal J) = J := by
   intro a
   rw [mem_idealOf, mem_ofIdeal_IFamily, Finset.coe_singleton, Ideal.span_singleton_le_iff_mem]
 
-/-- **Exercise 1.26 — `|𝒟| ≅ (Ideals A, ⊆)`.** The domain of the ring's neighbourhood system is
-order-isomorphic to the ideals of `A` ordered by inclusion, via `x ↦ {a ∣ I({a}) ∈ x}`. -/
 def ringIso : (ringSystem (A := A)).Element ≃o Ideal A where
   toFun := idealOf
   invFun := ofIdeal

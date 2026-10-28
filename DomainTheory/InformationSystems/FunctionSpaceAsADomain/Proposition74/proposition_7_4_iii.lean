@@ -11,7 +11,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -22,8 +21,6 @@ namespace ApproximableMap
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
-
-/-- **Proposition 7.4(iii).** Naturality of `fix` for strict commuting maps. -/
 theorem proposition_7_4_iii (f : ApproximableMap A A) (g : ApproximableMap B B)
     (h : ApproximableMap A B)
     (hcomm : comp h f = comp g h)

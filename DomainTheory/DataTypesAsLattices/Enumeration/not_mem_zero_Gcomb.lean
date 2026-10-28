@@ -13,7 +13,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- `0 ∉ G`, so `G` is a positive non-zero test. -/
 theorem not_mem_zero_Gcomb : 0 ∉ Gcomb := by
   intro h
   rcases h with ⟨n, m, hm, hmem⟩

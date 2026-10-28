@@ -10,10 +10,6 @@ open NeighborhoodSystem ApproximableMap
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/- concordance: source L3015 EXERCISE 5.9 common fixed points -/
-/-- **Exercise 5.9 (Scott 1981, PRG-19).** Commuting approximable maps have a least common fixed
-point. If they also agree at `⊥`, their least fixed points coincide, and in particular
-`fix(f) = fix(f²)`. -/
 theorem example_509 :
     (∀ {f g : ApproximableMap V V}, f.comp g = g.comp f →
       ∃ x : V.Element, f.toElementMap x = x ∧ g.toElementMap x = x ∧

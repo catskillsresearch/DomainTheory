@@ -25,7 +25,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- **Definition 6.1.** The product information system `A × B`. -/
 def productSystem : InfoSys (ProdToken A B) where
   bot := prodBot A B
   Con := {u | ProdCon A B u}

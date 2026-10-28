@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (2.11).** One inclusion; equality needs both arguments to be graphs. -/
 theorem eq_2_11 (f g x : Pomega) :
     funOf (f ∩ g) x ⊆ funOf f x ∩ funOf g x := by
   intro m ⟨n, hn, hp, hq⟩
@@ -17,7 +16,6 @@ theorem eq_2_11 (f g x : Pomega) :
 
 namespace eq_2_11
 
-/-- **Scott 1976, (2.11).** Equality when both arguments are graphs. -/
 theorem graphs {f g : Pomega} (hf : IsGraph f) (hg : IsGraph g)
     (x : Pomega) : funOf (f ∩ g) x = funOf f x ∩ funOf g x := by
   apply subset_antisymm (_root_.DomainTheory.DataTypesAsLattices.eq_2_11 f g x)

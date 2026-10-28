@@ -10,7 +10,6 @@ public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -27,7 +26,6 @@ namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
-/-- Every sum element is ⊥, a pure left copy, or a pure right copy. Classical. -/
 theorem sum_element_trichotomy (z : (sumSystem A B).Element) :
     z = (sumSystem A B).botElement ∨
       (∃ x : A.Element, z = (inlMap A B).toElement x) ∨

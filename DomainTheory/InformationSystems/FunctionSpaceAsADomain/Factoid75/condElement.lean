@@ -29,7 +29,6 @@ variable (A : InfoSys α) (B : InfoSys β)
 
 open ApproximableMap
 
-/-- `cond` as an element of `|BOOL →ₛ A|`. -/
 def condElement (z : (productSystem A A).Element) :
     (strictFunctionSystem boolSystem A).Element :=
   approxMap_toStrictElement boolSystem A

@@ -10,9 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_more
 public import DomainTheory.DataTypesAsLattices.Closures.Vapply_more
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem eq_5_19 (a : Pomega) :
     funOf Vcomb (funOf Vcomb a) = funOf Vcomb a := by

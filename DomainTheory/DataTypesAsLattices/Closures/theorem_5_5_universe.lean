@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 5.5.** `V` itself is a closure, and its fixed
-points are exactly the closure operations. -/
 theorem theorem_5_5.universe :
     Closure Vcomb ∧ ∀ a, Closure a ↔ typed a Vcomb :=
   ⟨⟨⟨Icomb_subset_Vcomb, Vcomb.isRetract⟩⟩,

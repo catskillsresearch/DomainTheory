@@ -18,7 +18,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Stage-`n` consistency (Scott (4)–(7), stratified). -/
 def LamConN : ℕ → Finset (RawLamToken α) → Prop
   | 0, u => lamAtomFinset u ∈ A.Con ∧ lamFunFinset u = ∅
   | n + 1, u =>

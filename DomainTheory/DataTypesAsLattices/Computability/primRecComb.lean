@@ -26,7 +26,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Scott (2.27) packaged as a combinator. -/
 def primRecComb (a f : Pomega) : Pomega :=
   funOf dollarC
     (funOf Ycomb

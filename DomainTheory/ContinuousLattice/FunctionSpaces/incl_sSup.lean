@@ -8,20 +8,16 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
 public import Mathlib.Topology.Defs.Basic
 
-
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
-
 
 section Proposition310
 
@@ -29,8 +25,6 @@ open Finset
 
 namespace IsContinuousLatticeProjection
 
-
-/-- **Scott 1972, Proposition 3.10(i).** Projections preserve arbitrary suprema. -/
 theorem incl_sSup (P : IsContinuousLatticeProjection D D') (S : Set D) :
     P.incl (sSup S) = sSup (Set.image (P.incl : D → D') S) := by
   rcases S.eq_empty_or_nonempty with hS | hS

@@ -8,9 +8,7 @@ public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.Basic
 
-
 @[expose] public section
-
 
 namespace DomainTheory.BridgeTheorems
 
@@ -21,7 +19,6 @@ open Order
 namespace InfoSysToIdealCompletion
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
-
 
 theorem mem_finiteApproximants_iff {x : A.Element} {y : FiniteElement A} :
     y ∈ finiteApproximants A x ↔ (y : A.Element) ≤ x :=

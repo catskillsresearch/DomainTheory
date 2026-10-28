@@ -27,7 +27,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- **Definition 2.1 packaging.** The λ-calculus information system `D`. -/
 def lambdaSystem : InfoSys (LamDToken A) where
   bot := lamDBot A
   Con := {u | LamDCon A u}

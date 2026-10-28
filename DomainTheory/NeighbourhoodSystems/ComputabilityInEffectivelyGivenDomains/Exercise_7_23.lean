@@ -11,8 +11,7 @@ public import Mathlib.Data.Nat.Bitwise
 @[expose] public section
 
 section
-/- concordance: source L4727 EXERCISE 7.23 graph and fun computable -/
--- Exercise723/capMap.lean
+
 namespace DomainTheory.NeighbourhoodSystems.Exercise723
 
 open DomainTheory.NeighbourhoodSystems Example78 NeighborhoodSystem Domain.Recursive
@@ -22,9 +21,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise513 (tri num numP unnum nextCell 
 open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
   num_succ_left_gt tag_injective)
 
-/-- **`λx,y. x∩y` as an approximable map** `PN × PN → PN`. On neighbourhoods: `X ∪ Y` relates to
-`Z` iff `X ⊆ Z` and `Y ⊆ Z` (the "test at the minimal witness" idiom: `X`, `Y` are themselves the
-tightest possible arguments consistent with the input information). -/
 def capMap : ApproximableMap (prod PN PN) PN where
   rel W Z := ∃ X Y, W = prodNbhd X Y ∧ PN.mem X ∧ PN.mem Y ∧ PN.mem Z ∧ X ⊆ Z ∧ Y ⊆ Z
   rel_dom := by rintro W Z ⟨X, Y, rfl, hX, hY, _, _, _⟩; exact prod_mem_prodNbhd hX hY
@@ -54,7 +50,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 section
-/-- Iterated halving `(·/2)^[k] n`, the primitive-recursive core of `Nat.testBit`. -/
+
 def halfIter (n k : ℕ) : ℕ := (fun x : ℕ => x / 2)^[k] n
 end
 
@@ -63,14 +59,12 @@ section
 end
 
 section
-/-- The `{0,1}`-valued primitive-recursive proxy for `Nat.testBit`. -/
+
 def bitAt (n k : ℕ) : ℕ := halfIter n k % 2
 end
 
 section
-/-- **`λx,y. x∪y` as an approximable map** `PN × PN → PN`. On neighbourhoods: `X ∪ Y` relates to
-`Z` iff `nbhd(myLor n m) ⊆ Z` — the excluded set of `Z` must fit inside the *union* `Eₙ ∪ Eₘ`, i.e.
-`nbhd n ∩ nbhd m ⊆ Z` (`Eₙ ∪ Eₘ = E_{myLor n m}`, `nbhd_inter`). -/
+
 def cupMap : ApproximableMap (prod PN PN) PN where
   rel W Z := ∃ X Y, W = prodNbhd X Y ∧ PN.mem X ∧ PN.mem Y ∧ PN.mem Z ∧ X ∩ Y ⊆ Z
   rel_dom := by rintro W Z ⟨X, Y, rfl, hX, hY, _, _⟩; exact prod_mem_prodNbhd hX hY
@@ -91,7 +85,7 @@ def cupMap : ApproximableMap (prod PN PN) PN where
 end
 
 section
-/-- Scott's `x + y = {n+m ∣ n ∈ x, m ∈ y}` (Minkowski sum) for `x, y ⊆ ℕ`. -/
+
 def sumSet (X Y : Set ℕ) : Set ℕ := {k | ∃ a ∈ X, ∃ b ∈ Y, a + b = k}
 end
 
@@ -100,9 +94,7 @@ section
 end
 
 section
-/-- **Choice-free De Morgan for `nbhd`'s excluded sets.** The general `Set.compl_inter` needs
-excluded middle; here, since membership in `nbhd a`/`nbhd b` is decided by `Nat.testBit`, a case
-split on the two (concrete) bits suffices. -/
+
 theorem compl_inter_nbhd (a b : ℕ) : (nbhd a ∩ nbhd b)ᶜ = (nbhd a)ᶜ ∪ (nbhd b)ᶜ := by
   ext x
   simp only [Set.mem_compl_iff, Set.mem_inter_iff, Set.mem_union, mem_nbhd]
@@ -110,16 +102,13 @@ theorem compl_inter_nbhd (a b : ℕ) : (nbhd a ∩ nbhd b)ᶜ = (nbhd a)ᶜ ∪ 
 end
 
 section
-/-- **Choice-free antitone `compl`** (only the direction needed here): unlike the general
-`Set.compl_subset_compl` (a `BooleanAlgebra` lemma whose `↔` proof is classical), this direction is
-constructive contraposition and needs no excluded middle. -/
+
 theorem compl_subset_compl_of_subset {X Y : Set ℕ} (h : X ⊆ Y) : Yᶜ ⊆ Xᶜ :=
   fun _ hx hxX => hx (h hxX)
 end
 
 section
-/-- The subset of `ℕ` "positively described" by a `PN`-element `x`: the union of the excluded finite
-sets of every neighbourhood it contains. -/
+
 def elemSet (x : PN.Element) : Set ℕ := {k | ∃ n, x.mem (nbhd n) ∧ n.testBit k = true}
 end
 
@@ -129,23 +118,19 @@ section
 end
 
 section
-/-- `bitsCode n N` codes the list of `k < N` with `n.testBit k = true`. -/
+
 def bitsCode : ℕ → ℕ → ℕ
   | _, 0 => 0
   | n, N + 1 => selectFn (bitAt n N) (Nat.pair N (bitsCode n N) + 1) (bitsCode n N)
 end
 
 section
-/-- The (non-primitive-recursive) list of set-bit positions of `n`: every set bit `k` of `n`
-satisfies `k < n` (`lt_of_testBit_true`), so ranging over `List.range n` catches them all. Used only
-to state/prove the pure covering fact `nbhd_mem_iff_subset_elemSet`; see `bitsCode` below for the
-primitive-recursive analogue used in the computability direction. -/
+
 def bitsList (n : ℕ) : List ℕ := (List.range n).filter (fun k => n.testBit k)
 end
 
 section
-/-- The primitive-recursive step function for `bitsCode`'s iteration: `(n, N, acc) ↦
-(n, N+1, if n.testBit N then pair N acc + 1 else acc)`. -/
+
 def bitsStep (s : ℕ) : ℕ :=
   Nat.pair s.unpair.1
     (Nat.pair (s.unpair.2.unpair.1 + 1)
@@ -154,9 +139,7 @@ def bitsStep (s : ℕ) : ℕ :=
 end
 
 section
-/-- **`λx,y. Fun x y` as an approximable map** `PN × PN → PN`, built by the same "reversal" idiom as
-`plusMap`: `Zᶜ ⊆ Fun Xᶜ Yᶜ`. `funMap` (the actual `fun` combinator of Exercise 5.14, a map
-`PN → (PN →⃗ PN)`) is `curry gMap` (`Theorem75.curry`). -/
+
 def gMap : ApproximableMap (prod PN PN) PN where
   rel W Z := ∃ X Y, W = prodNbhd X Y ∧ PN.mem X ∧ PN.mem Y ∧ PN.mem Z ∧ Zᶜ ⊆ Fun Xᶜ Yᶜ
   rel_dom := by rintro W Z ⟨X, Y, rfl, hX, hY, _, _⟩; exact prod_mem_prodNbhd hX hY
@@ -182,34 +165,31 @@ def gMap : ApproximableMap (prod PN PN) PN where
 end
 
 section
-/-- **`fun` as an approximable map** `PN → (PN → PN)`, obtained by currying `gMap`. -/
+
 def funMap : ApproximableMap PN (funSpace PN PN) := curry gMap
 end
 
 section
-/-- Pair-coded version of `nextCell : ℕ × ℕ → ℕ × ℕ` (`(0, m) ↦ (m+1, 0)`, `(n+1, m) ↦ (n, m+1)`). -/
+
 def nextCellStep (w : ℕ) : ℕ :=
   selectFn (isZero w.unpair.1) (Nat.pair (w.unpair.2 + 1) 0)
     (Nat.pair (w.unpair.1 - 1) (w.unpair.2 + 1))
 end
 
 section
-/-- **Reference spec for `plusIdx`.** The running bitwise-OR of `m <<< a` over set bits `a < N` of
-`n`, built by ordinary (non-primitive-recursive) structural recursion — used only to state and prove
-correctness of the primitive-recursive `plusIdx` below. -/
+
 def orUpTo (n m : ℕ) : ℕ → ℕ
   | 0 => 0
   | k + 1 => myLor (orUpTo n m k) (selectFn (bitAt n k) (m <<< k) 0)
 end
 
 section
-/-- **`plusIdx n m`: the primitive-recursive index of `Eₙ + Eₘ`.** -/
+
 def plusIdx (n m : ℕ) : ℕ := orUpTo n m n
 end
 
 section
-/-- The primitive-recursive step function for `orUpTo`'s bitwise-OR fold: `(n, m, a, acc) ↦
-(n, m, a+1, acc ||| (if testBit n a then m<<<a else 0))`. -/
+
 def plusStep (s : ℕ) : ℕ :=
   Nat.pair (Nat.pair s.unpair.1.unpair.1 s.unpair.1.unpair.2)
     (Nat.pair (s.unpair.2.unpair.1 + 1)
@@ -225,9 +205,7 @@ theorem sumSet_mono {X X' Y Y' : Set ℕ} (hX : X ⊆ X') (hY : Y ⊆ Y') : X +�
 end
 
 section
-/-- **`λx,y. x+y` as an approximable map** `PN × PN → PN`. On neighbourhoods: `X ∪ Y` relates to `Z`
-iff `Zᶜ ⊆ Xᶜ +ˢ Yᶜ` — the excluded set of the output must fit inside the *Minkowski sum* of the
-inputs' excluded sets, the most that is guaranteed knowing only `Eₙ ⊆ Sx` and `Eₘ ⊆ Sy`. -/
+
 def plusMap : ApproximableMap (prod PN PN) PN where
   rel W Z := ∃ X Y, W = prodNbhd X Y ∧ PN.mem X ∧ PN.mem Y ∧ PN.mem Z ∧ Zᶜ ⊆ Xᶜ +ˢ Yᶜ
   rel_dom := by rintro W Z ⟨X, Y, rfl, hX, hY, _, _⟩; exact prod_mem_prodNbhd hX hY
@@ -253,38 +231,28 @@ def plusMap : ApproximableMap (prod PN PN) PN where
 end
 
 section
-/-- `foldCode`-shaped step for `tagCode`: `(acc, x) ↦ num (x+1) acc` (the `params` slot is unused). -/
+
 def tagStep (w : ℕ) : ℕ := num (w.unpair.1 + 1) w.unpair.2.unpair.1
 end
 
 section
-/-- **`tagCode code m` codes `tag (decodeList code) m`.** Built via `appendCode 0 code` (which
-reverses `decodeList code`) so that `foldCode`'s left fold computes `tag`'s right fold. -/
+
 def tagCode (code m : ℕ) : ℕ := foldCode tagStep 0 (num 0 m) (appendCode 0 code)
 end
 
 section
-/-- `tagOfBits j m` codes `tag (decodeList (bitsCode j j)) m`, primitive recursive in `(j, m)`. -/
+
 def tagOfBits (j m : ℕ) : ℕ := tagCode (bitsCode j j) m
 end
 
 section
-/-- `GraphIdx W`: the domain-theoretic "positive content" of `graph(W)`, mirroring Exercise 5.14's
-`Graph f = {tag ns m ∣ m ∈ f (entries ns)}`, but phrased at the level of neighbourhood relations and
-tested against *every* map `f ∈ W` (Scott's "guaranteed regardless of which `f ∈ W`" idiom, as in
-`eval`'s `∀ f ∈ F, f.rel X Y`). The "argument" is canonically `tagOfBits n m = tag (decodeList
-(bitsCode n n)) m` (`decodeList (bitsCode n n)` has entries exactly `Eₙ`, `mem_bitsCodeList`), so it
-ranges over the countably many finite sets `(nbhd n)ᶜ` rather than over arbitrary lists — exactly the
-finite-set arguments `Graph` needs, up to the reindexing already used throughout this file. Using the
-*primitive-recursive* list `bitsCode n n` (rather than the merely well-founded `bitsList n`) is what
-makes the decode direction (`mem_GraphIdx_iff` below) computable. -/
+
 def GraphIdx (W : Set (ApproximableMap PN PN)) : Set ℕ :=
   {c | ∃ n m₀ m, c = tagOfBits n m ∧ (∀ f ∈ W, f.rel (nbhd n) (nbhd m₀)) ∧ m₀.testBit m = true}
 end
 
 section
-/-- **`GraphIdx` is antitone: shrinking `W` (more information about the map) can only add
-guaranteed content.** -/
+
 theorem GraphIdx_mono {W W' : Set (ApproximableMap PN PN)} (h : W' ⊆ W) :
     GraphIdx W ⊆ GraphIdx W' := by
   rintro c ⟨n, m₀, m, rfl, hf, hbit⟩
@@ -292,8 +260,7 @@ theorem GraphIdx_mono {W W' : Set (ApproximableMap PN PN)} (h : W' ⊆ W) :
 end
 
 section
-/-- **`graph` as an approximable map** `(PN → PN) → PN`, dually to `gMap`'s "reversal idiom":
-`Zᶜ ⊆ GraphIdx W`. -/
+
 def graphMap : ApproximableMap (funSpace PN PN) PN where
   rel W Z := (funSpace PN PN).mem W ∧ PN.mem Z ∧ Zᶜ ⊆ GraphIdx W
   rel_dom := fun ⟨h, _, _⟩ => h
@@ -318,22 +285,22 @@ def graphMap : ApproximableMap (funSpace PN PN) PN where
 end
 
 section
-/-- `nextCellStep` iterated from `(0,0)`, coding `unnum v` as a single `Nat.pair`. -/
+
 def unnumPair (v : ℕ) : ℕ := nextCellStep^[v] (Nat.pair 0 0)
 end
 
 section
-/-- The first component of `unnum v`, primitive recursive. -/
+
 def unnum1 (v : ℕ) : ℕ := (unnumPair v).unpair.1
 end
 
 section
-/-- The second component of `unnum v`, primitive recursive. -/
+
 def unnum2 (v : ℕ) : ℕ := (unnumPair v).unpair.2
 end
 
 section
-/-- `untagRef c = (ns, m)` with `tag ns m = c` (`tag_untagRef`). -/
+
 def untagRef (c : ℕ) : List ℕ × ℕ :=
   if _h : (unnum c).1 = 0 then ([], (unnum c).2)
   else
@@ -351,7 +318,7 @@ decreasing_by all_goals exact hlt
 end
 
 section
-/-- The state-transition step: no-op once `done`; otherwise peel one `unnum` layer. -/
+
 def untagStep (w : ℕ) : ℕ :=
   selectFn w.unpair.2.unpair.1 w
     (selectFn (isZero (unnum1 w.unpair.1))
@@ -364,30 +331,28 @@ def untagStep (w : ℕ) : ℕ :=
 end
 
 section
-/-- `untagStep` iterated `c + 1` times from the fresh state `(c, 0, 0, 0)`. -/
+
 def untagState (c : ℕ) : ℕ := untagStep^[c + 1] (Nat.pair c (Nat.pair 0 (Nat.pair 0 0)))
 end
 
 section
-/-- **`untagList c`**: the (`appendCode`-reversed) code of `(untagRef c).1`, primitive recursive. -/
+
 def untagList (c : ℕ) : ℕ := appendCode 0 (untagState c).unpair.2.unpair.2.unpair.1
 end
 
 section
-/-- **`untagVal c`**: the value component of `untagRef c`, primitive recursive. -/
+
 def untagVal (c : ℕ) : ℕ := (untagState c).unpair.2.unpair.2.unpair.2
 end
 
 section
-/-- **Every set bit lies below the number itself.** If `n.testBit i = true` then `i < n` (since
-`n ≥ 2^i > i`). -/
+
 theorem lt_of_testBit_true {n i : ℕ} (h : n.testBit i = true) : i < n := by
   by_contra hle
   have hle' : n ≤ i := by omega
   have hlt : n < 2 ^ i := lt_of_le_of_lt hle' Nat.lt_two_pow_self
   rw [Nat.testBit_eq_false_of_lt hlt] at h
   exact absurd h (by decide)
-
 
 theorem halfIter_succ (n k : ℕ) : halfIter n (k + 1) = halfIter (n / 2) k := by
   unfold halfIter; rw [Function.iterate_succ_apply]
@@ -399,13 +364,11 @@ theorem primrec_halfIter : Nat.Primrec (fun t => halfIter t.unpair.1 t.unpair.2)
   simp only [Nat.unpaired, unpair_pair_snd]
   exact rec_const_iterate (fun x => x / 2) t.unpair.1 t.unpair.2
 
-
 theorem primrec_bitAt : Nat.Primrec (fun t => bitAt t.unpair.1 t.unpair.2) :=
   primrec_mod2.comp primrec_halfIter
 
 theorem bitAt_le_one (n k : ℕ) : bitAt n k ≤ 1 := by unfold bitAt; omega
 
-/-- **Correctness of `bitAt`.** `bitAt n k = 1 ↔ n.testBit k = true`. -/
 theorem bitAt_eq_one_iff (n k : ℕ) : bitAt n k = 1 ↔ n.testBit k = true := by
   induction k generalizing n with
   | zero =>
@@ -416,16 +379,9 @@ theorem bitAt_eq_one_iff (n k : ℕ) : bitAt n k = 1 ↔ n.testBit k = true := b
     rw [halfIter_succ, Nat.testBit_add_one]
     exact ih (n / 2)
 
-
-/-- The excluded set of `nbhd n`, as a set of naturals: `(nbhd n)ᶜ = {k ∣ n.testBit k}`. -/
 theorem compl_nbhd (n : ℕ) : (nbhd n)ᶜ = {k | n.testBit k = true} := by
   ext k; simp [nbhd]
 
-
-/-- **Finite covering (choice-free, structural induction on the witness list).** If every `k` in a
-list `L` has *some* neighbourhood `nbhd m` of `x` with `m.testBit k`, a single `nbhd m₀ ∈ x` works for
-all of `L` at once: combine the per-entry witnesses with `myLor` via `x.inter_mem`, one list entry at
-a time. -/
 theorem exists_combined_witness (x : PN.Element) :
     ∀ L : List ℕ, (∀ k ∈ L, ∃ m, x.mem (nbhd m) ∧ m.testBit k = true) →
       ∃ m₀, x.mem (nbhd m₀) ∧ ∀ k ∈ L, m₀.testBit k = true
@@ -443,14 +399,11 @@ theorem exists_combined_witness (x : PN.Element) :
       · exact Or.inl hbk
       · exact Or.inr (hall j hj)
 
-
 theorem mem_bitsList {n k : ℕ} : k ∈ bitsList n ↔ n.testBit k = true := by
   unfold bitsList
   rw [List.mem_filter, List.mem_range]
   exact ⟨fun h => h.2, fun h => ⟨lt_of_testBit_true h, h⟩⟩
 
-/-- **`x.mem (nbhd n) ↔ Eₙ ⊆ elemSet x`.** Neighbourhood-membership reduces to positive-information
-containment: `n`'s excluded set must already be covered by `x`'s recorded information. -/
 theorem nbhd_mem_iff_subset_elemSet (x : PN.Element) (n : ℕ) :
     x.mem (nbhd n) ↔ (nbhd n)ᶜ ⊆ elemSet x := by
   rw [compl_nbhd]
@@ -471,9 +424,6 @@ theorem nbhd_mem_iff_subset_elemSet (x : PN.Element) (n : ℕ) :
         exact absurd hcontra (by decide)
     exact x.up_mem hm₀ ⟨n, rfl⟩ hincl
 
-/-- **`elemSet x` is r.e. when `x` is a computable element.** Direct: `k ∈ elemSet x ↔ ∃ n,
-x.mem (nbhd n) ∧ n.testBit k`, an r.e. projection of the conjunction of an r.e. predicate and a
-(`bitAt`-)decidable one. -/
 theorem elemSet_re_of_isComputableElement {x : PN.Element} (hx : ComputableElement PNpres x) :
     REPred (fun k => k ∈ elemSet x) := by
   have hx' : REPred (fun n => x.mem (nbhd n)) := hx.out
@@ -483,7 +433,6 @@ theorem elemSet_re_of_isComputableElement {x : PN.Element} (hx : ComputableEleme
     (hx'.comp Nat.Primrec.left).and hbit.re
   refine REPred.of_iff (fun k => ?_) hand.proj
   simp only [mem_elemSet, unpair_pair_fst, unpair_pair_snd]
-
 
 theorem mem_decodeList_bitsCode (n : ℕ) :
     ∀ N k, k ∈ decodeList (bitsCode n N) ↔ k < N ∧ n.testBit k = true
@@ -512,7 +461,6 @@ theorem mem_decodeList_bitsCode (n : ℕ) :
         rcases (show k < N ∨ k = N by omega) with hkN | hkN
         · exact ⟨hkN, hk⟩
         · subst hkN; exact absurd hk hbit
-
 
 theorem primrec_bitsStep : Nat.Primrec bitsStep := by
   have hn : Nat.Primrec (fun s : ℕ => s.unpair.1) := Nat.Primrec.left
@@ -566,9 +514,6 @@ theorem primrec_bitsCode : Nat.Primrec (fun t => bitsCode t.unpair.1 t.unpair.2)
   rw [rec_const_iterate]
   exact (bitsStep_iter_spec t.unpair.1 t.unpair.2).2.2
 
-/-- **`x` is a computable element when `elemSet x` is r.e.** The bounded conjunction `Eₙ ⊆ elemSet x`,
-phrased over the coded list `bitsCode n n`, is r.e. by `REPred.forall_mem_decodeList`; by
-`nbhd_mem_iff_subset_elemSet` this containment is exactly `x.mem (nbhd n)`. -/
 theorem isComputableElement_of_elemSet_re {x : PN.Element} (hA : REPred (fun k => k ∈ elemSet x)) :
     ComputableElement PNpres x := by
   have hforall : REPred (fun c => ∀ e ∈ decodeList c, e ∈ elemSet x) := hA.forall_mem_decodeList
@@ -585,17 +530,10 @@ theorem isComputableElement_of_elemSet_re {x : PN.Element} (hA : REPred (fun k =
   · intro hall k hk
     exact hall k ((mem_decodeList_bitsCode n n k).mpr ⟨lt_of_testBit_true hk, hk⟩)
 
-/-- **What are the computable elements of `PN`? — Exercise 7.23 (Scott 1981, PRG-19).** Exactly the
-recursively enumerable subsets of `ℕ`, via the identification `x ↦ elemSet x` of `PN` with the
-classical powerset domain `(Set ℕ, ⊆)`. -/
 theorem isComputableElement_iff_elemSet_re (x : PN.Element) :
     ComputableElement PNpres x ↔ REPred (fun k => k ∈ elemSet x) :=
   ⟨elemSet_re_of_isComputableElement, isComputableElement_of_elemSet_re⟩
 
-
-/-- **`unnum`'s second component strictly decreases** when the first is a successor — the
-decreasing measure for both `untagRef` (well-founded recursion) and `untagStep` (bounded
-iteration) below. -/
 theorem unnum_snd_lt_of_fst_succ {c k : ℕ} (h : (unnum c).1 = k + 1) : (unnum c).2 < c := by
   have heq : num (k + 1) (unnum c).2 = c := by
     have h' := numP_unnum c
@@ -605,8 +543,7 @@ theorem unnum_snd_lt_of_fst_succ {c k : ℕ} (h : (unnum c).1 = k + 1) : (unnum 
 end
 
 section
-/-- `(i,m) ↦ bitAt m i = 1`, i.e. `m.testBit i`, as a `RecDecidable₂` relation (argument order
-swapped from `bitAt`'s own `(n,k) ↦ bitAt n k`, to feed `RecDecidable₂.bForallList`). -/
+
 theorem bitAt_swap_isComputable : RecDecidable₂ (fun i m => bitAt m i = 1) :=
   ⟨fun t => bitAt t.unpair.2 t.unpair.1,
     (primrec_bitAt.comp (Nat.Primrec.right.pair Nat.Primrec.left)).of_eq fun t => by
@@ -615,8 +552,7 @@ theorem bitAt_swap_isComputable : RecDecidable₂ (fun i m => bitAt m i = 1) :=
 end
 
 section
-/-- `capMap`'s neighbourhood relation on indices: `nbhd n ∪ nbhd m` relates to `nbhd k` iff both
-`nbhd n ⊆ nbhd k` and `nbhd m ⊆ nbhd k`. -/
+
 theorem capMap_rel_iff (n m k : ℕ) :
     capMap.rel (prodNbhd (nbhd n) (nbhd m)) (nbhd k) ↔ nbhd n ⊆ nbhd k ∧ nbhd m ⊆ nbhd k := by
   constructor
@@ -628,8 +564,7 @@ theorem capMap_rel_iff (n m k : ℕ) :
 end
 
 section
-/-- **`λx,y. x∩y` is computable.** Reduces to `PNpres.incl_computable`, tested twice and
-conjoined. -/
+
 theorem capMap_isComputable :
     ComputableMap (prodPresentation PNpres PNpres) PNpres capMap := by
   constructor
@@ -644,8 +579,7 @@ theorem capMap_isComputable :
 end
 
 section
-/-- `cupMap`'s neighbourhood relation on indices: `nbhd n ∪ nbhd m` relates to `nbhd k` iff
-`nbhd (myLor n m) ⊆ nbhd k`. -/
+
 theorem cupMap_rel_iff (n m k : ℕ) :
     cupMap.rel (prodNbhd (nbhd n) (nbhd m)) (nbhd k) ↔ nbhd (myLor n m) ⊆ nbhd k := by
   rw [← nbhd_inter n m]
@@ -658,8 +592,7 @@ theorem cupMap_rel_iff (n m k : ℕ) :
 end
 
 section
-/-- **`λx,y. x∪y` is computable.** Reduces to `PNpres.incl_computable` against the primitive
-recursive reindexing `myLor`. -/
+
 theorem cupMap_isComputable :
     ComputableMap (prodPresentation PNpres PNpres) PNpres cupMap := by
   constructor
@@ -676,17 +609,14 @@ theorem cupMap_isComputable :
 end
 
 section
-/-- **`decodeList` is injective**, immediately from the round-trip `encodeList_decodeList`
-(`decodeList` has a left inverse). -/
+
 theorem decodeList_injective {a b : ℕ} (h : decodeList a = decodeList b) : a = b := by
   have := congrArg encodeList h
   rwa [encodeList_decodeList, encodeList_decodeList] at this
 end
 
 section
-/-- **Membership in a function-space step set, as inclusion of `Xenum`s.** `∀ f ∈ W, f.rel X Y` iff
-`W ⊆ step X Y` (`mem_step`); specialised to `W = Xenum … c` and the singleton step neighbourhood
-(`Xenum_singleton`), this becomes the *decidable* function-space inclusion `incl_computable`. -/
+
 theorem forall_rel_iff_subset_step {W : Set (ApproximableMap PN PN)} {n m₀ : ℕ} :
     (∀ f ∈ W, f.rel (nbhd n) (nbhd m₀)) ↔ W ⊆ step (nbhd n) (nbhd m₀) := by
   constructor
@@ -695,8 +625,7 @@ theorem forall_rel_iff_subset_step {W : Set (ApproximableMap PN PN)} {n m₀ : �
 end
 
 section
-/-- `gMap`'s neighbourhood relation on indices: `nbhd n ∪ nbhd m` relates to `nbhd k` iff
-`nbhd k`'s excluded set fits inside `Fun (nbhd n)ᶜ (nbhd m)ᶜ`. -/
+
 theorem gMap_rel_iff (n m k : ℕ) :
     gMap.rel (prodNbhd (nbhd n) (nbhd m)) (nbhd k) ↔ (nbhd k)ᶜ ⊆ Fun (nbhd n)ᶜ (nbhd m)ᶜ := by
   constructor
@@ -708,8 +637,7 @@ theorem gMap_rel_iff (n m k : ℕ) :
 end
 
 section
-/-- `graphMap`'s neighbourhood relation on indices: `Xenum … c` relates to `nbhd m` iff `nbhd m`'s
-excluded set fits inside `GraphIdx (Xenum … c)`. -/
+
 theorem graphMap_rel_iff (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf PNpres PNpres (decodeList c))
       : Set (ApproximableMap PN PN)).Nonempty) (c m : ℕ) :
@@ -721,22 +649,20 @@ theorem graphMap_rel_iff (gN : ℕ → ℕ)
 end
 
 section
-/-- **The canonical witness list for `Eⱼ = (nbhd j)ᶜ`.** `decodeList (bitsCode j j)` has exactly the
-set bits of `j` as entries (order immaterial for `entries`, but fixed here for `tag`'s coding). -/
+
 theorem mem_bitsCodeList {n k : ℕ} : k ∈ decodeList (bitsCode n n) ↔ n.testBit k = true := by
   rw [mem_decodeList_bitsCode]
   exact ⟨fun h => h.2, fun h => ⟨lt_of_testBit_true h, h⟩⟩
 end
 
 section
-/-- Pointwise form of `compl_nbhd`, convenient for `rw`/case-splitting on the (decidable) bit. -/
+
 theorem mem_compl_nbhd {n x : ℕ} : x ∈ (nbhd n)ᶜ ↔ n.testBit x = true := by
   rw [compl_nbhd]; rfl
 end
 
 section
-/-- **`(nbhd k)ᶜ ⊆ Fun (nbhd n)ᶜ (nbhd m)ᶜ`, bounded-quantifier form.** Every excluded point of
-`nbhd k` is below `k` (`lt_of_testBit_true`), so the subset test is a bounded `∀j < k`. -/
+
 theorem compl_nbhd_subset_Fun_iff (n m k : ℕ) : (nbhd k)ᶜ ⊆ Fun (nbhd n)ᶜ (nbhd m)ᶜ ↔
     ∀ j, j < k → (k.testBit j = true → j ∈ Fun (nbhd n)ᶜ (nbhd m)ᶜ) := by
   constructor
@@ -748,9 +674,7 @@ theorem compl_nbhd_subset_Fun_iff (n m k : ℕ) : (nbhd k)ᶜ ⊆ Fun (nbhd n)�
 end
 
 section
-/-- **`(nbhd k)ᶜ ⊆ S`, bounded-quantifier form**, for an *arbitrary* target set `S`: every excluded
-point of `nbhd k` is below `k` (`lt_of_testBit_true`), so the subset test is a bounded `∀ j < k`.
-(The `S`-generic form of `compl_nbhd_subset_Fun_iff`.) -/
+
 theorem compl_nbhd_subset_iff (S : Set ℕ) (k : ℕ) : (nbhd k)ᶜ ⊆ S ↔
     ∀ j, j < k → (k.testBit j = true → j ∈ S) := by
   constructor
@@ -766,9 +690,7 @@ theorem mem_sumSet {X Y : Set ℕ} {k : ℕ} : k ∈ X +ˢ Y ↔ ∃ a ∈ X, �
 end
 
 section
-/-- **Choice-free converse of `compl_subset_compl_of_subset`, specialized to `nbhd`.** For cofinite
-neighbourhoods the excluded sets have decidable membership (`Nat.testBit`), so unlike the general
-`Set.compl_subset_compl` this direction needs only a case split on a `Bool`, not excluded middle. -/
+
 theorem nbhd_subset_iff_compl_subset_compl (a b : ℕ) :
     nbhd a ⊆ nbhd b ↔ (nbhd b)ᶜ ⊆ (nbhd a)ᶜ := by
   constructor
@@ -781,8 +703,7 @@ theorem nbhd_subset_iff_compl_subset_compl (a b : ℕ) :
 end
 
 section
-/-- **The reversal fact.** `nbhd n ⊆ nbhd k ↔ myLor n k = n`: `nbhd n ⊆ nbhd k` iff
-`nbhd n ∩ nbhd k = nbhd n` iff (by `nbhd_inter` + injectivity) `nbhd (myLor n k) = nbhd n`. -/
+
 theorem nbhd_subset_iff_myLor_eq (n k : ℕ) : nbhd n ⊆ nbhd k ↔ myLor n k = n := by
   constructor
   · intro h
@@ -898,14 +819,13 @@ theorem primrec_plusIdx : Nat.Primrec (fun t => plusIdx t.unpair.1 t.unpair.2) :
 end
 
 section
-/-- `tri k = k(k+1)/2` is primitive recursive: `tri k * 2 = k(k+1)` is *exact* division by the
-literal `2`, computed by `primrec_div2`. -/
+
 theorem primrec_tri : Nat.Primrec tri :=
   (primrec_div2.comp (primrec_mul₂ primrec_id Nat.Primrec.succ)).of_eq fun _ => rfl
 end
 
 section
-/-- `num n m = tri(n+m) + m` is primitive recursive. -/
+
 theorem primrec_num : Nat.Primrec (fun t => num t.unpair.1 t.unpair.2) :=
   (primrec_add₂ (primrec_tri.comp (primrec_add₂ Nat.Primrec.left Nat.Primrec.right))
     Nat.Primrec.right).of_eq fun _ => rfl
@@ -1015,8 +935,7 @@ theorem primrec_untagVal : Nat.Primrec untagVal :=
 end
 
 section
-/-- **`tag` reformulated as a left fold over the reversed list.** `tag`'s recursion is a `foldr`;
-`List.foldl_reverse` bridges it to the `foldl`-shaped `foldCode`. -/
+
 theorem tag_eq_foldr (ns : List ℕ) (m : ℕ) :
     tag ns m = ns.foldr (fun x y => num (x + 1) y) (num 0 m) := by
   induction ns with
@@ -1050,8 +969,7 @@ theorem tagOfBits_spec (j m : ℕ) : tagOfBits j m = tag (decodeList (bitsCode j
 end
 
 section
-/-- **`orUpTo`'s bit-by-bit characterization.** Bit `k` of `orUpTo n m N` is set exactly when some
-`a < N` is a set bit of `n` with `a ≤ k` and `k - a` a set bit of `m`. -/
+
 theorem testBit_orUpTo (n m : ℕ) : ∀ N k,
     (orUpTo n m N).testBit k = true ↔ ∃ a, a < N ∧ n.testBit a = true ∧ a ≤ k ∧ m.testBit (k - a) = true
   | 0, k => by simp [orUpTo]
@@ -1084,8 +1002,7 @@ theorem testBit_orUpTo (n m : ℕ) : ∀ N k,
 end
 
 section
-/-- **`orUpTo n m n` computes the Minkowski sum `Eₙ + Eₘ` exactly.** Every set bit `a` of `n`
-satisfies `a < n` (`lt_of_testBit_true`), so ranging `a` over `N = n` sees every set bit of `n`. -/
+
 theorem testBit_orUpTo_self (n m k : ℕ) :
     (orUpTo n m n).testBit k = true ↔ ∃ a, a ≤ k ∧ n.testBit a = true ∧ m.testBit (k - a) = true := by
   rw [testBit_orUpTo]
@@ -1101,7 +1018,7 @@ theorem plusIdx_testBit (n m k : ℕ) :
 end
 
 section
-/-- **`plusIdx`'s excluded set is the Minkowski sum `Eₙ + Eₘ`.** -/
+
 theorem compl_nbhd_plusIdx (n m : ℕ) : (nbhd (plusIdx n m))ᶜ = (nbhd n)ᶜ +ˢ (nbhd m)ᶜ := by
   rw [compl_nbhd, compl_nbhd, compl_nbhd]
   ext k
@@ -1113,8 +1030,7 @@ theorem compl_nbhd_plusIdx (n m : ℕ) : (nbhd (plusIdx n m))ᶜ = (nbhd n)ᶜ +
 end
 
 section
-/-- `plusMap`'s neighbourhood relation on indices: `nbhd n ∪ nbhd m` relates to `nbhd k` iff
-`nbhd (plusIdx n m) ⊆ nbhd k`. -/
+
 theorem plusMap_rel_iff (n m k : ℕ) :
     plusMap.rel (prodNbhd (nbhd n) (nbhd m)) (nbhd k) ↔ nbhd (plusIdx n m) ⊆ nbhd k := by
   rw [nbhd_subset_iff_compl_subset_compl, compl_nbhd_plusIdx]
@@ -1127,8 +1043,7 @@ theorem plusMap_rel_iff (n m k : ℕ) :
 end
 
 section
-/-- **`λx,y. x+y` is computable.** Reduces to `PNpres.incl_computable` against the primitive
-recursive reindexing `plusIdx`. -/
+
 theorem plusMap_isComputable :
     ComputableMap (prodPresentation PNpres PNpres) PNpres plusMap := by
   constructor
@@ -1164,10 +1079,7 @@ theorem unnum2_spec (v : ℕ) : unnum2 v = (unnum v).2 := by
 end
 
 section
-/-- **The innermost list-check is recursively decidable.** Reindexes `bForallList` along
-`untagList` to get `∀i ∈ decodeList (untagList c), bitAt m i = 1` as a function of `(c,m)`, packed
-`(c,(j,m))`-style (`j` is a dummy free parameter here, along for the ride to match `gMap`'s later
-packing). -/
+
 theorem untagList_bitAt_isComputable :
     RecDecidable (fun w : ℕ => ∀ i ∈ decodeList (untagList w.unpair.1), bitAt w.unpair.2.unpair.2 i = 1) :=
   RecDecidable.of_iff (fun w => by simp only [unpair_pair_fst, unpair_pair_snd])
@@ -1191,8 +1103,7 @@ theorem untagRef_zero_case {c : ℕ} (h : (unnum c).1 = 0) :
 end
 
 section
-/-- **`untagRef` is a genuine right-inverse of `tag`.** Strong induction on `c`, mirroring
-`tag_surjective`. -/
+
 theorem tag_untagRef (c : ℕ) : tag (untagRef c).1 (untagRef c).2 = c := by
   induction c using Nat.strong_induction_on with
   | _ c ih =>
@@ -1248,10 +1159,7 @@ theorem untagStep_of_done_iterate (w : ℕ) (h : w.unpair.2.unpair.1 = 1) :
 end
 
 section
-/-- **Main invariant.** Given enough fuel (`c ≤ fuel`), `fuel + 1` iterations of `untagStep` from a
-fresh `code = c` state (arbitrary carried `r`, `v`) freeze with `revAcc` holding `(untagRef c).1`
-consed onto `r` (i.e. `reverse (untagRef c).1 ++ decodeList r`, matching `appendCode`'s convention)
-and `val` holding `(untagRef c).2`. -/
+
 theorem untagStep_iter_spec : ∀ c, ∀ fuel r v : ℕ, c ≤ fuel →
     untagStep^[fuel + 1] (Nat.pair c (Nat.pair 0 (Nat.pair r v))) =
       Nat.pair (untagRef c).2 (Nat.pair 1
@@ -1303,8 +1211,7 @@ theorem untagState_spec (c : ℕ) :
 end
 
 section
-/-- **`decodeList (untagList c) = (untagRef c).1`.** The `appendCode`-reversal in `untagList`
-undoes the reversal built up by `untagStep`'s accumulator. -/
+
 theorem decodeList_untagList (c : ℕ) : decodeList (untagList c) = (untagRef c).1 := by
   unfold untagList
   rw [decodeList_appendCode, decodeList_zero, List.append_nil]
@@ -1326,8 +1233,7 @@ theorem decodeList_untagList (c : ℕ) : decodeList (untagList c) = (untagRef c)
 end
 
 section
-/-- **`(c, j, m) ↦ untagVal c = j ∧ ∀i ∈ decodeList (untagList c), m.testBit i`.** Recursively
-decidable, packed `(c,(j,m))`-style. -/
+
 theorem untagVal_and_isComputable :
     RecDecidable (fun w : ℕ => untagVal w.unpair.1 = w.unpair.2.unpair.1 ∧
       ∀ i ∈ decodeList (untagList w.unpair.1), bitAt w.unpair.2.unpair.2 i = 1) :=
@@ -1336,22 +1242,19 @@ theorem untagVal_and_isComputable :
 end
 
 section
-/-- **`untagVal c = (untagRef c).2`.** -/
+
 theorem untagVal_spec (c : ℕ) : untagVal c = (untagRef c).2 := by
   unfold untagVal; rw [untagState_spec]; simp only [unpair_pair_snd]
 end
 
 section
-/-- **`untagList`/`untagVal` genuinely decode `tag`.** -/
+
 theorem tag_untagList_untagVal (c : ℕ) : tag (decodeList (untagList c)) (untagVal c) = c := by
   rw [decodeList_untagList, untagVal_spec]; exact tag_untagRef c
 end
 
 section
-/-- **`Fun` membership, decoded.** `Fun`'s defining existential over lists reduces to a bounded
-existential over the finite excluded set `Eₙ`: given `c ∈ Eₙ`, `tag`'s injectivity forces the
-witness list `ns` to be *exactly* `decodeList (untagList c)`, so testing `(∀n∈ns, n∈Eₘ) ∧ tag ns j
-∈ Eₙ` reduces to testing `c` itself against `untagVal`/`untagList`. -/
+
 theorem mem_Fun_compl_nbhd_iff (n m j : ℕ) :
     j ∈ Fun (nbhd n)ᶜ (nbhd m)ᶜ ↔
       ∃ c ∈ decodeList (bitsCode n n), untagVal c = j ∧
@@ -1371,8 +1274,7 @@ theorem mem_Fun_compl_nbhd_iff (n m j : ℕ) :
 end
 
 section
-/-- **Bounded-quantifier reformulation** of `mem_Fun_compl_nbhd_iff`, avoiding `decodeList`/
-`bitsCode` for the outer existential (feeding directly into `RecDecidable.bExists`). -/
+
 theorem mem_Fun_compl_nbhd_iff' (n m j : ℕ) :
     j ∈ Fun (nbhd n)ᶜ (nbhd m)ᶜ ↔
       ∃ c, c < n ∧ n.testBit c = true ∧ untagVal c = j ∧
@@ -1387,8 +1289,7 @@ theorem mem_Fun_compl_nbhd_iff' (n m j : ℕ) :
 end
 
 section
-/-- **`j ∈ Fun (nbhd n)ᶜ (nbhd m)ᶜ` is recursively decidable, jointly in `(n,j,m)`.** Combines
-`mem_Fun_compl_nbhd_iff'` (a bounded `∃c < n`) with `RecDecidable.bExists`, packed `(n,(j,m))`-style. -/
+
 theorem mem_Fun_compl_nbhd_isComputable :
     RecDecidable (fun w : ℕ =>
       w.unpair.2.unpair.1 ∈ Fun (nbhd w.unpair.1)ᶜ (nbhd w.unpair.2.unpair.2)ᶜ) := by
@@ -1408,11 +1309,7 @@ theorem mem_Fun_compl_nbhd_isComputable :
 end
 
 section
-/-- **`GraphIdx` membership, decoded.** `tagOfBits n m = tag (decodeList (bitsCode n n)) m` is a
-*specific* choice of encoding for the pair `(Eₙ, m)`; since `tag` is injective and every code `c`
-decodes (via `untagList`/`untagVal`) to *some* `tag`-preimage, `c ∈ GraphIdx W` reduces to the
-primitive-recursive check `untagList c = bitsCode n n` (pinning down `n`, by injectivity of
-`decodeList`) together with `untagVal c` playing the role of `m`. -/
+
 theorem mem_GraphIdx_iff (W : Set (ApproximableMap PN PN)) (c : ℕ) :
     c ∈ GraphIdx W ↔ ∃ n m₀, untagList c = bitsCode n n ∧
       (∀ f ∈ W, f.rel (nbhd n) (nbhd m₀)) ∧ m₀.testBit (untagVal c) = true := by
@@ -1431,10 +1328,7 @@ theorem mem_GraphIdx_iff (W : Set (ApproximableMap PN PN)) (c : ℕ) :
 end
 
 section
-/-- **`j ∈ GraphIdx (Xenum … c)` is recursively enumerable, jointly in `(c, j)`.** Unfolds via
-`mem_GraphIdx_iff`/`forall_rel_iff_subset_step`/`Xenum_singleton` to `∃ n m₀, <primitive-recursive
-check> ∧ Xenum … c ⊆ Xenum … (pair (pair n m₀) 0 + 1) ∧ <bit test>` — a decidable body existentially
-quantified over the two witnesses `n, m₀` (`REPred.proj`, applied twice). -/
+
 theorem graphIdx_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf PNpres PNpres (decodeList c))
       : Set (ApproximableMap PN PN)).Nonempty) (hgNp : Nat.Primrec gN)
@@ -1449,7 +1343,7 @@ theorem graphIdx_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
       (Xenum PNpres PNpres gN a : Set (ApproximableMap PN PN)) ⊆ Xenum PNpres PNpres gN b) :=
     (funPresentation PNpres PNpres gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p hincl1 hincl1p heq1
       heq1p).incl_computable
-  -- packed `w = ⟨m₀, ⟨n, ⟨c, j⟩⟩⟩`; the base predicate is decidable in `w`.
+
   have hj : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.2.unpair.2) :=
     Nat.Primrec.right.comp (Nat.Primrec.right.comp Nat.Primrec.right)
   have hn : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
@@ -1515,11 +1409,7 @@ theorem graphIdx_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
 end
 
 section
-/-- **`graph` is computable (Exercise 7.23, dually to `gMap`).** Relative to *any* valid
-function-space presentation `funPresentation PNpres PNpres gN incl0 incl1 eq1 …`, `graphMap`'s
-neighbourhood relation reduces (via `graphMap_rel_iff`) to a bounded `∀ j < m`, r.e. by
-`graphIdx_isComputable`/`REPred.forall_mem_decodeList₂` (the bound enumerated by `bitsCode m m`,
-`mem_bitsCodeList`). -/
+
 theorem graphMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf PNpres PNpres (decodeList c))
       : Set (ApproximableMap PN PN)).Nonempty) (hgNp : Nat.Primrec gN)
@@ -1615,8 +1505,7 @@ theorem example_723 : ∀ (gN incl0 incl1 eq1 : Nat → Nat)
 end
 
 section
-/-- **The implication guarding a single bit of `nbhd k`'s excluded set is recursively decidable,
-jointly in `(j,n,m,k)`.** Packed `(j,((n,m),k))`-style. -/
+
 theorem testBit_imp_mem_Fun_isComputable :
     RecDecidable (fun w : ℕ => w.unpair.2.unpair.2.testBit w.unpair.1 = true →
       w.unpair.1 ∈ Fun (nbhd w.unpair.2.unpair.1.unpair.1)ᶜ (nbhd w.unpair.2.unpair.1.unpair.2)ᶜ) := by
@@ -1643,9 +1532,7 @@ theorem testBit_imp_mem_Fun_isComputable :
 end
 
 section
-/-- **`gMap` is computable.** The neighbourhood relation `gMap_rel_iff` reduces (via
-`compl_nbhd_subset_Fun_iff`) to a bounded `∀j < k`, primitive recursive by
-`testBit_imp_mem_Fun_isComputable`/`RecDecidable.bForall`. -/
+
 theorem gMap_isComputable :
     ComputableMap (prodPresentation PNpres PNpres) PNpres gMap := by
   constructor
@@ -1660,11 +1547,7 @@ theorem gMap_isComputable :
 end
 
 section
-/-- **`fun` is computable**, relative to *any* valid function-space presentation
-`funPresentation PNpres PNpres gN incl0 incl1 eq1 …` (Theorem 7.5's generic `curry_isComputable`,
-fed `gMap_isComputable`). Every such presentation exists (`funSpace_isEffectivelyGiven`); this
-result is stated generically over the witnessing deciders, exactly as `curry_isComputable` itself
-is, rather than committing to one concrete choice of `gN`/`incl0`/`incl1`/`eq1` for `PN`. -/
+
 theorem funMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf PNpres PNpres (decodeList c))
       : Set (ApproximableMap PN PN)).Nonempty) (hgNp : Nat.Primrec gN)

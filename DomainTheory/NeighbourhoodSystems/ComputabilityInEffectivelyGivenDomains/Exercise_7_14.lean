@@ -6,17 +6,13 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 @[expose] public section
 
 section
-/- concordance: source L4631 EXERCISE 7.14 primitive recursive witnesses -/
--- Exercise714/tFun.lean
+
 namespace DomainTheory.NeighbourhoodSystems.Exercise714
 
 open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
 
 variable {β : Type*}
 
-/-- The **running-intersection enumeration** of a computable element: `tFun Q r 0 = r 0` and
-`tFun Q r (i+1) = Q.inter (tFun Q r i) (r (i+1))`. As `i` grows it lists the meet of the first `i+1`
-members `Y_{r 0}, …, Y_{r i}` of the element, giving a *decreasing* chain of neighbourhoods. -/
 def tFun {W : NeighborhoodSystem β} (Q : ComputablePresentation W) (r : ℕ → ℕ) (n : ℕ) :
     ℕ :=
   Nat.rec (motive := fun _ => ℕ) (r 0) (fun y IH => Q.inter IH (r (y + 1))) n
@@ -29,19 +25,13 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise714
 open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
 
 section
-/-- **A non-empty recursively enumerable set is the range of a primitive recursive function.** This
-is the precise content of Scott's prose after Definition 7.2 (*"there is a primitive recursive `r`
-with `y = {Y_{r(i)}}`"*). Given a witness `a ∈ p` and the `{0,1}` decider `qc` of the relation `q`
-underlying `p` (`p n ↔ ∃ i, q ⟨i,n⟩`), the function `r w := selectFn (isOne (qc w)) w.2 a` enumerates
-`p`: on a code `w = ⟨i,n⟩` with `q ⟨i,n⟩` it returns `n`, otherwise it returns the fixed `a`. Its
-range is exactly `p` (the fall-back `a` covers the codes that do not witness anything — this is where
-non-emptiness is used). -/
+
 theorem repred_exists_primrec_range {p : ℕ → Prop} (hp : REPred p) {a : ℕ} (ha : p a) :
     ∃ r : ℕ → ℕ, Nat.Primrec r ∧ ∀ n, p n ↔ ∃ i, r i = n := by
   obtain ⟨q, ⟨qc, hqcp, hqcs⟩, hqe⟩ := hp
   refine ⟨fun w => selectFn (isOne (qc w)) w.unpair.2 a,
     primrec_selectFn (primrec_isOne.comp hqcp) Nat.Primrec.right (Nat.Primrec.const a), ?_⟩
-  -- Every value of the enumerator lies in `p`.
+
   have hrw_mem : ∀ w, p (selectFn (isOne (qc w)) w.unpair.2 a) := by
     intro w
     rcases (show isOne (qc w) = 0 ∨ isOne (qc w) = 1 by
@@ -65,15 +55,12 @@ theorem repred_exists_primrec_range {p : ℕ → Prop} (hp : REPred p) {a : ℕ}
 
 variable {β : Type*}
 
-
 theorem tFun_zero {W : NeighborhoodSystem β} (Q : ComputablePresentation W) (r : ℕ → ℕ) :
     tFun Q r 0 = r 0 := rfl
 
 private theorem tFun_succ {W : NeighborhoodSystem β} (Q : ComputablePresentation W) (r : ℕ → ℕ)
     (i : ℕ) : tFun Q r (i + 1) = Q.inter (tFun Q r i) (r (i + 1)) := rfl
 
-/-- The running-intersection enumeration is primitive recursive whenever `r` is (genuine primitive
-recursion with a counter-dependent step, via `Nat.Primrec.prec`). -/
 private theorem primrec_tFun {W : NeighborhoodSystem β} (Q : ComputablePresentation W) {r : ℕ → ℕ}
     (hr : Nat.Primrec r) : Nat.Primrec (tFun Q r) := by
   have hg : Nat.Primrec (fun w => Q.inter w.unpair.2.unpair.2 (r (w.unpair.2.unpair.1 + 1))) := by
@@ -88,34 +75,25 @@ private theorem primrec_tFun {W : NeighborhoodSystem β} (Q : ComputablePresenta
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
   rfl
 
-/-- **Exercise 7.14, Half 2 (Scott 1981, PRG-19).** Every computable element `y ∈ |ℰ|` can be
-written `y = ⋃ {↑Y_{t(i)} ∣ i ∈ ℕ}` with `t : ℕ → ℕ` primitive recursive and the approximations
-*decreasing*, `Y_{t(i+1)} ⊆ Y_{t(i)}`.
-
-The index set `{m ∣ Yₘ ∈ y}` is r.e. (`ComputableElement`) and non-empty (it contains the master
-`Δ`, by `y.master_mem`), so Half 1's `repred_exists_primrec_range` lists it as the range of a
-primitive recursive `r₀`. Running intersections (`tFun Q r₀`) turn this into a decreasing chain whose
-members are still in `y` (a filter is closed under `∩`) and still cofinal in `y` (each
-`Y_{t(i)} ⊆ Y_{r₀(i)}`), so the principal-filter union is unchanged. -/
 theorem computableElement_eq_decreasing_iUnion_principal {W : NeighborhoodSystem β}
     (Q : ComputablePresentation W) {y : W.Element} (hy : ComputableElement Q y) :
     ∃ t : ℕ → ℕ, Nat.Primrec t ∧
       (∀ i, Q.X (t (i + 1)) ⊆ Q.X (t i)) ∧
       (∀ Z, y.mem Z ↔ ∃ i, (W.principal (Q.mem_X (t i))).mem Z) := by
   have hy' : REPred (fun m => y.mem (Q.X m)) := hy.out
-  -- The index set is non-empty: it contains the master neighbourhood `Δ`.
+
   obtain ⟨m₀, hm₀⟩ := Q.surj W.master_mem
   have hwit : y.mem (Q.X m₀) := by rw [hm₀]; exact y.master_mem
   obtain ⟨r₀, hr₀, hr0_spec⟩ := repred_exists_primrec_range hy' hwit
-  -- Each enumerated index gives a member of `y`.
+
   have hr0_mem : ∀ i, y.mem (Q.X (r₀ i)) := fun i => (hr0_spec (r₀ i)).mpr ⟨i, rfl⟩
-  -- Consistency of a pair of members (witnessed by their meet, itself in `y`).
+
   have hcons : ∀ a c : ℕ, y.mem (Q.X a) → y.mem (Q.X c) →
       ∃ k, Q.X k ⊆ Q.X a ∩ Q.X c := by
     intro a c ha hc
     obtain ⟨k, hk⟩ := Q.surj (y.sub (y.inter_mem ha hc))
     exact ⟨k, hk.subset⟩
-  -- Every `tFun` value is a member of `y`.
+
   have ht_mem : ∀ i, y.mem (Q.X (tFun Q r₀ i)) := by
     intro i
     induction i with
@@ -124,13 +102,13 @@ theorem computableElement_eq_decreasing_iUnion_principal {W : NeighborhoodSystem
       have heq : Q.X (tFun Q r₀ (k + 1)) = Q.X (tFun Q r₀ k) ∩ Q.X (r₀ (k + 1)) :=
         Q.inter_spec (hcons (tFun Q r₀ k) (r₀ (k + 1)) ih (hr0_mem (k + 1)))
       rw [heq]; exact y.inter_mem ih (hr0_mem (k + 1))
-  -- The defining intersection equation for `tFun`.
+
   have ht_eq : ∀ i, Q.X (tFun Q r₀ (i + 1)) = Q.X (tFun Q r₀ i) ∩ Q.X (r₀ (i + 1)) := fun i =>
     Q.inter_spec (hcons (tFun Q r₀ i) (r₀ (i + 1)) (ht_mem i) (hr0_mem (i + 1)))
-  -- Decreasing: the next approximation is contained in the current one.
+
   have ht_dec : ∀ i, Q.X (tFun Q r₀ (i + 1)) ⊆ Q.X (tFun Q r₀ i) := by
     intro i; rw [ht_eq i]; exact Set.inter_subset_left
-  -- Each approximation is contained in the corresponding enumerated member.
+
   have ht_sub_r : ∀ i, Q.X (tFun Q r₀ i) ⊆ Q.X (r₀ i) := by
     intro i
     cases i with
@@ -177,9 +155,7 @@ theorem example_714.{u_1} : ∀ {β : Type u_1} {W : DomainTheory.NeighbourhoodS
 end
 
 section
-/-- **The range of a primitive recursive function is recursively enumerable.** The relation
-`r i = n` is recursively decidable (`RecDecidable.natEq`), and `∃ i, r i = n` is its projection, so
-it is r.e. by definition of `REPred`. -/
+
 theorem repred_range_primrec {r : ℕ → ℕ} (hr : Nat.Primrec r) :
     REPred (fun n => ∃ i, r i = n) := by
   refine ⟨fun t => r t.unpair.1 = t.unpair.2,
@@ -189,9 +165,7 @@ theorem repred_range_primrec {r : ℕ → ℕ} (hr : Nat.Primrec r) :
 end
 
 section
-/-- **A non-empty recursively enumerable relation is enumerated by a pair of primitive recursive
-functions** (Scott's `f = {(X_{s(i)}, Y_{r(i)}) ∣ i ∈ ℕ}`). Apply `repred_exists_primrec_range` to
-the `Nat.pair`-coded relation and split the resulting range function into its two coordinates. -/
+
 theorem repred₂_exists_primrec_enum {p : ℕ → ℕ → Prop} (hp : REPred₂ p) {a b : ℕ}
     (hab : p a b) :
     ∃ s r : ℕ → ℕ, Nat.Primrec s ∧ Nat.Primrec r ∧
@@ -226,11 +200,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- **Each product term `↓X ∩ ↓Y` is a `ℙ𝒟`-neighbourhood.** By `upSet_inter` it is `↓(X ∩ Y)`; if
-`{X, Y}` is consistent (`X ∩ Y ∈ 𝒟`) this is the down-set of a neighbourhood (`PDmem_upSet`),
-otherwise `↓(X ∩ Y) = ∅` (no `Z ∈ 𝒟` lies below `X ∩ Y`), the empty union (`PDmem_empty`). The
-`by_cases` on `V.mem (X ∩ Y)` is the lone `Classical` step (deciding membership in an arbitrary
-system). -/
 theorem PDmem_upSet_inter {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) :
     V.PDmem (V.upSet X ∩ V.upSet Y) := by
   rw [V.upSet_inter]
@@ -243,7 +212,6 @@ theorem PDmem_upSet_inter {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) :
       exact h (V.inter_mem hX hY hZmem hZsub)
     rw [hempty]; exact V.PDmem_empty
 
-/-- Cons law for the finite union of down-sets: `⋃_{X ∈ Y::L} ↓X = ↓Y ∪ ⋃_{X ∈ L} ↓X`. -/
 theorem upSetUnion_cons (Y : Set α) (L : List (Set α)) :
     (⋃ X ∈ (Y :: L), V.upSet X) = V.upSet Y ∪ ⋃ X ∈ L, V.upSet X := by
   ext z
@@ -257,14 +225,11 @@ theorem upSetUnion_cons (Y : Set α) (L : List (Set α)) :
     · exact ⟨Y, List.mem_cons.mpr (Or.inl rfl), hz⟩
     · exact ⟨X, List.mem_cons.mpr (Or.inr hX), hz⟩
 
-/-- The finite union `⋃_{X ∈ []} ↓X` is empty. -/
 theorem upSetUnion_nil : (⋃ X ∈ ([] : List (Set α)), V.upSet X) = ∅ := by
   ext z
   rw [V.mem_PDunion]
   simp only [List.not_mem_nil, false_and, exists_false, Set.mem_empty_iff_false]
 
-/-- `↓X ∩ (⋃_{Y ∈ L} ↓Y) ∈ ℙ𝒟`: distribute `∩` over the finite union and use `PDmem_upSet_inter`
-term by term. -/
 theorem PDmem_upSet_inter_biUnion {X : Set α} (hX : V.mem X) :
     ∀ (L : List (Set α)), (∀ Y ∈ L, V.mem Y) → V.PDmem (V.upSet X ∩ ⋃ Y ∈ L, V.upSet Y) := by
   intro L
@@ -279,7 +244,6 @@ theorem PDmem_upSet_inter_biUnion {X : Set α} (hX : V.mem X) :
     exact V.PDmem_union (V.PDmem_upSet_inter hX (hL Y (List.mem_cons.mpr (Or.inl rfl))))
       (ih (fun Z hZ => hL Z (List.mem_cons.mpr (Or.inr hZ))))
 
-/-- `(⋃_{X ∈ L₁} ↓X) ∩ W₂ ∈ ℙ𝒟` for any `ℙ𝒟`-neighbourhood `W₂` (induction on `L₁`). -/
 theorem PDmem_biUnion_inter :
     ∀ (L₁ : List (Set α)), (∀ X ∈ L₁, V.mem X) → ∀ {W₂ : Set (Set α)}, V.PDmem W₂ →
       V.PDmem ((⋃ X ∈ L₁, V.upSet X) ∩ W₂) := by
@@ -296,7 +260,6 @@ theorem PDmem_biUnion_inter :
     obtain ⟨L₂, hL₂, rfl⟩ := hW₂
     exact V.PDmem_upSet_inter_biUnion (hL X (List.mem_cons.mpr (Or.inl rfl))) L₂ hL₂
 
-/-- **`ℙ𝒟` is closed under binary intersection.** (The content of Part A's condition (ii).) -/
 theorem PDmem_inter {W₁ W₂ : Set (Set α)} (h₁ : V.PDmem W₁) (h₂ : V.PDmem W₂) :
     V.PDmem (W₁ ∩ W₂) := by
   obtain ⟨L₁, hL₁, rfl⟩ := h₁

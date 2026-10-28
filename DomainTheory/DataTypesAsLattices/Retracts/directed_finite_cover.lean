@@ -7,9 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem directed_finite_cover {A : Set (Fixpoints f)}
     (hA : DirectedSet A) {t : Pomega} (ht : t.Finite)

@@ -5,11 +5,9 @@ public import Mathlib.Data.Nat.Bitwise
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)

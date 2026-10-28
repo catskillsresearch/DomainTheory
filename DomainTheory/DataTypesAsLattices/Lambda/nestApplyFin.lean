@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Iterated application of a nested-graph representative. -/
 def nestApplyFin (u : Pomega) : ∀ {n : ℕ}, (Fin n → Pomega) → Pomega
   | 0, _ => u
   | _n + 1, xs => nestApplyFin (funOf u (xs 0)) (Fin.tail xs)

@@ -12,7 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (2.17).** `x ∩ y = Y(λf λx λy. x ⊃ (y ⊃ 0, ⊥), f(x−1)(y−1)+1)(x)(y)`. -/
 theorem eq_2_17 (x y : Pomega) :
     funOf (funOf interC x) y = x ∩ y := by
   have hmem : ∀ n x y, n ∈ funOf (funOf interC x) y ↔ n ∈ x ∩ y := by
@@ -42,7 +41,6 @@ theorem eq_2_17 (x y : Pomega) :
 
 namespace eq_2_17
 
-/-- **Scott 1976, (2.17), fundamental equation.** -/
 theorem step (x y : Pomega) :
     x ∩ y =
       condSet x (condSet y (ofNat 0) botElem)

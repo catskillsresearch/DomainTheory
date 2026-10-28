@@ -12,9 +12,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem union_right_isScottContinuous (x : Pomega) {f : Pomega → Pomega}
     (hf : IsScottContinuous f) :

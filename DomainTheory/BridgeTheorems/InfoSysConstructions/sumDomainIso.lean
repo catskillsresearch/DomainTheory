@@ -35,7 +35,6 @@ namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
-/-- **Separated-sum domain iso (1982).** `|A + B| ≃o WithBot (|A| ⊕ |B|)`. Classical. -/
 noncomputable def sumDomainIso :
     WithBot (A.Element ⊕ B.Element) ≃o (sumSystem A B).Element where
   toFun := assembleSum A B

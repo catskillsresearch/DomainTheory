@@ -7,11 +7,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_16
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (5.17).** `V(a)` is idempotent. -/
 theorem eq_5_17 (a x : Pomega) : Vapply a (Vapply a x) = Vapply a x := by
   apply subset_antisymm
   · intro k hk y hy

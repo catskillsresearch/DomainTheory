@@ -26,5 +26,4 @@ structure IsComputableSplit {α γ : Type*} {V : NeighborhoodSystem α} {W : Nei
   negIdx_spec : ∀ n m k, (split (P.X n) (Q.X m) (P.X k)).2 ≠ ∅ →
     (split (P.X n) (Q.X m) (P.X k)).2 = Q.X (negIdx n m k)
 
-
 end DomainTheory.NeighbourhoodSystems

@@ -12,7 +12,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.f
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.sndMap_pairElements
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -23,7 +22,6 @@ open ApproximableMap
 
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
-
 
 theorem pairMap_toElement_pairElements
     {X : InfoSys α} {Y : InfoSys β} {Z : InfoSys γ}

@@ -30,23 +30,17 @@ open DomainTheory.InformationSystems.InfoSys
 open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 
-
-/-- `|T| ≃o` filters of basic opens `[u]`. -/
 noncomputable abbrev sexNeighborhoodIso :
     SexSys.Element ≃o (InfoSysToNeighborhood.toNeighborhoodSystem SexSys).Element :=
   InfoSysToNeighborhood.domainOrderIso SexSys
 
-/-- `|T| ≃o Ideal (FiniteElement T)`. -/
 noncomputable abbrev sexIdealIso :
     SexSys.Element ≃o Ideal (InfoSysToIdealCompletion.FiniteElement SexSys) :=
   InfoSysToIdealCompletion.domainOrderIso SexSys
 
-/-- Neighbourhood filters ≃ ideals of finite elements (constructive triangle). -/
 noncomputable abbrev sexNeighborhoodIdealIso :=
   neighborhood_ideal_iso SexSys
 
-
-/-- Identity approximable map on `T`, as a Scott-continuous endomap. -/
 noncomputable abbrev sexIdScottContinuous : ScottContinuous SexSys SexSys :=
   (approximableMap_scottContinuous_equiv SexSys SexSys) (idMap SexSys)
 end DomainTheory.BridgeTheorems

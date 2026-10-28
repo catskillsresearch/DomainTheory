@@ -8,9 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.openR_app
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem openR_expansive (u : Pomega) : u ⊆ funOf openR u := by
   intro k hk

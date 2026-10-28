@@ -22,7 +22,6 @@ namespace InfoSys
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Forget strict tokens to ordinary function-space tokens. -/
 def toFunFinset (w : Finset (StrictFunToken A B)) : Finset (FunToken A B) :=
   ⟨Multiset.map (Subtype.val : StrictFunToken A B → FunToken A B) w.1,
     (Multiset.nodup_map_iff_of_injective Subtype.val_injective).2 w.nodup⟩
@@ -81,6 +80,5 @@ theorem toFunFinset.subset {s w : Finset (StrictFunToken A B)} (h : s ⊆ w) :
   exact (mem_toFunFinset A B).2 ⟨q, h hq, rfl⟩
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

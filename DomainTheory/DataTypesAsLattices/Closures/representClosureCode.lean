@@ -16,7 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The `Pω` code of the representing closure operation. -/
 def representClosureCode {α : Type u} [CompleteLattice α]
     (D : CountablyAlgebraic α) : Pomega :=
   graph (representClosure D)

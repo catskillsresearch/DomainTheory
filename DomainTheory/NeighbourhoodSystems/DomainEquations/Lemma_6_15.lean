@@ -11,10 +11,7 @@ section
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 section ProjectionPair
 variable (i : ApproximableMap D E) (j : ApproximableMap E D)
-/- concordance: source L3957 LEMMA 6.15 subdomains from projection pairs -/
-/-- **Lemma 6.15 (Scott 1981, PRG-19).** A projection pair `i : D → E`, `j : E → D` with
-`j ∘ i = I_D` and `i ∘ j ⊆ I_E` exhibits `D` as a subdomain of `E`: `D ⊴ E`. This is the converse
-of Proposition 6.12 (`Subsystem.projectionPair`). -/
+
 theorem trianglelefteq_of_projectionPair (hji : j.comp i = idMap D)
     (hij : i.comp j ≤ idMap E) : D ⊴ E :=
   ⟨Dprime i j, Dprime_subsystem i j, ⟨dprimeEquiv i j hji hij⟩⟩
@@ -51,16 +48,14 @@ section
 variable {α : Type*}
 variable {D E : NeighborhoodSystem α}
 
-/-- **A projection pair (Definition 6.13 vocabulary).** Bundles Scott's `i, j` together with the two
-laws, ready for reuse in monotone/continuous-on-domains functors and the existence Theorem 6.14. -/
 structure ProjectionPair (D E : NeighborhoodSystem α) where
-  /-- The injection `i : D → E`. -/
+
   inj : ApproximableMap D E
-  /-- The projection `j : E → D`. -/
+
   proj : ApproximableMap E D
-  /-- `j ∘ i = I_D`. -/
+
   proj_comp_inj : proj.comp inj = idMap D
-  /-- `i ∘ j ⊆ I_E`. -/
+
   inj_comp_proj_le : inj.comp proj ≤ idMap E
 end
 
@@ -74,9 +69,6 @@ namespace Subsystem
 
 variable {D E : NeighborhoodSystem α}
 
-/-- **The injection `i : D → E` of Proposition 6.12.** As a neighbourhood relation,
-`X i Y ↔ X ∈ D ∧ Y ∈ E ∧ X ⊆ Y`. Element-wise (see `toElementMap_inj`) it is Scott's
-`i(x) = {Y ∈ E ∣ ∃ X ∈ x, X ⊆ Y}`. -/
 def inj (h : D ◁ E) : ApproximableMap D E where
   rel X Y := D.mem X ∧ E.mem Y ∧ X ⊆ Y
   rel_dom hr := hr.1
@@ -93,10 +85,6 @@ def inj (h : D ◁ E) : ApproximableMap D E where
 @[simp] theorem inj_rel (h : D ◁ E) {X Y : Set α} :
     (h.inj).rel X Y ↔ D.mem X ∧ E.mem Y ∧ X ⊆ Y := Iff.rfl
 
-/-- **The projection `j : E → D` of Proposition 6.12.** As a neighbourhood relation,
-`Y j X ↔ Y ∈ E ∧ X ∈ D ∧ Y ⊆ X`. Element-wise (see `toElementMap_proj`) it is Scott's
-`j(y) = y ∩ D`. The `inter_right` law is exactly where Definition 6.10's consistency clause
-(`inter_closed`) is used. -/
 def proj (h : D ◁ E) : ApproximableMap E D where
   rel Y X := E.mem Y ∧ D.mem X ∧ Y ⊆ X
   rel_dom hr := hr.1
@@ -114,18 +102,11 @@ def proj (h : D ◁ E) : ApproximableMap E D where
 @[simp] theorem proj_rel (h : D ◁ E) {Y X : Set α} :
     (h.proj).rel Y X ↔ E.mem Y ∧ D.mem X ∧ Y ⊆ X := Iff.rfl
 
-/-- **Proposition 6.12, second law: `i ∘ j ⊆ I_E`.** A round trip `Y ⊆ X ⊆ Y'` through a common
-`D`-neighbourhood `X` is in particular `Y ⊆ Y'` on `E`. The reverse inclusion fails (not every
-consistent `E`-pair factors through `D`), so this is an inclusion of relations, not an equality. -/
 theorem inj_comp_proj_le (h : D ◁ E) : h.inj.comp h.proj ≤ idMap E := by
   intro Y Y' hr
   obtain ⟨X, ⟨hEY, _, hYX⟩, _, hEY', hXY'⟩ := hr
   exact ⟨hEY, hEY', hYX.trans hXY'⟩
 
-/-- **Proposition 6.12, first law: `j ∘ i = I_D`.** Each side relates `X` and `Z` exactly when
-`X, Z ∈ D` and `X ⊆ Z`: a round trip `X ⊆ Y ⊆ Z` through an `E`-neighbourhood `Y` collapses to
-`X ⊆ Z` (forward), and `X ⊆ Z` factors through `Y = Z` (backward). Proved relationally, so
-**choice-free**. -/
 theorem proj_comp_inj (h : D ◁ E) : h.proj.comp h.inj = idMap D := by
   apply ApproximableMap.ext
   intro X Z
@@ -193,16 +174,12 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem.ProjectionPair
 
-/-- The set `{x ∈ |𝒟| ∣ g(x) ⊑ y}` of the first formula. By the Galois connection it is the
-down-set `{x ∣ x ⊑ h(y)}` of `h(y)`. -/
 def lowerSet (P : ProjectionPair D E) (y : E.Element) : Set D.Element :=
   {x | P.inj.toElementMap x ≤ y}
 
 @[simp] theorem mem_lowerSet (P : ProjectionPair D E) {y : E.Element} {x : D.Element} :
     x ∈ P.lowerSet y ↔ P.inj.toElementMap x ≤ y := Iff.rfl
 
-/-- The set `{y ∈ |ℰ| ∣ x ⊑ h(y)}` of the second formula. By the Galois connection it is the
-up-set `{y ∣ g(x) ⊑ y}` of `g(x)`. -/
 def upperSet (P : ProjectionPair D E) (x : D.Element) : Set E.Element :=
   {y | x ≤ P.proj.toElementMap y}
 

@@ -29,7 +29,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.s
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -42,11 +41,8 @@ variable {α : Type u} {β : Type v} {γ : Type w}
   [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
-
 open ApproximableMap
 
-
-/-- **Theorem 7.2.** `apply(g, y) = g(y)`. -/
 theorem applyMap_toElement (g : (functionSystem B C).Element) (y : B.Element) :
     (applyMap (B := B) (C := C)).toElement
       (pairElements (functionSystem B C) B g y) =
@@ -92,7 +88,7 @@ theorem applyMap_toElement (g : (functionSystem B C).Element) (y : B.Element) :
         hv
     refine ⟨s, hs_sub, ⟨hsCon, C.con_sing Z, ?_⟩⟩
     refine ⟨?_, {p}, ?_, ?_, ?_⟩
-    · -- FunCon of fst s from g.consistent
+    ·
       intro t ht hin
       have ht_sub : ↑t ⊆ g.carrier := by
         intro q hq
@@ -100,25 +96,25 @@ theorem applyMap_toElement (g : (functionSystem B C).Element) (y : B.Element) :
       exact (funCon_of_approxMap B C (element_toApproxMap B C g) t
         (fun q hq => ⟨q.property.1, q.property.2, by
           simpa [mkFunToken.eq] using ht_sub (Finset.mem_coe.2 hq)⟩)) t (Finset.Subset.refl _) hin
-    · -- {p} ⊆ fst s
+    ·
       intro q hq
       have : q = p := Finset.mem_singleton.mp hq
       subst this
       rw [show s = liftLeft (functionSystem B C) B {p} ∪' liftRight (functionSystem B C) B v from rfl]
       rw [fstFinset.funion, fstFinset_liftLeft]
       exact subset_funion_left _ _ (Finset.mem_singleton_self _)
-    · -- snd s ⊢ v = p.input
+    ·
       intro q hq
       have : q = p := Finset.mem_singleton.mp hq
       subst this
       intro b hb
       have hb' : b ∈ v := hb
-      -- snd s = snd(liftLeft) ∪' v entails v
+
       have : b ∈ sndFinset (functionSystem B C) B s := by
         rw [sndFinset_liftPair]
         exact subset_funion_right _ _ hb'
       exact B.ent_refl hsCon.2 this
-    · -- output {Z} ⊢ {Z}
+    ·
       rw [funOutputUnion.singleton]
       exact proposition_2_3_iii C (C.con_sing Z)
 

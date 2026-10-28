@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.23).** Currying combinator. -/
 def curryC : Pomega :=
   graph (fun u => graph (fun x => graph (fun y => funOf u (pairSeq x y))))
 

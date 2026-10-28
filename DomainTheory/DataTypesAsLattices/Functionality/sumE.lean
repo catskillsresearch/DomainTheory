@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (7.8).** Sum of restricted equivalences. -/
 def sumE (A B : RestrictedEquiv) : RestrictedEquiv where
   rel := fun u v =>
     (u = pairElem (ofNat 0) (funOf u (ofNat 1)) ∧

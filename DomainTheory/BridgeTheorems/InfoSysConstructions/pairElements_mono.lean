@@ -7,7 +7,6 @@ public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems

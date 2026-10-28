@@ -16,9 +16,6 @@ open Topology Set
 
 universe u
 
-/-- **Scott 1972, Theorem 2.12.** A `T₀`-space is injective iff it is (homeomorphic to) a
-continuous lattice under its Scott topology. The forward direction is Proposition 2.11; the
-backward direction is `theorem_2_12.backward`. -/
 theorem theorem_2_12 {D : Type u} [TopologicalSpace D] [T0Space D] :
     InjectiveSpace.{u, u} D ↔
       ∃ (E : Type u) (inst : CompleteLattice E),

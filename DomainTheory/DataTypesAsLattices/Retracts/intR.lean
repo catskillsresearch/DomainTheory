@@ -20,7 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.7).** Integer retract as the least fixed point. -/
 def intR : Pomega := fix intF
 
 namespace intR

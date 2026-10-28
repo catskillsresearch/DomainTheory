@@ -17,7 +17,6 @@ open InfoSys
 
 open ApproximableMap
 
-/-- (1) `I_P ⊆ r` (reflexivity of the induced entailment). -/
 def ReflApprox (r : ApproximableMap P P) : Prop :=
   ∀ {u v : Finset ℕ}, (idMap P).rel u v → r.rel u v
 

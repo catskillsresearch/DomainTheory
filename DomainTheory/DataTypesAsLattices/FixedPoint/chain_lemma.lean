@@ -11,11 +11,8 @@ public import DomainTheory.DataTypesAsLattices.FixedPoint.exists_index_of_finset
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Appendix lemma.** Continuous maps preserve ascending
-countable unions. -/
 theorem chain_lemma {f : Pomega → Pomega} (hf : IsScottContinuous f)
     (xs : ℕ → Pomega) (hmono : ∀ n, xs n ⊆ xs (n + 1)) :
     f (⋃ n, xs n) = ⋃ n, f (xs n) := by

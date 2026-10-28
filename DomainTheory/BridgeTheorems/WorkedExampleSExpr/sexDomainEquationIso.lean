@@ -31,11 +31,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 
 open Order
 
-/--
-**S-expression fixed-point equation.** `|T| ≃o |A + (T × T)|`, the order
-isomorphism of `SexSys.Element` with `SexRhs.Element` induced by
-`treeUnfold` / `treeFold` (`treeDomainIso`).
--/
 noncomputable def sexDomainEquationIso :
     SexSys.Element ≃o SexRhs.Element :=
   treeDomainIso lowerBoundSystem

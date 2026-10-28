@@ -9,7 +9,6 @@ public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
 public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -30,7 +29,6 @@ universe u
 
 variable {D : Type u} [CompleteLattice D] [DecidableEq D]
 
-/-- Decidable coding of the `↟`-neighbourhood system: tokens are elements of `D`. -/
 def wayBelowNbhdBasis : NbhdBasis D D where
   system := toNeighborhoodSystem
   nbhd := wayBelowUp

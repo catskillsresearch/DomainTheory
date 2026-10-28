@@ -15,7 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_mor
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The order isomorphism in Scott's representation theorem. -/
 def representationOrderIso {α : Type u} [CompleteLattice α]
     (D : CountablyAlgebraic α) :
     α ≃o Fixpoints (funOf (representClosureCode D)) where

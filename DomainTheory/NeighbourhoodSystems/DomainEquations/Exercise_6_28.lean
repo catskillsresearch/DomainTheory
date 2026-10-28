@@ -10,18 +10,12 @@ open NeighborhoodSystem ApproximableMap
 section
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
-/- concordance: source L4207 EXERCISE 6.28 finite embeddings cancel -/
-/-- **Exercise 6.28 (core).** If `|D|` and `|E|` are finite and `D ⊴ E ⊴ D`, then `D ≅ᴰ E`.
-The two `⊴`s give mutual order embeddings of the (finite) element domains, and
-`orderIso_of_embeddings` upgrades them to an isomorphism. -/
 theorem isomorphic_of_trianglelefteq_both [Finite D.Element] [Finite E.Element]
     (h₁ : D ⊴ E) (h₂ : E ⊴ D) : D ≅ᴰ E := by
   obtain ⟨f⟩ := h₁.elementEmbedding
   obtain ⟨g⟩ := h₂.elementEmbedding
   exact orderIso_of_embeddings f g
 
-/-- **Exercise 6.28 (Scott 1981, PRG-19; suggested by G. Plotkin).** If `𝒟` and `ℰ` are *finite*
-neighbourhood systems with `𝒟 ⊴ ℰ` and `ℰ ⊴ 𝒟`, then `𝒟 ≅ ℰ`. -/
 theorem isomorphic_of_finite_system (hD : D.IsFinite) (hE : E.IsFinite)
     (h₁ : D ⊴ E) (h₂ : E ⊴ D) : D ≅ᴰ E := by
   have := finite_element_of_isFinite hD
@@ -72,15 +66,12 @@ namespace Subsystem
 
 variable {D E : NeighborhoodSystem α}
 
-/-- **Proposition 6.12 (Scott 1981, PRG-19).** Every subdomain relation `D ◁ E` gives rise to a
-projection pair `i : D → E`, `j : E → D` with `j ∘ i = I_D` and `i ∘ j ⊆ I_E`. -/
 def projectionPair (h : D ◁ E) : ProjectionPair D E where
   inj := h.inj
   proj := h.proj
   proj_comp_inj := h.proj_comp_inj
   inj_comp_proj_le := h.inj_comp_proj_le
 
-/-- **Element-wise description of `i` (Scott's equation).** `i(x) = {Y ∈ E ∣ ∃ X ∈ x, X ⊆ Y}`. -/
 theorem toElementMap_inj (h : D ◁ E) (x : D.Element) {Y : Set α} :
     (h.inj.toElementMap x).mem Y ↔ E.mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y := by
   constructor
@@ -89,8 +80,6 @@ theorem toElementMap_inj (h : D ◁ E) (x : D.Element) {Y : Set α} :
   · rintro ⟨hY, X, hX, hXY⟩
     exact ⟨X, hX, x.sub hX, hY, hXY⟩
 
-/-- **Element-wise description of `j` (Scott's equation).** `j(y) = y ∩ D`: the neighbourhoods of
-`j(y)` are exactly the `D`-neighbourhoods that already belong to `y`. -/
 theorem toElementMap_proj (h : D ◁ E) (y : E.Element) {X : Set α} :
     (h.proj.toElementMap y).mem X ↔ y.mem X ∧ D.mem X := by
   constructor
@@ -127,4 +116,3 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 end
-

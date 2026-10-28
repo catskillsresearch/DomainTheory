@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.approx
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,7 +15,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Finite approximations below `x` really do approximate `x`. -/
 theorem closure_le_element (x : sys.Element) {u : Finset α} (hu : u ∈ sys.Con)
     (hsub : ↑u ⊆ x.carrier) : sys.closure u hu ≤ x := by
   intro a ha

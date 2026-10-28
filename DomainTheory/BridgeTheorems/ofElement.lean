@@ -25,7 +25,6 @@ namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)
 
-/-- InfoSys element → filter (upward closure of its coded neighbourhoods). -/
 def ofElement (e : B.toInfoSys.Element) : B.system.Element where
   mem X := B.system.mem X ∧ ∃ i ∈ e.carrier, B.nbhd i ⊆ X
   sub h := h.1

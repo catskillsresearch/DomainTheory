@@ -21,8 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The union of a coherent sequence lies in the range of the least fixed
-point retract. -/
 theorem inverseLimit_iUnion_typed {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a))

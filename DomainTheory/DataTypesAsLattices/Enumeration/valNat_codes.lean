@@ -164,7 +164,6 @@ namespace valNat
 private abbrev eq312 := _root_.DomainTheory.DataTypesAsLattices.eq_3_12
 private abbrev eq217 := _root_.DomainTheory.DataTypesAsLattices.eq_2_17
 
-
 theorem Ycode_eq : valNat Ycode = Ycomb :=
   (theorem_3_2.surjective Ycomb.combinatory).choose_spec
 

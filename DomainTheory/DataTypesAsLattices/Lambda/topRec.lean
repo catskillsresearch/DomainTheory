@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (2.16).** `⊤ = Y(λx. 0 ∪ (x + 1))`. -/
 def topRec (x : Pomega) : Pomega := ofNat 0 ∪ succSet x
 
 namespace topRec

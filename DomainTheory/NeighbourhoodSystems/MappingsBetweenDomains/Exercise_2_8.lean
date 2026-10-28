@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
 @[expose] public section
 
@@ -12,16 +11,8 @@ namespace ApproximableMap
 section
 variable {α β γ : Type*}
 
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
-/- concordance: source L769 EXERCISE 2.8 determined by finite elements -/
-/- concordance: source L767 EXERCISES — Lecture II exercises -/
-/-- **Exercise 2.8 (extension).** *Any* monotone function on finite elements comes from an
-approximable map. Here a "monotone function on finite elements" is a map `m` sending each
-neighbourhood `X` (a finite element `↑X`) to an element `m X hX : |𝒟₁|`, monotone in the sense
-`X' ⊆ X → m X hX ≤ m X' hX'` (i.e. `↑X ⊑ ↑X' ⟹ m(↑X) ⊑ m(↑X')`). The induced relation is
-`X f Y ↔ Y ∈ m(↑X)`. -/
 def ofMono (m : (X : Set α) → V₀.mem X → V₁.Element)
     (hmono : ∀ (X X' : Set α) (hX : V₀.mem X) (hX' : V₀.mem X'), X' ⊆ X → m X hX ≤ m X' hX') :
     ApproximableMap V₀ V₁ where
@@ -37,9 +28,6 @@ def ofMono (m : (X : Set α) → V₀.mem X → V₁.Element)
     have hle : m X hX ≤ m X' hX' := hmono X X' hX hX' hX'X
     exact ⟨hX', (m X' hX').up_mem (hle Y hY) hY' hYY'⟩
 
-/-- **Exercise 2.8 (uniqueness).** An approximable mapping is *uniquely determined by its elementwise
-effect on finite elements*: if `f(↑X) = g(↑X)` for every neighbourhood `X`, then `f = g`. (Off `𝒟₀`
-both relations are empty; on `𝒟₀` use `rel_iff_mem_principal`.) -/
 theorem eq_of_toElementMap_principal {f g : ApproximableMap V₀ V₁}
     (h : ∀ (X : Set α) (hX : V₀.mem X),
       f.toElementMap (V₀.principal hX) = g.toElementMap (V₀.principal hX)) : f = g := by
@@ -51,8 +39,6 @@ theorem eq_of_toElementMap_principal {f g : ApproximableMap V₀ V₁}
     · intro hr; exact absurd (f.rel_dom hr) hX
     · intro hr; exact absurd (g.rel_dom hr) hX
 
-/-- **Exercise 2.8 (extension, computed).** The map `ofMono m` realizes `m` on finite elements:
-`(ofMono m)(↑X) = m(↑X)`. -/
 theorem toElementMap_ofMono_principal
     (m : (X : Set α) → V₀.mem X → V₁.Element)
     (hmono : ∀ (X X' : Set α) (hX : V₀.mem X) (hX' : V₀.mem X'), X' ⊆ X → m X hX ≤ m X' hX')

@@ -16,7 +16,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.BotA
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.mem_closure_iff
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -24,7 +23,6 @@ open InfoSys
 open ApproximableMap
 
 namespace Factoid84
-
 
 theorem mem_botElement (x : ℕ) : x ∈ botElement.carrier ↔ x = 0 := by
   constructor

@@ -23,7 +23,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-/-- Carrier of the left copy extracted from a sum element. -/
 def sumLftCarrier (z : (sumSystem A B).Element) : Set α :=
   {x | SumToken.left x ∈ z.carrier}
 

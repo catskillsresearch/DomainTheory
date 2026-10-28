@@ -6,12 +6,10 @@ public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpac
 public import DomainTheory.ContinuousLattice.Constructions.Basic
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
 public import DomainTheory.ContinuousLattice.Constructions.isContinuousLattice_prop
 public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 

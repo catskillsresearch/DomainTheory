@@ -35,13 +35,11 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-/-- **Scott 1976, Theorem 7.2 (i).** `E_a` is the identity on the range of `a`. -/
+
 theorem theorem_7_2.i (a x y : Pomega) :
     (Ea a).rel x y ↔ typed x a ∧ typed y a ∧ x = y :=
   Iff.rfl
 
-/-- The spaces of `E_a` and of `{⟨x, y⟩ | a(x) = a(y)}` are isomorphic:
-classes of the kernel are represented uniquely by range elements. -/
 theorem theorem_7_2.i_iso {a : Pomega} (ha : Retract a) (x y : Pomega) :
     funOf a x = funOf a y ↔ (Ea a).rel (funOf a x) (funOf a y) := by
   constructor
@@ -71,8 +69,6 @@ theorem theorem_7_2.ii_of_typed {a b f : Pomega} (hf : typed f (arrowR a b)) :
   have hfx : typed (funOf f x) b := theorem_4_3.ii hf hx
   exact ⟨hfx, hfx, rfl⟩
 
-/-- **Scott 1976, Theorem 7.2 (ii).** Maps in `E_{a ∘→ b}` are graphs of
-maps from `a` to `b`, corresponding to `E_a → E_b`. -/
 theorem theorem_7_2.ii {a b : Pomega} (ha : Retract a) (hb : Retract b)
     (f g : Pomega) :
     (typed f (arrowR a b) → (arrowE (Ea a) (Ea b)).mem f) ∧
@@ -102,8 +98,6 @@ theorem theorem_7_2.ii {a b : Pomega} (ha : Retract a) (hb : Retract b)
     have hmem := theorem_7_2.ii_of_typed hf
     exact ⟨hmem.1, hmem.1, hmem.2.2⟩
 
-/-- **Scott 1976, Theorem 7.2 (iii).** `E_{a ⊗ b}` agrees with
-`E_a × E_b` on `pairSeq` elements. -/
 theorem theorem_7_2.iii (a b x y x' y' : Pomega) :
     (Ea (tensorR a b)).rel (pairSeq x y) (pairSeq x' y') ↔
       (prodE (Ea a) (Ea b)).rel (pairSeq x y) (pairSeq x' y') := by
@@ -127,8 +121,6 @@ theorem theorem_7_2.iii (a b x y x' y' : Pomega) :
       (typed_pairSeq_tensorR a b x' y').mpr ⟨hx', hy'⟩, ?_⟩
     rw [heqx, heqy]
 
-/-- **Scott 1976, Theorem 7.2 (iii).**
-The printed identity `E_{a ⊗ b} = E_a × E_b`, for arbitrary representatives. -/
 theorem theorem_7_2.iii_exact (a b u v : Pomega) :
     (Ea (tensorR a b)).rel u v ↔ (prodE (Ea a) (Ea b)).rel u v := by
   constructor
@@ -148,9 +140,6 @@ theorem theorem_7_2.iii_exact (a b u v : Pomega) :
     · exact theorem_4_4_typed.mpr ⟨hu, hx, hy⟩
     · exact theorem_4_4_typed.mpr ⟨hv, hx', hy'⟩
 
-/-- **Scott 1976, Theorem 7.2 (iv).**
-The exact identity
-`E_{a ⊕ b} = E_a + E_b ∪ {⟨⊥,⊥⟩, ⟨⊤,⊤⟩}`. -/
 theorem theorem_7_2.iv {a b : Pomega} (ha : Retract a) (hb : Retract b)
     (u v : Pomega) :
     (Ea (plusR a b)).rel u v ↔

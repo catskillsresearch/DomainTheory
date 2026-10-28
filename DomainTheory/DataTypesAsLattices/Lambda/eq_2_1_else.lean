@@ -7,9 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem eq_2_1_else (p : ℕ → Pomega) {x : Pomega}
     (hne : x ≠ botElem) (hsing : ∀ n, x ≠ ofNat n) :

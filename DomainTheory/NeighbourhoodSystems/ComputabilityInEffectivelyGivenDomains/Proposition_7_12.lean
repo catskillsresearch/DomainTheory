@@ -15,9 +15,6 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
 namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/- concordance: source L4563 PROPOSITION 7.12 finite sets are approximable -/
-/-- **Proposition 7.12 — monotonicity of `{·}` on principal inputs.** When `X' ⊆ X`, the join
-`{↑X'}` is blunter than `{↑X}` in `|ℙ𝒟|`. -/
 theorem PDsingleton_mono {X X' : Set α} (hX : V.mem X) (hX' : V.mem X') (hX'X : X' ⊆ X) :
     V.PDsingleton (V.principal hX) ≤ V.PDsingleton (V.principal hX') := by
   intro W hW
@@ -26,8 +23,6 @@ theorem PDsingleton_mono {X X' : Set α} (hX : V.mem X) (hX' : V.mem X') (hX'X :
   rw [mem_principal] at hYpr
   exact ⟨Y, ⟨hYpr.1, hX'X.trans hYpr.2⟩, hPD, hsub⟩
 
-/-- **Proposition 7.12 — the singleton approximable map `λ x. {x}`.** Built from Exercise 2.8's
-extension principle: on the finite element `↑X` the value is `{↑X}`. -/
 def PDsingletonApproxMap : ApproximableMap V V.PowerDomain :=
   ofMono (fun _X hX => V.PDsingleton (V.principal hX))
     (fun X X' hX hX' hX'X => @PDsingleton_mono α V X X' hX hX' hX'X)
@@ -39,7 +34,6 @@ def PDsingletonApproxMap : ApproximableMap V V.PowerDomain :=
   · intro ⟨_, h⟩; exact h
   · intro h; exact ⟨hX, h⟩
 
-/-- Meet of two `{·}`-values in `|ℙ𝒟|`. -/
 def PDsingletonMeet (a b : V.PowerDomain.Element) : V.PowerDomain.Element where
   mem W := a.mem W ∧ b.mem W
   sub h := a.sub h.1
@@ -50,7 +44,6 @@ def PDsingletonMeet (a b : V.PowerDomain.Element) : V.PowerDomain.Element where
 @[simp] theorem PDsingletonMeet_mem {a b : V.PowerDomain.Element} {W : Set (Set α)} :
     (V.PDsingletonMeet a b).mem W ↔ a.mem W ∧ b.mem W := Iff.rfl
 
-/-- **Proposition 7.12 — the binary join as a two-variable approximable map.** -/
 def PDfinJoinApproxMap₂ : ApproximableMap₂ V V V.PowerDomain where
   rel X Y W := (PDsingletonApproxMap (V := V)).rel X W ∧ (PDsingletonApproxMap (V := V)).rel Y W
   rel_dom₀ h := (PDsingletonApproxMap (V := V)).rel_dom h.1
@@ -64,7 +57,6 @@ def PDfinJoinApproxMap₂ : ApproximableMap₂ V V V.PowerDomain where
     ⟨(PDsingletonApproxMap (V := V)).mono h1 hXX' hWW' hX' hW',
       (PDsingletonApproxMap (V := V)).mono h2 hYY' hWW' hY' hW'⟩
 
-/-- **Proposition 7.12 — the binary join map on `D × D`.** -/
 def finJoinMap_prod : ApproximableMap (prod V V) V.PowerDomain := ofMap₂ (PDfinJoinApproxMap₂ (V := V))
 
 @[simp] theorem finJoinMap_prod_rel {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) {W : Set (Set α)} :
@@ -86,18 +78,13 @@ open NeighborhoodSystem
 
 variable {γ δ : Type*}
 
-/-- A domain *has a greatest element* if some element dominates every other. Order-isomorphisms and
-the inclusion order on filters transport this property. -/
 def HasTop (E : NeighborhoodSystem γ) : Prop := ∃ t : E.Element, ∀ x : E.Element, x ≤ t
 
-/-- `{false} ∩ {true} = ∅` in `Set Bool`. -/
 theorem ft_inter : ({false} : Set Bool) ∩ {true} = ∅ := by
   ext b
   simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false, not_and]
   rintro rfl h; exact absurd h (by decide)
 
-/-- **The improper filter.** When a system `E` is *unconditionally* closed under intersection, the
-family of *all* its neighbourhoods is a genuine filter — the greatest element of `|E|`. -/
 def improperTop (E : NeighborhoodSystem γ)
     (hcl : ∀ {X Y : Set γ}, E.mem X → E.mem Y → E.mem (X ∩ Y)) : E.Element where
   mem := E.mem
@@ -106,16 +93,11 @@ def improperTop (E : NeighborhoodSystem γ)
   inter_mem h1 h2 := hcl h1 h2
   up_mem _ hY _ := hY
 
-/-- `{true} ∩ {false} = ∅` in `Set Bool`. -/
 theorem tf_inter : ({true} : Set Bool) ∩ {false} = ∅ := by
   ext b
   simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false, not_and]
   rintro rfl h; exact absurd h (by decide)
 
-/-- The flat two-point domain over `Bool`: the neighbourhoods are the master `Δ = {true, false}`
-and the two singletons `{true}`, `{false}`. Since `{true} ∩ {false} = ∅` and `∅` is not a
-neighbourhood (and has no neighbourhood subset), condition (ii) holds only vacuously there — this is
-a genuine Scott neighbourhood system whose two singletons are *inconsistent*. -/
 def Vshape : NeighborhoodSystem Bool where
   mem X := X = Set.univ ∨ X = {true} ∨ X = {false}
   master := Set.univ
@@ -124,7 +106,7 @@ def Vshape : NeighborhoodSystem Bool where
   sub_master _ := Set.subset_univ _
   inter_mem := by
     rintro X Y Z hX hY hZ hZsub
-    -- every neighbourhood is nonempty, so a witness `Z ⊆ X ∩ Y = ∅` is impossible
+
     have hZne : Z.Nonempty := by
       rcases hZ with rfl | rfl | rfl
       · exact ⟨true, Set.mem_univ true⟩
@@ -152,7 +134,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- Extensionality for `|ℙ𝒟|` elements. -/
 theorem PDext {a b : V.PowerDomain.Element} (h : ∀ W, a.mem W ↔ b.mem W) : a = b :=
   @Element.ext (Set α) V.PowerDomain a b h
 
@@ -166,10 +147,8 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-
 variable (P : ComputablePresentation V)
 
-/-- **Proposition 7.12 — binary join reduces to two singleton tests.** -/
 theorem PDfinJoinApproxMap₂_rel_iff {X Y : Set α} (_hX : V.mem X) (_hY : V.mem Y) {W : Set (Set α)} :
     (PDfinJoinApproxMap₂ (V := V)).rel X Y W ↔
       (PDsingletonApproxMap (V := V)).rel X W ∧ (PDsingletonApproxMap (V := V)).rel Y W := Iff.rfl
@@ -184,8 +163,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-
-/-- **Proposition 7.12 — binary intersection law (elementwise).** `{x, y} = {x} ∩ {y}`. -/
 theorem PDfinJoin_pair (x y : V.Element) :
     V.PDfinJoin 2 ![x, y] = V.PDsingletonMeet (V.PDsingleton x) (V.PDsingleton y) := by
   apply PDext
@@ -199,9 +176,6 @@ theorem PDfinJoin_pair (x y : V.Element) :
     · intro i; fin_cases i <;> assumption
     · intro i; fin_cases i <;> assumption
 
-/-- **Proposition 7.12 — binary intersection law (membership form).** `{x, y}` meets `W` iff both
-singleton joins do. The general `n`-ary fold `{x₀,…,x_{n-1}} = ⋂ᵢ {xᵢ}` follows by iterating
-`PDfinJoin_pair`. -/
 theorem PDfinJoin_inter_two (x y : V.Element) {W : Set (Set α)} :
     (V.PDfinJoin 2 ![x, y]).mem W ↔
       (V.PDsingleton x).mem W ∧ (V.PDsingleton y).mem W := by
@@ -216,7 +190,6 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
 namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
-
 
 variable (P : ComputablePresentation V)
 
@@ -233,8 +206,6 @@ theorem PDfinJoinApproxMap₂_rel_PD {X Y : Set α} (hX : V.mem X) (hY : V.mem Y
     exact ⟨by rw [PDsingletonApproxMap_rel (hX := hX)]; exact h1,
       by rw [PDsingletonApproxMap_rel (hX := hY)]; exact h2⟩
 
-/-- **Proposition 7.12 — code form of singleton membership.** `{↑X_n}` relates to `Y_k` iff some
-index in `dl k` lies above `X_n`. -/
 theorem PDsingletonApproxMap_rel_Ypd_iff {n k : ℕ} :
     ((PDsingletonApproxMap (V := V))).rel (P.X n) (V.Ypd P k) ↔
       ∃ b ∈ decodeList k, P.X n ⊆ P.X b := by
@@ -258,8 +229,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-
-/-- **Proposition 7.12 — action of `λ x. {x}`.** `(λ x. {x})(x) = {x}` for every `x ∈ |𝒟|`. -/
 theorem PDsingletonApproxMap_toElementMap (x : V.Element) :
     (PDsingletonApproxMap (V := V)).toElementMap x = V.PDsingleton x := by
   apply PDext
@@ -277,7 +246,6 @@ theorem PDsingletonApproxMap_toElementMap (x : V.Element) :
     rw [PDsingletonApproxMap_rel (hX := x.sub hy), PDmem_singleton]
     exact ⟨Y, ⟨x.sub hy, subset_rfl⟩, hPD, hsub⟩
 
-/-- **Proposition 7.12 — binary join action.** `PDfinJoinApproxMap₂(x, y) = {x, y}`. -/
 theorem PDfinJoinApproxMap₂_toElementMap (x y : V.Element) :
     (PDfinJoinApproxMap₂ (V := V)).toElementMap₂ x y = V.PDfinJoin 2 ![x, y] := by
   apply PDext
@@ -298,8 +266,6 @@ theorem PDfinJoinApproxMap₂_toElementMap (x y : V.Element) :
       (ApproximableMap.mem_toElementMap (PDsingletonApproxMap (V := V)) y).mp h2
     exact ⟨X, Y, hxX, hyY, hrelX, hrelY⟩
 
-/-- **Proposition 7.12 — on finite elements `{↑X} = ↑(↓X)`.** The singleton join of the principal
-filter `↑X ⊆ |𝒟|` is the principal filter in `|ℙ𝒟|` generated by the down-set token `↓X`. -/
 theorem PDsingleton_principal {X : Set α} (hX : V.mem X) :
     V.PDsingleton (V.principal hX) =
       V.PowerDomain.principal (V.PDmem_upSet hX) := by
@@ -324,20 +290,16 @@ open NeighborhoodSystem
 
 variable {γ δ : Type*}
 
-
 theorem Vshape_mem_false : Vshape.mem {false} := Or.inr (Or.inr rfl)
 
 theorem Vshape_mem_true : Vshape.mem {true} := Or.inr (Or.inl rfl)
 
-/-- `∅` is not a `Vshape`-neighbourhood (each neighbourhood is nonempty). -/
 theorem Vshape_not_mem_empty : ¬ Vshape.mem (∅ : Set Bool) := by
   rintro (h | h | h)
   · exact Set.empty_ne_univ h
   · exact absurd h.symm (Set.singleton_ne_empty true)
   · exact absurd h.symm (Set.singleton_ne_empty false)
 
-/-- **`|Vshape|` has no greatest element.** A greatest element would contain both `{true}` and
-`{false}`, hence (by `inter_mem`) their intersection `∅`, which is not a neighbourhood. -/
 theorem Vshape_not_hasTop : ¬ HasTop Vshape := by
   rintro ⟨t, ht⟩
   have htt : t.mem {true} :=
@@ -358,7 +320,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- Choice-free extensionality from agreement on principal inputs (cf. Exercise 6.27). -/
 theorem ext_of_principal {β : Type*} {W : NeighborhoodSystem β}
     {f g : ApproximableMap V W}
     (h : ∀ (X : Set α) (hX : V.mem X),
@@ -390,14 +351,10 @@ open NeighborhoodSystem
 
 variable {γ δ : Type*}
 
-
-/-- An unconditionally ∩-closed system has a greatest element. -/
 theorem hasTop_of_inter_closed (E : NeighborhoodSystem γ)
     (hcl : ∀ {X Y : Set γ}, E.mem X → E.mem Y → E.mem (X ∩ Y)) : HasTop E :=
   ⟨improperTop E hcl, fun x _X hX => x.sub hX⟩
 
-/-- **`HasTop` transports across domain isomorphisms.** An order-iso `|D| ≃o |D'|` carries the
-greatest element of `|D'|` to that of `|D|`. -/
 theorem hasTop_of_iso {D : NeighborhoodSystem γ} {D' : NeighborhoodSystem δ}
     (e : D.Element ≃o D'.Element) (h : HasTop D') : HasTop D := by
   obtain ⟨t, ht⟩ := h
@@ -405,8 +362,6 @@ theorem hasTop_of_iso {D : NeighborhoodSystem γ} {D' : NeighborhoodSystem δ}
   rw [← e.le_iff_le, e.apply_symm_apply]
   exact ht (e x)
 
-/-- **`ℙ𝒟` is unconditionally closed under intersection** (`PDmem_inter`; the empty union always
-supplies the consistency witness). Hence `|ℙ𝒟|` always has a greatest element. -/
 theorem powerDomain_hasTop (V : NeighborhoodSystem γ) : HasTop V.PowerDomain :=
   hasTop_of_inter_closed V.PowerDomain (fun hX hY => V.PDmem_inter hX hY)
 
@@ -420,10 +375,8 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-
 variable (P : ComputablePresentation V)
 
-/-- **Proposition 7.12 — `λ x. {x}` is computable when `D` is effectively given.** -/
 theorem singleton_isComputable (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons)
     (hcons : ∀ a b, cons (Nat.pair a b) = 1 ↔ ∃ k, P.X k ⊆ P.X a ∩ P.X b) :
     ComputableMap P (V.PDPresentation P cons hconsp hcons) ((PDsingletonApproxMap (V := V))) := by
@@ -435,7 +388,6 @@ theorem singleton_isComputable (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons)
   simp only [PDPresentation]
   apply PDsingletonApproxMap_rel_Ypd_iff (V := V)
 
-/-- **Proposition 7.12 — the binary join map is computable.** Two independent singleton tests. -/
 theorem PDfinJoinApproxMap₂_isComputable (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons)
     (hcons : ∀ a b, cons (Nat.pair a b) = 1 ↔ ∃ k, P.X k ⊆ P.X a ∩ P.X b) :
     ComputableMap (prodPresentation P P)
@@ -469,15 +421,11 @@ open NeighborhoodSystem
 
 variable {γ δ : Type*}
 
-
-/-- A subsystem of an unconditionally ∩-closed system is itself unconditionally ∩-closed: the
-`◁`-clause `inter_closed` routes the intersection through `E`. -/
 theorem subsystem_inter_closed {D E : NeighborhoodSystem γ} (h : D ◁ E)
     (hE : ∀ {X Y : Set γ}, E.mem X → E.mem Y → E.mem (X ∩ Y))
     {X Y : Set γ} (hX : D.mem X) (hY : D.mem Y) : D.mem (X ∩ Y) :=
   h.inter_closed hX hY (hE (h.sub hX) (h.sub hY))
 
-/-- **`D ⊴ ℙ𝒟` forces `|D|` to have a greatest element.** This is the obstruction behind Part C. -/
 theorem hasTop_of_trianglelefteq_powerDomain {D : NeighborhoodSystem γ} {E : NeighborhoodSystem δ}
     (h : D ⊴ E.PowerDomain) : HasTop D := by
   obtain ⟨D', hsub, ⟨e⟩⟩ := h
@@ -485,9 +433,6 @@ theorem hasTop_of_trianglelefteq_powerDomain {D : NeighborhoodSystem γ} {E : Ne
       E.PowerDomain.mem (X ∩ Y) := fun hX hY => E.PDmem_inter hX hY
   exact hasTop_of_iso e (hasTop_of_inter_closed D' (subsystem_inter_closed hsub hPcl))
 
-/-- **Proposition 7.12, Part C is FALSE in general.** The flat two-point domain `Vshape` is *not* a
-subdomain of its own Smyth power domain: `Vshape ⋬ ℙ(Vshape)`. (Contrast Parts A, B, D, which hold
-for every `𝒟`.) -/
 theorem vshape_not_trianglelefteq_powerDomain : ¬ (Vshape ⊴ Vshape.PowerDomain) := fun h =>
   Vshape_not_hasTop (hasTop_of_trianglelefteq_powerDomain h)
 
@@ -1728,8 +1673,6 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-/-- The intersection of the sets in `M`, taken inside the base set `base` (so the empty list gives
-`base`, matching the convention 1.1a where the empty intersection is `Δ`). -/
 def interList (base : Set β) : List (Set β) → Set β
   | [] => base
   | Y :: M => Y ∩ interList base M
@@ -1743,21 +1686,18 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
-/-- The step pair coded by an entry `e`: `(X_{e.unpair.1}, Y_{e.unpair.2})`. -/
 def funPair (e : ℕ) : Set α × Set β := (P₀.X e.unpair.1, P₁.X e.unpair.2)
 
 @[simp] theorem funPair_fst (e : ℕ) : (funPair P₀ P₁ e).1 = P₀.X e.unpair.1 := rfl
 
 @[simp] theorem funPair_snd (e : ℕ) : (funPair P₀ P₁ e).2 = P₁.X e.unpair.2 := rfl
 
-/-- The sublist of `L` selected by the bitmask `b` (low bit = head). -/
 def bitSelect : List ℕ → ℕ → List ℕ
   | [], _ => []
   | e :: L, b => if b % 2 = 1 then e :: bitSelect L (b / 2) else bitSelect L (b / 2)
 
 @[simp] theorem bitSelect_nil (b : ℕ) : bitSelect [] b = [] := rfl
 
-/-- A `{0,1}` left-fold `AND` of `isOne ∘ g` over a list, started from `a ∈ {0,1}`. -/
 theorem andFoldl_eq_one_iff (g : ℕ → ℕ) :
     ∀ (el : List ℕ) (a : ℕ), a ≤ 1 →
       (List.foldl (fun acc x => selectFn acc (isOne (g x)) 0) a el = 1 ↔
@@ -1781,28 +1721,21 @@ theorem andFoldl_one (g : ℕ → ℕ) (el : List ℕ) :
     List.foldl (fun acc x => selectFn acc (isOne (g x)) 0) 1 el = 1 ↔ ∀ e ∈ el, g e = 1 := by
   rw [andFoldl_eq_one_iff g el 1 (le_refl 1)]; simp
 
-/-- Prepend the entry `x` onto the list coded by `acc`. -/
 def appendStep (acc x : ℕ) : ℕ := Nat.pair x acc + 1
 
-/-- `foldCode`-shaped wrapper of `appendStep`. -/
 def appendStp (w : ℕ) : ℕ := appendStep w.unpair.2.unpair.1 w.unpair.1
 
-/-- **`appendCode a b`** codes `(decodeList b).reverse ++ decodeList a`. -/
 def appendCode (a b : ℕ) : ℕ := foldCode appendStp 0 a b
 
 theorem appendStp_eq (x acc : ℕ) : appendStp (Nat.pair x (Nat.pair acc 0)) = appendStep acc x := by
   unfold appendStp; simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- The least map of the empty step-list — the function-space bottom: it relates every `𝒟₀`
-neighbourhood only to `Δ₁`. -/
 def botMap : ApproximableMap V₀ V₁ :=
   leastMap [] (by simp) (by intro X _; rw [interYs_nil]; exact V₁.master_mem)
 
 theorem botMap_rel {X : Set α} {Y : Set β} :
     (botMap : ApproximableMap V₀ V₁).rel X Y ↔ V₀.mem X ∧ V₁.mem Y ∧ V₁.master ⊆ Y := Iff.rfl
 
-/-- The running set of the conditional `inter`-chain: `A` intersected with the outputs `X₁_{e.2}` of
-the entries `e ∈ el` whose input dominates `X₀_k`. -/
 def condSet (k : ℕ) (A : Set β) (el : List ℕ) : Set β :=
   {z | z ∈ A ∧ ∀ e ∈ el, P₀.X k ⊆ P₀.X e.unpair.1 → z ∈ P₁.X e.unpair.2}
 
@@ -1812,8 +1745,6 @@ theorem condSet_nil (k : ℕ) (A : Set β) : condSet P₀ P₁ k A [] = A := by
 theorem condSet_subset (k : ℕ) (A : Set β) (el : List ℕ) : condSet P₀ P₁ k A el ⊆ A :=
   fun _ hz => hz.1
 
-/-- The `{0,1}` characteristic function of Scott's consistency relation (ii) for the function space:
-`∃ k, Xenum k ⊆ Xenum n ∩ Xenum m`. -/
 def consPairChar (gN : ℕ → ℕ) (n m : ℕ) : ℕ :=
   selectFn (isOne (gN n)) (selectFn (isOne (gN m)) (gN (appendCode n m)) 1) 1
 
@@ -1821,8 +1752,6 @@ section ConsFold
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-/-- One fold step (see the section doc). `projFn` extracts the relevant component index from an
-entry; `fc` is `P.cons_computable`'s `{0,1}` consistency tester. -/
 def consUpd (projFn fc : ℕ → ℕ) (s x : ℕ) : ℕ :=
   selectFn (s.unpair.1 % 2)
     (Nat.pair (s.unpair.1 / 2)
@@ -1830,13 +1759,9 @@ def consUpd (projFn fc : ℕ → ℕ) (s x : ℕ) : ℕ :=
         (selectFn s.unpair.2.unpair.2 (isOne (fc (Nat.pair s.unpair.2.unpair.1 (projFn x)))) 0)))
     (Nat.pair (s.unpair.1 / 2) (Nat.pair s.unpair.2.unpair.1 s.unpair.2.unpair.2))
 
-/-- `foldCode`-shaped wrapper of `consUpd` (state lives in `w.unpair.2.unpair.1`, entry in
-`w.unpair.1`). -/
 def consStp (projFn fc : ℕ → ℕ) (w : ℕ) : ℕ :=
   consUpd P projFn fc w.unpair.2.unpair.1 w.unpair.1
 
-/-- The `{0,1}` characteristic function of the bitmask-selected-sublist consistency test, packaged
-through `foldCode` so it is primitive recursive. Input `w = pair b c` (bitmask `b`, list code `c`). -/
 def consCharAt (projFn fc : ℕ → ℕ) (w : ℕ) : ℕ :=
   (foldCode (consStp P projFn fc) 0 (Nat.pair w.unpair.1 (Nat.pair P.masterIdx 1))
     w.unpair.2).unpair.2.unpair.2
@@ -1847,7 +1772,6 @@ theorem decodeList_appendStep (acc x : ℕ) :
     decodeList (appendStep acc x) = x :: decodeList acc := by
   unfold appendStep; rw [decodeList_succ, unpair_pair_fst, unpair_pair_snd]
 
-/-- `decodeList` inverts `encodeList`: every list is the decoding of its code. -/
 theorem decodeList_encodeList (l : List ℕ) : decodeList (encodeList l) = l := by
   induction l with
   | nil => rw [show encodeList ([] : List ℕ) = 0 from rfl, decodeList_zero]
@@ -1868,22 +1792,15 @@ theorem decodeList_appendCode (a b : ℕ) :
     decodeList (appendCode a b) = (decodeList b).reverse ++ decodeList a := by
   unfold appendCode; rw [foldCode_eq']; exact decodeList_foldl_appendStp (decodeList b) a
 
-/-- The per-bitmask implication char: `cons₀(selected inputs) → cons₁(selected outputs)`. -/
 def funImpChar (fc0 fc1 : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn (isOne (consCharAt P₀ (fun e => e.unpair.1) fc0 w))
     (isOne (consCharAt P₁ (fun e => e.unpair.2) fc1 w)) 1
 
-/-- The concrete `{0,1}` characteristic function of function-space consistency. -/
 def funConsChar (fc0 fc1 : ℕ → ℕ) (c : ℕ) : ℕ :=
   bForallFn (funImpChar P₀ P₁ fc0 fc1) c (2 ^ c)
 
-/-- The list of step pairs coded by an entry-list `el`. -/
 def funListOf (el : List ℕ) : List (Set α × Set β) := el.map (funPair P₀ P₁)
 
-/-- The function-space enumeration: a code `c` lists step-pairs; if they are consistent (`gN c = 1`,
-where `gN` is the consistency char) the neighbourhood is `stepFun (funListOf (decodeList c))`,
-otherwise we send the junk code to the master neighbourhood `univ`. Choice-free as *data* because the
-branch is a `Nat`-equality `if`. -/
 def Xenum (gN : ℕ → ℕ) (c : ℕ) : Set (ApproximableMap V₀ V₁) :=
   if gN c = 1 then stepFun (funListOf P₀ P₁ (decodeList c)) else Set.univ
 
@@ -1895,8 +1812,6 @@ theorem Xenum_pos {gN : ℕ → ℕ} {c : ℕ} (h : gN c = 1) :
 theorem funListOf_cons (e : ℕ) (el : List ℕ) :
     funListOf P₀ P₁ (e :: el) = funPair P₀ P₁ e :: funListOf P₀ P₁ el := rfl
 
-/-- Every valid finite step-list is `funListOf` of some entry-list (choice-free: `Exists.elim` of
-`P₀.surj`/`P₁.surj`, entry by entry). -/
 theorem exists_funListOf {L : List (Set α × Set β)} (hL : ∀ p ∈ L, V₀.mem p.1 ∧ V₁.mem p.2) :
     ∃ el, funListOf P₀ P₁ el = L := by
   induction L with
@@ -1937,31 +1852,21 @@ section ConsChain
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-/-- The `inter`-chain index of `js`: `inter`-fold from `masterIdx`. -/
 def idxchain (js : List ℕ) : ℕ := js.foldl (fun acc j => P.inter acc j) P.masterIdx
 
-/-- The running intersection of `A` with the neighbourhoods `X_j` (`j ∈ js`), left-accumulated to
-match `List.foldl`. -/
 def interFrom (A : Set α) : List ℕ → Set α
   | [] => A
   | j :: js => interFrom (A ∩ P.X j) js
 
 end ConsChain
 
-/-- The canonical code of the intersection `Xenum n ∩ Xenum m`: `appendCode` when both are
-consistent, otherwise the consistent side (the other being `univ`). -/
 def interIdx (gN : ℕ → ℕ) (n m : ℕ) : ℕ :=
   selectFn (isOne (gN n)) (selectFn (isOne (gN m)) (appendCode n m) n) m
 
-/-- One step of the `interYs`-index fold. State `pair entry (pair acc k)`: entry `e = w.unpair.1`,
-running `𝒟₁`-index `acc = w.unpair.2.unpair.1`, input index `k = w.unpair.2.unpair.2` (the
-`foldCode` parameter). Intersects `acc` with `e`'s output index when the inclusion test fires. -/
 def interYsStp (incl0 : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn (isOne (incl0 (Nat.pair w.unpair.2.unpair.2 w.unpair.1.unpair.1)))
     (P₁.inter w.unpair.2.unpair.1 w.unpair.1.unpair.2) w.unpair.2.unpair.1
 
-/-- The index of `interYs Δ₁ (funListOf (decodeList a)) (X₀_k)`: a conditional `inter`-fold over
-`decodeList a` from `masterIdx`, with `k` carried as the `foldCode` parameter. -/
 def interYsIdx (incl0 : ℕ → ℕ) (a k : ℕ) : ℕ :=
   foldCode (interYsStp P₁ incl0) k P₁.masterIdx a
 
@@ -1969,7 +1874,6 @@ theorem mem_condSet {k : ℕ} {A : Set β} {el : List ℕ} {z : β} :
     z ∈ condSet P₀ P₁ k A el ↔ z ∈ A ∧ ∀ e ∈ el, P₀.X k ⊆ P₀.X e.unpair.1 → z ∈ P₁.X e.unpair.2 :=
   Iff.rfl
 
-/-- `condSet` cons-step when the input does not dominate the head entry's input: drop the head. -/
 theorem condSet_cons_neg {k : ℕ} {A : Set β} {e : ℕ} {el : List ℕ}
     (h : ¬ P₀.X k ⊆ P₀.X e.unpair.1) :
     condSet P₀ P₁ k A (e :: el) = condSet P₀ P₁ k A el := by
@@ -1981,8 +1885,6 @@ theorem condSet_cons_neg {k : ℕ} {A : Set β} {e : ℕ} {el : List ℕ}
   · rintro ⟨hzA, hall⟩
     exact ⟨hzA, fun e' he' hsub => he'.elim (fun heq => absurd (heq ▸ hsub) h) (fun hmem => hall e' hmem hsub)⟩
 
-/-- `condSet` cons-step when the input dominates the head entry's input: intersect `A` with the
-head's output. -/
 theorem condSet_cons_pos {k : ℕ} {A : Set β} {e : ℕ} {el : List ℕ}
     (h : P₀.X k ⊆ P₀.X e.unpair.1) :
     condSet P₀ P₁ k A (e :: el) = condSet P₀ P₁ k (A ∩ P₁.X e.unpair.2) el := by
@@ -1994,8 +1896,6 @@ theorem condSet_cons_pos {k : ℕ} {A : Set β} {e : ℕ} {el : List ℕ}
   · rintro ⟨⟨hzA, hzE⟩, hall⟩
     exact ⟨hzA, fun e' he' hsub => he'.elim (fun heq => heq ▸ hzE) (fun hmem => hall e' hmem hsub)⟩
 
-/-- Correctness of the conditional `inter`-fold (`if`-form). When the running set is consistent, the
-fold computes an index of it, by induction with `inter_spec` (mirrors `interFrom_eq_of_foldl`). -/
 theorem condFoldl_spec (incl0 : ℕ → ℕ)
     (hincl0 : ∀ s, incl0 s = 1 ↔ P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2) (k : ℕ) :
     ∀ (el : List ℕ) (A : Set β) (a : ℕ), P₁.X a = A → V₁.mem A →
@@ -2025,7 +1925,6 @@ theorem condFoldl_spec (incl0 : ℕ → ℕ)
       rw [condSet_cons_neg P₀ P₁ hincl] at hcons ⊢
       exact condFoldl_spec incl0 hincl0 k el A a hXa hA hcons
 
-/-- `condSet k Δ₁ el` is exactly `interYs Δ₁ (funListOf el) (X₀_k)`. -/
 theorem condSet_eq_interYs (k : ℕ) (el : List ℕ) :
     condSet P₀ P₁ k V₁.master el = interYs V₁.master (funListOf P₀ P₁ el) (P₀.X k) := by
   ext z
@@ -2083,9 +1982,6 @@ theorem primrec_interYsIdx (incl0 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0) :
   (primrec_foldCode (primrec_interYsStp P₁ incl0 hincl0p) Nat.Primrec.right
     (Nat.Primrec.const P₁.masterIdx) Nat.Primrec.left).of_eq (fun _ => rfl)
 
-/-- **Choice-free `rel_interYs` for a presented list.** Any `f ∈ stepFun (funListOf el)` relates each
-`X₀_{n'}` to the intersection of the relevant outputs `interYs Δ₁ (funListOf el) (X₀_{n'})`. The
-case split on `X₀_{n'} ⊆ X₀_{e.1}` is discharged by `P₀.incl_computable.em` (no `Classical.choice`). -/
 theorem rel_interYs_funList {f : ApproximableMap V₀ V₁} {el : List ℕ}
     (hf : f ∈ stepFun (funListOf P₀ P₁ el)) (n' : ℕ) :
     f.rel (P₀.X n') (interYs V₁.master (funListOf P₀ P₁ el) (P₀.X n')) := by
@@ -2118,8 +2014,6 @@ theorem rel_interYs_funList {f : ApproximableMap V₀ V₁} {el : List ℕ}
         exact ⟨fun h => h.2, fun h => ⟨fun hc => absurd hc hinc, h⟩⟩
       rw [heq]; exact htail
 
-/-- If `stepFun (funListOf ea)` is non-empty, then `interYs Δ₁ (funListOf ea) X` is a neighbourhood of
-`𝒟₁` for every `X ∈ 𝒟₀` (the consistency hypothesis needed by `leastMap`). Choice-free. -/
 theorem interYs_funList_mem_of_nonempty {ea : List ℕ}
     (h : (stepFun (funListOf P₀ P₁ ea) : Set (ApproximableMap V₀ V₁)).Nonempty)
     {X : Set α} (hX : V₀.mem X) :
@@ -2130,7 +2024,6 @@ theorem interYs_funList_mem_of_nonempty {ea : List ℕ}
   rw [hn'] at hr
   exact f.rel_cod hr
 
-/-- `selectFn` driven by `isOne` is a `Nat`-equality `if` (choice-free; `decEq` on `ℕ`). -/
 theorem selectFn_isOne (v a b : ℕ) : selectFn (isOne v) a b = if v = 1 then a else b := by
   by_cases h : v = 1
   · rw [ite_eq_left h, h, (isOne_eq_one_iff 1).mpr rfl, selectFn_one]
@@ -2141,8 +2034,6 @@ theorem selectFn_isOne (v a b : ℕ) : selectFn (isOne v) a b = if v = 1 then a 
       · exact absurd ((isOne_eq_one_iff v).mp h1) h
     rw [h0, selectFn_zero]
 
-/-- **`interYsIdx` indexes `interYs Δ₁ (funListOf (decodeList a)) (X₀_k)`** (when that is consistent,
-which it is whenever `stepFun (funListOf (decodeList a))` is non-empty). Choice-free. -/
 theorem interYsIdx_spec (incl0 : ℕ → ℕ)
     (hincl0 : ∀ s, incl0 s = 1 ↔ P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2) (a k : ℕ)
     (hcons : V₁.mem (interYs V₁.master (funListOf P₀ P₁ (decodeList a)) (P₀.X k))) :
@@ -2163,13 +2054,10 @@ theorem interYsIdx_spec (incl0 : ℕ → ℕ)
   exact condFoldl_spec P₀ P₁ incl0 hincl0 k (decodeList a) V₁.master P₁.masterIdx
     P₁.masterIdx_spec V₁.master_mem hcons
 
-/-- `selectFn c d 0 = 1` decides the conjunction `c = 1 ∧ d = 1`. -/
 theorem selectFn_mul_iff (c d : ℕ) : selectFn c d 0 = 1 ↔ c = 1 ∧ d = 1 := by
   have h : selectFn c d 0 = c * d := by simp only [selectFn, Nat.mul_zero, Nat.add_zero]
   rw [h, nat_mul_eq_one]
 
-/-- `stepFun (funListOf (decodeList (appendCode a b)))` is exactly `X a ∩ X b` at the level of the
-underlying step-intersections. -/
 theorem stepFun_funListOf_appendCode (a b : ℕ) :
     (stepFun (funListOf P₀ P₁ (decodeList (appendCode a b))) : Set (ApproximableMap V₀ V₁)) =
       stepFun (funListOf P₀ P₁ (decodeList a)) ∩ stepFun (funListOf P₀ P₁ (decodeList b)) := by
@@ -2183,8 +2071,6 @@ theorem stepFun_funListOf_appendCode (a b : ℕ) :
     · exact hb p hp
     · exact ha p hp
 
-/-- **`interIdx` codes the intersection** whenever it is non-empty (and the result is in the
-enumeration). -/
 theorem Xenum_inter_eq (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
       : Set (ApproximableMap V₀ V₁)).Nonempty) (n m : ℕ)
@@ -2226,9 +2112,6 @@ theorem consPairChar_spec (gN : ℕ → ℕ)
   · rw [selectFn_isOne, ite_eq_right hn, Xenum_neg P₀ P₁ hn, Set.univ_inter]
     exact iff_of_true rfl (Xenum_nonempty P₀ P₁ gN hgN m)
 
-/-- **`stepFun (funListOf el)` is everything iff every output neighbourhood is `Δ₁`.** Forward:
-the bottom map `botMap` lies in `univ`, and `botMap.rel X Y` forces `Y = Δ₁`. Backward: `[X, Δ₁]`
-is satisfied by every map. Choice-free. -/
 theorem stepFun_funListOf_eq_univ_iff (el : List ℕ) :
     (stepFun (funListOf P₀ P₁ el) : Set (ApproximableMap V₀ V₁)) = Set.univ ↔
       ∀ e ∈ el, P₁.X e.unpair.2 = V₁.master := by
@@ -2248,9 +2131,6 @@ theorem stepFun_funListOf_eq_univ_iff (el : List ℕ) :
     rw [h e he]
     exact f.mono f.master_rel (V₀.sub_master (P₀.mem_X _)) subset_rfl (P₀.mem_X _) V₁.master_mem
 
-/-- **Function-space inclusion characterisation (choice-free).** With `ea` consistent (so the least
-map exists), `stepFun (funListOf ea) ⊆ stepFun (funListOf eb)` iff for every entry `e' ∈ eb`, the
-intersection of the `ea`-outputs relevant to the input `X₀_{e'.1}` is contained in `X₁_{e'.2}`. -/
 theorem stepFun_funListOf_subset_iff {ea eb : List ℕ}
     (hcons : ∀ {X : Set α}, V₀.mem X → V₁.mem (interYs V₁.master (funListOf P₀ P₁ ea) X)) :
     (stepFun (funListOf P₀ P₁ ea) : Set (ApproximableMap V₀ V₁)) ⊆ stepFun (funListOf P₀ P₁ eb) ↔
@@ -2268,7 +2148,6 @@ theorem stepFun_funListOf_subset_iff {ea eb : List ℕ}
     exact f.mono (rel_interYs_funList P₀ P₁ hf e'.unpair.1) subset_rfl (hcond e' he')
       (P₀.mem_X _) (P₁.mem_X _)
 
-/-- One step of the `stepFun`-inclusion fold over `decodeList b`: test `interYs-index ⊆ output`. -/
 def subStp (incl0 incl1 : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn w.unpair.2.unpair.1
     (isOne (incl1 (Nat.pair (interYsIdx P₁ incl0 w.unpair.2.unpair.2 w.unpair.1.unpair.1)
@@ -2295,8 +2174,6 @@ theorem primrec_subStp (incl0 incl1 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0)
   unfold subStp
   rfl
 
-/-- The `{0,1}` characteristic function of `stepFun (funListOf (decodeList a)) ⊆ stepFun (funListOf
-(decodeList b))` (correct when `a` is consistent). `a` is the `foldCode` parameter, `b` the code. -/
 def subChar (incl0 incl1 : ℕ → ℕ) (a b : ℕ) : ℕ := foldCode (subStp P₁ incl0 incl1) a 1 b
 
 theorem primrec_subChar (incl0 incl1 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0)
@@ -2334,7 +2211,6 @@ theorem subChar_spec (incl0 incl1 : ℕ → ℕ)
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [interYsIdx_spec P₀ P₁ incl0 hincl0 a e'.unpair.1 (hcons (P₀.mem_X e'.unpair.1))]
 
-/-- One step of the trivial-test fold: is this entry's output index equal to `masterIdx`? -/
 def trivStp (eq1 : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn w.unpair.2.unpair.1
     (isOne (eq1 (Nat.pair w.unpair.1.unpair.2 P₁.masterIdx))) 0
@@ -2350,12 +2226,8 @@ theorem primrec_trivStp (eq1 : ℕ → ℕ) (heq1p : Nat.Primrec eq1) :
   unfold trivStp
   rfl
 
-/-- The `{0,1}` characteristic function of `stepFun (funListOf (decodeList a)) = univ`. -/
 def trivialChar (eq1 : ℕ → ℕ) (a : ℕ) : ℕ := foldCode (trivStp P₁ eq1) 0 1 a
 
-/-- The `{0,1}` characteristic function of `Xenum a = Xenum b`. Both consistent → inclusion both
-ways (`subChar`); one consistent, one junk (`univ`) → the consistent side is the trivial
-neighbourhood (`trivialChar`); both junk → equal. -/
 def eqEnumChar (gN incl0 incl1 eq1 : ℕ → ℕ) (a b : ℕ) : ℕ :=
   selectFn (isOne (gN a))
     (selectFn (isOne (gN b))
@@ -2363,8 +2235,6 @@ def eqEnumChar (gN incl0 incl1 eq1 : ℕ → ℕ) (a b : ℕ) : ℕ :=
       (trivialChar P₁ eq1 a))
     (selectFn (isOne (gN b)) (trivialChar P₁ eq1 b) 1)
 
-/-- The `{0,1}` characteristic function of Scott's relation (i) for the function space:
-`Xenum n ∩ Xenum m = Xenum k`. -/
 def interEqChar (gN incl0 incl1 eq1 : ℕ → ℕ) (n m k : ℕ) : ℕ :=
   selectFn (consPairChar gN n m) (eqEnumChar P₁ gN incl0 incl1 eq1 (interIdx gN n m) k) 0
 
@@ -2475,9 +2345,6 @@ theorem interEqChar_spec (gN incl0 incl1 eq1 : ℕ → ℕ)
       rw [heq]; exact Xenum_nonempty P₀ P₁ gN hgN k
     exact ⟨⟨k, heq.superset⟩, by rw [Xenum_inter_eq P₀ P₁ gN hgN n m hne]; exact heq⟩
 
-/-- **The function-space presentation.** Built from explicit characteristic functions for the
-component presentations' relations (`gN` = function-space consistency, `incl0`/`incl1` = inclusion,
-`eq1` = equality), so it is choice-free given those concrete functions. -/
 def funPresentation (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
       : Set (ApproximableMap V₀ V₁)).Nonempty) (hgNp : Nat.Primrec gN)
@@ -2535,9 +2402,6 @@ theorem mem_interList {base : Set β} {M : List (Set β)} {z : β} :
     · rintro ⟨hbase, hall⟩
       exact ⟨hall Y (Or.inl rfl), hbase, fun W hW => hall W (Or.inr hW)⟩
 
-/-- A witness map `f ∈ stepFun L` relates a common lower neighbourhood `Z` of the *selected* inputs
-to the intersection of the *selected* outputs. The selection `sub` is processed entry-by-entry with
-`inter_right`, so the proof is choice-free (no inclusion case-split). -/
 theorem rel_interList_of_selection {f : ApproximableMap V₀ V₁}
     {Z : Set α} (hZ : V₀.mem Z) {sub : List (Set α × Set β)}
     (hmem : ∀ p ∈ sub, f.rel p.1 p.2) (hZle : ∀ p ∈ sub, Z ⊆ p.1) :
@@ -2556,10 +2420,6 @@ theorem rel_interList_of_selection {f : ApproximableMap V₀ V₁}
     rw [List.map_cons, interList_cons]
     exact f.inter_right hZp htail
 
-/-- **Proposition 3.9(i) (Scott 1981, PRG-19), forward direction — choice-free.** If the
-function-space neighbourhood `stepFun L` is non-empty, then for every selection `sub ⊑ L` whose
-inputs admit a common lower neighbourhood `Z ∈ 𝒟₀`, the intersection of the selected outputs is a
-neighbourhood of `𝒟₁`. -/
 theorem interList_mem_of_stepFun_nonempty {L : List (Set α × Set β)}
     (h : (stepFun L : Set (ApproximableMap V₀ V₁)).Nonempty) {sub : List (Set α × Set β)}
     (hsub : sub.Sublist L) {Z : Set α} (hZ : V₀.mem Z) (hZle : ∀ p ∈ sub, Z ⊆ p.1) :
@@ -2570,23 +2430,13 @@ theorem interList_mem_of_stepFun_nonempty {L : List (Set α × Set β)}
 
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
-
-/-- **Proposition 3.9(i) (Scott 1981, PRG-19), over coded entry-lists — choice-free.** The
-function-space neighbourhood `⋂[X_{eᵢ}, Y_{eᵢ}]` coded by `el` is non-empty iff for every
-sub-selection `sub ⊑ el` whose inputs `{X_{e} ∣ e ∈ sub}` admit a common lower neighbourhood
-`Z ∈ 𝒟₀`, the intersection of the selected outputs `{Y_{e} ∣ e ∈ sub}` is a neighbourhood of `𝒟₁`.
-
-* (⟹) is `interList_mem_of_stepFun_nonempty` (Milestone 1), pushed through `funPair`.
-* (⟸) builds `leastMap`; its consistency hypothesis `hcons` is discharged for each input `X'` by
-  **filtering `el` with the decidable `𝒟₀`-inclusion `X' ⊆ X_e`** (supplied choice-free by `P₀`), so
-  that `interYs Δ₁ (funListOf el) X'` is exactly the intersection of the selected outputs. -/
 theorem stepFun_funListOf_nonempty_iff (el : List ℕ) :
     (stepFun (funListOf P₀ P₁ el) : Set (ApproximableMap V₀ V₁)).Nonempty ↔
       ∀ sub : List ℕ, sub.Sublist el →
         (∃ Z, V₀.mem Z ∧ ∀ e ∈ sub, Z ⊆ P₀.X e.unpair.1) →
           V₁.mem (interList V₁.master (sub.map (fun e => P₁.X e.unpair.2))) := by
   constructor
-  · -- forward
+  ·
     intro h sub hsub hcons
     obtain ⟨Z, hZ, hZle⟩ := hcons
     have hsub' : (sub.map (funPair P₀ P₁)).Sublist (funListOf P₀ P₁ el) := hsub.map _
@@ -2599,7 +2449,7 @@ theorem stepFun_funListOf_nonempty_iff (el : List ℕ) :
     have hlist : (sub.map (funPair P₀ P₁)).map Prod.snd = sub.map (fun e => P₁.X e.unpair.2) := by
       rw [List.map_map]; rfl
     rwa [hlist] at hres
-  · -- backward
+  ·
     intro hcond
     have hL := funListOf_valid P₀ P₁ el
     have hcons : ∀ {X' : Set α}, V₀.mem X' →
@@ -2648,7 +2498,6 @@ section ConsChain
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-
 theorem mem_interFrom {A : Set α} {js : List ℕ} {z : α} :
     z ∈ interFrom P A js ↔ z ∈ A ∧ ∀ j ∈ js, z ∈ P.X j := by
   induction js generalizing A with
@@ -2665,7 +2514,6 @@ theorem mem_interFrom {A : Set α} {js : List ℕ} {z : α} :
 theorem interFrom_subset {A : Set α} {js : List ℕ} : interFrom P A js ⊆ A :=
   fun _ hz => (mem_interFrom P |>.mp hz).1
 
-/-- A finite running intersection with a neighbourhood inside it is itself a neighbourhood. -/
 theorem interFrom_mem_of_witness {A : Set α} {js : List ℕ} {Z : Set α}
     (hZ : V.mem Z) (hZsub : Z ⊆ interFrom P A js) (hA : V.mem A) :
     V.mem (interFrom P A js) := by
@@ -2677,9 +2525,6 @@ theorem interFrom_mem_of_witness {A : Set α} {js : List ℕ} {Z : Set α}
       V.inter_mem hA (P.mem_X j) hZ (hZsub.trans (interFrom_subset P))
     exact ih hZsub hAXj
 
-/-- The fold of `inter` along `js` (starting from `a`, with `X a = A`) computes the running
-intersection `interFrom A js` — *provided* that intersection is consistent (so each prefix is too, by
-`inter_spec`). -/
 theorem interFrom_eq_of_foldl : ∀ (js : List ℕ) (A : Set α) (a : ℕ),
     P.X a = A → V.mem A → V.mem (interFrom P A js) →
     P.X (js.foldl (fun acc j => P.inter acc j) a) = interFrom P A js
@@ -2695,14 +2540,11 @@ theorem interFrom_eq_of_foldl : ∀ (js : List ℕ) (A : Set α) (a : ℕ),
     rw [List.foldl_cons, interFrom]
     exact interFrom_eq_of_foldl js (A ∩ P.X j) (P.inter a j) hXinter hAXj hmem'
 
-
-/-- When `js` is consistent, the `inter`-chain index genuinely indexes `⋂{X_j ∣ j ∈ js}`. -/
 theorem idxchain_spec {js : List ℕ} (h : V.mem (interFrom P V.master js)) :
     P.X (idxchain P js) = interFrom P V.master js :=
   interFrom_eq_of_foldl P js V.master P.masterIdx P.masterIdx_spec V.master_mem h
 
 end ConsChain
-
 
 theorem bitSelect_cons (e : ℕ) (L : List ℕ) (b : ℕ) :
     bitSelect (e :: L) b =
@@ -2734,8 +2576,6 @@ theorem exists_bitSelect_lt {L sub : List ℕ} (hsub : sub.Sublist L) :
       rw [List.length_cons]; omega
     · rw [bitSelect_cons, ite_eq_left (by omega), show (2 * b + 1) / 2 = b by omega]; rw [heq]
 
-/-- A universal statement over all sublists of `decodeList c` is a *bounded* universal over bitmasks
-`b < 2 ^ c` (using `(decodeList c).length ≤ c`). -/
 theorem forall_sublist_iff_forall_bitmask (c : ℕ) (p : List ℕ → Prop) :
     (∀ sub, sub.Sublist (decodeList c) → p sub) ↔
       ∀ b, b < 2 ^ c → p (bitSelect (decodeList c) b) := by
@@ -2751,7 +2591,6 @@ section ConsFold
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-
 theorem consUpd_eval (projFn fc : ℕ → ℕ) (b idx flag x : ℕ) :
     consUpd P projFn fc (Nat.pair b (Nat.pair idx flag)) x =
       selectFn (b % 2)
@@ -2762,7 +2601,6 @@ theorem consUpd_eval (projFn fc : ℕ → ℕ) (b idx flag x : ℕ) :
   unfold consUpd
   simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- Once the flag is `0`, the fold keeps it `0` (inconsistency persists). -/
 theorem consUpd_foldl_flag_zero (projFn fc : ℕ → ℕ) (el : List ℕ) (b a : ℕ) :
     (List.foldl (fun s x => consUpd P projFn fc s x)
       (Nat.pair b (Nat.pair a 0)) el).unpair.2.unpair.2 = 0 := by
@@ -2776,9 +2614,6 @@ theorem consUpd_foldl_flag_zero (projFn fc : ℕ → ℕ) (el : List ℕ) (b a :
     · rw [show b % 2 = 0 by omega, selectFn_zero]
       exact ih (b / 2) a
 
-/-- **Single-pass consistency fold — correctness.** Starting from index `a` (an index of `X a`) with
-flag `1`, the final flag is `1` iff the running intersection of `X a` with the selected components is
-a neighbourhood. Choice-free. -/
 theorem consUpd_foldl_spec (projFn fc : ℕ → ℕ)
     (hfc : ∀ s, fc s = 1 ↔ ∃ k, P.X k ⊆ P.X s.unpair.1 ∩ P.X s.unpair.2)
     (el : List ℕ) (b a : ℕ) :
@@ -2825,7 +2660,6 @@ theorem consUpd_foldl_spec (projFn fc : ℕ → ℕ)
     · rw [ite_eq_right hb, show b % 2 = 0 by omega, selectFn_zero]
       exact ih (b / 2) a
 
-
 theorem consCharAt_spec (projFn fc : ℕ → ℕ)
     (hfc : ∀ s, fc s = 1 ↔ ∃ k, P.X k ⊆ P.X s.unpair.1 ∩ P.X s.unpair.2) (w : ℕ) :
     consCharAt P projFn fc w = 1 ↔
@@ -2868,7 +2702,6 @@ theorem primrec_consCharAt {projFn fc : ℕ → ℕ} (hprojp : Nat.Primrec projF
     Nat.Primrec.right
   exact ((Nat.Primrec.right.comp Nat.Primrec.right).comp hfold).of_eq (fun _ => rfl)
 
-/-- **Consistency of the bitmask-selected sublist is recursively decidable.** Choice-free. -/
 theorem consFold_decidable (projFn fc : ℕ → ℕ)
     (hfc : ∀ s, fc s = 1 ↔ ∃ k, P.X k ⊆ P.X s.unpair.1 ∩ P.X s.unpair.2)
     (hprojp : Nat.Primrec projFn) (hfcp : Nat.Primrec fc) :
@@ -2880,7 +2713,6 @@ theorem consFold_decidable (projFn fc : ℕ → ℕ)
 
 end ConsFold
 
-/-- `interList` over `js.map X` is the same set as the `interFrom`-chain over `js`. -/
 theorem interList_X_eq_interFrom {V : NeighborhoodSystem α} (P : ComputablePresentation V)
     (js : List ℕ) : interList V.master (js.map (fun j => P.X j)) = interFrom P V.master js := by
   apply Set.ext; intro z
@@ -2894,8 +2726,6 @@ theorem interList_X_eq_interFrom {V : NeighborhoodSystem α} (P : ComputablePres
     obtain ⟨j, hj, rfl⟩ := hY
     exact hall j hj
 
-/-- The antecedent of Prop 3.9(i) — `{X_{e.1} ∣ e ∈ sub}` admits a common lower neighbourhood — is
-exactly consistency of `{e.1 ∣ e ∈ sub}` in `𝒟₀` (in `interFrom` form). Choice-free. -/
 theorem antecedent_cons_iff (sub : List ℕ) :
     (∃ Z, V₀.mem Z ∧ ∀ e ∈ sub, Z ⊆ P₀.X e.unpair.1) ↔
       V₀.mem (interFrom P₀ V₀.master (sub.map (fun e => e.unpair.1))) := by
@@ -2913,15 +2743,11 @@ theorem antecedent_cons_iff (sub : List ℕ) :
     rw [idxchain_spec P₀ hmem] at hz
     exact (mem_interFrom P₀ |>.mp hz).2 _ hj
 
-/-- The consequent of Prop 3.9(i), rewritten from `interList` to `interFrom` form. -/
 theorem funConsequent_eq (sub : List ℕ) :
     interList V₁.master (sub.map (fun e => P₁.X e.unpair.2))
       = interFrom P₁ V₁.master (sub.map (fun e => e.unpair.2)) := by
   rw [← interList_X_eq_interFrom P₁, List.map_map]; rfl
 
-/-- **Proposition 3.9(i) as a bounded bitmask quantifier.** The function-space neighbourhood coded by
-`decodeList c` is non-empty iff for every bitmask `b < 2^c`, consistency of the selected inputs in
-`𝒟₀` forces consistency of the selected outputs in `𝒟₁`. Choice-free. -/
 theorem funCons_iff (c : ℕ) :
     (stepFun (funListOf P₀ P₁ (decodeList c)) : Set (ApproximableMap V₀ V₁)).Nonempty ↔
       ∀ b, b < 2 ^ c →
@@ -2941,9 +2767,6 @@ theorem funCons_iff (c : ℕ) :
     rw [heq, ← funConsequent_eq P₁] at hcons
     exact hcons
 
-/-- **The function-space consistency relation is recursively decidable.** Given the binary
-consistency deciders `fc0`/`fc1` of the two presentations, `(stepFun (funListOf (decodeList c)))` is
-non-empty is recursively decidable in `c`. Choice-free. -/
 theorem funCons_decidable (fc0 fc1 : ℕ → ℕ)
     (hfc0 : ∀ s, fc0 s = 1 ↔ ∃ k, P₀.X k ⊆ P₀.X s.unpair.1 ∩ P₀.X s.unpair.2)
     (hfc1 : ∀ s, fc1 s = 1 ↔ ∃ k, P₁.X k ⊆ P₁.X s.unpair.1 ∩ P₁.X s.unpair.2)
@@ -2971,14 +2794,11 @@ theorem funCons_decidable (fc0 fc1 : ℕ → ℕ)
   rw [funCons_iff P₀ P₁ c]
   simp only [unpair_pair_fst, unpair_pair_snd]
 
-
-/-- `selectFn A B 1 = 1` decides the implication `A = 1 → B = 1` for `A ∈ {0,1}`. -/
 theorem selectFn_one_iff_imp {A B : ℕ} (hA : A ≤ 1) :
     selectFn A B 1 = 1 ↔ (A = 1 → B = 1) := by
   rcases (show A = 0 ∨ A = 1 by omega) with h | h <;> subst h
   · rw [selectFn_zero]; simp
   · rw [selectFn_one]; simp
-
 
 theorem funConsChar_spec (fc0 fc1 : ℕ → ℕ)
     (hfc0 : ∀ s, fc0 s = 1 ↔ ∃ k, P₀.X k ⊆ P₀.X s.unpair.1 ∩ P₀.X s.unpair.2)
@@ -3015,7 +2835,6 @@ theorem primrec_funConsChar (fc0 fc1 : ℕ → ℕ) (hfc0p : Nat.Primrec fc0) (h
   show _ = funConsChar P₀ P₁ fc0 fc1 c
   unfold funConsChar bForallFn
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
-
 
 end
 end DomainTheory.NeighbourhoodSystems

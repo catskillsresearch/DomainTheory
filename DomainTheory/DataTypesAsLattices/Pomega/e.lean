@@ -8,20 +8,16 @@ public import Mathlib.Order.SetNotation
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, §1.** `Pω = {x | x ⊆ ω}`. -/
 abbrev Pomega := Set ℕ
 
-/-- **Scott 1976, after (2.2).** `⊥ = ∅`. -/
 def botElem : Pomega := ∅
 
-/-- **Scott 1976, after (2.2).** `⊤ = ω`. -/
 def topElem : Pomega := Set.univ
 
 @[simp] theorem mem_botElem (n : ℕ) : n ∈ botElem ↔ False := by simp [botElem]
 
 @[simp] theorem mem_topElem (n : ℕ) : n ∈ topElem := Set.mem_univ n
 
-/-- **Scott 1976, §1.** Finite set coded by the binary expansion of `n`. -/
 def e (n : ℕ) : Pomega := {k | n.testBit k}
 
 @[simp] theorem mem_e {n k : ℕ} : k ∈ e n ↔ n.testBit k := Iff.rfl
@@ -54,14 +50,12 @@ instance (n m : ℕ) : Decidable (e n ⊆ e m) :=
     fun h k hk => h k (mem_e_le hk) hk,
     fun h _k _ hk => h hk⟩
 
-/-- Bit-mask code of a finite list of naturals. -/
 def codeList : List ℕ → ℕ
   | [] => 0
   | k :: ks => 2 ^ k ||| codeList ks
 
 noncomputable def codeFinset (s : Finset ℕ) : ℕ := codeList s.val.toList
 
-/-- Finite pieces of `x` used in directed unions. -/
 def eBelow (x : Pomega) (n : ℕ) : Pomega :=
   {k | e n ⊆ x ∧ k ∈ e n}
 
@@ -95,7 +89,6 @@ theorem lt_two_pow' (k : ℕ) : k < 2 ^ k := by
       _ < 2 ^ k + 2 ^ k := Nat.lt_add_of_pos_right (Nat.two_pow_pos k)
       _ = 2 ^ (k + 1) := by rw [← Nat.two_mul, Nat.mul_comm, Nat.pow_succ]
 
-/-- **Scott 1976, §1.** `k ∈ e_n` implies `k < n`. -/
 theorem mem_e_lt {n k : ℕ} (h : k ∈ e n) : k < n := by
   have hle := mem_e_le h
   rcases eq_or_lt_of_le hle with rfl | hlt

@@ -67,7 +67,6 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions
 public import DomainTheory.BridgeTheorems.PresentationDomains
 public import DomainTheory.BridgeTheorems.ConjScottMap
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems

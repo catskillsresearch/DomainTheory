@@ -18,7 +18,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-/-- Adding an entailed non-top token cannot create a top-entailment. -/
 theorem not_VEnt_insert_top_of_ent {u : Finset VToken} {y : VToken}
     (hy : y ≠ .top) (hEnt : VEnt u y) (hNot : ¬ VEnt u .top) :
     ¬ VEnt (insert y u) .top :=

@@ -17,7 +17,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
 
 theorem atomFinset_singleton_pairR (t : TreeToken α) :

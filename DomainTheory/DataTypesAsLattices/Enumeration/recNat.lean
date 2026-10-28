@@ -11,7 +11,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 3.3 (ii).** `rec(n) = apply(v(n))(num(v(n)))`. -/
 def recNat (v : ℕ → ℕ) (n : ℕ) : ℕ :=
   applyNat (v n) (num (v n))
 

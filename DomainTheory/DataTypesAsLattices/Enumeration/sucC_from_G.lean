@@ -16,7 +16,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The six constants are recovered from `G` and `0` by projection. -/
 theorem sucC_from_G : sucC = funOf (funOf Gcomb zeroC) zeroC := by
   have : zeroC = ofNat 0 := rfl
   simp [this, Gcomb.zero, Gpack.zero]

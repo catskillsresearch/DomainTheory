@@ -13,13 +13,11 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 section
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-/-- The **graph** of an approximable map, as a set of neighbourhood pairs. -/
 def graph (f : ApproximableMap V₀ V₁) : Set (Set α × Set β) := {p | f.rel p.1 p.2}
 
 @[simp] theorem mem_graph {f : ApproximableMap V₀ V₁} {p : Set α × Set β} :
     p ∈ graph f ↔ f.rel p.1 p.2 := Iff.rfl
 
-/-- Scott's family `C`: all graphs of approximable maps `𝒟₀ → 𝒟₁`. -/
 def C (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) : Set (Set (Set α × Set β)) :=
   Set.range (graph (V₀ := V₀) (V₁ := V₁))
 
@@ -29,8 +27,6 @@ theorem C_nonempty : (C V₀ V₁).Nonempty :=
 theorem graph_injective : Function.Injective (graph (V₀ := V₀) (V₁ := V₁)) :=
   fun _ _ h => ApproximableMap.ext fun X Y => Set.ext_iff.mp h (X, Y)
 
-/-- `graph` is an order-isomorphism of approximable maps (under `⊑`) onto the family `C`
-(under `⊆`). -/
 noncomputable def graphEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     ApproximableMap V₀ V₁ ≃o {X : Set (Set α × Set β) // X ∈ C V₀ V₁} where
   toFun f := ⟨graph f, f, rfl⟩
@@ -43,8 +39,6 @@ noncomputable def graphEquiv (V₀ : NeighborhoodSystem α) (V₁ : Neighborhood
     rw [ApproximableMap.le_iff]
     exact ⟨fun h X Y hf => h (a := (X, Y)) hf, fun h p hp => h p.1 p.2 hp⟩
 
-/-- The **join** `⋁ 𝒮` of a directed family of approximable maps: `X (⋁𝒮) Y` iff `(X, Y)` lies in
-some member. Directedness is what restores the intersectivity condition (ii). -/
 def joinMap (𝒮 : Set (Set (Set α × Set β))) (h𝒮 : 𝒮 ⊆ C V₀ V₁) (hne : 𝒮.Nonempty)
     (hdir : DirectedOn (· ⊆ ·) 𝒮) : ApproximableMap V₀ V₁ where
   rel X Y := ∃ S ∈ 𝒮, (X, Y) ∈ S
@@ -63,8 +57,6 @@ def joinMap (𝒮 : Set (Set (Set α × Set β))) (h𝒮 : 𝒮 ⊆ C V₀ V₁)
     obtain ⟨f, rfl⟩ := h𝒮 hS
     exact ⟨graph f, hS, f.mono hp hX'X hYY' hX' hY'⟩
 
-/-- The pointwise **meet** `⋀ 𝒮` of a family of approximable maps (drawn from `C`): `X (⋀𝒮) Y` iff
-`(X, Y)` lies in every member of `𝒮`. -/
 def meetMap (𝒮 : Set (Set (Set α × Set β))) (h𝒮 : 𝒮 ⊆ C V₀ V₁) (hne : 𝒮.Nonempty) :
     ApproximableMap V₀ V₁ where
   rel X Y := ∀ S ∈ 𝒮, (X, Y) ∈ S
@@ -93,7 +85,6 @@ theorem sInter_eq_graph_meetMap (𝒮 : Set (Set (Set α × Set β))) (h𝒮 : �
   simp only [Set.mem_sInter, mem_graph]
   exact ⟨fun h S hS => h S hS, fun h S hS => h S hS⟩
 
-/-- **Exercise 2.22 hypothesis (i).** `C` is closed under non-empty intersections. -/
 theorem C_inter : ∀ 𝒮 : Set (Set (Set α × Set β)), 𝒮.Nonempty → 𝒮 ⊆ C V₀ V₁ → ⋂₀ 𝒮 ∈ C V₀ V₁ := by
   intro 𝒮 hne h𝒮
   rw [sInter_eq_graph_meetMap 𝒮 h𝒮 hne]
@@ -106,7 +97,6 @@ theorem sUnion_eq_graph_joinMap (𝒮 : Set (Set (Set α × Set β))) (h𝒮 : �
   simp only [Set.mem_sUnion, mem_graph]
   exact ⟨fun ⟨S, hS, hp⟩ => ⟨S, hS, hp⟩, fun ⟨S, hS, hp⟩ => ⟨S, hS, hp⟩⟩
 
-/-- **Exercise 2.22 hypothesis (ii).** `C` is closed under directed unions. -/
 theorem C_dir : ∀ 𝒮 : Set (Set (Set α × Set β)), 𝒮.Nonempty → 𝒮 ⊆ C V₀ V₁ →
     DirectedOn (· ⊆ ·) 𝒮 → ⋃₀ 𝒮 ∈ C V₀ V₁ := by
   intro 𝒮 hne h𝒮 hdir
@@ -135,12 +125,7 @@ end
 
 section
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-/- concordance: source L1627 EXERCISE 3.27 function space via closure -/
-/-- **Exercise 3.27.** The function space `|𝒟₀ → 𝒟₁|` is (order-)isomorphic to the domain produced by
-the *abstract* representation theorem (Exercise 2.22) applied to the family `C` of graphs of
-approximable maps. This re-proves that approximable mappings form a domain without appealing to the
-explicit step-set neighbourhood system of Definition 3.8 — composing Exercise 2.22's `reprIso` with
-the graph isomorphism (`graphEquiv`) and Theorem 3.10 (`funSpaceEquiv`). -/
+
 noncomputable def funSpaceReprIso (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     (Exercise222.reprSystem (C V₀ V₁) C_inter C_nonempty).Element ≃o (funSpace V₀ V₁).Element :=
   (Exercise222.reprIso (C V₀ V₁) C_inter C_nonempty C_dir).trans

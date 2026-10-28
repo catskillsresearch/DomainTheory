@@ -22,7 +22,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace ScottMap
 
-/-- Strict pointwise order induced by `ScottMap.le`. -/
 def lt {D : Type u} {D' : Type v} [CompleteLattice D] [CompleteLattice D']
     (f g : ScottMap D D') : Prop :=
   ScottMap.le f g ∧ ¬ ScottMap.le g f

@@ -11,7 +11,6 @@ public import Mathlib.Order.ScottContinuity
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

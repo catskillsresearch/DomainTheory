@@ -8,7 +8,6 @@ public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
 public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -29,7 +28,6 @@ section InfoSysTriangle
 
 variable {α : Type*} [DecidableEq α]
 
-/-- Neighbourhood filters of `|A|` ↔ ideals of finite elements (via `|A|`). -/
 noncomputable def neighborhood_ideal_iso (A : InfoSys α) :
     (InfoSysToNeighborhood.toNeighborhoodSystem A).Element ≃o
       Ideal (InfoSysToIdealCompletion.FiniteElement A) :=

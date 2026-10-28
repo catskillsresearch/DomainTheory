@@ -14,11 +14,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (4.13).** `(a ⊕ b) ∘ (a' ⊕ b') = (a ∘ a') ⊕ (b ∘ b')`. -/
 theorem eq_4_13 (a b a' b' : Pomega) :
     comp (plusR a b) (plusR a' b') = plusR (comp a a') (comp b b') := by
   apply graph_ext

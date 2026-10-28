@@ -9,7 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-/- concordance: source L5207 EXERCISE 8.23 initial algebra inside U -/
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6
@@ -18,7 +17,6 @@ namespace Exercise823
 
 variable {α : Type} {E : NeighborhoodSystem α}
 
-/-- The fixed-point set of the constant-bottom map is the singleton `{⊥}`. -/
 theorem eq_bot_of_fixed_constMap_bot {y : E.Element}
     (hy : (constMap E E.bot).toElementMap y = y) : y = E.bot := by
   rw [toElementMap_constMap] at hy
@@ -29,8 +27,6 @@ instance uniqueFixedConstMapBot :
   default := ⟨E.bot, toElementMap_constMap E.bot E.bot⟩
   uniq := fun ⟨_y, hy⟩ => Subtype.ext (eq_bot_of_fixed_constMap_bot hy)
 
-/-- The singleton fixed-point set of the constant-bottom map is order-isomorphic to the (also
-singleton) terminal system `unitSys` (`Exercise315.lean`). -/
 def finitaryWitnessEquivBot (E : NeighborhoodSystem α) :
     {y : E.Element // (constMap E E.bot).toElementMap y = y} ≃o unitSys.Element where
   toFun _ := default
@@ -42,18 +38,13 @@ def finitaryWitnessEquivBot (E : NeighborhoodSystem α) :
     have hab : a = b := (Unique.eq_default a).trans (Unique.eq_default b).symm
     exact iff_of_true (le_refl default) (le_of_eq hab)
 
-/-- **Scott's `‖t‖ = fix(t)`**, as an actual approximable map `E → E`. -/
 def fixOp (t : ApproximableMap (funSpace E E) (funSpace E E)) : ApproximableMap E E :=
   toApproxMap t.fixElement
 
-/-- **Scott's `t(a)`**: the operator `t : (E → E) → (E → E)` induced by an approximable self-map
-`t` of the function space `funSpace E E`, applied to an actual map `a : E → E`. -/
 def tOp (t : ApproximableMap (funSpace E E) (funSpace E E)) (a : ApproximableMap E E) :
     ApproximableMap E E :=
   toApproxMap (t.toElementMap (toFilter a))
 
-/-- The fixed-point-set ("`D_a`") of an approximable self-map, matching `IsFinitary`'s own
-formulation. -/
 abbrev Fix (a : ApproximableMap E E) := {y : E.Element // a.toElementMap y = y}
 
 theorem constMap_bot_le_idMap (E : NeighborhoodSystem α) :
@@ -95,13 +86,10 @@ theorem iterElem_zero' (t : ApproximableMap (funSpace E E) (funSpace E E)) :
   show (idMap (funSpace E E)).toElementMap (funSpace E E).bot = (funSpace E E).bot
   rw [toElementMap_idMap]
 
-/-- Every approximable map relates every consistent neighbourhood to the master (widen the master
-relation's input down to `X` using `mono`, since `X ⊆ Δ` always). -/
 theorem rel_master_of_mem (f : ApproximableMap E E) {X : Set α} (hX : E.mem X) :
     f.rel X E.master :=
   f.mono f.master_rel (E.sub_master hX) subset_rfl hX E.master_mem
 
-/-- **`‖t‖` is a genuine (not merely approximate) fixed point of `t`.** -/
 theorem tOp_fixOp (t : ApproximableMap (funSpace E E) (funSpace E E)) :
     tOp t (fixOp t) = fixOp t := by
   show toApproxMap (t.toElementMap (toFilter (toApproxMap t.fixElement))) = toApproxMap t.fixElement
@@ -112,8 +100,6 @@ theorem tOp_toApproxMap (t : ApproximableMap (funSpace E E) (funSpace E E))
   unfold tOp
   rw [toFilter_toApproxMap]
 
-/-- **`toApproxMap` of the function space's own bottom element is the constant-bottom map.**
-Mirrors `Theorem616.lean`'s `botStrict_rel` for the (non-strict) function space `funSpace E E`. -/
 theorem toApproxMap_bot_eq_constMap (E : NeighborhoodSystem α) :
     toApproxMap (funSpace E E).bot = constMap E E.bot := by
   apply ApproximableMap.ext
@@ -126,8 +112,6 @@ theorem toApproxMap_bot_eq_constMap (E : NeighborhoodSystem α) :
   · rintro ⟨hX, rfl⟩
     exact Set.eq_univ_of_forall fun f => rel_master_of_mem f hX
 
-/-- **Exercise 8.23, Claim 1.** Provided `t` maps finitary projections to finitary projections,
-`‖t‖ = fix(t)` really is a finitary projection. -/
 theorem isFinitaryProjection_fixOp (t : ApproximableMap (funSpace E E) (funSpace E E))
     (ht : ∀ a, FinitaryProjection a → FinitaryProjection (tOp t a)) :
     FinitaryProjection (fixOp t) := by
@@ -169,11 +153,6 @@ theorem isFinitaryProjection_fixOp (t : ApproximableMap (funSpace E E) (funSpace
   apply isFinitaryProjection_of_sub_eq_self
   rw [← toApproxMap_subFilter, hkey]
 
-/-- **Exercise 8.23, Claim 2 (the domain equation).** Given any correspondence `T` (bundling, for
-each map, a type and a domain over it) with `Fix(t(a)) ≅ T(a)` for every finitary projection `a`
-(Scott's hypothesis `D_{t(a)} ≅ T(D_a)`), substituting the *exact* fixed point `a := ‖t‖` and using
-`tOp_fixOp` gives `Fix(‖t‖) ≅ T(‖t‖)` unconditionally — no colimit/continuity argument needed,
-since `‖t‖` solves the equation on the nose rather than merely in the limit. -/
 theorem fixedDomain_fixOp_iso_T (t : ApproximableMap (funSpace E E) (funSpace E E))
     (ht : ∀ a, FinitaryProjection a → FinitaryProjection (tOp t a))
     (T : ApproximableMap E E → Σ β : Type, NeighborhoodSystem β)
@@ -182,13 +161,6 @@ theorem fixedDomain_fixOp_iso_T (t : ApproximableMap (funSpace E E) (funSpace E 
   have h := hT (fixOp t) (isFinitaryProjection_fixOp t ht)
   rwa [tOp_fixOp] at h
 
-/-- **Exercise 8.23, Claim 2 (initiality with respect to projections).** If `a` is *any* other
-finitary projection that is a pre-fixed point of the same operator (`tOp t a ≤ a`, in particular
-any exact alternative solution `tOp t a = a`), then `‖t‖`'s domain embeds as a literal subsystem of
-`a`'s domain: `D_{‖t‖} ◁ D_a` (hence certainly `D_{‖t‖} ⊴ D_a`, Lemma 6.15) — Scott's "the initial
-solution... with respect to projections". The proof is Theorem 4.1's minimality
-(`fixElement_le_of_toElementMap_le`) transported through Exercise 8.16's order-isomorphism
-`a ≤ b ↔ D_a ◁ D_b`. -/
 theorem fixedNbhd_fixOp_subsystem (t : ApproximableMap (funSpace E E) (funSpace E E))
     (ht : ∀ a, FinitaryProjection a → FinitaryProjection (tOp t a))
     {a : ApproximableMap E E} (ha : FinitaryProjection a) (hpre : tOp t a ≤ a) :
@@ -209,7 +181,6 @@ theorem fixedNbhd_fixOp_subsystem (t : ApproximableMap (funSpace E E) (funSpace 
     exact toApproxMap_monotone h2
   exact (isFinitaryProjection_le_iff_fixedNbhd_subsystem
     (isFinitaryProjection_fixOp t ht) ha).mp hle
-
 
 end Exercise823
 

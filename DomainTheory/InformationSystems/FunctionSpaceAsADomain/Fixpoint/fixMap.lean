@@ -21,7 +21,6 @@ variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 namespace ApproximableMap
 
-/-- **Theorem 7.3.** Approximable least fixed-point operator. -/
 def fixMap : ApproximableMap (functionSystem A A) A where
   rel w v :=
     w ∈ (functionSystem A A).Con ∧ v ∈ A.Con ∧

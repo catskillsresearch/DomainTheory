@@ -15,7 +15,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.BotA
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -23,7 +22,6 @@ open InfoSys
 open ApproximableMap
 
 namespace Factoid84
-
 
 theorem not_RogueApprox_idMap : ¬ RogueApprox (idMap P) := by
   intro h

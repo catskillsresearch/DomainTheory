@@ -24,13 +24,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
 
-/-- Payload of tree entailment (Scott §8 (8)–(12)), recursive on the token.
-
-The extra disjuncts for `pairL bot` / `pairR bot` match official product
-`ent_bot`: any nonempty pair-set entails the unique product bottom, which
-`treeUnfold` identifies as both constructors. Without them, closed tree
-elements could contain one encoding of `(Δ,Δ)` but not the other, and
-`|T|` would fail to be order-isomorphic to `|A + (T × T)|`. -/
 def TreeEntPayload (u : Finset (TreeToken α)) : TreeToken α → Prop
   | .bot => True
   | .atom x => atomFinset u ≠ ∅ ∧ A.Ent (atomFinset u) x
@@ -82,6 +75,5 @@ theorem TreeEntPayload.of_no_atoms_no_pairs {u : Finset (TreeToken α)} {t : Tre
     · exact False.elim (hLne hL)
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

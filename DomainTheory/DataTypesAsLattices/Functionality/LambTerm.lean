@@ -6,7 +6,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.lam
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.43).** Modified LAMBDA terms for the `lamb` model. -/
 inductive LambTerm where
   | var : ℕ → LambTerm
   | zero : LambTerm

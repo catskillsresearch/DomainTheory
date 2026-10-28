@@ -11,9 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_isScottCont
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem diagC_app (u : Pomega) : funOf diagC u = pairSeq u u :=
   beta (continuous_on_diag

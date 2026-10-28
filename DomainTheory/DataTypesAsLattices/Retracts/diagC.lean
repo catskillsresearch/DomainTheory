@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.16).** Diagonal combinator. -/
 def diagC : Pomega := graph (fun u => pairSeq u u)
 
 end DomainTheory.DataTypesAsLattices

@@ -41,7 +41,7 @@ def flatMap : ApproximableMap P P where
   mono := by
     intro u u' v v' hrel hEntu hEntv _ _
     rcases hrel with h1 | ⟨hv, hv1⟩
-    · -- 1 ∈ u; show 1 ∈ u' from EntSet
+    ·
       have h := hEntu 1 h1
       rcases h with h0 | h1'
       · exact False.elim (by cases h0)
@@ -128,6 +128,5 @@ theorem flatMap.isDomain : IsDomainApprox flatMap where
   consistent := flatMap.consistent
 
 end Factoid84
-
 
 end DomainTheory.InformationSystems

@@ -33,7 +33,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -46,7 +45,6 @@ variable (A : InfoSys α) (B : InfoSys β)
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
-
 
 theorem entSet_u_of_inl_witness {u u' : Finset (SumToken α β)} {v : Finset α}
     (hlne : lftFinset u ≠ ∅) (hinl : (inlMap A B).rel v u')

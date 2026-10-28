@@ -20,7 +20,6 @@ namespace InfoSysToIdealCompletion
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Finite approximants of `x`, as `FiniteElement`s. -/
 def finiteApproximants (x : A.Element) : Set (FiniteElement A) :=
   { y | (y : A.Element) ∈ A.finiteApproximants x }
 

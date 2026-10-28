@@ -16,7 +16,6 @@ open InfoSys
 
 open ApproximableMap
 
-/-- Scott’s shorthand `\bar n = {n}` as a finite set of tokens. -/
 def bar (n : ℕ) : Finset ℕ := {n}
 
 end Factoid84

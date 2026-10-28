@@ -17,9 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem tensor4_map_isScottContinuous (a b c d : Pomega) :
     IsScottContinuous (fun u =>

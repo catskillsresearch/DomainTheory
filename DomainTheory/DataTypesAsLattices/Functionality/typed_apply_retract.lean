@@ -9,9 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem typed_apply_retract {a x : Pomega} (ha : Retract a) :
     typed (funOf a x) a :=

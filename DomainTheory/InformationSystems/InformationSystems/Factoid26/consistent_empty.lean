@@ -5,11 +5,9 @@ public import DomainTheory.InformationSystems.InformationSystems.Factoid26.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 namespace Factoid26
-
 
 theorem consistent_empty {A B : Type*} :
     Consistent (∅ : Finset (Token A B)) := by

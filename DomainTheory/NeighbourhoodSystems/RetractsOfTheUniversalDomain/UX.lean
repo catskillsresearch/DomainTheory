@@ -16,19 +16,14 @@ def masterPairCode : ℕ := Nat.pair zeroCode oneCode
   unfold masterPairCode decodeRatPair
   simp only [unpair_pair_fst, unpair_pair_snd, decodeRat_zeroCode, decodeRat_oneCode]
 
-/-- A fixed index of `U.master = Ico 0 1`. -/
 def UmasterIdx : ℕ := encodeQPairList [((0 : ℚ), (1 : ℚ))]
 
-/-- The singleton list-code `[masterPairCode]` decodes to the singleton presenting list of
-`U.master`. -/
 theorem decodeQPairList_masterCode :
     decodeQPairList (Nat.pair masterPairCode 0 + 1) = [((0 : ℚ), (1 : ℚ))] := by
   unfold decodeQPairList
   rw [decodeList_succ, unpair_pair_fst, unpair_pair_snd, decodeList_zero]
   simp [decodeRatPair_masterPairCode]
 
-/-- **A list all of whose pairs are already non-degenerate is empty iff it presents `∅`** (unlike
-an arbitrary presenting list, where individually-degenerate pairs could make this fail). -/
 theorem presentedIntervals_eq_empty_iff_of_forall_lt {L' : List (ℚ × ℚ)}
     (hpos : ∀ p ∈ L', p.1 < p.2) : presentedIntervals L' = ∅ ↔ L' = [] := by
   constructor
@@ -54,27 +49,18 @@ theorem presentedIntervals_singleton_zero_one :
     presentedIntervals ([((0 : ℚ), (1 : ℚ))]) = U.master := by
   rw [presentedIntervals.cons, presentedIntervals.nil, Set.union_empty]; rfl
 
-/-- Clip a rational pair to `[0,1)`, moving `r` up to `0` and `s` down to `1` when needed. Mirrors
-`Definition87.lean`'s `private def clip`, redefined here (public) since `canonList`/`canonCode` need
-both a list-level and a code-level version of it. -/
 def qpClip (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ 0, p.2 ⊓ 1)
 
-/-- **Canonicalize** an arbitrary presenting list into one that presents a genuine
-`U`-neighbourhood: clip every pair into `[0,1)` and discard degenerate pairs, falling back to the
-single pair `(0,1)` (presenting `U.master`) if nothing survives. -/
 def canonList (L : List (ℚ × ℚ)) : List (ℚ × ℚ) :=
   match (L.map qpClip).filter (fun p => decide (p.1 < p.2)) with
   | [] => [((0 : ℚ), (1 : ℚ))]
   | L' => L'
 
-/-- Unfolding equation for `canonList` on the `cons` branch. -/
 theorem canonList_eq_of_filter_eq_cons {L : List (ℚ × ℚ)} {a : ℚ × ℚ} {l : List (ℚ × ℚ)}
     (h : (L.map qpClip).filter (fun p => decide (p.1 < p.2)) = a :: l) :
     canonList L = a :: l := by
   unfold canonList; rw [h]
 
-/-- Unfolding equation for `canonList` on the `nil` branch, stated so `rw` can fire on a literal
-occurrence of `canonList L` (rather than needing to see through the `match`). -/
 theorem canonList_eq_of_filter_eq_nil {L : List (ℚ × ℚ)}
     (h : (L.map qpClip).filter (fun p => decide (p.1 < p.2)) = []) :
     canonList L = [((0 : ℚ), (1 : ℚ))] := by
@@ -91,7 +77,6 @@ theorem presentedIntervals_map_qpClip (L : List (ℚ × ℚ)) :
   · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hx0, hx1⟩
     exact ⟨(q.1 ⊔ 0, q.2 ⊓ 1), ⟨q, hq, rfl⟩, sup_le hxq1 hx0, lt_inf_iff.mpr ⟨hxq2, hx1⟩⟩
 
-/-- **`canonList` always presents a genuine `U`-neighbourhood.** -/
 theorem U_presentedIntervals.mem_canonList (L : List (ℚ × ℚ)) :
     U.mem (presentedIntervals (canonList L)) := by
   rcases hL : (L.map qpClip).filter (fun p => decide (p.1 < p.2)) with _ | ⟨a, l⟩
@@ -108,7 +93,6 @@ theorem U_presentedIntervals.mem_canonList (L : List (ℚ × ℚ)) :
     refine ⟨⟨a :: l, rfl⟩, ?_, hL'eq ▸ Set.inter_subset_right⟩
     exact ⟨a.1, presentedIntervals.mem.mpr ⟨a, List.mem_cons.mpr (Or.inl rfl), le_refl _, ha⟩⟩
 
-/-- **`canonList` is a no-op (as a set) on a list that already presents a `U`-neighbourhood.** -/
 theorem canonList_fixed {L : List (ℚ × ℚ)} (h : U.mem (presentedIntervals L)) :
     presentedIntervals (canonList L) = presentedIntervals L := by
   obtain ⟨-, hne, hsub⟩ := h
@@ -122,28 +106,19 @@ theorem canonList_fixed {L : List (ℚ × ℚ)} (h : U.mem (presentedIntervals L
   · rw [canonList_eq_of_filter_eq_cons hL, ← hL, presentedIntervals_filter_qpPos,
       presentedIntervals_map_qpClip, Set.inter_eq_left.mpr hsub]
 
-/-- Code-level `qpClip`: `(r,s) ↦ (r⊔0, s⊓1)` on a rational-pair code. -/
 def qpClipCode (e : ℕ) : ℕ :=
   Nat.pair (ratMaxCode (Nat.pair e.unpair.1 zeroCode)) (ratMinCode (Nat.pair e.unpair.2 oneCode))
 
-/-- `[qpClipCode e]` if the clipped pair is non-degenerate, else `[]` (the empty list code `0`). -/
 def canonFilterStep (e : ℕ) : ℕ :=
   selectFn (qpNonemptyBop (qpClipCode e)) (Nat.pair (qpClipCode e) 0 + 1) 0
 
-/-- The code-level clip-and-filter pass, mirroring the list-level
-`(L.map qpClip).filter (fun p => decide (p.1 < p.2))`. -/
 def canonListCode (c : ℕ) : ℕ := flatMapCode (fun t => canonFilterStep t.unpair.2) 0 c
 
-/-- **The code-level canonicalization**, mirroring `canonList` exactly: `canonListCode c` if
-non-empty, else the fallback singleton `[masterPairCode]` (presenting `U.master`). -/
 def canonCode (c : ℕ) : ℕ :=
   selectFn (isZero (canonListCode c)) (Nat.pair masterPairCode 0 + 1) (canonListCode c)
 
-/-- **`𝒰`'s enumeration**: canonicalize the `List (ℚ × ℚ)` coded by `n`. -/
 def UX (n : ℕ) : Set ℚ := presentedIntervals (decodeQPairList (canonCode n))
 
-/-- The intersection index: `combineCode` on canonicalized codes (`UX` re-canonicalizes on
-lookup, so no further canonicalization is needed here). -/
 def Uinter (n m : ℕ) : ℕ := combineCode (canonCode n) (canonCode m)
 
 theorem decodeRatPair_qpClipCode (e : ℕ) :
@@ -188,7 +163,6 @@ theorem mem_decodeQPairList_canonFilterStep (e : ℕ) (p : ℚ × ℚ) :
   · simp [h]
   · simp [h]
 
-/-- **`canonListCode` realizes the clip-and-filter pass at the set level.** -/
 theorem mem_decodeQPairList_canonListCode (c : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (canonListCode c) ↔
       ∃ p0 ∈ decodeQPairList c, (qpClip p0).1 < (qpClip p0).2 ∧ p = qpClip p0 := by
@@ -202,9 +176,6 @@ theorem mem_decodeQPairList_canonListCode (c : ℕ) (p : ℚ × ℚ) :
     obtain ⟨y, hy, rfl⟩ := (mem_decodeQPairList c p0).mp hp0
     exact ⟨y, hy, by rw [unpair_pair_snd, mem_decodeQPairList_canonFilterStep]; exact ⟨hcond, hp⟩⟩
 
-/-- Every element of `decodeQPairList (canonListCode c)` is already non-degenerate (this is
-`canonFilterStep`'s whole point), so — unlike an arbitrary list — this particular list is empty
-iff its `presentedIntervals` is empty. -/
 theorem decodeQPairList_canonListCode_eq_nil_iff (c : ℕ) :
     decodeQPairList (canonListCode c) = [] ↔
       presentedIntervals (decodeQPairList (canonListCode c)) = ∅ :=
@@ -212,7 +183,6 @@ theorem decodeQPairList_canonListCode_eq_nil_iff (c : ℕ) :
     obtain ⟨p0, hp0, hcond, rfl⟩ := (mem_decodeQPairList_canonListCode c p).mp hp
     exact hcond)).symm
 
-/-- **`canonListCode` realizes the clip-and-filter pass at the `presentedIntervals` level.** -/
 theorem presentedIntervals_decodeQPairList_canonListCode (c : ℕ) :
     presentedIntervals (decodeQPairList (canonListCode c))
       = presentedIntervals (decodeQPairList c) ∩ Set.Ico (0 : ℚ) 1 := by
@@ -227,7 +197,6 @@ theorem presentedIntervals_decodeQPairList_canonListCode (c : ℕ) :
     rw [decide_eq_true_eq] at hcond
     exact ⟨p0, hp0, hp ▸ hcond, hp.symm⟩
 
-/-- **`canonCode` realizes `canonList` at the `presentedIntervals` level.** -/
 theorem presentedIntervals_decodeQPairList_canonCode (c : ℕ) :
     presentedIntervals (decodeQPairList (canonCode c))
       = presentedIntervals (canonList (decodeQPairList c)) := by
@@ -282,12 +251,9 @@ theorem UX_UmasterIdx : UX UmasterIdx = U.master := by
     rw [presentedIntervals_singleton_zero_one]; exact U.master_mem
   rw [canonList_fixed hmem, presentedIntervals_singleton_zero_one]
 
-/-- Every `UX n` is a genuine `U`-neighbourhood. -/
 theorem U_mem_UX (n : ℕ) : U.mem (UX n) := by
   rw [UX_eq]; exact U_presentedIntervals.mem_canonList _
 
-/-- `UX` is onto `U`'s neighbourhoods: every `U`-neighbourhood already has a Scott-literal
-presenting list (`U.mem_iff_scott`), on which `canonList` is a no-op (`canonList_fixed`). -/
 theorem U_surj_UX : ∀ {Y : Set ℚ}, U.mem Y → ∃ n, UX n = Y := by
   intro Y hY
   obtain ⟨L, -, hYeq, -⟩ := U.mem_iff_scott.mp hY
@@ -295,10 +261,6 @@ theorem U_surj_UX : ∀ {Y : Set ℚ}, U.mem Y → ∃ n, UX n = Y := by
   exact ⟨encodeQPairList L, by
     rw [UX_eq, decodeQPairList_encodeQPairList, canonList_fixed hUL, ← hYeq]⟩
 
-/-- **Scott's consistency condition reduces to non-emptiness**: since `U`'s raw intersection
-`combineCode` output is *automatically* a genuine `U`-neighbourhood whenever it is non-empty
-(it is always presentable and always `⊆ [0,1)`), "`∃k. Xₖ ⊆ Xₙ∩Xₘ`" holds iff `Xₙ∩Xₘ` is
-non-empty (every `Xₖ` being itself non-empty rules out the `⊆ ∅` direction). -/
 theorem U_cons_iff_nonempty_inter (n m : ℕ) :
     (∃ k, UX k ⊆ UX n ∩ UX m) ↔ (UX n ∩ UX m).Nonempty := by
   constructor
@@ -350,8 +312,6 @@ theorem primrec_canonCode : Nat.Primrec canonCode :=
     (Nat.Primrec.const (Nat.pair masterPairCode 0 + 1)) primrec_canonListCode).of_eq
     fun _ => rfl
 
-/-- **7.1(ii) for `𝒰`**: consistency `∃k. X_k ⊆ Xₙ ∩ Xₘ` is recursively decidable, via
-`U_cons_iff_nonempty_inter` and `recDecidable_presentedIntervals_nonempty`. -/
 theorem U_cons_computable : RecDecidable₂ (fun n m => ∃ k, UX k ⊆ UX n ∩ UX m) := by
   unfold RecDecidable₂
   have hcomb : Nat.Primrec (fun t : ℕ => combineCode (canonCode t.unpair.1) (canonCode t.unpair.2)) :=
@@ -362,9 +322,6 @@ theorem U_cons_computable : RecDecidable₂ (fun n m => ∃ k, UX k ⊆ UX n ∩
   show (∃ k, UX k ⊆ UX t.unpair.1 ∩ UX t.unpair.2) ↔ _
   rw [U_cons_iff_nonempty_inter, UX, UX, presentedIntervals_decodeQPairList_combineCode]
 
-/-- **7.1(i) for `𝒰`**: `Xₙ ∩ Xₘ = X_k` is recursively decidable. Reduces to
-`recDecidable₂_presentedIntervals_eq` on the codes `combineCode (canonCode n) (canonCode m)`
-(realizing `Xₙ ∩ Xₘ`) and `canonCode k` (realizing `X_k`). -/
 theorem U_interEq_computable : RecDecidable₃ (fun n m k => UX n ∩ UX m = UX k) := by
   unfold RecDecidable₃
   have h1 : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
@@ -390,7 +347,6 @@ theorem Uinter_primrec : Nat.Primrec (fun t : ℕ => Uinter t.unpair.1 t.unpair.
     (primrec_canonCode.comp Nat.Primrec.right))).of_eq
     fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- **Theorem 8.8(b), Part 3.** `𝒰` (Definition 8.7) has a genuine `ComputablePresentation`. -/
 def UComputablePresentation : ComputablePresentation U where
   X := UX
   mem_X := U_mem_UX
@@ -403,11 +359,8 @@ def UComputablePresentation : ComputablePresentation U where
   masterIdx := UmasterIdx
   masterIdx_spec := UX_UmasterIdx
 
-/-- **`𝒰` is effectively given.** -/
 theorem U_isEffectivelyGiven : U.IsEffectivelyGiven := ⟨UComputablePresentation⟩
 
-/-- `decodeQPairList (canonCode c)` is never empty (it always contains at least the fallback
-pair `(0,1)`, or a genuine clipped pair). -/
 theorem decodeQPairList_canonCode_ne_nil (c : ℕ) : decodeQPairList (canonCode c) ≠ [] := by
   unfold canonCode
   by_cases hz : canonListCode c = 0
@@ -425,22 +378,15 @@ theorem decodeQPairList_canonCode_ne_nil (c : ℕ) : decodeQPairList (canonCode 
     unfold decodeQPairList at h'
     rwa [List.map_eq_nil_iff, decodeList_eq_nil_iff] at h'
 
-/-- `canonCode c` is never the `0` (empty-list) code. -/
 theorem canonCode_ne_zero (c : ℕ) : canonCode c ≠ 0 := by
   intro h
   exact decodeQPairList_canonCode_ne_nil c (by rw [h]; unfold decodeQPairList; rw [decodeList_zero]; rfl)
 
-/-- Every pair in `decodeQPairList (canonListCode c)` is already non-degenerate (this is
-`canonFilterStep`'s whole point). -/
 theorem forall_lt_decodeQPairList_canonListCode (c : ℕ) :
     ∀ p ∈ decodeQPairList (canonListCode c), p.1 < p.2 := fun p hp => by
   obtain ⟨p0, -, hcond, rfl⟩ := (mem_decodeQPairList_canonListCode c p).mp hp
   exact hcond
 
-/-- **Every pair in `decodeQPairList (canonCode c)` is non-degenerate** — both branches of
-`canonCode` (the filtered list, or the `[masterPairCode]` fallback) only ever produce
-`p.1 < p.2` pairs. This is what lets `splitU` (Theorem 8.8(b) Part 4) safely pick the *first*
-pair of `decodeQPairList (canonCode n)` as its midpoint-split witness, with no search needed. -/
 theorem forall_lt_decodeQPairList_canonCode (c : ℕ) :
     ∀ p ∈ decodeQPairList (canonCode c), p.1 < p.2 := by
   unfold canonCode
@@ -463,6 +409,5 @@ theorem U_mem_union_UX (n m : ℕ) : U.mem (UX n ∪ UX m) := by
   exact ⟨⟨decodeQPairList (canonCode n) ++ decodeQPairList (canonCode m),
       (presentedIntervals.append _ _).symm⟩, hne1.mono Set.subset_union_left,
     Set.union_subset hsub1 hsub2⟩
-
 
 end DomainTheory.NeighbourhoodSystems

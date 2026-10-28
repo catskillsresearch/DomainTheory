@@ -6,7 +6,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.lam
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Table 2.** Syntax of LAMBDA. -/
 inductive Term where
   | var : ℕ → Term
   | zero : Term

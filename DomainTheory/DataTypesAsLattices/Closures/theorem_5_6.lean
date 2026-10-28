@@ -26,8 +26,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_universe
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 5.6 (The limit theorem for algebraic lattices).**
-`(λf : V∘→V. Y(f)) : (V∘→V) ∘→ V`. -/
 theorem theorem_5_6 {f : Pomega} (hf : typed f (arrowR Vcomb Vcomb)) :
     typed (funOf Ycomb f) Vcomb := by
   set y := funOf Ycomb f
@@ -49,8 +47,6 @@ theorem theorem_5_6 {f : Pomega} (hf : typed f (arrowR Vcomb Vcomb)) :
 
 namespace theorem_5_6
 
-/-- **Scott 1976, Theorem 5.6, combinator form.**
-`(λf : V∘→V. Y(f)) : (V∘→V) ∘→ V`. -/
 theorem combinator :
     typed (comp Ycomb (arrowR Vcomb Vcomb))
       (arrowR (arrowR Vcomb Vcomb) Vcomb) := by
@@ -66,7 +62,6 @@ theorem combinator :
   rw [retract_app harr]
   exact hy
 
-/-- Kleene iterates of `I` under a closure-preserving operator stay closures. -/
 theorem iterates {F : Pomega → Pomega}
     (_hF : IsScottContinuous F)
     (hcl : ∀ a, Closure a → Closure (F a)) :

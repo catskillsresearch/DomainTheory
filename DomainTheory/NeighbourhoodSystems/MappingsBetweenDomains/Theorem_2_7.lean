@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7
 public import Mathlib.Order.Hom.Basic
@@ -14,15 +13,8 @@ namespace ApproximableMap
 section
 variable {α β γ δ : Type*}
 
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
-/- concordance: source L743 THEOREM 2.7 isomorphisms are approximable -/
-/-- **Theorem 2.7 (Scott 1981, PRG-19) — the approximable map of an isomorphism.** Given a domain
-isomorphism `e : |𝒟₀| ≃o |𝒟₁|` (Definition 1.9), Scott's "only way to define a neighbourhood
-mapping" is the relation `X f Y ↔ Y ∈ e(↑X)`. The conditions of 2.1 hold because `e` is monotone:
-(i) `Δ₁ ∈ e(⊥₀)` is `master_mem`; (ii) is `inter_mem` of the filter `e(↑X)`; (iii) sharpening `X' ⊆ X`
-means `↑X ⊑ ↑X'`, so `e(↑X) ⊑ e(↑X')` and the output transports along, then widens by `up_mem`. -/
 def ofIso (e : V₀.Element ≃o V₁.Element) : ApproximableMap V₀ V₁ where
   rel X Y := ∃ _ : V₀.mem X, (e (V₀.principal ‹V₀.mem X›)).mem Y
   rel_dom := fun h => h.1
@@ -38,28 +30,22 @@ def ofIso (e : V₀.Element ≃o V₁.Element) : ApproximableMap V₀ V₁ where
     have hmem : (e (V₀.principal hX')).mem Y := (e.monotone hle) Y hY
     exact (e (V₀.principal hX')).up_mem hmem hY' hYY'
 
-/-- **Theorem 2.7 (Scott 1981, PRG-19) — finite elements go to finite elements.** A domain
-isomorphism `e` carries the finite (principal) element `↑X` to a finite element `↑Y` of the other
-domain. Following Scott: with `w = e(↑X)`, the set `S = {e⁻¹(↑Y) ∣ Y ∈ w}` is directed (intersections
-of members of `w` give upper bounds), so its union `z = ⋃ S` is an element (`sSupDirected`). One shows
-`z = ↑X` (each `e⁻¹(↑Y) ⊑ e⁻¹(w) = ↑X`, and conversely `w ⊑ e(z)` forces `↑X = e⁻¹(w) ⊑ z`); then
-`X ∈ z` lands in some `e⁻¹(↑Y)`, giving `w ⊑ ↑Y`, while `↑Y ⊑ w` is automatic — so `w = ↑Y`. -/
 theorem exists_principal_eq_apply_principal (e : V₀.Element ≃o V₁.Element)
     {X : Set α} (hX : V₀.mem X) :
     ∃ (Y : Set β) (hY : V₁.mem Y), e (V₀.principal hX) = V₁.principal hY := by
-  -- `w = e(↑X)`, and the directed family `S` of inverse images of principals of members of `w`.
+
   set w : V₁.Element := e (V₀.principal hX) with hw
   set S : Set V₀.Element :=
     {z | ∃ (Y : Set β) (hY : V₁.mem Y), w.mem Y ∧ z = e.symm (V₁.principal hY)} with hS
-  -- `e⁻¹(w) = ↑X`.
+
   have hsymm_w : e.symm w = V₀.principal hX := by rw [hw, e.symm_apply_apply]
-  -- For `Y ∈ w`, `↑Y ⊑ w`.
+
   have hprin_le_w : ∀ {Y : Set β} (hY : V₁.mem Y), w.mem Y → V₁.principal hY ≤ w :=
     fun hY hYw Z hZ => w.up_mem hYw hZ.1 hZ.2
-  -- `S` is non-empty (use `Y = Δ₁`).
+
   have hne : S.Nonempty :=
     ⟨e.symm (V₁.principal V₁.master_mem), V₁.master, V₁.master_mem, w.master_mem, rfl⟩
-  -- `S` is directed: intersect the two members of `w`.
+
   have hdir : ∀ a ∈ S, ∀ b ∈ S, ∃ c ∈ S, a ≤ c ∧ b ≤ c := by
     rintro a ⟨Y, hY, hYw, rfl⟩ b ⟨Y', hY', hY'w, rfl⟩
     have hYY'w : w.mem (Y ∩ Y') := w.inter_mem hYw hY'w
@@ -67,15 +53,15 @@ theorem exists_principal_eq_apply_principal (e : V₀.Element ≃o V₁.Element)
     refine ⟨e.symm (V₁.principal hYY'), ⟨Y ∩ Y', hYY', hYY'w, rfl⟩, ?_, ?_⟩
     · exact e.symm.monotone ((V₁.principal_le_iff hY hYY').mpr Set.inter_subset_left)
     · exact e.symm.monotone ((V₁.principal_le_iff hY' hYY').mpr Set.inter_subset_right)
-  -- The directed union `z = ⋃ S`.
+
   set z : V₀.Element := V₀.sSupDirected S hne hdir with hz
-  -- `z ⊑ ↑X`: every member `e⁻¹(↑Y) ⊑ e⁻¹(w) = ↑X`.
+
   have hz_le : z ≤ V₀.principal hX := by
     apply V₀.sSupDirected_le
     rintro s ⟨Y, hY, hYw, rfl⟩
     have : e.symm (V₁.principal hY) ≤ e.symm w := e.symm.monotone (hprin_le_w hY hYw)
     rwa [hsymm_w] at this
-  -- `↑X ⊑ z`: show `w ⊑ e(z)`, then `↑X = e⁻¹(w) ⊑ z`.
+
   have hw_le_ez : w ≤ e z := by
     intro Y hYw
     have hY : V₁.mem Y := w.sub hYw
@@ -88,11 +74,11 @@ theorem exists_principal_eq_apply_principal (e : V₀.Element ≃o V₁.Element)
   have hX_le_z : V₀.principal hX ≤ z := by
     have : e.symm w ≤ e.symm (e z) := e.symm.monotone hw_le_ez
     rwa [hsymm_w, e.symm_apply_apply] at this
-  -- Hence `z = ↑X`, so `X ∈ z` lands in some member `e⁻¹(↑Y)`.
+
   have hz_eq : z = V₀.principal hX := le_antisymm hz_le hX_le_z
   have hXz : z.mem X := hz_eq ▸ ⟨hX, subset_rfl⟩
   obtain ⟨s, ⟨Y, hY, hYw, rfl⟩, hXs⟩ := hXz
-  -- `↑X ⊑ e⁻¹(↑Y)` (it contains `X`), so `w = e(↑X) ⊑ ↑Y`; with `↑Y ⊑ w` we get `w = ↑Y`.
+
   refine ⟨Y, hY, ?_⟩
   have hprinX_le : V₀.principal hX ≤ e.symm (V₁.principal hY) :=
     fun Z hZ => (e.symm (V₁.principal hY)).up_mem hXs hZ.1 hZ.2
@@ -102,10 +88,6 @@ theorem exists_principal_eq_apply_principal (e : V₀.Element ≃o V₁.Element)
     rwa [← hw] at this
   exact le_antisymm hw_le_prinY (hprin_le_w hY hYw)
 
-/-- **Theorem 2.7 — the relation re-defines the function.** The elementwise map of `ofIso e` is `e`
-itself: `(ofIso e)(x) = e(x)` for every `x`. The forward inclusion uses that `X ∈ x` implies
-`↑X ⊑ x`, hence `e(↑X) ⊑ e(x)`; the reverse uses surjectivity of `e` (via `e.symm`) exactly as in
-Scott's proof — one shows `x = e⁻¹((ofIso e)(x))` by antisymmetry. -/
 theorem toElementMap_ofIso (e : V₀.Element ≃o V₁.Element) (x : V₀.Element) :
     (ofIso e).toElementMap x = e x := by
   have hgxle : (ofIso e).toElementMap x ≤ e x := by
@@ -128,9 +110,6 @@ theorem toElementMap_ofIso (e : V₀.Element ≃o V₁.Element) (x : V₀.Elemen
   rw [e.apply_symm_apply] at h1
   exact h1.symm
 
-/-- **Theorem 2.7 (statement) (Scott 1981, PRG-19).** "Every isomorphism between domains results from
-an approximable mapping." For any domain isomorphism `e`, there is an approximable mapping whose
-elementwise action is exactly `e`. -/
 theorem exists_approximable_of_iso (e : V₀.Element ≃o V₁.Element) :
     ∃ f : ApproximableMap V₀ V₁, ∀ x, f.toElementMap x = e x :=
   ⟨ofIso e, toElementMap_ofIso e⟩

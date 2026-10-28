@@ -5,9 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.triangle_eq_zero
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem pair_eq_right {n m : ℕ} (h : pair n m = m) : n = 0 ∧ m = 0 := by
   have : triangle (n + m) = 0 := by

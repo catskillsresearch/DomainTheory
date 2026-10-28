@@ -44,7 +44,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UCon
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive

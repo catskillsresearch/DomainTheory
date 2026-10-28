@@ -22,11 +22,9 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- The embedding `i_{n∞} : Dₙ → D_∞`, Scott-continuous. -/
 noncomputable def embInf (n : ℕ) : ScottMap (D n) (InverseLimit D P) :=
   ⟨embInfFun D P n, continuous_of_preservesDirectedSup (embInf_preservesDirectedSup D P n)⟩
 
-/-- **Scott 1972, §4 (recursion equation).** `i_{n∞} = i_{(n+1)∞} ∘ iₙ`. -/
 theorem embInf_succ (n : ℕ) (x : D n) :
     embInf D P (n + 1) ((P n).incl x) = embInf D P n x := by
   apply Subtype.ext
@@ -45,7 +43,6 @@ theorem embInf_succ (n : ℕ) (x : D n) :
       projLE.succ D P (le_of_lt (not_le.mp h1)) (le_of_lt (not_le.mp h2)) ((P n).incl x),
       (P n).retr_incl]
 
-/-- The family `n ↦ i_{n∞}(xₙ)` is monotone (the lub defining `x` is monotone). -/
 theorem embInf_le_succ (x : InverseLimit D P) (n : ℕ) :
     embInf D P n (x.1 n) ≤ embInf D P (n + 1) (x.1 (n + 1)) := by
   rw [← embInf_succ D P n (x.1 n)]

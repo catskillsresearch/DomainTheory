@@ -17,7 +17,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)

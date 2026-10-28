@@ -19,7 +19,6 @@ namespace InfoSys
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Points of the flat BOOL domain: undefined, true, or false. -/
 inductive BoolPoint
   | undef
   | isTrue

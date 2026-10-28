@@ -9,9 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem tagInj_zero (i : ℕ) (x : Pomega) :
     funOf (tagInj i x) (ofNat 0) = ofNat i :=

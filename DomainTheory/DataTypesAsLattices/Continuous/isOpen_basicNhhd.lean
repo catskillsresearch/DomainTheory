@@ -9,11 +9,9 @@ public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
-
 
 theorem isOpen_basicNhhd (n : ℕ) : IsOpen (basicNhhd n) := by
   obtain ⟨s, hs⟩ := (e_finite n).exists_finset_coe

@@ -16,7 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (5.14).** `V(a)(x) = Y(λy. x ∪ a(y))`. -/
 def Vstep (a x : Pomega) (y : Pomega) : Pomega := x ∪ funOf a y
 
 namespace Vstep

@@ -8,37 +8,29 @@ public import Mathlib.Order.BourbakiWitt
 section
 namespace DomainTheory.NeighbourhoodSystems.Exercise713
 open NeighborhoodSystem Domain.Recursive
-/- concordance: source L4609 EXERCISE 7.13 axiomatic neighbourhood structure -/
-/-- **Exercise 7.13 — the abstract data.** A relation `INCL : ℕ → ℕ → Prop` together with the
-witnesses and decidability/axiom data Scott requires. The derived relations are
-`CONS`/`MEET` (below); the literal existential axioms (iii)/(iv) are `axiom_iii`/`axiom_iv`.
 
-We carry `topIdx` (a master code) and a primitive-recursive `meetIdx` as *data* — exactly mirroring
-`ComputablePresentation`, which carries its `inter` function as primitive-recursive data rather than
-recovering it by an unbounded search. This is the faithful "effective" reading of axioms (iii)/(iv).
--/
 structure InclStructure where
-  /-- Scott's integer inclusion relation `INCL(n, m)` (the image of `Xₙ ⊆ Xₘ`). -/
+
   INCL : ℕ → ℕ → Prop
-  /-- A primitive-recursive meet function: an index of the binary meet of consistent codes. -/
+
   meetIdx : ℕ → ℕ → ℕ
-  /-- A master code (witness of axiom (iii)). -/
+
   topIdx : ℕ
-  /-- `INCL` is recursively decidable. -/
+
   incl_dec : RecDecidable₂ INCL
-  /-- `CONS(n, m) ↔ ∃ k. INCL(k, n) ∧ INCL(k, m)` is recursively decidable. -/
+
   cons_dec : RecDecidable₂ (fun n m => ∃ k, INCL k n ∧ INCL k m)
-  /-- `MEET(n, m, k) ↔ ∀ j. (INCL(j, k) ↔ INCL(j, n) ∧ INCL(j, m))` is recursively decidable. -/
+
   meet_dec : RecDecidable₃ (fun n m k => ∀ j, INCL j k ↔ (INCL j n ∧ INCL j m))
-  /-- The meet function is primitive recursive (on the `Nat.pair` coding of `n, m`). -/
+
   meetIdx_primrec : Nat.Primrec (fun t => meetIdx t.unpair.1 t.unpair.2)
-  /-- **(i)** `INCL` is reflexive. -/
+
   incl_refl : ∀ n, INCL n n
-  /-- **(ii)** `INCL` is transitive. -/
+
   incl_trans : ∀ {n m k}, INCL n m → INCL m k → INCL n k
-  /-- **(iii)** the master code `topIdx` is `INCL`-greatest. -/
+
   topIdx_spec : ∀ n, INCL n topIdx
-  /-- **(iv)** `meetIdx n m` is a `MEET` of `n, m` whenever `(n, m)` is consistent. -/
+
   meetIdx_spec : ∀ {n m}, (∃ k, INCL k n ∧ INCL k m) →
     ∀ j, INCL j (meetIdx n m) ↔ (INCL j n ∧ INCL j m)
 
@@ -54,18 +46,14 @@ namespace InclStructure
 
 variable (I : InclStructure)
 
-/-- Scott's consistency relation `CONS(n, m) :↔ ∃ k. INCL(k, n) ∧ INCL(k, m)`. -/
 def CONS (n m : ℕ) : Prop := ∃ k, I.INCL k n ∧ I.INCL k m
 
-/-- Scott's binary-meet relation `MEET(n, m, k) :↔ ∀ j. (INCL(j, k) ↔ INCL(j, n) ∧ INCL(j, m))`. -/
 def MEET (n m k : ℕ) : Prop := ∀ j, I.INCL j k ↔ (I.INCL j n ∧ I.INCL j m)
 
-/-- The hint neighbourhood `Sₙ = {m ∣ INCL(m, n)}` over the token type `ℕ`. -/
 def toNbhd (n : ℕ) : Set ℕ := {m | I.INCL m n}
 
 @[simp] theorem mem_toNbhd {n m : ℕ} : m ∈ I.toNbhd n ↔ I.INCL m n := Iff.rfl
 
-/-- `Sₙ ∩ Sₘ = Sₖ ↔ MEET(n, m, k)` — Scott's relation 7.1(i) *is* `MEET`. -/
 theorem toNbhd_inter_eq_iff (n m k : ℕ) :
     I.toNbhd n ∩ I.toNbhd m = I.toNbhd k ↔ I.MEET n m k := by
   unfold MEET
@@ -74,8 +62,6 @@ theorem toNbhd_inter_eq_iff (n m k : ℕ) :
   rw [Set.mem_inter_iff, mem_toNbhd, mem_toNbhd, mem_toNbhd]
   exact iff_comm
 
-/-- **The key inclusion law:** `Sₙ ⊆ Sₖ ↔ INCL(n, k)`. `→` reads off `INCL(n, k)` from `n ∈ Sₙ`
-(reflexivity (i)); `←` is transitivity (ii). -/
 theorem toNbhd_subset_iff {n k : ℕ} : I.toNbhd n ⊆ I.toNbhd k ↔ I.INCL n k := by
   constructor
   · intro h
@@ -83,19 +69,15 @@ theorem toNbhd_subset_iff {n k : ℕ} : I.toNbhd n ⊆ I.toNbhd k ↔ I.INCL n k
   · intro hnk m hm
     exact I.incl_trans hm hnk
 
-/-- `Sₖ ⊆ Sₙ ∩ Sₘ ↔ INCL(k, n) ∧ INCL(k, m)`. -/
 theorem toNbhd_subset_inter_iff (k n m : ℕ) :
     I.toNbhd k ⊆ I.toNbhd n ∩ I.toNbhd m ↔ (I.INCL k n ∧ I.INCL k m) := by
   rw [Set.subset_inter_iff, I.toNbhd_subset_iff, I.toNbhd_subset_iff]
 
-/-- `S_{topIdx} = ℕ`: the master code's neighbourhood is everything (axiom (iii)). -/
 theorem toNbhd_top : I.toNbhd I.topIdx = Set.univ := by
   ext m
   simp only [mem_toNbhd, Set.mem_univ, iff_true]
   exact I.topIdx_spec m
 
-/-- **Exercise 7.13 (⇐) — the hint system is a neighbourhood system.** `Sₙ = {m ∣ INCL(m, n)}` over
-tokens `ℕ`, master `Δ = ℕ = S_{topIdx}`; closure under intersection is axiom (iv) via `MEET`. -/
 def toSystem : NeighborhoodSystem ℕ where
   mem Y := ∃ n, Y = I.toNbhd n
   master := Set.univ
@@ -117,12 +99,6 @@ end
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- **The `MEET ↔ interEq` reduction.** On an effectively given system, Scott's `MEET(n, m, k)` is
-equivalent to `Xₙ ∩ Xₘ = Xₖ`, so it is decidable by relation 7.1(i).
-
-`⇐` is `Set.subset_inter_iff`. `⇒`: from `MEET` at `j = k` we get `Xₖ ⊆ Xₙ ∩ Xₘ`, so `Xₖ` witnesses
-consistency of `(n, m)`; `inter_mem` then makes `Xₙ ∩ Xₘ` a neighbourhood, `surj` enumerates it as
-some `Xₚ`, and `MEET` at `j = p` gives `Xₙ ∩ Xₘ = Xₚ ⊆ Xₖ`. -/
 theorem meet_iff_interEq (P : ComputablePresentation V) (n m k : ℕ) :
     (∀ j, P.X j ⊆ P.X k ↔ (P.X j ⊆ P.X n ∧ P.X j ⊆ P.X m)) ↔ (P.X n ∩ P.X m = P.X k) := by
   constructor
@@ -138,11 +114,6 @@ theorem meet_iff_interEq (P : ComputablePresentation V) (n m k : ℕ) :
   · intro h j
     rw [← h, Set.subset_inter_iff]
 
-/-- **Exercise 7.13 (⇒) — every effectively given domain is an `INCL` relation.** Given a computable
-presentation `P` of `V`, set `INCL(n, m) := Xₙ ⊆ Xₘ`. Reflexivity/transitivity are those of `⊆`; the
-master code is `P.masterIdx` (`Xₙ ⊆ master`); the meet function is `P.inter`. `INCL`/`CONS` decidability
-are `P.incl_computable`/`P.cons_computable`; `MEET` decidability is `meet_iff_interEq` ∘
-`P.interEq_computable`. -/
 def ofPresentation (P : ComputablePresentation V) : InclStructure where
   INCL n m := P.X n ⊆ P.X m
   meetIdx := P.inter
@@ -179,8 +150,6 @@ def ofPresentation (P : ComputablePresentation V) : InclStructure where
 @[simp] theorem mem_ofPresentation_toNbhd (P : ComputablePresentation V) (j n : ℕ) :
     j ∈ (ofPresentation P).toNbhd n ↔ P.X j ⊆ P.X n := Iff.rfl
 
-/-- For `S = ofPresentation P`, two hint neighbourhoods coincide iff the underlying neighbourhoods
-do: `Sₙ = Sₘ ↔ Xₙ = Xₘ`. -/
 theorem ofPresentation_toNbhd_eq_iff (P : ComputablePresentation V) (n m : ℕ) :
     (ofPresentation P).toNbhd n = (ofPresentation P).toNbhd m ↔ P.X n = P.X m := by
   rw [Set.Subset.antisymm_iff, (ofPresentation P).toNbhd_subset_iff,
@@ -188,12 +157,9 @@ theorem ofPresentation_toNbhd_eq_iff (P : ComputablePresentation V) (n m : ℕ) 
   show (P.X n ⊆ P.X m ∧ P.X m ⊆ P.X n) ↔ P.X n = P.X m
   exact (Set.Subset.antisymm_iff).symm
 
-/-- The reconstructed system `toSystem (ofPresentation P)` over tokens `ℕ`. -/
 abbrev reconstruct (P : ComputablePresentation V) : NeighborhoodSystem ℕ :=
   (ofPresentation P).toSystem
 
-/-- The element of the reconstructed system corresponding to `x ∈ |V|`: the filter
-`{Sₙ ∣ Xₙ ∈ x}`. -/
 def reconElem (P : ComputablePresentation V) (x : V.Element) : (reconstruct P).Element where
   mem Y := ∃ n, Y = (ofPresentation P).toNbhd n ∧ x.mem (P.X n)
   sub := by rintro Y ⟨n, rfl, _⟩; exact ⟨n, rfl⟩
@@ -214,8 +180,6 @@ def reconElem (P : ComputablePresentation V) (x : V.Element) : (reconstruct P).E
     have hnm : P.X n ⊆ P.X m := (ofPresentation P).toNbhd_subset_iff.mp hsub
     exact ⟨m, rfl, x.up_mem hxn (P.mem_X m) hnm⟩
 
-/-- The element of `|V|` corresponding to `y` in the reconstructed system: the filter
-`{Xₙ ∣ Sₙ ∈ y}`. -/
 def reconElemInv (P : ComputablePresentation V) (y : (reconstruct P).Element) : V.Element where
   mem W := ∃ n, W = P.X n ∧ y.mem ((ofPresentation P).toNbhd n)
   sub := by rintro W ⟨n, rfl, _⟩; exact P.mem_X n
@@ -248,8 +212,6 @@ def reconElemInv (P : ComputablePresentation V) (y : (reconstruct P).Element) : 
       (ofPresentation P).toNbhd_subset_iff.mpr (by show P.X n ⊆ P.X p; rw [hp]; exact hWZ)
     exact y.up_mem hyn ⟨p, rfl⟩ hnp
 
-/-- **Round-trip B (the isomorphism).** `reconElem`/`reconElemInv` are mutually inverse and preserve
-and reflect the approximation order, giving `|V| ≃o |toSystem (ofPresentation P)|`. -/
 def reconIso (P : ComputablePresentation V) : V.Element ≃o (reconstruct P).Element where
   toFun := reconElem P
   invFun := reconElemInv P
@@ -297,9 +259,6 @@ namespace InclStructure
 
 variable (I : InclStructure)
 
-/-- **Exercise 7.13 (⇐) — the hint system is effectively given.** The enumeration is `Sₙ`; relation
-7.1(i) `Sₙ ∩ Sₘ = Sₖ` is `MEET` (`meet_dec`); relation 7.1(ii) consistency is `CONS` (`cons_dec`);
-the intersection function is `meetIdx`; the master code is `topIdx`. -/
 def toPresentation : ComputablePresentation I.toSystem where
   X := I.toNbhd
   mem_X n := ⟨n, rfl⟩
@@ -325,16 +284,12 @@ def toPresentation : ComputablePresentation I.toSystem where
   masterIdx := I.topIdx
   masterIdx_spec := I.toNbhd_top
 
-/-- **Axiom (i).** `INCL` is reflexive. -/
 theorem axiom_i (n : ℕ) : I.INCL n n := I.incl_refl n
 
-/-- **Axiom (ii).** `INCL` is transitive. -/
 theorem axiom_ii {n m k : ℕ} (h1 : I.INCL n m) (h2 : I.INCL m k) : I.INCL n k := I.incl_trans h1 h2
 
-/-- **Axiom (iii).** There is an `INCL`-greatest code. -/
 theorem axiom_iii : ∃ m, ∀ n, I.INCL n m := ⟨I.topIdx, I.topIdx_spec⟩
 
-/-- **Axiom (iv).** Consistent pairs have a meet. -/
 theorem axiom_iv (n m : ℕ) (h : I.CONS n m) : ∃ k, I.MEET n m k :=
   ⟨I.meetIdx n m, I.meetIdx_spec h⟩
 
@@ -344,15 +299,11 @@ end
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- **Round-trip A.** Starting from an abstract `InclStructure I`, building the hint system and its
-presentation, then reading off the integer inclusion relation recovers `I.INCL` exactly. -/
 theorem ofPresentation_toPresentation_INCL (I : InclStructure) (n m : ℕ) :
     (ofPresentation I.toPresentation).INCL n m ↔ I.INCL n m := by
   show I.toNbhd n ⊆ I.toNbhd m ↔ I.INCL n m
   exact I.toNbhd_subset_iff
 
-/-- **Exercise 7.13 (⇒, "essentially any effectively given system").** The system reconstructed from
-an effectively given `V` via its `INCL` relation is domain-isomorphic to `V`. -/
 theorem reconstruct_isomorphic (P : ComputablePresentation V) : reconstruct P ≅ᴰ V :=
   ⟨(reconIso P).symm⟩
 
@@ -363,8 +314,6 @@ namespace InclStructure
 
 variable (I : InclStructure)
 
-
-/-- **Exercise 7.13 (⇐).** The hint system is effectively given. -/
 theorem toSystem_isEffectivelyGiven : I.toSystem.IsEffectivelyGiven := ⟨I.toPresentation⟩
 
 end InclStructure
@@ -393,4 +342,3 @@ end
 
 end DomainTheory.NeighbourhoodSystems.Exercise713
 end
-

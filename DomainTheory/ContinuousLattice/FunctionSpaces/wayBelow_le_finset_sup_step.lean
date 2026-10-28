@@ -14,21 +14,15 @@ public import Mathlib.Data.Finset.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-
-/-- **Step-function decomposition of `≪`.** If `φ ≪ g` in `[D → D']`, then `φ` lies below a finite
-join of step functions `ē[eᵢ,eᵢ']` with `eᵢ' ≪ g eᵢ`. The finite joins of such step functions form
-a directed family with supremum `g`, so `WayBelow.sSup_iff` produces one above `φ`. -/
 theorem wayBelow_le_finset_sup_step (hD : ContinuousLattice D) (hD' : ContinuousLattice D')
     {φ g : ScottMap D D'} (h : φ ≪ g) :
     ∃ F : Finset (D × D'), (∀ p ∈ F, (p.2 : D') ≪ (g : D → D') p.1) ∧

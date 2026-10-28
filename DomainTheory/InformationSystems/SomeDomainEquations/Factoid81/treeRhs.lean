@@ -20,7 +20,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
 
-/-- The right-hand side of the domain equation is the official sum of products. -/
 def treeRhs : InfoSys (SumToken α (ProdToken (treeSystem A) (treeSystem A))) :=
   sumSystem A (productSystem (treeSystem A) (treeSystem A))
 
@@ -29,6 +28,5 @@ theorem treeRhs.eq_sum_product :
   rfl
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

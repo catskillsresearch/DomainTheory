@@ -17,9 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_right_isScott
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem treeF_isScottContinuous : IsScottContinuous treeF :=
   theorem_1_3 (f := fun b => plusR botElem b) (g := fun z => tensorR z z)

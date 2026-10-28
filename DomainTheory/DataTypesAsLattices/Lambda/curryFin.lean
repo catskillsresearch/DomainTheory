@@ -16,7 +16,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.beta
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-/-- Nested-graph representative of an n-ary continuous map. -/
+
 def curryFin : ∀ {n : ℕ}, ((Fin n → Pomega) → Pomega) → Pomega
   | 0, f => f Fin.elim0
   | _n + 1, f => graph (fun x => curryFin (fun xs => f (Fin.cons x xs)))

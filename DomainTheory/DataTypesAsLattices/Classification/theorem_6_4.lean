@@ -17,13 +17,10 @@ public import DomainTheory.DataTypesAsLattices.Classification.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-
-/-- **Scott 1976, Theorem 6.4 (The 𝔉 ∩̇ 𝔊 theorem).** -/
 theorem theorem_6_4 :
     ∀ U, IsFcapG U ↔ ∃ f, IsScottContinuous f ∧ U = {x | f x = ofNat 0} := by
   intro U

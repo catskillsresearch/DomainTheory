@@ -23,7 +23,6 @@ namespace InfoSysToIdealCompletion
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Retraction: directed supremum of the finite elements in the ideal. -/
 noncomputable def ofIdeal (I : Ideal (FiniteElement A)) : A.Element :=
   A.directedSup (idealCarrier A I) (nonempty_idealCarrier A I) (directed_idealCarrier A I)
 

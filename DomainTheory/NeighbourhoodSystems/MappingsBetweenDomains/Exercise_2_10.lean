@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
 @[expose] public section
 
@@ -12,12 +11,8 @@ namespace ApproximableMap
 section
 variable {α β γ : Type*}
 
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
-/-- **Exercise 2.10 (Scott 1981, PRG-19).** The pointwise **intersection** `h` of two approximable
-maps: `X h Z ↔ X f Z ∧ X g Z`. It is approximable, and (`mem_toElementMap_interMap`)
-`h(x) = f(x) ∩ g(x)`. -/
 def interMap (f g : ApproximableMap V₀ V₁) : ApproximableMap V₀ V₁ where
   rel X Z := f.rel X Z ∧ g.rel X Z
   rel_dom h := f.rel_dom h.1
@@ -27,9 +22,6 @@ def interMap (f g : ApproximableMap V₀ V₁) : ApproximableMap V₀ V₁ where
   mono := fun ⟨hf, hg⟩ hX'X hZZ' hX' hZ' =>
     ⟨f.mono hf hX'X hZZ' hX' hZ', g.mono hg hX'X hZZ' hX' hZ'⟩
 
-/- concordance: source L781 EXERCISE 2.10 intersection of two maps -/
-/-- **Exercise 2.10.** `h(x) = f(x) ∩ g(x)` (the meet in `|𝒟₁|`). The non-trivial direction combines
-witnesses `X ∈ x` (for `f`) and `X' ∈ x` (for `g`) through `X ∩ X' ∈ x` using `mono`. -/
 theorem mem_toElementMap_interMap (f g : ApproximableMap V₀ V₁) (x : V₀.Element) {Z : Set β} :
     ((interMap f g).toElementMap x).mem Z ↔
       (f.toElementMap x).mem Z ∧ (g.toElementMap x).mem Z := by

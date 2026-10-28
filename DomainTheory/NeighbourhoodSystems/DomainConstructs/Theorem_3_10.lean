@@ -8,9 +8,7 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-/- concordance: source L1273 THEOREM 3.10 elements are mappings -/
-/-- **Theorem 3.10 (Scott 1981, PRG-19).** The relation `X φ̂ Y ↔ [X, Y] ∈ φ` of a filter `φ`.
-Intersectivity is the payoff of positivity (`[X,Y]∩[X,Y'] = [X,Y∩Y']` is non-empty, so `Y∩Y' ∈ 𝒟₁`). -/
+
 def toApproxMap (φ : (funSpace V₀ V₁).Element) : ApproximableMap V₀ V₁ where
   rel X Y := φ.mem (step X Y)
   rel_dom := by intro X Y h; obtain ⟨f, hf⟩ := (φ.sub h).2; exact f.rel_dom hf
@@ -33,7 +31,6 @@ def toApproxMap (φ : (funSpace V₀ V₁).Element) : ApproximableMap V₀ V₁ 
 @[simp] theorem toApproxMap_rel {φ : (funSpace V₀ V₁).Element} {X : Set α} {Y : Set β} :
     (toApproxMap φ).rel X Y ↔ φ.mem (step X Y) := Iff.rfl
 
-/-- **Theorem 3.10 (Scott 1981, PRG-19).** The filter `f̂ = {F ∣ f ∈ F}` of an approximable map. -/
 def toFilter (f : ApproximableMap V₀ V₁) : (funSpace V₀ V₁).Element where
   mem W := (funSpace V₀ V₁).mem W ∧ f ∈ W
   sub h := h.1
@@ -53,8 +50,6 @@ def toFilter (f : ApproximableMap V₀ V₁) : (funSpace V₀ V₁).Element wher
 @[simp] theorem mem_toFilter {f : ApproximableMap V₀ V₁} {W : Set (ApproximableMap V₀ V₁)} :
     (toFilter f).mem W ↔ (funSpace V₀ V₁).mem W ∧ f ∈ W := Iff.rfl
 
-/-- **Theorem 3.10 (Scott 1981, PRG-19).** The function space is *complete*: every filter is fixed
-by a unique approximable mapping, inclusion-preservingly. -/
 def funSpaceEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     (funSpace V₀ V₁).Element ≃o ApproximableMap V₀ V₁ where
   toFun := toApproxMap
@@ -93,7 +88,6 @@ def funSpaceEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) 
 @[simp] theorem funSpaceEquiv_symm_apply (f : ApproximableMap V₀ V₁) :
     (funSpaceEquiv V₀ V₁).symm f = toFilter f := rfl
 
-/-- Intersection of two function-space neighbourhoods, when non-empty, is again one. -/
 theorem funSpace_mem_inter {W W' : Set (ApproximableMap V₀ V₁)}
     (hW : (funSpace V₀ V₁).mem W) (hW' : (funSpace V₀ V₁).mem W') (hne : (W ∩ W').Nonempty) :
     (funSpace V₀ V₁).mem (W ∩ W') := by

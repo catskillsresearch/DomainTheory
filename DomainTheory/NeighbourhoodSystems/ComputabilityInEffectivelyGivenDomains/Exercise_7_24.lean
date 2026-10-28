@@ -8,23 +8,21 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Fac
 
 @[expose] public section
 
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise724
 open NeighborhoodSystem Domain.Recursive
 
 section
-/-- Scott's set `Γ`, the *terminal* solution of `Γ = (⋃ᵢ {i} × Γ) ∪ {*}`: a finite sequence,
-terminating at `*` (`Sum.inl`), or an infinite one that never terminates (`Sum.inr`). -/
+
 abbrev Gamma : Type := List ℕ ⊕ (ℕ → ℕ)
 end
 
 section
-/-- Scott's basepoint `*`: the empty (already-terminated) sequence. -/
+
 def star : Gamma := Sum.inl []
 end
 
 section
-/-- Prepend `i` to an infinite stream (`Stream'.cons`, spelled out by hand). -/
+
 def streamCons (i : ℕ) (s : ℕ → ℕ) : ℕ → ℕ
   | 0 => i
   | n + 1 => s n
@@ -39,19 +37,19 @@ section
 end
 
 section
-/-- Scott's `(i, γ)`: prepend the natural `i` to a finite-or-infinite sequence `γ`. -/
+
 def cons (i : ℕ) : Gamma → Gamma
   | .inl l => .inl (i :: l)
   | .inr s => .inr (streamCons i s)
 end
 
 section
-/-- Scott's `{i} × X`: the `i`-prefixed copy of a neighbourhood `X`. -/
+
 def consSet (i : ℕ) (X : Set Gamma) : Set Gamma := {z | ∃ γ ∈ X, z = cons i γ}
 end
 
 section
-/-- **`cons` is injective** (jointly in both arguments): `(i, γ) = (j, δ) ⟹ i = j ∧ γ = δ`. -/
+
 theorem cons_injective {i j : ℕ} {γ δ : Gamma} (h : cons i γ = cons j δ) : i = j ∧ γ = δ := by
   cases γ with
   | inl l =>
@@ -115,7 +113,7 @@ theorem consSet_subset_of_subset {i : ℕ} {X X' : Set Gamma} (h : X ⊆ X') :
 end
 
 section
-/-- **`{i} × X ⊆ {i} × X' ↔ X ⊆ X'`.** -/
+
 theorem consSet_subset {i : ℕ} {X X' : Set Gamma} :
     consSet i X ⊆ consSet i X' ↔ X ⊆ X' := by
   refine ⟨fun h γ hγ => ?_, consSet_subset_of_subset⟩
@@ -124,10 +122,7 @@ theorem consSet_subset {i : ℕ} {X X' : Set Gamma} :
 end
 
 section
-/-- **The neighbourhood coded by a finite list.** `nbhd [] = Γ` (Scott's master `Γ`);
-`nbhd (i :: l) = {i} × nbhd l`. Every `Lmem`-neighbourhood is `nbhd l` for a *unique* `l`
-(`nbhd_injective`), mirroring `ExampleB.cone`/`Example62.embBit` generalized to `ℕ`-ary
-branching. -/
+
 def nbhd : List ℕ → Set Gamma
   | [] => Set.univ
   | i :: l => consSet i (nbhd l)
@@ -142,8 +137,7 @@ section
 end
 
 section
-/-- Membership in Scott's system `L = {Γ} ∪ {{i} × X ∣ i ∈ ℕ, X ∈ L}`: `X ∈ L` iff `X = nbhd l`
-for some finite list `l` (the "address" of the neighbourhood). -/
+
 def Lmem (X : Set Gamma) : Prop := ∃ l, X = nbhd l
 end
 
@@ -152,8 +146,7 @@ section
 end
 
 section
-/-- **`L` is nested-or-disjoint** (Scott's "very special circumstance", generalizing
-`ExampleB.cone_trichotomy`/`Example62`'s pairwise structure from `Bool` to `ℕ`-ary branching). -/
+
 theorem L_nestedOrDisjoint : NestedOrDisjoint Lmem := by
   rintro X Y ⟨l, rfl⟩ ⟨l', rfl⟩
   induction l generalizing l' with
@@ -177,8 +170,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems.Exercise724
 open NeighborhoodSystem Domain.Recursive
 section
-/- concordance: source L4739 EXERCISE 7.24 LUCID history domain -/
-/-- **Exercise 7.24 — `L` is a neighbourhood system** on tokens `Γ`, master `Γ = nbhd []`. -/
+
 abbrev L : NeighborhoodSystem Gamma :=
   NeighborhoodSystem.ofNestedOrDisjoint Lmem Set.univ Set.univ_nonempty
     (mem_nbhd []) L_nestedOrDisjoint
@@ -186,9 +178,7 @@ abbrev L : NeighborhoodSystem Gamma :=
 end
 
 section
-/-- The enumeration `Lenum n := nbhd (decodeList n)`: every code `n` names the neighbourhood
-addressed by its decoded list, and (via `encodeList`/`decodeList` round-tripping) this hits every
-`Lmem` set. -/
+
 def Lenum (n : ℕ) : Set Gamma := nbhd (decodeList n)
 end
 
@@ -203,31 +193,23 @@ theorem Lenum_surj {Y : Set Gamma} (hY : Lmem Y) : ∃ n, Lenum n = Y := by
 end
 
 section
-/-- The master neighbourhood is coded by `0` (`decodeList 0 = []`). -/
+
 theorem Lenum_zero : Lenum 0 = Set.univ := by unfold Lenum; rw [decodeList_zero]; rfl
 end
 
 section
-/-- **The `{0,1}` prefix test.** `isPrefixChar m n = 1 ↔ decodeList m <+: decodeList n`, built from
-`Recursive.lean`'s `listLenChar`/`takeCode`/`listEqChar` (already primitive recursive): `l₁ <+: l₂`
-iff `l₂.take l₁.length = l₁` (`List.prefix_iff_eq_take`), unconditionally (`List.take` auto-caps at
-the available length, so no separate length guard is needed). -/
+
 def isPrefixChar (m n : ℕ) : ℕ := listEqChar (takeCode (listLenChar m) n) m
 end
 
 section
-/-- **The `{0,1}` consistency characteristic** — a flat `orBit` of the two `isPrefixChar`
-directions (kept as a single hand-rolled arithmetic combinator rather than composing
-`RecDecidable.or`/`.and`, per the project's course-of-values discipline: nesting the generic
-`RecDecidable` combinators here elaborates a deeply-repeated composition and blows the `whnf`
-budget). -/
+
 def LenumConsChar (n m : ℕ) : ℕ :=
   isPrefixChar m n + isPrefixChar n m - isPrefixChar m n * isPrefixChar n m
 end
 
 section
-/-- Named-function packaging of `LenumConsChar` on `Nat.pair`-coded pairs (same rationale as
-`LenumSubsetChar` above: avoids elaborator defeq-unification against `Nat.pair`/`Nat.unpair`). -/
+
 def LenumConsCharP (t : ℕ) : ℕ := LenumConsChar t.unpair.1 t.unpair.2
 end
 
@@ -236,16 +218,14 @@ def LenumInter (n m : ℕ) : ℕ := selectFn (isPrefixChar m n) n m
 end
 
 section
-/-- **The `{0,1}` intersection-equality characteristic** — same flat-`orBit` discipline as
-`LenumConsChar`. -/
+
 def LenumInterEqChar (n m k : ℕ) : ℕ :=
   mulBit (isPrefixChar m n) (listEqChar k n) + mulBit (isPrefixChar n m) (listEqChar k m)
     - mulBit (isPrefixChar m n) (listEqChar k n) * mulBit (isPrefixChar n m) (listEqChar k m)
 end
 
 section
-/-- Named-function packaging of `LenumInterEqChar` on `Nat.pair (Nat.pair)`-coded triples (same
-rationale as `LenumSubsetChar`/`LenumConsCharP` above). -/
+
 def LenumInterEqCharP (t : ℕ) : ℕ :=
   LenumInterEqChar t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2
 end
@@ -372,9 +352,7 @@ theorem primrec_LenumInterEqCharP : Nat.Primrec LenumInterEqCharP :=
 end
 
 section
-/-- `isPrefixChar` composed with the swap of `unpair`, built via `.of_eq` (rather than relying
-on elaborator defeq-unification against `Nat.pair`/`Nat.unpair`, which is expensive and can blow
-the `whnf` budget). -/
+
 theorem primrec_isPrefixChar_swap :
     Nat.Primrec (fun t => isPrefixChar t.unpair.2 t.unpair.1) :=
   (primrec_isPrefixChar.comp (Nat.Primrec.pair Nat.Primrec.right Nat.Primrec.left)).of_eq
@@ -403,7 +381,7 @@ theorem primrec_LenumInter : Nat.Primrec (fun t => LenumInter t.unpair.1 t.unpai
 end
 
 section
-/-- `*` is never of the shape `(i, γ)`. -/
+
 theorem star_ne_cons (i : ℕ) (γ : Gamma) : star ≠ cons i γ := by
   cases γ <;> simp [star, cons]
 end
@@ -414,8 +392,7 @@ theorem star_not_mem_consSet (i : ℕ) (X : Set Gamma) : star ∉ consSet i X :=
 end
 
 section
-/-- **The master reduction (mirrors `ExampleB.cone_subset_cone`).** `nbhd l ⊆ nbhd l' ↔ l' <+: l`:
-cones reverse the prefix order. Proved by induction on `l`, peeling off matching heads. -/
+
 theorem nbhd_subset_iff : ∀ (l l' : List ℕ), nbhd l ⊆ nbhd l' ↔ l' <+: l := by
   intro l
   induction l with
@@ -451,17 +428,13 @@ theorem nbhd_subset_iff : ∀ (l l' : List ℕ), nbhd l ⊆ nbhd l' ↔ l' <+: l
 end
 
 section
-/-- **`Xₙ ⊆ Xₘ` on the `Lenum` coding, decided by `isPrefixChar`.** -/
+
 theorem Lenum_subset_iff (n m : ℕ) : Lenum n ⊆ Lenum m ↔ isPrefixChar m n = 1 := by
   unfold Lenum; rw [nbhd_subset_iff, isPrefixChar_eq_one_iff]
 end
 
 section
-/-- **7.1(ii) — consistency is recursively decidable.** `∃ k, Lenum k ⊆ Lenum n ∩ Lenum m` holds
-iff `n, m` are nested (`isPrefixChar m n = 1 ∨ isPrefixChar n m = 1`): if nested, the more specific
-of `n, m` itself witnesses it; conversely a common lower bound forces nestedness by
-`L_nestedOrDisjoint` (a properly disjoint pair has no nonempty common lower bound, and every
-`Lmem` set is nonempty). -/
+
 theorem Lenum_cons_iff (n m : ℕ) :
     (∃ k, Lenum k ⊆ Lenum n ∩ Lenum m) ↔ isPrefixChar m n = 1 ∨ isPrefixChar n m = 1 := by
   constructor
@@ -502,7 +475,7 @@ theorem Lenum_cons_charP_eq_one_iff (n m : ℕ) :
 end
 
 section
-/-- **7.1(ii) — consistency is recursively decidable.** -/
+
 theorem Lenum_cons_computable : RecDecidable₂ (fun n m => ∃ k, Lenum k ⊆ Lenum n ∩ Lenum m) :=
   RecDecidable₂.of_paired_zero_one_char primrec_LenumConsCharP
     (fun t => by have := LenumConsCharP_le_one t; omega)
@@ -510,8 +483,7 @@ theorem Lenum_cons_computable : RecDecidable₂ (fun n m => ∃ k, Lenum k ⊆ L
 end
 
 section
-/-- **`nbhd` is injective.** Antisymmetry of `nbhd_subset_iff`: `l' <+: l` and `l <+: l'` force
-`l.length = l'.length`, and a prefix of equal length is the whole list. -/
+
 theorem nbhd_injective {l l' : List ℕ} (h : nbhd l = nbhd l') : l = l' := by
   have h1 : l' <+: l := (nbhd_subset_iff l l').mp h.subset
   have h2 : l <+: l' := (nbhd_subset_iff l' l).mp h.symm.subset
@@ -519,9 +491,7 @@ theorem nbhd_injective {l l' : List ℕ} (h : nbhd l = nbhd l') : l = l' := by
 end
 
 section
-/-- **`Xₙ ∩ Xₘ = X_k` on the `Lenum` coding.** The intersection of two `nbhd`s is the more specific
-of the two whenever they are nested, and no `Lmem` set at all otherwise (`nbhd` is always
-nonempty, so `∅` never equals an `Lenum k`). -/
+
 theorem Lenum_interEq_iff (n m k : ℕ) :
     Lenum n ∩ Lenum m = Lenum k ↔
       (isPrefixChar m n = 1 ∧ decodeList k = decodeList n) ∨
@@ -572,7 +542,7 @@ theorem Lenum_interEq_charP_eq_one_iff (n m k : ℕ) :
 end
 
 section
-/-- **7.1(i) — `Xₙ ∩ Xₘ = X_k` is recursively decidable.** -/
+
 theorem Lenum_interEq_computable : RecDecidable₃ (fun n m k => Lenum n ∩ Lenum m = Lenum k) :=
   RecDecidable₃.of_triple_zero_one_char primrec_LenumInterEqCharP
     (fun t => by have := LenumInterEqCharP_le_one t; omega)
@@ -580,10 +550,7 @@ theorem Lenum_interEq_computable : RecDecidable₃ (fun n m k => Lenum n ∩ Len
 end
 
 section
-/-- **Exercise 7.24, first claim — `L` is effectively given.** The enumeration `Lenum` (indices
-via `encodeList`/`decodeList`), Scott's two relations (`Lenum_interEq_computable`,
-`Lenum_cons_computable`), the primitive-recursive intersection (`LenumInter`), and the master
-index `0` (`Lenum_zero`) assemble into a `ComputablePresentation L`. -/
+
 def Lpres : ComputablePresentation L where
   X := Lenum
   mem_X n := Lenum_mem n
@@ -601,8 +568,6 @@ section
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 variable {β γ δ : Type*}
 
-/-- The characteristic-function bundle needed to write down `funPresentation Lpres P` concretely:
-`gN` for function-space consistency, `incl0`/`incl1` for `L`/`V`-inclusion, `eq1` for `V`-equality. -/
 structure LFunData {V : NeighborhoodSystem β} (P : ComputablePresentation V) where
   gN : ℕ → ℕ
   incl0 : ℕ → ℕ
@@ -640,17 +605,12 @@ section
 end
 
 section
-/-- **`Xₙ ⊆ Xₘ` `{0,1}` characteristic**, packaged as a single *named* unary function (rather than
-an anonymous `t.unpair`-lambda passed positionally to `RecDecidable₂.of_paired_zero_one_char`):
-naming it lets the `hfe` obligation be stated and proved as a standalone lemma whose conclusion is
-syntactically `LenumSubsetChar (Nat.pair n m) = 1`, so the final application only needs to match
-this name against itself — no elaborator-side defeq unfolding of `Nat.pair`/`Nat.unpair` (which is
-expensive and blows the `whnf` budget; see the project's course-of-values discipline). -/
+
 def LenumSubsetChar (t : ℕ) : ℕ := isPrefixChar t.unpair.2 t.unpair.1
 end
 
 section
-/-- The length-`n` prefix of an infinite stream `f`: `finPrefix f n = [f 0, …, f (n - 1)]`. -/
+
 def finPrefix (f : ℕ → ℕ) (n : ℕ) : List ℕ := (List.range n).map f
 end
 
@@ -659,12 +619,12 @@ section
 end
 
 section
-/-- A filter `x` **has a minimum neighbourhood** — the hallmark of Scott's *finite* elements. -/
+
 def HasMin (x : L.Element) : Prop := ∃ X, x.mem X ∧ ∀ Y, x.mem Y → X ⊆ Y
 end
 
 section
-/-- The digit-wise embedding of a bit into `ℕ`: `false ↦ 0`, `true ↦ 1`. -/
+
 def bitToNat (b : Bool) : ℕ := if b then 1 else 0
 end
 
@@ -677,7 +637,7 @@ section
 end
 
 section
-/-- Embed a finite bit-string `Σ*` into a finite `ℕ`-list `Γ`'s finite part, digit by digit. -/
+
 def embStr (σ : ExampleB.Str) : List ℕ := σ.map bitToNat
 end
 
@@ -688,8 +648,6 @@ end
 section
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
-/-- **`T`'s enumeration.** `0 ↦ Δ`, `1 ↦ {0}`, `2 ↦ {1}`, and every `n ≥ 2` collapses to `{1}` — we
-only need *some* enumeration onto the three neighbourhoods, not a bijection. -/
 def Tenum (n : ℕ) : Set Token :=
   match n with
   | 0 => Example12.master
@@ -702,7 +660,6 @@ def Tenum (n : ℕ) : Set Token :=
 
 @[simp] theorem Tenum_two : Tenum 2 = one := rfl
 
-/-- `Tenum` only depends on `n` through `min n 2`. -/
 theorem Tenum_eq_canon (n : ℕ) : Tenum n = Tenum (min n 2) := by
   rcases n with _ | _ | n
   · rfl
@@ -717,7 +674,6 @@ theorem Tenum_mem (n : ℕ) : Example23.T.mem (Tenum n) := by
   · exact Example12.mem_zero
   · exact Example12.mem_one
 
-/-- `Tenum` never hits `∅` (it always lands on a genuine `T`-neighbourhood, and `∅` is not one). -/
 theorem Tenum_ne_empty (n : ℕ) : Tenum n ≠ (∅ : Set Token) := by
   intro h
   exact Example12.not_mem_empty (h ▸ Tenum_mem n)
@@ -728,23 +684,12 @@ theorem Tenum_surj {Y : Set Token} (hY : Example23.T.mem Y) : ∃ n, Tenum n = Y
   · exact ⟨1, rfl⟩
   · exact ⟨2, rfl⟩
 
-/-- `TeqChar a b = 1` decides `a = b` (truncated-subtraction trick, primitive recursive). -/
 def TeqChar (a b : ℕ) : ℕ := isZero ((a - b) + (b - a))
 
-/-- **The intersection code.** `TinterCode a b` names the intersection `Tenum a ∩ Tenum b` when it
-is a `T`-neighbourhood (`a = 0`, `b = 0`, or `a = b`), and is the junk value `3` (never `≤ 2`, hence
-never named by `Tenum`'s canonical range) exactly when the intersection is inconsistent
-(`{0} ∩ {1} = ∅`). -/
 def TinterCode (a b : ℕ) : ℕ := if a = 0 then b else if b = 0 then a else if a = b then a else 3
 
-/-- `andCode a b` names `andFn (Tenum a) (Tenum b)` when `a, b ≤ 2`: `andCode 0 b = 0`,
-`andCode 1 b = b`, `andCode 2 b = 2`. -/
 def andCode (a b : ℕ) : ℕ := if a = 1 then b else if a = 2 then 2 else 0
 
-/-- **Sequential conjunction** on `T`'s neighbourhoods: `andFn X Y` is `Y` when `X` names `true`
-(`zero`), the constant `false` (`one`) when `X` names `false` — regardless of `Y` — and `Δ` (no
-information yet) otherwise. This is the standard *left-strict* `and`, matching `zero`/`one` naming
-`true`/`false` (`Example23.trueElt = elemZero`, `Example23.falseElt = elemOne`). -/
 noncomputable def andFn (X Y : Set Token) : Set Token :=
   if X = zero then Y else if X = one then one else Example12.master
 
@@ -756,8 +701,7 @@ theorem eq_master_of_master_subset {Y : Set Token} (h : Example12.master ⊆ Y) 
 end
 
 section
-/-- If `l ++ [i] <+: l'` fails for every `i`, then... (helper): a list strictly longer than a
-prefix of it extends by *some* single element first. -/
+
 theorem exists_cons_prefix_of_prefix_of_length_lt {l l' : List ℕ} (h : l <+: l')
     (hlt : l.length < l'.length) : ∃ i, l ++ [i] <+: l' := by
   obtain ⟨r, hr⟩ := h
@@ -767,12 +711,7 @@ theorem exists_cons_prefix_of_prefix_of_length_lt {l l' : List ℕ} (h : l <+: l
 end
 
 section
-/-- **One-step extension exists whenever `x` has no minimum.** If `x.mem (nbhd l)` and `x` has no
-smallest neighbourhood, some length-`(l.length + 1)` extension `l ++ [i]` is also in `x`: pick any
-`Y ∈ x.mem` witnessing that `nbhd l` is not the minimum (`hx`), which — being nested with `nbhd l`
-(disjointness is impossible, `x.inter_mem` would force `L.mem ∅`) and *not* containing it — is a
-strictly smaller neighbourhood `nbhd l' ⊊ nbhd l`; the first new list entry of `l'` past `l` is the
-witness `i`. -/
+
 theorem exists_extend_of_not_hasMin {x : L.Element} (hx : ¬ HasMin x) {l : List ℕ}
     (hl : x.mem (nbhd l)) : ∃ i, x.mem (nbhd (l ++ [i])) := by
   have hex : ∃ Y, x.mem Y ∧ ¬ nbhd l ⊆ Y := by
@@ -795,10 +734,7 @@ theorem exists_extend_of_not_hasMin {x : L.Element} (hx : ¬ HasMin x) {l : List
 end
 
 section
-/-- **Choice-built data**: the length-`n` list `x.mem`s, together with the invariant, by iterating
-`exists_extend_of_not_hasMin`. This is the one genuinely non-constructive step (`Classical.choose`
-picking a witness coordinate at every stage), unavoidable for a *general* filter `x` (no
-computability is assumed of `x` at this point in the exercise). -/
+
 noncomputable def buildData (x : L.Element) (hx : ¬ HasMin x) :
     ∀ n : ℕ, {l : List ℕ // x.mem (nbhd l) ∧ l.length = n} :=
   fun n =>
@@ -859,7 +795,7 @@ theorem andFn_master (Y : Set Token) : andFn Example12.master Y = Example12.mast
 end
 
 section
-/-- Longer prefixes give smaller (more specific) neighbourhoods. -/
+
 theorem nbhd_finPrefix_antitone (f : ℕ → ℕ) {n m : ℕ} (h : n ≤ m) :
     nbhd (finPrefix f m) ⊆ nbhd (finPrefix f n) :=
   (nbhd_subset_iff _ _).mpr (finPrefix_prefix_of_le f h)
@@ -868,10 +804,8 @@ end
 section
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
-/-- `notCode c` names `notFn (Tenum c)` when `c ≤ 2`: `0 ↦ 0`, `1 ↦ 2`, `2 ↦ 1`. -/
 def notCode (c : ℕ) : ℕ := if c = 1 then 2 else if c = 2 then 1 else 0
 
-/-- The pointwise negation function on `T`'s three neighbourhoods: swaps `{0}`/`{1}`, fixes `Δ`. -/
 noncomputable def notFn (X : Set Token) : Set Token :=
   if X = zero then one else if X = one then zero else Example12.master
 
@@ -886,9 +820,6 @@ section
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 variable {β γ δ : Type*}
 
-/-- **The one use of `Classical.choice` in this section.** Every `ComputablePresentation P` of a
-`V` yields *some* `LFunData P`, by choosing concrete deciders out of `Lpres`'s and `P`'s existential
-`incl_computable`/`cons_computable`/`eq_computable` witnesses. -/
 noncomputable def LFunData.ofPresentation {V : NeighborhoodSystem β} (P : ComputablePresentation V) :
     LFunData P where
   gN := funConsChar Lpres P Lpres.cons_computable.choose P.cons_computable.choose
@@ -919,13 +850,10 @@ section
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 variable {β γ δ : Type*}
 
-/-- **`postcompose h`**: post-composing every `L`-indexed sequence `f : L → V₁` with `h`, i.e.
-`f ↦ h ∘ f`. Built as `curry (h ∘ eval)`, following Scott. -/
 def postcompose {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
     (h : ApproximableMap V₁ V₂) : ApproximableMap (funSpace L V₁) (funSpace L V₂) :=
   curry (h.comp (evalMap L V₁))
 
-/-- The concrete `ComputablePresentation (L → V)` assembled from an `LFunData` bundle. -/
 def LFunData.pres {V : NeighborhoodSystem β} {P : ComputablePresentation V} (d : LFunData P) :
     ComputablePresentation (funSpace L V) :=
   funPresentation Lpres P d.gN d.incl0 d.incl1 d.eq1 d.hgN d.hgNp d.hincl0 d.hincl0p
@@ -975,24 +903,18 @@ section
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 variable {β γ δ : Type*}
 
-/-- The "extract the shared argument `x`" projection out of the pointwise-binary domain. -/
 def pwArg (V₀ : NeighborhoodSystem β) (V₁ : NeighborhoodSystem γ) :
     ApproximableMap (prod (prod (funSpace L V₀) (funSpace L V₁)) L) L :=
   proj₁ (prod (funSpace L V₀) (funSpace L V₁)) L
 
-/-- The "extract `f`" projection out of the pointwise-binary domain `(L→V₀) × (L→V₁) × L`. -/
 def pwFst (V₀ : NeighborhoodSystem β) (V₁ : NeighborhoodSystem γ) :
     ApproximableMap (prod (prod (funSpace L V₀) (funSpace L V₁)) L) (funSpace L V₀) :=
   (proj₀ (funSpace L V₀) (funSpace L V₁)).comp (proj₀ (prod (funSpace L V₀) (funSpace L V₁)) L)
 
-/-- The "extract `g`" projection out of the pointwise-binary domain. -/
 def pwSnd (V₀ : NeighborhoodSystem β) (V₁ : NeighborhoodSystem γ) :
     ApproximableMap (prod (prod (funSpace L V₀) (funSpace L V₁)) L) (funSpace L V₁) :=
   (proj₁ (funSpace L V₀) (funSpace L V₁)).comp (proj₀ (prod (funSpace L V₀) (funSpace L V₁)) L)
 
-/-- **`pointwiseBin h`**: given `f : L → V₀`, `g : L → V₁`, produce the `L`-sequence
-`x ↦ h(f x, g x)`. Built by evaluating both factors at the shared argument and applying `h`, then
-`curry`-ing. -/
 def pointwiseBin {V₀ : NeighborhoodSystem β} {V₁ : NeighborhoodSystem γ} {V₂ : NeighborhoodSystem δ}
     (h : ApproximableMap (prod V₀ V₁) V₂) :
     ApproximableMap (prod (funSpace L V₀) (funSpace L V₁)) (funSpace L V₂) :=
@@ -1003,9 +925,7 @@ def pointwiseBin {V₀ : NeighborhoodSystem β} {V₁ : NeighborhoodSystem γ} {
 end
 
 section
-/-- **The element of `|L|` determined by an infinite sequence `f`**: the filter of neighbourhoods
-containing some finite prefix of `f` — Scott's `limitFamily` (Definition 1.6's motivating prose),
-specialized to `L`'s prefix chain `nbhd (finPrefix f ·)`. -/
+
 def streamElement (f : ℕ → ℕ) : L.Element where
   mem Z := L.mem Z ∧ ∃ n, nbhd (finPrefix f n) ⊆ Z
   sub h := h.1
@@ -1024,7 +944,7 @@ def streamElement (f : ℕ → ℕ) : L.Element where
 end
 
 section
-/-- **Prefixes match on the nose whenever the stream elements agree.** -/
+
 theorem finPrefix_eq_of_streamElement_eq {f₁ f₂ : ℕ → ℕ} (heq : streamElement f₁ = streamElement f₂) :
     ∀ n, finPrefix f₁ n = finPrefix f₂ n := by
   intro n
@@ -1041,8 +961,7 @@ theorem finPrefix_eq_of_streamElement_eq {f₁ f₂ : ℕ → ℕ} (heq : stream
 end
 
 section
-/-- **`streamElement` is injective**: two streams agreeing on every finite prefix agree
-everywhere. -/
+
 theorem streamElement_injective : Function.Injective streamElement := by
   intro f₁ f₂ heq
   have hpre := finPrefix_eq_of_streamElement_eq heq
@@ -1053,9 +972,7 @@ theorem streamElement_injective : Function.Injective streamElement := by
 end
 
 section
-/-- **The infinite elements have no minimum neighbourhood.** Given any witness `X ⊇ nbhd
-(finPrefix f n)` in the filter, the *next* prefix neighbourhood is strictly smaller yet still in
-the filter, so `X` cannot be the minimum. -/
+
 theorem streamElement_not_hasMin (f : ℕ → ℕ) : ¬ HasMin (streamElement f) := by
   rintro ⟨X, ⟨-, n, hXsub⟩, hmin⟩
   have hmemsucc : (streamElement f).mem (nbhd (finPrefix f (n + 1))) := ⟨mem_nbhd _, n + 1, subset_rfl⟩
@@ -1070,8 +987,6 @@ end
 section
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
-/-- **Among `T`'s three neighbourhoods, `X' ⊆ X` forces `X' = X` or `X = Δ`.** (`Δ` is the only
-non-trivial containee since `{0}`, `{1}` are incomparable singletons.) -/
 theorem subset_iff_eq_or_eq_master {X' X : Set Token} (hX' : Example23.T.mem X')
     (hX : Example23.T.mem X) (h : X' ⊆ X) : X' = X ∨ X = Example12.master := by
   rcases (Example12.mem_iff X).mp hX with rfl | rfl | rfl
@@ -1089,16 +1004,14 @@ theorem subset_iff_eq_or_eq_master {X' X : Set Token} (hX' : Example23.T.mem X')
 end
 
 section
-/-- **`toElement`: `Γ → |L|`**, realizing Scott's identification. -/
+
 def toElement : Gamma → L.Element
   | .inl l => L.principal (L_mem.mpr (mem_nbhd l))
   | .inr f => streamElement f
 end
 
 section
-/-- **`toElement` is injective** (Exercise 7.24, second claim, uniqueness half). Finite vs. finite
-is `nbhd_injective`; the two mixed cases are separated by `HasMin`; infinite vs. infinite is
-`streamElement_injective`. -/
+
 theorem toElement_injective : Function.Injective toElement := by
   rintro (l₁ | f₁) (l₂ | f₂) heq
   · exact congrArg Sum.inl
@@ -1111,7 +1024,7 @@ theorem toElement_injective : Function.Injective toElement := by
 end
 
 section
-/-- **`toStream x hx`: the witness infinite sequence for a min-free filter `x`.** -/
+
 noncomputable def toStream (x : L.Element) (hx : ¬ HasMin x) (n : ℕ) : ℕ :=
   Classical.choose (exists_extend_of_not_hasMin hx (buildData x hx n).2.1)
 end
@@ -1135,13 +1048,7 @@ theorem mem_nbhd_finPrefix_toStream (x : L.Element) (hx : ¬ HasMin x) (n : ℕ)
 end
 
 section
-/-- **Every neighbourhood `Z ∈ x` contains some sufficiently deep prefix.** `Z = nbhd l` for some
-`l` (`x.sub`), and comparing `nbhd l` against the (unboundedly long) chain
-`nbhd (finPrefix (toStream x hx) n)` — nested, not disjoint, by the same
-`x.inter_mem`/`L_nestedOrDisjoint` argument as `exists_extend_of_not_hasMin` — forces `l` itself to
-be a prefix of the chain once `n > l.length` (the chain entry is then too long to be *the* shorter
-side). Together with `mem_nbhd_finPrefix_toStream` this gives `streamElement (toStream x hx) = x`
-(used directly in `toElement_surjective`). -/
+
 theorem exists_finPrefix_subset_of_mem (x : L.Element) (hx : ¬ HasMin x) {Z : Set Gamma}
     (hZ : x.mem Z) : ∃ n, nbhd (finPrefix (toStream x hx) n) ⊆ Z := by
   obtain ⟨l, rfl⟩ := x.sub hZ
@@ -1151,7 +1058,7 @@ theorem exists_finPrefix_subset_of_mem (x : L.Element) (hx : ¬ HasMin x) {Z : S
   have hinter := x.inter_mem hZ hn
   rcases L_nestedOrDisjoint (mem_nbhd l) (mem_nbhd (finPrefix (toStream x hx) n)) with
     hsub | hsub | hdisj
-  · -- nbhd l ⊆ nbhd (finPrefix _ n): impossible by length once n = l.length + 1
+  ·
     have hpre : finPrefix (toStream x hx) n <+: l := (nbhd_subset_iff l _).mp hsub
     have := hpre.length_le
     rw [finPrefix_length] at this
@@ -1164,9 +1071,7 @@ theorem exists_finPrefix_subset_of_mem (x : L.Element) (hx : ¬ HasMin x) {Z : S
 end
 
 section
-/-- **`toElement` is surjective** (Exercise 7.24, second claim, existence half; uses
-`Classical.choice` via `buildData`/`toStream` for the infinite case — see `buildData`'s docstring).
--/
+
 theorem toElement_surjective : Function.Surjective toElement := by
   intro x
   by_cases hx : HasMin x
@@ -1184,14 +1089,13 @@ theorem toElement_surjective : Function.Surjective toElement := by
 end
 
 section
-/-- **Exercise 7.24, second claim.** `|L|` (the domain elements `L.Element`) is exactly the type of
-finite-or-infinite sequences of naturals `Γ`, via `toElement`. -/
+
 theorem toElement_bijective : Function.Bijective toElement :=
   ⟨toElement_injective, toElement_surjective⟩
 end
 
 section
-/-- **`Γ ≃ |L|`**, the promised identification (noncomputable: surjectivity used choice). -/
+
 noncomputable def gammaEquivElement : Gamma ≃ L.Element :=
   Equiv.ofBijective toElement toElement_bijective
 end
@@ -1209,8 +1113,6 @@ theorem Tenum_inter_eq {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) :
     simp [Tenum, Example12.master, Set.univ_inter, Set.inter_univ, Set.inter_self,
       zero_inter_one_T, one_inter_zero_T]
 
-/-- `Tenum n ∩ Tenum m` is `Tenum (TinterCode ·)` when consistent, and `∅` exactly when
-`TinterCode` hits the junk value `3`. -/
 theorem Tenum_inter_eq_TinterCode' {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) :
     Tenum a ∩ Tenum b = if TinterCode a b = 3 then (∅ : Set Token) else Tenum (TinterCode a b) := by
   interval_cases a <;> interval_cases b <;>
@@ -1234,8 +1136,6 @@ theorem Tpres_cons_iff (n m : ℕ) :
     rw [ite_eq_right hne]
     exact ⟨TinterCode (min n 2) (min m 2), subset_rfl⟩
 
-/-- **The `{0,1}` consistency characteristic for `T`** (Scott's relation (ii)): `∃ k, Xₖ ⊆ Xₙ ∩ Xₘ`
-holds iff `Xₙ ∩ Xₘ` is itself a `T`-neighbourhood, i.e. `TinterCode` did not hit the junk value `3`. -/
 theorem Tpres_cons_computable : RecDecidable₂ (fun n m => ∃ k, Tenum k ⊆ Tenum n ∩ Tenum m) := by
   have ha : Nat.Primrec (fun t : ℕ => TinterCode (min t.unpair.1 2) (min t.unpair.2 2)) :=
     primrec_TinterCode (primrec_min Nat.Primrec.left (Nat.Primrec.const 2))
@@ -1249,7 +1149,6 @@ theorem zero_ne_one_T : zero ≠ one := by
   have h1 : (0 : Token) ∈ zero := by simp [zero]
   rw [h] at h1; simp [one] at h1
 
-/-- `Tenum` is injective on its "canonical" range `{0, 1, 2}`. -/
 theorem Tenum_injOn {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) (h : Tenum a = Tenum b) : a = b := by
   interval_cases a <;> interval_cases b <;>
     simp only [Tenum_zero, Tenum_one, Tenum_two] at h <;>
@@ -1272,13 +1171,11 @@ theorem Tenum_interEq_iff {a b c : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) (hc : c �
   · exact ⟨fun h => (Tenum_injOn ha hc h).symm ▸ rfl, fun h => h ▸ rfl⟩
   · exact ⟨fun h => absurd h.symm (Tenum_ne_empty c), fun h => absurd h.symm (by omega)⟩
 
-/-- Same characterization, restated for arbitrary `n, m, k` via the `min · 2` canonicalization. -/
 theorem Tenum_interEq_iff' (n m k : ℕ) :
     Tenum n ∩ Tenum m = Tenum k ↔ TinterCode (min n 2) (min m 2) = min k 2 := by
   rw [Tenum_eq_canon n, Tenum_eq_canon m, Tenum_eq_canon k,
     Tenum_interEq_iff (Nat.min_le_right n 2) (Nat.min_le_right m 2) (Nat.min_le_right k 2)]
 
-/-- **The `{0,1}` intersection-equality characteristic for `T`** (Scott's relation (i)). -/
 theorem Tpres_interEq_computable : RecDecidable₃ (fun n m k => Tenum n ∩ Tenum m = Tenum k) := by
   have ha : Nat.Primrec (fun t : ℕ => TinterCode (min t.unpair.1 2) (min t.unpair.2.unpair.1 2)) :=
     primrec_TinterCode (primrec_min Nat.Primrec.left (Nat.Primrec.const 2))
@@ -1289,9 +1186,6 @@ theorem Tpres_interEq_computable : RecDecidable₃ (fun n m k => Tenum n ∩ Ten
     (fun t => Tenum_interEq_iff' t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2)
     (RecDecidable.natEq ha hb)
 
-/-- **`T` is effectively given**, via the hand-built enumeration `Tenum`. The presentation's
-`inter`/`masterIdx` fields reuse `TinterCode`/`0` (both concrete, no search required, since `T`'s
-finiteness makes the intersection function immediate from the case analysis above). -/
 def Tpres : ComputablePresentation Example23.T where
   X := Tenum
   mem_X := Tenum_mem
@@ -1313,10 +1207,8 @@ section
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 variable {β γ δ : Type*}
 
-/-- The one concrete presentation of `(L → T)` used to state the LUCID combinators' computability. -/
 noncomputable def LTdata : LFunData Tpres := LFunData.ofPresentation Tpres
 
-/-- **The computable presentation of `(L → T)`.** -/
 noncomputable def LTpres : ComputablePresentation (funSpace L Example23.T) := LTdata.pres
 
 end
@@ -1334,8 +1226,6 @@ theorem andFn_mem {X Y : Set Token} (hX : Example23.T.mem X) (hY : Example23.T.m
   · rw [andFn_zero]; exact hY
   · rw [andFn_one]; exact Example12.mem_one
 
-/-- **Pointwise (sequential) conjunction on `T`**, as a two-variable approximable mapping:
-`X, Y f Z ↔ mem X ∧ mem Y ∧ mem Z ∧ andFn X Y ⊆ Z` (Scott's "step" pattern again). -/
 noncomputable def andMap2 : ApproximableMap₂ Example23.T Example23.T Example23.T where
   rel X Y Z := Example23.T.mem X ∧ Example23.T.mem Y ∧ Example23.T.mem Z ∧ andFn X Y ⊆ Z
   rel_dom₀ h := h.1
@@ -1368,8 +1258,6 @@ noncomputable def andMap2 : ApproximableMap₂ Example23.T Example23.T Example23
       rw [hX'eq, andFn_one]
       exact hsub.trans hZZ'
 
-/-- **`andT`**, the joint approximable mapping `T × T → T` corresponding to `andMap2`
-(Theorem 3.5's `ofMap₂`). -/
 noncomputable def andT : ApproximableMap (prod Example23.T Example23.T) Example23.T :=
   ofMap₂ andMap2
 
@@ -1382,8 +1270,6 @@ theorem notFn_mem {X : Set Token} (hX : Example23.T.mem X) : Example23.T.mem (no
   · rw [notFn_zero]; exact Example12.mem_one
   · rw [notFn_one]; exact Example12.mem_zero
 
-/-- **Pointwise negation on `T`**, as an approximable map: `X f Y ↔ mem X ∧ mem Y ∧ notFn X ⊆ Y`
-(Scott's "step" pattern, turning the pointwise function `notFn` into a neighbourhood relation). -/
 noncomputable def notT : ApproximableMap Example23.T Example23.T where
   rel X Y := Example23.T.mem X ∧ Example23.T.mem Y ∧ notFn X ⊆ Y
   rel_dom h := h.1
@@ -1409,11 +1295,8 @@ section
 theorem bitToNat_injective : Function.Injective bitToNat := by
   intro a b h; cases a <;> cases b <;> simp_all [bitToNat]
 
-
 theorem embStr_cons (b : Bool) (s : ExampleB.Str) : embStr (b :: s) = bitToNat b :: embStr s := rfl
 
-/-- **`embStr` is an order-embedding of the prefix posets** (`Σ*`'s into `List ℕ`'s): it respects
-and reflects the initial-segment relation, since `bitToNat` is injective. -/
 theorem embStr_prefix_iff : ∀ σ τ : ExampleB.Str, embStr σ <+: embStr τ ↔ σ <+: τ := by
   intro σ
   induction σ with
@@ -1426,16 +1309,10 @@ theorem embStr_prefix_iff : ∀ σ τ : ExampleB.Str, embStr σ <+: embStr τ �
       rw [embStr_cons, embStr_cons, List.cons_prefix_cons, List.cons_prefix_cons,
         bitToNat_injective.eq_iff, ih t]
 
-/-- **The connection between `B` and `L` (Exercise 7.24, third claim), at the neighbourhood
-level.** `B`'s cone-inclusion order embeds into `L`'s nbhd-inclusion order via `embStr`: `σ`'s cone
-sits inside `τ`'s cone in `B` iff `embStr σ`'s neighbourhood sits inside `embStr τ`'s in `L`. -/
 theorem cone_subset_cone_iff_nbhd_embStr (σ τ : ExampleB.Str) :
     ExampleB.cone σ ⊆ ExampleB.cone τ ↔ nbhd (embStr σ) ⊆ nbhd (embStr τ) := by
   rw [ExampleB.cone_subset_cone, nbhd_subset_iff, embStr_prefix_iff]
 
-/-- **The connection between `B` and `L`, at the level of finite elements.** `σ⊥ ⊑ τ⊥` in `|B|`
-iff the corresponding `L`-elements (`toElement` applied to the embedded addresses) are `⊑`-related
-in `|L|` — `B`'s finite elements embed order-isomorphically into `L`'s. -/
 theorem sigmaBot_le_iff_toElement_inl_embStr (σ τ : ExampleB.Str) :
     ExampleB.sigmaBot σ ≤ ExampleB.sigmaBot τ ↔
       toElement (Sum.inl (embStr σ)) ≤ toElement (Sum.inl (embStr τ)) := by
@@ -1445,7 +1322,6 @@ theorem sigmaBot_le_iff_toElement_inl_embStr (σ τ : ExampleB.Str) :
   rw [ExampleB.sigmaBot_le_iff, L.principal_le_iff, nbhd_subset_iff, embStr_prefix_iff]
 
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
-
 
 theorem primrec_notCode {f : ℕ → ℕ} (hf : Nat.Primrec f) : Nat.Primrec (fun n => notCode (f n)) := by
   refine (primrec_selectFn (primrec_TeqChar hf (Nat.Primrec.const 1)) (Nat.Primrec.const 2)
@@ -1468,9 +1344,6 @@ theorem notFn_Tenum (n : ℕ) : notFn (Tenum n) = Tenum (notCode (min n 2)) := b
   have hc2 : min n 2 ≤ 2 := Nat.min_le_right n 2
   interval_cases (min n 2) <;> simp [Tenum, notCode, notFn_master, notFn_zero, notFn_one]
 
-/-- **`notT` is a computable map** (relative to `Tpres` on both sides): its neighbourhood relation
-`notFn (Xₙ) ⊆ Xₘ` reduces, via `notFn_Tenum`, to the *decidable* `Tpres`-inclusion relation
-`X_{notCode (min n 2)} ⊆ Xₘ`, hence is recursively decidable — a fortiori r.e. -/
 theorem notT_isComputable : ComputableMap Tpres Tpres notT := by
   constructor
   have hcomp : Nat.Primrec (fun t : ℕ => Nat.pair (notCode (min t.unpair.1 2)) t.unpair.2) :=
@@ -1486,7 +1359,6 @@ theorem notT_isComputable : ComputableMap Tpres Tpres notT := by
   have key : RecDecidable₂ (fun n m => notT.rel (Tenum n) (Tenum m)) :=
     RecDecidable.of_iff (fun t => hiff t.unpair.1 t.unpair.2) hdec
   exact key.re
-
 
 theorem primrec_andCode {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => andCode (f n) (g n)) := by
@@ -1513,10 +1385,6 @@ theorem andFn_Tenum (n m : ℕ) :
   interval_cases (min n 2) <;> interval_cases (min m 2) <;>
     simp [Tenum, andCode, andFn_master, andFn_zero, andFn_one]
 
-/-- **`andT` is a computable map** (relative to `prodPresentation Tpres Tpres` on the input side and
-`Tpres` on the output side): its neighbourhood relation reduces, via `ofMap₂`'s unfolding and
-`andFn_Tenum`, to the *decidable* `Tpres`-inclusion relation `X_{andCode (min n 2) (min m 2)} ⊆ Xₖ`,
-hence is recursively decidable — a fortiori r.e. -/
 theorem andT_isComputable : ComputableMap (prodPresentation Tpres Tpres) Tpres andT := by
   constructor
   have hcomp : Nat.Primrec (fun s : ℕ => Nat.pair
@@ -1553,11 +1421,6 @@ theorem andT_isComputable : ComputableMap (prodPresentation Tpres Tpres) Tpres a
 
 variable {β γ δ : Type*}
 
-
-/-- **`postcompose` preserves computability.** If `h : V₁ → V₂` is computable, then so is
-`postcompose h : (L → V₁) → (L → V₂)`, relative to any concrete function-space presentations built
-from `LFunData` bundles: `eval` is computable (Theorem 7.5), composing with `h` stays computable
-(Proposition 7.3), and `curry`-ing the result stays computable (Theorem 7.5 again). -/
 theorem postcompose_isComputable {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
     {P₁ : ComputablePresentation V₁} {P₂ : ComputablePresentation V₂}
     (d₁ : LFunData P₁) (d₂ : LFunData P₂) {h : ApproximableMap V₁ V₂}
@@ -1570,10 +1433,6 @@ theorem postcompose_isComputable {V₁ : NeighborhoodSystem β} {V₂ : Neighbor
     d₂.hgN d₂.hgNp d₂.hincl0 d₂.hincl0p d₂.hincl1 d₂.hincl1p d₂.heq1 d₂.heq1p
     (comp_isComputable heval hh)
 
-
-/-- **`pointwiseBin` preserves computability.** If `h : V₀ × V₁ → V₂` is computable, then so is
-`pointwiseBin h : (L → V₀) × (L → V₁) → (L → V₂)`, by the same composition-closure argument as
-`postcompose` (projections, pairing, `eval`, and `curry` are all computable). -/
 theorem pointwiseBin_isComputable {V₀ : NeighborhoodSystem β} {V₁ : NeighborhoodSystem γ}
     {V₂ : NeighborhoodSystem δ} {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
     {P₂ : ComputablePresentation V₂} (d₀ : LFunData P₀) (d₁ : LFunData P₁) (d₂ : LFunData P₂)
@@ -1603,23 +1462,13 @@ theorem pointwiseBin_isComputable {V₀ : NeighborhoodSystem β} {V₁ : Neighbo
     d₂.eq1 d₂.hgN d₂.hgNp d₂.hincl0 d₂.hincl0p d₂.hincl1 d₂.hincl1p d₂.heq1 d₂.heq1p
     (comp_isComputable (paired_isComputable heval0 heval1) hh)
 
-
-/-- **Exercise 7.24, fourth claim, `notT` case.** LUCID's pointwise negation lifts to a computable
-map of type `(L→T) → (L→T)`. -/
 theorem notT_lifted_isComputable : ComputableMap LTpres LTpres (postcompose notT) :=
   postcompose_isComputable LTdata LTdata notT_isComputable
 
-/-- **Exercise 7.24, fourth claim, `andT` case.** LUCID's pointwise (sequential) conjunction lifts to
-a computable map of type `(L→T) × (L→T) → (L→T)`. -/
 theorem andT_lifted_isComputable :
     ComputableMap (prodPresentation LTpres LTpres) LTpres (pointwiseBin andT) :=
   pointwiseBin_isComputable LTdata LTdata LTdata andT_isComputable
 
-/-- **A deeper LUCID program is still computable.** `deMorganT f g := ¬(¬f ∧ ¬g)` on `(L→T)`,
-built by composing/pairing the two lifted combinators above (De Morgan's law for the sequential
-`and`); it is computable purely by the closure lemmas `comp_isComputable`/`paired_isComputable`,
-**with no fresh recursion-theoretic argument needed** — exactly Scott's "conclude that programs in
-LUCID define computable maps." -/
 theorem deMorganT_isComputable :
     ComputableMap (prodPresentation LTpres LTpres) LTpres
       ((postcompose notT).comp (pointwiseBin andT)
@@ -1634,8 +1483,7 @@ theorem deMorganT_isComputable :
 end
 
 section
-/-- **The defining equation of `Γ`, read as a theorem.** Every `γ ∈ Γ` is either `*` or `(i, γ')`
-for some `i, γ'`: `Γ = (⋃ᵢ {i} × Γ) ∪ {*}`. -/
+
 theorem Gamma_cases (γ : Gamma) : γ = star ∨ ∃ i γ', γ = cons i γ' := by
   cases γ with
   | inl l =>
@@ -1651,7 +1499,7 @@ theorem Gamma_cases (γ : Gamma) : γ = star ∨ ∃ i γ', γ = cons i γ' := b
 end
 
 section
-/-- **Exercise 7.24 (i) — `L` is effectively given.** -/
+
 theorem L_isEffectivelyGiven : L.IsEffectivelyGiven := ⟨Lpres⟩
 end
 
@@ -1918,7 +1766,7 @@ theorem TeqChar_eq_one_iff (a b : ℕ) : TeqChar a b = 1 ↔ a = b := by
 end
 
 section
-/-- `embStr` is injective. -/
+
 theorem embStr_injective : Function.Injective embStr :=
   List.map_injective_iff.mpr bitToNat_injective
 end
@@ -1929,7 +1777,7 @@ theorem primrec_LenumSubsetChar : Nat.Primrec LenumSubsetChar :=
 end
 
 section
-/-- `isPrefixChar` gives a `RecDecidable₂` decider for `Lenum n ⊆ Lenum m`. -/
+
 theorem Lenum_subset_recDecidable : RecDecidable₂ (fun n m => Lenum n ⊆ Lenum m) :=
   RecDecidable₂.of_paired_zero_one_char primrec_LenumSubsetChar
     (fun t => by have := LenumSubsetChar_le_one t; omega)
@@ -1943,7 +1791,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- The one-entry function-space code: `Xenum (codePair a b) = [X_a, X_b]`. -/
 def codePair (a b : ℕ) : ℕ := Nat.pair (Nat.pair a b) 0 + 1
 end
 
@@ -1951,26 +1798,19 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 variable (P : ComputablePresentation V)
 
-/-- The decidable mirror of `gStepsOK`, phrased with the function-space inclusion char `fincl`. -/
 def chainDec (fincl : ℕ → ℕ) (c : ℕ) : ℕ → List ℕ → Prop
   | _, [] => True
   | a, (b :: rest) => fincl (Nat.pair c (codePair a b)) = 1 ∧ chainDec fincl c b rest
 
-/-- The pure left-fold step corresponding to `fixStp` (parameter `c`, accumulator `acc = pair prev
-flag`, current element `x`). -/
 def fixPStep (fincl : ℕ → ℕ) (c acc x : ℕ) : ℕ :=
   Nat.pair x (selectFn acc.unpair.2 (isOne (fincl (Nat.pair c (codePair acc.unpair.1 x)))) 0)
 
-/-- One packed `foldCode` step: state `pair acc params` with `acc = pair prev flag`, current element
-`x`. Updates the flag with the one-step consistency test and advances `prev` to `x`. -/
 def fixStp (fincl : ℕ → ℕ) (w : ℕ) : ℕ :=
   Nat.pair w.unpair.1
     (selectFn w.unpair.2.unpair.1.unpair.2
       (isOne (fincl (Nat.pair w.unpair.2.unpair.2
         (codePair w.unpair.2.unpair.1.unpair.1 w.unpair.1)))) 0)
 
-/-- The chain `foldCode`: starts from `pair masterIdx 1`, threads the parameter `c`, over the list
-coded by `i`. Returns `pair lastIdx flag`. -/
 def fixChainChar (fincl : ℕ → ℕ) (c i : ℕ) : ℕ :=
   foldCode (fixStp fincl) c (Nat.pair P.masterIdx 1) i
 
@@ -1979,12 +1819,10 @@ end
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- The last index of the chain `a, full₀, full₁, …`. -/
 def gLastOf : ℕ → List ℕ → ℕ
   | a, [] => a
   | _, (b :: rest) => gLastOf b rest
 
-/-- The consecutive `g`-steps `g.rel (X_a) (X_{full₀})`, `g.rel (X_{full₀}) (X_{full₁})`, … all hold. -/
 def gStepsOK (g : ApproximableMap V V) (P : ComputablePresentation V) : ℕ → List ℕ → Prop
   | _, [] => True
   | a, (b :: rest) => g.rel (P.X a) (P.X b) ∧ gStepsOK g P b rest
@@ -1995,15 +1833,12 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 variable (P : ComputablePresentation V)
 
-/-- `Xenum (codePair a b) = [X_a, X_b]` (a one-entry, always-consistent function-space
-neighbourhood); a thin wrapper around `Xenum_singleton`. -/
 theorem Xenum_codePair (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P P (decodeList c))
       : Set (ApproximableMap V V)).Nonempty) (a b : ℕ) :
     Xenum P P gN (codePair a b) = step (P.X a) (P.X b) :=
   Xenum_singleton P P gN hgN a b
 
-/-- The `foldCode` tracks the last index reached. -/
 theorem fixPStep_foldl_fst (fincl : ℕ → ℕ) (c : ℕ) :
     ∀ (full : List ℕ) (prev fl : ℕ),
       (List.foldl (fixPStep fincl c) (Nat.pair prev fl) full).unpair.1 = gLastOf prev full := by
@@ -2022,7 +1857,6 @@ theorem fixPStep_foldl_fst (fincl : ℕ → ℕ) (c : ℕ) :
     rw [hstep, ih b (selectFn fl (isOne (fincl (Nat.pair c (codePair prev b)))) 0)]
     rfl
 
-/-- The `foldCode` flag is `1` iff the start flag is `1` and the whole chain is consistent. -/
 theorem fixPStep_foldl_snd (fincl : ℕ → ℕ) (c : ℕ) :
     ∀ (full : List ℕ) (prev fl : ℕ), fl ≤ 1 →
       ((List.foldl (fixPStep fincl c) (Nat.pair prev fl) full).unpair.2 = 1 ↔
@@ -2072,8 +1906,6 @@ theorem fixChainChar_eq (fincl : ℕ → ℕ) (c i : ℕ) :
     funext acc x; exact fixStp_eq fincl c acc x
   rw [hstep]
 
-/-- Read-off of the `foldCode`: its `.1` is the last index of `decodeList i`, and its `.2 = 1` iff
-the decoded chain is consistent. -/
 theorem fixChainChar_spec (fincl : ℕ → ℕ) (c i : ℕ) :
     (fixChainChar P fincl c i).unpair.1 = gLastOf P.masterIdx (decodeList i)
   ∧ ((fixChainChar P fincl c i).unpair.2 = 1 ↔ chainDec fincl c P.masterIdx (decodeList i)) := by
@@ -2087,9 +1919,6 @@ end
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- **Completeness of a chain.** If `(gⁿ).rel (X_a) (X_ℓ)`, then there is a valid `g`-chain from `a`
-whose final neighbourhood is contained in `X_ℓ`. (The intermediate neighbourhoods are named via
-`surj`; the relaxed final condition `X_{last} ⊆ X_ℓ` handles the `n = 0` base.) -/
 theorem gStepsOK_complete (g : ApproximableMap V V) (P : ComputablePresentation V) :
     ∀ (n a ℓ : ℕ), (g.iterMap n).rel (P.X a) (P.X ℓ) →
       ∃ full, gStepsOK g P a full ∧ P.X (gLastOf a full) ⊆ P.X ℓ := by
@@ -2110,8 +1939,6 @@ theorem gStepsOK_complete (g : ApproximableMap V V) (P : ComputablePresentation 
     obtain ⟨full', hs', hl'⟩ := ih k ℓ h2
     exact ⟨k :: full', ⟨h1, hs'⟩, hl'⟩
 
-/-- **Soundness of a chain.** A valid `g`-chain from `a` realises the iterate relation
-`(gᵏ).rel (X_a) (X_{last})` with `k` the chain length. -/
 theorem gStepsOK_sound (g : ApproximableMap V V) (P : ComputablePresentation V) :
     ∀ (full : List ℕ) (a : ℕ), gStepsOK g P a full →
       (g.iterMap full.length).rel (P.X a) (P.X (gLastOf a full)) := by
@@ -2131,9 +1958,6 @@ theorem gStepsOK_sound (g : ApproximableMap V V) (P : ComputablePresentation V) 
     rw [List.length_cons, hcomm, comp_rel]
     exact ⟨P.X b, h1, ih b hrest⟩
 
-/-- **Chain characterisation of `g`'s least fixed point.** A neighbourhood `X_ℓ` is in `fix(g)` iff a
-valid `g`-chain (from a master index `a₀` with `X_{a₀} = Δ`) reaches a final neighbourhood inside
-`X_ℓ`. -/
 theorem fixElement_mem_iff_chain (g : ApproximableMap V V) (P : ComputablePresentation V)
     (a0 : ℕ) (ha0 : P.X a0 = V.master) (ℓ : ℕ) :
     g.fixElement.mem (P.X ℓ) ↔
@@ -2155,9 +1979,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 variable (P : ComputablePresentation V)
 
-/-- **The `fix` neighbourhood relation, chain form.** `(fix V).rel (Xenum c) (X_ℓ)` holds iff there is
-a valid least-map chain from the master index reaching a neighbourhood inside `X_ℓ`. This is Scott's
-"`⋂[X_{nᵢ}, X_{mᵢ}] fix X_ℓ` iff for some finite sequence …". -/
 theorem fixMap_rel_iff (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P P (decodeList c))
       : Set (ApproximableMap V V)).Nonempty) (c ℓ : ℕ) :
@@ -2168,8 +1989,6 @@ theorem fixMap_rel_iff (gN : ℕ → ℕ)
   rw [(fixMap V).rel_iff_mem_principal (Xenum_mem P P gN hgN c), fixMap_toElementMap]
   exact fixElement_mem_iff_chain _ P P.masterIdx P.masterIdx_spec ℓ
 
-/-- The least map `ĝ` of the function-space neighbourhood `Xenum c` relates `X_a` to `X_b` exactly
-when `Xenum c ⊆ [X_a, X_b]` (Scott's `⋂{X_{mᵢ} ∣ X_a ⊆ X_{nᵢ}} ⊆ X_b`). -/
 theorem leastMap_Xenum_rel (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P P (decodeList c))
       : Set (ApproximableMap V V)).Nonempty) (c a b : ℕ) :
@@ -2178,8 +1997,6 @@ theorem leastMap_Xenum_rel (gN : ℕ → ℕ)
   rw [toApproxMap_rel, mem_principal]
   exact ⟨fun h => h.2, fun h => ⟨step_mem (P.mem_X a) (P.mem_X b), h⟩⟩
 
-/-- `chainDec` is equivalent to `gStepsOK` of the least map, via the inclusion char's spec and
-`Xenum (codePair a b) = [X_a, X_b]`. -/
 theorem chainDec_iff_gStepsOK (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P P (decodeList c))
       : Set (ApproximableMap V V)).Nonempty) (fincl : ℕ → ℕ)

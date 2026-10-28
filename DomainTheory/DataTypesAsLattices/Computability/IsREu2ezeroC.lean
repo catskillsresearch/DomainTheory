@@ -7,11 +7,9 @@ public import DomainTheory.DataTypesAsLattices.Computability.IsREu2enumeral
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem IsRE.zeroC : IsRE zeroC :=
   IsRE.numeral 0

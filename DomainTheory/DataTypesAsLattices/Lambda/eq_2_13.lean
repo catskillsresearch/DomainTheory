@@ -6,11 +6,8 @@ public import Mathlib.Data.Set.Lattice.Indexed
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (2.13).** Application distributes over arbitrary unions. -/
 theorem eq_2_13 (F : Set Pomega) (x : Pomega) :
     funOf (⋃₀ F) x = ⋃ u ∈ F, funOf u x := by
   ext m

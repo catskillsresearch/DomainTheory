@@ -15,11 +15,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (4.34).** `a ∘ outleft ∘ (a ⊕ b) : (a ⊕ b) ∘→ a`. -/
 theorem eq_4_34 {a b : Pomega} (ha : Retract a) (hb : Retract b) :
     typed (comp a (comp outleftC (plusR a b))) (arrowR (plusR a b) a) := by
   change comp a (comp outleftC (plusR a b)) =

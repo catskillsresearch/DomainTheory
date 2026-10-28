@@ -8,20 +8,18 @@ section
 universe u
 namespace DomainTheory.NeighbourhoodSystems
 variable {Obj : Type u} [Category Obj]
-/- concordance: source L3667 DEFINITION 6.4 algebra for a functor -/
-/-- **Definition 6.4 (Scott 1981, PRG-19).** A *`T`-algebra*: a domain `carrier` together with a
-structure map `str : T(carrier) → carrier`. -/
+
 structure TAlgebra (T : Endofunctor Obj) where
-  /-- The underlying object `E`. -/
+
   carrier : Obj
-  /-- The structure map `k : T(E) → E`. -/
+
   str : ((T.obj carrier) ⟶ carrier)
 
 end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- AlgHom.lean
+
 universe u
 
 namespace DomainTheory.NeighbourhoodSystems
@@ -30,14 +28,11 @@ variable {Obj : Type u} [Category Obj]
 
 variable {T : Endofunctor Obj}
 
-/-- **Definition 6.4 (Scott 1981, PRG-19).** A *homomorphism* of `T`-algebras `(E,k) → (F,m)`: a map
-`hom : E → F` making the square commute, i.e. `hom ∘ k = m ∘ T(hom)`. -/
 structure AlgHom (A B : TAlgebra T) where
-  /-- The underlying morphism `h : E → F`. -/
+
   hom : (A.carrier ⟶ B.carrier)
-  /-- The homomorphism square `h ∘ k = m ∘ T(h)`. -/
+
   comm : hom ⊚ A.str = B.str ⊚ T.map hom
 
 end DomainTheory.NeighbourhoodSystems
 end
-

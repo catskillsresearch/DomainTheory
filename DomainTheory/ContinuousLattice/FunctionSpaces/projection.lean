@@ -15,7 +15,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -26,9 +25,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace Proposition313
 
-/-- **Scott 1972, Proposition 3.13.** `(con, min)` makes `D` a projection of `[D → D]`:
-`min ∘ con = id` (a constant's least value is its value) and `con ∘ min ⊑ id` (the constant `f(⊥)`
-is `≤ f` pointwise, since `f(⊥) ⊑ f(y)` by monotonicity). -/
 noncomputable def projection : IsContinuousLatticeProjection D (ScottMap D D) where
   incl := con
   retr := min

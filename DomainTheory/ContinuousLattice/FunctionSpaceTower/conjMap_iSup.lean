@@ -13,7 +13,6 @@ public import Mathlib.Data.Set.Basic
 
 namespace DomainTheory.ContinuousLattice
 
-
 attribute [instance] CLat.str
 
 section LimitMaps
@@ -21,8 +20,6 @@ section LimitMaps
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-/-- Conjugation commutes with a supremum indexed by `ℕ` (the range is directed when `f` is monotone).
-Since `conjMap post pre` is itself a Scott map, this is just preservation of directed suprema. -/
 theorem conjMap_iSup (n : ℕ) (post : ScottMap (DInf D₀ j₀) (towerType D₀ n))
     (pre : ScottMap (towerType D₀ n) (DInf D₀ j₀))
     (f : ℕ → ScottMap (DInf D₀ j₀) (DInf D₀ j₀)) (hf : Monotone f) :
@@ -34,9 +31,6 @@ theorem conjMap_iSup (n : ℕ) (post : ScottMap (DInf D₀ j₀) (towerType D₀
     (conjMap post pre).preservesDirectedSup_coe (Set.range f) hne hdir, ← Set.range_comp]
   rfl
 
-/-- **Conjugation climbs the tower (one step).** Lifting `conjMap (j_{∞n}, i_{n∞}) f` along `i_{n+1}`
-stays below `conjMap (j_{∞(n+1)}, i_{(n+1)∞}) f`. Both sides live in `D_{n+2}`; the inequality is the
-algebraic content that makes the double sup defining `j_∞ ∘ i_∞` monotone in the level index `n`. -/
 theorem conjMap_incl_le_conjMap_succ (n : ℕ) (f : DInfFn D₀ j₀) :
     (towerProj D₀ j₀ (n + 1)).incl
         (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)

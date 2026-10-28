@@ -15,12 +15,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_11
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 5.3.** The function space of two closures is a
-closure: it is a retract and contains `I`. -/
 theorem Icomb_subset_arrowR {a b : Pomega} (ha : Closure a) (hb : Closure b) :
     Icomb ⊆ arrowR a b := by
   intro p hp

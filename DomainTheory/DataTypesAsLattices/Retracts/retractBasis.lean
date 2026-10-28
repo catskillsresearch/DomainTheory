@@ -26,7 +26,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The canonical finite-image basis of the fixed-point lattice of a retract. -/
 def retractBasis (a : Pomega) (x : Fixpoints (funOf a)) :
     Set (Fixpoints (funOf a)) :=
   {y | ∃ n, e n ⊆ x ∧ (y : Pomega) = funOf a (e n)}

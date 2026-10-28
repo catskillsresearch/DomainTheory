@@ -27,7 +27,6 @@ namespace InfoSys
 open ApproximableMap
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-/-- `f` is strict when `f(⊥) = ⊥`. -/
 def IsStrict (A : InfoSys α) (B : InfoSys β) (f : ApproximableMap A B) : Prop :=
   f.toElement A.botElement = B.botElement
 

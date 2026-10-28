@@ -23,7 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Term-level shift `λt. u(t+1)`, which agrees with `seqShift` on numerals. -/
 def termShift (u : Pomega) : Pomega :=
   graph (fun t => funOf u (succSet t))
 

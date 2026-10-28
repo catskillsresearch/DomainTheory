@@ -63,5 +63,4 @@ theorem uForgetFinset.singleton (p : UToken) :
 
 end InfoSys
 
-
 end DomainTheory.InformationSystems

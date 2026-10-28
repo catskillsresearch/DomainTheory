@@ -14,7 +14,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- **Factoid 3.5.** Entailment closure of a consistent set. -/
 def closure (u : Finset α) (hu : u ∈ sys.Con) : sys.Element where
   carrier := {X | sys.Ent u X}
   consistent := by

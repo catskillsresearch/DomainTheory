@@ -11,9 +11,7 @@ section
 open NeighborhoodSystem ApproximableMap
 universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
-/- concordance: source L4854 THEOREM 8.5 finitary projection test -/
-/-- **Theorem 8.5 (Scott 1981, PRG-19), in full.** `a : E → E` is a finitary projection iff it
-satisfies the step-closure formula `a(x) = {Y ∈ E ∣ ∃X∈x, X⊆Y ∧ XaX}` for every `x ∈ |E|`. -/
+
 theorem finitaryProjection_iff_formula (a : ApproximableMap E E) :
     FinitaryProjection a ↔ ∀ (x : E.Element) {Y : Set α}, (a.toElementMap x).mem Y ↔
       E.mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ a.rel X X :=
@@ -128,4 +126,3 @@ theorem theorem_85.{u} : And
   @DomainTheory.NeighbourhoodSystems.isFinitaryProjection_of_formula
 
 end DomainTheory.NeighbourhoodSystems
-

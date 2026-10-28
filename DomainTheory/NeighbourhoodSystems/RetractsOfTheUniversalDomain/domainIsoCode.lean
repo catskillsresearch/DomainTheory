@@ -13,7 +13,6 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- **Pullback**: the `D`-filter induced by a `D''`-filter `y`. -/
 def toDCode (y : (DprimeUCode P).Element) : D.Element where
   mem S := ∃ n, S = e P n ∧ y.mem (Yc P n)
   sub := fun ⟨n, hn, _⟩ => hn ▸ D_mem_e D (e P) (hcover P) n
@@ -30,7 +29,6 @@ def toDCode (y : (DprimeUCode P).Element) : D.Element where
     have hYij : Yc P i ⊆ Yc P j := (embed_subset_iff_raw_code P i j).mp hST
     exact ⟨j, rfl, y.up_mem hyi ⟨j, rfl⟩ hYij⟩
 
-/-- **Pushforward**: the `D''`-filter induced by a `D`-filter `x`. -/
 def toDprimeUCode (x : D.Element) : (DprimeUCode P).Element where
   mem Y := ∃ n, Y = Yc P n ∧ x.mem (e P n)
   sub := fun ⟨n, hn, _⟩ => ⟨n, hn⟩
@@ -45,7 +43,6 @@ def toDprimeUCode (x : D.Element) : (DprimeUCode P).Element where
     have heij : e P i ⊆ e P j := (embed_subset_iff_raw_code P i j).mpr hXY
     exact ⟨j, rfl, x.up_mem hxi (D_mem_e D (e P) (hcover P) j) heij⟩
 
-/-- **The order isomorphism `D.Element ≃o D''.Element`.** -/
 noncomputable def domainIsoCode : DomainIso D (DprimeUCode P) where
   toFun := toDprimeUCode P
   invFun := toDCode P
@@ -84,17 +81,11 @@ noncomputable def domainIsoCode : DomainIso D (DprimeUCode P) where
       obtain ⟨n, hn, hxn⟩ := hY
       exact ⟨n, hn, hle _ hxn⟩
 
-/-- **Theorem 8.8(b)(vii)(3), full statement.** `D''` is effectively given, `D ≅ᴰ D''`, and
-`D'' ◁ U`. -/
 theorem DprimeUCode_isEffectivelyGiven : (DprimeUCode P).IsEffectivelyGiven :=
   ⟨DprimeUCodePresentation P⟩
 
-/-- **Theorem 8.8(b)(vii)(3), isomorphism half.** `D ≅ᴰ D''`. -/
 theorem isomorphic_DprimeUCode : D ≅ᴰ DprimeUCode P := ⟨domainIsoCode P⟩
 
-/-- **The injection `i : D'' → U` is computable.** `i`'s relation `Yc P n \, i \, UX m` reduces to
-the raw code-level subset test `UX (YseqCode P n) ⊆ UX m`, decidable by reindexing
-`UComputablePresentation.incl_computable` along `YseqCode P` in the first argument. -/
 theorem DprimeUCode_inj_isComputableMap :
     ComputableMap (DprimeUCodePresentation P) UComputablePresentation
       (DprimeUCode_subsystem P).inj := by
@@ -111,9 +102,6 @@ theorem DprimeUCode_inj_isComputableMap :
   exact ⟨fun ⟨_, _, hsub⟩ => hsub,
     fun hsub => ⟨⟨t.unpair.1, rfl⟩, U_mem_UX _, hsub⟩⟩
 
-/-- **The projection `j : U → D''` is computable.** `j`'s relation `UX m \, j \, Yc P n` reduces to
-the raw code-level subset test `UX m ⊆ UX (YseqCode P n)`, decidable by reindexing
-`UComputablePresentation.incl_computable` along `YseqCode P` in the second argument. -/
 theorem DprimeUCode_proj_isComputableMap :
     ComputableMap UComputablePresentation (DprimeUCodePresentation P)
       (DprimeUCode_subsystem P).proj := by
@@ -130,10 +118,6 @@ theorem DprimeUCode_proj_isComputableMap :
   exact ⟨fun ⟨_, _, hsub⟩ => hsub,
     fun hsub => ⟨U_mem_UX _, ⟨t.unpair.2, rfl⟩, hsub⟩⟩
 
-/-- **Theorem 8.8(b)(vii)(4), full statement.** The projection pair witnessing `D'' ◁ U` (Proposition
-6.12, applied to `DprimeUCode_subsystem P : DprimeUCode P ◁ U`) is computable in both directions
-relative to `D''`'s own presentation (`DprimeUCodePresentation`) and `U`'s presentation
-(`UComputablePresentation`) — the headline claim of Theorem 8.8(b)(vii). -/
 theorem DprimeUCode_projectionPair_isComputable :
     ComputableMap (DprimeUCodePresentation P) UComputablePresentation
         (DprimeUCode_subsystem P).inj ∧
@@ -147,13 +131,10 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- **`isoInj : D → D''`**, Theorem 2.7 applied to `domainIsoCode P`. -/
 noncomputable def isoInj : ApproximableMap D (DprimeUCode P) := ofIso (domainIsoCode P)
 
-/-- **`isoProj : D'' → D`**, Theorem 2.7 applied to the inverse iso. -/
 noncomputable def isoProj : ApproximableMap (DprimeUCode P) D := ofIso (domainIsoCode P).symm
 
-/-- `isoInj ∘ isoProj = I_D''`. -/
 theorem isoInj_comp_isoProj : (isoInj P).comp (isoProj P) = idMap (DprimeUCode P) := by
   apply ext_of_toElementMap
   intro y
@@ -162,9 +143,6 @@ theorem isoInj_comp_isoProj : (isoInj P).comp (isoProj P) = idMap (DprimeUCode P
   rw [isoInj, isoProj, toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply,
     toElementMap_idMap]
 
-/-- **`isoInj`'s relation at raw indices reduces to a single reindexed inclusion.** `n := b` is always
-a valid witness (`Yc P b = Yc P b`), and any *other* witness `n` with `Yc P b = Yc P n` forces
-`e P b = e P n` (`embed_eq_iff_raw_code`), so it gives no new information. -/
 theorem isoInj_rel_iff_incl {a b : ℕ} :
     (isoInj P).rel (P.X a) (Yc P b) ↔ P.X a ⊆ P.X (eIdx P b) := by
   show (∃ _ : D.mem (P.X a), (toDprimeUCode P (D.principal (P.mem_X a))).mem (Yc P b)) ↔ _
@@ -176,8 +154,6 @@ theorem isoInj_rel_iff_incl {a b : ℕ} :
   · intro hsub
     exact ⟨P.mem_X a, b, rfl, (P0 P).mem_X b, hb ▸ hsub⟩
 
-/-- **`isoInj` is computable** relative to `P`/`DprimeUCodePresentation P`: its raw-index relation is
-`incl_computable` reindexed by the primitive-recursive `eIdx P` in the second argument. -/
 theorem isoInj_isComputableMap : ComputableMap P (DprimeUCodePresentation P) (isoInj P) := by
   constructor
   have hg : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1 (eIdx P t.unpair.2)) :=
@@ -189,7 +165,6 @@ theorem isoInj_isComputableMap : ComputableMap P (DprimeUCodePresentation P) (is
   show (isoInj P).rel (P.X t.unpair.1) ((DprimeUCodePresentation P).X t.unpair.2) ↔ _
   exact isoInj_rel_iff_incl P
 
-/-- `isoProj ∘ isoInj = I_D` (Theorem 2.7's `toElementMap_ofIso`, both ways, plus `OrderIso.symm_apply_apply`). -/
 theorem isoProj_comp_isoInj : (isoProj P).comp (isoInj P) = idMap D := by
   apply ext_of_toElementMap
   intro x
@@ -198,10 +173,6 @@ theorem isoProj_comp_isoInj : (isoProj P).comp (isoInj P) = idMap D := by
   rw [isoInj, isoProj, toElementMap_ofIso, toElementMap_ofIso, OrderIso.symm_apply_apply,
     toElementMap_idMap]
 
-/-- **`isoProj`'s relation at raw indices reduces to a single reindexed inclusion.** `m := eIdx P a`
-is always a valid witness (`e P (eIdx P a) = P.X a` by involutivity), and any *other* witness `m`
-with `P.X a = e P m` forces `Yc P (eIdx P a) = Yc P m` (via `embed_eq_iff_raw_code` and
-`eIdx_involutive`), so it gives no new information. -/
 theorem isoProj_rel_iff_incl {b a : ℕ} :
     (isoProj P).rel (Yc P b) (P.X a) ↔ Yc P b ⊆ Yc P (eIdx P a) := by
   show (∃ _ : (DprimeUCode P).mem (Yc P b),
@@ -218,8 +189,6 @@ theorem isoProj_rel_iff_incl {b a : ℕ} :
   · intro hsub
     exact ⟨⟨b, rfl⟩, eIdx P a, hea.symm, ⟨eIdx P a, rfl⟩, hsub⟩
 
-/-- **`isoProj` is computable** relative to `DprimeUCodePresentation P`/`P`: its raw-index relation is
-`DprimeUCodePresentation`'s `incl_computable` reindexed by `eIdx P` in the second argument. -/
 theorem isoProj_isComputableMap : ComputableMap (DprimeUCodePresentation P) P (isoProj P) := by
   constructor
   have hg : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1 (eIdx P t.unpair.2)) :=

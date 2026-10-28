@@ -6,9 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem predSet_eq_ofNat_of_no_zero {u : Pomega} {k : ℕ}
     (h0 : 0 ∉ u) (hk : predSet u = ofNat k) :

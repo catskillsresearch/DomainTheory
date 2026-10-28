@@ -24,7 +24,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Term-level binary sequence constructor. -/
 def seq2Term (a b : Term) : Term :=
   .lam 8 (.cond (.var 8) a
     (.cond (.pred (.var 8)) b enumBottomTerm))

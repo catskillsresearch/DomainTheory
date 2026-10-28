@@ -23,7 +23,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-/-- Carrier of the right copy extracted from a sum element. -/
 def sumRhtCarrier (z : (sumSystem A B).Element) : Set β :=
   {y | SumToken.right y ∈ z.carrier}
 

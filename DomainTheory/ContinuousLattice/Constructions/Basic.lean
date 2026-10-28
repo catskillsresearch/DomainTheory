@@ -16,8 +16,6 @@ open Topology Set
 
 variable {D : Type*} [CompleteLattice D]
 
-/-- Plugging a value into a fixed coordinate, `v ↦ Function.update z i v`, preserves directed
-suprema: away from `i` the result is the constant `z j`, and at `i` it is the identity. -/
 theorem update_preservesDirectedSup {ι : Type*} [DecidableEq ι] {E : ι → Type*}
     [∀ i, CompleteLattice (E i)] (z : ∀ i, E i) (i : ι) :
     PreservesDirectedSup (fun v : E i => Function.update z i v) := by
@@ -35,9 +33,6 @@ theorem update_preservesDirectedSup {ι : Type*} [DecidableEq ι] {E : ι → Ty
       funext v; simp [Function.eval, Function.update_of_ne hji]
     rw [h, hTne.image_const, sSup_singleton]
 
-/-- A way-below relation in a product projects to each coordinate: if `a ≪ z` in `∏ᵢ Eᵢ` then
-`aᵢ ≪ zᵢ`. The witnessing Scott-open neighbourhood of `zᵢ` is the preimage of a product Scott-open
-witness under `v ↦ Function.update z i v`, which is Scott-open by `update_preservesDirectedSup`. -/
 theorem wayBelow_proj {ι : Type*} {E : ι → Type*} [∀ i, CompleteLattice (E i)]
     {a z : ∀ i, E i} (h : a ≪ z) (i : ι) : a i ≪ z i := by
   classical
@@ -51,10 +46,6 @@ theorem wayBelow_proj {ι : Type*} {E : ι → Type*} [∀ i, CompleteLattice (E
     have := hav i
     rwa [Function.update_self] at this
 
-/-- A way-below element of a product has finite support: if `a ≪ z` in `∏ᵢ Eᵢ` then `aⱼ = ⊥` for
-all but finitely many `j`. The finite truncations `Z F = (fun j => if j ∈ F then z j else ⊥)` form a
-directed family with supremum `z`; since `a ≪ z = ⊔_F Z F`, already `a ≤ Z F` for some finite `F`,
-forcing `aⱼ = ⊥` off `F`. -/
 theorem wayBelow_finite_support {ι : Type*} {E : ι → Type*} [∀ i, CompleteLattice (E i)]
     {a z : ∀ i, E i} (h : a ≪ z) : ∃ F : Finset ι, ∀ j ∉ F, a j = ⊥ := by
   classical

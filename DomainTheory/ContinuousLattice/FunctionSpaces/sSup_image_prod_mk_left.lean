@@ -14,13 +14,11 @@ public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Order
 public import Mathlib.Order.FixedPoints
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 

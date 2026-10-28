@@ -16,7 +16,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Chain unions are elements. -/
 def chainSup (S : Set sys.Element) (hne : S.Nonempty) (hchain : sys.Chain S) : sys.Element :=
   sys.directedSup S hne (IsDirected.of_IsChain sys hchain)
 

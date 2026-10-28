@@ -18,22 +18,15 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
-/- concordance: source L4807 EXAMPLES 8.4 strict retraction -/
-
 section
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
-/-- `g(f, y) = fade(check(y), f(y))`, as a joint approximable map `(D → E) × D → E`. -/
 def strictEvalFade : ApproximableMap (prod (funSpace D E) D) E :=
   (fade (D := E)).comp
     (paired ((check (D := D)).comp (proj₁ (funSpace D E) D)) (evalMap D E))
 
-/-- **Example 8.4(b)(i)'s `strict` combinator.** `strict(f) = λy. fade(check(y), f(y))`, built via
-Theorem 3.12's `curry`. -/
 def strictRetraction : ApproximableMap (funSpace D E) (funSpace D E) := curry strictEvalFade
 
-/-- The closed form of `strict`'s elementwise action: `strict(f)(y) = ⊥_E` if `y = ⊥_D`, else
-`f(y)`. -/
 theorem toApproxMap_strictRetraction_mem {φ : (funSpace D E).Element} {y : D.Element}
     {Z : Set β} :
     ((toApproxMap (strictRetraction.toElementMap φ)).toElementMap y).mem Z ↔
@@ -58,7 +51,6 @@ theorem strictRetraction_apply_bot (φ : (funSpace D E).Element) :
   · rintro rfl
     exact ⟨E.master_mem, Or.inl rfl⟩
 
-/-- **`f` is a fixed point of `strict` iff `f` is strict.** -/
 theorem isStrict_toApproxMap_of_fixed {φ : (funSpace D E).Element}
     (hφ : strictRetraction.toElementMap φ = φ) : Exercise510.IsStrict (toApproxMap φ) := by
   rw [Exercise510.isStrict_iff_apply_bot]
@@ -82,8 +74,6 @@ theorem strictRetraction_apply_of_ne_bot {y : D.Element} (hy : y ≠ D.bot)
 theorem toApproxMap_toFilter (f : ApproximableMap D E) : toApproxMap (toFilter f) = f :=
   (funSpaceEquiv D E).right_inv f
 
-/-- Two tiny reproofs of `funSpaceEquiv`'s own round-trips, stated standalone so the closed-form
-calculations below don't have to fight `OrderIso` field-access notation. -/
 theorem toFilter_toApproxMap (φ : (funSpace D E).Element) : toFilter (toApproxMap φ) = φ :=
   (funSpaceEquiv D E).left_inv φ
 
@@ -98,9 +88,6 @@ theorem strictRetraction_fixed_of_isStrict {f : ApproximableMap D E} (hf : Exerc
     · rw [strictRetraction_apply_of_ne_bot hy, toApproxMap_toFilter]
   rw [← toFilter_toApproxMap (strictRetraction.toElementMap (toFilter f)), key]
 
-/-- **Example 8.4(b)(i), the fixed-point representation.** Restricting `funSpaceEquiv` along
-`isStrict_toApproxMap_of_fixed`/`strictRetraction_fixed_of_isStrict` identifies `Fix(strict)` with
-the strict approximable maps `Exercise510.StrictMap D E`. -/
 def strictRetractionFixIso :
     {φ : (funSpace D E).Element // strictRetraction.toElementMap φ = φ} ≃o
       Exercise510.StrictMap D E where
@@ -145,8 +132,6 @@ theorem isRetraction_strictRetraction : Retraction (strictRetraction (D := D) (E
   · rw [hy, strictRetraction_apply_bot, strictRetraction_apply_bot]
   · rw [strictRetraction_apply_of_ne_bot hy, strictRetraction_apply_of_ne_bot hy]
 
-/-- **Example 8.4(b)(i) (Scott 1981, PRG-19).** `strictRetraction` is a projection on `D → E`
-whose fixed-point set is isomorphic to the strict function space `Exercise510.strictFun D E`. -/
 theorem example84b_strict :
     IsProjection (strictRetraction (D := D) (E := E)) ∧
       Nonempty ((Exercise510.strictFun D E).Element ≃o

@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-/-- Finite stage of the `$` iteration: `⋃ { uᵢ | i ∈ x, i < n }`. -/
+
 def seqFunLt (u x : Pomega) (n : ℕ) : Pomega :=
   ⋃ i ∈ x, ⋃ _ : i < n, funOf u (ofNat i)
 

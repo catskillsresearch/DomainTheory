@@ -15,7 +15,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -26,9 +25,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 section Projections
 
-/-- `J_D` is closed under *directed* joins (Scott 1972, 3.12). Continuity of each member lets the
-inner `(⊔S)`-application distribute over the directed family `{ j x : j ∈ S }`, and directedness
-plus idempotency collapse the double family `{ k (j x) }` to `(⊔S) x`. -/
 theorem isProjection_directedSup {S : Set (ScottMap D D)} (hSne : S.Nonempty)
     (hSdir : DirectedOn (· ≤ ·) S) (hS : ∀ j ∈ S, IsProjection j) :
     IsProjection (sSup S) := by

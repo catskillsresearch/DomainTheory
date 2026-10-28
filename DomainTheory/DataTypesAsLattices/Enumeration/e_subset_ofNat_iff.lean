@@ -5,16 +5,13 @@ public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem e_subset_ofNat_iff (code n : ℕ) :
     e code ⊆ ofNat n ↔ code = 0 ∨ code = 2 ^ n := by

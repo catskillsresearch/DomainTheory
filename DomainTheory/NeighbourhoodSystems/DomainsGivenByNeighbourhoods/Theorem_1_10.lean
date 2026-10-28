@@ -14,11 +14,6 @@ section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/- concordance: source L334 THEOREM 1.10 basic open neighbourhoods -/
-/-- **Theorem 1.10.** The *element-token system* `{[X] ∣ X ∈ 𝒟}` over the tokens `|𝒟|`. The two
-laws reduce to facts about `[·]`: the master `[Δ] = |𝒟|` is the whole space; the consistency
-witness `[W]` for `[X] ∩ [Y]` yields `W ⊆ X ∩ Y` (via `↑W`), so `X ∩ Y ∈ 𝒟` and
-`[X] ∩ [Y] = [X ∩ Y]`. -/
 def tokenSystem : NeighborhoodSystem V.Element where
   mem S := ∃ X, V.mem X ∧ S = V.bracket X
   master := Set.univ
@@ -35,7 +30,6 @@ def tokenSystem : NeighborhoodSystem V.Element where
 @[simp] theorem tokenSystem_mem {S : Set V.Element} :
     V.tokenSystem.mem S ↔ ∃ X, V.mem X ∧ S = V.bracket X := Iff.rfl
 
-/-- The element of `|𝒟|` corresponding to `y ∈ |{[X]}|`: the filter `{X ∣ [X] ∈ y}`. -/
 def ofToken (y : V.tokenSystem.Element) : V.Element where
   mem X := V.mem X ∧ y.mem (V.bracket X)
   sub h := h.1
@@ -55,7 +49,6 @@ def ofToken (y : V.tokenSystem.Element) : V.Element where
     rintro X Y ⟨hX, hyX⟩ hY hXY
     exact ⟨hY, y.up_mem hyX ⟨Y, hY, rfl⟩ ((V.bracket_subset_iff hX hY).mpr hXY)⟩
 
-/-- The element of `|{[X]}|` corresponding to `x ∈ |𝒟|`: the filter `{[X] ∣ X ∈ x}`. -/
 def toToken (x : V.Element) : V.tokenSystem.Element where
   mem S := ∃ X, x.mem X ∧ S = V.bracket X
   sub := by rintro S ⟨X, hX, rfl⟩; exact ⟨X, x.sub hX, rfl⟩
@@ -68,8 +61,6 @@ def toToken (x : V.Element) : V.tokenSystem.Element where
     obtain ⟨Y, hYmem, rfl⟩ := hT
     exact ⟨Y, x.up_mem hX hYmem ((V.bracket_subset_iff (x.sub hX) hYmem).mp hsub), rfl⟩
 
-/-- **Theorem 1.10 (the isomorphism).** `X ↦ [X]` induces an order-isomorphism `|𝒟| ≃o |{[X]}|`:
-`toToken` and `ofToken` are mutually inverse and preserve/reflect `⊑`. -/
 def tokenIso : V.Element ≃o V.tokenSystem.Element where
   toFun := V.toToken
   invFun := V.ofToken
@@ -103,9 +94,6 @@ def tokenIso : V.Element ≃o V.tokenSystem.Element where
       obtain ⟨X, hX, rfl⟩ := hS
       exact ⟨X, h X hX, rfl⟩
 
-/-- **Theorem 1.10 (2).** `X, Y` are consistent in `𝒟` (have a common lower bound `Z ∈ 𝒟`,
-`Z ⊆ X ∩ Y`) iff `[X] ∩ [Y] ≠ ∅`. `→` uses `↑Z` (which lies in both `[X]` and `[Y]`); `←` reads a
-witness off any common element. -/
 theorem bracket_inter_nonempty_iff {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) :
     (V.bracket X ∩ V.bracket Y).Nonempty ↔ ∃ Z, V.mem Z ∧ Z ⊆ X ∩ Y := by
   constructor
@@ -116,8 +104,6 @@ theorem bracket_inter_nonempty_iff {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) 
     · exact ⟨hX, hZsub.trans Set.inter_subset_left⟩
     · exact ⟨hY, hZsub.trans Set.inter_subset_right⟩
 
-/-- **Theorem 1.10 (statement).** Any neighbourhood system is isomorphic to its element-token
-system: `𝒟 ≅ᴰ {[X]}`. -/
 theorem isomorphic_tokenSystem : V ≅ᴰ V.tokenSystem := ⟨V.tokenIso⟩
 end
 
@@ -264,18 +250,11 @@ section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- A neighbourhood system `𝒟'` over `β` is **complete** when every filter `y ∈ |𝒟'|` is *fixed
-by a unique point* `b ∈ β`: a neighbourhood `S` lies in `y` iff `b ∈ S`. (Scott: "*a filter is
-fixed by a point iff it is the filter of all neighbourhoods containing that point*".) -/
 def IsComplete {β : Type*} (V' : NeighborhoodSystem β) : Prop :=
   ∀ y : V'.Element, ∃! b : β, ∀ S, V'.mem S → (y.mem S ↔ b ∈ S)
 
-/-- The filter of `{[X]}` *fixed by* the point `x ∈ |𝒟|` is `toToken x` (the filter of all
-brackets containing `x`). By Theorem 1.10 this is a bijection `|𝒟| ≃ |{[X]}|`, so tokens and
-(partial) elements are identified. -/
 def filterFixedBy (x : V.Element) : V.tokenSystem.Element := V.toToken x
 
-/-- `[X] ≠ ∅ ⟺ X ∈ 𝒟`. `→` reads `X ∈ 𝒟` off any element of `[X]`; `←` exhibits `↑X`. -/
 theorem bracket_nonempty_iff {X : Set α} : (V.bracket X).Nonempty ↔ V.mem X := by
   constructor
   · rintro ⟨x, hx⟩; exact x.sub hx

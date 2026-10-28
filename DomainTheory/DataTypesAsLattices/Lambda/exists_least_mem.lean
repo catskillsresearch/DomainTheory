@@ -4,9 +4,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 lemma exists_least_mem {a : Pomega} (hex : ∃ k, k ∈ a) :
     ∃ k, k ∈ a ∧ ∀ i < k, i ∉ a := by

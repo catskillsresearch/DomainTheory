@@ -29,7 +29,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_zero
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-/-- **Scott 1976, (3.3).** `G = cond(⟨suc, pred, cond, K, S⟩)(0)`. -/
+
 def Gcomb : Pomega :=
   graph (fun z => condSet z Gpack zeroC)
 

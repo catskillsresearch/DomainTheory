@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.4).** Doubly strict conditional
-`z ⊒ x, y = z ⊃ (z ⊃ x, ⊤), (z ⊃ ⊤, y)`. -/
 def dcondSet (z x y : Pomega) : Pomega :=
   condSet z (condSet z x topElem) (condSet z topElem y)
 

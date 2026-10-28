@@ -17,7 +17,6 @@ open ApproximableMap
 
 namespace Factoid84
 
-/-- Elements of the domain of domains (Scott’s assertion after (1)–(5)). -/
 def DomainApprox : Type :=
   { r : ApproximableMap P P // IsDomainApprox r }
 

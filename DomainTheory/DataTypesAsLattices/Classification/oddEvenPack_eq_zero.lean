@@ -13,11 +13,9 @@ public import DomainTheory.DataTypesAsLattices.Classification.oddEvenPack
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
-
 
 theorem oddEvenPack_eq_zero {f g : Pomega → Pomega} (x : Pomega) :
     oddEvenPack f g x = ofNat 0 ↔ f x = botElem ∧ g x = ofNat 0 := by

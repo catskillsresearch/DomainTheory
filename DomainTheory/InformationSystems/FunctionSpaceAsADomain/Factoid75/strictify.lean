@@ -24,7 +24,7 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
 namespace ApproximableMap
-/-- **Factoid 7.5.** Largest strict approximable map contained in `f` (Scott’s `strict`). -/
+
 def strictify (f : ApproximableMap A B) : ApproximableMap A B where
   rel u v :=
     u ∈ A.Con ∧ v ∈ B.Con ∧
@@ -73,7 +73,6 @@ theorem strictify.toElement_le (f : ApproximableMap A B) (x : A.Element) :
   · exact ⟨u, hu, hf⟩
 
 end ApproximableMap
-
 
 end InfoSys
 

@@ -7,14 +7,10 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Functionality.Z
 public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 
-
 @[expose] public section
-
 
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (7.18).** Equal tags: `σ_j^m({(j,0)}) = {(j,m)}`. -/
 theorem eq_7_18_eq (j m : ℕ) :
     Z m (graph (sigmaJ j)) {pair j 0} = ({pair j m} : Pomega) := by
   induction m with

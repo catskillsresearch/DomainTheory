@@ -14,9 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plusR
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 namespace plusR_app
 

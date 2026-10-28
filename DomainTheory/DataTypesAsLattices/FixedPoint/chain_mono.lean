@@ -6,7 +6,6 @@ public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem chain_mono (xs : ℕ → Pomega) (hmono : ∀ n, xs n ⊆ xs (n + 1)) :

@@ -9,30 +9,21 @@ public import Mathlib.Data.Finset.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-
 section Proposition310
 
 open Finset
 
-
 variable {i : D → D'}
 
-
-/-- **Scott 1972, Proposition 3.10 (converse).** If `i : D → D'` (between continuous lattices)
-satisfies (i) preservation of arbitrary suprema, (ii) injectivity, and (iii) preservation of `≪`,
-then there is a continuous `j` making `D` a projection of `D'` via `i`, with `j` given by Scott's
-formula (iv) `j(x') = ⊔ { x | i(x) ⊑ x' }`. -/
 theorem proposition_3_10_converse
     (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S)) (hinj : Function.Injective i)
     (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : ContinuousLattice D) :

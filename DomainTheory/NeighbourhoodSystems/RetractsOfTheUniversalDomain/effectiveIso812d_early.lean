@@ -416,7 +416,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-
 namespace atomPairJunk
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 

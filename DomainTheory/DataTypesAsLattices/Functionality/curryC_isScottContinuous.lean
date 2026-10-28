@@ -14,9 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem curryC_isScottContinuous :
     IsScottContinuous (fun u =>

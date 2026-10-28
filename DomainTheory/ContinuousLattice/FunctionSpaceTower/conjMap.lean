@@ -20,7 +20,6 @@ open Set
 
 variable {Y Z W : Type u} [CompleteLattice Y] [CompleteLattice Z] [CompleteLattice W]
 
-/-- Conjugation `f ↦ post ∘ f ∘ pre` as a bare function `[Y → Y] → [W → Z]`. -/
 def conjMapFun (post : ScottMap Y Z) (pre : ScottMap W Y) (f : ScottMap Y Y) : ScottMap W Z :=
   post.comp (f.comp pre)
 
@@ -45,7 +44,6 @@ theorem preservesDirectedSup (post : ScottMap Y Z) (pre : ScottMap W Y) :
 
 end conjMap
 
-/-- Conjugation `f ↦ post ∘ f ∘ pre` as a Scott map `[Y → Y] → [W → Z]`. -/
 noncomputable def conjMap (post : ScottMap Y Z) (pre : ScottMap W Y) :
     ScottMap (ScottMap Y Y) (ScottMap W Z) :=
   ⟨conjMapFun post pre, continuous_of_preservesDirectedSup (conjMap.preservesDirectedSup post pre)⟩

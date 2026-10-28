@@ -36,7 +36,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem combinatory : ∀ i, IsCombinatory (arithEnv i)
   | 0 => addC.combinatory
   | 1 => mulC.combinatory

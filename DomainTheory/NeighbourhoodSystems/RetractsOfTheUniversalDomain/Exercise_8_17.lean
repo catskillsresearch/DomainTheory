@@ -6,8 +6,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Emb
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-/-- **Exercise 8.17 (Scott 1981, PRG-19).** `V` is universal, and the standard embeddings
-`𝒰×𝒰`, `𝒰+𝒰`, `𝒰→𝒰` into `𝒰` hold. -/
 theorem exercise_8_17 :
     IsUniversal.{0} V ∧
       (prod U U ⊴ U) ∧

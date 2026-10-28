@@ -11,7 +11,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamC
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -20,9 +19,7 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
-
 
 theorem LamCon_of_forget_singleton (p : LamToken A) :
     LamCon A (lamForgetFinset A {p}) := by

@@ -41,5 +41,4 @@ theorem boolSat.sing (t : BoolToken) : ∃ p, boolSat p t := by
 
 end InfoSys
 
-
 end DomainTheory.InformationSystems

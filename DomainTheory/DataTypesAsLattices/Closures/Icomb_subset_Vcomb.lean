@@ -13,9 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vcomb_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem Icomb_subset_Vcomb : Icomb ⊆ Vcomb := by
   intro p hp

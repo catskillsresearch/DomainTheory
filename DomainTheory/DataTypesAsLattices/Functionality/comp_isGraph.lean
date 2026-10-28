@@ -8,9 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem comp_isGraph (u v : Pomega) :
     comp u v = graph (fun x => funOf (comp u v) x) := by

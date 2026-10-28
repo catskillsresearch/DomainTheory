@@ -11,26 +11,19 @@ public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-
 section SubspaceExtension
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y]
 
-
-/-- **Scott 1972, Proposition 3.8 (subspace variant).** `f̄` (with the Scott topology on `Y`) is
-the maximal extension along a subspace embedding. The faithful statement (arbitrary topology on
-`Y`) is `proposition_3_8` in `Constructions.lean`. -/
 theorem scottSubspaceExtend_maximal (hD : ContinuousLattice D) (e : X → Y) (_he : IsEmbedding e)
     (f : X → D) (f' : ScottMap Y D) (h_ext : ∀ x, f' (e x) = f x) (y : Y) :
     (f' : Y → D) y ≤ scottSubspaceExtend e f y := by

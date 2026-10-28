@@ -16,8 +16,7 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap Exercise326
 universe u
-/- concordance: source L5179 EXERCISE 8.19 closure under sum and product -/
-/-- **Exercise 8.19.** If `T ⊴ E` and `E → E ⊴ E`, then `E + E ⊴ E` and `E × E ⊴ E`. -/
+
 theorem exercise_8_19_assembly {α : Type u} {E : NeighborhoodSystem α}
     (hE : ∀ X, E.mem X → X.Nonempty) (hT : TD ⊴ E) (hArrow : funSpace E E ⊴ E) :
     sum E E hE hE ⊴ E ∧ prod E E ⊴ E :=
@@ -112,8 +111,6 @@ section FunSpace
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
 
-/-- **`b ↦ (λ_. b)`, the constant-function embedding.** `curry (proj₀ B A) : B → (A → B)` sends `b`
-to the function that ignores its argument and always returns `b`. -/
 noncomputable def constFunMap : ApproximableMap B (funSpace A B) := curry (proj₀ B A)
 
 end FunSpace
@@ -122,10 +119,8 @@ section Prod
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
 
-/-- **`a ↦ ⟨a, ⊥⟩`.** -/
 noncomputable def embedFst : ApproximableMap A (prod A B) := paired (idMap A) (constMap A B.bot)
 
-/-- **`b ↦ ⟨⊥, b⟩`.** -/
 noncomputable def embedSnd : ApproximableMap B (prod A B) := paired (constMap B A.bot) (idMap B)
 
 end Prod
@@ -134,7 +129,6 @@ section FunSpace
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
 
-/-- **`φ ↦ φ(⊥)`, evaluation at the bottom.** -/
 noncomputable def evalBotMap : ApproximableMap (funSpace A B) B :=
   (evalMap A B).comp (paired (idMap (funSpace A B)) (constMap (funSpace A B) A.bot))
 
@@ -156,7 +150,6 @@ section Prod
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
 
-
 theorem embedFst_comp_proj₀_le : (embedFst A B).comp (proj₀ A B) ≤ idMap (prod A B) := by
   rw [le_iff_toElementMap_le]
   intro z
@@ -173,9 +166,6 @@ section
 open NeighborhoodSystem ApproximableMap
 universe u
 
-/-- **Multiplicity, product case.** `embedFst`/`embedSnd` (hence the two projection pairs above)
-are genuinely *different maps* as soon as `D` has an element `x ≠ ⊥`: evaluating both at `x` gives
-`⟨x, ⊥⟩` vs. `⟨⊥, x⟩`, which differ in their first coordinate (`fst_pair`). -/
 theorem embedFst_ne_embedSnd_of_ne_bot {α : Type u} {D : NeighborhoodSystem α} {x : D.Element}
     (hx : x ≠ D.bot) : embedFst D D ≠ embedSnd D D := fun h => hx <| by
   have heq := congrArg (fun f => f.toElementMap x) h
@@ -191,7 +181,6 @@ universe u v
 section Prod
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
 
 theorem embedSnd_comp_proj₁_le : (embedSnd A B).comp (proj₁ A B) ≤ idMap (prod A B) := by
   rw [le_iff_toElementMap_le]
@@ -218,14 +207,11 @@ section FunSpace
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
 
-
 theorem toElementMap_evalBotMap (φ : (funSpace A B).Element) :
     (evalBotMap A B).toElementMap φ = (toApproxMap φ).toElementMap A.bot := by
   simp [evalBotMap, toElementMap_comp, toElementMap_paired, toElementMap_idMap,
     toElementMap_constMap, evalMap_apply]
 
-/-- `const_{φ(⊥)} ≤ φ` pointwise, since `φ(⊥) ≤ φ(x)` for every `x` (monotonicity,
-`toElementMap_mono`, Proposition 2.2(iii), applied to `⊥ ≤ x`). -/
 theorem constFunMap_comp_evalBotMap_le :
     (constFunMap A B).comp (evalBotMap A B) ≤ idMap (funSpace A B) := by
   rw [le_iff_toElementMap_le]
@@ -241,7 +227,6 @@ theorem evalBotMap_comp_constFunMap : (evalBotMap A B).comp (constFunMap A B) = 
   apply le_antisymm <;> rw [le_iff_toElementMap_le] <;> intro b <;>
     rw [toElementMap_comp, toElementMap_idMap, toElementMap_evalBotMap, toApproxMap_constFunMap]
 
-/-- **`B ⊴ funSpace A B`**, via `b ↦ (λ_. b)` / evaluation at `⊥`. -/
 theorem trianglelefteq_funSpace_const : B ⊴ funSpace A B :=
   trianglelefteq_of_projectionPair (constFunMap A B) (evalBotMap A B)
     (evalBotMap_comp_constFunMap A B) (constFunMap_comp_evalBotMap_le A B)
@@ -255,7 +240,6 @@ open NeighborhoodSystem ApproximableMap
 universe u
 variable {α : Type u} (D : NeighborhoodSystem α)
 
-/-- **Exercise 8.20, `D ⊴ D→D`.** -/
 theorem D_trianglelefteq_funSpace : D ⊴ funSpace D D := trianglelefteq_funSpace_const D D
 end
 
@@ -267,8 +251,6 @@ section Prod
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
 
-
-/-- **`A ⊴ prod A B`**, via `a ↦ ⟨a, ⊥⟩` / `proj₀`. -/
 theorem trianglelefteq_prod_fst : A ⊴ prod A B :=
   trianglelefteq_of_projectionPair (embedFst A B) (proj₀ A B) (proj₀_comp_embedFst A B)
     (embedFst_comp_proj₀_le A B)
@@ -281,7 +263,6 @@ open NeighborhoodSystem ApproximableMap
 universe u
 variable {α : Type u} (D : NeighborhoodSystem α)
 
-/-- **Exercise 8.20, `D ⊴ D×D`.** -/
 theorem D_trianglelefteq_prod : D ⊴ prod D D := trianglelefteq_prod_fst D D
 
 end

@@ -38,8 +38,6 @@ variable (hD : ContinuousLattice D)
 
 include hD
 
-/-- Round InfoSys elements ↔ ideals of finite elements that come from round InfoSys
-elements (via the ideal-completion iso). -/
 noncomputable def roundInfoSys_ideal_iso :
     RoundInfoSysElement (D := D) ≃o
       { I : Ideal (InfoSysToIdealCompletion.FiniteElement

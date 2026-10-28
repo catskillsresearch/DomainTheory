@@ -6,7 +6,6 @@ public import Mathlib.Data.Set.Basic
 public import Mathlib.Topology.Defs.Basic
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
@@ -19,7 +18,6 @@ section Theorem212Transfer
 
 variable {A B : Type u} [latticeA : CompleteLattice A] [latticeB : CompleteLattice B]
 
-/-- An order isomorphism pulls Scott-open sets back to Scott-open sets. -/
 theorem scottOpen_preimage_orderIso (e : A ≃o B) {U : Set B} (hU : ScottOpen U) :
     ScottOpen (e ⁻¹' U) := by
   refine ⟨fun x y hxy hx => hU.1 (e.monotone hxy) hx, ?_⟩

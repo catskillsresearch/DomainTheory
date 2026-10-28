@@ -6,11 +6,9 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)

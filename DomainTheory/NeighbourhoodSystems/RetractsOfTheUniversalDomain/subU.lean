@@ -15,23 +15,17 @@ theorem jArrow_comp_iArrow_apply (v : (funSpace U U).Element) :
   rw [show jArrow.toElementMap (iArrow.toElementMap v) = (jArrow.comp iArrow).toElementMap v from
     (toElementMap_comp jArrow iArrow v).symm, jArrow_comp_iArrow, toElementMap_idMap]
 
-/-- **`sub`, regarded as a finitary projection of `𝒰` itself** (the exercise's opening sentence):
-conjugate Theorem 8.6(b)'s `subApprox : (𝒰→𝒰)→(𝒰→𝒰)` through the fixed pair `i_→, j_→`
-(Definition 8.9), exactly as `a→b` is built from `λf.b∘f∘a` in `Definition89.lean`. -/
 noncomputable def subU : ApproximableMap U U :=
   iArrow.comp (subApprox.comp jArrow)
 
 namespace subU
 
-/-- `subU`'s defining formula unfolded at the element level. -/
 theorem toElementMap_eq (w : U.Element) :
     ApproximableMap.toElementMap subU w =
       iArrow.toElementMap (ApproximableMap.toElementMap subApprox (jArrow.toElementMap w)) := by
   unfold subU
   rw [toElementMap_comp, toElementMap_comp]
 
-/-- Unfolds `subU.toElementMap w = w` (via `jArrow_comp_iArrow`) into the statement that
-`j_→(w)` is already a fixed point of `subApprox`. -/
 theorem subApprox_fix_of_fix {w : U.Element}
     (hw : ApproximableMap.toElementMap subU w = w) :
     ApproximableMap.toElementMap subApprox (jArrow.toElementMap w) = jArrow.toElementMap w := by
@@ -44,7 +38,6 @@ theorem fix_of_subApprox_fix {φ : (funSpace U U).Element}
     ApproximableMap.toElementMap subU (iArrow.toElementMap φ) = iArrow.toElementMap φ := by
   rw [toElementMap_eq, jArrow_comp_iArrow_apply, hφ]
 
-/-- **`Fix(subU) ≃o Fix(subApprox)`.** Forward: `w ↦ j_→(w)`; backward: `φ ↦ i_→(φ)`. -/
 noncomputable def fixIso :
     {w : U.Element // ApproximableMap.toElementMap subU w = w} ≃o
       {φ : (funSpace U U).Element // ApproximableMap.toElementMap subApprox φ = φ} where
@@ -78,13 +71,11 @@ noncomputable def fixIso :
     · intro hle
       exact jArrow.toElementMap_mono hle
 
-/-- **`subU`'s fixed points are exactly the finitary projections of `𝒰`.** -/
 noncomputable def fixIsoSubFixed :
     {w : U.Element // ApproximableMap.toElementMap subU w = w} ≃o
       {f : ApproximableMap U U // sub f = f} :=
   fixIso.trans subApprox.fixIso
 
-/-- **Conjugating a retraction of `(𝒰→𝒰)` through `i_→, j_→` gives a retraction of `𝒰`.** -/
 theorem isRetraction_conjArrow {H : ApproximableMap (funSpace U U) (funSpace U U)}
     (hH : Retraction H) : Retraction (iArrow.comp (H.comp jArrow)) := by
   constructor
@@ -95,7 +86,6 @@ theorem isRetraction_conjArrow {H : ApproximableMap (funSpace U U) (funSpace U U
     ← comp_assoc jArrow iArrow (H.comp jArrow), jArrow_comp_iArrow, idMap_comp,
     ← comp_assoc H H jArrow, hH.out]
 
-/-- **Conjugating a `≤ I`-map of `(𝒰→𝒰)` through `i_→, j_→` gives a `≤ I`-map of `𝒰`.** -/
 theorem le_idMap_conjArrow {H : ApproximableMap (funSpace U U) (funSpace U U)}
     (hH : H ≤ idMap (funSpace U U)) : iArrow.comp (H.comp jArrow) ≤ idMap U :=
   calc iArrow.comp (H.comp jArrow)
@@ -104,7 +94,6 @@ theorem le_idMap_conjArrow {H : ApproximableMap (funSpace U U) (funSpace U U)}
     _ = iArrow.comp jArrow := by rw [idMap_comp]
     _ ≤ idMap U := iArrow_comp_jArrow_le
 
-/-- **Conjugating a projection of `(𝒰→𝒰)` through `i_→, j_→` gives a projection of `𝒰`.** -/
 theorem isProjection_conjArrow {H : ApproximableMap (funSpace U U) (funSpace U U)}
     (hH : IsProjection H) : IsProjection (iArrow.comp (H.comp jArrow)) :=
   ⟨isRetraction_conjArrow hH.1, le_idMap_conjArrow hH.2⟩

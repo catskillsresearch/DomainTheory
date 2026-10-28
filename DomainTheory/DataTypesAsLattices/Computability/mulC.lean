@@ -32,7 +32,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- `λx. primRecComb 0 (K (addC x))`. -/
 def mulC : Pomega :=
   funOf (funOf Scomb (funOf Kcomb dollarC))
     (funOf (funOf Scomb (funOf Kcomb Ycomb))
@@ -47,11 +46,9 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem app (x : Pomega) :
     mulC ⬝ x = primRecComb (ofNat 0) (Kcomb ⬝ (addC ⬝ x)) := by
   rw [mulC, primRecComb, SK_comp, SK_comp, SK_comp, SK_comp]
-
 
 theorem combinatory : IsCombinatory mulC :=
   .app (.app .S (.app .K dollarC.combinatory))
@@ -60,7 +57,6 @@ theorem combinatory : IsCombinatory mulC :=
           (.app .K (.app (theorem_2_4.closed primRecStepTerm)
             (ofNat.combinatory 0))))
         (.app (.app .S (.app .K .K)) addC.combinatory)))
-
 
 theorem realizes2 : Realizes2 mulC fun n m => n * m := fun n m => by
   simp [mulC.app, primRecComb.ofNat, primRecVal_mul]

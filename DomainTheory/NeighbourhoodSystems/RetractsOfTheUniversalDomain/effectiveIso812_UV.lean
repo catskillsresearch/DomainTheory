@@ -13,8 +13,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem Exercise718
 
-/-- **Exercise 8.12, completed in full**: `U` and `V` are effectively isomorphic
-neighbourhood systems. -/
 noncomputable def effectiveIso812_UV : EffectiveIso UComputablePresentation VComputablePresentation :=
   effectiveIso812d UComputablePresentation VComputablePresentation U_isComputableDiff
     V.isComputableDiff splitX812e isComputableSplit.«812e» splitX812f isComputableSplit.«812f»
@@ -23,4 +21,3 @@ noncomputable def effectiveIso812_UV : EffectiveIso UComputablePresentation VCom
     VX_zero
 
 end DomainTheory.NeighbourhoodSystems
-

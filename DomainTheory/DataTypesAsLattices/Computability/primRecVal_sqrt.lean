@@ -9,18 +9,13 @@ public import DomainTheory.DataTypesAsLattices.Computability.sqrtStepC
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
-
-
 
 theorem primRecVal_sqrt (n : ℕ) : ∀ k,
     primRecVal (ofNat 0) (sqrtStepC ⬝ ofNat n) k = ofNat (sqrtIter n k)

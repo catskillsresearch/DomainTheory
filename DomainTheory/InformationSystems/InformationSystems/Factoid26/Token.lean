@@ -8,7 +8,6 @@ namespace DomainTheory.InformationSystems
 
 namespace Factoid26
 
-/-- Tokens: `bot` ≃ `Δ`, or a graph atom `pair a b`. -/
 inductive Token (A B : Type*) where
   | bot
   | pair (a : A) (b : B)

@@ -11,7 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Pairing of elements of `Pω` as a graph (Table 2 / (2.21)). -/
 def pairElem (x y : Pomega) : Pomega := seq2 x y
 
 namespace pairElem
@@ -27,7 +26,6 @@ theorem fst (x y : Pomega) : funOf (pairElem x y) (ofNat 0) = x :=
 
 theorem snd (x y : Pomega) : funOf (pairElem x y) (ofNat 1) = y :=
   seq2.one x y
-
 
 theorem inj {x y x' y' : Pomega} (h : pairElem x y = pairElem x' y') :
     x = x' ∧ y = y' :=

@@ -17,7 +17,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- **Scott 1972, §4.** The inverse limit `D_∞` as the subspace of compatible sequences. -/
 abbrev InverseLimit : Type u := {x : ∀ n, D n // Compatible D P x}
 
 end InverseLimit

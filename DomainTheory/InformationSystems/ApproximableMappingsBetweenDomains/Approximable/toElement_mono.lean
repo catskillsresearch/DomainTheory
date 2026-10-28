@@ -6,7 +6,6 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -17,11 +16,9 @@ universe u v
 
 variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
 
-
 namespace ApproximableMap
 
 variable {A : InfoSys α} {B : InfoSys β}
-
 
 theorem toElement_mono (f : ApproximableMap A B) {x y : A.Element} (hxy : x ≤ y) :
     f.toElement x ≤ f.toElement y := by

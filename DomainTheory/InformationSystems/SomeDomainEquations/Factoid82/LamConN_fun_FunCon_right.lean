@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.Basi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,11 +15,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
 
-
-/-- FunCon from an explicit right-branch witness at stage `n+1`. -/
 theorem LamConN_fun_FunCon_right {n : ℕ} {u : Finset (RawLamToken α)}
     (_hA : lamAtomFinset u = ∅)
     (_hWF : ∀ p ∈ lamFunFinset u,

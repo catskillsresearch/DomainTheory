@@ -9,9 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem eq_2_23_ge (x y : Pomega) (n : ℕ) :
     funOf (seq2 x y) (ofNat (n + 2)) = botElem := by

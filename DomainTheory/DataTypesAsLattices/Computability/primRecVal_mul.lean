@@ -10,18 +10,13 @@ public import DomainTheory.DataTypesAsLattices.Computability.addC
 public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_more
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
-
-
 
 theorem primRecVal_mul (k : ℕ) : ∀ n,
     primRecVal (ofNat 0) (funOf Kcomb (funOf addC (ofNat k))) n = ofNat (k * n)

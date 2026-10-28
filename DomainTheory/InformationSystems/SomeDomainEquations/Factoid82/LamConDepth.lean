@@ -29,8 +29,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Depth-based consistency: FunCon in the recursive clause (Scott (7)).
-Uses `decidableEq_finset` so the empty-fun branch does not pull `Classical.choice`. -/
 def LamConDepth (u : Finset (RawLamToken α)) : Prop :=
   haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset

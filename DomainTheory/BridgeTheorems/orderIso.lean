@@ -99,7 +99,6 @@ variable {D' E' : Type*} [PartialOrder D'] [PartialOrder E']
 
 variable (ιD : D ≃o D') (ιE : E ≃o E')
 
-/-- **1972 ↔ round presentation:** Scott maps ≃ conjugates along the given isos. -/
 noncomputable def orderIso : ScottMap D E ≃o ConjScottMap ιD ιE where
   toFun f := ⟨f⟩
   invFun g := g.scott

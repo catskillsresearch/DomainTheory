@@ -11,11 +11,9 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem valStage_subset : ∀ s n,
     funOf (iterateBot valStep s) (ofNat n) ⊆ valNat n

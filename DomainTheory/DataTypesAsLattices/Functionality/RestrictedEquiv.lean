@@ -1,13 +1,10 @@
 module
 
-
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, §7, Definition.** A restricted equivalence is a
-symmetric transitive relation, coded as a set of pairs. -/
 structure RestrictedEquiv where
   rel : Pomega → Pomega → Prop
   symm : ∀ {x y}, rel x y → rel y x

@@ -10,7 +10,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -23,8 +22,6 @@ section Projections
 
 namespace Projections
 
-/-- **Scott 1972, Proposition 3.12.** `J_D` is a complete lattice (a `⊔`-closed subspace of
-`[D → D]`). Suprema are inherited from `[D → D]`; infima are derived by `completeLatticeOfSup`. -/
 noncomputable instance instCompleteLattice : CompleteLattice (Projections D) :=
   completeLatticeOfSup (Projections D) isLUB_sSup
 

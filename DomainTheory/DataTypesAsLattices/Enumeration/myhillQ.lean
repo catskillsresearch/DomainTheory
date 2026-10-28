@@ -14,7 +14,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Appendix `q` of Theorem 3.5: `q = {(j,m) | m ∈ val(p(fin j))}`. -/
 def myhillQ (val : ℕ → Pomega) (p : ℕ → ℕ) : Pomega :=
   {k | ∃ j m, k = pair j m ∧ m ∈ val (p (fin j))}
 
@@ -24,8 +23,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- Both inclusions in the direct calculation of the Myhill–Shepherdson
-relation as an enumeration operator. -/
 theorem app (p : ℕ → ℕ) (x : Pomega) :
     funOf (myhillQ valNat p) x =
       ⋃ j, ⋃ (_ : e j ⊆ x), valNat (p (fin j)) := by

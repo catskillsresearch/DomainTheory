@@ -30,7 +30,6 @@ namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
-/-- **Product domain iso (1982).** `|A × B| ≃o |A| × |B|`. -/
 noncomputable def productDomainIso :
     A.Element × B.Element ≃o (productSystem A B).Element where
   toFun := fun p => pairElements A B p.1 p.2

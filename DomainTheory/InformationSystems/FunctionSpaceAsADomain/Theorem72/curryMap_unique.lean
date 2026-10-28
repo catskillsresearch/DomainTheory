@@ -31,7 +31,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.u
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -44,11 +43,8 @@ variable {α : Type u} {β : Type v} {γ : Type w}
   [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
-
 open ApproximableMap
 
-
-/-- **Theorem 7.2.** `curry` is the unique map satisfying the universal equation. -/
 theorem curryMap_unique (h : ApproximableMap (productSystem A B) C)
     (k : ApproximableMap A (functionSystem B C))
     (huniv : uncurryMap A B C k = h) :

@@ -7,22 +7,16 @@ public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Topology Set
 
 variable {D : Type*} [CompleteLattice D]
 
-
-/-- The Scott topology on Scott's two-point space `𝕆 = Prop` is exactly the Sierpiński topology
-(`generateFrom {{True}}`). The Scott-open sets of `Prop` are the upper sets `∅`, `{True}`, `univ`,
-which are precisely the Sierpiński-open sets. This is the topological identification underlying
-Theorem 2.12: the building block `𝕆` carries its Scott topology. -/
 theorem scottTopology_prop :
     (scottTopologicalSpace : TopologicalSpace Prop) = sierpinskiSpace := by
   apply le_antisymm
-  · -- `scott ≤ sierpinski`: the single Sierpiński sub-basic open `{True}` is Scott-open.
+  ·
     show (scottTopologicalSpace : TopologicalSpace Prop) ≤ TopologicalSpace.generateFrom {{True}}
     apply le_generateFrom
     intro s hs
@@ -38,7 +32,7 @@ theorem scottTopology_prop :
       have hex : ∃ p ∈ S, p := by rw [← sSup_Prop_eq, hmem]; trivial
       obtain ⟨p, hpS, hp⟩ := hex
       exact ⟨p, hpS, by rw [Set.mem_singleton_iff]; exact eq_true hp⟩
-  · -- `sierpinski ≤ scott`: every Scott-open upper set of `Prop` is `∅`, `{True}`, or `univ`.
+  ·
     rw [TopologicalSpace.le_def]
     intro U hU
     rw [ScottOpen.isOpen_iff] at hU

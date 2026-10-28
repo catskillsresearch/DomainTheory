@@ -8,21 +8,17 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise112
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-/-- The final segment (tail) `tail n = {m ∣ n ≤ m}`; the neighbourhood "all integers `≥ n`". -/
 def tail (n : ℕ) : Set ℕ := {m | n ≤ m}
 
 @[simp] theorem mem_tail {n m : ℕ} : m ∈ tail n ↔ n ≤ m := Iff.rfl
 
-/-- Membership in the final-segment system: `X` is a neighbourhood iff `X = tail n` for some `n`. -/
 def mem (X : Set ℕ) : Prop := ∃ n, X = tail n
 
-/-- `tail n ∩ tail m = tail (max n m)` (the intersection of two tails is the shorter one). -/
 theorem tail_inter (n m : ℕ) : tail n ∩ tail m = tail (max n m) := by
   ext k
   simp only [Set.mem_inter_iff, mem_tail]
   omega
 
-/-- A longer tail is a *smaller* set: `tail n ⊆ tail m ↔ m ≤ n`. -/
 theorem tail_subset_iff {n m : ℕ} : tail n ⊆ tail m ↔ m ≤ n := by
   constructor
   · intro h
@@ -36,8 +32,6 @@ theorem nestedOrDisjoint : NestedOrDisjoint mem := by
   · exact Or.inr (Or.inl (tail_subset_iff.mpr h))
   · exact Or.inl (tail_subset_iff.mpr h)
 
-/- concordance: source L446 EXERCISE 1.12 final segments of integers -/
-/-- **Exercise 1.12.** The final-segment neighbourhood system on `ℕ` (master `Δ = tail 0 = ℕ`). -/
 def neighborhoodSystem : NeighborhoodSystem ℕ :=
   ofNestedOrDisjoint mem (tail 0) ⟨0, Nat.zero_le 0⟩ ⟨0, rfl⟩ nestedOrDisjoint
     (fun {X} hX => by obtain ⟨n, rfl⟩ := hX; exact tail_subset_iff.mpr (Nat.zero_le n))
@@ -46,10 +40,8 @@ def neighborhoodSystem : NeighborhoodSystem ℕ :=
 
 theorem mem_tail_nbhd (n : ℕ) : neighborhoodSystem.mem (tail n) := ⟨n, rfl⟩
 
-/-- The finite element `fin n = ↑(tail n)` (principal filter of the tail). -/
 def fin (n : ℕ) : neighborhoodSystem.Element := neighborhoodSystem.principal (mem_tail_nbhd n)
 
-/-- The **limit element** `top`: the filter of *all* tails (Scott's single limit node). -/
 def top : neighborhoodSystem.Element where
   mem X := neighborhoodSystem.mem X
   sub h := h
@@ -61,9 +53,6 @@ def top : neighborhoodSystem.Element where
 
 @[simp] theorem mem_top {X : Set ℕ} : top.mem X ↔ neighborhoodSystem.mem X := Iff.rfl
 
-/-- **Exercise 1.12 (classification).** Every element is either a finite element `fin n` or the
-single limit element `top`. *Classical*: it decides whether the indices present in `x` are bounded.
-(Hint realized: "there is only one limit element.") -/
 theorem element_eq (x : neighborhoodSystem.Element) :
     (∃ n, x = fin n) ∨ x = top := by
   classical
@@ -107,11 +96,9 @@ theorem element_eq (x : neighborhoodSystem.Element) :
       obtain ⟨j, rfl⟩ := hX
       exact (key j).mpr (tail_subset_iff.mp hsub)
 
-/-- The finite elements form an ascending chain: `fin n ⊑ fin m ↔ n ≤ m`. -/
 theorem fin_le_iff (n m : ℕ) : fin n ≤ fin m ↔ n ≤ m := by
   rw [fin, fin, neighborhoodSystem.principal_le_iff, tail_subset_iff]
 
-/-- The chain `fin 0 ⊏ fin 1 ⊏ ⋯` is strictly increasing. -/
 theorem fin_strictMono : StrictMono fin := by
   intro n m hnm
   refine lt_of_le_of_ne ((fin_le_iff n m).mpr hnm.le) ?_
@@ -119,15 +106,12 @@ theorem fin_strictMono : StrictMono fin := by
   have : m ≤ n := (fin_le_iff m n).mp (le_of_eq heq.symm)
   exact absurd (le_antisymm hnm.le this) (Nat.ne_of_lt hnm)
 
-/-- `top` is the greatest element of `|𝒟|`: every element approximates it. -/
 theorem le_top (x : neighborhoodSystem.Element) : x ≤ top :=
   fun _ hX => x.sub hX
 
-/-- `top` is a total (maximal) element. -/
 theorem top_isTotal : neighborhoodSystem.IsTotal top :=
   fun y _ => le_top y
 
-/-- `top` is the **unique** total element: an element is total iff it equals `top`. -/
 theorem isTotal_iff_top (x : neighborhoodSystem.Element) :
     neighborhoodSystem.IsTotal x ↔ x = top := by
   constructor

@@ -15,16 +15,13 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb_more
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem generatedSemigroup_mem_RE_FUN {u : Pomega} (hu : GeneratedSemigroup u) :
     u ∈ RE ∩ FUN := by

@@ -8,12 +8,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
-/-!
-Pref-folded companions for `sumMap` (def in DomainConstructs `Exercise_3_19`).
-Lives under Retracts because several lemmas need Definition 8.9 helpers
-(`inMap₀_toElementMap_reaches_left`, `toElementMap_of_comp_eq_idMap`).
--/
-
 namespace sumMap
 
 universe u
@@ -32,7 +26,6 @@ variable {h0' : ∀ X, V0'.mem X → X.Nonempty} {h1' : ∀ Y, V1'.mem Y → Y.N
 
 variable {h0'' : ∀ X, V0''.mem X → X.Nonempty} {h1'' : ∀ Y, V1''.mem Y → Y.Nonempty}
 
-/-- A sum-element reaches "neither" copy iff it is the bottom element. -/
 theorem reaches_neither_iff_eq_bot {y : (sum V0 V1 h0 h1).Element} :
     (∀ W, y.mem W → W = (sum V0 V1 h0 h1).master) ↔ y = (sum V0 V1 h0 h1).bot := by
   constructor
@@ -45,7 +38,6 @@ theorem reaches_neither_iff_eq_bot {y : (sum V0 V1 h0 h1).Element} :
     rw [mem_bot] at hW
     exact hW
 
-/-- `sumMap` sends the bottom element to the bottom element. -/
 theorem bot (f : ApproximableMap V0 V0') (g : ApproximableMap V1 V1') :
     (sumMap (h₀ := h0) (h₁ := h1) (h₀' := h0') (h₁' := h1') f g).toElementMap
         (sum V0 V1 h0 h1).bot = (sum V0' V1' h0' h1').bot := by
@@ -66,7 +58,6 @@ theorem bot (f : ApproximableMap V0 V0') (g : ApproximableMap V1 V1') :
     exact ⟨sumMaster V0 V1, (sum V0 V1 h0 h1).mem_bot.mpr rfl, (sum V0 V1 h0 h1).master_mem,
       (sum V0' V1' h0' h1').master_mem, Or.inl rfl⟩
 
-/-- If `y` reaches the left copy, `(sumMap f g)(y)` also reaches the left copy. -/
 theorem reaches_left {f : ApproximableMap V0 V0'} {g : ApproximableMap V1 V1'}
     {y : (sum V0 V1 h0 h1).Element} (hL : ∃ X, V0.mem X ∧ y.mem (inj₀ X)) :
     ∃ X', V0'.mem X' ∧ ((sumMap (h₀ := h0) (h₁ := h1) (h₀' := h0') (h₁' := h1') f g).toElementMap
@@ -78,7 +69,6 @@ theorem reaches_left {f : ApproximableMap V0 V0'} {g : ApproximableMap V1 V1'}
     Or.inr (Or.inl ⟨X, hX, rfl⟩), Or.inr (Or.inl ⟨V0'.master, V0'.master_mem, rfl⟩),
     Or.inr (Or.inl ⟨X, V0'.master, rfl, rfl, hf⟩)⟩
 
-/-- If `y` reaches the right copy, `(sumMap f g)(y)` also reaches the right copy. -/
 theorem reaches_right {f : ApproximableMap V0 V0'} {g : ApproximableMap V1 V1'}
     {y : (sum V0 V1 h0 h1).Element} (hR : ∃ Y, V1.mem Y ∧ y.mem (inj₁ Y)) :
     ∃ Y', V1'.mem Y' ∧ ((sumMap (h₀ := h0) (h₁ := h1) (h₀' := h0') (h₁' := h1') f g).toElementMap
@@ -89,7 +79,6 @@ theorem reaches_right {f : ApproximableMap V0 V0'} {g : ApproximableMap V1 V1'}
   exact ⟨V1'.master, V1'.master_mem, inj₁ Y, hYy,
     Or.inr (Or.inr ⟨Y, hY, rfl⟩), Or.inr (Or.inr ⟨V1'.master, V1'.master_mem, rfl⟩),
     Or.inr (Or.inr ⟨Y, V1'.master, rfl, rfl, hg⟩)⟩
-
 
 variable {γ δ γ' δ' γ'' δ'' : Type u}
 
@@ -165,7 +154,6 @@ theorem toElementMap_of_right {f : ApproximableMap V0 V0'} {g : ApproximableMap 
   conv_lhs => rw [← inMap₁_outMap₁_eq_of_right hR]
   exact toElementMap_inMap₁ f g _
 
-
 variable {γ δ γ' δ' γ'' δ'' : Type u}
 
 variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
@@ -180,7 +168,6 @@ variable {h0' : ∀ X, V0'.mem X → X.Nonempty} {h1' : ∀ Y, V1'.mem Y → Y.N
 
 variable {h0'' : ∀ X, V0''.mem X → X.Nonempty} {h1'' : ∀ Y, V1''.mem Y → Y.Nonempty}
 
-/-- **`sumMap` preserves composition: `(f'∘f) + (g'∘g) = (f'+g') ∘ (f+g)`.** -/
 theorem comp (f' : ApproximableMap V0' V0'') (f : ApproximableMap V0 V0')
     (g' : ApproximableMap V1' V1'') (g : ApproximableMap V1 V1') :
     sumMap (h₀ := h0) (h₁ := h1) (h₀' := h0'') (h₁' := h1'') (f'.comp f) (g'.comp g) =
@@ -199,7 +186,6 @@ theorem comp (f' : ApproximableMap V0' V0'') (f : ApproximableMap V0 V0')
   · rw [reaches_neither_iff_eq_bot] at hN
     rw [hN, bot, bot, bot]
 
-
 variable {γ δ γ' δ' γ'' δ'' : Type u}
 
 variable {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
@@ -214,7 +200,6 @@ variable {h0' : ∀ X, V0'.mem X → X.Nonempty} {h1' : ∀ Y, V1'.mem Y → Y.N
 
 variable {h0'' : ∀ X, V0''.mem X → X.Nonempty} {h1'' : ∀ Y, V1''.mem Y → Y.Nonempty}
 
-/-- **`sumMap` preserves identities: `id + id = id`.** -/
 theorem id : sumMap (h₀ := h0) (h₁ := h1) (h₀' := h0) (h₁' := h1)
     (idMap V0) (idMap V1) = idMap (sum V0 V1 h0 h1) := by
   apply ext_of_toElementMap

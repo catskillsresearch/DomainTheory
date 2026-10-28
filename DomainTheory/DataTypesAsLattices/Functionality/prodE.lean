@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (7.7).** Product of restricted equivalences. -/
 def prodE (A B : RestrictedEquiv) : RestrictedEquiv where
   rel := fun u v =>
     u = pairElem (funOf u (ofNat 0)) (funOf u (ofNat 1)) ∧

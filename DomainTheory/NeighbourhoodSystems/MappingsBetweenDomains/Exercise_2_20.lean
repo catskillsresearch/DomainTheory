@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_19
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
 public import Mathlib.Algebra.Group.End
@@ -12,9 +11,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise220
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 section
-/- concordance: source L913 EXERCISE 2.20 powerset of the integers -/
-/-- **Exercise 2.20 — the powerset system `𝒫`.** Tokens `ℕ`; the neighbourhoods are the cofinite
-sets, closed under finite intersection (`(X ∩ Y)ᶜ = Xᶜ ∪ Yᶜ`). -/
+
 def powerSet : NeighborhoodSystem ℕ where
   mem X := Xᶜ.Finite
   master := Set.univ
@@ -35,20 +32,20 @@ section
 end
 
 section
-/-- The complement of a singleton is a neighbourhood (it represents the finite element `{n}`). -/
+
 theorem mem_compl_singleton (n : ℕ) : powerSet.mem ({n}ᶜ) := by
   rw [mem_powerSet, compl_compl]; exact Set.finite_singleton n
 end
 
 section
-/-- Cofinite sets are closed under intersection (witness-free form). -/
+
 theorem powerSet_inter_mem {A B : Set ℕ} (hA : powerSet.mem A) (hB : powerSet.mem B) :
     powerSet.mem (A ∩ B) := by
   rw [mem_powerSet, Set.compl_inter]; exact hA.union hB
 end
 
 section
-/-- The subset of `ℕ` represented by an element: `n ∈ toSet x ↔ {n}ᶜ ∈ x`. -/
+
 def toSet (x : powerSet.Element) : Set ℕ := {n | x.mem ({n}ᶜ)}
 end
 
@@ -57,8 +54,7 @@ section
 end
 
 section
-/-- **Filters are determined on cofinite sets by their singleton-complements.** For cofinite `Z`,
-`Z ∈ x ↔ ∀ n ∈ Zᶜ, {n}ᶜ ∈ x` (since `Z = ⋂_{n ∈ Zᶜ} {n}ᶜ`, a *finite* intersection). -/
+
 theorem mem_compl_of_finite (x : powerSet.Element) {t : Set ℕ} (ht : t.Finite)
     (h : ∀ n ∈ t, x.mem ({n}ᶜ)) : x.mem (tᶜ) := by
   revert h
@@ -73,7 +69,7 @@ theorem mem_compl_of_finite (x : powerSet.Element) {t : Set ℕ} (ht : t.Finite)
 end
 
 section
-/-- The filter of a subset `S ⊆ ℕ`: the cofinite `Z` with `Zᶜ ⊆ S`. -/
+
 def ofSet (S : Set ℕ) : powerSet.Element where
   mem Z := powerSet.mem Z ∧ Zᶜ ⊆ S
   sub h := h.1
@@ -88,7 +84,7 @@ def ofSet (S : Set ℕ) : powerSet.Element where
 end
 
 section
-/-- `ofSet` is monotone in the set. -/
+
 theorem ofSet_mono {S S' : Set ℕ} (h : S ⊆ S') : ofSet S ≤ ofSet S' :=
   fun _ hZ => ⟨hZ.1, hZ.2.trans h⟩
 end
@@ -109,7 +105,7 @@ theorem ofSet_toSet (x : powerSet.Element) : ofSet (toSet x) = x := by
 end
 
 section
-/-- `S − 1 = {n ∣ n + 1 ∈ S}`. -/
+
 def predSet (S : Set ℕ) : Set ℕ := {n | n + 1 ∈ S}
 end
 
@@ -118,8 +114,7 @@ section
 end
 
 section
-/-- **Exercise 2.20 — `x ∩ y` is approximable (two variables).** `X, Y f Z ↔ X ∪ Y ⊆ Z`
-(`(Xᶜ ∩ Yᶜ)ᶜ = X ∪ Y`). -/
+
 def interMap₂ : ApproximableMap₂ powerSet powerSet powerSet where
   rel X Y Z := powerSet.mem X ∧ powerSet.mem Y ∧ powerSet.mem Z ∧ X ∪ Y ⊆ Z
   rel_dom₀ h := h.1
@@ -140,7 +135,7 @@ theorem predSet_mono {S T : Set ℕ} (h : S ⊆ T) : predSet S ⊆ predSet T := 
 end
 
 section
-/-- **Exercise 2.20 — `x − 1` is approximable.** `X f Z ↔ Zᶜ ⊆ (Xᶜ − 1)`. -/
+
 def predMap : ApproximableMap powerSet powerSet where
   rel X Z := powerSet.mem X ∧ powerSet.mem Z ∧ Zᶜ ⊆ predSet Xᶜ
   rel_dom h := h.1
@@ -160,7 +155,7 @@ def predMap : ApproximableMap powerSet powerSet where
 end
 
 section
-/-- `S + 1 = {n + 1 ∣ n ∈ S}`. -/
+
 def succSet (S : Set ℕ) : Set ℕ := (· + 1) '' S
 end
 
@@ -169,7 +164,7 @@ theorem succSet_mono {S T : Set ℕ} (h : S ⊆ T) : succSet S ⊆ succSet T := 
 end
 
 section
-/-- **Exercise 2.20 — `x + 1` is approximable.** `X f Z ↔ Zᶜ ⊆ (Xᶜ + 1)`. -/
+
 def succMap : ApproximableMap powerSet powerSet where
   rel X Z := powerSet.mem X ∧ powerSet.mem Z ∧ Zᶜ ⊆ succSet Xᶜ
   rel_dom h := h.1
@@ -201,7 +196,7 @@ theorem toSet_ofSet (S : Set ℕ) : toSet (ofSet S) = S := by
 end
 
 section
-/-- **Exercise 2.20 — the identification `|𝒫| ≅ (Set ℕ, ⊆)`.** -/
+
 def equivSetNat : powerSet.Element ≃o Set ℕ where
   toFun := toSet
   invFun := ofSet
@@ -219,8 +214,7 @@ def equivSetNat : powerSet.Element ≃o Set ℕ where
 end
 
 section
-/-- **Exercise 2.20 — `x ∪ y` is approximable (two variables).** `X, Y f Z ↔ X ∩ Y ⊆ Z`
-(`(Xᶜ ∪ Yᶜ)ᶜ = X ∩ Y`). -/
+
 def unionMap : ApproximableMap₂ powerSet powerSet powerSet where
   rel X Y Z := powerSet.mem X ∧ powerSet.mem Y ∧ powerSet.mem Z ∧ X ∩ Y ⊆ Z
   rel_dom₀ h := h.1

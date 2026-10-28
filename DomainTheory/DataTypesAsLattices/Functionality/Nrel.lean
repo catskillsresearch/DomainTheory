@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.mem
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (7.9).** The type of total integers. -/
 def Nrel : RestrictedEquiv where
   rel := fun x y => (∃ n, x = ofNat n) ∧ x = y
   symm := by

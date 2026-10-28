@@ -5,7 +5,6 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,8 +15,6 @@ namespace ApproximableMap
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable {A : InfoSys α} {B : InfoSys β}
 
-
-/-- **Singleton reduction** (Scott, before Def 5.2). -/
 theorem rel_iff_forall_singleton (f : ApproximableMap A B)
     {u : Finset α} {v : Finset β} (hu : u ∈ A.Con) (hv : v ∈ B.Con) :
     f.rel u v ↔ ∀ Y ∈ v, f.rel u ({Y} : Finset β) := by

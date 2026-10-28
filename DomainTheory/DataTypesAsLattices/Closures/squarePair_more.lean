@@ -66,7 +66,6 @@ theorem mono {x x' y y' : Pomega} (hx : x ⊆ x') (hy : y ⊆ y') :
   · exact Or.inl ⟨n, hx hn, hk⟩
   · exact Or.inr ⟨m, hy hm, hk⟩
 
-
 theorem inj {x x' y y' : Pomega}
     (h : squarePair x y = squarePair x' y') : x = x' ∧ y = y' :=
   ⟨(DomainTheory.DataTypesAsLattices.eq_5_9 x y).symm.trans

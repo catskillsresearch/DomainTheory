@@ -15,16 +15,13 @@ public import DomainTheory.DataTypesAsLattices.Computability.IsREu2epair_mem
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem funOf_ofNat_mem_re {u : Pomega} (hu : IsRE u) :
     REPred fun q : ℕ × ℕ => q.2 ∈ funOf u (ofNat q.1) := by

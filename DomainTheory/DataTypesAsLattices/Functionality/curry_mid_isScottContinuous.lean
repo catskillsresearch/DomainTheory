@@ -17,9 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem curry_mid_isScottContinuous (u : Pomega) :
     IsScottContinuous (fun x => graph (fun y => funOf u (pairSeq x y))) :=

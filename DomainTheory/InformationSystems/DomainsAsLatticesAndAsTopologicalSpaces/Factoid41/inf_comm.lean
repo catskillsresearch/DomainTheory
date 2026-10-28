@@ -6,13 +6,11 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
 
 theorem inf_comm (x y : sys.Element) : sys.inf x y = sys.inf y x := by
   refine le_antisymm ?_ ?_

@@ -16,7 +16,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-/-- **Scott (1)–(6).** The information system `V` (all finite sets consistent). -/
 def vSystem : InfoSys VToken where
   bot := vBot
   Con := {u | VCon u}

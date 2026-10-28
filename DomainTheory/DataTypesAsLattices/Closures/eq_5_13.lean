@@ -14,11 +14,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxShift
 public import DomainTheory.DataTypesAsLattices.Closures.boxPlus
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (5.13).** Unfolding of the boxed sum. -/
 theorem eq_5_13 (a b : Pomega) :
     boxPlus a b = graph (fun u =>
       dcondSet (condSet (squareFst u) (ofNat 0) (ofNat 0) ∪

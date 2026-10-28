@@ -101,7 +101,6 @@ noncomputable def xSubStep (w : ℕ) : ℕ :=
 
 end XSubStep
 
-
 section YSubStep
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -173,7 +172,6 @@ theorem succ (k n : ℕ) :
   simp only [unpair_pair_fst, unpair_pair_snd]
 
 end atomPairCodeState
-
 
 theorem junk_eq_zero_of_selectFn_eq_zero {junk X : ℕ} (h : selectFn junk 1 X = 0) : junk = 0 := by
   rcases Nat.eq_zero_or_pos junk with h0 | h0

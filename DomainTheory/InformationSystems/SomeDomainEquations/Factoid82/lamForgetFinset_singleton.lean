@@ -8,7 +8,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.mem_
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -17,9 +16,7 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
-
 
 theorem lamForgetFinset_singleton (p : LamToken A) :
     lamForgetFinset A {p} = {p.val} := by

@@ -20,7 +20,6 @@ namespace ApproximableMap
 
 variable {A : InfoSys α} {B : InfoSys β}
 
-/-- Relation recovered from a Scott-continuous map: `u f v ↔ ↑v ⊆ g(ū)`. -/
 def ofScottContinuous (g : ScottContinuous A B) : ApproximableMap A B where
   rel u v := ∃ hu : u ∈ A.Con, v ∈ B.Con ∧ ↑v ⊆ (g.toFun (A.closure u hu)).carrier
   rel_dom := fun ⟨hu, _, _⟩ => hu

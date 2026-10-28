@@ -17,7 +17,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Join of a family whose carrier-union is finitely consistent. -/
 def familySup (S : Set sys.Element)
     (hU : sys.IsFinitelyConsistent (sys.familyUnionCarrier S)) : sys.Element :=
   sys.deductiveClosure (sys.familyUnionCarrier S) hU
@@ -34,6 +33,5 @@ theorem familySup.le (S : Set sys.Element)
   exact z.closed u a huZ hEnt
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

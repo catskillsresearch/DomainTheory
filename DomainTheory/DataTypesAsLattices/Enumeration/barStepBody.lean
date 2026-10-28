@@ -15,7 +15,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (3.15).** Step of `ū = λx. x₀ ⊃ ⟨1, u, x₁⟩, overline{u(x₁)(x₂)}`. -/
 def barStepBody (B u x : Pomega) : Pomega :=
   condSet (funOf x (ofNat 0)) (barPos u x)
     (funOf (funOf B (funOf u (funOf x (ofNat 1)))) (funOf x (ofNat 2)))

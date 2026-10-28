@@ -23,8 +23,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Entailment for the product system (Scott 6.1(iv'), (iv'')).
-Includes `ProdCon` so both projections stay available for `ent_con`. -/
 def ProdEnt (u : Finset (ProdToken A B)) (p : ProdToken A B) : Prop :=
   ProdCon A B u ∧
     (p.val.2 = B.bot → A.Ent (fstFinset A B u) p.val.1) ∧

@@ -4,33 +4,17 @@
 flowchart TB
 
   N4["ContinuousLattice"]
-  N12["directedOn_wayBelow"]
-  N16["exists_wayBelow_Ici_subset"]
-  N17["exists_wayBelow_subset"]
-  N9["isContinuousLattice_iff_isLUB_sInf_nhds"]
   N19["proposition_2_2"]
   N0["ScottOpen"]
   N18["scottOpen_wayBelow"]
-  N8["sInf_wayBelow"]
   Specialization["Specialization"]
   N2["WayBelow"]
 
   Specialization -->|"1"| N0
-  N2 -->|"1"| N12
-  N12 -->|"1"| N16
-  N2 -->|"1"| N16
-  N4 -->|"1"| N16
-  N12 -->|"1"| N17
-  N2 -->|"1"| N17
-  N4 -->|"1"| N17
   N2 -->|"1"| N18
   N2 -->|"1"| N19
   N0 -->|"1"| N2
-  N12 -->|"1"| N4
   N2 -->|"1"| N4
-  N2 -->|"1"| N8
-  N4 -->|"1"| N9
-  N8 -->|"1"| N9
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

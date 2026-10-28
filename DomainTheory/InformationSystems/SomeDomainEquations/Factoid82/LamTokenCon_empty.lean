@@ -9,7 +9,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamF
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -18,9 +17,7 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
-
 
 theorem LamTokenCon_empty : LamTokenCon A (∅ : Finset (LamToken A)) := by
   simpa [LamTokenCon, lamForgetFinset_empty] using LamCon_empty A

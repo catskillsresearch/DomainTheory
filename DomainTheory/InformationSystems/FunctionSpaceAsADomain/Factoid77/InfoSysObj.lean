@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
@@ -19,7 +18,6 @@ open CategoryTheory
 open CategoryTheory.Limits
 open CategoryTheory.MonoidalCategory
 
-/-- Bundled information system (object of the Scott category). -/
 structure InfoSysObj : Type (u + 1) where
   Token : Type u
   [decEq : DecidableEq Token]

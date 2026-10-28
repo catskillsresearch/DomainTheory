@@ -11,10 +11,6 @@ section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
-/- concordance: source L454 EXERCISE 1.13 infinite binary tree -/
-/-- **Exercise 1.13 (total elements).** Each infinite path `p` gives a *total* (maximal) element
-`branch p`: any `y` it approximates approximates it back. (These maximal elements are exactly the
-limit nodes along the top of the binary-tree picture.) -/
 theorem branch_isTotal (p : ℕ → Bool) : B.IsTotal (branch p) := by
   intro y hy X hX
   obtain ⟨σ, rfl⟩ := y.sub hX
@@ -43,12 +39,10 @@ section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- `⋂ₙ xₙ` is the **greatest** lower bound: anything approximating all `xₙ` approximates `⋂ₙ xₙ`. -/
 theorem le_iInter (x : ℕ → V.Element) (y : V.Element) (h : ∀ n, y ≤ x n) :
     y ≤ V.iInter x :=
   fun X hX n => h n X hX
 
-/-- `xₙ ⊑ ⋃ₙ xₙ`: every member of the sequence approximates the union. -/
 theorem le_iUnion (x : ℕ → V.Element) (hmono : Monotone x) (n : ℕ) :
     x n ≤ V.iUnion x hmono :=
   fun _ hX => ⟨n, hX⟩
@@ -61,7 +55,6 @@ section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
-/-- Every finite approximation `(p ↾ n)⊥` approximates the limit element `branch p`. -/
 theorem branchSeq_le_branch (p : ℕ → Bool) (n : ℕ) : branchSeq p n ≤ branch p :=
   B.le_iUnion (branchSeq p) (branchSeq_mono p) n
 end
@@ -73,8 +66,6 @@ section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- The finite intersection is antitone in its length: a longer prefix is contained in a shorter
-one. -/
 theorem interUpTo_antitone (X : ℕ → Set α) {j k : ℕ} (h : j ≤ k) :
     V.interUpTo X k ⊆ V.interUpTo X j := by
   induction k with

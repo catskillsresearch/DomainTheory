@@ -11,17 +11,14 @@ public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- Encode a Scott-pair graph clause as a single `Nat.pair` search index. -/
 theorem IsRE.graph_of_primrecRel {f : Pomega → Pomega}
     (hP : PrimrecRel fun n m : ℕ => m ∈ f (e n)) :
     IsRE (graph f) := by

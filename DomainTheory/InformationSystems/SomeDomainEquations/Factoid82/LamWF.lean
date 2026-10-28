@@ -20,8 +20,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Well-formed tokens under depth Con (Scott (1)–(3) for the InfoSys instance).
-Early staged `IsLamToken` / `LamToken` remain scaffolding only. -/
 class LamWF (t : RawLamToken α) : Prop where
   out : match t with
     | .bot | .atom _ => True

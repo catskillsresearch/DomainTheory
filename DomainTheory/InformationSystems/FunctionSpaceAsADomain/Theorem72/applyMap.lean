@@ -24,7 +24,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- **Theorem 7.2.** Approximable `apply : (B → C) × B → C`. -/
 def applyMap : ApproximableMap (productSystem (functionSystem B C) B) C where
   rel s t :=
     ∃ (hs : ProdCon (functionSystem B C) B s) (ht : t ∈ C.Con),

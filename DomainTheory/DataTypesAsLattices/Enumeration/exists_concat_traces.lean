@@ -5,16 +5,13 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem exists_concat_traces {c : ℕ} (ks : List ℕ)
     (h : ∀ i ∈ ks, ∃ tr, valTraceOk tr ∧ valTraceHas tr c i) :

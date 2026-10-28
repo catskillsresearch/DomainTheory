@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -21,7 +20,6 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- Continuous maps between complete lattices with Scott's induced topologies. -/
 def ScottMap (D : Type u) (D' : Type v) [CompleteLattice D] [CompleteLattice D'] : Type _ :=
   { f : D → D' // @Continuous D D' scottTopologicalSpace scottTopologicalSpace f }
 

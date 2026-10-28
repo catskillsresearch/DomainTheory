@@ -10,7 +10,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -21,7 +20,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace ScottMap
 
-/-- The bottom Scott map is the constant `⊥`. -/
 theorem bot_apply (x : D) : ((⊥ : ScottMap D D') : D → D') x = ⊥ := by
   have h : (⊥ : ScottMap D D') = sSup (∅ : Set (ScottMap D D')) := rfl
   rw [h, sSup_apply, Set.image_empty, sSup_empty]

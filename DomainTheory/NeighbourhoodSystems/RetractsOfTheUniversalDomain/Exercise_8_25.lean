@@ -6,7 +6,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Ref
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exercise823
 
-/-- **Exercise 8.25 (Scott 1981, PRG-19).** A non-trivial domain `D ≅ D → D` containing `𝒰`. -/
 theorem exercise_8_25 :
     (fixedNbhd (fixOp (tOpMap cCombinator)) ≅ᴰ
       funSpace (fixedNbhd (fixOp (tOpMap cCombinator)))

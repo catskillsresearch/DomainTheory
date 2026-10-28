@@ -31,7 +31,6 @@ variable (A : InfoSys α) (B : InfoSys β)
 
 open ApproximableMap
 
-/-- Package a strict approximable map as an element of `|A →ₛ B|`. -/
 def approxMap_toStrictElement (f : ApproximableMap A B) (hf : IsStrict A B f) :
     (strictFunctionSystem A B).Element where
   carrier := {p : StrictFunToken A B | f.rel p.val.val.1 p.val.val.2}

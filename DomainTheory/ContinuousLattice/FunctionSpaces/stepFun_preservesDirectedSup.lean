@@ -16,7 +16,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -25,8 +24,6 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- Step functions are Scott-continuous: `{x | e ≪ x}` is Scott-open, so the conditional commutes
-with directed suprema. -/
 theorem stepFun_preservesDirectedSup (e : D) (e' : D') :
     PreservesDirectedSup (stepFun e e') := by
   intro S hS hSdir

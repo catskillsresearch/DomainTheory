@@ -29,9 +29,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- The interleaved family testing `D₀`'s side: at even positions, `X`'s own enumeration; at odd
-positions, `YPseq`'s recovered `D₀`-side pieces. -/
-
 noncomputable def combinedX (n : ℕ) : Set α :=
   if n % 2 = 0 then X (n / 2) else YPseq D₀ D₁ hD₀nomin hD₁nomin X Y (n / 2)
 
@@ -153,7 +150,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`XPseq n` is always `⊆ D₁.master`.** -/
 theorem subset_master (n : ℕ) : XPseq D₀ D₁ hD₀nomin hD₁nomin X Y n ⊆ D₁.master := by
   apply Set.iUnion_subset
   intro δ'
@@ -180,13 +176,7 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
 
 include hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne hX0 in
-/-- **Exercise 8.12(c)(vii)(2).** `XPseq 0 = D₁.master` (Scott's `X 0 = D₀.master`/`Y 0 = D₁.master`
-convention transfers to `atomPair`'s `D₁`-side image), mirroring `Theorem88.lean`'s
-`Yseq_zero_eq_master`: unfolding one step of the two-sided recursion at `n = 0`, `atomPair`'s own
-`0`-clause is `(D₀.master, D₁.master)` regardless of the sign sequence, so the `X`-sub-step's split
-against `X 0 = D₀.master` puts everything into the "+"-branch on both outputs (the "−"-branch
-`D₀.master \ D₀.master = ∅` is forced empty by `SplitSpec'`), and `I ∪ J = D₁.master` with `J = ∅`
-forces `I = D₁.master`. -/
+
 theorem zero : XPseq D₀ D₁ hD₀nomin hD₁nomin X Y 0 = D₁.master := by
   apply Set.Subset.antisymm
     (XPseq.subset_master D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem

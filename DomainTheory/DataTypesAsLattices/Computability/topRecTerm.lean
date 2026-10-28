@@ -24,7 +24,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- **Scott 1976, (2.16).** Combinator for `λx. 0 ∪ (x+1)`. -/
 def topRecTerm : Term :=
   .lam 0 (.cond (.lam 1 .zero) .zero (.succ (.var 0)))
 
@@ -33,7 +32,6 @@ namespace topRecTerm
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem interp :
     interp topRecTerm (fun _ => botElem) = graph topRec := by

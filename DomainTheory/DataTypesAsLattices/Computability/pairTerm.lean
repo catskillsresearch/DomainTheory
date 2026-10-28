@@ -16,7 +16,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- `λa λb. (b-a) ⊃ (a*a+a+b), (b*b+a)` with free `add, mul, sub`. -/
 def pairTerm : Term :=
   .lam 3 (.lam 4
     (.cond (.app (.app (.var 2) (.var 4)) (.var 3))

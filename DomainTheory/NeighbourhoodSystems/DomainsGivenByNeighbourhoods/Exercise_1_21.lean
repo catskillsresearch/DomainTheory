@@ -12,19 +12,12 @@ section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/- concordance: source L486 EXERCISE 1.21 complete neighbourhood systems -/
-/-- **Exercise 1.21 — consistency via the intersection `[⋂]`.** For `X₀, …, Xₙ₋₁ ∈ 𝒟`,
-`⟨Xᵢ⟩` is consistent iff `[⋂_{i<n} Xᵢ] ≠ ∅`. Combines Theorem 1.1c
-(`consistent_iff_interUpTo_mem`) with `bracket_nonempty_iff`. -/
 theorem consistent_iff_bracket_interUpTo_nonempty (X : ℕ → Set α) {n : ℕ}
     (hX : ∀ i, i < n → V.mem (X i)) :
     V.Consistent X n ↔ (V.bracket (V.interUpTo X n)).Nonempty := by
   rw [V.consistent_iff_interUpTo_mem X hX]
   exact V.bracket_nonempty_iff.symm
 
-/-- **Exercise 1.21 — consistency `⟺ ⋂_{i<n} [Xᵢ] ≠ ∅`.** The literal form of Scott's
-equivalence: `⟨Xᵢ⟩` is consistent iff there is a filter lying in every `[Xᵢ]` (`i < n`). `→`
-uses upward closure along `⋂_{i<n} Xᵢ ⊆ Xᵢ`; `←` uses `Element.mem_interUpTo`. -/
 theorem consistent_iff_iInter_bracket_nonempty (X : ℕ → Set α) {n : ℕ}
     (hX : ∀ i, i < n → V.mem (X i)) :
     V.Consistent X n ↔ ∃ x : V.Element, ∀ i, i < n → x ∈ V.bracket (X i) := by
@@ -35,9 +28,6 @@ theorem consistent_iff_iInter_bracket_nonempty (X : ℕ → Set α) {n : ℕ}
   · rintro ⟨x, hx⟩
     exact ⟨x, x.mem_interUpTo X (fun i hi => hx i hi)⟩
 
-/-- **Exercise 1.21 — the token system is complete.** Every filter `y` of `{[X]}` is fixed by
-the unique point `ofToken y ∈ |𝒟|`: `[W] ∈ y ↔ ofToken y ∈ [W]`. Uniqueness is `Element.ext`
-applied through the brackets. -/
 theorem tokenSystem_complete : V.tokenSystem.IsComplete := by
   intro y
   refine ⟨V.ofToken y, ?_, ?_⟩
@@ -57,9 +47,6 @@ theorem tokenSystem_complete : V.tokenSystem.IsComplete := by
       · intro hbW; exact absurd (b.sub hbW) hW
       · intro hxW; exact absurd ((V.ofToken y).sub hxW) hW
 
-/-- **Exercise 1.21 — the token system is positive.** `[X] ∩ [Y] = [X ∩ Y]` is a neighbourhood
-iff non-empty: a common element `x` gives `X ∩ Y ∈ 𝒟` (via `x.sub (x.inter_mem …)`); conversely
-`[W]` always contains the principal filter `↑W`. -/
 theorem tokenSystem_isPositive : V.tokenSystem.IsPositive := by
   rintro S T ⟨X, hX, rfl⟩ ⟨Y, hY, rfl⟩
   rw [V.bracket_inter hX hY]
@@ -70,9 +57,6 @@ theorem tokenSystem_isPositive : V.tokenSystem.IsPositive := by
   · rintro ⟨x, hx⟩
     exact ⟨X ∩ Y, x.sub hx, rfl⟩
 
-/-- **Exercise 1.21 — tokens ↔ elements.** `toToken : |𝒟| → |{[X]}|` is a bijection (it is the
-underlying map of the order-iso `tokenIso`), so a complete system identifies tokens with
-(partial) elements under a one-one correspondence. -/
 theorem tokenSystem_toToken_bijective : Function.Bijective V.toToken :=
   V.tokenIso.bijective
 end

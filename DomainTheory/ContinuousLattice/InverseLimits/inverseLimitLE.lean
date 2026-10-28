@@ -17,8 +17,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- Coordinatewise order on compatible sequences. Kept reducible so existing
-subtype-order lemmas see the underlying pointwise relation definitionally. -/
 abbrev inverseLimitLE (x y : InverseLimit D P) : Prop :=
   ∀ n,
     @LE.le (D n)
@@ -28,18 +26,15 @@ abbrev inverseLimitLE (x y : InverseLimit D P) : Prop :=
 
 namespace inverseLimitLE
 
-/-- Reflexivity of the coordinatewise inverse-limit order. -/
 theorem refl (x : InverseLimit D P) :
     inverseLimitLE D P x x :=
   fun n => le_refl (x.1 n)
 
-/-- Transitivity of the coordinatewise inverse-limit order. -/
 theorem trans (x y z : InverseLimit D P)
     (hxy : inverseLimitLE D P x y) (hyz : inverseLimitLE D P y z) :
     inverseLimitLE D P x z :=
   fun n => le_trans (hxy n) (hyz n)
 
-/-- Antisymmetry of the coordinatewise inverse-limit order. -/
 theorem antisymm (x y : InverseLimit D P)
     (hxy : inverseLimitLE D P x y) (hyx : inverseLimitLE D P y x) :
     x = y :=

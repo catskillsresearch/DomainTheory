@@ -15,9 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem Scomb_mid_isScottContinuous (u : Pomega) :
     IsScottContinuous (fun v =>

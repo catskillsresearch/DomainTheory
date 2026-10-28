@@ -6,15 +6,12 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-
-/-- Meet is the greatest lower bound. -/
 theorem inf_le_iff {x y z : sys.Element} : z ≤ sys.inf x y ↔ z ≤ x ∧ z ≤ y :=
   ⟨fun h => ⟨le_trans h (inf.le_left sys x y), le_trans h (inf.le_right sys x y)⟩,
    fun ⟨hx, hy⟩ => sys.le_inf hx hy⟩

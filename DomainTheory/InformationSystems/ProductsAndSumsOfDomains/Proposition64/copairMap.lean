@@ -25,7 +25,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-/-- **Proposition 6.4(3).** Copairing of approximable maps. -/
 def copairMap (f : ApproximableMap A C) (g : ApproximableMap B C) :
     ApproximableMap (sumSystem A B) C where
   rel u s :=
@@ -110,7 +109,6 @@ theorem copairMap.botElement (f : ApproximableMap A C) (g : ApproximableMap B C)
       hY
 
 end ApproximableMap
-
 
 end InfoSys
 

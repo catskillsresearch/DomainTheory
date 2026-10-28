@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Directedness of fixed points under subset, without a lattice instance. -/
 class DirectedSubset {f : Pomega → Pomega} (s : Set (Fixpoints f)) : Prop where
   out : s.Nonempty ∧
     ∀ ⦃x⦄, x ∈ s → ∀ ⦃y⦄, y ∈ s →

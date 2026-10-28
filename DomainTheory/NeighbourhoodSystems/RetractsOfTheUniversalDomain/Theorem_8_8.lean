@@ -31,15 +31,6 @@ section
 open NeighborhoodSystem
 variable {α : Type*}
 
-/- concordance: source L4943 THEOREM 8.8 universality of U -/
-/-- **First sentence of Theorem 8.8 (Scott 1981, PRG-19, Lecture VIII).** `𝒰` is universal: every *countable*
-neighbourhood system `D` embeds, up to isomorphism, as a subsystem of `𝒰`.
-
-The enumeration `e` is built from any surjection `f : ℕ → {S // D.mem S}` (`exists_surjective_nat`,
-using `Countable`/`Nonempty` — the only place `Classical.choice` enters, since neither hypothesis is
-data), shifted by one and patched at `0` to enforce Scott's convention `X₀ = Δ`. Everything else —
-`idxSet`'s "separated" reindexing, the `Yidx`/transfer apparatus of `Theorem88.lean`, and the
-`DprimeU`/`domainIso` machinery above — is then assembled directly. -/
 theorem theorem_8_8_a.{u} {α : Type u} (D : NeighborhoodSystem α)
     [Countable {S : Set α // D.mem S}] :
     ∃ D' : NeighborhoodSystem ℚ, (D ≅ᴰ D') ∧ (D' ◁ U) := by
@@ -63,9 +54,6 @@ theorem theorem_8_8_a.{u} {α : Type u} (D : NeighborhoodSystem α)
       | succ n => rw [hen n]; exact (f n).2
   exact ⟨DprimeU D e hcover he0, isomorphic_DprimeU D e hcover he0, DprimeU_subsystem D e hcover he0⟩
 
-/-- **First sentence of Theorem 8.8 (Scott 1981, PRG-19).** Scott's wording:
-"The system `𝒰` is universal in the sense that, for every countable neighbourhood
-system `𝒟`, we have `𝒟 ⊴ 𝒰`." This packages `theorem_8_8_a` as that relation. -/
 theorem theorem_8_8.{u} {α : Type u} (D : NeighborhoodSystem α)
     [Countable {S : Set α // D.mem S}] : D ⊴ U := by
   obtain ⟨D', hiso, hsub⟩ := theorem_8_8_a D
@@ -73,15 +61,8 @@ theorem theorem_8_8.{u} {α : Type u} (D : NeighborhoodSystem α)
 
 end
 
-
 open NeighborhoodSystem Domain.Recursive
 
-/-- **Theorem 8.8(b) (Scott 1981, PRG-19), final assembly.** If `D` is effectively given (via a
-`ComputablePresentation P`), the general universality of `U` (Theorem 8.8(a)) can be witnessed by a
-`D' : NeighborhoodSystem ℚ` that is *itself* effectively given (`P' : ComputablePresentation D'`),
-isomorphic to `D`, a subsystem of `U`, **and** whose projection pair `i := (D' ◁ U).inj`,
-`j := (D' ◁ U).proj` (Proposition 6.12) is computable in both directions relative to `P'` and `U`'s
-own presentation `UComputablePresentation`. -/
 theorem theorem_8_8_b {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D) :
     ∃ (D' : NeighborhoodSystem ℚ) (P' : ComputablePresentation D') (h : D' ◁ U),
       (D ≅ᴰ D') ∧
@@ -94,10 +75,6 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- **Theorem 8.8(c), Part 6 of 6 — final assembly.** A computable approximable self-map `a` of an
-effectively given `V` (via `P`) makes `fixedNbhd a` effectively given: package Parts 1–5's `D_X`/
-`D_inter` enumeration, instantiated at concrete witnesses `qChar` (Part 1) and `cons` (`P`'s own
-`cons_computable`), into a `ComputablePresentation (fixedNbhd a)`. -/
 theorem fixedNbhd_isEffectivelyGiven {P : ComputablePresentation V} {a : ApproximableMap V V}
     (hcomp : ComputableMap P P a) : (fixedNbhd a).IsEffectivelyGiven := by
   obtain ⟨qChar, hqCharp, hqChar⟩ := diagFixed_exists_qChar hcomp
@@ -122,12 +99,6 @@ theorem fixedNbhd_isEffectivelyGiven {P : ComputablePresentation V} {a : Approxi
   show P.X (myFoldCode P qChar cons 0) = V.master
   rw [myFoldCode_eq, decodeList_zero, myFold_nil, P.masterIdx_spec]
 
-/-- **Theorem 8.8(c) (Scott 1981, PRG-19), headline.** If `a : U → U` is a computable, finitary
-projection of the universal domain, then `{Y ∈ U ∣ Y a Y}` is effectively given (and, unconditionally
-by Theorem 8.5, a subsystem of `U`). As in Theorem 8.6(c)'s converse, `hfin` is carried in the
-signature to match Scott's stated hypothesis on `a`, but is **not** actually needed by this
-implication — only `hcomp` drives the effectiveness argument; this is called out here rather than
-silently dropping the hypothesis. -/
 theorem theorem_8_8_c {a : ApproximableMap U U} (_hfin : FinitaryProjection a)
     (hcomp : ComputableMap UComputablePresentation UComputablePresentation a) :
     (fixedNbhd a).IsEffectivelyGiven ∧ fixedNbhd a ◁ U :=
@@ -136,36 +107,28 @@ theorem theorem_8_8_c {a : ApproximableMap U U} (_hfin : FinitaryProjection a)
 end
 open NeighborhoodSystem ApproximableMap Exercise326
 
-/-- Every `𝒰`-neighbourhood is non-empty (built into Definition 8.7). -/
 theorem U_mem_nonempty : ∀ X, U.mem X → X.Nonempty := fun _ hX => hX.2.1
 
-/-- `𝒰 → 𝒰` is effectively given (Theorem 7.5, applied to `U`'s own presentation twice). -/
 theorem funSpaceUU_isEffectivelyGiven : (funSpace U U).IsEffectivelyGiven :=
   funSpace_isEffectivelyGiven U_isEffectivelyGiven U_isEffectivelyGiven
 
-/-- A fixed presentation of `𝒰 → 𝒰`. -/
 noncomputable def funSpaceUUPresentation : ComputablePresentation (funSpace U U) :=
   funSpaceUU_isEffectivelyGiven.some
 
-/-- **`λf. b∘f∘a : (𝒰→𝒰) → (𝒰→𝒰)`**, uncurried as `b ∘ eval ∘ (id ×ₘ a)`. -/
 noncomputable def lamComb (a b : ApproximableMap U U) :
     ApproximableMap (funSpace U U) (funSpace U U) :=
   curry (b.comp ((evalMap U U).comp (prodMap (idMap (funSpace U U)) a)))
 
-/-- `𝒰 × 𝒰` is effectively given (Theorem 7.4, applied to `U`'s own presentation twice). -/
 theorem prodUU_isEffectivelyGiven : (prod U U).IsEffectivelyGiven :=
   prod_isEffectivelyGiven U_isEffectivelyGiven U_isEffectivelyGiven
 
-/-- A fixed presentation of `𝒰 × 𝒰`. -/
 noncomputable def prodUUPresentation : ComputablePresentation (prod U U) :=
   prodUU_isEffectivelyGiven.some
 
-/-- `𝒰 + 𝒰` is effectively given (Theorem 7.4, applied to `U`'s own presentation twice). -/
 theorem sumUU_isEffectivelyGiven :
     (sum U U U_mem_nonempty U_mem_nonempty).IsEffectivelyGiven :=
   sum_isEffectivelyGiven U_isEffectivelyGiven U_isEffectivelyGiven
 
-/-- A fixed presentation of `𝒰 + 𝒰`. -/
 noncomputable def sumUUPresentation : ComputablePresentation (sum U U U_mem_nonempty U_mem_nonempty) :=
   sumUU_isEffectivelyGiven.some
 
@@ -173,10 +136,6 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- **`theorem_8_8_b`, strengthened.** For any effectively given `D` (via `P`), there is a
-*single* computable projection pair `i : D → U`, `j : U → D` directly (no intermediate isomorphic
-copy): compose `isoInj`/`isoProj` (the code-level iso, computable) with `DprimeUCode`'s own projection pair
-into `U` (Theorem 8.8(b)(vii), computable). -/
 theorem theorem_8_8_b_strong :
     ∃ (i : ApproximableMap D U) (j : ApproximableMap U D),
       j.comp i = idMap D ∧ i.comp j ≤ idMap U ∧

@@ -13,10 +13,8 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
-
 
 instance : LeftCommutative (atomInsert : TreeToken α → Finset α → Finset α) :=
   ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩

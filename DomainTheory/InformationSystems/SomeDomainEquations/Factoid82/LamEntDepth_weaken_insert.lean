@@ -27,7 +27,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Weaken Ent across inserting another token entailed by the same set. -/
 theorem LamEntDepth_weaken_insert {u : Finset (RawLamToken α)}
     {a x : RawLamToken α}
     (hu' : LamConDepth A (insert a u))
@@ -71,7 +70,7 @@ theorem LamEntDepth_weaken_insert {u : Finset (RawLamToken α)}
           obtain ⟨y, hy⟩ := Finset.nonempty_of_ne_empty hne
           exact False.elim (Finset.notMem_empty y (by rwa [hA] at hy))
       | funTok _ _ _ _ _ _ _ _ _ =>
-        -- `a` refined to funTok, so fun (insert a u) ≠ ∅, contradicting hF
+
         simp only [lamFunFinset_insert_funTok] at hF
         exact False.elim (Finset.notMem_empty _ (hF ▸ Finset.mem_insert_self _ _))
 

@@ -17,7 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.arrowR_diag_isScottConti
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (5.25).** Step of `Y(λa. I ∪ (a ∘→ a))`. -/
 def selfArrowStep (a : Pomega) : Pomega := Icomb ∪ arrowR a a
 
 namespace selfArrowStep

@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exe
 @[expose] public section
 
 section
--- Exercise118/FinitelyConsistent.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
@@ -16,9 +16,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/- concordance: source L466 EXERCISE 1.18 consistency of neighbourhood families -/
-/-- **Exercise 1.18 — consistent subset.** `C ⊆ 𝒟` is *finitely consistent* iff every finite
-sequence drawn from `C` is `Consistent` in `𝒟`. -/
 def FinitelyConsistent (C : Set (Set α)) : Prop :=
   ∀ (n : ℕ) (X : ℕ → Set α), (∀ i, i < n → X i ∈ C) → V.Consistent X n
 
@@ -28,13 +25,11 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/appendSeq.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
-/-- Concatenation of two finite sequences: the first `n1` entries are `X1 0, …, X1 (n1-1)`,
-then `X2 0, X2 1, …`. -/
 def appendSeq {α : Type*} (X1 : ℕ → Set α) (n1 : ℕ) (X2 : ℕ → Set α) : ℕ → Set α :=
   fun i => if i < n1 then X1 i else X2 (i - n1)
 
@@ -42,12 +37,11 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/appendSeq_mem.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
-/-- Each entry of `appendSeq X1 n1 X2` below `n1 + n2` is drawn from `C`. -/
 theorem appendSeq_mem {α : Type*} {C : Set (Set α)} {X1 : ℕ → Set α} {n1 : ℕ}
     {X2 : ℕ → Set α} {n2 : ℕ} (h1 : ∀ i, i < n1 → X1 i ∈ C) (h2 : ∀ i, i < n2 → X2 i ∈ C) :
     ∀ i, i < n1 + n2 → appendSeq X1 n1 X2 i ∈ C := by
@@ -61,14 +55,13 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/A.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace triSys
 
-/-- `A = {0,1}`. -/
 def A : Set (Fin 3) := {0, 1}
 
 end triSys
@@ -77,14 +70,13 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/B.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace triSys
 
-/-- `B = {1,2}`. -/
 def B : Set (Fin 3) := {1, 2}
 
 end triSys
@@ -93,14 +85,13 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/Cc.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace triSys
 
-/-- `Cc = {0,2}`. -/
 def Cc : Set (Fin 3) := {0, 2}
 
 end triSys
@@ -109,14 +100,13 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/family.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace triSys
 
-/-- The three-member family `C = {A, B, Cc}`. -/
 def family : Set (Set (Fin 3)) := {A, B, Cc}
 
 end triSys
@@ -125,7 +115,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/interUpTo_appendSeq_left.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
@@ -134,8 +124,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- For a prefix length `k ≤ n1`, `interUpTo` of the appended sequence agrees with `interUpTo`
-of the first sequence. -/
 theorem interUpTo_appendSeq_left (X1 : ℕ → Set α) (n1 : ℕ) (X2 : ℕ → Set α) :
     ∀ {k : ℕ}, k ≤ n1 → V.interUpTo (appendSeq X1 n1 X2) k = V.interUpTo X1 k := by
   intro k
@@ -154,7 +142,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/interUpTo_subset_master.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
@@ -163,7 +151,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- The finite intersection is contained in the master neighbourhood (its first factor). -/
 theorem interUpTo_subset_master (X : ℕ → Set α) : ∀ n, V.interUpTo X n ⊆ V.master := by
   intro n
   induction n with
@@ -176,7 +163,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/interUpTo_appendSeq.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
@@ -185,7 +172,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- The key identity: `⋂_{i<n1+n2} (X1 ⧺ X2)ᵢ = (⋂_{i<n1} X1ᵢ) ∩ (⋂_{i<n2} X2ᵢ)`. -/
 theorem interUpTo_appendSeq (X1 : ℕ → Set α) (n1 : ℕ) (X2 : ℕ → Set α) :
     ∀ {j : ℕ}, V.interUpTo (appendSeq X1 n1 X2) (n1 + j)
       = V.interUpTo X1 n1 ∩ V.interUpTo X2 j := by
@@ -208,7 +194,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/leastFilter.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
@@ -217,10 +203,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- **Exercise 1.18 — the least filter containing a consistent `C`.**
-`leastFilter C = {Y ∈ 𝒟 ∣ ⋂_{i<n} Xᵢ ⊆ Y for some finite sequence ⟨Xᵢ⟩ from C}`. The
-intersection law concatenates two finite sequences (`interUpTo_appendSeq`) and uses finite
-consistency to keep their combined intersection in `𝒟`. -/
 def leastFilter (C : Set (Set α)) (hCsub : ∀ X ∈ C, V.mem X)
     (hC : V.FinitelyConsistent C) : V.Element where
   mem Y := V.mem Y ∧ ∃ (n : ℕ) (X : ℕ → Set α), (∀ i, i < n → X i ∈ C) ∧ V.interUpTo X n ⊆ Y
@@ -248,7 +230,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/sInf.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
@@ -257,8 +239,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- **Exercise 1.18 — the intersection of a non-empty family of filters is a filter.**
-`sInf F = {X ∣ ∀ x ∈ F, X ∈ x}`. -/
 def sInf (F : Set V.Element) (hF : F.Nonempty) : V.Element where
   mem X := ∀ x ∈ F, x.mem X
   sub h := hF.elim (fun x hx => x.sub (h x hx))
@@ -272,12 +252,11 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/triSys.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
-/-- All non-empty subsets of `Δ = {0,1,2}` (a positive neighbourhood system). -/
 def triSys : NeighborhoodSystem (Fin 3) :=
   NeighborhoodSystem.ofPositive (fun X => X.Nonempty) Set.univ
     (⟨0, Set.mem_univ 0⟩) (⟨0, Set.mem_univ 0⟩)
@@ -287,14 +266,13 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/triple.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace triSys
 
-/-- The triple `A, B, Cc` as a finite sequence. -/
 def triple : ℕ → Set (Fin 3) := fun i => if i = 0 then A else if i = 1 then B else Cc
 
 end triSys
@@ -303,17 +281,13 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/family_pairwise_nonempty.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
-
 namespace triSys
 
-
-/-- Every pair of members of `family` has non-empty intersection, hence (in the all-non-empty
-system `triSys`) every pair is consistent. -/
 theorem family_pairwise_nonempty :
     ∀ X ∈ family, ∀ Y ∈ family, (X ∩ Y).Nonempty := by
   intro X hX Y hY
@@ -334,18 +308,15 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/le_sInf.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
-
 
 namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-
-/-- `sInf F` is the **greatest** lower bound of `F`. -/
 theorem le_sInf (F : Set V.Element) (hF : F.Nonempty) (y : V.Element) (h : ∀ x ∈ F, y ≤ x) :
     y ≤ V.sInf F hF :=
   fun _ hX x hx => h x hx _ hX
@@ -355,19 +326,15 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/leastFilter_le.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
-
 
 namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-
-/-- **Exercise 1.18 — `leastFilter` is least.** Any filter `z` with `C ⊆ z` contains
-`leastFilter C`. -/
 theorem leastFilter_le (C : Set (Set α)) (hCsub : ∀ X ∈ C, V.mem X)
     (hC : V.FinitelyConsistent C) (z : V.Element) (hz : ∀ W ∈ C, z.mem W) :
     V.leastFilter C hCsub hC ≤ z := by
@@ -379,18 +346,15 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/sInf_le.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
-
 
 namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-
-/-- `sInf F ⊑ x` for every `x ∈ F`. -/
 theorem sInf_le (F : Set V.Element) (hF : F.Nonempty) {x : V.Element} (hx : x ∈ F) :
     V.sInf F hF ≤ x :=
   fun _ h => h x hx
@@ -400,18 +364,15 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/subset_leastFilter.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
-
 
 namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-
-/-- `C ⊆ leastFilter C`: every member of `C` is in the least filter. -/
 theorem subset_leastFilter (C : Set (Set α)) (hCsub : ∀ X ∈ C, V.mem X)
     (hC : V.FinitelyConsistent C) {W : Set α} (hW : W ∈ C) :
     (V.leastFilter C hCsub hC).mem W := by
@@ -424,11 +385,10 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/triSys_master.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
-
 
 theorem triSys_master : triSys.master = (Set.univ : Set (Fin 3)) := rfl
 
@@ -436,14 +396,12 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/triple_interUpTo_empty.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
-
 namespace triSys
-
 
 theorem triple_interUpTo_empty : triSys.interUpTo triple 3 = (∅ : Set (Fin 3)) := by
   simp only [NeighborhoodSystem.interUpTo_succ, NeighborhoodSystem.interUpTo_zero, triSys_master]
@@ -455,14 +413,12 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/triple_mem.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
-
 namespace triSys
-
 
 theorem triple_mem : ∀ i, i < 3 → triple i ∈ family := by
   intro i hi
@@ -477,17 +433,13 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118/not_finitelyConsistent.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
-
 namespace triSys
 
-
-/-- **Exercise 1.18 — `family` is pairwise consistent but not consistent.** Its full triple has
-empty intersection, so no `Z ∈ 𝒟` (i.e. no non-empty `Z`) lies below it. -/
 theorem not_finitelyConsistent : ¬ triSys.FinitelyConsistent family := by
   intro h
   obtain ⟨Z, hZmem, hZsub⟩ := h 3 triple triple_mem
@@ -501,7 +453,7 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise118.lean
+
 namespace DomainTheory.NeighbourhoodSystems
 
 set_option linter.unusedVariables false

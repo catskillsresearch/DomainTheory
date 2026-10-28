@@ -11,9 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem mem_graph {f : Pomega → Pomega} {p : ℕ} :
     p ∈ graph f ↔ ∃ n m, p = pair n m ∧ m ∈ f (e n) := Iff.rfl

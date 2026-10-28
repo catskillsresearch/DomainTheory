@@ -11,11 +11,9 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import Mathlib.Order.CompleteLattice.Defs
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem enumerationUnion_left_isScottContinuous (y : Pomega) :
     IsScottContinuous (fun x => x ∪ y) := by

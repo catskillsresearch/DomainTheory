@@ -10,9 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.curryC_isScottConti
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem curryC_app (u : Pomega) :
     funOf curryC u = graph (fun x => graph (fun y => funOf u (pairSeq x y))) :=

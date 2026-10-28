@@ -27,7 +27,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-/-- **Proposition 6.4(2).** Right injection. -/
 def inrMap : ApproximableMap B (sumSystem A B) where
   rel w u := w ∈ B.Con ∧ SumCon A B u ∧ lftFinset u = ∅ ∧ B.EntSet w (rhtFinset u)
   rel_dom h := h.1
@@ -92,7 +91,6 @@ theorem inrMap.toElement_sumElementRht (z : (sumSystem A B).Element)
       exact False.elim (not_mem_right_of_mem_left A B z hp hy0)
 
 end ApproximableMap
-
 
 end InfoSys
 

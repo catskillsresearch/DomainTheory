@@ -17,9 +17,6 @@ open NeighborhoodSystem
 namespace inter
 open NeighborhoodSystem
 
-/-- **`A ∩ (M \ Z) = A \ Z` whenever `A ⊆ M`**: needed to turn a `genAtom`-style "intersect with
-`M \ Z`" step into a literal `A \ Z` once `A` is known to already lie inside `M`. Generic set-theory
-fact, used by 8.12(c)(vi)(5)(b)'s `genAtom.combinedX_succ_eq` below. -/
 theorem diff_eq_diff_of_subset {γ : Type*} {A M Z : Set γ} (h : A ⊆ M) :
     A ∩ (M \ Z) = A \ Z := by
   ext x
@@ -40,7 +37,6 @@ end inter
 
 open NeighborhoodSystem
 
-/-- **Generalization of `Theorem88.lean`'s `SplitSpec`.** -/
 def SplitSpec' {α γ : Type*} (E : NeighborhoodSystem γ)
     (split : Set α → Set γ → Set α → Set γ × Set γ) : Prop :=
   ∀ {A : Set α} {B : Set γ}, (A = ∅ ↔ B = ∅) → (B = ∅ ∨ E.mem B) → ∀ Xn : Set α,
@@ -63,8 +59,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- The shared sign-interleaving map: at even positions, the `X`-sub-step's own bit; at odd
-positions, the `Y`-sub-step's own bit. -/
 def combinedδ (δ : ℕ → Bool × Bool) (n : ℕ) : Bool :=
   if n % 2 = 0 then (δ (n / 2)).1 else (δ (n / 2)).2
 
@@ -123,8 +117,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- The de-interleaving map: reads `δ'`'s values two at a time, `(δ' (2*k), δ' (2*k+1))`, as the
-`k`-th pair of bits — the inverse of `combinedδ`. -/
 def deinterleaveδ (δ' : ℕ → Bool) (k : ℕ) : Bool × Bool := (δ' (2 * k), δ' (2 * k + 1))
 
 end AtomPair
@@ -143,9 +135,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 omit hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne in
-/-- **Round-trip identity** (Exercise 8.12(c)(vi)(5)(c)(1)): re-interleaving `deinterleaveδ δ'`
-recovers `δ'` exactly. Proved by `funext` plus a parity case split on the point `m`, closed by
-`combinedδ_even`/`combinedδ_odd` and `omega`. -/
+
 theorem combinedδ_deinterleaveδ (δ' : ℕ → Bool) :
     combinedδ (deinterleaveδ δ') = δ' := by
   funext m
@@ -159,7 +149,6 @@ theorem combinedδ_deinterleaveδ (δ' : ℕ → Bool) :
 end AtomPair
 end
 
-/-- **Generalization of `Theorem88.lean`'s `exists_split`** to an abstract atomless `E`. -/
 theorem exists_split' {α γ : Type*} {E : NeighborhoodSystem γ} (hEnomin : E.NoMinimal)
     {A : Set α} {B : Set γ} (hAB : A = ∅ ↔ B = ∅) (hBE : B = ∅ ∨ E.mem B) (Xn : Set α) :
     ∃ I J : Set γ, (I = ∅ ∨ E.mem I) ∧ (J = ∅ ∨ E.mem J) ∧
@@ -194,25 +183,14 @@ theorem exists_split' {α γ : Type*} {E : NeighborhoodSystem γ} (hEnomin : E.N
       exact ⟨Y, Z, Or.inr hY, Or.inr hZ, iff_of_false h1 hYne, iff_of_false h2 hZne,
         hYZunion, hYZinter⟩
 
-/-- Pad `δ' : Fin n → Bool × Bool` to a total `ℕ → Bool × Bool`, filling positions `≥ n` with
-`(true, true)`. -/
 def extendTruePair {n : ℕ} (δ' : Fin n → Bool × Bool) : ℕ → Bool × Bool :=
   fun i => (extendTrue (Prod.fst ∘ δ') i, extendTrue (Prod.snd ∘ δ') i)
 
-/-- **Generic "swap-if" disjointness helper**: if `P` and `Q` are disjoint, then choosing `P` for
-one Boolean and `Q` for a *different* Boolean always lands in disjoint sets, regardless of which
-Boolean is `true`. -/
 theorem if_swap_disjoint {γ : Type*} {P Q : Set γ} (hPQ : P ∩ Q = ∅) {b b' : Bool} (hbb' : b ≠ b') :
     (if b then P else Q) ∩ (if b' then P else Q) = ∅ := by
   rcases Bool.eq_false_or_eq_true b with hb | hb <;> rcases Bool.eq_false_or_eq_true b' with hb' | hb' <;>
     simp_all [Set.inter_comm]
 
-/-- **`NoMinimal` forces `¬ D.mem ∅`, hence every genuine `D`-neighbourhood is non-empty.**
-Applying `NoMinimal` at `X := ∅` would demand a non-empty `Y ⊆ Y ∪ Z = ∅`, impossible. (Exercise
-8.12(c)(vi)(7): the one fact needed to know `hXmem`/`hYmem`'s enumerated sets are never `∅`, hence
-— via the emptiness-transfer already proved in (5)(d) — that their `atomPair`-images `XPseq`/`YPseq`
-are never `∅` either, i.e. always *genuine* neighbourhoods on the other side, no extra "extension"
-hypothesis needed.) -/
 theorem NeighborhoodSystem.NoMinimal.mem_ne_empty {α : Type*} {D : NeighborhoodSystem α}
     (hD : D.NoMinimal) {X : Set α} (hX : D.mem X) : X ≠ ∅ := by
   intro hXe
@@ -220,7 +198,6 @@ theorem NeighborhoodSystem.NoMinimal.mem_ne_empty {α : Type*} {D : Neighborhood
   obtain ⟨Y, Z, -, -, hYne, -, -, hunion⟩ := hD hX
   exact hYne.ne_empty (Set.union_empty_iff.mp hunion).1
 
-/-- Restrict `δ : ℕ → Bool × Bool` to `Fin n → Bool × Bool`. -/
 def restrictFinPair (δ : ℕ → Bool × Bool) (n : ℕ) : Fin n → Bool × Bool := fun i => δ i.val
 
 theorem extendTruePair_restrictFinPair_agree (δ : ℕ → Bool × Bool) (n i : ℕ) (hi : i < n) :
@@ -234,7 +211,7 @@ theorem extendTruePair_restrictFinPair_agree (δ : ℕ → Bool × Bool) (n i : 
   rw [h1, h2]
 
 open Classical in
-/-- **Generalization of `Theorem88.lean`'s `splitChoice`.** -/
+
 noncomputable def splitChoice' {α γ : Type*} (E : NeighborhoodSystem γ) (hEnomin : E.NoMinimal)
     (A : Set α) (B : Set γ) (Xn : Set α) : Set γ × Set γ :=
   if h : (A = ∅ ↔ B = ∅) ∧ (B = ∅ ∨ E.mem B) then
@@ -253,8 +230,6 @@ def xyStep {α γ : Type*} (split : Set α → Set γ → Set α → Set γ × S
     (A : Set α) (B : Set γ) (Xn : Set α) (b : Bool) : Set α × Set γ :=
   (if b then A ∩ Xn else A \ Xn, if b then (split A B Xn).1 else (split A B Xn).2)
 
-/-- **`xyStep`'s two outputs, at two *different* sign bits, are pairwise disjoint** — the local,
-one-step content behind `atomPair`'s eventual pairwise-disjointness invariant. -/
 theorem xyStep_disjoint_of_ne {α γ : Type*} {E : NeighborhoodSystem γ}
     {split : Set α → Set γ → Set α → Set γ × Set γ} (hsplit : SplitSpec' E split)
     {A : Set α} {B : Set γ} (hAB : A = ∅ ↔ B = ∅) (hBE : B = ∅ ∨ E.mem B) (Xn : Set α)
@@ -279,8 +254,6 @@ end diff
 namespace union
 open NeighborhoodSystem
 
-/-- **Union-closure from `IsPositive` + `DiffClosed` alone**: if `X` and `Y` are each mem-or-∅ in a
-Positive, difference-closed `D`, so is `X ∪ Y`. -/
 theorem mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositive)
     (hdiff : D.DiffClosed) {X Y : Set γ} (hX : X = ∅ ∨ D.mem X) (hY : Y = ∅ ∨ D.mem Y) :
     X ∪ Y = ∅ ∨ D.mem (X ∪ Y) := by
@@ -315,10 +288,6 @@ theorem mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositi
 end union
 open NeighborhoodSystem
 
-/-- **`Fintype`-indexed union-closure from `IsPositive` + `DiffClosed` alone**, generalizing
-`Definition87.lean`'s `U.iUnion_mem`/`Exercise812.lean`'s `V.iUnion_mem` to an abstract `D`. Proved
-identically (fold `union.mem_or_empty` over `Finset.univ`), just with the generic one-step lemma in
-place of `U`/`V`'s hardcoded binary-union facts. -/
 theorem iUnion_mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.IsPositive)
     (hdiff : D.DiffClosed) {ι : Type*} [Fintype ι] {f : ι → Set γ}
     (hf : ∀ i, f i = ∅ ∨ D.mem (f i)) : (⋃ i, f i) = ∅ ∨ D.mem (⋃ i, f i) := by
@@ -334,8 +303,6 @@ theorem iUnion_mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.I
   rw [hall]
   exact hstep Finset.univ
 
-/-- **The `X`-sub-step**, as an instance of `xyStep`: split `D₁`'s side while directly refining
-`D₀`'s side. -/
 noncomputable def xStep {α β : Type*} (D₁ : NeighborhoodSystem β) (hD₁nomin : D₁.NoMinimal)
     (A : Set α) (B : Set β) (Xn : Set α) (b : Bool) : Set α × Set β :=
   xyStep (splitChoice' D₁ hD₁nomin) A B Xn b
@@ -343,16 +310,12 @@ noncomputable def xStep {α β : Type*} (D₁ : NeighborhoodSystem β) (hD₁nom
 namespace xStep
 open NeighborhoodSystem
 
-/-- **`xStep`'s `α`-side output is always a subset of `A`** (unconditional: `A ∩ Xn` and `A \ Xn`
-are both `⊆ A`). -/
 theorem fst_subset {α β : Type*} (D₁ : NeighborhoodSystem β) (hD₁nomin : D₁.NoMinimal)
     (A : Set α) (B : Set β) (Xn : Set α) (b : Bool) : (xStep D₁ hD₁nomin A B Xn b).1 ⊆ A := by
   by_cases hb : b = true
   · simp only [xStep, xyStep, hb, ite_true]; exact Set.inter_subset_left
   · simp only [xStep, xyStep, hb]; exact Set.sdiff_subset
 
-/-- **`xStep`'s `β`-side output is a subset of `B`**, given the `SplitSpec'` preconditions
-(`I ∪ J = B`, so both `I ⊆ B` and `J ⊆ B`). -/
 theorem snd_subset {α β : Type*} {D₁ : NeighborhoodSystem β} (hD₁nomin : D₁.NoMinimal)
     {A : Set α} {B : Set β} (hAB : A = ∅ ↔ B = ∅) (hBmem : B = ∅ ∨ D₁.mem B) (Xn : Set α)
     (b : Bool) : (xStep D₁ hD₁nomin A B Xn b).2 ⊆ B := by
@@ -361,7 +324,6 @@ theorem snd_subset {α β : Type*} {D₁ : NeighborhoodSystem β} (hD₁nomin : 
   · simp only [xStep, xyStep, hb, ite_true]; exact Set.subset_union_left.trans_eq hspec.2.2.2.2.1
   · simp only [xStep, xyStep, hb]; exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
 
-/-- **`xStep`'s two outputs, at two different sign bits, are pairwise disjoint.** -/
 theorem disjoint_of_ne {α β : Type*} {D₁ : NeighborhoodSystem β} (hD₁nomin : D₁.NoMinimal)
     {A : Set α} {B : Set β} (hAB : A = ∅ ↔ B = ∅) (hBmem : B = ∅ ∨ D₁.mem B) (Xn : Set α)
     {b b' : Bool} (hbb' : b ≠ b') :
@@ -372,10 +334,6 @@ theorem disjoint_of_ne {α β : Type*} {D₁ : NeighborhoodSystem β} (hD₁nomi
 end xStep
 open NeighborhoodSystem
 
-/-- **The `Y`-sub-step**, symmetric to `xStep`: split `D₀`'s side while directly refining `D₁`'s
-side. The `.swap` puts the output back into `(α-side, β-side)` order, matching `atomPair`'s own
-`(A2, B2)` convention (`xyStep`'s first component is always the *direct* side, which for the
-`Y`-sub-step is the `β`-side). -/
 noncomputable def yStep {α β : Type*} (D₀ : NeighborhoodSystem α) (hD₀nomin : D₀.NoMinimal)
     (A1 : Set α) (B1 : Set β) (Yn : Set β) (b : Bool) : Set α × Set β :=
   (xyStep (splitChoice' D₀ hD₀nomin) B1 A1 Yn b).swap
@@ -383,7 +341,6 @@ noncomputable def yStep {α β : Type*} (D₀ : NeighborhoodSystem α) (hD₀nom
 namespace yStep
 open NeighborhoodSystem
 
-/-- **`yStep`'s two outputs, at two different sign bits, are pairwise disjoint.** -/
 theorem disjoint_of_ne {α β : Type*} {D₀ : NeighborhoodSystem α} (hD₀nomin : D₀.NoMinimal)
     {A1 : Set α} {B1 : Set β} (hBA : B1 = ∅ ↔ A1 = ∅) (hAmem : A1 = ∅ ∨ D₀.mem A1) (Yn : Set β)
     {b b' : Bool} (hbb' : b ≠ b') :
@@ -392,7 +349,6 @@ theorem disjoint_of_ne {α β : Type*} {D₀ : NeighborhoodSystem α} (hD₀nomi
   have h := xyStep_disjoint_of_ne (splitChoice'_isSplitSpec D₀ hD₀nomin) hBA hAmem Yn hbb'
   exact ⟨h.2, h.1⟩
 
-/-- **`yStep`'s `α`-side output is a subset of `A1`**, given the `SplitSpec'` preconditions. -/
 theorem fst_subset {α β : Type*} {D₀ : NeighborhoodSystem α} (hD₀nomin : D₀.NoMinimal)
     {A1 : Set α} {B1 : Set β} (hBA : B1 = ∅ ↔ A1 = ∅) (hAmem : A1 = ∅ ∨ D₀.mem A1) (Yn : Set β)
     (b : Bool) : (yStep D₀ hD₀nomin A1 B1 Yn b).1 ⊆ A1 := by
@@ -403,7 +359,6 @@ theorem fst_subset {α β : Type*} {D₀ : NeighborhoodSystem α} (hD₀nomin : 
   · simp only [yStep, xyStep, Prod.swap, hb]
     exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
 
-/-- **`yStep`'s `β`-side output is always a subset of `B1`** (unconditional). -/
 theorem snd_subset {α β : Type*} (D₀ : NeighborhoodSystem α) (hD₀nomin : D₀.NoMinimal)
     (A1 : Set α) (B1 : Set β) (Yn : Set β) (b : Bool) : (yStep D₀ hD₀nomin A1 B1 Yn b).2 ⊆ B1 := by
   by_cases hb : b = true

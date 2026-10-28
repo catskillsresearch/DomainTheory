@@ -14,11 +14,8 @@ public import DomainTheory.DataTypesAsLattices.Functionality.sumE
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 7.1 (The closure theorem).** -/
 theorem theorem_7_1 (A B : RestrictedEquiv) :
     (∀ f, (arrowE A B).mem f ↔
         f = graph (fun x => funOf f x) ∧

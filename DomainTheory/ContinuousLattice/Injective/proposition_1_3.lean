@@ -5,11 +5,9 @@ public import Mathlib.Topology.Constructions
 
 @[expose] public section
 
-
 open Topology TopologicalSpace
 
 universe v w
-
 
 theorem proposition_1_3 {ι : Type w} (D : ι → Type v) [∀ i, TopologicalSpace (D i)]
     (h : ∀ i, InjectiveSpace.{u} (D i)) : InjectiveSpace.{u} (∀ i, D i) :=

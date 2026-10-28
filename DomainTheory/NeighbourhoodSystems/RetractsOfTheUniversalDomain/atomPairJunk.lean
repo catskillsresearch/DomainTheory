@@ -68,7 +68,6 @@ theorem le_one (k n : ℕ) :
 
 end atomPairJunk
 
-
 section AtomPairCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}

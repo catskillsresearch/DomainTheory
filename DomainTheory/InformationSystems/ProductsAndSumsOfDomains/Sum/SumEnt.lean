@@ -22,8 +22,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Entailment for the separated sum (Scott 6.3(iv')–(iv''')).
-Includes `SumCon` so `ent_con` can update projections. -/
 def SumEnt (u : Finset (SumToken α β)) (p : SumToken α β) : Prop :=
   SumCon A B u ∧
     match p with

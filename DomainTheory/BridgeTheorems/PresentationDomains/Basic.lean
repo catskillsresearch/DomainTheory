@@ -33,11 +33,8 @@ open ContinuousLatticeToNeighborhood
 section InfoSysTriangle
 variable {α : Type*} [DecidableEq α]
 
-
 variable {ι β : Type*} [DecidableEq ι]
 
-
-/-- Constructive 1980↔1982↔ideal triangle for InfoSys domains. -/
 noncomputable abbrev presentation_domains_equiv_infoSys (A : InfoSys α) :=
   neighborhood_ideal_iso A
 
@@ -46,14 +43,11 @@ end InfoSysTriangle
 universe u
 variable {D : Type u} [CompleteLattice D] [DecidableEq D]
 
-
 section Continuous
 
 variable (hD : ContinuousLattice D)
 include hD
 
-
-/-- The three presentations determine the same domain (round corner). -/
 theorem exists_presentation_domains_equiv :
     Nonempty (D ≃o RoundInfoSysElement (D := D)) :=
   ⟨presentation_domains_equiv hD⟩

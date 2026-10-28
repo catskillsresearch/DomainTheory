@@ -21,9 +21,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem plusR_right_isScottContinuous (a : Pomega) :
     IsScottContinuous (fun b => plusR a b) :=

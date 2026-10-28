@@ -27,7 +27,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Unfold a λ-token into the sum-of-function-space carrier (Scott’s matching). -/
 def lamUnfold (t : LamDToken A) :
     SumToken α (FunToken (lambdaSystem A) (lambdaSystem A)) :=
   match t with

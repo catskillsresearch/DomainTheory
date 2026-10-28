@@ -10,7 +10,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -21,7 +20,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace Proposition314
 
-/-- The monotone map underlying a Scott map, suitable for `OrderHom.lfp`. -/
 def toOrderHom (f : ScottMap D D) : D →o D := ⟨(f : D → D), f.monotone⟩
 
 end Proposition314

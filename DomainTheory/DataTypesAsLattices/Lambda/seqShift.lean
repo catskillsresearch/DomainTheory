@@ -10,7 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-/-- Shift of a sequence: `(λt. u_{t+1})`. -/
+
 def seqShift (u : Pomega) : Pomega :=
   graph (fun z => seqFun u (succSet z))
 

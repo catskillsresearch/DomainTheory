@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapRetraction
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
@@ -8,7 +7,6 @@ public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
@@ -22,8 +20,6 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- **Scott 1972, Proposition 3.7 (projection half).** Under the same hypotheses with
-projections, the induced pair on function spaces is also a projection. -/
 structure ScottMapProjection (D₀ D₀' D₁ D₁' : Type*)
     [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁'] extends
     ScottMapRetraction D₀ D₀' D₁ D₁' where

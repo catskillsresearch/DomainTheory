@@ -19,7 +19,6 @@ namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)
 
-/-- Finite intersection of coded neighbourhoods, with Scott’s convention `⋂∅ = Δ`. -/
 def interOf (u : Finset ι) : Set α :=
   u.fold (· ∩ ·) B.system.master B.nbhd
 

@@ -11,13 +11,9 @@ section
 open NeighborhoodSystem ApproximableMap
 variable {α : Type*} {E : NeighborhoodSystem α}
 
-/- concordance: source L4769 DEFINITION 8.1 retraction -/
-/-- **Definition 8.1 (Scott 1981, PRG-19).** A *retraction* of `E` is an approximable mapping
-`a : E → E` with `a ∘ a = a`. -/
 class Retraction (a : ApproximableMap E E) : Prop where
   out : a.comp a = a
 
-/-- The identity mapping `I_E` is (trivially) a retraction. -/
 @[simp] theorem isRetraction_idMap : Retraction (idMap E) :=
   ⟨idMap_comp (idMap E)⟩
 
@@ -29,8 +25,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem
 
-/-- **Proposition 8.2's retraction `a = i ∘ j`.** As a neighbourhood relation (unfolding `inj`/
-`proj`), `X a Z ↔ ∃ Y ∈ D, X ⊆ Y ⊆ Z` — exactly Scott's formula. -/
 def retractionOfSubsystem (h : D ◁ E) : ApproximableMap E E := h.inj.comp h.proj
 
 @[simp] theorem retractionOfSubsystem_rel (h : D ◁ E) {X Z : Set α} :
@@ -42,7 +36,6 @@ def retractionOfSubsystem (h : D ◁ E) : ApproximableMap E E := h.inj.comp h.pr
   · rintro ⟨hEX, hEZ, Y, hDY, hXY, hYZ⟩
     exact ⟨Y, ⟨hEX, hDY, hXY⟩, hDY, hEZ, hYZ⟩
 
-/-- `retractionOfSubsystem h` fixes exactly `i(x)` for `x ∈ |D|`: `a(i(x)) = i(x)`. -/
 theorem retractionOfSubsystem_toElementMap_inj (h : D ◁ E) (x : D.Element) :
     (retractionOfSubsystem h).toElementMap (h.inj.toElementMap x) = h.inj.toElementMap x := by
   have h1 : (retractionOfSubsystem h).toElementMap (h.inj.toElementMap x)
@@ -52,8 +45,6 @@ theorem retractionOfSubsystem_toElementMap_inj (h : D ◁ E) (x : D.Element) :
     (toElementMap_comp h.proj h.inj x).symm
   rw [h1, h2, h.proj_comp_inj, toElementMap_idMap]
 
-/-- **Proposition 8.2, second half.** `|D|` is order-isomorphic to the fixed-point set of
-`a = retractionOfSubsystem h`, via `x ↦ i(x)` with inverse `y ↦ j(y)`. -/
 def elementIso (h : D ◁ E) :
     D.Element ≃o {y : E.Element // (retractionOfSubsystem h).toElementMap y = y} where
   toFun x := ⟨h.inj.toElementMap x, retractionOfSubsystem_toElementMap_inj h x⟩
@@ -85,8 +76,6 @@ def elementIso (h : D ◁ E) :
     · intro hle
       exact h.inj.toElementMap_mono hle
 
-/-- **Proposition 8.2, first half.** `retractionOfSubsystem h` is a retraction: `a ∘ a = a`, via
-`a ∘ a = i∘(j∘i)∘j = i∘I_D∘j = i∘j = a`. -/
 theorem isRetraction_retractionOfSubsystem (h : D ◁ E) :
     Retraction (retractionOfSubsystem h) := by
   constructor

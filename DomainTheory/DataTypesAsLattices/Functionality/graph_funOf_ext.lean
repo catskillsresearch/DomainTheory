@@ -7,9 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem graph_funOf_ext {f g : Pomega}
     (hf : f = graph (fun x => funOf f x))

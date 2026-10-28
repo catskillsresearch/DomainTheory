@@ -9,17 +9,14 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- Common-stage certificate: a finite family of r.e. facts all halt at one `evaln` bound. -/
 theorem primrecPred_common_stage (c : Code) :
     PrimrecPred fun p : ℕ × ℕ =>
       ∀ k < p.1, p.1.testBit k = false ∨ (evaln p.2 c k).isSome = true := by

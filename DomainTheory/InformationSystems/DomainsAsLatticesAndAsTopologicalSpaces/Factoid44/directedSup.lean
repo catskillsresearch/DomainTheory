@@ -16,12 +16,10 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- **Factoid 4.4.** Union of a nonempty directed family is an element (as `familySup`). -/
 def directedSup (S : Set sys.Element) (hne : S.Nonempty) (hdir : sys.IsDirected S) :
     sys.Element :=
   sys.familySup S (sys.finitelyConsistent_of_directed S hne hdir)
 
-/-- For directed families, the lub carrier equals the raw union (already deductively closed). -/
 theorem directedSup.carrier_eq_union (S : Set sys.Element) (hne : S.Nonempty)
     (hdir : sys.IsDirected S) :
     (sys.directedSup S hne hdir).carrier = sys.familyUnionCarrier S := by
@@ -37,6 +35,5 @@ theorem directedSup.le (S : Set sys.Element) (hne : S.Nonempty) (hdir : sys.IsDi
   familySup.le sys S (sys.finitelyConsistent_of_directed S hne hdir) h
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

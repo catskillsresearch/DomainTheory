@@ -15,7 +15,6 @@ namespace DomainTheory.InformationSystems
 
 namespace Factoid25
 
-/-- Every token is satisfiable. -/
 theorem sat_sing (t : Token) : ∃ x : ℚ, Sat x t := by
   cases t with
   | bot => exact ⟨0, trivial⟩

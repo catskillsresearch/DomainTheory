@@ -10,7 +10,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-/-- Subbasic open `{x | k ∈ x}` of the positive topology. -/
 def memOpen (k : ℕ) : Set Pomega := {x | k ∈ x}
 
 namespace memOpen

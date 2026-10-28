@@ -13,8 +13,6 @@ namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-/-- Token type of the separated sum `A + B` (Scott 6.3(i)–(ii)).
-`left X` is `(X, Δ)`, `right Y` is `(Δ, Y)`, and `bot` is `(Δ, Δ)`. -/
 inductive SumToken (α β : Type*) where
   | left : α → SumToken α β
   | right : β → SumToken α β

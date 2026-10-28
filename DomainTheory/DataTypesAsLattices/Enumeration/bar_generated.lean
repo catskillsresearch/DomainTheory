@@ -12,16 +12,13 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gbar
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem bar_generated {u : Pomega} (hu : GeneratedFromG u) :
     GeneratedSemigroup (funOf barComb u) := by

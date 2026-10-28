@@ -8,55 +8,32 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
-/-- **The "clear one bit" primitive.** `myClearBit m ℓ := m - 2 ^ ℓ` — primitive recursive for
-free (plain subtraction and a power of two), and, whenever bit `ℓ` of `m` is genuinely set,
-literally equal to `m ^^^ 2 ^ ℓ` (`myClearBit_eq_xor`). -/
 def myClearBit (m ℓ : ℕ) : ℕ := m - 2 ^ ℓ
 
-/-- **The least-set-bit search combinator.** `myFirstBit m N` is the smallest `ℓ < N` with
-`m.testBit ℓ = true`, or `N` itself (a sentinel, since a genuine witness is always `< N`) if no
-such `ℓ` exists. Folds over `i = 0, 1, …, N - 1` in increasing order (via `Nat.rec` on `N`,
-mirroring `bExistsFn`'s recursion exactly): once a witness has been found (the running value is
-`< i`), it is carried forward unchanged; otherwise (`ih = i`, nothing found yet) bit `i` itself is
-tested, becoming the new witness if set, or `i + 1` (the new sentinel) if not. -/
 def myFirstBit (m N : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0
     (fun i ih => selectFn (isZero (i - ih)) (selectFn (myTestBit m i) i (i + 1)) ih) N
 
-/-- The presentation-independent canonical level of `VX n`. -/
 def splitVMinLevel (n : ℕ) : ℕ := minLevel (canonIdx n).unpair.1 (canonIdx n).unpair.2
 
-/-- The presentation-independent canonical mask of `VX n`, at `splitVMinLevel n`'s width. -/
 def splitVMinMask (n : ℕ) : ℕ := minMask (canonIdx n).unpair.1 (canonIdx n).unpair.2
 
-/-- The upsampled mask `M := myUpsample k (k+1) m` for `(k, m) := (splitVMinLevel n, splitVMinMask
-n)` — Scott's `M` from `V.no_minimal`, at the code level, fed the *minimal* presentation. -/
 def splitVUpsampled (n : ℕ) : ℕ :=
   myUpsample (splitVMinLevel n) (splitVMinLevel n + 1) (splitVMinMask n)
 
-/-- The splitting bit `ℓ₀` — the least set bit of the upsampled mask `M`, bounded by `2 ^ (k+1)`. -/
 def splitVBit (n : ℕ) : ℕ :=
   myFirstBit (splitVUpsampled n) (2 ^ (splitVMinLevel n + 1))
 
-/-- **`splitVLeft`**: the code for `Y := levelSet (k+1) (2 ^ ℓ₀)`, `V.no_minimal`'s "left" half. -/
 def splitVLeft (n : ℕ) : ℕ := Nat.pair (splitVMinLevel n + 1) (2 ^ splitVBit n)
 
-/-- **`splitVRight`**: the code for `Z := levelSet (k+1) (M ^^^ 2 ^ ℓ₀)`, `V.no_minimal`'s "right"
-half — `myClearBit` stands in for `^^^` (justified since `ℓ₀` is, by construction, a genuinely set
-bit of `M`; `myClearBit_eq_xor`, `(e)(b)(ii)`). -/
 def splitVRight (n : ℕ) : ℕ :=
   Nat.pair (splitVMinLevel n + 1) (myClearBit (splitVUpsampled n) (splitVBit n))
 
-/-- **Unfolding equation** for `myFirstBit` at a successor argument, stated so `rw` fires cleanly
-on the outer application (mirrors `LevelSetPrimrec.lean`'s `myUpsampleJointStep.eq`). -/
 theorem myFirstBit_succ (m i : ℕ) :
     myFirstBit m (i + 1) =
       selectFn (isZero (i - myFirstBit m i)) (selectFn (myTestBit m i) i (i + 1))
         (myFirstBit m i) := rfl
 
-/-- **The core invariant, by induction on `N`.** Either `myFirstBit m N` is a genuine witness
-below `N` (`< N`, `testBit` true there, and no smaller index witnesses), or nothing witnesses
-below `N` at all and `myFirstBit m N` sits exactly at the sentinel `N`. -/
 theorem myFirstBit_spec (m N : ℕ) :
     (myFirstBit m N < N ∧ m.testBit (myFirstBit m N) = true ∧
         ∀ j < myFirstBit m N, m.testBit j = false) ∨
@@ -93,14 +70,12 @@ theorem myFirstBit_spec (m N : ℕ) :
         have htrue : m.testBit i = true := (myTestBit.eq_one_iff m i).mp hbit
         exact Or.inl ⟨by omega, htrue, fun j hj => hall j (by omega)⟩
 
-/-- **`myFirstBit` finds a genuine witness whenever one exists below `N`.** -/
 theorem myFirstBit_lt {m N : ℕ} (h : ∃ ℓ < N, m.testBit ℓ = true) : myFirstBit m N < N := by
   rcases myFirstBit_spec m N with ⟨hlt, -, -⟩ | ⟨heq, hall⟩
   · exact hlt
   · obtain ⟨ℓ, hℓN, hℓtrue⟩ := h
     exact absurd hℓtrue (by simpa using hall ℓ hℓN)
 
-/-- **`myFirstBit m N` is genuinely a set bit of `m`, whenever a witness exists below `N`.** -/
 theorem myFirstBit_testBit {m N : ℕ} (h : ∃ ℓ < N, m.testBit ℓ = true) :
     m.testBit (myFirstBit m N) = true := by
   rcases myFirstBit_spec m N with ⟨-, htrue, -⟩ | ⟨heq, hall⟩
@@ -108,14 +83,6 @@ theorem myFirstBit_testBit {m N : ℕ} (h : ∃ ℓ < N, m.testBit ℓ = true) :
   · obtain ⟨ℓ, hℓN, hℓtrue⟩ := h
     exact absurd hℓtrue (by simpa using hall ℓ hℓN)
 
-
-/-- **`myClearBit` realizes `^^^ 2 ^ ℓ` whenever bit `ℓ` is genuinely set.** Proof: decompose `m`
-around the boundary `2 ^ (ℓ + 1)` (`hqr`, via `Nat.div_add_mod`/`Nat.mod_mod_of_dvd` and a
-single-wraparound `omega` argument, mirroring `LevelSetPrimrec.lean`'s own
-`mod_eq_sub_of_le_of_lt_two_mul`), giving `myClearBit m ℓ = 2 ^ (ℓ+1) * (m / 2 ^ (ℓ+1)) + m % 2 ^
-ℓ` (`hclear`); then `Nat.testBit_two_pow_mul_add` on both this and (implicitly, via `h`) on `m`
-itself matches bit-for-bit against `Nat.testBit_xor`/`Nat.testBit_two_pow`'s case split on
-`j`{`<`,`=`,`>`}`ℓ`. -/
 theorem myClearBit_eq_xor {m ℓ : ℕ} (h : m.testBit ℓ = true) : myClearBit m ℓ = m ^^^ 2 ^ ℓ := by
   have hrlt : m % 2 ^ ℓ < 2 ^ ℓ := Nat.mod_lt m (Nat.two_pow_pos ℓ)
   have h2 : (2 : ℕ) ^ (ℓ + 1) = 2 * 2 ^ ℓ := by rw [pow_succ]; ring
@@ -159,26 +126,15 @@ theorem myClearBit_eq_xor {m ℓ : ℕ} (h : m.testBit ℓ = true) : myClearBit 
       show j - (ℓ + 1) + (ℓ + 1) = j by omega, decide_eq_false_iff_not.mpr (show ℓ ≠ j by omega)]
     simp
 
-
-/-- `(splitVMinLevel n, splitVMinMask n)` presents the same set as `canonIdx n`'s own pair, i.e.
-`VX n` itself. -/
 theorem levelSet_splitVMin (n : ℕ) : levelSet (splitVMinLevel n) (splitVMinMask n) = VX n :=
   levelSet_minLevel (canonIdx n).unpair.1 (canonIdx n).unpair.2
 
-/-- **The presentation-independence of `splitVMinLevel`/`splitVMinMask`**: two codes presenting the
-*same* `V`-set share the same minimal `(level, mask)` pair — the crux fact, via `MinLevel.lean`'s
-`minLevel_unique`, that ultimately delivers `splitVLeft_congr`/`splitVRight_congr` below. -/
 theorem splitVMin_congr {n n' : ℕ} (hn : VX n = VX n') :
     splitVMinLevel n = splitVMinLevel n' ∧ splitVMinMask n = splitVMinMask n' := by
   have h : levelSet (canonIdx n).unpair.1 (canonIdx n).unpair.2 =
       levelSet (canonIdx n').unpair.1 (canonIdx n').unpair.2 := hn
   exact minLevel_unique h
 
-
-/-- `splitVUpsampled n`'s mask always has *some* set bit below `2^(k+1)` — inherited from
-`VX n` always being non-empty (`VX_nonempty`), transported to the *minimal* presentation via
-`levelSet_splitVMin`, then one level up via `levelSet.myUpsample`. Feeds
-`myFirstBit_lt`/`myFirstBit_testBit`. -/
 theorem splitV_mask_nonempty (n : ℕ) :
     ∃ ℓ < 2 ^ (splitVMinLevel n + 1), (splitVUpsampled n).testBit ℓ = true := by
   have hne : (levelSet (splitVMinLevel n) (splitVMinMask n)).Nonempty := by
@@ -194,11 +150,6 @@ theorem splitV_bit_lt (n : ℕ) : splitVBit n < 2 ^ (splitVMinLevel n + 1) :=
 theorem splitV_bit_testBit (n : ℕ) : (splitVUpsampled n).testBit (splitVBit n) = true :=
   myFirstBit_testBit (splitV_mask_nonempty n)
 
-/-- **The twin-bit fact.** `myUpsample`'s duplication structure means *any* set bit `ℓ₀ < 2^(k+1)`
-of the upsampled mask has a genuine twin at `ℓ₀ ^^^ 2^k` (also set): reduce both `ℓ₀` and its twin
-mod `2^k` (they agree there, `hmod`, since `xor`-ing in `2^k` only ever touches bit `k`), then
-transport the resulting `m`-level membership fact back up to `M`'s level via
-`levelSet.myUpsample`. -/
 theorem splitV_twin_testBit (n : ℕ) :
     (splitVUpsampled n).testBit (splitVBit n ^^^ 2 ^ splitVMinLevel n) = true := by
   set k := splitVMinLevel n with hk
@@ -232,8 +183,6 @@ theorem splitV_twin_testBit (n : ℕ) :
   rw [← hlevelEq] at h2'
   rwa [mem_levelSet, Nat.mod_eq_of_lt htwinlt] at h2'
 
-/-- `ℓ₀ ^^^ 2 ^ k` is always genuinely different from `ℓ₀` (used to show `2 ^ ℓ₀` and `M ^^^ 2 ^
-ℓ₀`'s witnessing bits are disjoint). -/
 theorem xor_two_pow_ne_self (a k : ℕ) : a ^^^ 2 ^ k ≠ a := by
   have hb : (2 : ℕ) ^ k ≠ 0 := (Nat.two_pow_pos k).ne'
   intro h
@@ -259,7 +208,6 @@ theorem splitV_right_nonempty (n : ℕ) :
     decide_eq_false_iff_not.mpr (xor_two_pow_ne_self (splitVBit n) (splitVMinLevel n)).symm]
   rfl
 
-/-- **`splitVLeft` realizes `Y := levelSet (k+1) (2^ℓ₀)`**, `V.no_minimal`'s "left" half. -/
 theorem VX_splitVLeft (n : ℕ) :
     VX (splitVLeft n) = levelSet (splitVMinLevel n + 1) (2 ^ splitVBit n) := by
   have hne : (levelSet (splitVLeft n).unpair.1 (splitVLeft n).unpair.2).Nonempty := by
@@ -271,7 +219,6 @@ theorem VX_splitVLeft (n : ℕ) :
   unfold splitVLeft
   rw [unpair_pair_fst, unpair_pair_snd]
 
-/-- **`splitVRight` realizes `Z := levelSet (k+1) (M ^^^ 2^ℓ₀)`**, `V.no_minimal`'s "right" half. -/
 theorem VX_splitVRight (n : ℕ) :
     VX (splitVRight n) =
       levelSet (splitVMinLevel n + 1) (myClearBit (splitVUpsampled n) (splitVBit n)) := by
@@ -284,8 +231,6 @@ theorem VX_splitVRight (n : ℕ) :
   unfold splitVRight
   rw [unpair_pair_fst, unpair_pair_snd]
 
-/-- **Exercise 8.12(e)(b), disjointness**: `splitVLeft`/`splitVRight` cover disjoint pieces —
-transcribes `V.no_minimal`'s `hInter` verbatim. -/
 theorem splitV_disjoint (n : ℕ) : VX (splitVLeft n) ∩ VX (splitVRight n) = ∅ := by
   rw [VX_splitVLeft, VX_splitVRight, myClearBit_eq_xor (splitV_bit_testBit n),
     levelSet.inter_same_level]
@@ -299,8 +244,6 @@ theorem splitV_disjoint (n : ℕ) : VX (splitVLeft n) ∩ VX (splitVRight n) = �
   rw [hpos, Nat.testBit_xor, splitV_bit_testBit n] at h2
   simp at h2
 
-/-- **Exercise 8.12(e)(b), covering**: `splitVLeft`/`splitVRight` reunite to `VX n` — transcribes
-`V.no_minimal`'s `hUnion` verbatim. -/
 theorem splitV_union (n : ℕ) : VX (splitVLeft n) ∪ VX (splitVRight n) = VX n := by
   have hML : levelSet (splitVMinLevel n + 1) (splitVUpsampled n) = VX n := by
     unfold splitVUpsampled
@@ -316,9 +259,6 @@ theorem splitV_union (n : ℕ) : VX (splitVLeft n) ∪ VX (splitVRight n) = VX n
   · simp [splitV_bit_testBit n]
   · simp [Ne.symm hi]
 
-/-- **`splitVLeft`'s raw index is presentation-independent** (stronger than `left_congr` needs):
-two codes presenting the same `VX`-set produce the *literally identical* `splitVLeft` index, since
-`splitVMin_congr` forces `splitVUpsampled`/`splitVBit` to agree exactly. -/
 theorem splitVLeft_eq_of_congr {n n' : ℕ} (hn : VX n = VX n') :
     splitVLeft n = splitVLeft n' := by
   obtain ⟨hlvl, hmask⟩ := splitVMin_congr hn
@@ -329,8 +269,6 @@ theorem splitVLeft_eq_of_congr {n n' : ℕ} (hn : VX n = VX n') :
   unfold splitVLeft
   rw [hlvl, hbit]
 
-/-- **`splitVRight`'s raw index is presentation-independent** (stronger than `right_congr` needs),
-the same argument as `splitVLeft_eq_of_congr`. -/
 theorem splitVRight_eq_of_congr {n n' : ℕ} (hn : VX n = VX n') :
     splitVRight n = splitVRight n' := by
   obtain ⟨hlvl, hmask⟩ := splitVMin_congr hn
@@ -341,17 +279,14 @@ theorem splitVRight_eq_of_congr {n n' : ℕ} (hn : VX n = VX n') :
   unfold splitVRight
   rw [hlvl, hups, hbit]
 
-/-- **`ComputableBisection.left_congr` for `splitVLeft`.** -/
 theorem splitVLeft_congr {n n' : ℕ} (hn : VX n = VX n') :
     VX (splitVLeft n) = VX (splitVLeft n') := by
   rw [splitVLeft_eq_of_congr hn]
 
-/-- **`ComputableBisection.right_congr` for `splitVRight`.** -/
 theorem splitVRight_congr {n n' : ℕ} (hn : VX n = VX n') :
     VX (splitVRight n) = VX (splitVRight n') := by
   rw [splitVRight_eq_of_congr hn]
 
-/-- **`myFirstBit` never overshoots its bound.** -/
 theorem myFirstBit_le (m N : ℕ) : myFirstBit m N ≤ N := by
   rcases myFirstBit_spec m N with ⟨h, -, -⟩ | ⟨h, -⟩ <;> omega
 

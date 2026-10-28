@@ -9,8 +9,7 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem
 variable {α : Type*}
-/- concordance: source L1448 EXERCISE 3.16 infinite sequences of elements -/
-/-- The `i`-th *fiber* of a set `W ⊆ ℕ × α`: the tokens appearing in copy `i`. -/
+
 def fiber (W : Set (ℕ × α)) (i : ℕ) : Set α := {a | (i, a) ∈ W}
 
 @[simp] theorem mem_fiber {W : Set (ℕ × α)} {i : ℕ} {a : α} : a ∈ fiber W i ↔ (i, a) ∈ W := Iff.rfl
@@ -31,8 +30,6 @@ open NeighborhoodSystem
 variable {α : Type*}
 variable (V : NeighborhoodSystem α)
 
-/-- The `𝒟^∞`-neighbourhood pinning copy `n` to `X` and leaving all other copies at `Δ`: Scott's
-`Δ^∞ ∩ (1ⁿ0X)`, i.e. the combination with `Xₙ = X` and `Xₘ = Δ` for `m ≠ n`. -/
 def single (n : ℕ) (X : Set α) : Set (ℕ × α) :=
   {p | if p.1 = n then p.2 ∈ X else p.2 ∈ V.master}
 end
@@ -57,8 +54,6 @@ variable {α : Type*}
 variable (V : NeighborhoodSystem α)
 variable {V}
 
-/-- **Exercise 3.16 (Scott 1981, PRG-19).** The infinite iterate `𝒟^∞` over `Δ^∞ = ℕ × Δ`:
-`W ∈ 𝒟^∞` iff every fiber is a neighbourhood of `𝒟` and all but finitely many fibers equal `Δ`. -/
 def iterSys (V : NeighborhoodSystem α) : NeighborhoodSystem (ℕ × α) where
   mem W := (∀ i, V.mem (fiber W i)) ∧ ∃ N, ∀ i, N ≤ i → fiber W i = V.master
   master := {p | p.2 ∈ V.master}
@@ -90,8 +85,6 @@ theorem interUpTo_subset_master (F : ℕ → Set (ℕ × α)) (N : ℕ) :
   | zero => exact subset_rfl
   | succ n ih => rw [NeighborhoodSystem.interUpTo_succ]; exact Set.inter_subset_left.trans ih
 
-/-- The finite intersection `⋂_{i<N} single i (fiber W i)` reconstructs `W` from below, once `N`
-exceeds the cofinite-`Δ` bound of `W`. -/
 theorem reconstruct_subset {W : Set (ℕ × α)} (_hW : (iterSys V).mem W) {N : ℕ}
     (hN : ∀ i, N ≤ i → fiber W i = V.master) :
     (iterSys V).interUpTo (fun i => single V i (fiber W i)) N ⊆ W := by
@@ -120,7 +113,6 @@ theorem single_master (n : ℕ) : single V n V.master = (iterSys V).master := by
   · subst h; rw [fiber_single_self]
   · rw [fiber_single_ne h]
 
-/-- `single V n X` is a `𝒟^∞`-neighbourhood whenever `X ∈ 𝒟`. -/
 theorem single_mem {n : ℕ} {X : Set α} (hX : V.mem X) : (iterSys V).mem (single V n X) := by
   refine ⟨fun i => ?_, n + 1, fun i hi => ?_⟩
   · by_cases h : i = n
@@ -135,7 +127,6 @@ theorem single_mono {n : ℕ} {X X' : Set α} (h : X ⊆ X') : single V n X ⊆ 
   · rw [ite_eq_left hc] at hp ⊢; exact h hp
   · rw [ite_eq_right hc] at hp ⊢; exact hp
 
-/-- The `n`-th component `xₙ ∈ |𝒟|` of a `𝒟^∞`-element `z` (Scott's coordinate at copy `n`). -/
 def component (z : (iterSys V).Element) (n : ℕ) : V.Element where
   mem X := V.mem X ∧ z.mem (single V n X)
   sub h := h.1
@@ -153,8 +144,6 @@ def component (z : (iterSys V).Element) (n : ℕ) : V.Element where
 @[simp] theorem mem_component {z : (iterSys V).Element} {n : ℕ} {X : Set α} :
     (component z n).mem X ↔ V.mem X ∧ z.mem (single V n X) := Iff.rfl
 
-/-- The `𝒟^∞`-element determined by an infinite sequence `⟨xₙ⟩` of `𝒟`-elements: the neighbourhoods
-`W` whose every fiber lies in the corresponding `xᵢ`. -/
 def ofSeq (seq : ℕ → V.Element) : (iterSys V).Element where
   mem W := (iterSys V).mem W ∧ ∀ i, (seq i).mem (fiber W i)
   sub h := h.1
@@ -195,7 +184,6 @@ theorem ofSeq_mono {seq seq' : ℕ → V.Element} (h : ∀ n, seq n ≤ seq' n) 
   rintro W ⟨hW, hf⟩
   exact ⟨hW, fun i => h i _ (hf i)⟩
 
-/-- Every `𝒟^∞`-neighbourhood is contained in the pinning of its own `i`-th fiber. -/
 theorem subset_single {W : Set (ℕ × α)} (hW : (iterSys V).mem W) (i : ℕ) :
     W ⊆ single V i (fiber W i) := by
   rintro ⟨j, a⟩ ha
@@ -217,14 +205,11 @@ theorem subset_single {W : Set (ℕ × α)} (hW : (iterSys V).mem W) (i : ℕ) :
     refine ⟨z.sub hzW, fun i => ?_⟩
     exact ⟨(z.sub hzW).1 i, z.up_mem hzW (single_mem ((z.sub hzW).1 i)) (subset_single (z.sub hzW) i)⟩
 
-/-- `z ⊑ z'` is detected component-wise. -/
 theorem le_of_component_le {z z' : (iterSys V).Element}
     (h : ∀ n, component z n ≤ component z' n) : z ≤ z' := by
   have hmono := ofSeq_mono h
   rwa [ofSeq_component, ofSeq_component] at hmono
 
-/-- **Exercise 3.16 (Scott 1981, PRG-19).** The elements of `|𝒟^∞|` are in one-one,
-order-preserving correspondence with infinite sequences `⟨xₙ⟩` of elements of `|𝒟|`. -/
 def iterSeqEquiv (V : NeighborhoodSystem α) : (iterSys V).Element ≃o (∀ _ : ℕ, V.Element) where
   toFun z := fun n => component z n
   invFun seq := ofSeq seq
@@ -238,7 +223,6 @@ def iterSeqEquiv (V : NeighborhoodSystem α) : (iterSys V).Element ≃o (∀ _ :
     · intro h n X hX
       exact ⟨hX.1, h (single V n X) hX.2⟩
 
-/-- The shift order-isomorphism `(ℕ → E) ≃o E × (ℕ → E)`, `f ↦ (f 0, f ∘ succ)`. -/
 def natShiftEquiv (E : Type*) [Preorder E] : (ℕ → E) ≃o E × (ℕ → E) where
   toFun f := (f 0, fun n => f (n + 1))
   invFun p := fun n => Nat.casesOn n p.1 (fun m => p.2 m)
@@ -255,8 +239,6 @@ def natShiftEquiv (E : Type*) [Preorder E] : (ℕ → E) ≃o E × (ℕ → E) w
     · intro h
       exact ⟨h 0, fun m => h (m + 1)⟩
 
-/-- **Exercise 3.16 (Scott 1981, PRG-19).** The isomorphism `|𝒟^∞| ≃o |𝒟 × 𝒟^∞|`, obtained from the
-sequence correspondence and the shift. -/
 def iterProdIso (V : NeighborhoodSystem α) :
     (iterSys V).Element ≃o (prod V (iterSys V)).Element :=
   (iterSeqEquiv V).trans <|
@@ -272,7 +254,6 @@ variable (V : NeighborhoodSystem α)
 variable {V}
 open ApproximableMap
 
-/-- The `n`-th coordinate projection `projN n : 𝒟^∞ → 𝒟`, `W (projN n) X ↔ fiber W n ⊆ X`. -/
 def projN (V : NeighborhoodSystem α) (n : ℕ) : ApproximableMap (iterSys V) V where
   rel W X := (iterSys V).mem W ∧ V.mem X ∧ fiber W n ⊆ X
   rel_dom h := h.1
@@ -296,12 +277,9 @@ theorem subset_of_fiber_subset {W W' : Set (ℕ × α)} (h : ∀ i, fiber W i �
 
 variable (V : NeighborhoodSystem α)
 
-
 variable {V}
 
-
 open ApproximableMap
-
 
 @[simp] theorem projN_rel {n : ℕ} {W : Set (ℕ × α)} {X : Set α} :
     (projN V n).rel W X ↔ (iterSys V).mem W ∧ V.mem X ∧ fiber W n ⊆ X := Iff.rfl
@@ -327,7 +305,6 @@ variable {α : Type*}
 variable (V : NeighborhoodSystem α)
 variable {V}
 
-/-- **Exercise 3.16 (Scott 1981, PRG-19).** `𝒟^∞ ≅ 𝒟 × 𝒟^∞`. -/
 theorem iter_isomorphic (V : NeighborhoodSystem α) : iterSys V ≅ᴰ prod V (iterSys V) :=
   ⟨iterProdIso V⟩
 end

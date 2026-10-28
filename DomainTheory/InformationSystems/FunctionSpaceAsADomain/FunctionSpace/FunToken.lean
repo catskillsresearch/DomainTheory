@@ -16,7 +16,6 @@ universe u v
 
 variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
 
-/-- Token type of the function space `A → B` (Scott 7.1(i)). -/
 def FunToken (A : InfoSys α) (B : InfoSys β) : Type _ :=
   {p : Finset α × Finset β // p.1 ∈ A.Con ∧ p.2 ∈ B.Con}
 

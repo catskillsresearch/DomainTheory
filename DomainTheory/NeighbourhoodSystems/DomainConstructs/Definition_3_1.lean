@@ -10,8 +10,6 @@ section
 open NeighborhoodSystem
 variable {α β γ δ : Type*}
 
-/-- The product neighbourhood `X ∪ Y` over the disjoint union `Δ₀ ∪ Δ₁`, modelled on `α ⊕ β` as
-`Sum.inl '' X ∪ Sum.inr '' Y`. -/
 def prodNbhd (X : Set α) (Y : Set β) : Set (α ⊕ β) := Sum.inl '' X ∪ Sum.inr '' Y
 
 @[simp] theorem mem_prodNbhd_inl {X : Set α} {Y : Set β} {a : α} :
@@ -28,19 +26,16 @@ def prodNbhd (X : Set α) (Y : Set β) : Set (α ⊕ β) := Sum.inl '' X ∪ Sum
 @[simp] theorem inr_preimage_prodNbhd (X : Set α) (Y : Set β) :
     Sum.inr ⁻¹' prodNbhd X Y = Y := by ext b; simp
 
-/-- The representation `X ∪ Y` is unique (choice-free, via the preimage projections). -/
 theorem prodNbhd_injective {X X' : Set α} {Y Y' : Set β}
     (h : prodNbhd X Y = prodNbhd X' Y') : X = X' ∧ Y = Y' := by
   refine ⟨?_, ?_⟩
   · rw [← inl_preimage_prodNbhd X Y, ← inl_preimage_prodNbhd X' Y', h]
   · rw [← inr_preimage_prodNbhd X Y, ← inr_preimage_prodNbhd X' Y', h]
 
-/-- Scott's (2): the product nbhds intersect componentwise. -/
 theorem prodNbhd_inter (X X' : Set α) (Y Y' : Set β) :
     prodNbhd X Y ∩ prodNbhd X' Y' = prodNbhd (X ∩ X') (Y ∩ Y') := by
   ext (a | b) <;> simp [Set.mem_inter_iff]
 
-/-- Scott's (1): inclusion of product nbhds is componentwise (uses disjointness of `Δ₀`, `Δ₁`). -/
 theorem prodNbhd_subset_iff {X X' : Set α} {Y Y' : Set β} :
     prodNbhd X Y ⊆ prodNbhd X' Y' ↔ X ⊆ X' ∧ Y ⊆ Y' := by
   constructor
@@ -54,11 +49,6 @@ theorem prodNbhd_subset_iff {X X' : Set α} {Y Y' : Set β} :
     · simp only [mem_prodNbhd_inl] at hs ⊢; exact hX hs
     · simp only [mem_prodNbhd_inr] at hs ⊢; exact hY hs
 
-/- concordance: source L944 DEFINITION 3.1 product of systems -/
-/-- **Definition 3.1 (Scott 1981, PRG-19).** The *product system* `𝒟₀ × 𝒟₁`: neighbourhoods are
-`X ∪ Y` with `X ∈ 𝒟₀`, `Y ∈ 𝒟₁`. Closure under consistent intersection is Scott's (2)
-(`prodNbhd_inter`) together with the factors' closure; the consistency witness `Z ⊆ (X∪Y) ∩ (X'∪Y')`
-splits into witnesses `Z₀ ⊆ X ∩ X'`, `Z₁ ⊆ Y ∩ Y'` by `prodNbhd_subset_iff`. -/
 def prod (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) : NeighborhoodSystem (α ⊕ β) where
   mem W := ∃ X Y, V₀.mem X ∧ V₁.mem Y ∧ W = prodNbhd X Y
   master := prodNbhd V₀.master V₁.master
@@ -97,13 +87,11 @@ theorem prod_mem_prodNbhd_iff {X : Set α} {Y : Set β} :
     exact ⟨hA, hB⟩
   · rintro ⟨hX, hY⟩; exact prod_mem_prodNbhd hX hY
 
-/-- Every product neighbourhood is `(inl⁻¹ W) ∪ (inr⁻¹ W)`. -/
 theorem prodNbhd_preimage {W : Set (α ⊕ β)} (hW : (prod V₀ V₁).mem W) :
     W = prodNbhd (Sum.inl ⁻¹' W) (Sum.inr ⁻¹' W) := by
   obtain ⟨X, Y, _, _, rfl⟩ := hW
   rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
 
-/-- Scott's `z₀ = {X ∈ 𝒟₀ ∣ X ∪ Δ₁ ∈ z}`: the first component of a product element. -/
 def NeighborhoodSystem.Element.fst (z : (prod V₀ V₁).Element) : V₀.Element where
   mem X := V₀.mem X ∧ z.mem (prodNbhd X V₁.master)
   sub h := h.1
@@ -123,7 +111,6 @@ def NeighborhoodSystem.Element.fst (z : (prod V₀ V₁).Element) : V₀.Element
 @[simp] theorem mem_fst {z : (prod V₀ V₁).Element} {X : Set α} :
     z.fst.mem X ↔ V₀.mem X ∧ z.mem (prodNbhd X V₁.master) := Iff.rfl
 
-/-- Scott's `z₁ = {Y ∈ 𝒟₁ ∣ Δ₀ ∪ Y ∈ z}`: the second component of a product element. -/
 def NeighborhoodSystem.Element.snd (z : (prod V₀ V₁).Element) : V₁.Element where
   mem Y := V₁.mem Y ∧ z.mem (prodNbhd V₀.master Y)
   sub h := h.1
@@ -143,7 +130,6 @@ def NeighborhoodSystem.Element.snd (z : (prod V₀ V₁).Element) : V₁.Element
 @[simp] theorem mem_snd {z : (prod V₀ V₁).Element} {Y : Set β} :
     z.snd.mem Y ↔ V₁.mem Y ∧ z.mem (prodNbhd V₀.master Y) := Iff.rfl
 
-/-- **Definition 3.1 (Scott 1981, PRG-19).** The element pairing `⟨x, y⟩ = {X ∪ Y ∣ X ∈ x, Y ∈ y}`. -/
 def pair (x : V₀.Element) (y : V₁.Element) : (prod V₀ V₁).Element where
   mem W := ∃ X Y, x.mem X ∧ y.mem Y ∧ W = prodNbhd X Y
   sub := by rintro W ⟨X, Y, hX, hY, rfl⟩; exact prod_mem_prodNbhd (x.sub hX) (y.sub hY)
@@ -176,8 +162,6 @@ theorem mem_pair_prodNbhd {x : V₀.Element} {y : V₁.Element} {X : Set α} {Y 
   · intro hX
     exact ⟨x.sub hX, mem_pair_prodNbhd.mpr ⟨hX, y.master_mem⟩⟩
 
-/-- The key splitting (Scott's (3)): for a product element `z` and neighbourhoods `X ∈ 𝒟₀`,
-`Y ∈ 𝒟₁`, membership of `X ∪ Y` in `z` is equivalent to membership of its two "slices". -/
 theorem prod_mem_split {z : (prod V₀ V₁).Element} {X : Set α} {Y : Set β}
     (hX : V₀.mem X) (hY : V₁.mem Y) :
     z.mem (prodNbhd X Y) ↔ z.mem (prodNbhd X V₁.master) ∧ z.mem (prodNbhd V₀.master Y) := by
@@ -192,7 +176,6 @@ theorem prod_mem_split {z : (prod V₀ V₁).Element} {X : Set α} {Y : Set β}
     rwa [prodNbhd_inter, Set.inter_eq_left.mpr (V₀.sub_master hX),
       Set.inter_eq_right.mpr (V₁.sub_master hY)] at this
 
-/-- `z = ⟨z₀, z₁⟩`: every product element is the pairing of its two components. -/
 theorem pair_fst_snd (z : (prod V₀ V₁).Element) : pair z.fst z.snd = z := by
   apply Element.ext
   intro W

@@ -9,13 +9,12 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise425
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 section
-/-- Shifting a set up by one length: `shift X = {m + 1 ∣ m ∈ X}` (the token action of prepending a
-`1`). -/
+
 def shift (X : Set ℕ) : Set ℕ := {k | ∃ m ∈ X, k = m + 1}
 end
 
 section
-/-- The tail `tail n = {1ᵐ ∣ m ≥ n} = {m ∣ n ≤ m}` (the partial information "at least `n` ones"). -/
+
 def tail (n : ℕ) : Set ℕ := {m | n ≤ m}
 end
 
@@ -24,7 +23,7 @@ section
 end
 
 section
-/-- Membership in `C₁`: a neighbourhood is a tail `tail n` or a singleton `{n}`. -/
+
 def memC1 (X : Set ℕ) : Prop := (∃ n, X = tail n) ∨ (∃ n, X = {n})
 end
 
@@ -42,7 +41,7 @@ theorem shift_mono {X X' : Set ℕ} (h : X' ⊆ X) : shift X' ⊆ shift X := by
 end
 
 section
-/-- `1·{1ⁿ} = {1ⁿ⁺¹}`: shifting a singleton. -/
+
 theorem shift_singleton (n : ℕ) : shift ({n} : Set ℕ) = {n + 1} := by
   ext k
   simp only [shift, Set.mem_singleton_iff, Set.mem_ofPred_eq]
@@ -52,7 +51,7 @@ theorem shift_singleton (n : ℕ) : shift ({n} : Set ℕ) = {n + 1} := by
 end
 
 section
-/-- `1·(1ⁿ⊥) = 1ⁿ⁺¹⊥`: shifting a tail. -/
+
 theorem shift_tail (n : ℕ) : shift (tail n) = tail (n + 1) := by
   ext k
   simp only [shift, tail, Set.mem_ofPred_eq]
@@ -62,7 +61,7 @@ theorem shift_tail (n : ℕ) : shift (tail n) = tail (n + 1) := by
 end
 
 section
-/-- Shifting keeps us inside `C₁` (`shift (tail n) = tail (n+1)`, `shift {n} = {n+1}`). -/
+
 theorem memC1_shift {X : Set ℕ} (hX : memC1 X) : memC1 (shift X) := by
   rcases hX with ⟨n, rfl⟩ | ⟨n, rfl⟩
   · exact Or.inl ⟨n + 1, shift_tail n⟩
@@ -70,7 +69,7 @@ theorem memC1_shift {X : Set ℕ} (hX : memC1 X) : memC1 (shift X) := by
 end
 
 section
-/-- A singleton and a tail are nested or disjoint. -/
+
 theorem singleton_tail_nd (n k : ℕ) :
     ({k} : Set ℕ) ⊆ tail n ∨ tail n ⊆ {k} ∨ ({k} : Set ℕ) ∩ tail n = ∅ := by
   by_cases h : n ≤ k
@@ -83,7 +82,7 @@ theorem singleton_tail_nd (n k : ℕ) :
 end
 
 section
-/-- Any two neighbourhoods of `C₁` are nested or disjoint. -/
+
 theorem nestedOrDisjoint : NestedOrDisjoint memC1 := by
   rintro X Y (⟨n, rfl⟩ | ⟨n, rfl⟩) (⟨m, rfl⟩ | ⟨m, rfl⟩)
   · rcases le_total n m with h | h
@@ -120,8 +119,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems.Exercise425
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 section
-/- concordance: source L2377 EXERCISE 4.25 unary sequence domain -/
-/-- **Exercise 4.25 (Scott 1981, PRG-19).** The unary sequence system `C₁` on `Δ = {1}* ≅ ℕ`. -/
+
 def C1 : NeighborhoodSystem ℕ :=
   NeighborhoodSystem.ofNestedOrDisjoint memC1 Set.univ Set.univ_nonempty
     memC1_univ nestedOrDisjoint
@@ -137,8 +135,7 @@ section
 end
 
 section
-/-- **Exercise 4.25 — the successor `x ↦ 1x`** (analogous to the two successors of `C`). The
-approximable map prepending a `1`, i.e. shifting the length: `X (1x) Y ↔ shift X ⊆ Y`. -/
+
 def consMap : ApproximableMap C1 C1 where
   rel X Y := memC1 X ∧ memC1 Y ∧ shift X ⊆ Y
   rel_dom h := h.1
@@ -154,32 +151,27 @@ def consMap : ApproximableMap C1 C1 where
 end
 
 section
-/-- **Exercise 4.25 — the infinite unary sequence `1^∞`.** Unlike the flat domain `N` (whose only
-elements are `⊥` and the numerals `n̂`), `C₁` has a genuine *infinite* element: the least fixed point
-of the successor `x ↦ 1x`, satisfying `1^∞ = 1·1^∞` (`infElt_eq`). This is what distinguishes the
-*non-flat* `C₁` (the true analogue of `C`) from `N`. -/
+
 def infElt : C1.Element := consMap.fixElement
 end
 
 section
-/-- The partial element `1ⁿ⊥ = ↑(tail n)` ("at least `n` ones"). -/
+
 def oneBot (n : ℕ) : C1.Element := C1.principal (memC1_tail n)
 end
 
 section
-/-- The total element `1ⁿ = ↑{n}` (the finite string of exactly `n` ones). -/
+
 def oneElem (n : ℕ) : C1.Element := C1.principal (memC1_singleton n)
 end
 
 section
-/-- **Exercise 4.25 — relating `N` and `C₁`.** The "length ↦ unary expansion" map `N → C₁` sending
-the numeral `n̂` to the finite string `1ⁿ` and `⊥` to `⊥` (strict). Built from the strict-lift
-combinator `constLiftN` of Example 4.3. -/
+
 def relateNToC1 : ApproximableMap Example43.N C1 := Example43.constLiftN C1 oneElem
 end
 
 section
-/-- `1·(1ⁿ⊥) = 1ⁿ⁺¹⊥`. -/
+
 theorem consMap_oneBot (n : ℕ) : consMap.toElementMap (oneBot n) = oneBot (n + 1) := by
   apply Element.ext
   intro Y
@@ -194,7 +186,7 @@ theorem consMap_oneBot (n : ℕ) : consMap.toElementMap (oneBot n) = oneBot (n +
 end
 
 section
-/-- `1·(1ⁿ) = 1ⁿ⁺¹`. -/
+
 theorem consMap_oneElem (n : ℕ) : consMap.toElementMap (oneElem n) = oneElem (n + 1) := by
   apply Element.ext
   intro Y
@@ -209,13 +201,13 @@ theorem consMap_oneElem (n : ℕ) : consMap.toElementMap (oneElem n) = oneElem (
 end
 
 section
-/-- `1^∞ = 1·1^∞`: the infinite sequence is fixed by the successor. -/
+
 theorem infElt_eq : consMap.toElementMap infElt = infElt :=
   toElementMap_fixElement consMap
 end
 
 section
-/-- `relateNToC1(⊥) = ⊥`. -/
+
 theorem relateNToC1_bot : relateNToC1.toElementMap Example43.N.bot = C1.bot :=
   Example43.constLiftN_bot C1 oneElem
 end
@@ -232,7 +224,7 @@ theorem example_425 : @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 end
 
 section
-/-- `relateNToC1(n̂) = 1ⁿ`. -/
+
 theorem relateNToC1_natElem (n : ℕ) :
     relateNToC1.toElementMap (Example43.natElem n) = oneElem n :=
   Example43.constLiftN_natElem C1 oneElem n
@@ -246,16 +238,11 @@ open ApproximableMap
 section
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- **Theorem 4.2(i) (Scott 1981, PRG-19).** `fix(f) = f(fix(f))`: the value of `fix` is a fixed
-point of the argument. (Equivalently `eval(f, fix(f)) = fix(f)` by `evalMap_apply`.) -/
 theorem fixMap_fixed (V : NeighborhoodSystem α) (φ : (funSpace V V).Element) :
     (toApproxMap φ).toElementMap ((fixMap V).toElementMap φ) = (fixMap V).toElementMap φ := by
   rw [fixMap_toElementMap]
   exact toElementMap_fixElement (toApproxMap φ)
 
-/-- **Theorem 4.2 (Scott 1981, PRG-19) — uniqueness.** Any approximable operator `fax` satisfying
-(i) and (ii) coincides with `fix`. (Scott: from (i)(ii) one proves `fix(f) ⊆ fax(f)` and
-`fax(f) ⊆ fix(f)`.) -/
 theorem fixMap_unique (V : NeighborhoodSystem α) (fax : ApproximableMap (funSpace V V) V)
     (h_fix : ∀ φ, (toApproxMap φ).toElementMap (fax.toElementMap φ) = fax.toElementMap φ)
     (h_least : ∀ (φ : (funSpace V V).Element) (z : V.Element),
@@ -271,4 +258,3 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 end
-

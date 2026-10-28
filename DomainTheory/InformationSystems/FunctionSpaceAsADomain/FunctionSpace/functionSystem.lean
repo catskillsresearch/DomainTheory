@@ -35,7 +35,6 @@ variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 universe u v
 
-/-- Singletons are consistent in the function space. -/
 theorem functionSystem.con_sing (p : FunToken A B) : FunCon A B {p} := by
   intro s hs _hin
   have hsub : funOutputUnion A B s ⊆ p.val.2 := by
@@ -46,19 +45,16 @@ theorem functionSystem.con_sing (p : FunToken A B) : FunCon A B {p} := by
     exact hy'
   exact B.con_subset p.property.2 hsub
 
-/-- Downward closure of function-space consistency. -/
 theorem functionSystem.con_subset {w w' : Finset (FunToken A B)}
     (hw : FunCon A B w) (hw' : w' ⊆ w) : FunCon A B w' :=
   fun s hs hin => hw s (fun _ hq => hw' (hs hq)) hin
 
-/-- The function-space bottom is entailed by every consistent set. -/
 theorem functionSystem.ent_bot {w : Finset (FunToken A B)} (hw : FunCon A B w) :
     FunEnt A B w (funBot A B) :=
   ⟨hw, ∅, Finset.empty_subset _,
     fun q hq => False.elim (Finset.notMem_empty q hq),
     fun y hy => False.elim (Finset.notMem_empty y hy)⟩
 
-/-- Adding an entailed function-space token preserves consistency. -/
 theorem functionSystem.ent_con {w : Finset (FunToken A B)} {p : FunToken A B}
     (hEnt : FunEnt A B w p) : FunCon A B (insert p w) := by
   obtain ⟨hw, s, hs, hEntIn, hEntOut⟩ := hEnt
@@ -119,7 +115,6 @@ theorem functionSystem.ent_con {w : Finset (FunToken A B)} {p : FunToken A B}
       · exact hqW
     exact hw t ht' hin
 
-/-- Function-space entailment is reflexive on members. -/
 theorem functionSystem.ent_refl {w : Finset (FunToken A B)} {p : FunToken A B}
     (hw : FunCon A B w) (hp : p ∈ w) : FunEnt A B w p :=
   ⟨hw, {p},
@@ -133,7 +128,6 @@ theorem functionSystem.ent_refl {w : Finset (FunToken A B)} {p : FunToken A B}
       rw [funOutputUnion.singleton]
       exact proposition_2_3_iii B p.property.2⟩
 
-/-- Function-space entailment is transitive. -/
 theorem functionSystem.ent_trans {u v : Finset (FunToken A B)} {c : FunToken A B}
     (hv : FunCon A B v) (hu : FunCon A B u)
     (hEnts : ∀ y ∈ u, FunEnt A B v y) (hEnt : FunEnt A B u c) :
@@ -155,7 +149,6 @@ theorem functionSystem.ent_trans {u v : Finset (FunToken A B)} {c : FunToken A B
   have hout_S : funOutputUnion A B S ∈ B.Con := hv S hSsub hin_S
   exact proposition_2_3_iv B hout_S hout_s hSout hEntOut
 
-/-- **Definition 7.1.** The function-space information system `A → B`. -/
 def functionSystem : InfoSys (FunToken A B) where
   bot := funBot A B
   Con := {w | FunCon A B w}
@@ -168,6 +161,5 @@ def functionSystem : InfoSys (FunToken A B) where
   ent_trans := functionSystem.ent_trans A B
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

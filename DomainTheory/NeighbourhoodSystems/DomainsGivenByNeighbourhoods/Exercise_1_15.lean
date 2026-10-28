@@ -14,10 +14,8 @@ section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-/-- Neighbourhoods of the flat domain: `Δ = ℕ` together with all singletons. -/
 def flatMem (X : Set ℕ) : Prop := X = Set.univ ∨ ∃ n, X = {n}
 
-/-- `{n} ∩ {m} = ∅` for `n ≠ m`. -/
 theorem singleton_disjoint {n m : ℕ} (h : n ≠ m) : ({n} : Set ℕ) ∩ {m} = ∅ := by
   ext k
   simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false]
@@ -33,7 +31,6 @@ theorem flatNOD : NestedOrDisjoint flatMem := by
     · exact Or.inl (subset_refl _)
     · exact Or.inr (Or.inr (singleton_disjoint h))
 
-/-- **Exercise 1.15 — the flat domain.** `𝒟 = {ℕ} ∪ {{n}}`. -/
 def flat : NeighborhoodSystem ℕ :=
   ofNestedOrDisjoint flatMem Set.univ Set.univ_nonempty
     (Or.inl rfl) flatNOD (fun _ => Set.subset_univ _)
@@ -42,7 +39,6 @@ def flat : NeighborhoodSystem ℕ :=
 
 @[simp] theorem flat_master : flat.master = Set.univ := rfl
 
-/-- Neighbourhoods of the stem domain: `Δ = ℕ`, the pair `{0,1}`, and all singletons. -/
 def stemMem (X : Set ℕ) : Prop := X = Set.univ ∨ X = {0, 1} ∨ ∃ n, X = {n}
 
 theorem stemNOD : NestedOrDisjoint stemMem := by
@@ -73,7 +69,6 @@ theorem stemNOD : NestedOrDisjoint stemMem := by
     · exact Or.inl (subset_refl _)
     · exact Or.inr (Or.inr (singleton_disjoint h))
 
-/-- **Exercise 1.15 — the stem domain.** `𝒟 = {ℕ, {0,1}} ∪ {{n}}`. -/
 def stem : NeighborhoodSystem ℕ :=
   ofNestedOrDisjoint stemMem Set.univ Set.univ_nonempty
     (Or.inl rfl) stemNOD (fun _ => Set.subset_univ _)
@@ -86,10 +81,8 @@ theorem flat_empty_not_mem : ¬ flat.mem (∅ : Set ℕ) := by
   · exact Set.empty_ne_univ h
   · exact absurd h.symm (Set.singleton_ne_empty n)
 
-/-- The atom `↑{n}` (a finite element). -/
 theorem flat_mem_singleton (n : ℕ) : flat.mem {n} := Or.inr ⟨n, rfl⟩
 
-/-- **Flat classification.** Every element is `⊥` or an atom `↑{n}`. *Classical.* -/
 theorem flat_classify (x : flat.Element) :
     x = flat.bot ∨ ∃ n, x = flat.principal (flat_mem_singleton n) := by
   classical
@@ -124,13 +117,11 @@ theorem flat_classify (x : flat.Element) :
     · rintro rfl
       exact x.master_mem
 
-/-- **All elements of `flat` are finite** (principal). -/
 theorem flat_all_finite (x : flat.Element) : ∃ (X : Set ℕ) (h : flat.mem X), x = flat.principal h := by
   rcases flat_classify x with rfl | ⟨n, rfl⟩
   · exact ⟨flat.master, flat.master_mem, rfl⟩
   · exact ⟨{n}, flat_mem_singleton n, rfl⟩
 
-/-- **Flat: every atom is maximal (total).** -/
 theorem flat_atom_maximal (n : ℕ) (y : flat.Element)
     (hle : flat.principal (flat_mem_singleton n) ≤ y) :
     y = flat.principal (flat_mem_singleton n) := by
@@ -145,20 +136,17 @@ theorem flat_atom_maximal (n : ℕ) (y : flat.Element)
     obtain rfl : m = n := Set.mem_singleton_iff.mp (Set.singleton_subset_iff.mp hsub)
     rfl
 
-/-- `flat` is infinite: the atoms `↑{n}` are pairwise distinct. -/
 theorem flat_infinite : Function.Injective (fun n => flat.principal (flat_mem_singleton n)) := by
   intro n m h
   have := flat.principal_injective (flat_mem_singleton n) (flat_mem_singleton m) h
   exact Set.singleton_injective this
 
-/-- **Flat has no strict 3-chain** (`a ⊏ b ⊏ c` is impossible): `⊥` is least and atoms are maximal. -/
 theorem flat_no_three_chain : ¬ ∃ a b c : flat.Element, a < b ∧ b < c := by
   rintro ⟨a, b, c, hab, hbc⟩
   rcases flat_classify b with rfl | ⟨n, rfl⟩
   · exact absurd (le_antisymm hab.le (flat.bot_le a)) (ne_of_lt hab)
   · exact (ne_of_lt hbc) (flat_atom_maximal n c hbc.le).symm
 
-/-- **Flat has no infinite ascending chain.** -/
 theorem flat_no_infinite_chain : ¬ ∃ f : ℕ → flat.Element, StrictMono f := by
   rintro ⟨f, hf⟩
   exact flat_no_three_chain
@@ -170,7 +158,6 @@ theorem stem_mem_univ : stem.mem Set.univ := Or.inl rfl
 
 theorem stem_mem_zero : stem.mem {0} := Or.inr (Or.inr ⟨0, rfl⟩)
 
-/-- A strict step between principal filters of `stem`: `Y ⊊ X` (proper) gives `↑X ⊏ ↑Y`. -/
 theorem stem_principal_lt {X Y : Set ℕ} (hX : stem.mem X) (hY : stem.mem Y)
     (hYX : Y ⊆ X) (hne : X ≠ Y) : stem.principal hX < stem.principal hY := by
   rw [lt_iff_le_and_ne]
@@ -178,8 +165,6 @@ theorem stem_principal_lt {X Y : Set ℕ} (hX : stem.mem X) (hY : stem.mem Y)
   intro he
   exact hne (stem.principal_injective hX hY he)
 
-/-- **Stem contains a strict 3-chain** `⊥ = ↑ℕ ⊏ ↑{0,1} ⊏ ↑{0}` — the structural feature that
-distinguishes it from `flat`. -/
 theorem stem_three_chain : ∃ a b c : stem.Element, a < b ∧ b < c := by
   refine ⟨stem.principal stem_mem_univ, stem.principal stem_mem_pair,
     stem.principal stem_mem_zero, ?_, ?_⟩
@@ -201,9 +186,6 @@ section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-/- concordance: source L458 EXERCISE 1.15 finite elements without chains -/
-/-- **Exercise 1.15.** `flat` and `stem` are *not* isomorphic: an order-isomorphism would transport
-`stem`'s strict 3-chain `⊥ ⊏ ↑{0,1} ⊏ ↑{0}` back to a strict 3-chain in `flat`, which has none. -/
 theorem not_isomorphic : ¬ (flat ≅ᴰ stem) := by
   rintro ⟨e⟩
   obtain ⟨a, b, c, hab, hbc⟩ := stem_three_chain

@@ -15,7 +15,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Reachability of `v` from `∅` by a finite `w`-chain. -/
 def FixReach (w : Finset (FunToken A A)) (v : Finset α) : Prop :=
   ∃ n, FixChain A w n v
 

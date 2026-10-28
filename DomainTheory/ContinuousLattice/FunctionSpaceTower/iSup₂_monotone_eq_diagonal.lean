@@ -6,7 +6,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm
 
 namespace DomainTheory.ContinuousLattice
 
-
 attribute [instance] CLat.str
 
 section LimitMaps
@@ -19,7 +18,6 @@ section Thm44b
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-/-- A monotone double `iSup` over `ℕ × ℕ` equals the diagonal `iSup`. -/
 theorem iSup₂_monotone_eq_diagonal {α : Type*} [CompleteLattice α] (f : ℕ → ℕ → α)
     (hfm : ∀ n, Monotone (f n)) (hfn : ∀ m, Monotone (fun n => f n m)) :
     ⨆ n, ⨆ m, f n m = ⨆ n, f n n := by

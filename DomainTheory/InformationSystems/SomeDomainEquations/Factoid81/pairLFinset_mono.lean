@@ -17,7 +17,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
 
 theorem pairLFinset_mono {u v : Finset (TreeToken α)} (h : v ⊆ u) :

@@ -4,17 +4,14 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2
 public import Mathlib.Data.Set.Operations
 @[expose] public section
 
-
 section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap
 variable {α β : Type*}
 
-/-- Left tag `0a = some (inl a)`. -/
 def il (a : α) : Option (α ⊕ β) := some (Sum.inl a)
 
-/-- The tagged left copy `0X = {some (inl a) ∣ a ∈ X}`. -/
 def inj₀ (X : Set α) : Set (Option (α ⊕ β)) := il '' X
 
 @[simp] theorem il_mem_inj₀ {X : Set α} {a : α} : (il a : Option (α ⊕ β)) ∈ inj₀ X ↔ a ∈ X := by
@@ -23,10 +20,8 @@ def inj₀ (X : Set α) : Set (Option (α ⊕ β)) := il '' X
   · rintro ⟨a', ha', hb⟩; simp only [Option.some.injEq, Sum.inl.injEq] at hb; exact hb ▸ ha'
   · intro ha; exact ⟨a, ha, rfl⟩
 
-/-- Right tag `1b = some (inr b)`. -/
 def ir (b : β) : Option (α ⊕ β) := some (Sum.inr b)
 
-/-- The tagged right copy `1Y = {some (inr b) ∣ b ∈ Y}`. -/
 def inj₁ (Y : Set β) : Set (Option (α ⊕ β)) := ir '' Y
 
 @[simp] theorem ir_mem_inj₀ {X : Set α} {b : β} : (ir b : Option (α ⊕ β)) ∉ inj₀ X := by
@@ -96,7 +91,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*}
 variable (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
 
-/-- The master neighbourhood of the sum: `{Λ} ∪ 0Δ₀ ∪ 1Δ₁`. -/
 def sumMaster : Set (Option (α ⊕ β)) := insert none (inj₀ V₀.master ∪ inj₁ V₁.master)
 end
 
@@ -135,10 +129,6 @@ theorem ir_injective : Function.Injective (ir : β → Option (α ⊕ β)) := by
     ((ir : β → Option (α ⊕ β)) ⁻¹' inj₁ Y) = Y :=
   Set.preimage_image_eq Y ir_injective
 
-/-- The left content `leftPart W ⊆ Δ₀` of a sum-neighbourhood `W`: the `0`-tagged tokens of `W`,
-*plus* all of `Δ₀` whenever `W` reaches into the right copy or the basepoint (so non-left
-neighbourhoods contribute only `Δ₀`, i.e. project to `⊥`). This is a genuine (choice-free) function
-of `W`. -/
 def leftPart (V₀ : NeighborhoodSystem α) (W : Set (Option (α ⊕ β))) : Set α :=
   il ⁻¹' W ∪ {a | a ∈ V₀.master ∧ ((∃ b : β, ir b ∈ W) ∨ (none : Option (α ⊕ β)) ∈ W)}
 
@@ -146,7 +136,6 @@ def leftPart (V₀ : NeighborhoodSystem α) (W : Set (Option (α ⊕ β))) : Set
     a ∈ leftPart V₀ W ↔ il a ∈ W ∨ (a ∈ V₀.master ∧ ((∃ b : β, ir b ∈ W) ∨ none ∈ W)) := by
   simp only [leftPart, Set.mem_union, Set.mem_preimage, Set.mem_ofPred_eq]
 
-/-- The right content `rightPart W ⊆ Δ₁`, symmetric to `leftPart`. -/
 def rightPart (V₁ : NeighborhoodSystem β) (W : Set (Option (α ⊕ β))) : Set β :=
   ir ⁻¹' W ∪ {b | b ∈ V₁.master ∧ ((∃ a : α, il a ∈ W) ∨ (none : Option (α ⊕ β)) ∈ W)}
 
@@ -234,9 +223,6 @@ theorem sumMaster_inter_inj₁ {Y : Set β} (hY : V₁.mem Y) :
     (sumMaster V₀ V₁ ∩ inj₁ Y : Set (Option (α ⊕ β))) = inj₁ Y :=
   Set.inter_eq_right.mpr (inj₁_subset_sumMaster hY)
 
-/- concordance: source L1495 EXERCISE 3.18 separated sum -/
-/-- **Exercise 3.18 (Scott 1981, PRG-19).** The *sum system* `𝒟₀ + 𝒟₁` over `{Λ} ∪ 0Δ₀ ∪ 1Δ₁`,
-under the standing assumption that no neighbourhood of `𝒟₀` or `𝒟₁` is empty. -/
 def sum (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty) :
     NeighborhoodSystem (Option (α ⊕ β)) where
@@ -250,7 +236,7 @@ def sum (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     · exact inj₀_subset_sumMaster hX
     · exact inj₁_subset_sumMaster hY
   inter_mem := by
-    -- every neighbourhood is non-empty, hence so is any consistency witness `Z`
+
     have hne : ∀ W, (W = sumMaster V₀ V₁ ∨ (∃ X, V₀.mem X ∧ W = inj₀ X) ∨
         (∃ Y, V₁.mem Y ∧ W = inj₁ Y)) → (W : Set (Option (α ⊕ β))).Nonempty := by
       rintro W (rfl | ⟨X, hX, rfl⟩ | ⟨Y, hY, rfl⟩)
@@ -266,7 +252,7 @@ def sum (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     · rcases hW' with rfl | ⟨X', hX', rfl⟩ | ⟨Y', hY', rfl⟩
       · rw [Set.inter_comm, sumMaster_inter_inj₀ hX]; exact Or.inr (Or.inl ⟨X, hX, rfl⟩)
       · rw [inj₀_inter] at hZsub ⊢
-        -- witness `Z ⊆ inj₀ (X ∩ X')`; `Z` non-empty forces it to be a left copy `inj₀ Z₀`
+
         rcases hZ with rfl | ⟨Z₀, hZ₀, rfl⟩ | ⟨Z₁, hZ₁, rfl⟩
         · exact absurd (hZsub none_mem_sumMaster) none_mem_inj₀
         · refine Or.inr (Or.inl ⟨X ∩ X', V₀.inter_mem hX hX' hZ₀ (inj₀_subset_inj₀.mp hZsub), rfl⟩)
@@ -293,8 +279,6 @@ variable (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
 variable {V₀ V₁}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
-/-- **Exercise 3.18 (Scott 1981, PRG-19).** The left injection `in₀ : 𝒟₀ → 𝒟₀ + 𝒟₁`,
-`X (in₀) W ↔ 0X ⊆ W`. -/
 def inMap₀ : ApproximableMap V₀ (sum V₀ V₁ h₀ h₁) where
   rel X W := V₀.mem X ∧ (sum V₀ V₁ h₀ h₁).mem W ∧ inj₀ X ⊆ W
   rel_dom h := h.1
@@ -308,7 +292,6 @@ def inMap₀ : ApproximableMap V₀ (sum V₀ V₁ h₀ h₁) where
     rintro X X' W W' ⟨_, _, hsub⟩ hX'X hWW' hX' hW'
     exact ⟨hX', hW', (inj₀_subset_inj₀.mpr hX'X).trans (hsub.trans hWW')⟩
 
-/-- **Exercise 3.18 (Scott 1981, PRG-19).** The right injection `in₁ : 𝒟₁ → 𝒟₀ + 𝒟₁`. -/
 def inMap₁ : ApproximableMap V₁ (sum V₀ V₁ h₀ h₁) where
   rel Y W := V₁.mem Y ∧ (sum V₀ V₁ h₀ h₁).mem W ∧ inj₁ Y ⊆ W
   rel_dom h := h.1
@@ -329,8 +312,6 @@ theorem leftPart_mem {W : Set (Option (α ⊕ β))} (hW : (sum V₀ V₁ h₀ h�
   · rw [leftPart_inj₀]; exact hX
   · rw [leftPart_inj₁ V₀ (h₁ Y hY)]; exact V₀.master_mem
 
-/-- **Exercise 3.18 (Scott 1981, PRG-19).** The left projection `out₀ : 𝒟₀ + 𝒟₁ → 𝒟₀`,
-`W (out₀) X ↔ leftPart W ⊆ X` (right/basepoint neighbourhoods relate only to `Δ₀`). -/
 def outMap₀ : ApproximableMap (sum V₀ V₁ h₀ h₁) V₀ where
   rel W X := (sum V₀ V₁ h₀ h₁).mem W ∧ V₀.mem X ∧ leftPart V₀ W ⊆ X
   rel_dom h := h.1
@@ -351,7 +332,6 @@ theorem rightPart_mem {W : Set (Option (α ⊕ β))} (hW : (sum V₀ V₁ h₀ h
   · rw [rightPart_inj₀ V₁ (h₀ X hX)]; exact V₁.master_mem
   · rw [rightPart_inj₁]; exact hY
 
-/-- **Exercise 3.18 (Scott 1981, PRG-19).** The right projection `out₁ : 𝒟₀ + 𝒟₁ → 𝒟₁`. -/
 def outMap₁ : ApproximableMap (sum V₀ V₁ h₀ h₁) V₁ where
   rel W Y := (sum V₀ V₁ h₀ h₁).mem W ∧ V₁.mem Y ∧ rightPart V₁ W ⊆ Y
   rel_dom h := h.1
@@ -384,7 +364,6 @@ variable (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
 variable {V₀ V₁}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
-/-- **Exercise 3.18 (Scott 1981, PRG-19).** `out₀ ∘ in₀ = I_{𝒟₀}`. -/
 theorem outMap₀_comp_inMap₀ :
     (outMap₀ (V₀ := V₀) (V₁ := V₁) (h₀ := h₀) (h₁ := h₁)).comp inMap₀ = idMap V₀ := by
   apply ApproximableMap.ext
@@ -401,7 +380,6 @@ theorem outMap₀_comp_inMap₀ :
       Or.inr (Or.inl ⟨X, hX, rfl⟩), hZ, ?_⟩
     rw [leftPart_inj₀]; exact hXZ
 
-/-- **Exercise 3.18 (Scott 1981, PRG-19).** `out₁ ∘ in₁ = I_{𝒟₁}`. -/
 theorem outMap₁_comp_inMap₁ :
     (outMap₁ (V₀ := V₀) (V₁ := V₁) (h₀ := h₀) (h₁ := h₁)).comp inMap₁ = idMap V₁ := by
   apply ApproximableMap.ext
@@ -475,14 +453,11 @@ variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 variable {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
 
-/-- A sum-neighbourhood that *contains* the master is the master. -/
 theorem eq_sumMaster_of_subset {W : Set (Option (α ⊕ β))}
     (hW : (sum V₀ V₁ h₀ h₁).mem W) (hsub : sumMaster V₀ V₁ ⊆ W) :
     W = sumMaster V₀ V₁ :=
   Set.Subset.antisymm ((sum V₀ V₁ h₀ h₁).sub_master hW) hsub
 
-/-- A sum-neighbourhood contained in a *left* copy `0X` is itself a left copy `0X₂` (the basepoint and
-the right copy are excluded, using non-emptiness). -/
 theorem mem_subset_inj₀ {W : Set (Option (α ⊕ β))} {X : Set α}
     (hW : (sum V₀ V₁ h₀ h₁).mem W) (hsub : W ⊆ inj₀ X) :
     ∃ X₂, V₀.mem X₂ ∧ W = inj₀ X₂ := by
@@ -492,7 +467,6 @@ theorem mem_subset_inj₀ {W : Set (Option (α ⊕ β))} {X : Set α}
   · obtain ⟨b, hb⟩ := h₁ Y₂ hY₂
     exact absurd (hsub (ir_mem_inj₁.mpr hb)) ir_mem_inj₀
 
-/-- A sum-neighbourhood contained in a *right* copy `1Y` is itself a right copy `1Y₂`. -/
 theorem mem_subset_inj₁ {W : Set (Option (α ⊕ β))} {Y : Set β}
     (hW : (sum V₀ V₁ h₀ h₁).mem W) (hsub : W ⊆ inj₁ Y) :
     ∃ Y₂, V₁.mem Y₂ ∧ W = inj₁ Y₂ := by
@@ -502,13 +476,11 @@ theorem mem_subset_inj₁ {W : Set (Option (α ⊕ β))} {Y : Set β}
     exact absurd (hsub (il_mem_inj₀.mpr ha)) il_mem_inj₁
   · exact ⟨Y₂, hY₂, rfl⟩
 
-/-- A nonempty left copy is never contained in a right copy. -/
 theorem not_inj₀_subset_inj₁ {X : Set α} {Y : Set β} (hX : X.Nonempty)
     (hsub : (inj₀ X : Set (Option (α ⊕ β))) ⊆ inj₁ Y) : False := by
   obtain ⟨a, ha⟩ := hX
   exact il_mem_inj₁ (hsub (il_mem_inj₀.mpr ha))
 
-/-- A nonempty right copy is never contained in a left copy. -/
 theorem not_inj₁_subset_inj₀ {X : Set α} {Y : Set β} (hY : Y.Nonempty)
     (hsub : (inj₁ Y : Set (Option (α ⊕ β))) ⊆ inj₀ X) : False := by
   obtain ⟨b, hb⟩ := hY

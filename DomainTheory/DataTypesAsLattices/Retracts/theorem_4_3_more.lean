@@ -72,8 +72,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 4.3 (i).** On elements, `a ∘→ b` acts as `b ∘ − ∘ a`,
-and that action is idempotent when `a, b` are retracts. -/
 theorem theorem_4_3.i {a b u : Pomega} (ha : Retract a) (hb : Retract b) :
     funOf (arrowR a b) (funOf (arrowR a b) u) = funOf (arrowR a b) u := by
   rw [arrowR.app, arrowR.app]
@@ -81,8 +79,6 @@ theorem theorem_4_3.i {a b u : Pomega} (ha : Retract a) (hb : Retract b) :
   intro x
   simp [comp.app, retract_app ha, retract_app hb]
 
-/-- **Scott 1976, Theorem 4.3 (ii).** `u : a ∘→ b` means `u` is restricted
-to `a` and takes values in `b`. -/
 theorem theorem_4_3.ii {a b u x : Pomega}
     (hu : typed u (arrowR a b)) (hx : typed x a) :
     typed (funOf u x) b := by

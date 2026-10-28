@@ -20,7 +20,6 @@ namespace ApproximableMap
 
 variable {A : InfoSys α} {B : InfoSys β}
 
-/-- Approximable maps preserve directed lubs (Scott continuity on elements). -/
 theorem toElement_directedSup (f : ApproximableMap A B)
     (S : Set A.Element) (hne : S.Nonempty) (hdir : A.IsDirected S) :
     f.toElement (A.directedSup S hne hdir) =

@@ -16,12 +16,6 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β : Type*}
 
-/- concordance: source L4689 EXERCISE 7.21 distributing the power domain -/
-/-- **Exercise 7.21 — the two-variable combinator `papplyEval : ℙ(D→E) × ℙD → ℙE`.** The Smyth
-power-domain lift of evaluation (Theorem 3.11): a `ℙ(D→E)`-neighbourhood `Φ` applied to a
-`ℙD`-neighbourhood `A` covers a `ℙE`-neighbourhood `B` iff every function-neighbourhood `G ∈ Φ`
-applied to every argument-neighbourhood `X ∈ A` lands in some `Y ∈ B` (via `eval`, i.e. every
-`f ∈ G` sends `X` into `Y`). This is the two-variable analogue of Exercise 7.19's `ℙf`. -/
 def papplyEval (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
     ApproximableMap₂ (funSpace V W).PowerDomain V.PowerDomain W.PowerDomain where
   rel Φ A B := (funSpace V W).PDmem Φ ∧ V.PDmem A ∧ W.PDmem B ∧
@@ -59,20 +53,14 @@ def papplyEval (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
     (papplyEval V W).rel Φ A B ↔ (funSpace V W).PDmem Φ ∧ V.PDmem A ∧ W.PDmem B ∧
       ∀ G ∈ Φ, ∀ X ∈ A, ∃ Y ∈ B, (eval V W).rel G X Y := Iff.rfl
 
-/-- **Exercise 7.21 — the combinator as a map out of the product `ℙ(D→E) × ℙD → ℙE`.** -/
 def papplyB (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
     ApproximableMap (prod (funSpace V W).PowerDomain V.PowerDomain) W.PowerDomain :=
   ofMap₂ (papplyEval V W)
 
-/-- **Exercise 7.21 — the headline combinator `papply : ℙ(D→E) → (ℙD → ℙE)`.** Currying `papplyB`
-(Theorem 3.12) gives the combinator of *exactly* the type Scott asks for. -/
 def papply (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
     ApproximableMap (funSpace V W).PowerDomain (funSpace V.PowerDomain W.PowerDomain) :=
   curry (papplyB V W)
 
-/-- **Exercise 7.21 — `papply`'s relation at the level of `ℙ𝒟`-codes.** Over the canonical
-presentations of Proposition 7.10 (function-space presentation `Pf`, domain `P`, codomain `Q`):
-`papplyEval.rel (Y_Φc) (Y_Ac) (Y_Bc) ↔ ∀ g ∈ dl Φc, ∀ x ∈ dl Ac, ∃ y ∈ dl Bc, eval (Pf.X g)(P.X x)(Q.X y)`. -/
 theorem papplyEval_rel_Ypd_iff {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
     (Pf : ComputablePresentation (funSpace V W)) (P : ComputablePresentation V)
     (Q : ComputablePresentation W) {Φc Ac Bc : ℕ} :
@@ -97,9 +85,6 @@ theorem papplyEval_rel_Ypd_iff {V : NeighborhoodSystem α} {W : NeighborhoodSyst
     exact ⟨Q.X y, (W.mem_Ypd Q).mpr ⟨y, hy, Q.mem_X y, subset_rfl⟩,
       (eval V W).mono hrel hGsub hXsub subset_rfl hGmem hXmem (Q.mem_X y)⟩
 
-/-- **Exercise 7.21 — non-triviality.** For any neighbourhoods `X₀ ∈ D`, `Y₀ ∈ E`, the set of
-functions sending `X₀` into `Y₀` (the principal `ℙ(D→E)`-element `↓[X₀,Y₀]`), applied to the
-argument-set `↓X₀`, covers `↓Y₀`. So `papply` does genuine work (it is not the constant map). -/
 theorem papplyEval_step_witness {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
     {X₀ : Set α} {Y₀ : Set β} (hX₀ : V.mem X₀) (hY₀ : W.mem Y₀) :
     (papplyEval V W).rel ((funSpace V W).upSet (step X₀ Y₀)) (V.upSet X₀) (W.upSet Y₀) := by
@@ -113,15 +98,11 @@ theorem papplyEval_step_witness {V : NeighborhoodSystem α} {W : NeighborhoodSys
   have hfstep : f.rel X₀ Y₀ := mem_step.mp (hGsub hf)
   exact f.mono hfstep hXsub subset_rfl hXmem hY₀
 
-/-- **Three nested bounded quantifiers preserve recursive enumerability.** If `R` is r.e. (in the
-paired form `R g x y`) then so is `∀ g ∈ dl w.1, ∀ x ∈ dl w.2.1, ∃ y ∈ dl w.2.2, R g x y`. Built from
-the bounded-`∃` lemma `bExists_decodeList_re` (Exercise 7.19) and the parameterised bounded-`∀` lemma
-`REPred.forall_mem_decodeList₂`, layered with primitive-recursive re-indexings. -/
 theorem re_forallG_forallX_existsY {R : ℕ → ℕ → ℕ → Prop}
     (hR : REPred (fun s => R s.unpair.1 s.unpair.2.unpair.1 s.unpair.2.unpair.2)) :
     REPred (fun w => ∀ g ∈ decodeList w.unpair.1, ∀ x ∈ decodeList w.unpair.2.unpair.1,
       ∃ y ∈ decodeList w.unpair.2.unpair.2, R g x y) := by
-  -- reindex `⟨g,x,y⟩ = ⟨s.1.1, s.1.2, s.2⟩` ↦ `⟨g,⟨x,y⟩⟩`
+
   have hm1 : Nat.Primrec (fun s : ℕ => Nat.pair s.unpair.1.unpair.1
       (Nat.pair s.unpair.1.unpair.2 s.unpair.2)) :=
     (Nat.Primrec.left.comp Nat.Primrec.left).pair
@@ -130,10 +111,10 @@ theorem re_forallG_forallX_existsY {R : ℕ → ℕ → ℕ → Prop}
     show REPred (fun t => R t.unpair.1.unpair.1 t.unpair.1.unpair.2 t.unpair.2)
     refine REPred.of_iff (fun s => ?_) (hR.comp hm1)
     simp only [unpair_pair_fst, unpair_pair_snd]
-  -- bounded `∃ y`
+
   have hE : REPred (fun u => ∃ b ∈ decodeList u.unpair.1,
       R u.unpair.2.unpair.1 u.unpair.2.unpair.2 b) := bExists_decodeList_re hR2
-  -- bounded `∀ x` (parameters `⟨Bc, g⟩`)
+
   have hm2 : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1.unpair.1
       (Nat.pair t.unpair.1.unpair.2 t.unpair.2)) := hm1
   have hF : REPred₂ (fun param x => ∃ y ∈ decodeList param.unpair.1,
@@ -145,7 +126,7 @@ theorem re_forallG_forallX_existsY {R : ℕ → ℕ → ℕ → Prop}
   have hFfull : REPred (fun t => ∀ x ∈ decodeList t.unpair.2,
       ∃ y ∈ decodeList t.unpair.1.unpair.1, R t.unpair.1.unpair.2 x y) :=
     REPred.forall_mem_decodeList₂ hF
-  -- bounded `∀ g` (parameters `⟨Bc, Ac⟩`)
+
   have hm3 : Nat.Primrec (fun t : ℕ => Nat.pair
       (Nat.pair t.unpair.1.unpair.1 t.unpair.2) t.unpair.1.unpair.2) :=
     ((Nat.Primrec.left.comp Nat.Primrec.left).pair Nat.Primrec.right).pair
@@ -160,7 +141,7 @@ theorem re_forallG_forallX_existsY {R : ℕ → ℕ → ℕ → Prop}
       ∀ x ∈ decodeList t.unpair.1.unpair.2,
         ∃ y ∈ decodeList t.unpair.1.unpair.1, R g x y) :=
     REPred.forall_mem_decodeList₂ hG
-  -- final reindex to `w = ⟨Φc, ⟨Ac, Bc⟩⟩`
+
   have hm4 : Nat.Primrec (fun w : ℕ => Nat.pair
       (Nat.pair w.unpair.2.unpair.2 w.unpair.2.unpair.1) w.unpair.1) :=
     ((Nat.Primrec.right.comp Nat.Primrec.right).pair
@@ -168,10 +149,6 @@ theorem re_forallG_forallX_existsY {R : ℕ → ℕ → ℕ → Prop}
   refine REPred.of_iff (fun w => ?_) (hGfull.comp hm4)
   simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- **Exercise 7.21 (the computability half) — `papply` is computable when `eval` is.** Stated at the
-level of the `ℙ𝒟`-codes of Proposition 7.10: given that `eval` is recursively enumerable on codes
-(`heval` — this is Theorem 7.5's `evalMap_isComputable` transported through `funPresentation`), the
-relation `papplyEval.rel (Y_Φc)(Y_Ac)(Y_Bc)` is recursively enumerable in `⟨Φc, Ac, Bc⟩`. -/
 theorem papplyEval_isComputable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
     (Pf : ComputablePresentation (funSpace V W)) (P : ComputablePresentation V)
     (Q : ComputablePresentation W)
@@ -459,13 +436,10 @@ namespace Proposition77
 
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- Consistency bit of a packed triple. -/
 def consB (r : ℕ) : ℕ := r.unpair.2.unpair.1
 
-/-- Equality bit of a packed triple. -/
 def eqB (r : ℕ) : ℕ := r.unpair.1
 
-/-- Intersection index of a packed triple. -/
 def intI (r : ℕ) : ℕ := r.unpair.2.unpair.2
 
 end Proposition77
@@ -477,7 +451,6 @@ variable {α : Type*}
 
 namespace Proposition77
 
-/-- `a ≤ Nat.pair a b` (choice-free). -/
 theorem le_pair_left (a b : ℕ) : a ≤ Nat.pair a b := by
   unfold Nat.pair; split <;> omega
 
@@ -492,24 +465,19 @@ namespace Proposition77
 
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- One step of the list-indexing fold: state `pair countdown value`; capture the current element
-when `countdown = 1`, else carry the value and decrement. -/
 def listGetStp (t : ℕ) : ℕ :=
   Nat.pair (t.unpair.2.unpair.1.unpair.1 - 1)
     (selectFn (isOne t.unpair.2.unpair.1.unpair.1) t.unpair.1 t.unpair.2.unpair.1.unpair.2)
 
-/-- `listGet c i = (decodeList c).getD i 0`: the `i`-th entry of the list coded by `c`. -/
 def listGet (c i : ℕ) : ℕ :=
   (foldCode listGetStp 0 (Nat.pair (i + 1) 0) c).unpair.2
 
-/-- The fold step on an explicit accumulator `pair cd val`. -/
 theorem listGetStp_pair (cd val x : ℕ) :
     listGetStp (Nat.pair x (Nat.pair (Nat.pair cd val) 0))
       = Nat.pair (cd - 1) (selectFn (isOne cd) x val) := by
   unfold listGetStp
   simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- With `cd = 0` the fold is a fixed point on the value. -/
 theorem listGet_foldl_zero (l : List ℕ) (val : ℕ) :
     (List.foldl (fun acc x => listGetStp (Nat.pair x (Nat.pair acc 0))) (Nat.pair 0 val) l).unpair.2
       = val := by
@@ -519,7 +487,6 @@ theorem listGet_foldl_zero (l : List ℕ) (val : ℕ) :
       rw [List.foldl_cons, listGetStp_pair, Nat.zero_sub,
         show isOne 0 = 0 from rfl, selectFn_zero, ih]
 
-/-- The fold reads off the `cd-1`-th element (default `val`). -/
 theorem listGet_foldl (l : List ℕ) (c val : ℕ) :
     (List.foldl (fun acc x => listGetStp (Nat.pair x (Nat.pair acc 0)))
         (Nat.pair (c + 1) val) l).unpair.2 = l.getD c val := by
@@ -534,7 +501,6 @@ theorem listGet_foldl (l : List ℕ) (c val : ℕ) :
         rw [show isOne (c' + 1 + 1) = 0 by unfold isOne; omega, selectFn_zero, ih,
           List.getD_cons_succ]
 
-/-- **Correctness of `listGet`** on a coded list. -/
 theorem listGet_encodeList (l : List ℕ) (i : ℕ) : listGet (encodeList l) i = l.getD i 0 := by
   unfold listGet
   rw [foldCode_eq]
@@ -606,7 +572,6 @@ variable {α : Type*}
 
 namespace Proposition77
 
-/-- The three index shapes: `0` (master `Γ`), `2a+1` (leaf), `2a+2` (node). Choice-free. -/
 theorem nat_shape (n : ℕ) : n = 0 ∨ (∃ a, n = 2 * a + 1) ∨ (∃ a, n = 2 * a + 2) := by
   rcases Nat.eq_zero_or_pos n with rfl | hn
   · exact Or.inl rfl
@@ -625,7 +590,6 @@ namespace Proposition77
 
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- Pack the triple `(eqBit, consBit, interIdx)` into one natural. -/
 def packT (e c ii : ℕ) : ℕ := Nat.pair e (Nat.pair c ii)
 
 @[simp] theorem eqB_packT (e c ii : ℕ) : eqB (packT e c ii) = e := by
@@ -650,10 +614,6 @@ variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 variable (fcons feq finter : ℕ → ℕ)
 
-/-- **The `D^§` decider step.** `p = pair (pair i j) tbl`. Returns `packT eqBit consBit interIdx`,
-case-splitting on `i = 0` / `j = 0` (the `Γ` identity), then on parities (leaf `2a+1` vs node
-`2a+2`). Leaf∩leaf delegates to `D`'s deciders; node∩node ANDs/combines the two children read from
-the memo table `tbl`. -/
 def dsharpStep (p : ℕ) : ℕ :=
   let i := p.unpair.1.unpair.1
   let j := p.unpair.1.unpair.2
@@ -766,7 +726,6 @@ namespace Proposition77
 
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- `listGet` is primitive recursive (on the `Nat.pair` coding of `c, i`). -/
 theorem primrec_listGet : Nat.Primrec (fun p => listGet p.unpair.1 p.unpair.2) := by
   have hstp : Nat.Primrec listGetStp := by
     unfold listGetStp
@@ -782,7 +741,6 @@ theorem primrec_listGet : Nat.Primrec (fun p => listGet p.unpair.1 p.unpair.2) :
   exact (Nat.Primrec.right.comp
     (primrec_foldCode hstp (Nat.Primrec.const 0) hz Nat.Primrec.left)).of_eq fun p => rfl
 
-/-- `listGet` as a binary primrec composite. -/
 theorem primrec_listGet₂ {c i : ℕ → ℕ} (hc : Nat.Primrec c) (hi : Nat.Primrec i) :
     Nat.Primrec (fun p => listGet (c p) (i p)) :=
   (primrec_listGet.comp (hc.pair hi)).of_eq fun p => by
@@ -801,7 +759,6 @@ variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 variable (fcons feq finter : ℕ → ℕ)
 
-/-- The decider step is primitive recursive when the `D`-level functions are. -/
 theorem primrec_dsharpStep (hfcons : Nat.Primrec fcons) (hfeq : Nat.Primrec feq)
     (hfinter : Nat.Primrec finter) : Nat.Primrec (dsharpStep fcons feq finter) := by
   have hi : Nat.Primrec (fun p : ℕ => p.unpair.1.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.left
@@ -882,15 +839,12 @@ namespace Proposition77
 
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- The reverse memo table: `rtbl step w` codes `[g(w-1), …, g 0]`. -/
 def rtbl (step : ℕ → ℕ) : ℕ → ℕ
   | 0 => 0
   | (w + 1) => Nat.pair (step (Nat.pair w (rtbl step w))) (rtbl step w) + 1
 
-/-- The course-of-values value at `w`: `g w = step (pair w (table of g below w))`. -/
 def gOf (step : ℕ → ℕ) (w : ℕ) : ℕ := step (Nat.pair w (rtbl step w))
 
-/-- The reverse list of memo values `[g(w-1), …, g 0]`. -/
 def gList (step : ℕ → ℕ) : ℕ → List ℕ
   | 0 => []
   | (w + 1) => gOf step w :: gList step w
@@ -922,8 +876,6 @@ theorem rtbl_eq_encode (step : ℕ → ℕ) (w : ℕ) : rtbl step w = encodeList
         = encodeList (gList step (w + 1))
       rw [gList, encodeList, gOf, ih]
 
-/-- **The course-of-values lookup.** Inside `step` at `w`, position `w-1-v` of the reverse table is
-exactly `g v`, for any earlier `v < w`. -/
 theorem listGet_rtbl (step : ℕ → ℕ) {v w : ℕ} (hv : v < w) :
     listGet (rtbl step w) (w - 1 - v) = gOf step v := by
   rw [rtbl_eq_encode, listGet_encodeList, getD_gList step w (w - 1 - v) (by omega)]
@@ -937,7 +889,6 @@ theorem rtbl_eq_rec (step : ℕ → ℕ) (w : ℕ) :
   | zero => rfl
   | succ w ih => rw [rtbl, ih]
 
-/-- `rtbl step` is primitive recursive when `step` is (a single `prec` whose step is a cons). -/
 theorem primrec_rtbl {step : ℕ → ℕ} (hstep : Nat.Primrec step) : Nat.Primrec (rtbl step) := by
   have hg : Nat.Primrec (fun c => Nat.pair (step c.unpair.2) c.unpair.2.unpair.2 + 1) :=
     Nat.Primrec.succ.comp ((hstep.comp Nat.Primrec.right).pair
@@ -947,7 +898,6 @@ theorem primrec_rtbl {step : ℕ → ℕ} (hstep : Nat.Primrec step) : Nat.Primr
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
   rw [rtbl_eq_rec]
 
-/-- `gOf step` is primitive recursive when `step` is. -/
 theorem primrec_gOf {step : ℕ → ℕ} (hstep : Nat.Primrec step) : Nat.Primrec (gOf step) :=
   (hstep.comp (primrec_id.pair (primrec_rtbl hstep))).of_eq fun _ => rfl
 
@@ -960,7 +910,6 @@ variable {α : Type*}
 
 namespace Proposition77
 
-/-- `n.unpair.1 ≤ n` (choice-free); the decreasing measure for `Vsharp`'s left child. -/
 theorem unpair_fst_le (n : ℕ) : n.unpair.1 ≤ n := by
   have h := le_pair_left n.unpair.1 n.unpair.2
   rwa [pair_unpair] at h

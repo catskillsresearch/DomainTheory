@@ -11,7 +11,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Scott's primitive-recursive function `v` in Theorem 3.3. -/
 noncomputable def secondRecV (n : ℕ) : ℕ :=
   applyNat secondRecOperatorCode n
 

@@ -1,6 +1,5 @@
 module
 
-
 public import Mathlib.Order.CompleteLattice.Defs
 public import Mathlib.Data.Finset.Basic
 public import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
@@ -14,9 +13,6 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.completeLatticePreo
 
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- A concrete countable algebraic lattice: `compact` enumerates exactly the
-compact elements and `density` says that they generate every point. -/
 structure CountablyAlgebraic (α : Type u) [CompleteLattice α] where
   compact : ℕ → α
   compact_isCompact : ∀ n, IsCompact (compact n)

@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The identity on the orbit `{fⁿ(x) | n ∈ ω}`. -/
 def iterateE (f x : Pomega) : RestrictedEquiv where
   rel := fun u v => (∃ n, u = Z n f x) ∧ u = v
   symm := by

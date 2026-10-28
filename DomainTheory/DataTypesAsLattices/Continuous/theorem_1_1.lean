@@ -8,15 +8,10 @@ public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-
-/-- **Scott 1976, Theorem 1.1 (The characterization theorem).**
-`f` is continuous iff `e m ⊆ f(x)` just when some finite `e n ⊆ x` already
-satisfies `e m ⊆ f(e n)`. -/
 theorem theorem_1_1 (f : Pomega → Pomega) :
     IsScottContinuous f ↔
       ∀ x m, e m ⊆ f x ↔ ∃ n, e n ⊆ x ∧ e m ⊆ f (e n) := by

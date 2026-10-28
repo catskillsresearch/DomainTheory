@@ -33,12 +33,10 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem combinatory {u v : Pomega}
     (hu : IsCombinatory u) (hv : IsCombinatory v) :
     IsCombinatory (pairRealizer u v) :=
   .app (.app .S (.app (.app .S (.app .K pairComb.combinatory)) hu)) hv
-
 
 theorem realizes {u v : Pomega} {p q : ℕ → ℕ}
     (hu : Realizes u p) (hv : Realizes v q) :

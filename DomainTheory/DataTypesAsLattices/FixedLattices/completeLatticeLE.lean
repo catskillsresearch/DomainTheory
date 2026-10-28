@@ -7,8 +7,6 @@ public import Mathlib.Data.Finset.Basic
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Pin `≤` / `sSup` to the `CompleteLattice` instance path so Challenge and
-Solution elaborate `CountablyAlgebraic.mk` identically. -/
 abbrev completeLatticeLE {α : Type u} [CompleteLattice α] : LE α :=
   @Preorder.toLE α
     (@PartialOrder.toPreorder α

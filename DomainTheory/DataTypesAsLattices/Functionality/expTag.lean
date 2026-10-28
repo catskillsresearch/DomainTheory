@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Tag and payload of a seven-sum abstract-syntax code. -/
 def expTag (e : Pomega) : Pomega := funOf e (ofNat 0)
 
 end DomainTheory.DataTypesAsLattices

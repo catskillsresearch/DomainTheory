@@ -12,13 +12,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.condC_more
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (3.1).** `cond(x)(y)(cond(x)(y)) = y`. -/
 theorem eq_3_1 (x y : Pomega) :
     funOf (funOf (funOf condC x) y) (funOf (funOf condC x) y) = y := by
   rw [condC.beta3]

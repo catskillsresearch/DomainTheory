@@ -10,7 +10,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-/-- Data objects of `V`: bottom `Δ`, top `∇`, and product left/right copies. -/
 inductive VToken where
   | bot : VToken
   | top : VToken

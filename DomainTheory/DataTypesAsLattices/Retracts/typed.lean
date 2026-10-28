@@ -6,7 +6,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, §4, Definition.** `u : a` means `u = a(u)`. -/
 def typed (u a : Pomega) : Prop :=
   u = funOf a u
 

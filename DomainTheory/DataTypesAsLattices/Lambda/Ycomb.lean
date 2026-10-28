@@ -13,7 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.omegaComb
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (2.8).** `Y = λ u. ω(u)(ω(u))`. -/
 def Ycomb : Pomega :=
   graph (fun u => funOf (omegaComb u) (omegaComb u))
 

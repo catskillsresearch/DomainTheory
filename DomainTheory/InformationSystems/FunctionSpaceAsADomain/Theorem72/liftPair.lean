@@ -23,7 +23,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- Product token set encoding a pair of consistent sets `(u, v)`. -/
 def liftPair (u : Finset α) (v : Finset β) : Finset (ProdToken A B) :=
   liftLeft A B u ∪' liftRight A B v
 

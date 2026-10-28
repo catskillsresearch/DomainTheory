@@ -28,7 +28,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- `λx. x ⊃ 0, x−1`, so numerals stay numerals. -/
 def safePredC : Pomega :=
   interp (.lam 0 (.cond (.var 0) .zero (.pred (.var 0)))) (fun _ => botElem)
 
@@ -38,16 +37,13 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem combinatory : IsCombinatory safePredC :=
   theorem_2_4.closed _
-
 
 theorem succ (n : ℕ) : funOf safePredC (ofNat (n + 1)) = ofNat n := by
   simp only [safePredC]
   rw [theorem_2_2.beta]
   simp [interp, envSet, Function.update, eq_2_7_succ, predSet.ofNat_succ]
-
 
 theorem zero : funOf safePredC (ofNat 0) = ofNat 0 := by
   simp only [safePredC]

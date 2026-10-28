@@ -32,7 +32,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Table 2.** Semantics of a LAMBDA term. -/
 def interp : Term → (ℕ → Pomega) → Pomega
   | .var i, ρ => ρ i
   | .zero, _ => ofNat 0
@@ -44,7 +43,6 @@ def interp : Term → (ℕ → Pomega) → Pomega
 
 namespace interp
 
-/-- Appendix lemma for Theorem 2.1: abstraction preserves continuity in the other variables. -/
 theorem var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) :
     IsScottContinuous (fun v => interp t (envSet ρ i v)) := by
   induction t generalizing ρ i with

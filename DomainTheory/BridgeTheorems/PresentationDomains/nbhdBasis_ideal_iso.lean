@@ -8,7 +8,6 @@ public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
 public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -31,7 +30,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable {ι β : Type*} [DecidableEq ι]
 
-/-- Under a decidable neighbourhood basis, `|𝒟|` ↔ InfoSys domain ↔ ideal completion. -/
 noncomputable def nbhdBasis_ideal_iso (B : NbhdBasis ι β) :
     B.system.Element ≃o Ideal (InfoSysToIdealCompletion.FiniteElement B.toInfoSys) :=
   B.domainOrderIso.trans (InfoSysToIdealCompletion.domainOrderIso B.toInfoSys)

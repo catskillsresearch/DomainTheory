@@ -9,7 +9,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamC
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -18,9 +17,7 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
-
 
 theorem LamCon_singleton_funTok (u v : List (RawLamToken α))
     (hu : LamCon A (listToFinset u)) (hv : LamCon A (listToFinset v)) :

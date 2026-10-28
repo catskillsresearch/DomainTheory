@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.Basi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,9 +15,7 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
-
 
 theorem LamConN_atom_con {n : ℕ} {u : Finset (RawLamToken α)}
     (hu : LamConN A n u) (hne : lamAtomFinset u ≠ ∅) : lamAtomFinset u ∈ A.Con := by

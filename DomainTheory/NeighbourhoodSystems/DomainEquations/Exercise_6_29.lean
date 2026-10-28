@@ -16,10 +16,7 @@ variable {D : ∀ i, NeighborhoodSystem (α i)}
 section IndexedProduct
 variable [Nonempty ι]
 variable (D) in
-/- concordance: source L4215 EXERCISE 6.29 infinitary sum and product -/
-/-- **Exercise 6.29 — the indexed product `∏_i D_i`.** The index type is non-empty so the
-dependent-sum token set contains a token. Neighbourhoods are cylinders: tuples `X i ∈ 𝒟ᵢ`
-that are the master in all but finitely many coordinates. -/
+
 def iprod : NeighborhoodSystem (Σ i, α i) where
   mem W := ∃ X : ∀ i, Set (α i), (∀ i, (D i).mem (X i)) ∧ FinSupp D X ∧ W = iprodNbhd X
   master := iprodNbhd (fun i => (D i).master)
@@ -49,7 +46,6 @@ section Iso
 
 variable [DecidableEq ι]
 
-/-- The tuple that is `U` at coordinate `i` and the master elsewhere. -/
 def updTuple (D : ∀ i, NeighborhoodSystem (α i)) (i : ι) (U : Set (α i)) : ∀ j, Set (α j) :=
   Function.update (fun j => (D j).master) i U
 
@@ -81,7 +77,6 @@ section Iso
 
 variable [DecidableEq ι]
 
-/-- **The element of `∏_i D_i` assembled from a tuple of components.** -/
 def fromPi (D : ∀ i, NeighborhoodSystem (α i)) (x : ∀ i, (D i).Element) : (iprod D).Element where
   mem W := ∃ X : ∀ i, Set (α i), (∀ i, (x i).mem (X i)) ∧ FinSupp D X ∧ W = iprodNbhd X
   sub := by rintro W ⟨X, hX, hXf, rfl⟩; exact ⟨X, fun i => (x i).sub (hX i), hXf, rfl⟩
@@ -100,7 +95,6 @@ end Iso
 
 end IndexedProduct
 
-/-- A tagged copy `inj i X = {some ⟨i, a⟩ ∣ a ∈ X}` of summand `i`. -/
 def injI (i : ι) (X : Set (α i)) : Set (Option (Σ i, α i)) :=
   (fun a => (some ⟨i, a⟩ : Option (Σ i, α i))) '' X
 
@@ -115,7 +109,6 @@ section Iso
 
 variable [DecidableEq ι]
 
-/-- The cylinder restricted to a list of coordinates `l` (master outside `l`). -/
 def restrictTo (D : ∀ i, NeighborhoodSystem (α i)) (l : List ι) (X : ∀ i, Set (α i)) :
     ∀ j, Set (α j) := fun j => if j ∈ l then X j else (D j).master
 
@@ -131,7 +124,6 @@ section Iso
 
 variable [DecidableEq ι]
 
-/-- The slice cylinder: `U` at coordinate `i`, master elsewhere. -/
 def slice (D : ∀ i, NeighborhoodSystem (α i)) (i : ι) (U : Set (α i)) : Set (Σ i, α i) :=
   iprodNbhd (updTuple D i U)
 
@@ -147,7 +139,6 @@ section Iso
 
 variable [DecidableEq ι]
 
-/-- Recovering the coordinate from a slice neighbourhood. -/
 theorem iprod_mem_slice_inv {i : ι} {U : Set (α i)} (h : (iprod D).mem (slice D i U)) :
     (D i).mem U := by
   obtain ⟨X, hX, _, heq⟩ := h
@@ -182,7 +173,6 @@ end IndexedProduct
     rwa [heq] at hb
   · intro ha; exact ⟨a, ha, rfl⟩
 
-/-- A tagged token determines its summand index. -/
 theorem index_of_some_mem_injI {i k : ι} {a : α k} {X : Set (α i)}
     (hmem : (some ⟨k, a⟩ : Option (Σ i, α i)) ∈ injI i X) : k = i := by
   obtain ⟨b, _, heq⟩ := hmem
@@ -209,10 +199,6 @@ theorem injI_subset_iff {i : ι} {X Y : Set (α i)} : injI i X ⊆ injI i Y ↔ 
   · intro h a ha; exact some_mem_injI.mp (h (some_mem_injI.mpr ha))
   · intro h; rintro w ⟨a, ha, rfl⟩; exact ⟨a, h ha, rfl⟩
 
-/-- **Exercise 6.29 — the indexed smash product `⊗_i D_i`.** The index type is non-empty so its
-dependent-sum token set is non-empty. A proper neighbourhood is a cylinder proper in *every*
-coordinate; closure under intersection is as for `iprod` plus the observation that
-`X i ∩ X' i ⊆ X i ≠` master stays proper. -/
 def iotimes [Nonempty ι] (D : ∀ i, NeighborhoodSystem (α i)) : NeighborhoodSystem (Σ i, α i) where
   mem W := W = iprodNbhd (fun i => (D i).master) ∨
     ∃ X : ∀ i, Set (α i), (∀ i, (D i).mem (X i)) ∧ (∀ i, X i ≠ (D i).master) ∧
@@ -251,7 +237,6 @@ def iotimes [Nonempty ι] (D : ∀ i, NeighborhoodSystem (α i)) : NeighborhoodS
             (by rw [← heq]; exact Set.inter_subset_left))
         · exact hXf.inter hX'f
 
-/-- The basepoint master of the indexed sum: `{none} ∪ {some ⟨i, a⟩ ∣ a ∈ Δᵢ}`. -/
 def sumMasterI (D : ∀ i, NeighborhoodSystem (α i)) : Set (Option (Σ i, α i)) :=
   insert none ((fun p => (some p : Option (Σ i, α i))) '' iprodNbhd (fun i => (D i).master))
 
@@ -262,7 +247,6 @@ theorem injI_subset_sumMasterI {i : ι} {X : Set (α i)} (hX : (D i).mem X) :
 
 theorem none_mem_sumMasterI : (none : Option (Σ i, α i)) ∈ sumMasterI D := Set.mem_insert _ _
 
-/-- **Exercise 6.29 — the indexed coalesced sum `⊕_i D_i`.** -/
 def ioplus (D : ∀ i, NeighborhoodSystem (α i))
     (hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.Nonempty) :
     NeighborhoodSystem (Option (Σ i, α i)) where
@@ -296,7 +280,6 @@ def ioplus (D : ∀ i, NeighborhoodSystem (α i))
             fun heq => hXne (Set.Subset.antisymm ((D k).sub_master hX)
               (heq ▸ Set.inter_subset_left)), rfl⟩
 
-/-- **Exercise 6.29 — the indexed separated sum `∑_i D_i`.** -/
 def isum (D : ∀ i, NeighborhoodSystem (α i))
     (hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.Nonempty) :
     NeighborhoodSystem (Option (Σ i, α i)) where
@@ -319,7 +302,7 @@ def isum (D : ∀ i, NeighborhoodSystem (α i))
     · rcases hW' with rfl | ⟨j, Y, hY, rfl⟩
       · rw [Set.inter_eq_left.mpr (injI_subset_sumMasterI hX)]
         exact Or.inr ⟨i, X, hX, rfl⟩
-      · -- both proper: the consistency witness `Z` forces `i = j` constructively.
+      ·
         rcases hZ with rfl | ⟨k, Wk, hWk, rfl⟩
         · exact absurd (hsub none_mem_sumMasterI).1 none_not_mem_injI
         · obtain ⟨w, hw⟩ := hne k Wk hWk
@@ -412,7 +395,7 @@ section Iso
 variable [DecidableEq ι]
 
 omit [Nonempty ι] in
-/-- A cylinder is contained in each of its own slices. -/
+
 theorem iprodNbhd_subset_slice {X : ∀ i, Set (α i)} (hX : ∀ i, (D i).mem (X i)) (i : ι) :
     iprodNbhd X ⊆ slice D i (X i) := by
   rw [slice_eq, iprodNbhd_subset_iff]
@@ -433,7 +416,6 @@ section Iso
 
 variable [DecidableEq ι]
 
-/-- A slice has support `⊆ {i}`, hence is a neighbourhood of the product when `U ∈ 𝒟ᵢ`. -/
 theorem iprod_mem_slice {i : ι} {U : Set (α i)} (hU : (D i).mem U) :
     (iprod D).mem (slice D i U) := by
   refine ⟨updTuple D i U, fun j => ?_, ⟨[i], fun j hj => ?_⟩, rfl⟩
@@ -455,7 +437,7 @@ section Iso
 variable [DecidableEq ι]
 
 omit [Nonempty ι] in
-/-- Slices at the same coordinate intersect by intersecting their data. -/
+
 theorem slice_inter (i : ι) (U U' : Set (α i)) :
     slice D i U ∩ slice D i U' = slice D i (U ∩ U') := by
   rw [slice_eq, slice_eq, slice_eq, iprodNbhd_inter]
@@ -478,7 +460,7 @@ section Iso
 variable [DecidableEq ι]
 
 omit [Nonempty ι] in
-/-- Slices are monotone in their data. -/
+
 theorem slice_subset (i : ι) {U U' : Set (α i)} (hUU' : U ⊆ U') : slice D i U ⊆ slice D i U' := by
   rw [slice_eq, slice_eq, iprodNbhd_subset_iff]
   intro j
@@ -498,7 +480,6 @@ section Iso
 
 variable [DecidableEq ι]
 
-/-- **The `i`-th component of a product element** (Scott's `z_i`). -/
 def proj (z : (iprod D).Element) (i : ι) : (D i).Element where
   mem U := (D i).mem U ∧ z.mem (slice D i U)
   sub h := h.1
@@ -550,7 +531,6 @@ section Iso
 
 variable [DecidableEq ι]
 
-/-- An element contains the restricted cylinder once it contains each listed slice. -/
 theorem z_mem_iprodNbhd_restrictTo (z : (iprod D).Element) {X : ∀ i, Set (α i)}
     (hXsub : ∀ i, X i ⊆ (D i).master) (hslice : ∀ i, z.mem (slice D i (X i))) (l : List ι) :
     z.mem (iprodNbhd (restrictTo D l X)) := by
@@ -575,9 +555,6 @@ section Iso
 
 variable [DecidableEq ι]
 
-/-- **Reconstruction.** A product element containing each of a cylinder's slices contains the
-cylinder. The finite support (a *list* of coordinates) lets the only finitely many non-trivial slices
-be intersected inside the element — entirely choice-free. -/
 theorem z_mem_of_slices (z : (iprod D).Element) {X : ∀ i, Set (α i)}
     (hXmem : ∀ i, (D i).mem (X i)) (hXf : FinSupp D X)
     (hslice : ∀ i, z.mem (slice D i (X i))) : z.mem (iprodNbhd X) := by
@@ -627,9 +604,6 @@ section Iso
 
 variable [DecidableEq ι]
 
-/-- **Exercise 6.29 — `×` generalizes to `∏`, correct up to isomorphism.** The domain of the
-indexed product is the pointwise product of the factor domains: `|∏_i D_i| ≃o ∀ i, |D_i|`. This is
-the infinitary **Proposition 3.2** (`prodEquiv`). -/
 def iprodEquiv (D : ∀ i, NeighborhoodSystem (α i)) :
     (iprod D).Element ≃o (∀ i, (D i).Element) where
   toFun z := fun i => proj z i
@@ -662,20 +636,15 @@ theorem injI_inter_ne {i j : ι} (h : i ≠ j) (X : Set (α i)) (Y : Set (α j))
 theorem injI_nonempty {i : ι} {X : Set (α i)} (hX : X.Nonempty) : (injI i X).Nonempty := by
   obtain ⟨a, ha⟩ := hX; exact ⟨some ⟨i, a⟩, some_mem_injI.mpr ha⟩
 
-/-- **Exercise 6.29 — `⊗` does not generalize.** Over an infinite index, the smash product has only
-its basepoint: an all-coordinates-proper cylinder has support `Set.univ`, which cannot be finite. -/
 theorem iotimes_only_master [Infinite ι] (D : ∀ i, NeighborhoodSystem (α i)) :
     ∀ W, (iotimes D).mem W → W = (iotimes D).master := by
   rintro W (rfl | ⟨X, _, hXne, ⟨l, hl⟩, rfl⟩)
   · rfl
-  · -- Every coordinate is proper, so the finite support list `l` would have to contain *all* of `ι`,
-    -- impossible for an infinite index. This is a cardinality argument: Prop-level and unavoidably
-    -- classical (Mathlib's `Set.Finite`/`Fintype` API is built on `Classical.choice`).
+  ·
+
     refine absurd ((List.finite_toSet l).subset (fun i _ => ?_)) Set.infinite_univ
     exact not_not.mp fun hni => hXne i (hl i hni)
 
-/-- **Exercise 6.29 — the infinite smash collapses to one point.** Its element domain is a
-singleton (`⊥` only), so `⊗` has no sensible infinitary generalization. -/
 theorem iotimes_subsingleton [Infinite ι] (D : ∀ i, NeighborhoodSystem (α i)) :
     Subsingleton (iotimes D).Element := by
   refine ⟨fun x y => ?_⟩
@@ -695,12 +664,10 @@ theorem iprod_mem_iprodNbhd {X : ∀ i, Set (α i)} (hX : ∀ i, (D i).mem (X i)
 
 end IndexedProduct
 
-/-- **Exercise 6.29 — a sum element reaches at most one summand.** -/
 theorem isum_summand_unique {hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.Nonempty}
     (z : (isum D hne).Element) {i j : ι} {X : Set (α i)} {Y : Set (α j)}
     (hX : z.mem (injI i X)) (hY : z.mem (injI j Y)) : i = j := by
-  -- The filter element `z` contains the consistent intersection; its representative carries a
-  -- token whose index is forced to be both `i` and `j` — no excluded middle on `i = j`.
+
   have hz := z.inter_mem hX hY
   rcases z.sub hz with h0 | ⟨k, W, hWmem, hWeq⟩
   · rw [Set.ext_iff] at h0
@@ -712,9 +679,6 @@ theorem isum_summand_unique {hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.
     obtain rfl := index_of_some_mem_injI hmem.2
     rfl
 
-/-- **Exercise 6.29 — sum trichotomy.** Every element of `∑_i D_i` either reaches into some summand
-or is the basepoint `⊥`. (Prop-level and genuinely classical: the case split is excluded middle on
-whether `z` reaches a summand, so this depends on `Classical.choice`.) -/
 theorem isum_trichotomy {hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.Nonempty}
     (z : (isum D hne).Element) :
     (∃ i, ∃ X : Set (α i), (D i).mem X ∧ z.mem (injI i X)) ∨
@@ -907,8 +871,6 @@ open NeighborhoodSystem ApproximableMap
 section
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
-/-- **Scott's `⊴` (the prose before Lemma 6.15).** `D ⊴ E` means `D ≅ D'` for some subdomain
-`D' ◁ E`: `D` *embeds as a subdomain* of `E`. -/
 def Trianglelefteq (D : NeighborhoodSystem α) (E : NeighborhoodSystem β) : Prop :=
   ∃ D' : NeighborhoodSystem β, D' ◁ E ∧ (D ≅ᴰ D')
 
@@ -918,20 +880,14 @@ section ProjectionPair
 
 variable (i : ApproximableMap D E) (j : ApproximableMap E D)
 
-/-- The generator predicate: `Y` generates `i(↑X)`. Relationally, `X i Y` and `Y j X`. -/
 def IsGen (X : Set α) (Y : Set β) : Prop := i.rel X Y ∧ j.rel Y X
 
-/-- **Generators exist** (uses `j ∘ i = I_D`). Every `D`-neighbourhood `X` has a generator: apply
-`j ∘ i = I_D` to the identity relation `X I_D X`. -/
 theorem isGen_exists (hji : j.comp i = idMap D) {X : Set α} (hX : D.mem X) :
     ∃ Y, IsGen i j X Y := by
   have hrel : (j.comp i).rel X X := by rw [hji]; exact ⟨hX, hX, subset_rfl⟩
   obtain ⟨Y, hiXY, hjYX⟩ := hrel
   exact ⟨Y, hiXY, hjYX⟩
 
-/-- **Generators are closed under intersection.** If `Y, Y'` generate `X, X'` and `Y ∩ Y' ∈ E`, then
-`Y ∩ Y'` generates `X ∩ X'`. Needs only `mono`/`inter_right` of `i` and `j` (the hypothesis
-`E.mem (Y ∩ Y')` is what licenses the `j.mono` steps). -/
 theorem isGen_inter {X X' : Set α} {Y Y' : Set β}
     (h : IsGen i j X Y) (h' : IsGen i j X' Y') (hE : E.mem (Y ∩ Y')) :
     IsGen i j (X ∩ X') (Y ∩ Y') := by
@@ -949,12 +905,9 @@ theorem isGen_inter {X X' : Set α} {Y Y' : Set β}
     i.mono hiX'Y' Set.inter_subset_right subset_rfl hDXX' (i.rel_cod hiX'Y')
   exact ⟨i.inter_right hi1 hi2, hjInter⟩
 
-/-- The masters generate each other: `IsGen Δ_D Δ_E` (from `i.master_rel`, `j.master_rel`). -/
 theorem isGen_master : IsGen i j D.master E.master :=
   ⟨i.master_rel, j.master_rel⟩
 
-/-- **The image subdomain `D'`.** A `β`-set `Y` is a neighbourhood iff it generates some
-`D`-neighbourhood; the master is `E`'s master. `isGen_inter` supplies condition (ii). -/
 def Dprime : NeighborhoodSystem β where
   mem Y := ∃ X, IsGen i j X Y
   master := E.master
@@ -971,9 +924,6 @@ def Dprime : NeighborhoodSystem β where
     rintro Y ⟨X, hg⟩
     exact E.sub_master (i.rel_cod hg.1)
 
-/-- **The generator correspondence is monotone** (uses `j ∘ i = I_D`): if `Y, Y'` generate `X, X'`
-and `Y ⊆ Y'`, then `X ⊆ X'`. (Widen `X i Y` to `X i Y'` by `mono`, compose with `Y' j X'`, and read
-off `X ⊆ X'` from `j ∘ i = I_D`.) -/
 theorem isGen_mono (hji : j.comp i = idMap D) {X X' : Set α} {Z W : Set β}
     (h : IsGen i j X Z) (h' : IsGen i j X' W) (hZW : Z ⊆ W) : X ⊆ X' := by
   obtain ⟨hiXZ, _⟩ := h
@@ -984,15 +934,11 @@ theorem isGen_mono (hji : j.comp i = idMap D) {X X' : Set α} {Z W : Set β}
   rw [hji] at hrel
   exact hrel.2.2
 
-/-- Generators are unique in the first argument (`isGen_mono` both ways). -/
 theorem isGen_fst_unique (hji : j.comp i = idMap D) {X X' : Set α} {Y : Set β}
     (h : IsGen i j X Y) (h' : IsGen i j X' Y) : X = X' :=
   Set.Subset.antisymm (isGen_mono i j hji h h' subset_rfl)
     (isGen_mono i j hji h' h subset_rfl)
 
-/-- **The generator correspondence is monotone, other direction** (uses `i ∘ j ⊆ I_E`): if `Z, W`
-generate `X, X'` and `X ⊆ X'`, then `Z ⊆ W`. (Widen `Z j X` to `Z j X'` by `mono`, compose with
-`X' i W`, and read off `Z ⊆ W` from `i ∘ j ⊆ I_E`.) -/
 theorem isGen_mono' (hij : i.comp j ≤ idMap E) {X X' : Set α} {Z W : Set β}
     (h : IsGen i j X Z) (h' : IsGen i j X' W) (hXX' : X ⊆ X') : Z ⊆ W := by
   obtain ⟨_, hjZX⟩ := h
@@ -1002,7 +948,6 @@ theorem isGen_mono' (hij : i.comp j ≤ idMap E) {X X' : Set α} {Z W : Set β}
   have hrel : (i.comp j).rel Z W := ⟨X', hjZX', hiX'W⟩
   exact (hij Z W hrel).2.2
 
-/-- Generators are unique in the second argument (`isGen_mono'` both ways). -/
 theorem isGen_snd_unique (hij : i.comp j ≤ idMap E) {X : Set α} {Y Y' : Set β}
     (h : IsGen i j X Y) (h' : IsGen i j X Y') : Y = Y' :=
   Set.Subset.antisymm (isGen_mono' i j hij h h' subset_rfl)
@@ -1010,8 +955,6 @@ theorem isGen_snd_unique (hij : i.comp j ≤ idMap E) {X : Set α} {Y Y' : Set �
 
 @[simp] theorem mem_Dprime {Y : Set β} : (Dprime i j).mem Y ↔ ∃ X, IsGen i j X Y := Iff.rfl
 
-/-- **`D' ◁ E`.** Same master (`rfl`); `D' ⊆ E` since a generator's `Y` is an `E`-neighbourhood; and
-the consistency clause `inter_closed` is exactly `isGen_inter`. -/
 theorem Dprime_subsystem : Dprime i j ◁ E where
   master_eq := rfl
   sub := by rintro Y ⟨X, hg⟩; exact i.rel_cod hg.1
@@ -1019,8 +962,6 @@ theorem Dprime_subsystem : Dprime i j ◁ E where
     rintro Y₁ Y₂ ⟨X₁, hg₁⟩ ⟨X₂, hg₂⟩ hE
     exact ⟨X₁ ∩ X₂, isGen_inter i j hg₁ hg₂ hE⟩
 
-/-- **Inverse map of the isomorphism `D ≅ D'`.** `y ↦ {X ∣ ∃ Y ∈ y, IsGen i j X Y}`. (Needs both
-laws: `j ∘ i = I_D` for generator existence and `i ∘ j ⊆ I_E` for `isGen_mono'`.) -/
 def ofEl (hji : j.comp i = idMap D) (hij : i.comp j ≤ idMap E)
     (y : (Dprime i j).Element) : D.Element where
   mem X := ∃ Y, y.mem Y ∧ IsGen i j X Y
@@ -1037,8 +978,6 @@ def ofEl (hji : j.comp i = idMap D) (hij : i.comp j ≤ idMap E)
     have hYY' : Y ⊆ Y' := isGen_mono' i j hij hg hg' hXX'
     exact ⟨Y', y.up_mem hYy ⟨X', hg'⟩ hYY', hg'⟩
 
-/-- **Forward map of the isomorphism `D ≅ D'`.** `x ↦ {Y ∣ ∃ X ∈ x, IsGen i j X Y}` — the
-generators of the members of `x`. (Needs `j ∘ i = I_D` for upward closure, via `isGen_mono`.) -/
 def toEl (hji : j.comp i = idMap D) (x : D.Element) : (Dprime i j).Element where
   mem Y := ∃ X, x.mem X ∧ IsGen i j X Y
   sub := by rintro Y ⟨X, _, hg⟩; exact ⟨X, hg⟩
@@ -1058,8 +997,6 @@ def toEl (hji : j.comp i = idMap D) (x : D.Element) : (Dprime i j).Element where
     have hXX' : X ⊆ X' := isGen_mono i j hji hg hg' hYY'
     exact ⟨X', x.up_mem hXx (i.rel_dom hg'.1) hXX', hg'⟩
 
-/-- **The domain isomorphism `D ≅ D'`** (Scott's "inclusion-preserving one-one correspondence").
-Built from `toEl`/`ofEl`; the inverse laws and order-reflection come from generator uniqueness. -/
 def dprimeEquiv (hji : j.comp i = idMap D) (hij : i.comp j ≤ idMap E) :
     D.Element ≃o (Dprime i j).Element where
   toFun := toEl i j hji

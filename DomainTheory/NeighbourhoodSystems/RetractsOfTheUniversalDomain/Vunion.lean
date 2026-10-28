@@ -8,16 +8,10 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsC
 namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
-/-- The union index: list-concatenate the two canonicalized presenting lists. `UX` re-canonicalizes
-on lookup, so no further canonicalization of the inputs is needed here (mirrors `Udiff`). -/
 def Uunion (n m : ℕ) : ℕ := appendListCode (canonCode n) (canonCode m)
 
-/-- The union index: `canonIdx` of the raw union code `VunionRaw`. -/
 def Vunion (n m : ℕ) : ℕ := canonIdx (VunionRaw n m)
 
-/-- `hX0`: index `0` presents `U`'s master neighbourhood. `decodeQPairList 0 = []`
-(`decodeList_zero`), so `canonList` falls back to its `[(0,1)]` branch, which presents
-`U.master` exactly as in `U_presentedIntervals.mem_canonList`. -/
 theorem UX_zero : UX 0 = U.master := by
   rw [UX_eq]
   have hL : decodeQPairList 0 = [] := by
@@ -38,18 +32,13 @@ theorem primrec : Nat.Primrec (fun t : ℕ => Uunion t.unpair.1 t.unpair.2) := b
 end Uunion
 open Domain.Recursive NeighborhoodSystem
 
-/-- `hD₁mne` for `V`: the master neighbourhood `V.master = Set.univ` is non-empty. -/
 theorem V.master_nonempty : V.master.Nonempty := Set.univ_nonempty
 
-/-- `hD₀mne` for `U`: the master neighbourhood `U.master = Set.Ico 0 1` is non-empty. -/
 theorem U_master_nonempty : U.master.Nonempty := ⟨0, by norm_num [U]⟩
 
 namespace Uunion
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`Uunion` realizes set union at the raw (uncanonicalized) `presentedIntervals` level**,
-unconditionally — concatenating presenting lists always presents the union, no consistency case
-split needed (the one respect in which `∪` is even simpler than `\`'s `Udiff.eq_diff`). -/
 theorem eq_union (n m : ℕ) :
     presentedIntervals (decodeQPairList (Uunion n m)) = UX n ∪ UX m := by
   unfold Uunion
@@ -66,20 +55,8 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
   (P : ComputablePresentation V) (hDiff : IsComputableDiff P)
   {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
-
 namespace splitFromBisection
-/-- **`splitFromBisection` satisfies `SplitSpec'`**, completing the concrete-construction half of
-`8.12(g)(3)`. Needs one extra hypothesis beyond `isComputableSplit.ofBisection`'s own,
-`hQne : ∀ j, Q.X j ≠ ∅` — true for both `U`/`V` (every `ComputablePresentation` index is `mem`-
-genuine, and both systems' `mem` structurally excludes `∅`; see `Exercise812.lean` line 199/
-`Definition87.lean` line 96) but not derivable from `ComputableBisection`'s abstract fields alone
-(nothing there stops `Q.X (B.left m)`, say, from being `∅` in general — only used in the "neither
-decider fires" branch, to show the bisection's two halves are each individually `≠ ∅`, matching that
-branch's `A ∩ Xn ≠ ∅ ↔ .1 ≠ ∅`/`A \ Xn ≠ ∅ ↔ .2 ≠ ∅` obligations). The two decider-fires branches
-need no such hypothesis at all — `.1`/`.2` there are literally `∅`/`B'`, and the requisite `↔`s
-reduce to `hAB` via the algebraic facts `A ∩ Xn = ∅ → A \ Xn = A` (resp. `A \ Xn = ∅ → A ∩ Xn = A`).
-The "not presented" branch reduces to exactly `splitChoice'_isSplitSpec` (`Exercise812c.lean`),
-verbatim. -/
+
 theorem isSplitSpec' (hpos : V.IsPositive) (hnomin : V.NoMinimal)
     (hdiffClosed : V.DiffClosed) (hQne : ∀ j, Q.X j ≠ ∅) :
     SplitSpec' W (splitFromBisection P hDiff B hWnomin) := by
@@ -128,9 +105,6 @@ end
 
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`8.12(g)(3)`, `V`-as-prober half**: `splitX812f` also satisfies `SplitSpec'`, the mirror
-image of `Exercise812eD.lean`'s `hxSplit812e`. The extra hypothesis it needs, `∀ j, UX j ≠ ∅`, is
-immediate from `U_mem_UX`/`U.mem`'s own `X.Nonempty` conjunct (`Definition87.lean` line 96). -/
 theorem hySplit812f : SplitSpec' U splitX812f :=
   ComputableBisection.splitFromBisection.isSplitSpec' VComputablePresentation V.isComputableDiff
     UBisection2 U.noMinimal V.isPositive V.noMinimal V.diffClosed
@@ -139,10 +113,6 @@ theorem hySplit812f : SplitSpec' U splitX812f :=
 namespace Uunion
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`Uunion n m` genuinely indexes `UX n ∪ UX m`** — mirrors `Udiff.spec`'s shape exactly, but the
-hypothesis is never used (the union is already unconditionally genuine, `U.union_mem`): the raw
-`appendListCode` output is already a genuine `U`-neighbourhood, so re-canonicalizing it (`canonCode`'s
-own lookup, `UX`'s definition) is a no-op (`canonList_fixed`). -/
 theorem spec {n m : ℕ} (_ : ∃ k, UX k = UX n ∪ UX m) : UX (Uunion n m) = UX n ∪ UX m := by
   have hUL : U.mem (presentedIntervals (decodeQPairList (Uunion n m))) := by
     rw [Uunion.eq_union]; exact U_union_UX_mem n m
@@ -152,25 +122,15 @@ theorem spec {n m : ℕ} (_ : ∃ k, UX k = UX n ∪ UX m) : UX (Uunion n m) = U
 end Uunion
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`8.12(g)(3)`, `U`-as-prober half**: `splitX812e` also satisfies `SplitSpec'` — completing the
-concrete-construction half of `8.12(g)(3)` left open by `Exercise812e.lean`'s generic
-`splitFromBisection.isSplitSpec'`. The extra hypothesis it needs, `∀ j, VX j ≠ ∅`, is immediate:
-every `VX j` is `V.mem`-genuine (`VComputablePresentation.mem_X`) and `V.mem` structurally excludes
-`∅` (`V.mem X := ∃ k m, X = levelSet k m ∧ X.Nonempty`, `Exercise812.lean` line 199). -/
 theorem hxSplit812e : SplitSpec' V splitX812e :=
   ComputableBisection.splitFromBisection.isSplitSpec' UComputablePresentation U_isComputableDiff
     B812e V.noMinimal U.isPositive U.noMinimal U.diffClosed (fun j => (VX_nonempty j).ne_empty)
 
-/-- **`Xₙ ∪ Xₘ` is always presentable as some `X_k`**, for `𝒰` — via `U_surj_UX` on
-`U_union_UX_mem` (mirroring `U_diff_iff_nonempty`'s use of `U_surj_UX`, but unconditional). -/
 theorem U_union_exists (n m : ℕ) : ∃ k, UX k = UX n ∪ UX m := U_surj_UX (U_union_UX_mem n m)
 
-/-- **7.1(i)-for-`∪`, for `𝒰`**: trivially recursively decidable (the always-`1` constant), since
-`U_union_exists` shows the underlying predicate is unconditionally `True`. -/
 theorem U_union_computable : RecDecidable₂ (fun n m => ∃ k, UX k = UX n ∪ UX m) :=
   ⟨fun _ => 1, Nat.Primrec.const 1, fun t => iff_of_true (U_union_exists t.unpair.1 t.unpair.2) rfl⟩
 
-/-- **`U` has a computable `∪`.** -/
 def U_isComputableUnion : IsComputableUnion UComputablePresentation where
   unionIdx := Uunion
   unionIdx_primrec := Uunion.primrec
@@ -180,9 +140,6 @@ def U_isComputableUnion : IsComputableUnion UComputablePresentation where
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- **Computable version of `levelSet.union_same_level` at differing levels** — the bitwise-`OR`
-analogue of `levelSet.myInter`, mirroring its proof verbatim with `myLor`/`Nat.testBit_or` in place
-of `myLand`/`Nat.testBit_and`. -/
 theorem myUnion (k1 m1 k2 m2 : ℕ) :
     levelSet k1 m1 ∪ levelSet k2 m2
       = levelSet (max k1 k2) (myLor (_root_.DomainTheory.NeighbourhoodSystems.myUpsample k1 (max k1 k2) m1) (_root_.DomainTheory.NeighbourhoodSystems.myUpsample k2 (max k1 k2) m2)) := by
@@ -190,7 +147,6 @@ theorem myUnion (k1 m1 k2 m2 : ℕ) :
     ← levelSet.myUpsample (Nat.le_max_right k1 k2) m2]
   rw [levelSet.union_same_level, myLor_eq_lor]
 
-/-- **`VunionRaw` realizes `VX n ∪ VX m`** at the `levelSet` level (unconditionally). -/
 theorem VunionRaw (n m : ℕ) :
     levelSet (_root_.DomainTheory.NeighbourhoodSystems.VunionRaw n m).unpair.1 (_root_.DomainTheory.NeighbourhoodSystems.VunionRaw n m).unpair.2 = VX n ∪ VX m := by
   unfold _root_.DomainTheory.NeighbourhoodSystems.VunionRaw
@@ -202,10 +158,6 @@ end levelSet
 namespace Vunion
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`Vunion n m` genuinely indexes `VX n ∪ VX m`**, unconditionally — `VunionRaw n m` is already
-non-empty (both `VX n`, `VX m` are non-empty, `VX_nonempty`, and a union of a non-empty set with
-anything is non-empty), so `canonIdx` is a no-op on it (`canonIdx.eq_self_of_nonempty`), mirroring
-`Vinter_spec`'s shape but with the hypothesis discharged internally rather than assumed. -/
 theorem spec (n m : ℕ) : VX (Vunion n m) = VX n ∪ VX m := by
   have hne : (levelSet (VunionRaw n m).unpair.1 (VunionRaw n m).unpair.2).Nonempty := by
     rw [levelSet.VunionRaw]; exact (VX_nonempty n).mono Set.subset_union_left
@@ -214,33 +166,26 @@ theorem spec (n m : ℕ) : VX (Vunion n m) = VX n ∪ VX m := by
   show levelSet (canonIdx (VunionRaw n m)).unpair.1 (canonIdx (VunionRaw n m)).unpair.2 = VX n ∪ VX m
   rw [canonIdx.eq_self_of_nonempty hne, levelSet.VunionRaw]
 
-/-- `Vunion.spec`, repackaged to accept (and discard) `IsComputableUnion`'s hypothesis. -/
 theorem spec' {n m : ℕ} (_ : ∃ k, VX k = VX n ∪ VX m) : VX (Vunion n m) = VX n ∪ VX m :=
   Vunion.spec n m
 
 end Vunion
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`Xₙ ∪ Xₘ` is always presentable as some `X_k`**, for `V` — witnessed directly by `Vunion`. -/
 theorem V.union_exists (n m : ℕ) : ∃ k, VX k = VX n ∪ VX m := ⟨Vunion n m, Vunion.spec n m⟩
 
-/-- **7.1(i)-for-`∪`, for `V`**: trivially recursively decidable (the always-`1` constant). -/
 theorem V.union_computable : RecDecidable₂ (fun n m => ∃ k, VX k = VX n ∪ VX m) :=
   ⟨fun _ => 1, Nat.Primrec.const 1, fun t => iff_of_true (V.union_exists t.unpair.1 t.unpair.2) rfl⟩
 
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- `levelSet 0 0 = ∅`: at level `0`, mask `0` has no set bits. -/
 theorem zero_zero : levelSet 0 0 = ∅ := by
   ext n; simp [levelSet, Nat.zero_testBit]
 
 end levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- `hY0`: index `0` presents `V`'s master neighbourhood. `Nat.unpair 0 = (0, 0)` and
-`levelSet 0 0 = ∅`, so `canonIdx 0` falls back to `VmasterIdx = Nat.pair 0 1`
-(`canonIdx.eq_master_of_empty`), whose `VX`-image is `V.master` (`VX_VmasterIdx`). -/
 theorem VX_zero : VX 0 = V.master := by
   have hc0 : canonIdx 0 = VmasterIdx :=
     canonIdx.eq_master_of_empty (by rw [Nat.unpair_zero]; exact levelSet.zero_zero)
@@ -274,7 +219,6 @@ theorem example_812_g2 : ∀ {n m : Nat},
       (@Union.union (Set Nat) (@Set.instUnion Nat) (DomainTheory.NeighbourhoodSystems.VX n)
         (DomainTheory.NeighbourhoodSystems.VX m)) :=
   @DomainTheory.NeighbourhoodSystems.Vunion.spec'
-
 
 namespace primrec
 open Domain.Recursive NeighborhoodSystem
@@ -313,7 +257,6 @@ theorem Vunion : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`V` has a computable `∪`.** -/
 def V.isComputableUnion : IsComputableUnion VComputablePresentation where
   unionIdx := Vunion
   unionIdx_primrec := primrec.Vunion

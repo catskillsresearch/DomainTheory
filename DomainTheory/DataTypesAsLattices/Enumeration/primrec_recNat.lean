@@ -8,11 +8,9 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem primrec_recNat (v : ℕ → ℕ) (hv : Primrec v) :
     Primrec (recNat v) := by

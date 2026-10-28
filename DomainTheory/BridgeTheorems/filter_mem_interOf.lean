@@ -22,7 +22,6 @@ namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)
 
-/-- A filter containing every `nbhd i` for `i ∈ u` contains `interOf u`. -/
 theorem filter_mem_interOf (x : B.system.Element) {u : Finset ι}
     (hu : ∀ i ∈ u, x.mem (B.nbhd i)) : x.mem (B.interOf u) := by
   induction u using Finset.induction with

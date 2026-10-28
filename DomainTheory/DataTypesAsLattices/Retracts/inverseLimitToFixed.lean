@@ -21,8 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- A coherent sequence determines a point of the least fixed-point range
-by taking the union of its coordinates. -/
 def inverseLimitToFixed {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a))

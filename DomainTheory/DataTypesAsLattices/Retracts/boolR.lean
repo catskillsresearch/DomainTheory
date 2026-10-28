@@ -15,7 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.3).** Boolean retract via the doubly strict conditional. -/
 def boolR : Pomega :=
   graph (fun u => dcondSet u (ofNat 0) (ofNat 1))
 

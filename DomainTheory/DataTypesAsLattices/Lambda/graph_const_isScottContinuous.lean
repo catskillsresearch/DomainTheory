@@ -8,11 +8,8 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- `graph (fun y => g x y)` is continuous in `x` when `g` is continuous in `x`. -/
 theorem graph_const_isScottContinuous
     (g : Pomega → Pomega → Pomega)
     (hg : ∀ y, IsScottContinuous (fun x => g x y)) :

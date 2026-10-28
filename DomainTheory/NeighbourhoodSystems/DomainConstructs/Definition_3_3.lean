@@ -13,9 +13,7 @@ variable {α β γ δ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {V₂ : NeighborhoodSystem γ}
 open ApproximableMap
-/- concordance: source L1008 DEFINITION 3.3 projection mappings -/
-/-- **Definition 3.3 (Scott 1981, PRG-19).** The paired mapping `⟨f, g⟩ : 𝒟₂ → 𝒟₀ × 𝒟₁`,
-`Z ⟨f, g⟩ (X ∪ Y) ↔ Z f X ∧ Z g Y`. -/
+
 def paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁) :
     ApproximableMap V₂ (prod V₀ V₁) where
   rel Z P := (prod V₀ V₁).mem P ∧ f.rel Z (Sum.inl ⁻¹' P) ∧ g.rel Z (Sum.inr ⁻¹' P)
@@ -45,8 +43,6 @@ def paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁) :
     · rw [inl_preimage_prodNbhd]; exact f.mono hfP hZ₂Z hinl hZ₂ hA
     · rw [inr_preimage_prodNbhd]; exact g.mono hgP hZ₂Z hinr hZ₂ hB
 
-/-- **Definition 3.3 (Scott 1981, PRG-19).** The projection `p₀ : 𝒟₀ × 𝒟₁ → 𝒟₀`,
-`(X ∪ Y) p₀ X' ↔ X ⊆ X'`. -/
 def proj₀ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     ApproximableMap (prod V₀ V₁) V₀ where
   rel W X' := (prod V₀ V₁).mem W ∧ V₀.mem X' ∧ Sum.inl ⁻¹' W ⊆ X'
@@ -66,8 +62,6 @@ def proj₀ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
 @[simp] theorem proj₀_rel {W : Set (α ⊕ β)} {X' : Set α} :
     (proj₀ V₀ V₁).rel W X' ↔ (prod V₀ V₁).mem W ∧ V₀.mem X' ∧ Sum.inl ⁻¹' W ⊆ X' := Iff.rfl
 
-/-- **Definition 3.3 (Scott 1981, PRG-19).** The projection `p₁ : 𝒟₀ × 𝒟₁ → 𝒟₁`,
-`(X ∪ Y) p₁ Y' ↔ Y ⊆ Y'`. -/
 def proj₁ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     ApproximableMap (prod V₀ V₁) V₁ where
   rel W Y' := (prod V₀ V₁).mem W ∧ V₁.mem Y' ∧ Sum.inr ⁻¹' W ⊆ Y'
@@ -126,7 +120,6 @@ theorem toElementMap_proj₁_pair (x : V₀.Element) (y : V₁.Element) :
     (proj₁ V₀ V₁).toElementMap (pair x y) = y := by
   rw [toElementMap_proj₁, snd_pair]
 
-/-- Elementwise action of pairing: `⟨f, g⟩(w) = ⟨f(w), g(w)⟩`. -/
 theorem toElementMap_paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁)
     (w : V₂.Element) :
     (paired f g).toElementMap w = pair (f.toElementMap w) (g.toElementMap w) := by
@@ -145,7 +138,6 @@ theorem toElementMap_paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap
       exact g.mono hgZ₂ Set.inter_subset_right subset_rfl (w.sub (w.inter_mem hwZ₁ hwZ₂))
         (g.rel_cod hgZ₂)
 
-/-- Every map into a product is the pairing of its projections: `h = ⟨p₀ ∘ h, p₁ ∘ h⟩`. -/
 theorem paired_proj (h : ApproximableMap V₂ (prod V₀ V₁)) :
     paired ((proj₀ V₀ V₁).comp h) ((proj₁ V₀ V₁).comp h) = h := by
   apply ext_of_toElementMap

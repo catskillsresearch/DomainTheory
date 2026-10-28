@@ -13,9 +13,6 @@ public import Mathlib.Combinatorics.Colex
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
-/-- **`2^k ℕ + ℓ`** (for `ℓ < 2^k`): the residue class of `ℓ` modulo `2^k`. Automatically `∅` when
-`ℓ ≥ 2^k` (no `n` can leave a remainder that large), matching Scott's side condition `ℓ < 2^k`
-without needing to bake it into the definition. -/
 def affine (k ℓ : ℕ) : Set ℕ := {n : ℕ | n % 2 ^ k = ℓ}
 
 @[simp] theorem mem_affine {k ℓ n : ℕ} : n ∈ affine k ℓ ↔ n % 2 ^ k = ℓ := Iff.rfl
@@ -29,10 +26,6 @@ theorem nonempty {k ℓ : ℕ} (hℓ : ℓ < 2 ^ k) : (affine k ℓ).Nonempty :=
 end affine
 open NeighborhoodSystem
 
-/-- The union of the residue classes `affine k ℓ` for `ℓ < 2^k` with `m.testBit ℓ = true`. Every
-finite union of `affine`-sets sharing the *same* level `k` is of this form for a unique `m`
-(`Finset.range (2^k)` residues partition `ℕ`, unlike arbitrary rational intervals), so a single
-natural number `m` replaces the `List` bookkeeping `Definition87.lean` needs for `𝒰`. -/
 def levelSet (k m : ℕ) : Set ℕ := {n : ℕ | m.testBit (n % 2 ^ k) = true}
 
 @[simp] theorem mem_levelSet {k m n : ℕ} : n ∈ levelSet k m ↔ m.testBit (n % 2 ^ k) = true :=
@@ -57,7 +50,6 @@ theorem union_same_level (k m₁ m₂ : ℕ) :
     levelSet k m₁ ∪ levelSet k m₂ = levelSet k (m₁ ||| m₂) := by
   ext n; simp [levelSet, Nat.testBit_or]
 
-/-- `levelSet k m` is exactly the union of `affine k ℓ` over `ℓ` with `m.testBit ℓ`. -/
 theorem eq_biUnion (k m : ℕ) :
     levelSet k m = ⋃ ℓ ∈ (Finset.range (2 ^ k)).filter (fun ℓ => m.testBit ℓ), affine k ℓ := by
   ext n
@@ -71,7 +63,6 @@ end levelSet
 namespace affine
 open NeighborhoodSystem
 
-/-- `affine k ℓ` itself is the singleton-bitmask `levelSet`. -/
 theorem eq_levelSet (k ℓ : ℕ) : affine k ℓ = levelSet k (2 ^ ℓ) := by
   ext n
   simp [mem_affine, mem_levelSet, Nat.testBit_two_pow, eq_comm]
@@ -79,9 +70,6 @@ theorem eq_levelSet (k ℓ : ℕ) : affine k ℓ = levelSet k (2 ^ ℓ) := by
 end affine
 open NeighborhoodSystem
 
-/-- Re-express a level-`k` bitmask `m` at a finer level `k' ≥ k`: residue `r` (mod `2^k'`) is
-included iff `r`'s coarser residue `r % 2^k` was. Built via `Nat.equivBitIndices` (the bijection
-`ℕ ≃ Finset ℕ` sending `n` to its set bits) rather than raw shifting arithmetic. -/
 def upsample (k k' m : ℕ) : ℕ :=
   ∑ r ∈ (Finset.range (2 ^ k')).filter (fun r => m.testBit (r % 2 ^ k)), 2 ^ r
 
@@ -99,21 +87,15 @@ end testBit
 namespace levelSet
 open NeighborhoodSystem
 
-/-- `levelSet 0 1 = ℕ`: at level `0` there is a single residue class (everything is `≡ 0 mod 1`),
-and `1` (bit `0` set) selects it. This is `V`'s master neighbourhood. -/
 theorem zero_one : levelSet 0 1 = Set.univ := by
   ext n; simp [levelSet, Nat.mod_one]
 
-/-- **`upsample` preserves the set `levelSet` represents.** -/
 theorem upsample {k k' m : ℕ} (hk : k ≤ k') : levelSet k' (_root_.DomainTheory.NeighbourhoodSystems.upsample k k' m) = levelSet k m := by
   ext n
   simp only [mem_levelSet]
   rw [testBit.upsample (Nat.mod_lt n (by positivity)),
     Nat.mod_mod_of_dvd n (pow_dvd_pow 2 hk)]
 
-/-- **`levelSet` is closed under intersection, unconditionally** (unlike `Definition87.lean`'s `U`,
-which genuinely needs a consistency hypothesis): upsample both masks to the common level
-`max k₁ k₂` and take the bitwise `AND`. -/
 theorem inter (k₁ m₁ k₂ m₂ : ℕ) :
     levelSet k₁ m₁ ∩ levelSet k₂ m₂
       = levelSet (max k₁ k₂) (_root_.DomainTheory.NeighbourhoodSystems.upsample k₁ (max k₁ k₂) m₁ &&& _root_.DomainTheory.NeighbourhoodSystems.upsample k₂ (max k₁ k₂) m₂) := by
@@ -126,9 +108,6 @@ end levelSet
 namespace testBit
 open NeighborhoodSystem
 
-/-- **The bitwise "and-not" identity**: `a ^^^ (a &&& b) = a` on bits where `b`'s bit is `0`, and
-`= 0` on bits where `b`'s bit is `1` (whether or not `a`'s bit is set) — i.e. exactly "`a`'s bits
-with `b`'s bits cleared". -/
 theorem xor_and_self (a b : ℕ) (i : ℕ) :
     (a ^^^ (a &&& b)).testBit i = (a.testBit i && !b.testBit i) := by
   rw [Nat.testBit_xor, Nat.testBit_and]
@@ -139,8 +118,6 @@ end testBit
 namespace levelSet
 open NeighborhoodSystem
 
-/-- **`levelSet` is closed under set-difference, unconditionally** — mirrors `levelSet.inter`
-with `testBit.xor_and_self` in place of plain `&&&`. -/
 theorem diff (k₁ m₁ k₂ m₂ : ℕ) :
     levelSet k₁ m₁ \ levelSet k₂ m₂
       = levelSet (max k₁ k₂)
@@ -157,12 +134,6 @@ end levelSet
 
 open NeighborhoodSystem
 
-/-- **Exercise 8.12's `V`**: the neighbourhood system over `ℕ` whose neighbourhoods are the
-non-empty finite unions of residue classes `2^k ℕ + ℓ` (`ℓ < 2^k`). Bookkeeping-free via
-`levelSet`: every finite union of `affine`-sets — even at *different* levels `kᵢ` — refines
-(`levelSet.upsample`) to a single common level, so `V.mem X := ∃ k m, X = levelSet k m` already
-captures every such union (`V.mem_iff_finiteUnion`). Closure under intersection needs no
-consistency hypothesis (`levelSet.inter`). -/
 def V : NeighborhoodSystem ℕ where
   mem X := ∃ k m, X = levelSet k m ∧ X.Nonempty
   master := Set.univ
@@ -176,7 +147,6 @@ def V : NeighborhoodSystem ℕ where
 
 namespace V
 
-/-- **`V` is closed under binary union**, as long as the result is non-empty. -/
 theorem union_mem {X Y : Set ℕ} (hX : X = ∅ ∨ V.mem X) (hY : Y = ∅ ∨ V.mem Y) :
     X ∪ Y = ∅ ∨ V.mem (X ∪ Y) := by
   rcases hX with rfl | hX
@@ -191,8 +161,6 @@ theorem union_mem {X Y : Set ℕ} (hX : X = ∅ ∨ V.mem X) (hY : Y = ∅ ∨ V
       levelSet.upsample (le_max_right k₁ k₂)]
   exact Or.inr ⟨max k₁ k₂, _, heq, hXne.mono Set.subset_union_left⟩
 
-/-- **`V` is closed under finite (`Fintype`-indexed) unions**, as long as the result is
-non-empty — mirrors `Definition87.lean`'s `U.iUnion_mem` verbatim. -/
 theorem iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℕ} (hf : ∀ i, f i = ∅ ∨ V.mem (f i))
     (hne : (⋃ i, f i).Nonempty) : V.mem (⋃ i, f i) := by
   classical
@@ -207,9 +175,6 @@ theorem iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℕ} (hf : ∀ i, f
   rw [hall] at hne ⊢
   exact (hstep Finset.univ).resolve_left hne.ne_empty
 
-/-- **`V.mem` literally matches Scott's "non-empty finite unions of `2^k ℕ + ℓ`, `ℓ < 2^k`"** —
-reconciles the bookkeeping-free `levelSet` encoding with Exercise 8.12's literal description,
-mirroring `Definition87.lean`'s `U.mem_iff_scott`. -/
 theorem mem_iff_finiteUnion {X : Set ℕ} :
     V.mem X ↔
       ∃ F : Finset (ℕ × ℕ), (∀ p ∈ F, p.2 < 2 ^ p.1) ∧ X = ⋃ p ∈ F, affine p.1 p.2 ∧ X.Nonempty := by
@@ -259,11 +224,6 @@ theorem example_812 : ∀ {X : Set Nat},
           (@Set.Nonempty Nat X))) :=
   mem_iff_finiteUnion
 
-/-- **Scott's remark after Definition 8.7, transplanted to `V`**: every `V`-neighbourhood splits
-into two disjoint proper `V`-neighbourhoods. Refine to one level finer via `upsample`, which
-duplicates every set bit `ℓ` of `m` into a matching pair `(ℓ, ℓ + 2^k)`; peeling off *one*
-representative bit `ℓ₀` (witnessing `X`'s non-emptiness) leaves its twin `ℓ₀ + 2^k` behind, so the
-"rest" is guaranteed non-empty regardless of how many other bits `m` had. -/
 theorem no_minimal {X : Set ℕ} (hX : V.mem X) :
     ∃ Y Z : Set ℕ, V.mem Y ∧ V.mem Z ∧ Y ∩ Z = ∅ ∧ Y ∪ Z = X ∧ Y ≠ X ∧ Z ≠ X := by
   obtain ⟨k, m, rfl, hne⟩ := hX
@@ -317,10 +277,6 @@ theorem no_minimal {X : Set ℕ} (hX : V.mem X) :
     have hYsub : Y ⊆ Z := by rw [hEq]; exact hUnion ▸ Set.subset_union_left
     rw [← hInter, Set.inter_eq_left.mpr hYsub]
 
-
-
-/-- **`V` is Positive**: `levelSet.inter` presents *any* raw intersection unconditionally, so only
-non-emptiness can obstruct `V.mem (X ∩ Y)`. -/
 theorem isPositive : V.IsPositive := by
   rintro X Y ⟨k₁, m₁, rfl, -⟩ ⟨k₂, m₂, rfl, -⟩
   refine ⟨fun ⟨k, m, heq, hne⟩ => hne, fun hne => ⟨max k₁ k₂, _, levelSet.inter k₁ m₁ k₂ m₂, hne⟩⟩
@@ -333,9 +289,6 @@ theorem noMinimal : V.NoMinimal := by
   obtain ⟨Y, Z, hY, hZ, hYZinter, hYZunion, -, -⟩ := no_minimal hX
   exact ⟨Y, Z, hY, hZ, mem_nonempty hY, mem_nonempty hZ, hYZinter, hYZunion⟩
 
-
-/-- **`V` is closed under set-difference of two of its own neighbourhoods** (or the difference is
-empty). -/
 theorem diff_mem {X Y : Set ℕ} (hX : V.mem X) (hY : V.mem Y) : X \ Y = ∅ ∨ V.mem (X \ Y) := by
   obtain ⟨k₁, m₁, rfl, -⟩ := hX
   obtain ⟨k₂, m₂, rfl, -⟩ := hY
@@ -344,7 +297,6 @@ theorem diff_mem {X Y : Set ℕ} (hX : V.mem X) (hY : V.mem Y) : X \ Y = ∅ ∨
   · exact Or.inr ⟨max k₁ k₂, _, levelSet.diff k₁ m₁ k₂ m₂, h⟩
 
 theorem diffClosed : V.DiffClosed := fun hX hY => diff_mem hX hY
-
 
 end V
 

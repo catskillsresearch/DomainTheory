@@ -71,7 +71,6 @@ public import DomainTheory.BridgeTheorems.PresentationDomains
 public import DomainTheory.BridgeTheorems.ConjScottMap
 public import DomainTheory.BridgeTheorems.ScottMapBridgeInst9
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems

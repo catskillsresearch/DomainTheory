@@ -9,6 +9,4 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.fix
 
 namespace DomainTheory.NeighbourhoodSystems
 
-/- concordance: source L4807 EXAMPLES 8.4 check, fade, and smash -/
-
 end DomainTheory.NeighbourhoodSystems

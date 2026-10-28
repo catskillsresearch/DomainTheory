@@ -6,26 +6,19 @@ public import Mathlib.Order.BourbakiWitt
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
-
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-
 namespace IsContinuousLatticeRetraction
 
-
-/-- **Scott 1972, Prop 2.10 / March 1972 correction (p. 135).** For directed `S ⊆ D`,
-`j(⊔S′) = ⊔S`: the retraction sends the ambient join back to the subspace join. -/
 theorem retr_ambientSSup_eq_sSup (R : IsContinuousLatticeRetraction D D') (S : Set D)
     (hS : S.Nonempty) (hdir : DirectedOn (· ≤ ·) S) :
     R.retr (ambientSSup R S) = sSup S := by

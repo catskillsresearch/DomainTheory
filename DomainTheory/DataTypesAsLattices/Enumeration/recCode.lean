@@ -11,8 +11,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 3.3 (iii).** `val(rec(n)) = val(n)(rec(n))`
-via `Y` (the paper's `v`/`num` packaging is `recNat`). -/
 noncomputable def recCode (n : ℕ) : ℕ := applyNat Ycode n
 
 end DomainTheory.DataTypesAsLattices

@@ -14,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Closed term for `Y`. -/
 def Yterm : Term :=
   .lam 0 (.app
     (.lam 1 (.app (.var 0) (.app (.var 1) (.var 1))))

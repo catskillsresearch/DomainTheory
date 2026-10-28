@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.27).** Right injection. -/
 def inrightC : Pomega := graph (fun x => pairSeq (ofNat 1) x)
 
 end DomainTheory.DataTypesAsLattices

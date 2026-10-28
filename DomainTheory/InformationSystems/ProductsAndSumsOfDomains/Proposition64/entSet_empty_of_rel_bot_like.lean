@@ -34,7 +34,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -47,7 +46,6 @@ variable (A : InfoSys α) (B : InfoSys β)
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
-
 
 theorem entSet_empty_of_rel_bot_like (h : ApproximableMap (sumSystem A B) C)
     (hbot : h.toElement (sumSystem A B).botElement = C.botElement)

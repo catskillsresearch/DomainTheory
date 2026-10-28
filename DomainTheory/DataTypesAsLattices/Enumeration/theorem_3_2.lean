@@ -16,9 +16,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 3.2 (The enumeration theorem).**
-`RE = {val n | n ∈ ω}`, with `val(0) = G` and
-`val(apply(n)(m)) = val n (val m)`. -/
 theorem theorem_3_2 :
     (∀ n, valNat n ∈ RE) ∧
       valNat 0 = Gcomb ∧
@@ -27,7 +24,6 @@ theorem theorem_3_2 :
 
 namespace theorem_3_2
 
-/-- Every combinatory element appears in Scott's enumeration. -/
 theorem surjective {u : Pomega} (hu : IsCombinatory u) :
     ∃ n, valNat n = u := by
   revert hu
@@ -40,7 +36,6 @@ theorem surjective {u : Pomega} (hu : IsCombinatory u) :
     obtain ⟨m, hm⟩ := iv
     exact ⟨applyNat n m, by rw [valNat.app, hn, hm]⟩
 
-/-- **Scott 1976, Theorem 3.2 (i).** The zero test selects `G`. -/
 theorem i : condSet (ofNat 0) Gcomb botElem = Gcomb := by
   ext n
   constructor
@@ -51,7 +46,6 @@ theorem i : condSet (ofNat 0) Gcomb botElem = Gcomb := by
   · intro hG
     exact Or.inl ⟨hG, rfl⟩
 
-/-- **Scott 1976, Theorem 3.2.** `RE` is exactly the range of `val`. -/
 theorem range : RE = Set.range valNat := by
   ext u
   constructor

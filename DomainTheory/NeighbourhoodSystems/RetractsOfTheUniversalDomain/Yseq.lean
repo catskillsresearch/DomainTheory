@@ -14,12 +14,6 @@ variable (X : ℕ → Set α) (Δ : Set α)
 variable (hΔ : Δ.Nonempty) (hsplit : SplitSpec split)
 include hΔ hsplit
 
--- One-directional half of the transfer lemma, stated fully generically (over two independent
--- carrier types related only by a shared `genAtom`-emptiness correspondence `hcore`) so that it
--- can be reused, symmetrically, for both directions of the two-sided statement
--- `transfer_empty_iff`. Not `private`: also reused verbatim by `Exercise812cYseq.lean`'s
--- `transfer_empty_iffE` (8.12(c)(vi)(2)), since it is already fully generic over two independent
--- carrier types.
 omit hΔ hsplit in
 theorem transfer_dir {β1 β2 : Type*} (Z1 : ℕ → Set β1) (M1 : Set β1) (Z2 : ℕ → Set β2)
     (M2 : Set β2) (hcore : ∀ δ n, genAtom Z1 M1 δ n = ∅ ↔ genAtom Z2 M2 δ n = ∅)
@@ -43,11 +37,6 @@ theorem transfer_dir {β1 β2 : Type*} (Z1 : ℕ → Set β1) (M1 : Set β1) (Z2
     exact (hxcs p hp).symm
   rwa [hbeq] at hforward
 
-/-- **The transfer lemma.** A finite Boolean combination of the `X i` (`i` ranging over the
-finite constraint list `cs`, `true` meaning "in", `false` meaning "out") is non-empty in `D`'s
-carrier `Δ` iff the *same* Boolean combination of the `Y i := Yseq X Δ i` is non-empty in `U`'s
-master neighborhood. This is the single fact from which the order-isomorphism `D ≅ᴰ D'` and the
-subsystem relation `D' ◁ U` are both assembled. -/
 theorem transfer_empty_iff {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ cs, p.1 < n) :
     {x ∈ Δ | ∀ p ∈ cs, (p.2 = true ↔ x ∈ X p.1)}.Nonempty ↔
       {y ∈ U.master | ∀ p ∈ cs, (p.2 = true ↔ y ∈ Yseq split X Δ p.1)}.Nonempty := by
@@ -59,9 +48,6 @@ theorem transfer_empty_iff {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ c
   exact ⟨transfer_dir X Δ (Yseq split X Δ) U.master hcore hn,
     transfer_dir (Yseq split X Δ) U.master X Δ hcore' hn⟩
 
-/-- Subset transfer: `X i ⊆ X j` (restricted to the carrier `Δ`) iff `Y i ⊆ Y j` (restricted to
-`U.master`). Obtained from `transfer_empty_iff` applied to the two-point constraint list
-witnessing `x ∈ X i \ X j`. -/
 theorem transfer_subset_iff (i j : ℕ) :
     Δ ∩ X i ⊆ X j ↔ U.master ∩ Yseq split X Δ i ⊆ Yseq split X Δ j := by
   have key := transfer_empty_iff split X Δ hΔ hsplit (cs := [(i, true), (j, false)])
@@ -86,10 +72,6 @@ theorem transfer_subset_iff (i j : ℕ) :
     ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
 
-/-- Intersection transfer: `X i ∩ X j` is empty on `Δ` iff `Y i ∩ Y j` is empty on `U.master`. This
-is the key fact ensuring the map `Xᵢ ↦ Yᵢ` respects both inclusions *and* incompatibility, i.e.
-that it extends to an order isomorphism between the atomic Boolean combinations, hence to an
-order isomorphism of the generated `NeighborhoodSystem`s. -/
 theorem transfer_inter_empty_iff (i j : ℕ) :
     Δ ∩ X i ∩ X j = ∅ ↔ U.master ∩ Yseq split X Δ i ∩ Yseq split X Δ j = ∅ := by
   have key := transfer_empty_iff split X Δ hΔ hsplit (cs := [(i, true), (j, true)])
@@ -112,11 +94,6 @@ theorem transfer_inter_empty_iff (i j : ℕ) :
   rw [← Set.not_nonempty_iff_eq_empty, ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
 
-/-- Three-term subset transfer: `X i ∩ X j ⊆ X k` (restricted to `Δ`) iff `Y i ∩ Y j ⊆ Y k`
-(restricted to `U.master`). Combined with two applications of `transfer_subset_iff` (in the
-`m ⊆ i`/`m ⊆ j` direction), this lets an *equation* `X i ∩ X j = X k` on the `D`-side transfer to
-the equation `Y i ∩ Y j = Y k` on the `U`-side, and conversely — exactly the fact needed to move
-`D`'s own `inter_mem` witnessed-consistency structure across the `Xᵢ ↦ Yᵢ` correspondence. -/
 theorem transfer_double_subset_iff (i j k : ℕ) :
     Δ ∩ X i ∩ X j ⊆ X k ↔ U.master ∩ Yseq split X Δ i ∩ Yseq split X Δ j ⊆ Yseq split X Δ k := by
   have key := transfer_empty_iff split X Δ hΔ hsplit (cs := [(i, true), (j, true), (k, false)])
@@ -143,16 +120,9 @@ theorem transfer_double_subset_iff (i j k : ℕ) :
     ← Set.not_nonempty_iff_eq_empty, not_iff_not]
   exact key
 
-/-- `Yseq split X Δ n` is always a subset of `U.master`: it is a union of `atomU`-pieces at depth
-`n+1`, each of which is `⊆ U.master` by `atomU_subset_master`. -/
 theorem Yseq_subset_master (n : ℕ) : Yseq split X Δ n ⊆ U.master :=
   Set.iUnion_subset fun δ' => atomU_subset_master split X Δ hΔ hsplit (extendTrue δ') (n + 1)
 
-/-- **`Yseq split X Δ 0 = U.master` whenever `X 0 = Δ`** (Scott's convention `X₀ = Δ`). Unfolding
-one step of the recursion at `n = 0`, both `genAtom X Δ δ 0` and `atomU split X Δ δ 0` are `Δ` and
-`U.master` *definitionally*, so splitting against `X 0 = Δ` puts everything into the `"+"`-branch
-(the `"-"`-branch `Δ \ Δ = ∅` is forced empty by `split`'s spec), and `I ∪ J = U.master` with
-`J = ∅` forces `I = U.master`. -/
 theorem Yseq_zero_eq_master (h0 : X 0 = Δ) : Yseq split X Δ 0 = U.master := by
   set δ : ℕ → Bool := extendTrue (fun i : Fin 0 => i.elim0) with hδdef
   have hδ0 : δ 0 = true := by simp [hδdef, extendTrue]
@@ -174,10 +144,6 @@ theorem Yseq_zero_eq_master (h0 : X 0 = Δ) : Yseq split X Δ 0 = U.master := by
   calc U.master = atomU split X Δ δ 1 := hkey.symm
     _ ⊆ Yseq split X Δ 0 := subset_Yseq split X Δ (fun i : Fin 0 => i.elim0)
 
-/-- **Equation transfer.** If `X k = X i ∩ X j` on `D`'s side (with all three sets `⊆ Δ`, as holds
-automatically whenever they are genuine `D`-neighbourhoods), then `Y k = Y i ∩ Y j` on `U`'s side,
-and conversely. This is assembled from `transfer_subset_iff` (twice, for `Xk ⊆ Xi`/`Xk ⊆ Xj`) and
-`transfer_double_subset_iff` (once, for `Xi ∩ Xj ⊆ Xk`). -/
 theorem transfer_inter_eq_iff (i j k : ℕ) (hi : X i ⊆ Δ) (_hj : X j ⊆ Δ) (hk : X k ⊆ Δ) :
     X i ∩ X j = X k ↔ Yseq split X Δ i ∩ Yseq split X Δ j = Yseq split X Δ k := by
   have h1 : X k ⊆ X i ↔ Yseq split X Δ k ⊆ Yseq split X Δ i := by
@@ -204,18 +170,12 @@ theorem transfer_inter_eq_iff (i j k : ℕ) (hi : X i ⊆ Δ) (_hj : X j ⊆ Δ)
     have hijk : Yseq split X Δ i ∩ Yseq split X Δ j ⊆ Yseq split X Δ k := heq ▸ subset_rfl
     exact Set.Subset.antisymm (h3.mpr hijk) (Set.subset_inter (h1.mpr hki) (h2.mpr hkj))
 
-/-- `Yseq split X Δ n` is always either empty or a genuine `U`-neighbourhood: it is a finite union
-(`Fin n → Bool`) of `atomU` pieces, each of which is `∅` or `U.mem` by `atomU_invariant`. -/
 theorem Yseq_empty_or_mem (n : ℕ) : Yseq split X Δ n = ∅ ∨ U.mem (Yseq split X Δ n) := by
   by_cases hne : (Yseq split X Δ n).Nonempty
   · exact Or.inr (U.iUnion_mem
       (fun δ' => (atomU_invariant split X Δ hΔ hsplit (n + 1)).2.1 (extendTrue δ')) hne)
   · exact Or.inl (Set.not_nonempty_iff_eq_empty.mp hne)
 
-/-- If `x ∈ X n` (and `x ∈ Δ`, automatic whenever `X n ⊆ Δ`), then `Yseq split X Δ n` is
-non-empty: the canonical sign sequence `δ₀ k := decide (x ∈ X k)` produces a depth-`n` atom
-containing `x` (hence non-empty), which `X n` (since `x ∈ X n`) splits into a non-empty
-`"+"`-piece that is, by `split_fst_eq_inter_Yseq`, a subset of `Yseq split X Δ n`. -/
 theorem Yseq_nonempty_of_mem {n : ℕ} {x : α} (hxΔ : x ∈ Δ) (hxn : x ∈ X n) :
     (Yseq split X Δ n).Nonempty := by
   classical
@@ -250,7 +210,6 @@ open NeighborhoodSystem
 variable {α : Type*}
 
 open Classical in
-
 
 open Classical in
 

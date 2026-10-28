@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
 @[expose] public section
@@ -9,8 +8,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise216
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 section
-/-- **The three equations of Exercise 2.16.** `f(1x) = true`, `f(01x) = false`, `f(00x) = f(x)`,
-for *every* `x : |B|`. -/
+
 structure SatisfiesParityEquations (g : ApproximableMap B Example23.T) : Prop where
   one : ∀ x : B.Element, g.toElementMap (sigmaElt [true] x) = Example23.trueElt
   zeroOne : ∀ x : B.Element, g.toElementMap (sigmaElt [false, true] x) = Example23.falseElt
@@ -18,9 +16,7 @@ structure SatisfiesParityEquations (g : ApproximableMap B Example23.T) : Prop wh
 end
 
 section
-/-- **Exercise 2.16 — `x ↦ σx` is approximable.** The neighbourhood relation `X f Y ↔ σX ⊆ Y`
-(confined to `B × B`). Definition 2.1: (i) `σΔ ⊆ Δ`; (ii) the prefixed cone `σX` is a common lower
-bound of `Y, Y'`, witnessing `Y ∩ Y' ∈ B`; (iii) `prepend_mono` shrinks `σX'` as `X' ⊆ X`. -/
+
 def sigmaMap (σ : Str) : ApproximableMap B B where
   rel X Y := B.mem X ∧ B.mem Y ∧ prepend σ X ⊆ Y
   rel_dom h := h.1
@@ -37,15 +33,7 @@ def sigmaMap (σ : Str) : ApproximableMap B B where
 end
 
 section
-/-- **The recursive core of uniqueness.** Any `g` satisfying the three equations agrees with
-`parityMap` on every principal (finite) element `σ⊥`. Recursion peels *two* tokens at a time
-(mirroring `scan`'s own recursion `scan(00τ)=scanτ`): `1τ` and `01τ` are pinned directly by
-`hg.one`/`hg.zeroOne` for *any* tail (no recursion needed there); `00τ` reduces to `τ` by
-`hg.zeroZero`, decreasing structurally. The base case `σ = []` and the leftover singleton
-`σ = [false]` (an odd trailing zero, never reached by the two-at-a-time step) are the two places
-genuine order theory enters: `⊥ ≤ 1⊥` and `⊥ ≤ 01⊥` force `g(⊥) ≤ true` and `g(⊥) ≤ false`, and
-`⊥` is the *only* element below both (`eq_botElt_of_le`, `𝒯`'s flatness); the singleton then
-follows by squeezing `g(0⊥)` between `⊥` and `g(00⊥) = g(⊥)` via monotonicity. -/
+
 theorem key (g : ApproximableMap B Example23.T) (hg : SatisfiesParityEquations g) :
     ∀ σ : Str, g.toElementMap (sigmaElt σ B.bot) = Example23.valElt (Example23.scan σ)
   | [] => by
@@ -84,10 +72,7 @@ theorem key (g : ApproximableMap B Example23.T) (hg : SatisfiesParityEquations g
 end
 
 section
-/-- **Exercise 2.16, second half.** `parityMap` is the *unique* approximable map `B → T`
-satisfying `f(1x)=true`, `f(01x)=false`, `f(00x)=f(x)`. Every neighbourhood of `B` is a cone
-(`memB_cone`), so `ApproximableMap.ext` reduces `g = parityMap` to matching relations on cones,
-which is exactly `key` read through `rel_iff_mem_principal`/`parityMap_rel_cone`. -/
+
 theorem eq_parityMap_of_satisfies {g : ApproximableMap B Example23.T}
     (hg : SatisfiesParityEquations g) : g = Example23.parityMap := by
   apply ApproximableMap.ext
@@ -102,10 +87,7 @@ theorem eq_parityMap_of_satisfies {g : ApproximableMap B Example23.T}
 end
 
 section
-/-- **`parityMap` satisfies its own defining equations.** Each is a direct instance of the
-"shift formula" `Example23.parityMap_toElementMap_sigmaElt`, using that a leading `1` (resp. `01`,
-`00`) fixes the scan of the concatenation `σ ++ τ` regardless of the tail `τ`
-(`scan_append_true`/`scan_append_falseTrue`/`scan_append_falseFalse`). -/
+
 theorem parityMap_satisfies : SatisfiesParityEquations Example23.parityMap where
   one x := by
     apply Element.ext
@@ -137,9 +119,7 @@ theorem parityMap_satisfies : SatisfiesParityEquations Example23.parityMap where
 end
 
 section
-/- concordance: source L871 EXERCISE 2.16 prefixing is approximable -/
-/-- **Exercise 2.16.** The elementwise action of `sigmaMap σ` is Scott's `σx`: `(sigmaMap σ)(x) =
-σx` for every `x ∈ |B|`. -/
+
 theorem toElementMap_sigmaMap (σ : Str) (x : B.Element) :
     (sigmaMap σ).toElementMap x = sigmaElt σ x := by
   apply Element.ext

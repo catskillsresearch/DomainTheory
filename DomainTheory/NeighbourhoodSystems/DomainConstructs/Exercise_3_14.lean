@@ -10,9 +10,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
-/- concordance: source L1410 EXERCISE 3.14 tagged product of tokens -/
-/-- **Exercise 3.14 (Scott 1981, PRG-19).** The *diagonal* approximable mapping
-`diag : 𝒟 → 𝒟 × 𝒟`, defined as the paired map `⟨I_𝒟, I_𝒟⟩` of the identity with itself. -/
+
 def diag : ApproximableMap V (prod V V) := paired (idMap V) (idMap V)
 
 end DomainTheory.NeighbourhoodSystems
@@ -33,8 +31,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
     (diag V).toElementMap x = pair x x := by
   rw [diag, toElementMap_paired, toElementMap_idMap]
 
-/-- **Exercise 3.14 (Scott 1981, PRG-19).** Post-composing the diagonal with the two projections
-returns the identity: `p₀ ∘ diag = I` and `p₁ ∘ diag = I`. -/
 theorem proj₀_comp_diag : (proj₀ V V).comp (diag V) = idMap V :=
   proj₀_comp_paired (idMap V) (idMap V)
 end

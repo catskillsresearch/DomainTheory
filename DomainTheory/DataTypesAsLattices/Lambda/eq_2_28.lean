@@ -23,7 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (2.28).** Least-fixed-point unfolding `Y(g(x)) = g(x)(Y(g(x)))`. -/
 theorem eq_2_28 {g : Pomega → Pomega → Pomega}
     (hgy : ∀ x, IsScottContinuous (fun y => g x y)) (x : Pomega) :
     fix (g x) = g x (fix (g x)) :=
@@ -31,7 +30,6 @@ theorem eq_2_28 {g : Pomega → Pomega → Pomega}
 
 namespace eq_2_28
 
-/-- **Scott 1976, (2.28).** `Y(λf λx. g(x)(f(x))) = λx. Y(g(x))`. -/
 theorem commute {g : Pomega → Pomega → Pomega}
     (hgx : ∀ y, IsScottContinuous (fun x => g x y))
     (hgy : ∀ x, IsScottContinuous (fun y => g x y)) :

@@ -8,7 +8,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamC
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -17,11 +16,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
 
-
-/-- Membership entailment at a fixed stage (Scott (v) / ent_refl on raw tokens). -/
 theorem LamEntN_of_mem {n : ℕ} {u : Finset (RawLamToken α)} {t : RawLamToken α}
     (hu : LamConN A n u) (ht : t ∈ u) : LamEntN A n u t := by
   induction n generalizing u t with

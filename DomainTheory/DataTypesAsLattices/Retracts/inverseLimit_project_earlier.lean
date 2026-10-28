@@ -15,7 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.typed
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Earlier typed coordinates are fixed by every later projection. -/
 theorem inverseLimit_project_earlier {F : Pomega → Pomega}
     (hret : ∀ a, Retract a → Retract (F a))
     (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))

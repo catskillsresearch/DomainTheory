@@ -8,19 +8,14 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Deg
 public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
-/-- Combinatory elements lie in every enumeration degree, since `Deg a`
-contains `G` and is closed under application. -/
 theorem combinatory_mem_Deg (a : Pomega) {u : Pomega}
     (hu : IsCombinatory u) : u ∈ Deg a := by
   have huG : GeneratedFromG u := (theorem_3_1 (u := u)).mp hu

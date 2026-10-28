@@ -7,17 +7,14 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- Projection of an r.e. binary predicate, by dovetailing `Code.evaln`. -/
 theorem REPred.exists {p : ℕ → ℕ → Prop}
     (hp : REPred fun q : ℕ × ℕ => p q.1 q.2) :
     REPred fun n => ∃ m, p n m := by

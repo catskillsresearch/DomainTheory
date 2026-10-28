@@ -31,7 +31,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-/-- **Scott 1976, Theorem 7.3 (The functionality theorem).** -/
 
 theorem theorem_7_3.I_unique (i : Pomega)
     (hi : ∀ A, (arrowE A A).mem i) : i = Icomb := by
@@ -170,12 +169,10 @@ theorem theorem_7_3.S_unique (s : Pomega)
     rw [hsg, hsg']
   rw [hgoal, hval', Scomb_app3]
 
-/-- **Scott 1976, Theorem 7.3 (i).** `I : A → A`. -/
 theorem theorem_7_3.i (A : RestrictedEquiv) :
     (arrowE A A).mem Icomb :=
   ⟨Icomb_isGraph, Icomb_isGraph, fun x y hxy => by simpa [Icomb.app] using hxy⟩
 
-/-- **Scott 1976, Theorem 7.3 (ii).** `K : A → (B → A)`. -/
 theorem theorem_7_3.ii (A B : RestrictedEquiv) :
     (arrowE A (arrowE B A)).mem Kcomb := by
   refine ⟨Kcomb_isGraph, Kcomb_isGraph, ?_⟩
@@ -184,8 +181,6 @@ theorem theorem_7_3.ii (A B : RestrictedEquiv) :
   intro y y' _hy
   simpa [Kcomb_app2] using hx
 
-/-- **Scott 1976, Theorem 7.3 (iii).**
-`S : (A → (B → C)) → ((A → B) → (A → C))`. -/
 theorem theorem_7_3.iii (A B C : RestrictedEquiv) :
     (arrowE (arrowE A (arrowE B C))
       (arrowE (arrowE A B) (arrowE A C))).mem Scomb := by

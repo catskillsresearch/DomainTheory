@@ -15,10 +15,6 @@ section
 variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem.ProjectionPair
 
-/- concordance: source L4175 EXERCISE 6.25 projection pair laws -/
-/-- **Exercise 6.25 — `g` maps consistent sets to consistent sets.** "Consistent" for sets of
-elements is "bounded" (Exercise 1.27). If `S` is bounded by `b`, its image `{g(s) ∣ s ∈ S}` is
-bounded by `g(b)` (monotonicity). -/
 theorem inj_bounded (P : ProjectionPair D E) {S : Set D.Element} (hS : D.Bounded S) :
     E.Bounded (P.inj.toElementMap '' S) := by
   obtain ⟨b, hb⟩ := hS
@@ -26,22 +22,15 @@ theorem inj_bounded (P : ProjectionPair D E) {S : Set D.Element} (hS : D.Bounded
   rintro _ ⟨s, hs, rfl⟩
   exact P.inj.toElementMap_mono (hb s hs)
 
-/-- **`g(h(y)) ⊑ y`.** The second projection-pair law `g ∘ h ⊆ I_ℰ`, read on elements. -/
 theorem inj_proj_apply_le (P : ProjectionPair D E) (y : E.Element) :
     P.inj.toElementMap (P.proj.toElementMap y) ≤ y := by
   have h := (le_iff_toElementMap_le.mp P.inj_comp_proj_le) y
   rwa [toElementMap_comp, toElementMap_idMap] at h
 
-/-- **`h(g(x)) = x`.** The first projection-pair law `h ∘ g = I_𝒟`, read on elements. -/
 theorem proj_inj_apply (P : ProjectionPair D E) (x : D.Element) :
     P.proj.toElementMap (P.inj.toElementMap x) = x := by
   rw [← toElementMap_comp, P.proj_comp_inj, toElementMap_idMap]
 
-/-- **Exercise 6.25, the Galois connection.** For `x ∈ |𝒟|`, `y ∈ |ℰ|`:
-`g(x) ⊑ y ↔ x ⊑ h(y)`. So `g` (lower adjoint) and `h` (upper adjoint) determine each other.
-
-`→`: apply the monotone `h` to `g(x) ⊑ y` and use `h(g(x)) = x`.
-`←`: apply the monotone `g` to `x ⊑ h(y)` and use `g(h(y)) ⊑ y`. -/
 theorem galois (P : ProjectionPair D E) (x : D.Element) (y : E.Element) :
     P.inj.toElementMap x ≤ y ↔ x ≤ P.proj.toElementMap y := by
   constructor
@@ -51,12 +40,6 @@ theorem galois (P : ProjectionPair D E) (x : D.Element) (y : E.Element) :
   · intro hxy
     exact (P.inj.toElementMap_mono hxy).trans (P.inj_proj_apply_le y)
 
-/-- **Exercise 6.25 — `g` preserves `⊔` (not just *directed* unions).** For any bounded set `S`,
-`g(⊔S) = ⊔ {g(s) ∣ s ∈ S}`. This is the characteristic property of a lower adjoint.
-
-* `⊒`: `g(⊔S)` is an upper bound of `{g(s)}` since `s ⊑ ⊔S` and `g` is monotone.
-* `⊑`: by the Galois connection it suffices that `⊔S ⊑ h(⊔{g(s)})`, i.e. that each `s ⊑ h(⊔{g(s)})`;
-  by the Galois connection again this is `g(s) ⊑ ⊔{g(s)}`, true by `le_sSup`. -/
 theorem inj_sSup (P : ProjectionPair D E) {S : Set D.Element} (hS : D.Bounded S) :
     P.inj.toElementMap (D.sSup S hS) =
       E.sSup (P.inj.toElementMap '' S) (P.inj_bounded hS) := by
@@ -68,14 +51,10 @@ theorem inj_sSup (P : ProjectionPair D E) {S : Set D.Element} (hS : D.Bounded S)
     rintro _ ⟨s, hs, rfl⟩
     exact P.inj.toElementMap_mono (D.le_sSup S hS hs)
 
-/-- The set `{x ∣ g(x) ⊑ y}` is bounded: `h(y)` is an upper bound (it is in fact the top). -/
 theorem lowerSet_bounded (P : ProjectionPair D E) (y : E.Element) :
     D.Bounded (P.lowerSet y) :=
   ⟨P.proj.toElementMap y, fun _ hx => (P.galois _ y).mp hx⟩
 
-/-- **Exercise 6.25 — "check that the set on the right is directed".** Any two members of
-`{x ∣ g(x) ⊑ y}` have a common upper bound *inside the set*, namely `h(y)` itself (the down-set of
-`h(y)` has `h(y)` as a top, so it is trivially directed). -/
 theorem lowerSet_directed (P : ProjectionPair D E) (y : E.Element) :
     ∀ a ∈ P.lowerSet y, ∀ b ∈ P.lowerSet y,
       ∃ c ∈ P.lowerSet y, a ≤ c ∧ b ≤ c := by
@@ -83,26 +62,16 @@ theorem lowerSet_directed (P : ProjectionPair D E) (y : E.Element) :
   exact ⟨P.proj.toElementMap y, P.inj_proj_apply_le y,
     (P.galois a y).mp ha, (P.galois b y).mp hb⟩
 
-/-- **Exercise 6.25, first extremal formula.** `h(y) = ⊔ {x ∈ |𝒟| ∣ g(x) ⊑ y}`.
-
-`h(y)` is the *greatest* member of the set (`g(h(y)) ⊑ y`, so `h(y)` is in it; every member is
-`⊑ h(y)` by the Galois connection), hence it is the least upper bound. -/
 theorem proj_eq_sSup (P : ProjectionPair D E) (y : E.Element) :
     P.proj.toElementMap y = D.sSup (P.lowerSet y) (P.lowerSet_bounded y) := by
   apply le_antisymm
   · exact D.le_sSup _ (P.lowerSet_bounded y) (P.inj_proj_apply_le y)
   · exact D.sSup_le _ (P.lowerSet_bounded y) fun x hx => (P.galois x y).mp hx
 
-/-- **Exercise 6.25 — "check that the set on the right is non-empty".** `g(x)` itself lies in
-`{y ∣ x ⊑ h(y)}`, since `x ⊑ h(g(x)) = x`. -/
 theorem upperSet_nonempty (P : ProjectionPair D E) (x : D.Element) :
     (P.upperSet x).Nonempty :=
   ⟨P.inj.toElementMap x, by rw [mem_upperSet, P.proj_inj_apply x]⟩
 
-/-- **Exercise 6.25, second extremal formula.** `g(x) = ⊓ {y ∈ |ℰ| ∣ x ⊑ h(y)}`.
-
-`g(x)` is the *least* member of the set (`x ⊑ h(g(x)) = x`, so `g(x)` is in it; every member is
-`⊒ g(x)` by the Galois connection), hence it is the greatest lower bound. -/
 theorem inj_eq_sInf (P : ProjectionPair D E) (x : D.Element) :
     P.inj.toElementMap x = E.sInf (P.upperSet x) (P.upperSet_nonempty x) := by
   apply le_antisymm
@@ -650,14 +619,9 @@ open NeighborhoodSystem ApproximableMap
 section
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
-/-- **A neighbourhood system is *finite*** when it has only finitely many neighbourhoods. -/
 def NeighborhoodSystem.IsFinite {α : Type*} (D : NeighborhoodSystem α) : Prop :=
   Finite {X : Set α // D.mem X}
 
-/-- **The element-wise map of an injection `i` is an order embedding.** Given approximable maps
-`i : D → E`, `j : E → D` with `j ∘ i = I_D`, the map `x ↦ i(x)` on elements is an order embedding
-`|D| ↪o |E|`: monotone by `toElementMap_mono`, and order-reflecting because `j(·)` is a monotone
-left inverse (`j(i(x)) = x`). Choice-free. -/
 def projElementEmbedding {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
     (i : ApproximableMap D E) (j : ApproximableMap E D) (hji : j.comp i = idMap D) :
     D.Element ↪o E.Element :=
@@ -672,18 +636,12 @@ def projElementEmbedding {α β : Type*} {D : NeighborhoodSystem α} {E : Neighb
     · intro h
       exact toElementMap_mono i h)
 
-/-- **`D ⊴ E` yields an order embedding `|D| ↪o |E|`.** Unfold `⊴` to an iso `|D| ≅o |D'|` onto a
-subdomain `D' ◁ E`, turn `D' ◁ E` into Proposition 6.12's projection pair, and compose its
-injection embedding with the iso. Choice-free. -/
 theorem Trianglelefteq.elementEmbedding (h : D ⊴ E) :
     Nonempty (D.Element ↪o E.Element) := by
   obtain ⟨D', hsub, ⟨e⟩⟩ := h
   exact ⟨e.toOrderEmbedding.trans
     (projElementEmbedding hsub.inj hsub.proj hsub.proj_comp_inj)⟩
 
-/-- **A finite system has a finite element domain.** A filter `x : |D|` is determined by which of
-the (finitely many) neighbourhoods it contains, so `x ↦ {p | x.mem p.1}` injects `|D|` into the
-finite powerset `Set {X // D.mem X}`. -/
 theorem finite_element_of_isFinite {α : Type*} {D : NeighborhoodSystem α} (h : D.IsFinite) :
     Finite D.Element := by
   have : Finite {X : Set α // D.mem X} := h
@@ -697,10 +655,6 @@ theorem finite_element_of_isFinite {α : Type*} {D : NeighborhoodSystem α} (h :
     simpa using this
   · exact ⟨fun hmem => absurd (x.sub hmem) hX, fun hmem => absurd (y.sub hmem) hX⟩
 
-/-- **Finite Cantor–Schröder–Bernstein (order version).** Mutual order embeddings between two
-*finite* ordered types yield an order isomorphism. The embeddings are injective, so equal finite
-cardinality forces `f` to be surjective; a surjective strictly-monotone map is an order iso. Uses
-`Classical.choice` (via `Fintype`/surjection-section). -/
 theorem orderIso_of_embeddings {P Q : Type*} [PartialOrder P] [PartialOrder Q]
     [Finite P] [Finite Q] (f : P ↪o Q) (g : Q ↪o P) : Nonempty (P ≃o Q) := by
   classical

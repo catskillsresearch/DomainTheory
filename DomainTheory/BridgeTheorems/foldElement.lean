@@ -22,7 +22,6 @@ open DomainTheory.InformationSystems.InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Preimage of an official RHS element under `treeUnfold` is a tree element. -/
 def foldElement (y : (treeRhs A).Element) : (treeSystem A).Element where
   carrier := treeUnfold A ⁻¹' y.carrier
   consistent := by

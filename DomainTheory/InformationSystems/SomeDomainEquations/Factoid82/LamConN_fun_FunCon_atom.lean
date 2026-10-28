@@ -10,7 +10,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamC
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -19,12 +18,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
 
-
-/-- Full FunCon at stage `n+1` (uses `exists_FunCon` + atom-input lift).
-Nested function tokens in the input union remain for the general `ent_con` argument. -/
 theorem LamConN_fun_FunCon_atom {n : ℕ} {u : Finset (RawLamToken α)}
     (hu : LamConN A (n + 1) u)
     {s : Finset (List (RawLamToken α) × List (RawLamToken α))}

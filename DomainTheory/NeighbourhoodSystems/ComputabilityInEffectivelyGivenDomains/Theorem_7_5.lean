@@ -12,9 +12,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
-/- concordance: source L4361 THEOREM 7.5 function space effective -/
-/-- **Theorem 7.5 (existence part) (Scott 1981, PRG-19).** If `𝒟₀` and `𝒟₁` are effectively given,
-then so is the function space `(𝒟₀ → 𝒟₁)`. Choice-free. -/
 theorem funSpace_isEffectivelyGiven (h₀ : V₀.IsEffectivelyGiven) (h₁ : V₁.IsEffectivelyGiven) :
     (funSpace V₀ V₁).IsEffectivelyGiven := by
   obtain ⟨P₀⟩ := h₀
@@ -31,9 +28,6 @@ theorem funSpace_isEffectivelyGiven (h₀ : V₀.IsEffectivelyGiven) (h₁ : V�
     (fun s => (hincl1s s).symm) hincl1p
     (fun s => (heq1s s).symm) heq1p⟩
 
-/-- **The step neighbourhood `[X₀ⱼ, Y₁ₘ]` as a one-entry `Xenum`.** The code `⟨⟨j, m⟩, 0⟩ + 1`
-decodes to the singleton entry-list `[⟨j, m⟩]`, which is always consistent (the step map itself is a
-witness), so `Xenum` of it is `stepFun [(X₀ⱼ, Y₁ₘ)] = [X₀ⱼ, Y₁ₘ]`. -/
 theorem Xenum_singleton (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
       : Set (ApproximableMap V₀ V₁)).Nonempty) (j m : ℕ) :
@@ -55,10 +49,6 @@ section ConsChain
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-
-/-- **Consistency via the `inter`-chain (choice-free).** A finite index set `js` is consistent — i.e.
-`⋂{X_j ∣ j ∈ js}` is a neighbourhood — exactly when the always-a-neighbourhood `X_{idxchain js}` sits
-inside every `X_j` (`j ∈ js`). -/
 theorem consChain_iff (js : List ℕ) :
     (∀ j ∈ js, P.X (idxchain P js) ⊆ P.X j) ↔ V.mem (interFrom P V.master js) := by
   constructor
@@ -74,9 +64,6 @@ theorem consChain_iff (js : List ℕ) :
 
 end ConsChain
 
-/-- **Evaluation against a product neighbourhood.** `(F, X) eval Y ↔ F ⊆ [X, Y]`, for any
-function-space neighbourhood `F` and basic neighbourhoods `X, Y`: every map in `F` relates `X` to `Y`
-exactly when `F` is contained in the step set `[X, Y] = {f ∣ f X Y}`. -/
 theorem evalMap_rel_prodNbhd_iff {F : Set (ApproximableMap V₀ V₁)} (hF : (funSpace V₀ V₁).mem F)
     {X : Set α} (hX : V₀.mem X) {Y : Set β} (hY : V₁.mem Y) :
     (evalMap V₀ V₁).rel (prodNbhd F X) Y ↔ F ⊆ step X Y := by
@@ -88,11 +75,6 @@ theorem evalMap_rel_prodNbhd_iff {F : Set (ApproximableMap V₀ V₁)} (hF : (fu
   · intro hsub
     exact ⟨prod_mem_prodNbhd hF hX, hF, hX, hY, fun f hf => mem_step.mp (hsub hf)⟩
 
-/-- **Theorem 7.5 (Scott 1981, PRG-19) — `eval` is computable (choice-free).** Relative to the
-function-space presentation `funPresentation` (and the product/codomain presentations), the
-evaluation map `eval : (𝒟₀ → 𝒟₁) × 𝒟₀ → 𝒟₁` is computable: its neighbourhood relation is the
-*recursively decidable* function-space inclusion `Xenum c ⊆ [X₀ⱼ, Y₁ₘ]`, hence recursively
-enumerable. -/
 theorem evalMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
       : Set (ApproximableMap V₀ V₁)).Nonempty) (hgNp : Nat.Primrec gN)
@@ -103,12 +85,11 @@ theorem evalMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
       (prodPresentation (funPresentation P₀ P₁ gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p
         hincl1 hincl1p heq1 heq1p) P₀) P₁ (evalMap V₀ V₁) := by
   constructor
-  -- The function-space inclusion is recursively decidable (`funPresentation.incl_computable`);
-  -- `funPresentation.X` is definitionally `Xenum`, so we read it off directly.
+
   have hsub : RecDecidable (fun s => Xenum P₀ P₁ gN s.unpair.1 ⊆ Xenum P₀ P₁ gN s.unpair.2) :=
     (funPresentation P₀ P₁ gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p
       hincl1 hincl1p heq1 heq1p).incl_computable
-  -- Re-index `t ↦ ⟨(t.1).1, ⟨⟨(t.1).2, t.2⟩, 0⟩ + 1⟩`: `Xenum_{(t.1).1} ⊆ [X₀_{(t.1).2}, Y₁_{t.2}]`.
+
   have h11 : Nat.Primrec (fun t : ℕ => t.unpair.1.unpair.1) :=
     Nat.Primrec.left.comp Nat.Primrec.left
   have h12 : Nat.Primrec (fun t : ℕ => t.unpair.1.unpair.2) :=
@@ -143,7 +124,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
-/-- **Bridge.** `φ ∋ Xenum c` iff, *when `c` is consistent*, `φ` contains every constituent step. -/
 theorem mem_Xenum_iff (gN : ℕ → ℕ) (φ : (funSpace V₀ V₁).Element) (c : ℕ) :
     φ.mem (Xenum P₀ P₁ gN c) ↔
       (gN c = 1 → ∀ e ∈ decodeList c, φ.mem (step (P₀.X e.unpair.1) (P₁.X e.unpair.2))) := by
@@ -161,17 +141,14 @@ theorem mem_Xenum_iff (gN : ℕ → ℕ) (φ : (funSpace V₀ V₁).Element) (c 
     · intro _ hcon; exact absurd hcon h
     · intro _; rw [← funSpace_master]; exact φ.master_mem
 
-/-- **Theorem 7.5 (Scott 1981, PRG-19) — computable elements = computable maps (choice-free).** For
-the function-space enumeration `Xenum` built from a consistency char `gN`, an element `φ` has an r.e.
-index set iff the corresponding approximable map `toApproxMap φ` is computable. -/
 theorem Xenum_isComputableElement_iff (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
       : Set (ApproximableMap V₀ V₁)).Nonempty) (φ : (funSpace V₀ V₁).Element) :
     REPred (fun c => φ.mem (Xenum P₀ P₁ gN c)) ↔ ComputableMap P₀ P₁ (toApproxMap φ) := by
-  -- `ComputableMap` unfolds (def-eq) to r.e.-ness of `R' s = φ ∋ [X₀_{s.1}, X₁_{s.2}]`.
+
   have hbridge := mem_Xenum_iff P₀ P₁ gN φ
   constructor
-  · -- element computable ⟹ map computable: reindex by the single-step code `pair s 0 + 1`.
+  ·
     intro helem
     have hc0p : Nat.Primrec (fun s => Nat.pair s 0 + 1) :=
       Nat.Primrec.succ.comp (primrec_id.pair (Nat.Primrec.const 0))
@@ -191,7 +168,7 @@ theorem Xenum_isComputableElement_iff (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN)
     constructor
     · intro hRs _ e he; rw [List.mem_singleton] at he; subst he; exact hRs
     · intro h; exact h hcons s (List.mem_singleton.mpr rfl)
-  · -- map computable ⟹ element computable: guard the bounded-`∀` by the decidable `gN c = 1`.
+  ·
     intro hmap
     have hR' : REPred (fun s => φ.mem (step (P₀.X s.unpair.1) (P₁.X s.unpair.2))) := hmap.out
     have hforall : REPred (fun c => ∀ e ∈ decodeList c,
@@ -201,8 +178,6 @@ theorem Xenum_isComputableElement_iff (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN)
     refine REPred.of_iff (fun c => ?_) (hne1.or hforall)
     rw [hbridge c]; exact Decidable.imp_iff_not_or
 
-/-- **Theorem 7.5 (Scott 1981, PRG-19), packaged for `funPresentation`.** An element of the
-function-space presentation is a computable element iff it is (the filter of) a computable map. -/
 theorem isComputableElement_funPresentation_iff (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
       : Set (ApproximableMap V₀ V₁)).Nonempty) (hgNp : Nat.Primrec gN)
@@ -215,9 +190,6 @@ theorem isComputableElement_funPresentation_iff (gN incl0 incl1 eq1 : ℕ → �
   ⟨fun h => (Xenum_isComputableElement_iff P₀ P₁ gN hgNp hgN φ).mp h.out,
     fun h => ⟨(Xenum_isComputableElement_iff P₀ P₁ gN hgNp hgN φ).mpr h⟩⟩
 
-/-- **Membership in `Xenum` for a single map.** A map `f` lies in `Xenum c` iff (when `c` is
-consistent) it relates every coded step `⟨X₀ᵢ, X₁ⱼ⟩`; junk codes give `univ`. (The single-map analogue
-of `mem_Xenum_iff`.) -/
 theorem mem_Xenum_iff_map (gN : ℕ → ℕ) (f : ApproximableMap V₀ V₁) (c : ℕ) :
     f ∈ Xenum P₀ P₁ gN c ↔
       (gN c = 1 → ∀ e ∈ decodeList c, f.rel (P₀.X e.unpair.1) (P₁.X e.unpair.2)) := by
@@ -235,8 +207,6 @@ theorem mem_Xenum_iff_map (gN : ℕ → ℕ) (f : ApproximableMap V₀ V₁) (c 
     · intro _ hcon; exact absurd hcon h
     · intro _; exact Set.mem_univ f
 
-/-- **Bridge for `curry`.** `(X₀ₙ) curry(g) (Xenum c)` iff, *when `c` is consistent*, `g` relates
-`X₀ₙ ∪ X₁_{e.1}` to `X₂_{e.2}` for every coded entry `e`. -/
 theorem curry_rel_Xenum_iff {V₂ : NeighborhoodSystem γ} (P₂ : ComputablePresentation V₂)
     (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₁ P₂ (decodeList c))
@@ -259,10 +229,6 @@ theorem curry_rel_Xenum_iff {V₂ : NeighborhoodSystem γ} (P₂ : ComputablePre
     rw [gSection_rel]
     exact himp hc e he
 
-/-- **Theorem 7.5 (Scott 1981, PRG-19) — `curry` is computable (choice-free).** If `g : 𝒟₀ × 𝒟₁ → 𝒟₂`
-is computable then so is `curry g : 𝒟₀ → (𝒟₁ → 𝒟₂)`: its neighbourhood relation is the parameterised
-bounded `∀` (`REPred.forall_mem_decodeList₂`) over the r.e. relation of `g`, guarded by the decidable
-consistency flag. -/
 theorem curry_isComputable {V₂ : NeighborhoodSystem γ} (P₂ : ComputablePresentation V₂)
     (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₁ P₂ (decodeList c))
@@ -280,12 +246,12 @@ theorem curry_isComputable {V₂ : NeighborhoodSystem γ} (P₂ : ComputablePres
       s.unpair.2.unpair.2) :=
     (Nat.Primrec.left.pair (Nat.Primrec.left.comp Nat.Primrec.right)).pair
       (Nat.Primrec.right.comp Nat.Primrec.right)
-  -- `g`'s relation re-indexed to `(n, e) ↦ X₀ₙ ∪ X₁_{e.1} g X₂_{e.2}` is r.e. in `(n, e)`.
+
   have hS : REPred₂ (fun n e =>
       g.rel (prodNbhd (P₀.X n) (P₁.X e.unpair.1)) (P₂.X e.unpair.2)) := by
     refine REPred.of_iff (fun s => ?_) (hg'.comp hre)
     simp only [prodPresentation_X, unpair_pair_fst, unpair_pair_snd]
-  -- bounded `∀` over the coded list, with parameter `n = t.1`
+
   have hforall : REPred (fun t => ∀ e ∈ decodeList t.unpair.2,
       g.rel (prodNbhd (P₀.X t.unpair.1) (P₁.X e.unpair.1)) (P₂.X e.unpair.2)) :=
     REPred.forall_mem_decodeList₂ hS
@@ -900,12 +866,9 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   {V₂ : NeighborhoodSystem γ}
 
-/-- The code of the one-entry function-space neighbourhood `[⟨X_{e.1}, X_{e'.1}⟩, X_{e'.2}]` of
-`(𝒟₀×𝒟₁→𝒟₂)` (a `Xenum`-singleton over the product presentation). -/
 def curryStepCode (a e' : ℕ) : ℕ :=
   Nat.pair (Nat.pair (Nat.pair a e'.unpair.1) e'.unpair.2) 0 + 1
 
-/-- `curryIso V₀ V₁ V₂` sends a filter `x` to the filter of the curried least map (by definition). -/
 theorem curryIso_apply (x : (funSpace (prod V₀ V₁) V₂).Element) :
     curryIso V₀ V₁ V₂ x = toFilter (curry (toApproxMap x)) := rfl
 

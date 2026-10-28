@@ -10,9 +10,7 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.sSup_finiteBasisSup
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem CountablyAlgebraic.compact_finite_support
     {α : Type u} [CompleteLattice α] (D : CountablyAlgebraic α)

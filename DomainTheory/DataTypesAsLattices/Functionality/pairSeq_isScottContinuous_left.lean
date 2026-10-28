@@ -15,9 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem pairSeq_isScottContinuous_left (y : Pomega) :
     IsScottContinuous (fun x => pairSeq x y) :=

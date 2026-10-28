@@ -14,7 +14,6 @@ public import Mathlib.Data.Nat.Bitwise
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Table 2.** McCarthy conditional. -/
 def condSet (z x y : Pomega) : Pomega :=
   {n | n ∈ x ∧ 0 ∈ z} ∪ {m | m ∈ y ∧ ∃ k, k + 1 ∈ z}
 

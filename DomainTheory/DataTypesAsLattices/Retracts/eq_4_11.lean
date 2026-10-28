@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.11).** Action of composed function-space retracts. -/
 theorem eq_4_11 (a b a' b' u : Pomega) :
     funOf (arrowR a b) (funOf (arrowR a' b') u) =
       comp b (comp (comp b' (comp u a')) a) := by
@@ -18,7 +17,6 @@ theorem eq_4_11 (a b a' b' u : Pomega) :
 
 namespace eq_4_11
 
-/-- **Scott 1976, (4.11).** Composition of function-space retracts. -/
 theorem comp (a b a' b' : Pomega) :
     DomainTheory.DataTypesAsLattices.comp (arrowR a b) (arrowR a' b') =
       arrowR (DomainTheory.DataTypesAsLattices.comp a' a)

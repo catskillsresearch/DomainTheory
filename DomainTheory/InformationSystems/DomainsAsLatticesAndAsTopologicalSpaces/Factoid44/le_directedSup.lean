@@ -13,7 +13,6 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43.le_familySup
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -21,7 +20,6 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
 
 theorem le_directedSup (S : Set sys.Element) (hne : S.Nonempty) (hdir : sys.IsDirected S)
     {x : sys.Element} (hx : x ∈ S) : x ≤ sys.directedSup S hne hdir :=

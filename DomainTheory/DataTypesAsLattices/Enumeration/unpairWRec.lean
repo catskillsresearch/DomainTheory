@@ -16,7 +16,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Bounded scan for the least `w` with `k < triangle (w+1)`. -/
 def unpairWRec (k n : ℕ) : ℕ :=
   Nat.rec 0 (fun w ih => if k < triangle (w + 1) then ih else w + 1) n
 

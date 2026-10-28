@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_13
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
@@ -16,7 +15,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise215
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 section
-/-- Membership for `𝒪`: a neighbourhood is the master `Δ = univ` or the empty set. -/
+
 def memO (X : Set (Fin 1)) : Prop := X = Set.univ ∨ X = ∅
 end
 
@@ -34,8 +33,7 @@ theorem subMaster_O : ∀ {X : Set (Fin 1)}, memO X → X ⊆ Set.univ := fun _ 
 end
 
 section
-/- concordance: source L861 EXERCISE 2.15 opens classified by maps -/
-/-- **Exercise 2.15 — the one-token system `𝒪 = {Δ, ∅}`.** -/
+
 def O : NeighborhoodSystem (Fin 1) :=
   NeighborhoodSystem.ofNestedOrDisjoint memO Set.univ Set.univ_nonempty
     (Or.inl rfl) nestedOrDisjoint_O subMaster_O
@@ -54,7 +52,7 @@ theorem O_mem_empty : O.mem (∅ : Set (Fin 1)) := Or.inr rfl
 end
 
 section
-/-- `𝒪` is closed under intersection (used to verify the relation of `openToMap`). -/
+
 theorem O_inter_mem {Y Y' : Set (Fin 1)} (hY : O.mem Y) (hY' : O.mem Y') : O.mem (Y ∩ Y') := by
   rcases hY with rfl | rfl
   · rw [Set.univ_inter]; exact hY'
@@ -62,31 +60,29 @@ theorem O_inter_mem {Y Y' : Set (Fin 1)} (hY : O.mem Y) (hY' : O.mem Y') : O.mem
 end
 
 section
-/-- The bottom element `⊥ = ↑Δ = {Δ}` of `|𝒪|`. -/
+
 def botElt : O.Element := O.bot
 end
 
 section
-/-- `Y ∈ ⊥` iff `Y = Δ = univ`. -/
+
 theorem mem_botElt {Y : Set (Fin 1)} : botElt.mem Y ↔ Y = (Set.univ : Set (Fin 1)) := by
   rw [botElt, O.mem_bot, O_master]
 end
 
 section
-/-- The top element `⊤ = ↑∅` of `|𝒪|`. -/
+
 def topElt : O.Element := O.principal O_mem_empty
 end
 
 section
 variable {γ : Type*} (V : NeighborhoodSystem γ)
 
-/-- **Exercise 2.15 — the open set of an approximable map.** `mapToOpen f = {x ∣ f(x) = ⊤}`. -/
 def mapToOpen (f : ApproximableMap V O) : Set V.Element := {x | f.toElementMap x = topElt}
 end
 
 section
-/-- **The defining property of `⊤`.** An element `z` of `|𝒪|` is `⊤` iff it contains `∅`: `∅` is
-the sharpest neighbourhood, so `∅ ∈ z` forces `z` to be the principal filter `↑∅ = ⊤`. -/
+
 theorem mem_empty_iff_eq_top (z : O.Element) : z.mem ∅ ↔ z = topElt := by
   constructor
   · intro hz
@@ -96,7 +92,7 @@ theorem mem_empty_iff_eq_top (z : O.Element) : z.mem ∅ ↔ z = topElt := by
 end
 
 section
-/-- **Two elements.** Every element of `|𝒪|` is `⊥` or `⊤`. -/
+
 theorem element_eq_bot_or_top (z : O.Element) : z = botElt ∨ z = topElt := by
   by_cases hz : z.mem ∅
   · exact Or.inr ((mem_empty_iff_eq_top z).mp hz)
@@ -114,8 +110,7 @@ theorem element_eq_bot_or_top (z : O.Element) : z = botElt ∨ z = topElt := by
 end
 
 section
-/-- **Extensionality for `|𝒪|`.** Two elements agreeing on membership of `∅` are equal (it
-distinguishes `⊥` from `⊤`). -/
+
 theorem O_ext {z w : O.Element} (h : z.mem ∅ ↔ w.mem ∅) : z = w := by
   by_cases hz : z.mem ∅
   · rw [(mem_empty_iff_eq_top z).mp hz, (mem_empty_iff_eq_top w).mp (h.mp hz)]
@@ -130,8 +125,6 @@ end
 section
 variable {γ : Type*} (V : NeighborhoodSystem γ)
 
-/-- `mapToOpen f` is open: it is the preimage of the open point `{⊤} = [∅]` under the continuous
-`x ↦ f(x)` (Exercise 2.13). -/
 theorem isOpen_mapToOpen (f : ApproximableMap V O) : IsOpen (mapToOpen V f) := by
   have heq : mapToOpen V f = (fun x => f.toElementMap x) ⁻¹' O.basicOpen ∅ := by
     ext x
@@ -151,10 +144,6 @@ end
 section
 variable {γ : Type*} (V : NeighborhoodSystem γ)
 
-/-- **Exercise 2.15 — the approximable map of an open set.** For open `U ⊆ |𝒟|`, the relation
-`X f Y ↔ X ∈ 𝒟 ∧ Y ∈ 𝒪 ∧ (Y = ∅ → ↑X ∈ U)`. The single nontrivial obligation is monotonicity:
-sharpening the input `X' ⊆ X` means `↑X ⊑ ↑X'`, and `U` open (an upper set) carries `↑X ∈ U` up to
-`↑X' ∈ U`. Choice-free. -/
 def openToMap (U : Set V.Element) (hU : IsOpen U) : ApproximableMap V O where
   rel X Y := V.mem X ∧ O.mem Y ∧ (Y = ∅ → ∃ hX : V.mem X, V.principal hX ∈ U)
   rel_dom h := h.1
@@ -177,8 +166,6 @@ def openToMap (U : Set V.Element) (hU : IsOpen U) : ApproximableMap V O where
     have hle : V.principal hX ≤ V.principal hX' := (V.principal_le_iff hX hX').mpr hX'X
     exact ⟨hX', V.isOpen_isUpperSet hU hmem' hle⟩
 
-/-- The value of `openToMap U hU` on the finite element `↑X` contains `∅` iff `↑X ∈ U`; i.e.
-`(openToMap U hU)(↑X) = ⊤ ↔ ↑X ∈ U`. -/
 theorem toElementMap_openToMap_principal_mem_empty (U : Set V.Element) (hU : IsOpen U)
     {X : Set γ} (hX : V.mem X) :
     ((openToMap V U hU).toElementMap (V.principal hX)).mem ∅ ↔ V.principal hX ∈ U := by
@@ -190,7 +177,6 @@ theorem toElementMap_openToMap_principal_mem_empty (U : Set V.Element) (hU : IsO
   · intro h
     exact ⟨hX, O_mem_empty, fun _ => ⟨hX, h⟩⟩
 
-/-- **Exercise 2.15 — round trip (open → map → open).** `mapToOpen (openToMap U hU) = U`. -/
 theorem mem_mapToOpen_openToMap (U : Set V.Element) (hU : IsOpen U) (x : V.Element) :
     x ∈ mapToOpen V (openToMap V U hU) ↔ x ∈ U := by
   rw [mapToOpen, Set.mem_ofPred_eq, ← mem_empty_iff_eq_top,
@@ -206,7 +192,6 @@ theorem mem_mapToOpen_openToMap (U : Set V.Element) (hU : IsOpen U) (x : V.Eleme
     rw [toElementMap_openToMap_principal_mem_empty]
     exact hXU (show V.principal (x.sub hxX) ∈ V.basicOpen X from ⟨x.sub hxX, subset_rfl⟩)
 
-/-- **Exercise 2.15 — round trip (map → open → map).** `openToMap (mapToOpen f) = f`. -/
 theorem openToMap_mapToOpen (f : ApproximableMap V O) :
     openToMap V (mapToOpen V f) (isOpen_mapToOpen V f) = f := by
   apply ApproximableMap.eq_of_toElementMap_principal
@@ -286,8 +271,6 @@ end
 section
 variable {γ : Type*} (V : NeighborhoodSystem γ)
 
-/-- **Exercise 2.15 (main).** The open subsets of `|𝒟|` are in one-one correspondence with the
-approximable mappings `𝒟 → 𝒪`, via `U ↦ openToMap U` and `f ↦ {x ∣ f(x) = ⊤}`. -/
 def openSet_equiv_map : {U : Set V.Element // IsOpen U} ≃ ApproximableMap V O where
   toFun U := openToMap V U.1 U.2
   invFun f := ⟨mapToOpen V f, isOpen_mapToOpen V f⟩
@@ -304,7 +287,7 @@ theorem O_mem_univ : O.mem (Set.univ : Set (Fin 1)) := Or.inl rfl
 end
 
 section
-/-- The open point `{⊤}` is the basic open `[∅]`. -/
+
 theorem basicOpen_empty_eq_singleton_top : O.basicOpen ∅ = {topElt} := by
   ext x
   rw [mem_basicOpen, mem_empty_iff_eq_top]
@@ -312,12 +295,12 @@ theorem basicOpen_empty_eq_singleton_top : O.basicOpen ∅ = {topElt} := by
 end
 
 section
-/-- `⊥ ⊑ ⊤`. -/
+
 theorem botElt_le_topElt : botElt ≤ topElt := O.bot_le _
 end
 
 section
-/-- `⊥ ≠ ⊤` (so `⊥ ⊏ ⊤`). -/
+
 theorem botElt_ne_topElt : botElt ≠ topElt := by
   intro h
   have htop : topElt.mem ∅ := ⟨O_mem_empty, subset_rfl⟩
@@ -326,8 +309,7 @@ theorem botElt_ne_topElt : botElt ≠ topElt := by
 end
 
 section
-/-- **The opens of `|𝒪|`.** `{⊥}` is not open: `⊥` is the generic point. (The basic neighbourhood of
-`⊥` is `[Δ] = |𝒪|`, which is not contained in `{⊥}` because it also contains `⊤`.) -/
+
 theorem not_isOpen_singleton_botElt : ¬ IsOpen ({botElt} : Set O.Element) := by
   intro h
   obtain ⟨X, hX, hsub⟩ := h.out botElt rfl

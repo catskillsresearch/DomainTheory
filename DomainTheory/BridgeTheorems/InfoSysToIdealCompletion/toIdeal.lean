@@ -23,7 +23,6 @@ namespace InfoSysToIdealCompletion
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Ideal of finite approximants of `x`. -/
 def toIdeal (x : A.Element) : Ideal (FiniteElement A) where
   carrier := finiteApproximants A x
   lower' := isLowerSet_finiteApproximants A x

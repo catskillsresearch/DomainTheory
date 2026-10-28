@@ -9,7 +9,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.to
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -18,11 +17,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-
 namespace ApproximableMap
 
-
-/-- **Theorem 7.3.** `fix(f)` is a fixed point. -/
 theorem fixElement_fixed (f : ApproximableMap A A) :
     f.toElement (fixElement A f) = fixElement A f := by
   apply le_antisymm

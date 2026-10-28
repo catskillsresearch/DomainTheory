@@ -21,7 +21,6 @@ namespace ApproximableMap
 
 variable {A : InfoSys α} {B : InfoSys β}
 
-/-- **Definition 5.2.** Image of an element under an approximable mapping. -/
 def toElement (f : ApproximableMap A B) (x : A.Element) : B.Element where
   carrier := {Y | ∃ u : Finset α, ↑u ⊆ x.carrier ∧ f.rel u {Y}}
   consistent := by

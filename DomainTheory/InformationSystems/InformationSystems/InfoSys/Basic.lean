@@ -11,36 +11,29 @@ namespace DomainTheory.InformationSystems
 
 universe u
 
-
 namespace InfoSys
 
 variable {α : Type u} [DecidableEq α] (sys : InfoSys α)
 
-
-/-- Extensional equality of elements. -/
 theorem Element.ext {x y : sys.Element} (h : x.carrier = y.carrier) : x = y := by
   cases x
   cases y
   subst h
   rfl
 
-/-- Reflexivity of the carrier-inclusion order. -/
 theorem element_le_refl (x : sys.Element) : x.carrier ⊆ x.carrier :=
   Set.Subset.refl _
 
-/-- Transitivity of the carrier-inclusion order. -/
 theorem element_le_trans (x y z : sys.Element)
     (hxy : x.carrier ⊆ y.carrier) (hyz : y.carrier ⊆ z.carrier) :
     x.carrier ⊆ z.carrier :=
   Set.Subset.trans hxy hyz
 
-/-- Antisymmetry of the carrier-inclusion order. -/
 theorem element_le_antisymm (x y : sys.Element)
     (hxy : x.carrier ⊆ y.carrier) (hyx : y.carrier ⊆ x.carrier) :
     x = y :=
   Element.ext sys (Set.Subset.antisymm hxy hyx)
 
-/-- Elements are ordered by inclusion of their carriers; this is the Scott ordering. -/
 instance instPartialOrderElement : PartialOrder sys.Element where
   le x y := x.carrier ⊆ y.carrier
   le_refl := element_le_refl sys

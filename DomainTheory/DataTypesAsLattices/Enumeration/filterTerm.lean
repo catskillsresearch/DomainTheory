@@ -19,7 +19,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- `λm. pred($ (λj. filterRealizer(pair m j)) ⊤)`. -/
 def filterTerm : Term :=
   .lam 0 (.pred
     (.app (.app (.var 5)

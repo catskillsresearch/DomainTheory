@@ -18,7 +18,6 @@ open ApproximableMap
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
-/-- Uncurried pairing: `((C→A)×(C→B)) × C → A×B`. -/
 def pairOpUncurry : ApproximableMap
     (productSystem (productSystem (functionSystem C A) (functionSystem C B)) C)
     (productSystem A B) :=
@@ -121,6 +120,5 @@ theorem pairOpUncurry.toElement (f : ApproximableMap C A) (g : ApproximableMap C
     exact L.trans R.symm
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

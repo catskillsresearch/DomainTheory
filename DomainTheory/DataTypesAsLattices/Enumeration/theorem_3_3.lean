@@ -27,8 +27,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 namespace theorem_3_3
 
-/-- **Scott 1976, Theorem 3.3 (iii)** from (i) and (ii):
-`val(rec(n)) = val(n)(rec(n))`. -/
 theorem from_v (v : ℕ → ℕ) (n : ℕ)
     (hv : valNat (v n) = secondRecVal (valNat n)) :
     valNat (recNat v n) = funOf (valNat n) (ofNat (recNat v n)) := by
@@ -41,7 +39,6 @@ theorem from_v (v : ℕ → ℕ) (n : ℕ)
   · intro hk
     exact Set.mem_iUnion₂.mpr ⟨v n, rfl, hk⟩
 
-/-- **Scott 1976, Theorem 3.3 (i).** -/
 theorem i (n : ℕ) :
     valNat (secondRecV n) = secondRecVal (valNat n) := by
   rw [secondRecV, valNat.app, valNat.secondRecOperatorCode_eq,
@@ -57,9 +54,6 @@ theorem val (n : ℕ) :
 
 end theorem_3_3
 
-/-- **Scott 1976, Theorem 3.3 (The second recursion theorem).**
-The functions `v` and `rec` are primitive recursive and satisfy clauses
-(i)--(iii) of the paper. -/
 theorem theorem_3_3 :
     ∃ v : ℕ → ℕ, Primrec v ∧
       Primrec (recNat v) ∧

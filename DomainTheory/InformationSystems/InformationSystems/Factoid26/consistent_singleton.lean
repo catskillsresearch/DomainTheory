@@ -14,7 +14,7 @@ theorem consistent_singleton {A B : Type*} [DecidableEq A] [DecidableEq B]
     (t : Token A B) : Consistent ({t} : Finset (Token A B)) := by
   intro a b b' hb hb'
   rw [Finset.mem_singleton] at hb hb'
-  -- both equal `t`; cases on `t`
+
   cases t with
   | bot =>
     cases hb

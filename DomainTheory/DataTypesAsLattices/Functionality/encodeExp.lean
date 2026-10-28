@@ -12,7 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.44).** Abstract-syntax encoding of a `LambTerm`. -/
 def encodeExp : LambTerm → Pomega
   | .var n => tagInj 0 (ofNat n)
   | .zero => tagInj 1 botElem

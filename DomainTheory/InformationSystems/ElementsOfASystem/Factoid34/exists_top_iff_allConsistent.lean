@@ -8,15 +8,12 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid34.topEle
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-
-/-- **Factoid 3.4.** Top `⊤ = D` exists as an element iff every finite subset is consistent. -/
 theorem exists_top_iff_allConsistent :
     (∃ x : sys.Element, x.carrier = Set.univ) ↔ sys.AllConsistent := by
   constructor

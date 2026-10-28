@@ -6,29 +6,23 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeP
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
-
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-
 section SubspaceExtension
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y]
 
-
 omit [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y] in
-/-- **Scott 1972, Lemma 3.9 (inclusion at infimum level).** Used in the inverse-limit
-argument (Theorem 4.4). -/
+
 theorem lemma_3_9_incl_inf {e : X → Y} (P : IsContinuousLatticeProjection D D')
     {f : X → D} {g : X → D'} (hfg : ∀ x, f x = P.retr (g x)) (U : Set Y) :
     P.incl (scottSubspaceExtendInf e f U) ≤ scottSubspaceExtendInf e g U :=

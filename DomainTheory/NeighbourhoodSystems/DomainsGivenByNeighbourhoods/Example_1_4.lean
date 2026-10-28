@@ -6,14 +6,11 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Dom
 
 section
 namespace DomainTheory.NeighbourhoodSystems.Example14
-/-- Tokens for Example 1.4: the binary tree `Δ = {Λ,0,1,00,01,10,11}`, encoded as `Fin 7`
-(`Λ=0, 0=1, 1=2, 00=3, 01=4, 10=5, 11=6`). -/
+
 abbrev Token := Fin 7
 
-/-- The leaf `{00} = {3}`. -/
 def leaf00 : Set Token := {3}
 
-/-- The leaf `{01} = {4}`. -/
 def leaf01 : Set Token := {4}
 
 theorem leaf00_inter_leaf01 : leaf00 ∩ leaf01 = (∅ : Set Token) := by
@@ -22,7 +19,6 @@ theorem leaf00_inter_leaf01 : leaf00 ∩ leaf01 = (∅ : Set Token) := by
 theorem leaf01_inter_leaf00 : leaf01 ∩ leaf00 = (∅ : Set Token) := by
   rw [Set.inter_comm]; exact leaf00_inter_leaf01
 
-/-- The leaf `{10} = {5}`. -/
 def leaf10 : Set Token := {5}
 
 theorem leaf00_inter_leaf10 : leaf00 ∩ leaf10 = (∅ : Set Token) := by
@@ -37,7 +33,6 @@ theorem leaf10_inter_leaf00 : leaf10 ∩ leaf00 = (∅ : Set Token) := by
 theorem leaf10_inter_leaf01 : leaf10 ∩ leaf01 = (∅ : Set Token) := by
   rw [Set.inter_comm]; exact leaf01_inter_leaf10
 
-/-- The leaf `{11} = {6}`. -/
 def leaf11 : Set Token := {6}
 
 theorem leaf00_inter_leaf11 : leaf00 ∩ leaf11 = (∅ : Set Token) := by
@@ -58,7 +53,6 @@ theorem leaf11_inter_leaf01 : leaf11 ∩ leaf01 = (∅ : Set Token) := by
 theorem leaf11_inter_leaf10 : leaf11 ∩ leaf10 = (∅ : Set Token) := by
   rw [Set.inter_comm]; exact leaf10_inter_leaf11
 
-/-- The left subtree `{0, 00, 01} = {1, 3, 4}`. -/
 def left : Set Token := {1, 3, 4}
 
 theorem left_inter_leaf00 : left ∩ leaf00 = leaf00 := by
@@ -85,7 +79,6 @@ theorem left_inter_leaf11 : left ∩ leaf11 = (∅ : Set Token) := by
 theorem leaf11_inter_left : leaf11 ∩ left = (∅ : Set Token) := by
   rw [Set.inter_comm]; exact left_inter_leaf11
 
-/-- The master neighbourhood `Δ` (the whole tree). -/
 def master : Set Token := Set.univ
 
 theorem inter_master (A : Set Token) : A ∩ master = A := by
@@ -94,16 +87,13 @@ theorem inter_master (A : Set Token) : A ∩ master = A := by
 theorem master_inter (A : Set Token) : master ∩ A = A := by
   rw [master]; exact Set.univ_inter A
 
-/-- The right subtree `{1, 10, 11} = {2, 5, 6}`. -/
 def right : Set Token := {2, 5, 6}
 
 theorem left_inter_right : left ∩ right = (∅ : Set Token) := by
   ext t; fin_cases t <;> simp [left, right]
 
-/-- The seven neighbourhoods of Example 1.4. -/
 def memSet : Set (Set Token) := {master, left, right, leaf00, leaf01, leaf10, leaf11}
 
-/-- Membership in the neighbourhood system `𝒟` of Example 1.4. -/
 def mem (X : Set Token) : Prop := X ∈ memSet
 
 theorem mem_leaf00 : mem leaf00 := by
@@ -127,7 +117,6 @@ theorem mem_master : mem master := by
 theorem mem_right : mem right := by
   simp [mem, memSet, master, left, right, leaf00, leaf01, leaf10, leaf11]
 
-/-- A neighbourhood of Example 1.4 is exactly one of the seven. -/
 theorem mem_iff (X : Set Token) :
     mem X ↔ X = master ∨ X = left ∨ X = right ∨ X = leaf00 ∨ X = leaf01 ∨ X = leaf10 ∨ X = leaf11 := by
   constructor
@@ -253,8 +242,6 @@ theorem leaf11_inter_right : leaf11 ∩ right = leaf11 := by
 theorem right_inter_left : right ∩ left = (∅ : Set Token) := by
   rw [Set.inter_comm]; exact left_inter_right
 
-/-- Every binary intersection of two neighbourhoods is again a neighbourhood, or is empty
-(the tree's "nested-or-disjoint" property). -/
 theorem inter_eq (X Y : Set Token) (hX : mem X) (hY : mem Y) :
     X ∩ Y = master ∨ X ∩ Y = left ∨ X ∩ Y = right ∨ X ∩ Y = leaf00 ∨
       X ∩ Y = leaf01 ∨ X ∩ Y = leaf10 ∨ X ∩ Y = leaf11 ∨ X ∩ Y = (∅ : Set Token) := by
@@ -271,8 +258,6 @@ theorem inter_eq (X Y : Set Token) (hX : mem X) (hY : mem Y) :
       right_inter_leaf10, leaf10_inter_right, right_inter_leaf11, leaf11_inter_right,
       true_or, or_true]
 
-/- concordance: source L177 EXAMPLE 1.4 finite binary tree -/
-/-- **Example 1.4.** The binary-tree neighbourhood system on `Δ = {Λ,0,1,00,01,10,11}`. -/
 def neighborhoodSystem : NeighborhoodSystem Token where
   mem
   master
@@ -299,7 +284,6 @@ section
 
 open NeighborhoodSystem
 
-/-- The bottom element `⊥ = {Δ}` (node `Λ`). -/
 def bot : neighborhoodSystem.Element where
   mem X := X = master
   sub h := by rw [h]; exact mem_master
@@ -312,7 +296,6 @@ def bot : neighborhoodSystem.Element where
     rw [hX] at hXY
     exact eq_of_master_subset hY hXY
 
-/-- The total element `{Δ, left, leaf00}` (leaf `00`). -/
 def elem00 : neighborhoodSystem.Element where
   mem X := X = master ∨ X = left ∨ X = leaf00
   sub h := by
@@ -345,7 +328,6 @@ def elem00 : neighborhoodSystem.Element where
       · exact Or.inr (Or.inl h)
       · exact Or.inr (Or.inr h)
 
-/-- The total element `{Δ, left, leaf01}` (leaf `01`). -/
 def elem01 : neighborhoodSystem.Element where
   mem X := X = master ∨ X = left ∨ X = leaf01
   sub h := by
@@ -378,7 +360,6 @@ def elem01 : neighborhoodSystem.Element where
       · exact Or.inr (Or.inl h)
       · exact Or.inr (Or.inr h)
 
-/-- The partial element `{Δ, left}` (node `0`): the left branch is decided. -/
 def elemZero : neighborhoodSystem.Element where
   mem X := X = master ∨ X = left
   sub h := by
@@ -419,7 +400,6 @@ section
 
 open NeighborhoodSystem
 
-/-- The total element `{Δ, right, leaf10}` (leaf `10`). -/
 def elem10 : neighborhoodSystem.Element where
   mem X := X = master ∨ X = right ∨ X = leaf10
   sub h := by
@@ -452,7 +432,6 @@ def elem10 : neighborhoodSystem.Element where
       · exact Or.inr (Or.inl h)
       · exact Or.inr (Or.inr h)
 
-/-- The total element `{Δ, right, leaf11}` (leaf `11`). -/
 def elem11 : neighborhoodSystem.Element where
   mem X := X = master ∨ X = right ∨ X = leaf11
   sub h := by
@@ -485,7 +464,6 @@ def elem11 : neighborhoodSystem.Element where
       · exact Or.inr (Or.inl h)
       · exact Or.inr (Or.inr h)
 
-/-- The partial element `{Δ, right}` (node `1`): the right branch is decided. -/
 def elemOne : neighborhoodSystem.Element where
   mem X := X = master ∨ X = right
   sub h := by
@@ -571,7 +549,6 @@ private theorem leaf10_subset_right : leaf10 ⊆ right := by
 
 private theorem leaf11_subset_right : leaf11 ⊆ right := by
   intro t ht; fin_cases t <;> simp [leaf11, right] at ht ⊢
-
 
 namespace neighborhoodSystem
 
@@ -837,8 +814,6 @@ theorem elemZero_lt_elem01 : elemZero < elem01 := by
     · exact leaf01_ne_master h1
     · exact leaf01_ne_left h1
 
-/-- **Example 1.4 classification.** Every filter is one of the seven: the bottom `⊥`, the two
-branch partials `elemZero`/`elemOne`, or one of the four total leaf elements. -/
 theorem element_classification (x : neighborhoodSystem.Element) :
     x = bot ∨ x = elemZero ∨ x = elemOne ∨ x = elem00 ∨ x = elem01 ∨ x = elem10 ∨ x = elem11 := by
   by_cases h00 : x.mem leaf00
@@ -875,4 +850,3 @@ end neighborhoodSystem
 
 end DomainTheory.NeighbourhoodSystems.Example14
 end
-

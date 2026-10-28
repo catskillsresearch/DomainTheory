@@ -21,14 +21,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predC_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 2.4 (The combinator theorem).** -/
 theorem theorem_2_4 : IsCombinatory zeroC ∧ IsCombinatory sucC ∧ IsCombinatory predC ∧
     IsCombinatory condC ∧ IsCombinatory Kcomb ∧ IsCombinatory Scomb :=
   ⟨.zero, .suc, .pred, .cond, .K, .S⟩
 
-/-- **Scott 1976, Theorem 2.4 (The combinator theorem).** Every LAMBDA
-term equals an applicative combination of the six constants and its
-free variables. -/
 theorem theorem_2_4.complete (t : Term) (ρ : ℕ → Pomega) :
     interp t ρ = ofComb (erase t) ρ :=
   (erase.correct t ρ).symm

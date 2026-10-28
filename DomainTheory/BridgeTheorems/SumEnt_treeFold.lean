@@ -48,7 +48,7 @@ theorem SumEnt_treeFold {u : Finset (TreeToken α)}
     split_ifs with hb
     · refine ⟨hAt, TreeCon.pairL_of_right A hu hAt, TreeCon.pairR_of_right A hu hAt, ?_⟩
       have hEnt := h.2.2
-      -- ProdEnt: Ent fst p.1 (since p.2 = bot)
+
       have hFst : (treeSystem A).Ent
           (fstFinset (treeSystem A) (treeSystem A)
             (rhtFinset (unfoldFinset A u))) p.val.1 :=
@@ -62,7 +62,7 @@ theorem SumEnt_treeFold {u : Finset (TreeToken α)}
         rcases (rhtFinset_image_unfold_mem A u q).1 hq with ⟨w, hw, hq'⟩ | ⟨w, hw, hq'⟩
         · subst hq'; exact Finset.mem_insert_of_mem (mem_pairLFinset.2 hw)
         · subst hq'; exact Finset.mem_insert_self _ _
-      -- Transfer Ent along the subset into pairL ∪ {bot}
+
       have hIns : TreeCon A (insert .bot (pairLFinset u)) :=
         TreeCon_insert_bot A (TreeCon.pairL_of_right A hu hAt)
       have hPay : TreeEntPayload A (insert .bot (pairLFinset u)) p.val.1 :=
@@ -96,7 +96,7 @@ theorem SumEnt_treeFold {u : Finset (TreeToken α)}
                 · exact (treeSystem A).ent_bot (TreeCon.pairL_of_right A hu hAt)
                 · exact (treeSystem A).ent_refl (TreeCon.pairL_of_right A hu hAt) hz)
               ⟨hIns, hPay⟩).2
-    · -- pairR p.2
+    ·
       refine ⟨hAt, TreeCon.pairR_of_right A hu hAt, TreeCon.pairL_of_right A hu hAt, ?_⟩
       have ha : p.val.1 = treeBot := by
         rcases p.property with h1 | h2

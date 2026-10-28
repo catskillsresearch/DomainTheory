@@ -15,7 +15,6 @@ open DomainTheory.InformationSystems.InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Official product of the tree system with itself. -/
 abbrev TreeProd : InfoSys (ProdToken (treeSystem A) (treeSystem A)) :=
   productSystem (treeSystem A) (treeSystem A)
 

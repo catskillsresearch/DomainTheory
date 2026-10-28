@@ -11,11 +11,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.condC_more
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (2.15)** as a combinator: `cond(x)(y)(K(0)) = x ∪ y`. -/
 theorem union_via_cond (x y : Pomega) :
     funOf (funOf (funOf condC x) y) (funOf Kcomb zeroC) = x ∪ y := by
   rw [condC.beta3, Kcomb.beta]

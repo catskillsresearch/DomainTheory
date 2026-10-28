@@ -11,7 +11,6 @@ namespace DomainTheory.InformationSystems
 
 namespace Factoid25
 
-/-- Tokens: `bot` ≃ `(0, ∞)`, or a strict integer interval `(lo, hi)`. -/
 inductive Token : Type where
   | bot
   | interval (lo hi : ℕ) (hlt : lo < hi)

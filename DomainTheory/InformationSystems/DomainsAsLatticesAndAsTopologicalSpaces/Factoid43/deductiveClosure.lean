@@ -16,7 +16,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Deductive closure of a finitely consistent set. -/
 def deductiveClosure (U : Set α) (hU : sys.IsFinitelyConsistent U) : sys.Element where
   carrier := {a | ∃ u : Finset α, (u : Set α) ⊆ U ∧ sys.Ent u a}
   consistent := by

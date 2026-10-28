@@ -15,8 +15,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Given `Y` whose tokens each lie in some member of a nonempty directed family, find a
-single member containing all of `Y`. -/
 theorem exists_mem_of_subset_directedUnion (S : Set sys.Element) (hne : S.Nonempty)
     (hdir : sys.IsDirected S) (Y : Finset α)
     (hY : (Y : Set α) ⊆ sys.familyUnionCarrier S) :

@@ -9,12 +9,9 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z
 public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_fresh_app
 
-
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem finite_sigma_union_app (p q m : ℕ) :
     funOf

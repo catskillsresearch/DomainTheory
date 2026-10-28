@@ -11,7 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.tagInj
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Body of the seven-way tagged sum of (4.44). -/
 def plus7Body (a0 a1 a2 a3 a4 a5 a6 u : Pomega) : Pomega :=
   dcondSet (funOf u (ofNat 0)) (tagInj 0 (funOf a0 (funOf u (ofNat 1))))
     (dcondSet (predSet (funOf u (ofNat 0))) (tagInj 1 (funOf a1 (funOf u (ofNat 1))))

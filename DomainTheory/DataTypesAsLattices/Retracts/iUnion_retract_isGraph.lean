@@ -8,9 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retract_isGraph
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem iUnion_retract_isGraph {xs : ℕ → Pomega} (h : ∀ n, Retract (xs n)) :
     IsGraph (⋃ n, xs n) := by

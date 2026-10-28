@@ -25,9 +25,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem plus7_isRetract {a0 a1 a2 a3 a4 a5 a6 : Pomega}
     (h0 : Retract a0) (h1 : Retract a1) (h2 : Retract a2)

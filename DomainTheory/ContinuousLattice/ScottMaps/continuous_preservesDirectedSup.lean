@@ -7,13 +7,11 @@ public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology
 
 variable {D D' D'' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
-
 
 theorem continuous_preservesDirectedSup {f : D → D'}
     (hf : @Continuous D D' scottTopologicalSpace scottTopologicalSpace f) :

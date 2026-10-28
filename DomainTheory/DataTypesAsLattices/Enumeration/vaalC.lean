@@ -56,8 +56,6 @@ theorem computable : IsRE vaalC :=
 theorem fixedPoint : vaalF vaalC = vaalC :=
   (theorem_1_4 vaalF.isScottContinuous).1
 
-
-/-- **Scott 1976, (4.46).** Unfolding of `vaal` at a tree code. -/
 theorem unfold (x : Pomega) :
     funOf vaalC x =
       condSet (funOf x (ofNat 0)) Gcomb

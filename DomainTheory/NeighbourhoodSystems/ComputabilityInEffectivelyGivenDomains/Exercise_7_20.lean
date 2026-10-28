@@ -13,12 +13,6 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*}
 
-/- concordance: source L4675 EXERCISE 7.20 union on power domains -/
-/-- **Exercise 7.20 (Scott 1981, PRG-19) — the flattening combinator `union : ℙ(ℙD) → ℙD`.** Given a
-`ℙℙD`-neighbourhood `A` and a `ℙD`-neighbourhood `B`, the relation holds iff every `D`-neighbourhood
-`X` occurring in some member-set `S ∈ A` is covered by some `Y ∈ B`. This is the
-representation-independent form of Scott's displayed `∀ i<n ∀ j<m_i ∃ k<q. X_{ij} ⊆ Y_k`
-(see `unionMap_rel_fin`). It is the multiplication `μ` of the power-domain monad. -/
 def unionMap (V : NeighborhoodSystem α) :
     ApproximableMap V.PowerDomain.PowerDomain V.PowerDomain where
   rel A B := V.PowerDomain.PDmem A ∧ V.PDmem B ∧ ∀ S ∈ A, ∀ X ∈ S, ∃ Y ∈ B, X ⊆ Y
@@ -54,10 +48,6 @@ def unionMap (V : NeighborhoodSystem α) :
     (unionMap V).rel A B ↔ V.PowerDomain.PDmem A ∧ V.PDmem B ∧ ∀ S ∈ A, ∀ X ∈ S, ∃ Y ∈ B, X ⊆ Y :=
   Iff.rfl
 
-/-- **Exercise 7.20 — the relation of `union` at the level of `ℙℙ𝒟`/`ℙ𝒟`-codes.** For any
-presentation `Q` of `ℙ𝒟` whose `c`-th neighbourhood is `Y_c = ⋃_{a∈dl c} ↓Xₐ` (e.g. the
-`PDPresentation` of Proposition 7.10), and the canonical enumeration `(ℙℙ𝒟).Ypd Q` of `ℙℙ𝒟`,
-`(union).rel ((ℙℙ𝒟).Ypd Q n) (ℙ𝒟.Ypd P m) ↔ ∀ c ∈ dl n, ∀ a ∈ dl c, ∃ b ∈ dl m, Xₐ ⊆ X_b`. -/
 theorem unionMap_rel_Ypd_iff {V : NeighborhoodSystem α} (P : ComputablePresentation V)
     (Q : ComputablePresentation V.PowerDomain) (hQ : ∀ c, Q.X c = V.Ypd P c) {n m : ℕ} :
     (unionMap V).rel (V.PowerDomain.Ypd Q n) (V.Ypd P m)
@@ -81,18 +71,11 @@ theorem unionMap_rel_Ypd_iff {V : NeighborhoodSystem α} (P : ComputablePresenta
     obtain ⟨b, hb, hab⟩ := hgen c hc a ha
     exact ⟨P.X b, (V.mem_Ypd P).mpr ⟨b, hb, P.mem_X b, subset_rfl⟩, hXin.2.trans hab⟩
 
-/-- The empty power-domain neighbourhood lies under every intersection of neighbourhoods. -/
 theorem ypd_zero_subset_inter {V : NeighborhoodSystem α} (P : ComputablePresentation V) (a b : ℕ) :
     V.Ypd P 0 ⊆ V.Ypd P a ∩ V.Ypd P b := by
   rw [V.Ypd_zero P]
   exact Set.empty_subset _
 
-/-- **Exercise 7.20 (Scott's first question) — `union` is computable.** Given `P : Computable
-Presentation 𝒟` with a primitive-recursive consistency decider `consV`, `union` is a computable map
-between the canonical presentations of `ℙℙ𝒟` and `ℙ𝒟` (Proposition 7.10). The inner consistency
-decider of `ℙ𝒟` (needed to build the `ℙℙ𝒟` presentation) is the constant decider `fun _ => 1`,
-correct because the empty union (`code 0`, `Y₀ = ∅`) lies below every `ℙ𝒟`-neighbourhood. The
-relation is in fact recursively *decidable* (a nested bounded `∀∀∃` over `P.incl_computable`). -/
 theorem unionMap_isComputable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
     (consV : ℕ → ℕ) (hconsVp : Nat.Primrec consV)
     (hconsVs : ∀ a b, consV (Nat.pair a b) = 1 ↔ ∃ k, P.X k ⊆ P.X a ∩ P.X b) :
@@ -111,10 +94,6 @@ theorem unionMap_isComputable {V : NeighborhoodSystem α} (P : ComputablePresent
     exact unionMap_rel_Ypd_iff P (V.PDPresentation P consV hconsVp hconsVs) (fun _ => rfl)
   exact key.re
 
-/-- **Exercise 7.20 — Scott's displayed formula.** On generators (nested finite lists of down-sets)
-`(union).rel (⋃_{l∈LS} ↓_{ℙD}(⋃_{X∈l} ↓X)) (⋃_{Y∈LY} ↓Y) ↔ ∀ l ∈ LS, ∀ X ∈ l, ∃ Y ∈ LY, X ⊆ Y`,
-exactly Scott's `∀ i<n ∀ j<m_i ∃ k<q. X_{ij} ⊆ Y_k`. (`→` reads off the generators `X_{ij}`; `←`
-extends to all members by downward closure at both levels and `⊆`-monotonicity of the target.) -/
 theorem unionMap_rel_fin (V : NeighborhoodSystem α) {LS : List (List (Set α))} {LY : List (Set α)}
     (hLS : ∀ l ∈ LS, ∀ X ∈ l, V.mem X) (hLY : ∀ Y ∈ LY, V.mem Y) :
     (unionMap V).rel (⋃ l ∈ LS, V.PowerDomain.upSet (⋃ X ∈ l, V.upSet X)) (⋃ Y ∈ LY, V.upSet Y)

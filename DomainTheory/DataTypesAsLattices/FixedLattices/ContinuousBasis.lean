@@ -11,7 +11,6 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.WayBelow
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- A basis witnesses the continuous-lattice property by way-below elements. -/
 class ContinuousBasis {α : Type u} [CompleteLattice α]
     (basis : α → Set α) : Prop where
   out : ∀ x, @DirectedSet α completeLatticePreorder (basis x) ∧

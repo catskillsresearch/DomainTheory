@@ -12,9 +12,6 @@ section
 variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
-/- concordance: source L2209 EXERCISE 4.8 fixed-point induction -/
-/-- **Exercise 4.8 (Scott 1981, PRG-19) — fixed-point induction.** If a predicate `P` holds at `⊥`,
-is preserved by `f`, and is closed under sups of monotone chains, then it holds at `fix(f)`. -/
 theorem fix_induction (f : ApproximableMap V V) (P : V.Element → Prop)
     (hbot : P V.bot)
     (hstep : ∀ x, P x → P (f.toElementMap x))
@@ -29,14 +26,11 @@ theorem fix_induction (f : ApproximableMap V V) (P : V.Element → Prop)
   rw [fixElement_eq_supChain f]
   exact hsup f.iterElem hmono hP
 
-/-- **Exercise 4.8 (Scott 1981, PRG-19) — application to `S = {x ∣ a(x) = b(x)}`.** If `a(⊥) = b(⊥)`
-and `f` commutes with both `a` and `b` (`f ∘ a = a ∘ f`, `f ∘ b = b ∘ f`), then `a` and `b` agree at
-the least fixed point: `a(fix f) = b(fix f)`. -/
 theorem fix_induction_eq (f a b : ApproximableMap V V)
     (hbot : a.toElementMap V.bot = b.toElementMap V.bot)
     (hfa : f.comp a = a.comp f) (hfb : f.comp b = b.comp f) :
     a.toElementMap f.fixElement = b.toElementMap f.fixElement := by
-  -- commutation, elementwise: `a(f x) = f(a x)` and `b(f x) = f(b x)`.
+
   have hca : ∀ x, a.toElementMap (f.toElementMap x) = f.toElementMap (a.toElementMap x) := by
     intro x
     have h1 : (a.comp f).toElementMap x = (f.comp a).toElementMap x := by rw [hfa]
@@ -49,7 +43,7 @@ theorem fix_induction_eq (f a b : ApproximableMap V V)
   · intro x hx
     rw [hca, hcb, hx]
   · intro s hmono hs
-    -- both sides are directed unions of equal families.
+
     show a.toElementMap (supChain s hmono) = b.toElementMap (supChain s hmono)
     rw [supChain, toElementMap_iSupDirected, toElementMap_iSupDirected]
     apply Element.ext

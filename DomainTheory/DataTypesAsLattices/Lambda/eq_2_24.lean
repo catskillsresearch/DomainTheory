@@ -23,7 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqShift_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (2.24).** `seq(u)(x) = x ⊃ u_0, seq(λt. u_{t+1})(x−1)`. -/
 theorem eq_2_24 (u x : Pomega) :
     seqFun u x =
       condSet x (funOf u (ofNat 0))
@@ -65,7 +64,6 @@ theorem eq_2_24 (u x : Pomega) :
 
 namespace eq_2_24
 
-/-- **Scott 1976, (2.24).** `$ = Y(λs λu λz. z ⊃ u₀, s(λt. u_{t+1})(z−1))`. -/
 theorem Y : dollarC = fix dollarStep := by
   have hfix : dollarStep (fix dollarStep) = fix dollarStep :=
     (theorem_1_4 dollarStep.isScottContinuous).1
@@ -85,7 +83,6 @@ theorem Y : dollarC = fix dollarStep := by
     exact hbody u z
   exact this.symm.trans hfix
 
-/-- **Scott 1976, (2.24).** `$ = Y(step)` as a combinator application. -/
 theorem Ycomb : funOf Ycomb (graph dollarStep) = dollarC := by
   rw [theorem_2_5 dollarStep.isScottContinuous, eq_2_24.Y]
 

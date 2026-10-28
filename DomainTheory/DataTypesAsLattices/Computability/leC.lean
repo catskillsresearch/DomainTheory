@@ -25,7 +25,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- `λn λm. isZero (n − m)`. -/
 def leC : Pomega :=
   Scomb ⬝ (Kcomb ⬝ (Scomb ⬝ (Kcomb ⬝ isZeroC))) ⬝ subC
 
@@ -35,11 +34,9 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem combinatory : IsCombinatory leC :=
   .app (.app .S (.app .K (.app .S (.app .K isZeroC.combinatory))))
     subC.combinatory
-
 
 theorem realizes2 (n m : ℕ) :
     funOf (funOf leC (ofNat n)) (ofNat m) =

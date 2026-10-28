@@ -26,7 +26,6 @@ theorem app (u : Pomega) :
 theorem combinatory : IsCombinatory Ycomb := by
   simpa [Yterm.interp] using theorem_2_4.closed Yterm
 
-/-- **Scott 1976, (2.8) unfolding.** `Y(u) = u(Y(u))`. -/
 theorem unfold (u : Pomega) :
     funOf Ycomb u = funOf u (funOf Ycomb u) := by
   calc

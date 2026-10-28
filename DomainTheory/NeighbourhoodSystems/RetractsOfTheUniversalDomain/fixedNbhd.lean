@@ -12,19 +12,12 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
-/- concordance: source L4807 EXAMPLES 8.4 fixedNbhd hard direction -/
-
 section
 universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
-/-- The fixed-point set of `a`, as a bare type — matching `IsFinitary`'s witness type. -/
 abbrev FixSet (a : ApproximableMap E E) := {y : E.Element // a.toElementMap y = y}
 
-/-- **The candidate subdomain of Theorem 8.5's proof, `D = {X ∈ E ∣ X a X}`.** Built for *any*
-approximable map `a : E → E` — the neighbourhood-system axioms need only `mono`/`inter_right` of
-`a`, no projection or finitary hypothesis. (This is also exactly Theorem 8.6's `Fix(sub)` predicate
-`X sub(f) X`, restated for a single map `a` in place of the function-space token `f`.) -/
 def fixedNbhd (a : ApproximableMap E E) : NeighborhoodSystem α where
   mem X := E.mem X ∧ a.rel X X
   master := E.master
@@ -50,18 +43,10 @@ variable {γ : Type u} {V : NeighborhoodSystem γ}
 instance instNonemptyMemSubtype (x : V.Element) : Nonempty {X : Set γ // x.mem X} :=
   ⟨⟨V.master, x.master_mem⟩⟩
 
-/-- **Compactness, as a standalone predicate**: `x` is compact iff every time `x` sits below a
-directed union it already sits below one of the summands. By algebraicity, this is exactly the
-same thing as being principal (`eq_principal_of_isCompactElt`). Stated with `I` fixed to `V`'s own
-token universe (the only instantiation ever needed below), to sidestep spurious universe-metavariable
-friction from a separately-auto-bound `Type*` inside a reusable `def`. -/
 def IsCompactElt (x : V.Element) : Prop :=
   ∀ {I : Type u} [Nonempty I] (d : I → V.Element) (hdir : ∀ i j, ∃ k, d i ≤ d k ∧ d j ≤ d k),
     x ≤ iSupDirected d hdir → ∃ i, x ≤ d i
 
-/-- A neighbourhood `Z` witnessing `y`'s membership is always a *lower bound* on `y`: `↑Z ⊑ y`.
-The general form of `Basic.lean`'s remark that `⊥ = ↑Δ` is least: any witnessed `↑Z` sits below
-the element it witnesses. -/
 theorem principal_le_of_mem {y : V.Element} {Z : Set γ} (hZ : y.mem Z) :
     V.principal (y.sub hZ) ≤ y :=
   fun _ ⟨hW, hZW⟩ => y.up_mem hZ hW hZW
@@ -74,9 +59,6 @@ theorem principalFamily_directed (x : V.Element) :
     (V.principal_le_iff (x.sub i.2) (x.sub (x.inter_mem i.2 j.2))).mpr Set.inter_subset_left,
     (V.principal_le_iff (x.sub j.2) (x.sub (x.inter_mem i.2 j.2))).mpr Set.inter_subset_right⟩
 
-/-- **Algebraicity.** Every element `x` is the directed union of its own principal
-("finite"/compact) approximants: `x = ⋃ {↑X ∣ X ∈ x}`, now literally as an `iSupDirected`
-(rather than `eq_iUnion_principal`'s membership-only form). -/
 theorem eq_iSupDirected_principal (x : V.Element) :
     x = iSupDirected (fun i : {X : Set γ // x.mem X} => V.principal (x.sub i.2))
       (principalFamily_directed x) := by
@@ -89,8 +71,6 @@ theorem eq_iSupDirected_principal (x : V.Element) :
     obtain ⟨hZmem, hXZ⟩ := (V.mem_principal _).mp hZ'
     exact x.up_mem hX hZmem hXZ
 
-/-- **Compact elements are principal** — the converse of `principal_isCompactElt`, via
-algebraicity: test compactness against `x`'s own principal-approximant family. -/
 theorem eq_principal_of_isCompactElt {x : V.Element} (hx : IsCompactElt x) :
     ∃ (X : Set γ) (hX : V.mem X), x = V.principal hX := by
   have hle : x ≤ iSupDirected (fun i : {X : Set γ // x.mem X} => V.principal (x.sub i.2))
@@ -99,8 +79,6 @@ theorem eq_principal_of_isCompactElt {x : V.Element} (hx : IsCompactElt x) :
     hx (fun i : {X : Set γ // x.mem X} => V.principal (x.sub i.2)) (principalFamily_directed x) hle
   exact ⟨i0.1, x.sub i0.2, le_antisymm hi0 (principal_le_of_mem i0.2)⟩
 
-/-- **Principal elements are compact**: if `↑X ⊑ ⋃ᵢ dᵢ` for a directed family, then already
-`↑X ⊑ dᵢ` for some single `i`. Immediate from `X ∈ ↑X` and `mem_iSupDirected`. -/
 theorem principal_compact {X : Set γ} (hX : V.mem X) {I : Type*} [Nonempty I]
     (d : I → V.Element) (hdir : ∀ i j, ∃ k, d i ≤ d k ∧ d j ≤ d k)
     (h : V.principal hX ≤ iSupDirected d hdir) : ∃ i, V.principal hX ≤ d i := by
@@ -112,9 +90,6 @@ theorem principal_isCompactElt {X : Set γ} (hX : V.mem X) : IsCompactElt (V.pri
 
 end Algebraic
 
-/-- **`fixedNbhd a ◁ E`, unconditionally.** The consistency clause is the same monotonicity +
-intersectivity calculation as `fixedNbhd`'s own `inter_mem`, just without needing the extra
-consistency witness `Z`. -/
 theorem fixedNbhd_subsystem (a : ApproximableMap E E) : fixedNbhd a ◁ E where
   master_eq := rfl
   sub := fun h => h.1
@@ -124,13 +99,6 @@ theorem fixedNbhd_subsystem (a : ApproximableMap E E) : fixedNbhd a ◁ E where
     have h2 : a.rel (X ∩ Y) Y := a.mono hYa Set.inter_subset_right subset_rfl hEXY hYE
     exact ⟨hEXY, a.inter_right h1 h2⟩
 
-/-- **The "easy" (`⟸`) half of formula (ii), isolated.** Valid for **any** approximable map
-`a : E → E` with **no hypothesis on `a` at all** — not even that `a` satisfies the rest of formula
-(ii), let alone that it is a finitary projection. Pure monotonicity + up-closure: `↑X ≤ x`
-(`principal_le_of_mem`) pushes `a`'s self-relation at `X` up to `x` (`toElementMap_mono`), and
-`X ⊆ Y` finishes by up-closure. Isolated from `isFinitaryProjection_of_formula`'s own proof (where
-it was the `←` branch of the `constructor`) because Exercise 8.27(b)(3) needs exactly this half,
-unconditionally, for `a := piD d` — independently of whether the *rest* of formula (ii) holds. -/
 theorem mem_of_exists_rel_self {a : ApproximableMap E E} (x : E.Element) {Y : Set α}
     (hYE : E.mem Y) {X : Set α} (hXx : x.mem X) (hXY : X ⊆ Y) (hXaX : a.rel X X) :
     (a.toElementMap x).mem Y := by
@@ -140,13 +108,6 @@ theorem mem_of_exists_rel_self {a : ApproximableMap E E} (x : E.Element) {Y : Se
   have hXmem : (a.toElementMap x).mem X := (a.toElementMap_mono hle) X hmem
   exact (a.toElementMap x).up_mem hXmem hYE hXY
 
-/-- **Theorem 8.5, `(ii) ⟹ (i)` (Scott 1981, PRG-19).** If `a` satisfies Scott's step-closure
-formula `a(x) = {Y ∈ E ∣ ∃X∈x, X⊆Y ∧ XaX}` for every `x ∈ |E|`, then `a` is a finitary projection.
-
-The proof shows `a` literally *is* `retractionOfSubsystem` for `D = fixedNbhd a`: unwinding formula
-(ii) at a principal `x = ↑X` via `rel_iff_mem_principal` reproduces exactly
-`retractionOfSubsystem_rel`'s formula. Definition 8.3's corollaries of Proposition 8.2 then finish
-the proof — no further work needed. -/
 theorem isFinitaryProjection_of_formula (a : ApproximableMap E E)
     (hii : ∀ (x : E.Element) {Y : Set α}, (a.toElementMap x).mem Y ↔
       E.mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ a.rel X X) :
@@ -174,16 +135,10 @@ variable {a : ApproximableMap E E}
 
 variable {β : Type u} {F : NeighborhoodSystem β} (e : FixSet a ≃o F.Element)
 
-/-- **The section `i : F → E`** induced by the abstract witness `e` of `IsFinitary a`: on the
-principal element `↑X` of `F`, `i` returns the underlying `E`-element of `e.symm(↑X) ∈ Fix(a)`.
-Built via `ofMono` (Exercise 2.8) — monotone on principals is all that's needed. -/
 def sectionMap : ApproximableMap F E :=
   ofMono (fun _X hX => (e.symm (F.principal hX)).1) (fun _ _ hX hX' hXX' =>
     e.symm.monotone ((F.principal_le_iff hX hX').mpr hXX'))
 
-/-- The sup of a directed family of `a`-fixed elements is again `a`-fixed: `a` is continuous
-(`toElementMap_iSupDirected`), so `a` applied to the sup is the sup of `a` applied pointwise, which
-is the original family by `hfix`. -/
 theorem toElementMap_iSupDirected_fixed {I : Type u} [Nonempty I] (d : I → E.Element)
     (hdir : ∀ i j, ∃ k, d i ≤ d k ∧ d j ≤ d k) (hfix : ∀ i, a.toElementMap (d i) = d i) :
     a.toElementMap (iSupDirected d hdir) = iSupDirected d hdir := by
@@ -197,17 +152,6 @@ theorem toElementMap_iSupDirected_fixed {I : Type u} [Nonempty I] (d : I → E.E
     (sectionMap e).toElementMap (F.principal hX) = (e.symm (F.principal hX)).1 :=
   toElementMap_ofMono_principal _ _ X hX
 
-/-- **Claim′.** `i` realizes `e.symm` at *every* element of `F`, not just the principal ones:
-`i(w') = e.symm(w')` (as `E`-elements).
-
-`≤`: `i(w') = ⋃_{X ∈ w'} i(↑X) = ⋃_{X ∈ w'} e.symm(↑X)`, and each `e.symm(↑X) ≤ e.symm(w')` by
-`principal_le_of_mem` and monotonicity of `e.symm`.
-
-`≥`: the family `c(X) := e.symm(↑X)` (`X ∈ w'`) is directed with sup exactly `i(w')` (`hS_eq`
-below, "for free" from the membership formula), hence `a`-fixed (`toElementMap_iSupDirected_fixed`).
-Algebraicity of `w'` in `F` reduces `w' ≤ e(i(w'))` to checking `↑X ≤ e(i(w'))` for each `X ∈ w'`,
-which (applying `e.symm`) is exactly `c(X) ≤ i(w')` — true since `i(w')` is the sup of the `c`
-family. -/
 theorem toElementMap_sectionMap (w' : F.Element) :
     (sectionMap e).toElementMap w' = (e.symm w').1 := by
   have hdirC : ∀ i j : {X : Set β // w'.mem X}, ∃ k : {X : Set β // w'.mem X},
@@ -252,10 +196,6 @@ theorem toElementMap_sectionMap (w' : F.Element) :
     have := e.symm.monotone key
     rwa [e.symm_apply_apply] at this
 
-/-- **`e` distributes over directed sups of `a`-fixed families.** `Fix(a)` is not itself a
-`NeighborhoodSystem.Element` type, so this is proved directly by antisymmetry (rather than via a
-generic "order isos preserve directed sups" lemma): both inequalities reduce to `le_iSupDirected`/
-`iSupDirected_le` on the `E`- and `F`-sides plus monotonicity of `e`/`e.symm`. -/
 theorem e_apply_iSupDirected_fixed {I : Type u} [Nonempty I] (d : I → E.Element)
     (hdir : ∀ i j, ∃ k, d i ≤ d k ∧ d j ≤ d k) (hfix : ∀ i, a.toElementMap (d i) = d i)
     (hSfix : a.toElementMap (iSupDirected d hdir) = iSupDirected d hdir)
@@ -279,18 +219,10 @@ theorem e_apply_iSupDirected_fixed {I : Type u} [Nonempty I] (d : I → E.Elemen
     intro i
     exact e.monotone (le_iSupDirected d hdir i)
 
-/-- Idempotency of a retraction at the element level: `a(a(z)) = a(z)`. -/
 theorem toElementMap_idem {a : ApproximableMap E E} (ha : Retraction a) (z : E.Element) :
     a.toElementMap (a.toElementMap z) = a.toElementMap z := by
   rw [← toElementMap_comp a a z, ha.out]
 
-/-- **Scott's compactness-reflection fact.** If `e.symm(w')` is a *principal* (finite) element of
-`F`, then `e.symm(w')`'s image `.1` in `E` need not be principal; the content here is the converse
-direction: **pulling a genuinely principal element of `F` back through `e.symm` always lands on a
-principal element of `E`.** The key step lifts compactness across the retraction: any `E`-directed
-family bounding `(e.symm(↑Y)).1` from above can be replaced (applying the continuous, idempotent
-`a`) by an `a`-fixed directed family with the same sup-relationship, and `a ≤ idMap E` (`a` is a
-*projection*, not just a retraction) is exactly what lets the bound transfer back down. -/
 theorem exists_principal_eq_of_isRetraction_le_idMap (ha_ret : Retraction a)
     (ha_proj : a ≤ idMap E) {Y : Set β} (hY : F.mem Y) :
     ∃ (X : Set α) (hX : E.mem X), (e.symm (F.principal hY)).1 = E.principal hX := by
@@ -327,15 +259,6 @@ theorem exists_principal_eq_of_isRetraction_le_idMap (ha_ret : Retraction a)
     rwa [toElementMap_idMap] at this
   exact ⟨i0, hfinal.trans hd2le⟩
 
-/-- **Theorem 8.5, `(i) ⟹ (ii)` (Scott 1981, PRG-19), assembled.** If `a` is a finitary projection,
-it satisfies Scott's step-closure formula.
-
-Given `Y ∈ a(x)`: since `a` is idempotent, `w := a(x)` is itself `a`-fixed, and `e ⟨w, _⟩ : F.Element`
-decomposes (Exercise 2.9, via `sectionMap`'s `Claim′`) as a union of `sectionMap e`'s values on
-`F`-principals `↑W` for `W ∈ e ⟨w, _⟩`; picking the `W` witnessing `Y`, compactness reflection turns
-`(e.symm ↑W).1` into a genuine `E`-principal `↑X`. `X ⊆ Y` and `X a X` both come from `X`'s defining
-equation `a(↑X) = ↑X` (inherited from `FixSet`); `x.mem X` comes from `↑X ≤ w = a(x) ≤ x` (the last
-step using `a ≤ I_E`). -/
 theorem formula_of_isFinitaryProjection {a : ApproximableMap E E} (h : FinitaryProjection a) :
     ∀ (x : E.Element) {Y : Set α}, (a.toElementMap x).mem Y ↔
       E.mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ a.rel X X := by

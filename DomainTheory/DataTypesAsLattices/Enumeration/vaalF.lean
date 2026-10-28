@@ -34,7 +34,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- **Scott 1976, (4.46).** `vaal` on trees, companion of `val`. -/
 def vaalF (v : Pomega) : Pomega :=
   graph (fun x =>
     condSet (funOf x (ofNat 0)) Gcomb

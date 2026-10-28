@@ -11,10 +11,7 @@ namespace DomainTheory.NeighbourhoodSystems.Example24
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 section
-/-- **Exercise 2.17, second half.** `runMap` is the *unique* approximable map `B → B` satisfying
-`g(0x) = 0g(x)`, `g(11x) = g(1x)`, `g(10x) = 0x`, `g(1) = ⊥`. Every neighbourhood of `B` is a cone
-(`memB_cone`), so `ApproximableMap.ext` reduces `g = runMap` to matching relations on cones, which
-is exactly `key` read through `rel_iff_mem_principal`/`runMap_rel_cone`. -/
+
 theorem eq_runMap_of_satisfies {g : ApproximableMap B B} (hg : SatisfiesRunEquations g) :
     g = runMap := by
   apply ApproximableMap.ext
@@ -30,8 +27,7 @@ theorem eq_runMap_of_satisfies {g : ApproximableMap B B} (hg : SatisfiesRunEquat
 end
 
 section
-/-- **`runMap`'s elementwise value, read off cone-by-cone.** `g(x).mem Y` iff *some* cone
-`σΣ* ∈ x` already witnesses `Y ∈ B` and `(out σ)Σ* ⊆ Y`. -/
+
 theorem runMap_toElementMap_mem (x : B.Element) (Y : Set Str) :
     (runMap.toElementMap x).mem Y ↔ ∃ τ, x.mem (cone τ) ∧ B.mem Y ∧ cone (out τ) ⊆ Y := by
   constructor
@@ -43,10 +39,7 @@ theorem runMap_toElementMap_mem (x : B.Element) (Y : Set Str) :
 end
 
 section
-/-- **The "shift formula" for `runMap` (input side).** Reading off `g(σx)` depends on `x` only
-through *some* cone `cone τ ∈ x`, via the output of the concatenation `σ ++ τ`: any deeper cone in
-`sigmaElt`'s built-in up-closure is subsumed by monotonicity (`out_mono`), so the longest one —
-`σ ++ τ` itself — already witnesses the answer. -/
+
 theorem runMap_toElementMap_sigmaElt (σ : Str) (x : B.Element) (Y : Set Str) :
     (runMap.toElementMap (sigmaElt σ x)).mem Y ↔
       ∃ τ, x.mem (cone τ) ∧ B.mem Y ∧ cone (out (σ ++ τ)) ⊆ Y := by
@@ -61,10 +54,7 @@ theorem runMap_toElementMap_sigmaElt (σ : Str) (x : B.Element) (Y : Set Str) :
 end
 
 section
-/-- **The "shift formula" for `runMap` (output side).** Since `g(x)`'s membership predicate is
-itself a cone-monotone family (`runMap_toElementMap_mem`), prepending `τ₀` to `g(x)` collapses the
-same way: the up-closure of neighbourhoods `Z ⊇ (out τ)Σ*` is absorbed because `(out τ)Σ*` itself
-is the *deepest* (hence hardest-to-satisfy, so witness-minimal) choice. -/
+
 theorem sigmaElt_runMap_toElementMap (τ₀ : Str) (x : B.Element) (Y : Set Str) :
     (sigmaElt τ₀ (runMap.toElementMap x)).mem Y ↔
       ∃ τ, x.mem (cone τ) ∧ B.mem Y ∧ cone (τ₀ ++ out τ) ⊆ Y := by
@@ -82,12 +72,7 @@ theorem sigmaElt_runMap_toElementMap (τ₀ : Str) (x : B.Element) (Y : Set Str)
 end
 
 section
-/-- **`runMap` satisfies its own defining equations.** `zero`/`oneOne`/`oneZero` are direct
-instances of the two "shift formulas" (`runMap_toElementMap_sigmaElt` on the input side,
-`sigmaElt_runMap_toElementMap` on the output side), using that the output of a leading `0`
-(resp. `11`, `10`) is fixed by `out_append_false`/`out_append_trueTrue`/`out_append_trueFalse`
-regardless of the tail. `one` reads off the unique cone (`Λ`) that `⊥` sits in
-(`bot_mem_cone_iff`), where `out [true] = []`. -/
+
 theorem runMap_satisfies : SatisfiesRunEquations runMap where
   zero x := by
     apply Element.ext
@@ -146,17 +131,9 @@ open NeighborhoodSystem
 universe u
 variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-
-/-- **Algebraicity.** Every element `x` is the directed union of its own principal
-("finite"/compact) approximants: `x = ⋃ {↑X ∣ X ∈ x}`, literally as an `iSupDirected`. (Used below
-to reduce continuity checks to principal elements; a duplicate of `Theorem85.lean`'s own copy,
-kept local here to avoid a heavy import for this early file.) -/
 instance instNonemptyMemSubtype (x : V₀.Element) : Nonempty {X : Set α // x.mem X} :=
   ⟨⟨V₀.master, x.master_mem⟩⟩
 
-/-- A continuous function between domains is monotone for the approximation order `⊑`: this is
-because `⊑` is recoverable from the topology (`le_iff_isOpen_imp`) and continuous preimages of opens
-are open and upward closed (`isOpen_isUpperSet`). -/
 theorem continuous_monotone {c : V₀.Element → V₁.Element} (hc : Continuous c) : Monotone c := by
   intro x y hxy
   rw [V₁.le_iff_isOpen_imp]

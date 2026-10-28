@@ -24,7 +24,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Lift a raw Con set to a finset of depth-WF tokens. -/
 def listToLamDFinset :
     (xs : List (RawLamToken α)) →
       (∀ t ∈ xs, LamWF A t) → Finset (LamDToken A)

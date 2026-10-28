@@ -33,7 +33,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -46,7 +45,6 @@ variable (A : InfoSys α) (B : InfoSys β)
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
-
 
 theorem subset_botElement_of_projections_empty {u : Finset (SumToken α β)}
     (hl : lftFinset u = ∅) (hr : rhtFinset u = ∅) :

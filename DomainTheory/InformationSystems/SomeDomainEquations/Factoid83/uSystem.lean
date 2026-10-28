@@ -22,7 +22,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-/-- **Scott (7)–(10).** The universal-domain information system `U`. -/
 def uSystem : InfoSys UToken where
   bot := uBot
   Con := {u | UCon u}

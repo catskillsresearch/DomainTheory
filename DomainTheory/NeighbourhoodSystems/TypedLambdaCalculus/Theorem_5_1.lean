@@ -13,10 +13,6 @@ section
 variable {α β γ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
-/- concordance: source L2599 THEOREM 5.1 terms denote approximable maps -/
-/-- **Theorem 5.1 (Scott 1981, PRG-19).** Every typed λ-term denotes an approximable map of its
-free variables. Abstraction is `curry`, application is `eval ∘ ⟨_, _⟩`, a constant is the constant
-map, a tuple is `paired`, and a variable is a projection. -/
 theorem theorem_51 :
     (∀ (g : ApproximableMap (prod V₀ V₁) V₂) (v : V₀.Element) (x : V₁.Element),
       (toApproxMap ((curry g).toElementMap v)).toElementMap x = g.toElementMap (pair v x)) ∧

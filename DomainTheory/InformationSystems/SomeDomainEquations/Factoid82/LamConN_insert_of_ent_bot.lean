@@ -9,7 +9,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamC
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -18,9 +17,7 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
-
 
 theorem LamConN_insert_of_ent_bot {n : ℕ} {u : Finset (RawLamToken α)}
     (ht : LamEntN A n u .bot) : LamConN A n (insert (.bot : RawLamToken α) u) :=

@@ -17,7 +17,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
 
 theorem pairRFinset_insert_pairL (u : Finset (TreeToken α)) (t : TreeToken α) :

@@ -9,9 +9,6 @@ namespace DomainTheory.InformationSystems.Constructive
 
 variable {α : Type*} [DecidableEq α]
 
-/-- Choice-free binary union of finite sets, obtained by folding `insert` over the second
-argument's underlying multiset. Definitionally equal in content to `u ∪ v`, but — unlike
-mathlib's `(· ∪ ·)` — free of any `Classical.choice` dependency. -/
 def funion (u v : Finset α) : Finset α := Multiset.foldr insert u v.1
 
 end DomainTheory.InformationSystems.Constructive

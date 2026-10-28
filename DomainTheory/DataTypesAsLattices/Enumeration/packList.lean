@@ -23,7 +23,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- The paper's single generator of a finite tuple: `cond(⟨xs⟩)(G)`. -/
 def packList : List Pomega → Pomega
   | [] => botElem
   | x :: xs => seq2 x (packList xs)

@@ -21,7 +21,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Stage-`n` entailment on raw tokens (Scott (8)–(11), stratified). -/
 def LamEntN : ℕ → Finset (RawLamToken α) → RawLamToken α → Prop
   | 0, u, .bot => LamConN A 0 u
   | 0, u, .atom x =>

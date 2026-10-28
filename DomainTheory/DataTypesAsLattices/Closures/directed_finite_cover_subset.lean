@@ -9,9 +9,7 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem directed_finite_cover_subset {f : Pomega → Pomega}
     {A : Set (Fixpoints f)} (hA : DirectedSubset A) {t : Pomega}

@@ -10,7 +10,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.left_bot_mem_inlMap_toElement
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems

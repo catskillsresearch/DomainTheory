@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 1.3, composition.** -/
 theorem theorem_1_3.comp {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
     IsScottContinuous (f ∘ g) := by
@@ -33,9 +32,6 @@ theorem theorem_1_3.comp {f g : Pomega → Pomega}
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     exact IsScottContinuous.monotone hf (IsScottContinuous.monotone hg hn) hkn
 
-/-- **Scott 1976, Theorem 1.3 (The substitution theorem), binary case.**
-If `f` is continuous in each argument separately, then `x ↦ f(x,x)` is
-continuous. -/
 theorem theorem_1_3.diag {f : Pomega → Pomega → Pomega}
     (hfx : ∀ y, IsScottContinuous (fun x => f x y))
     (hfy : ∀ x, IsScottContinuous (fun y => f x y))
@@ -60,9 +56,6 @@ theorem theorem_1_3.diag {f : Pomega → Pomega → Pomega}
     exact IsScottContinuous.monotone (hfy x) hn
       (IsScottContinuous.monotone (hfx (e n)) hn hkn)
 
-/-- **Scott 1976, Theorem 1.3, binary substitution.** If `f` is continuous
-in each argument and `g, h` are continuous, then `x ↦ f(g x, h x)` is
-continuous. -/
 theorem theorem_1_3.tuple {f : Pomega → Pomega → Pomega}
     (hfx : ∀ y, IsScottContinuous (fun x => f x y))
     (hfy : ∀ x, IsScottContinuous (fun y => f x y))
@@ -86,7 +79,6 @@ theorem theorem_1_3.tuple {f : Pomega → Pomega → Pomega}
       Set.mem_iUnion.mpr ⟨n, hn, hkn⟩
     rwa [← H] at this
 
-/-- **Scott 1976, Theorem 1.3, ternary substitution.** -/
 theorem theorem_1_3.nary {f : Pomega → Pomega → Pomega → Pomega}
     (hf0 : ∀ y z, IsScottContinuous (fun x => f x y z))
     (hf1 : ∀ x z, IsScottContinuous (fun y => f x y z))
@@ -113,8 +105,6 @@ theorem theorem_1_3.nary {f : Pomega → Pomega → Pomega → Pomega}
       Set.mem_iUnion.mpr ⟨n, hn, hkn⟩
     rwa [← H] at this
 
-/-- **Scott 1976, Theorem 1.3 (The substitution theorem).** Continuous
-functions of several variables on `Pω` are closed under substitution. -/
 theorem theorem_1_3 {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
     IsScottContinuous (fun x => f (g x)) :=

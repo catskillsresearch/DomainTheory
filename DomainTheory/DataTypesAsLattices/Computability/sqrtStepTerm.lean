@@ -16,7 +16,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- `λn _ a. if (a+1)^2 ≤ n then a+1 else a`. -/
 def sqrtStepTerm : Term :=
   .lam 0 (.lam 1 (.lam 2
     (.cond

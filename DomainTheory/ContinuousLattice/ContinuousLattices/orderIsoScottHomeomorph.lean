@@ -7,7 +7,6 @@ public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpac
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
@@ -20,7 +19,6 @@ section Theorem212Transfer
 
 variable {A B : Type u} [latticeA : CompleteLattice A] [latticeB : CompleteLattice B]
 
-/-- An order isomorphism is a homeomorphism between the corresponding Scott topologies. -/
 noncomputable def orderIsoScottHomeomorph (e : A ≃o B) :
     @Homeomorph A B (@scottTopologicalSpace A latticeA)
       (@scottTopologicalSpace B latticeB) := by

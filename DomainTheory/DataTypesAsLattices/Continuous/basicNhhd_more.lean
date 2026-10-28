@@ -14,7 +14,6 @@ open TopologicalSpace
 
 namespace basicNhhd
 
-/-- A basic neighbourhood is a finite intersection of subbasic opens. -/
 theorem eq_iInter (n : ℕ) :
     basicNhhd n = ⋂ k ∈ e n, memOpen k := by
   ext x

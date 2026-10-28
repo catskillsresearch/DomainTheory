@@ -10,7 +10,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- **Factoid 4.2.** Meet of a nonempty family of elements (set-theoretic intersection). -/
 def familyInf (S : Set sys.Element) (hne : S.Nonempty) : sys.Element where
   carrier := sys.familyInfCarrier S
   consistent := by

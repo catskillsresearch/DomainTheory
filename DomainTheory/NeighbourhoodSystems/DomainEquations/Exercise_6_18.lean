@@ -12,12 +12,7 @@ section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 namespace Exercise618
 variable {α : Type*} {V : NeighborhoodSystem α}
-/- concordance: source L4079 EXERCISE 6.18 infinite product as initial -/
-/-- **Exercise 6.18 (initial-algebra half) — `𝒟^∞` is the initial `T`-algebra for `T(X) = 𝒟 × X`.**
-For every `T`-algebra `(E, k)` the descent map `h(⟨x₀,x₁,…⟩) = k(x₀, k(x₁, …))` is the *unique*
-strict homomorphism `𝒟^∞ → E`. Together with Exercise 3.16's `𝒟^∞ ≅ 𝒟 × 𝒟^∞` (the domain-equation
-half), this exhibits `𝒟^∞` both as the canonical solution of the domain equation and as the initial
-algebra (determined up to iso by Proposition 6.6). -/
+
 def iterIsInitial (Dom : StrictDomainObj.{w}) : IsInitial (iterAlg Dom) where
   desc := descAlgHom Dom
   uniq B h := by
@@ -46,9 +41,6 @@ variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
 
 include hD
 
-/-- **Example 6.1 — the forward half of the domain equation.** Sends an element `z` of `D^§` to an
-element of `D + (D^§ × D^§)`, recording for each branch which `0X`/`1V` neighbourhoods `z` reaches:
-`0X ∈ toS z ↔ embZero X ∈ z` and `1(P∪Q) ∈ toS z ↔ (1P∪2Q) ∈ z`. -/
 def toS (z : (Dsharp D hD).Element) : (sumSys D hD).Element where
   mem W := W = sumMaster D (prod (Dsharp D hD) (Dsharp D hD))
     ∨ (∃ X, D.mem X ∧ W = inj₀ X ∧ z.mem (embZero X))
@@ -150,8 +142,6 @@ theorem embZero_ne_embPair {X : Set α} (hX : D.mem X) (P Q : Set (List Bool × 
   · simp at hp'
   · simp at hq'
 
-/-- **Example 6.1 — the inverse half of the domain equation.** Sends an element `s` of
-`D + (D^§ × D^§)` back to an element of `D^§`. -/
 def fromS (s : (sumSys D hD).Element) : (Dsharp D hD).Element where
   mem W := W = Gamma D
     ∨ (∃ X, D.mem X ∧ W = embZero X ∧ s.mem (inj₀ X))
@@ -245,7 +235,6 @@ def fromS (s : (sumSys D hD).Element) : (Dsharp D hD).Element where
       rw [hPP, hQQ]; exact hs
   · intro hs; exact Or.inr (Or.inr ⟨P, Q, hP, hQ, rfl, hs⟩)
 
-/-- `fromS ∘ toS = id`. -/
 theorem fromS_toS (z : (Dsharp D hD).Element) : fromS D hD (toS D hD z) = z := by
   apply NeighborhoodSystem.Element.ext
   intro W
@@ -260,7 +249,6 @@ theorem fromS_toS (z : (Dsharp D hD).Element) : fromS D hD (toS D hD z) = z := b
     | @zero X hX => exact Or.inr (Or.inl ⟨X, hX, rfl, (toS_mem_inj₀ D hD hX).mpr hW⟩)
     | @pair P Q hP hQ => exact Or.inr (Or.inr ⟨P, Q, hP, hQ, rfl, (toS_mem_inj₁ D hD hP hQ).mpr hW⟩)
 
-/-- Scott's injection `x^§ = {Γ} ∪ {0X ∣ X ∈ x}` of a `D`-element into `D^§`. -/
 def inSharp (x : D.Element) : (Dsharp D hD).Element where
   mem W := W = Gamma D ∨ ∃ X, x.mem X ∧ W = embZero X
   sub := by
@@ -288,7 +276,6 @@ def inSharp (x : D.Element) : (Dsharp D hD).Element where
         · simp at hp'
         · simp at hq'
 
-/-- Scott's pairing `⟨x, y⟩ = {Γ} ∪ {1P ∪ 2Q ∣ P ∈ x, Q ∈ y}` of two `D^§`-elements. -/
 def pairSharp (x y : (Dsharp D hD).Element) : (Dsharp D hD).Element where
   mem W := W = Gamma D ∨ ∃ P Q, x.mem P ∧ y.mem Q ∧ W = embPair P Q
   sub := by
@@ -323,7 +310,6 @@ def pairSharp (x y : (Dsharp D hD).Element) : (Dsharp D hD).Element where
         obtain ⟨hPP, hQQ⟩ := embPair_subset.mp hsub
         exact Or.inr ⟨P', Q', x.up_mem hP hP' hPP, y.up_mem hQ hQ' hQQ, rfl⟩
 
-/-- `toS ∘ fromS = id`. -/
 theorem toS_fromS (s : (sumSys D hD).Element) : toS D hD (fromS D hD s) = s := by
   apply NeighborhoodSystem.Element.ext
   intro W
@@ -339,8 +325,6 @@ theorem toS_fromS (s : (sumSys D hD).Element) : toS D hD (fromS D hD s) = s := b
     · obtain ⟨P, Q, hP, hQ, rfl⟩ := hV
       exact Or.inr (Or.inr ⟨P, Q, hP, hQ, rfl, (fromS_mem_embPair D hD hP hQ).mpr hW⟩)
 
-/-- **Example 6.1 (Scott 1981, PRG-19) — the domain equation, as an order-isomorphism.**
-`|D^§| ≃o |D + (D^§ × D^§)|`. -/
 def dsharpEquiv : (Dsharp D hD).Element ≃o (sumSys D hD).Element where
   toFun := toS D hD
   invFun := fromS D hD
@@ -362,15 +346,10 @@ def dsharpEquiv : (Dsharp D hD).Element ≃o (sumSys D hD).Element where
       · exact Or.inr (Or.inl ⟨X, hX, rfl, h _ hzX⟩)
       · exact Or.inr (Or.inr ⟨P, Q, hP, hQ, rfl, h _ hzPQ⟩)
 
-/-- **Example 6.1 (Scott 1981, PRG-19) — the domain equation `D^§ ≅ D + (D^§ × D^§)`.** The tree
-algebra `D^§` is, as a domain, isomorphic to `D + (D^§ × D^§)` — Scott's defining isomorphism, "as can
-be seen by reference to the equation for `D^§` and the definitions of `+` and `×`". -/
 theorem dsharp_domain_equation :
     Dsharp D hD ≅ᴰ sum D (prod (Dsharp D hD) (Dsharp D hD)) hD (prod_dsharp_nonempty D hD) :=
   ⟨dsharpEquiv D hD⟩
 
-/-- **Example 6.1 (Scott 1981, PRG-19).** `λx. x^§` is an *isomorphic injection*: `x^§ ⊑ x'^§ ↔ x ⊑ x'`
-(in particular one-one). -/
 theorem inSharp_le_iff {x x' : D.Element} : inSharp D hD x ≤ inSharp D hD x' ↔ x ≤ x' := by
   constructor
   · intro h X hX
@@ -382,8 +361,6 @@ theorem inSharp_le_iff {x x' : D.Element} : inSharp D hD x ≤ inSharp D hD x' �
     · exact Or.inl rfl
     · exact Or.inr ⟨X, h _ hX, rfl⟩
 
-/-- **Example 6.1 (Scott 1981, PRG-19).** `λx, y. ⟨x, y⟩` is an *isomorphic injection*:
-`⟨x, y⟩ ⊑ ⟨x', y'⟩ ↔ x ⊑ x' ∧ y ⊑ y'`. -/
 theorem pairSharp_le_iff {x x' y y' : (Dsharp D hD).Element} :
     pairSharp D hD x y ≤ pairSharp D hD x' y' ↔ x ≤ x' ∧ y ≤ y' := by
   constructor

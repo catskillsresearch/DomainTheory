@@ -21,7 +21,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Carrier of `lambdaSystem`. -/
 def LamDToken : Type _ := { t : RawLamToken α // LamWF A t }
 
 end InfoSys

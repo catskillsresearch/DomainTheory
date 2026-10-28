@@ -14,11 +14,6 @@ variable {α : Type*}
 namespace Proposition77
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
-/- concordance: source L4647 EXERCISE 7.17 recursion over lists -/
-/-- **Exercise 7.17 (Scott 1981, PRG-19) — the pairing `pair : D^§ × D^§ → D^§` is computable.**
-Its index relation is exactly `V_{2·⟨a,b⟩+2} ⊆ V_k`, a recursive slice of `D^§`'s inclusion decider
-(`dsharpPresentation.incl_computable`) reindexed by the primitive-recursive node map
-`s ↦ ⟨2·(p s)+2, q s⟩`, hence r.e. -/
 theorem pairSharp_isComputable (P : ComputablePresentation D) :
     ComputableMap (prodPresentation (dsharpPresentation P hD) (dsharpPresentation P hD))
       (dsharpPresentation P hD) (pairSharpMap hD) := by
@@ -35,8 +30,6 @@ theorem pairSharp_isComputable (P : ComputablePresentation D) :
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [pairSharp_rel_Vsharp_iff hD P s.unpair.1 s.unpair.2]
 
-/-- The index characterization of `proj1Map`. `V_m proj₁ V_k` iff `k = 0` (`V_k = Γ`) or `m` is an
-even node index `2a+2` with `V_{q a} ⊆ V_k` (the *right* child, `q a = a.unpair.2`). -/
 theorem proj1_rel_Vsharp_iff (P : ComputablePresentation D) (m k : ℕ) :
     (proj1Map hD).rel (Vsharp D P m) (Vsharp D P k) ↔
       k = 0 ∨ (m % 2 = 0 ∧ m ≠ 0 ∧ Vsharp D P (m / 2 - 1).unpair.2 ⊆ Vsharp D P k) := by
@@ -59,9 +52,6 @@ theorem proj1_rel_Vsharp_iff (P : ComputablePresentation D) (m k : ℕ) :
     · rintro ⟨-, -, hsub⟩
       exact ⟨Vsharp D P a.unpair.1, Vsharp D P a.unpair.2, rfl, hsub⟩
 
-/-- **Exercise 7.17 (Scott 1981, PRG-19) — `proj₁` is computable.**
-`V_m proj₁ V_k ↔ k = 0 ∨ (m even, m ≠ 0, V_{q(m/2-1)} ⊆ V_k)`: a disjunction of the equality and
-inclusion deciders with primitive-recursive parity/right-child reindexings, hence r.e. -/
 theorem proj1_isComputable (P : ComputablePresentation D) :
     ComputableMap (dsharpPresentation P hD) (dsharpPresentation P hD) (proj1Map hD) := by
   constructor
@@ -156,8 +146,6 @@ namespace Proposition77
 
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
-
-/-- **`proj1Map` really is the second projection of the pair part:** `proj₁(⟨x, y⟩^§) = y`. -/
 theorem proj1_toElementMap_pairSharp (x y : (Dsharp D hD).Element) :
     (proj1Map hD).toElementMap (pairSharp D hD x y) = y := by
   apply Element.ext
@@ -186,8 +174,6 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 namespace Exercise717
 
-/-- **The universal strict map `g : D^§ → E`, as a neighbourhood relation.** Defined by recursion on
-the `D^§`-neighbourhood shape: `Γ ↦ Δ_E`, `0·X ↦ u`'s relation, `1·P∪2·Q ↦ v ∘ (g × g)`. -/
 inductive GRel (u : ApproximableMap D E) (v : ApproximableMap (prod E E) E) :
     Set (List Bool × α) → Set β → Prop
   | gamma {Z} : Z = E.master → GRel u v (Gamma D) Z
@@ -206,7 +192,6 @@ namespace Exercise717
 
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
-/-- `embZero X ≠ embPair P Q` from `P ∈ 𝒟^§` (no `D.mem X` needed). -/
 theorem embZero_ne_embPair_of_memS (hD : ∀ X, D.mem X → X.Nonempty)
     {X : Set α} {P Q : Set (List Bool × α)} (hP : MemS D P) :
     embZero X ≠ embPair P Q := by
@@ -218,21 +203,18 @@ theorem embZero_ne_embPair_of_memS (hD : ∀ X, D.mem X → X.Nonempty)
   · rw [hp'] at hpath; simp at hpath
   · rw [hq'] at hpath; simp at hpath
 
-/-- Related outputs are `E`-neighbourhoods. -/
 theorem gRel_cod {W Z} (h : GRel u v W Z) : E.mem Z := by
   induction h with
   | gamma hZ => exact hZ ▸ E.master_mem
   | leaf hrel => exact u.rel_cod hrel
   | node _ _ hvrel _ _ => exact v.rel_cod hvrel
 
-/-- Related inputs are `D^§`-neighbourhoods. -/
 theorem gRel_dom {W Z} (h : GRel u v W Z) : MemS D W := by
   induction h with
   | gamma _ => exact MemS.gamma
   | leaf hrel => exact MemS.zero (u.rel_dom hrel)
   | node _ _ _ ihP ihQ => exact MemS.pair ihP ihQ
 
-/-- Inversion at a node `1·P ∪ 2·Q`: `(1·P∪2·Q) g Z ↔ ∃ Z₁ Z₂, P g Z₁ ∧ Q g Z₂ ∧ ⟨Z₁,Z₂⟩ v Z`. -/
 theorem gRel_embPair_inv (hD : ∀ X, D.mem X → X.Nonempty) {P Q : Set (List Bool × α)} {Z}
     (h : GRel u v (embPair P Q) Z) :
     ∃ Z₁ Z₂, GRel u v P Z₁ ∧ GRel u v Q Z₂ ∧ v.rel (prodNbhd Z₁ Z₂) Z := by
@@ -246,7 +228,6 @@ theorem gRel_embPair_inv (hD : ∀ X, D.mem X → X.Nonempty) {P Q : Set (List B
       obtain ⟨rfl, rfl⟩ := embPair_injective hW
       exact ⟨Z₁, Z₂, hP', hQ', hvrel⟩
 
-/-- Inversion at a leaf `0·X`: `0·X g Z ↔ X u Z`. -/
 theorem gRel_embZero_inv (hD : ∀ X, D.mem X → X.Nonempty) {X : Set α} {Z}
     (h : GRel u v (embZero X) Z) : u.rel X Z := by
   generalize hW : embZero X = W at h
@@ -256,7 +237,6 @@ theorem gRel_embZero_inv (hD : ∀ X, D.mem X → X.Nonempty) {X : Set α} {Z}
   | @node P Q Z₁ Z₂ Z hP hQ hvrel =>
       exact absurd hW (embZero_ne_embPair_of_memS hD (gRel_dom hP))
 
-/-- Inversion at `Γ`: `Γ g Z` forces `Z = Δ_E` (Scott's strictness). -/
 theorem gRel_gamma_inv (hD : ∀ X, D.mem X → X.Nonempty) {Z}
     (h : GRel u v (Gamma D) Z) : Z = E.master := by
   generalize hW : Gamma D = W at h
@@ -265,7 +245,6 @@ theorem gRel_gamma_inv (hD : ∀ X, D.mem X → X.Nonempty) {Z}
   | @leaf X Z hrel => exact absurd hW.symm (embZero_ne_Gamma D hD X)
   | @node P Q Z₁ Z₂ Z hP hQ hvrel => exact absurd hW.symm (embPair_ne_Gamma D hD P Q)
 
-/-- Intersectivity on the output (Scott's 2.1(ii)). -/
 theorem gRel_interRight (hD : ∀ X, D.mem X → X.Nonempty) {W Z} (h : GRel u v W Z) :
     ∀ {Z'}, GRel u v W Z' → GRel u v W (Z ∩ Z') := by
   induction h with
@@ -295,8 +274,6 @@ theorem gRel_interRight (hD : ∀ X, D.mem X → X.Nonempty) {W Z} (h : GRel u v
           subset_rfl hmem (v.rel_cod hv')
       exact v.inter_right hv1 hv2
 
-/-- **Strictness in the relation: every `D^§`-neighbourhood folds to `Δ_E`.** This is why no separate
-"top" clause is needed — `u`/`v` relate `Δ ↦ Δ`, so the master propagates through the tree. -/
 theorem gRel_master : ∀ {W}, MemS D W → GRel u v W E.master := by
   intro W hW
   induction hW with
@@ -308,7 +285,6 @@ theorem gRel_master : ∀ {W}, MemS D W → GRel u v W E.master := by
       have h := v.master_rel
       rwa [prod_master] at h
 
-/-- Monotonicity (Scott's 2.1(iii)). -/
 theorem gRel_mono (hD : ∀ X, D.mem X → X.Nonempty) {W Z} (h : GRel u v W Z) :
     ∀ {W' Z'}, W' ⊆ W → Z ⊆ Z' → MemS D W' → E.mem Z' → GRel u v W' Z' := by
   induction h with
@@ -331,7 +307,6 @@ theorem gRel_mono (hD : ∀ X, D.mem X → X.Nonempty) {W Z} (h : GRel u v W Z) 
       exact v.mono hvrel subset_rfl hZZ'
         (prod_mem_prodNbhd (gRel_cod hP) (gRel_cod hQ)) hZ'mem
 
-/-- **Exercise 7.17 Part 2 — the universal strict map `g : D^§ → E`.** -/
 def gMap (u : ApproximableMap D E) (v : ApproximableMap (prod E E) E)
     (hD : ∀ X, D.mem X → X.Nonempty) : ApproximableMap (Dsharp D hD) E where
   rel := GRel u v
@@ -348,12 +323,6 @@ section Computability
 
 variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
 
-/-- **The certificate step.** Input `p = ⟨w, tbl⟩` with `w = ⟨n, cert⟩` and `tbl` the memo table.
-`cert` decodes to `⟨out, wit, lcert, rcert⟩`. Returns `⟨okBit, out⟩`:
-* `n = 0`   : `okBit = fe⟨out, mIdx⟩` (is `Q_out = Δ_E`?);
-* `n = 2a+1`: `okBit = fU⟨wit, ⟨a, out⟩⟩` (does `wit` witness `X_a u Q_out`?);
-* `n = 2a+2`: read children `⟨a.1, lcert⟩`, `⟨a.2, rcert⟩` from `tbl`; `okBit = okL·okR·
-  fV⟨wit, ⟨⟨outL, outR⟩, out⟩⟩`. -/
 def gStep (p : ℕ) : ℕ :=
   let w := p.unpair.1
   let tbl := p.unpair.2
@@ -373,7 +342,6 @@ def gStep (p : ℕ) : ℕ :=
       (Nat.pair (childL.unpair.1 * childR.unpair.1
           * fV (Nat.pair wit (Nat.pair (Nat.pair childL.unpair.2 childR.unpair.2) out))) out))
 
-/-- The full evaluator: the course-of-values value of `gStep` at `w = ⟨n, cert⟩`. -/
 def gEval : ℕ → ℕ := gOf (gStep fe fU fV mIdx)
 
 theorem gEval_pair (n cert : ℕ) :
@@ -384,7 +352,6 @@ theorem gEval_pair (n cert : ℕ) :
 
 end Computability
 
-/-- **`g(in x) = u(x)`.** The injection summand of `D^§ ≅ D + (D^§×D^§)` folds via `u`. -/
 theorem gMap_in (hD : ∀ X, D.mem X → X.Nonempty) (x : D.Element) :
     (gMap u v hD).toElementMap (inSharp D hD x) = u.toElementMap x := by
   apply Element.ext
@@ -399,8 +366,6 @@ theorem gMap_in (hD : ∀ X, D.mem X → X.Nonempty) (x : D.Element) :
   · rintro ⟨X, hXx, hrel⟩
     exact ⟨embZero X, Or.inr ⟨X, hXx, rfl⟩, GRel.leaf hrel⟩
 
-/-- **`g(pair y z) = v(⟨g y, g z⟩)`.** The product summand folds via `v` applied to the recursive
-results — the defining recursion of the catamorphism. -/
 theorem gMap_pair (hD : ∀ X, D.mem X → X.Nonempty) (y z : (Dsharp D hD).Element) :
     (gMap u v hD).toElementMap (pairSharp D hD y z)
       = v.toElementMap (pair ((gMap u v hD).toElementMap y) ((gMap u v hD).toElementMap z)) := by
@@ -419,14 +384,12 @@ theorem gMap_pair (hD : ∀ X, D.mem X → X.Nonempty) (y z : (Dsharp D hD).Elem
     obtain ⟨Z₁, Z₂, ⟨P, hPy, hP1⟩, ⟨Q, hQz, hQ2⟩, rfl⟩ := mem_pair.mp hVmem
     exact ⟨embPair P Q, Or.inr ⟨P, Q, hPy, hQz, rfl⟩, GRel.node hP1 hQ2 hvrel⟩
 
-/-- **`g` is strict** (`g(⊥) = ⊥`): Scott's "the unique *strict* mapping". -/
 theorem gMap_strict (hD : ∀ X, D.mem X → X.Nonempty) :
     IsStrict (gMap u v hD) := fun _ h => gRel_gamma_inv hD h
 
 section Computability
 
 variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
 
 theorem gStep_gamma (cert tbl : ℕ) :
     gStep fe fU fV mIdx (Nat.pair (Nat.pair 0 cert) tbl)
@@ -460,8 +423,6 @@ theorem gStep_node (a cert tbl : ℕ) :
   rw [show (1 : ℕ) - (2 * a + 2) = 0 by omega, selectFn_zero,
     show (2 * a + 2) % 2 = 0 by omega, selectFn_zero, show (2 * a + 2) / 2 - 1 = a by omega]
 
-/-- The output index of `gEval ⟨n, cert⟩` is just `cert`'s first component (all three branches emit
-`out`). -/
 theorem gEval_out (n cert : ℕ) :
     (gEval fe fU fV mIdx (Nat.pair n cert)).unpair.2 = cert.unpair.1 := by
   rw [gEval_pair]
@@ -470,15 +431,12 @@ theorem gEval_out (n cert : ℕ) :
   · rw [gStep_leaf, unpair_pair_snd]
   · rw [gStep_node, unpair_pair_snd]
 
-/-- Memo lookup, in `gEval` form: at any earlier code `w' < w`, position `w-1-w'` of the table is
-`gEval w'`. -/
 theorem listGet_rtbl_gEval {w' w : ℕ} (h : w' < w) :
     listGet (rtbl (gStep fe fU fV mIdx) w) (w - 1 - w') = gEval fe fU fV mIdx w' :=
   listGet_rtbl (gStep fe fU fV mIdx) h
 
 end Computability
 
-/-- `Nat.pair` is monotone in its second argument (first argument fixed). -/
 theorem pair_le_pair_right {a b d : ℕ} (h : b ≤ d) : Nat.pair a b ≤ Nat.pair a d := by
   unfold Nat.pair
   rcases Nat.lt_or_ge a b with hab | hab
@@ -495,7 +453,6 @@ theorem pair_le_pair_right {a b d : ℕ} (h : b ≤ d) : Nat.pair a b ≤ Nat.pa
       omega
     · rw [ite_eq_right (Nat.not_lt.mpr had)]; omega
 
-/-- `Nat.pair` is strictly monotone in its first argument (second argument fixed). -/
 theorem pair_lt_pair_left {a c b : ℕ} (h : a < c) : Nat.pair a b < Nat.pair c b := by
   unfold Nat.pair
   rcases Nat.lt_or_ge a b with hab | hab
@@ -511,7 +468,6 @@ theorem pair_lt_pair_left {a c b : ℕ} (h : a < c) : Nat.pair a b < Nat.pair c 
     have hexp : (a + 1) * (a + 1) = a * a + 2 * a + 1 := by ring
     omega
 
-/-- Combined: strict in the first argument, monotone in the second. -/
 theorem pair_lt_pair_of_lt_le {a c b d : ℕ} (hac : a < c) (hbd : b ≤ d) :
     Nat.pair a b < Nat.pair c d :=
   lt_of_lt_of_le (pair_lt_pair_left hac) (pair_le_pair_right hbd)
@@ -520,11 +476,8 @@ section Computability
 
 variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
 
-
 set_option maxHeartbeats 1000000 in
-/-- **Completeness of the certificate.** If `g` relates `V_n` to some `Z`, there is a `cert` the memo
-certifies (ok-bit `1`) with `Q_{out} = Z`. Strong induction on `n`; the node case builds the certificate
-from the children's certificates (children codes are `<` by `pair_lt_pair_of_lt_le`). -/
+
 theorem gEval_complete (hD : ∀ X, D.mem X → X.Nonempty)
     (P : ComputablePresentation D) (Q : ComputablePresentation E)
     (hEq : ∀ m, fe (Nat.pair m mIdx) = 1 ↔ Q.X m = E.master) (hMidx : Q.X mIdx = E.master)
@@ -539,14 +492,14 @@ theorem gEval_complete (hD : ∀ X, D.mem X → X.Nonempty)
   | _ n ih =>
     intro Z hg
     rcases nat_shape n with rfl | ⟨a, rfl⟩ | ⟨a, rfl⟩
-    · -- n = 0
+    ·
       rw [Vsharp_zero] at hg
       have hZ := gRel_gamma_inv hD hg
       refine ⟨Nat.pair mIdx (Nat.pair 0 0), ?_, ?_⟩
       · rw [gEval_pair, gStep_gamma, unpair_pair_fst, unpair_pair_fst]
         exact (hEq mIdx).mpr hMidx
       · rw [unpair_pair_fst, hMidx, hZ]
-    · -- n = 2a+1
+    ·
       rw [Vsharp_odd] at hg
       have hu := gRel_embZero_inv hD hg
       obtain ⟨e, he⟩ := Q.surj (u.rel_cod hu)
@@ -557,7 +510,7 @@ theorem gEval_complete (hD : ∀ X, D.mem X → X.Nonempty)
           unpair_pair_fst]
         exact hwit
       · rw [unpair_pair_fst]; exact he
-    · -- n = 2a+2
+    ·
       rw [Vsharp_even] at hg
       obtain ⟨Z₁, Z₂, hg1, hg2, hvrel⟩ := gRel_embPair_inv hD hg
       obtain ⟨certL, hokL, heqL⟩ := ih a.unpair.1 (by have := unpair_fst_le a; omega) Z₁ hg1
@@ -588,7 +541,6 @@ theorem gEval_complete (hD : ∀ X, D.mem X → X.Nonempty)
         exact hwit
       · rw [unpair_pair_fst]; exact he
 
-/-- The certificate step is primitive recursive (when the underlying functions are). -/
 theorem primrec_gStep (hfe : Nat.Primrec fe) (hfU : Nat.Primrec fU) (hfV : Nat.Primrec fV) :
     Nat.Primrec (gStep fe fU fV mIdx) := by
   have hw : Nat.Primrec (fun p : ℕ => p.unpair.1) := Nat.Primrec.left
@@ -661,7 +613,6 @@ theorem primrec_gStep (hfe : Nat.Primrec fe) (hfU : Nat.Primrec fU) (hfV : Nat.P
 
 end Computability
 
-/-- A decoded sub-component is `≤` the code it is decoded from. -/
 theorem unpair_snd_snd_fst_le (c : ℕ) : c.unpair.2.unpair.2.unpair.1 ≤ c := by
   have h1 := unpair_snd_le c
   have h2 := unpair_snd_le c.unpair.2
@@ -678,10 +629,6 @@ section Computability
 
 variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
 
-
-/-- **Soundness of the certificate.** If the memo certifies `⟨n, cert⟩` (ok-bit `1`), then `g` relates
-`V_n` to `Q_{out}` (`out = cert.unpair.1`). Strong induction on the combined code `⟨n, cert⟩`; the node
-case reads the two children from the memo table (`listGet_rtbl`) and applies the IH. -/
 theorem gEval_sound
     (P : ComputablePresentation D) (Q : ComputablePresentation E)
     (hEq : ∀ m, fe (Nat.pair m mIdx) = 1 ↔ Q.X m = E.master)
@@ -723,15 +670,6 @@ theorem gEval_sound
 
 end Computability
 
-/-- **Exercise 7.17 (Part 2) (Scott 1981, PRG-19).** If `E` is effectively given (presentation `Q`) and
-`u : D → E`, `v : E × E → E` are computable, then the unique strict catamorphism `g : D^§ → E`
-(`gMap`) is computable.
-
-The index relation `Xₙ g Yₘ = GRel u v (Vₙ)(Yₘ)` is realised as the recursively-enumerable existential
-`∃ cert, gEval⟨n,cert⟩.ok = 1 ∧ Y_{cert.out} = Yₘ` over the primitive-recursive certificate evaluator
-`gEval`. Soundness (`gEval_sound`) and completeness (`gEval_complete`) of the certificate give the
-equivalence; the deciders `fe`/`fU`/`fV` are read off `Q.eq_computable` and the r.e. relations of
-`u`/`v`. -/
 theorem gMap_isComputable (hD : ∀ X, D.mem X → X.Nonempty)
     (P : ComputablePresentation D) (Q : ComputablePresentation E)
     (hu : ComputableMap P Q u)
@@ -760,7 +698,7 @@ theorem gMap_isComputable (hD : ∀ X, D.mem X → X.Nonempty)
     have h := hqVe (Nat.pair (Nat.pair k1 k2) m)
     simp only [prodPresentation_X, unpair_pair_fst, unpair_pair_snd] at h
     rw [h]; exact exists_congr fun i => (hfVe (Nat.pair i (Nat.pair (Nat.pair k1 k2) m))).symm
-  -- The certificate body is recursively decidable, hence its existential projection is r.e.
+
   have hgEval : Nat.Primrec (gEval fe fU fV Q.masterIdx) :=
     primrec_gOf (primrec_gStep fe fU fV Q.masterIdx hfep hfUp hfVp)
   have hidx : Nat.Primrec (fun s : ℕ => Nat.pair s.unpair.2.unpair.1 s.unpair.1) :=

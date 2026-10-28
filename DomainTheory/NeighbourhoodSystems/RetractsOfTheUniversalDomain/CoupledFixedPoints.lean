@@ -9,7 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-/- concordance: source L5219 EXERCISE 8.24 coupled domain equations -/
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
@@ -18,32 +17,23 @@ namespace Exercise824
 
 variable {α : Type} {E : NeighborhoodSystem α}
 
-
-/-- Scott's pair space `(E → E) × (E → E)`: pairs of self-maps of `E`, as an actual
-`NeighborhoodSystem` (Lecture III's product of two copies of the function space). -/
 abbrev PairSpace : NeighborhoodSystem (ApproximableMap E E ⊕ ApproximableMap E E) :=
   prod (funSpace E E) (funSpace E E)
 
-/-- The `n`-th approximant's first component, as an actual approximable map `E → E`. -/
 def aOp (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
     ApproximableMap E E :=
   toApproxMap ((paired s t).iterElem n).fst
 
-/-- Scott's `‖s‖ = fix(⟨s, t⟩)`'s first component, as an actual approximable map `E → E`. -/
 def aStar (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) : ApproximableMap E E :=
   toApproxMap (paired s t).fixElement.fst
 
-/-- The `n`-th approximant's second component, as an actual approximable map `E → E`. -/
 def bOp (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
     ApproximableMap E E :=
   toApproxMap ((paired s t).iterElem n).snd
 
-/-- Scott's `‖t‖ = fix(⟨s, t⟩)`'s second component, as an actual approximable map `E → E`. -/
 def bStar (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) : ApproximableMap E E :=
   toApproxMap (paired s t).fixElement.snd
 
-/-- Scott's `s(a, b)`: the operator `(E → E) × (E → E) → (E → E)` induced by an approximable map
-`s` out of the pair space, applied to two actual maps `a b : E → E`. -/
 def binOp (f : ApproximableMap (PairSpace (E := E)) (funSpace E E))
     (a b : ApproximableMap E E) : ApproximableMap E E :=
   toApproxMap (f.toElementMap (pair (toFilter a) (toFilter b)))
@@ -53,9 +43,6 @@ theorem fst_mono {z z' : (PairSpace (E := E)).Element} (h : z ≤ z') : z.fst �
   rw [mem_fst] at hX ⊢
   exact ⟨hX.1, h _ hX.2⟩
 
-/-- The `n`-th approximant of `⟨s, t⟩` is exactly the pairing of `aOp`'s and `bOp`'s `n`-th
-approximants (`Product.lean`'s `pair_fst_snd`, transported through the `toFilter`/`toApproxMap`
-round trip). -/
 theorem iterElem_pair_eq_pair (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
     (paired s t).iterElem n = pair (toFilter (aOp s t n)) (toFilter (bOp s t n)) := by
   show (paired s t).iterElem n
@@ -69,14 +56,12 @@ theorem iterElem_succ_pair (s t : ApproximableMap (PairSpace (E := E)) (funSpace
       = (paired s t).toElementMap (((paired s t).iterMap n).toElementMap (PairSpace (E := E)).bot)
   rw [toElementMap_comp]
 
-/-- **The mutual recursion on approximants**: `aOp s t (n+1) = binOp s (aOp s t n) (bOp s t n)`. -/
 theorem aOp_succ (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
     aOp s t (n + 1) = binOp s (aOp s t n) (bOp s t n) := by
   show toApproxMap ((paired s t).iterElem (n + 1)).fst
       = toApproxMap (s.toElementMap (pair (toFilter (aOp s t n)) (toFilter (bOp s t n))))
   rw [iterElem_succ_pair, toElementMap_paired, fst_pair, iterElem_pair_eq_pair]
 
-/-- **The mutual recursion on approximants**: `bOp s t (n+1) = binOp t (aOp s t n) (bOp s t n)`. -/
 theorem bOp_succ (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
     bOp s t (n + 1) = binOp t (aOp s t n) (bOp s t n) := by
   show toApproxMap ((paired s t).iterElem (n + 1)).snd
@@ -119,8 +104,6 @@ theorem bOp_zero (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
   show toApproxMap ((paired s t).iterElem 0).snd = constMap E E.bot
   rw [iterElem_zero_pair, pairSpace_bot_snd, Exercise823.toApproxMap_bot_eq_constMap]
 
-/-- Every approximant pair `(aOp s t n, bOp s t n)` consists of finitary projections, provided
-`s`/`t` send pairs of finitary projections to finitary projections. -/
 theorem isFinitaryProjection_chain (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))
     (hst : ∀ a b, FinitaryProjection a → FinitaryProjection b →
       FinitaryProjection (binOp s a b) ∧ FinitaryProjection (binOp t a b)) :
@@ -140,9 +123,6 @@ theorem snd_mono {z z' : (PairSpace (E := E)).Element} (h : z ≤ z') : z.snd �
   rw [mem_snd] at hX ⊢
   exact ⟨hX.1, h _ hX.2⟩
 
-/-- **Exercise 8.24, Claim 1.** Provided `s`/`t` map pairs of finitary projections to finitary
-projections, the simultaneous fixed point `(aStar s t, bStar s t)` really consists of finitary
-projections. -/
 theorem isFinitaryProjection_aStar_bStar (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))
     (hst : ∀ a b, FinitaryProjection a → FinitaryProjection b →
       FinitaryProjection (binOp s a b) ∧ FinitaryProjection (binOp t a b)) :
@@ -222,12 +202,6 @@ theorem isFinitaryProjection_aStar_bStar (s t : ApproximableMap (PairSpace (E :=
     apply isFinitaryProjection_of_sub_eq_self
     rw [← toApproxMap_subFilter, hkeyB]
 
-/-- **Exercise 8.24, Claim 2 (initiality with respect to projections).** If `a, b` is *any* other
-pair of finitary projections that is a pre-fixed point of the same pair of operators
-(`binOp s a b ≤ a`, `binOp t a b ≤ b`, in particular any exact alternative solution), then
-`(aStar s t, bStar s t)`'s domains embed as literal subsystems of `a`'s and `b`'s domains:
-`D_{aStar s t} ◁ D_a`, `D_{bStar s t} ◁ D_b` — Scott's "the initial solution... with respect to
-projections", for both components simultaneously. -/
 theorem fixedNbhd_aStar_bStar_subsystem (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))
     (hst : ∀ a b, FinitaryProjection a → FinitaryProjection b →
       FinitaryProjection (binOp s a b) ∧ FinitaryProjection (binOp t a b))
@@ -284,7 +258,6 @@ theorem toElementMap_fixElement_fst (s t : ApproximableMap (PairSpace (E := E)) 
   have h' := congrArg NeighborhoodSystem.Element.fst h
   rwa [fst_pair] at h'
 
-/-- `(aStar s t, bStar s t)` is a *genuine* fixed point of the pair `(s, t)`. -/
 theorem binOp_aStar_bStar_left (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     binOp s (aStar s t) (bStar s t) = aStar s t := by
   unfold binOp aStar bStar
@@ -298,19 +271,11 @@ theorem toElementMap_fixElement_snd (s t : ApproximableMap (PairSpace (E := E)) 
   have h' := congrArg NeighborhoodSystem.Element.snd h
   rwa [snd_pair] at h'
 
-/-- `(aStar s t, bStar s t)` is a *genuine* fixed point of the pair `(s, t)`. -/
 theorem binOp_aStar_bStar_right (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     binOp t (aStar s t) (bStar s t) = bStar s t := by
   unfold binOp aStar bStar
   rw [toFilter_toApproxMap, toFilter_toApproxMap, pair_fst_snd, toElementMap_fixElement_snd]
 
-/-- **Exercise 8.24, Claim 2 (the domain equations).** Given any correspondences `S, T` (bundling,
-for each pair of maps, a type and a domain over it) with `Fix(binOp s a b) ≅ S(a,b)` and
-`Fix(binOp t a b) ≅ T(a,b)` for every pair of finitary projections `a, b` (Scott's hypotheses
-`D_{s(a,b)} ≅ S(D_a,D_b)`, `D_{t(a,b)} ≅ T(D_a,D_b)`), substituting the *exact* simultaneous fixed
-point `a := aStar s t`, `b := bStar s t` and using `binOp_aStar_bStar_left/right` gives
-`Fix(aStar s t) ≅ S(aStar s t, bStar s t)` and `Fix(bStar s t) ≅ T(aStar s t, bStar s t)`
-unconditionally — Scott's `D ≅ S(D,E)`, `E ≅ T(D,E)`. -/
 theorem fixedDomain_aStar_bStar_iso (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))
     (hst : ∀ a b, FinitaryProjection a → FinitaryProjection b →
       FinitaryProjection (binOp s a b) ∧ FinitaryProjection (binOp t a b))
@@ -328,7 +293,6 @@ theorem fixedDomain_aStar_bStar_iso (s t : ApproximableMap (PairSpace (E := E)) 
   rw [binOp_aStar_bStar_right] at h2
   exact ⟨h1, h2⟩
 
-
 end Exercise824
 
 end DomainTheory.NeighbourhoodSystems
@@ -337,9 +301,7 @@ namespace DomainTheory.NeighbourhoodSystems.Example15
 
 end DomainTheory.NeighbourhoodSystems.Example15
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
-/-- Countability of the neighbourhoods of `S`, via the `SExpr` presentation.
-Picking a preimage uses Mathlib's `Surjective.countable` (hence `Classical.choice`);
-the syntax `SExpr` itself is countable choice-free. -/
+
 instance Ssys_countable : Countable {S : Set (List Bool) // Ssys.mem S} := by
   classical
   let f (e : SExpr) : {S : Set (List Bool) // InS S} :=
@@ -358,15 +320,13 @@ instance Ssys_countable : Countable {S : Set (List Bool) // Ssys.mem S} := by
 
 end DomainTheory.NeighbourhoodSystems.Exercise722
 namespace DomainTheory.NeighbourhoodSystems.Example15
-/-- **New corollary for Example 1.5.** The finite powerset system is countable, so the first
-sentence of Theorem 8.8 applies. Scott does not separately state this embedding. -/
+
 theorem P4_embeds : neighborhoodSystem ⊴ U :=
   theorem_8_8 neighborhoodSystem
 
 end DomainTheory.NeighbourhoodSystems.Example15
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
-/-- **New corollary for Exercise 7.22.** Countability is `Ssys_countable` (via `SExpr`), so the
-first sentence of Theorem 8.8 applies. Scott does not separately state this embedding. -/
+
 theorem Ssys_embeds : Ssys ⊴ U :=
   theorem_8_8 Ssys
 

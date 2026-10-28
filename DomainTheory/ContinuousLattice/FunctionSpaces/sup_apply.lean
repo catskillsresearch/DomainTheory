@@ -10,7 +10,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -21,7 +20,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace ScottMap
 
-/-- The (completeLatticeOfSup-derived) binary join of Scott maps is computed pointwise. -/
 theorem sup_apply (f g : ScottMap D D') (x : D) :
     ((f ⊔ g : ScottMap D D') : D → D') x = f x ⊔ g x := by
   have h : (f ⊔ g : ScottMap D D') = sSup ({f, g} : Set (ScottMap D D')) := rfl

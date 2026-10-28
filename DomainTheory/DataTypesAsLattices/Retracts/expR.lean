@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.expF
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.44).** `exp` as the least fixed point of the seven-tag
-syntax functor. -/
 def expR : Pomega := funOf Ycomb (graph expF)
 
 end DomainTheory.DataTypesAsLattices

@@ -9,12 +9,8 @@ public import DomainTheory.DataTypesAsLattices.Functionality.expF_isScottContinu
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (4.44).** `exp` is the least fixed point of the seven-tag
-syntax functor. -/
 theorem eq_4_44 : expR = expF expR := by
   have hY : expR = fix expF := theorem_2_5 expF_isScottContinuous
   have hfix : expF expR = expR := by

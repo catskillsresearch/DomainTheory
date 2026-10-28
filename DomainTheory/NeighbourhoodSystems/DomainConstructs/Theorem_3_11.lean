@@ -12,9 +12,7 @@ open NeighborhoodSystem ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 section
 variable {V₂ : NeighborhoodSystem γ}
-/- concordance: source L1291 THEOREM 3.11 evaluation combinator -/
-/-- **Theorem 3.11 (Scott 1981, PRG-19).** The two-variable evaluation map
-`eval : (𝒟₁ → 𝒟₂) × 𝒟₁ → 𝒟₂`, `F, X eval Y ↔ X f Y for all f ∈ F`. -/
+
 def eval (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
     ApproximableMap₂ (funSpace V₁ V₂) V₁ V₂ where
   rel F X Y := (funSpace V₁ V₂).mem F ∧ V₁.mem X ∧ V₂.mem Y ∧ ∀ f ∈ F, f.rel X Y
@@ -32,13 +30,9 @@ def eval (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
     rintro F F' X X' Y Y' ⟨hF, hX, hY, hrel⟩ hF'F hX'X hYY' hF' hX' hY'
     exact ⟨hF', hX', hY', fun f hf => f.mono (hrel f (hF'F hf)) hX'X hYY' hX' hY'⟩
 
-/-- **Theorem 3.11 (Scott 1981, PRG-19).** Evaluation as a single approximable map out of the
-product `(𝒟₁ → 𝒟₂) × 𝒟₁ → 𝒟₂`. -/
 def evalMap (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
     ApproximableMap (prod (funSpace V₁ V₂) V₁) V₂ := ofMap₂ (eval V₁ V₂)
 
-/-- The `X`-section of a two-variable map `g : 𝒟₀ × 𝒟₁ → 𝒟₂`: the map `𝒟₁ → 𝒟₂` with
-`Y (gSection g X) Z ↔ X ∪ Y g Z`. -/
 def gSection (g : ApproximableMap (prod V₀ V₁) V₂) {X : Set α} (hX : V₀.mem X) :
     ApproximableMap V₁ V₂ where
   rel Y Z := g.rel (prodNbhd X Y) Z
@@ -61,8 +55,6 @@ theorem gSection_le {g : ApproximableMap (prod V₀ V₁) V₂} {X X' : Set α}
   exact g.mono h (prodNbhd_subset_iff.mpr ⟨hX'X, subset_rfl⟩) subset_rfl
     (prod_mem_prodNbhd hX' hY) (g.rel_cod h)
 
-/-- **Theorem 3.11(i) (Scott 1981, PRG-19).** `eval(f, x) = f(x)` (with the filter `φ` viewed as
-the map `toApproxMap φ` via Theorem 3.10). -/
 theorem toElementMap₂_eval (φ : (funSpace V₁ V₂).Element) (x : V₁.Element) :
     (eval V₁ V₂).toElementMap₂ φ x = (toApproxMap φ).toElementMap x := by
   apply Element.ext
@@ -77,12 +69,10 @@ theorem toElementMap₂_eval (φ : (funSpace V₁ V₂).Element) (x : V₁.Eleme
     obtain ⟨f, hf⟩ := (funSpace_mem_iff.mp hstep).2
     exact ⟨step X Y, X, hrel, hxX, hstep, f.rel_dom hf, f.rel_cod hf, fun g hg => hg⟩
 
-/-- **Theorem 3.11(i) (Scott 1981, PRG-19).** `eval(⟨f, x⟩) = f(x)`. -/
 theorem evalMap_apply (φ : (funSpace V₁ V₂).Element) (x : V₁.Element) :
     (evalMap V₁ V₂).toElementMap (pair φ x) = (toApproxMap φ).toElementMap x := by
   rw [evalMap, ← toElementMap₂_toMap₂, toMap₂_ofMap₂, toElementMap₂_eval]
 
-/-- `(eval ∘ ⟨F, G⟩)(w) = F(w)(G(w))`. -/
 theorem toElementMap_evalMap_comp_paired (F : ApproximableMap V₀ (funSpace V₁ V₂))
     (G : ApproximableMap V₀ V₁) (w : V₀.Element) :
     ((evalMap V₁ V₂).comp (paired F G)).toElementMap w =

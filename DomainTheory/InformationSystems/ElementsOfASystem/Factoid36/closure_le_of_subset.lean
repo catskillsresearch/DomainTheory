@@ -8,7 +8,6 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closur
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -17,7 +16,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Monotonicity of closure under inclusion of consistent sets. -/
 theorem closure_le_of_subset {u w : Finset α} (hu : u ∈ sys.Con) (hw : w ∈ sys.Con)
     (hsub : u ⊆ w) : sys.closure u hu ≤ sys.closure w hw :=
   sys.closure_le_of_entSet hu hw fun _ hy => sys.ent_refl hw (hsub hy)

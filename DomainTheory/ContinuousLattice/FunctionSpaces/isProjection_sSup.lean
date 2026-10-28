@@ -14,7 +14,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -25,9 +24,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 section Projections
 
-/-- **Scott 1972, Proposition 3.12 (`⊔`-closure).** `J_D` is closed under arbitrary suprema in
-`[D → D]`: every supremum is the directed supremum of finite sub-joins (`finsetSupOf`), each a
-projection by `isProjection_finsetSup`. -/
 theorem isProjection_sSup {T : Set (ScottMap D D)} (hT : ∀ j ∈ T, IsProjection j) :
     IsProjection (sSup T) := by
   rw [IsContinuousLatticeProjection.sSup_finsetSupOf T]

@@ -28,8 +28,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- **Scott 1976, (3.17).** Operator identity
-`ū ∘ v̄ ∘ R = overline{u(v)}`. -/
 theorem eq_3_17 (u v : Pomega) :
     enumComp (funOf barComb u) (enumComp (funOf barComb v) Rcomb) =
       funOf barComb (funOf u v) := by
@@ -50,7 +48,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- Projection calculation used in the proof of Scott 1976, (3.17). -/
 theorem projections (u v x : Pomega) :
     funOf (barPos u (barPos v (funOf Rcomb x))) (ofNat 1) = u ∧
       funOf (barPos v (funOf Rcomb x)) (ofNat 1) = v ∧
@@ -58,9 +55,6 @@ theorem projections (u v x : Pomega) :
   refine ⟨barPos.one _ _, barPos.one _ _, ?_⟩
   rw [barPos.two, Rcomb.app, seq2.one]
 
-/-- Nested positive-branch packaging of (3.17): `ū⁺(v̄⁺(R(x)))`
-has first projection `u` and recovers `u(v)(x)` via `L` after
-replacing the head by `u(v)`. -/
 theorem semigroup (u v x : Pomega) :
     funOf (barPos u (barPos v (funOf Rcomb x))) (ofNat 1) = u ∧
       funOf Lcomb (barPos (funOf u v) (funOf Rcomb x)) =

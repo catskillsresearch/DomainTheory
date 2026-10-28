@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 4.4.** The product mediator
-`h = (f ⊗ g) ∘ diag ∘ c`. -/
 def pairMed (f g c : Pomega) : Pomega :=
   comp (tensorR f g) (comp diagC c)
 

@@ -32,7 +32,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- Membership in `G` along a finite trace is r.e. via one `evaln` stage. -/
 theorem re : REPred valTraceG := by
   have hf : Partrec fun k : ℕ =>
       (Part.assert (k ∈ Gcomb) fun _ => Part.some (0 : ℕ)) :=

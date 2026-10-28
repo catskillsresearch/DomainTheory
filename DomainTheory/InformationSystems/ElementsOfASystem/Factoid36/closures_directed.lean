@@ -8,7 +8,6 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closur
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -17,8 +16,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-
-/-- The family of finite approximations to `x` is directed under `≤`. -/
 theorem closures_directed (x : sys.Element) {u v : Finset α}
     (hu : u ∈ sys.Con) (hv : v ∈ sys.Con)
     (huX : ↑u ⊆ x.carrier) (hvX : ↑v ⊆ x.carrier) :

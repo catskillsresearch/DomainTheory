@@ -9,7 +9,6 @@ public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set
@@ -21,10 +20,6 @@ section InverseLimit
 variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-
-/-- **Scott 1972, Proposition 4.1.** The inverse limit is injective by the coordinatewise
-Proposition 3.8/Lemma 3.9 construction; Theorem 2.12 then gives the continuous-lattice structure
-on the existing componentwise complete lattice. -/
 theorem proposition_4_1 (hD : ∀ n, ContinuousLattice (D n)) :
     ContinuousLattice (InverseLimit D P) := by
   let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P

@@ -11,8 +11,7 @@ section
 open NeighborhoodSystem
 variable {α β γ δ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-/- concordance: source L958 PROPOSITION 3.2 elements of a product -/
-/-- **Proposition 3.2 (Scott 1981, PRG-19).** The order-isomorphism `|𝒟₀ × 𝒟₁| ≃o |𝒟₀| × |𝒟₁|`. -/
+
 def prodEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     (prod V₀ V₁).Element ≃o V₀.Element × V₁.Element where
   toFun z := (z.fst, z.snd)
@@ -37,7 +36,6 @@ def prodEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
 @[simp] theorem prodEquiv_symm_apply (p : V₀.Element × V₁.Element) :
     (prodEquiv V₀ V₁).symm p = pair p.1 p.2 := rfl
 
-/-- **Proposition 3.2(i) (Scott 1981, PRG-19).** `⟨x, y⟩ ⊑ ⟨x', y'⟩ ↔ x ⊑ x' ∧ y ⊑ y'`. -/
 theorem pair_le_pair_iff {x x' : V₀.Element} {y y' : V₁.Element} :
     pair x y ≤ pair x' y' ↔ x ≤ x' ∧ y ≤ y' := by
   constructor

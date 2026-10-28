@@ -13,7 +13,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- A chain: any two elements are comparable. -/
 class Chain (S : Set sys.Element) : Prop where
   out : ∀ (x y : sys.Element), x ∈ S → y ∈ S → x ≤ y ∨ y ≤ x
 

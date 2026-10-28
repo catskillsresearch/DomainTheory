@@ -15,11 +15,9 @@ public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
-
 
 theorem fcapGdeltaPack_isScottContinuous {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :

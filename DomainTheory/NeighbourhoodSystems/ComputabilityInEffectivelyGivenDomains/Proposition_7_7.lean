@@ -11,9 +11,7 @@ section
 open NeighborhoodSystem Domain.Recursive Example61
 variable {α : Type*}
 namespace Proposition77
-/- concordance: source L4433 PROPOSITION 7.7 lists effectively given -/
-/-- **Proposition 7.7 (Scott 1981, PRG-19).** Scott's enumeration of `D^§`:
-`V₀ = Γ`, `V_{2n+1} = 0·Xₙ`, `V_{2n+2} = 1·V_{p n} ∪ 2·V_{q n}` (`p = unpair.1`, `q = unpair.2`). -/
+
 def Vsharp (D : NeighborhoodSystem α) (P : ComputablePresentation D) :
     ℕ → Set (List Bool × α)
   | 0 => Gamma D
@@ -38,7 +36,6 @@ namespace Proposition77
 
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- One-step unfolding of `Vsharp` at a successor index. -/
 theorem Vsharp_succ (k : ℕ) :
     Vsharp D P (k + 1) =
       if (k + 1) % 2 = 1 then embZero (P.X (k / 2))
@@ -83,13 +80,12 @@ theorem Vsharp_eq_Gamma_iff (hD : ∀ X, D.mem X → X.Nonempty) (j : ℕ) :
     · rw [Vsharp_even] at h; exact absurd h (embPair_ne_Gamma D hD _ _)
   · rintro rfl; exact Vsharp_zero P
 
-/-- Every `V k` is a neighbourhood of `D^§`. -/
 theorem Vsharp_mem (k : ℕ) : MemS D (Vsharp D P k) := by
   induction k using Nat.strong_induction_on with
   | _ k ih =>
     rcases Nat.eq_zero_or_pos k with rfl | hk
     · rw [Vsharp_zero]; exact MemS.gamma
-    · -- `k ≥ 1` is odd `2n+1` or even `2n+2`, decided choice-free by `k % 2`.
+    ·
       rcases (by
         rcases Nat.lt_or_ge (k % 2) 1 with h | h
         · exact Or.inr ⟨k / 2 - 1, by omega⟩
@@ -103,11 +99,9 @@ theorem Vsharp_mem (k : ℕ) : MemS D (Vsharp D P k) := by
 theorem Vsharp_inter_zero (n : ℕ) : Vsharp D P n ∩ Vsharp D P 0 = Vsharp D P n := by
   rw [Vsharp_zero, Set.inter_eq_left]; exact memS_subset_gamma (Vsharp_mem P n)
 
-/-- Under `∅ ∉ 𝒟`, no `V k` is empty. -/
 theorem Vsharp_nonempty (hD : ∀ X, D.mem X → X.Nonempty) (k : ℕ) : (Vsharp D P k).Nonempty :=
   memS_nonempty hD (Vsharp_mem P k)
 
-/-- Every neighbourhood of `D^§` is enumerated as some `V k` (surjectivity of `V`). -/
 theorem Vsharp_surj {W : Set (List Bool × α)} (hW : MemS D W) : ∃ k, Vsharp D P k = W := by
   induction hW with
   | gamma => exact ⟨0, Vsharp_zero P⟩
@@ -188,7 +182,7 @@ theorem dsharp_decider_spec (hD : ∀ X, D.mem X → X.Nonempty)
     | _ w ih =>
       intro i j hw
       rcases nat_shape i with rfl | ⟨a, rfl⟩ | ⟨a, rfl⟩
-      · -- i = 0 (Γ ∩ V_j = V_j)
+      ·
         simp only [gOf_def]
         rw [dsharpStep_i0 fcons feq finter j]
         simp only [eqB_packT, consB_packT, intI_packT]
@@ -202,9 +196,9 @@ theorem dsharp_decider_spec (hD : ∀ X, D.mem X → X.Nonempty)
           · intro h
             have hj : j = 0 := (Vsharp_eq_Gamma_iff P hD j).mp (h.symm.trans (Vsharp_zero P))
             omega
-      · -- i = 2a+1 (leaf)
+      ·
         rcases nat_shape j with rfl | ⟨b, rfl⟩ | ⟨b, rfl⟩
-        · -- j = 0
+        ·
           simp only [gOf_def]
           rw [dsharpStep_j0 fcons feq finter _ (by omega : 2 * a + 1 ≠ 0)]
           simp only [eqB_packT, consB_packT, intI_packT]
@@ -212,7 +206,7 @@ theorem dsharp_decider_spec (hD : ∀ X, D.mem X → X.Nonempty)
           · exact ⟨fun _ => ⟨2 * a + 1, (Vsharp_inter_zero P (2 * a + 1)).ge⟩, fun _ => trivial⟩
           · intro _; exact (Vsharp_inter_zero P (2 * a + 1)).symm
           · rw [Vsharp_zero P, Vsharp_eq_Gamma_iff P hD]; omega
-        · -- j = 2b+1 (leaf ∩ leaf)
+        ·
           simp only [gOf_def]
           rw [dsharpStep_ll fcons feq finter a b]
           simp only [eqB_packT, consB_packT, intI_packT]
@@ -224,7 +218,7 @@ theorem dsharp_decider_spec (hD : ∀ X, D.mem X → X.Nonempty)
             rw [Vsharp_odd P, hinter a b hp]
           · rw [Vsharp_odd P, Vsharp_odd P, heq a b]
             exact ⟨fun h => by rw [h], fun h => embZero_injective h⟩
-        · -- j = 2b+2 (leaf ∩ node : inconsistent)
+        ·
           simp only [gOf_def]
           rw [dsharpStep_ln fcons feq finter a b]
           simp only [eqB_packT, consB_packT, intI_packT]
@@ -243,9 +237,9 @@ theorem dsharp_decider_spec (hD : ∀ X, D.mem X → X.Nonempty)
             constructor
             · intro h; exact absurd h (by decide)
             · intro h; exact absurd h (embZero_ne_embPair D hD (P.mem_X a) _ _)
-      · -- i = 2a+2 (node)
+      ·
         rcases nat_shape j with rfl | ⟨b, rfl⟩ | ⟨b, rfl⟩
-        · -- j = 0
+        ·
           simp only [gOf_def]
           rw [dsharpStep_j0 fcons feq finter _ (by omega : 2 * a + 2 ≠ 0)]
           simp only [eqB_packT, consB_packT, intI_packT]
@@ -253,7 +247,7 @@ theorem dsharp_decider_spec (hD : ∀ X, D.mem X → X.Nonempty)
           · exact ⟨fun _ => ⟨2 * a + 2, (Vsharp_inter_zero P (2 * a + 2)).ge⟩, fun _ => trivial⟩
           · intro _; exact (Vsharp_inter_zero P (2 * a + 2)).symm
           · rw [Vsharp_zero P, Vsharp_eq_Gamma_iff P hD]; omega
-        · -- j = 2b+1 (node ∩ leaf : inconsistent)
+        ·
           simp only [gOf_def]
           rw [dsharpStep_nl fcons feq finter a b]
           simp only [eqB_packT, consB_packT, intI_packT]
@@ -272,7 +266,7 @@ theorem dsharp_decider_spec (hD : ∀ X, D.mem X → X.Nonempty)
             constructor
             · intro h; exact absurd h (by decide)
             · intro h; exact absurd h.symm (embZero_ne_embPair D hD (P.mem_X b) _ _)
-        · -- j = 2b+2 (node ∩ node : recurse)
+        ·
           have hlt1 : Nat.pair a.unpair.1 b.unpair.1 < Nat.pair (2 * a + 2) (2 * b + 2) :=
             pair_lt_pair_of_lt (by have := unpair_fst_le a; omega) (by have := unpair_fst_le b; omega)
           have hlt2 : Nat.pair a.unpair.2 b.unpair.2 < Nat.pair (2 * a + 2) (2 * b + 2) :=
@@ -304,10 +298,6 @@ theorem dsharp_decider_spec (hD : ∀ X, D.mem X → X.Nonempty)
   intro i j
   exact key (Nat.pair i j) i j rfl
 
-/-- **Intersection-index correctness in isolation.** The `intI` component of `gOf (dsharpStep …)` is
-independent of the `eq`/`cons` bits (`fcons`/`feq`), so it is correct assuming only that `finter`
-correctly intersects in `D`. This lets the `inter` *data* field be built with dummy `fcons`/`feq`
-while staying choice-free. -/
 theorem dsharp_intI_correct (hD : ∀ X, D.mem X → X.Nonempty)
     (hinter : ∀ a b, (∃ l, P.X l ⊆ P.X a ∩ P.X b) → P.X (finter (Nat.pair a b)) = P.X a ∩ P.X b) :
     ∀ i j : ℕ, (∃ l, Vsharp D P l ⊆ Vsharp D P i ∩ Vsharp D P j) →
@@ -368,10 +358,6 @@ theorem dsharp_intI_correct (hD : ∀ X, D.mem X → X.Nonempty)
               ih _ (hw ▸ hlt2) a.unpair.2 b.unpair.2 rfl hp2]
   intro i j; exact key (Nat.pair i j) i j rfl
 
-/-- **Decidability of `7.1(i)` for `D^§`.** `Vₙ ∩ Vₘ = V_k` iff `(n,m)` is consistent and the
-computed intersection index agrees with `k` under `D^§`-equality. Inconsistency forces the product
-to `0` (and then `Vₙ ∩ Vₘ = ∅ ≠ V_k`, since `V_k` is nonempty), so the single product decider is
-correct on the nose. -/
 theorem dsharp_interEq_iff (hD : ∀ X, D.mem X → X.Nonempty)
     (hcons : ∀ a b, fcons (Nat.pair a b) = 1 ↔ ∃ l, P.X l ⊆ P.X a ∩ P.X b)
     (heq : ∀ a b, feq (Nat.pair a b) = 1 ↔ P.X a = P.X b)
@@ -392,7 +378,6 @@ theorem dsharp_interEq_iff (hD : ∀ X, D.mem X → X.Nonempty)
   · rintro ⟨hcb, heb⟩
     rw [← hi0 (hc0.mp hcb)]; exact he.mp heb
 
-/-- **Proposition 7.7 (Scott 1981, PRG-19).** A computable presentation of `D^§` from one of `D`. -/
 def dsharpPresentation (hD : ∀ X, D.mem X → X.Nonempty) :
     ComputablePresentation (Dsharp D hD) where
   X := Vsharp D P
@@ -456,7 +441,6 @@ def dsharpPresentation (hD : ∀ X, D.mem X → X.Nonempty) :
   masterIdx := 0
   masterIdx_spec := Vsharp_zero P
 
-/-- **Proposition 7.7 (Scott 1981, PRG-19).** If `D` is effectively given, so is `D^§`. -/
 theorem dsharp_isEffectivelyGiven (P : ComputablePresentation D)
     (hD : ∀ X, D.mem X → X.Nonempty) :
     (Dsharp D hD).IsEffectivelyGiven :=
@@ -492,9 +476,6 @@ variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 @[simp] theorem dsharpPresentation_X (P : ComputablePresentation D) (n : ℕ) :
     (dsharpPresentation P hD).X n = Vsharp D P n := rfl
 
-/-- **Example 6.1's injection `λx. x^§` as an approximable map.** Scott's neighbourhood relation
-`X (λx.x^§) W ↔ 0·X ⊆ W` (`embZero X ⊆ W`). The filter laws are immediate: `inter_right` uses
-`memS_inter` (with witness `0·X`), and `mono` uses monotonicity of `embZero`. -/
 def inSharpMap : ApproximableMap D (Dsharp D hD) where
   rel X W := D.mem X ∧ MemS D W ∧ embZero X ⊆ W
   rel_dom h := h.1
@@ -511,9 +492,6 @@ def inSharpMap : ApproximableMap D (Dsharp D hD) where
 @[simp] theorem inSharpMap_rel {X : Set α} {W : Set (List Bool × α)} :
     (inSharpMap hD).rel X W ↔ D.mem X ∧ MemS D W ∧ embZero X ⊆ W := Iff.rfl
 
-/-- **The first projection of the pair part of `D^§`, as an approximable map.** On the pair summand
-`1·P ∪ 2·Q` it returns `P`; everywhere else it returns `⊥ = {Γ}`. The neighbourhood relation is
-`W proj₀ Z ↔ Z = Γ ∨ ∃ P Q, W = 1·P ∪ 2·Q ∧ P ⊆ Z`. -/
 def proj0Map : ApproximableMap (Dsharp D hD) (Dsharp D hD) where
   rel W Z := MemS D W ∧ MemS D Z ∧ (Z = Gamma D ∨ ∃ Pp Qq, W = embPair Pp Qq ∧ Pp ⊆ Z)
   rel_dom h := h.1
@@ -556,7 +534,6 @@ def proj0Map : ApproximableMap (Dsharp D hD) (Dsharp D hD) where
     (proj0Map hD).rel W Z ↔
       MemS D W ∧ MemS D Z ∧ (Z = Gamma D ∨ ∃ Pp Qq, W = embPair Pp Qq ∧ Pp ⊆ Z) := Iff.rfl
 
-/-- **`inSharpMap` really computes `inSharp`.** Its elementwise action is Scott's `λx. x^§`. -/
 theorem inSharpMap_toElementMap (x : D.Element) :
     (inSharpMap hD).toElementMap x = inSharp D hD x := by
   apply Element.ext
@@ -578,9 +555,6 @@ theorem inSharpMap_toElementMap (x : D.Element) :
     · exact ⟨D.master, x.master_mem, D.master_mem, MemS.gamma, embZero_subset_Gamma D.master_mem⟩
     · exact ⟨Y, hYx, x.sub hYx, MemS.zero (x.sub hYx), subset_rfl⟩
 
-/-- **Proposition 7.7 (Scott 1981, PRG-19) — `λx. x^§` is computable.**
-`Xₙ (λx.x^§) V_k ↔ V_{2n+1} ⊆ V_k` (`embZero Xₙ ⊆ V_k`), a recursive slice of the inclusion
-decider for `D^§`, hence r.e. -/
 theorem inSharp_isComputable (P : ComputablePresentation D) :
     ComputableMap P (dsharpPresentation P hD) (inSharpMap hD) := by
   constructor
@@ -594,8 +568,6 @@ theorem inSharp_isComputable (P : ComputablePresentation D) :
   simp only [inSharpMap_rel, unpair_pair_fst, unpair_pair_snd, Vsharp_odd]
   exact ⟨fun h => h.2.2, fun h => ⟨P.mem_X _, Vsharp_mem P _, h⟩⟩
 
-/-- The index characterization of `proj0Map` against the `Vsharp` enumeration. `V_m proj₀ V_k` iff
-`k = 0` (`V_k = Γ`) or `m` is an even node index `2a+2` with `V_{p a} ⊆ V_k` (the left child). -/
 theorem proj0_rel_Vsharp_iff (P : ComputablePresentation D) (m k : ℕ) :
     (proj0Map hD).rel (Vsharp D P m) (Vsharp D P k) ↔
       k = 0 ∨ (m % 2 = 0 ∧ m ≠ 0 ∧ Vsharp D P (m / 2 - 1).unpair.1 ⊆ Vsharp D P k) := by
@@ -618,9 +590,6 @@ theorem proj0_rel_Vsharp_iff (P : ComputablePresentation D) (m k : ℕ) :
     · rintro ⟨-, -, hsub⟩
       exact ⟨Vsharp D P a.unpair.1, Vsharp D P a.unpair.2, rfl, hsub⟩
 
-/-- **Proposition 7.7 (Scott 1981, PRG-19) — `proj₀` is computable.**
-`V_m proj₀ V_k ↔ k = 0 ∨ (m even, m ≠ 0, V_{p(m/2-1)} ⊆ V_k)`: a disjunction of the equality and
-inclusion deciders with primitive-recursive parity/child reindexings, hence r.e. -/
 theorem proj0_isComputable (P : ComputablePresentation D) :
     ComputableMap (dsharpPresentation P hD) (dsharpPresentation P hD) (proj0Map hD) := by
   constructor
@@ -641,7 +610,6 @@ theorem proj0_isComputable (P : ComputablePresentation D) :
   exact (RecDecidable.of_iff (fun s => proj0_rel_Vsharp_iff hD P s.unpair.1 s.unpair.2)
     (hk0.or (hmod.and (hne.and hincl)))).re
 
-/-- **`proj0Map` really is the first projection of the pair part:** `proj₀(⟨x, y⟩^§) = x`. -/
 theorem proj0_toElementMap_pairSharp (x y : (Dsharp D hD).Element) :
     (proj0Map hD).toElementMap (pairSharp D hD x y) = x := by
   apply Element.ext
@@ -669,9 +637,7 @@ variable {α : Type*}
 
 namespace Proposition77
 
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
 
 theorem gList_length (step : ℕ → ℕ) (w : ℕ) : (gList step w).length = w := by
   induction w with
@@ -685,7 +651,7 @@ namespace Exercise722
 open Set Domain.Recursive
 
 section
-/-- Default neighbourhood for junk / empty-syntax indices: the master `Σ = Set.univ`. -/
+
 def SsysX_default : Set (List Bool) := Set.univ
 end
 
@@ -696,7 +662,6 @@ section
 variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-/-- Scott's `W_k = X⁰_{p(k)} ∪ X¹_{q(k)}` with `p = ·.unpair.1`, `q = ·.unpair.2`. -/
 def prodEnum (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁) (t : ℕ) :
     Set (α ⊕ β) :=
   prodNbhd (P₀.X t.unpair.1) (P₁.X t.unpair.2)
@@ -709,8 +674,6 @@ end
 section
 variable {α β γ α' β' : Type*}
 
-/-- The product representation is determined by its two components (the `↔` form of
-`prodNbhd_injective`). -/
 theorem prodNbhd_eq_iff {X X' : Set α} {Y Y' : Set β} :
     prodNbhd X Y = prodNbhd X' Y' ↔ X = X' ∧ Y = Y' :=
   ⟨prodNbhd_injective, by rintro ⟨rfl, rfl⟩; rfl⟩

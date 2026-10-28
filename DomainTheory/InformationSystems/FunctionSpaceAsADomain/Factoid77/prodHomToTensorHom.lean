@@ -14,7 +14,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.t
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -46,6 +45,5 @@ theorem prodHomToTensorHom.toElement (A Y Z : InfoSysObj.{u})
   rfl
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

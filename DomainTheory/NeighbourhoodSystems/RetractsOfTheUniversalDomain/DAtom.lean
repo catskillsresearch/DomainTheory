@@ -13,16 +13,11 @@ section
 open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- The `idxSet`-atom of the *positive* constraints `pos`: indices `m` with `Xₘ ⊆ Xᵢ` for every
-`i ∈ pos`. (The empty list gives `Set.univ`, matching `genAtom`'s depth-`0` value.) -/
 def IPos (pos : List ℕ) : Set ℕ := {m | ∀ i ∈ pos, m ∈ idxSet P.X i}
 
 @[simp] theorem IPos_nil : IPos P [] = Set.univ := by
   ext m; simp [IPos]
 
-/-- **The full atom**: positive constraints `pos` together with negative constraints `neg`
-(`¬(Xₘ ⊆ Xⱼ)` for `j ∈ neg`). This is `genAtom (idxSet P.X) Set.univ δ n` for the sign sequence
-built from `pos`/`neg`. -/
 def DAtom (pos neg : List ℕ) : Set ℕ := IPos P pos ∩ {m | ∀ j ∈ neg, m ∉ idxSet P.X j}
 
 end
@@ -32,26 +27,16 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 variable (cons : ℕ → ℕ)
 
-/-- One step of the positive meet-fold. The accumulator `r` codes `(ok, idx)`
-(`r.unpair.1 = ok`, `r.unpair.2 = idx`); `i` is the next positive-constraint index. If the fold is
-still "ok" and `P`'s consistency decider accepts `(idx, i)`, advance to `P.inter idx i`; otherwise
-the fold is permanently "not ok" (accumulator frozen at the last good `idx`, which is discarded by
-`meetFold_spec` in that case anyway). -/
 def meetStep (r i : ℕ) : ℕ :=
   selectFn (isOne r.unpair.1 * isOne (cons (Nat.pair r.unpair.2 i)))
     (Nat.pair 1 (P.inter r.unpair.2 i)) (Nat.pair 0 r.unpair.2)
 
-/-- **The positive meet-fold**: fold `meetStep` across `pos`, starting from `(ok, idx) = (1,
-masterIdx)` (the empty meet is `Δ`, always "ok"). -/
 def meetFold (l : List ℕ) : ℕ := l.foldl (meetStep P cons) (Nat.pair 1 P.masterIdx)
 
 @[simp] theorem meetFold_nil : meetFold P cons [] = Nat.pair 1 P.masterIdx := rfl
 
-/-- `foldCode`-shaped step matching `meetStep`: state `w = pair i (pair r params)` (`params`
-unused). -/
 def meetStepCode (w : ℕ) : ℕ := meetStep P cons w.unpair.2.unpair.1 w.unpair.1
 
-/-- The code-level positive meet-fold. -/
 def meetFoldCode (c : ℕ) : ℕ := foldCode (meetStepCode P cons) 0 (Nat.pair 1 P.masterIdx) c
 
 end
@@ -62,9 +47,6 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 variable (cons : ℕ → ℕ)
 variable (incl : ℕ → ℕ)
 
-/-- **The full `DAtom`-emptiness decider.** `1` iff `DAtom (decodeList posC) (decodeList negC) =
-∅`: either the positive meet is already inconsistent (`ok ≠ 1`), or the meet's index `idx` lies
-inside some negative target (bounded existential over `decodeList negC`, via `existsListChar`). -/
 def DAtomEmptyChar (posC negC : ℕ) : ℕ :=
   selectFn (isOne (meetFoldCode P cons posC).unpair.1)
     (existsListChar (fun t => incl (Nat.pair t.unpair.2 t.unpair.1))
@@ -86,8 +68,6 @@ theorem IPos_cons (i : ℕ) (rest : List ℕ) :
     · exact hi
     · exact hrest j hj
 
-/-- `idxSet P.X P.masterIdx = Set.univ`: `masterIdx` indexes `D`'s master `Δ`, and every
-`D`-neighbourhood is `⊆ Δ`. -/
 theorem idxSet_masterIdx_eq_univ : idxSet P.X P.masterIdx = Set.univ :=
   Set.eq_univ_of_forall fun m => by
     show P.X m ⊆ P.X P.masterIdx
@@ -127,9 +107,6 @@ theorem meetStep_ok_le_one (r i : ℕ) : (meetStep P cons r i).unpair.1 ≤ 1 :=
     · rw [h', selectFn_zero, unpair_pair_fst]; exact Nat.zero_le 1
     · rw [h', selectFn_one, unpair_pair_fst]
 
-/-- **One-step transfer of the meet-fold invariant**: if `init` codes `(ok, idx)` faithfully
-relative to some set `S` (`ok = 1 → idxSet idx = S`, `ok = 0 → S = ∅`), then `meetStep init i`
-codes the same relative to `S ∩ idxSet i` — the positive constraint contributed by `i`. -/
 theorem meetStep_spec
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m)
     {init : ℕ} {S : Set ℕ} (hle : init.unpair.1 ≤ 1)
@@ -176,8 +153,6 @@ theorem meetStep_spec
     · rw [(isOne_eq_one_iff _).mpr hc, selectFn_one, unpair_pair_fst]
       intro h; exact absurd h (by decide)
 
-/-- **The meet-fold invariant, folded across a whole list.** Generalizes `meetStep_spec` from one
-step to a full list `l`, relative to an arbitrary starting accumulator `init`/set `S`. -/
 theorem meetFold_foldl_spec
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) (l : List ℕ) :
     ∀ {init : ℕ} {S : Set ℕ}, init.unpair.1 ≤ 1 →
@@ -196,8 +171,6 @@ theorem meetFold_foldl_spec
     obtain ⟨hle', h1', h0'⟩ := meetStep_spec P cons hcons hle h1 h0 i
     exact ih hle' h1' h0'
 
-/-- **Correctness of the positive meet-fold**, instantiated at the real starting point
-`(1, masterIdx)`/`Set.univ`. -/
 theorem meetFold_spec
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) (pos : List ℕ) :
     (meetFold P cons pos).unpair.1 ≤ 1 ∧
@@ -230,9 +203,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 variable (cons : ℕ → ℕ)
 
-/-- **The core emptiness characterization.** `DAtom pos neg` is empty iff either the positive
-part is inconsistent, or the meet's own index `idx` already lies inside some negative target
-`Xⱼ` (forcing every candidate below it there too). -/
 theorem DAtom_eq_empty_iff
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) (pos neg : List ℕ) :
     DAtom P pos neg = ∅ ↔
@@ -363,11 +333,6 @@ theorem primrec_DAtomEmptyChar (hconsp : Nat.Primrec cons) (hinclp : Nat.Primrec
   exact (primrec_selectFn (primrec_isOne.comp hmfok) hexists (Nat.Primrec.const 1)).of_eq
     (fun _ => rfl)
 
-/-- **Part 5's headline result.** `D`-side atom emptiness (in the `idxSet` sense above) is
-recursively decidable in the two constraint-list codes, for any `ComputablePresentation` of `D`.
-The primitive-recursive deciders `cons`/`incl` are extracted from `P.cons_computable`/
-`P.incl_computable` *inside* this `Prop`-valued goal — an ordinary `Exists`-elimination into a
-`Prop`, so this needs no `Classical.choice` beyond what `P` itself already carries. -/
 theorem DAtom_recDecidable :
     RecDecidable₂ (fun posC negC => DAtom P (decodeList posC) (decodeList negC) = ∅) := by
   obtain ⟨cons, hconsp, hconss⟩ := P.cons_computable

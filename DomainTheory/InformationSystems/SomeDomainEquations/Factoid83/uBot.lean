@@ -17,7 +17,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-/-- Bottom `Δ_U = Δ_V` (Scott (8)). -/
 def uBot : UToken := ⟨.bot, by decide⟩
 
 end InfoSys

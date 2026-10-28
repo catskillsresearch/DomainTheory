@@ -10,18 +10,13 @@ public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ecombinatory
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
-
-
 
 theorem IsRE.iff_combinatory {u : Pomega} : IsRE u ↔ IsCombinatory u :=
   ⟨IsRE.combinatory, combinatory_isRE⟩

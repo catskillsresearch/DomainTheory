@@ -13,20 +13,16 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
-/-- Decode a natural as a pair of rationals. -/
 def decodeRatPair (c : ℕ) : ℚ × ℚ := (decodeRat c.unpair.1, decodeRat c.unpair.2)
 
-/-- Encode a pair of rationals as a single natural. -/
 def encodeRatPair (p : ℚ × ℚ) : ℕ := Nat.pair (encodeRat p.1) (encodeRat p.2)
 
 @[simp] theorem decodeRatPair_encodeRatPair (p : ℚ × ℚ) : decodeRatPair (encodeRatPair p) = p := by
   unfold decodeRatPair encodeRatPair
   simp only [unpair_pair_fst, unpair_pair_snd, decodeRat_encodeRat]
 
-/-- Decode a natural as a list of rational pairs. -/
 def decodeQPairList (c : ℕ) : List (ℚ × ℚ) := (decodeList c).map decodeRatPair
 
-/-- Encode a list of rational pairs as a single natural, via `encodeList`. -/
 def encodeQPairList (L : List (ℚ × ℚ)) : ℕ := encodeList (L.map encodeRatPair)
 
 @[simp] theorem decodeQPairList_encodeQPairList (L : List (ℚ × ℚ)) :
@@ -35,43 +31,28 @@ def encodeQPairList (L : List (ℚ × ℚ)) : ℕ := encodeList (L.map encodeRat
   rw [decodeList_encodeList, List.map_map]
   simp only [Function.comp_def, decodeRatPair_encodeRatPair, List.map_id_fun', id]
 
-/-- Code-level `diffOneList`, taking `t = pair qc pc` (subtracted interval `q` **first**, matching
-`flatMapCode`'s calling convention). -/
 def diffOneCode (t : ℕ) : ℕ :=
   Nat.pair
     (Nat.pair t.unpair.2.unpair.1 (ratMinCode (Nat.pair t.unpair.2.unpair.2 t.unpair.1.unpair.1)))
     (Nat.pair (Nat.pair (ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.2))
       t.unpair.2.unpair.2) 0 + 1) + 1
 
-/-- `diffSingleCode accL q` subtracts the single interval-pair coded by `q` from the whole
-QPair-list coded by `accL`. -/
 def diffSingleCode (accL q : ℕ) : ℕ := flatMapCode diffOneCode q accL
 
-/-- `foldCode`'s step for `diffAllCode`'s fold over `L2` (params unused): pops `q`, subtracts it
-from the "remaining pieces" accumulator via `diffSingleCode`. -/
 def diffAllStep (w : ℕ) : ℕ := diffSingleCode w.unpair.2.unpair.1 w.unpair.1
 
-/-- `diffAllCode pc L2` subtracts the whole QPair-list coded by `L2` from the single interval-pair
-coded by `pc`, folding `diffSingleCode` over `L2` from the seed `[pc]`. -/
 def diffAllCode (pc L2 : ℕ) : ℕ := foldCode diffAllStep 0 (Nat.pair pc 0 + 1) L2
 
-/-- `diffCode c1 c2` subtracts the QPair-list coded by `c2` from the QPair-list coded by `c1`. -/
 def diffCode (c1 c2 : ℕ) : ℕ := flatMapCode (fun t => diffAllCode t.unpair.2 t.unpair.1) c2 c1
 
-/-- The per-pair-code operation `(pc, qc) ↦ (max, min)` realizing `(p.1 ⊔ q.1, p.2 ⊓ q.2)`. -/
 def qpCombineBop (t : ℕ) : ℕ :=
   Nat.pair (ratMaxCode (Nat.pair t.unpair.1.unpair.1 t.unpair.2.unpair.1))
     (ratMinCode (Nat.pair t.unpair.1.unpair.2 t.unpair.2.unpair.2))
 
-/-- `combineCode` realizes `combineIntervals` on codes: `Nat.Primrec` in both arguments. -/
 def combineCode (c1 c2 : ℕ) : ℕ := crossCombine qpCombineBop c1 c2
 
-/-- The `{0,1}` flag: does the rational-pair code `e` decode to a non-degenerate pair `p.1 < p.2`? -/
 def qpNonemptyBop (e : ℕ) : ℕ := ratLtCode (Nat.pair e.unpair.1 e.unpair.2)
 
-/-- The `{0,1}` flag: does the QPair-list code `c` present a non-empty set? A bounded `∃` over
-`decodeList c` via `Recursive.lean`'s `existsListChar` (the second argument of `existsListChar` is
-an unused parameter, fixed to `0`). -/
 def qpNonemptyChar (c : ℕ) : ℕ := existsListChar (fun t => qpNonemptyBop t.unpair.1) 0 c
 
 theorem decodeQPairList_diffOneCode (qc pc : ℕ) :
@@ -81,7 +62,6 @@ theorem decodeQPairList_diffOneCode (qc pc : ℕ) :
     List.map_nil]
   rw [decodeRat_ratMinCode, decodeRat_ratMaxCode]
 
-/-- **`flatMapCode`'s membership correctness, lifted to `decodeQPairList`.** -/
 theorem mem_decodeQPairList_flatMapCode (f : ℕ → ℕ) (x c : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (flatMapCode f x c) ↔ ∃ y ∈ decodeList c, p ∈ decodeQPairList (f (Nat.pair x y)) := by
   unfold decodeQPairList
@@ -94,7 +74,6 @@ theorem mem_decodeQPairList_flatMapCode (f : ℕ → ℕ) (x c : ℕ) (p : ℚ �
   · rintro ⟨y, hy, hp⟩
     obtain ⟨e, he, rfl⟩ := List.mem_map.mp hp
     exact ⟨e, (mem_decodeList_flatMapCode (f := f) x c e).mpr ⟨y, hy, he⟩, rfl⟩
-
 
 theorem mem_decodeQPairList_diffSingleCode (accL q : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (diffSingleCode accL q) ↔ p ∈ diffSingleList (decodeQPairList accL) (decodeRatPair q) := by
@@ -111,7 +90,6 @@ theorem presentedIntervals_decodeQPairList_diffSingleCode (accL q : ℕ) :
     presentedIntervals (decodeQPairList (diffSingleCode accL q))
       = presentedIntervals (decodeQPairList accL) \ Set.Ico (decodeRatPair q).1 (decodeRatPair q).2 := by
   rw [presentedIntervals.congr (mem_decodeQPairList_diffSingleCode accL q), presentedIntervals.diffSingleList]
-
 
 theorem diffAllStep_eq (acc x : ℕ) : diffAllStep (Nat.pair x (Nat.pair acc 0)) = diffSingleCode acc x := by
   unfold diffAllStep; simp only [unpair_pair_fst, unpair_pair_snd]
@@ -137,7 +115,6 @@ theorem presentedIntervals_decodeQPairList_diffAllCode (pc L2 : ℕ) :
   simp only [decodeList_succ, unpair_pair_fst, unpair_pair_snd, decodeList_zero, List.map_cons,
     List.map_nil, presentedIntervals.cons, presentedIntervals.nil, Set.union_empty]
 
-
 theorem mem_decodeQPairList_diffCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (diffCode c1 c2) ↔ ∃ y ∈ decodeList c1, p ∈ decodeQPairList (diffAllCode y c2) := by
   unfold diffCode
@@ -155,7 +132,6 @@ theorem presentedIntervals_decodeQPairList_flatMap_diffAllCode (c1list : List �
       presentedIntervals_decodeQPairList_diffAllCode, ih, presentedIntervals.cons,
       Set.union_sdiff_distrib]
 
-/-- **`diffCode` realizes `diffLists` (hence set difference) at the set level.** -/
 theorem presentedIntervals_decodeQPairList_diffCode (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList (diffCode c1 c2))
       = presentedIntervals (decodeQPairList c1) \ presentedIntervals (decodeQPairList c2) := by
@@ -164,9 +140,6 @@ theorem presentedIntervals_decodeQPairList_diffCode (c1 c2 : ℕ) :
     presentedIntervals_decodeQPairList_flatMap_diffAllCode]
   rfl
 
-/-- **A presented union of intervals is non-empty iff some pair in the list is itself non-degenerate**
-(`p.1 < p.2`): every degenerate pair contributes the empty interval, and a single non-degenerate pair
-already witnesses non-emptiness (via its left endpoint). -/
 theorem presentedIntervals_nonempty_iff (L : List (ℚ × ℚ)) :
     (presentedIntervals L).Nonempty ↔ ∃ p ∈ L, p.1 < p.2 := by
   constructor
@@ -211,7 +184,6 @@ theorem mem_decodeQPairList_combineCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
       (mem_decodeList_crossCombine (bop := qpCombineBop) c1 c2 _).mpr ⟨e1, he1, e2, he2, rfl⟩, ?_⟩
     rw [decodeRatPair_qpCombineBop, he1', he2', hp]
 
-/-- **`combineCode` realizes `combineIntervals` at the set level.** -/
 theorem presentedIntervals_decodeQPairList_combineCode (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList (combineCode c1 c2))
       = presentedIntervals (decodeQPairList c1) ∩ presentedIntervals (decodeQPairList c2) := by
@@ -220,7 +192,6 @@ theorem presentedIntervals_decodeQPairList_combineCode (c1 c2 : ℕ) :
   intro p
   rw [mem_decodeQPairList_combineCode, mem_combineIntervals]
 
-/-- **Subset between `presentedIntervals`-coded sets reduces to non-emptiness of `diffCode`.** -/
 theorem presentedIntervals_decodeQPairList_subset_iff (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList c1) ⊆ presentedIntervals (decodeQPairList c2) ↔
       ¬ (presentedIntervals (decodeQPairList (diffCode c1 c2))).Nonempty := by
@@ -302,7 +273,6 @@ theorem qpNonemptyChar_eq_one_iff (c : ℕ) :
   refine exists_congr fun e => and_congr_right fun _ => ?_
   rw [unpair_pair_fst, qpNonemptyBop_eq_one_iff]
 
-/-- **`presentedIntervals (decodeQPairList c)` is non-empty iff `qpNonemptyChar c = 1`.** -/
 theorem presentedIntervals_decodeQPairList_nonempty_iff (c : ℕ) :
     (presentedIntervals (decodeQPairList c)).Nonempty ↔ qpNonemptyChar c = 1 := by
   rw [presentedIntervals_nonempty_iff, qpNonemptyChar_eq_one_iff]
@@ -315,14 +285,12 @@ theorem presentedIntervals_decodeQPairList_nonempty_iff (c : ℕ) :
 
 theorem qpNonemptyChar_le_one (c : ℕ) : qpNonemptyChar c ≤ 1 := existsListChar_le_one _ 0 c
 
-/-- **Non-emptiness of the set presented by a QPair-list code is recursively decidable.** -/
 theorem recDecidable_presentedIntervals_nonempty :
     RecDecidable (fun c => (presentedIntervals (decodeQPairList c)).Nonempty) :=
   RecDecidable.of_zero_one_char primrec_qpNonemptyChar
     (fun c => by have := qpNonemptyChar_le_one c; omega)
     presentedIntervals_decodeQPairList_nonempty_iff
 
-/-- **Subset between `presentedIntervals`-coded sets is recursively decidable.** -/
 theorem recDecidable₂_presentedIntervals_subset :
     RecDecidable₂ (fun c1 c2 =>
       presentedIntervals (decodeQPairList c1) ⊆ presentedIntervals (decodeQPairList c2)) := by
@@ -331,8 +299,6 @@ theorem recDecidable₂_presentedIntervals_subset :
     (recDecidable_presentedIntervals_nonempty.comp primrec_diffCode).not
   exact presentedIntervals_decodeQPairList_subset_iff t.unpair.1 t.unpair.2
 
-/-- **Equality between `presentedIntervals`-coded sets is recursively decidable**, from
-`recDecidable₂_presentedIntervals_subset` in both directions (`Set.Subset.antisymm_iff`). -/
 theorem recDecidable₂_presentedIntervals_eq :
     RecDecidable₂ (fun c1 c2 =>
       presentedIntervals (decodeQPairList c1) = presentedIntervals (decodeQPairList c2)) := by

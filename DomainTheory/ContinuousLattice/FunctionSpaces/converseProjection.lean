@@ -16,7 +16,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -31,7 +30,6 @@ open Finset
 
 variable {i : D → D'}
 
-/-- The projection assembled from a map `i` satisfying 3.10(i)–(iii). -/
 noncomputable def converseProjection
     (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S)) (hinj : Function.Injective i)
     (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : ContinuousLattice D) :

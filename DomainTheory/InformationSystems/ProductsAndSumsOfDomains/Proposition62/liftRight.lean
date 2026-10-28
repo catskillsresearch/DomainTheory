@@ -19,7 +19,6 @@ variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Embed a finite set of `B`-tokens as right product tokens. -/
 def liftRight (w : Finset β) : Finset (ProdToken A B) :=
   Multiset.foldr (fun y : β => insert (mkRight A B y)) (∅ : Finset (ProdToken A B)) w.1
 

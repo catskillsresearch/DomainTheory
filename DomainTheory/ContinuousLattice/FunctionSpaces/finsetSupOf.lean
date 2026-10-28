@@ -20,7 +20,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -35,7 +34,6 @@ open Finset
 
 namespace IsContinuousLatticeProjection
 
-/-- Finite sub-lubs used in Scott's proof of Proposition 3.10(i). -/
 def finsetSupOf (S : Set D) : Set D :=
   { z | ∃ T : Finset D, (∀ x ∈ T, x ∈ S) ∧ z = T.sup id }
 

@@ -11,7 +11,6 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closure_le_element
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -20,19 +19,17 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-
-/-- **Factoid 4.5 / algebraicity.** `x` is the directed lub of its finite approximants. -/
 theorem eq_directedSup_finiteApproximants (x : sys.Element) :
     x = sys.directedSup (sys.finiteApproximants x)
       (sys.nonempty_finiteApproximants x) (sys.directed_finiteApproximants x) := by
   refine le_antisymm ?_ ?_
-  · -- x ≤ directedSup: every token of x lies in some ū ⊆ x
+  ·
     intro a ha
     have : a ∈ sys.approxUnion x := (sys.mem_element_iff_mem_closure x a).1 ha
     obtain ⟨u, hu, huX, ha'⟩ := this
     rw [directedSup.carrier_eq_union sys]
     exact ⟨sys.closure u hu, ⟨u, hu, huX, rfl⟩, ha'⟩
-  · -- directedSup ≤ x: each approximant is ≤ x
+  ·
     apply directedSup.le sys
     intro y hy
     obtain ⟨u, hu, huX, rfl⟩ := hy

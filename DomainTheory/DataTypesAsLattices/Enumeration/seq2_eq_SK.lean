@@ -32,7 +32,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- `seq2 x y` is the combinator `S (S (K (cond x)) (S (K (cond y ⊥)) pred)) I`. -/
 theorem seq2_eq_SK (x y : Pomega) :
     seq2 x y =
       funOf (funOf Scomb

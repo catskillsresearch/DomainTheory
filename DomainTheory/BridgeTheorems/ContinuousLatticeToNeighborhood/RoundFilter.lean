@@ -8,13 +8,9 @@ public import Mathlib.Order.UpperLower.Basic
 public import Mathlib.Order.Directed
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
-public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
-public import DomainTheory.ContinuousLattice.WayBelow.sInf_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.isContinuousLattice_iff_isLUB_sInf_nhds
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Filter
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 
 @[expose] public section
 
@@ -36,7 +32,6 @@ variable (hD : ContinuousLattice D)
 
 include hD
 
-/-- Round filters of the `↟`-system. -/
 abbrev RoundFilter : Type _ :=
   { f : Filter (D := D) // Round f }
 

@@ -33,7 +33,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Def 2.1 `ent_trans`: cases on the RHS token (Scott’s turnstile advice). -/
 theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
     (hv : LamConDepth A v) (hu : LamConDepth A u)
     (hEnts : ∀ t ∈ u, LamEntDepth A v t) (ht : LamEntDepth A u c) :
@@ -54,10 +53,10 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
       rw [← hM]; exact Nat.le_trans (Nat.le_max_left _ _) (Nat.le_max_right _ _)
     have hleC : rawDepth c ≤ M := by
       rw [← hM]; exact Nat.le_trans (Nat.le_max_right _ _) (Nat.le_max_right _ _)
-    -- (8) bot
+
     match c with
     | .bot => exact LamEntDepth.bot hv
-    -- (10) atom
+
     | .atom x =>
       cases ht with
       | @atom u x hu' hF hne hEnt =>
@@ -77,7 +76,7 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
         exact LamEntDepth.atom hv hFv hneV
           (A.ent_trans ((LamConDepth_of_fun_empty A hFv).1 hv)
             ((LamConDepth_of_fun_empty A hF).1 hu') hAtomEnt hEnt)
-    -- (11) funTok
+
     | .funTok xs ys =>
       cases ht with
       | @funTok u xs ys s hu' hA hConIn hConOut hs hWorld hInCompat hEntIn hEntOut =>
@@ -98,7 +97,7 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
           cases hEp with
           | @funTok _ _ _ s_p _ _ hCi hCo hs_p _ _ hEi hEo =>
             exact ⟨s_p, hs_p, hCi, hCo, hEi, hEo⟩
-        -- Combined witness by Finset.induction_on (choice-free; avoid erase/card)
+
         have hComb : ∀ (s' : Finset (List (RawLamToken α) × List (RawLamToken α))),
             s' ⊆ s →
             ∃ S ⊆ lamFunFinset v,

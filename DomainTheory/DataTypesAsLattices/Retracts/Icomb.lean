@@ -11,7 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The identity combinator `I = λu. u`, the largest retract. -/
 def Icomb : Pomega := graph (fun x => x)
 
 namespace Icomb

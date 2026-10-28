@@ -7,29 +7,19 @@ public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
-
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-
 namespace IsContinuousLatticeRetraction
 
-
-/-- **Heart of Scott's proof of 2.10.** If `x' ≪ i(d)` in the ambient continuous lattice `D'`,
-then its image `j(x')` is way below `d` in the retract `D`. The Scott-open witness in `D` is the
-preimage `i⁻¹V'` of an ambient Scott-open witness `V'` (Scott-open because `i` preserves directed
-suprema); for `z ∈ i⁻¹V'` we have `x' ⊑ i(z)`, hence `j(x') ⊑ j(i(z)) = z`. No projection
-hypothesis is needed — `j ∘ i = id` and monotonicity suffice. -/
 theorem retr_wayBelow_of_wayBelow_incl (R : IsContinuousLatticeRetraction D D')
     {d : D} {x' : D'} (hx' : x' ≪ R.incl d) : R.retr x' ≪ d := by
   obtain ⟨U', hU'open, hd_in, hU'sub⟩ := hx'

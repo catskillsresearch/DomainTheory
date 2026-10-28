@@ -17,16 +17,13 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrecRel_valTraceHa
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem primrecPred_valEntryJustified :
     PrimrecRel fun (tr : ValTrace) (e : ℕ × ℕ × ℕ) => valEntryJustified tr e := by

@@ -20,7 +20,6 @@ namespace InfoSys
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Left projection of a finite set of product tokens (Scott 6.1). -/
 def fstFinset (u : Finset (ProdToken A B)) : Finset α :=
   Multiset.foldr (fun p : ProdToken A B => insert p.val.1) (∅ : Finset α)
     (u.filter (fun p => p.val.2 = B.bot)).1
@@ -104,6 +103,5 @@ theorem fstFinset.singleton_left (p : ProdToken A B) (hp : p.val.2 = B.bot) :
   rfl
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

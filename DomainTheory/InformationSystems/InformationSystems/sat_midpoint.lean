@@ -14,13 +14,12 @@ namespace DomainTheory.InformationSystems
 
 namespace Factoid25
 
-/-- Midpoint witness: `lo < hi` (on `ℕ`) implies `(lo+hi)/2` lies in `(lo, hi)` on `ℚ`. -/
 theorem sat_midpoint {lo hi : ℕ} (hlt : lo < hi) :
     Sat (((lo : ℚ) + (hi : ℚ)) / 2) (.interval lo hi hlt) := by
   have h2 : (0 : ℚ) < 2 := by norm_num
   have _hlo : (lo : ℚ) < (hi : ℚ) := Nat.cast_lt.mpr hlt
   constructor
-  · -- lo < (lo+hi)/2 ↔ 2*lo < lo+hi ↔ lo < hi
+  ·
     rw [lt_div_iff₀ h2]
     linarith
   · rw [div_lt_iff₀ h2]

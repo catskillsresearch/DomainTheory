@@ -13,7 +13,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- A fixed combinator realizing `m ↦ apply(m)(num(m))`. -/
 noncomputable def secondRecSubstC : Pomega :=
   (primrec_realized (Primrec.nat_iff.mp primrec_secondRecSubst)).choose
 

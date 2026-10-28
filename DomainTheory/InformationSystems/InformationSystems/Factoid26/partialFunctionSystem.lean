@@ -15,7 +15,6 @@ namespace DomainTheory.InformationSystems
 
 namespace Factoid26
 
-/-- **Factoid 2.6.** Partial-function information system of Scott 1982, §2. -/
 def partialFunctionSystem (A B : Type*) [DecidableEq A] [DecidableEq B] :
     InfoSys (Token A B) where
   bot := Token.bot

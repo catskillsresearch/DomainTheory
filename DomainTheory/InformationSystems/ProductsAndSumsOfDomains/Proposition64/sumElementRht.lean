@@ -29,7 +29,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-/-- Right copy as a `B`-element, given some right token in `z`. -/
 def sumElementRht (z : (sumSystem A B).Element)
     (y0 : β) (hy0 : SumToken.right y0 ∈ z.carrier) : B.Element where
   carrier := sumRhtCarrier A B z

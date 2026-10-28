@@ -6,16 +6,13 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem primrec_triangle : Primrec triangle :=
   (Primrec.nat_div.comp

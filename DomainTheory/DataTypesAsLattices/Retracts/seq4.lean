@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Four-place sequence used by the expanded product of (4.44). -/
 def seq4 (a b c d : Pomega) : Pomega :=
   graph (fun z =>
     condSet z a

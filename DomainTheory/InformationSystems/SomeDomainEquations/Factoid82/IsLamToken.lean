@@ -19,7 +19,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Well-formed tokens (Scott (1)–(3)). -/
 class IsLamToken (t : RawLamToken α) : Prop where
   out : match t with
     | .bot | .atom _ => True

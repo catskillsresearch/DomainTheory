@@ -14,8 +14,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 3.1 (The generator theorem).**
-All LAMBDA-definable elements are obtained from `G` by iterated application. -/
 theorem sucC_zero : funOf sucC zeroC = ofNat 1 := by
   rw [sucC.app]
   ext k

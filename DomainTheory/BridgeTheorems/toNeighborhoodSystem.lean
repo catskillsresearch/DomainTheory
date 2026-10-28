@@ -10,7 +10,6 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -27,7 +26,6 @@ namespace InfoSysToNeighborhood
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- **`infoSys_to_neighborhoodSystem`.** -/
 def toNeighborhoodSystem : NeighborhoodSystem A.Element where
   mem X := ∃ u, u ∈ A.Con ∧ X = A.basicOpen u
   master := Set.univ

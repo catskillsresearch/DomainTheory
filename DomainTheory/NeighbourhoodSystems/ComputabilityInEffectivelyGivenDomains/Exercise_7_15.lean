@@ -18,12 +18,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {P₀ P₁}
 variable (P₀ P₁)
 
-/- concordance: source L4643 EXERCISE 7.15 further constructs effective -/
-/-- **Exercise 7.15 — `𝒟₀ ⊗ 𝒟₁` is effectively given (Scott's Definition 7.1).** A bare presentation
-of the smash product. The enumeration is classical (re-routing improper products to the master); the
-two relations (i),(ii) are choice-free recursively decidable, reducing to the components' relations
-on the *effective* indices (relation (i)) and the components' consistency together with properness
-tests (relation (ii)). -/
 noncomputable def smashPresentation : ScottPresentation (smash V₀ V₁) where
   X := smashEnum P₀ P₁
   mem_X := smashEnum_mem
@@ -53,14 +47,14 @@ noncomputable def smashPresentation : ScottPresentation (smash V₀ V₁) where
     have hpf : Nat.Primrec (fun n => c₀ n.unpair.1 * c₁ n.unpair.2) :=
       (primrec_mul.comp ((hc₀p.comp Nat.Primrec.left).pair (hc₁p.comp Nat.Primrec.right))).of_eq
         (fun n => by simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd])
-    -- effective left/right index of a single code `n`
+
     have heffLp : Nat.Primrec (fun n => selectFn (c₀ n.unpair.1 * c₁ n.unpair.2)
         n.unpair.1 P₀.masterIdx) :=
       primrec_selectFn hpf Nat.Primrec.left (Nat.Primrec.const _)
     have heffRp : Nat.Primrec (fun n => selectFn (c₀ n.unpair.1 * c₁ n.unpair.2)
         n.unpair.2 P₁.masterIdx) :=
       primrec_selectFn hpf Nat.Primrec.right (Nat.Primrec.const _)
-    -- reindexings `t ↦ pair (effL t.1) (pair (effL t.2.1) (effL t.2.2))`, ditto for the right factor
+
     have hgL : Nat.Primrec (fun t => Nat.pair
         (selectFn (c₀ t.unpair.1.unpair.1 * c₁ t.unpair.1.unpair.2) t.unpair.1.unpair.1 P₀.masterIdx)
         (Nat.pair
@@ -90,7 +84,7 @@ noncomputable def smashPresentation : ScottPresentation (smash V₀ V₁) where
   cons_computable := by
     obtain ⟨f₀, hf₀p, hf₀e⟩ := proper₀_dec P₀
     obtain ⟨f₁, hf₁p, hf₁e⟩ := proper₁_dec P₁
-    -- `cons(a,b) ↔ ¬proper a ∨ ¬proper b ∨ (P₀.cons(a.1,b.1) ∧ P₁.cons(a.2,b.2))`
+
     have hpa : RecDecidable (fun t => ¬(P₀.X t.unpair.1.unpair.1 ≠ V₀.master
         ∧ P₁.X t.unpair.1.unpair.2 ≠ V₁.master)) := by
       have h0 : RecDecidable (fun t => P₀.X t.unpair.1.unpair.1 ≠ V₀.master) :=
@@ -166,7 +160,6 @@ noncomputable def smashPresentation : ScottPresentation (smash V₀ V₁) where
 @[simp] theorem smashPresentation_X (t : ℕ) :
     (smashPresentation P₀ P₁).X t = smashEnum P₀ P₁ t := rfl
 
-/-- **The smash projection `p₀ : 𝒟₀ ⊗ 𝒟₁ → 𝒟₀`**, `(X ∪ Y) p₀ X' ↔ X ⊆ X'`. -/
 def smashProj₀ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     ApproximableMap (smash V₀ V₁) V₀ where
   rel W X' := (smash V₀ V₁).mem W ∧ V₀.mem X' ∧ Sum.inl ⁻¹' W ⊆ X'
@@ -185,7 +178,6 @@ def smashProj₀ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
 @[simp] theorem smashProj₀_rel {W : Set (α ⊕ β)} {X' : Set α} :
     (smashProj₀ V₀ V₁).rel W X' ↔ (smash V₀ V₁).mem W ∧ V₀.mem X' ∧ Sum.inl ⁻¹' W ⊆ X' := Iff.rfl
 
-/-- **The smash projection `p₁ : 𝒟₀ ⊗ 𝒟₁ → 𝒟₁`**, `(X ∪ Y) p₁ Y' ↔ Y ⊆ Y'`. -/
 def smashProj₁ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     ApproximableMap (smash V₀ V₁) V₁ where
   rel W Y' := (smash V₀ V₁).mem W ∧ V₁.mem Y' ∧ Sum.inr ⁻¹' W ⊆ Y'
@@ -204,8 +196,6 @@ def smashProj₁ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
 @[simp] theorem smashProj₁_rel {W : Set (α ⊕ β)} {Y' : Set β} :
     (smashProj₁ V₀ V₁).rel W Y' ↔ (smash V₀ V₁).mem W ∧ V₁.mem Y' ∧ Sum.inr ⁻¹' W ⊆ Y' := Iff.rfl
 
-/-- **The strict pairing `⟨a, b⟩⊗ : 𝒟₂ → 𝒟₀ ⊗ 𝒟₁`.** Like Theorem 7.4's `paired`, but the smash
-collapse forces the image factors to be proper (else the result is the master/bottom of the smash). -/
 def smashPaired {V₂ : NeighborhoodSystem γ} (a : ApproximableMap V₂ V₀)
     (b : ApproximableMap V₂ V₁) : ApproximableMap V₂ (smash V₀ V₁) where
   rel Z W := V₂.mem Z ∧ (smash V₀ V₁).mem W ∧
@@ -261,9 +251,6 @@ section Coalesced
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
 
-/-- **Exercise 7.15 — the coalesced sum system `𝒟₀ ⊕ 𝒟₁`** over `Option (α ⊕ β)`: the separated sum
-with the improper copies `0Δ₀`, `1Δ₁` deleted. (Generalises `Exercise621.oplusTok` to an arbitrary
-carrier.) -/
 def osum : NeighborhoodSystem (Option (α ⊕ β)) where
   mem W := W = sumMaster V₀ V₁ ∨ (∃ X, V₀.mem X ∧ X ≠ V₀.master ∧ W = inj₀ X) ∨
     (∃ Y, V₁.mem Y ∧ Y ≠ V₁.master ∧ W = inj₁ Y)
@@ -323,8 +310,7 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 open scoped Classical in
-/-- **Coalesced-sum enumeration.** Tag `0`/`1`/`≥2`; a tag-0/1 code is its proper left/right copy
-when the indexed factor is proper, otherwise it is re-routed to the master (the classical input). -/
+
 noncomputable def osumEnum (t : ℕ) : Set (Option (α ⊕ β)) :=
   if t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master then inj₀ (P₀.X t.unpair.2)
   else if t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V₁.master then inj₁ (P₁.X t.unpair.2)
@@ -391,7 +377,6 @@ variable {P₀ P₁}
 
 variable {h₀ h₁}
 
-/-- **Coalesced left projection `out₀ : 𝒟₀ ⊕ 𝒟₁ → 𝒟₀`**, `W (out₀) X ↔ leftPart W ⊆ X`. -/
 def osumOutMap₀ : ApproximableMap (osum h₀ h₁) V₀ where
   rel W X := (osum h₀ h₁).mem W ∧ V₀.mem X ∧ leftPart V₀ W ⊆ X
   rel_dom h := h.1
@@ -408,7 +393,6 @@ def osumOutMap₀ : ApproximableMap (osum h₀ h₁) V₀ where
     rintro W W' X X' ⟨_, _, hsub⟩ hW'W hXX' hW' hX'
     exact ⟨hW', hX', (leftPart_mono V₀ hW'W).trans (hsub.trans hXX')⟩
 
-/-- **Coalesced right projection `out₁ : 𝒟₀ ⊕ 𝒟₁ → 𝒟₁`**. -/
 def osumOutMap₁ : ApproximableMap (osum h₀ h₁) V₁ where
   rel W Y := (osum h₀ h₁).mem W ∧ V₁.mem Y ∧ rightPart V₁ W ⊆ Y
   rel_dom h := h.1
@@ -436,7 +420,6 @@ variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V�
 
 variable {P₀ P₁}
 
-/-- **Exercise 7.15 — `𝒟₀ ⊕ 𝒟₁` is effectively given (Scott's Definition 7.1).** -/
 noncomputable def osumPresentation : ScottPresentation (osum h₀ h₁) where
   X := osumEnum P₀ P₁
   mem_X := osumEnum_mem h₀ h₁
@@ -672,11 +655,8 @@ open Domain.Recursive
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-/-- The `j`-th fiber **index** of the `D^∞`-code `t`: the `j`-th entry of the coded list, defaulting
-to `P.masterIdx` (the master index) beyond the coded length. -/
 def iterIdx (t j : ℕ) : ℕ := nthCode t j P.masterIdx
 
-/-- The `D^∞`-enumeration: the neighbourhood whose `j`-th fiber is `P.X (iterIdx t j)`. -/
 def iterEnum (t : ℕ) : Set (ℕ × α) := {p | p.2 ∈ P.X (iterIdx P t p.1)}
 
 end Iterate
@@ -691,7 +671,6 @@ variable {P}
 
 @[simp] theorem fiber_iterEnum (t j : ℕ) : fiber (iterEnum P t) j = P.X (iterIdx P t j) := rfl
 
-/-- Build, by induction on `N`, a list of fiber indices reproducing `W`'s first `N` fibers. -/
 theorem exists_list_fiber {W : Set (ℕ × α)} (hW : (iterSys V).mem W) :
     ∀ N, ∃ L : List ℕ, L.length = N ∧ ∀ j, j < N → P.X (L.getD j P.masterIdx) = fiber W j := by
   intro N
@@ -710,20 +689,14 @@ theorem exists_list_fiber {W : Set (ℕ × α)} (hW : (iterSys V).mem W) :
         List.getD_cons_zero]
       exact hn
 
-/-- The coordinate-wise intersection generator: with `s = ⟨j, ⟨n, m⟩⟩`, returns an index of
-`X (iterIdx n j) ∩ X (iterIdx m j)` via `P.inter`. -/
 def interG (P : ComputablePresentation V) (s : ℕ) : ℕ :=
   P.inter (iterIdx P s.unpair.2.unpair.1 s.unpair.1) (iterIdx P s.unpair.2.unpair.2 s.unpair.1)
 
-/-- Beyond the coded length the fiber index defaults to the master: if `t ≤ j` then
-`iterIdx t j = masterIdx` (the coded list has length `≤ t`). -/
 theorem iterIdx_ge {t j : ℕ} (h : t ≤ j) : iterIdx P t j = P.masterIdx := by
   unfold iterIdx
   rw [nthCode_eq, getD_eq_default_cf]
   exact le_trans (decodeList_length_le t) h
 
-/-- **Relation (i) reduces to a bounded coordinate check.** `iterEnum n ∩ iterEnum m = iterEnum k`
-iff fiber-wise equality holds for all `j` below `n+m+k` (beyond which every fiber is `Δ`). -/
 theorem iterEnum_inter_eq_iff {n m k : ℕ} :
     iterEnum P n ∩ iterEnum P m = iterEnum P k ↔
       ∀ j, j < n + m + k →
@@ -746,7 +719,6 @@ theorem iterEnum_mem (t : ℕ) : (iterSys V).mem (iterEnum P t) := by
   · rw [fiber_iterEnum]; exact P.mem_X _
   · rw [fiber_iterEnum, iterIdx_ge hj, P.masterIdx_spec]
 
-/-- The `D^∞`-intersection function: tabulate `interG` over the coordinates `0 … n+m-1`. -/
 def iterInter (P : ComputablePresentation V) (n m : ℕ) : ℕ :=
   tabCode (interG P) (Nat.pair (n + m) (Nat.pair n m)) (n + m)
 
@@ -762,8 +734,6 @@ theorem iterInter_idx_lt {n m j : ℕ} (hj : j < n + m) :
   unfold interG
   simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- **Relation (ii) reduces to a bounded coordinate check.** `iterEnum n ∩ iterEnum m` is consistent
-iff every coordinate `j < n+m` is consistent in `V`. The witness is `iterInter n m`. -/
 theorem iterEnum_cons_iff {n m : ℕ} :
     (∃ k, iterEnum P k ⊆ iterEnum P n ∩ iterEnum P m) ↔
       ∀ j, j < n + m → ∃ i, P.X i ⊆ P.X (iterIdx P n j) ∩ P.X (iterIdx P m j) := by
@@ -797,8 +767,6 @@ variable {P₀ P₁}
 
 variable {h₀ h₁}
 
-/-- An `osum`-member containing `inj₀ Δ₀` is forced to be the master (the bottom-collapse: the only
-proper copy `⊇ inj₀ Δ₀` would need `Δ₀ ⊆ X` with `X ≠ Δ₀`). -/
 theorem osum_eq_master_of_inj₀master {W : Set (Option (α ⊕ β))} (hW : (osum h₀ h₁).mem W)
     (hsub : inj₀ V₀.master ⊆ W) : W = sumMaster V₀ V₁ := by
   rcases hW with rfl | ⟨X', hX', hX'ne, rfl⟩ | ⟨Y', hY', -, rfl⟩
@@ -807,7 +775,6 @@ theorem osum_eq_master_of_inj₀master {W : Set (Option (α ⊕ β))} (hW : (osu
   · obtain ⟨a, ha⟩ := h₀ V₀.master V₀.master_mem
     exact absurd (hsub (il_mem_inj₀.mpr ha)) il_mem_inj₁
 
-/-- **Coalesced left injection `in₀ : 𝒟₀ → 𝒟₀ ⊕ 𝒟₁`**, `X (in₀) W ↔ inj₀ X ⊆ W`. -/
 def osumInMap₀ : ApproximableMap V₀ (osum h₀ h₁) where
   rel X W := V₀.mem X ∧ (osum h₀ h₁).mem W ∧ inj₀ X ⊆ W
   rel_dom h := h.1
@@ -835,7 +802,6 @@ theorem osum_eq_master_of_inj₁master {W : Set (Option (α ⊕ β))} (hW : (osu
     exact absurd (hsub (ir_mem_inj₁.mpr hb)) ir_mem_inj₀
   · exact absurd (Set.Subset.antisymm (V₁.sub_master hY') (inj₁_subset_inj₁.mp hsub)) hY'ne
 
-/-- **Coalesced right injection `in₁ : 𝒟₁ → 𝒟₀ ⊕ 𝒟₁`**. -/
 def osumInMap₁ : ApproximableMap V₁ (osum h₀ h₁) where
   rel Y W := V₁.mem Y ∧ (osum h₀ h₁).mem W ∧ inj₁ Y ⊆ W
   rel_dom h := h.1
@@ -875,7 +841,6 @@ section CoalescedFunctor
 variable {α' β' : Type*} {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
   (h₀' : ∀ X, V₀'.mem X → X.Nonempty) (h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty)
 
-/-- An `osum`-member `⊆ inj₀ X` is a *proper* left copy. -/
 theorem osum_mem_subset_inj₀ {W : Set (Option (α ⊕ β))} {X : Set α}
     (hW : (osum h₀ h₁).mem W) (hsub : W ⊆ inj₀ X) :
     ∃ X₂, V₀.mem X₂ ∧ X₂ ≠ V₀.master ∧ W = inj₀ X₂ := by
@@ -936,7 +901,6 @@ section CoalescedFunctor
 variable {α' β' : Type*} {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
   (h₀' : ∀ X, V₀'.mem X → X.Nonempty) (h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty)
 
-/-- **The coalesced sum of two maps `f ⊕ g : 𝒟₀ ⊕ 𝒟₁ → 𝒟₀' ⊕ 𝒟₁'`.** -/
 def osumMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
     ApproximableMap (osum h₀ h₁) (osum h₀' h₁') where
   rel W W' := (osum h₀ h₁).mem W ∧ (osum h₀' h₁').mem W' ∧
@@ -1016,7 +980,6 @@ variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 variable {P}
 
-/-- Primitive recursivity of `fun w ↦ iterIdx (codeProj w) (w.unpair.1)` for a primrec `codeProj`. -/
 theorem primrec_iterIdx_proj {codeProj : ℕ → ℕ} (hc : Nat.Primrec codeProj) :
     Nat.Primrec (fun w => iterIdx P (codeProj w) w.unpair.1) := by
   refine (primrec_nthCode.comp (hc.pair (Nat.Primrec.left.pair
@@ -1032,10 +995,6 @@ theorem primrec_interG : Nat.Primrec (interG P) := by
   unfold interG
   simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- **Exercise 7.15 (Scott 1981, PRG-19) — `D^∞` carries a full computable presentation.** Built
-choice-free from a presentation `P` of `V`: the enumeration codes finite fiber-index lists, the two
-relations reduce to bounded coordinate checks (`RecDecidable.bForall`), and the intersection function
-tabulates `P.inter` coordinate-wise. -/
 noncomputable def iterPresentation (P : ComputablePresentation V) :
     ComputablePresentation (iterSys V) where
   X := iterEnum P
@@ -1128,7 +1087,6 @@ section SmashFunctor
 
 variable {α' β' : Type*} {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
-/-- **The smash of two maps `f ⊗ g : 𝒟₀ ⊗ 𝒟₁ → 𝒟₀' ⊗ 𝒟₁'`.** -/
 def smashMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
     ApproximableMap (smash V₀ V₁) (smash V₀' V₁') where
   rel W W' := (smash V₀ V₁).mem W ∧ (smash V₀' V₁').mem W' ∧
@@ -1184,8 +1142,6 @@ end
 section
 variable {α β γ : Type*}
 
-/-- A full (`inter`-carrying) presentation forgets to a bare one. Hence the project's
-`IsEffectivelyGiven` implies Scott's `IsEffectivelyGivenS`. -/
 def ComputablePresentation.toScott {V : NeighborhoodSystem α} (P : ComputablePresentation V) :
     ScottPresentation V where
   X := P.X
@@ -1231,11 +1187,8 @@ open Domain.Recursive
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-
 variable {P}
 
-
-/-- **Exercise 7.15 (Scott 1981, PRG-19) — the infinite iterate `D^∞` is effectively given.** -/
 theorem iterSys_isEffectivelyGiven (e : V.IsEffectivelyGiven) :
     (iterSys V).IsEffectivelyGiven := by
   obtain ⟨Q⟩ := e
@@ -1248,22 +1201,14 @@ section Coalesced
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
 
-
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
 
 variable {P₀ P₁}
 
-
 variable {h₀ h₁}
-
 
 variable (P₀ P₁)
 
-
-/-- **`in₀` is computable.** `X⁰ₙ (in₀) (osumEnum m)` decodes to: `m` a proper left copy with
-`X⁰ₙ ⊆ X⁰_{m.2}`, or `m` the master (`inj₀` of a proper neighbourhood always sits under the master);
-the proper-right case is impossible (`inj₀` of a nonempty set is not `⊆ inj₁`). -/
 theorem osumInMap₀_isComputable :
     ComputableMapS P₀.toScott (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) osumInMap₀ := by
   constructor
@@ -1297,7 +1242,6 @@ theorem osumInMap₀_isComputable :
     · rw [osumEnum_master hL hR]
       exact ⟨fun _ => Or.inr ⟨hL, hR⟩, fun _ => inj₀_subset_sumMaster (P₀.mem_X _)⟩
 
-/-- **`in₁` is computable.** Symmetric to `in₀`. -/
 theorem osumInMap₁_isComputable :
     ComputableMapS P₁.toScott (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) osumInMap₁ := by
   constructor
@@ -1340,28 +1284,19 @@ section Coalesced
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
 
-
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
 
 variable {P₀ P₁}
 
-
 variable {h₀ h₁}
 
-
 variable (P₀ P₁)
-
 
 section CoalescedFunctor
 
 variable {α' β' : Type*} {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
   (h₀' : ∀ X, V₀'.mem X → X.Nonempty) (h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty)
 
-
-/-- **`f ⊕ g` is computable.** The relation `(osumEnum n) (f⊕g) (osumEnum' m)` decodes by tags: `m`
-improper (master absorbs), or `m`/`n` both proper left copies with `f`'s r.e. relation, or both
-proper right copies with `g`'s. -/
 theorem osumMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : ComputablePresentation V₁')
     {f : ApproximableMap V₀ V₀'} {g : ApproximableMap V₁ V₁'}
     (hf : ComputableMapS P₀.toScott P₀'.toScott f)
@@ -1459,9 +1394,6 @@ theorem osumMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : Com
 
 end CoalescedFunctor
 
-/-- **`out₀` is computable.** `(osumEnum n) (out₀) X⁰_m ↔ leftPart (osumEnum n) ⊆ X⁰_m`; the left
-part is `X⁰_{n.2}` on a proper left copy and `Δ₀` on a right copy / the master, so the relation is
-`incl` against either `n.2` or the master index `k₀` (`X⁰_{k₀} = Δ₀`). -/
 theorem osumOutMap₀_isComputable :
     ComputableMapS (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) P₀.toScott osumOutMap₀ := by
   constructor
@@ -1494,7 +1426,6 @@ theorem osumOutMap₀_isComputable :
       exact ⟨fun h => Or.inr ⟨hL, h⟩,
         fun h => h.elim (fun h => absurd ⟨h.1, h.2.1⟩ hL) (fun h => h.2)⟩
 
-/-- **`out₁` is computable.** Symmetric to `out₀` via `rightPart`. -/
 theorem osumOutMap₁_isComputable :
     ComputableMapS (osumPresentation h₀ h₁ (P₀ := P₀) (P₁ := P₁)) P₁.toScott osumOutMap₁ := by
   constructor
@@ -1534,16 +1465,12 @@ section Coalesced
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
 
-
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
 
 variable {P₀ P₁}
 
-
 include h₀ h₁ in
-/-- **Exercise 7.15 (Scott 1981, PRG-19) — the coalesced sum `𝒟₀ ⊕ 𝒟₁` is effectively given.**
-(Scott's Definition 7.1; the only classical input is the enumeration's properness branch.) -/
+
 theorem osum_isEffectivelyGivenS (e₀ : V₀.IsEffectivelyGiven) (e₁ : V₁.IsEffectivelyGiven) :
     (osum h₀ h₁).IsEffectivelyGivenS := by
   obtain ⟨Q₀⟩ := e₀; obtain ⟨Q₁⟩ := e₁
@@ -1555,7 +1482,6 @@ section Coalesced
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
-
 
 theorem osum_mem_iff {W : Set (Option (α ⊕ β))} :
     (osum h₀ h₁).mem W ↔ W = sumMaster V₀ V₁ ∨
@@ -1570,9 +1496,7 @@ open Domain.Recursive
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-
 variable {P}
-
 
 theorem projN_isComputable (P : ComputablePresentation V) (n : ℕ) :
     ComputableMap (iterPresentation P) P (projN V n) := by
@@ -1594,23 +1518,14 @@ section Smash
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
-
 variable {P₀ P₁}
 
-
 variable (P₀ P₁)
-
 
 section SmashFunctor
 
 variable {α' β' : Type*} {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
-
-/-- **`f ⊗ g` is computable.** Writing each smash code via its *effective* product index
-(`smashEnum_eq_eff`), the relation `(smashEnum n) (f⊗g) (smashEnum' m)` decodes to: `m` improper
-(the codomain master absorbs everything), or `m` proper together with `f`'s and `g`'s r.e. relations
-on the effective coordinate indices. R.e.-ness then follows from `hf`, `hg`, the codomain properness
-deciders, and closure of r.e. predicates under `∨`/`∧`/primitive-recursive substitution. -/
 theorem smashMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : ComputablePresentation V₁')
     {f : ApproximableMap V₀ V₀'} {g : ApproximableMap V₁ V₁'}
     (hf : ComputableMapS P₀.toScott P₀'.toScott f)
@@ -1638,7 +1553,7 @@ theorem smashMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : Co
   have heffRp : Nat.Primrec (fun n => selectFn (c₀ n.unpair.1 * c₁ n.unpair.2)
       n.unpair.2 P₁.masterIdx) :=
     primrec_selectFn hpf Nat.Primrec.right (Nat.Primrec.const _)
-  -- `f`'s r.e. relation on `(effL n, m.1)`; `g`'s on `(effR n, m.2)`
+
   have Hf : REPred (fun t => f.rel (P₀.toScott.X
       (selectFn (c₀ t.unpair.1.unpair.1 * c₁ t.unpair.1.unpair.2)
         t.unpair.1.unpair.1 P₀.masterIdx)) (P₀'.toScott.X t.unpair.2.unpair.1)) :=
@@ -1686,10 +1601,6 @@ theorem smashMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : Co
 
 end SmashFunctor
 
-/-- **The strict pairing `⟨a, b⟩⊗` is computable.** `Zₙ ⟨a,b⟩⊗ (smashEnum m) ↔` either `m` improper
-(the codomain master absorbs) or `m` proper together with `a`'s and `b`'s r.e. relations on the
-(raw) codomain coordinate indices — an `∨`/`∧` of r.e. predicates and the codomain properness tests.
-No effective-index bridge is needed: the proper branch reads `smashEnum`'s raw factors directly. -/
 theorem smashPaired_isComputable {V₂ : NeighborhoodSystem γ} (P₂ : ComputablePresentation V₂)
     {a : ApproximableMap V₂ V₀} {b : ApproximableMap V₂ V₁}
     (ha : ComputableMapS P₂.toScott P₀.toScott a)
@@ -1727,9 +1638,6 @@ theorem smashPaired_isComputable {V₂ : NeighborhoodSystem γ} (P₂ : Computab
       exact ⟨P₂.mem_X _, smashEnum_mem (P₀ := P₀) (P₁ := P₁) _,
         Or.inl (smashEnum_master hJPm)⟩
 
-/-- **The smash projection `p₀` is computable.** `(smashEnum n) p₀ X⁰_m ↔ X⁰_{effL n} ⊆ X⁰_m`
-(`smashEnum_eq_eff` rewrites `Sum.inl ⁻¹' (smashEnum n)` to the effective left factor), a recursive
-slice of `incl_computable`. -/
 theorem smashProj₀_isComputable :
     ComputableMapS (smashPresentation P₀ P₁) P₀.toScott (smashProj₀ V₀ V₁) := by
   constructor
@@ -1767,8 +1675,6 @@ theorem smashProj₀_isComputable :
     rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, inl_preimage_prodNbhd]
     exact h
 
-/-- **The smash projection `p₁` is computable.** Symmetric to `smashProj₀_isComputable`, using the
-effective right factor `Sum.inr ⁻¹' (smashEnum n) = X¹_{effR n}`. -/
 theorem smashProj₁_isComputable :
     ComputableMapS (smashPresentation P₀ P₁) P₁.toScott (smashProj₁ V₀ V₁) := by
   constructor
@@ -1806,8 +1712,6 @@ theorem smashProj₁_isComputable :
     rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, inr_preimage_prodNbhd]
     exact h
 
-/-- **Exercise 7.15 (Scott 1981, PRG-19) — the smash product `𝒟₀ ⊗ 𝒟₁` is effectively given.**
-(Scott's Definition 7.1; the only classical input is the enumeration's properness branch.) -/
 theorem smash_isEffectivelyGivenS (h₀ : V₀.IsEffectivelyGiven) (h₁ : V₁.IsEffectivelyGiven) :
     (smash V₀ V₁).IsEffectivelyGivenS := by
   obtain ⟨Q₀⟩ := h₀; obtain ⟨Q₁⟩ := h₁

@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.31).** Untagged payload; same combinator as `snd`. -/
 def outC : Pomega := sndC
 
 end DomainTheory.DataTypesAsLattices

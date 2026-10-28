@@ -16,14 +16,12 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace Topology Function
 
-/-- **Scott 1976, Theorem 1.5 (The extension theorem), continuity.** -/
 theorem theorem_1_5 {Y : Type*} [TopologicalSpace Y] {X : Set Y}
     (f : X → Pomega) : Continuous (extend (Y := Y) (X := X) f) := by
   refine continuous_generateFrom_iff.2 ?_
   rintro _ ⟨k, rfl⟩
   exact extend.isOpen_mem f k
 
-/-- **Scott 1976, Theorem 1.5**, extension property when `f` is continuous. -/
 theorem theorem_1_5.extension {Y : Type*} [TopologicalSpace Y] {X : Set Y}
     (f : X → Pomega) (hf : Continuous f) (x : X) :
     extend (Y := Y) (X := X) f ↑x = f x := by

@@ -10,7 +10,6 @@ universe u
 
 open Topology TopologicalSpace
 
-/-- Scott's notion of retract: a subspace with a continuous retraction. -/
 structure RetractSubspace (D' D : Type u) [TopologicalSpace D'] [TopologicalSpace D] where
   section' : C(D', D)
   isEmbedding_section : IsEmbedding section'

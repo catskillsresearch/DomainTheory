@@ -10,7 +10,6 @@ public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
 public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -37,7 +36,6 @@ variable (hD : ContinuousLattice D)
 
 include hD
 
-/-- **1972 ↔ round 1980:** continuous lattice ↔ round `↟`-filters. -/
 noncomputable def continuousLattice_roundFilter_iso :
     D ≃o RoundFilter (D := D) :=
   ContinuousLatticeToNeighborhood.domainOrderIso hD

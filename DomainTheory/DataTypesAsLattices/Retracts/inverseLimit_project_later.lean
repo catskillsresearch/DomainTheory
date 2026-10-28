@@ -14,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Repeated coherence: every later coordinate projects to an earlier one. -/
 theorem inverseLimit_project_later {F : Pomega → Pomega}
     (hret : ∀ a, Retract a → Retract (F a))
     (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))

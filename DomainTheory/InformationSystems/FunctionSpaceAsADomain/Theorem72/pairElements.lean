@@ -23,7 +23,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- Product element `⟨x, y⟩` assembled from the two projections. -/
 def pairElements (x : A.Element) (y : B.Element) : (productSystem A B).Element where
   carrier := {p : ProdToken A B |
     (p.val.2 = B.bot → p.val.1 ∈ x.carrier) ∧ (p.val.1 = A.bot → p.val.2 ∈ y.carrier)}

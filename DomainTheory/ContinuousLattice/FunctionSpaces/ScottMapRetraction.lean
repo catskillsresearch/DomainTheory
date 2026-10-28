@@ -1,13 +1,11 @@
 module
 
-
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
 public import DomainTheory.ContinuousLattice.FunctionSpaces.comp
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
@@ -21,9 +19,6 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- **Scott 1972, Proposition 3.7 (retraction half).** If `D_n` is a retract of `D'_n`
-(`n = 0,1`), then `[D₀ → D₁]` is a retract of `[D'₀ → D'₁]` via
-`f ↦ i₁ ∘ f ∘ j₀` and `f' ↦ j₁ ∘ f' ∘ i₀`. -/
 structure ScottMapRetraction (D₀ D₀' D₁ D₁' : Type*)
     [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁'] where
   incl : ScottMap D₀ D₁ → ScottMap D₀' D₁'

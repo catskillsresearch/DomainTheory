@@ -3,9 +3,7 @@ public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
-
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
@@ -13,15 +11,12 @@ open Topology Set
 
 variable {D : Type*} [CompleteLattice D]
 
-
 section InjectiveExtension
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] {E : Type*} [CompleteLattice E]
 
-
 omit [TopologicalSpace X] in
-/-- The defining family of `scottExtend` is directed: open neighbourhoods are closed under
-intersection, and `⊓ f''(e⁻¹ ·)` is monotone in the neighbourhood (smaller set, larger inf). -/
+
 theorem scottExtend_aux_directed (e : X → Y) (f : X → E) (y : Y) :
     DirectedOn (· ≤ ·) {d | ∃ V : Set Y, IsOpen V ∧ y ∈ V ∧ d = sInf (f '' (e ⁻¹' V))} := by
   rintro _ ⟨V₁, hV₁o, hyV₁, rfl⟩ _ ⟨V₂, hV₂o, hyV₂, rfl⟩

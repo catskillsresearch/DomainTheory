@@ -12,11 +12,6 @@ section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/- concordance: source L532 EXERCISE 1.24 extending partial elements -/
-/-- **Exercise 1.24 — the union of a chain of filters is a filter.** For a non-empty chain `C` of
-filters, `⋃ C = {X ∣ ∃ x ∈ C, X ∈ x}` is again a filter. The intersection axiom uses chain
-totality: given `X ∈ x` and `Y ∈ y` with `x, y ∈ C`, one of `x ⊑ y`, `y ⊑ x` holds, and the larger
-filter contains both `X` and `Y`, hence `X ∩ Y`. -/
 def chainUnion (C : Set V.Element) (hne : C.Nonempty) (hchain : IsChain (· ≤ ·) C) : V.Element where
   mem X := ∃ x ∈ C, x.mem X
   sub := by rintro X ⟨x, _, hxX⟩; exact x.sub hxX
@@ -30,15 +25,10 @@ def chainUnion (C : Set V.Element) (hne : C.Nonempty) (hchain : IsChain (· ≤ 
     rintro X Y ⟨x, hxC, hxX⟩ hY hXY
     exact ⟨x, hxC, x.up_mem hxX hY hXY⟩
 
-/-- Every member of the chain approximates the union `⋃ C`. -/
 theorem le_chainUnion (C : Set V.Element) (hne : C.Nonempty) (hchain : IsChain (· ≤ ·) C)
     {x : V.Element} (hx : x ∈ C) : x ≤ V.chainUnion C hne hchain :=
   fun _ hX => ⟨x, hx, hX⟩
 
-/-- **Exercise 1.24 — partial elements extend to total ones (AC).** Using Zorn's lemma, every
-element `x` admits a *total* element `t` with `x ⊑ t`. The upper bound of any non-empty chain in
-`Ici x` is its `chainUnion`, so a maximal element exists; maximality is exactly totality
-(`IsMax = IsTotal`). -/
 theorem exists_total_ge (x : V.Element) : ∃ t, V.IsTotal t ∧ x ≤ t := by
   obtain ⟨m, hxm, hmax⟩ :=
     zorn_le_nonempty_Ici₀ x

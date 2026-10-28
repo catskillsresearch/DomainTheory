@@ -11,8 +11,6 @@ open NeighborhoodSystem
 variable {α : Type*}
 variable (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
 
-/-- The `U`-side atom matching `genAtom X Δ δ n`, built recursively via an abstract splitting
-operation `split` (instantiated with `splitChoice` for Theorem 8.8(a), `splitEff` for 8.8(b)). -/
 noncomputable def atomU (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
     (X : ℕ → Set α) (Δ : Set α) (δ : ℕ → Bool) : ℕ → Set ℚ
   | 0 => U.master
@@ -38,16 +36,12 @@ variable (X : ℕ → Set α) (Δ : Set α)
 variable (hΔ : Δ.Nonempty) (hsplit : SplitSpec split)
 include hΔ hsplit
 
-/-- Pad `δ' : Fin n → Bool` to a total `ℕ → Bool`, filling positions `≥ n` with `true`. -/
 def extendTrue {n : ℕ} (δ' : Fin n → Bool) : ℕ → Bool :=
   fun i => if h : i < n then δ' ⟨i, h⟩ else true
 
-/-- **Scott's `Yₙ`**: the union, over all `2ⁿ` depth-`n` atoms, of the "+"-piece chosen when
-splitting against `X n`. -/
 noncomputable def Yseq (n : ℕ) : Set ℚ :=
   ⋃ δ' : Fin n → Bool, atomU split X Δ (extendTrue δ') (n + 1)
 
-/-- Restrict `δ : ℕ → Bool` to `Fin n → Bool`. -/
 def restrictFin (δ : ℕ → Bool) (n : ℕ) : Fin n → Bool := fun i => δ i.val
 
 end
@@ -57,13 +51,7 @@ open NeighborhoodSystem
 variable {α : Type*}
 
 open Classical in
-/-- **Total packaging of `exists_split`.** Given any `A : Set α`, `B : Set ℚ`, `Xn : Set α`,
-`splitChoice A B Xn` is the pair `(I, J)` produced by `exists_split` whenever the hypotheses hold
-(`A = ∅ ↔ B = ∅` and `B = ∅ ∨ U.mem B`), and the junk value `(∅, ∅)` otherwise. Making this total
-(rather than threading proof obligations through a dependent recursive definition) is what lets
-`atomU` below be defined by plain structural recursion on `ℕ`; `splitChoice_isSplitSpec` recovers
-`exists_split`'s conclusions whenever the hypotheses genuinely hold, which is all that is ever
-used (the junk branch is never reached along the real construction). -/
+
 noncomputable def splitChoice (A : Set α) (B : Set ℚ) (Xn : Set α) : Set ℚ × Set ℚ :=
   if h : (A = ∅ ↔ B = ∅) ∧ (B = ∅ ∨ U.mem B) then
     ⟨(exists_split h.1 h.2 Xn).choose, (exists_split h.1 h.2 Xn).choose_spec.choose⟩
@@ -75,7 +63,6 @@ theorem genAtom_subset {β : Type*} (Z : ℕ → Set β) (M : Set β) (δ : ℕ 
   | zero => exact subset_rfl
   | succ n ih => exact (Set.inter_subset_left).trans ih
 
-/-- Extending/changing `δ` at or beyond position `n` does not change `genAtom Z M δ n`. -/
 theorem genAtom_congr {β : Type*} (Z : ℕ → Set β) (M : Set β) {δ δ' : ℕ → Bool} {n : ℕ}
     (h : ∀ i < n, δ i = δ' i) : genAtom Z M δ n = genAtom Z M δ' n := by
   induction n with
@@ -86,11 +73,6 @@ theorem genAtom_congr {β : Type*} (Z : ℕ → Set β) (M : Set β) {δ δ' : �
     show genAtom Z M δ n ∩ _ = genAtom Z M δ' n ∩ _
     rw [hprev, hn]
 
-/-- **Forward direction of atom membership**: if `x` lies in the depth-`n` atom for `δ`, then `δ`
-records `x`'s membership pattern against `Z 0, …, Z (n-1)` exactly. (The converse, "self-atom
-membership" for the canonical `δ` built from `x` itself, is `genAtom_self` below; together they
-are all that is needed — no general "iff" characterization with explicit list/`Fin` indexing is
-required anywhere in this file.) -/
 theorem genAtom_forward {β : Type*} {Z : ℕ → Set β} {M : Set β} {δ : ℕ → Bool} {n : ℕ}
     {x : β} (hx : x ∈ genAtom Z M δ n) : ∀ i < n, (δ i = true ↔ x ∈ Z i) := by
   induction n with
@@ -108,8 +90,7 @@ theorem genAtom_forward {β : Type*} {Z : ℕ → Set β} {M : Set β} {δ : ℕ
         exact ⟨fun h => absurd h (by simp [hδ]), fun hmem => absurd hmem hxlast.2⟩
 
 open Classical in
-/-- **Self-atom membership**: any `x ∈ M` lies in its own canonical atom (built from the
-sign sequence `δ := fun k => decide (x ∈ Z k)`), at every depth `n`. -/
+
 theorem genAtom_self {β : Type*} (Z : ℕ → Set β) (M : Set β) {x : β} (hx : x ∈ M) :
     ∀ n, x ∈ genAtom Z M (fun k => decide (x ∈ Z k)) n := by
   intro n
@@ -121,15 +102,11 @@ theorem genAtom_self {β : Type*} (Z : ℕ → Set β) (M : Set β) {x : β} (hx
     · simp [h]
     · simp [h, hx]
 
-
-/-- **A splitting operation's first output is a subset of `B`** (`I ⊆ B`, from `I ∪ J = B`) —
-a corollary of `SplitSpec` alone, needing no facts about the specific `split`. -/
 theorem split_fst_subset {split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ} (hsplit : SplitSpec split)
     {A : Set α} {B : Set ℚ} (hAB : A = ∅ ↔ B = ∅)
     (hBU : B = ∅ ∨ U.mem B) (Xn : Set α) : (split A B Xn).1 ⊆ B :=
   Set.subset_union_left.trans_eq (hsplit hAB hBU Xn).2.2.2.2.1
 
-/-- **A splitting operation's second output is a subset of `B`** (`J ⊆ B`, from `I ∪ J = B`). -/
 theorem split_snd_subset {split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ} (hsplit : SplitSpec split)
     {A : Set α} {B : Set ℚ} (hAB : A = ∅ ↔ B = ∅)
     (hBU : B = ∅ ∨ U.mem B) (Xn : Set α) : (split A B Xn).2 ⊆ B :=
@@ -137,17 +114,13 @@ theorem split_snd_subset {split : Set α → Set ℚ → Set α → Set ℚ × S
 
 variable (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
 
-
 variable (X : ℕ → Set α) (Δ : Set α)
-
 
 theorem atomU_succ (δ : ℕ → Bool) (n : ℕ) :
     atomU split X Δ δ (n + 1) =
       if δ n then (split (genAtom X Δ δ n) (atomU split X Δ δ n) (X n)).1
       else (split (genAtom X Δ δ n) (atomU split X Δ δ n) (X n)).2 := rfl
 
-/-- Extending/changing `δ` at or beyond position `n` does not change `atomU split X Δ δ n` (mirrors
-`genAtom_congr`; needs no invariant, since `split` is an ordinary function of its inputs). -/
 theorem atomU_congr {δ δ' : ℕ → Bool} {n : ℕ} (h : ∀ i < n, δ i = δ' i) :
     atomU split X Δ δ n = atomU split X Δ δ' n := by
   induction n with
@@ -163,13 +136,6 @@ theorem atomU_congr {δ δ' : ℕ → Bool} {n : ℕ} (h : ∀ i < n, δ i = δ'
 variable (hΔ : Δ.Nonempty) (hsplit : SplitSpec split)
 include hΔ hsplit
 
-/-- **The core invariant of Scott's back-and-forth construction**, proved by a single induction on
-`n` alongside `split`'s spec: at every depth `n` and for every sign sequence `δ`,
-(a) the atom-matching invariant `(■)` (`genAtom X Δ δ n = ∅ ↔ atomU split X Δ δ n = ∅`),
-(b) `atomU split X Δ δ n` is either empty or a genuine `U`-neighbourhood, and
-(c) **pairwise disjointness**: atoms for sign sequences disagreeing somewhere below `n` are
-disjoint on the `U`-side. (c) is what lets `Yseq` (below) recover a *closed-form* recursive
-description of `atomU`, exactly mirroring `genAtom`'s. -/
 theorem atomU_invariant :
     ∀ n, (∀ δ, genAtom X Δ δ n = ∅ ↔ atomU split X Δ δ n = ∅) ∧
       (∀ δ, atomU split X Δ δ n = ∅ ∨ U.mem (atomU split X Δ δ n)) ∧
@@ -236,7 +202,6 @@ theorem atomU_invariant :
           · simp only [hδ']; exact split_snd_subset hsplit (ihmatch δ') (ihmem δ') (X n)
         exact Set.subset_eq_empty (Set.inter_subset_inter h1 h2) hd
 
-/-- Corollary of `atomU_invariant`, extracted for reuse: `atomU` only shrinks as `n` grows. -/
 theorem atomU_succ_subset (δ : ℕ → Bool) (n : ℕ) :
     atomU split X Δ δ (n + 1) ⊆ atomU split X Δ δ n := by
   obtain ⟨hmatch, hmem, -⟩ := atomU_invariant split X Δ hΔ hsplit n
@@ -244,7 +209,6 @@ theorem atomU_succ_subset (δ : ℕ → Bool) (n : ℕ) :
   by_cases hδ : δ n = true
   · simp only [hδ, ite_true]; exact split_fst_subset hsplit (hmatch δ) (hmem δ) (X n)
   · simp only [hδ]; exact split_snd_subset hsplit (hmatch δ) (hmem δ) (X n)
-
 
 omit hΔ hsplit in
 theorem extendTrue_agree {n : ℕ} (δ' : Fin n → Bool) (i : ℕ) (hi : i < n) :
@@ -254,18 +218,11 @@ omit hΔ hsplit in
 theorem extendTrue_restrictFin_agree (δ : ℕ → Bool) (n i : ℕ) (hi : i < n) :
     extendTrue (restrictFin δ n) i = δ i := by simp [extendTrue, restrictFin, hi]
 
-
 omit hΔ hsplit in
 theorem subset_Yseq {n : ℕ} (δ' : Fin n → Bool) :
     atomU split X Δ (extendTrue δ') (n + 1) ⊆ Yseq split X Δ n :=
   Set.subset_iUnion (fun δ' => atomU split X Δ (extendTrue δ') (n + 1)) δ'
 
-/-- **The "I-formula"**: the "+"-piece chosen when splitting the depth-`n` atom for `δ` against
-`X n` is *exactly* the intersection of that atom with `Yseq n` — recovering, after the fact, a
-closed-form description of the choice made by `split`. This is where pairwise disjointness
-(`atomU_invariant`'s third clause) is essential: it rules out any *other* depth-`n` atom (from a
-different, non-agreeing `δ`) contributing a point to `Yseq n` that isn't already forced into this
-one. -/
 theorem split_fst_eq_inter_Yseq (δ : ℕ → Bool) (n : ℕ) :
     (split (genAtom X Δ δ n) (atomU split X Δ δ n) (X n)).1 =
       atomU split X Δ δ n ∩ Yseq split X Δ n := by
@@ -314,10 +271,6 @@ theorem atomU_subset_master (δ : ℕ → Bool) (n : ℕ) : atomU split X Δ δ 
   | zero => exact subset_rfl
   | succ n ih => exact (atomU_succ_subset split X Δ hΔ hsplit δ n).trans ih
 
-/-- **Closed form for `atomU`**: with `Yseq` in hand, `atomU` satisfies exactly the same
-recursive description as `genAtom Yseq U.master` — the choices made by `split` are, after
-the fact, forced (`split_fst_eq_inter_Yseq` handles the `true` branch; the `false` branch
-follows algebraically from `I ∪ J = B`, `I ∩ J = ∅`). -/
 theorem atomU_succ_eq (δ : ℕ → Bool) (n : ℕ) :
     atomU split X Δ δ (n + 1) =
       atomU split X Δ δ n ∩ (if δ n then Yseq split X Δ n else U.master \ Yseq split X Δ n) := by
@@ -351,16 +304,11 @@ theorem atomU_succ_eq (δ : ℕ → Bool) (n : ℕ) :
     · rintro ⟨hx1, hx2⟩; exact ⟨hx1, hsub hx1, hx2⟩
     · rintro ⟨hx1, -, hx2⟩; exact ⟨hx1, hx2⟩
 
-/-- **`atomU` coincides with the generic atom construction on `Yseq`/`U.master`.** This is the
-payoff of the whole `split`/disjointness apparatus: it lets every later argument treat
-`atomU` and `genAtom` uniformly (in particular, `genAtom_forward` and `genAtom_self` — proved once,
-generically — now apply verbatim to the `U`-side atoms too). -/
 theorem atomU_eq_genAtom (δ : ℕ → Bool) :
     ∀ n, atomU split X Δ δ n = genAtom (Yseq split X Δ) U.master δ n
   | 0 => rfl
   | (n + 1) => by
       rw [atomU_succ_eq split X Δ hΔ hsplit, atomU_eq_genAtom δ n]; rfl
-
 
 end
 

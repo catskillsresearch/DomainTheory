@@ -23,7 +23,6 @@ namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
-/-- Classify a sum-domain element as `WithBot (|A| ⊕ |B|)`. Classical. -/
 noncomputable def classifySum (z : (sumSystem A B).Element) :
     WithBot (A.Element ⊕ B.Element) :=
   Classical.choose (exists_assembleSum_eq A B z)

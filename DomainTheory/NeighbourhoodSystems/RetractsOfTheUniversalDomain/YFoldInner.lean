@@ -19,7 +19,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
   (hUnion0 : IsComputableUnion P₀)
 
-
 noncomputable def YFoldStep (w : ℕ) : ℕ :=
   let n := w.unpair.1.unpair.1
   let bx := w.unpair.1.unpair.2

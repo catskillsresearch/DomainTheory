@@ -16,21 +16,14 @@ public import DomainTheory.DataTypesAsLattices.Computability.primrec_enumFun
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
-
-
-/-- **Scott 1976, Appendix.** Every r.e. element belongs to the
-combinatory closure. -/
 theorem IsRE.combinatory {u : Pomega} (hu : IsRE u) : IsCombinatory u := by
   have hpart : Partrec fun k : ℕ =>
       Part.assert (k ∈ u) fun _ => Part.some (0 : ℕ) :=

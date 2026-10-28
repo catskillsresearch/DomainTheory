@@ -11,7 +11,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The primitive-recursive numerical substitution used in Theorem 3.3. -/
 def secondRecSubst (m : ℕ) : ℕ := applyNat m (num m)
 
 end DomainTheory.DataTypesAsLattices

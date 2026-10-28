@@ -17,9 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem updateEnv_isScottContinuous_t (x : Pomega) (n : ℕ) :
     IsScottContinuous (fun t => updateEnv t x n) :=

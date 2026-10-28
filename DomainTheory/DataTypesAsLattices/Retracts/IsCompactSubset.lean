@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Compactness of a fixed point under subset, without a lattice instance. -/
 def IsCompactSubset {f : Pomega → Pomega} (x : Fixpoints f) : Prop :=
   ∀ s : Set (Fixpoints f),
     DirectedSubset s →

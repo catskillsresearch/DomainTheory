@@ -3,13 +3,11 @@ public import Mathlib.Topology.Constructions
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Order.CompleteLattice.Basic
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 

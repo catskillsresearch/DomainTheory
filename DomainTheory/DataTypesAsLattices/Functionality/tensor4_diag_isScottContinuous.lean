@@ -17,9 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem tensor4_diag_isScottContinuous :
     IsScottContinuous (fun z => tensor4 z z z z) :=

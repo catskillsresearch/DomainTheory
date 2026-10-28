@@ -15,7 +15,6 @@ namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-/-- Token type of the product system `A × B`. -/
 def ProdToken (A : InfoSys α) (B : InfoSys β) : Type _ :=
   {p : α × β // IsProdToken A B p}
 

@@ -10,7 +10,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive

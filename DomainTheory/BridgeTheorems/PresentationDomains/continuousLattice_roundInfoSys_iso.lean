@@ -37,7 +37,6 @@ variable (hD : ContinuousLattice D)
 
 include hD
 
-/-- **1972 ↔ round 1982:** continuous lattice ↔ round InfoSys elements of the `↟`-basis. -/
 noncomputable def continuousLattice_roundInfoSys_iso :
     D ≃o RoundInfoSysElement (D := D) :=
   (continuousLattice_roundFilter_iso hD).trans roundFilter_infoSys_iso

@@ -26,7 +26,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- **Scott 1976, (3.16).** `L(ū⁺(R(x))) = u(x)` on the zero-test branch. -/
 theorem eq_3_16 (u x : Pomega) :
     funOf Lcomb (barPos u (funOf Rcomb x)) = funOf u x := by
   rw [Lcomb.app, barPos.one, barPos.two, Rcomb.app, seq2.one]
@@ -37,7 +36,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- **Scott 1976, (3.16).** `L ∘ ū ∘ R = λx. u(x)` from the Y-definition. -/
 theorem bar (u x : Pomega) :
     funOf Lcomb (funOf (funOf barComb u) (funOf Rcomb x)) = funOf u x := by
   rw [barComb.app2, barStepBody, Rcomb.app_zero, eq_2_7_zero]

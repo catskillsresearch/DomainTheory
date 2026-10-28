@@ -3,7 +3,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeP
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Data.Set.Basic
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
@@ -18,9 +17,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- The embedding–projection pair of a projection is a Galois connection `iₙ ⊣ jₙ`: from
-`jₙ ∘ iₙ = id` and `iₙ ∘ jₙ ⊑ id` we get `iₙ x ⊑ y ↔ x ⊑ jₙ y`. In particular `jₙ` (the upper
-adjoint) preserves arbitrary infima. -/
 theorem projection_galoisConnection (n : ℕ) :
     GaloisConnection ((P n).incl : D n → D (n + 1)) ((P n).retr : D (n + 1) → D n) := by
   intro x y

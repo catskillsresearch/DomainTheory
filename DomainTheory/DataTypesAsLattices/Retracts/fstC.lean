@@ -12,7 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.14)–(4.15).** Projections of a pair-as-function. -/
 def fstC : Pomega := graph (fun u => funOf u (ofNat 0))
 
 namespace fstC

@@ -25,9 +25,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem plus7_comp_isScottContinuous
     {f0 f1 f2 f3 f4 f5 f6 : Pomega → Pomega}

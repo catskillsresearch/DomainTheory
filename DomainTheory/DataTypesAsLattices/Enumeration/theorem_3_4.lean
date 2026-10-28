@@ -16,7 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The diagonal contradiction used in Scott 1976, Theorem 3.4. -/
 theorem theorem_3_4.diagonal {val : ℕ → Pomega} {v : ℕ → ℕ} {b : Set ℕ}
     (hv : ∀ k, val (v k) = ofNat k ∩ val k)
     (hb : b = {j | val j = botElem})
@@ -54,15 +53,12 @@ theorem theorem_3_4.diagonal {val : ℕ → Pomega} {v : ℕ → ℕ} {b : Set �
   · exact (this.mp hkmem) hkmem
   · exact hkmem (this.mpr hkmem)
 
-/-- **Scott 1976, Theorem 3.4** for an r.e. undefined-index set. -/
 theorem theorem_3_4.re_diagonal {val : ℕ → Pomega} {v : ℕ → ℕ}
     (hv : ∀ k, val (v k) = ofNat k ∩ val k)
     (_hRE : IsRE {j | val j = botElem})
     (hex : ∃ k, val k = {i | v i ∈ {j | val j = botElem}}) : False :=
   theorem_3_4.diagonal hv rfl hex
 
-/-- **Scott 1976, Theorem 3.4 (The incompleteness theorem).**
-The set of Gödel numbers denoting bottom is not recursively enumerable. -/
 theorem theorem_3_4 :
     ¬ IsRE {n | valNat n = botElem} := by
   intro hb

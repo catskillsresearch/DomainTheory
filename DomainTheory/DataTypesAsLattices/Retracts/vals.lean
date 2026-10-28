@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Image of a set of fixed-point subtypes. -/
 def Fixpoints.vals {f : Pomega → Pomega} (A : Set (Fixpoints f)) : Set Pomega :=
   Subtype.val '' A
 

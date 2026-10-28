@@ -18,7 +18,6 @@ variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Product entailment of a set projects to component entailment on `fst`. -/
 theorem entSet_fst_of_prodEntSet {u v : Finset (ProdToken A B)}
     (h : (productSystem A B).EntSet u v) :
     A.EntSet (fstFinset A B u) (fstFinset A B v) := by

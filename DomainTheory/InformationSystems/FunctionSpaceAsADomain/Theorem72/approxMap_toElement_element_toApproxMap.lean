@@ -26,7 +26,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.f
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -39,9 +38,7 @@ variable {α : Type u} {β : Type v} {γ : Type w}
   [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
-
 open ApproximableMap
-
 
 theorem approxMap_toElement_element_toApproxMap (x : (functionSystem A B).Element) :
     approxMap_toElement A B (element_toApproxMap A B x) = x := by

@@ -15,18 +15,13 @@ public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
-
-
 
 theorem primRecVal_add (k : ℕ) : ∀ n,
     primRecVal (ofNat k) addStepC n = ofNat (k + n)

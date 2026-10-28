@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (2.24)–(2.25).** Revaluation as a distributive sequence. -/
 def seqFun (u x : Pomega) : Pomega :=
   ⋃ i ∈ x, funOf u (ofNat i)
 

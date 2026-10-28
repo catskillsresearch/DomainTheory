@@ -34,7 +34,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -47,7 +46,6 @@ variable (A : InfoSys α) (B : InfoSys β)
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
-
 
 theorem comp_copairMap_inrMap (f : ApproximableMap A C) (g : ApproximableMap B C) :
     comp (copairMap A B f g) (inrMap A B) = g := by

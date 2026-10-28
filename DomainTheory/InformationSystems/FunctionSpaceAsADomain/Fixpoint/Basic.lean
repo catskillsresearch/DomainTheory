@@ -29,11 +29,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-
 namespace ApproximableMap
 
-
-/-- Tokens of `w ⊆ approxMap_toElement f` satisfy `f.rel`. -/
 theorem rel_of_mem_approx (f : ApproximableMap A A)
     {w : Finset (FunToken A A)}
     (hw : ↑w ⊆ (approxMap_toElement A A f).carrier) {p : FunToken A A}

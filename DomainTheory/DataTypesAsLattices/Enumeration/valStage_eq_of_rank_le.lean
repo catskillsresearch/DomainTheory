@@ -10,11 +10,9 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valRank
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem valStage_eq_of_rank_le : ∀ n s, valRank n ≤ s →
     funOf (iterateBot valStep s) (ofNat n) = valNat n

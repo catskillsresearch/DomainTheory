@@ -12,9 +12,6 @@ section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/- concordance: source L372 THEOREM 1.11 intersections and directed unions -/
-/-- **Theorem 1.11 (i).** The intersection `⋂ₙ xₙ = {X ∣ ∀ n, X ∈ xₙ}` of a sequence of elements is
-again an element of `|𝒟|`. (No proviso: all of 1.6(i)–(iii) are pointwise.) -/
 def iInter (x : ℕ → V.Element) : V.Element where
   mem X := ∀ n, (x n).mem X
   sub h := (x 0).sub (h 0)
@@ -25,9 +22,6 @@ def iInter (x : ℕ → V.Element) : V.Element where
 @[simp] theorem mem_iInter (x : ℕ → V.Element) {X : Set α} :
     (V.iInter x).mem X ↔ ∀ n, (x n).mem X := Iff.rfl
 
-/-- **Theorem 1.11 (ii).** For an **ascending** sequence `x₀ ⊑ x₁ ⊑ ⋯`, the union
-`⋃ₙ xₙ = {X ∣ ∃ n, X ∈ xₙ}` is again an element of `|𝒟|`. The proviso (`Monotone x`) is used only in
-the intersection law: `X ∈ xₙ`, `Y ∈ xₘ` ⟹ both in `x_{max n m}`. -/
 def iUnion (x : ℕ → V.Element) (hmono : Monotone x) : V.Element where
   mem X := ∃ n, (x n).mem X
   sub := by rintro X ⟨n, hn⟩; exact (x n).sub hn
@@ -44,12 +38,9 @@ def iUnion (x : ℕ → V.Element) (hmono : Monotone x) : V.Element where
 @[simp] theorem mem_iUnion (x : ℕ → V.Element) (hmono : Monotone x) {X : Set α} :
     (V.iUnion x hmono).mem X ↔ ∃ n, (x n).mem X := Iff.rfl
 
-/-- `⋂ₙ xₙ ⊑ xₙ`: the intersection approximates every member of the sequence. -/
 theorem iInter_le (x : ℕ → V.Element) (n : ℕ) : V.iInter x ≤ x n :=
   fun _ h => h n
 
-/-- `⋃ₙ xₙ` is the **least** upper bound: anything approximated by all `xₙ` approximates the
-union from above. -/
 theorem iUnion_le (x : ℕ → V.Element) (hmono : Monotone x) (y : V.Element)
     (h : ∀ n, x n ≤ y) : V.iUnion x hmono ≤ y := by
   rintro X ⟨n, hn⟩
@@ -91,7 +82,6 @@ section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
-/-- The length-`n` initial segment `p ↾ n = ⟨p 0, …, p (n-1)⟩` of an infinite path `p`. -/
 def prefixSeq (p : ℕ → Bool) : ℕ → Str
   | 0 => []
   | (n + 1) => prefixSeq p n ++ [p n]
@@ -101,7 +91,6 @@ def prefixSeq (p : ℕ → Bool) : ℕ → Str
   | zero => rfl
   | succ k ih => simp [prefixSeq, ih]
 
-/-- The finite approximations `σₙ⊥ = (p ↾ n)⊥` along the path `p`. -/
 def branchSeq (p : ℕ → Bool) (n : ℕ) : B.Element := sigmaBot (prefixSeq p n)
 
 theorem prefixSeq_prefix_succ (p : ℕ → Bool) (n : ℕ) :
@@ -117,11 +106,8 @@ theorem branchSeq_mono (p : ℕ → Bool) : Monotone (branchSeq p) := by
   intro n m h
   exact (sigmaBot_le_iff (prefixSeq p n) (prefixSeq p m)).mpr (prefixSeq_mono p h)
 
-/-- **The limit/total element of an infinite path** `p`: the ascending union `⋃ₙ (p ↾ n)⊥`
-(Theorem 1.11(ii)). These are the "limit nodes all along the top" of Scott's picture. -/
 def branch (p : ℕ → Bool) : B.Element := B.iUnion (branchSeq p) (branchSeq_mono p)
 
-/-- `cone σ ∈ branch p` iff `σ` is an initial segment of some `p ↾ n`, i.e. `σ` lies on the path. -/
 theorem branch_mem_iff (p : ℕ → Bool) {σ : Str} :
     (branch p).mem (cone σ) ↔ ∃ n, σ <+: prefixSeq p n := by
   constructor
@@ -132,8 +118,6 @@ theorem branch_mem_iff (p : ℕ → Bool) {σ : Str} :
     exact (B.mem_iUnion (branchSeq p) (branchSeq_mono p)).mpr
       ⟨n, memB_cone σ, cone_subset_cone.mpr hn⟩
 
-/-- Two neighbourhoods present in a common element of `|B|` have comparable generating prefixes
-(their cones cannot be disjoint, since the intersection is a nonempty cone). -/
 theorem prefix_comparable_of_mem {σ τ : Str} (y : B.Element)
     (hσ : y.mem (cone σ)) (hτ : y.mem (cone τ)) : σ <+: τ ∨ τ <+: σ := by
   have hi : y.mem (cone σ ∩ cone τ) := y.inter_mem hσ hτ

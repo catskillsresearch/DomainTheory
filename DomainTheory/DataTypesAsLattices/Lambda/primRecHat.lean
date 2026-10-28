@@ -24,8 +24,6 @@ theorem zero (a f : Pomega) : primRecHat a f (ofNat 0) = a := by
   · intro hk
     exact Set.mem_iUnion₂.mpr ⟨0, rfl, hk⟩
 
-/-- **Scott 1976, (2.27).** The distributive extension agrees with the
-integer recursion on singletons. -/
 theorem ofNat (a f : Pomega) : ∀ n,
     primRecHat a f (ofNat n) = primRecVal a f n
   | 0 => primRecHat.zero a f

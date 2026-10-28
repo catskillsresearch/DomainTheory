@@ -10,7 +10,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.I
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.curryMap_unique
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive

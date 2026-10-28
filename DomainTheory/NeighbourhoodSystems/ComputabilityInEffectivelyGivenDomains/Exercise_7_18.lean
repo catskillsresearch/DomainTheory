@@ -13,28 +13,21 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 section
 variable {α β : Type*}
 
-/- concordance: source L4655 EXERCISE 7.18 effective isomorphism -/
-/-- **Exercise 7.18 (Scott 1981, PRG-19) — effective isomorphism (completing the sentence).** Two
-effectively given systems `D` (presentation `P`) and `E` (presentation `Q`) are *effectively
-isomorphic* iff there is a pair of mutually inverse approximable maps `toMap : D → E`,
-`invMap : E → D`, **both computable** (Definition 7.2). -/
 structure EffectiveIso {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
     (P : ComputablePresentation V) (Q : ComputablePresentation W) where
-  /-- The forward map `D → E`. -/
+
   toMap : ApproximableMap V W
-  /-- The inverse map `E → D`. -/
+
   invMap : ApproximableMap W V
-  /-- The forward map is computable. -/
+
   toMap_computable : ComputableMap P Q toMap
-  /-- The inverse map is computable. -/
+
   invMap_computable : ComputableMap Q P invMap
-  /-- `invMap ∘ toMap = I_D`. -/
+
   left_inv : invMap.comp toMap = idMap V
-  /-- `toMap ∘ invMap = I_E`. -/
+
   right_inv : toMap.comp invMap = idMap W
 
-/-- **Exercise 7.18 — effectively isomorphic.** `D` and `E` are effectively isomorphic when an
-`EffectiveIso` exists. -/
 def EffectivelyIsomorphic {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
     (P : ComputablePresentation V) (Q : ComputablePresentation W) : Prop :=
   Nonempty (EffectiveIso P Q)
@@ -51,9 +44,6 @@ namespace Proposition77
 
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
-/-- **The second projection of the pair part of `D^§`, as an approximable map.** On the pair summand
-`1·P ∪ 2·Q` it returns `Q`; everywhere else it returns `⊥ = {Γ}`. The exact mirror of `proj0Map`
-with the *second* component: `W proj₁ Z ↔ Z = Γ ∨ ∃ P Q, W = 1·P ∪ 2·Q ∧ Q ⊆ Z`. -/
 def proj1Map : ApproximableMap (Dsharp D hD) (Dsharp D hD) where
   rel W Z := MemS D W ∧ MemS D Z ∧ (Z = Gamma D ∨ ∃ Pp Qq, W = embPair Pp Qq ∧ Qq ⊆ Z)
   rel_dom h := h.1
@@ -96,8 +86,6 @@ def proj1Map : ApproximableMap (Dsharp D hD) (Dsharp D hD) where
     (proj1Map hD).rel W Z ↔
       MemS D W ∧ MemS D Z ∧ (Z = Gamma D ∨ ∃ Pp Qq, W = embPair Pp Qq ∧ Qq ⊆ Z) := Iff.rfl
 
-/-- **Example 6.1's pairing constructor `pair : D^§ × D^§ → D^§`, as a joint approximable map.**
-`(A ∪ B) pair W ↔ A, B ∈ 𝒟^§ ∧ W ∈ 𝒟^§ ∧ 1·A ∪ 2·B ⊆ W` (with `A ∪ B = prodNbhd A B`). -/
 def pairSharpMap : ApproximableMap (prod (Dsharp D hD) (Dsharp D hD)) (Dsharp D hD) where
   rel V W := (prod (Dsharp D hD) (Dsharp D hD)).mem V ∧ MemS D W ∧
     ∃ A B, MemS D A ∧ MemS D B ∧ V = prodNbhd A B ∧ embPair A B ⊆ W
@@ -123,7 +111,6 @@ def pairSharpMap : ApproximableMap (prod (Dsharp D hD) (Dsharp D hD)) (Dsharp D 
       (prod (Dsharp D hD) (Dsharp D hD)).mem V ∧ MemS D W ∧
         ∃ A B, MemS D A ∧ MemS D B ∧ V = prodNbhd A B ∧ embPair A B ⊆ W := Iff.rfl
 
-/-- **`pairSharpMap` really is Example 6.1's pairing:** `pair(x, y) ↦ ⟨x, y⟩^§` (`pairSharp`). -/
 theorem pairSharpMap_toElementMap (x y : (Dsharp D hD).Element) :
     (pairSharpMap hD).toElementMap (DomainTheory.NeighbourhoodSystems.pair x y) = pairSharp D hD x y := by
   apply Element.ext
@@ -142,8 +129,6 @@ theorem pairSharpMap_toElementMap (x y : (Dsharp D hD).Element) :
     · exact ⟨prodNbhd P Q, ⟨P, Q, hxP, hyQ, rfl⟩, prod_mem_prodNbhd (x.sub hxP) (y.sub hyQ),
         MemS.pair (x.sub hxP) (y.sub hyQ), P, Q, x.sub hxP, y.sub hyQ, rfl, subset_rfl⟩
 
-/-- The index characterization of `pairSharpMap` against the product/`Vsharp` enumerations:
-`(V⁰_{p t} ∪ V¹_{q t}) pair V_k ↔ V_{2·t+2} ⊆ V_k` (since `V_{2t+2} = 1·V_{p t} ∪ 2·V_{q t}`). -/
 theorem pairSharp_rel_Vsharp_iff (P : ComputablePresentation D) (t k : ℕ) :
     (pairSharpMap hD).rel
         ((prodPresentation (dsharpPresentation P hD) (dsharpPresentation P hD)).X t)

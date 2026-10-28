@@ -28,7 +28,6 @@ namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)
 
-/-- **`neighborhoodSystem_to_infoSys`.** -/
 def toInfoSys : InfoSys ι where
   bot := B.botIdx
   Con := {u | B.system.mem (B.interOf u)}

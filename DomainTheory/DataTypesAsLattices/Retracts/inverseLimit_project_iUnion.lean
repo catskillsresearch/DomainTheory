@@ -24,8 +24,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Every stage projection of the union of a coherent sequence is its
-corresponding coordinate. -/
 theorem inverseLimit_project_iUnion {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a))

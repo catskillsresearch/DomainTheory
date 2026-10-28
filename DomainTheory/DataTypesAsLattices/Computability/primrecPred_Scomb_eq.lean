@@ -12,17 +12,13 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
-
 
 theorem primrecPred_Scomb_eq :
     PrimrecPred fun q : ℕ × ℕ =>

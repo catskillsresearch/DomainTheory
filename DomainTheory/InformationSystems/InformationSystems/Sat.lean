@@ -13,7 +13,6 @@ namespace DomainTheory.InformationSystems
 
 namespace Factoid25
 
-/-- Satisfaction of a token at a rational point. -/
 def Sat (x : ℚ) : Token → Prop
   | .bot => True
   | .interval lo hi _ => (lo : ℚ) < x ∧ x < (hi : ℚ)

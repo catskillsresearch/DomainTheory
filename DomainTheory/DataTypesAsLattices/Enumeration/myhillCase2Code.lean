@@ -18,7 +18,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Appendix case 2: `u(m)` with `val(u m) = e_j ∪ (val m ⊃ val n, val n)`. -/
 noncomputable def myhillCase2Code (j n m : ℕ) : ℕ :=
   applyNat (applyNat unionCode (fin j))
     (applyNat (applyNat (applyNat condCode n) n) m)

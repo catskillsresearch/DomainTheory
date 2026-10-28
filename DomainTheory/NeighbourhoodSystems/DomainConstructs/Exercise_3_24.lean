@@ -12,8 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Fac
 @[expose] public section
 
 section
-/- concordance: source L1571 EXERCISE 3.24 function-space isomorphisms -/
--- Exercise324/funProdEquiv.lean
+
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
@@ -22,8 +21,6 @@ variable {α β γ : Type*}
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
-/-- **Exercise 3.24(i) (Scott 1981, PRG-19).** The order-isomorphism on approximable maps
-`Hom(𝒟₀, 𝒟₁ × 𝒟₂) ≃o Hom(𝒟₀, 𝒟₁) × Hom(𝒟₀, 𝒟₂)`, `h ↦ (p₀ ∘ h, p₁ ∘ h)`. -/
 def funProdEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (V₂ : NeighborhoodSystem γ) :
     ApproximableMap V₀ (prod V₁ V₂) ≃o (ApproximableMap V₀ V₁ × ApproximableMap V₀ V₂) where
@@ -62,8 +59,6 @@ section
 variable {α β γ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
-/-- **Exercise 3.24(i) (Scott 1981, PRG-19).** The domain isomorphism
-`|𝒟₀ → (𝒟₁ × 𝒟₂)| ≃o |(𝒟₀ → 𝒟₁) × (𝒟₀ → 𝒟₂)|`. -/
 def funProdIso (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (V₂ : NeighborhoodSystem γ) :
     (funSpace V₀ (prod V₁ V₂)).Element ≃o (prod (funSpace V₀ V₁) (funSpace V₀ V₂)).Element :=
@@ -72,7 +67,6 @@ def funProdIso (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
       (prodCongrOrderIso (funSpaceEquiv V₀ V₁).symm (funSpaceEquiv V₀ V₂).symm).trans
         (prodEquiv (funSpace V₀ V₁) (funSpace V₀ V₂)).symm
 
-/-- **Exercise 3.24(i).** `(𝒟₀ → (𝒟₁ × 𝒟₂)) ≅ (𝒟₀ → 𝒟₁) × (𝒟₀ → 𝒟₂)`. -/
 theorem funProd_isomorphic :
     funSpace V₀ (prod V₁ V₂) ≅ᴰ prod (funSpace V₀ V₁) (funSpace V₀ V₂) :=
   ⟨funProdIso V₀ V₁ V₂⟩
@@ -99,8 +93,6 @@ end
 section
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-/-- The `∃/∀`-swap behind `mapOfSeq`: a single input neighbourhood `X ∈ x` works for all coordinates
-iff each coordinate has its own (intersect the finitely many non-trivial ones). -/
 theorem exists_forall_swap {x : V₀.Element} {W : Set (ℕ × β)}
     {g : ℕ → ApproximableMap V₀ V₁} (hW : (iterSys V₁).mem W) :
     (∃ X, x.mem X ∧ ∀ i, (g i).rel X (fiber W i)) ↔
@@ -117,7 +109,6 @@ theorem exists_forall_swap {x : V₀.Element} {W : Set (ℕ × β)}
         ((g i).rel_cod (hXrel i))
     · rw [hN i (not_lt.mp h)]; exact (g i).rel_master (x.sub hbase)
 
-/-- A map `𝒟₀ → 𝒟₁^∞` is detected coordinate-wise: `f ⊑ f'` iff `projₙ ∘ f ⊑ projₙ ∘ f'` for all `n`. -/
 theorem le_of_projComp_le {f f' : ApproximableMap V₀ (iterSys V₁)}
     (h : ∀ n, (projN V₁ n).comp f ≤ (projN V₁ n).comp f') : f ≤ f' := by
   rw [le_iff_toElementMap_le]
@@ -127,8 +118,6 @@ theorem le_of_projComp_le {f f' : ApproximableMap V₀ (iterSys V₁)}
   have hx := (le_iff_toElementMap_le.mp (h n)) x
   rwa [toElementMap_comp, toElementMap_comp, toElementMap_projN, toElementMap_projN] at hx
 
-/-- The "infinite pairing" map `𝒟₀ → 𝒟₁^∞` of a sequence `g : ℕ → Hom(𝒟₀, 𝒟₁)`:
-`X (mapOfSeq g) W ↔ X ∈ 𝒟₀, W ∈ 𝒟₁^∞, and X gᵢ (fiber W i) for all i`. -/
 def mapOfSeq (g : ℕ → ApproximableMap V₀ V₁) : ApproximableMap V₀ (iterSys V₁) where
   rel X W := V₀.mem X ∧ (iterSys V₁).mem W ∧ ∀ i, (g i).rel X (fiber W i)
   rel_dom h := h.1
@@ -148,7 +137,6 @@ def mapOfSeq (g : ℕ → ApproximableMap V₀ V₁) : ApproximableMap V₀ (ite
     rintro X X' W W' ⟨_, _, hrel⟩ hX'X hWW' hX' hW'
     exact ⟨hX', hW', fun i => (g i).mono (hrel i) hX'X (fiber_mono hWW' i) hX' (hW'.1 i)⟩
 
-/-- A pointwise family of order-isomorphisms induces one on the dependent product. -/
 def piCongrOrderIso {ι : Type*} {A B : ι → Type*} [∀ i, Preorder (A i)] [∀ i, Preorder (B i)]
     (e : ∀ i, A i ≃o B i) : (∀ i, A i) ≃o (∀ i, B i) where
   toFun f := fun i => e i (f i)
@@ -159,13 +147,11 @@ def piCongrOrderIso {ι : Type*} {A B : ι → Type*} [∀ i, Preorder (A i)] [�
     intro f g
     exact ⟨fun h i => (e i).le_iff_le.mp (h i), fun h i => (e i).le_iff_le.mpr (h i)⟩
 
-/-- `projₙ ∘ f` is monotone in `f`. -/
 theorem projComp_mono {f f' : ApproximableMap V₀ (iterSys V₁)} (h : f ≤ f') (n : ℕ) :
     (projN V₁ n).comp f ≤ (projN V₁ n).comp f' := by
   rintro X Y ⟨W, hfXW, hWY⟩
   exact ⟨W, h X W hfXW, hWY⟩
 
-/-- The value of `mapOfSeq g` is the sequence of values `⟨gᵢ(x)⟩`. -/
 theorem toElementMap_mapOfSeq (g : ℕ → ApproximableMap V₀ V₁) (x : V₀.Element) :
     (mapOfSeq g).toElementMap x = ofSeq (fun i => (g i).toElementMap x) := by
   apply Element.ext
@@ -177,8 +163,6 @@ theorem toElementMap_mapOfSeq (g : ℕ → ApproximableMap V₀ V₁) (x : V₀.
     obtain ⟨X, hXx, hrel⟩ := (exists_forall_swap hW).mpr (fun i => hfib i)
     exact ⟨X, hXx, x.sub hXx, hW, hrel⟩
 
-/-- **Exercise 3.24(ii) (Scott 1981, PRG-19).** The order-isomorphism on approximable maps
-`Hom(𝒟₀, 𝒟₁^∞) ≃o (ℕ → Hom(𝒟₀, 𝒟₁))`, `f ↦ (n ↦ projₙ ∘ f)`. -/
 def funIterEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     ApproximableMap V₀ (iterSys V₁) ≃o (∀ _ : ℕ, ApproximableMap V₀ V₁) where
   toFun f := fun n => (projN V₁ n).comp f
@@ -202,8 +186,6 @@ def funIterEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     · intro h; exact le_of_projComp_le (fun n => h n)
     · intro h n; exact projComp_mono h n
 
-/-- **Exercise 3.24(ii) (Scott 1981, PRG-19).** The domain isomorphism
-`|𝒟₀ → 𝒟₁^∞| ≃o |(𝒟₀ → 𝒟₁)^∞|`. -/
 def funIterIso (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     (funSpace V₀ (iterSys V₁)).Element ≃o (iterSys (funSpace V₀ V₁)).Element :=
   (funSpaceEquiv V₀ (iterSys V₁)).trans <|
@@ -211,7 +193,6 @@ def funIterIso (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
       (piCongrOrderIso (fun _ : ℕ => (funSpaceEquiv V₀ V₁).symm)).trans
         (iterSeqEquiv (funSpace V₀ V₁)).symm
 
-/-- **Exercise 3.24(ii).** `(𝒟₀ → 𝒟₁^∞) ≅ (𝒟₀ → 𝒟₁)^∞`. -/
 theorem funIter_isomorphic : funSpace V₀ (iterSys V₁) ≅ᴰ iterSys (funSpace V₀ V₁) :=
   ⟨funIterIso V₀ V₁⟩
 end
@@ -237,9 +218,6 @@ variable {α β γ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
-/-- **Exercise 3.24(iv) (Scott 1981, PRG-19).** The *copairing* `[a, b] : 𝒟₀ + 𝒟₁ → 𝒟₂`: a left copy
-`0X` is routed through `a`, a right copy `1Y` through `b`, and the basepoint `Λ` to `⊥` (so `Λ`
-relates only to `Δ₂`). -/
 def copair (a : ApproximableMap V₀ V₂) (b : ApproximableMap V₁ V₂) :
     ApproximableMap (sum V₀ V₁ h₀ h₁) V₂ where
   rel W Z := (sum V₀ V₁ h₀ h₁).mem W ∧ V₂.mem Z ∧
@@ -292,21 +270,16 @@ def copair (a : ApproximableMap V₀ V₂) (b : ApproximableMap V₁ V₂) :
     (copair (h₀ := h₀) (h₁ := h₁) a b).rel W Z ↔ (sum V₀ V₁ h₀ h₁).mem W ∧ V₂.mem Z ∧
       (Z = V₂.master ∨ (∃ X, W = inj₀ X ∧ a.rel X Z) ∨ (∃ Y, W = inj₁ Y ∧ b.rel Y Z)) := Iff.rfl
 
-/-- The canonical comparison `Hom(𝒟₀+𝒟₁, 𝒟₂) → Hom(𝒟₀,𝒟₂) × Hom(𝒟₁,𝒟₂)`, `h ↦ (h∘in₀, h∘in₁)`. -/
 def copairProj (h : ApproximableMap (sum V₀ V₁ h₀ h₁) V₂) :
     ApproximableMap V₀ V₂ × ApproximableMap V₁ V₂ :=
   (h.comp inMap₀, h.comp inMap₁)
 
-/-- A product neighbourhood over non-empty factors is non-empty. -/
 theorem prod_mem_nonempty (hn₀ : ∀ X, V₀.mem X → X.Nonempty) (_hn₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
     (W : Set (α ⊕ β)) (hW : (prod V₀ V₁).mem W) : W.Nonempty := by
   obtain ⟨X, Y, hX, _, rfl⟩ := hW
   obtain ⟨a, ha⟩ := hn₀ X hX
   exact ⟨Sum.inl a, mem_prodNbhd_inl.mpr ha⟩
 
-/-- **Exercise 3.24(iii) (Scott 1981, PRG-19).** The canonical *distribution* approximable map
-`(𝒟₀ × 𝒟₁) + (𝒟₀ × 𝒟₂) → 𝒟₀ × (𝒟₁ + 𝒟₂)`, `inᵢ⟨x, u⟩ ↦ ⟨x, inᵢ u⟩`. (This direction always exists;
-the reverse map / isomorphism does not, since the left side has an element `⟨x, ⊥⟩` for each `x`.) -/
 def distribMap (hn₀ : ∀ X, V₀.mem X → X.Nonempty) (hn₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
     (hn₂ : ∀ Z, V₂.mem Z → Z.Nonempty) :
     ApproximableMap
@@ -316,7 +289,6 @@ def distribMap (hn₀ : ∀ X, V₀.mem X → X.Nonempty) (hn₁ : ∀ Y, V₁.m
     (paired (proj₀ V₀ V₁) ((inMap₀ (h₀ := hn₁) (h₁ := hn₂)).comp (proj₁ V₀ V₁)))
     (paired (proj₀ V₀ V₂) ((inMap₁ (h₀ := hn₁) (h₁ := hn₂)).comp (proj₁ V₀ V₂)))
 
-/-- **Exercise 3.24(iv) (Scott 1981, PRG-19).** `[a, b] ∘ in₀ = a`. -/
 theorem copair_comp_inMap₀ (a : ApproximableMap V₀ V₂) (b : ApproximableMap V₁ V₂) :
     (copair (h₀ := h₀) (h₁ := h₁) a b).comp inMap₀ = a := by
   apply ApproximableMap.ext
@@ -332,7 +304,6 @@ theorem copair_comp_inMap₀ (a : ApproximableMap V₀ V₂) (b : ApproximableMa
       Or.inr (Or.inl ⟨X, a.rel_dom hf, rfl⟩), a.rel_cod hf,
       Or.inr (Or.inl ⟨X, rfl, hf⟩)⟩
 
-/-- **Exercise 3.24(iv) (Scott 1981, PRG-19).** `[a, b] ∘ in₁ = b`. -/
 theorem copair_comp_inMap₁ (a : ApproximableMap V₀ V₂) (b : ApproximableMap V₁ V₂) :
     (copair (h₀ := h₀) (h₁ := h₁) a b).comp inMap₁ = b := by
   apply ApproximableMap.ext
@@ -348,9 +319,6 @@ theorem copair_comp_inMap₁ (a : ApproximableMap V₀ V₂) (b : ApproximableMa
       Or.inr (Or.inr ⟨Y, b.rel_dom hg, rfl⟩), b.rel_cod hg,
       Or.inr (Or.inr ⟨Y, rfl, hg⟩)⟩
 
-/-- **Exercise 3.24(iv) (Scott 1981, PRG-19).** `(𝒟₀→𝒟₂) × (𝒟₁→𝒟₂)` is a **retract** of
-`(𝒟₀+𝒟₁) → 𝒟₂`: the copairing is a section of `h ↦ (h∘in₀, h∘in₁)`. (It is *not* an isomorphism: the
-value of a map on the basepoint `Λ` is not recoverable from its restrictions to the two copies.) -/
 theorem copairProj_copair (a : ApproximableMap V₀ V₂) (b : ApproximableMap V₁ V₂) :
     copairProj (h₀ := h₀) (h₁ := h₁) (copair a b) = (a, b) := by
   show ((copair (h₀ := h₀) (h₁ := h₁) a b).comp inMap₀,

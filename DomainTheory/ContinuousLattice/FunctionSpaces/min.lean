@@ -13,7 +13,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -24,7 +23,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace Proposition313
 
-/-- **Scott 1972, Proposition 3.13.** `min : [D → D] → D` sends `f` to its least value `f(⊥)`. -/
 noncomputable def min : ScottMap (ScottMap D D) D :=
   ⟨fun f => (f : D → D) ⊥, continuous_of_preservesDirectedSup (by
     intro F _ _

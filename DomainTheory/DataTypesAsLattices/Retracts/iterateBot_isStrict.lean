@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.iterates_areRetracts
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Strictness of all Kleene approximants of a strictness-preserving
-retract functor. -/
 theorem iterateBot_isStrict {F : Pomega → Pomega}
     (hret : ∀ a, Retract a → Retract (F a))
     (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a)) :

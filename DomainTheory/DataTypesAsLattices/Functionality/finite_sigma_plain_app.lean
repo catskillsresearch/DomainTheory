@@ -8,12 +8,9 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z
 public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_app
 
-
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem finite_sigma_plain_app (p q m : ℕ) :
     funOf

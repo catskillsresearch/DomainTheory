@@ -20,7 +20,6 @@ namespace InfoSysToIdealCompletion
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- Bottom, as a finite element. -/
 def botFinite : FiniteElement A := ⟨A.botElement, isFinite_bot A⟩
 
 end InfoSysToIdealCompletion

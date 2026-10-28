@@ -11,23 +11,15 @@ public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-
-/-- **Scott 1972, Proposition 3.14.** For a continuous lattice `D` there is a uniquely determined
-continuous mapping `fix : [D → D] → D` such that `f (fix f) = fix f` for all `f`, and `fix f ⊑ x`
-whenever `f x ⊑ x`. Existence and continuity are `Proposition314.fixMap`; the defining equations are
-`fix_eq`/`fix_le`; uniqueness (any operator with these two properties agrees with `fix`) is
-`fix_unique`. -/
 theorem proposition_3_14 (_hD : ContinuousLattice D) :
     ∃ Fix : ScottMap (ScottMap D D) D,
       (∀ f : ScottMap D D, (f : D → D) (Fix f) = Fix f)

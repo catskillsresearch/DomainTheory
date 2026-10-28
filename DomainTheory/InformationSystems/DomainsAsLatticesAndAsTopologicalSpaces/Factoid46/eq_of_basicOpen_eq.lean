@@ -12,7 +12,6 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -21,8 +20,6 @@ namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-
-/-- **T₀:** elements with the same basic-open neighborhoods are equal. -/
 theorem eq_of_basicOpen_eq (A : InfoSys α) {x y : A.Element}
     (h : ∀ u : Finset α, x ∈ A.basicOpen u ↔ y ∈ A.basicOpen u) : x = y := by
   refine le_antisymm ?_ ?_

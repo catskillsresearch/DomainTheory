@@ -13,7 +13,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.i
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65.approxMap_to_unit_eq_const
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive

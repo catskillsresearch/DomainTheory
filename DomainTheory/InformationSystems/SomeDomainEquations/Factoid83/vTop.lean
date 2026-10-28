@@ -14,7 +14,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-/-- Top / rogue `∇`. -/
 def vTop : VToken := .top
 
 end InfoSys

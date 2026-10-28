@@ -22,7 +22,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace ScottMap
 
-/-- The chosen strict pointwise order is `≤ ∧ ¬ ≥`. -/
 theorem lt_iff_le_not_ge' {D : Type u} {D' : Type v}
     [CompleteLattice D] [CompleteLattice D'] (f g : ScottMap D D') :
     ScottMap.lt f g ↔

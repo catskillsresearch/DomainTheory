@@ -26,9 +26,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 4.1 (The lattice theorem).**
-Fixed points of a continuous function form a complete lattice under `⊆`;
-those of a retract form a continuous lattice. -/
 theorem theorem_4_1 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     (∀ A : Set Pomega, A ⊆ Fixpoints f →
       gfpBelow f (⋂₀ A) ∈ Fixpoints f ∧
@@ -48,10 +45,6 @@ theorem theorem_4_1 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     · intro x
       exact ⟨retractBasis.directedSubset ha x, retractBasis.eq_sUnion ha x⟩
 
-/-- **Scott 1976, Theorem 4.1, continuous-lattice half.**
-The finite-image points form a directed way-below basis for every point in
-the range of a retract. Stated with subset directedness so the compared
-type does not mention a `CompleteLattice` instance. -/
 theorem theorem_4_1.continuous {a : Pomega} (ha : Retract a) :
     ∀ x : Fixpoints (funOf a),
       DirectedSubset (retractBasis a x) ∧

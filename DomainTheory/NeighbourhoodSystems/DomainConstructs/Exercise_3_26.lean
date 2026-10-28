@@ -15,10 +15,8 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 section
 variable {α : Type*}
 
-/-- The truth domain `T` of Example 1.2 (neighbourhoods `{Δ, {0}, {1}}`). -/
 abbrev TD : NeighborhoodSystem Example12.Token := Example12.neighborhoodSystem
 
-/-- A `T`-neighbourhood contained in `{1}` is `{1}`. -/
 theorem Tmem_eq_one {C : Set Example12.Token} (hC : Example12.mem C) (h : C ⊆ Example12.one) :
     C = Example12.one := by
   rcases (Example12.mem_iff C).mp hC with rfl | rfl | rfl
@@ -27,7 +25,6 @@ theorem Tmem_eq_one {C : Set Example12.Token} (hC : Example12.mem C) (h : C ⊆ 
       (by simp [Example12.one])
   · rfl
 
-/-- A `T`-neighbourhood contained in `{0}` is `{0}` (the other two, `Δ` and `{1}`, are not). -/
 theorem Tmem_eq_zero {C : Set Example12.Token} (hC : Example12.mem C) (h : C ⊆ Example12.zero) :
     C = Example12.zero := by
   rcases (Example12.mem_iff C).mp hC with rfl | rfl | rfl
@@ -36,12 +33,6 @@ theorem Tmem_eq_zero {C : Set Example12.Token} (hC : Example12.mem C) (h : C ⊆
   · exact absurd (h (by simp [Example12.one] : (1 : Example12.Token) ∈ Example12.one))
       (by simp [Example12.zero])
 
-/-- Scott's guard for `cond`, phrased with explicit equalities on the truth component
-`C = inl⁻¹ W`. With `X = inl⁻¹ inr⁻¹ W` and `Y = inr⁻¹ inr⁻¹ W`:
-
-* `C = {0}` (`true`):  `X ⊆ Z`;
-* `C = {1}` (`false`): `Y ⊆ Z`;
-* `C = Δ` (`⊥`):       `Δ_D ⊆ Z`. -/
 def condGuard (V : NeighborhoodSystem α) (W : Set (Example12.Token ⊕ (α ⊕ α))) (Z : Set α) : Prop :=
   (Sum.inl ⁻¹' W = Example12.zero ∧ Sum.inl ⁻¹' (Sum.inr ⁻¹' W) ⊆ Z) ∨
   (Sum.inl ⁻¹' W = Example12.one ∧ Sum.inr ⁻¹' (Sum.inr ⁻¹' W) ⊆ Z) ∨
@@ -52,7 +43,6 @@ section
 variable {α : Type*}
 variable (V : NeighborhoodSystem α)
 
-/-- The three components `C, X, Y` of an input neighbourhood are themselves neighbourhoods. -/
 theorem cond_components {W : Set (Example12.Token ⊕ (α ⊕ α))}
     (hW : (prod TD (prod V V)).mem W) :
     Example12.mem (Sum.inl ⁻¹' W) ∧
@@ -116,7 +106,6 @@ theorem condGuard_zero {W : Set (Example12.Token ⊕ (α ⊕ α))} {Z : Set α} 
   · exact absurd (hC.symm.trans hC') zero_ne_one
   · exact absurd (hC.symm.trans hC') zero_ne_master
 
-/-- **Exercise 3.26 (Scott 1981, PRG-19).** The conditional operator `cond : T × D × D → D`. -/
 def cond (V : NeighborhoodSystem α) : ApproximableMap (prod TD (prod V V)) V where
   rel W Z := (prod TD (prod V V)).mem W ∧ V.mem Z ∧ condGuard V W Z
   rel_dom h := h.1
@@ -159,7 +148,6 @@ def cond (V : NeighborhoodSystem α) : ApproximableMap (prod TD (prod V V)) V wh
 @[simp] theorem cond_rel {W : Set (Example12.Token ⊕ (α ⊕ α))} {Z : Set α} :
     (cond V).rel W Z ↔ (prod TD (prod V V)).mem W ∧ V.mem Z ∧ condGuard V W Z := Iff.rfl
 
-/-- **Exercise 3.26(iii) (Scott 1981, PRG-19).** `cond(⊥, x, y) = ⊥`. -/
 theorem cond_bot (x y : V.Element) :
     (cond V).toElementMap (pair Example23.botElt (pair x y)) = V.bot := by
   apply Element.ext
@@ -184,7 +172,6 @@ theorem cond_bot (x y : V.Element) :
       V.master_mem, ?_⟩
     exact Or.inr (Or.inr ⟨inl_preimage_prodNbhd _ _, subset_rfl⟩)
 
-/-- **Exercise 3.26(ii) (Scott 1981, PRG-19).** `cond(false, x, y) = y`. -/
 theorem cond_false (x y : V.Element) :
     (cond V).toElementMap (pair Example23.falseElt (pair x y)) = y := by
   apply Element.ext
@@ -208,10 +195,6 @@ theorem cond_false (x y : V.Element) :
     refine Or.inr (Or.inl ⟨inl_preimage_prodNbhd _ _, ?_⟩)
     rw [inr_preimage_prodNbhd, inr_preimage_prodNbhd]
 
-/-- The elementwise action of `cond`, computed at a paired argument `⟨t, ⟨x, y⟩⟩`: a neighbourhood
-`Z` lies in `cond(t, x, y)` iff `t` selects `true` (`{0} ∈ t`) and `Z ∈ x`, or `t` selects `false`
-(`{1} ∈ t`) and `Z ∈ y`, or `Z = Δ_D` (the always-present master). The three defining identities are
-immediate corollaries. -/
 theorem cond_toElementMap_mem (t : TD.Element) (x y : V.Element) {Z : Set α} :
     ((cond V).toElementMap (pair t (pair x y))).mem Z ↔
       (t.mem Example12.zero ∧ x.mem Z) ∨ (t.mem Example12.one ∧ y.mem Z) ∨ Z = V.master := by
@@ -245,7 +228,6 @@ theorem cond_toElementMap_mem (t : TD.Element) (x y : V.Element) {Z : Set α} :
         V.master_mem, ?_⟩
       exact Or.inr (Or.inr ⟨inl_preimage_prodNbhd _ _, subset_rfl⟩)
 
-/-- **Exercise 3.26(i) (Scott 1981, PRG-19).** `cond(true, x, y) = x`. -/
 theorem cond_true (x y : V.Element) :
     (cond V).toElementMap (pair Example23.trueElt (pair x y)) = x := by
   apply Element.ext
@@ -383,12 +365,10 @@ variable {α β : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
-/-- A `T`-neighbourhood containing `Δ` is `Δ`. -/
 theorem Tmem_ge_master {C : Set Example12.Token} (hC : Example12.mem C)
     (h : Example12.master ⊆ C) : C = Example12.master :=
   Set.Subset.antisymm (Example12.neighborhoodSystem.sub_master hC) h
 
-/-- A `T`-neighbourhood containing `{1}` is `{1}` or `Δ`. -/
 theorem Tmem_ge_one {C : Set Example12.Token} (hC : Example12.mem C)
     (h : Example12.one ⊆ C) : C = Example12.one ∨ C = Example12.master := by
   rcases (Example12.mem_iff C).mp hC with rfl | rfl | rfl
@@ -397,7 +377,6 @@ theorem Tmem_ge_one {C : Set Example12.Token} (hC : Example12.mem C)
       (by simp [Example12.zero])
   · exact Or.inl rfl
 
-/-- A `T`-neighbourhood containing `{0}` is `{0}` or `Δ`. -/
 theorem Tmem_ge_zero {C : Set Example12.Token} (hC : Example12.mem C)
     (h : Example12.zero ⊆ C) : C = Example12.zero ∨ C = Example12.master := by
   rcases (Example12.mem_iff C).mp hC with rfl | rfl | rfl
@@ -406,8 +385,6 @@ theorem Tmem_ge_zero {C : Set Example12.Token} (hC : Example12.mem C)
   · exact absurd (h (by simp [Example12.zero] : (0 : Example12.Token) ∈ Example12.zero))
       (by simp [Example12.one])
 
-/-- The embedding `T × D₀ × D₁ → T × S × S` (`S = D₀ + D₁`) that injects the two value slots into
-the sum via `in₀` and `in₁`, leaving the truth slot fixed. -/
 def condSumEmb (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty) :
     ApproximableMap (prod TD (prod V₀ V₁)) (prod TD (prod (sum V₀ V₁ h₀ h₁) (sum V₀ V₁ h₀ h₁))) :=
@@ -415,7 +392,6 @@ def condSumEmb (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (paired ((inMap₀ (h₀ := h₀) (h₁ := h₁)).comp ((proj₀ V₀ V₁).comp (proj₁ TD (prod V₀ V₁))))
       ((inMap₁ (h₀ := h₀) (h₁ := h₁)).comp ((proj₁ V₀ V₁).comp (proj₁ TD (prod V₀ V₁)))))
 
-/-- **Exercise 3.26 (Scott 1981, PRG-19).** The sum-valued conditional `T × D₀ × D₁ → D₀ + D₁`. -/
 def condSum (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty) :
     ApproximableMap (prod TD (prod V₀ V₁)) (sum V₀ V₁ h₀ h₁) :=
@@ -439,8 +415,6 @@ theorem inter_in_zeroset {C C' : Set Example12.Token} (hc : C = Example12.master
   · exact Or.inr (Set.inter_univ _)
   · exact Or.inr (Set.inter_self _)
 
-/-- Scott's guard for `which`: the truth output is `true` (`{0}`/`Δ`) on a left copy `0X`, `false`
-(`{1}`/`Δ`) on a right copy `1Y`, and `⊥` (`Δ`) on the basepoint master. -/
 def whichGuard (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (W : Set (Option (α ⊕ β))) (C : Set Example12.Token) : Prop :=
   ((∃ X, V₀.mem X ∧ W = inj₀ X) ∧ (C = Example12.master ∨ C = Example12.zero)) ∨
@@ -476,7 +450,6 @@ theorem whichGuard_right {W : Set (Option (α ⊕ β))} {C : Set Example12.Token
   · refine absurd (hW.symm.trans hWsm) ?_
     intro h; exact none_mem_inj₁ (h ▸ none_mem_sumMaster)
 
-/-- **Exercise 3.26 (Scott 1981, PRG-19).** The discriminator `which : D₀ + D₁ → T`. -/
 def whichMap (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty) :
     ApproximableMap (sum V₀ V₁ h₀ h₁) TD where
@@ -537,25 +510,21 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α β : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-/- concordance: source L1585 EXERCISE 3.26 conditional combinator -/
-/-- **Exercise 3.26.** `condSum(⊥, x, y) = ⊥`. -/
+
 theorem condSum_bot (x : V₀.Element) (y : V₁.Element) :
     (condSum V₀ V₁ h₀ h₁).toElementMap (pair Example23.botElt (pair x y)) = (sum V₀ V₁ h₀ h₁).bot := by
   rw [condSum, toElementMap_comp, condSumEmb_toElementMap, cond_bot]
 
-/-- **Exercise 3.26.** `condSum(false, x, y) = in₁(y)`. -/
 theorem condSum_false (x : V₀.Element) (y : V₁.Element) :
     (condSum V₀ V₁ h₀ h₁).toElementMap (pair Example23.falseElt (pair x y))
       = (inMap₁ (h₀ := h₀) (h₁ := h₁)).toElementMap y := by
   rw [condSum, toElementMap_comp, condSumEmb_toElementMap, cond_false]
 
-/-- **Exercise 3.26.** `condSum(true, x, y) = in₀(x)`. -/
 theorem condSum_true (x : V₀.Element) (y : V₁.Element) :
     (condSum V₀ V₁ h₀ h₁).toElementMap (pair Example23.trueElt (pair x y))
       = (inMap₀ (h₀ := h₀) (h₁ := h₁)).toElementMap x := by
   rw [condSum, toElementMap_comp, condSumEmb_toElementMap, cond_true]
 
-/-- `∅` is never a sum-neighbourhood (every neighbourhood is non-empty). -/
 theorem not_sum_mem_empty : ¬ (sum V₀ V₁ h₀ h₁).mem ∅ := by
   rintro (h | ⟨X, hX, h⟩ | ⟨Y, hY, h⟩)
   · exact absurd (h.symm ▸ none_mem_sumMaster) (Set.notMem_empty _)
@@ -564,8 +533,6 @@ theorem not_sum_mem_empty : ¬ (sum V₀ V₁ h₀ h₁).mem ∅ := by
   · obtain ⟨b, hb⟩ := inj₁_nonempty (h₁ Y hY)
     exact absurd (h ▸ hb) (Set.notMem_empty _)
 
-/-- On a "left" element (one reaching into the left copy), the round-trip `in₀ ∘ out₀` is the
-identity. -/
 theorem inMap₀_outMap₀_eq_of_left {x : (sum V₀ V₁ h₀ h₁).Element}
     (hL : ∃ X, V₀.mem X ∧ x.mem (inj₀ X)) :
     (inMap₀ (h₀ := h₀) (h₁ := h₁)).toElementMap ((outMap₀ (h₀ := h₀) (h₁ := h₁)).toElementMap x) = x := by
@@ -574,7 +541,7 @@ theorem inMap₀_outMap₀_eq_of_left {x : (sum V₀ V₁ h₀ h₁).Element}
   intro Z
   constructor
   · rintro ⟨X, ⟨W, hxW, _, _, hLWX⟩, _, hSZ, hinjXZ⟩
-    -- W ∩ inj₀ X₀ is a left copy inj₀ X₁ ⊆ Z, and lies in x
+
     have hxWX₀ : x.mem (W ∩ inj₀ X₀) := x.inter_mem hxW hxX₀
     obtain ⟨X₁, _, hX₁eq⟩ := mem_subset_inj₀ (x.sub hxWX₀) Set.inter_subset_right
     have hX₁X : X₁ ⊆ X := by
@@ -586,19 +553,18 @@ theorem inMap₀_outMap₀_eq_of_left {x : (sum V₀ V₁ h₀ h₁).Element}
     exact x.up_mem hxWX₀ hSZ this
   · intro hxZ
     rcases x.sub hxZ with rfl | ⟨X', hX', rfl⟩ | ⟨Y', hY', rfl⟩
-    · -- Z = sumMaster
+    ·
       exact ⟨V₀.master, ⟨sumMaster V₀ V₁, x.master_mem, (sum V₀ V₁ h₀ h₁).master_mem,
         V₀.master_mem, (leftPart_sumMaster V₀ V₁).subset⟩, V₀.master_mem,
         (sum V₀ V₁ h₀ h₁).master_mem, inj₀_subset_sumMaster V₀.master_mem⟩
-    · -- Z = inj₀ X'
+    ·
       exact ⟨X', ⟨inj₀ X', hxZ, Or.inr (Or.inl ⟨X', hX', rfl⟩), hX', (leftPart_inj₀ V₀ X').subset⟩,
         hX', Or.inr (Or.inl ⟨X', hX', rfl⟩), subset_rfl⟩
-    · -- Z = inj₁ Y' is impossible for a left element
+    ·
       have := x.inter_mem hxX₀ hxZ
       rw [inj₀_inter_inj₁] at this
       exact absurd (x.sub this) not_sum_mem_empty
 
-/-- On a "right" element, the round-trip `in₁ ∘ out₁` is the identity. -/
 theorem inMap₁_outMap₁_eq_of_right {x : (sum V₀ V₁ h₀ h₁).Element}
     (hR : ∃ Y, V₁.mem Y ∧ x.mem (inj₁ Y)) :
     (inMap₁ (h₀ := h₀) (h₁ := h₁)).toElementMap ((outMap₁ (h₀ := h₀) (h₁ := h₁)).toElementMap x) = x := by
@@ -627,7 +593,6 @@ theorem inMap₁_outMap₁_eq_of_right {x : (sum V₀ V₁ h₀ h₁).Element}
     · exact ⟨Y', ⟨inj₁ Y', hxZ, Or.inr (Or.inr ⟨Y', hY', rfl⟩), hY', (rightPart_inj₁ V₁ Y').subset⟩,
         hY', Or.inr (Or.inr ⟨Y', hY', rfl⟩), subset_rfl⟩
 
-/-- Trichotomy for a sum-element: it reaches the left copy, or the right copy, or is `⊥`. -/
 theorem sum_element_trichotomy (x : (sum V₀ V₁ h₀ h₁).Element) :
     (∃ X, V₀.mem X ∧ x.mem (inj₀ X)) ∨ (∃ Y, V₁.mem Y ∧ x.mem (inj₁ Y)) ∨
       (∀ W, x.mem W → W = (sum V₀ V₁ h₀ h₁).master) := by
@@ -642,7 +607,6 @@ theorem sum_element_trichotomy (x : (sum V₀ V₁ h₀ h₁).Element) :
   · exact absurd ⟨X, hX, hxW⟩ hL
   · exact absurd ⟨Y, hY, hxW⟩ hR
 
-/-- `which(x)` selects `false` (`{1} ∈ which x`) exactly when `x` reaches into the right copy. -/
 theorem which_mem_one {x : (sum V₀ V₁ h₀ h₁).Element} :
     ((whichMap V₀ V₁ h₀ h₁).toElementMap x).mem Example12.one
       ↔ ∃ Y, V₁.mem Y ∧ x.mem (inj₁ Y) := by
@@ -658,7 +622,6 @@ theorem which_mem_one {x : (sum V₀ V₁ h₀ h₁).Element} :
     exact ⟨inj₁ Y, hWx, Or.inr (Or.inr ⟨Y, hY, rfl⟩), Example12.mem_one,
       Or.inr (Or.inl ⟨⟨Y, hY, rfl⟩, Or.inr rfl⟩)⟩
 
-/-- `which(x)` selects `true` (`{0} ∈ which x`) exactly when `x` reaches into the left copy. -/
 theorem which_mem_zero {x : (sum V₀ V₁ h₀ h₁).Element} :
     ((whichMap V₀ V₁ h₀ h₁).toElementMap x).mem Example12.zero
       ↔ ∃ X, V₀.mem X ∧ x.mem (inj₀ X) := by
@@ -674,8 +637,6 @@ theorem which_mem_zero {x : (sum V₀ V₁ h₀ h₁).Element} :
     exact ⟨inj₀ X, hWx, Or.inr (Or.inl ⟨X, hX, rfl⟩), Example12.mem_zero,
       Or.inl ⟨⟨X, hX, rfl⟩, Or.inr rfl⟩⟩
 
-/-- **Exercise 3.26 (Scott 1981, PRG-19).** Scott's identity for the discriminator:
-`cond(which x, in₀(out₀ x), in₁(out₁ x)) = x` for every `x ∈ |D₀ + D₁|`. -/
 theorem cond_which (x : (sum V₀ V₁ h₀ h₁).Element) :
     (cond (sum V₀ V₁ h₀ h₁)).toElementMap
         (pair ((whichMap V₀ V₁ h₀ h₁).toElementMap x)

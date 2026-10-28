@@ -18,7 +18,6 @@ open ApproximableMap
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
-/-- Uncurried composition: `((B→C)×(A→B)) × A → C`. -/
 def compOpUncurry : ApproximableMap
     (productSystem (productSystem (functionSystem B C) (functionSystem A B)) A) C :=
   let Q := productSystem (functionSystem B C) (functionSystem A B)
@@ -114,6 +113,5 @@ theorem compOpUncurry.toElement (g : ApproximableMap B C) (f : ApproximableMap A
   rw [houter, applyMap_toElement, element_toApproxMap.approxMap_toElement]
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

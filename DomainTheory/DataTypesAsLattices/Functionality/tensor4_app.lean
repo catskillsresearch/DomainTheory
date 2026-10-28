@@ -11,9 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tensor4_map_isScott
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem tensor4_app (a b c d u : Pomega) :
     funOf (tensor4 a b c d) u =

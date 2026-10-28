@@ -33,10 +33,8 @@ namespace InfoSysToNeighborhood
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-
 end InfoSysToNeighborhood
 
-/-- Blueprint-facing name for the 1982 → 1980 basic-open neighbourhood system. -/
 abbrev infoSys_to_neighborhoodSystem {α : Type*} [DecidableEq α] (A : InfoSys α) :
     NeighborhoodSystem A.Element :=
   InfoSysToNeighborhood.toNeighborhoodSystem A

@@ -28,7 +28,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Raw least fixed point of the (4.43) operator. -/
 def Hfun : Pomega := fix HF
 
 namespace Hfun

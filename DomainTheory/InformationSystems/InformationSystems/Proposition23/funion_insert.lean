@@ -5,7 +5,6 @@ public import DomainTheory.InformationSystems.InformationSystems.Definition22
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -14,7 +13,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- `u ∪' insert a t = insert a (u ∪' t)`. -/
 theorem funion_insert (u : Finset α) (a : α) (t : Finset α) :
     u ∪' insert a t = insert a (u ∪' t) := by
   ext x

@@ -11,7 +11,6 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.completeLatticePreo
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The way-below relation, phrased using directed suprema. -/
 def WayBelow {α : Type u} [CompleteLattice α] (x y : α) : Prop :=
   ∀ s : Set α, @DirectedSet α completeLatticePreorder s →
     @LE.le α completeLatticeLE y (@sSup α completeLatticeSupSet s) →

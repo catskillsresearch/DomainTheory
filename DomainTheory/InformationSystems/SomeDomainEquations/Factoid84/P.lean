@@ -14,8 +14,6 @@ open DomainTheory.InformationSystems.Constructive
 open InfoSys
 open ApproximableMap
 
-/-- **Powerset information system.** Tokens `ℕ`, bot `0`, every finite set
-consistent, minimal entailment. -/
 def P : InfoSys ℕ where
   bot := 0
   Con := Set.univ

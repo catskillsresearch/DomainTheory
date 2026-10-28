@@ -17,7 +17,6 @@ variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 namespace ApproximableMap
 
-/-- Least fixed point of an approximable endomap, as an element. -/
 def fixElement (f : ApproximableMap A A) : A.Element :=
   (fixMap A).toElement (approxMap_toElement A A f)
 

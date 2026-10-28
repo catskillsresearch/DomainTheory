@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Isolated (compact) elements of `Pω` are the finite sets `e n`. -/
 class Isolated (x : Pomega) : Prop where
   out : ∃ n, x = e n
 

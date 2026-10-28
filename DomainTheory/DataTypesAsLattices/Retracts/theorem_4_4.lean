@@ -13,14 +13,11 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 4.4 (ii), pairing form.** A pair-as-function
-projects to its components. -/
 theorem theorem_4_4.ii (x y : Pomega) :
     funOf (pairSeq x y) (ofNat 0) = x ∧
       funOf (pairSeq x y) (ofNat 1) = y :=
   ⟨seq2.zero x y, seq2.one x y⟩
 
-/-- **Scott 1976, Theorem 4.4 (The product theorem), core.** -/
 theorem theorem_4_4 :
     (∀ x y, funOf (pairSeq x y) (ofNat 0) = x ∧
       funOf (pairSeq x y) (ofNat 1) = y) ∧

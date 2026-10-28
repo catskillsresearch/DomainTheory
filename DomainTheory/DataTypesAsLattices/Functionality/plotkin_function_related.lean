@@ -20,12 +20,9 @@ public import DomainTheory.DataTypesAsLattices.Functionality.finite_sigma_union_
 public import DomainTheory.DataTypesAsLattices.Functionality.finite_sigma_plain_app
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
-
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem plotkin_function_related (p q : ℕ) :
     (arrowE

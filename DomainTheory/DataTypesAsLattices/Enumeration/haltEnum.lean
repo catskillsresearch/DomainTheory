@@ -16,7 +16,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Shifted enumerator of the halting set: `0` is the miss marker. -/
 def haltEnum (t : ℕ) : ℕ :=
   bif (evaln t.unpair.2 (Denumerable.ofNat Code t.unpair.1) 0).isSome
     then t.unpair.1 + 1 else 0

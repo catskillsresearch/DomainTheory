@@ -17,8 +17,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- On packed input `(z,n)`, recurse from `f z` with
-step `λy ih. g (pair z (pair y ih))`. -/
 def precTerm : Term :=
   .lam 0
     (.app

@@ -27,12 +27,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (4.25).**
-`curry ∘ ((a ⊗ b) ∘→ c) : ((a ⊗ b) ∘→ c) ∘→ (a ∘→ (b ∘→ c))`. -/
 theorem eq_4_25 {a b c : Pomega}
     (ha : Retract a) (hb : Retract b) (hc : Retract c) :
     typed (comp curryC (arrowR (tensorR a b) c))

@@ -10,7 +10,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -20,13 +19,10 @@ namespace InfoSys
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
 
-
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-
-/-- Uniqueness of pairing (Scott Prop 6.2). -/
 theorem pairMap_unique (f : ApproximableMap C A) (g : ApproximableMap C B)
     (h : ApproximableMap C (productSystem A B))
     (hfst : comp (fstMap A B) h = f) (hsnd : comp (sndMap A B) h = g) :

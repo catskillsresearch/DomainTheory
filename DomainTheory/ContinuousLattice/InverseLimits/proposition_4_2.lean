@@ -19,8 +19,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- **Scott 1972, Proposition 4.2.** Each `j_{∞n} : D_∞ → Dₙ` is a projection of continuous
-lattices, with embedding `i_{n∞} = embInf n`. -/
 noncomputable def proposition_4_2 (n : ℕ) :
     IsContinuousLatticeProjection (D n) (InverseLimit D P) where
   incl := embInf D P n

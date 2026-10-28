@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.6).** The open-set retract. -/
 def openR : Pomega :=
   graph (fun u => {m | ∃ n, e n ⊆ e m ∧ n ∈ u})
 

@@ -7,11 +7,9 @@ public import DomainTheory.ContinuousLattice.Constructions.scottExtend
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_directed
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_nonempty
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
 public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
@@ -19,16 +17,12 @@ open Topology Set
 
 variable {D : Type*} [CompleteLattice D]
 
-
 section InjectiveExtension
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] {E : Type*} [CompleteLattice E]
 
-
 omit [TopologicalSpace X] in
-/-- The extension is Scott-continuous. For a Scott-open `U` and a point `y₀` with `g y₀ ∈ U`, the
-basis lemma gives `a ≪ g y₀` with `↟a ⊆ U`; since `g y₀` is a directed supremum, `a ≪ ⊓ f''(e⁻¹V)`
-for some open `V ∋ y₀`, and that value is `≤ g y'` for every `y' ∈ V`, so `V ⊆ g⁻¹U`. -/
+
 theorem scottExtend_continuous (hE : ContinuousLattice E) (e : X → Y) (f : X → E) :
     @Continuous Y E _ scottTopologicalSpace (scottExtend e f) := by
   let : TopologicalSpace E := scottTopologicalSpace

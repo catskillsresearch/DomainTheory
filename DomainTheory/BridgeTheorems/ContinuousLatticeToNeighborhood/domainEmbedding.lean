@@ -13,11 +13,6 @@ public import Mathlib.Order.UpperLower.Basic
 public import Mathlib.Order.Directed
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
-public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
-public import DomainTheory.ContinuousLattice.WayBelow.sInf_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.isContinuousLattice_iff_isLUB_sInf_nhds
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Filter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter
@@ -42,7 +37,6 @@ variable (hD : ContinuousLattice D)
 
 include hD
 
-/-- Order-embedding into all filters (forgets roundness). -/
 noncomputable def domainEmbedding :
     D ↪o Filter (D := D) where
   toFun := toFilter

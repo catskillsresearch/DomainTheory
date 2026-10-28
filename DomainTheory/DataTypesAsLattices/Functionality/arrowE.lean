@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.mem
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (7.6).** Function space of restricted equivalences. -/
 def arrowE (A B : RestrictedEquiv) : RestrictedEquiv where
   rel := fun f g =>
     f = graph (fun x => funOf f x) ∧

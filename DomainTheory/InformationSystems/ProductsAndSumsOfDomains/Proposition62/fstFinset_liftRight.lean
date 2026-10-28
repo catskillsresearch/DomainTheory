@@ -8,7 +8,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -17,7 +16,6 @@ namespace InfoSys
 
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
-
 
 theorem fstFinset_liftRight (w : Finset β) :
     fstFinset A B (liftRight A B w) ⊆ ({A.bot} : Finset α) := by

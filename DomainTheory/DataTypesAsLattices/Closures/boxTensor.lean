@@ -21,7 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (5.12).** Product of closures. -/
 def boxTensor (a b : Pomega) : Pomega :=
   graph (fun u => squarePair (funOf a (squareFst u)) (funOf b (squareSnd u)))
 
@@ -39,7 +38,6 @@ theorem app (a b u : Pomega) :
       (squarePair.isScottContinuous_right (funOf a x))
       (funOf.isScottContinuous b))
     squareFst.isScottContinuous squareSnd.isScottContinuous) u
-
 
 theorem isRetract {a b : Pomega} (ha : Retract a) (hb : Retract b) :
     Retract (boxTensor a b) := by

@@ -20,7 +20,7 @@ namespace DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-/-- Consistency for `U`: finite `u ⊆ D_U` with `u ⊬_V ∇` (Scott (9)). -/
+
 def UCon (u : Finset UToken) : Prop :=
   ¬ VEnt (uForgetFinset u) .top
 
@@ -33,6 +33,5 @@ theorem UCon.subset {u v : Finset UToken}
   fun h => hu (VEnt_mono (uForgetFinset.mono hv) h)
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

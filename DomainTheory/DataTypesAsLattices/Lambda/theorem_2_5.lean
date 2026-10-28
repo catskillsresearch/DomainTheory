@@ -15,12 +15,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 2.5 (The first recursion theorem).**
-If `u` is the graph of a continuous `f`, then `Y(u) = fix(f)`. -/
 theorem theorem_2_5 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     funOf Ycomb (graph f) = fix f := by
   rw [Ycomb.app]

@@ -10,26 +10,14 @@ open NeighborhoodSystem ApproximableMap
 section
 universe w
 
-/- concordance: source L3849 DEFINITION 6.13 continuity on domains -/
-/-- **Definition 6.13 (Scott 1981, PRG-19), monotone on domains.** A functor `T` is *monotone on
-domains* iff every subdomain relation `D ◁ E` is carried to a subdomain relation `T(D) ◁ T(E)` whose
-projection pair is `(T(i), T(j))` — see `MonotoneAt`. -/
 def MonotoneOnDomains (T : Endofunctor DomainObj.{w}) : Prop :=
   ∀ {α : Type w} {D E : NeighborhoodSystem α} (h : D ◁ E), MonotoneAt T h
 
-/-- The **target-side neighbourhood family** of the image `T(D)` of a subsystem `h : D ◁ E`, viewed
-over `T(E)`'s carrier (using `MonotoneAt.carrier_eq` to transport neighbourhoods of `T(D)` to that
-carrier). This is the data on which "`λD. T(D)` is approximable" is expressed. -/
 def targetFam (T : Endofunctor DomainObj.{w}) (hmono : MonotoneOnDomains T)
     {α : Type w} {D E : NeighborhoodSystem α} (h : D ◁ E) :
     Set (Set (T.obj ⟨α, E⟩).carrier) :=
   {Y | (T.obj ⟨α, D⟩).sys.mem ((hmono h).carrier_eq ▸ Y)}
 
-/-- **Definition 6.13 (Scott 1981, PRG-19), continuous on domains.** A monotone functor `T` is
-*continuous on domains* iff `λD. T(D) : {D ∣ D ◁ E} → {D' ∣ D' ◁ T(E)}` is approximable. In the
-neighbourhood framework this is *preservation of directed unions of subsystems*: for any non-empty
-directed family `ℱ` of subsystems of `E` whose union is the subsystem `U` (`hU`), the target-side
-neighbourhood family of `T(U)` is the union of those of the `T(D)` for `D ∈ ℱ`. -/
 def ContinuousOnDomains (T : Endofunctor DomainObj.{w}) : Prop :=
   ∃ hmono : MonotoneOnDomains T,
     ∀ {α : Type w} {E : NeighborhoodSystem α}
@@ -42,16 +30,14 @@ def ContinuousOnDomains (T : Endofunctor DomainObj.{w}) : Prop :=
 end
 
 section
-/-- The **identity functor is monotone on domains**: it fixes objects and maps, so `T(D) ◁ T(E)` is
-just `D ◁ E` and the projection pair is unchanged. -/
+
 theorem monotoneOnDomains_id : MonotoneOnDomains (idEndofunctor DomainObj.{w}) := by
   intro α D E h
   exact ⟨rfl, h, HEq.rfl, HEq.rfl⟩
 end
 
 section
-/-- The **identity functor is continuous on domains**: `targetFam` reduces to the plain neighbourhood
-family, so directed-union preservation is exactly the hypothesis `hU` that `U` is the union. -/
+
 theorem continuousOnDomains_id : ContinuousOnDomains (idEndofunctor DomainObj.{w}) := by
   refine ⟨monotoneOnDomains_id, ?_⟩
   intro α E ℱ hℱ _hne _hdir U hUE hU
@@ -67,12 +53,11 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 open DomainTheory.NeighbourhoodSystems.Exercise510
 
 section
-/-- **An object of the Exercise 6.19 category.** An `∅`-free neighbourhood system over
-`Str = {0,1}*` (`ne`: every neighbourhood is non-empty, Scott's `∅ ∉ 𝒟`). -/
+
 structure ScottSys where
-  /-- The underlying neighbourhood system on `{0,1}*`. -/
+
   sys : NeighborhoodSystem Str
-  /-- `∅ ∉ 𝒟`: every neighbourhood is non-empty. -/
+
   ne : ∀ X, sys.mem X → X.Nonempty
 end
 
@@ -86,15 +71,12 @@ namespace Exercise619
 
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
-/-- **The functor-expression algebra.** A `T(X)` built from constants, the identity, and binary sums
-and products — Scott's closed family of constructs. -/
 inductive FExpr where
   | const : ScottSys → FExpr
   | var : FExpr
   | sum : FExpr → FExpr → FExpr
   | prod : FExpr → FExpr → FExpr
 
-/-- A non-empty `b`-tagged copy can never sit inside a `b'`-tagged copy for `b ≠ b'`. -/
 theorem embBit_not_subset_cross {b b' : Bool} (h : b ≠ b') {X Y : Set Str} (hX : X.Nonempty)
     (hsub : embBit b X ⊆ embBit b' Y) : False := by
   obtain ⟨t, ht⟩ := hX
@@ -108,7 +90,6 @@ end
 section
 namespace Exercise619
 
-/-- The **product object** `𝒟₀ × 𝒟₁` of Part A, repackaged as an object of the category. -/
 def ScottSys.prod (A₀ A₁ : ScottSys) : ScottSys :=
   ⟨prodTok A₀.sys A₁.sys, prodTok_nonempty⟩
 
@@ -120,8 +101,6 @@ namespace Exercise619
 
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
-/-- **`f₀ × f₁`, the action of the product functor on (approximable) maps.** A product
-neighbourhood `{Λ} ∪ 0X ∪ 1Y` is sent to `{Λ} ∪ 0X' ∪ 1Y'` whenever `X f₀ X'` and `Y f₁ Y'`. -/
 def prodMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys) :
     ApproximableMap (A₀.prod A₁).sys (B₀.prod B₁).sys where
   rel W W' := ∃ X Y X' Y', f₀.rel X X' ∧ f₁.rel Y Y' ∧
@@ -148,8 +127,6 @@ def prodMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMa
     obtain ⟨hsX', hsY'⟩ := prodTokNbhd_subset_iff.mp hZZ'
     exact ⟨X₂, Y₂, X'₃, Y'₃, f₀.mono h0 hsX hsX' hX₂ hX'₃, f₁.mono h1 hsY hsY' hY₂ hY'₃, rfl, rfl⟩
 
-/-- **The one-neighbourhood system `{Γ}`** over `{0,1}*`: its only neighbourhood is `Γ` itself, and
-its master (token set) is `Γ`. It is `∅`-free precisely because `Γ` is non-empty. -/
 def singletonSys (Γ : Set Str) (h : Γ.Nonempty) : ScottSys where
   sys :=
     { mem := fun X => X = Γ
@@ -169,7 +146,6 @@ end
 section
 namespace Exercise619
 
-/-- The **sum object** `𝒟₀ + 𝒟₁` of Part A, repackaged as an object of the category. -/
 def ScottSys.sum (A₀ A₁ : ScottSys) : ScottSys :=
   ⟨sumTok A₀.sys A₁.sys A₀.ne A₁.ne, sumTok_nonempty⟩
 
@@ -181,39 +157,28 @@ namespace Exercise619
 
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
-/-- **`Λ ∈ tok(C)` for every constant `C` occurring in `T`.** This is what keeps the bottom `{Λ}` and
-the whole Kleene chain inside the domain `{Γ ∣ Λ ∈ Γ}`; sums and products satisfy it for free. -/
 def FExpr.RootedConst : FExpr → Prop
   | .const C => ([] : Str) ∈ C.sys.master
   | .var => True
   | .sum a b => a.RootedConst ∧ b.RootedConst
   | .prod a b => a.RootedConst ∧ b.RootedConst
 
-/-- **The token-level master recursion.** `mFun T Γ` computes `tok(T({Γ}))` purely from `Γ`, without
-touching the neighbourhood data of `{Γ}` (`mFun_eq_master`): constants are constant, the identity
-returns `Γ`, and both sum and product wrap the two component token sets with the tags `0,1` under a
-common root `Λ` (`sumTokMaster = prodTokNbhd` agree on masters). -/
 def mFun : FExpr → Set Str → Set Str
   | .const C, _ => C.sys.master
   | .var, Γ => Γ
   | .sum T₀ T₁, Γ => insert ([] : Str) (embBit false (mFun T₀ Γ) ∪ embBit true (mFun T₁ Γ))
   | .prod T₀ T₁, Γ => insert ([] : Str) (embBit false (mFun T₀ Γ) ∪ embBit true (mFun T₁ Γ))
 
-/-- The **Kleene iteration** `mFunⁿ({Λ})` whose union is the least fixed point above `{Λ}`. -/
 def mIter (T : FExpr) : ℕ → Set Str
   | 0 => {([] : Str)}
   | n + 1 => mFun T (mIter T n)
 
-/-- **The action of `T` on objects.** -/
 def FExpr.obj : FExpr → ScottSys → ScottSys
   | .const D, _ => D
   | .var, X => X
   | .sum T₀ T₁, X => (T₀.obj X).sum (T₁.obj X)
   | .prod T₀ T₁, X => (T₀.obj X).prod (T₁.obj X)
 
-/-- **`f₀ + f₁`, the action of the sum functor on (approximable) maps.** It carries the master to the
-master (so it is strict), a left copy `0X` to `0X'` whenever `X f₀ X'`, and a right copy `1Y` to
-`1Y'` whenever `Y f₁ Y'`. -/
 def sumMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys) :
     ApproximableMap (A₀.sum A₁).sys (B₀.sum B₁).sys where
   rel W W' :=
@@ -253,9 +218,9 @@ def sumMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap
   mono := by
     rintro W W'' Z Z' h hWW hZZ' hW'' hZ'
     rcases h with ⟨-, rfl⟩ | ⟨X, X', hrel, rfl, rfl⟩ | ⟨Y, Y', hrel, rfl, rfl⟩
-    · -- output was the master; a blunter neighbourhood must again be the master.
+    ·
       exact Or.inl ⟨hW'', Set.Subset.antisymm ((B₀.sum B₁).sys.sub_master hZ') hZZ'⟩
-    · -- input `0X`, output `0X'`. The sharper input `W''` and blunter output `Z'`.
+    ·
       rcases hZ' with rfl | ⟨X₃, hX₃, rfl⟩ | ⟨Y₃, hY₃, rfl⟩
       · exact Or.inl ⟨hW'', rfl⟩
       · rcases hW'' with rfl | ⟨X₂, hX₂, rfl⟩ | ⟨Y₂, hY₂, rfl⟩
@@ -265,7 +230,7 @@ def sumMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap
         · exact absurd hWW (fun hsub => embBit_not_subset_cross (by decide) (A₁.ne Y₂ hY₂) hsub)
       · exact absurd hZZ' (fun hsub =>
           embBit_not_subset_cross (by decide) (B₀.ne X' (f₀.rel_cod hrel)) hsub)
-    · -- input `1Y`, output `1Y'`.
+    ·
       rcases hZ' with rfl | ⟨X₃, hX₃, rfl⟩ | ⟨Y₃, hY₃, rfl⟩
       · exact Or.inl ⟨hW'', rfl⟩
       · exact absurd hZZ' (fun hsub =>
@@ -276,8 +241,6 @@ def sumMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap
         · exact Or.inr (Or.inr ⟨Y₂, Y₃,
             f₁.mono hrel (embBit_subset.mp hWW) (embBit_subset.mp hZZ') hY₂ hY₃, rfl, rfl⟩)
 
-/-- **The action of `T` on (approximable) maps.** Constants act by the identity, the identity functor
-acts by `f` itself, and sums/products act by the bifunctorial combinators `sumMapTok`/`prodMapTok`. -/
 def FExpr.map : (T : FExpr) → {X Y : ScottSys} → ApproximableMap X.sys Y.sys →
     ApproximableMap (T.obj X).sys (T.obj Y).sys
   | .const D, _, _, _ => idMap D.sys
@@ -285,10 +248,8 @@ def FExpr.map : (T : FExpr) → {X Y : ScottSys} → ApproximableMap X.sys Y.sys
   | .sum T₀ T₁, _, _, f => sumMapTok (T₀.map f) (T₁.map f)
   | .prod T₀ T₁, _, _, f => prodMapTok (T₀.map f) (T₁.map f)
 
-/-- **`tok(𝒟)`** — the underlying set of tokens of a system, i.e. its master neighbourhood `Δ`. -/
 def ScottSys.tok (D : ScottSys) : Set Str := D.sys.master
 
-/-- `mFun T Γ` is exactly the token set `tok(T({Γ})) = (T.obj {Γ}).sys.master`. -/
 theorem mFun_eq_master : (T : FExpr) → {Γ : Set Str} → (h : Γ.Nonempty) →
     mFun T Γ = (T.obj (singletonSys Γ h)).sys.master
   | .const _, _, _ => rfl
@@ -304,7 +265,6 @@ theorem mFun_eq_master : (T : FExpr) → {Γ : Set Str} → (h : Γ.Nonempty) �
             ∪ embBit true ((T₁.obj (singletonSys Γ h)).sys.master))
       rw [mFun_eq_master T₀ h, mFun_eq_master T₁ h]
 
-/-- Monotonicity of the tagged-union shape shared by sum and product. -/
 theorem insertTag_mono {p q p' q' : Set Str} (hp : p ⊆ p') (hq : q ⊆ q') :
     insert ([] : Str) (embBit false p ∪ embBit true q)
       ⊆ insert ([] : Str) (embBit false p' ∪ embBit true q') := by
@@ -315,7 +275,6 @@ theorem insertTag_mono {p q p' q' : Set Str} (hp : p ⊆ p') (hq : q ⊆ q') :
   · obtain ⟨w', rfl, hw'⟩ := hw
     exact Or.inr (Or.inr ⟨w', rfl, hq hw'⟩)
 
-/-- **`λΓ. tok(T({Γ}))` is monotone on the domain.** -/
 theorem mFun_mono (T : FExpr) {Γ Γ' : Set Str} (h : Γ ⊆ Γ') : mFun T Γ ⊆ mFun T Γ' := by
   induction T with
   | const C => exact subset_rfl
@@ -323,7 +282,6 @@ theorem mFun_mono (T : FExpr) {Γ Γ' : Set Str} (h : Γ ⊆ Γ') : mFun T Γ �
   | sum T₀ T₁ ih₀ ih₁ => exact insertTag_mono ih₀ ih₁
   | prod T₀ T₁ ih₀ ih₁ => exact insertTag_mono ih₀ ih₁
 
-/-- Continuity (full additivity) of the tagged-union shape shared by sum and product. -/
 theorem insertTag_continuous {ℱ : Set (Set Str)} {U : Set Str} (hne : ℱ.Nonempty)
     {p q : Set Str → Set Str}
     (hp : ∀ w, w ∈ p U ↔ ∃ Γ ∈ ℱ, w ∈ p Γ)
@@ -347,10 +305,6 @@ theorem insertTag_continuous {ℱ : Set (Set Str)} {U : Set Str} (hne : ℱ.None
     · obtain ⟨w', rfl, hw'⟩ := hw
       exact Or.inr (Or.inr ⟨w', rfl, (hq w').mpr ⟨Γ, hΓ, hw'⟩⟩)
 
-/-- **`λΓ. tok(T({Γ}))` is continuous on the domain `{Γ ∣ Λ ∈ Γ}`.** For a non-empty `⊆`-directed
-family `ℱ` with union `U`, the token set of `T({U})` is the union of those of the `T({Γ})`. (The
-proof in fact establishes full additivity — directedness is not needed for the master level — but the
-statement is the directed-sup form Scott calls *continuous*.) -/
 theorem mFun_continuous (T : FExpr) {ℱ : Set (Set Str)} {U : Set Str}
     (_hdir : DirectedOn (· ⊆ ·) ℱ) (hne : ℱ.Nonempty)
     (hU : ∀ w, w ∈ U ↔ ∃ Γ ∈ ℱ, w ∈ Γ) :
@@ -363,7 +317,6 @@ theorem mFun_continuous (T : FExpr) {ℱ : Set (Set Str)} {U : Set Str}
   | sum T₀ T₁ ih₀ ih₁ => intro w; exact insertTag_continuous hne ih₀ ih₁ w
   | prod T₀ T₁ ih₀ ih₁ => intro w; exact insertTag_continuous hne ih₀ ih₁ w
 
-/-- If `Λ ∈ Γ` then `Λ ∈ tok(T({Γ}))` — so `λΓ. tok(T({Γ}))` is an endofunction of the domain. -/
 theorem mFun_nil_mem : ∀ (T : FExpr), T.RootedConst → {Γ : Set Str} →
     ([] : Str) ∈ Γ → ([] : Str) ∈ mFun T Γ
   | .const _, hC, _, _ => hC
@@ -390,7 +343,6 @@ theorem mIter_mono (T : FExpr) (hT : T.RootedConst) {m n : ℕ} (hmn : m ≤ n) 
   | refl => exact subset_rfl
   | step _ ih => intro x hx; exact mIter_mono_step T hT _ (ih hx)
 
-/-- The Kleene union is a **fixed point** of `λΓ. tok(T({Γ}))`. -/
 theorem mFun_iter_fixed (T : FExpr) (hT : T.RootedConst) :
     mFun T (⋃ n, mIter T n) = ⋃ n, mIter T n := by
   have hstep := mIter_mono_step T hT

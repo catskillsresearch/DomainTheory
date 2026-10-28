@@ -13,7 +13,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.p
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -39,6 +38,5 @@ theorem tensorElementToProdElement.prodElementToTensorElement
   simp
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

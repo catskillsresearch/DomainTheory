@@ -20,7 +20,6 @@ namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-/-- `∅ ⊢ u`. -/
 def EmptyEntails (A : InfoSys α) (u : Finset α) : Prop :=
   A.EntSet (∅ : Finset α) u
 

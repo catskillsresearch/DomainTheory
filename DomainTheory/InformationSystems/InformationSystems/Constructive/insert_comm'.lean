@@ -8,8 +8,6 @@ namespace DomainTheory.InformationSystems.Constructive
 
 variable {α : Type*} [DecidableEq α]
 
-/-- Choice-free commutativity of `insert` (mathlib's `Finset.insert_comm` is choice-tainted).
-Needed to fold `insert` over a `Multiset`. -/
 theorem insert_comm' (a b : α) (s : Finset α) :
     insert a (insert b s) = insert b (insert a s) := by
   ext x

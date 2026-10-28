@@ -24,7 +24,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Inserting bot preserves depth-Con. -/
 theorem LamConDepth_insert_bot {u : Finset (RawLamToken α)}
     (hu : LamConDepth A u) :
     LamConDepth A (insert (.bot : RawLamToken α) u) := by

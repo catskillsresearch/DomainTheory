@@ -8,7 +8,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -17,11 +16,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-
 namespace ApproximableMap
 
-
-/-- **Theorem 7.3(iii).** `fix(f)` is below every pre-fixed point. -/
 theorem fixElement_le_of_pre_fixed (f : ApproximableMap A A) (x : A.Element)
     (hpre : f.toElement x ≤ x) : fixElement A f ≤ x := by
   intro a ⟨w, hw, ⟨hwCon, haCon, v0, hv0, hEnt⟩⟩

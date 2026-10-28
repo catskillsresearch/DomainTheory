@@ -17,7 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 section
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
-/-- Complement every bit of a finite string. -/
 abbrev flip (σ : Str) : Str := σ.map not
 
 @[simp] theorem flip_nil : flip [] = [] := rfl
@@ -29,7 +28,6 @@ abbrev flip (σ : Str) : Str := σ.map not
   | nil => rfl
   | cons b σ ih => simp [ih]
 
-/-- Double every bit of a finite string: `double (b :: σ) = b :: b :: double σ`. -/
 def double : Str → Str
   | [] => []
   | b :: σ => b :: b :: double σ
@@ -38,18 +36,15 @@ def double : Str → Str
 
 @[simp] theorem double_cons (b : Bool) (σ : Str) : double (b :: σ) = b :: b :: double σ := rfl
 
-/-- `double` distributes over append. -/
 theorem double_append (σ τ : Str) : double (σ ++ τ) = double σ ++ double τ := by
   induction σ with
   | nil => rfl
   | cons b σ ih => simp [double, ih]
 
-/-- `double` preserves the prefix order. -/
 theorem double_prefix {σ τ : Str} (h : σ <+: τ) : double σ <+: double τ := by
   obtain ⟨ρ, rfl⟩ := h
   exact ⟨double ρ, (double_append σ ρ).symm⟩
 
-/-- `flip` preserves the prefix order. -/
 theorem flip_prefix {σ τ : Str} (h : σ <+: τ) : flip σ <+: flip τ := h.map _
 
 theorem not_strElem_le_strBot {σ τ : Str} : ¬ strElem σ ≤ strBot τ := by
@@ -73,7 +68,6 @@ section
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 variable {β : Type*}
 
-/-- The value of `tail` on a total element `σ`: `tail(Λ) = ⊥`, `tail(bσ') = σ'`. -/
 def tailSing : Str → C.Element
   | [] => strBot []
   | _ :: σ' => strElem σ'
@@ -94,7 +88,6 @@ end
 section
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
-/-- A prefix relation descends to tails. -/
 theorem tail_prefix {σ τ : Str} (h : σ <+: τ) : σ.tail <+: τ.tail := by
   obtain ⟨ρ, rfl⟩ := h
   cases σ with
@@ -118,9 +111,6 @@ section
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 variable {β : Type*}
 
-/- concordance: source L3184 EXERCISE 5.16 negation of sequences -/
-/-- **Exercise 5.16 / Example 4.4 — `tail : C → C`.** Built with the head-test combinator `liftC`:
-on `σ⊥` it returns `(tail σ)⊥`, on `σ` the total `tail σ` (with `tail Λ = ⊥`). -/
 def tailMap : ApproximableMap C C :=
   liftC C (fun σ => strBot σ.tail) tailSing tail_hcone tail_hsing
 
@@ -138,8 +128,6 @@ theorem neg_hcone {σ τ : Str} (h : σ <+: τ) : strBot (flip σ) ≤ strBot (f
 theorem neg_hsing {σ τ : Str} (h : σ <+: τ) : strBot (flip σ) ≤ strElem (flip τ) :=
   strBot_le_strElem_iff.mpr (flip_prefix h)
 
-/-- **Exercise 5.16 — `neg : C → C`.** The closed-form solution of Scott's recursion, built with
-`liftC`: `neg(σ⊥) = (flip σ)⊥` and `neg(σ) = flip σ`. -/
 def negMap : ApproximableMap C C :=
   liftC C (fun σ => strBot (flip σ)) (fun σ => strElem (flip σ)) neg_hcone neg_hsing
 
@@ -157,8 +145,6 @@ theorem d_hcone {σ τ : Str} (h : σ <+: τ) : strBot (double σ) ≤ strBot (d
 theorem d_hsing {σ τ : Str} (h : σ <+: τ) : strBot (double σ) ≤ strElem (double τ) :=
   strBot_le_strElem_iff.mpr (double_prefix h)
 
-/-- **Exercise 5.16 / Example 4.4 — `d : C → C`.** The doubling map, closed form via `liftC`:
-`d(σ⊥) = (double σ)⊥`, `d(σ) = double σ`. -/
 def dMap : ApproximableMap C C :=
   liftC C (fun σ => strBot (double σ)) (fun σ => strElem (double σ)) d_hcone d_hsing
 
@@ -170,7 +156,6 @@ def dMap : ApproximableMap C C :=
     dMap.toElementMap (strElem σ) = strElem (double σ) :=
   liftC_strElem C (fun σ => strBot (double σ)) (fun σ => strElem (double σ)) d_hcone d_hsing σ
 
-/-- The neighbourhood of the tagged string `(b, σ)`: `{σ}` if total, `cone σ` if partial. -/
 def shape : Bool → Str → Set Str
   | true, σ => {σ}
   | false, σ => cone σ
@@ -179,22 +164,16 @@ theorem memC_shape : ∀ (b : Bool) (σ : Str), memC (shape b σ)
   | true, σ => memC_singleton σ
   | false, σ => memC_cone σ
 
-/-- The element of the tagged string `(b, σ)`: total `σ` if `b`, partial `σ⊥` otherwise. -/
 def shapeElem (b : Bool) (σ : Str) : C.Element := C.principal (memC_shape b σ)
 
 @[simp] theorem shapeElem_true (σ : Str) : shapeElem true σ = strElem σ := rfl
 
 @[simp] theorem shapeElem_false (σ : Str) : shapeElem false σ = strBot σ := rfl
 
-/-- The approximation order between tagged strings: `(b, σ) ⊑ (b', σ')`. A total string is maximal
-(only `⊑` itself); a partial string `σ⊥` is `⊑` anything extending `σ`. -/
 def SLe : Bool → Str → Bool → Str → Prop
   | true, σ, b', σ' => b' = true ∧ σ = σ'
   | false, σ, _, σ' => σ <+: σ'
 
-/-- The interleave value function: `mergeVal σ b₀ τ b₁` returns the interleaving of the tagged
-strings `(b₀, σ)` and `(b₁, τ)` as a tagged string. Boundary convention (the only monotone one):
-`merge(Λ, y) = Λ`, `merge(⊥, y) = ⊥`, and `merge(εx, y) = ε⊥` once `y` runs out. -/
 def mergeVal : Str → Bool → Str → Bool → Str × Bool
   | [], b₀, _, _ => ([], b₀)
   | a :: _, _, [], _ => ([a], false)
@@ -210,7 +189,6 @@ def mergeVal : Str → Bool → Str → Bool → Str × Bool
     mergeVal (a :: σ) b₀ (b :: τ) b₁ =
       (a :: b :: (mergeVal σ b₀ τ b₁).1, (mergeVal σ b₀ τ b₁).2) := rfl
 
-/-- Two equal head bits prepended preserve `SLe`. -/
 theorem SLe_cons2 {p p' : Bool} {ρ ρ' : Str} (c d : Bool) (h : SLe p ρ p' ρ') :
     SLe p (c :: d :: ρ) p' (c :: d :: ρ') := by
   cases p with
@@ -218,7 +196,6 @@ theorem SLe_cons2 {p p' : Bool} {ρ ρ' : Str} (c d : Bool) (h : SLe p ρ p' ρ'
   | false =>
     exact List.cons_prefix_cons.mpr ⟨rfl, List.cons_prefix_cons.mpr ⟨rfl, h⟩⟩
 
-/-- Invert `SLe` on a cons in the first string: the second string starts with the same head. -/
 theorem SLe_cons_inv {b₀ b₀' : Bool} {a : Bool} {σ₀ σ' : Str} (h : SLe b₀ (a :: σ₀) b₀' σ') :
     ∃ σ₀', σ' = a :: σ₀' ∧ SLe b₀ σ₀ b₀' σ₀' := by
   cases b₀ with
@@ -232,12 +209,9 @@ theorem SLe_cons_inv {b₀ b₀' : Bool} {a : Bool} {σ₀ σ' : Str} (h : SLe b
       obtain ⟨rfl, h'⟩ := List.cons_prefix_cons.mp h
       exact ⟨σ₀', rfl, h'⟩
 
-/-- The element produced by interleaving `(b₀, σ)` and `(b₁, τ)`. -/
 def mergeElem (σ : Str) (b₀ : Bool) (τ : Str) (b₁ : Bool) : C.Element :=
   shapeElem (mergeVal σ b₀ τ b₁).2 (mergeVal σ b₀ τ b₁).1
 
-/-- **The monotonicity of interleaving.** If `(b₀, σ) ⊑ (b₀', σ')` and `(b₁, τ) ⊑ (b₁', τ')` then the
-interleavings are `⊑`-ordered. The crux that makes `merge` approximable. -/
 theorem mergeVal_SLe : ∀ (σ : Str) (b₀ : Bool) (σ' : Str) (b₀' : Bool)
     (τ : Str) (b₁ : Bool) (τ' : Str) (b₁' : Bool),
     SLe b₀ σ b₀' σ' → SLe b₁ τ b₁' τ' →
@@ -262,7 +236,6 @@ theorem mergeVal_SLe : ∀ (σ : Str) (b₀ : Bool) (σ' : Str) (b₀' : Bool)
     simp only [mergeVal_cons_cons]
     exact SLe_cons2 a b (mergeVal_SLe σ₀ b₀ σ₀' b₀' τ₀ b₁ τ₀' b₁' h0' h1')
 
-/-- `SLe` characterizes the element order on `shapeElem`. -/
 theorem shapeElem_le_iff {b b' : Bool} {σ σ' : Str} :
     shapeElem b σ ≤ shapeElem b' σ' ↔ SLe b σ b' σ' := by
   cases b <;> cases b' <;>
@@ -270,7 +243,6 @@ theorem shapeElem_le_iff {b b' : Bool} {σ σ' : Str} :
       strBot_le_strBot_iff, strBot_le_strElem_iff, true_and]
   · exact ⟨fun h => absurd h not_strElem_le_strBot, fun h => absurd h (by simp)⟩
 
-/-- The element-order form of `mergeVal_SLe`. -/
 theorem mergeElem_mono {σ σ' τ τ' : Str} {b₀ b₀' b₁ b₁' : Bool}
     (h0 : shapeElem b₀ σ ≤ shapeElem b₀' σ') (h1 : shapeElem b₁ τ ≤ shapeElem b₁' τ') :
     mergeElem σ b₀ τ b₁ ≤ mergeElem σ' b₀' τ' b₁' :=
@@ -289,9 +261,6 @@ theorem shape_refine {b : Bool} {σ : Str} {P : Set Str} (hP : memC P) (hsub : P
   · exact ⟨false, ρ, rfl, (C.principal_le_iff (memC_shape b σ) (memC_shape false ρ)).mpr hsub⟩
   · exact ⟨true, ρ, rfl, (C.principal_le_iff (memC_shape b σ) (memC_shape true ρ)).mpr hsub⟩
 
-/-- **Exercise 5.16 (Scott 1981, PRG-19).** The interleaving map `merge : C × C → C` with
-`merge(εx, δy) = ε·δ·merge(x, y)`. Built directly as an approximable map: an input neighbourhood
-`shape b₀ σ ∪ shape b₁ τ` relates to the neighbourhoods of `mergeElem σ b₀ τ b₁`. -/
 def mergeMap : ApproximableMap (prod C C) C where
   rel W Z := ∃ (b₀ : Bool) (σ : Str) (b₁ : Bool) (τ : Str),
     W = prodNbhd (shape b₀ σ) (shape b₁ τ) ∧ (mergeElem σ b₀ τ b₁).mem Z
@@ -328,8 +297,6 @@ def mergeMap : ApproximableMap (prod C C) C where
   | false => rw [shapeElem_false, consMap_strBot]; rfl
   | true => rw [shapeElem_true, consMap_strElem]; rfl
 
-/-- Two approximable maps out of `C` agree as soon as they agree on every finite element `σ⊥` and
-`σ` (Exercise 2.8). This is the workhorse for the map equalities below. -/
 theorem map_ext_C {V : NeighborhoodSystem β} {f g : ApproximableMap C V}
     (hbot : ∀ σ, f.toElementMap (strBot σ) = g.toElementMap (strBot σ))
     (helem : ∀ σ, f.toElementMap (strElem σ) = g.toElementMap (strElem σ)) : f = g := by
@@ -344,8 +311,6 @@ theorem memC_eq_shape {X : Set Str} (hX : memC X) : ∃ (b : Bool) (σ : Str), X
   · exact ⟨false, σ, rfl⟩
   · exact ⟨true, σ, rfl⟩
 
-/-- **The value of `merge` on a pair of finite elements.** `merge(⟨(b₀, σ), (b₁, τ)⟩) =
-mergeElem σ b₀ τ b₁`. The analogue of `liftC_strBot`/`liftC_strElem` for the product. -/
 theorem mergeMap_pair (b₀ : Bool) (σ : Str) (b₁ : Bool) (τ : Str) :
     mergeMap.toElementMap (pair (shapeElem b₀ σ) (shapeElem b₁ τ)) = mergeElem σ b₀ τ b₁ := by
   apply Element.ext
@@ -363,18 +328,14 @@ theorem mergeMap_pair (b₀ : Bool) (σ : Str) (b₁ : Bool) (τ : Str) :
     refine ⟨prodNbhd (shape b₀ σ) (shape b₁ τ), ?_, b₀, σ, b₁, τ, rfl, hZ⟩
     exact mem_pair_prodNbhd.mpr ⟨⟨memC_shape b₀ σ, subset_rfl⟩, ⟨memC_shape b₁ τ, subset_rfl⟩⟩
 
-/-- The diagonal value: interleaving `(s, σ)` with itself doubles. -/
 theorem mergeVal_diag (s : Bool) (σ : Str) : mergeVal σ s σ s = (double σ, s) := by
   induction σ with
   | nil => rfl
   | cons a σ ih => simp [mergeVal_cons_cons, ih]
 
-/-- On the diagonal `merge(⟨(s, σ), (s, σ)⟩)` doubles `σ`. -/
 theorem mergeElem_diag (s : Bool) (σ : Str) : mergeElem σ s σ s = shapeElem s (double σ) := by
   simp [mergeElem, mergeVal_diag]
 
-/-- **Exercise 5.16 (Scott 1981, PRG-19).** `merge(x, x) = d(x)` for all `x ∈ |C|` (the doubling map
-of Example 4.4). -/
 theorem mergeMap_diag (x : C.Element) :
     mergeMap.toElementMap (pair x x) = dMap.toElementMap x := by
   have key : mergeMap.comp (paired (idMap C) (idMap C)) = dMap := by
@@ -391,8 +352,6 @@ theorem mergeMap_diag (x : C.Element) :
   simp only [toElementMap_comp, toElementMap_paired, toElementMap_idMap] at hx
   exact hx
 
-/-- **Exercise 5.16 (Scott 1981, PRG-19).** `neg ∘ neg = id` as approximable maps: it suffices to
-check on the finite elements `σ⊥`, `σ`, where it is `flip ∘ flip = id`. -/
 theorem negMap_comp_negMap : negMap.comp negMap = idMap C := by
   apply map_ext_C
   · intro σ
@@ -400,12 +359,10 @@ theorem negMap_comp_negMap : negMap.comp negMap = idMap C := by
   · intro σ
     rw [toElementMap_comp, negMap_strElem, negMap_strElem, flip_flip, toElementMap_idMap]
 
-/-- **Exercise 5.16 (Scott 1981, PRG-19).** `neg(neg(x)) = x` for all `x ∈ |C|`. -/
 theorem negMap_negMap (x : C.Element) : negMap.toElementMap (negMap.toElementMap x) = x := by
   have h := negMap_comp_negMap
   rw [← toElementMap_comp, h, toElementMap_idMap]
 
-/-- **Exercise 5.16 — the recursion for `neg`, case `0`.** `neg(0·x) = 1·neg(x)` as a map identity. -/
 theorem neg_cons_false : negMap.comp (consMap false) = (consMap true).comp negMap := by
   apply map_ext_C
   · intro σ
@@ -417,7 +374,6 @@ theorem neg_cons_false : negMap.comp (consMap false) = (consMap true).comp negMa
       consMap_strElem]
     rfl
 
-/-- **Exercise 5.16 — the recursion for `neg`, case `1`.** `neg(1·x) = 0·neg(x)` as a map identity. -/
 theorem neg_cons_true : negMap.comp (consMap true) = (consMap false).comp negMap := by
   apply map_ext_C
   · intro σ
@@ -443,7 +399,6 @@ theorem prod_principal_pair (b₀ : Bool) (σ : Str) (b₁ : Bool) (τ : Str) :
   · rintro ⟨X', Y', ⟨hX', hsX⟩, ⟨hY', hsY⟩, rfl⟩
     exact ⟨prod_mem_prodNbhd hX' hY', prodNbhd_subset_iff.mpr ⟨hsX, hsY⟩⟩
 
-/-- Two maps `C × C → C` agree as soon as they agree on every pair of finite elements. -/
 theorem prodMap_ext {f g : ApproximableMap (prod C C) C}
     (h : ∀ b₀ σ b₁ τ, f.toElementMap (pair (shapeElem b₀ σ) (shapeElem b₁ τ))
       = g.toElementMap (pair (shapeElem b₀ σ) (shapeElem b₁ τ))) : f = g := by
@@ -459,8 +414,6 @@ theorem prodMap_ext {f g : ApproximableMap (prod C C) C}
     prod_principal_pair b₀ σ b₁ τ
   rw [heq]; exact h b₀ σ b₁ τ
 
-/-- **Exercise 5.16 (Scott 1981, PRG-19).** The defining recursion of `merge`:
-`merge(εx, δy) = ε·δ·merge(x, y)` for all `x, y ∈ |C|` and bits `ε, δ`. -/
 theorem mergeMap_cons (ε δ : Bool) (x y : C.Element) :
     mergeMap.toElementMap
         (pair ((consMap ε).toElementMap x) ((consMap δ).toElementMap y))
@@ -484,12 +437,10 @@ section
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 variable {β : Type*}
 
-/-- `tail(b(σ⊥)) = σ⊥`. -/
 theorem tailMap_consMap_strBot (b : Bool) (σ : Str) :
     tailMap.toElementMap ((consMap b).toElementMap (strBot σ)) = strBot σ := by
   rw [consMap_strBot, tailMap_strBot]; rfl
 
-/-- `tail(b(σ)) = σ`. -/
 theorem tailMap_consMap_strElem (b : Bool) (σ : Str) :
     tailMap.toElementMap ((consMap b).toElementMap (strElem σ)) = strElem σ := by
   rw [consMap_strElem, tailMap_strElem]; rfl
@@ -499,7 +450,6 @@ end
 section
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
-/-- The Thue–Morse substitution applied letterwise: each bit `b` is replaced by `b (¬b)`. -/
 def expand : Str → Str
   | [] => []
   | b :: σ => b :: (!b) :: expand σ
@@ -508,39 +458,30 @@ def expand : Str → Str
 
 @[simp] theorem expand_cons (b : Bool) (σ : Str) : expand (b :: σ) = b :: (!b) :: expand σ := rfl
 
-/-- The Thue–Morse bit-function: `tm n = ⊕(binary digits of n)`, the parity of the number of `1`s in
-the binary expansion of `n` (Lambek's description). -/
 def tm (n : ℕ) : Bool := (Nat.bits n).foldr xor false
 
-/-- **Exercise 5.16 (the operator `Φ`).** `Φ(x) = 0·merge(neg x, tail x)` as an approximable map. -/
 def tmOp : ApproximableMap C C :=
   (consMap false).comp (mergeMap.comp (paired negMap tailMap))
 
 @[simp] theorem tm_zero : tm 0 = false := by simp [tm, Nat.zero_bits]
 
-/-- The length-`n` Thue–Morse prefix `[tm 0, tm 1, …, tm (n-1)]`. -/
 def tmList (n : ℕ) : Str := (List.range n).map tm
 
 @[simp] theorem tmList_zero : tmList 0 = [] := rfl
 
-/-- **Exercise 5.16 (Scott 1981, PRG-19).** Scott's Thue–Morse element `t = 0·merge(neg t, tail t)`,
-the least fixed point of `Φ`. -/
 def tElt : C.Element := tmOp.fixElement
 
-/-- `σΣ* = Σ*` iff `σ = Λ`. -/
 theorem cone_univ_iff {σ : Str} : cone σ = Set.univ ↔ σ = [] := by
   constructor
   · intro h
     exact List.prefix_nil.mp (mem_cone.mp (h ▸ Set.mem_univ ([] : Str)))
   · rintro rfl; exact cone_nil
 
-/-- `expand` distributes over append (it is a monoid morphism `Σ* → Σ*`). -/
 theorem expand_append (σ τ : Str) : expand (σ ++ τ) = expand σ ++ expand τ := by
   induction σ with
   | nil => rfl
   | cons b σ ih => simp [ih]
 
-/-- Every iterate of `expand` from `[0]` starts with `0` (so `Φ` keeps acting as `expand`). -/
 theorem iterate_expand_cons (k : ℕ) : ∃ ρ, (expand^[k] [false] : Str) = false :: ρ := by
   induction k with
   | zero => exact ⟨[], rfl⟩
@@ -548,19 +489,15 @@ theorem iterate_expand_cons (k : ℕ) : ∃ ρ, (expand^[k] [false] : Str) = fal
     obtain ⟨ρ, hρ⟩ := ih
     exact ⟨true :: expand ρ, by rw [Function.iterate_succ_apply', hρ]; rfl⟩
 
-/-- The second (total/partial-flag) component of an interleaving with a partial first input is always
-`false`: a partial input keeps the output partial. -/
 theorem mergeVal_snd_false : ∀ (σ τ : Str) (b₁ : Bool), (mergeVal σ false τ b₁).2 = false
   | [], _, _ => rfl
   | _ :: _, [], _ => rfl
   | _ :: σ, _ :: τ, b₁ => by simp only [mergeVal_cons_cons]; exact mergeVal_snd_false σ τ b₁
 
-/-- `(strBot τ)` has the cone of `σ` as a neighbourhood iff `σ` is a prefix of `τ`. -/
 theorem strBot_mem_cone {σ τ : Str} : (strBot τ).mem (cone σ) ↔ σ <+: τ := by
   rw [strBot, mem_principal]
   exact ⟨fun h => cone_subset_cone.mp h.2, fun h => ⟨memC_cone σ, cone_subset_cone.mpr h⟩⟩
 
-/-- `⊥ = []⊥` in `C` (the cone of `Λ` is the master). -/
 theorem strBot_nil : strBot [] = C.bot := by
   apply Element.ext
   intro Y
@@ -568,7 +505,6 @@ theorem strBot_nil : strBot [] = C.bot := by
   exact ⟨fun h => Set.Subset.antisymm (Set.subset_univ _) h.2,
     fun h => ⟨h ▸ C.master_mem, h ▸ Set.Subset.refl _⟩⟩
 
-/-- **Exercise 5.16 — the defining unfolding.** `t = 0·merge(neg t, tail t)`. -/
 theorem tElt_unfold :
     (consMap false).toElementMap
         (mergeMap.toElementMap (pair (negMap.toElementMap tElt) (tailMap.toElementMap tElt)))
@@ -583,7 +519,6 @@ theorem tmList_length (n : ℕ) : (tmList n).length = n := by
 theorem tmList_succ (n : ℕ) : tmList (n + 1) = tmList n ++ [tm n] := by
   simp only [tmList, List.range_succ, List.map_append, List.map_cons, List.map_nil]
 
-/-- Thue–Morse prefixes are nested in the prefix order. -/
 theorem tmList_prefix {n m : ℕ} (h : n ≤ m) : tmList n <+: tmList m := by
   induction m with
   | zero => rw [Nat.le_zero.mp h]
@@ -592,8 +527,6 @@ theorem tmList_prefix {n m : ℕ} (h : n ≤ m) : tmList n <+: tmList m := by
     · exact (ih (Nat.lt_succ_iff.mp hlt)).trans (by rw [tmList_succ]; exact List.prefix_append _ _)
     · exact List.prefix_rfl
 
-/-- The value of `Φ` on a partial element `σ⊥` is `(0 · weave σ)⊥`, the leading `0` prepended to the
-interleaving of `(flip σ)⊥` and `(tail σ)⊥`. -/
 theorem tmOp_strBot (σ : Str) :
     tmOp.toElementMap (strBot σ)
       = strBot (false :: (mergeVal (flip σ) false σ.tail false).1) := by
@@ -603,19 +536,14 @@ theorem tmOp_strBot (σ : Str) :
     show (strBot σ.tail) = shapeElem false σ.tail from rfl, mergeMap_pair, mergeElem,
     mergeVal_snd_false, shapeElem_false, consMap_strBot]
 
-/-- The even recurrence `tm (2n) = tm n` (appending a `0`-digit does not change the parity). -/
 theorem tm_two_mul (n : ℕ) : tm (2 * n) = tm n := by
   rcases Nat.eq_zero_or_pos n with rfl | hn
   · rfl
   · simp only [tm, Nat.bit0_bits n (by omega : n ≠ 0), List.foldr_cons, Bool.false_xor]
 
-/-- The odd recurrence `tm (2n+1) = ¬ tm n` (appending a `1`-digit flips the parity). -/
 theorem tm_two_mul_add_one (n : ℕ) : tm (2 * n + 1) = !tm n := by
   simp only [tm, Nat.bit1_bits n, List.foldr_cons, Bool.true_xor]
 
-/-- **The morphism step on prefixes.** `expand (tmList m) = tmList (2m)`: applying the Thue–Morse
-morphism to a length-`m` prefix yields the length-`2m` prefix — this is exactly the even/odd parity
-recurrence in disguise. -/
 theorem expand_tmList (m : ℕ) : expand (tmList m) = tmList (2 * m) := by
   induction m with
   | zero => rfl
@@ -626,33 +554,24 @@ theorem expand_tmList (m : ℕ) : expand (tmList m) = tmList (2 * m) := by
       rfl
     rw [tmList_succ, expand_append, ih, key, expand_cons, expand_nil]
 
-/-- **The bridge.** The `k`-fold morphism iterate of `[0]` is the Thue–Morse parity prefix of length
-`2ᵏ`: `expandᵏ[0] = tmList (2ᵏ)`. -/
 theorem expand_iterate_eq (k : ℕ) : (expand^[k] [false] : Str) = tmList (2 ^ k) := by
   induction k with
   | zero => rfl
   | succ k ih =>
     rw [Function.iterate_succ_apply', ih, expand_tmList, show 2 * 2 ^ k = 2 ^ (k + 1) by ring]
 
-/-- The interleaving of `h :: flip ρ` with `ρ` (both starting after a common head `h`) is
-`h :: expand ρ`. This is the heart of why `Φ` *is* the Thue–Morse morphism on the trajectory. -/
 theorem weave_head : ∀ (h : Bool) (ρ : Str), (mergeVal (h :: flip ρ) false ρ false).1 = h :: expand ρ
   | h, [] => rfl
   | h, c :: ρ => by
     simp only [flip_cons, mergeVal_cons_cons, expand_cons]
     rw [weave_head (!c) ρ]
 
-/-- **The Thue–Morse trajectory.** On a partial element whose string starts with `0`, `Φ` acts as the
-Thue–Morse morphism `expand`. -/
 theorem tmOp_strBot_expand (ρ : Str) :
     tmOp.toElementMap (strBot (false :: ρ)) = strBot (expand (false :: ρ)) := by
   rw [tmOp_strBot]
   simp only [flip_cons, List.tail_cons, expand_cons]
   rw [weave_head (!false) ρ]
 
-/-- **Exercise 5.16 (the approximants).** The `(k+1)`-st approximant of the least fixed point is the
-partial element of the `k`-fold Thue–Morse morphism iterate of `[0]`:
-`Φᵏ⁺¹(⊥) = (expandᵏ[0])⊥`. -/
 theorem iterElem_succ_eq (k : ℕ) :
     tmOp.iterElem (k + 1) = strBot (expand^[k] [false]) := by
   induction k with
@@ -668,7 +587,6 @@ end
 section
 open DomainTheory.NeighbourhoodSystems
 
-/-- An **overlap** of period `p ≥ 1` at offset `i`: a factor of length `2p+1` with period `p`. -/
 def Overlap (i p : ℕ) : Prop := 1 ≤ p ∧ ∀ k, k ≤ p → tm (i + k) = tm (i + p + k)
 end
 
@@ -676,8 +594,6 @@ section
 open DomainTheory.NeighbourhoodSystems
 open Example44 ExampleB NeighborhoodSystem
 
-/-- Positions differing by `|a|` inside `a ++ (a ++ a)` carry the same symbol, for indices `< 2|a|`
-(the three copies of `a` are identical). -/
 theorem append_three_period {α : Type*} (a : List α) (m : ℕ) (hm : m < 2 * a.length) :
     (a ++ (a ++ a))[m]? = (a ++ (a ++ a))[m + a.length]? := by
   rcases lt_or_ge m a.length with h | h
@@ -690,7 +606,6 @@ theorem append_three_period {α : Type*} (a : List α) (m : ℕ) (hm : m < 2 * a
       List.getElem?_append_left (by omega : m - a.length < a.length),
       List.getElem?_append_right (by omega : a.length ≤ m)]
 
-/-- The `j`-th bit of the length-`n` Thue–Morse prefix is `tm j`. -/
 theorem tmList_getElem? {n j : ℕ} (h : j < n) : (tmList n)[j]? = some (tm j) := by
   rw [tmList, List.getElem?_map, List.getElem?_range h]
   rfl
@@ -706,20 +621,15 @@ theorem tm_of_eq_two_mul {x y : ℕ} (h : x = 2 * y) : tm x = tm y := by
 theorem tm_of_eq_two_mul_add_one {x y : ℕ} (h : x = 2 * y + 1) : tm x = !tm y := by
   rw [h, tm_two_mul_add_one]
 
-/-- An even-indexed symbol differs from its successor: `tm (2x) ≠ tm (2x+1)`. -/
 theorem tm_two_mul_ne (x : ℕ) : tm (2 * x) ≠ tm (2 * x + 1) := by
   rw [tm_two_mul, tm_two_mul_add_one]
   cases tm x <;> simp
 
-/-- `tm x = tm (x+1)` forces `x` to be **odd**: equal consecutive symbols only straddle a block
-boundary `(2m+1, 2m+2)`, never a block `(2m, 2m+1)`. -/
 theorem odd_of_consec_eq {x : ℕ} (h : tm x = tm (x + 1)) : Odd x := by
   rcases Nat.even_or_odd x with ⟨m, hm⟩ | hodd
   · exfalso; rw [hm, ← two_mul] at h; exact tm_two_mul_ne m h
   · exact hodd
 
-/-- **No three consecutive equal symbols** (the period-`1` case): `¬ (tm j = tm (j+1) ∧
-tm (j+1) = tm (j+2))`. If both held, `j` and `j+1` would both be odd. -/
 theorem no_three_consec (j : ℕ) : ¬ (tm j = tm (j + 1) ∧ tm (j + 1) = tm (j + 2)) := by
   rintro ⟨h1, h2⟩
   have hj : Odd j := odd_of_consec_eq h1
@@ -728,42 +638,40 @@ theorem no_three_consec (j : ℕ) : ¬ (tm j = tm (j + 1) ∧ tm (j + 1) = tm (j
   rcases hj1 with ⟨b, hb⟩
   omega
 
-/-- **Overlap-freeness of the Thue–Morse sequence** (Scott 1981, PRG-19; Thue 1912). No overlap
-exists at any offset and period. -/
 theorem no_overlap (p : ℕ) : ∀ i, ¬ Overlap i p := by
   induction p using Nat.strong_induction_on with
   | _ p IH =>
     intro i hov
     obtain ⟨hp1, hrel⟩ := hov
     obtain ⟨q, hq | hq⟩ := Nat.even_or_odd' p
-    · -- Even period `p = 2q`: contract to a period-`q` overlap.
+    ·
       subst hq
       have hq1 : 1 ≤ q := by omega
       obtain ⟨a, hi | hi⟩ := Nat.even_or_odd' i
-      · -- `i = 2a`: even positions give `tm (a+c) = tm (a+q+c)`.
+      ·
         refine IH q (by omega) a ⟨hq1, fun c hc => ?_⟩
         have hk : 2 * c ≤ 2 * q := by omega
         have := hrel (2 * c) hk
         rw [tm_of_eq_two_mul (show i + 2 * c = 2 * (a + c) by omega),
           tm_of_eq_two_mul (show i + 2 * q + 2 * c = 2 * (a + q + c) by omega)] at this
         exact this
-      · -- `i = 2a+1`: odd positions give `tm (a+c) = tm (a+q+c)` after stripping the `¬`.
+      ·
         refine IH q (by omega) a ⟨hq1, fun c hc => ?_⟩
         have hk : 2 * c ≤ 2 * q := by omega
         have := hrel (2 * c) hk
         rw [tm_of_eq_two_mul_add_one (show i + 2 * c = 2 * (a + c) + 1 by omega),
           tm_of_eq_two_mul_add_one (show i + 2 * q + 2 * c = 2 * (a + q + c) + 1 by omega)] at this
         exact Bool.not_inj this
-    · -- Odd period `p = 2q+1`.
+    ·
       subst hq
       rcases Nat.eq_zero_or_pos q with rfl | hq1
-      · -- `p = 1`: three consecutive equal symbols.
+      ·
         refine no_three_consec i ⟨?_, ?_⟩
         · have := hrel 0 (by omega); simpa using this
         · have := hrel 1 (by omega); simpa [show i + 1 + 1 = i + 2 by omega] using this
-      · -- `p = 2q+1 ≥ 3`.
+      ·
         obtain ⟨a, hi | hi⟩ := Nat.even_or_odd' i
-        · -- `i = 2a`: relations at `k = 0,1,2,3` give a run of three equal symbols at `a+q`.
+        ·
           subst hi
           have r0 := hrel 0 (by omega)
           have r1 := hrel 1 (by omega)
@@ -784,10 +692,10 @@ theorem no_overlap (p : ℕ) : ∀ i, ¬ Overlap i p := by
           · revert r1 r2 r3
             cases tm (a + 1) <;> cases tm (a + q + 1) <;> cases tm (a + q + 2) <;> cases tm a <;>
               simp_all
-        · -- `i = 2a+1`.
+        ·
           subst hi
           rcases Nat.eq_or_lt_of_le hq1 with hq2 | hq2
-          · -- `q = 1`, i.e. `p = 3`: a direct contradiction from the four relations.
+          ·
             subst hq2
             have r0 := hrel 0 (by omega)
             have r1 := hrel 1 (by omega)
@@ -805,7 +713,7 @@ theorem no_overlap (p : ℕ) : ∀ i, ¬ Overlap i p := by
                 (show 2 * a + 1 + (2 * 1 + 1) + 3 = 2 * (a + 3) + 1 by omega)] at r3
             revert r0 r1 r2 r3
             cases tm a <;> cases tm (a + 1) <;> cases tm (a + 2) <;> cases tm (a + 3) <;> simp_all
-          · -- `q ≥ 2`, i.e. `p ≥ 5`: relations at `k = 1,2,3,4` give a run of three at `a+q+1`.
+          ·
             have r1 := hrel 1 (by omega)
             have r2 := hrel 2 (by omega)
             have r3 := hrel 3 (by omega)
@@ -828,8 +736,6 @@ theorem no_overlap (p : ℕ) : ∀ i, ¬ Overlap i p := by
             · revert r3 r4; cases tm (a + 2) <;> cases tm (a + q + 2) <;> cases tm (a + q + 3) <;>
                 simp_all
 
-/-- **The Thue–Morse sequence is cube-free.** A cube of period `p ≥ 1` (the factor `a·a·a` with
-`|a| = p`) is in particular an overlap, so none exists. -/
 theorem no_cube (i p : ℕ) (hp : 1 ≤ p) :
     ¬ ∀ k, k < 2 * p → tm (i + k) = tm (i + p + k) := by
   intro hcube
@@ -840,8 +746,6 @@ end
 section
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
-/-- **Property (a), prefix form.** Every Thue–Morse parity prefix is a prefix of `t`:
-`(tmList n)⊥ ⊑ t` for all `n`. -/
 theorem tmList_le_tElt (n : ℕ) : strBot (tmList n) ≤ tElt := by
   have hpre : tmList n <+: expand^[n] [false] := by
     rw [expand_iterate_eq]; exact tmList_prefix (Nat.le_of_lt (Nat.lt_two_pow_self))
@@ -850,22 +754,17 @@ theorem tmList_le_tElt (n : ℕ) : strBot (tmList n) ≤ tElt := by
     _ = tmOp.iterElem (n + 1) := (iterElem_succ_eq n).symm
     _ ≤ tElt := iterElem_le_fixElement tmOp (n + 1)
 
-/-- **Property (a), digit form.** The `n`-th digit of `t` is `tm n` (the parity of the binary digits
-of `n`): the length-`(n+1)` prefix of `t` is `tmList n ++ [tm n]`. -/
 theorem tElt_digit (n : ℕ) : strBot (tmList n ++ [tm n]) ≤ tElt := by
   have h := tmList_le_tElt (n + 1)
   rwa [tmList_succ] at h
 
-/-- **Property (a) (Scott 1981, PRG-19; Lambek).** The finite-prefix characterization of `t`: a
-string `σ` is a prefix of `t` **iff** it is the length-`σ.length` Thue–Morse parity prefix. Reading
-off position `n`, the `n`-th digit of `t` is `tm n`, the parity of the binary digits of `n`. -/
 theorem tElt_mem_cone_iff (σ : Str) : tElt.mem (cone σ) ↔ σ = tmList σ.length := by
   constructor
   · intro hσ
     rw [show tElt = tmOp.fixElement from rfl, tmOp.fixElement_eq_iSupDirected,
       mem_iSupDirected] at hσ
     obtain ⟨n, hn⟩ := hσ
-    -- `σ` is a prefix of some Thue–Morse prefix `tmList N`.
+
     obtain ⟨N, hpre⟩ : ∃ N, σ <+: tmList N := by
       cases n with
       | zero =>
@@ -874,7 +773,7 @@ theorem tElt_mem_cone_iff (σ : Str) : tElt.mem (cone σ) ↔ σ = tmList σ.len
       | succ k =>
         rw [iterElem_succ_eq, strBot_mem_cone, expand_iterate_eq] at hn
         exact ⟨2 ^ k, hn⟩
-    -- Both `σ` and `tmList σ.length` are the length-`σ.length` prefix of `tmList N`.
+
     have hlen : σ.length ≤ N := hpre.length_le.trans_eq (tmList_length _)
     have h1 : σ = (tmList N).take σ.length := List.prefix_iff_eq_take.mp hpre
     have h2 : tmList σ.length = (tmList N).take σ.length := by
@@ -893,18 +792,15 @@ section
 open DomainTheory.NeighbourhoodSystems
 open Example44 ExampleB NeighborhoodSystem
 
-/-- **Exercise 5.16 (Scott 1981, PRG-19) — `t` is cube-free.** Scott's literal statement: `t` is not
-of the form `u·a·a·a·v` for any finite prefix `u` and nonempty finite block `a`. (`v` is whatever
-follows; we phrase "`u·a·a·a` is a prefix of `t`" as `(u·a·a·a)⊥ ⊑ t`.) -/
 theorem tElt_cube_free (u a : Str) (ha : a ≠ []) :
     ¬ strBot (u ++ a ++ a ++ a) ≤ tElt := by
   intro hle
-  -- `u·a·a·a` is a prefix of `t`, hence equals the Thue–Morse prefix of its length.
+
   have hmem : tElt.mem (cone (u ++ a ++ a ++ a)) :=
     hle _ (strBot_mem_cone.mpr List.prefix_rfl)
   have heq : u ++ a ++ a ++ a = tmList (u ++ a ++ a ++ a).length :=
     (tElt_mem_cone_iff _).mp hmem
-  -- Read off a cube in `tm` at offset `|u|`, period `|a|`.
+
   set N := (u ++ a ++ a ++ a).length with hN
   have hlen : N = u.length + 3 * a.length := by simp only [hN, List.length_append]; omega
   have hp : 1 ≤ a.length := by
@@ -912,13 +808,13 @@ theorem tElt_cube_free (u a : Str) (ha : a ≠ []) :
     | nil => exact (ha rfl).elim
     | cons _ _ => simp
   refine no_cube u.length a.length hp (fun k hk => ?_)
-  -- Both `tm (|u|+k)` and `tm (|u|+|a|+k)` read the same bit of `u·a·a·a`.
+
   have hk3 : u.length + k < N := by omega
   have hk3' : u.length + a.length + k < N := by omega
   have e1 : (tmList N)[u.length + k]? = some (tm (u.length + k)) := tmList_getElem? hk3
   have e2 : (tmList N)[u.length + a.length + k]? = some (tm (u.length + a.length + k)) :=
     tmList_getElem? hk3'
-  -- Rewrite the prefix as `u ++ (a ++ (a ++ a))` and strip `u`.
+
   have hassoc : u ++ a ++ a ++ a = u ++ (a ++ (a ++ a)) := by
     simp [List.append_assoc]
   rw [← heq, hassoc] at e1 e2
@@ -926,7 +822,7 @@ theorem tElt_cube_free (u a : Str) (ha : a ≠ []) :
     show u.length + k - u.length = k by omega] at e1
   rw [List.getElem?_append_right (by omega : u.length ≤ u.length + a.length + k),
     show u.length + a.length + k - u.length = k + a.length by omega] at e2
-  -- Period: `(a++(a++a))[k]? = (a++(a++a))[k+|a|]?`.
+
   have hper := append_three_period a k (by omega)
   have : some (tm (u.length + k)) = some (tm (u.length + a.length + k)) := by
     rw [← e1, hper, e2]
@@ -942,26 +838,19 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-/-- The **left-hand side** `λx. !y. τ(x, y)` of Proposition 5.4: `fix ∘ curry(τ)`. -/
 def pfix (τ : ApproximableMap (prod V V) V) : ApproximableMap V V :=
   (fixMap V).comp (curry τ)
 
-/-- The **operator** `λg. λx. τ(x, g(x))` of Proposition 5.4, as an approximable endomap of the
-function space `(𝒟 → 𝒟)`: `recOp τ := curry(τ ∘ ⟨p₁, eval⟩)`. -/
 def recOp (τ : ApproximableMap (prod V V) V) : ApproximableMap (funSpace V V) (funSpace V V) :=
   curry (τ.comp (paired (proj₁ (funSpace V V) V) (evalMap V V)))
 
-/-- The section `y ↦ τ(x, y)` of `τ : 𝒟 × 𝒟 → 𝒟` at a fixed `x`, as an approximable endomap of
-`𝒟` (the curried `τ` applied to `x`). -/
 def section₂ (τ : ApproximableMap (prod V V) V) (x : V.Element) : ApproximableMap V V :=
   toApproxMap ((curry τ).toElementMap x)
 
-/-- `pfix τ (x) = !y. τ(x, y)`, the least fixed point of the section at `x`. -/
 theorem pfix_apply (τ : ApproximableMap (prod V V) V) (x : V.Element) :
     (pfix τ).toElementMap x = (section₂ τ x).fixElement := by
   rw [pfix, toElementMap_comp, fixMap_toElementMap, section₂]
 
-/-- `recOp τ (g) (x) = τ(x, g(x))`. -/
 theorem recOp_apply (τ : ApproximableMap (prod V V) V) (φ : (funSpace V V).Element) (x : V.Element) :
     (toApproxMap ((recOp τ).toElementMap φ)).toElementMap x
       = τ.toElementMap (pair x ((toApproxMap φ).toElementMap x)) := by
@@ -972,7 +861,6 @@ theorem section₂_apply (τ : ApproximableMap (prod V V) V) (x y : V.Element) :
     (section₂ τ x).toElementMap y = τ.toElementMap (pair x y) := by
   rw [section₂, toElementMap_curry_apply]
 
-/-- `pfix τ` is a fixed point of `recOp τ` (pointwise: `τ(x, pfix τ x) = pfix τ x`). -/
 theorem pfix_isFixed (τ : ApproximableMap (prod V V) V) (x : V.Element) :
     τ.toElementMap (pair x ((pfix τ).toElementMap x)) = (pfix τ).toElementMap x := by
   rw [pfix_apply, ← section₂_apply, toElementMap_fixElement]

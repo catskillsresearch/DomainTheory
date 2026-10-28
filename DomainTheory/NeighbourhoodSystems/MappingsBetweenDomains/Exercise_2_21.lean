@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_19
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Examples_1_2_1_5_revisited
@@ -8,13 +7,11 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Dom
 @[expose] public section
 
 section
-/- concordance: source L920 EXERCISE 2.21 finite and infinite sequences -/
--- Exercise221/cone_not_subset_singleton.lean
+
 namespace DomainTheory.NeighbourhoodSystems.Exercise221
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
-/-- A singleton is never a cone (a cone has at least two elements `σ` and `σ0`). -/
 theorem cone_not_subset_singleton (σ τ : Str) : ¬ cone σ ⊆ ({τ} : Set Str) := by
   intro h
   have h1 : σ ∈ ({τ} : Set Str) := h (mem_cone.mpr List.prefix_rfl)
@@ -28,12 +25,11 @@ theorem cone_not_subset_singleton (σ τ : Str) : ¬ cone σ ⊆ ({τ} : Set Str
 end DomainTheory.NeighbourhoodSystems.Exercise221
 end
 
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise221
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 section
-/-- Cones and singletons are distinct neighbourhoods. -/
+
 theorem cone_ne_singleton (σ τ : Str) : cone σ ≠ ({τ} : Set Str) := by
   intro h
   refine cone_not_subset_singleton σ τ ?_
@@ -42,8 +38,7 @@ theorem cone_ne_singleton (σ τ : Str) : cone σ ≠ ({τ} : Set Str) := by
 end
 
 section
-/-- Nested-or-disjoint for a cone vs. a terminator singleton: `{τ} ⊆ σΣ*` iff `σ ⪯ τ`, else
-disjoint. Choice-free (`σ <+: τ` is decidable). -/
+
 theorem cone_singleton_nd (σ τ : Str) :
     cone σ ⊆ ({τ} : Set Str) ∨ ({τ} : Set Str) ⊆ cone σ ∨ cone σ ∩ ({τ} : Set Str) = ∅ :=
   if h : σ <+: τ then
@@ -58,12 +53,12 @@ theorem cone_singleton_nd (σ τ : Str) :
 end
 
 section
-/-- Membership in `𝒞`: `X` is either a cone `σΣ*` (as in `𝔹`) or a terminator singleton `{σ}`. -/
+
 def memC (X : Set Str) : Prop := (∃ σ, X = cone σ) ∨ (∃ σ, X = {σ})
 end
 
 section
-/-- Nested-or-disjoint for a terminator singleton vs. a cone (the mirror of `cone_singleton_nd`). -/
+
 theorem singleton_cone_nd (σ τ : Str) :
     ({σ} : Set Str) ⊆ cone τ ∨ cone τ ⊆ ({σ} : Set Str) ∨ ({σ} : Set Str) ∩ cone τ = ∅ :=
   if h : τ <+: σ then
@@ -78,7 +73,7 @@ theorem singleton_cone_nd (σ τ : Str) :
 end
 
 section
-/-- Nested-or-disjoint for two terminator singletons: equal or disjoint. -/
+
 theorem singleton_singleton_nd (σ τ : Str) :
     ({σ} : Set Str) ⊆ ({τ} : Set Str) ∨ ({τ} : Set Str) ⊆ ({σ} : Set Str) ∨
       ({σ} : Set Str) ∩ ({τ} : Set Str) = ∅ := by
@@ -93,8 +88,7 @@ theorem singleton_singleton_nd (σ τ : Str) :
 end
 
 section
-/-- **`𝒞` is pairwise nested-or-disjoint.** Cone/cone is the `𝔹` trichotomy; the mixed and
-singleton/singleton cases are the three lemmas above. -/
+
 theorem nestedOrDisjoint_C : NestedOrDisjoint memC := by
   rintro X Y hX hY
   rcases hX with ⟨σ, rfl⟩ | ⟨σ, rfl⟩ <;> rcases hY with ⟨τ, rfl⟩ | ⟨τ, rfl⟩
@@ -105,7 +99,7 @@ theorem nestedOrDisjoint_C : NestedOrDisjoint memC := by
 end
 
 section
-/-- **The system `𝒞`** on `Δ = Σ*`: cones and terminator singletons. -/
+
 def C : NeighborhoodSystem Str :=
   ofNestedOrDisjoint memC Set.univ ⟨[], Set.mem_univ _⟩
     (Or.inl ⟨[], cone_nil.symm⟩) nestedOrDisjoint_C
@@ -121,24 +115,24 @@ section
 end
 
 section
-/-- Every cone is a neighbourhood of `𝒞` — this is the inclusion `𝔹 ⊆ 𝒞`. -/
+
 theorem memC_cone (σ : Str) : C.mem (cone σ) := Or.inl ⟨σ, rfl⟩
 end
 
 section
-/-- Every terminator singleton `{σ}` is a neighbourhood of `𝒞`. -/
+
 theorem memC_singleton (σ : Str) : C.mem ({σ} : Set Str) := Or.inr ⟨σ, rfl⟩
 end
 
 section
-/-- Prepending is monotone in the suffix set. -/
+
 theorem prepend_mono (σ : Str) {Y Y' : Set Str} (h : Y' ⊆ Y) : prepend σ Y' ⊆ prepend σ Y := by
   rintro w ⟨τ, hτ, rfl⟩
   exact ⟨τ, h hτ, rfl⟩
 end
 
 section
-/-- `σ{ρ} = {σρ}`: prepending `σ` to a terminator singleton. -/
+
 theorem prepend_singleton (σ ρ : Str) : prepend σ ({ρ} : Set Str) = ({σ ++ ρ} : Set Str) := by
   ext w
   simp only [mem_prepend, Set.mem_singleton_iff]
@@ -148,7 +142,7 @@ theorem prepend_singleton (σ ρ : Str) : prepend σ ({ρ} : Set Str) = ({σ ++ 
 end
 
 section
-/-- Prepending preserves `𝒞`-membership (cone ↦ cone, singleton ↦ singleton). -/
+
 theorem memC_prepend (σ : Str) {Y : Set Str} (hY : C.mem Y) : C.mem (prepend σ Y) := by
   rcases hY with ⟨ρ, rfl⟩ | ⟨ρ, rfl⟩
   · rw [prepend_cone]; exact memC_cone (σ ++ ρ)
@@ -156,24 +150,24 @@ theorem memC_prepend (σ : Str) {Y : Set Str} (hY : C.mem Y) : C.mem (prepend σ
 end
 
 section
-/-- `σY ⊆ σΣ* = cone σ`: prepending `σ` always lands inside the cone of `σ`. -/
+
 theorem prepend_subset_cone (σ : Str) (Y : Set Str) : prepend σ Y ⊆ cone σ := by
   rintro w ⟨τ, _, rfl⟩
   exact mem_cone.mpr (List.prefix_append σ τ)
 end
 
 section
-/-- The **total finite sequence** `σ` as an element of `|𝒞|`: the principal filter `↑{σ}`. -/
+
 def singletonElt (σ : Str) : C.Element := C.principal (memC_singleton σ)
 end
 
 section
-/-- `Λ`, the **total empty sequence** (terminated): `↑{[]}`. -/
+
 def Lambda : C.Element := singletonElt []
 end
 
 section
-/-- A nonempty `𝒞`-neighbourhood contained in a singleton *is* that singleton. -/
+
 theorem subset_singleton_eq {W : Set Str} {σ : Str} (hW : C.mem W) (hsub : W ⊆ ({σ} : Set Str)) :
     W = ({σ} : Set Str) := by
   rcases hW with ⟨ρ, rfl⟩ | ⟨ρ, rfl⟩
@@ -183,12 +177,7 @@ theorem subset_singleton_eq {W : Set Str} {σ : Str} (hW : C.mem W) (hsub : W �
 end
 
 section
-/-- **Juxtaposition `xy`** as an approximable map `𝒞 × 𝒞 → 𝒞`.
 
-The relation `X, Y j Z` reads off the *left-to-right bias*: if the first input neighbourhood `X` is
-a cone `σΣ*` (`x` extends `σ` but is undetermined), the output only commits to the prefix `σ`
-(`σΣ* ⊆ Z`), ignoring `Y`; if `X` is a terminator `{σ}` (`x` is the total finite sequence `σ`), the
-output prepends `σ` to the second input `Y` (`σY ⊆ Z`). -/
 def juxtapose : ApproximableMap₂ C C C where
   rel X Y Z := C.mem Y ∧ C.mem Z ∧
     ((∃ σ, X = cone σ ∧ cone σ ⊆ Z) ∨ (∃ σ, X = ({σ} : Set Str) ∧ prepend σ Y ⊆ Z))
@@ -229,8 +218,7 @@ def juxtapose : ApproximableMap₂ C C C where
 end
 
 section
-/-- **`⊥ ⊏ Λ`.** The undefined sequence `⊥ = ↑Δ` is strictly below the total empty sequence
-`Λ = ↑{[]}`: they are distinct because `⊥` contains only `Δ`, whereas `Λ` contains `{[]} ≠ Δ`. -/
+
 theorem bot_lt_Lambda : C.bot < Lambda := by
   refine lt_of_le_of_ne (C.bot_le _) ?_
   intro h
@@ -243,9 +231,7 @@ theorem bot_lt_Lambda : C.bot < Lambda := by
 end
 
 section
-/-- **Total finite sequences.** `↑{σ}` is a total (maximal) element of `|𝒞|`: any element above it
-must equal it, because `{σ}` is a minimal nonempty neighbourhood. This is what was *false* in `𝔹`,
-where finite sequences gave only the partial `σ⊥`. -/
+
 theorem isTotal_singletonElt (σ : Str) : C.IsTotal (singletonElt σ) := by
   intro y hy Z hZ
   have hσy : y.mem ({σ} : Set Str) := hy {σ} ⟨memC_singleton σ, subset_rfl⟩
@@ -257,9 +243,7 @@ theorem isTotal_singletonElt (σ : Str) : C.IsTotal (singletonElt σ) := by
 end
 
 section
-/-- **Left-to-right bias / "`x` infinite ⟹ `xy = x`".** On a partial input `σ⊥ = ↑(σΣ*)` the
-juxtaposition returns `σ⊥` itself, *independently of `y`*. Since an infinite (total) sequence is the
-directed union of its finite approximants `σ⊥`, this says `xy = x` for total infinite `x`. -/
+
 theorem juxtapose_cone (σ : Str) (y : C.Element) :
     juxtapose.toElementMap₂ (C.principal (memC_cone σ)) y = C.principal (memC_cone σ) := by
   apply Element.ext
@@ -275,9 +259,7 @@ theorem juxtapose_cone (σ : Str) (y : C.Element) :
 end
 
 section
-/-- **`σy` for a total finite `x = ↑{σ}`.** When the first argument is the total finite sequence
-`σ`, juxtaposition prepends `σ` to `y`: `Z ∈ (↑{σ})y` iff `Z` contains `σY'` for some `Y' ∈ y`. The
-coarser cone witnesses `σΣ* ∈ ↑{σ}` add nothing, since `σΔ = σΣ*` is itself of the form `σY'`. -/
+
 theorem juxtapose_singleton_mem (σ : Str) (y : C.Element) {Z : Set Str} :
     (juxtapose.toElementMap₂ (singletonElt σ) y).mem Z ↔
       C.mem Z ∧ ∃ Y', y.mem Y' ∧ prepend σ Y' ⊆ Z := by
@@ -329,13 +311,13 @@ theorem example_221 : ∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str)
 end
 
 section
-/-- **`𝔹 ⊆ 𝒞`.** Every neighbourhood of `𝔹` is a neighbourhood of `𝒞`. -/
+
 theorem memB_imp_memC {X : Set Str} (hX : B.mem X) : C.mem X := by
   obtain ⟨σ, rfl⟩ := hX; exact memC_cone σ
 end
 
 section
-/-- Every neighbourhood of `𝒞` is nonempty (there is no empty token). -/
+
 theorem memC_nonempty {W : Set Str} (hW : C.mem W) : W.Nonempty := by
   rcases hW with ⟨σ, rfl⟩ | ⟨σ, rfl⟩
   · exact ⟨σ, mem_cone.mpr List.prefix_rfl⟩

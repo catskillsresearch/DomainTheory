@@ -13,7 +13,6 @@ attribute [instance] CLat.str
 
 namespace functionSpaceInclFun
 
-/-- Continuity of the inner map `i ∘ f ∘ j`. -/
 theorem continuous {D D' : Type u}
     [CompleteLattice D] [CompleteLattice D']
     (P : IsContinuousLatticeProjection D D') (f : ScottMap D D) :
@@ -25,15 +24,12 @@ theorem continuous {D D' : Type u}
 
 end functionSpaceInclFun
 
-/-- The inclusion part of `[P → P]`, with its underlying function explicit. -/
 def functionSpaceInclFun {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
     (P : IsContinuousLatticeProjection D D') (f : ScottMap D D) : ScottMap D' D' :=
   ⟨fun x => P.incl (f (P.retr x)), functionSpaceInclFun.continuous P f⟩
 
 namespace functionSpaceInclFun
 
-/-- Continuity, for the lattice Scott topologies on the function spaces, of
-`f ↦ i ∘ f ∘ j`. -/
 theorem outer_continuous {D D' : Type u}
     [CompleteLattice D] [CompleteLattice D']
     (P : IsContinuousLatticeProjection D D') :

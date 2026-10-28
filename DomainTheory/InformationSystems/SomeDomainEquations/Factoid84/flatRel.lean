@@ -14,7 +14,7 @@ open InfoSys
 open ApproximableMap
 
 namespace Factoid84
-/-- If `1 ∈ u`, accept any `v`; else require `v ⊆ u ∪ {0}` and `1 ∉ v`. -/
+
 def flatRel (u v : Finset ℕ) : Prop :=
   (1 ∈ u) ∨ ((∀ n ∈ v, n = 0 ∨ n ∈ u) ∧ 1 ∉ v)
 
@@ -25,6 +25,5 @@ theorem flatRel.of_mem_one {u v : Finset ℕ} (h : 1 ∈ u) : flatRel u v :=
   Or.inl h
 
 end Factoid84
-
 
 end DomainTheory.InformationSystems

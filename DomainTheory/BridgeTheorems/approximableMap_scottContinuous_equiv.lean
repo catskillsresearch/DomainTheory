@@ -91,7 +91,6 @@ open ContinuousLatticeToNeighborhood
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-/-- **Factoid 4.6.** Approximable maps ↔ Scott-continuous maps of domains. -/
 noncomputable def approximableMap_scottContinuous_equiv (A : InfoSys α) (B : InfoSys β) :
     ApproximableMap A B ≃o ScottContinuous A B where
   toFun := toScottContinuous

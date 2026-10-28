@@ -9,8 +9,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- A stage by which the finite application tree coded by `n` has appeared
-in the least-fixed-point construction of `valC`. -/
 noncomputable def valRank : ℕ → ℕ
   | 0 => 1
   | p + 1 => max (valRank (unpair p).1) (valRank (unpair p).2) + 1

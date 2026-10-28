@@ -33,7 +33,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -46,7 +45,6 @@ variable (A : InfoSys α) (B : InfoSys β)
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
-
 
 theorem eq_botElement_of_no_injections (z : (sumSystem A B).Element)
     (hL : ∀ x : α, SumToken.left x ∉ z.carrier)

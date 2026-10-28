@@ -6,11 +6,9 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem primrec_pair : Primrec₂ pair :=
   (Primrec.nat_add.comp

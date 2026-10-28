@@ -13,9 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.seq4
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 namespace seq4_app
 

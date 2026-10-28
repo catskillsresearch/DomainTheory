@@ -13,13 +13,11 @@ public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Order
 public import Mathlib.Order.FixedPoints
 
-
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
@@ -33,7 +31,6 @@ section SubspaceExtension
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y]
 
-/-- **Scott 1972, Proposition 3.8.** The infimum term `⊓ { f(x) : e(x) ∈ U }` for open `U ⊆ Y`. -/
 noncomputable def scottSubspaceExtendInf (e : X → Y) (f : X → D) (U : Set Y) : D :=
   sInf (f '' (e ⁻¹' U))
 

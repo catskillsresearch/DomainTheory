@@ -10,11 +10,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (2.15).** `x ∪ y = (λz. 0) ⊃ x, y`. -/
 theorem eq_2_15 (x y : Pomega) :
     condSet (graph (fun _ => ofNat 0)) x y = x ∪ y := by
   have h0 : 0 ∈ graph (fun _ => ofNat 0) :=

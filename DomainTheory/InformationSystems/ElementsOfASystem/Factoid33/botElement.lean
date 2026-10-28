@@ -12,7 +12,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- **Factoid 3.3.** The bottom element `⊥ = {X ∣ {Δ} ⊢ X}`. -/
 def botElement : sys.Element where
   carrier := {X | sys.Ent {sys.bot} X}
   consistent := by
@@ -29,7 +28,6 @@ def botElement : sys.Element where
       exact sys.con_subset (proposition_2_3_ii sys hbot hEntY) (subset_funion_right _ _)
     exact sys.ent_trans hbot hYcon (fun y hy => hY (Finset.mem_coe.2 hy)) hEnt
 
-/-- `⊥` is least. -/
 theorem botElement.le (x : sys.Element) : sys.botElement ≤ x := by
   intro a ha
   have hsub : (↑({sys.bot} : Finset α) : Set α) ⊆ x.carrier := by
@@ -41,6 +39,5 @@ theorem botElement.le (x : sys.Element) : sys.botElement ≤ x := by
   exact x.closed {sys.bot} a hsub ha
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

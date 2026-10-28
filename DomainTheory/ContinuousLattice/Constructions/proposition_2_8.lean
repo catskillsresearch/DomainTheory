@@ -10,16 +10,12 @@ public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Topology Set
 
 variable {D : Type*} [CompleteLattice D]
 
-/-- **Scott 1972, Proposition 2.8.** A finite lattice is a continuous lattice. In a finite
-lattice every principal up-set `Set.Ici y` is Scott-open (a non-empty directed set is finite,
-so it attains its supremum), hence `y ≪ y`; therefore `y` is the supremum of `{x | x ≪ y}`. -/
 theorem proposition_2_8 [Finite D] : ContinuousLattice D := by
   refine { out := ?_ }
   intro y

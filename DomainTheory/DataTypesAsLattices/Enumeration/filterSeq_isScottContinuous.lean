@@ -16,16 +16,13 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem filterSeq_isScottContinuous :
     IsScottContinuous fun v =>

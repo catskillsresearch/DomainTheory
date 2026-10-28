@@ -11,9 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_a
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem normalized_finite_fresh_app (p q m : ℕ) :
     funOf (graph (fun y => funOf (e p) y))

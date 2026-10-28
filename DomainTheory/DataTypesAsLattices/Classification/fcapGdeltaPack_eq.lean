@@ -14,11 +14,9 @@ public import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succS
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
-
 
 theorem fcapGdeltaPack_eq {f g : Pomega → Pomega} {x : Pomega}
     (hfval : f x = botElem ∨ f x = topElem) :

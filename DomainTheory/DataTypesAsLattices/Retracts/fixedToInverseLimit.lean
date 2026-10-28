@@ -25,8 +25,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- A point of the fixed-point range determines its sequence of finite
-projections. -/
 def fixedToInverseLimit {F : Pomega → Pomega}
     (_hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a))

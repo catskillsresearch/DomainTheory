@@ -42,7 +42,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.c
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -51,14 +50,10 @@ namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-
 variable (A : InfoSys α) (B : InfoSys β)
-
 
 open ApproximableMap
 
-
-/-- Domain isomorphism data: `A × A ≅ (BOOL →ₛ A)` via `cond`. -/
 theorem conditional_iso (x y : A.Element) :
     (condMap A x y).toElement boolTrue = x ∧
     (condMap A x y).toElement boolFalse = y ∧

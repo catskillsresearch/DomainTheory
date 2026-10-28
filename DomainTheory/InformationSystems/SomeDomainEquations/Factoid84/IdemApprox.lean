@@ -17,7 +17,6 @@ open InfoSys
 
 open ApproximableMap
 
-/-- (2) `r ∘ r = r` (transitivity / idempotence). -/
 def IdemApprox (r : ApproximableMap P P) : Prop :=
   ApproximableMap.comp r r = r
 

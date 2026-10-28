@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.Basi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,9 +15,7 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
-
 
 theorem LamCon_subset {u : Finset (RawLamToken α)} (hu : LamCon A u) :
     ∀ {v}, v ⊆ u → LamCon A v := by

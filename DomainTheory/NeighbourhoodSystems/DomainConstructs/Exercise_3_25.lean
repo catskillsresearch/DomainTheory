@@ -9,8 +9,6 @@ section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set
 
-/-- The **Sierpiński domain** `𝒪`: the system over a one-token type whose neighbourhoods are `Δ`
-(`univ`) and `∅`. Its elements are `⊥` (only `Δ`) and `⊤` (also `∅`), i.e. the two-point domain. -/
 def sierpinski : NeighborhoodSystem Unit where
   mem N := N = Set.univ ∨ N = ∅
   master := Set.univ
@@ -28,9 +26,6 @@ def sierpinski : NeighborhoodSystem Unit where
 section
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- `mapOfOpen U : 𝒟 → 𝒪`. It always relates `X` to the blunt neighbourhood `univ` of `𝒪`, and
-relates `X` to the sharp neighbourhood `∅` exactly when the basic open `[X]` lies inside `U`. As an
-elementwise map it sends `x` to `⊤` iff `x ∈ U`. -/
 def mapOfOpen (U : Set V.Element) : ApproximableMap V sierpinski where
   rel X Y := V.mem X ∧ (Y = Set.univ ∨ (Y = ∅ ∧ V.basicOpen X ⊆ U))
   rel_dom h := h.1
@@ -64,7 +59,6 @@ def mapOfOpen (U : Set V.Element) : ApproximableMap V sierpinski where
 @[simp] theorem mapOfOpen_rel (U : Set V.Element) (X : Set α) (Y : Set Unit) :
     (mapOfOpen V U).rel X Y ↔ V.mem X ∧ (Y = Set.univ ∨ (Y = ∅ ∧ V.basicOpen X ⊆ U)) := Iff.rfl
 
-/-- The decisive special case: `X (mapOfOpen U) ∅ ↔ [X] ⊆ U` (for a neighbourhood `X`). -/
 theorem mapOfOpen_rel_empty (U : Set V.Element) (X : Set α) :
     (mapOfOpen V U).rel X ∅ ↔ V.mem X ∧ V.basicOpen X ⊆ U := by
   rw [mapOfOpen_rel]
@@ -77,11 +71,9 @@ theorem mapOfOpen_rel_empty (U : Set V.Element) (X : Set α) :
   · rintro ⟨hX, h⟩
     exact ⟨hX, Or.inr ⟨rfl, h⟩⟩
 
-/-- `openOfMap f = {x ∣ f(x) = ⊤} = ⋃ {[X] ∣ X f ∅}`: the points sent by `f` to the top of `𝒪`. -/
 def openOfMap (f : ApproximableMap V sierpinski) : Set V.Element :=
   {x | ∃ X, x.mem X ∧ f.rel X ∅}
 
-/-- `openOfMap f` is open: it is a union of basic opens `[X]`. -/
 theorem openOfMap_isOpen (f : ApproximableMap V sierpinski) : IsOpen (openOfMap V f) := by
   constructor
   intro x hx
@@ -106,8 +98,6 @@ end
 section
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- **Exercise 3.25 (core).** The open subsets of `|𝒟|` (ordered by `⊆`) are order-isomorphic to the
-approximable maps `𝒟 → 𝒪`. -/
 def openIso (V : NeighborhoodSystem α) :
     {U : Set V.Element // IsOpen U} ≃o ApproximableMap V sierpinski where
   toFun U := mapOfOpen V U.1
@@ -156,10 +146,6 @@ def openIso (V : NeighborhoodSystem α) :
       · exact Or.inl hu
       · exact Or.inr ⟨he, fun z hz => h (hsub hz)⟩
 
-/- concordance: source L1583 EXERCISE 3.25 opens form a domain -/
-/-- **Exercise 3.25.** The family of open subsets of `|𝒟|`, ordered by inclusion, is
-order-isomorphic to the domain `|𝒟 → 𝒪|` of the Sierpiński function space — hence *is* (isomorphic
-to) a domain. This uses Theorem 3.10 (`funSpaceEquiv`) exactly as Scott directs. -/
 def opensReprIso (V : NeighborhoodSystem α) :
     {U : Set V.Element // IsOpen U} ≃o (funSpace V sierpinski).Element :=
   (openIso V).trans (funSpaceEquiv V sierpinski).symm

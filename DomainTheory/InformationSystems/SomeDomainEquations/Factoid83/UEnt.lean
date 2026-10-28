@@ -20,7 +20,7 @@ namespace DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-/-- Entailment for `U` (Scott (10)). -/
+
 def UEnt (u : Finset UToken) (p : UToken) : Prop :=
   UCon u ∧ VEnt (uForgetFinset u) p.val
 
@@ -41,6 +41,5 @@ theorem UEnt.trans {u v : Finset UToken} {c : UToken}
     h.2⟩
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

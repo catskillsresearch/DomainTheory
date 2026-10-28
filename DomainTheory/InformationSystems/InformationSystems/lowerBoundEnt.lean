@@ -8,7 +8,6 @@ namespace DomainTheory.InformationSystems
 
 namespace Factoid24
 
-/-- Entailment for the lower-bound system: `u ⊢ m` iff `m = 0` or some `n ∈ u` has `m ≤ n`. -/
 def lowerBoundEnt (u : Finset ℕ) (m : ℕ) : Prop :=
   m = 0 ∨ ∃ n ∈ u, m ≤ n
 

@@ -69,7 +69,6 @@ public import DomainTheory.BridgeTheorems.PresentationDomains
 public import DomainTheory.BridgeTheorems.ConjScottMap
 public import DomainTheory.BridgeTheorems.ScottMapBridgeInst9
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -90,7 +89,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable {D E : Type*} [CompleteLattice D] [CompleteLattice E]
 
-/-- Conjugate a Scott map along order isomorphisms of the underlying lattices. -/
 noncomputable def conjScottMapFun {D' E' : Type*} [LE D'] [LE E']
     (ιD : D ≃o D') (ιE : E ≃o E') (f : ScottMap D E) : D' → E' :=
   ⇑ιE ∘ (f : D → E) ∘ ⇑ιD.symm

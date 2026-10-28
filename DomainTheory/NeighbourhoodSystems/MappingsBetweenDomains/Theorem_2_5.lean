@@ -12,12 +12,8 @@ namespace ApproximableMap
 section
 variable {α β γ δ : Type*}
 
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
-/-- **Theorem 2.5(i) (Scott 1981, PRG-19) — the identity mapping `I_D`.** `X I_D Y ↔ X ⊆ Y`
-(confined to `𝒟 × 𝒟`). It is approximable: (i) `Δ ⊆ Δ`; (ii) `X ⊆ Y`, `X ⊆ Y'` give `X ⊆ Y ∩ Y'`
-with witness `X`; (iii) is transitivity `X' ⊆ X ⊆ Y ⊆ Y'`. -/
 def idMap (V : NeighborhoodSystem α) : ApproximableMap V V where
   rel X Y := V.mem X ∧ V.mem Y ∧ X ⊆ Y
   rel_dom h := h.1
@@ -33,10 +29,6 @@ def idMap (V : NeighborhoodSystem α) : ApproximableMap V V where
 @[simp] theorem idMap_rel {V : NeighborhoodSystem α} {X Y : Set α} :
     (idMap V).rel X Y ↔ V.mem X ∧ V.mem Y ∧ X ⊆ Y := Iff.rfl
 
-/-- **Theorem 2.5(ii) (Scott 1981, PRG-19) — composition `g ∘ f`.** `X (g∘f) Z ↔ ∃ Y, X f Y ∧ Y g Z`.
-Approximability is Scott's verification: (i) use `Y = Δ₁`; (ii) intersect both witnesses via
-`f.inter_right` then `g.inter_right` (narrowing the inner neighbourhood with `g.mono`); (iii) narrow
-the input with `f.mono` and widen the output with `g.mono`, keeping the same witness. -/
 def comp (g : ApproximableMap V₁ V₂) (f : ApproximableMap V₀ V₁) : ApproximableMap V₀ V₂ where
   rel X Z := ∃ Y, f.rel X Y ∧ g.rel Y Z
   rel_dom := fun ⟨_, hXY, _⟩ => f.rel_dom hXY
@@ -68,9 +60,6 @@ def comp (g : ApproximableMap V₁ V₂) (f : ApproximableMap V₀ V₁) : Appro
   · intro hY
     exact ⟨Y, hY, x.sub hY, x.sub hY, subset_rfl⟩
 
-/- concordance: source L682 THEOREM 2.5 category of approximable maps -/
-/-- **Theorem 2.5 — associativity.** `h ∘ (g ∘ f) = (h ∘ g) ∘ f`. Pure reassociation of the
-existential witnesses. -/
 theorem comp_assoc {V₃ : NeighborhoodSystem δ} (h : ApproximableMap V₂ V₃)
     (g : ApproximableMap V₁ V₂) (f : ApproximableMap V₀ V₁) :
     (h.comp g).comp f = h.comp (g.comp f) := by
@@ -82,8 +71,6 @@ theorem comp_assoc {V₃ : NeighborhoodSystem δ} (h : ApproximableMap V₂ V₃
   · rintro ⟨Z, ⟨Y, hXY, hYZ⟩, hZW⟩
     exact ⟨Y, hXY, Z, hYZ, hZW⟩
 
-/-- **Theorem 2.5 — right identity law.** `f ∘ I_{D₀} = f`. (`→`: a witness `X ⊆ Y` sharpens the
-input of `f` by `f.mono`; `←`: take `Y = X`.) -/
 theorem comp_idMap (f : ApproximableMap V₀ V₁) : f.comp (idMap V₀) = f := by
   apply ApproximableMap.ext
   intro X Z
@@ -93,8 +80,6 @@ theorem comp_idMap (f : ApproximableMap V₀ V₁) : f.comp (idMap V₀) = f := 
   · intro hXZ
     exact ⟨X, ⟨f.rel_dom hXZ, f.rel_dom hXZ, subset_rfl⟩, hXZ⟩
 
-/-- **Theorem 2.5 — left identity law.** `I_{D₁} ∘ f = f`. (`→`: a witness `Y ⊆ Z` widens the output
-of `f` by `f.mono`; `←`: take `Y = Z`.) -/
 theorem idMap_comp (f : ApproximableMap V₀ V₁) : (idMap V₁).comp f = f := by
   apply ApproximableMap.ext
   intro X Z

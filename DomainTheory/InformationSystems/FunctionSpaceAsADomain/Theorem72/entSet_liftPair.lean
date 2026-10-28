@@ -27,7 +27,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- Product entailment between lifted pairs from component entailments. -/
 theorem entSet_liftPair {u u' : Finset α} {v v' : Finset β}
     (hu' : u' ∈ A.Con) (hv' : v' ∈ B.Con)
     (hEntu : A.EntSet u' u) (hEntv : B.EntSet v' v) :

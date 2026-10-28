@@ -18,7 +18,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-/-- **Scott 1976, (2.22).** Longer sequences by cons. -/
+
 def seqCons (x xs : Pomega) : Pomega :=
   graph (fun z => condSet z x (funOf xs (predSet z)))
 

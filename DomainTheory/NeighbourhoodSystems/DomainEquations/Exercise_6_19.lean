@@ -11,11 +11,7 @@ open NeighborhoodSystem ApproximableMap Example62 ExampleB
 section
 namespace Exercise619
 variable {D₀ D₁ : NeighborhoodSystem Str}
-/- concordance: source L4087 EXERCISE 6.19 strict sum and product -/
-/-- **Exercise 6.19 — the concrete sum system `𝒟₀ + 𝒟₁` over `{0,1}*`.** A neighbourhood is the
-master `{Λ} ∪ 0Δ₀ ∪ 1Δ₁`, a left copy `0X` (`X ∈ 𝒟₀`), or a right copy `1Y` (`Y ∈ 𝒟₁`). The standing
-assumption `∅ ∉ 𝒟ᵢ` (`h₀`, `h₁`) makes the two tagged copies disjoint, so the system is closed under
-consistent intersection. -/
+
 def sumTok (D₀ D₁ : NeighborhoodSystem Str)
     (h₀ : ∀ X, D₀.mem X → X.Nonempty) (h₁ : ∀ Y, D₁.mem Y → Y.Nonempty) :
     NeighborhoodSystem Str where
@@ -122,7 +118,6 @@ theorem sum_mem_nonempty {W : Set (Option (Str ⊕ Str))} (h : (sum D₀ D₁ h�
   · exact inj₀_nonempty (h₀ X hX)
   · exact inj₁_nonempty (h₁ Y hY)
 
-/-- The forward half of the isomorphism, a token-level analogue of `Example62.toBB`. -/
 def toSum (x : (sumTok D₀ D₁ h₀ h₁).Element) : (sum D₀ D₁ h₀ h₁).Element where
   mem W := W = sumMaster D₀ D₁
     ∨ (∃ X, D₀.mem X ∧ W = inj₀ X ∧ x.mem (embBit false X))
@@ -193,7 +188,6 @@ def toSum (x : (sumTok D₀ D₁ h₀ h₁).Element) : (sum D₀ D₁ h₀ h₁)
     · rwa [inj₁_injective heq]
   · intro hz; exact Or.inr (Or.inr ⟨Y, hY, rfl, hz⟩)
 
-/-- The inverse half of the isomorphism, a token-level analogue of `Example62.fromBB`. -/
 def fromSum (s : (sum D₀ D₁ h₀ h₁).Element) : (sumTok D₀ D₁ h₀ h₁).Element where
   mem W := W = sumTokMaster D₀ D₁
     ∨ (∃ X, D₀.mem X ∧ W = embBit false X ∧ s.mem (inj₀ X))
@@ -280,7 +274,6 @@ theorem fromSum_toSum (x : (sumTok D₀ D₁ h₀ h₁).Element) : fromSum (toSu
     · exact Or.inr (Or.inl ⟨X, hX, rfl, (toSum_mem_inj₀ hX).mpr hW⟩)
     · exact Or.inr (Or.inr ⟨Y, hY, rfl, (toSum_mem_inj₁ hY).mpr hW⟩)
 
-/-- A product neighbourhood `{Λ} ∪ 0X ∪ 1Y` over `{0,1}*`. -/
 def prodTokNbhd (X Y : Set Str) : Set Str := insert [] (embBit false X ∪ embBit true Y)
 
 @[simp] theorem mem_prodTokNbhd_nil {X Y : Set Str} : ([] : Str) ∈ prodTokNbhd X Y :=
@@ -306,7 +299,6 @@ def prodTokNbhd (X Y : Set Str) : Set Str := insert [] (embBit false X ∪ embBi
     · rw [List.cons.injEq] at hu; rw [hu.2]; exact hY
   · intro h; exact Or.inr (Or.inr ⟨w', rfl, h⟩)
 
-/-- Scott's (2) for the product: product neighbourhoods intersect componentwise. -/
 theorem prodTokNbhd_inter (X X' Y Y' : Set Str) :
     prodTokNbhd X Y ∩ prodTokNbhd X' Y' = prodTokNbhd (X ∩ X') (Y ∩ Y') := by
   ext w
@@ -314,7 +306,6 @@ theorem prodTokNbhd_inter (X X' Y Y' : Set Str) :
   | nil => simp [Set.mem_inter_iff]
   | cons b w' => cases b <;> simp [Set.mem_inter_iff]
 
-/-- Scott's (1) for the product: inclusion of product neighbourhoods is componentwise. -/
 theorem prodTokNbhd_subset_iff {X X' Y Y' : Set Str} :
     prodTokNbhd X Y ⊆ prodTokNbhd X' Y' ↔ X ⊆ X' ∧ Y ⊆ Y' := by
   constructor
@@ -330,9 +321,6 @@ theorem prodTokNbhd_subset_iff {X X' Y Y' : Set Str} :
       | false => exact mem_prodTokNbhd_false.mpr (hX (mem_prodTokNbhd_false.mp hw))
       | true => exact mem_prodTokNbhd_true.mpr (hY (mem_prodTokNbhd_true.mp hw))
 
-/-- **Exercise 6.19 — the concrete product system `𝒟₀ × 𝒟₁` over `{0,1}*`.** Neighbourhoods are
-`{Λ} ∪ 0X ∪ 1Y` with `X ∈ 𝒟₀`, `Y ∈ 𝒟₁`. Closed under consistent intersection by Scott's (1)/(2)
-together with the factors' closure. -/
 def prodTok (D₀ D₁ : NeighborhoodSystem Str) : NeighborhoodSystem Str where
   mem W := ∃ X Y, D₀.mem X ∧ D₁.mem Y ∧ W = prodTokNbhd X Y
   master := prodTokNbhd D₀.master D₁.master
@@ -362,7 +350,6 @@ theorem prodTokNbhd_injective {X X' Y Y' : Set Str} (h : prodTokNbhd X Y = prodT
 theorem prodTok_mem_prodTokNbhd {X Y : Set Str} (hX : D₀.mem X) (hY : D₁.mem Y) :
     (prodTok D₀ D₁).mem (prodTokNbhd X Y) := ⟨X, Y, hX, hY, rfl⟩
 
-/-- Scott's `z₀`: the first component of a `prodTok`-element. -/
 def fstTok (z : (prodTok D₀ D₁).Element) : D₀.Element where
   mem X := D₀.mem X ∧ z.mem (prodTokNbhd X D₁.master)
   sub h := h.1
@@ -382,7 +369,6 @@ def fstTok (z : (prodTok D₀ D₁).Element) : D₀.Element where
 @[simp] theorem mem_fstTok {z : (prodTok D₀ D₁).Element} {X : Set Str} :
     (fstTok z).mem X ↔ D₀.mem X ∧ z.mem (prodTokNbhd X D₁.master) := Iff.rfl
 
-/-- Scott's `z₁`: the second component of a `prodTok`-element. -/
 def sndTok (z : (prodTok D₀ D₁).Element) : D₁.Element where
   mem Y := D₁.mem Y ∧ z.mem (prodTokNbhd D₀.master Y)
   sub h := h.1
@@ -402,7 +388,6 @@ def sndTok (z : (prodTok D₀ D₁).Element) : D₁.Element where
 @[simp] theorem mem_sndTok {z : (prodTok D₀ D₁).Element} {Y : Set Str} :
     (sndTok z).mem Y ↔ D₁.mem Y ∧ z.mem (prodTokNbhd D₀.master Y) := Iff.rfl
 
-/-- The element pairing `⟨x, y⟩` for the concrete product. -/
 def pairTok (x : D₀.Element) (y : D₁.Element) : (prodTok D₀ D₁).Element where
   mem W := ∃ X Y, x.mem X ∧ y.mem Y ∧ W = prodTokNbhd X Y
   sub := by rintro W ⟨X, Y, hX, hY, rfl⟩; exact prodTok_mem_prodTokNbhd (x.sub hX) (y.sub hY)
@@ -430,7 +415,6 @@ theorem mem_pairTok_prodTokNbhd {x : D₀.Element} {y : D₁.Element} {X Y : Set
   · rintro ⟨hX, hmem⟩; exact (mem_pairTok_prodTokNbhd.mp hmem).1
   · intro hX; exact ⟨x.sub hX, mem_pairTok_prodTokNbhd.mpr ⟨hX, y.master_mem⟩⟩
 
-/-- Scott's (3) for the product: membership of `X ∪ Y` splits into its two slices. -/
 theorem prodTok_mem_split {z : (prodTok D₀ D₁).Element} {X Y : Set Str}
     (hX : D₀.mem X) (hY : D₁.mem Y) :
     z.mem (prodTokNbhd X Y) ↔
@@ -464,7 +448,6 @@ theorem pairTok_fstTok_sndTok (z : (prodTok D₀ D₁).Element) : pairTok (fstTo
   · rintro ⟨hY, hmem⟩; exact (mem_pairTok_prodTokNbhd.mp hmem).2
   · intro hY; exact ⟨y.sub hY, mem_pairTok_prodTokNbhd.mpr ⟨x.master_mem, hY⟩⟩
 
-/-- The order-isomorphism `|D₀ × D₁|ₜₒₖ ≃o |D₀| × |D₁|` (Scott's Proposition 3.2, token-level). -/
 def prodTokEquiv : (prodTok D₀ D₁).Element ≃o D₀.Element × D₁.Element where
   toFun z := (fstTok z, sndTok z)
   invFun p := pairTok p.1 p.2
@@ -496,8 +479,6 @@ theorem toSum_fromSum (s : (sum D₀ D₁ h₀ h₁).Element) : toSum (fromSum s
     · exact Or.inr (Or.inl ⟨X, hX, rfl, (fromSum_mem_embF hX).mpr hW⟩)
     · exact Or.inr (Or.inr ⟨Y, hY, rfl, (fromSum_mem_embT hY).mpr hW⟩)
 
-/-- **Exercise 6.19 — the concrete sum is correct up to isomorphism.** The order-isomorphism
-`|D₀ + D₁|ₜₒₖ ≃o |D₀ + D₁|` between Scott's `{0,1}*`-presentation and the abstract separated sum. -/
 def sumTokEquiv : (sumTok D₀ D₁ h₀ h₁).Element ≃o (sum D₀ D₁ h₀ h₁).Element where
   toFun := toSum
   invFun := fromSum
@@ -517,22 +498,14 @@ def sumTokEquiv : (sumTok D₀ D₁ h₀ h₁).Element ≃o (sum D₀ D₁ h₀ 
       · exact Or.inr (Or.inl ⟨X, hX, rfl, h _ hzX⟩)
       · exact Or.inr (Or.inr ⟨Y, hY, rfl, h _ hzY⟩)
 
-/-- `prodTokNbhd D₀.master D₁.master` is exactly the sum master `{Λ} ∪ 0Δ₀ ∪ 1Δ₁`. -/
 theorem prodTokNbhd_master_eq : prodTokNbhd D₀.master D₁.master = sumTokMaster D₀ D₁ := rfl
 
-/-- **Exercise 6.19 — *"Are these correct up to isomorphism?"* (product).** Scott's uniform
-`{0,1}*`-presentation `𝒟₀ × 𝒟₁` is isomorphic, as a domain, to the abstract product of Definition 3.1.
-Both compute the same domain `|D₀| × |D₁|` (via `prodTokEquiv` and Scott's `prodEquiv`). -/
 theorem prodTok_iso_prod : prodTok D₀ D₁ ≅ᴰ prod D₀ D₁ :=
   ⟨prodTokEquiv.trans (prodEquiv D₀ D₁).symm⟩
 
-/-- The concrete product is again `∅`-free (every neighbourhood contains `Λ`). -/
 theorem prodTok_nonempty : ∀ W, (prodTok D₀ D₁).mem W → W.Nonempty := by
   rintro W ⟨X, Y, _, _, rfl⟩; exact ⟨[], mem_prodTokNbhd_nil⟩
 
-/-- **Exercise 6.19 — *"Are these correct up to isomorphism?"* (sum).** Scott's uniform
-`{0,1}*`-presentation `𝒟₀ + 𝒟₁` is isomorphic, as a domain, to the abstract separated sum of
-Exercise 3.18. -/
 theorem sumTok_iso_sum : sumTok D₀ D₁ h₀ h₁ ≅ᴰ sum D₀ D₁ h₀ h₁ := ⟨sumTokEquiv⟩
 
 end Exercise619
@@ -602,7 +575,6 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
 
 theorem sumTok_mem_master : (sumTok D₀ D₁ h₀ h₁).mem (sumTokMaster D₀ D₁) := Or.inl rfl
 
-/-- The concrete sum is again `∅`-free (an object of Scott's category). -/
 theorem sumTok_nonempty : ∀ W, (sumTok D₀ D₁ h₀ h₁).mem W → W.Nonempty :=
   fun _ h => sumTok_mem_nonempty h
 
@@ -618,7 +590,6 @@ universe u v
 
 variable {ι : Type u} {α : ι → Type v}
 
-/-- A **product neighbourhood** `iprodNbhd X = {⟨i, a⟩ ∣ a ∈ X i}` over `Σ i, α i`. -/
 def iprodNbhd (X : ∀ i, Set (α i)) : Set (Σ i, α i) := {p | p.2 ∈ X p.1}
 
 @[simp] theorem mem_iprodNbhd {X : ∀ i, Set (α i)} {i : ι} {a : α i} :
@@ -638,17 +609,13 @@ variable {ι : Type u} {α : ι → Type v}
 
 variable {D : ∀ i, NeighborhoodSystem (α i)}
 
-/-- **Choice-free finite support**: a *list* enumerating all coordinates where `X` is non-master.
-(Mathlib's `Set.Finite` is built on `Fintype` and pulls in `Classical.choice`; a `List` witness keeps
-the construction constructive, which is exactly what is needed for the cylinder.) -/
 def FinSupp (D : ∀ i, NeighborhoodSystem (α i)) (X : ∀ i, Set (α i)) : Prop :=
   ∃ l : List ι, ∀ i, i ∉ l → X i = (D i).master
 
 theorem FinSupp.inter {X X' : ∀ i, Set (α i)}
     (hX : FinSupp D X) (hX' : FinSupp D X') : FinSupp D (fun i => X i ∩ X' i) := by
   obtain ⟨l, hl⟩ := hX; obtain ⟨l', hl'⟩ := hX'
-  -- Outside `l ++ l'` both factors are the master, so the intersection is too — fully constructive,
-  -- no case split on the undecidable proposition `X i = master`.
+
   refine ⟨l ++ l', fun i hi => ?_⟩
   rw [List.mem_append, not_or] at hi
   simp only [hl i hi.1, hl' i hi.2, Set.inter_self]
@@ -665,17 +632,14 @@ universe u v
 
 variable {ι : Type u} {α : ι → Type v}
 
-/-- The tuple representation of a product neighbourhood is unique. -/
 theorem iprodNbhd_injective {X X' : ∀ i, Set (α i)} (h : iprodNbhd X = iprodNbhd X') : X = X' := by
   funext i; apply Set.ext; intro a
   simpa only [mem_iprodNbhd] using Set.ext_iff.mp h ⟨i, a⟩
 
-/-- Product neighbourhoods intersect coordinatewise (Scott's (2)). -/
 theorem iprodNbhd_inter (X X' : ∀ i, Set (α i)) :
     iprodNbhd X ∩ iprodNbhd X' = iprodNbhd (fun i => X i ∩ X' i) := by
   apply Set.ext; rintro ⟨i, a⟩; simp [iprodNbhd, Set.mem_inter_iff]
 
-/-- Inclusion of product neighbourhoods is coordinatewise (Scott's (1)). -/
 theorem iprodNbhd_subset_iff {X X' : ∀ i, Set (α i)} :
     iprodNbhd X ⊆ iprodNbhd X' ↔ ∀ i, X i ⊆ X' i := by
   constructor

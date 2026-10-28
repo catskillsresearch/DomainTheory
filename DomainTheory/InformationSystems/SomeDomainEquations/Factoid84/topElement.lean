@@ -17,7 +17,6 @@ open InfoSys
 
 open ApproximableMap
 
-/-- Top element `⊤` of `|P|` (all tokens). -/
 def topElement : P.Element :=
   P.topElement P.AllConsistent
 

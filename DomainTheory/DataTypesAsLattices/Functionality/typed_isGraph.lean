@@ -12,9 +12,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem typed_isGraph {a b f : Pomega} (hf : typed f (arrowR a b)) :
     f = graph (fun x => funOf f x) := by

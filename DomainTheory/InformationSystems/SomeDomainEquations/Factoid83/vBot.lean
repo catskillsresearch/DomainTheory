@@ -14,7 +14,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-/-- Bottom `Δ_V`. -/
 def vBot : VToken := .bot
 
 end InfoSys

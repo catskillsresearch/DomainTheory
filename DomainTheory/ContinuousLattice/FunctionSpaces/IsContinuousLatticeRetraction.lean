@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -21,7 +20,6 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- **Scott 1972, Definition 3.6.** A *retraction* of continuous lattices. -/
 structure IsContinuousLatticeRetraction (D : Type u) (D' : Type v)
     [CompleteLattice D] [CompleteLattice D'] where
   incl : ScottMap D D'

@@ -16,11 +16,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
-public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
-public import DomainTheory.ContinuousLattice.WayBelow.sInf_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.isContinuousLattice_iff_isLUB_sInf_nhds
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter
@@ -45,7 +40,6 @@ variable (hD : ContinuousLattice D)
 
 include hD
 
-/-- Order-isomorphism: continuous lattice ↔ round `↟`-filters. -/
 noncomputable def domainOrderIso : D ≃o RoundFilter (D := D) where
   toFun x := ⟨toFilter x, toFilter_isRound hD x⟩
   invFun f := ofFilter (D := D) f.1

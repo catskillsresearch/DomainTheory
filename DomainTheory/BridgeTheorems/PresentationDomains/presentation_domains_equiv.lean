@@ -36,10 +36,6 @@ variable (hD : ContinuousLattice D)
 
 include hD
 
-/-- **Blueprint:** three-presentation equivalence for continuous lattices.
-
-`D ≃o RoundFilter ≃o RoundInfoSysElement`, with the `↟`-system’s `NbhdBasis`
-supplying the 1980↔1982 coding. (Raw `|𝒟|` / full `|A|` remain larger.) -/
 noncomputable def presentation_domains_equiv :
     D ≃o RoundInfoSysElement (D := D) :=
   continuousLattice_roundInfoSys_iso hD

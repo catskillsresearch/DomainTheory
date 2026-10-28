@@ -11,9 +11,6 @@ section
 open NeighborhoodSystem
 variable {α : Type*}
 
-/-- **The abstract specification a splitting operation must satisfy** — exactly `exists_split`'s
-conclusion, as a `Prop` about a *total* function `split`. Both the classical `splitChoice` (via
-`Classical.choice`) and the effective, computable `splitEff` (Theorem 8.8(b)) satisfy this. -/
 def SplitSpec (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ) : Prop :=
   ∀ {A : Set α} {B : Set ℚ}, (A = ∅ ↔ B = ∅) → (B = ∅ ∨ U.mem B) → ∀ Xn : Set α,
     ((split A B Xn).1 = ∅ ∨ U.mem (split A B Xn).1) ∧
@@ -23,10 +20,6 @@ def SplitSpec (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ) : P
       (split A B Xn).1 ∪ (split A B Xn).2 = B ∧
       (split A B Xn).1 ∩ (split A B Xn).2 = ∅
 
-/-- **The key local splitting step behind Theorem 8.8(a)'s back-and-forth construction.** Given a
-`D`-side atom `A` matched with a `U`-side atom `B` (`A = ∅ ↔ B = ∅`, and `B` is either empty or a
-genuine `U`-neighbourhood), and a new target set `Xₙ` (morally the next `D`-neighbourhood `Xₙ`),
-produce matching refinements `I` (for `A ∩ Xₙ`) and `J` (for `A \ Xₙ`). -/
 theorem exists_split {A : Set α} {B : Set ℚ} (hAB : A = ∅ ↔ B = ∅)
     (hBU : B = ∅ ∨ U.mem B) (Xn : Set α) :
     ∃ I J : Set ℚ, (I = ∅ ∨ U.mem I) ∧ (J = ∅ ∨ U.mem J) ∧

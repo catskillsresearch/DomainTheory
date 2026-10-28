@@ -78,7 +78,6 @@ theorem complete :
           simpa [e, Nat.pred_succ, unpairComp.eq] using
             (hhasBits' i hi).imp_right hcons
 
-
 end valTraceOk
 
 end DomainTheory.DataTypesAsLattices

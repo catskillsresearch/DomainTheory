@@ -18,7 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.beta
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (7.15)–(7.16).** Combinators `Zₙ = λf λx. fⁿ(x)`. -/
 def Zcomb (n : ℕ) : Pomega :=
   graph (fun f => graph (fun x => Z n f x))
 

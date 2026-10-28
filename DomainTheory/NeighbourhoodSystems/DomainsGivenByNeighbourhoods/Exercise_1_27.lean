@@ -15,35 +15,19 @@ section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/- concordance: source L546 EXERCISE 1.27 suprema of bounded sets -/
-/-- **Exercise 1.27 — bounded set of elements.** `X ⊆ |𝒟|` is *bounded* iff it has an upper
-bound `y ∈ |𝒟|`: `x ⊑ y` for all `x ∈ X`. -/
 def Bounded (X : Set V.Element) : Prop := ∃ y : V.Element, ∀ x ∈ X, x ≤ y
 
-/-- The two-term sequence `⟨U, W⟩` as a function `ℕ → Set α` (used to phrase `Consistent`). -/
 def pairSeq (U W : Set α) : ℕ → Set α := fun i => if i = 0 then U else W
 
-/-- The family of upper bounds of `X`: `{y ∣ x ⊑ y for all x ∈ X}`. -/
 def upperBounds (X : Set V.Element) : Set V.Element := {y | ∀ x ∈ X, x ≤ y}
 
-/-- If `X` is bounded then its upper-bound family is non-empty (it contains the witness). -/
 theorem upperBounds_nonempty {X : Set V.Element} (hX : V.Bounded X) :
     (V.upperBounds X).Nonempty :=
   hX.imp fun _ hy => hy
 
-/-- **Exercise 1.27 — `⊔X`.** The least upper bound of a bounded `X`, defined à la Scott as the
-intersection of all upper bounds: `⊔X = ⋂ {y ∣ x ⊑ y all x∈X}`. Reusing `sInf` from Exercise
-1.18 on the (non-empty, because bounded) family of upper bounds. -/
 def sSup (X : Set V.Element) (hX : V.Bounded X) : V.Element :=
   V.sInf (V.upperBounds X) (V.upperBounds_nonempty hX)
 
-/-- **Exercise 1.27 — boundedness is finitary.** `X ⊆ |𝒟|` is bounded iff every *finite* subset
-of `X` is bounded. The forward direction reuses any global bound. The reverse direction is the
-content: assemble `C = ⋃_{x∈X} x` (the neighbourhoods of all members of `X`); `C` is finitely
-consistent because any finite sequence drawn from `C` comes from finitely many members of `X`,
-which form a finite subset, hence bounded — that bound's filter contains the whole finite
-sequence, so its intersection lies in `𝒟`. The least filter `leastFilter C` (Exercise 1.18) is
-then an upper bound of `X`. -/
 theorem bounded_iff_finite_bounded (X : Set V.Element) :
     V.Bounded X ↔ ∀ S : Set V.Element, S ⊆ X → S.Finite → V.Bounded S := by
   constructor
@@ -76,12 +60,6 @@ theorem interUpTo_pairSeq (U W : Set α) :
   simp only [interUpTo_succ, interUpTo_zero, pairSeq]
   norm_num
 
-/-- **Exercise 1.27 — "boundedness is for elements what consistency is for neighbourhoods".**
-For `U, W ∈ 𝒟`, the pair `⟨U, W⟩` is consistent in `𝒟` iff `{↑U, ↑W}` is bounded in `|𝒟|`.
-
-`→` packages the consistency witness `Z` into the principal filter `↑Z`, which lies above both
-`↑U` and `↑W` (via `principal_le_iff`). `←` uses that any bound `y` contains both `U` and `W`,
-hence `U ∩ W ∈ y ⊆ 𝒟`, giving `U ∩ W` as the consistency witness. -/
 theorem consistent_pair_iff_bounded {U W : Set α} (hU : V.mem U) (hW : V.mem W) :
     V.Consistent (pairSeq U W) 2 ↔ V.Bounded {V.principal hU, V.principal hW} := by
   constructor
@@ -105,12 +83,10 @@ theorem consistent_pair_iff_bounded {U W : Set α} (hU : V.mem U) (hW : V.mem W)
     intro z hz
     exact ⟨⟨V.sub_master hU hz.1, hz.1⟩, hz.2⟩
 
-/-- **Exercise 1.27 — `⊔X` is an upper bound.** Each `x ∈ X` satisfies `x ⊑ ⊔X`. -/
 theorem le_sSup (X : Set V.Element) (hX : V.Bounded X) {x : V.Element} (hx : x ∈ X) :
     x ≤ V.sSup X hX :=
   V.le_sInf (V.upperBounds X) (V.upperBounds_nonempty hX) x (fun _ hy => hy x hx)
 
-/-- **Exercise 1.27 — `⊔X` is least.** Any upper bound `z` of `X` satisfies `⊔X ⊑ z`. -/
 theorem sSup_le (X : Set V.Element) (hX : V.Bounded X) {z : V.Element}
     (hz : ∀ x ∈ X, x ≤ z) : V.sSup X hX ≤ z :=
   V.sInf_le (V.upperBounds X) (V.upperBounds_nonempty hX) hz
@@ -313,8 +289,6 @@ section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- Scott's `[X] = {x ∈ |𝒟| ∣ X ∈ x}`: the elements of `|𝒟|` that contain the neighbourhood `X`.
-(This is the `basicOpen X` of Exercise 1.22, repeated here to avoid the topology dependency.) -/
 def bracket (X : Set α) : Set V.Element := {x | x.mem X}
 
 @[simp] theorem mem_bracket {X : Set α} {x : V.Element} : x ∈ V.bracket X ↔ x.mem X := Iff.rfl
@@ -322,8 +296,6 @@ def bracket (X : Set α) : Set V.Element := {x | x.mem X}
 @[simp] theorem bracket_master : V.bracket V.master = Set.univ := by
   ext x; simp only [mem_bracket, Set.mem_univ, iff_true]; exact x.master_mem
 
-/-- **Theorem 1.10 (3).** `[X] ∩ [Y] = [X ∩ Y]` for `X, Y ∈ 𝒟`. (`⊆` is filter closure under `∩`;
-`⊇` is upward closure along `X ∩ Y ⊆ X`, `X ∩ Y ⊆ Y`.) -/
 theorem bracket_inter {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) :
     V.bracket X ∩ V.bracket Y = V.bracket (X ∩ Y) := by
   ext x
@@ -334,12 +306,9 @@ theorem bracket_inter {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) :
   · intro hxy
     exact ⟨x.up_mem hxy hX Set.inter_subset_left, x.up_mem hxy hY Set.inter_subset_right⟩
 
-/-- **Theorem 1.10 (4).** `↑X ∈ [X]`: the principal filter of `X` contains `X`. -/
 theorem principal_mem_bracket {X : Set α} (hX : V.mem X) : V.principal hX ∈ V.bracket X :=
   ⟨hX, subset_rfl⟩
 
-/-- **The correspondence `X ↦ [X]` is inclusion-preserving.** `[X] ⊆ [Y] ↔ X ⊆ Y` (for `X,Y ∈ 𝒟`).
-`→` tests at `↑X ∈ [X]`, reading `X ⊆ Y` off `↑X ∈ [Y]`; `←` is upward closure. -/
 theorem bracket_subset_iff {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) :
     V.bracket X ⊆ V.bracket Y ↔ X ⊆ Y := by
   constructor
@@ -348,7 +317,6 @@ theorem bracket_subset_iff {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) :
   · intro hXY x hx
     exact x.up_mem hx hY hXY
 
-/-- **The correspondence `X ↦ [X]` is one-one.** `[X] = [Y] ⟹ X = Y` (for `X,Y ∈ 𝒟`). -/
 theorem bracket_injective {X Y : Set α} (hX : V.mem X) (hY : V.mem Y)
     (h : V.bracket X = V.bracket Y) : X = Y :=
   Set.Subset.antisymm ((V.bracket_subset_iff hX hY).mp h.subset)

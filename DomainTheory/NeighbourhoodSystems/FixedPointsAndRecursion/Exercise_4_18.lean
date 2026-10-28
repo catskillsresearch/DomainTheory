@@ -8,7 +8,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise418
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example43
 
 section
-/-- Distinct singletons are disjoint. -/
+
 theorem singleton_inter_eq_empty {n m : ℕ} (hmn : m ≠ n) :
     ({n} : Set ℕ) ∩ {m} = ∅ := by
   ext k
@@ -23,8 +23,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems.Exercise418
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example43
 section
-/- concordance: source L2321 EXERCISE 4.18 checking the number domain -/
-/-- **Exercise 4.18 (Scott 1981, PRG-19).** The numerals are distinct: `n̂ = m̂ ⟹ n = m`. -/
+
 theorem natElem_injective {n m : ℕ} (h : natElem n = natElem m) : n = m := by
   have hmem : (natElem m).mem {n} := h ▸ (mem_natElem_iff.mpr (Or.inr rfl))
   rw [mem_natElem_iff] at hmem
@@ -34,13 +33,13 @@ theorem natElem_injective {n m : ℕ} (h : natElem n = natElem m) : n = m := by
 end
 
 section
-/-- **Exercise 4.18 (Scott 1981, PRG-19).** `0̂` is not a numeral successor. -/
+
 theorem natElem_zero_ne_succ (k : ℕ) : natElem 0 ≠ natElem (k + 1) := fun h =>
   Nat.succ_ne_zero k (natElem_injective h).symm
 end
 
 section
-/-- `∅` is not a neighbourhood of `N`. -/
+
 theorem not_N_mem_empty : ¬ N.mem (∅ : Set ℕ) := by
   rw [N_mem]
   rintro (h | ⟨n, h⟩)
@@ -49,8 +48,7 @@ theorem not_N_mem_empty : ¬ N.mem (∅ : Set ℕ) := by
 end
 
 section
-/-- **Exercise 4.18 (Scott 1981, PRG-19).** Element classification: every element of `|N|` is either
-the bottom `⊥` or a total element `n̂`. So `N` is the flat domain over `ℕ`. -/
+
 theorem element_classification (x : N.Element) :
     x = N.bot ∨ ∃ n, x = natElem n := by
   by_cases h : ∃ n, x.mem {n}
@@ -86,7 +84,7 @@ theorem element_classification (x : N.Element) :
 end
 
 section
-/-- **Exercise 4.18 (Scott 1981, PRG-19).** `succ` is injective on the total elements. -/
+
 theorem succMap_injective {n m : ℕ}
     (h : succMap.toElementMap (natElem n) = succMap.toElementMap (natElem m)) : n = m := by
   rw [succMap_natElem, succMap_natElem] at h
@@ -95,8 +93,7 @@ theorem succMap_injective {n m : ℕ}
 end
 
 section
-/-- **Exercise 4.18 (Scott 1981, PRG-19).** `0̂` is not in the image of `succ` — Peano's
-"zero is not a successor". -/
+
 theorem zero_ne_succMap (n : ℕ) : natElem 0 ≠ succMap.toElementMap (natElem n) := by
   rw [succMap_natElem]
   exact natElem_zero_ne_succ n

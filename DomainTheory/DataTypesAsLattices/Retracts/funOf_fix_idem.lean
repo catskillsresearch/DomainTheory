@@ -21,9 +21,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem funOf_fix_idem {F : Pomega → Pomega} (hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a)) (x : Pomega) :

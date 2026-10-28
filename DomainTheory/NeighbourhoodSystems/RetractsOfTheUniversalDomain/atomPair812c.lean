@@ -24,8 +24,6 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
 
 open Classical in
 
-/-- **The interleaved two-sided atom pair**, depth `n`, sign sequence `δ`. See the section
-docstring for the two sub-steps making up each `n → n + 1` transition. -/
 noncomputable def atomPair (δ : ℕ → Bool × Bool) : ℕ → Set α × Set β
   | 0 => (D₀.master, D₁.master)
   | (n + 1) =>
@@ -57,9 +55,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 omit hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne in
-/-- Extending/changing `δ` at or beyond position `n` does not change `atomPair δ n` (mirrors
-`Theorem88.lean`'s `atomU_congr`/`genAtom_congr`; needs no invariant, since every step is an
-ordinary function of its inputs). -/
+
 theorem congr {δ δ' : ℕ → Bool × Bool} {n : ℕ} (h : ∀ i < n, δ i = δ' i) :
     atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n = atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ' n := by
   induction n with
@@ -104,10 +100,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **The core invariant of the two-sided back-and-forth construction**: at every depth `n` and for
-every sign sequence `δ`, the matched pair `atomPair δ n` (a) has matching emptiness
-(`= ∅ ↔ = ∅`) and (b)/(c) is mem-or-∅ on each respective side. Proved by a single induction,
-alternating the two Boolean-closure/`exists_split'` steps described in the section docstring. -/
 theorem invariant (δ : ℕ → Bool × Bool) :
     ∀ n, ((atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1 = ∅ ↔
         (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 = ∅) ∧
@@ -173,10 +165,6 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
 
-/-- **`atomPair`'s recursive step, rephrased as `yStep ∘ xStep`.** Definitionally equal to
-`atomPair`'s own `let`-chain (both sides unfold to the identical `(A2, B2)` pair), but stated in
-terms of the two named sub-steps so later lemmas can manipulate them algebraically instead of
-re-deriving the unfolding by hand. -/
 theorem succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) :
     atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ (n + 1) =
       yStep D₀ hD₀nomin
@@ -201,7 +189,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`atomPair`'s `β`-side only shrinks from depth `n` to `n + 1`.** -/
 theorem snd_subset (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ (n + 1)).2 ⊆
       (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 := by
@@ -226,7 +213,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`atomPair`'s `β`-side is always `⊆ D₁.master`**, symmetric to `atomPair.fst_subset_master`. -/
 theorem snd_subset_master (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 ⊆ D₁.master := by
   induction n with

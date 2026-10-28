@@ -8,7 +8,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.DInfFn
 
 namespace DomainTheory.ContinuousLattice
 
-
 attribute [instance] CLat.str
 
 section LimitMaps
@@ -16,9 +15,6 @@ section LimitMaps
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-/-- The `n`-th summand of `i_∞`: the Scott map `x ↦ i_{n∞} ∘ x_{n+1} ∘ j_{∞n}`, where `x_{n+1}` is
-the `(n+1)`-st component of `x ∈ D_∞`. As a map `D_∞ → [D_∞ → D_∞]` it is the composite of the
-component projection `j_{∞(n+1)}` with conjugation by `(i_{n∞}, j_{∞n})`. -/
 noncomputable def iInfTerm (n : ℕ) : ScottMap (DInf D₀ j₀) (DInfFn D₀ j₀) :=
   (conjMap (embInf (towerType D₀) (towerProj D₀ j₀) n)
            (projInf (towerType D₀) (towerProj D₀ j₀) n)).comp

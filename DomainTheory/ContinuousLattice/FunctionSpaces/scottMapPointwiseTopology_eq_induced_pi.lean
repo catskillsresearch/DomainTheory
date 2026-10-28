@@ -4,23 +4,17 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTop
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapPointwiseTopology
 public import Mathlib.Topology.Defs.Basic
 
-
 @[expose] public section
-
 
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-
-/-- Scott's manually generated pointwise topology on `ScottMap` is the subspace topology inherited
-from the literal Pi product of the codomain Scott topology. -/
 theorem scottMapPointwiseTopology_eq_induced_pi :
     scottMapPointwiseTopology D D' = scottMapInducedPiTopology D D' := by
   apply le_antisymm

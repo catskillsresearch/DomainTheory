@@ -13,8 +13,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace Topology Function
 
-/-- **Scott 1976, Theorem 1.6 (The embedding theorem).**
-Every T₀ space with a countable basis embeds in `Pω`. -/
 theorem theorem_1_6 {X : Type*} [TopologicalSpace X] [T0Space X]
     (U : ℕ → Set X) (hbasis : IsTopologicalBasis (Set.range U)) :
     IsEmbedding (embed U) where

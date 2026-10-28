@@ -16,7 +16,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
 
 theorem atomFinset_empty : atomFinset (∅ : Finset (TreeToken α)) = ∅ := rfl

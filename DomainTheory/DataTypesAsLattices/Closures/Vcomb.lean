@@ -14,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (5.14).** The universe combinator. -/
 def Vcomb : Pomega :=
   graph (fun a => graph (fun x => Vapply a x))
 

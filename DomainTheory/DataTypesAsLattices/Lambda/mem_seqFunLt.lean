@@ -9,9 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem mem_seqFunLt {u x : Pomega} {n k : ℕ} :
     k ∈ seqFunLt u x n ↔ ∃ i ∈ x, i < n ∧ k ∈ funOf u (ofNat i) := by

@@ -10,7 +10,6 @@ public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set
@@ -22,16 +21,6 @@ section InverseLimit
 variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-
-/-- **Scott 1972, Lemma 4.5.** A criterion for recognizing projections out of the limit: if a
-sequence `u : ∀ n, D_{n+1}` satisfies the (shifted) recursion `j_{n+1}(u_{n+2}) = u_{n+1}`, then the
-monotone limit `u_∞ = ⨆ₙ i_{(n+1)∞}(uₙ)` has `j_{∞(n+1)}(u_∞) = uₙ`.
-
-The proof follows Scott's argument at source lines 1316–1320.  First the defining family is
-monotone.  Continuity of `j_{∞(n+1)}` therefore moves the projection through its directed
-supremum.  Finally, for every `m ≥ n`, the identity
-`j_{∞(n+1)}(i_{(m+1)∞}(u_m)) = u_n` is proved by induction on `m - n`, peeling one projection with
-`projLE.succ` and then applying the recursion hypothesis `j_{m+1}(u_{m+1}) = u_m`. -/
 theorem lemma_4_5 (u : ∀ n, D (n + 1))
     (hu : ∀ n, (P (n + 1)).retr (u (n + 1)) = u n) (n : ℕ) :
     (⨆ k, embInf D P (k + 1) (u k) : InverseLimit D P).1 (n + 1) = u n := by

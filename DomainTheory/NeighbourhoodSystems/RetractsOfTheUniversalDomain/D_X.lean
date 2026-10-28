@@ -12,8 +12,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
-/-- **The enumeration induced by the `qChar`-gated fold**: `D_X c` reads off the `V`-neighbourhood
-presented at the fold's output raw index. -/
 def D_X (c : ℕ) : Set α := P.X (myFoldCode P qChar cons c)
 end
 
@@ -23,19 +21,12 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 variable {P qChar cons}
 
-/-- **Theorem 8.8(c), Part 3 of 6, first half.** Every `D_X qChar cons c` is a `fixedNbhd
-a`-neighbourhood — Part 2's invariant `diagFixed_myFoldCode`, repackaged via
-`diagFixed_iff_fixedNbhd_mem`. -/
 theorem D_X_mem {a : ApproximableMap V V}
     (hqChar : ∀ n, DiagFixed P a n ↔ ∃ i, qChar (Nat.pair i n) = 1)
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) (c : ℕ) :
     (fixedNbhd a).mem (D_X P qChar cons c) :=
   (diagFixed_iff_fixedNbhd_mem P a _).mp (diagFixed_myFoldCode P qChar cons hqChar hcons c)
 
-/-- **The reusable core of the surjectivity argument.** Any `V`-neighbourhood `P.X m` already
-known to be `DiagFixed` (regardless of whether `m` itself is `myFoldCode`'s output) is `D_X qChar
-cons c` for some list-code `c`: the singleton-list code witnessing `m` together with Part 1's
-`qChar`-witness for it. -/
 theorem D_X_of_diagFixed {a : ApproximableMap V V}
     (hqChar : ∀ n, DiagFixed P a n ↔ ∃ i, qChar (Nat.pair i n) = 1)
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m)
@@ -64,9 +55,6 @@ theorem D_X_of_diagFixed {a : ApproximableMap V V}
   have hcons' : (∃ k, P.X k ⊆ P.X P.masterIdx ∩ P.X m) := (hcons P.masterIdx m).mp hcond
   rw [P.inter_spec hcons', P.masterIdx_spec, Set.inter_eq_right.mpr (V.sub_master (P.mem_X m))]
 
-/-- **Theorem 8.8(c), Part 3 of 6, second half.** Every `fixedNbhd a`-neighbourhood `Y` is
-`D_X qChar cons c` for some list-code `c`: `P.surj` finds `Y`'s raw `V`-index, which is `DiagFixed`
-since `Y` is `a`-fixed, and `D_X_of_diagFixed` finishes it. -/
 theorem D_X_surj {a : ApproximableMap V V}
     (hqChar : ∀ n, DiagFixed P a n ↔ ∃ i, qChar (Nat.pair i n) = 1)
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m)
@@ -77,9 +65,6 @@ theorem D_X_surj {a : ApproximableMap V V}
   obtain ⟨c, hc⟩ := D_X_of_diagFixed hqChar hcons hdiag
   exact ⟨c, by rw [hc, hn₀]⟩
 
-/-- **The one genuine lemma of Theorem 8.8(c), Part 4 of 6.** `D`-consistency of two list-codes
-(`∃ k, D_X k ⊆ D_X c₁ ∩ D_X c₂`) is equivalent to plain `V`-consistency of the underlying raw
-`myFoldCode` indices. -/
 theorem D_X_cons_iff {a : ApproximableMap V V}
     (hqChar : ∀ n, DiagFixed P a n ↔ ∃ i, qChar (Nat.pair i n) = 1)
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) (c₁ c₂ : ℕ) :
@@ -116,9 +101,6 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 variable {P qChar cons}
 variable (P qChar cons)
 
-/-- **Theorem 8.8(c), Part 4 of 6, second half (`cons_computable`).** `D_X`-consistency is
-`P.cons_computable` composed with the same primitive-recursive `myFoldCode`-pair reindex, via the
-equivalence `D_X_cons_iff`. -/
 theorem D_X_cons_computable {a : ApproximableMap V V}
     (hqChar : ∀ n, DiagFixed P a n ↔ ∃ i, qChar (Nat.pair i n) = 1)
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m)
@@ -133,9 +115,6 @@ theorem D_X_cons_computable {a : ApproximableMap V V}
   simp only [unpair_pair_fst, unpair_pair_snd]
   exact D_X_cons_iff hqChar hcons t.unpair.1 t.unpair.2
 
-/-- **Theorem 8.8(c), Part 4 of 6, first half (`interEq_computable`, free).** `D_X c₁ ∩ D_X c₂ =
-D_X c₃` is exactly `P.interEq_computable` reindexed along the primitive-recursive triple
-`myFoldCode`. -/
 theorem D_X_interEq_computable (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primrec cons) :
     RecDecidable₃ (fun c₁ c₂ c₃ =>
       D_X P qChar cons c₁ ∩ D_X P qChar cons c₂ = D_X P qChar cons c₃) := by
@@ -159,9 +138,6 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 variable {P qChar cons}
 
-/-- **The `.inter` field for `D_X`**: concatenate the two list-codes (`Recursive.lean`'s
-Exercise 7.22 `appendListCode`), reusing that this is exactly `myFoldCode`'s left-fold-from-
-`P.masterIdx` restarted at `myFoldCode c₁` (via `List.foldl_append`). -/
 def D_inter (c₁ c₂ : ℕ) : ℕ := appendListCode c₁ c₂
 end
 
@@ -203,7 +179,6 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 variable {P qChar cons}
 
-/-- **One step of `myStep` only shrinks the presented set.** -/
 theorem myStep_subset
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) (r e : ℕ) :
     P.X (myStep P qChar cons r e) ⊆ P.X r := by
@@ -224,7 +199,6 @@ theorem myStep_subset
     · rw [(isOne_eq_one_iff _).mpr hc, selectFn_one, P.inter_spec ((hcons r e.unpair.2).mp hc)]
       exact Set.inter_subset_left
 
-/-- **Folding only ever shrinks the presented set.** -/
 theorem myFoldl_subset
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) :
     ∀ (l : List ℕ) (r : ℕ), P.X (l.foldl (myStep P qChar cons) r) ⊆ P.X r := by
@@ -236,10 +210,6 @@ theorem myFoldl_subset
     rw [List.foldl_cons]
     exact (ih (myStep P qChar cons r e)).trans (myStep_subset hcons r e)
 
-/-- **The key lemma.** Refolding a list `l` from a start `n` that is `⊆` (in `P.X`) another start
-`r`, reproduces `P.X n ∩ P.X (fold of l from r)` — *provided* this is already known to be
-`V`-consistent at the end (i.e. `∃ k, P.X k ⊆ P.X n ∩ P.X (l.foldl … r)`). No `a`/`DiagFixed`
-apparatus is needed: this is a purely structural fact about `myStep`'s consistency gate. -/
 theorem myFoldl_inter_of_le
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) :
     ∀ (l : List ℕ) {n r : ℕ}, P.X n ⊆ P.X r →
@@ -326,10 +296,6 @@ variable {P qChar cons}
 variable (P qChar cons)
 variable {P qChar cons}
 
-/-- **Theorem 8.8(c), Part 5 of 6, headline.** Given `D`-consistency of `c₁`, `c₂`,
-`D_X (D_inter c₁ c₂) = D_X c₁ ∩ D_X c₂`. The hypothesis is already stated at the `V`-side (`D_X`'s
-codomain *is* `P.X` of a raw index), so `myFoldl_inter_of_le` applies directly with `n :=
-myFoldCode c₁`, `r := P.masterIdx`. -/
 theorem D_X_inter_spec
     (hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m) {c₁ c₂ : ℕ}
     (h : ∃ k, D_X P qChar cons k ⊆ D_X P qChar cons c₁ ∩ D_X P qChar cons c₂) :

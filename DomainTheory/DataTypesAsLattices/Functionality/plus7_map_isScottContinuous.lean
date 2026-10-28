@@ -24,9 +24,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem plus7_map_isScottContinuous (a0 a1 a2 a3 a4 a5 a6 : Pomega) :
     IsScottContinuous (plus7Body a0 a1 a2 a3 a4 a5 a6) := by

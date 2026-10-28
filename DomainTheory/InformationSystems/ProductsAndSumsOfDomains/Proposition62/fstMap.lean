@@ -24,7 +24,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-/-- **Proposition 6.2(1).** Approximable first projection. -/
 def fstMap : ApproximableMap (productSystem A B) A where
   rel u v := u ∈ (productSystem A B).Con ∧ v ∈ A.Con ∧ A.EntSet (fstFinset A B u) v
   rel_dom h := h.1

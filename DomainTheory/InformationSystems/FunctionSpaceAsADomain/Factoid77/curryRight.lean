@@ -14,7 +14,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.i
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -35,7 +34,6 @@ attribute [instance] instCategoryInfoSysObj
 
 attribute [instance] instCartesianMonoidalCategoryInfoSysObj
 
-/-- `Hom(A ⊗ Y, Z) → Hom(Y, A → Z)` via Scott curry after swap. -/
 noncomputable def curryRight (A Y Z : InfoSysObj.{u}) (h : A ⊗ Y ⟶ Z) :
     Y ⟶ InfoSysObj.exp A Z :=
   curryProduct A Y Z (tensorHomToProdHom A Y Z h)

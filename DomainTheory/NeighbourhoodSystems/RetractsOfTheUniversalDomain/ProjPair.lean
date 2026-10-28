@@ -17,13 +17,13 @@ open NeighborhoodSystem ApproximableMap Subsystem
 variable {α : Type u} {β : Type v} {γ : Type w}
 
 structure ProjPair (D : NeighborhoodSystem α) (E : NeighborhoodSystem β) where
-  /-- The injection `i : D → E`. -/
+
   inj : ApproximableMap D E
-  /-- The projection `j : E → D`. -/
+
   proj : ApproximableMap E D
-  /-- `j ∘ i = I_D`. -/
+
   proj_comp_inj : proj.comp inj = idMap D
-  /-- `i ∘ j ⊆ I_E`. -/
+
   inj_comp_proj_le : inj.comp proj ≤ idMap E
 
 namespace ProjPair
@@ -46,7 +46,6 @@ def comp {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
       _ = p2.inj.comp p2.proj := by rw [idMap_comp]
       _ ≤ idMap F := p2.inj_comp_proj_le
 
-
 def ofIso {D : NeighborhoodSystem α} {E : NeighborhoodSystem β} (e : DomainIso D E) :
     ProjPair D E where
   inj := ApproximableMap.ofIso e
@@ -67,13 +66,11 @@ def ofIso {D : NeighborhoodSystem α} {E : NeighborhoodSystem β} (e : DomainIso
         toElementMap_idMap]
     exact le_iff_toElementMap_le.mpr fun y => (heq y).le
 
-
 def ofSubsystem {D E : NeighborhoodSystem α} (h : D ◁ E) : ProjPair D E where
   inj := h.inj
   proj := h.proj
   proj_comp_inj := h.proj_comp_inj
   inj_comp_proj_le := h.inj_comp_proj_le
-
 
 end ProjPair
 

@@ -22,7 +22,6 @@ namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)
 
-/-- Membership in the folded intersection. -/
 theorem mem_interOf {u : Finset ι} {x : α} :
     x ∈ B.interOf u ↔ x ∈ B.system.master ∧ ∀ i ∈ u, x ∈ B.nbhd i := by
   induction u using Finset.induction with

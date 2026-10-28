@@ -25,7 +25,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Term-level sequence cons constructor. -/
 def seqConsTerm (a xs : Term) : Term :=
   .lam 7 (.cond (.var 7) a (.app xs (.pred (.var 7))))
 

@@ -17,7 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Recursive call of a candidate `ℋ` on a subexpression. -/
 def hApply (H e t : Pomega) : Pomega := funOf (funOf H e) t
 
 namespace hApply

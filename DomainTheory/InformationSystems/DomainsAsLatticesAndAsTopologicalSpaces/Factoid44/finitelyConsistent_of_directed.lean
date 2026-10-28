@@ -16,7 +16,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Directed families are finitely consistent on their carrier union. -/
 theorem finitelyConsistent_of_directed (S : Set sys.Element) (hne : S.Nonempty)
     (hdir : sys.IsDirected S) :
     sys.IsFinitelyConsistent (sys.familyUnionCarrier S) := by

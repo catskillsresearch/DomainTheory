@@ -22,7 +22,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Weaken entailment when the larger set stays in the function world (`atom = ∅`). -/
 theorem LamEntDepth_weaken_fun {u v : Finset (RawLamToken α)} {t : RawLamToken α}
     (huv : u ⊆ v) (hv : LamConDepth A v) (hAv : lamAtomFinset v = ∅)
     (ht : LamEntDepth A u t) : LamEntDepth A v t := by

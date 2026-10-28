@@ -8,8 +8,7 @@ namespace DomainTheory.NeighbourhoodSystems.Example43
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 section
-/-- Membership in Scott's natural-number system: a neighbourhood is the whole space `ℕ` or a
-singleton `{n}`. -/
+
 def memN (X : Set ℕ) : Prop := X = Set.univ ∨ ∃ n, X = {n}
 end
 
@@ -22,8 +21,7 @@ theorem memN_univ : memN (Set.univ : Set ℕ) := Or.inl rfl
 end
 
 section
-/-- Any two neighbourhoods of `N` are nested or disjoint: `ℕ` contains every singleton, and two
-distinct singletons are disjoint. -/
+
 theorem nestedOrDisjoint : NestedOrDisjoint memN := by
   rintro X Y (rfl | ⟨n, rfl⟩) (rfl | ⟨m, rfl⟩)
   · exact Or.inl (Set.Subset.refl _)
@@ -45,8 +43,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems.Example43
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 section
-/- concordance: source L1795 EXAMPLE 4.3 partial functions on integers -/
-/-- **Example 4.3 (Scott 1981, PRG-19).** The natural-number neighbourhood system `N` on `Δ = ℕ`. -/
+
 abbrev N : NeighborhoodSystem ℕ :=
   NeighborhoodSystem.ofNestedOrDisjoint memN Set.univ Set.univ_nonempty memN_univ nestedOrDisjoint
     (fun _ => Set.subset_univ _)
@@ -61,24 +58,24 @@ section
 end
 
 section
-/-- The two-token truth domain `T` of Example 1.2 (= `Example23.T`). -/
+
 abbrev T : NeighborhoodSystem Example12.Token := Example23.T
 end
 
 section
-/-- Scott's total element `n̂ = ↑{n} = {{n}, ℕ}`, the principal filter of the singleton `{n}`. -/
+
 def natElem (n : ℕ) : N.Element := N.principal (N_mem.mpr (memN_singleton n))
 end
 
 section
-/-- The value table for `pred`: `pred(0) = ⊥`, `pred(k+1) = k`. -/
+
 def predVal : ℕ → N.Element
   | 0 => N.bot
   | (k + 1) => natElem k
 end
 
 section
-/-- Singletons of naturals are one-one as sets. -/
+
 theorem singleton_nat_inj {n m : ℕ} (h : ({n} : Set ℕ) = {m}) : n = m := by
   have h1 : n ∈ ({n} : Set ℕ) := rfl
   rw [h] at h1
@@ -86,7 +83,7 @@ theorem singleton_nat_inj {n m : ℕ} (h : ({n} : Set ℕ) = {m}) : n = m := by
 end
 
 section
-/-- `ℕ` is not a singleton (a witness `n+1 ≠ n`). -/
+
 theorem univ_ne_singleton (n : ℕ) : (Set.univ : Set ℕ) ≠ {n} := by
   intro h
   have h1 : (n + 1) ∈ ({n} : Set ℕ) := h ▸ Set.mem_univ (n + 1)
@@ -94,20 +91,12 @@ theorem univ_ne_singleton (n : ℕ) : (Set.univ : Set ℕ) ≠ {n} := by
 end
 
 section
-/-- `{n} ≠ ℕ` (the symmetric form). -/
+
 theorem singleton_ne_univ (n : ℕ) : ({n} : Set ℕ) ≠ Set.univ := fun h => univ_ne_singleton n h.symm
 end
 
 section
-/-- The *strict* approximable map `N → V` determined by a choice of value `val n ∈ |V|` for each
-`n`: it sends the total element `n̂` to `val n` and the bottom `⊥` to `⊥`. The relation
-`X f Y` holds when either `X = Δ_N` forces the blunt output `Y = Δ_V` (the strict `⊥ ↦ ⊥` clause),
-or `X = {n}` and `Y` is a neighbourhood of `val n`.
 
-Definition 2.1 checks uniformly: (i) `Δ_N f Δ_V`; (ii) intersect outputs — distinct inputs are
-impossible (`ℕ ≠ {n}`, singletons are one-one), so both outputs come from the *same* `val n` and
-`inter_mem` of the filter `val n` applies; (iii) sharpening `{n} ⊆ X` keeps the input a singleton
-`{n}`, and `up_mem` of `val n` widens the output, while a blunt input `Δ_N` forces `Δ_V`. -/
 def constLiftN {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element) :
     ApproximableMap N V where
   rel X Y := (X = Set.univ ∧ Y = V.master) ∨ (∃ n, X = {n} ∧ (val n).mem Y)
@@ -145,39 +134,39 @@ def constLiftN {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element
 end
 
 section
-/-- **Example 4.3 — `pred`.** `pred(0) = ⊥`, `pred(n+1) = n`, strict (`pred(⊥) = ⊥`). -/
+
 def predMap : ApproximableMap N N := constLiftN N predVal
 end
 
 section
-/-- **Example 4.3 — `succ`.** `succ(n) = n + 1`, strict (`succ(⊥) = ⊥`). -/
+
 def succMap : ApproximableMap N N := constLiftN N (fun n => natElem (n + 1))
 end
 
 section
-/-- Scott's `0 ∈ |N|`, the distinguished zero of the structured domain. -/
+
 def zeroElt : N.Element := natElem 0
 end
 
 section
-/-- The value table for `zero`: `zero(0) = true`, `zero(n+1) = false`. -/
+
 def zeroVal : ℕ → T.Element
   | 0 => Example23.trueElt
   | (_ + 1) => Example23.falseElt
 end
 
 section
-/-- **Example 4.3 — `zero`.** `zero(0) = true`, `zero(n+1) = false`, strict (`zero(⊥) = ⊥`). -/
+
 def zeroMap : ApproximableMap N T := constLiftN T zeroVal
 end
 
 section
-/-- `⊥ ∈ N` reads: a neighbourhood lies in `⊥` iff it is the whole space `ℕ`. -/
+
 theorem N_bot_mem {X : Set ℕ} : N.bot.mem X ↔ X = Set.univ := NeighborhoodSystem.mem_bot N
 end
 
 section
-/-- **Computation on bottom (strictness).** `f(⊥) = ⊥`. -/
+
 theorem constLiftN_bot {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element) :
     (constLiftN V val).toElementMap N.bot = V.bot := by
   apply Element.ext
@@ -196,7 +185,7 @@ theorem constLiftN_bot {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V
 end
 
 section
-/-- A neighbourhood belongs to `n̂` iff it is `ℕ` (the master) or the singleton `{n}`. -/
+
 theorem mem_natElem_iff {n : ℕ} {Y : Set ℕ} :
     (natElem n).mem Y ↔ Y = Set.univ ∨ Y = {n} := by
   unfold natElem
@@ -213,7 +202,7 @@ theorem mem_natElem_iff {n : ℕ} {Y : Set ℕ} :
 end
 
 section
-/-- **Computation on the total elements.** `f(n̂) = val n`. -/
+
 theorem constLiftN_natElem {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element) (n : ℕ) :
     (constLiftN V val).toElementMap (natElem n) = val n := by
   apply Element.ext
@@ -232,57 +221,56 @@ theorem constLiftN_natElem {β : Type*} (V : NeighborhoodSystem β) (val : ℕ �
 end
 
 section
-/-- `pred(⊥) = ⊥`. -/
+
 theorem predMap_bot : predMap.toElementMap N.bot = N.bot :=
   constLiftN_bot N predVal
 end
 
 section
-/-- `pred((n+1)^) = n̂`. -/
+
 theorem predMap_natElem_succ (k : ℕ) : predMap.toElementMap (natElem (k + 1)) = natElem k :=
   constLiftN_natElem N predVal (k + 1)
 end
 
 section
-/-- `pred(0̂) = ⊥`: predecessor of zero is undefined. -/
+
 theorem predMap_natElem_zero : predMap.toElementMap (natElem 0) = N.bot :=
   constLiftN_natElem N predVal 0
 end
 
 section
-/-- `succ(⊥) = ⊥`. -/
+
 theorem succMap_bot : succMap.toElementMap N.bot = N.bot :=
   constLiftN_bot N (fun n => natElem (n + 1))
 end
 
 section
-/-- `succ(n̂) = (n+1)^`. -/
+
 theorem succMap_natElem (n : ℕ) : succMap.toElementMap (natElem n) = natElem (n + 1) :=
   constLiftN_natElem N (fun n => natElem (n + 1)) n
 end
 
 section
-/-- `pred(succ(n̂)) = n̂`: the predecessor undoes the successor on total elements. (A sample of the
-"recursion" reasoning Scott highlights; cf. the iterated-summation example.) -/
+
 theorem predMap_succMap_natElem (n : ℕ) :
     predMap.toElementMap (succMap.toElementMap (natElem n)) = natElem n := by
   rw [succMap_natElem, predMap_natElem_succ]
 end
 
 section
-/-- `zero(⊥) = ⊥`. -/
+
 theorem zeroMap_bot : zeroMap.toElementMap N.bot = T.bot :=
   constLiftN_bot T zeroVal
 end
 
 section
-/-- `zero((n+1)^) = false`. -/
+
 theorem zeroMap_natElem_succ (n : ℕ) : zeroMap.toElementMap (natElem (n + 1)) = Example23.falseElt :=
   constLiftN_natElem T zeroVal (n + 1)
 end
 
 section
-/-- `zero(0̂) = true`. -/
+
 theorem zeroMap_natElem_zero : zeroMap.toElementMap (natElem 0) = Example23.trueElt :=
   constLiftN_natElem T zeroVal 0
 end

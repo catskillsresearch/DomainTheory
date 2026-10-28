@@ -13,7 +13,6 @@ attribute [instance] CLat.str
 
 namespace functionSpaceRetrFun
 
-/-- Continuity of the inner map `j ∘ g ∘ i`. -/
 theorem continuous {D D' : Type u}
     [CompleteLattice D] [CompleteLattice D']
     (P : IsContinuousLatticeProjection D D') (g : ScottMap D' D') :
@@ -25,15 +24,12 @@ theorem continuous {D D' : Type u}
 
 end functionSpaceRetrFun
 
-/-- The retraction part of `[P → P]`, with its underlying function explicit. -/
 def functionSpaceRetrFun {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
     (P : IsContinuousLatticeProjection D D') (g : ScottMap D' D') : ScottMap D D :=
   ⟨fun x => P.retr (g (P.incl x)), functionSpaceRetrFun.continuous P g⟩
 
 namespace functionSpaceRetrFun
 
-/-- Continuity, for the lattice Scott topologies on the function spaces, of
-`g ↦ j ∘ g ∘ i`. -/
 theorem outer_continuous {D D' : Type u}
     [CompleteLattice D] [CompleteLattice D']
     (P : IsContinuousLatticeProjection D D') :

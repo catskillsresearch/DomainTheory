@@ -5,9 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem funOf_top (x : Pomega) : funOf topElem x = topElem := by
   ext m

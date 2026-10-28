@@ -20,7 +20,6 @@ namespace InfoSys
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Right projection of a finite set of product tokens (Scott 6.1). -/
 def sndFinset (u : Finset (ProdToken A B)) : Finset β :=
   Multiset.foldr (fun p : ProdToken A B => insert p.val.2) (∅ : Finset β)
     (u.filter (fun p => p.val.1 = A.bot)).1
@@ -104,6 +103,5 @@ theorem sndFinset.singleton_right (p : ProdToken A B) (hp : p.val.1 = A.bot) :
   rfl
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

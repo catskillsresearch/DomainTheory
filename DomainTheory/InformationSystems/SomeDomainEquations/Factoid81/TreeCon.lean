@@ -18,7 +18,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
 
-/-- Consistency for trees (Scott §8 (4)–(7)). -/
 inductive TreeCon : Finset (TreeToken α) → Prop where
   | left (u : Finset (TreeToken α))
       (hA : atomFinset u ∈ A.Con)
@@ -51,6 +50,5 @@ theorem TreeCon.pairs_empty_of_left {u : Finset (TreeToken α)}
   | right _ hAt _ _ => exact False.elim (hA hAt)
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

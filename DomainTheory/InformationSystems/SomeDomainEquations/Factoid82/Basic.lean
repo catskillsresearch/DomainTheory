@@ -95,9 +95,7 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
-
 
 theorem mem_foldr_lamForget (s : Multiset (LamToken A)) (t : RawLamToken α) :
     t ∈ Multiset.foldr (lamForgetInsert (A := A)) ∅ s ↔ ∃ p ∈ s, p.val = t := by
@@ -116,7 +114,6 @@ theorem mem_foldr_lamForget (s : Multiset (LamToken A)) (t : RawLamToken α) :
       · exact Or.inl hq'.symm
       · exact Or.inr ⟨q, hq, hq'⟩
 
-
 theorem funion_insert_lam (u : Finset (RawLamToken α)) (a : RawLamToken α)
     (t : Finset (RawLamToken α)) : u ∪' insert a t = insert a (u ∪' t) := by
   ext x
@@ -133,7 +130,6 @@ theorem funion_insert_lam (u : Finset (RawLamToken α)) (a : RawLamToken α)
     · rcases mem_funion.mp h with hu | ht
       · exact mem_funion.mpr (Or.inl hu)
       · exact mem_funion.mpr (Or.inr (Finset.mem_insert.mpr (Or.inr ht)))
-
 
 end InfoSys
 end DomainTheory.InformationSystems

@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.mem
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (7.12).** Finite discrete spaces. -/
 def Nk (k : ℕ) : RestrictedEquiv where
   rel := fun x y => (∃ n < k, x = ofNat n) ∧ x = y
   symm := by

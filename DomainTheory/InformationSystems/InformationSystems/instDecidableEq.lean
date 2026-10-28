@@ -14,7 +14,6 @@ namespace Factoid25
 
 namespace Token
 
-/-- Decidable equality ignores the `<` proof (proof-irrelevant). -/
 instance instDecidableEq : DecidableEq Token
   | bot, bot => isTrue rfl
   | bot, interval _ _ _ => isFalse Token.noConfusion

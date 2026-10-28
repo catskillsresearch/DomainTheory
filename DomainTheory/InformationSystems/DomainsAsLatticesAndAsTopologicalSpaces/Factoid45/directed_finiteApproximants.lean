@@ -8,7 +8,6 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closures_directed
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,7 +15,6 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
 
 theorem directed_finiteApproximants (x : sys.Element) :
     sys.IsDirected (sys.finiteApproximants x) := by

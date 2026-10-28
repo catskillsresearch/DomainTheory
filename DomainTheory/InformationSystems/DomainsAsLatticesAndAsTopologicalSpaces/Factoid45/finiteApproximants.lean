@@ -14,7 +14,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Finite approximations of `x`: the set `{ū | u ∈ Con, u ⊆ x}`. -/
 def finiteApproximants (x : sys.Element) : Set sys.Element :=
   {y | ∃ (u : Finset α) (hu : u ∈ sys.Con), ↑u ⊆ x.carrier ∧ y = sys.closure u hu}
 

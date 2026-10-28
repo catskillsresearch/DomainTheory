@@ -18,9 +18,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- The inverse limit carries the coordinatewise order inherited from its
-ambient product. This declaration makes that order explicit instead of
-leaving typeclass search to choose an equivalent route. -/
 instance inverseLimitPartialOrder : PartialOrder (InverseLimit D P) where
   le := inverseLimitLE D P
   lt := inverseLimitLT D P

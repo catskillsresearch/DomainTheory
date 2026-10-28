@@ -7,7 +7,6 @@ public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -24,7 +23,6 @@ namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
-/-- Pointwise relation order on approximable maps (Prop 5.3 `Le`). -/
 instance instPartialOrderApproximableMap : PartialOrder (ApproximableMap A B) where
   le := @Le _ _ _ _ A B
   le_refl _ _ _ h := h

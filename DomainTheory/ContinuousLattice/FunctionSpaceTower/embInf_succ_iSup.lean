@@ -8,7 +8,6 @@ public import Mathlib.Data.Set.Basic
 
 namespace DomainTheory.ContinuousLattice
 
-
 attribute [instance] CLat.str
 
 section LimitMaps
@@ -21,7 +20,6 @@ section Thm44b
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-/-- The inverse-limit embedding commutes with a supremum in `D_{n+1}` (monotone ⇒ directed). -/
 theorem embInf_succ_iSup (n : ℕ) (f : ℕ → towerType D₀ (n + 1)) (hf : Monotone f) :
     embInf (towerType D₀) (towerProj D₀ j₀) (n + 1) (⨆ m, f m) =
       ⨆ m, embInf (towerType D₀) (towerProj D₀ j₀) (n + 1) (f m) := by

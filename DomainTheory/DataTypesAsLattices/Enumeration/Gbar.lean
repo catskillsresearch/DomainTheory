@@ -28,7 +28,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- Scott's `Ḡ`. -/
 def Gbar : Pomega := funOf barComb Gcomb
 
 namespace Gbar

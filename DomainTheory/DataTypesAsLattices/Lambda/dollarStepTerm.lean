@@ -16,7 +16,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.succSet
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-/-- Paper combinator for `$`: `λs λu λz. z ⊃ u(0), s(λt. u(t+1))(z−1)`. -/
+
 def dollarStepTerm : Term :=
   .lam 0 (.lam 1 (.lam 2
     (.cond (.var 2)

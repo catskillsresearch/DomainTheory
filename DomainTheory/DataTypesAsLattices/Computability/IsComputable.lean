@@ -16,8 +16,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, §2, Definition.** A continuous `k`-ary map is computable
-when membership in its values on finite arguments is r.e. Unary case: -/
 def IsComputable (f : Pomega → Pomega) : Prop :=
   IsScottContinuous f ∧ IsRE (graph f)
 

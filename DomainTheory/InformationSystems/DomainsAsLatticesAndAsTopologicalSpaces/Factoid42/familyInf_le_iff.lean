@@ -7,15 +7,12 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-
-/-- `familyInf` is the greatest lower bound of the family. -/
 theorem familyInf.le_iff (S : Set sys.Element) (hne : S.Nonempty) {z : sys.Element} :
     z ≤ sys.familyInf S hne ↔ ∀ x ∈ S, z ≤ x :=
   ⟨fun hz _x hx => le_trans hz (familyInf.le sys S hne hx), sys.le_familyInf S hne⟩

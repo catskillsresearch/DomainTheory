@@ -35,9 +35,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 4.6 (The limit theorem).**
-Kleene iterates of a retract-preserving continuous `F` are retracts, and
-`Y(F)` is a retract by the chain-union calculation. -/
 theorem theorem_4_6 {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a)) :
@@ -58,8 +55,6 @@ theorem theorem_4_6 {F : Pomega → Pomega}
 
 namespace theorem_4_6
 
-/-- **Scott 1976, Theorem 4.6, inverse-limit half.** The maps
-`u ↦ (Fⁿ(⊥)(u))ₙ` and `(vₙ) ↦ ⋃ₙ vₙ` are inverse order isomorphisms. -/
 def inverseLimit {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a))
@@ -107,11 +102,6 @@ def inverseLimit {F : Pomega → Pomega}
       intro n
       exact funOf.monotone_right (iterateBot F n) huw
 
-/-- **Scott 1976, Theorem 4.6**, inverse-limit half packaged with the
-retract half. Under the paper's extra strictness and `⊑`-monotonicity
-hypotheses, the range of `Y(F)` is order-isomorphic to the inverse
-limit of the ranges of `Fⁿ(⊥)`. Stated without `≃o` so the compared
-type does not mention a `CompleteLattice` instance. -/
 theorem limit {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a))

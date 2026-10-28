@@ -16,16 +16,11 @@ public import DomainTheory.InformationSystems.InformationSystems.sat_sing
 
 namespace DomainTheory.InformationSystems
 
-
 namespace Token
-
 
 end Token
 
-
-/-- **Factoid 2.5.** Interval information system of Scott 1982, §2. -/
 def Factoid25.example_25 : InfoSys Token :=
   ofSatisfaction Sat Token.bot (fun _ => trivial) sat_sing
-
 
 end DomainTheory.InformationSystems

@@ -26,7 +26,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Entailment for `A →ₛ B`. -/
 def StrictFunEnt (w : Finset (StrictFunToken A B)) (p : StrictFunToken A B) : Prop :=
   StrictFunCon A B w ∧ FunEnt A B (toFunFinset A B w) p.val
 

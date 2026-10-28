@@ -15,7 +15,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-/-- Witness used in the inductive proof of Theorem 6.6. -/
 def BooleanMemE (U : Set Pomega) : Prop :=
   ∃ (f : Pomega → Pomega) (N : ℕ) (E : Set Pomega),
     IsScottContinuous f ∧

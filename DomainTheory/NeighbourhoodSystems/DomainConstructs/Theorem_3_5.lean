@@ -14,8 +14,7 @@ variable {α β γ δ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {V₂ : NeighborhoodSystem γ}
 open ApproximableMap
-/- concordance: source L1086 THEOREM 3.5 separate approximability -/
-/-- **Theorem 3.5 (←) (Scott 1981, PRG-19).** A two-variable mapping induces a joint mapping. -/
+
 def ofMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) : ApproximableMap (prod V₀ V₁) V₂ where
   rel W Z := (prod V₀ V₁).mem W ∧ f.rel (Sum.inl ⁻¹' W) (Sum.inr ⁻¹' W) Z
   rel_dom h := h.1
@@ -35,8 +34,6 @@ def ofMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) : ApproximableMap (prod V�
     rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
     exact f.mono hrel hinl hinr hZZ' hA hB hZ'
 
-/-- **Theorem 3.5 (→) (Scott 1981, PRG-19).** A joint approximable mapping `𝒟₀ × 𝒟₁ → 𝒟₂`
-restricts to a two-variable mapping `X, Y f Z ↔ (X ∪ Y) f Z`. -/
 def toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) : ApproximableMap₂ V₀ V₁ V₂ where
   rel X Y Z := f.rel (prodNbhd X Y) Z
   rel_dom₀ h := (prod_mem_prodNbhd_iff.mp (f.rel_dom h)).1
@@ -58,7 +55,6 @@ theorem ofMap₂_toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) : ofMap₂
   · intro hrel
     exact ⟨f.rel_dom hrel, by rwa [← prodNbhd_preimage (f.rel_dom hrel)]⟩
 
-/-- Extensionality for two-variable approximable mappings. -/
 theorem ApproximableMap₂.ext {f g : ApproximableMap₂ V₀ V₁ V₂}
     (h : ∀ X Y Z, f.rel X Y Z ↔ g.rel X Y Z) : f = g := by
   obtain ⟨rf, _, _, _, _, _, _⟩ := f
@@ -76,9 +72,6 @@ theorem toMap₂_ofMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) : toMap₂ (of
   · intro hrel
     exact ⟨prod_mem_prodNbhd (f.rel_dom₀ hrel) (f.rel_dom₁ hrel), hrel⟩
 
-/-- **Theorem 3.5 (Scott 1981, PRG-19).** The bijection between joint approximable mappings
-`𝒟₀ × 𝒟₁ → 𝒟₂` and two-variable mappings `𝒟₀, 𝒟₁ → 𝒟₂`: a function of two arguments comes from
-an approximable mapping iff it is separately approximable. -/
 def map₂Equiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
     ApproximableMap (prod V₀ V₁) V₂ ≃ ApproximableMap₂ V₀ V₁ V₂ where
   toFun := toMap₂
@@ -86,8 +79,6 @@ def map₂Equiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V
   left_inv := ofMap₂_toMap₂
   right_inv := toMap₂_ofMap₂
 
-/-- **Theorem 3.5 (elementwise) (Scott 1981, PRG-19).** The two-variable elementwise map of
-`toMap₂ f` is `f` evaluated at the pairing: `(toMap₂ f)(x, y) = f(⟨x, y⟩)`. -/
 theorem toElementMap₂_toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) (x : V₀.Element) (y : V₁.Element) :
     (toMap₂ f).toElementMap₂ x y = f.toElementMap (pair x y) := by
   apply Element.ext

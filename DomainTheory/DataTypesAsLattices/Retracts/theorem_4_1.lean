@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 4.1 (The lattice theorem), complete-lattice half.**
-The inf `gfpBelow f (⋂ A)` is a fixed point of `f` itself. -/
 theorem theorem_4_1.complete (f : Pomega → Pomega) (hf : IsScottContinuous f)
     (A : Set Pomega) (hA : A ⊆ Fixpoints f) :
     gfpBelow f (⋂₀ A) ∈ Fixpoints f := by

@@ -15,7 +15,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.i
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -30,7 +29,6 @@ attribute [instance] InfoSysObj.decEq
 attribute [instance] instCategoryInfoSysObj
 attribute [instance] instCartesianMonoidalCategoryInfoSysObj
 
-/-- Hom-set equivalence for the exponential (Scott curry after braiding). -/
 noncomputable def tensorExpEquiv (A : InfoSysObj.{u}) (Y Z : InfoSysObj.{u}) :
     (A ⊗ Y ⟶ Z) ≃ (Y ⟶ InfoSysObj.exp A Z) where
   toFun := curryRight A Y Z
@@ -52,6 +50,5 @@ theorem tensorExpEquiv.natural (A : InfoSysObj.{u}) {Y' Y Z : InfoSysObj.{u}}
   rw [uncurryRight.curryRight, h]
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

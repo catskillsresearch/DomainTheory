@@ -16,28 +16,18 @@ theorem le_one (m ℓ : ℕ) : myTestBit m ℓ ≤ 1 := by
 end myTestBit
 open Domain.Recursive
 
-/-- **`isPeriodicMask k j m ∈ {0,1}`** decides whether `levelSet k m` is also presentable at level
-`j` via `m`'s own low bits (`isPeriodicMask_iff`), for `j ≤ k`. Meaningless (junk) for `j > k`,
-exactly like `myUpsample` itself. -/
 def isPeriodicMask (k j m : ℕ) : ℕ :=
   isZero ((myUpsample j k (myModPow2 m (2 ^ j)) - myModPow2 m (2 ^ k)) +
     (myModPow2 m (2 ^ k) - myUpsample j k (myModPow2 m (2 ^ j))))
 
-/-- **`minLevel k m`**: the smallest `j ≤ k` such that `levelSet k m` is presentable at level `j`
-(`minLevel_isPeriodicMask`, `minLevel_le`); the presentation-independent canonical level of the set
-`levelSet k m` (`minLevel_unique`). -/
 def minLevel (k m : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0
     (fun i ih => selectFn (isZero (i - ih)) (selectFn (isPeriodicMask k i m) i (i + 1)) ih) (k + 1)
 
-/-- The raw `Nat.rec`-fold underlying `minLevel k m`, exposed at an arbitrary bound `N` so the
-inductive argument below can range over all `N`, specializing to `N = k + 1` at the end. -/
 def minLevelFold (k m N : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0
     (fun i ih => selectFn (isZero (i - ih)) (selectFn (isPeriodicMask k i m) i (i + 1)) ih) N
 
-/-- **`minMask k m`**: `m`'s own bits, truncated to `minLevel k m`'s width — the presentation-
-independent canonical mask of the set `levelSet k m` (`minLevel_unique`). -/
 def minMask (k m : ℕ) : ℕ := myModPow2 m (2 ^ minLevel k m)
 
 theorem isPeriodicMask_le_one (k j m : ℕ) : isPeriodicMask k j m ≤ 1 := isZero_le_one _
@@ -48,8 +38,6 @@ theorem isPeriodicMask_eq_one_iff (k j m : ℕ) :
   rw [isZero_eq_one_iff]
   omega
 
-/-- **The key correctness fact for `isPeriodicMask`**: it decides genuine presentability of
-`levelSet k m` at the smaller level `j`, via `m`'s own bits. -/
 theorem isPeriodicMask_iff {k j m : ℕ} (hj : j ≤ k) :
     isPeriodicMask k j m = 1 ↔ levelSet k m = levelSet j m := by
   rw [isPeriodicMask_eq_one_iff]
@@ -65,14 +53,11 @@ theorem isPeriodicMask_iff {k j m : ℕ} (hj : j ≤ k) :
     rw [levelSet.myUpsample hj, levelSet.myModPow2, levelSet.myModPow2]
     exact h.symm
 
-/-- `levelSet k m` is trivially presentable at its own level `k` (the search's base case: the
-bounded search for `minLevel` below always terminates by `j = k`). -/
 theorem isPeriodicMask_self (k m : ℕ) : isPeriodicMask k k m = 1 := by
   rw [isPeriodicMask_eq_one_iff]
   unfold myUpsample
   simp only [Nat.sub_self, Function.iterate_zero, id_eq, unpair_pair_snd]
   rw [myModPow2.eq, myModPow2.eq, Nat.mod_eq_of_lt (Nat.mod_lt m (Nat.two_pow_pos (2 ^ k)))]
-
 
 theorem minLevel_eq_fold (k m : ℕ) : minLevel k m = minLevelFold k m (k + 1) := rfl
 
@@ -81,7 +66,6 @@ private theorem minLevelFold_succ (k m N : ℕ) :
       selectFn (isZero (N - minLevelFold k m N))
         (selectFn (isPeriodicMask k N m) N (N + 1)) (minLevelFold k m N) := rfl
 
-/-- **The core invariant, by induction on the bound `N`** (mirrors `myFirstBit_spec` exactly). -/
 private theorem minLevelFold_spec (k m N : ℕ) :
     (minLevelFold k m N < N ∧ isPeriodicMask k (minLevelFold k m N) m = 1 ∧
         ∀ j < minLevelFold k m N, isPeriodicMask k j m ≠ 1) ∨
@@ -119,14 +103,12 @@ theorem minLevel_le (k m : ℕ) : minLevel k m ≤ k := by
   · omega
   · exact absurd (isPeriodicMask_self k m) (hall k (by omega))
 
-/-- **`minLevel k m` genuinely witnesses presentability at its own value.** -/
 theorem minLevel_isPeriodicMask (k m : ℕ) : isPeriodicMask k (minLevel k m) m = 1 := by
   rw [minLevel_eq_fold]
   rcases minLevelFold_spec k m (k + 1) with ⟨-, htrue, -⟩ | ⟨heq, hall⟩
   · exact htrue
   · exact absurd (isPeriodicMask_self k m) (hall k (by omega))
 
-/-- **`minLevel k m` is minimal**: no smaller `j` witnesses presentability. -/
 theorem minLevel_min {k m j : ℕ} (hj : j < minLevel k m) : isPeriodicMask k j m ≠ 1 := by
   revert hj
   rw [minLevel_eq_fold]
@@ -135,17 +117,11 @@ theorem minLevel_min {k m j : ℕ} (hj : j < minLevel k m) : isPeriodicMask k j 
   · exact hmin j hj
   · exact hall j (heq ▸ hj)
 
-/-- **`(minLevel k m, minMask k m)` presents the same set as `(k, m)`.** -/
 theorem levelSet_minLevel (k m : ℕ) : levelSet (minLevel k m) (minMask k m) = levelSet k m := by
   have h := (isPeriodicMask_iff (minLevel_le k m)).1 (minLevel_isPeriodicMask k m)
   show levelSet (minLevel k m) (myModPow2 m (2 ^ minLevel k m)) = levelSet k m
   rw [levelSet.myModPow2, h]
 
-/-- **If `levelSet k m` is presentable at level `j ≤ k` via *any* mask `m'` at all, it is already
-presentable there via the canonical witness `myModPow2 m (2 ^ j)` built from `m` alone.** The
-genuinely new content of `(e)(d)(i)`: two direct specializations of the hypothesis (at `n = i` and
-at `n = i % 2 ^ j`, for each bit position `i < 2 ^ k`) pin down `m`'s own bits without any
-induction. -/
 theorem levelSet_presentable_imp_self {k j m m' : ℕ} (hj : j ≤ k)
     (h : levelSet j m' = levelSet k m) : levelSet k m = levelSet j m := by
   have hraw : ∀ i, i < 2 ^ k → m.testBit i = m.testBit (i % 2 ^ j) := by
@@ -171,14 +147,10 @@ theorem levelSet_presentable_imp_self {k j m m' : ℕ} (hj : j ≤ k)
   have := hraw (n % 2 ^ k) (Nat.mod_lt n (Nat.two_pow_pos k))
   rw [this, Nat.mod_mod_of_dvd n (pow_dvd_pow 2 hj)]
 
-/-- **Restated via `isPeriodicMask`**: presentability at a smaller level `j ≤ k`, witnessed by
-*any* mask, already shows up as `isPeriodicMask k j m = 1`. -/
 theorem isPeriodicMask_of_presentable {k j m : ℕ} (hj : j ≤ k) {m' : ℕ}
     (h : levelSet j m' = levelSet k m) : isPeriodicMask k j m = 1 :=
   (isPeriodicMask_iff hj).2 (levelSet_presentable_imp_self hj h)
 
-/-- **`minLevel` is presentation-independent**: two presentations of the same set have the same
-minimal level. -/
 theorem minLevel_eq {k₁ m₁ k₂ m₂ : ℕ} (h : levelSet k₁ m₁ = levelSet k₂ m₂) :
     minLevel k₁ m₁ = minLevel k₂ m₂ := by
   by_contra hne
@@ -194,9 +166,6 @@ theorem minLevel_eq {k₁ m₁ k₂ m₂ : ℕ} (h : levelSet k₁ m₁ = levelS
     exact minLevel_min (k := k₁) (m := m₁) (j := minLevel k₂ m₂) hlt
       (isPeriodicMask_of_presentable hj hpres)
 
-/-- **`minMask` is presentation-independent**: two presentations of the same set have the same
-minimal mask. Combined with `minLevel_eq`, this is `(e)(d)(i)`'s crux fact, delivering
-`ComputableBisection.left_congr`/`right_congr` for `(e)(d)(ii)`'s rerouted split. -/
 theorem minMask_eq {k₁ m₁ k₂ m₂ : ℕ} (h : levelSet k₁ m₁ = levelSet k₂ m₂) :
     minMask k₁ m₁ = minMask k₂ m₂ := by
   have hlvl := minLevel_eq h
@@ -206,8 +175,6 @@ theorem minMask_eq {k₁ m₁ k₂ m₂ : ℕ} (h : levelSet k₁ m₁ = levelSe
   have hb2 : minMask k₂ m₂ < 2 ^ (2 ^ minLevel k₁ m₁) := hlvl ▸ myModPow2.lt _ _
   exact levelSet.inj_of_lt hb1 hb2 hsets
 
-/-- **`minLevel_unique`**: the packaged crux fact — presentation-independence of both the minimal
-level and the minimal mask. -/
 theorem minLevel_unique {k₁ m₁ k₂ m₂ : ℕ} (h : levelSet k₁ m₁ = levelSet k₂ m₂) :
     minLevel k₁ m₁ = minLevel k₂ m₂ ∧ minMask k₁ m₁ = minMask k₂ m₂ :=
   ⟨minLevel_eq h, minMask_eq h⟩
@@ -234,8 +201,7 @@ theorem primrec_isPeriodicMask :
     (primrec_sub₂ hmodk hups))).of_eq fun t => rfl
 
 theorem primrec_minLevel : Nat.Primrec (fun t => minLevel t.unpair.1 t.unpair.2) := by
-  -- `w` is shaped `pair (pair k m) (pair i ih)`, matching `Nat.Primrec.prec`'s own convention
-  -- (parameter `pair k m`, recursion variable `i`, accumulator `ih`).
+
   have hk : Nat.Primrec (fun w : ℕ => w.unpair.1.unpair.1) :=
     Nat.Primrec.left.comp Nat.Primrec.left
   have hm : Nat.Primrec (fun w : ℕ => w.unpair.1.unpair.2) :=

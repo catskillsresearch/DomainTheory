@@ -6,10 +6,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Dom
 
 section
 namespace DomainTheory.NeighbourhoodSystems.Example13
-/-- Tokens for Example 1.3: `Δ = {0, 1, 2}`. -/
+
 abbrev Token := Fin 3
 
-/-- The master neighbourhood `Δ = {0, 1, 2}`. -/
 def master : Set Token := Set.univ
 
 theorem inter_master (A : Set Token) : A ∩ master = A := by
@@ -18,7 +17,6 @@ theorem inter_master (A : Set Token) : A ∩ master = A := by
 theorem master_inter (A : Set Token) : master ∩ A = A := by
   rw [master]; exact Set.univ_inter A
 
-/-- The neighbourhood `{1, 2}`. -/
 def twelve : Set Token := (insert 2 {1} : Set Token)
 
 theorem master_not_subset_twelve : ¬master ⊆ twelve := by
@@ -26,7 +24,6 @@ theorem master_not_subset_twelve : ¬master ⊆ twelve := by
   have : (0 : Token) ∈ twelve := h (by simp [master])
   simp [twelve] at this
 
-/-- The neighbourhood `{2}`. -/
 def two : Set Token := {2}
 
 theorem master_not_subset_two : ¬master ⊆ two := by
@@ -34,10 +31,8 @@ theorem master_not_subset_two : ¬master ⊆ two := by
   have : (0 : Token) ∈ two := h (by simp [master])
   simp [two] at this
 
-/-- The three neighbourhoods of Example 1.3. -/
 def memSet : Set (Set Token) := {master, twelve, two}
 
-/-- Membership in the neighbourhood system `𝒟` of Example 1.3. -/
 def mem (X : Set Token) : Prop := X ∈ memSet
 
 theorem mem_master : mem master := by simp [mem, memSet, master, twelve, two]
@@ -46,7 +41,6 @@ theorem mem_twelve : mem twelve := by simp [mem, memSet, master, twelve, two]
 
 theorem mem_two : mem two := by simp [mem, memSet, master, twelve, two]
 
-/-- A neighbourhood of Example 1.3 is exactly one of `Δ`, `{1,2}`, or `{2}`. -/
 theorem mem_iff (X : Set Token) : mem X ↔ X = master ∨ X = twelve ∨ X = two := by
   constructor
   · intro h
@@ -94,8 +88,6 @@ theorem inter_eq (X Y : Set Token) (h : mem X) (h' : mem Y) :
   · exact Or.inr (Or.inr (two_inter_twelve))
   · exact Or.inr (Or.inr (Set.inter_self _))
 
-/- concordance: source L160 EXAMPLE 1.3 three-step chain -/
-/-- **Example 1.3.** The neighbourhood system on `Δ = {0, 1, 2}`. -/
 def neighborhoodSystem : NeighborhoodSystem Token where
   mem
   master
@@ -114,7 +106,6 @@ section
 
 open NeighborhoodSystem
 
-/-- The bottom element `⊥ = {Δ}`. -/
 def bot : neighborhoodSystem.Element where
   mem X := X = master
   sub h := by rw [h]; exact mem_master
@@ -127,7 +118,6 @@ def bot : neighborhoodSystem.Element where
     rw [hX] at hXY
     exact eq_of_master_subset hY hXY
 
-/-- The intermediate partial element `{Δ, {1,2}}`. -/
 def elemTwelve : neighborhoodSystem.Element where
   mem X := X = master ∨ X = twelve
   sub h := by
@@ -151,7 +141,6 @@ def elemTwelve : neighborhoodSystem.Element where
       · exact Or.inr rfl
       · exact absurd hXY twelve_not_subset_two
 
-/-- The total element `{Δ, {1,2}, {2}}`. -/
 def elemTwo : neighborhoodSystem.Element where
   mem X := X = master ∨ X = twelve ∨ X = two
   sub h := by
@@ -207,7 +196,6 @@ theorem two_ne_twelve : two ≠ twelve := by
     rw [h]
     simp [twelve]
   simp [two] at hmem
-
 
 namespace neighborhoodSystem
 
@@ -277,7 +265,6 @@ theorem elemTwelve_lt_elemTwo : elemTwelve < elemTwo := by
     · exact absurd h1 two_ne_master
     · exact two_ne_twelve h2
 
-/-- Every element of Example 1.3 is one of the three filters in the linear chain. -/
 theorem element_classification (x : neighborhoodSystem.Element) :
     x = bot ∨ x = elemTwelve ∨ x = elemTwo := by
   by_cases htwo : x.mem two
@@ -314,4 +301,3 @@ end neighborhoodSystem
 
 end DomainTheory.NeighbourhoodSystems.Example13
 end
-

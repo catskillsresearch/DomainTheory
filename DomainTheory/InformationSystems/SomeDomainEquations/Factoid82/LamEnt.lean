@@ -21,7 +21,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Unstaged raw entailment. -/
 def LamEnt (u : Finset (RawLamToken α)) (t : RawLamToken α) : Prop :=
   ∃ n, LamEntN A n u t
 

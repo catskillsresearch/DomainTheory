@@ -11,17 +11,15 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise412
 open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
 
 section
-/-- Abbreviation for Example 1.2's domain `T`. -/
+
 abbrev T : NeighborhoodSystem Example12.Token := Example12.neighborhoodSystem
 
-/-- `{1} ≠ {0}` as tokens. -/
 theorem one_ne_zero : (Example12.one) ≠ Example12.zero := by
   intro h
   rw [Example12.one, Example12.zero, Set.ext_iff] at h
   have h1 : (1 : Example12.Token) = 0 := (h 1).mp rfl
   exact absurd h1 (by decide)
 
-/-- `{1} ≠ Δ` as tokens. -/
 theorem one_ne_master : (Example12.one) ≠ Example12.master := by
   intro h
   rw [Example12.one, Example12.master, Set.ext_iff] at h
@@ -29,7 +27,6 @@ theorem one_ne_master : (Example12.one) ≠ Example12.master := by
   simp only [Set.mem_singleton_iff] at h0
   exact absurd h0 (by decide)
 
-/-- `{0} ≠ Δ` as tokens. -/
 theorem zero_ne_master : (Example12.zero) ≠ Example12.master := by
   intro h
   rw [Example12.zero, Example12.master, Set.ext_iff] at h
@@ -39,7 +36,7 @@ theorem zero_ne_master : (Example12.zero) ≠ Example12.master := by
 end
 
 section
-/-- The two total elements are incomparable: `elemOne ⋢ elemZero`. -/
+
 theorem elemOne_not_le_elemZero : ¬ elemOne ≤ elemZero := by
   intro h
   rcases h Example12.one (Or.inr rfl) with hm | hz
@@ -48,7 +45,7 @@ theorem elemOne_not_le_elemZero : ¬ elemOne ≤ elemZero := by
 end
 
 section
-/-- The two total elements are incomparable: `elemZero ⋢ elemOne`. -/
+
 theorem elemZero_not_le_elemOne : ¬ elemZero ≤ elemOne := by
   intro h
   rcases h Example12.zero (Or.inr rfl) with hm | ho
@@ -57,16 +54,12 @@ theorem elemZero_not_le_elemOne : ¬ elemZero ≤ elemOne := by
 end
 
 section
-/- concordance: source L2259 EXERCISE 4.12 no greatest fixed point -/
-/-- **Exercise 4.12 (Scott 1981, PRG-19).** Every element is a fixed point of the identity map
-(so `I_T` has *many* fixed points: `⊥`, `elemZero`, `elemOne`). -/
+
 theorem idMap_fixed (x : T.Element) : (idMap T).toElementMap x = x := toElementMap_idMap x
 end
 
 section
-/-- **Exercise 4.12 (Scott 1981, PRG-19).** `I_T` has no *greatest* (hence no maximum) fixed point:
-the two total elements `elemZero`, `elemOne` are both fixed points, are incomparable, and no element
-dominates both. -/
+
 theorem no_greatest_fixedPoint :
     ¬ ∃ z : T.Element, (idMap T).toElementMap z = z ∧
       ∀ x, (idMap T).toElementMap x = x → x ≤ z := by

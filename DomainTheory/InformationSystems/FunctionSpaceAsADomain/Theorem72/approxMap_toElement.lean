@@ -25,7 +25,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- Deductive closure of the token-set of an approximable map. -/
 theorem approxMap_toElement.closed (f : ApproximableMap A B)
     (Y : Finset (FunToken A B)) (p : FunToken A B)
     (hY : (Y : Set (FunToken A B)) ⊆ {p : FunToken A B | f.rel p.val.1 p.val.2})
@@ -59,7 +58,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- Consistency of the token-set of an approximable map. -/
 theorem approxMap_toElement.consistent (f : ApproximableMap A B)
     (Y : Finset (FunToken A B))
     (hY : (Y : Set (FunToken A B)) ⊆ {p : FunToken A B | f.rel p.val.1 p.val.2}) :
@@ -81,7 +79,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- **Theorem 7.2.** Approximable map as an element of `|A → B|`. -/
 def approxMap_toElement (f : ApproximableMap A B) : (functionSystem A B).Element where
   carrier := {p : FunToken A B | f.rel p.val.1 p.val.2}
   consistent := approxMap_toElement.consistent A B f

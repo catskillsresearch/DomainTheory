@@ -19,8 +19,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- **Per-step `D`-side correctness.** The accumulated `(pos, neg)` code pair at depth `n`, for
-bit-source `k`, tracks exactly the same atom as `genAtom (idxSet (e P)) Set.univ (deltaOf k) n`. -/
 theorem genAtom_atomUCode (k : ℕ) :
     ∀ n, genAtom (idxSet (e P)) Set.univ (deltaOf k) n
       = DAtom (P0 P) (decodeList (atomUPos P n k)) (decodeList (atomUNeg P n k)) := by
@@ -50,8 +48,6 @@ theorem genAtom_atomUCode (k : ℕ) :
       rw [hstep, ih, atomUPos_succ, atomUNeg_succ, hbit0, selectFn_zero, selectFn_zero,
         decodeList_succ, unpair_pair_fst, unpair_pair_snd, DAtom_cons_neg, Set.inter_comm]
 
-
-/-- **`atomUEmpty` reads off `genAtom`'s own emptiness**, via `genAtom_atomUCode`. -/
 theorem atomUEmpty_eq_one_iff_genAtom (n k : ℕ) :
     atomUEmpty P n k = 1 ↔ genAtom (idxSet (e P)) Set.univ (deltaOf k) n = ∅ := by
   rw [atomUEmpty_eq_one_iff, ← genAtom_atomUCode]
@@ -63,7 +59,6 @@ theorem atomUEmpty_eq_zero_iff_genAtom (n k : ℕ) :
   constructor
   · intro h0 hempty; exact absurd (h1.mpr hempty) (by omega)
   · intro hne; by_contra h0; exact hne (h1.mp (by omega))
-
 
 theorem genAtom_succ_subset (k n : ℕ) :
     genAtom (idxSet (e P)) Set.univ (deltaOf k) (n + 1) ⊆
@@ -80,13 +75,6 @@ theorem atomUEmpty_zero_of_succ {n k : ℕ} (h : atomUEmpty P (n + 1) k = 0) : a
   have h1 : atomUEmpty P n k = 1 := by unfold atomUEmpty at hne hle ⊢; omega
   exact absurd (atomUEmpty_mono P h1) (by omega)
 
-
-/-- **The core `(vii)(1)` result**: at every depth `n`, atoms for bit-sources disagreeing somewhere
-below `n` are disjoint on the `U`-side, *provided both are still `D`-side non-empty*. Proved by
-induction on `n`, mirroring `atomU_invariant`'s disjointness clause: either the disagreement is
-already below `n - 1` (recurse, then shrink both sides via `atomUCode.subset`), or it is exactly at
-the last bit (use `atomUCodeState_congr` to identify the shared depth-`(n-1)` ancestor, then
-`splitU_disjoint`, since both survive to depth `n` iff that step was a genuine split). -/
 theorem atomUCode_disjoint :
     ∀ n k k', atomUEmpty P n k = 0 → atomUEmpty P n k' = 0 → (∃ i < n, deltaOf k i ≠ deltaOf k' i) →
       UX (atomUCode P n k) ∩ UX (atomUCode P n k') = ∅ := by
@@ -104,9 +92,9 @@ theorem atomUCode_disjoint :
         · exact heq
       obtain ⟨hpos, hneg, hcode⟩ := atomUCodeState_congr P hagree
       rw [atomUCode.succ, atomUCode.succ, hpos, hneg, hcode]
-      -- `Bool.eq_false_or_eq_true` enumerates `true` before `false`.
+
       rcases Bool.eq_false_or_eq_true (deltaOf k n) with h1 | h1
-      · -- `deltaOf k n = true`: `k` takes bit `1`, so `deltaOf k' n` must be `false`.
+      ·
         have hbitk : (k / 2 ^ n) % 2 = 1 := (deltaOf_eq_true_iff k n).mp h1
         have h2 : deltaOf k' n = false := by
           rcases Bool.eq_false_or_eq_true (deltaOf k' n) with h2 | h2
@@ -123,7 +111,7 @@ theorem atomUCode_disjoint :
         rw [hpos, hneg] at hkI
         simp only [hbitk, hbitk', selectFn_zero, selectFn_one, hkI, hk'J]
         exact splitU_disjoint (atomUCode P n k')
-      · -- `deltaOf k n = false`: `k` takes bit `0`, so `deltaOf k' n` must be `true`.
+      ·
         have hbitk : (k / 2 ^ n) % 2 = 0 := by
           rcases Nat.mod_two_eq_zero_or_one (k / 2 ^ n) with hh | hh
           · exact hh
@@ -176,9 +164,6 @@ theorem exists_atomUEmpty_zero (n : ℕ) : ∃ i < 2 ^ n, atomUEmpty P (n + 1) (
   rw [genAtom_congr (idxSet (e P)) Set.univ hagree]
   exact hAne
 
-/-- **The `D`-side atom splits along any prepended index** (Scott's `Δ = idxSetₙ ∪ (Δ∖idxSetₙ)`,
-pulled back through `DAtom`): needed to show that once the "negative refinement" of a nonempty atom
-is empty, the atom already coincides with its own "positive refinement" outright. -/
 theorem DAtom_union (i : ℕ) (pos neg : List ℕ) :
     DAtom (P0 P) pos neg = DAtom (P0 P) (i :: pos) neg ∪ DAtom (P0 P) pos (i :: neg) := by
   ext m
@@ -192,22 +177,17 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-
 theorem datomDec_eq_zero (posC negC : ℕ) (h : DAtom (P0 P) (decodeList posC) (decodeList negC) ≠ ∅) :
     datomDec P (Nat.pair posC negC) = 0 := by
   have hle := datomDec_le_one P (Nat.pair posC negC)
   have hne : datomDec P (Nat.pair posC negC) ≠ 1 := fun he => h ((datomDec_spec P posC negC).mp he)
   omega
 
-/-- Reducing modulo `2ⁿ` never disturbs bits strictly below `n`. -/
 theorem deltaOf_mod_two_pow_of_lt {k n i : ℕ} (hi : i < n) :
     deltaOf (k % 2 ^ n) i = deltaOf k i := by
   rw [deltaOf_eq_testBit, deltaOf_eq_testBit, Nat.testBit_mod_two_pow]
   simp [hi]
 
-/-- **The canonical "positive twin" at depth `n`** shares `k`'s own `(pos, neg, code)` triple, since
-it agrees with `k` on every bit below `n` (`atomUCodeState_congr` applied to
-`k % 2ⁿ`/`deltaOf_mod_two_pow_of_lt`/`deltaOf_add_two_pow_of_lt`). -/
 theorem atomUCodeState_congr_twin (n k : ℕ) :
     atomUPos P n (k % 2 ^ n + 2 ^ n) = atomUPos P n k ∧
       atomUNeg P n (k % 2 ^ n + 2 ^ n) = atomUNeg P n k ∧
@@ -217,9 +197,6 @@ theorem atomUCodeState_congr_twin (n k : ℕ) :
     rw [deltaOf_add_two_pow_of_lt _ hi, deltaOf_mod_two_pow_of_lt hi]
   exact atomUCodeState_congr P hagree
 
-/-- **Uniqueness of a bit-source below `2ⁿ`**: two bit-sources agreeing on every bit below `n` and
-both `< 2ⁿ` are equal (every bit at or above `n` is forced `false` by the bound, so agreement below
-`n` becomes agreement everywhere, and `Nat.eq_of_testBit_eq` finishes). -/
 theorem eq_of_deltaOf_agree_of_lt_two_pow {n i j : ℕ} (hi : i < 2 ^ n) (hj : j < 2 ^ n)
     (hagree : ∀ l < n, deltaOf i l = deltaOf j l) : i = j := by
   apply Nat.eq_of_testBit_eq

@@ -14,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Combinatory closure of the six constants of Theorem 2.4. -/
 inductive IsCombinatory : Pomega → Prop
   | zero : IsCombinatory zeroC
   | suc : IsCombinatory sucC

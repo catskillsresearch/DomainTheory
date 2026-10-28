@@ -124,7 +124,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 end valTraceOk
 
 end DomainTheory.DataTypesAsLattices

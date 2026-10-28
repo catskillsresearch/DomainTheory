@@ -20,7 +20,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 3.3 (i).** The set denoted by the code `v(n)`. -/
 def secondRecVal (u : Pomega) : Pomega :=
   graph (fun x => ⋃ m ∈ x, funOf u (ofNat (applyNat m (num m))))
 

@@ -9,7 +9,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -20,9 +19,6 @@ namespace ApproximableMap
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
-
-/-- **Proposition 7.4.** Uniqueness via the Theorem 7.3 least-fixed-point property
-(Plotkin’s (ii) is the fixed-point equation; leastness is 7.3(iii)). -/
 theorem proposition_7_4_unique (f : ApproximableMap A A) (φ : A.Element)
     (hii : f.toElement φ = φ)
     (hleast : ∀ x : A.Element, f.toElement x ≤ x → φ ≤ x) :

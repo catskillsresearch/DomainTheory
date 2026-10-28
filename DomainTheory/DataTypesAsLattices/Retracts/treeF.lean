@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plusR
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.38).** The tree functor. -/
 def treeF (z : Pomega) : Pomega := plusR botElem (tensorR z z)
 
 end DomainTheory.DataTypesAsLattices

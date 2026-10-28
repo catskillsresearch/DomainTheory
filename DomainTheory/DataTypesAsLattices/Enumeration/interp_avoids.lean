@@ -12,16 +12,13 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem interp_avoids {i : ℕ} (t : Term) (ρ : ℕ → Pomega) (v : Pomega)
     (h : t.Avoids i) : interp t (envSet ρ i v) = interp t ρ := by

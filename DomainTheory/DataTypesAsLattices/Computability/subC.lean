@@ -43,17 +43,14 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem app (x : Pomega) : funOf subC x = primRecComb x subStepC := by
   simp [subC, primRecComb, Scomb.beta3, Kcomb.beta2]
-
 
 theorem combinatory : IsCombinatory subC :=
   .app (.app .S (.app .K dollarC.combinatory))
     (.app (.app .S (.app .K Ycomb.combinatory))
       (.app (.app .S (theorem_2_4.closed primRecStepTerm))
         (.app .K subStepC.combinatory)))
-
 
 theorem realizes2 : Realizes2 subC fun n m => n - m := fun n m => by
   simp [subC.app, primRecComb.ofNat, primRecVal_sub]

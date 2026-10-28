@@ -10,8 +10,6 @@ public import Mathlib.Topology.Bases
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, §1, Definition / Table 2.**
-`fun(u)(x) = {m | ∃ e n ⊆ x. (n, m) ∈ u}`. -/
 def funOf (u : Pomega) (x : Pomega) : Pomega :=
   {m | ∃ n, e n ⊆ x ∧ pair n m ∈ u}
 
@@ -69,7 +67,6 @@ theorem isScottContinuous_left (y : Pomega) :
     obtain ⟨k, hk, n, hn, hp⟩ := mem_scottUnion.mp hm
     exact ⟨n, hn, hk hp⟩
 
-/-- Appendix calculation: `d(d) = ⋃ { e_l(e_l) | e_l ⊆ d }`. -/
 theorem diag_iUnion (d : Pomega) :
     funOf d d = ⋃ l, {m | e l ⊆ d ∧ m ∈ funOf (e l) (e l)} := by
   have h := theorem_1_3.diag (x := d)

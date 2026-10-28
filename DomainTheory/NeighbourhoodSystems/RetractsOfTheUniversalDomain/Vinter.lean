@@ -6,26 +6,18 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.VX
 
 namespace DomainTheory.NeighbourhoodSystems
 
-/-- One computable upsampling step: re-express a level-`k` mask at level `k + 1` by duplicating its
-low `2^k` bits into a second copy shifted up by `2^k` positions. -/
 def myUpsampleStep (k m : ℕ) : ℕ :=
   2 ^ (2 ^ k) * myModPow2 m (2 ^ k) + myModPow2 m (2 ^ k)
 
-/-- Joint (level, mask) iteration state for `myUpsample`: `pair level mask`. -/
 def myUpsampleJointStep (s : ℕ) : ℕ :=
   Nat.pair (s.unpair.1 + 1) (myUpsampleStep s.unpair.1 s.unpair.2)
 
 namespace myUpsampleJointStep
 open Domain.Recursive NeighborhoodSystem
 
-/-- Unfolding equation for `myUpsampleJointStep`, stated so `rw` fires on a single (outer)
-occurrence rather than `unfold`ing every nested occurrence (in particular, the ones hidden inside
-an already-iterated `myUpsampleJointStep^[d]` term). -/
 theorem eq (s : ℕ) :
     myUpsampleJointStep s = Nat.pair (s.unpair.1 + 1) (myUpsampleStep s.unpair.1 s.unpair.2) := rfl
 
-/-- Iterate `myUpsampleJointStep` `d` times from `pair k m`, and read off the level after `d`
-steps and the resulting mask. -/
 theorem iter_level (k m d : ℕ) :
     (myUpsampleJointStep^[d] (Nat.pair k m)).unpair.1 = k + d := by
   induction d with
@@ -38,8 +30,6 @@ end myUpsampleJointStep
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- **The key correctness lemma for `myUpsampleStep`**: it realizes `Exercise812.lean`'s
-mathematical `upsample` at the `levelSet` level, one step at a time. -/
 theorem myUpsampleStep (k m : ℕ) :
     levelSet (k + 1) (_root_.DomainTheory.NeighbourhoodSystems.myUpsampleStep k m) = levelSet k m := by
   ext n
@@ -93,19 +83,12 @@ theorem myUpsampleJointStep : Nat.Primrec _root_.DomainTheory.NeighbourhoodSyste
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`myUpsample k k' m`**: the computable re-expression of a level-`k` mask `m` at level
-`k' ≥ k`, agreeing with `Exercise812.lean`'s (non-computable) `upsample` at the `levelSet` level
-(`levelSet.myUpsample`), and always *bounded* (`myUpsample_lt`) — the final `myModPow2` truncation
-is a no-op mathematically (`levelSet.myModPow2`) but is essential to guarantee boundedness in the
-degenerate `k = k'` case, where the raw iteration runs zero steps and would otherwise return `m`
-unchanged (junk bits included). Undefined behaviour (returns junk) when `k' < k`. -/
 def myUpsample (k k' m : ℕ) : ℕ :=
   myModPow2 ((myUpsampleJointStep^[k' - k] (Nat.pair k m)).unpair.2) (2 ^ k')
 
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`myUpsample` realizes `upsample` at the `levelSet` level.** -/
 theorem myUpsample {k k' : ℕ} (hk : k ≤ k') (m : ℕ) :
     levelSet k' (_root_.DomainTheory.NeighbourhoodSystems.myUpsample k k' m) = levelSet k m := by
   unfold _root_.DomainTheory.NeighbourhoodSystems.myUpsample
@@ -113,7 +96,6 @@ theorem myUpsample {k k' : ℕ} (hk : k ≤ k') (m : ℕ) :
   have := myUpsampleJointStep.iter_levelSet k m (k' - k)
   rwa [show k + (k' - k) = k' from by omega] at this
 
-/-- **Computable version of `levelSet.inter`.** -/
 theorem myInter (k1 m1 k2 m2 : ℕ) :
     levelSet k1 m1 ∩ levelSet k2 m2
       = levelSet (max k1 k2) (myLand (_root_.DomainTheory.NeighbourhoodSystems.myUpsample k1 (max k1 k2) m1) (_root_.DomainTheory.NeighbourhoodSystems.myUpsample k2 (max k1 k2) m2)) := by
@@ -145,8 +127,6 @@ theorem myUpsample :
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-/-- The **raw** `(level, mask)` code for `VX n ∩ VX m`, before re-canonicalization: upsample both
-`canonIdx`-normalized masks to the common level `max k₁ k₂` and take `myLand`. -/
 def VinterRaw (n m : ℕ) : ℕ :=
   Nat.pair (max (canonIdx n).unpair.1 (canonIdx m).unpair.1)
     (myLand
@@ -158,8 +138,6 @@ def VinterRaw (n m : ℕ) : ℕ :=
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`VinterRaw` realizes `VX n ∩ VX m`** at the `levelSet` level (unconditionally — `V`'s
-consistency is genuinely automatic, mirroring `PN`). -/
 theorem VinterRaw (n m : ℕ) :
     levelSet (_root_.DomainTheory.NeighbourhoodSystems.VinterRaw n m).unpair.1 (_root_.DomainTheory.NeighbourhoodSystems.VinterRaw n m).unpair.2 = VX n ∩ VX m := by
   unfold _root_.DomainTheory.NeighbourhoodSystems.VinterRaw
@@ -202,7 +180,6 @@ theorem VinterRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSyste
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-/-- The intersection index: `canonIdx` of the raw intersection code `VinterRaw`. -/
 def Vinter (n m : ℕ) : ℕ := canonIdx (VinterRaw n m)
 
 namespace primrec
@@ -214,7 +191,6 @@ theorem Vinter : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-/-- **Scott's consistency condition reduces to non-emptiness.** -/
 theorem Vcons_iff_nonempty_inter (n m : ℕ) :
     (∃ k, VX k ⊆ VX n ∩ VX m) ↔ (VX n ∩ VX m).Nonempty := by
   constructor
@@ -236,15 +212,11 @@ theorem Vinter_spec {n m : ℕ} (h : ∃ k, VX k ⊆ VX n ∩ VX m) : VX (Vinter
   show levelSet (canonIdx (VinterRaw n m)).unpair.1 (canonIdx (VinterRaw n m)).unpair.2 = VX n ∩ VX m
   rw [canonIdx.eq_self_of_nonempty hne, levelSet.VinterRaw]
 
-/-- **`myUpsample` is always bounded** by `2 ^ (2 ^ k')`, regardless of whether a genuine
-upsampling step occurs. -/
 theorem myUpsample_lt (k k' m : ℕ) : myUpsample k k' m < 2 ^ (2 ^ k') := myModPow2.lt _ _
 
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`levelSet` equality reduces to `myUpsample` equality** at the common level `max k₁ k₂`: this
-is the injectivity criterion (`levelSet.inj_of_lt`) driving Scott's relation 7.1(i) decider. -/
 theorem eq_iff_myUpsample_eq (k1 m1 k2 m2 : ℕ) :
     levelSet k1 m1 = levelSet k2 m2 ↔
       _root_.DomainTheory.NeighbourhoodSystems.myUpsample k1 (max k1 k2) m1 = _root_.DomainTheory.NeighbourhoodSystems.myUpsample k2 (max k1 k2) m2 := by
@@ -260,8 +232,6 @@ theorem eq_iff_myUpsample_eq (k1 m1 k2 m2 : ℕ) :
 end levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- **7.1(ii) for `V`**: consistency `∃k. X_k ⊆ Xₙ ∩ Xₘ` is recursively decidable, via
-`Vcons_iff_nonempty_inter` and `myLevelSetNonempty`. -/
 theorem V.cons_computable : RecDecidable₂ (fun n m => ∃ k, VX k ⊆ VX n ∩ VX m) := by
   have hvr : Nat.Primrec (fun t : ℕ => VinterRaw t.unpair.1 t.unpair.2) := primrec.VinterRaw
   have hfprim : Nat.Primrec (fun t : ℕ => myLevelSetNonempty (VinterRaw t.unpair.1 t.unpair.2).unpair.1
@@ -277,8 +247,6 @@ theorem V.cons_computable : RecDecidable₂ (fun n m => ∃ k, VX k ⊆ VX n ∩
     rw [unpair_pair_fst, unpair_pair_snd, Vcons_iff_nonempty_inter, ← levelSet.VinterRaw,
       myLevelSetNonempty.eq_one_iff]
 
-/-- **7.1(i) for `V`**: `Xₙ ∩ Xₘ = X_k` is recursively decidable, reduced to `myUpsample` equality
-of the raw intersection code against `X_k`'s own code (`levelSet.eq_iff_myUpsample_eq`). -/
 theorem V.interEq_computable : RecDecidable₃ (fun n m k => VX n ∩ VX m = VX k) := by
   unfold RecDecidable₃
   have hvr : Nat.Primrec (fun t : ℕ => VinterRaw t.unpair.1 t.unpair.2.unpair.1) :=
@@ -313,7 +281,6 @@ theorem V.interEq_computable : RecDecidable₃ (fun n m k => VX n ∩ VX m = VX 
   rw [← levelSet.VinterRaw, ← levelSet.eq_iff_myUpsample_eq]
   rfl
 
-/-- **Exercise 8.12(b).** `V` (Exercise 8.12(a)) has a genuine `ComputablePresentation`. -/
 def VComputablePresentation : ComputablePresentation V where
   X := VX
   mem_X := V.mem_VX
@@ -326,7 +293,6 @@ def VComputablePresentation : ComputablePresentation V where
   masterIdx := VmasterIdx
   masterIdx_spec := VX_VmasterIdx
 
-/-- **Exercise 8.12(b) (Scott 1981, PRG-19).** `V` is effectively given. -/
 theorem V.isEffectivelyGiven : V.IsEffectivelyGiven := ⟨VComputablePresentation⟩
 
 end DomainTheory.NeighbourhoodSystems

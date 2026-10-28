@@ -10,11 +10,8 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
-/-- Decode a natural code as an integer: `pair a b ↦ a - b`. -/
 def decodeInt (c : ℕ) : ℤ := (c.unpair.1 : ℤ) - (c.unpair.2 : ℤ)
 
-/-- Encode an integer as the difference-pair `(z.toNat, (-z).toNat)` (one of the two is always
-`0`). -/
 def encodeInt (z : ℤ) : ℕ := Nat.pair z.toNat (-z).toNat
 
 @[simp] theorem decodeInt_encodeInt (z : ℤ) : decodeInt (encodeInt z) = z := by
@@ -31,10 +28,8 @@ def encodeInt (z : ℤ) : ℕ := Nat.pair z.toNat (-z).toNat
     have hnz : ((-z).toNat : ℤ) = -z := Int.toNat_of_nonneg (by omega)
     rw [hz, hnz]; ring
 
-/-- Decode a natural code as a rational via `mkRat`: `pair c d ↦ mkRat (decodeInt c) (d + 1)`. -/
 def decodeRat (c : ℕ) : ℚ := mkRat (decodeInt c.unpair.1) (c.unpair.2 + 1)
 
-/-- Encode a rational `q` using its own reduced `num`/`den`. -/
 def encodeRat (q : ℚ) : ℕ := Nat.pair (encodeInt q.num) (q.den - 1)
 
 @[simp] theorem decodeRat_encodeRat (q : ℚ) : decodeRat (encodeRat q) = q := by
@@ -44,39 +39,29 @@ def encodeRat (q : ℚ) : ℕ := Nat.pair (encodeInt q.num) (q.den - 1)
     have := q.den_nz; omega
   rw [hden, Rat.mkRat_self]
 
-/-- A fixed code for the rational `1`. -/
 def oneCode : ℕ := Nat.pair (Nat.pair 1 0) 0
 
-/-- The denominator (`d + 1`, always positive) of a rational code. -/
 def qDen (c : ℕ) : ℕ := c.unpair.2 + 1
 
-/-- The numerator's negative part `b` of a rational code (so the numerator is `a - b`). -/
 def qNumN (c : ℕ) : ℕ := c.unpair.1.unpair.2
 
-/-- The numerator's positive part `a` of a rational code. -/
 def qNumP (c : ℕ) : ℕ := c.unpair.1.unpair.1
 
 theorem decodeRat_eq (c : ℕ) :
     decodeRat c = mkRat ((qNumP c : ℤ) - (qNumN c : ℤ)) (qDen c) := by
   unfold decodeRat decodeInt qNumP qNumN qDen; rfl
 
-/-- The `{0,1}`-valued cross-cleared comparison test `a₁·d₂ + b₂·d₁ ≤ a₂·d₁ + b₁·d₂`, applied to
-`t = pair c₁ c₂`. -/
 def ratLeCode (t : ℕ) : ℕ :=
   let c1 := t.unpair.1; let c2 := t.unpair.2
   isZero ((qNumP c1 * qDen c2 + qNumN c2 * qDen c1) -
     (qNumP c2 * qDen c1 + qNumN c1 * qDen c2))
 
-/-- `ratLtCode (pair c₁ c₂)` decides `decodeRat c₁ < decodeRat c₂` via `¬ (decodeRat c₂ ≤ decodeRat c₁)`. -/
 def ratLtCode (t : ℕ) : ℕ := 1 - ratLeCode (Nat.pair t.unpair.2 t.unpair.1)
 
-/-- `ratMaxCode (pair c₁ c₂)` selects whichever of `c₁, c₂` decodes to the larger rational. -/
 def ratMaxCode (t : ℕ) : ℕ := selectFn (ratLeCode t) t.unpair.2 t.unpair.1
 
-/-- `ratMinCode (pair c₁ c₂)` selects whichever of `c₁, c₂` decodes to the smaller rational. -/
 def ratMinCode (t : ℕ) : ℕ := selectFn (ratLeCode t) t.unpair.1 t.unpair.2
 
-/-- A fixed code for the rational `0`. -/
 def zeroCode : ℕ := Nat.pair (Nat.pair 0 0) 0
 
 @[simp] theorem decodeRat_zeroCode : decodeRat zeroCode = 0 := by
@@ -85,16 +70,12 @@ def zeroCode : ℕ := Nat.pair (Nat.pair 0 0) 0
 @[simp] theorem decodeRat_oneCode : decodeRat oneCode = 1 := by
   rw [decodeRat_eq]; norm_num [oneCode, qNumP, qNumN, qDen, unpair_pair]
 
-/-- The midpoint code `(c₁+c₂)/2` of two rational codes, via denominator cross-clearing (as in
-`ratLeCode`) for the sum, then doubling the denominator to halve. -/
 def ratMidCode (t : ℕ) : ℕ :=
   let c1 := t.unpair.1; let c2 := t.unpair.2
   Nat.pair (Nat.pair (qNumP c1 * qDen c2 + qNumP c2 * qDen c1)
                       (qNumN c1 * qDen c2 + qNumN c2 * qDen c1))
     (2 * qDen c1 * qDen c2 - 1)
 
-/-- `decodeRat` is surjective: every rational number is `decodeRat` of some code (namely
-`encodeRat q`). -/
 theorem decodeRat_surjective : Function.Surjective decodeRat :=
   fun q => ⟨encodeRat q, decodeRat_encodeRat q⟩
 
@@ -161,8 +142,6 @@ theorem qDen_ratMidCode (c1 c2 : ℕ) : qDen (ratMidCode (Nat.pair c1 c2)) = qDe
   simp only [ratMidCode, unpair_pair_fst, unpair_pair_snd]
   rw [Nat.sub_add_cancel h1]; ring
 
-/-- **Correctness of `ratMidCode`**: it decodes to the arithmetic mean of the two decoded
-rationals. -/
 theorem decodeRat_ratMidCode (c1 c2 : ℕ) :
     decodeRat (ratMidCode (Nat.pair c1 c2)) = (decodeRat c1 + decodeRat c2) / 2 := by
   have hqnp : qNumP (ratMidCode (Nat.pair c1 c2)) =
@@ -181,17 +160,11 @@ theorem decodeRat_ratMidCode (c1 c2 : ℕ) :
   field_simp
   ring
 
-/-- **`decodeRat_ratMidCode`, un-paired**: lets callers apply it to an arbitrary code `e`
-(typically itself obtained by decoding a list, e.g. `firstElemCode`) without first having to
-rewrite `e` as `Nat.pair e.unpair.1 e.unpair.2` in the ambient goal — doing that rewrite directly
-on a term still containing `e` risks the `whnf`-blowup this project has hit before whenever `e`
-is (or unfolds to) a large composite expression. -/
 theorem decodeRat_ratMidCode' (e : ℕ) :
     decodeRat (ratMidCode e) = (decodeRat e.unpair.1 + decodeRat e.unpair.2) / 2 := by
   have h := decodeRat_ratMidCode e.unpair.1 e.unpair.2
   rwa [Nat.pair_unpair] at h
 
-/-- **Correctness of `ratLeCode`**: it is `1` exactly when the decoded rationals compare `≤`. -/
 theorem ratLeCode_eq_one_iff (c1 c2 : ℕ) :
     ratLeCode (Nat.pair c1 c2) = 1 ↔ decodeRat c1 ≤ decodeRat c2 := by
   unfold ratLeCode
@@ -237,9 +210,6 @@ theorem ratLtCode_eq_one_iff (c1 c2 : ℕ) :
 
 theorem ratLtCode_le_one (t : ℕ) : ratLtCode t ≤ 1 := by unfold ratLtCode; omega
 
-/-- **`<` on rational codes is recursively decidable.** Packaged as `RecDecidable₂` (rather than the
-raw `{0,1}` characteristic `ratLtCode`) so it composes directly with `Recursive.lean`'s closure
-lemmas (`.not`, `.and`, `.bExistsList`, `.swap`, ...). -/
 theorem ratLtCode_recDecidable₂ : RecDecidable₂ (fun c1 c2 => decodeRat c1 < decodeRat c2) := by
   refine RecDecidable₂.of_paired_zero_one_char primrec_ratLtCode
     (fun t => by have := ratLtCode_le_one t; omega) (fun n m => ?_)

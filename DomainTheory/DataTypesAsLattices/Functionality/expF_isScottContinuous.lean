@@ -18,9 +18,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plus7_comp_isScottC
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem expF_isScottContinuous : IsScottContinuous expF :=
   plus7_comp_isScottContinuous

@@ -9,9 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem retract_isGraph {a : Pomega} (ha : Retract a) : graph (funOf a) = a := by
   apply subset_antisymm

@@ -17,7 +17,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Sum bottom `Δ_{A+B} = (Δ, Δ)`. -/
 def sumBot : SumToken α β := .bot
 
 end InfoSys

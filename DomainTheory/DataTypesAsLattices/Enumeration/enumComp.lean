@@ -24,7 +24,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- Composition in the semigroup `FUN`. -/
 def enumComp (u v : Pomega) : Pomega :=
   graph (fun x => funOf u (funOf v x))
 

@@ -11,7 +11,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The primitive-recursive diagonal intersection code used in Theorem 3.4. -/
 noncomputable def diagonalInterCode (n : ℕ) : ℕ :=
   applyNat (applyNat interCode (num n)) n
 

@@ -11,11 +11,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.omega_first_recursion
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (2.14).** `⊥ = (λx. x(x))(λx. x(x))`. -/
 public theorem eq_2_14 :
     funOf (graph (fun x => funOf x x)) (graph (fun x => funOf x x)) = botElem := by
   have hω : omegaComb (graph fun x => x) = graph (fun x => funOf x x) := by
@@ -42,6 +39,5 @@ public theorem eq_2_14 :
     simp [this n] at hkn
   · intro k hk
     exact hk.elim
-
 
 end DomainTheory.DataTypesAsLattices

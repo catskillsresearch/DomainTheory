@@ -32,7 +32,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem eq {r : Pomega} {p : ℕ → ℕ} (hr : Realizes r p) :
     enumRangeC r = ⋃ n, ofNat (p n) := by
   rw [enumRangeC, _root_.DomainTheory.DataTypesAsLattices.eq_2_25]
@@ -48,7 +47,6 @@ theorem eq {r : Pomega} {p : ℕ → ℕ} (hr : Realizes r p) :
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem combinatory {r : Pomega} (hr : IsCombinatory r) :
     IsCombinatory (enumRangeC r) :=

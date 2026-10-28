@@ -8,11 +8,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (5.11).** Closures act as expansive maps. -/
 theorem eq_5_11 {a b u x : Pomega} (ha : Closure a) (hb : Closure b) :
     funOf u x ⊆ funOf b (funOf u (funOf a x)) := by
   have hx : x ⊆ funOf a x := by

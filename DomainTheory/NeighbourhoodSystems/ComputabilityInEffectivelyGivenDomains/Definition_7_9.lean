@@ -4,30 +4,17 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exe
 
 @[expose] public section
 
-
 section
 namespace DomainTheory.NeighbourhoodSystems
 namespace NeighborhoodSystem
 section
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/- concordance: source L4495 DEFINITION 7.9 power domain -/
-/-- **Definition 7.9 — the Smyth power domain `ℙ𝒟`.** A set `W : Set (Set α)` is a
-neighbourhood of `ℙ𝒟` iff it is a *finite union of down-sets* `⋃_{X ∈ L} ↓X` for some finite
-list `L` of `𝒟`-neighbourhoods. The empty list `L = []` realizes Scott's `n = 0` (the empty
-union `∅`). -/
 def PDmem (W : Set (Set α)) : Prop :=
   ∃ L : List (Set α), (∀ X ∈ L, V.mem X) ∧ W = ⋃ X ∈ L, V.upSet X
 
-/-- **Definition 7.9 — the preparation `𝒟†`.** Scott prepares `𝒟` for the power-domain
-construct by replacing it with the isomorphic system `𝒟† = {↓X ∣ X ∈ 𝒟}`, which is exactly
-Exercise 1.20's `powerSystem` (over the token type `Δ† = 𝒟`, i.e. `Set α`). It is a *positive*
-neighbourhood system (`powerSystem_isPositive`). -/
 abbrev dagger : NeighborhoodSystem (Set α) := V.powerSystem
 
-/-- **Definition 7.9 — closure under finite unions.** `ℙ𝒟` is closed under binary union
-(concatenate the index lists); with `PDmem_empty` this gives closure under all finite unions,
-which is exactly how Scott defines the family. -/
 theorem PDmem_union {W₁ W₂ : Set (Set α)} (h₁ : V.PDmem W₁) (h₂ : V.PDmem W₂) :
     V.PDmem (W₁ ∪ W₂) := by
   obtain ⟨L₁, hL₁, rfl⟩ := h₁
@@ -47,27 +34,17 @@ theorem PDmem_union {W₁ W₂ : Set (Set α)} (h₁ : V.PDmem W₁) (h₂ : V.P
       · exact Or.inl ⟨X, hX, hz⟩
       · exact Or.inr ⟨X, hX, hz⟩
 
-/-- **Definition 7.9 — `𝒟 ≅ 𝒟†` (Exercise 1.20).** The preparation does not change the domain:
-`𝒟` and `𝒟†` are isomorphic. (This is what makes `ℙ𝒟` isomorphism-invariant.) -/
 theorem dagger_isomorphic : V ≅ᴰ V.dagger := V.isomorphic_powerSystem
 
-/-- **Definition 7.9 (remark 2).** "In that case `↓X ∩ ↓Y = ↓(X ∩ Y)`." When `{X, Y}` is
-consistent (witness `Z ⊆ X ∩ Y`, `Z ∈ 𝒟`), the intersection `X ∩ Y` is again a neighbourhood,
-so `↓X ∩ ↓Y = ↓(X ∩ Y)` is a neighbourhood of the prepared system `𝒟†`. (The unconditional set
-identity `↓X ∩ ↓Y = ↓(X ∩ Y)` is Exercise 1.20's `upSet_inter`; the content here is membership
-in `𝒟†`.) -/
 theorem dagger_upSet_inter {X Y Z : Set α} (hX : V.mem X) (hY : V.mem Y) (hZ : V.mem Z)
     (hsub : Z ⊆ X ∩ Y) : V.dagger.mem (V.upSet X ∩ V.upSet Y) := by
   rw [V.upSet_inter]
   exact ⟨X ∩ Y, V.inter_mem hX hY hZ hsub, rfl⟩
 
-/-- Membership in a finite union of down-sets: `z ∈ ⋃_{X∈L} ↓X ↔ ∃ X ∈ L, z ∈ ↓X`. -/
 theorem mem_PDunion {L : List (Set α)} {z : Set α} :
     z ∈ (⋃ X ∈ L, V.upSet X) ↔ ∃ X ∈ L, z ∈ V.upSet X := by
   simp only [Set.mem_iUnion, exists_prop]
 
-/-- **Definition 7.9 — the empty union.** "The finite unions in `ℙ𝒟` can be empty (i.e. if
-`n = 0`)." The empty neighbourhood `∅` is a neighbourhood of `ℙ𝒟` (witnessed by `L = []`). -/
 theorem PDmem_empty : V.PDmem ∅ := by
   refine ⟨[], ?_, ?_⟩
   · intro X hX; cases hX
@@ -77,9 +54,6 @@ theorem PDmem_empty : V.PDmem ∅ := by
     · intro h; exact absurd h (Set.notMem_empty z)
     · rintro ⟨X, hX, _⟩; cases hX
 
-/-- **Definition 7.9 — Scott's `⋃_{i<n}` form.** The neighbourhood family of `ℙ𝒟`, written with
-a finite sequence `X : Fin n → 𝒟` exactly as Scott displays it: `W = ⋃_{i<n} ↓Xᵢ` with each
-`Xᵢ ∈ 𝒟`. Equivalent to the `List` form via `List.ofFn` / `List.get`. -/
 theorem PDmem_iff_fin {W : Set (Set α)} :
     V.PDmem W ↔ ∃ (n : ℕ) (X : Fin n → Set α),
       (∀ i, V.mem (X i)) ∧ W = ⋃ i, V.upSet (X i) := by
@@ -108,8 +82,6 @@ theorem PDmem_iff_fin {W : Set (Set α)} :
         obtain ⟨i, rfl⟩ := Set.mem_range.mp (List.mem_ofFn.mp hY)
         exact ⟨i, hz⟩
 
-/-- **Definition 7.9 — singletons.** Every down-set `↓X` (`X ∈ 𝒟`) is a neighbourhood of `ℙ𝒟`
-(the case `n = 1`); these are exactly the neighbourhoods of the prepared system `𝒟†`. -/
 theorem PDmem_upSet {X : Set α} (hX : V.mem X) : V.PDmem (V.upSet X) := by
   refine ⟨[X], ?_, ?_⟩
   · intro Y hY; rw [List.mem_singleton] at hY; subst hY; exact hX
@@ -119,12 +91,8 @@ theorem PDmem_upSet {X : Set α} (hX : V.mem X) : V.PDmem (V.upSet X) := by
     · intro hz; exact ⟨X, List.mem_singleton.mpr rfl, hz⟩
     · rintro ⟨Y, hY, hz⟩; rw [List.mem_singleton] at hY; subst hY; exact hz
 
-/-- **Definition 7.9 — the master neighbourhood `↓Δ`.** The largest neighbourhood of `ℙ𝒟` is
-`↓Δ = 𝒟` (all `𝒟`-neighbourhoods), itself a finite union (the case `X₀ = Δ`). -/
 theorem PDmem_master : V.PDmem (V.upSet V.master) := V.PDmem_upSet V.master_mem
 
-/-- **Definition 7.9 (remark 1).** "`↓X ∩ ↓Y ≠ ∅` iff `{X, Y}` is consistent in `𝒟`." The
-down-sets `↓X`, `↓Y` meet exactly when `X, Y` have a common lower neighbourhood `Z ⊆ X ∩ Y`. -/
 theorem upSet_inter_nonempty_iff {X Y : Set α} :
     (V.upSet X ∩ V.upSet Y).Nonempty ↔ ∃ Z, V.mem Z ∧ Z ⊆ X ∩ Y := by
   rw [V.upSet_inter]

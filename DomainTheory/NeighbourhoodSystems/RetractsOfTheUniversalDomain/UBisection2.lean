@@ -7,9 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Com
 
 namespace DomainTheory.NeighbourhoodSystems
 
-/-- **`U`'s computable canonical bisection, packaged as a `ComputableBisection`** — the missing
-`(f)`-side prerequisite, fixing `SplitU.lean`'s `left_congr`/`right_congr` gap (see the module
-docstring). -/
 def UBisection2 : ComputableBisection UComputablePresentation where
   left := splitU2Left
   right := splitU2Right

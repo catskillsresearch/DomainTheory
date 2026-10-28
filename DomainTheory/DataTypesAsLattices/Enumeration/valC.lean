@@ -22,8 +22,6 @@ def valC : Pomega := fix valStep
 
 namespace valC
 
-/-- `valC` and the well-founded numerical evaluator denote the same
-enumeration on integer arguments. -/
 theorem valNat (n : ℕ) : funOf valC (ofNat n) = valNat n := by
   rw [valC, fix, funOf.iUnion]
   apply subset_antisymm

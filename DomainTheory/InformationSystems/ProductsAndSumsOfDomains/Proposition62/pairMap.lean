@@ -24,7 +24,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-/-- **Proposition 6.2(3).** Pairing of approximable maps. -/
 def pairMap (f : ApproximableMap C A) (g : ApproximableMap C B) :
     ApproximableMap C (productSystem A B) where
   rel s u := f.rel s (fstFinset A B u) ∧ g.rel s (sndFinset A B u)

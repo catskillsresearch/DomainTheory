@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.mem
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Empty restricted equivalence (never related). -/
 def emptyE : RestrictedEquiv where
   rel := fun _ _ => False
   symm := fun h => False.elim h

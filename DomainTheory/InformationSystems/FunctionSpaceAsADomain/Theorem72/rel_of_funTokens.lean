@@ -26,7 +26,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- Combine pointwise `h`-relations along a finite set of function tokens. -/
 theorem rel_of_funTokens (h : ApproximableMap (productSystem A B) C)
     (u : Finset α) (hu : u ∈ A.Con) (t : Finset (FunToken B C))
     (hps : ∀ p ∈ t, h.rel (liftPair A B u p.val.1) p.val.2)

@@ -18,7 +18,6 @@ open InfoSys
 
 open ApproximableMap
 
-/-- (5) `\bar 1 ⊈ r(\bar 0)` — `1` is excluded as inconsistent at the bottom. -/
 def ConsistentApprox (r : ApproximableMap P P) : Prop :=
   ¬ ((barElement 1).carrier ⊆ (r.toElement (barElement 0)).carrier)
 

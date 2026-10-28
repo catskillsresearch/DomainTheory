@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (4.44).** Abstract-syntax functor. -/
 def expF (z : Pomega) : Pomega :=
   plus7 intR botElem z z (tensor4 z z z z) (tensorR z z) (tensorR intR z)
 

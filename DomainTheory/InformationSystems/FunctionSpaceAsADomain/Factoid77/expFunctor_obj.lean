@@ -10,7 +10,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.i
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -20,18 +19,13 @@ open CategoryTheory.MonoidalCategory
 
 namespace InfoSys
 
-
 attribute [instance] InfoSysObj.decEq
-
 
 open ApproximableMap
 
-
 attribute [instance] instCategoryInfoSysObj
 
-
 attribute [instance] instCartesianMonoidalCategoryInfoSysObj
-
 
 theorem expFunctor_obj (A Z : InfoSysObj.{u}) :
     (expFunctor A).obj Z = InfoSysObj.exp A Z :=

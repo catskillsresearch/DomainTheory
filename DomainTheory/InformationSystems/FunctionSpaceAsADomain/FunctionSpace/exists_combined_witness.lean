@@ -29,7 +29,6 @@ variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Combine entailment witnesses along a finite set of tokens (for `ent_trans`). -/
 theorem exists_combined_witness {u' : Finset α} {s : Finset (FunToken A B)}
     {v : Finset (FunToken A B)}
     (hv : FunCon A B v) (hu' : u' ∈ A.Con)

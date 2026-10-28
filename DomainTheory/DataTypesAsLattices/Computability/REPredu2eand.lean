@@ -5,11 +5,9 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem REPred.and {α} [Primcodable α] {p q : α → Prop}
     (hp : REPred p) (hq : REPred q) :

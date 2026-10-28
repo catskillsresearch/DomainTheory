@@ -13,12 +13,8 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tensorR_app
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 4.4 (ii).** `u : a ⊗ b` iff `u = ⟨u₀, u₁⟩`
-with `u₀ : a` and `u₁ : b`. -/
 theorem theorem_4_4_typed {a b u : Pomega} :
     typed u (tensorR a b) ↔
       u = pairSeq (funOf u (ofNat 0)) (funOf u (ofNat 1)) ∧

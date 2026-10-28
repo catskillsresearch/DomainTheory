@@ -11,13 +11,10 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.condC_app2
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- `0 ∉ cond(x)(y)`, since `0 = (0,0)` and `e_0 ⊃ x, y = ⊥`. -/
 theorem not_mem_zero_cond_graph (x y : Pomega) :
     0 ∉ funOf (funOf condC x) y := by
   intro h

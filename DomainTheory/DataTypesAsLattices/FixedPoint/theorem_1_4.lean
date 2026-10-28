@@ -11,15 +11,12 @@ public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot_mono
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 1.4 (The fixed-point theorem).** -/
 theorem theorem_1_4 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     f (fix f) = fix f ∧ ∀ x, f x = x → fix f ⊆ x := by
   constructor
-  · -- f(fix f) = ⋃ f(fⁿ(∅)) = ⋃ fⁿ⁺¹(∅) = fix f
+  ·
     have hchain := chain_lemma hf (iterateBot f) (iterateBot_mono hf)
     unfold fix
     rw [hchain]

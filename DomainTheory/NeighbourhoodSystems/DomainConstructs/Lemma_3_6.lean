@@ -11,8 +11,7 @@ open NeighborhoodSystem
 variable {α β γ δ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 open ApproximableMap
-/- concordance: source L1094 LEMMA 3.6 constant functions -/
-/-- **Lemma 3.6 (Scott 1981, PRG-19).** The constant map at `b : |𝒟₁|`: `X b Y ↔ Y ∈ b`. -/
+
 def constMap (V₀ : NeighborhoodSystem α) (b : V₁.Element) : ApproximableMap V₀ V₁ where
   rel X Y := V₀.mem X ∧ b.mem Y
   rel_dom h := h.1

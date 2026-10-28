@@ -18,8 +18,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-/-- **Scott 1976, §1, Definition.** `f : Pω → Pω` is continuous iff
-`f(x) = ⋃ {f(e n) | e n ⊆ x}`. -/
 class IsScottContinuous (f : Pomega → Pomega) : Prop where
   out : ∀ x, f x = scottUnion f x
 
@@ -33,7 +31,6 @@ theorem monotone {f : Pomega → Pomega}
   obtain ⟨n, hn, hmn⟩ := hm
   exact ⟨n, subset_trans hn h, hmn⟩
 
-/-- Continuous functions are determined by their values on finite sets. -/
 theorem determined {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g)
     (hfin : ∀ n, f (e n) = g (e n)) : f = g := by
@@ -41,7 +38,6 @@ theorem determined {f g : Pomega → Pomega}
   rw [hf.out x, hg.out x]
   simp [scottUnion, scottPiece, hfin]
 
-/-- Scott continuity coincides with topological continuity `Pω → Pω`. -/
 theorem iff_continuous (f : Pomega → Pomega) :
     IsScottContinuous f ↔ Continuous f := by
   constructor

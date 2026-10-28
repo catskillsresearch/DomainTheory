@@ -7,9 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem Icomb_isGraph : Icomb = graph (fun x => funOf Icomb x) := by
   apply graph_ext

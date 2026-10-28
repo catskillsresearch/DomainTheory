@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Strictness: `a(⊥) = ⊥`, equivalently `⊥ ⊑ a` for retracts. -/
 def IsStrict (a : Pomega) : Prop :=
   funOf a botElem = botElem
 

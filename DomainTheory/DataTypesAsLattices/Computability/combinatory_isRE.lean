@@ -22,19 +22,14 @@ public import DomainTheory.DataTypesAsLattices.Computability.pack4
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
-
-/-- Combinatory elements are r.e. (one direction of the appendix equivalence). -/
 theorem combinatory_isRE {u : Pomega} (hu : IsCombinatory u) : IsRE u := by
   induction hu with
   | zero => exact IsRE.zeroC

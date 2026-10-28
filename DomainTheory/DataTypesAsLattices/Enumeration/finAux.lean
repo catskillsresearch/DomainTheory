@@ -12,7 +12,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Primitive recursion scanning the first `k` bits of `j`. -/
 noncomputable def finAux (j : ℕ) : ℕ → ℕ
   | 0 => botCode
   | k + 1 =>

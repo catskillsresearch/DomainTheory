@@ -23,7 +23,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- A closed divergent term denoting bottom. -/
 def enumBottomTerm : Term :=
   .app (.lam 9 (.app (.var 9) (.var 9)))
     (.lam 9 (.app (.var 9) (.var 9)))

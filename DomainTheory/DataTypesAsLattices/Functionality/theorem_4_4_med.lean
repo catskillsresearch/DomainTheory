@@ -27,11 +27,8 @@ public import DomainTheory.DataTypesAsLattices.Retracts.typed_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 4.4.** Existence of the product mediator. -/
 theorem theorem_4_4_med {a b c f g : Pomega}
     (_ha : Retract a) (_hb : Retract b) (hc : Retract c)
     (hf : typed f (arrowR c a)) (hg : typed g (arrowR c b)) :

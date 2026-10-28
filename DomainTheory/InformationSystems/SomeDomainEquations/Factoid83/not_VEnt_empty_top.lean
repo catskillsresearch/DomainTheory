@@ -15,7 +15,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-/-- Empty set does not entail top (no derivation bottoms out). -/
 theorem not_VEnt_empty_top : ¬ VEnt (∅ : Finset VToken) .top := by
   have aux : ∀ {u : Finset VToken} {c : VToken},
       VEnt u c → c = .top → u = ∅ → False := by

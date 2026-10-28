@@ -11,7 +11,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 
 namespace DomainTheory.ContinuousLattice
 
-
 attribute [instance] CLat.str
 
 section LimitMaps
@@ -24,7 +23,6 @@ section Thm44b
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-/-- `i_∞` is monotone in its summand index. -/
 theorem iInfTerm_le_succ (x : DInf D₀ j₀) (m : ℕ) :
     iInfTerm D₀ j₀ m x ≤ iInfTerm D₀ j₀ (m + 1) x := by
   rw [ScottMap.le_def]

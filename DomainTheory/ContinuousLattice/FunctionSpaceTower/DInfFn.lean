@@ -16,7 +16,6 @@ section LimitMaps
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-/-- The function space `[D_∞ → D_∞]`. -/
 abbrev DInfFn : Type u := ScottMap (DInf D₀ j₀) (DInf D₀ j₀)
 
 end LimitMaps

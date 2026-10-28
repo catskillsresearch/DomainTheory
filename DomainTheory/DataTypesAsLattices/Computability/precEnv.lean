@@ -20,7 +20,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Environment for the primitive-recursion constructor of `Nat.Primrec`. -/
 def precEnv (f g : Pomega) : ℕ → Pomega
   | 3 => primRecOpC
   | 4 => f

@@ -18,7 +18,6 @@ instance :
     LeftCommutative (pairRInsert : VToken → Finset VToken → Finset VToken) :=
   ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩
 
-/-- Right projection: `{Y | (Δ, Y) ∈ u}`. -/
 def vPairRFinset (u : Finset VToken) : Finset VToken :=
   Multiset.foldr pairRInsert (∅ : Finset VToken) u.1
 
@@ -64,6 +63,5 @@ theorem vPairRFinset.insert_top (u : Finset VToken) :
   · exact Or.inr
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

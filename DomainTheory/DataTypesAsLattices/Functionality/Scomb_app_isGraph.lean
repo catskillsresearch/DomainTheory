@@ -11,9 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Scomb_app
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem Scomb_app_isGraph (f : Pomega) :
     funOf Scomb f = graph (fun g => funOf (funOf Scomb f) g) := by

@@ -41,12 +41,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (5.13).** Sum of closures:
-`a ⊞ b = λu.([u]₀ ⊃ 0, 0) ∪ ([u]₁ ⊃ 1, 1) ⊒ [a'([u]₀), ⊥], [⊥, b'([u]₁)]`.
-The test is the union of the two occupancy tags, so an inhabited left
-component dispatches to the left branch, an inhabited right component to
-the right branch, both to `⊤` (via the doubly strict (4.4)) and neither
-to `⊥`. -/
 def boxPlus (a b : Pomega) : Pomega :=
   graph (fun u =>
     dcondSet (boxTag 0 (squareFst u) ∪ boxTag 1 (squareSnd u))
@@ -55,7 +49,6 @@ def boxPlus (a b : Pomega) : Pomega :=
 
 namespace boxPlus
 
-/- `def`+`namespace boxPlus` shadows bare `eq_5_*`. -/
 private abbrev squarePair_eta := _root_.DomainTheory.DataTypesAsLattices.eq_5_8
 private abbrev squareFst_of_pair := _root_.DomainTheory.DataTypesAsLattices.eq_5_9
 private abbrev squareSnd_of_pair := _root_.DomainTheory.DataTypesAsLattices.eq_5_10
@@ -222,7 +215,6 @@ theorem typed_iff {a b u : Pomega} (ha : Retract a) (hb : Retract b) :
     · rw [hu]; exact typed_top a b
     · rw [hx]; exact typed_inl hxt
     · rw [hy]; exact typed_inr hyt
-
 
 end boxPlus
 

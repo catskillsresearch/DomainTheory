@@ -19,20 +19,14 @@ public import DomainTheory.DataTypesAsLattices.Lambda.sucC_more
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
-
-
-/-- Every unary primitive-recursive function has a combinatory realizer. -/
 theorem primrec_realized {p : ℕ → ℕ} (hp : Nat.Primrec p) :
     ∃ u, IsCombinatory u ∧ Realizes u p := by
   induction hp with

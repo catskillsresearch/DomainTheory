@@ -51,7 +51,6 @@ theorem eq_fix_termDollarStep : dollarC = fix termDollarStep := by
     exact hbody u z
   exact this.symm.trans hfix
 
-/-- **Scott 1976, (2.24).** `$` is combinatory: `$ = Y(λs λu λz. z ⊃ u₀, s(λt. u_{t+1})(z−1))`. -/
 theorem combinatory : IsCombinatory dollarC := by
   have hY : funOf Ycomb (interp dollarStepTerm (fun _ => botElem)) = dollarC := by
     rw [dollarStepTerm.interp, theorem_2_5 termDollarStep.isScottContinuous,

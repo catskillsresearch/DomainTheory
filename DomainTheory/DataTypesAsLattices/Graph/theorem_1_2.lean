@@ -18,7 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.mem_graph
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, Theorem 1.2 (i).** `fun(graph(f)) = f` when `f` is continuous. -/
 theorem theorem_1_2.i {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     funOf (graph f) = f := by
   funext x
@@ -34,7 +33,6 @@ theorem theorem_1_2.i {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     obtain ⟨n, hn, hmn⟩ := mem_scottUnion.mp this
     exact ⟨n, hn, ⟨n, m, rfl, hmn⟩⟩
 
-/-- **Scott 1976, Theorem 1.2 (ii).** `u ⊆ graph(fun(u))`. -/
 theorem theorem_1_2.ii (u : Pomega) : u ⊆ graph (funOf u) := by
   intro p hp
   obtain ⟨n, m, rfl⟩ := exists_pair p
@@ -63,7 +61,6 @@ theorem theorem_1_2.iii (u : Pomega) :
       exact hu.out hkm hk
     · exact theorem_1_2.ii u
 
-/-- **Scott 1976, Theorem 1.2 (The graph theorem).** -/
 theorem theorem_1_2 {f : Pomega → Pomega} (hf : IsScottContinuous f) (u : Pomega) :
     funOf (graph f) = f ∧ u ⊆ graph (funOf u) ∧
       (graph (funOf u) = u ↔ IsGraph u) :=

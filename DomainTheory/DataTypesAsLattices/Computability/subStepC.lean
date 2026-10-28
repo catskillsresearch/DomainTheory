@@ -27,7 +27,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem combinatory : IsCombinatory subStepC :=
   .app .K safePredC.combinatory
 

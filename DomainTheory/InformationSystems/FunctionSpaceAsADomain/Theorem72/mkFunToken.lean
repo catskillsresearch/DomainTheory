@@ -21,7 +21,6 @@ variable {α : Type u} {β : Type v} {γ : Type w}
 
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
-/-- Consistency of a packaged function-space token. -/
 theorem mkFunToken.property (u : Finset α) (v : Finset β) (hu : u ∈ A.Con) (hv : v ∈ B.Con) :
     u ∈ A.Con ∧ v ∈ B.Con :=
   ⟨hu, hv⟩
@@ -39,7 +38,6 @@ variable {α : Type u} {β : Type v} {γ : Type w}
 
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
-/-- Package a consistent pair as a function-space token. -/
 def mkFunToken (u : Finset α) (v : Finset β) (hu : u ∈ A.Con) (hv : v ∈ B.Con) :
     FunToken A B :=
   ⟨(u, v), mkFunToken.property A B u v hu hv⟩
@@ -55,7 +53,6 @@ universe u v w
 variable {α : Type u} {β : Type v} {γ : Type w}
   [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
-
 
 theorem mkFunToken.eq (p : FunToken A B) :
     mkFunToken A B p.val.1 p.val.2 p.property.1 p.property.2 = p :=

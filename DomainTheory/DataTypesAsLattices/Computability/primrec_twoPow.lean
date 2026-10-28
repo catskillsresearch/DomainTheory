@@ -5,11 +5,9 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem primrec_twoPow : Primrec fun k : ℕ => 2 ^ k :=
   (Primrec.nat_rec' (f := id) (g := fun _ => (1 : ℕ))

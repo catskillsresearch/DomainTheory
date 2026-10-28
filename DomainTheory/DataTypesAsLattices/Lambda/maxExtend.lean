@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (2.1).** Maximal extension, written without a decidability side condition. -/
 def maxExtend (p : ℕ → Pomega) (x : Pomega) : Pomega :=
   {k | (x = ∅ ∧ ∀ n, k ∈ p n) ∨
     (∃ n, x = ofNat n ∧ k ∈ p n) ∨

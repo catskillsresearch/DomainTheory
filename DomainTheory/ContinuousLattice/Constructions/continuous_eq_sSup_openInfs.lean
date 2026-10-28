@@ -10,24 +10,16 @@ public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Topology Set
 
 variable {D : Type*} [CompleteLattice D]
 
-
 section InjectiveExtension
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] {E : Type*} [CompleteLattice E]
 
-
-/-- For a continuous `f' : Y → E` into a continuous lattice `E` (with its Scott topology), the
-value `f' y` is reconstructed as the supremum over open neighbourhoods `U ∋ y` of the meets
-`⊓ f''(U)`. This is the order-theoretic content behind the maximality clause of Proposition 3.8:
-the `≤` direction interpolates from below using `f' y = ⊔ {a | a ≪ f' y}` and the openness of each
-`f'⁻¹(↟a)`; the `≥` direction is immediate since `f' y ∈ f''(U)` whenever `y ∈ U`. -/
 theorem continuous_eq_sSup_openInfs (hE : ContinuousLattice E) {f' : Y → E}
     (hf' : @Continuous Y E _ scottTopologicalSpace f') (y : Y) :
     f' y = sSup {d | ∃ U : Set Y, IsOpen U ∧ y ∈ U ∧ d = sInf (f' '' U)} := by

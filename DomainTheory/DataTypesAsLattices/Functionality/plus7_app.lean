@@ -20,9 +20,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.tagInj
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 namespace plus7_app
 

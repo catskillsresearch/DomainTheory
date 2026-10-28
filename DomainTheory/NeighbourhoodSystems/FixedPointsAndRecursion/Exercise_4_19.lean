@@ -18,9 +18,6 @@ notation "𝕥" => Example23.trueElt
 
 notation "𝕗" => Example23.falseElt
 
-/-- The codomain value chosen by inspecting the head of a sequence: `[] ↦ z`, `0σ ↦ a₀`, `1σ ↦ a₁`.
-With `z = ⊥` this is the value at the *partial* element `σ⊥`; with `z = vΛ` the value at the
-*total* element `σ`. -/
 def headValC (V : NeighborhoodSystem β) (z a0 a1 : V.Element) : Str → V.Element
   | [] => z
   | false :: _ => a0
@@ -35,12 +32,8 @@ def headValC (V : NeighborhoodSystem β) (z a0 a1 : V.Element) : Str → V.Eleme
 @[simp] theorem headValC_true (V : NeighborhoodSystem β) (z a0 a1 : V.Element) (σ : Str) :
     headValC V z a0 a1 (true :: σ) = a1 := rfl
 
-/-- The truth domain `T` of Example 1.2. -/
 abbrev T : NeighborhoodSystem Example12.Token := Example23.T
 
-/-- Monotonicity of the head value: along a prefix `σ <+: τ`, the *partial* value (`z = ⊥`) at `σ`
-is below *any* head value at `τ` with the same head constants. Covers both required conditions
-(cone→cone with `z' = ⊥`, cone→singleton with `z' = vΛ`). -/
 theorem headValC_bot_le (V : NeighborhoodSystem β) (z' a0 a1 : V.Element) {σ τ : Str}
     (h : σ <+: τ) : headValC V V.bot a0 a1 σ ≤ headValC V z' a0 a1 τ := by
   cases σ with
@@ -53,7 +46,7 @@ theorem headValC_bot_le (V : NeighborhoodSystem β) (z' a0 a1 : V.Element) {σ �
 end
 
 section
-/-- A cone is never contained in a singleton (it has at least two elements). -/
+
 theorem not_cone_subset_singleton (τ σ : Str) : ¬ cone τ ⊆ ({σ} : Set Str) := by
   intro h
   have h1 : τ ∈ ({σ} : Set Str) := h (by simp [mem_cone])
@@ -64,7 +57,7 @@ theorem not_cone_subset_singleton (τ σ : Str) : ¬ cone τ ⊆ ({σ} : Set Str
 end
 
 section
-/-- A cone is never equal to a singleton. -/
+
 theorem cone_ne_singleton (τ σ : Str) : cone τ ≠ ({σ} : Set Str) := by
   intro h
   exact not_cone_subset_singleton τ σ (h ▸ subset_rfl)
@@ -73,10 +66,6 @@ end
 section
 variable {β : Type*}
 
-/-- A map `C → V` determined by its value `coneVal σ` on each partial element `σ⊥` and `singVal σ`
-on each total element `σ`, provided (a) the partial values are monotone along prefixes and (b) a
-partial value sits below the total value of any extending prefix. The relation says: a cone `σΣ*`
-relates to the neighbourhoods of `coneVal σ`, and a singleton `{σ}` to those of `singVal σ`. -/
 def liftC (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
     (hcone : ∀ {σ τ : Str}, σ <+: τ → coneVal σ ≤ coneVal τ)
     (hsing : ∀ {σ τ : Str}, σ <+: τ → coneVal σ ≤ singVal τ) :
@@ -105,15 +94,15 @@ def liftC (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
       exact Or.inr ⟨σ, rfl, (singVal σ).inter_mem hY hY'⟩
   mono := by
     rintro X X' Y Y' (⟨σ, rfl, hY⟩ | ⟨σ, rfl, hY⟩) hX'X hYY' hX' hY'
-    · -- input is the cone `σΣ*`
+    ·
       rcases hX' with ⟨τ, rfl⟩ | ⟨τ, rfl⟩
-      · -- `X' = cone τ ⊆ cone σ`, so `σ <+: τ`
+      ·
         have hpre : σ <+: τ := cone_subset_cone.mp hX'X
         exact Or.inl ⟨τ, rfl, (coneVal τ).up_mem (hcone hpre Y hY) hY' hYY'⟩
-      · -- `X' = {τ} ⊆ cone σ`, so `σ <+: τ`
+      ·
         have hpre : σ <+: τ := singleton_subset_cone.mp hX'X
         exact Or.inr ⟨τ, rfl, (singVal τ).up_mem (hsing hpre Y hY) hY' hYY'⟩
-    · -- input is the singleton `{σ}`
+    ·
       rcases hX' with ⟨τ, rfl⟩ | ⟨τ, rfl⟩
       · exact absurd hX'X (not_cone_subset_singleton τ σ)
       · have hτσ : τ = σ := by
@@ -122,12 +111,10 @@ def liftC (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
         subst hτσ
         exact Or.inr ⟨τ, rfl, (singVal τ).up_mem hY hY' hYY'⟩
 
-/-- **Example 4.4 — `empty`.** `empty(Λ) = true`, `empty(0x) = empty(1x) = false`, strict. -/
 def emptyMap : ApproximableMap C T :=
   liftC T (headValC T T.bot 𝕗 𝕗) (headValC T 𝕥 𝕗 𝕗)
     (headValC_bot_le T T.bot 𝕗 𝕗) (headValC_bot_le T 𝕥 𝕗 𝕗)
 
-/-- `liftC` on a partial element: `f(σ⊥) = coneVal σ`. -/
 theorem liftC_strBot (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
     (hcone : ∀ {σ τ : Str}, σ <+: τ → coneVal σ ≤ coneVal τ)
     (hsing : ∀ {σ τ : Str}, σ <+: τ → coneVal σ ≤ singVal τ) (σ : Str) :
@@ -143,7 +130,6 @@ theorem liftC_strBot (V : NeighborhoodSystem β) (coneVal singVal : Str → V.El
   · intro hY
     exact ⟨cone σ, ⟨memC_cone σ, subset_rfl⟩, Or.inl ⟨σ, rfl, hY⟩⟩
 
-/-- `liftC` on a total element: `f(σ) = singVal σ`. -/
 theorem liftC_strElem (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
     (hcone : ∀ {σ τ : Str}, σ <+: τ → coneVal σ ≤ coneVal τ)
     (hsing : ∀ {σ τ : Str}, σ <+: τ → coneVal σ ≤ singVal τ) (σ : Str) :
@@ -174,12 +160,10 @@ theorem liftC_strElem (V : NeighborhoodSystem β) (coneVal singVal : Str → V.E
   liftC_strBot T (headValC T T.bot 𝕗 𝕗) (headValC T 𝕥 𝕗 𝕗)
     (headValC_bot_le T T.bot 𝕗 𝕗) (headValC_bot_le T 𝕥 𝕗 𝕗) σ
 
-/-- **Example 4.4 — `one`.** `one(Λ) = false`, `one(0x) = false`, `one(1x) = true`, strict. -/
 def oneMap : ApproximableMap C T :=
   liftC T (headValC T T.bot 𝕗 𝕥) (headValC T 𝕗 𝕗 𝕥)
     (headValC_bot_le T T.bot 𝕗 𝕥) (headValC_bot_le T 𝕗 𝕗 𝕥)
 
-/-- **Example 4.4 — `zero`.** `zero(Λ) = false`, `zero(0x) = true`, `zero(1x) = false`, strict. -/
 def zeroMap : ApproximableMap C T :=
   liftC T (headValC T T.bot 𝕥 𝕗) (headValC T 𝕗 𝕥 𝕗)
     (headValC_bot_le T T.bot 𝕥 𝕗) (headValC_bot_le T 𝕗 𝕥 𝕗)
@@ -204,16 +188,12 @@ def zeroMap : ApproximableMap C T :=
   liftC_strBot T (headValC T T.bot 𝕗 𝕥) (headValC T 𝕗 𝕗 𝕥)
     (headValC_bot_le T T.bot 𝕗 𝕥) (headValC_bot_le T 𝕗 𝕗 𝕥) σ
 
-/-- The defining right-hand side: `cond(empty(x), false, cond(zero(x), false, true))`. It uses only
-`empty`, `zero` and the conditional `cond` (Exercise 3.26) — not `one`. -/
 def oneDef (x : C.Element) : T.Element :=
   (Exercise326.cond T).toElementMap
     (pair (emptyMap.toElementMap x)
       (pair 𝕗
         ((Exercise326.cond T).toElementMap (pair (zeroMap.toElementMap x) (pair 𝕗 𝕥)))))
 
-/-- `cond(⊥, x, y) = ⊥` in `T`, phrased with `T.bot` (which the head-test `empty(⊥)` produces)
-rather than the syntactically distinct `Example23.botElt` of `Exercise326.cond_bot`. -/
 theorem condT_bot (x y : T.Element) :
     (Exercise326.cond T).toElementMap (pair T.bot (pair x y)) = T.bot := by
   apply Element.ext
@@ -236,9 +216,6 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exampl
 section
 variable {β : Type*}
 
-/- concordance: source L2323 EXERCISE 4.19 Peano axioms for sequences -/
-/-- **Exercise 4.19 (Scott 1981, PRG-19).** The same defining equation holds on every partial
-element `σ⊥` — including `⊥ = []⊥` where `empty(⊥) = ⊥` forces `cond(⊥, …) = ⊥`. -/
 theorem one_def_strBot (σ : Str) : oneMap.toElementMap (strBot σ) = oneDef (strBot σ) := by
   cases σ with
   | nil =>
@@ -252,19 +229,16 @@ theorem one_def_strBot (σ : Str) : oneMap.toElementMap (strBot σ) = oneDef (st
       rw [oneDef, emptyMap_strBot, headValC_true, Exercise326.cond_false,
         zeroMap_strBot, headValC_true, Exercise326.cond_false, oneMap_strBot, headValC_true]
 
-/-- **Exercise 4.19 (Scott 1981, PRG-19).** `one` is definable from `empty`, `zero`, `cond`: the
-equation `one(x) = cond(empty(x), false, cond(zero(x), false, true))` holds on every total element
-`σ`. -/
 theorem one_def_strElem (σ : Str) : oneMap.toElementMap (strElem σ) = oneDef (strElem σ) := by
   cases σ with
   | nil =>
-    -- empty(Λ)=true ⟹ cond picks `false`
+
     rw [oneDef, emptyMap_strElem, headValC_nil, Exercise326.cond_true,
       oneMap_strElem, headValC_nil]
   | cons b σ0 =>
     cases b with
     | false =>
-      -- empty=false ⟹ inner cond; zero(0σ)=true ⟹ inner cond picks `false`
+
       rw [oneDef, emptyMap_strElem, headValC_false, Exercise326.cond_false,
         zeroMap_strElem, headValC_false, Exercise326.cond_true, oneMap_strElem, headValC_false]
     | true =>
@@ -274,22 +248,19 @@ theorem one_def_strElem (σ : Str) : oneMap.toElementMap (strElem σ) = oneDef (
 end
 
 section
-/-- **Exercise 4.19 — Peano (ii′) for `{0,1}*`.** The two successor ranges are disjoint:
-`0σ ≠ 1τ`. -/
+
 theorem peano_cons_disjoint (σ τ : Str) : (false :: σ) ≠ (true :: τ) := by
   simp
 end
 
 section
-/-- **Exercise 4.19 — Peano (ii) for `{0,1}*`.** Each successor `b ::·` is injective. -/
+
 theorem peano_cons_injective {b : Bool} {σ τ : Str} (h : b :: σ = b :: τ) : σ = τ :=
   (List.cons.injEq b σ b τ).mp h |>.2
 end
 
 section
-/-- **Exercise 4.19 — Peano (iii) for `{0,1}*`.** Induction: a predicate holding at `Λ` and closed
-under both successors holds everywhere. (This is `List.rec`; it is the two-successor analogue of
-Definition 4.5(iii) and the recursion engine behind `tail`/`empty`/`zero`/`one`.) -/
+
 theorem peano_induction (P : Str → Prop) (hnil : P []) (hcons : ∀ b σ, P σ → P (b :: σ)) :
     ∀ σ, P σ := by
   intro σ
@@ -299,7 +270,7 @@ theorem peano_induction (P : Str → Prop) (hnil : P []) (hcons : ∀ b σ, P σ
 end
 
 section
-/-- **Exercise 4.19 — Peano (i) for `{0,1}*`.** `Λ` is not a successor: `[] ≠ b :: σ`. -/
+
 theorem peano_nil_ne_cons (b : Bool) (σ : Str) : ([] : Str) ≠ b :: σ := by
   simp
 end
@@ -502,13 +473,11 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-/-- `f(fix(g ∘ f))` is a fixed point of `f ∘ g`:
-`(f ∘ g)(f(fix(g∘f))) = f((g∘f)(fix(g∘f))) = f(fix(g∘f))`. -/
 theorem comp_fixElement_isFixed (f g : ApproximableMap V V) :
     (f.comp g).toElementMap (f.toElementMap (g.comp f).fixElement)
       = f.toElementMap (g.comp f).fixElement := by
   rw [toElementMap_comp]
-  -- `g(f(fix(g∘f))) = (g∘f)(fix(g∘f)) = fix(g∘f)`
+
   have h : g.toElementMap (f.toElementMap (g.comp f).fixElement) = (g.comp f).fixElement := by
     rw [← toElementMap_comp]
     exact toElementMap_fixElement (g.comp f)

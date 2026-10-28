@@ -27,7 +27,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- The empty pair is related. -/
 theorem element_toApproxMap.empty_rel (x : (functionSystem A B).Element) :
     ∃ (hu : (∅ : Finset α) ∈ A.Con) (hv : (∅ : Finset β) ∈ B.Con),
       mkFunToken A B ∅ ∅ hu hv ∈ x.carrier := by
@@ -50,7 +49,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- The recovered relation is monotone for entailment. -/
 theorem element_toApproxMap.mono (x : (functionSystem A B).Element) :
     ∀ {u u' : Finset α} {v v' : Finset β},
       (∃ (hu : u ∈ A.Con) (hv : v ∈ B.Con), mkFunToken A B u v hu hv ∈ x.carrier) →
@@ -91,7 +89,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- Codomain of the relation recovered from a function-space element. -/
 theorem element_toApproxMap.rel_cod (x : (functionSystem A B).Element) :
     ∀ {u : Finset α} {v : Finset β},
       (∃ (hu : u ∈ A.Con) (hv : v ∈ B.Con), mkFunToken A B u v hu hv ∈ x.carrier) →
@@ -113,7 +110,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- Domain of the relation recovered from a function-space element. -/
 theorem element_toApproxMap.rel_dom (x : (functionSystem A B).Element) :
     ∀ {u : Finset α} {v : Finset β},
       (∃ (hu : u ∈ A.Con) (hv : v ∈ B.Con), mkFunToken A B u v hu hv ∈ x.carrier) →
@@ -135,7 +131,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- Output-union of two related pairs remains related. -/
 theorem element_toApproxMap.union_right (x : (functionSystem A B).Element) :
     ∀ {u : Finset α} {v v' : Finset β},
       (∃ (hu : u ∈ A.Con) (hv : v ∈ B.Con), mkFunToken A B u v hu hv ∈ x.carrier) →
@@ -206,7 +201,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- **Theorem 7.2.** Element of `|A → B|` as an approximable map. -/
 def element_toApproxMap (x : (functionSystem A B).Element) : ApproximableMap A B where
   rel u v := ∃ (hu : u ∈ A.Con) (hv : v ∈ B.Con), mkFunToken A B u v hu hv ∈ x.carrier
   rel_dom := element_toApproxMap.rel_dom A B x
@@ -227,9 +221,7 @@ variable {α : Type u} {β : Type v} {γ : Type w}
   [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
-
 open ApproximableMap
-
 
 theorem element_toApproxMap.approxMap_toElement (f : ApproximableMap A B) :
     element_toApproxMap A B (InfoSys.approxMap_toElement A B f) = f := by

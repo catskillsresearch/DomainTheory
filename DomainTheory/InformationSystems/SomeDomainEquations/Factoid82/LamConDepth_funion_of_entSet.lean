@@ -23,7 +23,6 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Prop 2.3(ii) via insert-first on `v`. -/
 theorem LamConDepth_funion_of_entSet (M : ℕ)
     (ihIns : ∀ u t, Nat.max (finsetMaxDepth u) (rawDepth t) < M →
       LamEntDepth A u t → LamConDepth A (insert t u))

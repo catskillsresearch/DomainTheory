@@ -17,7 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqShift_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-/-- **Scott 1976, (2.24).** The step of `$ = Y(λs λu λz. z ⊃ u₀, s(λt. u_{t+1})(z−1))`. -/
+
 def dollarStepBody (s u z : Pomega) : Pomega :=
   condSet z (funOf u (ofNat 0))
     (funOf (funOf s (seqShift u)) (predSet z))

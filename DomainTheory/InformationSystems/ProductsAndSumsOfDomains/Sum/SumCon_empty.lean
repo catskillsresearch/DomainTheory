@@ -19,7 +19,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.mem_f
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -28,9 +27,7 @@ namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-
 variable (A : InfoSys α) (B : InfoSys β)
-
 
 theorem SumCon_empty : SumCon A B (∅ : Finset (SumToken α β)) :=
   Or.inl ⟨by rw [lftFinset.empty]; exact A.con_empty, by rw [rhtFinset.empty]⟩

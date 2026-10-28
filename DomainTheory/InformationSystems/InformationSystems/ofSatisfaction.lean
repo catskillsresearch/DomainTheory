@@ -15,12 +15,6 @@ namespace DomainTheory.InformationSystems
 
 namespace Factoid25
 
-/-- Generic information system from a satisfaction relation with a true `bot`
-and inhabited singletons (Scott’s “obvious interpretation”).
-
-`Ent` packages consistency of the left-hand set together with semantic entailment,
-matching Scott’s typing of `⊢` as a relation on `Con × D` and making `ent_con`
-hold (a purely vacuous `∀`-entailment from an inconsistent set would not). -/
 def ofSatisfaction {τ : Type*} [DecidableEq τ] {Point : Type*}
     (Sat : Point → τ → Prop) (bot : τ)
     (sat_bot : ∀ p, Sat p bot)

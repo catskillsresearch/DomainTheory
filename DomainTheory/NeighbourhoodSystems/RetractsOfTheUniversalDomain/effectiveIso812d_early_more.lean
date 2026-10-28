@@ -229,7 +229,6 @@ end YPseqCode
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 namespace xPseqAtomJunk
@@ -302,7 +301,6 @@ theorem four_pow_found (n : ℕ) :
 
 end XPseqCodeUnconditional
 
-
 end XFold
 
 namespace XPseqCode
@@ -333,12 +331,9 @@ end XPseqCodeUnconditional
 
 end XPseqCode
 
-
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 
 section XYPseqCodeZero
 
@@ -369,13 +364,9 @@ theorem xPseqAtomIdx0_eq {n i : ℕ}
 
 end XYPseqCodeZero
 
-
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
-
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
@@ -407,6 +398,5 @@ end YPseqCodeUnconditional
 
 end YPseqCode
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
-
 
 end DomainTheory.NeighbourhoodSystems

@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,7 +15,6 @@ namespace InfoSys
 
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
-
 
 theorem mem_liftRight {w : Finset β} {p : ProdToken A B} :
     p ∈ liftRight A B w ↔ ∃ y ∈ w, p = mkRight A B y := by

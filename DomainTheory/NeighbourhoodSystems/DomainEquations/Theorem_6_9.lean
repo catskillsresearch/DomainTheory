@@ -14,21 +14,18 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exerci
 section
 variable {α β γ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-/- concordance: source L3775 THEOREM 6.9 homomorphism from initial algebra -/
-/-- **Theorem 6.9 (Scott 1981, PRG-19).** If `T` is continuous on maps and `D ≅ T(D)` (so `D` is a
-`T`-algebra via `i : T(D) → D`), then for any `T`-algebra `B = (E, k)` with `k` strict there is a
-homomorphism `D → E`. The homomorphism is the least fixed point of `λh. k ∘ T(h) ∘ j`. -/
+
 theorem nonempty_algHom_of_continuousOnMaps
     (T : Endofunctor DomainObj) (hT : ContinuousOnMaps T)
     {D : DomainObj} (iso : Iso (T.obj D) D)
     (B : TAlgebra T) (hk : IsStrict B.str) :
     Nonempty {g : AlgHom (⟨D, iso.hom⟩ : TAlgebra T) B // IsStrict g.hom} := by
-  -- `j = i⁻¹` is strict (it is an isomorphism of domains).
+
   have hji : iso.inv.comp iso.hom = idMap (T.obj D).sys := iso.hom_inv_id
   have hj : IsStrict iso.inv := isStrict_of_comp_eq_id hji
-  -- Definition 6.8's witness that `λf. T(f)` is approximable.
+
   obtain ⟨Φ, hΦ⟩ := hT D B.carrier
-  -- the operator `Op = (k ∘ · ∘ j) ∘ T` and its least fixed point.
+
   set Op := (homOp T D B.carrier iso.inv B.str hj hk).comp Φ with hOp
   set x := Op.fixElement with hx
   set h := toStrictMap x with hh
@@ -36,11 +33,11 @@ theorem nonempty_algHom_of_continuousOnMaps
     ⟨T.map (X := D) (Y := B.carrier) h.1, hT.isStrict_map (D := D) (E := B.carrier) h⟩
   have hfix : Op.toElementMap x = x := toElementMap_fixElement Op
   have hxh : toStrictFilter h = x := toStrictFilter_toStrictMap x
-  -- `Φ` sends `h` to the filter of `T(h)`.
+
   have hTg : toStrictMap (Φ.toElementMap (toStrictFilter h)) = Tg := Subtype.ext (hΦ h)
   have hφ : Φ.toElementMap (toStrictFilter h) = toStrictFilter Tg := by
     rw [← hTg]; exact (toStrictFilter_toStrictMap _).symm
-  -- evaluate the operator at the fixed point.
+
   have hOpx : Op.toElementMap x
       = toStrictFilter (homOpComp T D B.carrier iso.inv B.str hj hk Tg) := by
     rw [hOp, toElementMap_comp, ← hxh, hφ, homOp_apply_filter]
@@ -50,10 +47,10 @@ theorem nonempty_algHom_of_continuousOnMaps
   have hh' : homOpComp T D B.carrier iso.inv B.str hj hk Tg = h := by
     have h2 := congrArg toStrictMap hcompeq
     rwa [toStrictMap_toStrictFilter, toStrictMap_toStrictFilter] at h2
-  -- the fixed-point equation `h = k ∘ T(h) ∘ j`.
+
   have hcore : B.str.comp ((T.map (X := D) (Y := B.carrier) h.1).comp iso.inv) = h.1 :=
     congrArg Subtype.val hh'
-  -- rearrange to the homomorphism square `h ∘ i = k ∘ T(h)`.
+
   refine ⟨⟨{ hom := h.1, comm := ?_ }, h.2⟩⟩
   show h.1.comp iso.hom = B.str.comp (T.map (X := D) (Y := B.carrier) h.1)
   conv_lhs => rw [← hcore]
@@ -186,21 +183,19 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- StrictDomainObj.lean
+
 universe w
 
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-/-- An object of Scott's category (Exercise 6.19): a token type, a neighbourhood system on it, and the
-standing assumption `∅ ∉ 𝒟` (every neighbourhood is non-empty). -/
 structure StrictDomainObj : Type (w + 1) where
-  /-- The token type. -/
+
   carrier : Type w
-  /-- The neighbourhood system. -/
+
   sys : NeighborhoodSystem carrier
-  /-- Scott's standing assumption `∅ ∉ 𝒟`. -/
+
   nonempty : ∀ X, sys.mem X → X.Nonempty
 
 end DomainTheory.NeighbourhoodSystems
@@ -211,9 +206,6 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-/-- **The category of `∅`-free domains and strict maps.** Morphisms are strict approximable maps
-(`StrictMap`, Exercise 5.10); identities and associative composition come from Theorem 2.5, and
-strictness is preserved by `isStrict_idMap` / `isStrict_comp`. -/
 instance : Category StrictDomainObj where
   Hom D E := StrictMap D.sys E.sys
   id D := ⟨ApproximableMap.idMap D.sys, isStrict_idMap⟩
@@ -335,7 +327,6 @@ theorem embZero_subset_Gamma {D : NeighborhoodSystem α} {X : Set α} (hX : D.me
     embZero X ⊆ Gamma D := by
   rintro ⟨p, a⟩ ⟨-, ha⟩; exact D.sub_master hX ha
 
-/-- Under Scott's standing assumption `∅ ∉ 𝒟`, no neighbourhood of `D^§` is empty. -/
 theorem memS_nonempty {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
     {W : Set (List Bool × α)} (hW : MemS D W) : W.Nonempty := by
   induction hW with
@@ -343,7 +334,6 @@ theorem memS_nonempty {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Non
   | zero hX => exact embZero_nonempty (hD _ hX)
   | pair _ _ ihP _ => exact embPair_nonempty ihP
 
-/-- Every neighbourhood of `D^§` is a subset of the master `Γ` (Scott's `𝒟^§ ⊆ 𝒫(Γ)`). -/
 theorem memS_subset_gamma {D : NeighborhoodSystem α} {W : Set (List Bool × α)}
     (hW : MemS D W) : W ⊆ Gamma D := by
   induction hW with
@@ -351,11 +341,6 @@ theorem memS_subset_gamma {D : NeighborhoodSystem α} {W : Set (List Bool × α)
   | zero hX => exact embZero_subset_Gamma hX
   | pair _ _ ihP ihQ => exact embPair_subset_Gamma ihP ihQ
 
-/-- **Example 6.1 — closure under consistent intersection.** Scott's central verification, "by
-induction on the number of steps required to put `X` and `Y` into `𝒟^§`". The cross cases
-(`0A ∩ (1P∪2Q) = ∅`, etc.) are discharged because the consistency witness `Z` is non-empty
-(`memS_nonempty`); the `0A ∩ 0B` case uses `𝒟`'s own closure; the `(1P∪2Q) ∩ (1P'∪2Q')` case recurses
-on `P, P'` and `Q, Q'`. -/
 theorem memS_inter {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty) :
     ∀ {X : Set (List Bool × α)}, MemS D X → ∀ {Y : Set (List Bool × α)}, MemS D Y →
       ∀ {Z : Set (List Bool × α)}, MemS D Z → Z ⊆ X ∩ Y → MemS D (X ∩ Y) := by
@@ -371,7 +356,7 @@ theorem memS_inter {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonemp
       rw [Set.inter_eq_left.mpr (embZero_subset_Gamma hA)]; exact MemS.zero hA
     | @zero B hB =>
       rw [embZero_inter]
-      -- the witness `Z` must be a `0C`; read off `C ⊆ A ∩ B`, then `D`'s closure gives `A ∩ B ∈ 𝒟`.
+
       rw [embZero_inter] at hsub
       cases hZ with
       | gamma =>
@@ -413,8 +398,6 @@ theorem memS_inter {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonemp
         obtain ⟨hsub₀, hsub₁⟩ := embPair_subset.mp hsub
         exact MemS.pair (ihP hP' hZ₀ hsub₀) (ihQ hQ' hZ₁ hsub₁)
 
-/-- **Example 6.1 (Scott 1981, PRG-19).** The *tree algebra* `D^§`: a neighbourhood system over
-`Γ = {1,2}* 0 Δ`, under the standing assumption `∅ ∉ 𝒟` (`hD`). -/
 abbrev Dsharp (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty) :
     NeighborhoodSystem (List Bool × α) where
   mem := MemS D
@@ -482,7 +465,6 @@ variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
 
 include hD
 
-/-- No neighbourhood of `D^§ × D^§` is empty (needed to form the sum `D + (D^§ × D^§)`). -/
 theorem prod_dsharp_nonempty :
     ∀ V, (prod (Dsharp D hD) (Dsharp D hD)).mem V → V.Nonempty := by
   rintro V ⟨P, Q, hP, hQ, rfl⟩
@@ -498,34 +480,24 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Definition613/MonotoneAt.lean
+
 universe w
 
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
-/-- **Definition 6.13, monotone part (pointwise).** Given a subdomain relation `h : D ◁ E`, the data
-witnessing that the functor `T` carries it to `T(D) ◁ T(E)` *and* carries the projection pair `i, j`
-of 6.12 to the projection pair of `T(D) ◁ T(E)`.
-
-Because `T` may change the token type, the two image systems live a priori over different carriers;
-`carrier_eq` records that they coincide, `sub` is the resulting subdomain relation (with `T(E)`'s
-system transported into `T(D)`'s carrier), and `inj_heq`/`proj_heq` say the canonical 6.12 maps of
-`sub` are `T(i)` and `T(j)` (up to that transport, hence `HEq`). -/
 structure MonotoneAt (T : Endofunctor DomainObj.{w}) {α : Type w}
     {D E : NeighborhoodSystem α} (h : D ◁ E) : Prop where
-  /-- The two image carriers coincide, so `T(D) ◁ T(E)` can be stated. -/
+
   carrier_eq : (T.obj ⟨α, E⟩).carrier = (T.obj ⟨α, D⟩).carrier
-  /-- The image subdomain relation `T(D) ◁ T(E)` (with `T(E)`'s system carried into `T(D)`'s
-  carrier). -/
+
   sub : (T.obj ⟨α, D⟩).sys ◁
     (carrier_eq ▸ (T.obj ⟨α, E⟩).sys : NeighborhoodSystem (T.obj ⟨α, D⟩).carrier)
-  /-- The injection of `T(D) ◁ T(E)` is `T(i)` (Scott: the pair is mapped to `T(i), T(j)`). -/
+
   inj_heq : HEq (T.map (X := ⟨α, D⟩) (Y := ⟨α, E⟩) h.inj) sub.inj
-  /-- The projection of `T(D) ◁ T(E)` is `T(j)`. -/
+
   proj_heq : HEq (T.map (X := ⟨α, E⟩) (Y := ⟨α, D⟩) h.proj) sub.proj
 
 end DomainTheory.NeighbourhoodSystems
 end
-

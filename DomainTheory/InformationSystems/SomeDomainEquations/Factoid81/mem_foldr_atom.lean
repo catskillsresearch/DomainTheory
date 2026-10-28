@@ -16,7 +16,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
 
 theorem mem_foldr_atom (s : Multiset (TreeToken α)) (x : α) :

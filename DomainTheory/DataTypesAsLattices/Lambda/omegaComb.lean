@@ -17,7 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-/-- **Scott 1976, (2.8).** `ω(u) = λ x. u(x(x))`. -/
+
 def omegaComb (u : Pomega) : Pomega :=
   graph (fun x => funOf u (funOf x x))
 

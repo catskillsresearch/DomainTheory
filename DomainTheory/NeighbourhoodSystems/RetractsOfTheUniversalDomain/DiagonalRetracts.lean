@@ -17,10 +17,7 @@ section
 open NeighborhoodSystem ApproximableMap
 universe u
 variable {α : Type u} (D : NeighborhoodSystem α)
-/- concordance: source L5185 EXERCISE 8.20 self-embeddings of a domain -/
-/-- **Exercise 8.20.** For any domain `D`, `D ⊴ D×D` and `D ⊴ D→D` (unconditionally — no hypotheses
-needed, unlike Exercise 8.19). See the module docstring for the discussion of computability and
-multiplicity of projection pairs that Scott also asks about. -/
+
 theorem exercise_8_20_assembly : D ⊴ prod D D ∧ D ⊴ funSpace D D :=
   ⟨D_trianglelefteq_prod D, D_trianglelefteq_funSpace D⟩
 end
@@ -77,8 +74,6 @@ section Prod
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
 
-
-/-- **`B ⊴ prod A B`**, via `b ↦ ⟨⊥, b⟩` / `proj₁`. -/
 theorem trianglelefteq_prod_snd : B ⊴ prod A B :=
   trianglelefteq_of_projectionPair (embedSnd A B) (proj₁ A B) (proj₁_comp_embedSnd A B)
     (embedSnd_comp_proj₁_le A B)

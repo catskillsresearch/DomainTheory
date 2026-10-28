@@ -21,7 +21,6 @@ variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 universe u v
 
-/-- Union of input components of a finite set of function-space tokens. -/
 def funInputUnion (s : Finset (FunToken A B)) : Finset α :=
   Multiset.foldr (fun p : FunToken A B => funion p.val.1) (∅ : Finset α) s.1
 
@@ -89,6 +88,5 @@ theorem funInputUnion.insert (s : Finset (FunToken A B)) (p : FunToken A B) :
   rw [h, funInputUnion.funion, funInputUnion.singleton]
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

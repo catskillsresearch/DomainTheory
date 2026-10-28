@@ -7,9 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem eq_2_1_singleton (p : ℕ → Pomega) (n : ℕ) :
     maxExtend p (ofNat n) = p n := by

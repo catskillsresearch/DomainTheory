@@ -7,9 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.predSet_iterate_ofN
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem predSet_iterate_self (k : ℕ) :
     predSet^[k] (ofNat k) = ofNat 0 := by

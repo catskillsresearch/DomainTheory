@@ -13,9 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tensorR_app
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem typed_pairSeq_tensorR (a b x y : Pomega) :
     typed (pairSeq x y) (tensorR a b) ↔ typed x a ∧ typed y b := by

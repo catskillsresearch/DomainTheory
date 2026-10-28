@@ -8,11 +8,8 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- Graph expansiveness `I ⊆ λx. f(x)` is value-expansiveness on finite sets. -/
 theorem Icomb_subset_graph {f : Pomega → Pomega} :
     Icomb ⊆ graph f ↔ ∀ n, e n ⊆ f (e n) := by
   constructor

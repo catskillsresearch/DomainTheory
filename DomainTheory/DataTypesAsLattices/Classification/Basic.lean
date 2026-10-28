@@ -52,7 +52,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-
 theorem charOpen_isScottContinuous (U : Set Pomega) :
     IsScottContinuous (charOpen U) := by
   constructor
@@ -64,7 +63,6 @@ theorem charOpen_isScottContinuous (U : Set Pomega) :
   · intro hk
     obtain ⟨m, hm, hk0, n, hn, hne⟩ := mem_scottUnion.mp hk
     exact ⟨hk0, n, subset_trans hn hm, hne⟩
-
 
 theorem isScottOpen_univ : IsScottOpen (Set.univ : Set Pomega) :=
   (isScottOpen_iff_isOpen _).mpr isOpen_univ
@@ -101,7 +99,6 @@ theorem mem_isScottOpen_iff {U : Set Pomega} (hU : IsScottOpen U) {x : Pomega} :
     exact ⟨n, hxn, Set.mem_iUnion₂.mpr ⟨n, hn, (subset_rfl : e n ⊆ e n)⟩⟩
   · intro ⟨n, hn, hne⟩
     exact isScottOpen_isUpper hU hne hn
-
 
 theorem charTop_isScottContinuous (U : Set Pomega) :
     IsScottContinuous (charTop U) := by
@@ -151,7 +148,6 @@ theorem charTop_eq_bot_of_closed {C : Set Pomega} (hC : IsScottOpen Cᶜ) (x : P
   rw [charTop_eq_bot hC]
   simp
 
-
 theorem pairIndexed_isScottContinuous (fs : ℕ → Pomega → Pomega)
     (hfs : ∀ n, IsScottContinuous (fs n)) :
     IsScottContinuous (pairIndexed fs) := by
@@ -166,7 +162,6 @@ theorem pairIndexed_isScottContinuous (fs : ℕ → Pomega → Pomega)
   · intro hk
     obtain ⟨p, hp, n, m, hk, hm⟩ := mem_scottUnion.mp hk
     exact ⟨n, m, hk, IsScottContinuous.monotone (hfs n) hp hm⟩
-
 
 theorem oddEvenPack_isScottContinuous {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
@@ -188,7 +183,6 @@ theorem oddEvenPack_isScottContinuous {f g : Pomega → Pomega}
     rcases h with ⟨n, hk, hn⟩ | ⟨n, hk, hn⟩
     · exact Or.inl ⟨n, hk, IsScottContinuous.monotone hf hp hn⟩
     · exact Or.inr ⟨n, hk, IsScottContinuous.monotone hg hp hn⟩
-
 
 theorem evenPart_oddEven (f g : Pomega → Pomega) (x : Pomega) :
     evenPart (oddEvenPack f g x) = g x := by
@@ -265,7 +259,6 @@ theorem isBooleanOpen_sUnion_finite {S : Set (Set Pomega)}
     simp [Set.sUnion_insert]
     exact (hUV a (Set.mem_insert a s)).union
       (ih fun u hu => hUV u (Set.mem_insert_of_mem a hu))
-
 
 theorem booleanMemE_ofOpen {U : Set Pomega} (hU : IsScottOpen U) :
     BooleanMemE U := by
@@ -369,7 +362,6 @@ theorem booleanMemE_compl {U : Set Pomega} (hU : BooleanMemE U) :
     · intro hx
       exact hx.2
 
-/-- **Scott 1976, Theorem 6.6 (The 𝔅 theorem).** -/
 theorem theorem_6_6 :
     ∀ U, U ∈ ScottB ↔
       ∃ f, IsScottContinuous f ∧ ∃ E : Set Pomega,
@@ -443,9 +435,6 @@ theorem theorem_6_6 :
         have : f x = e := subset_antisymm hx.1 hx.2
         simp [this]⟩
 
-
-/-- **Scott 1976, Theorem 6.7, equalizer → `B_δ`.**
-`{x | f x = g x} = ⋂_n ({n ∈ f ∧ n ∈ g} ∪ {n ∉ f ∧ n ∉ g})`. -/
 theorem theorem_6_7_of_equalizer :
     ∀ U, (∃ f g, IsScottContinuous f ∧ IsScottContinuous g ∧
         U = {x | f x = g x}) → IsBdelta U := by
@@ -494,9 +483,6 @@ theorem theorem_6_7_of_equalizer :
         · exact hnf
         · exact (hng hgx).elim
 
-/-- **Scott 1976, Theorem 6.7, converse packing.**
-A countable intersection of equalizers is again an equalizer, via
-`pairIndexed`. -/
 theorem theorem_6_7_iInter_equalizer (f g : ℕ → Pomega → Pomega)
     (hf : ∀ n, IsScottContinuous (f n)) (hg : ∀ n, IsScottContinuous (g n)) :
     ∃ F G, IsScottContinuous F ∧ IsScottContinuous G ∧
@@ -530,8 +516,6 @@ theorem theorem_6_7_iInter_equalizer (f g : ℕ → Pomega → Pomega)
         obtain ⟨rfl, rfl⟩ := pair_inj heq
         exact hm'⟩
 
-/-- Every `B_δ` written as a countable intersection of equalizers is itself
-an equalizer of continuous maps. -/
 theorem theorem_6_7_converse_of_equalizers (f g : ℕ → Pomega → Pomega)
     (hf : ∀ n, IsScottContinuous (f n)) (hg : ∀ n, IsScottContinuous (g n))
     {U : Set Pomega} (hU : U = {x | ∀ n, f n x = g n x}) :
@@ -539,7 +523,6 @@ theorem theorem_6_7_converse_of_equalizers (f g : ℕ → Pomega → Pomega)
   obtain ⟨F, G, hF, hG, h⟩ := theorem_6_7_iInter_equalizer f g hf hg
   exact ⟨F, G, hF, hG, hU.trans h⟩
 
-/-- Union is Scott-continuous in the left argument. -/
 theorem union_isScottContinuous_left (y : Pomega) :
     IsScottContinuous (fun x => (x ∪ y : Pomega)) := by
   constructor
@@ -557,7 +540,6 @@ theorem union_isScottContinuous_left (y : Pomega) :
     · exact Or.inl (hn h)
     · exact Or.inr h
 
-/-- Union is Scott-continuous in the right argument. -/
 theorem union_isScottContinuous_right (x : Pomega) :
     IsScottContinuous (fun y => (x ∪ y : Pomega)) := by
   constructor
@@ -575,13 +557,11 @@ theorem union_isScottContinuous_right (x : Pomega) :
     · exact Or.inl h
     · exact Or.inr (hn h)
 
-
 theorem closedToZero_isScottContinuous (C : Set Pomega) :
     IsScottContinuous (closedToZero C) :=
   theorem_1_3.tuple (f := fun a b => (a ∪ b : Pomega))
     union_isScottContinuous_left union_isScottContinuous_right
     (const_isScottContinuous (ofNat 0)) (charTop_isScottContinuous Cᶜ)
-
 
 theorem uvU_mono_left {x x' y : Pomega} (h : x ⊆ x') : uvU x y ⊆ uvU x' y := by
   intro k hk
@@ -953,7 +933,6 @@ theorem uvV_top_top : uvV topElem topElem = topElem := by
   · intro _
     exact Or.inr (Or.inr ⟨Set.mem_univ 0, top_pos, Set.mem_univ 0, top_pos⟩)
 
-/-- On `{⊥, 0, ⊤}`, `u(x)(y) = v(x)(y)` iff `x = 0` or `y = 0`. -/
 theorem uv_eq_iff {x y : Pomega} (hx : ThreeValued x) (hy : ThreeValued y) :
     uvU x y = uvV x y ↔ x = ofNat 0 ∨ y = ofNat 0 := by
   rcases hx.out with rfl | rfl | rfl <;> rcases hy.out with rfl | rfl | rfl
@@ -1105,9 +1084,6 @@ theorem ne_eq_open_union_closed {f : Pomega → Pomega} (hf : IsScottContinuous 
     rw [this]
     exact isScottOpen_subset_preimage hf he
 
-/-- Every Boolean set is a countable intersection of `(open ∪ closed)` sets,
-    by writing the complement in the Theorem 6.6 form `{f ∈ E}` and taking
-    De Morgan duals. Extra indices are padded by `univ ∪ ∅`. -/
 theorem isBooleanOpen_as_iInter_open_union_closed {U : Set Pomega}
     (hU : IsBooleanOpen U) :
     ∃ (O C : ℕ → Set Pomega),
@@ -1181,11 +1157,6 @@ theorem isBooleanOpen_as_iInter_open_union_closed {U : Set Pomega}
       rwa [← hEeq]
   rw [hUeq, hOC]
 
-/-- **Scott 1976, Theorem 6.7, `B_δ` → equalizer.**
-Each Boolean slice is a countable intersection of `(open ∪ closed)` sets;
-each such union is `{fₙ = 0} ∪ {gₙ = 0}` with three-valued continuous `fₙ, gₙ`;
-Scott's tables pack that union as an equalizer; `pairIndexed` packs the
-countable intersection. -/
 theorem theorem_6_7_of_bdelta {U : Set Pomega} (hU : IsBdelta U) :
     ∃ f g, IsScottContinuous f ∧ IsScottContinuous g ∧ U = {x | f x = g x} := by
   obtain ⟨Bs, hB, rfl⟩ := hU
@@ -1245,9 +1216,6 @@ theorem theorem_6_7_of_bdelta {U : Set Pomega} (hU : IsBdelta U) :
       · exact Or.inr ((closedToZero_eq_zero (hC m) x).mp hg0)
   exact theorem_6_7_converse_of_equalizers F G hF hG hpack
 
-/-- **Scott 1976, Theorem 6.7 (The 𝔅_δ theorem).**
-The `B_δ` subsets of `Pω` are exactly the equalizers of pairs of continuous
-maps. -/
 theorem theorem_6_7 :
     ∀ U, IsBdelta U ↔
       ∃ f g, IsScottContinuous f ∧ IsScottContinuous g ∧
@@ -1273,9 +1241,6 @@ theorem seq2_pair_isScottContinuous {f g : Pomega → Pomega}
     IsScottContinuous (fun x => seq2 (f x) (g x)) :=
   theorem_1_3.tuple seq2_isScottContinuous_left seq2_isScottContinuous_right hf hg
 
-
-/-- **Scott 1976, Table 3 / Theorem 6.7.** `𝔅_δ` is the class of continuous
-preimages of `{u | u₀ = u₁}`. -/
 theorem typicalBdelta_universal (U : Set Pomega) :
     IsBdelta U ↔ ∃ f, IsScottContinuous f ∧ U = {x | f x ∈ typicalBdelta} := by
   constructor

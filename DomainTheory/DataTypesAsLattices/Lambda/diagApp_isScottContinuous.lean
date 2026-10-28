@@ -12,9 +12,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem diagApp_isScottContinuous : IsScottContinuous (fun x => funOf x x) := by
   constructor

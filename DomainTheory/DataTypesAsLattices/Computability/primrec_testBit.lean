@@ -6,11 +6,9 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem primrec_testBit : Primrec₂ fun n k : ℕ => n.testBit k :=
   (Primrec.eq.decide.comp

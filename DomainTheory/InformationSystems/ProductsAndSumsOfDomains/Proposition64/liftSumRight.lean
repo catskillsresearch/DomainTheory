@@ -19,7 +19,6 @@ variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Embed `B`-tokens as right sum tokens. -/
 def liftSumRight (w : Finset β) : Finset (SumToken α β) :=
   Multiset.foldr (fun y : β => insert (SumToken.right (α := α) y))
     (∅ : Finset (SumToken α β)) w.1

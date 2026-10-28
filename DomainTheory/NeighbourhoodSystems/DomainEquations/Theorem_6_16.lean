@@ -12,45 +12,42 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 universe w
-/- concordance: source L4015 THEOREM 6.16 initial algebra is minimal -/
-/-- **Theorem 6.16 (Scott 1981, PRG-19).** If `T` is continuous on maps and `D` is an initial
-`T`-algebra, then for any system `E ≅ T(E)` we have `D ⊴ E`: the initial algebra embeds as a
-subdomain of every solution of the domain equation. -/
+
 theorem trianglelefteq_of_isInitial
     (T : Endofunctor DomainObj.{w}) (hT : ContinuousOnMaps T)
     (Dalg : TAlgebra T) (hinit : IsInitial Dalg)
     (E : DomainObj.{w}) (isoE : Iso (T.obj E) E) :
     Dalg.carrier.sys ⊴ E.sys := by
-  -- Lambek (Proposition 6.7): the structure map of `D` is an isomorphism `i : T(D) ≅ D`.
+
   let isoD : Iso (T.obj Dalg.carrier) Dalg.carrier := lambek Dalg hinit
-  -- strictness of the four structure maps (each is a split iso, hence preserves `⊥`).
+
   have hi : IsStrict isoD.hom := isStrict_of_comp_eq_id isoD.inv_hom_id
   have hj : IsStrict isoD.inv := isStrict_of_comp_eq_id isoD.hom_inv_id
   have hu : IsStrict isoE.hom := isStrict_of_comp_eq_id isoE.inv_hom_id
   have hv : IsStrict isoE.inv := isStrict_of_comp_eq_id isoE.hom_inv_id
-  -- the iso laws in `.comp` form.
+
   have hji : isoD.inv.comp isoD.hom = idMap (T.obj Dalg.carrier).sys := isoD.hom_inv_id
   have hvu : isoE.inv.comp isoE.hom = idMap (T.obj E).sys := isoE.hom_inv_id
   have huv : isoE.hom.comp isoE.inv = idMap E.sys := isoE.inv_hom_id
-  -- Definition 6.8 witnesses that `λf. T(f)` is approximable on each strict function space.
+
   obtain ⟨ΦDE, hΦDE⟩ := hT Dalg.carrier E
   obtain ⟨ΦED, hΦED⟩ := hT E Dalg.carrier
   obtain ⟨ΦEE, hΦEE⟩ := hT E E
-  -- the three operators (Theorem 6.9's `λf. k ∘ T(f) ∘ j`) for `h`, `g`, `k`.
+
   let Oph := (homOp T Dalg.carrier E isoD.inv isoE.hom hj hu).comp ΦDE
   let Opg := (homOp T E Dalg.carrier isoE.inv isoD.hom hv hi).comp ΦED
   let Opk := (homOp T E E isoE.inv isoE.hom hv hu).comp ΦEE
-  -- the approximant chains.
+
   let H : ℕ → ApproximableMap Dalg.carrier.sys E.sys := fun n => (toStrictMap (Oph.iterElem n)).1
   let G : ℕ → ApproximableMap E.sys Dalg.carrier.sys := fun n => (toStrictMap (Opg.iterElem n)).1
   let K : ℕ → ApproximableMap E.sys E.sys := fun n => (toStrictMap (Opk.iterElem n)).1
-  -- `iterElem 0 = ⊥`.
+
   have iterElem_zero : ∀ {γ : Type w} {V : NeighborhoodSystem γ} (f : ApproximableMap V V),
       f.iterElem 0 = V.bot := by
     intro γ V f
     show (f.iterMap 0).toElementMap V.bot = V.bot
     rw [iterMap_zero, toElementMap_idMap]
-  -- the recursion equations `hₙ₊₁ = u ∘ T(hₙ) ∘ j`, etc.
+
   have H_succ : ∀ n, H (n + 1)
       = isoE.hom.comp ((T.map (X := Dalg.carrier) (Y := E) (H n)).comp isoD.inv) := by
     intro n
@@ -69,12 +66,12 @@ theorem trianglelefteq_of_isInitial
     show (toStrictMap (Opk.iterElem (n + 1))).1 = _
     rw [iterElem_succ]
     exact opStep T E E isoE.inv isoE.hom hv hu ΦEE hΦEE (Opk.iterElem n)
-  -- monotonicity of the chains.
+
   have H_mono : ∀ {n m : ℕ}, n ≤ m → H n ≤ H m := fun hnm =>
     toStrictMap_mono (iterElem_mono Oph hnm)
   have G_mono : ∀ {n m : ℕ}, n ≤ m → G n ≤ G m := fun hnm =>
     toStrictMap_mono (iterElem_mono Opg hnm)
-  -- the algebraic core: `(u ∘ a ∘ j) ∘ (i ∘ b ∘ v) = u ∘ (a ∘ b) ∘ v` (uses `j ∘ i = I`).
+
   have key : ∀ (a : ApproximableMap (T.obj Dalg.carrier).sys (T.obj E).sys)
       (b : ApproximableMap (T.obj E).sys (T.obj Dalg.carrier).sys),
       (isoE.hom.comp (a.comp isoD.inv)).comp (isoD.hom.comp (b.comp isoE.inv))
@@ -84,13 +81,13 @@ theorem trianglelefteq_of_isInitial
         comp_assoc a isoD.inv (isoD.hom.comp (b.comp isoE.inv)),
         ← comp_assoc isoD.inv isoD.hom (b.comp isoE.inv), hji, idMap_comp,
         ← comp_assoc a b isoE.inv]
-  -- functoriality `T(p) ∘ T(q) = T(p ∘ q)` in `.comp` form.
+
   have hTcomp : ∀ (p : ApproximableMap Dalg.carrier.sys E.sys)
       (q : ApproximableMap E.sys Dalg.carrier.sys),
       (T.map (X := Dalg.carrier) (Y := E) p).comp (T.map (X := E) (Y := Dalg.carrier) q)
         = T.map (X := E) (Y := E) (p.comp q) :=
     fun p q => (T.map_comp (X := E) (Y := Dalg.carrier) (Z := E) p q).symm
-  -- **the ladder**: `hₙ ∘ gₙ = kₙ`.
+
   have ladder : ∀ n, (H n).comp (G n) = K n := by
     intro n
     induction n with
@@ -122,7 +119,7 @@ theorem trianglelefteq_of_isInitial
           (hG0).mpr ⟨hEX, rfl⟩, (hH0).mpr ⟨Dalg.carrier.sys.master_mem, rfl⟩⟩
     | succ n ih =>
       rw [H_succ n, G_succ n, key, K_succ n, hTcomp (H n) (G n), ih]
-  -- the fixed-point maps and their `⊔`-decomposition.
+
   let hh := (toStrictMap Oph.fixElement).1
   let gg := (toStrictMap Opg.fixElement).1
   let kk := (toStrictMap Opk.fixElement).1
@@ -147,7 +144,7 @@ theorem trianglelefteq_of_isInitial
     constructor
     · rintro ⟨n, hn⟩; exact ⟨n, hn⟩
     · rintro ⟨n, hn⟩; exact ⟨n, hn⟩
-  -- `h ∘ g = k` (the diagonal of the doubly-indexed directed family, via the ladder).
+
   have hgk : hh.comp gg = kk := by
     apply ApproximableMap.ext
     intro X Z
@@ -167,7 +164,7 @@ theorem trianglelefteq_of_isInitial
       rw [← ladder p] at hp
       obtain ⟨Y, hG, hHr⟩ := hp
       exact ⟨Y, (G_fix_rel X Y).mpr ⟨p, hG⟩, (H_fix_rel Y Z).mpr ⟨p, hHr⟩⟩
-  -- `k ⊑ I_E`, because `I_E` is a fixed point of `k ↦ u ∘ T(k) ∘ v`.
+
   have hk_le : kk ≤ idMap E.sys := by
     have hstepeq : (toStrictMap (Opk.toElementMap
         (toStrictFilter (⟨idMap E.sys, isStrict_idMap⟩ : StrictMap E.sys E.sys)))).1
@@ -196,7 +193,7 @@ theorem trianglelefteq_of_isInitial
     show (toStrictMap Opk.fixElement).1 ≤ idMap E.sys
     refine le_of_le_of_eq hmono ?_
     exact congrArg Subtype.val (toStrictMap_toStrictFilter _)
-  -- `h` and `g` are algebra homomorphisms.
+
   let Balg : TAlgebra T := ⟨E, isoE.hom⟩
   have h_fixeq : hh = isoE.hom.comp ((T.map (X := Dalg.carrier) (Y := E) hh).comp isoD.inv) := by
     have hs := opStep T Dalg.carrier E isoD.inv isoE.hom hj hu ΦDE hΦDE Oph.fixElement
@@ -214,12 +211,12 @@ theorem trianglelefteq_of_isInitial
     conv_lhs => rw [g_fixeq]
     rw [comp_assoc, comp_assoc, hvu, comp_idMap]
   let g_alg : AlgHom Balg Dalg := { hom := gg, comm := g_comm }
-  -- `g ∘ h = I_D` by initiality of `D`.
+
   have hgh_id : gg.comp hh = idMap Dalg.carrier.sys := by
     have huniq : g_alg.comp h_alg = AlgHom.id Dalg := by
       rw [hinit.uniq Dalg (g_alg.comp h_alg), hinit.uniq Dalg (AlgHom.id Dalg)]
     exact congrArg AlgHom.hom huniq
-  -- conclude via Lemma 6.15.
+
   exact trianglelefteq_of_projectionPair hh gg hgh_id (le_of_eq_of_le hgk hk_le)
 end
 
@@ -258,9 +255,6 @@ end
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-/-- **The functor `T(X) = 𝟙 + X + X` on objects.** Over `D`, the system is the genuine three-way
-separated sum `𝟙 + D + D` (Example 6.2's `sum3`, with `𝟙 = unitSys`), again `∅`-free by
-`sum3_nonempty`. -/
 abbrev tcObj (D : StrictDomainObj.{w}) : StrictDomainObj.{w} where
   carrier := Option (Unit ⊕ D.carrier ⊕ D.carrier)
   sys := sum3 unitSys D.sys D.sys Example62C.unitSys_nonempty D.nonempty D.nonempty
@@ -277,7 +271,6 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
   {V₂ : NeighborhoodSystem γ} {h₀ : ∀ X, V₀.mem X → X.Nonempty}
   {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty} {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
 
-/-- A `sum3`-neighbourhood contained in a `0`-copy `0X` is itself a `0`-copy. -/
 theorem mem_subset_j0_inv {W : Set (Option (α ⊕ β ⊕ γ))} {X : Set α}
     (hW : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).mem W) (hsub : W ⊆ j0 X) :
     ∃ X₂, V₀.mem X₂ ∧ W = j0 X₂ := by
@@ -287,7 +280,6 @@ theorem mem_subset_j0_inv {W : Set (Option (α ⊕ β ⊕ γ))} {X : Set α}
   · obtain ⟨b, hb⟩ := h₁ Y₂ hY₂; exact absurd (hsub (t1_mem_j1.mpr hb)) t1_not_mem_j0
   · obtain ⟨c, hc⟩ := h₂ Z₂ hZ₂; exact absurd (hsub (t2_mem_j2.mpr hc)) t2_not_mem_j0
 
-/-- A `sum3`-neighbourhood contained in a `1`-copy `1Y` is itself a `1`-copy. -/
 theorem mem_subset_j1_inv {W : Set (Option (α ⊕ β ⊕ γ))} {Y : Set β}
     (hW : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).mem W) (hsub : W ⊆ j1 Y) :
     ∃ Y₂, V₁.mem Y₂ ∧ W = j1 Y₂ := by
@@ -297,7 +289,6 @@ theorem mem_subset_j1_inv {W : Set (Option (α ⊕ β ⊕ γ))} {Y : Set β}
   · exact ⟨Y₂, hY₂, rfl⟩
   · obtain ⟨c, hc⟩ := h₂ Z₂ hZ₂; exact absurd (hsub (t2_mem_j2.mpr hc)) t2_not_mem_j1
 
-/-- A `sum3`-neighbourhood contained in a `2`-copy `2Z` is itself a `2`-copy. -/
 theorem mem_subset_j2_inv {W : Set (Option (α ⊕ β ⊕ γ))} {Z : Set γ}
     (hW : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).mem W) (hsub : W ⊆ j2 Z) :
     ∃ Z₂, V₂.mem Z₂ ∧ W = j2 Z₂ := by
@@ -318,8 +309,6 @@ variable {α β γ : Type*}
   {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
   {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
 
-/-- The `0`-injection `D₀ ↪ D₀+D₁+D₂`: send `x₀∈|D₀|` to the sum element whose only proper
-neighbourhoods are the `0`-copies `0X` with `X∈x₀`. -/
 def sinj0 (x₀ : V₀.Element) : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).Element where
   mem W := W = master3 V₀ V₁ V₂ ∨ ∃ X, V₀.mem X ∧ W = j0 X ∧ x₀.mem X
   sub := by
@@ -350,7 +339,6 @@ def sinj0 (x₀ : V₀.Element) : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).Element w
     · rw [j0_injective heq]; exact hx
   · intro hx; exact Or.inr ⟨X, hX, rfl, hx⟩
 
-/-- The `1`-injection `D₁ ↪ D₀+D₁+D₂`. -/
 def sinj1 (x₁ : V₁.Element) : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).Element where
   mem W := W = master3 V₀ V₁ V₂ ∨ ∃ Y, V₁.mem Y ∧ W = j1 Y ∧ x₁.mem Y
   sub := by
@@ -381,7 +369,6 @@ def sinj1 (x₁ : V₁.Element) : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).Element w
     · rw [j1_injective heq]; exact hx
   · intro hx; exact Or.inr ⟨Y, hY, rfl, hx⟩
 
-/-- The `2`-injection `D₂ ↪ D₀+D₁+D₂`. -/
 def sinj2 (x₂ : V₂.Element) : (sum3 V₀ V₁ V₂ h₀ h₁ h₂).Element where
   mem W := W = master3 V₀ V₁ V₂ ∨ ∃ Z, V₂.mem Z ∧ W = j2 Z ∧ x₂.mem Z
   sub := by
@@ -452,9 +439,6 @@ variable {α β γ α' β' γ' : Type*}
   {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
   {h₂' : ∀ Z, V₂'.mem Z → Z.Nonempty}
 
-/-- **The three-way sum map `f₀ + f₁ + f₂ : 𝒟₀+𝒟₁+𝒟₂ → 𝒟₀'+𝒟₁'+𝒟₂'`.** Routes each tagged copy `iX`
-through `fᵢ` (to `iYᵢ'`), and sends everything to the codomain master. (The three-way analogue of
-Exercise 3.19's `sumMap`.) -/
 def sumMap3 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMap V₁ V₁')
     (f₂ : ApproximableMap V₂ V₂') :
     ApproximableMap (sum3 V₀ V₁ V₂ h₀ h₁ h₂) (sum3 V₀' V₁' V₂' h₀' h₁' h₂') where
@@ -558,8 +542,6 @@ def sumMap3 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMap V₁ V�
       · exact Or.inr (Or.inr (Or.inr ⟨Z₂, Y'₂, rfl, rfl,
           f₂.mono hf hZ₂Z (j2_subset_j2.mp hW'W'₂) hZ₂ hY'₂⟩))
 
-/-- The three-way sum map is always strict: `(f₀+f₁+f₂)(⊥) = ⊥`. (The master only relates to the
-master, since `master3` is not any tagged copy.) -/
 theorem isStrict_sumMap3 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMap V₁ V₁')
     (f₂ : ApproximableMap V₂ V₂') :
     IsStrict (sumMap3 (h₀ := h₀) (h₁ := h₁) (h₂ := h₂) (h₀' := h₀') (h₁' := h₁') (h₂' := h₂')
@@ -572,7 +554,6 @@ theorem isStrict_sumMap3 (f₀ : ApproximableMap V₀ V₀') (f₁ : Approximabl
   · exact absurd (hWX ▸ h0) none_not_mem_j1
   · exact absurd (hWX ▸ h0) none_not_mem_j2
 
-/-- **Functoriality (composition): `(g₀∘f₀) + (g₁∘f₁) + (g₂∘f₂) = (g₀+g₁+g₂) ∘ (f₀+f₁+f₂)`.** -/
 theorem sumMap3_comp {α'' β'' γ'' : Type*} {V₀'' : NeighborhoodSystem α''}
     {V₁'' : NeighborhoodSystem β''} {V₂'' : NeighborhoodSystem γ''}
     {h₀'' : ∀ X, V₀''.mem X → X.Nonempty} {h₁'' : ∀ Y, V₁''.mem Y → Y.Nonempty}
@@ -637,7 +618,6 @@ theorem sumMap3_comp {α'' β'' γ'' : Type*} {V₀'' : NeighborhoodSystem α''}
       · obtain rfl : Y'₀ = Z' := j2_injective (hW'eq.symm.trans hW'Z')
         exact Or.inr (Or.inr (Or.inr ⟨Z, Z'', rfl, rfl, ⟨Y'₀, hf, hg⟩⟩))
 
-/-- **Functoriality (identities): `I + I + I = I`.** -/
 theorem sumMap3_id :
     sumMap3 (h₀ := h₀) (h₁ := h₁) (h₂ := h₂) (h₀' := h₀) (h₁' := h₁) (h₂' := h₂)
       (idMap V₀) (idMap V₁) (idMap V₂) = idMap (sum3 V₀ V₁ V₂ h₀ h₁ h₂) := by
@@ -686,7 +666,6 @@ variable {α β γ α' β' γ' : Type*}
   {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty}
   {h₂' : ∀ Z, V₂'.mem Z → Z.Nonempty}
 
-/-- `(f₀+f₁+f₂)(inj₀ x) = inj₀(f₀ x)`. -/
 theorem sumMap3_sinj0 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMap V₁ V₁')
     (f₂ : ApproximableMap V₂ V₂') (x₀ : V₀.Element) :
     (sumMap3 (h₀ := h₀) (h₁ := h₁) (h₂ := h₂) (h₀' := h₀') (h₁' := h₁') (h₂' := h₂') f₀ f₁ f₂).toElementMap
@@ -715,7 +694,6 @@ theorem sumMap3_sinj0 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMa
       exact ⟨j0 X, Or.inr ⟨X, x₀.sub hx, rfl, hx⟩, Or.inr (Or.inl ⟨X, x₀.sub hx, rfl⟩),
         Or.inr (Or.inl ⟨Y', f₀.rel_cod hf, rfl⟩), Or.inr (Or.inl ⟨X, Y', rfl, rfl, hf⟩)⟩
 
-/-- `(f₀+f₁+f₂)(inj₁ x) = inj₁(f₁ x)`. -/
 theorem sumMap3_sinj1 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMap V₁ V₁')
     (f₂ : ApproximableMap V₂ V₂') (x₁ : V₁.Element) :
     (sumMap3 (h₀ := h₀) (h₁ := h₁) (h₂ := h₂) (h₀' := h₀') (h₁' := h₁') (h₂' := h₂') f₀ f₁ f₂).toElementMap
@@ -744,7 +722,6 @@ theorem sumMap3_sinj1 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMa
       exact ⟨j1 X, Or.inr ⟨X, x₁.sub hx, rfl, hx⟩, Or.inr (Or.inr (Or.inl ⟨X, x₁.sub hx, rfl⟩)),
         Or.inr (Or.inr (Or.inl ⟨Y', f₁.rel_cod hf, rfl⟩)), Or.inr (Or.inr (Or.inl ⟨X, Y', rfl, rfl, hf⟩))⟩
 
-/-- `(f₀+f₁+f₂)(inj₂ x) = inj₂(f₂ x)`. -/
 theorem sumMap3_sinj2 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMap V₁ V₁')
     (f₂ : ApproximableMap V₂ V₂') (x₂ : V₂.Element) :
     (sumMap3 (h₀ := h₀) (h₁ := h₁) (h₂ := h₂) (h₀' := h₀') (h₁' := h₁') (h₂' := h₂') f₀ f₁ f₂).toElementMap
@@ -776,8 +753,7 @@ theorem sumMap3_sinj2 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMa
 end SumInjMap
 
 open Example62C in
-/-- The morphism action of `T`: `T(f) = I_𝟙 + f + f` (identity on the terminator, `f` on each
-successor copy). Always strict (`isStrict_sumMap3`). -/
+
 def tcMapHom {D E : StrictDomainObj.{w}} (f : (D ⟶ E)) :
     ((tcObj D) ⟶ (tcObj E)) :=
   ⟨sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := D.nonempty) (h₂ := D.nonempty)

@@ -30,8 +30,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- The interleaved family testing `D₁`'s side: at even positions, `XPseq`'s recovered `D₁`-side
-pieces; at odd positions, `Y`'s own enumeration. -/
 noncomputable def combinedY (n : ℕ) : Set β :=
   if n % 2 = 0 then XPseq D₀ D₁ hD₀nomin hD₁nomin X Y (n / 2) else Y (n / 2)
 
@@ -80,9 +78,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- `combinedY i` is always `⊆ D₁.master`, symmetric to `combinedX.subset_master`: at even
-positions it is `XPseq (i/2)`, already known `⊆ D₁.master`; at odd positions it is `Y (i/2)`, a
-`D₁.mem` set (via `D₁.sub_master`). -/
 theorem subset_master (i : ℕ) :
     combinedY D₀ D₁ hD₀nomin hD₁nomin X Y i ⊆ D₁.master := by
   rcases (by omega : i % 2 = 0 ∨ i % 2 = 1) with hi | hi
@@ -111,11 +106,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-
-/-- **The "I-formula" for `XPseq`**: the `D₁`-piece chosen by the depth-`n` `X`-sub-step's "+"
-branch (for *any* history `δ`) is exactly the intersection of `atomPair δ n`'s `D₁`-side with
-`XPseq n`. Mirrors `Theorem88.lean`'s `split_fst_eq_inter_Yseq`, but proved directly against
-`atomPair`'s own invariants (no `atomE`/`genAtom` involved — see the section docstring above). -/
 theorem snd_eq_inter_XPseq (δ : ℕ → Bool × Bool) (n : ℕ) :
     (xStep D₁ hD₁nomin (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1
         (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 (X n) true).2 =
@@ -153,12 +143,6 @@ theorem snd_eq_inter_XPseq (δ : ℕ → Bool × Bool) (n : ℕ) :
         xStep.snd_subset hD₁nomin hAB' hBmem' (X n) true hz'
       exact absurd (Set.mem_inter hzB' hzB) (by rw [hdisjBB]; simp)
 
-
-/-- **Two-branch closed form for the `X`-sub-step's `D₁`-side output** (Exercise 8.12(c)(vi)(5)(a)):
-completes `xStep.snd_eq_inter_XPseq`'s `true`-only I-formula into a full `genAtom`-shaped recursive
-step at *either* sign, mirroring `Theorem88.lean`'s `atomU_succ_eq` exactly — the `false` branch is
-derived algebraically from the `true` branch plus `SplitSpec'`'s `I ∪ J = B`/`I ∩ J = ∅`, with no
-new disjointness or invariant content. -/
 theorem snd_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     (xStep D₁ hD₁nomin (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1
         (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 (X n) b).2 =
@@ -209,10 +193,6 @@ end xStep
 namespace genAtom
 open NeighborhoodSystem
 
-/-- **`genAtom`'s own recursive equation, as a rewritable lemma** (mirrors `Theorem88.lean`'s
-`atomU_succ`; `genAtom`'s `def` is a direct structural match on its `Nat` argument, so this holds by
-`rfl`, but stating it separately lets `rw` fire on `Nat`-literal successor forms like `2 * n + 1 + 1`
-without needing to unfold `genAtom` itself). -/
 theorem succ' {γ : Type*} (Z : ℕ → Set γ) (M : Set γ) (δ : ℕ → Bool) (n : ℕ) :
     genAtom Z M δ (n + 1) = genAtom Z M δ n ∩ (if δ n then Z n else M \ Z n) := rfl
 
@@ -228,11 +208,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-
-/-- **The odd-depth half-step identity for `combinedX`**: given `atomPair δ n`'s `α`-side agrees
-with `genAtom combinedX` at the even depth `2 * n`, it also agrees at the odd depth `2 * n + 1` with
-the `Y`-sub-step's own (choice-split) `α`-side output — via (vi)(5)(a)'s closed form
-`yStep.fst_succ_eq`, run at `combinedδ`/`combinedY`'s odd value `(δ n).2`. -/
 theorem combinedX_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
     (hn : (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1 =
       genAtom (combinedX D₀ D₁ hD₀nomin hD₁nomin X Y) D₀.master (combinedδ δ) (2 * n)) :
@@ -249,11 +224,6 @@ theorem combinedX_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
   · simp only [hb, Bool.false_eq_true, ite_false]
     exact inter.diff_eq_diff_of_subset hAsub
 
-
-/-- **The odd-depth half-step identity for `combinedY`**: given `atomPair δ n`'s `β`-side agrees
-with `genAtom combinedY` at the even depth `2 * n`, it also agrees at the odd depth `2 * n + 1` with
-the `X`-sub-step's own (choice-split) `β`-side output — via (vi)(5)(a)'s closed form
-`xStep.snd_succ_eq`, run at `combinedδ`/`combinedX`'s even value `(δ n).1`. -/
 theorem combinedY_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
     (hn : (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 =
       genAtom (combinedY D₀ D₁ hD₀nomin hD₁nomin X Y) D₁.master (combinedδ δ) (2 * n)) :
@@ -282,12 +252,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-
-/-- **The "I-formula" for `YPseq`** (8.12(c)(vi)(4)(d)): the `D₀`-piece chosen by the `Y`-sub-step's
-"+" branch (applied to the post-`X`-sub-step values at *any* history `δ`'s own bit `(δ n).1`) is
-exactly the intersection of that post-`X`-sub-step `D₀`-value with `YPseq n`. Mirrors
-`xStep.snd_eq_inter_XPseq`, but needs `xStep.spec_bit`'s bridge (unlike `XPseq`'s proof) to handle
-the `⊇` direction's "history agrees below `n` but the union's bit differs from `(δ n).1`" case. -/
 theorem fst_eq_inter_YPseq (δ : ℕ → Bool × Bool) (n : ℕ) :
     (yStep D₀ hD₀nomin
         (xStep D₁ hD₁nomin (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1
@@ -349,15 +313,6 @@ theorem fst_eq_inter_YPseq (δ : ℕ → Bool × Bool) (n : ℕ) :
         xStep.fst_subset D₁ hD₁nomin _ _ (X n) (δ n).1 hzA1
       exact absurd (Set.mem_inter hzA1' hzAfull) (by rw [hdisjAA]; simp)
 
-
-/-- **Two-branch closed form for the `Y`-sub-step's `D₀`-side output** (Exercise 8.12(c)(vi)(5)(a)):
-completes `yStep.fst_eq_inter_YPseq`'s `true`-only I-formula into a full `genAtom`-shaped recursive
-step at *either* sign of the `Y`-sub-step itself (the `X`-sub-step's own bit stays fixed at `(δ
-n).1`, exactly as in `yStep.fst_eq_inter_YPseq` — no `xStep.spec_bit`-style further generalization
-is needed here, since 8.12(c)(vi)(5)(b)'s combined-family recursion only ever calls this at `δ`'s
-own bit). Mirrors `xStep.snd_succ_eq` above (equivalently `Theorem88.lean`'s `atomU_succ_eq`), with
-the `false` branch derived algebraically from the `true` branch plus `SplitSpec'`'s `I ∪ J = B`/
-`I ∩ J = ∅`. -/
 theorem fst_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     (yStep D₀ hD₀nomin
         (xStep D₁ hD₁nomin (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1
@@ -428,13 +383,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-
-/-- **Headline closed form, `β`-side** (Exercise 8.12(c)(vi)(5)(b)), symmetric to
-`atomPair.fst_eq_genAtom`: `atomPair δ n`'s `β`-side coincides with `genAtom` over the interleaved
-family `combinedY` at depth `2 * n`, via `genAtom.combinedY_succ_eq` ((vi)(5)(a)'s `X`-sub-step
-closed form `xStep.snd_succ_eq`) then the `Y`-sub-step's direct `β`-side output (elementary, no
-closed form needed — it is literally `if (δ n).2 then B1 ∩ Y n else B1 \ Y n` by `yStep`'s own
-definition). -/
 theorem snd_eq_genAtom (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 =
       genAtom (combinedY D₀ D₁ hD₀nomin hD₁nomin X Y) D₁.master (combinedδ δ) (2 * n) := by
@@ -456,13 +404,6 @@ theorem snd_eq_genAtom (δ : ℕ → Bool × Bool) (n : ℕ) :
       · simp only [hb, Bool.false_eq_true, ite_false]
         exact (inter.diff_eq_diff_of_subset hB1sub).symm
 
-
-/-- **Headline closed form, `α`-side** (Exercise 8.12(c)(vi)(5)(b)): `atomPair δ n`'s `α`-side
-coincides with `genAtom` over the interleaved family `combinedX` at the doubled depth `2 * n`.
-Proved by induction on `n`, each step performing the two half-step rewrites
-`genAtom.combinedX_succ_eq` (`X`-sub-step half, elementary) then `yStep.fst_succ_eq` ((vi)(5)(a)'s
-`Y`-sub-step closed form) — mirrors `Theorem88.lean`'s one-line `atomU_eq_genAtom`, just with each
-level's step split into the two named half-steps. -/
 theorem fst_eq_genAtom (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1 =
       genAtom (combinedX D₀ D₁ hD₀nomin hD₁nomin X Y) D₀.master (combinedδ δ) (2 * n) := by
@@ -479,6 +420,5 @@ end AtomPair
 end
 
 end atomPair
-
 
 end DomainTheory.NeighbourhoodSystems

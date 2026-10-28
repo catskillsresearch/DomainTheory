@@ -6,11 +6,9 @@ public import DomainTheory.DataTypesAsLattices.Computability.lt_two_pow_of_high_
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)

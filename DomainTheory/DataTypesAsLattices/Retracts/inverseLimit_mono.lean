@@ -17,8 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- A coherent inverse-limit sequence is increasing in the ambient
-powerset order. -/
 theorem inverseLimit_mono {F : Pomega → Pomega}
     (hf : IsScottContinuous F) (v : RetractInverseLimit F) :
     ∀ n, v.1 n ⊆ v.1 (n + 1) := by

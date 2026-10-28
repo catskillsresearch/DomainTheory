@@ -10,12 +10,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5
 public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_universe
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (5.22).** Boxed product of closures is a closure, so
-the map is typed on `V`. -/
 theorem eq_5_22 {a b : Pomega} (ha : typed a Vcomb) (hb : typed b Vcomb) :
     typed (boxTensor a b) Vcomb :=
   (theorem_5_5.universe.2 (boxTensor a b)).mp

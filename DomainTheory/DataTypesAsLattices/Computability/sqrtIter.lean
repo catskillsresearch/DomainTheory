@@ -15,7 +15,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- The bounded iteration used to compute `Nat.sqrt n`. -/
 def sqrtIter (n : ℕ) : ℕ → ℕ
   | 0 => 0
   | k + 1 =>
@@ -27,7 +26,6 @@ namespace sqrtIter
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem eq_min (n k : ℕ) : sqrtIter n k = min k (Nat.sqrt n) := by
   induction k with
@@ -43,7 +41,6 @@ theorem eq_min (n k : ℕ) : sqrtIter n k = min k (Nat.sqrt n) := by
       have hs : ¬(Nat.sqrt n + 1) * (Nat.sqrt n + 1) ≤ n :=
         Nat.not_le.mpr (Nat.lt_succ_sqrt n)
       simp [hmin, hs, min_eq_right (hk.trans (Nat.le_succ k))]
-
 
 theorem self (n : ℕ) : sqrtIter n n = Nat.sqrt n := by
   rw [sqrtIter.eq_min, min_eq_right (Nat.sqrt_le_self n)]

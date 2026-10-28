@@ -42,8 +42,6 @@ theorem maxSnd_mem_or_eq_seed (L : List (ℚ × ℚ)) (seed : ℚ) :
 end foldl
 open Domain.Recursive NeighborhoodSystem
 
-/-- **Every pair of `decodeQPairList (canonCode c)` has both endpoints in `[0, 1]`** — mirrors
-`forall_lt_decodeQPairList_canonCode` (nondegeneracy), giving the companion boundedness fact. -/
 theorem forall_bounds_decodeQPairList_canonCode (c : ℕ) :
     ∀ p ∈ decodeQPairList (canonCode c), 0 ≤ p.1 ∧ p.2 ≤ 1 := by
   unfold canonCode
@@ -62,18 +60,13 @@ theorem forall_bounds_decodeQPairList_canonCode (c : ℕ) :
     obtain ⟨p0, -, -, rfl⟩ := (mem_decodeQPairList_canonListCode c p).mp hp
     exact ⟨le_sup_right, inf_le_right⟩
 
-/-- `max_i pᵢ.2` over a presenting list, folded with seed `0`. -/
 def listMaxSnd (L : List (ℚ × ℚ)) : ℚ := L.foldl (fun acc p => max acc p.2) 0
 
-/-- `min_i pᵢ.1` over a presenting list, folded with seed `1` (safe: every genuine pair has
-`p.1 < 1` once bounded, `forall_bounds_decodeQPairList_canonCode`). -/
 def listMinFst (L : List (ℚ × ℚ)) : ℚ := L.foldl (fun acc p => min acc p.1) 1
 
 namespace decodeRat
 open Domain.Recursive NeighborhoodSystem
 
-/-- Bridging `List.foldl` over raw pair-codes (via `ratMinCode`) to `List.foldl` over decoded
-pairs (via `min ·.1`), one step at a time. -/
 theorem foldl_ratMin (l : List ℕ) (z : ℕ) :
     decodeRat (l.foldl (fun acc x => ratMinCode (Nat.pair acc x.unpair.1)) z)
       = (l.map decodeRatPair).foldl (fun acc p => min acc p.1) (decodeRat z) := by
@@ -98,7 +91,6 @@ theorem maxSnd_seed_le (L : List (ℚ × ℚ)) (seed : ℚ) :
 end foldl
 open Domain.Recursive NeighborhoodSystem
 
-/-- The code-level `listMaxSnd`: fold `ratMaxCode` over `c`'s pair-codes, seeded at `zeroCode`. -/
 def listMaxSndCode (c : ℕ) : ℕ :=
   foldCode (fun t => ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.2)) 0 zeroCode c
 
@@ -147,7 +139,6 @@ theorem attained {L : List (ℚ × ℚ)} (hne : L ≠ []) (hlb : ∀ p ∈ L, 0 
 end listMaxSnd
 open Domain.Recursive NeighborhoodSystem
 
-/-- The code-level `listMinFst`: fold `ratMinCode` over `c`'s pair-codes, seeded at `oneCode`. -/
 def listMinFstCode (c : ℕ) : ℕ :=
   foldCode (fun t => ratMinCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.1)) 0 oneCode c
 
@@ -181,7 +172,6 @@ end foldl
 namespace listMaxSnd
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`listMaxSnd L` is arbitrarily approached from below by `presentedIntervals L`.** -/
 theorem tight {L : List (ℚ × ℚ)} (hne : L ≠ [])
     (hpos : ∀ p ∈ L, p.1 < p.2) (hb : ∀ p ∈ L, 0 ≤ p.1 ∧ p.2 ≤ 1) {y : ℚ}
     (hy : y < listMaxSnd L) : ∃ x ∈ presentedIntervals L, y < x := by
@@ -196,7 +186,6 @@ theorem tight {L : List (ℚ × ℚ)} (hne : L ≠ [])
 end listMaxSnd
 open Domain.Recursive NeighborhoodSystem
 
-/-- The midpoint code of `canonCode n`'s intrinsic `(min, max)` pair. -/
 def splitU2MidCode (n : ℕ) : ℕ :=
   ratMidCode (Nat.pair (listMinFstCode (canonCode n)) (listMaxSndCode (canonCode n)))
 
@@ -236,8 +225,6 @@ end listMinFst
 namespace splitU2
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`Xₙ`'s intrinsic minimum is strictly below its intrinsic maximum**, via any single
-witnessing pair of `canonCode n`'s presenting list (nonempty, `forall_lt_...`). -/
 theorem min_lt_max (n : ℕ) :
     listMinFst (decodeQPairList (canonCode n)) < listMaxSnd (decodeQPairList (canonCode n)) := by
   obtain ⟨p, hp⟩ := List.exists_mem_of_ne_nil _ (decodeQPairList_canonCode_ne_nil n)
@@ -256,7 +243,6 @@ end splitU2
 namespace listMaxSnd
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`listMaxSnd L` strictly upper-bounds `presentedIntervals L`.** -/
 theorem upper_bound {L : List (ℚ × ℚ)} {x : ℚ} (hx : x ∈ presentedIntervals L) :
     x < listMaxSnd L := by
   obtain ⟨p, hp, -, hx2⟩ := presentedIntervals.mem.mp hx
@@ -266,7 +252,6 @@ end listMaxSnd
 namespace listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`listMinFst L` lower-bounds `presentedIntervals L`.** -/
 theorem lower_bound {L : List (ℚ × ℚ)} {x : ℚ} (hx : x ∈ presentedIntervals L) :
     listMinFst L ≤ x := by
   obtain ⟨p, hp, hx1, -⟩ := _root_.DomainTheory.NeighbourhoodSystems.presentedIntervals.mem.mp hx
@@ -275,8 +260,6 @@ theorem lower_bound {L : List (ℚ × ℚ)} {x : ℚ} (hx : x ∈ presentedInter
 end listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-/-- The "left" half of the canonical split of `Xₙ`: `Xₙ ∩ (-∞, m)` for `m` the midpoint of `Xₙ`'s
-intrinsic `(min, max)`. -/
 def splitU2Left (n : ℕ) : ℕ := clipLtListCode (splitU2MidCode n) (canonCode n)
 
 namespace foldl
@@ -314,7 +297,6 @@ end listMinFst
 namespace listMaxSnd
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`listMaxSnd` is a well-defined function of the presented set alone.** -/
 theorem congr {L1 L2 : List (ℚ × ℚ)} (hne1 : L1 ≠ []) (hne2 : L2 ≠ [])
     (hpos1 : ∀ p ∈ L1, p.1 < p.2) (hb1 : ∀ p ∈ L1, 0 ≤ p.1 ∧ p.2 ≤ 1)
     (hpos2 : ∀ p ∈ L2, p.1 < p.2) (hb2 : ∀ p ∈ L2, 0 ≤ p.1 ∧ p.2 ≤ 1)
@@ -333,7 +315,6 @@ end listMaxSnd
 namespace listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`listMinFst L` is the genuine minimum of `presentedIntervals L`** (membership half). -/
 theorem presentedIntervals.mem {L : List (ℚ × ℚ)} (hne : L ≠ [])
     (hpos : ∀ p ∈ L, p.1 < p.2) (hb : ∀ p ∈ L, 0 ≤ p.1 ∧ p.2 ≤ 1) :
     listMinFst L ∈ presentedIntervals L := by
@@ -341,9 +322,6 @@ theorem presentedIntervals.mem {L : List (ℚ × ℚ)} (hne : L ≠ [])
   obtain ⟨p, hp, hpeq⟩ := listMinFst.attained hne hub
   exact _root_.DomainTheory.NeighbourhoodSystems.presentedIntervals.mem.mpr ⟨p, hp, hpeq.le, hpeq ▸ hpos p hp⟩
 
-/-- **`listMinFst` is a well-defined function of the presented set alone**, mirroring
-`MinLevel.lean`'s `minLevel_unique` for `V`: two (nonempty, nondegenerate, `[0,1]`-bounded)
-presenting lists of the *same* set have the same `listMinFst`. -/
 theorem congr {L1 L2 : List (ℚ × ℚ)} (hne1 : L1 ≠ []) (hne2 : L2 ≠ [])
     (hpos1 : ∀ p ∈ L1, p.1 < p.2) (hb1 : ∀ p ∈ L1, 0 ≤ p.1 ∧ p.2 ≤ 1)
     (hpos2 : ∀ p ∈ L2, p.1 < p.2) (hb2 : ∀ p ∈ L2, 0 ≤ p.1 ∧ p.2 ≤ 1)
@@ -358,8 +336,6 @@ theorem congr {L1 L2 : List (ℚ × ℚ)} (hne1 : L1 ≠ []) (hne2 : L2 ≠ [])
 end listMinFst
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`splitU2Left`/`splitU2Right`'s midpoint depends only on `UX n` as a set** — the key lemma
-that `SplitU.lean`'s `splitULeft`/`splitURight` lack, via `listMinFst.congr`/`listMaxSnd.congr`. -/
 theorem splitU2MidCode_congr {n n' : ℕ} (h : UX n = UX n') :
     decodeRat (splitU2MidCode n) = decodeRat (splitU2MidCode n') := by
   have heqP : presentedIntervals (decodeQPairList (canonCode n))
@@ -374,7 +350,6 @@ theorem splitU2MidCode_congr {n n' : ℕ} (h : UX n = UX n') :
     (forall_bounds_decodeQPairList_canonCode n') heqP
   rw [decodeRat.splitU2MidCode, decodeRat.splitU2MidCode, hminEq, hmaxEq]
 
-/-- The "right" half of the canonical split of `Xₙ`: `Xₙ ∩ [m, ∞)`. -/
 def splitU2Right (n : ℕ) : ℕ := clipGeListCode (splitU2MidCode n) (canonCode n)
 
 theorem UX_splitU2Right (n : ℕ) :
@@ -396,7 +371,6 @@ theorem UX_splitU2Right (n : ℕ) :
   rw [presentedIntervals_decodeQPairList_clipGeListCode]
   rfl
 
-/-- **`splitU2Right`'s output set is a well-defined function of `UX k` as a set.** -/
 theorem splitU2Right_congr {n n' : ℕ} (h : UX n = UX n') :
     UX (splitU2Right n) = UX (splitU2Right n') := by
   rw [UX_splitU2Right, UX_splitU2Right, h, splitU2MidCode_congr h]
@@ -422,7 +396,6 @@ theorem UX_splitU2Left (n : ℕ) :
 namespace splitU2
 open Domain.Recursive NeighborhoodSystem
 
-/-- **Disjointness**: `splitU2Left`/`splitU2Right` cover disjoint pieces. -/
 theorem disjoint (n : ℕ) : UX (splitU2Left n) ∩ UX (splitU2Right n) = ∅ := by
   rw [UX_splitU2Left, UX_splitU2Right]
   ext x
@@ -430,7 +403,6 @@ theorem disjoint (n : ℕ) : UX (splitU2Left n) ∩ UX (splitU2Right n) = ∅ :=
   rintro ⟨⟨-, h1⟩, -, h2⟩
   exact absurd h1 (not_lt.mpr h2)
 
-/-- **Covering**: `splitU2Left`/`splitU2Right` reunite to `Xₙ`. -/
 theorem union (n : ℕ) : UX (splitU2Left n) ∪ UX (splitU2Right n) = UX n := by
   rw [UX_splitU2Left, UX_splitU2Right]
   ext x
@@ -445,7 +417,6 @@ theorem union (n : ℕ) : UX (splitU2Left n) ∪ UX (splitU2Right n) = UX n := b
 end splitU2
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`splitU2Left`'s output set is a well-defined function of `UX k` as a set.** -/
 theorem splitU2Left_congr {n n' : ℕ} (h : UX n = UX n') :
     UX (splitU2Left n) = UX (splitU2Left n') := by
   rw [UX_splitU2Left, UX_splitU2Left, h, splitU2MidCode_congr h]

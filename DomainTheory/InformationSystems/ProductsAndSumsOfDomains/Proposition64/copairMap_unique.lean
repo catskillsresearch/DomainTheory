@@ -42,7 +42,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -56,8 +55,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-
-/-- Uniqueness of copairing (Scott Prop 6.4). -/
 theorem copairMap_unique (f : ApproximableMap A C) (g : ApproximableMap B C)
     (h : ApproximableMap (sumSystem A B) C)
     (hinl : comp h (inlMap A B) = f) (hinr : comp h (inrMap A B) = g)

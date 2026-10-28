@@ -24,7 +24,6 @@ variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Consistency for the function space (Scott 7.1(iii)). -/
 def FunCon (w : Finset (FunToken A B)) : Prop :=
   ∀ s ⊆ w, funInputUnion A B s ∈ A.Con → funOutputUnion A B s ∈ B.Con
 

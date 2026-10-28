@@ -7,9 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.dom
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
-/-- The `E`-side atom matching `genAtom X Δ δ n`, built recursively via an abstract splitting
-operation `split` satisfying `SplitSpec' E split`. Generalizes `Theorem88.lean`'s `atomU` from the
-hardcoded target `U` to an abstract `E`. -/
 noncomputable def atomE {α γ : Type*} (E : NeighborhoodSystem γ)
     (split : Set α → Set γ → Set α → Set γ × Set γ)
     (X : ℕ → Set α) (Δ : Set α) (δ : ℕ → Bool) : ℕ → Set γ
@@ -23,8 +20,6 @@ variable {α γ : Type*}
 variable (E : NeighborhoodSystem γ) (split : Set α → Set γ → Set α → Set γ × Set γ)
 variable (X : ℕ → Set α) (Δ : Set α)
 
-/-- **The abstract analogue of Scott's `Yₙ`**: the union, over all `2ⁿ` depth-`n` atoms, of the
-"+"-piece chosen when splitting against `X n`. Generalizes `Theorem88.lean`'s `Yseq`. -/
 noncomputable def YseqE (n : ℕ) : Set γ :=
   ⋃ δ' : Fin n → Bool, atomE E split X Δ (extendTrue δ') (n + 1)
 
@@ -37,8 +32,6 @@ theorem succ (δ : ℕ → Bool) (n : ℕ) :
       if δ n then (split (genAtom X Δ δ n) (atomE E split X Δ δ n) (X n)).1
       else (split (genAtom X Δ δ n) (atomE E split X Δ δ n) (X n)).2 := rfl
 
-/-- Extending/changing `δ` at or beyond position `n` does not change `atomE E split X Δ δ n`
-(mirrors `atomU_congr`). -/
 theorem congr {δ δ' : ℕ → Bool} {n : ℕ} (h : ∀ i < n, δ i = δ' i) :
     atomE E split X Δ δ n = atomE E split X Δ δ' n := by
   induction n with
@@ -58,10 +51,6 @@ include hΔ hEmne hsplit
 
 namespace atomE
 
-/-- **The core invariant, generalizing `atomU_invariant`.** At every depth `n` and for every sign
-sequence `δ`: (a) the atom-matching invariant (`genAtom X Δ δ n = ∅ ↔ atomE E split X Δ δ n = ∅`),
-(b) `atomE E split X Δ δ n` is either empty or a genuine `E`-neighbourhood, and (c) pairwise
-disjointness for sign sequences disagreeing somewhere below `n`. -/
 theorem invariant :
     ∀ n, (∀ δ, genAtom X Δ δ n = ∅ ↔ atomE E split X Δ δ n = ∅) ∧
       (∀ δ, atomE E split X Δ δ n = ∅ ∨ E.mem (atomE E split X Δ δ n)) ∧
@@ -128,8 +117,6 @@ theorem invariant :
           · simp only [hδ']; exact split_snd_subset' hsplit (ihmatch δ') (ihmem δ') (X n)
         exact Set.subset_eq_empty (Set.inter_subset_inter h1 h2) hd
 
-/-- Corollary of `atomE.invariant`, extracted for reuse: `atomE` only shrinks as `n` grows
-(mirrors `atomU_succ_subset`). -/
 theorem succ_subset (δ : ℕ → Bool) (n : ℕ) :
     atomE E split X Δ δ (n + 1) ⊆ atomE E split X Δ δ n := by
   obtain ⟨hmatch, hmem, -⟩ := invariant E split X Δ hΔ hEmne hsplit n
@@ -138,7 +125,6 @@ theorem succ_subset (δ : ℕ → Bool) (n : ℕ) :
   · simp only [hδ, ite_true]; exact split_fst_subset' hsplit (hmatch δ) (hmem δ) (X n)
   · simp only [hδ]; exact split_snd_subset' hsplit (hmatch δ) (hmem δ) (X n)
 
-/-- `atomE E split X Δ δ n` is always a subset of `E.master` (mirrors `atomU_subset_master`). -/
 theorem subset_master (δ : ℕ → Bool) (n : ℕ) : atomE E split X Δ δ n ⊆ E.master := by
   induction n with
   | zero => exact subset_rfl
@@ -146,9 +132,6 @@ theorem subset_master (δ : ℕ → Bool) (n : ℕ) : atomE E split X Δ δ n �
 
 end atomE
 
-/-- **The "I-formula", generalizing `split_fst_eq_inter_Yseq`**: the "+"-piece chosen when
-splitting the depth-`n` atom for `δ` against `X n` is *exactly* the intersection of that atom with
-`YseqE E split X Δ n`. -/
 theorem split_fst_eq_inter_YseqE (δ : ℕ → Bool) (n : ℕ) :
     (split (genAtom X Δ δ n) (atomE E split X Δ δ n) (X n)).1 =
       atomE E split X Δ δ n ∩ YseqE E split X Δ n := by
@@ -196,8 +179,6 @@ theorem split_fst_eq_inter_YseqE (δ : ℕ → Bool) (n : ℕ) :
 
 namespace atomE
 
-/-- **Closed form for `atomE`, generalizing `atomU_succ_eq`**: with `YseqE` in hand, `atomE`
-satisfies exactly the same recursive description as `genAtom (YseqE E split X Δ) E.master`. -/
 theorem succ_eq (δ : ℕ → Bool) (n : ℕ) :
     atomE E split X Δ δ (n + 1) =
       atomE E split X Δ δ n ∩
@@ -232,10 +213,6 @@ theorem succ_eq (δ : ℕ → Bool) (n : ℕ) :
     · rintro ⟨hx1, hx2⟩; exact ⟨hx1, hsub hx1, hx2⟩
     · rintro ⟨hx1, -, hx2⟩; exact ⟨hx1, hx2⟩
 
-/-- **`atomE` coincides with the generic atom construction on `YseqE`/`E.master`**, generalizing
-`atomU_eq_genAtom`. Lets every later argument treat `atomE` and `genAtom` uniformly (in particular,
-`genAtom_forward`/`genAtom_self` — proved once, generically, in `Theorem88.lean` — apply verbatim
-to the `E`-side atoms too). -/
 theorem eq_genAtom (δ : ℕ → Bool) :
     ∀ n, atomE E split X Δ δ n = genAtom (YseqE E split X Δ) E.master δ n
   | 0 => rfl
@@ -244,9 +221,6 @@ theorem eq_genAtom (δ : ℕ → Bool) :
 
 end atomE
 
-/-- **The transfer lemma, generalized to `E`.** A finite Boolean combination of the `X i` is
-non-empty in `D`'s carrier `Δ` iff the *same* Boolean combination of `YseqE E split X Δ i` is
-non-empty in `E.master`. Mirrors `transfer_empty_iff`. -/
 theorem transfer_empty_iffE {cs : List (ℕ × Bool)} {n : ℕ} (hn : ∀ p ∈ cs, p.1 < n) :
     {x ∈ Δ | ∀ p ∈ cs, (p.2 = true ↔ x ∈ X p.1)}.Nonempty ↔
       {y ∈ E.master | ∀ p ∈ cs, (p.2 = true ↔ y ∈ YseqE E split X Δ p.1)}.Nonempty := by

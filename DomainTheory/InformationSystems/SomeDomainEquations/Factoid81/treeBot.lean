@@ -16,10 +16,8 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
 variable {α : Type*} [DecidableEq α]
 
-/-- Tree bottom `Δ_T`. -/
 def treeBot : TreeToken α := .bot
 
 end InfoSys

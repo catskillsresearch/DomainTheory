@@ -13,7 +13,6 @@ namespace InfoSys
 
 universe u
 
-/-- Tokens of the tree system: sum tagging of atoms and product left/right copies. -/
 inductive TreeToken (α : Type u) where
   | bot : TreeToken α
   | atom : α → TreeToken α

@@ -31,10 +31,8 @@ variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
 
-/-- Bundled consistency on `LamDToken` finsets. -/
 def LamDCon (u : Finset (LamDToken A)) : Prop :=
   LamConDepth A (lamDForgetFinset A u)
-
 
 theorem LamDCon.singleton (p : LamDToken A) : LamDCon A {p} := by
   rw [LamDCon, lamDForgetFinset.singleton]

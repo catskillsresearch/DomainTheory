@@ -7,9 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem predSet_iterate_ofNat :
     ∀ k i, predSet^[k] (ofNat (k + i)) = ofNat i

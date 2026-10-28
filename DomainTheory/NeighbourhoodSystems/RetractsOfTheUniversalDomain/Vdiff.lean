@@ -7,21 +7,15 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.spl
 
 namespace DomainTheory.NeighbourhoodSystems
 
-/-- The difference index: `canonIdx` of the raw difference code `VdiffRaw`. -/
 def Vdiff (n m : ℕ) : ℕ := canonIdx (VdiffRaw n m)
 
 namespace levelSet
 open Domain.Recursive NeighborhoodSystem
 
-/-- **The "same level" set-difference formula**, mirroring `Exercise812.lean`'s
-`levelSet.inter_same_level` exactly (`&&&` becomes the "and-not" combinator `a ^^^ (a &&& b)`,
-via `testBit.xor_and_self`). -/
 theorem diff_same_level (k m₁ m₂ : ℕ) :
     levelSet k m₁ \ levelSet k m₂ = levelSet k (m₁ ^^^ (m₁ &&& m₂)) := by
   ext n; simp [levelSet]
 
-/-- **Computable version of `levelSet.diff_same_level`, upsampled to a common level** — mirrors
-`levelSet.myInter` exactly, substituting `myAndNot` for `myLand`. -/
 theorem myDiff (k1 m1 k2 m2 : ℕ) :
     levelSet k1 m1 \ levelSet k2 m2
       = levelSet (max k1 k2) (myAndNot (_root_.DomainTheory.NeighbourhoodSystems.myUpsample k1 (max k1 k2) m1) (_root_.DomainTheory.NeighbourhoodSystems.myUpsample k2 (max k1 k2) m2)) := by
@@ -29,7 +23,6 @@ theorem myDiff (k1 m1 k2 m2 : ℕ) :
     ← levelSet.myUpsample (Nat.le_max_right k1 k2) (m := m2)]
   rw [levelSet.diff_same_level, myAndNot_eq]
 
-/-- **`VdiffRaw` realizes `VX n \ VX m`** at the `levelSet` level (unconditionally). -/
 theorem VdiffRaw (n m : ℕ) :
     levelSet (_root_.DomainTheory.NeighbourhoodSystems.VdiffRaw n m).unpair.1 (_root_.DomainTheory.NeighbourhoodSystems.VdiffRaw n m).unpair.2 = VX n \ VX m := by
   unfold _root_.DomainTheory.NeighbourhoodSystems.VdiffRaw
@@ -41,8 +34,6 @@ end levelSet
 namespace Vdiff
 open Domain.Recursive NeighborhoodSystem
 
-/-- **Scott's consistency condition for `\` reduces to non-emptiness**, mirroring
-`Vcons_iff_nonempty_inter`. -/
 theorem iff_nonempty (n m : ℕ) :
     (∃ k, VX k = VX n \ VX m) ↔ (VX n \ VX m).Nonempty := by
   constructor
@@ -137,7 +128,6 @@ theorem VdiffRaw : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystem
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-/-- **7.1(i)-for-`\`, for `V`**: `Xₙ \ Xₘ = X_k` for some `k` is recursively decidable. -/
 theorem V.diff_computable : RecDecidable₂ (fun n m => ∃ k, VX k = VX n \ VX m) := by
   have hvr : Nat.Primrec (fun t : ℕ => VdiffRaw t.unpair.1 t.unpair.2) := primrec.VdiffRaw
   have hfprim : Nat.Primrec (fun t : ℕ => myLevelSetNonempty (VdiffRaw t.unpair.1 t.unpair.2).unpair.1
@@ -162,15 +152,12 @@ theorem Vdiff : Nat.Primrec (fun t => _root_.DomainTheory.NeighbourhoodSystems.V
 end primrec
 open Domain.Recursive NeighborhoodSystem
 
-/-- **`V` has a computable `\`**, the missing prerequisite for Exercise 8.12(f). -/
 def V.isComputableDiff : IsComputableDiff VComputablePresentation where
   diffIdx := Vdiff
   diffIdx_primrec := primrec.Vdiff
   diffIdx_spec := Vdiff.spec
   diff_computable := V.diff_computable
 
-/-- **`splitX812f`: the exercise's literal target split**, `V` as prober against `U`'s canonical
-bisection (`UBisection2`). -/
 noncomputable def splitX812f : Set ℕ → Set ℚ → Set ℕ → Set ℚ × Set ℚ :=
   ComputableBisection.splitFromBisection VComputablePresentation V.isComputableDiff UBisection2
     U.noMinimal
@@ -178,10 +165,6 @@ noncomputable def splitX812f : Set ℕ → Set ℚ → Set ℕ → Set ℚ × Se
 namespace isComputableSplit
 open Domain.Recursive NeighborhoodSystem
 
-/-- **Exercise 8.12(f), completed in full**: `splitX812f` satisfies `IsComputableSplit`, the
-mirror image of `Exercise812eD.lean`'s `isComputableSplit.812e`. `noncomputable def`, not
-`theorem` — `IsComputableSplit` is a data-carrying structure (its `posIdx`/`negIdx` fields are
-`ℕ`-valued functions), exactly as `isComputableSplit.812e` itself. -/
 noncomputable def «812f» :
     IsComputableSplit VComputablePresentation UComputablePresentation splitX812f :=
   ComputableBisection.isComputableSplit.ofBisection VComputablePresentation V.isComputableDiff

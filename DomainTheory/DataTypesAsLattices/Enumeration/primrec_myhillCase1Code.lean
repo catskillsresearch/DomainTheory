@@ -10,16 +10,13 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillFilterC
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem primrec_myhillCase1Code (n : ℕ) : Primrec (myhillCase1Code n) :=
   primrec_applyNat.comp

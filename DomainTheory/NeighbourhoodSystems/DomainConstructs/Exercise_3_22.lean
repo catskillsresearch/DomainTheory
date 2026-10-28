@@ -11,9 +11,6 @@ section
 variable {α β γ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
-/-- The uncurried composition map `((𝒟₁→𝒟₂) × (𝒟₀→𝒟₁)) × 𝒟₀ → 𝒟₂`, `⟨⟨g, f⟩, x⟩ ↦ g(f(x))`,
-built from the inner evaluation `(𝒟₀→𝒟₁) × 𝒟₀ → 𝒟₁`, the outer evaluation `(𝒟₁→𝒟₂) × 𝒟₁ → 𝒟₂`,
-and the product projections/pairing (Definition 3.3). -/
 def compApp (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
     ApproximableMap (prod (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀) V₂ :=
   (evalMap V₁ V₂).comp
@@ -26,14 +23,10 @@ def compApp (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ 
             (proj₀ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))
           (proj₁ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))))
 
-/- concordance: source L1545 EXERCISE 3.22 composition combinator -/
-/-- **Exercise 3.22 (Scott 1981, PRG-19).** The composition mapping
-`comp : (𝒟₁ → 𝒟₂) × (𝒟₀ → 𝒟₁) → (𝒟₀ → 𝒟₂)`, `comp = curry(compApp)`. -/
 def compMap (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
     ApproximableMap (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) (funSpace V₀ V₂) :=
   curry (compApp V₀ V₁ V₂)
 
-/-- `compApp(⟨⟨g, f⟩, x⟩) = g(f(x))`. -/
 theorem toElementMap_compApp (Gφ : (funSpace V₁ V₂).Element) (Fφ : (funSpace V₀ V₁).Element)
     (x : V₀.Element) :
     (compApp V₀ V₁ V₂).toElementMap (pair (pair Gφ Fφ) x)
@@ -42,16 +35,12 @@ theorem toElementMap_compApp (Gφ : (funSpace V₁ V₂).Element) (Fφ : (funSpa
   simp only [toElementMap_comp, toElementMap_paired, toElementMap_proj₀, toElementMap_proj₁,
     fst_pair, snd_pair, evalMap_apply]
 
-/-- **Exercise 3.22 (Scott 1981, PRG-19).** `comp(g, f) = g ∘ f`: applying the value
-`comp(⟨g, f⟩) ∈ |𝒟₀ → 𝒟₂|` to `x` gives `g(f(x))`. -/
 theorem toElementMap_compMap_apply (Gφ : (funSpace V₁ V₂).Element) (Fφ : (funSpace V₀ V₁).Element)
     (x : V₀.Element) :
     (toApproxMap ((compMap V₀ V₁ V₂).toElementMap (pair Gφ Fφ))).toElementMap x
       = (toApproxMap Gφ).toElementMap ((toApproxMap Fφ).toElementMap x) := by
   rw [compMap, toElementMap_curry_apply, toElementMap_compApp]
 
-/-- **Exercise 3.22 (Scott 1981, PRG-19).** The relational form `comp(g, f) = g ∘ f`: the value of
-`comp` at `⟨g, f⟩`, read back as an approximable map, is the composition of the approximable maps. -/
 theorem toApproxMap_compMap (Gφ : (funSpace V₁ V₂).Element) (Fφ : (funSpace V₀ V₁).Element) :
     toApproxMap ((compMap V₀ V₁ V₂).toElementMap (pair Gφ Fφ))
       = (toApproxMap Gφ).comp (toApproxMap Fφ) := by

@@ -10,7 +10,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- A Gödel number of `Y`, used for a Kleene-style fixed point on codes. -/
 noncomputable def Ycode : ℕ :=
   (theorem_3_2.surjective Ycomb.combinatory).choose
 

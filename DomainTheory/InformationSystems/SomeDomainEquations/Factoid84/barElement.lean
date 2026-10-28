@@ -18,7 +18,6 @@ open InfoSys
 
 open ApproximableMap
 
-/-- Finite element `\bar n` (entailment closure of `{n}`). -/
 def barElement (n : ℕ) : P.Element :=
   P.closure (bar n) trivial
 

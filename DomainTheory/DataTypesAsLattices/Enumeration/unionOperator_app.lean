@@ -18,16 +18,13 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.enumerationUnion_righ
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem unionOperator_app (x y : Pomega) :
     funOf (funOf (graph (fun x => graph (fun y => x ∪ y))) x) y = x ∪ y := by

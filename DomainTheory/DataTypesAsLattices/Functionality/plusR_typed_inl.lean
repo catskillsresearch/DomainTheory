@@ -14,9 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem plusR_typed_inl {a b x : Pomega} (hx : typed x a) :
     typed (pairSeq (ofNat 0) x) (plusR a b) := by

@@ -66,5 +66,4 @@ theorem lamDForgetFinset.singleton (p : LamDToken A) :
 
 end InfoSys
 
-
 end DomainTheory.InformationSystems

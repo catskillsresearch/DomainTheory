@@ -10,7 +10,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.s
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -57,7 +56,6 @@ theorem acomp.id {α β : Type*} [DecidableEq α] [DecidableEq β]
   (ext_iff_toElement _ _).2 fun x => by rw [acomp.toElement, idMap.toElement]
 
 end ApproximableMap
-
 
 end InfoSys
 

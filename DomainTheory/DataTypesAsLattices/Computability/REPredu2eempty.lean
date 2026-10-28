@@ -4,11 +4,9 @@ public import Mathlib.Computability.RE
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem REPred.empty : REPred fun _ : ℕ => False := by
   unfold REPred

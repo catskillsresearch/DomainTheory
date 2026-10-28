@@ -8,9 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_app
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem plusR_typed_top (a b : Pomega) : typed topElem (plusR a b) :=
   (plusR_app.top a b).symm

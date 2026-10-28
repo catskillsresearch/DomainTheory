@@ -26,7 +26,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Consistency for `A →ₛ B` (Scott 7.5: FunCon plus empty-input clause). -/
 def StrictFunCon (w : Finset (StrictFunToken A B)) : Prop :=
   FunCon A B (toFunFinset A B w) ∧
     (∀ s ⊆ w,

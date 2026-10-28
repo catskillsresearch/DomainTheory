@@ -16,7 +16,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.t
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -53,6 +52,5 @@ theorem productMapToTensorMap.comp.toElement (A Y Y' Z : InfoSysObj.{u})
   exact acomp.toElement _ _ _
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

@@ -16,7 +16,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- The least combinatory subalgebra containing every member of `xs`. -/
 def GeneratedSubalgebra (xs : List Pomega) : Set Pomega :=
   {u | ∀ A : Set Pomega, Subalgebra A →
     (∀ x, x ∈ xs → x ∈ A) → u ∈ A}

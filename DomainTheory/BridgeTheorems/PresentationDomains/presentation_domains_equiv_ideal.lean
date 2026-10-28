@@ -38,7 +38,6 @@ variable (hD : ContinuousLattice D)
 
 include hD
 
-/-- Extended form through ideal completion of finite elements of the `↟`-InfoSys. -/
 noncomputable def presentation_domains_equiv_ideal :
     D ≃o
       { I : Ideal (InfoSysToIdealCompletion.FiniteElement

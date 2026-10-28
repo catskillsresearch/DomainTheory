@@ -19,11 +19,8 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 4.5 (ii).** Range of `a ⊕ b`. -/
 theorem plusR_typed_iff {a b u : Pomega} (ha : Retract a) (hb : Retract b) :
     typed u (plusR a b) ↔
       u = botElem ∨ u = topElem ∨

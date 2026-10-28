@@ -29,7 +29,6 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
-/-- Left copy as an `A`-element, given some left token in `z`. -/
 def sumElementLft (z : (sumSystem A B).Element)
     (x0 : α) (hx0 : SumToken.left x0 ∈ z.carrier) : A.Element where
   carrier := sumLftCarrier A B z

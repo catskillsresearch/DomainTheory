@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.Ba
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,11 +15,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-
 namespace ApproximableMap
 
-
-/-- Extend a chain by one `f`-step using a token from `approxMap_toElement f`. -/
 theorem fixChain_step_of_rel (f : ApproximableMap A A)
     {w : Finset (FunToken A A)} {n : Nat} {u v : Finset α}
     (hw : ↑w ⊆ (approxMap_toElement A A f).carrier)

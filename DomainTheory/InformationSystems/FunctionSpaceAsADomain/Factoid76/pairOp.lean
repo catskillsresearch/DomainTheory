@@ -19,7 +19,6 @@ open ApproximableMap
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
-/-- **Factoid 7.6.** Operator `pair : (C → A) × (C → B) → (C → A × B)`. -/
 def pairOp : ApproximableMap
     (productSystem (functionSystem C A) (functionSystem C B))
     (functionSystem C (productSystem A B)) :=
@@ -31,7 +30,6 @@ theorem pairOp.uncurry :
       (pairOp A B C) =
       pairOpUncurry A B C := by
   simp only [pairOp, uncurry_curryMap]
-
 
 theorem pairOp.toElement (f : ApproximableMap C A) (g : ApproximableMap C B) :
     (pairOp A B C).toElement
@@ -59,6 +57,5 @@ theorem pairOp.toElement (f : ApproximableMap C A) (g : ApproximableMap C B) :
   rw [← huniq, approxMap_toElement_element_toApproxMap]
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -20,7 +19,6 @@ variable (A : InfoSys α) (B : InfoSys β)
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
-
 
 theorem not_mem_right_of_mem_left (z : (sumSystem A B).Element)
     {x : α} {y : β} (hx : SumToken.left x ∈ z.carrier)

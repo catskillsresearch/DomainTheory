@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vapply_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (5.14) = (5.15).** -/
 theorem eq_5_14 (a x : Pomega) : VapplyY a x = Vapply a x :=
   Vapply.eq_Y a x
 

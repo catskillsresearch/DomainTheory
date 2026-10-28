@@ -14,8 +14,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 namespace iterateBot_retractLe
 
-/-- Projection-order monotonicity gives adjacent projection equations for
-the Kleene chain. -/
 theorem succ {F : Pomega → Pomega}
     (hret : ∀ a, Retract a → Retract (F a))
     (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))
@@ -34,7 +32,6 @@ theorem succ {F : Pomega → Pomega}
 
 end iterateBot_retractLe
 
-/-- Projection equations between arbitrary comparable Kleene stages. -/
 theorem iterateBot_retractLe {F : Pomega → Pomega}
     (hret : ∀ a, Retract a → Retract (F a))
     (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))

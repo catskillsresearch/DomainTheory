@@ -16,7 +16,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.mem_
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -24,7 +23,6 @@ open InfoSys
 open ApproximableMap
 
 namespace Factoid84
-
 
 theorem barElement_zero_eq_bot : barElement 0 = botElement := by
   apply le_antisymm

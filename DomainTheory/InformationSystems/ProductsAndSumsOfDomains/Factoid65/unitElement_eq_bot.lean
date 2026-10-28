@@ -6,15 +6,12 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-
-/-- The unique element of `|1|` is `⊥`. -/
 theorem unitElement_eq_bot (x : unitSystem.Element) : x = unitSystem.botElement := by
   apply le_antisymm
   · intro a ha

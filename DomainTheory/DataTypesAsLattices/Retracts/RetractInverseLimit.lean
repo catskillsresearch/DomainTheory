@@ -9,8 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.typed
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The inverse limit of the ranges of `Fⁿ(⊥)`: points are typed at every
-stage and adjacent coordinates satisfy Scott's projection equation. -/
 def RetractInverseLimit (F : Pomega → Pomega) :=
   {v : ℕ → Pomega //
     (∀ n, typed (v n) (iterateBot F n)) ∧

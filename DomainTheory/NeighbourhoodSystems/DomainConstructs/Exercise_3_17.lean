@@ -11,20 +11,16 @@ section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
-/-- The truth domain `T` of Example 1.2. -/
 abbrev T : NeighborhoodSystem Example12.Token := Example12.neighborhoodSystem
 
-/-- Tokens of `T`: `{0, 1}`. -/
 abbrev Token := Example12.Token
 
-/-- `T`-neighbourhoods are non-empty (`∅ ∉ T`). -/
 theorem T_nbhd_nonempty {F : Set Token} (hF : T.mem F) : F.Nonempty := by
   rcases (Example12.mem_iff F).mp hF with rfl | rfl | rfl
   · exact ⟨0, by simp [Example12.master]⟩
   · exact ⟨0, by simp [Example12.zero]⟩
   · exact ⟨1, by simp [Example12.one]⟩
 
-/-- The `T`-neighbourhood selected by a bit: `false ↦ {0}`, `true ↦ {1}`. -/
 def bitNbhd : Bool → Set Token
   | false => Example12.zero
   | true => Example12.one
@@ -34,7 +30,6 @@ theorem bitNbhd_mem (b : Bool) : T.mem (bitNbhd b) := by
   · exact Example12.mem_zero
   · exact Example12.mem_one
 
-/-- `encSet σ ⊆ ℕ × {0,1}`: pin copy `i` to `bitNbhd σ[i]` for `i < |σ|`, free otherwise. -/
 def encSet (σ : Str) : Set (ℕ × Token) := {p | ∀ b, σ[p.1]? = some b → p.2 ∈ bitNbhd b}
 
 @[simp] theorem mem_encSet {σ : Str} {p : ℕ × Token} :
@@ -57,7 +52,6 @@ theorem comparable_of_agree : ∀ {τ τ' : Str},
       · exact Or.inl (List.cons_prefix_cons.mpr ⟨rfl, h⟩)
       · exact Or.inr (List.cons_prefix_cons.mpr ⟨rfl, h⟩)
 
-/-- Two prefixes that both bound a common non-empty `T^∞`-neighbourhood agree where both defined. -/
 theorem encSet_agree {τ τ' : Str} {W : Set (ℕ × Token)} (hW : (iterSys T).mem W)
     (h : W ⊆ encSet τ) (h' : W ⊆ encSet τ') {i : ℕ} {b b' : Bool}
     (hb : τ[i]? = some b) (hb' : τ'[i]? = some b') : b = b' := by
@@ -67,7 +61,6 @@ theorem encSet_agree {τ τ' : Str} {W : Set (ℕ × Token)} (hW : (iterSys T).m
   by_contra hne
   cases b <;> cases b' <;> simp_all [bitNbhd, Example12.zero, Example12.one]
 
-/-- A longer prefix encodes to a *smaller* set: `σ ⪯ σ' ⟹ encSet σ' ⊆ encSet σ`. -/
 theorem encSet_anti {σ σ' : Str} (h : σ <+: σ') : encSet σ' ⊆ encSet σ := by
   obtain ⟨t, rfl⟩ := h
   rintro ⟨i, x⟩ hp b hb
@@ -92,7 +85,6 @@ theorem fiber_encSet_some {σ : Str} {i : ℕ} {b : Bool} (h : σ[i]? = some b) 
     obtain rfl := Option.some.inj hb'
     exact ht
 
-/-- `encSet σ` is a `T^∞`-neighbourhood. -/
 theorem encSet_mem (σ : Str) : (iterSys T).mem (encSet σ) := by
   refine ⟨fun i => ?_, σ.length, fun i hi => ?_⟩
   · cases h : σ[i]? with
@@ -100,8 +92,6 @@ theorem encSet_mem (σ : Str) : (iterSys T).mem (encSet σ) := by
     | some b => rw [fiber_encSet_some h]; exact bitNbhd_mem b
   · rw [fiber_encSet_none (List.getElem?_eq_none_iff.mpr hi)]; rfl
 
-/-- **The encoding map `f : B → T^∞`.** Relates the cone `σΣ*` to every `T^∞`-neighbourhood weaker
-than `encSet σ`. -/
 def f : ApproximableMap B (iterSys T) where
   rel X W := ∃ σ, X = cone σ ∧ (iterSys T).mem W ∧ encSet σ ⊆ W
   rel_dom := fun ⟨σ, hX, _⟩ => hX ▸ memB_cone σ
@@ -119,8 +109,6 @@ def f : ApproximableMap B (iterSys T) where
     have hpre : σ <+: σ' := cone_subset_cone.mp hX'X
     exact ⟨σ', rfl, hW'mem, (encSet_anti hpre).trans (hWsub.trans hWW')⟩
 
-/-- **The decoding map `g : T^∞ → B`.** Relates `W` to the cone `τΣ*` exactly when `W ⊆ encSet τ`,
-i.e. `W` pins the first `|τ|` copies to `τ`. -/
 def g : ApproximableMap (iterSys T) B where
   rel W X := (iterSys T).mem W ∧ ∃ τ, X = cone τ ∧ W ⊆ encSet τ
   rel_dom h := h.1
@@ -144,8 +132,6 @@ theorem exists_not_mem_bitNbhd (b : Bool) : ∃ t : Token, t ∉ bitNbhd b := by
   · exact ⟨1, by simp [bitNbhd, Example12.zero]⟩
   · exact ⟨0, by simp [bitNbhd, Example12.one]⟩
 
-/- concordance: source L1473 EXERCISE 3.17 embedding binary sequences -/
-/-- **Exercise 3.17 — `f` is a section of `g`.** `f ∘ g ⊑ I_{T^∞}`. -/
 theorem fg_le_id : f.comp g ≤ idMap (iterSys T) := by
   intro W Z
   rw [comp_rel, idMap_rel]
@@ -153,7 +139,6 @@ theorem fg_le_id : f.comp g ≤ idMap (iterSys T) := by
   obtain rfl : τ = σ := cone_injective (hX.symm.trans hXσ)
   exact ⟨hW, hZmem, hWτ.trans hσZ⟩
 
-/-- **Prefix recovery.** `encSet σ ⊆ encSet τ` forces `τ` to be an initial segment of `σ`. -/
 theorem prefix_of_encSet_subset {σ τ : Str} (h : encSet σ ⊆ encSet τ) : τ <+: σ := by
   have hag : ∀ (i : ℕ) (b b' : Bool), σ[i]? = some b → τ[i]? = some b' → b = b' :=
     fun i b b' => encSet_agree (encSet_mem σ) subset_rfl h
@@ -171,7 +156,6 @@ theorem prefix_of_encSet_subset {σ τ : Str} (h : encSet σ ⊆ encSet τ) : τ
       exact ht ((h hmemσ) _ hb')
   · exact hτσ
 
-/-- **Exercise 3.17 — `g` is a retraction of `f`.** `g ∘ f = I_B`. -/
 theorem gf_eq_id : g.comp f = idMap B := by
   apply ApproximableMap.ext
   intro X Y
@@ -305,7 +289,6 @@ theorem example_317 : And
   DomainTheory.NeighbourhoodSystems.Exercise317.fg_le_id DomainTheory.NeighbourhoodSystems.Exercise317.gf_eq_id
 end
 
-/-- **`f` is one-one.** Since `g ∘ f = I_B`, the elementwise map of `f` is injective. -/
 theorem f_injective : Function.Injective f.toElementMap := by
   intro x y hxy
   have : (g.comp f).toElementMap x = (g.comp f).toElementMap y := by

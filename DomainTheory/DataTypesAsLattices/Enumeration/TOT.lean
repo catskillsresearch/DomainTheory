@@ -18,8 +18,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- **Scott 1976, TOT.** Graphs of total number-theoretic functions:
-`$`-invariant and integer-valued on integers. -/
 def TOT : Set Pomega :=
   {u | u = funOf dollarC u ∧ ∀ n, ∃ k, funOf u (ofNat n) = ofNat k}
 

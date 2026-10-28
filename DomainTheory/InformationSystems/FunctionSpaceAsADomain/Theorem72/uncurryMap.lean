@@ -24,7 +24,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 open ApproximableMap
 
-/-- The uncurrying of `k : A → (B → C)`. -/
 def uncurryMap (k : ApproximableMap A (functionSystem B C)) :
     ApproximableMap (productSystem A B) C :=
   comp (applyMap (B := B) (C := C))

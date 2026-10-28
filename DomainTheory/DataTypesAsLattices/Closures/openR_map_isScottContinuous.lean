@@ -11,9 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.e
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem openR_map_isScottContinuous :
     IsScottContinuous (fun u => {m | ∃ n, e n ⊆ e m ∧ n ∈ u}) := by

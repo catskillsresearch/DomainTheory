@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (5.9)–(5.10).** -/
 theorem eq_5_9 (x y : Pomega) : squareFst (squarePair x y) = x := by
   ext n
   constructor

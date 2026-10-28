@@ -14,7 +14,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Carrier union of a family of elements. -/
 def familyUnionCarrier (S : Set sys.Element) : Set α :=
   {a | ∃ x ∈ S, a ∈ x.carrier}
 

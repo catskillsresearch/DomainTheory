@@ -67,8 +67,6 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 public import DomainTheory.BridgeTheorems.InfoSysConstructions
 public import DomainTheory.BridgeTheorems.PresentationDomains
 
-
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -84,7 +82,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable {D E : Type*} [CompleteLattice D] [CompleteLattice E]
 
-/-- Scott maps packaged as their conjugates along given presentation isos. -/
 structure ConjScottMap {D' E' : Type*} [PartialOrder D'] [PartialOrder E']
     (ιD : D ≃o D') (ιE : E ≃o E') where
   scott : ScottMap D E

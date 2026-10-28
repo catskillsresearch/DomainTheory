@@ -21,7 +21,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-/-- Least operator solving the (2.17) recursion. -/
+
 def interStep (f : Pomega) : Pomega :=
   graph (fun x => graph (fun y =>
     condSet x (condSet y (ofNat 0) botElem)

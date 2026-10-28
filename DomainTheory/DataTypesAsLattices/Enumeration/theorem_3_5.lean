@@ -102,13 +102,10 @@ theorem case2 {u : Pomega} {p : ℕ → ℕ} {n j k : ℕ}
       fun m => hiff m
   exact theorem_3_4 ⟨hre⟩
 
-/-- **Scott 1976, Theorem 3.5 (The completeness theorem for definability),
-realizer form.** If `q` realizes `p` on values, then `val(p n) = q(val n)`. -/
 theorem of_realizer {val : ℕ → Pomega} {p : ℕ → ℕ} {q : Pomega}
     (hq : ∀ n, val (p n) = funOf q (val n)) :
     ∀ n, val (p n) = funOf q (val n) := hq
 
-/-- **Scott 1976, Theorem 3.5 (Myhill–Shepherdson), construction.** -/
 theorem q (val : ℕ → Pomega) (p : ℕ → ℕ) (j m : ℕ) :
     pair j m ∈ myhillQ val p ↔ m ∈ val (p (fin j)) := by
   constructor
@@ -118,15 +115,11 @@ theorem q (val : ℕ → Pomega) (p : ℕ → ℕ) (j m : ℕ) :
   · intro hm
     exact ⟨j, m, rfl, hm⟩
 
-/-- Appendix inclusion of Theorem 3.5: `val(p(fin j)) ⊆ q(e j)`. -/
 theorem q_app (p : ℕ → ℕ) (j : ℕ) :
     valNat (p (fin j)) ⊆ funOf (myhillQ valNat p) (e j) := by
   intro m hm
   exact ⟨j, subset_rfl, ⟨j, m, rfl, by simpa [valNat.fin_eq] using hm⟩⟩
 
-/-- **Scott 1976, Theorem 3.5 (uniqueness half).** A continuous realizer of
-an extensional map is unique, because continuous maps are determined by
-their values on finite sets. -/
 theorem unique {q q' : Pomega → Pomega}
     (hq : IsScottContinuous q) (hq' : IsScottContinuous q')
     (h : ∀ n, q (e n) = q' (e n)) (x : Pomega) : q x = q' x := by
@@ -136,9 +129,6 @@ theorem unique {q q' : Pomega → Pomega}
 
 end theorem_3_5
 
-/-- **Scott 1976, Theorem 3.5 (The completeness theorem for definability).**
-If a total extensional mapping `p` is LAMBDA-definable, then there is a
-LAMBDA-definable `q` with `val(p n) = q(val n)`. -/
 theorem theorem_3_5 {p : ℕ → ℕ}
     (hp : ∃ u, IsCombinatory u ∧ Realizes u p)
     (hext : Extensional valNat p) :
@@ -157,7 +147,7 @@ theorem theorem_3_5 {p : ℕ → ℕ}
         simpa [this, valNat.fin_eq] using hk
       exact hnin (Set.mem_iUnion.mpr ⟨j,
         Set.mem_iUnion.mpr ⟨by simp [hj], this⟩⟩)
-    -- Case 1: `val n` is infinite; finished after the filter construction.
+
     have hfin : ¬(valNat n).Finite := by
       intro hf
       obtain ⟨j, hj⟩ := exists_code_of_finite hf

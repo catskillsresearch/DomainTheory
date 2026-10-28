@@ -9,11 +9,9 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_more
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem eq_3_8_val : valNat 1 = zeroC := by
   have : valNat 1 = valNat (applyNat 0 0) := by simp [eq_3_8_apply]

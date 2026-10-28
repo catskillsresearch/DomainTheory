@@ -28,7 +28,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- A combinator realizing integer square root. -/
 def sqrtC : Pomega :=
   Scomb ⬝
     (Scomb ⬝ (Kcomb ⬝ primRecZeroC) ⬝ sqrtStepC) ⬝
@@ -40,14 +39,12 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem combinatory : IsCombinatory sqrtC :=
   .app
     (.app .S
       (.app (.app .S (.app .K primRecZeroC.combinatory))
         sqrtStepC.combinatory))
     (.app (.app .S .K) .K)
-
 
 theorem realizes : Realizes sqrtC Nat.sqrt := fun n => by
   rw [sqrtC, Scomb.beta3, Scomb.beta3, Scomb.beta3, Kcomb.beta2, Kcomb.beta2,

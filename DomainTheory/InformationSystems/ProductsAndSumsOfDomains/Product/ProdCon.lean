@@ -22,7 +22,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Consistency for the product system (Scott 6.1(iii)). -/
 def ProdCon (u : Finset (ProdToken A B)) : Prop :=
   fstFinset A B u ∈ A.Con ∧ sndFinset A B u ∈ B.Con
 

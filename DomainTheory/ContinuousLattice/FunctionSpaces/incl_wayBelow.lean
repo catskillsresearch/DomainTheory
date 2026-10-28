@@ -10,17 +10,14 @@ public import Mathlib.Data.Finset.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
-
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
-
 
 section Proposition310
 
@@ -28,8 +25,6 @@ open Finset
 
 namespace IsContinuousLatticeProjection
 
-
-/-- **Scott 1972, Proposition 3.10(iii).** Projections preserve the way-below relation. -/
 theorem incl_wayBelow (P : IsContinuousLatticeProjection D D') (hD' : ContinuousLattice D')
     {x y : D} (h : x ≪ y) : @WayBelow D' _ (P.incl x) (P.incl y) := by
   set W : Set D' := { z' | @WayBelow D' _ z' (P.incl y) }

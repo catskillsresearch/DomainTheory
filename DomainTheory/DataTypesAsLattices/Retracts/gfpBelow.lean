@@ -14,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Greatest postfixed point of `z ↦ f z ∩ b` (Knaster–Tarski inf below `b`). -/
 def gfpBelow (f : Pomega → Pomega) (b : Pomega) : Pomega :=
   ⋃₀ {x | x ⊆ f x ∩ b}
 

@@ -23,7 +23,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-/-- If inserting a non-top `y` creates a top-entailment and `u ⊢ y`, then already `u ⊢ ∇`. -/
 theorem VEnt_insert_top_imp {u : Finset VToken} {y : VToken}
     (hy : y ≠ .top) (hEnt : VEnt u y) (hIns : VEnt (insert y u) .top) :
     VEnt u .top := by

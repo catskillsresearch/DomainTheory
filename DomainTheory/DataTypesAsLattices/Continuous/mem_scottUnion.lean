@@ -6,11 +6,9 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
-
 
 theorem mem_scottUnion {f : Pomega → Pomega} {x : Pomega} {k : ℕ} :
     k ∈ scottUnion f x ↔ ∃ n, e n ⊆ x ∧ k ∈ f (e n) := by

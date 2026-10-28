@@ -20,7 +20,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- The uniform operator `u ↦ λm∈ω. u(apply(m)(num(m)))`. -/
 def secondRecOperator : Pomega :=
   funOf (funOf Scomb (funOf Kcomb dollarC))
     (funOf (funOf Scomb

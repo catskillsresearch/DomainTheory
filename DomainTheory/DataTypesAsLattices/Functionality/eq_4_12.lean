@@ -10,11 +10,8 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tensorR_app
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (4.12).** `(a ⊗ b) ∘ (a' ⊗ b') = (a ∘ a') ⊗ (b ∘ b')`. -/
 theorem eq_4_12 (a b a' b' : Pomega) :
     comp (tensorR a b) (tensorR a' b') = tensorR (comp a a') (comp b b') := by
   apply graph_ext

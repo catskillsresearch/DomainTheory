@@ -12,7 +12,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-/-- **Proposition 5.4(i).** Identity approximable mapping given by entailment. -/
 def idMap : ApproximableMap A A where
   rel u v := u ∈ A.Con ∧ v ∈ A.Con ∧ A.EntSet u v
   rel_dom h := h.1
@@ -32,11 +31,10 @@ def idMap : ApproximableMap A A where
     exact proposition_2_3_iv A hu' hv
       (proposition_2_3_iv A hu' hu hEntu huv) hEntv
 
-/-- **Proposition 5.4(ii).** `I_A(x) = x`. -/
 theorem idMap.toElement (x : A.Element) : (idMap A).toElement x = x := by
   apply le_antisymm
   · intro Y ⟨u, hu, hrel⟩
-    -- hrel.2.2 : EntSet u {Y}, so Ent u Y
+
     have hEnt : A.Ent u Y := hrel.2.2 Y (Finset.mem_singleton_self Y)
     exact x.closed u Y hu hEnt
   · intro Y hY
@@ -50,6 +48,5 @@ theorem idMap.toElement (x : A.Element) : (idMap A).toElement x = x := by
       exact proposition_2_3_iii A (A.con_sing Y)
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

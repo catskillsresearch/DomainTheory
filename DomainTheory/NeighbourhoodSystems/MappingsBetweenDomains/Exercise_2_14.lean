@@ -1,6 +1,5 @@
 module
 
-
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7
 @[expose] public section
@@ -11,28 +10,17 @@ section
 open NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-/- concordance: source L845 EXERCISE 2.14 isomorphisms of neighbourhoods -/
-/-- **Exercise 2.14 — the correspondence `φ`.** For a domain isomorphism `e` and `X ∈ 𝒟₀`, `φ(X)` is
-the neighbourhood with `e(↑X) = ↑φ(X)` provided by Theorem 2.7. -/
 noncomputable def phi (e : V₀.Element ≃o V₁.Element) {X : Set α} (hX : V₀.mem X) : Set β :=
   Classical.choose (exists_principal_eq_apply_principal e hX)
 
-/-- `φ(X) ∈ 𝒟₁`. -/
 theorem phi_mem (e : V₀.Element ≃o V₁.Element) {X : Set α} (hX : V₀.mem X) :
     V₁.mem (phi e hX) :=
   Classical.choose (Classical.choose_spec (exists_principal_eq_apply_principal e hX))
 
-/-- **Theorem 2.7 defining equation: `e(↑X) = ↑φ(X)`.** -/
 theorem phi_spec (e : V₀.Element ≃o V₁.Element) {X : Set α} (hX : V₀.mem X) :
     e (V₀.principal hX) = V₁.principal (phi_mem e hX) :=
   Classical.choose_spec (Classical.choose_spec (exists_principal_eq_apply_principal e hX))
 
-/-- **Exercise 2.14 — `φ` preserves consistent intersections.** If `X, X'` are consistent
-(`X ∩ X' ∈ 𝒟₀`), then `φ(X ∩ X') = φ(X) ∩ φ(X')`.
-
-`↑(X ∩ X')` is the join of `↑X, ↑X'` in `|𝒟₀|` (the order is inclusion-reversed). `e`/`e.symm`
-preserve this least upper bound, and the join of the consistent principals `↑φ(X), ↑φ(X')` is
-`↑(φ(X) ∩ φ(X'))`. -/
 theorem phi_inter (e : V₀.Element ≃o V₁.Element) {X X' : Set α}
     (hX : V₀.mem X) (hX' : V₀.mem X') (hXX' : V₀.mem (X ∩ X')) :
     phi e hXX' = phi e hX ∩ phi e hX' := by
@@ -78,8 +66,6 @@ theorem phi_inter (e : V₀.Element ≃o V₁.Element) {X X' : Set α}
     exact (V₁.principal_le_iff (phi_mem e hXX') hinter).mp h
   exact Set.Subset.antisymm hsubInter hsub2
 
-/-- **Exercise 2.14 — the approximable mapping of `e` is `φ(X) ⊆ Y`.** For `X ∈ 𝒟₀`,
-`(ofIso e).rel X Y ↔ Y ∈ 𝒟₁ ∧ φ(X) ⊆ Y`. (Immediate from `phi_spec` and `mem_principal`.) -/
 theorem rel_ofIso_iff (e : V₀.Element ≃o V₁.Element) {X : Set α} (hX : V₀.mem X) {Y : Set β} :
     (ofIso e).rel X Y ↔ V₁.mem Y ∧ phi e hX ⊆ Y := by
   constructor

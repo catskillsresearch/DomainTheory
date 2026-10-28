@@ -21,7 +21,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- Closed term for Scott's function-space retract `λu λx. u(x)`. -/
 def funRetractTerm : Term :=
   .lam 0 (.lam 1 (.app (.var 0) (.var 1)))
 

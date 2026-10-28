@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, (5.8).** -/
 theorem eq_5_8 (u : Pomega) : squarePair (squareFst u) (squareSnd u) = u := by
   ext k
   constructor

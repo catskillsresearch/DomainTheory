@@ -13,9 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_isScottCont
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem tagInj_isScottContinuous (i : ℕ) :
     IsScottContinuous (tagInj i) :=

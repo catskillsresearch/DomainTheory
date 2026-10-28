@@ -35,7 +35,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.tagInj
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- One continuous step of (4.43), dispatched on the (4.44) tags. -/
 def Hstep (H e t : Pomega) : Pomega :=
   dcondSet (expTag e) (hVar e t)
     (dcondSet (predSet (expTag e)) hZero

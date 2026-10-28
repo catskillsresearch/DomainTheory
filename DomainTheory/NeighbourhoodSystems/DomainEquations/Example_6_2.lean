@@ -13,9 +13,6 @@ section
 open NeighborhoodSystem ApproximableMap ExampleB
 namespace Example62
 
-/- concordance: source L3510 EXAMPLE 6.2 sequence domain equations -/
-/-- **Example 6.2 — the shape of a `B`-neighbourhood.** Every neighbourhood of `B` is either the
-master `Σ* = cone []`, a `0`-copy `0X` with `X ∈ B`, or a `1`-copy `1X` with `X ∈ B`. -/
 theorem memB_cases {W : Set Str} (hW : B.mem W) :
     W = Set.univ ∨ (∃ X, B.mem X ∧ W = embBit false X) ∨ (∃ Y, B.mem Y ∧ W = embBit true Y) := by
   obtain ⟨σ, rfl⟩ := hW
@@ -26,12 +23,9 @@ theorem memB_cases {W : Set Str} (hW : B.mem W) :
     | false => exact Or.inr (Or.inl ⟨cone σ', memB_cone σ', (embBit_cone false σ').symm⟩)
     | true => exact Or.inr (Or.inr ⟨cone σ', memB_cone σ', (embBit_cone true σ').symm⟩)
 
-/-- Prepending a bit lands back in `B`. -/
 theorem memB_embBit (b : Bool) {X : Set Str} (hX : B.mem X) : B.mem (embBit b X) := by
   rw [embBit_eq_prepend]; exact memB_prepend [b] hX
 
-/-- If `bW ∈ B` then `W ∈ B`: a `b`-prefixed neighbourhood that lands in `B` must be `b·(cone w')`,
-so `W = cone w'`. -/
 theorem memB_embBit_inv {b : Bool} {W : Set Str} (h : B.mem (embBit b W)) : B.mem W := by
   obtain ⟨σ, hσ⟩ := h
   have hmem : σ ∈ embBit b W := hσ ▸ (show σ ∈ cone σ from List.prefix_rfl)
@@ -66,9 +60,6 @@ theorem sum_mem_nonempty {W : Set (Option (Str ⊕ Str))} (h : BB.mem W) : W.Non
   · exact inj₀_nonempty (B_nonempty X hX)
   · exact inj₁_nonempty (B_nonempty Y hY)
 
-/-- **Example 6.2 — forward half of `B ≅ B + B`.** An element `x` of `B` is sent to the sum element
-recording, for each branch, whether `x` reaches the `0`-copy `0X` (left summand) or the `1`-copy `1Y`
-(right summand). -/
 def toBB (x : B.Element) : BB.Element where
   mem W := W = sumMaster B B
     ∨ (∃ X, B.mem X ∧ W = inj₀ X ∧ x.mem (embBit false X))
@@ -139,7 +130,6 @@ def toBB (x : B.Element) : BB.Element where
     · rwa [inj₁_injective heq]
   · intro hz; exact Or.inr (Or.inr ⟨Y, hY, rfl, hz⟩)
 
-/-- **Example 6.2 — inverse half of `B ≅ B + B`.** -/
 def fromBB (s : BB.Element) : B.Element where
   mem W := W = Set.univ
     ∨ (∃ X, B.mem X ∧ W = embBit false X ∧ s.mem (inj₀ X))
@@ -240,7 +230,6 @@ theorem toBB_fromBB (s : BB.Element) : toBB (fromBB s) = s := by
     · exact Or.inr (Or.inl ⟨X, hX, rfl, (fromBB_mem_embF hX).mpr hW⟩)
     · exact Or.inr (Or.inr ⟨Y, hY, rfl, (fromBB_mem_embT hY).mpr hW⟩)
 
-/-- **Example 6.2 (Scott 1981, PRG-19) — the isomorphism `|B| ≃o |B + B|`.** -/
 def bbEquiv : B.Element ≃o BB.Element where
   toFun := toBB
   invFun := fromBB
@@ -260,9 +249,6 @@ def bbEquiv : B.Element ≃o BB.Element where
       · exact Or.inr (Or.inl ⟨X, hX, rfl, h _ hzX⟩)
       · exact Or.inr (Or.inr ⟨Y, hY, rfl, h _ hzY⟩)
 
-/-- **Example 6.2 (Scott 1981, PRG-19) — the domain equation `B ≅ B + B`.** Scott's binary-sequence
-domain `B` is, as a domain, isomorphic to `B + B`: a sequence is bottom, or begins with `0`, or begins
-with `1`, the two non-bottom cases giving the two summands. -/
 theorem B_domain_equation : B ≅ᴰ sum B B B_nonempty B_nonempty :=
   ⟨bbEquiv⟩
 
@@ -279,20 +265,11 @@ section
 variable {β : Type*} {n : ℕ}
 variable {n : ℕ}
 
-/-- The slot prefix `i 1ʲ 0`: the leading tag bit `i` (Scott's `+/−`), then `j` ones, then a zero.
-Reaching component `j` of the tag-`i` tuple means matching this prefix. -/
 def slotPre (i : Bool) (j : ℕ) : Str := i :: (List.replicate j true ++ [false])
 
-/-- **Scott's tag-`i` tuple neighbourhood** `i ⋃_{j<n} 1ʲ0 X_j`: the union of the `n` slots, slot `j`
-holding `X j` behind the prefix `i 1ʲ 0`. (For `i = false`/`true` these are Scott's left/right
-copies, the `−`/`+` summands.) -/
 def embTuple (i : Bool) (X : Fin n → Set Str) : Set Str :=
   {w | ∃ j : Fin n, ∃ w', w = slotPre i (j : ℕ) ++ w' ∧ w' ∈ X j}
 
-/-- **Scott's domain `A`** as the *least* family of subsets of `Σ* = {0,1}*` containing (i) the master
-`Σ*` and (ii) every tag-`i` tuple `i ⋃_{j<n} 1ʲ0 X_j` built from components `X j` already in `A`:
-
-`A = {Σ*} ∪ ⋃_{i∈{0,1}} { i ⋃_{j<n} 1ʲ0 X_j ∣ X_j ∈ A }`. -/
 inductive MemA (n : ℕ) : Set Str → Prop
   | univ : MemA n Set.univ
   | tuple (i : Bool) {X : Fin n → Set Str} : (∀ j, MemA n (X j)) → MemA n (embTuple i X)
@@ -302,8 +279,6 @@ end
 section
 variable {β : Type*} {n : ℕ}
 
-/-- The *proper product* neighbourhood `⋃_{j<n} {j} × X_j`: token `(j, b)` lies in it iff `b ∈ X_j`.
-This is the `n`-ary analogue of `prodNbhd` (Definition 3.1). -/
 def prodN (X : Fin n → Set β) : Set (Fin n × β) := {p | p.2 ∈ X p.1}
 
 @[simp] theorem mem_prodN {X : Fin n → Set β} {p : Fin n × β} : p ∈ prodN X ↔ p.2 ∈ X p.1 := Iff.rfl
@@ -322,10 +297,6 @@ theorem prodN_subset {X X' : Fin n → Set β} : prodN X ⊆ prodN X' ↔ ∀ j,
   · intro h j b hb; exact h (show (j, b) ∈ prodN X from hb)
   · intro h p hp; exact h p.1 hp
 
-/-- **The positive `n`-fold product `Vⁿ`** of a neighbourhood system `V`, over `Fin n × β`.
-The assumption `0 < n` is necessary because Scott's token set `Fin n × Δ` must be non-empty.
-Its neighbourhoods are exactly the proper products `prodN X` with each component `X j ∈ V`;
-closure under intersection is componentwise. -/
 def npow (V : NeighborhoodSystem β) (n : ℕ) (hn : 0 < n) : NeighborhoodSystem (Fin n × β) where
   mem W := ∃ X : Fin n → Set β, (∀ j, V.mem (X j)) ∧ W = prodN X
   master := prodN (fun _ => V.master)
@@ -360,7 +331,6 @@ theorem embTuple_nonempty {i : Bool} {X : Fin n → Set Str} (j : Fin n) (h : (X
   obtain ⟨a, ha⟩ := h
   exact ⟨slotPre i (j : ℕ) ++ a, j, a, rfl, ha⟩
 
-/-- Under `0 < n` every neighbourhood of `A` is non-empty (Scott's `∅ ∉ A`). -/
 theorem memA_nonempty (hn : 0 < n) : ∀ {W}, MemA n W → W.Nonempty := by
   intro W hW
   induction hW with
@@ -382,15 +352,12 @@ end
 section
 variable {β : Type*} {n : ℕ}
 
-/-- Under Scott's standing assumption `∅ ∉ V`, no neighbourhood of `Vⁿ` is empty (provided `0 < n`,
-so there is a coordinate to witness). -/
 theorem npow_nonempty {V : NeighborhoodSystem β} (hn : 0 < n)
     (hV : ∀ X, V.mem X → X.Nonempty) : ∀ W, (npow V n hn).mem W → W.Nonempty := by
   rintro W ⟨X, hX, rfl⟩
   obtain ⟨b, hb⟩ := hV (X ⟨0, hn⟩) (hX ⟨0, hn⟩)
   exact ⟨(⟨0, hn⟩, b), hb⟩
 
-/-- Parsing the `1ʲ0` body: the position of the first `false` pins down `j` and the remainder. -/
 theorem slot_list_inj : ∀ (j j' : ℕ) (u v : Str),
     List.replicate j true ++ false :: u = List.replicate j' true ++ false :: v → j = j' ∧ u = v
   | 0, 0, u, v, h => by simpa using h
@@ -402,8 +369,6 @@ theorem slot_list_inj : ∀ (j j' : ℕ) (u v : Str),
       obtain ⟨hj, hu⟩ := slot_list_inj j j' u v h.2
       exact ⟨by rw [hj], hu⟩
 
-/-- **Uniqueness of slot decomposition.** A token `i 1ʲ 0 u` determines the tag `i`, the index `j`,
-and the remainder `u`. This is what makes the slots pairwise disjoint. -/
 theorem slotPre_inj {i i' : Bool} {j j' : ℕ} {u v : Str}
     (h : slotPre i j ++ u = slotPre i' j' ++ v) : i = i' ∧ j = j' ∧ u = v := by
   rw [slotPre, slotPre, List.cons_append, List.cons_append, List.cons.injEq] at h
@@ -461,7 +426,6 @@ theorem embTuple_injective {i : Bool} {X X' : Fin n → Set Str}
   intro j
   exact Set.Subset.antisymm (embTuple_subset.mp h.subset j) (embTuple_subset.mp h.symm.subset j)
 
-/-- Inversion: the components of a tuple-shaped neighbourhood of `A` are themselves in `A`. -/
 theorem memA_tuple_inv (hn : 0 < n) {i : Bool} {X : Fin n → Set Str}
     (h : MemA n (embTuple i X)) : ∀ j, MemA n (X j) := by
   generalize hW : embTuple i X = W at h
@@ -481,17 +445,12 @@ theorem memA_tuple_inv (hn : 0 < n) {i : Bool} {X : Fin n → Set Str}
     subst hii
     intro k; rw [embTuple_injective hW k]; exact hX' k
 
-/-- A non-empty witness contained in a tag-`i'` tuple must carry the tag `i'`. -/
 theorem tag_eq_of_subset (hn : 0 < n) {i i' : Bool} {Z V : Fin n → Set Str}
     (hZ : ∀ j, MemA n (Z j)) (hsub : embTuple i Z ⊆ embTuple i' V) : i = i' := by
   obtain ⟨a, ha⟩ := memA_nonempty hn (hZ ⟨0, hn⟩)
   obtain ⟨j', v, he, -⟩ := hsub ⟨⟨0, hn⟩, a, rfl, ha⟩
   exact (slotPre_inj he).1
 
-/-- **`A` is closed under consistent intersection.** Scott's verification, by induction on the way `X`
-entered `A`: the cross case `embTuple false · ∩ embTuple true ·` collapses to `∅` (killed by the
-non-empty witness), the same-tag case combines componentwise (recursing on the consistency witness's
-slots). -/
 theorem memA_inter (hn : 0 < n) :
     ∀ {X}, MemA n X → ∀ {Y}, MemA n Y → ∀ {Z}, MemA n Z → Z ⊆ X ∩ Y → MemA n (X ∩ Y) := by
   intro X hX
@@ -519,7 +478,6 @@ theorem memA_inter (hn : 0 < n) :
         obtain ⟨z, hz⟩ := memA_nonempty hn hZ
         exact Set.notMem_empty z (hsub hz)
 
-/-- **Scott's domain `A`** packaged as a neighbourhood system over `{0,1}*` (needs `0 < n`). -/
 def Asys (n : ℕ) (hn : 0 < n) : NeighborhoodSystem Str where
   mem := MemA n
   master := Set.univ
@@ -532,13 +490,11 @@ def Asys (n : ℕ) (hn : 0 < n) : NeighborhoodSystem Str where
 
 @[simp] theorem Asys_master {hn : 0 < n} : (Asys n hn).master = Set.univ := rfl
 
-/-- The `n`-fold product `Aⁿ = npow A n`. -/
 abbrev Apow (hn : 0 < n) : NeighborhoodSystem (Fin n × Str) := npow (Asys n hn) n hn
 
 theorem apowNe (hn : 0 < n) : ∀ W, (Apow hn).mem W → W.Nonempty :=
   npow_nonempty hn (fun _ h => memA_nonempty hn h)
 
-/-- The right-hand side of Scott's equation: the separated sum `Aⁿ + Aⁿ`. -/
 abbrev AAsys (hn : 0 < n) : NeighborhoodSystem (Option ((Fin n × Str) ⊕ (Fin n × Str))) :=
   sum (Apow hn) (Apow hn) (apowNe hn) (apowNe hn)
 
@@ -579,9 +535,6 @@ theorem apow_mem_prodN_inv (hn : 0 < n) {X : Fin n → Set Str} (h : (Apow hn).m
   obtain ⟨X', hX', heq⟩ := h
   intro j; rw [prodN_injective heq j]; exact hX' j
 
-/-- **Forward half of `A ≅ Aⁿ + Aⁿ`.** An element `z` of `A` is sent to the sum element recording, for
-each branch, whether `z` reaches the left copy `0X` (left summand `Aⁿ`) or the right copy `1Y` (right
-summand `Aⁿ`). -/
 def toAA (hn : 0 < n) (z : (Asys n hn).Element) : (AAsys hn).Element where
   mem W := W = sumMaster (Apow hn) (Apow hn)
     ∨ (∃ X, (∀ j, MemA n (X j)) ∧ W = inj₀ (prodN X) ∧ z.mem (embTuple false X))
@@ -660,7 +613,6 @@ def toAA (hn : 0 < n) (z : (Asys n hn).Element) : (AAsys hn).Element where
     · rw [funext (prodN_injective (inj₁_injective heq))]; exact hz
   · intro hz; exact Or.inr (Or.inr ⟨Y, hY, rfl, hz⟩)
 
-/-- **Inverse half of `A ≅ Aⁿ + Aⁿ`.** -/
 def fromAA (hn : 0 < n) (s : (AAsys hn).Element) : (Asys n hn).Element where
   mem W := W = Set.univ
     ∨ (∃ X, (∀ j, MemA n (X j)) ∧ W = embTuple false X ∧ s.mem (inj₀ (prodN X)))
@@ -767,7 +719,6 @@ theorem toAA_fromAA (hn : 0 < n) (s : (AAsys hn).Element) : toAA hn (fromAA hn s
     · obtain ⟨Y, hY, rfl⟩ := hV
       exact Or.inr (Or.inr ⟨Y, hY, rfl, (fromAA_mem_embT hn hY).mpr hW⟩)
 
-/-- **The isomorphism `|A| ≃o |Aⁿ + Aⁿ|`.** -/
 def aaEquiv (hn : 0 < n) : (Asys n hn).Element ≃o (AAsys hn).Element where
   toFun := toAA hn
   invFun := fromAA hn
@@ -789,10 +740,6 @@ def aaEquiv (hn : 0 < n) : (Asys n hn).Element ≃o (AAsys hn).Element where
       · exact Or.inr (Or.inl ⟨X, hX, rfl, h _ hzX⟩)
       · exact Or.inr (Or.inr ⟨Y, hY, rfl, h _ hzY⟩)
 
-/-- **Example 6.2 (Scott 1981, PRG-19) — the domain equation `A ≅ Aⁿ + Aⁿ`.** Scott's "simple, yet
-interesting generalization of `B`": the domain `A` over `{0,1}*` (whose non-`⊥` elements are the two
-copies — left `−` and right `+` — of an `n`-tuple of elements of `A`) is isomorphic to the separated
-sum `Aⁿ + Aⁿ` of two copies of its own `n`-fold cartesian power. -/
 theorem A_domain_equation (hn : 0 < n) : Asys n hn ≅ᴰ AAsys hn := ⟨aaEquiv hn⟩
 
 end
@@ -801,12 +748,12 @@ end Example62A
 open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 
 section
-/-- Left tag `0a = some (inl a)`. -/
+
 def t0 {α β γ : Type*} (a : α) : Option (α ⊕ β ⊕ γ) := some (Sum.inl a)
 end
 
 section
-/-- The tagged left copy `0X`. -/
+
 def j0 {α β γ : Type*} (X : Set α) : Set (Option (α ⊕ β ⊕ γ)) := {w | ∃ a, w = t0 a ∧ a ∈ X}
 end
 
@@ -820,12 +767,12 @@ variable {α β γ : Type*}
 end
 
 section
-/-- Middle tag `1b = some (inr (inl b))`. -/
+
 def t1 {α β γ : Type*} (b : β) : Option (α ⊕ β ⊕ γ) := some (Sum.inr (Sum.inl b))
 end
 
 section
-/-- The tagged middle copy `1Y`. -/
+
 def j1 {α β γ : Type*} (Y : Set β) : Set (Option (α ⊕ β ⊕ γ)) := {w | ∃ b, w = t1 b ∧ b ∈ Y}
 end
 
@@ -840,12 +787,12 @@ variable {α β γ : Type*}
 end
 
 section
-/-- Right tag `2c = some (inr (inr c))`. -/
+
 def t2 {α β γ : Type*} (c : γ) : Option (α ⊕ β ⊕ γ) := some (Sum.inr (Sum.inr c))
 end
 
 section
-/-- The tagged right copy `2Z`. -/
+
 def j2 {α β γ : Type*} (Z : Set γ) : Set (Option (α ⊕ β ⊕ γ)) := {w | ∃ c, w = t2 c ∧ c ∈ Z}
 end
 
@@ -956,7 +903,6 @@ section
 variable {α β γ : Type*}
 variable (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ)
 
-/-- The master neighbourhood of the three-way sum: `{Λ} ∪ 0Δ₀ ∪ 1Δ₁ ∪ 2Δ₂`. -/
 def master3 : Set (Option (α ⊕ β ⊕ γ)) :=
   insert none (j0 V₀.master ∪ j1 V₁.master ∪ j2 V₂.master)
 end
@@ -971,13 +917,11 @@ variable {V₀ V₁ V₂}
 
 namespace Example62C
 
-/-- Scott's standing assumption `∅ ∉ C`: every neighbourhood of `C` is nonempty. -/
 theorem C_nonempty : ∀ X, C.mem X → X.Nonempty := by
   rintro X (⟨σ, rfl⟩ | ⟨σ, rfl⟩)
   · exact ⟨σ, List.prefix_rfl⟩
   · exact ⟨σ, rfl⟩
 
-/-- `b{σ} = {bσ}`: prepending a bit to a singleton. -/
 theorem embBit_singleton (b : Bool) (σ : Str) : embBit b ({σ} : Set Str) = {(b :: σ : Str)} := by
   rw [embBit_eq_prepend, Example44.prepend_singleton]; rfl
 
@@ -1018,8 +962,6 @@ theorem master3_inter_j2 {Z : Set γ} (hZ : V₂.mem Z) :
 
 namespace Example62C
 
-/-- **Example 6.2 — the shape of a `C`-neighbourhood.** Every neighbourhood of `C` is the master
-`Σ* = cone []`, the terminator `{Λ} = {[]}`, a `0`-copy `0X` with `X ∈ C`, or a `1`-copy `1X`. -/
 theorem memC_cases {W : Set Str} (hW : C.mem W) :
     W = Set.univ ∨ W = ({[]} : Set Str)
       ∨ (∃ X, C.mem X ∧ W = embBit false X) ∨ (∃ Y, C.mem Y ∧ W = embBit true Y) := by
@@ -1039,11 +981,9 @@ theorem memC_cases {W : Set Str} (hW : C.mem W) :
       | true =>
         exact Or.inr (Or.inr (Or.inr ⟨{σ'}, memC_singleton σ', (embBit_singleton true σ').symm⟩))
 
-/-- Prepending a bit lands back in `C`. -/
 theorem memC_embBit (b : Bool) {X : Set Str} (hX : C.mem X) : C.mem (embBit b X) := by
   rw [embBit_eq_prepend]; exact Example44.memC_prepend [b] hX
 
-/-- If `bW ∈ C` then `W ∈ C`. -/
 theorem memC_embBit_inv {b : Bool} {W : Set Str} (h : C.mem (embBit b W)) : C.mem W := by
   rcases h with ⟨σ, hσ⟩ | ⟨σ, hσ⟩
   · have hmem : σ ∈ embBit b W := hσ ▸ (show σ ∈ cone σ from List.prefix_rfl)
@@ -1072,8 +1012,6 @@ theorem singleton_nil_ne_univ : ({[]} : Set Str) ≠ Set.univ := by
 
 end Example62C
 
-/-- **Example 6.2 — the three-way separated sum `D₀ + D₁ + D₂`** over `{Λ} ∪ 0Δ₀ ∪ 1Δ₁ ∪ 2Δ₂`,
-under the standing assumption that no neighbourhood of any factor is empty. -/
 def sum3 (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ)
     (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
     (h₂ : ∀ Z, V₂.mem Z → Z.Nonempty) : NeighborhoodSystem (Option (α ⊕ β ⊕ γ)) where
@@ -1143,11 +1081,9 @@ def sum3 (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : N
 
 namespace Example62C
 
-/-- `𝟙` is positive: its single neighbourhood `univ` (over the inhabited `Unit`) is nonempty. -/
 theorem unitSys_nonempty : ∀ X, unitSys.mem X → X.Nonempty := by
   rintro X rfl; exact Set.univ_nonempty
 
-/-- The right-hand side of the domain equation: the three-way sum `𝟙 + C + C`. -/
 abbrev CC : NeighborhoodSystem (Option (Unit ⊕ Str ⊕ Str)) :=
   sum3 unitSys C C unitSys_nonempty C_nonempty C_nonempty
 
@@ -1172,7 +1108,6 @@ theorem sum3_mem_nonempty {W : Set (Option (Unit ⊕ Str ⊕ Str))} (h : CC.mem 
   · exact j1_nonempty (C_nonempty Y hY)
   · exact j2_nonempty (C_nonempty Z hZ)
 
-/-- **Example 6.2 — forward half of `C ≅ 𝟙 + C + C`.** -/
 def toCC (x : C.Element) : CC.Element where
   mem W := W = master3 unitSys C C
     ∨ (W = j0 (Set.univ : Set Unit) ∧ x.mem ({[]} : Set Str))
@@ -1286,7 +1221,6 @@ def toCC (x : C.Element) : CC.Element where
     · rw [j2_injective heqj]; exact hz
   · intro hz; exact Or.inr (Or.inr (Or.inr ⟨Y, hY, rfl, hz⟩))
 
-/-- **Example 6.2 — inverse half of `C ≅ 𝟙 + C + C`.** -/
 def fromCC (s : CC.Element) : C.Element where
   mem W := W = Set.univ
     ∨ (W = ({[]} : Set Str) ∧ s.mem (j0 (Set.univ : Set Unit)))
@@ -1434,7 +1368,6 @@ theorem toCC_fromCC (s : CC.Element) : toCC (fromCC s) = s := by
     · exact Or.inr (Or.inr (Or.inl ⟨X, hX, rfl, (fromCC_mem_embF hX).mpr hW⟩))
     · exact Or.inr (Or.inr (Or.inr ⟨Y, hY, rfl, (fromCC_mem_embT hY).mpr hW⟩))
 
-/-- **Example 6.2 (Scott 1981, PRG-19) — the isomorphism `|C| ≃o |𝟙 + C + C|`.** -/
 def ccEquiv : C.Element ≃o CC.Element where
   toFun := toCC
   invFun := fromCC
@@ -1456,10 +1389,6 @@ def ccEquiv : C.Element ≃o CC.Element where
       · exact Or.inr (Or.inr (Or.inl ⟨X, hX, rfl, h _ hz⟩))
       · exact Or.inr (Or.inr (Or.inr ⟨Y, hY, rfl, h _ hz⟩))
 
-/-- **Example 6.2 (Scott 1981, PRG-19) — the domain equation `C ≅ {{Λ}} + C + C`.** Scott's domain
-`C` of finite-or-infinite binary sequences is, as a domain, isomorphic to the three-way separated sum
-`𝟙 + C + C`: a sequence is bottom, the finished empty sequence `Λ` (the `𝟙` summand), or begins with
-`0` or `1` (the two `C` summands). -/
 theorem C_domain_equation :
     C ≅ᴰ sum3 unitSys C C unitSys_nonempty C_nonempty C_nonempty :=
   ⟨ccEquiv⟩
@@ -1482,22 +1411,14 @@ open Language
 section
 variable {n : ℕ}
 
-/-- A **total tree** over the alphabet `Σ = Fin n` (Scott's `n`-ary `±` tree): an assignment of a
-`±` label (`Bool`, `true = +`) to every node, addressed by a finite selector `σ ∈ Σ*`. A tree is
-*total* in Scott's sense (every node carries a genuine label), as opposed to the partial elements of
-the domain `A` of `Example62A.lean` where labels may be `⊥`. -/
 abbrev Tree (n : ℕ) : Type := List (Fin n) → Bool
 
-/-- Scott's `pos : A → T`: the `±` label at the **root** of the tree (`pos(±⟨…⟩) = true/false`). -/
 def pos (a : Tree n) : Bool := a []
 
-/-- Scott's subtree selector `σ ↦ aσ`: the subtree of `a` reached by the selector `σ`. Defined so
-that `(aσ)τ = a(στ)`; the `pos`-label at node `τ` of `aσ` is the label at node `στ` of `a`. -/
 def select (a : Tree n) (σ : List (Fin n)) : Tree n := fun τ => a (σ ++ τ)
 
 @[simp] theorem select_apply (a : Tree n) (σ τ : List (Fin n)) : select a σ τ = a (σ ++ τ) := rfl
 
-/-- The `i`-th immediate subtree `aᵢ = a i` (Scott's children of the root node). -/
 def child (a : Tree n) (i : Fin n) : Tree n := select a [i]
 
 @[simp] theorem select_nil (a : Tree n) : select a [] = a := by
@@ -1506,36 +1427,23 @@ def child (a : Tree n) (i : Fin n) : Tree n := select a [i]
 @[simp] theorem pos_select (a : Tree n) (σ : List (Fin n)) : pos (select a σ) = a σ := by
   simp [pos]
 
-/-- **Scott's language of a tree.** `L_a = {σ ∈ Σ* ∣ pos(aσ) = true}` — the selectors that land on a
-`+` node. Equivalently (by `pos_select`) the set of `σ` with `a σ = true`. A `Language (Fin n)` is
-just a set of words over the alphabet, exactly Scott's "language". -/
 def treeLang (a : Tree n) : Language (Fin n) := {σ | a σ = true}
 
 @[simp] theorem mem_treeLang {a : Tree n} {σ : List (Fin n)} : σ ∈ treeLang a ↔ a σ = true := Iff.rfl
 
-/-- **Eventual periodicity (Scott).** A tree `a` is *eventually periodic* iff the set of its subtrees
-`{aσ ∣ σ ∈ Σ*}` is finite. (Equivalently — by the picture — the tree is built from finitely many
-distinct subtrees, so it is "ultimately periodic" along every branch.) -/
 def EventuallyPeriodic (a : Tree n) : Prop := (Set.range (select a)).Finite
 
-/-- Composing selectors: `a(στ) = (aσ)τ`. -/
 theorem select_append (a : Tree n) (σ τ : List (Fin n)) :
     select a (σ ++ τ) = select (select a σ) τ := by
   funext ρ; simp [List.append_assoc]
 
-/-- **Scott's selector recursion, step `a(iσ) = (aᵢ)σ`.** Reading the digit `i` then `σ` is the same
-as descending to the `i`-th child `aᵢ` and reading `σ` there. -/
 theorem select_cons (a : Tree n) (i : Fin n) (σ : List (Fin n)) :
     select a (i :: σ) = select (child a i) σ := by
   funext τ; simp [child]
 
-/-- `L_a` is genuinely `{σ ∣ pos(aσ) = true}` as Scott writes it. -/
 theorem treeLang_eq_pos (a : Tree n) : treeLang a = {σ | pos (select a σ) = true} := by
   simp only [pos_select]; rfl
 
-/-- The label function recovers the tree from its language, so `treeLang` is **one-one**: two trees
-with the same language are the same tree (a node's `±` label is recorded by whether its selector is
-in the language). -/
 theorem treeLang_injective : Function.Injective (treeLang (n := n)) := by
   intro a a' h
   funext σ
@@ -1543,18 +1451,11 @@ theorem treeLang_injective : Function.Injective (treeLang (n := n)) := by
   simp only [mem_treeLang] at hmem
   cases ha : a σ <;> cases ha' : a' σ <;> simp_all
 
-/-- **The subtree is the left quotient.** `L_{aσ} = σ⁻¹ L_a`: the language of the subtree reached by
-reading `σ` is exactly the *left quotient* of `L_a` by `σ` (the residual / "state after reading
-`σ`"). This is the heart of Scott's "`a` is the initial state, `aσ` the state after reading `σ`". -/
 theorem treeLang_select (a : Tree n) (σ : List (Fin n)) :
     treeLang (select a σ) = (treeLang a).leftQuotient σ := by
   ext τ
   simp only [mem_treeLang, select_apply, Language.mem_leftQuotient]
 
-/-- **Scott's closing claim, made precise (Example 6.2).** A tree's language `L_a` is a *regular
-event* of automata theory **iff** the tree is eventually periodic. This is the Myhill–Nerode theorem
-in disguise: the subtrees `aσ` are the left quotients `σ⁻¹ L_a` (`treeLang_select`), so "finitely many
-subtrees" is "finitely many left quotients", which Myhill–Nerode equates with regularity. -/
 theorem eventuallyPeriodic_iff_isRegular (a : Tree n) :
     EventuallyPeriodic a ↔ (treeLang a).IsRegular := by
   have hcomp : (treeLang a).leftQuotient = treeLang ∘ select a :=
@@ -1562,10 +1463,6 @@ theorem eventuallyPeriodic_iff_isRegular (a : Tree n) :
   rw [Language.isRegular_iff_finite_range_leftQuotient, hcomp, Set.range_comp]
   exact (Set.finite_image_iff (treeLang_injective.injOn)).symm
 
-/-- The inverse half of Scott's claim: **every regular event arises** as the language of an eventually
-periodic tree. Concretely, take the tree whose root labels record membership in `L`; reading a tape
-`σ` lands on the residual language `σ⁻¹ L`, of which there are finitely many exactly when `L` is
-regular. -/
 theorem isRegular_iff_exists_eventuallyPeriodic (L : Language (Fin n)) :
     L.IsRegular ↔ ∃ a : Tree n, EventuallyPeriodic a ∧ treeLang a = L := by
   classical
@@ -1589,7 +1486,6 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-/-- The master neighbourhood `{Λ} ∪ 0Δ₀ ∪ 1Δ₁` of the concrete sum. -/
 def sumTokMaster (D₀ D₁ : NeighborhoodSystem Str) : Set Str :=
   insert [] (embBit false D₀.master ∪ embBit true D₁.master)
 

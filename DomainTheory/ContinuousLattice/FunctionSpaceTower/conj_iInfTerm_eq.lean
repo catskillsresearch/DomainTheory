@@ -8,7 +8,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_7_proj
 
 namespace DomainTheory.ContinuousLattice
 
-
 attribute [instance] CLat.str
 
 section LimitMaps
@@ -21,9 +20,6 @@ section Thm44b
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-/-- **Diagonal simplification.** `conjMap (j_{∞n}, i_{n∞})` applied to the `n`-th summand of `i_∞`
-recovers the component `x_{n+1}`. This is Proposition 3.7's equation
-`j_{[·]} ∘ i_{[·]} = id`, diagonally specialized to the projection from Proposition 4.2. -/
 theorem conj_iInfTerm_eq (n : ℕ) (x : DInf D₀ j₀) :
     conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
             (embInf (towerType D₀) (towerProj D₀ j₀) n)

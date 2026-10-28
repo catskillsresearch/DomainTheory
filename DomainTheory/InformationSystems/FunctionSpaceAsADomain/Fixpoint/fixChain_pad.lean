@@ -33,5 +33,4 @@ theorem fixChain_pad {w : Finset (FunToken A A)} {n k : Nat} {v : Finset α}
 
 end InfoSys
 
-
 end DomainTheory.InformationSystems

@@ -19,7 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Least upper bound of fixed points above `x`: `⋃_n fⁿ(x)`. -/
 def lfpAbove (f : Pomega → Pomega) (x : Pomega) : Pomega :=
   ⋃ n, iterateFrom f x n
 

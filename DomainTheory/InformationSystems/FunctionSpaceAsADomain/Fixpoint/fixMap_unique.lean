@@ -8,7 +8,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -17,11 +16,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
-
 namespace ApproximableMap
 
-
-/-- Uniqueness of `fix` as an approximable operator (Scott Thm 7.3). -/
 theorem fixMap_unique (φ : ApproximableMap (functionSystem A A) A)
     (hpre : ∀ f : ApproximableMap A A,
       f.toElement (φ.toElement (approxMap_toElement A A f)) ≤

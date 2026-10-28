@@ -20,7 +20,6 @@ variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 
 namespace scottTopologicalSpace
 
-/-- The Scott topology of a partial order is `T₀`. -/
 theorem t0Space : @T0Space D scottTopologicalSpace := by
   let : TopologicalSpace D := scottTopologicalSpace
   have : IsScott D (@Set.univ (Set D)) := ⟨rfl⟩

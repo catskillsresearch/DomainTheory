@@ -23,7 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Theorem 5.1 packaged as a concrete countably algebraic lattice. -/
 def closureRangeCountablyAlgebraic (a : Pomega) (ha : Closure a) :
     CountablyAlgebraic (Fixpoints (funOf a)) where
   compact := closureCompact a ha

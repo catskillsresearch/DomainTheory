@@ -20,7 +20,6 @@ namespace ApproximableMap
 
 variable {A : InfoSys α} {B : InfoSys β}
 
-/-- **Factoid 4.6 (→).** Every approximable map is Scott-continuous on elements. -/
 def toScottContinuous (f : ApproximableMap A B) : ScottContinuous A B where
   toFun := f.toElement
   mono' := f.toElement_mono

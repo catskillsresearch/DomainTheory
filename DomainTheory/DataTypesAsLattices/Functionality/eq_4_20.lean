@@ -10,11 +10,8 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tensorR_app
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, (4.20).** `fst ∘ (f ⊗ f') = f ∘ fst`. -/
 theorem eq_4_20 (f f' : Pomega) :
     comp fstC (tensorR f f') = comp f fstC := by
   simp only [comp]

@@ -31,10 +31,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 
 open Order
 
-/--
-Semantic factor: `|A + (T × T)| ≃o WithBot (|A| ⊕ (|T| × |T|))` via the generic
-product and separated-sum isos. Not the fixed-point equation itself.
--/
 noncomputable def sexRhsSemanticIso :
     WithBot (lowerBoundSystem.Element ⊕ (SexSys.Element × SexSys.Element)) ≃o
       SexRhs.Element :=

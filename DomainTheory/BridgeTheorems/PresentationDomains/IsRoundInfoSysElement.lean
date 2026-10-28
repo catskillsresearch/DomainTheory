@@ -30,7 +30,6 @@ universe u
 
 variable {D : Type u} [CompleteLattice D] [DecidableEq D]
 
-/-- Roundness transported to InfoSys elements of the `↟`-basis. -/
 class IsRoundInfoSysElement (e : (wayBelowNbhdBasis (D := D)).toInfoSys.Element) : Prop where
   out : Round ((wayBelowNbhdBasis (D := D)).domainOrderIso.symm e)
 

@@ -8,13 +8,11 @@ public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology
 
 variable {D D' D'' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
-
 
 theorem meet_preservesDirectedSup (x : D) (hD : ContinuousLattice D) :
     PreservesDirectedSup (fun z => x ⊓ z) := by

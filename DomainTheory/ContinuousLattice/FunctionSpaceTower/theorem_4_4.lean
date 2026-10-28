@@ -25,27 +25,16 @@ section Thm44d
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-/-- The inverse pair Scott writes down in the proof of Theorem 4.4:
-`i_∞ = embInfInf` and `j_∞ = projInfInf` satisfy `j_∞ ∘ i_∞ = id` and `i_∞ ∘ j_∞ = id`. -/
 theorem theorem_4_4_inverses :
     (projInfInf D₀ j₀).comp (embInfInf D₀ j₀) = ScottMap.idMap ∧
     (embInfInf D₀ j₀).comp (projInfInf D₀ j₀) = ScottMap.idMap :=
   ⟨projInfInf.comp_embInfInf D₀ j₀, embInfInf_comp_projInfInf D₀ j₀⟩
 
-/-- Lattice isomorphism along the same pair `i_∞`, `j_∞`. Scott's abstract also says the spaces
-are isomorphic; this is not the statement of Theorem 4.4 (that statement is the homeomorphism). -/
 noncomputable def theorem_4_4_orderIso : OrderIso (DInf D₀ j₀) (DInfFn D₀ j₀) :=
   (Equiv.mk (embInfInf D₀ j₀) (projInfInf D₀ j₀)
       (projInfInf.embInfInf D₀ j₀) (embInfInf_projInfInf D₀ j₀)).toOrderIso
     (embInfInf D₀ j₀).monotone (projInfInf D₀ j₀).monotone
 
-/-- **Scott 1972, Theorem 4.4** (`sources/ScottContinLatt1972.md`):
-*The inverse limit \(D_\infty\) of the recursively defined sequence
-\(\langle D_n, j_n \rangle_{n=0}^{\infty}\) of function spaces is not only a
-continuous lattice, but it is also homeomorphic to its own function space
-\([D_\infty \to D_\infty]\).*  Here “inverse limit” carries Scott's subspace
-topology from the Pi product, while the function space carries Definition 3.1's
-pointwise/Pi-induced topology. -/
 theorem theorem_4_4 (h₀ : ContinuousLattice D₀.carrier) :
     @ContinuousLattice (DInf D₀ j₀) inferInstance ∧
       Nonempty

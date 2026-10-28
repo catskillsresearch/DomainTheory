@@ -7,7 +7,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.Basi
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -16,11 +15,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
 
-
-/-- Atom/bot-only sets that are consistent at stage `n` are consistent at stage `0`. -/
 theorem LamConN_down_atom {n : ℕ} {u : Finset (RawLamToken α)}
     (hu : LamConN A n u) (hF : lamFunFinset u = ∅) : LamConN A 0 u := by
   induction n generalizing u with

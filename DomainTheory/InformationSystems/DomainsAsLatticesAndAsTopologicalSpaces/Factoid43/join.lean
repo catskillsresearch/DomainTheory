@@ -16,7 +16,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Binary join via deductive closure of `x.carrier ∪ y.carrier`, when consistent. -/
 def join (x y : sys.Element)
     (h : sys.IsFinitelyConsistent (x.carrier ∪ y.carrier)) : sys.Element :=
   sys.deductiveClosure (x.carrier ∪ y.carrier) h
@@ -34,6 +33,5 @@ theorem join.le (x y z : sys.Element)
   exact z.closed u a huZ hEnt
 
 end InfoSys
-
 
 end DomainTheory.InformationSystems

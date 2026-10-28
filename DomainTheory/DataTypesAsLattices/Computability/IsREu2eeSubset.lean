@@ -9,17 +9,14 @@ public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
 
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
 
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-/-- Finite inclusion `e n ⊆ x` is r.e. in `n` when `x` is, via one common `evaln` stage. -/
 theorem IsRE.eSubset {x : Pomega} (hx : IsRE x) :
     REPred fun n => e n ⊆ x := by
   have hf : Partrec fun k : ℕ =>

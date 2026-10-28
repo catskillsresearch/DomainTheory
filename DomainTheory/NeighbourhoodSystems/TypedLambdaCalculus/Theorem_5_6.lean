@@ -20,24 +20,24 @@ open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap pred
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 
 section
-/-- The unknown function `k` (`= proj₀`). -/
+
 def kSel : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) (funSpace (prod N N) N) :=
   proj₀ (funSpace (prod N N) N) (prod N N)
 end
 
 section
-/-- The argument pair `⟨x, y⟩` (`= proj₁`). -/
+
 def qSel : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) (prod N N) :=
   proj₁ (funSpace (prod N N) N) (prod N N)
 end
 
 section
-/-- The first argument `x`. -/
+
 def argX : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) N := (proj₀ N N).comp qSel
 end
 
 section
-/-- The second argument `y`. -/
+
 def argY : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) N := (proj₁ N N).comp qSel
 end
 
@@ -46,7 +46,6 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- The body `M(g, ⟨x, y⟩) = cond(zero(f(x, y)), x, g(succ x, y))`. -/
 def muBody : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) N :=
   (cond N).comp
     (paired (zeroMap.comp (f.comp qSel))
@@ -62,7 +61,6 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- The μ-operator `R(g) = λx,y. cond(zero(f(x, y)), x, g(succ x, y))`. -/
 def muOp : ApproximableMap (funSpace (prod N N) N) (funSpace (prod N N) N) :=
   curry (muBody f)
 
@@ -74,7 +72,6 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- `muRec f : N × N → N`, the binary search `ḡ`, least fixed point of `muOp`. -/
 def muRec : ApproximableMap (prod N N) N := toApproxMap (muOp f).fixElement
 
 end Mu
@@ -85,7 +82,6 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- The minimization `μ : N → N`, `h̄(m) = ḡ(0̂, m)` (the strict `0`-seeded search). -/
 def muMap : ApproximableMap N N := muRec f |>.comp (paired (constLiftN N (fun _ => zeroElt)) (idMap N))
 
 end Mu
@@ -96,7 +92,6 @@ section PrimRec
 
 variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)
 
-/-- The two-argument body `M(k, ⟨x, y⟩) = cond(zero(x), f(y), g(pred x, y, k(pred x, y)))`. -/
 def primBody : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) N :=
   (cond N).comp
     (paired (zeroMap.comp argX)
@@ -115,7 +110,6 @@ section PrimRec
 
 variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)
 
-/-- The primitive-recursion operator `R(k) = λx,y. cond(zero x, f y, g(pred x, y, k(pred x, y)))`. -/
 def primOp : ApproximableMap (funSpace (prod N N) N) (funSpace (prod N N) N) :=
   curry (primBody f g)
 
@@ -127,20 +121,19 @@ section PrimRec
 
 variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)
 
-/-- `primRec f g : N × N → N`, the least fixed point of `primOp`. -/
 def primRec : ApproximableMap (prod N N) N := toApproxMap (primOp f g).fixElement
 
 end PrimRec
 end
 
 section
-/-- Scott's **strict identity** `λx. cond(zero(x), x, x)`: the identity on totals, `⊥` on `⊥`. -/
+
 def strictId : ApproximableMap N N :=
   (cond N).comp (paired zeroMap (paired (idMap N) (idMap N)))
 end
 
 section
-/-- Scott's **strict first projection** `λx₀, x₁. cond(zero(x₁), x₀, x₀)` on `N × N`. -/
+
 def strictProj₀ : ApproximableMap (prod N N) N :=
   (cond N).comp
     (paired (zeroMap.comp (proj₁ N N))
@@ -148,9 +141,7 @@ def strictProj₀ : ApproximableMap (prod N N) N :=
 end
 
 section
-/-- The truth-domain bottom of `T` agrees with `Example23.botElt` (both are the least element).
-Needed because `zeroMap_bot` lands in `T.bot` while `cond_bot` is phrased with `Example23.botElt`,
-and `bot` is not reducible. -/
+
 theorem T_bot_eq : (Example43.T).bot = Example23.botElt :=
   le_antisymm ((Example43.T).bot_le _) (Example23.botElt_le _)
 end
@@ -177,7 +168,6 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- `μ(m̂) = ḡ(0̂, m̂)`. -/
 theorem muMap_natElem (m : ℕ) :
     (muMap f).toElementMap (natElem m) = (muRec f).toElementMap (pair zeroElt (natElem m)) := by
   rw [muMap, toElementMap_comp, toElementMap_paired, toElementMap_idMap,
@@ -191,7 +181,6 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- The defining recursion of `muRec`. -/
 theorem muRec_rec (x y : N.Element) :
     (muRec f).toElementMap (pair x y) =
       (cond N).toElementMap
@@ -211,7 +200,6 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- **μ is strict in the test.** If `f(n̂, m̂) = ⊥`, the search diverges. -/
 theorem muRec_bot {n m : ℕ}
     (h : f.toElementMap (pair (natElem n) (natElem m)) = N.bot) :
     (muRec f).toElementMap (pair (natElem n) (natElem m)) = N.bot := by
@@ -225,7 +213,6 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- **μ, found.** If `f(n̂, m̂) = 0̂`, the search stops and returns `n̂`. -/
 theorem muRec_found {n m : ℕ}
     (h : f.toElementMap (pair (natElem n) (natElem m)) = natElem 0) :
     (muRec f).toElementMap (pair (natElem n) (natElem m)) = natElem n := by
@@ -239,7 +226,6 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- **μ, step.** If `f(n̂, m̂)` is a positive total `(j+1)^`, the search advances to `n+1`. -/
 theorem muRec_step {n m j : ℕ}
     (h : f.toElementMap (pair (natElem n) (natElem m)) = natElem (j + 1)) :
     (muRec f).toElementMap (pair (natElem n) (natElem m)) =
@@ -254,8 +240,6 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- The search advances over a run of positive totals: if `f((n+i)^, m̂)` is a positive total for
-all `i < k`, then `ḡ(n̂, m̂) = ḡ((n+k)^, m̂)`. -/
 theorem muRec_climb (m : ℕ) :
     ∀ (k n : ℕ), (∀ i < k, ∃ j, f.toElementMap (pair (natElem (n + i)) (natElem m)) = natElem (j + 1)) →
       (muRec f).toElementMap (pair (natElem n) (natElem m)) =
@@ -280,8 +264,6 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- **Capstone (μ-scheme correctness).** If `n₀` is the *least* zero of `f(·, m̂)` — that is,
-`f(n̂₀, m̂) = 0̂` and `f(î, m̂)` is a positive total for every `i < n₀` — then `μ(m̂) = n̂₀`. -/
 theorem muMap_eq_least {m n₀ : ℕ}
     (hzero : f.toElementMap (pair (natElem n₀) (natElem m)) = natElem 0)
     (hpos : ∀ i < n₀, ∃ j, f.toElementMap (pair (natElem i) (natElem m)) = natElem (j + 1)) :
@@ -320,7 +302,6 @@ section PrimRec
 
 variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)
 
-/-- The defining recursion of `primRec`. -/
 theorem primRec_rec (x y : N.Element) :
     (primRec f g).toElementMap (pair x y) =
       (cond N).toElementMap
@@ -344,7 +325,6 @@ section PrimRec
 
 variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)
 
-/-- **Primitive recursion is strict in the recursion argument.** `h̄(⊥, m̂) = ⊥`. -/
 theorem primRec_bot (m : ℕ) :
     (primRec f g).toElementMap (pair N.bot (natElem m)) = N.bot := by
   rw [primRec_rec, zeroMap_bot, T_bot_eq, Exercise326.cond_bot]
@@ -357,7 +337,6 @@ section PrimRec
 
 variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)
 
-/-- **Primitive recursion, step case.** `h̄((n+1)^, m̂) = g(n̂, m̂, h̄(n̂, m̂))`. -/
 theorem primRec_succ (n m : ℕ) :
     (primRec f g).toElementMap (pair (natElem (n + 1)) (natElem m)) =
       g.toElementMap
@@ -373,7 +352,6 @@ section PrimRec
 
 variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)
 
-/-- **Primitive recursion, base case.** `h̄(0̂, m̂) = f(m̂)`. -/
 theorem primRec_zero (m : ℕ) :
     (primRec f g).toElementMap (pair (natElem 0) (natElem m)) = f.toElementMap (natElem m) := by
   rw [primRec_rec, zeroMap_natElem_zero, Exercise326.cond_true]
@@ -407,7 +385,7 @@ theorem strictProj₀_apply (x y : N.Element) :
 end
 
 section
-/-- Strict in the first argument: `proj₀(⊥, m̂) = ⊥` (the output *is* `x₀ = ⊥`). -/
+
 theorem strictProj₀_bot_left (m : ℕ) :
     strictProj₀.toElementMap (pair N.bot (natElem m)) = N.bot := by
   rw [strictProj₀_apply]
@@ -417,14 +395,14 @@ theorem strictProj₀_bot_left (m : ℕ) :
 end
 
 section
-/-- Strict in the second argument: `proj₀(n̂, ⊥) = ⊥`. -/
+
 theorem strictProj₀_bot_right (n : ℕ) :
     strictProj₀.toElementMap (pair (natElem n) N.bot) = N.bot := by
   rw [strictProj₀_apply, zeroMap_bot, T_bot_eq, Exercise326.cond_bot]
 end
 
 section
-/-- `proj₀(n̂, m̂) = n̂`. -/
+
 theorem strictProj₀_natElem (n m : ℕ) :
     strictProj₀.toElementMap (pair (natElem n) (natElem m)) = natElem n := by
   rw [strictProj₀_apply]
@@ -446,39 +424,36 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 section
-/-- `none ↦ ⊥`, `some n ↦ n̂`. -/
+
 def optElem : Option ℕ → N.Element
   | none => N.bot
   | some n => natElem n
 end
 
 section
-/-- The universal argument domain `𝒩 = N^∞` (Exercise 3.16). All `k`-ary number functions are
-realised as approximable maps `𝒩 → N` depending only on coordinates `0..k-1`. -/
+
 abbrev 𝒩 : NeighborhoodSystem (ℕ × ℕ) := iterSys N
 end
 
 section
-/-- A `𝒩`-element is *arg-like* if every coordinate is total or `⊥` (true of all `argElem`). -/
+
 def ArgLike (z : 𝒩.Element) : Prop := ∀ j, component z j = N.bot ∨ ∃ k, component z j = natElem k
 end
 
 section
-/-- The argument element of `𝒩` whose first `n` coordinates are `optElem (a i)` and the rest `⊥`. -/
+
 def argElem {n : ℕ} (a : Fin n → Option ℕ) : 𝒩.Element :=
   ofSeq (fun i => if h : i < n then optElem (a ⟨i, h⟩) else N.bot)
 end
 
 section
-/-- The argument element of `𝒩` carrying a `List.Vector ℕ n` in its first `n` coordinates. -/
+
 def vecElem {n : ℕ} (v : List.Vector ℕ n) : 𝒩.Element :=
   argElem (fun i => some (v.get i))
 end
 
 section
-/-- `φ : 𝒩 → N` realises the `n`-ary partial function `f` (a *very strict* λ-definition):
-`φ` returns `f`'s value on total arguments, `⊥` where `f` is undefined, and `⊥` on *any* arg-like
-input with a `⊥` among its first `n` coordinates. -/
+
 structure LamDef {n : ℕ} (φ : ApproximableMap 𝒩 N) (f : List.Vector ℕ n →. ℕ) : Prop where
   defined : ∀ (v : List.Vector ℕ n) (c : ℕ), c ∈ f v → φ.toElementMap (vecElem v) = natElem c
   undef : ∀ (v : List.Vector ℕ n), ¬ (f v).Dom → φ.toElementMap (vecElem v) = N.bot
@@ -503,7 +478,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- `evalAt z` evaluates a function-space element at the fixed argument `z`. -/
 def evalAt (z : 𝒩.Element) : ApproximableMap (funSpace 𝒩 N) N :=
   (evalMap 𝒩 N).comp (paired (idMap (funSpace 𝒩 N)) (constMap (funSpace 𝒩 N) z))
 
@@ -515,7 +489,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- The search body `S(k, z) = cond(zero(f z), head z, k(push(succ(head z), tail z)))`. -/
 def findBody : ApproximableMap (prod (funSpace 𝒩 N) 𝒩) N :=
   (cond N).comp
     (paired (zeroMap.comp (φf.comp (proj₁ (funSpace 𝒩 N) 𝒩)))
@@ -534,20 +507,19 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- The search operator `S(k) = λz. …`, whose least fixed point is the running search. -/
 def findOp : ApproximableMap (funSpace 𝒩 N) (funSpace 𝒩 N) := curry (findBody φf)
 
 end Rfind
 end
 
 section
-/-- Test coordinate `j`: `cond(zero(zⱼ), φ z, φ z)`. -/
+
 def guard1 (j : ℕ) (φ : ApproximableMap 𝒩 N) : ApproximableMap 𝒩 N :=
   (cond N).comp (paired (zeroMap.comp (projN N j)) (paired φ φ))
 end
 
 section
-/-- Inject `N → 𝒩` as the stack whose only nonzero coordinate is the head. -/
+
 def oneArg : ApproximableMap N 𝒩 := (push N).comp (paired (idMap N) (constMap N 𝒩.bot))
 end
 
@@ -556,7 +528,6 @@ section Prec
 
 variable (φf φg : ApproximableMap 𝒩 N)
 
-/-- The primitive-recursion body. -/
 def precBody : ApproximableMap (prod (funSpace 𝒩 N) 𝒩) N :=
   (cond N).comp
     (paired (zeroMap.comp ((head N).comp (proj₁ (funSpace 𝒩 N) 𝒩)))
@@ -581,7 +552,6 @@ section Prec
 
 variable (φf φg : ApproximableMap 𝒩 N)
 
-/-- The primitive-recursion operator `R(k) = λz. …`. -/
 def recOp : ApproximableMap (funSpace 𝒩 N) (funSpace 𝒩 N) := curry (precBody φf φg)
 
 end Prec
@@ -592,7 +562,6 @@ section Prec
 
 variable (φf φg : ApproximableMap 𝒩 N)
 
-/-- `recMap : 𝒩 → N`, the least fixed point of `recOp` (before strictifying). -/
 def recMap : ApproximableMap 𝒩 N := toApproxMap (recOp φf φg).fixElement
 
 end Prec
@@ -603,8 +572,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- The `ℕ →. Bool` predicate `k ↦ f(k ::ᵥ v) = 0`, packaged so `Nat.rfind` is well-typed at
-implicit transparency (Lean 4.33: `ℕ →. Bool` no longer unfolds to `ℕ → Part Bool` in `rw`). -/
 def rfindZeroPred {n : ℕ} (f : List.Vector ℕ (n + 1) → ℕ) (v : List.Vector ℕ n) : ℕ →. Bool :=
   fun k => Part.some (decide (f (k ::ᵥ v) = 0))
 
@@ -616,7 +583,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- `searchMap : 𝒩 → N`, the least fixed point of `findOp` (the counter lives in coordinate `0`). -/
 def searchMap : ApproximableMap 𝒩 N := toApproxMap (findOp φf).fixElement
 
 end Rfind
@@ -627,7 +593,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- `findMap : 𝒩 → N` starts the search with counter `0`. -/
 def findMap : ApproximableMap 𝒩 N :=
   (searchMap φf).comp ((push N).comp (paired (constMap 𝒩 (natElem 0)) (idMap 𝒩)))
 
@@ -635,22 +600,21 @@ end Rfind
 end
 
 section
-/-- Test coordinates `0..n-1`. -/
+
 def strictGuardN : ℕ → ApproximableMap 𝒩 N → ApproximableMap 𝒩 N
   | 0, φ => φ
   | n + 1, φ => guard1 n (strictGuardN n φ)
 end
 
 section
-/-- `⟨g₀, …, g_{n-1}⟩ : 𝒩 → 𝒩` placing `gᵢ` at coordinate `i` (`< n`) and `⊥` beyond. -/
+
 def tupleMap : (n : ℕ) → (Fin n → ApproximableMap 𝒩 N) → ApproximableMap 𝒩 𝒩
   | 0, _ => constMap 𝒩 𝒩.bot
   | n + 1, gs => (push N).comp (paired (gs 0) (tupleMap n (fun i => gs i.succ)))
 end
 
 section
-/-- `T.bot = Example23.botElt` (both least); bridges `zeroMap_bot` (lands in `T.bot`) with `cond_bot`
-(phrased with `Example23.botElt`). -/
+
 theorem T_bot_eq : (Example43.T).bot = Example23.botElt :=
   le_antisymm ((Example43.T).bot_le _) (Example23.botElt_le _)
 end
@@ -667,14 +631,14 @@ theorem argElem_argLike {n : ℕ} (a : Fin n → Option ℕ) : ArgLike (argElem 
 end
 
 section
-/-- A coordinate that an `argElem` sets to `none` is `⊥`. -/
+
 theorem component_argElem_none {n : ℕ} (a : Fin n → Option ℕ) (i : Fin n) (hi : a i = none) :
     component (argElem a) (i : ℕ) = N.bot := by
   rw [component_argElem, dite_eq_left i.isLt, Fin.eta, hi]; rfl
 end
 
 section
-/-- Coordinates of the bottom stack are `⊥`. -/
+
 theorem component_bot (i : ℕ) : component (𝒩.bot) i = N.bot := by
   have hbot : (𝒩.bot) = ofSeq (fun _ => N.bot) :=
     le_antisymm (𝒩.bot_le _)
@@ -695,14 +659,14 @@ theorem component_push_zero (x : N.Element) (s : 𝒩.Element) :
 end
 
 section
-/-- Every coordinate `j < n` of `vecElem v` is the total `v.get j`. -/
+
 theorem component_vecElem_lt {n : ℕ} (v : List.Vector ℕ n) {j : ℕ} (hj : j < n) :
     component (vecElem v) j = natElem (v.get ⟨j, hj⟩) := by
   rw [component_vecElem, dite_eq_left hj]
 end
 
 section
-/-- Two `𝒩`-elements are equal iff all components agree. -/
+
 theorem eq_of_component_eq {z z' : 𝒩.Element}
     (h : ∀ n, component z n = component z' n) : z = z' :=
   le_antisymm (le_of_component_le (fun n => (h n).le))
@@ -748,7 +712,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- The `0`-th approximant `S⁰(⊥)` is the bottom map. -/
 theorem findOp_iterElem_zero : (findOp φf).iterElem 0 = (funSpace 𝒩 N).bot := by
   rw [iterElem_eq_iterate, Function.iterate_zero_apply]
 
@@ -771,7 +734,7 @@ theorem guard1_bot (j : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Element)
 end
 
 section
-/-- If `φ z = ⊥` and `zⱼ` is total-or-`⊥`, the guard stays `⊥`. -/
+
 theorem guard1_inner_bot (j : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Element)
     (hz : component z j = N.bot ∨ ∃ k, component z j = natElem k)
     (h : φ.toElementMap z = N.bot) : (guard1 j φ).toElementMap z = N.bot := by
@@ -797,8 +760,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- Recursion equation for the approximant values: `S^{m+1}(⊥)` unfolds one search step using
-`Sᵐ(⊥)` as the continuation. -/
 theorem iterVal_succ (m : ℕ) (z : 𝒩.Element) :
     (toApproxMap ((findOp φf).iterElem (m + 1))).toElementMap z =
       (cond N).toElementMap
@@ -819,7 +780,7 @@ end Rfind
 end
 
 section
-/-- A realiser of a total function evaluates to its value. -/
+
 theorem lamDef_coe_val {n : ℕ} {φ : ApproximableMap 𝒩 N} {g : List.Vector ℕ n → ℕ}
     (h : LamDef φ (g : List.Vector ℕ n →. ℕ)) (v : List.Vector ℕ n) :
     φ.toElementMap (vecElem v) = natElem (g v) :=
@@ -827,7 +788,7 @@ theorem lamDef_coe_val {n : ℕ} {φ : ApproximableMap 𝒩 N} {g : List.Vector 
 end
 
 section
-/-- Transport a λ-definition along pointwise equality of the realised function. -/
+
 theorem lamDef_congr {n : ℕ} {φ : ApproximableMap 𝒩 N} {f f' : List.Vector ℕ n →. ℕ}
     (h : ∀ v, f v = f' v) (hf : LamDef φ f) : LamDef φ f' where
   defined v c hc := hf.defined v c (by rw [h v]; exact hc)
@@ -836,7 +797,7 @@ theorem lamDef_congr {n : ℕ} {φ : ApproximableMap 𝒩 N} {f f' : List.Vector
 end
 
 section
-/-- Membership in `mOfFn` (Part monad): a vector is produced iff each coordinate is a value. -/
+
 theorem mem_mOfFn : ∀ {n : ℕ} (p : Fin n → Part ℕ) (w : List.Vector ℕ n),
     w ∈ List.Vector.mOfFn p ↔ ∀ i, w.get i ∈ p i
   | 0, p, w => by
@@ -948,7 +909,7 @@ theorem oneArg_natElem (a : ℕ) :
 end
 
 section
-/-- The value a realiser takes on a total argument is total-or-`⊥` (arg-like). -/
+
 theorem realizer_value {n : ℕ} {φ : ApproximableMap 𝒩 N} {f : List.Vector ℕ n →. ℕ}
     (h : LamDef φ f) (v : List.Vector ℕ n) :
     φ.toElementMap (vecElem v) = N.bot ∨ ∃ k, φ.toElementMap (vecElem v) = natElem k := by
@@ -962,7 +923,6 @@ section Prec
 
 variable (φf φg : ApproximableMap 𝒩 N)
 
-/-- The defining recursion equation. -/
 theorem recMap_rec (z : 𝒩.Element) :
     (recMap φf φg).toElementMap z =
       (cond N).toElementMap
@@ -991,7 +951,6 @@ section Prec
 
 variable (φf φg : ApproximableMap 𝒩 N)
 
-/-- **Primitive recursion computes.** `recMap(⟨d, u⟩) = (Nat.rec (f u) (g …) d)`. -/
 theorem recMap_eval {n : ℕ} (f₀ : List.Vector ℕ n → ℕ) (g₀ : List.Vector ℕ (n + 2) → ℕ)
     (hf : LamDef φf (f₀ : List.Vector ℕ n →. ℕ)) (hg : LamDef φg (g₀ : List.Vector ℕ (n + 2) →. ℕ))
     (u : List.Vector ℕ n) (d : ℕ) :
@@ -1017,7 +976,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- The defining recursion equation of the search. -/
 theorem searchMap_rec (z : 𝒩.Element) :
     (searchMap φf).toElementMap z =
       (cond N).toElementMap
@@ -1041,7 +999,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- **Search step (found).** If `f(k ::ᵥ v) = 0`, the search returns the counter `k`. -/
 theorem searchMap_step_found {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     (hf : LamDef φf (f : List.Vector ℕ (n + 1) →. ℕ)) (v : List.Vector ℕ n) (k : ℕ)
     (h0 : f (k ::ᵥ v) = 0) :
@@ -1058,7 +1015,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- **Search step (continue).** If `f(k ::ᵥ v) ≠ 0`, the search advances to counter `k + 1`. -/
 theorem searchMap_step_next {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     (hf : LamDef φf (f : List.Vector ℕ (n + 1) →. ℕ)) (v : List.Vector ℕ n) (k : ℕ)
     (hne : f (k ::ᵥ v) ≠ 0) :
@@ -1077,8 +1033,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- **Capstone (least zero ⟹ value).** If `m` is a zero of `f(· ::ᵥ v)` and nothing below it is, then
-starting from any counter `j ≤ m` the search returns `m`. (Downward induction on `m - j`.) -/
 theorem searchMap_climb {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     (hf : LamDef φf (f : List.Vector ℕ (n + 1) →. ℕ)) (v : List.Vector ℕ n) (m : ℕ)
     (hm0 : f (m ::ᵥ v) = 0) (hmin : ∀ i, i < m → f (i ::ᵥ v) ≠ 0) :
@@ -1100,7 +1054,7 @@ end Rfind
 end
 
 section
-/-- If some coordinate `i < n` is `⊥` (and `z` is arg-like), the guard forces `⊥`. -/
+
 theorem strictGuardN_strict (n : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Element)
     (hz : ArgLike z) {i : ℕ} (hi : i < n) (hb : component z i = N.bot) :
     (strictGuardN n φ).toElementMap z = N.bot := by
@@ -1114,7 +1068,7 @@ theorem strictGuardN_strict (n : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.El
 end
 
 section
-/-- On arguments whose first `n` coordinates are all total, the guard is transparent. -/
+
 theorem strictGuardN_total (n : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Element)
     (h : ∀ j, j < n → ∃ k, component z j = natElem k) :
     (strictGuardN n φ).toElementMap z = φ.toElementMap z := by
@@ -1131,7 +1085,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- The least map of the function space evaluates to `⊥` everywhere. -/
 theorem toApproxMap_bot (z : 𝒩.Element) :
     (toApproxMap ((funSpace 𝒩 N).bot)).toElementMap z = N.bot := by
   refine le_antisymm ?_ (N.bot_le _)
@@ -1149,7 +1102,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- Value of the `0`-th approximant: `⊥`. -/
 theorem iterVal_zero (z : 𝒩.Element) :
     (toApproxMap ((findOp φf).iterElem 0)).toElementMap z = N.bot := by
   rw [findOp_iterElem_zero, toApproxMap_bot]
@@ -1162,8 +1114,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- Along a *no-zero* trace, every finite approximant returns `⊥` (induction on the approximant
-index, with the counter universally quantified since the search advances it). -/
 theorem iterVal_bot {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     (hf : LamDef φf (f : List.Vector ℕ (n + 1) →. ℕ)) (v : List.Vector ℕ n)
     (hdiv : ∀ k, f (k ::ᵥ v) ≠ 0) :
@@ -1188,10 +1138,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- **Divergence.** If `f(· ::ᵥ v)` has no zero, the search is `⊥` from every counter. The fixed point
-is the directed union of the approximants `Sᵐ(⊥)` (Theorem 4.2(iii)); pushing the evaluation at
-`vecElem (k ::ᵥ v)` through this sup (continuity, `toElementMap_iSupDirected`) reduces the claim to
-`iterVal_bot`. -/
 theorem searchMap_diverge {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     (hf : LamDef φf (f : List.Vector ℕ (n + 1) →. ℕ)) (v : List.Vector ℕ n)
     (hdiv : ∀ k, f (k ::ᵥ v) ≠ 0) (k : ℕ) :
@@ -1212,7 +1158,7 @@ theorem tupleMap_succ (n : ℕ) (gs : Fin (n + 1) → ApproximableMap 𝒩 N) :
 end
 
 section
-/-- Coordinate `i < n` of the tuple is exactly `gᵢ`. -/
+
 theorem component_tupleMap : ∀ (n : ℕ) (gs : Fin n → ApproximableMap 𝒩 N) (z : 𝒩.Element)
     (i : ℕ) (hi : i < n),
     component ((tupleMap n gs).toElementMap z) i = (gs ⟨i, hi⟩).toElementMap z
@@ -1232,7 +1178,7 @@ theorem tupleMap_zero (gs : Fin 0 → ApproximableMap 𝒩 N) :
 end
 
 section
-/-- Coordinates `≥ n` of the tuple are `⊥`. -/
+
 theorem component_tupleMap_ge : ∀ (n : ℕ) (gs : Fin n → ApproximableMap 𝒩 N) (z : 𝒩.Element)
     (i : ℕ), n ≤ i → component ((tupleMap n gs).toElementMap z) i = N.bot
   | 0, gs, z, i, _ => by rw [tupleMap_zero, toElementMap_constMap, component_bot]
@@ -1243,7 +1189,7 @@ theorem component_tupleMap_ge : ∀ (n : ℕ) (gs : Fin n → ApproximableMap �
 end
 
 section
-/-- The tuple of realisers, applied to a total argument, is arg-like. -/
+
 theorem tupleMap_argLike {m nn : ℕ} (φg : Fin nn → ApproximableMap 𝒩 N)
     (g : Fin nn → List.Vector ℕ m →. ℕ) (hg : ∀ i, LamDef (φg i) (g i)) (v : List.Vector ℕ m) :
     ArgLike ((tupleMap nn φg).toElementMap (vecElem v)) := by
@@ -1254,7 +1200,7 @@ theorem tupleMap_argLike {m nn : ℕ} (φg : Fin nn → ApproximableMap 𝒩 N)
 end
 
 section
-/-- The tuple of realisers, applied to a total argument, equals `vecElem w` where `wᵢ = gᵢ(v)`. -/
+
 theorem tupleMap_vecElem_eq {m nn : ℕ} (φg : Fin nn → ApproximableMap 𝒩 N)
     (g : Fin nn → List.Vector ℕ m →. ℕ) (hg : ∀ i, LamDef (φg i) (g i))
     (v : List.Vector ℕ m) (w : List.Vector ℕ nn) (hw : ∀ i, w.get i ∈ g i v) :
@@ -1269,15 +1215,14 @@ theorem tupleMap_vecElem_eq {m nn : ℕ} (φg : Fin nn → ApproximableMap 𝒩 
 end
 
 section
-/-- `vecElem v` has total coordinates throughout its arity. -/
+
 theorem vecElem_totals {n : ℕ} (v : List.Vector ℕ n) :
     ∀ j, j < n → ∃ k, component (vecElem v) j = natElem k :=
   fun j hj => ⟨v.get ⟨j, hj⟩, component_vecElem_lt v hj⟩
 end
 
 section
-/-- **Master constructor.** Wrapping an `inner` map (correct on total arguments) in `strictGuardN n`
-yields a full, very strict λ-definition. The `strict` clause is then automatic. -/
+
 theorem lamDef_of_inner {n : ℕ} (inner : ApproximableMap 𝒩 N) (f : List.Vector ℕ n →. ℕ)
     (hdef : ∀ (v : List.Vector ℕ n) (c : ℕ), c ∈ f v → inner.toElementMap (vecElem v) = natElem c)
     (hundef : ∀ (v : List.Vector ℕ n), ¬ (f v).Dom → inner.toElementMap (vecElem v) = N.bot) :
@@ -1290,8 +1235,7 @@ theorem lamDef_of_inner {n : ℕ} (inner : ApproximableMap 𝒩 N) (f : List.Vec
 end
 
 section
-/-- **Composition** (Scott's multivariate composition). If `f` and each `gᵢ` are λ-defined, so is
-`v ↦ (⟨g₀ v, …, g_{nn-1} v⟩) >>= f`. -/
+
 theorem lamDef_comp {m nn : ℕ} (f : List.Vector ℕ nn →. ℕ) (g : Fin nn → List.Vector ℕ m →. ℕ)
     (φf : ApproximableMap 𝒩 N) (hf : LamDef φf f)
     (φg : Fin nn → ApproximableMap 𝒩 N) (hg : ∀ i, LamDef (φg i) (g i)) :
@@ -1329,7 +1273,6 @@ section Prec
 
 variable (φf φg : ApproximableMap 𝒩 N)
 
-/-- **Primitive recursion** (`Nat.Primrec'.prec` shape). -/
 theorem lamDef_prec {n : ℕ} (f₀ : List.Vector ℕ n → ℕ) (g₀ : List.Vector ℕ (n + 2) → ℕ)
     (hf : LamDef φf (f₀ : List.Vector ℕ n →. ℕ))
     (hg : LamDef φg (g₀ : List.Vector ℕ (n + 2) →. ℕ)) :
@@ -1349,7 +1292,7 @@ end Prec
 end
 
 section
-/-- **Composition of total functions** (the `Nat.Primrec'.comp` shape). -/
+
 theorem lamDef_primComp {m nn : ℕ} (f₀ : List.Vector ℕ nn → ℕ)
     (g₀ : Fin nn → List.Vector ℕ m → ℕ)
     (φf : ApproximableMap 𝒩 N) (hf : LamDef φf (f₀ : List.Vector ℕ nn →. ℕ))
@@ -1370,9 +1313,6 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- **Minimisation** (`Nat.Partrec'.rfind` shape). Given a (very strict) realiser of a total
-`f : Vector ℕ (n+1) → ℕ`, `strictGuardN n (findMap φf)` λ-defines
-`v ↦ μk. f(k ::ᵥ v) = 0`. -/
 theorem lamDef_rfind {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     (hf : LamDef φf (f : List.Vector ℕ (n + 1) →. ℕ)) :
     LamDef (strictGuardN n (findMap φf))
@@ -1405,7 +1345,7 @@ end Rfind
 end
 
 section
-/-- The total-function specialisation of `lamDef_of_inner`. -/
+
 theorem lamDef_total {n : ℕ} (ψ : ApproximableMap 𝒩 N) (g : List.Vector ℕ n → ℕ)
     (hval : ∀ v, ψ.toElementMap (vecElem v) = natElem (g v)) :
     LamDef (strictGuardN n ψ) (g : List.Vector ℕ n →. ℕ) :=
@@ -1415,7 +1355,7 @@ theorem lamDef_total {n : ℕ} (ψ : ApproximableMap 𝒩 N) (g : List.Vector �
 end
 
 section
-/-- `get i : Vector ℕ n → ℕ`, the `i`-th projection. -/
+
 theorem lamDef_get {n : ℕ} (i : Fin n) :
     LamDef (strictGuardN n (projN N i))
       ((fun v => v.get i : List.Vector ℕ n → ℕ) : List.Vector ℕ n →. ℕ) :=
@@ -1424,7 +1364,7 @@ theorem lamDef_get {n : ℕ} (i : Fin n) :
 end
 
 section
-/-- `succ : Vector ℕ 1 → ℕ`, `v ↦ v.head + 1`. -/
+
 theorem lamDef_succ : LamDef (strictGuardN 1 (succMap.comp (projN N 0)))
     ((fun v => Nat.succ v.head : List.Vector ℕ 1 → ℕ) : List.Vector ℕ 1 →. ℕ) :=
   lamDef_total _ _ (fun v => by
@@ -1435,14 +1375,14 @@ theorem lamDef_succ : LamDef (strictGuardN 1 (succMap.comp (projN N 0)))
 end
 
 section
-/-- `zero : Vector ℕ 0 → ℕ`, the constant `0` (nullary). -/
+
 theorem lamDef_zero : LamDef (strictGuardN 0 (constMap 𝒩 (natElem 0)))
     ((fun _ => 0 : List.Vector ℕ 0 → ℕ) : List.Vector ℕ 0 →. ℕ) :=
   lamDef_total (constMap 𝒩 (natElem 0)) _ (fun v => by rw [toElementMap_constMap])
 end
 
 section
-/-- **Every `Nat.Primrec'` function is λ-definable** by a (very strict) approximable map. -/
+
 theorem primrec_lamDef {n : ℕ} {f : List.Vector ℕ n → ℕ} (h : Nat.Primrec' f) :
     ∃ φ : ApproximableMap 𝒩 N, LamDef φ (f : List.Vector ℕ n →. ℕ) := by
   induction h with
@@ -1469,11 +1409,7 @@ open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap pred
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 section
-/- concordance: source L2877 THEOREM 5.6 partial recursive functions -/
-/-- **Theorem 5.6 (Scott 1981, PRG-19) — every partial recursive function is λ-definable.** For each
-`Nat.Partrec'` function `f : Vector ℕ n →. ℕ` there is an approximable map `φ : 𝒩 → N` that is a
-*very strict* λ-definition of `f`: it returns `f`'s value on total arguments, `⊥` where `f` is
-undefined, and `⊥` on any arg-like input with a `⊥` among its first `n` coordinates. -/
+
 theorem partrec_lamDef {n : ℕ} {f : List.Vector ℕ n →. ℕ} (h : Nat.Partrec' f) :
     ∃ φ : ApproximableMap 𝒩 N, LamDef φ f := by
   induction h with
@@ -1488,9 +1424,7 @@ theorem partrec_lamDef {n : ℕ} {f : List.Vector ℕ n →. ℕ} (h : Nat.Partr
 end
 
 section
-/-- **Scott's 1-ary meta-theorem.** A partial recursive `h : ℕ →. ℕ` (presented as a unary
-`Nat.Partrec'`) is denoted by a single approximable map `τ : N → N` that is correct on values,
-divergent where `h` diverges, and strict. -/
+
 theorem partrec_one {h : ℕ →. ℕ}
     (H : Nat.Partrec' (fun v : List.Vector ℕ 1 => h v.head)) :
     ∃ τ : ApproximableMap N N,
@@ -1513,4 +1447,3 @@ end
 
 end DomainTheory.NeighbourhoodSystems.Theorem56Full
 end
-

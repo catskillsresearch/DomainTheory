@@ -8,9 +8,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.Basic
 
-
 @[expose] public section
-
 
 namespace DomainTheory.BridgeTheorems
 
@@ -22,7 +20,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
-
 
 theorem sumElementLft_eq {z : (sumSystem A B).Element} {x0 x1 : α}
     (hx0 : SumToken.left x0 ∈ z.carrier) (hx1 : SumToken.left x1 ∈ z.carrier) :

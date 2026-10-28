@@ -30,7 +30,6 @@ open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
-
 theorem combinatory : ∀ i, IsCombinatory (sqrtEnv i)
   | 3 => leC.combinatory
   | 4 => mulC.combinatory

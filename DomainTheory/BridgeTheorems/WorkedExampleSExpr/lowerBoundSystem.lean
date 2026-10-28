@@ -28,7 +28,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 
 open Order
 
-/-- Scott’s ℕ lower-bound information system (Factoid 2.4), as a named definition. -/
 def lowerBoundSystem : InfoSys ℕ where
   bot := 0
   Con := Set.univ

@@ -8,7 +8,6 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.WayBelow
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Compactness internal to a complete lattice. -/
 def IsCompact {α : Type u} [CompleteLattice α] (x : α) : Prop :=
   WayBelow x x
 

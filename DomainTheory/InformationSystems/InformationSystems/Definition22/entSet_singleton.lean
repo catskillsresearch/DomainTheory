@@ -5,7 +5,6 @@ public import DomainTheory.InformationSystems.InformationSystems.Definition22.En
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 namespace InfoSys
@@ -13,7 +12,6 @@ namespace InfoSys
 universe u
 
 variable {α : Type u} [DecidableEq α] (sys : InfoSys α)
-
 
 theorem entSet_singleton {u : Finset α} {X : α} :
     sys.EntSet u {X} ↔ sys.Ent u X := by

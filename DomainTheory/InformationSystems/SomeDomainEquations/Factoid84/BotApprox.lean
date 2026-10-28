@@ -19,7 +19,6 @@ open InfoSys
 
 open ApproximableMap
 
-/-- (3) `\bar 0 ⊆ r(⊥)` — `0` plays the rôle of `Δ`. -/
 def BotApprox (r : ApproximableMap P P) : Prop :=
   (barElement 0).carrier ⊆ (r.toElement botElement).carrier
 

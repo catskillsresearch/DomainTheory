@@ -29,7 +29,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 
 open Order
 
-/-- Closure of a singleton atom token `{atom n}`. -/
 noncomputable def sexAtom (n : ℕ) : SexSys.Element :=
   SexSys.closure {TreeToken.atom n} (SexSys.con_sing _)
 

@@ -22,7 +22,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace ScottMap
 
-/-- Reflexivity of the pointwise order. -/
 theorem le_refl' {D : Type u} {D' : Type v}
     [CompleteLattice D] [CompleteLattice D'] (f : ScottMap D D') :
     ScottMap.le f f :=

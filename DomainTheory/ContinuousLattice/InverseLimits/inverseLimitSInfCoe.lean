@@ -17,8 +17,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- The coordinatewise infimum of a family of compatible sequences, before
-packaging the compatibility proof. -/
 noncomputable def inverseLimitSInfCoe (S : Set (InverseLimit D P)) : ∀ n, D n :=
   fun n => sInf ((fun x : InverseLimit D P => x.1 n) '' S)
 

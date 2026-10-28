@@ -10,9 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Scomb_app
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem Scomb_app2 (f g : Pomega) :
     funOf (funOf Scomb f) g =

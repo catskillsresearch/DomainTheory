@@ -8,16 +8,13 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas
 public import DomainTheory.DataTypesAsLattices.Enumeration.ValTrace
 @[expose] public section
 
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 theorem primrecRel_valTraceHas :
     PrimrecRel fun (tr : ValTrace) (p : ℕ × ℕ) => valTraceHas tr p.1 p.2 := by

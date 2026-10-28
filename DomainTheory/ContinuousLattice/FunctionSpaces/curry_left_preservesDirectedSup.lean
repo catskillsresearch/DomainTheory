@@ -13,7 +13,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -22,8 +21,6 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-/-- Currying in the `x`-variable: `x ↦ f (x, y)` is Scott-continuous (used for continuity of
-`lambda f` as a map `D → [D' → D'']`). -/
 theorem curry_left_preservesDirectedSup (f : ScottMap (D × D') D'') (y : D') :
     PreservesDirectedSup (fun x => f (x, y)) := by
   intro S hS hSdir

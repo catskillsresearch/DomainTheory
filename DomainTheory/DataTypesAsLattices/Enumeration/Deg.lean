@@ -26,7 +26,6 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-/-- **Scott 1976, Definition.** Enumeration degree of `a`. -/
 def Deg (a : Pomega) : Set Pomega :=
   {u | ∃ r, IsCombinatory r ∧ u = funOf r a}
 

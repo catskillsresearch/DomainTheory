@@ -15,9 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.squarePair_more
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem Icomb_subset_boxTensor {a b : Pomega} (ha : Closure a) (hb : Closure b) :
     Icomb ⊆ boxTensor a b := by

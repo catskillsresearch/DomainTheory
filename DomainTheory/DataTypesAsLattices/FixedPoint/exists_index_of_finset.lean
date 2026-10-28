@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.FixedPoint.chain_mono
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem exists_index_of_finset (xs : ℕ → Pomega)

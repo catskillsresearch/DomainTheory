@@ -8,7 +8,6 @@ public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
@@ -29,7 +28,7 @@ theorem not_left_mem_sum_botElement {x : α} :
     SumToken.left x ∉ ((sumSystem A B).botElement).carrier := by
   intro hx
   have hEnt : (sumSystem A B).Ent {sumBot} (.left x) := hx
-  -- Ent {bot} (left x) requires lftFinset {bot} ≠ ∅
+
   rcases hEnt with ⟨_, ⟨hne, _⟩⟩
   exact hne lftFinset.singleton_bot
 

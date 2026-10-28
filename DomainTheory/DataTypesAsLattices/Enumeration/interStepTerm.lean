@@ -17,7 +17,6 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- A closed LAMBDA term for the body defining binary intersection. -/
 def interStepTerm : Term :=
   let omega : Term := .lam 4 (.app (.var 4) (.var 4))
   .lam 0 (.lam 1 (.lam 2

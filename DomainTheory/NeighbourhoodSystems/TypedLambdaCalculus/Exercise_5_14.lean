@@ -7,13 +7,11 @@ public import Mathlib.Data.Set.Defs
 @[expose] public section
 
 section
-/- concordance: source L3119 EXERCISE 5.14 functions as graphs -/
--- Exercise514/tag.lean
+
 namespace DomainTheory.NeighbourhoodSystems.Exercise514
 
 open DomainTheory.NeighbourhoodSystems.Exercise513
 
-/-- `tag [n₀, …, n_{k-1}] m = [n₀+1, …, n_{k-1}+1, 0, m]`, built from the pairing function `num`. -/
 def tag : List ℕ → ℕ → ℕ
   | [], m => num 0 m
   | (n :: ns), m => num (n + 1) (tag ns m)
@@ -35,7 +33,7 @@ section
 end
 
 section
-/-- The finite set of entries of a list, as a subset of `ℕ`. -/
+
 def entries (ns : List ℕ) : Set ℕ := {n | n ∈ ns}
 end
 
@@ -44,32 +42,26 @@ section
 end
 
 section
-/-- `fun(u)(x)` — apply the "function coded by `u`" to argument `x`. -/
+
 def Fun (u : Set ℕ) (x : Set ℕ) : Set ℕ :=
   {m | ∃ ns, (∀ n ∈ ns, n ∈ x) ∧ tag ns m ∈ u}
 end
 
 section
-/-- `graph(f)` — the code of the function `f`. -/
+
 def Graph (f : Set ℕ → Set ℕ) : Set ℕ :=
   {c | ∃ ns m, c = tag ns m ∧ m ∈ f (entries ns)}
 end
 
 section
-/-- A map `f : Pω → Pω` is *approximable* (continuous) when it is monotone and every output is
-already produced by a finite subset of the input. The finite subsets of `x` are exactly the
-`entries ns` with all entries in `x`.
 
-Monotonicity is phrased as an explicit `⊆`-implication rather than `Monotone f`: on `Set ℕ` the
-order `≤` resolves through the `CompleteLattice` instance whose construction uses `Classical.choice`,
-so the `Monotone`-based statement would not be choice-free. The two are definitionally equal. -/
 def IsApprox (f : Set ℕ → Set ℕ) : Prop :=
   (∀ ⦃x x' : Set ℕ⦄, x ⊆ x' → f x ⊆ f x') ∧
     ∀ x m, m ∈ f x → ∃ ns, (∀ n ∈ ns, n ∈ x) ∧ m ∈ f (entries ns)
 end
 
 section
-/-- Every `Fun u` is itself approximable, so `fun` really lands in the continuous maps. -/
+
 theorem Fun_isApprox (u : Set ℕ) : IsApprox (Fun u) := by
   refine ⟨?_, ?_⟩
   · intro x x' hxx' m hm
@@ -81,16 +73,14 @@ theorem Fun_isApprox (u : Set ℕ) : IsApprox (Fun u) := by
 end
 
 section
-/-- **`Fun` is monotone in both arguments jointly.** Needed to check the `mono` axiom of the
-neighbourhood-level approximable map built from `Fun` (Exercise 7.23). -/
+
 theorem Fun_mono {u u' x x' : Set ℕ} (hu : u ⊆ u') (hx : x ⊆ x') : Fun u x ⊆ Fun u' x' := by
   rintro m ⟨ns, hns, htag⟩
   exact ⟨ns, fun n hn => hx (hns n hn), hu htag⟩
 end
 
 section
-/-- `num (n+1) b` strictly exceeds its second argument: this is what makes the decode recursion
-terminate. `num (n+1) b = T(n+1+b) + b ≥ (n+b+1) + b > b`. -/
+
 theorem num_succ_left_gt (n b : ℕ) : b < num (n + 1) b := by
   unfold num
   have e : n + 1 + b = (n + b) + 1 := by omega
@@ -99,7 +89,7 @@ theorem num_succ_left_gt (n b : ℕ) : b < num (n + 1) b := by
 end
 
 section
-/-- **The tag is one-one**, jointly in both arguments (induction on the list + `num_injective`). -/
+
 theorem tag_injective : ∀ {ns₁ ns₂ : List ℕ} {m₁ m₂ : ℕ},
     tag ns₁ m₁ = tag ns₂ m₂ → ns₁ = ns₂ ∧ m₁ = m₂ := by
   intro ns₁
@@ -134,7 +124,7 @@ theorem tag_injective : ∀ {ns₁ ns₂ : List ℕ} {m₁ m₂ : ℕ},
 end
 
 section
-/-- **`fun ∘ graph = λf.f`** for continuous `f`: `Fun (Graph f) x = f x`. -/
+
 theorem Fun_Graph {f : Set ℕ → Set ℕ} (hf : IsApprox f) (x : Set ℕ) :
     Fun (Graph f) x = f x := by
   apply Set.Subset.antisymm
@@ -151,8 +141,7 @@ theorem Fun_Graph {f : Set ℕ → Set ℕ} (hf : IsApprox f) (x : Set ℕ) :
 end
 
 section
-/-- **The tag is onto**: every `c : ℕ` decodes as some `tag ns m`. Strong induction on `c`,
-decreasing via `num_succ_left_gt`. -/
+
 theorem tag_surjective (c : ℕ) : ∃ ns m, tag ns m = c := by
   induction c using Nat.strong_induction_on with
   | _ c ih =>
@@ -167,7 +156,7 @@ theorem tag_surjective (c : ℕ) : ∃ ns m, tag ns m = c := by
 end
 
 section
-/-- **`graph ∘ fun ⊇ λx.x`**: `u ⊆ Graph (Fun u)`. -/
+
 theorem id_le_Graph_Fun (u : Set ℕ) : u ⊆ Graph (Fun u) := by
   intro c hc
   obtain ⟨ns, m, hceq⟩ := tag_surjective c

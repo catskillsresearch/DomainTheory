@@ -18,7 +18,6 @@ variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-/-- Product entailment of a set projects to component entailment on `snd`. -/
 theorem entSet_snd_of_prodEntSet {u v : Finset (ProdToken A B)}
     (h : (productSystem A B).EntSet u v) :
     B.EntSet (sndFinset A B u) (sndFinset A B v) := by

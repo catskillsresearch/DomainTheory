@@ -10,9 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem Kcomb_app (x : Pomega) :
     funOf Kcomb x = graph (fun _ => x) :=

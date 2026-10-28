@@ -15,9 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
-
 
 theorem eta2_map_isScottContinuous (f : Pomega) :
     IsScottContinuous (fun x => graph (fun y => funOf (funOf f x) y)) :=

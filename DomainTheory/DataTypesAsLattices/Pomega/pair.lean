@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, §1.** Diagonal pairing `(n, m) = ½(n+m)(n+m+1) + m`. -/
 def pair (n m : ℕ) : ℕ := (n + m) * (n + m + 1) / 2 + m
 
 def triangle (w : ℕ) : ℕ := w * (w + 1) / 2
@@ -57,7 +56,6 @@ theorem exists_pair (k : ℕ) : ∃ n m, pair n m = k := by
   have : w - (k - triangle w) + (k - triangle w) = w := Nat.sub_add_cancel hm
   rw [pair_eq_triangle, this, Nat.add_sub_of_le hle]
 
-/-- Inverse of Cantor pairing. -/
 noncomputable def unpair (k : ℕ) : ℕ × ℕ :=
   ((exists_pair k).choose, (exists_pair k).choose_spec.choose)
 

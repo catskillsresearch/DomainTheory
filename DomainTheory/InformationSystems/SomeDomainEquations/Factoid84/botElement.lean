@@ -17,7 +17,6 @@ open InfoSys
 
 open ApproximableMap
 
-/-- Bottom element `⊥` of `|P|` (closure of `∅`). -/
 def botElement : P.Element :=
   P.closure ∅ trivial
 

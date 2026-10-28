@@ -18,8 +18,6 @@ namespace IdemFix
 
 variable {e : L → L}
 
-/-- With the ambient-then-`e` supremum, every set has a least upper bound in `IdemFix e`. This
-needs only that `e` is monotone (which follows from Scott continuity). -/
 theorem isLUB_sSup (hidem : ∀ x, e (e x) = e x) (hmono : Monotone e) :
     letI := supSet hidem
     ∀ S : Set (IdemFix e), IsLUB S (sSup S) := by

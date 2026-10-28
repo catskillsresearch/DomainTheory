@@ -8,7 +8,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamD
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -17,9 +16,7 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
-
 
 theorem LamDCon_empty : LamDCon A (∅ : Finset (LamDToken A)) := by
   simpa [LamDCon, lamDForgetFinset_empty] using LamConDepth_empty A

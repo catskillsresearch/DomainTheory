@@ -26,9 +26,6 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
 
 open Classical in
 
-/-- **`XPseq`**: the union, over all depth-`n` histories, of the `D₁`-piece chosen by the
-`X`-sub-step's "+" branch against `X n`. Recovers `X n`'s correspondent on `D₁`'s side (the
-two-sided, half-step analogue of `Theorem88.lean`'s `Yseq`). -/
 noncomputable def XPseq (n : ℕ) : Set β :=
   ⋃ δ' : Fin n → Bool × Bool,
     (xStep D₁ hD₁nomin (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y (extendTruePair δ') n).1
@@ -52,7 +49,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`XPseq n` is always `∅` or a genuine `D₁`-neighbourhood.** -/
 theorem empty_or_mem (n : ℕ) :
     XPseq D₀ D₁ hD₀nomin hD₁nomin X Y n = ∅ ∨ D₁.mem (XPseq D₀ D₁ hD₀nomin hD₁nomin X Y n) := by
   apply iUnion_mem_or_empty hD₁pos hD₁diff
@@ -80,11 +76,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`xStep`'s output satisfies the preconditions `yStep` needs** (the `SplitSpec'` hypotheses,
-transported across the `X`-sub-step): the `β`-side output is empty iff the `α`-side output is, and
-the `α`-side output is mem-or-∅ for `D₀`. Proved exactly as the corresponding step inside
-`atomPair.invariant`'s induction (Boolean-closure for the *direct* side, `SplitSpec'` for the
-*split* side). -/
 theorem spec (δ : ℕ → Bool × Bool) (n : ℕ) :
     ((xStep D₁ hD₁nomin (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1
         (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 (X n) (δ n).1).2 = ∅ ↔
@@ -122,12 +113,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`xStep.spec_bit`** (8.12(c)(vi)(4)(c)): a drop-in generalization of `xStep.spec` to an
-*arbitrary* bit `bx`, not just `δ n`'s own first component — the `SplitSpec'` preconditions `yStep`
-needs, transported across the `X`-sub-step at bit `bx`, for *any* history `δ`. Proved by
-transporting `xStep.spec` itself across a `Function.update`-adjusted history `δ''` that agrees with
-`δ` below `n` and has `(δ'' n).1 = bx` exactly — the two-sided analogue of `Theorem88.lean`'s
-`Function.update`-based `δ2` device in `split_fst_eq_inter_Yseq`. -/
 theorem spec_bit (δ : ℕ → Bool × Bool) (n : ℕ) (bx : Bool) :
     ((xStep D₁ hD₁nomin (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1
         (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 (X n) bx).2 = ∅ ↔
@@ -169,9 +154,7 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
 open Classical in
-/-- **`YPseq`** (8.12(c)(vi)(4)(b)): the union, over all depth-`n` histories *and* a free `Bool`
-`bx` for position `n`'s `X`-sub-step bit, of the `D₀`-piece chosen by the `Y`-sub-step's "+" branch
-against `Y n`. Recovers `Y n`'s correspondent on `D₀`'s side. -/
+
 noncomputable def YPseq (n : ℕ) : Set α :=
   ⋃ (δ' : Fin n → Bool × Bool) (bx : Bool),
     (yStep D₀ hD₀nomin
@@ -199,7 +182,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`YPseq n` is always `∅` or a genuine `D₀`-neighbourhood.** -/
 theorem empty_or_mem (n : ℕ) :
     YPseq D₀ D₁ hD₀nomin hD₁nomin X Y n = ∅ ∨ D₀.mem (YPseq D₀ D₁ hD₀nomin hD₁nomin X Y n) := by
   apply iUnion_mem_or_empty hD₀pos hD₀diff
@@ -229,7 +211,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`atomPair`'s `α`-side only shrinks from depth `n` to `n + 1`.** -/
 theorem fst_subset (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ (n + 1)).1 ⊆
       (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1 := by
@@ -254,12 +235,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **`atomPair`'s `α`-side is always `⊆ D₀.master`** (by induction from the base case
-`atomPair δ 0 = D₀.master`, shrinking at each step via `atomPair.fst_subset`). Placed here
-(rather than alongside 8.12(c)(vi)(5)'s other consumers below) since 8.12(c)(vi)(5)(a)'s
-`xStep.snd_succ_eq`/`yStep.fst_succ_eq` closed forms need it too, and both only depend on
-`atomPair.fst_subset`/`atomPair.snd_subset` just above — no need to wait for `atomPair.disjoint`
-or `XPseq`/`YPseq`. -/
 theorem fst_subset_master (δ : ℕ → Bool × Bool) (n : ℕ) :
     (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1 ⊆ D₀.master := by
   induction n with
@@ -282,15 +257,6 @@ variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
-/-- **Pairwise disjointness of `atomPair` on both sides at once** (Exercise 8.12(c)(v)): for sign
-sequences `δ`, `δ'` disagreeing somewhere below depth `n`, the two matched pairs are disjoint on
-*both* the `α`-side and the `β`-side. Proved by induction on `n`, mirroring `Theorem88.lean`'s
-`atomU_invariant`'s disjointness clause: the "disagree below `n`" case shrinks via
-`atomPair.fst_subset`/`atomPair.snd_subset`; the "agree below `n`, disagree at `n`" case splits on
-*which* sub-step first disagrees — the `X`-sub-step (`xStep.disjoint_of_ne` directly, then
-`yStep.fst_subset`/`yStep.snd_subset` carry the disjointness through the following `Y`-sub-step),
-or the `Y`-sub-step (`atomPair.succ_eq` unifies both `xStep` applications via `hpairEq`/`h1`, then
-`yStep.disjoint_of_ne` finishes directly). -/
 theorem disjoint (δ δ' : ℕ → Bool × Bool) :
     ∀ n, (∃ i < n, δ i ≠ δ' i) →
       (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).1 ∩
@@ -303,7 +269,7 @@ theorem disjoint (δ δ' : ℕ → Bool × Bool) :
   | succ n ih =>
     rintro ⟨i, hi, hine⟩
     by_cases hagree : ∀ j < n, δ j = δ' j
-    · -- Disagreement is exactly at position `n`: both depth-`n` pairs coincide.
+    ·
       have hδn : δ n ≠ δ' n := by
         intro heq
         exact hine (by
@@ -319,16 +285,16 @@ theorem disjoint (δ δ' : ℕ → Bool × Bool) :
             (atomPair D₀ D₁ hD₀nomin hD₁nomin X Y δ n).2 :=
         ⟨(congrArg Prod.fst hpairEq).symm, (congrArg Prod.snd hpairEq).symm⟩
       by_cases h1 : (δ n).1 = (δ' n).1
-      · -- Agree on the `X`-sub-step: the `xStep` application is *literally the same* for `δ`,
-        -- `δ'`, so disjointness comes purely from the `Y`-sub-step (which must then disagree).
+      ·
+
         have h2 : (δ n).2 ≠ (δ' n).2 := fun h2eq => hδn (Prod.ext_iff.mpr ⟨h1, h2eq⟩)
         rw [atomPair.succ_eq, atomPair.succ_eq, hAB'.1, hAB'.2, h1]
         obtain ⟨hspecAB, hspecAmem⟩ := xStep.spec D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff
           hD₁nomin X Y hXmem hYmem hD₀mne hD₁mne δ n
         rw [h1] at hspecAB hspecAmem
         exact yStep.disjoint_of_ne hD₀nomin hspecAB hspecAmem (Y n) h2
-      · -- Disagree already at the `X`-sub-step: the two `xStep` applications are disjoint
-        -- outright, and both `yStep` outputs shrink into their respective `xStep` halves.
+      ·
+
         obtain ⟨ihAB, ihA, ihB⟩ := atomPair.invariant D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff
           hD₁nomin X Y hXmem hYmem hD₀mne hD₁mne δ n
         have hxdisj := xStep.disjoint_of_ne hD₁nomin ihAB ihB (X n) h1
@@ -355,7 +321,7 @@ theorem disjoint (δ δ' : ℕ → Bool × Bool) :
         rw [hAB'.1, hAB'.2] at h1sub' h2sub'
         exact ⟨Set.subset_eq_empty (Set.inter_subset_inter h1sub h1sub') hxdisj.1,
           Set.subset_eq_empty (Set.inter_subset_inter h2sub h2sub') hxdisj.2⟩
-    · -- Disagreement is somewhere below `n`: shrink via `atomPair.fst_subset`/`atomPair.snd_subset`.
+    ·
       push Not at hagree
       obtain ⟨j, hj, hjne⟩ := hagree
       obtain ⟨hd1, hd2⟩ := ih ⟨j, hj, hjne⟩

@@ -19,13 +19,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.representationOrderIso
 public import DomainTheory.DataTypesAsLattices.Retracts.vals
 @[expose] public section
 
-
 namespace DomainTheory.DataTypesAsLattices
 
-
-/-- **Scott 1976, Theorem 5.2 (The representation theorem).**
-The constructed code is a continuous closure operation and its fixed-point
-range is order-isomorphic to the source lattice. -/
 theorem theorem_5_2 {α : Type u} [CompleteLattice α]
     (D : CountablyAlgebraic α) :
     IsScottContinuous (representClosure D) ∧

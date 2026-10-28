@@ -16,7 +16,6 @@ open InfoSys
 
 open ApproximableMap
 
-/-- Minimal entailment on `ℕ` with `0 = Δ`: `u ⊢ n` iff `n = 0` or `n ∈ u`. -/
 def PEnt (u : Finset ℕ) (n : ℕ) : Prop :=
   n = 0 ∨ n ∈ u
 

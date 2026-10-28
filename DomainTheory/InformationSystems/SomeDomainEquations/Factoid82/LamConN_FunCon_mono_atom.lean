@@ -9,7 +9,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamC
 
 @[expose] public section
 
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -18,11 +17,8 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-
 variable (A : InfoSys α)
 
-
-/-- Apply a stage-`k` FunCon at stage `m ≥ k` when the input union has no function tokens. -/
 theorem LamConN_FunCon_mono_atom {k m : ℕ} (hkm : k ≤ m)
     {u : Finset (RawLamToken α)}
     (hFun : ∀ s ⊆ lamFunFinset u,

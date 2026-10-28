@@ -22,7 +22,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
-/-- Scott's embedding component `i_{n∞}(x)_m`: climb for `m ≥ n`, descend for `m < n`. -/
 def iComp (n : ℕ) (x : D n) (m : ℕ) : D m :=
   if h : n ≤ m then embLE D P h x else projLE D P (le_of_lt (not_le.mp h)) x
 
@@ -36,7 +35,6 @@ theorem iComp_of_ge {n m : ℕ} (h : ¬ n ≤ m) (x : D n) :
 theorem iComp_self (n : ℕ) (x : D n) : iComp D P n x n = x := by
   rw [iComp_of_le D P (le_refl n), embLE_self]
 
-/-- `i_{n∞}(yₙ) ⊑ y` coordinatewise (the heart of `incl_retr_le` for `j_{∞n}`). -/
 theorem iComp_incl_le (n : ℕ) (y : InverseLimit D P) (m : ℕ) :
     iComp D P n (y.1 n) m ≤ y.1 m := by
   by_cases h : n ≤ m
@@ -57,7 +55,6 @@ theorem iComp_preservesDirectedSup (n m : ℕ) :
 theorem iComp_monotone (n m : ℕ) : Monotone (fun x : D n => iComp D P n x m) :=
   preservesDirectedSup_monotone (iComp_preservesDirectedSup D P n m)
 
-/-- The sequence `i_{n∞}(x)` is compatible, hence a genuine point of `D_∞`. -/
 theorem iComp_compatible (n : ℕ) (x : D n) : Compatible D P (iComp D P n x) := by
   intro m
   by_cases h1 : n ≤ m

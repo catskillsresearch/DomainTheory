@@ -6,36 +6,20 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Ele
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-/- concordance: source L468 EXERCISE 1.19 positive neighbourhood systems -/
-/-- **Exercise 1.19 (Scott 1981, PRG-19) — positivity, condition (ii′).** A neighbourhood
-system is *positive* when Scott's (ii) is strengthened to the biconditional **(ii′)**: for
-`X, Y ∈ 𝒟`, the intersection `X ∩ Y` is a neighbourhood **iff** it is non-empty. -/
+
 def NeighborhoodSystem.IsPositive {α : Type*} (V : NeighborhoodSystem α) : Prop :=
   ∀ ⦃X Y : Set α⦄, V.mem X → V.mem Y → (V.mem (X ∩ Y) ↔ (X ∩ Y).Nonempty)
 
-/-- **Difference-closure**: the set-difference of two neighbourhoods is again a neighbourhood, or
-empty. -/
 def NeighborhoodSystem.DiffClosed {α : Type*} (D : NeighborhoodSystem α) : Prop :=
   ∀ {X Y : Set α}, D.mem X → D.mem Y → X \ Y = ∅ ∨ D.mem (X \ Y)
 
-/-- **Atomlessness** ("no minimal neighbourhoods"): every neighbourhood splits into two disjoint,
-non-empty neighbourhood pieces whose union recovers it. -/
 def NeighborhoodSystem.NoMinimal {α : Type*} (D : NeighborhoodSystem α) : Prop :=
   ∀ {X : Set α}, D.mem X →
     ∃ Y Z : Set α, D.mem Y ∧ D.mem Z ∧ Y.Nonempty ∧ Z.Nonempty ∧ Y ∩ Z = ∅ ∧ Y ∪ Z = X
 
-/-- Scott's *"very special circumstance"* (the prose after Examples 1.2–1.4): a family `𝒟`
-is **nested-or-disjoint** when any two of its members are either nested (one included in the
-other) or disjoint. -/
 def NestedOrDisjoint {α : Type*} (mem : Set α → Prop) : Prop :=
   ∀ ⦃X Y : Set α⦄, mem X → mem Y → X ⊆ Y ∨ Y ⊆ X ∨ X ∩ Y = ∅
 
-
-/-- **Exercise 1.19 — a positive system is a neighbourhood system.** Scott: "*prove that a
-positive neighbourhood system is indeed a neighbourhood system*". From the raw data — (i)
-`Δ ∈ 𝒟`, `𝒟 ⊆ 𝒫(Δ)`, and the positivity axiom (ii′) — condition (ii) follows: a consistency
-witness `Z ⊆ X ∩ Y` with `Z ∈ 𝒟` is itself non-empty (apply (ii′) to `Z ∩ Z = Z`), so
-`X ∩ Y ⊇ Z` is non-empty, whence `X ∩ Y ∈ 𝒟` by (ii′). Choice-free. -/
 def NeighborhoodSystem.ofPositive {α : Type*} (mem : Set α → Prop) (master : Set α)
     (master_nonempty : master.Nonempty) (master_mem : mem master)
     (sub_master : ∀ {X : Set α}, mem X → X ⊆ master)
@@ -57,91 +41,85 @@ end DomainTheory.NeighbourhoodSystems
 end
 
 section
--- Exercise119/Tok.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-/-- Tokens `Δ = {0, 1, 2}`. -/
 abbrev Tok := Fin 3
 
 end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/a.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-/-- The neighbourhood `{0, 1}`. -/
 def a : Set Tok := {0, 1}
 
 end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/b.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-/-- The neighbourhood `{1, 2}`. -/
 def b : Set Tok := {1, 2}
 
 end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/master.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-/-- The master neighbourhood `Δ`. -/
 def master : Set Tok := Set.univ
 
 end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/memSet.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-/-- `𝒟 = {Δ, {0,1}, {1,2}}`. -/
 def memSet : Set (Set Tok) := {master, a, b}
 
 end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/mem.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-/-- Membership in `𝒟`. -/
 def mem (X : Set Tok) : Prop := X ∈ memSet
 
 end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/mem_iff.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
@@ -155,14 +133,13 @@ end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/inter_eq.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-/-- Classification of binary intersections in `𝒟`. -/
 theorem inter_eq (X Y : Set Tok) (hX : mem X) (hY : mem Y) :
     X ∩ Y = master ∨ X ∩ Y = a ∨ X ∩ Y = b ∨ X ∩ Y = ({1} : Set Tok) := by
   rcases (mem_iff X).mp hX with rfl | rfl | rfl
@@ -183,7 +160,7 @@ end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/mem_a.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
@@ -196,7 +173,7 @@ end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/mem_b.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
@@ -209,7 +186,7 @@ end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/mem_master.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
@@ -222,15 +199,13 @@ end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/not_mem_sub_one.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-/-- No neighbourhood is contained in `{1}` (each contains a token other than `1`). This is why
-the overlapping pair `{0,1}`, `{1,2}` never triggers condition (ii). -/
 theorem not_mem_sub_one {Z : Set Tok} (hZ : mem Z) (hsub : Z ⊆ ({1} : Set Tok)) : False := by
   rcases (mem_iff Z).mp hZ with rfl | rfl | rfl
   · exact absurd (hsub (show (0 : Tok) ∈ master by simp [master])) (by simp)
@@ -241,16 +216,13 @@ end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/notPositiveSystem.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-/-- **Exercise 1.19 — the non-positive example is a neighbourhood system.** The only intersection
-that is not already a neighbourhood is `{0,1} ∩ {1,2} = {1}`, and that case is impossible: a
-consistency witness `Z ⊆ {1}` with `Z ∈ 𝒟` does not exist (`not_mem_sub_one`). -/
 def notPositiveSystem : NeighborhoodSystem Tok where
   mem
   master
@@ -269,15 +241,13 @@ end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/positiveExample.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-/-- All non-empty subsets of `Fin 2` form a *positive* neighbourhood system: there `X ∩ Y ∈ 𝒟`
-literally **is** `(X ∩ Y).Nonempty`, so (ii′) is `Iff.rfl`. -/
 def positiveExample : NeighborhoodSystem (Fin 2) :=
   NeighborhoodSystem.ofPositive (fun X => X.Nonempty) Set.univ
     (by exact ⟨(0 : Fin 2), Set.mem_univ 0⟩)
@@ -288,30 +258,26 @@ end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/a_inter_b.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-
-/-- `{0,1} ∩ {1,2} = {1}`. -/
 theorem a_inter_b : a ∩ b = ({1} : Set Tok) := by ext x; fin_cases x <;> simp [a, b]
 
 end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/one_not_mem.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-
-/-- `{1}` is not a neighbourhood (it is neither `Δ`, `{0,1}`, nor `{1,2}`). -/
 theorem one_not_mem : ¬ mem ({1} : Set Tok) := by
   intro h
   rcases (mem_iff _).mp h with h | h | h
@@ -326,16 +292,13 @@ end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/not_isPositive.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
 
-
-/-- **Exercise 1.19 — the example is not positive.** `{0,1}` and `{1,2}` are neighbourhoods whose
-intersection `{1}` is non-empty but is *not* a neighbourhood, contradicting (ii′). -/
 theorem not_isPositive : ¬ notPositiveSystem.IsPositive := by
   intro h
   have hab := h (X := a) (Y := b) mem_a mem_b
@@ -346,7 +309,7 @@ end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119.lean
+
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 set_option linter.unusedVariables false
@@ -360,13 +323,12 @@ end DomainTheory.NeighbourhoodSystems.Exercise119
 end
 
 section
--- Exercise119/positiveExample_isPositive.lean
+
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
 open DomainTheory.NeighbourhoodSystems
-
 
 theorem positiveExample_isPositive : positiveExample.IsPositive := by
   intro X Y _ _
