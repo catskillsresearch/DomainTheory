@@ -565,7 +565,8 @@ def gen_note_outline(
         title_to_nid[title] = nid
         node_labels[nid] = old_labels.get(nid, title)
         for mod in mods:
-            mod_to_nid[mod] = nid
+            # First outline note in paper order owns a shared @import (e.g. InjectiveSpace.lean).
+            mod_to_nid.setdefault(mod, nid)
 
     if external_sections:
         for sec_id, (sec_title, _sec_mods) in external_sections.items():

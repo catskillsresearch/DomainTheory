@@ -1,8 +1,8 @@
 # Injective spaces
 
-@import "1972_Injective_spaces.english" {code_block=false}
-
 @import "Injective.mermaid"
+
+@import "1972_Injective_spaces.english" {code_block=false}
 
 - [Definition 1.1: Injective Space](1972_Definition_1_1.md)
 - [Proposition 1.2](1972_Proposition_1_2.md)

@@ -383,9 +383,12 @@ def extract_mermaid_captions(text: str) -> list[str]:
             if cm:
                 explicit = cm.group(1).strip()
                 break
-            hm = re.match(r"^#{2,4}\s+(.+)$", stripped)
+            hm = re.match(r"^#{1,6}\s+(.+)$", stripped)
             if hm:
-                heading = hm.group(1).strip()
+                candidate = hm.group(1).strip()
+                if candidate.lower() == "abstract":
+                    continue
+                heading = candidate
                 break
         if explicit:
             captions.append(explicit.rstrip(".") + ".")
