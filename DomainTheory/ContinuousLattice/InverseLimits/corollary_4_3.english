@@ -16,8 +16,6 @@ $$
 
 and introduce the pairs $i_{n+1}, j_{n+1}$ making $D_{n+1}$ a projection of $D_{n+2}$ by the method of 3.7. Specifically we shall have for $x \in D_{n+1}$ and $x' \in D_{n+2}$:
 
-127
-
 $$
 i_{n+1}(x) = i_n \circ x \circ j_n,
 $$

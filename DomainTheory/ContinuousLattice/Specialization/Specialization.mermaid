@@ -1,47 +1,37 @@
-%% Lean files imported under this note.
+%% Notes of the specialization order, in outline order.
+%% Each box is one outline note from 1972_Specialization_order.md.
 %% Arrowhead on the importer. The number is a direct-import count.
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
 
-  Specialization_isOpen_iff_scottOpen["isOpen_iff_scottOpen"]
-  Specialization_isOpen_scott_iff_scottOpen["isOpen_scott_iff_scottOpen"]
-  Specialization_MonotoneNet["MonotoneNet"]
-  Specialization_proposition_2_1["proposition_2_1"]
-  Specialization_proposition_2_1_le_of_converges["proposition_2_1_le_of_converges"]
-  Specialization_proposition_2_1_of_le["proposition_2_1_of_le"]
-  Specialization_ScottConvergesTo["ScottConvergesTo"]
-  WayBelow_ScottOpen["ScottOpen"]
-  Specialization_ScottOpen_iff_dirSupInacc["ScottOpen_iff_dirSupInacc"]
-  Specialization_scottOpen_not_le["scottOpen_not_le"]
-  WayBelow_scottOpen_wayBelow["scottOpen_wayBelow"]
-  WayBelow_ScottOpenu2eisUpperSet["ScottOpenu2eisUpperSet"]
-  Specialization_scottTopologicalSpace["scottTopologicalSpace"]
-  Specialization_scottTopology_t0Space["scottTopology_t0Space"]
-  Specialization_SpecializationLe["SpecializationLe"]
-  Specialization_specializationLe_antisymm["specializationLe_antisymm"]
-  Specialization_specializationLe_iff_specializes["specializationLe_iff_specializes"]
-  Specialization_specializationLe_scott_iff["specializationLe_scott_iff"]
-  Specialization_SpecializationLeu2emap["SpecializationLeu2emap"]
-  Specialization_specializationPreorder["specializationPreorder"]
+  OiSO["isOpen_iff_scottOpen"]
+  MN["MonotoneNet"]
+  P21["Proposition 2.1"]
+  SO["Scott open"]
+  SCT["ScottConvergesTo"]
+  SOds["ScottOpen_iff_dirSupInacc"]
+  SOnt["scottOpen_not_le"]
+  STS["scottTopologicalSpace"]
+  T0["scottTopology_t0Space"]
+  SLe["SpecializationLe"]
+  SlSp["specializationLe_iff_specializes"]
+  SlSc["specializationLe_scott_iff"]
+  SLeu["SpecializationLeu2emap"]
 
-  Specialization_ScottOpen_iff_dirSupInacc -->|"1"| Specialization_isOpen_iff_scottOpen
-  Specialization_scottTopologicalSpace -->|"1"| Specialization_isOpen_iff_scottOpen
-  Specialization_isOpen_iff_scottOpen -->|"1"| Specialization_isOpen_scott_iff_scottOpen
-  Specialization_proposition_2_1_le_of_converges -->|"1"| Specialization_proposition_2_1
-  Specialization_proposition_2_1_of_le -->|"1"| Specialization_proposition_2_1
-  Specialization_ScottConvergesTo -->|"1"| Specialization_proposition_2_1_le_of_converges
-  Specialization_scottOpen_not_le -->|"1"| Specialization_proposition_2_1_le_of_converges
-  Specialization_MonotoneNet -->|"1"| Specialization_proposition_2_1_of_le
-  Specialization_ScottConvergesTo -->|"1"| Specialization_proposition_2_1_of_le
-  WayBelow_ScottOpen -->|"1"| Specialization_ScottConvergesTo
-  WayBelow_ScottOpen -->|"1"| Specialization_ScottOpen_iff_dirSupInacc
-  WayBelow_ScottOpen -->|"1"| Specialization_scottOpen_not_le
-  WayBelow_ScottOpen -->|"1"| WayBelow_ScottOpenu2eisUpperSet
-  Specialization_specializationLe_scott_iff -->|"1"| Specialization_scottTopology_t0Space
-  Specialization_SpecializationLe -->|"1"| Specialization_specializationLe_antisymm
-  Specialization_SpecializationLe -->|"1"| Specialization_specializationLe_iff_specializes
-  Specialization_isOpen_iff_scottOpen -->|"1"| Specialization_specializationLe_scott_iff
-  Specialization_scottOpen_not_le -->|"1"| Specialization_specializationLe_scott_iff
-  Specialization_SpecializationLe -->|"1"| Specialization_specializationLe_scott_iff
-  Specialization_SpecializationLe -->|"1"| Specialization_SpecializationLeu2emap
-  Specialization_SpecializationLe -->|"1"| Specialization_specializationPreorder
+  SOds -->|"1"| OiSO
+  STS -->|"1"| OiSO
+  MN -->|"2"| P21
+  SCT -->|"3"| P21
+  SOnt -->|"1"| P21
+  SO -->|"1"| SCT
+  SLe -->|"1"| SLeu
+  SO -->|"1"| SOds
+  SO -->|"1"| SOnt
+  OiSO -->|"1"| SlSc
+  SLe -->|"1"| SlSc
+  SOnt -->|"1"| SlSc
+  SLe -->|"1"| SlSp
+  SlSc -->|"1"| T0
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

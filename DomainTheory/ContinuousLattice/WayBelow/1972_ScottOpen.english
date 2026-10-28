@@ -6,4 +6,4 @@ For a partially ordered set $X$, a subset $U \subseteq X$ is open in the *induce
 
 Directed sets are non-empty. The sets satisfying (i) and (ii) are the open sets of the induced topology.
 
-The discussion that leads to (i) and (ii) is in [Specialization](../Specialization/1972_Specialization.md).
+The discussion that leads to (i) and (ii) is in [Specialization order](../Specialization/1972_Specialization_order.md).

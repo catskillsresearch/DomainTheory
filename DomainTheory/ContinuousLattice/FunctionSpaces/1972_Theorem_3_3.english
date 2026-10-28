@@ -24,8 +24,6 @@ $$\overrightarrow{e}[e, e'](x) = \begin{cases} e' & \text{if } e \ll x,  \bot & 
 
 for all $x \in D$. Call the function on the right $f'$. Calculate:
 
-113
-
 $$
 f'(x) = \bigsqcup \overrightarrow{e}[e, e'](x) : e' \ll f(e)
 $$

@@ -22,8 +22,6 @@ $$
 
 In the converse order the calculation is only a bit more complicated. The idea is that since all the functions $f$ are continuous and since the elements $x$ are the limits of their approximations, then each $f$ is actually completely determined by its
 
-128
-
 In the converse order the calculation is only a bit more complicated. The idea is that since all the functions $f$ are continuous and since the elements $x$ are the limits of their approximations, then each $f$ is actually completely determined by its sequence of restrictions $j_{\infty n} \circ f \circ i_{n\infty} \in D_{n+1}$. This simple idea can be made more precise with the aid of a lemma about $D_\infty$, which allows us in certain cases to recognize projections from limits.
 
 **Proof of 4.4 concluded:** The lemma applies at once to our calculation, for we find:
@@ -42,8 +40,6 @@ $$\mathrm{id} = \bigsqcup_{n=0}^{\infty} (i_{n\infty} \circ j_{\infty n}),$$
 and the proof that $i_\infty$ and $j_\infty$ are inverse to one another is complete. $\square$
 
 We can explain the idea of this proof in other terms using a suggestion made to me by F. W. Lawvere. Consider the category of
-
-129
 
 We can explain the idea of this proof in other terms using a suggestion made to me by F. W. Lawvere. Consider the category of continuous lattices and projections. In that category our $D_\infty$ is, as we have remarked, both a *direct* and an *inverse* limit. Note too that with regard to projections $[D \to D']$ is a *functor*, for we can also define $[j \to j']$ when the maps are projections. In this language our particular inverse system is defined by the recursion:
 
@@ -77,8 +73,6 @@ Inasmuch as I have not checked all details in this form, I hope what I say is co
 Since we have shown $[D_\infty \to D_\infty]$ to be homeomorphic to $D_\infty$, we can begin to regard them as the same. In particular there ought to be some function space structure to transfer to $D_\infty$. This can be done by defining functional application for any elements $x, y \in D_\infty$ by the equation:
 
 $$x(y) = \bigsqcup_{n=0}^{\infty} i_{n\infty}(x_{n+1}(y_n)).$$
-
-130
 
 Similarly we can define $\lambda$-abstraction on continuous expressions:
 

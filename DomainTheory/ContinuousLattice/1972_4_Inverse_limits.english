@@ -26,8 +26,6 @@ where for each $n$
 
 $$f_n = j_n \circ f_{n+1}.$$
 
-125
-
 Because, we can define
 
 $$f_{\infty} : Y \to X_{\infty}$$

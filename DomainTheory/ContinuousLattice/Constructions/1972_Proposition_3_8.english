@@ -28,7 +28,5 @@ $$\overline{g \circ e} \sqsubseteq \bar{f}.$$
 
 But $g \circ e = \overline{g \circ e} \circ e$, so by 3.8, $g \sqsubseteq \overline{g \circ e}$, and $\bar{f}$ is thus maximal.
 
-117
-
 In the case that the range spaces are being extended, the following lemma relating the extensions will be very useful when we consider inverse limits.
 

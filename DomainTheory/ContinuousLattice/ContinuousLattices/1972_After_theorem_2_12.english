@@ -14,8 +14,6 @@ That makes $D$ a continuous lattice with the sets $\{ y \in D : x \ll y \}$ as a
 
 The retract approach to injective spaces should also be considered. The Cartesian powers $\mathbb{O}^I$ are very simple spaces; indeed, as lattices these are just the Boolean algebras of *all subsets* of $I$ (that is, isomorphic thereto). The topology has as a basis the
 
-111
-
 classes of sets containing given finite sets (the *weak topology*, cf. Nerode (1959)). A continuous function
 
 $$j : \mathcal{P}I \to \mathcal{P}I$$

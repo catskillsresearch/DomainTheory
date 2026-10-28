@@ -22,8 +22,6 @@ $$d' \sqsubseteq \sqcap \{ f(x) : x \in X \cap U \} $$
 
 for some open $U \subseteq Y$ with $y \in U$. Thus
 
-110
-
 $$d' \sqsubseteq \bar{f}(y')$$
 
 for all $y' \in U$ by virtue of the definition of $\bar{f}$. Since $d \ll d'$, we have also

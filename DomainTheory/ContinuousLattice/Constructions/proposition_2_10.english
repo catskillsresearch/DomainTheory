@@ -41,8 +41,6 @@ $$
 
 in $D$. In this way we now know that $D$ is a complete lattice. We must
 
-109
-
 still show that $D$ is continuous.
 
 Suppose $y \in D$. In $D'$ we can write:

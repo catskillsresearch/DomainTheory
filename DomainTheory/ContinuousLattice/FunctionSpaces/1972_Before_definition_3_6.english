@@ -1,7 +1,5 @@
 What will be useful will be to return at this point to a discussion of the injective properties of continuous lattices. If one continuous lattice is a subspace of another it is of course a retract. This relationship between spaces can be given by a pair of continuous maps
 
-115
-
 $$i : D \to D' \quad \text{and} \quad j : D' \to D,$$
 
 where

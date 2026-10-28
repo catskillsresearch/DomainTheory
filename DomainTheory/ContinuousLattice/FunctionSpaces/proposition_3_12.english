@@ -32,8 +32,6 @@ Similarly, if $S$ is a directed set of $J_D$, then $D(\bigsqcup S)$ is the $\big
 
 $$\bigcup D(j) : j \in S.$$
 
-122
-
 These are not very deep facts, but their proofs were very much facilitated by the introduction of $J_D$ and the utilization of the lattice structure of $[D \to D]$. Along the same line we can define for $j, k \in J_D$ a function $(j \to k) \in [D \to D] \to [D \to D]$ by the equation
 
 $$(j \to k)(f) = k \circ f \circ j.$$

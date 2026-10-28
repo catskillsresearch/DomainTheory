@@ -4,7 +4,7 @@
 
 @import "1972_2_Continuous_lattices.mermaid"
 
-- [Specialization](Specialization/1972_Specialization_order.md)
+- [Specialization order](Specialization/1972_Specialization_order.md)
 - [Way-below relation](WayBelow/1972_WayBelow.md)
 - [Proposition 2.2](WayBelow/1972_Proposition_2_2.md)
 - [Definition 2.3](WayBelow/1972_ContinuousLattice.md)

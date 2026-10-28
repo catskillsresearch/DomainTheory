@@ -56,8 +56,6 @@ $$
 
 which completes the argument for equation (i).
 
-119
-
 Condition (ii) is obvious. For (iii) we argue as follows. Assume $x \ll y$. Since $D'$ is continuous we can write:
 
 $$i(y) = \bigsqcup  z' \in D' : z' \ll i(y) ,$$
@@ -101,8 +99,6 @@ holds for all $x$ with $i(x) \sqsubseteq \bigsqcup S'$. The desired result follo
 
 As a corollary of 3.10 we can easily see which *subspaces* of a continuous lattice $D'$ are projections of it. Such a subspace $D \subseteq D'$ must first be closed under $\bigsqcup$. That is, if $S \subseteq D$, then $\bigsqcup S \in D$ for
 
-120
-
 all $S$, where the lub is taken in the sense of $D'$. The identity map on $D$ will then satisfy (i) and (ii). But this is not enough, since we would not know that $D$ is a continuous lattice, nor whether (iii) holds. The following additional condition would be sufficient, if assumed for all $y \in D$:
 
 $$y = \bigsqcup x \in D : x \ll y,$$
@@ -136,6 +132,4 @@ $$y = j(y) = \bigsqcup \{ j(x') : x' \ll y \}.$$
 But each $j(x') \in D$, so $y = \bigsqcup x \in D : x \ll y$, as desired.
 
 The foregoing discussion suggests looking more closely at the space of all projections of a continuous lattice since they are so easily characterized.
-
-121
 

@@ -770,7 +770,11 @@ def classify(mermaid: Path, text: str) -> str:
         return "cl1972_chapter"
     if mermaid.name == "DomainTheory.mermaid":
         return "top_chapters"
+    if mermaid.name == "Specialization.mermaid" and mermaid.parent.name == "Specialization":
+        return "note_outline"
     if "Inside " in text.split("flowchart")[0]:
+        return "inside"
+    if "Lean files imported under this note" in text.split("flowchart")[0]:
         return "inside"
     if "Each box is one folder under BridgeTheorems" in text:
         return "bridge_folders"
@@ -891,6 +895,30 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         skip = "Imports of a folder barrel are not counted" in old
         reduce = "transitive" in old.lower() or "longer path" in old.lower()
         extra_ids: dict[str, str] | None = None
+        header_lines: list[str] | None = None
+        if mermaid.name == "Specialization.mermaid":
+            reduce = True
+            header_lines = [
+                "%% Notes of the specialization order, in outline order.",
+                "%% Each box is one outline note from 1972_Specialization_order.md.",
+                "%% Arrowhead on the importer. The number is a direct-import count.",
+                "%% An arrow already implied by a longer path is omitted.",
+            ]
+            extra_ids = {
+                "MonotoneNet": "MN",
+                "ScottConvergesTo": "SCT",
+                "ScottOpen_iff_dirSupInacc": "SOds",
+                "SpecializationLe": "SLe",
+                "SpecializationLeu2emap": "SLeu",
+                "isOpen_iff_scottOpen": "OiSO",
+                "scottOpen_not_le": "SOnt",
+                "scottTopologicalSpace": "STS",
+                "scottTopology_t0Space": "T0",
+                "specializationLe_iff_specializes": "SlSp",
+                "specializationLe_scott_iff": "SlSc",
+                "Scott open": "SO",
+                "Proposition 2.1": "P21",
+            }
         if mermaid.name == "Injective.mermaid":
             extra_ids = {
                 "Definition 1.1: Injective Space": "D11",
@@ -912,6 +940,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             reduce=reduce,
             labeled=True,
             extra_title_ids=extra_ids,
+            header_lines=header_lines,
         )
     return None
 

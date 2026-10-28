@@ -6,8 +6,6 @@ $$i_{n\infty}(x) = \langle y_m \rangle_{m=0}^{\infty}$$
 
 where
 
-126
-
 $$
 y_m = \begin{cases}
 j_m(y_{m+1}) & \text{if } m < n, 

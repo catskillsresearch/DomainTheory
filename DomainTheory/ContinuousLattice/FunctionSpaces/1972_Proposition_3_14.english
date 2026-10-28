@@ -8,8 +8,6 @@ $$f(\mathrm{fix}(f)) = \mathrm{fix}(f)$$
 
 and whenever $f(x) \sqsubseteq x$, then $\mathrm{fix}(f) \sqsubseteq x$.
 
-124
-
 and whenever $f(x) \sqsubseteq x$, then
 
 $$\mathrm{fix}(f) \sqsubseteq x.$$

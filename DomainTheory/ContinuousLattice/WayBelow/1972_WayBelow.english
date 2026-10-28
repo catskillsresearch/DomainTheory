@@ -8,8 +8,6 @@ gives the definition.
 
 Given a complete lattice $D$ we define
 
-103
-
 $$
 x \ll y \text{ iff } y \in \text{Int}\{ z \in D : x \sqsubseteq z \},
 $$
