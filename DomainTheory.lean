@@ -454,7 +454,6 @@ import DomainTheory.ContinuousLattice.Specialization.proposition_2_1
 import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-import DomainTheory.ContinuousLattice.WayBelow.ScottOpenu2eisUpperSet
 import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
 import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset

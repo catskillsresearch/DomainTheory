@@ -14,7 +14,7 @@ public import Mathlib.Order.Directed
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.WayBelow.ScottOpenu2eisUpperSet
+public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset

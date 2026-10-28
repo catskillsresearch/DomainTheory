@@ -6,14 +6,35 @@ flowchart TB
   CL["Continuous lattices"]
   Corollary_3_4["Corollary 3.4"]
   Definition_3_1__Function["Definition 3.1: Function space"]
+  Definition_3_6["Definition 3.6"]
   INJ["Injective spaces"]
   LIM["Inverse limits"]
-  FunctionSpaces_le["le"]
+  Lemma_3_9["Lemma 3.9"]
   Proposition_3_10["Proposition 3.10"]
+  Proposition_3_12["Proposition 3.12"]
+  Proposition_3_13["Proposition 3.13"]
+  Proposition_3_14["Proposition 3.14"]
+  Proposition_3_2["Proposition 3.2"]
+  Proposition_3_5["Proposition 3.5"]
+  Proposition_3_7["Proposition 3.7"]
+  Proposition_3_8["Proposition 3.8"]
   Theorem_3_3["Theorem 3.3"]
 
   CL -->|"4"| Corollary_3_4
-  CL -->|"7"| Definition_3_1__Function
-  CL -->|"6"| FunctionSpaces_le
-  CL -->|"39"| Proposition_3_10
-  CL -->|"34"| Theorem_3_3
+  CL -->|"6"| Definition_3_1__Function
+  Proposition_3_8 -->|"1"| Definition_3_1__Function
+  CL -->|"6"| Lemma_3_9
+  CL -->|"4"| Proposition_3_10
+  Theorem_3_3 -->|"4"| Proposition_3_12
+  CL -->|"5"| Proposition_3_13
+  CL -->|"3"| Proposition_3_14
+  Theorem_3_3 -->|"9"| Proposition_3_14
+  CL -->|"1"| Proposition_3_2
+  Definition_3_1__Function -->|"2"| Proposition_3_2
+  CL -->|"7"| Proposition_3_5
+  CL -->|"11"| Proposition_3_7
+  CL -->|"8"| Proposition_3_8
+  CL -->|"33"| Theorem_3_3
+  Proposition_3_13 -->|"2"| Theorem_3_3
+  Proposition_3_14 -->|"1"| Theorem_3_3
+  Proposition_3_7 -->|"1"| Theorem_3_3

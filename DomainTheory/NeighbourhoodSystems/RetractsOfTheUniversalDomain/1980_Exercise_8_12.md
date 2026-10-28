@@ -48,7 +48,7 @@ The integer neighbourhood system $V$ is built from affine residue classes $2^k\m
 
 Its computable presentation (indices, decoding, intersection/union/difference codes, and the canonical bisection `splitV*`) lives in a dedicated library module.
 
- — computable presentation of $V`, including `VComputablePresentation` and `V.isEffectivelyGiven`
+ — computable presentation of `V`, including `VComputablePresentation` and `V.isEffectivelyGiven`
 
 @import "VComputablePresentation.lean"
 

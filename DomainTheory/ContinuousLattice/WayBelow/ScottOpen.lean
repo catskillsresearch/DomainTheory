@@ -32,6 +32,8 @@ def ScottOpen (U : Set D) : Prop :=
 
 namespace ScottOpen
 
+theorem isUpperSet {U : Set D} (h : ScottOpen U) : IsUpperSet U := h.1
+
 theorem inter {U V : Set D} (hU : ScottOpen U) (hV : ScottOpen V) : ScottOpen (U ∩ V) := by
   refine ⟨hU.1.inter hV.1, fun S hS hSdir hmem => ?_⟩
   obtain ⟨s₁, hs₁S, hs₁U⟩ := hU.2 hS hSdir hmem.1

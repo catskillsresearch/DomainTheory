@@ -11,9 +11,13 @@ flowchart TB
   FS["Function spaces"]
   INJ["Injective spaces"]
   inverseLimitLE["inverseLimitLE"]
+  inverseLimitLT["inverseLimitLT"]
+  inverseLimitTopology["inverseLimitTopology"]
   projection["projection"]
+  Projections_from_the_lim["Projections from the limit"]
   projLE["projLE"]
   Proposition_4_1["Proposition 4.1"]
+  Proposition_4_2["Proposition 4.2"]
   The_function_space_tower["The function space tower"]
   The_inverse_system["The inverse system"]
   The_limit_lattice["The limit lattice"]
@@ -24,27 +28,38 @@ flowchart TB
   projLE -->|"1"| Coordinates_of_an_embedd
   CL -->|"1"| Corollary_4_3
   FS -->|"1"| Corollary_4_3
+  inverseLimitTopology -->|"1"| Corollary_4_3
   CL -->|"1"| Embeddings_along_the_tow
   FS -->|"4"| Embeddings_along_the_tow
   The_inverse_system -->|"1"| Embeddings_along_the_tow
   CL -->|"2"| Embeddings_into_the_limi
+  Coordinates_of_an_embedd -->|"2"| Embeddings_into_the_limi
   The_limit_lattice -->|"3"| Embeddings_into_the_limi
+  CL -->|"2"| Projections_from_the_lim
+  The_limit_lattice -->|"2"| Projections_from_the_lim
   CL -->|"3"| Proposition_4_1
+  inverseLimitTopology -->|"1"| Proposition_4_1
+  Embeddings_into_the_limi -->|"1"| Proposition_4_2
+  Projections_from_the_lim -->|"1"| Proposition_4_2
   CL -->|"5"| The_function_space_tower
   FS -->|"40"| The_function_space_tower
-  Proposition_4_1 -->|"3"| The_function_space_tower
+  Proposition_4_1 -->|"2"| The_function_space_tower
+  Proposition_4_2 -->|"1"| The_function_space_tower
   FS -->|"1"| The_inverse_system
   FS -->|"2"| The_limit_lattice
-  inverseLimitLE -->|"2"| The_limit_lattice
+  inverseLimitLT -->|"1"| The_limit_lattice
+  projection -->|"1"| The_limit_lattice
   CL -->|"1"| The_mediating_map
+  Embeddings_into_the_limi -->|"1"| The_mediating_map
   FS -->|"2"| The_mediating_map
-  CL -->|"10"| inverseLimitLE
-  FS -->|"2"| inverseLimitLE
-  INJ -->|"1"| inverseLimitLE
-  The_mediating_map -->|"1"| inverseLimitLE
+  Projections_from_the_lim -->|"1"| The_mediating_map
+  The_inverse_system -->|"1"| inverseLimitLE
+  inverseLimitLE -->|"1"| inverseLimitLT
+  CL -->|"8"| inverseLimitTopology
+  FS -->|"2"| inverseLimitTopology
+  INJ -->|"1"| inverseLimitTopology
+  The_mediating_map -->|"1"| inverseLimitTopology
   CL -->|"1"| projLE
   FS -->|"4"| projLE
   The_inverse_system -->|"1"| projLE
-  CL -->|"2"| projection
   FS -->|"2"| projection
-  The_limit_lattice -->|"2"| projection

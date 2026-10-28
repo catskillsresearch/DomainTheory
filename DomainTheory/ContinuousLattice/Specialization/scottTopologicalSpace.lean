@@ -18,10 +18,14 @@ variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 @[reducible] noncomputable def scottTopologicalSpace : TopologicalSpace D :=
   Topology.scott D (@Set.univ (Set D))
 
+namespace scottTopologicalSpace
+
 /-- The Scott topology of a partial order is `T₀`. -/
-theorem scottTopologicalSpace.t0Space : @T0Space D scottTopologicalSpace := by
+theorem t0Space : @T0Space D scottTopologicalSpace := by
   let : TopologicalSpace D := scottTopologicalSpace
   have : IsScott D (@Set.univ (Set D)) := ⟨rfl⟩
   exact inferInstanceAs (T0Space D)
+
+end scottTopologicalSpace
 
 end DomainTheory.ContinuousLattice

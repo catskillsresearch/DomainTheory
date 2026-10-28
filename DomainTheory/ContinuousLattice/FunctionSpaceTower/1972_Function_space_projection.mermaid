@@ -1,11 +1,102 @@
-%% Lean files imported under this note.
-%% Arrowhead on the importer. The number is a direct-import count.
-%% An arrow already implied by a longer path is omitted.
+%% Inside FunctionSpaceTower. A box is one Lean file in this folder, or one subfolder.
+%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
+%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
 
+  CLat["CLat"]
+  conj_iInfTerm_eq["conj_iInfTerm_eq"]
+  conjMap["conjMap"]
+  conjMap_iSup["conjMap_iSup"]
+  DInf["DInf"]
+  DInfFn["DInfFn"]
+  embInf_succ_iSup["embInf_succ_iSup"]
+  embInfInf["embInfInf"]
+  embInfInf_projInfInf["embInfInf_projInfInf"]
   FunctionSpaceTower_functionSpaceInclFun["functionSpaceInclFun"]
   FunctionSpaceTower_functionSpaceProjection["functionSpaceProjection"]
   FunctionSpaceTower_functionSpaceRetrFun["functionSpaceRetrFun"]
+  FunctionSpaces["FunctionSpaces"]
+  iInfTerm["iInfTerm"]
+  iInfTerm_monotone["iInfTerm_monotone"]
+  incl_projInf_le_projInf_succ["incl_projInf_le_projInf_succ"]
+  InverseLimits["InverseLimits"]
+  iSup__monotone_eq_diagonal["iSup₂_monotone_eq_diagonal"]
+  jInfTerm["jInfTerm"]
+  projInfInf["projInfInf"]
+  ScottMaps["ScottMaps"]
+  theorem_4_4["theorem_4_4"]
+  theorem_4_4_more["theorem_4_4_more"]
+  towerProj["towerProj"]
+  towerProj_retr_conjMap_succ["towerProj_retr_conjMap_succ"]
+  WayBelow["WayBelow"]
 
+  FunctionSpaces -->|"1"| CLat
+  InverseLimits -->|"1"| DInf
+  towerProj -->|"1"| DInf
+  DInf -->|"1"| DInfFn
+  InverseLimits -->|"1"| DInfFn
+  FunctionSpaces -->|"2"| FunctionSpaceTower_functionSpaceInclFun
+  conjMap -->|"1"| FunctionSpaceTower_functionSpaceInclFun
   FunctionSpaceTower_functionSpaceInclFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
   FunctionSpaceTower_functionSpaceRetrFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
+  FunctionSpaces -->|"2"| FunctionSpaceTower_functionSpaceProjection
+  FunctionSpaces -->|"2"| FunctionSpaceTower_functionSpaceRetrFun
+  conjMap -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
+  CLat -->|"1"| conjMap
+  FunctionSpaces -->|"3"| conjMap
+  ScottMaps -->|"1"| conjMap
+  FunctionSpaces -->|"3"| conjMap_iSup
+  InverseLimits -->|"2"| conjMap_iSup
+  incl_projInf_le_projInf_succ -->|"1"| conjMap_iSup
+  jInfTerm -->|"1"| conjMap_iSup
+  FunctionSpaces -->|"1"| conj_iInfTerm_eq
+  InverseLimits -->|"1"| conj_iInfTerm_eq
+  jInfTerm -->|"1"| conj_iInfTerm_eq
+  FunctionSpaces -->|"2"| embInfInf
+  ScottMaps -->|"1"| embInfInf
+  iInfTerm -->|"1"| embInfInf
+  FunctionSpaces -->|"6"| embInfInf_projInfInf
+  InverseLimits -->|"3"| embInfInf_projInfInf
+  embInfInf -->|"1"| embInfInf_projInfInf
+  iSup__monotone_eq_diagonal -->|"1"| embInfInf_projInfInf
+  projInfInf -->|"1"| embInfInf_projInfInf
+  towerProj_retr_conjMap_succ -->|"1"| embInfInf_projInfInf
+  FunctionSpaces -->|"1"| embInf_succ_iSup
+  jInfTerm -->|"1"| embInf_succ_iSup
+  DInfFn -->|"1"| iInfTerm
+  InverseLimits -->|"2"| iInfTerm
+  FunctionSpaces -->|"2"| iInfTerm_monotone
+  InverseLimits -->|"2"| iInfTerm_monotone
+  incl_projInf_le_projInf_succ -->|"1"| iInfTerm_monotone
+  towerProj -->|"1"| iInfTerm_monotone
+  jInfTerm -->|"1"| iSup__monotone_eq_diagonal
+  jInfTerm -->|"1"| incl_projInf_le_projInf_succ
+  iInfTerm -->|"1"| jInfTerm
+  FunctionSpaces -->|"7"| projInfInf
+  InverseLimits -->|"3"| projInfInf
+  ScottMaps -->|"1"| projInfInf
+  conjMap_iSup -->|"1"| projInfInf
+  conj_iInfTerm_eq -->|"1"| projInfInf
+  embInfInf -->|"1"| projInfInf
+  embInf_succ_iSup -->|"1"| projInfInf
+  iInfTerm_monotone -->|"1"| projInfInf
+  iSup__monotone_eq_diagonal -->|"1"| projInfInf
+  jInfTerm -->|"1"| projInfInf
+  FunctionSpaces -->|"3"| theorem_4_4
+  InverseLimits -->|"1"| theorem_4_4
+  WayBelow -->|"1"| theorem_4_4
+  embInfInf_projInfInf -->|"1"| theorem_4_4
+  projInfInf -->|"1"| theorem_4_4
+  theorem_4_4_more -->|"1"| theorem_4_4
+  FunctionSpaces -->|"4"| theorem_4_4_more
+  InverseLimits -->|"2"| theorem_4_4_more
+  WayBelow -->|"1"| theorem_4_4_more
+  embInfInf_projInfInf -->|"1"| theorem_4_4_more
+  projInfInf -->|"1"| theorem_4_4_more
+  FunctionSpaceTower_functionSpaceProjection -->|"1"| towerProj
+  conjMap -->|"1"| towerProj
+  InverseLimits -->|"1"| towerProj_retr_conjMap_succ
+  jInfTerm -->|"1"| towerProj_retr_conjMap_succ
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

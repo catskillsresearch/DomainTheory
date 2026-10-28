@@ -8,13 +8,10 @@ import DomainTheory.ContinuousLattice.Injective.proposition_1_5
 
 @[expose] public section
 
-
 open Topology TopologicalSpace
 
 universe u
 
-
-/-- **Scott 1972, Corollary 1.6.** Injective spaces are exactly retracts of powers of 𝕆. -/
 theorem corollary_1_6 (D : Type u) [TopologicalSpace D] [T0Space D] :
     InjectiveSpace.{u,u} D ↔ ∃ (ι : Type u), Nonempty (RetractSubspace D (ι → Prop)) := by
   constructor

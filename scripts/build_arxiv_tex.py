@@ -662,7 +662,9 @@ def inject_placeholders(latex: str, placeholders: dict[str, str]) -> str:
 
 
 _MATH_REGION = re.compile(
-    r"(\\\(.+?\\\)|\\\[.+?\\\]|\$\$.+?\$\$|(?<!\$)\$(?!\$).+?(?<!\$)\$(?!\$))",
+    r"(\\\(.+?\\\)|\\\[.+?\\\]|"
+    r"\$\$.+?\$\$|"
+    r"(?<!\\)(?<!\$)\$(?!\$).+?(?<!\\)(?<!\$)\$(?!\$))",
     re.DOTALL,
 )
 _MATH_FONT_TO_TEXT = (
@@ -694,10 +696,25 @@ def _math_fonts_outside_math(latex: str) -> str:
     return "".join(out)
 
 
+def _unescape_pandoc_dollar_signs(latex: str) -> str:
+    """Restore math delimiters Pandoc escaped in text mode only.
+
+    Unparsed inline ``$...$`` becomes ``\\$...\\$`` outside math; TeX needs ``$...$``.
+    Leave ``\\$`` untouched inside math (e.g. ``\\mathbf{\\$}`` in ``.english`` prose).
+    """
+    parts = _MATH_REGION.split(latex)
+    out: list[str] = []
+    for i, part in enumerate(parts):
+        if i % 2 == 1:
+            out.append(part)
+            continue
+        out.append(part.replace("\\$", "$"))
+    return "".join(out)
+
+
 def cleanup_pandoc_latex(latex: str) -> str:
     latex = latex.replace("\\pandocbounded{", "{")
-    # Pandoc escapes `$...$` it does not parse as math; TeX should still see math.
-    latex = latex.replace("\\$", "$")
+    latex = _unescape_pandoc_dollar_signs(latex)
     latex = re.sub(r"\\tightlist\n", "", latex)
     # Pandoc's `\textquotesingle{}` inside `\texttt{...}` can recurse until
     # TeX's input stack overflows (e.g. Lean files named `insert_comm'.lean`).
@@ -772,7 +789,7 @@ def write_if_changed(path: Path, content: str) -> bool:
 def cleanup_abstract_latex(latex: str) -> str:
     """Keep the abstract LaTeX-safe: ASCII plus standard LaTeX escapes."""
     latex = latex.replace("\\pandocbounded{", "{")
-    latex = latex.replace("\\$", "$")
+    latex = _unescape_pandoc_dollar_signs(latex)
     latex = latex.replace("\\textbf{{[}", "\\textbf{[")
     latex = latex.replace("\\texttt{{[}", "\\texttt{[")
     latex = latex.replace("{]}}", "]}")

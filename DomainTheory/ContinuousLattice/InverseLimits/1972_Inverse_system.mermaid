@@ -1,9 +1,117 @@
-%% Lean files imported under this note.
-%% Arrowhead on the importer. The number is a direct-import count.
-%% An arrow already implied by a longer path is omitted.
+%% Inside InverseLimits. A box is one Lean file in this folder, or one subfolder.
+%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
+%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
 
+  coconeInf["coconeInf"]
+  coe_sSup_of_directed["coe_sSup_of_directed"]
   InverseLimits_Compatible["Compatible"]
+  Constructions["Constructions"]
+  ContinuousLattices["ContinuousLattices"]
+  corollary_4_3["corollary_4_3"]
+  embInf["embInf"]
+  embInfFun["embInfFun"]
+  embLE["embLE"]
+  FunctionSpaces["FunctionSpaces"]
+  iComp["iComp"]
+  Injective["Injective"]
+  instCompleteLattice["instCompleteLattice"]
+  instInfSet["instInfSet"]
   InverseLimits_InverseLimit["InverseLimit"]
+  inverseLimitLE["inverseLimitLE"]
+  inverseLimitLT["inverseLimitLT"]
+  inverseLimitPartialOrder["inverseLimitPartialOrder"]
+  inverseLimitSInfCoe["inverseLimitSInfCoe"]
+  inverseLimitTopology["inverseLimitTopology"]
+  lemma_4_5["lemma_4_5"]
+  projection_galoisConnection["projection_galoisConnection"]
+  projInf["projInf"]
+  projLE["projLE"]
+  proposition_4_1["proposition_4_1"]
+  proposition_4_2["proposition_4_2"]
+  ScottMaps["ScottMaps"]
+  Specialization["Specialization"]
+  WayBelow["WayBelow"]
 
+  FunctionSpaces -->|"1"| InverseLimits_Compatible
   InverseLimits_Compatible -->|"1"| InverseLimits_InverseLimit
+  FunctionSpaces -->|"2"| coconeInf
+  InverseLimits_InverseLimit -->|"1"| coconeInf
+  ScottMaps -->|"1"| coconeInf
+  embInf -->|"1"| coconeInf
+  embLE -->|"1"| coconeInf
+  iComp -->|"1"| coconeInf
+  instCompleteLattice -->|"1"| coconeInf
+  projInf -->|"1"| coconeInf
+  projLE -->|"1"| coconeInf
+  FunctionSpaces -->|"1"| coe_sSup_of_directed
+  instCompleteLattice -->|"1"| coe_sSup_of_directed
+  FunctionSpaces -->|"1"| corollary_4_3
+  ScottMaps -->|"1"| corollary_4_3
+  coconeInf -->|"1"| corollary_4_3
+  embInf -->|"1"| corollary_4_3
+  inverseLimitTopology -->|"1"| corollary_4_3
+  ScottMaps -->|"1"| embInf
+  embInfFun -->|"1"| embInf
+  embLE -->|"1"| embInf
+  iComp -->|"1"| embInf
+  instCompleteLattice -->|"1"| embInf
+  projLE -->|"1"| embInf
+  InverseLimits_InverseLimit -->|"1"| embInfFun
+  ScottMaps -->|"1"| embInfFun
+  coe_sSup_of_directed -->|"1"| embInfFun
+  iComp -->|"1"| embInfFun
+  instCompleteLattice -->|"1"| embInfFun
+  FunctionSpaces -->|"4"| embLE
+  InverseLimits_InverseLimit -->|"1"| embLE
+  ScottMaps -->|"1"| embLE
+  InverseLimits_Compatible -->|"1"| iComp
+  InverseLimits_InverseLimit -->|"1"| iComp
+  ScottMaps -->|"2"| iComp
+  embLE -->|"1"| iComp
+  projLE -->|"1"| iComp
+  instInfSet -->|"1"| instCompleteLattice
+  FunctionSpaces -->|"1"| instInfSet
+  inverseLimitPartialOrder -->|"1"| instInfSet
+  inverseLimitSInfCoe -->|"1"| instInfSet
+  projection_galoisConnection -->|"1"| instInfSet
+  InverseLimits_InverseLimit -->|"1"| inverseLimitLE
+  inverseLimitLE -->|"1"| inverseLimitLT
+  inverseLimitLE -->|"1"| inverseLimitPartialOrder
+  inverseLimitLT -->|"1"| inverseLimitPartialOrder
+  InverseLimits_InverseLimit -->|"1"| inverseLimitSInfCoe
+  Constructions -->|"2"| inverseLimitTopology
+  ContinuousLattices -->|"3"| inverseLimitTopology
+  FunctionSpaces -->|"1"| inverseLimitTopology
+  Injective -->|"1"| inverseLimitTopology
+  InverseLimits_InverseLimit -->|"1"| inverseLimitTopology
+  ScottMaps -->|"1"| inverseLimitTopology
+  Specialization -->|"2"| inverseLimitTopology
+  WayBelow -->|"1"| inverseLimitTopology
+  coconeInf -->|"1"| inverseLimitTopology
+  embInf -->|"1"| inverseLimitTopology
+  instCompleteLattice -->|"1"| inverseLimitTopology
+  projInf -->|"1"| inverseLimitTopology
+  FunctionSpaces -->|"1"| lemma_4_5
+  embInf -->|"1"| lemma_4_5
+  embInfFun -->|"1"| lemma_4_5
+  iComp -->|"1"| lemma_4_5
+  projInf -->|"1"| lemma_4_5
+  projLE -->|"1"| lemma_4_5
+  ScottMaps -->|"2"| projInf
+  coe_sSup_of_directed -->|"1"| projInf
+  instCompleteLattice -->|"1"| projInf
+  FunctionSpaces -->|"4"| projLE
+  InverseLimits_InverseLimit -->|"1"| projLE
+  ScottMaps -->|"1"| projLE
+  FunctionSpaces -->|"2"| projection_galoisConnection
+  ContinuousLattices -->|"2"| proposition_4_1
+  WayBelow -->|"1"| proposition_4_1
+  instCompleteLattice -->|"1"| proposition_4_1
+  inverseLimitTopology -->|"1"| proposition_4_1
+  embInf -->|"1"| proposition_4_2
+  iComp -->|"1"| proposition_4_2
+  projInf -->|"1"| proposition_4_2
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

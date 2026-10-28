@@ -7,14 +7,10 @@ import DomainTheory.ContinuousLattice.Injective.proposition_1_5
 
 @[expose] public section
 
-
 open Topology TopologicalSpace
 
 universe u
 
-
-/-- **Scott 1972, Corollary 1.7.** A space is injective iff it is a retract of every
-super-space of which it is a subspace. -/
 theorem corollary_1_7 (D : Type u) [TopologicalSpace D] [T0Space D] :
     InjectiveSpace.{u,u} D ↔
       ∀ {Y : Type u} [TopologicalSpace Y] (e : D → Y), IsEmbedding e →

@@ -23,21 +23,21 @@ flowchart TB
   T25["Theorem 2.5"]
   T26["Theorem 2.6"]
 
-  LAM -->|"2"| DEF
+  LAM -->|"11"| DEF
   T25 -->|"2"| DOL
-  MEAN -->|"2"| LAM
-  REC -->|"1"| LAM
-  SEQ -->|"1"| LAM
+  LAM -->|"4"| EL
+  LAM -->|"3"| GRA
   LAM -->|"4"| LY
-  LAM -->|"4"| MEAN
-  T22 -->|"2"| PR
+  LAM -->|"5"| MEAN
+  EL -->|"1"| PR
   LAM -->|"2"| REC
   DOL -->|"3"| SEQ
   LAM -->|"3"| T21
-  PR -->|"1"| T22
   T21 -->|"1"| T22
-  LAM -->|"5"| T23
-  T21 -->|"1"| T26
+  LAM -->|"1"| T23
+  YC -->|"4"| T24
+  DEF -->|"3"| T26
+  T24 -->|"1"| YC
 
   classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef c2 fill:#cffafe,stroke:#0e7490,color:#164e63
