@@ -9,7 +9,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_preservesDirect
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
-public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -44,10 +44,10 @@ theorem proposition_2_10_b (R : IsContinuousLatticeRetraction D D')
   · intro U hU
     rw [isOpen_induced_iff (t := scottTopologicalSpace)] at hU
     obtain ⟨V', hV'open, rfl⟩ := hU
-    rw [isOpen_iff_scottOpen] at hV'open ⊢
+    rw [ScottOpen.isOpen_iff] at hV'open ⊢
     exact scottOpen_preimage R.incl_preservesDirectedSup hV'open
   · intro U hU
-    rw [isOpen_iff_scottOpen] at hU
+    rw [ScottOpen.isOpen_iff] at hU
     rw [@isOpen_iff_forall_mem_open _
       (TopologicalSpace.induced (R.incl : D → D') scottTopologicalSpace)]
     intro d hd
@@ -61,6 +61,6 @@ theorem proposition_2_10_b (R : IsContinuousLatticeRetraction D D')
       rw [R.retr_incl z] at hjle
       exact hU.1 hjle hpU
     · rw [isOpen_induced_iff (t := scottTopologicalSpace)]
-      exact ⟨{z' | x' ≪ z'}, isOpen_iff_scottOpen.mpr (scottOpen_wayBelow x'), rfl⟩
+      exact ⟨{z' | x' ≪ z'}, ScottOpen.isOpen_iff.mpr (scottOpen_wayBelow x'), rfl⟩
 
 end DomainTheory.ContinuousLattice

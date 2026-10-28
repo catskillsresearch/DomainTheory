@@ -5,7 +5,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendI
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
 public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
-public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -38,12 +38,12 @@ theorem scottMap_eq_sSup_openInfs (hD : ContinuousLattice D) (f' : ScottMap Y D)
     apply sSup_le
     intro a ha
     obtain ⟨V, hV, hf'V, hVsub⟩ := ha
-    have hVopen : @IsOpen D scottTopologicalSpace V := isOpen_iff_scottOpen.mpr hV
+    have hVopen : @IsOpen D scottTopologicalSpace V := ScottOpen.isOpen_iff.mpr hV
     have hyU : y ∈ (f' : Y → D) ⁻¹' V := hf'V
     have hUScott : ScottOpen ((f' : Y → D) ⁻¹' V) :=
       scottOpen_preimage ((proposition_2_5 (Subtype.val f')).mp f'.property) hV
     have hUopen : @IsOpen Y scottTopologicalSpace ((f' : Y → D) ⁻¹' V) :=
-      isOpen_iff_scottOpen.mpr hUScott
+      ScottOpen.isOpen_iff.mpr hUScott
     have ha' : a ≤ sInf (Set.image (f' : Y → D) ((f' : Y → D) ⁻¹' V)) := by
       apply le_sInf
       intro d hd

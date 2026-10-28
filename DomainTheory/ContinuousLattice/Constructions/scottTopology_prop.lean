@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -28,7 +28,7 @@ theorem scottTopology_prop :
     intro s hs
     rw [Set.mem_singleton_iff] at hs
     subst hs
-    rw [isOpen_iff_scottOpen]
+    rw [ScottOpen.isOpen_iff]
     refine ⟨?_, ?_⟩
     · intro a b hab ha
       rw [Set.mem_singleton_iff] at ha ⊢
@@ -41,7 +41,7 @@ theorem scottTopology_prop :
   · -- `sierpinski ≤ scott`: every Scott-open upper set of `Prop` is `∅`, `{True}`, or `univ`.
     rw [TopologicalSpace.le_def]
     intro U hU
-    rw [isOpen_iff_scottOpen] at hU
+    rw [ScottOpen.isOpen_iff] at hU
     by_cases hT : True ∈ U
     · by_cases hF : False ∈ U
       · have hUuniv : U = Set.univ := by

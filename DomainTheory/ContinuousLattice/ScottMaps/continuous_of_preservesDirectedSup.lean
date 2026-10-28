@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
-public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -21,7 +21,7 @@ theorem continuous_of_preservesDirectedSup {f : D → D'} (hf : PreservesDirecte
     @Continuous D D' scottTopologicalSpace scottTopologicalSpace f := by
   rw [continuous_def]
   intro U hU
-  rw [isOpen_iff_scottOpen] at hU ⊢
+  rw [ScottOpen.isOpen_iff] at hU ⊢
   exact scottOpen_preimage hf hU
 
 end DomainTheory.ContinuousLattice

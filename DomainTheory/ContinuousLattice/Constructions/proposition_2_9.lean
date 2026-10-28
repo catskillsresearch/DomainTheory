@@ -5,7 +5,7 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.Constructions.Basic
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
-public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
 public import Mathlib.Topology.Defs.Basic
 
@@ -62,7 +62,7 @@ theorem proposition_2_9 {ι : Type*} (E : ι → Type*) [∀ i, CompleteLattice 
     rw [← continuous_iff_le_induced]
     exact continuous_of_preservesDirectedSup (fun _ _ _ => sSup_apply_eq_sSup_image)
   · intro U hU
-    rw [isOpen_iff_scottOpen] at hU
+    rw [ScottOpen.isOpen_iff] at hU
     rw [@isOpen_iff_forall_mem_open _ (@Pi.topologicalSpace ι E (fun _ => scottTopologicalSpace))]
     intro z hz
     obtain ⟨a, haz, haIci⟩ := exists_wayBelow_Ici_subset hprod hU hz
@@ -79,7 +79,7 @@ theorem proposition_2_9 {ι : Type*} (E : ι → Type*) [∀ i, CompleteLattice 
     · refine @isOpen_biInter_finset (∀ j, E j) ι
         (@Pi.topologicalSpace ι E (fun _ => scottTopologicalSpace)) F
         (fun i => (fun w : ∀ j, E j => w i) ⁻¹' V i) (fun i _ => ?_)
-      have hVi : @IsOpen (E i) scottTopologicalSpace (V i) := isOpen_iff_scottOpen.mpr (hVopen i)
+      have hVi : @IsOpen (E i) scottTopologicalSpace (V i) := ScottOpen.isOpen_iff.mpr (hVopen i)
       have hind : @IsOpen _
           (TopologicalSpace.induced (fun w : ∀ j, E j => w i) scottTopologicalSpace)
           ((fun w : ∀ j, E j => w i) ⁻¹' V i) :=

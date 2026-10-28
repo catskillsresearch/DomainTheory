@@ -6,7 +6,7 @@ public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpac
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_directed
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_nonempty
-public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
 public import Mathlib.Topology.Defs.Basic
 
@@ -34,7 +34,7 @@ theorem scottExtend_continuous (hE : ContinuousLattice E) (e : X → Y) (f : X �
   let : TopologicalSpace E := scottTopologicalSpace
   rw [continuous_def]
   intro U hU
-  rw [isOpen_iff_scottOpen] at hU
+  rw [ScottOpen.isOpen_iff] at hU
   rw [isOpen_iff_forall_mem_open]
   intro y₀ hy₀
   have hgy₀U : scottExtend e f y₀ ∈ U := hy₀

@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.Specialization.specializationLe_scott_iff
+public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -28,10 +28,10 @@ theorem scottTopology_t0Space : @T0Space D scottTopologicalSpace := by
   constructor
   intro x y hxy
   apply le_antisymm
-  · rw [← specializationLe_scott_iff]
+  · rw [← SpecializationLe.scott_iff]
     intro U hU hxU
     exact (hxy.mem_open_iff hU).mp hxU
-  · rw [← specializationLe_scott_iff]
+  · rw [← SpecializationLe.scott_iff]
     intro U hU hyU
     exact (hxy.mem_open_iff hU).mpr hyU
 

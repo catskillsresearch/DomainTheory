@@ -4,34 +4,23 @@
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
 
-  OiSO["isOpen_iff_scottOpen"]
   MN["MonotoneNet"]
   P21["Proposition 2.1"]
   SO["Scott open"]
   SCT["ScottConvergesTo"]
-  SOds["ScottOpen_iff_dirSupInacc"]
-  SOnt["scottOpen_not_le"]
+  SOsp["ScottOpen"]
   STS["scottTopologicalSpace"]
   T0["scottTopology_t0Space"]
   SLe["SpecializationLe"]
-  SlSp["specializationLe_iff_specializes"]
-  SlSc["specializationLe_scott_iff"]
-  SLeu["SpecializationLeu2emap"]
 
-  SOds -->|"1"| OiSO
-  STS -->|"1"| OiSO
   MN -->|"2"| P21
   SCT -->|"3"| P21
-  SOnt -->|"1"| P21
+  SOsp -->|"1"| P21
   SO -->|"1"| SCT
-  SLe -->|"1"| SLeu
-  SO -->|"1"| SOds
-  SO -->|"1"| SOnt
-  OiSO -->|"1"| SlSc
-  SLe -->|"1"| SlSc
-  SOnt -->|"1"| SlSc
-  SLe -->|"1"| SlSp
-  SlSc -->|"1"| T0
+  SOsp -->|"1"| SLe
+  SO -->|"1"| SOsp
+  STS -->|"1"| SOsp
+  SLe -->|"1"| T0
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

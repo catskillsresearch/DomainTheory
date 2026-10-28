@@ -13,8 +13,6 @@ public import Mathlib.Data.Set.Basic
 public import Mathlib.Topology.Defs.Basic
 public import DomainTheory.ContinuousLattice.ContinuousLattices.IsContinuousLatticeu2eorderIso
 public import DomainTheory.ContinuousLattice.ContinuousLattices.orderIsoScottHomeomorph
-public import DomainTheory.ContinuousLattice.Specialization.specializationLe_scott_iff
-public import DomainTheory.ContinuousLattice.Specialization.SpecializationLeu2emap
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
 public import DomainTheory.ContinuousLattice.Constructions.proposition_2_11
 public import DomainTheory.ContinuousLattice.Injective.proposition_1_2
@@ -97,11 +95,11 @@ theorem theorem_2_12.backward_exact [τA : TopologicalSpace A] [T0Space A]
   let : Preorder E := instE.toPreorder
   let e : A ≃o E := h.toEquiv.toOrderIso
     (fun x y hxy => by
-      exact specializationLe_scott_iff.mp
+      exact SpecializationLe.scott_iff.mp
         (SpecializationLe.map ((hspec x y).mpr hxy) h.continuous))
     (fun x y hxy => by
       exact (hspec (h.symm x) (h.symm y)).mp
-        (SpecializationLe.map (specializationLe_scott_iff.mpr hxy) h.symm.continuous))
+        (SpecializationLe.map (SpecializationLe.scott_iff.mpr hxy) h.symm.continuous))
   have hcont : ContinuousLattice A := ContinuousLattice.orderIso e hE
   refine ⟨hcont, ?_⟩
   have heqOrder :

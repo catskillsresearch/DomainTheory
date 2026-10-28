@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.Specialization.ScottConvergesTo
-public import DomainTheory.ContinuousLattice.Specialization.scottOpen_not_le
+public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
 public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -29,7 +29,7 @@ topology and `L` is its least upper bound, then `y ≤ L`. -/
 theorem proposition_2_1_le_of_converges (hL : IsLUB (range x) L)
     (hconv : ScottConvergesTo x y) : y ≤ L := by
   by_contra hyL
-  obtain ⟨i, hi⟩ := hconv {z : D | ¬ z ≤ L} (scottOpen_not_le L) hyL
+  obtain ⟨i, hi⟩ := hconv {z : D | ¬ z ≤ L} (ScottOpen.not_le L) hyL
   exact hi i le_rfl (hL.1 ⟨i, rfl⟩)
 
 end DomainTheory.ContinuousLattice

@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -35,7 +35,7 @@ theorem continuous_eq_sSup_openInfs (hE : ContinuousLattice E) {f' : Y → E}
   · rw [← hE.sSup_wayBelow (f' y)]
     refine sSup_le fun a ha => ?_
     have hWopen : @IsOpen E scottTopologicalSpace {z : E | a ≪ z} :=
-      isOpen_iff_scottOpen.mpr (scottOpen_wayBelow a)
+      ScottOpen.isOpen_iff.mpr (scottOpen_wayBelow a)
     have hpre : IsOpen (f' ⁻¹' {z : E | a ≪ z}) := continuous_def.mp hf' _ hWopen
     have hyU : y ∈ f' ⁻¹' {z : E | a ≪ z} := ha
     refine le_trans ?_ (le_sSup ⟨f' ⁻¹' {z : E | a ≪ z}, hpre, hyU, rfl⟩)

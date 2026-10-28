@@ -6,8 +6,8 @@ public import DomainTheory.ContinuousLattice.InverseLimits.projInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
 public import DomainTheory.ContinuousLattice.Specialization.scottTopology_t0Space
-public import DomainTheory.ContinuousLattice.Specialization.specializationLe_scott_iff
-public import DomainTheory.ContinuousLattice.Specialization.specializationLe_iff_specializes
+public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
+public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.ContinuousLattices.lemma_3_9
@@ -72,13 +72,13 @@ theorem specializationLe_iff (x y : InverseLimit D P) :
   let : Preorder (InverseLimit D P) := limitOrder
   have hval : Topology.IsEmbedding (Subtype.val : InverseLimit D P → ∀ n, D n) :=
     ⟨⟨rfl⟩, Subtype.val_injective⟩
-  rw [specializationLe_iff_specializes, ← hval.isInducing.specializes_iff, specializes_pi]
+  rw [SpecializationLe.iff_specializes, ← hval.isInducing.specializes_iff, specializes_pi]
   constructor
   · intro h n
-    rw [← specializationLe_scott_iff, specializationLe_iff_specializes]
+    rw [← SpecializationLe.scott_iff, SpecializationLe.iff_specializes]
     exact h n
   · intro h n
-    rw [← specializationLe_iff_specializes, specializationLe_scott_iff]
+    rw [← SpecializationLe.iff_specializes, SpecializationLe.scott_iff]
     exact h n
 
 /-- **Scott 1972, Proposition 4.1 (injectivity step).** Coordinatewise maximal extensions
