@@ -5,7 +5,6 @@ flowchart TB
 
   arrowComb["arrowComb"]
   ASharp["ASharp"]
-  ASharp_lock["ASharp_lock"]
   ASharp_more["ASharp_more"]
   atomCode["atomCode"]
   atomE["atomE"]
@@ -18,7 +17,6 @@ flowchart TB
   atomUCode["atomUCode"]
   atomUCode_more["atomUCode_more"]
   BooleanAlgebraFilters["BooleanAlgebraFilters"]
-  BooleanAlgebraFilters_more["BooleanAlgebraFilters_more"]
   ClosureOperatorDomain["ClosureOperatorDomain"]
   combinedCode["combinedCode"]
   combinedCode_more["combinedCode_more"]
@@ -27,7 +25,6 @@ flowchart TB
   combinedY812c["combinedY812c"]
   ComputableBisection["ComputableBisection"]
   CoupledFixedPoints["CoupledFixedPoints"]
-  CoupledFixedPoints_lock["CoupledFixedPoints_lock"]
   D_X["D_X"]
   DAtom["DAtom"]
   DedekindCutProjection["DedekindCutProjection"]
@@ -47,11 +44,9 @@ flowchart TB
   effectiveIso812d_early["effectiveIso812d_early"]
   effectiveIso812d_early_more["effectiveIso812d_early_more"]
   EmbeddingsIntoU["EmbeddingsIntoU"]
-  EmbeddingsIntoU_lock["EmbeddingsIntoU_lock"]
   EmbeddingsIntoU_more["EmbeddingsIntoU_more"]
   EmbedIntoPow["EmbedIntoPow"]
   ExampleC_le_B["ExampleC_le_B"]
-  ExampleC_le_B_lock["ExampleC_le_B_lock"]
   Examples_8_4["Examples 8.4<br>check, fade, smash"]
   Exercise_8_11["Exercise 8.11<br>interval retraction"]
   Exercise_8_12["Exercise 8.12<br>integer presentation"]
@@ -76,7 +71,6 @@ flowchart TB
   FixedNbhdFinitaryOrder["FixedNbhdFinitaryOrder"]
   fixOfO["fixOfO"]
   FixOp["FixOp"]
-  FixOp_lock["FixOp_lock"]
   GeneratedBy["GeneratedBy"]
   hcore812c["hcore812c"]
   hcoreCode["hcoreCode"]
@@ -157,16 +151,13 @@ flowchart TB
   yStepG_more["yStepG_more"]
 
   Proposition_8_10 --> ASharp
-  ASharp_more --> ASharp_lock
   ASharp --> ASharp_more
   Exercise_8_12 --> BooleanAlgebraFilters
   GeneratedBy --> BooleanAlgebraFilters
-  BooleanAlgebraFilters --> BooleanAlgebraFilters_more
   DedekindCutProjection --> ClosureOperatorDomain
   IsComputableDiff --> ComputableBisection
   IsComputableSplit --> ComputableBisection
   FixOp --> CoupledFixedPoints
-  CoupledFixedPoints --> CoupledFixedPoints_lock
   Theorem_8_6 --> DAtom
   DiagFixed --> D_X
   Examples_8_4 --> DedekindCutProjection
@@ -179,9 +170,7 @@ flowchart TB
   Exercise_8_12 --> EmbeddingsIntoU
   ProjPair --> EmbeddingsIntoU
   Proposition_8_10 --> EmbeddingsIntoU
-  EmbeddingsIntoU --> EmbeddingsIntoU_lock
   EmbeddingsIntoU --> EmbeddingsIntoU_more
-  ExampleC_le_B --> ExampleC_le_B_lock
   fixedNbhd --> Examples_8_4
   smashRetraction --> Examples_8_4
   strictRetraction --> Examples_8_4
@@ -203,7 +192,6 @@ flowchart TB
   UapplyUlam --> Exercise_8_26
   piU --> Exercise_8_27
   FixedNbhdFinitaryOrder --> FixOp
-  FixOp --> FixOp_lock
   Theorem_8_8 --> FixedNbhdFinitaryOrder
   domainIso812c --> IsComputableDiff
   domainIso812c --> IsComputableUnion

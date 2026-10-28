@@ -151,11 +151,9 @@ Barrel-only DTA splits (87 modules total across two passes) were **deleted**; nu
 ### DataTypesAsLattices (historical subfolder table)
 {dt_block}
 
-### NeighbourhoodSystems (6 `*_lock.lean`)
+### NeighbourhoodSystems
 
-| File | Suggested action | Rationale |
-|------|------------------|-----------|
-| `ASharp_lock`, `CoupledFixedPoints_lock`, `EmbeddingsIntoU_lock`, `ExampleC_le_B_lock`, `FixOp_lock`, `BooleanAlgebraFilters_more` | **keep** | Large cycle-break / registration modules; mermaid shows `*_more → *_lock`. Not dead—barrel-only by design. |
+Six barrel-only `*_lock` / `BooleanAlgebraFilters_more` modules were **deleted**; retracts proofs use `*_more` and numbered exercise modules directly.
 
 ### BridgeTheorems
 
