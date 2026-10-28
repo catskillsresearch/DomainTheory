@@ -1752,7 +1752,6 @@ import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset
 import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtInsert
 import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumBot
 import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumSystem
-import DomainTheory.InformationSystems.SomeDomainEquations.DomainEquation
 import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81
 import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon
 import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_empty

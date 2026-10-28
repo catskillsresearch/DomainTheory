@@ -434,9 +434,6 @@
 **[InformationSystems/SomeDomainEquations/Factoid82.lean](DomainTheory/InformationSystems/SomeDomainEquations/Factoid82.lean)**
 
 @import "../Factoid82.lean"
-**[InformationSystems/SomeDomainEquations/DomainEquation.lean](DomainTheory/InformationSystems/SomeDomainEquations/DomainEquation.lean)**
-
-@import "../DomainEquation.lean"
 **[InformationSystems/SomeDomainEquations/Factoid82/lamUnfold_atom.lean](DomainTheory/InformationSystems/SomeDomainEquations/Factoid82/lamUnfold_atom.lean)**
 
 @import "lamUnfold_atom.lean"

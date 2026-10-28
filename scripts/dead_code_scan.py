@@ -161,11 +161,9 @@ Barrel-only DTA splits (87 modules total across two passes) were **deleted**; nu
 
 Bridge aggregator modules (`Equivalence.lean`, `WorkedExampleSExpr.lean`) were removed; leaf imports live in `DomainTheory.lean`. SExpr content remains under `WorkedExampleSExpr/` and in bridge notes.
 
-### InformationSystems (1)
+### InformationSystems
 
-| File | Suggested action | Rationale |
-|------|------------------|-----------|
-| `SomeDomainEquations/DomainEquation.lean` | **keep** or **merge** into Factoid82 cluster | Cited in notes; may be a standalone def for the domain-equation section. |
+`SomeDomainEquations/DomainEquation.lean` (empty re-export of Factoid 8.1–8.2) was **deleted**; `Factoid81` / `Factoid82` stay in `DomainTheory.lean`.
 """  # noqa: E501
 
 
