@@ -26,8 +26,8 @@ theorem scottSubspaceExtend_mono {e : X → Y} {f g₀ : X → D} (hfg : ∀ x, 
   apply sSup_le
   intro d hd
   obtain ⟨U, hUopen, hyU, rfl⟩ := hd
-  have hmem : scottSubspaceExtendInf e g₀ U ∈
-      { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧ d = scottSubspaceExtendInf e g₀ U } :=
+  have hmem : scottSubspaceExtend.inf e g₀ U ∈
+      { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧ d = scottSubspaceExtend.inf e g₀ U } :=
     ⟨U, hUopen, hyU, rfl⟩
   exact le_trans (scottSubspaceExtendInf_mono hfg U) (le_sSup hmem)
 

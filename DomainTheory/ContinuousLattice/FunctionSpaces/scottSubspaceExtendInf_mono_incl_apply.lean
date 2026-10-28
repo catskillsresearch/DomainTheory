@@ -1,5 +1,5 @@
 module
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendInf
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Topology.Defs.Basic
@@ -23,7 +23,7 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattic
 omit [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y] in
 theorem scottSubspaceExtendInf_mono_incl_apply {e : X → Y} {f : X → D} (U : Set Y)
     (P : IsContinuousLatticeProjection D D') :
-    P.incl (scottSubspaceExtendInf e f U) ≤ scottSubspaceExtendInf e (fun x => P.incl (f x)) U := by
+    P.incl (scottSubspaceExtend.inf e f U) ≤ scottSubspaceExtend.inf e (fun x => P.incl (f x)) U := by
   apply le_sInf
   intro d hd
   obtain ⟨x, hxU, rfl⟩ := hd

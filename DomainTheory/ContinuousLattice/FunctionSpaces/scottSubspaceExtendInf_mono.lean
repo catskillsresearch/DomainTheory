@@ -1,5 +1,5 @@
 module
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendInf
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
 public import Mathlib.Order.BourbakiWitt
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -21,7 +21,7 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattic
 
 omit [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y] in
 theorem scottSubspaceExtendInf_mono {e : X → Y} {f g₀ : X → D} (hfg : ∀ x, f x ≤ g₀ x) (U : Set Y) :
-    scottSubspaceExtendInf e f U ≤ scottSubspaceExtendInf e g₀ U := by
+    scottSubspaceExtend.inf e f U ≤ scottSubspaceExtend.inf e g₀ U := by
   apply le_sInf
   intro d hd
   obtain ⟨x, hxU, rfl⟩ := hd

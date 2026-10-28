@@ -35,8 +35,8 @@ theorem scottSubspaceExtend_maximal (hD : ContinuousLattice D) (e : X → Y) (_h
     apply sSup_le
     intro d hd
     obtain ⟨U, hUopen, hyU, rfl⟩ := hd
-    have hmem : scottSubspaceExtendInf e f U ∈
-        { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧ d = scottSubspaceExtendInf e f U } :=
+    have hmem : scottSubspaceExtend.inf e f U ∈
+        { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧ d = scottSubspaceExtend.inf e f U } :=
       ⟨U, hUopen, hyU, rfl⟩
     refine le_trans ?_ (le_sSup hmem)
     have hrestrict :

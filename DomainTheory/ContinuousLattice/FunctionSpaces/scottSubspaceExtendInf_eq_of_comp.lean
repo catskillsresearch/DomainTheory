@@ -1,5 +1,5 @@
 module
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendInf
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -22,7 +22,7 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattic
 omit [TopologicalSpace X] [TopologicalSpace Y] in
 theorem scottSubspaceExtendInf_eq_of_comp {e : X → Y} {f : X → D} {U : Set Y}
     (f' : ScottMap Y D) (h : ∀ x, f' (e x) = f x) :
-    scottSubspaceExtendInf e f U = sInf (Set.image (f' : Y → D) (Set.image e Set.univ ∩ U)) := by
+    scottSubspaceExtend.inf e f U = sInf (Set.image (f' : Y → D) (Set.image e Set.univ ∩ U)) := by
   have hset : f '' (e ⁻¹' U) = Set.image (f' : Y → D) (Set.image e Set.univ ∩ U) := by
     ext d
     simp only [Set.mem_image, Set.mem_preimage, Set.mem_inter_iff, Set.mem_univ, true_and]
@@ -34,7 +34,7 @@ theorem scottSubspaceExtendInf_eq_of_comp {e : X → Y} {f : X → D} {U : Set Y
     · rintro ⟨y, ⟨hex, hyU⟩, heq⟩
       obtain ⟨x, _, rfl⟩ := hex
       exact ⟨x, hyU, (h x).symm.trans heq⟩
-  rw [scottSubspaceExtendInf, hset]
+  rw [scottSubspaceExtend.inf, hset]
 
 end SubspaceExtension
 end DomainTheory.ContinuousLattice

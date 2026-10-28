@@ -1,9 +1,10 @@
 module
 
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendInf
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
+public import Mathlib.Order.ConditionallyCompleteLattice.Basic
+public import Mathlib.Order.CompleteLattice.Basic
 
 @[expose] public section
 
@@ -23,8 +24,11 @@ section SubspaceExtension
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y]
 
+noncomputable def scottSubspaceExtend.inf (e : X → Y) (f : X → D) (U : Set Y) : D :=
+  sInf (f '' (e ⁻¹' U))
+
 noncomputable def scottSubspaceExtend (e : X → Y) (f : X → D) (y : Y) : D :=
-  sSup { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧ d = scottSubspaceExtendInf e f U }
+  sSup { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧ d = scottSubspaceExtend.inf e f U }
 
 end SubspaceExtension
 
