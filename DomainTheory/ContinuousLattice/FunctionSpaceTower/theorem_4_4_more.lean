@@ -27,8 +27,8 @@ variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 noncomputable def theorem_4_4.scottTopology_homeomorph :
-    @Homeomorph (DInf D₀ j₀) (DInfFn D₀ j₀) scottTopologicalSpace scottTopologicalSpace :=
-  @Homeomorph.mk (DInf D₀ j₀) (DInfFn D₀ j₀) scottTopologicalSpace scottTopologicalSpace
+    @Homeomorph (DInf D₀ j₀) (DInf.fn D₀ j₀) scottTopologicalSpace scottTopologicalSpace :=
+  @Homeomorph.mk (DInf D₀ j₀) (DInf.fn D₀ j₀) scottTopologicalSpace scottTopologicalSpace
     (Equiv.mk (embInfInf D₀ j₀) (projInfInf D₀ j₀)
       (projInfInf.embInfInf D₀ j₀) (embInfInf_projInfInf D₀ j₀))
     (embInfInf D₀ j₀).continuous (projInfInf D₀ j₀).continuous
@@ -51,7 +51,7 @@ variable (D₀ : CLat.{u})
 
 noncomputable def theorem_4_4.sourceTopology_homeomorph
     (hTower : ∀ n, ContinuousLattice (towerType D₀ n)) :
-    @Homeomorph (DInf D₀ j₀) (DInfFn D₀ j₀)
+    @Homeomorph (DInf D₀ j₀) (DInf.fn D₀ j₀)
       (inverseLimitTopology (towerType D₀) (towerProj D₀ j₀))
       (scottMapInducedPiTopology (DInf D₀ j₀) (DInf D₀ j₀)) := by
   have hDInf : ContinuousLattice (DInf D₀ j₀) :=

@@ -2,6 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj
+public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 
 @[expose] public section
 
@@ -17,6 +18,12 @@ variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 abbrev DInf : Type u := InverseLimit (towerType D₀) (towerProj D₀ j₀)
+
+namespace DInf
+
+abbrev fn : Type u := ScottMap (DInf D₀ j₀) (DInf D₀ j₀)
+
+end DInf
 
 end LimitMaps
 

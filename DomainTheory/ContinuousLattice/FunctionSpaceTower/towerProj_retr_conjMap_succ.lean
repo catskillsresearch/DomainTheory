@@ -19,7 +19,7 @@ section Thm44b
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-theorem towerProj_retr_conjMap_succ (n : ℕ) (f : DInfFn D₀ j₀) :
+theorem towerProj_retr_conjMap_succ (n : ℕ) (f : DInf.fn D₀ j₀) :
     (towerProj D₀ j₀ (n + 1)).retr
         (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) (n + 1))
                  (embInf (towerType D₀) (towerProj D₀ j₀) (n + 1)) f)

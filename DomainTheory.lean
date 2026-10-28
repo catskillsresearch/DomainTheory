@@ -237,7 +237,6 @@ import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12
 import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12_more
 import DomainTheory.ContinuousLattice.FunctionSpaceTower.CLat
 import DomainTheory.ContinuousLattice.FunctionSpaceTower.DInf
-import DomainTheory.ContinuousLattice.FunctionSpaceTower.DInfFn
 import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap
 import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap_iSup
 import DomainTheory.ContinuousLattice.FunctionSpaceTower.conj_iInfTerm_eq

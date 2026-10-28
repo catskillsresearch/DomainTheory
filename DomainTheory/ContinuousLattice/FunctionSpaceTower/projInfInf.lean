@@ -31,19 +31,19 @@ section LimitMaps
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
-noncomputable def projInfInf : ScottMap (DInfFn D₀ j₀) (DInf D₀ j₀) :=
+noncomputable def projInfInf : ScottMap (DInf.fn D₀ j₀) (DInf D₀ j₀) :=
   ⨆ n, jInfTerm D₀ j₀ n
 
 namespace projInfInf
 
-theorem apply (f : DInfFn D₀ j₀) :
+theorem apply (f : DInf.fn D₀ j₀) :
     projInfInf D₀ j₀ f = ⨆ n, jInfTerm D₀ j₀ n f := by
   show (sSup (Set.range (jInfTerm D₀ j₀)) : ScottMap _ _) f = _
   rw [ScottMap.sSup_apply, ← Set.range_comp, sSup_range]
   rfl
 
 theorem preservesDirectedSup :
-    PreservesDirectedSup (projInfInf D₀ j₀ : DInfFn D₀ j₀ → DInf D₀ j₀) :=
+    PreservesDirectedSup (projInfInf D₀ j₀ : DInf.fn D₀ j₀ → DInf D₀ j₀) :=
   (proposition_2_5 _).mp (projInfInf D₀ j₀).continuous
 
 theorem embInfInf_eq (x : DInf D₀ j₀) :

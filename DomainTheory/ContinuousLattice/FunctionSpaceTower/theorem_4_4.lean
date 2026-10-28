@@ -30,7 +30,7 @@ theorem theorem_4_4_inverses :
     (embInfInf D₀ j₀).comp (projInfInf D₀ j₀) = ScottMap.idMap :=
   ⟨projInfInf.comp_embInfInf D₀ j₀, embInfInf_comp_projInfInf D₀ j₀⟩
 
-noncomputable def theorem_4_4_orderIso : OrderIso (DInf D₀ j₀) (DInfFn D₀ j₀) :=
+noncomputable def theorem_4_4_orderIso : OrderIso (DInf D₀ j₀) (DInf.fn D₀ j₀) :=
   (Equiv.mk (embInfInf D₀ j₀) (projInfInf D₀ j₀)
       (projInfInf.embInfInf D₀ j₀) (embInfInf_projInfInf D₀ j₀)).toOrderIso
     (embInfInf D₀ j₀).monotone (projInfInf D₀ j₀).monotone
@@ -38,7 +38,7 @@ noncomputable def theorem_4_4_orderIso : OrderIso (DInf D₀ j₀) (DInfFn D₀ 
 theorem theorem_4_4 (h₀ : ContinuousLattice D₀.carrier) :
     @ContinuousLattice (DInf D₀ j₀) inferInstance ∧
       Nonempty
-        (@Homeomorph (DInf D₀ j₀) (DInfFn D₀ j₀)
+        (@Homeomorph (DInf D₀ j₀) (DInf.fn D₀ j₀)
           (inverseLimitTopology (towerType D₀) (towerProj D₀ j₀))
           (scottMapInducedPiTopology (DInf D₀ j₀) (DInf D₀ j₀))) := by
   have hTower : ∀ n, ContinuousLattice (towerType D₀ n) := by

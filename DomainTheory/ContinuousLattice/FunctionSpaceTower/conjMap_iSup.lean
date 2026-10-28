@@ -31,7 +31,7 @@ theorem conjMap_iSup (n : ℕ) (post : ScottMap (DInf D₀ j₀) (towerType D₀
     (conjMap post pre).preservesDirectedSup_coe (Set.range f) hne hdir, ← Set.range_comp]
   rfl
 
-theorem conjMap_incl_le_conjMap_succ (n : ℕ) (f : DInfFn D₀ j₀) :
+theorem conjMap_incl_le_conjMap_succ (n : ℕ) (f : DInf.fn D₀ j₀) :
     (towerProj D₀ j₀ (n + 1)).incl
         (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
                  (embInf (towerType D₀) (towerProj D₀ j₀) n) f)

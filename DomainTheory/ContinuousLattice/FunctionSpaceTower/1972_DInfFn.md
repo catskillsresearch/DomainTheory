@@ -1,5 +1,5 @@
-# DInfFn
+# DInf.fn
 
-**[DomainTheory/ContinuousLattice/FunctionSpaceTower/DInfFn.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/DInfFn.lean)**
+**[DomainTheory/ContinuousLattice/FunctionSpaceTower/DInf.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/DInf.lean)**
 
-@import "DInfFn.lean"
+@import "DInf.lean"

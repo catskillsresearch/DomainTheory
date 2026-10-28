@@ -125,7 +125,7 @@ theorem embInfInf_comp_projInfInf :
     _ = ⨆ n, r n (f (r n z)) := iSup_congr hterm
     _ = f z := hfz.symm
 
-theorem embInfInf_projInfInf (f : DInfFn D₀ j₀) :
+theorem embInfInf_projInfInf (f : DInf.fn D₀ j₀) :
     embInfInf D₀ j₀ (projInfInf D₀ j₀ f) = f := by
   have h := congrArg (fun g => g f) (embInfInf_comp_projInfInf D₀ j₀)
   simpa [ScottMap.comp_apply, ScottMap.idMap_apply] using h
