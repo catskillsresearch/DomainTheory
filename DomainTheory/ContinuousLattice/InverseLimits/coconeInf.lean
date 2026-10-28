@@ -79,7 +79,7 @@ theorem coconeInf_preservesDirectedSup (f : ∀ n, ScottMap (D n) D') :
   have key : ∀ n, f n ((sSup S).1 n) = sSup ((fun s : InverseLimit D P => f n (s.1 n)) '' S) := by
     intro n
     have h1 : (sSup S).1 n = sSup ((fun s : InverseLimit D P => s.1 n) '' S) :=
-      projInfFun.preservesDirectedSup D P n hS hSdir
+      projInf.preservesDirectedSup D P n hS hSdir
     rw [h1, (f n).preservesDirectedSup_coe _ (hS.image _) (hev n), Set.image_image]
   show (⨆ n, f n ((sSup S).1 n)) = sSup (coconeInf D P f '' S)
   simp_rw [key, sSup_image', coconeInf_apply]
