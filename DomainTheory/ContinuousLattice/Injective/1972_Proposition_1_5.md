@@ -6,10 +6,6 @@
 
 @import "isInjectiveSpace_sierpinski_power.lean"
 
-**[DomainTheory/ContinuousLattice/Injective/t0_isEmbedding_into_sierpinski_power.lean](t0_isEmbedding_into_sierpinski_power.lean)**
-
-@import "t0_isEmbedding_into_sierpinski_power.lean"
-
 **[DomainTheory/ContinuousLattice/Injective/proposition_1_5.lean](proposition_1_5.lean)**
 
 @import "proposition_1_5.lean"

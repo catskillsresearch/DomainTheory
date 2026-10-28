@@ -431,7 +431,6 @@ import DomainTheory.ContinuousLattice.Injective.proposition_1_2
 import DomainTheory.ContinuousLattice.Injective.proposition_1_3
 import DomainTheory.ContinuousLattice.Injective.proposition_1_4
 import DomainTheory.ContinuousLattice.Injective.proposition_1_5
-import DomainTheory.ContinuousLattice.Injective.t0_isEmbedding_into_sierpinski_power
 import DomainTheory.ContinuousLattice.InverseLimits.Compatible
 import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
 import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
