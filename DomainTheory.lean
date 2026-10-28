@@ -290,7 +290,6 @@ import DomainTheory.ContinuousLattice.FunctionSpaces.curry_right_preservesDirect
 import DomainTheory.ContinuousLattice.FunctionSpaces.directedOn_finsetSupOf
 import DomainTheory.ContinuousLattice.FunctionSpaces.finsetSupOf
 import DomainTheory.ContinuousLattice.FunctionSpaces.fix
-import DomainTheory.ContinuousLattice.FunctionSpaces.fixMap
 import DomainTheory.ContinuousLattice.FunctionSpaces.fix_eq
 import DomainTheory.ContinuousLattice.FunctionSpaces.fix_le
 import DomainTheory.ContinuousLattice.FunctionSpaces.fix_mono

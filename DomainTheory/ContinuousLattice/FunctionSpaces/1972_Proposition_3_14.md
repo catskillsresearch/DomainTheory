@@ -5,9 +5,6 @@
 **[DomainTheory/ContinuousLattice/FunctionSpaces/fix.lean](DomainTheory/ContinuousLattice/FunctionSpaces/fix.lean)**
 
 @import "fix.lean"
-**[DomainTheory/ContinuousLattice/FunctionSpaces/fixMap.lean](DomainTheory/ContinuousLattice/FunctionSpaces/fixMap.lean)**
-
-@import "fixMap.lean"
 **[DomainTheory/ContinuousLattice/FunctionSpaces/fix_eq.lean](DomainTheory/ContinuousLattice/FunctionSpaces/fix_eq.lean)**
 
 @import "fix_eq.lean"

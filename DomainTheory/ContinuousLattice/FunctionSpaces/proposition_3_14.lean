@@ -2,9 +2,10 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_unique
-public import DomainTheory.ContinuousLattice.FunctionSpaces.fixMap
+public import DomainTheory.ContinuousLattice.FunctionSpaces.fix
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_le
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_eq
+public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -28,7 +29,7 @@ theorem proposition_3_14 (_hD : ContinuousLattice D) :
             (∀ f : ScottMap D D, (f : D → D) (g f) = g f) →
             (∀ (f : ScottMap D D) (x : D), (f : D → D) x ≤ x → g f ≤ x) →
             ∀ f : ScottMap D D, g f = Fix f) :=
-  ⟨Proposition314.fixMap, fun f => Proposition314.fix_eq f,
+  ⟨fix.map, fun f => Proposition314.fix_eq f,
     fun _ _ h => Proposition314.fix_le h,
     fun _ hfix hleast f => Proposition314.fix_unique (hfix f) (fun x hx => hleast f x hx)⟩
 

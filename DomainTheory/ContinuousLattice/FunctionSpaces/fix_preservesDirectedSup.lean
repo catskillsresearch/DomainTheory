@@ -9,6 +9,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_eq
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
 public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
+public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -58,5 +59,8 @@ theorem fix_preservesDirectedSup : PreservesDirectedSup (fix : ScottMap D D → 
     exact fix_mono (le_sSup hf)
 
 end Proposition314
+
+noncomputable def fix.map : ScottMap (ScottMap D D) D :=
+  ⟨Proposition314.fix, continuous_of_preservesDirectedSup Proposition314.fix_preservesDirectedSup⟩
 
 end DomainTheory.ContinuousLattice

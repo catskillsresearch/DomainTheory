@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.fixMap
+public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic.isLUB_sSup
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import Mathlib.Topology.Defs.Basic
@@ -52,7 +52,7 @@ namespace Proposition313
 
 end Proposition313
 namespace Proposition314
-@[simp] theorem fixMap_apply (f : ScottMap D D) : (fixMap f : D) = fix f := rfl
+@[simp] theorem fix.map_apply (f : ScottMap D D) : (fix.map f : D) = Proposition314.fix f := rfl
 
 end Proposition314
 
