@@ -23,15 +23,12 @@ flowchart TB
   Graph["Graph"]
   N3["IsComputable"]
   N1["IsRE"]
-  N60["IsREu2ebot"]
   N180["IsREu2ecombinatory"]
   N125["IsREu2econdC"]
   N129["IsREu2eeSubset"]
   N130["IsREu2efunOf"]
   N119["IsREu2egraph_of_primrecRel"]
   N120["IsREu2egraph_of_re"]
-  N62["IsREu2ehasPos"]
-  N53["IsREu2ehasZero"]
   N181["IsREu2eiff_combinatory"]
   N124["IsREu2eKcomb"]
   N54["IsREu2enumeral"]
@@ -39,7 +36,6 @@ flowchart TB
   N126["IsREu2epredC"]
   N140["IsREu2eScomb"]
   N127["IsREu2esucC"]
-  N65["IsREu2eunion"]
   N56["IsREu2ezeroC"]
   N13["isZeroC"]
   N0["Lambda"]
@@ -640,9 +636,6 @@ flowchart TB
   N5 -->|"1"| N50
   Pomega -->|"2"| N50
   Retracts -->|"1"| N52
-  N1 -->|"1"| N53
-  Pomega -->|"1"| N53
-  Retracts -->|"1"| N53
   N0 -->|"1"| N54
   N1 -->|"1"| N54
   Retracts -->|"1"| N54
@@ -653,18 +646,8 @@ flowchart TB
   Graph -->|"1"| N6
   N0 -->|"1"| N6
   Pomega -->|"1"| N6
-  N1 -->|"1"| N60
-  N59 -->|"1"| N60
-  Pomega -->|"1"| N60
   Pomega -->|"2"| N61
   Retracts -->|"1"| N61
-  N1 -->|"1"| N62
-  N61 -->|"1"| N62
-  Pomega -->|"1"| N62
-  Retracts -->|"1"| N62
-  N1 -->|"1"| N65
-  N63 -->|"1"| N65
-  Pomega -->|"1"| N65
   Continuous -->|"1"| N7
   Graph -->|"1"| N7
   N0 -->|"3"| N7

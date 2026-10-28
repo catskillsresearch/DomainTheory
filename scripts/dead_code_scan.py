@@ -26,6 +26,8 @@ PAPER_STEM = re.compile(
 PAPER_PATH = re.compile(
     r"(?i)(Factoid\d+|Theorem\d+|Proposition\d+|Exercise|Example)[_/]"
 )
+# Leaf manifest + bridge notes; barrel-only by design (see BridgeTheorems_Worked_example.md).
+EXCLUDED_TOP_DIRS = frozenset({"BridgeTheorems"})
 
 
 def module_of(path: Path) -> str:
@@ -46,6 +48,11 @@ def is_excluded_paper(path: Path) -> bool:
         return True
     joined = "/".join(path.relative_to(DT).parts)
     return bool(PAPER_PATH.search(joined))
+
+
+def is_excluded_chapter(path: Path) -> bool:
+    parts = path.relative_to(DT).parts
+    return bool(parts) and parts[0] in EXCLUDED_TOP_DIRS
 
 
 @dataclass(frozen=True)
@@ -94,6 +101,8 @@ def collect_candidates() -> list[Candidate]:
         if importers[mod] - {barrel_mod}:
             continue
         if is_excluded_paper(path):
+            continue
+        if is_excluded_chapter(path):
             continue
         rel = path.relative_to(ROOT)
         chapter = rel.parts[1] if len(rel.parts) > 2 else "?"
@@ -145,7 +154,7 @@ Actions: **delete** (unused + redundant), **merge** (into an importing sibling m
 Past bulk cleanups (already applied): ContinuousLattice note splits, DataTypesAsLattices barrel-only modules, NeighbourhoodSystems `*_lock`, InformationSystems `DomainEquation.lean`, Bridge aggregators `Equivalence.lean` / `WorkedExampleSExpr.lean`.
 {dt_block}
 
-Remaining **BridgeTheorems** SExpr leaves and **note-cited** barrel-only modules are intentional until merged or wired.
+**BridgeTheorems** is omitted from this scan (tight leaf manifest for bridge notes).
 """  # noqa: E501
 
 
@@ -165,7 +174,7 @@ def render_report(candidates: list[Candidate]) -> str:
         "2. No other `DomainTheory/**/*.lean` file imports it.",
         "3. **Excluded:** stems `factoid*`, `theorem*`, `proposition*`, `corollary*`, "
         "`lemma*`, `eq_*`; paths under `FactoidNN` / `TheoremNN` / `PropositionNN`; "
-        "`Exercise` / `Example` segments.",
+        "`Exercise` / `Example` segments; entire **`BridgeTheorems/`** tree.",
         "",
         "## Summary",
         "",
