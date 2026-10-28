@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.incl_projInf_le_projInf_succ
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 
@@ -30,7 +30,7 @@ theorem iInfTerm_le_succ (x : DInf D₀ j₀) (m : ℕ) :
   rw [iInfTerm.apply, iInfTerm.apply,
     ← embInf_succ (towerType D₀) (towerProj D₀ j₀) m
       (x.1 (m + 1) (projInf (towerType D₀) (towerProj D₀ j₀) m z))]
-  refine embInf_monotone (towerType D₀) (towerProj D₀ j₀) (m + 1) ?_
+  refine embInf.monotone (towerType D₀) (towerProj D₀ j₀) (m + 1) ?_
   have hab : (towerProj D₀ j₀ m).incl (projInf (towerType D₀) (towerProj D₀ j₀) m z)
       ≤ projInf (towerType D₀) (towerProj D₀ j₀) (m + 1) z :=
     incl_projInf_le_projInf_succ D₀ j₀ m z

@@ -1,5 +1,5 @@
-# embInfFun
+# embInf.fun
 
-**[DomainTheory/ContinuousLattice/InverseLimits/embInfFun.lean](DomainTheory/ContinuousLattice/InverseLimits/embInfFun.lean)**
+**[DomainTheory/ContinuousLattice/InverseLimits/embInf.lean](DomainTheory/ContinuousLattice/InverseLimits/embInf.lean)**
 
-@import "embInfFun.lean"
+@import "embInf.lean"

@@ -9,7 +9,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm_monoton
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iSup₂_monotone_eq_diagonal
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
@@ -92,7 +92,7 @@ theorem embInfInf_eq (x : DInf D₀ j₀) :
         (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
                  (embInf (towerType D₀) (towerProj D₀ j₀) n)
                  (iInfTerm D₀ j₀ m x))]
-    exact embInf_monotone (towerType D₀) (towerProj D₀ j₀) (n + 2)
+    exact embInf.monotone (towerType D₀) (towerProj D₀ j₀) (n + 2)
       (conjMap_incl_le_conjMap_succ D₀ j₀ n (iInfTerm D₀ j₀ m x))
   have g_mono_n (m : ℕ) : Monotone (fun n => g n m) :=
     monotone_nat_of_le_succ (g_mono_n_succ m)

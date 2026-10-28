@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.incl_projInf_le_projInf_succ
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
@@ -47,7 +47,7 @@ theorem conjMap_incl_le_conjMap_succ (n : ℕ) (f : DInfFn D₀ j₀) :
         refine (towerProj D₀ j₀ n).incl.monotone
           ((projInf (towerType D₀) (towerProj D₀ j₀) n).monotone (f.monotone ?_))
         rw [← embInf_succ (towerType D₀) (towerProj D₀ j₀) n ((towerProj D₀ j₀ n).retr y)]
-        exact embInf_monotone (towerType D₀) (towerProj D₀ j₀) (n + 1)
+        exact embInf.monotone (towerType D₀) (towerProj D₀ j₀) (n + 1)
           ((towerProj D₀ j₀ n).incl_retr_le y)
     _ ≤ projInf (towerType D₀) (towerProj D₀ j₀) (n + 1)
           (f (embInf (towerType D₀) (towerProj D₀ j₀) (n + 1) y)) :=

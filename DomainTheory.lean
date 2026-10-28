@@ -422,7 +422,6 @@ import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
 import DomainTheory.ContinuousLattice.InverseLimits.coe_sSup_of_directed
 import DomainTheory.ContinuousLattice.InverseLimits.corollary_4_3
 import DomainTheory.ContinuousLattice.InverseLimits.embInf
-import DomainTheory.ContinuousLattice.InverseLimits.embInfFun
 import DomainTheory.ContinuousLattice.InverseLimits.embLE
 import DomainTheory.ContinuousLattice.InverseLimits.iComp
 import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
