@@ -5,10 +5,8 @@ public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.projInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
-public import DomainTheory.ContinuousLattice.Specialization.scottTopology_t0Space
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
-public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
-public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.ContinuousLattices.lemma_3_9
 public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12
@@ -55,7 +53,7 @@ stage Scott spaces is an embedding. -/
 theorem t0Space :
     @T0Space (InverseLimit D P) (inverseLimitTopology D P) := by
   let : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
-  let : ∀ n, T0Space (D n) := fun _ => scottTopology_t0Space
+  let : ∀ n, T0Space (D n) := fun _ => scottTopologicalSpace.t0Space
   let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
   have hval : Topology.IsEmbedding (Subtype.val : InverseLimit D P → ∀ n, D n) :=
     ⟨⟨rfl⟩, Subtype.val_injective⟩

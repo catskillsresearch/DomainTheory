@@ -910,7 +910,6 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "ScottOpen": "SOsp",
                 "SpecializationLe": "SLe",
                 "scottTopologicalSpace": "STS",
-                "scottTopology_t0Space": "T0",
                 "Scott open": "SO",
                 "Proposition 2.1": "P21",
             }
