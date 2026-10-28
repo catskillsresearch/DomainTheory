@@ -489,11 +489,8 @@ import DomainTheory.DataTypesAsLattices.Classification.IsBooleanOpen
 import DomainTheory.DataTypesAsLattices.Classification.IsFcapG
 import DomainTheory.DataTypesAsLattices.Classification.IsFcapGdelta
 import DomainTheory.DataTypesAsLattices.Classification.IsScottGdelta
-import DomainTheory.DataTypesAsLattices.Classification.IsSigma11
-import DomainTheory.DataTypesAsLattices.Classification.Pi11
 import DomainTheory.DataTypesAsLattices.Classification.ScottB
 import DomainTheory.DataTypesAsLattices.Classification.ScottF
-import DomainTheory.DataTypesAsLattices.Classification.ScottG
 import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
 import DomainTheory.DataTypesAsLattices.Classification.charOpen
 import DomainTheory.DataTypesAsLattices.Classification.charTop
@@ -502,7 +499,6 @@ import DomainTheory.DataTypesAsLattices.Classification.evenPart
 import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack
 import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack_eq
 import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Classification.isBdelta_inter
 import DomainTheory.DataTypesAsLattices.Classification.oddEvenPack
 import DomainTheory.DataTypesAsLattices.Classification.oddEvenPack_eq_zero
 import DomainTheory.DataTypesAsLattices.Classification.oddPart
@@ -514,14 +510,7 @@ import DomainTheory.DataTypesAsLattices.Classification.theorem_6_3
 import DomainTheory.DataTypesAsLattices.Classification.theorem_6_4
 import DomainTheory.DataTypesAsLattices.Classification.theorem_6_5
 import DomainTheory.DataTypesAsLattices.Classification.typicalBdelta
-import DomainTheory.DataTypesAsLattices.Classification.typicalF
-import DomainTheory.DataTypesAsLattices.Classification.typicalFcapG
-import DomainTheory.DataTypesAsLattices.Classification.typicalFcapGdelta
 import DomainTheory.DataTypesAsLattices.Classification.typicalG
-import DomainTheory.DataTypesAsLattices.Classification.typicalG_isScottOpen
-import DomainTheory.DataTypesAsLattices.Classification.typicalGdelta
-import DomainTheory.DataTypesAsLattices.Classification.typicalPi11
-import DomainTheory.DataTypesAsLattices.Classification.typicalSigma11
 import DomainTheory.DataTypesAsLattices.Classification.uvU
 import DomainTheory.DataTypesAsLattices.Classification.uvV
 import DomainTheory.DataTypesAsLattices.Classification.zeroPrime
@@ -532,10 +521,7 @@ import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_Vcomb
 import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_arrowR
 import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_boxPlus
 import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_boxTensor
-import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_funRetract
 import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_graph
-import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_intR
-import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_openR
 import DomainTheory.DataTypesAsLattices.Closures.Isolated
 import DomainTheory.DataTypesAsLattices.Closures.Vapply
 import DomainTheory.DataTypesAsLattices.Closures.VapplyY
@@ -544,7 +530,6 @@ import DomainTheory.DataTypesAsLattices.Closures.Vcomb
 import DomainTheory.DataTypesAsLattices.Closures.Vcomb_more
 import DomainTheory.DataTypesAsLattices.Closures.Vstep
 import DomainTheory.DataTypesAsLattices.Closures.arrowR_diag_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Closures.boool
 import DomainTheory.DataTypesAsLattices.Closures.botElem_union
 import DomainTheory.DataTypesAsLattices.Closures.boxPlus
 import DomainTheory.DataTypesAsLattices.Closures.boxShift
@@ -581,7 +566,6 @@ import DomainTheory.DataTypesAsLattices.Closures.fixed_eq_sSup_compacts
 import DomainTheory.DataTypesAsLattices.Closures.openR_app
 import DomainTheory.DataTypesAsLattices.Closures.openR_expansive
 import DomainTheory.DataTypesAsLattices.Closures.openR_idem
-import DomainTheory.DataTypesAsLattices.Closures.openR_isRetract
 import DomainTheory.DataTypesAsLattices.Closures.openR_map_isScottContinuous
 import DomainTheory.DataTypesAsLattices.Closures.predSet_succSet
 import DomainTheory.DataTypesAsLattices.Closures.predSet_union
@@ -618,7 +602,6 @@ import DomainTheory.DataTypesAsLattices.Computability.IsREu2eScomb
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2ebot
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2ecombinatory
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2econdC
-import DomainTheory.DataTypesAsLattices.Computability.IsREu2econdSet
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2eeSubset
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2efunOf
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2egraph_of_primrecRel
@@ -627,11 +610,9 @@ import DomainTheory.DataTypesAsLattices.Computability.IsREu2ehasPos
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2ehasZero
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2eiff_combinatory
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2enumeral
-import DomainTheory.DataTypesAsLattices.Computability.IsREu2eofFinset
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2epair_mem
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2epredC
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2esucC
-import DomainTheory.DataTypesAsLattices.Computability.IsREu2etop
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2eunion
 import DomainTheory.DataTypesAsLattices.Computability.IsREu2ezeroC
 import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable
@@ -790,7 +771,6 @@ import DomainTheory.DataTypesAsLattices.Enumeration.condClosed
 import DomainTheory.DataTypesAsLattices.Enumeration.condCode
 import DomainTheory.DataTypesAsLattices.Enumeration.cond_graph_eq_bot_iff
 import DomainTheory.DataTypesAsLattices.Enumeration.diagonalInterCode
-import DomainTheory.DataTypesAsLattices.Enumeration.e_eq_unionBits
 import DomainTheory.DataTypesAsLattices.Enumeration.e_subset_ofNat_iff
 import DomainTheory.DataTypesAsLattices.Enumeration.enumBottomTerm
 import DomainTheory.DataTypesAsLattices.Enumeration.enumComp
@@ -982,7 +962,6 @@ import DomainTheory.DataTypesAsLattices.Functionality.continuous_on_diag
 import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
 import DomainTheory.DataTypesAsLattices.Functionality.curryC_app
 import DomainTheory.DataTypesAsLattices.Functionality.curryC_app2
-import DomainTheory.DataTypesAsLattices.Functionality.curryC_app3
 import DomainTheory.DataTypesAsLattices.Functionality.curryC_isScottContinuous
 import DomainTheory.DataTypesAsLattices.Functionality.curry_body_isScottContinuous_y
 import DomainTheory.DataTypesAsLattices.Functionality.curry_mid_isScottContinuous
@@ -1056,7 +1035,6 @@ import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 import DomainTheory.DataTypesAsLattices.Functionality.pairMed
 import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
 import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
-import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_bot
 import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_inj
 import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_isScottContinuous_left
 import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_isScottContinuous_right
@@ -1122,7 +1100,6 @@ import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_4
 import DomainTheory.DataTypesAsLattices.Functionality.treeF_isScottContinuous
 import DomainTheory.DataTypesAsLattices.Functionality.treeR_isRetract
 import DomainTheory.DataTypesAsLattices.Functionality.typed_apply_retract
-import DomainTheory.DataTypesAsLattices.Functionality.typed_bot_bot
 import DomainTheory.DataTypesAsLattices.Functionality.typed_bot_botElem
 import DomainTheory.DataTypesAsLattices.Functionality.typed_isGraph
 import DomainTheory.DataTypesAsLattices.Functionality.typed_ofNat_intR

@@ -16,23 +16,19 @@ flowchart TB
   FixedPoint["FixedPoint"]
   Graph["Graph"]
   N3["IsBdelta"]
-  N34["isBdelta_inter"]
   N1["IsBooleanOpen"]
   N4["IsFcapG"]
   N6["IsFcapGdelta"]
   N5["IsScottGdelta"]
-  N7["IsSigma11"]
   Lambda["Lambda"]
   N18["oddEvenPack"]
   N36["oddEvenPack_eq_zero"]
   N19["oddPart"]
   N20["pairIndexed"]
   N37["pairIndexed_eq_top"]
-  N8["Pi11"]
   Pomega["Pomega"]
   N9["ScottB"]
   N10["ScottF"]
-  N11["ScottG"]
   N38["theorem_6_1"]
   N39["theorem_6_2"]
   N40["theorem_6_3"]
@@ -40,14 +36,7 @@ flowchart TB
   N59["theorem_6_5"]
   N12["ThreeValued"]
   N21["typicalBdelta"]
-  N22["typicalF"]
-  N23["typicalFcapG"]
-  N24["typicalFcapGdelta"]
   N25["typicalG"]
-  N47["typicalG_isScottOpen"]
-  N26["typicalGdelta"]
-  N27["typicalPi11"]
-  N28["typicalSigma11"]
   N29["uvU"]
   N30["uvV"]
   N57["zero_not_mem_succSet_top"]
@@ -57,8 +46,6 @@ flowchart TB
   Pomega -->|"1"| N1
   Continuous -->|"1"| N10
   Pomega -->|"1"| N10
-  Continuous -->|"1"| N11
-  Pomega -->|"1"| N11
   Lambda -->|"1"| N12
   Pomega -->|"1"| N12
   Pomega -->|"1"| N13
@@ -76,19 +63,7 @@ flowchart TB
   Graph -->|"1"| N21
   Lambda -->|"1"| N21
   Pomega -->|"1"| N21
-  Pomega -->|"1"| N22
-  Lambda -->|"1"| N23
-  Pomega -->|"1"| N23
-  Lambda -->|"1"| N24
-  Pomega -->|"1"| N24
   Pomega -->|"1"| N25
-  Pomega -->|"1"| N26
-  Graph -->|"1"| N27
-  Lambda -->|"1"| N27
-  Pomega -->|"1"| N27
-  Graph -->|"2"| N28
-  Lambda -->|"1"| N28
-  Pomega -->|"1"| N28
   Pomega -->|"1"| N29
   N1 -->|"1"| N3
   Pomega -->|"1"| N3
@@ -120,8 +95,6 @@ flowchart TB
   Continuous -->|"3"| N33
   N17 -->|"1"| N33
   Pomega -->|"1"| N33
-  N3 -->|"1"| N34
-  Pomega -->|"2"| N34
   Lambda -->|"1"| N36
   N18 -->|"1"| N36
   Pomega -->|"1"| N36
@@ -151,10 +124,6 @@ flowchart TB
   N36 -->|"1"| N41
   N4 -->|"1"| N41
   Pomega -->|"1"| N41
-  Continuous -->|"1"| N47
-  Lambda -->|"1"| N47
-  N25 -->|"1"| N47
-  N38 -->|"1"| N47
   Continuous -->|"1"| N5
   Pomega -->|"1"| N5
   Lambda -->|"1"| N57
@@ -176,13 +145,6 @@ flowchart TB
   Continuous -->|"1"| N6
   N5 -->|"1"| N6
   Pomega -->|"1"| N6
-  Continuous -->|"1"| N7
-  Graph -->|"1"| N7
-  Pomega -->|"1"| N7
-  Continuous -->|"1"| N8
-  Graph -->|"1"| N8
-  Lambda -->|"1"| N8
-  Pomega -->|"1"| N8
   N1 -->|"1"| N9
   Pomega -->|"1"| N9
 

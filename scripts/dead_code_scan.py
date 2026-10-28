@@ -146,7 +146,7 @@ The former barrel-only dozen (Sierpiński conjunction, `orderIso_wayBelow_iff`, 
 
 ### DataTypesAsLattices
 
-The scan’s former **64** barrel-only modules under Classification / Closures / Computability / Functionality / Lambda / … were **deleted** in bulk; numbered `theorem_*` / paper modules and wired library files remain.
+Barrel-only DTA splits (87 modules total across two passes) were **deleted**; numbered `theorem_*` / paper modules and wired library files remain.
 
 ### DataTypesAsLattices (historical subfolder table)
 {dt_block}

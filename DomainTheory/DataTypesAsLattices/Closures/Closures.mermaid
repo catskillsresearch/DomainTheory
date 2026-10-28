@@ -4,7 +4,6 @@
 flowchart TB
 
   N39["arrowR_diag_isScottContinuous"]
-  N7["boool"]
   N47["botElem_union"]
   N33["boxPlus"]
   N8["boxShift"]
@@ -47,17 +46,13 @@ flowchart TB
   N60["Icomb_subset_arrowR"]
   N139["Icomb_subset_boxPlus"]
   N102["Icomb_subset_boxTensor"]
-  N57["Icomb_subset_funRetract"]
   N37["Icomb_subset_graph"]
-  N38["Icomb_subset_intR"]
-  N82["Icomb_subset_openR"]
   N150["Icomb_subset_Vcomb"]
   N2["Isolated"]
   Lambda["Lambda"]
   N80["openR_app"]
   N81["openR_expansive"]
   N83["openR_idem"]
-  N84["openR_isRetract"]
   N79["openR_map_isScottContinuous"]
   Pomega["Pomega"]
   N86["predSet_succSet"]
@@ -360,10 +355,6 @@ flowchart TB
   Graph -->|"1"| N37
   N0 -->|"1"| N37
   Pomega -->|"2"| N37
-  Graph -->|"1"| N38
-  Lambda -->|"1"| N38
-  N0 -->|"2"| N38
-  Pomega -->|"1"| N38
   Continuous -->|"1"| N39
   FixedPoint -->|"1"| N39
   Graph -->|"3"| N39
@@ -385,9 +376,6 @@ flowchart TB
   Pomega -->|"1"| N53
   Graph -->|"3"| N56
   Pomega -->|"1"| N56
-  N0 -->|"2"| N57
-  N56 -->|"1"| N57
-  Pomega -->|"1"| N57
   N31 -->|"1"| N58
   N32 -->|"1"| N58
   Pomega -->|"1"| N58
@@ -424,11 +412,6 @@ flowchart TB
   N3 -->|"1"| N68
   N63 -->|"1"| N68
   Pomega -->|"1"| N68
-  Continuous -->|"1"| N7
-  Graph -->|"3"| N7
-  Lambda -->|"3"| N7
-  N0 -->|"2"| N7
-  Pomega -->|"1"| N7
   Graph -->|"2"| N70
   N0 -->|"2"| N70
   N1 -->|"1"| N70
@@ -465,20 +448,11 @@ flowchart TB
   N0 -->|"1"| N81
   N80 -->|"1"| N81
   Pomega -->|"1"| N81
-  N0 -->|"2"| N82
-  N37 -->|"1"| N82
-  N80 -->|"1"| N82
-  N81 -->|"1"| N82
-  Pomega -->|"1"| N82
   Graph -->|"1"| N83
   N0 -->|"1"| N83
   N80 -->|"1"| N83
   N81 -->|"1"| N83
   Pomega -->|"1"| N83
-  Graph -->|"2"| N84
-  N0 -->|"3"| N84
-  N80 -->|"1"| N84
-  N83 -->|"1"| N84
   Lambda -->|"2"| N86
   Pomega -->|"1"| N86
   Lambda -->|"1"| N87
