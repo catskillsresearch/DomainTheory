@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.Specialization.ScottConvergesTo
-public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
+public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic

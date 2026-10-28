@@ -9,7 +9,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_preservesDirect
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
-public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
+public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic

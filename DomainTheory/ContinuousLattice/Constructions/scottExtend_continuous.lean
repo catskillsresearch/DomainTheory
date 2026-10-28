@@ -6,7 +6,7 @@ public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpac
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_directed
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_nonempty
-public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
+public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
 public import Mathlib.Topology.Defs.Basic
 

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
+public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Topology.Defs.Filter
 public import Mathlib.Topology.Continuous

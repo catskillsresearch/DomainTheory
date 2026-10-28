@@ -5,7 +5,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendI
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
 public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
-public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
+public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

@@ -2,7 +2,7 @@ module
 public import DomainTheory.ContinuousLattice.ContinuousLattices.scottOpen_preimage_orderIso
 public import Mathlib.Order.BourbakiWitt
 public import Mathlib.Algebra.Group.End
-public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
+public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic

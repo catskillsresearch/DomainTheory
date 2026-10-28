@@ -457,7 +457,6 @@ import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_7_sup
 import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 import DomainTheory.ContinuousLattice.Specialization.MonotoneNet
 import DomainTheory.ContinuousLattice.Specialization.ScottConvergesTo
-import DomainTheory.ContinuousLattice.Specialization.ScottOpen
 import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
 import DomainTheory.ContinuousLattice.Specialization.proposition_2_1
 import DomainTheory.ContinuousLattice.Specialization.proposition_2_1_le_of_converges

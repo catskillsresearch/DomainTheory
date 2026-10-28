@@ -907,7 +907,6 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             extra_ids = {
                 "MonotoneNet": "MN",
                 "ScottConvergesTo": "SCT",
-                "ScottOpen": "SOsp",
                 "SpecializationLe": "SLe",
                 "scottTopologicalSpace": "STS",
                 "Scott open": "SO",

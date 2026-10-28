@@ -5,7 +5,7 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.Constructions.Basic
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
-public import DomainTheory.ContinuousLattice.Specialization.ScottOpen
+public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
 public import Mathlib.Topology.Defs.Basic
 

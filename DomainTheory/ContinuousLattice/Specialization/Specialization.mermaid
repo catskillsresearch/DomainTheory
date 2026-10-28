@@ -8,17 +8,14 @@ flowchart TB
   P21["Proposition 2.1"]
   SO["Scott open"]
   SCT["ScottConvergesTo"]
-  SOsp["ScottOpen"]
   STS["scottTopologicalSpace"]
   SLe["SpecializationLe"]
 
   MN -->|"2"| P21
   SCT -->|"3"| P21
-  SOsp -->|"1"| P21
   SO -->|"1"| SCT
-  SOsp -->|"1"| SLe
-  SO -->|"1"| SOsp
-  STS -->|"1"| SOsp
+  SO -->|"1"| SLe
+  STS -->|"1"| SO
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
