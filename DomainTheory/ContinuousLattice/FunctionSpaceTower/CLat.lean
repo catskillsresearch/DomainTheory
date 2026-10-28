@@ -15,14 +15,18 @@ structure CLat : Type (u + 1) where
 
 attribute [instance] CLat.str
 
-noncomputable def towerCLat (D₀ : CLat.{u}) : ℕ → CLat.{u}
-  | 0 => D₀
-  | (n + 1) => ⟨ScottMap (towerCLat D₀ n).carrier (towerCLat D₀ n).carrier⟩
+namespace CLat
 
-def towerType (D₀ : CLat.{u}) (n : ℕ) : Type u := (towerCLat D₀ n).carrier
+noncomputable def tower (D₀ : CLat.{u}) : ℕ → CLat.{u}
+  | 0 => D₀
+  | (n + 1) => ⟨ScottMap (CLat.tower D₀ n).carrier (CLat.tower D₀ n).carrier⟩
+
+end CLat
+
+def towerType (D₀ : CLat.{u}) (n : ℕ) : Type u := (CLat.tower D₀ n).carrier
 
 noncomputable instance towerCompleteLattice (D₀ : CLat.{u}) (n : ℕ) :
-    CompleteLattice (towerType D₀ n) := (towerCLat D₀ n).str
+    CompleteLattice (towerType D₀ n) := (CLat.tower D₀ n).str
 
 theorem towerType_succ (D₀ : CLat.{u}) (n : ℕ) :
     towerType D₀ (n + 1) = ScottMap (towerType D₀ n) (towerType D₀ n) := rfl
