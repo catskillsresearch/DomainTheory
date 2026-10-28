@@ -2,9 +2,9 @@ As a result of these very elementary considerations, the injective spaces could 
 
 $$
 \begin{gathered}
-X \xrightarrow{e} Y 
-X \xrightarrow{f} \mathbb{O} 
-Y \xrightarrow{\bar{f}} \mathbb{O}
+X \xrightarrow{e} Y \\
+X \xrightarrow{f} \mathbb{O} \\
+Y \xrightarrow{\bar{f}} \mathbb{O}\\
 \end{gathered}
 $$
 

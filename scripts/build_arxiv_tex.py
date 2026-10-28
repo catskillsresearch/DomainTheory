@@ -401,10 +401,10 @@ def extract_mermaid_captions(text: str) -> list[str]:
 
 
 def figure_latex(rel_path: str, caption: str, label: str) -> str:
-    """Numbered float sized to the letter text block (graphicx width/height)."""
+    """Numbered figure at the markdown source position (no float drift)."""
     cap = caption.replace("&", "\\&")
     return (
-        "\\begin{figure}[!htbp]\n"
+        "\\begin{figure}[H]\n"
         "\\centering\n"
         f"\\includegraphics[width=\\linewidth,height=0.78\\textheight,keepaspectratio]"
         f"{{{rel_path}}}\n"
@@ -418,7 +418,7 @@ def listing_figure_latex(listing: str, caption: str, label: str) -> str:
     """Fallback numbered figure when mermaid rasterization fails."""
     cap = caption.replace("&", "\\&")
     return (
-        "\\begin{figure}[!htbp]\n"
+        "\\begin{figure}[H]\n"
         "\\centering\n"
         "\\begin{minipage}{\\linewidth}\n"
         f"\\lstinputlisting[style=leanbox]{{{listing}}}\n"
