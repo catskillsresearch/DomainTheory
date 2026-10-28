@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2eof_retract
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import Mathlib.Topology.Defs.Basic

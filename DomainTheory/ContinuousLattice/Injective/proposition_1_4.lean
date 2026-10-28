@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
-import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2eof_retract
 public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section

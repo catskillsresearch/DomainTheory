@@ -910,7 +910,6 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         if mermaid.name == "Injective.mermaid":
             extra_ids = {
                 "Definition 1.1: Injective Space": "D11",
-                "InjectiveSpace.of_retract": "RTR",
                 "Proposition 1.2": "P12",
                 "Proposition 1.3": "P13",
                 "Powers of 𝕆 are injective": "PO",

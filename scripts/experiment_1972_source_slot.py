@@ -373,7 +373,6 @@ def build_tree(spine: dict[Path, Leaf]) -> Barrel:
         "Injective.mermaid",
         [
             S(P("Injective/1972_Definition_1_1.md")),
-            S(P("Injective/1972_InjectiveSpace_of_retract.md")),
             S(P("Injective/1972_Proposition_1_2.md")),
             S(P("Injective/1972_Proposition_1_3.md")),
             S(P("Injective/1972_Powers_of_O_are_injective.md")),

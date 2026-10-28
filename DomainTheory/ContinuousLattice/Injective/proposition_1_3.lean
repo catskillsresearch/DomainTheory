@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
 public import Mathlib.Topology.Constructions
-import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2epi
 
 @[expose] public section
 

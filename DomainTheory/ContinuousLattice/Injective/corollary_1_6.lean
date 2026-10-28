@@ -3,7 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.Injective.IsRetractSubspace
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
 public import Mathlib.Topology.Separation.Basic
-import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2eof_retract
 import DomainTheory.ContinuousLattice.Injective.isInjectiveSpace_sierpinski_power
 import DomainTheory.ContinuousLattice.Injective.proposition_1_5
 

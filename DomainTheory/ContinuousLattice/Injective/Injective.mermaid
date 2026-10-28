@@ -8,7 +8,6 @@ flowchart TB
   C16["Corollary 1.6"]
   C17["Corollary 1.7"]
   D11["Definition 1.1: Injective Space"]
-  RTR["InjectiveSpace.of_retract"]
   IRS["IsRetractSubspace"]
   PO["Powers of 𝕆 are injective"]
   P12["Proposition 1.2"]
@@ -18,16 +17,11 @@ flowchart TB
 
   IRS -->|"1"| C16
   P15 -->|"1"| C16
-  RTR -->|"1"| C16
   P15 -->|"1"| C17
-  RTR -->|"1"| C17
-  D11 -->|"1"| P12
-  D11 -->|"2"| P13
-  RTR -->|"1"| P14
+  P13 -->|"1"| P12
+  P13 -->|"1"| P14
   PO -->|"1"| P15
   P12 -->|"1"| PO
-  P13 -->|"1"| PO
-  D11 -->|"1"| RTR
 
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef numbered fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
