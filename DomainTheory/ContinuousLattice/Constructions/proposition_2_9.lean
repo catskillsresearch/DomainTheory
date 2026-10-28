@@ -7,6 +7,7 @@ public import DomainTheory.ContinuousLattice.Constructions.Basic
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_Ici_subset
+public import DomainTheory.ContinuousLattice.Constructions.isContinuousLattice_prop
 public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section
@@ -88,5 +89,12 @@ theorem proposition_2_9 {ι : Type*} (E : ι → Type*) [∀ i, CompleteLattice 
         (fun i => TopologicalSpace.induced (fun w : ∀ j, E j => w i) scottTopologicalSpace) i _ hind
     · rw [Set.mem_iInter₂]
       exact fun i _ => hzV i
+
+namespace proposition_2_9
+
+theorem sierpinskiPower (ι : Type*) : ContinuousLattice (ι → Prop) :=
+  (proposition_2_9 (fun _ => Prop) (fun _ => isContinuousLattice_prop)).1
+
+end proposition_2_9
 
 end DomainTheory.ContinuousLattice

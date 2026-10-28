@@ -20,20 +20,19 @@ flowchart TB
   N16["scottExtend_maximal"]
   N18["scottExtend_maximal_le"]
   N1["ScottMaps"]
+  scottTopology["scottTopology"]
   N19["scottTopology_prop"]
-  N20["scottTopology_sierpinskiPower"]
-  N21["sierpinskiPower_isContinuousLattice"]
   N2["Specialization"]
   N3["WayBelow"]
 
   N10 -->|"1"| N13
   N11 -->|"1"| N13
   N12 -->|"1"| N13
-  N2 -->|"2"| N13
-  N3 -->|"3"| N13
+  N2 -->|"1"| N13
+  N3 -->|"4"| N13
   N10 -->|"1"| N14
-  N2 -->|"2"| N14
-  N3 -->|"3"| N14
+  N2 -->|"1"| N14
+  N3 -->|"4"| N14
   N0 -->|"1"| N15
   N13 -->|"1"| N15
   N14 -->|"1"| N15
@@ -53,26 +52,25 @@ flowchart TB
   N2 -->|"1"| N18
   N3 -->|"1"| N18
   N5 -->|"1"| N18
-  N2 -->|"2"| N19
-  N19 -->|"1"| N20
-  N2 -->|"1"| N20
-  N8 -->|"1"| N20
-  N9 -->|"1"| N20
-  N3 -->|"1"| N21
-  N8 -->|"1"| N21
-  N9 -->|"1"| N21
+  N2 -->|"1"| N19
+  N3 -->|"1"| N19
   N1 -->|"2"| N4
   N3 -->|"1"| N4
-  N2 -->|"2"| N5
-  N3 -->|"3"| N5
+  N2 -->|"1"| N5
+  N3 -->|"4"| N5
   N3 -->|"2"| N7
   N6 -->|"1"| N7
   N3 -->|"1"| N8
   N7 -->|"1"| N8
   N1 -->|"1"| N9
-  N2 -->|"2"| N9
-  N3 -->|"3"| N9
+  N2 -->|"1"| N9
+  N3 -->|"4"| N9
   N4 -->|"1"| N9
+  N8 -->|"1"| N9
+  N19 -->|"1"| scottTopology
+  N2 -->|"1"| scottTopology
+  N8 -->|"1"| scottTopology
+  N9 -->|"1"| scottTopology
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
