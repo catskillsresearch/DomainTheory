@@ -9,10 +9,7 @@ flowchart TB
   Embeddings_along_the_tow["Embeddings along the tower"]
   Embeddings_into_the_limi["Embeddings into the limit"]
   inverseLimitLE["inverseLimitLE"]
-  inverseLimitLT["inverseLimitLT"]
-  inverseLimitTopology["inverseLimitTopology"]
   projection["projection"]
-  Projections_from_the_lim["Projections from the limit"]
   projLE["projLE"]
   Proposition_4_1["Proposition 4.1"]
   The_function_space_tower["The function space tower"]
@@ -22,13 +19,11 @@ flowchart TB
 
   The_limit_lattice -->|"4"| Coordinates_of_an_embedd
   The_limit_lattice -->|"1"| Embeddings_along_the_tow
-  The_limit_lattice -->|"2"| Projections_from_the_lim
   Proposition_4_1 -->|"3"| The_function_space_tower
-  inverseLimitTopology -->|"3"| The_limit_lattice
+  inverseLimitLE -->|"3"| The_limit_lattice
   The_limit_lattice -->|"7"| The_mediating_map
-  The_limit_lattice -->|"1"| inverseLimitLE
-  The_limit_lattice -->|"1"| inverseLimitLT
-  The_limit_lattice -->|"5"| inverseLimitTopology
+  The_limit_lattice -->|"7"| inverseLimitLE
   The_limit_lattice -->|"1"| projLE
+  The_limit_lattice -->|"2"| projection
 
   classDef concept fill:#dcfce7,stroke:#15803d,color:#14532d

@@ -1,0 +1,5 @@
+This lemma is the reusable proof step behind **Proposition 1.4**: injectivity passes from a space to any of its retracts.
+
+Suppose `D` is injective and `D'` is a retract of `D`, witnessed by continuous maps `s : D' → D` and `r : D → D'` with `r ∘ s = id`. To extend a map into `D'` along an embedding, extend into `D` using injectivity of `D`, then postcompose with `r` to land in `D'`.
+
+The formal statement is `InjectiveSpace.of_retract` in the Lean file below.
