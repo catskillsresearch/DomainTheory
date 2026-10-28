@@ -20,9 +20,6 @@
 **[DomainTheory/ContinuousLattice/FunctionSpaces/Projections.lean](DomainTheory/ContinuousLattice/FunctionSpaces/Projections.lean)**
 
 @import "Projections.lean"
-**[DomainTheory/ContinuousLattice/FunctionSpaces/ScottMapProjection.lean](DomainTheory/ContinuousLattice/FunctionSpaces/ScottMapProjection.lean)**
-
-@import "ScottMapProjection.lean"
 **[DomainTheory/ContinuousLattice/FunctionSpaces/ScottMap_more.lean](DomainTheory/ContinuousLattice/FunctionSpaces/ScottMap_more.lean)**
 
 @import "ScottMap_more.lean"
