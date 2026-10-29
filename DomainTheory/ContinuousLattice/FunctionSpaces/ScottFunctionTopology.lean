@@ -25,37 +25,9 @@ open Set Topology TopologicalSpace
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 
+section Def3_1
+
 variable [TopologicalSpace X] [TopologicalSpace Y]
-
-variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
-
-variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
-
-def ScottMap (D : Type u) (D' : Type v) [CompleteLattice D] [CompleteLattice D'] : Type _ :=
-  { f : D → D' // @Continuous D D' scottTopologicalSpace scottTopologicalSpace f }
-
-namespace ScottMap
-
-instance : CoeFun (ScottMap D D') (fun _ => D → D') where
-  coe f := f.1
-
-@[ext]
-theorem ext {f g : ScottMap D D'} (h : ∀ x, f x = g x) : f = g :=
-  Subtype.ext (funext h)
-
-def const (c : D') : ScottMap D D' :=
-  ⟨fun _ => c, continuous_of_preservesDirectedSup fun S hS _ => by
-    obtain ⟨x, hx⟩ := hS
-    apply le_antisymm
-    · exact le_sSup ⟨x, hx, rfl⟩
-    · apply sSup_le
-      intro b hb
-      obtain ⟨y, hy, rfl⟩ := hb
-      exact le_rfl⟩
-
-@[simp] theorem const_apply (c : D') (x : D) : (ScottMap.const c : D → D') x = c := rfl
-
-end ScottMap
 
 def scottFunctionEvalSubbasis (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y] :
     Set (Set (C(X, Y))) :=
@@ -89,14 +61,6 @@ theorem scottFunctionTopology_eq_induced_pi (X Y : Type*) [TopologicalSpace X]
     exact ⟨{g : X → Y | g x ∈ U}, (@continuous_apply X (fun _ => Y)
       (fun _ => inferInstance) x).isOpen_preimage U hU, rfl⟩
 
-theorem scottFunctionSubbasis_isOpen_scott {x : D} {U : Set D'} (hU : @IsOpen D' scottTopologicalSpace U) :
-    letI : TopologicalSpace D := scottTopologicalSpace
-    letI : TopologicalSpace D' := scottTopologicalSpace
-    @IsOpen (C(D, D')) (scottFunctionTopology D D') {f : C(D, D') | f x ∈ U} := by
-  letI : TopologicalSpace D := scottTopologicalSpace
-  letI : TopologicalSpace D' := scottTopologicalSpace
-  exact isOpen_generateFrom_of_mem (s := {f : C(D, D') | f x ∈ U}) ⟨x, U, hU, rfl⟩
-
 theorem specializationPreorder_generateOpen (f g : C(X, Y)) (hfg : ∀ x, SpecializationPreorder (f x) (g x))
     {V : Set (C(X, Y))} (hV : GenerateOpen (scottFunctionEvalSubbasis X Y) V) (hf : f ∈ V) :
     g ∈ V :=
@@ -122,6 +86,48 @@ theorem scottFunctionSpecializationPreorder {f g : C(X, Y)} :
     exact hfg {h | h x ∈ U} (scottFunctionSubbasis_isOpen (X := X) (Y := Y) hU) hfU
   · intro hfg U hU hfU
     exact specializationPreorder_generateOpen f g hfg hU hfU
+
+variable [CompleteLattice D] [CompleteLattice D']
+
+theorem scottFunctionSubbasis_isOpen_scott {x : D} {U : Set D'} (hU : @IsOpen D' scottTopologicalSpace U) :
+    letI : TopologicalSpace D := scottTopologicalSpace
+    letI : TopologicalSpace D' := scottTopologicalSpace
+    @IsOpen (C(D, D')) (scottFunctionTopology D D') {f : C(D, D') | f x ∈ U} := by
+  let : TopologicalSpace D := scottTopologicalSpace
+  let : TopologicalSpace D' := scottTopologicalSpace
+  exact isOpen_generateFrom_of_mem (s := {f : C(D, D') | f x ∈ U}) ⟨x, U, hU, rfl⟩
+
+end Def3_1
+
+section ScottMap
+
+variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
+
+def ScottMap (D : Type u) (D' : Type v) [CompleteLattice D] [CompleteLattice D'] : Type _ :=
+  { f : D → D' // @Continuous D D' scottTopologicalSpace scottTopologicalSpace f }
+
+namespace ScottMap
+
+instance : CoeFun (ScottMap D D') (fun _ => D → D') where
+  coe f := f.1
+
+@[ext]
+theorem ext {f g : ScottMap D D'} (h : ∀ x, f x = g x) : f = g :=
+  Subtype.ext (funext h)
+
+def const (c : D') : ScottMap D D' :=
+  ⟨fun _ => c, continuous_of_preservesDirectedSup fun S hS _ => by
+    obtain ⟨x, hx⟩ := hS
+    apply le_antisymm
+    · exact le_sSup ⟨x, hx, rfl⟩
+    · apply sSup_le
+      intro b hb
+      obtain ⟨y, hy, rfl⟩ := hb
+      exact le_rfl⟩
+
+@[simp] theorem const_apply (c : D') (x : D) : (ScottMap.const c : D → D') x = c := rfl
+
+end ScottMap
 
 @[reducible] noncomputable def scottMapInducedPiTopology (D : Type u) (D' : Type v)
     [CompleteLattice D] [CompleteLattice D'] : TopologicalSpace (ScottMap D D') :=
@@ -162,9 +168,13 @@ theorem scottMapPointwiseTopology_eq_induced_pi :
     exact ⟨{g : D → D' | g x ∈ U}, (@continuous_apply D (fun _ => D')
       (fun _ => scottTopologicalSpace) x).isOpen_preimage U hU, rfl⟩
 
+end ScottMap
+
 section SubspaceExtension
 
 variable {Y : Type*} [CompleteLattice Y]
+
+variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 theorem scottSubspaceExtendInf_le_of_mem {f' : ScottMap Y D} {U : Set Y} {y : Y}
     (hyU : y ∈ U) : sInf (Set.image (f' : Y → D) U) ≤ f' y :=
@@ -201,5 +211,7 @@ theorem scottMap_eq_sSup_openInfs (hD : ContinuousLattice D) (f' : ScottMap Y D)
     exact scottSubspaceExtendInf_le_of_mem (f' := f') (y := y) (U := U) hyU
 
 end SubspaceExtension
+
+variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
 end DomainTheory.ContinuousLattice
