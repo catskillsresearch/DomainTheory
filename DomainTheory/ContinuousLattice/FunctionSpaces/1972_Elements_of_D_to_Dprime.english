@@ -4,23 +4,23 @@ Namespace **`ScottMap`** collects the basic operations on that carrier:
 
 **Coercion.** A element of `ScottMap D D'` is used as an ordinary function $D \to D'$ via the **`CoeFun`** instance (`f x` is the underlying map applied at $x$).
 
-**Theorem (`ScottMap.ext`).** Two Scott maps are equal if they agree at every point: $f = g$ when $\forall x,\ f(x) = g(x)$.
+**Theorem (`ext`).** Two Scott maps are equal if they agree at every point: $f = g$ when $\forall x,\ f(x) = g(x)$.
 
-**Definition (`ScottMap.const`).** For $c \in D'$, the constant function $x \mapsto c$ is Scott-continuous and defines an element of `ScottMap D D'` (the constant map used as $\bot$ of $[D \to D']$ in Theorem 3.3).
+**Definition (`const`).** For $c \in D'$, the constant function $x \mapsto c$ is Scott-continuous and defines an element of `ScottMap D D'` (the constant map used as $\bot$ of $[D \to D']$ in Theorem 3.3).
 
-**Lemma (`ScottMap.const_apply`).** `(ScottMap.const c) x = c` for all $x \in D$.
+**Lemma (`const_apply`).** `(ScottMap.const c) x = c` for all $x \in D$.
 
 **Definition (`stepMap`).** For $e \in D$ and $e' \in D'$, **`stepMap e e'`** is Scott's step function $\overrightarrow{e}[e,e'] \in$ **`ScottMap D D'`** ([`stepMap.lean`](stepMap.lean)).
 
 Namespace **`stepMap`** (same file) collects the step-function tools used in Theorem 3.3(a):
 
-**Lemma (`stepMap.apply_of_wayBelow`).** If $e \ll x$, then `(stepMap e e') x = e'`.
+**Lemma (`apply_of_wayBelow`).** If $e \ll x$, then `(stepMap e e') x = e'`.
 
-**Lemma (`stepMap.le_of_wayBelow`).** If $e' \ll f(e)$, then `stepMap e e' ≤ f` in **`ScottMap D D'`**.
+**Lemma (`le_of_wayBelow`).** If $e' \ll f(e)$, then `stepMap e e' ≤ f` in **`ScottMap D D'`**.
 
-**Lemma (`stepMap.wayBelow`).** If $e' \ll f(e)$, then `stepMap e e' ≪ f`.
+**Lemma (`wayBelow`).** If $e' \ll f(e)$, then `stepMap e e' ≪ f`.
 
-**Theorem (`stepMap.pointwise_sSup`).** For **`ContinuousLattice D`**, **`ContinuousLattice D'`**, $f \in$ **`ScottMap D D'`**, and $x \in D$,
+**Theorem (`pointwise_sSup`).** For **`ContinuousLattice D`**, **`ContinuousLattice D'`**, $f \in$ **`ScottMap D D'`**, and $x \in D$,
 $(f x) = \bigsqcup \{\, e' \mid \exists e,\ e \ll x \land e' \ll f(e) \,\}$.
 
-**Theorem (`stepMap.isContinuousLattice`).** If **`ContinuousLattice D`** and **`ContinuousLattice D'`**, then **`ScottMap D D'`** is a continuous lattice (Theorem 3.3(a); proof combines **`pointwise_sSup`**, **`wayBelow`**, and **`apply_of_wayBelow`**).
+**Theorem (`isContinuousLattice`).** If **`ContinuousLattice D`** and **`ContinuousLattice D'`**, then **`ScottMap D D'`** is a continuous lattice (Theorem 3.3(a); proof combines **`pointwise_sSup`**, **`wayBelow`**, and **`apply_of_wayBelow`**).

@@ -10,10 +10,10 @@ maps $f \in [[D \times D'] \to D'']$ to an element of $[D \to [D' \to D'']]$ (us
 
 Namespace **`scottLambda`** collects the currying and section tools used to build those maps:
 
-**Lemma (`scottLambda.curry_right`).** For fixed $x \in D$, the section $y \mapsto f(x,y)$ preserves directed suprema.
+**Lemma (`curry_right`).** For fixed $x \in D$, the section $y \mapsto f(x,y)$ preserves directed suprema.
 
-**Lemma (`scottLambda.curry_left`).** For fixed $y \in D'$, the section $x \mapsto f(x,y)$ preserves directed suprema.
+**Lemma (`curry_left`).** For fixed $y \in D'$, the section $x \mapsto f(x,y)$ preserves directed suprema.
 
-**Theorem (`scottLambda.outer`).** For $f \in$ **`ScottMap (D × D') D''`**, the map $x \mapsto$ **`scottLambda.at f x`** preserves directed suprema.
+**Theorem (`outer`).** For $f \in$ **`ScottMap (D × D') D''`**, the map $x \mapsto$ **`scottLambda.at f x`** preserves directed suprema.
 
-**Lemma (`scottLambda.apply`).** **`((scottLambda f x) : ScottMap D' D'') y = f(x,y)`** (definitional).
+**Lemma (`apply`).** **`((scottLambda f x) : ScottMap D' D'') y = f(x,y)`** (definitional).

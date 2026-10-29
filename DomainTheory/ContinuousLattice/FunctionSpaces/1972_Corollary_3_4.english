@@ -10,3 +10,12 @@ is continuous.
 
 This result gives only one example of the masses of continuous functions that are available on continuous lattices. As another fundamental example we have:
 
+Namespace **`corollary_3_4`** collects the evaluation tools; Scott's corollary is assembled from them:
+
+**Lemma (`eval_on_C`).** For $x \in D$, application at $x$ is continuous as a map **`ScottC D D' → D'`** when the function space carries **`scottFunctionTopology`** with Scott topologies on $D$ and $D'$.
+
+**Theorem (`preservesDirectedSup`).** Joint evaluation **`(f, x) ↦ f(x)`** on **`ScottMap D D' × D`** preserves directed suprema (via Propositions 2.5 and 2.6).
+
+**Theorem (`jointly_continuous`).** The evaluation map **`ScottMap D D' × D → D'`** is Scott-continuous.
+
+**Theorem (`corollary_3_4`).** Specialization of **`eval_on_C`** to **`ScottC D D'`** (the $x$-fixed step in Scott's proof).
