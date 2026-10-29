@@ -1,6 +1,11 @@
-Scott’s proof of **Proposition 1.5** uses the space `D = 𝕆^𝔒`, a Cartesian power of the two-point Sierpiński space 𝕆. That power is injective because:
+**Lemma.** Powers of $\mathbb{O}$ are injective.
 
-- **Proposition 1.2** — the single space 𝕆 (`Prop` with the Sierpiński topology) is injective;
-- **Proposition 1.3** — a product of injective spaces is injective under the product topology.
+**Proof.** Let $I$ be any index set and let
 
-For any index type `ι`, the Lean power is `ι → Prop` with the product topology. The lemma `isInjectiveSpace_sierpinski_power` is exactly “apply 1.3 to `i ↦ Prop` using 1.2 at each index.” In Proposition 1.5 we take `ι = Opens X`.
+$$
+D = \mathbb{O}^I
+$$
+
+be the Cartesian power of the two-point space $\mathbb{O}$ with the product topology. Each factor $\mathbb{O}$ is injective by **1.2**. By **1.3**, the product of injective spaces is injective under the product topology, so $D$ is injective. $\square$
+
+**Proposition 1.5** applies this lemma with $I = \mathfrak{O}$, the open subsets of the given $T_0$-space.
