@@ -26,9 +26,6 @@
 **[ContinuousLattice/FunctionSpaces/instSupSet.lean](DomainTheory/ContinuousLattice/FunctionSpaces/instSupSet.lean)**
 
 @import "instSupSet.lean"
-**[ContinuousLattice/FunctionSpaces/Basic/isLUB_sSup.lean](DomainTheory/ContinuousLattice/FunctionSpaces/Basic/isLUB_sSup.lean)**
-
-@import "Basic/isLUB_sSup.lean"
 **[ContinuousLattice/FunctionSpaces/instCompleteLattice.lean](DomainTheory/ContinuousLattice/FunctionSpaces/instCompleteLattice.lean)**
 
 @import "instCompleteLattice.lean"

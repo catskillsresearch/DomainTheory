@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
 public import Mathlib.Data.Set.Basic
 

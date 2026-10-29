@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_maximal_le
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_maximal

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic.isLUB_sSup
+public import DomainTheory.ContinuousLattice.FunctionSpaces.instSupSet
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

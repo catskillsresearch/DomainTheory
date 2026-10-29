@@ -1,6 +1,5 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
 import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_6
 import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5

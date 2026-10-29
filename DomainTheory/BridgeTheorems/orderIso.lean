@@ -4,7 +4,6 @@ public import DomainTheory.BridgeTheorems.ScottMapBridgeInst21
 public import DomainTheory.BridgeTheorems.conjScottMapFun_le_iff
 public import Mathlib.Algebra.Group.End
 public import Mathlib.Order.Hom.Basic
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_2
 public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3

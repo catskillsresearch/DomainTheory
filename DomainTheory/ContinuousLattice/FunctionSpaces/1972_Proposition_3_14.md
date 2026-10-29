@@ -26,9 +26,6 @@
 **[proposition_3_14.lean](proposition_3_14.lean)**
 
 @import "proposition_3_14.lean"
-**[ContinuousLattice/FunctionSpaces/Basic.lean](DomainTheory/ContinuousLattice/FunctionSpaces/Basic.lean)**
-
-@import "Basic.lean"
 **[ContinuousLattice/FunctionSpaces/corollary_3_4.lean](DomainTheory/ContinuousLattice/FunctionSpaces/corollary_3_4.lean)**
 
 @import "corollary_3_4.lean"

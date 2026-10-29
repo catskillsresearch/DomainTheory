@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.embInfInf_projInfInf
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_1

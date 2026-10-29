@@ -60,4 +60,10 @@ end Proposition314
 noncomputable def fix.map : ScottMap (ScottMap D D) D :=
   ⟨Proposition314.fix, continuous_of_preservesDirectedSup Proposition314.fix_preservesDirectedSup⟩
 
+namespace fix
+
+@[simp] theorem map_apply (f : ScottMap D D) : (fix.map f : D) = Proposition314.fix f := rfl
+
+end fix
+
 end DomainTheory.ContinuousLattice

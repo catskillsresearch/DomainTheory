@@ -13,7 +13,6 @@ public import DomainTheory.ContinuousLattice.ContinuousLattices.continuousLattic
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Data.Set.Basic
 

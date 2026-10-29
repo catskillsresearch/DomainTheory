@@ -3,6 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationPreorder
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.FunctionSpaces.continuousMapInducedPiTopology
+public import Mathlib.Topology.ContinuousMap.Basic
 
 @[expose] public section
 
@@ -13,6 +14,12 @@ namespace DomainTheory.ContinuousLattice
 open Set Topology TopologicalSpace
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
+
+abbrev ScottFunctionSpace (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y] :=
+  C(X, Y)
+
+abbrev ScottC (D D' : Type*) [CompleteLattice D] [CompleteLattice D'] :=
+  @ContinuousMap D D' scottTopologicalSpace scottTopologicalSpace
 
 def scottFunctionTopology.evalSubbasis (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y] :
     Set (Set (C(X, Y))) :=

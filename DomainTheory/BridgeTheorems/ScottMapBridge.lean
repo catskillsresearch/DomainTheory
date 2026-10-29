@@ -6,7 +6,6 @@ public import DomainTheory.BridgeTheorems.orderIso
 public import DomainTheory.BridgeTheorems.PresentationDomains.presentation_domains_equiv
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.Basic
 public import Mathlib.Order.Hom.Basic
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_2
 public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3

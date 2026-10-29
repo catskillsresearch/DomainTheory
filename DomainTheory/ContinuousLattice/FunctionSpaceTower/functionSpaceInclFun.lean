@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
 
 @[expose] public section
