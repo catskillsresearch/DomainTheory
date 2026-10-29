@@ -2,6 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
+public import DomainTheory.ContinuousLattice.Injective.proposition_1_4
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -24,7 +25,7 @@ theorem theorem_2_12 {D : Type u} [TopologicalSpace D] [T0Space D] :
   refine ⟨theorem_2_12.backward, ?_⟩
   rintro ⟨E, inst, hE, ⟨h⟩⟩
   let τE : TopologicalSpace E := @scottTopologicalSpace E inst
-  exact @InjectiveSpace.of_retract E D τE _ (theorem_2_12.forward hE)
+  exact @proposition_1_4 E D τE _ (theorem_2_12.forward hE)
     ⟨⇑h, h.continuous⟩ ⟨⇑h.symm, h.symm.continuous⟩ (fun d => h.left_inv d)
 
 end DomainTheory.ContinuousLattice

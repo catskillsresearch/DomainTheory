@@ -3,6 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
 public import Mathlib.Topology.Separation.Basic
 import DomainTheory.ContinuousLattice.Injective.isInjectiveSpace_sierpinski_power
+import DomainTheory.ContinuousLattice.Injective.proposition_1_4
 import DomainTheory.ContinuousLattice.Injective.proposition_1_5
 
 @[expose] public section
@@ -21,5 +22,5 @@ theorem corollary_1_7 (D : Type u) [TopologicalSpace D] [T0Space D] :
     exact ⟨r, hr⟩
   · intro hD
     obtain ⟨r, hr⟩ := hD (productOfMemOpens D) (proposition_1_5 D).2
-    exact InjectiveSpace.of_retract (isInjectiveSpace_sierpinski_power (Opens D))
+    exact proposition_1_4 (isInjectiveSpace_sierpinski_power (Opens D))
       (productOfMemOpens D) r hr
