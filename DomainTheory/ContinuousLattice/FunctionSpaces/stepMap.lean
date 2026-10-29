@@ -4,17 +4,14 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
-public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
-public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_of_wayBelow
-public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_of_not_wayBelow
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
+import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
+import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
+import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
+import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
+import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_of_wayBelow
+import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_of_not_wayBelow
 
 @[expose] public section
 

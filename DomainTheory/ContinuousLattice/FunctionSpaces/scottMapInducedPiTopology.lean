@@ -1,13 +1,10 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_scottOpen
-public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_le_finset_sup_step
-public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
+public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
+import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
+import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_le_finset_sup_step
+import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_scottOpen
 
 @[expose] public section
 

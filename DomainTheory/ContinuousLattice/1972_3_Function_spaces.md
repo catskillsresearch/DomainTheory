@@ -8,7 +8,7 @@
 - [Elements of $[D \to D']$](FunctionSpaces/1972_Elements_of_D_to_Dprime.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Proposition 3.2](FunctionSpaces/1972_Proposition_3_2.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Product topology on $[D \to D']$](FunctionSpaces/1972_Product_topology_on_D_to_Dprime.md) [✓](ContinuousLattice/1972_REVISION.md)
-- [Theorem 3.3](FunctionSpaces/1972_Theorem_3_3.md)
+- [Theorem 3.3](FunctionSpaces/1972_Theorem_3_3.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Corollary 3.4](FunctionSpaces/1972_Corollary_3_4.md)
 - [Proposition 3.5](FunctionSpaces/1972_Proposition_3_5.md)
 - [Retractions and extensions](FunctionSpaces/1972_Before_definition_3_6.md)

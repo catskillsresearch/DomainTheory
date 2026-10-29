@@ -1,9 +1,7 @@
 module
 
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
-public import Mathlib.Topology.Defs.Basic
+import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 
 @[expose] public section
 
