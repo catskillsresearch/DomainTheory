@@ -2,19 +2,51 @@ Suppose we were to start with the least, non-trivial lattice $0 = \top, \bot$ fo
 
 **Left projection**
 
-```
-      ⊤  ←── j₀ ──  [⊤,⊤]
-      ⊥  ←── j₀ ──  [⊥,⊤]
-      ⊥  ←── j₀ ──  [⊥,⊥]
-```
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" viewBox="0 0 360 200" role="img">
+  <g fill="currentColor" font-family="Georgia, Times New Roman, serif">
+  <line x1="72.0" y1="105.0" x2="72.0" y2="155.0" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="210.0" y1="37.0" x2="210.0" y2="87.0" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="210.0" y1="105.0" x2="210.0" y2="155.0" stroke="currentColor" stroke-width="1.5"/>
+  <text x="16" y="102" font-size="20">&#x22A4;</text>
+  <text x="16" y="170" font-size="20">&#x22A5;</text>
+  <text x="228" y="34" font-size="18">[&#x22A4;, &#x22A4;]</text>
+  <text x="228" y="102" font-size="18">[&#x22A5;, &#x22A4;]</text>
+  <text x="228" y="170" font-size="18">[&#x22A5;, &#x22A5;]</text>
+  <line x1="201.0" y1="32.4" x2="92.6" y2="85.8" stroke="currentColor" stroke-width="1.6" fill="none"/><polygon points="81.9,91.1 94.6,89.8 90.7,81.9" fill="currentColor" stroke="none"/>
+  <line x1="201.0" y1="100.4" x2="92.6" y2="153.8" stroke="currentColor" stroke-width="1.6" fill="none"/><polygon points="81.9,159.1 94.6,157.8 90.7,149.9" fill="currentColor" stroke="none"/>
+  <line x1="200.0" y1="164.0" x2="95.0" y2="164.0" stroke="currentColor" stroke-width="1.6" fill="none"/><polygon points="83.0,164.0 95.0,168.4 95.0,159.6" fill="currentColor" stroke="none"/>
+  <text x="128" y="52" font-size="18" font-style="italic">j</text><text x="139" y="58" font-size="12">0</text>
+  <circle cx="72" cy="96" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
+  <circle cx="72" cy="164" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
+  <circle cx="210" cy="28" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
+  <circle cx="210" cy="96" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
+  <circle cx="210" cy="164" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
+  </g>
+</svg>
 
 **Right projection**
 
-```
-      ⊤  ←── j₀ ──  [⊤,⊤]
-      ⊤  ←── j₀ ──  [⊥,⊤]
-      ⊥  ←── j₀ ──  [⊥,⊥]
-```
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" viewBox="0 0 360 200" role="img">
+  <g fill="currentColor" font-family="Georgia, Times New Roman, serif">
+  <line x1="72.0" y1="105.0" x2="72.0" y2="155.0" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="210.0" y1="37.0" x2="210.0" y2="87.0" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="210.0" y1="105.0" x2="210.0" y2="155.0" stroke="currentColor" stroke-width="1.5"/>
+  <text x="16" y="102" font-size="20">&#x22A4;</text>
+  <text x="16" y="170" font-size="20">&#x22A5;</text>
+  <text x="228" y="34" font-size="18">[&#x22A4;, &#x22A4;]</text>
+  <text x="228" y="102" font-size="18">[&#x22A5;, &#x22A4;]</text>
+  <text x="228" y="170" font-size="18">[&#x22A5;, &#x22A5;]</text>
+  <line x1="201.0" y1="32.4" x2="92.6" y2="85.8" stroke="currentColor" stroke-width="1.6" fill="none"/><polygon points="81.9,91.1 94.6,89.8 90.7,81.9" fill="currentColor" stroke="none"/>
+  <line x1="200.0" y1="96.0" x2="95.0" y2="96.0" stroke="currentColor" stroke-width="3" fill="none"/><polygon points="83.0,96.0 95.0,100.4 95.0,91.6" fill="currentColor" stroke="none"/>
+  <line x1="200.0" y1="164.0" x2="95.0" y2="164.0" stroke="currentColor" stroke-width="1.6" fill="none"/><polygon points="83.0,164.0 95.0,168.4 95.0,159.6" fill="currentColor" stroke="none"/>
+  <text x="118" y="48" font-size="18" font-style="italic">j</text><text x="129" y="54" font-size="12">0</text>
+  <circle cx="72" cy="96" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
+  <circle cx="72" cy="164" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
+  <circle cx="210" cy="28" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
+  <circle cx="210" cy="96" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
+  <circle cx="210" cy="164" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
+  </g>
+</svg>
 
 Hence our construction gives two limit spaces $D_\infty$ and $D'*\infty$. Are they the same? No, they are not. It can be shown, for example, that the $\top$ of $D*\infty$ is *isolated* (that is, $\top \ll \top$), while the same is not true of $D'*\infty$. More interestingly, David Park has proved that the fixed-point operator fix mentioned in 3.14 has algebraic properties in $D*\infty$ quite different from those in $D'*\infty$. By algebraic here, we of course have reference to the functional algebra embodied in the application operation $x(y)$ defined on these limit spaces. Note, by the way, that in view of our isomorphism result we can regard fix (or any other similar continuous function for that matter) as an element of $D*\infty$. This makes the "algebra" of $D_\infty$ quite a rich field for study.
 

@@ -8,13 +8,18 @@ $$V = T + [V \times V] + [V + V] + [V \to V],$$
 
 for example. Here $T = \bot, 0, 1, \top$ is the four-element lattice with $0$ and $1$ as incomparable elements. By $[V \times V]$ and $[V \to V]$ we understand the usual Cartesian product and function space construction. The $+$ operator, on the other hand works only in the category of lattices with $\top$ as an isolated element. It is defined so as to make:
 
-$$
-\begin{array}{ccc}
-D + D' & \longleftarrow & D' \\
-\uparrow & & \uparrow \\
-D & \longleftarrow & 0
-\end{array}
-$$
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="190" viewBox="0 0 300 190" role="img" aria-label="Push-out square: D and D prime map up into D plus D prime, and 0 maps left to D and up to D prime.">
+  <g fill="currentColor" font-family="Georgia, Times New Roman, serif">
+  <line x1="228.0" y1="36.0" x2="121.0" y2="36.0" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="108.0,36.0 122.0,41.0 122.0,31.0" fill="currentColor" stroke="none"/>
+  <line x1="248.0" y1="132.0" x2="248.0" y2="65.0" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="248.0,52.0 243.0,66.0 253.0,66.0" fill="currentColor" stroke="none"/>
+  <line x1="40.0" y1="132.0" x2="40.0" y2="65.0" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="40.0,52.0 35.0,66.0 45.0,66.0" fill="currentColor" stroke="none"/>
+  <line x1="220.0" y1="156.0" x2="75.0" y2="156.0" stroke="currentColor" stroke-width="2.4" fill="none"/><polygon points="62.0,156.0 76.0,161.0 76.0,151.0" fill="currentColor" stroke="none"/>
+  <text x="8" y="42" font-size="22" font-style="italic">D + D&#x2032;</text>
+  <text x="236" y="42" font-size="22" font-style="italic">D&#x2032;</text>
+  <text x="24" y="164" font-size="22" font-style="italic">D</text>
+  <text x="240" y="164" font-size="22">0</text>
+  </g>
+</svg>
 
 a push-out diagram, where the maps from $0$ are meant to match $\bot$ with $\bot$ and $\top$ with $\top$. The point of requiring $\top$ to be isolated is that both $D$ and $D'$ become projections of $D + D'$. This construction, though not quite a disjoint union, has many properties in common with that operation on spaces. In particular, if we consider the category with projections as maps, the construction
 

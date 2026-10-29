@@ -1,12 +1,36 @@
 **3.9 Lemma.** Consider the diagram:
 
-$$
-\begin{gathered}
-X \xrightarrow{\quad e\quad} Y 
-f \Big\downarrow \qquad\qquad g \searrow \qquad \bar{f} \swarrow \qquad \downarrow \bar{g} 
-D \xrightarrow[\ j\ ]{\quad i\quad} D'
-\end{gathered}
-$$
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="268" viewBox="0 0 430 268" role="img" aria-label="Lemma 3.9 diagram. Top: X to Y by e. Left: f down to D. Right: g bar down to D prime. Diagonals cross: g from X to D prime, f bar from Y to D. Bottom: i from D to D prime and j back.">
+  <g font-family="Georgia, 'Times New Roman', Times, serif" fill="currentColor">
+  <text x="52" y="40" font-size="22" font-style="italic" text-anchor="middle">X</text>
+  <text x="334" y="40" font-size="22" font-style="italic" text-anchor="middle">Y</text>
+  <text x="193" y="22" font-size="18" font-style="italic" text-anchor="middle">e</text>
+  <text x="14" y="122" font-size="22" font-style="italic">f</text>
+  <text x="108" y="112" font-size="22" font-style="italic">g</text>
+  <text x="214.0" y="104.0" font-size="22" font-style="italic">f</text>
+  <line x1="213.0" y1="83.8" x2="226.0" y2="83.8" stroke="currentColor" stroke-width="1.25"/>
+  <text x="358" y="126" font-size="22" font-style="italic">g</text>
+  <line x1="360" y1="108" x2="376" y2="108" stroke="currentColor" stroke-width="1.25"/>
+  <line x1="86.0" y1="28.0" x2="287.1" y2="28.0" stroke="currentColor" stroke-width="1.6" fill="none"/>
+  <polygon points="300.0,28.0 286.1,23.4 286.1,32.6" fill="currentColor" stroke="none"/>
+  <line x1="52.0" y1="50.0" x2="52.0" y2="165.0" stroke="currentColor" stroke-width="1.6" fill="none"/>
+  <polygon points="52.0,178.0 56.6,164.1 47.4,164.1" fill="currentColor" stroke="none"/>
+  <line x1="334.0" y1="50.0" x2="334.0" y2="165.0" stroke="currentColor" stroke-width="1.6" fill="none"/>
+  <polygon points="334.0,178.0 338.6,164.1 329.4,164.1" fill="currentColor" stroke="none"/>
+  <line x1="74.0" y1="54.0" x2="301.2" y2="164.6" stroke="currentColor" stroke-width="1.6" fill="none"/>
+  <polygon points="312.0,170.0 301.6,159.1 297.6,167.2" fill="currentColor" stroke="none"/>
+  <line x1="312.0" y1="54.0" x2="84.8" y2="164.6" stroke="currentColor" stroke-width="1.6" fill="none"/>
+  <polygon points="74.0,170.0 84.4,159.1 88.4,167.2" fill="currentColor" stroke="none"/>
+  <line x1="90.0" y1="206.0" x2="287.1" y2="206.0" stroke="currentColor" stroke-width="1.6" fill="none"/>
+  <polygon points="300.0,206.0 286.1,201.4 286.1,210.6" fill="currentColor" stroke="none"/>
+  <line x1="300.0" y1="230.0" x2="102.9" y2="230.0" stroke="currentColor" stroke-width="1.6" fill="none"/>
+  <polygon points="90.0,230.0 103.9,234.6 103.9,225.4" fill="currentColor" stroke="none"/>
+  <text x="52" y="224" font-size="22" font-style="italic" text-anchor="middle">D</text>
+  <text x="334" y="224" font-size="22" font-style="italic" text-anchor="middle">D&#x2032;</text>
+  <text x="195" y="200" font-size="18" font-style="italic" text-anchor="middle">i</text>
+  <text x="195" y="252" font-size="18" font-style="italic" text-anchor="middle">j</text>
+  </g>
+</svg>
 
 where the upper row is a subspace embedding and the lower is a projection. If the given functions $f$ and $g$ are extended to $\bar{f}$ and $\bar{g}$ as in 3.8, and if $f = j \circ g$, then $\bar{f} = j \circ \bar{g}$ also.
 
