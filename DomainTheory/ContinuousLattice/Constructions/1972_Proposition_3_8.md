@@ -8,9 +8,6 @@
 **[DomainTheory/ContinuousLattice/FunctionSpaces/scottSubspaceExtend.lean](DomainTheory/ContinuousLattice/FunctionSpaces/scottSubspaceExtend.lean)**
 
 @import "../FunctionSpaces/scottSubspaceExtend.lean"
-**[DomainTheory/ContinuousLattice/FunctionSpaces/scottSubspaceExtend.lean](DomainTheory/ContinuousLattice/FunctionSpaces/scottSubspaceExtend.lean)**
-
-@import "../FunctionSpaces/scottSubspaceExtend.lean"
 **[DomainTheory/ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_eq_of_comp.lean](DomainTheory/ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_eq_of_comp.lean)**
 
 @import "../FunctionSpaces/scottSubspaceExtendInf_eq_of_comp.lean"
