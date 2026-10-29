@@ -1,0 +1,2265 @@
+%% ContinuousLattice (top level). Each box is one Lean name, or a parent
+%% with its namespace / dotted companions listed inside the label.
+%% Green dotted: type/name in a declaration's binders or fields → that declaration.
+%% Blue solid: callee → caller (head calls tail). Redundant call paths omitted.
+flowchart TB
+
+  subgraph Constructions["Constructions"]
+    direction TB
+    Constructions_continuous_eq_sSup_openInfs_lean__continuous_eq_sSup_openInfs["continuous_eq_sSup_openInfs"]
+    Constructions_directedOn_finite_sSup_mem_lean__directedOn_finite_sSup_mem["directedOn_finite_sSup_mem"]
+    Constructions_isContinuousLattice_prop_lean__isContinuousLattice_prop["isContinuousLattice_prop"]
+    Constructions_proposition_2_11_lean__proposition_2_11["proposition_2_11"]
+    Constructions_proposition_2_8_lean__proposition_2_8["proposition_2_8"]
+    Constructions_proposition_2_9_lean___proposition_2_9["proposition_2_9<br/>sierpinskiPower"]
+    Constructions_proposition_3_8_lean__proposition_3_8["proposition_3_8"]
+    Constructions_scottExtend_lean__scottExtend["scottExtend"]
+    Constructions_scottExtend_aux_directed_lean__scottExtend_aux_directed["scottExtend_aux_directed"]
+    Constructions_scottExtend_aux_nonempty_lean__scottExtend_aux_nonempty["scottExtend_aux_nonempty"]
+    Constructions_scottExtend_continuous_lean__scottExtend_continuous["scottExtend_continuous"]
+    Constructions_scottExtend_eq_of_continuous_lean__scottExtend_eq_of_continuous["scottExtend_eq_of_continuous"]
+    Constructions_scottExtend_maximal_lean__scottExtend_maximal["scottExtend_maximal"]
+    Constructions_scottExtend_maximal_le_lean__scottExtend_maximal_le["scottExtend_maximal_le"]
+    Constructions_scottTopology_prop_lean__scottTopology_prop["scottTopology_prop"]
+    Constructions_scottTopology_lean__sierpinskiPower["sierpinskiPower"]
+    Constructions_Basic_lean__update_preservesDirectedSup["update_preservesDirectedSup"]
+    Constructions_Basic_lean__wayBelow_finite_support["wayBelow_finite_support"]
+    Constructions_Basic_lean__wayBelow_proj["wayBelow_proj"]
+  end
+
+  subgraph ContinuousLattices["ContinuousLattices"]
+    direction TB
+    ContinuousLattices_coe_sSup_lean__coe_sSup["coe_sSup"]
+    ContinuousLattices_completeLattice_lean__completeLattice["completeLattice"]
+    ContinuousLattices_IdemFix_lean__IdemFix["IdemFix"]
+    ContinuousLattices_idemFix_incl_preservesDirectedSup_lean__idemFix_incl_preservesDirectedSup["idemFix_incl_preservesDirectedSup"]
+    ContinuousLattices_idemFix_isContinuousLattice_lean__idemFix_isContinuousLattice["idemFix_isContinuousLattice"]
+    ContinuousLattices_idemFix_retr_preservesDirectedSup_lean__idemFix_retr_preservesDirectedSup["idemFix_retr_preservesDirectedSup"]
+    ContinuousLattices_idemFix_scottTopology_lean__idemFix_scottTopology["idemFix_scottTopology"]
+    ContinuousLattices_idemFixRetraction_lean__idemFixRetraction["idemFixRetraction"]
+    ContinuousLattices_isLUB_sSup_lean__isLUB_sSup["isLUB_sSup"]
+    ContinuousLattices_lemma_3_9_lean__lemma_3_9["lemma_3_9"]
+    ContinuousLattices_IsContinuousLatticeu2eorderIso_lean__orderIso["orderIso"]
+    ContinuousLattices_orderIso_wayBelow_lean__orderIso_wayBelow["orderIso_wayBelow"]
+    ContinuousLattices_orderIsoScottHomeomorph_lean__orderIsoScottHomeomorph["orderIsoScottHomeomorph"]
+    ContinuousLattices_proposition_2_4_lean__proposition_2_4["proposition_2_4"]
+    ContinuousLattices_scottOpen_preimage_orderIso_lean__scottOpen_preimage_orderIso["scottOpen_preimage_orderIso"]
+    ContinuousLattices_supSet_lean__supSet["supSet"]
+    ContinuousLattices_theorem_2_12_lean___theorem_2_12["theorem_2_12<br/>backward<br/>backward_exact<br/>forward<br/>injective_half<br/>sierpinski_backward"]
+  end
+
+  subgraph FunctionSpaceTower["FunctionSpaceTower"]
+    direction TB
+    FunctionSpaceTower_CLat_lean__CLat["CLat"]
+    FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq["conj_iInfTerm_eq"]
+    FunctionSpaceTower_conjMap_lean___conjMap["conjMap<br/>apply<br/>fun_apply<br/>preservesDirectedSup"]
+    FunctionSpaceTower_conjMap_iSup_lean__conjMap_incl_le_conjMap_succ["conjMap_incl_le_conjMap_succ"]
+    FunctionSpaceTower_conjMap_iSup_lean__conjMap_iSup["conjMap_iSup"]
+    FunctionSpaceTower_conjMap_lean__conjMapFun["conjMapFun"]
+    FunctionSpaceTower_DInf_lean__DInf["DInf"]
+    FunctionSpaceTower_DInfFn_lean__DInfFn["DInfFn"]
+    FunctionSpaceTower_embInf_succ_iSup_lean__embInf_succ_iSup["embInf_succ_iSup"]
+    FunctionSpaceTower_embInfInf_lean___embInfInf["embInfInf<br/>apply<br/>preservesDirectedSup"]
+    FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf["embInfInf_comp_projInfInf"]
+    FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_le_iff["embInfInf_le_iff"]
+    FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_projInfInf["embInfInf_projInfInf"]
+    FunctionSpaceTower_functionSpaceInclFun_lean___functionSpaceInclFun["functionSpaceInclFun<br/>continuous<br/>outer_continuous"]
+    FunctionSpaceTower_functionSpaceProjection_lean___functionSpaceProjection["functionSpaceProjection<br/>inclRetrLe<br/>retrIncl"]
+    FunctionSpaceTower_functionSpaceRetrFun_lean___functionSpaceRetrFun["functionSpaceRetrFun<br/>continuous<br/>outer_continuous"]
+    FunctionSpaceTower_iInfTerm_lean___iInfTerm["iInfTerm<br/>apply"]
+    FunctionSpaceTower_iInfTerm_monotone_lean__iInfTerm_le_succ["iInfTerm_le_succ"]
+    FunctionSpaceTower_iInfTerm_monotone_lean__iInfTerm_monotone["iInfTerm_monotone"]
+    FunctionSpaceTower_incl_projInf_le_projInf_succ_lean__incl_projInf_le_projInf_succ["incl_projInf_le_projInf_succ"]
+    FunctionSpaceTower_iSup__monotone_eq_diagonal_lean__iSup__monotone_eq_diagonal["iSup₂_monotone_eq_diagonal"]
+    FunctionSpaceTower_jInfTerm_lean___jInfTerm["jInfTerm<br/>apply"]
+    FunctionSpaceTower_projInfInf_lean___projInfInf["projInfInf<br/>apply<br/>comp_embInfInf<br/>embInfInf<br/>embInfInf_eq<br/>preservesDirectedSup"]
+    FunctionSpaceTower_theorem_4_4_lean___theorem_4_4["theorem_4_4<br/>scottTopology_homeomorph<br/>sourceTopology_homeomorph"]
+    FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_inverses["theorem_4_4_inverses"]
+    FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_orderIso["theorem_4_4_orderIso"]
+    FunctionSpaceTower_CLat_lean__towerCLat["towerCLat"]
+    FunctionSpaceTower_CLat_lean__towerCoeFun["towerCoeFun"]
+    FunctionSpaceTower_CLat_lean__towerCompleteLattice["towerCompleteLattice"]
+    FunctionSpaceTower_towerProj_lean___towerProj["towerProj<br/>incl_apply<br/>succ<br/>succ_incl_apply<br/>succ_retr_apply"]
+    FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ["towerProj_retr_conjMap_succ"]
+    FunctionSpaceTower_CLat_lean__towerToMap["towerToMap"]
+    FunctionSpaceTower_CLat_lean__towerToMap_coe["towerToMap_coe"]
+    FunctionSpaceTower_CLat_lean__towerType["towerType"]
+    FunctionSpaceTower_CLat_lean__towerType_succ["towerType_succ"]
+    FunctionSpaceTower_CLat_lean__towerType_zero["towerType_zero"]
+  end
+
+  subgraph FunctionSpaces["FunctionSpaces"]
+    direction TB
+    FunctionSpaces_ambientSSup_lean__ambientSSup["ambientSSup"]
+    FunctionSpaces_bot_apply_lean__bot_apply["bot_apply"]
+    FunctionSpaces_comp_lean__comp["comp"]
+    FunctionSpaces_comp_apply_lean__comp_apply["comp_apply"]
+    FunctionSpaces_con__lean__con["con"]
+    FunctionSpaces_const_lean__const["const"]
+    FunctionSpaces_const_apply_lean__const_apply["const_apply"]
+    FunctionSpaces_Basic_lean__continuous["continuous"]
+    FunctionSpaces_continuousMapInducedPiTopology_lean__continuousMapInducedPiTopology["continuousMapInducedPiTopology"]
+    FunctionSpaces_converseProjection_lean__converseProjection["converseProjection"]
+    FunctionSpaces_converseRetr_lean__converseRetr["converseRetr"]
+    FunctionSpaces_converseRetr_incl_lean__converseRetr_incl["converseRetr_incl"]
+    FunctionSpaces_converseRetr_mono_lean__converseRetr_mono["converseRetr_mono"]
+    FunctionSpaces_converseRetr_preservesDirectedSup_lean__converseRetr_preservesDirectedSup["converseRetr_preservesDirectedSup"]
+    FunctionSpaces_corollary_3_4_lean__corollary_3_4["corollary_3_4"]
+    FunctionSpaces_corollary_3_4_eval_on_C_lean__corollary_3_4_eval_on_C["corollary_3_4_eval_on_C"]
+    FunctionSpaces_corollary_3_4_jointly_continuous_lean__corollary_3_4_jointly_continuous["corollary_3_4_jointly_continuous"]
+    FunctionSpaces_corollary_3_4_preservesDirectedSup_lean__corollary_3_4_preservesDirectedSup["corollary_3_4_preservesDirectedSup"]
+    FunctionSpaces_curry_left_preservesDirectedSup_lean__curry_left_preservesDirectedSup["curry_left_preservesDirectedSup"]
+    FunctionSpaces_curry_right_preservesDirectedSup_lean__curry_right_preservesDirectedSup["curry_right_preservesDirectedSup"]
+    FunctionSpaces_directedOn_finsetSupOf_lean__directedOn_finsetSupOf["directedOn_finsetSupOf"]
+    FunctionSpaces_Basic_lean__directedOn_wayBelow["directedOn_wayBelow"]
+    FunctionSpaces_finsetSupOf_lean__finsetSupOf["finsetSupOf"]
+    FunctionSpaces_fix_lean__fix["fix"]
+    FunctionSpaces_fix_eq_lean__fix_eq["fix_eq"]
+    FunctionSpaces_fix_le_lean__fix_le["fix_le"]
+    FunctionSpaces_fix_mono_lean__fix_mono["fix_mono"]
+    FunctionSpaces_fix_preservesDirectedSup_lean__fix_preservesDirectedSup["fix_preservesDirectedSup"]
+    FunctionSpaces_fix_unique_lean__fix_unique["fix_unique"]
+    FunctionSpaces_fixMap_lean__fixMap["fixMap"]
+    FunctionSpaces_Basic_lean__fixMap_apply["fixMap_apply"]
+    FunctionSpaces_idMap_lean__idMap["idMap"]
+    FunctionSpaces_idMap_apply_lean__idMap_apply["idMap_apply"]
+    FunctionSpaces_image_retr_wayBelow_directed_lean__image_retr_wayBelow_directed["image_retr_wayBelow_directed"]
+    FunctionSpaces_image_retr_wayBelow_nonempty_lean__image_retr_wayBelow_nonempty["image_retr_wayBelow_nonempty"]
+    FunctionSpaces_incl_bot_lean__incl_bot["incl_bot"]
+    FunctionSpaces_incl_converseRetr_le_lean__incl_converseRetr_le["incl_converseRetr_le"]
+    FunctionSpaces_incl_finset_sup_lean__incl_finset_sup["incl_finset_sup"]
+    FunctionSpaces_incl_injective_lean__incl_injective["incl_injective"]
+    FunctionSpaces_incl_mono_of_preservesSSup_lean__incl_mono_of_preservesSSup["incl_mono_of_preservesSSup"]
+    FunctionSpaces_incl_preservesDirectedSup_lean__incl_preservesDirectedSup["incl_preservesDirectedSup"]
+    FunctionSpaces_incl_sSup_lean__incl_sSup["incl_sSup"]
+    FunctionSpaces_incl_sup_lean__incl_sup["incl_sup"]
+    FunctionSpaces_incl_sup_of_preservesSSup_lean__incl_sup_of_preservesSSup["incl_sup_of_preservesSSup"]
+    FunctionSpaces_incl_wayBelow_lean__incl_wayBelow["incl_wayBelow"]
+    FunctionSpaces_BasicInst33_lean__instCompleteLattice["instCompleteLattice"]
+    FunctionSpaces_instCompleteLattice_lean__instCompleteLattice["instCompleteLattice"]
+    FunctionSpaces_BasicInst28_lean__instPartialOrder["instPartialOrder"]
+    FunctionSpaces_BasicInst30_lean__instSupSet["instSupSet"]
+    FunctionSpaces_instSupSet_lean__instSupSet["instSupSet"]
+    FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection["IsContinuousLatticeProjection"]
+    FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction["IsContinuousLatticeRetraction"]
+    FunctionSpaces_Basic_isLUB_sSup_lean__isLUB_sSup["isLUB_sSup"]
+    FunctionSpaces_isLUB_sSup_lean__isLUB_sSup["isLUB_sSup"]
+    FunctionSpaces_IsProjection_lean__IsProjection["IsProjection"]
+    FunctionSpaces_isProjection_bot_lean__isProjection_bot["isProjection_bot"]
+    FunctionSpaces_isProjection_directedSup_lean__isProjection_directedSup["isProjection_directedSup"]
+    FunctionSpaces_isProjection_finsetSup_lean__isProjection_finsetSup["isProjection_finsetSup"]
+    FunctionSpaces_isProjection_iff_lean__isProjection_iff["isProjection_iff"]
+    FunctionSpaces_isProjection_sSup_lean__isProjection_sSup["isProjection_sSup"]
+    FunctionSpaces_isProjection_sup_lean__isProjection_sup["isProjection_sup"]
+    FunctionSpaces_lambda_outer_preservesDirectedSup_lean__lambda_outer_preservesDirectedSup["lambda_outer_preservesDirectedSup"]
+    FunctionSpaces_le_lean__le["le"]
+    FunctionSpaces_le_antisymm__lean__le_antisymm_["le_antisymm'"]
+    FunctionSpaces_le_def_lean__le_def["le_def"]
+    FunctionSpaces_le_of_incl_le_lean__le_of_incl_le["le_of_incl_le"]
+    FunctionSpaces_le_refl__lean__le_refl_["le_refl'"]
+    FunctionSpaces_le_sSup_finsetSupOf_lean__le_sSup_finsetSupOf["le_sSup_finsetSupOf"]
+    FunctionSpaces_le_trans__lean__le_trans_["le_trans'"]
+    FunctionSpaces_lemma_3_9_incl_inf_lean__lemma_3_9_incl_inf["lemma_3_9_incl_inf"]
+    FunctionSpaces_lemma_3_9_retr_inf_lean__lemma_3_9_retr_inf["lemma_3_9_retr_inf"]
+    FunctionSpaces_lt_lean__lt["lt"]
+    FunctionSpaces_lt_iff_le_not_ge__lean__lt_iff_le_not_ge_["lt_iff_le_not_ge'"]
+    FunctionSpaces_mem_finsetSupOf_of_mem_lean__mem_finsetSupOf_of_mem["mem_finsetSupOf_of_mem"]
+    FunctionSpaces_min_lean__min["min"]
+    FunctionSpaces_monotone_lean__monotone["monotone"]
+    FunctionSpaces_pointwise_sSup_preservesDirectedSup_lean__pointwise_sSup_preservesDirectedSup["pointwise_sSup_preservesDirectedSup"]
+    FunctionSpaces_pointwiseSubbasic_isOpen_lean__pointwiseSubbasic_isOpen["pointwiseSubbasic_isOpen"]
+    FunctionSpaces_pointwiseSubbasic_scottOpen_lean__pointwiseSubbasic_scottOpen["pointwiseSubbasic_scottOpen"]
+    FunctionSpaces_preservesDirectedSup_coe_lean__preservesDirectedSup_coe["preservesDirectedSup_coe"]
+    FunctionSpaces_comp_lean__preservesDirectedSup_comp["preservesDirectedSup_comp"]
+    FunctionSpaces_projection_lean__projection["projection"]
+    FunctionSpaces_Projections_lean__Projections["Projections"]
+    FunctionSpaces_proposition_2_10_lean___proposition_2_10["proposition_2_10<br/>a<br/>b"]
+    FunctionSpaces_proposition_3_10_converse_lean__proposition_3_10_converse["proposition_3_10_converse"]
+    FunctionSpaces_proposition_3_10_forward_lean__proposition_3_10_forward["proposition_3_10_forward"]
+    FunctionSpaces_proposition_3_12_lean__proposition_3_12["proposition_3_12"]
+    FunctionSpaces_proposition_3_13_lean__proposition_3_13["proposition_3_13"]
+    FunctionSpaces_proposition_3_14_lean__proposition_3_14["proposition_3_14"]
+    FunctionSpaces_proposition_3_2_lean__proposition_3_2["proposition_3_2"]
+    FunctionSpaces_proposition_3_5_lean__proposition_3_5["proposition_3_5"]
+    FunctionSpaces_proposition_3_5_preservesDirectedSup_lean__proposition_3_5_preservesDirectedSup["proposition_3_5_preservesDirectedSup"]
+    FunctionSpaces_proposition_3_7_projection_lean__proposition_3_7_projection["proposition_3_7_projection"]
+    FunctionSpaces_proposition_3_7_retraction_lean__proposition_3_7_retraction["proposition_3_7_retraction"]
+    FunctionSpaces_retr_ambientSSup_eq_sSup_lean__retr_ambientSSup_eq_sSup["retr_ambientSSup_eq_sSup"]
+    FunctionSpaces_retr_bot_lean__retr_bot["retr_bot"]
+    FunctionSpaces_retr_eq_sSup_lean__retr_eq_sSup["retr_eq_sSup"]
+    FunctionSpaces_retr_wayBelow_of_wayBelow_incl_lean__retr_wayBelow_of_wayBelow_incl["retr_wayBelow_of_wayBelow_incl"]
+    FunctionSpaces_Basic_lean__ScottC["ScottC"]
+    FunctionSpaces_scottFunctionEvalSubbasis_lean__scottFunctionEvalSubbasis["scottFunctionEvalSubbasis"]
+    FunctionSpaces_Basic_lean__ScottFunctionSpace["ScottFunctionSpace"]
+    FunctionSpaces_scottFunctionSpecializationLe_lean__scottFunctionSpecializationLe["scottFunctionSpecializationLe"]
+    FunctionSpaces_scottFunctionSubbasis_isOpen_lean__scottFunctionSubbasis_isOpen["scottFunctionSubbasis_isOpen"]
+    FunctionSpaces_scottFunctionSubbasis_isOpen_scott_lean__scottFunctionSubbasis_isOpen_scott["scottFunctionSubbasis_isOpen_scott"]
+    FunctionSpaces_scottFunctionTopology_lean__scottFunctionTopology["scottFunctionTopology"]
+    FunctionSpaces_scottFunctionTopology_eq_induced_pi_lean__scottFunctionTopology_eq_induced_pi["scottFunctionTopology_eq_induced_pi"]
+    FunctionSpaces_scottLambda_lean__scottLambda["scottLambda"]
+    FunctionSpaces_scottLambda_apply_lean__scottLambda_apply["scottLambda_apply"]
+    FunctionSpaces_scottLambdaAt_lean__scottLambdaAt["scottLambdaAt"]
+    FunctionSpaces_ScottMap_lean___ScottMap["ScottMap<br/>ext"]
+    FunctionSpaces_scottMap_eq_sSup_openInfs_lean__scottMap_eq_sSup_openInfs["scottMap_eq_sSup_openInfs"]
+    FunctionSpaces_scottMapInducedPiTopology_lean__scottMapInducedPiTopology["scottMapInducedPiTopology"]
+    FunctionSpaces_scottMapPointwiseSubbasis_lean__scottMapPointwiseSubbasis["scottMapPointwiseSubbasis"]
+    FunctionSpaces_scottMapPointwiseTopology_lean__scottMapPointwiseTopology["scottMapPointwiseTopology"]
+    FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi_lean__scottMapPointwiseTopology_eq_induced_pi["scottMapPointwiseTopology_eq_induced_pi"]
+    FunctionSpaces_ScottMapProjection_lean___ScottMapProjection["ScottMapProjection<br/>functionSpace"]
+    FunctionSpaces_ScottMapRetraction_lean___ScottMapRetraction["ScottMapRetraction<br/>functionSpace"]
+    FunctionSpaces_scottSubspaceExtend_lean__scottSubspaceExtend["scottSubspaceExtend"]
+    FunctionSpaces_scottSubspaceExtend_eq_of_ext_lean__scottSubspaceExtend_eq_of_ext["scottSubspaceExtend_eq_of_ext"]
+    FunctionSpaces_scottSubspaceExtend_maximal_lean__scottSubspaceExtend_maximal["scottSubspaceExtend_maximal"]
+    FunctionSpaces_scottSubspaceExtend_mono_lean__scottSubspaceExtend_mono["scottSubspaceExtend_mono"]
+    FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf["scottSubspaceExtendInf"]
+    FunctionSpaces_scottSubspaceExtendInf_eq_of_comp_lean__scottSubspaceExtendInf_eq_of_comp["scottSubspaceExtendInf_eq_of_comp"]
+    FunctionSpaces_scottSubspaceExtendInf_eq_of_ext_lean__scottSubspaceExtendInf_eq_of_ext["scottSubspaceExtendInf_eq_of_ext"]
+    FunctionSpaces_scottSubspaceExtendInf_le_of_mem_lean__scottSubspaceExtendInf_le_of_mem["scottSubspaceExtendInf_le_of_mem"]
+    FunctionSpaces_scottSubspaceExtendInf_mono_lean__scottSubspaceExtendInf_mono["scottSubspaceExtendInf_mono"]
+    FunctionSpaces_scottSubspaceExtendInf_mono_incl_lean__scottSubspaceExtendInf_mono_incl["scottSubspaceExtendInf_mono_incl"]
+    FunctionSpaces_scottSubspaceExtendInf_mono_incl_apply_lean__scottSubspaceExtendInf_mono_incl_apply["scottSubspaceExtendInf_mono_incl_apply"]
+    FunctionSpaces_scottSubspaceExtendInf_mono_retr_lean__scottSubspaceExtendInf_mono_retr["scottSubspaceExtendInf_mono_retr"]
+    FunctionSpaces_sInf_image_le_sInf_image_of_subset_lean__sInf_image_le_sInf_image_of_subset["sInf_image_le_sInf_image_of_subset"]
+    FunctionSpaces_specializationLe_generateOpen_lean__specializationLe_generateOpen["specializationLe_generateOpen"]
+    FunctionSpaces_sSup_apply_lean__sSup_apply["sSup_apply"]
+    FunctionSpaces_sSup_finsetSupOf_lean__sSup_finsetSupOf["sSup_finsetSupOf"]
+    FunctionSpaces_sSup_image_prod_mk_left_lean__sSup_image_prod_mk_left["sSup_image_prod_mk_left"]
+    FunctionSpaces_sSup_image_prod_mk_right_lean__sSup_image_prod_mk_right["sSup_image_prod_mk_right"]
+    FunctionSpaces_sSup_image_retr_wayBelow_lean__sSup_image_retr_wayBelow["sSup_image_retr_wayBelow"]
+    FunctionSpaces_sSup_le_finsetSupOf_lean__sSup_le_finsetSupOf["sSup_le_finsetSupOf"]
+    FunctionSpaces_sSupMaps_lean__sSupMaps["sSupMaps"]
+    FunctionSpaces_sSupMaps_apply_lean__sSupMaps_apply["sSupMaps_apply"]
+    FunctionSpaces_sSupMaps_continuous_lean__sSupMaps_continuous["sSupMaps_continuous"]
+    FunctionSpaces_stepFun_lean__stepFun["stepFun"]
+    FunctionSpaces_stepFun_of_not_wayBelow_lean__stepFun_of_not_wayBelow["stepFun_of_not_wayBelow"]
+    FunctionSpaces_stepFun_of_wayBelow_lean__stepFun_of_wayBelow["stepFun_of_wayBelow"]
+    FunctionSpaces_stepFun_preservesDirectedSup_lean__stepFun_preservesDirectedSup["stepFun_preservesDirectedSup"]
+    FunctionSpaces_stepMap_lean__stepMap["stepMap"]
+    FunctionSpaces_stepMap_apply_of_wayBelow_lean__stepMap_apply_of_wayBelow["stepMap_apply_of_wayBelow"]
+    FunctionSpaces_stepMap_le_of_wayBelow_lean__stepMap_le_of_wayBelow["stepMap_le_of_wayBelow"]
+    FunctionSpaces_stepMap_pointwise_sSup_lean__stepMap_pointwise_sSup["stepMap_pointwise_sSup"]
+    FunctionSpaces_stepMap_wayBelow_lean__stepMap_wayBelow["stepMap_wayBelow"]
+    FunctionSpaces_sup_apply_lean__sup_apply["sup_apply"]
+    FunctionSpaces_theorem_3_3_lean___theorem_3_3["theorem_3_3<br/>isContinuousLattice<br/>topology<br/>topology_induced_pi"]
+    FunctionSpaces_toOrderHom_lean__toOrderHom["toOrderHom"]
+    FunctionSpaces_wayBelow_finset_sup_lean__wayBelow_finset_sup["wayBelow_finset_sup"]
+    FunctionSpaces_wayBelow_le_finset_sup_step_lean__wayBelow_le_finset_sup_step["wayBelow_le_finset_sup_step"]
+  end
+
+  subgraph Injective["Injective"]
+    direction TB
+    Injective_corollary_1_6_lean__corollary_1_6["corollary_1_6"]
+    Injective_corollary_1_7_lean__corollary_1_7["corollary_1_7"]
+    Injective_InjectiveSpace_lean___InjectiveSpace["InjectiveSpace<br/>of_retract<br/>pi<br/>sierpinski"]
+    Injective_isInjectiveSpace_sierpinski_power_lean__isInjectiveSpace_sierpinski_power["isInjectiveSpace_sierpinski_power"]
+    Injective_proposition_1_2_lean__proposition_1_2["proposition_1_2"]
+    Injective_proposition_1_3_lean__proposition_1_3["proposition_1_3"]
+    Injective_proposition_1_4_lean__proposition_1_4["proposition_1_4"]
+    Injective_proposition_1_5_lean__proposition_1_5["proposition_1_5"]
+    Injective_RetractSubspace_lean__RetractSubspace["RetractSubspace"]
+    Injective_InjectiveSpace_lean__Sierpinski["Sierpinski"]
+  end
+
+  subgraph InverseLimits["InverseLimits"]
+    direction TB
+    InverseLimits_coconeInf_lean__coconeInf["coconeInf"]
+    InverseLimits_coconeInf_lean__coconeInf_apply["coconeInf_apply"]
+    InverseLimits_coconeInf_lean__coconeInf_climb["coconeInf_climb"]
+    InverseLimits_coconeInf_lean__coconeInf_comp_embInf["coconeInf_comp_embInf"]
+    InverseLimits_coconeInf_lean__coconeInf_descend["coconeInf_descend"]
+    InverseLimits_coconeInf_lean__coconeInf_preservesDirectedSup["coconeInf_preservesDirectedSup"]
+    InverseLimits_instInfSet_lean__coe_sInf["coe_sInf"]
+    InverseLimits_coe_sSup_of_directed_lean__coe_sSup_of_directed["coe_sSup_of_directed"]
+    InverseLimits_Compatible_lean__Compatible["Compatible"]
+    InverseLimits_instInfSet_lean__compatible_sInf["compatible_sInf"]
+    InverseLimits_inverseLimitTopology_lean__coordinate_continuous["coordinate_continuous"]
+    InverseLimits_corollary_4_3_lean__corollary_4_3["corollary_4_3"]
+    InverseLimits_embInf_lean__embInf["embInf"]
+    InverseLimits_embInf_lean__embInf_family_directed["embInf_family_directed"]
+    InverseLimits_embInf_lean__embInf_le_succ["embInf_le_succ"]
+    InverseLimits_embInfFun_lean__embInf_monotone["embInf_monotone"]
+    InverseLimits_embInfFun_lean__embInf_preservesDirectedSup["embInf_preservesDirectedSup"]
+    InverseLimits_embInf_lean__embInf_succ["embInf_succ"]
+    InverseLimits_embInfFun_lean__embInfFun["embInfFun"]
+    InverseLimits_embInfFun_lean__embInfFun_coe["embInfFun_coe"]
+    InverseLimits_embLE_lean__embLE["embLE"]
+    InverseLimits_embLE_lean__embLE_le["embLE_le"]
+    InverseLimits_embLE_lean__embLE_mono["embLE_mono"]
+    InverseLimits_embLE_lean__embLE_preservesDirectedSup["embLE_preservesDirectedSup"]
+    InverseLimits_embLE_lean__embLE_self["embLE_self"]
+    InverseLimits_embLE_lean__embLE_succ["embLE_succ"]
+    InverseLimits_embLE_lean__embLE_succ_left["embLE_succ_left"]
+    InverseLimits_inverseLimitTopology_lean__eq_iSup["eq_iSup"]
+    InverseLimits_iComp_lean__iComp["iComp"]
+    InverseLimits_iComp_lean__iComp_compatible["iComp_compatible"]
+    InverseLimits_iComp_lean__iComp_incl_le["iComp_incl_le"]
+    InverseLimits_iComp_lean__iComp_monotone["iComp_monotone"]
+    InverseLimits_iComp_lean__iComp_of_ge["iComp_of_ge"]
+    InverseLimits_iComp_lean__iComp_of_le["iComp_of_le"]
+    InverseLimits_iComp_lean__iComp_preservesDirectedSup["iComp_preservesDirectedSup"]
+    InverseLimits_iComp_lean__iComp_self["iComp_self"]
+    InverseLimits_instCompleteLattice_lean__instCompleteLattice["instCompleteLattice"]
+    InverseLimits_instInfSet_lean__instInfSet["instInfSet"]
+    InverseLimits_InverseLimit_lean__InverseLimit["InverseLimit"]
+    InverseLimits_inverseLimitLE_lean___inverseLimitLE["inverseLimitLE<br/>antisymm<br/>refl<br/>trans"]
+    InverseLimits_inverseLimitLT_lean___inverseLimitLT["inverseLimitLT<br/>iff_LE_not_GE"]
+    InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder["inverseLimitPartialOrder"]
+    InverseLimits_inverseLimitSInfCoe_lean__inverseLimitSInfCoe["inverseLimitSInfCoe"]
+    InverseLimits_inverseLimitTopology_lean___inverseLimitTopology["inverseLimitTopology<br/>coconeInf_continuous<br/>embInf_continuous<br/>projInf_continuous"]
+    InverseLimits_instInfSet_lean__isGLB_sInf_["isGLB_sInf'"]
+    InverseLimits_inverseLimitTopology_lean__isInjectiveSpace["isInjectiveSpace"]
+    InverseLimits_lemma_4_5_lean__lemma_4_5["lemma_4_5"]
+    InverseLimits_projection_galoisConnection_lean__projection_galoisConnection["projection_galoisConnection"]
+    InverseLimits_projInf_lean__projInf["projInf"]
+    InverseLimits_projInf_lean___projInfFun["projInfFun<br/>preservesDirectedSup"]
+    InverseLimits_projLE_lean___projLE["projLE<br/>compatible<br/>mono<br/>preservesDirectedSup<br/>retr<br/>self<br/>succ"]
+    InverseLimits_proposition_4_1_lean__proposition_4_1["proposition_4_1"]
+    InverseLimits_proposition_4_2_lean__proposition_4_2["proposition_4_2"]
+    InverseLimits_instInfSet_lean__retr_sInf["retr_sInf"]
+    InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi["scottTopology_eq_induced_pi"]
+    InverseLimits_inverseLimitTopology_lean__specializationLe_iff["specializationLe_iff"]
+    InverseLimits_inverseLimitTopology_lean__t0Space["t0Space"]
+  end
+
+  subgraph ScottMaps["ScottMaps"]
+    direction TB
+    ScottMaps_continuous_of_preservesDirectedSup_lean__continuous_of_preservesDirectedSup["continuous_of_preservesDirectedSup"]
+    ScottMaps_continuous_preservesDirectedSup_lean__continuous_preservesDirectedSup["continuous_preservesDirectedSup"]
+    ScottMaps_proposition_2_7_lean__inf_left["inf_left"]
+    ScottMaps_proposition_2_7_lean__inf_right["inf_right"]
+    ScottMaps_meet_preservesDirectedSup_lean__meet_preservesDirectedSup["meet_preservesDirectedSup"]
+    ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup["PreservesDirectedSup"]
+    ScottMaps_preservesDirectedSup_monotone_lean__preservesDirectedSup_monotone["preservesDirectedSup_monotone"]
+    ScottMaps_proposition_2_5_lean__proposition_2_5["proposition_2_5"]
+    ScottMaps_proposition_2_6_lean__proposition_2_6["proposition_2_6"]
+    ScottMaps_scottOpen_preimage_lean__scottOpen_preimage["scottOpen_preimage"]
+    ScottMaps_proposition_2_7_lean__sup["sup"]
+  end
+
+  subgraph Specialization["Specialization"]
+    direction TB
+    Specialization_MonotoneNet_lean__MonotoneNet["MonotoneNet"]
+    Specialization_proposition_2_1_lean___proposition_2_1["proposition_2_1<br/>le_of_converges<br/>of_le"]
+    Specialization_ScottConvergesTo_lean__ScottConvergesTo["ScottConvergesTo"]
+    Specialization_scottTopologicalSpace_lean___scottTopologicalSpace["scottTopologicalSpace<br/>t0Space"]
+    Specialization_SpecializationLe_lean___SpecializationLe["SpecializationLe<br/>iff_specializes<br/>map<br/>scott_iff"]
+  end
+
+  subgraph WayBelow["WayBelow"]
+    direction TB
+    WayBelow_WayBelow_lean__bot_wayBelow["bot_wayBelow"]
+    WayBelow_ContinuousLattice_lean___ContinuousLattice["ContinuousLattice<br/>exists_wayBelow_Ici_subset<br/>exists_wayBelow_subset<br/>isContinuousLattice_iff_isLUB_sInf_nhds"]
+    WayBelow_WayBelow_lean__directedOn_wayBelow["directedOn_wayBelow"]
+    WayBelow_ContinuousLattice_lean__interpolate["interpolate"]
+    WayBelow_proposition_2_2_lean__proposition_2_2["proposition_2_2"]
+    WayBelow_ScottOpen_lean___ScottOpen["ScottOpen<br/>iff_dirSupInacc<br/>inter<br/>isOpen_iff<br/>isUpperSet<br/>not_le<br/>sUnion<br/>univ"]
+    WayBelow_scottOpen_wayBelow_lean__scottOpen_wayBelow["scottOpen_wayBelow"]
+    WayBelow_WayBelow_lean__sInf_wayBelow["sInf_wayBelow"]
+    WayBelow_WayBelow_lean___WayBelow["WayBelow<br/>le<br/>le_trans<br/>sSup_iff<br/>self_iff_scottOpen_Ici<br/>sup<br/>trans_le"]
+  end
+
+  Constructions_scottExtend_lean__scottExtend -.-> Constructions_proposition_3_8_lean__proposition_3_8
+  Constructions_scottExtend_lean__scottExtend -.-> Constructions_scottExtend_continuous_lean__scottExtend_continuous
+  Constructions_scottExtend_lean__scottExtend -.-> Constructions_scottExtend_eq_of_continuous_lean__scottExtend_eq_of_continuous
+  Constructions_scottExtend_lean__scottExtend -.-> Constructions_scottExtend_maximal_le_lean__scottExtend_maximal_le
+  Constructions_scottExtend_lean__scottExtend -.-> Constructions_scottExtend_maximal_lean__scottExtend_maximal
+  Constructions_scottExtend_lean__scottExtend -.-> ContinuousLattices_lemma_3_9_lean__lemma_3_9
+  ContinuousLattices_IdemFix_lean__IdemFix -.-> ContinuousLattices_coe_sSup_lean__coe_sSup
+  ContinuousLattices_IdemFix_lean__IdemFix -.-> ContinuousLattices_completeLattice_lean__completeLattice
+  ContinuousLattices_IdemFix_lean__IdemFix -.-> ContinuousLattices_idemFixRetraction_lean__idemFixRetraction
+  ContinuousLattices_IdemFix_lean__IdemFix -.-> ContinuousLattices_idemFix_isContinuousLattice_lean__idemFix_isContinuousLattice
+  ContinuousLattices_IdemFix_lean__IdemFix -.-> ContinuousLattices_idemFix_scottTopology_lean__idemFix_scottTopology
+  ContinuousLattices_IdemFix_lean__IdemFix -.-> ContinuousLattices_supSet_lean__supSet
+  ContinuousLattices_completeLattice_lean__completeLattice -.-> ContinuousLattices_idemFixRetraction_lean__idemFixRetraction
+  ContinuousLattices_completeLattice_lean__completeLattice -.-> ContinuousLattices_idemFix_isContinuousLattice_lean__idemFix_isContinuousLattice
+  ContinuousLattices_completeLattice_lean__completeLattice -.-> ContinuousLattices_idemFix_scottTopology_lean__idemFix_scottTopology
+  FunctionSpaceTower_CLat_lean__CLat -.-> FunctionSpaceTower_CLat_lean__towerCLat
+  FunctionSpaceTower_CLat_lean__CLat -.-> FunctionSpaceTower_CLat_lean__towerCompleteLattice
+  FunctionSpaceTower_CLat_lean__CLat -.-> FunctionSpaceTower_CLat_lean__towerType
+  FunctionSpaceTower_CLat_lean__CLat -.-> FunctionSpaceTower_CLat_lean__towerType_succ
+  FunctionSpaceTower_CLat_lean__CLat -.-> FunctionSpaceTower_CLat_lean__towerType_zero
+  FunctionSpaceTower_CLat_lean__CLat -.-> FunctionSpaceTower_towerProj_lean___towerProj
+  FunctionSpaceTower_CLat_lean__towerToMap -.-> FunctionSpaceTower_CLat_lean__towerToMap_coe
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_CLat_lean__towerCoeFun
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_CLat_lean__towerCompleteLattice
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_CLat_lean__towerToMap
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_CLat_lean__towerToMap_coe
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_CLat_lean__towerType_succ
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_CLat_lean__towerType_zero
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_iSup
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_incl_le_conjMap_succ
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_embInf_succ_iSup_lean__embInf_succ_iSup
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_iInfTerm_lean___iInfTerm
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_incl_projInf_le_projInf_succ_lean__incl_projInf_le_projInf_succ
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_jInfTerm_lean___jInfTerm
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_towerProj_lean___towerProj
+  FunctionSpaceTower_CLat_lean__towerType -.-> FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ
+  FunctionSpaceTower_DInfFn_lean__DInfFn -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_incl_le_conjMap_succ
+  FunctionSpaceTower_DInfFn_lean__DInfFn -.-> FunctionSpaceTower_embInfInf_lean___embInfInf
+  FunctionSpaceTower_DInfFn_lean__DInfFn -.-> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_projInfInf
+  FunctionSpaceTower_DInfFn_lean__DInfFn -.-> FunctionSpaceTower_iInfTerm_lean___iInfTerm
+  FunctionSpaceTower_DInfFn_lean__DInfFn -.-> FunctionSpaceTower_jInfTerm_lean___jInfTerm
+  FunctionSpaceTower_DInfFn_lean__DInfFn -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_DInfFn_lean__DInfFn -.-> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
+  FunctionSpaceTower_DInfFn_lean__DInfFn -.-> FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_orderIso
+  FunctionSpaceTower_DInfFn_lean__DInfFn -.-> FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_iSup
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_embInfInf_lean___embInfInf
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_le_iff
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_iInfTerm_lean___iInfTerm
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_iInfTerm_monotone_lean__iInfTerm_le_succ
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_iInfTerm_monotone_lean__iInfTerm_monotone
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_incl_projInf_le_projInf_succ_lean__incl_projInf_le_projInf_succ
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_jInfTerm_lean___jInfTerm
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
+  FunctionSpaceTower_DInf_lean__DInf -.-> FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_orderIso
+  FunctionSpaceTower_conjMap_lean___conjMap -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_iSup
+  FunctionSpaceTower_conjMap_lean___conjMap -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_incl_le_conjMap_succ
+  FunctionSpaceTower_conjMap_lean___conjMap -.-> FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq
+  FunctionSpaceTower_conjMap_lean___conjMap -.-> FunctionSpaceTower_jInfTerm_lean___jInfTerm
+  FunctionSpaceTower_conjMap_lean___conjMap -.-> FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ
+  FunctionSpaceTower_conjMap_lean__conjMapFun -.-> FunctionSpaceTower_conjMap_lean___conjMap
+  FunctionSpaceTower_embInfInf_lean___embInfInf -.-> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf
+  FunctionSpaceTower_embInfInf_lean___embInfInf -.-> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_le_iff
+  FunctionSpaceTower_embInfInf_lean___embInfInf -.-> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_projInfInf
+  FunctionSpaceTower_embInfInf_lean___embInfInf -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_embInfInf_lean___embInfInf -.-> FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_inverses
+  FunctionSpaceTower_functionSpaceInclFun_lean___functionSpaceInclFun -.-> FunctionSpaceTower_functionSpaceProjection_lean___functionSpaceProjection
+  FunctionSpaceTower_functionSpaceProjection_lean___functionSpaceProjection -.-> FunctionSpaceTower_towerProj_lean___towerProj
+  FunctionSpaceTower_functionSpaceRetrFun_lean___functionSpaceRetrFun -.-> FunctionSpaceTower_functionSpaceProjection_lean___functionSpaceProjection
+  FunctionSpaceTower_iInfTerm_lean___iInfTerm -.-> FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq
+  FunctionSpaceTower_iInfTerm_lean___iInfTerm -.-> FunctionSpaceTower_embInfInf_lean___embInfInf
+  FunctionSpaceTower_iInfTerm_lean___iInfTerm -.-> FunctionSpaceTower_iInfTerm_monotone_lean__iInfTerm_le_succ
+  FunctionSpaceTower_iInfTerm_lean___iInfTerm -.-> FunctionSpaceTower_iInfTerm_monotone_lean__iInfTerm_monotone
+  FunctionSpaceTower_jInfTerm_lean___jInfTerm -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_projInfInf_lean___projInfInf -.-> FunctionSpaceTower_embInfInf_lean___embInfInf
+  FunctionSpaceTower_projInfInf_lean___projInfInf -.-> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf
+  FunctionSpaceTower_projInfInf_lean___projInfInf -.-> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_le_iff
+  FunctionSpaceTower_projInfInf_lean___projInfInf -.-> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_projInfInf
+  FunctionSpaceTower_projInfInf_lean___projInfInf -.-> FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_inverses
+  FunctionSpaceTower_towerProj_lean___towerProj -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_incl_le_conjMap_succ
+  FunctionSpaceTower_towerProj_lean___towerProj -.-> FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq
+  FunctionSpaceTower_towerProj_lean___towerProj -.-> FunctionSpaceTower_embInf_succ_iSup_lean__embInf_succ_iSup
+  FunctionSpaceTower_towerProj_lean___towerProj -.-> FunctionSpaceTower_iInfTerm_lean___iInfTerm
+  FunctionSpaceTower_towerProj_lean___towerProj -.-> FunctionSpaceTower_incl_projInf_le_projInf_succ_lean__incl_projInf_le_projInf_succ
+  FunctionSpaceTower_towerProj_lean___towerProj -.-> FunctionSpaceTower_jInfTerm_lean___jInfTerm
+  FunctionSpaceTower_towerProj_lean___towerProj -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_towerProj_lean___towerProj -.-> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
+  FunctionSpaceTower_towerProj_lean___towerProj -.-> FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ
+  FunctionSpaces_Basic_lean__ScottC -.-> FunctionSpaces_corollary_3_4_eval_on_C_lean__corollary_3_4_eval_on_C
+  FunctionSpaces_Basic_lean__ScottC -.-> FunctionSpaces_corollary_3_4_lean__corollary_3_4
+  FunctionSpaces_Basic_lean__ScottC -.-> FunctionSpaces_scottFunctionSubbasis_isOpen_scott_lean__scottFunctionSubbasis_isOpen_scott
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> ContinuousLattices_lemma_3_9_lean__lemma_3_9
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaceTower_functionSpaceInclFun_lean___functionSpaceInclFun
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaceTower_functionSpaceProjection_lean___functionSpaceProjection
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaceTower_functionSpaceRetrFun_lean___functionSpaceRetrFun
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaceTower_towerProj_lean___towerProj
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_ScottMapProjection_lean___ScottMapProjection
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_converseProjection_lean__converseProjection
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_incl_bot_lean__incl_bot
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_incl_finset_sup_lean__incl_finset_sup
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_incl_injective_lean__incl_injective
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_incl_sSup_lean__incl_sSup
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_incl_sup_lean__incl_sup
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_incl_wayBelow_lean__incl_wayBelow
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_lemma_3_9_incl_inf_lean__lemma_3_9_incl_inf
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_lemma_3_9_retr_inf_lean__lemma_3_9_retr_inf
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_proposition_3_10_converse_lean__proposition_3_10_converse
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_proposition_3_10_forward_lean__proposition_3_10_forward
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_proposition_3_13_lean__proposition_3_13
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_proposition_3_7_projection_lean__proposition_3_7_projection
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_retr_bot_lean__retr_bot
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_retr_eq_sSup_lean__retr_eq_sSup
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_scottSubspaceExtendInf_mono_incl_apply_lean__scottSubspaceExtendInf_mono_incl_apply
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_scottSubspaceExtendInf_mono_incl_lean__scottSubspaceExtendInf_mono_incl
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_scottSubspaceExtendInf_mono_retr_lean__scottSubspaceExtendInf_mono_retr
+  FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> InverseLimits_proposition_4_2_lean__proposition_4_2
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> ContinuousLattices_idemFixRetraction_lean__idemFixRetraction
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_ScottMapRetraction_lean___ScottMapRetraction
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_ambientSSup_lean__ambientSSup
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_image_retr_wayBelow_directed_lean__image_retr_wayBelow_directed
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_image_retr_wayBelow_nonempty_lean__image_retr_wayBelow_nonempty
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_incl_preservesDirectedSup_lean__incl_preservesDirectedSup
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_proposition_2_10_lean___proposition_2_10
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_proposition_3_7_retraction_lean__proposition_3_7_retraction
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_retr_ambientSSup_eq_sSup_lean__retr_ambientSSup_eq_sSup
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_retr_wayBelow_of_wayBelow_incl_lean__retr_wayBelow_of_wayBelow_incl
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_sSup_image_retr_wayBelow_lean__sSup_image_retr_wayBelow
+  FunctionSpaces_IsProjection_lean__IsProjection -.-> FunctionSpaces_isProjection_bot_lean__isProjection_bot
+  FunctionSpaces_IsProjection_lean__IsProjection -.-> FunctionSpaces_isProjection_directedSup_lean__isProjection_directedSup
+  FunctionSpaces_IsProjection_lean__IsProjection -.-> FunctionSpaces_isProjection_finsetSup_lean__isProjection_finsetSup
+  FunctionSpaces_IsProjection_lean__IsProjection -.-> FunctionSpaces_isProjection_sSup_lean__isProjection_sSup
+  FunctionSpaces_IsProjection_lean__IsProjection -.-> FunctionSpaces_isProjection_sup_lean__isProjection_sup
+  FunctionSpaces_IsProjection_lean__IsProjection -.-> FunctionSpaces_proposition_3_12_lean__proposition_3_12
+  FunctionSpaces_Projections_lean__Projections -.-> FunctionSpaces_Basic_isLUB_sSup_lean__isLUB_sSup
+  FunctionSpaces_Projections_lean__Projections -.-> FunctionSpaces_instCompleteLattice_lean__instCompleteLattice
+  FunctionSpaces_Projections_lean__Projections -.-> FunctionSpaces_instSupSet_lean__instSupSet
+  FunctionSpaces_Projections_lean__Projections -.-> FunctionSpaces_proposition_3_12_lean__proposition_3_12
+  FunctionSpaces_ScottMapProjection_lean___ScottMapProjection -.-> FunctionSpaces_proposition_3_7_projection_lean__proposition_3_7_projection
+  FunctionSpaces_ScottMapRetraction_lean___ScottMapRetraction -.-> FunctionSpaces_ScottMapProjection_lean___ScottMapProjection
+  FunctionSpaces_ScottMapRetraction_lean___ScottMapRetraction -.-> FunctionSpaces_proposition_3_7_retraction_lean__proposition_3_7_retraction
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_CLat_lean__towerCLat
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_CLat_lean__towerToMap
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_CLat_lean__towerType_succ
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_iSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_conjMap_lean___conjMap
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_conjMap_lean__conjMapFun
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_functionSpaceInclFun_lean___functionSpaceInclFun
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_functionSpaceProjection_lean___functionSpaceProjection
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_functionSpaceRetrFun_lean___functionSpaceRetrFun
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_iInfTerm_lean___iInfTerm
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_jInfTerm_lean___jInfTerm
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_inverses
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaceTower_towerProj_lean___towerProj
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_BasicInst28_lean__instPartialOrder
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_BasicInst30_lean__instSupSet
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_BasicInst33_lean__instCompleteLattice
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_Basic_lean__continuous
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_Basic_lean__fixMap_apply
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_IsProjection_lean__IsProjection
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_ScottMapRetraction_lean___ScottMapRetraction
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_bot_apply_lean__bot_apply
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_comp_apply_lean__comp_apply
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_comp_lean__comp
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_con__lean__con
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_const_apply_lean__const_apply
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_const_lean__const
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_corollary_3_4_jointly_continuous_lean__corollary_3_4_jointly_continuous
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_corollary_3_4_preservesDirectedSup_lean__corollary_3_4_preservesDirectedSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_curry_left_preservesDirectedSup_lean__curry_left_preservesDirectedSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_curry_right_preservesDirectedSup_lean__curry_right_preservesDirectedSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_fixMap_lean__fixMap
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_fix_eq_lean__fix_eq
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_fix_lean__fix
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_fix_preservesDirectedSup_lean__fix_preservesDirectedSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_idMap_apply_lean__idMap_apply
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_idMap_lean__idMap
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_isLUB_sSup_lean__isLUB_sSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_isProjection_bot_lean__isProjection_bot
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_isProjection_directedSup_lean__isProjection_directedSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_isProjection_finsetSup_lean__isProjection_finsetSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_isProjection_sSup_lean__isProjection_sSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_lambda_outer_preservesDirectedSup_lean__lambda_outer_preservesDirectedSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_le_antisymm__lean__le_antisymm_
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_le_lean__le
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_le_refl__lean__le_refl_
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_le_trans__lean__le_trans_
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_lt_iff_le_not_ge__lean__lt_iff_le_not_ge_
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_lt_lean__lt
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_min_lean__min
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_monotone_lean__monotone
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_pointwiseSubbasic_isOpen_lean__pointwiseSubbasic_isOpen
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_pointwiseSubbasic_scottOpen_lean__pointwiseSubbasic_scottOpen
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_pointwise_sSup_preservesDirectedSup_lean__pointwise_sSup_preservesDirectedSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_preservesDirectedSup_coe_lean__preservesDirectedSup_coe
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_projection_lean__projection
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_proposition_3_12_lean__proposition_3_12
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_proposition_3_13_lean__proposition_3_13
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_proposition_3_14_lean__proposition_3_14
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_proposition_3_5_lean__proposition_3_5
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_proposition_3_5_preservesDirectedSup_lean__proposition_3_5_preservesDirectedSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_sSupMaps_apply_lean__sSupMaps_apply
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_sSupMaps_continuous_lean__sSupMaps_continuous
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_sSupMaps_lean__sSupMaps
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_sSup_apply_lean__sSup_apply
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_scottLambdaAt_lean__scottLambdaAt
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_scottLambda_apply_lean__scottLambda_apply
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_scottLambda_lean__scottLambda
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_scottMapInducedPiTopology_lean__scottMapInducedPiTopology
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_scottMapPointwiseSubbasis_lean__scottMapPointwiseSubbasis
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_scottMapPointwiseTopology_lean__scottMapPointwiseTopology
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_scottMap_eq_sSup_openInfs_lean__scottMap_eq_sSup_openInfs
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_scottSubspaceExtendInf_eq_of_comp_lean__scottSubspaceExtendInf_eq_of_comp
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_scottSubspaceExtend_maximal_lean__scottSubspaceExtend_maximal
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_stepMap_lean__stepMap
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_stepMap_pointwise_sSup_lean__stepMap_pointwise_sSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_sup_apply_lean__sup_apply
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_theorem_3_3_lean___theorem_3_3
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> FunctionSpaces_toOrderHom_lean__toOrderHom
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_coconeInf_lean__coconeInf
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_coconeInf_lean__coconeInf_apply
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_coconeInf_lean__coconeInf_climb
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_coconeInf_lean__coconeInf_comp_embInf
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_coconeInf_lean__coconeInf_descend
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_coconeInf_lean__coconeInf_preservesDirectedSup
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_corollary_4_3_lean__corollary_4_3
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_embInf_lean__embInf
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_projInf_lean__projInf
+  FunctionSpaces_ambientSSup_lean__ambientSSup -.-> FunctionSpaces_retr_ambientSSup_eq_sSup_lean__retr_ambientSSup_eq_sSup
+  FunctionSpaces_comp_lean__comp -.-> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf
+  FunctionSpaces_comp_lean__comp -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaces_comp_lean__comp -.-> FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_inverses
+  FunctionSpaces_comp_lean__comp -.-> FunctionSpaces_comp_apply_lean__comp_apply
+  FunctionSpaces_const_lean__const -.-> FunctionSpaces_const_apply_lean__const_apply
+  FunctionSpaces_converseRetr_lean__converseRetr -.-> FunctionSpaces_converseRetr_incl_lean__converseRetr_incl
+  FunctionSpaces_converseRetr_lean__converseRetr -.-> FunctionSpaces_converseRetr_mono_lean__converseRetr_mono
+  FunctionSpaces_converseRetr_lean__converseRetr -.-> FunctionSpaces_converseRetr_preservesDirectedSup_lean__converseRetr_preservesDirectedSup
+  FunctionSpaces_converseRetr_lean__converseRetr -.-> FunctionSpaces_incl_converseRetr_le_lean__incl_converseRetr_le
+  FunctionSpaces_finsetSupOf_lean__finsetSupOf -.-> FunctionSpaces_directedOn_finsetSupOf_lean__directedOn_finsetSupOf
+  FunctionSpaces_finsetSupOf_lean__finsetSupOf -.-> FunctionSpaces_le_sSup_finsetSupOf_lean__le_sSup_finsetSupOf
+  FunctionSpaces_finsetSupOf_lean__finsetSupOf -.-> FunctionSpaces_mem_finsetSupOf_of_mem_lean__mem_finsetSupOf_of_mem
+  FunctionSpaces_finsetSupOf_lean__finsetSupOf -.-> FunctionSpaces_sSup_finsetSupOf_lean__sSup_finsetSupOf
+  FunctionSpaces_finsetSupOf_lean__finsetSupOf -.-> FunctionSpaces_sSup_le_finsetSupOf_lean__sSup_le_finsetSupOf
+  FunctionSpaces_fixMap_lean__fixMap -.-> FunctionSpaces_Basic_lean__fixMap_apply
+  FunctionSpaces_fix_lean__fix -.-> FunctionSpaces_Basic_lean__fixMap_apply
+  FunctionSpaces_fix_lean__fix -.-> FunctionSpaces_fix_eq_lean__fix_eq
+  FunctionSpaces_fix_lean__fix -.-> FunctionSpaces_fix_le_lean__fix_le
+  FunctionSpaces_fix_lean__fix -.-> FunctionSpaces_fix_mono_lean__fix_mono
+  FunctionSpaces_fix_lean__fix -.-> FunctionSpaces_fix_preservesDirectedSup_lean__fix_preservesDirectedSup
+  FunctionSpaces_fix_lean__fix -.-> FunctionSpaces_fix_unique_lean__fix_unique
+  FunctionSpaces_idMap_lean__idMap -.-> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf
+  FunctionSpaces_idMap_lean__idMap -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaces_idMap_lean__idMap -.-> FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_inverses
+  FunctionSpaces_idMap_lean__idMap -.-> FunctionSpaces_idMap_apply_lean__idMap_apply
+  FunctionSpaces_le_lean__le -.-> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  FunctionSpaces_le_lean__le -.-> FunctionSpaces_le_antisymm__lean__le_antisymm_
+  FunctionSpaces_le_lean__le -.-> FunctionSpaces_le_refl__lean__le_refl_
+  FunctionSpaces_le_lean__le -.-> FunctionSpaces_le_trans__lean__le_trans_
+  FunctionSpaces_le_lean__le -.-> FunctionSpaces_lt_iff_le_not_ge__lean__lt_iff_le_not_ge_
+  FunctionSpaces_le_lean__le -.-> InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder
+  FunctionSpaces_lt_lean__lt -.-> FunctionSpaces_lt_iff_le_not_ge__lean__lt_iff_le_not_ge_
+  FunctionSpaces_proposition_2_10_lean___proposition_2_10 -.-> Constructions_Basic_lean__wayBelow_finite_support
+  FunctionSpaces_proposition_2_10_lean___proposition_2_10 -.-> Constructions_Basic_lean__wayBelow_proj
+  FunctionSpaces_proposition_2_10_lean___proposition_2_10 -.-> ContinuousLattices_proposition_2_4_lean__proposition_2_4
+  FunctionSpaces_proposition_2_10_lean___proposition_2_10 -.-> FunctionSpaces_Basic_lean__directedOn_wayBelow
+  FunctionSpaces_proposition_2_10_lean___proposition_2_10 -.-> FunctionSpaces_fix_unique_lean__fix_unique
+  FunctionSpaces_proposition_2_10_lean___proposition_2_10 -.-> WayBelow_ContinuousLattice_lean___ContinuousLattice
+  FunctionSpaces_proposition_2_10_lean___proposition_2_10 -.-> WayBelow_ContinuousLattice_lean__interpolate
+  FunctionSpaces_sSupMaps_lean__sSupMaps -.-> FunctionSpaces_sSupMaps_apply_lean__sSupMaps_apply
+  FunctionSpaces_scottFunctionEvalSubbasis_lean__scottFunctionEvalSubbasis -.-> FunctionSpaces_specializationLe_generateOpen_lean__specializationLe_generateOpen
+  FunctionSpaces_scottFunctionTopology_lean__scottFunctionTopology -.-> FunctionSpaces_corollary_3_4_eval_on_C_lean__corollary_3_4_eval_on_C
+  FunctionSpaces_scottFunctionTopology_lean__scottFunctionTopology -.-> FunctionSpaces_corollary_3_4_lean__corollary_3_4
+  FunctionSpaces_scottFunctionTopology_lean__scottFunctionTopology -.-> FunctionSpaces_scottFunctionSubbasis_isOpen_lean__scottFunctionSubbasis_isOpen
+  FunctionSpaces_scottFunctionTopology_lean__scottFunctionTopology -.-> FunctionSpaces_scottFunctionSubbasis_isOpen_scott_lean__scottFunctionSubbasis_isOpen_scott
+  FunctionSpaces_scottLambdaAt_lean__scottLambdaAt -.-> FunctionSpaces_lambda_outer_preservesDirectedSup_lean__lambda_outer_preservesDirectedSup
+  FunctionSpaces_scottLambda_lean__scottLambda -.-> FunctionSpaces_proposition_3_5_lean__proposition_3_5
+  FunctionSpaces_scottLambda_lean__scottLambda -.-> FunctionSpaces_proposition_3_5_preservesDirectedSup_lean__proposition_3_5_preservesDirectedSup
+  FunctionSpaces_scottLambda_lean__scottLambda -.-> FunctionSpaces_scottLambda_apply_lean__scottLambda_apply
+  FunctionSpaces_scottMapInducedPiTopology_lean__scottMapInducedPiTopology -.-> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
+  FunctionSpaces_scottMapInducedPiTopology_lean__scottMapInducedPiTopology -.-> FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi_lean__scottMapPointwiseTopology_eq_induced_pi
+  FunctionSpaces_scottMapInducedPiTopology_lean__scottMapInducedPiTopology -.-> FunctionSpaces_theorem_3_3_lean___theorem_3_3
+  FunctionSpaces_scottMapPointwiseTopology_lean__scottMapPointwiseTopology -.-> FunctionSpaces_pointwiseSubbasic_isOpen_lean__pointwiseSubbasic_isOpen
+  FunctionSpaces_scottMapPointwiseTopology_lean__scottMapPointwiseTopology -.-> FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi_lean__scottMapPointwiseTopology_eq_induced_pi
+  FunctionSpaces_scottMapPointwiseTopology_lean__scottMapPointwiseTopology -.-> FunctionSpaces_theorem_3_3_lean___theorem_3_3
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf -.-> FunctionSpaces_lemma_3_9_incl_inf_lean__lemma_3_9_incl_inf
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf -.-> FunctionSpaces_lemma_3_9_retr_inf_lean__lemma_3_9_retr_inf
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf -.-> FunctionSpaces_scottSubspaceExtendInf_eq_of_comp_lean__scottSubspaceExtendInf_eq_of_comp
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf -.-> FunctionSpaces_scottSubspaceExtendInf_eq_of_ext_lean__scottSubspaceExtendInf_eq_of_ext
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf -.-> FunctionSpaces_scottSubspaceExtendInf_mono_incl_apply_lean__scottSubspaceExtendInf_mono_incl_apply
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf -.-> FunctionSpaces_scottSubspaceExtendInf_mono_incl_lean__scottSubspaceExtendInf_mono_incl
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf -.-> FunctionSpaces_scottSubspaceExtendInf_mono_lean__scottSubspaceExtendInf_mono
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf -.-> FunctionSpaces_scottSubspaceExtendInf_mono_retr_lean__scottSubspaceExtendInf_mono_retr
+  FunctionSpaces_scottSubspaceExtend_lean__scottSubspaceExtend -.-> FunctionSpaces_scottSubspaceExtend_eq_of_ext_lean__scottSubspaceExtend_eq_of_ext
+  FunctionSpaces_scottSubspaceExtend_lean__scottSubspaceExtend -.-> FunctionSpaces_scottSubspaceExtend_maximal_lean__scottSubspaceExtend_maximal
+  FunctionSpaces_scottSubspaceExtend_lean__scottSubspaceExtend -.-> FunctionSpaces_scottSubspaceExtend_mono_lean__scottSubspaceExtend_mono
+  FunctionSpaces_stepFun_lean__stepFun -.-> FunctionSpaces_stepFun_of_not_wayBelow_lean__stepFun_of_not_wayBelow
+  FunctionSpaces_stepFun_lean__stepFun -.-> FunctionSpaces_stepFun_of_wayBelow_lean__stepFun_of_wayBelow
+  FunctionSpaces_stepFun_lean__stepFun -.-> FunctionSpaces_stepFun_preservesDirectedSup_lean__stepFun_preservesDirectedSup
+  FunctionSpaces_stepMap_lean__stepMap -.-> FunctionSpaces_stepMap_apply_of_wayBelow_lean__stepMap_apply_of_wayBelow
+  FunctionSpaces_stepMap_lean__stepMap -.-> FunctionSpaces_stepMap_le_of_wayBelow_lean__stepMap_le_of_wayBelow
+  FunctionSpaces_stepMap_lean__stepMap -.-> FunctionSpaces_stepMap_wayBelow_lean__stepMap_wayBelow
+  FunctionSpaces_stepMap_lean__stepMap -.-> FunctionSpaces_wayBelow_le_finset_sup_step_lean__wayBelow_le_finset_sup_step
+  Injective_InjectiveSpace_lean__Sierpinski -.-> Injective_InjectiveSpace_lean___InjectiveSpace
+  Injective_InjectiveSpace_lean__Sierpinski -.-> Injective_proposition_1_2_lean__proposition_1_2
+  Injective_InjectiveSpace_lean___InjectiveSpace -.-> Constructions_proposition_2_11_lean__proposition_2_11
+  Injective_InjectiveSpace_lean___InjectiveSpace -.-> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  Injective_InjectiveSpace_lean___InjectiveSpace -.-> Injective_isInjectiveSpace_sierpinski_power_lean__isInjectiveSpace_sierpinski_power
+  Injective_InjectiveSpace_lean___InjectiveSpace -.-> Injective_proposition_1_2_lean__proposition_1_2
+  Injective_InjectiveSpace_lean___InjectiveSpace -.-> Injective_proposition_1_3_lean__proposition_1_3
+  Injective_InjectiveSpace_lean___InjectiveSpace -.-> Injective_proposition_1_4_lean__proposition_1_4
+  Injective_InjectiveSpace_lean___InjectiveSpace -.-> InverseLimits_inverseLimitTopology_lean__isInjectiveSpace
+  Injective_RetractSubspace_lean__RetractSubspace -.-> Injective_corollary_1_6_lean__corollary_1_6
+  InverseLimits_Compatible_lean__Compatible -.-> InverseLimits_iComp_lean__iComp_compatible
+  InverseLimits_Compatible_lean__Compatible -.-> InverseLimits_instInfSet_lean__compatible_sInf
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_coconeInf_lean__coconeInf
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_coconeInf_lean__coconeInf_apply
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_coe_sSup_of_directed_lean__coe_sSup_of_directed
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_corollary_4_3_lean__corollary_4_3
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_embInfFun_lean__embInfFun
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_embInf_lean__embInf
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_embInf_lean__embInf_family_directed
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_embInf_lean__embInf_le_succ
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_embLE_lean__embLE_le
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_iComp_lean__iComp_incl_le
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_instCompleteLattice_lean__instCompleteLattice
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_instInfSet_lean__coe_sInf
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_instInfSet_lean__compatible_sInf
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_instInfSet_lean__instInfSet
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_instInfSet_lean__isGLB_sInf_
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitLE_lean___inverseLimitLE
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitLT_lean___inverseLimitLT
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitSInfCoe_lean__inverseLimitSInfCoe
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitTopology_lean__coordinate_continuous
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitTopology_lean__eq_iSup
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitTopology_lean__isInjectiveSpace
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitTopology_lean__specializationLe_iff
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitTopology_lean__t0Space
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_lemma_4_5_lean__lemma_4_5
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_projInf_lean___projInfFun
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_projInf_lean__projInf
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_projLE_lean___projLE
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_proposition_4_1_lean__proposition_4_1
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_proposition_4_2_lean__proposition_4_2
+  InverseLimits_coconeInf_lean__coconeInf -.-> InverseLimits_coconeInf_lean__coconeInf_apply
+  InverseLimits_coconeInf_lean__coconeInf -.-> InverseLimits_coconeInf_lean__coconeInf_comp_embInf
+  InverseLimits_coconeInf_lean__coconeInf -.-> InverseLimits_coconeInf_lean__coconeInf_preservesDirectedSup
+  InverseLimits_coconeInf_lean__coconeInf -.-> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
+  InverseLimits_embInfFun_lean__embInfFun -.-> InverseLimits_embInfFun_lean__embInfFun_coe
+  InverseLimits_embInfFun_lean__embInfFun -.-> InverseLimits_embInfFun_lean__embInf_monotone
+  InverseLimits_embInfFun_lean__embInfFun -.-> InverseLimits_embInfFun_lean__embInf_preservesDirectedSup
+  InverseLimits_embInf_lean__embInf -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_incl_le_conjMap_succ
+  InverseLimits_embInf_lean__embInf -.-> FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq
+  InverseLimits_embInf_lean__embInf -.-> FunctionSpaceTower_embInf_succ_iSup_lean__embInf_succ_iSup
+  InverseLimits_embInf_lean__embInf -.-> FunctionSpaceTower_iInfTerm_lean___iInfTerm
+  InverseLimits_embInf_lean__embInf -.-> FunctionSpaceTower_jInfTerm_lean___jInfTerm
+  InverseLimits_embInf_lean__embInf -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
+  InverseLimits_embInf_lean__embInf -.-> FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ
+  InverseLimits_embInf_lean__embInf -.-> InverseLimits_coconeInf_lean__coconeInf_comp_embInf
+  InverseLimits_embInf_lean__embInf -.-> InverseLimits_corollary_4_3_lean__corollary_4_3
+  InverseLimits_embInf_lean__embInf -.-> InverseLimits_embInf_lean__embInf_family_directed
+  InverseLimits_embInf_lean__embInf -.-> InverseLimits_embInf_lean__embInf_le_succ
+  InverseLimits_embInf_lean__embInf -.-> InverseLimits_embInf_lean__embInf_succ
+  InverseLimits_embInf_lean__embInf -.-> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
+  InverseLimits_embInf_lean__embInf -.-> InverseLimits_inverseLimitTopology_lean__eq_iSup
+  InverseLimits_embInf_lean__embInf -.-> InverseLimits_lemma_4_5_lean__lemma_4_5
+  InverseLimits_embLE_lean__embLE -.-> InverseLimits_coconeInf_lean__coconeInf_climb
+  InverseLimits_embLE_lean__embLE -.-> InverseLimits_embLE_lean__embLE_le
+  InverseLimits_embLE_lean__embLE -.-> InverseLimits_embLE_lean__embLE_mono
+  InverseLimits_embLE_lean__embLE -.-> InverseLimits_embLE_lean__embLE_preservesDirectedSup
+  InverseLimits_embLE_lean__embLE -.-> InverseLimits_embLE_lean__embLE_self
+  InverseLimits_embLE_lean__embLE -.-> InverseLimits_embLE_lean__embLE_succ
+  InverseLimits_embLE_lean__embLE -.-> InverseLimits_embLE_lean__embLE_succ_left
+  InverseLimits_embLE_lean__embLE -.-> InverseLimits_iComp_lean__iComp_of_le
+  InverseLimits_iComp_lean__iComp -.-> InverseLimits_embInfFun_lean__embInfFun_coe
+  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_compatible
+  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_incl_le
+  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_monotone
+  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_of_ge
+  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_of_le
+  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_preservesDirectedSup
+  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_self
+  InverseLimits_inverseLimitLE_lean___inverseLimitLE -.-> InverseLimits_inverseLimitLT_lean___inverseLimitLT
+  InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder -.-> InverseLimits_instInfSet_lean__isGLB_sInf_
+  InverseLimits_inverseLimitSInfCoe_lean__inverseLimitSInfCoe -.-> InverseLimits_instInfSet_lean__coe_sInf
+  InverseLimits_inverseLimitSInfCoe_lean__inverseLimitSInfCoe -.-> InverseLimits_instInfSet_lean__compatible_sInf
+  InverseLimits_inverseLimitTopology_lean___inverseLimitTopology -.-> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
+  InverseLimits_inverseLimitTopology_lean___inverseLimitTopology -.-> InverseLimits_inverseLimitTopology_lean__coordinate_continuous
+  InverseLimits_inverseLimitTopology_lean___inverseLimitTopology -.-> InverseLimits_inverseLimitTopology_lean__isInjectiveSpace
+  InverseLimits_inverseLimitTopology_lean___inverseLimitTopology -.-> InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi
+  InverseLimits_inverseLimitTopology_lean___inverseLimitTopology -.-> InverseLimits_inverseLimitTopology_lean__specializationLe_iff
+  InverseLimits_inverseLimitTopology_lean___inverseLimitTopology -.-> InverseLimits_inverseLimitTopology_lean__t0Space
+  InverseLimits_projInf_lean__projInf -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_incl_le_conjMap_succ
+  InverseLimits_projInf_lean__projInf -.-> FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq
+  InverseLimits_projInf_lean__projInf -.-> FunctionSpaceTower_iInfTerm_lean___iInfTerm
+  InverseLimits_projInf_lean__projInf -.-> FunctionSpaceTower_incl_projInf_le_projInf_succ_lean__incl_projInf_le_projInf_succ
+  InverseLimits_projInf_lean__projInf -.-> FunctionSpaceTower_jInfTerm_lean___jInfTerm
+  InverseLimits_projInf_lean__projInf -.-> FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ
+  InverseLimits_projInf_lean__projInf -.-> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
+  InverseLimits_projLE_lean___projLE -.-> ContinuousLattices_lemma_3_9_lean__lemma_3_9
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaceTower_functionSpaceInclFun_lean___functionSpaceInclFun
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaceTower_functionSpaceRetrFun_lean___functionSpaceRetrFun
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaceTower_towerProj_lean___towerProj
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_ScottMapProjection_lean___ScottMapProjection
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_ScottMapRetraction_lean___ScottMapRetraction
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_image_retr_wayBelow_directed_lean__image_retr_wayBelow_directed
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_image_retr_wayBelow_nonempty_lean__image_retr_wayBelow_nonempty
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_lemma_3_9_incl_inf_lean__lemma_3_9_incl_inf
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_lemma_3_9_retr_inf_lean__lemma_3_9_retr_inf
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_proposition_3_10_converse_lean__proposition_3_10_converse
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_retr_ambientSSup_eq_sSup_lean__retr_ambientSSup_eq_sSup
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_retr_bot_lean__retr_bot
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_retr_eq_sSup_lean__retr_eq_sSup
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_retr_wayBelow_of_wayBelow_incl_lean__retr_wayBelow_of_wayBelow_incl
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_sSup_image_retr_wayBelow_lean__sSup_image_retr_wayBelow
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_scottSubspaceExtendInf_mono_incl_lean__scottSubspaceExtendInf_mono_incl
+  InverseLimits_projLE_lean___projLE -.-> FunctionSpaces_scottSubspaceExtendInf_mono_retr_lean__scottSubspaceExtendInf_mono_retr
+  InverseLimits_projLE_lean___projLE -.-> InverseLimits_coconeInf_lean__coconeInf_descend
+  InverseLimits_projLE_lean___projLE -.-> InverseLimits_iComp_lean__iComp_of_ge
+  InverseLimits_projLE_lean___projLE -.-> InverseLimits_instInfSet_lean__retr_sInf
+  InverseLimits_projLE_lean___projLE -.-> InverseLimits_lemma_4_5_lean__lemma_4_5
+  InverseLimits_projLE_lean___projLE -.-> InverseLimits_projection_galoisConnection_lean__projection_galoisConnection
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> Constructions_Basic_lean__update_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ContinuousLattices_idemFixRetraction_lean__idemFixRetraction
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ContinuousLattices_idemFix_incl_preservesDirectedSup_lean__idemFix_incl_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ContinuousLattices_idemFix_isContinuousLattice_lean__idemFix_isContinuousLattice
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ContinuousLattices_idemFix_retr_preservesDirectedSup_lean__idemFix_retr_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ContinuousLattices_idemFix_scottTopology_lean__idemFix_scottTopology
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaceTower_conjMap_lean___conjMap
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaceTower_embInfInf_lean___embInfInf
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaces_comp_lean__preservesDirectedSup_comp
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaces_converseRetr_preservesDirectedSup_lean__converseRetr_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaces_corollary_3_4_preservesDirectedSup_lean__corollary_3_4_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaces_curry_left_preservesDirectedSup_lean__curry_left_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaces_curry_right_preservesDirectedSup_lean__curry_right_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaces_fix_preservesDirectedSup_lean__fix_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaces_incl_preservesDirectedSup_lean__incl_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaces_lambda_outer_preservesDirectedSup_lean__lambda_outer_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaces_pointwise_sSup_preservesDirectedSup_lean__pointwise_sSup_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaces_proposition_3_5_preservesDirectedSup_lean__proposition_3_5_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaces_stepFun_preservesDirectedSup_lean__stepFun_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> InverseLimits_coconeInf_lean__coconeInf_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> InverseLimits_embInfFun_lean__embInf_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> InverseLimits_embLE_lean__embLE_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> InverseLimits_iComp_lean__iComp_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> InverseLimits_projInf_lean___projInfFun
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> InverseLimits_projLE_lean___projLE
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ScottMaps_continuous_of_preservesDirectedSup_lean__continuous_of_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ScottMaps_continuous_preservesDirectedSup_lean__continuous_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ScottMaps_meet_preservesDirectedSup_lean__meet_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ScottMaps_preservesDirectedSup_monotone_lean__preservesDirectedSup_monotone
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ScottMaps_proposition_2_5_lean__proposition_2_5
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ScottMaps_proposition_2_6_lean__proposition_2_6
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ScottMaps_scottOpen_preimage_lean__scottOpen_preimage
+  ScottMaps_preservesDirectedSup_monotone_lean__preservesDirectedSup_monotone -.-> ContinuousLattices_idemFixRetraction_lean__idemFixRetraction
+  ScottMaps_preservesDirectedSup_monotone_lean__preservesDirectedSup_monotone -.-> ContinuousLattices_idemFix_isContinuousLattice_lean__idemFix_isContinuousLattice
+  ScottMaps_preservesDirectedSup_monotone_lean__preservesDirectedSup_monotone -.-> ContinuousLattices_idemFix_scottTopology_lean__idemFix_scottTopology
+  ScottMaps_proposition_2_7_lean__sup -.-> FunctionSpaces_incl_finset_sup_lean__incl_finset_sup
+  ScottMaps_proposition_2_7_lean__sup -.-> FunctionSpaces_isProjection_finsetSup_lean__isProjection_finsetSup
+  ScottMaps_proposition_2_7_lean__sup -.-> FunctionSpaces_wayBelow_finset_sup_lean__wayBelow_finset_sup
+  ScottMaps_proposition_2_7_lean__sup -.-> FunctionSpaces_wayBelow_le_finset_sup_step_lean__wayBelow_le_finset_sup_step
+  Specialization_MonotoneNet_lean__MonotoneNet -.-> Specialization_proposition_2_1_lean___proposition_2_1
+  Specialization_ScottConvergesTo_lean__ScottConvergesTo -.-> Specialization_proposition_2_1_lean___proposition_2_1
+  Specialization_SpecializationLe_lean___SpecializationLe -.-> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  Specialization_SpecializationLe_lean___SpecializationLe -.-> FunctionSpaces_specializationLe_generateOpen_lean__specializationLe_generateOpen
+  Specialization_SpecializationLe_lean___SpecializationLe -.-> InverseLimits_inverseLimitTopology_lean__specializationLe_iff
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_continuous_eq_sSup_openInfs_lean__continuous_eq_sSup_openInfs
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_proposition_2_11_lean__proposition_2_11
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_proposition_2_9_lean___proposition_2_9
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_proposition_3_8_lean__proposition_3_8
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_scottExtend_continuous_lean__scottExtend_continuous
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_scottExtend_eq_of_continuous_lean__scottExtend_eq_of_continuous
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_scottExtend_maximal_le_lean__scottExtend_maximal_le
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_scottExtend_maximal_lean__scottExtend_maximal
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_scottTopology_lean__sierpinskiPower
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_scottTopology_prop_lean__scottTopology_prop
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ContinuousLattices_idemFix_scottTopology_lean__idemFix_scottTopology
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ContinuousLattices_lemma_3_9_lean__lemma_3_9
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ContinuousLattices_orderIsoScottHomeomorph_lean__orderIsoScottHomeomorph
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaceTower_functionSpaceInclFun_lean___functionSpaceInclFun
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaceTower_functionSpaceRetrFun_lean___functionSpaceRetrFun
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaces_Basic_lean__continuous
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaces_corollary_3_4_eval_on_C_lean__corollary_3_4_eval_on_C
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaces_corollary_3_4_jointly_continuous_lean__corollary_3_4_jointly_continuous
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaces_corollary_3_4_lean__corollary_3_4
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaces_pointwiseSubbasic_isOpen_lean__pointwiseSubbasic_isOpen
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaces_proposition_2_10_lean___proposition_2_10
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaces_proposition_3_5_lean__proposition_3_5
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaces_sSupMaps_continuous_lean__sSupMaps_continuous
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaces_scottFunctionSubbasis_isOpen_scott_lean__scottFunctionSubbasis_isOpen_scott
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaces_scottMap_eq_sSup_openInfs_lean__scottMap_eq_sSup_openInfs
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> FunctionSpaces_theorem_3_3_lean___theorem_3_3
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> InverseLimits_inverseLimitTopology_lean__coordinate_continuous
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ScottMaps_continuous_of_preservesDirectedSup_lean__continuous_of_preservesDirectedSup
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ScottMaps_continuous_preservesDirectedSup_lean__continuous_preservesDirectedSup
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ScottMaps_proposition_2_5_lean__proposition_2_5
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ScottMaps_proposition_2_7_lean__inf_left
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ScottMaps_proposition_2_7_lean__inf_right
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ScottMaps_proposition_2_7_lean__sup
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_continuous_eq_sSup_openInfs_lean__continuous_eq_sSup_openInfs
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_isContinuousLattice_prop_lean__isContinuousLattice_prop
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_proposition_2_11_lean__proposition_2_11
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_proposition_2_9_lean___proposition_2_9
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_proposition_3_8_lean__proposition_3_8
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_scottExtend_continuous_lean__scottExtend_continuous
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_scottExtend_eq_of_continuous_lean__scottExtend_eq_of_continuous
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_scottExtend_maximal_le_lean__scottExtend_maximal_le
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_scottExtend_maximal_lean__scottExtend_maximal
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ContinuousLattices_IsContinuousLatticeu2eorderIso_lean__orderIso
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ContinuousLattices_idemFix_isContinuousLattice_lean__idemFix_isContinuousLattice
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ContinuousLattices_idemFix_scottTopology_lean__idemFix_scottTopology
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ContinuousLattices_lemma_3_9_lean__lemma_3_9
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ContinuousLattices_proposition_2_4_lean__proposition_2_4
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_converseProjection_lean__converseProjection
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_converseRetr_preservesDirectedSup_lean__converseRetr_preservesDirectedSup
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_incl_wayBelow_lean__incl_wayBelow
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_proposition_2_10_lean___proposition_2_10
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_proposition_3_10_converse_lean__proposition_3_10_converse
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_proposition_3_10_forward_lean__proposition_3_10_forward
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_proposition_3_13_lean__proposition_3_13
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_proposition_3_14_lean__proposition_3_14
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_sSup_image_retr_wayBelow_lean__sSup_image_retr_wayBelow
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_scottMap_eq_sSup_openInfs_lean__scottMap_eq_sSup_openInfs
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_scottSubspaceExtend_maximal_lean__scottSubspaceExtend_maximal
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_stepMap_pointwise_sSup_lean__stepMap_pointwise_sSup
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_theorem_3_3_lean___theorem_3_3
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> FunctionSpaces_wayBelow_le_finset_sup_step_lean__wayBelow_le_finset_sup_step
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> InverseLimits_inverseLimitTopology_lean__isInjectiveSpace
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> InverseLimits_proposition_4_1_lean__proposition_4_1
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ScottMaps_meet_preservesDirectedSup_lean__meet_preservesDirectedSup
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ScottMaps_proposition_2_7_lean__inf_left
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ScottMaps_proposition_2_7_lean__inf_right
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Specialization_MonotoneNet_lean__MonotoneNet
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> WayBelow_ContinuousLattice_lean__interpolate
+  WayBelow_ScottOpen_lean___ScottOpen -.-> ContinuousLattices_proposition_2_4_lean__proposition_2_4
+  WayBelow_ScottOpen_lean___ScottOpen -.-> ContinuousLattices_scottOpen_preimage_orderIso_lean__scottOpen_preimage_orderIso
+  WayBelow_ScottOpen_lean___ScottOpen -.-> FunctionSpaces_pointwiseSubbasic_scottOpen_lean__pointwiseSubbasic_scottOpen
+  WayBelow_ScottOpen_lean___ScottOpen -.-> FunctionSpaces_scottSubspaceExtendInf_eq_of_comp_lean__scottSubspaceExtendInf_eq_of_comp
+  WayBelow_ScottOpen_lean___ScottOpen -.-> InverseLimits_iComp_lean__iComp_of_ge
+  WayBelow_ScottOpen_lean___ScottOpen -.-> ScottMaps_scottOpen_preimage_lean__scottOpen_preimage
+  WayBelow_ScottOpen_lean___ScottOpen -.-> WayBelow_ContinuousLattice_lean___ContinuousLattice
+  WayBelow_ScottOpen_lean___ScottOpen -.-> WayBelow_WayBelow_lean__sInf_wayBelow
+  WayBelow_ScottOpen_lean___ScottOpen -.-> WayBelow_proposition_2_2_lean__proposition_2_2
+  WayBelow_ScottOpen_lean___ScottOpen -.-> WayBelow_scottOpen_wayBelow_lean__scottOpen_wayBelow
+  WayBelow_WayBelow_lean___WayBelow -.-> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  WayBelow_WayBelow_lean___WayBelow -.-> FunctionSpaces_incl_finset_sup_lean__incl_finset_sup
+  WayBelow_WayBelow_lean___WayBelow -.-> FunctionSpaces_incl_wayBelow_lean__incl_wayBelow
+  WayBelow_WayBelow_lean___WayBelow -.-> FunctionSpaces_isProjection_finsetSup_lean__isProjection_finsetSup
+  WayBelow_WayBelow_lean___WayBelow -.-> FunctionSpaces_le_antisymm__lean__le_antisymm_
+  WayBelow_WayBelow_lean___WayBelow -.-> FunctionSpaces_le_refl__lean__le_refl_
+  WayBelow_WayBelow_lean___WayBelow -.-> FunctionSpaces_le_trans__lean__le_trans_
+  WayBelow_WayBelow_lean___WayBelow -.-> FunctionSpaces_lt_iff_le_not_ge__lean__lt_iff_le_not_ge_
+  WayBelow_WayBelow_lean___WayBelow -.-> FunctionSpaces_wayBelow_finset_sup_lean__wayBelow_finset_sup
+  WayBelow_WayBelow_lean___WayBelow -.-> FunctionSpaces_wayBelow_le_finset_sup_step_lean__wayBelow_le_finset_sup_step
+  Constructions_Basic_lean__update_preservesDirectedSup --> Constructions_Basic_lean__wayBelow_proj
+  Constructions_Basic_lean__wayBelow_finite_support --> Constructions_proposition_2_9_lean___proposition_2_9
+  Constructions_Basic_lean__wayBelow_proj --> Constructions_proposition_2_9_lean___proposition_2_9
+  Constructions_directedOn_finite_sSup_mem_lean__directedOn_finite_sSup_mem --> Constructions_proposition_2_8_lean__proposition_2_8
+  Constructions_proposition_2_11_lean__proposition_2_11 --> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  Constructions_proposition_2_8_lean__proposition_2_8 --> Constructions_isContinuousLattice_prop_lean__isContinuousLattice_prop
+  Constructions_scottExtend_aux_directed_lean__scottExtend_aux_directed --> Constructions_scottExtend_continuous_lean__scottExtend_continuous
+  Constructions_scottExtend_aux_nonempty_lean__scottExtend_aux_nonempty --> Constructions_scottExtend_continuous_lean__scottExtend_continuous
+  Constructions_scottExtend_maximal_le_lean__scottExtend_maximal_le --> ContinuousLattices_lemma_3_9_lean__lemma_3_9
+  Constructions_scottExtend_maximal_lean__scottExtend_maximal --> ContinuousLattices_lemma_3_9_lean__lemma_3_9
+  Constructions_scottTopology_lean__sierpinskiPower --> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  Constructions_scottTopology_prop_lean__scottTopology_prop --> Constructions_scottTopology_lean__sierpinskiPower
+  ContinuousLattices_IsContinuousLatticeu2eorderIso_lean__orderIso --> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  ContinuousLattices_coe_sSup_lean__coe_sSup --> ContinuousLattices_idemFix_retr_preservesDirectedSup_lean__idemFix_retr_preservesDirectedSup
+  ContinuousLattices_idemFix_incl_preservesDirectedSup_lean__idemFix_incl_preservesDirectedSup --> ContinuousLattices_idemFixRetraction_lean__idemFixRetraction
+  ContinuousLattices_idemFix_isContinuousLattice_lean__idemFix_isContinuousLattice --> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  ContinuousLattices_idemFix_retr_preservesDirectedSup_lean__idemFix_retr_preservesDirectedSup --> ContinuousLattices_idemFixRetraction_lean__idemFixRetraction
+  ContinuousLattices_idemFix_scottTopology_lean__idemFix_scottTopology --> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  ContinuousLattices_lemma_3_9_lean__lemma_3_9 --> InverseLimits_inverseLimitTopology_lean__isInjectiveSpace
+  ContinuousLattices_orderIsoScottHomeomorph_lean__orderIsoScottHomeomorph --> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  ContinuousLattices_orderIso_wayBelow_lean__orderIso_wayBelow --> ContinuousLattices_IsContinuousLatticeu2eorderIso_lean__orderIso
+  ContinuousLattices_theorem_2_12_lean___theorem_2_12 --> InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi
+  FunctionSpaceTower_CLat_lean__CLat --> FunctionSpaceTower_towerProj_lean___towerProj
+  FunctionSpaceTower_CLat_lean__towerCLat --> FunctionSpaceTower_CLat_lean__towerCompleteLattice
+  FunctionSpaceTower_CLat_lean__towerCLat --> FunctionSpaceTower_CLat_lean__towerType
+  FunctionSpaceTower_CLat_lean__towerToMap --> FunctionSpaceTower_CLat_lean__towerCoeFun
+  FunctionSpaceTower_DInfFn_lean__DInfFn --> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
+  FunctionSpaceTower_DInf_lean__DInf --> FunctionSpaceTower_DInfFn_lean__DInfFn
+  FunctionSpaceTower_DInf_lean__DInf --> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf
+  FunctionSpaceTower_conjMap_iSup_lean__conjMap_iSup --> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_conjMap_iSup_lean__conjMap_incl_le_conjMap_succ --> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_conjMap_lean__conjMapFun --> FunctionSpaceTower_conjMap_lean___conjMap
+  FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq --> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf --> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_projInfInf
+  FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf --> FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_inverses
+  FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_projInfInf --> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
+  FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_projInfInf --> FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_orderIso
+  FunctionSpaceTower_embInf_succ_iSup_lean__embInf_succ_iSup --> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_iInfTerm_monotone_lean__iInfTerm_le_succ --> FunctionSpaceTower_iInfTerm_monotone_lean__iInfTerm_monotone
+  FunctionSpaceTower_iInfTerm_monotone_lean__iInfTerm_monotone --> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_iSup__monotone_eq_diagonal_lean__iSup__monotone_eq_diagonal --> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_jInfTerm_lean___jInfTerm --> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ --> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf
+  FunctionSpaces_BasicInst33_lean__instCompleteLattice --> FunctionSpaces_proposition_3_12_lean__proposition_3_12
+  FunctionSpaces_Basic_lean__ScottC --> FunctionSpaces_scottFunctionSubbasis_isOpen_scott_lean__scottFunctionSubbasis_isOpen_scott
+  FunctionSpaces_IsProjection_lean__IsProjection --> FunctionSpaces_Projections_lean__Projections
+  FunctionSpaces_ScottMapProjection_lean___ScottMapProjection --> FunctionSpaces_proposition_3_7_projection_lean__proposition_3_7_projection
+  FunctionSpaces_ambientSSup_lean__ambientSSup --> FunctionSpaces_retr_ambientSSup_eq_sSup_lean__retr_ambientSSup_eq_sSup
+  FunctionSpaces_bot_apply_lean__bot_apply --> FunctionSpaces_isProjection_bot_lean__isProjection_bot
+  FunctionSpaces_con__lean__con --> FunctionSpaces_projection_lean__projection
+  FunctionSpaces_const_apply_lean__const_apply --> FunctionSpaces_con__lean__con
+  FunctionSpaces_const_lean__const --> FunctionSpaces_con__lean__con
+  FunctionSpaces_continuousMapInducedPiTopology_lean__continuousMapInducedPiTopology --> FunctionSpaces_scottFunctionTopology_eq_induced_pi_lean__scottFunctionTopology_eq_induced_pi
+  FunctionSpaces_converseProjection_lean__converseProjection --> FunctionSpaces_proposition_3_10_converse_lean__proposition_3_10_converse
+  FunctionSpaces_converseRetr_incl_lean__converseRetr_incl --> FunctionSpaces_converseProjection_lean__converseProjection
+  FunctionSpaces_converseRetr_lean__converseRetr --> FunctionSpaces_converseRetr_preservesDirectedSup_lean__converseRetr_preservesDirectedSup
+  FunctionSpaces_converseRetr_mono_lean__converseRetr_mono --> FunctionSpaces_converseRetr_preservesDirectedSup_lean__converseRetr_preservesDirectedSup
+  FunctionSpaces_converseRetr_preservesDirectedSup_lean__converseRetr_preservesDirectedSup --> FunctionSpaces_converseProjection_lean__converseProjection
+  FunctionSpaces_corollary_3_4_eval_on_C_lean__corollary_3_4_eval_on_C --> FunctionSpaces_corollary_3_4_lean__corollary_3_4
+  FunctionSpaces_corollary_3_4_preservesDirectedSup_lean__corollary_3_4_preservesDirectedSup --> FunctionSpaces_corollary_3_4_jointly_continuous_lean__corollary_3_4_jointly_continuous
+  FunctionSpaces_curry_left_preservesDirectedSup_lean__curry_left_preservesDirectedSup --> FunctionSpaces_lambda_outer_preservesDirectedSup_lean__lambda_outer_preservesDirectedSup
+  FunctionSpaces_curry_right_preservesDirectedSup_lean__curry_right_preservesDirectedSup --> FunctionSpaces_scottLambdaAt_lean__scottLambdaAt
+  FunctionSpaces_directedOn_finsetSupOf_lean__directedOn_finsetSupOf --> FunctionSpaces_incl_sSup_lean__incl_sSup
+  FunctionSpaces_directedOn_finsetSupOf_lean__directedOn_finsetSupOf --> FunctionSpaces_isProjection_sSup_lean__isProjection_sSup
+  FunctionSpaces_finsetSupOf_lean__finsetSupOf --> FunctionSpaces_incl_sSup_lean__incl_sSup
+  FunctionSpaces_fixMap_lean__fixMap --> FunctionSpaces_proposition_3_14_lean__proposition_3_14
+  FunctionSpaces_fix_eq_lean__fix_eq --> FunctionSpaces_fix_mono_lean__fix_mono
+  FunctionSpaces_fix_eq_lean__fix_eq --> FunctionSpaces_fix_unique_lean__fix_unique
+  FunctionSpaces_fix_le_lean__fix_le --> FunctionSpaces_fix_mono_lean__fix_mono
+  FunctionSpaces_fix_le_lean__fix_le --> FunctionSpaces_fix_unique_lean__fix_unique
+  FunctionSpaces_fix_lean__fix --> FunctionSpaces_fix_mono_lean__fix_mono
+  FunctionSpaces_fix_lean__fix --> FunctionSpaces_fix_unique_lean__fix_unique
+  FunctionSpaces_fix_mono_lean__fix_mono --> FunctionSpaces_fix_preservesDirectedSup_lean__fix_preservesDirectedSup
+  FunctionSpaces_fix_preservesDirectedSup_lean__fix_preservesDirectedSup --> FunctionSpaces_fixMap_lean__fixMap
+  FunctionSpaces_fix_unique_lean__fix_unique --> FunctionSpaces_proposition_3_14_lean__proposition_3_14
+  FunctionSpaces_idMap_apply_lean__idMap_apply --> FunctionSpaceTower_projInfInf_lean___projInfInf
+  FunctionSpaces_idMap_lean__idMap --> FunctionSpaces_IsProjection_lean__IsProjection
+  FunctionSpaces_image_retr_wayBelow_directed_lean__image_retr_wayBelow_directed --> FunctionSpaces_proposition_2_10_lean___proposition_2_10
+  FunctionSpaces_image_retr_wayBelow_nonempty_lean__image_retr_wayBelow_nonempty --> FunctionSpaces_proposition_2_10_lean___proposition_2_10
+  FunctionSpaces_incl_bot_lean__incl_bot --> FunctionSpaces_incl_finset_sup_lean__incl_finset_sup
+  FunctionSpaces_incl_converseRetr_le_lean__incl_converseRetr_le --> FunctionSpaces_converseProjection_lean__converseProjection
+  FunctionSpaces_incl_finset_sup_lean__incl_finset_sup --> FunctionSpaces_incl_sSup_lean__incl_sSup
+  FunctionSpaces_incl_injective_lean__incl_injective --> FunctionSpaces_proposition_3_10_forward_lean__proposition_3_10_forward
+  FunctionSpaces_incl_mono_of_preservesSSup_lean__incl_mono_of_preservesSSup --> FunctionSpaces_converseRetr_incl_lean__converseRetr_incl
+  FunctionSpaces_incl_sSup_lean__incl_sSup --> FunctionSpaces_proposition_3_10_forward_lean__proposition_3_10_forward
+  FunctionSpaces_incl_sup_lean__incl_sup --> FunctionSpaces_incl_finset_sup_lean__incl_finset_sup
+  FunctionSpaces_incl_sup_of_preservesSSup_lean__incl_sup_of_preservesSSup --> FunctionSpaces_incl_mono_of_preservesSSup_lean__incl_mono_of_preservesSSup
+  FunctionSpaces_incl_sup_of_preservesSSup_lean__incl_sup_of_preservesSSup --> FunctionSpaces_le_of_incl_le_lean__le_of_incl_le
+  FunctionSpaces_incl_wayBelow_lean__incl_wayBelow --> FunctionSpaces_proposition_3_10_forward_lean__proposition_3_10_forward
+  FunctionSpaces_instCompleteLattice_lean__instCompleteLattice --> FunctionSpaces_proposition_3_12_lean__proposition_3_12
+  FunctionSpaces_isProjection_bot_lean__isProjection_bot --> FunctionSpaces_isProjection_finsetSup_lean__isProjection_finsetSup
+  FunctionSpaces_isProjection_directedSup_lean__isProjection_directedSup --> FunctionSpaces_isProjection_sSup_lean__isProjection_sSup
+  FunctionSpaces_isProjection_finsetSup_lean__isProjection_finsetSup --> FunctionSpaces_isProjection_sSup_lean__isProjection_sSup
+  FunctionSpaces_isProjection_iff_lean__isProjection_iff --> FunctionSpaces_isProjection_bot_lean__isProjection_bot
+  FunctionSpaces_isProjection_iff_lean__isProjection_iff --> FunctionSpaces_isProjection_directedSup_lean__isProjection_directedSup
+  FunctionSpaces_isProjection_iff_lean__isProjection_iff --> FunctionSpaces_isProjection_sup_lean__isProjection_sup
+  FunctionSpaces_isProjection_sSup_lean__isProjection_sSup --> FunctionSpaces_instSupSet_lean__instSupSet
+  FunctionSpaces_isProjection_sSup_lean__isProjection_sSup --> FunctionSpaces_proposition_3_12_lean__proposition_3_12
+  FunctionSpaces_isProjection_sup_lean__isProjection_sup --> FunctionSpaces_isProjection_finsetSup_lean__isProjection_finsetSup
+  FunctionSpaces_lambda_outer_preservesDirectedSup_lean__lambda_outer_preservesDirectedSup --> FunctionSpaces_scottLambda_lean__scottLambda
+  FunctionSpaces_le_antisymm__lean__le_antisymm_ --> FunctionSpaces_BasicInst28_lean__instPartialOrder
+  FunctionSpaces_le_of_incl_le_lean__le_of_incl_le --> FunctionSpaces_converseRetr_incl_lean__converseRetr_incl
+  FunctionSpaces_le_refl__lean__le_refl_ --> FunctionSpaces_BasicInst28_lean__instPartialOrder
+  FunctionSpaces_le_sSup_finsetSupOf_lean__le_sSup_finsetSupOf --> FunctionSpaces_sSup_finsetSupOf_lean__sSup_finsetSupOf
+  FunctionSpaces_le_trans__lean__le_trans_ --> FunctionSpaces_BasicInst28_lean__instPartialOrder
+  FunctionSpaces_lt_iff_le_not_ge__lean__lt_iff_le_not_ge_ --> FunctionSpaces_BasicInst28_lean__instPartialOrder
+  FunctionSpaces_lt_lean__lt --> FunctionSpaces_BasicInst28_lean__instPartialOrder
+  FunctionSpaces_lt_lean__lt --> InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder
+  FunctionSpaces_mem_finsetSupOf_of_mem_lean__mem_finsetSupOf_of_mem --> FunctionSpaces_le_sSup_finsetSupOf_lean__le_sSup_finsetSupOf
+  FunctionSpaces_min_lean__min --> FunctionSpaces_projection_lean__projection
+  FunctionSpaces_pointwiseSubbasic_isOpen_lean__pointwiseSubbasic_isOpen --> FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi_lean__scottMapPointwiseTopology_eq_induced_pi
+  FunctionSpaces_pointwiseSubbasic_scottOpen_lean__pointwiseSubbasic_scottOpen --> FunctionSpaces_theorem_3_3_lean___theorem_3_3
+  FunctionSpaces_pointwise_sSup_preservesDirectedSup_lean__pointwise_sSup_preservesDirectedSup --> FunctionSpaces_sSupMaps_continuous_lean__sSupMaps_continuous
+  FunctionSpaces_projection_lean__projection --> FunctionSpaces_proposition_3_13_lean__proposition_3_13
+  FunctionSpaces_proposition_3_5_preservesDirectedSup_lean__proposition_3_5_preservesDirectedSup --> FunctionSpaces_proposition_3_5_lean__proposition_3_5
+  FunctionSpaces_proposition_3_7_projection_lean__proposition_3_7_projection --> FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq
+  FunctionSpaces_retr_bot_lean__retr_bot --> FunctionSpaces_incl_bot_lean__incl_bot
+  FunctionSpaces_retr_wayBelow_of_wayBelow_incl_lean__retr_wayBelow_of_wayBelow_incl --> FunctionSpaces_proposition_2_10_lean___proposition_2_10
+  FunctionSpaces_sInf_image_le_sInf_image_of_subset_lean__sInf_image_le_sInf_image_of_subset --> FunctionSpaces_scottSubspaceExtend_maximal_lean__scottSubspaceExtend_maximal
+  FunctionSpaces_sSupMaps_continuous_lean__sSupMaps_continuous --> FunctionSpaces_sSupMaps_lean__sSupMaps
+  FunctionSpaces_sSupMaps_lean__sSupMaps --> FunctionSpaces_BasicInst30_lean__instSupSet
+  FunctionSpaces_sSup_finsetSupOf_lean__sSup_finsetSupOf --> FunctionSpaces_incl_sSup_lean__incl_sSup
+  FunctionSpaces_sSup_finsetSupOf_lean__sSup_finsetSupOf --> FunctionSpaces_isProjection_sSup_lean__isProjection_sSup
+  FunctionSpaces_sSup_image_prod_mk_left_lean__sSup_image_prod_mk_left --> FunctionSpaces_curry_right_preservesDirectedSup_lean__curry_right_preservesDirectedSup
+  FunctionSpaces_sSup_image_prod_mk_right_lean__sSup_image_prod_mk_right --> FunctionSpaces_curry_left_preservesDirectedSup_lean__curry_left_preservesDirectedSup
+  FunctionSpaces_sSup_image_retr_wayBelow_lean__sSup_image_retr_wayBelow --> FunctionSpaces_proposition_2_10_lean___proposition_2_10
+  FunctionSpaces_sSup_le_finsetSupOf_lean__sSup_le_finsetSupOf --> FunctionSpaces_sSup_finsetSupOf_lean__sSup_finsetSupOf
+  FunctionSpaces_scottFunctionEvalSubbasis_lean__scottFunctionEvalSubbasis --> FunctionSpaces_scottFunctionTopology_lean__scottFunctionTopology
+  FunctionSpaces_scottFunctionSpecializationLe_lean__scottFunctionSpecializationLe --> FunctionSpaces_proposition_3_2_lean__proposition_3_2
+  FunctionSpaces_scottFunctionSubbasis_isOpen_lean__scottFunctionSubbasis_isOpen --> FunctionSpaces_scottFunctionSpecializationLe_lean__scottFunctionSpecializationLe
+  FunctionSpaces_scottFunctionSubbasis_isOpen_lean__scottFunctionSubbasis_isOpen --> FunctionSpaces_scottFunctionTopology_eq_induced_pi_lean__scottFunctionTopology_eq_induced_pi
+  FunctionSpaces_scottFunctionSubbasis_isOpen_scott_lean__scottFunctionSubbasis_isOpen_scott --> FunctionSpaces_corollary_3_4_eval_on_C_lean__corollary_3_4_eval_on_C
+  FunctionSpaces_scottFunctionTopology_lean__scottFunctionTopology --> FunctionSpaces_scottFunctionSpecializationLe_lean__scottFunctionSpecializationLe
+  FunctionSpaces_scottFunctionTopology_lean__scottFunctionTopology --> FunctionSpaces_scottFunctionTopology_eq_induced_pi_lean__scottFunctionTopology_eq_induced_pi
+  FunctionSpaces_scottLambdaAt_lean__scottLambdaAt --> FunctionSpaces_lambda_outer_preservesDirectedSup_lean__lambda_outer_preservesDirectedSup
+  FunctionSpaces_scottLambda_apply_lean__scottLambda_apply --> FunctionSpaces_proposition_3_5_preservesDirectedSup_lean__proposition_3_5_preservesDirectedSup
+  FunctionSpaces_scottMapInducedPiTopology_lean__scottMapInducedPiTopology --> FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi_lean__scottMapPointwiseTopology_eq_induced_pi
+  FunctionSpaces_scottMapPointwiseSubbasis_lean__scottMapPointwiseSubbasis --> FunctionSpaces_scottMapPointwiseTopology_lean__scottMapPointwiseTopology
+  FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi_lean__scottMapPointwiseTopology_eq_induced_pi --> FunctionSpaces_theorem_3_3_lean___theorem_3_3
+  FunctionSpaces_scottMapPointwiseTopology_lean__scottMapPointwiseTopology --> FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi_lean__scottMapPointwiseTopology_eq_induced_pi
+  FunctionSpaces_scottMap_eq_sSup_openInfs_lean__scottMap_eq_sSup_openInfs --> FunctionSpaces_scottSubspaceExtend_maximal_lean__scottSubspaceExtend_maximal
+  FunctionSpaces_scottSubspaceExtendInf_eq_of_comp_lean__scottSubspaceExtendInf_eq_of_comp --> FunctionSpaces_scottSubspaceExtend_maximal_lean__scottSubspaceExtend_maximal
+  FunctionSpaces_scottSubspaceExtendInf_eq_of_ext_lean__scottSubspaceExtendInf_eq_of_ext --> FunctionSpaces_scottSubspaceExtend_eq_of_ext_lean__scottSubspaceExtend_eq_of_ext
+  FunctionSpaces_scottSubspaceExtendInf_le_of_mem_lean__scottSubspaceExtendInf_le_of_mem --> FunctionSpaces_scottMap_eq_sSup_openInfs_lean__scottMap_eq_sSup_openInfs
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf --> FunctionSpaces_scottSubspaceExtendInf_eq_of_comp_lean__scottSubspaceExtendInf_eq_of_comp
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf --> FunctionSpaces_scottSubspaceExtendInf_eq_of_ext_lean__scottSubspaceExtendInf_eq_of_ext
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf --> FunctionSpaces_scottSubspaceExtend_lean__scottSubspaceExtend
+  FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf --> FunctionSpaces_scottSubspaceExtend_mono_lean__scottSubspaceExtend_mono
+  FunctionSpaces_scottSubspaceExtendInf_mono_incl_apply_lean__scottSubspaceExtendInf_mono_incl_apply --> FunctionSpaces_lemma_3_9_incl_inf_lean__lemma_3_9_incl_inf
+  FunctionSpaces_scottSubspaceExtendInf_mono_incl_lean__scottSubspaceExtendInf_mono_incl --> FunctionSpaces_lemma_3_9_incl_inf_lean__lemma_3_9_incl_inf
+  FunctionSpaces_scottSubspaceExtendInf_mono_lean__scottSubspaceExtendInf_mono --> FunctionSpaces_scottSubspaceExtend_mono_lean__scottSubspaceExtend_mono
+  FunctionSpaces_scottSubspaceExtendInf_mono_retr_lean__scottSubspaceExtendInf_mono_retr --> FunctionSpaces_lemma_3_9_retr_inf_lean__lemma_3_9_retr_inf
+  FunctionSpaces_scottSubspaceExtend_lean__scottSubspaceExtend --> FunctionSpaces_scottSubspaceExtend_eq_of_ext_lean__scottSubspaceExtend_eq_of_ext
+  FunctionSpaces_scottSubspaceExtend_lean__scottSubspaceExtend --> FunctionSpaces_scottSubspaceExtend_maximal_lean__scottSubspaceExtend_maximal
+  FunctionSpaces_specializationLe_generateOpen_lean__specializationLe_generateOpen --> FunctionSpaces_scottFunctionSpecializationLe_lean__scottFunctionSpecializationLe
+  FunctionSpaces_stepFun_lean__stepFun --> FunctionSpaces_stepFun_preservesDirectedSup_lean__stepFun_preservesDirectedSup
+  FunctionSpaces_stepFun_lean__stepFun --> FunctionSpaces_stepMap_le_of_wayBelow_lean__stepMap_le_of_wayBelow
+  FunctionSpaces_stepFun_of_not_wayBelow_lean__stepFun_of_not_wayBelow --> FunctionSpaces_stepFun_preservesDirectedSup_lean__stepFun_preservesDirectedSup
+  FunctionSpaces_stepFun_of_not_wayBelow_lean__stepFun_of_not_wayBelow --> FunctionSpaces_stepMap_le_of_wayBelow_lean__stepMap_le_of_wayBelow
+  FunctionSpaces_stepFun_of_wayBelow_lean__stepFun_of_wayBelow --> FunctionSpaces_stepFun_preservesDirectedSup_lean__stepFun_preservesDirectedSup
+  FunctionSpaces_stepFun_of_wayBelow_lean__stepFun_of_wayBelow --> FunctionSpaces_stepMap_apply_of_wayBelow_lean__stepMap_apply_of_wayBelow
+  FunctionSpaces_stepFun_preservesDirectedSup_lean__stepFun_preservesDirectedSup --> FunctionSpaces_stepMap_lean__stepMap
+  FunctionSpaces_stepMap_apply_of_wayBelow_lean__stepMap_apply_of_wayBelow --> FunctionSpaces_stepMap_le_of_wayBelow_lean__stepMap_le_of_wayBelow
+  FunctionSpaces_stepMap_le_of_wayBelow_lean__stepMap_le_of_wayBelow --> FunctionSpaces_stepMap_wayBelow_lean__stepMap_wayBelow
+  FunctionSpaces_stepMap_le_of_wayBelow_lean__stepMap_le_of_wayBelow --> FunctionSpaces_wayBelow_le_finset_sup_step_lean__wayBelow_le_finset_sup_step
+  FunctionSpaces_stepMap_lean__stepMap --> FunctionSpaces_wayBelow_le_finset_sup_step_lean__wayBelow_le_finset_sup_step
+  FunctionSpaces_stepMap_pointwise_sSup_lean__stepMap_pointwise_sSup --> FunctionSpaces_wayBelow_le_finset_sup_step_lean__wayBelow_le_finset_sup_step
+  FunctionSpaces_stepMap_wayBelow_lean__stepMap_wayBelow --> FunctionSpaces_theorem_3_3_lean___theorem_3_3
+  FunctionSpaces_sup_apply_lean__sup_apply --> FunctionSpaces_isProjection_sup_lean__isProjection_sup
+  FunctionSpaces_theorem_3_3_lean___theorem_3_3 --> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
+  FunctionSpaces_toOrderHom_lean__toOrderHom --> FunctionSpaces_fix_eq_lean__fix_eq
+  FunctionSpaces_toOrderHom_lean__toOrderHom --> FunctionSpaces_fix_le_lean__fix_le
+  FunctionSpaces_toOrderHom_lean__toOrderHom --> FunctionSpaces_fix_lean__fix
+  FunctionSpaces_wayBelow_finset_sup_lean__wayBelow_finset_sup --> FunctionSpaces_theorem_3_3_lean___theorem_3_3
+  FunctionSpaces_wayBelow_le_finset_sup_step_lean__wayBelow_le_finset_sup_step --> FunctionSpaces_theorem_3_3_lean___theorem_3_3
+  Injective_corollary_1_6_lean__corollary_1_6 --> ContinuousLattices_theorem_2_12_lean___theorem_2_12
+  Injective_proposition_1_3_lean__proposition_1_3 --> Injective_isInjectiveSpace_sierpinski_power_lean__isInjectiveSpace_sierpinski_power
+  Injective_proposition_1_5_lean__proposition_1_5 --> Injective_corollary_1_6_lean__corollary_1_6
+  InverseLimits_coconeInf_lean__coconeInf --> InverseLimits_coconeInf_lean__coconeInf_preservesDirectedSup
+  InverseLimits_coconeInf_lean__coconeInf_apply --> InverseLimits_coconeInf_lean__coconeInf_preservesDirectedSup
+  InverseLimits_coconeInf_lean__coconeInf_climb --> InverseLimits_coconeInf_lean__coconeInf_comp_embInf
+  InverseLimits_coconeInf_lean__coconeInf_comp_embInf --> InverseLimits_corollary_4_3_lean__corollary_4_3
+  InverseLimits_coconeInf_lean__coconeInf_descend --> InverseLimits_coconeInf_lean__coconeInf_comp_embInf
+  InverseLimits_coconeInf_lean__coconeInf_preservesDirectedSup --> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
+  InverseLimits_embInfFun_lean__embInfFun_coe --> InverseLimits_embInfFun_lean__embInf_preservesDirectedSup
+  InverseLimits_embInfFun_lean__embInf_preservesDirectedSup --> InverseLimits_embInf_lean__embInf
+  InverseLimits_embInf_lean__embInf_family_directed --> InverseLimits_inverseLimitTopology_lean__eq_iSup
+  InverseLimits_embLE_lean__embLE --> InverseLimits_embLE_lean__embLE_self
+  InverseLimits_embLE_lean__embLE --> InverseLimits_embLE_lean__embLE_succ
+  InverseLimits_embLE_lean__embLE --> InverseLimits_embLE_lean__embLE_succ_left
+  InverseLimits_embLE_lean__embLE_le --> InverseLimits_iComp_lean__iComp_incl_le
+  InverseLimits_embLE_lean__embLE_preservesDirectedSup --> InverseLimits_iComp_lean__iComp_preservesDirectedSup
+  InverseLimits_embLE_lean__embLE_self --> InverseLimits_iComp_lean__iComp_self
+  InverseLimits_embLE_lean__embLE_succ_left --> InverseLimits_embInf_lean__embInf_succ
+  InverseLimits_iComp_lean__iComp_compatible --> InverseLimits_embInfFun_lean__embInfFun
+  InverseLimits_iComp_lean__iComp_monotone --> InverseLimits_embInfFun_lean__embInf_monotone
+  InverseLimits_iComp_lean__iComp_of_le --> InverseLimits_iComp_lean__iComp_self
+  InverseLimits_instCompleteLattice_lean__instCompleteLattice --> FunctionSpaces_proposition_3_12_lean__proposition_3_12
+  InverseLimits_instInfSet_lean__compatible_sInf --> InverseLimits_instInfSet_lean__instInfSet
+  InverseLimits_instInfSet_lean__isGLB_sInf_ --> InverseLimits_instCompleteLattice_lean__instCompleteLattice
+  InverseLimits_instInfSet_lean__retr_sInf --> InverseLimits_instInfSet_lean__compatible_sInf
+  InverseLimits_inverseLimitLT_lean___inverseLimitLT --> InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder
+  InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder --> InverseLimits_instCompleteLattice_lean__instCompleteLattice
+  InverseLimits_inverseLimitSInfCoe_lean__inverseLimitSInfCoe --> InverseLimits_instInfSet_lean__compatible_sInf
+  InverseLimits_inverseLimitTopology_lean__eq_iSup --> FunctionSpaceTower_projInfInf_lean___projInfInf
+  InverseLimits_inverseLimitTopology_lean__isInjectiveSpace --> InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi
+  InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi --> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
+  InverseLimits_inverseLimitTopology_lean__specializationLe_iff --> InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi
+  InverseLimits_inverseLimitTopology_lean__t0Space --> InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi
+  InverseLimits_lemma_4_5_lean__lemma_4_5 --> FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf
+  InverseLimits_projection_galoisConnection_lean__projection_galoisConnection --> InverseLimits_instInfSet_lean__retr_sInf
+  InverseLimits_proposition_4_1_lean__proposition_4_1 --> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
+  InverseLimits_proposition_4_2_lean__proposition_4_2 --> FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq
+  ScottMaps_meet_preservesDirectedSup_lean__meet_preservesDirectedSup --> ScottMaps_proposition_2_7_lean__inf_left
+  ScottMaps_meet_preservesDirectedSup_lean__meet_preservesDirectedSup --> ScottMaps_proposition_2_7_lean__inf_right
+  ScottMaps_proposition_2_6_lean__proposition_2_6 --> FunctionSpaces_corollary_3_4_preservesDirectedSup_lean__corollary_3_4_preservesDirectedSup
+  WayBelow_WayBelow_lean__sInf_wayBelow --> WayBelow_ContinuousLattice_lean___ContinuousLattice
+
+linkStyle 0 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 1 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 2 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 3 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 4 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 5 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 6 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 7 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 8 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 9 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 10 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 11 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 12 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 13 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 14 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 15 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 16 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 17 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 18 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 19 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 20 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 21 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 22 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 23 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 24 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 25 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 26 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 27 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 28 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 29 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 30 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 31 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 32 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 33 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 34 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 35 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 36 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 37 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 38 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 39 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 40 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 41 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 42 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 43 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 44 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 45 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 46 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 47 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 48 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 49 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 50 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 51 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 52 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 53 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 54 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 55 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 56 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 57 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 58 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 59 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 60 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 61 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 62 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 63 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 64 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 65 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 66 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 67 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 68 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 69 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 70 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 71 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 72 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 73 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 74 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 75 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 76 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 77 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 78 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 79 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 80 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 81 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 82 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 83 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 84 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 85 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 86 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 87 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 88 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 89 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 90 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 91 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 92 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 93 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 94 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 95 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 96 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 97 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 98 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 99 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 100 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 101 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 102 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 103 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 104 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 105 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 106 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 107 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 108 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 109 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 110 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 111 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 112 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 113 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 114 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 115 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 116 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 117 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 118 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 119 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 120 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 121 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 122 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 123 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 124 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 125 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 126 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 127 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 128 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 129 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 130 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 131 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 132 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 133 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 134 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 135 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 136 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 137 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 138 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 139 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 140 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 141 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 142 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 143 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 144 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 145 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 146 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 147 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 148 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 149 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 150 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 151 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 152 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 153 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 154 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 155 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 156 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 157 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 158 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 159 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 160 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 161 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 162 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 163 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 164 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 165 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 166 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 167 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 168 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 169 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 170 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 171 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 172 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 173 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 174 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 175 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 176 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 177 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 178 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 179 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 180 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 181 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 182 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 183 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 184 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 185 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 186 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 187 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 188 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 189 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 190 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 191 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 192 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 193 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 194 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 195 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 196 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 197 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 198 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 199 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 200 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 201 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 202 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 203 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 204 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 205 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 206 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 207 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 208 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 209 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 210 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 211 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 212 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 213 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 214 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 215 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 216 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 217 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 218 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 219 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 220 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 221 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 222 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 223 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 224 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 225 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 226 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 227 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 228 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 229 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 230 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 231 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 232 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 233 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 234 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 235 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 236 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 237 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 238 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 239 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 240 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 241 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 242 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 243 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 244 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 245 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 246 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 247 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 248 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 249 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 250 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 251 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 252 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 253 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 254 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 255 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 256 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 257 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 258 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 259 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 260 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 261 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 262 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 263 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 264 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 265 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 266 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 267 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 268 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 269 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 270 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 271 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 272 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 273 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 274 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 275 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 276 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 277 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 278 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 279 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 280 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 281 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 282 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 283 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 284 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 285 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 286 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 287 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 288 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 289 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 290 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 291 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 292 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 293 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 294 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 295 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 296 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 297 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 298 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 299 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 300 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 301 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 302 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 303 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 304 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 305 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 306 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 307 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 308 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 309 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 310 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 311 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 312 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 313 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 314 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 315 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 316 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 317 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 318 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 319 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 320 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 321 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 322 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 323 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 324 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 325 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 326 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 327 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 328 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 329 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 330 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 331 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 332 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 333 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 334 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 335 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 336 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 337 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 338 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 339 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 340 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 341 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 342 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 343 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 344 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 345 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 346 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 347 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 348 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 349 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 350 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 351 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 352 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 353 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 354 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 355 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 356 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 357 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 358 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 359 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 360 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 361 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 362 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 363 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 364 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 365 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 366 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 367 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 368 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 369 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 370 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 371 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 372 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 373 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 374 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 375 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 376 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 377 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 378 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 379 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 380 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 381 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 382 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 383 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 384 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 385 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 386 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 387 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 388 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 389 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 390 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 391 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 392 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 393 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 394 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 395 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 396 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 397 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 398 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 399 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 400 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 401 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 402 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 403 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 404 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 405 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 406 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 407 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 408 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 409 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 410 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 411 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 412 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 413 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 414 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 415 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 416 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 417 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 418 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 419 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 420 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 421 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 422 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 423 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 424 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 425 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 426 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 427 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 428 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 429 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 430 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 431 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 432 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 433 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 434 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 435 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 436 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 437 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 438 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 439 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 440 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 441 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 442 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 443 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 444 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 445 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 446 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 447 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 448 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 449 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 450 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 451 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 452 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 453 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 454 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 455 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 456 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 457 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 458 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 459 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 460 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 461 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 462 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 463 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 464 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 465 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 466 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 467 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 468 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 469 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 470 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 471 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 472 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 473 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 474 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 475 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 476 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 477 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 478 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 479 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 480 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 481 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 482 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 483 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 484 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 485 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 486 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 487 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 488 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 489 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 490 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 491 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 492 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 493 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 494 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 495 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 496 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 497 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 498 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 499 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 500 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 501 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 502 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 503 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 504 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 505 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 506 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 507 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 508 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 509 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 510 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 511 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 512 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 513 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 514 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 515 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 516 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 517 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 518 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 519 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 520 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 521 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 522 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 523 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 524 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 525 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 526 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 527 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 528 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 529 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 530 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 531 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 532 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 533 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 534 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 535 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 536 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 537 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 538 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 539 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 540 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 541 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 542 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 543 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 544 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 545 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 546 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 547 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 548 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 549 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 550 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 551 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 552 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 553 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 554 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 555 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 556 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 557 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 558 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 559 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 560 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 561 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 562 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 563 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 564 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 565 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 566 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 567 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 568 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 569 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 570 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 571 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 572 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 573 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 574 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 575 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 576 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 577 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 578 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 579 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 580 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 581 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 582 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 583 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 584 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 585 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 586 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 587 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 588 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 589 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 590 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 591 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 592 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 593 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 594 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 595 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 596 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 597 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 598 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 599 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 600 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 601 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 602 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 603 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 604 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 605 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 606 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 607 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 608 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 609 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 610 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 611 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 612 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 613 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 614 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 615 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 616 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 617 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 618 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 619 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 620 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 621 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 622 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 623 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 624 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 625 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 626 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 627 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 628 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 629 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 630 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 631 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 632 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 633 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 634 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 635 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 636 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 637 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 638 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 639 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 640 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 641 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 642 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 643 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 644 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 645 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 646 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 647 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 648 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 649 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 650 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 651 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 652 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 653 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 654 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 655 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 656 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 657 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 658 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 659 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 660 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 661 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 662 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 663 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 664 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 665 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 666 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 667 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 668 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 669 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 670 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 671 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 672 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 673 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 674 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 675 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 676 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 677 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 678 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 679 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 680 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 681 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 682 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 683 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 684 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 685 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 686 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 687 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 688 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 689 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 690 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 691 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 692 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 693 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 694 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 695 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 696 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 697 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 698 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 699 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 700 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 701 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 702 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 703 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 704 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 705 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 706 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 707 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 708 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 709 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 710 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 711 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 712 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 713 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 714 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 715 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 716 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 717 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 718 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 719 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 720 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 721 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 722 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 723 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 724 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 725 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 726 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 727 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 728 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 729 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 730 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 731 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 732 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 733 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 734 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 735 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 736 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 737 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 738 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 739 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 740 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 741 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 742 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 743 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 744 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 745 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 746 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 747 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 748 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 749 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 750 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 751 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 752 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 753 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 754 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 755 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 756 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 757 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 758 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 759 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 760 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 761 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 762 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 763 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 764 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 765 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 766 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 767 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 768 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 769 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 770 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 771 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 772 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 773 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 774 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 775 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 776 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 777 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 778 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 779 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 780 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 781 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 782 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 783 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 784 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 785 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 786 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 787 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 788 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 789 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 790 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 791 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+
+  classDef node fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  class Constructions_proposition_2_9_lean___proposition_2_9 node
+  class FunctionSpaceTower_conjMap_lean___conjMap node
+  class FunctionSpaceTower_embInfInf_lean___embInfInf node
+  class FunctionSpaceTower_functionSpaceInclFun_lean___functionSpaceInclFun node
+  class FunctionSpaceTower_functionSpaceProjection_lean___functionSpaceProjection node
+  class FunctionSpaceTower_functionSpaceRetrFun_lean___functionSpaceRetrFun node
+  class FunctionSpaceTower_iInfTerm_lean___iInfTerm node
+  class FunctionSpaceTower_jInfTerm_lean___jInfTerm node
+  class FunctionSpaceTower_projInfInf_lean___projInfInf node
+  class FunctionSpaceTower_towerProj_lean___towerProj node
+  class FunctionSpaces_ScottMap_lean___ScottMap node
+  class FunctionSpaces_ScottMapProjection_lean___ScottMapProjection node
+  class FunctionSpaces_ScottMapRetraction_lean___ScottMapRetraction node
+  class FunctionSpaces_proposition_2_10_lean___proposition_2_10 node
+  class Injective_InjectiveSpace_lean___InjectiveSpace node
+  class InverseLimits_inverseLimitLE_lean___inverseLimitLE node
+  class InverseLimits_inverseLimitLT_lean___inverseLimitLT node
+  class InverseLimits_inverseLimitTopology_lean___inverseLimitTopology node
+  class InverseLimits_projInf_lean___projInfFun node
+  class InverseLimits_projLE_lean___projLE node
+  class Specialization_SpecializationLe_lean___SpecializationLe node
+  class Specialization_proposition_2_1_lean___proposition_2_1 node
+  class Specialization_scottTopologicalSpace_lean___scottTopologicalSpace node
+  class WayBelow_ContinuousLattice_lean___ContinuousLattice node
+  class WayBelow_ScottOpen_lean___ScottOpen node
+  class WayBelow_WayBelow_lean___WayBelow node
+  class ContinuousLattices_theorem_2_12_lean___theorem_2_12 node
+  class FunctionSpaceTower_theorem_4_4_lean___theorem_4_4 node
+  class FunctionSpaces_theorem_3_3_lean___theorem_3_3 node
+  class Constructions_Basic_lean__update_preservesDirectedSup node
+  class Constructions_Basic_lean__wayBelow_proj node
+  class Constructions_Basic_lean__wayBelow_finite_support node
+  class Constructions_continuous_eq_sSup_openInfs_lean__continuous_eq_sSup_openInfs node
+  class Constructions_directedOn_finite_sSup_mem_lean__directedOn_finite_sSup_mem node
+  class Constructions_isContinuousLattice_prop_lean__isContinuousLattice_prop node
+  class Constructions_proposition_2_11_lean__proposition_2_11 node
+  class Constructions_proposition_2_8_lean__proposition_2_8 node
+  class Constructions_proposition_3_8_lean__proposition_3_8 node
+  class Constructions_scottExtend_lean__scottExtend node
+  class Constructions_scottExtend_aux_directed_lean__scottExtend_aux_directed node
+  class Constructions_scottExtend_aux_nonempty_lean__scottExtend_aux_nonempty node
+  class Constructions_scottExtend_continuous_lean__scottExtend_continuous node
+  class Constructions_scottExtend_eq_of_continuous_lean__scottExtend_eq_of_continuous node
+  class Constructions_scottExtend_maximal_lean__scottExtend_maximal node
+  class Constructions_scottExtend_maximal_le_lean__scottExtend_maximal_le node
+  class Constructions_scottTopology_lean__sierpinskiPower node
+  class Constructions_scottTopology_prop_lean__scottTopology_prop node
+  class ContinuousLattices_IdemFix_lean__IdemFix node
+  class ContinuousLattices_IsContinuousLatticeu2eorderIso_lean__orderIso node
+  class ContinuousLattices_coe_sSup_lean__coe_sSup node
+  class ContinuousLattices_completeLattice_lean__completeLattice node
+  class ContinuousLattices_idemFixRetraction_lean__idemFixRetraction node
+  class ContinuousLattices_idemFix_incl_preservesDirectedSup_lean__idemFix_incl_preservesDirectedSup node
+  class ContinuousLattices_idemFix_isContinuousLattice_lean__idemFix_isContinuousLattice node
+  class ContinuousLattices_idemFix_retr_preservesDirectedSup_lean__idemFix_retr_preservesDirectedSup node
+  class ContinuousLattices_idemFix_scottTopology_lean__idemFix_scottTopology node
+  class ContinuousLattices_isLUB_sSup_lean__isLUB_sSup node
+  class ContinuousLattices_lemma_3_9_lean__lemma_3_9 node
+  class ContinuousLattices_orderIsoScottHomeomorph_lean__orderIsoScottHomeomorph node
+  class ContinuousLattices_orderIso_wayBelow_lean__orderIso_wayBelow node
+  class ContinuousLattices_proposition_2_4_lean__proposition_2_4 node
+  class ContinuousLattices_scottOpen_preimage_orderIso_lean__scottOpen_preimage_orderIso node
+  class ContinuousLattices_supSet_lean__supSet node
+  class FunctionSpaceTower_CLat_lean__CLat node
+  class FunctionSpaceTower_CLat_lean__towerCLat node
+  class FunctionSpaceTower_CLat_lean__towerType node
+  class FunctionSpaceTower_CLat_lean__towerCompleteLattice node
+  class FunctionSpaceTower_CLat_lean__towerType_succ node
+  class FunctionSpaceTower_CLat_lean__towerType_zero node
+  class FunctionSpaceTower_CLat_lean__towerToMap node
+  class FunctionSpaceTower_CLat_lean__towerCoeFun node
+  class FunctionSpaceTower_CLat_lean__towerToMap_coe node
+  class FunctionSpaceTower_DInf_lean__DInf node
+  class FunctionSpaceTower_DInfFn_lean__DInfFn node
+  class FunctionSpaceTower_conjMap_lean__conjMapFun node
+  class FunctionSpaceTower_conjMap_iSup_lean__conjMap_iSup node
+  class FunctionSpaceTower_conjMap_iSup_lean__conjMap_incl_le_conjMap_succ node
+  class FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq node
+  class FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_comp_projInfInf node
+  class FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_projInfInf node
+  class FunctionSpaceTower_embInfInf_projInfInf_lean__embInfInf_le_iff node
+  class FunctionSpaceTower_embInf_succ_iSup_lean__embInf_succ_iSup node
+  class FunctionSpaceTower_iInfTerm_monotone_lean__iInfTerm_le_succ node
+  class FunctionSpaceTower_iInfTerm_monotone_lean__iInfTerm_monotone node
+  class FunctionSpaceTower_iSup__monotone_eq_diagonal_lean__iSup__monotone_eq_diagonal node
+  class FunctionSpaceTower_incl_projInf_le_projInf_succ_lean__incl_projInf_le_projInf_succ node
+  class FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_inverses node
+  class FunctionSpaceTower_theorem_4_4_lean__theorem_4_4_orderIso node
+  class FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ node
+  class FunctionSpaces_Basic_isLUB_sSup_lean__isLUB_sSup node
+  class FunctionSpaces_Basic_lean__ScottFunctionSpace node
+  class FunctionSpaces_Basic_lean__ScottC node
+  class FunctionSpaces_Basic_lean__continuous node
+  class FunctionSpaces_Basic_lean__directedOn_wayBelow node
+  class FunctionSpaces_Basic_lean__fixMap_apply node
+  class FunctionSpaces_BasicInst28_lean__instPartialOrder node
+  class FunctionSpaces_BasicInst30_lean__instSupSet node
+  class FunctionSpaces_BasicInst33_lean__instCompleteLattice node
+  class FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection node
+  class FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction node
+  class FunctionSpaces_IsProjection_lean__IsProjection node
+  class FunctionSpaces_Projections_lean__Projections node
+  class FunctionSpaces_ambientSSup_lean__ambientSSup node
+  class FunctionSpaces_bot_apply_lean__bot_apply node
+  class FunctionSpaces_comp_lean__preservesDirectedSup_comp node
+  class FunctionSpaces_comp_lean__comp node
+  class FunctionSpaces_comp_apply_lean__comp_apply node
+  class FunctionSpaces_con__lean__con node
+  class FunctionSpaces_const_lean__const node
+  class FunctionSpaces_const_apply_lean__const_apply node
+  class FunctionSpaces_continuousMapInducedPiTopology_lean__continuousMapInducedPiTopology node
+  class FunctionSpaces_converseProjection_lean__converseProjection node
+  class FunctionSpaces_converseRetr_lean__converseRetr node
+  class FunctionSpaces_converseRetr_incl_lean__converseRetr_incl node
+  class FunctionSpaces_converseRetr_mono_lean__converseRetr_mono node
+  class FunctionSpaces_converseRetr_preservesDirectedSup_lean__converseRetr_preservesDirectedSup node
+  class FunctionSpaces_corollary_3_4_lean__corollary_3_4 node
+  class FunctionSpaces_corollary_3_4_eval_on_C_lean__corollary_3_4_eval_on_C node
+  class FunctionSpaces_corollary_3_4_jointly_continuous_lean__corollary_3_4_jointly_continuous node
+  class FunctionSpaces_corollary_3_4_preservesDirectedSup_lean__corollary_3_4_preservesDirectedSup node
+  class FunctionSpaces_curry_left_preservesDirectedSup_lean__curry_left_preservesDirectedSup node
+  class FunctionSpaces_curry_right_preservesDirectedSup_lean__curry_right_preservesDirectedSup node
+  class FunctionSpaces_directedOn_finsetSupOf_lean__directedOn_finsetSupOf node
+  class FunctionSpaces_finsetSupOf_lean__finsetSupOf node
+  class FunctionSpaces_fix_lean__fix node
+  class FunctionSpaces_fixMap_lean__fixMap node
+  class FunctionSpaces_fix_eq_lean__fix_eq node
+  class FunctionSpaces_fix_le_lean__fix_le node
+  class FunctionSpaces_fix_mono_lean__fix_mono node
+  class FunctionSpaces_fix_preservesDirectedSup_lean__fix_preservesDirectedSup node
+  class FunctionSpaces_fix_unique_lean__fix_unique node
+  class FunctionSpaces_idMap_lean__idMap node
+  class FunctionSpaces_idMap_apply_lean__idMap_apply node
+  class FunctionSpaces_image_retr_wayBelow_directed_lean__image_retr_wayBelow_directed node
+  class FunctionSpaces_image_retr_wayBelow_nonempty_lean__image_retr_wayBelow_nonempty node
+  class FunctionSpaces_incl_bot_lean__incl_bot node
+  class FunctionSpaces_incl_converseRetr_le_lean__incl_converseRetr_le node
+  class FunctionSpaces_incl_finset_sup_lean__incl_finset_sup node
+  class FunctionSpaces_incl_injective_lean__incl_injective node
+  class FunctionSpaces_incl_mono_of_preservesSSup_lean__incl_mono_of_preservesSSup node
+  class FunctionSpaces_incl_preservesDirectedSup_lean__incl_preservesDirectedSup node
+  class FunctionSpaces_incl_sSup_lean__incl_sSup node
+  class FunctionSpaces_incl_sup_lean__incl_sup node
+  class FunctionSpaces_incl_sup_of_preservesSSup_lean__incl_sup_of_preservesSSup node
+  class FunctionSpaces_incl_wayBelow_lean__incl_wayBelow node
+  class FunctionSpaces_instCompleteLattice_lean__instCompleteLattice node
+  class FunctionSpaces_instSupSet_lean__instSupSet node
+  class FunctionSpaces_isLUB_sSup_lean__isLUB_sSup node
+  class FunctionSpaces_isProjection_bot_lean__isProjection_bot node
+  class FunctionSpaces_isProjection_directedSup_lean__isProjection_directedSup node
+  class FunctionSpaces_isProjection_finsetSup_lean__isProjection_finsetSup node
+  class FunctionSpaces_isProjection_iff_lean__isProjection_iff node
+  class FunctionSpaces_isProjection_sSup_lean__isProjection_sSup node
+  class FunctionSpaces_isProjection_sup_lean__isProjection_sup node
+  class FunctionSpaces_lambda_outer_preservesDirectedSup_lean__lambda_outer_preservesDirectedSup node
+  class FunctionSpaces_le_lean__le node
+  class FunctionSpaces_le_antisymm__lean__le_antisymm_ node
+  class FunctionSpaces_le_def_lean__le_def node
+  class FunctionSpaces_le_of_incl_le_lean__le_of_incl_le node
+  class FunctionSpaces_le_refl__lean__le_refl_ node
+  class FunctionSpaces_le_sSup_finsetSupOf_lean__le_sSup_finsetSupOf node
+  class FunctionSpaces_le_trans__lean__le_trans_ node
+  class FunctionSpaces_lemma_3_9_incl_inf_lean__lemma_3_9_incl_inf node
+  class FunctionSpaces_lemma_3_9_retr_inf_lean__lemma_3_9_retr_inf node
+  class FunctionSpaces_lt_lean__lt node
+  class FunctionSpaces_lt_iff_le_not_ge__lean__lt_iff_le_not_ge_ node
+  class FunctionSpaces_mem_finsetSupOf_of_mem_lean__mem_finsetSupOf_of_mem node
+  class FunctionSpaces_min_lean__min node
+  class FunctionSpaces_monotone_lean__monotone node
+  class FunctionSpaces_pointwiseSubbasic_isOpen_lean__pointwiseSubbasic_isOpen node
+  class FunctionSpaces_pointwiseSubbasic_scottOpen_lean__pointwiseSubbasic_scottOpen node
+  class FunctionSpaces_pointwise_sSup_preservesDirectedSup_lean__pointwise_sSup_preservesDirectedSup node
+  class FunctionSpaces_preservesDirectedSup_coe_lean__preservesDirectedSup_coe node
+  class FunctionSpaces_projection_lean__projection node
+  class FunctionSpaces_proposition_3_10_converse_lean__proposition_3_10_converse node
+  class FunctionSpaces_proposition_3_10_forward_lean__proposition_3_10_forward node
+  class FunctionSpaces_proposition_3_12_lean__proposition_3_12 node
+  class FunctionSpaces_proposition_3_13_lean__proposition_3_13 node
+  class FunctionSpaces_proposition_3_14_lean__proposition_3_14 node
+  class FunctionSpaces_proposition_3_2_lean__proposition_3_2 node
+  class FunctionSpaces_proposition_3_5_lean__proposition_3_5 node
+  class FunctionSpaces_proposition_3_5_preservesDirectedSup_lean__proposition_3_5_preservesDirectedSup node
+  class FunctionSpaces_proposition_3_7_projection_lean__proposition_3_7_projection node
+  class FunctionSpaces_proposition_3_7_retraction_lean__proposition_3_7_retraction node
+  class FunctionSpaces_retr_ambientSSup_eq_sSup_lean__retr_ambientSSup_eq_sSup node
+  class FunctionSpaces_retr_bot_lean__retr_bot node
+  class FunctionSpaces_retr_eq_sSup_lean__retr_eq_sSup node
+  class FunctionSpaces_retr_wayBelow_of_wayBelow_incl_lean__retr_wayBelow_of_wayBelow_incl node
+  class FunctionSpaces_sInf_image_le_sInf_image_of_subset_lean__sInf_image_le_sInf_image_of_subset node
+  class FunctionSpaces_sSupMaps_lean__sSupMaps node
+  class FunctionSpaces_sSupMaps_apply_lean__sSupMaps_apply node
+  class FunctionSpaces_sSupMaps_continuous_lean__sSupMaps_continuous node
+  class FunctionSpaces_sSup_apply_lean__sSup_apply node
+  class FunctionSpaces_sSup_finsetSupOf_lean__sSup_finsetSupOf node
+  class FunctionSpaces_sSup_image_prod_mk_left_lean__sSup_image_prod_mk_left node
+  class FunctionSpaces_sSup_image_prod_mk_right_lean__sSup_image_prod_mk_right node
+  class FunctionSpaces_sSup_image_retr_wayBelow_lean__sSup_image_retr_wayBelow node
+  class FunctionSpaces_sSup_le_finsetSupOf_lean__sSup_le_finsetSupOf node
+  class FunctionSpaces_scottFunctionEvalSubbasis_lean__scottFunctionEvalSubbasis node
+  class FunctionSpaces_scottFunctionSpecializationLe_lean__scottFunctionSpecializationLe node
+  class FunctionSpaces_scottFunctionSubbasis_isOpen_lean__scottFunctionSubbasis_isOpen node
+  class FunctionSpaces_scottFunctionSubbasis_isOpen_scott_lean__scottFunctionSubbasis_isOpen_scott node
+  class FunctionSpaces_scottFunctionTopology_lean__scottFunctionTopology node
+  class FunctionSpaces_scottFunctionTopology_eq_induced_pi_lean__scottFunctionTopology_eq_induced_pi node
+  class FunctionSpaces_scottLambda_lean__scottLambda node
+  class FunctionSpaces_scottLambdaAt_lean__scottLambdaAt node
+  class FunctionSpaces_scottLambda_apply_lean__scottLambda_apply node
+  class FunctionSpaces_scottMapInducedPiTopology_lean__scottMapInducedPiTopology node
+  class FunctionSpaces_scottMapPointwiseSubbasis_lean__scottMapPointwiseSubbasis node
+  class FunctionSpaces_scottMapPointwiseTopology_lean__scottMapPointwiseTopology node
+  class FunctionSpaces_scottMapPointwiseTopology_eq_induced_pi_lean__scottMapPointwiseTopology_eq_induced_pi node
+  class FunctionSpaces_scottMap_eq_sSup_openInfs_lean__scottMap_eq_sSup_openInfs node
+  class FunctionSpaces_scottSubspaceExtend_lean__scottSubspaceExtend node
+  class FunctionSpaces_scottSubspaceExtendInf_lean__scottSubspaceExtendInf node
+  class FunctionSpaces_scottSubspaceExtendInf_eq_of_comp_lean__scottSubspaceExtendInf_eq_of_comp node
+  class FunctionSpaces_scottSubspaceExtendInf_eq_of_ext_lean__scottSubspaceExtendInf_eq_of_ext node
+  class FunctionSpaces_scottSubspaceExtendInf_le_of_mem_lean__scottSubspaceExtendInf_le_of_mem node
+  class FunctionSpaces_scottSubspaceExtendInf_mono_lean__scottSubspaceExtendInf_mono node
+  class FunctionSpaces_scottSubspaceExtendInf_mono_incl_lean__scottSubspaceExtendInf_mono_incl node
+  class FunctionSpaces_scottSubspaceExtendInf_mono_incl_apply_lean__scottSubspaceExtendInf_mono_incl_apply node
+  class FunctionSpaces_scottSubspaceExtendInf_mono_retr_lean__scottSubspaceExtendInf_mono_retr node
+  class FunctionSpaces_scottSubspaceExtend_eq_of_ext_lean__scottSubspaceExtend_eq_of_ext node
+  class FunctionSpaces_scottSubspaceExtend_maximal_lean__scottSubspaceExtend_maximal node
+  class FunctionSpaces_scottSubspaceExtend_mono_lean__scottSubspaceExtend_mono node
+  class FunctionSpaces_specializationLe_generateOpen_lean__specializationLe_generateOpen node
+  class FunctionSpaces_stepFun_lean__stepFun node
+  class FunctionSpaces_stepFun_of_not_wayBelow_lean__stepFun_of_not_wayBelow node
+  class FunctionSpaces_stepFun_of_wayBelow_lean__stepFun_of_wayBelow node
+  class FunctionSpaces_stepFun_preservesDirectedSup_lean__stepFun_preservesDirectedSup node
+  class FunctionSpaces_stepMap_lean__stepMap node
+  class FunctionSpaces_stepMap_apply_of_wayBelow_lean__stepMap_apply_of_wayBelow node
+  class FunctionSpaces_stepMap_le_of_wayBelow_lean__stepMap_le_of_wayBelow node
+  class FunctionSpaces_stepMap_pointwise_sSup_lean__stepMap_pointwise_sSup node
+  class FunctionSpaces_stepMap_wayBelow_lean__stepMap_wayBelow node
+  class FunctionSpaces_sup_apply_lean__sup_apply node
+  class FunctionSpaces_toOrderHom_lean__toOrderHom node
+  class FunctionSpaces_wayBelow_finset_sup_lean__wayBelow_finset_sup node
+  class FunctionSpaces_wayBelow_le_finset_sup_step_lean__wayBelow_le_finset_sup_step node
+  class Injective_InjectiveSpace_lean__Sierpinski node
+  class Injective_RetractSubspace_lean__RetractSubspace node
+  class Injective_corollary_1_6_lean__corollary_1_6 node
+  class Injective_corollary_1_7_lean__corollary_1_7 node
+  class Injective_isInjectiveSpace_sierpinski_power_lean__isInjectiveSpace_sierpinski_power node
+  class Injective_proposition_1_2_lean__proposition_1_2 node
+  class Injective_proposition_1_3_lean__proposition_1_3 node
+  class Injective_proposition_1_4_lean__proposition_1_4 node
+  class Injective_proposition_1_5_lean__proposition_1_5 node
+  class InverseLimits_Compatible_lean__Compatible node
+  class InverseLimits_InverseLimit_lean__InverseLimit node
+  class InverseLimits_coconeInf_lean__coconeInf node
+  class InverseLimits_coconeInf_lean__coconeInf_apply node
+  class InverseLimits_coconeInf_lean__coconeInf_climb node
+  class InverseLimits_coconeInf_lean__coconeInf_descend node
+  class InverseLimits_coconeInf_lean__coconeInf_comp_embInf node
+  class InverseLimits_coconeInf_lean__coconeInf_preservesDirectedSup node
+  class InverseLimits_coe_sSup_of_directed_lean__coe_sSup_of_directed node
+  class InverseLimits_corollary_4_3_lean__corollary_4_3 node
+  class InverseLimits_embInf_lean__embInf node
+  class InverseLimits_embInf_lean__embInf_succ node
+  class InverseLimits_embInf_lean__embInf_le_succ node
+  class InverseLimits_embInf_lean__embInf_family_directed node
+  class InverseLimits_embInfFun_lean__embInfFun node
+  class InverseLimits_embInfFun_lean__embInfFun_coe node
+  class InverseLimits_embInfFun_lean__embInf_monotone node
+  class InverseLimits_embInfFun_lean__embInf_preservesDirectedSup node
+  class InverseLimits_embLE_lean__embLE node
+  class InverseLimits_embLE_lean__embLE_self node
+  class InverseLimits_embLE_lean__embLE_succ node
+  class InverseLimits_embLE_lean__embLE_succ_left node
+  class InverseLimits_embLE_lean__embLE_le node
+  class InverseLimits_embLE_lean__embLE_mono node
+  class InverseLimits_embLE_lean__embLE_preservesDirectedSup node
+  class InverseLimits_iComp_lean__iComp node
+  class InverseLimits_iComp_lean__iComp_of_le node
+  class InverseLimits_iComp_lean__iComp_of_ge node
+  class InverseLimits_iComp_lean__iComp_self node
+  class InverseLimits_iComp_lean__iComp_incl_le node
+  class InverseLimits_iComp_lean__iComp_preservesDirectedSup node
+  class InverseLimits_iComp_lean__iComp_monotone node
+  class InverseLimits_iComp_lean__iComp_compatible node
+  class InverseLimits_instCompleteLattice_lean__instCompleteLattice node
+  class InverseLimits_instInfSet_lean__retr_sInf node
+  class InverseLimits_instInfSet_lean__compatible_sInf node
+  class InverseLimits_instInfSet_lean__instInfSet node
+  class InverseLimits_instInfSet_lean__coe_sInf node
+  class InverseLimits_instInfSet_lean__isGLB_sInf_ node
+  class InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder node
+  class InverseLimits_inverseLimitSInfCoe_lean__inverseLimitSInfCoe node
+  class InverseLimits_inverseLimitTopology_lean__coordinate_continuous node
+  class InverseLimits_inverseLimitTopology_lean__t0Space node
+  class InverseLimits_inverseLimitTopology_lean__specializationLe_iff node
+  class InverseLimits_inverseLimitTopology_lean__isInjectiveSpace node
+  class InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi node
+  class InverseLimits_inverseLimitTopology_lean__eq_iSup node
+  class InverseLimits_lemma_4_5_lean__lemma_4_5 node
+  class InverseLimits_projInf_lean__projInf node
+  class InverseLimits_projection_galoisConnection_lean__projection_galoisConnection node
+  class InverseLimits_proposition_4_1_lean__proposition_4_1 node
+  class InverseLimits_proposition_4_2_lean__proposition_4_2 node
+  class ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup node
+  class ScottMaps_continuous_of_preservesDirectedSup_lean__continuous_of_preservesDirectedSup node
+  class ScottMaps_continuous_preservesDirectedSup_lean__continuous_preservesDirectedSup node
+  class ScottMaps_meet_preservesDirectedSup_lean__meet_preservesDirectedSup node
+  class ScottMaps_preservesDirectedSup_monotone_lean__preservesDirectedSup_monotone node
+  class ScottMaps_proposition_2_5_lean__proposition_2_5 node
+  class ScottMaps_proposition_2_6_lean__proposition_2_6 node
+  class ScottMaps_proposition_2_7_lean__sup node
+  class ScottMaps_proposition_2_7_lean__inf_left node
+  class ScottMaps_proposition_2_7_lean__inf_right node
+  class ScottMaps_scottOpen_preimage_lean__scottOpen_preimage node
+  class Specialization_MonotoneNet_lean__MonotoneNet node
+  class Specialization_ScottConvergesTo_lean__ScottConvergesTo node
+  class WayBelow_ContinuousLattice_lean__interpolate node
+  class WayBelow_WayBelow_lean__bot_wayBelow node
+  class WayBelow_WayBelow_lean__directedOn_wayBelow node
+  class WayBelow_WayBelow_lean__sInf_wayBelow node
+  class WayBelow_proposition_2_2_lean__proposition_2_2 node
+  class WayBelow_scottOpen_wayBelow_lean__scottOpen_wayBelow node
