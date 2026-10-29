@@ -5,9 +5,7 @@ public import Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_2
 public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3
-public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_scottOpen
-public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_le_finset_sup_step
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaces.corollary_3_4
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottLambda_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_5

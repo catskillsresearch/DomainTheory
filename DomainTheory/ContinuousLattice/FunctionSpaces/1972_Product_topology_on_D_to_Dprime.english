@@ -18,6 +18,12 @@ Namespace **`scottMapInducedPiTopology`** packages the equivalent eval subbase (
 
 When $D$ and $D'$ are continuous lattices, the Scott topology on **`ScottMap D D'`** (from **`isContinuousLattice`** in namespace **`stepMap`**) agrees with this product topology:
 
-**Theorem (`scottTopology_eq_pointwise`).** On **`ScottMap D D'`**, **`scottTopologicalSpace = pointwiseTopology D D'`**.
+**Lemma (`pointwiseSubbasic_scottOpen`).** Eval subbasic sets are Scott-open in **`ScottMap D D'`**.
+
+**Lemma (`wayBelow_le_finset_sup_step`).** From **`φ ≪ g`**, a finite finset of step maps majorizes **`φ`**.
+
+**Lemma (`wayBelow_finset_sup`).** A finite sup of way-below elements is way-below **`g`**.
+
+**Theorem (`scottTopology_eq_pointwise`).** On **`ScottMap D D'`**, **`scottTopologicalSpace = pointwiseTopology D D'`** (uses the three lemmas above).
 
 **Theorem (`scottTopology_eq_inducedPi`).** On **`ScottMap D D'`**, **`scottTopologicalSpace = scottMapInducedPiTopology D D'`** (from **`scottTopology_eq_pointwise`** and **`eq_induced_pi`**). This is Theorem 3.3(b).

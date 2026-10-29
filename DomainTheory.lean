@@ -301,7 +301,6 @@ import DomainTheory.ContinuousLattice.FunctionSpaces.lemma_3_9_incl_inf
 import DomainTheory.ContinuousLattice.FunctionSpaces.lemma_3_9_retr_inf
 import DomainTheory.ContinuousLattice.FunctionSpaces.mem_finsetSupOf_of_mem
 import DomainTheory.ContinuousLattice.FunctionSpaces.min
-import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_scottOpen
 import DomainTheory.ContinuousLattice.FunctionSpaces.projection
 import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_2_10
 import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_10_converse
@@ -338,8 +337,6 @@ import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun
 import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3
 import DomainTheory.ContinuousLattice.FunctionSpaces.toOrderHom
-import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
-import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_le_finset_sup_step
 import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
 import DomainTheory.ContinuousLattice.Injective.RetractSubspace
 import DomainTheory.ContinuousLattice.Injective.corollary_1_6

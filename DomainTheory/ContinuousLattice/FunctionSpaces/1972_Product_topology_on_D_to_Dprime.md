@@ -2,16 +2,8 @@
 
 @import "1972_Product_topology_on_D_to_Dprime.english" {code_block=false}
 
-**[ContinuousLattice/FunctionSpaces/pointwiseSubbasic_scottOpen.lean](DomainTheory/ContinuousLattice/FunctionSpaces/pointwiseSubbasic_scottOpen.lean)**
-
-@import "pointwiseSubbasic_scottOpen.lean"
-**[ContinuousLattice/FunctionSpaces/wayBelow_finset_sup.lean](DomainTheory/ContinuousLattice/FunctionSpaces/wayBelow_finset_sup.lean)**
-
-@import "wayBelow_finset_sup.lean"
-**[ContinuousLattice/FunctionSpaces/wayBelow_le_finset_sup_step.lean](DomainTheory/ContinuousLattice/FunctionSpaces/wayBelow_le_finset_sup_step.lean)**
-
-@import "wayBelow_le_finset_sup_step.lean"
 **[scottMapInducedPiTopology.lean](scottMapInducedPiTopology.lean)**
 
 @import "scottMapInducedPiTopology.lean"
 
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-10-29) — <a href="../1972_REVISION.md">1972 revision progress</a></p>
