@@ -5,3 +5,5 @@ x : I \to X
 $$
 
 where $\langle I, \le \rangle$ is a directed set and where $i \le j$ implies $x_i \sqsubseteq x_j$ for all $i, j \in I$. In a $T_1$-space a monotone net is constant (hence, uninteresting) because the $\sqsubseteq$-relation is the identity.
+
+On a complete lattice $D$, the library records the same idea as **`MonotoneNet`**: for a directed index type $\iota$ and a net $x : \iota \to D$, require **`Monotone x`** (i.e. $i \le j \Rightarrow x_i \le x_j$ in the lattice order). With the Scott topology, $\sqsubseteq$ agrees with $\le$ (`SpecializationPreorder.scott_iff`); **Proposition 2.1** is stated using `MonotoneNet` and `ScottConvergesTo`.

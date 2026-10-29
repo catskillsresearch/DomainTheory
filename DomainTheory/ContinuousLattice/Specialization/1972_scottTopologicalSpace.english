@@ -1,1 +1,7 @@
 The sets satisfying (i) and (ii) form the *induced topology* on a partially ordered set $X$, which is still a $T_0$-space because the sets $\{ x \in X : x \not\sqsubseteq y \}$ remain open even in the sense of (ii). Obviously a directed set $S \subseteq X$ can be regarded as a net, and now in view of (ii) it follows that $S$ converges to $\bigsqcup S$ — if this lub exists.
+
+On a complete lattice $D$, the formalization names this induced topology **`scottTopologicalSpace`**: a concrete `TopologicalSpace D` built from Mathlib’s Scott construction, **not** a global typeclass default (so we can still name Scott explicitly in later theorems and compare other topologies on the same $D$).
+
+**Lemma (`scottTopologicalSpace.t0Space`).** $D$ is a $T_0$-space for the topology `scottTopologicalSpace`.
+
+**Proof.** After `let : TopologicalSpace D := scottTopologicalSpace`, implicit `[TopologicalSpace D]` in the Scott library matches the topology in the goal `@T0Space D scottTopologicalSpace`; then `IsScott` holds by definition and Mathlib supplies `T0Space`. (That `let` line does not pass arguments into the def—it registers the def as the local topology instance for the proof block.) $\square$
