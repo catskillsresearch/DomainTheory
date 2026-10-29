@@ -1,0 +1,41 @@
+Every $T_0$-space becomes a partially ordered set under the definition:
+
+$$
+x \sqsubseteq y \text{ iff whenever } x \in U \text{ and } U \text{ is open, then } y \in U.
+$$
+
+We call relation $\sqsubseteq$ **the specialization preorder** on $X$. It is reflexive and transitive on every topological space; on a $T_0$-space it is antisymmetric, and that antisymmetry is exactly the $T_0$-axiom.
+
+In the converse direction, every partially ordered set $\langle X, \sqsubseteq \rangle$ can be so obtained, for we have only to define $U \subseteq X$ as being open if it satisfies the condition:
+
+(i) whenever $x \in U$ and $x \sqsubseteq y$, then $y \in U$.
+
+The axioms for partial order make $X$ a $T_0$-space, because for any $y \in X$ the set
+
+$$
+\{ x \in X : x \not\sqsubseteq y \}
+$$
+
+is open. This connection is not very interesting, however.
+
+The formalization names the same predicate `SpecializationPreorder`. The lemmas below are the library tools used in the inverse-limit specialization characterization and in Theorem 2.12.
+
+**Notation.** For the specialization preorder above, Mathlib also writes $y \mathrel{⤳} x$ when $y$ lies in every open neighborhood of $x$ (the relation `Specializes`, read “$y$ specializes $x$”). The arrow points from the larger point toward the smaller one; Scott's $x \sqsubseteq y$ is the same comparison with the opposite order of arguments.
+
+**Lemma (`SpecializationPreorder.iff_specializes`).** For $x, y$ in a topological space, $x \sqsubseteq y$ iff $y \mathrel{⤳} x$.
+
+**Proof.** Both sides mean: whenever $U$ is open and $x \in U$, then $y \in U$. This is `specializes_iff_forall_open`. $\square$
+
+**Lemma (`SpecializationPreorder.scott_iff`).** On a complete lattice $D$ with the Scott topology `scottTopologicalSpace`, for all $x, y \in D$,
+
+$$
+x \sqsubseteq y \text{ (specialization preorder)} \iff x \le y \text{ (lattice order)}.
+$$
+
+**Proof.** ($\Rightarrow$) Suppose $x \sqsubseteq y$ but $x \not\le y$. The set $U = \{ z \in D : z \not\le y \}$ is Scott-open (`ScottOpen.not_le`). We have $x \in U$ since $x \not\le y$, so $y \in U$ by the specialization preorder; that is $y \not\le y$, a contradiction. Hence $x \le y$.
+
+($\Leftarrow$) Suppose $x \le y$ and $U$ is Scott-open with $x \in U$. Since $U$ is an upset, $y \in U$. Thus $x \sqsubseteq y$. $\square$
+
+**Lemma (`SpecializationPreorder.map`).** If $x \sqsubseteq y$ in $X$ and $f : X \to Y$ is continuous, then $f(x) \sqsubseteq f(y)$ in $Y$.
+
+**Proof.** Let $V \subseteq Y$ be open with $f(x) \in V$. Then $x \in f^{-1}(V)$ and $f^{-1}(V)$ is open in $X$. From $x \sqsubseteq y$ we get $y \in f^{-1}(V)$, hence $f(y) \in V$. $\square$

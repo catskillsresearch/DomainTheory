@@ -1,9 +1,6 @@
 module
 
 public import Mathlib.Topology.Order.ScottTopology
-public import Mathlib.Topology.Separation.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.CompleteLattice.Basic
 
 @[expose] public section
 

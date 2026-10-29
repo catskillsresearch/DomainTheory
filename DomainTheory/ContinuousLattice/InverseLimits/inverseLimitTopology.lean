@@ -5,7 +5,7 @@ public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.projInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
-public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
+public import DomainTheory.ContinuousLattice.Specialization.SpecializationPreorder
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.ContinuousLattices.lemma_3_9
@@ -56,8 +56,8 @@ theorem t0Space :
     ⟨⟨rfl⟩, Subtype.val_injective⟩
   exact hval.t0Space
 
-theorem specializationLe_iff (x y : InverseLimit D P) :
-    @SpecializationLe (InverseLimit D P) (inverseLimitTopology D P) x y ↔ x ≤ y := by
+theorem specializationPreorder_iff (x y : InverseLimit D P) :
+    @SpecializationPreorder (InverseLimit D P) (inverseLimitTopology D P) x y ↔ x ≤ y := by
   let stageOrder : ∀ n, Preorder (D n) := fun _ => inferInstance
   let limitOrder : Preorder (InverseLimit D P) := inferInstance
   let : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
@@ -66,13 +66,13 @@ theorem specializationLe_iff (x y : InverseLimit D P) :
   let : Preorder (InverseLimit D P) := limitOrder
   have hval : Topology.IsEmbedding (Subtype.val : InverseLimit D P → ∀ n, D n) :=
     ⟨⟨rfl⟩, Subtype.val_injective⟩
-  rw [SpecializationLe.iff_specializes, ← hval.isInducing.specializes_iff, specializes_pi]
+  rw [SpecializationPreorder.iff_specializes, ← hval.isInducing.specializes_iff, specializes_pi]
   constructor
   · intro h n
-    rw [← SpecializationLe.scott_iff, SpecializationLe.iff_specializes]
+    rw [← SpecializationPreorder.scott_iff, SpecializationPreorder.iff_specializes]
     exact h n
   · intro h n
-    rw [← SpecializationLe.iff_specializes, SpecializationLe.scott_iff]
+    rw [← SpecializationPreorder.iff_specializes, SpecializationPreorder.scott_iff]
     exact h n
 
 theorem isInjectiveSpace (hD : ∀ n, ContinuousLattice (D n)) :
@@ -117,7 +117,7 @@ theorem scottTopology_eq_induced_pi (hD : ∀ n, ContinuousLattice (D n)) :
   let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
   let : T0Space (InverseLimit D P) := t0Space D P
   exact (theorem_2_12.backward_exact (isInjectiveSpace D P hD)
-    (specializationLe_iff D P)).2
+    (specializationPreorder_iff D P)).2
 
 theorem eq_iSup (x : InverseLimit D P) :
     x = ⨆ n, embInf D P n (x.1 n) := by

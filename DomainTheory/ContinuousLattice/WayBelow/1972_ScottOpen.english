@@ -1,9 +1,5 @@
-For a partially ordered set $X$, a subset $U \subseteq X$ is open in the *induced topology* when it satisfies:
-
-(i) whenever $x \in U$ and $x \sqsubseteq y$, then $y \in U$;
+We shall find that most of the facts about the topology of the spaces we are concerned with here can be expressed in terms of least upper bounds (lubs). It is not always the case, however, that lubs are limits. Thus, for a partially ordered set $X$, we impose a further restriction on its topology beyond condition (i) for saying when a subset $U$ is open:
 
 (ii) whenever $S \subseteq X$ is *directed*, $\bigsqcup S$ exists, and $\bigsqcup S \in U$, then $S \cap U \neq \emptyset$.
 
-Directed sets are non-empty. The sets satisfying (i) and (ii) are the open sets of the induced topology.
-
-The discussion that leads to (i) and (ii) is in [Specialization order](../Specialization/1972_Specialization_order.md).
+By a directed subset of $X$ we of course mean that it is directed in the sense of the partial ordering $\sqsubseteq$. Note that in this paper directed sets are always *non-empty*.

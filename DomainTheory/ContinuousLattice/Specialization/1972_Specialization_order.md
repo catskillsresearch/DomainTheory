@@ -2,7 +2,7 @@
 
 @import "Specialization.mermaid"
 
-- [Specialization preorder](1972_SpecializationLe.md)
+- [Specialization preorder](1972_SpecializationPreorder.md)
 - [Scott-open sets](../WayBelow/1972_ScottOpen.md)
 - [Scott topology on a complete lattice](1972_scottTopologicalSpace.md)
 - [Monotone nets](1972_MonotoneNet.md)

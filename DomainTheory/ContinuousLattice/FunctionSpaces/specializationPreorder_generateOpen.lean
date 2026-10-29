@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
+public import DomainTheory.ContinuousLattice.Specialization.SpecializationPreorder
 public import Mathlib.Topology.Order
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottFunctionEvalSubbasis
 public import Mathlib.Data.Set.Basic
@@ -16,7 +16,7 @@ variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-theorem specializationLe_generateOpen (f g : C(X, Y)) (hfg : ∀ x, SpecializationLe (f x) (g x))
+theorem specializationPreorder_generateOpen (f g : C(X, Y)) (hfg : ∀ x, SpecializationPreorder (f x) (g x))
     {V : Set (C(X, Y))} (hV : GenerateOpen (scottFunctionEvalSubbasis X Y) V) (hf : f ∈ V) :
     g ∈ V :=
   match hV with
@@ -26,10 +26,10 @@ theorem specializationLe_generateOpen (f g : C(X, Y)) (hfg : ∀ x, Specializati
   | .univ => hf
   | .inter s t hs ht => by
     rcases hf with ⟨hfs, hft⟩
-    exact Set.mem_inter (specializationLe_generateOpen f g hfg hs hfs)
-      (specializationLe_generateOpen f g hfg ht hft)
+    exact Set.mem_inter (specializationPreorder_generateOpen f g hfg hs hfs)
+      (specializationPreorder_generateOpen f g hfg ht hft)
   | .sUnion S hS => by
     obtain ⟨W, hWS, hfW⟩ := Set.mem_sUnion.mp hf
-    exact Set.mem_sUnion.mpr ⟨W, hWS, specializationLe_generateOpen f g hfg (hS W hWS) hfW⟩
+    exact Set.mem_sUnion.mpr ⟨W, hWS, specializationPreorder_generateOpen f g hfg (hS W hWS) hfW⟩
 
 end DomainTheory.ContinuousLattice

@@ -25,7 +25,7 @@ theorem proposition_4_1 (hD : ∀ n, ContinuousLattice (D n)) :
   let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
   let : T0Space (InverseLimit D P) := inverseLimit.t0Space D P
   exact (theorem_2_12.backward_exact (inverseLimit.isInjectiveSpace D P hD)
-    (inverseLimit.specializationLe_iff D P)).1
+    (inverseLimit.specializationPreorder_iff D P)).1
 
 end InverseLimit
 end DomainTheory.ContinuousLattice

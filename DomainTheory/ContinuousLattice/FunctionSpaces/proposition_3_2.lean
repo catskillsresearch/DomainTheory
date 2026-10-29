@@ -1,7 +1,7 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottFunctionSpecializationLe
+public import DomainTheory.ContinuousLattice.Specialization.SpecializationPreorder
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottFunctionSpecializationPreorder
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottFunctionTopology
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Topology.Defs.Basic
@@ -19,7 +19,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 theorem proposition_3_2 {f g : C(X, Y)} :
     letI := scottFunctionTopology X Y
-    (SpecializationLe f g ↔ ∀ x, SpecializationLe (f x) (g x)) :=
-  scottFunctionSpecializationLe
+    (SpecializationPreorder f g ↔ ∀ x, SpecializationPreorder (f x) (g x)) :=
+  scottFunctionSpecializationPreorder
 
 end DomainTheory.ContinuousLattice

@@ -11,9 +11,9 @@
 **[const_apply.lean](const_apply.lean)**
 
 @import "const_apply.lean"
-**[scottFunctionSpecializationLe.lean](scottFunctionSpecializationLe.lean)**
+**[scottFunctionSpecializationPreorder.lean](scottFunctionSpecializationPreorder.lean)**
 
-@import "scottFunctionSpecializationLe.lean"
+@import "scottFunctionSpecializationPreorder.lean"
 **[scottFunctionSubbasis_isOpen.lean](scottFunctionSubbasis_isOpen.lean)**
 
 @import "scottFunctionSubbasis_isOpen.lean"

@@ -161,9 +161,9 @@
 **[sSup_le_finsetSupOf.lean](sSup_le_finsetSupOf.lean)**
 
 @import "sSup_le_finsetSupOf.lean"
-**[specializationLe_generateOpen.lean](specializationLe_generateOpen.lean)**
+**[specializationPreorder_generateOpen.lean](specializationPreorder_generateOpen.lean)**
 
-@import "specializationLe_generateOpen.lean"
+@import "specializationPreorder_generateOpen.lean"
 **[stepFun.lean](stepFun.lean)**
 
 @import "stepFun.lean"

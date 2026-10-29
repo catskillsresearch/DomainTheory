@@ -1,7 +1,7 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
-public import DomainTheory.ContinuousLattice.FunctionSpaces.specializationLe_generateOpen
+public import DomainTheory.ContinuousLattice.Specialization.SpecializationPreorder
+public import DomainTheory.ContinuousLattice.FunctionSpaces.specializationPreorder_generateOpen
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottFunctionSubbasis_isOpen
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottFunctionTopology
 public import Mathlib.Data.Set.Basic
@@ -18,14 +18,14 @@ variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-theorem scottFunctionSpecializationLe {f g : C(X, Y)} :
+theorem scottFunctionSpecializationPreorder {f g : C(X, Y)} :
     letI := scottFunctionTopology X Y
-    SpecializationLe f g ↔ ∀ x, SpecializationLe (f x) (g x) := by
+    SpecializationPreorder f g ↔ ∀ x, SpecializationPreorder (f x) (g x) := by
   let : TopologicalSpace (C(X, Y)) := scottFunctionTopology X Y
   constructor
   · intro hfg x U hU hfU
     exact hfg {h | h x ∈ U} (scottFunctionSubbasis_isOpen (X := X) (Y := Y) hU) hfU
   · intro hfg U hU hfU
-    exact specializationLe_generateOpen f g hfg hU hfU
+    exact specializationPreorder_generateOpen f g hfg hU hfU
 
 end DomainTheory.ContinuousLattice
