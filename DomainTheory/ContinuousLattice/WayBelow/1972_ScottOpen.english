@@ -3,3 +3,53 @@ We shall find that most of the facts about the topology of the spaces we are con
 (ii) whenever $S \subseteq X$ is *directed*, $\bigsqcup S$ exists, and $\bigsqcup S \in U$, then $S \cap U \neq \emptyset$.
 
 By a directed subset of $X$ we of course mean that it is directed in the sense of the partial ordering $\sqsubseteq$. Note that in this paper directed sets are always *non-empty*.
+
+Scott-open sets are exactly the open sets of `scottTopologicalSpace`.
+
+On a complete lattice $D$ we use the lattice order $\le$ (for the specialization order on $D$ with the Scott topology, this agrees with $\sqsubseteq$; see `SpecializationPreorder.scott_iff`). Condition (i) is that $U$ be an *upper set* (an upset): if $a \in U$ and $a \le b$, then $b \in U$. The formalization packages (i) and (ii) for subsets of $D$ as `ScottOpen`. The lemmas below are the library tools that justify that equivalence.
+
+**Definition (`ScottOpen`).** A subset $U \subseteq D$ is **Scott-open** when $U$ is an upper set and, for every nonempty directed $S \subseteq D$, if $\sup S \in U$ then $S \cap U \neq \emptyset$.
+
+**Lemma (`ScottOpen.isUpperSet`).** If $U$ is Scott-open, then $U$ is an upper set.
+
+**Proof.** This is the first component of the definition. $\square$
+
+**Lemma (`ScottOpen.inter`).** If $U$ and $V$ are Scott-open, then $U \cap V$ is Scott-open.
+
+**Proof.** $U \cap V$ is an upper set. If $\sup S \in U \cap V$ for directed nonempty $S$, then $\sup S \in U$ and $\sup S \in V$. By Scott-openness of $U$ and $V$ there are $s_1, s_2 \in S$ with $s_1 \in U$ and $s_2 \in V$. Directedness gives $s_3 \in S$ with $s_3 \ge s_1, s_2$, hence $s_3 \in U \cap V$. $\square$
+
+**Lemma (`ScottOpen.univ`).** The whole lattice $D$ is Scott-open.
+
+**Proof.** $D$ is an upper set. If $\sup S \in D$ for nonempty $S$, any $s \in S$ lies in $D$. $\square$
+
+**Lemma (`ScottOpen.sUnion`).** If every member of a family $\mathcal{C}$ of subsets of $D$ is Scott-open, then $\bigcup \mathcal{C}$ is Scott-open.
+
+**Proof.** A union of upper sets is an upper set. If $\sup S$ lies in some $U \in \mathcal{C}$ with $U$ Scott-open, pick $s \in S \cap U$; then $s \in \bigcup \mathcal{C}$. $\square$
+
+**Lemma (`ScottOpen.iff_dirSupInacc`).** For $U \subseteq D$,
+
+$$
+\text{$U$ is Scott-open} \iff \text{$U$ is an upper set and $U$ is inaccessible under directed sups}
+$$
+
+(in Mathlib: `IsUpperSet U ∧ DirSupInacc U`).
+
+**Proof.** Both sides unfold to the same upset condition and the same “if $\sup S \in U$ for directed nonempty $S$, then $S \cap U \neq \emptyset$” clause, phrased either with `sSup` or with `IsLUB`. $\square$
+
+**Lemma (`ScottOpen.isOpen_iff`).** With the Scott topology `scottTopologicalSpace` on $D$, a set $U \subseteq D$ is topologically open iff $U$ is Scott-open.
+
+**Proof.** Rewrite via `ScottOpen.iff_dirSupInacc` and the definition of `scottTopologicalSpace` as `Topology.scott D Set.univ`; conclude with Mathlib’s `IsScott.isOpen_iff_isUpperSet_and_dirSupInaccOn`. $\square$
+
+**Lemma (`ScottOpen.not_le`).** For any $L \in D$, the set $U = \{ z \in D : z \not\le L \}$ is Scott-open.
+
+**Proof.** If $a \in U$ and $a \le b$, then $b \not\le L$ (otherwise $a \le b \le L$). If $\sup S \in U$ for directed nonempty $S$ but $S \cap U = \emptyset$, then every $s \in S$ satisfies $s \le L$, so $\sup S \le L$, contradicting $\sup S \in U$. $\square$
+
+**Lemma (`ScottOpen.wayBelow`).** For $x \in D$, the set
+
+$$
+\{ z \in D : \exists U \subseteq D,\ \text{$U$ Scott-open} \land z \in U \land U \subseteq \{ w : x \le w \} \}
+$$
+
+is Scott-open. Once the way-below relation $x \ll y$ is defined (`WayBelow`), this set is $\{ z : x \ll z \}$; see `WayBelow.lean`.
+
+**Proof.** If $a$ belongs to a Scott-open $U$ with $U \subseteq \{ w : x \le w \}$ and $a \le b$, then $b \in U$ by the upset property, so $b$ is in the same set. If $\sup S$ belongs to the set, pick a witness Scott-open $U$ with $\sup S \in U \subseteq \{ w : x \le w \}$. By Scott-openness of $U$, some $s \in S$ lies in $U$, and the same $U$ witnesses $s$ in $\{ z : x \ll z \}$ in the existential form. $\square$

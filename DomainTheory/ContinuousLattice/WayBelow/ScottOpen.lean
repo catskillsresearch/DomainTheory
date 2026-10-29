@@ -72,6 +72,15 @@ theorem not_le (L : D) : ScottOpen {z : D | ¬ z ≤ L} := by
   by_contra hsL
   exact hcon ⟨s, hs, hsL⟩
 
+theorem wayBelow (x : D) :
+    ScottOpen {z : D | ∃ U : Set D, ScottOpen U ∧ z ∈ U ∧ U ⊆ Set.Ici x} := by
+  refine ⟨fun a b hab ha => ?_, fun S hS hSdir hmem => ?_⟩
+  obtain ⟨U, hU, haU, hsub⟩ := ha
+  exact ⟨U, hU, hU.1 hab haU, hsub⟩
+  obtain ⟨U, hU, hsupU, hsub⟩ := hmem
+  obtain ⟨s, hsS, hsU⟩ := hU.2 hS hSdir hsupU
+  exact ⟨s, hsS, ⟨U, hU, hsU, hsub⟩⟩
+
 end ScottOpen
 
 end DomainTheory.ContinuousLattice

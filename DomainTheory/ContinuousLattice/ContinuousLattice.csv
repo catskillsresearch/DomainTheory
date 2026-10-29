@@ -300,7 +300,7 @@ ScottMapRetraction,structure,FunctionSpaces/ScottMapRetraction.lean,ScottMapRetr
 ScottOpen,def,WayBelow/ScottOpen.lean,Prop,Set D,,,,,,,,,,
 scottOpen_preimage,theorem,ScottMaps/scottOpen_preimage.lean,ScottOpen (f ⁻¹' U),D → D',PreservesDirectedSup f,Set D',ScottOpen U,,,,,,,
 scottOpen_preimage_orderIso,theorem,ContinuousLattices/scottOpen_preimage_orderIso.lean,ScottOpen (e ⁻¹' U),A ≃o B,Set B,ScottOpen U,,,,,,,,
-scottOpen_wayBelow,theorem,WayBelow/scottOpen_wayBelow.lean,ScottOpen {z | x ≪ z},D,,,,,,,,,,
+ScottOpen.wayBelow,theorem,WayBelow/ScottOpen.lean,ScottOpen {z | x ≪ z},D,,,,,,,,,,
 scottSubspaceExtend,def,FunctionSpaces/scottSubspaceExtend.lean,D,,,,,,,,,,,
 scottSubspaceExtend_eq_of_ext,theorem,FunctionSpaces/scottSubspaceExtend_eq_of_ext.lean,scottSubspaceExtend e f y = scottSubspaceExtend e g' y,X → Y,X → D,"∀ x, f x = g' x",Y,,,,,,,
 scottSubspaceExtend_maximal,theorem,FunctionSpaces/scottSubspaceExtend_maximal.lean,(f' : Y → D) y ≤ scottSubspaceExtend e f y,ContinuousLattice D,X → Y,IsEmbedding e,X → D,ScottMap Y D,"∀ x, f' (e x) = f x",Y,,,,

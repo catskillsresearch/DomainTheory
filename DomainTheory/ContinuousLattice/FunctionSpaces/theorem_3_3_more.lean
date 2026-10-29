@@ -15,7 +15,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_is
 public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapPointwiseTopology
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
+
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapPointwiseTopology_eq_induced_pi
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
 
@@ -69,7 +69,7 @@ theorem theorem_3_3.topology (hD : ContinuousLattice D) (hD' : ContinuousLattice
       refine hφsub (WayBelow.le_trans hφF (wayBelow_finset_sup fun p hp => ?_))
       exact stepMap_wayBelow (Set.mem_iInter₂.1 hh p hp)
     · exact @isOpen_biInter_finset (ScottMap D D') (D × D') (scottMapPointwiseTopology D D') F _
-        (fun p _ => pointwiseSubbasic_isOpen p.1 (ScottOpen.isOpen_iff.mpr (scottOpen_wayBelow p.2)))
+        (fun p _ => pointwiseSubbasic_isOpen p.1 (ScottOpen.isOpen_iff.mpr (ScottOpen.wayBelow p.2)))
     · exact Set.mem_iInter₂.2 fun p hp => hF p hp
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}

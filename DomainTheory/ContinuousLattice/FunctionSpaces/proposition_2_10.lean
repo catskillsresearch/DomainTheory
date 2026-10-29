@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
+
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_image_retr_wayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.retr_wayBelow_of_wayBelow_incl
 public import DomainTheory.ContinuousLattice.FunctionSpaces.image_retr_wayBelow_directed
@@ -60,7 +60,7 @@ theorem b (R : IsContinuousLatticeRetraction D D') (hD' : ContinuousLattice D') 
       rw [R.retr_incl z] at hjle
       exact hU.1 hjle hpU
     · rw [isOpen_induced_iff (t := scottTopologicalSpace)]
-      exact ⟨{z' | x' ≪ z'}, ScottOpen.isOpen_iff.mpr (scottOpen_wayBelow x'), rfl⟩
+      exact ⟨{z' | x' ≪ z'}, ScottOpen.isOpen_iff.mpr (ScottOpen.wayBelow x'), rfl⟩
 
 end proposition_2_10
 

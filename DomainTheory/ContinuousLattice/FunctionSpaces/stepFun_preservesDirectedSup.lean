@@ -6,7 +6,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_of_not_wayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_of_wayBelow
 public import Mathlib.Order.BourbakiWitt
-public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
+
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -30,7 +30,7 @@ theorem stepFun_preservesDirectedSup (e : D) (e' : D') :
   show stepFun e e' (sSup S) = sSup (Set.image (stepFun e e') S)
   by_cases h : e ≪ sSup S
   · rw [stepFun_of_wayBelow h]
-    obtain ⟨s, hsS, hes⟩ := (scottOpen_wayBelow e).2 hS hSdir h
+    obtain ⟨s, hsS, hes⟩ := (ScottOpen.wayBelow e).2 hS hSdir h
     apply le_antisymm
     · refine le_sSup_of_le (Set.mem_image_of_mem _ hsS) ?_
       rw [stepFun_of_wayBelow hes]

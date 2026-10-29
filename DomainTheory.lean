@@ -450,7 +450,6 @@ import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 import DomainTheory.ContinuousLattice.WayBelow.proposition_2_2
-import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
 import DomainTheory.DataTypesAsLattices.Classification.Basic
 import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
 import DomainTheory.DataTypesAsLattices.Classification.IsBdelta

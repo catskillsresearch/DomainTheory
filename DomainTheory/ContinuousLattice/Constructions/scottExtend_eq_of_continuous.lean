@@ -5,7 +5,7 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
+
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -31,7 +31,7 @@ theorem scottExtend_eq_of_continuous (hE : ContinuousLattice E) (e : X → Y)
   · rw [← hE.sSup_wayBelow (f x₀)]
     refine sSup_le fun a ha => ?_
     have hWopen : @IsOpen E scottTopologicalSpace {z : E | a ≪ z} :=
-      ScottOpen.isOpen_iff.mpr (scottOpen_wayBelow a)
+      ScottOpen.isOpen_iff.mpr (ScottOpen.wayBelow a)
     have hpre : IsOpen (f ⁻¹' {z : E | a ≪ z}) := continuous_def.mp hf _ hWopen
     rw [he.isInducing.isOpen_iff] at hpre
     obtain ⟨V, hVo, hVeq⟩ := hpre
