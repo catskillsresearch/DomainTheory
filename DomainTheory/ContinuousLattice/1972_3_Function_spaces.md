@@ -7,7 +7,7 @@
 - [Induced pi topology on $C(X, Y)$](FunctionSpaces/1972_continuousMapInducedPiTopology.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Definition 3.1: Function space](FunctionSpaces/1972_Definition_3_1.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Elements of $[D \to D']$](FunctionSpaces/1972_Elements_of_D_to_Dprime.md) [✓](ContinuousLattice/1972_REVISION.md)
-- [Step function (pointwise)](FunctionSpaces/1972_stepFun.md)
+- [Step function (pointwise)](FunctionSpaces/1972_stepFun.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Step map $\overrightarrow{e}[e,e']$](FunctionSpaces/1972_stepMap.md)
 - [Proposition 3.2](FunctionSpaces/1972_Proposition_3_2.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Product topology on $[D \to D']$](FunctionSpaces/1972_Product_topology_on_D_to_Dprime.md)
