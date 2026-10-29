@@ -33,38 +33,37 @@ flowchart TB
   FunctionSpaceTower_towerProj -->|"1"| FunctionSpaceTower_DInf
   InverseLimits -->|"2"| FunctionSpaceTower_DInf
   FunctionSpaceTower_CLat -->|"1"| FunctionSpaceTower_conjMap
-  FunctionSpaces -->|"3"| FunctionSpaceTower_conjMap
-  ScottMaps -->|"1"| FunctionSpaceTower_conjMap
+  FunctionSpaces -->|"1"| FunctionSpaceTower_conjMap
   FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_conjMap_iSup
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_conjMap_iSup
-  FunctionSpaces -->|"3"| FunctionSpaceTower_conjMap_iSup
+  FunctionSpaces -->|"1"| FunctionSpaceTower_conjMap_iSup
   InverseLimits -->|"2"| FunctionSpaceTower_conjMap_iSup
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
   FunctionSpaces -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
   InverseLimits -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
   FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_embInfInf
-  FunctionSpaces -->|"2"| FunctionSpaceTower_embInfInf
+  FunctionSpaces -->|"1"| FunctionSpaceTower_embInfInf
   ScottMaps -->|"1"| FunctionSpaceTower_embInfInf
   FunctionSpaceTower_embInfInf -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
   FunctionSpaceTower_iSup__monotone_eq_diagonal -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
   FunctionSpaceTower_projInfInf -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
   FunctionSpaceTower_towerProj_retr_conjMap_succ -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
-  FunctionSpaces -->|"6"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaces -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
   InverseLimits -->|"3"| FunctionSpaceTower_embInfInf_projInfInf
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_embInf_succ_iSup
   FunctionSpaces -->|"1"| FunctionSpaceTower_embInf_succ_iSup
   FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_functionSpaceInclFun
-  FunctionSpaces -->|"2"| FunctionSpaceTower_functionSpaceInclFun
+  FunctionSpaces -->|"1"| FunctionSpaceTower_functionSpaceInclFun
   FunctionSpaceTower_functionSpaceInclFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
   FunctionSpaceTower_functionSpaceRetrFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
   FunctionSpaces -->|"2"| FunctionSpaceTower_functionSpaceProjection
   FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
-  FunctionSpaces -->|"2"| FunctionSpaceTower_functionSpaceRetrFun
+  FunctionSpaces -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
   FunctionSpaceTower_DInf -->|"1"| FunctionSpaceTower_iInfTerm
   InverseLimits -->|"2"| FunctionSpaceTower_iInfTerm
   FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_iInfTerm_monotone
   FunctionSpaceTower_towerProj -->|"1"| FunctionSpaceTower_iInfTerm_monotone
-  FunctionSpaces -->|"2"| FunctionSpaceTower_iInfTerm_monotone
+  FunctionSpaces -->|"1"| FunctionSpaceTower_iInfTerm_monotone
   InverseLimits -->|"2"| FunctionSpaceTower_iInfTerm_monotone
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_iSup__monotone_eq_diagonal
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_incl_projInf_le_projInf_succ
@@ -76,7 +75,7 @@ flowchart TB
   FunctionSpaceTower_iInfTerm_monotone -->|"1"| FunctionSpaceTower_projInfInf
   FunctionSpaceTower_iSup__monotone_eq_diagonal -->|"1"| FunctionSpaceTower_projInfInf
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_projInfInf
-  FunctionSpaces -->|"7"| FunctionSpaceTower_projInfInf
+  FunctionSpaces -->|"1"| FunctionSpaceTower_projInfInf
   InverseLimits -->|"3"| FunctionSpaceTower_projInfInf
   ScottMaps -->|"1"| FunctionSpaceTower_projInfInf
   FunctionSpaceTower_embInfInf_projInfInf -->|"1"| FunctionSpaceTower_theorem_4_4
@@ -87,7 +86,7 @@ flowchart TB
   WayBelow -->|"1"| FunctionSpaceTower_theorem_4_4
   FunctionSpaceTower_embInfInf_projInfInf -->|"1"| FunctionSpaceTower_theorem_4_4_more
   FunctionSpaceTower_projInfInf -->|"1"| FunctionSpaceTower_theorem_4_4_more
-  FunctionSpaces -->|"4"| FunctionSpaceTower_theorem_4_4_more
+  FunctionSpaces -->|"1"| FunctionSpaceTower_theorem_4_4_more
   InverseLimits -->|"2"| FunctionSpaceTower_theorem_4_4_more
   WayBelow -->|"1"| FunctionSpaceTower_theorem_4_4_more
   FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_towerProj

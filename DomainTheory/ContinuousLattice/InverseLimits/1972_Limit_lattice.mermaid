@@ -44,7 +44,7 @@ flowchart TB
   inverseLimitLE -->|"1"| InverseLimits_inverseLimitPartialOrder
   inverseLimitLT -->|"1"| InverseLimits_inverseLimitPartialOrder
   InverseLimit -->|"1"| InverseLimits_inverseLimitSInfCoe
-  FunctionSpaces -->|"2"| coconeInf
+  FunctionSpaces -->|"1"| coconeInf
   InverseLimit -->|"1"| coconeInf
   InverseLimits_instCompleteLattice -->|"1"| coconeInf
   ScottMaps -->|"1"| coconeInf
@@ -54,18 +54,17 @@ flowchart TB
   projInf -->|"1"| coconeInf
   projLE -->|"1"| coconeInf
   FunctionSpaces -->|"1"| corollary_4_3
-  ScottMaps -->|"1"| corollary_4_3
   coconeInf -->|"1"| corollary_4_3
   embInf -->|"1"| corollary_4_3
   inverseLimitTopology -->|"1"| corollary_4_3
   InverseLimit -->|"1"| embInf
   InverseLimits_coe_sSup_of_directed -->|"1"| embInf
   InverseLimits_instCompleteLattice -->|"1"| embInf
-  ScottMaps -->|"2"| embInf
+  ScottMaps -->|"1"| embInf
   embLE -->|"1"| embInf
   iComp -->|"1"| embInf
   projLE -->|"1"| embInf
-  FunctionSpaces -->|"4"| embLE
+  FunctionSpaces -->|"2"| embLE
   InverseLimit -->|"1"| embLE
   ScottMaps -->|"1"| embLE
   Compatible -->|"1"| iComp
@@ -77,11 +76,9 @@ flowchart TB
   inverseLimitLE -->|"1"| inverseLimitLT
   Constructions -->|"2"| inverseLimitTopology
   ContinuousLattices -->|"2"| inverseLimitTopology
-  FunctionSpaces -->|"1"| inverseLimitTopology
   Injective -->|"1"| inverseLimitTopology
   InverseLimit -->|"1"| inverseLimitTopology
   InverseLimits_instCompleteLattice -->|"1"| inverseLimitTopology
-  ScottMaps -->|"1"| inverseLimitTopology
   Specialization -->|"2"| inverseLimitTopology
   WayBelow -->|"1"| inverseLimitTopology
   coconeInf -->|"1"| inverseLimitTopology
@@ -94,8 +91,8 @@ flowchart TB
   projLE -->|"1"| lemma_4_5
   InverseLimits_coe_sSup_of_directed -->|"1"| projInf
   InverseLimits_instCompleteLattice -->|"1"| projInf
-  ScottMaps -->|"2"| projInf
-  FunctionSpaces -->|"4"| projLE
+  ScottMaps -->|"1"| projInf
+  FunctionSpaces -->|"2"| projLE
   InverseLimit -->|"1"| projLE
   ScottMaps -->|"1"| projLE
   FunctionSpaces -->|"2"| projection_galoisConnection

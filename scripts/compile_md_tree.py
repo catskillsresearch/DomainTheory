@@ -40,6 +40,12 @@ TOC_BULLET_RE = re.compile(
     r"(?:[ \t]+\[[^\]]*\]\([^)]*\))*[ \t]*$",
     re.MULTILINE,
 )
+# Outline progress marks: keep a bare check on the section title, never the revision URL.
+REVISION_MARK_RE = re.compile(r"\[\s*✓\s*\]\([^)]*1972_REVISION\.md\)")
+REVISED_FOOTER_RE = re.compile(
+    r"<p[^>]*>\s*✓\s*<strong>Revised</strong>.*?</p>\s*",
+    re.IGNORECASE | re.DOTALL,
+)
 FIRST_H1_RE = re.compile(r"^#\s+.+?(?:\n+|$)", re.MULTILINE)
 IMPORT_RE = re.compile(
     r'^@import[ \t]+"([^"]+)"(?:[ \t]*\{([^}]*)\})?[ \t]*$',
@@ -542,6 +548,8 @@ def child_md_targets(md_path: Path, text: str) -> list[tuple[int, str, Path]]:
         rel = (indent_columns(m.group("indent")) - base_indent) // 2
         href = m.group("href")
         title = m.group("title").strip()
+        if REVISION_MARK_RE.search(m.group(0)) and not title.endswith("✓"):
+            title = f"{title} ✓"
         tgt = (md_path.parent / href).resolve()
         if tgt in seen or not tgt.is_file():
             continue
@@ -630,7 +638,7 @@ def flatten_file(
 
     section_level = min(max(section_level, 1), 6)
 
-    raw = resolved.read_text(encoding="utf-8")
+    raw = REVISED_FOOTER_RE.sub("\n", resolved.read_text(encoding="utf-8"))
     children = child_md_targets(resolved, raw)
     body = strip_toc_bullets(raw) if children else raw
     if section_title is not None:

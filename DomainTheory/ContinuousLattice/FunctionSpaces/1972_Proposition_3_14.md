@@ -2,7 +2,7 @@
 
 @import "1972_Proposition_3_14.english" {code_block=false}
 
-**[ContinuousLattice/FunctionSpaces/toOrderHom.lean](DomainTheory/ContinuousLattice/FunctionSpaces/toOrderHom.lean)**
+**[ContinuousLattice/FunctionSpaces/toOrderHom.lean](toOrderHom.lean)**
 
 @import "toOrderHom.lean"
 **[fix.lean](fix.lean)**
@@ -26,9 +26,9 @@
 **[proposition_3_14.lean](proposition_3_14.lean)**
 
 @import "proposition_3_14.lean"
-**[ContinuousLattice/FunctionSpaces/corollary_3_4.lean](DomainTheory/ContinuousLattice/FunctionSpaces/corollary_3_4.lean)**
+**[ContinuousLattice/FunctionSpaces/corollary_3_4.lean](corollary_3_4.lean)**
 
 @import "corollary_3_4.lean"
-**[ContinuousLattice/ContinuousLattices/lemma_3_9.lean](DomainTheory/ContinuousLattice/ContinuousLattices/lemma_3_9.lean)**
+**[ContinuousLattice/ContinuousLattices/lemma_3_9.lean](../ContinuousLattices/lemma_3_9.lean)**
 
 @import "../ContinuousLattices/lemma_3_9.lean"

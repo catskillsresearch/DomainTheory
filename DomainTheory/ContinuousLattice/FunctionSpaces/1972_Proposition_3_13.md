@@ -8,7 +8,7 @@
 **[con_.lean](con_.lean)**
 
 @import "con_.lean"
-**[ContinuousLattice/FunctionSpaces/projection.lean](DomainTheory/ContinuousLattice/FunctionSpaces/projection.lean)**
+**[ContinuousLattice/FunctionSpaces/projection.lean](projection.lean)**
 
 @import "projection.lean"
 **[proposition_3_13.lean](proposition_3_13.lean)**

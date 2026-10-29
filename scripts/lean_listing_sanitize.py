@@ -52,6 +52,7 @@ LEAN_UNICODE_REPLACEMENTS: tuple[tuple[str, str], ...] = (
     ("→", " -> "),
     ("←", " <- "),
     ("⇒", " => "),
+    ("⤳", " ~> "),
     ("⊥", "False"),
     # set theory
     ("∈", " in "),

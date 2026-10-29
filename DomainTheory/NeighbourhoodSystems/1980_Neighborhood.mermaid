@@ -7,18 +7,18 @@ flowchart TB
   MAP["Mappings<br>between domains"]
   CON["Domain<br>constructs"]
   FIX["Fixed points<br>and recursion"]
-  LAM["Typed<br>λ-calculus"]
+  Typed___lambda__calculus["Typed \lambda-calculus"]
   EQ["Domain<br>equations"]
-  COMP["Computability<br>effectively given"]
-  RET["Retracts of<br>universal domain"]
+  Computability_in_effecti["Computability in effectively given domains"]
+  Retracts_of_the_universa["Retracts of the universal domain"]
 
-  EQ -->|"41"| COMP
-  MAP -->|"24"| CON
-  LAM -->|"4"| EQ
-  CON -->|"28"| FIX
-  FIX -->|"26"| LAM
-  DOM -->|"50"| MAP
-  COMP -->|"105"| RET
+  MAP --> CON
+  EQ --> Computability_in_effecti
+  Typed___lambda__calculus --> EQ
+  CON --> FIX
+  DOM --> MAP
+  Computability_in_effecti --> Retracts_of_the_universa
+  FIX --> Typed___lambda__calculus
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef c1 fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a

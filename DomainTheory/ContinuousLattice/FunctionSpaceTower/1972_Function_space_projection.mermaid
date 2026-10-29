@@ -32,27 +32,26 @@ flowchart TB
   FunctionSpaces -->|"1"| CLat
   InverseLimits -->|"2"| DInf
   towerProj -->|"1"| DInf
-  FunctionSpaces -->|"2"| FunctionSpaceTower_functionSpaceInclFun
+  FunctionSpaces -->|"1"| FunctionSpaceTower_functionSpaceInclFun
   conjMap -->|"1"| FunctionSpaceTower_functionSpaceInclFun
   FunctionSpaceTower_functionSpaceInclFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
   FunctionSpaceTower_functionSpaceRetrFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
   FunctionSpaces -->|"2"| FunctionSpaceTower_functionSpaceProjection
-  FunctionSpaces -->|"2"| FunctionSpaceTower_functionSpaceRetrFun
+  FunctionSpaces -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
   conjMap -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
   CLat -->|"1"| conjMap
-  FunctionSpaces -->|"3"| conjMap
-  ScottMaps -->|"1"| conjMap
-  FunctionSpaces -->|"3"| conjMap_iSup
+  FunctionSpaces -->|"1"| conjMap
+  FunctionSpaces -->|"1"| conjMap_iSup
   InverseLimits -->|"2"| conjMap_iSup
   incl_projInf_le_projInf_succ -->|"1"| conjMap_iSup
   jInfTerm -->|"1"| conjMap_iSup
   FunctionSpaces -->|"1"| conj_iInfTerm_eq
   InverseLimits -->|"1"| conj_iInfTerm_eq
   jInfTerm -->|"1"| conj_iInfTerm_eq
-  FunctionSpaces -->|"2"| embInfInf
+  FunctionSpaces -->|"1"| embInfInf
   ScottMaps -->|"1"| embInfInf
   iInfTerm -->|"1"| embInfInf
-  FunctionSpaces -->|"6"| embInfInf_projInfInf
+  FunctionSpaces -->|"1"| embInfInf_projInfInf
   InverseLimits -->|"3"| embInfInf_projInfInf
   embInfInf -->|"1"| embInfInf_projInfInf
   iSup__monotone_eq_diagonal -->|"1"| embInfInf_projInfInf
@@ -62,14 +61,14 @@ flowchart TB
   jInfTerm -->|"1"| embInf_succ_iSup
   DInf -->|"1"| iInfTerm
   InverseLimits -->|"2"| iInfTerm
-  FunctionSpaces -->|"2"| iInfTerm_monotone
+  FunctionSpaces -->|"1"| iInfTerm_monotone
   InverseLimits -->|"2"| iInfTerm_monotone
   incl_projInf_le_projInf_succ -->|"1"| iInfTerm_monotone
   towerProj -->|"1"| iInfTerm_monotone
   jInfTerm -->|"1"| iSup__monotone_eq_diagonal
   jInfTerm -->|"1"| incl_projInf_le_projInf_succ
   iInfTerm -->|"1"| jInfTerm
-  FunctionSpaces -->|"7"| projInfInf
+  FunctionSpaces -->|"1"| projInfInf
   InverseLimits -->|"3"| projInfInf
   ScottMaps -->|"1"| projInfInf
   conjMap_iSup -->|"1"| projInfInf
@@ -85,7 +84,7 @@ flowchart TB
   embInfInf_projInfInf -->|"1"| theorem_4_4
   projInfInf -->|"1"| theorem_4_4
   theorem_4_4_more -->|"1"| theorem_4_4
-  FunctionSpaces -->|"4"| theorem_4_4_more
+  FunctionSpaces -->|"1"| theorem_4_4_more
   InverseLimits -->|"2"| theorem_4_4_more
   WayBelow -->|"1"| theorem_4_4_more
   embInfInf_projInfInf -->|"1"| theorem_4_4_more

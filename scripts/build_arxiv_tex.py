@@ -86,6 +86,47 @@ def fit_png_for_letter(png_path: Path) -> None:
         fitted.save(png_path, optimize=True)
 
 
+SVG_BLOCK_RE = re.compile(r"<svg\b.*?</svg>", re.DOTALL | re.IGNORECASE)
+SVG_LABEL_RE = re.compile(r'\baria-label="([^"]*)"')
+
+
+def render_svg(svg: str, idx: int) -> str:
+    """Rasterize an inline note diagram. Pandoc otherwise drops the markup and keeps the text."""
+    FIGURES_DIR.mkdir(parents=True, exist_ok=True)
+    svg_path = FIGURES_DIR / f"svg-figure-{idx:03d}.svg"
+    png_path = FIGURES_DIR / f"svg-figure-{idx:03d}.png"
+    ink = svg.replace("currentColor", "#111")
+    svg_path.write_text(ink, encoding="utf-8")
+    proc = subprocess.run(
+        ["convert", "-background", "white", "-density", "144", str(svg_path), str(png_path)],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if proc.returncode != 0 or not png_path.is_file():
+        sys.stderr.write(proc.stdout + "\n" + proc.stderr + "\n")
+        raise RuntimeError(f"convert failed on svg figure {idx}")
+    fit_png_for_letter(png_path)
+    return png_path.relative_to(ROOT).as_posix()
+
+
+def replace_svgs(text: str, placeholders: dict[str, str]) -> str:
+    idx = 0
+
+    def repl(match: re.Match[str]) -> str:
+        nonlocal idx
+        svg = match.group(0)
+        key = f"SVGINCLUDE{idx:03d}"
+        rel_path = render_svg(svg, idx)
+        label_m = SVG_LABEL_RE.search(svg)
+        caption = label_m.group(1) if label_m else f"Diagram {idx + 1}"
+        placeholders[key] = figure_latex(rel_path, caption, f"fig:svg-{idx:03d}")
+        idx += 1
+        return f"\n\n{key}\n\n"
+
+    return SVG_BLOCK_RE.sub(repl, text)
+
+
 def render_mermaid(code: str, idx: int) -> str:
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     mmd_path = FIGURES_DIR / f"figure-{idx:03d}.mmd"
@@ -878,6 +919,7 @@ def main() -> int:
     body = github_math_to_tex(body)
     body = canon_lean_hrefs_in_markdown(body)
     body, placeholders = replace_fences(body, mermaid_captions)
+    body = replace_svgs(body, placeholders)
     prune_stale_listings()
     for stale_pdf in FIGURES_DIR.glob("*.pdf"):
         stale_pdf.unlink()

@@ -34,7 +34,7 @@ flowchart TB
 
   FunctionSpaces -->|"1"| InverseLimits_Compatible
   InverseLimits_Compatible -->|"1"| InverseLimits_InverseLimit
-  FunctionSpaces -->|"2"| coconeInf
+  FunctionSpaces -->|"1"| coconeInf
   InverseLimits_InverseLimit -->|"1"| coconeInf
   ScottMaps -->|"1"| coconeInf
   embInf -->|"1"| coconeInf
@@ -46,18 +46,17 @@ flowchart TB
   FunctionSpaces -->|"1"| coe_sSup_of_directed
   instCompleteLattice -->|"1"| coe_sSup_of_directed
   FunctionSpaces -->|"1"| corollary_4_3
-  ScottMaps -->|"1"| corollary_4_3
   coconeInf -->|"1"| corollary_4_3
   embInf -->|"1"| corollary_4_3
   inverseLimitTopology -->|"1"| corollary_4_3
   InverseLimits_InverseLimit -->|"1"| embInf
-  ScottMaps -->|"2"| embInf
+  ScottMaps -->|"1"| embInf
   coe_sSup_of_directed -->|"1"| embInf
   embLE -->|"1"| embInf
   iComp -->|"1"| embInf
   instCompleteLattice -->|"1"| embInf
   projLE -->|"1"| embInf
-  FunctionSpaces -->|"4"| embLE
+  FunctionSpaces -->|"2"| embLE
   InverseLimits_InverseLimit -->|"1"| embLE
   ScottMaps -->|"1"| embLE
   InverseLimits_Compatible -->|"1"| iComp
@@ -77,10 +76,8 @@ flowchart TB
   InverseLimits_InverseLimit -->|"1"| inverseLimitSInfCoe
   Constructions -->|"2"| inverseLimitTopology
   ContinuousLattices -->|"2"| inverseLimitTopology
-  FunctionSpaces -->|"1"| inverseLimitTopology
   Injective -->|"1"| inverseLimitTopology
   InverseLimits_InverseLimit -->|"1"| inverseLimitTopology
-  ScottMaps -->|"1"| inverseLimitTopology
   Specialization -->|"2"| inverseLimitTopology
   WayBelow -->|"1"| inverseLimitTopology
   coconeInf -->|"1"| inverseLimitTopology
@@ -92,10 +89,10 @@ flowchart TB
   iComp -->|"1"| lemma_4_5
   projInf -->|"1"| lemma_4_5
   projLE -->|"1"| lemma_4_5
-  ScottMaps -->|"2"| projInf
+  ScottMaps -->|"1"| projInf
   coe_sSup_of_directed -->|"1"| projInf
   instCompleteLattice -->|"1"| projInf
-  FunctionSpaces -->|"4"| projLE
+  FunctionSpaces -->|"2"| projLE
   InverseLimits_InverseLimit -->|"1"| projLE
   ScottMaps -->|"1"| projLE
   FunctionSpaces -->|"2"| projection_galoisConnection

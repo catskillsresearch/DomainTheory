@@ -3,7 +3,6 @@
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
 
-  ScottMaps_continuous_of_preservesDirectedSup["continuous_of_preservesDirectedSup"]
   ScottMaps_continuous_preservesDirectedSup["continuous_preservesDirectedSup"]
   ScottMaps_meet_preservesDirectedSup["meet_preservesDirectedSup"]
   ScottMaps_PreservesDirectedSup["PreservesDirectedSup"]
@@ -15,25 +14,20 @@ flowchart TB
   Specialization["Specialization"]
   WayBelow["WayBelow"]
 
-  ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_continuous_of_preservesDirectedSup
-  ScottMaps_scottOpen_preimage -->|"1"| ScottMaps_continuous_of_preservesDirectedSup
-  Specialization -->|"1"| ScottMaps_continuous_of_preservesDirectedSup
-  WayBelow -->|"1"| ScottMaps_continuous_of_preservesDirectedSup
+  Specialization -->|"1"| ScottMaps_PreservesDirectedSup
+  WayBelow -->|"1"| ScottMaps_PreservesDirectedSup
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_continuous_preservesDirectedSup
   Specialization -->|"1"| ScottMaps_continuous_preservesDirectedSup
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_meet_preservesDirectedSup
   WayBelow -->|"2"| ScottMaps_meet_preservesDirectedSup
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_preservesDirectedSup_monotone
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_proposition_2_5
-  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| ScottMaps_proposition_2_5
   ScottMaps_continuous_preservesDirectedSup -->|"1"| ScottMaps_proposition_2_5
   Specialization -->|"1"| ScottMaps_proposition_2_5
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_proposition_2_6
   ScottMaps_preservesDirectedSup_monotone -->|"1"| ScottMaps_proposition_2_6
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_scottOpen_preimage
-  ScottMaps_preservesDirectedSup_monotone -->|"1"| ScottMaps_scottOpen_preimage
   WayBelow -->|"1"| ScottMaps_scottOpen_preimage
-  ScottMaps_continuous_of_preservesDirectedSup -->|"1"| proposition_2_7
   ScottMaps_meet_preservesDirectedSup -->|"1"| proposition_2_7
   Specialization -->|"1"| proposition_2_7
   WayBelow -->|"1"| proposition_2_7

@@ -4,16 +4,8 @@
 flowchart TB
 
   N6["ambientSSup"]
-  N151["Basic"]
-  N35["BasicInst28"]
-  N63["BasicInst30"]
-  N67["BasicInst33"]
-  N68["bot_apply"]
-  N7["comp"]
-  N9["comp_apply"]
   N69["con_"]
-  N10["const"]
-  N12["const_apply"]
+  Constructions["Constructions"]
   N13["continuousMapInducedPiTopology"]
   N30["converseProjection"]
   N14["converseRetr"]
@@ -21,11 +13,6 @@ flowchart TB
   N15["converseRetr_mono"]
   N16["converseRetr_preservesDirectedSup"]
   N158["corollary_3_4"]
-  N157["corollary_3_4_eval_on_C"]
-  N153["corollary_3_4_jointly_continuous"]
-  N152["corollary_3_4_preservesDirectedSup"]
-  N81["curry_left_preservesDirectedSup"]
-  N79["curry_right_preservesDirectedSup"]
   N18["directedOn_finsetSupOf"]
   N17["finsetSupOf"]
   N145["fix"]
@@ -34,8 +21,6 @@ flowchart TB
   N148["fix_mono"]
   N149["fix_preservesDirectedSup"]
   N154["fix_unique"]
-  N19["idMap"]
-  N20["idMap_apply"]
   N44["image_retr_wayBelow_directed"]
   N21["image_retr_wayBelow_nonempty"]
   N56["incl_bot"]
@@ -52,7 +37,6 @@ flowchart TB
   N137["instSupSet"]
   N5["IsContinuousLatticeProjection"]
   N4["IsContinuousLatticeRetraction"]
-  N66["isLUB_sSup"]
   N36["IsProjection"]
   N71["isProjection_bot"]
   N72["isProjection_directedSup"]
@@ -60,25 +44,12 @@ flowchart TB
   N39["isProjection_iff"]
   N136["isProjection_sSup"]
   N134["isProjection_sup"]
-  N95["lambda_outer_preservesDirectedSup"]
-  N26["le"]
-  N27["le_antisymm'"]
-  N38["le_def"]
   N28["le_of_incl_le"]
-  N31["le_refl'"]
   N41["le_sSup_finsetSupOf"]
-  N32["le_trans'"]
   N114["lemma_3_9_incl_inf"]
   N116["lemma_3_9_retr_inf"]
-  N33["lt"]
-  N34["lt_iff_le_not_ge'"]
   N40["mem_finsetSupOf_of_mem"]
   N73["min"]
-  N42["monotone"]
-  N49["pointwise_sSup_preservesDirectedSup"]
-  N103["pointwiseSubbasic_isOpen"]
-  N75["pointwiseSubbasic_scottOpen"]
-  N46["preservesDirectedSup_coe"]
   N76["projection"]
   N37["Projections"]
   N85["proposition_2_10"]
@@ -89,28 +60,17 @@ flowchart TB
   N155["proposition_3_14"]
   N122["proposition_3_2"]
   N99["proposition_3_5"]
-  N98["proposition_3_5_preservesDirectedSup"]
   N52["proposition_3_7_projection"]
   N53["proposition_3_7_retraction"]
   N54["retr_ambientSSup_eq_sSup"]
   N55["retr_bot"]
   N58["retr_eq_sSup"]
   N59["retr_wayBelow_of_wayBelow_incl"]
-  N90["scottFunctionEvalSubbasis"]
-  N121["scottFunctionSpecializationPreorder"]
-  N92["scottFunctionSubbasis_isOpen"]
-  N156["scottFunctionSubbasis_isOpen_scott"]
-  N91["scottFunctionTopology"]
-  N93["scottFunctionTopology_eq_induced_pi"]
+  ScottFunctionTopology["ScottFunctionTopology"]
   N96["scottLambda"]
-  N97["scottLambda_apply"]
   N3["ScottMap"]
-  N110["scottMap_eq_sSup_openInfs"]
   ScottMap_more["ScottMap_more"]
   N100["scottMapInducedPiTopology"]
-  N101["scottMapPointwiseSubbasis"]
-  N102["scottMapPointwiseTopology"]
-  N104["scottMapPointwiseTopology_eq_induced_pi"]
   N0["ScottMaps"]
   N106["scottSubspaceExtend"]
   N117["scottSubspaceExtend_eq_of_ext"]
@@ -125,169 +85,90 @@ flowchart TB
   N115["scottSubspaceExtendInf_mono_retr"]
   N60["sInf_image_le_sInf_image_of_subset"]
   N1["Specialization"]
-  N120["specializationPreorder_generateOpen"]
-  N65["sSup_apply"]
   N87["sSup_finsetSupOf"]
-  N78["sSup_image_prod_mk_left"]
-  N80["sSup_image_prod_mk_right"]
   N82["sSup_image_retr_wayBelow"]
   N86["sSup_le_finsetSupOf"]
-  N62["sSupMaps"]
-  N64["sSupMaps_apply"]
-  N61["sSupMaps_continuous"]
   N123["stepFun"]
-  N124["stepFun_of_not_wayBelow"]
-  N125["stepFun_of_wayBelow"]
-  N126["stepFun_preservesDirectedSup"]
   N127["stepMap"]
-  N128["stepMap_apply_of_wayBelow"]
-  N129["stepMap_le_of_wayBelow"]
-  N130["stepMap_pointwise_sSup"]
-  N131["stepMap_wayBelow"]
-  N133["sup_apply"]
   N162["theorem_3_3"]
-  theorem_3_3_more["theorem_3_3_more"]
   N144["toOrderHom"]
   N2["WayBelow"]
-  N159["wayBelow_finset_sup"]
-  N160["wayBelow_le_finset_sup_step"]
 
-  N0 -->|"1"| N10
-  N3 -->|"1"| N10
+  N127 -->|"1"| N100
+  N2 -->|"2"| N100
   N3 -->|"1"| N100
-  N3 -->|"1"| N101
-  N101 -->|"1"| N102
-  N102 -->|"1"| N103
-  N100 -->|"1"| N104
-  N102 -->|"1"| N104
-  N103 -->|"1"| N104
   N1 -->|"1"| N106
   N106 -->|"1"| N107
   N3 -->|"1"| N107
   N106 -->|"1"| N108
-  N3 -->|"1"| N109
-  N0 -->|"2"| N110
-  N109 -->|"1"| N110
-  N2 -->|"2"| N110
-  N3 -->|"1"| N110
+  Constructions -->|"1"| N109
   N106 -->|"1"| N111
   N106 -->|"1"| N112
   N5 -->|"1"| N112
   N106 -->|"1"| N113
-  N42 -->|"1"| N113
+  N3 -->|"1"| N113
   N5 -->|"1"| N113
   N106 -->|"1"| N114
   N112 -->|"1"| N114
   N113 -->|"1"| N114
   N5 -->|"1"| N114
   N106 -->|"1"| N115
-  N42 -->|"1"| N115
+  N3 -->|"1"| N115
   N5 -->|"1"| N115
   N106 -->|"1"| N116
   N115 -->|"1"| N116
   N5 -->|"1"| N116
   N106 -->|"1"| N117
   N108 -->|"1"| N117
+  Constructions -->|"1"| N118
   N106 -->|"1"| N118
   N107 -->|"1"| N118
-  N110 -->|"1"| N118
   N2 -->|"1"| N118
-  N3 -->|"1"| N118
   N60 -->|"1"| N118
   N106 -->|"1"| N119
   N111 -->|"1"| N119
-  N10 -->|"1"| N12
-  N1 -->|"1"| N120
-  N90 -->|"1"| N120
-  N1 -->|"1"| N121
-  N120 -->|"1"| N121
-  N91 -->|"1"| N121
-  N92 -->|"1"| N121
-  N1 -->|"1"| N122
-  N121 -->|"1"| N122
-  N91 -->|"1"| N122
+  ScottFunctionTopology -->|"1"| N122
+  N0 -->|"1"| N123
   N2 -->|"1"| N123
-  N123 -->|"1"| N124
-  N123 -->|"1"| N125
-  N0 -->|"1"| N126
-  N123 -->|"1"| N126
-  N124 -->|"1"| N126
-  N125 -->|"1"| N126
-  N2 -->|"1"| N126
-  N0 -->|"1"| N127
   N123 -->|"1"| N127
-  N126 -->|"1"| N127
+  N2 -->|"1"| N127
   N3 -->|"1"| N127
-  N125 -->|"1"| N128
-  N127 -->|"1"| N128
-  N124 -->|"1"| N129
-  N127 -->|"1"| N129
-  N128 -->|"1"| N129
-  N2 -->|"1"| N129
-  N35 -->|"1"| N129
-  N38 -->|"1"| N129
-  N42 -->|"1"| N129
-  N2 -->|"2"| N130
-  N3 -->|"1"| N130
-  N42 -->|"1"| N130
-  N46 -->|"1"| N130
-  N127 -->|"1"| N131
-  N129 -->|"1"| N131
-  N2 -->|"1"| N131
-  N65 -->|"1"| N131
-  N67 -->|"1"| N131
-  N67 -->|"1"| N133
-  N133 -->|"1"| N134
+  N3 -->|"1"| N134
   N36 -->|"1"| N134
   N39 -->|"1"| N134
-  N42 -->|"1"| N134
-  N67 -->|"1"| N134
   N134 -->|"1"| N135
+  N3 -->|"1"| N135
   N36 -->|"1"| N135
-  N67 -->|"1"| N135
   N71 -->|"1"| N135
   N135 -->|"1"| N136
   N18 -->|"1"| N136
+  N3 -->|"1"| N136
   N36 -->|"1"| N136
-  N63 -->|"1"| N136
   N72 -->|"1"| N136
   N87 -->|"1"| N136
   N136 -->|"1"| N137
+  N3 -->|"1"| N137
   N37 -->|"1"| N137
-  N63 -->|"1"| N137
-  N151 -->|"1"| N139
+  N137 -->|"1"| N139
   N136 -->|"1"| N140
   N139 -->|"1"| N140
+  N3 -->|"1"| N140
   N37 -->|"1"| N140
-  N63 -->|"1"| N140
-  N42 -->|"1"| N144
+  N3 -->|"1"| N144
   N144 -->|"1"| N145
   N145 -->|"1"| N146
   N145 -->|"1"| N147
   N145 -->|"1"| N148
   N146 -->|"1"| N148
   N147 -->|"1"| N148
-  N35 -->|"1"| N148
-  N38 -->|"1"| N148
-  N0 -->|"2"| N149
+  N3 -->|"1"| N148
+  N0 -->|"1"| N149
   N145 -->|"1"| N149
   N146 -->|"1"| N149
   N147 -->|"1"| N149
   N148 -->|"1"| N149
-  N38 -->|"1"| N149
-  N46 -->|"1"| N149
-  N65 -->|"1"| N149
-  N67 -->|"1"| N149
+  N3 -->|"1"| N149
   N14 -->|"1"| N15
-  N149 -->|"1"| N151
-  N2 -->|"1"| N151
-  N0 -->|"3"| N152
-  N151 -->|"1"| N152
-  N65 -->|"1"| N152
-  N67 -->|"1"| N152
-  N0 -->|"1"| N153
-  N152 -->|"1"| N153
-  N67 -->|"1"| N153
   N145 -->|"1"| N154
   N146 -->|"1"| N154
   N147 -->|"1"| N154
@@ -297,181 +178,101 @@ flowchart TB
   N149 -->|"1"| N155
   N154 -->|"1"| N155
   N2 -->|"1"| N155
-  N67 -->|"1"| N155
-  N151 -->|"1"| N156
-  N91 -->|"1"| N156
-  N151 -->|"1"| N157
-  N156 -->|"1"| N157
-  N91 -->|"1"| N157
-  N151 -->|"1"| N158
-  N157 -->|"1"| N158
-  N91 -->|"1"| N158
-  N2 -->|"1"| N159
+  N3 -->|"1"| N155
+  N0 -->|"2"| N158
+  N3 -->|"1"| N158
+  ScottFunctionTopology -->|"1"| N158
   N0 -->|"1"| N16
   N14 -->|"1"| N16
   N15 -->|"1"| N16
   N2 -->|"2"| N16
-  N127 -->|"1"| N160
-  N128 -->|"1"| N160
-  N129 -->|"1"| N160
-  N130 -->|"1"| N160
-  N2 -->|"2"| N160
-  N38 -->|"1"| N160
-  N65 -->|"1"| N160
-  N67 -->|"1"| N160
-  N102 -->|"1"| N162
-  N2 -->|"1"| N162
-  N67 -->|"1"| N162
-  theorem_3_3_more -->|"1"| N162
+  N100 -->|"1"| N162
+  N127 -->|"1"| N162
   N17 -->|"1"| N18
-  N0 -->|"1"| N19
-  N3 -->|"1"| N19
-  N19 -->|"1"| N20
   N2 -->|"1"| N21
   N4 -->|"1"| N21
   N14 -->|"1"| N22
   N5 -->|"1"| N23
   N24 -->|"1"| N25
-  N3 -->|"1"| N26
-  N26 -->|"1"| N27
   N24 -->|"1"| N28
   N14 -->|"1"| N29
   N25 -->|"1"| N29
   N28 -->|"1"| N29
+  N0 -->|"3"| N3
   N1 -->|"1"| N3
-  N0 -->|"1"| N30
   N16 -->|"1"| N30
   N2 -->|"2"| N30
   N22 -->|"1"| N30
   N29 -->|"1"| N30
   N5 -->|"1"| N30
-  N26 -->|"1"| N31
-  N26 -->|"1"| N32
-  N26 -->|"1"| N33
-  N33 -->|"1"| N34
-  N27 -->|"1"| N35
-  N31 -->|"1"| N35
-  N32 -->|"1"| N35
-  N34 -->|"1"| N35
-  N19 -->|"1"| N36
-  N35 -->|"1"| N36
-  N7 -->|"1"| N36
+  N3 -->|"1"| N36
   N36 -->|"1"| N37
-  N35 -->|"1"| N38
-  N20 -->|"1"| N39
+  N3 -->|"1"| N39
   N36 -->|"1"| N39
-  N38 -->|"1"| N39
-  N9 -->|"1"| N39
   N3 -->|"1"| N4
   N17 -->|"1"| N40
   N17 -->|"1"| N41
   N40 -->|"1"| N41
-  N0 -->|"2"| N42
-  N3 -->|"1"| N42
   N2 -->|"1"| N44
+  N3 -->|"1"| N44
   N4 -->|"1"| N44
-  N42 -->|"1"| N44
-  N42 -->|"1"| N45
+  N3 -->|"1"| N45
   N5 -->|"1"| N45
-  N0 -->|"1"| N46
-  N3 -->|"1"| N46
   N0 -->|"1"| N47
+  N3 -->|"1"| N47
   N4 -->|"1"| N47
-  N46 -->|"1"| N47
   N2 -->|"2"| N48
-  N42 -->|"1"| N48
-  N46 -->|"1"| N48
+  N3 -->|"1"| N48
   N5 -->|"1"| N48
-  N0 -->|"1"| N49
-  N3 -->|"1"| N49
-  N42 -->|"1"| N49
-  N46 -->|"1"| N49
   N4 -->|"1"| N5
   N2 -->|"2"| N51
   N30 -->|"1"| N51
   N5 -->|"1"| N51
   ScottMap_more -->|"1"| N52
   ScottMap_more -->|"1"| N53
-  N42 -->|"1"| N54
-  N46 -->|"1"| N54
+  N3 -->|"1"| N54
   N6 -->|"1"| N54
-  N42 -->|"1"| N55
+  N3 -->|"1"| N55
   N5 -->|"1"| N55
   N5 -->|"1"| N56
   N55 -->|"1"| N56
   N45 -->|"1"| N57
   N5 -->|"1"| N57
   N56 -->|"1"| N57
-  N42 -->|"1"| N58
+  N3 -->|"1"| N58
   N5 -->|"1"| N58
   N0 -->|"1"| N59
   N2 -->|"1"| N59
+  N3 -->|"1"| N59
   N4 -->|"1"| N59
-  N42 -->|"1"| N59
   N47 -->|"1"| N59
   N4 -->|"1"| N6
-  N0 -->|"1"| N61
-  N3 -->|"1"| N61
-  N49 -->|"1"| N61
-  N61 -->|"1"| N62
-  N62 -->|"1"| N63
-  N62 -->|"1"| N64
-  N63 -->|"1"| N65
-  N35 -->|"1"| N66
-  N38 -->|"1"| N66
-  N63 -->|"1"| N66
-  N65 -->|"1"| N66
-  N66 -->|"1"| N67
-  N67 -->|"1"| N68
-  N0 -->|"2"| N69
-  N10 -->|"1"| N69
-  N12 -->|"1"| N69
-  N65 -->|"1"| N69
-  N67 -->|"1"| N69
-  N0 -->|"4"| N7
-  N3 -->|"1"| N7
+  N0 -->|"1"| N69
+  N3 -->|"1"| N69
+  N3 -->|"1"| N71
   N36 -->|"1"| N71
   N39 -->|"1"| N71
-  N67 -->|"1"| N71
-  N68 -->|"1"| N71
+  N3 -->|"1"| N72
   N36 -->|"1"| N72
   N39 -->|"1"| N72
-  N42 -->|"1"| N72
-  N46 -->|"1"| N72
-  N63 -->|"1"| N72
-  N65 -->|"1"| N72
-  N0 -->|"2"| N73
-  N65 -->|"1"| N73
-  N67 -->|"1"| N73
-  N2 -->|"1"| N75
-  N65 -->|"1"| N75
-  N67 -->|"1"| N75
-  N12 -->|"1"| N76
-  N38 -->|"1"| N76
-  N42 -->|"1"| N76
+  N0 -->|"1"| N73
+  N3 -->|"1"| N73
+  N3 -->|"1"| N76
   N5 -->|"1"| N76
   N69 -->|"1"| N76
   N73 -->|"1"| N76
   N2 -->|"1"| N77
+  N3 -->|"1"| N77
   N5 -->|"1"| N77
-  N67 -->|"1"| N77
   N76 -->|"1"| N77
-  N0 -->|"1"| N79
-  N3 -->|"1"| N79
-  N46 -->|"1"| N79
-  N78 -->|"1"| N79
-  N0 -->|"1"| N81
-  N3 -->|"1"| N81
-  N46 -->|"1"| N81
-  N80 -->|"1"| N81
   N2 -->|"2"| N82
+  N3 -->|"1"| N82
   N4 -->|"1"| N82
-  N46 -->|"1"| N82
   N0 -->|"1"| N85
   N2 -->|"3"| N85
   N21 -->|"1"| N85
+  N3 -->|"1"| N85
   N4 -->|"1"| N85
-  N42 -->|"1"| N85
   N44 -->|"1"| N85
   N47 -->|"1"| N85
   N59 -->|"1"| N85
@@ -481,8 +282,8 @@ flowchart TB
   N41 -->|"1"| N87
   N86 -->|"1"| N87
   N18 -->|"1"| N88
+  N3 -->|"1"| N88
   N40 -->|"1"| N88
-  N46 -->|"1"| N88
   N5 -->|"1"| N88
   N56 -->|"1"| N88
   N57 -->|"1"| N88
@@ -492,44 +293,14 @@ flowchart TB
   N48 -->|"1"| N89
   N5 -->|"1"| N89
   N88 -->|"1"| N89
-  N7 -->|"1"| N9
-  N90 -->|"1"| N91
-  N91 -->|"1"| N92
-  N13 -->|"1"| N93
-  N91 -->|"1"| N93
-  N92 -->|"1"| N93
-  N96 -->|"1"| N95
-  N0 -->|"2"| N96
-  N65 -->|"1"| N96
-  N67 -->|"1"| N96
-  N79 -->|"1"| N96
-  N81 -->|"1"| N96
-  N96 -->|"1"| N97
-  N0 -->|"1"| N98
-  N65 -->|"1"| N98
-  N96 -->|"1"| N98
-  N97 -->|"1"| N98
-  N0 -->|"1"| N99
+  N0 -->|"1"| N96
+  N3 -->|"1"| N96
   N96 -->|"1"| N99
-  N98 -->|"1"| N99
+  N1 -->|"2"| ScottFunctionTopology
+  N13 -->|"1"| ScottFunctionTopology
   N3 -->|"1"| ScottMap_more
   N4 -->|"1"| ScottMap_more
-  N42 -->|"1"| ScottMap_more
   N5 -->|"1"| ScottMap_more
-  N7 -->|"1"| ScottMap_more
-  N100 -->|"1"| theorem_3_3_more
-  N102 -->|"1"| theorem_3_3_more
-  N103 -->|"1"| theorem_3_3_more
-  N104 -->|"1"| theorem_3_3_more
-  N128 -->|"1"| theorem_3_3_more
-  N130 -->|"1"| theorem_3_3_more
-  N131 -->|"1"| theorem_3_3_more
-  N159 -->|"1"| theorem_3_3_more
-  N160 -->|"1"| theorem_3_3_more
-  N2 -->|"3"| theorem_3_3_more
-  N38 -->|"1"| theorem_3_3_more
-  N67 -->|"1"| theorem_3_3_more
-  N75 -->|"1"| theorem_3_3_more
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

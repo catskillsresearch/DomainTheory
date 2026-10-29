@@ -3,14 +3,16 @@
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
 
-  N4["Basic"]
   N5["continuous_eq_sSup_openInfs"]
   N6["directedOn_finite_sSup_mem"]
+  FunctionSpaces["FunctionSpaces"]
   N0["Injective"]
+  piWayBelow["piWayBelow"]
   N15["proposition_2_11"]
   N7["proposition_2_8"]
   N9["proposition_2_9"]
   N17["proposition_3_8"]
+  proposition_3_8_more["proposition_3_8_more"]
   N10["scottExtend"]
   N11["scottExtend_aux_directed"]
   N12["scottExtend_aux_nonempty"]
@@ -47,23 +49,27 @@ flowchart TB
   N16 -->|"1"| N17
   N2 -->|"1"| N17
   N3 -->|"1"| N17
+  proposition_3_8_more -->|"1"| N17
   N10 -->|"1"| N18
   N2 -->|"1"| N18
   N3 -->|"1"| N18
   N5 -->|"1"| N18
   N2 -->|"1"| N19
   N3 -->|"1"| N19
-  N1 -->|"2"| N4
-  N3 -->|"1"| N4
   N2 -->|"1"| N5
   N3 -->|"3"| N5
   N3 -->|"2"| N7
   N6 -->|"1"| N7
-  N1 -->|"1"| N9
   N2 -->|"1"| N9
   N3 -->|"3"| N9
-  N4 -->|"1"| N9
   N7 -->|"1"| N9
+  piWayBelow -->|"1"| N9
+  N1 -->|"2"| piWayBelow
+  N3 -->|"1"| piWayBelow
+  FunctionSpaces -->|"1"| proposition_3_8_more
+  N1 -->|"2"| proposition_3_8_more
+  N2 -->|"1"| proposition_3_8_more
+  N3 -->|"2"| proposition_3_8_more
   N19 -->|"1"| scottTopology
   N2 -->|"1"| scottTopology
   N7 -->|"1"| scottTopology

@@ -34,26 +34,26 @@ flowchart TB
   towerProj -->|"1"| DInf
   FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_conjMap_iSup
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_conjMap_iSup
-  FunctionSpaces -->|"3"| FunctionSpaceTower_conjMap_iSup
+  FunctionSpaces -->|"1"| FunctionSpaceTower_conjMap_iSup
   InverseLimits -->|"2"| FunctionSpaceTower_conjMap_iSup
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
   FunctionSpaces -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
   InverseLimits -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
   FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_embInfInf
-  FunctionSpaces -->|"2"| FunctionSpaceTower_embInfInf
+  FunctionSpaces -->|"1"| FunctionSpaceTower_embInfInf
   ScottMaps -->|"1"| FunctionSpaceTower_embInfInf
   FunctionSpaceTower_embInfInf -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
   FunctionSpaceTower_iSup__monotone_eq_diagonal -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
   FunctionSpaceTower_projInfInf -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
   FunctionSpaceTower_towerProj_retr_conjMap_succ -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
-  FunctionSpaces -->|"6"| FunctionSpaceTower_embInfInf_projInfInf
+  FunctionSpaces -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
   InverseLimits -->|"3"| FunctionSpaceTower_embInfInf_projInfInf
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_embInf_succ_iSup
   FunctionSpaces -->|"1"| FunctionSpaceTower_embInf_succ_iSup
   DInf -->|"1"| FunctionSpaceTower_iInfTerm
   InverseLimits -->|"2"| FunctionSpaceTower_iInfTerm
   FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_iInfTerm_monotone
-  FunctionSpaces -->|"2"| FunctionSpaceTower_iInfTerm_monotone
+  FunctionSpaces -->|"1"| FunctionSpaceTower_iInfTerm_monotone
   InverseLimits -->|"2"| FunctionSpaceTower_iInfTerm_monotone
   towerProj -->|"1"| FunctionSpaceTower_iInfTerm_monotone
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_iSup__monotone_eq_diagonal
@@ -66,20 +66,19 @@ flowchart TB
   FunctionSpaceTower_iInfTerm_monotone -->|"1"| FunctionSpaceTower_projInfInf
   FunctionSpaceTower_iSup__monotone_eq_diagonal -->|"1"| FunctionSpaceTower_projInfInf
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_projInfInf
-  FunctionSpaces -->|"7"| FunctionSpaceTower_projInfInf
+  FunctionSpaces -->|"1"| FunctionSpaceTower_projInfInf
   InverseLimits -->|"3"| FunctionSpaceTower_projInfInf
   ScottMaps -->|"1"| FunctionSpaceTower_projInfInf
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_towerProj_retr_conjMap_succ
   InverseLimits -->|"1"| FunctionSpaceTower_towerProj_retr_conjMap_succ
   CLat -->|"1"| conjMap
-  FunctionSpaces -->|"3"| conjMap
-  ScottMaps -->|"1"| conjMap
-  FunctionSpaces -->|"2"| functionSpaceInclFun
+  FunctionSpaces -->|"1"| conjMap
+  FunctionSpaces -->|"1"| functionSpaceInclFun
   conjMap -->|"1"| functionSpaceInclFun
   FunctionSpaces -->|"2"| functionSpaceProjection
   functionSpaceInclFun -->|"1"| functionSpaceProjection
   functionSpaceRetrFun -->|"1"| functionSpaceProjection
-  FunctionSpaces -->|"2"| functionSpaceRetrFun
+  FunctionSpaces -->|"1"| functionSpaceRetrFun
   conjMap -->|"1"| functionSpaceRetrFun
   FunctionSpaceTower_embInfInf_projInfInf -->|"1"| theorem_4_4
   FunctionSpaceTower_projInfInf -->|"1"| theorem_4_4
@@ -89,7 +88,7 @@ flowchart TB
   theorem_4_4_more -->|"1"| theorem_4_4
   FunctionSpaceTower_embInfInf_projInfInf -->|"1"| theorem_4_4_more
   FunctionSpaceTower_projInfInf -->|"1"| theorem_4_4_more
-  FunctionSpaces -->|"4"| theorem_4_4_more
+  FunctionSpaces -->|"1"| theorem_4_4_more
   InverseLimits -->|"2"| theorem_4_4_more
   WayBelow -->|"1"| theorem_4_4_more
   conjMap -->|"1"| towerProj

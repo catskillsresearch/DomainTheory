@@ -359,6 +359,6 @@
 **[BridgeTheorems/PresentationDomains.lean](PresentationDomains.lean)**
 
 @import "PresentationDomains.lean"
-**[ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_le_of_mem.lean](DomainTheory/ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_le_of_mem.lean)**
+**[ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_le_of_mem.lean](../ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_le_of_mem.lean)**
 
 @import "../ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_le_of_mem.lean"

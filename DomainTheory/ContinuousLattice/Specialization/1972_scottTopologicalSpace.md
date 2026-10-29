@@ -6,9 +6,9 @@
 
 @import "scottTopologicalSpace.lean"
 
-**[ContinuousLattice/WayBelow/ScottOpen.lean](DomainTheory/ContinuousLattice/WayBelow/ScottOpen.lean)**
+**[ContinuousLattice/WayBelow/ScottOpen.lean](../WayBelow/ScottOpen.lean)**
 
 @import "../WayBelow/ScottOpen.lean"
-**[ContinuousLattice/Specialization/SpecializationPreorder.lean](DomainTheory/ContinuousLattice/Specialization/SpecializationPreorder.lean)**
+**[ContinuousLattice/Specialization/SpecializationPreorder.lean](SpecializationPreorder.lean)**
 
 @import "SpecializationPreorder.lean"

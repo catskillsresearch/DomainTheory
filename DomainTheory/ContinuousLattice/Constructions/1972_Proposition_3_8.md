@@ -35,7 +35,7 @@
 **[../FunctionSpaces/scottSubspaceExtend_eq_of_ext.lean](../FunctionSpaces/scottSubspaceExtend_eq_of_ext.lean)**
 
 @import "../FunctionSpaces/scottSubspaceExtend_eq_of_ext.lean"
-**[ContinuousLattice/FunctionSpaces/sInf_image_le_sInf_image_of_subset.lean](DomainTheory/ContinuousLattice/FunctionSpaces/sInf_image_le_sInf_image_of_subset.lean)**
+**[ContinuousLattice/FunctionSpaces/sInf_image_le_sInf_image_of_subset.lean](../FunctionSpaces/sInf_image_le_sInf_image_of_subset.lean)**
 
 @import "../FunctionSpaces/sInf_image_le_sInf_image_of_subset.lean"
 **[../FunctionSpaces/scottSubspaceExtend_maximal.lean](../FunctionSpaces/scottSubspaceExtend_maximal.lean)**
