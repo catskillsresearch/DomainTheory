@@ -4,6 +4,7 @@ public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
+import Mathlib.Tactic
 
 @[expose] public section
 

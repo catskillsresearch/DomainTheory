@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

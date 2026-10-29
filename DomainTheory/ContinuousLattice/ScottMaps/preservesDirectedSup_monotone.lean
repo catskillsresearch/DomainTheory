@@ -1,14 +1,16 @@
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
+import Mathlib.Tactic.Continuity.Init
+import Mathlib.Tactic.SetLike
+import Mathlib.Data.Finset.Attr
+import Mathlib.Tactic.Widget.Calc
 
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
 
-open Set Topology
+open Set
 
 variable {D D' D'' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 

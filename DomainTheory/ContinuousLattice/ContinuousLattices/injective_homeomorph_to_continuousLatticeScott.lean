@@ -3,6 +3,8 @@ module
 public import DomainTheory.ContinuousLattice.Constructions.scottTopology
 public import DomainTheory.ContinuousLattice.ContinuousLattices.IdempotentFixedPoint.scottContinuous
 public import DomainTheory.ContinuousLattice.Injective.corollary_1_6
+public import DomainTheory.ContinuousLattice.ScottMaps.continuous_preservesDirectedSup
+public import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 
 @[expose] public section
 

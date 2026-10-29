@@ -2,9 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
+import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 
 @[expose] public section
 

@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
+import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 
 @[expose] public section

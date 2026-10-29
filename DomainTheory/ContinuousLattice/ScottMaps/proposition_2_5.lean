@@ -4,8 +4,6 @@ public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpac
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

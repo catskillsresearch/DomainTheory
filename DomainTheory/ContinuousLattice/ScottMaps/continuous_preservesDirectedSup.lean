@@ -2,8 +2,6 @@ module
 
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

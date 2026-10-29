@@ -2,10 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
-public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
+import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 
 @[expose] public section
 
