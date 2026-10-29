@@ -1,1 +1,11 @@
-For continuous lattices $D$ and $D'$, Scott's §3 notation $[D \to D']$ is the set of maps $f : D \to D'$ that are continuous for the Scott topologies (equivalently, Scott-continuous in the sense of §2). The library names that carrier **`ScottMap D D'`**.
+For continuous lattices $D$ and $D'$, Scott's §3 notation $[D \to D']$ is the set of maps $f : D \to D'$ that are continuous for the Scott topologies (equivalently, Scott-continuous in the sense of §2). The library names that carrier **`ScottMap D D'`**: a subtype of $D \to D'$ carrying a proof of continuity for **`scottTopologicalSpace`** on domain and codomain.
+
+Namespace **`ScottMap`** collects the basic operations on that carrier:
+
+**Coercion.** A element of `ScottMap D D'` is used as an ordinary function $D \to D'$ via the **`CoeFun`** instance (`f x` is the underlying map applied at $x$).
+
+**Theorem (`ScottMap.ext`).** Two Scott maps are equal if they agree at every point: $f = g$ when $\forall x,\ f(x) = g(x)$.
+
+**Definition (`ScottMap.const`).** For $c \in D'$, the constant function $x \mapsto c$ is Scott-continuous and defines an element of `ScottMap D D'` (the constant map used as $\bot$ of $[D \to D']$ in Theorem 3.3).
+
+**Lemma (`ScottMap.const_apply`).** `(ScottMap.const c) x = c` for all $x \in D$.
