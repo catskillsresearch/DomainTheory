@@ -12,6 +12,10 @@ The vendored formalizations were brute force: a paper statement and its proof li
 - Proposition 2.2 is the pattern. Clauses (i)–(vii) are `bot_wayBelow`, `WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, `WayBelow.le`, `WayBelow.self_iff_scottOpen_Ici`, and `WayBelow.sSup_iff`. `proposition_2_2` is Scott's statement, proved by calling those seven lemmas.
 - Notes show the same two layers: the human-English is the source passage, and the formalization shows the named tools and the short proof that assembles them.
 
+# Mark complete (`mc`)
+
+Add the green **Revised** footer to a note’s `.md` **only** when the user explicitly asks to **mark complete** or **mc** that note. Do not add or restore the footer while refactoring Lean, trimming imports, or cleaning up `@import`s—even if the note looks finished.
+
 # Pref fold (`Pref_suffix` → `Pref.suffix`)
 
 When asked to fold, combine, or namespace `Pref_*` companions into a parent:

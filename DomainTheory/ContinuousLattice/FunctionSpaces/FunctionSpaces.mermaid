@@ -34,7 +34,6 @@ flowchart TB
   N148["fix_mono"]
   N149["fix_preservesDirectedSup"]
   N154["fix_unique"]
-  N150["fixMap"]
   N19["idMap"]
   N20["idMap_apply"]
   N44["image_retr_wayBelow_directed"]
@@ -105,21 +104,18 @@ flowchart TB
   N93["scottFunctionTopology_eq_induced_pi"]
   N96["scottLambda"]
   N97["scottLambda_apply"]
-  N94["scottLambdaAt"]
   N3["ScottMap"]
   N110["scottMap_eq_sSup_openInfs"]
+  ScottMap_more["ScottMap_more"]
   N100["scottMapInducedPiTopology"]
   N101["scottMapPointwiseSubbasis"]
   N102["scottMapPointwiseTopology"]
   N104["scottMapPointwiseTopology_eq_induced_pi"]
-  N43["ScottMapProjection"]
-  N8["ScottMapRetraction"]
   N0["ScottMaps"]
   N106["scottSubspaceExtend"]
   N117["scottSubspaceExtend_eq_of_ext"]
   N118["scottSubspaceExtend_maximal"]
   N119["scottSubspaceExtend_mono"]
-  N105["scottSubspaceExtendInf"]
   N107["scottSubspaceExtendInf_eq_of_comp"]
   N108["scottSubspaceExtendInf_eq_of_ext"]
   N109["scottSubspaceExtendInf_le_of_mem"]
@@ -166,29 +162,28 @@ flowchart TB
   N102 -->|"1"| N104
   N103 -->|"1"| N104
   N1 -->|"1"| N106
-  N105 -->|"1"| N106
-  N105 -->|"1"| N107
+  N106 -->|"1"| N107
   N3 -->|"1"| N107
-  N105 -->|"1"| N108
+  N106 -->|"1"| N108
   N3 -->|"1"| N109
   N0 -->|"2"| N110
   N109 -->|"1"| N110
   N2 -->|"2"| N110
   N3 -->|"1"| N110
-  N105 -->|"1"| N111
-  N105 -->|"1"| N112
+  N106 -->|"1"| N111
+  N106 -->|"1"| N112
   N5 -->|"1"| N112
-  N105 -->|"1"| N113
+  N106 -->|"1"| N113
   N42 -->|"1"| N113
   N5 -->|"1"| N113
-  N105 -->|"1"| N114
+  N106 -->|"1"| N114
   N112 -->|"1"| N114
   N113 -->|"1"| N114
   N5 -->|"1"| N114
-  N105 -->|"1"| N115
+  N106 -->|"1"| N115
   N42 -->|"1"| N115
   N5 -->|"1"| N115
-  N105 -->|"1"| N116
+  N106 -->|"1"| N116
   N115 -->|"1"| N116
   N5 -->|"1"| N116
   N106 -->|"1"| N117
@@ -218,7 +213,7 @@ flowchart TB
   N123 -->|"1"| N126
   N124 -->|"1"| N126
   N125 -->|"1"| N126
-  N2 -->|"2"| N126
+  N2 -->|"1"| N126
   N0 -->|"1"| N127
   N123 -->|"1"| N127
   N126 -->|"1"| N127
@@ -232,7 +227,7 @@ flowchart TB
   N35 -->|"1"| N129
   N38 -->|"1"| N129
   N42 -->|"1"| N129
-  N2 -->|"3"| N130
+  N2 -->|"2"| N130
   N3 -->|"1"| N130
   N42 -->|"1"| N130
   N46 -->|"1"| N130
@@ -274,7 +269,7 @@ flowchart TB
   N147 -->|"1"| N148
   N35 -->|"1"| N148
   N38 -->|"1"| N148
-  N0 -->|"1"| N149
+  N0 -->|"2"| N149
   N145 -->|"1"| N149
   N146 -->|"1"| N149
   N147 -->|"1"| N149
@@ -284,11 +279,7 @@ flowchart TB
   N65 -->|"1"| N149
   N67 -->|"1"| N149
   N14 -->|"1"| N15
-  N0 -->|"1"| N150
-  N145 -->|"1"| N150
-  N149 -->|"1"| N150
-  N67 -->|"1"| N150
-  N150 -->|"1"| N151
+  N149 -->|"1"| N151
   N2 -->|"1"| N151
   N0 -->|"3"| N152
   N151 -->|"1"| N152
@@ -300,9 +291,10 @@ flowchart TB
   N145 -->|"1"| N154
   N146 -->|"1"| N154
   N147 -->|"1"| N154
+  N145 -->|"1"| N155
   N146 -->|"1"| N155
   N147 -->|"1"| N155
-  N150 -->|"1"| N155
+  N149 -->|"1"| N155
   N154 -->|"1"| N155
   N2 -->|"1"| N155
   N67 -->|"1"| N155
@@ -376,9 +368,6 @@ flowchart TB
   N40 -->|"1"| N41
   N0 -->|"2"| N42
   N3 -->|"1"| N42
-  N42 -->|"1"| N43
-  N5 -->|"1"| N43
-  N8 -->|"1"| N43
   N2 -->|"1"| N44
   N4 -->|"1"| N44
   N42 -->|"1"| N44
@@ -401,8 +390,8 @@ flowchart TB
   N2 -->|"2"| N51
   N30 -->|"1"| N51
   N5 -->|"1"| N51
-  N43 -->|"1"| N52
-  N8 -->|"1"| N53
+  ScottMap_more -->|"1"| N52
+  ScottMap_more -->|"1"| N53
   N42 -->|"1"| N54
   N46 -->|"1"| N54
   N6 -->|"1"| N54
@@ -471,17 +460,15 @@ flowchart TB
   N3 -->|"1"| N79
   N46 -->|"1"| N79
   N78 -->|"1"| N79
-  N4 -->|"1"| N8
-  N7 -->|"1"| N8
   N0 -->|"1"| N81
   N3 -->|"1"| N81
   N46 -->|"1"| N81
   N80 -->|"1"| N81
-  N2 -->|"3"| N82
+  N2 -->|"2"| N82
   N4 -->|"1"| N82
   N46 -->|"1"| N82
   N0 -->|"1"| N85
-  N2 -->|"4"| N85
+  N2 -->|"3"| N85
   N21 -->|"1"| N85
   N4 -->|"1"| N85
   N42 -->|"1"| N85
@@ -511,18 +498,12 @@ flowchart TB
   N13 -->|"1"| N93
   N91 -->|"1"| N93
   N92 -->|"1"| N93
-  N0 -->|"1"| N94
-  N3 -->|"1"| N94
-  N79 -->|"1"| N94
-  N0 -->|"1"| N95
-  N65 -->|"1"| N95
-  N67 -->|"1"| N95
-  N81 -->|"1"| N95
-  N94 -->|"1"| N95
-  N0 -->|"1"| N96
+  N96 -->|"1"| N95
+  N0 -->|"2"| N96
+  N65 -->|"1"| N96
   N67 -->|"1"| N96
-  N94 -->|"1"| N96
-  N95 -->|"1"| N96
+  N79 -->|"1"| N96
+  N81 -->|"1"| N96
   N96 -->|"1"| N97
   N0 -->|"1"| N98
   N65 -->|"1"| N98
@@ -531,6 +512,11 @@ flowchart TB
   N0 -->|"1"| N99
   N96 -->|"1"| N99
   N98 -->|"1"| N99
+  N3 -->|"1"| ScottMap_more
+  N4 -->|"1"| ScottMap_more
+  N42 -->|"1"| ScottMap_more
+  N5 -->|"1"| ScottMap_more
+  N7 -->|"1"| ScottMap_more
   N100 -->|"1"| theorem_3_3_more
   N102 -->|"1"| theorem_3_3_more
   N103 -->|"1"| theorem_3_3_more
@@ -540,7 +526,7 @@ flowchart TB
   N131 -->|"1"| theorem_3_3_more
   N159 -->|"1"| theorem_3_3_more
   N160 -->|"1"| theorem_3_3_more
-  N2 -->|"5"| theorem_3_3_more
+  N2 -->|"3"| theorem_3_3_more
   N38 -->|"1"| theorem_3_3_more
   N67 -->|"1"| theorem_3_3_more
   N75 -->|"1"| theorem_3_3_more

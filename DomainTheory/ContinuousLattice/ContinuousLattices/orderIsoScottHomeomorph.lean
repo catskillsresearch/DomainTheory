@@ -1,10 +1,6 @@
 module
-public import Mathlib.Order.BourbakiWitt
-public import Mathlib.Algebra.Group.End
+
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
@@ -13,8 +9,6 @@ namespace DomainTheory.ContinuousLattice
 open Topology Set
 
 universe u
-
-section Theorem212Transfer
 
 variable {A B : Type u} [latticeA : CompleteLattice A] [latticeB : CompleteLattice B]
 
@@ -38,7 +32,5 @@ noncomputable def orderIsoScottHomeomorph (e : A ≃o B) :
     exact ScottOpen.isOpen_iff.mpr
       (ScottOpen.preimage_orderIso e.symm (ScottOpen.isOpen_iff.mp hU))
   }
-
-end Theorem212Transfer
 
 end DomainTheory.ContinuousLattice

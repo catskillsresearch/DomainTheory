@@ -10,7 +10,6 @@ flowchart TB
   ContinuousLattices["ContinuousLattices"]
   corollary_4_3["corollary_4_3"]
   embInf["embInf"]
-  embInfFun["embInfFun"]
   embLE["embLE"]
   FunctionSpaces["FunctionSpaces"]
   iComp["iComp"]
@@ -59,17 +58,13 @@ flowchart TB
   coconeInf -->|"1"| corollary_4_3
   embInf -->|"1"| corollary_4_3
   inverseLimitTopology -->|"1"| corollary_4_3
+  InverseLimit -->|"1"| embInf
+  InverseLimits_coe_sSup_of_directed -->|"1"| embInf
   InverseLimits_instCompleteLattice -->|"1"| embInf
-  ScottMaps -->|"1"| embInf
-  embInfFun -->|"1"| embInf
+  ScottMaps -->|"2"| embInf
   embLE -->|"1"| embInf
   iComp -->|"1"| embInf
   projLE -->|"1"| embInf
-  InverseLimit -->|"1"| embInfFun
-  InverseLimits_coe_sSup_of_directed -->|"1"| embInfFun
-  InverseLimits_instCompleteLattice -->|"1"| embInfFun
-  ScottMaps -->|"1"| embInfFun
-  iComp -->|"1"| embInfFun
   FunctionSpaces -->|"4"| embLE
   InverseLimit -->|"1"| embLE
   ScottMaps -->|"1"| embLE
@@ -81,7 +76,7 @@ flowchart TB
   InverseLimit -->|"1"| inverseLimitLE
   inverseLimitLE -->|"1"| inverseLimitLT
   Constructions -->|"2"| inverseLimitTopology
-  ContinuousLattices -->|"3"| inverseLimitTopology
+  ContinuousLattices -->|"2"| inverseLimitTopology
   FunctionSpaces -->|"1"| inverseLimitTopology
   Injective -->|"1"| inverseLimitTopology
   InverseLimit -->|"1"| inverseLimitTopology
@@ -93,8 +88,7 @@ flowchart TB
   embInf -->|"1"| inverseLimitTopology
   projInf -->|"1"| inverseLimitTopology
   FunctionSpaces -->|"1"| lemma_4_5
-  embInf -->|"1"| lemma_4_5
-  embInfFun -->|"1"| lemma_4_5
+  embInf -->|"2"| lemma_4_5
   iComp -->|"1"| lemma_4_5
   projInf -->|"1"| lemma_4_5
   projLE -->|"1"| lemma_4_5
@@ -105,7 +99,7 @@ flowchart TB
   InverseLimit -->|"1"| projLE
   ScottMaps -->|"1"| projLE
   FunctionSpaces -->|"2"| projection_galoisConnection
-  ContinuousLattices -->|"2"| proposition_4_1
+  ContinuousLattices -->|"1"| proposition_4_1
   InverseLimits_instCompleteLattice -->|"1"| proposition_4_1
   WayBelow -->|"1"| proposition_4_1
   inverseLimitTopology -->|"1"| proposition_4_1

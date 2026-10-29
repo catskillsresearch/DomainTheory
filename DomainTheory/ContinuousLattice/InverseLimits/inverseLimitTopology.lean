@@ -9,7 +9,7 @@ public import DomainTheory.ContinuousLattice.Specialization.SpecializationPreord
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.ContinuousLattices.lemma_3_9
-public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12
+public import DomainTheory.ContinuousLattice.ContinuousLattices.continuousLattice_scottTopology_of_injective
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
@@ -115,7 +115,7 @@ theorem scottTopology_eq_induced_pi (hD : ∀ n, ContinuousLattice (D n)) :
       inverseLimitTopology D P := by
   let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
   let : T0Space (InverseLimit D P) := t0Space D P
-  exact (theorem_2_12.backward_exact (isInjectiveSpace D P hD)
+  exact (continuousLattice_scottTopology_of_injective (isInjectiveSpace D P hD)
     (specializationPreorder_iff D P)).2
 
 theorem eq_iSup (x : InverseLimit D P) :

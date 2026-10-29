@@ -1,19 +1,37 @@
 %% Notes of the continuous lattice section, in outline order.
 %% Each box is one outline note from 1972_Continuous_lattice_order.md.
-%% Arrowhead on the importer. The number is a direct-import count.
-%% An arrow already implied by a longer path is omitted.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Subgraphs follow dependency shape; hub list order is unchanged.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  IFPCL["Complete lattice on fixed points"]
-  D23["Definition 2.3"]
-  IFP["Idempotent fixed points"]
-  P24["Proposition 2.4"]
-  IFPS["Supremum on fixed points"]
-  T212["Theorem 2.12"]
+  subgraph sg_Definition_2_3_and_Propositi["Definition 2.3 and Proposition 2.4"]
+    D23["Definition 2.3"]
+    P24["Proposition 2.4"]
+  end
+  subgraph sg_Idempotent_fixed_points["Idempotent fixed points"]
+    IFP["Idempotent fixed points"]
+    IFPS["Supremum on fixed points"]
+    IFPCL["Complete lattice on fixed points"]
+  end
+  subgraph sg_Theorem_2_12_and_specializat["Theorem 2.12 and specialization"]
+    IHCL["Injective space homeomorphic to a Scott continuous lattice"]
+    T212["Theorem 2.12"]
+    OISH["Order isomorphism is a Scott homeomorphism"]
+    SELI["Specialization equals the given complete-lattice order on injective T₀ spaces"]
+  end
 
-  IFPS -->|"1"| IFPCL
-  IFP -->|"1"| IFPS
-  D23 -->|"1"| P24
+  D23 ~~~ IFP
+
+  IFPS --> IFPCL
+  IFP --> IFPS
+  D23 --> IHCL
+  IFPCL --> IHCL
+  D23 --> OISH
+  D23 --> P24
+  IHCL --> SELI
+  OISH --> SELI
+  IHCL --> T212
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

@@ -18,3 +18,8 @@
 - [Idempotent fixed points](ContinuousLattices/1972_IdempotentFixedPoint.md)
 - [Supremum on fixed points](ContinuousLattices/1972_IdempotentFixedPoint_supremumSet.md)
 - [Complete lattice on fixed points](ContinuousLattices/1972_IdempotentFixedPoint_completeLattice.md)
+- [Injective space homeomorphic to a Scott continuous lattice](ContinuousLattices/1972_Injective_homeomorph_to_continuousLatticeScott.md)
+- [Theorem 2.12](ContinuousLattices/1972_Theorem_2_12.md)
+- [Order isomorphism is a Scott homeomorphism](ContinuousLattices/1972_Order_iso_is_Scott_homeomorph.md)
+- [Specialization equals the given complete-lattice order on injective T₀ spaces](ContinuousLattices/1972_Specialization_eq_lattice_on_injective.md)
+- [After Theorem 2.12](ContinuousLattices/1972_After_theorem_2_12.md)

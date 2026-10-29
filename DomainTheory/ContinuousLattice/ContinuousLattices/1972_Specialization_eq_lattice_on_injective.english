@@ -1,0 +1,13 @@
+[Theorem 2.12](1972_Theorem_2_12.md) and [Injective space homeomorphic to a Scott continuous lattice](1972_Injective_homeomorph_to_continuousLatticeScott.md) show that an injective $T_0$ space is homeomorphic to **some** Scott continuous lattice. In **inverse limits** (and similar setups) one already has a **complete lattice** and **topology** on the type, and **`SpecializationPreorder`** is known to agree with that lattice’s $\le$. This note is the transfer lemma: promote the existential homeomorphism to **`ContinuousLattice`** and **Scott** for **that** data.
+
+Primary use: [Proposition 4.1](../InverseLimits/1972_Proposition_4_1.md) and **`scottTopology_eq_induced_pi`**, after injectivity and **`specializationPreorder_iff`** are available on the inverse limit. Scott topology along an order iso is [Order isomorphism is a Scott homeomorphism](1972_Order_iso_is_Scott_homeomorph.md).
+
+**Theorem (`continuousLattice_scottTopology_of_injective`).** Let $A$ be a complete lattice with topology $\tau_A$. If $A$ is $T_0$ and injective, and for all $x,y \in A$ we have specialization $x \leadsto y$ iff $x \le_A y$, then $A$ is a **`ContinuousLattice`** for $\le_A$ and $\tau_A$ equals the **Scott** topology for $\le_A$.
+
+**Proof.** **`injective_homeomorph_to_continuousLatticeScott`** gives $E$, a Scott **`ContinuousLattice`** on $E$, and a homeomorphism $h : A \cong E$.
+
+*Order iso.* **`SpecializationPreorder.scott_iff`**, **`SpecializationPreorder.map`**, and `hspec` show $h$ is an order isomorphism $e : A \cong E$.
+
+*Continuous lattice.* **`ContinuousLattice.orderIso e`**.
+
+*Scott topology.* **`orderIsoScottHomeomorph`** (see linked note) identifies Scott on $A$ with the topology induced from Scott on $E$ along $e$; **`Homeomorph.isInducing`** matches $\tau_A$ with the same induced topology along $h$. $\square$

@@ -1,17 +1,14 @@
 %% Each box is one section from 1972_ContinuousLattices.md (Introduction omitted).
-%% Arrowhead on the importer. The number is a direct-import count between sections.
+%% Lean modules = transitive closure of outline notes in that section.
+%% Arrowhead on the importer. The number counts direct imports along that closure.
 flowchart TB
 
   CL["Continuous lattices"]
   FS["Function spaces"]
-  INJ["Injective spaces"]
   LIM["Inverse limits"]
 
-  FS -->|"9"| CL
-  INJ -->|"5"| CL
-  CL -->|"88"| FS
-  CL -->|"26"| LIM
-  FS -->|"58"| LIM
-  INJ -->|"1"| LIM
+  CL -->|"338"| FS
+  CL -->|"357"| LIM
+  FS -->|"43"| LIM
 
   classDef section fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a

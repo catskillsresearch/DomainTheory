@@ -8,7 +8,6 @@ flowchart TB
   conjMap["conjMap"]
   FunctionSpaceTower_conjMap_iSup["conjMap_iSup"]
   DInf["DInf"]
-  DInfFn["DInfFn"]
   FunctionSpaceTower_embInf_succ_iSup["embInf_succ_iSup"]
   FunctionSpaceTower_embInfInf["embInfInf"]
   FunctionSpaceTower_embInfInf_projInfInf["embInfInf_projInfInf"]
@@ -31,10 +30,8 @@ flowchart TB
   WayBelow["WayBelow"]
 
   FunctionSpaces -->|"1"| CLat
-  InverseLimits -->|"1"| DInf
+  InverseLimits -->|"2"| DInf
   towerProj -->|"1"| DInf
-  DInf -->|"1"| DInfFn
-  InverseLimits -->|"1"| DInfFn
   FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_conjMap_iSup
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_conjMap_iSup
   FunctionSpaces -->|"3"| FunctionSpaceTower_conjMap_iSup
@@ -53,7 +50,7 @@ flowchart TB
   InverseLimits -->|"3"| FunctionSpaceTower_embInfInf_projInfInf
   FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_embInf_succ_iSup
   FunctionSpaces -->|"1"| FunctionSpaceTower_embInf_succ_iSup
-  DInfFn -->|"1"| FunctionSpaceTower_iInfTerm
+  DInf -->|"1"| FunctionSpaceTower_iInfTerm
   InverseLimits -->|"2"| FunctionSpaceTower_iInfTerm
   FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_iInfTerm_monotone
   FunctionSpaces -->|"2"| FunctionSpaceTower_iInfTerm_monotone

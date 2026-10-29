@@ -1,0 +1,5 @@
+Given complete lattices $A$ and $B$ and an order isomorphism $e : A \cong B$, Scott’s topology on each side is expressed through **Scott-open** sets (`ScottOpen`), not merely through the order. **`ScottOpen.preimage_orderIso`** shows Scott-open sets pull back along $e$ and $e^{-1}$; with **`ScottOpen.isOpen_iff`**, $e$ is a **homeomorphism** for **`scottTopologicalSpace`** on $A$ and $B$. This lemma is used in [Specialization equals the given complete-lattice order on injective T₀ spaces](1972_Specialization_eq_lattice_on_injective.md) to align Scott on the given type with topology induced along an order iso built from injectivity.
+
+**Definition (`orderIsoScottHomeomorph`).** For complete lattices $A$ and $B$ and $e : A \cong B$, **`orderIsoScottHomeomorph e`** is the homeomorphism $A \cong B$ with both sides carrying **`scottTopologicalSpace`**.
+
+**Proof.** Open sets are exactly Scott-open (`ScottOpen.isOpen_iff`); continuity in each direction is **`ScottOpen.preimage_orderIso`** for $e$ and $e^{-1}$. $\square$

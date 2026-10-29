@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
-public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12
+public import DomainTheory.ContinuousLattice.ContinuousLattices.continuousLattice_scottTopology_of_injective
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import Mathlib.Data.Set.Basic
 
@@ -23,7 +23,7 @@ theorem proposition_4_1 (hD : ∀ n, ContinuousLattice (D n)) :
     ContinuousLattice (InverseLimit D P) := by
   let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
   let : T0Space (InverseLimit D P) := inverseLimit.t0Space D P
-  exact (theorem_2_12.backward_exact (inverseLimit.isInjectiveSpace D P hD)
+  exact (continuousLattice_scottTopology_of_injective (inverseLimit.isInjectiveSpace D P hD)
     (inverseLimit.specializationPreorder_iff D P)).1
 
 end InverseLimit

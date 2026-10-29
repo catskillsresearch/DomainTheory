@@ -10,7 +10,6 @@ flowchart TB
   ContinuousLattices["ContinuousLattices"]
   corollary_4_3["corollary_4_3"]
   InverseLimits_embInf["embInf"]
-  InverseLimits_embInfFun["embInfFun"]
   embLE["embLE"]
   FunctionSpaces["FunctionSpaces"]
   iComp["iComp"]
@@ -35,17 +34,13 @@ flowchart TB
 
   FunctionSpaces -->|"1"| Compatible
   Compatible -->|"1"| InverseLimit
-  InverseLimits_embInfFun -->|"1"| InverseLimits_embInf
-  ScottMaps -->|"1"| InverseLimits_embInf
+  InverseLimit -->|"1"| InverseLimits_embInf
+  ScottMaps -->|"2"| InverseLimits_embInf
+  coe_sSup_of_directed -->|"1"| InverseLimits_embInf
   embLE -->|"1"| InverseLimits_embInf
   iComp -->|"1"| InverseLimits_embInf
   instCompleteLattice -->|"1"| InverseLimits_embInf
   projLE -->|"1"| InverseLimits_embInf
-  InverseLimit -->|"1"| InverseLimits_embInfFun
-  ScottMaps -->|"1"| InverseLimits_embInfFun
-  coe_sSup_of_directed -->|"1"| InverseLimits_embInfFun
-  iComp -->|"1"| InverseLimits_embInfFun
-  instCompleteLattice -->|"1"| InverseLimits_embInfFun
   FunctionSpaces -->|"2"| coconeInf
   InverseLimit -->|"1"| coconeInf
   InverseLimits_embInf -->|"1"| coconeInf
@@ -81,7 +76,7 @@ flowchart TB
   inverseLimitLT -->|"1"| inverseLimitPartialOrder
   InverseLimit -->|"1"| inverseLimitSInfCoe
   Constructions -->|"2"| inverseLimitTopology
-  ContinuousLattices -->|"3"| inverseLimitTopology
+  ContinuousLattices -->|"2"| inverseLimitTopology
   FunctionSpaces -->|"1"| inverseLimitTopology
   Injective -->|"1"| inverseLimitTopology
   InverseLimit -->|"1"| inverseLimitTopology
@@ -93,8 +88,7 @@ flowchart TB
   instCompleteLattice -->|"1"| inverseLimitTopology
   projInf -->|"1"| inverseLimitTopology
   FunctionSpaces -->|"1"| lemma_4_5
-  InverseLimits_embInf -->|"1"| lemma_4_5
-  InverseLimits_embInfFun -->|"1"| lemma_4_5
+  InverseLimits_embInf -->|"2"| lemma_4_5
   iComp -->|"1"| lemma_4_5
   projInf -->|"1"| lemma_4_5
   projLE -->|"1"| lemma_4_5
@@ -105,7 +99,7 @@ flowchart TB
   InverseLimit -->|"1"| projLE
   ScottMaps -->|"1"| projLE
   FunctionSpaces -->|"2"| projection_galoisConnection
-  ContinuousLattices -->|"2"| proposition_4_1
+  ContinuousLattices -->|"1"| proposition_4_1
   WayBelow -->|"1"| proposition_4_1
   instCompleteLattice -->|"1"| proposition_4_1
   inverseLimitTopology -->|"1"| proposition_4_1

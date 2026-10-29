@@ -2,4 +2,8 @@
 
 This theorem is an immediate consequence of the preceding results: an injective space is a retract of a power of $\mathbb{O}$. But $\mathbb{O}$ is a finite lattice $(\perp \sqsubseteq \top)$, and so the given space is a continuous lattice under its induced topology. On the other hand a continuous lattice is injective. It remains then to prove 2.9–2.11.
 
-The fixed-point lattice **`IdempotentFixedPoint`** (see [Idempotent fixed points](1972_IdempotentFixedPoint.md)) and **`theorem_2_12`** assemble Propositions 2.9–2.11 with **`ContinuousLattice.orderIso`**.
+The library splits the two directions: [Injective space homeomorphic to a Scott continuous lattice](1972_Injective_homeomorph_to_continuousLatticeScott.md) (**`injective_homeomorph_to_continuousLatticeScott`**) is the injective $\Rightarrow$ homeomorph-to-Scott-CL step; **`proposition_2_11`** is continuous lattice $\Rightarrow$ injective. When a complete lattice and topology are already on the type and specialization equals $\le$, [Specialization equals the given complete-lattice order on injective T₀ spaces](1972_Specialization_eq_lattice_on_injective.md) refines the constructive direction (**`continuousLattice_scottTopology_of_injective`**).
+
+**Theorem (`theorem_2_12`).** For a $T_0$ space $D$, **`InjectiveSpace D`** iff there exist a complete lattice $E$, a **`ContinuousLattice`** instance on $E$, and a homeomorphism $D \cong E$ with $E$ carrying its Scott topology.
+
+**Proof.** In [`theorem_2_12.lean`](theorem_2_12.lean): the forward implication is **`injective_homeomorph_to_continuousLatticeScott`**; the converse applies **`proposition_2_11`** and **`proposition_1_4`** to a witnessing homeomorphism. $\square$

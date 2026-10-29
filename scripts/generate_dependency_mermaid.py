@@ -87,6 +87,28 @@ def direct_imports_mod(mod: str, modules: dict[str, Path]) -> list[str]:
     return out
 
 
+def transitive_import_closure(
+    seeds: set[str],
+    modules: dict[str, Path],
+) -> set[str]:
+    """All ``DomainTheory.*`` modules reachable from ``seeds`` via Lean ``import``."""
+    if not seeds:
+        return set()
+    out = set(seeds)
+    stack = list(seeds)
+    while stack:
+        mod = stack.pop()
+        for imp in direct_imports_mod(mod, modules):
+            if not imp.startswith("DomainTheory."):
+                continue
+            if imp not in modules:
+                continue
+            if imp not in out:
+                out.add(imp)
+                stack.append(imp)
+    return out
+
+
 def find_index_md(mermaid: Path) -> Path | None:
     name = mermaid.name
     for md in list(DT.rglob("*.md")) + [ROOT / "DomainTheory.md"]:
@@ -303,17 +325,57 @@ def emit_flowchart(
     *,
     labeled: bool,
     flowchart: str = "flowchart TB",
+    node_order: list[str] | None = None,
+    subgraphs: list[tuple[str, list[str]]] | None = None,
+    rank_same: list[list[str]] | None = None,
 ) -> str:
     style_tail = filter_style(style_tail, node_labels)
+
+    def emit_node(nid: str, indent: str = "  ") -> None:
+        lab = node_labels[nid].replace('"', "#quot;")
+        out.append(f'{indent}{nid}["{lab}"]')
+
+    if node_order is None:
+        node_order = sorted(node_labels.keys(), key=lambda k: (node_labels[k].lower(), k))
+    else:
+        seen = set(node_order)
+        node_order = list(node_order) + [n for n in node_labels if n not in seen]
+
     out: list[str] = []
     out.extend(header)
-    if not header or header[-1].strip():
-        pass
     out.append(flowchart)
     out.append("")
-    for nid in sorted(node_labels.keys(), key=lambda k: (node_labels[k].lower(), k)):
-        lab = node_labels[nid].replace('"', "#quot;")
-        out.append(f'  {nid}["{lab}"]')
+
+    placed: set[str] = set()
+    subgraph_id_used: set[str] = set(node_labels.keys())
+    if subgraphs:
+        for sg_title, sg_nids in subgraphs:
+            members = [n for n in sg_nids if n in node_labels]
+            if not members:
+                continue
+            safe = sg_title.replace('"', "#quot;")
+            sid = mermaid_id(f"sg_{sg_title[:28]}", subgraph_id_used)
+            out.append(f'  subgraph {sid}["{safe}"]')
+            for nid in members:
+                emit_node(nid, indent="    ")
+                placed.add(nid)
+            out.append("  end")
+        loose = [n for n in node_order if n not in placed]
+        if loose:
+            out.append("")
+            for nid in loose:
+                emit_node(nid)
+    else:
+        for nid in node_order:
+            emit_node(nid)
+
+    if rank_same:
+        out.append("")
+        for group in rank_same:
+            nids = [n for n in group if n in node_labels]
+            if len(nids) >= 2:
+                out.append(f"  {' ~~~ '.join(nids)}")
+
     out.append("")
     for (src, dst) in sorted(edges.keys(), key=lambda e: (e[1], e[0])):
         c = edges[(src, dst)]
@@ -488,6 +550,9 @@ def gen_note_outline(
     edge_filter: Callable[[str, str], bool] | None = None,
     restore_orphans: bool = False,
     preserve_hub_titles: frozenset[str] | None = None,
+    transitive_modules: bool = True,
+    subgraph_groups: list[tuple[str, list[str]]] | None = None,
+    rank_same_titles: list[list[str]] | None = None,
 ) -> str:
     header, old_labels, style = parse_preserve_tail(old)
     if header_lines is not None:
@@ -570,7 +635,10 @@ def gen_note_outline(
         used.add(nid)
         title_to_nid[title] = nid
         node_labels[nid] = old_labels.get(nid, title)
-        for mod in mods:
+        owned = (
+            transitive_import_closure(mods, modules) if transitive_modules else mods
+        )
+        for mod in owned:
             # First outline note in paper order owns a shared @import (e.g. InjectiveSpace.lean).
             mod_to_nid.setdefault(mod, nid)
 
@@ -588,7 +656,12 @@ def gen_note_outline(
     edges: dict[tuple[str, str], int] = defaultdict(int)
     for _title, dst_mods in boxes:
         dst_nid = title_to_nid[_title]
-        for mod in dst_mods:
+        scan_mods = (
+            transitive_import_closure(dst_mods, modules)
+            if transitive_modules
+            else dst_mods
+        )
+        for mod in scan_mods:
             for imp in direct_imports_mod(mod, modules):
                 if skip_aggregators:
                     ip = path_of_module(imp)
@@ -599,7 +672,10 @@ def gen_note_outline(
                     for sec_id in CL1972_SECTION_LABELS:
                         if sec_id not in external_sections:
                             continue
-                        if imp in external_sections[sec_id][1]:
+                        sec_mods = external_sections[sec_id][1]
+                        if transitive_modules:
+                            sec_mods = transitive_import_closure(sec_mods, modules)
+                        if imp in sec_mods:
                             src_nid = sec_id
                             break
                 if src_nid is None:
@@ -651,7 +727,31 @@ def gen_note_outline(
         internal_ids = {nid for nid in node_labels if nid not in set(external_sections or {})}
         edges = restore_orphan_outline_edges(full_edges, edges, internal_ids)
 
-    return emit_flowchart(header, node_labels, edges, style, labeled=labeled)
+    outline_nids = [title_to_nid[t] for t, _ in boxes if t in title_to_nid]
+    subgraphs: list[tuple[str, list[str]]] | None = None
+    rank_same: list[list[str]] | None = None
+    if subgraph_groups is not None:
+        subgraphs = []
+        for sg_title, titles in subgraph_groups:
+            nids = [title_to_nid[t] for t in titles if t in title_to_nid]
+            if nids:
+                subgraphs.append((sg_title, nids))
+    if rank_same_titles is not None:
+        rank_same = [
+            [title_to_nid[t] for t in group if t in title_to_nid]
+            for group in rank_same_titles
+        ]
+
+    return emit_flowchart(
+        header,
+        node_labels,
+        edges,
+        style,
+        labeled=labeled,
+        node_order=outline_nids,
+        subgraphs=subgraphs,
+        rank_same=rank_same,
+    )
 
 
 def gen_neighborhood_items(mermaid: Path, modules: dict[str, Path], old: str) -> str:
@@ -780,6 +880,40 @@ CL1972_HUB_TITLES = frozenset(
         "Scott maps",
     }
 )
+
+CONTINUOUS_LATTICES_SUBGRAPH_GROUPS: list[tuple[str, list[str]]] = [
+    (
+        "Definition 2.3 and Proposition 2.4",
+        [
+            "Definition 2.3: Continuous lattice",
+            "Proposition 2.4",
+        ],
+    ),
+    (
+        "Idempotent fixed points",
+        [
+            "Idempotent fixed points",
+            "Supremum on fixed points",
+            "Complete lattice on fixed points",
+        ],
+    ),
+    (
+        "Theorem 2.12 and specialization",
+        [
+            "Injective space homeomorphic to a Scott continuous lattice",
+            "Theorem 2.12",
+            "Order isomorphism is a Scott homeomorphism",
+            "Specialization equals the given complete-lattice order on injective T₀ spaces",
+        ],
+    ),
+]
+
+CONTINUOUS_LATTICES_RANK_SAME: list[list[str]] = [
+    [
+        "Definition 2.3: Continuous lattice",
+        "Idempotent fixed points",
+    ],
+]
 
 
 def cl1972_section_num(title: str) -> str | None:
@@ -985,7 +1119,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             extra_title_ids=cl_ids,
             header_lines=[
                 "%% Each box is one section from 1972_ContinuousLattices.md (Introduction omitted).",
-                "%% Arrowhead on the importer. The number is a direct-import count between sections.",
+                "%% Lean modules = transitive closure of outline notes in that section.",
+                "%% Arrowhead on the importer. The number counts direct imports along that closure.",
             ],
         )
     if kind == "ns_sections":
@@ -1048,20 +1183,30 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Proposition 2.2": "P22",
             }
         include_empty_boxes = False
+        cl_labeled = True
+        cl_subgraphs = None
+        cl_rank_same = None
         if mermaid.name == "ContinuousLattices.mermaid":
             reduce = True
+            cl_labeled = False
+            cl_subgraphs = CONTINUOUS_LATTICES_SUBGRAPH_GROUPS
+            cl_rank_same = CONTINUOUS_LATTICES_RANK_SAME
             header_lines = [
                 "%% Notes of the continuous lattice section, in outline order.",
                 "%% Each box is one outline note from 1972_Continuous_lattice_order.md.",
-                "%% Arrowhead on the importer. The number is a direct-import count.",
-                "%% An arrow already implied by a longer path is omitted.",
+                "%% Lean modules = transitive closure of that note's @import Lean files.",
+                "%% Subgraphs follow dependency shape; hub list order is unchanged.",
+                "%% Arrowhead on the importer. An arrow implied by a longer path is omitted.",
             ]
             extra_ids = {
                 "Definition 2.3: Continuous lattice": "D23",
                 "Definition 2.3": "D23",
                 "Proposition 2.4": "P24",
                 "Limits and convergence": "LAC",
+                "Injective space homeomorphic to a Scott continuous lattice": "IHCL",
                 "Theorem 2.12": "T212",
+                "Specialization equals the given complete-lattice order on injective T₀ spaces": "SELI",
+                "Order isomorphism is a Scott homeomorphism": "OISH",
                 "After Theorem 2.12": "A212",
                 "Idempotent fixed points": "IFP",
                 "Supremum on fixed points": "IFPS",
@@ -1085,10 +1230,12 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             old,
             skip_aggregators=skip,
             reduce=reduce,
-            labeled=True,
+            labeled=cl_labeled,
             extra_title_ids=extra_ids,
             header_lines=header_lines,
             include_empty_outline_boxes=include_empty_boxes,
+            subgraph_groups=cl_subgraphs,
+            rank_same_titles=cl_rank_same,
         )
     return None
 
