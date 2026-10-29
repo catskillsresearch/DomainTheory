@@ -20,16 +20,6 @@ class InjectiveSpace (D : Type v) [TopologicalSpace D] : Prop where
 
 namespace InjectiveSpace
 
-theorem pi {ι : Type w} (D : ι → Type v) [∀ i, TopologicalSpace (D i)]
-    (h : ∀ i, InjectiveSpace.{u} (D i)) : InjectiveSpace.{u} (∀ i, D i) := by
-  constructor
-  intro X Y _ _ e he f
-  choose g hg using fun i =>
-    (h i).extension e he ⟨fun x => f x i, (continuous_apply i).comp f.continuous⟩
-  refine ⟨⟨fun y i => g i y, continuous_pi fun i => (g i).continuous⟩, fun x => ?_⟩
-  funext i
-  exact hg i x
-
 theorem of_retract {D : Type v} {D' : Type v}
     [TopologicalSpace D] [TopologicalSpace D'] (hD : InjectiveSpace.{u} D)
     (s : C(D', D)) (r : C(D, D')) (hrs : ∀ d, r (s d) = d) :
