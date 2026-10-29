@@ -1,0 +1,17 @@
+For complete lattices $D$ and $D'$, the library topologizes **`ScottMap D D'`** (Scott-continuous maps $D \to D'$; see [Elements of $[D \to D']$](1972_Elements_of_D_to_Dprime.md)) with the *product* or pointwise-convergence topology: subbasic sets have the same shape as in Definition 3.1,
+
+$$ f : f(x) \in U $$
+
+with $x \in D$ and $U \subseteq D'$ open in **`scottTopologicalSpace`**.
+
+**Definition (`scottMapInducedPiTopology D D'`).** `TopologicalSpace (ScottMap D D')` induced from the pi topology on $D'^{D}$ (each fiber carries **`scottTopologicalSpace`**) along the inclusion **`ScottMap D D' ↪ (D → D')`**.
+
+Namespace **`scottMapInducedPiTopology`** packages the equivalent eval subbase (parallel to **`scottFunctionTopology`** in Definition 3.1):
+
+**Definition (`pointwiseSubbasis`).** Subbasic sets $\{\, f \mid f(x) \in U \,\}$ for $f \in$ **`ScottMap D D'`**, $x \in D$, and $U \subseteq D'$ Scott-open.
+
+**Definition (`pointwiseTopology`).** `generateFrom (pointwiseSubbasis D D')`.
+
+**Lemma (`subbasic_isOpen`).** For Scott-open $U \subseteq D'$ and $x \in D$, the subbasic set $\{\, f \mid f(x) \in U \,\}$ is open in **`pointwiseTopology D D'`**.
+
+**Theorem (`eq_induced_pi`).** **`pointwiseTopology D D' = scottMapInducedPiTopology D D'`** — the eval subbase and the induced pi topology agree.

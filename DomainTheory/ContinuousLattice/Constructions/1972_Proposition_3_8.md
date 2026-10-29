@@ -5,6 +5,9 @@
 **[proposition_3_8.lean](proposition_3_8.lean)**
 
 @import "proposition_3_8.lean"
+**[proposition_3_8_more.lean](proposition_3_8_more.lean)**
+
+@import "proposition_3_8_more.lean"
 **[../FunctionSpaces/scottSubspaceExtend.lean](../FunctionSpaces/scottSubspaceExtend.lean)**
 
 @import "../FunctionSpaces/scottSubspaceExtend.lean"
@@ -14,9 +17,6 @@
 **[../FunctionSpaces/scottSubspaceExtendInf_eq_of_ext.lean](../FunctionSpaces/scottSubspaceExtendInf_eq_of_ext.lean)**
 
 @import "../FunctionSpaces/scottSubspaceExtendInf_eq_of_ext.lean"
-**[../FunctionSpaces/scottSubspaceExtendInf_le_of_mem.lean](../FunctionSpaces/scottSubspaceExtendInf_le_of_mem.lean)**
-
-@import "../FunctionSpaces/scottSubspaceExtendInf_le_of_mem.lean"
 **[../FunctionSpaces/scottSubspaceExtendInf_mono.lean](../FunctionSpaces/scottSubspaceExtendInf_mono.lean)**
 
 @import "../FunctionSpaces/scottSubspaceExtendInf_mono.lean"

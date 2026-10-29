@@ -1,3 +1,3 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
+public import DomainTheory.ContinuousLattice.Constructions.proposition_3_8_more

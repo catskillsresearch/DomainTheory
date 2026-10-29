@@ -6,6 +6,7 @@ public import DomainTheory.ContinuousLattice.Constructions.scottExtend_maximal
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend
+public import DomainTheory.ContinuousLattice.Constructions.proposition_3_8_more
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
