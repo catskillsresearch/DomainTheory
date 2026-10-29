@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 
@@ -96,7 +95,7 @@ theorem curry_left (f : ScottMap (D × D') D'') (y : D') :
 end scottLambda
 
 noncomputable def scottLambda.at (f : ScottMap (D × D') D'') (x : D) : ScottMap D' D'' :=
-  ⟨fun y => f (x, y), continuous_of_preservesDirectedSup (scottLambda.curry_right f x)⟩
+  ⟨fun y => f (x, y), PreservesDirectedSup.continuous_of (scottLambda.curry_right f x)⟩
 
 namespace scottLambda
 
@@ -114,13 +113,25 @@ end scottLambda
 
 noncomputable def scottLambda (f : ScottMap (D × D') D'') : ScottMap D (ScottMap D' D'') :=
   ⟨fun x => scottLambda.at f x,
-    continuous_of_preservesDirectedSup (scottLambda.outer f)⟩
+    PreservesDirectedSup.continuous_of (scottLambda.outer f)⟩
 
 namespace scottLambda
 
 @[simp] theorem apply (f : ScottMap (D × D') D'') (x : D) (y : D') :
     ((scottLambda f x : ScottMap D' D'') : D' → D'') y = (f : (D × D') → D'') (x, y) :=
   rfl
+
+theorem preservesDirectedSup :
+    PreservesDirectedSup
+      (scottLambda : ScottMap (D × D') D'' → ScottMap D (ScottMap D' D'')) := by
+  intro 𝓕 h𝓕 h𝓕dir
+  apply ScottMap.ext
+  intro x
+  apply ScottMap.ext
+  intro y
+  rw [apply, ScottMap.sSup_apply, ScottMap.sSup_apply, ScottMap.sSup_apply,
+    Set.image_image, Set.image_image]
+  congr 1
 
 end scottLambda
 

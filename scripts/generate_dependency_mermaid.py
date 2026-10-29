@@ -17,10 +17,11 @@ IMPORT = re.compile(
 )
 BULLET_MD = re.compile(r"^\s*-\s+\[[^\]]*\]\(([^)]+)\)\s*$")
 # Chapter indexes use ``0. [Title](path)``; section indexes use ``- [Title](path)``.
+# Non-greedy title (same as compile_md_tree TOC) so ``$[D \to D']$`` in link text parses.
 OUTLINE_LINK = re.compile(
-    r"^\s*(?:-\s+|\d+\.\s+)\[[^\]]*\]\(([^)]+\.md)\)"
+    r"^\s*(?:-\s+|\d+\.\s+)\[(?P<title>.+?)\]\((?P<href>[^)]+\.md)\)"
+    r"(?:[ \t]+\[[^\]]*\]\([^)]*\))?[ \t]*$"
 )
-OUTLINE_TITLE = re.compile(r"^\s*(?:-\s+|\d+\.\s+)\[([^\]]*)\]")
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
 CL1972_SECTION_MERMAIDS = frozenset(
     {
@@ -161,7 +162,7 @@ def modules_from_section_outline(md: Path, modules: dict[str, Path] | None = Non
         m = OUTLINE_LINK.match(line)
         if not m:
             continue
-        child = resolve_md(md, m.group(1))
+        child = resolve_md(md, m.group("href"))
         if child is None:
             continue
         seeds |= note_module_set(child)
@@ -592,11 +593,10 @@ def gen_note_outline(
         m = OUTLINE_LINK.match(line)
         if not m:
             continue
-        child = resolve_md(index_md, m.group(1))
+        child = resolve_md(index_md, m.group("href"))
         if child is None:
             continue
-        title_m = OUTLINE_TITLE.match(line)
-        title = title_m.group(1) if title_m else child.stem
+        title = m.group("title")
         if re.search(r"(?i)^introduction$", title.strip(), re.I) and not lean_modules_from_note(child):
             continue
         if box_modules_fn is not None:

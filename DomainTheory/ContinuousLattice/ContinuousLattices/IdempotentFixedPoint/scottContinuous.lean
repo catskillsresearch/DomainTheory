@@ -3,7 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.ContinuousLattices.IdempotentFixedPoint.completeLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_2_10
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
@@ -65,9 +64,9 @@ noncomputable def retraction (hidem : ∀ x, e (e x) = e x) (hsc : PreservesDire
       (IdempotentFixedPoint.completeLattice hidem (preservesDirectedSup_monotone hsc)) _ :=
   letI := IdempotentFixedPoint.completeLattice hidem (preservesDirectedSup_monotone hsc)
   { incl := ⟨Subtype.val,
-      continuous_of_preservesDirectedSup (incl_preservesDirectedSup hidem hsc)⟩
+      PreservesDirectedSup.continuous_of (incl_preservesDirectedSup hidem hsc)⟩
     retr := ⟨fun x => ⟨e x, hidem x⟩,
-      continuous_of_preservesDirectedSup (retr_preservesDirectedSup hidem hsc)⟩
+      PreservesDirectedSup.continuous_of (retr_preservesDirectedSup hidem hsc)⟩
     retr_incl := fun k => Subtype.ext k.2 }
 
 theorem isContinuousLattice (hidem : ∀ x, e (e x) = e x) (hsc : PreservesDirectedSup e)

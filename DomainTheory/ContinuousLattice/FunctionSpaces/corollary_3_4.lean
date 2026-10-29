@@ -3,7 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
 import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_6
 import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
-import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
@@ -40,7 +39,7 @@ theorem preservesDirectedSup :
 theorem jointly_continuous :
     @Continuous (ScottMap D D' × D) D' scottTopologicalSpace scottTopologicalSpace
       (fun p : ScottMap D D' × D => (p.1 : D → D') p.2) :=
-  continuous_of_preservesDirectedSup preservesDirectedSup
+  PreservesDirectedSup.continuous_of preservesDirectedSup
 
 end corollary_3_4
 

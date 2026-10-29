@@ -3,7 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_preservesDirectedSup
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 
 @[expose] public section
 
@@ -16,6 +15,6 @@ variable {D D' D'' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLa
 theorem proposition_2_5 (f : D → D') :
     (@Continuous D D' scottTopologicalSpace scottTopologicalSpace f) ↔
       PreservesDirectedSup f :=
-  ⟨continuous_preservesDirectedSup, fun hf => continuous_of_preservesDirectedSup hf⟩
+  ⟨continuous_preservesDirectedSup, fun hf => PreservesDirectedSup.continuous_of hf⟩
 
 end DomainTheory.ContinuousLattice

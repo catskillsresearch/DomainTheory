@@ -14,9 +14,6 @@
 **[scottOpen_preimage.lean](scottOpen_preimage.lean)**
 
 @import "scottOpen_preimage.lean"
-**[continuous_of_preservesDirectedSup.lean](continuous_of_preservesDirectedSup.lean)**
-
-@import "continuous_of_preservesDirectedSup.lean"
 **[proposition_2_5.lean](proposition_2_5.lean)**
 
 @import "proposition_2_5.lean"

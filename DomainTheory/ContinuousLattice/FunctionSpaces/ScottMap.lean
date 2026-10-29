@@ -3,7 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 public import Mathlib.Order.BourbakiWitt
 
@@ -30,7 +29,7 @@ theorem ext {f g : ScottMap D D'} (h : ∀ x, f x = g x) : f = g :=
   Subtype.ext (funext h)
 
 def const (c : D') : ScottMap D D' :=
-  ⟨fun _ => c, continuous_of_preservesDirectedSup fun S hS _ => by
+  ⟨fun _ => c, PreservesDirectedSup.continuous_of fun S hS _ => by
     obtain ⟨x, hx⟩ := hS
     apply le_antisymm
     · exact le_sSup ⟨x, hx, rfl⟩
@@ -121,7 +120,7 @@ theorem sSupMaps_continuous {D : Type u} {D' : Type v}
     [CompleteLattice D] [CompleteLattice D'] (F : Set (ScottMap D D')) :
     @Continuous D D' scottTopologicalSpace scottTopologicalSpace
       (fun x => sSup (Set.image (fun f : ScottMap D D' => (f : D → D') x) F)) :=
-  continuous_of_preservesDirectedSup (pointwise_sSup_preservesDirectedSup F)
+  PreservesDirectedSup.continuous_of (pointwise_sSup_preservesDirectedSup F)
 
 noncomputable def sSupMaps {D : Type u} {D' : Type v}
     [CompleteLattice D] [CompleteLattice D'] (F : Set (ScottMap D D')) : ScottMap D D' :=
@@ -178,7 +177,7 @@ theorem preservesDirectedSup_comp {f : D' → D''} {g : D → D'} (hf : Preserve
   exact (Set.image_comp f g S).symm
 
 def comp (f : ScottMap D' D'') (g : ScottMap D D') : ScottMap D D'' :=
-  ⟨f ∘ g, continuous_of_preservesDirectedSup (preservesDirectedSup_comp
+  ⟨f ∘ g, PreservesDirectedSup.continuous_of (preservesDirectedSup_comp
     ((proposition_2_5 (Subtype.val f)).mp f.property)
     ((proposition_2_5 (Subtype.val g)).mp g.property))⟩
 
@@ -190,7 +189,7 @@ theorem continuous (f : ScottMap D D') :
   f.2
 
 def idMap : ScottMap D D :=
-  ⟨fun x => x, continuous_of_preservesDirectedSup fun S _ _ => by
+  ⟨fun x => x, PreservesDirectedSup.continuous_of fun S _ _ => by
     show sSup S = sSup (Set.image (fun x => x) S)
     rw [Set.image_id']⟩
 

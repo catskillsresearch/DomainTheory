@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.CLat
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Data.Set.Basic
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
@@ -44,7 +43,7 @@ end conjMap
 
 noncomputable def conjMap (post : ScottMap Y Z) (pre : ScottMap W Y) :
     ScottMap (ScottMap Y Y) (ScottMap W Z) :=
-  ⟨conjMap.fun post pre, continuous_of_preservesDirectedSup (conjMap.preservesDirectedSup post pre)⟩
+  ⟨conjMap.fun post pre, PreservesDirectedSup.continuous_of (conjMap.preservesDirectedSup post pre)⟩
 
 namespace conjMap
 

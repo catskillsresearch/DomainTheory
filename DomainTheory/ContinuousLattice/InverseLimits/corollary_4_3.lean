@@ -3,7 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Data.Set.Basic
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
@@ -26,7 +25,7 @@ theorem corollary_4_3 (f : ∀ n, ScottMap (D n) D')
     (hf : ∀ n x, f n x = f (n + 1) ((P n).incl x)) :
     ∃! g : ScottMap (InverseLimit D P) D', ∀ n x, f n x = g (embInf D P n x) := by
   refine ⟨⟨coconeInf D P f,
-    continuous_of_preservesDirectedSup (coconeInf_preservesDirectedSup D P f)⟩, ?_, ?_⟩
+    PreservesDirectedSup.continuous_of (coconeInf_preservesDirectedSup D P f)⟩, ?_, ?_⟩
   · exact fun n x => (coconeInf_comp_embInf D P f hf n x).symm
   · intro g hg
     ext x

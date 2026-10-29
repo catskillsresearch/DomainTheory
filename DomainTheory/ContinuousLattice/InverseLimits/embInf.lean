@@ -7,7 +7,6 @@ public import DomainTheory.ContinuousLattice.InverseLimits.coe_sSup_of_directed
 public import DomainTheory.ContinuousLattice.InverseLimits.embLE
 public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
@@ -56,7 +55,7 @@ theorem preservesDirectedSup (n : ℕ) : PreservesDirectedSup (embInf.fun D P n)
 end embInf
 
 noncomputable def embInf (n : ℕ) : ScottMap (D n) (InverseLimit D P) :=
-  ⟨embInf.fun D P n, continuous_of_preservesDirectedSup (embInf.preservesDirectedSup D P n)⟩
+  ⟨embInf.fun D P n, PreservesDirectedSup.continuous_of (embInf.preservesDirectedSup D P n)⟩
 
 theorem embInf_succ (n : ℕ) (x : D n) :
     embInf D P (n + 1) ((P n).incl x) = embInf D P n x := by

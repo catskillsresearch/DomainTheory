@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -23,7 +22,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 namespace Proposition313
 
 noncomputable def min : ScottMap (ScottMap D D) D :=
-  ⟨fun f => (f : D → D) ⊥, continuous_of_preservesDirectedSup (by
+  ⟨fun f => (f : D → D) ⊥, PreservesDirectedSup.continuous_of (by
     intro F _ _
     show ((sSup F : ScottMap D D) : D → D) ⊥
       = sSup (Set.image (fun f : ScottMap D D => (f : D → D) ⊥) F)

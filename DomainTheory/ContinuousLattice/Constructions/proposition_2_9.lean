@@ -4,7 +4,6 @@ public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.Constructions.piWayBelow
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.Constructions.proposition_2_8
 public import Mathlib.Topology.Defs.Basic
@@ -59,7 +58,7 @@ theorem proposition_2_9 {ι : Type*} (E : ι → Type*) [∀ i, CompleteLattice 
   apply le_antisymm
   · refine le_iInf fun i => ?_
     rw [← continuous_iff_le_induced]
-    exact continuous_of_preservesDirectedSup (fun _ _ _ => sSup_apply_eq_sSup_image)
+    exact PreservesDirectedSup.continuous_of (fun _ _ _ => sSup_apply_eq_sSup_image)
   · intro U hU
     rw [ScottOpen.isOpen_iff] at hU
     rw [@isOpen_iff_forall_mem_open _ (@Pi.topologicalSpace ι E (fun _ => scottTopologicalSpace))]

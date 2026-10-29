@@ -5,12 +5,14 @@ flowchart TB
 
   Induced_pi_topology_on["Induced pi topology on C(X, Y)"]
   Definition_3_1__Function["Definition 3.1: Function space"]
+  Elements_of___D__to_D["Elements of [D \to D']"]
   Step_function__pointwise["Step function (pointwise)"]
+  Step_map___overrightarro["Step map \overrightarrow{e}[e,e']"]
   Proposition_3_2["Proposition 3.2"]
+  Product_topology_on___D["Product topology on [D \to D']"]
   Theorem_3_3["Theorem 3.3"]
   Corollary_3_4["Corollary 3.4"]
   Scott_functional_abstrac["Scott functional abstraction"]
-  Functional_abstraction_p["Functional abstraction preserves directed suprema"]
   Proposition_3_5["Proposition 3.5"]
   Definition_3_6["Definition 3.6"]
   Proposition_3_7["Proposition 3.7"]
@@ -21,20 +23,22 @@ flowchart TB
   Proposition_3_13["Proposition 3.13"]
   Proposition_3_14["Proposition 3.14"]
 
-  Theorem_3_3 --> Corollary_3_4
+  Elements_of___D__to_D --> Corollary_3_4
   Induced_pi_topology_on --> Definition_3_1__Function
-  Theorem_3_3 --> Definition_3_6
-  Scott_functional_abstrac --> Functional_abstraction_p
+  Step_map___overrightarro --> Definition_3_6
+  Definition_3_1__Function --> Elements_of___D__to_D
   Proposition_3_8 --> Lemma_3_9
+  Step_map___overrightarro --> Product_topology_on___D
   Proposition_3_7 --> Proposition_3_10
   Proposition_3_7 --> Proposition_3_12
   Definition_3_6 --> Proposition_3_13
   Corollary_3_4 --> Proposition_3_14
   Proposition_3_8 --> Proposition_3_14
   Definition_3_1__Function --> Proposition_3_2
-  Functional_abstraction_p --> Proposition_3_5
+  Scott_functional_abstrac --> Proposition_3_5
   Definition_3_6 --> Proposition_3_7
   Proposition_3_7 --> Proposition_3_8
-  Theorem_3_3 --> Scott_functional_abstrac
-  Definition_3_1__Function --> Step_function__pointwise
-  Step_function__pointwise --> Theorem_3_3
+  Elements_of___D__to_D --> Scott_functional_abstrac
+  Elements_of___D__to_D --> Step_function__pointwise
+  Step_function__pointwise --> Step_map___overrightarro
+  Product_topology_on___D --> Theorem_3_3

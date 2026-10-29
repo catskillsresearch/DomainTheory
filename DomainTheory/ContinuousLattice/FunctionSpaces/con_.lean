@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -23,7 +22,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 namespace Proposition313
 
 noncomputable def con : ScottMap D (ScottMap D D) :=
-  ⟨fun x => ScottMap.const x, continuous_of_preservesDirectedSup (by
+  ⟨fun x => ScottMap.const x, PreservesDirectedSup.continuous_of (by
     intro S _ _
     apply ScottMap.ext
     intro y

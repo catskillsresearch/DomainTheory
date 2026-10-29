@@ -13,7 +13,6 @@ public import DomainTheory.ContinuousLattice.ContinuousLattices.continuousLattic
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
@@ -157,7 +156,7 @@ theorem coconeInf_continuous (hD : ∀ n, ContinuousLattice (D n))
     @Continuous (InverseLimit D P) D' (inverseLimitTopology D P)
       scottTopologicalSpace (coconeInf D P f) := by
   rw [← inverseLimit.scottTopology_eq_induced_pi D P hD]
-  exact continuous_of_preservesDirectedSup (coconeInf_preservesDirectedSup D P f)
+  exact PreservesDirectedSup.continuous_of (coconeInf_preservesDirectedSup D P f)
 
 end inverseLimitTopology
 

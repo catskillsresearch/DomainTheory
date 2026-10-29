@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun
-import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 
 @[expose] public section
@@ -14,7 +13,7 @@ open Set Topology TopologicalSpace
 variable {D D' : Type*} [CompleteLattice D] [CompleteLattice D']
 
 noncomputable def stepMap (e : D) (e' : D') : ScottMap D D' :=
-  ⟨stepFun e e', continuous_of_preservesDirectedSup (stepFun.preservesDirectedSup e e')⟩
+  ⟨stepFun e e', PreservesDirectedSup.continuous_of (stepFun.preservesDirectedSup e e')⟩
 
 namespace stepMap
 

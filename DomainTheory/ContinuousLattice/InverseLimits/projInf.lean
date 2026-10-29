@@ -3,7 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.coe_sSup_of_directed
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
@@ -35,7 +34,7 @@ theorem preservesDirectedSup (n : ℕ) : PreservesDirectedSup (projInf.fun D P n
 end projInf
 
 noncomputable def projInf (n : ℕ) : ScottMap (InverseLimit D P) (D n) :=
-  ⟨projInf.fun D P n, continuous_of_preservesDirectedSup (projInf.preservesDirectedSup D P n)⟩
+  ⟨projInf.fun D P n, PreservesDirectedSup.continuous_of (projInf.preservesDirectedSup D P n)⟩
 
 end InverseLimit
 
