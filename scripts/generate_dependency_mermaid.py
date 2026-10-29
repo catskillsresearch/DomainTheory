@@ -887,6 +887,8 @@ def classify(mermaid: Path, text: str) -> str:
         return "note_outline"
     if mermaid.name == "WayBelow.mermaid" and mermaid.parent.name == "WayBelow":
         return "note_outline"
+    if mermaid.name == "ContinuousLattices.mermaid" and mermaid.parent.name == "ContinuousLattices":
+        return "note_outline"
     if "Inside " in text.split("flowchart")[0]:
         return "inside"
     if "Lean files imported under this note" in text.split("flowchart")[0]:
@@ -1045,6 +1047,23 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Way-below relation": "WB",
                 "Proposition 2.2": "P22",
             }
+        include_empty_boxes = False
+        if mermaid.name == "ContinuousLattices.mermaid":
+            reduce = True
+            header_lines = [
+                "%% Notes of the continuous lattice section, in outline order.",
+                "%% Each box is one outline note from 1972_Continuous_lattice_order.md.",
+                "%% Arrowhead on the importer. The number is a direct-import count.",
+                "%% An arrow already implied by a longer path is omitted.",
+            ]
+            extra_ids = {
+                "Definition 2.3: Continuous lattice": "D23",
+                "Definition 2.3": "D23",
+                "Proposition 2.4": "P24",
+                "Limits and convergence": "LAC",
+                "Theorem 2.12": "T212",
+                "After Theorem 2.12": "A212",
+            }
         if mermaid.name == "Injective.mermaid":
             extra_ids = {
                 "Definition 1.1: Injective Space": "D11",
@@ -1066,6 +1085,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             labeled=True,
             extra_title_ids=extra_ids,
             header_lines=header_lines,
+            include_empty_outline_boxes=include_empty_boxes,
         )
     return None
 

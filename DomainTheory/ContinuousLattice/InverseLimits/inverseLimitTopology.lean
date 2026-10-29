@@ -10,7 +10,6 @@ public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpac
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.ContinuousLattices.lemma_3_9
 public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12
-public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12_more
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace

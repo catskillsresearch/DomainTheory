@@ -234,7 +234,6 @@ import DomainTheory.ContinuousLattice.ContinuousLattices.proposition_2_4
 import DomainTheory.ContinuousLattice.ContinuousLattices.scottOpen_preimage_orderIso
 import DomainTheory.ContinuousLattice.ContinuousLattices.supSet
 import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12
-import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12_more
 import DomainTheory.ContinuousLattice.FunctionSpaceTower.CLat
 import DomainTheory.ContinuousLattice.FunctionSpaceTower.DInf
 import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap

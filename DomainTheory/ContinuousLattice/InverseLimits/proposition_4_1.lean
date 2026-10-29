@@ -3,7 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12
-public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12_more
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import Mathlib.Data.Set.Basic
 

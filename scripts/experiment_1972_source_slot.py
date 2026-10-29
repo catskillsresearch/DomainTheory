@@ -237,7 +237,6 @@ def build_tree(spine: dict[Path, Leaf]) -> Barrel:
             S(P("ContinuousLattices/1972_Proposition_2_4.md")),
             S(P("ContinuousLattices/1972_Limits_and_convergence.md")),
             S(P("ContinuousLattices/1972_Theorem_2_12.md")),
-            S(P("ContinuousLattices/1972_Proof_of_2_12.md")),
             S(P("ContinuousLattices/1972_After_theorem_2_12.md")),
         ],
     )

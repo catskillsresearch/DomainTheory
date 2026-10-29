@@ -4,5 +4,24 @@ $$
 y = \bigsqcup x \in D : x \ll y.
 $$
 
-As an alternate definition we find:
+On a complete lattice $D$, the library records this as the typeclass **`ContinuousLattice`**: for every $y$, the set $\{ x : x \ll y \}$ has least upper bound $y$. Equivalently **`sSup_wayBelow`**: $\sup \{ x : x \ll y \} = y$. The way-below relation is **`WayBelow`** / **`≪`**; see the [Way-below relation](1972_WayBelow.md) note.
 
+Supporting lemmas live in namespace **`ContinuousLattice`** in [`ContinuousLattice.lean`](ContinuousLattice.lean). (One interpolation lemma is also exported as **`WayBelow.interpolate`** because it is stated purely in terms of **`≪`**, but its proof uses **`ContinuousLattice`**.)
+
+**Lemma (`ContinuousLattice.exists_wayBelow_subset`).** If $D$ is a continuous lattice, $U$ is Scott-open, and $z \in U$, then there exists $a \ll z$ such that $\{ w : a \ll w \} \subseteq U$.
+
+**Proof.** $\{ x : x \ll z \}$ is directed (`WayBelow.directedOn`), has supremum $z$ (`sSup_wayBelow`), and meets $U$ by Scott-openness; any witness $a$ in the intersection works, using that $U$ is an upset. $\square$
+
+**Lemma (`ContinuousLattice.exists_wayBelow_Ici_subset`).** Under the same hypotheses, there is $a \ll z$ with $\uparrow a \subseteq U$.
+
+**Proof.** As above, with $\uparrow a$ in place of $\{ w : a \ll w \}$. $\square$
+
+**Lemma (`ContinuousLattice.isContinuousLattice_iff_isLUB_sInf_nhds`).** $D$ is a continuous lattice iff for every $y \in D$, the set of infima $\inf U$ over Scott-open $U \ni y$ has least upper bound $y$.
+
+**Proof.** ($\Rightarrow$) Each $\inf U \ll y$ (`WayBelow.sInf`); the lub of those infs is at most $y$; **`out`** gives equality. ($\Leftarrow$) Every $x \ll y$ lies in some Scott-open $U$ with $y \in U$, hence $x \le \inf U$; the lub of the infs bounds all way-below elements below $y$, so **`out`** holds. $\square$
+
+**Lemma (`WayBelow.interpolate`).** If $D$ is a continuous lattice and $a \ll c$, then there exists $b$ with $a \ll b \ll c$.
+
+**Proof.** The set $M = \{ m : \exists x,\ m \ll x \ll c \}$ is directed; $c$ is its supremum by **`sSup_wayBelow`**; apply **`WayBelow.sSup_iff`**. $\square$
+
+**Proposition 2.4** (equivalent formulations via $\inf U \ll y$ and limits) is Scott’s discussion after 2.3; the **`isContinuousLattice_iff_isLUB_sInf_nhds`** lemma is the Scott-open inf characterization used in the library.
