@@ -1,4 +1,4 @@
-# ScottConvergesTo
+# Scott convergence
 
 **[ScottConvergesTo.lean](ScottConvergesTo.lean)**
 

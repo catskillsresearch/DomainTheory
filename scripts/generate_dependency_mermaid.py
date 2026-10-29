@@ -903,11 +903,11 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "%% An arrow already implied by a longer path is omitted.",
             ]
             extra_ids = {
-                "MonotoneNet": "MN",
-                "ScottConvergesTo": "SCT",
-                "SpecializationLe": "SLe",
-                "scottTopologicalSpace": "STS",
-                "Scott open": "SO",
+                "Monotone nets": "MN",
+                "Scott convergence": "SCT",
+                "Specialization preorder": "SLe",
+                "Scott topology on a complete lattice": "STS",
+                "Scott-open sets": "SO",
                 "Proposition 2.1": "P21",
             }
         if mermaid.name == "Injective.mermaid":

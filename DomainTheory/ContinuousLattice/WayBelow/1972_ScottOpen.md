@@ -1,4 +1,4 @@
-# Scott open
+# Scott-open sets
 
 **[ScottOpen.lean](ScottOpen.lean)**
 

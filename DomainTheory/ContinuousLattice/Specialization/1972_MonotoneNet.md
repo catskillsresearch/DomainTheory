@@ -1,4 +1,4 @@
-# MonotoneNet
+# Monotone nets
 
 **[MonotoneNet.lean](MonotoneNet.lean)**
 

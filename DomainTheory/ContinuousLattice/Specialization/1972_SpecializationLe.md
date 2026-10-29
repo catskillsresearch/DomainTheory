@@ -1,4 +1,4 @@
-# SpecializationLe
+# Specialization preorder
 
 **[SpecializationLe.lean](SpecializationLe.lean)**
 
