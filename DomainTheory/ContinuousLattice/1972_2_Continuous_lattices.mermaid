@@ -1,29 +1,33 @@
 %% Each box is one outline note from 1972_2_Continuous_lattices.md (Lean @import only).
 %% Arrowhead on the importer. The number is a direct-import count.
-%% An arrow already implied by a longer path is omitted.
+%% Modules are grouped by topic folder (Specialization, WayBelow, ContinuousLattices, …).
+%% Edges: topic hubs, or proposition ↔ proof with the same number; transitive reduction applied.
 flowchart TB
 
-  Definition_2_3["Definition 2.3"]
+  Continuous_lattice["Continuous lattice"]
   Proof_of_2_10["Proof of 2.10"]
   Proof_of_2_11["Proof of 2.11"]
-  Proof_of_2_12["Proof of 2.12"]
   Proof_of_2_9["Proof of 2.9"]
-  Proposition_2_2["Proposition 2.2"]
-  Proposition_2_4["Proposition 2.4"]
+  Proposition_2_10["Proposition 2.10"]
+  Proposition_2_11["Proposition 2.11"]
   Proposition_2_8["Proposition 2.8"]
+  Proposition_2_9["Proposition 2.9"]
   Scott_maps["Scott maps"]
   Specialization_order["Specialization order"]
   Way_below_relation["Way-below relation"]
 
-  Way_below_relation -->|"1"| Definition_2_3
-  Scott_maps -->|"2"| Proof_of_2_10
-  Scott_maps -->|"2"| Proof_of_2_11
-  Proof_of_2_10 -->|"2"| Proof_of_2_12
-  Proof_of_2_9 -->|"2"| Proof_of_2_12
-  Proposition_2_8 -->|"1"| Proof_of_2_12
-  Proof_of_2_12 -->|"2"| Proof_of_2_9
-  Way_below_relation -->|"1"| Proposition_2_2
-  Way_below_relation -->|"2"| Proposition_2_4
-  Way_below_relation -->|"2"| Proposition_2_8
-  Way_below_relation -->|"1"| Specialization_order
-  Specialization_order -->|"1"| Way_below_relation
+  Proof_of_2_9 -->|"1"| Continuous_lattice
+  Proposition_2_10 -->|"2"| Continuous_lattice
+  Proposition_2_11 -->|"1"| Continuous_lattice
+  Proposition_2_8 -->|"1"| Continuous_lattice
+  Scott_maps -->|"7"| Continuous_lattice
+  Specialization_order -->|"5"| Continuous_lattice
+  Way_below_relation -->|"6"| Continuous_lattice
+  Proof_of_2_10 -->|"1"| Proposition_2_10
+  Proof_of_2_11 -->|"2"| Proposition_2_11
+  Continuous_lattice -->|"1"| Proposition_2_8
+  Way_below_relation -->|"2"| Proposition_2_9
+  Continuous_lattice -->|"2"| Scott_maps
+  Specialization_order -->|"4"| Scott_maps
+  Way_below_relation -->|"3"| Scott_maps
+  Way_below_relation -->|"3"| Specialization_order

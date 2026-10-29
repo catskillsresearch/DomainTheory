@@ -7,6 +7,7 @@ import argparse
 import re
 from collections import defaultdict
 from pathlib import Path
+from typing import Callable
 
 ROOT = Path(__file__).resolve().parents[1]
 DT = ROOT / "DomainTheory"
@@ -483,6 +484,10 @@ def gen_note_outline(
     external_sections: dict[str, tuple[str, set[str]]] | None = None,
     header_lines: list[str] | None = None,
     include_empty_outline_boxes: bool = False,
+    mod_nid_override: Callable[[str, dict[str, str]], str | None] | None = None,
+    edge_filter: Callable[[str, str], bool] | None = None,
+    restore_orphans: bool = False,
+    preserve_hub_titles: frozenset[str] | None = None,
 ) -> str:
     header, old_labels, style = parse_preserve_tail(old)
     if header_lines is not None:
@@ -569,6 +574,12 @@ def gen_note_outline(
             # First outline note in paper order owns a shared @import (e.g. InjectiveSpace.lean).
             mod_to_nid.setdefault(mod, nid)
 
+    if mod_nid_override is not None:
+        for mod in list(mod_to_nid):
+            override = mod_nid_override(mod, title_to_nid)
+            if override is not None:
+                mod_to_nid[mod] = override
+
     if external_sections:
         for sec_id, (sec_title, _sec_mods) in external_sections.items():
             used.add(sec_id)
@@ -597,6 +608,16 @@ def gen_note_outline(
                     continue
                 edges[(src_nid, dst_nid)] += 1
 
+    if edge_filter is not None:
+        nid_to_title = {v: k for k, v in title_to_nid.items()}
+        edges = {
+            (a, b): c
+            for (a, b), c in edges.items()
+            if edge_filter(nid_to_title[a], nid_to_title[b])
+        }
+
+    full_edges = dict(edges)
+
     if reduce:
         external_ids = set(external_sections or {})
         internal_ids = {nid for nid in node_labels if nid not in external_ids}
@@ -613,6 +634,22 @@ def gen_note_outline(
             if a in external_ids or b in external_ids:
                 reduced[(a, b)] = c
         edges = reduced
+
+    if preserve_hub_titles is not None:
+        nid_to_title = {v: k for k, v in title_to_nid.items()}
+        title_to_nid_local = title_to_nid
+        hub_nids = {
+            title_to_nid_local[t]
+            for t in preserve_hub_titles
+            if t in title_to_nid_local
+        }
+        for (a, b), c in full_edges.items():
+            if a in hub_nids and b in hub_nids:
+                edges[(a, b)] = c
+
+    if restore_orphans:
+        internal_ids = {nid for nid in node_labels if nid not in set(external_sections or {})}
+        edges = restore_orphan_outline_edges(full_edges, edges, internal_ids)
 
     return emit_flowchart(header, node_labels, edges, style, labeled=labeled)
 
@@ -735,6 +772,85 @@ def cl1972_outline_box_modules(child: Path, title: str) -> set[str]:
     return lean_modules_from_note(child)
 
 
+CL1972_HUB_TITLES = frozenset(
+    {
+        "Specialization order",
+        "Way-below relation",
+        "Continuous lattice",
+        "Scott maps",
+    }
+)
+
+
+def cl1972_section_num(title: str) -> str | None:
+    m = re.search(r"2\.(\d+)", title)
+    return m.group(1) if m else None
+
+
+def cl1972_section_edge_filter(src_title: str, dst_title: str) -> bool:
+    """§2 section diagram: hubs plus matching proposition ↔ proof pairs only."""
+    if src_title in CL1972_HUB_TITLES or dst_title in CL1972_HUB_TITLES:
+        return True
+    sn, dn = cl1972_section_num(src_title), cl1972_section_num(dst_title)
+    if sn is not None and sn == dn:
+        src_proof = "Proof" in src_title
+        dst_proof = "Proof" in dst_title
+        src_prop = "Proposition" in src_title
+        dst_prop = "Proposition" in dst_title
+        if (src_proof and dst_prop) or (src_prop and dst_proof):
+            return True
+    return False
+
+
+def restore_orphan_outline_edges(
+    full: dict[tuple[str, str], int],
+    reduced: dict[tuple[str, str], int],
+    node_ids: set[str],
+) -> dict[tuple[str, str], int]:
+    """Put back one strongest incident edge for any node left isolated by reduction."""
+    out = dict(reduced)
+
+    def degree(nid: str) -> int:
+        return sum(1 for a, b in out if a == nid or b == nid)
+
+    for nid in node_ids:
+        if degree(nid) > 0:
+            continue
+        candidates = [
+            ((a, b), c) for (a, b), c in full.items() if (a == nid or b == nid) and c > 0
+        ]
+        if not candidates:
+            continue
+        (a, b), c = max(candidates, key=lambda x: x[1])
+        out[(a, b)] = c
+    return out
+
+
+def cl1972_section_mod_nid(mod: str, title_to_nid: dict[str, str]) -> str | None:
+    """Assign Lean modules to §2 topic folders (not whichever outline link appears first)."""
+    p = path_of_module(mod)
+    if p is None:
+        return None
+    try:
+        rel = p.relative_to(DT / "ContinuousLattice")
+    except ValueError:
+        return None
+    if not rel.parts:
+        return None
+    top = rel.parts[0]
+    if top == "Specialization":
+        return title_to_nid.get("Specialization order")
+    if top == "WayBelow":
+        if p.stem == "ContinuousLattice":
+            return title_to_nid.get("Continuous lattice")
+        return title_to_nid.get("Way-below relation")
+    if top == "ContinuousLattices":
+        return title_to_nid.get("Continuous lattice")
+    if top == "ScottMaps":
+        return title_to_nid.get("Scott maps")
+    return None
+
+
 def cl1972_chapter_section_modules() -> dict[str, set[str]]:
     """Lean modules owned by each numbered section of the 1972 chapter (by outline tree)."""
     index_paths = {
@@ -830,7 +946,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         header_lines = [
             f"%% Each box is one outline note from {index_md.name if index_md else mermaid.name} (Lean @import only).",
             "%% Arrowhead on the importer. The number is a direct-import count.",
-            "%% An arrow already implied by a longer path is omitted.",
+            "%% Modules are grouped by topic folder (Specialization, WayBelow, ContinuousLattices, …).",
+            "%% Edges: topic hubs, or proposition ↔ proof with the same number; transitive reduction applied.",
         ]
         return gen_note_outline(
             mermaid,
@@ -841,6 +958,10 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             box_modules_fn=cl1972_outline_box_modules,
             external_sections=None,
             header_lines=header_lines,
+            mod_nid_override=cl1972_section_mod_nid,
+            edge_filter=cl1972_section_edge_filter,
+            restore_orphans=True,
+            preserve_hub_titles=CL1972_HUB_TITLES,
         )
     if kind == "cl1972_chapter":
         cl_ids = {

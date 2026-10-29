@@ -5,6 +5,3 @@
 **[WayBelow.lean](WayBelow.lean)**
 
 @import "WayBelow.lean"
-**[ContinuousLattice.lean](ContinuousLattice.lean)**
-
-@import "ContinuousLattice.lean"

@@ -219,27 +219,44 @@ def build_tree(spine: dict[Path, Leaf]) -> Barrel:
             S(P("ScottMaps/1972_Proposition_2_7.md")),
         ],
     )
+    way_below = Barrel(
+        P("WayBelow/1972_WayBelow_order.md"),
+        "Way-below relation",
+        "WayBelow.mermaid",
+        [
+            S(P("WayBelow/1972_WayBelow.md")),
+            S(P("WayBelow/1972_Proposition_2_2.md")),
+        ],
+    )
+    cont_lat = Barrel(
+        P("ContinuousLattices/1972_Continuous_lattice_order.md"),
+        "Continuous lattice",
+        "ContinuousLattices.mermaid",
+        [
+            S(P("WayBelow/1972_ContinuousLattice.md")),
+            S(P("ContinuousLattices/1972_Proposition_2_4.md")),
+            S(P("ContinuousLattices/1972_Limits_and_convergence.md")),
+            S(P("ContinuousLattices/1972_Theorem_2_12.md")),
+            S(P("ContinuousLattices/1972_Proof_of_2_12.md")),
+            S(P("ContinuousLattices/1972_After_theorem_2_12.md")),
+        ],
+    )
     sec2 = Barrel(
         P("1972_2_Continuous_lattices.md"),
         "Continuous lattices",
         "1972_2_Continuous_lattices.mermaid",
         [
             spec,
-            S(P("WayBelow/1972_WayBelow.md")),
-            S(P("WayBelow/1972_Proposition_2_2.md")),
-            S(P("WayBelow/1972_ContinuousLattice.md")),
-            S(P("ContinuousLattices/1972_Proposition_2_4.md")),
-            S(P("ContinuousLattices/1972_Limits_and_convergence.md")),
+            way_below,
+            cont_lat,
             scott,
             S(P("Constructions/1972_Proposition_2_8.md")),
             S(P("Constructions/1972_Proposition_2_9.md")),
             S(P("FunctionSpaces/1972_Proposition_2_10.md")),
             S(P("Constructions/1972_Proposition_2_11.md")),
-            S(P("ContinuousLattices/1972_Theorem_2_12.md")),
             S(P("Constructions/1972_Proof_of_2_9.md")),
             S(P("FunctionSpaces/1972_Proposition_2_10_revisited.md")),
             S(P("Constructions/1972_Proof_of_2_11.md")),
-            S(P("ContinuousLattices/1972_After_theorem_2_12.md")),
         ],
     )
     sec3 = Barrel(
