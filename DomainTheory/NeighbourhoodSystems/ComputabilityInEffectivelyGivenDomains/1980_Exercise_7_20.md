@@ -14,6 +14,6 @@ $$\text{union}(\{\{x\}, \{y, z\}\}) = ??$$
 
 Are $\mathbb{P}(\mathbb{P} D)$ and $\mathbb{P} D$ generally isomorphic??
 
-**[Exercise_7_20.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_20.lean)**
+**[Exercise_7_20.lean](Exercise_7_20.lean)**
 
 @import "Exercise_7_20.lean"

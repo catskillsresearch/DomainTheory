@@ -22,6 +22,6 @@ Are $\mathcal{B}$ and $\mathcal{T}^\infty$ isomorphic? Are $\mathcal{B}$ and $\m
 
 <!-- page 51 -->
 
-**[Exercise_3_17.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise_3_17.lean)**
+**[Exercise_3_17.lean](Exercise_3_17.lean)**
 
 @import "Exercise_3_17.lean"

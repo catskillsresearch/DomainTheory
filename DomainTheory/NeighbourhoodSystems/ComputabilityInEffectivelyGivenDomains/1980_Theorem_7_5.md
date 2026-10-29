@@ -50,6 +50,6 @@ It follows that if $f$ is recursively enumerable as a set of pairs, then, by for
 
 We have nearly all our favourite combinators computable, but perhaps the most important one - since it is the key to recursive definitions - is the fixed-point combinator. It is not left out.
 
-**[Theorem_7_5.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_5.lean)**
+**[Theorem_7_5.lean](Theorem_7_5.lean)**
 
 @import "Theorem_7_5.lean"

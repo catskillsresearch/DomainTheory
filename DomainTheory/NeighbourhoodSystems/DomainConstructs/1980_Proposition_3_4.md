@@ -50,6 +50,6 @@ equivalent to the old relationship. We can also employ an element-wise notation 
 
 We have discussed several times what it means for a function $f(x)$ to come from an approximable mapping. It is interesting to ask the analogous question for functions of several arguments.
 
-**[Proposition_3_4.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Proposition_3_4.lean)**
+**[Proposition_3_4.lean](Proposition_3_4.lean)**
 
 @import "Proposition_3_4.lean"

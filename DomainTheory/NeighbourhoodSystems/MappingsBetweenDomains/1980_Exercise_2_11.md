@@ -22,6 +22,6 @@ that is, <u>approximable mappings always preserve directed unions</u>. If an ele
 
 <!-- page 33 -->
 
-**[Exercise_2_11.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_11.lean)**
+**[Exercise_2_11.lean](Exercise_2_11.lean)**
 
 @import "Exercise_2_11.lean"

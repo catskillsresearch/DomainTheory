@@ -1,5 +1,5 @@
 # InverseLimit
 
-**[DomainTheory/ContinuousLattice/InverseLimits/InverseLimit.lean](DomainTheory/ContinuousLattice/InverseLimits/InverseLimit.lean)**
+**[InverseLimit.lean](InverseLimit.lean)**
 
 @import "InverseLimit.lean"

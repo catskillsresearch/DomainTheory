@@ -10,6 +10,6 @@ DEFINITION 1.1. A family $\mathcal{D}$ of subsets of a given set $\Delta$ is cal
 
 We remark that by convention $\Delta$ corresponds to the intersection of an empty sequence of neighbourhoods; in particular, see Factoid 1.1.
 
-**[NeighborhoodSystem.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/NeighborhoodSystem.lean)**
+**[NeighborhoodSystem.lean](NeighborhoodSystem.lean)**
 
 @import "NeighborhoodSystem.lean"

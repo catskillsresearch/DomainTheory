@@ -14,6 +14,6 @@ $$
 
 for all $x \in |D_0|$.
 
-**[Exercise_2_12.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_12.lean)**
+**[Exercise_2_12.lean](Exercise_2_12.lean)**
 
 @import "Exercise_2_12.lean"

@@ -1,5 +1,5 @@
 # Compatible
 
-**[DomainTheory/ContinuousLattice/InverseLimits/Compatible.lean](DomainTheory/ContinuousLattice/InverseLimits/Compatible.lean)**
+**[Compatible.lean](Compatible.lean)**
 
 @import "Compatible.lean"

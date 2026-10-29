@@ -20,6 +20,6 @@ $$
 
 that can be regarded as the “evaluation of an expression”.
 
-**[Exercise_6_23.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_23.lean)**
+**[Exercise_6_23.lean](Exercise_6_23.lean)**
 
 @import "Exercise_6_23.lean"

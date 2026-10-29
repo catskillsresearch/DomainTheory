@@ -1,5 +1,5 @@
 # scottTopologicalSpace
 
-**[DomainTheory/ContinuousLattice/Specialization/scottTopologicalSpace.lean](DomainTheory/ContinuousLattice/Specialization/scottTopologicalSpace.lean)**
+**[scottTopologicalSpace.lean](scottTopologicalSpace.lean)**
 
 @import "scottTopologicalSpace.lean"

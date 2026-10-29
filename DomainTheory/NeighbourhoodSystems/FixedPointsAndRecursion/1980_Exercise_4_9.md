@@ -14,6 +14,6 @@ $$
 
 Prove further that $\mathrm{fix} : (D \to D) \to D$ is the *least* fixed point of $\Psi$.
 
-**[Exercise_4_9.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_9.lean)**
+**[Exercise_4_9.lean](Exercise_4_9.lean)**
 
 @import "Exercise_4_9.lean"

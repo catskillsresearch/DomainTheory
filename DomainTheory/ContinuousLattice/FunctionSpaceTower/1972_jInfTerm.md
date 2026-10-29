@@ -1,5 +1,5 @@
 # jInfTerm
 
-**[DomainTheory/ContinuousLattice/FunctionSpaceTower/jInfTerm.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/jInfTerm.lean)**
+**[jInfTerm.lean](jInfTerm.lean)**
 
 @import "jInfTerm.lean"

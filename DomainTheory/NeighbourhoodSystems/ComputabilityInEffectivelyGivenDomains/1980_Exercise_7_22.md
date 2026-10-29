@@ -20,63 +20,63 @@ $$\vec{\sigma}\,\vec{\sigma} = \vec{\sigma}, \quad \vec{\sigma}\,\vec{\sigma}\,\
 
 and $\vec{01}\,\vec{01}\,\vec{01}\,\vec{01} = \vec{01}\,\vec{01}$ ?
 
-**[Exercise_7_22.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_22.lean)**
+**[Exercise_7_22.lean](Exercise_7_22.lean)**
 
 @import "Exercise_7_22.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_1.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_1.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_1.lean](Definition_7_1.lean)**
 
 @import "Definition_7_1.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_2.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_2.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_2.lean](Definition_7_2.lean)**
 
 @import "Definition_7_2.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_3.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_3.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_3.lean](Proposition_7_3.lean)**
 
 @import "Proposition_7_3.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example_7_8.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example_7_8.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example_7_8.lean](Example_7_8.lean)**
 
 @import "Example_7_8.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_13.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_13.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_13.lean](Exercise_7_13.lean)**
 
 @import "Exercise_7_13.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_14.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_14.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_14.lean](Exercise_7_14.lean)**
 
 @import "Exercise_7_14.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_10.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_10.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_10.lean](Proposition_7_10.lean)**
 
 @import "Proposition_7_10.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_11.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_11.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_11.lean](Definition_7_11.lean)**
 
 @import "Definition_7_11.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_19.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_19.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_19.lean](Exercise_7_19.lean)**
 
 @import "Exercise_7_19.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_20.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_20.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_20.lean](Exercise_7_20.lean)**
 
 @import "Exercise_7_20.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_21.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_21.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_21.lean](Exercise_7_21.lean)**
 
 @import "Exercise_7_21.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_7.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_7.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_7.lean](Proposition_7_7.lean)**
 
 @import "Proposition_7_7.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_4.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_4.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_4.lean](Theorem_7_4.lean)**
 
 @import "Theorem_7_4.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_12.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_12.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_12.lean](Proposition_7_12.lean)**
 
 @import "Proposition_7_12.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_5.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_5.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_5.lean](Theorem_7_5.lean)**
 
 @import "Theorem_7_5.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_15.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_15.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_15.lean](Exercise_7_15.lean)**
 
 @import "Exercise_7_15.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_16.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_16.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_16.lean](Exercise_7_16.lean)**
 
 @import "Exercise_7_16.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_18.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_18.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_18.lean](Exercise_7_18.lean)**
 
 @import "Exercise_7_18.lean"
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_17.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_17.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_17.lean](Exercise_7_17.lean)**
 
 @import "Exercise_7_17.lean"

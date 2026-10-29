@@ -18,10 +18,10 @@ The tip records that Scott’s map `a` on `R` is a projection and is not finitar
 
 Builds the Dedekind-cut system `R` and proves the projection `a` is not finitary.
 
-**[DedekindCutProjection.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/DedekindCutProjection.lean)**
+**[DedekindCutProjection.lean](DedekindCutProjection.lean)**
 
 @import "DedekindCutProjection.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_11.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_11.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_11.lean](Exercise_8_11.lean)**
 
 @import "Exercise_8_11.lean"
 The tip then assembles those tools into Scott’s statement.

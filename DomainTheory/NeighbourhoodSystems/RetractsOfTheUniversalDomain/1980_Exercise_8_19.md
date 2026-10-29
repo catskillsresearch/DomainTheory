@@ -14,7 +14,7 @@ The tip asserts closure of $\trianglelefteq$ under sum and product under Scottâ€
 
 Closes $\trianglelefteq$ under sum and product given a terminal object and a function-space retract.
 
-**[SumProdRetracts.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/SumProdRetracts.lean)**
+**[SumProdRetracts.lean](SumProdRetracts.lean)**
 
 @import "SumProdRetracts.lean"
 The tip then assembles those tools into Scottâ€™s statement.

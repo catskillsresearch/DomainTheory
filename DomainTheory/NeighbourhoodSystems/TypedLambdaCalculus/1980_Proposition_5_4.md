@@ -37,6 +37,6 @@ The last proof is instructive as it uses equations and inclusions between functi
 
 This is another form of Theorem 3.13(i).
 
-**[Proposition_5_4.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition_5_4.lean)**
+**[Proposition_5_4.lean](Proposition_5_4.lean)**
 
 @import "Proposition_5_4.lean"

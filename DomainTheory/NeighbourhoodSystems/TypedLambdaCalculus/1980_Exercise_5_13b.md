@@ -22,6 +22,6 @@ $$
 
 <!-- page 90 -->
 
-**[Exercise_5_13b.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise_5_13b.lean)**
+**[Exercise_5_13b.lean](Exercise_5_13b.lean)**
 
 @import "Exercise_5_13b.lean"

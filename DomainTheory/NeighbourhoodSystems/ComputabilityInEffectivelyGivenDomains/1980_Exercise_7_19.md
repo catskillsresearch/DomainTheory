@@ -12,6 +12,6 @@ Be sure to check that $\mathbb{P} f$ is approximable and that $\mathbb{P}$ prese
 
 $$\mathbb{P} f(\{x, y\}) = ??$$
 
-**[Exercise_7_19.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_19.lean)**
+**[Exercise_7_19.lean](Exercise_7_19.lean)**
 
 @import "Exercise_7_19.lean"

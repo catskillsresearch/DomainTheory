@@ -1,5 +1,5 @@
 # The mediating map
 
-**[DomainTheory/ContinuousLattice/InverseLimits/coconeInf.lean](DomainTheory/ContinuousLattice/InverseLimits/coconeInf.lean)**
+**[coconeInf.lean](coconeInf.lean)**
 
 @import "coconeInf.lean"

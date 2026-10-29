@@ -1,5 +1,5 @@
 # Conjugation
 
-**[DomainTheory/ContinuousLattice/FunctionSpaceTower/conjMap.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/conjMap.lean)**
+**[conjMap.lean](conjMap.lean)**
 
 @import "conjMap.lean"

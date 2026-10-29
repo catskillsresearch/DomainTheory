@@ -12,6 +12,6 @@ The proof is not troublesome and is left as an exercise. In technical language t
 
 Toward the end of the last lecture (see 1.9) we promised to show that isomorphisms of domains always come from approximable mappings, and this we now do. It means that the category contains all the isomorphisms it should have.
 
-**[Proposition_2_6.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Proposition_2_6.lean)**
+**[Proposition_2_6.lean](Proposition_2_6.lean)**
 
 @import "Proposition_2_6.lean"

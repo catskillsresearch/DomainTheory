@@ -2,6 +2,6 @@
 
 @import "1972_Proposition_2_1.english" {code_block=false}
 
-**[DomainTheory/ContinuousLattice/Specialization/proposition_2_1.lean](DomainTheory/ContinuousLattice/Specialization/proposition_2_1.lean)**
+**[proposition_2_1.lean](proposition_2_1.lean)**
 
 @import "proposition_2_1.lean"

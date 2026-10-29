@@ -1,5 +1,5 @@
 # Coordinates of an embedding
 
-**[DomainTheory/ContinuousLattice/InverseLimits/iComp.lean](DomainTheory/ContinuousLattice/InverseLimits/iComp.lean)**
+**[iComp.lean](iComp.lean)**
 
 @import "iComp.lean"

@@ -2,9 +2,9 @@
 
 @import "1972_Proposition_2_10_revisited.english" {code_block=false}
 
-**[DomainTheory/ContinuousLattice/FunctionSpaces/incl_preservesDirectedSup.lean](DomainTheory/ContinuousLattice/FunctionSpaces/incl_preservesDirectedSup.lean)**
+**[incl_preservesDirectedSup.lean](incl_preservesDirectedSup.lean)**
 
 @import "incl_preservesDirectedSup.lean"
-**[DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10.lean)**
+**[proposition_2_10.lean](proposition_2_10.lean)**
 
 @import "proposition_2_10.lean"

@@ -1,5 +1,5 @@
 # SpecializationLe
 
-**[DomainTheory/ContinuousLattice/Specialization/SpecializationLe.lean](DomainTheory/ContinuousLattice/Specialization/SpecializationLe.lean)**
+**[SpecializationLe.lean](SpecializationLe.lean)**
 
 @import "SpecializationLe.lean"

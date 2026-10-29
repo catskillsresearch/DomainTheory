@@ -38,6 +38,6 @@ And the structure $\langle E, n, p \rangle$ is what we called a tree algebra. De
 
 Note that the $T$-algebras and homomorphisms form a category. (Why?) The following definition is so abstract that it could be given for any category.
 
-**[Definition_6_4.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition_6_4.lean)**
+**[Definition_6_4.lean](Definition_6_4.lean)**
 
 @import "Definition_6_4.lean"

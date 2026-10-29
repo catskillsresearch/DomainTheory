@@ -58,6 +58,6 @@ $$\lambda x . \tau = \lambda y . \tau [y / x]$$
 
 is true, provided $y$ does not occur free in the term $\tau$, since the systematic generation of the function defined by $\lambda x . \tau$ does not depend on what the variable $x$ *looks like* but only on its *position* in the term $\tau$. Some other obviously desirable rules for generating true equations are stated in the exercises. But one rule is so basic that we state it here in full generality.
 
-**[Theorem_5_1.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Theorem_5_1.lean)**
+**[Theorem_5_1.lean](Theorem_5_1.lean)**
 
 @import "Theorem_5_1.lean"

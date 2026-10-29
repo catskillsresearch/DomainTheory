@@ -16,6 +16,6 @@ The idea of 1.6 is a well-known mathematical device: the families $x$ satisfying
 
 We have often said that neighbourhoods determine partial elements by themselves; we now make this remark precise.
 
-**[Element.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Element.lean)**
+**[Element.lean](Element.lean)**
 
 @import "Element.lean"

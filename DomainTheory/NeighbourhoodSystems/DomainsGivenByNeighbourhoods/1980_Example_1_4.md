@@ -29,6 +29,6 @@ It should be noted that, in these three examples, the reason that we have a neig
 
 <!-- page 11 -->
 
-**[Example_1_4.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_4.lean)**
+**[Example_1_4.lean](Example_1_4.lean)**
 
 @import "Example_1_4.lean"

@@ -12,7 +12,7 @@ The tip asserts that the sharp of a finitary projection is again a finitary proj
 
 Develops the sharp construction and shows it yields a finitary projection.
 
-**[ASharp.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/ASharp.lean)**
+**[ASharp.lean](ASharp.lean)**
 
 @import "ASharp.lean"
  — `aSharp` projection/computability companions and Ex 8.25 closing

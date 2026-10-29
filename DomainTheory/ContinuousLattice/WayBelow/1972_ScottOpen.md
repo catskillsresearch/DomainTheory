@@ -1,8 +1,8 @@
 # Scott open
 
-**[DomainTheory/ContinuousLattice/WayBelow/ScottOpen.lean](DomainTheory/ContinuousLattice/WayBelow/ScottOpen.lean)**
+**[ScottOpen.lean](ScottOpen.lean)**
 
 @import "ScottOpen.lean"
-**[DomainTheory/ContinuousLattice/WayBelow/scottOpen_wayBelow.lean](DomainTheory/ContinuousLattice/WayBelow/scottOpen_wayBelow.lean)**
+**[scottOpen_wayBelow.lean](scottOpen_wayBelow.lean)**
 
 @import "scottOpen_wayBelow.lean"

@@ -8,6 +8,6 @@ $$(\mathcal{D} \oplus \mathcal{E}) \trianglelefteq (\mathcal{D} + \mathcal{E}) \
 
 $$(\mathcal{D} \to_\perp \mathcal{E}) \trianglelefteq (\mathcal{D} \to \mathcal{E}) \ ; \quad \mathcal{D} \trianglelefteq \mathcal{D} \otimes \mathcal{E} \ ?$$
 
-**[Exercise_6_27.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_27.lean)**
+**[Exercise_6_27.lean](Exercise_6_27.lean)**
 
 @import "Exercise_6_27.lean"

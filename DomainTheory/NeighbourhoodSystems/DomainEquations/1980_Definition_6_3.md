@@ -42,6 +42,6 @@ and this suggests the definition of $T(f)$. The details are left to the exercise
 
 One good reason for a little of the category-theoretic language is that the next definition becomes very neat indeed.
 
-**[Definition_6_3.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition_6_3.lean)**
+**[Definition_6_3.lean](Definition_6_3.lean)**
 
 @import "Definition_6_3.lean"

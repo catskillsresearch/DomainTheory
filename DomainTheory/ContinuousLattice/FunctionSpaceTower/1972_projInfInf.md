@@ -1,5 +1,5 @@
 # projInfInf
 
-**[DomainTheory/ContinuousLattice/FunctionSpaceTower/projInfInf.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/projInfInf.lean)**
+**[projInfInf.lean](projInfInf.lean)**
 
 @import "projInfInf.lean"

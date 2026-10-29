@@ -14,6 +14,6 @@ $$
 
 $\square$
 
-**[Definition_3_1.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Definition_3_1.lean)**
+**[Definition_3_1.lean](Definition_3_1.lean)**
 
 @import "Definition_3_1.lean"

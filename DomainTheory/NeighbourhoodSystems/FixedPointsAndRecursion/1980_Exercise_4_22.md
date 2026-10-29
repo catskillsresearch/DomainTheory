@@ -4,6 +4,6 @@
 
 <!-- page 71 -->
 
-**[Exercise_4_22.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_22.lean)**
+**[Exercise_4_22.lean](Exercise_4_22.lean)**
 
 @import "Exercise_4_22.lean"

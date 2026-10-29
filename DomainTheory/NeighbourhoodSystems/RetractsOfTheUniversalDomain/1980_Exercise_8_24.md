@@ -13,7 +13,7 @@ The tip asserts that the coupled solutions `aStar`, `bStar` are finitary project
 
 Solves the coupled domain equations with finitary projections `aStar`, `bStar`.
 
-**[CoupledFixedPoints.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/CoupledFixedPoints.lean)**
+**[CoupledFixedPoints.lean](CoupledFixedPoints.lean)**
 
 @import "CoupledFixedPoints.lean"
 The tip then assembles those tools into Scott’s statement.

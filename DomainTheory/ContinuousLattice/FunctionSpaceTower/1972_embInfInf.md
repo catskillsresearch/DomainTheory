@@ -1,5 +1,5 @@
 # embInfInf
 
-**[DomainTheory/ContinuousLattice/FunctionSpaceTower/embInfInf.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/embInfInf.lean)**
+**[embInfInf.lean](embInfInf.lean)**
 
 @import "embInfInf.lean"

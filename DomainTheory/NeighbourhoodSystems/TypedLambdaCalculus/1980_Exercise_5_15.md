@@ -35,6 +35,6 @@ where the $\{\cdot\}$ has been dropped off $\{a\}$, $\{b\}$ etc., and where the 
 
 <!-- page 91 -->
 
-**[Exercise_5_15.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise_5_15.lean)**
+**[Exercise_5_15.lean](Exercise_5_15.lean)**
 
 @import "Exercise_5_15.lean"

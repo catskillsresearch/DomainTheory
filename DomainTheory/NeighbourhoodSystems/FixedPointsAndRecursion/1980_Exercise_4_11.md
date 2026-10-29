@@ -10,6 +10,6 @@
 
 (Hint: Apply 4.7 to prove $\mathrm{fix}$ satisfies (iii). In the other direction use 4.10.)
 
-**[Exercise_4_11.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_11.lean)**
+**[Exercise_4_11.lean](Exercise_4_11.lean)**
 
 @import "Exercise_4_11.lean"

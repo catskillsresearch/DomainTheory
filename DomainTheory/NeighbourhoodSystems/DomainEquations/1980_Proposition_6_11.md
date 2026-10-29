@@ -10,6 +10,6 @@ forms a domain in its own right. $\square$
 
 The subdomain relationship implies a mapping relationship between the domains.
 
-**[Proposition_6_11.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Proposition_6_11.lean)**
+**[Proposition_6_11.lean](Proposition_6_11.lean)**
 
 @import "Proposition_6_11.lean"

@@ -47,18 +47,18 @@ $$\mathrm{smash}(x, y) = \mathrm{fade}(\mathrm{check}(x), \mathrm{fade}(\mathrm{
 
 for $x \in |D|$ and $y \in |E|$. $\square$
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/fixOfO.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/fixOfO.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/fixOfO.lean](fixOfO.lean)**
 
 @import "fixOfO.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/fixedNbhd.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/fixedNbhd.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/fixedNbhd.lean](fixedNbhd.lean)**
 
 @import "fixedNbhd.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/smashRetraction.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/smashRetraction.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/smashRetraction.lean](smashRetraction.lean)**
 
 @import "smashRetraction.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/strictRetraction.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/strictRetraction.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/strictRetraction.lean](strictRetraction.lean)**
 
 @import "strictRetraction.lean"
-**[Examples_8_4.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Examples_8_4.lean)**
+**[Examples_8_4.lean](Examples_8_4.lean)**
 
 @import "Examples_8_4.lean"

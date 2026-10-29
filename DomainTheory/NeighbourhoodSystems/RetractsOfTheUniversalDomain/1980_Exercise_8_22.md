@@ -20,10 +20,10 @@ The tip asserts the concrete embedding relation between Scott’s examples `C` a
 
 Compares Scott’s concrete examples `B` and `C`.
 
-**[ExampleC_le_B.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/ExampleC_le_B.lean)**
+**[ExampleC_le_B.lean](ExampleC_le_B.lean)**
 
 @import "ExampleC_le_B.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_22.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_22.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_22.lean](Exercise_8_22.lean)**
 
 @import "Exercise_8_22.lean"
 The tip then assembles those tools into Scott’s statement.

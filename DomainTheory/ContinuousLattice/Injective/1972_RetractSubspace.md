@@ -2,6 +2,6 @@
 
 @import "1972_RetractSubspace.english" {code_block=false}
 
-**[DomainTheory/ContinuousLattice/Injective/RetractSubspace.lean](DomainTheory/ContinuousLattice/Injective/RetractSubspace.lean)**
+**[RetractSubspace.lean](RetractSubspace.lean)**
 
 @import "RetractSubspace.lean"

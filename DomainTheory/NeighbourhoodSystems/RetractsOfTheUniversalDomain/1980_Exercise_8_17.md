@@ -1,5 +1,5 @@
 # Exercise 8.17
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/ProjPair.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/ProjPair.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/ProjPair.lean](ProjPair.lean)**
 
 @import "ProjPair.lean"
 

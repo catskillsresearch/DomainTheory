@@ -36,6 +36,6 @@ Finally, if we calculate $a = i \circ j$ by the formulae of 6.12 (with $D'$ for 
 
 The criterion for being a finitary projection just obtained provides us with a very interesting new combinator.
 
-**[Theorem_8_5.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem_8_5.lean)**
+**[Theorem_8_5.lean](Theorem_8_5.lean)**
 
 @import "Theorem_8_5.lean"

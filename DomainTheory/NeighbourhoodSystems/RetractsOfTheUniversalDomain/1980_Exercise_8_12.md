@@ -1,26 +1,26 @@
 # Exercise 8.12
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/V.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/V.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/V.lean](V.lean)**
 
 @import "V.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableSplit.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableSplit.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableSplit.lean](IsComputableSplit.lean)**
 
 @import "IsComputableSplit.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VX.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/VX.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VX.lean](VX.lean)**
 
 @import "VX.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Vinter.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Vinter.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Vinter.lean](Vinter.lean)**
 
 @import "Vinter.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean](deltaPair.lean)**
 
 @import "deltaPair.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/minLevel.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/minLevel.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/minLevel.lean](minLevel.lean)**
 
 @import "minLevel.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitV.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitV.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitV.lean](splitV.lean)**
 
 @import "splitV.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VComputablePresentation.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/VComputablePresentation.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VComputablePresentation.lean](VComputablePresentation.lean)**
 
 @import "VComputablePresentation.lean"
 

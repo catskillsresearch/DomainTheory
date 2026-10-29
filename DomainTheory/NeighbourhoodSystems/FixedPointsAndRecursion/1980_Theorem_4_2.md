@@ -80,6 +80,6 @@ That is to say, the two operators are identical. $\square$
 
 The reader may have noticed that we used recursion in the proof of 4.1 (we had to define $f^n$ for all $n \in \mathbf{N}$). But 4.1 and 4.2 can be used to justify definitions by recursion on a large number of domains — definitions where the process of iteration is far from being as straightforward. In discussing this point, let us start with some basic examples.
 
-**[Theorem_4_2.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem_4_2.lean)**
+**[Theorem_4_2.lean](Theorem_4_2.lean)**
 
 @import "Theorem_4_2.lean"

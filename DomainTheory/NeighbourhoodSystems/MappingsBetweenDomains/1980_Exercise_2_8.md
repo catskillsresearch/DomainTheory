@@ -4,6 +4,6 @@
 
 <!-- page 32 -->
 
-**[Exercise_2_8.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_8.lean)**
+**[Exercise_2_8.lean](Exercise_2_8.lean)**
 
 @import "Exercise_2_8.lean"

@@ -1,5 +1,5 @@
 # inverseLimitSInfCoe
 
-**[DomainTheory/ContinuousLattice/InverseLimits/inverseLimitSInfCoe.lean](DomainTheory/ContinuousLattice/InverseLimits/inverseLimitSInfCoe.lean)**
+**[inverseLimitSInfCoe.lean](inverseLimitSInfCoe.lean)**
 
 @import "inverseLimitSInfCoe.lean"

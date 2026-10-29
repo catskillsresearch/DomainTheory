@@ -293,6 +293,6 @@ In algebraic language $g$ is a *homomorphism* of tree algebras; and $D^\S$ is ca
 
 <!-- page 99 -->
 
-**[Example_6_1.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Example_6_1.lean)**
+**[Example_6_1.lean](Example_6_1.lean)**
 
 @import "Example_6_1.lean"

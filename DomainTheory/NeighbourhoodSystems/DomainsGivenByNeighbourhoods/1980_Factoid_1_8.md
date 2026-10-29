@@ -56,6 +56,6 @@ The generalization of 1.5 to the infinite case where $\Delta = \mathbf{N} = \{0,
 
 Many constructions (choices of $\mathcal{D}$) lead to the "same" domain; "sameness" is an important notion and it is to be defined in terms of "isomorphism", which in turn is to be defined in terms of approximation preserving correspondences.
 
-**[Factoid_1_8.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_8.lean)**
+**[Factoid_1_8.lean](Factoid_1_8.lean)**
 
 @import "Factoid_1_8.lean"

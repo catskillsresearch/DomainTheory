@@ -6,6 +6,6 @@
 
 (Hint: How do we know $\bigsqcup_{n=0}^{\infty} f^n(\bot) \in |D|$ ?)
 
-**[Exercise_4_7.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise_4_7.lean)**
+**[Exercise_4_7.lean](Exercise_4_7.lean)**
 
 @import "Exercise_4_7.lean"

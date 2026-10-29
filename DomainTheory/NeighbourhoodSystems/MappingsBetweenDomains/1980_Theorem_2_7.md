@@ -24,6 +24,6 @@ $$
 
 Because $Y' \subseteq Y$ always implies $y_{Y'} \subseteq y_Y$ and each $y_Y \in |D_0|$, it is easy to show $z$ is a filter and hence is in $|D_0|$ also (cf. Exercise 2.11). Because each $y_Y \subseteq \uparrow X$, then $z \subseteq \uparrow X$, too. But each $y_Y \subseteq z$, so $\uparrow Y = f(y_Y) \subseteq f(z)$ and hence $Y \in f(z)$. As this holds for all $Y \in f(\uparrow X)$, the inclusion $f(\uparrow X) \subseteq f(z)$ follows, as well as $\uparrow X \subseteq z$. Therefore, $z = \uparrow X$ and so $X \in z$. But then $X \in y_Y$ for some $Y \in f(\uparrow X)$, by definition of $z$. Since $\uparrow X \subseteq y_Y$, we obtain $f(\uparrow X) \subseteq \uparrow Y$, but of course the opposite inclusion is also true from the choice of $Y$. This means that $f(\uparrow X) = \uparrow Y$ is finite in $|D_1|$ as claimed. We can apply the same argument to the inverse function; and, thus, the finite elements of $|D_0|$ and $|D_1|$ are in a one-one inclusion-preserving correspondence under the isomorphism. $\square$
 
-**[Theorem_2_7.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Theorem_2_7.lean)**
+**[Theorem_2_7.lean](Theorem_2_7.lean)**
 
 @import "Theorem_2_7.lean"

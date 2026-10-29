@@ -2,9 +2,9 @@
 
 @import "1972_WayBelow.english" {code_block=false}
 
-**[DomainTheory/ContinuousLattice/WayBelow/WayBelow.lean](DomainTheory/ContinuousLattice/WayBelow/WayBelow.lean)**
+**[WayBelow.lean](WayBelow.lean)**
 
 @import "WayBelow.lean"
-**[DomainTheory/ContinuousLattice/WayBelow/ContinuousLattice.lean](DomainTheory/ContinuousLattice/WayBelow/ContinuousLattice.lean)**
+**[ContinuousLattice.lean](ContinuousLattice.lean)**
 
 @import "ContinuousLattice.lean"

@@ -9,6 +9,7 @@ target. Does not invent new Lean sources — only repairs broken paths.
 from __future__ import annotations
 
 import argparse
+import os
 import re
 from pathlib import Path
 
@@ -33,12 +34,12 @@ def resolve_import(note_dir: Path, rel: str) -> Path:
 
 
 def canonical_lean_href(note_dir: Path, rel: str) -> str | None:
-    """Repo-relative path for PDF / file hyperlinks (``DomainTheory/...``)."""
+    """Path relative to the note directory (Markdown Enhanced Preview file links)."""
     target = resolve_import(note_dir, rel)
     if not target.is_file():
         return None
     try:
-        return target.relative_to(ROOT).as_posix()
+        return Path(os.path.relpath(target, note_dir)).as_posix()
     except ValueError:
         return None
 

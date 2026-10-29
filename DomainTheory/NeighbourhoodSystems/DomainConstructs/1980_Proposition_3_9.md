@@ -92,6 +92,6 @@ $$
 
 for all $X, X' \in \mathcal{D}_0$ and $Y, Y' \in \mathcal{D}_1$. We are now ready to prove the main result about the construct.
 
-**[Proposition_3_9.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Proposition_3_9.lean)**
+**[Proposition_3_9.lean](Proposition_3_9.lean)**
 
 @import "Proposition_3_9.lean"

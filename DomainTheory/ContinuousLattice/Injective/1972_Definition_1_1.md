@@ -2,6 +2,6 @@
 
 @import "1972_Definition_1_1.english" {code_block=false}
 
-**[DomainTheory/ContinuousLattice/Injective/InjectiveSpace.lean](DomainTheory/ContinuousLattice/Injective/InjectiveSpace.lean)**
+**[InjectiveSpace.lean](InjectiveSpace.lean)**
 
 @import "InjectiveSpace.lean"
