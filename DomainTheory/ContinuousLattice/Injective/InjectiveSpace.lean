@@ -18,19 +18,7 @@ class InjectiveSpace (D : Type v) [TopologicalSpace D] : Prop where
     ∀ {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y] (e : X → Y),
       IsEmbedding e → ∀ f : C(X, D), ∃ g : C(Y, D), ∀ x, g (e x) = f x
 
-abbrev Sierpinski := Prop
-
 namespace InjectiveSpace
-
-theorem sierpinski : InjectiveSpace.{u} Sierpinski := by
-  constructor
-  intro X Y _ _ e he f
-  have hfopen : IsOpen {x | f x} := continuous_Prop.1 f.continuous
-  rw [he.isInducing.isOpen_iff] at hfopen
-  obtain ⟨V, hVopen, hVeq⟩ := hfopen
-  refine ⟨⟨fun y => y ∈ V, continuous_Prop.2 hVopen⟩, fun x => ?_⟩
-  have : (e x ∈ V) = (x ∈ {x | f x}) := by rw [← hVeq]; rfl
-  simpa using this
 
 theorem pi {ι : Type w} (D : ι → Type v) [∀ i, TopologicalSpace (D i)]
     (h : ∀ i, InjectiveSpace.{u} (D i)) : InjectiveSpace.{u} (∀ i, D i) := by
