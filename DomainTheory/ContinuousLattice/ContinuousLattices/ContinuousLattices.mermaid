@@ -4,12 +4,16 @@
 %% An arrow already implied by a longer path is omitted.
 flowchart TB
 
+  IFPCL["Complete lattice on fixed points"]
   D23["Definition 2.3"]
+  IFP["Idempotent fixed points"]
   P24["Proposition 2.4"]
+  IFPS["Supremum on fixed points"]
   T212["Theorem 2.12"]
 
+  IFPS -->|"1"| IFPCL
+  IFP -->|"1"| IFPS
   D23 -->|"1"| P24
-  D23 -->|"2"| T212
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

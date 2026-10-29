@@ -1,0 +1,13 @@
+On a complete lattice $L$, write $e : L \to L$ for an endomap. We say $e$ is **idempotent** when $e \circ e = e$ (equivalently $e(e x) = e x$ for all $x$). An element $x \in L$ is a **fixed point** of $e$ when $e(x) = x$.
+
+Scott’s discussion after Theorem 2.12 treats a retraction $j : \mathcal{P}I \to \mathcal{P}I$ as idempotent and identifies its range with $\{ X : j(X) = X \}$. The proof of Theorem 2.12 uses the same fixed-point subtype for the idempotent $e = s \circ r$ built from an injective-space retraction into a Sierpiński power.
+
+**Definition (`IdempotentFixedPoint`).** For $e : L \to L$ on a complete lattice $L$, **`IdempotentFixedPoint e`** is the subtype $\{ x \in L \mid e x = x \}$.
+
+**Proof.** This is the formalization of “fixed points of $e$” as `{x // e x = x}` in [`IdempotentFixedPoint.lean`](IdempotentFixedPoint.lean). $\square$
+
+Order and topology on fixed points are developed in later notes (same library namespace **`IdempotentFixedPoint`**, separate Lean modules):
+
+- [Supremum on fixed points](1972_IdempotentFixedPoint_supremumSet.md) — **`IdempotentFixedPoint.supremumSet`**, **`supremumSet.isLUB`**
+- [Complete lattice on fixed points](1972_IdempotentFixedPoint_completeLattice.md) — **`IdempotentFixedPoint.completeLattice`**, **`completeLattice.coe`**
+- Retraction, **`ContinuousLattice`**, and Scott subspace topology — [`IdempotentFixedPoint/scottContinuous.lean`](IdempotentFixedPoint/scottContinuous.lean) (via Proposition 2.10)

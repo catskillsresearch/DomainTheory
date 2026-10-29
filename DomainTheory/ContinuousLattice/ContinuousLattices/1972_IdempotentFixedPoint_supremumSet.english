@@ -1,0 +1,13 @@
+When $e$ is idempotent on a complete lattice $L$, the fixed-point subtype **`IdempotentFixedPoint e`** needs a join operation: ambient suprema of fixed points need not be fixed, but applying $e$ after taking the supremum lands back in the fixed-point set. The lemmas below live in namespace **`IdempotentFixedPoint.supremumSet`** in [`IdempotentFixedPoint/supremumSet.lean`](IdempotentFixedPoint/supremumSet.lean). See [Idempotent fixed points](1972_IdempotentFixedPoint.md) for the subtype definition. The **`CompleteLattice`** instance built from this **`SupSet`** is [Complete lattice on fixed points](1972_IdempotentFixedPoint_completeLattice.md).
+
+**Definition (`IdempotentFixedPoint.supremumSet`).** Given $e(e x) = e x$, the **`SupSet`** instance sends a set $S$ of fixed points to $e(\sup \{ \mathrm{val}\,k : k \in S \})$ in $L$, packaged as a fixed point using idempotence.
+
+**Proof.** Definition only (`supremumSet` in Lean). $\square$
+
+**Theorem (`IdempotentFixedPoint.supremumSet.isLUB`).** With **`IdempotentFixedPoint.supremumSet`**, `sSup S` is a least upper bound of $S$ in the fixed-point order (requires **`Monotone e`**).
+
+**Proof.** Write $u = e(\sup \mathrm{val}\,S)$ for the proposed supremum.
+
+*Upper bound.* If $k \in S$, then $\mathrm{val}\,k \le \sup \mathrm{val}\,S$ in $L$, so $e(\mathrm{val}\,k) \le u$ by monotonicity; fixedness gives $\mathrm{val}\,k = e(\mathrm{val}\,k) \le u$.
+
+*Least.* If $w$ is an upper bound of $S$ among fixed points, then $\mathrm{val}\,k \le \mathrm{val}\,w$ for all $k \in S$, hence $\sup \mathrm{val}\,S \le \mathrm{val}\,w$; monotonicity yields $u \le e(\mathrm{val}\,w) = \mathrm{val}\,w$. $\square$

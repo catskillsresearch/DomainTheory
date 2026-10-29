@@ -1,14 +1,12 @@
 module
 
-public import DomainTheory.ContinuousLattice.Constructions.proposition_2_9
 public import DomainTheory.ContinuousLattice.Constructions.proposition_2_11
 public import DomainTheory.ContinuousLattice.Constructions.scottTopology
-public import DomainTheory.ContinuousLattice.ContinuousLattices.IdempotentFixedPoint
+public import DomainTheory.ContinuousLattice.ContinuousLattices.IdempotentFixedPoint.scottContinuous
 public import DomainTheory.ContinuousLattice.ContinuousLattices.orderIsoScottHomeomorph
 public import DomainTheory.ContinuousLattice.Injective.corollary_1_6
 public import DomainTheory.ContinuousLattice.Injective.proposition_1_2
 public import DomainTheory.ContinuousLattice.Injective.proposition_1_4
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationPreorder
 
 @[expose] public section

@@ -15,3 +15,6 @@
 - [Proof of 2.9](Constructions/1972_Proof_of_2_9.md)
 - [Proof of 2.10](FunctionSpaces/1972_Proposition_2_10_revisited.md)
 - [Proof of 2.11](Constructions/1972_Proof_of_2_11.md)
+- [Idempotent fixed points](ContinuousLattices/1972_IdempotentFixedPoint.md)
+- [Supremum on fixed points](ContinuousLattices/1972_IdempotentFixedPoint_supremumSet.md)
+- [Complete lattice on fixed points](ContinuousLattices/1972_IdempotentFixedPoint_completeLattice.md)

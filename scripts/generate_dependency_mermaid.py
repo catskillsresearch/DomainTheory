@@ -1063,6 +1063,9 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Limits and convergence": "LAC",
                 "Theorem 2.12": "T212",
                 "After Theorem 2.12": "A212",
+                "Idempotent fixed points": "IFP",
+                "Supremum on fixed points": "IFPS",
+                "Complete lattice on fixed points": "IFPCL",
             }
         if mermaid.name == "Injective.mermaid":
             extra_ids = {

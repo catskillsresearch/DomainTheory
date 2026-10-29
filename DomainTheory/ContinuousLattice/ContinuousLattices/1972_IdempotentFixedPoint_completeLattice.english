@@ -1,0 +1,9 @@
+Once **`IdempotentFixedPoint.supremumSet`** provides suprema on fixed points, Mathlib’s **`completeLatticeOfSup`** turns that **`SupSet`** into a full **`CompleteLattice`** on **`IdempotentFixedPoint e`**, using **`supremumSet.isLUB`** for arbitrary (not merely directed) joins. The lemmas below live in namespace **`IdempotentFixedPoint.completeLattice`** in [`IdempotentFixedPoint/completeLattice.lean`](IdempotentFixedPoint/completeLattice.lean). Prerequisites: [Supremum on fixed points](1972_IdempotentFixedPoint_supremumSet.md). Scott continuity and subspace topology are in [`IdempotentFixedPoint/scottContinuous.lean`](IdempotentFixedPoint/scottContinuous.lean).
+
+**Definition (`IdempotentFixedPoint.completeLattice`).** Given idempotent $e$ and **`Monotone e`**, install **`supremumSet`**, then apply **`completeLatticeOfSup`** with witness **`supremumSet.isLUB`**.
+
+**Proof.** `completeLatticeOfSup` from the **`SupSet`** and **`isLUB`** lemmas already proved in [`supremumSet.lean`](IdempotentFixedPoint/supremumSet.lean). $\square$
+
+**Theorem (`IdempotentFixedPoint.completeLattice.coe`).** With **`IdempotentFixedPoint.completeLattice`**, coercion to $L$ sends `sSup S` to $e(\sup \{ \mathrm{val}\,k : k \in S \})$.
+
+**Proof.** Definitional: `sSup` for this instance is **`supremumSet`**, and the subtype coercion is the underlying value of that fixed point (`rfl`). $\square$

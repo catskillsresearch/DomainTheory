@@ -2,5 +2,4 @@
 
 This theorem is an immediate consequence of the preceding results: an injective space is a retract of a power of $\mathbb{O}$. But $\mathbb{O}$ is a finite lattice $(\perp \sqsubseteq \top)$, and so the given space is a continuous lattice under its induced topology. On the other hand a continuous lattice is injective. It remains then to prove 2.9–2.11.
 
-Fixed points of an idempotent $e$ on a complete lattice form the subtype **`IdempotentFixedPoint e`**. In [`IdempotentFixedPoint.lean`](IdempotentFixedPoint.lean), namespace **`IdempotentFixedPoint`** supplies **`supremumSet`** (the join on fixed points: apply $e$ to the ambient supremum), **`isLUB_sSup`**, **`completeLattice`**, **`coe_sSup`**, directed-sup preservation for inclusion and retraction, **`retraction`**, **`isContinuousLattice`**, and **`scottTopology`** (via Proposition 2.10). The proof **`theorem_2_12`** assembles these with Constructions 2.9–2.11 and **`ContinuousLattice.orderIso`** (Definition 2.3 note).
-
+The fixed-point lattice **`IdempotentFixedPoint`** (see [Idempotent fixed points](1972_IdempotentFixedPoint.md)) and **`theorem_2_12`** assemble Propositions 2.9–2.11 with **`ContinuousLattice.orderIso`**.
