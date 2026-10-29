@@ -12,7 +12,7 @@
 - [Proposition 3.2](FunctionSpaces/1972_Proposition_3_2.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Product topology on $[D \to D']$](FunctionSpaces/1972_Product_topology_on_D_to_Dprime.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Theorem 3.3](FunctionSpaces/1972_Theorem_3_3.md) [✓](ContinuousLattice/1972_REVISION.md)
-- [Corollary 3.4](FunctionSpaces/1972_Corollary_3_4.md)
+- [Corollary 3.4](FunctionSpaces/1972_Corollary_3_4.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Scott functional abstraction](FunctionSpaces/1972_Scott_lambda.md)
 - [Functional abstraction preserves directed suprema](FunctionSpaces/1972_Scott_lambda_preservesDirectedSup.md)
 - [Proposition 3.5](FunctionSpaces/1972_Proposition_3_5.md) [✓](ContinuousLattice/1972_REVISION.md)

@@ -3,10 +3,14 @@
 %% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
+  Induced_pi_topology_on["Induced pi topology on C(X, Y)"]
   Definition_3_1__Function["Definition 3.1: Function space"]
+  Step_function__pointwise["Step function (pointwise)"]
   Proposition_3_2["Proposition 3.2"]
   Theorem_3_3["Theorem 3.3"]
   Corollary_3_4["Corollary 3.4"]
+  Scott_functional_abstrac["Scott functional abstraction"]
+  Functional_abstraction_p["Functional abstraction preserves directed suprema"]
   Proposition_3_5["Proposition 3.5"]
   Definition_3_6["Definition 3.6"]
   Proposition_3_7["Proposition 3.7"]
@@ -17,15 +21,20 @@ flowchart TB
   Proposition_3_13["Proposition 3.13"]
   Proposition_3_14["Proposition 3.14"]
 
-  Definition_3_1__Function --> Corollary_3_4
+  Theorem_3_3 --> Corollary_3_4
+  Induced_pi_topology_on --> Definition_3_1__Function
   Theorem_3_3 --> Definition_3_6
+  Scott_functional_abstrac --> Functional_abstraction_p
   Proposition_3_8 --> Lemma_3_9
   Proposition_3_7 --> Proposition_3_10
-  Theorem_3_3 --> Proposition_3_12
-  Theorem_3_3 --> Proposition_3_13
-  Definition_3_1__Function --> Proposition_3_14
+  Proposition_3_7 --> Proposition_3_12
+  Definition_3_6 --> Proposition_3_13
+  Corollary_3_4 --> Proposition_3_14
+  Proposition_3_8 --> Proposition_3_14
   Definition_3_1__Function --> Proposition_3_2
-  Theorem_3_3 --> Proposition_3_5
-  Theorem_3_3 --> Proposition_3_7
-  Theorem_3_3 --> Proposition_3_8
-  Definition_3_1__Function --> Theorem_3_3
+  Functional_abstraction_p --> Proposition_3_5
+  Definition_3_6 --> Proposition_3_7
+  Proposition_3_7 --> Proposition_3_8
+  Theorem_3_3 --> Scott_functional_abstrac
+  Definition_3_1__Function --> Step_function__pointwise
+  Step_function__pointwise --> Theorem_3_3

@@ -286,6 +286,12 @@ def parse_preserve_tail(old: str) -> tuple[list[str], dict[str, str], list[str]]
     return header, labels, style
 
 
+def mermaid_display_label(text: str) -> str:
+    """Outline titles use $...$ for PDF math; Mermaid node labels do not render LaTeX."""
+    s = re.sub(r"\$([^$]*)\$", r"\1", text)
+    return s.replace("$", "")
+
+
 def mermaid_id(label: str, used: set[str]) -> str:
     base = re.sub(r"[^A-Za-z0-9_]", "_", label.strip())
     base = base.strip("_") or "N"
@@ -336,7 +342,7 @@ def emit_flowchart(
     style_tail = filter_style(style_tail, node_labels)
 
     def emit_node(nid: str, indent: str = "  ") -> None:
-        lab = node_labels[nid].replace('"', "#quot;")
+        lab = mermaid_display_label(node_labels[nid]).replace('"', "#quot;")
         out.append(f'{indent}{nid}["{lab}"]')
 
     if node_order is None:
