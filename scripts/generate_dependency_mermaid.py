@@ -885,6 +885,8 @@ def classify(mermaid: Path, text: str) -> str:
         return "top_chapters"
     if mermaid.name == "Specialization.mermaid" and mermaid.parent.name == "Specialization":
         return "note_outline"
+    if mermaid.name == "WayBelow.mermaid" and mermaid.parent.name == "WayBelow":
+        return "note_outline"
     if "Inside " in text.split("flowchart")[0]:
         return "inside"
     if "Lean files imported under this note" in text.split("flowchart")[0]:
@@ -1030,6 +1032,18 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Scott topology on a complete lattice": "STS",
                 "Scott-open sets": "SO",
                 "Proposition 2.1": "P21",
+            }
+        if mermaid.name == "WayBelow.mermaid":
+            reduce = True
+            header_lines = [
+                "%% Notes of the way-below relation, in outline order.",
+                "%% Each box is one outline note from 1972_WayBelow_order.md.",
+                "%% Arrowhead on the importer. The number is a direct-import count.",
+                "%% An arrow already implied by a longer path is omitted.",
+            ]
+            extra_ids = {
+                "Way-below relation": "WB",
+                "Proposition 2.2": "P22",
             }
         if mermaid.name == "Injective.mermaid":
             extra_ids = {

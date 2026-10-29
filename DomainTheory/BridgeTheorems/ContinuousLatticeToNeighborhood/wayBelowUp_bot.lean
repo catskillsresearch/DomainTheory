@@ -26,7 +26,7 @@ variable {D : Type*} [CompleteLattice D]
 
 theorem wayBelowUp_bot : wayBelowUp (⊥ : D) = (Set.univ : Set D) := by
   ext z
-  exact ⟨fun _ => trivial, fun _ => bot_wayBelow z⟩
+  exact ⟨fun _ => trivial, fun _ => WayBelow.bot z⟩
 
 end ContinuousLatticeToNeighborhood
 

@@ -34,7 +34,7 @@ def toFilter (x : D) : Filter (D := D) where
     intro U h
     obtain ⟨a, ⟨rfl, _⟩⟩ := h
     exact ⟨a, rfl⟩
-  master_mem := ⟨⊥, wayBelowUp_bot.symm, bot_wayBelow x⟩
+  master_mem := ⟨⊥, wayBelowUp_bot.symm, WayBelow.bot x⟩
   inter_mem := by
     intro U V hU hV
     obtain ⟨a, ⟨rfl, ha⟩⟩ := hU

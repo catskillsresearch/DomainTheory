@@ -28,7 +28,7 @@ namespace IsContinuousLatticeProjection
 theorem incl_wayBelow (P : IsContinuousLatticeProjection D D') (hD' : ContinuousLattice D')
     {x y : D} (h : x ≪ y) : @WayBelow D' _ (P.incl x) (P.incl y) := by
   set W : Set D' := { z' | @WayBelow D' _ z' (P.incl y) }
-  have hWne : W.Nonempty := ⟨(⊥ : D'), @bot_wayBelow D' _ (P.incl y)⟩
+  have hWne : W.Nonempty := ⟨(⊥ : D'), @WayBelow.bot D' _ (P.incl y)⟩
   have hWdir : DirectedOn (· ≤ ·) W := by
     intro p hp q hq
     exact ⟨p ⊔ q, @WayBelow.sup D' _ p q (P.incl y) hp hq, le_sup_left, le_sup_right⟩

@@ -7,3 +7,17 @@ y \sqsubseteq \bigsqcup x_i : i \in I.
 $$
 
 $\square$
+
+On a complete lattice $D$ with directed index type $\iota$, Scott’s “induced topology” is the Scott topology **`scottTopologicalSpace`**: convergence is **`ScottConvergesTo`**, monotonicity is **`MonotoneNet x`**, and a least upper bound $L$ of the net is **`IsLUB (range x) L`**. Under that topology, $\sqsubseteq$ is lattice $\le$ (`SpecializationPreorder.scott_iff`), so Scott’s condition is formalized as `ScottConvergesTo x y ↔ y ≤ L`. The module **`proposition_2_1`** is Scott’s biconditional; the nested lemmas in namespace **`proposition_2_1`** are the two directions.
+
+**Lemma (`proposition_2_1.le_of_converges`).** If `IsLUB (range x) L` and `ScottConvergesTo x y`, then $y \le L$.
+
+**Proof.** If $y \not\le L$, then $y \in \{ z : z \not\le L \}$, which is Scott-open (`ScottOpen.not_le L`). Convergence gives a tail of the net in that set, contradicting that $L$ bounds every term. $\square$
+
+**Lemma (`proposition_2_1.of_le`).** If $\iota$ is nonempty, `MonotoneNet x`, `IsLUB (range x) L`, and $y \le L$, then `ScottConvergesTo x y`.
+
+**Proof.** For Scott-open $U$ with $y \in U$, the values $\{ x_i \}$ form a directed set in the lattice order; $L = \bigsqcup x_i \in U$ since $U$ is an upset, so Scott-openness yields some term in $U$, and monotonicity keeps all later terms in $U$. $\square$
+
+**Theorem (`proposition_2_1`).** If $\iota$ is nonempty, `MonotoneNet x`, and `IsLUB (range x) L`, then `ScottConvergesTo x y ↔ y ≤ L`.
+
+**Proof.** `proposition_2_1.le_of_converges` and `proposition_2_1.of_le`. $\square$

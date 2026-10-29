@@ -19,7 +19,7 @@ namespace IsContinuousLatticeRetraction
 
 theorem image_retr_wayBelow_nonempty (R : IsContinuousLatticeRetraction D D') (d : D) :
     (Set.image (R.retr : D' → D) {x' | x' ≪ R.incl d}).Nonempty :=
-  ⟨R.retr ⊥, ⊥, bot_wayBelow _, rfl⟩
+  ⟨R.retr ⊥, ⊥, WayBelow.bot _, rfl⟩
 
 end IsContinuousLatticeRetraction
 end DomainTheory.ContinuousLattice

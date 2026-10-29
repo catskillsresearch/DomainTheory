@@ -28,6 +28,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 theorem wayBelow_finset_sup {ι L : Type*} [CompleteLattice L] {s : Finset ι} {f : ι → L} {g : L}
     (h : ∀ i ∈ s, f i ≪ g) : s.sup f ≪ g :=
-  Finset.sup_induction (p := fun a => a ≪ g) (bot_wayBelow g) (fun _ ha _ hb => ha.sup hb) h
+  Finset.sup_induction (p := fun a => a ≪ g) (WayBelow.bot g) (fun _ ha _ hb => ha.sup hb) h
 
 end DomainTheory.ContinuousLattice

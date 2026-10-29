@@ -5,3 +5,11 @@ y = \bigsqcup x_i : i \in I.
 $$
 
 To see this, assume that $z$ is any other upper bound with $x_i \sqsubseteq z$ for all $i \in I$. If $U$ is open and $y \in U$, then $x_i \in U$ for some $i \in I$. But then $z \in U$, and so $y \sqsubseteq z$ follows.
+
+On a complete lattice $D$ with directed index type $\iota$, the library names Scott’s convergence condition **`ScottConvergesTo`**: for a net $x : \iota \to D$ and a point $y \in D$,
+
+$$
+\text{`ScottConvergesTo x y`} \iff \forall U,\ \text{$U$ Scott-open} \land y \in U \Rightarrow \text{eventually } x_j \in U.
+$$
+
+“Open” in the induced Scott sense is **`ScottOpen U`**; the same sets are open for the topology **`scottTopologicalSpace`** (`ScottOpen.isOpen_iff`). The specialization preorder in that topology agrees with lattice $\le$ (`SpecializationPreorder.scott_iff`). Scott’s paragraph above is the motivation for the biconditional in **Proposition 2.1**, which is proved in [`proposition_2_1.lean`](proposition_2_1.lean) and stated on the separate [Proposition 2.1](1972_Proposition_2_1.md) note (together with **`MonotoneNet`**).

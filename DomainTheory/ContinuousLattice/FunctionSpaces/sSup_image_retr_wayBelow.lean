@@ -23,8 +23,8 @@ namespace IsContinuousLatticeRetraction
 theorem sSup_image_retr_wayBelow (R : IsContinuousLatticeRetraction D D')
     (hD' : ContinuousLattice D') (d : D) :
     sSup (Set.image (R.retr : D' → D) {x' | x' ≪ R.incl d}) = d := by
-  have hne : ({x' : D' | x' ≪ R.incl d}).Nonempty := ⟨⊥, bot_wayBelow _⟩
-  have hdir : DirectedOn (· ≤ ·) {x' : D' | x' ≪ R.incl d} := directedOn_wayBelow _
+  have hne : ({x' : D' | x' ≪ R.incl d}).Nonempty := ⟨⊥, WayBelow.bot _⟩
+  have hdir : DirectedOn (· ≤ ·) {x' : D' | x' ≪ R.incl d} := WayBelow.directedOn _
   rw [← R.retr.preservesDirectedSup_coe _ hne hdir, hD'.sSup_wayBelow (R.incl d), R.retr_incl d]
 
 end IsContinuousLatticeRetraction

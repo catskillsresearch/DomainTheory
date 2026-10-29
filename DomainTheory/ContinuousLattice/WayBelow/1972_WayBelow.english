@@ -14,5 +14,48 @@ $$
 
 where the interior is taken in the sense of the induced topology. The relation $x \ll y$ behaves somewhat like a strict ordering relation; at least its meaning is clearly that $y$ should be definitely larger than $x$ in the partial ordering. Such a relation has many pleasant properties.
 
-The primary purpose of introducing it is to provide a simple definition for the kind of spaces that are most useful to us. We first mention the most elementary features of this relation.
+On a complete lattice $D$, the induced topology is the Scott topology **`scottTopologicalSpace`**; $\sqsubseteq$ is lattice $\le$ (`SpecializationPreorder.scott_iff`). Scott’s interior condition is equivalent to: there is a Scott-open set $U$ with $y \in U$ and $U \subseteq \{ z : x \le z \}$ (i.e. $U \subseteq \uparrow x$). The library names that relation **`WayBelow`**; we write **`x ≪ y`** for `WayBelow x y`. The set $\{ z : x \ll z \}$ is Scott-open (`ScottOpen.wayBelow`).
 
+The elementary lemmas live in namespace **`WayBelow`** (same pattern as **`ScottOpen`**). **Proposition 2.2** is Scott’s list (i)–(vii), proved in [`proposition_2_2.lean`](proposition_2_2.lean) by calling these tools; see the [Proposition 2.2](1972_Proposition_2_2.md) note.
+
+**Definition (`WayBelow`).** $x \ll y$ iff $\exists U$, $U$ Scott-open $\land y \in U \land U \subseteq \{ z : x \le z \}$.
+
+**Lemma (`WayBelow.bot`).** $\bot \ll x$ for all $x \in D$.
+
+**Proof.** Take $U = D$ (`ScottOpen.univ`). $\square$
+
+**Lemma (`WayBelow.sup`).** If $x \ll z$ and $y \ll z$, then $x \sqcup y \ll z$.
+
+**Proof.** Intersect the two witnessing Scott-open sets (`ScottOpen.inter`). $\square$
+
+**Lemma (`WayBelow.trans_le`).** If $x \ll y$ and $y \le z$, then $x \ll z$.
+
+**Proof.** The same Scott-open witness works; $z \in U$ because $U$ is an upset. $\square$
+
+**Lemma (`WayBelow.le_trans`).** If $x \le y$ and $y \ll z$, then $x \ll z$.
+
+**Proof.** Every $w \in U$ with $y \ll z$ satisfies $x \le w$. $\square$
+
+**Lemma (`WayBelow.le`).** If $x \ll y$, then $x \le y$.
+
+**Proof.** $y \in U \subseteq \uparrow x$. $\square$
+
+**Lemma (`WayBelow.self_iff_scottOpen_Ici`).** $x \ll x$ iff $\uparrow x = \{ z : x \le z \}$ is Scott-open.
+
+**Proof.** ($\Rightarrow$) A witness $U$ for $x \ll x$ must equal $\uparrow x$. ($\Leftarrow$) Take $U = \uparrow x$. $\square$
+
+**Lemma (`WayBelow.sSup_iff`).** For nonempty directed $S \subseteq D$,
+
+$$
+x \ll \sup S \iff \exists y \in S,\ x \ll y.
+$$
+
+**Proof.** ($\Rightarrow$) Use the Scott-open witness and directed-sup accessibility in the definition of Scott-open. ($\Leftarrow$) If $x \ll y$ with $y \in S$, the witness for $x \ll y$ also works for $x \ll \sup S$. $\square$
+
+**Lemma (`WayBelow.directedOn`).** For each $y \in D$, the set $\{ x : x \ll y \}$ is directed in the lattice order.
+
+**Proof.** If $a, b \ll y$, then $a \sqcup b \ll y$ by `WayBelow.sup`. $\square$
+
+**Lemma (`WayBelow.sInf`).** If $U$ is Scott-open and $y \in U$, then $\inf U \ll y$.
+
+**Proof.** $U$ itself witnesses $\inf U \ll y$: every $w \in U$ satisfies $\inf U \le w$. $\square$

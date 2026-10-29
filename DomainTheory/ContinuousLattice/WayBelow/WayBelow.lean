@@ -20,30 +20,32 @@ def WayBelow (x y : D) : Prop :=
 
 @[inherit_doc] scoped infix:50 " ≪ " => WayBelow
 
-theorem bot_wayBelow (x : D) : (⊥ : D) ≪ x :=
+namespace WayBelow
+
+theorem bot (x : D) : (⊥ : D) ≪ x :=
   ⟨Set.univ, ScottOpen.univ, Set.mem_univ x, fun _ _ => bot_le⟩
 
-theorem WayBelow.sup {x y z : D} (hx : x ≪ z) (hy : y ≪ z) : x ⊔ y ≪ z := by
+theorem sup {x y z : D} (hx : x ≪ z) (hy : y ≪ z) : x ⊔ y ≪ z := by
   obtain ⟨U, hU, hzU, hUsub⟩ := hx
   obtain ⟨V, hV, hzV, hVsub⟩ := hy
   refine ⟨U ∩ V, hU.inter hV, ⟨hzU, hzV⟩, fun w hw => ?_⟩
   exact Set.mem_Ici.2 (sup_le (hUsub hw.1) (hVsub hw.2))
 
-theorem WayBelow.trans_le {x y z : D} (h : x ≪ y) (hyz : y ≤ z) : x ≪ z := by
+theorem trans_le {x y z : D} (h : x ≪ y) (hyz : y ≤ z) : x ≪ z := by
   obtain ⟨U, hU, hyU, hsub⟩ := h
   exact ⟨U, hU, hU.1 hyz hyU, hsub⟩
 
-theorem WayBelow.le_trans {x y z : D} (hxy : x ≤ y) (h : y ≪ z) : x ≪ z := by
+theorem le_trans {x y z : D} (hxy : x ≤ y) (h : y ≪ z) : x ≪ z := by
   obtain ⟨U, hU, hzU, hsub⟩ := h
   refine ⟨U, hU, hzU, fun w hw => ?_⟩
   have hyw : y ≤ w := Set.mem_Ici.1 (hsub hw)
   exact Set.mem_Ici.2 (hxy.trans hyw)
 
-theorem WayBelow.le {x y : D} (h : x ≪ y) : x ≤ y := by
+theorem le {x y : D} (h : x ≪ y) : x ≤ y := by
   obtain ⟨U, _, hyU, hsub⟩ := h
   exact hsub hyU
 
-theorem WayBelow.self_iff_scottOpen_Ici {x : D} : x ≪ x ↔ ScottOpen (Set.Ici x) := by
+theorem self_iff_scottOpen_Ici {x : D} : x ≪ x ↔ ScottOpen (Set.Ici x) := by
   constructor
   · rintro ⟨U, hU, hxU, hsub⟩
 
@@ -53,7 +55,7 @@ theorem WayBelow.self_iff_scottOpen_Ici {x : D} : x ≪ x ↔ ScottOpen (Set.Ici
   · intro hopen
     exact ⟨Set.Ici x, hopen, Set.self_mem_Ici, le_refl _⟩
 
-theorem WayBelow.sSup_iff {x : D} {S : Set D} (hS : S.Nonempty)
+theorem sSup_iff {x : D} {S : Set D} (hS : S.Nonempty)
     (hSdir : DirectedOn (· ≤ ·) S) : x ≪ sSup S ↔ ∃ y ∈ S, x ≪ y := by
   constructor
   · rintro ⟨U, hU, hsupU, hsub⟩
@@ -63,11 +65,13 @@ theorem WayBelow.sSup_iff {x : D} {S : Set D} (hS : S.Nonempty)
     obtain ⟨U, hU, hyU, hsub⟩ := hxy
     exact ⟨U, hU, hU.1 (le_sSup hyS) hyU, hsub⟩
 
-theorem directedOn_wayBelow (y : D) : DirectedOn (· ≤ ·) {x | x ≪ y} :=
+theorem directedOn (y : D) : DirectedOn (· ≤ ·) {x | x ≪ y} :=
   fun a ha b hb => ⟨a ⊔ b, ha.sup hb, le_sup_left, le_sup_right⟩
 
-theorem sInf_wayBelow {U : Set D} (hU : ScottOpen U) {y : D} (hy : y ∈ U) :
+theorem sInf {U : Set D} (hU : ScottOpen U) {y : D} (hy : y ∈ U) :
     sInf U ≪ y :=
   ⟨U, hU, hy, fun _ hz => Set.mem_Ici.2 (sInf_le hz)⟩
+
+end WayBelow
 
 end DomainTheory.ContinuousLattice

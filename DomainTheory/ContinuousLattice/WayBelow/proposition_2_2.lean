@@ -19,7 +19,7 @@ theorem proposition_2_2 :
     (∀ x : D, x ≪ x ↔ ScottOpen (Set.Ici x)) ∧
     (∀ (x : D) (S : Set D), S.Nonempty → DirectedOn (· ≤ ·) S →
       (x ≪ sSup S ↔ ∃ y ∈ S, x ≪ y)) :=
-  ⟨bot_wayBelow,
+  ⟨WayBelow.bot,
     fun _ _ _ hx hy => WayBelow.sup hx hy,
     fun _ _ _ h hyz => WayBelow.trans_le h hyz,
     fun _ _ _ hxy h => WayBelow.le_trans hxy h,

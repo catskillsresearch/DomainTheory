@@ -25,16 +25,16 @@ namespace ContinuousLattice
 
 theorem exists_wayBelow_subset (hD : ContinuousLattice D) {U : Set D} (hU : ScottOpen U)
     {z : D} (hz : z ∈ U) : ∃ a, a ≪ z ∧ {w | a ≪ w} ⊆ U := by
-  have hne : {a | a ≪ z}.Nonempty := ⟨⊥, bot_wayBelow z⟩
+  have hne : {a | a ≪ z}.Nonempty := ⟨⊥, WayBelow.bot z⟩
   have hsup : sSup {a | a ≪ z} ∈ U := by rw [hD.sSup_wayBelow z]; exact hz
-  obtain ⟨a, haz, haU⟩ := hU.2 hne (directedOn_wayBelow z) hsup
+  obtain ⟨a, haz, haU⟩ := hU.2 hne (WayBelow.directedOn z) hsup
   exact ⟨a, haz, fun w hw => hU.1 hw.le haU⟩
 
 theorem exists_wayBelow_Ici_subset (hD : ContinuousLattice D) {U : Set D} (hU : ScottOpen U)
     {z : D} (hz : z ∈ U) : ∃ a, a ≪ z ∧ Set.Ici a ⊆ U := by
-  have hne : {a | a ≪ z}.Nonempty := ⟨⊥, bot_wayBelow z⟩
+  have hne : {a | a ≪ z}.Nonempty := ⟨⊥, WayBelow.bot z⟩
   have hsup : sSup {a | a ≪ z} ∈ U := by rw [hD.sSup_wayBelow z]; exact hz
-  obtain ⟨a, haz, haU⟩ := hU.2 hne (directedOn_wayBelow z) hsup
+  obtain ⟨a, haz, haU⟩ := hU.2 hne (WayBelow.directedOn z) hsup
   exact ⟨a, haz, fun w hw => hU.1 (Set.mem_Ici.1 hw) haU⟩
 
 theorem isContinuousLattice_iff_isLUB_sInf_nhds :
@@ -44,7 +44,7 @@ theorem isContinuousLattice_iff_isLUB_sInf_nhds :
   · intro h y
     refine ⟨?_, ?_⟩
     · rintro a ⟨U, hU, hyU, rfl⟩
-      exact (sInf_wayBelow hU hyU).le
+      exact (WayBelow.sInf hU hyU).le
     · intro b hb
       refine (h.out y).2 ?_
       intro x hx
@@ -58,7 +58,7 @@ theorem isContinuousLattice_iff_isLUB_sInf_nhds :
     intro b hb
     refine (h y).2 ?_
     rintro a ⟨U, hU, hyU, rfl⟩
-    exact hb (sInf_wayBelow hU hyU)
+    exact hb (WayBelow.sInf hU hyU)
 
 namespace WayBelow
 
@@ -67,11 +67,11 @@ theorem interpolate (hD : ContinuousLattice D) {a c : D} (hac : a ≪ c) :
   set M : Set D := {m | ∃ x, m ≪ x ∧ x ≪ c} with hM
   have hMdir : DirectedOn (· ≤ ·) M := by
     rintro m₁ ⟨x₁, hm₁x₁, hx₁c⟩ m₂ ⟨x₂, hm₂x₂, hx₂c⟩
-    obtain ⟨x₃, hx₃c, hx₁₃, hx₂₃⟩ := directedOn_wayBelow c x₁ hx₁c x₂ hx₂c
+    obtain ⟨x₃, hx₃c, hx₁₃, hx₂₃⟩ := WayBelow.directedOn c x₁ hx₁c x₂ hx₂c
     obtain ⟨m₃, hm₃x₃, hm₁m₃, hm₂m₃⟩ :=
-      directedOn_wayBelow x₃ m₁ (hm₁x₁.trans_le hx₁₃) m₂ (hm₂x₂.trans_le hx₂₃)
+      WayBelow.directedOn x₃ m₁ (hm₁x₁.trans_le hx₁₃) m₂ (hm₂x₂.trans_le hx₂₃)
     exact ⟨m₃, ⟨x₃, hm₃x₃, hx₃c⟩, hm₁m₃, hm₂m₃⟩
-  have hMne : M.Nonempty := ⟨⊥, a, bot_wayBelow a, hac⟩
+  have hMne : M.Nonempty := ⟨⊥, a, WayBelow.bot a, hac⟩
   have hsupM : sSup M = c := by
     refine le_antisymm (sSup_le ?_) ?_
     · rintro m ⟨x, hmx, hxc⟩

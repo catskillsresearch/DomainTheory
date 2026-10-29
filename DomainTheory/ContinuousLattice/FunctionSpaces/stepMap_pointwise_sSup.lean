@@ -30,13 +30,13 @@ theorem stepMap_pointwise_sSup (hD : ContinuousLattice D) (hD' : ContinuousLatti
     refine sSup_le ?_
     intro w hw
     have hfx : (f : D → D') x = sSup (Set.image (f : D → D') {e | e ≪ x}) := by
-      rw [← f.preservesDirectedSup_coe {e | e ≪ x} ⟨⊥, bot_wayBelow x⟩ (directedOn_wayBelow x),
+      rw [← f.preservesDirectedSup_coe {e | e ≪ x} ⟨⊥, WayBelow.bot x⟩ (WayBelow.directedOn x),
         hD.sSup_wayBelow x]
     rw [hfx] at hw
-    have hne : (Set.image (f : D → D') {e | e ≪ x}).Nonempty := ⟨f ⊥, ⊥, bot_wayBelow x, rfl⟩
+    have hne : (Set.image (f : D → D') {e | e ≪ x}).Nonempty := ⟨f ⊥, ⊥, WayBelow.bot x, rfl⟩
     have hdir : DirectedOn (· ≤ ·) (Set.image (f : D → D') {e | e ≪ x}) := by
       rintro _ ⟨a, ha, rfl⟩ _ ⟨b, hb, rfl⟩
-      obtain ⟨c, hc, hac, hbc⟩ := directedOn_wayBelow x a ha b hb
+      obtain ⟨c, hc, hac, hbc⟩ := WayBelow.directedOn x a ha b hb
       exact ⟨f c, Set.mem_image_of_mem _ hc, f.monotone hac, f.monotone hbc⟩
     obtain ⟨_, ⟨e, hex, rfl⟩, hwe⟩ := (WayBelow.sSup_iff hne hdir).1 hw
     exact le_sSup ⟨e, hex, hwe⟩
