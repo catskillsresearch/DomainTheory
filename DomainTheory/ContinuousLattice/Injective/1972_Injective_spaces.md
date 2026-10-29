@@ -14,3 +14,5 @@
 - [Corollary 1.6](1972_Corollary_1_6.md)
 - [Corollary 1.7](1972_Corollary_1_7.md)
 - [Absolute retracts](1972_Absolute_retracts.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-10-28) — <a href="../1972_REVISION.md">1972 revision progress</a></p>

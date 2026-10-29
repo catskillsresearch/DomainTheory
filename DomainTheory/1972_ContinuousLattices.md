@@ -4,8 +4,8 @@ Starting from the topological point of view a certain wide class of $T_0$-spaces
 
 @import "1972_ContinuousLattices.mermaid"
 
-0. [Introduction](1972_Introduction.md)
-1. [Injective spaces](ContinuousLattice/Injective/1972_Injective_spaces.md)
+0. [Introduction](1972_Introduction.md) — revised ([progress](ContinuousLattice/1972_REVISION.md))
+1. [Injective spaces](ContinuousLattice/Injective/1972_Injective_spaces.md) — revised ([progress](ContinuousLattice/1972_REVISION.md))
 2. [Continuous lattices](ContinuousLattice/1972_2_Continuous_lattices.md)
 3. [Function spaces](ContinuousLattice/1972_3_Function_spaces.md)
 4. [Inverse limits](ContinuousLattice/1972_4_Inverse_limits.md)

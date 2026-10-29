@@ -51,6 +51,8 @@ itself is not yet Palomar-registered and has no compared claim yet.
 
 The vendored formalizations were brute force: a paper statement and its proof lived together. This revision gives each fact a Mathlib-style name, keeps Scott's prose in his order, and records each proposition as his statement proved by calling those lemmas. Proposition 2.2 is the pattern: `bot_wayBelow`, `WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, `WayBelow.le`, `WayBelow.self_iff_scottOpen_Ici`, and `WayBelow.sSup_iff` are the tools, and `proposition_2_2` is the statement.
 
+Section-level progress for the 1972 paper lives in [`DomainTheory/ContinuousLattice/1972_REVISION.md`](DomainTheory/ContinuousLattice/1972_REVISION.md) (§0 Introduction and §1 Injective spaces complete as of 2026-10-28).
+
 ## Build
 
 Pinned to Lean **v4.35.0** (`lean-toolchain`; toolchain itself lives in

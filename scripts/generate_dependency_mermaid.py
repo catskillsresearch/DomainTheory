@@ -482,6 +482,7 @@ def gen_note_outline(
     extra_title_ids: dict[str, str] | None = None,
     external_sections: dict[str, tuple[str, set[str]]] | None = None,
     header_lines: list[str] | None = None,
+    include_empty_outline_boxes: bool = False,
 ) -> str:
     header, old_labels, style = parse_preserve_tail(old)
     if header_lines is not None:
@@ -512,7 +513,7 @@ def gen_note_outline(
             mods = box_modules_fn(child, title)
         else:
             mods = note_module_set(child)
-        if not mods:
+        if not mods and not include_empty_outline_boxes:
             continue
         boxes.append((title, mods))
 
@@ -825,21 +826,22 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                     "  classDef section fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a",
                 ]
             )
-        external = cl1972_external_sections(sec_id)
-        text = gen_note_outline(
+        index_md = find_index_md(mermaid)
+        header_lines = [
+            f"%% Each box is one outline note from {index_md.name if index_md else mermaid.name} (Lean @import only).",
+            "%% Arrowhead on the importer. The number is a direct-import count.",
+            "%% An arrow already implied by a longer path is omitted.",
+        ]
+        return gen_note_outline(
             mermaid,
             modules,
             old,
             reduce=True,
             labeled=True,
             box_modules_fn=cl1972_outline_box_modules,
-            external_sections=external,
+            external_sections=None,
+            header_lines=header_lines,
         )
-        # Style sibling section boxes like the chapter diagram.
-        ext_ids = ",".join(sorted(external))
-        if ext_ids and "classDef section" in text:
-            text = text.rstrip() + f"\n  class {ext_ids},section\n"
-        return text
     if kind == "cl1972_chapter":
         cl_ids = {
             "Injective spaces": "INJ",
