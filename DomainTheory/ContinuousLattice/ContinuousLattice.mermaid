@@ -8,7 +8,6 @@ flowchart TB
     direction TB
     Constructions_continuous_eq_sSup_openInfs_lean__continuous_eq_sSup_openInfs["continuous_eq_sSup_openInfs"]
     Constructions_directedOn_finite_sSup_mem_lean__directedOn_finite_sSup_mem["directedOn_finite_sSup_mem"]
-    Constructions_isContinuousLattice_prop_lean__isContinuousLattice_prop["isContinuousLattice_prop"]
     Constructions_proposition_2_11_lean__proposition_2_11["proposition_2_11"]
     Constructions_proposition_2_8_lean__proposition_2_8["proposition_2_8"]
     Constructions_proposition_2_9_lean___proposition_2_9["proposition_2_9<br/>sierpinskiPower"]
@@ -29,7 +28,7 @@ flowchart TB
 
   subgraph ContinuousLattices["ContinuousLattices"]
     direction TB
-    ContinuousLattices_IdemFix_lean___IdemFix["IdemFix<br/>coe_sSup<br/>completeLattice<br/>incl_preservesDirectedSup<br/>isContinuousLattice<br/>isLUB_sSup<br/>retr_preservesDirectedSup<br/>retraction<br/>scottTopology<br/>supSet"]
+    ContinuousLattices_IdempotentFixedPoint_lean___IdempotentFixedPoint["IdempotentFixedPoint<br/>coe_sSup<br/>completeLattice<br/>incl_preservesDirectedSup<br/>isContinuousLattice<br/>isLUB_sSup<br/>retr_preservesDirectedSup<br/>retraction<br/>scottTopology<br/>supremumSet"]
     ContinuousLattices_lemma_3_9_lean__lemma_3_9["lemma_3_9"]
     ContinuousLattices_orderIsoScottHomeomorph_lean__orderIsoScottHomeomorph["orderIsoScottHomeomorph"]
     ContinuousLattices_proposition_2_4_lean__proposition_2_4["proposition_2_4"]
@@ -336,10 +335,10 @@ flowchart TB
   Constructions_scottExtend_lean__scottExtend -.-> Constructions_scottExtend_maximal_le_lean__scottExtend_maximal_le
   Constructions_scottExtend_lean__scottExtend -.-> Constructions_scottExtend_maximal_lean__scottExtend_maximal
   Constructions_scottExtend_lean__scottExtend -.-> ContinuousLattices_lemma_3_9_lean__lemma_3_9
-  ContinuousLattices_IdemFix_lean___IdemFix -.-> FunctionSpaces_ScottMap_more_lean___projection
-  ContinuousLattices_IdemFix_lean___IdemFix -.-> FunctionSpaces_ScottMap_more_lean___retraction
-  ContinuousLattices_IdemFix_lean___IdemFix -.-> FunctionSpaces_proposition_3_7_retraction_lean__proposition_3_7_retraction
-  ContinuousLattices_IdemFix_lean___IdemFix -.-> Injective_RetractSubspace_lean__RetractSubspace
+  ContinuousLattices_IdempotentFixedPoint_lean___IdempotentFixedPoint -.-> FunctionSpaces_ScottMap_more_lean___projection
+  ContinuousLattices_IdempotentFixedPoint_lean___IdempotentFixedPoint -.-> FunctionSpaces_ScottMap_more_lean___retraction
+  ContinuousLattices_IdempotentFixedPoint_lean___IdempotentFixedPoint -.-> FunctionSpaces_proposition_3_7_retraction_lean__proposition_3_7_retraction
+  ContinuousLattices_IdempotentFixedPoint_lean___IdempotentFixedPoint -.-> Injective_RetractSubspace_lean__RetractSubspace
   FunctionSpaceTower_CLat_lean___CLat -.-> FunctionSpaceTower_CLat_lean__towerCompleteLattice
   FunctionSpaceTower_CLat_lean___CLat -.-> FunctionSpaceTower_CLat_lean__towerType
   FunctionSpaceTower_CLat_lean___CLat -.-> FunctionSpaceTower_CLat_lean__towerType_succ
@@ -438,7 +437,7 @@ flowchart TB
   FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_scottSubspaceExtendInf_mono_incl_lean__scottSubspaceExtendInf_mono_incl
   FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> FunctionSpaces_scottSubspaceExtendInf_mono_retr_lean__scottSubspaceExtendInf_mono_retr
   FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection -.-> InverseLimits_proposition_4_2_lean__proposition_4_2
-  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> ContinuousLattices_IdemFix_lean___IdemFix
+  FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> ContinuousLattices_IdempotentFixedPoint_lean___IdempotentFixedPoint
   FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_IsContinuousLatticeProjection_lean__IsContinuousLatticeProjection
   FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_ScottMap_more_lean___retraction
   FunctionSpaces_IsContinuousLatticeRetraction_lean__IsContinuousLatticeRetraction -.-> FunctionSpaces_ambientSSup_lean__ambientSSup
@@ -748,7 +747,7 @@ flowchart TB
   InverseLimits_projLE_lean___projLE -.-> InverseLimits_lemma_4_5_lean__lemma_4_5
   InverseLimits_projLE_lean___projLE -.-> InverseLimits_projection_galoisConnection_lean__projection_galoisConnection
   ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> Constructions_Basic_lean__update_preservesDirectedSup
-  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ContinuousLattices_IdemFix_lean___IdemFix
+  ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ContinuousLattices_IdempotentFixedPoint_lean___IdempotentFixedPoint
   ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaceTower_conjMap_lean___conjMap
   ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaceTower_embInfInf_lean___embInfInf
   ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> FunctionSpaceTower_projInfInf_lean___projInfInf
@@ -776,7 +775,7 @@ flowchart TB
   ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ScottMaps_proposition_2_5_lean__proposition_2_5
   ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ScottMaps_proposition_2_6_lean__proposition_2_6
   ScottMaps_PreservesDirectedSup_lean__PreservesDirectedSup -.-> ScottMaps_scottOpen_preimage_lean__scottOpen_preimage
-  ScottMaps_preservesDirectedSup_monotone_lean__preservesDirectedSup_monotone -.-> ContinuousLattices_IdemFix_lean___IdemFix
+  ScottMaps_preservesDirectedSup_monotone_lean__preservesDirectedSup_monotone -.-> ContinuousLattices_IdempotentFixedPoint_lean___IdempotentFixedPoint
   ScottMaps_proposition_2_7_lean__sup -.-> FunctionSpaces_incl_finset_sup_lean__incl_finset_sup
   ScottMaps_proposition_2_7_lean__sup -.-> FunctionSpaces_isProjection_finsetSup_lean__isProjection_finsetSup
   ScottMaps_proposition_2_7_lean__sup -.-> FunctionSpaces_wayBelow_finset_sup_lean__wayBelow_finset_sup
@@ -797,7 +796,7 @@ flowchart TB
   Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_scottExtend_maximal_lean__scottExtend_maximal
   Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_scottTopology_lean__sierpinskiPower
   Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> Constructions_scottTopology_prop_lean__scottTopology_prop
-  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ContinuousLattices_IdemFix_lean___IdemFix
+  Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ContinuousLattices_IdempotentFixedPoint_lean___IdempotentFixedPoint
   Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ContinuousLattices_lemma_3_9_lean__lemma_3_9
   Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ContinuousLattices_orderIsoScottHomeomorph_lean__orderIsoScottHomeomorph
   Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ContinuousLattices_theorem_2_12_lean___theorem_2_12
@@ -824,7 +823,6 @@ flowchart TB
   Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ScottMaps_proposition_2_7_lean__inf_right
   Specialization_scottTopologicalSpace_lean___scottTopologicalSpace -.-> ScottMaps_proposition_2_7_lean__sup
   WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_continuous_eq_sSup_openInfs_lean__continuous_eq_sSup_openInfs
-  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_isContinuousLattice_prop_lean__isContinuousLattice_prop
   WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_proposition_2_11_lean__proposition_2_11
   WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_proposition_2_9_lean___proposition_2_9
   WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_proposition_3_8_lean__proposition_3_8
@@ -832,7 +830,7 @@ flowchart TB
   WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_scottExtend_eq_of_continuous_lean__scottExtend_eq_of_continuous
   WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_scottExtend_maximal_le_lean__scottExtend_maximal_le
   WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> Constructions_scottExtend_maximal_lean__scottExtend_maximal
-  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ContinuousLattices_IdemFix_lean___IdemFix
+  WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ContinuousLattices_IdempotentFixedPoint_lean___IdempotentFixedPoint
   WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ContinuousLattices_lemma_3_9_lean__lemma_3_9
   WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ContinuousLattices_proposition_2_4_lean__proposition_2_4
   WayBelow_ContinuousLattice_lean___ContinuousLattice -.-> ContinuousLattices_theorem_2_12_lean___theorem_2_12
@@ -884,7 +882,6 @@ flowchart TB
   Constructions_Basic_lean__wayBelow_proj --> Constructions_proposition_2_9_lean___proposition_2_9
   Constructions_directedOn_finite_sSup_mem_lean__directedOn_finite_sSup_mem --> Constructions_proposition_2_8_lean__proposition_2_8
   Constructions_proposition_2_11_lean__proposition_2_11 --> ContinuousLattices_theorem_2_12_lean___theorem_2_12
-  Constructions_proposition_2_8_lean__proposition_2_8 --> Constructions_isContinuousLattice_prop_lean__isContinuousLattice_prop
   Constructions_scottExtend_aux_directed_lean__scottExtend_aux_directed --> Constructions_scottExtend_continuous_lean__scottExtend_continuous
   Constructions_scottExtend_aux_nonempty_lean__scottExtend_aux_nonempty --> Constructions_scottExtend_continuous_lean__scottExtend_continuous
   Constructions_scottExtend_maximal_le_lean__scottExtend_maximal_le --> ContinuousLattices_lemma_3_9_lean__lemma_3_9
@@ -1601,7 +1598,7 @@ linkStyle 544 stroke:#15803d,color:#15803d,stroke-width:2px
 linkStyle 545 stroke:#15803d,color:#15803d,stroke-width:2px
 linkStyle 546 stroke:#15803d,color:#15803d,stroke-width:2px
 linkStyle 547 stroke:#15803d,color:#15803d,stroke-width:2px
-linkStyle 548 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 548 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 549 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 550 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 551 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
@@ -1773,12 +1770,10 @@ linkStyle 716 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 717 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 718 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 719 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
-linkStyle 720 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
-linkStyle 721 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 
   classDef node fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   class Constructions_proposition_2_9_lean___proposition_2_9 node
-  class ContinuousLattices_IdemFix_lean___IdemFix node
+  class ContinuousLattices_IdempotentFixedPoint_lean___IdempotentFixedPoint node
   class ContinuousLattices_theorem_2_12_lean___theorem_2_12 node
   class FunctionSpaceTower_CLat_lean___CLat node
   class FunctionSpaceTower_DInf_lean___DInf node
@@ -1817,7 +1812,6 @@ linkStyle 721 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
   class Constructions_Basic_lean__wayBelow_finite_support node
   class Constructions_continuous_eq_sSup_openInfs_lean__continuous_eq_sSup_openInfs node
   class Constructions_directedOn_finite_sSup_mem_lean__directedOn_finite_sSup_mem node
-  class Constructions_isContinuousLattice_prop_lean__isContinuousLattice_prop node
   class Constructions_proposition_2_11_lean__proposition_2_11 node
   class Constructions_proposition_2_8_lean__proposition_2_8 node
   class Constructions_proposition_3_8_lean__proposition_3_8 node

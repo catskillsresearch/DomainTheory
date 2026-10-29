@@ -17,7 +17,7 @@ from lean_listing_sanitize import (  # noqa: E402
 
 def test_preserves_literate_math_notation() -> None:
     sample = (
-        "Every injective `T₀`-space. Homeomorphism `D ≃ₜ IdemFix e`. "
+        "Every injective `T₀`-space. Homeomorphism `D ≃ₜ IdempotentFixedPoint e`. "
         "Order iso `A ≃o E`. obtain ⟨ι, ⟨R⟩⟩"
     )
     out = sanitize_lean_for_arxiv(sample)

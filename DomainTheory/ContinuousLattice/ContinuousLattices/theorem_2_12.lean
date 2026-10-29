@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.Constructions.proposition_2_9
 public import DomainTheory.ContinuousLattice.Constructions.proposition_2_11
 public import DomainTheory.ContinuousLattice.Constructions.scottTopology
-public import DomainTheory.ContinuousLattice.ContinuousLattices.IdemFix
+public import DomainTheory.ContinuousLattice.ContinuousLattices.IdempotentFixedPoint
 public import DomainTheory.ContinuousLattice.ContinuousLattices.orderIsoScottHomeomorph
 public import DomainTheory.ContinuousLattice.Injective.corollary_1_6
 public import DomainTheory.ContinuousLattice.Injective.proposition_1_2
@@ -39,14 +39,14 @@ theorem backward {D : Type u} [TopologicalSpace D] [T0Space D]
     exact R.section'.continuous.comp R.retraction.continuous
   have hsc : PreservesDirectedSup (fun x => R.section' (R.retraction x)) :=
     continuous_preservesDirectedSup hcont_e
-  refine ⟨IdemFix (fun x => R.section' (R.retraction x)),
-    IdemFix.completeLattice hidem (preservesDirectedSup_monotone hsc),
-    IdemFix.isContinuousLattice hidem hsc hL, ?_⟩
+  refine ⟨IdempotentFixedPoint (fun x => R.section' (R.retraction x)),
+    IdempotentFixedPoint.completeLattice hidem (preservesDirectedSup_monotone hsc),
+    IdempotentFixedPoint.isContinuousLattice hidem hsc hL, ?_⟩
 
-  have heq : (@scottTopologicalSpace (IdemFix (fun x => R.section' (R.retraction x)))
-      (IdemFix.completeLattice hidem (preservesDirectedSup_monotone hsc)))
+  have heq : (@scottTopologicalSpace (IdempotentFixedPoint (fun x => R.section' (R.retraction x)))
+      (IdempotentFixedPoint.completeLattice hidem (preservesDirectedSup_monotone hsc)))
       = instTopologicalSpaceSubtype := by
-    rw [IdemFix.scottTopology hidem hsc hL, scottTopology.sierpinskiPower ι]
+    rw [IdempotentFixedPoint.scottTopology hidem hsc hL, scottTopology.sierpinskiPower ι]
     rfl
   rw [heq]
 
