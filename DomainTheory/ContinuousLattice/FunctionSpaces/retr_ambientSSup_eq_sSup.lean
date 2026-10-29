@@ -1,11 +1,10 @@
 module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ambientSSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Order.BourbakiWitt
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

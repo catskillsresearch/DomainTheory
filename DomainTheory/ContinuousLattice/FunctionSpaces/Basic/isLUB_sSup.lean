@@ -1,7 +1,8 @@
 module
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.instSupSet
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
+public import DomainTheory.ContinuousLattice.FunctionSpaces.Projections
 public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section

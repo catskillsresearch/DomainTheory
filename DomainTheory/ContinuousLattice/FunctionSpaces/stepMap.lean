@@ -2,16 +2,8 @@ module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun
-public import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
-import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
-import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
-import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
-import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
-import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_of_wayBelow
-import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun_of_not_wayBelow
 
 @[expose] public section
 
@@ -22,13 +14,13 @@ open Set Topology TopologicalSpace
 variable {D D' : Type*} [CompleteLattice D] [CompleteLattice D']
 
 noncomputable def stepMap (e : D) (e' : D') : ScottMap D D' :=
-  ⟨stepFun e e', continuous_of_preservesDirectedSup (stepFun_preservesDirectedSup e e')⟩
+  ⟨stepFun e e', continuous_of_preservesDirectedSup (stepFun.preservesDirectedSup e e')⟩
 
 namespace stepMap
 
 theorem apply_of_wayBelow {e : D} {e' : D'} {x : D} (h : e ≪ x) :
     (stepMap e e' : D → D') x = e' :=
-  stepFun_of_wayBelow h
+  stepFun.of_wayBelow h
 
 theorem le_of_wayBelow {e : D} {e' : D'} {g : ScottMap D D'}
     (h : e' ≪ (g : D → D') e) : stepMap e e' ≤ g := by
@@ -38,7 +30,7 @@ theorem le_of_wayBelow {e : D} {e' : D'} {g : ScottMap D D'}
   · rw [apply_of_wayBelow hex]
     exact h.le.trans (g.monotone hex.le)
   · show stepFun e e' x ≤ (g : D → D') x
-    rw [stepFun_of_not_wayBelow hex]
+    rw [stepFun.of_not_wayBelow hex]
     exact bot_le
 
 theorem wayBelow {e : D} {e' : D'} {f : ScottMap D D'}

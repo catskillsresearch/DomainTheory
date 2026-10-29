@@ -1,26 +1,15 @@
 For continuous lattices $D$ and $D'$, Scott's §3 notation $[D \to D']$ is the set of maps $f : D \to D'$ that are continuous for the Scott topologies (equivalently, Scott-continuous in the sense of §2). The library names that carrier **`ScottMap D D'`**: a subtype of $D \to D'$ carrying a proof of continuity for **`scottTopologicalSpace`** on domain and codomain.
 
-Namespace **`ScottMap`** collects the basic operations on that carrier:
+[`ScottMap.lean`](ScottMap.lean) is **self-contained**: it does not import or mention **`stepFun`** or **`stepMap`**. Step functions for Theorem 3.3 are in [Step function (pointwise)](1972_stepFun.md) and [Step map $\overrightarrow{e}[e,e']$](1972_stepMap.md).
 
-**Coercion.** A element of `ScottMap D D'` is used as an ordinary function $D \to D'$ via the **`CoeFun`** instance (`f x` is the underlying map applied at $x$).
+Namespace **`ScottMap`** collects the library tools on that carrier:
 
-**Theorem (`ext`).** Two Scott maps are equal if they agree at every point: $f = g$ when $\forall x,\ f(x) = g(x)$.
+**Coercion and extension.** **`CoeFun`** coerces to $D \to D'$. **`ext`**: equality from pointwise agreement.
 
-**Definition (`const`).** For $c \in D'$, the constant function $x \mapsto c$ is Scott-continuous and defines an element of `ScottMap D D'` (the constant map used as $\bot$ of $[D \to D']$ in Theorem 3.3).
+**Maps.** **`const`**, **`const_apply`**; **`idMap`**, **`idMap_apply`**; **`comp`**, **`comp_apply`**. **`continuous`** extracts the subtype proof.
 
-**Lemma (`const_apply`).** `(ScottMap.const c) x = c` for all $x \in D$.
+**Order and lattice.** Pointwise **`le`**, **`lt`**, **`instPartialOrder`**, **`le_def`**; pointwise **`instSupSet`**, **`sSupMaps`**, **`sSup_apply`**, **`isLUB_sSup`**, **`instCompleteLattice`**; **`bot_apply`**, **`sup_apply`**.
 
-**Definition (`stepMap`).** For $e \in D$ and $e' \in D'$, **`stepMap e e'`** is Scott's step function $\overrightarrow{e}[e,e'] \in$ **`ScottMap D D'`** ([`stepMap.lean`](stepMap.lean)).
+**§2 tools on the coercion.** **`preservesDirectedSup_coe`**, **`monotone`**, and pointwise directed-sup lemmas behind **`sSupMaps`**.
 
-Namespace **`stepMap`** (same file) collects the step-function tools used in Theorem 3.3(a):
-
-**Lemma (`apply_of_wayBelow`).** If $e \ll x$, then `(stepMap e e') x = e'`.
-
-**Lemma (`le_of_wayBelow`).** If $e' \ll f(e)$, then `stepMap e e' ≤ f` in **`ScottMap D D'`**.
-
-**Lemma (`wayBelow`).** If $e' \ll f(e)$, then `stepMap e e' ≪ f`.
-
-**Theorem (`pointwise_sSup`).** For **`ContinuousLattice D`**, **`ContinuousLattice D'`**, $f \in$ **`ScottMap D D'`**, and $x \in D$,
-$(f x) = \bigsqcup \{\, e' \mid \exists e,\ e \ll x \land e' \ll f(e) \,\}$.
-
-**Theorem (`isContinuousLattice`).** If **`ContinuousLattice D`** and **`ContinuousLattice D'`**, then **`ScottMap D D'`** is a continuous lattice (Theorem 3.3(a); proof combines **`pointwise_sSup`**, **`wayBelow`**, and **`apply_of_wayBelow`**).
+Scott's *continuous* lattice structure on $[D \to D']$ (**`ContinuousLattice (ScottMap D D')`**) is proved later via **`stepMap.isContinuousLattice`**, not in this file.

@@ -2,63 +2,105 @@
 
 @import "1972_Proposition_3_7.english" {code_block=false}
 
-**[converseProjection.lean](converseProjection.lean)**
+**[retr_wayBelow_of_wayBelow_incl.lean](retr_wayBelow_of_wayBelow_incl.lean)**
 
-@import "converseProjection.lean"
-**[converseRetr.lean](converseRetr.lean)**
+@import "retr_wayBelow_of_wayBelow_incl.lean"
+**[ContinuousLattice/FunctionSpaces/proposition_2_10.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10.lean)**
 
-@import "converseRetr.lean"
-**[converseRetr_incl.lean](converseRetr_incl.lean)**
+@import "proposition_2_10.lean"
+**[retr_bot.lean](retr_bot.lean)**
 
-@import "converseRetr_incl.lean"
-**[converseRetr_mono.lean](converseRetr_mono.lean)**
-
-@import "converseRetr_mono.lean"
-**[converseRetr_preservesDirectedSup.lean](converseRetr_preservesDirectedSup.lean)**
-
-@import "converseRetr_preservesDirectedSup.lean"
+@import "retr_bot.lean"
 **[incl_bot.lean](incl_bot.lean)**
 
 @import "incl_bot.lean"
-**[incl_converseRetr_le.lean](incl_converseRetr_le.lean)**
+**[retr_eq_sSup.lean](retr_eq_sSup.lean)**
 
-@import "incl_converseRetr_le.lean"
-**[incl_finset_sup.lean](incl_finset_sup.lean)**
-
-@import "incl_finset_sup.lean"
-**[incl_injective.lean](incl_injective.lean)**
-
-@import "incl_injective.lean"
-**[incl_mono_of_preservesSSup.lean](incl_mono_of_preservesSSup.lean)**
-
-@import "incl_mono_of_preservesSSup.lean"
-**[incl_sSup.lean](incl_sSup.lean)**
-
-@import "incl_sSup.lean"
-**[incl_sup.lean](incl_sup.lean)**
-
-@import "incl_sup.lean"
-**[incl_sup_of_preservesSSup.lean](incl_sup_of_preservesSSup.lean)**
-
-@import "incl_sup_of_preservesSSup.lean"
+@import "retr_eq_sSup.lean"
 **[incl_wayBelow.lean](incl_wayBelow.lean)**
 
 @import "incl_wayBelow.lean"
+**[converseRetr.lean](converseRetr.lean)**
+
+@import "converseRetr.lean"
+**[converseRetr_mono.lean](converseRetr_mono.lean)**
+
+@import "converseRetr_mono.lean"
+**[incl_converseRetr_le.lean](incl_converseRetr_le.lean)**
+
+@import "incl_converseRetr_le.lean"
+**[incl_injective.lean](incl_injective.lean)**
+
+@import "incl_injective.lean"
+**[incl_sup.lean](incl_sup.lean)**
+
+@import "incl_sup.lean"
+**[incl_finset_sup.lean](incl_finset_sup.lean)**
+
+@import "incl_finset_sup.lean"
+**[converseRetr_preservesDirectedSup.lean](converseRetr_preservesDirectedSup.lean)**
+
+@import "converseRetr_preservesDirectedSup.lean"
+**[incl_sup_of_preservesSSup.lean](incl_sup_of_preservesSSup.lean)**
+
+@import "incl_sup_of_preservesSSup.lean"
+**[incl_mono_of_preservesSSup.lean](incl_mono_of_preservesSSup.lean)**
+
+@import "incl_mono_of_preservesSSup.lean"
+**[ContinuousLattice/ContinuousLattices/IdempotentFixedPoint/scottContinuous.lean](DomainTheory/ContinuousLattice/ContinuousLattices/IdempotentFixedPoint/scottContinuous.lean)**
+
+@import "../ContinuousLattices/IdempotentFixedPoint/scottContinuous.lean"
+**[ContinuousLattice/ContinuousLattices/injective_homeomorph_to_continuousLatticeScott.lean](DomainTheory/ContinuousLattice/ContinuousLattices/injective_homeomorph_to_continuousLatticeScott.lean)**
+
+@import "../ContinuousLattices/injective_homeomorph_to_continuousLatticeScott.lean"
+**[ContinuousLattice/ContinuousLattices/theorem_2_12.lean](DomainTheory/ContinuousLattice/ContinuousLattices/theorem_2_12.lean)**
+
+@import "../ContinuousLattices/theorem_2_12.lean"
+**[ContinuousLattice/ContinuousLattices/continuousLattice_scottTopology_of_injective.lean](DomainTheory/ContinuousLattice/ContinuousLattices/continuousLattice_scottTopology_of_injective.lean)**
+
+@import "../ContinuousLattices/continuousLattice_scottTopology_of_injective.lean"
+**[ContinuousLattice/FunctionSpaces/ScottMap_more.lean](DomainTheory/ContinuousLattice/FunctionSpaces/ScottMap_more.lean)**
+
+@import "ScottMap_more.lean"
 **[proposition_3_7_projection.lean](proposition_3_7_projection.lean)**
 
 @import "proposition_3_7_projection.lean"
 **[proposition_3_7_retraction.lean](proposition_3_7_retraction.lean)**
 
 @import "proposition_3_7_retraction.lean"
+**[ContinuousLattice/FunctionSpaces/ambientSSup.lean](DomainTheory/ContinuousLattice/FunctionSpaces/ambientSSup.lean)**
+
+@import "ambientSSup.lean"
 **[retr_ambientSSup_eq_sSup.lean](retr_ambientSSup_eq_sSup.lean)**
 
 @import "retr_ambientSSup_eq_sSup.lean"
-**[retr_bot.lean](retr_bot.lean)**
+**[ContinuousLattice/FunctionSpaces/finsetSupOf.lean](DomainTheory/ContinuousLattice/FunctionSpaces/finsetSupOf.lean)**
 
-@import "retr_bot.lean"
-**[retr_eq_sSup.lean](retr_eq_sSup.lean)**
+@import "finsetSupOf.lean"
+**[ContinuousLattice/FunctionSpaces/directedOn_finsetSupOf.lean](DomainTheory/ContinuousLattice/FunctionSpaces/directedOn_finsetSupOf.lean)**
 
-@import "retr_eq_sSup.lean"
-**[retr_wayBelow_of_wayBelow_incl.lean](retr_wayBelow_of_wayBelow_incl.lean)**
+@import "directedOn_finsetSupOf.lean"
+**[ContinuousLattice/FunctionSpaces/le_of_incl_le.lean](DomainTheory/ContinuousLattice/FunctionSpaces/le_of_incl_le.lean)**
 
-@import "retr_wayBelow_of_wayBelow_incl.lean"
+@import "le_of_incl_le.lean"
+**[converseRetr_incl.lean](converseRetr_incl.lean)**
+
+@import "converseRetr_incl.lean"
+**[converseProjection.lean](converseProjection.lean)**
+
+@import "converseProjection.lean"
+**[ContinuousLattice/FunctionSpaces/mem_finsetSupOf_of_mem.lean](DomainTheory/ContinuousLattice/FunctionSpaces/mem_finsetSupOf_of_mem.lean)**
+
+@import "mem_finsetSupOf_of_mem.lean"
+**[ContinuousLattice/FunctionSpaces/sSup_le_finsetSupOf.lean](DomainTheory/ContinuousLattice/FunctionSpaces/sSup_le_finsetSupOf.lean)**
+
+@import "sSup_le_finsetSupOf.lean"
+**[ContinuousLattice/FunctionSpaces/le_sSup_finsetSupOf.lean](DomainTheory/ContinuousLattice/FunctionSpaces/le_sSup_finsetSupOf.lean)**
+
+@import "le_sSup_finsetSupOf.lean"
+**[ContinuousLattice/FunctionSpaces/sSup_finsetSupOf.lean](DomainTheory/ContinuousLattice/FunctionSpaces/sSup_finsetSupOf.lean)**
+
+@import "sSup_finsetSupOf.lean"
+**[incl_sSup.lean](incl_sSup.lean)**
+
+@import "incl_sSup.lean"

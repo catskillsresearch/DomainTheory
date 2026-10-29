@@ -3,8 +3,8 @@ module
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.functionSpaceInclFun
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.functionSpaceRetrFun
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_7_projection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

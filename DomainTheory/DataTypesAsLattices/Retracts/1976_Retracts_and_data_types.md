@@ -8,30 +8,21 @@
 
 @import "1976_Retracts_and_data_types.english" {code_block=false}
 
-**[DataTypesAsLattices/Retracts/graph_ext.lean](graph_ext.lean)**
-
-@import "graph_ext.lean"
 **[DataTypesAsLattices/FixedLattices/DirectedSet.lean](../FixedLattices/DirectedSet.lean)**
 
 @import "../FixedLattices/DirectedSet.lean"
-**[DataTypesAsLattices/Retracts/predSet_ofNat_zero.lean](predSet_ofNat_zero.lean)**
+**[DataTypesAsLattices/Retracts/graph_ext.lean](graph_ext.lean)**
 
-@import "predSet_ofNat_zero.lean"
-**[DataTypesAsLattices/FixedLattices/completeLatticeLE.lean](../FixedLattices/completeLatticeLE.lean)**
-
-@import "../FixedLattices/completeLatticeLE.lean"
-**[DataTypesAsLattices/FixedLattices/completeLatticePreorder.lean](../FixedLattices/completeLatticePreorder.lean)**
-
-@import "../FixedLattices/completeLatticePreorder.lean"
+@import "graph_ext.lean"
 **[DataTypesAsLattices/FixedLattices/completeLatticeSupSet.lean](../FixedLattices/completeLatticeSupSet.lean)**
 
 @import "../FixedLattices/completeLatticeSupSet.lean"
-**[DataTypesAsLattices/FixedLattices/WayBelow.lean](../FixedLattices/WayBelow.lean)**
-
-@import "../FixedLattices/WayBelow.lean"
 **[DataTypesAsLattices/Retracts/Fixpoints.lean](Fixpoints.lean)**
 
 @import "Fixpoints.lean"
+**[DataTypesAsLattices/Retracts/openR.lean](openR.lean)**
+
+@import "openR.lean"
 **[DataTypesAsLattices/Retracts/graph_const_bot.lean](graph_const_bot.lean)**
 
 @import "graph_const_bot.lean"
@@ -41,15 +32,24 @@
 **[DataTypesAsLattices/Retracts/vals.lean](vals.lean)**
 
 @import "vals.lean"
-**[DataTypesAsLattices/Retracts/DirectedSubset.lean](DirectedSubset.lean)**
-
-@import "DirectedSubset.lean"
 **[DataTypesAsLattices/Retracts/directed_finite_cover.lean](directed_finite_cover.lean)**
 
 @import "directed_finite_cover.lean"
+**[DataTypesAsLattices/Retracts/DirectedSubset.lean](DirectedSubset.lean)**
+
+@import "DirectedSubset.lean"
 **[DataTypesAsLattices/Retracts/IsCompactSubset.lean](IsCompactSubset.lean)**
 
 @import "IsCompactSubset.lean"
-**[DataTypesAsLattices/Retracts/openR.lean](openR.lean)**
+**[DataTypesAsLattices/FixedLattices/completeLatticeLE.lean](../FixedLattices/completeLatticeLE.lean)**
 
-@import "openR.lean"
+@import "../FixedLattices/completeLatticeLE.lean"
+**[DataTypesAsLattices/FixedLattices/completeLatticePreorder.lean](../FixedLattices/completeLatticePreorder.lean)**
+
+@import "../FixedLattices/completeLatticePreorder.lean"
+**[DataTypesAsLattices/FixedLattices/WayBelow.lean](../FixedLattices/WayBelow.lean)**
+
+@import "../FixedLattices/WayBelow.lean"
+**[DataTypesAsLattices/Retracts/predSet_ofNat_zero.lean](predSet_ofNat_zero.lean)**
+
+@import "predSet_ofNat_zero.lean"

@@ -85,12 +85,12 @@ $$\mathcal{U}_\bot, \quad \mathcal{U}^\infty, \quad \mathcal{U}^\S, \quad \mathb
 
 That all of these are $\trianglelefteq \mathcal{U}$ follows from knowing that they are all effectively presented. What we wish to check next is that they all combine well with respect to projections. To this end the explicit definitions are given for the constructs $+$, $\times$, and $\to$, and the details of the others are left for the exercises.
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/DAtom.lean](DAtom.lean)**
-
-@import "DAtom.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/DiagFixed.lean](DiagFixed.lean)**
 
 @import "DiagFixed.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/D_X.lean](D_X.lean)**
 
 @import "D_X.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/DAtom.lean](DAtom.lean)**
+
+@import "DAtom.lean"

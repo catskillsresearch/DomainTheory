@@ -7,11 +7,10 @@ public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.projInf
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

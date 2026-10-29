@@ -22,12 +22,6 @@ abbrev ScottFunctionSpace (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y
 abbrev ScottC (D D' : Type*) [CompleteLattice D] [CompleteLattice D'] :=
   @ContinuousMap D D' scottTopologicalSpace scottTopologicalSpace
 
-namespace ScottMap
-theorem continuous (f : ScottMap D D') :
-    @Continuous D D' scottTopologicalSpace scottTopologicalSpace f :=
-  f.2
-
-end ScottMap
 namespace IsContinuousLatticeRetraction
 
 end IsContinuousLatticeRetraction

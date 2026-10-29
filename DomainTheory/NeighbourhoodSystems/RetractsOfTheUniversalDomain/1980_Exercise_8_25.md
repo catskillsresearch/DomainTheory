@@ -30,15 +30,15 @@ The tip asserts existence of a non-trivial domain isomorphic to its function spa
 
 Rational-interval coding used by effective presentations.
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/EmbedIntoPow.lean](EmbedIntoPow.lean)**
-
-@import "EmbedIntoPow.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/RecursiveCross.lean](RecursiveCross.lean)**
 
 @import "RecursiveCross.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/ratCodes.lean](ratCodes.lean)**
 
 @import "ratCodes.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/EmbedIntoPow.lean](EmbedIntoPow.lean)**
+
+@import "EmbedIntoPow.lean"
 **[QPairCodes.lean](QPairCodes.lean)**
 
 @import "QPairCodes.lean"
@@ -57,12 +57,12 @@ Rational-interval coding used by effective presentations.
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/DprimeUPresentation.lean](DprimeUPresentation.lean)**
 
 @import "DprimeUPresentation.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/YseqCode.lean](YseqCode.lean)**
-
-@import "YseqCode.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/atomUCode_more.lean](atomUCode_more.lean)**
 
 @import "atomUCode_more.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/YseqCode.lean](YseqCode.lean)**
+
+@import "YseqCode.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/YseqCode_more.lean](YseqCode_more.lean)**
 
 @import "YseqCode_more.lean"
@@ -81,18 +81,18 @@ Rational-interval coding used by effective presentations.
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/sumMap.lean](sumMap.lean)**
 
 @import "sumMap.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/expMap.lean](expMap.lean)**
-
-@import "expMap.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/sumComb.lean](sumComb.lean)**
-
-@import "sumComb.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/arrowComb.lean](arrowComb.lean)**
-
-@import "arrowComb.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/prodComb.lean](prodComb.lean)**
 
 @import "prodComb.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/expMap.lean](expMap.lean)**
+
+@import "expMap.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/arrowComb.lean](arrowComb.lean)**
+
+@import "arrowComb.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/sumComb.lean](sumComb.lean)**
+
+@import "sumComb.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition_8_10.lean](Proposition_8_10.lean)**
 
 @import "Proposition_8_10.lean"
@@ -102,12 +102,6 @@ Rational-interval coding used by effective presentations.
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/TreeVal_more.lean](TreeVal_more.lean)**
 
 @import "TreeVal_more.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/SubsystemDomain.lean](SubsystemDomain.lean)**
-
-@import "SubsystemDomain.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_15.lean](Exercise_8_15.lean)**
-
-@import "Exercise_8_15.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/FixedNbhdFinitaryOrder.lean](FixedNbhdFinitaryOrder.lean)**
 
 @import "FixedNbhdFinitaryOrder.lean"
@@ -141,6 +135,12 @@ Rational-interval coding used by effective presentations.
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_24.lean](Exercise_8_24.lean)**
 
 @import "Exercise_8_24.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/SubsystemDomain.lean](SubsystemDomain.lean)**
+
+@import "SubsystemDomain.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_15.lean](Exercise_8_15.lean)**
+
+@import "Exercise_8_15.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitSpec812c.lean](splitSpec812c.lean)**
 
 @import "splitSpec812c.lean"
@@ -168,24 +168,18 @@ Rational-interval coding used by effective presentations.
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/domainIso812c.lean](domainIso812c.lean)**
 
 @import "domainIso812c.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableUnion.lean](IsComputableUnion.lean)**
-
-@import "IsComputableUnion.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/atomE.lean](atomE.lean)**
-
-@import "atomE.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableDiff.lean](IsComputableDiff.lean)**
 
 @import "IsComputableDiff.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/atomE.lean](atomE.lean)**
+
+@import "atomE.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/ComputableBisection.lean](ComputableBisection.lean)**
 
 @import "ComputableBisection.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Udiff.lean](Udiff.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableUnion.lean](IsComputableUnion.lean)**
 
-@import "Udiff.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitX812e.lean](splitX812e.lean)**
-
-@import "splitX812e.lean"
+@import "IsComputableUnion.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/xStepG.lean](xStepG.lean)**
 
 @import "xStepG.lean"
@@ -198,12 +192,15 @@ Rational-interval coding used by effective presentations.
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/atomPairG.lean](atomPairG.lean)**
 
 @import "atomPairG.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/atomPairG_more.lean](atomPairG_more.lean)**
-
-@import "atomPairG_more.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/atomPairJunk.lean](atomPairJunk.lean)**
 
 @import "atomPairJunk.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/yPseqAtomJunk.lean](yPseqAtomJunk.lean)**
+
+@import "yPseqAtomJunk.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/yPseqAtomIdx.lean](yPseqAtomIdx.lean)**
+
+@import "yPseqAtomIdx.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/xPseqAtomJunk.lean](xPseqAtomJunk.lean)**
 
 @import "xPseqAtomJunk.lean"
@@ -216,39 +213,42 @@ Rational-interval coding used by effective presentations.
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/XPseqCode.lean](XPseqCode.lean)**
 
 @import "XPseqCode.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/yPseqAtomJunk.lean](yPseqAtomJunk.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Udiff.lean](Udiff.lean)**
 
-@import "yPseqAtomJunk.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/yPseqAtomIdx.lean](yPseqAtomIdx.lean)**
+@import "Udiff.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitX812e.lean](splitX812e.lean)**
 
-@import "yPseqAtomIdx.lean"
+@import "splitX812e.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/YFoldInner.lean](YFoldInner.lean)**
 
 @import "YFoldInner.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/YPseqCode.lean](YPseqCode.lean)**
 
 @import "YPseqCode.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitU2.lean](splitU2.lean)**
+
+@import "splitU2.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/UBisection2.lean](UBisection2.lean)**
+
+@import "UBisection2.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Vdiff.lean](Vdiff.lean)**
+
+@import "Vdiff.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/atomPairG_more.lean](atomPairG_more.lean)**
+
+@import "atomPairG_more.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/effectiveIso812d_early.lean](effectiveIso812d_early.lean)**
 
 @import "effectiveIso812d_early.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/effectiveIso812d_early_more.lean](effectiveIso812d_early_more.lean)**
 
 @import "effectiveIso812d_early_more.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/XPseqCode_more.lean](XPseqCode_more.lean)**
-
-@import "XPseqCode_more.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/YPseqCode_more.lean](YPseqCode_more.lean)**
 
 @import "YPseqCode_more.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/combinedCode.lean](combinedCode.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/XPseqCode_more.lean](XPseqCode_more.lean)**
 
-@import "combinedCode.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/primrec812d.lean](primrec812d.lean)**
-
-@import "primrec812d.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/primrec812d_more.lean](primrec812d_more.lean)**
-
-@import "primrec812d_more.lean"
+@import "XPseqCode_more.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/xPseqAtomIdx_more.lean](xPseqAtomIdx_more.lean)**
 
 @import "xPseqAtomIdx_more.lean"
@@ -261,9 +261,18 @@ Rational-interval coding used by effective presentations.
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/yStepG_more.lean](yStepG_more.lean)**
 
 @import "yStepG_more.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/combinedCode.lean](combinedCode.lean)**
+
+@import "combinedCode.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/primrec812d.lean](primrec812d.lean)**
+
+@import "primrec812d.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/combinedCode_more.lean](combinedCode_more.lean)**
 
 @import "combinedCode_more.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/primrec812d_more.lean](primrec812d_more.lean)**
+
+@import "primrec812d_more.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/hcoreCode.lean](hcoreCode.lean)**
 
 @import "hcoreCode.lean"
@@ -285,15 +294,6 @@ Rational-interval coding used by effective presentations.
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/effectiveIso812d.lean](effectiveIso812d.lean)**
 
 @import "effectiveIso812d.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitU2.lean](splitU2.lean)**
-
-@import "splitU2.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/UBisection2.lean](UBisection2.lean)**
-
-@import "UBisection2.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Vdiff.lean](Vdiff.lean)**
-
-@import "Vdiff.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Vunion.lean](Vunion.lean)**
 
 @import "Vunion.lean"
@@ -303,12 +303,6 @@ Rational-interval coding used by effective presentations.
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean](Exercise_8_12.lean)**
 
 @import "Exercise_8_12.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/BooleanAlgebraFilters.lean](BooleanAlgebraFilters.lean)**
-
-@import "BooleanAlgebraFilters.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_13.lean](Exercise_8_13.lean)**
-
-@import "Exercise_8_13.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/EmbeddingsIntoU.lean](EmbeddingsIntoU.lean)**
 
 @import "EmbeddingsIntoU.lean"
@@ -330,6 +324,12 @@ Rational-interval coding used by effective presentations.
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_20.lean](Exercise_8_20.lean)**
 
 @import "Exercise_8_20.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/BooleanAlgebraFilters.lean](BooleanAlgebraFilters.lean)**
+
+@import "BooleanAlgebraFilters.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_13.lean](Exercise_8_13.lean)**
+
+@import "Exercise_8_13.lean"
 **[ReflexiveDomain.lean](ReflexiveDomain.lean)**
 
 @import "ReflexiveDomain.lean"

@@ -1,12 +1,12 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_sup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_bot
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

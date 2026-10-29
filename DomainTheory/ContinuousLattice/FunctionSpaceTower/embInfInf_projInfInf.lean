@@ -7,14 +7,9 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj_retr_c
 public import DomainTheory.ContinuousLattice.InverseLimits.lemma_4_5
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.FunctionSpaces.comp_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

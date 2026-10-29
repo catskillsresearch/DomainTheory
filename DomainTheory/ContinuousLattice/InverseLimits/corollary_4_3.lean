@@ -3,10 +3,10 @@ module
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

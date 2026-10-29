@@ -2,10 +2,10 @@ module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.instCompleteLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Projections
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_sSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst30
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

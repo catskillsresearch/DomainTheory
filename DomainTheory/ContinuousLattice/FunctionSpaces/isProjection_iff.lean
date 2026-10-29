@@ -1,12 +1,10 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsProjection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.comp_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

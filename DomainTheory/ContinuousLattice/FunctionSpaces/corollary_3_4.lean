@@ -3,10 +3,10 @@ module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
 import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_6
-import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
 import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
 import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

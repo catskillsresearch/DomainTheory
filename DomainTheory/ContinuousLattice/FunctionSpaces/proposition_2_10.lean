@@ -10,11 +10,11 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.image_retr_wayBelow_
 public import DomainTheory.ContinuousLattice.FunctionSpaces.image_retr_wayBelow_nonempty
 public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

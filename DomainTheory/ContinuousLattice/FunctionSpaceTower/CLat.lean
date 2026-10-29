@@ -1,8 +1,8 @@
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 universe u

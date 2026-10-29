@@ -1,0 +1,14 @@
+For $e \in D$ and $e' \in D'$, **`stepMap e e'`** is Scott's step function $\overrightarrow{e}[e,e'] \in$ **`ScottMap D D'`** (built from **`stepFun`** and **`stepFun.preservesDirectedSup`**).
+
+Namespace **`stepMap`** collects the step-function tools used in Theorem 3.3(a):
+
+**Lemma (`apply_of_wayBelow`).** If $e \ll x$, then `(stepMap e e') x = e'`.
+
+**Lemma (`le_of_wayBelow`).** If $e' \ll f(e)$, then `stepMap e e' ≤ f` in **`ScottMap D D'`**.
+
+**Lemma (`wayBelow`).** If $e' \ll f(e)$, then `stepMap e e' ≪ f`.
+
+**Theorem (`pointwise_sSup`).** For **`ContinuousLattice D`**, **`ContinuousLattice D'`**, $f \in$ **`ScottMap D D'`**, and $x \in D$,
+$(f x) = \bigsqcup \{\, e' \mid \exists e,\ e \ll x \land e' \ll f(e) \,\}$.
+
+**Theorem (`isContinuousLattice`).** If **`ContinuousLattice D`** and **`ContinuousLattice D'`**, then **`ScottMap D D'`** is a continuous lattice (Theorem 3.3(a); proof combines **`pointwise_sSup`**, **`wayBelow`**, and **`apply_of_wayBelow`**).

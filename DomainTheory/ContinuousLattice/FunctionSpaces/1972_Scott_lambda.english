@@ -8,6 +8,12 @@ maps $f \in [[D \times D'] \to D'']$ to an element of $[D \to [D' \to D'']]$ (us
 
 **Definition (`scottLambda`).** **`scottLambda f`** is the Scott map $x \mapsto$ **`scottLambda.at f x`** in **`ScottMap D (ScottMap D' D'')`**.
 
+On complete lattices, currying uses two pointwise **`sSup`** facts (same file, no separate module):
+
+**Lemma (`sSup_image_prod_mk_left`).** $\bigsqcup \{\,(x, y) \mid y \in S\,\} = (x, \bigsqcup S)$ for nonempty $S \subseteq D'$.
+
+**Lemma (`sSup_image_prod_mk_right`).** $\bigsqcup \{\,(x, y) \mid x \in S\,\} = (\bigsqcup S, y)$ for nonempty $S \subseteq D$.
+
 Namespace **`scottLambda`** collects the currying and section tools used to build those maps:
 
 **Lemma (`curry_right`).** For fixed $x \in D$, the section $y \mapsto f(x,y)$ preserves directed suprema.

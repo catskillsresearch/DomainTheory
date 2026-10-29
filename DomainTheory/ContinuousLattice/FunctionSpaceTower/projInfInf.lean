@@ -10,16 +10,11 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iSup₂_monotone
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
-public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
-public import DomainTheory.ContinuousLattice.FunctionSpaces.comp_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap
 public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

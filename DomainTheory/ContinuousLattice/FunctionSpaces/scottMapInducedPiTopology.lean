@@ -1,11 +1,11 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
 import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_le_finset_sup_step
 import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_scottOpen
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 universe u v

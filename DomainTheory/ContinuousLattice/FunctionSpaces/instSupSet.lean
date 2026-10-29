@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst30
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Projections
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_sSup
 public import Mathlib.Topology.Defs.Basic

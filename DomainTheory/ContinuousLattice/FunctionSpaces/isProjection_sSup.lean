@@ -1,6 +1,5 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst30
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_directedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_finsetSup
@@ -8,6 +7,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.directedOn_finsetSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_finsetSupOf
 public import Mathlib.Topology.Defs.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

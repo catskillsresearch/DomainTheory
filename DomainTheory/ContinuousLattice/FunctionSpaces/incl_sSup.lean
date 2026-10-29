@@ -4,10 +4,10 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_bot
 public import DomainTheory.ContinuousLattice.FunctionSpaces.directedOn_finsetSupOf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_finsetSupOf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.mem_finsetSupOf_of_mem
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
 public import Mathlib.Topology.Defs.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

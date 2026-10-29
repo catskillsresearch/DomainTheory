@@ -1,0 +1,5 @@
+For $T_0$-spaces $X$ and $Y$, Definition 3.1 identifies $[X \to Y]$ with **`C(X, Y)`** and equips it with the *product topology* (topology of pointwise convergence). Mathlib already carries the product topology on $Y^X$; restricting to continuous maps gives the subspace topology induced along the inclusion **`C(X, Y) ↪ X → Y`**.
+
+**Definition (`continuousMapInducedPiTopology`).** **`continuousMapInducedPiTopology X Y`** is that induced topology on **`C(X, Y)`**: the pi (product) topology on $Y^X$, pulled back along `(f : C(X, Y)) ↦ (f : X → Y)`.
+
+This definition is the generic $T_0$ packaging used before lattices enter the story. On **`ScottFunctionTopology.lean`**, **`scottFunctionTopology X Y`** is built from the eval subbase of Definition 3.1; **`scottFunctionTopology.eq_induced_pi`** proves **`scottFunctionTopology X Y = continuousMapInducedPiTopology X Y`**, so Scott's subbase description and the product topology coincide on **`C(X, Y)`**.

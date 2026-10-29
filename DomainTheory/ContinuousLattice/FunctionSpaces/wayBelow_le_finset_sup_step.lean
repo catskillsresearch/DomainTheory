@@ -3,12 +3,10 @@ public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

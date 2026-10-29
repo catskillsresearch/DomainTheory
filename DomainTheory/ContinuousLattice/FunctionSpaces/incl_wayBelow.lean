@@ -2,12 +2,11 @@ module
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

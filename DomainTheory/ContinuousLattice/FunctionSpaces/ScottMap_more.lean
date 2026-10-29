@@ -3,10 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.comp
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

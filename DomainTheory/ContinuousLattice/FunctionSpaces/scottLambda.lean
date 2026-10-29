@@ -1,14 +1,10 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_image_prod_mk_left
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_image_prod_mk_right
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
+import Mathlib.Order.ConditionallyCompleteLattice.Basic
+import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
+
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 
 @[expose] public section
 
@@ -23,6 +19,42 @@ variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
+
+theorem sSup_image_prod_mk_right (y : D') (S : Set D) (hS : S.Nonempty) :
+    sSup (Set.image (fun x => (x, y)) S) = (sSup S, y) := by
+  have himage : Set.image (fun x => (x, y)) S = S ×ˢ ({y} : Set D') := by
+    ext ⟨a, b⟩
+    simp only [Set.mem_image, Set.mem_prod, Set.mem_singleton_iff]
+    constructor
+    · rintro ⟨x, hx, h⟩
+      obtain ⟨ha, hb⟩ := Prod.ext_iff.mp h
+      subst ha
+      exact ⟨hx, hb.symm⟩
+    · rintro ⟨ha, hb⟩
+      exact ⟨a, ha, Prod.ext_iff.mpr ⟨rfl, hb.symm⟩⟩
+  have hy : sSup ({y} : Set D') = y := by
+    apply le_antisymm
+    · exact sSup_le fun z hz => by rw [Set.mem_singleton_iff] at hz; rw [hz]
+    · exact le_sSup (Set.mem_singleton y)
+  rw [himage, sSup_prod (hs := hS) (ht := ⟨y, Set.mem_singleton y⟩), hy]
+
+theorem sSup_image_prod_mk_left (x : D) (S : Set D') (hS : S.Nonempty) :
+    sSup (Set.image (fun y => (x, y)) S) = (x, sSup S) := by
+  have himage : Set.image (fun y => (x, y)) S = ({x} : Set D) ×ˢ S := by
+    ext ⟨a, b⟩
+    simp only [Set.mem_image, Set.mem_prod, Set.mem_singleton_iff]
+    constructor
+    · rintro ⟨y, hy, h⟩
+      obtain ⟨ha, hb⟩ := Prod.ext_iff.mp h
+      subst hb
+      exact ⟨ha.symm, hy⟩
+    · rintro ⟨ha, hb⟩
+      refine ⟨b, hb, Prod.ext_iff.mpr ⟨ha.symm, rfl⟩⟩
+  have hx : sSup ({x} : Set D) = x := by
+    apply le_antisymm
+    · exact sSup_le fun z hz => by rw [Set.mem_singleton_iff] at hz; rw [hz]
+    · exact le_sSup (Set.mem_singleton x)
+  rw [himage, sSup_prod (hs := ⟨x, Set.mem_singleton x⟩) (ht := hS), hx]
 
 namespace scottLambda
 

@@ -1,7 +1,5 @@
 module
 public import Mathlib.Topology.Constructions
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.CompleteLattice.Basic
 
 @[expose] public section
 

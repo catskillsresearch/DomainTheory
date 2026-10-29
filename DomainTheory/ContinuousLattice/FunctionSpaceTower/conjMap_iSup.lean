@@ -4,11 +4,9 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.incl_projInf_le_projInf_succ
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
-public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

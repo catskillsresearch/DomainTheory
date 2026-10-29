@@ -1,9 +1,9 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

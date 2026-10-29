@@ -6,10 +6,10 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.fix
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_le
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_eq
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_preservesDirectedSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

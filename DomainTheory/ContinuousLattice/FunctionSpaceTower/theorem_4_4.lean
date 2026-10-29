@@ -3,12 +3,12 @@ module
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.embInfInf_projInfInf
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_1
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.theorem_4_4_more
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

@@ -1,11 +1,9 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.comp
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst28
-public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

@@ -1,0 +1,9 @@
+Scott's Theorem 3.3 proof uses the pointwise step values that later become the step maps in **`ScottMap D D'`**. For $e \in D$, $e' \in D'$, and $x \in D$, **`stepFun e e' x`** is that value before continuity is packaged (the case split $e' / \bot$ from $e \ll x$).
+
+Namespace **`stepFun`** collects:
+
+**Lemma (`of_wayBelow`).** If $e \ll x$, then **`stepFun e e' x = e'`**.
+
+**Lemma (`of_not_wayBelow`).** If $\neg(e \ll x)$, then **`stepFun e e' x = \bot`**.
+
+**Theorem (`preservesDirectedSup`).** **`stepFun e e'`** preserves directed suprema (hence is Scott-continuous).

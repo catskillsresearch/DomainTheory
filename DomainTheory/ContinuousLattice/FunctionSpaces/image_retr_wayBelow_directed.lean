@@ -1,11 +1,11 @@
 module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Order.BourbakiWitt
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

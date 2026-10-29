@@ -4,8 +4,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeP
 public import DomainTheory.ContinuousLattice.FunctionSpaces.con_
 public import DomainTheory.ContinuousLattice.FunctionSpaces.min
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

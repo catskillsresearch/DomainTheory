@@ -36,7 +36,8 @@ ARXIV_MD = ROOT / "arxiv.md"
 MD_LINK_RE = re.compile(r"\[([^\]]*)\]\(([^)]+\.md)\)")
 # Outline entry: bullet or numbered list item linking to another note.
 TOC_BULLET_RE = re.compile(
-    r"^(?P<indent>[ \t]*)(?:[-*][ \t]+|\d+\.\s+)\[(?P<title>[^\]]*)\]\((?P<href>[^)]+\.md)\)[ \t]*$",
+    r"^(?P<indent>[ \t]*)(?:[-*][ \t]+|\d+\.\s+)\[(?P<title>.+?)\]\((?P<href>[^)]+\.md)\)"
+    r"(?:[ \t]+\[[^\]]*\]\([^)]*\))*[ \t]*$",
     re.MULTILINE,
 )
 FIRST_H1_RE = re.compile(r"^#\s+.+?(?:\n+|$)", re.MULTILINE)

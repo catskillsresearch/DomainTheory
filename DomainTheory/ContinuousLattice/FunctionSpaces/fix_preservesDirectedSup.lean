@@ -1,18 +1,15 @@
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_mono
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_le
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_eq
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

@@ -1,19 +1,16 @@
 # Exercise 8.12
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/V.lean](V.lean)**
-
-@import "V.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableSplit.lean](IsComputableSplit.lean)**
 
 @import "IsComputableSplit.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/V.lean](V.lean)**
+
+@import "V.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VX.lean](VX.lean)**
 
 @import "VX.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Vinter.lean](Vinter.lean)**
 
 @import "Vinter.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean](deltaPair.lean)**
-
-@import "deltaPair.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/minLevel.lean](minLevel.lean)**
 
 @import "minLevel.lean"
@@ -24,6 +21,9 @@
 
 @import "VComputablePresentation.lean"
 
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean](deltaPair.lean)**
+
+@import "deltaPair.lean"
 **EXERCISE 8.12.** Generalize the notation $2X + 1$ for subsets $X \subseteq \mathbb{N}$ to sets of the form
 
 $$2^k X + \ell, \quad \text{where } \ell < 2^k.$$

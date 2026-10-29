@@ -1,12 +1,10 @@
 module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
-public import DomainTheory.ContinuousLattice.FunctionSpaces.comp
 public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

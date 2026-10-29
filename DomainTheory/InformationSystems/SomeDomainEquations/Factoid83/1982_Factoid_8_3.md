@@ -20,51 +20,39 @@
 **[InformationSystems/SomeDomainEquations/Factoid83/VEnt.lean](VEnt.lean)**
 
 @import "VEnt.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vBot.lean](vBot.lean)**
-
-@import "vBot.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vTop.lean](vTop.lean)**
-
-@import "vTop.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset_insert_bot.lean](vPairRFinset_insert_bot.lean)**
-
-@import "vPairRFinset_insert_bot.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_insert_pairL.lean](vPairLFinset_insert_pairL.lean)**
-
-@import "vPairLFinset_insert_pairL.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_insert_pairR.lean](vPairLFinset_insert_pairR.lean)**
-
-@import "vPairLFinset_insert_pairR.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset_insert_pairL.lean](vPairRFinset_insert_pairL.lean)**
-
-@import "vPairRFinset_insert_pairL.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset_insert_pairR.lean](vPairRFinset_insert_pairR.lean)**
-
-@import "vPairRFinset_insert_pairR.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_insert_bot.lean](vPairLFinset_insert_bot.lean)**
-
-@import "vPairLFinset_insert_bot.lean"
 **[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_empty.lean](vPairLFinset_empty.lean)**
 
 @import "vPairLFinset_empty.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/not_VEnt_empty_top.lean](not_VEnt_empty_top.lean)**
-
-@import "not_VEnt_empty_top.lean"
 **[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset_mono.lean](vPairRFinset_mono.lean)**
 
 @import "vPairRFinset_mono.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/VCon.lean](VCon.lean)**
+**[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_insert_pairR.lean](vPairLFinset_insert_pairR.lean)**
 
-@import "VCon.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vSystem.lean](vSystem.lean)**
+@import "vPairLFinset_insert_pairR.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_insert_pairL.lean](vPairLFinset_insert_pairL.lean)**
 
-@import "vSystem.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vUnfold.lean](vUnfold.lean)**
+@import "vPairLFinset_insert_pairL.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/not_VEnt_empty_top.lean](not_VEnt_empty_top.lean)**
 
-@import "vUnfold.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vRhs.lean](vRhs.lean)**
+@import "not_VEnt_empty_top.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/vBot.lean](vBot.lean)**
 
-@import "vRhs.lean"
+@import "vBot.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset_insert_pairL.lean](vPairRFinset_insert_pairL.lean)**
+
+@import "vPairRFinset_insert_pairL.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_mono.lean](vPairLFinset_mono.lean)**
+
+@import "vPairLFinset_mono.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_insert_bot.lean](vPairLFinset_insert_bot.lean)**
+
+@import "vPairLFinset_insert_bot.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/vTop.lean](vTop.lean)**
+
+@import "vTop.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset_insert_pairR.lean](vPairRFinset_insert_pairR.lean)**
+
+@import "vPairRFinset_insert_pairR.lean"
 **[InformationSystems/SomeDomainEquations/Factoid83/IsUToken.lean](IsUToken.lean)**
 
 @import "IsUToken.lean"
@@ -89,24 +77,27 @@
 **[InformationSystems/SomeDomainEquations/Factoid83/BasicInst39.lean](BasicInst39.lean)**
 
 @import "BasicInst39.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/not_VEnt_singleton_ne_top.lean](not_VEnt_singleton_ne_top.lean)**
-
-@import "not_VEnt_singleton_ne_top.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/VEnt_insert_top_imp.lean](VEnt_insert_top_imp.lean)**
-
-@import "VEnt_insert_top_imp.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/not_VEnt_insert_top_of_ent.lean](not_VEnt_insert_top_of_ent.lean)**
-
-@import "not_VEnt_insert_top_of_ent.lean"
 **[InformationSystems/SomeDomainEquations/Factoid83/mem_foldr_uForget.lean](mem_foldr_uForget.lean)**
 
 @import "mem_foldr_uForget.lean"
 **[InformationSystems/SomeDomainEquations/Factoid83/uForgetFinset.lean](uForgetFinset.lean)**
 
 @import "uForgetFinset.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/vPairLFinset_mono.lean](vPairLFinset_mono.lean)**
+**[InformationSystems/SomeDomainEquations/Factoid83/VCon.lean](VCon.lean)**
 
-@import "vPairLFinset_mono.lean"
+@import "VCon.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/vSystem.lean](vSystem.lean)**
+
+@import "vSystem.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/vUnfold.lean](vUnfold.lean)**
+
+@import "vUnfold.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/vRhs.lean](vRhs.lean)**
+
+@import "vRhs.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/not_VEnt_singleton_ne_top.lean](not_VEnt_singleton_ne_top.lean)**
+
+@import "not_VEnt_singleton_ne_top.lean"
 **[InformationSystems/SomeDomainEquations/Factoid83/VEnt_mono.lean](VEnt_mono.lean)**
 
 @import "VEnt_mono.lean"
@@ -116,18 +107,27 @@
 **[InformationSystems/SomeDomainEquations/Factoid83/UEnt.lean](UEnt.lean)**
 
 @import "UEnt.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/vPairRFinset_insert_bot.lean](vPairRFinset_insert_bot.lean)**
+
+@import "vPairRFinset_insert_bot.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/VEnt_insert_top_imp.lean](VEnt_insert_top_imp.lean)**
+
+@import "VEnt_insert_top_imp.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/not_VEnt_insert_top_of_ent.lean](not_VEnt_insert_top_of_ent.lean)**
+
+@import "not_VEnt_insert_top_of_ent.lean"
 **[InformationSystems/SomeDomainEquations/Factoid83/UCon_insert_of_ent.lean](UCon_insert_of_ent.lean)**
 
 @import "UCon_insert_of_ent.lean"
 **[InformationSystems/SomeDomainEquations/Factoid83/uSystem.lean](uSystem.lean)**
 
 @import "uSystem.lean"
-**[InformationSystems/SomeDomainEquations/Factoid83/not_mem_uForget_top.lean](not_mem_uForget_top.lean)**
-
-@import "not_mem_uForget_top.lean"
 **[InformationSystems/SomeDomainEquations/Factoid83/UCon_empty.lean](UCon_empty.lean)**
 
 @import "UCon_empty.lean"
 **[InformationSystems/SomeDomainEquations/Factoid83.lean](../Factoid83.lean)**
 
 @import "../Factoid83.lean"
+**[InformationSystems/SomeDomainEquations/Factoid83/not_mem_uForget_top.lean](not_mem_uForget_top.lean)**
+
+@import "not_mem_uForget_top.lean"

@@ -1,13 +1,12 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst28
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_le
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_eq
-public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

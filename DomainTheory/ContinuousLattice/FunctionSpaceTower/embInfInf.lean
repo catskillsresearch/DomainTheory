@@ -1,11 +1,11 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

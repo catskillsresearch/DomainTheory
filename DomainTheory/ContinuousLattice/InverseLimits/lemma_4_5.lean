@@ -5,9 +5,9 @@ public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.projInf
 public import DomainTheory.ContinuousLattice.InverseLimits.projLE
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import Mathlib.Data.Set.Basic
 
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
