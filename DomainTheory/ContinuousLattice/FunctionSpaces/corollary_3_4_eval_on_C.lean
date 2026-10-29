@@ -2,6 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
+public import DomainTheory.ContinuousLattice.FunctionSpaces.subbasis_isOpen_scott
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Topology.Defs.Basic
 
@@ -20,6 +21,7 @@ theorem corollary_3_4_eval_on_C (x : D) :
     @Continuous (ScottC D D') D'
       (@scottFunctionTopology D D' scottTopologicalSpace scottTopologicalSpace)
       scottTopologicalSpace (fun f : ScottC D D' => f x) :=
-  continuous_def.2 fun _U hU => scottFunctionSubbasis_isOpen_scott (D := D) (D' := D') (x := x) hU
+  continuous_def.2 fun _U hU =>
+    scottFunctionTopology.subbasis_isOpen_scott (D := D) (D' := D') (x := x) hU
 
 end DomainTheory.ContinuousLattice

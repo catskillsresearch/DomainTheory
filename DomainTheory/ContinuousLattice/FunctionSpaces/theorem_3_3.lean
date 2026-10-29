@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import Mathlib.Topology.Defs.Basic
 
@@ -20,7 +20,8 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 theorem theorem_3_3 (hD : ContinuousLattice D) (hD' : ContinuousLattice D') :
     ContinuousLattice (ScottMap D D') ∧
-      (scottTopologicalSpace : TopologicalSpace (ScottMap D D')) = scottMapPointwiseTopology D D' :=
+      (scottTopologicalSpace : TopologicalSpace (ScottMap D D')) =
+        scottMapInducedPiTopology.pointwiseTopology D D' :=
   ⟨theorem_3_3.isContinuousLattice hD hD', theorem_3_3.topology hD hD'⟩
 
 end DomainTheory.ContinuousLattice

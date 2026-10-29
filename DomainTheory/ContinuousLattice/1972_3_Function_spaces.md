@@ -5,6 +5,7 @@
 @import "1972_Function_spaces.mermaid"
 
 - [Definition 3.1: Function space](FunctionSpaces/1972_Definition_3_1.md)
+- [Elements of $[D \to D']$](FunctionSpaces/1972_Elements_of_D_to_Dprime.md)
 - [Proposition 3.2](FunctionSpaces/1972_Proposition_3_2.md)
 - [Theorem 3.3](FunctionSpaces/1972_Theorem_3_3.md)
 - [Corollary 3.4](FunctionSpaces/1972_Corollary_3_4.md)

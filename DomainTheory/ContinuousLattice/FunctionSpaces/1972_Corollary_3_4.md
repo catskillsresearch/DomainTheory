@@ -5,6 +5,9 @@
 **[corollary_3_4.lean](corollary_3_4.lean)**
 
 @import "corollary_3_4.lean"
+**[subbasis_isOpen_scott.lean](subbasis_isOpen_scott.lean)**
+
+@import "subbasis_isOpen_scott.lean"
 **[corollary_3_4_eval_on_C.lean](corollary_3_4_eval_on_C.lean)**
 
 @import "corollary_3_4_eval_on_C.lean"
@@ -14,6 +17,3 @@
 **[corollary_3_4_preservesDirectedSup.lean](corollary_3_4_preservesDirectedSup.lean)**
 
 @import "corollary_3_4_preservesDirectedSup.lean"
-**[scottFunctionEvalSubbasis.lean](scottFunctionEvalSubbasis.lean)**
-
-@import "scottFunctionEvalSubbasis.lean"

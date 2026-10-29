@@ -7,7 +7,7 @@ public import DomainTheory.BridgeTheorems.PresentationDomains.presentation_domai
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.Basic
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_2
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSupMaps_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_apply_of_wayBelow

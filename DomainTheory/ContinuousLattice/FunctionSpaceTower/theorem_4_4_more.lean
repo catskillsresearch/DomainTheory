@@ -8,7 +8,7 @@ public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_1
 public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3
 public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3_more
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
 
 @[expose] public section
 

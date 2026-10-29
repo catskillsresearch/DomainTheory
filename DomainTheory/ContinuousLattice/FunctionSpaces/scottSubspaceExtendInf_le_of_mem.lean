@@ -1,3 +1,3 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology

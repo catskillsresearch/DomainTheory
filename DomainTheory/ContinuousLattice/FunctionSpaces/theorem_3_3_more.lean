@@ -11,7 +11,7 @@ public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_le_finset_sup_step
 public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_scottOpen
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 
@@ -47,7 +47,8 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
 theorem theorem_3_3.topology (hD : ContinuousLattice D) (hD' : ContinuousLattice D') :
-    (scottTopologicalSpace : TopologicalSpace (ScottMap D D')) = scottMapPointwiseTopology D D' := by
+    (scottTopologicalSpace : TopologicalSpace (ScottMap D D')) =
+      scottMapInducedPiTopology.pointwiseTopology D D' := by
   have hL : ContinuousLattice (ScottMap D D') := theorem_3_3.isContinuousLattice hD hD'
   apply le_antisymm
   ·
@@ -57,7 +58,7 @@ theorem theorem_3_3.topology (hD : ContinuousLattice D) (hD' : ContinuousLattice
   ·
     intro U hU
     rw [ScottOpen.isOpen_iff] at hU
-    rw [@isOpen_iff_forall_mem_open (ScottMap D D') (scottMapPointwiseTopology D D')]
+    rw [@isOpen_iff_forall_mem_open (ScottMap D D') (scottMapInducedPiTopology.pointwiseTopology D D')]
     intro g hgU
     obtain ⟨φ, hφg, hφsub⟩ := exists_wayBelow_subset hL hU hgU
     obtain ⟨F, hF, hφF⟩ := wayBelow_le_finset_sup_step hD hD' hφg
@@ -65,8 +66,8 @@ theorem theorem_3_3.topology (hD : ContinuousLattice D) (hD' : ContinuousLattice
     · intro h hh
       refine hφsub (WayBelow.le_trans hφF (wayBelow_finset_sup fun p hp => ?_))
       exact stepMap_wayBelow (Set.mem_iInter₂.1 hh p hp)
-    · exact @isOpen_biInter_finset (ScottMap D D') (D × D') (scottMapPointwiseTopology D D') F _
-        (fun p _ => pointwiseSubbasic_isOpen p.1 (ScottOpen.isOpen_iff.mpr (ScottOpen.wayBelow p.2)))
+    · exact @isOpen_biInter_finset (ScottMap D D') (D × D') (scottMapInducedPiTopology.pointwiseTopology D D') F _
+        (fun p _ => scottMapInducedPiTopology.subbasic_isOpen p.1 (ScottOpen.isOpen_iff.mpr (ScottOpen.wayBelow p.2)))
     · exact Set.mem_iInter₂.2 fun p hp => hF p hp
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
@@ -78,6 +79,6 @@ theorem theorem_3_3.topology_induced_pi (hD : ContinuousLattice D)
     (hD' : ContinuousLattice D') :
     (scottTopologicalSpace : TopologicalSpace (ScottMap D D')) =
       scottMapInducedPiTopology D D' := by
-  rw [theorem_3_3.topology hD hD', scottMapPointwiseTopology_eq_induced_pi]
+  rw [theorem_3_3.topology hD hD', scottMapInducedPiTopology.eq_induced_pi]
 
 end DomainTheory.ContinuousLattice
