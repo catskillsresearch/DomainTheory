@@ -29,20 +29,21 @@ section Def3_1
 
 variable [TopologicalSpace X] [TopologicalSpace Y]
 
-def scottFunctionEvalSubbasis (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y] :
+def scottFunctionTopology.evalSubbasis (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y] :
     Set (Set (C(X, Y))) :=
   { W | ∃ (x : X) (U : Set Y), IsOpen U ∧ W = {f : C(X, Y) | f x ∈ U} }
 
 @[reducible] noncomputable def scottFunctionTopology (X Y : Type*) [TopologicalSpace X]
     [TopologicalSpace Y] : TopologicalSpace (C(X, Y)) :=
-  generateFrom (scottFunctionEvalSubbasis X Y)
+  generateFrom (scottFunctionTopology.evalSubbasis X Y)
 
-theorem scottFunctionSubbasis_isOpen {x : X} {U : Set Y} (hU : IsOpen U) :
+namespace scottFunctionTopology
+
+theorem subbasis_isOpen {x : X} {U : Set Y} (hU : IsOpen U) :
     @IsOpen (C(X, Y)) (scottFunctionTopology X Y) {f : C(X, Y) | f x ∈ U} :=
   isOpen_generateFrom_of_mem (s := {f : C(X, Y) | f x ∈ U}) ⟨x, U, hU, rfl⟩
 
-theorem scottFunctionTopology_eq_induced_pi (X Y : Type*) [TopologicalSpace X]
-    [TopologicalSpace Y] :
+theorem eq_induced_pi (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y] :
     scottFunctionTopology X Y = continuousMapInducedPiTopology X Y := by
   apply le_antisymm
   · let : TopologicalSpace C(X, Y) := scottFunctionTopology X Y
@@ -50,7 +51,7 @@ theorem scottFunctionTopology_eq_induced_pi (X Y : Type*) [TopologicalSpace X]
     rw [← continuous_iff_le_induced]
     exact continuous_pi fun x =>
       continuous_def.2 fun U hU =>
-        scottFunctionSubbasis_isOpen (X := X) (Y := Y) (x := x) hU
+        subbasis_isOpen (X := X) (Y := Y) (x := x) hU
   · apply le_generateFrom_iff_subset_isOpen.2
     rintro W ⟨x, U, hU, rfl⟩
     change @IsOpen C(X, Y)
@@ -62,7 +63,7 @@ theorem scottFunctionTopology_eq_induced_pi (X Y : Type*) [TopologicalSpace X]
       (fun _ => inferInstance) x).isOpen_preimage U hU, rfl⟩
 
 theorem specializationPreorder_generateOpen (f g : C(X, Y)) (hfg : ∀ x, SpecializationPreorder (f x) (g x))
-    {V : Set (C(X, Y))} (hV : GenerateOpen (scottFunctionEvalSubbasis X Y) V) (hf : f ∈ V) :
+    {V : Set (C(X, Y))} (hV : GenerateOpen (evalSubbasis X Y) V) (hf : f ∈ V) :
     g ∈ V :=
   match hV with
   | .basic W hW => by
@@ -77,15 +78,17 @@ theorem specializationPreorder_generateOpen (f g : C(X, Y)) (hfg : ∀ x, Specia
     obtain ⟨W, hWS, hfW⟩ := Set.mem_sUnion.mp hf
     exact Set.mem_sUnion.mpr ⟨W, hWS, specializationPreorder_generateOpen f g hfg (hS W hWS) hfW⟩
 
-theorem scottFunctionSpecializationPreorder {f g : C(X, Y)} :
+theorem specializationPreorder {f g : C(X, Y)} :
     letI := scottFunctionTopology X Y
     SpecializationPreorder f g ↔ ∀ x, SpecializationPreorder (f x) (g x) := by
   let : TopologicalSpace (C(X, Y)) := scottFunctionTopology X Y
   constructor
   · intro hfg x U hU hfU
-    exact hfg {h | h x ∈ U} (scottFunctionSubbasis_isOpen (X := X) (Y := Y) hU) hfU
+    exact hfg {h | h x ∈ U} (subbasis_isOpen (X := X) (Y := Y) hU) hfU
   · intro hfg U hU hfU
     exact specializationPreorder_generateOpen f g hfg hU hfU
+
+end scottFunctionTopology
 
 variable [CompleteLattice D] [CompleteLattice D']
 

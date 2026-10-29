@@ -19,6 +19,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 theorem proposition_3_2 {f g : C(X, Y)} :
     letI := scottFunctionTopology X Y
     (SpecializationPreorder f g ↔ ∀ x, SpecializationPreorder (f x) (g x)) :=
-  scottFunctionSpecializationPreorder
+  scottFunctionTopology.specializationPreorder
 
 end DomainTheory.ContinuousLattice
