@@ -1,6 +1,5 @@
 module
 
-public import DomainTheory.ContinuousLattice.ContinuousLattices.orderIso_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import Mathlib.Data.Set.Basic
 
@@ -69,7 +68,7 @@ theorem orderIso {A B : Type u} [latticeA : CompleteLattice A] [latticeB : Compl
   apply e.le_iff_le.mp
   exact (hB.out (e y)).2 fun z hz => by
     have hz' : e.symm z ≪ y := by
-      simpa using orderIso_wayBelow e.symm hz
+      simpa using WayBelow.map_orderIso e.symm hz
     have := hb hz'
     simpa using e.monotone this
 

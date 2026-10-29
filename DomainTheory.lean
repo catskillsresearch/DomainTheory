@@ -220,7 +220,6 @@ import DomainTheory.ContinuousLattice.Constructions.scottTopology
 import DomainTheory.ContinuousLattice.ContinuousLattices.IdemFix
 import DomainTheory.ContinuousLattice.ContinuousLattices.lemma_3_9
 import DomainTheory.ContinuousLattice.ContinuousLattices.orderIsoScottHomeomorph
-import DomainTheory.ContinuousLattice.ContinuousLattices.orderIso_wayBelow
 import DomainTheory.ContinuousLattice.ContinuousLattices.proposition_2_4
 import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12
 import DomainTheory.ContinuousLattice.FunctionSpaceTower.CLat

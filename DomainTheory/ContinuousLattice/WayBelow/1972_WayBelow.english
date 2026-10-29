@@ -59,3 +59,7 @@ $$
 **Lemma (`WayBelow.sInf`).** If $U$ is Scott-open and $y \in U$, then $\inf U \ll y$.
 
 **Proof.** $U$ itself witnesses $\inf U \ll y$: every $w \in U$ satisfies $\inf U \le w$. $\square$
+
+**Lemma (`WayBelow.map_orderIso`).** If $e : A \to B$ is an order isomorphism and $x \ll y$ in $A$, then $e(x) \ll e(y)$ in $B$.
+
+**Proof.** Pull back the Scott-open witness for $x \ll y$ along $e^{-1}$ (`ScottOpen.preimage_orderIso`); membership and the $\uparrow$-subgraph condition follow from $e$ and $e^{-1}$ being order isomorphisms. $\square$

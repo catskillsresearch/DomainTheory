@@ -72,6 +72,16 @@ theorem sInf {U : Set D} (hU : ScottOpen U) {y : D} (hy : y ∈ U) :
     sInf U ≪ y :=
   ⟨U, hU, hy, fun _ hz => Set.mem_Ici.2 (sInf_le hz)⟩
 
+variable {A B : Type u} [CompleteLattice A] [CompleteLattice B]
+
+theorem map_orderIso (e : A ≃o B) {x y : A} (h : x ≪ y) : e x ≪ e y := by
+  obtain ⟨U, hU, hyU, hUsub⟩ := h
+  refine ⟨e.symm ⁻¹' U, ScottOpen.preimage_orderIso e.symm hU, ?_, ?_⟩
+  · simpa using hyU
+  · intro z hz
+    have hxz : x ≤ e.symm z := Set.mem_Ici.1 (hUsub hz)
+    exact Set.mem_Ici.2 (by simpa using (e.le_iff_le.mpr hxz))
+
 end WayBelow
 
 end DomainTheory.ContinuousLattice
