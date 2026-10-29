@@ -1,6 +1,6 @@
 module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

@@ -1,28 +1,3 @@
 module
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-public import Mathlib.Order.BourbakiWitt
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
 
-@[expose] public section
-
-namespace DomainTheory.ContinuousLattice
-
-open Set Topology TopologicalSpace
-
-variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
-variable [TopologicalSpace X] [TopologicalSpace Y]
-variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
-variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
-
-section SubspaceExtension
-
-variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y]
-
-omit [TopologicalSpace Y] in
-theorem scottSubspaceExtendInf_le_of_mem {f' : ScottMap Y D} {U : Set Y} {y : Y}
-    (hyU : y ∈ U) : sInf (Set.image (f' : Y → D) U) ≤ f' y :=
-  sInf_le (Set.mem_image_of_mem _ hyU)
-
-end SubspaceExtension
-end DomainTheory.ContinuousLattice
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology

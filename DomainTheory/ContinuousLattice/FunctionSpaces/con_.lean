@@ -1,9 +1,8 @@
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.const
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
-public import DomainTheory.ContinuousLattice.FunctionSpaces.const_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Topology.Defs.Basic

@@ -11,13 +11,10 @@ public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_le_finset_sup_step
 public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_scottOpen
-public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_isOpen
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapPointwiseTopology
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapPointwiseTopology_eq_induced_pi
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
 
 @[expose] public section
 

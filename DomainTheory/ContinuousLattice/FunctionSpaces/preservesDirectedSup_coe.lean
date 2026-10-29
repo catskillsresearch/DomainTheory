@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
 public import Mathlib.Order.BourbakiWitt
 public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
 public import Mathlib.Topology.Defs.Basic

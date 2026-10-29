@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapPointwiseTopology
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import Mathlib.Topology.Defs.Basic
 

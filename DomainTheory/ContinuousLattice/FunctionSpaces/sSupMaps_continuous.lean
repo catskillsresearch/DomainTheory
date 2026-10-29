@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwise_sSup_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import Mathlib.Topology.Defs.Basic

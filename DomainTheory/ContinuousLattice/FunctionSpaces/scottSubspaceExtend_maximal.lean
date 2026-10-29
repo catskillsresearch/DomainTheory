@@ -2,10 +2,9 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendInf_eq_of_comp
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMap_eq_sSup_openInfs
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sInf_image_le_sInf_image_of_subset
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import Mathlib.Order.BourbakiWitt
 public import Mathlib.Topology.Defs.Basic
 

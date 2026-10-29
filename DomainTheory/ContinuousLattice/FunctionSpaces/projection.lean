@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.con_
 public import DomainTheory.ContinuousLattice.FunctionSpaces.min
-public import DomainTheory.ContinuousLattice.FunctionSpaces.const_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import Mathlib.Topology.Defs.Basic
