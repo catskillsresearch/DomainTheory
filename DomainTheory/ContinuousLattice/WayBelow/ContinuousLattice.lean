@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.ContinuousLattice.ContinuousLattices.orderIso_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import Mathlib.Data.Set.Basic
 
@@ -59,6 +60,18 @@ theorem isContinuousLattice_iff_isLUB_sInf_nhds :
     refine (h y).2 ?_
     rintro a ⟨U, hU, hyU, rfl⟩
     exact hb (WayBelow.sInf hU hyU)
+
+theorem orderIso {A B : Type u} [latticeA : CompleteLattice A] [latticeB : CompleteLattice B]
+    (e : A ≃o B) (hB : ContinuousLattice B) : ContinuousLattice A := by
+  refine { out := ?_ }
+  intro y
+  refine ⟨fun x hx => hx.le, fun b hb => ?_⟩
+  apply e.le_iff_le.mp
+  exact (hB.out (e y)).2 fun z hz => by
+    have hz' : e.symm z ≪ y := by
+      simpa using orderIso_wayBelow e.symm hz
+    have := hb hz'
+    simpa using e.monotone this
 
 namespace WayBelow
 

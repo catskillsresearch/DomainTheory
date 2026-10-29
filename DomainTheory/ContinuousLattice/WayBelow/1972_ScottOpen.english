@@ -36,6 +36,10 @@ $$
 
 **Proof.** Both sides unfold to the same upset condition and the same “if $\sup S \in U$ for directed nonempty $S$, then $S \cap U \neq \emptyset$” clause, phrased either with `sSup` or with `IsLUB`. $\square$
 
+**Lemma (`ScottOpen.preimage_orderIso`).** If $e : A \to B$ is an order isomorphism and $U \subseteq B$ is Scott-open, then $e^{-1}(U) \subseteq A$ is Scott-open.
+
+**Proof.** Upper-set condition pulls back along monotone $e$. If $\sup S \in e^{-1}(U)$ for directed nonempty $S \subseteq A$, then $\sup (e '' S) = e(\sup S) \in U$; Scott-openness of $U$ gives $s \in S$ with $e(s) \in U$, i.e. $s \in e^{-1}(U)$. $\square$
+
 **Lemma (`ScottOpen.isOpen_iff`).** With the Scott topology `scottTopologicalSpace` on $D$, a set $U \subseteq D$ is topologically open iff $U$ is Scott-open.
 
 **Proof.** Rewrite via `ScottOpen.iff_dirSupInacc` and the definition of `scottTopologicalSpace` as `Topology.scott D Set.univ`; conclude with Mathlib’s `IsScott.isOpen_iff_isUpperSet_and_dirSupInaccOn`. $\square$

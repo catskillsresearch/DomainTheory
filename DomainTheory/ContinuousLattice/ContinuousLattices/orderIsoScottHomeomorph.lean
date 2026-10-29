@@ -1,5 +1,4 @@
 module
-public import DomainTheory.ContinuousLattice.ContinuousLattices.scottOpen_preimage_orderIso
 public import Mathlib.Order.BourbakiWitt
 public import Mathlib.Algebra.Group.End
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
@@ -32,12 +31,12 @@ noncomputable def orderIsoScottHomeomorph (e : A ≃o B) :
     rw [continuous_def]
     intro U hU
     exact ScottOpen.isOpen_iff.mpr
-      (scottOpen_preimage_orderIso e (ScottOpen.isOpen_iff.mp hU))
+      (ScottOpen.preimage_orderIso e (ScottOpen.isOpen_iff.mp hU))
   continuous_invFun := by
     rw [continuous_def]
     intro U hU
     exact ScottOpen.isOpen_iff.mpr
-      (scottOpen_preimage_orderIso e.symm (ScottOpen.isOpen_iff.mp hU))
+      (ScottOpen.preimage_orderIso e.symm (ScottOpen.isOpen_iff.mp hU))
   }
 
 end Theorem212Transfer

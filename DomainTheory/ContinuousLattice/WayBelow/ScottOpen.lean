@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
+public import Mathlib.Order.Hom.Basic
 
 @[expose] public section
 
@@ -80,6 +81,22 @@ theorem wayBelow (x : D) :
   obtain ⟨U, hU, hsupU, hsub⟩ := hmem
   obtain ⟨s, hsS, hsU⟩ := hU.2 hS hSdir hsupU
   exact ⟨s, hsS, ⟨U, hU, hsU, hsub⟩⟩
+
+variable {A B : Type u} [CompleteLattice A] [CompleteLattice B]
+
+theorem preimage_orderIso (e : A ≃o B) {U : Set B} (hU : ScottOpen U) :
+    ScottOpen (e ⁻¹' U) := by
+  refine ⟨fun x y hxy hx => hU.1 (e.monotone hxy) hx, ?_⟩
+  intro S hSne hSdir hsup
+  have hImgNe : (e '' S).Nonempty := hSne.image e
+  have hImgDir : DirectedOn (· ≤ ·) (e '' S) := by
+    rintro _ ⟨x, hx, rfl⟩ _ ⟨y, hy, rfl⟩
+    obtain ⟨z, hz, hxz, hyz⟩ := hSdir x hx y hy
+    exact ⟨e z, Set.mem_image_of_mem e hz, e.monotone hxz, e.monotone hyz⟩
+  have hmap : e (sSup S) = sSup (e '' S) := by
+    rw [e.map_sSup, sSup_image]
+  obtain ⟨_, ⟨s, hs, rfl⟩, hes⟩ := hU.2 hImgNe hImgDir (hmap ▸ hsup)
+  exact ⟨s, hs, hes⟩
 
 end ScottOpen
 

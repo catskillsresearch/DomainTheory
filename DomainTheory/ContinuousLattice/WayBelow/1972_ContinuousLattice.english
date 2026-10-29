@@ -16,6 +16,8 @@ Supporting lemmas live in namespace **`ContinuousLattice`** in [`ContinuousLatti
 
 **Proof.** As above, with $\uparrow a$ in place of $\{ w : a \ll w \}$. $\square$
 
+**Lemma (`ContinuousLattice.orderIso`).** If $e : A \to B$ is an order isomorphism and $B$ is a continuous lattice, then so is $A$ (way-below pulls back along $e^{-1}$ via **`orderIso_wayBelow`**).
+
 **Lemma (`ContinuousLattice.isContinuousLattice_iff_isLUB_sInf_nhds`).** $D$ is a continuous lattice iff for every $y \in D$, the set of infima $\inf U$ over Scott-open $U \ni y$ has least upper bound $y$.
 
 **Proof.** ($\Rightarrow$) Each $\inf U \ll y$ (`WayBelow.sInf`); the lub of those infs is at most $y$; **`out`** gives equality. ($\Leftarrow$) Every $x \ll y$ lies in some Scott-open $U$ with $y \in U$, hence $x \le \inf U$; the lub of the infs bounds all way-below elements below $y$, so **`out`** holds. $\square$
