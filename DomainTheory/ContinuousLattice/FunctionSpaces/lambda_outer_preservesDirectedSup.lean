@@ -1,3 +1,0 @@
-module
-
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottLambda

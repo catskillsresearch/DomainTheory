@@ -1,0 +1,5 @@
+The map **`scottLambda`** itself (on carriers **`ScottMap (D × D') D''`** and **`ScottMap D (ScottMap D' D'')`**) preserves directed suprema in the function variable; lubs on Scott maps are computed pointwise (Theorem 3.3).
+
+**Theorem (`scottLambda.preservesDirectedSup`).** **`PreservesDirectedSup scottLambda`**.
+
+This is the directed-supremum input to Scott continuity of functional abstraction (Proposition 3.5).

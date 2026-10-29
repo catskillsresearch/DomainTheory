@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationPreorder
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.FunctionSpaces.continuousMapInducedPiTopology
 
 @[expose] public section
@@ -30,6 +31,16 @@ variable [TopologicalSpace X] [TopologicalSpace Y]
 theorem subbasis_isOpen {x : X} {U : Set Y} (hU : IsOpen U) :
     @IsOpen (C(X, Y)) (scottFunctionTopology X Y) {f : C(X, Y) | f x ∈ U} :=
   isOpen_generateFrom_of_mem (s := {f : C(X, Y) | f x ∈ U}) ⟨x, U, hU, rfl⟩
+
+variable {D D' : Type*} [CompleteLattice D] [CompleteLattice D']
+
+theorem subbasis_isOpen_scott {x : D} {U : Set D'} (hU : @IsOpen D' scottTopologicalSpace U) :
+    letI : TopologicalSpace D := scottTopologicalSpace
+    letI : TopologicalSpace D' := scottTopologicalSpace
+    @IsOpen (C(D, D')) (scottFunctionTopology D D') {f : C(D, D') | f x ∈ U} := by
+  let : TopologicalSpace D := scottTopologicalSpace
+  let : TopologicalSpace D' := scottTopologicalSpace
+  exact subbasis_isOpen (x := x) hU
 
 theorem eq_induced_pi (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y] :
     scottFunctionTopology X Y = continuousMapInducedPiTopology X Y := by

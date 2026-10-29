@@ -1,0 +1,19 @@
+For continuous lattices $D$, $D'$, and $D''$, Scott's functional abstraction
+
+$$\mathrm{lambda}(f)(x)(y) = f(x,y)$$
+
+maps $f \in [[D \times D'] \to D'']$ to an element of $[D \to [D' \to D'']]$ (using Theorem 3.3 on nested function spaces). The library names that map **`scottLambda`**.
+
+**Definition (`scottLambda.at`).** For $f \in$ **`ScottMap (D × D') D''`** and $x \in D$, **`scottLambda.at f x`** is the Scott map $y \mapsto f(x,y)$ in **`ScottMap D' D''`**.
+
+**Definition (`scottLambda`).** **`scottLambda f`** is the Scott map $x \mapsto$ **`scottLambda.at f x`** in **`ScottMap D (ScottMap D' D'')`**.
+
+Namespace **`scottLambda`** collects the currying and section tools used to build those maps:
+
+**Lemma (`scottLambda.curry_right`).** For fixed $x \in D$, the section $y \mapsto f(x,y)$ preserves directed suprema.
+
+**Lemma (`scottLambda.curry_left`).** For fixed $y \in D'$, the section $x \mapsto f(x,y)$ preserves directed suprema.
+
+**Theorem (`scottLambda.outer`).** For $f \in$ **`ScottMap (D × D') D''`**, the map $x \mapsto$ **`scottLambda.at f x`** preserves directed suprema.
+
+**Lemma (`scottLambda.apply`).** **`((scottLambda f x) : ScottMap D' D'') y = f(x,y)`** (definitional).

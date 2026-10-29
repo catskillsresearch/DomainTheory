@@ -10,10 +10,12 @@ For $T_0$-spaces $X$ and $Y$, the library identifies $[X \to Y]$ with **`C(X, Y)
 
 The lemmas in namespace **`scottFunctionTopology`** justify this packaging:
 
-**Lemma (`scottFunctionTopology.subbasis_isOpen`).** For open $U \subseteq Y$ and $x \in X$, the subbasic set $\{\, f \mid f(x) \in U \,\}$ is open in `scottFunctionTopology X Y`.
+**Lemma (`subbasis_isOpen`).** For open $U \subseteq Y$ and $x \in X$, the subbasic set $\{\, f \mid f(x) \in U \,\}$ is open in `scottFunctionTopology X Y`.
 
-**Theorem (`scottFunctionTopology.eq_induced_pi`).** `scottFunctionTopology X Y` is the product topology on $Y^X$ (pointwise convergence), induced along the inclusion of continuous maps into all maps $X \to Y$.
+**Lemma (`subbasis_isOpen_scott`).** When $D$ and $D'$ are complete lattices and $U \subseteq D'$ is open in **`scottTopologicalSpace`**, the same subbasic set $\{\, f \in C(D,D') \mid f(x) \in U \,\}$ is open in **`scottFunctionTopology D D'`** with both domain and codomain carrying the Scott topology (used in Corollary 3.4).
 
-**Lemma (`scottFunctionTopology.specializationPreorder_generateOpen`).** If $f(x) \sqsubseteq g(x)$ for every $x \in X$, and $V \subseteq C(X,Y)$ is open in the topology generated from the eval subbase with $f \in V$, then $g \in V$.
+**Theorem (`eq_induced_pi`).** `scottFunctionTopology X Y` is the product topology on $Y^X$ (pointwise convergence), induced along the inclusion of continuous maps into all maps $X \to Y$.
 
-**Theorem (`scottFunctionTopology.specializationPreorder`).** With the specialization preorder from `scottFunctionTopology X Y`, $f \sqsubseteq g$ iff $f(x) \sqsubseteq g(x)$ for all $x \in X$ — the pointwise specialization order on the function space (the content of Proposition 3.2, proved there as `proposition_3_2` via this lemma).
+**Lemma (`specializationPreorder_generateOpen`).** If $f(x) \sqsubseteq g(x)$ for every $x \in X$, and $V \subseteq C(X,Y)$ is open in the topology generated from the eval subbase with $f \in V$, then $g \in V$.
+
+**Theorem (`specializationPreorder`).** With the specialization preorder from `scottFunctionTopology X Y`, $f \sqsubseteq g$ iff $f(x) \sqsubseteq g(x)$ for all $x \in X$ — the pointwise specialization order on the function space (the content of Proposition 3.2, proved there as `proposition_3_2` via this lemma).

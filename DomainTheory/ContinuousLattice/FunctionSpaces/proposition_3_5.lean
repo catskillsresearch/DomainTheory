@@ -1,9 +1,8 @@
 module
-public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_5_preservesDirectedSup
+
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottLambda
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
+import DomainTheory.ContinuousLattice.FunctionSpaces.scottLambda_preservesDirectedSup
+import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 
 @[expose] public section
 
@@ -19,6 +18,6 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 theorem proposition_3_5 :
     @Continuous (ScottMap (D × D') D'') (ScottMap D (ScottMap D' D''))
       scottTopologicalSpace scottTopologicalSpace scottLambda :=
-  continuous_of_preservesDirectedSup proposition_3_5_preservesDirectedSup
+  continuous_of_preservesDirectedSup scottLambda.preservesDirectedSup
 
 end DomainTheory.ContinuousLattice

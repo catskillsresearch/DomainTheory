@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottFunctionTopology
-public import DomainTheory.ContinuousLattice.FunctionSpaces.subbasis_isOpen_scott
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Topology.Defs.Basic
 
