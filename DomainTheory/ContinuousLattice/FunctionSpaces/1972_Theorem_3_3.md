@@ -5,6 +5,3 @@
 **[theorem_3_3.lean](theorem_3_3.lean)**
 
 @import "theorem_3_3.lean"
-**[theorem_3_3_more.lean](theorem_3_3_more.lean)**
-
-@import "theorem_3_3_more.lean"

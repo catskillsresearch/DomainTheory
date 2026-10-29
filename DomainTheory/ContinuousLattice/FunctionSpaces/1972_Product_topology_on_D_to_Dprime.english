@@ -8,10 +8,16 @@ with $x \in D$ and $U \subseteq D'$ open in **`scottTopologicalSpace`**.
 
 Namespace **`scottMapInducedPiTopology`** packages the equivalent eval subbase (parallel to **`scottFunctionTopology`** in Definition 3.1):
 
-**Definition (`pointwiseSubbasis`).** Subbasic sets $\{\, f \mid f(x) \in U \,\}$ for $f \in$ **`ScottMap D D'`**, $x \in D$, and $U \subseteq D'$ Scott-open.
+**Definition (`scottMapInducedPiTopology.pointwiseSubbasis`).** Subbasic sets $\{\, f \mid f(x) \in U \,\}$ for $f \in$ **`ScottMap D D'`**, $x \in D$, and $U \subseteq D'$ Scott-open.
 
-**Definition (`pointwiseTopology`).** `generateFrom (pointwiseSubbasis D D')`.
+**Definition (`scottMapInducedPiTopology.pointwiseTopology`).** `generateFrom (pointwiseSubbasis D D')`.
 
-**Lemma (`subbasic_isOpen`).** For Scott-open $U \subseteq D'$ and $x \in D$, the subbasic set $\{\, f \mid f(x) \in U \,\}$ is open in **`pointwiseTopology D D'`**.
+**Lemma (`scottMapInducedPiTopology.subbasic_isOpen`).** For Scott-open $U \subseteq D'$ and $x \in D$, the subbasic set $\{\, f \mid f(x) \in U \,\}$ is open in **`pointwiseTopology D D'`**.
 
-**Theorem (`eq_induced_pi`).** **`pointwiseTopology D D' = scottMapInducedPiTopology D D'`** — the eval subbase and the induced pi topology agree.
+**Theorem (`scottMapInducedPiTopology.eq_induced_pi`).** **`pointwiseTopology D D' = scottMapInducedPiTopology D D'`** — the eval subbase and the induced pi topology agree.
+
+When $D$ and $D'$ are continuous lattices, the Scott topology on **`ScottMap D D'`** (from **`stepMap.isContinuousLattice`**) agrees with this product topology:
+
+**Theorem (`scottMapInducedPiTopology.scottTopology_eq_pointwise`).** On **`ScottMap D D'`**, **`scottTopologicalSpace = pointwiseTopology D D'`**.
+
+**Theorem (`scottMapInducedPiTopology.scottTopology_eq_inducedPi`).** On **`ScottMap D D'`**, **`scottTopologicalSpace = scottMapInducedPiTopology D D'`** (from **`scottTopology_eq_pointwise`** and **`eq_induced_pi`**). This is Theorem 3.3(b).

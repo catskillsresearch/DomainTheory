@@ -6,8 +6,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_1
-public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3
-public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3_more
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
 
 @[expose] public section
@@ -58,7 +56,7 @@ noncomputable def theorem_4_4.sourceTopology_homeomorph
     proposition_4_1 (towerType D₀) (towerProj D₀ j₀) hTower
   rw [← inverseLimit.scottTopology_eq_induced_pi
         (towerType D₀) (towerProj D₀ j₀) hTower,
-      ← theorem_3_3.topology_induced_pi hDInf hDInf]
+      ← scottMapInducedPiTopology.scottTopology_eq_inducedPi hDInf hDInf]
   exact theorem_4_4.scottTopology_homeomorph D₀ j₀
 
 end Thm44d

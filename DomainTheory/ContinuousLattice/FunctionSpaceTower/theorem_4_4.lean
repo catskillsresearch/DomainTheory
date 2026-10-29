@@ -5,8 +5,8 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.embInfInf_projInfInf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_1
+public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3
-public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3_more
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.theorem_4_4_more
 
 @[expose] public section
@@ -45,7 +45,7 @@ theorem theorem_4_4 (h₀ : ContinuousLattice D₀.carrier) :
     intro n
     induction n with
     | zero => exact h₀
-    | succ n ih => exact theorem_3_3.isContinuousLattice ih ih
+    | succ n ih => exact stepMap.isContinuousLattice ih ih
   refine ⟨proposition_4_1 (towerType D₀) (towerProj D₀ j₀) hTower, ?_⟩
   exact ⟨theorem_4_4.sourceTopology_homeomorph D₀ j₀ hTower⟩
 

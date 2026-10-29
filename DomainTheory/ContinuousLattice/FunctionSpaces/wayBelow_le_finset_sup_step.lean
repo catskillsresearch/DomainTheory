@@ -2,9 +2,6 @@ module
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_pointwise_sSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_le_of_wayBelow
-public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_apply_of_wayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
@@ -46,10 +43,10 @@ theorem wayBelow_le_finset_sup_step (hD : ContinuousLattice D) (hD' : Continuous
     apply le_antisymm
     · refine sSup_le ?_
       rintro _ ⟨F, hF, rfl⟩
-      exact Finset.sup_le fun p hp => stepMap_le_of_wayBelow (hF p hp)
+      exact Finset.sup_le fun p hp => stepMap.le_of_wayBelow (hF p hp)
     · rw [ScottMap.le_def]
       intro x
-      rw [← stepMap_pointwise_sSup hD hD' g x]
+      rw [← stepMap.pointwise_sSup hD hD' g x]
       refine sSup_le ?_
       rintro e' ⟨e, hex, he'⟩
       have hmemSg : stepMap e e' ∈ Sg := by
@@ -60,7 +57,7 @@ theorem wayBelow_le_finset_sup_step (hD : ContinuousLattice D) (hD' : Continuous
       have hx : (stepMap e e' : D → D') x ≤ ((sSup Sg : ScottMap D D') : D → D') x := by
         rw [ScottMap.sSup_apply]
         exact le_sSup ⟨stepMap e e', hmemSg, rfl⟩
-      rwa [stepMap_apply_of_wayBelow hex] at hx
+      rwa [stepMap.apply_of_wayBelow hex] at hx
   rw [← hSgsup] at h
   obtain ⟨_, ⟨F, hF, rfl⟩, hφs⟩ := (WayBelow.sSup_iff hSgne hSgdir).1 h
   exact ⟨F, hF, hφs.le⟩
