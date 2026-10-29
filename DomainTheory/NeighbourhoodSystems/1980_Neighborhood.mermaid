@@ -1,17 +1,16 @@
-%% Each box is one section. The arrowhead is on the section that imports.
-%% An arrow already implied by a longer path is omitted.
-%% The label is the number of direct import lines.
-%% The introduction has no Lean file, so it has no arrow.
+%% Each box is one outline note from 1980_Neighborhood.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  COMP["Computability<br>effectively given"]
-  CON["Domain<br>constructs"]
-  EQ["Domain<br>equations"]
   DOM["Domains given<br>by neighbourhoods"]
-  FIX["Fixed points<br>and recursion"]
   MAP["Mappings<br>between domains"]
-  RET["Retracts of<br>universal domain"]
+  CON["Domain<br>constructs"]
+  FIX["Fixed points<br>and recursion"]
   LAM["Typed<br>λ-calculus"]
+  EQ["Domain<br>equations"]
+  COMP["Computability<br>effectively given"]
+  RET["Retracts of<br>universal domain"]
 
   EQ -->|"41"| COMP
   MAP -->|"24"| CON

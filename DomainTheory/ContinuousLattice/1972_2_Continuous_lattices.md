@@ -23,3 +23,5 @@
 - [Order isomorphism is a Scott homeomorphism](ContinuousLattices/1972_Order_iso_is_Scott_homeomorph.md)
 - [Specialization equals the given complete-lattice order on injective T₀ spaces](ContinuousLattices/1972_Specialization_eq_lattice_on_injective.md)
 - [After Theorem 2.12](ContinuousLattices/1972_After_theorem_2_12.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-10-29) — <a href="../1972_REVISION.md">1972 revision progress</a></p>

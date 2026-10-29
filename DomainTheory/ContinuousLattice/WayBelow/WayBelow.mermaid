@@ -1,13 +1,13 @@
 %% Notes of the way-below relation, in outline order.
 %% Each box is one outline note from 1972_WayBelow_order.md.
-%% Arrowhead on the importer. The number is a direct-import count.
-%% An arrow already implied by a longer path is omitted.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  P22["Proposition 2.2"]
   WB["Way-below relation"]
+  P22["Proposition 2.2"]
 
-  WB -->|"3"| P22
+  WB --> P22
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

@@ -1,44 +1,42 @@
-%% Computability and definability.
-%% Each box is a note. Arrowhead on the importer.
-%% The number is a direct-import count.
-%% An arrow already implied by a longer path is omitted.
-%% Imports of a folder barrel are not counted.
+%% Each box is one outline note from 1976_Computability_and_definability.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  LY["A law of Y"]
-  REC["Computable functions"]
-  DEF["Definability"]
-  DOL["Distributive functions"]
-  EL["Elementary definitions"]
-  LAM["LAMBDA"]
   MEAN["Meaning"]
-  PR["Primitive recursion"]
-  SEQ["Sequences"]
-  YC["The combinator Y"]
-  GRA["The graph model"]
+  LAM["LAMBDA"]
   T21["Theorem 2.1"]
   T22["Theorem 2.2"]
   T23["Theorem 2.3"]
   T24["Theorem 2.4"]
+  YC["The combinator Y"]
   T25["Theorem 2.5"]
+  GRA["The graph model"]
+  EL["Elementary definitions"]
+  SEQ["Sequences"]
+  DOL["Distributive functions"]
+  PR["Primitive recursion"]
+  REC["Computable functions"]
+  DEF["Definability"]
   T26["Theorem 2.6"]
+  LY["A law of Y"]
 
-  LAM -->|"19"| DEF
-  T25 -->|"49"| DOL
-  LAM -->|"5"| EL
-  LAM -->|"3"| GRA
-  MEAN -->|"98"| LAM
-  YC -->|"22"| LY
-  EL -->|"1"| PR
-  T21 -->|"7"| REC
-  T25 -->|"14"| SEQ
-  LAM -->|"24"| T21
-  T21 -->|"16"| T22
-  T22 -->|"9"| T23
-  T22 -->|"14"| T24
-  YC -->|"27"| T25
-  DEF -->|"7"| T26
-  T24 -->|"39"| YC
+  LAM --> DEF
+  T25 --> DOL
+  LAM --> EL
+  LAM --> GRA
+  MEAN --> LAM
+  YC --> LY
+  EL --> PR
+  T21 --> REC
+  T25 --> SEQ
+  LAM --> T21
+  T21 --> T22
+  T22 --> T23
+  T22 --> T24
+  YC --> T25
+  DEF --> T26
+  T24 --> YC
 
   classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef c2 fill:#cffafe,stroke:#0e7490,color:#164e63

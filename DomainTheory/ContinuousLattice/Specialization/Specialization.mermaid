@@ -1,20 +1,20 @@
 %% Notes of the specialization order, in outline order.
 %% Each box is one outline note from 1972_Specialization_order.md.
-%% Arrowhead on the importer. The number is a direct-import count.
-%% An arrow already implied by a longer path is omitted.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  MN["Monotone nets"]
-  P21["Proposition 2.1"]
-  SCT["Scott convergence"]
-  STS["Scott topology on a complete lattice"]
-  SO["Scott-open sets"]
   SLe["Specialization preorder"]
+  SO["Scott-open sets"]
+  STS["Scott topology on a complete lattice"]
+  MN["Monotone nets"]
+  SCT["Scott convergence"]
+  P21["Proposition 2.1"]
 
-  MN -->|"1"| P21
-  SCT -->|"1"| P21
-  SLe -->|"2"| SCT
-  SLe -->|"1"| SO
+  MN --> P21
+  SCT --> P21
+  SLe --> SCT
+  SLe --> SO
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

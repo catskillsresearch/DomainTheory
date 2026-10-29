@@ -1,46 +1,40 @@
-%% Each box is one outline note from 1972_2_Continuous_lattices.md (Lean @import only).
-%% Arrowhead on the importer. The number is a direct-import count.
-%% Modules are grouped by topic folder (Specialization, WayBelow, ContinuousLattices, …).
-%% Edges: topic hubs, or proposition ↔ proof with the same number; transitive reduction applied.
+%% Each box is one outline note from 1972_2_Continuous_lattices.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  Complete_lattice_on_fixe["Complete lattice on fixed points"]
+  Specialization_order["Specialization order"]
+  Way_below_relation["Way-below relation"]
   Continuous_lattice["Continuous lattice"]
-  Idempotent_fixed_points["Idempotent fixed points"]
-  Injective_space_homeomor["Injective space homeomorphic to a Scott continuous lattice"]
-  Order_isomorphism_is_a_S["Order isomorphism is a Scott homeomorphism"]
-  Proof_of_2_10["Proof of 2.10"]
-  Proof_of_2_11["Proof of 2.11"]
-  Proof_of_2_9["Proof of 2.9"]
-  Proposition_2_10["Proposition 2.10"]
-  Proposition_2_11["Proposition 2.11"]
+  Scott_maps["Scott maps"]
   Proposition_2_8["Proposition 2.8"]
   Proposition_2_9["Proposition 2.9"]
-  Scott_maps["Scott maps"]
-  Specialization_equals_th["Specialization equals the given complete-lattice order on injective T₀ spaces"]
-  Specialization_order["Specialization order"]
+  Proposition_2_10["Proposition 2.10"]
+  Proposition_2_11["Proposition 2.11"]
+  Proof_of_2_9["Proof of 2.9"]
+  Proof_of_2_10["Proof of 2.10"]
+  Proof_of_2_11["Proof of 2.11"]
+  Idempotent_fixed_points["Idempotent fixed points"]
   Supremum_on_fixed_points["Supremum on fixed points"]
+  Complete_lattice_on_fixe["Complete lattice on fixed points"]
+  Injective_space_homeomor["Injective space homeomorphic to a Scott continuous lattice"]
   Theorem_2_12["Theorem 2.12"]
-  Way_below_relation["Way-below relation"]
+  Order_isomorphism_is_a_S["Order isomorphism is a Scott homeomorphism"]
+  Specialization_equals_th["Specialization equals the given complete-lattice order on injective T₀ spaces"]
 
-  Continuous_lattice -->|"2"| Complete_lattice_on_fixe
-  Scott_maps -->|"20"| Continuous_lattice
-  Specialization_order -->|"15"| Continuous_lattice
-  Way_below_relation -->|"22"| Continuous_lattice
-  Continuous_lattice -->|"52"| Injective_space_homeomor
-  Specialization_order -->|"2"| Order_isomorphism_is_a_S
-  Continuous_lattice -->|"22"| Proof_of_2_10
-  Continuous_lattice -->|"15"| Proof_of_2_11
-  Way_below_relation -->|"9"| Proof_of_2_9
-  Continuous_lattice -->|"22"| Proposition_2_10
-  Continuous_lattice -->|"10"| Proposition_2_11
-  Continuous_lattice -->|"2"| Proposition_2_8
-  Scott_maps -->|"8"| Proposition_2_9
-  Continuous_lattice -->|"2"| Scott_maps
-  Specialization_order -->|"5"| Scott_maps
-  Way_below_relation -->|"5"| Scott_maps
-  Continuous_lattice -->|"54"| Specialization_equals_th
-  Way_below_relation -->|"2"| Specialization_order
-  Continuous_lattice -->|"1"| Supremum_on_fixed_points
-  Continuous_lattice -->|"65"| Theorem_2_12
-  Specialization_order -->|"1"| Way_below_relation
+  Continuous_lattice --> Complete_lattice_on_fixe
+  Way_below_relation --> Continuous_lattice
+  Continuous_lattice --> Injective_space_homeomor
+  Specialization_order --> Order_isomorphism_is_a_S
+  Continuous_lattice --> Proof_of_2_10
+  Continuous_lattice --> Proof_of_2_11
+  Continuous_lattice --> Proof_of_2_9
+  Continuous_lattice --> Proposition_2_10
+  Continuous_lattice --> Proposition_2_11
+  Continuous_lattice --> Proposition_2_8
+  Continuous_lattice --> Proposition_2_9
+  Continuous_lattice --> Scott_maps
+  Continuous_lattice --> Specialization_equals_th
+  Continuous_lattice --> Supremum_on_fixed_points
+  Continuous_lattice --> Theorem_2_12
+  Specialization_order --> Way_below_relation

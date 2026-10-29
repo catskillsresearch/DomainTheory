@@ -1,20 +1,20 @@
-%% Continuous functions on Pω.
-%% Arrowhead on the importer. The number is a direct-import count.
-%% An arrow already implied by a longer path is omitted.
+%% Each box is one outline note from 1976_Continuous_functions.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  CONT["Continuous"]
   E["e"]
-  EMB["Embedding"]
-  FIX["FixedPoint"]
-  GRA["Graph"]
   PAIR["pair"]
+  CONT["Continuous"]
+  GRA["Graph"]
+  FIX["FixedPoint"]
+  EMB["Embedding"]
 
-  PAIR -->|"1"| CONT
-  CONT -->|"8"| EMB
-  CONT -->|"42"| FIX
-  CONT -->|"44"| GRA
-  E -->|"1"| PAIR
+  PAIR --> CONT
+  CONT --> EMB
+  CONT --> FIX
+  CONT --> GRA
+  E --> PAIR
 
   classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef c6 fill:#ccfbf1,stroke:#0f766e,color:#134e4a
