@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-import Mathlib.Order.ConditionallyCompleteLattice.Basic
 import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap

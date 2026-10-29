@@ -14,6 +14,8 @@ namespace DomainTheory.ContinuousLattice
 
 open Topology Set
 
+namespace piWayBelow
+
 variable {D : Type*} [CompleteLattice D]
 
 theorem update_preservesDirectedSup {ι : Type*} [DecidableEq ι] {E : ι → Type*}
@@ -83,5 +85,7 @@ theorem wayBelow_finite_support {ι : Type*} {E : ι → Type*} [∀ i, Complete
   have hj := had.le j
   simp only [hZ, ite_eq_right hjF] at hj
   exact le_bot_iff.1 hj
+
+end piWayBelow
 
 end DomainTheory.ContinuousLattice

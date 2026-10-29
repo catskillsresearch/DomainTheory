@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.Constructions.Basic
+public import DomainTheory.ContinuousLattice.Constructions.piWayBelow
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.Constructions.proposition_2_8
@@ -65,8 +65,8 @@ theorem proposition_2_9 {ι : Type*} (E : ι → Type*) [∀ i, CompleteLattice 
     rw [@isOpen_iff_forall_mem_open _ (@Pi.topologicalSpace ι E (fun _ => scottTopologicalSpace))]
     intro z hz
     obtain ⟨a, haz, haIci⟩ := exists_wayBelow_Ici_subset hprod hU hz
-    obtain ⟨F, hF⟩ := wayBelow_finite_support haz
-    have hproj : ∀ i, a i ≪ z i := fun i => wayBelow_proj haz i
+    obtain ⟨F, hF⟩ := piWayBelow.wayBelow_finite_support haz
+    have hproj : ∀ i, a i ≪ z i := fun i => piWayBelow.wayBelow_proj haz i
     choose V hVopen hzV hVsub using hproj
     refine ⟨⋂ i ∈ F, (fun w : ∀ j, E j => w i) ⁻¹' V i, ?_, ?_, ?_⟩
     · intro w hw

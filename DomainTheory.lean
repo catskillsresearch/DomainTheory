@@ -200,7 +200,7 @@ import DomainTheory.BridgeTheorems.unfoldElement_foldElement
 import DomainTheory.BridgeTheorems.unfoldFinset
 import DomainTheory.BridgeTheorems.unfoldFinset_foldFinset
 import DomainTheory.BridgeTheorems.unfoldInsert
-import DomainTheory.ContinuousLattice.Constructions.Basic
+import DomainTheory.ContinuousLattice.Constructions.piWayBelow
 import DomainTheory.ContinuousLattice.Constructions.continuous_eq_sSup_openInfs
 import DomainTheory.ContinuousLattice.Constructions.directedOn_finite_sSup_mem
 import DomainTheory.ContinuousLattice.Constructions.proposition_2_11
