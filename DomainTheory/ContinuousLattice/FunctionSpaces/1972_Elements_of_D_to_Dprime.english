@@ -56,4 +56,8 @@ Namespace **`ScottMap`** collects the library tools on that carrier:
 
 **Lemma (`sup_apply`).** **`(f \sqcup g)(x) = f(x) \sqcup g(x)`**.
 
+**Lemma (`sInf_image_le_of_mem`).** For Scott-open $U \ni y$, $\sqcap f'[U] \sqsubseteq f'(y)$ on the coercion $f' : D \to D'$.
+
+**Theorem (`eq_sSup_openInfs`).** When $D'$ is a continuous lattice, $f'(y)$ is the directed supremum over Scott-open $U \ni y$ of the values $\sqcap f'[U]$ (open-set **`sInf`** representation of a Scott map at a point).
+
 Scott's *continuous* lattice structure on $[D \to D']$ (**`ContinuousLattice (ScottMap D D')`**) is proved later via **`stepMap.isContinuousLattice`**, not in this file.

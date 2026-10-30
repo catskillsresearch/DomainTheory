@@ -1,12 +1,7 @@
 module
 
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

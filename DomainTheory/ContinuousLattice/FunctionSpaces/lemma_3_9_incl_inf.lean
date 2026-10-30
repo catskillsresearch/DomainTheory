@@ -1,8 +1,5 @@
 module
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendInf_mono_incl_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendInf_mono_incl
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -12,22 +9,13 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
-variable [TopologicalSpace X] [TopologicalSpace Y]
-variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
-variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
-
-section SubspaceExtension
-
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y]
-
-omit [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y] in
+variable {D D' : Type*} [CompleteLattice D] [CompleteLattice D']
 
 theorem lemma_3_9_incl_inf {e : X → Y} (P : ContinuousLatticeProjection D D')
     {f : X → D} {g : X → D'} (hfg : ∀ x, f x = P.retr (g x)) (U : Set Y) :
     P.incl (scottSubspaceExtend.inf e f U) ≤ scottSubspaceExtend.inf e g U :=
-  le_trans (scottSubspaceExtendInf_mono_incl_apply (e := e) (f := f) U P)
-    (scottSubspaceExtendInf_mono_incl (e := e) (f := f) (g := g) P hfg U)
+  le_trans (scottSubspaceExtend.inf_mono_incl_apply (e := e) (f := f) U P)
+    (scottSubspaceExtend.inf_mono_incl (e := e) (f := f) (g := g) P hfg U)
 
-end SubspaceExtension
 end DomainTheory.ContinuousLattice

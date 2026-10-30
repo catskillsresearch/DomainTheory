@@ -1,0 +1,21 @@
+When $Y$ carries the Scott topology and $e : X \to Y$ is a subspace embedding, Scott’s **subspace extension** $\bar{f} : Y \to D$ of $f : X \to D$ is built from open neighborhoods of $y \in Y$ and the infima $\sqcap f(e^{-1}(U))$ over $U \ni y$. The formalization lives in [`scottSubspaceExtend.lean`](scottSubspaceExtend.lean).
+
+**Definition (`scottSubspaceExtend.inf`).** For Scott-open $U \subseteq Y$, `inf e f U` is $\sqcap \{ f(x) \mid e(x) \in U \}$.
+
+**Definition (`scottSubspaceExtend`).** `scottSubspaceExtend e f y` is $\bigsqcup \{ d \mid \exists U \text{ Scott-open},\ y \in U,\ d = \mathrm{inf}\, e\, f\, U \}$.
+
+Namespace **`scottSubspaceExtend`**:
+
+**Lemma (`inf_mono`).** Monotonicity in the domain map $f \le g$ on $X$.
+
+**Lemma (`inf_eq_of_ext`).** Agreement on $e(X)$ implies equal **`inf`**.
+
+**Lemma (`inf_eq_of_comp`).** Relates **`inf e f U`** to $\sqcap f'(e(X) \cap U)$ when $f' : [Y \to D]$ extends $f$ on $e(X)$.
+
+**Lemma (`sInf_image_le_of_subset`).** Larger index set lowers **`sInf`** on images.
+
+**Lemma (`inf_mono_incl_apply`).** / **`inf_mono_retr`**. / **`inf_mono_incl`**. — projection monotonicity (see [Continuous lattice retraction and projection](1972_Continuous_lattice_retraction_and_projection.md)).
+
+**Lemma (`mono`).** / **`eq_of_ext`**. — for the full extension **`scottSubspaceExtend`**.
+
+**Theorem (`maximal`).** Any Scott map $f' : Y \to D$ extending $f$ on $e(X)$ satisfies $f' y \le \bar{f}(y)$ (uses **`ScottMap.eq_sSup_openInfs`** from [Elements of $[D \to D']$](1972_Elements_of_D_to_Dprime.md)).

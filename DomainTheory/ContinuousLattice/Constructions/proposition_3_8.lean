@@ -1,14 +1,10 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.Constructions.scottExtend_maximal
-public import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
-public import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend
-public import DomainTheory.ContinuousLattice.Constructions.proposition_3_8_more
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
+import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
+import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous
+import DomainTheory.ContinuousLattice.Constructions.scottExtend_maximal
 
 @[expose] public section
 

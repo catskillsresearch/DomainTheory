@@ -3,7 +3,9 @@ module
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import Mathlib.Order.BourbakiWitt
 import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
-public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
+import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5 -- shake: keep
 
 @[expose] public section
 
@@ -207,6 +209,39 @@ theorem sup_apply (f g : ScottMap D D') (x : D) :
   have h : (f ⊔ g : ScottMap D D') = sSup ({f, g} : Set (ScottMap D D')) := rfl
   rw [h, sSup_apply, Set.image_pair]
   exact sSup_pair
+
+theorem sInf_image_le_of_mem {f' : ScottMap D D'} {U : Set D} {y : D} (hyU : y ∈ U) :
+    sInf (Set.image (f' : D → D') U) ≤ f' y :=
+  sInf_le (Set.mem_image_of_mem _ hyU)
+
+theorem eq_sSup_openInfs (hD' : ContinuousLattice D') (f' : ScottMap D D') (y : D) :
+    (f' : D → D') y =
+      sSup { d | ∃ U, @IsOpen D scottTopologicalSpace U ∧ y ∈ U ∧
+        d = sInf (Set.image (f' : D → D') U) } := by
+  apply le_antisymm
+  · rw [← hD'.sSup_wayBelow (f' y)]
+    apply sSup_le
+    intro a ha
+    obtain ⟨V, hV, hf'V, hVsub⟩ := ha
+    have hyU : y ∈ (f' : D → D') ⁻¹' V := hf'V
+    have hUScott : ScottOpen ((f' : D → D') ⁻¹' V) :=
+      scottOpen_preimage ((proposition_2_5 (Subtype.val f')).mp f'.property) hV
+    have hUopen : @IsOpen D scottTopologicalSpace ((f' : D → D') ⁻¹' V) :=
+      ScottOpen.isOpen_iff.mpr hUScott
+    have ha' : a ≤ sInf (Set.image (f' : D → D') ((f' : D → D') ⁻¹' V)) := by
+      apply le_sInf
+      intro d hd
+      obtain ⟨z, hzV, rfl⟩ := hd
+      exact Set.mem_Ici.1 (hVsub hzV)
+    have hmem : sInf (Set.image (f' : D → D') ((f' : D → D') ⁻¹' V)) ∈
+        { d | ∃ U, @IsOpen D scottTopologicalSpace U ∧ y ∈ U ∧
+          d = sInf (Set.image (f' : D → D') U) } :=
+      ⟨(f' : D → D') ⁻¹' V, hUopen, hyU, rfl⟩
+    exact le_trans ha' (le_sSup hmem)
+  · apply sSup_le
+    intro d hd
+    obtain ⟨U, _hUopen, hyU, rfl⟩ := hd
+    exact sInf_image_le_of_mem (f' := f') (y := y) (U := U) hyU
 
 end ScottMap
 

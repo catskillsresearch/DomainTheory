@@ -1,3 +1,5 @@
+Returning now to $\bar{f}$ we can prove:
+
 **3.8 Proposition.** If $D$ is a continuous lattice and $e : X \rightarrow Y$ a subspace embedding, then for each $f : X \rightarrow D$, the function $\bar{f} : Y \rightarrow D$ given by the formula
 
 $$\bar{f}(y) = \bigsqcup \{ \sqcap f(x) : e(x) \in U : y \in U \} ,$$

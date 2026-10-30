@@ -1,11 +1,8 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend
-public import DomainTheory.ContinuousLattice.Constructions.continuous_eq_sSup_openInfs
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
+import DomainTheory.ContinuousLattice.Constructions.continuous_eq_sSup_openInfs
 
 @[expose] public section
 

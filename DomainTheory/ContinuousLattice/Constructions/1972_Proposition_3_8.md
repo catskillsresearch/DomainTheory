@@ -2,42 +2,8 @@
 
 @import "1972_Proposition_3_8.english" {code_block=false}
 
-**[../FunctionSpaces/scottSubspaceExtend.lean](../FunctionSpaces/scottSubspaceExtend.lean)**
-
-@import "../FunctionSpaces/scottSubspaceExtend.lean"
-**[../FunctionSpaces/scottSubspaceExtendInf_mono_incl_apply.lean](../FunctionSpaces/scottSubspaceExtendInf_mono_incl_apply.lean)**
-
-@import "../FunctionSpaces/scottSubspaceExtendInf_mono_incl_apply.lean"
-**[../FunctionSpaces/scottSubspaceExtendInf_mono_retr.lean](../FunctionSpaces/scottSubspaceExtendInf_mono_retr.lean)**
-
-@import "../FunctionSpaces/scottSubspaceExtendInf_mono_retr.lean"
-**[../FunctionSpaces/scottSubspaceExtendInf_mono_incl.lean](../FunctionSpaces/scottSubspaceExtendInf_mono_incl.lean)**
-
-@import "../FunctionSpaces/scottSubspaceExtendInf_mono_incl.lean"
-**[proposition_3_8_more.lean](proposition_3_8_more.lean)**
-
-@import "proposition_3_8_more.lean"
 **[proposition_3_8.lean](proposition_3_8.lean)**
 
 @import "proposition_3_8.lean"
-**[../FunctionSpaces/scottSubspaceExtendInf_eq_of_ext.lean](../FunctionSpaces/scottSubspaceExtendInf_eq_of_ext.lean)**
 
-@import "../FunctionSpaces/scottSubspaceExtendInf_eq_of_ext.lean"
-**[../FunctionSpaces/scottSubspaceExtendInf_eq_of_comp.lean](../FunctionSpaces/scottSubspaceExtendInf_eq_of_comp.lean)**
-
-@import "../FunctionSpaces/scottSubspaceExtendInf_eq_of_comp.lean"
-**[../FunctionSpaces/scottSubspaceExtendInf_mono.lean](../FunctionSpaces/scottSubspaceExtendInf_mono.lean)**
-
-@import "../FunctionSpaces/scottSubspaceExtendInf_mono.lean"
-**[../FunctionSpaces/scottSubspaceExtend_mono.lean](../FunctionSpaces/scottSubspaceExtend_mono.lean)**
-
-@import "../FunctionSpaces/scottSubspaceExtend_mono.lean"
-**[../FunctionSpaces/scottSubspaceExtend_eq_of_ext.lean](../FunctionSpaces/scottSubspaceExtend_eq_of_ext.lean)**
-
-@import "../FunctionSpaces/scottSubspaceExtend_eq_of_ext.lean"
-**[ContinuousLattice/FunctionSpaces/sInf_image_le_sInf_image_of_subset.lean](../FunctionSpaces/sInf_image_le_sInf_image_of_subset.lean)**
-
-@import "../FunctionSpaces/sInf_image_le_sInf_image_of_subset.lean"
-**[../FunctionSpaces/scottSubspaceExtend_maximal.lean](../FunctionSpaces/scottSubspaceExtend_maximal.lean)**
-
-@import "../FunctionSpaces/scottSubspaceExtend_maximal.lean"
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-10-30) — <a href="../1972_REVISION.md">1972 revision progress</a></p>

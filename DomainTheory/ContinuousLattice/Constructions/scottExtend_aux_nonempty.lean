@@ -1,7 +1,6 @@
 module
 public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

@@ -10,5 +10,5 @@ $$\vec{j}(f') = j_1 \circ f' \circ i_0 \text{ ,}$$
 
 where $f \in [D_0 \rightarrow D_1]$ and $f' \in [D'_0 \rightarrow D'_1]$. $\square$
 
-Returning now to $\bar{f}$ we can prove:
+
 
