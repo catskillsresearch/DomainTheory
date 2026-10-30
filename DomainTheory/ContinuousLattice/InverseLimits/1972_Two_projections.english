@@ -1,50 +1,49 @@
 Suppose we were to start with the least, non-trivial lattice $0 = \top, \bot$ for $D_0$. Now $D_1 = [0 \to 0]$ has exactly three elements and there are just two ways of defining a projection $j_0 : D_1 \to D_0$. They are illustrated in the figure:
 
-**Left projection**
-
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" viewBox="0 0 360 200" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="172" viewBox="0 0 660 172" role="img" aria-label="Two j0 projections; D0 on rows 2-3; arrows touch circles.">
   <g fill="currentColor" font-family="Georgia, Times New Roman, serif">
-  <line x1="72.0" y1="105.0" x2="72.0" y2="155.0" stroke="currentColor" stroke-width="1.5"/>
-  <line x1="210.0" y1="37.0" x2="210.0" y2="87.0" stroke="currentColor" stroke-width="1.5"/>
-  <line x1="210.0" y1="105.0" x2="210.0" y2="155.0" stroke="currentColor" stroke-width="1.5"/>
-  <text x="16" y="102" font-size="20">&#x22A4;</text>
-  <text x="16" y="170" font-size="20">&#x22A5;</text>
-  <text x="228" y="34" font-size="18">[&#x22A4;, &#x22A4;]</text>
-  <text x="228" y="102" font-size="18">[&#x22A5;, &#x22A4;]</text>
-  <text x="228" y="170" font-size="18">[&#x22A5;, &#x22A5;]</text>
-  <line x1="201.0" y1="32.4" x2="92.6" y2="85.8" stroke="currentColor" stroke-width="1.6" fill="none"/><polygon points="81.9,91.1 94.6,89.8 90.7,81.9" fill="currentColor" stroke="none"/>
-  <line x1="201.0" y1="100.4" x2="92.6" y2="153.8" stroke="currentColor" stroke-width="1.6" fill="none"/><polygon points="81.9,159.1 94.6,157.8 90.7,149.9" fill="currentColor" stroke="none"/>
-  <line x1="200.0" y1="164.0" x2="95.0" y2="164.0" stroke="currentColor" stroke-width="1.6" fill="none"/><polygon points="83.0,164.0 95.0,168.4 95.0,159.6" fill="currentColor" stroke="none"/>
-  <text x="128" y="52" font-size="18" font-style="italic">j</text><text x="139" y="58" font-size="12">0</text>
-  <circle cx="72" cy="96" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
-  <circle cx="72" cy="164" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
-  <circle cx="210" cy="28" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
-  <circle cx="210" cy="96" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
-  <circle cx="210" cy="164" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
-  </g>
-</svg>
-
-**Right projection**
-
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" viewBox="0 0 360 200" role="img">
-  <g fill="currentColor" font-family="Georgia, Times New Roman, serif">
-  <line x1="72.0" y1="105.0" x2="72.0" y2="155.0" stroke="currentColor" stroke-width="1.5"/>
-  <line x1="210.0" y1="37.0" x2="210.0" y2="87.0" stroke="currentColor" stroke-width="1.5"/>
-  <line x1="210.0" y1="105.0" x2="210.0" y2="155.0" stroke="currentColor" stroke-width="1.5"/>
-  <text x="16" y="102" font-size="20">&#x22A4;</text>
-  <text x="16" y="170" font-size="20">&#x22A5;</text>
-  <text x="228" y="34" font-size="18">[&#x22A4;, &#x22A4;]</text>
-  <text x="228" y="102" font-size="18">[&#x22A5;, &#x22A4;]</text>
-  <text x="228" y="170" font-size="18">[&#x22A5;, &#x22A5;]</text>
-  <line x1="201.0" y1="32.4" x2="92.6" y2="85.8" stroke="currentColor" stroke-width="1.6" fill="none"/><polygon points="81.9,91.1 94.6,89.8 90.7,81.9" fill="currentColor" stroke="none"/>
-  <line x1="200.0" y1="96.0" x2="95.0" y2="96.0" stroke="currentColor" stroke-width="3" fill="none"/><polygon points="83.0,96.0 95.0,100.4 95.0,91.6" fill="currentColor" stroke="none"/>
-  <line x1="200.0" y1="164.0" x2="95.0" y2="164.0" stroke="currentColor" stroke-width="1.6" fill="none"/><polygon points="83.0,164.0 95.0,168.4 95.0,159.6" fill="currentColor" stroke="none"/>
-  <text x="118" y="48" font-size="18" font-style="italic">j</text><text x="129" y="54" font-size="12">0</text>
-  <circle cx="72" cy="96" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
-  <circle cx="72" cy="164" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
-  <circle cx="210" cy="28" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
-  <circle cx="210" cy="96" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
-  <circle cx="210" cy="164" r="8" fill="white" stroke="currentColor" stroke-width="1.6"/>
+  <line x1="210.9" y1="33.0" x2="99.2" y2="80.6" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="210.7" y1="90.6" x2="99.7" y2="129.8" stroke="currentColor" stroke-width="1.65"/>
+  <line x1="210.2" y1="136.0" x2="100.8" y2="136.0" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="82" y1="95.75" x2="82" y2="128.25" stroke="currentColor" stroke-width="1.35"/>
+  <line x1="218" y1="37.75" x2="218" y2="80.25" stroke="currentColor" stroke-width="1.35"/>
+  <line x1="218" y1="95.75" x2="218" y2="128.25" stroke="currentColor" stroke-width="1.35"/>
+  <circle cx="82" cy="88" r="7" fill="white" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="82" cy="136" r="7" fill="white" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="218" cy="30" r="7" fill="white" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="218" cy="88" r="7" fill="white" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="218" cy="136" r="7" fill="white" stroke="currentColor" stroke-width="1.5"/>
+  <polygon points="89.1,85.0 100.8,84.3 97.7,77.0" fill="currentColor"/>
+  <polygon points="89.3,133.4 101.0,133.5 98.3,126.0" fill="currentColor"/>
+  <polygon points="89.8,136.0 100.8,140.0 100.8,132.0" fill="currentColor"/>
+  <text x="60" y="93" font-size="16" text-anchor="end">&#x22A4;</text>
+  <text x="60" y="141" font-size="16" text-anchor="end">&#x22A5;</text>
+  <text x="232" y="35" font-size="13">[&#x22A4;,&#x22A4;]</text>
+  <text x="232" y="93" font-size="13">[&#x22A5;,&#x22A4;]</text>
+  <text x="232" y="141" font-size="13">[&#x22A5;,&#x22A5;]</text>
+  <text x="145" y="51" font-size="15" font-style="italic" text-anchor="middle">j</text><text x="152" y="45" font-size="10">0</text>
+  <text x="130" y="158" font-size="13" font-style="italic" text-anchor="middle">Left projection</text>
+  <line x1="530.9" y1="33.0" x2="419.2" y2="80.6" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="530.2" y1="88.0" x2="420.8" y2="88.0" stroke="currentColor" stroke-width="1.65"/>
+  <line x1="530.2" y1="136.0" x2="420.8" y2="136.0" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="402" y1="95.75" x2="402" y2="128.25" stroke="currentColor" stroke-width="1.35"/>
+  <line x1="538" y1="37.75" x2="538" y2="80.25" stroke="currentColor" stroke-width="1.35"/>
+  <line x1="538" y1="95.75" x2="538" y2="128.25" stroke="currentColor" stroke-width="1.35"/>
+  <circle cx="402" cy="88" r="7" fill="white" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="402" cy="136" r="7" fill="white" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="538" cy="30" r="7" fill="white" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="538" cy="88" r="7" fill="white" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="538" cy="136" r="7" fill="white" stroke="currentColor" stroke-width="1.5"/>
+  <polygon points="409.1,85.0 420.8,84.3 417.7,77.0" fill="currentColor"/>
+  <polygon points="409.8,88.0 420.8,92.0 420.8,84.0" fill="currentColor"/>
+  <polygon points="409.8,136.0 420.8,140.0 420.8,132.0" fill="currentColor"/>
+  <text x="380" y="93" font-size="16" text-anchor="end">&#x22A4;</text>
+  <text x="380" y="141" font-size="16" text-anchor="end">&#x22A5;</text>
+  <text x="552" y="35" font-size="13">[&#x22A4;,&#x22A4;]</text>
+  <text x="552" y="93" font-size="13">[&#x22A5;,&#x22A4;]</text>
+  <text x="552" y="141" font-size="13">[&#x22A5;,&#x22A5;]</text>
+  <text x="465" y="51" font-size="15" font-style="italic" text-anchor="middle">j</text><text x="472" y="45" font-size="10">0</text>
+  <text x="450" y="158" font-size="13" font-style="italic" text-anchor="middle">Right projection</text>
   </g>
 </svg>
 
