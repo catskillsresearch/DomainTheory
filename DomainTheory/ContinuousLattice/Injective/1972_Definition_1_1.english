@@ -1,11 +1,21 @@
 **1.1 Definition.** A $T_0$-space $D$ is *injective* iff for arbitrary spaces $X$ and $Y$ if $X \subseteq Y$ as a subspace, then every continuous function $f: X \to D$ can be extended to a continuous function $\bar{f}: Y \to D$. As a diagram we have:
 
-$$
-\begin{gathered}
-X \subseteq Y \\
-X \xrightarrow{f} D \\
-Y \xrightarrow{\bar{f}} D\\
-\end{gathered}
-$$
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="210" viewBox="0 0 320 210" role="img" aria-label="Injective extension: X subspace of Y, continuous maps f from X to D and f bar from Y to D.">
+  <g font-family="Georgia, 'Times New Roman', Times, serif" fill="currentColor">
+  <text x="72" y="50" font-size="22" font-style="italic" text-anchor="middle">X</text>
+  <text x="248" y="50" font-size="22" font-style="italic" text-anchor="middle">Y</text>
+  <text x="160" y="192" font-size="22" font-style="italic" text-anchor="middle">D</text>
+  <text x="160" y="28" font-size="20" text-anchor="middle">&#x2286;</text>
+  <text x="8" y="118" font-size="22" font-style="italic">f</text>
+  <text x="292" y="118" font-size="22" font-style="italic">f</text>
+  <line x1="300" y1="105" x2="318" y2="105" stroke="currentColor" stroke-width="1.25"/>
+  <line x1="86" y1="52" x2="234" y2="52" stroke="currentColor" stroke-width="1.6" fill="none"/>
+  <polygon points="246,52 233,47.6 233,56.4" fill="currentColor" stroke="none"/>
+  <line x1="72" y1="62" x2="144" y2="162" stroke="currentColor" stroke-width="1.6" fill="none"/>
+  <polygon points="152,172 145.8,159.2 139.2,165.8" fill="currentColor" stroke="none"/>
+  <line x1="248" y1="62" x2="176" y2="162" stroke="currentColor" stroke-width="1.6" fill="none"/>
+  <polygon points="168,172 181.2,165.8 174.6,159.2" fill="currentColor" stroke="none"/>
+  </g>
+</svg>
 
 Some people will object to this terminology because I use the subspace relationship rather than a monomorphism in the category of $T_0$-spaces and continuous maps. However, only the trivial 1-point space is injective in the sense of monomorphisms in that category, and so the notion is uninteresting. If the reader prefers another terminology, I do not mind. As we shall see these spaces have very strong retraction properties.
