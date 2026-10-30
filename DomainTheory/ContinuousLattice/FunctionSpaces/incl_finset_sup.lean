@@ -1,7 +1,7 @@
 module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_sup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_bot
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 
@@ -20,9 +20,10 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
-theorem incl_finset_sup (P : IsContinuousLatticeProjection D D') (T : Finset D) :
+
+theorem incl_finset_sup (P : ContinuousLatticeProjection D D') (T : Finset D) :
     P.incl (T.sup (fun x => x)) = T.sup (fun x => P.incl x) := by
   classical
   refine Finset.induction_on T ?base ?step
@@ -32,6 +33,7 @@ theorem incl_finset_sup (P : IsContinuousLatticeProjection D D') (T : Finset D) 
     simp only [sup_insert]
     rw [incl_sup P, ih]
 
-end IsContinuousLatticeProjection
+
+end ContinuousLatticeProjection
 end Proposition310
 end DomainTheory.ContinuousLattice

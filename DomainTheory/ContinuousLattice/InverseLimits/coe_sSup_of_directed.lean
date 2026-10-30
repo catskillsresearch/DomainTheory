@@ -16,7 +16,7 @@ section InverseLimit
 
 variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
-variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
+variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
 theorem coe_sSup_of_directed (S : Set (InverseLimit D P)) (hSne : S.Nonempty)
     (hSdir : DirectedOn (· ≤ ·) S) :

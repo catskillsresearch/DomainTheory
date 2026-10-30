@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.converseProjection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 
@@ -27,7 +27,7 @@ variable {i : D → D'}
 theorem proposition_3_10_converse
     (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S)) (hinj : Function.Injective i)
     (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : ContinuousLattice D) :
-    ∃ P : IsContinuousLatticeProjection D D',
+    ∃ P : ContinuousLatticeProjection D D',
       (∀ d, (P.incl : D → D') d = i d)
         ∧ (∀ x', (P.retr : D' → D) x' = sSup {x | i x ≤ x'}) :=
   ⟨converseProjection hi hinj hwb hD, fun _ => rfl, fun _ => rfl⟩

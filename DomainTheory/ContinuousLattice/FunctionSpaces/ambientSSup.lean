@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -18,11 +18,13 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-namespace IsContinuousLatticeRetraction
+namespace ContinuousLatticeRetraction
 
-noncomputable def ambientSSup (R : IsContinuousLatticeRetraction D D') (S : Set D) : D' :=
+
+noncomputable def ambientSSup (R : ContinuousLatticeRetraction D D') (S : Set D) : D' :=
   sSup (Set.image (R.incl : D → D') S)
 
-end IsContinuousLatticeRetraction
+
+end ContinuousLatticeRetraction
 
 end DomainTheory.ContinuousLattice

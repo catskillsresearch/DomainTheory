@@ -1,5 +1,5 @@
 module
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 
@@ -19,9 +19,10 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
-theorem incl_sup (P : IsContinuousLatticeProjection D D') (x y : D) :
+
+theorem incl_sup (P : ContinuousLatticeProjection D D') (x y : D) :
     P.incl (x ⊔ y) = P.incl x ⊔ P.incl y := by
   apply le_antisymm
   · have hx : x ≤ P.retr (P.incl x ⊔ P.incl y) :=
@@ -31,6 +32,7 @@ theorem incl_sup (P : IsContinuousLatticeProjection D D') (x y : D) :
     exact le_trans (P.incl.monotone (sup_le hx hy)) (P.incl_retr_le (P.incl x ⊔ P.incl y))
   · exact sup_le (P.incl.monotone le_sup_left) (P.incl.monotone le_sup_right)
 
-end IsContinuousLatticeProjection
+
+end ContinuousLatticeProjection
 end Proposition310
 end DomainTheory.ContinuousLattice

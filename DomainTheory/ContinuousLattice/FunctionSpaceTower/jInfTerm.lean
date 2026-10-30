@@ -11,7 +11,7 @@ attribute [instance] CLat.str
 section LimitMaps
 
 variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+  (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 noncomputable def jInfTerm (n : ℕ) : ScottMap (DInf.fn D₀ j₀) (DInf D₀ j₀) :=
   (embInf (towerType D₀) (towerProj D₀ j₀) (n + 1)).comp

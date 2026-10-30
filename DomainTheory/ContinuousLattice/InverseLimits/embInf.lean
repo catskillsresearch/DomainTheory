@@ -21,7 +21,7 @@ section InverseLimit
 
 variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
-variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
+variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
 def embInf.fun (n : ℕ) (x : D n) : InverseLimit D P := ⟨iComp D P n x, iComp_compatible D P n x⟩
 

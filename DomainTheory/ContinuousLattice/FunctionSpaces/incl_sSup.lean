@@ -4,7 +4,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_bot
 public import DomainTheory.ContinuousLattice.FunctionSpaces.directedOn_finsetSupOf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_finsetSupOf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.mem_finsetSupOf_of_mem
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
@@ -23,9 +23,10 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
-theorem incl_sSup (P : IsContinuousLatticeProjection D D') (S : Set D) :
+
+theorem incl_sSup (P : ContinuousLatticeProjection D D') (S : Set D) :
     P.incl (sSup S) = sSup (Set.image (P.incl : D → D') S) := by
   rcases S.eq_empty_or_nonempty with hS | hS
   · subst hS
@@ -52,6 +53,7 @@ theorem incl_sSup (P : IsContinuousLatticeProjection D D') (S : Set D) :
       obtain ⟨x, hxS, rfl⟩ := (Set.mem_image (P.incl : D → D') S b).1 hb
       exact le_sSup (Set.mem_image_of_mem (P.incl : D → D') (mem_finsetSupOf_of_mem hxS))
 
-end IsContinuousLatticeProjection
+
+end ContinuousLatticeProjection
 end Proposition310
 end DomainTheory.ContinuousLattice

@@ -5,7 +5,7 @@ public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_wayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_sSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_injective
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 
@@ -24,9 +24,9 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
-theorem proposition_3_10_forward (P : IsContinuousLatticeProjection D D')
+theorem proposition_3_10_forward (P : ContinuousLatticeProjection D D')
     (hD' : ContinuousLattice D') :
     (∀ S : Set D, (P.incl : D → D') (sSup S) = sSup (Set.image (P.incl : D → D') S))
       ∧ Function.Injective (P.incl : D → D')
@@ -34,6 +34,6 @@ theorem proposition_3_10_forward (P : IsContinuousLatticeProjection D D')
   ⟨fun S => P.incl_sSup S, fun _ _ h => P.incl_injective h,
     fun _ _ h => P.incl_wayBelow hD' h⟩
 
-end IsContinuousLatticeProjection
+end ContinuousLatticeProjection
 end Proposition310
 end DomainTheory.ContinuousLattice

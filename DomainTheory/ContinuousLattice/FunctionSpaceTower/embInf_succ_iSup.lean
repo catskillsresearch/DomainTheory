@@ -13,12 +13,12 @@ attribute [instance] CLat.str
 section LimitMaps
 
 variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+  (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 section Thm44b
 
 variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+  (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 theorem embInf_succ_iSup (n : ℕ) (f : ℕ → towerType D₀ (n + 1)) (hf : Monotone f) :
     embInf (towerType D₀) (towerProj D₀ j₀) (n + 1) (⨆ m, f m) =

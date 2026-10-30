@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.ContinuousLattices.IdempotentFixedPoint.completeLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_2_10
 public import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
@@ -60,7 +60,7 @@ theorem retr_preservesDirectedSup (hidem : ∀ x, e (e x) = e x) (hsc : Preserve
   exact Set.image_congr (fun x _ => (hidem x).symm)
 
 noncomputable def retraction (hidem : ∀ x, e (e x) = e x) (hsc : PreservesDirectedSup e) :
-    @IsContinuousLatticeRetraction (IdempotentFixedPoint e) L
+    @ContinuousLatticeRetraction (IdempotentFixedPoint e) L
       (IdempotentFixedPoint.completeLattice hidem (preservesDirectedSup_monotone hsc)) _ :=
   letI := IdempotentFixedPoint.completeLattice hidem (preservesDirectedSup_monotone hsc)
   { incl := ⟨Subtype.val,

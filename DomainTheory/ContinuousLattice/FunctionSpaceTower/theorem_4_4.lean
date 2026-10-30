@@ -18,12 +18,12 @@ attribute [instance] CLat.str
 section LimitMaps
 
 variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+  (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 section Thm44d
 
 variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+  (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 theorem theorem_4_4_inverses :
     (projInfInf D₀ j₀).comp (embInfInf D₀ j₀) = ScottMap.idMap ∧

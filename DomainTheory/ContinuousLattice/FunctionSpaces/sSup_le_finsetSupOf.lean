@@ -22,14 +22,14 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
 theorem sSup_le_finsetSupOf (S : Set D) : sSup (finsetSupOf S) ≤ sSup S :=
   sSup_le fun z hz => by
     obtain ⟨T, hTS, rfl⟩ := hz
     exact Finset.sup_le fun t ht => le_sSup (hTS t ht)
 
-end IsContinuousLatticeProjection
+end ContinuousLatticeProjection
 
 end Proposition310
 

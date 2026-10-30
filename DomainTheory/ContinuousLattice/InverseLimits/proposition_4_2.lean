@@ -17,10 +17,10 @@ section InverseLimit
 
 variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
-variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
+variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
 noncomputable def proposition_4_2 (n : ℕ) :
-    IsContinuousLatticeProjection (D n) (InverseLimit D P) where
+    ContinuousLatticeProjection (D n) (InverseLimit D P) where
   incl := embInf D P n
   retr := projInf D P n
   retr_incl x := iComp_self D P n x

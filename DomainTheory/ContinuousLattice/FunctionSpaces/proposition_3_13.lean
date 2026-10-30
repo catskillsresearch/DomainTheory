@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.projection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -19,7 +19,7 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
 theorem proposition_3_13 (_hD : ContinuousLattice D) :
-    Nonempty (IsContinuousLatticeProjection D (ScottMap D D)) :=
+    Nonempty (ContinuousLatticeProjection D (ScottMap D D)) :=
   ⟨Proposition313.projection⟩
 
 end DomainTheory.ContinuousLattice

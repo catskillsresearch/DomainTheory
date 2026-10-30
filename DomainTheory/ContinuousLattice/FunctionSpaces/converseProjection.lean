@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_converseRetr_le
 public import DomainTheory.ContinuousLattice.FunctionSpaces.converseRetr_incl
 public import DomainTheory.ContinuousLattice.FunctionSpaces.converseRetr_preservesDirectedSup
@@ -32,7 +32,7 @@ variable {i : D → D'}
 noncomputable def converseProjection
     (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S)) (hinj : Function.Injective i)
     (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : ContinuousLattice D) :
-    IsContinuousLatticeProjection D D' where
+    ContinuousLatticeProjection D D' where
   incl := ⟨i, PreservesDirectedSup.continuous_of (fun _ _ _ => hi _)⟩
   retr := ⟨converseRetr i, PreservesDirectedSup.continuous_of
     (converseRetr_preservesDirectedSup hi hwb hD)⟩

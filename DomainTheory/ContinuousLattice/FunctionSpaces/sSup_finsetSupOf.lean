@@ -23,12 +23,12 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
 theorem sSup_finsetSupOf (S : Set D) : sSup S = sSup (finsetSupOf S) :=
   le_antisymm (le_sSup_finsetSupOf S) (sSup_le_finsetSupOf S)
 
-end IsContinuousLatticeProjection
+end ContinuousLatticeProjection
 
 end Proposition310
 

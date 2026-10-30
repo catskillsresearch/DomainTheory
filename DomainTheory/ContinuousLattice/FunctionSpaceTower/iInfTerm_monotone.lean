@@ -15,12 +15,12 @@ attribute [instance] CLat.str
 section LimitMaps
 
 variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+  (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 section Thm44b
 
 variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+  (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 theorem iInfTerm_le_succ (x : DInf D₀ j₀) (m : ℕ) :
     iInfTerm D₀ j₀ m x ≤ iInfTerm D₀ j₀ (m + 1) x := by

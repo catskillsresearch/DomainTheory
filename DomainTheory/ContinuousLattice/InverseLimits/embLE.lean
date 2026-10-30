@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import Mathlib.Data.Set.Basic
@@ -18,7 +18,7 @@ section InverseLimit
 
 variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
-variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
+variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
 def embLE {n m : ℕ} (h : n ≤ m) (x : D n) : D m :=
   Nat.leRecOn h (fun {k} (y : D k) => (P k).incl y) x

@@ -12,3 +12,21 @@ $$i \circ j \sqsubseteq \text{id}_{D'}.$$
 
 Thus, in case our retraction is a projection, we have $\tilde{f} \sqsubseteq f'$, which means that $\tilde{f}$ is the *minimal* extension of $f \in [D \to D'']$ to a function in $[D' \to D'']$. We will discuss the nature of $\tilde{f}$ in a moment. But before we do we pause to remark that the correspondence $f \rightsquigarrow \tilde{f}$ is *continuous*, and this fact is easily extended.
 
+For complete lattices $D$ and $D'$, Scott’s retraction data $i : D \to D'$, $j : D' \to D$ with $j \circ i = \mathrm{id}_D$ is **`ContinuousLatticeRetraction D D'`**; adding $i \circ j \sqsubseteq \mathrm{id}_{D'}$ yields **`ContinuousLatticeProjection D D'`**. Both are packaged in [`ContinuousLatticeRetractionProjection.lean`](ContinuousLatticeRetractionProjection.lean).
+
+**Structure (`ContinuousLatticeRetraction`).** Fields **`incl`**, **`retr`** (Scott maps), and **`retr_incl`**: $j \circ i = \mathrm{id}_D$.
+
+Namespace **`ContinuousLatticeRetraction`** collects the lemmas used when $D$ is shown continuous or algebraic from $D'$:
+
+**Lemma (`incl_preservesDirectedSup`).** **`incl`** preserves directed suprema (hence is Scott-continuous on the nose).
+
+**Lemma (`image_retr_wayBelow_directed`).** For $d \in D$, the set $\{\, j(x') \mid x' \ll i(d)\,\}$ is directed.
+
+**Lemma (`image_retr_wayBelow_nonempty`).** That set is nonempty.
+
+**Theorem (`sSup_image_retr_wayBelow`).** If **`ContinuousLattice D'`**, then $\bigsqcup \{\, j(x') \mid x' \ll i(d)\,\} = d$ (Proposition 2.10 and related notes).
+
+**Structure (`ContinuousLatticeProjection`).** Extends **`ContinuousLatticeRetraction`** with **`incl_retr_le`**: $i(j(d')) \le d'$ for all $d' \in D'$.
+
+Namespace **`ContinuousLatticeProjection`** is the home for projection-only lemmas (e.g. **`incl_retr_le`**, **`incl_bot`**, **`incl_sSup`**) in later §3 notes; this file only declares the structure.
+

@@ -26,9 +26,9 @@ section Projections
 
 theorem isProjection_sSup {T : Set (ScottMap D D)} (hT : ∀ j ∈ T, ScottMap.IsProjection j) :
     ScottMap.IsProjection (sSup T) := by
-  rw [IsContinuousLatticeProjection.sSup_finsetSupOf T]
+  rw [ContinuousLatticeProjection.sSup_finsetSupOf T]
   refine isProjection_directedSup ⟨⊥, ∅, by simp, by simp⟩
-    (IsContinuousLatticeProjection.directedOn_finsetSupOf T) ?_
+    (ContinuousLatticeProjection.directedOn_finsetSupOf T) ?_
   rintro z ⟨F, hF, rfl⟩
   exact isProjection_finsetSup fun j hj => hT j (hF j hj)
 

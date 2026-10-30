@@ -1,6 +1,6 @@
 module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -22,7 +22,7 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattic
 
 omit [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y] in
 theorem scottSubspaceExtendInf_mono_retr {e : X → Y} {g : X → D'}
-    (P : IsContinuousLatticeProjection D D') (U : Set Y) :
+    (P : ContinuousLatticeProjection D D') (U : Set Y) :
     P.retr (scottSubspaceExtend.inf e g U) ≤ scottSubspaceExtend.inf e (fun x => P.retr (g x)) U := by
   apply le_sInf
   intro d hd

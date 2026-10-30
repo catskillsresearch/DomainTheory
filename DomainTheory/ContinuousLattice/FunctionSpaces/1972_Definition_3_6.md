@@ -1,22 +1,9 @@
-# Definition 3.6: Continuous lattice retraction and projection
+# Definition 3.6
 
 @import "1972_Definition_3_6.english" {code_block=false}
 
-**[IsContinuousLatticeRetraction.lean](IsContinuousLatticeRetraction.lean)**
+**[ContinuousLatticeRetractionProjection.lean](ContinuousLatticeRetractionProjection.lean)**
 
-@import "IsContinuousLatticeRetraction.lean"
-**[ContinuousLattice/FunctionSpaces/incl_preservesDirectedSup.lean](incl_preservesDirectedSup.lean)**
+@import "ContinuousLatticeRetractionProjection.lean"
 
-@import "incl_preservesDirectedSup.lean"
-**[IsContinuousLatticeProjection.lean](IsContinuousLatticeProjection.lean)**
-
-@import "IsContinuousLatticeProjection.lean"
-**[ContinuousLattice/FunctionSpaces/image_retr_wayBelow_directed.lean](image_retr_wayBelow_directed.lean)**
-
-@import "image_retr_wayBelow_directed.lean"
-**[ContinuousLattice/FunctionSpaces/image_retr_wayBelow_nonempty.lean](image_retr_wayBelow_nonempty.lean)**
-
-@import "image_retr_wayBelow_nonempty.lean"
-**[ContinuousLattice/FunctionSpaces/sSup_image_retr_wayBelow.lean](sSup_image_retr_wayBelow.lean)**
-
-@import "sSup_image_retr_wayBelow.lean"
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-10-30) — <a href="../1972_REVISION.md">1972 revision progress</a></p>

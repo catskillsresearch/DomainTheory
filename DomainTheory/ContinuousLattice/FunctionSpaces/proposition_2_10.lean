@@ -4,12 +4,8 @@ public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_image_retr_wayBelow
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.retr_wayBelow_of_wayBelow_incl
-public import DomainTheory.ContinuousLattice.FunctionSpaces.image_retr_wayBelow_directed
-public import DomainTheory.ContinuousLattice.FunctionSpaces.image_retr_wayBelow_nonempty
-public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_preservesDirectedSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
 public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -28,7 +24,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace proposition_2_10
 
-theorem a (R : IsContinuousLatticeRetraction D D') (hD' : ContinuousLattice D') :
+theorem a (R : ContinuousLatticeRetraction D D') (hD' : ContinuousLattice D') :
     ContinuousLattice D := by
   refine { out := ?_ }
   intro d
@@ -36,7 +32,7 @@ theorem a (R : IsContinuousLatticeRetraction D D') (hD' : ContinuousLattice D') 
   rw [← R.sSup_image_retr_wayBelow hD' d]
   exact sSup_le fun _ ⟨x', hx', hxeq⟩ => hxeq ▸ hb (R.retr_wayBelow_of_wayBelow_incl hx')
 
-theorem b (R : IsContinuousLatticeRetraction D D') (hD' : ContinuousLattice D') :
+theorem b (R : ContinuousLatticeRetraction D D') (hD' : ContinuousLattice D') :
     (scottTopologicalSpace : TopologicalSpace D) =
       TopologicalSpace.induced (R.incl : D → D') scottTopologicalSpace := by
   apply le_antisymm
@@ -64,7 +60,7 @@ theorem b (R : IsContinuousLatticeRetraction D D') (hD' : ContinuousLattice D') 
 
 end proposition_2_10
 
-theorem proposition_2_10 (R : IsContinuousLatticeRetraction D D') (hD' : ContinuousLattice D') :
+theorem proposition_2_10 (R : ContinuousLatticeRetraction D D') (hD' : ContinuousLattice D') :
     ContinuousLattice D ∧
       (scottTopologicalSpace : TopologicalSpace D) =
         TopologicalSpace.induced (R.incl : D → D') scottTopologicalSpace :=

@@ -32,12 +32,12 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
 def finsetSupOf (S : Set D) : Set D :=
   { z | ∃ T : Finset D, (∀ x ∈ T, x ∈ S) ∧ z = T.sup id }
 
-end IsContinuousLatticeProjection
+end ContinuousLatticeProjection
 
 end Proposition310
 

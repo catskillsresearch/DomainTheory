@@ -26,7 +26,7 @@ section InverseLimit
 
 variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
-variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
+variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
 @[reducible] noncomputable def inverseLimitTopology : TopologicalSpace (InverseLimit D P) :=
   TopologicalSpace.induced (Subtype.val : InverseLimit D P → ∀ n, D n)

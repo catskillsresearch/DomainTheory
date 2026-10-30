@@ -19,7 +19,7 @@ universe u
 section InverseLimit
 
 variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
-variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
+variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
 theorem lemma_4_5 (u : ∀ n, D (n + 1))
     (hu : ∀ n, (P (n + 1)).retr (u (n + 1)) = u n) (n : ℕ) :

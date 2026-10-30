@@ -18,8 +18,8 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-def proposition_3_7_projection (P₀ : IsContinuousLatticeProjection D₀ D₀')
-    (P₁ : IsContinuousLatticeProjection D₁ D₁') :
+def proposition_3_7_projection (P₀ : ContinuousLatticeProjection D₀ D₀')
+    (P₁ : ContinuousLatticeProjection D₁ D₁') :
     ScottMap.projection D₀ D₀' D₁ D₁' :=
   ScottMap.projection.functionSpace P₀ P₁
 

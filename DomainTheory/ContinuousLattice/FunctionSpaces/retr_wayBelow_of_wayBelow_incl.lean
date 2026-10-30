@@ -1,6 +1,5 @@
 module
-public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_preservesDirectedSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import Mathlib.Topology.Defs.Basic
@@ -18,9 +17,10 @@ variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-namespace IsContinuousLatticeRetraction
+namespace ContinuousLatticeRetraction
 
-theorem retr_wayBelow_of_wayBelow_incl (R : IsContinuousLatticeRetraction D D')
+
+theorem retr_wayBelow_of_wayBelow_incl (R : ContinuousLatticeRetraction D D')
     {d : D} {x' : D'} (hx' : x' ≪ R.incl d) : R.retr x' ≪ d := by
   obtain ⟨U', hU'open, hd_in, hU'sub⟩ := hx'
   refine ⟨(R.incl : D → D') ⁻¹' U', scottOpen_preimage R.incl_preservesDirectedSup hU'open,
@@ -30,5 +30,6 @@ theorem retr_wayBelow_of_wayBelow_incl (R : IsContinuousLatticeRetraction D D')
   rw [R.retr_incl z] at hjle
   exact Set.mem_Ici.2 hjle
 
-end IsContinuousLatticeRetraction
+
+end ContinuousLatticeRetraction
 end DomainTheory.ContinuousLattice

@@ -23,12 +23,12 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
 theorem le_sSup_finsetSupOf (S : Set D) : sSup S ≤ sSup (finsetSupOf S) :=
   sSup_le fun _ hx => le_sSup (mem_finsetSupOf_of_mem hx)
 
-end IsContinuousLatticeProjection
+end ContinuousLatticeProjection
 
 end Proposition310
 

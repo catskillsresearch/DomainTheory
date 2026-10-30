@@ -16,9 +16,10 @@ variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-namespace IsContinuousLatticeRetraction
+namespace ContinuousLatticeRetraction
 
-theorem retr_ambientSSup_eq_sSup (R : IsContinuousLatticeRetraction D D') (S : Set D)
+
+theorem retr_ambientSSup_eq_sSup (R : ContinuousLatticeRetraction D D') (S : Set D)
     (hS : S.Nonempty) (hdir : DirectedOn (· ≤ ·) S) :
     R.retr (ambientSSup R S) = sSup S := by
   unfold ambientSSup
@@ -33,5 +34,6 @@ theorem retr_ambientSSup_eq_sSup (R : IsContinuousLatticeRetraction D D') (S : S
   rw [Set.image_image, Set.image_congr fun a _ => R.retr_incl a]
   simp
 
-end IsContinuousLatticeRetraction
+
+end ContinuousLatticeRetraction
 end DomainTheory.ContinuousLattice

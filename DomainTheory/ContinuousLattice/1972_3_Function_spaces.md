@@ -16,7 +16,7 @@
 - [Scott functional abstraction](FunctionSpaces/1972_Scott_lambda.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Proposition 3.5](FunctionSpaces/1972_Proposition_3_5.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Retractions and extensions](FunctionSpaces/1972_Before_definition_3_6.md) [✓](ContinuousLattice/1972_REVISION.md)
-- [ Definition 3.6: Continuous lattice retraction and projection](FunctionSpaces/1972_Definition_3_6.md)
+- [Definition 3.6](FunctionSpaces/1972_Definition_3_6.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Proposition 3.7](FunctionSpaces/1972_Proposition_3_7.md)
 - [Proposition 3.8](Constructions/1972_Proposition_3_8.md)
 - [Lemma 3.9](FunctionSpaces/1972_Lemma_3_9.md)

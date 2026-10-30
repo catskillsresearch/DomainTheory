@@ -2,7 +2,7 @@ module
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 
@@ -22,9 +22,10 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
-theorem incl_wayBelow (P : IsContinuousLatticeProjection D D') (hD' : ContinuousLattice D')
+
+theorem incl_wayBelow (P : ContinuousLatticeProjection D D') (hD' : ContinuousLattice D')
     {x y : D} (h : x ≪ y) : @WayBelow D' _ (P.incl x) (P.incl y) := by
   set W : Set D' := { z' | @WayBelow D' _ z' (P.incl y) }
   have hWne : W.Nonempty := ⟨(⊥ : D'), @WayBelow.bot D' _ (P.incl y)⟩
@@ -50,6 +51,7 @@ theorem incl_wayBelow (P : IsContinuousLatticeProjection D D') (hD' : Continuous
   exact @WayBelow.le_trans D' _ (P.incl x) z' (P.incl y)
     (le_trans (P.incl.monotone hxpr.le) (P.incl_retr_le z')) hz'
 
-end IsContinuousLatticeProjection
+
+end ContinuousLatticeProjection
 end Proposition310
 end DomainTheory.ContinuousLattice

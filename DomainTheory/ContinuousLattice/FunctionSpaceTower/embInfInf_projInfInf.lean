@@ -19,7 +19,7 @@ attribute [instance] CLat.str
 section LimitMaps
 
 variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+  (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 theorem embInfInf_comp_projInfInf :
     (embInfInf D₀ j₀).comp (projInfInf D₀ j₀) = ScottMap.idMap := by

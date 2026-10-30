@@ -10,15 +10,15 @@ namespace DomainTheory.ContinuousLattice
 attribute [instance] CLat.str
 
 noncomputable def towerProj (D₀ : CLat.{u})
-    (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier)) :
-    ∀ n, IsContinuousLatticeProjection (towerType D₀ n) (towerType D₀ (n + 1))
+    (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier)) :
+    ∀ n, ContinuousLatticeProjection (towerType D₀ n) (towerType D₀ (n + 1))
   | 0 => j₀
   | (n + 1) => functionSpaceProjection (towerProj D₀ j₀ n)
 
 namespace towerProj
 
 theorem succ (D₀ : CLat.{u})
-    (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier)) (n : ℕ) :
+    (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier)) (n : ℕ) :
     let P := towerProj D₀ j₀ n
     (towerProj D₀ j₀ (n + 1)).incl = conjMap P.incl P.retr ∧
       (towerProj D₀ j₀ (n + 1)).retr = conjMap P.retr P.incl := by
@@ -27,7 +27,7 @@ theorem succ (D₀ : CLat.{u})
 section Tower
 
 variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+  (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 theorem succ_incl_apply (n : ℕ) (x : towerType D₀ (n + 1)) (y : towerType D₀ (n + 1)) :
     ((towerProj D₀ j₀ (n + 1)).incl x) y

@@ -1,8 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 
 @[expose] public section
 
@@ -28,7 +27,7 @@ structure retraction (D₀ D₀' D₁ D₁' : Type*)
 
 namespace retraction
 
-def functionSpace (R₀ : IsContinuousLatticeRetraction D₀ D₀') (R₁ : IsContinuousLatticeRetraction D₁ D₁') :
+def functionSpace (R₀ : ContinuousLatticeRetraction D₀ D₀') (R₁ : ContinuousLatticeRetraction D₁ D₁') :
     ScottMap.retraction D₀ D₀' D₁ D₁' where
   incl f := ScottMap.comp R₁.incl (ScottMap.comp f R₀.retr)
   retr f' := ScottMap.comp R₁.retr (ScottMap.comp f' R₀.incl)
@@ -43,10 +42,10 @@ structure projection (D₀ D₀' D₁ D₁' : Type*)
 
 namespace projection
 
-def functionSpace (P₀ : IsContinuousLatticeProjection D₀ D₀') (P₁ : IsContinuousLatticeProjection D₁ D₁') :
+def functionSpace (P₀ : ContinuousLatticeProjection D₀ D₀') (P₁ : ContinuousLatticeProjection D₁ D₁') :
     ScottMap.projection D₀ D₀' D₁ D₁' :=
   ScottMap.projection.mk
-    (ScottMap.retraction.functionSpace P₀.toIsContinuousLatticeRetraction P₁.toIsContinuousLatticeRetraction)
+    (ScottMap.retraction.functionSpace P₀.toContinuousLatticeRetraction P₁.toContinuousLatticeRetraction)
     (by
       intro f' y
       dsimp only [ScottMap.retraction.functionSpace, ScottMap.comp, Function.comp_def]

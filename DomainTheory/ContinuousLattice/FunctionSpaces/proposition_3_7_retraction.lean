@@ -18,8 +18,8 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
-def proposition_3_7_retraction (R₀ : IsContinuousLatticeRetraction D₀ D₀')
-    (R₁ : IsContinuousLatticeRetraction D₁ D₁') :
+def proposition_3_7_retraction (R₀ : ContinuousLatticeRetraction D₀ D₀')
+    (R₁ : ContinuousLatticeRetraction D₁ D₁') :
     ScottMap.retraction D₀ D₀' D₁ D₁' :=
   ScottMap.retraction.functionSpace R₀ R₁
 

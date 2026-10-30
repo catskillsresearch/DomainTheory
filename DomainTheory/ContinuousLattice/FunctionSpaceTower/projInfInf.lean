@@ -23,7 +23,7 @@ attribute [instance] CLat.str
 section LimitMaps
 
 variable (D₀ : CLat.{u})
-  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+  (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 noncomputable def projInfInf : ScottMap (DInf.fn D₀ j₀) (DInf D₀ j₀) :=
   ⨆ n, jInfTerm D₀ j₀ n

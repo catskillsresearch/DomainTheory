@@ -21,13 +21,13 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
 theorem mem_finsetSupOf_of_mem {S : Set D} {x : D} (hx : x ∈ S) :
     x ∈ finsetSupOf S :=
   ⟨{x}, by simp [hx], by simp⟩
 
-end IsContinuousLatticeProjection
+end ContinuousLatticeProjection
 
 end Proposition310
 

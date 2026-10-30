@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_maximal_le
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_maximal
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
@@ -22,7 +22,7 @@ variable {X Y D D' : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [CompleteLattice D] [CompleteLattice D']
 
 theorem lemma_3_9 (hD : ContinuousLattice D) (hD' : ContinuousLattice D')
-    (P : IsContinuousLatticeProjection D D') (e : X → Y) (he : IsEmbedding e)
+    (P : ContinuousLatticeProjection D D') (e : X → Y) (he : IsEmbedding e)
     {f : X → D} {g : X → D'} (hf : @Continuous X D _ scottTopologicalSpace f)
     (hg : @Continuous X D' _ scottTopologicalSpace g)
     (hfg : ∀ x, f x = (P.retr : D' → D) (g x)) (y : Y) :

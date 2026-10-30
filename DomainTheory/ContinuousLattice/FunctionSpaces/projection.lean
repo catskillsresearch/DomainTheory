@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.con_
 public import DomainTheory.ContinuousLattice.FunctionSpaces.min
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
@@ -23,7 +23,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 namespace Proposition313
 
-noncomputable def projection : IsContinuousLatticeProjection D (ScottMap D D) where
+noncomputable def projection : ContinuousLatticeProjection D (ScottMap D D) where
   incl := con
   retr := min
   retr_incl := fun _ => rfl

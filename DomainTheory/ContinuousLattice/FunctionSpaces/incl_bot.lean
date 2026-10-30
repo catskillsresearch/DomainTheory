@@ -1,6 +1,6 @@
 module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.retr_bot
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
 
@@ -19,11 +19,13 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
-theorem incl_bot (P : IsContinuousLatticeProjection D D') : P.incl (⊥ : D) = ⊥ :=
+
+theorem incl_bot (P : ContinuousLatticeProjection D D') : P.incl (⊥ : D) = ⊥ :=
   le_antisymm (by simpa [retr_bot P] using P.incl_retr_le (⊥ : D')) bot_le
 
-end IsContinuousLatticeProjection
+
+end ContinuousLatticeProjection
 end Proposition310
 end DomainTheory.ContinuousLattice

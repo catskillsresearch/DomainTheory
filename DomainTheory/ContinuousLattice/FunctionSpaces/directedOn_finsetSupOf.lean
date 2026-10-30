@@ -22,7 +22,7 @@ section Proposition310
 
 open Finset
 
-namespace IsContinuousLatticeProjection
+namespace ContinuousLatticeProjection
 
 theorem directedOn_finsetSupOf (S : Set D) :
     DirectedOn (· ≤ ·) (finsetSupOf S) := by
@@ -37,7 +37,7 @@ theorem directedOn_finsetSupOf (S : Set D) :
   simp only [Finset.mem_union] at hx
   exact hx.elim (hT₁ x) (hT₂ x)
 
-end IsContinuousLatticeProjection
+end ContinuousLatticeProjection
 
 end Proposition310
 

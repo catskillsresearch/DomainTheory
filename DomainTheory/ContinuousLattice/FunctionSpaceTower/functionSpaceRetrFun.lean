@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 
 @[expose] public section
 
@@ -14,7 +14,7 @@ namespace functionSpaceRetrFun
 
 theorem continuous {D D' : Type u}
     [CompleteLattice D] [CompleteLattice D']
-    (P : IsContinuousLatticeProjection D D') (g : ScottMap D' D') :
+    (P : ContinuousLatticeProjection D D') (g : ScottMap D' D') :
     @Continuous D D scottTopologicalSpace scottTopologicalSpace
       (fun x => P.retr (g (P.incl x))) :=
   @Continuous.congr D D scottTopologicalSpace scottTopologicalSpace
@@ -24,14 +24,14 @@ theorem continuous {D D' : Type u}
 end functionSpaceRetrFun
 
 def functionSpaceRetrFun {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
-    (P : IsContinuousLatticeProjection D D') (g : ScottMap D' D') : ScottMap D D :=
+    (P : ContinuousLatticeProjection D D') (g : ScottMap D' D') : ScottMap D D :=
   ⟨fun x => P.retr (g (P.incl x)), functionSpaceRetrFun.continuous P g⟩
 
 namespace functionSpaceRetrFun
 
 theorem outer_continuous {D D' : Type u}
     [CompleteLattice D] [CompleteLattice D']
-    (P : IsContinuousLatticeProjection D D') :
+    (P : ContinuousLatticeProjection D D') :
     @Continuous (ScottMap D' D') (ScottMap D D)
       scottTopologicalSpace scottTopologicalSpace (functionSpaceRetrFun P) := by
   exact @Continuous.congr (ScottMap D' D') (ScottMap D D)
