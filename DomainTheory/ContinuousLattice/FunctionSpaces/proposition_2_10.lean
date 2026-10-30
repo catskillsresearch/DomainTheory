@@ -1,16 +1,9 @@
 module
 
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.retr_wayBelow_of_wayBelow_incl
-public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
+import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

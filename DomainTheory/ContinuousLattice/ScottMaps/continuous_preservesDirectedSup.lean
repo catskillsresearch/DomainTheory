@@ -1,6 +1,5 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 
 @[expose] public section

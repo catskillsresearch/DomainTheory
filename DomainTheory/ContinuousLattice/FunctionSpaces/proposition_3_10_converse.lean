@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.converseProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
@@ -30,7 +29,7 @@ theorem proposition_3_10_converse
     ∃ P : ContinuousLatticeProjection D D',
       (∀ d, (P.incl : D → D') d = i d)
         ∧ (∀ x', (P.retr : D' → D) x' = sSup {x | i x ≤ x'}) :=
-  ⟨converseProjection hi hinj hwb hD, fun _ => rfl, fun _ => rfl⟩
+  ⟨ContinuousLatticeProjection.converseProjection i hi hinj hwb hD, fun _ => rfl, fun _ => rfl⟩
 
 end Proposition310
 end DomainTheory.ContinuousLattice

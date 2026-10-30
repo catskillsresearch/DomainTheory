@@ -2,9 +2,6 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_wayBelow
-public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_sSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_injective
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic

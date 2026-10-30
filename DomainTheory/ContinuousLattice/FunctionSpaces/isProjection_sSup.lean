@@ -3,8 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_directedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_finsetSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.directedOn_finsetSupOf
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_finsetSupOf
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import Mathlib.Topology.Defs.Basic
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap

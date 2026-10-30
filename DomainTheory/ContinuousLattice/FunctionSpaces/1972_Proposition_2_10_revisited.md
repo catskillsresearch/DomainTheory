@@ -2,9 +2,6 @@
 
 @import "1972_Proposition_2_10_revisited.english" {code_block=false}
 
-**[ContinuousLatticeRetractionProjection.lean](ContinuousLatticeRetractionProjection.lean)**
-
-@import "ContinuousLatticeRetractionProjection.lean"
 **[proposition_2_10.lean](proposition_2_10.lean)**
 
 @import "proposition_2_10.lean"

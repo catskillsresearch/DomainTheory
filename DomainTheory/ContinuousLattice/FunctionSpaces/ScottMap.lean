@@ -1,10 +1,9 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
-public import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 public import Mathlib.Order.BourbakiWitt
+import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
+public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
 
 @[expose] public section
 

@@ -1,6 +1,5 @@
 module
 
-public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 
 @[expose] public section

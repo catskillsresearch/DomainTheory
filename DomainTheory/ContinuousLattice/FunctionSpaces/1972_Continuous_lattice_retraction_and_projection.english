@@ -1,0 +1,22 @@
+For complete lattices $D$ and $D'$, a **continuous lattice retraction** of $D$ into $D'$ is a pair of Scott-continuous maps $i : D \to D'$ and $j : D' \to D$ such that $j \circ i = \mathrm{id}_D$. In the formalization, **`ContinuousLatticeRetraction D D'`** packages **`incl`** ($i$), **`retr`** ($j$), and **`retr_incl`**.
+
+A **continuous lattice projection** is a retraction that also satisfies $i \circ j \sqsubseteq \mathrm{id}_{D'}$ (equivalently $i(j(x')) \le x'$ in the order on $D'$). **`ContinuousLatticeProjection D D'`** extends **`ContinuousLatticeRetraction`** with **`incl_retr_le`**. Scott’s Definition 3.6 names this situation for function-space extensions; Proposition 2.10 and later §3 results use the same data.
+
+All lemmas below live in [`ContinuousLatticeRetractionProjection.lean`](ContinuousLatticeRetractionProjection.lean). Call them as **`ContinuousLatticeRetraction.`***name* or **`ContinuousLatticeProjection.`***name* (or dot notation on `R` / `P`).
+
+**Namespace `ContinuousLatticeRetraction`**
+
+- **`incl_preservesDirectedSup`** — **`incl`** preserves directed suprema.
+- **`image_retr_wayBelow_directed`**, **`image_retr_wayBelow_nonempty`** — for $d \in D$, $\{\, j(x') \mid x' \ll i(d)\,\}$ is directed and nonempty.
+- **`sSup_image_retr_wayBelow`** — if **`ContinuousLattice D'`**, then $\bigsqcup j(\{x' \mid x' \ll i(d)\}) = d$.
+- **`retr_wayBelow_of_wayBelow_incl`** — $x' \ll i(d)$ implies $j(x') \ll d$.
+- **`ambientSSup`**, **`retr_ambientSSup_eq_sSup`** — ambient join $i(\bigsqcup S)$ and recovery by $j$ on directed $S$.
+- **`converseRetr`**, **`converseRetr_mono`**, **`converseRetr_preservesDirectedSup`** — $j(x') = \bigsqcup \{x \mid i(x) \le x'\}$ and Scott continuity under **`sSup`**-preservation hypotheses.
+
+**Namespace `ContinuousLatticeProjection`**
+
+- **`retr_bot`**, **`incl_bot`**, **`retr_eq_sSup`**, **`incl_wayBelow`** — bottom and **`sSup`** characterization of $j$; way-below through **`incl`**.
+- **`incl_injective`**, **`incl_sup`**, **`incl_finset_sup`**, **`incl_sSup`** — **`incl`** is injective and preserves suprema.
+- **`finsetSupOf`**, **`directedOn_finsetSupOf`**, **`mem_finsetSupOf_of_mem`**, **`sSup_le_finsetSupOf`**, **`le_sSup_finsetSupOf`**, **`sSup_finsetSupOf`** — finite-sup approximants to **`sSup`**.
+- **`incl_sup_of_preservesSSup`**, **`incl_mono_of_preservesSSup`**, **`le_of_incl_le`** — for maps $i$ with $i(\bigsqcup S) = \bigsqcup i(S)$.
+- **`incl_converseRetr_le`**, **`converseRetr_incl`**, **`converseProjection`** — converse $j$ from an **`incl`**-like map; build **`ContinuousLatticeProjection`** from injective **`sSup`**-preserving $i$.

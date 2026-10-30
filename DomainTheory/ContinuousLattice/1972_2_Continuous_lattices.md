@@ -13,6 +13,7 @@
 - [Proposition 2.10](FunctionSpaces/1972_Proposition_2_10.md) ✓
 - [Proposition 2.11](Constructions/1972_Proposition_2_11.md) ✓
 - [Proof of 2.9](Constructions/1972_Proof_of_2_9.md) ✓
+- [Continuous lattice retraction and projection](FunctionSpaces/1972_Continuous_lattice_retraction_and_projection.md) ✓
 - [Proof of 2.10](FunctionSpaces/1972_Proposition_2_10_revisited.md) ✓
 - [Proof of 2.11](Constructions/1972_Proof_of_2_11.md) ✓
 - [Idempotent fixed points](ContinuousLattices/1972_IdempotentFixedPoint.md) ✓

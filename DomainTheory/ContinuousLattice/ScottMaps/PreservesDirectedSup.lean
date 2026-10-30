@@ -1,13 +1,5 @@
 module
-public import Mathlib.Order.ConditionallyCompleteLattice.Basic
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.Directed
-public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-import Mathlib.Tactic.Continuity.Init
-import Mathlib.Tactic.SetLike
-import Mathlib.Data.Finset.Attr
-import Mathlib.Tactic.Widget.Calc
 
 @[expose] public section
 
