@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_iff
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -22,8 +22,8 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 section Projections
 
-theorem isProjection_sup {j k : ScottMap D D} (hj : IsProjection j) (hk : IsProjection k) :
-    IsProjection (j ⊔ k) := by
+theorem isProjection_sup {j k : ScottMap D D} (hj : ScottMap.IsProjection j) (hk : ScottMap.IsProjection k) :
+    ScottMap.IsProjection (j ⊔ k) := by
   rw [isProjection_iff] at hj hk ⊢
   obtain ⟨hjidem, hjle⟩ := hj
   obtain ⟨hkidem, hkle⟩ := hk

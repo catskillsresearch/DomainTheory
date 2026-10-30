@@ -1,11 +1,10 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_iff
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
@@ -22,7 +21,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 section Projections
 
-theorem isProjection_bot : IsProjection (⊥ : ScottMap D D) := by
+theorem isProjection_bot : ScottMap.IsProjection (⊥ : ScottMap D D) := by
   rw [isProjection_iff]
   refine ⟨fun x => ?_, fun x => ?_⟩
   · simp only [ScottMap.bot_apply]

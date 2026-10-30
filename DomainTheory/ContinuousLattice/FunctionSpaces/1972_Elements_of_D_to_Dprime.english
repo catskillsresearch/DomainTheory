@@ -1,15 +1,59 @@
 For continuous lattices $D$ and $D'$, Scott's §3 notation $[D \to D']$ is the set of maps $f : D \to D'$ that are continuous for the Scott topologies (equivalently, Scott-continuous in the sense of §2). The library names that carrier **`ScottMap D D'`**: a subtype of $D \to D'$ carrying a proof of continuity for **`scottTopologicalSpace`** on domain and codomain.
 
-[`ScottMap.lean`](ScottMap.lean) is **self-contained**: it does not import or mention **`stepFun`** or **`stepMap`**. Step functions for Theorem 3.3 are in [Step function (pointwise)](1972_stepFun.md) and [Step map $\overrightarrow{e}[e,e']$](1972_stepMap.md).
+[`ScottMap.lean`](ScottMap.lean) is **self-contained**: it does not import or mention **`stepFun`** or **`stepMap`**. Step functions for Theorem 3.3 are in [Step function (pointwise)](1972_stepFun.md) and [Step map $\overrightarrow{e}[e,e']$](1972_stepMap.md). Closure properties of **`ScottMap.IsProjection`** under sups on $[D \to D]$ are in [Proposition 3.12](1972_Proposition_3_12.md); retractions between *map spaces* are in **`ScottMap_more.lean`** (Proposition 3.7).
 
 Namespace **`ScottMap`** collects the library tools on that carrier:
 
-**Coercion and extension.** **`CoeFun`** coerces to $D \to D'$. **`ext`**: equality from pointwise agreement.
+**Instance (`CoeFun`).** A Scott map coerces to its underlying function $D \to D'$.
 
-**Maps.** **`const`**, **`const_apply`**; **`idMap`**, **`idMap_apply`**; **`comp`**, **`comp_apply`**. **`continuous`** extracts the subtype proof.
+**Lemma (`ext`).** Two Scott maps agree if they agree at every argument.
 
-**Order and lattice.** Pointwise **`le`**, **`lt`**, **`instPartialOrder`**, **`le_def`**; pointwise **`instSupSet`**, **`sSupMaps`**, **`sSup_apply`**, **`isLUB_sSup`**, **`instCompleteLattice`**; **`bot_apply`**, **`sup_apply`**.
+**Definition (`const`).** The constant Scott map at $c \in D'$; **`const_apply`** reads off $c$ at each $x$.
 
-**§2 tools on the coercion.** **`preservesDirectedSup_coe`**, **`monotone`**, and pointwise directed-sup lemmas behind **`sSupMaps`**.
+**Definition (`le`)**, **`lt`.** Pointwise order: $f \le g$ when $f(x) \le g(x)$ for all $x$.
+
+**Lemma (`le_refl'`).** Reflexivity of the pointwise order.
+
+**Lemma (`le_trans'`).** Transitivity.
+
+**Lemma (`le_antisymm'`).** Antisymmetry.
+
+**Lemma (`lt_iff_le_not_ge'`).** Strict order as “$\le$ and not $\ge$”; feeds **`instPartialOrder`**.
+
+**Instance (`instPartialOrder`).** Pointwise order on **`ScottMap D D'`**.
+
+**Lemma (`le_def`).** **`f ≤ g`** iff pointwise inequality on the coercion.
+
+**Lemma (`preservesDirectedSup_coe`).** For nonempty directed $S \subseteq D$, $f(\bigsqcup S) = \bigsqcup f[S]$ (Proposition 2.5 on the coercion).
+
+**Lemma (`monotone`).** The underlying function is monotone.
+
+**Lemma (`pointwise_sSup_preservesDirectedSup`).** For $\mathcal{F} \subseteq [D \to D']$, the map $x \mapsto \bigsqcup \{ f(x) \mid f \in \mathcal{F} \}$ preserves directed suprema.
+
+**Lemma (`sSupMaps_continuous`).** That pointwise sup is Scott-continuous.
+
+**Definition (`sSupMaps`).** The Scott map whose value at $x$ is that pointwise sup; **`sSupMaps_apply`** is definitional.
+
+**Instance (`instSupSet`).** **`sSup F`** is **`sSupMaps F`**.
+
+**Lemma (`sSup_apply`).** **`(sSup F) x = \bigsqcup \{ f(x) \mid f \in F \}`**.
+
+**Theorem (`isLUB_sSup`).** **`sSup F`** is a least upper bound of $F$ in the pointwise order.
+
+**Definition (`instCompleteLattice`).** **`ScottMap D D'`** is a complete lattice via **`completeLatticeOfSup`** (sup-only here; meets are inherited from the complete lattice structure on $D'$ at each point).
+
+**Lemma (`preservesDirectedSup_comp`).** If $f : D' \to D''$ and $g : D \to D'$ preserve directed suprema, so does $f \circ g$.
+
+**Definition (`comp`).** Composition of Scott maps; **`comp_apply`** is **`(f \circ g)(x) = f(g(x))`**.
+
+**Lemma (`continuous`).** The subtype proof: Scott continuity of the coercion.
+
+**Definition (`idMap`).** The identity Scott endo-map; **`idMap_apply`** is reflexivity at $x$.
+
+**Definition (`IsProjection`).** On **`ScottMap D D`**, Scott's projection condition $j \circ j = j$ and $j \sqsubseteq \mathrm{id}$ (Definition 3.11).
+
+**Lemma (`bot_apply`).** **`(⊥) x = ⊥`** in $D'$.
+
+**Lemma (`sup_apply`).** **`(f \sqcup g)(x) = f(x) \sqcup g(x)`**.
 
 Scott's *continuous* lattice structure on $[D \to D']$ (**`ContinuousLattice (ScottMap D D')`**) is proved later via **`stepMap.isContinuousLattice`**, not in this file.

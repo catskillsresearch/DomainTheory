@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_iff
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -23,8 +23,8 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 section Projections
 
 theorem isProjection_directedSup {S : Set (ScottMap D D)} (hSne : S.Nonempty)
-    (hSdir : DirectedOn (· ≤ ·) S) (hS : ∀ j ∈ S, IsProjection j) :
-    IsProjection (sSup S) := by
+    (hSdir : DirectedOn (· ≤ ·) S) (hS : ∀ j ∈ S, ScottMap.IsProjection j) :
+    ScottMap.IsProjection (sSup S) := by
   have hidem : ∀ j ∈ S, ∀ x, (j : D → D) (j x) = j x :=
     fun j hj => (isProjection_iff.mp (hS j hj)).1
   have hle : ∀ j ∈ S, ∀ x, (j : D → D) x ≤ x := fun j hj => (isProjection_iff.mp (hS j hj)).2

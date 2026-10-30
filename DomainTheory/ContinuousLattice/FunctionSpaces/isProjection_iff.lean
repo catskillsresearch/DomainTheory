@@ -1,10 +1,9 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
@@ -22,7 +21,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 section Projections
 
 theorem isProjection_iff {j : ScottMap D D} :
-    IsProjection j ↔ (∀ x, (j : D → D) (j x) = j x) ∧ (∀ x, (j : D → D) x ≤ x) := by
+    ScottMap.IsProjection j ↔ (∀ x, (j : D → D) (j x) = j x) ∧ (∀ x, (j : D → D) x ≤ x) := by
   constructor
   · rintro ⟨hidem, hle⟩
     refine ⟨fun x => ?_, fun x => ?_⟩

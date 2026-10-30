@@ -20,7 +20,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 section Projections
 
 theorem proposition_3_12 :
-    (∀ T : Set (ScottMap D D), (∀ j ∈ T, IsProjection j) → IsProjection (sSup T))
+    (∀ T : Set (ScottMap D D), (∀ j ∈ T, ScottMap.IsProjection j) → ScottMap.IsProjection (sSup T))
       ∧ Nonempty (CompleteLattice (Projections D)) :=
   ⟨fun _ h => isProjection_sSup h, ⟨Projections.instCompleteLattice⟩⟩
 

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 
@@ -20,7 +20,8 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 section Projections
 
-abbrev Projections (D : Type*) [CompleteLattice D] : Type _ := {j : ScottMap D D // IsProjection j}
+abbrev Projections (D : Type*) [CompleteLattice D] : Type _ :=
+  {j : ScottMap D D // ScottMap.IsProjection j}
 
 end Projections
 

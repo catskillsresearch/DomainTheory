@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_sup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_bot
 public import Mathlib.Topology.Defs.Basic
@@ -23,8 +23,8 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 section Projections
 
-theorem isProjection_finsetSup {T : Finset (ScottMap D D)} (hT : ∀ j ∈ T, IsProjection j) :
-    IsProjection (T.sup id) :=
+theorem isProjection_finsetSup {T : Finset (ScottMap D D)} (hT : ∀ j ∈ T, ScottMap.IsProjection j) :
+    ScottMap.IsProjection (T.sup id) :=
   Finset.sup_induction isProjection_bot (fun _ ha _ hb => isProjection_sup ha hb) hT
 
 end Projections

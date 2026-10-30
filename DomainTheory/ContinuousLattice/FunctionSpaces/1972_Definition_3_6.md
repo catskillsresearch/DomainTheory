@@ -1,4 +1,4 @@
-# Definition 3.6
+# Definition 3.6: Continuous lattice retraction and projection
 
 @import "1972_Definition_3_6.english" {code_block=false}
 
@@ -11,9 +11,6 @@
 **[IsContinuousLatticeProjection.lean](IsContinuousLatticeProjection.lean)**
 
 @import "IsContinuousLatticeProjection.lean"
-**[IsProjection.lean](IsProjection.lean)**
-
-@import "IsProjection.lean"
 **[ContinuousLattice/FunctionSpaces/image_retr_wayBelow_directed.lean](image_retr_wayBelow_directed.lean)**
 
 @import "image_retr_wayBelow_directed.lean"

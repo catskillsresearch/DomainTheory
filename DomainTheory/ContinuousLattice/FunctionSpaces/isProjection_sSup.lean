@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_directedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_finsetSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.directedOn_finsetSupOf
@@ -24,8 +24,8 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 section Projections
 
-theorem isProjection_sSup {T : Set (ScottMap D D)} (hT : ∀ j ∈ T, IsProjection j) :
-    IsProjection (sSup T) := by
+theorem isProjection_sSup {T : Set (ScottMap D D)} (hT : ∀ j ∈ T, ScottMap.IsProjection j) :
+    ScottMap.IsProjection (sSup T) := by
   rw [IsContinuousLatticeProjection.sSup_finsetSupOf T]
   refine isProjection_directedSup ⟨⊥, ∅, by simp, by simp⟩
     (IsContinuousLatticeProjection.directedOn_finsetSupOf T) ?_
