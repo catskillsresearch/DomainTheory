@@ -74,7 +74,7 @@ theorem isContinuousLattice (hidem : ∀ x, e (e x) = e x) (hsc : PreservesDirec
     @ContinuousLattice (IdempotentFixedPoint e)
       (IdempotentFixedPoint.completeLattice hidem (preservesDirectedSup_monotone hsc)) := by
   let := IdempotentFixedPoint.completeLattice hidem (preservesDirectedSup_monotone hsc)
-  exact proposition_2_10.a (retraction hidem hsc) hL
+  exact (proposition_2_10 (retraction hidem hsc) hL).1
 
 theorem scottTopology (hidem : ∀ x, e (e x) = e x) (hsc : PreservesDirectedSup e)
     (hL : ContinuousLattice L) :
@@ -82,7 +82,7 @@ theorem scottTopology (hidem : ∀ x, e (e x) = e x) (hsc : PreservesDirectedSup
         (IdempotentFixedPoint.completeLattice hidem (preservesDirectedSup_monotone hsc)) =
       TopologicalSpace.induced (Subtype.val : IdempotentFixedPoint e → L) scottTopologicalSpace := by
   let := IdempotentFixedPoint.completeLattice hidem (preservesDirectedSup_monotone hsc)
-  exact proposition_2_10.b (retraction hidem hsc) hL
+  exact (proposition_2_10 (retraction hidem hsc) hL).2
 
 end IdempotentFixedPoint
 
