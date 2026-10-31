@@ -1,15 +1,11 @@
 module
 
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Projection
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
+import DomainTheory.ContinuousLattice.FunctionSpaces.Projection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
-
-open Set Topology TopologicalSpace
 
 variable {D : Type*} [CompleteLattice D]
 
