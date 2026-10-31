@@ -2,4 +2,3 @@ Scott's review of inverse limits at the start of §4 (see [Inverse limits](../19
 
 **Definition (`Compatible`).** **`Compatible D P x`** holds when $\forall n,\; (P\,n).\mathrm{retr}\,(x\,(n+1)) = x\,n$ for **`x : ∀ n, D n`**.
 
-The formalization is in [`Compatible.lean`](Compatible.lean).

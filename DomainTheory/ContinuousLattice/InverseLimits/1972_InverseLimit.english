@@ -1,3 +1,1 @@
 **Definition (`InverseLimit`).** **`InverseLimit D P`** is the subtype of tuples **`x : ∀ n, D n`** that satisfy [**`Compatible`**](1972_Compatibility.md) (Scott's $D_\infty$ before topology).
-
-The carrier is in [`InverseLimit.lean`](InverseLimit.lean).

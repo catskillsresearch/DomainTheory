@@ -280,12 +280,6 @@ def build_tree(spine: dict[Path, Leaf]) -> Barrel:
             S(P("FunctionSpaces/1972_Proposition_3_14.md")),
         ],
     )
-    inverse_system = Barrel(
-        P("InverseLimits/1972_Inverse_system.md"),
-        "The inverse system",
-        "1972_Inverse_system.mermaid",
-        [L("InverseLimits/1972_InverseLimit.md")],
-    )
     embeddings = Barrel(
         P("InverseLimits/1972_Embeddings_into_the_limit.md"),
         "Embeddings into the limit",
@@ -358,7 +352,8 @@ def build_tree(spine: dict[Path, Leaf]) -> Barrel:
         "1972_4_Inverse_limits.mermaid",
         [
             S(P("InverseLimits/1972_Inverse_limits.md")),
-            inverse_system,
+            L("InverseLimits/1972_Compatibility.md"),
+            L("InverseLimits/1972_InverseLimit.md"),
             L("InverseLimits/1972_projLE.md"),
             L("InverseLimits/1972_projection.md"),
             L("InverseLimits/1972_Projections_from_the_limit.md"),

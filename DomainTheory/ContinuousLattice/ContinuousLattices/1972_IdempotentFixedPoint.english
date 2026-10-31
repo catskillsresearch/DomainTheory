@@ -4,10 +4,3 @@ Scott’s discussion after Theorem 2.12 treats a retraction $j : \mathcal{P}I \t
 
 **Definition (`IdempotentFixedPoint`).** For $e : L \to L$ on a complete lattice $L$, **`IdempotentFixedPoint e`** is the subtype $\{ x \in L \mid e x = x \}$.
 
-**Proof.** This is the formalization of “fixed points of $e$” as `{x // e x = x}` in [`IdempotentFixedPoint.lean`](IdempotentFixedPoint.lean). $\square$
-
-Order and topology on fixed points are developed in later notes (same library namespace **`IdempotentFixedPoint`**, separate Lean modules):
-
-- [Supremum on fixed points](1972_IdempotentFixedPoint_supremumSet.md) — **`IdempotentFixedPoint.supremumSet`**, **`supremumSet.isLUB`**
-- [Complete lattice on fixed points](1972_IdempotentFixedPoint_completeLattice.md) — **`IdempotentFixedPoint.completeLattice`**, **`completeLattice.coe`**
-- Retraction, **`ContinuousLattice`**, and Scott subspace topology — [`IdempotentFixedPoint/scottContinuous.lean`](IdempotentFixedPoint/scottContinuous.lean) (via Proposition 2.10)

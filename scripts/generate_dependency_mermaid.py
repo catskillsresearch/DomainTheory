@@ -20,7 +20,8 @@ BULLET_MD = re.compile(r"^\s*-\s+\[[^\]]*\]\(([^)]+)\)\s*$")
 # Non-greedy title (same as compile_md_tree TOC) so ``$[D \to D']$`` in link text parses.
 OUTLINE_LINK = re.compile(
     r"^\s*(?:-\s+|\d+\.\s+)\[(?P<title>.+?)\]\((?P<href>[^)]+\.md)\)"
-    r"(?:[ \t]+\[[^\]]*\]\([^)]*\))?[ \t]*$"
+    r"(?:[ \t]+\[[^\]]*\]\([^)]*\))*"
+    r"(?:[ \t]+✓)?[ \t]*$"
 )
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
 CL1972_SECTION_MERMAIDS = frozenset(
@@ -572,6 +573,7 @@ def gen_note_outline(
     transitive_modules: bool = True,
     subgraph_groups: list[tuple[str, list[str]]] | None = None,
     rank_same_titles: list[list[str]] | None = None,
+    flowchart: str = "flowchart TB",
 ) -> str:
     header, old_labels, style = parse_preserve_tail(old)
     index_md = find_index_md(mermaid)
@@ -768,6 +770,7 @@ def gen_note_outline(
         edges,
         style,
         labeled=labeled,
+        flowchart=flowchart,
         node_order=outline_nids,
         subgraphs=subgraphs,
         rank_same=rank_same,
@@ -1055,12 +1058,18 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
     if kind == "top_chapters":
         return gen_top_chapters(mermaid, modules, old)
     if kind == "cl1972_section":
+        section_flowchart = (
+            "flowchart TD"
+            if mermaid.name == "1972_4_Inverse_limits.mermaid"
+            else "flowchart LR"
+        )
         return gen_note_outline(
             mermaid,
             modules,
             old,
             reduce=True,
             box_modules_fn=cl1972_outline_box_modules,
+            flowchart=section_flowchart,
         )
     if kind == "cl1972_chapter":
         cl_ids = {
