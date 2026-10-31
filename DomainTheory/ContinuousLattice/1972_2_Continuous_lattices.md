@@ -16,6 +16,7 @@
 - [Continuous lattice retraction](FunctionSpaces/1972_Continuous_lattice_retraction.md) ✓
 - [Converse retraction](FunctionSpaces/1972_Converse_retraction.md) ✓
 - [Continuous lattice projection](FunctionSpaces/1972_Continuous_lattice_projection.md) ✓
+- [Converse projection](FunctionSpaces/1972_Converse_projection.md) ✓
 - [Proof of 2.10](FunctionSpaces/1972_Proposition_2_10_revisited.md) ✓
 - [Proof of 2.11](Constructions/1972_Proof_of_2_11.md) ✓
 - [Idempotent fixed points](ContinuousLattices/1972_IdempotentFixedPoint.md) ✓

@@ -13,3 +13,11 @@ In the namespace **`ConverseRetraction`** we have
 **Theorem (`preservesDirectedSup`).** *Suppose $i(\bigsqcup S) = \bigsqcup i(S)$ for every $S \subseteq D$, that $x \ll y$ implies $i(x) \ll i(y)$, and that $D$ is a continuous lattice. Then $j$ preserves directed suprema.*
 
 *Proof.* For directed $S' \subseteq D'$, one inequality follows from monotonicity: $j(\bigsqcup S')$ is an upper bound of $j(S')$. For the reverse, any $x$ with $i(x) \le \bigsqcup S'$ is way-below that supremum in $D'$, hence way-below some $x' \in S'$ by directedness; then $x \le j(x') \le \bigsqcup j(S')$. Continuity of $D$ rewrites $j(\bigsqcup S')$ as a supremum of such $x$. $\square$
+
+**Theorem (`incl_converseRetr_le`).** *If $i(\bigsqcup S) = \bigsqcup i(S)$ for all $S$, then for every $x' \in D'$, $i(j(x')) \le x'$.*
+
+*Proof.* Each element of $\{x \mid i(x) \le x'\}$ maps under $i$ into $\uparrow x'$; take the supremum. $\square$
+
+**Theorem (`converseRetr_incl`).** *Under the same $\bigsqcup$-preservation, if $i$ is injective, then $j(i(y)) = y$.*
+
+*Proof.* The set $\{x \mid i(x) \le i(y)\}$ is exactly $\downarrow y$; its supremum is $y$. $\square$

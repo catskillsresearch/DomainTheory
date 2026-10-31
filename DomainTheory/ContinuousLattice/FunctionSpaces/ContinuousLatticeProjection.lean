@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetraction
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ConverseRetraction
 
 @[expose] public section
 
@@ -168,39 +167,6 @@ theorem le_of_incl_le (i : D → D') (hi : ∀ S : Set D, i (sSup S) = sSup (i '
   have h1 : i (x ⊔ y) = i y := by rw [incl_sup_of_preservesSSup i hi, sup_eq_right.mpr h]
   exact sup_eq_right.mp (hinj h1)
 
-theorem incl_converseRetr_le (i : D → D') (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
-    (x' : D') :
-    i (ConverseRetraction.ConverseRetraction i x') ≤ x' := by
-  show i (sSup {x | i x ≤ x'}) ≤ x'
-  rw [hi]
-  exact sSup_le (by rintro _ ⟨x, hx, rfl⟩; exact hx)
-
-theorem converseRetr_incl (i : D → D') (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
-    (hinj : Function.Injective i) (y : D) :
-    ConverseRetraction.ConverseRetraction i (i y) = y := by
-  have hset : {x | i x ≤ i y} = Set.Iic y := by
-    ext x
-    simp only [Set.mem_ofPred_eq, Set.mem_Iic]
-    exact ⟨le_of_incl_le i hi hinj, fun hx => incl_mono_of_preservesSSup i hi hx⟩
-  show sSup {x | i x ≤ i y} = y
-  rw [hset]
-  exact le_antisymm (sSup_le fun _ hx => hx) (le_sSup le_rfl)
-
-noncomputable def converseProjection (i : D → D')
-    (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S)) (hinj : Function.Injective i)
-    (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : ContinuousLattice D) :
-    ContinuousLatticeProjection D D' where
-  incl := ⟨i, PreservesDirectedSup.continuous_of (fun _ _ _ => hi _)⟩
-  retr := ⟨ConverseRetraction.ConverseRetraction i, PreservesDirectedSup.continuous_of
-    (ConverseRetraction.preservesDirectedSup i hi hwb hD)⟩
-  retr_incl := fun d => converseRetr_incl i hi hinj d
-  incl_retr_le := fun x' => incl_converseRetr_le i hi x'
-
 end ContinuousLatticeProjection
-
-variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
-variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
-
-def Compatible (x : ∀ n, D n) : Prop := ∀ n, (P n).retr (x (n + 1)) = x n
 
 end DomainTheory.ContinuousLattice

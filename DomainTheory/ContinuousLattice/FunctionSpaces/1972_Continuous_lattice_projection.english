@@ -70,16 +70,4 @@ $$j(x') = \bigsqcup \{\, x \in D \mid i(x) \le x' \,\}.$$
 
 *Proof.* $i(x \sqcup y) = i(y)$ forces $x \sqcup y = y$ by injectivity. $\square$
 
-**Theorem (`incl_converseRetr_le`).** *If $i(\bigsqcup S) = \bigsqcup i(S)$ for all $S$, then for every $x' \in D'$,*
-
-$$i\bigl(\mathrm{ConverseRetraction}(i)(x')\bigr) \le x'.$$
-
-*Proof.* Each element of $\{x \mid i(x) \le x'\}$ maps under $i$ into $\uparrow x'$; take the supremum. $\square$
-
-**Theorem (`converseRetr_incl`).** *Under the same $\bigsqcup$-preservation, if $i$ is injective, then $\mathrm{ConverseRetraction}(i)(i(y)) = y$.*
-
-*Proof.* The set $\{x \mid i(x) \le i(y)\}$ is exactly $\downarrow y$; its supremum is $y$. $\square$
-
-**Definition (`converseProjection`).** *When $i : D \to D'$ is injective, preserves suprema of sets, preserves way-below, and $D$ is a continuous lattice, **`converseProjection i`** is the **`ContinuousLatticeProjection`** with inclusion $i$ and retraction $\mathrm{ConverseRetraction}(i)$.*
-
-*Proof.* **`converseRetr_incl`** and **`incl_converseRetr_le`** supply **`retr_incl`** and **`incl_retr_le`**; Scott continuity comes from **`ConverseRetraction.preservesDirectedSup`**. $\square$
+Building a projection from an inclusion $i$ and the converse retraction is in [Converse projection](1972_Converse_projection.md).

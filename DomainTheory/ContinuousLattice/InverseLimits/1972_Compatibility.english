@@ -1,0 +1,5 @@
+Scott's review of inverse limits at the start of §4 (see [Inverse limits](../1972_4_Inverse_limits.md)) takes the limit as infinite sequences $\langle x_n \rangle_{n=0}^{\infty}$ with $x_n \in X_n$ and $j_n(x_{n+1}) = x_n$. For the projection tower $\langle D_n, P_n \rangle$, $j_n$ is **`(P n).retr`**.
+
+**Definition (`Compatible`).** **`Compatible D P x`** holds when $\forall n,\; (P\,n).\mathrm{retr}\,(x\,(n+1)) = x\,n$ for **`x : ∀ n, D n`**.
+
+The formalization is in [`Compatible.lean`](Compatible.lean).

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.InverseLimits.Compatible
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section

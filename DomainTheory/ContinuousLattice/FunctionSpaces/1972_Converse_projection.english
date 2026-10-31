@@ -1,0 +1,5 @@
+When $i : D \to D'$ is injective, preserves suprema of sets, preserves way-below, and $D$ is a continuous lattice, Scott builds a **continuous lattice projection** from $i$ and the converse retraction (see [Converse retraction](1972_Converse_retraction.md)). The library name is **`ConverseProjection i`** ([`ConverseProjection.lean`](ConverseProjection.lean)).
+
+**Definition (`ConverseProjection`).** *Under the hypotheses above, **`ConverseProjection i`** is the **`ContinuousLatticeProjection`** with inclusion $i$ and retraction **`ConverseRetraction.ConverseRetraction i`**.
+
+*Proof.* **`ConverseRetraction.converseRetr_incl`** and **`ConverseRetraction.incl_converseRetr_le`** supply **`retr_incl`** and **`incl_retr_le`**; Scott continuity comes from **`ConverseRetraction.preservesDirectedSup`**. $\square$

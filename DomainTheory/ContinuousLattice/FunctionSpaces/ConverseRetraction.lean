@@ -2,6 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
 
 -- Namespace and map share the name `ConverseRetraction`.
 set_option linter.dupNamespace false
@@ -46,6 +47,25 @@ theorem preservesDirectedSup (i : D → D')
   · apply sSup_le
     rintro _ ⟨x', hx'S', rfl⟩
     exact mono i (le_sSup hx'S')
+
+theorem incl_converseRetr_le (i : D → D') (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
+    (x' : D') :
+    i (ConverseRetraction i x') ≤ x' := by
+  show i (sSup {x | i x ≤ x'}) ≤ x'
+  rw [hi]
+  exact sSup_le (by rintro _ ⟨x, hx, rfl⟩; exact hx)
+
+theorem converseRetr_incl (i : D → D') (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
+    (hinj : Function.Injective i) (y : D) :
+    ConverseRetraction i (i y) = y := by
+  have hset : {x | i x ≤ i y} = Set.Iic y := by
+    ext x
+    simp only [Set.mem_ofPred_eq, Set.mem_Iic]
+    exact ⟨ContinuousLatticeProjection.le_of_incl_le i hi hinj,
+      fun hx => ContinuousLatticeProjection.incl_mono_of_preservesSSup i hi hx⟩
+  show sSup {x | i x ≤ i y} = y
+  rw [hset]
+  exact le_antisymm (sSup_le fun _ hx => hx) (le_sSup le_rfl)
 
 end ConverseRetraction
 

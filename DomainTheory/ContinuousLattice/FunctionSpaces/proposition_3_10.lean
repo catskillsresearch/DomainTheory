@@ -2,6 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ConverseProjection
 
 @[expose] public section
 
@@ -21,7 +22,7 @@ theorem proposition_3_10 (hD : ContinuousLattice D) (hD' : ContinuousLattice D')
         ∧ (∀ x', (P.retr : D' → D) x' = sSup { x | i x ≤ x' })) := by
   constructor
   · rintro ⟨hi, hinj, hwb⟩
-    refine ⟨ContinuousLatticeProjection.converseProjection i hi hinj
+    refine ⟨ConverseProjection i hi hinj
       (fun {x y} h => hwb x y h) hD, fun _ => rfl, fun _ => rfl⟩
   · rintro ⟨P, hincl, _⟩
     refine ⟨?_, ?_, ?_⟩
