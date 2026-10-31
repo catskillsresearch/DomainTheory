@@ -1,7 +1,7 @@
 module
 
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
 
 import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 @[expose] public section

@@ -7,6 +7,6 @@ Starting from the topological point of view a certain wide class of $T_0$-spaces
 0. [Introduction](1972_Introduction.md) [✓](ContinuousLattice/1972_REVISION.md)
 1. [Injective spaces](ContinuousLattice/Injective/1972_Injective_spaces.md) [✓](ContinuousLattice/1972_REVISION.md)
 2. [Continuous lattices](ContinuousLattice/1972_2_Continuous_lattices.md) [✓](ContinuousLattice/1972_REVISION.md)
-3. [Function spaces](ContinuousLattice/1972_3_Function_spaces.md)
+3. [Function spaces](ContinuousLattice/1972_3_Function_spaces.md) [✓](ContinuousLattice/1972_REVISION.md)
 4. [Inverse limits](ContinuousLattice/1972_4_Inverse_limits.md)
 5. [Correction](ContinuousLattice/MilnerCorrection/1972_Correction.md)

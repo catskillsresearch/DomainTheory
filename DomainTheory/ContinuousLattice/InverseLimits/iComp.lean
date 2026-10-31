@@ -3,7 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.InverseLimits.embLE
 public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
-public import DomainTheory.ContinuousLattice.InverseLimits.Compatible
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 public import Mathlib.Data.Set.Basic

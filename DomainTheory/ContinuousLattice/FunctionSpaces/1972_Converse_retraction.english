@@ -1,0 +1,15 @@
+**Definition.** Let $D$ and $D'$ be complete lattices and let $i : D \to D'$ be Scott-continuous. The **converse retraction** along $i$ is the map $j : D' \to D$ given by
+
+$$j(x') = \bigsqcup \{ x \in D \mid i(x) \le x' \}.$$
+
+The library name is **`ConverseRetraction.ConverseRetraction i`** ([`ConverseRetraction.lean`](ConverseRetraction.lean)).
+
+In the namespace **`ConverseRetraction`** we have
+
+**Theorem (`mono`).** *The map $x' \mapsto j(x')$ is monotone.*
+
+*Proof.* If $a' \le b'$, every $x$ with $i(x) \le a'$ also satisfies $i(x) \le b'$, so the defining set for $j(a')$ is contained in that for $j(b')$ and $j(a') \le j(b')$. $\square$
+
+**Theorem (`preservesDirectedSup`).** *Suppose $i(\bigsqcup S) = \bigsqcup i(S)$ for every $S \subseteq D$, that $x \ll y$ implies $i(x) \ll i(y)$, and that $D$ is a continuous lattice. Then $j$ preserves directed suprema.*
+
+*Proof.* For directed $S' \subseteq D'$, one inequality follows from monotonicity: $j(\bigsqcup S')$ is an upper bound of $j(S')$. For the reverse, any $x$ with $i(x) \le \bigsqcup S'$ is way-below that supremum in $D'$, hence way-below some $x' \in S'$ by directedness; then $x \le j(x') \le \bigsqcup j(S')$. Continuity of $D$ rewrites $j(\bigsqcup S')$ as a supremum of such $x$. $\square$

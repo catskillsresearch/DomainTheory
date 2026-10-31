@@ -3,43 +3,25 @@
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
 
-  N69["con_"]
-  ContinuousLatticeRetractionProjection["ContinuousLatticeRetractionProjection"]
+  ContinuousLatticeProjection["ContinuousLatticeProjection"]
+  ContinuousLatticeRetraction["ContinuousLatticeRetraction"]
   N13["continuousMapInducedPiTopology"]
   N158["corollary_3_4"]
-  N145["fix"]
-  N146["fix_eq"]
-  N147["fix_le"]
-  N148["fix_mono"]
-  N149["fix_preservesDirectedSup"]
-  N154["fix_unique"]
-  N139["instCompleteLattice"]
-  N137["instSupSet"]
-  N71["isProjection_bot"]
-  N72["isProjection_directedSup"]
-  N135["isProjection_finsetSup"]
-  N39["isProjection_iff"]
-  N136["isProjection_sSup"]
-  N134["isProjection_sup"]
-  N114["lemma_3_9_incl_inf"]
-  N116["lemma_3_9_retr_inf"]
-  N73["min"]
-  N76["projection"]
-  N37["Projections"]
+  FunctionSpace["FunctionSpace"]
+  Projection["Projection"]
+  ProjectionSpace["ProjectionSpace"]
   N85["proposition_2_10"]
-  N51["proposition_3_10_converse"]
-  N89["proposition_3_10_forward"]
+  proposition_3_10["proposition_3_10"]
   N140["proposition_3_12"]
   N77["proposition_3_13"]
   N155["proposition_3_14"]
   N122["proposition_3_2"]
   N99["proposition_3_5"]
-  N52["proposition_3_7_projection"]
-  N53["proposition_3_7_retraction"]
+  proposition_3_7["proposition_3_7"]
+  Retraction["Retraction"]
   ScottFunctionTopology["ScottFunctionTopology"]
   N96["scottLambda"]
   N3["ScottMap"]
-  ScottMap_more["ScottMap_more"]
   N100["scottMapInducedPiTopology"]
   N0["ScottMaps"]
   N106["scottSubspaceExtend"]
@@ -47,108 +29,48 @@ flowchart TB
   N123["stepFun"]
   N127["stepMap"]
   N162["theorem_3_3"]
-  N144["toOrderHom"]
   N2["WayBelow"]
 
-  N0 -->|"1"| ContinuousLatticeRetractionProjection
-  N2 -->|"1"| ContinuousLatticeRetractionProjection
-  N3 -->|"1"| ContinuousLatticeRetractionProjection
+  ContinuousLatticeRetraction -->|"1"| ContinuousLatticeProjection
+  N0 -->|"1"| ContinuousLatticeRetraction
+  N3 -->|"1"| ContinuousLatticeRetraction
+  Projection -->|"1"| FunctionSpace
   N127 -->|"1"| N100
   N2 -->|"2"| N100
   N3 -->|"1"| N100
-  ContinuousLatticeRetractionProjection -->|"1"| N106
-  N1 -->|"1"| N106
-  N2 -->|"1"| N106
-  N3 -->|"1"| N106
-  N106 -->|"1"| N114
-  N106 -->|"1"| N116
+  ContinuousLatticeProjection -->|"1"| N106
   ScottFunctionTopology -->|"1"| N122
   N0 -->|"1"| N123
   N2 -->|"1"| N123
   N123 -->|"1"| N127
   N2 -->|"1"| N127
   N3 -->|"1"| N127
-  N3 -->|"2"| N134
-  N39 -->|"1"| N134
-  N134 -->|"1"| N135
-  N3 -->|"2"| N135
-  N71 -->|"1"| N135
-  ContinuousLatticeRetractionProjection -->|"1"| N136
-  N135 -->|"1"| N136
-  N3 -->|"2"| N136
-  N72 -->|"1"| N136
-  N136 -->|"1"| N137
-  N3 -->|"1"| N137
-  N37 -->|"1"| N137
-  N137 -->|"1"| N139
-  N136 -->|"1"| N140
-  N139 -->|"1"| N140
-  N3 -->|"1"| N140
-  N37 -->|"1"| N140
-  N3 -->|"1"| N144
-  N144 -->|"1"| N145
-  N145 -->|"1"| N146
-  N145 -->|"1"| N147
-  N145 -->|"1"| N148
-  N146 -->|"1"| N148
-  N147 -->|"1"| N148
-  N3 -->|"1"| N148
-  N0 -->|"1"| N149
-  N145 -->|"1"| N149
-  N146 -->|"1"| N149
-  N147 -->|"1"| N149
-  N148 -->|"1"| N149
-  N3 -->|"1"| N149
-  N145 -->|"1"| N154
-  N146 -->|"1"| N154
-  N147 -->|"1"| N154
-  N145 -->|"1"| N155
-  N146 -->|"1"| N155
-  N147 -->|"1"| N155
-  N149 -->|"1"| N155
-  N154 -->|"1"| N155
-  N2 -->|"1"| N155
+  ProjectionSpace -->|"1"| N140
   N3 -->|"1"| N155
   N0 -->|"2"| N158
   N3 -->|"1"| N158
   ScottFunctionTopology -->|"1"| N158
   N100 -->|"1"| N162
   N127 -->|"1"| N162
-  N0 -->|"3"| N3
+  N0 -->|"2"| N3
   N2 -->|"1"| N3
-  N3 -->|"1"| N37
-  N3 -->|"1"| N39
-  ContinuousLatticeRetractionProjection -->|"1"| N51
-  N2 -->|"2"| N51
-  ScottMap_more -->|"1"| N52
-  ScottMap_more -->|"1"| N53
-  N0 -->|"1"| N69
-  N3 -->|"1"| N69
-  N3 -->|"1"| N71
-  N39 -->|"1"| N71
-  N3 -->|"2"| N72
-  N39 -->|"1"| N72
-  N0 -->|"1"| N73
-  N3 -->|"1"| N73
-  ContinuousLatticeRetractionProjection -->|"1"| N76
-  N3 -->|"1"| N76
-  N69 -->|"1"| N76
-  N73 -->|"1"| N76
-  ContinuousLatticeRetractionProjection -->|"1"| N77
-  N2 -->|"1"| N77
-  N3 -->|"1"| N77
-  N76 -->|"1"| N77
-  ContinuousLatticeRetractionProjection -->|"1"| N85
+  ContinuousLatticeProjection -->|"1"| N77
+  Projection -->|"1"| N77
+  ContinuousLatticeProjection -->|"1"| N85
   N0 -->|"1"| N85
-  ContinuousLatticeRetractionProjection -->|"1"| N89
-  N2 -->|"2"| N89
   N0 -->|"1"| N96
   N3 -->|"1"| N96
   N96 -->|"1"| N99
+  ContinuousLatticeProjection -->|"1"| Projection
+  Retraction -->|"1"| Projection
+  ContinuousLatticeProjection -->|"1"| ProjectionSpace
+  N3 -->|"1"| ProjectionSpace
+  N3 -->|"1"| Retraction
   N1 -->|"2"| ScottFunctionTopology
   N13 -->|"1"| ScottFunctionTopology
-  ContinuousLatticeRetractionProjection -->|"1"| ScottMap_more
-  N3 -->|"1"| ScottMap_more
+  ContinuousLatticeProjection -->|"1"| proposition_3_10
+  N2 -->|"1"| proposition_3_10
+  FunctionSpace -->|"1"| proposition_3_7
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

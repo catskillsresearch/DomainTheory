@@ -1,7 +1,7 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetraction
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ConverseRetraction
 
 @[expose] public section
 
@@ -13,93 +13,6 @@ open Set Finset
 
 variable {D : Type u} {D' : Type v}
 variable [CompleteLattice D] [CompleteLattice D']
-
-structure ContinuousLatticeRetraction (D : Type u) (D' : Type v)
-    [CompleteLattice D] [CompleteLattice D'] where
-  incl : ScottMap D D'
-  retr : ScottMap D' D
-  retr_incl : ∀ d, retr (incl d) = d
-
-namespace ContinuousLatticeRetraction
-
-theorem incl_preservesDirectedSup (R : ContinuousLatticeRetraction D D') :
-    PreservesDirectedSup (R.incl : D → D') :=
-  fun _ hS hSdir => R.incl.preservesDirectedSup_coe _ hS hSdir
-
-theorem image_retr_wayBelow_directed (R : ContinuousLatticeRetraction D D') (d : D) :
-    DirectedOn (· ≤ ·) (Set.image (R.retr : D' → D) {x' | x' ≪ R.incl d}) := by
-  rintro _ ⟨a, ha, rfl⟩ _ ⟨b, hb, rfl⟩
-  exact ⟨R.retr (a ⊔ b), ⟨a ⊔ b, WayBelow.sup ha hb, rfl⟩,
-    R.retr.monotone le_sup_left, R.retr.monotone le_sup_right⟩
-
-theorem image_retr_wayBelow_nonempty (R : ContinuousLatticeRetraction D D') (d : D) :
-    (Set.image (R.retr : D' → D) {x' | x' ≪ R.incl d}).Nonempty :=
-  ⟨R.retr ⊥, ⊥, WayBelow.bot _, rfl⟩
-
-theorem sSup_image_retr_wayBelow (R : ContinuousLatticeRetraction D D') (hD' : ContinuousLattice D')
-    (d : D) :
-    sSup (Set.image (R.retr : D' → D) {x' | x' ≪ R.incl d}) = d := by
-  have hne : ({x' : D' | x' ≪ R.incl d}).Nonempty := ⟨⊥, WayBelow.bot _⟩
-  have hdir : DirectedOn (· ≤ ·) {x' : D' | x' ≪ R.incl d} := WayBelow.directedOn _
-  rw [← R.retr.preservesDirectedSup_coe _ hne hdir, hD'.sSup_wayBelow (R.incl d), R.retr_incl d]
-
-theorem retr_wayBelow_of_wayBelow_incl (R : ContinuousLatticeRetraction D D') {d : D} {x' : D'}
-    (hx' : x' ≪ R.incl d) : R.retr x' ≪ d := by
-  obtain ⟨U', hU'open, hd_in, hU'sub⟩ := hx'
-  refine ⟨(R.incl : D → D') ⁻¹' U', scottOpen_preimage R.incl_preservesDirectedSup hU'open,
-    hd_in, fun z hz => ?_⟩
-  have hle : x' ≤ R.incl z := Set.mem_Ici.1 (hU'sub hz)
-  have hjle := R.retr.monotone hle
-  rw [R.retr_incl z] at hjle
-  exact Set.mem_Ici.2 hjle
-
-noncomputable def ambientSSup (R : ContinuousLatticeRetraction D D') (S : Set D) : D' :=
-  sSup (Set.image (R.incl : D → D') S)
-
-theorem retr_ambientSSup_eq_sSup (R : ContinuousLatticeRetraction D D') (S : Set D)
-    (hS : S.Nonempty) (hdir : DirectedOn (· ≤ ·) S) :
-    R.retr (ambientSSup R S) = sSup S := by
-  unfold ambientSSup
-  have hdir' : DirectedOn (· ≤ ·) (Set.image (R.incl : D → D') S) := by
-    intro p hp q hq
-    obtain ⟨a, ha, rfl⟩ := hp
-    obtain ⟨b, hb, rfl⟩ := hq
-    obtain ⟨c, hc, hac, hbc⟩ := hdir a ha b hb
-    exact ⟨R.incl c, Set.mem_image_of_mem _ hc, R.incl.monotone hac, R.incl.monotone hbc⟩
-  have hne' : (Set.image (R.incl : D → D') S).Nonempty := Set.image_nonempty.2 hS
-  rw [R.retr.preservesDirectedSup_coe (Set.image (R.incl : D → D') S) hne' hdir']
-  rw [Set.image_image, Set.image_congr fun a _ => R.retr_incl a]
-  simp
-
-noncomputable def converseRetr (i : D → D') (x' : D') : D :=
-  sSup {x | i x ≤ x'}
-
-theorem converseRetr_mono (i : D → D') : Monotone (converseRetr i) := by
-  intro a b hab
-  exact sSup_le_sSup fun _ hx => le_trans hx hab
-
-theorem converseRetr_preservesDirectedSup (i : D → D')
-    (_hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
-    (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : ContinuousLattice D) :
-    PreservesDirectedSup (converseRetr i) := by
-  intro S' hS'ne hS'dir
-  apply le_antisymm
-  · show sSup {x | i x ≤ sSup S'} ≤ sSup (converseRetr i '' S')
-    apply sSup_le
-    intro x hx
-    have hx' : i x ≤ sSup S' := hx
-    rw [← hD.sSup_wayBelow x]
-    apply sSup_le
-    intro z hz
-    have hiz : i z ≪ sSup S' := (hwb hz).trans_le hx'
-    obtain ⟨x', hx'S', hzx'⟩ := (WayBelow.sSup_iff hS'ne hS'dir).1 hiz
-    have hz_mem : z ∈ {x | i x ≤ x'} := hzx'.le
-    exact le_trans (le_sSup hz_mem) (le_sSup ⟨x', hx'S', rfl⟩)
-  · apply sSup_le
-    rintro _ ⟨x', hx'S', rfl⟩
-    exact converseRetr_mono i (le_sSup hx'S')
-
-end ContinuousLatticeRetraction
 
 structure ContinuousLatticeProjection (D : Type u) (D' : Type v)
     [CompleteLattice D] [CompleteLattice D']
@@ -257,14 +170,14 @@ theorem le_of_incl_le (i : D → D') (hi : ∀ S : Set D, i (sSup S) = sSup (i '
 
 theorem incl_converseRetr_le (i : D → D') (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
     (x' : D') :
-    i (ContinuousLatticeRetraction.converseRetr i x') ≤ x' := by
+    i (ConverseRetraction.ConverseRetraction i x') ≤ x' := by
   show i (sSup {x | i x ≤ x'}) ≤ x'
   rw [hi]
   exact sSup_le (by rintro _ ⟨x, hx, rfl⟩; exact hx)
 
 theorem converseRetr_incl (i : D → D') (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
     (hinj : Function.Injective i) (y : D) :
-    ContinuousLatticeRetraction.converseRetr i (i y) = y := by
+    ConverseRetraction.ConverseRetraction i (i y) = y := by
   have hset : {x | i x ≤ i y} = Set.Iic y := by
     ext x
     simp only [Set.mem_ofPred_eq, Set.mem_Iic]
@@ -278,11 +191,16 @@ noncomputable def converseProjection (i : D → D')
     (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : ContinuousLattice D) :
     ContinuousLatticeProjection D D' where
   incl := ⟨i, PreservesDirectedSup.continuous_of (fun _ _ _ => hi _)⟩
-  retr := ⟨ContinuousLatticeRetraction.converseRetr i, PreservesDirectedSup.continuous_of
-    (ContinuousLatticeRetraction.converseRetr_preservesDirectedSup i hi hwb hD)⟩
+  retr := ⟨ConverseRetraction.ConverseRetraction i, PreservesDirectedSup.continuous_of
+    (ConverseRetraction.preservesDirectedSup i hi hwb hD)⟩
   retr_incl := fun d => converseRetr_incl i hi hinj d
   incl_retr_le := fun x' => incl_converseRetr_le i hi x'
 
 end ContinuousLatticeProjection
+
+variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
+variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
+
+def Compatible (x : ∀ n, D n) : Prop := ∀ n, (P n).retr (x (n + 1)) = x n
 
 end DomainTheory.ContinuousLattice

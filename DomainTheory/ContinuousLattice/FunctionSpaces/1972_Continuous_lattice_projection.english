@@ -1,0 +1,85 @@
+**Definition.** A **continuous lattice projection** is a continuous lattice retraction $i : D \to D'$, $j : D' \to D$ with $j \circ i = \mathrm{id}_D$ that also satisfies $i(j(x')) \le x'$ for all $x' \in D'$. The library extends **`ContinuousLatticeRetraction`** to **`ContinuousLatticeProjection D D'`** with the field **`incl_retr_le`**. Scott's Definition 3.6 uses this data for function-space extensions; Proposition 2.10 and later §3 results build on it.
+
+In the namespace **`ContinuousLatticeProjection`** we have
+
+**Theorem (`retr_bot`).** *For a projection $P$, $j(\bot_{D'}) = \bot_D$.*
+
+*Proof.* $\bot_{D'} \le i(\bot_D)$, so $j(\bot_{D'}) \le j(i(\bot_D)) = \bot_D$; the reverse is $\bot_D \le j(\bot_{D'})$. $\square$
+
+**Theorem (`incl_bot`).** *$i(\bot_D) = \bot_{D'}$.*
+
+*Proof.* By **`incl_retr_le`**, $i(j(\bot_{D'})) \le \bot_{D'}$; with **`retr_bot`**, $i(\bot_D) \le \bot_{D'}$. $\square$
+
+**Theorem (`retr_eq_sSup`).** *For every $x' \in D'$,*
+
+$$j(x') = \bigsqcup \{\, x \in D \mid i(x) \le x' \,\}.$$
+
+*Proof.* **`incl_retr_le`** gives $i(j(x')) \le x'$, so $j(x')$ lies in the set and is below its supremum. Any $x$ with $i(x) \le x'$ satisfies $x = j(i(x)) \le j(x')$ by monotonicity of $j$. $\square$
+
+**Theorem (`incl_wayBelow`).** *If $D$ is a continuous lattice and $x \ll y$ in $D$, then $i(x) \ll i(y)$ in $D'$.*
+
+*Proof.* Rewrite $y$ as a directed supremum of way-below elements in $D'$ below $i(y)$, pull back along $j$, and use $x \ll y$ with **`incl_retr_le`** on the approximants. $\square$
+
+**Theorem (`incl_injective`).** *$i$ is injective.*
+
+*Proof.* From $i(x) = i(y)$ apply $j$ and **`retr_incl`**. $\square$
+
+**Theorem (`incl_sup`).** *$i(x \sqcup y) = i(x) \sqcup i(y)$.*
+
+*Proof.* Monotonicity gives one inequality; the other uses $x, y \le j(i(x) \sqcup i(y))$ from **`retr_incl`**, then **`incl_retr_le`** at $i(x) \sqcup i(y)$. $\square$
+
+**Theorem (`incl_finset_sup`).** *For finite $T \subseteq D$, $i(\bigsqcup T) = \bigsqcup i(T)$.*
+
+*Proof.* Induction on $T$ using **`incl_sup`** and **`incl_bot`**. $\square$
+
+**Definition (`finsetSupOf`).** *For $S \subseteq D$, let **`finsetSupOf S`** be the set of finite suprema $\bigsqcup T$ with $T \subseteq_{\mathrm{fin}} S$.*
+
+**Theorem (`directedOn_finsetSupOf`).** *`finsetSupOf S` is directed.*
+
+*Proof.* Given two finite suprema from $T_1, T_2 \subseteq S$, their common upper bound is the supremum of $T_1 \cup T_2$. $\square$
+
+**Theorem (`mem_finsetSupOf_of_mem`).** *If $x \in S$, then $x \in \mathrm{finsetSupOf}\, S$.*
+
+*Proof.* Take the singleton finset $\{x\}$. $\square$
+
+**Theorem (`sSup_le_finsetSupOf`).** *$\bigsqcup \mathrm{finsetSupOf}\, S \le \bigsqcup S$.*
+
+*Proof.* Each finite supremum in **`finsetSupOf S`** is below $\bigsqcup S$. $\square$
+
+**Theorem (`le_sSup_finsetSupOf`).** *$\bigsqcup S \le \bigsqcup \mathrm{finsetSupOf}\, S$.*
+
+*Proof.* Every $x \in S$ appears in **`finsetSupOf S`**. $\square$
+
+**Theorem (`sSup_finsetSupOf`).** *$\bigsqcup S = \bigsqcup \mathrm{finsetSupOf}\, S$.*
+
+*Proof.* Antisymmetry of the two preceding inequalities. $\square$
+
+**Theorem (`incl_sSup`).** *$i(\bigsqcup S) = \bigsqcup i(S)$.*
+
+*Proof.* Empty $S$ uses **`incl_bot`**. Otherwise replace $\bigsqcup S$ by finite suprema via **`sSup_finsetSupOf`**, use directedness and **`incl_finset_sup`**, and compare with the image under $i$. $\square$
+
+**Theorem (`incl_sup_of_preservesSSup`).** *If $i(\bigsqcup S) = \bigsqcup i(S)$ for all $S$, then $i(x \sqcup y) = i(x) \sqcup i(y)$.*
+
+*Proof.* Write $x \sqcup y$ as $\bigsqcup \{x,y\}$. $\square$
+
+**Theorem (`incl_mono_of_preservesSSup`).** *Under the same hypothesis, $i$ is monotone.*
+
+*Proof.* If $x \le y$, apply **`incl_sup_of_preservesSSup`** and read off $i(x) \le i(y)$. $\square$
+
+**Theorem (`le_of_incl_le`).** *If $i$ is injective and preserves suprema of sets, then $i(x) \le i(y)$ implies $x \le y$.*
+
+*Proof.* $i(x \sqcup y) = i(y)$ forces $x \sqcup y = y$ by injectivity. $\square$
+
+**Theorem (`incl_converseRetr_le`).** *If $i(\bigsqcup S) = \bigsqcup i(S)$ for all $S$, then for every $x' \in D'$,*
+
+$$i\bigl(\mathrm{ConverseRetraction}(i)(x')\bigr) \le x'.$$
+
+*Proof.* Each element of $\{x \mid i(x) \le x'\}$ maps under $i$ into $\uparrow x'$; take the supremum. $\square$
+
+**Theorem (`converseRetr_incl`).** *Under the same $\bigsqcup$-preservation, if $i$ is injective, then $\mathrm{ConverseRetraction}(i)(i(y)) = y$.*
+
+*Proof.* The set $\{x \mid i(x) \le i(y)\}$ is exactly $\downarrow y$; its supremum is $y$. $\square$
+
+**Definition (`converseProjection`).** *When $i : D \to D'$ is injective, preserves suprema of sets, preserves way-below, and $D$ is a continuous lattice, **`converseProjection i`** is the **`ContinuousLatticeProjection`** with inclusion $i$ and retraction $\mathrm{ConverseRetraction}(i)$.*
+
+*Proof.* **`converseRetr_incl`** and **`incl_converseRetr_le`** supply **`retr_incl`** and **`incl_retr_le`**; Scott continuity comes from **`ConverseRetraction.preservesDirectedSup`**. $\square$

@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.ContinuousLattices.IdempotentFixedPoint.completeLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_2_10
 public import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace

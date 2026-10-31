@@ -1,0 +1,39 @@
+**Definition.** For complete lattices $D$ and $D'$, a **continuous lattice retraction** of $D$ into $D'$ is a pair of Scott-continuous maps $i : D \to D'$ and $j : D' \to D$ such that $j \circ i = \mathrm{id}_D$. The library packages this as **`ContinuousLatticeRetraction D D'`** with **`incl`** ($i$), **`retr`** ($j$), and **`retr_incl`**.
+
+In the namespace **`ContinuousLatticeRetraction`** we have
+
+**Theorem (`incl_preservesDirectedSup`).** *The inclusion $i$ preserves directed suprema: for every directed set $S \subseteq D$,*
+
+$$i(\bigsqcup S) = \bigsqcup i(S).$$
+
+*Proof.* $i$ is Scott-continuous as a **`ScottMap`**, and that is exactly preservation of directed suprema. $\square$
+
+**Theorem (`image_retr_wayBelow_directed`).** *Fix $d \in D$. The set*
+
+$$J_d := \{\, j(x') \mid x' \ll i(d)\,\}$$
+
+*is directed in $D$.*
+
+*Proof.* Given $j(a)$ and $j(b)$ with $a, b \ll i(d)$, the way-below relation is closed under finite suprema, so $a \sqcup b \ll i(d)$; monotonicity of $j$ then yields an upper bound $j(a \sqcup b)$ in $J_d$ below both elements. $\square$
+
+**Theorem (`image_retr_wayBelow_nonempty`).** *The set $J_d$ is nonempty.*
+
+*Proof.* $\bot \ll i(d)$ and $j(\bot) \in J_d$. $\square$
+
+**Theorem (`sSup_image_retr_wayBelow`).** *If $D$ is a continuous lattice, then for every $d \in D$,*
+
+$$\bigsqcup J_d = d.$$
+
+*Proof.* The set $\{\, x' \mid x' \ll i(d)\,\}$ is directed and nonempty, so $j$ preserves its supremum. On that set the continuous-lattice identity $i(d) = \bigsqcup \{ x' \mid x' \ll i(d)\}$ and $j \circ i = \mathrm{id}_D$ give $\bigsqcup J_d = j(i(d)) = d$. $\square$
+
+**Theorem (`retr_wayBelow_of_wayBelow_incl`).** *If $x' \ll i(d)$ in $D'$, then $j(x') \ll d$ in $D$.*
+
+*Proof.* By the definition of $x' \ll i(d)$ there is a Scott-open $U' \subseteq D'$ with $i(d) \in U'$ and $U' \subseteq \uparrow x'$. The preimage $i^{-1}(U')$ is Scott-open because $i$ preserves directed suprema; it contains $d$ and every $z \in i^{-1}(U')$ satisfies $x' \le i(z)$, hence $j(x') \le j(i(z)) = z$. So $j(x') \ll d$. $\square$
+
+**Definition (`ambientSSup`).** *For $S \subseteq D$, the ambient supremum is $i(\bigsqcup S)$ in $D'$ (the join taken in $D$, then mapped forward).*
+
+**Theorem (`retr_ambientSSup_eq_sSup`).** *If $S \subseteq D$ is nonempty and directed, then*
+
+$$j\bigl(i(\bigsqcup S)\bigr) = \bigsqcup S.$$
+
+*Proof.* The image $i(S)$ is directed, so $i(\bigsqcup S) = \bigsqcup i(S)$ and $j$ preserves that directed supremum. Pulling back along $j \circ i = \mathrm{id}_D$ on $S$ yields the claim. $\square$

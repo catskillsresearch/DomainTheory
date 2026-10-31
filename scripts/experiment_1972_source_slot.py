@@ -284,7 +284,7 @@ def build_tree(spine: dict[Path, Leaf]) -> Barrel:
         P("InverseLimits/1972_Inverse_system.md"),
         "The inverse system",
         "1972_Inverse_system.mermaid",
-        [L("InverseLimits/1972_Compatible.md"), L("InverseLimits/1972_InverseLimit.md")],
+        [L("InverseLimits/1972_InverseLimit.md")],
     )
     embeddings = Barrel(
         P("InverseLimits/1972_Embeddings_into_the_limit.md"),

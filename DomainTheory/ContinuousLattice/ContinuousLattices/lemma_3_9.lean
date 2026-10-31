@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend
 import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
 import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous

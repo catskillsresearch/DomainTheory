@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
 public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import Mathlib.Data.Set.Basic

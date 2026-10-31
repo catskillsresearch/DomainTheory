@@ -978,9 +978,24 @@ def cl1972_external_sections(
     }
 
 
+def index_md_is_outline_barrel(mermaid: Path) -> bool:
+    """Note page imports this mermaid and lists child outline links (not a § hub)."""
+    if mermaid.name in CL1972_SECTION_MERMAIDS:
+        return False
+    index_md = find_index_md(mermaid)
+    if index_md is None:
+        return False
+    text = index_md.read_text(encoding="utf-8", errors="ignore")
+    if f'@import "{mermaid.name}"' not in text:
+        return False
+    return any(OUTLINE_LINK.match(ln) for ln in text.splitlines())
+
+
 def classify(mermaid: Path, text: str) -> str:
     if mermaid.name in CL1972_SECTION_MERMAIDS:
         return "cl1972_section"
+    if index_md_is_outline_barrel(mermaid):
+        return "note_outline"
     if mermaid.name == "1972_ContinuousLattices.mermaid":
         return "cl1972_chapter"
     if mermaid.name == "DomainTheory.mermaid":

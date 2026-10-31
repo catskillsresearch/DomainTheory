@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitPartialOrder
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitSInfCoe
 public import DomainTheory.ContinuousLattice.InverseLimits.projection_galoisConnection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section

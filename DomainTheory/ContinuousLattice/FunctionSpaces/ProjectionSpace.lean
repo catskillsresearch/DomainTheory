@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
 public import Mathlib.Data.Finset.Basic
 
 @[expose] public section

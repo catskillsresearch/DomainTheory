@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Retraction
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
 
 @[expose] public section
 
