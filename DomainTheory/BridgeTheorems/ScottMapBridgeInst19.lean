@@ -4,6 +4,7 @@ public import DomainTheory.BridgeTheorems.ConjScottMap
 public import DomainTheory.BridgeTheorems.conjScottMapFun
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
+public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_10
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_2
 public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
@@ -12,8 +13,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.scottLambda
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_5
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_2_10
-public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_10_forward
-public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_10_converse
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_12

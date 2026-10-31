@@ -208,6 +208,7 @@ import DomainTheory.ContinuousLattice.Constructions.proposition_2_8
 import DomainTheory.ContinuousLattice.Constructions.proposition_2_9
 import DomainTheory.ContinuousLattice.Constructions.proposition_3_8
 import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
+public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_10
 import DomainTheory.ContinuousLattice.Constructions.scottExtend
 import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_directed
 import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_nonempty
@@ -274,8 +275,6 @@ import DomainTheory.ContinuousLattice.FunctionSpaces.isProjection_sup
 import DomainTheory.ContinuousLattice.FunctionSpaces.min
 import DomainTheory.ContinuousLattice.FunctionSpaces.projection
 import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_2_10
-import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_10_converse
-import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_10_forward
 import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_12
 import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_13
 import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_14

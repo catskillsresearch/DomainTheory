@@ -10,8 +10,7 @@ open Set Topology TopologicalSpace
 
 namespace scottSubspaceExtend
 
-variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-variable {D D' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLattice Y]
+variable {X Y D D' : Type*} [CompleteLattice D] [CompleteLattice D']
 
 noncomputable def inf (e : X → Y) (f : X → D) (U : Set Y) : D :=
   sInf (f '' (e ⁻¹' U))
@@ -29,22 +28,6 @@ theorem inf_eq_of_ext {e : X → Y} {f g' : X → D} (h : ∀ x, f x = g' x) (U 
   congr 1
   ext d
   simp [Set.mem_image, Set.mem_preimage, h]
-
-theorem inf_eq_of_comp {e : X → Y} {f : X → D} {U : Set Y} (f' : ScottMap Y D)
-    (h : ∀ x, f' (e x) = f x) :
-    inf e f U = sInf (Set.image (f' : Y → D) (Set.image e Set.univ ∩ U)) := by
-  have hset : f '' (e ⁻¹' U) = Set.image (f' : Y → D) (Set.image e Set.univ ∩ U) := by
-    ext d
-    simp only [Set.mem_image, Set.mem_preimage, Set.mem_inter_iff, Set.mem_univ, true_and]
-    constructor
-    · rintro ⟨x, hxU, heq⟩
-      refine ⟨e x, ⟨?_, hxU⟩, ?_⟩
-      · exact ⟨x, rfl⟩
-      · rw [h x, heq]
-    · rintro ⟨y, ⟨hex, hyU⟩, heq⟩
-      obtain ⟨x, _, rfl⟩ := hex
-      exact ⟨x, hyU, (h x).symm.trans heq⟩
-  rw [inf, hset]
 
 theorem sInf_image_le_of_subset {α : Type*} {f : α → D} {S T : Set α} (hST : S ⊆ T) :
     sInf (f '' T) ≤ sInf (f '' S) :=
@@ -86,9 +69,31 @@ theorem incl_inf {e : X → Y} (P : ContinuousLatticeProjection D D')
   le_trans (inf_mono_incl_apply (e := e) (f := f) U P)
     (inf_mono_incl (e := e) (f := f) (g := g) P hfg U)
 
+section inf_eq_of_comp
+
+variable [CompleteLattice Y]
+
+theorem inf_eq_of_comp {e : X → Y} {f : X → D} {U : Set Y} (f' : ScottMap Y D)
+    (h : ∀ x, f' (e x) = f x) :
+    inf e f U = sInf (Set.image (f' : Y → D) (Set.image e Set.univ ∩ U)) := by
+  have hset : f '' (e ⁻¹' U) = Set.image (f' : Y → D) (Set.image e Set.univ ∩ U) := by
+    ext d
+    simp only [Set.mem_image, Set.mem_preimage, Set.mem_inter_iff, Set.mem_univ, true_and]
+    constructor
+    · rintro ⟨x, hxU, heq⟩
+      refine ⟨e x, ⟨?_, hxU⟩, ?_⟩
+      · exact ⟨x, rfl⟩
+      · rw [h x, heq]
+    · rintro ⟨y, ⟨hex, hyU⟩, heq⟩
+      obtain ⟨x, _, rfl⟩ := hex
+      exact ⟨x, hyU, (h x).symm.trans heq⟩
+  rw [inf, hset]
+
+end inf_eq_of_comp
+
 end scottSubspaceExtend
 
-variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y]
+variable {X Y : Type*} [CompleteLattice Y]
 variable {D : Type*} [CompleteLattice D]
 
 noncomputable def scottSubspaceExtend (e : X → Y) (f : X → D) (y : Y) : D :=
@@ -113,6 +118,8 @@ theorem eq_of_ext {e : X → Y} {f g' : X → D} (h : ∀ x, f x = g' x) (y : Y)
   congr 1
   ext d
   simp [Set.mem_ofPred_eq, inf_eq_of_ext h]
+
+variable [TopologicalSpace X] [TopologicalSpace Y]
 
 theorem maximal (hD : ContinuousLattice D) (e : X → Y) (_he : IsEmbedding e) (f : X → D)
     (f' : ScottMap Y D) (h_ext : ∀ x, f' (e x) = f x) (y : Y) :
