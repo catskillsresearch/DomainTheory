@@ -14,6 +14,22 @@ Namespace **`ScottMap`** collects the library tools on that carrier:
 
 **Definition (`min`).** Scott's $\mathrm{min} : [D \to D] \to D$: **`min f = f(⊥)`** on the coercion.
 
+**Definition (`toOrderHom`).** **`OrderHom`** view of $f \in [D \to D]$ for least-fixed-point arguments.
+
+**Definition (`fix`).** Scott's fixed-point operator on endo-maps $[D \to D]$ (least fixpoint via **`toOrderHom`**).
+
+**Lemma (`fix_le`).** **`fix f ≤ x`** from any prefix point **`f x ≤ x`**.
+
+**Lemma (`fix_eq`).** **`f (fix f) = fix f`**.
+
+**Lemma (`fix_mono`).** **`fix`** is monotone in the Scott map argument.
+
+**Lemma (`fix_unique`).** Any least prefix point agrees with **`fix f`**.
+
+**Lemma (`fix_preservesDirectedSup`).** **`fix : [D \to D] \to D`** preserves directed suprema.
+
+**Definition (`fixMap`).** The Scott-continuous **`[D \to D] \to D`** map packaging **`fix`**; **`fixMap_apply`**.
+
 **Definition (`le`)**, **`lt`.** Pointwise order: $f \le g$ when $f(x) \le g(x)$ for all $x$.
 
 **Lemma (`le_refl'`).** Reflexivity of the pointwise order.

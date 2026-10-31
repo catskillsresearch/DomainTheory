@@ -18,7 +18,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_12
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_13
-public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_unique
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_14
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36

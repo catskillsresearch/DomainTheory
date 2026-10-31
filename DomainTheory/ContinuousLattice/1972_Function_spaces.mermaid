@@ -14,30 +14,39 @@ flowchart TB
   Corollary_3_4["Corollary 3.4"]
   Scott_functional_abstrac["Scott functional abstraction"]
   Proposition_3_5["Proposition 3.5"]
+  Retractions_and_extensio["Retractions and extensions"]
+  Definition_3_6["Definition 3.6"]
+  Function_space_retractio["Function-space retraction and projection"]
+  Proposition_3_7["Proposition 3.7"]
   Scott_subspace_extension["Scott subspace extension"]
   Proposition_3_8["Proposition 3.8"]
   Lemma_3_9["Lemma 3.9"]
   Proposition_3_10["Proposition 3.10"]
+  Definition_3_11__Project["Definition 3.11: Projection space"]
   Proposition_3_12["Proposition 3.12"]
   Proposition_3_13["Proposition 3.13"]
   Proposition_3_14["Proposition 3.14"]
 
   Elements_of___D__to_D --> Corollary_3_4
+  Definition_3_6 --> Definition_3_11__Project
   Induced_pi_topology_on --> Definition_3_1__Function
+  Retractions_and_extensio --> Definition_3_6
   Definition_3_1__Function --> Elements_of___D__to_D
-  Scott_subspace_extension --> Lemma_3_9
+  Definition_3_6 --> Function_space_retractio
+  Definition_3_6 --> Lemma_3_9
+  Proposition_3_8 --> Lemma_3_9
   Step_map___overrightarro --> Product_topology_on___D
-  Scott_subspace_extension --> Proposition_3_10
-  Scott_subspace_extension --> Proposition_3_12
-  Scott_subspace_extension --> Proposition_3_13
-  Corollary_3_4 --> Proposition_3_14
-  Proposition_3_8 --> Proposition_3_14
-  Scott_subspace_extension --> Proposition_3_14
+  Definition_3_6 --> Proposition_3_10
+  Definition_3_11__Project --> Proposition_3_12
+  Definition_3_6 --> Proposition_3_13
+  Elements_of___D__to_D --> Proposition_3_14
   Definition_3_1__Function --> Proposition_3_2
   Scott_functional_abstrac --> Proposition_3_5
+  Function_space_retractio --> Proposition_3_7
   Elements_of___D__to_D --> Proposition_3_8
+  Elements_of___D__to_D --> Retractions_and_extensio
   Elements_of___D__to_D --> Scott_functional_abstrac
-  Elements_of___D__to_D --> Scott_subspace_extension
+  Definition_3_6 --> Scott_subspace_extension
   Elements_of___D__to_D --> Step_function__pointwise
   Step_function__pointwise --> Step_map___overrightarro
   Product_topology_on___D --> Theorem_3_3

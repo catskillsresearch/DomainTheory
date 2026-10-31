@@ -258,12 +258,6 @@ import DomainTheory.ContinuousLattice.FunctionSpaces.Projection
 import DomainTheory.ContinuousLattice.FunctionSpaces.FunctionSpace
 import DomainTheory.ContinuousLattice.FunctionSpaces.continuousMapInducedPiTopology
 import DomainTheory.ContinuousLattice.FunctionSpaces.corollary_3_4
-import DomainTheory.ContinuousLattice.FunctionSpaces.fix
-import DomainTheory.ContinuousLattice.FunctionSpaces.fix_eq
-import DomainTheory.ContinuousLattice.FunctionSpaces.fix_le
-import DomainTheory.ContinuousLattice.FunctionSpaces.fix_mono
-import DomainTheory.ContinuousLattice.FunctionSpaces.fix_preservesDirectedSup
-import DomainTheory.ContinuousLattice.FunctionSpaces.fix_unique
 import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_2_10
 import DomainTheory.ContinuousLattice.FunctionSpaces.ProjectionSpace
 import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_12
@@ -277,7 +271,6 @@ import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
 import DomainTheory.ContinuousLattice.FunctionSpaces.stepFun
 import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3
-import DomainTheory.ContinuousLattice.FunctionSpaces.toOrderHom
 import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
 import DomainTheory.ContinuousLattice.Injective.RetractSubspace
 import DomainTheory.ContinuousLattice.Injective.corollary_1_6

@@ -26,4 +26,6 @@
 - [Definition 3.11: Projection space](FunctionSpaces/1972_Definition_3_11.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Proposition 3.12](FunctionSpaces/1972_Proposition_3_12.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Proposition 3.13](FunctionSpaces/1972_Proposition_3_13.md) [✓](ContinuousLattice/1972_REVISION.md)
-- [Proposition 3.14](FunctionSpaces/1972_Proposition_3_14.md)
+- [Proposition 3.14](FunctionSpaces/1972_Proposition_3_14.md) [✓](ContinuousLattice/1972_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-10-31) — <a href="../1972_REVISION.md">1972 revision progress</a></p>

@@ -1,6 +1,6 @@
 module
 
-public import Mathlib.Order.BourbakiWitt
+public import Mathlib.Order.FixedPoints
 import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
@@ -252,6 +252,57 @@ noncomputable def min : ScottMap (ScottMap D D) D :=
     show ((sSup F : ScottMap D D) : D → D) ⊥
       = sSup (Set.image (fun f : ScottMap D D => (f : D → D) ⊥) F)
     rw [ScottMap.sSup_apply])⟩
+
+def toOrderHom (f : ScottMap D D) : D →o D := ⟨(f : D → D), f.monotone⟩
+
+noncomputable def fix (f : ScottMap D D) : D := (toOrderHom f).lfp
+
+theorem fix_le {f : ScottMap D D} {x : D} (h : (f : D → D) x ≤ x) : fix f ≤ x :=
+  (toOrderHom f).lfp_le h
+
+theorem fix_eq (f : ScottMap D D) : (f : D → D) (fix f) = fix f :=
+  (toOrderHom f).map_lfp
+
+theorem fix_mono {f f' : ScottMap D D} (hff' : f ≤ f') : fix f ≤ fix f' :=
+  fix_le (le_trans (ScottMap.le_def.mp hff' (fix f')) (le_of_eq (fix_eq f')))
+
+theorem fix_unique {f : ScottMap D D} {a : D} (hfix : (f : D → D) a = a)
+    (hleast : ∀ x, (f : D → D) x ≤ x → a ≤ x) : a = fix f :=
+  le_antisymm (hleast (fix f) (le_of_eq (fix_eq f))) (fix_le hfix.le)
+
+theorem fix_preservesDirectedSup : PreservesDirectedSup (fix : ScottMap D D → D) := by
+  intro S hSne hSdir
+  set T : Set D := Set.image fix S with hTdef
+  have hTne : T.Nonempty := hSne.image fix
+  have hTdir : DirectedOn (· ≤ ·) T := by
+    rintro _ ⟨f, hf, rfl⟩ _ ⟨f', hf', rfl⟩
+    obtain ⟨h, hh, hfh, hf'h⟩ := hSdir f hf f' hf'
+    exact ⟨fix h, Set.mem_image_of_mem fix hh, fix_mono hfh, fix_mono hf'h⟩
+  show fix (sSup S) = sSup T
+  apply le_antisymm
+  · apply fix_le
+    show ((sSup S : ScottMap D D) : D → D) (sSup T) ≤ sSup T
+    rw [ScottMap.sSup_apply]
+    apply sSup_le
+    rintro _ ⟨f, hf, rfl⟩
+    show (f : D → D) (sSup T) ≤ sSup T
+    rw [f.preservesDirectedSup_coe T hTne hTdir]
+    apply sSup_le
+    rintro _ ⟨_, ⟨f', hf', rfl⟩, rfl⟩
+    obtain ⟨h, hh, hfh, hf'h⟩ := hSdir f hf f' hf'
+    calc (f : D → D) (fix f')
+        ≤ (h : D → D) (fix f') := ScottMap.le_def.mp hfh (fix f')
+      _ ≤ (h : D → D) (fix h) := h.monotone (fix_mono hf'h)
+      _ = fix h := fix_eq h
+      _ ≤ sSup T := le_sSup (Set.mem_image_of_mem fix hh)
+  · apply sSup_le
+    rintro _ ⟨f, hf, rfl⟩
+    exact fix_mono (le_sSup hf)
+
+noncomputable def fixMap : ScottMap (ScottMap D D) D :=
+  ⟨fix, PreservesDirectedSup.continuous_of fix_preservesDirectedSup⟩
+
+@[simp] theorem fixMap_apply (f : ScottMap D D) : (fixMap f : D) = fix f := rfl
 
 end ScottMap
 
