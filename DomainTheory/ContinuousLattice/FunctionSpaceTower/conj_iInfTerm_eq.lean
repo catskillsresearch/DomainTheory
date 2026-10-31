@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm
 public import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_2
-public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_7_projection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.FunctionSpace
 
 @[expose] public section
 
@@ -24,7 +24,7 @@ theorem conj_iInfTerm_eq (n : ℕ) (x : DInf D₀ j₀) :
     conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
             (embInf (towerType D₀) (towerProj D₀ j₀) n)
             (iInfTerm D₀ j₀ n x) = x.1 (n + 1) :=
-  (proposition_3_7_projection
+  (FunctionSpace.projection
       (proposition_4_2 (towerType D₀) (towerProj D₀ j₀) n)
       (proposition_4_2 (towerType D₀) (towerProj D₀ j₀) n)).retr_incl
     (projInf (towerType D₀) (towerProj D₀ j₀) (n + 1) x)

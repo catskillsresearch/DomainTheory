@@ -17,6 +17,7 @@
 - [Proposition 3.5](FunctionSpaces/1972_Proposition_3_5.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Retractions and extensions](FunctionSpaces/1972_Before_definition_3_6.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Definition 3.6](FunctionSpaces/1972_Definition_3_6.md) [✓](ContinuousLattice/1972_REVISION.md)
+- [Function-space retraction and projection](FunctionSpaces/1972_Function_space_retraction_and_projection.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Proposition 3.7](FunctionSpaces/1972_Proposition_3_7.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Scott subspace extension](FunctionSpaces/1972_Scott_subspace_extension.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Proposition 3.8](Constructions/1972_Proposition_3_8.md) [✓](ContinuousLattice/1972_REVISION.md)

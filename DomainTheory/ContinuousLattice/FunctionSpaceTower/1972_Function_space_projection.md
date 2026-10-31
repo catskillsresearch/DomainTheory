@@ -4,4 +4,4 @@
 
 - [functionSpaceInclFun](1972_functionSpaceInclFun.md)
 - [functionSpaceRetrFun](1972_functionSpaceRetrFun.md)
-- [functionSpaceProjection](1972_functionSpaceProjection.md)
+- [ContinuousLatticeProjection.functionSpace](1972_functionSpaceProjection.md)

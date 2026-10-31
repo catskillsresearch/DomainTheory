@@ -1,6 +1,6 @@
 For continuous lattices $D$ and $D'$, Scott's §3 notation $[D \to D']$ is the set of maps $f : D \to D'$ that are continuous for the Scott topologies (equivalently, Scott-continuous in the sense of §2). The library names that carrier **`ScottMap D D'`**: a subtype of $D \to D'$ carrying a proof of continuity for **`scottTopologicalSpace`** on domain and codomain.
 
-[`ScottMap.lean`](ScottMap.lean) is **self-contained**: it does not import or mention **`stepFun`** or **`stepMap`**. Step functions for Theorem 3.3 are in [Step function (pointwise)](1972_stepFun.md) and [Step map $\overrightarrow{e}[e,e']$](1972_stepMap.md). Scott's projection space $J_D$ (**`ProjectionSpace`**, Definition 3.11) and sup-closure (Proposition 3.12) are in [Definition 3.11: Projection space](1972_Definition_3_11.md). Retractions between *map spaces* are in **`ScottMap_more.lean`** (Proposition 3.7).
+[`ScottMap.lean`](ScottMap.lean) is **self-contained**: it does not import or mention **`stepFun`** or **`stepMap`**. Step functions for Theorem 3.3 are in [Step function (pointwise)](1972_stepFun.md) and [Step map $\overrightarrow{e}[e,e']$](1972_stepMap.md). Scott's projection space $J_D$ (**`ProjectionSpace`**, Definition 3.11) and sup-closure (Proposition 3.12) are in [Definition 3.11: Projection space](1972_Definition_3_11.md). Retractions between map spaces (**`ScottMap.retraction`**) are in [Retractions and extensions](1972_Before_definition_3_6.md). **`FunctionSpace.retraction`** and **`FunctionSpace.projection`** are in [Function-space retraction and projection](1972_Function_space_retraction_and_projection.md); [Proposition 3.7](1972_Proposition_3_7.md) is the paper statement. Projections on map spaces and **`ScottMap.conMinContinuousLatticeProjection`** are in [Definition 3.6](1972_Definition_3_6.md); **`con`** / **`min`** appear in [Proposition 3.13](1972_Proposition_3_13.md).
 
 Namespace **`ScottMap`** collects the library tools on that carrier:
 
@@ -9,6 +9,10 @@ Namespace **`ScottMap`** collects the library tools on that carrier:
 **Lemma (`ext`).** Two Scott maps agree if they agree at every argument.
 
 **Definition (`const`).** The constant Scott map at $c \in D'$; **`const_apply`** reads off $c$ at each $x$.
+
+**Definition (`con`).** Scott's $\mathrm{con} : D \to [D \to D]$: at $x$ the constant endo-map $\mathrm{con}(x) = \mathrm{const}\, x$.
+
+**Definition (`min`).** Scott's $\mathrm{min} : [D \to D] \to D$: **`min f = f(⊥)`** on the coercion.
 
 **Definition (`le`)**, **`lt`.** Pointwise order: $f \le g$ when $f(x) \le g(x)$ for all $x$.
 

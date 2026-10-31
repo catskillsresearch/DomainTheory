@@ -1,0 +1,9 @@
+When $D_n$ is a retraction (projection) of $D'_n$ via $i_n : D_n \to D'_n$ and $j_n : D'_n \to D_n$, Proposition 3.7 lifts that data to the function spaces $[D_0 \to D_1]$ and $[D'_0 \to D'_1]$. Scott writes the lifted pair as $\vec{i}$ and $\vec{j}$:
+
+$$\vec{i}(f) = i_1 \circ f \circ j_0, \qquad \vec{j}(f') = j_1 \circ f' \circ i_0$$
+
+for $f \in [D_0 \to D_1]$ and $f' \in [D'_0 \to D'_1]$. The formalization packages lattice retractions **`ContinuousLatticeRetraction`** (and projections **`ContinuousLatticeProjection`**) from [Continuous lattice retraction and projection](1972_Continuous_lattice_retraction_and_projection.md); map-space carriers **`ScottMap.retraction`** and **`ScottMap.projection`** from [Retractions and extensions](1972_Before_definition_3_6.md) and [Definition 3.6](1972_Definition_3_6.md).
+
+**Definition (`FunctionSpace.retraction`).** From **`R₀ : ContinuousLatticeRetraction D₀ D₀'`** and **`R₁ : ContinuousLatticeRetraction D₁ D₁'`**, build **`ScottMap.retraction D₀ D₀' D₁ D₁'`** with **`incl f = R₁.incl ∘ f ∘ R₀.retr`** and **`retr f' = R₁.retr ∘ f' ∘ R₀.incl`**.
+
+**Definition (`FunctionSpace.projection`).** From **`P₀`** and **`P₁`** as continuous lattice projections, the same **`incl`** / **`retr`** formulas on **`ScottMap`**, plus **`incl_retr_le`** from the lattice projection inequalities.

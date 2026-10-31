@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.functionSpaceInclFun
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.functionSpaceRetrFun
-public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_7_projection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.FunctionSpace
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
@@ -13,28 +13,27 @@ universe u
 
 attribute [instance] CLat.str
 
-namespace functionSpaceProjection
+namespace ContinuousLatticeProjection
 
-theorem inclRetrLe {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
+theorem functionSpace_inclRetrLe {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
     (P : ContinuousLatticeProjection D D') :
     ∀ g, functionSpaceInclFun P (functionSpaceRetrFun P g) ≤ g := by
   intro g
-  exact ScottMap.le_def.mpr ((proposition_3_7_projection P P).incl_retr_le g)
+  exact ScottMap.le_def.mpr ((FunctionSpace.projection P P).incl_retr_le g)
 
-theorem retrIncl {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
+theorem functionSpace_retrIncl {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
     (P : ContinuousLatticeProjection D D') :
     ∀ f, functionSpaceRetrFun P (functionSpaceInclFun P f) = f :=
-  (proposition_3_7_projection P P).retr_incl
+  (FunctionSpace.projection P P).retr_incl
 
-end functionSpaceProjection
-
-noncomputable def functionSpaceProjection
-    {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
+noncomputable def functionSpace {D D' : Type u} [CompleteLattice D] [CompleteLattice D']
     (P : ContinuousLatticeProjection D D') :
     ContinuousLatticeProjection (ScottMap D D) (ScottMap D' D') where
   incl := ⟨functionSpaceInclFun P, functionSpaceInclFun.outer_continuous P⟩
   retr := ⟨functionSpaceRetrFun P, functionSpaceRetrFun.outer_continuous P⟩
-  retr_incl := functionSpaceProjection.retrIncl P
-  incl_retr_le := functionSpaceProjection.inclRetrLe P
+  retr_incl := functionSpace_retrIncl P
+  incl_retr_le := functionSpace_inclRetrLe P
+
+end ContinuousLatticeProjection
 
 end DomainTheory.ContinuousLattice

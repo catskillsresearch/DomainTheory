@@ -1,4 +1,4 @@
-# functionSpaceProjection
+# ContinuousLatticeProjection.functionSpace
 
 **[functionSpaceProjection.lean](functionSpaceProjection.lean)**
 

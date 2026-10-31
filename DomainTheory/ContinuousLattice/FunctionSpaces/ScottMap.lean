@@ -238,6 +238,21 @@ theorem eq_sSup_openInfs (hD' : ContinuousLattice D') (f' : ScottMap D D') (y : 
     obtain ⟨U, _hUopen, hyU, rfl⟩ := hd
     exact sInf_image_le_of_mem (f' := f') (y := y) (U := U) hyU
 
+noncomputable def con : ScottMap D (ScottMap D D) :=
+  ⟨fun x => ScottMap.const x, PreservesDirectedSup.continuous_of (by
+    intro S _ _
+    apply ScottMap.ext
+    intro y
+    rw [ScottMap.sSup_apply, Set.image_image]
+    simp only [ScottMap.const_apply, Set.image_id'])⟩
+
+noncomputable def min : ScottMap (ScottMap D D) D :=
+  ⟨fun f => (f : D → D) ⊥, PreservesDirectedSup.continuous_of (by
+    intro F _ _
+    show ((sSup F : ScottMap D D) : D → D) ⊥
+      = sSup (Set.image (fun f : ScottMap D D => (f : D → D) ⊥) F)
+    rw [ScottMap.sSup_apply])⟩
+
 end ScottMap
 
 end DomainTheory.ContinuousLattice

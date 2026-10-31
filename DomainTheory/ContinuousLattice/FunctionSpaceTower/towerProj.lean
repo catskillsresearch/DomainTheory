@@ -13,7 +13,7 @@ noncomputable def towerProj (D₀ : CLat.{u})
     (j₀ : ContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier)) :
     ∀ n, ContinuousLatticeProjection (towerType D₀ n) (towerType D₀ (n + 1))
   | 0 => j₀
-  | (n + 1) => functionSpaceProjection (towerProj D₀ j₀ n)
+  | (n + 1) => ContinuousLatticeProjection.functionSpace (towerProj D₀ j₀ n)
 
 namespace towerProj
 
