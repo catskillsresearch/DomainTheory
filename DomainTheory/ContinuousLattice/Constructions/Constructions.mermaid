@@ -5,14 +5,12 @@ flowchart TB
 
   N5["continuous_eq_sSup_openInfs"]
   N6["directedOn_finite_sSup_mem"]
-  FunctionSpaces["FunctionSpaces"]
   N0["Injective"]
   piWayBelow["piWayBelow"]
   N15["proposition_2_11"]
   N7["proposition_2_8"]
   N9["proposition_2_9"]
   N17["proposition_3_8"]
-  proposition_3_8_more["proposition_3_8_more"]
   N10["scottExtend"]
   N11["scottExtend_aux_directed"]
   N12["scottExtend_aux_nonempty"]
@@ -29,35 +27,29 @@ flowchart TB
   N10 -->|"1"| N13
   N11 -->|"1"| N13
   N12 -->|"1"| N13
-  N2 -->|"1"| N13
-  N3 -->|"3"| N13
+  N3 -->|"1"| N13
   N10 -->|"1"| N14
-  N2 -->|"1"| N14
-  N3 -->|"3"| N14
+  N3 -->|"1"| N14
   N0 -->|"1"| N15
   N13 -->|"1"| N15
   N14 -->|"1"| N15
   N2 -->|"1"| N15
   N3 -->|"1"| N15
   N10 -->|"1"| N16
-  N2 -->|"1"| N16
   N3 -->|"1"| N16
   N5 -->|"1"| N16
   N10 -->|"1"| N17
   N13 -->|"1"| N17
   N14 -->|"1"| N17
   N16 -->|"1"| N17
-  N2 -->|"1"| N17
   N3 -->|"1"| N17
-  proposition_3_8_more -->|"1"| N17
   N10 -->|"1"| N18
   N2 -->|"1"| N18
   N3 -->|"1"| N18
   N5 -->|"1"| N18
   N2 -->|"1"| N19
   N3 -->|"1"| N19
-  N2 -->|"1"| N5
-  N3 -->|"3"| N5
+  N3 -->|"1"| N5
   N3 -->|"2"| N7
   N6 -->|"1"| N7
   N2 -->|"1"| N9
@@ -66,10 +58,6 @@ flowchart TB
   piWayBelow -->|"1"| N9
   N1 -->|"2"| piWayBelow
   N3 -->|"1"| piWayBelow
-  FunctionSpaces -->|"1"| proposition_3_8_more
-  N1 -->|"2"| proposition_3_8_more
-  N2 -->|"1"| proposition_3_8_more
-  N3 -->|"2"| proposition_3_8_more
   N19 -->|"1"| scottTopology
   N2 -->|"1"| scottTopology
   N7 -->|"1"| scottTopology

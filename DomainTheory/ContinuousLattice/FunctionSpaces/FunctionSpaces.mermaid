@@ -3,52 +3,26 @@
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
 
-  N6["ambientSSup"]
   N69["con_"]
-  Constructions["Constructions"]
+  ContinuousLatticeRetractionProjection["ContinuousLatticeRetractionProjection"]
   N13["continuousMapInducedPiTopology"]
-  N30["converseProjection"]
-  N14["converseRetr"]
-  N29["converseRetr_incl"]
-  N15["converseRetr_mono"]
-  N16["converseRetr_preservesDirectedSup"]
   N158["corollary_3_4"]
-  N18["directedOn_finsetSupOf"]
-  N17["finsetSupOf"]
   N145["fix"]
   N146["fix_eq"]
   N147["fix_le"]
   N148["fix_mono"]
   N149["fix_preservesDirectedSup"]
   N154["fix_unique"]
-  N44["image_retr_wayBelow_directed"]
-  N21["image_retr_wayBelow_nonempty"]
-  N56["incl_bot"]
-  N22["incl_converseRetr_le"]
-  N57["incl_finset_sup"]
-  N23["incl_injective"]
-  N25["incl_mono_of_preservesSSup"]
-  N47["incl_preservesDirectedSup"]
-  N88["incl_sSup"]
-  N45["incl_sup"]
-  N24["incl_sup_of_preservesSSup"]
-  N48["incl_wayBelow"]
   N139["instCompleteLattice"]
   N137["instSupSet"]
-  N5["IsContinuousLatticeProjection"]
-  N4["IsContinuousLatticeRetraction"]
-  N36["IsProjection"]
   N71["isProjection_bot"]
   N72["isProjection_directedSup"]
   N135["isProjection_finsetSup"]
   N39["isProjection_iff"]
   N136["isProjection_sSup"]
   N134["isProjection_sup"]
-  N28["le_of_incl_le"]
-  N41["le_sSup_finsetSupOf"]
   N114["lemma_3_9_incl_inf"]
   N116["lemma_3_9_retr_inf"]
-  N40["mem_finsetSupOf_of_mem"]
   N73["min"]
   N76["projection"]
   N37["Projections"]
@@ -62,10 +36,6 @@ flowchart TB
   N99["proposition_3_5"]
   N52["proposition_3_7_projection"]
   N53["proposition_3_7_retraction"]
-  N54["retr_ambientSSup_eq_sSup"]
-  N55["retr_bot"]
-  N58["retr_eq_sSup"]
-  N59["retr_wayBelow_of_wayBelow_incl"]
   ScottFunctionTopology["ScottFunctionTopology"]
   N96["scottLambda"]
   N3["ScottMap"]
@@ -73,79 +43,40 @@ flowchart TB
   N100["scottMapInducedPiTopology"]
   N0["ScottMaps"]
   N106["scottSubspaceExtend"]
-  N117["scottSubspaceExtend_eq_of_ext"]
-  N118["scottSubspaceExtend_maximal"]
-  N119["scottSubspaceExtend_mono"]
-  N107["scottSubspaceExtendInf_eq_of_comp"]
-  N108["scottSubspaceExtendInf_eq_of_ext"]
-  N109["scottSubspaceExtendInf_le_of_mem"]
-  N111["scottSubspaceExtendInf_mono"]
-  N112["scottSubspaceExtendInf_mono_incl"]
-  N113["scottSubspaceExtendInf_mono_incl_apply"]
-  N115["scottSubspaceExtendInf_mono_retr"]
-  N60["sInf_image_le_sInf_image_of_subset"]
   N1["Specialization"]
-  N87["sSup_finsetSupOf"]
-  N82["sSup_image_retr_wayBelow"]
-  N86["sSup_le_finsetSupOf"]
   N123["stepFun"]
   N127["stepMap"]
   N162["theorem_3_3"]
   N144["toOrderHom"]
   N2["WayBelow"]
 
+  N0 -->|"1"| ContinuousLatticeRetractionProjection
+  N2 -->|"1"| ContinuousLatticeRetractionProjection
+  N3 -->|"1"| ContinuousLatticeRetractionProjection
   N127 -->|"1"| N100
   N2 -->|"2"| N100
   N3 -->|"1"| N100
+  ContinuousLatticeRetractionProjection -->|"1"| N106
   N1 -->|"1"| N106
-  N106 -->|"1"| N107
-  N3 -->|"1"| N107
-  N106 -->|"1"| N108
-  Constructions -->|"1"| N109
-  N106 -->|"1"| N111
-  N106 -->|"1"| N112
-  N5 -->|"1"| N112
-  N106 -->|"1"| N113
-  N3 -->|"1"| N113
-  N5 -->|"1"| N113
+  N2 -->|"1"| N106
+  N3 -->|"1"| N106
   N106 -->|"1"| N114
-  N112 -->|"1"| N114
-  N113 -->|"1"| N114
-  N5 -->|"1"| N114
-  N106 -->|"1"| N115
-  N3 -->|"1"| N115
-  N5 -->|"1"| N115
   N106 -->|"1"| N116
-  N115 -->|"1"| N116
-  N5 -->|"1"| N116
-  N106 -->|"1"| N117
-  N108 -->|"1"| N117
-  Constructions -->|"1"| N118
-  N106 -->|"1"| N118
-  N107 -->|"1"| N118
-  N2 -->|"1"| N118
-  N60 -->|"1"| N118
-  N106 -->|"1"| N119
-  N111 -->|"1"| N119
   ScottFunctionTopology -->|"1"| N122
   N0 -->|"1"| N123
   N2 -->|"1"| N123
   N123 -->|"1"| N127
   N2 -->|"1"| N127
   N3 -->|"1"| N127
-  N3 -->|"1"| N134
-  N36 -->|"1"| N134
+  N3 -->|"2"| N134
   N39 -->|"1"| N134
   N134 -->|"1"| N135
-  N3 -->|"1"| N135
-  N36 -->|"1"| N135
+  N3 -->|"2"| N135
   N71 -->|"1"| N135
+  ContinuousLatticeRetractionProjection -->|"1"| N136
   N135 -->|"1"| N136
-  N18 -->|"1"| N136
-  N3 -->|"1"| N136
-  N36 -->|"1"| N136
+  N3 -->|"2"| N136
   N72 -->|"1"| N136
-  N87 -->|"1"| N136
   N136 -->|"1"| N137
   N3 -->|"1"| N137
   N37 -->|"1"| N137
@@ -168,7 +99,6 @@ flowchart TB
   N147 -->|"1"| N149
   N148 -->|"1"| N149
   N3 -->|"1"| N149
-  N14 -->|"1"| N15
   N145 -->|"1"| N154
   N146 -->|"1"| N154
   N147 -->|"1"| N154
@@ -182,125 +112,43 @@ flowchart TB
   N0 -->|"2"| N158
   N3 -->|"1"| N158
   ScottFunctionTopology -->|"1"| N158
-  N0 -->|"1"| N16
-  N14 -->|"1"| N16
-  N15 -->|"1"| N16
-  N2 -->|"2"| N16
   N100 -->|"1"| N162
   N127 -->|"1"| N162
-  N17 -->|"1"| N18
-  N2 -->|"1"| N21
-  N4 -->|"1"| N21
-  N14 -->|"1"| N22
-  N5 -->|"1"| N23
-  N24 -->|"1"| N25
-  N24 -->|"1"| N28
-  N14 -->|"1"| N29
-  N25 -->|"1"| N29
-  N28 -->|"1"| N29
   N0 -->|"3"| N3
-  N1 -->|"1"| N3
-  N16 -->|"1"| N30
-  N2 -->|"2"| N30
-  N22 -->|"1"| N30
-  N29 -->|"1"| N30
-  N5 -->|"1"| N30
-  N3 -->|"1"| N36
-  N36 -->|"1"| N37
+  N2 -->|"1"| N3
+  N3 -->|"1"| N37
   N3 -->|"1"| N39
-  N36 -->|"1"| N39
-  N3 -->|"1"| N4
-  N17 -->|"1"| N40
-  N17 -->|"1"| N41
-  N40 -->|"1"| N41
-  N2 -->|"1"| N44
-  N3 -->|"1"| N44
-  N4 -->|"1"| N44
-  N3 -->|"1"| N45
-  N5 -->|"1"| N45
-  N0 -->|"1"| N47
-  N3 -->|"1"| N47
-  N4 -->|"1"| N47
-  N2 -->|"2"| N48
-  N3 -->|"1"| N48
-  N5 -->|"1"| N48
-  N4 -->|"1"| N5
+  ContinuousLatticeRetractionProjection -->|"1"| N51
   N2 -->|"2"| N51
-  N30 -->|"1"| N51
-  N5 -->|"1"| N51
   ScottMap_more -->|"1"| N52
   ScottMap_more -->|"1"| N53
-  N3 -->|"1"| N54
-  N6 -->|"1"| N54
-  N3 -->|"1"| N55
-  N5 -->|"1"| N55
-  N5 -->|"1"| N56
-  N55 -->|"1"| N56
-  N45 -->|"1"| N57
-  N5 -->|"1"| N57
-  N56 -->|"1"| N57
-  N3 -->|"1"| N58
-  N5 -->|"1"| N58
-  N0 -->|"1"| N59
-  N2 -->|"1"| N59
-  N3 -->|"1"| N59
-  N4 -->|"1"| N59
-  N47 -->|"1"| N59
-  N4 -->|"1"| N6
   N0 -->|"1"| N69
   N3 -->|"1"| N69
   N3 -->|"1"| N71
-  N36 -->|"1"| N71
   N39 -->|"1"| N71
-  N3 -->|"1"| N72
-  N36 -->|"1"| N72
+  N3 -->|"2"| N72
   N39 -->|"1"| N72
   N0 -->|"1"| N73
   N3 -->|"1"| N73
+  ContinuousLatticeRetractionProjection -->|"1"| N76
   N3 -->|"1"| N76
-  N5 -->|"1"| N76
   N69 -->|"1"| N76
   N73 -->|"1"| N76
+  ContinuousLatticeRetractionProjection -->|"1"| N77
   N2 -->|"1"| N77
   N3 -->|"1"| N77
-  N5 -->|"1"| N77
   N76 -->|"1"| N77
-  N2 -->|"2"| N82
-  N3 -->|"1"| N82
-  N4 -->|"1"| N82
+  ContinuousLatticeRetractionProjection -->|"1"| N85
   N0 -->|"1"| N85
-  N2 -->|"3"| N85
-  N21 -->|"1"| N85
-  N3 -->|"1"| N85
-  N4 -->|"1"| N85
-  N44 -->|"1"| N85
-  N47 -->|"1"| N85
-  N59 -->|"1"| N85
-  N82 -->|"1"| N85
-  N17 -->|"1"| N86
-  N17 -->|"1"| N87
-  N41 -->|"1"| N87
-  N86 -->|"1"| N87
-  N18 -->|"1"| N88
-  N3 -->|"1"| N88
-  N40 -->|"1"| N88
-  N5 -->|"1"| N88
-  N56 -->|"1"| N88
-  N57 -->|"1"| N88
-  N87 -->|"1"| N88
+  ContinuousLatticeRetractionProjection -->|"1"| N89
   N2 -->|"2"| N89
-  N23 -->|"1"| N89
-  N48 -->|"1"| N89
-  N5 -->|"1"| N89
-  N88 -->|"1"| N89
   N0 -->|"1"| N96
   N3 -->|"1"| N96
   N96 -->|"1"| N99
   N1 -->|"2"| ScottFunctionTopology
   N13 -->|"1"| ScottFunctionTopology
+  ContinuousLatticeRetractionProjection -->|"1"| ScottMap_more
   N3 -->|"1"| ScottMap_more
-  N4 -->|"1"| ScottMap_more
-  N5 -->|"1"| ScottMap_more
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

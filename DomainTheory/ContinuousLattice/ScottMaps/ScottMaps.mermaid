@@ -14,20 +14,16 @@ flowchart TB
   Specialization["Specialization"]
   WayBelow["WayBelow"]
 
-  Specialization -->|"1"| ScottMaps_PreservesDirectedSup
   WayBelow -->|"1"| ScottMaps_PreservesDirectedSup
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_continuous_preservesDirectedSup
-  Specialization -->|"1"| ScottMaps_continuous_preservesDirectedSup
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_meet_preservesDirectedSup
   WayBelow -->|"2"| ScottMaps_meet_preservesDirectedSup
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_preservesDirectedSup_monotone
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_proposition_2_5
   ScottMaps_continuous_preservesDirectedSup -->|"1"| ScottMaps_proposition_2_5
-  Specialization -->|"1"| ScottMaps_proposition_2_5
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_proposition_2_6
   ScottMaps_preservesDirectedSup_monotone -->|"1"| ScottMaps_proposition_2_6
   ScottMaps_PreservesDirectedSup -->|"1"| ScottMaps_scottOpen_preimage
-  WayBelow -->|"1"| ScottMaps_scottOpen_preimage
   ScottMaps_meet_preservesDirectedSup -->|"1"| proposition_2_7
   Specialization -->|"1"| proposition_2_7
   WayBelow -->|"1"| proposition_2_7

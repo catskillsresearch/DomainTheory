@@ -14,8 +14,7 @@ flowchart TB
   Corollary_3_4["Corollary 3.4"]
   Scott_functional_abstrac["Scott functional abstraction"]
   Proposition_3_5["Proposition 3.5"]
-  Definition_3_6["Definition 3.6"]
-  Proposition_3_7["Proposition 3.7"]
+  Scott_subspace_extension["Scott subspace extension"]
   Proposition_3_8["Proposition 3.8"]
   Lemma_3_9["Lemma 3.9"]
   Proposition_3_10["Proposition 3.10"]
@@ -25,20 +24,20 @@ flowchart TB
 
   Elements_of___D__to_D --> Corollary_3_4
   Induced_pi_topology_on --> Definition_3_1__Function
-  Step_map___overrightarro --> Definition_3_6
   Definition_3_1__Function --> Elements_of___D__to_D
-  Proposition_3_8 --> Lemma_3_9
+  Scott_subspace_extension --> Lemma_3_9
   Step_map___overrightarro --> Product_topology_on___D
-  Proposition_3_7 --> Proposition_3_10
-  Proposition_3_7 --> Proposition_3_12
-  Definition_3_6 --> Proposition_3_13
+  Scott_subspace_extension --> Proposition_3_10
+  Scott_subspace_extension --> Proposition_3_12
+  Scott_subspace_extension --> Proposition_3_13
   Corollary_3_4 --> Proposition_3_14
   Proposition_3_8 --> Proposition_3_14
+  Scott_subspace_extension --> Proposition_3_14
   Definition_3_1__Function --> Proposition_3_2
   Scott_functional_abstrac --> Proposition_3_5
-  Definition_3_6 --> Proposition_3_7
-  Proposition_3_7 --> Proposition_3_8
+  Elements_of___D__to_D --> Proposition_3_8
   Elements_of___D__to_D --> Scott_functional_abstrac
+  Elements_of___D__to_D --> Scott_subspace_extension
   Elements_of___D__to_D --> Step_function__pointwise
   Step_function__pointwise --> Step_map___overrightarro
   Product_topology_on___D --> Theorem_3_3
