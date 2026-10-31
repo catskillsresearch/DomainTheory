@@ -22,7 +22,7 @@
 - [Proposition 3.8](Constructions/1972_Proposition_3_8.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Lemma 3.9](FunctionSpaces/1972_Lemma_3_9.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Proposition 3.10](FunctionSpaces/1972_Proposition_3_10.md) [✓](ContinuousLattice/1972_REVISION.md)
-- [Definition 3.11: Projection space](FunctionSpaces/1972_Definition_3_11.md)
+- [Definition 3.11: Projection space](FunctionSpaces/1972_Definition_3_11.md) [✓](ContinuousLattice/1972_REVISION.md)
 - [Proposition 3.12](FunctionSpaces/1972_Proposition_3_12.md)
 - [Proposition 3.13](FunctionSpaces/1972_Proposition_3_13.md)
 - [Proposition 3.14](FunctionSpaces/1972_Proposition_3_14.md)

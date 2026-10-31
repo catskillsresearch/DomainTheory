@@ -195,10 +195,6 @@ def idMap : ScottMap D D :=
 
 @[simp] theorem idMap_apply (x : D) : (idMap : ScottMap D D) x = x := rfl
 
-/-- Scott projection on `[D → D]`: `j.comp j = j` and `j ≤ idMap`. -/
-def IsProjection (j : ScottMap D D) : Prop :=
-  j.comp j = j ∧ j ≤ idMap
-
 theorem bot_apply (x : D) : ((⊥ : ScottMap D D') : D → D') x = ⊥ := by
   have h : (⊥ : ScottMap D D') = sSup (∅ : Set (ScottMap D D')) := rfl
   rw [h, sSup_apply, Set.image_empty, sSup_empty]

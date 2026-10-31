@@ -1,6 +1,6 @@
 For continuous lattices $D$ and $D'$, Scott's §3 notation $[D \to D']$ is the set of maps $f : D \to D'$ that are continuous for the Scott topologies (equivalently, Scott-continuous in the sense of §2). The library names that carrier **`ScottMap D D'`**: a subtype of $D \to D'$ carrying a proof of continuity for **`scottTopologicalSpace`** on domain and codomain.
 
-[`ScottMap.lean`](ScottMap.lean) is **self-contained**: it does not import or mention **`stepFun`** or **`stepMap`**. Step functions for Theorem 3.3 are in [Step function (pointwise)](1972_stepFun.md) and [Step map $\overrightarrow{e}[e,e']$](1972_stepMap.md). Closure properties of **`ScottMap.IsProjection`** under sups on $[D \to D]$ are in [Proposition 3.12](1972_Proposition_3_12.md); retractions between *map spaces* are in **`ScottMap_more.lean`** (Proposition 3.7).
+[`ScottMap.lean`](ScottMap.lean) is **self-contained**: it does not import or mention **`stepFun`** or **`stepMap`**. Step functions for Theorem 3.3 are in [Step function (pointwise)](1972_stepFun.md) and [Step map $\overrightarrow{e}[e,e']$](1972_stepMap.md). Scott's projection space $J_D$ (**`ProjectionSpace`**, Definition 3.11) and sup-closure (Proposition 3.12) are in [Definition 3.11: Projection space](1972_Definition_3_11.md). Retractions between *map spaces* are in **`ScottMap_more.lean`** (Proposition 3.7).
 
 Namespace **`ScottMap`** collects the library tools on that carrier:
 
@@ -50,9 +50,8 @@ Namespace **`ScottMap`** collects the library tools on that carrier:
 
 **Definition (`idMap`).** The identity Scott endo-map; **`idMap_apply`** is reflexivity at $x$.
 
-**Definition (`IsProjection`).** On **`ScottMap D D`**, Scott's projection condition $j \circ j = j$ and $j \sqsubseteq \mathrm{id}$ (Definition 3.11).
-
 **Lemma (`bot_apply`).** **`(⊥) x = ⊥`** in $D'$.
+
 
 **Lemma (`sup_apply`).** **`(f \sqcup g)(x) = f(x) \sqcup g(x)`**.
 

@@ -2,3 +2,13 @@
 
 $$J_D = j \in [D \to D] : j = j \circ j \sqsubseteq \mathrm{id}.$$
 
+The formalization is [`ProjectionSpace.lean`](ProjectionSpace.lean). **`ProjectionSpace D`** is Scott's $J_D$; **`ProjectionSpace.mem j`** is membership.
+
+**Lemma (`iff`).** **`mem j`** iff idempotence and **`j x ≤ x`** pointwise on the coercion.
+
+**Lemma (`bot_mem`).** **`⊥ ∈ J_D`**.
+
+**Lemma (`sup_mem`).** / **`finsetSup_mem`**. / **`directedSup_mem`**. / **`sSup_mem`**. — **`mem`** is closed under finite and arbitrary sups in **`[D → D]`**.
+
+**Instance (`instSupSet`).** / **`isLUB_sSup`**. / **`instCompleteLattice`**. — **`ProjectionSpace D`** is a complete lattice (Proposition 3.12).
+
