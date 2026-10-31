@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 
 @[expose] public section

@@ -1,6 +1,5 @@
 module
 
-public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import Mathlib.Order.BourbakiWitt
 import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage

@@ -20,8 +20,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_10_for
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_10_converse
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
-public import DomainTheory.ContinuousLattice.FunctionSpaces.lemma_3_9_incl_inf
-public import DomainTheory.ContinuousLattice.FunctionSpaces.lemma_3_9_retr_inf
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_12
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_13
 public import DomainTheory.ContinuousLattice.FunctionSpaces.fix_unique

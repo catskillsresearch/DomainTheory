@@ -1,12 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeRetractionProjection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import Mathlib.Topology.Defs.Basic
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.CompleteLattice.Basic
 
 @[expose] public section
 
@@ -85,6 +79,12 @@ theorem inf_mono_incl {e : X → Y} {f : X → D} {g : X → D'} (P : Continuous
     Set.mem_image_of_mem _ hx
   have hincl : P.incl (f x) ≤ g x := by rw [hfg x]; exact P.incl_retr_le (g x)
   exact le_trans (sInf_le hmem) hincl
+
+theorem incl_inf {e : X → Y} (P : ContinuousLatticeProjection D D')
+    {f : X → D} {g : X → D'} (hfg : ∀ x, f x = P.retr (g x)) (U : Set Y) :
+    P.incl (inf e f U) ≤ inf e g U :=
+  le_trans (inf_mono_incl_apply (e := e) (f := f) U P)
+    (inf_mono_incl (e := e) (f := f) (g := g) P hfg U)
 
 end scottSubspaceExtend
 

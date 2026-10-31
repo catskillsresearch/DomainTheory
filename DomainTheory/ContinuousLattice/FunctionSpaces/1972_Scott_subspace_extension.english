@@ -14,7 +14,13 @@ Namespace **`scottSubspaceExtend`**:
 
 **Lemma (`sInf_image_le_of_subset`).** Larger index set lowers **`sInf`** on images.
 
-**Lemma (`inf_mono_incl_apply`).** / **`inf_mono_retr`**. / **`inf_mono_incl`**. — projection monotonicity (see [Continuous lattice retraction and projection](1972_Continuous_lattice_retraction_and_projection.md)).
+**Lemma (`inf_mono_incl_apply`).** For a continuous-lattice projection **`P : D ⇄ D'`**, **`P.incl (inf e f U) ≤ inf e (λ x, P.incl (f x)) U`**.
+
+**Lemma (`inf_mono_retr`).** For the same **`P`**, **`P.retr (inf e g U) ≤ inf e (λ x, P.retr (g x)) U`**.
+
+**Lemma (`inf_mono_incl`).** If **`∀ x, f x = P.retr (g x)`** on $X$, then **`inf e (λ x, P.incl (f x)) U ≤ inf e g U`**.
+
+**Lemma (`incl_inf`).** Under the same agreement **`f = P.retr ∘ g`** on $X$, **`P.incl (inf e f U) ≤ inf e g U`** ( **`inf_mono_incl_apply`** then **`inf_mono_incl`** ).
 
 **Lemma (`mono`).** / **`eq_of_ext`**. — for the full extension **`scottSubspaceExtend`**.
 
