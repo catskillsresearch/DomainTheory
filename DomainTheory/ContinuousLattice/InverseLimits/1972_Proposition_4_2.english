@@ -16,6 +16,17 @@ $$
 
 The proof that $i_{n\infty}$ and $j_{\infty n}$ form a projection is now an easy computation. $\square$
 
+**Definition (`limitLevelProjection`).** For **`n : ℕ`**, **`limitLevelProjection D P n`** is the **continuous lattice projection** from $D_n$ to $D_\infty = \mathrm{InverseLimit}\,D\,P$ with
+
+- **`incl`** $= i_{n\infty}$ $=$ **`embInf D P n`**
+- **`retr`** $= j_{\infty n}$ $=$ **`limitProjectionToLevel D P n`**
+
+The retraction law **`retr_incl`** is **`iComp.self`** at index **`n`**; **`incl_retr_le`** is coordinatewise **`iComp.incl_le`**.
+
+**Theorem (`proposition_4_2`).** *For every **`n`**, there is a continuous lattice projection from $D_n$ to $D_\infty$ whose retraction is $j_{\infty n}$ and whose inclusion is $i_{n\infty}$—equivalently, **`Nonempty (ContinuousLatticeProjection (D n) (InverseLimit D P))`**, witnessed by **`limitLevelProjection D P n`***.
+
+*Proof.* **`limitLevelProjection D P n`**. $\square$
+
 One should note also the recursion equation:
 
 $$

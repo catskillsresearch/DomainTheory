@@ -25,8 +25,8 @@ theorem conj_iInfTerm_eq (n : ℕ) (x : DInf D₀ j₀) :
             (embInf (towerType D₀) (towerProj D₀ j₀) n)
             (iInfTerm D₀ j₀ n x) = x.1 (n + 1) :=
   (FunctionSpace.projection
-      (proposition_4_2 (towerType D₀) (towerProj D₀ j₀) n)
-      (proposition_4_2 (towerType D₀) (towerProj D₀ j₀) n)).retr_incl
+      (limitLevelProjection (towerType D₀) (towerProj D₀ j₀) n)
+      (limitLevelProjection (towerType D₀) (towerProj D₀ j₀) n)).retr_incl
     (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) (n + 1) x)
 
 end Thm44b

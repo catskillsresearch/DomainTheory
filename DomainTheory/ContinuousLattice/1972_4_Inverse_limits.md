@@ -19,7 +19,7 @@
 - [The limit lattice](InverseLimits/1972_Limit_lattice.md) ✓
 - [Topology of the inverse limit](InverseLimits/1972_inverseLimitTopology.md) ✓
 - [Proposition 4.1](InverseLimits/1972_Proposition_4_1.md) ✓
-- [Proposition 4.2](InverseLimits/1972_Proposition_4_2.md)
+- [Proposition 4.2](InverseLimits/1972_Proposition_4_2.md) ✓
 - [Corollary 4.3](InverseLimits/1972_Corollary_4_3.md)
 - [The function space tower](FunctionSpaceTower/1972_Function_space_tower.md)
 - [The functorial form](InverseLimits/1972_Functorial_form.md) ✓
