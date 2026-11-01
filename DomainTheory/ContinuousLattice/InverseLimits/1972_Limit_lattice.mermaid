@@ -3,16 +3,16 @@
 %% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  InverseLimits_inverseLimitPartialOrder["inverseLimitPartialOrder"]
-  InverseLimits_inverseLimitSInfCoe["inverseLimitSInfCoe"]
-  InfSet["InfSet"]
-  InverseLimits_instCompleteLattice["instCompleteLattice"]
-  InverseLimits_coe_sSup_of_directed["coe_sSup_of_directed"]
+  Partial_order_on_the_inv["Partial order on the inverse limit"]
+  Coordinate_infima["Coordinate infima"]
+  Set_infimum_on_the_inv["Set infimum on the inverse limit"]
+  Complete_lattice_on_the["Complete lattice on the inverse limit"]
+  Directed_suprema_are_co["Directed suprema are coordinatewise"]
 
-  InverseLimits_inverseLimitSInfCoe --> InfSet
-  InverseLimits_instCompleteLattice --> InverseLimits_coe_sSup_of_directed
-  InfSet --> InverseLimits_instCompleteLattice
-  InverseLimits_inverseLimitPartialOrder --> InverseLimits_inverseLimitSInfCoe
+  Set_infimum_on_the_inv --> Complete_lattice_on_the
+  Partial_order_on_the_inv --> Coordinate_infima
+  Complete_lattice_on_the --> Directed_suprema_are_co
+  Coordinate_infima --> Set_infimum_on_the_inv
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
