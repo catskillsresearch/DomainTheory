@@ -1,11 +1,15 @@
-%% Each box is one section from 1972_ContinuousLattices.md (Introduction omitted).
-%% Lean modules = transitive closure of outline notes in that section.
+%% Each box is one outline note from 1972_ContinuousLattices.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
 %% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
+  INJ["Injective spaces"]
+  CL["Continuous lattices"]
   FS["Function spaces"]
   LIM["Inverse limits"]
 
-  FS --> LIM
+  INJ --> CL
+  CL --> FS
+  CL --> LIM
 
   classDef section fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a

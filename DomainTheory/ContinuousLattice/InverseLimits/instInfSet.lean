@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitPartialOrder
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitSInfCoe
-public import DomainTheory.ContinuousLattice.InverseLimits.projection_galoisConnection
+public import DomainTheory.ContinuousLattice.InverseLimits.tower_step_galoisConnection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
 public import Mathlib.Data.Set.Basic
 
@@ -22,7 +22,7 @@ variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
 theorem retr_sInf (n : ℕ) (A : Set (D (n + 1))) :
     (P n).retr (sInf A) = sInf ((P n).retr '' A) := by
-  rw [(projection_galoisConnection D P n).u_sInf, sInf_image]
+  rw [(tower_step_galoisConnection D P n).u_sInf, sInf_image]
 
 theorem compatible_sInf (S : Set (InverseLimit D P)) :
     Compatible D P (inverseLimitSInfCoe D P S) := by

@@ -1,56 +1,59 @@
-%% Each box is one item. The arrowhead is on the item that imports.
-%% An arrow already implied by a longer path is omitted.
-%% The introduction has no Lean file, so it is not shown.
+%% Each box is one outline note from 1980_Mappings_between_domains.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  Definition_2_1["Def 2.1<br>approximable map"]
-  Example_2_3["Example 2.3<br>parity of zeros"]
-  Example_2_4["Example 2.4<br>erase a run"]
-  Exercise_2_10["Exercise 2.10<br>intersect maps"]
-  Exercise_2_11["Exercise 2.11<br>directed unions"]
-  Exercise_2_12["Exercise 2.12<br>unions of maps"]
-  Exercise_2_13["Exercise 2.13<br>means continuous"]
-  Exercise_2_14["Exercise 2.14<br>neighbourhood isos"]
-  Exercise_2_15["Exercise 2.15<br>opens via maps"]
-  Exercise_2_16["Exercise 2.16<br>prefixing"]
-  Exercise_2_17["Exercise 2.17<br>erase-ones laws"]
-  Exercise_2_17b["Exercise 2.17<br>uniqueness"]
-  Exercise_2_18["Exercise 2.18<br>doubling digits"]
-  Exercise_2_19["Exercise 2.19<br>two arguments"]
-  Exercise_2_20["Exercise 2.20<br>integer powerset"]
-  Exercise_2_21["Exercise 2.21<br>sequences"]
-  Exercise_2_22["Exercise 2.22<br>closure domains"]
-  Exercise_2_8["Exercise 2.8<br>finite elements"]
-  Exercise_2_9["Exercise 2.9<br>union formula"]
-  Proposition_2_2["Prop 2.2<br>elementwise action"]
-  Proposition_2_6["Prop 2.6<br>identity, composition"]
-  Theorem_2_5["Theorem 2.5<br>category of maps"]
-  Theorem_2_7["Theorem 2.7<br>isos approximable"]
+  Definition_2_1___approxi["Definition 2.1 — approximable mapping"]
+  Proposition_2_2___elemen["Proposition 2.2 — elementwise action"]
+  Example_2_3___parity_of["Example 2.3 — parity of leading zeros"]
+  Example_2_4___erase_a_ru["Example 2.4 — erase a run of ones"]
+  Theorem_2_5___category_o["Theorem 2.5 — category of approximable maps"]
+  Proposition_2_6___identi["Proposition 2.6 — identity and composition"]
+  Theorem_2_7___isomorphis["Theorem 2.7 — isomorphisms are approximable"]
+  Exercise_2_8___determine["Exercise 2.8 — determined by finite elements"]
+  Exercise_2_9___directed["Exercise 2.9 — directed union formula"]
+  Exercise_2_10___intersec["Exercise 2.10 — intersection of two maps"]
+  Exercise_2_11___directed["Exercise 2.11 — directed unions of elements"]
+  Exercise_2_12___directed["Exercise 2.12 — directed unions of maps"]
+  Exercise_2_13___approxim["Exercise 2.13 — approximable means continuous"]
+  Exercise_2_14___isomorph["Exercise 2.14 — isomorphisms of neighbourhoods"]
+  Exercise_2_15___opens_cl["Exercise 2.15 — opens classified by maps"]
+  Exercise_2_16___prefixin["Exercise 2.16 — prefixing is approximable"]
+  Exercise_2_17___equation["Exercise 2.17 — equations for erase-ones"]
+  Exercise_2_17___uniquene["Exercise 2.17 — uniqueness of the erase-ones map"]
+  Exercise_2_18___doubling["Exercise 2.18 — doubling binary digits"]
+  Exercise_2_19___maps_of["Exercise 2.19 — maps of two arguments"]
+  Exercise_2_20___powerset["Exercise 2.20 — powerset of the integers"]
+  Exercise_2_21___finite_a["Exercise 2.21 — finite and infinite sequences"]
+  Exercise_2_22___domains["Exercise 2.22 — domains from closure properties"]
 
-  Proposition_2_2 --> Example_2_3
-  Exercise_2_17 --> Example_2_4
-  Proposition_2_2 --> Exercise_2_10
-  Proposition_2_2 --> Exercise_2_11
-  Proposition_2_2 --> Exercise_2_12
-  Exercise_2_11 --> Exercise_2_13
-  Exercise_2_17b --> Exercise_2_13
-  Exercise_2_8 --> Exercise_2_13
-  Exercise_2_9 --> Exercise_2_13
-  Theorem_2_7 --> Exercise_2_14
-  Exercise_2_13 --> Exercise_2_15
-  Example_2_3 --> Exercise_2_16
-  Proposition_2_2 --> Exercise_2_17
-  Example_2_4 --> Exercise_2_17b
-  Proposition_2_6 --> Exercise_2_18
-  Exercise_2_19 --> Exercise_2_20
-  Proposition_2_2 --> Exercise_2_20
-  Exercise_2_19 --> Exercise_2_21
-  Proposition_2_2 --> Exercise_2_8
-  Proposition_2_2 --> Exercise_2_9
-  Definition_2_1 --> Proposition_2_2
-  Theorem_2_5 --> Proposition_2_6
-  Proposition_2_2 --> Theorem_2_5
-  Proposition_2_2 --> Theorem_2_7
+  Proposition_2_2___elemen --> Example_2_3___parity_of
+  Example_2_3___parity_of --> Example_2_4___erase_a_ru
+  Proposition_2_2___elemen --> Exercise_2_10___intersec
+  Proposition_2_2___elemen --> Exercise_2_11___directed
+  Proposition_2_2___elemen --> Exercise_2_12___directed
+  Example_2_4___erase_a_ru --> Exercise_2_13___approxim
+  Exercise_2_11___directed --> Exercise_2_13___approxim
+  Exercise_2_8___determine --> Exercise_2_13___approxim
+  Exercise_2_9___directed --> Exercise_2_13___approxim
+  Theorem_2_7___isomorphis --> Exercise_2_14___isomorph
+  Exercise_2_13___approxim --> Exercise_2_15___opens_cl
+  Example_2_4___erase_a_ru --> Exercise_2_16___prefixin
+  Example_2_4___erase_a_ru --> Exercise_2_17___equation
+  Exercise_2_13___approxim --> Exercise_2_17___uniquene
+  Example_2_4___erase_a_ru --> Exercise_2_18___doubling
+  Proposition_2_6___identi --> Exercise_2_18___doubling
+  Proposition_2_2___elemen --> Exercise_2_19___maps_of
+  Exercise_2_19___maps_of --> Exercise_2_20___powerset
+  Example_2_4___erase_a_ru --> Exercise_2_21___finite_a
+  Exercise_2_19___maps_of --> Exercise_2_21___finite_a
+  Definition_2_1___approxi --> Exercise_2_22___domains
+  Proposition_2_2___elemen --> Exercise_2_8___determine
+  Proposition_2_2___elemen --> Exercise_2_9___directed
+  Definition_2_1___approxi --> Proposition_2_2___elemen
+  Theorem_2_5___category_o --> Proposition_2_6___identi
+  Proposition_2_2___elemen --> Theorem_2_5___category_o
+  Example_2_4___erase_a_ru --> Theorem_2_7___isomorphis
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a

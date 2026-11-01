@@ -1,24 +1,12 @@
-%% Inside Embedding. A box is one Lean file in this folder, or one subfolder.
-%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
-%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+%% Each box is one outline note from 1976_Embedding.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  Continuous["Continuous"]
-  N1["embed"]
-  N2["extend"]
-  Pomega["Pomega"]
-  N3["theorem_1_5"]
-  N5["theorem_1_6"]
+  Theorem_1_5["Theorem 1.5"]
+  Theorem_1_6["Theorem 1.6"]
 
-  Continuous -->|"2"| N1
-  Pomega -->|"1"| N1
-  Pomega -->|"1"| N2
-  Continuous -->|"2"| N3
-  N1 -->|"1"| N3
-  N2 -->|"1"| N3
-  Pomega -->|"1"| N3
-  N1 -->|"1"| N5
-  N2 -->|"1"| N5
+  Theorem_1_5 --> Theorem_1_6
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

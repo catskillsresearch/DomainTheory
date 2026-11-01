@@ -1,31 +1,40 @@
-%% Each box is one item. The arrowhead is on the item that imports.
-%% An arrow already implied by a longer path is omitted.
-%% The introduction has no Lean file, so it is not shown.
+%% Each box is one outline note from 1980_Typed_lambda-calculus.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  Exercise_5_10["Exercise 5.10: smash product"]
-  Exercise_5_11["Exercise 5.11: stack combinators"]
-  Exercise_5_12["Exercise 5.12: while combinator"]
-  Exercise_5_13["Exercise 5.13: pairing function"]
-  Exercise_5_13b["Exercise 5.13: powerset isos"]
-  Exercise_5_14["Exercise 5.14: functions as graphs"]
-  Exercise_5_15["Exercise 5.15: star of a word"]
-  Exercise_5_16["Exercise 5.16: negated sequences"]
-  Exercise_5_7["Exercise 5.7: curried lambda"]
-  Exercise_5_8["Exercise 5.8: combinatory complete"]
-  Exercise_5_9["Exercise 5.9: common fixed points"]
-  Proposition_5_3["Prop 5.3: simultaneous fixes"]
-  Proposition_5_4["Prop 5.4: fixed under parameter"]
-  Table_5_5["Table 5.5: combinator table"]
-  Theorem_5_1["Theorem 5.1: terms as maps"]
-  Theorem_5_2["Theorem 5.2: beta conversion"]
-  Theorem_5_6["Theorem 5.6: partial recursive"]
+  Theorem_5_1___terms_deno["Theorem 5.1 — terms denote approximable maps"]
+  Theorem_5_2___beta_conve["Theorem 5.2 — beta conversion"]
+  Proposition_5_3___simult["Proposition 5.3 — simultaneous fixed points"]
+  Proposition_5_4___fixed["Proposition 5.4 — fixed point under a parameter"]
+  Table_5_5___table_of_com["Table 5.5 — table of combinators"]
+  Theorem_5_6___partial_re["Theorem 5.6 — partial recursive functions"]
+  Exercise_5_7___currying["Exercise 5.7 — currying the lambda notation"]
+  Exercise_5_8___combinato["Exercise 5.8 — combinatory completeness"]
+  Exercise_5_9___common_fi["Exercise 5.9 — common fixed points"]
+  Exercise_5_10___smash_pr["Exercise 5.10 — smash product"]
+  Exercise_5_11___stack_co["Exercise 5.11 — stack combinators"]
+  Exercise_5_12___while_co["Exercise 5.12 — while combinator"]
+  Exercise_5_13___pairing["Exercise 5.13 — pairing function on numbers"]
+  Exercise_5_13___powerset["Exercise 5.13 — powerset isomorphisms"]
+  Exercise_5_14___function["Exercise 5.14 — functions as graphs"]
+  Exercise_5_15___star_of["Exercise 5.15 — star of a word"]
+  Exercise_5_16___negation["Exercise 5.16 — negation of sequences"]
 
-  Exercise_5_13 --> Exercise_5_13b
-  Exercise_5_13 --> Exercise_5_14
-  Table_5_5 --> Proposition_5_3
-  Exercise_5_16 --> Proposition_5_4
-  Exercise_5_11 --> Theorem_5_6
+  Proposition_5_4___fixed --> Exercise_5_10___smash_pr
+  Theorem_5_6___partial_re --> Exercise_5_11___stack_co
+  Proposition_5_3___simult --> Exercise_5_12___while_co
+  Exercise_5_13___pairing --> Exercise_5_13___powerset
+  Exercise_5_13___pairing --> Exercise_5_14___function
+  Proposition_5_4___fixed --> Exercise_5_16___negation
+  Theorem_5_2___beta_conve --> Exercise_5_7___currying
+  Theorem_5_2___beta_conve --> Exercise_5_8___combinato
+  Proposition_5_4___fixed --> Exercise_5_9___common_fi
+  Theorem_5_2___beta_conve --> Proposition_5_3___simult
+  Proposition_5_3___simult --> Proposition_5_4___fixed
+  Proposition_5_3___simult --> Table_5_5___table_of_com
+  Theorem_5_1___terms_deno --> Theorem_5_2___beta_conve
+  Proposition_5_4___fixed --> Theorem_5_6___partial_re
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cprop fill:#dcfce7,stroke:#15803d,color:#14532d

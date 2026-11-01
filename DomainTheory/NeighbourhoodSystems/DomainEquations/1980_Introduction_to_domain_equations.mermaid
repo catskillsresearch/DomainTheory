@@ -1,67 +1,66 @@
-%% Each box is one item. The arrowhead is on the item that imports.
-%% An arrow already implied by a longer path is omitted.
-%% The introduction has no Lean file, so it is not shown.
+%% Each box is one outline note from 1980_Introduction_to_domain_equations.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  Definition_6_10["Def 6.10<br>subdomain"]
-  Definition_6_13["Def 6.13<br>domain continuity"]
-  Definition_6_3["Def 6.3<br>functor"]
-  Definition_6_4["Def 6.4<br>functor algebra"]
-  Definition_6_5["Def 6.5<br>initial algebra"]
-  Definition_6_8["Def 6.8<br>map continuity"]
-  Example_6_1["Example 6.1<br>indefinite product"]
-  Example_6_2["Example 6.2<br>sequence equations"]
-  Exercise_6_17["Exercise 6.17<br>sequence algebras"]
-  Exercise_6_18["Exercise 6.18<br>infinite product"]
-  Exercise_6_19["Exercise 6.19<br>strict sum"]
-  Exercise_6_20["Exercise 6.20<br>functor tokens"]
-  Exercise_6_21["Exercise 6.21<br>coalesced smash"]
-  Exercise_6_22["Exercise 6.22<br>integer equations"]
-  Exercise_6_23["Exercise 6.23<br>expression domain"]
-  Exercise_6_24["Exercise 6.24<br>recursive equations"]
-  Exercise_6_25["Exercise 6.25<br>projection laws"]
-  Exercise_6_26["Exercise 6.26<br>lifting a domain"]
-  Exercise_6_27["Exercise 6.27<br>which embeddings"]
-  Exercise_6_28["Exercise 6.28<br>embeddings cancel"]
-  Exercise_6_29["Exercise 6.29<br>infinitary product"]
-  Lemma_6_15["Lemma 6.15<br>projection subdomains"]
-  Proposition_6_11["Prop 6.11<br>subsystem lattice"]
-  Proposition_6_12["Prop 6.12<br>projection pair"]
-  Proposition_6_6["Prop 6.6<br>unique initial"]
-  Proposition_6_7["Prop 6.7<br>preserves initiality"]
-  Theorem_6_14["Theorem 6.14<br>initial algebras"]
-  Theorem_6_16["Theorem 6.16<br>minimal algebra"]
-  Theorem_6_9["Theorem 6.9<br>initial hom"]
+  Example_6_1___indefinite["Example 6.1 — indefinite product"]
+  Example_6_2___sequence_d["Example 6.2 — sequence domain equations"]
+  Definition_6_3___functor["Definition 6.3 — functor"]
+  Definition_6_4___algebra["Definition 6.4 — algebra for a functor"]
+  Definition_6_5___initial["Definition 6.5 — initial algebra"]
+  Proposition_6_6___unique["Proposition 6.6 — uniqueness of initial algebras"]
+  Proposition_6_7___functo["Proposition 6.7 — functor preserves initiality"]
+  Definition_6_8___continu["Definition 6.8 — continuity on maps"]
+  Theorem_6_9___homomorphi["Theorem 6.9 — homomorphism from initial algebra"]
+  Definition_6_10___subdom["Definition 6.10 — subdomain"]
+  Proposition_6_11___latti["Proposition 6.11 — lattice of subsystems"]
+  Proposition_6_12___proje["Proposition 6.12 — projection pair"]
+  Definition_6_13___contin["Definition 6.13 — continuity on domains"]
+  Theorem_6_14___existence["Theorem 6.14 — existence of initial algebras"]
+  Lemma_6_15___subdomains["Lemma 6.15 — subdomains from projection pairs"]
+  Theorem_6_16___initial_a["Theorem 6.16 — initial algebra is minimal"]
+  Exercise_6_17___algebras["Exercise 6.17 — algebras for sequence domains"]
+  Exercise_6_18___infinite["Exercise 6.18 — infinite product as initial"]
+  Exercise_6_19___strict_s["Exercise 6.19 — strict sum and product"]
+  Exercise_6_20___tokens_o["Exercise 6.20 — tokens of a functor"]
+  Exercise_6_21___coalesce["Exercise 6.21 — coalesced sum and smash"]
+  Exercise_6_22___equation["Exercise 6.22 — equations for the integers"]
+  Exercise_6_23___syntacti["Exercise 6.23 — syntactic expression domain"]
+  Exercise_6_24___recursiv["Exercise 6.24 — recursive domain equations"]
+  Exercise_6_25___projecti["Exercise 6.25 — projection pair laws"]
+  Exercise_6_26___lifting["Exercise 6.26 — lifting a domain"]
+  Exercise_6_27___which_em["Exercise 6.27 — which embeddings hold"]
+  Exercise_6_28___finite_e["Exercise 6.28 — finite embeddings cancel"]
+  Exercise_6_29___infinita["Exercise 6.29 — infinitary sum and product"]
 
-  Theorem_6_9 --> Definition_6_13
-  Exercise_6_28 --> Definition_6_3
-  Definition_6_3 --> Definition_6_4
-  Definition_6_4 --> Definition_6_5
-  Definition_6_5 --> Definition_6_8
-  Definition_6_10 --> Example_6_1
-  Example_6_1 --> Example_6_2
-  Theorem_6_16 --> Exercise_6_17
-  Exercise_6_17 --> Exercise_6_18
-  Example_6_2 --> Exercise_6_19
-  Definition_6_13 --> Exercise_6_20
-  Exercise_6_20 --> Exercise_6_21
-  Exercise_6_21 --> Exercise_6_22
-  Exercise_6_22 --> Exercise_6_23
-  Exercise_6_23 --> Exercise_6_24
-  Lemma_6_15 --> Exercise_6_25
-  Exercise_6_24 --> Exercise_6_26
-  Exercise_6_26 --> Exercise_6_27
-  Proposition_6_12 --> Exercise_6_27
-  Exercise_6_25 --> Exercise_6_28
-  Exercise_6_19 --> Exercise_6_29
-  Exercise_6_29 --> Lemma_6_15
-  Definition_6_10 --> Proposition_6_11
-  Exercise_6_29 --> Proposition_6_12
-  Definition_6_8 --> Proposition_6_6
-  Theorem_6_14 --> Proposition_6_7
-  Exercise_6_27 --> Theorem_6_14
-  Proposition_6_7 --> Theorem_6_16
-  Proposition_6_6 --> Theorem_6_9
+  Example_6_2___sequence_d --> Definition_6_10___subdom
+  Proposition_6_7___functo --> Definition_6_13___contin
+  Example_6_2___sequence_d --> Definition_6_3___functor
+  Definition_6_3___functor --> Definition_6_4___algebra
+  Definition_6_4___algebra --> Definition_6_5___initial
+  Definition_6_5___initial --> Definition_6_8___continu
+  Example_6_1___indefinite --> Example_6_2___sequence_d
+  Theorem_6_16___initial_a --> Exercise_6_17___algebras
+  Exercise_6_17___algebras --> Exercise_6_18___infinite
+  Example_6_2___sequence_d --> Exercise_6_19___strict_s
+  Proposition_6_7___functo --> Exercise_6_20___tokens_o
+  Proposition_6_7___functo --> Exercise_6_21___coalesce
+  Proposition_6_7___functo --> Exercise_6_22___equation
+  Proposition_6_7___functo --> Exercise_6_23___syntacti
+  Proposition_6_7___functo --> Exercise_6_24___recursiv
+  Definition_6_3___functor --> Exercise_6_25___projecti
+  Proposition_6_7___functo --> Exercise_6_26___lifting
+  Proposition_6_7___functo --> Exercise_6_27___which_em
+  Definition_6_3___functor --> Exercise_6_28___finite_e
+  Exercise_6_17___algebras --> Exercise_6_29___infinita
+  Definition_6_3___functor --> Lemma_6_15___subdomains
+  Example_6_1___indefinite --> Proposition_6_11___latti
+  Definition_6_3___functor --> Proposition_6_12___proje
+  Definition_6_5___initial --> Proposition_6_6___unique
+  Proposition_6_6___unique --> Proposition_6_7___functo
+  Proposition_6_7___functo --> Theorem_6_14___existence
+  Proposition_6_7___functo --> Theorem_6_16___initial_a
+  Proposition_6_6___unique --> Theorem_6_9___homomorphi
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a

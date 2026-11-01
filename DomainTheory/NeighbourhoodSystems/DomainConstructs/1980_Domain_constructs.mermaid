@@ -1,72 +1,69 @@
-%% Each box is one item. The arrowhead is on the item that imports.
-%% An arrow already implied by a longer path is omitted.
-%% The introduction has no Lean file, so it is not shown.
+%% Each box is one outline note from 1980_Domain_constructs.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  Definition_3_1["Def 3.1<br>product"]
-  Definition_3_3["Def 3.3<br>projections"]
-  Definition_3_8["Def 3.8<br>function space"]
-  Exercise_3_14["Exercise 3.14<br>tagged product"]
-  Exercise_3_15["Exercise 3.15<br>product isos"]
-  Exercise_3_16["Exercise 3.16<br>infinite sequences"]
-  Exercise_3_17["Exercise 3.17<br>embed sequences"]
-  Exercise_3_18["Exercise 3.18<br>separated sum"]
-  Exercise_3_19["Exercise 3.19<br>induced maps"]
-  Exercise_3_20["Exercise 3.20<br>sum and product"]
-  Exercise_3_21["Exercise 3.21<br>step identity"]
-  Exercise_3_22["Exercise 3.22<br>composition"]
-  Exercise_3_23["Exercise 3.23<br>cartesian closed"]
-  Exercise_3_24["Exercise 3.24<br>function-space isos"]
-  Exercise_3_25["Exercise 3.25<br>opens as a domain"]
-  Exercise_3_26["Exercise 3.26<br>conditional"]
-  Exercise_3_27["Exercise 3.27<br>closure space"]
-  Exercise_3_28["Exercise 3.28<br>minimal step"]
-  Lemma_3_6["Lemma 3.6<br>constant maps"]
-  Proposition_3_2["Prop 3.2<br>product elements"]
-  Proposition_3_4["Prop 3.4<br>pairing"]
-  Proposition_3_7["Prop 3.7<br>substitution"]
-  Proposition_3_9["Prop 3.9<br>step neighbourhoods"]
-  sumMap["sumMap"]
-  Theorem_3_10["Theorem 3.10<br>maps as elements"]
-  Theorem_3_11["Theorem 3.11<br>evaluation"]
-  Theorem_3_12["Theorem 3.12<br>currying"]
-  Theorem_3_13["Theorem 3.13<br>pointwise order"]
-  Theorem_3_5["Theorem 3.5<br>separate maps"]
+  Definition_3_1___product["Definition 3.1 — product of systems"]
+  Proposition_3_2___elemen["Proposition 3.2 — elements of a product"]
+  Definition_3_3___project["Definition 3.3 — projection mappings"]
+  Proposition_3_4___pairin["Proposition 3.4 — pairing and projections"]
+  Theorem_3_5___separate_a["Theorem 3.5 — separate approximability"]
+  Lemma_3_6___constant_fun["Lemma 3.6 — constant functions"]
+  Proposition_3_7___closur["Proposition 3.7 — closure under substitution"]
+  Definition_3_8___functio["Definition 3.8 — function space"]
+  Proposition_3_9___consis["Proposition 3.9 — consistent step neighbourhoods"]
+  Theorem_3_10___elements["Theorem 3.10 — elements are mappings"]
+  Theorem_3_11___evaluatio["Theorem 3.11 — evaluation combinator"]
+  Theorem_3_12___currying["Theorem 3.12 — currying"]
+  Theorem_3_13___pointwise["Theorem 3.13 — pointwise order of maps"]
+  Exercise_3_14___tagged_p["Exercise 3.14 — tagged product of tokens"]
+  Exercise_3_15___product["Exercise 3.15 — product isomorphisms"]
+  Exercise_3_16___infinite["Exercise 3.16 — infinite sequences of elements"]
+  Exercise_3_17___embeddin["Exercise 3.17 — embedding binary sequences"]
+  Exercise_3_18___separate["Exercise 3.18 — separated sum"]
+  Exercise_3_19___induced["Exercise 3.19 — induced maps on constructs"]
+  Exercise_3_20___sum_and["Exercise 3.20 — sum and product functors"]
+  Exercise_3_21___identity["Exercise 3.21 — identity of step neighbourhoods"]
+  Exercise_3_22___composit["Exercise 3.22 — composition combinator"]
+  Exercise_3_23___cartesia["Exercise 3.23 — cartesian closed category"]
+  Exercise_3_24___function["Exercise 3.24 — function-space isomorphisms"]
+  Exercise_3_25___opens_fo["Exercise 3.25 — opens form a domain"]
+  Exercise_3_26___conditio["Exercise 3.26 — conditional combinator"]
+  Exercise_3_27___function["Exercise 3.27 — function space via closure"]
+  Exercise_3_28___minimal["Exercise 3.28 — minimal step function"]
 
-  Definition_3_1 --> Definition_3_3
-  Lemma_3_6 --> Definition_3_8
-  Proposition_3_4 --> Exercise_3_14
-  Exercise_3_14 --> Exercise_3_15
-  Exercise_3_15 --> Exercise_3_16
-  Definition_3_8 --> Exercise_3_17
-  Exercise_3_16 --> Exercise_3_17
-  Exercise_3_18 --> Exercise_3_19
-  Proposition_3_4 --> Exercise_3_19
-  Exercise_3_19 --> Exercise_3_20
-  Proposition_3_9 --> Exercise_3_21
-  Theorem_3_12 --> Exercise_3_22
-  Exercise_3_15 --> Exercise_3_23
-  Theorem_3_12 --> Exercise_3_23
-  Exercise_3_16 --> Exercise_3_24
-  Exercise_3_19 --> Exercise_3_24
-  Theorem_3_13 --> Exercise_3_24
-  Theorem_3_12 --> Exercise_3_25
-  Exercise_3_19 --> Exercise_3_26
-  Theorem_3_12 --> Exercise_3_27
-  Proposition_3_9 --> Exercise_3_28
-  Definition_3_1 --> Lemma_3_6
-  Definition_3_1 --> Proposition_3_2
-  Theorem_3_5 --> Proposition_3_4
-  Proposition_3_4 --> Proposition_3_7
-  Definition_3_8 --> Proposition_3_9
-  Definition_3_8 --> Theorem_3_10
-  Theorem_3_10 --> Theorem_3_11
-  Theorem_3_5 --> Theorem_3_11
-  Theorem_3_11 --> Theorem_3_12
-  Theorem_3_12 --> Theorem_3_13
-  Definition_3_3 --> Theorem_3_5
-  Lemma_3_6 --> Theorem_3_5
-  Proposition_3_2 --> Theorem_3_5
+  Definition_3_1___product --> Definition_3_3___project
+  Proposition_3_4___pairin --> Definition_3_8___functio
+  Definition_3_8___functio --> Exercise_3_14___tagged_p
+  Exercise_3_14___tagged_p --> Exercise_3_15___product
+  Theorem_3_13___pointwise --> Exercise_3_15___product
+  Exercise_3_15___product --> Exercise_3_16___infinite
+  Exercise_3_16___infinite --> Exercise_3_17___embeddin
+  Definition_3_3___project --> Exercise_3_18___separate
+  Exercise_3_17___embeddin --> Exercise_3_19___induced
+  Exercise_3_18___separate --> Exercise_3_19___induced
+  Proposition_3_9___consis --> Exercise_3_19___induced
+  Exercise_3_19___induced --> Exercise_3_20___sum_and
+  Proposition_3_9___consis --> Exercise_3_21___identity
+  Theorem_3_12___currying --> Exercise_3_22___composit
+  Exercise_3_15___product --> Exercise_3_23___cartesia
+  Exercise_3_19___induced --> Exercise_3_24___function
+  Exercise_3_19___induced --> Exercise_3_25___opens_fo
+  Exercise_3_19___induced --> Exercise_3_26___conditio
+  Exercise_3_19___induced --> Exercise_3_27___function
+  Proposition_3_9___consis --> Exercise_3_28___minimal
+  Theorem_3_13___pointwise --> Exercise_3_28___minimal
+  Proposition_3_4___pairin --> Lemma_3_6___constant_fun
+  Definition_3_1___product --> Proposition_3_2___elemen
+  Definition_3_3___project --> Proposition_3_4___pairin
+  Proposition_3_2___elemen --> Proposition_3_4___pairin
+  Proposition_3_4___pairin --> Proposition_3_7___closur
+  Definition_3_8___functio --> Proposition_3_9___consis
+  Definition_3_8___functio --> Theorem_3_10___elements
+  Theorem_3_10___elements --> Theorem_3_11___evaluatio
+  Theorem_3_11___evaluatio --> Theorem_3_12___currying
+  Theorem_3_12___currying --> Theorem_3_13___pointwise
+  Proposition_3_4___pairin --> Theorem_3_5___separate_a
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a

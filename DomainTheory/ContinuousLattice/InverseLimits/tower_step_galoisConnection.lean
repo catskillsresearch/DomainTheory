@@ -1,13 +1,9 @@
 module
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
-public import Mathlib.Data.Set.Basic
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
-
-open Set
 
 universe u
 
@@ -17,7 +13,8 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
-theorem projection_galoisConnection (n : ℕ) :
+/-- At each index `n` of the tower, `(P n).incl` and `(P n).retr` form a Galois connection. -/
+theorem tower_step_galoisConnection (n : ℕ) :
     GaloisConnection ((P n).incl : D n → D (n + 1)) ((P n).retr : D (n + 1) → D n) := by
   intro x y
   constructor

@@ -227,7 +227,7 @@ preservesDirectedSup_coe,theorem,FunctionSpaces/preservesDirectedSup_coe.lean,(f
 preservesDirectedSup_comp,theorem,FunctionSpaces/comp.lean,PreservesDirectedSup (f ∘ g),D' → D'',D → D',PreservesDirectedSup f,PreservesDirectedSup g,,,,,,,
 preservesDirectedSup_monotone,theorem,ScottMaps/preservesDirectedSup_monotone.lean,Monotone f,D → D',PreservesDirectedSup f,,,,,,,,,
 conMinContinuousLatticeProjection,def,FunctionSpaces/Projection.lean,,,,,,,,,,,,
-projection_galoisConnection,theorem,InverseLimits/projection_galoisConnection.lean,GaloisConnection ((P n).incl : D n → D (n + 1)) ((P n).retr : D (n + 1) → D n),ℕ,,,,,,,,,,
+tower_step_galoisConnection,theorem,InverseLimits/tower_step_galoisConnection.lean,GaloisConnection ((P n).incl : D n → D (n + 1)) ((P n).retr : D (n + 1) → D n),ℕ,,,,,,,,,,
 Projections,abbrev,FunctionSpaces/Projections.lean,Type _,Type*,CompleteLattice D,,,,,,,,,
 projInf,def,InverseLimits/projInf.lean,ScottMap (InverseLimit D P) (D n),,,,,,,,,,,
 projInf_continuous,theorem,InverseLimits/inverseLimitTopology.lean,@Continuous (InverseLimit D P) (D n) (inverseLimitTopology D P) scottTopologicalSpace (projInf D P n),ℕ,,,,,,,,,,

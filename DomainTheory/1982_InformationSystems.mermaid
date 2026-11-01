@@ -1,39 +1,23 @@
-%% Each box is one folder under InformationSystems.
-%% The arrowhead points at the folder that imports. The label is how many direct imports.
+%% Each box is one outline note from 1982_InformationSystems.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  N2["ApproximableMappingsBetweenDomains"]
-  N3["DomainsAsLatticesAndAsTopologicalSpaces"]
-  N1["ElementsOfASystem"]
-  N5["FunctionSpaceAsADomain"]
-  N0["InformationSystems"]
-  N4["ProductsAndSumsOfDomains"]
-  N6["SomeDomainEquations"]
+  Information_systems["Information systems"]
+  The_elements_of_a_system["The elements of a system"]
+  Domains_as_lattices_and["Domains as lattices and as topological spaces"]
+  Approximable_mappings_be["Approximable mappings between domains"]
+  Products_and_sums_of_dom["Products and sums of domains"]
+  The_function_space_as_a["The function space as a domain"]
+  Some_domain_equations["Some domain equations"]
 
-  N0 -->|"165"| N0
-  N0 -->|"23"| N1
-  N1 -->|"56"| N1
-  N0 -->|"7"| N2
-  N1 -->|"7"| N2
-  N2 -->|"40"| N2
-  N0 -->|"20"| N3
-  N1 -->|"32"| N3
-  N2 -->|"9"| N3
-  N3 -->|"183"| N3
-  N0 -->|"62"| N4
-  N1 -->|"46"| N4
-  N2 -->|"139"| N4
-  N4 -->|"771"| N4
-  N0 -->|"87"| N5
-  N1 -->|"141"| N5
-  N2 -->|"91"| N5
-  N4 -->|"72"| N5
-  N5 -->|"1116"| N5
-  N1 -->|"50"| N6
-  N2 -->|"24"| N6
-  N4 -->|"305"| N6
-  N5 -->|"153"| N6
-  N6 -->|"1580"| N6
+  Domains_as_lattices_and --> Approximable_mappings_be
+  The_elements_of_a_system --> Domains_as_lattices_and
+  The_elements_of_a_system --> Products_and_sums_of_dom
+  Products_and_sums_of_dom --> Some_domain_equations
+  The_function_space_as_a --> Some_domain_equations
+  Information_systems --> The_elements_of_a_system
+  Domains_as_lattices_and --> The_function_space_as_a
 
   classDef c0 fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d

@@ -1,76 +1,10 @@
-%% Inside Continuous. A box is one Lean file in this folder, or one subfolder.
-%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
-%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+%% Each box is one outline note from 1976_Continuous.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  N7["Basic"]
-  N1["basicNhhd"]
-  basicNhhd_more["basicNhhd_more"]
-  N17["exists_basicNhhd_subset_of_generateOpen"]
-  N21["exists_e_cover_finite"]
-  N12["isOpen_basicNhhd"]
-  N11["isOpen_memOpen"]
-  N6["IsScottContinuous"]
-  N2["IsScottOpen"]
-  N18["isScottOpen_iff_isOpen"]
-  N15["isScottOpen_isUpper"]
-  N19["mem_scottUnion"]
-  N3["memOpen"]
-  Pomega["Pomega"]
-  N4["scottPiece"]
-  N5["scottUnion"]
-  N23["theorem_1_1"]
+  Theorem_1_1["Theorem 1.1"]
 
-  Pomega -->|"2"| N1
-  N3 -->|"1"| N11
-  N7 -->|"1"| N11
-  N1 -->|"1"| N12
-  N11 -->|"1"| N12
-  N3 -->|"1"| N12
-  N7 -->|"1"| N12
-  Pomega -->|"1"| N12
-  N2 -->|"1"| N15
-  Pomega -->|"1"| N15
-  N1 -->|"1"| N17
-  N3 -->|"1"| N17
-  Pomega -->|"1"| N17
-  basicNhhd_more -->|"1"| N17
-  N1 -->|"1"| N18
-  N12 -->|"1"| N18
-  N17 -->|"1"| N18
-  N2 -->|"1"| N18
-  N3 -->|"1"| N18
-  N7 -->|"1"| N18
-  Pomega -->|"1"| N18
-  N5 -->|"1"| N19
-  Pomega -->|"1"| N19
-  N1 -->|"1"| N2
-  Pomega -->|"1"| N2
-  N6 -->|"1"| N21
-  Pomega -->|"1"| N21
-  N21 -->|"1"| N23
-  N5 -->|"1"| N23
-  N6 -->|"1"| N23
-  Pomega -->|"1"| N23
-  N1 -->|"1"| N3
-  Pomega -->|"1"| N3
-  Pomega -->|"1"| N4
-  N4 -->|"1"| N5
-  Pomega -->|"1"| N5
-  N1 -->|"1"| N6
-  N15 -->|"1"| N6
-  N18 -->|"1"| N6
-  N19 -->|"1"| N6
-  N2 -->|"1"| N6
-  N3 -->|"1"| N6
-  N4 -->|"1"| N6
-  N5 -->|"1"| N6
-  Pomega -->|"1"| N6
-  N3 -->|"1"| N7
-  Pomega -->|"1"| N7
-  N1 -->|"1"| basicNhhd_more
-  N3 -->|"1"| basicNhhd_more
-  Pomega -->|"1"| basicNhhd_more
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

@@ -1,60 +1,57 @@
-%% Each box is one item. The arrowhead is on the item that imports.
-%% An arrow already implied by a longer path is omitted.
-%% The introduction has no Lean file, so it is not shown.
+%% Each box is one outline note from 1980_Computability_in_effectively_given_domains.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  Definition_7_11["Def 7.11<br>finite element sets"]
-  Definition_7_1["Def 7.1<br>computable presentation"]
-  Definition_7_2["Def 7.2<br>computable mapping"]
-  Definition_7_9["Def 7.9<br>power domain"]
-  Example_7_8["Example 7.8<br>powerset given"]
-  Exercise_7_13["Exercise 7.13<br>neighbourhood axioms"]
-  Exercise_7_14["Exercise 7.14<br>primitive recursive"]
-  Exercise_7_15["Exercise 7.15<br>more constructs"]
-  Exercise_7_16["Exercise 7.16<br>curry enumeration"]
-  Exercise_7_17["Exercise 7.17<br>recursion on lists"]
-  Exercise_7_18["Exercise 7.18<br>effective isomorphism"]
-  Exercise_7_19["Exercise 7.19<br>power domain functor"]
-  Exercise_7_20["Exercise 7.20<br>power domain union"]
-  Exercise_7_21["Exercise 7.21<br>distributing power"]
-  Exercise_7_22["Exercise 7.22<br>formal languages"]
-  Exercise_7_23["Exercise 7.23<br>graph and fun"]
-  Exercise_7_24["Exercise 7.24<br>LUCID histories"]
-  Proposition_7_10["Prop 7.10<br>power domain effective"]
-  Proposition_7_12["Prop 7.12<br>finite sets approximable"]
-  Proposition_7_3["Prop 7.3<br>computable map category"]
-  Proposition_7_7["Prop 7.7<br>lists given"]
-  Theorem_7_4["Theorem 7.4<br>sum and product"]
-  Theorem_7_5["Theorem 7.5<br>function space"]
-  Theorem_7_6["Theorem 7.6<br>computable fix"]
+  Definition_7_1___computa["Definition 7.1 — computable presentation"]
+  Definition_7_2___computa["Definition 7.2 — computable mapping"]
+  Proposition_7_3___comput["Proposition 7.3 — computable maps form a category"]
+  Theorem_7_4___sum_and_pr["Theorem 7.4 — sum and product effective"]
+  Theorem_7_5___function_s["Theorem 7.5 — function space effective"]
+  Theorem_7_6___fix_is_com["Theorem 7.6 — fix is computable"]
+  Proposition_7_7___lists["Proposition 7.7 — lists effectively given"]
+  Example_7_8___powerset_e["Example 7.8 — powerset effectively given"]
+  Definition_7_9___power_d["Definition 7.9 — power domain"]
+  Proposition_7_10___power["Proposition 7.10 — power domain effective"]
+  Definition_7_11___finite["Definition 7.11 — finite sets of elements"]
+  Proposition_7_12___finit["Proposition 7.12 — finite sets are approximable"]
+  Exercise_7_13___axiomati["Exercise 7.13 — axiomatic neighbourhood structure"]
+  Exercise_7_14___primitiv["Exercise 7.14 — primitive recursive witnesses"]
+  Exercise_7_15___further["Exercise 7.15 — further constructs effective"]
+  Exercise_7_16___curry_as["Exercise 7.16 — curry as an enumeration"]
+  Exercise_7_17___recursio["Exercise 7.17 — recursion over lists"]
+  Exercise_7_18___effectiv["Exercise 7.18 — effective isomorphism"]
+  Exercise_7_19___power_do["Exercise 7.19 — power domain functor"]
+  Exercise_7_20___union_on["Exercise 7.20 — union on power domains"]
+  Exercise_7_21___distribu["Exercise 7.21 — distributing the power domain"]
+  Exercise_7_22___domain_o["Exercise 7.22 — domain of formal languages"]
+  Exercise_7_23___graph_an["Exercise 7.23 — graph and fun computable"]
+  Exercise_7_24___LUCID_hi["Exercise 7.24 — LUCID history domain"]
 
-  Exercise_7_22 --> Definition_7_1
-  Proposition_7_10 --> Definition_7_11
-  Definition_7_1 --> Definition_7_2
-  Definition_7_1 --> Example_7_8
-  Definition_7_1 --> Exercise_7_13
-  Definition_7_2 --> Exercise_7_14
-  Definition_7_9 --> Exercise_7_14
-  Theorem_7_4 --> Exercise_7_15
-  Theorem_7_5 --> Exercise_7_16
-  Exercise_7_18 --> Exercise_7_17
-  Theorem_7_4 --> Exercise_7_18
-  Definition_7_11 --> Exercise_7_19
-  Exercise_7_19 --> Exercise_7_20
-  Exercise_7_19 --> Exercise_7_21
-  Example_7_8 --> Exercise_7_23
-  Theorem_7_5 --> Exercise_7_23
-  Theorem_7_5 --> Exercise_7_24
-  Exercise_7_14 --> Proposition_7_10
-  Theorem_7_4 --> Proposition_7_12
-  Definition_7_2 --> Proposition_7_3
-  Exercise_7_21 --> Proposition_7_7
-  Proposition_7_3 --> Theorem_7_4
-  Proposition_7_7 --> Theorem_7_4
-  Proposition_7_12 --> Theorem_7_5
-  Exercise_7_15 --> Theorem_7_6
-  Exercise_7_18 --> Theorem_7_6
-  Exercise_7_24 --> Theorem_7_6
+  Theorem_7_4___sum_and_pr --> Definition_7_11___finite
+  Definition_7_1___computa --> Definition_7_2___computa
+  Theorem_7_4___sum_and_pr --> Definition_7_9___power_d
+  Definition_7_1___computa --> Example_7_8___powerset_e
+  Definition_7_1___computa --> Exercise_7_13___axiomati
+  Theorem_7_4___sum_and_pr --> Exercise_7_14___primitiv
+  Theorem_7_4___sum_and_pr --> Exercise_7_15___further
+  Theorem_7_5___function_s --> Exercise_7_16___curry_as
+  Theorem_7_6___fix_is_com --> Exercise_7_17___recursio
+  Theorem_7_4___sum_and_pr --> Exercise_7_18___effectiv
+  Theorem_7_4___sum_and_pr --> Exercise_7_19___power_do
+  Theorem_7_4___sum_and_pr --> Exercise_7_20___union_on
+  Theorem_7_4___sum_and_pr --> Exercise_7_21___distribu
+  Theorem_7_6___fix_is_com --> Exercise_7_22___domain_o
+  Example_7_8___powerset_e --> Exercise_7_23___graph_an
+  Theorem_7_5___function_s --> Exercise_7_23___graph_an
+  Theorem_7_6___fix_is_com --> Exercise_7_24___LUCID_hi
+  Theorem_7_4___sum_and_pr --> Proposition_7_10___power
+  Theorem_7_4___sum_and_pr --> Proposition_7_12___finit
+  Definition_7_2___computa --> Proposition_7_3___comput
+  Theorem_7_4___sum_and_pr --> Proposition_7_7___lists
+  Proposition_7_3___comput --> Theorem_7_4___sum_and_pr
+  Theorem_7_4___sum_and_pr --> Theorem_7_5___function_s
+  Theorem_7_5___function_s --> Theorem_7_6___fix_is_com
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a

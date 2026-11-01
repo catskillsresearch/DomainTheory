@@ -109,7 +109,7 @@ def path_for_key(key: str) -> Path:
         "3.12": DT / "ContinuousLattice/FunctionSpaces/proposition_3_12.english",
         "3.13": DT / "ContinuousLattice/FunctionSpaces/proposition_3_13.english",
         "3.14": DT / "ContinuousLattice/FunctionSpaces/1972_Proposition_3_14.english",
-        "sec4": DT / "ContinuousLattice/InverseLimits/1972_Inverse_limits.english",
+        "sec4": DT / "ContinuousLattice/1972_4_Inverse_limits.english",
         "4.1": DT / "ContinuousLattice/InverseLimits/proposition_4_1.english",
         "4.2": DT / "ContinuousLattice/InverseLimits/1972_Proposition_4_2.english",
         "4.3": DT / "ContinuousLattice/InverseLimits/corollary_4_3.english",

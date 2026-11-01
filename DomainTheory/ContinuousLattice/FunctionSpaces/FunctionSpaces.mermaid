@@ -6,6 +6,8 @@ flowchart TB
   ContinuousLatticeProjection["ContinuousLatticeProjection"]
   ContinuousLatticeRetraction["ContinuousLatticeRetraction"]
   N13["continuousMapInducedPiTopology"]
+  ConverseProjection["ConverseProjection"]
+  ConverseRetraction["ConverseRetraction"]
   N158["corollary_3_4"]
   FunctionSpace["FunctionSpace"]
   Projection["Projection"]
@@ -34,6 +36,11 @@ flowchart TB
   ContinuousLatticeRetraction -->|"1"| ContinuousLatticeProjection
   N0 -->|"1"| ContinuousLatticeRetraction
   N3 -->|"1"| ContinuousLatticeRetraction
+  ContinuousLatticeProjection -->|"1"| ConverseProjection
+  ConverseRetraction -->|"1"| ConverseProjection
+  ContinuousLatticeProjection -->|"1"| ConverseRetraction
+  N0 -->|"1"| ConverseRetraction
+  N2 -->|"1"| ConverseRetraction
   Projection -->|"1"| FunctionSpace
   N127 -->|"1"| N100
   N2 -->|"2"| N100
@@ -69,6 +76,7 @@ flowchart TB
   N1 -->|"2"| ScottFunctionTopology
   N13 -->|"1"| ScottFunctionTopology
   ContinuousLatticeProjection -->|"1"| proposition_3_10
+  ConverseProjection -->|"1"| proposition_3_10
   N2 -->|"1"| proposition_3_10
   FunctionSpace -->|"1"| proposition_3_7
 

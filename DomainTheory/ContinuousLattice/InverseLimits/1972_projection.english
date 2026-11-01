@@ -1,0 +1,28 @@
+For an inverse system $\langle D_n, P_n \rangle$, fix one index $n$. Write $i_n = (P\,n).\mathrm{incl} : D_n \to D_{n+1}$ and $j_n = (P\,n).\mathrm{retr} : D_{n+1} \to D_n$ for the [continuous lattice projection](../FunctionSpaces/1972_Continuous_lattice_projection.md) on that **step** (one rung of the tower, not the composite descent in [Projections along the tower](1972_projLE.md)).
+
+### What an adjunction is (order theory)
+
+Two posets and two monotone maps $f : P \to Q$, $g : Q \to P$ form an **adjunction** $f \dashv g$ when comparisons after applying $f$ are equivalent to comparisons after applying $g$:
+
+$$f(x) \le y \quad\Longleftrightarrow\quad x \le g(y) \qquad (x \in P,\; y \in Q).$$
+
+Same question on the left always matches the same question on the right. In Lean this predicate is named **`GaloisConnection`**; “Galois connection” and “adjunction between posets” mean the same thing here. The map on the left ($f$) is the **left adjoint**, the map on the right ($g$) the **right adjoint**.
+
+Reading the equivalence for one tower step: embedding $x \in D_n$ into $D_{n+1}$ and comparing to $y$ is the same as comparing $x$ to the retraction $j_n(y) \in D_n$.
+
+### Why a projection step is an adjunction
+
+A continuous lattice projection is not merely two monotone maps. It satisfies $j_n \circ i_n = \mathrm{id}_{D_n}$ (**`retr_incl`**) and $i_n(j_n(y)) \le y$ for all $y \in D_{n+1}$ (**`incl_retr_le`**). Those two facts are exactly the two directions of the equivalence above:
+
+- If $i_n(x) \le y$, apply monotone $j_n$ and use $j_n(i_n(x)) = x$ to get $x \le j_n(y)$.
+- If $x \le j_n(y)$, apply monotone $i_n$ and use $i_n(j_n(y)) \le y$ to get $i_n(x) \le y$.
+
+Without **`incl_retr_le`**, a retraction alone would not prove the second implication in general. The library lemma **`tower_step_galoisConnection`** records the packaged result.
+
+**Theorem (`tower_step_galoisConnection`).** *For every **`n : ℕ`**, **`GaloisConnection ((P n).incl) ((P n).retr)`**: for all **`x : D n`**, **`y : D (n + 1)`**,*
+
+$$i_n(x) \le y \quad\Longleftrightarrow\quad x \le j_n(y).$$
+
+*Proof.* The forward implication applies **`(P n).retr`** monotonically and uses **`retr_incl`**. The reverse uses monotonicity of **`incl`** and **`incl_retr_le`**. $\square$
+
+This adjunction is used when building infima on the inverse limit (see [The limit lattice](1972_Limit_lattice.md)): the right adjoint **`retr`** preserves arbitrary meets.

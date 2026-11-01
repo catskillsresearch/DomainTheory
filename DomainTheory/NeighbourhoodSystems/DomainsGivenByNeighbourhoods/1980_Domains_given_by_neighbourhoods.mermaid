@@ -1,80 +1,78 @@
-%% Each box is one item. The arrowhead is on the item that imports.
-%% An arrow already implied by a longer path is omitted.
-%% The introduction has no Lean file, so it is not shown.
-%% Lettered parts of one Scott number share one box.
+%% Each box is one outline note from 1980_Domains_given_by_neighbourhoods.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  NeighborhoodSystem["Def 1.1<br>neighbourhood system"]
-  Element["Def 1.6<br>ideal elements"]
-  principal["Def 1.7<br>principal filter"]
-  bot["Def 1.8<br>approximation<br>totality"]
-  DomainIso["Def 1.9<br>isomorphic domains"]
-  Example_1_2["Example 1.2<br>two-token domain"]
-  Example_1_3["Example 1.3<br>three-step chain"]
-  Example_1_4["Example 1.4<br>finite binary tree"]
-  Example_1_5["Example 1.5<br>all nonempty subsets"]
-  Examples_1_2_1_5_revisited["Examples 1.2–1.5<br>examples revisited"]
-  Exercise_1_12["Exercise 1.12<br>integer segments"]
-  Exercise_1_13["Exercise 1.13<br>infinite binary tree"]
-  Exercise_1_14["Exercise 1.14<br>nonempty subsets"]
-  Exercise_1_15["Exercise 1.15<br>without chains"]
-  Exercise_1_16["Exercise 1.16<br>cofinite subsets"]
-  Exercise_1_17["Exercise 1.17<br>rational open intervals"]
-  Exercise_1_18["Exercise 1.18<br>consistent families"]
-  Exercise_1_19["Exercise 1.19<br>positive systems"]
-  Exercise_1_20["Exercise 1.20<br>upward closed"]
-  Exercise_1_21["Exercise 1.21<br>complete systems"]
-  Exercise_1_22["Exercise 1.22<br>topology of a domain"]
-  Exercise_1_23["Exercise 1.23<br>decidable elements"]
-  Exercise_1_24["Exercise 1.24<br>partial elements"]
-  Exercise_1_25["Exercise 1.25<br>ordinal segments"]
-  Exercise_1_26["Exercise 1.26<br>ideals of a ring"]
-  Exercise_1_27["Exercise 1.27<br>bounded suprema"]
-  Factoid_1_1["Factoid 1.1<br>empty meet is delta"]
-  Factoid_1_4["Factoid 1.4a<br>nested or disjoint"]
-  Factoid_1_5["Factoid 1.5<br>iff nonempty<br>same limit"]
-  Factoid_1_7["Factoid 1.7<br>one-one"]
-  Factoid_1_8["Factoid 1.8<br>bottom element"]
-  Theorem_1_10["Thm 1.10<br>basic opens"]
-  Theorem_1_11["Thm 1.11<br>intersections"]
+  Definition_1_1___neighbo["Definition 1.1 — neighbourhood system"]
+  Factoid_1_1___empty_inte["Factoid 1.1 — empty intersection is delta; recursive finite intersection"]
+  Example_1_2___two_token["Example 1.2 — two-token domain"]
+  Example_1_3___three_step["Example 1.3 — three-step chain"]
+  Example_1_4___finite_bin["Example 1.4 — finite binary tree"]
+  Factoid_1_4a___nested_or["Factoid 1.4a — nested or disjoint"]
+  Example_1_5___all_nonemp["Example 1.5 — all nonempty subsets"]
+  Factoid_1_5___consistent["Factoid 1.5 — consistent iff nonempty; equivalent sequences same limit"]
+  Definition_1_6___ideal_e["Definition 1.6 — ideal elements"]
+  Definition_1_7___princip["Definition 1.7 — principal filter"]
+  Factoid_1_7___principals["Factoid 1.7 — principals are one-one; inclusion-reversing principals; union of principal filters"]
+  Definition_1_8___approxi["Definition 1.8 — approximation and totality"]
+  Factoid_1_8___bottom_ele["Factoid 1.8 — bottom element; bottom is least; finite filters are principal; prefix order; union of finite approximations"]
+  Examples_1_2_1_5__Revisi["Examples 1.2–1.5 (Revisited) — finite examples revisited"]
+  Definition_1_9___isomorp["Definition 1.9 — isomorphic domains"]
+  Theorem_1_10___basic_ope["Theorem 1.10 — basic open neighbourhoods"]
+  Theorem_1_11___intersect["Theorem 1.11 — intersections and directed unions"]
+  Exercise_1_12___final_se["Exercise 1.12 — final segments of integers"]
+  Exercise_1_13___infinite["Exercise 1.13 — infinite binary tree"]
+  Exercise_1_14___finite_n["Exercise 1.14 — finite nonempty subsets"]
+  Exercise_1_15___finite_e["Exercise 1.15 — finite elements without chains"]
+  Exercise_1_16___cofinite["Exercise 1.16 — cofinite integer subsets"]
+  Exercise_1_17___rational["Exercise 1.17 — rational open intervals"]
+  Exercise_1_18___consiste["Exercise 1.18 — consistency of neighbourhood families"]
+  Exercise_1_19___positive["Exercise 1.19 — positive neighbourhood systems"]
+  Exercise_1_20___upward_c["Exercise 1.20 — upward closed neighbourhoods"]
+  Exercise_1_21___complete["Exercise 1.21 — complete neighbourhood systems"]
+  Exercise_1_22___topology["Exercise 1.22 — topology of a domain"]
+  Exercise_1_23___decidabl["Exercise 1.23 — decidable total elements"]
+  Exercise_1_24___extendin["Exercise 1.24 — extending partial elements"]
+  Exercise_1_25___final_se["Exercise 1.25 — final segments of ordinals"]
+  Exercise_1_26___ideals_o["Exercise 1.26 — ideals of a ring"]
+  Exercise_1_27___suprema["Exercise 1.27 — suprema of bounded sets"]
 
-  bot --> DomainIso
-  NeighborhoodSystem --> Element
-  DomainIso --> Example_1_2
-  DomainIso --> Example_1_3
-  DomainIso --> Example_1_4
-  DomainIso --> Example_1_5
-  Example_1_2 --> Examples_1_2_1_5_revisited
-  Example_1_3 --> Examples_1_2_1_5_revisited
-  Example_1_4 --> Examples_1_2_1_5_revisited
-  Example_1_5 --> Examples_1_2_1_5_revisited
-  Factoid_1_7 --> Exercise_1_12
-  Theorem_1_11 --> Exercise_1_13
-  DomainIso --> Exercise_1_14
-  Factoid_1_8 --> Exercise_1_15
-  DomainIso --> Exercise_1_16
-  Element --> Exercise_1_17
-  Factoid_1_5 --> Exercise_1_18
-  Element --> Exercise_1_19
-  DomainIso --> Exercise_1_20
-  Theorem_1_10 --> Exercise_1_21
-  Exercise_1_20 --> Exercise_1_22
-  Exercise_1_13 --> Exercise_1_23
-  DomainIso --> Exercise_1_24
-  Factoid_1_7 --> Exercise_1_25
-  Factoid_1_1 --> Exercise_1_26
-  Exercise_1_18 --> Exercise_1_27
-  Factoid_1_7 --> Exercise_1_27
-  Exercise_1_19 --> Factoid_1_1
-  Factoid_1_1 --> Factoid_1_4
-  Example_1_5 --> Factoid_1_5
-  Factoid_1_5 --> Factoid_1_7
-  Examples_1_2_1_5_revisited --> Factoid_1_8
-  Factoid_1_7 --> Factoid_1_8
-  Exercise_1_27 --> Theorem_1_10
-  Factoid_1_8 --> Theorem_1_11
-  principal --> bot
-  Factoid_1_4 --> principal
+  Definition_1_1___neighbo --> Definition_1_6___ideal_e
+  Example_1_2___two_token --> Definition_1_7___princip
+  Example_1_2___two_token --> Definition_1_8___approxi
+  Example_1_2___two_token --> Definition_1_9___isomorp
+  Factoid_1_1___empty_inte --> Example_1_2___two_token
+  Example_1_2___two_token --> Example_1_3___three_step
+  Example_1_2___two_token --> Example_1_4___finite_bin
+  Example_1_2___two_token --> Example_1_5___all_nonemp
+  Example_1_3___three_step --> Examples_1_2_1_5__Revisi
+  Example_1_4___finite_bin --> Examples_1_2_1_5__Revisi
+  Example_1_5___all_nonemp --> Examples_1_2_1_5__Revisi
+  Factoid_1_7___principals --> Exercise_1_12___final_se
+  Theorem_1_11___intersect --> Exercise_1_13___infinite
+  Example_1_2___two_token --> Exercise_1_14___finite_n
+  Factoid_1_8___bottom_ele --> Exercise_1_15___finite_e
+  Example_1_2___two_token --> Exercise_1_16___cofinite
+  Factoid_1_1___empty_inte --> Exercise_1_17___rational
+  Factoid_1_5___consistent --> Exercise_1_18___consiste
+  Theorem_1_11___intersect --> Exercise_1_19___positive
+  Example_1_2___two_token --> Exercise_1_20___upward_c
+  Theorem_1_10___basic_ope --> Exercise_1_21___complete
+  Exercise_1_20___upward_c --> Exercise_1_22___topology
+  Exercise_1_13___infinite --> Exercise_1_23___decidabl
+  Example_1_2___two_token --> Exercise_1_24___extendin
+  Factoid_1_7___principals --> Exercise_1_25___final_se
+  Factoid_1_1___empty_inte --> Exercise_1_26___ideals_o
+  Theorem_1_10___basic_ope --> Exercise_1_27___suprema
+  Definition_1_1___neighbo --> Factoid_1_1___empty_inte
+  Factoid_1_1___empty_inte --> Factoid_1_4a___nested_or
+  Example_1_5___all_nonemp --> Factoid_1_5___consistent
+  Factoid_1_5___consistent --> Factoid_1_7___principals
+  Example_1_3___three_step --> Factoid_1_8___bottom_ele
+  Example_1_4___finite_bin --> Factoid_1_8___bottom_ele
+  Factoid_1_7___principals --> Factoid_1_8___bottom_ele
+  Factoid_1_7___principals --> Theorem_1_10___basic_ope
+  Factoid_1_8___bottom_ele --> Theorem_1_11___intersect
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a

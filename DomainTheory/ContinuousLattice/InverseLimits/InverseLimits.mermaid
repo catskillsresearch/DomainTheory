@@ -23,13 +23,13 @@ flowchart TB
   N26["inverseLimitSInfCoe"]
   N27["inverseLimitTopology"]
   N75["lemma_4_5"]
-  N52["projection_galoisConnection"]
   N73["projInf"]
   N33["projLE"]
   N77["proposition_4_1"]
   N78["proposition_4_2"]
   N4["ScottMaps"]
   N5["Specialization"]
+  tower_step_galoisConnection["tower_step_galoisConnection"]
   N6["WayBelow"]
 
   N2 -->|"2"| N11
@@ -50,15 +50,11 @@ flowchart TB
   N73 -->|"1"| N27
   N8 -->|"1"| N27
   N9 -->|"1"| N27
-  N2 -->|"2"| N33
-  N4 -->|"1"| N33
   N8 -->|"1"| N33
   N11 -->|"1"| N34
   N33 -->|"1"| N34
   N4 -->|"2"| N34
-  N7 -->|"1"| N34
   N8 -->|"1"| N34
-  N2 -->|"2"| N52
   instInfSet -->|"1"| N58
   N2 -->|"1"| N59
   N58 -->|"1"| N59
@@ -102,7 +98,8 @@ flowchart TB
   N2 -->|"1"| instInfSet
   N25 -->|"1"| instInfSet
   N26 -->|"1"| instInfSet
-  N52 -->|"1"| instInfSet
+  tower_step_galoisConnection -->|"1"| instInfSet
+  N2 -->|"2"| tower_step_galoisConnection
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

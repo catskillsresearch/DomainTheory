@@ -1,56 +1,61 @@
-%% Each box is one item. The arrowhead is on the item that imports.
-%% An arrow already implied by a longer path is omitted.
-%% The introduction has no Lean file, so it is not shown.
+%% Each box is one outline note from 1980_Fixed_points_and_recursion.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  Definition_4_5["Def 4.5<br>Peano axioms"]
-  Example_4_3["Example 4.3<br>partial functions"]
-  Example_4_4["Example 4.4<br>sequence domain"]
-  Exercise_4_10["Exercise 4.10<br>domain above"]
-  Exercise_4_11["Exercise 4.11<br>characterizing fix"]
-  Exercise_4_12["Exercise 4.12<br>no greatest point"]
-  Exercise_4_13["Exercise 4.13<br>avoiding numbers"]
-  Exercise_4_14["Exercise 4.14<br>powerset fixed point"]
-  Exercise_4_15["Exercise 4.15<br>maximal fixed points"]
-  Exercise_4_16["Exercise 4.16<br>optimal fixed point"]
-  Exercise_4_17["Exercise 4.17<br>generated submonoid"]
-  Exercise_4_18["Exercise 4.18<br>checking numbers"]
-  Exercise_4_19["Exercise 4.19<br>Peano for sequences"]
-  Exercise_4_20["Exercise 4.20<br>fix of a composite"]
-  Exercise_4_21["Exercise 4.21<br>order as fixed point"]
-  Exercise_4_22["Exercise 4.22<br>inductive subset"]
-  Exercise_4_23["Exercise 4.23<br>commuting iterates"]
-  Exercise_4_24["Exercise 4.24<br>Schroeder-Bernstein"]
-  Exercise_4_25["Exercise 4.25<br>unary sequences"]
-  Exercise_4_7["Exercise 4.7<br>fixed point above"]
-  Exercise_4_8["Exercise 4.8<br>fixed-point induction"]
-  Exercise_4_9["Exercise 4.9<br>fix as fixed point"]
-  Theorem_4_1["Theorem 4.1<br>least fixed point"]
-  Theorem_4_2["Theorem 4.2<br>fix combinator"]
-  Theorem_4_6["Theorem 4.6<br>models isomorphic"]
+  Theorem_4_1___least_fixe["Theorem 4.1 — least fixed point"]
+  Theorem_4_2___fix_combin["Theorem 4.2 — fix combinator"]
+  Example_4_3___partial_fu["Example 4.3 — partial functions on integers"]
+  Example_4_4___sequence_d["Example 4.4 — sequence domain"]
+  Definition_4_5___Peano_a["Definition 4.5 — Peano axioms"]
+  Theorem_4_6___Peano_mode["Theorem 4.6 — Peano models isomorphic"]
+  Exercise_4_7___fixed_poi["Exercise 4.7 — fixed point above a seed"]
+  Exercise_4_8___fixed_poi["Exercise 4.8 — fixed-point induction"]
+  Exercise_4_9___fix_as_a["Exercise 4.9 — fix as a fixed point"]
+  Exercise_4_10___domain_a["Exercise 4.10 — domain above an element"]
+  Exercise_4_11___characte["Exercise 4.11 — characterizing the fix combinator"]
+  Exercise_4_12___no_great["Exercise 4.12 — no greatest fixed point"]
+  Exercise_4_13___avoiding["Exercise 4.13 — avoiding the natural numbers"]
+  Exercise_4_14___greatest["Exercise 4.14 — greatest powerset fixed point"]
+  Exercise_4_15___maximal["Exercise 4.15 — maximal fixed points"]
+  Exercise_4_16___optimal["Exercise 4.16 — optimal fixed point"]
+  Exercise_4_17___generate["Exercise 4.17 — generated submonoid"]
+  Exercise_4_18___checking["Exercise 4.18 — checking the number domain"]
+  Exercise_4_19___Peano_ax["Exercise 4.19 — Peano axioms for sequences"]
+  Exercise_4_20___fix_of_a["Exercise 4.20 — fix of a composite"]
+  Exercise_4_21___order_as["Exercise 4.21 — order as a fixed point"]
+  Exercise_4_22___inductiv["Exercise 4.22 — inductive subset of a model"]
+  Exercise_4_23___commutin["Exercise 4.23 — commuting with the iterates"]
+  Exercise_4_24___Schroede["Exercise 4.24 — Schroeder-Bernstein theorem"]
+  Exercise_4_25___unary_se["Exercise 4.25 — unary sequence domain"]
 
-  Theorem_4_2 --> Example_4_4
-  Theorem_4_2 --> Exercise_4_10
-  Exercise_4_10 --> Exercise_4_11
-  Exercise_4_7 --> Exercise_4_11
-  Exercise_4_13 --> Exercise_4_15
-  Exercise_4_15 --> Exercise_4_16
-  Exercise_4_14 --> Exercise_4_17
-  Example_4_3 --> Exercise_4_18
-  Example_4_4 --> Exercise_4_19
-  Exercise_4_19 --> Exercise_4_20
-  Exercise_4_14 --> Exercise_4_21
-  Definition_4_5 --> Exercise_4_22
-  Exercise_4_14 --> Exercise_4_22
-  Theorem_4_2 --> Exercise_4_23
-  Exercise_4_14 --> Exercise_4_24
-  Example_4_3 --> Exercise_4_25
-  Theorem_4_2 --> Exercise_4_25
-  Example_4_4 --> Exercise_4_7
-  Exercise_4_7 --> Exercise_4_8
-  Theorem_4_2 --> Exercise_4_9
-  Theorem_4_1 --> Theorem_4_2
-  Definition_4_5 --> Theorem_4_6
+  Theorem_4_1___least_fixe --> Example_4_3___partial_fu
+  Theorem_4_2___fix_combin --> Example_4_4___sequence_d
+  Theorem_4_2___fix_combin --> Exercise_4_10___domain_a
+  Exercise_4_10___domain_a --> Exercise_4_11___characte
+  Exercise_4_7___fixed_poi --> Exercise_4_11___characte
+  Theorem_4_1___least_fixe --> Exercise_4_12___no_great
+  Exercise_4_9___fix_as_a --> Exercise_4_13___avoiding
+  Exercise_4_13___avoiding --> Exercise_4_15___maximal
+  Exercise_4_15___maximal --> Exercise_4_16___optimal
+  Exercise_4_14___greatest --> Exercise_4_17___generate
+  Example_4_3___partial_fu --> Exercise_4_18___checking
+  Example_4_4___sequence_d --> Exercise_4_19___Peano_ax
+  Exercise_4_15___maximal --> Exercise_4_19___Peano_ax
+  Exercise_4_19___Peano_ax --> Exercise_4_20___fix_of_a
+  Exercise_4_14___greatest --> Exercise_4_21___order_as
+  Definition_4_5___Peano_a --> Exercise_4_22___inductiv
+  Exercise_4_14___greatest --> Exercise_4_22___inductiv
+  Exercise_4_15___maximal --> Exercise_4_23___commutin
+  Exercise_4_14___greatest --> Exercise_4_24___Schroede
+  Theorem_4_1___least_fixe --> Exercise_4_24___Schroede
+  Example_4_3___partial_fu --> Exercise_4_25___unary_se
+  Theorem_4_2___fix_combin --> Exercise_4_25___unary_se
+  Example_4_4___sequence_d --> Exercise_4_7___fixed_poi
+  Exercise_4_7___fixed_poi --> Exercise_4_8___fixed_poi
+  Theorem_4_2___fix_combin --> Exercise_4_9___fix_as_a
+  Theorem_4_1___least_fixe --> Theorem_4_2___fix_combin
+  Definition_4_5___Peano_a --> Theorem_4_6___Peano_mode
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a

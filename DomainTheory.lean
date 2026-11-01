@@ -301,7 +301,7 @@ import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 import DomainTheory.ContinuousLattice.InverseLimits.lemma_4_5
 import DomainTheory.ContinuousLattice.InverseLimits.projInf
 import DomainTheory.ContinuousLattice.InverseLimits.projLE
-import DomainTheory.ContinuousLattice.InverseLimits.projection_galoisConnection
+import DomainTheory.ContinuousLattice.InverseLimits.tower_step_galoisConnection
 import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_1
 import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_2
 import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup

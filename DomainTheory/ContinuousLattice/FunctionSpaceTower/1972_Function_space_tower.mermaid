@@ -1,98 +1,28 @@
-%% Inside FunctionSpaceTower. A box is one Lean file in this folder, or one subfolder.
-%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
-%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+%% Each box is one outline note from 1972_Function_space_tower.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  FunctionSpaceTower_CLat["CLat"]
-  FunctionSpaceTower_conj_iInfTerm_eq["conj_iInfTerm_eq"]
-  FunctionSpaceTower_conjMap["conjMap"]
-  FunctionSpaceTower_conjMap_iSup["conjMap_iSup"]
+  The_tower_of_lattices["The tower of lattices"]
+  Conjugation["Conjugation"]
+  The_projection_on_a_func["The projection on a function space"]
+  Projections_of_the_tower["Projections of the tower"]
   FunctionSpaceTower_DInf["DInf"]
-  FunctionSpaceTower_embInf_succ_iSup["embInf_succ_iSup"]
-  FunctionSpaceTower_embInfInf["embInfInf"]
-  FunctionSpaceTower_embInfInf_projInfInf["embInfInf_projInfInf"]
-  FunctionSpaceTower_functionSpaceInclFun["functionSpaceInclFun"]
-  FunctionSpaceTower_functionSpaceProjection["functionSpaceProjection"]
-  FunctionSpaceTower_functionSpaceRetrFun["functionSpaceRetrFun"]
-  FunctionSpaces["FunctionSpaces"]
-  FunctionSpaceTower_iInfTerm["iInfTerm"]
-  FunctionSpaceTower_iInfTerm_monotone["iInfTerm_monotone"]
-  FunctionSpaceTower_incl_projInf_le_projInf_succ["incl_projInf_le_projInf_succ"]
-  InverseLimits["InverseLimits"]
-  FunctionSpaceTower_iSup__monotone_eq_diagonal["iSup₂_monotone_eq_diagonal"]
-  FunctionSpaceTower_jInfTerm["jInfTerm"]
-  FunctionSpaceTower_projInfInf["projInfInf"]
-  ScottMaps["ScottMaps"]
-  FunctionSpaceTower_theorem_4_4["theorem_4_4"]
-  FunctionSpaceTower_theorem_4_4_more["theorem_4_4_more"]
-  FunctionSpaceTower_towerProj["towerProj"]
-  FunctionSpaceTower_towerProj_retr_conjMap_succ["towerProj_retr_conjMap_succ"]
-  WayBelow["WayBelow"]
+  DInfFn["DInfFn"]
+  Proof_that_the_limit_and["Proof that the limit and its function space are inverse"]
+  Theorem_4_4["Theorem 4.4"]
+  Lemma_4_5["Lemma 4.5"]
+  Proof_of_4_4_concluded["Proof of 4.4 concluded"]
 
-  FunctionSpaces -->|"1"| FunctionSpaceTower_CLat
-  FunctionSpaceTower_towerProj -->|"1"| FunctionSpaceTower_DInf
-  InverseLimits -->|"2"| FunctionSpaceTower_DInf
-  FunctionSpaceTower_CLat -->|"1"| FunctionSpaceTower_conjMap
-  FunctionSpaces -->|"1"| FunctionSpaceTower_conjMap
-  FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_conjMap_iSup
-  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_conjMap_iSup
-  FunctionSpaces -->|"1"| FunctionSpaceTower_conjMap_iSup
-  InverseLimits -->|"2"| FunctionSpaceTower_conjMap_iSup
-  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
-  FunctionSpaces -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
-  InverseLimits -->|"1"| FunctionSpaceTower_conj_iInfTerm_eq
-  FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_embInfInf
-  FunctionSpaces -->|"1"| FunctionSpaceTower_embInfInf
-  ScottMaps -->|"1"| FunctionSpaceTower_embInfInf
-  FunctionSpaceTower_embInfInf -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
-  FunctionSpaceTower_iSup__monotone_eq_diagonal -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
-  FunctionSpaceTower_projInfInf -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
-  FunctionSpaceTower_towerProj_retr_conjMap_succ -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
-  FunctionSpaces -->|"1"| FunctionSpaceTower_embInfInf_projInfInf
-  InverseLimits -->|"3"| FunctionSpaceTower_embInfInf_projInfInf
-  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_embInf_succ_iSup
-  FunctionSpaces -->|"1"| FunctionSpaceTower_embInf_succ_iSup
-  FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_functionSpaceInclFun
-  FunctionSpaces -->|"1"| FunctionSpaceTower_functionSpaceInclFun
-  FunctionSpaceTower_functionSpaceInclFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
-  FunctionSpaceTower_functionSpaceRetrFun -->|"1"| FunctionSpaceTower_functionSpaceProjection
-  FunctionSpaces -->|"2"| FunctionSpaceTower_functionSpaceProjection
-  FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
-  FunctionSpaces -->|"1"| FunctionSpaceTower_functionSpaceRetrFun
-  FunctionSpaceTower_DInf -->|"1"| FunctionSpaceTower_iInfTerm
-  InverseLimits -->|"2"| FunctionSpaceTower_iInfTerm
-  FunctionSpaceTower_incl_projInf_le_projInf_succ -->|"1"| FunctionSpaceTower_iInfTerm_monotone
-  FunctionSpaceTower_towerProj -->|"1"| FunctionSpaceTower_iInfTerm_monotone
-  FunctionSpaces -->|"1"| FunctionSpaceTower_iInfTerm_monotone
-  InverseLimits -->|"2"| FunctionSpaceTower_iInfTerm_monotone
-  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_iSup__monotone_eq_diagonal
-  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_incl_projInf_le_projInf_succ
-  FunctionSpaceTower_iInfTerm -->|"1"| FunctionSpaceTower_jInfTerm
-  FunctionSpaceTower_conjMap_iSup -->|"1"| FunctionSpaceTower_projInfInf
-  FunctionSpaceTower_conj_iInfTerm_eq -->|"1"| FunctionSpaceTower_projInfInf
-  FunctionSpaceTower_embInfInf -->|"1"| FunctionSpaceTower_projInfInf
-  FunctionSpaceTower_embInf_succ_iSup -->|"1"| FunctionSpaceTower_projInfInf
-  FunctionSpaceTower_iInfTerm_monotone -->|"1"| FunctionSpaceTower_projInfInf
-  FunctionSpaceTower_iSup__monotone_eq_diagonal -->|"1"| FunctionSpaceTower_projInfInf
-  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_projInfInf
-  FunctionSpaces -->|"1"| FunctionSpaceTower_projInfInf
-  InverseLimits -->|"3"| FunctionSpaceTower_projInfInf
-  ScottMaps -->|"1"| FunctionSpaceTower_projInfInf
-  FunctionSpaceTower_embInfInf_projInfInf -->|"1"| FunctionSpaceTower_theorem_4_4
-  FunctionSpaceTower_projInfInf -->|"1"| FunctionSpaceTower_theorem_4_4
-  FunctionSpaceTower_theorem_4_4_more -->|"1"| FunctionSpaceTower_theorem_4_4
-  FunctionSpaces -->|"3"| FunctionSpaceTower_theorem_4_4
-  InverseLimits -->|"1"| FunctionSpaceTower_theorem_4_4
-  WayBelow -->|"1"| FunctionSpaceTower_theorem_4_4
-  FunctionSpaceTower_embInfInf_projInfInf -->|"1"| FunctionSpaceTower_theorem_4_4_more
-  FunctionSpaceTower_projInfInf -->|"1"| FunctionSpaceTower_theorem_4_4_more
-  FunctionSpaces -->|"1"| FunctionSpaceTower_theorem_4_4_more
-  InverseLimits -->|"2"| FunctionSpaceTower_theorem_4_4_more
-  WayBelow -->|"1"| FunctionSpaceTower_theorem_4_4_more
-  FunctionSpaceTower_conjMap -->|"1"| FunctionSpaceTower_towerProj
-  FunctionSpaceTower_functionSpaceProjection -->|"1"| FunctionSpaceTower_towerProj
-  FunctionSpaceTower_jInfTerm -->|"1"| FunctionSpaceTower_towerProj_retr_conjMap_succ
-  InverseLimits -->|"1"| FunctionSpaceTower_towerProj_retr_conjMap_succ
+  The_tower_of_lattices --> Conjugation
+  The_projection_on_a_func --> DInfFn
+  The_projection_on_a_func --> FunctionSpaceTower_DInf
+  The_projection_on_a_func --> Lemma_4_5
+  The_projection_on_a_func --> Projections_of_the_tower
+  The_projection_on_a_func --> Proof_of_4_4_concluded
+  The_projection_on_a_func --> Proof_that_the_limit_and
+  Conjugation --> The_projection_on_a_func
+  The_projection_on_a_func --> Theorem_4_4
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

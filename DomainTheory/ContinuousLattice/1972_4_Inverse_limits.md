@@ -7,7 +7,7 @@
 - [Compatibility](InverseLimits/1972_Compatibility.md) ✓
 - [InverseLimit](InverseLimits/1972_InverseLimit.md) ✓
 - [Projections along the tower](InverseLimits/1972_projLE.md) ✓
-- [projection](InverseLimits/1972_projection.md)
+- [Tower step adjunction](InverseLimits/1972_projection.md) ✓
 - [Projections from the limit](InverseLimits/1972_Projections_from_the_limit.md)
 - [Embeddings along the tower](InverseLimits/1972_Embeddings_along_the_tower.md)
 - [Coordinates of an embedding](InverseLimits/1972_Embedding_coordinates.md)

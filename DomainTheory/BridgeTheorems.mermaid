@@ -1,36 +1,24 @@
-%% Each box is one folder under BridgeTheorems. BridgeTheorems is the Lean files in that folder, not in a subfolder.
-%% The arrowhead points at the folder that imports. The label is how many direct imports.
+%% Each box is one outline note from BridgeTheorems.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  N6["BridgeTheorems"]
+  Proof_notes["Proof notes"]
+  Worked_example___S_expre["Worked example — S-expressions / trees"]
   N0["ContinuousLatticeToNeighborhood"]
   N1["InfoSysConstructions"]
   N2["InfoSysToIdealCompletion"]
   N3["InfoSysToNeighborhood"]
   N4["NeighborhoodToInfoSys"]
   N5["PresentationDomains"]
-  N7["WorkedExampleSExpr"]
 
-  N0 -->|"96"| N0
-  N1 -->|"84"| N1
-  N2 -->|"79"| N2
-  N6 -->|"6"| N3
-  N6 -->|"7"| N4
-  N0 -->|"5"| N5
-  N2 -->|"3"| N5
-  N3 -->|"1"| N5
-  N4 -->|"2"| N5
-  N5 -->|"30"| N5
-  N6 -->|"66"| N5
-  N0 -->|"3"| N6
-  N1 -->|"6"| N6
-  N2 -->|"3"| N6
-  N3 -->|"1"| N6
-  N4 -->|"1"| N6
-  N5 -->|"3"| N6
-  N6 -->|"355"| N6
-  N6 -->|"96"| N7
-  N7 -->|"25"| N7
+  Proof_notes --> N0
+  Proof_notes --> N1
+  Proof_notes --> N2
+  Proof_notes --> N3
+  Proof_notes --> N4
+  Proof_notes --> N5
+  Proof_notes --> Worked_example___S_expre
 
   classDef c0 fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
