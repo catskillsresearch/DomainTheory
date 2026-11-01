@@ -44,7 +44,7 @@ theorem conjMap_incl_le_conjMap_succ (n : ℕ) (f : DInf.fn D₀ j₀) :
             (f (embInf (towerType D₀) (towerProj D₀ j₀) (n + 1) y))) := by
         refine (towerProj D₀ j₀ n).incl.monotone
           ((limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n).monotone (f.monotone ?_))
-        rw [← embInf_succ (towerType D₀) (towerProj D₀ j₀) n ((towerProj D₀ j₀ n).retr y)]
+        rw [← embInf.succ (towerType D₀) (towerProj D₀ j₀) n ((towerProj D₀ j₀ n).retr y)]
         exact embInf.monotone (towerType D₀) (towerProj D₀ j₀) (n + 1)
           ((towerProj D₀ j₀ n).incl_retr_le y)
     _ ≤ limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) (n + 1)

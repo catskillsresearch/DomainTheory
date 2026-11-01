@@ -283,8 +283,8 @@ def build_tree(spine: dict[Path, Leaf]) -> Barrel:
     embeddings = Barrel(
         P("InverseLimits/1972_Embeddings_into_the_limit.md"),
         "Embeddings into the limit",
-        "1972_Embeddings_into_the_limit.mermaid",
-        [L("InverseLimits/1972_embInfFun.md"), L("InverseLimits/1972_embInf.md")],
+        "",
+        [],
     )
     limit_lattice = Barrel(
         P("InverseLimits/1972_Limit_lattice.md"),
@@ -711,7 +711,8 @@ def write_barrel(barrel: Barrel, numbered: bool) -> None:
         eng.write_text(barrel.english, encoding="utf-8")
         lines.append(f'@import "{eng.name}" {{code_block=false}}')
         lines.append("")
-    lines.extend([f'@import "{barrel.mermaid}"', ""])
+    if barrel.mermaid:
+        lines.extend([f'@import "{barrel.mermaid}"', ""])
     for i, child in enumerate(barrel.children):
         href = rel_md(barrel, child)
         if numbered:
@@ -784,6 +785,8 @@ def subtree_leaves(node: Leaf | Barrel) -> list[Leaf]:
 
 
 def write_mermaid(barrel: Barrel) -> None:
+    if not barrel.mermaid:
+        return
     if barrel.path.name in {
         "1972_ContinuousLattices.md",
         "1972_2_Continuous_lattices.md",

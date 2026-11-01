@@ -27,7 +27,7 @@ theorem iInfTerm_le_succ (x : DInf D₀ j₀) (m : ℕ) :
   rw [ScottMap.le_def]
   intro z
   rw [iInfTerm.apply, iInfTerm.apply,
-    ← embInf_succ (towerType D₀) (towerProj D₀ j₀) m
+    ← embInf.succ (towerType D₀) (towerProj D₀ j₀) m
       (x.1 (m + 1) (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) m z))]
   refine embInf.monotone (towerType D₀) (towerProj D₀ j₀) (m + 1) ?_
   have hab : (towerProj D₀ j₀ m).incl (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) m z)

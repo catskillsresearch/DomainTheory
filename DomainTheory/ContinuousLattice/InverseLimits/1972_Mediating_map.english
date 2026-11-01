@@ -32,7 +32,7 @@ holds.
 
 $$f_n = f_{n+1} \circ i_n$$
 
-(in Lean: **`hf : ∀ n x, (f n) x = (f (n + 1)) ((P n).incl x)`** for **`f n : ScottMap (D n) D'`**). A **mediating map out of the limit** is $g : D_\infty \to D'$ with $f_n = g \circ i_{n\infty}$; the library name for $i_{n\infty}$ is [**`embInf`**](1972_embInf.md).
+(in Lean: **`hf : ∀ n x, (f n) x = (f (n + 1)) ((P n).incl x)`** for **`f n : ScottMap (D n) D'`**). A **mediating map out of the limit** is $g : D_\infty \to D'$ with $f_n = g \circ i_{n\infty}$; the library name for $i_{n\infty}$ is [**`embInf`**](1972_Embeddings_into_the_limit.md).
 
 **Name `coconeInf`.** **cocone** + **Inf** means a cocone whose mediating map has **domain the inverse limit** (`Inf` = inverse limit, **not** a meet / infimum $\sqcap$ in the order). The cocone **legs** are the family **`f n`**; the **Inf** part is where $g$ is defined.
 

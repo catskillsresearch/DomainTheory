@@ -42,7 +42,7 @@ theorem embInfInf_comp_projInfInf :
     refine monotone_nat_of_le_succ (fun m => ?_)
     show r m w ≤ r (m + 1) w
     rw [hrw, hrw]
-    exact embInf_le_succ (towerType D₀) (towerProj D₀ j₀) w m
+    exact embInf.le_succ (towerType D₀) (towerProj D₀ j₀) w m
 
   have hA : ∀ (w : DInf D₀ j₀), w = ⨆ m, r m w := by
     intro w

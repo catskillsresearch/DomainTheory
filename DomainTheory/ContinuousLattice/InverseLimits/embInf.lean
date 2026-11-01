@@ -52,7 +52,9 @@ end embInf
 noncomputable def embInf (n : ℕ) : ScottMap (D n) (InverseLimit D P) :=
   ⟨embInf.fun D P n, PreservesDirectedSup.continuous_of (embInf.preservesDirectedSup D P n)⟩
 
-theorem embInf_succ (n : ℕ) (x : D n) :
+namespace embInf
+
+theorem succ (n : ℕ) (x : D n) :
     embInf D P (n + 1) ((P n).incl x) = embInf D P n x := by
   apply Subtype.ext
   funext m
@@ -70,16 +72,18 @@ theorem embInf_succ (n : ℕ) (x : D n) :
       projectionAlongTower.succ D P (le_of_lt (not_le.mp h1)) (le_of_lt (not_le.mp h2)) ((P n).incl x),
       (P n).retr_incl]
 
-theorem embInf_le_succ (x : InverseLimit D P) (n : ℕ) :
+theorem le_succ (x : InverseLimit D P) (n : ℕ) :
     embInf D P n (x.1 n) ≤ embInf D P (n + 1) (x.1 (n + 1)) := by
-  rw [← embInf_succ D P n (x.1 n)]
+  rw [← succ D P n (x.1 n)]
   exact embInf.monotone D P (n + 1)
     (by calc (P n).incl (x.1 n) = (P n).incl ((P n).retr (x.1 (n + 1))) := by rw [x.2 n]
           _ ≤ x.1 (n + 1) := (P n).incl_retr_le _)
 
-theorem embInf_family_directed (x : InverseLimit D P) :
+theorem family_directed (x : InverseLimit D P) :
     DirectedOn (· ≤ ·) (Set.range (fun n => embInf D P n (x.1 n))) :=
-  directedOn_range.2 (monotone_nat_of_le_succ (embInf_le_succ D P x)).directed_le
+  directedOn_range.2 (monotone_nat_of_le_succ (le_succ D P x)).directed_le
+
+end embInf
 
 end InverseLimit
 

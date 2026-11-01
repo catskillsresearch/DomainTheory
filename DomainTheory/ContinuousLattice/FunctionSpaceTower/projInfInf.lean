@@ -82,7 +82,7 @@ theorem embInfInf_eq (x : DInf D₀ j₀) :
   have g_mono_n_succ (m n : ℕ) : g n m ≤ g (n + 1) m := by
     rw [hg]
     dsimp only
-    rw [← embInf_succ (towerType D₀) (towerProj D₀ j₀) (n + 1)
+    rw [← embInf.succ (towerType D₀) (towerProj D₀ j₀) (n + 1)
         (conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)
                  (embInf (towerType D₀) (towerProj D₀ j₀) n)
                  (iInfTerm D₀ j₀ m x))]
@@ -106,7 +106,7 @@ theorem comp_embInfInf :
   apply ScottMap.ext
   intro x
   have hmono : Monotone (fun k => embInf (towerType D₀) (towerProj D₀ j₀) k (x.1 k)) :=
-    monotone_nat_of_le_succ (embInf_le_succ (towerType D₀) (towerProj D₀ j₀) x)
+    monotone_nat_of_le_succ (embInf.le_succ (towerType D₀) (towerProj D₀ j₀) x)
   rw [ScottMap.comp_apply, ScottMap.idMap_apply, embInfInf_eq D₀ j₀ x,
     Monotone.iSup_nat_add hmono 1]
   exact (inverseLimit.eq_iSup (towerType D₀) (towerProj D₀ j₀) x).symm

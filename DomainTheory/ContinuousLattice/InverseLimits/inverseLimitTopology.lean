@@ -119,7 +119,7 @@ theorem scottTopology_eq_induced_pi (hD : ∀ n, ContinuousLattice (D n)) :
 
 theorem eq_iSup (x : InverseLimit D P) :
     x = ⨆ n, embInf D P n (x.1 n) := by
-  have hdir := embInf_family_directed D P x
+  have hdir := embInf.family_directed D P x
   have hne : (Set.range (fun n => embInf D P n (x.1 n))).Nonempty := Set.range_nonempty _
   refine le_antisymm ?_ ?_
   · rw [← Subtype.coe_le_coe]

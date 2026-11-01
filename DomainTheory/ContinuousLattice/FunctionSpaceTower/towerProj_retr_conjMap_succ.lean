@@ -33,7 +33,7 @@ theorem towerProj_retr_conjMap_succ (n : ℕ) (f : DInf.fn D₀ j₀) :
           ((towerProj D₀ j₀ n).incl y))))
     = limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n
         (f (embInf (towerType D₀) (towerProj D₀ j₀) n y))
-  rw [embInf_succ (towerType D₀) (towerProj D₀ j₀) n y]
+  rw [embInf.succ (towerType D₀) (towerProj D₀ j₀) n y]
   exact (f (embInf (towerType D₀) (towerProj D₀ j₀) n y)).2 n
 
 end Thm44b

@@ -28,7 +28,7 @@ theorem lemma_4_5 (u : ∀ n, D (n + 1))
   have ha_succ (k : ℕ) : a k ≤ a (k + 1) := by
     rw [show a k = embInf D P (k + 1) (u k) from rfl,
       show a (k + 1) = embInf D P (k + 2) (u (k + 1)) from rfl,
-      ← embInf_succ D P (k + 1) (u k)]
+      ← embInf.succ D P (k + 1) (u k)]
     exact embInf.monotone D P (k + 2)
       (by calc (P (k + 1)).incl (u k)
             = (P (k + 1)).incl ((P (k + 1)).retr (u (k + 1))) := by rw [hu k]

@@ -33,7 +33,7 @@ theorem corollary_4_3 (f : ∀ n, ScottMap (D n) D')
     calc g x = g (⨆ n, embInf D P n (x.1 n)) := by rw [← inverseLimit.eq_iSup D P x]
       _ = g (sSup (Set.range fun n => embInf D P n (x.1 n))) := by rw [sSup_range]
       _ = sSup (g '' Set.range fun n => embInf D P n (x.1 n)) :=
-          g.preservesDirectedSup_coe _ (Set.range_nonempty _) (embInf_family_directed D P x)
+          g.preservesDirectedSup_coe _ (Set.range_nonempty _) (embInf.family_directed D P x)
       _ = ⨆ n, g (embInf D P n (x.1 n)) := by rw [← Set.range_comp, sSup_range]; rfl
       _ = ⨆ n, f n (x.1 n) := by simp_rw [← hg]
 

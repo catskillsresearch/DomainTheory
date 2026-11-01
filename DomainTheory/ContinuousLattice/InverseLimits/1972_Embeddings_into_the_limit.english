@@ -1,0 +1,39 @@
+For an inverse system of continuous lattices $\langle D_n, P_n \rangle$, write $D_\infty = \mathrm{InverseLimit}\,D\,P$ for the limit lattice of compatible sequences $(y_m)_{m \in \mathbb{N}}$. Scott’s **inverse embedding** at level $n$ is a map $i_{n\infty} : D_n \to D_\infty$ that sends $x \in D_n$ to the point of $D_\infty$ whose coordinates are determined by climbing or descending the tower from $x$ at index $n$.
+
+**Definition (`embInf`).** For each $n \in \mathbb{N}$, **`embInf D P n`** is the **Scott map** $D_n \to D_\infty$ whose underlying function is **`embInf.fun D P n`** and whose Scott continuity is proved from directed-sup preservation on that function.
+
+**Definition (`embInf.fun`).** For $n \in \mathbb{N}$ and $x \in D_n$, **`embInf.fun D P n x`** is the element of **`InverseLimit D P`** whose $m$-th coordinate is **`iComp D P n x m`**—equivalently, the compatible sequence $(i_{n\infty}(x)_m)_{m \in \mathbb{N}}$ in Scott’s notation.
+
+In the namespace **`embInf`** we have
+
+**Theorem (`coe`).** *For all **`n`**, **`x : D n`**, the coordinate function of **`embInf.fun D P n x`** is **`iComp D P n x`**:*
+
+$$(\mathrm{embInf.fun}\,D\,P\,n\,x)_m = \mathrm{iComp}\,D\,P\,n\,x\,m.$$
+
+*Proof.* Definition of **`embInf.fun`** as a subtype of **`iComp`** with compatibility. $\square$
+
+**Theorem (`monotone`).** *For each **`n`**, the map **`embInf.fun D P n : D_n → D_\infty`** is monotone (with respect to the lattice orders on $D_n$ and $D_\infty$).*
+
+*Proof.* Reduce to comparisons coordinatewise via **`Subtype.coe_le_coe`**; at each **`m`** apply **`iComp.monotone`**. $\square$
+
+**Theorem (`preservesDirectedSup`).** *For each **`n`**, **`embInf.fun D P n`** preserves directed suprema in $D_n$.*
+
+*Proof.* For a directed set $S \subseteq D_n$, compare suprema in $D_\infty$ using **`coe_sSup_of_directed`** on the image **`embInf.fun D P n '' S`**, then rewrite each coordinate with **`iComp.preservesDirectedSup`**. $\square$
+
+**Theorem (`succ`).** *For all **`n`**, **`x : D_n`**,*
+
+$$i_{(n+1)\infty}\,(i_n(x)) = i_{n\infty}(x),$$
+
+*formally* **`embInf D P (n + 1) ((P n).incl x) = embInf D P n x`**.
+
+*Proof.* Compare coordinates **`m`** by case analysis on **`n ≤ m`**, **`n + 1 ≤ m`**, and **`m < n`**; use the computation laws for **`iComp`**, **`embeddingAlongTower`**, and **`projectionAlongTower`**. $\square$
+
+**Theorem (`le_succ`).** *If **`y : InverseLimit D P`**, then for every **`n`**,*
+
+$$i_{n\infty}(y_n) \le i_{(n+1)\infty}(y_{n+1}).$$
+
+*Proof.* Rewrite with **`succ`** at **`x = y n`**, then apply **`monotone`** for index **`n + 1`** and **`(P n).incl_retr_le`** with compatibility **`(P n).retr (y (n + 1)) = y n`**. $\square$
+
+**Theorem (`family_directed`).** *If **`y : InverseLimit D P`**, the set $\{\, i_{n\infty}(y_n) \mid n \in \mathbb{N}\,\}$ is directed in $D_\infty$.*
+
+*Proof.* **`le_succ`** gives a monotone sequence in **`n`**; apply **`directedOn_range`** and **`monotone_nat_of_le_succ`**. $\square$
