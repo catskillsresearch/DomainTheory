@@ -1,13 +1,17 @@
-On $D_\infty = \mathrm{InverseLimit}\,D\,P$, if **`S`** is directed in $\le$, the supremum **`sSup S`** should match taking suprema coordinate by coordinate in each $D_n$.
+Write $D_\infty = \mathrm{InverseLimit}\,D\,P$ with the coordinatewise order. $D_\infty$ is a **complete lattice**, so every subset $S \subseteq D_\infty$ has a **least upper bound** (supremum). Lean writes that set supremum as **`sSup S`**; in ordinary notation it is $\sup S$ or $\bigvee S$— the **smallest** $u \in D_\infty$ with $x \le u$ for all $x \in S$.
 
-**Theorem (`coe_sSup_of_directed.directed`).** *If **`S : Set (InverseLimit D P)`** is **nonempty** and **directed** in $\le$, then*
+A set $S \subseteq D_\infty$ is **directed** (upward) when for every $x, y \in S$ there exists $z \in S$ with $x \le z$ and $y \le z$. Each stage lattice $D_n$ is a complete lattice, so for nonempty $S$ the coordinate set $\{\, x_n \mid x \in S \,\} \subseteq D_n$ has a supremum there; when $S$ is directed, that coordinatewise family is directed in $D_n$ as well.
 
-$$\big(\bigsqcup S\big)_n = \bigsqcup \{\, x_n \mid x \in S \,\}$$
+**Theorem (`coe_sSup_of_directed`).** *Suppose $S \subseteq D_\infty$ is **nonempty** and **directed**. For every $n \in \mathbb{N}$, the $n$-th coordinate of $\sup S$ equals the supremum taken in $D_n$:*
 
-in $D_n$ for every **`n`**.
+$$\big(\sup S\big)_n \;=\; \sup \{\, x_n \mid x \in S \,\}.$$
 
-Equivalently: **`(sSup S).1 = sSup (Subtype.val '' S)`** as functions **`ℕ → D n`**.
+*Proof.* Define $f(n) \in D_n$ by $f(n) = \sup \{\, x_n \mid x \in S \,\}$ for each $n \in \mathbb{N}$.
 
-*Proof.* Build the coordinatewise supremum, prove **`Compatible`**, show it is **`IsLUB S`**, then identify with **`sSup S`**. $\square$
+**Compatibility.** A point of $D_\infty$ must satisfy $j_n(f(n+1)) = f(n)$ for each projection $j_n = (P_n).\mathrm{retr}$. Fix $n$. The set $\{\, x_{n+1} \mid x \in S \,\}$ is a directed nonempty subset of $D_{n+1}$, so $(P_n).\mathrm{retr}$ preserves its supremum. Rewriting that preservation with the compatibility laws $j_n(x_{n+1}) = x_n$ for $x \in S$ shows $j_n(f(n+1)) = f(n)$.
 
-**Use.** **`embInf.preservesDirectedSup`** and **`limitProjectionToLevel`** rewrite directed suprema with this lemma before comparing coordinates.
+**Least upper bound.** Let $p \in D_\infty$ be the compatible sequence $f$. Every $x \in S$ has $x_n \le f(n)$ for each $n$, so $x \le p$ in the coordinatewise order. If $b \in D_\infty$ is an upper bound of $S$, then for each $n$ and each $x \in S$, $x_n \le b_n$, hence $f(n) \le b_n$ and $p \le b$. Thus $p = \sup S$.
+
+Uniqueness of least upper bounds identifies $p$ with **`sSup S`**. $\square$
+
+**Use.** When a proof compares $\sup$ in $D_\infty$ with data in some $D_n$, it rewrites $\sup S$ with this theorem so the $n$-th coordinate is a supremum inside $D_n$ (for example in **`embInf.preservesDirectedSup`**).

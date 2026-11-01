@@ -16,7 +16,7 @@
 - [Embeddings into the limit](InverseLimits/1972_Embeddings_into_the_limit.md) ✓
 - [Order on the inverse limit](InverseLimits/1972_inverseLimitLE.md) ✓
 - [Strict order on the inverse limit](InverseLimits/1972_inverseLimitLT.md) ✓
-- [The limit lattice](InverseLimits/1972_Limit_lattice.md)
+- [The limit lattice](InverseLimits/1972_Limit_lattice.md) ✓
 - [inverseLimitTopology](InverseLimits/1972_inverseLimitTopology.md)
 - [Proposition 4.1](InverseLimits/1972_Proposition_4_1.md)
 - [Proposition 4.2](InverseLimits/1972_Proposition_4_2.md)
