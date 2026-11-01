@@ -4,7 +4,7 @@ public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.limitProjectionToLevel
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE
+public import DomainTheory.ContinuousLattice.InverseLimits.projectionAlongTower
 public import Mathlib.Data.Set.Basic
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
@@ -34,18 +34,18 @@ theorem lemma_4_5 (u : ∀ n, D (n + 1))
             = (P (k + 1)).incl ((P (k + 1)).retr (u (k + 1))) := by rw [hu k]
           _ ≤ u (k + 1) := (P (k + 1)).incl_retr_le _)
   have ha : Monotone a := monotone_nat_of_le_succ ha_succ
-  have hprojLE : ∀ d n : ℕ,
-      projLE D P (show n + 1 ≤ n + d + 1 by omega) (u (n + d)) = u n := by
+  have hprojTower : ∀ d n : ℕ,
+      projectionAlongTower D P (show n + 1 ≤ n + d + 1 by omega) (u (n + d)) = u n := by
     intro d
     induction d with
     | zero =>
         intro n
         simpa only [Nat.add_zero] using
-          (projLE.self D P (le_refl (n + 1)) (u n))
+          (projectionAlongTower.self D P (le_refl (n + 1)) (u n))
     | succ d ih =>
         intro n
         simp only [Nat.add_succ]
-        rw [projLE.succ D P
+        rw [projectionAlongTower.succ D P
           (show n + 1 ≤ n + d + 1 by omega)
           (show n + 1 ≤ (n + d + 1) + 1 by omega)]
         rw [hu (n + d)]
@@ -60,7 +60,7 @@ theorem lemma_4_5 (u : ∀ n, D (n + 1))
     | succ d =>
         change iComp D P (n + (d + 1) + 1) (u (n + (d + 1))) (n + 1) = u n
         rw [iComp_of_ge D P (by omega)]
-        exact hprojLE (d + 1) n
+        exact hprojTower (d + 1) n
   have hdir : DirectedOn (· ≤ ·) (Set.range a) :=
     directedOn_range.2 ha.directed_le
   have hcont := (limitProjectionToLevel D P (n + 1)).preservesDirectedSup_coe

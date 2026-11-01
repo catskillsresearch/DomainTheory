@@ -1,5 +1,5 @@
 # Embeddings along the tower
 
-**[embLE.lean](embLE.lean)**
+**[embeddingAlongTower.lean](embeddingAlongTower.lean)**
 
-@import "embLE.lean"
+@import "embeddingAlongTower.lean"

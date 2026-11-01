@@ -354,7 +354,7 @@ def build_tree(spine: dict[Path, Leaf]) -> Barrel:
             S(P("InverseLimits/1972_Inverse_limits.md")),
             L("InverseLimits/1972_Compatibility.md"),
             L("InverseLimits/1972_InverseLimit.md"),
-            L("InverseLimits/1972_projLE.md"),
+            L("InverseLimits/1972_Projections_along_the_tower.md"),
             L("InverseLimits/1972_projection.md"),
             L("InverseLimits/1972_Projections_from_the_limit.md"),
             L("InverseLimits/1972_Embeddings_along_the_tower.md"),

@@ -1,4 +1,4 @@
-For an inverse system $\langle D_n, P_n \rangle$, fix one index $n$. Write $i_n = (P\,n).\mathrm{incl} : D_n \to D_{n+1}$ and $j_n = (P\,n).\mathrm{retr} : D_{n+1} \to D_n$ for the [continuous lattice projection](../FunctionSpaces/1972_Continuous_lattice_projection.md) on that **step** (one rung of the tower, not the composite descent in [Projections along the tower](1972_projLE.md)).
+For an inverse system $\langle D_n, P_n \rangle$, fix one index $n$. Write $i_n = (P\,n).\mathrm{incl} : D_n \to D_{n+1}$ and $j_n = (P\,n).\mathrm{retr} : D_{n+1} \to D_n$ for the [continuous lattice projection](../FunctionSpaces/1972_Continuous_lattice_projection.md) on that **step** (one rung of the tower, not the composite descent in [Projections along the tower](1972_Projections_along_the_tower.md)).
 
 ### What an adjunction is (order theory)
 

@@ -289,7 +289,7 @@ import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
 import DomainTheory.ContinuousLattice.InverseLimits.coe_sSup_of_directed
 import DomainTheory.ContinuousLattice.InverseLimits.corollary_4_3
 import DomainTheory.ContinuousLattice.InverseLimits.embInf
-import DomainTheory.ContinuousLattice.InverseLimits.embLE
+import DomainTheory.ContinuousLattice.InverseLimits.embeddingAlongTower
 import DomainTheory.ContinuousLattice.InverseLimits.iComp
 import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 import DomainTheory.ContinuousLattice.InverseLimits.instInfSet
@@ -300,7 +300,7 @@ import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitSInfCoe
 import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 import DomainTheory.ContinuousLattice.InverseLimits.lemma_4_5
 import DomainTheory.ContinuousLattice.InverseLimits.limitProjectionToLevel
-import DomainTheory.ContinuousLattice.InverseLimits.projLE
+import DomainTheory.ContinuousLattice.InverseLimits.projectionAlongTower
 import DomainTheory.ContinuousLattice.InverseLimits.tower_step_galoisConnection
 import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_1
 import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_2

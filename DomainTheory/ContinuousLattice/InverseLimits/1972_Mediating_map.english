@@ -64,15 +64,15 @@ $$\texttt{coconeInf}\,D\,P\,f\,x = \bigsqcup_n (f\,n)\,(x.1\,n).$$
 
 **Theorem (`coconeInf.climb`).** *If **`hf`**, then for **`n`**, **`x : D n`**, and **`h : n ≤ m`**,*
 
-$$(f\,m)\,(\mathrm{embLE}\,D\,P\,h\,x) = (f\,n)\,x.$$
+$$(f\,m)\,(\mathrm{embeddingAlongTower}\,D\,P\,h\,x) = (f\,n)\,x.$$
 
-*Proof.* **`Nat.le_induction`**: base **`embLE.self`**, successor **`embLE_succ`** and **`hf`**. $\square$
+*Proof.* **`Nat.le_induction`**: base **`embeddingAlongTower.self`**, successor **`embeddingAlongTower.succ`** and **`hf`**. $\square$
 
 **Theorem (`coconeInf.descend`).** *If **`hf`**, for **`h : m ≤ n`** and **`x : D n`**,*
 
-$$(f\,m)\,(\mathrm{projLE}\,D\,P\,h\,x) \le (f\,n)\,x.$$
+$$(f\,m)\,(\mathrm{projectionAlongTower}\,D\,P\,h\,x) \le (f\,n)\,x.$$
 
-*Proof.* **`Nat.le_induction`**: base **`projLE.self`**, successor **`projLE.succ`**, **`hf`**, **`incl_retr_le`**. $\square$
+*Proof.* **`Nat.le_induction`**: base **`projectionAlongTower.self`**, successor **`projectionAlongTower.succ`**, **`hf`**, **`incl_retr_le`**. $\square$
 
 **Theorem (`coconeInf.comp_embInf`).** *If **`hf`**, for **`n`**, **`x : D n`**,*
 

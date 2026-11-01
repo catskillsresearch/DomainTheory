@@ -8,8 +8,8 @@
 - [InverseLimit](InverseLimits/1972_InverseLimit.md) ✓
 - [Projections from the limit](InverseLimits/1972_Projections_from_the_limit.md) ✓
 - [The mediating map](InverseLimits/1972_Mediating_map.md) ✓
-- [Special inverse systems](InverseLimits/1972_Special_inverse_systems.md)
-- [Projections along the tower](InverseLimits/1972_projLE.md) ✓
+- [Special inverse systems](InverseLimits/1972_Special_inverse_systems.md) ✓
+- [Projections along the tower](InverseLimits/1972_Projections_along_the_tower.md) ✓
 - [Tower step adjunction](InverseLimits/1972_projection.md) ✓
 - [Embeddings along the tower](InverseLimits/1972_Embeddings_along_the_tower.md)
 - [Coordinates of an embedding](InverseLimits/1972_Embedding_coordinates.md)

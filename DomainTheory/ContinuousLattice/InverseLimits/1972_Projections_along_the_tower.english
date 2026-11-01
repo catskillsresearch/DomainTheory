@@ -1,0 +1,35 @@
+For an inverse system of continuous lattices $\langle D_n, P_n \rangle$ with $j_n = (P\,n).\mathrm{retr} : D_{n+1} \to D_n$, Scott iterates the $j_n$ but does not introduce a separate symbol for the composite. When $m \le n$, descending from level $n$ to $m$ means applying $j_{n-1}, j_{n-2}, \ldots, j_m$ (dually, [Embeddings along the tower](1972_Embeddings_along_the_tower.md) climbs with $i_k = (P\,k).\mathrm{incl}$).
+
+**Definition (`projectionAlongTower`).** Given **`h : m ≤ n`**, **`projectionAlongTower D P h`** is the map $D_n \to D_m$ obtained by recursion on **`h`**, at each successor step applying **`(P k).retr`**.
+
+In the namespace **`projectionAlongTower`** we have
+
+**Theorem (`self`).** *For **`h : m ≤ m`**, **`projectionAlongTower D P h`** is the identity on $D_m$.*
+
+*Proof.* The recursion for **`Nat.leRecOn`** at a reflexive proof is **`id`**. $\square$
+
+**Theorem (`succ`).** *If **`h1 : m ≤ n`** and **`h2 : m ≤ n + 1`**, then for all **`z : D (n + 1)`**,*
+
+$$\mathrm{projectionAlongTower}\,D\,P\,h_2\,z = \mathrm{projectionAlongTower}\,D\,P\,h_1\,(j_n(z)).$$
+
+*Proof.* Unfold **`projectionAlongTower`** and **`Nat.leRecOn_succ`**. $\square$
+
+**Theorem (`mono`).** *If **`h : m ≤ n`** and **`x ≤ y`** in $D_n$, then **`projectionAlongTower D P h x ≤ projectionAlongTower D P h y`.*
+
+*Proof.* Induct on **`n`** and **`h`** with **`Nat.le_induction`**. The base case is **`self`**. For the successor step, rewrite with **`succ`** and use monotonicity of **`(P k).retr`**. $\square$
+
+**Theorem (`compatible`).** *If **`y : InverseLimit D P`**, then for every **`n`** and **`h : m ≤ n`**,*
+
+$$\mathrm{projectionAlongTower}\,D\,P\,h\,(y\,n) = y\,m.$$
+
+*Proof.* Induct on **`n`** and **`h`**. The base is **`self`**; the successor step uses **`succ`** and compatibility **`(P k).retr (y (k + 1)) = y k`**. $\square$
+
+**Theorem (`retr`).** *If **`h : m + 1 ≤ n`**, then for all **`x : D n`**,*
+
+$$j_m\bigl(\mathrm{projectionAlongTower}\,D\,P\,h\,x\bigr) = \mathrm{projectionAlongTower}\,D\,P\,h'\,x \quad\text{for the unique } h' : m \le n \text{ with } m + 1 \le n.$$
+
+*Proof.* Induct on **`n`** and **`h`**, unfolding **`succ`** and using **`self`** at the base. $\square$
+
+**Theorem (`preservesDirectedSup`).** *If **`h : m ≤ n`**, then **`projectionAlongTower D P h`** preserves directed suprema.*
+
+*Proof.* Induct on **`h`**. At **`m = n`**, **`self`** gives the identity. For the successor step, **`succ`** expresses **`projectionAlongTower`** as a composite of the lower **`projectionAlongTower`** with **`(P k).retr`**; apply **`ScottMap.preservesDirectedSup_comp`** and directed-sup preservation for **`(P k).retr`**. $\square$

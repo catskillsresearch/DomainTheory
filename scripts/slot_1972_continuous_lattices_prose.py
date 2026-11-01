@@ -170,7 +170,7 @@ def bridge_sec3_mid(lines: list[str], i_35: int, i_36: int) -> None:
 
 
 SEC4_HUB_ROADMAP = """\
-Scott’s §4 opens with a review of inverse limits for $T_0$-spaces: an [inverse system and compatible sequences](InverseLimits/1972_Compatibility.md), the formal [inverse limit](InverseLimits/1972_InverseLimit.md) type for $\\langle D_n,P_n\\rangle$, [projections from the limit](InverseLimits/1972_Projections_from_the_limit.md) ($j_{\\infty n}$), the [mediating map](InverseLimits/1972_Mediating_map.md) into $X_\\infty$, and the turn to [special inverse systems](InverseLimits/1972_Special_inverse_systems.md). The notes that follow build the projection tower ($\\mathrm{projLE}$, adjunction at one step), embeddings into the limit, lattice and topology on $D_\\infty$, and Propositions 4.1–4.4.
+Scott’s §4 opens with a review of inverse limits for $T_0$-spaces: an [inverse system and compatible sequences](InverseLimits/1972_Compatibility.md), the formal [inverse limit](InverseLimits/1972_InverseLimit.md) type for $\\langle D_n,P_n\\rangle$, [projections from the limit](InverseLimits/1972_Projections_from_the_limit.md) ($j_{\\infty n}$), the [mediating map](InverseLimits/1972_Mediating_map.md) into $X_\\infty$, and the turn to [special inverse systems](InverseLimits/1972_Special_inverse_systems.md). The notes that follow build the projection tower ($\\mathrm{projectionAlongTower}$, adjunction at one step), embeddings into the limit, lattice and topology on $D_\\infty$, and Propositions 4.1–4.4.
 """
 
 COMPATIBILITY_LIBRARY_TAIL = """
