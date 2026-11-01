@@ -1,0 +1,29 @@
+Scott’s definition identifies $e_n$ with the set of bit positions where $n$ has a $1$. Every finite subset of $\omega$ arises that way; this note gives an explicit constructor and the existence lemmas used later (density, Scott continuity, enumeration).
+
+**Definition (`e.codeList`).** For a list $k_0 :: \cdots :: k_{m-1} :: []$, `e.codeList` returns $2^{k_0} \mathbin{|} \cdots \mathbin{|} 2^{k_{m-1}}$ (and $0$ for the empty list).
+
+**Theorem (`e.codeList_eq`).** For every list `ks` of naturals,
+
+$$e(\texttt{e.codeList}\; ks) = \{k \mid k \in ks\}.$$
+
+*Proof.* Induction on `ks`. The empty list codes $e_0 = \emptyset$. For `k :: ks`, `e.codeList` ORs in $2^k$; by `e.or` and `e.pow2`, membership matches the list membership characterization. ∎
+
+**Definition (`e.codeFinset`).** For a finset `s`, `e.codeFinset s` is `e.codeList` applied to the list of elements of `s` (order as stored in the finset).
+
+**Theorem (`e.codeFinset_eq`).** For every finset `s` of naturals,
+
+$$e(\texttt{e.codeFinset}\; s) = s$$
+
+as subsets of $\omega$.
+
+*Proof.* Extensionality using `e.codeList_eq` on the element list. ∎
+
+**Theorem (`e.exists_code`).** Every finset `s` has a code $n \in \omega$ with $e_n = s$ as sets.
+
+*Proof.* Witness `e.codeFinset s` and `e.codeFinset_eq`. ∎
+
+**Theorem (`e.exists_code_of_finite`).** If $s \in \mathbf{P}\omega$ is finite, then $\exists n,\; e_n = s$.
+
+*Proof.* Write $s$ as a finset and apply `e.exists_code`. ∎
+
+When the exponents $k_i$ are strictly increasing, this agrees with Scott’s sum $\sum_{i<m} 2^{k_i}$; duplicate entries in a list would OR the same bit twice, so the finset formulation is the canonical coding for an arbitrary finite set.

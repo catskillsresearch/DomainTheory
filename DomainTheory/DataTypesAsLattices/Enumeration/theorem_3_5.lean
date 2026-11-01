@@ -52,7 +52,7 @@ theorem case1 {u : Pomega} {p : ℕ → ℕ} {n k : ℕ}
       have hfins : (valNat (myhillCase1Code n m)).Finite := by
         rw [valNat.myhillCase1Code_eq]
         exact hfin.inter_of_right _
-      obtain ⟨j, hj⟩ := exists_code_of_finite hfins
+      obtain ⟨j, hj⟩ := e.exists_code_of_finite hfins
       have hje : e j ⊆ valNat n := by
         rw [hj, valNat.myhillCase1Code_eq]
         exact Set.inter_subset_left
@@ -150,7 +150,7 @@ theorem theorem_3_5 {p : ℕ → ℕ}
 
     have hfin : ¬(valNat n).Finite := by
       intro hf
-      obtain ⟨j, hj⟩ := exists_code_of_finite hf
+      obtain ⟨j, hj⟩ := e.exists_code_of_finite hf
       exact hinf j hj
     have hnin' : ¬∃ j, e j ⊆ valNat n ∧ k ∈ valNat (p (fin j)) := by
       intro ⟨j, hj, hkj⟩

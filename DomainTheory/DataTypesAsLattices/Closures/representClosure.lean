@@ -37,7 +37,7 @@ theorem isScottContinuous
   constructor
   · intro hm
     obtain ⟨t, htx, hmt⟩ := D.compact_finite_support hm
-    obtain ⟨n, hn⟩ := exists_code t
+    obtain ⟨n, hn⟩ := e.exists_code t
     refine mem_scottUnion.mpr ⟨n, ?_, ?_⟩
     · rw [hn]
       exact htx
