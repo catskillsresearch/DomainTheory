@@ -1,10 +1,16 @@
 module
 
-public import Mathlib.Data.Nat.Bitwise
-public import Mathlib.Data.Set.Finite.Basic
-public import Mathlib.Data.Set.Lattice.Bounded
-public import Mathlib.Data.Set.Lattice.Disjoint
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+public import Aesop.BuiltinRules
+public import Mathlib.Data.Nat.Notation
+public import Mathlib.Tactic.ToAdditive
+public import Mathlib.Tactic.ToDual
+import Mathlib.Data.Finset.Attr
+import Mathlib.Data.Nat.Find
+import Mathlib.Order.Basic
+import Mathlib.Tactic.Bound.Init
+import Mathlib.Tactic.Finiteness.Attr
+import Mathlib.Tactic.SetLike
+import Mathlib.Tactic.Widget.Calc
 
 @[expose] public section
 

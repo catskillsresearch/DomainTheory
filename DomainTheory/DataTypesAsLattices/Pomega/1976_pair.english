@@ -1,9 +1,71 @@
-To formulate the definition, we introduce a standard enumeration $(n, m)$ of all pairs of integers. Specifically we set
+To formulate later definitions we introduce a standard enumeration of all pairs of naturals. The code follows the “little diagonal” ordering Scott describes; the inverse `unpair` is included in Lean for convenience even though the paper does not fix notation for it yet.
 
-$$(n, m) = \tfrac{1}{2}(n + m)(n + m + 1) + m.$$
+**Definition (`pair`).** The Cantor pairing is
 
-This is the enumeration along the “little diagonals” going from left to right, and it produces the ordering:
+$$\texttt{pair}\; n\; m = \tfrac{1}{2}(n + m)(n + m + 1) + m.$$
 
-$$(0, 0), (1, 0), (0, 1), (2, 0), (1, 1), (0, 2), (3, 0), (2, 1), \dots.$$
+**Definition (`triangle`).** Write $T(w) = w(w+1)/2$ for the $w$-th triangular number: `triangle w`.
 
-Note that $n \leq (n, m)$ and $m \leq (n, m)$ with equality possible only in the cases of $(0, 0)$ and $(1, 0)$. This is a one-to-one enumeration, and the inverse functions are (primitive) recursive—but we do not require at the present any notation for them.
+**Lemma (`pair_eq_triangle`).** $\texttt{pair}\; n\; m = T(n + m) + m$.
+
+*Proof.* Definition of `pair` and `triangle`. ∎
+
+**Lemma (`triangle_succ`).** $T(w + 1) = T(w) + (w + 1)$.
+
+*Proof.* Expand $(w+1)(w+2)$ as $w(w+1) + 2(w+1)$ and divide by $2$. ∎
+
+**Lemma (`exists_triangle_bucket`).** For every $k \in \omega$ there exists $w$ with $T(w) \le k < T(w + 1)$.
+
+*Proof.* The predicate $k < T(w + 1)$ holds for $w = k$ because $T(k + 1) = T(k) + (k + 1)$. Take the least such $w$ by `Nat.find`; minimality gives $T(w) \le k$. ∎
+
+**Theorem (`exists_pair`).** For every $k \in \omega$ there exist $n, m$ with $\texttt{pair}\; n\; m = k$.
+
+*Proof.* Choose $w$ from `exists_triangle_bucket`. Set $m = k - T(w)$ and $n = w - m$. Then $m \le w$ and $n + m = w$, so `pair_eq_triangle` and $k = T(w) + m$ yield $\texttt{pair}\; n\; m = k$. ∎
+
+**Definition (`unpair`).** `unpair k` is some pair $(n, m)$ with $\texttt{pair}\; n\; m = k$, chosen from `exists_pair`.
+
+**Lemma (`pair_le_left`).** $n \le \texttt{pair}\; n\; m$.
+
+*Proof.* Since $n \le n + m$, we have $2n \le (n + m)(n + m + 1)$ for $n > 0$, hence $n \le T(n + m)$; the case $n = 0$ is trivial. Then $n \le T(n + m) + m = \texttt{pair}\; n\; m$. ∎
+
+**Lemma (`pair_lt_left`).** $n < \texttt{pair}\; n\; m + 1$.
+
+*Proof.* From `pair_le_left` and `Nat.lt_succ_self`. ∎
+
+**Lemma (`pair_le_right`).** $m \le \texttt{pair}\; n\; m$.
+
+*Proof.* $\texttt{pair}\; n\; m = T(n + m) + m \ge m$. ∎
+
+**Lemma (`pair_lt_right`).** $m < \texttt{pair}\; n\; m + 1$.
+
+*Proof.* From `pair_le_right`. ∎
+
+These are Scott’s bounds $n \le (n, m)$ and $m \le (n, m)$; strict inequality to $\texttt{pair}\; n\; m + 1$ is the formal counterpart of his remark about equality only at $(0,0)$ and $(1,0)$.
+
+**Lemma (`pair_unpair`).** $\texttt{pair}\; (\texttt{unpair}\; k).\texttt{1}\; (\texttt{unpair}\; k).\texttt{2} = k$.
+
+*Proof.* By construction from `exists_pair`. ∎
+
+**Lemma (`triangle_le_of_le`).** If $a \le b$ then $T(a) \le T(b)$.
+
+*Proof.* Induction on $a \le b$; the step uses `triangle_succ` and monotonicity of addition. ∎
+
+**Lemma (`triangle_le_pair`).** For all $n, m$,
+
+$$T(n + m) \le \texttt{pair}\; n\; m < T(n + m + 1).$$
+
+*Proof.* The lower bound is $T(n + m) + m \ge T(n + m)$. For the upper bound, `pair_eq_triangle` and `triangle_succ` give $\texttt{pair}\; n\; m = T(n + m) + m < T(n + m) + (n + m + 1) = T(n + m + 1)$. ∎
+
+**Lemma (`triangle_lt_of_lt`).** If $a < b$ then $T(a) < T(b)$.
+
+*Proof.* From $a + 1 \le b$, strict inequality $T(a) < T(a + 1) = T(a) + (a + 1)$ and `triangle_le_of_le`. ∎
+
+**Theorem (`pair_inj`).** If $\texttt{pair}\; n_1\; m_1 = \texttt{pair}\; n_2\; m_2$, then $n_1 = n_2$ and $m_1 = m_2$.
+
+*Proof.* Compare $w_i = n_i + m_i$ using the window $T(w_i) \le \texttt{pair}\; n_i\; m_i < T(w_i + 1)$ from `triangle_le_pair`. If $w_1 \ne w_2$, one paired value would lie strictly below the other, contradicting equality. So $w_1 = w_2$; then $T(w) + m_1 = T(w) + m_2$ gives $m_1 = m_2$, and $n_1 + m_1 = n_2 + m_2$ gives $n_1 = n_2$. ∎
+
+**Theorem (`unpair_pair`).** $\texttt{unpair}\; (\texttt{pair}\; n\; m) = (n, m)$.
+
+*Proof.* `pair_unpair` and injectivity `pair_inj`. ∎
+
+Together, `pair` and `unpair` form a bijection $\omega \times \omega \cong \omega$, so this is the one-to-one enumeration Scott asserts (with primitive recursive inverse left informal in the text).
