@@ -1,7 +1,13 @@
-On $D_\infty = \mathrm{InverseLimit}\,D\,P$, **`sInf`** gives arbitrary infima. Mathlib’s **`completeLatticeOfInf`** turns that into a **complete lattice** (arbitrary suprema included).
+Write $D_\infty = \mathrm{InverseLimit}\,D\,P$ with the coordinatewise order from **`inverseLimitLE`**. A **complete lattice** is a partially ordered set in which **every** subset $S$ has a **greatest lower bound** (infimum, written $\inf S$ or $\bigwedge S$) and a **least upper bound** (supremum, $\sup S$ or $\bigvee S$).
 
-**Definition (`instCompleteLattice`).** **`instCompleteLattice D P`** is the **`CompleteLattice`** instance
+**What **`sInf`** is.** For $S \subseteq D_\infty$, **`sInf S`** is Lean’s notation for that **set infimum** in $D_\infty$: the **largest** element $y \in D_\infty$ such that $y \le x$ for every $x \in S$. Concretely it is the compatible sequence whose $n$-th coordinate is $\inf\{\, x_n : x \in S\,\}$ in the stage lattice $D_n$ (see **`instInfSet`** and **`instInfSet.isGLB_sInf'`**).
 
-```text
-completeLatticeOfInf (InverseLimit D P) (inverseLimitPartialOrder D P) … (instInfSet.isGLB_sInf' D P)
-```
+**Theorem (`instCompleteLattice`).** *$D_\infty$ is a complete lattice.*
+
+*Proof.* We already have a partial order on $D_\infty$ and, for each $S \subseteq D_\infty$, an element **`sInf S`** that is the **greatest lower bound** of $S$ (**`instInfSet.isGLB_sInf'`**). A standard order-theoretic fact is then enough: **if every subset has an infimum, the poset is a complete lattice**. Define suprema from infima by the usual dual recipe— for $S \subseteq D_\infty$, take the infimum of the set of **upper bounds** of $S$:
+
+$$\sup S \;=\; \inf \{\, u \in D_\infty \mid \forall x \in S,\; x \le u \,\}.$$
+
+That infimum exists by the construction above, and it is the least upper bound of $S$. Finite meets and joins agree with this $\inf$ / $\sup$. Lean packages this construction as **`instCompleteLattice`**, applying Mathlib’s **`completeLatticeOfInf`** to the partial order and the **`isGLB_sInf'`** proof. $\square$
+
+**Definition (`instCompleteLattice`).** **`instCompleteLattice D P`** is the **`CompleteLattice`** instance on **`InverseLimit D P`** obtained in this way (one declaration in **`instCompleteLattice.lean`**).
