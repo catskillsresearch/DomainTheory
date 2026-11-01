@@ -37,9 +37,10 @@ MD_LINK_RE = re.compile(r"\[([^\]]*)\]\(([^)]+\.md)\)")
 # Outline entry: bullet or numbered list item linking to another note.
 TOC_BULLET_RE = re.compile(
     r"^(?P<indent>[ \t]*)(?:[-*][ \t]+|\d+\.\s+)\[(?P<title>.+?)\]\((?P<href>[^)]+\.md)\)"
-    r"(?:[ \t]+\[[^\]]*\]\([^)]*\))*[ \t]*$",
+    r"(?:[ \t]+\[[^\]]*\]\([^)]*\)|[ \t]+✓)*[ \t]*$",
     re.MULTILINE,
 )
+BARE_TOC_CHECK_RE = re.compile(r"[ \t]+✓\s*$")
 # Outline progress marks: keep a bare check on the section title, never the revision URL.
 REVISION_MARK_RE = re.compile(r"\[\s*✓\s*\]\([^)]*1972_REVISION\.md\)")
 REVISED_FOOTER_RE = re.compile(
@@ -548,7 +549,11 @@ def child_md_targets(md_path: Path, text: str) -> list[tuple[int, str, Path]]:
         rel = (indent_columns(m.group("indent")) - base_indent) // 2
         href = m.group("href")
         title = m.group("title").strip()
-        if REVISION_MARK_RE.search(m.group(0)) and not title.endswith("✓"):
+        line = m.group(0)
+        if (
+            (REVISION_MARK_RE.search(line) or BARE_TOC_CHECK_RE.search(line))
+            and not title.endswith("✓")
+        ):
             title = f"{title} ✓"
         tgt = (md_path.parent / href).resolve()
         if tgt in seen or not tgt.is_file():
